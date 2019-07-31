@@ -7,21 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: f9a3f6301005210d221f3223607e82adc0971a32
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 4aae2a206f07ea6caa7fc0d7530fb9fec05ce5f0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741023"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648420"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 是呈現資料，需要捲動，特別是較長的清單的清單檢視。
+[`ListView`](xref:Xamarin.Forms.ListView)是用來呈現資料清單的視圖, 特別是需要滾動的長清單。
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 呈現資料的清單檢視使用不同的版面配置規格。 它旨在提供更多的彈性，以及高效能替代方式，來[ `ListView` ](xref:Xamarin.Forms.ListView)。 如需詳細資訊，請參閱 < [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)這是使用不同的版面配置規格來呈現資料清單的視圖。 它的目的是要提供更具彈性且更高效[`ListView`](xref:Xamarin.Forms.ListView)能的替代方案。 如需詳細資訊, 請參閱[CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
 
 ## <a name="use-cases"></a>使用案例
 
@@ -62,10 +62,10 @@ ListView 可支援多種互動樣式，包括：
 
 ## <a name="related-links"></a>相關連結
 
-- [使用與 ListView （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithListview)
-- [雙向繫結 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
-- [建置在儲存格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/BuiltInCells)
-- [自訂資料格 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/CustomCells)
-- [群組 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/Grouping)
-- [自訂轉譯器檢視 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/WorkingWithListviewNative)
-- [ListView 互動性 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+- [使用與 ListView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+- [雙向繫結 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+- [建置在儲存格 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [自訂資料格 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [群組 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [自訂轉譯器檢視 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative/)
+- [ListView 互動性 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

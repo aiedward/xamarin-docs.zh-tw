@@ -7,20 +7,20 @@ ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: cd7c8484827a038bbcf11180296547ea6fedf929
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6c066f89dc8f558a9154138bf38ad4326fe21291
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61410925"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642529"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>存取 SkiaSharp 點陣圖像素位元
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 如您所見文中所[**檔案的儲存 SkiaSharp 點陣圖**](saving.md)，點陣圖通常儲存在壓縮的格式，例如 JPEG 或 PNG 檔案。 相較之下，在不壓縮 SkiaSharp 點陣圖儲存在記憶體中。 它會儲存為循序的一連串的像素為單位。 此未壓縮的格式讓點陣圖的傳輸到顯示介面。
 
-SkiaSharp 點陣圖所佔用的記憶體區塊會組織成非常簡單的方式：它會以像素為單位，從左到右，第一個資料列的開頭，然後再繼續執行第二個資料列。 全彩點陣圖片，每個像素包含四個位元組，這表示點陣圖所需的總記憶體空間的寬度和高度產品四次。
+SkiaSharp 點陣圖所佔用的記憶體區塊是以非常直接的方式組織的:其開頭為第一個資料列 (由左至右), 然後繼續第二個數據列。 全彩點陣圖片，每個像素包含四個位元組，這表示點陣圖所需的總記憶體空間的寬度和高度產品四次。
 
 這篇文章說明如何應用程式能存取這些像素為單位，可以直接存取點陣圖的像素的記憶體區塊，或間接。 在某些情況下，程式可能會想要分析的映像素為單位，並建構某種形式的長條圖。 更常見的是應用程式可以藉由以建立構成點陣圖的像素建構唯一的映像：
 
@@ -37,7 +37,7 @@ SkiaSharp 會提供數種技術來存取點陣圖的像素位元。 您選擇哪
 
 您可以想像為 「 高的層級 」 前兩項技術，兩個為 「 低層級 」。 有一些其他方法和屬性，您可以使用，但這些最有價值。
 
-若要讓您查看這些技術，效能差異[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)應用程式包含名為的頁面**漸層停駐的點陣圖**，建立使用結合紅色和藍色陰影，來建立漸層的像素的點陣圖。 程式會建立八個不同複本的此點陣圖，全都必須使用不同的技術設定點陣圖像素為單位。 每個這些八個點陣圖會建立在不同的方法，也會設定此技術的簡短文字描述，並計算來設定所有的像素所需的時間。 每一種方法執行迴圈的像素設定邏輯 100 次取得的效能較佳評估。
+若要讓您查看這些技術，效能差異[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式包含名為的頁面**漸層停駐的點陣圖**，建立使用結合紅色和藍色陰影，來建立漸層的像素的點陣圖。 程式會建立八個不同複本的此點陣圖，全都必須使用不同的技術設定點陣圖像素為單位。 每個這些八個點陣圖會建立在不同的方法，也會設定此技術的簡短文字描述，並計算來設定所有的像素所需的時間。 每一種方法執行迴圈的像素設定邏輯 100 次取得的效能較佳評估。
 
 ### <a name="the-setpixel-method"></a>不要方法
 
@@ -280,7 +280,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 }
 ```
 
-唯一的問題是：是整數格式`SKColor`值的順序`SKColorType.Rgba8888`色彩類型，或`SKColorType.Bgra8888`色彩類型，或為它命名為其他完全嗎？ 該問題的答案應該會很快顯示。
+唯一的問題是:`SKColor`值的整數格式是以`SKColorType.Rgba8888` `SKColorType.Bgra8888`色彩類型或色彩類型的順序表示, 還是完全是其他東西？ 該問題的答案應該會很快顯示。
 
 ### <a name="the-setpixels-method"></a>SetPixels 方法
 
@@ -294,7 +294,7 @@ bitmap.SetPixels(intPtr);
 
 一開始，它看起來好像`SetPixels`可讓您不再電源和效能比`GetPixels`同時很不方便。 使用`GetPixels`您取得點陣圖的記憶體區塊，並存取它。 使用`SetPixels`配置和存取一些記憶體，並再將它設為點陣圖的記憶體區塊。
 
-但使用`SetPixels`提供不同的句法優點：它可讓您存取使用陣列的點陣圖像素位元。 以下是中的 方法`GradientBitmapPage`示範這項技術。 方法會先定義對應到點陣圖的像素為單位的記憶體位元組的多維度的位元組陣列。 第一個維度是資料列，第二個維度的資料行和第三個維度對應，每個像素的四個元件：
+但使用`SetPixels`提供了獨特的語法優勢:它可讓您使用陣列來存取點陣圖圖元位。 以下是中的 方法`GradientBitmapPage`示範這項技術。 方法會先定義對應到點陣圖的像素為單位的記憶體位元組的多維度的位元組陣列。 第一個維度是資料列，第二個維度的資料行和第三個維度對應，每個像素的四個元件：
 
 ```csharp
 SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
@@ -499,7 +499,7 @@ public class GradientBitmapPage : ContentPage
 
 如預期般，呼叫`SetPixel`65536 的時候，是設定點陣圖的像素為單位的最少 effeicient 方式。 填滿`SKColor`陣列和設定`Pixels`屬性是更好的而且甚至會比較有利的某些`GetPixels`和`SetPixels`技術。 使用`uint`像素值的速度通常比設定的個別`byte`元件，並將轉換`SKColor`為不帶正負號的整數值的程序會增加負擔。
 
-有趣的是也比較各種的漸層：前的資料列，每個平台是相同的並顯示之漸層，為其設計目的。 這表示`SetPixel`方法和`Pixels`屬性正確建立像素為單位的色彩，不論其基礎的像素格式。
+比較各種漸層也很有趣:每個平臺的前幾個資料列都相同, 並依預期顯示漸層。 這表示`SetPixel`方法和`Pixels`屬性正確建立像素為單位的色彩，不論其基礎的像素格式。
 
 IOS 和 Android 的螢幕擷取畫面的下面兩個資料列也會相同，這會確認的小`MakePixel`方法已正確定義預設`Rgba8888`這些平台的像素格式。
 
@@ -794,4 +794,4 @@ public class PosterizePage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

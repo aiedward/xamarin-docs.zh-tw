@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 84ebe6b12e34a5e84c03b095c3909945e84a17f8
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: b48e92bcb49109dad6e8c5260b5cb822945e7a0b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741079"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651339"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 版面配置
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結構。_
 
@@ -54,7 +54,7 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView) 是可捲動內容。 設定[ `Content` ](xref:Xamarin.Forms.ScrollView.Content)屬性，以檢視或太大的版面配置以符合螢幕大小。 (內容`ScrollView`是經常[ `StackLayout` ](#stackLayout)。)設定[ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation)屬性，指出是否捲動應該是垂直、 水平或兩者。<br /><br />[API 文件](xref:Xamarin.Forms.ScrollView) / [指南](~/xamarin-forms/user-interface/layouts/scroll-view.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![ScrollView 範例](layouts-images/ScrollView.png "ScrollView 範例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView) 是可捲動內容。 設定[ `Content` ](xref:Xamarin.Forms.ScrollView.Content)屬性，以檢視或太大的版面配置以符合螢幕大小。 (內容`ScrollView`是經常[ `StackLayout` ](#stackLayout)。)設定[ `Orientation` ](xref:Xamarin.Forms.ScrollView.Orientation)屬性，指出是否捲動應該是垂直、 水平或兩者。<br /><br />[API 文件](xref:Xamarin.Forms.ScrollView) / [指南](~/xamarin-forms/user-interface/layouts/scroll-view.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView 範例](layouts-images/ScrollView.png "ScrollView 範例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView
@@ -81,7 +81,7 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 |     |     |
 | --- | --- |
-| [`StackLayout`](xref:Xamarin.Forms.StackLayout) 將子元素放在水平或垂直根據一個堆疊[ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation)屬性。 [ `Spacing` ](xref:Xamarin.Forms.StackLayout.Spacing)屬性會控管之子系之間的間距和其預設值為 6。<br /><br />[API 文件](xref:Xamarin.Forms.StackLayout) / [指南](~/xamarin-forms/user-interface/layouts/stack-layout.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)| [![StackLayout 範例](layouts-images/StackLayout.png "StackLayout 範例")](layouts-images/StackLayout-Large.png#lightbox "StackLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml) |
+| [`StackLayout`](xref:Xamarin.Forms.StackLayout) 將子元素放在水平或垂直根據一個堆疊[ `Orientation` ](xref:Xamarin.Forms.StackLayout.Orientation)屬性。 [ `Spacing` ](xref:Xamarin.Forms.StackLayout.Spacing)屬性會控管之子系之間的間距和其預設值為 6。<br /><br />[API 文件](xref:Xamarin.Forms.StackLayout) / [指南](~/xamarin-forms/user-interface/layouts/stack-layout.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)| [![StackLayout 範例](layouts-images/StackLayout.png "StackLayout 範例")](layouts-images/StackLayout-Large.png#lightbox "StackLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml) |
 |     |     |
 
 <a name="grid" />
@@ -90,32 +90,32 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 |     |     |
 | --- | --- |
-| [`Grid`](xref:Xamarin.Forms.Grid) 放置其子項目格線中的資料列和資料行。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md) [ `Row` ](xref:Xamarin.Forms.Grid.RowProperty)， [ `Column` ](xref:Xamarin.Forms.Grid.ColumnProperty)， [ `RowSpan` ](xref:Xamarin.Forms.Grid.RowSpanProperty)，並[ `ColumnSpan` ](xref:Xamarin.Forms.Grid.ColumnSpanProperty)。<br /><br />[API 文件](xref:Xamarin.Forms.Grid) / [指南](~/xamarin-forms/user-interface/layouts/grid.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![格線範例](layouts-images/Grid.png "格線範例")](layouts-images/Grid-Large.png#lightbox "格線範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
+| [`Grid`](xref:Xamarin.Forms.Grid) 放置其子項目格線中的資料列和資料行。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md) [ `Row` ](xref:Xamarin.Forms.Grid.RowProperty)， [ `Column` ](xref:Xamarin.Forms.Grid.ColumnProperty)， [ `RowSpan` ](xref:Xamarin.Forms.Grid.RowSpanProperty)，並[ `ColumnSpan` ](xref:Xamarin.Forms.Grid.ColumnSpanProperty)。<br /><br />[API 文件](xref:Xamarin.Forms.Grid) / [指南](~/xamarin-forms/user-interface/layouts/grid.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![格線範例](layouts-images/Grid.png "格線範例")](layouts-images/Grid-Large.png#lightbox "格線範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
 |     |     |
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
 |     |     |
 | --- | --- |
-| [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 放置相對於其父代的特定位置的子項目。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md) [ `LayoutBounds` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)並[ `LayoutFlags` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)。 `AbsoluteLayout`適合用來以動畫顯示的檢視位置。<br /><br />[API 文件](xref:Xamarin.Forms.AbsoluteLayout) / [指南](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![AbsoluteLayout 範例](layouts-images/AbsoluteLayout.png "AbsoluteLayout 範例")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutdDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs) |
+| [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 放置相對於其父代的特定位置的子項目。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md) [ `LayoutBounds` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)並[ `LayoutFlags` ](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)。 `AbsoluteLayout`適合用來以動畫顯示的檢視位置。<br /><br />[API 文件](xref:Xamarin.Forms.AbsoluteLayout) / [指南](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![AbsoluteLayout 範例](layouts-images/AbsoluteLayout.png "AbsoluteLayout 範例")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutdDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml)使用[程式碼後置](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs) |
 |     |     |
 
 ### <a name="relativelayout"></a>RelativeLayout
 
 |     |     |
 | --- | --- |
-| [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 放置相對於的子項目`RelativeLayout`本身或其同層級項目。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md)並設為類型的物件[ `Constraint` ](xref:Xamarin.Forms.Constraint)並[ `BoundsConstraint` ](xref:Xamarin.Forms.Constraint)。<br /><br />[API 文件](xref:Xamarin.Forms.RelativeLayout) / [指南](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/) | [![範例 RelativeLayout](layouts-images/RelativeLayout.png "RelativeLayout 範例")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+| [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 放置相對於的子項目`RelativeLayout`本身或其同層級項目。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md)並設為類型的物件[ `Constraint` ](xref:Xamarin.Forms.Constraint)並[ `BoundsConstraint` ](xref:Xamarin.Forms.Constraint)。<br /><br />[API 文件](xref:Xamarin.Forms.RelativeLayout) / [指南](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![範例 RelativeLayout](layouts-images/RelativeLayout.png "RelativeLayout 範例")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
 |     |     |
 
 ### <a name="flexlayout"></a>FlexLayout
 
 |     |     |
 | --- | --- |
-| [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 會根據 CSS[彈性的方塊版面配置模組](http://www.w3.org/TR/css-flexbox-1/)，稱為_flex 配置_或_彈性方塊_。 `FlexLayout` 定義六個可繫結的屬性和五個附加的可繫結屬性，讓堆疊或許多的對齊方式和方向選項以包裝的子系。<br /><br />[API 文件](xref:Xamarin.Forms.FlexLayout) / [指南](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/FlexLayoutDemos/) | [![FlexLayout 範例](layouts-images/FlexLayout.png "FlexLayout 範例")](layouts-images/FlexLayout-Large.png#lightbox "FlexLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
+| [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 會根據 CSS[彈性的方塊版面配置模組](http://www.w3.org/TR/css-flexbox-1/)，稱為_flex 配置_或_彈性方塊_。 `FlexLayout` 定義六個可繫結的屬性和五個附加的可繫結屬性，讓堆疊或許多的對齊方式和方向選項以包裝的子系。<br /><br />[API 文件](xref:Xamarin.Forms.FlexLayout) / [指南](~/xamarin-forms/user-interface/layouts/flex-layout.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos) | [![FlexLayout 範例](layouts-images/FlexLayout.png "FlexLayout 範例")](layouts-images/FlexLayout-Large.png#lightbox "FlexLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FlexLayoutDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FlexLayoutDemoPage.xaml) |
 |     |     |
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Forms FormsGallery 範例](https://developer.xamarin.com/samples/xamarin-forms/FormsGallery/)
-- [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
+- [Xamarin.Forms FormsGallery 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

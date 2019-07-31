@@ -8,12 +8,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 07/06/2018
-ms.openlocfilehash: 29f7725e41e5163b8f990c827983fbd79bdd1b1e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 08339ba3017983cf79d75adc1c6c21a2fb9ad98b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510485"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643435"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -160,7 +160,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-4.  當系統提示您**是否要建立自訂硬體設定檔 [否]** 時, 您可以輸入**no**並接受預設的硬體設定檔。 如果您說過, **avdmanager**會提示您自訂硬體設定檔的問題清單。
+4.  當系統提示您**是否要建立自訂硬體設定檔 [否]** 時, 您可以輸入**no**並接受預設的硬體設定檔。 如果您說  過, **avdmanager**會提示您自訂硬體設定檔的問題清單。
 
 在您**avdmanager**以建立虛擬裝置之後, 它會包含在 [裝置] 下拉式功能表中:
 
@@ -180,7 +180,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
     avdmanager create avd -n AVD-Oreo-8.0 -k "system-images;android-26;google_apis;x86"
     ```
 
-3.  當系統提示您**是否要建立自訂硬體設定檔 [否]** 時, 您可以輸入**no**並接受預設的硬體設定檔。 如果您說過, **avdmanager**會提示您自訂硬體設定檔的問題清單。
+3.  當系統提示您**是否要建立自訂硬體設定檔 [否]** 時, 您可以輸入**no**並接受預設的硬體設定檔。 如果您說  過, **avdmanager**會提示您自訂硬體設定檔的問題清單。
 
 使用**avdmanager**建立虛擬裝置之後, 它會包含在 [裝置] 下拉式功能表中:
 
@@ -205,7 +205,7 @@ Android Oreo 引進各種新特性和功能, 例如通知通道、通知徽章�
 *通知通道*是應用程式定義的通知類別。
 您可以針對需要傳送的每一種通知類型建立通知通道, 也可以建立通知通道來反映應用程式使用者所做的選擇。 新的「通知通道」功能讓您可以讓使用者對不同類型的通知進行細微控制。 例如, 如果您要執行訊息應用程式, 您可以為使用者建立的每個交談群組建立個別的通知通道。
 
-[通知通道](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)會說明如何建立通知通道, 並使用它來張貼本機通知。 如需真實世界的程式碼範例, 請參閱[NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels)範例。這個範例應用程式會管理兩個通道, 並設定其他通知選項。
+[通知通道](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)會說明如何建立通知通道, 並使用它來張貼本機通知。 如需真實世界的程式碼範例, 請參閱[NotificationChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)範例。這個範例應用程式會管理兩個通道, 並設定其他通知選項。
 
 
 
@@ -229,7 +229,7 @@ Android Oreo 引進了*XML*的字型, 讓您可以將自訂字型納入做為資
 
 2. 將您的字型檔案 (例如, **.ttf**和**otf**檔案) 複製到**資源/字型**。 
 
-3. 如有需要, 請將每個字型檔案重新命名, 使其符合 Android 檔案命名慣例 (也就是, 檔案名中只使用小寫 a-z、 *0-9*和底線)。 例如, 字型`Pacifico-Regular.ttf`檔案可能會重新命名為類似`pacifico.ttf`的內容。
+3. 如有需要, 請將每個字型檔案重新命名, 使其符合 Android 檔案命名慣例 (也就是  , 檔案名中只使用小寫 a-z、 *0-9*和底線)。 例如, 字型`Pacifico-Regular.ttf`檔案可能會重新命名為類似`pacifico.ttf`的內容。
 
 4. 使用版面配置 XML 中的新`android:fontFamily`屬性來套用自訂字型。 例如, 下列`TextView`宣告會使用已加入的**pacifico. .ttf**字型資源:
 
@@ -262,7 +262,7 @@ Android Oreo 引進了*XML*的字型, 讓您可以將自訂字型納入做為資
 
 當您呼叫`RequestFonts`方法時, 它會先檢查字型是否在本機快取 (從先前的`RequestFont`呼叫)。 如果未快取, 它會呼叫字型提供者, 以非同步方式抓取字型, 然後藉由叫用您`OnTypeFaceRetrieved`的方法, 將結果傳回到您的應用程式。
 
-[可下載](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts)的字型範例示範如何使用 Android Oreo 中引進的可下載字型功能。 
+[可下載](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)的字型範例示範如何使用 Android Oreo 中引進的可下載字型功能。 
 
 如需下載字型的詳細資訊, 請參閱 Android 開發人員[可下載字型](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html)主題。
 
@@ -270,9 +270,9 @@ Android Oreo 引進了*XML*的字型, 讓您可以將自訂字型納入做為資
 
 ### <a name="autofill"></a>自動填滿
 
-Android Oreo 中新的自動填滿架構可讓使用者更輕鬆地處理重複的工作, 例如登入、帳戶建立和信用卡交易。 使用者會花費較少的時間重新輸入資訊 (這可能會導致輸入錯誤)。 在您的應用程式可以使用自動填滿架構之前, 必須先在系統設定 (使用者可以啟用或停用自動填入) 中啟用自動填滿服務。
+Android Oreo中新的自動填滿架構可讓使用者更輕鬆地處理重複的工作, 例如登入、帳戶建立和信用卡交易。 使用者會花費較少的時間重新輸入資訊 (這可能會導致輸入錯誤)。 在您的應用程式可以使用自動填滿架構之前, 必須先在系統設定 (使用者可以啟用或停用自動填入) 中啟用自動填滿服務。
 
-[AutofillFramework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework/)範例示範如何使用自動填滿架構。 其中包括用戶端活動的執行, 以及應自動填入的視圖, 以及可提供自動填入資料給用戶端活動的服務。
+[AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)範例示範如何使用自動填滿架構。 其中包括用戶端活動的執行, 以及應自動填入的視圖, 以及可提供自動填入資料給用戶端活動的服務。
 
 如需有關新自動填入功能以及如何優化應用程式自動填入的詳細資訊, 請參閱 Android 開發人員自動填入[架構](https://developer.android.com/guide/topics/text/autofill.html)主題。
 
@@ -294,7 +294,7 @@ android:supportsPictureInPicture
 
 -   [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29)&ndash;更新活動的 PIP 設定 (例如, 外觀比例的變更)。
 
-[PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture)範例示範在 Oreo 中引進的掌上型裝置 (PiP) 模式的基本使用方式。 此範例會播放影片, 而在顯示模式或其他活動之間來回切換時, 會繼續不中斷。
+[PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)範例示範在 Oreo 中引進的掌上型裝置 (PiP) 模式的基本使用方式。 此範例會播放影片, 而在顯示模式或其他活動之間來回切換時, 會繼續不中斷。
 
 
 
@@ -333,19 +333,19 @@ Android Oreo 包含各種系統和 API 行為變更, 可能會影響現有應用
 
 有數個 Xamarin. Android 範例可向您示範如何利用 Android Oreo 功能:
 
--   [NotificationsChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels)示範如何使用 Android Oreo 引進的新通知通道系統。 這個範例會管理兩個通知通道: 一個具有預設重要性, 另一個具有高重要性。
+-   [NotificationsChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels)示範如何使用 Android Oreo 引進的新通知通道系統。 這個範例會管理兩個通知通道: 一個具有預設重要性, 另一個具有高重要性。
 
--   [PictureInPicture](https://developer.xamarin.com/samples/monodroid/android-o/PictureInPicture)示範 Oreo 中引進的掌上型裝置 (PiP) 模式的基本使用方式。 此範例會播放影片, 而在顯示模式或其他活動之間來回切換時, 會繼續不中斷。
+-   [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)示範 Oreo 中引進的掌上型裝置 (PiP) 模式的基本使用方式。 此範例會播放影片, 而在顯示模式或其他活動之間來回切換時, 會繼續不中斷。
 
--   [AutofillFramework](https://developer.xamarin.com/samples/monodroid/android-o/AutoFillFramework)示範自動填滿架構的使用。 其中包括用戶端活動的執行, 以及應自動填入的視圖, 以及可提供自動填入資料給用戶端活動的服務。
+-   [AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework)示範自動填滿架構的使用。 其中包括用戶端活動的執行, 以及應自動填入的視圖, 以及可提供自動填入資料給用戶端活動的服務。
 
--   [可下載](https://developer.xamarin.com/samples/monodroid/android-o/DownloadableFonts)的字型提供範例, 說明如何使用稍早所述的可下載字型功能。
+-   [可下載](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)的字型提供範例, 說明如何使用稍早所述的可下載字型功能。
 
--   [EmojiCompat](https://developer.xamarin.com/samples/monodroid/android-o/EmojiCompat)示範 EmojiCompat 支援程式庫的使用方式。 您可以使用此程式庫, 以防止您的應用程式將遺漏的表情字元顯示為 "tofu" 字元。
+-   [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat)示範 EmojiCompat 支援程式庫的使用方式。 您可以使用此程式庫, 以防止您的應用程式將遺漏的表情字元顯示為 "tofu" 字元。
 
--   [位置更新暫止意圖](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdPendIntent)說明使用`PendingIntent`位置 API 來取得裝置位置的相關更新。
+-   [位置更新暫止意圖](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)說明使用`PendingIntent`位置 API 來取得裝置位置的相關更新。
 
--   [位置更新前景服務](https://developer.xamarin.com/samples/monodroid/android-o/AndroidPlayLocation/LocUpdFgService)示範如何使用位置 API, 使用系結和啟動的前景服務來取得裝置位置的相關更新。
+-   [位置更新前景服務](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)示範如何使用位置 API, 使用系結和啟動的前景服務來取得裝置位置的相關更新。
 
 
 ## <a name="video"></a>視訊

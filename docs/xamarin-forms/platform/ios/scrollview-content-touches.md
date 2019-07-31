@@ -1,22 +1,22 @@
 ---
-title: 在 iOS 上的 ScrollView 內容修飾
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台特定可控制是否 ScrollView 處理觸控筆勢，或將它傳遞給它的內容。
+title: IOS 上的 ScrollView 內容潤色
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的來控制 ScrollView 是否處理觸控手勢, 或將其傳遞至其內容。
 ms.prod: xamarin
 ms.assetid: 99F823DB-B379-40F0-A343-A9783C341120
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 19a683fbd4aeb7060d97406a89c1e9308fb56b03
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 154666cce4ad6c53949952fa93f5ad7dc89824ab
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926005"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651767"
 ---
-# <a name="scrollview-content-touches-on-ios"></a>在 iOS 上的 ScrollView 內容修飾
+# <a name="scrollview-content-touches-on-ios"></a>IOS 上的 ScrollView 內容潤色
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 隱含的計時器會在觸控筆勢開始時觸發[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)在 iOS 上和`ScrollView`決定，是否應該處理筆勢，或將它傳遞給其內容為基礎的計時器範圍內中的使用者動作。 根據預設，iOS`ScrollView`延遲內容的風格，但這可能會導致問題，在某些情況下使用`ScrollView`時應該不 winning 筆勢的內容。 因此，此平台特定的控制項是否`ScrollView`處理觸控筆勢，或將它傳遞給它的內容。 它由在 XAML 中設定`ScrollView.ShouldDelayContentTouches`附加屬性`boolean`值：
 
@@ -61,6 +61,6 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

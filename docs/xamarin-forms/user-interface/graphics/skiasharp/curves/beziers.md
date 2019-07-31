@@ -7,22 +7,22 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 58cf11b2a88e0c399ee197e9c8365d7deafd0f39
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7802360c95d31f237cf69c69728cffe02ad47e5a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61229551"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646233"
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _探索如何使用 SkiaSharp 呈現三次方、 二次方，以及 conic 貝茲曲線_
 
 貝茲曲線被命名匹貝茲 (1910年 – 1999)，法文的工程師在汽車公司 Renault，使用電腦輔助設計的車內文的曲線。
 
-貝茲曲線是公認為適用於互動式的設計：它們是正常執行&mdash;亦即，不會導致變成無限或難以曲線的 singularities&mdash;且通常悅耳：
+貝茲曲線已知適合用於互動式設計:它們的行為也&mdash;不太 singularities, 因此不會造成曲線變得無限或難以&mdash;執行, 而且通常內賞心悅目令人滿意:
 
 ![](beziers-images/beziersample.png "範例貝茲曲線")
 
@@ -493,7 +493,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ![](beziers-images/conicarc.png "Conic 弧線的呈現圓弧線段")
 
-若要判斷之間距離的控制項控點，圓形的中心，您可以使用三角函數：它是角度的除以餘弦值的一半 α 圓形的半徑。 若要開始和結束點之間繪製圓弧線段，設定權數為該相同的一半的角度的餘弦值。 請注意，如果角度為 180 度，然後永遠無法符合的切線加權為零。 但如角度小於 180 度、 數學可正常運作。
+您可以使用三角函數來判斷控制點與圓形中心的距離:這是圓形的半徑除以α角度的余弦。 若要開始和結束點之間繪製圓弧線段，設定權數為該相同的一半的角度的餘弦值。 請注意，如果角度為 180 度，然後永遠無法符合的切線加權為零。 但如角度小於 180 度、 數學可正常運作。
 
 **Conic 圓弧**示範這項 頁面。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)檔案會具現化`Slider`可供選取的角度。 `PaintSurface`中的處理常式[ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)的控制點和重量，計算程式碼後置檔案：
 
@@ -557,4 +557,4 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

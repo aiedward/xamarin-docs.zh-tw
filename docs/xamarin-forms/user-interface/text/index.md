@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 8754f6573b00334fd228b1c9bd094cd91565976c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363269"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656183"
 ---
 # <a name="text-in-xamarinforms"></a>在 Xamarin.Forms 中的文字
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _使用 Xamarin.Forms 來輸入或顯示的文字。_
 
@@ -66,7 +66,7 @@ Xamarin.Forms 會具有三個主要的檢視，可搭配文字使用：
 
 ## <a name="fontsfontsmd"></a>[字型](fonts.md)
 
-許多控制項都支援不同的字型設定的每個平台或自訂的字型，隨附於您的應用程式中使用的內建的字型。 請參閱[字型](fonts.md)一文中的詳細資訊。
+許多控制項都使用每個平臺上的內建字型, 或包含在應用程式中的自訂字型, 來支援不同的字型設定。 請參閱[字型](fonts.md)一文中的詳細資訊。
 
 <a name="Styles" />
 
@@ -76,4 +76,4 @@ Xamarin.Forms 會具有三個主要的檢視，可搭配文字使用：
 
 ## <a name="related-links"></a>相關連結
 
-- [文字 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [文字 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

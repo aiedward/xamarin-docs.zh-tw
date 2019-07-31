@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a5a70594b0fe48fe601ef836977f69b29e097ab5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 74d626fb1028c630b67888f84153adeb33ae32b9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510389"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644699"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin. Android CardView
 
@@ -157,7 +157,7 @@ Android `Cardview` 5.0 (棒糖) 中引進的 widget 是一個 UI 元件, 它會�
 
 [![影像下方有影像和標題的 CardView](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
-這個螢幕擷取畫面是取自[RecyclerViewer](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)範例應用程式, 它會使用`RecyclerView` widget 來呈現影像的滾動清單`CardView`來觀看相片。 如需的詳細`RecyclerView`資訊, 請參閱[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)指南。
+這個螢幕擷取畫面是取自[RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)範例應用程式, 它會使用`RecyclerView` widget 來呈現影像的滾動清單`CardView`來觀看相片。 如需的詳細`RecyclerView`資訊, 請參閱[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)指南。
 
 請注意, `CardView`可以在其內容區域中顯示一個以上的子視圖。 例如, 在上述相片觀看應用程式範例中, 內容區域是由`ListView` `ImageView`包含和`TextView`的組成。 雖然`CardView`實例通常會垂直排列, 但您也可以水準排列它們 (如需範例螢幕擷取畫面, 請參閱[建立自訂視圖樣式](~/android/user-interface/material-theme.md#customview))。
 
@@ -253,6 +253,6 @@ Android `Cardview` 5.0 (棒糖) 中引進的 widget 是一個 UI 元件, 它會�
 
 ## <a name="related-links"></a>相關連結
 
-- [RecyclerView (範例)](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)
+- [RecyclerView (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)
 - [棒糖的簡介](~/android/platform/lollipop.md)
 - [CardView 類別參考](https://developer.android.com/reference/android/support/v7/widget/CardView.html)

@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 4e462346c2c0130c972d098aa2c988bdd61fc360
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: ad20ba50b8ff0f7dcbba3e8d297b2281544a373b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804900"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657078"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[StackLayout](xref:Xamarin.Forms.StackLayout)組織中的一維的行 （「 堆疊 」） 的檢視，以水平或垂直方式。 檢視`StackLayout`可以根據使用的版面配置選項版面配置中的空間大小。 位置是由檢視加入至版面配置和檢視表的版面配置選項順序來決定。
+[StackLayout](xref:Xamarin.Forms.StackLayout)會以一維線 (「堆疊」) 將視圖以水準或垂直方式組織。 檢視`StackLayout`可以根據使用的版面配置選項版面配置中的空間大小。 位置是由檢視加入至版面配置和檢視表的版面配置選項順序來決定。
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms 版面配置")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
@@ -226,5 +226,5 @@ Title="StackLayouts">
 ## <a name="related-links"></a>相關連結
 
 - [LayoutOptions](~/xamarin-forms/user-interface/layouts/layout-options.md)
-- [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [版面配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 範例 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

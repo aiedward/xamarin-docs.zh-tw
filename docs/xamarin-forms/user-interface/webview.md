@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2019
-ms.openlocfilehash: 6410be4019772ad11cd97d27c5de3c0300d58519
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: a56764771f3106f73809a51616e90fa30692a4d4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649639"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656259"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms web 檢視
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView) 會顯示在您的應用程式中的 web 和 HTML 內容的檢視。 不同於`OpenUri`，其採用使用者裝置上的網頁瀏覽器`WebView`會顯示在您的應用程式內的 HTML 內容。
 
@@ -110,7 +110,7 @@ browser.Source = htmlSource;
 在上述程式碼中，`@`用來將 HTML 標記做為字串常值，這表示所有一般的逸出字元會被忽略。
 
 > [!NOTE]
-> 可能需要設定`WidthRequest`並`HeightRequest`的屬性[ `WebView` ](xref:Xamarin.Forms.WebView)若要查看的 HTML 內容，視版面配置`WebView`子系。 比方說，這需要[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。
+> 您`WidthRequest`可能需要設定的和`HeightRequest`屬性[`WebView`](xref:Xamarin.Forms.WebView) , 以查看`WebView` HTML 內容, 視配置是的子系而定。 例如, 在中[`StackLayout`](xref:Xamarin.Forms.StackLayout), 這是必要的。
 
 ### <a name="local-html-content"></a>本機的 HTML 內容
 
@@ -334,25 +334,25 @@ public partial class InAppBrowserXaml : ContentPage
 
 WebView 中，會引發下列事件，以協助您回應狀態的變更：
 
-- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) – web 檢視可讓您開始載入新的頁面時引發的事件。
-- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) – 當頁面載入和瀏覽已停止時引發的事件。
-- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested) -若要重新載入目前的內容提出要求時所引發的事件。
+- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)–當 Web 工作開始載入新頁面時引發的事件。
+- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)–載入頁面並停止導覽時引發的事件。
+- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested)–提出要求以重載目前內容時引發的事件。
 
-[ `WebNavigatingEventArgs` ](xref:Xamarin.Forms.WebNavigatingEventArgs)隨附的物件[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)事件有四個屬性：
+事件隨附的物件有四個屬性: [`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs) [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)
 
-- `Cancel` – 指出是否要取消巡覽。
-- `NavigationEvent` – 瀏覽事件引發。
-- `Source` – 執行瀏覽的項目。
-- `Url` – 瀏覽目的地。
+- `Cancel`–指出是否要取消導覽。
+- `NavigationEvent`–引發的導覽事件。
+- `Source`–執行導覽的元素。
+- `Url`–導覽目的地。
 
-[ `WebNavigatedEventArgs` ](xref:Xamarin.Forms.WebNavigatedEventArgs)隨附的物件[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件有四個屬性：
+事件隨附的物件有四個屬性: [`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs) [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)
 
-- `NavigationEvent` – 瀏覽事件引發。
-- `Result` -描述結果的導覽中，使用[ `WebNavigationResult` ](xref:Xamarin.Forms.WebNavigationResult)列舉成員。 有效值為 `Cancel`、`Failure`、`Success` 和 `Timeout`。
-- `Source` – 執行瀏覽的項目。
-- `Url` – 瀏覽目的地。
+- `NavigationEvent`–引發的導覽事件。
+- `Result`–使用[`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)列舉成員來描述導覽的結果。 有效值為 `Cancel`、`Failure`、`Success` 和 `Timeout`。
+- `Source`–執行導覽的元素。
+- `Url`–導覽目的地。
 
-如果您預計使用需要長的時間載入的網頁，請考慮使用[ `Navigating` ](xref:Xamarin.Forms.WebView.Navigating)並[ `Navigated` ](xref:Xamarin.Forms.WebView.Navigated)事件，以實作狀態指標。 例如:
+如果您預期使用需要較長時間載入的網頁, 請考慮使用[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)和[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件來執行狀態指示器。 例如：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -418,9 +418,9 @@ webView.Reload();
 
 為了讓`WebView`運作，您必須確定每個平台已設定權限。 請注意，在某些平台，`WebView`在偵錯模式中，但只有在建置要發行時，不會運作。 這是因為某些權限，例如，適用於網際網路存取，在 Android 上，依預設是由 Visual Studio for Mac 中偵錯模式時設定。
 
-- **UWP** &ndash; 顯示網路內容時，需要網際網路 (用戶端和伺服器) 功能。
+- **UWP** &ndash;顯示網路內容時，需要網際網路 （用戶端和伺服器） 功能。
 - **Androi** &ndash;只有需要顯示來自網路的內容時，才需要`INTERNET`。 本機內容需要任何特殊權限。
-- **iOS** &ndash; 不需要任何特殊權限。
+- **iOS** &ndash;需要任何特殊權限。
 
 ## <a name="layout"></a>配置
 
@@ -482,7 +482,7 @@ AbsoluteLayout*而不需要*WidthRequest & HeightRequest:
 
 ## <a name="invoking-javascript"></a>叫用的 JavaScript
 
-[`WebView`](xref:Xamarin.Forms.WebView) 包括能夠叫用的 JavaScript 函式，從C#，並傳回任何結果呼叫C#程式碼。 這可完成[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法，從下列範例所示[WebView](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)範例：
+[`WebView`](xref:Xamarin.Forms.WebView) 包括能夠叫用的 JavaScript 函式，從C#，並傳回任何結果呼叫C#程式碼。 這可完成[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法，從下列範例所示[WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)範例：
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };
@@ -516,5 +516,5 @@ function factorial(num) {
 
 ## <a name="related-links"></a>相關連結
 
-- [使用 WebView （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithWebview/)
-- [Web 檢視 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/WebView)
+- [使用 WebView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+- [Web 檢視 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)

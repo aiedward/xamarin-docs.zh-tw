@@ -1,22 +1,22 @@
 ---
-title: 儲存和存取資料，在 Xamarin.Forms 中的 Azure 儲存體
-description: Azure 儲存體是可以用來儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。 這篇文章說明如何使用 Xamarin.Forms 來將文字和二進位資料儲存在 Azure 儲存體，以及如何存取資料。
+title: 從 Xamarin 的 Azure 儲存體中儲存及存取資料
+description: Azure 儲存體是可以用來儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。 本文說明如何使用 Xamarin 將文字和二進位資料儲存在 Azure 儲存體中, 以及如何存取資料。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/28/2018
-ms.openlocfilehash: 044ff7448cc302da4d0efdf88325c40b9db0315c
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 3f3ff0b06fe23d724e04ac34108119932aa666ef
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658625"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649716"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>儲存和存取資料，在 Xamarin.Forms 中的 Azure 儲存體
+# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>從 Xamarin 的 Azure 儲存體中儲存及存取資料
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
 _Azure 儲存體是可以用來儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。這篇文章會示範如何使用 Xamarin.Forms 來將文字和二進位資料儲存在 Azure 儲存體，以及如何存取資料。_
 
@@ -260,7 +260,7 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 ## <a name="related-links"></a>相關連結
 
-- [Azure 儲存體 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureStorage/)
+- [Azure 儲存體 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [儲存體簡介](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [如何使用 Xamarin 的 Blob 儲存體](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
 - [使用共用的存取簽章 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)

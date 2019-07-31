@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: 61f74e54d4760bb3a85084371fa8e2a62dc06dfd
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: e16aa1b96749047554b4f8e6887791d8ed4ff63b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510664"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643699"
 ---
 # <a name="creating-a-custom-contentprovider"></a>建立自訂的 ContentProvider
 
@@ -124,7 +124,7 @@ public class VegetableProvider : ContentProvider
 
 我們將在`ContentProvider`類別上公開四種不同類型的中繼資料。 只有授權單位是必要的, 其餘部分則依照慣例完成。
 
-- **授權**單位屬性必須新增至類別, 才能在安裝應用程式時向 Android 註冊。  &ndash; `ContentProvider`
+- **授權**單位屬性必須新增至類別, 才能在安裝應用程式時向 Android 註冊。 &ndash; `ContentProvider`
 
 - **Uri**&ndash; 會公開為常數,以便在程式`CONTENT_URI`代碼中輕鬆使用。 它應該符合授權單位, 但包含配置和基底路徑。
 
@@ -319,4 +319,4 @@ protected void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [SimpleContentProvider (範例)](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
+- [SimpleContentProvider (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)

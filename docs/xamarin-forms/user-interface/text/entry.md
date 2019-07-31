@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 238ba1853df523ee275de628ebdbd138a6d1d1bf
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649606"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650268"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _單行文字或輸入的密碼_
 
@@ -59,9 +59,9 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 > [!NOTE]
 > 寬度`Entry`可以藉由設定定義其`WidthRequest`屬性。 不依賴的寬度`Entry`的值所定義根據其`Text`屬性。
 
-### <a name="preventing-text-entry"></a>防止文字項目
+### <a name="preventing-text-entry"></a>防止文字輸入
 
-可以防止使用者修改中的文字[ `Entry` ](xref:Xamarin.Forms.Entry) splittunneling`IsReadOnly`屬性，其預設值的`false`至`true`:
+藉[`Entry`](xref:Xamarin.Forms.Entry)由`false`將屬性 (具有的預設值) 設定為`true`, 可防止使用者修改中的文字: `IsReadOnly`
 
 ```xaml
 <Entry Text="This is a read-only Entry"
@@ -73,7 +73,7 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 ```
 
 > [!NOTE]
-> `IsReadonly`屬性不會改變的視覺外觀[ `Entry`](xref:Xamarin.Forms.Entry)不同的是`IsEnabled`也會變更的視覺外觀的屬性`Entry`為灰色。
+> 屬性不會改變的視覺外觀[`Entry`](xref:Xamarin.Forms.Entry), 不同`IsEnabled`于也會將的視覺外觀`Entry`變更為灰色的屬性。 `IsReadonly`
 
 ### <a name="limiting-input-length"></a>限制的輸入的長度
 
@@ -238,7 +238,9 @@ var entry = new Entry { ReturnType = ReturnType.Send };
 
 ### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼字檢查
 
-[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查 已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
+          [
+          `IsSpellCheckEnabled`
+          ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查 已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
 
 不過，某些文字項目的情況下，輸入使用者名稱，例如拼字檢查可提供負體驗和藉由設定，應該停用[ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設`false`:
 
@@ -323,11 +325,11 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 - [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; 當使用者在鍵盤上按 return 鍵結束輸入時引發。
 
 > [!NOTE]
-> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別，從其中[ `Entry` ](xref:Xamarin.Forms.Entry)繼承，也有[ `Focused` ](xref:Xamarin.Forms.VisualElement.Focused)並[ `Unfocused` ](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
+> 繼承自的[`Entry`](xref:Xamarin.Forms.Entry) [`Focused`](xref:Xamarin.Forms.VisualElement.Focused)類別也具有和[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)事件。 [`VisualElement`](xref:Xamarin.Forms.VisualElement)
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用來回應完成的項目互動。 `Completed` 當使用者結束與欄位的輸入，在鍵盤上按 return 鍵 （或按下 Tab 鍵在 UWP 上），就會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
+`Completed`事件用來回應完成的項目互動。 `Completed`當使用者在鍵盤上按下 enter 鍵 (或按 UWP 上的 Tab 鍵) 來結束具有欄位的輸入時, 會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -381,5 +383,5 @@ entry.TextChanged += Entry_TextChanged;
 
 ## <a name="related-links"></a>相關連結
 
-- [文字 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text)
+- [文字 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [項目 API](xref:Xamarin.Forms.Entry)

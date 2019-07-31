@@ -7,16 +7,16 @@ ms.assetid: B62F9487-C30E-4C63-BAB1-4C091FF50378
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 577eb19106ffa0ebd19c54aeeb155a9c6c85feac
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e8c909ce7dfd9c8f6dccbf2685ff2658931b6a5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61091515"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656349"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp 透明度
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 如您所見， [ `SKPaint` ](xref:SkiaSharp.SKPaint)類別包含[ `Color` ](xref:SkiaSharp.SKPaint.Color)屬性的型別[ `SKColor` ](xref:SkiaSharp.SKColor)。 `SKColor` 包含 alpha 色板，因此任何您色彩與`SKColor`值可以是部分透明。 
 
@@ -36,7 +36,7 @@ Alpha 值為 0 是完全透明，而完全不透明 alpha 值為 0xFF。 這些�
 SKColor halfTransparentBlue = SKColors.Blue.WithAlpha(0x80);
 ```
 
-使用半透明的文字所示**程式碼更多程式碼**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例。 此頁面會淡兩個文字字串和縮小透過合併中的 transparency`SKColor`值：
+使用半透明的文字所示**程式碼更多程式碼**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例。 此頁面會淡兩個文字字串和縮小透過合併中的 transparency`SKColor`值：
 
 ```csharp
 public class CodeMoreCodePage : ContentPage
@@ -241,4 +241,4 @@ public partial class BitmapDissolvePage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

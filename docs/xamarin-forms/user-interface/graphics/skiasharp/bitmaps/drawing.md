@@ -7,16 +7,16 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 9e76558597928bafa25f6a217c6f0055657e4c22
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 030655ba94130294729871348b3408fe6c3695e6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61401541"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656949"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>建立和上 SkiaSharp 點陣圖繪製
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 您已了解如何應用程式可以載入點陣圖從網站、 應用程式資源和使用者的相片媒體櫃。 它也可建立新應用程式內的點陣圖。 最簡單的方法牽涉到其中的建構函式[ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
 
@@ -56,7 +56,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 然後可以顯示點陣圖。 稍後，程式可以建立新`SKCanvas`上相同的點陣圖，，和在其上繪製多型的物件。
 
-**Hello 點陣圖**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式寫入的文字"Hello，點陣圖"！ 在點陣圖，則將顯示的點陣圖多次。  
+**Hello 點陣圖**頁面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式寫入的文字"Hello，點陣圖"！ 在點陣圖，則將顯示的點陣圖多次。  
 
 建構函式`HelloBitmapPage`一開始先建立`SKPaint`顯示文字的物件。 它會判斷文字字串的維度，並會使用這些維度建立的點陣圖。 然後它會建立`SKCanvas`物件會根據該點陣圖，呼叫`Clear`，然後呼叫`DrawText`。 它一律是個不錯的主意，呼叫`Clear`與新的點陣圖因為新建立的點陣圖可能包含隨機資料。
 
@@ -121,7 +121,7 @@ public partial class HelloBitmapPage : ContentPage
 
 顯示**Hello 點陣圖**頁面示範點陣圖建立的程式會是透明的黑色文字除外。 這就是為什麼透過青色顯示表面的色彩顯示。
 
-文件`Clear`方法的`SKCanvas`描述這些陳述式："會取代在畫布的目前短片中的所有像素。 」 使用文字 「 取代 」 會顯示這些方法的重要特性：所有繪圖方法`SKCanvas`將項目加入至現有的顯示介面。 `Clear`方法_取代_項目已經存在。
+`Clear` 的`SKCanvas`方法檔會使用語句來描述它們:「取代畫布「目前剪輯」中的所有圖元。 使用「取代」這個字會顯示這些方法的重要特性:的所有繪圖方法`SKCanvas`都會將專案新增至現有的顯示介面。 `Clear`方法_取代_項目已經存在。
 
 `Clear` 有兩種不同的版本： 
 
@@ -131,7 +131,7 @@ public partial class HelloBitmapPage : ContentPage
 
 呼叫`Clear`上新的點陣圖不含引數初始化整個點陣圖是完全透明。 後續繪製點陣圖上的任何項目通常會是不透明或部分的不透明。
 
-以下是要嘗試的項目：在  **Hello 點陣圖**頁面上，取代`Clear`方法套用至`bitmapCanvas`以此：
+以下是要嘗試的事項:在 [ **Hello 點陣圖**] 頁面中, `Clear`將套用至的`bitmapCanvas`方法取代為這一個:
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));
@@ -264,7 +264,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 若要修改點陣圖的最具彈性的方式是透過存取實際的像素位元、 主旨的文章涵蓋 **[存取 SkiaSharp 點陣圖像素](pixel-bits.md)** 。 但有許多其他技術來修改並不需要存取的像素位元的點陣圖。
 
-隨附下列點陣圖 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式是 360 像素寬度和高度 480 像素：
+隨附下列點陣圖 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式是 360 像素寬度和高度 480 像素：
 
 ![Mountain Climbers](drawing-images/MountainClimbers.jpg "Mountain Climbers")
 
@@ -496,7 +496,7 @@ public partial class BitmapRotatorPage : ContentPage
 
 呼叫另一個作業通常對點陣圖_翻轉_。 就概念而言，在垂直軸或透過中央的點陣圖的水平軸周圍的三個維度旋轉點陣圖。 垂直翻轉建立鏡像映像。
 
-**點陣圖擋板**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式會示範這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
+          **點陣圖擋板**頁面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式會示範這些程序。 XAML 檔案包含`SKCanvasView`和的垂直和水平翻轉的兩個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -599,4 +599,4 @@ public partial class BitmapFlipperPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

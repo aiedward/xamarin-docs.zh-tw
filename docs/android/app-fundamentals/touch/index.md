@@ -1,34 +1,34 @@
 ---
-title: 觸控和筆勢在 Xamarin.Android 中
-description: 在許多現今的裝置上的觸控式螢幕可讓使用者快速且有效率地與裝置互動自然且直覺的方式。 此互動不是只限於簡單觸控偵測-就能夠使用也筆勢。 比方說，捏合以縮放筆勢是一個非常常見的範例進行捏合以使用者可以放大或縮小的兩個手指在螢幕的一部分。本指南會檢查觸控，並在 Android 中的筆勢。
+title: Xamarin 中的觸控和手勢
+description: 現今許多裝置上的觸控式螢幕可讓使用者以自然且直覺的方式, 快速且有效率地與裝置互動。 這種互動並不只限于簡單的觸控式偵測, 也可以使用手勢。 例如, 縮小到縮放手勢是一個非常常見的範例, 其方式是使用兩個手指來捏合螢幕的一部分, 讓使用者可以放大或縮小。本指南探討 Android 中的觸控和手勢。
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f957c9ff5a0e7c3a0821978703860ed2f723a92
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1efccdd5f56194f002731b0490bad7573321d7d2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013117"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643989"
 ---
-# <a name="touch-and-gestures-in-xamarinandroid"></a>觸控和筆勢在 Xamarin.Android 中
+# <a name="touch-and-gestures-in-xamarinandroid"></a>Xamarin 中的觸控和手勢
 
-_在許多現今的裝置上的觸控式螢幕可讓使用者快速且有效率地與裝置互動自然且直覺的方式。此互動不是只限於簡單觸控偵測-就能夠使用也筆勢。比方說，捏合以縮放筆勢是一個非常常見的範例進行捏合以使用者可以放大或縮小的兩個手指在螢幕的一部分。本指南會檢查觸控，並在 Android 中的筆勢。_
+_現今許多裝置上的觸控式螢幕可讓使用者以自然且直覺的方式, 快速且有效率地與裝置互動。這種互動並不只限于簡單的觸控式偵測, 也可以使用手勢。例如, 縮小到縮放手勢是一個非常常見的範例, 其方式是使用兩個手指來捏合螢幕的一部分, 讓使用者可以放大或縮小。本指南探討 Android 中的觸控和手勢。_
 
-## <a name="touch-overview"></a>觸控式概觀
+## <a name="touch-overview"></a>觸控總覽
 
-iOS 和 Android 會在它們處理觸控的方式類似。 兩者都可以支援多點觸控-在螢幕上的連絡人的許多點-和複雜的筆勢。 本指南介紹一些相似之處的概念，以及實作觸控的任用和筆勢兩種平台。
+iOS 和 Android 在處理觸控的方式上很類似。 兩者都可以在螢幕和複雜手勢上支援多點觸控的連絡人。 本指南介紹一些概念中的相似之處, 以及在兩個平臺上執行觸控和手勢的 particularities。
 
-Android 使用`MotionEvent`物件封裝觸控資料，以及接聽修飾的檢視物件上的方法。
+Android 使用`MotionEvent`物件來封裝觸控資料, 而 View 物件上的方法則用來接聽觸控。
 
-除了擷取觸控資料，iOS 和 Android 會提供方法，以便將解譯成筆勢的風格的模式。 這些筆勢辨識器接著可用來解譯應用程式特有的命令，例如影像的旋轉或上下的頁面。 Android 提供少數幾個支援的筆勢，以及要加入複雜的自訂軌跡簡單的資源。
+除了捕捉觸控資料, iOS 和 Android 也提供將觸控模式解讀為手勢的方法。 這些手勢辨識器可以輪流用來解讀應用程式特定的命令, 例如影像的旋轉或頁面的回合。 Android 提供一些支援的手勢和資源, 讓您可以輕鬆地新增複雜的自訂手勢。
 
-不論您使用 Android 或 iOS 上，選擇觸控和筆勢辨識器可以是令人困惑的其中一個。 本指南建議，在一般情況下，喜好設定，應該會提供筆勢辨識器。 筆勢辨識器會實作為離散類別，以提供更高的關注點分離更佳的封裝。 這可讓您輕鬆地共用的程式碼數量降到最低的不同檢視之間的邏輯。
+無論您是在 Android 或 iOS 上工作, 在觸控和手勢辨識器之間的選擇都可能有點令人困惑。 本指南建議一般喜好設定應給予手勢辨識器。 筆勢辨識器會實作為離散類別, 以提供更好的顧慮分隔和更好的封裝。 這可讓您輕鬆地在不同的視圖之間共用邏輯, 並將寫入的程式碼數量降至最低。
 
-本指南會遵循類似的格式，針對每個作業系統： 首先，Api 會引入，並說明，因為它們是在哪一個觸控式互動是的建置的平台的觸控。 然後，我們探討世界的筆勢辨識器 – 第一次瀏覽一些常用的筆勢，並完成建立自訂的軌跡，應用程式。 最後，您會看到如何追蹤個人的手指來建立 finger-paint 程式使用低層級的觸控追蹤。
+本指南會針對每個作業系統遵循類似的格式: 首先會引進並說明平臺的觸控 Api, 因為它們是建立觸控互動的基礎。 然後, 我們會深入探討手勢辨識器的世界–先探索一些常見的手勢, 然後完成建立應用程式的自訂手勢。 最後, 您將瞭解如何使用低層級的觸控追蹤來追蹤個別手指, 以建立手指繪製程式。
 
 ## <a name="sections"></a>章節
 
@@ -38,12 +38,12 @@ Android 使用`MotionEvent`物件封裝觸控資料，以及接聽修飾的檢�
 
 ## <a name="summary"></a>總結
 
-本指南中，我們會檢查在 Android 中的觸控。 這兩個作業系統中，我們已了解如何啟用觸控式以及如何回應觸控事件。 接下來，我們已了解筆勢和筆勢辨識器的一些 Android 和 iOS 提供處理一些較常見的案例。 我們會檢驗如何建立自訂的筆勢和應用程式中實作它們。 逐步解說示範的概念和 Api 在動作中，每個作業系統，您也看到了如何追蹤個人的手指。
+在本指南中, 我們已檢查 Android 的觸控。 針對這兩種作業系統, 我們已瞭解如何啟用觸控, 以及如何回應觸控事件。 接下來, 我們已瞭解 Android 和 iOS 提供的手勢和一些手勢辨識器, 以處理一些較常見的案例。 我們已檢查如何建立自訂手勢, 並在應用程式中加以執行。 本逐步解說示範了每個作業系統運作的概念和 Api, 同時也看到了如何追蹤個別手指。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 觸控開始 （範例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
-- [Android 觸控最終 （範例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
-- [FingerPaint （範例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint)
+- [Android Touch 開始 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
+- [Android Touch 最終 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
+- [FingerPaint (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)

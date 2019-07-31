@@ -7,16 +7,16 @@ ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 4801aa12acf8eca2384cc5b41d677f7cb0bdd90d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dea7f5e51a864922d56f7b65d19b21a889cbc650
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61292913"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656162"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp 雜訊和撰寫
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 簡單的向量圖形，通常看起來不自然。 直線，線條平滑的曲線，純色不類似真實世界物件缺陷的而。 使用的電腦產生的圖形： 1982年電影時，才能_仲恩_，電腦科學家 Ken Perlin 開始開發使用隨機的程序讓這些映像更真實的紋理的演算法。 在 1997 年 Ken Perlin 會贏得技術分別 Academy 獎。 他的工作都可稱為 Perlin 雜訊和 SkiaSharp 中支援它。 以下為範例：
 
@@ -44,7 +44,7 @@ public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequenc
 
 `seed`參數是亂數產生器的起始點。 雖然指定為浮點值，這個分數會遭到截斷，才能使用它，而且 0 與 1 相同。
 
-**Perlin 雜訊**頁面[ **SkiaSharpFormsDemos**)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例可讓您試驗各種值`baseFrequency`和`numOctaves`引數。 以下是 XAML 檔案：
+**Perlin 雜訊**頁面[ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例可讓您試驗各種值`baseFrequency`和`numOctaves`引數。 以下是 XAML 檔案：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -399,4 +399,4 @@ public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader, SK
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

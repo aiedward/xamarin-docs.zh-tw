@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: a1d49639d28e677ebbe2d7cf870a6e91dfff8575
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 1f29f283207ed8c1382424b3680177886ad2c806
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740921"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653162"
 ---
 # <a name="colors-in-xamarinforms"></a>在 Xamarin.Forms 中的色彩
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithColors)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
 _Xamarin.Forms 提供彈性的跨平台色彩類別。_
 
@@ -25,7 +25,7 @@ _Xamarin.Forms 提供彈性的跨平台色彩類別。_
 `Color`類別提供多種方法來建立色彩的執行個體
 
 -  **命名色彩**-集合的一般具名色彩，包括`Red`， `Green`，和`Blue`。
--  **FromHex** -字串值，類似於 HTML，例如"00FF00 」 中使用的語法。 Alpha 可以選擇性地指定為第一組字元 ("CC00FF00 」)。
+-  **FromHex** -類似于 HTML 中使用之語法的字串值, 例如 "00FF00"。 您可以選擇性地將 Alpha 指定為第一對字元 ("CC00FF00")。
 -  **FromHsla** -色調、 飽和度和亮度`double`具選擇性的 alpha 值 (介於 0.0-1.0) 的值。
 -  **FromRgb** -紅色、 綠色和藍色`int`值 (0-255)。
 -  **FromRgba** -紅色、 綠色、 藍色和 alpha`int`值 (0-255)。
@@ -124,5 +124,5 @@ Xamarin.Forms`Color`類別用來建立平台感知色彩的參考。 它可以�
 
 ## <a name="related-links"></a>相關連結
 
-- [ColorsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithColors)
-- [可繫結選擇器 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
+- [ColorsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+- [可繫結選擇器 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)

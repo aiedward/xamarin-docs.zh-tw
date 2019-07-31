@@ -1,53 +1,53 @@
 ---
 title: Xamarin Live Player 應用程式
-description: 本文件說明 Xamarin Live Player 應用程式，可用來預覽程式碼變更存留在裝置。 它討論安裝程式、 範例、 記錄、 管理裝置，以及更多的設定。
+description: 本檔說明 Xamarin Live Player 應用程式, 可以用來預覽裝置上即時的程式碼變更。 其中討論設定、範例、記錄、設定、管理裝置等等。
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2019
-ms.openlocfilehash: fce0eeae4ef5776842ea1b45c36163118042dc49
-ms.sourcegitcommit: 93b1e2255d59c8ca6674485938f26bd425740dd1
+ms.openlocfilehash: b09ea4e8ec09db5e9bf443476cd3a67e16f02d19
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67157727"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651217"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式
 
 ![預覽功能](~/media/shared/preview.png)
 
 > [!WARNING]
-> Xamarin Live Player 預覽版已結束。 應用程式已無法使用。 下列指示可供客戶繼續使用 Visual Studio 2017 中使用預覽。
+> Xamarin Live Player 預覽已結束。 應用程式已無法再使用。 下列指示是針對繼續使用預覽與 Visual Studio 2017 的客戶提供。
 
 > [!TIP]
-> 您可以使用[XAML 預覽程式](~/xamarin-forms/xaml/xaml-previewer/index.md)在 Visual Studio 2019 或 Visual Studio for Mac，就可以檢視您螢幕的設計，當您編輯它們。
+> 您可以使用 Visual Studio 2019 或 Visual Studio for Mac 中的[XAML 預覽](~/xamarin-forms/xaml/xaml-previewer/index.md)程式來查看您在編輯時的畫面設計。
 
-在啟動時，Xamarin Live Player 應用程式看起來像這樣：
+在啟動時, Xamarin Live Player 應用程式看起來像這樣:
 
-![即時玩家 Android 的應用程式螢幕擷取畫面](player-images/app-android-sml.png)
+![Live Player Android 應用程式螢幕擷取畫面](player-images/app-android-sml.png)
 
-當您按下**與 Visual Studio 配對**，使用相機來掃描條碼，顯示您的電腦上：
+當您按下 [**配對] Visual Studio**時, 請使用相機來掃描電腦上顯示的條碼:
 
-![Android 的條碼掃描器的螢幕擷取畫面](player-images/scan-android-sml.png)
+![Android 條碼掃描器的螢幕擷取畫面](player-images/scan-android-sml.png)
 
-如果連線成功，應該立即執行程式碼在裝置上幾乎 (例如[計算機範例](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
+如果連線成功, 程式碼應該幾乎會立即在裝置上執行 (例如[計算機範例](https://github.com/xamarin/mobile-samples/tree/master/LivePlayer/BasicCalculator):
 
 ![在裝置上執行的範例計算機應用程式](player-images/basic-calculator-sml.png)
 
 ## <a name="options"></a>選項
 
-按下 資訊 按鈕 **(i)** 下方的 應用程式，以顯示**選項**功能表：
+按下應用程式底部的資訊按鈕 **(i)** 以顯示 [**選項**] 功能表:
 
 [![[選項] 功能表的螢幕擷取畫面](player-images/options-sml.png)](player-images/options.png#lightbox)
 
 ### <a name="logs"></a>記錄檔
 
-檢視記錄檔診斷問題。
+查看記錄以診斷問題。
 
 ### <a name="settings"></a>設定
 
-- 切換顯示的編譯和執行階段錯誤。
+- 切換顯示編譯和執行階段錯誤。
 - 版本資訊。
 - 傳送意見反應。
 
@@ -55,43 +55,43 @@ ms.locfileid: "67157727"
 
 ## <a name="managing-devices"></a>管理裝置
 
-若要第一次連接裝置，請依照下列中的指示[需求與安裝](~/tools/live-player/install.md)。 您可以配對多個裝置，然後透過 IDE 進行管理。
+若要第一次連接裝置, 請依照[需求 & 設定](~/tools/live-player/install.md)中的指示進行。 您可以配對多個裝置, 並透過 IDE 來管理它們。
 
 # <a name="visual-studio-2017tabwindows"></a>[Visual Studio 2017](#tab/windows)
 
-在 Visual Studio 中，選擇**工具 > Xamarin Live Player > 管理的裝置...**
+在 Visual Studio 中, 選擇 [**工具] > Xamarin Live Player > 管理裝置 ...**
 
-![管理裝置 視窗](player-images/manage-tools-menu-vs.png)
+![[管理裝置] 視窗](player-images/manage-tools-menu-vs.png)
 
-此視窗可讓您執行下列作業：
+此視窗可讓您執行下列動作:
 
-- 新的裝置配對掃描程式碼
-- 或者將裝置配對中輸入其螢幕上顯示的程式碼
+- 藉由掃描程式碼來配對新裝置
+- 或者, 藉由輸入顯示在螢幕上的程式碼來配對裝置
 - 從清單中移除現有的裝置
 
-您也可以存取此視窗從裝置清單。
+您也可以從裝置清單存取此視窗。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 中，選擇**工具 > (Xamarin Live Player) 管理的裝置...**
+在 Visual Studio for Mac 中, 選擇 工具  **> (Xamarin Live Player) 管理裝置**。
 
-![管理裝置 視窗](player-images/manage-tools-menu.png)
+![[管理裝置] 視窗](player-images/manage-tools-menu.png)
 
-此視窗可讓您執行下列作業：
+此視窗可讓您執行下列動作:
 
-- 新的裝置配對掃描程式碼
-- 或者將裝置配對中輸入其螢幕上顯示的程式碼
+- 藉由掃描程式碼來配對新裝置
+- 或者, 藉由輸入顯示在螢幕上的程式碼來配對裝置
 - 從清單中移除現有的裝置
 
-![管理裝置 視窗](player-images/manage.png)
+![[管理裝置] 視窗](player-images/manage.png)
 
-您也可以存取此視窗從裝置清單：
+您也可以從裝置清單存取此視窗:
 
 ![從裝置清單中選擇 Xamarin Live Player 裝置](player-images/manage-device-menu.png)
 
 -----
 
-如果您遇到任何問題，請參閱[限制與疑難排解](~/tools/live-player/troubleshooting.md)。
+如果您遇到任何問題, 請參閱[限制和疑難排解](~/tools/live-player/troubleshooting.md)。
 
 ## <a name="related-links"></a>相關連結
 

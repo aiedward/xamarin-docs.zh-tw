@@ -6,36 +6,36 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 84767975eece4f8f0efae1fe53463cbc053bd836
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7f68695b4fa6b8abb7938dd96794eb1d0d1d13a5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012860"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643959"
 ---
 # <a name="touch-in-android"></a>Android 中的觸控
 
-更像是 iOS、 Android 建立物件，存放關於使用者的實體與螢幕的互動資料&ndash;`Android.View.MotionEvent`物件。 此物件會保存資料，例如在執行什麼動作、 觸控花了其中放置，多少壓力已套用，以此類推。A`MotionEvent`細分為下列值移入的物件：
+Android 和 iOS 非常類似, 它會建立一個物件, 其中保存使用者與螢幕&ndash; `Android.View.MotionEvent`上的實體互動相關資料。 這個物件會保存資料, 例如執行的動作、觸控發生的位置、套用的壓力等等。`MotionEvent`物件會將移動分解成下列值:
 
--  描述類型的動作，例如初始觸控，也就是在畫面上或在觸控結束之間移動觸控動作程式碼。
+-  描述動作類型的動作代碼, 例如初始觸控、在螢幕上移動的觸控, 或觸控結束。
 
--  一組軸值描述的位置`MotionEvent`和其他移動屬性，例如其中觸控正在進行中、 當觸控發生，及使用多少不足的壓力。
-   軸值可能是裝置，而有所不同，所以上述清單不會描述所有的軸值。
+-  一組軸值, 描述`MotionEvent`和其他移動屬性的位置, 例如觸控的發生位置、觸控發生的時間, 以及使用了多少壓力。
+   軸值可能會因裝置而有所不同, 因此上一個清單不會描述所有的軸值。
 
 
-`MotionEvent`物件會傳遞至應用程式中的適當方法。 有三種方式來回應觸控事件為 Xamarin.Android 應用程式：
+`MotionEvent`物件將會傳遞至應用程式中的適當方法。 有三種方式可讓 Xamarin Android 應用程式回應觸控事件:
 
--  *將指定的事件處理常式`View.Touch`*  -`Android.Views.View`類別具有`EventHandler<View.TouchEventArgs>`哪些應用程式可以指派至的處理常式。 這是一般的.NET 行為。
+-  *將事件處理常式指派`View.Touch`給*- `Android.Views.View`類別具有`EventHandler<View.TouchEventArgs>`可將處理常式指派給的應用程式。 這是典型的 .NET 行為。
 
--  *實作`View.IOnTouchListener`*  -此介面的執行個體可能會指派給使用檢視的檢視物件。 `SetOnListener` 方法。這是功能上相當於指派的事件處理常式`View.Touch`事件。 如果沒有在接觸時，可能需要許多不同的檢視一些常見或共用邏輯，它更有效率的方式是建立類別並實作這個方法比若要指派給每個檢視自己的事件處理常式。
+-  *執行`View.IOnTouchListener`* 此介面的實例可能會使用 view 指派給 view 物件。 `SetOnListener`方法.這在功能上相當於將事件處理常式指派`View.Touch`給事件。 如果有許多不同的視圖在觸及時可能需要的常見或共用邏輯, 建立類別並執行這個方法會比指派每個 view 自己的事件處理常式更有效率。
 
--  *覆寫`View.OnTouchEvent`*  -Android 子類別中的所有檢視`Android.Views.View`。 當檢視接觸到時，Android 會呼叫`OnTouchEvent`並將它傳遞`MotionEvent`物件做為參數。
+-  *覆`View.OnTouchEvent`寫*-Android 子類別`Android.Views.View`中的所有 views。 觸及視圖時, Android 會呼叫`OnTouchEvent` , 並將`MotionEvent`物件當做參數傳給它。
 
 
 > [!NOTE]
-> 並非所有的 Android 裝置支援觸控式螢幕。 
+> 並非所有 Android 裝置都支援觸控畫面。 
 
-將下列標記新增至您的資訊清單檔案會導致 Google Play 只顯示您應用程式會啟用觸控的裝置：
+將下列標記新增至您的資訊清單檔, 會導致 Google Play 只會將您的應用程式顯示到已啟用觸控功能的裝置上:
 
 ```xml
 <uses-configuration android:reqTouchScreen="finger" />
@@ -43,18 +43,18 @@ ms.locfileid: "61012860"
 
 ## <a name="gestures"></a>軌跡
 
-筆勢是手動繪製圖形的觸控式螢幕上。 筆勢可以有一或多個筆劃，組成一連串點的不同畫面的連絡點所建立的每個筆劃。 Android 可以支援許多不同類型的筆勢，從簡單 codingjar 在螢幕上複雜牽涉到多點觸控的筆勢。
+筆勢是觸控式螢幕上的手繪形狀。 筆勢可以有一或多個筆劃, 而每個筆劃則是由與螢幕不同的連絡人點所建立的點序列所組成。 Android 可以支援許多不同類型的手勢, 從螢幕上的簡單 codingjar 到牽涉到多點觸控的複雜手勢。
 
-Android 提供`Android.Gestures`專為管理與回應筆勢的命名空間。 在所有筆勢的核心是一種特殊類別，稱為`Android.Gestures.GestureDetector`。 如同名稱所暗示，此類別會接聽筆勢和根據事件`MotionEvents`作業系統所提供。
+Android 提供專門`Android.Gestures`用來管理和回應手勢的命名空間。 所有手勢的核心都是稱為`Android.Gestures.GestureDetector`的特殊類別。 正如其名, 這個類別會根據作業系統所`MotionEvents`提供的手勢和事件進行接聽。
 
-若要實作動作偵測器，活動必須具現化`GestureDetector`類別，並提供的執行個體`IOnGestureListener`，如下列程式碼片段所示：
+若要執行手勢偵測器, 活動必須具現`GestureDetector`化類別, 並提供的`IOnGestureListener`實例, 如下列程式碼片段所示:
 
 ```csharp
 GestureOverlayView.IOnGestureListener myListener = new MyGestureListener();
 _gestureDetector = new GestureDetector(this, myListener);
 ```
 
-活動也必須實作 OnTouchEvent，並且將 MotionEvent 傳遞給動作偵測器。 下列程式碼片段會顯示這個範例：
+活動也必須執行 OnTouchEvent, 並將 MotionEvent 傳遞至手勢偵測器。 下列程式碼片段顯示這種情況的範例:
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent e)
@@ -64,47 +64,47 @@ public override bool OnTouchEvent(MotionEvent e)
 }
 ```
 
-執行個體時`GestureDetector`識別筆勢的感興趣，它會通知的活動或應用程式所引發的事件，或是透過所提供的回呼`GestureDetector.IOnGestureListener`。
-這個介面會提供各種手勢的六種方法：
+當的實例`GestureDetector`識別感關注的手勢時, 它會藉由引發事件或透過所`GestureDetector.IOnGestureListener`提供的回呼, 來通知活動或應用程式。
+此介面針對各種手勢提供六種方法:
 
--  *OnDown* -點選，就會發生，但不是會釋放時呼叫。
+-  *OnDown* -當點一下出現但未釋放時呼叫。
 
--  *OnFling* -codingjar，就會發生，並提供資料，觸發事件的開始和結束觸控時呼叫。
+-  *OnFling* -在 codingjar 發生時呼叫, 並在觸發事件的開始和結束觸控上提供資料。
 
--  *OnLongPress* -長按發生時呼叫。
+-  *OnLongPress* -當長按下出現時呼叫。
 
--  *OnScroll* -捲動事件發生時呼叫。
+-  *OnScroll* -發生 scroll 事件時呼叫。
 
--  *OnShowPress* -呼叫 OnDown 發生之後，進行移動，或事件尚未執行。
+-  *OnShowPress* -在 OnDown 發生後呼叫, 而且尚未執行 move 或 up 事件。
 
--  *OnSingleTapUp* -只要點選一下發生時呼叫。
+-  *OnSingleTapUp* -在進行單鍵時呼叫。
 
 
-在許多情況下應用程式可能只會感興趣的筆勢子集。 在此情況下，應用程式應該擴充 GestureDetector.SimpleOnGestureListener 類別並覆寫對應到他們感興趣的事件的方法。
+在許多情況下, 應用程式可能只對手勢的子集感興趣。 在此情況下, 應用程式應該擴充類別 GestureDetector. SimpleOnGestureListener, 並覆寫對應至其感興趣之事件的方法。
 
-## <a name="custom-gestures"></a>自訂軌跡
+## <a name="custom-gestures"></a>自訂手勢
 
-筆勢是絕佳的方式，讓使用者與應用程式互動。 我們到目前為止所看到的 Api 的簡單的手勢，即已足夠，但卻可能頗稍微繁重的更複雜的筆勢。 為了協助進行更複雜的筆勢，Android 會提供另一組的 API，讓您更容易一些自訂的筆勢相關聯的負擔 Android.Gestures 命名空間中。
+手勢是讓使用者與應用程式互動的絕佳方式。 到目前為止, 我們所見到的 Api 對簡單手勢已經足夠, 但可能會對更複雜的手勢證明有點繁重。 為了協助進行更複雜的手勢, Android 提供了另一組在 Android 中的 API。手勢命名空間, 可減輕與自訂手勢相關聯的一些負擔。
 
-### <a name="creating-custom-gestures"></a>建立自訂軌跡
+### <a name="creating-custom-gestures"></a>建立自訂手勢
 
-自 Android 1.6，Android SDK 隨附預先安裝筆勢 builder 在模擬器上的應用程式。 此應用程式可讓開發人員建立預先定義的筆勢，您可以內嵌在應用程式。 下列螢幕擷取畫面顯示手勢產生器的範例：
+從 Android 1.6 開始, Android SDK 隨附在模擬器上預先安裝的應用程式, 稱為手勢 Builder。 此應用程式可讓開發人員建立可內嵌在應用程式中的預先定義手勢。 下列螢幕擷取畫面顯示手勢產生器的範例:
 
-[![螢幕擷取畫面的手勢產生器範例筆勢](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
+[![具有範例手勢的手勢產生器螢幕擷取畫面](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
-此應用程式，稱為筆勢工具的改良的版本可以找到 Google Play。 筆勢工具非常類似筆勢產生器不同之處在於它可讓您在建立之後，測試筆勢。 這個下一步 的螢幕擷取畫面顯示手勢產生器：
+您可以 Google Play 找到此應用程式的改良版本, 稱為手勢工具。 手勢工具非常類似手勢產生器, 不同之處在于它可讓您在建立筆勢之後進行測試。 下一個螢幕擷取畫面顯示手勢產生器:
 
-[![筆勢工具的螢幕擷取畫面範例筆勢](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
+[![筆勢工具的螢幕擷取畫面與範例手勢](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
-筆勢工具更適用於建立自訂的筆勢，因為它可讓正在建立要測試的筆勢，並輕易地透過 Google Play 取得。
+手勢工具在建立自訂手勢時更有用, 因為它可讓手勢在建立時進行測試, 並可透過 Google Play 輕鬆取得。
 
-筆勢工具可讓您建立筆勢在螢幕上繪製，並且指派名稱。 建立筆勢之後儲存在您的裝置的 SD 卡上的二進位檔中。 此檔案必須從裝置擷取，然後封裝與資料夾 /Resources/raw 中的應用程式。 這個檔案可以擷取從使用 Android Debug Bridge 的模擬器。 下列範例會示範從 Galaxy Nexus 的檔案複製到應用程式的資源目錄：
+手勢工具可讓您在螢幕上繪製並指派名稱, 藉以建立手勢。 在建立手勢之後, 它們會儲存在您裝置的 SD 記憶卡上的二進位檔案中。 此檔案必須從裝置中取出, 然後以應用程式封裝在/Resources/raw. 資料夾中 您可以使用 Android Debug Bridge 從模擬器抓取此檔案。 下列範例顯示如何將檔案從 Galaxy 結點複製到應用程式的資原始目錄:
 
 ```shell
 $ adb pull /storage/sdcard0/gestures <projectdirectory>/Resources/raw
 ```
 
-一旦您已擷取的檔案必須與您應用程式內目錄 /Resources/原始一起封裝。 若要使用此筆勢檔案最簡單的方式是將檔案載入 GestureLibrary，如下列程式碼片段所示：
+一旦您取出檔案, 它就必須在目錄/Resources/raw. 中與您的應用程式一起封裝 使用此手勢檔案最簡單的方式, 就是將檔案載入至 GestureLibrary, 如下列程式碼片段所示:
 
 ```csharp
 GestureLibrary myGestures = GestureLibraries.FromRawResources(this, Resource.Raw.gestures);
@@ -115,9 +115,9 @@ if (!myGestures.Load())
 }
 ```
 
-### <a name="using-custom-gestures"></a>使用自訂軌跡
+### <a name="using-custom-gestures"></a>使用自訂手勢
 
-若要辨識的自訂活動中的筆勢，您必須使用 Android.Gesture.GestureOverlay 物件加入至其配置。 下列程式碼片段示範如何以程式設計方式新增 GestureOverlayView 活動：
+若要辨識活動中的自訂手勢, 它必須將 GestureOverlay 物件新增至其版面配置。 下列程式碼片段顯示如何以程式設計方式將 GestureOverlayView 新增至活動:
 
 ```csharp
 GestureOverlayView gestureOverlayView = new GestureOverlayView(this);
@@ -125,7 +125,7 @@ gestureOverlayView.AddOnGesturePerformedListener(this);
 SetContentView(gestureOverlayView);
 ```
 
-下列 XML 程式碼片段示範如何以宣告方式新增 GestureOverlayView:
+下列 XML 程式碼片段顯示如何以宣告方式新增 GestureOverlayView:
 
 ```xml
 <android.gesture.GestureOverlayView
@@ -134,14 +134,14 @@ SetContentView(gestureOverlayView);
     android:layout_height="match_parent" />
 ```
 
-`GestureOverlayView`有數個會繪製筆勢的程序期間引發的事件。 最感興趣的事件是`GesturePerformed`。 當使用者完成繪製其筆勢時，會引發這個事件。
+`GestureOverlayView`有數個事件, 會在繪製手勢的過程中引發。 最有趣的事件是`GesturePerformed`。 當使用者完成其手勢繪製時, 就會引發此事件。
 
-活動會引發這個事件，當要求`GestureLibrary`，試著符合筆勢與筆勢的其中一個使用者所建立之筆勢的工具。 `GestureLibrary` 會傳回預測的物件清單。
+當引發這個事件時, 活動會要求`GestureLibrary`嘗試並比對使用者與手勢工具所建立的其中一項手勢。 `GestureLibrary`將傳回預測物件的清單。
 
-每個預測物件保留的分數和中的筆勢的其中一個名稱`GestureLibrary`。 越高的分數，就越可能筆勢在預測中名為比對使用者繪製的筆勢。
-一般而言，分數低於 1.0 會被視為不佳的相符項目。
+每個預測物件都包含其中一個手勢`GestureLibrary`的分數和名稱。 分數越高, 預測中所命名的手勢就越可能符合使用者所繪製的手勢。
+一般來說, 低於1.0 的分數會視為不相符的專案。
 
-下列程式碼會顯示相符的筆勢的範例：
+下列程式碼顯示比對手勢的範例:
 
 ```csharp
 private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayView.GesturePerformedEventArgs gesturePerformedEventArgs)
@@ -163,11 +163,11 @@ private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayV
 }
 ```
 
-以此方式完成，您應該了解如何在 Xamarin.Android 應用程式中使用觸控和筆勢。 讓我們現在移至逐步解說，並查看所有可用的範例應用程式中的概念。
+完成這項作業之後, 您應該瞭解如何在 Xamarin Android 應用程式中使用觸控和手勢。 現在讓我們繼續進行逐步解說, 並查看實用範例應用程式中的所有概念。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 觸控開始 （範例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_start)
-- [Android 觸控最終 （範例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/Touch_final)
+- [Android Touch 開始 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
+- [Android Touch 最終 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)

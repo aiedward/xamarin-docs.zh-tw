@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 294483e8b831aa085fc338eb05147ced1098c1c5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 12f34e7bc77fd3978ccfdfb57cc95747123c5603
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508253"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657236"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>使用身分識別提供者驗證使用者
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-oauthnativeflow)
 
 _Xamarin.Auth 是跨平台 SDK，以驗證使用者，並儲存他們的帳戶。它包含可支援使用身分識別提供者，例如 Google、 Microsoft、 Facebook 和 Twitter OAuth 驗證器。這篇文章說明如何使用 Xamarin.Auth 管理驗證程序，在 Xamarin.Forms 應用程式。_
 
@@ -267,7 +267,7 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 
 ## <a name="related-links"></a>相關連結
 
-- [OAuthNativeFlow （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/OAuthNativeFlow/)
+- [OAuthNativeFlow （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-oauthnativeflow)
 - [原生應用程式的 OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-native-apps-12)
 - [使用 OAuth2.0 存取 Google Api](https://developers.google.com/identity/protocols/OAuth2)
 - [Xamarin.Auth (NuGet)](https://www.nuget.org/packages/xamarin.auth/)

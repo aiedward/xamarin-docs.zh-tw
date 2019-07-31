@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 11ec23abda6f1faae19ba9108150b9aaf55ef290
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: efb55b060243950640978ae2cfc3fe6998efdb87
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510572"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643466"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -376,7 +376,7 @@ StartActivityForResult (intentCreate, write_request_code);
 
 [![使用者在下載目錄中將檔案名變更為 NewDoc 的螢幕擷取畫面](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
-當使用者按下[儲存`OnActivityResult` ] 時, `Android.Net.Uri`會傳遞新建立之檔案的 (可透過存取`data.Data`)。 Uri 可以用來將資料串流至新檔案:
+當使用者按下  [儲存`OnActivityResult` ] 時, `Android.Net.Uri`會傳遞新建立之檔案的 (可透過存取`data.Data`)。 Uri 可以用來將資料串流至新檔案:
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -713,6 +713,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 ## <a name="related-links"></a>相關連結
 
-- [KitKat 範例](https://developer.xamarin.com/samples/monodroid/KitKat/)
+- [KitKat 範例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/kitkat)
 - [Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)
 - [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

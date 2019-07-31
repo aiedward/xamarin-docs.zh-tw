@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: c85dd8dbc654ee9c55248db1133135a2806f4bf2
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5d4d7358ca6188f2528ea200f901823f04324ba3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829885"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647473"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表 (CSS) 樣式設定 Xamarin.Forms 應用程式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin.Forms 可支援使用階層式樣式表 (CSS) 樣式視覺項目。_
 
@@ -76,7 +76,7 @@ stacklayout>image {
 > [!NOTE]
 > 目前，所有可透過 XAML 樣式的樣式無法執行與 CSS。 不過，XAML 樣式可用來補充 CSS Xamarin.Forms 目前不支援的屬性。 如需有關 XAML 樣式的詳細資訊，請參閱[樣式設定 Xamarin.Forms 應用程式使用 XAML 樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
-[MonkeyAppCSS](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)範例示範如何使用 CSS 樣式是簡單的應用程式，以及下列的螢幕擷取畫面所示：
+[MonkeyAppCSS](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)範例示範如何使用 CSS 樣式是簡單的應用程式，以及下列的螢幕擷取畫面所示：
 
 [![CSS 樣式 MonkeyApp 主頁面](css-images/MonkeyAppMainPage.png "MonkeyApp 主頁面上，使用 CSS 樣式")](css-images/MonkeyAppMainPage-Large.png#lightbox "MonkeyApp 主頁面上，使用 CSS 樣式")
 
@@ -187,7 +187,7 @@ stacklayout {
 此選取器會識別任何[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)使用樣式表中，並將其邊界設定為 20 個粗細一致的頁面上的項目。
 
 > [!NOTE]
-> `element`選取器不會識別指定之型別的子類別。
+> `element`選取器不會識別指定之類型的子類別。
 
 ### <a name="selecting-elements-by-base-class"></a>基底類別所選取項目
 
@@ -342,7 +342,7 @@ Xamarin.Forms 也支援下列 CSS 選取器：
 |`.class`|`.header`|選取所有項目`StyleClass`包含 'header' 的屬性。 請注意，此選取器是區分大小寫。|
 |`#id`|`#email`|選取所有項目`StyleId`設定為`email`。 如果`StyleId`未設定，後援`x:Name`。 使用 XAML 時,`x:Name`最好透過`StyleId`。 請注意，此選取器是區分大小寫。|
 |`*`|`*`|選取所有項目。|
-|`element`|`label`|選取類型的所有項目`Label`，但不是子類別。 請注意，此選取器不區分大小寫。|
+|`element`|`label`|選取類型`Label`的所有元素, 而不是子類別。 請注意，此選取器不區分大小寫。|
 |`^base`|`^contentpage`|選取所有項目`ContentPage`的基底類別，包括`ContentPage`本身。 請注意，此選取器不區分大小寫，而且不是 CSS 規格的一部分。|
 |`element,element`|`label,button`|選取所有`Button`項目和所有`Label`項目。 請注意，此選取器不區分大小寫。|
 |`element element`|`stacklayout label`|選取所有`Label`內的項目`StackLayout`。 請注意，此選取器不區分大小寫。|
@@ -428,7 +428,7 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 
 此外，還有任何`inherit`值，因此繼承不受支援。 因此您不能例如，設定`font-size`版面配置上的屬性，並預期所有[ `Label` ](xref:Xamarin.Forms.Label)版面配置，以繼承值中的執行個體。 唯一例外的是`direction`屬性，其預設值的`inherit`。
 
-### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms 的特定屬性
+### <a name="xamarinforms-specific-properties"></a>Xamarin. 表單特定屬性
 
 也支援下列 Xamarin.Forms 特定 CSS 屬性 (在**值**資料行中，類型為_斜體_，而字串常值則`gray`):
 
@@ -447,9 +447,9 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 |`-xf-thumb-color`|`Slider`|_色彩_ \| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-spacing`|`StackLayout`|_雙精度浮點數_ \| `initial` |`-xf-spacing: 8;`|
 
-### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms 殼層特定屬性
+### <a name="xamarinforms-shell-specific-properties"></a>Xamarin。 Forms Shell 特定屬性
 
-也支援下列 Xamarin.Forms 殼層特定 CSS 屬性 (在**值**資料行中，類型為_斜體_，而字串常值則`gray`):
+下列是也支援的 Xamarin Shell 特定 CSS 屬性 (在 [值]**資料**行中, 類型為_斜體_, 而字串常`gray`值為):
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
@@ -504,10 +504,10 @@ Xamarin.Forms 所支援下列的 CSS 屬性 (在**值**資料行中，類型為_
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms 3.0 CSS 影片**
+**Xamarin. Forms 3.0 CSS 影片**
 
 ## <a name="related-links"></a>相關連結
 
-- [MonkeyAppCSS （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
+- [MonkeyAppCSS （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 - [資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [使用 XAML 樣式設定 Xamarin.Forms 應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)

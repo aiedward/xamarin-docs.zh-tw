@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: b2e441a8e1443d1d32d553e9bbf1126fe5e380e7
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: bf9b630613dcc5c25dac96cad71e54022ead1812
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508851"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649589"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從 Xamarin.Forms XAML 檔案。原生的檢視，可以設定屬性和事件處理常式，它們可以與 Xamarin.Forms 檢視互動。這篇文章會示範如何使用 Xamarin.Forms XAML 檔案中的原生檢視。_
 
@@ -490,9 +490,9 @@ class MySpinner : Spinner
 
 ## <a name="related-links"></a>相關連結
 
-- [NativeSwitch （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
-- [Forms2Native （範例）](https://developer.xamarin.com/samples/xamarin-forms/Forms2Native/)
-- [NativeViewInsideContentView （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeViewInsideContentView/)
-- [SubclassedNativeControls （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/SubclassedNativeControls/)
+- [NativeSwitch （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+- [Forms2Native （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/forms2native)
+- [NativeViewInsideContentView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
+- [SubclassedNativeControls （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
 - [原生格式](~/xamarin-forms/platform/native-forms.md)
 - [在 XAML 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)

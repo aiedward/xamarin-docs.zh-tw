@@ -1,67 +1,67 @@
 ---
-title: 將拖放在 Xamarin.iOS 中
-description: 本文件說明如何實作拖放和卸除在使用 iOS 11 中導入的 Api 的 Xamarin.iOS 應用程式中。 特別是，它會討論啟用拖放 UITableView。
+title: 在 Xamarin 中拖放
+description: 本檔說明如何使用 iOS 11 中引進的 Api, 在 Xamarin iOS 應用程式中執行拖放功能。 特別是, 它會討論如何在 UITableView 中啟用拖放功能。
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/05/2017
-ms.openlocfilehash: aa93e015a399e733a2bb52f087a1e482bc23a00a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: cb982b1cd2340262101ff09bce2c37c69864b8dc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169631"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656475"
 ---
-# <a name="drag-and-drop-in-xamarinios"></a>將拖放在 Xamarin.iOS 中
+# <a name="drag-and-drop-in-xamarinios"></a>在 Xamarin 中拖放
 
-_實作適用於 iOS 11 功能_
+_執行 iOS 11 的拖放_
 
-iOS 11 包含拖曳和卸除在 iPad 上的應用程式之間複製資料的支援。 使用者可以選取，並將所有類型的內容，從放置的應用程式的並存，，或藉由拖曳 [應用程式] 圖示，其會觸發此應用程式開啟，以及允許卸除的資料：
+iOS 11 包含拖放支援, 可在 iPad 上的應用程式之間複製資料。 使用者可以從位於並排的應用程式中選取並拖曳所有類型的內容, 或是藉由拖曳應用程式圖示來將觸發應用程式開啟並允許卸載資料:
 
-![拖放到資訊應用程式的自訂應用程式範例](drag-and-drop-images/drag-drop-sml.png)
+![將自訂應用程式中的範例拖放到 Notes 應用程式](drag-and-drop-images/drag-drop-sml.png)
 
 > [!NOTE]
-> 拖曳和置放才可用在 iPhone 上的相同應用程式。
+> 只有在 iPhone 上的相同應用程式中才能使用拖放功能。
 
-請考慮支援拖曳和卸除的作業任何地方建立或編輯內容：
+請考慮支援可建立或編輯內容的任何位置的拖放作業:
 
-- 文字控制項支援拖放，建置 iOS 11，而不需要任何其他工作的所有應用程式。
-- 資料表檢視 」 和 「 集合檢視包含增強功能，在 iOS 11 可簡化將拖曳並拖放行為。
-- 任何其他檢視中可以對支援拖曳和卸除與其他自訂。
+- 文字控制項支援針對 iOS 11 所建立之所有應用程式的拖放功能, 而不需要任何額外的工作。
+- 資料表視圖和集合視圖包括 iOS 11 中的增強功能, 可簡化拖放行為的加入。
+- 任何其他的視圖都可以進行其他自訂, 以支援拖放作業。
 
-當新增拖曳和置放支援您的應用程式時，您可以提供不同精確度層級的內容;例如，您可能會提供格式化的文字和純文字版的資料，讓其符合至拖曳目標的最佳選擇接收應用程式。 它也是可以自訂拖曳視覺效果，並啟用一次將多個項目。
+將拖放支援新增至您的應用程式時, 您可以提供不同層級的內容精確度;例如, 您可以同時提供格式化的文字和純文字版本的資料, 讓接收的應用程式可以選擇哪一個最適合用於拖曳目標。 也可以自訂拖曳視覺效果, 同時啟用一次拖曳多個專案。
 
-## <a name="drag-and-drop-with-text-controls"></a>將拖放文字控制項
+## <a name="drag-and-drop-with-text-controls"></a>使用文字控制項拖放
 
-`UITextView` 和`UITextField`會自動支援 將選取的文字，拖放文字中的內容。
+`UITextView`和`UITextField`會自動支援拖曳選取的文字, 並在中放置文字內容。
 
 <a name="uitableview" />
 
-## <a name="drag-and-drop-with-uitableview"></a>將拖放與 UITableView
+## <a name="drag-and-drop-with-uitableview"></a>使用 UITableView 拖放
 
-`UITableView` 有內建處理拖曳和卸除資料表的資料列，要求只有幾個方法，以啟用預設的行為與互動。
+`UITableView`具有與資料表資料列之拖放互動的內建處理, 只需要幾個方法, 即可啟用預設行為。
 
-有相關的兩個介面：
+其中包含兩個介面:
 
-- `IUITableViewDragDelegate` – [資料表] 檢視中起始拖放時，就會封裝資訊。
-- `IUITableViewDropDelegate` – 處理資訊時卸除正在嘗試進行已完成。
+- `IUITableViewDragDelegate`–在資料表視圖中起始拖曳時封裝資訊。
+- `IUITableViewDropDelegate`–在嘗試和完成 drop 時處理資訊。
 
-在  [DragAndDropTableView 範例](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)這兩個介面都實作上`UITableViewController`類別，以及委派和資料來源。 在其指派`ViewDidLoad`方法：
+在[DragAndDropTableView 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)中, 這兩個介面同時在`UITableViewController`類別上執行, 以及委派和資料來源。 它們是在`ViewDidLoad`方法中指派:
 
 ```csharp
 this.TableView.DragDelegate = this;
 this.TableView.DropDelegate = this;
 ```
 
-這兩個介面的最小必要的程式碼會如下所述。
+以下說明這兩個介面的最低必要程式碼。
 
-### <a name="table-view-drag-delegate"></a>資料表檢視拖曳委派
+### <a name="table-view-drag-delegate"></a>資料表視圖拖曳委派
 
-唯一的方法_必要_若要支援從資料表檢視中拖曳資料列`GetItemsForBeginningDragSession`。 如果使用者開始拖曳的資料列時，就會呼叫這個方法。
+支援從資料表  視圖拖曳資料列的唯一方法是`GetItemsForBeginningDragSession`。 如果使用者開始拖曳資料列, 就會呼叫這個方法。
 
-實作如下所示。 擷取拖曳的資料列相關聯的資料、 進行編碼，並設定`NSItemProvider`可判斷應用程式將如何處理作業的"drop"部分 (比方說，不論它們能夠處理的資料類型、 `PlainText`，在範例中):
+執行如下所示。 它會抓取與拖曳的資料列相關聯的資料、將其編碼`NSItemProvider` , 並設定, 以決定應用程式如何處理作業的「卸載」部分 (例如, 它們是否可以在範例中處理`PlainText`資料類型):
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -85,19 +85,19 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 }
 ```
 
-可自訂的拖放行為，例如提供多個資料表示法可所採取的優點在目標應用程式中實作拖放在委派上有許多選擇性方法 (例如純文字，以及為向量的格式化文字和點陣圖版本的繪圖）。 您也可以提供拖放在相同應用程式時要使用的自訂資料表示法。
+在拖曳委派上有許多選擇性的方法, 可以實作為自訂拖曳行為, 例如提供多個資料標記法, 以在目標應用程式 (例如格式化的文字和純文字或向量) 中利用。繪圖的點陣圖版本)。 您也可以提供自訂資料標記法, 以在相同應用程式內拖放時使用。
 
-### <a name="table-view-drop-delegate"></a>資料表檢視卸除委派
+### <a name="table-view-drop-delegate"></a>資料表視圖卸載委派
 
-在拖曳作業會透過資料表檢視中，或完成其上方時，會呼叫置放在委派上的方法。 所需的方法會決定是否要卸除，允許的資料，以及要採取哪些動作，如果卸除已完成：
+當拖曳作業在資料表視圖上發生或在其上方完成時, 會呼叫 drop 委派上的方法。 必要的方法會決定是否允許卸載資料, 以及當卸載完成時, 會採取哪些動作:
 
-- `CanHandleDropSession` – 雖然拖曳正在進行中，並可能正在卸除應用程式，這個方法會判斷所拖曳的資料是否可卸除。
-- `DropSessionDidUpdate` – 拖曳正在進行時，會呼叫這個方法來判斷哪些動作的用途。 資料表檢視拖曳到橢圓形上，拖曳工作階段中，與可能的索引路徑的資訊所有可用來判斷視覺化回饋提供給使用者的行為。
-- `PerformDrop` – 當使用者完成拖放 （藉由提升他們的手指），這個方法會擷取所拖曳的資料，並修改的資料表檢視，以加入新的資料列 （或資料列） 中的資料。
+- `CanHandleDropSession`–當拖曳正在進行中, 而且可能會在應用程式上卸載時, 這個方法會決定是否允許卸載所拖曳的資料。
+- `DropSessionDidUpdate`–正在進行拖曳時, 會呼叫這個方法來決定要執行的動作。 資料表視圖中的資訊會拖曳到拖放上、拖曳會話和可能的索引路徑, 全都用來判斷提供給使用者的行為和視覺效果意見反應。
+- `PerformDrop`–當使用者完成卸載 (藉由將其手指放) 時, 這個方法會解壓縮所拖曳的資料, 並修改資料表視圖, 以便在新的資料列 (或列) 中加入資料。
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession` 指出資料表檢視表是否可接受拖曳的資料。 在此程式碼片段中，`CanLoadObjects`用來確認此資料表檢視，可以接受字串資料。
+`CanHandleDropSession`指出資料表視圖是否可以接受所拖曳的資料。 在此程式碼片段中`CanLoadObjects` , 是用來確認此資料表視圖可以接受字串資料。
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,10 +108,10 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-`DropSessionDidUpdate`拖曳作業正在進行，以提供視覺提示給使用者時重複呼叫方法。
+當拖曳作業正在進行時, 會重複呼叫方法,以提供視覺提示給使用者。`DropSessionDidUpdate`
 
-在下面的程式碼中`HasActiveDrag`用來判斷作業是否源自目前的資料表檢視中。 若是如此，只有單一資料列可以移動。
-如果拖曳另一個來源，將會指出複製作業：
+在下列程式碼中`HasActiveDrag` , 是用來判斷作業是否源自于目前資料表的視圖。 若是如此, 則只允許移動單一資料列。
+如果從另一個來源拖曳, 則會顯示覆製作業:
 
 ```csharp
 public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDropSession session, NSIndexPath destinationIndexPath)
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-卸除作業可以是其中一個`Cancel`， `Move`，或`Copy`。
+Drop 作業可以是`Cancel`、 `Move`或`Copy`其中一個。
 
-卸除意圖可以插入新的資料列，或新增/附加至現有的資料列的資料。
+Drop 意圖可以是插入新的資料列, 或將資料加入或附加至現有的資料列。
 
 #### <a name="performdrop"></a>PerformDrop
 
-`PerformDrop`使用者完成作業，並修改以反映卸除的資料的資料表檢視和資料來源時，會呼叫方法。
+當使用者完成作業時, 會呼叫方法,並修改資料表視圖和資料來源以反映捨棄的資料。`PerformDrop`
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)
@@ -176,20 +176,20 @@ public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coord
 }
 ```
 
-可以新增其他程式碼，以非同步方式載入大型資料物件。
+您可以加入額外的程式碼, 以非同步方式載入大型資料物件。
 
-### <a name="testing-drag-and-drop"></a>測試拖曳和置放
+### <a name="testing-drag-and-drop"></a>測試拖放
 
-您必須用來測試的 iPad[範例](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)。
-開啟另一個應用程式 （例如附註） 與範例，並拖曳它們之間的資料列和文字：
+您必須使用 iPad 來測試[範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)。
+將範例與另一個應用程式 (例如記事) 一起開啟, 然後在它們之間拖曳資料列和文字:
 
-![拖放作業正在進行中的螢幕擷取畫面](drag-and-drop-images/01-sml.png)
+![拖曳操作進行中的螢幕擷取畫面](drag-and-drop-images/01-sml.png)
 
 
 ## <a name="related-links"></a>相關連結
 
-- [將拖放人性化介面指導方針 (Apple)](https://developer.apple.com/ios/human-interface-guidelines/interaction/drag-and-drop/)
-- [將拖放資料表檢視範例](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)
-- [將拖放集合檢視範例](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
-- [拖曳和卸除 (WWDC) （影片） 簡介](https://developer.apple.com/videos/play/wwdc2017/203/)
-- [將拖放與集合和資料表檢視 (WWDC) （影片）](https://developer.apple.com/videos/play/wwdc2017/223/)
+- [拖放人工介面指導方針 (Apple)](https://developer.apple.com/ios/human-interface-guidelines/interaction/drag-and-drop/)
+- [拖放資料表視圖範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
+- [拖放集合視圖範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+- [拖放簡介 (WWDC) (影片)](https://developer.apple.com/videos/play/wwdc2017/203/)
+- [具有集合和資料表視圖的拖放 (WWDC) (影片)](https://developer.apple.com/videos/play/wwdc2017/223/)

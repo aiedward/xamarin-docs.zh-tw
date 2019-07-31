@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上 VisualElement 提高權限
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 Android 平台專屬控制的權限提升 VisualElements API 21 或更新版本為目標的應用程式。
+title: Android 上的 VisualElement 提高許可權
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Android 平臺特定的, 控制以 API 21 或更新版本為目標的應用程式上的 V s 提升許可權。
 ms.prod: xamarin
 ms.assetid: 5BFD6175-2BBD-41CD-B8F9-521B4750B708
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: c7cc6b560ea91dca89c468271b89d1dcedfcda53
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 243e351f29b056a6d4a567b8e39240a87f37aec2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65927032"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651877"
 ---
-# <a name="visualelement-elevation-on-android"></a>在 Android 上 VisualElement 提高權限
+# <a name="visualelement-elevation-on-android"></a>Android 上的 VisualElement 提高許可權
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台專屬是用來控制提高權限或疊置順序，在應用程式上的視覺元素的目標 API 21 或更新版本。 提高權限的圖形化元素會決定繪製的順序，與視覺項目有較大的 Z 值 occluding 視覺項目具有較低的 Z 值。 它由在 XAML 中設定`VisualElement.Elevation`附加屬性`boolean`值：
+此 Android 平臺特定是用來控制以 API 21 或更新版本為目標之應用程式上的視覺元素的提高許可權或迭置順序。 提高權限的圖形化元素會決定繪製的順序，與視覺項目有較大的 Z 值 occluding 視覺項目具有較低的 Z 值。 它由在 XAML 中設定`VisualElement.Elevation`附加屬性`boolean`值：
 
 ```xaml
 <ContentPage ...
@@ -87,7 +87,7 @@ public class AndroidElevationPageCS : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

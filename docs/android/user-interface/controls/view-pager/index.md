@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 0535dc5d2abcfa1587b8101d7a4e382782efb8ca
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c7aae672d284d4105c6b09dfe81b72cf4ad519b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510198"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645507"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -31,10 +31,10 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
 
 本指南會示範這兩種方法: 
 
--   在[具有 Views 的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-views.md)中, 會開發[TreePager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)應用程式, 以示範`ViewPager`如何使用來顯示樹狀目錄的視圖 (落葉和長時間樹狀結構的影像資源庫)。 
+-   在[具有 Views 的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-views.md)中, 會開發[TreePager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)應用程式, 以示範`ViewPager`如何使用來顯示樹狀目錄的視圖 (落葉和長時間樹狀結構的影像資源庫)。 
     `PagerTabStrip`和`PagerTitleStrip`可用來顯示可協助進行頁面導覽的標題。
 
--   在[含有片段的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)中, 會開發稍微複雜的[FlashCardPager](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager/)應用程式, 以示範`ViewPager`如何`Fragment`使用搭配來建立應用程式, 以將數學問題呈現為快閃卡並回應使用者輸入。 
+-   在[含有片段的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)中, 會開發稍微複雜的[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)應用程式, 以示範`ViewPager`如何`Fragment`使用搭配來建立應用程式, 以將數學問題呈現為快閃卡並回應使用者輸入。 
 
 
 ## <a name="requirements"></a>需求
@@ -85,5 +85,5 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
 
 ## <a name="related-links"></a>相關連結
 
-- [TreePager (範例)](https://developer.xamarin.com/samples/monodroid/UserInterface/TreePager)
-- [FlashCardPager (範例)](https://developer.xamarin.com/samples/monodroid/UserInterface/FlashCardPager)
+- [TreePager (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)
+- [FlashCardPager (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)

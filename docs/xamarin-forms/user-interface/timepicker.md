@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Forms TimePicker
-description: TimePicker 是 Xamarin.Forms 檢視，可讓使用者選取的時間。 這篇文章說明如何使用 Xamarin.Forms 應用程式中的 TimePicker。
+description: TimePicker 是一個 [Xamarin] 表單檢視, 可讓使用者選取時間。 這篇文章說明如何使用 Xamarin.Forms 應用程式中的 TimePicker。
 ms.prod: xamarin
 ms.assetid: 2E99FB23-B82D-4EB4-AFB3-5002E736E7B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2018
-ms.openlocfilehash: 1b929b507d738cb4000bab20cfab5480b2222ed2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d5c4cc6600c8192718257abf4ef1cbec49c12eee
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024011"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656491"
 ---
 # <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 
 _Xamarin.Forms 檢視，可讓使用者選取的時間。_
 
@@ -79,7 +79,7 @@ TimePicker timePicker = new TimePicker
 
 ## <a name="timepicker-in-an-application"></a>應用程式中的 TimePicker
 
-[ **SetTimer** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)範例包括[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)， [ `Entry` ](xref:Xamarin.Forms.Entry)，與[ `Switch` ](xref:Xamarin.Forms.Switch)其頁面上的檢視。 `TimePicker`可用來選取時間，以及警示的對話方塊會顯示，以提醒使用者中的文字時，時間就會發生`Entry`提供`Switch`上切換。 以下是 XAML 檔案：
+[ **SetTimer** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)範例包括[ `TimePicker` ](xref:Xamarin.Forms.TimePicker)， [ `Entry` ](xref:Xamarin.Forms.Entry)，與[ `Switch` ](xref:Xamarin.Forms.Switch)其頁面上的檢視。 `TimePicker`可用來選取時間，以及警示的對話方塊會顯示，以提醒使用者中的文字時，時間就會發生`Entry`提供`Switch`上切換。 以下是 XAML 檔案：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -165,7 +165,7 @@ public partial class MainPage : ContentPage
 [![選取時間](timepicker-images/timepicker-open.png "選取時間")](timepicker-images/timepicker-open-large.png#lightbox "選取時間")
 
 > [!TIP]
-> 在 Android 上， [ `TimePicker` ](xref:Xamarin.Forms.TimePicker)對話方塊可以藉由覆寫自訂`CreateTimePickerDialog`中自訂轉譯器的方法。 這可讓，比方說，可以加入至對話方塊中的其他按鈕。
+> 在 Android 上， [`TimePicker`](xref:Xamarin.Forms.TimePicker)對話方塊可以藉由覆寫自訂`CreateTimePickerDialog`中自訂轉譯器的方法。 這可讓，比方說，可以加入至對話方塊中的其他按鈕。
 
 選取一次之後, 在選取的時間會顯示在[ `TimePicker` ](xref:Xamarin.Forms.TimePicker):
 
@@ -179,5 +179,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [SetTimer 範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TimePicker/)
+- [SetTimer 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 - [TimePicker API](xref:Xamarin.Forms.TimePicker)

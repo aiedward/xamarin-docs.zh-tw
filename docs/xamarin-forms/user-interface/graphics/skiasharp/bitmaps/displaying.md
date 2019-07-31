@@ -7,24 +7,24 @@ ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 73fdccf1f6ccee4f6610c1078f5aab14c2be3d78
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 47b4a1bb0249bc21bd75e82067cb00b3f272e202
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61204727"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642674"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>顯示 SkiaSharp 點陣圖
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-發行項中引進了 SkiaSharp 點陣圖的主旨 **[SkiaSharp 點陣圖基本概念](../basics/bitmaps.md)**。 該文章會說明三種方式可以載入點陣圖並顯示點陣圖的三種方式。 這篇文章會檢閱載入點陣圖的技術，並將進入更深入`DrawBitmap`方法的`SKCanvas`。
+發行項中引進了 SkiaSharp 點陣圖的主旨 **[SkiaSharp 點陣圖基本概念](../basics/bitmaps.md)** 。 該文章會說明三種方式可以載入點陣圖並顯示點陣圖的三種方式。 這篇文章會檢閱載入點陣圖的技術，並將進入更深入`DrawBitmap`方法的`SKCanvas`。
 
 ![顯示範例](displaying-images/DisplayingSample.png "顯示範例")
 
-`DrawBitmapLattice`並`DrawBitmapNinePatch`文章中所討論的方法會 **[分段顯示 SkiaSharp 點陣圖](segmented.md)** 。
+          `DrawBitmapLattice`並`DrawBitmapNinePatch`文章中所討論的方法會 **[分段顯示 SkiaSharp 點陣圖](segmented.md)** 。
 
-在此頁面上的範例是來自 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式。 從該應用程式的首頁上，選擇**SkiaSharp 點陣圖**，然後移至**顯示點陣圖**一節。
+在此頁面上的範例是來自 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式。 從該應用程式的首頁上，選擇**SkiaSharp 點陣圖**，然後移至**顯示點陣圖**一節。
 
 ## <a name="loading-a-bitmap"></a>正在載入點陣圖
 
@@ -34,7 +34,7 @@ SkiaSharp 應用程式通常使用的點陣圖來自三個不同來源的其中�
 - 從資源內嵌在可執行檔
 - 從使用者的相片媒體櫃
 
-您也可建立新的點陣圖，然後在其上繪製或演算法來設定點陣圖位元 SkiaSharp 應用程式。 在文章中討論這些技巧 **[建立和上 SkiaSharp 點陣圖繪製](drawing.md)** 並 **[存取 SkiaSharp 點陣圖像素](pixel-bits.md)**.
+您也可建立新的點陣圖，然後在其上繪製或演算法來設定點陣圖位元 SkiaSharp 應用程式。 在文章中討論這些技巧 **[建立和上 SkiaSharp 點陣圖繪製](drawing.md)** 並 **[存取 SkiaSharp 點陣圖像素](pixel-bits.md)** .
 
 在下列三個程式碼範例中的載入點陣圖，類別會假設包含型別的欄位`SKBitmap`:
 
@@ -48,7 +48,7 @@ SKBitmap bitmap;
 HttpClient httpClient = new HttpClient();
 ```
 
-使用時`HttpClient`iOS 和 Android 應用程式，您會想要設定專案屬性中所述的文件上 **[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)**。
+使用時`HttpClient`iOS 和 Android 應用程式，您會想要設定專案屬性中所述的文件上 **[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** 。
 
 使用程式碼`HttpClient`通常會涉及`await`運算子，因此它必須位於`async`方法：
 
@@ -73,7 +73,7 @@ catch
 
 請注意，`Stream`物件將會取自`GetStreamAsync`複製到`MemoryStream`。 Android 不允許`Stream`從`HttpClient`處理由主執行緒中非同步的方法除外。 
 
-[ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))會執行許多工作：`Stream`傳遞給它的物件參考包含其中一種常見的點陣圖檔案格式、 通常 JPEG、 PNG 或 GIF 整個點陣圖的記憶體區塊。 `Decode`方法必須決定的格式，並再將點陣圖檔解碼 SkiaSharp 自己內部的點陣圖格式。
+[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))會執行許多工作:傳遞給它的物件會參考其中一個通用點陣圖檔案格式(通常是JPEG、PNG或GIF)中包含整個點陣圖的記憶體區塊。`Stream` `Decode`方法必須決定的格式，並再將點陣圖檔解碼 SkiaSharp 自己內部的點陣圖格式。
 
 在您程式碼會呼叫後`SKBitmap.Decode`，它可能會失效`CanvasView`以便`PaintSurface`處理常式可以顯示新載入的點陣圖。
 
@@ -92,7 +92,7 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 
 點陣圖檔也可以儲存為 iOS、 Android 和通用 Windows 平台 (UWP) 的個別平台專案中的資源。 不過，載入這些點陣圖所需要的平台專案中的程式碼。
 
-取得點陣圖的第三個方法是從使用者的圖片媒體櫃。 下列程式碼會使用相依性服務中包含 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式。 **SkiaSharpFormsDemo** .NET Standard 程式庫包含`IPhotoLibrary`介面，而每個平台專案包含`PhotoLibrary`實作該介面的類別。
+取得點陣圖的第三個方法是從使用者的圖片媒體櫃。 下列程式碼會使用相依性服務中包含 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式。 **SkiaSharpFormsDemo** .NET Standard 程式庫包含`IPhotoLibrary`介面，而每個平台專案包含`PhotoLibrary`實作該介面的類別。
 
 ```csharp
 IPhotoicturePicker picturePicker = DependencyService.Get<IPhotoLibrary>();
@@ -128,7 +128,7 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 這兩種方法會在功能上完全相同的。 指定的點表示相對於畫布點陣圖左上角的位置。 因為行動裝置的像素解析度相當高，所以較小的點陣圖通常會出現在這些裝置上非常小。
 
-選擇性`SKPaint`參數可讓您顯示使用透明度的點陣圖。 若要這樣做，請建立`SKPaint`物件，並設定`Color`屬性，以任何`SKColor`值和 alpha 通道小於 1。 例如: 
+選擇性`SKPaint`參數可讓您顯示使用透明度的點陣圖。 若要這樣做，請建立`SKPaint`物件，並設定`Color`屬性，以任何`SKColor`值和 alpha 通道小於 1。 例如:
 
 ```csharp
 paint.Color = new SKColor(0, 0, 0, 0x80);
@@ -144,7 +144,7 @@ paint.Color = SKColors.Red.WithAlpha(0x80);
 
 `SKPaint`物件也扮演的角色，當顯示的點陣圖使用混合模式或篩選的效果。 這些文章中示範[SkiaSharp 複合 （compositing） 和 blend 模式](../effects/blend-modes/index.md)並[SkiaSharp 映像篩選](../effects/image-filters.md)。
 
-**像素尺寸**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 範例程式會顯示為 320 像素寬 240 像素高的點陣圖資源：
+**像素尺寸**頁面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 範例程式會顯示為 320 像素寬 240 像素高的點陣圖資源：
 
 ```csharp
 public class PixelDimensionsPage : ContentPage
@@ -194,7 +194,7 @@ public class PixelDimensionsPage : ContentPage
 
 ## <a name="a-method-for-loading-resource-bitmaps"></a>正在載入資源點陣圖方法
 
-接下來的範例有許多需要載入點陣圖資源。 靜態`BitmapExtensions`類別內 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 方案包含可以助一臂之力的方法：
+接下來的範例有許多需要載入點陣圖資源。 靜態`BitmapExtensions`類別內 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 方案包含可以助一臂之力的方法：
 
 ```csharp
 static class BitmapExtensions
@@ -319,7 +319,7 @@ public class UniformScalingPage : ContentPage
 
 ## <a name="a-versatile-bitmap-display-function"></a>多用途的點陣圖顯示函式
 
-以 XAML 為基礎 （例如 UWP 和 Xamarin.Forms） 的程式設計環境會有的設施來展開或壓縮點陣圖的大小，同時保留其外觀比例。 雖然 SkiaSharp 不包含這項功能，您可以實作它自己。 `BitmapExtensions`類別中包含[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)應用程式會顯示方式。 此類別會定義兩個新`DrawBitmap`執行外觀比例計算的方法。 這些新的方法是擴充方法的`SKCanvas`。
+以 XAML 為基礎 （例如 UWP 和 Xamarin.Forms） 的程式設計環境會有的設施來展開或壓縮點陣圖的大小，同時保留其外觀比例。 雖然 SkiaSharp 不包含這項功能，您可以實作它自己。 `BitmapExtensions`類別中包含[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式會顯示方式。 此類別會定義兩個新`DrawBitmap`執行外觀比例計算的方法。 這些新的方法是擴充方法的`SKCanvas`。
 
 新`DrawBitmap`方法包含參數的型別`BitmapStretch`中, 定義的列舉型別**BitmapExtensions.cs**檔案：
 
@@ -666,5 +666,5 @@ public partial class ScalingModesPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 

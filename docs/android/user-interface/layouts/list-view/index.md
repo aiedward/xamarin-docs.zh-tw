@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 653b6e3d41f9acb4ee3e9ee3626e72220687ccb8
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 79f97382b6d8bd7875e4921c859f92cd6b321687
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510080"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646325"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin. Android ListView
 
@@ -221,15 +221,15 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 ## <a name="related-links"></a>相關連結
 
-- [AccessoryViews (範例)](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
-- [BasicTableAndroid (範例)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
-- [BasicTableAdapter (範例)](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
-- [BuiltInViews (範例)](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
-- [CustomRowView (範例)](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
-- [FastScroll (範例)](https://developer.xamarin.com/samples/monodroid/FastScroll/)
-- [SectionIndex (範例)](https://developer.xamarin.com/samples/monodroid/SectionIndex/)
-- [SimpleCursorTableAdapter (範例)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
-- [CursorTableAdapter (範例)](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
+- [AccessoryViews (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/accessoryviews)
+- [BasicTableAndroid (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableandroid)
+- [BasicTableAdapter (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableadapter)
+- [BuiltInViews (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/builtinviews)
+- [CustomRowView (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/customrowview)
+- [FastScroll (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fastscroll)
+- [SectionIndex (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sectionindex)
+- [SimpleCursorTableAdapter (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/simplecursortableadapter)
+- [CursorTableAdapter (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/cursortableadapter)
 - [活動生命週期教學課程](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [使用資料表和資料格 (在 Xamarin. iOS 中)](~/ios/user-interface/controls/tables/index.md)
 - [ListView 類別參考](xref:Android.Widget.ListView)

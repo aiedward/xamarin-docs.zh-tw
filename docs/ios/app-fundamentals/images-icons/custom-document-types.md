@@ -1,54 +1,54 @@
 ---
-title: 在 Xamarin.iOS 中的自訂文件圖示
-description: 本文涵蓋包括及管理在 Xamarin.iOS 應用程式中要做為自訂文件類型的圖示的影像資產。
+title: Xamarin 中的自訂檔圖示
+description: 本文涵蓋的內容包括和管理 Xamarin iOS 應用程式中的影像資產, 以做為自訂檔案類型圖示。
 ms.prod: xamarin
 ms.assetid: 7A3F3C94-2578-4F53-9B8E-25714F48BDD6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/23/2017
-ms.openlocfilehash: 7520d3984a204dbceb67ef5310a10b1571f03127
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 1125b0c420d6dbd23c5539a2183d531bc0d6089f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827381"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642998"
 ---
-# <a name="custom-document-icons-in-xamarinios"></a>在 Xamarin.iOS 中的自訂文件圖示
+# <a name="custom-document-icons-in-xamarinios"></a>Xamarin 中的自訂檔圖示
 
-_本文涵蓋包括及管理在 Xamarin.iOS 應用程式中要做為自訂文件類型的圖示的影像資產。_
+_本文涵蓋的內容包括和管理 Xamarin iOS 應用程式中的影像資產, 以做為自訂檔案類型圖示。_
 
-Xamarin.iOS 應用程式支援載入特定的文件類型，如果開發人員可以提供遇到該文件類型，例如當使用者按住中的附加檔案時，系統會使用的圖示*郵件應用程式*為如下所示：
+如果 Xamarin iOS 應用程式支援載入特定檔案類型, 開發人員可以提供在遇到該檔案類型時, 系統將使用的圖示, 例如, 當使用者在*郵件應用程式*中保存附件時, 如下所示:
 
- [![](custom-document-types-images/17.png "舉例來說，文件類型圖示")](custom-document-types-images/17.png#lightbox)
+ [![](custom-document-types-images/17.png "檔案類型圖示的範例")](custom-document-types-images/17.png#lightbox)
 
-開發人員可以新增文件類型資訊的檔案格式的應用程式是開啟能夠藉由包括字典的項目`CFBundleTypeName`字串和`LSItemContentTypes`的應用程式中的陣列`Info.plist`。 文件類型的圖示進入`CFBundleTypeIconFiles`陣列。 如果未提供文件圖示，iOS 會衍生從應用程式圖示的其中一個。
-可以提供數種大小，適用於各種不同的裝置解析度的圖示。 
+開發人員可以藉由在應用程式的`CFBundleTypeName` `Info.plist`中包含字串和`LSItemContentTypes`陣列的字典專案, 為應用程式開啟的檔案格式加入檔案類型資訊。 檔案類型的圖示會移入`CFBundleTypeIconFiles`陣列中。 如果未提供檔圖示, iOS 會從應用程式圖示衍生一個。
+圖示可提供數種大小, 針對各種裝置解析度進行優化。 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-若要指派這些值，在 Visual Studio for Mac，請使用**文件類型**區段底下**進階**索引標籤上`Info.plist`編輯器新增文件類型，並將映像圖示指派給它。 例如，以下是螢幕擷取畫面顯示註冊 PDF 支援：
+若要在 Visual Studio for Mac 中指派這些值, 請使用`Info.plist`編輯器上 [ **Advanced** ] 索引標籤底下的 [**檔案類型**] 區段, 以加入檔案類型, 並將影像圖示指派給它。 例如, 以下是顯示 PDF 支援註冊的螢幕擷取畫面:
 
- [![](custom-document-types-images/18.png "'Info.plist' 編輯器的 [進階] 索引標籤底下的 [文件類型] 區段")](custom-document-types-images/18.png#lightbox)
+ [![](custom-document-types-images/18.png "[Plist] 編輯器上 [Advanced] 索引標籤下的 [檔案類型] 區段")](custom-document-types-images/18.png#lightbox)
  
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要將指派 Visual Studio 中的這些值，請使用**文件類型**區段底下**進階**索引標籤上`Info.plist`:
+若要在 Visual Studio 中指派這些值, 請使用上 [ **Advanced** `Info.plist`] 索引標籤底下的 [**檔案類型**] 區段:
 
- ![](custom-document-types-images/doc01w.png "開啟 [進階] 索引標籤底下的 [文件類型] 區段")
+ ![](custom-document-types-images/doc01w.png "開啟 [Advanced] 索引標籤底下的 [檔案類型] 區段")
 
-按一下 **加入文件類型**按鈕，然後填寫必要欄位：
+按一下 [**新增檔案類型**] 按鈕, 並填寫必要的欄位:
 
-![](custom-document-types-images/doc02w.png "新增文件類型的表單")
+![](custom-document-types-images/doc02w.png "[加入檔案類型] 表單")
 
 -----
 
 
-如需文件類型的詳細資訊，請參閱 Apple[統一的型別識別項參考](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)並[文件互動程式設計主題適用於 iOS](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)。
+如需檔案類型的詳細資訊, 請參閱 Apple 的[統一類型識別碼參考](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)和[IOS 的檔互動程式設計主題](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [使用映像 （範例）](https://developer.xamarin.com/samples/monotouch/WorkingWithImages/)
+- [使用影像 (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
-- [自訂圖示和影像建立指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
+- [自訂圖示和映射建立指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

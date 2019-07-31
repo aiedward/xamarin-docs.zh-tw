@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 85d863b19c3bf0302464e371738a2926cc80e8ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ed423a19eabd9c7f1d91457cc1834f28d62b2121
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290721"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647309"
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 繪製線條使用不同的筆觸端點_
 
@@ -30,7 +30,7 @@ SkiaSharp，在轉譯程式會非常不同於轉譯一系列連接的直線。 �
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-根據預設， [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)屬性的新具現化`SKPaint`物件為 0，且具有值為 1，呈現一個像素的線條粗細中相同的效果。 因此您可能會想要設定顯示在高解析度的裝置，例如手機上非常精簡`StrokeWidth`到較大的值。 但是，一旦您開始的可調整大小的粗細的繪圖線條時，會引發另一個問題：應該如何啟動和這些粗的行尾呈現？
+根據預設， [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)屬性的新具現化`SKPaint`物件為 0，且具有值為 1，呈現一個像素的線條粗細中相同的效果。 因此您可能會想要設定顯示在高解析度的裝置，例如手機上非常精簡`StrokeWidth`到較大的值。 但是一旦您開始繪製可調整大小粗細的線條, 就會引發另一個問題:這些粗線的開始和結束應該如何呈現？
 
 在呼叫開始和結束的行的外觀*線條端點*或者 Skia，在*筆觸端點*。 在此內容中的 「 cap"是指一種 hat&mdash;位於該行結尾的項目。 您設定[ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap)屬性`SKPaint`物件的下列成員的其中一個[ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap)列舉型別：
 
@@ -38,7 +38,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 - `Square`
 - `Round`
 
-這些最佳說明與範例程式。 **SkiaSharp 線條和路徑**一節[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式開始與頁面標題為**筆觸端點**根據[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別。 此頁面定義`PaintSurface`迴圈的三個成員的事件處理常式`SKStrokeCap`列舉型別，來顯示列舉成員的名稱，並繪製一條線使用該筆觸端點：
+這些最佳說明與範例程式。 **SkiaSharp 線條和路徑**一節[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式開始與頁面標題為**筆觸端點**根據[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別。 此頁面定義`PaintSurface`迴圈的三個成員的事件處理常式`SKStrokeCap`列舉型別，來顯示列舉成員的名稱，並繪製一條線使用該筆觸端點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,4 +242,4 @@ UWP 螢幕擷取畫面顯示的結果`SKPointMode.Polygon`值。 陣列中的連
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

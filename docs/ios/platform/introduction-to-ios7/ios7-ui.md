@@ -1,56 +1,56 @@
 ---
 title: iOS 7 使用者介面概觀
-description: iOS 7 引進了大量的使用者介面的變更。 這篇文章強調一些更大規模的變更，在控制項的視覺外觀和中支援的新設計的 Api。
+description: iOS 7 引進了使用者介面變更的眾多。 這篇文章強調一些較大的變更, 包括控制項的視覺外觀, 以及支援新設計的 Api。
 ms.prod: xamarin
 ms.assetid: FADCEA7C-8968-42A1-9E9E-F4BBAB7BCF2C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 132265c27e1d1ba3b8f3fc8db10d7b3cfa746197
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5ebfa7348e13e5b168dd7f2decbef921bd7d69e3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61038942"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652117"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 使用者介面概觀
 
-_iOS 7 引進了大量的使用者介面的變更。這篇文章強調一些更大規模的變更，在控制項的視覺外觀和中支援的新設計的 Api。_
+_iOS 7 引進了使用者介面變更的眾多。這篇文章強調一些較大的變更, 包括控制項的視覺外觀, 以及支援新設計的 Api。_
 
-iOS 7 會著重在 chrome 的內容。 在 iOS 7 中的使用者介面項目不校正 chrome 藉由移除多餘的框線、 狀態列等導覽列，減少的內容檢視所使用的螢幕空間的屬性。 在 iOS 7 中，內容可使用整個螢幕。
+iOS 7 著重于 chrome 上的內容。 IOS 7 中的使用者介面元素會藉由移除多餘框線、狀態列和導覽列等屬性, 減少內容流覽所使用的螢幕空間量, 而取消強調 chrome。 在 iOS 7 中, 內容是設計用來使用整個畫面。
 
-iOS 7 中引進了數個其他變更： 色彩用來區別使用者介面項目，就不需等按鈕框線屬性。 許多項目，例如導覽列和狀態列，現在會採用其下的區域的模糊和半透明或透明的與內容的檢視。 透過套用模糊效果的橫條圖，傳達使用者介面中的深度的滿足感，轉譯這些內容的檢視。
+iOS 7 引進了其他幾項變更: 色彩是用來區別使用者介面專案, 而不是像是按鈕框線的屬性。 許多專案 (例如導覽列和狀態列) 現在都是模糊、半透明或透明, 且內容視圖會將區域放在其下方。 這些內容視圖會透過模糊的橫條轉譯, 傳達使用者介面的深度。
 
-本文章涵蓋數個使用者介面項目，在 iOS 7，以及各種 Api 與新的使用者介面設計中的變更。
+本文涵蓋 iOS 7 中使用者介面元素的幾項變更, 以及與新使用者介面設計相關的各種 Api。
 
-## <a name="view-and-control-changes"></a>檢視和控制的變更
+## <a name="view-and-control-changes"></a>查看和控制變更
 
-UIKit 中檢視的所有符合的 iOS 7 新的外觀與風格。 本章節強調一些變更，這些檢視，以及相關的 Api 來支援新的 UI 已變更。
+UIKit 中的所有觀點都符合 iOS 7 的新外觀與風格。 本節將重點說明這些視圖的一些變更, 以及已變更為支援新 UI 的相關 Api。
 
 ### <a name="uibutton"></a>UIButton
 
-建立從按鈕`UIButton`類別已無框線，以根據預設，任何背景，如下所示：
+從`UIButton`類別建立的按鈕現在是無邊框的, 預設為沒有背景, 如下所示:
 
- ![](ios7-ui-images/button.png "範例標記的 UIButton")
+ ![](ios7-ui-images/button.png "範例 UIButton")
 
-`UIButtonType.RoundedRect`樣式已被取代。 如果用於 iOS 7`UIButtonType.RoundedRect`將會導致`UIButtonType.System`正在使用中，這會產生預設的按鈕樣式不含背景或顯示邊緣，如上所示。
+`UIButtonType.RoundedRect`樣式已被取代。 如果用於 iOS 7, `UIButtonType.RoundedRect`會`UIButtonType.System`導致使用, 這會產生沒有背景或可見邊緣的預設按鈕樣式, 如上所示。
 
 ### <a name="uibarbuttonitem"></a>UIBarButtonItem
 
-類似於`UIButton`，列按鈕還有無框線，將預設為新`UIBarButtonItemStyle.Plain`樣式如下所示：
+類似于`UIButton`, 橫條按鈕也是無邊框的, 預設為`UIBarButtonItemStyle.Plain`新樣式, 如下所示:
 
  ![](ios7-ui-images/barbuttonplain.png "範例 UIBarButtonItem")
 
-此外，`UIBarButtonItemStyle.Bordered`樣式已被取代。 設定`UIBarButtonItemStyle.Bordered`在 iOS 7 會在產生`UIBarButtonItemStyle.Plain`樣式所使用。
+此外, `UIBarButtonItemStyle.Bordered`樣式已被取代。 IOS `UIBarButtonItemStyle.Bordered` 7 中的`UIBarButtonItemStyle.Plain`設定會導致使用樣式。
 
-`UIBarButtonItemStyle.Done`樣式未被取代。 不過，它也會建立一個 [無框線] 按鈕只使用粗體文字樣式所示：
+`UIBarButtonItemStyle.Done`樣式尚未被取代。 不過, 它也會建立無邊框的按鈕, 只會使用粗體文字樣式, 如下所示:
 
- ![](ios7-ui-images/barbuttondone.png "完成的樣式中的範例 UIBarButtonItem")
+ ![](ios7-ui-images/barbuttondone.png "完成樣式中的範例 UIBarButtonItem")
 
 ### <a name="uialertview"></a>UIAlertView
 
-新的 iOS 7 外觀與風格的樣式變更，除了警示檢視 中不再支援透過子檢視。 即使`UIAlertView`繼承自`UIView`，則呼叫`AddSubview`上`UIAlertView`沒有任何作用。 例如，請參考下列程式碼：
+除了新的 iOS 7 外觀與風格變更以外, 警示視圖也不再支援透過子視圖進行自訂。 即使繼承自`UIView`, 在上`AddSubview` `UIAlertView`呼叫也不會有任何作用。 `UIAlertView` 例如，請參考下列程式碼：
 
 ```csharp
 UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle.Plain, (s,e) =>
@@ -66,89 +66,89 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 });
 ```
 
-使用被忽略，子檢視中，如下所示，這會產生標準的警示檢視:
+這會產生標準的警示視圖, 並忽略子視圖, 如下所示:
 
  ![](ios7-ui-images/alert.png "範例 UIAlertView")
  
- 注意:UIAlertView 已被取代，在 iOS 8 中。 檢視[警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)上使用警示檢視，在 iOS 8 及更新版本的配方。
+ 注意:UIAlertView 在 iOS 8 中已被取代。 使用 iOS 8 和更新版本中的警示視圖, 查看[警示控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)配方。
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
 
-在 iOS 7 中的分段的控制項而言是透明的而且支援濃淡的色彩。 濃淡色彩用於文字和框線色彩。 選取的區段時，色彩會換成背景與文字之間濃淡色彩來反白顯示選取的區段，如下所示：
+IOS 7 中的分段控制項是透明的, 而且支援色調色彩。 色調色彩會用於文字和框線色彩。 選取區段時, 色彩會在背景與文字之間交換, 並使用色調色彩來反白顯示選取的區段, 如下所示:
 
  ![](ios7-ui-images/segmentedcontrol.png "範例 UISegmentedControl")
 
-此外， `UISegmentedControlStyle` iOS 7 中已被取代。
+此外, `UISegmentedControlStyle`在 iOS 7 中已被取代。
 
-### <a name="picker-views"></a>檢視選擇器
+### <a name="picker-views"></a>選擇器視圖
 
-選擇器檢視的 API 是維持不變;不過，iOS 7 的設計指導方針現在的狀態檢視選擇器應該會看到內嵌，而不是因為從以動畫顯示輸入的檢視下方的螢幕，或透過新的控制器推入至瀏覽控制器的堆疊，如同先前的 iOS 版本。 系統行事曆應用程式中，可以看到這個：
+選擇器視圖的 API 大多不變;不過, iOS 7 設計指導方針現在狀態選擇器視圖應該以內嵌方式呈現, 而不是從畫面底部以動畫顯示的輸入視圖, 或透過推送至流覽控制器堆疊的新控制器, 如同先前的 iOS 版本。 這可以在系統行事曆應用程式中看到:
 
- ![](ios7-ui-images/inlinepicker.png "您可以在系統行事曆應用程式")
+ ![](ios7-ui-images/inlinepicker.png "這可以在系統行事曆應用程式中看到")
 
 ### <a name="uisearchdisplaycontroller"></a>UISearchDisplayController
 
-在搜尋列現在會顯示在瀏覽列時`UISearchDisplayController.DisplaysSearchBarInNavigationBar`屬性設定為 true。 當設定為 false-預設值-出現的搜尋控制站時，會隱藏巡覽列。
+當`UISearchDisplayController.DisplaysSearchBarInNavigationBar`屬性設定為 true 時, 搜尋列現在會顯示在導覽列中。 設定為 false 時-預設值-顯示搜尋控制器時, 會隱藏導覽列。
 
-下列的螢幕擷取畫面顯示在 [搜尋] 列`UISearchDisplayController`:
+下列螢幕擷取畫面顯示中`UISearchDisplayController`的搜尋列:
 
  ![](ios7-ui-images/searchbar.png "範例 UISearchDisplayController")
 
 ### <a name="uitableview"></a>UITableView
 
-周邊的 Api`UITableView`主要是不變; 不過，樣式已變更為符合新的使用者介面設計的大幅。 也稍有不同的內部檢視階層。 這項變更不會影響大部分的應用程式，但要注意的某些項目。
+中的 api `UITableView`主要不變; 不過, 樣式已大幅變更, 以符合新的使用者介面設計。 內部視圖階層也會有些不同。 這項變更不會影響大部分的應用程式, 但它是值得注意的事項。
 
-#### <a name="grouped-table-style"></a>群組的資料表樣式
+#### <a name="grouped-table-style"></a>群組資料表樣式
 
-變更的群組的樣式已更新，現在擴充到的如下所示的畫面邊緣的內容：
+已變更的群組樣式已更新, 內容現在會延伸到畫面的邊緣, 如下所示:
 
- ![](ios7-ui-images/table1.png "範例群組的資料表樣式")
+ ![](ios7-ui-images/table1.png "範例群組資料表樣式")
 
 #### <a name="separatorinset"></a>SeparatorInset
 
-資料列分隔符號現在會藉由設定縮排`UITableVIewCell.SeparatorInset`屬性。 例如，下列程式碼會用於縮排距離左邊緣的資料格：
+現在可以藉由設定`UITableVIewCell.SeparatorInset`屬性來縮排資料列分隔符號。 例如, 下列程式碼會用來縮排左邊緣的資料格:
 
 ```csharp
 cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 ```
 
-這會產生縮排的資料格的 [資料表] 檢視中，如下所示：
+這會在具有縮排資料格的資料表視圖中產生, 如下所示:
 
  ![](ios7-ui-images/separatorinset.png "範例 UITableView SeparatorInset")
 
-#### <a name="table-button-styles"></a>表格按鈕樣式
+#### <a name="table-button-styles"></a>資料表按鈕樣式
 
-所有已變更的資料表檢視中使用不同的按鈕。 下列螢幕擷取畫面顯示處於編輯模式的資料表檢視：
+資料表視圖中使用的各種按鈕都已變更。 下列螢幕擷取畫面以編輯模式呈現資料表視圖:
 
- ![](ios7-ui-images/table2.png "此螢幕擷取畫面顯示處於編輯模式的資料表檢視")
+ ![](ios7-ui-images/table2.png "這個螢幕擷取畫面會以編輯模式呈現資料表視圖")
 
-### <a name="additional-control-changes"></a>其他的控制項變更
+### <a name="additional-control-changes"></a>其他控制項變更
 
-其他 UIKit 控制項也已變更，包括滑桿、 交換器和 steppers。 這些變更是純粹視覺項目。 如需詳細資訊，請參閱 Apple [iOS 7 UI 轉換指南](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html)。
+其他 UIKit 控制項也已變更, 包括滑杆、交換器和 steppers。 這些變更純粹是視覺效果。 如需詳細資訊, 請參閱 Apple 的[iOS 7 UI 轉換指南](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html)。
 
 ## <a name="general-user-interface-changes"></a>一般使用者介面變更
 
-UIKit 中的變更，除了 iOS 7 引進了各種不同的視覺變更 ui，包括：
+除了 UIKit 中的變更之外, iOS 7 也引進了 UI 的各種視覺變更, 包括:
 
--  全螢幕的內容
--  橫條圖的外觀
--  濃淡色彩
+-  全螢幕內容
+-  橫條外觀
+-  色調色彩
 
 <a name="fullscreen" />
 
-### <a name="full-screen-content"></a>全螢幕的內容
+### <a name="full-screen-content"></a>全螢幕內容
 
-iOS 7 的設計可以讓應用程式利用整個螢幕。 檢視控制器現在會顯示狀態列 並瀏覽列-重疊，如果有的話-而非顯示狀態和巡覽列下方。
+iOS 7 的設計可讓應用程式充分利用整個畫面。 視圖控制器現在會以狀態列和導覽列重迭 (如果有的話), 而不是顯示在狀態和導覽列下方。
 
-當您準備您的應用程式，適用於 iOS 7 時，您可以調整以視覺化方式使用的子檢視*Interface Builder*或*Xamarin iOS 設計工具*。 您也可以使用其中一個新的 Api，以協助以程式設計方式處理全螢幕的內容。 這些 Api 導入下面。
+當您準備 iOS 7 的應用程式時, 您可以使用*Interface Builder*或*Xamarin iOS 設計*工具, 以視覺化方式重新對齊子檢視。 您也可以使用其中一個新的 Api 協助以程式設計方式處理全螢幕內容。 以下引進這些 Api。
 
 #### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide 和 BottomLayoutGuide
 
- `TopLayoutGuide` 並`BottomLayoutGuide`做為檢視應開始或結束，其中的參考，使內容不重疊的半透明`UIKit`列中的，如下列範例所示：
+ `TopLayoutGuide`並`BottomLayoutGuide`做為參考, 其中的 views 應開始或結束, 讓內容不會被半透明`UIKit`的橫條重迭, 如下列範例所示:
 
- [![](ios7-ui-images/clipped.png "不重疊的半透明 UIKit 列的範例內容")](ios7-ui-images/clipped.png#lightbox)
+ [![](ios7-ui-images/clipped.png "不是由半透明 UIKit 列重迭的範例內容")](ios7-ui-images/clipped.png#lightbox)
 
-這些 Api 可以用來計算檢視的位移，從頂端或底部的畫面上，並據以調整內容的位置：
+這些 Api 可用來計算螢幕頂端或底部的視圖位移, 並據以調整內容位置:
 
 ```csharp
 public override void ViewDidLayoutSubviews ()
@@ -164,32 +164,32 @@ public override void ViewDidLayoutSubviews ()
 }
 ```
 
-我們可以使用值來設定上面計算出我們`ImageView`的位移，從畫面上，因此整個影像是可見的頂端：
+我們可以使用上面所計算的值, 從`ImageView`畫面頂端設定我們的位移, 讓整個影像看得到:
 
- [![](ios7-ui-images/good2.png "從畫面頂端的 範例 ImageViews 加上位移")](ios7-ui-images/good2.png#lightbox)
+ [![](ios7-ui-images/good2.png "畫面頂端的 ImageViews 位移範例")](ios7-ui-images/good2.png#lightbox)
 
-請參閱[ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates)如需實用範例。
+如需實用範例, 請參閱[ImageViewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) 。
 
-檢視已加入至階層，因此嘗試讀取之後動態產生的位移值`TopLayoutGuide`並`BottomLayoutGuide`中的值`ViewDidLoad`會傳回 0。 檢視載入-例如，在計算值`ViewDidLayoutSubviews`。
+在視圖加入階層之後, 會動態產生置換值, 因此嘗試讀取`TopLayoutGuide`和`BottomLayoutGuide`中的`ViewDidLoad`值將會傳回0。 在此視圖載入後計算值-例如, 中的`ViewDidLayoutSubviews`。
 
 > [!IMPORTANT]
-> `TopLayoutGuide` 和`BottomLayoutGuide`iOS 11 改用新的安全區域版面配置中已被取代。 Apple 表明，使用安全的區域是與 iOS 版本早於 iOS 11 相容。 如需詳細資訊，請參閱 <<c0> [ 更新您的應用程式，適用於 iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)指南。
+> `TopLayoutGuide`和`BottomLayoutGuide`在 iOS 11 中已被取代, 以取代新的安全區域配置。 Apple 已聲明使用安全區域與 iOS 11 之前的 iOS 版本相容。 如需詳細資訊, 請參閱[更新您的應用程式以取得 iOS 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)指南。
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
-此 API 會指定檢視的邊緣應該延伸到全螢幕，不論列半透明。 在 iOS 7 中，瀏覽列和工具列會顯示之上控制器的檢視表-不同於在先前的 iOS 版本，其中未佔用相同的空間。 IOS 7 相片應用程式示範預設`UIViewController.EdgesForExtendedLayout`值， `UIRectEdge.All`。 這項設定會填入內容，檢視中的所有四個邊建立的重疊和全螢幕的效果：
+此 API 會指定應將視圖的哪些邊緣延伸至全螢幕, 不論是否使用橫條半透明度。 在 iOS 7 中, 流覽列和工具列會顯示在控制器的視圖上方, 不同于先前的 iOS 版本, 它們並未佔用相同的空間。 IOS 7 相片應用程式說明預設`UIViewController.EdgesForExtendedLayout` `UIRectEdge.All`值。 此設定會以內容填滿此視圖中的四個邊緣, 並建立重迭和全螢幕效果:
 
  [![](ios7-ui-images/photos.png "範例 EdgesForExtendedLayout")](ios7-ui-images/photos.png#lightbox)
 
-點選 映像移除橫條圖，並示範影像全螢幕：
+點擊影像會移除橫條, 並以全螢幕顯示影像:
 
- [![](ios7-ui-images/photos2.png "與移除的橫條 EdgesForExtendedLayout")](ios7-ui-images/photos2.png#lightbox)
+ [![](ios7-ui-images/photos2.png "已移除橫條的 EdgesForExtendedLayout")](ios7-ui-images/photos2.png#lightbox)
 
-全螢幕的內容是預設值，因為設定為 iOS 6 應用程式將會有一部分裁剪，如以下螢幕擷取畫面所示的檢視：
+因為全螢幕內容是預設值, 所以針對 iOS 6 設定的應用程式將會裁剪部分的視圖, 如下列螢幕擷取畫面所示:
 
- [![](ios7-ui-images/clipped.png "設定適用於 iOS 6 的應用程式將會裁剪，如以下螢幕擷取畫面所示的檢視部分")](ios7-ui-images/clipped.png#lightbox)
+ [![](ios7-ui-images/clipped.png "針對 iOS 6 設定的應用程式將會裁剪部分的視圖, 如下列螢幕擷取畫面所示")](ios7-ui-images/clipped.png#lightbox)
 
-修改`UIViewController.EdgesForExtendedLayout`屬性調整此行為。 我們可以指定的檢視不會填滿任何的邊緣，讓我們檢視可避免在瀏覽或 （在每一個方向） 的工具列所佔用的空間中顯示內容：
+修改此`UIViewController.EdgesForExtendedLayout`行為的屬性會調整。 我們可以指定不填滿任何邊緣的視圖, 因此我們的視圖會避免在導覽或工具列所佔用的空間中顯示內容 (每個方向):
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) { 
@@ -197,25 +197,25 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 }
 ```
 
-在我們的應用程式中，我們會看到檢視再次重新調整位置，讓整個影像會顯示：
+在我們的應用程式中, 我們會看到此視圖再次重新置放, 因此可以看見整個影像:
 
- [![](ios7-ui-images/good.png "與整個影像顯示的範例")](ios7-ui-images/good.png#lightbox)
+ [![](ios7-ui-images/good.png "顯示完整影像的範例")](ios7-ui-images/good.png#lightbox)
 
-請注意，雖然的效果`TopLayoutGuide/BottomLayoutGuide`和`EdgesForExtendedLayout`Api 很類似，它們一定會以填滿不同的目標。 變更`EdgesForExtendedLayout`設定的預設值可能會修正 ios 6，設計應用程式中的裁剪的檢視，但良好的 iOS 7 設計應該接受全螢幕美觀，並提供全螢幕檢視體驗，同時依賴`TopLayoutGuide`並`BottomLayoutGuide`正確，將預定插入到舒適位置，以讓使用者可操作的內容。
+請注意, 雖然`TopLayoutGuide/BottomLayoutGuide`和`EdgesForExtendedLayout` api 的效果很相似, 但它們的目的是要填滿不同的目標。 從預設值變更`TopLayoutGuide` 設定,可能會修正針對iOS6設計之應用程式中的裁剪視圖,但良好的iOS7設計應接受全螢幕的美觀並提供全螢幕的觀賞體驗,並依賴和`EdgesForExtendedLayout` `BottomLayoutGuide`適當地將要操作的內容定位至使用者的舒適位置。
 
-請參閱[ImageViewer](https://developer.xamarin.com/samples/mobile/iOS7-ui-updates)如需實用範例。
+如需實用範例, 請參閱[ImageViewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) 。
 
-### <a name="status-and-navigation-bars"></a>狀態和導覽
+### <a name="status-and-navigation-bars"></a>狀態和巡覽列
 
-狀態列和導覽列會轉譯與透明度。 狀態列是深度的透明的工具列和導覽是深度的半透明與套用模糊效果傳達使用者介面中的感覺。 下列螢幕擷取畫面顯示此模糊和透明度，其中藍色的背景色彩的集合檢視會顯示透過 狀態 和 瀏覽列，讓他們的淺藍色的外觀：
+狀態列和導覽列會以透明度呈現。 狀態列是透明的, 而工具列和導覽列則是半透明且模糊的, 可在使用者介面中傳達深度感受。 下列螢幕擷取畫面顯示此模糊和透明度, 其中集合視圖的藍色背景色彩會顯示狀態和巡覽列, 讓它們具有淺藍色外觀:
 
- ![](ios7-ui-images/transparent-navbar.png "範例狀態和導覽列模糊處理")
+ ![](ios7-ui-images/transparent-navbar.png "範例狀態和巡覽列模糊")
 
 #### <a name="status-bar-styles"></a>狀態列樣式
 
-模糊和透明度，以及 light 或暗色調 （深色沒有預設值），可以是狀態列的前景。 狀態列樣式可以從檢視控制器設定。 檢視控制器時，也可以設定是否在隱藏或顯示 [狀態] 列。
+除了模糊和透明度之外, 狀態列的前景也可以是淺色或深色 (暗為預設值)。 狀態列樣式可以從 view controller 進行設定。 View controller 也可以設定狀態列是否隱藏或顯示。
 
-例如，下列程式碼覆寫`PreferredStatusBarStyle`讓狀態列顯示淺色前景的檢視控制器方法：
+例如, 下列程式碼會覆寫`PreferredStatusBarStyle`視圖控制器的方法, 讓狀態列顯示淺前景:
 
 ```csharp
 public override UIStatusBarStyle PreferredStatusBarStyle ()
@@ -224,11 +224,11 @@ public override UIStatusBarStyle PreferredStatusBarStyle ()
 }
 ```
 
-這會導致出現的 [狀態] 列，如下所示：
+這會導致狀態列顯示如下:
 
- ![](ios7-ui-images/light-status-bar.png "範例 [狀態] 列")
+ ![](ios7-ui-images/light-status-bar.png "範例狀態列")
 
-若要隱藏 [狀態] 列，從檢視控制器的程式碼，請覆寫`PrefersStatusBarHidden`，如下所示：
+若要從視圖控制器的程式碼隱藏狀態列, 請覆`PrefersStatusBarHidden`寫, 如下所示:
 
 ```csharp
 public override bool PrefersStatusBarHidden ()
@@ -237,32 +237,32 @@ public override bool PrefersStatusBarHidden ()
 }
 ```
 
-這可能會隱藏 [狀態] 列：
+這會隱藏狀態列:
 
- ![](ios7-ui-images/status-bar-hidden.png "隱藏狀態列")
+ ![](ios7-ui-images/status-bar-hidden.png "隱藏的狀態列")
 
-### <a name="tint-color"></a>濃淡色彩
+### <a name="tint-color"></a>色調色彩
 
-按鈕現在會顯示為 無色彩的文字。 您可以使用新控制文字色彩`TintColor`屬性上的`UIView`。 設定`TintColor`將色彩套用至整個檢視階層檢視，以設定它。 若要套用`TintColor`整個應用程式，將它設定在`Window`。 您也可以偵測何時濃淡色彩變更透過`UIView.TintColorDidChange`方法。
+按鈕現在會顯示為不區分 chrome 的文字。 您可以使用上`TintColor` `UIView`的新屬性來控制文字色彩。 設定會將色彩套用至設定它的視圖的整個視圖階層。`TintColor` 若要在應用程式中套用, 請`Window`在上設定。 `TintColor` 您也可以透過`UIView.TintColorDidChange`方法來偵測色彩色彩何時變更。
 
-例如，下列螢幕擷取畫面顯示變更 巡覽控制器的檢視上的濃淡色彩的影響為紫色：
+例如, 下列螢幕擷取畫面顯示在流覽控制器的視圖上, 將色調色彩變更為紫色的效果:
 
- ![](ios7-ui-images/tint-color.png "紫色濃淡的色彩，在 導覽控制器檢視")
+ ![](ios7-ui-images/tint-color.png "導覽控制器視圖上的紫色色調色彩")
 
-濃淡色彩可以套用至映像以及何時`RenderingMode`設為`UIImageRenderingMode.AlwaysTemplate`。
+當設定為`RenderingMode` `UIImageRenderingMode.AlwaysTemplate`時, 色調色彩也可以套用至影像。
 
 > [!IMPORTANT]
-> 濃淡色彩無法使用設定`UIAppearance`。
+> 無法使用`UIAppearance`來設定色調色彩。
 
 
 ### <a name="dynamic-type"></a>動態類型
 
-在 iOS 7 中，使用者可以指定系統設定 中的文字大小。 具有動態類型，字型會動態調整，以呈現最佳效果，而不論大小為何。 `UIFont.PreferredFontForTextStyle` 應該用來取得字型，最適合的使用者控制的大小。
+在 iOS 7 中, 使用者可以在系統設定中指定文字大小。 使用動態類型時, 字型會以動態方式調整, 而不論大小為何都很好。 `UIFont.PreferredFontForTextStyle`應該用來取得針對使用者控制的大小優化的字型。
 
 ## <a name="summary"></a>總結
 
-本文涵蓋在 iOS 7 中的使用者介面項目變更。 它會檢查數個檢視和 UIKit，反白顯示視覺化變更的控制項所做的變更，以及對相關的 Api。 最後，它引入了新的 Api，以搭配完整的畫面內容、 新濃淡色彩支援，以及動態型別。
+本文涵蓋 iOS 7 中使用者介面元素的變更。 它會檢查 UIKit 中對 views 和控制項所做的幾項變更, 同時強調顯示視覺效果的變更, 以及對相關 Api 的變更。 最後, 它引進了新的 Api, 以使用全螢幕內容、新的色調色彩支援和動態類型。
 
 ## <a name="related-links"></a>相關連結
 
-- [ImageViewer （範例）](https://developer.xamarin.com/samples/monotouch/iOS7-ui-updates)
+- [ImageViewer (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates)

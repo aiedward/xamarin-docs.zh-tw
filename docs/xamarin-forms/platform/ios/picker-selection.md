@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的選擇器項目選取
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台特定的控制項選擇器中的項目選取項目發生時。
+title: IOS 上的選擇器專案選擇
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的來控制選擇器中發生專案選取時的情況。
 ms.prod: xamarin
 ms.assetid: 26B0604A-BD30-49FD-83A6-F0EDFBB0524B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: aeefa22c8a17611579c56b3105be860c12a8711c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 57420921100c99db1e2c3a5259ece30cfda719f2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925374"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651849"
 ---
-# <a name="picker-item-selection-on-ios"></a>在 iOS 上的選擇器項目選取
+# <a name="picker-item-selection-on-ios"></a>IOS 上的選擇器專案選擇
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台特定的控制項中的項目選取項目發生時[ `Picker` ](xref:Xamarin.Forms.Picker)，讓使用者指定的項目選取瀏覽控制項，項目時，或只要**完成**已按下。 它由在 XAML 中設定`Picker.UpdateMode`附加屬性的值`UpdateMode`列舉型別：
+當專案選取發生在[`Picker`](xref:Xamarin.Forms.Picker)時, 此 iOS 平臺特定的控制項可讓使用者指定在流覽控制項中的專案時, 或只在按下 [**完成**] 按鈕時, 才會發生選取專案。 它由在 XAML 中設定`Picker.UpdateMode`附加屬性的值`UpdateMode`列舉型別：
 
 ```xaml
 <ContentPage ...
@@ -67,6 +67,6 @@ switch (picker.On<iOS>().UpdateMode())
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

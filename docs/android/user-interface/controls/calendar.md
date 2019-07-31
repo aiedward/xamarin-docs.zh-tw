@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: 0172a602f3e85f0de66b39613b4a28e49344ba08
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 027b526815c56e5a0092b68b550129d9ffbf1493
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510342"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643032"
 ---
 # <a name="xamarinandroid-calendar"></a>Xamarin Android 行事曆
 
@@ -285,6 +285,6 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 ## <a name="related-links"></a>相關連結
 
-- [行事曆示範 (範例)](https://developer.xamarin.com/samples/monodroid/CalendarDemo/)
+- [行事曆示範 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)
 - [霜淇淋三明治簡介](http://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

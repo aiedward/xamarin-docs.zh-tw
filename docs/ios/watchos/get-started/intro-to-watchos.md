@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 8da40e5500e5669027f658ec95930e3b3a37530e
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 364e10b8b59fcc8d640799ab6a0f11dcf4ded818
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675251"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644515"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 簡介
 
@@ -29,7 +29,7 @@ WatchOS 應用程式方案具有 3 個專案：
 
 在 watchOS 1 應用程式，在 iPhone 上執行的擴充功能中的程式碼 – Apple Watch 實際上是外部顯示器。 watchOS 2 和 3 的應用程式會執行完全在 Apple Watch 上。 下圖顯示這項差異：
 
-[![](intro-to-watchos-images/arch-sml.png "此圖顯示 watchOS 1 和 watchOS 2 （和更新版本） 之間的差異")](intro-to-watchos-images/arch.png#lightbox)
+[![](intro-to-watchos-images/arch-sml.png "此圖表顯示 watchOS 1 和 watchOS 2 (及更新版本) 之間的差異")](intro-to-watchos-images/arch.png#lightbox)
 
 不論 watchOS 版本為目標時，Visual Studio for Mac 的 Solution Pad 中完整的解決方案會看起來像這樣：
 
@@ -53,8 +53,8 @@ WatchOS 1 上，他們可以分享資料，透過共用的應用程式群組，�
 
 生命週期`WKInterfaceController`物件包含下列呼叫：
 
-- [醒著](xref:WatchKit.WKInterfaceController.Awake*):在此方法中，您應該執行大部分的程式初始化。
-- [WillActivate](xref:WatchKit.WKInterfaceController.WillActivate) :不久之前呼叫 Watch 應用程式會顯示給使用者。 使用此方法來執行最後一個時間初始化、 啟動動畫，依此類推。
+- [喚醒](xref:WatchKit.WKInterfaceController.Awake*):您應該在這個方法中執行大部分的初始化。
+- [WillActivate](xref:WatchKit.WKInterfaceController.WillActivate) :很快就會在監看式應用程式向使用者顯示之前呼叫。 使用此方法來執行最後一個時間初始化、 啟動動畫，依此類推。
 - 此時，監看式應用程式會出現，擴充功能可讓您開始回應使用者輸入，並更新每個應用程式邏輯的監看式應用程式的顯示。
 - [DidDeactivate](xref:WatchKit.WKInterfaceController.DidDeactivate)使用者已關閉之後 Watch 應用程式，會呼叫這個方法。 這個方法傳回之後，使用者介面控制項無法修改，直到下次`WillActivate`呼叫。 如果 iPhone 的連線已中斷，也會呼叫這個方法。
 - 已停用擴充功能之後，就無法存取您的程式。 暫止的非同步函式**不會**呼叫。 監看式套件延伸模組不可以使用背景處理模式。 如果使用者的程式就會重新啟動，但未由作業系統終止應用程式，將會呼叫第一個方法`WillActivate`。
@@ -69,7 +69,7 @@ WatchOS 1 上，他們可以分享資料，透過共用的應用程式群組，�
 ### <a name="normal-interaction"></a>一般的互動
 
 子類別會監看式應用程式/擴充功能互動的大部分`WKInterfaceController`您撰寫來對應至您的監看式應用程式中的場景**Interface.storyboard**。 這會詳細涵蓋[安裝](~/ios/watchos/get-started/installation.md)並[開始使用](~/ios/watchos/get-started/index.md)文章。
-下圖顯示的某一部分[監看式套件目錄](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)範例的分鏡腳本。 以下顯示每個場景，沒有相對應的自訂`WKInterfaceController`(`LabelDetailController`， `ButtonDetailController`，`SwitchDetailController`等) 在擴充功能專案。
+下圖顯示的某一部分[監看式套件目錄](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)範例的分鏡腳本。 以下顯示每個場景，沒有相對應的自訂`WKInterfaceController`(`LabelDetailController`， `ButtonDetailController`，`SwitchDetailController`等) 在擴充功能專案。
 
 ![](intro-to-watchos-images/scenes.png "一般互動範例")
 
@@ -90,10 +90,10 @@ WatchOS 1 上，他們可以分享資料，透過共用的應用程式群組，�
 
 ## <a name="screen-sizes"></a>螢幕大小
 
-Apple Watch 有兩個臉部大小：38 公釐，42 公釐，是以 5:4 顯示比例，Retina 顯示器。 其容易使用的大小如下：
+Apple Watch 有兩個臉部大小:38mm 和 42mm, 兩者都有5:4 顯示比例, 以及 Retina 顯示。 其容易使用的大小如下：
 
-- 38 公釐：第 136 x 170 邏輯像素 （272 x 340 實體像素為單位）
-- 42 mm:156 x 195 邏輯像素 （312 x 390 實體像素）。
+- 38mm:136 x 170 邏輯圖元 (272 x 340 實體圖元)
+- 42mm:156 x 195 邏輯圖元 (312 x 390 實體圖元)。
 
 使用`WKInterfaceDevice.ScreenBounds`來判斷哪個顯示器上執行您的監看式應用程式。
 
@@ -133,8 +133,8 @@ Apple Watch 有兩個臉部大小：38 公釐，42 公釐，是以 5:4 顯示比
 
 ## <a name="related-links"></a>相關連結
 
-- [watchOS 3 目錄 （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
-- [watchOS 1 目錄 （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [watchOS 3 目錄 （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [watchOS 1 目錄 （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [設定和安裝](~/ios/watchos/get-started/installation.md)
 - [Watch 應用程式上的影片](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple 的開發的監看式組件指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html)
