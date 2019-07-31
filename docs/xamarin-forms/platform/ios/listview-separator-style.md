@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的 ListView 分隔符號樣式
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台特定的控制是否在 ListView 中的儲存格之間的分隔符號使用 ListView 的整個寬度。
+title: IOS 上的 ListView 分隔符號樣式
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的, 控制 ListView 中的資料格之間的分隔符號是否使用 ListView 的完整寬度。
 ms.prod: xamarin
 ms.assetid: A4CB45CE-9FB7-47ED-8C3D-93E39BF282E4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 2d634231c0bfca115581f51bd9eb298b9c45a7e1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 921ef905eed17b6bfe5cb2ea401f7da92ff744af
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925759"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648108"
 ---
-# <a name="listview-separator-style-on-ios"></a>在 iOS 上的 ListView 分隔符號樣式
+# <a name="listview-separator-style-on-ios"></a>IOS 上的 ListView 分隔符號樣式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台特定的控制項是否在儲存格之間的分隔符號[ `ListView` ](xref:Xamarin.Forms.ListView)使用完整的寬度`ListView`。 它由在 XAML 中設定[ `ListView.SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty)附加屬性的值[ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列舉型別：
+此 iOS 平臺專屬控制中[`ListView`](xref:Xamarin.Forms.ListView)的資料格之間的分隔符號是否使用的完整寬度。 `ListView` 它由在 XAML 中設定[ `ListView.SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty)附加屬性的值[ `SeparatorStyle` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle)列舉型別：
 
 ```xaml
 <ContentPage ...
@@ -55,6 +55,6 @@ listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6b3a6f45d78c0febb2aacf4f7693bc6e328c3ec0
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 0dc3c8e4c8b4db99b07114e855910ccfe5fe180f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740952"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654559"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>運用 watchOS 父系應用程式，在 Xamarin 中使用
 
@@ -35,7 +35,7 @@ ms.locfileid: "66740952"
 
 ## <a name="run-code"></a>執行程式碼
 
-監控擴充功能和父 iPhone 應用程式之間通訊所示[GpsWatch 範例](https://developer.xamarin.com/samples/monotouch/WatchKit/GpsWatch/)。
+監控擴充功能和父 iPhone 應用程式之間通訊所示[GpsWatch 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gpswatch)。
 您的監看式延伸模組可以要求父 iOS 應用程式進行一些處理，其代表使用`OpenParentApplication`方法。
 
 針對長時間執行工作 （包括網路要求）-只有父代的 iOS 應用程式可以利用背景處理完成這些工作，並將擷取的資料儲存在監看式延伸模組可存取的位置，這會特別有用。
@@ -147,7 +147,7 @@ wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 
 ## <a name="related-links"></a>相關連結
 
-- [GpsWatch （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [GpsWatch （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WormHoleSharp （範例）](https://github.com/Clancey/WormHoleSharp)
 - [Apple 的 WKInterfaceController 參考](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
 - [Apple 的應用程式包含共用資料](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

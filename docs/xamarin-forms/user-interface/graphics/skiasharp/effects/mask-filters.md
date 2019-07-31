@@ -7,16 +7,16 @@ ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: d68153cdaad67b407def3ed5bfaddf928ef98bb4
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1d85c705fb993e9b6b558b0c051de93e449b9d05
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289087"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648726"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp 遮罩篩選器
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 遮罩篩選條件是管理的幾何和 alpha 色頻的圖形物件的效果。 若要使用的遮罩篩選，將[ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter)屬性`SKPaint`物件的型別[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)您已透過呼叫其中一個`SKMaskFilter`靜態方法。
 
@@ -43,7 +43,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 下列範例會顯示這些樣式的影響。 `sigma`參數指定的模糊程度。 在舊版的 Skia，柔邊的範圍表示半徑值。 半徑值並且適用於您的應用程式，是否有靜態[ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*)可以從兩個不同轉換的方法。 方法會乘以 0.57735 半徑，並將加入 0.5。
 
-**遮罩模糊實驗**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例可讓您試驗的模糊樣式和標準差的值。 XAML 檔案會具現化`Picker`具有四個`SKBlurStyle`列舉型別成員和`Slider`來指定標準差的值：
+**遮罩模糊實驗**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例可讓您試驗的模糊樣式和標準差的值。 XAML 檔案會具現化`Picker`具有四個`SKBlurStyle`列舉型別成員和`Slider`來指定標準差的值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,9 +180,9 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 
 [![遮罩模糊實驗](mask-filters-images/MaskBlurExperiment.png "遮罩模糊實驗")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-IOS 螢幕擷取畫面顯示`Solid`樣式：文字字元為實心黑色筆劃，仍存在，這些文字字元外加入柔邊。 
+IOS 螢幕擷取畫面顯示`Solid`樣式:文字字元仍會顯示為實心黑色筆劃, 而模糊會加入至這些文字字元的外部。 
 
-在中間顯示 Android 螢幕擷取畫面`Outer`樣式：（如點陣圖），會刪除本身的字元筆劃及柔邊括住一次出現的文字字元的空白空間。 
+中間的 Android 螢幕擷取畫面顯示`Outer`樣式:字元筆劃本身會被刪除 (如同點陣圖), 而模糊會括住出現文字字元的空白空間。 
 
 UWP 螢幕擷取畫面中的正確顯示`Inner`樣式。 只有文字字元通常佔用的區域柔邊。
 
@@ -274,4 +274,4 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, paint.TextSize / 
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

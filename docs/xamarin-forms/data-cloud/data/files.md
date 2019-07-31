@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 93218289cefe26c523bf14721202f7ec4743f022
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 21d25315aec5c056df90da11b8a51ee1493a45a5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659075"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656676"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的檔案處理
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 _使用 .NET Standard 程式庫的程式碼或使用內嵌的資源，可以使用 Xamarin.Forms 處理檔案。_
 
@@ -87,7 +87,7 @@ using (var reader = new System.IO.StreamReader (stream)) {
 }
 ```
 
-然後就可以使用 `text` 變數顯示文字，或在程式碼中使用它。 [範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)的這個螢幕擷取畫面顯示使用 `Label` 控制項轉譯的文字。
+然後就可以使用 `text` 變數顯示文字，或在程式碼中使用它。 [範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)的這個螢幕擷取畫面顯示使用 `Label` 控制項轉譯的文字。
 
  [![內嵌在 PCL 的文字檔](files-images/pcltext-sml.png "顯示在應用程式中之內嵌在 PCL 的文字檔")](files-images/pcltext.png#lightbox "顯示在應用程式中之內嵌在 PCL 的文字檔")
 
@@ -166,7 +166,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 ## <a name="related-links"></a>相關連結
 
-- [FilesSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFiles/)
+- [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)
 - [使用 Xamarin.iOS 的檔案系統](~/ios/app-fundamentals/file-system.md)
 

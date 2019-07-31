@@ -7,16 +7,16 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 517ebfb529dd26236ba157d40168fa7c75288d27
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 54f6c8b94a1abdfcc3be9a86e179e766c417232b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290176"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655385"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp 映像篩選器
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 映像篩選器是構成影像的像素的所有色彩位元上操作的效果。 它們具有更多功能以上遮罩篩選，如本文所述 pracovat pouze alpha 色頻[ **SkiaSharp 遮罩篩選**](mask-filters.md)。 若要使用的映像篩選器，將[ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter)屬性`SKPaint`物件的型別[ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)您已藉由呼叫其中一種類別的靜態方法。
 
@@ -28,7 +28,7 @@ ms.locfileid: "61290176"
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>向量圖形和點陣圖模糊處理
 
-建立此模糊效果[ `SKImageFilter.CreateBlur` ](xref:SkiaSharp.SKImageFilter.CreateBlur*)靜態方法具有重大中的模糊方法優於[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)類別：映像篩選器可以模糊整個點陣圖。 方法具有下列語法：
+[`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*)靜態方法所建立的模糊效果, 在[`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter)類別中的模糊方法上有很大的好處:影像篩選可能會模糊整個點陣圖。 方法具有下列語法：
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -38,7 +38,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 
 此方法有兩個標準差值&mdash;柔邊中的延伸區的水平方向和第二個垂直方向的第一個。 您可以指定另一個映像篩選器做為選擇性的第三個引數，以重疊顯示映像篩選條件。 也可以指定的裁剪矩形。
 
-**映像模糊實驗**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)包含兩個`Slider`檢視，可讓您試驗設定各種層級的模糊：
+**映像模糊實驗**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)包含兩個`Slider`檢視，可讓您試驗設定各種層級的模糊：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -427,7 +427,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-第一個引數`SKImageFilter.CreateDistantLitDiffuse`是燈光的方向。 正 X 和 Y 座標表示，光是向右再向下箭。 在畫面的正 Z 座標點。 XAML 檔案可讓您選取負 Z 值，但這只讓您可以查看時，才會發生什麼事：就概念而言，負 Z 座標會導致光源點從螢幕。 任何其他再小型的負值，光源效果會停止運作。
+第一個引數`SKImageFilter.CreateDistantLitDiffuse`是燈光的方向。 正 X 和 Y 座標表示，光是向右再向下箭。 在畫面的正 Z 座標點。 XAML 檔案可讓您選取負的 Z 值, 但這只是您可以查看發生什麼情況:在概念上, 負 Z 座標會導致光線指向螢幕。 任何其他再小型的負值，光源效果會停止運作。
 
 `surfaceScale`引數的範圍可以從-1 到 1。 （高或較低的值有任何進一步的作用）。這些是相對 Z 軸中的值，指出從畫布介面圖形物件 （在此案例中的文字字串） 的替代。 使用負數值，來引發的畫布，介面上方的文字字串和要按住至畫布的正數值。
 
@@ -439,9 +439,9 @@ public partial class DistantLightExperimentPage : ContentPage
 
 Android 的螢幕擷取畫面都有 Z 值為 0，這表示到右邊，僅指光線。 不以醒目顯示背景和發亮的文字字串的介面不是其中一個。 燈光只會影響文字的邊緣十分難以察覺的效果。
 
-本文中所示範的浮凸和雕刻文字的替代方法[轉譯轉換](../transforms/translate.md):文字字串會顯示兩次以不同的色彩，位移稍微彼此。
+「[轉譯」轉換](../transforms/translate.md)一文中示範了浮凸和陰文文字的替代方法:文字字串會以不同的色彩顯示兩次, 彼此之間有互相的時差。
 
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

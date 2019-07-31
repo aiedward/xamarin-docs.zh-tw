@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: 4bd4524f4bf84327571609c8fb43dec164c9db56
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c5032bfa49fb1cee63c48ea8fa3e98bcd5748c31
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61370542"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657183"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 `RelativeLayout` 用來位置和大小檢視相對於檢視版面配置] 或 [同層級的內容。 不同於`AbsoluteLayout`，`RelativeLayout`沒有移動錨點的概念，且沒有定位項目相對於底部或版面配置的右邊緣的功能。 `RelativeLayout` 支援它自己的範圍之外的定位項目。
 
@@ -171,7 +171,7 @@ Title="RelativeLayout">
             <BoxView BackgroundColor="Black" WidthRequest="50"
                 HeightRequest="50" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=5}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0, Constant=5}" />
             <BoxView BackgroundColor="Maroon" WidthRequest="50"
-                HeightRequest="50" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=5}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=}" />
+                HeightRequest="50" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=5}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}" />
             <Label FontSize="14" TextColor="Black" Text="Accent Color"
                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=20}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0, Constant=60}" />
             <Label FontSize="14" TextColor="Black" Text="Primary Color"
@@ -230,5 +230,5 @@ Title="RelativeLayout">
 
 ## <a name="related-links"></a>相關連結
 
-- [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [版面配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 範例 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

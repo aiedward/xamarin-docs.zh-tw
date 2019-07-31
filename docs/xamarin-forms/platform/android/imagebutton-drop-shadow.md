@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上的 ImageButton 下拉式陰影
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 Android 平台特定，可讓 ImageButton 上的陰影。
+title: Android 上的 ImageButton 投影
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Android 平臺特定的, 以在 ImageButton 上啟用陰影。
 ms.prod: xamarin
 ms.assetid: D3604D87-9F9F-4FE2-8B10-DF3B143C0734
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: ba666d2474934b0cd4349e607329433ae1988b47
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 567216171dd289e849ee0164452e4b876953f2a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926811"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653589"
 ---
-# <a name="imagebutton-drop-shadows-on-android"></a>在 Android 上的 ImageButton 下拉式陰影
+# <a name="imagebutton-drop-shadows-on-android"></a>Android 上的 ImageButton 投影
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台專屬來啟用下拉式陰影`ImageButton`。 它由在 XAML 中設定`ImageButton.IsShadowEnabled`可繫結的屬性，以`true`，以及數個控制陰影的其他選擇性可繫結屬性：
+此 Android 平臺特定是用來在上`ImageButton`啟用投影。 它由在 XAML 中設定`ImageButton.IsShadowEnabled`可繫結的屬性，以`true`，以及數個控制陰影的其他選擇性可繫結屬性：
 
 ```xaml
 <ContentPage ...
@@ -77,7 +77,7 @@ imageButton.On<Android>()
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

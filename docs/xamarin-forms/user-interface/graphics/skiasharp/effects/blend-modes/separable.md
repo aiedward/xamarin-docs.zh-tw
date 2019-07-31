@@ -7,16 +7,16 @@ ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 8c86782d5b8b8250049d0ae060ca7bd548c5a4ef
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fb5bd1e883adc3be89bde7cc0e1529e77165247
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61387002"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655037"
 ---
 # <a name="the-separable-blend-modes"></a>可加以分隔的混合模式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 如您所見文中所[ **SkiaSharp Porter Duff 混合模式**](porter-duff.md)，Porter Duff blend 模式通常會執行裁剪作業。 可分隔的 blend 模式都不同。 分隔模式會改變的個別紅色、 綠色和藍色色彩元件的映像。 可加以分隔的混合模式可以混用來示範紅色、 綠色及藍色的組合是確實白色的色彩：
 
@@ -127,7 +127,7 @@ public partial class LightenAndDarkenPage : ContentPage
 
 [![淡化和暗化](separable-images/LightenAndDarken.png "淡化和暗化")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-此程式示範一般的方式，可分隔的混合模式：目的地是某種形式，通常是點陣圖影像。 來源是使用顯示矩形`SKPaint`物件及其`BlendMode`屬性設定為可分隔的混合模式。 （如以下所示），矩形可以是單色或漸層。 透明_不_一般與分隔 blend 模式搭配使用。
+此程式示範使用可分離 blend 模式的正常方式:目的地是某種影像, 通常是一個點陣圖。 來源是使用顯示矩形`SKPaint`物件及其`BlendMode`屬性設定為可分隔的混合模式。 （如以下所示），矩形可以是單色或漸層。 透明_不_一般與分隔 blend 模式搭配使用。
 
 實驗與此程式時，您會發現，這兩個混合模式不要淡化和統一暗化影像。 相反地，`Slider`似乎設定某種形式的臨界值。 例如，當您增加`Slider`針對`Lighten`模式中，映像較暗區域光第一次時取得較淺的區域維持不變。
 
@@ -149,9 +149,9 @@ public partial class LightenAndDarkenPage : ContentPage
 
 | 混合模式   | 沒有變更 | 運算 |
 | ------------ | --------- | --------- |
-| `Plus`       | 黑色     | 調淡加上色彩：Sc + Dc |
-| `Modulate`   | 白皮書     | 乘以色彩會變暗：Sc·Dc | 
-| `Screen`     | 黑色     | 補充產品的補充項目：Sc + Dc &ndash; Sc·Dc |
+| `Plus`       | 黑色     | 藉由新增色彩來將其變亮:Sc + Dc |
+| `Modulate`   | 白皮書     | 以乘以色彩來變暗:Sc·Dc | 
+| `Screen`     | 黑色     | 補充產品的補充:Sc + Dc &ndash; Sc ·Dc |
 | `Overlay`    | 灰色      | 相反值 `HardLight` |
 | `Darken`     | 白皮書     | 色彩的最小值： 最小值 （Sc，Dc） |
 | `Lighten`    | 黑色     | 色彩的最大值： 最大值 （Dc 中的 Sc） |
@@ -159,9 +159,9 @@ public partial class LightenAndDarkenPage : ContentPage
 | `ColorBurn`  | 白皮書     | 來源為基礎的目的地會變暗 | 
 | `HardLight`  | 灰色      | 類似於惡劣的焦點的效果 |
 | `SoftLight`  | 灰色      | 類似於虛焦點的效果 | 
-| `Difference` | 黑色     | 減去從較深：Abs(Dc &ndash; Sc) | 
+| `Difference` | 黑色     | 從較淺的減去較暗:Abs (Dc &ndash; Sc) | 
 | `Exclusion`  | 黑色     | 類似於`Difference`但較低對比 |
-| `Multiply`   | 白皮書     | 乘以色彩會變暗：Sc·Dc |
+| `Multiply`   | 白皮書     | 以乘以色彩來變暗:Sc·Dc |
 
 更詳細的演算法，請參閱 W3C [**複合 （compositing） 和混合層級 1** ](https://www.w3.org/TR/compositing-1/)規格和 Skia [ **SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)，不過這些兩個來源中的標記並不相同。 請記住`Plus`通常被視為 Porter Duff 混合模式中，和`Modulate`不是 W3C 規格的一部分。
 
@@ -428,4 +428,4 @@ public class PrimaryColorsPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,87 +1,87 @@
 ---
-title: 顯示利用 Xamarin.iOS 的影像
-description: 本文件說明如何在 Xamarin.iOS 中顯示影像。 以程式設計方式或透過 「 iOS 設計工具，它就會涵蓋新增至應用程式的映像。
+title: 使用 Xamarin 來顯示影像
+description: 本檔說明如何在 Xamarin 中顯示影像。 其中涵蓋以程式設計方式或透過 iOS 設計工具將影像新增至應用程式。
 ms.prod: xamarin
 ms.assetid: 67CA8DB6-769D-42BB-A137-3AF933789FE1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: 25c5595fac2ea2aa7a87d6640cc6b5c399ab5e5e
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: fb51d0d04c86274d43e23e4912ed16765b7cdc8b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827815"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657522"
 ---
-# <a name="displaying-images-with-xamarinios"></a>顯示利用 Xamarin.iOS 的影像
+# <a name="displaying-images-with-xamarinios"></a>使用 Xamarin 來顯示影像
 
-將映像新增至您的應用程式需要兩個步驟： 首先，將影像加入至您的專案;然後，新增控制項以及它們在螢幕上顯示的程式碼。 請參閱[處理映像](~/ios/app-fundamentals/images-icons/index.md)一文，以更深入探討在 Xamarin.iOS 中處理的映像。
+將影像新增至您的應用程式需要兩個步驟: 首先, 將影像新增至您的專案;然後, 新增控制項和程式碼, 以將它們顯示在螢幕上。 請參閱[使用影像](~/ios/app-fundamentals/images-icons/index.md)一文, 以取得在 Xamarin 中更詳細的影像處理涵蓋範圍。
 
-## <a name="adding-images-to-your-app"></a>將映像新增至您的應用程式
+## <a name="adding-images-to-your-app"></a>將影像新增至您的應用程式
 
-映像可以新增至您的 Visual Studio for Mac 解決方案中任何資料夾，才**建置動作**設為**內容**則檔案將會包含在您的應用程式，並可顯示。
+影像可以加入至 Visual Studio for Mac 解決方案中的任何資料夾, 如果**組建動作**設定為 [**內容**], 則該檔案將會包含在您的應用程式中, 並可顯示。
 
-Visual Studio for Mac 也支援特殊的目錄稱為**資源**，也可以包含映像檔案。 [資源] 資料夾中的檔案應該具有**建置動作**設為**BundleResource**。
+Visual Studio for Mac 也支援稱為**資源**的特殊目錄, 也可以包含影像檔案。 [資源] 資料夾中的檔案應該將 [**組建] 動作**設定為 [ **BundleResource**]。
 
-此螢幕擷取畫面顯示**建置動作**出現的檔案時的選項是以滑鼠右鍵按一下：
+這個螢幕擷取畫面顯示以滑鼠右鍵按一下檔案時所顯示的**組建動作**選項:
 
- [![](image-images/image30a.png "建置動作 功能表")](image-images/image30a.png#lightbox)
+ [![](image-images/image30a.png "組建動作功能表")](image-images/image30a.png#lightbox)
 
-Visual Studio for Mac 通常會選擇正確**建置動作**自動，但您應該留意這些設定，特別是當您在您的專案中移動檔案。
+Visual Studio for Mac 通常會自動選擇正確的**組建動作**, 但您應該留意這些設定, 特別是當您在專案中移動檔案時。
 
-### <a name="adding-an-image-file"></a>新增影像檔
+### <a name="adding-an-image-file"></a>新增影像檔案
 
-若要將影像檔加入至您的專案，先以滑鼠右鍵按一下專案，然後選擇**新增檔案...**
+若要將影像檔案新增至專案, 請先以滑鼠右鍵按一下專案, 然後選擇 [**加入**檔案]。
 
- [![](image-images/image31a.png "新增檔案 功能表")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "新增檔案 .。。下拉式功能表")](image-images/image31a.png#lightbox)
 
-選取的映像 （或映像） 您想要包含在標準檔案對話方塊中。 預設建置動作，都是映像**BundleResource** – 除非您有特定的理由不覆寫此值。
+選取您想要包含在 [標準檔案] 對話方塊中的影像 (或影像)。 影像的預設組建動作將會是**BundleResource** –除非您有特定原因, 否則請勿覆寫此值。
 
- [![](image-images/image32a.png "新增檔案 對話方塊")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "[新增檔案] 對話方塊")](image-images/image32a.png#lightbox)
 
-映像會加入至您的專案，並可供載入並顯示在程式碼中。 此螢幕擷取畫面顯示映像新增至 iOS 應用程式專案：
+映射將會新增至您的專案, 並可在程式碼中載入和顯示。 這個螢幕擷取畫面顯示新增至 iOS 應用程式專案的映射:
 
- [![](image-images/image33a.png "在專案中的映像")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "專案中的影像")](image-images/image33a.png#lightbox)
 
-### <a name="what-is-the-resources-directory"></a>什麼是資源目錄？
+### <a name="what-is-the-resources-directory"></a>什麼是資原始目錄？
 
-檔案位於**資源**從一般檔案 – 的內容會以不同方式處理目錄**資源**資料夾複製到應用程式的根目錄，而且可以從該處，在參考您的程式碼。 這適合用於有許多原因：
+放在**Resources**目錄中的檔案會以不同于一般檔案的方式處理- **resources**資料夾的內容會複製到應用程式的根目錄, 並可在您的程式碼中加以參考。 這可能很有用, 原因如下:
 
--  儲存應用程式的內容，例如預設啟動映像和應用程式圖示中設定的映像。
--  儲存其他映像和檔案與程式碼分開，因此它們更易於管理 （資源目錄內容會複製時，會保留子目錄）。
+-  儲存在應用程式屬性中設定的映射, 例如預設啟動映射和應用程式圖示。
+-  將其他映射和檔案與程式碼分開儲存, 使其更容易管理 (當複製資原始目錄內容時, 會保留子目錄)。
 
 
-**資源**目錄是在程式庫專案中，特別有用，因為程式碼可以假設這些映像將會複製到取用應用程式，讓您更輕鬆地共用的寫入要求的程式碼程式庫的根目錄影像、 音效、 視訊、 XML 或其他檔案。
+**Resources**目錄在程式庫專案中特別有用, 因為程式碼可以假設這些影像會複製到取用應用程式的根目錄, 讓您更輕鬆地撰寫需要影像、音效、影片、XML 或的共用程式碼程式庫。其他檔案。
 
-**資源**目錄必須如此命名，和所有檔案都應該都有建置動作設為**BundleResource**。
+**Resources**目錄必須命名為, 而且所有檔案都應該將組建動作設定為**BundleResource**。
 
-## <a name="displaying-the-image"></a>顯示映像
+## <a name="displaying-the-image"></a>顯示影像
 
-在 iOS 設計工具中，使用**映像檢視**顯示映像或映像的動畫的序列。 **映像檢視**從 [工具箱] 的圖示如下所示：
+在 iOS 設計工具中, 使用**影像視圖**來顯示影像或動畫系列的影像。 [工具箱] 中的**影像視圖**圖示如下所示:
 
- [![](image-images/image35a.png "在 [工具箱] 中的 ImageView")](image-images/image35.png#lightbox)
+ [![](image-images/image35a.png "工具箱中的 ImageView")](image-images/image35.png#lightbox)
 
-拖曳**映像檢視**從**工具箱**到檢視控制器。 然後，在**映像檢視 > 映像**下拉式清單會提供您的專案中的所有可用映像檔案的清單。 選取任何要在其中將它新增至您的映像檢視。
+將 [**影像] 視圖**從 [**工具箱**] 拖曳至 View 控制器。 然後, 在 [**影像視圖] > [影像**] 下, 下拉式清單會提供專案中所有可用的影像檔案清單。 選取其中任何一項, 將其新增至您的影像視圖。
 
- [![](image-images/image36a.png "在 [工具箱] 中的 ImageView")](image-images/image36.png#lightbox)
+ [![](image-images/image36a.png "工具箱中的 ImageView")](image-images/image36.png#lightbox)
 
-### <a name="displaying-the-image-programmatically"></a>以程式設計的方式顯示的影像
+### <a name="displaying-the-image-programmatically"></a>以程式設計方式顯示影像
 
-因為**SF Monkey.jpg**位於根目錄中的**資源**它可在執行階段應用程式套件組合的根目錄中的目錄。 若要在影像檢視控制項中顯示此映像，請使用下列程式碼：
+因為**SF 的猴子**位於**Resources**目錄的根目錄中, 所以在應用程式套件組合的根目錄中, 它將可在執行時間使用。 若要在影像視圖控制項中顯示此影像, 請使用下列程式碼:
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-如果我們必須放在映像**SF/資源/Pics Monkey.jpg**，然後將程式碼會包含**Pics**資料夾路徑中：
+如果我們將影像放在 **/Resources/Pics/SF 的猴子**中, 則程式碼會在路徑中包含 [**圖片**] 資料夾:
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");
 ```
 
-資源檔參考永遠不需要包含**資源**資料夾。
+資源檔參考永遠不需要包含**Resources**資料夾。
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項 （範例）](https://developer.xamarin.com/samples/monotouch/Controls/)
+- [控制項 (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

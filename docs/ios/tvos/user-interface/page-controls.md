@@ -1,78 +1,78 @@
 ---
-title: 使用 tvOS 在 Xamarin 中的頁面控制項
-description: 本文件說明如何使用 Xamarin 建置的應用程式中的 tvOS 頁面控制項使用。 提供頁面控制項的高層級描述中，討論如何將它們安裝在分鏡腳本，並檢驗如何回應頁面變更事件。
+title: 在 Xamarin 中使用 tvOS 頁面控制項
+description: 本檔說明如何在以 Xamarin 建立的應用程式中使用 tvOS 頁面控制項。 它提供頁面控制項的高階描述、討論如何在分鏡腳本中進行設定, 以及檢查如何回應頁面變更事件。
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 173bc7713b5b8c330d4d4c5863bef24be8bdcb52
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: bb53c11612cf492cda39067db861c1d67e0d3e16
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61179551"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648986"
 ---
-# <a name="working-with-tvos-page-controls-in-xamarin"></a>使用 tvOS 在 Xamarin 中的頁面控制項
+# <a name="working-with-tvos-page-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 頁面控制項
 
-有時候您可能需要在 Xamarin.tvOS 應用程式中顯示一系列的頁面或映像。 頁面控制項的設計是清楚地顯示哪些使用者會在超出最大頁數的頁面。 網頁控制項顯示一連串的點對暗色調，oval 形狀背景。 目前的頁面會顯示填色的點，所有其他頁面會顯示為空心的點。 網頁控制項將會裁剪外部大部分的點，如果有太多，無法納入其背景區域。
+有時候您可能需要在 tvOS 應用程式中顯示一系列的頁面或影像。 網頁控制項的設計, 是為了清楚地顯示使用者已超出最大頁面數目的頁面。 頁面控制項會針對深色、橢圓形狀背景顯示一系列的點。 目前的頁面會顯示已填滿的點, 而所有其他頁面則會顯示為空心點。 如果在其背景區域中有太多無法容納, 頁面控制項將會裁剪外部最多點。
 
 [![](page-controls-images/page01.png "範例頁面控制項")](page-controls-images/page01.png#lightbox)
 
-頁面中的控制項設計來提供回饋給使用者只能的非互動式項目。 您必須新增其他控制項來變更目前的頁碼，（例如筆勢或按鈕）。
+非互動式元素中的頁面控制項, 其設計目的是只為使用者提供意見反應。 您將需要新增其他控制項, 以變更目前的頁碼 (例如手勢或按鈕)。
 
-使用網頁控制項時，Apple 會有下列建議：
+使用頁面控制項時, Apple 具有下列建議:
 
-- **只有完整的集合上使用**-頁面控制項最適合在全螢幕環境中，以顯示存在於多個頁面單一集合中。
-- **限制網頁數**-頁面控制項最適用於十 （10） 或更少的頁面，以及最多二十 （20） 頁面。 超過 20 種頁面，請考慮使用[集合檢視](~/ios/tvos/user-interface/collection-views.md)並顯示在方格中的頁面。
+- **僅適用于完整集合**-頁面控制項在全螢幕環境中最適合使用, 以顯示存在於單一集合中的多個頁面。
+- **限制頁面數目**-頁面控制項最適用于十 (10) 個或更少的頁面, 最多可達二十 (20) 頁。 針對二十頁以上的頁面, 請考慮使用[集合視圖](~/ios/tvos/user-interface/collection-views.md), 並在方格中顯示頁面。
 
 <a name="Page-Controls-and-Storyboards" />
 
 ## <a name="page-controls-and-storyboards"></a>頁面控制項和分鏡腳本
 
-Xamarin.tvOS 應用程式中使用頁面控制項的最簡單方式是將它們新增至使用 iOS 設計工具的應用程式的 UI。
+在 tvOS 應用程式中使用頁面控制項最簡單的方式, 就是使用 iOS 設計工具將它們新增至應用程式的 UI。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
     
-1. 在  **Solution Pad**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
-1. 拖曳**網頁控制項**從**工具箱**並將它放在檢視上： 
+1. 在  **Solution Pad**中, 按兩下`Main.storyboard`檔案, 然後開啟檔案進行編輯。
+1. 從 [**工具箱**] 拖曳**頁面控制項**, 並將它放在視圖上: 
 
     [![](page-controls-images/page02.png "頁面控制項")](page-controls-images/page02.png#lightbox)
-1. 在**小工具 索引標籤**的**Properties Pad**，您可以調整頁面控制項的數個屬性，例如其**目前頁面**並 **# of 頁面**: 
+1. 在**Properties Pad**的 [ **Widget]** 索引標籤中, 您可以調整頁面控制項的數個屬性, 例如其**目前頁面**和**頁數**: 
 
-    [![](page-controls-images/page03.png "小工具 索引標籤")](page-controls-images/page03.png#lightbox)
-1. 接下來，將控制項或軌跡新增至要移向後和向前逐步執行的頁面集合的檢視。
-1. 最後，將指派**名稱**控制項，讓您可以回應其C#程式碼。 例如:  
+    [![](page-controls-images/page03.png "[Widget] 索引標籤")](page-controls-images/page03.png#lightbox)
+1. 接下來, 將控制項或手勢加入至視圖, 以在頁面集合中向後和向前移動。
+1. 最後, 將**名稱**指派給控制項, 以便您可以在程式碼中C#對其進行回應。 例如： 
 
-    [![](page-controls-images/page04.png "將控制項")](page-controls-images/page04.png#lightbox)
+    [![](page-controls-images/page04.png "將控制項命名為")](page-controls-images/page04.png#lightbox)
 1. 儲存您的變更。
     
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
     
-1. 在 **方案總管**，連按兩下`Main.storyboard`檔案，並開啟它進行編輯。
-1. 拖曳**網頁控制項**從**工具箱**並將它放在檢視上： 
+1. 在 **方案總管**中, 按兩下`Main.storyboard`檔案, 然後開啟檔案進行編輯。
+1. 從 [**工具箱**] 拖曳**頁面控制項**, 並將它放在視圖上: 
 
     [![](page-controls-images/page02-vs.png "頁面控制項")](page-controls-images/page02-vs.png#lightbox)
-1. 在**小工具 索引標籤**的**屬性總管**，您可以調整頁面控制項的數個屬性，例如其**目前頁面**並**的頁面數目**: 
+1. 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中, 您可以調整頁面控制項的數個屬性, 例如其**目前頁面**和**頁數**: 
 
-    [![](page-controls-images/page03-vs.png "小工具 索引標籤")](page-controls-images/page03-vs.png#lightbox)
-1. 接下來，將控制項或軌跡新增至要移向後和向前逐步執行的頁面集合的檢視。
-1. 最後，將指派**名稱**控制項，讓您可以回應其C#程式碼。 例如： 
+    [![](page-controls-images/page03-vs.png "[Widget] 索引標籤")](page-controls-images/page03-vs.png#lightbox)
+1. 接下來, 將控制項或手勢加入至視圖, 以在頁面集合中向後和向前移動。
+1. 最後, 將**名稱**指派給控制項, 以便您可以在程式碼中C#對其進行回應。 例如： 
 
-    [![](page-controls-images/page04-vs.png "將控制項")](page-controls-images/page04-vs.png#lightbox)
+    [![](page-controls-images/page04-vs.png "將控制項命名為")](page-controls-images/page04-vs.png#lightbox)
 1. 儲存您的變更。
     
 
 -----
 
 > [!IMPORTANT]
-> 雖然您可以指派事件，例如`TouchUpInside`UI 中的項目 （例如標記的 UIButton) iOS 設計工具，則會永遠不會呼叫因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 您應該一律使用`Primary Action`事件建立事件處理常式 tvOS 的使用者介面項目時。
+> 雖然您可以在 iOS 設計工具中將`TouchUpInside`事件 (例如) 指派給 UI 專案 (例如 UIButton), 但永遠不會呼叫它, 因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素`Primary Action`的事件處理常式時, 您應該一律使用事件。
 
-編輯您的檢視控制器 (範例`ViewController.cs`) 檔案，並新增程式碼來處理變更的頁面。 例如：
+編輯您的 View Controller ( `ViewController.cs`範例) 檔案, 並新增程式碼來處理所變更的頁面。 例如：
 
 ```csharp
 using System;
@@ -146,33 +146,33 @@ namespace MySingleView
 }
 ```
 
-讓我們看看頁面控制項的兩個屬性。 首先，若要指定的頁面數目上限，使用下列方法：
+讓我們仔細看一下頁面控制項的兩個屬性。 首先, 若要指定最大頁面數目, 請使用下列各項:
 
 ```csharp
 PageView.Pages = 6;
 ```
 
-若要變更目前的頁碼，請使用下列程式碼：
+若要變更目前的頁碼, 請使用下列程式碼:
 
 ```csharp
 PageView.CurrentPage = PageNumber;
 ```
 
-`CurrentPage`屬性為零 (0) 為基礎，因此第一頁將會是零，因此最後一個 1 減的頁面數目上限。
+`CurrentPage`屬性為零 (0), 因此第一個頁面會是零, 而最後一個則是最大頁數的減。
 
-如需有關使用分鏡腳本的詳細資訊，請參閱我們[Hello，tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)。 
+如需使用分鏡腳本的詳細資訊, 請參閱我們的[Hello, tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。 
 
 <a name="Summary" />
 
 ## <a name="summary"></a>總結
 
-這篇文章已涵蓋設計與 Xamarin.tvOS 應用程式內使用網頁控制項。
+本文涵蓋設計和使用 tvOS 應用程式內的頁面控制項。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [tvOS 範例](https://developer.xamarin.com/samples/tvos/all/)
+- [tvOS 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS](https://developer.apple.com/tvos/)
-- [tvOS 人性化介面指南](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [Tvos 應用程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [tvOS 人力介面指南](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [TvOS 應用程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

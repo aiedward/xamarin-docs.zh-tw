@@ -1,5 +1,5 @@
 ---
-title: 使用 Azure Cosmos DB 文件資料庫和 Xamarin.Forms 進行使用者驗證
+title: 使用 Azure Cosmos DB 檔資料庫和 Xamarin 來驗證使用者
 description: 這篇文章說明如何結合 Azure Cosmos DB 進行資料分割集合的存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 6e55b3b9b0f204992de684ba09f3d9ff2552ce00
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 0067a9e576e695a308e4326955b540be2ff46f61
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832354"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657221"
 ---
-# <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 文件資料庫和 Xamarin.Forms 進行使用者驗證
+# <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 檔資料庫和 Xamarin 來驗證使用者
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
 _Azure Cosmos DB 文件資料庫支援資料分割的集合，可跨越多部伺服器和資料分割，同時支援無限制的儲存體和輸送量。這篇文章說明如何結合資料分割的集合，存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。_
 
@@ -271,7 +271,7 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 ## <a name="related-links"></a>相關連結
 
-- [Todo Azure Cosmos DB Auth （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoDocumentDBAuth/)
+- [Todo Azure Cosmos DB Auth （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 - [使用 Azure Cosmos DB 文件資料庫](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md)
 - [安全存取 Azure Cosmos DB 資料](/azure/cosmos-db/secure-access-to-data/)
 - [SQL API 中的存取控制](/rest/api/documentdb/access-control-on-documentdb-resources/)。

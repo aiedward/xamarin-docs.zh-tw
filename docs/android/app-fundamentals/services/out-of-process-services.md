@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: aaecc0da52fe692840ed928946963a995364fa9f
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 360ea18de0c9d30988d63602ba3c17c3d00ed83a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509192"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644084"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在遠端進程中執行 Android 服務
 
@@ -386,7 +386,7 @@ Android 提供四種不同的許可權等級:
 
 * **正常**&ndash;這是預設的許可權層級。 它可用來識別可由 Android 自動授與要求它的用戶端的低風險許可權。 使用者不需要明確授與這些許可權, 但可以在應用程式設定中查看許可權。
 * 簽章&ndash;這是特殊的許可權類別, 會由 Android 自動授與所有以相同憑證簽署的應用程式。 此許可權的設計可讓應用程式開發人員輕鬆地在其應用程式之間共用元件或資料, 而不需要中斷使用者進行持續核准。
-* **signatureOrSystem**這與上面所述的簽章許可權非常類似。  &ndash; 除了自動授與由相同憑證簽署的應用程式之外, 此許可權也會授與給已簽署相同憑證的應用程式, 該憑證是用來簽署與 Android 系統映射一起安裝的應用程式。 此許可權通常僅供 Android ROM 開發人員使用, 以允許其應用程式使用協力廠商應用程式。 這種應用程式通常不會使用這種方式, 因為公用的一般散發是大型的。
+* **signatureOrSystem**這與上面所述的簽章許可權非常類似。 &ndash; 除了自動授與由相同憑證簽署的應用程式之外, 此許可權也會授與給已簽署相同憑證的應用程式, 該憑證是用來簽署與 Android 系統映射一起安裝的應用程式。 此許可權通常僅供 Android ROM 開發人員使用, 以允許其應用程式使用協力廠商應用程式。 這種應用程式通常不會使用這種方式, 因為公用的一般散發是大型的。
 * **危險**&ndash;危險的許可權是可能會對使用者造成問題的許可權。 基於這個理由, 使用者必須明確核准**危險**的許可權。
 
 因為`signature`和`normal`許可權會在 Android 安裝的時間自動授與, 所以在包含用戶端的 APK 之前, 必須**先**安裝 APK 裝載服務的關鍵。 如果先安裝用戶端, 則 Android 不會授與許可權。 在此情況下, 必須將用戶端 APK 卸載、安裝服務 APK, 然後重新安裝用戶端 APK。
@@ -488,4 +488,4 @@ Android 提供四種不同的許可權等級:
 - [進程和執行緒](https://developer.android.com/guide/components/processes-and-threads.html)
 - [Android 資訊清單-許可權](https://developer.android.com/guide/topics/manifest/manifest-intro.html#perms)
 - [安全性秘訣](https://developer.android.com/training/articles/security-tips.html)
-- [MessengerServiceDemo (範例)](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/MessengerServiceDemo/)
+- [MessengerServiceDemo (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-messengerservicedemo)
