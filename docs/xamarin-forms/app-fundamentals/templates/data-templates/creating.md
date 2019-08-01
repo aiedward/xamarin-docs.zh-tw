@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: dee45f9788360326ddb393305e9a52627264a671
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 1163f264fc54a461d8d95854524439589cdc81f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926285"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646977"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _您可以在 ResourceDictionary 中，或是從自訂類型或適當的 Xamarin.Forms 資料格類型，以內嵌方式建立資料範本。本文將探索各種方法。_
 
@@ -293,5 +293,5 @@ public class WithDataTemplatePageCS : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [儲存格外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [Data Templates (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/) (資料範本 (範例))
+- [Data Templates (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates) (資料範本 (範例))
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

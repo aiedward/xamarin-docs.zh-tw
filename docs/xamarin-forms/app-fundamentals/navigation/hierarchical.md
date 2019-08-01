@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: 01bb3d19b5e79a6ce9942447b5ddd4afb04574cc
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: b1f2dbe87fed951223e731912b696c649d0b6edb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978611"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647196"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
 _NavigationPage 類別提供的階層式導覽體驗讓使用者能夠視需要，向前及向後巡覽頁面。此類別會實作一堆後進先出 (LIFO) 的 Page 物件導覽。本文示範如何使用 NavigationPage 類別，在一堆頁面中執行導覽。_
 
@@ -40,8 +40,8 @@ _NavigationPage 類別提供的階層式導覽體驗讓使用者能夠視需要�
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的配置取決於平台：
 
-- 在 iOS 上，頁面頂端有一個導覽列，其中顯示標題，並具有可返回上一頁的 [上一頁] 按鈕。
-- 在 Android 上，頁面頂端有一個導覽列，其中顯示標題、圖示，以及可返回上一頁的 [上一頁] 按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。
+- 在 iOS 上，頁面頂端有一個導覽列，其中顯示標題，並具有可返回上一頁的 [上一頁]  按鈕。
+- 在 Android 上，頁面頂端有一個導覽列，其中顯示標題、圖示，以及可返回上一頁的 [上一頁]  按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。
 - 在通用 Windows 平台上，頁面頂端有一個顯示標題的導覽列。
 
 在所有平台上，[`Page.Title`](xref:Xamarin.Forms.Page.Title) 屬性的值會顯示為頁面標題。
@@ -95,7 +95,7 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 
 ### <a name="popping-pages-from-the-navigation-stack"></a>從導覽堆疊中快顯頁面
 
-無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁] 按鈕都可以從導覽堆疊快顯使用中的頁面。
+無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁]  按鈕都可以從導覽堆疊快顯使用中的頁面。
 
 若要以程式設計的方式返回原始頁面，`Page2Xaml` 執行個體必須叫用 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，如下列程式碼範例所示：
 
@@ -310,7 +310,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 所有 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) 都會顯示在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的導覽列中。 這是透過將 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加屬性設定為 `View` 來完成。 此附加屬性可以在任何 [`Page`](xref:Xamarin.Forms.Page) 上設定，而且當 `Page` 推送到 `NavigationPage` 時，`NavigationPage` 會採用該屬性的值。
 
-下列範例擷取自[標題檢視範例](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)，示範如何從 XAML 設定 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加屬性：
+下列範例擷取自[標題檢視範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)，示範如何從 XAML 設定 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加屬性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -362,9 +362,9 @@ public class TitleViewPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [Page Navigation](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf) (頁面導覽)
-- [Hierarchical Navigation](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/) (階層式導覽 (範例))
-- [Passing Data (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/) (傳遞資料 (範例))
-- [LoginFlow (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
-- [Title View (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/) (標題檢視 (範例))
+- [Hierarchical Navigation](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical) (階層式導覽 (範例))
+- [Passing Data (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata) (傳遞資料 (範例))
+- [LoginFlow (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
+- [Title View (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview) (標題檢視 (範例))
 - [如何在 Xamarin.Forms 中建立登入畫面流程影片](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms) \(英文\)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

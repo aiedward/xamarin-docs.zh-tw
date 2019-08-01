@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: 3f22556948fc87dc604870f5a8625b80a4a0b29d
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827195"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643833"
 ---
 # <a name="linking-on-android"></a>在 Android 上連結
 
 Xamarin.Android 應用程式會使用「連結器」  來縮小應用程式的大小。 連結器會採用您應用程式的靜態分析來判斷實際使用到的組件、類型及成員。 連結器然後會像「記憶體回收行程」  一樣，持續尋找參考的組件、類型及成員，直到整個參考組件、類型及成員終止為止。 然後，所有在此終止之外的項目便會遭到「捨棄」  。
 
-例如，[Hello, Android](https://developer.xamarin.com/samples/monodroid/HelloM4A/) 範例：
+例如，[Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) 範例：
 
-|Configuration|1.2.0 大小|4.0.1 大小|
+|組態|1.2.0 大小|4.0.1 大小|
 |---|---|---|
 |沒有連結的版本：|14.0 MB|16.0 MB|
 |有連結的版本：|4.2 MB|2.9 MB|
@@ -28,7 +28,7 @@ Xamarin.Android 應用程式會使用「連結器」  來縮小應用程式的�
 
 
 
-## <a name="control"></a>控制項
+## <a name="control"></a>控制
 
 連結乃根據「靜態分析」(  。 因此，無法偵測相依於執行階段環境的任何項目：
 
@@ -90,7 +90,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>保留程式碼
 
-連結器有時候會移除您想要保留的程式碼。 例如：
+連結器有時候會移除您想要保留的程式碼。 例如︰
 
 -   您也有可能會透過 `System.Reflection.MemberInfo.Invoke` 動態呼叫程式碼。
 
@@ -98,7 +98,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 -   若您使用的是 XML 序列化，則您可能會想要保留您類型的屬性。
 
-在這些案例下，您可以使用 [Android.Runtime.Preserve](https://developer.xamarin.com/api/type/Android.Runtime.PreserveAttribute/) 屬性。 由於每個未由應用程式靜態連結的成員都會遭到移除，因此這個屬性可用來標示沒有靜態參考，但您的應用程式仍然需要的成員。 您可以將此屬性套用到類型的每個成員，或是類型本身。
+在這些案例下，您可以使用 [Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute) 屬性。 由於每個未由應用程式靜態連結的成員都會遭到移除，因此這個屬性可用來標示沒有靜態參考，但您的應用程式仍然需要的成員。 您可以將此屬性套用到類型的每個成員，或是類型本身。
 
 在下列範例中，此屬性會用於保留 `Example` 類別的建構函式：
 

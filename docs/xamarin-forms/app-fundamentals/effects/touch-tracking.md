@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 9b5150eff0290ef5858198459108699be9f9b273
-ms.sourcegitcommit: cb484bd529bf2d8e48e5b3d086bdfc31895ec209
+ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411761"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651681"
 ---
 # <a name="invoking-events-from-effects"></a>從效果叫用事件
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
-效果可以定義並叫用事件，以通知基礎原生檢視中有變更。本文說明如何實作低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。
+效果可以定義並叫用事件，以通知基礎原生檢視中有變更。  本文說明如何實作低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。
 
 本文所述的效果可提供對低層級觸控事件的存取。 這些低層級事件不能透過現有的 `GestureRecognizer` 類別取得，但它們對某些類型的應用程式來說非常重要。 例如，指繪應用程式需要追蹤個人手指在螢幕上的移動。 音樂鍵盤需要偵測對個別按鍵的點選和釋放，以及手指在滑奏中從某個按鍵滑到另一個按鍵的動作。
 
@@ -52,7 +52,7 @@ UWP 方法證實非常適合某些類型的應用程式，例如音樂鍵盤。 
 
 ## <a name="the-touch-tracking-effect-api"></a>觸控追蹤效果 API
 
-[**觸控追蹤效果示範**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/)範例包含實作低層級觸控追蹤的類別 (和列舉)。 這些類型屬於 `TouchTracking` 命名空間，並以 `Touch` 一字開頭。 **TouchTrackingEffectDemos** .NET Standard 程式庫專案包含觸控事件類型的 `TouchActionType` 列舉：
+[**觸控追蹤效果示範**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)範例包含實作低層級觸控追蹤的類別 (和列舉)。 這些類型屬於 `TouchTracking` 命名空間，並以 `Touch` 一字開頭。 **TouchTrackingEffectDemos** .NET Standard 程式庫專案包含觸控事件類型的 `TouchActionType` 列舉：
 
 ```csharp
 public enum TouchActionType
@@ -359,9 +359,9 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 
 ## <a name="putting-the-touch-effect-to-work"></a>實際使用觸控效果
 
-[**TouchTrackingEffectDemos**](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) 程式包含五個用來測試一般工作觸控追蹤效果的頁面。
+[**TouchTrackingEffectDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) 程式包含五個用來測試一般工作觸控追蹤效果的頁面。
 
-[BoxView 拖曳] 頁面可讓您將 `BoxView` 項目新增至 `AbsoluteLayout`，然後將它們拖曳到畫面上。 [XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml)會具現化兩個 `Button` 檢視，用來將 `BoxView` 項目新增至 `AbsoluteLayout`，以及清除 `AbsoluteLayout`。
+[BoxView 拖曳]  頁面可讓您將 `BoxView` 項目新增至 `AbsoluteLayout`，然後將它們拖曳到畫面上。 [XAML 檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml)會具現化兩個 `Button` 檢視，用來將 `BoxView` 項目新增至 `AbsoluteLayout`，以及清除 `AbsoluteLayout`。
 
 [程式碼後置檔案](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml.cs)中將新 `BoxView` 新增至 `AbsoluteLayout` 的方法，也會將 `TouchEffect` 物件新增至 `BoxView`，並將事件處理常式附加到效果：
 
@@ -457,7 +457,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 ### <a name="subclassing-the-view"></a>子類別化檢視
 
-通常，Xamarin.Forms 項目更容易處理自己的觸控事件。 [可拖曳的 BoxView 拖曳] 頁面的功能與 [BoxView 拖曳] 頁面相同，但使用者所拖曳項目是衍生自 `BoxView` 的 [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/DraggableBoxView.cs) 類別執行個體：
+通常，Xamarin.Forms 項目更容易處理自己的觸控事件。 [可拖曳的 BoxView 拖曳]  頁面的功能與 [BoxView 拖曳]  頁面相同，但使用者所拖曳項目是衍生自 `BoxView` 的 [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/DraggableBoxView.cs) 類別執行個體：
 
 ```csharp
 class DraggableBoxView : BoxView
@@ -514,7 +514,7 @@ class DraggableBoxView : BoxView
 
 以下兩個示範需要圖形，因此它們使用 SkiaSharp 來達到這個目的。 在研究這些範例之前，建議您先了解如何[在 Xamarin.Forms 中使用 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。 前兩篇文章 (「SkiaSharp 繪圖基本概念」和「SkiaSharp 線條和路徑」) 涵蓋了您在此需要的一切資訊。
 
-[橢圓形繪圖] 頁面可讓您在螢幕上撥動手指來繪製橢圓形。 根據您移動手指的方式而定，您可以使用從左上角到右下角，或從任何其他一角到對角的方式繪製橢圓形。 繪製的橢圓形具有隨機色彩且不透明。
+[橢圓形繪圖]  頁面可讓您在螢幕上撥動手指來繪製橢圓形。 根據您移動手指的方式而定，您可以使用從左上角到右下角，或從任何其他一角到對角的方式繪製橢圓形。 繪製的橢圓形具有隨機色彩且不透明。
 
 [![](touch-tracking-images/ellipsedrawing-small.png "[橢圓形繪圖] 頁面的三重螢幕擷取畫面")](touch-tracking-images/ellipsedrawing-large.png#lightbox "[橢圓形繪圖] 頁面的三重螢幕擷取畫面")
 
@@ -686,7 +686,7 @@ case TouchActionType.Pressed:
     break;
 ```
 
-另一個 SkiaSharp 範例是 [手繪] 頁面。 您可以從兩個 `Picker` 檢視中選取筆觸色彩和筆觸寬度，然後用一或多個手指進行繪製：
+另一個 SkiaSharp 範例是 [手繪]  頁面。 您可以從兩個 `Picker` 檢視中選取筆觸色彩和筆觸寬度，然後用一或多個手指進行繪製：
 
 [![](touch-tracking-images/fingerpaint-small.png "[手繪] 頁面的三重螢幕擷取畫面")](touch-tracking-images/fingerpaint-large.png#lightbox "[手繪] 頁面的三重螢幕擷取畫面")
 
@@ -748,11 +748,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ### <a name="tracking-view-to-view-touch"></a>追蹤檢視對檢視觸控
 
-不論是建立 `TouchEffect` 或發生 `Pressed` 事件時，所有之前的範例已將 `TouchEffect` 的 `Capture` 屬性設定為 `true`。 這可確保相同的項目會接收與第一個按下檢視的手指建立關聯的所有事件。 最後一個範例「不會」將 `Capture` 設定為 `true`。 當接觸螢幕的手指從某個項目移到另一個項目時，這會導致不同的行為。 手指移動的來源項目會接收 `Type` 屬性設定為 `TouchActionType.Exited` 的事件，而第二個項目則接收具有 `Type` 設定 `TouchActionType.Entered` 的事件。
+不論是建立 `TouchEffect` 或發生 `Pressed` 事件時，所有之前的範例已將 `TouchEffect` 的 `Capture` 屬性設定為 `true`。 這可確保相同的項目會接收與第一個按下檢視的手指建立關聯的所有事件。 最後一個範例「不會」  將 `Capture` 設定為 `true`。 當接觸螢幕的手指從某個項目移到另一個項目時，這會導致不同的行為。 手指移動的來源項目會接收 `Type` 屬性設定為 `TouchActionType.Exited` 的事件，而第二個項目則接收具有 `Type` 設定 `TouchActionType.Entered` 的事件。
 
 這種類型的觸控處理非常適用於音樂鍵盤。 按鍵應該能夠偵測其按下時間，同時也能偵測手指何時從某個按鍵滑到另一個按鍵。
 
-[靜音鍵盤] 頁面可定義衍生自 [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/Key.cs) (其衍生自 `BoxView`) 的小型 [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/WhiteKey.cs) 和 [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BlackKey.cs) 類別。
+[靜音鍵盤]  頁面可定義衍生自 [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/Key.cs) (其衍生自 `BoxView`) 的小型 [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/WhiteKey.cs) 和 [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BlackKey.cs) 類別。
 
 `Key` 類別已準備好在實際的音樂應用程式中使用。 它可定義名為 `IsPressed` 和 `KeyNumber` 的公用屬性，其目的是要設定為依照 MIDI 標準建立的按鍵碼。 `Key` 類別也會定義名為 `StatusChanged` 的事件，當 `IsPressed` 屬性變更時就會叫用該事件。
 
@@ -809,4 +809,4 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 - [iOS 中的多點觸控手指追蹤](~/ios/app-fundamentals/touch/touch-tracking.md)
 - [Android 中的多點觸控手指追蹤](~/android/app-fundamentals/touch/touch-tracking.md)
-- [Touch Tracking Effect (Samples)](https://developer.xamarin.com/samples/xamarin-forms/effects/TouchTrackingEffectDemos/) (觸控追蹤效果 (範例))
+- [Touch Tracking Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) (觸控追蹤效果 (範例))

@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2018
-ms.openlocfilehash: c607cecf6c7044fa4c8d0270a5b8d1471d3f9227
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: ace1129397251c02c5ffb682344ff2308a24c62a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53059057"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653360"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 資料繫結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 _資料繫結是連結兩個物件屬性的技術，以便在其中一個屬性變更時，自動反映在另一個屬性上。資料繫結是 Model-View-ViewModel (MVVM) 應用程式架構不可或缺的一部分。_
 
 ## <a name="the-data-linking-problem"></a>資料連結問題
 
-Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含多個稱為「檢視」的使用者介面物件。 程式的主要工作之一是讓這些檢視保持同步，並追蹤其所代表的不同值或選取項目。 檢視通常代表來自基礎資料來源的值，而使用者操作這些檢視來變更該資料。 檢視變更時，基礎資料必須反映該變更；同樣地，當基礎資料變更時，該變更必須反映在檢視中。
+Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含多個稱為「檢視」  的使用者介面物件。 程式的主要工作之一是讓這些檢視保持同步，並追蹤其所代表的不同值或選取項目。 檢視通常代表來自基礎資料來源的值，而使用者操作這些檢視來變更該資料。 檢視變更時，基礎資料必須反映該變更；同樣地，當基礎資料變更時，該變更必須反映在檢視中。
 
 若要成功處理這項作業，程式必須收到在這些檢視或基礎資料中進行變更的通知。 定義在變更發生時發出訊號的事件，是常見的解決方案。 因此可安裝會收到這些變更通知的事件處理常式。 事件處理常式藉由將資料從某個物件傳輸到另一個來回應。 不過，當存在許多檢視時，也必須要有許多事件處理常式，會牽涉到大量程式碼。
 
@@ -35,7 +35,7 @@ Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含
 - 另一個 `View` 的衍生項目，通常在相同頁面上。
 - 或是程式碼檔案中的物件。
 
-在示範程式 (例如在 [**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) 範例中的程式) 中，為清楚和簡單起見，通常會顯示兩個 `View` 衍生項目之間的資料繫結。 不過，相同準則也可以套用至 `View` 和其他物件之間的資料繫結。 使用 Model View ViewModel (MVVM) 架構來建置應用程式時，含基礎資料的類別通常稱為 ViewModel。
+在示範程式 (例如在 [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) 範例中的程式) 中，為清楚和簡單起見，通常會顯示兩個 `View` 衍生項目之間的資料繫結。 不過，相同準則也可以套用至 `View` 和其他物件之間的資料繫結。 使用 Model View ViewModel (MVVM) 架構來建置應用程式時，含基礎資料的類別通常稱為 ViewModel。
 
 您可以在下列一系列文章中探索資料繫結：
 
@@ -73,6 +73,6 @@ Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
 - [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)

@@ -6,16 +6,16 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
-ms.openlocfilehash: bc88a5eb977ea49b761df22407329dfaf20fa122
-ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
+ms.openlocfilehash: 1318d8e1563239d5215d8cfc03c971be8b2cff35
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477568"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647647"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>從 iOS 模擬器和 Android 模擬器連線到本機 Web 服務
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 
 許多行動應用程式會使用 Web 服務。 開發階段中通常都會在本機部署 Web 服務，並透過在 iOS 模擬器或 Android 模擬器中執行的行動應用程式取用。 這樣就不需將 Web 服務部署至裝載的端點，而且能夠提供簡易的偵錯體驗，因為行動應用程式和 Web 服務都是在本機執行。
 
@@ -54,7 +54,7 @@ dotnet dev-certs https --help
 
 如需在電腦上啟用本機 HTTPS 的詳細資訊，請參閱[啟用本機 HTTPS](/aspnet/core/getting-started#enable-local-https)。
 
-## <a name="configure-your-project"></a>設定專案
+## <a name="configure-your-project"></a>設定您的專案
 
 在 iOS 和 Android 上執行的 Xamarin 應用程式可以指定 `HttpClient` 類別使用哪些網路堆疊，並提供使用受控網路堆疊，或使用原生網路堆疊的選項。 受控堆疊提供高層級相容性，具備現有 .NET 程式碼，但僅限於 TLS 1.0 且執行速度可能會比較慢，並產生較大的可執行檔大小。 原生堆疊速度可以更快並提供更高的安全性，但可能不會提供 `HttpClient` 類別的所有功能。
 
@@ -121,7 +121,7 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 ## <a name="related-links"></a>相關連結
 
-- [TodoREST (範例)](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoREST) \(英文\)
+- [TodoREST (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/) \(英文\)
 - [啟用本機 HTTPS](/aspnet/core/getting-started#enable-local-https)
 - [適用於 iOS/macOS 的 HttpClient 和 SSL/TLS 實作選取器](~/cross-platform/macios/http-stack.md)
 - [適用於 Android 的 HttpClient 堆疊和 SSL/TLS 實作選擇器](~/android/app-fundamentals/http-stack.md)

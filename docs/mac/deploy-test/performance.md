@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 808d7aa8f886dac38ed8ff5f274ca8f4a02c8dbf
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 76ce6cd3a78e56acb9d77c0c6a4b942e5bdc3f2e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112425"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656084"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac 效能
 
@@ -59,7 +59,7 @@ Xamarin.Mac 應用程式可以使用數個效能特性與功能各異的[目標 
 
 可能的話，請使用[非同步](~/cross-platform/platform/async.md)和執行緒以免阻礙 UI。
 
-對於長時間執行的作業，請考慮使用 [NSProgressIndicator](https://developer.xamarin.com/samples/mac/ProgressBarExample/) 或 Apple 的 [HIG](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) \(英文\) 中記載的其他選項來通知使用者。
+對於長時間執行的作業，請考慮使用 [NSProgressIndicator](https://docs.microsoft.com/samples/xamarin/mac-samples/progressbarexample) 或 Apple 的 [HIG](https://developer.apple.com/macos/human-interface-guidelines/indicators/progress-indicators/) \(英文\) 中記載的其他選項來通知使用者。
 
 
 ## <a name="related-links"></a>相關連結

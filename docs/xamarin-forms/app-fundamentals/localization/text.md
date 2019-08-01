@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 39e641d5e911b179ca8da9fc6c1b7685a9644364
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: a00b8052bfa2cd3a762e1b78409ffaa85cdae70c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831487"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646755"
 ---
 # <a name="localization"></a>當地語系化
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
 _您可以使用 .NET 資源檔將 Xamarin.Forms 應用程式當地語系化。_
 
@@ -24,7 +24,7 @@ _您可以使用 .NET 資源檔將 Xamarin.Forms 應用程式當地語系化。_
 
 用於將 .NET 應用程式當地語系化的內建機制，使用 [RESX 檔案](https://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)和 `System.Resources`、`System.Globalization` 命名空間中的類別。 包含已翻譯字串的 RESX 檔案內嵌在 Xamarin.Forms 組件中，外加編譯器產生的類別，此類別提供對翻譯的強型別存取。 然後即可在程式碼中擷取已翻譯文字。
 
-### <a name="sample-code"></a>程式碼範例
+### <a name="sample-code"></a>範例程式碼
 
 本文件有兩個相關範例：
 
@@ -691,8 +691,8 @@ namespace UsingResxLocalization
 
 雖然我們可以在 Xamarin.Forms 程式碼中處理使用者介面的翻譯，但有些項目必須在每個平台特定的專案中完成。 本節將討論如何當地語系化：
 
-* Application Name
-* 影像
+* 應用程式名稱
+* 映像
 
 範例專案包含稱為 **flag.png** 的當地語系化影像，在 C# 中參考如下：
 
@@ -729,7 +729,7 @@ switch (Device.RuntimePlatform)
 
 iOS 使用稱為「當地語系化專案」的命名標準或 **.lproj** 目錄來包含影像和字串資源。 這些目錄可包含應用程式中所使用影像的當地語系化版本，以及可用來當地語系化應用程式名稱的 **InfoPlist.strings** 檔案。 如需 iOS 當地語系化的詳細資訊，請參閱 [iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)。
 
-#### <a name="images"></a>影像
+#### <a name="images"></a>映像
 
 下列螢幕擷取畫面顯示 iOS 範例應用程式及特定語言的 **.lproj** 目錄。 西班牙文目錄稱為 **es.lproj**，其中包含預設影像的當地語系化版本，以及 **flag.png**：
 
@@ -753,7 +753,7 @@ iOS 使用稱為「當地語系化專案」的命名標準或 **.lproj** 目錄�
 
 Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串**目錄搭配語言代碼後置字元來儲存當地語系化影像。 需要四個字母的地區設定代碼時 (例如 zh-TW 或 pt-BR)，請注意 Android 要求在連字號之後/地區設定代碼之前加上 **r** (例如 zh-rTW 或 pt-rBR)。 如需 Android 當地語系化的詳細資訊，請參閱 [Android 當地語系化](~/android/app-fundamentals/localization.md)。
 
-#### <a name="images"></a>影像
+#### <a name="images"></a>映像
 
 下列螢幕擷取畫面顯示 Android 範例，其中包含一些當地語系化的可繪製資源和字串：
 
@@ -789,7 +789,7 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 
 通用 Windows 平台擁有可簡化影像和應用程式名稱當地語系化的資源基礎結構。 如需 UWP 當地語系化的詳細資訊，請參閱 [UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)。
 
-#### <a name="images"></a>影像
+#### <a name="images"></a>映像
 
 將影像放在資源特定資料夾中即可當地語系化，如下列螢幕擷取畫面所示：
 
@@ -805,8 +805,8 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 
 ## <a name="related-links"></a>相關連結
 
-- [RESX 當地語系化範例](https://developer.xamarin.com/samples/xamarin-forms/UsingResxLocalization/)
-- [TodoLocalized 範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalized/)
+- [RESX 當地語系化範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [TodoLocalized 範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalized)
 - [跨平台當地語系化](~/cross-platform/app-fundamentals/localization.md)
 - [iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)
 - [Android 當地語系化](~/android/app-fundamentals/localization.md)

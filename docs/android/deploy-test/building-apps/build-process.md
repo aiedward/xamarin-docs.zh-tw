@@ -1,21 +1,21 @@
 ---
-title: 建置程序
+title: 建置流程
 ms.prod: xamarin
 ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 43f8b1185900ff20f8e4c53680c1adf62ac8316a
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5d3635ccc61a0be50e4a4b6d8bc44e60515cc21e
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829690"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509064"
 ---
-# <a name="build-process"></a>建置程序
+# <a name="build-process"></a>建置流程
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 Xamarin.Android 建置程序負責將所有作業結合在一起：[產生 `Resource.designer.cs`](~/android/internals/api-design.md)、支援 `AndroidAsset`、`AndroidResource` 和其他[建置動作](#Build_Actions)、產生 [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)，以及產生 `.apk` 以便在 Android 裝置上執行。
 
@@ -127,7 +127,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     Android 套件內只能有一個具有 `<AndroidApplication>True</AndroidApplication>` 的專案。 (遺憾的是，此限制尚未經過驗證，因而可能造成 Android 資源發生些微異常錯誤。)
 
--   **AndroidApplicationJavaClass** &ndash; 當類別是繼承自 [Android.App.Application](https://developer.xamarin.com/api/type/Android.App.Application/) 時，要用來取代 `android.app.Application` 的完整 Java 類別名稱。
+-   **AndroidApplicationJavaClass** &ndash; 當類別是繼承自 [Android.App.Application](xref:Android.App.Application) 時，要用來取代 `android.app.Application` 的完整 Java 類別名稱。
 
     這個屬性通常由其他  屬性來設定，例如 `$(AndroidEnableMultiDex)` MSBuild 屬性。
 
@@ -153,9 +153,9 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     這個屬性的預設值是 `False`。
 
--   **AndroidEnablePreloadAssemblies** &ndash; 布林值屬性，可控制是否要在處理序啟動期間載入應用程式套件內隨附的所有受控組件。
+-   **AndroidEnablePreloadAssemblies** &ndash; 布林值屬性，可控制是否要在流程啟動期間載入應用程式套件內隨附的所有受控組件。
 
-    設定為 `True` 時，就會在處理序啟動期間先載入應用程式套件內隨附的所有組件，然後再叫用任何應用程式程式碼。
+    設定為 `True` 時，就會在流程啟動期間先載入應用程式套件內隨附的所有組件，然後再叫用任何應用程式程式碼。
     這與 Xamarin.Android 9.2 之前版本的做法一致。
 
     設定為 `False` 時，組件將只會在需要時載入。
@@ -194,7 +194,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     這個屬性的預設值是 `True`。
 
--   **AndroidFastDeploymentType** &ndash; 當 `$(EmbedAssembliesIntoApk)` MSBuild 屬性是 `False` 時，用來控制哪些類型可以部署到目標裝置上[快速部署目錄](#Fast_Deployment)的 `:` (冒號) 分隔值清單。 資源如果使用快速部署，則不會  內嵌到所產生的 `.apk`，從而可加快部署時間 (使用快速部署的資源越多，必須重建 `.apk` 的頻率就會越低，並讓安裝程序變快)。有效值包括：
+-   **AndroidFastDeploymentType** &ndash; 當 `$(EmbedAssembliesIntoApk)` MSBuild 屬性是 `False` 時，用來控制哪些類型可以部署到目標裝置上[快速部署目錄](#Fast_Deployment)的 `:` (冒號) 分隔值清單。 資源如果使用快速部署，則不會  內嵌到所產生的 `.apk`，從而可加快部署時間 (使用快速部署的資源越多，必須重建 `.apk` 的頻率就會越低，並讓安裝程序變快)。有效值包含：
 
     - `Assemblies`：部署應用程式組件。
 
@@ -204,7 +204,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     **實驗**。 已在 Xamarin.Android 6.1 中新增。
 
--   **AndroidGenerateJniMarshalMethods** &ndash; 可在建置程序期間產生 JNI 封送處理方法的布林屬性。 這可大幅減少 System.Reflection 在繫結協助程式碼中的使用量。
+-   **AndroidGenerateJniMarshalMethods** &ndash; 可在建置流程期間產生 JNI 封送處理方法的布林屬性。 這可大幅減少 System.Reflection 在繫結協助程式碼中的使用量。
 
     根據預設，這會設定為 False。 如果開發人員想要使用新的 JNI 封送處理方法功能，他們可以在其 csproj 中設定下列程式碼：
 
@@ -223,7 +223,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 -   **AndroidGenerateJniMarshalMethodsAdditionalArguments** &ndash; 可用來將額外的參數新增至 `jnimarshalmethod-gen.exe` 引動過程的字串屬性。  這適用於偵錯，因此可以使用 `-v`、`-d` 或 `--keeptemp` 等選項。
 
-    預設值為空字串。 它可以在 csproj 檔案或在命令列中設定。 例如：
+    預設值為空字串。 它可以在 csproj 檔案或在命令列中設定。 例如︰
 
     ```xml
     <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
@@ -276,7 +276,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
 
--   **AndroidLintEnabled** &ndash; 布林屬性，可允許開發人員在封裝程序期間執行 Android `lint` 工具。
+-   **AndroidLintEnabled** &ndash; 布林屬性，可允許開發人員在封裝流程期間執行 Android `lint` 工具。
 
     -   **AndroidLintEnabledIssues** &ndash; 要啟用的 Lint 問題清單 (以逗號分隔)。
 
@@ -329,7 +329,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
     -   `arm64-v8a`：需要 Xamarin.Android 5.1 和更新版本。
     -   `x86_64`：需要 Xamarin.Android 5.1 和更新版本。
 
--   **AndroidTlsProvider** &ndash; 指定應用程式中應該使用哪一個 TLS 提供者的字串值。 可能的值為：
+-   **AndroidTlsProvider** &ndash; 指定應用程式中應該使用哪一個 TLS 提供者的字串值。 可能的值包括：
 
     -   `btls`：使用 [Boring SSL](https://boringssl.googlesource.com/boringssl) 以利用 [HttpWebRequest](xref:System.Net.HttpWebRequest) 進行 TLS 通訊。
         這允許在所有的 Android 版本上使用 TLS 1.2。
@@ -392,7 +392,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     已在 Xamarin.Android 7.2 中新增。
 
--   **AndroidVersionCodeProperties** &ndash; 字串屬性可讓開發人員定義要與 `AndroidVersionCodePattern` 搭配使用的自訂項目。 其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如：`screen=23;target=$(_AndroidApiLevel)`。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
+-   **AndroidVersionCodeProperties** &ndash; 字串屬性可讓開發人員定義要與 `AndroidVersionCodePattern` 搭配使用的自訂項目。 其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如： `screen=23;target=$(_AndroidApiLevel)` 。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
 
     已在 Xamarin.Android 7.2 中新增。
 
@@ -521,7 +521,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 -   **AndroidExplicitCrunch** &ndash; 如果您要使用非常大量的本機可繪製資源來建置應用程式，則初始建置 (或重建) 可能需要幾分鐘的時間才能完成。 若要加快建置程序，請嘗試納入此屬性並將它設定為 `True`。 若設定了這個屬性，建置程序就會預先處理 .png 檔案。
 
-    注意:此選項與 `$(AndroidUseAapt2)` 選項不相容。 如果啟用 `$(AndroidUseAapt2)`，將會停用這項功能。 如果您想要繼續使用此功能，請將 `$(AndroidUseAapt2)` 設定為 `False`。
+    注意：此選項與 `$(AndroidUseAapt2)` 選項不相容。 如果啟用 `$(AndroidUseAapt2)`，將會停用這項功能。 如果您想要繼續使用此功能，請將 `$(AndroidUseAapt2)` 設定為 `False`。
 
     **實驗**。 已在 Xamarin.Android 7.0 中新增。
 
@@ -688,7 +688,7 @@ Enter key password for keystore.alias
 </ItemGroup>
 ```
 
-更進階的使用者或許會想要在不同的組態中擁有不同的資源，但又想具有相同的有效路徑。 若要實現此目的，他們可以在手上準備多個資源目錄並在這些不同的目錄內放入具有相同相對路徑的檔案，以及使用 MSBuild 條件，有條件地將不同檔案納入到不同組態中。 例如：
+更進階的使用者或許會想要在不同的組態中擁有不同的資源，但又想具有相同的有效路徑。 若要實現此目的，他們可以在手上準備多個資源目錄並在這些不同的目錄內放入具有相同相對路徑的檔案，以及使用 MSBuild 條件，有條件地將不同檔案納入到不同組態中。 例如︰
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">

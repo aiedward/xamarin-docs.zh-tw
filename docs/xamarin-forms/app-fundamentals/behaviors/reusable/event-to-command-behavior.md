@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
-ms.openlocfilehash: 1bb3f319eb104a7425c3be820f5c91efe300737f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925173"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650904"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>可重複使用的 EventToCommandBehavior
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 _針對設計用意並非與命令互動的控制項，您可以使用行為來建立其與命令的關聯。本文示範如何建立及使用 Xamarin.Forms 行為，在事件引發時叫用命令。_
 
 ## <a name="overview"></a>總覽
 
-`EventToCommandBehavior` 類別是可重複使用的 Xamarin.Forms 自訂行為，其可執行命令以回應「任何」事件的引發。 預設會將事件的事件引數傳遞給命令，並可由 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 實作選擇性地轉換。
+`EventToCommandBehavior` 類別是可重複使用的 Xamarin.Forms 自訂行為，其可執行命令以回應「任何」  事件的引發。 預設會將事件的事件引數傳遞給命令，並可由 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 實作選擇性地轉換。
 
 您必須將下列行為屬性設定為使用行為：
 
@@ -35,7 +35,7 @@ _針對設計用意並非與命令互動的控制項，您可以使用行為來�
 - **Converter** – [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 實作；當繫結引擎在 *source* 和 *target* 之間傳遞事件引數資料時，其可變更事件引數資料的格式。
 
 > [!NOTE]
-> `EventToCommandBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在 [EventToCommand 行為範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/)中找到。
+> `EventToCommandBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在 [EventToCommand 行為範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)中找到。
 
 ## <a name="creating-the-behavior"></a>建立行為
 
@@ -208,6 +208,6 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 ## <a name="related-links"></a>相關連結
 
-- [Event to Command Behavior (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EventToCommandBehavior/) (命令行為事件 (範例))
+- [Event to Command Behavior (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior) (命令行為事件 (範例))
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

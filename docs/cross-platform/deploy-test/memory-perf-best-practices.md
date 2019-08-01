@@ -1,17 +1,17 @@
 ---
 title: 跨平台效能
-description: 此文件描述可用來改善行動應用程式效能的各種技術。 它討論分析工具、IDisposable 資源、弱式參考、SGen 記憶體回收行程、大小縮減技術，以及更多。
+description: 本文件描述可用來改善行動應用程式效能的各種技術。 它討論分析工具、IDisposable 資源、弱式參考、SGen 記憶體回收行程、大小縮減技術，以及更多。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: 9377dcca1cd72b68a0e5b6a5ac5ac4d12d25d50c
-ms.sourcegitcommit: 41b44f2e9bde3b174e7c08605bff65aff594dcd6
+ms.openlocfilehash: 2665e45277eccaedbbbbd77f6c7c0ca47700d950
+ms.sourcegitcommit: c2bffcdee5a7c619280c6b9032ba90e4df8b63d9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67690913"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68533022"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -370,7 +370,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 ## <a name="summary"></a>總結
 
-此文章已描述與討論用來增加以 Xamarin 平台建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+本文已描述與討論用來增加以 Xamarin 平台建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 
 ## <a name="related-links"></a>相關連結
 
@@ -380,4 +380,3 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 - [Xamarin.Forms 效能](~/xamarin-forms/deploy-test/performance.md)
 - [非同步支援概觀](~/cross-platform/platform/async.md)
 - [IDisposable](xref:System.IDisposable)
-- [在 Xamarin 應用程式中避免常見錯誤 (影片)](https://university.xamarin.com/guestlectures/avoiding-common-pitfalls-in-xamarin-apps) \(英文\)

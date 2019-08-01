@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 4594da09d48a0888a88cbce9ab135a007eb6f4cd
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 34b449aa358874f06a495ec52578dcca2dd13767
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53054327"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654731"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms 繫結值轉換器
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 資料繫結通常會將資料從來源屬性傳輸至目標屬性，並在某些情況下從目標屬性傳輸至來源屬性。 當來源和目標屬性都屬於相同類型，或其中一種類型可以透過隱含轉換來轉換成其他類型時，傳輸即會簡單明瞭。 若非此情況，則必須採取類型轉換。
 
-在[**字串格式化**](string-formatting.md)一文中，您已看到可如何使用資料繫結的 `StringFormat` 屬性，將任何類型轉換為字串。 對於其他類型的轉換，您需要在實作 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 介面的類別中撰寫一些特殊程式碼。 (通用 Windows 平台包含 `Windows.UI.Xaml.Data` 命名空間中名為 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) 的類似類別，但 `IValueConverter` 位於 `Xamarin.Forms` 命名空間中。)實作 `IValueConverter` 的類別稱為「值轉換器」，但也經常稱為「繫結轉換器」或「繫結值轉換器」。
+在[**字串格式化**](string-formatting.md)一文中，您已看到可如何使用資料繫結的 `StringFormat` 屬性，將任何類型轉換為字串。 對於其他類型的轉換，您需要在實作 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 介面的類別中撰寫一些特殊程式碼。 (通用 Windows 平台包含 `Windows.UI.Xaml.Data` 命名空間中名為 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) 的類似類別，但 `IValueConverter` 位於 `Xamarin.Forms` 命名空間中。)實作 `IValueConverter` 的類別稱為「值轉換器」  ，但也經常稱為「繫結轉換器」  或「繫結值轉換器」  。
 
 ## <a name="the-ivalueconverter-interface"></a>IValueConverter 介面
 
@@ -51,7 +51,7 @@ public class IntToBoolConverter : IValueConverter
 
 如果資料繫結也包含 `StringFormat` 設定，則會在結果格式化為字串前叫用值轉換器。
 
-[**資料繫結示範**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)中的**啟用按鈕**頁面範例，示範如何在資料繫結中使用此值轉換器。 `IntToBoolConverter` 會在頁面的資源字典中具現化。 然後會透過 `StaticResource` 標記延伸來加以參考，以設定兩個資料繫結中的 `Converter` 屬性。 共用頁面上多個資料繫結之間的資料轉換器十分常見：
+[**資料繫結示範**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)中的**啟用按鈕**頁面範例，示範如何在資料繫結中使用此值轉換器。 `IntToBoolConverter` 會在頁面的資源字典中具現化。 然後會透過 `StaticResource` 標記延伸來加以參考，以設定兩個資料繫結中的 `Converter` 屬性。 共用頁面上多個資料繫結之間的資料轉換器十分常見：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -95,7 +95,7 @@ public class IntToBoolConverter : IValueConverter
 
 如果值轉換器用於您應用程式的多個頁面中，您可以在 **App.XAML** 檔案的資源字典中將其具現化。
 
-[啟用按鈕] 頁面示範當 `Button` 根據使用者鍵入 `Entry` 檢視的文字而執行作業時，會出現的常見需求。 如果 `Entry` 中未鍵入任何內容，則應該停用 `Button`。 每個 `Button` 都會在其 `IsEnabled` 屬性中包含資料繫結。 資料繫結來源是對應 `Entry` 之 `Text` 屬性的 `Length` 屬性。 如果該 `Length` 屬性不為 0，則值轉換器會傳回 `true` 並啟用 `Button`：
+[啟用按鈕]  頁面示範當 `Button` 根據使用者鍵入 `Entry` 檢視的文字而執行作業時，會出現的常見需求。 如果 `Entry` 中未鍵入任何內容，則應該停用 `Button`。 每個 `Button` 都會在其 `IsEnabled` 屬性中包含資料繫結。 資料繫結來源是對應 `Entry` 之 `Text` 屬性的 `Length` 屬性。 如果該 `Length` 屬性不為 0，則值轉換器會傳回 `true` 並啟用 `Button`：
 
 [![啟用按鈕](converters-images/enablebuttons-small.png "啟用按鈕")](converters-images/enablebuttons-large.png#lightbox "啟用按鈕")
 
@@ -132,7 +132,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 }
 ```
 
-[交換器指標] 頁面會示範其可如何用於顯示 `Switch` 檢視的值。 雖然將轉換器具現化為資源字典中的資源很常見，但是此頁面會示範另一個方法：每個值轉換器都在 `Binding.Converter` 屬性元素標籤之間具現化。 `x:TypeArguments` 指出泛型引數，且 `TrueObject` 和 `FalseObject` 都設為該類型的物件：
+[交換器指標]  頁面會示範其可如何用於顯示 `Switch` 檢視的值。 雖然將轉換器具現化為資源字典中的資源很常見，但是此頁面會示範另一個方法：每個值轉換器都在 `Binding.Converter` 屬性元素標籤之間具現化。 `x:TypeArguments` 指出泛型引數，且 `TrueObject` 和 `FalseObject` 都設為該類型的物件：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -396,7 +396,7 @@ binding.ConverterParameter = 255;
 
 基於這個理由，上述值轉換器會包含個別的 `GetParameter` 方法，來處理 `parameter` 為 `double`、`int` 或 `string` 類型的案例。  
 
-[RGB 色彩選取器] 頁面會遵循兩個隱含樣式的定義，在資源字典中將 `DoubleToIntConverter` 具現化：
+[RGB 色彩選取器]  頁面會遵循兩個隱含樣式的定義，在資源字典中將 `DoubleToIntConverter` 具現化：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -467,5 +467,5 @@ binding.ConverterParameter = 255;
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
 - [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

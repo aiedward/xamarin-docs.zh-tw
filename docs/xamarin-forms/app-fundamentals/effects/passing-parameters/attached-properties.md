@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: fbc5ccda4e798b818b4c21dd459bab6b467cba31
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: d40e1657eb39543023490892b8765ee1fe956ec4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925448"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645376"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>將效果參數傳遞為附加屬性
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _附加屬性可用來定義會回應執行階段屬性變更的效果參數。本文示範如何使用附加屬性將參數傳遞給效果，並在執行階段變更參數。_
 
@@ -161,7 +161,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 
 ### <a name="consuming-the-effect-with-a-style"></a>透過樣式使用效果
 
-效果可以透過將附加屬性新增至控制項來使用，也可以由樣式使用。 下列 XAML 程式碼範例顯示陰影效果的「明確」樣式，該陰影效果可以套用至 [`Label`](xref:Xamarin.Forms.Label) 控制項：
+效果可以透過將附加屬性新增至控制項來使用，也可以由樣式使用。 下列 XAML 程式碼範例顯示陰影效果的「明確」  樣式，該陰影效果可以套用至 [`Label`](xref:Xamarin.Forms.Label) 控制項：
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -318,7 +318,7 @@ namespace EffectsDemo.Droid
     }
 ```
 
-`OnAttached` 方法會呼叫使用 `ShadowEffect` getter 來擷取附加屬性值的方法，並呼叫會呼叫 [`TextView.SetShadowLayer`](https://developer.xamarin.com/api/member/Android.Widget.TextView.SetShadowLayer/p/System.Single/System.Single/System.Single/Android.Graphics.Color/) 方法的方法，以使用屬性值來建立陰影。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `Control.Layer` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
+`OnAttached` 方法會呼叫使用 `ShadowEffect` getter 來擷取附加屬性值的方法，並呼叫會呼叫 [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) 方法的方法，以使用屬性值來建立陰影。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `Control.Layer` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
 
 #### <a name="responding-to-property-changes"></a>回應屬性變更
 
@@ -440,4 +440,4 @@ public class LabelShadowEffect : PlatformEffect
 - [Effect](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [Shadow Effect (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffectRuntimeChange/) (陰影效果 (範例))
+- [Shadow Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange) (陰影效果 (範例))

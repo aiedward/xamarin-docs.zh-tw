@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 5b48340233304f44b30fb9083b30be5c6c165b18
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 8e6f37fb607f4b0bc0ddfd41ad86dfe7ecbc03df
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925982"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650533"
 ---
 # <a name="implementing-a-video-player"></a>實作影片播放程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 在 Xamarin.Forms 應用程式中播放影片檔案，有時會較為適當。 這一系列的文章討論如何編寫自訂轉譯器，用於 iOS、Android，以及 Xamarin.Forms 類別名為 `VideoPlayer` 的通用 Windows 平台 (UWP)。
 
-在 [**VideoPlayerDemos**](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) 範例中，所有實作並支援 `VideoPlayer` 的檔案都位於名為 `FormsVideoLibrary` 的資料夾，以 `FormsVideoLibrary` 命名空間或以 `FormsVideoLibrary` 開頭的命名空間識別。 這樣的組織和命名方式，應該可讓您輕鬆將影片播放程式檔案複製到您自己的 Xamarin.Forms 方案中。
+在 [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 範例中，所有實作並支援 `VideoPlayer` 的檔案都位於名為 `FormsVideoLibrary` 的資料夾，以 `FormsVideoLibrary` 命名空間或以 `FormsVideoLibrary` 開頭的命名空間識別。 這樣的組織和命名方式，應該可讓您輕鬆將影片播放程式檔案複製到您自己的 Xamarin.Forms 方案中。
 
 `VideoPlayer` 可以播放三種來源類型的影片檔案：
 
@@ -60,7 +60,7 @@ ms.locfileid: "65925982"
 
 ## <a name="custom-video-transport-controlscustom-transportmd"></a>[自訂影片傳輸控制項](custom-transport.md)
 
-雖然每個平台上的影片播放程式會各自提供按鈕形式的 [播放] 和 [暫停] 傳輸控制項，您也可以隱藏這些按鈕並改用您自己的。 本文會說明如何操作。
+雖然每個平台上的影片播放程式會各自提供按鈕形式的 [播放]  和 [暫停]  傳輸控制項，您也可以隱藏這些按鈕並改用您自己的。 本文會說明如何操作。
 
 ## <a name="custom-video-positioningcustom-positioningmd"></a>[自訂影片定位](custom-positioning.md)
 
@@ -72,4 +72,4 @@ ms.locfileid: "65925982"
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) (視訊播放程式示範 (範例))
