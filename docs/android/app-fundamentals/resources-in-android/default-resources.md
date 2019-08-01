@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 3be63eb8909f129f046b2959ec7963e493674914
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b3a6dfb11b49f9ab3b09cf09594eb374f63fe304
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644232"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680221"
 ---
 # <a name="default-resources"></a>預設資源
 
@@ -38,7 +38,7 @@ ms.locfileid: "68644232"
  
 -  **版面**配置&ndash;描述使用者介面配置的 XML 檔案, 例如活動或清單中的資料列。
 
--  **功能表**描述應用程式功能表的 XML 檔案, 例如 [*選項] 功能表*、*內容功能表*和*子功能表。* &ndash; 如需功能表的範例, 請參閱[快顯功能表示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)或[標準控制項](https://developer.xamarin.com/samples/mobile/StandardControls/)範例。
+-  **功能表**描述應用程式功能表的 XML 檔案, 例如 [*選項] 功能表*、*內容功能表*和*子功能表。* &ndash; 如需功能表的範例, 請參閱[快顯功能表示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)或[標準控制項](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/)範例。
 
 -  **原始**&ndash;以原始的二進位格式儲存的任意檔案。 這些檔案會編譯成二進位格式的 Android 應用程式。
 
@@ -70,7 +70,7 @@ ms.locfileid: "68644232"
 
 -  **版面**配置&ndash;描述使用者介面配置的 XML 檔案, 例如活動或清單中的資料列。
 
--  **功能表**描述應用程式功能表的 XML 檔案, 例如 [*選項] 功能表*、*內容功能表*和*子功能表。* &ndash; 如需功能表的範例, 請參閱[快顯功能表示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)或[標準控制項](https://developer.xamarin.com/samples/mobile/StandardControls/)範例。
+-  **功能表**描述應用程式功能表的 XML 檔案, 例如 [*選項] 功能表*、*內容功能表*和*子功能表。* &ndash; 如需功能表的範例, 請參閱[快顯功能表示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)或[標準控制項](https://docs.microsoft.com/samples/xamarin/mobile-samples/standardcontrols/)範例。
 
 -  **原始**&ndash;以原始的二進位格式儲存的任意檔案。 這些檔案會編譯成二進位格式的 Android 應用程式。
 

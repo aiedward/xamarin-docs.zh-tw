@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: f2e65439084d4e89ae529bda79c2cb2739f1529d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c44e6b76751096d817727df759ecbeca5bd5a8f3
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656206"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680986"
 ---
 # <a name="3d-coordinates-in-monogame"></a>MonoGame 中的3D 座標
 
@@ -37,7 +37,7 @@ _瞭解3D 座標系統是開發3D 遊戲的一個重要步驟。MonoGame 提供�
 
 ## <a name="creating-a-project"></a>建立專案
 
-本逐步解說著重于在3D 空間中移動物件。 我們會從用於轉譯模型和頂點陣列的專案開始,[可在這裡找到](https://developer.xamarin.com/samples/mobile/ModelsAndVertsMG/)。 下載後, 解壓縮並開啟專案以確定它會執行, 而且應該會看到下列內容:
+本逐步解說著重于在3D 空間中移動物件。 我們會從用於轉譯模型和頂點陣列的專案開始,[可在這裡找到](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)。 下載後, 解壓縮並開啟專案以確定它會執行, 而且應該會看到下列內容:
 
 ![](part3-images/image2.png "下載後, 解壓縮並開啟專案以確定它會執行, 而且應該會顯示此視圖")
 

@@ -1,70 +1,70 @@
 ---
 title: 使用模型類別
-description: 模型類別可大幅簡化轉譯複雜的 3D 物件相較於傳統的方法，呈現 3D 圖形。 從允許的任何自訂程式碼的內容很容易整合的內容檔案會建立模型物件。
+description: 相較于轉譯3D 圖形的傳統方法, 此模型類別可大幅簡化轉譯複雜3D 物件的工作。 模型物件是從內容檔案建立的, 可讓您輕鬆地整合內容, 而不需自訂程式碼。
 ms.prod: xamarin
 ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 4a72effc85657b4722b17eae486e81db5992a1da
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 35df6e4ca799a875bcd7db50adbc7a300460885c
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832250"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68680959"
 ---
 # <a name="using-the-model-class"></a>使用模型類別
 
-_模型類別可大幅簡化轉譯複雜的 3D 物件相較於傳統的方法，呈現 3D 圖形。從允許的任何自訂程式碼的內容很容易整合的內容檔案會建立模型物件。_
+_相較于轉譯3D 圖形的傳統方法, 此模型類別可大幅簡化轉譯複雜3D 物件的工作。模型物件是從內容檔案建立的, 可讓您輕鬆地整合內容, 而不需自訂程式碼。_
 
-MonoGame API 包含`Model`類別可用來儲存資料載入的內容檔案，以及執行轉譯。 模型檔案可能很簡單 （例如穩固的彩色三角形），或可能包含複雜的呈現，包括紋理和光源處理的資訊。
+MonoGame API 包含一個`Model`類別, 可以用來儲存從內容檔案載入的資料, 以及執行轉譯。 模型檔案可能非常簡單 (例如純色三角形), 或可能包含複雜呈現的資訊, 包括紋理和光源。
 
-本逐步解說會使用[機器人的 3D 模型](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)並涵蓋下列：
+本逐步解說會使用[機器人的3d 模型](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true), 並涵蓋下列各項:
 
-- 開始使用新的遊戲專案
-- 建立模型和其紋理 XNBs
-- 遊戲的專案中包含 XNBs
-- 繪製 3D 模型
+- 啟動新的遊戲專案
+- 建立模型和其材質的 XNBs
+- 在遊戲專案中包含 XNBs
+- 繪製3D 模型
 - 繪製多個模型
 
-完成時，我們的專案將會出現，如下所示：
+完成後, 我們的專案會如下所示:
 
-![顯示六個機器人的完成的範例](part1-images/image1.png)
+![完成顯示六個機器人的範例](part1-images/image1.png)
 
-## <a name="creating-an-empty-game-project"></a>建立空白的遊戲專案
+## <a name="creating-an-empty-game-project"></a>建立空白遊戲專案
 
-我們必須設定第一次呼叫 MonoGame3D 遊戲專案。 如需建立新的 MonoGame 專案的詳細資訊，請參閱[本逐步解說建立跨平台 Monogame 專案](~/graphics-games/monogame/introduction/part1.md)。
+我們必須先設定一個名為 MonoGame3D 的遊戲專案。 如需建立新 MonoGame 專案的相關資訊, 請參閱[建立跨平臺 MonoGame 專案的這個逐步](~/graphics-games/monogame/introduction/part1.md)解說。
 
-在繼續之前，我們應該驗證專案隨即開啟，並正確地部署。 一次部署我們應該會看到空白的藍色螢幕：
+在繼續進行之前, 請先確認專案已開啟並正確部署。 一旦部署之後, 我們應該會看到一個空白的藍色畫面:
 
-![空白的藍色遊戲畫面](part1-images/image2.png)
+![空白藍色遊戲畫面](part1-images/image2.png)
 
 
-## <a name="including-the-xnbs-in-the-game-project"></a>遊戲的專案中包含 XNBs
+## <a name="including-the-xnbs-in-the-game-project"></a>在遊戲專案中包含 XNBs
 
-.Xnb 檔案格式是標準的擴充內建的內容 (已建立的內容[MonoGame 管線工具](http://www.monogame.net/documentation/?page=Pipeline))。 所有的內建的內容具有原始程式檔 （也就是在我們的模型的情況下.fbx 檔案） 和目的地檔案 （.xnb 檔案）。 .Fbx 格式是一種常見的 3D 模型格式可以建立應用程式這類[Maya](http://www.autodesk.com/products/maya/overview)並[Blender](http://www.blender.org/)。 
+Xnb 檔案格式是適用于內建內容的標準延伸模組 (已由[MonoGame 管線工具](http://www.monogame.net/documentation/?page=Pipeline)建立的內容)。 所有的建立內容都有原始程式檔 (在我們模型的情況下為 fbx 檔案) 和目的地檔案 (xnb 檔案)。 Fbx 格式是常用的3D 模型格式, 可由應用程式 (例如[Maya](http://www.autodesk.com/products/maya/overview)和[Blender](http://www.blender.org/)) 建立。 
 
-`Model` .xnb 從磁碟載入檔案，其中包含 3D 幾何資料也可以建構類別。   .Xnb 會建立這個檔案的內容的專案。 Monogame 範本會自動包含我們內容的資料夾 （具有延伸模組.mgcp 中) 的內容專案。 如需 MonoGame 管線工具的詳細討論，請參閱 < [Content Pipeline 指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
+您可以從包含 3d geometry 資料的磁片載入 xnb 檔案, 以建立類別。`Model`   這個 xnb 檔案是透過內容專案所建立。 Monogame 範本會在內容資料夾中自動包含內容專案 (副檔名為 mgcp)。 如需 MonoGame 管線工具的詳細討論, 請參閱[內容管線指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)。
 
-本指南中我們將會略過使用 MonoGame 管線工具，並會使用。此處包含的 XNB 檔案。 請注意，。XNB 檔案每個平台不同，因此請務必針對您正在使用任何平台使用一組正確的 XNB 檔案。
+在本指南中, 我們將略過使用 MonoGame 管線工具, 並將使用。此處包含的 XNB 檔案。 請注意,。每個平臺的 XNB 檔案不同, 因此請務必針對您所使用的平臺, 使用一組正確的 XNB 檔案。
 
-我們將會解壓縮[Content.zip 檔案](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)，讓我們可以在我們的遊戲中使用自主的.xnb 檔案。 如果使用 Android 專案，以滑鼠右鍵按一下**資產**中的資料夾**WalkingGame.Android**專案。 如果使用 iOS 專案，以滑鼠右鍵按一下**WalkingGame.iOS**專案。 選取**新增]-> [新增檔案...** ，然後選取您正在使用的平台的資料夾中的這兩個.xnb 檔案。
+我們會將[內容 .zip](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)檔案解壓縮, 讓我們可以在遊戲中使用包含的 xnb 檔案。 如果使用 Android 專案, 請以滑鼠右鍵按一下 [ **WalkingGame** ] 專案中的 [**資產**] 資料夾。 如果要使用 iOS 專案, 請以滑鼠右鍵按一下 [ **WalkingGame** ] 專案。 選取 [**新增-> 新增檔案 ...** ], 然後選取您要處理之平臺的資料夾中的 xnb 檔案。
 
-兩個檔案現在應該可以我們專案的一部分：
+這兩個檔案現在應該是專案的一部分:
 
-![方案總管 內容資料夾 xnb 檔案](part1-images/xnbsinxs.png)
+![具有 xnb 檔案的方案瀏覽器內容資料夾](part1-images/xnbsinxs.png)
 
-Visual Studio for Mac 可能不會自動設定新加入的 XNBs 的建置動作。 適用於 iOS、 以滑鼠右鍵按一下每個檔案，然後選取**建置動作]-> [BundleResource**。 適用於 Android、 以滑鼠右鍵按一下每個檔案，然後選取**建置動作]-> [AndroidAsset**。
+Visual Studio for Mac 可能不會自動為新加入的 XNBs 設定組建動作。 若是 iOS, 請以滑鼠右鍵按一下每個檔案, 然後選取 [**建立動作-> BundleResource**]。 若為 Android, 請在每個檔案上按一下滑鼠右鍵, 然後選取 [**建立動作-> AndroidAsset**]。
 
-## <a name="rendering-a-3d-model"></a>轉譯 3D 模型
+## <a name="rendering-a-3d-model"></a>呈現3D 模型
 
-螢幕上查看模型所需的最後一個步驟是新增的載入和繪圖程式碼。 具體來說，我們會執行下列作業：
+在螢幕上查看模型所需的最後一個步驟, 就是加入載入和繪製程式碼。 具體而言, 我們將執行下列動作:
 
-- 定義`Model`執行個體中我們`Game1`類別
-- 正在載入`Model`中執行個體 `Game1.LoadContent`
-- 繪製`Model`中執行個體 `Game1.Draw`
+- 在我們`Game1`的類別中定義`Model`實例
+- 載入中`Model`的實例`Game1.LoadContent`
+- 在中繪製實例`Model``Game1.Draw`
 
-取代`Game1.cs`程式碼檔案 (位於**WalkingGame** PCL) 取代為下列：
+將程式碼檔案 (位於 WalkingGame PCL 中) 取代為下列內容: `Game1.cs`
 
 ```csharp
 public class Game1 : Game
@@ -162,29 +162,29 @@ public class Game1 : Game
 }
 ```
 
-如果我們執行此程式碼就會在螢幕上看到的模型：
+如果執行此程式碼, 我們會在畫面上看到此模型:
 
-![顯示於螢幕上的模型](part1-images/image8.png "如果執行此程式碼時，將螢幕上顯示模型")
+![螢幕上顯示的模型](part1-images/image8.png "如果執行此程式碼, 則會在畫面上顯示模型")
 
 ### <a name="model-class"></a>模型類別
 
-`Model`類別是從內容 （例如.fbx 檔案） 的檔案執行 3D 轉換的核心類別。 它包含所有的轉譯，包括 3D 幾何，也就是材質參考所需的資訊和`BasicEffect`控制定位、 光線和觀景窗值的執行個體。
+`Model`類別是用來從內容檔案 (例如 fbx 檔案) 執行3d 呈現的核心類別。 其中包含呈現所需的所有資訊, 包括3d 幾何、材質參考, 以及`BasicEffect`控制位置、光源和相機值的實例。
 
-`Model`類別本身並未直接擁有的定位的單一模型執行個體可以轉譯在多個位置，因為我們稍後在本指南將示範變數。
+`Model`類別本身不會直接擁有用於定位的變數, 因為單一模型實例可以轉譯在多個位置, 因為我們稍後會在本指南中說明。
 
-每個`Model`包含一或多個`ModelMesh`執行個體，會透過公開`Meshes`屬性。 雖然我們可能會考慮`Model`為單一的遊戲物件 （例如傀儡程式或一輛車），每個`ModelMesh`可以使用不同繪製`BasicEffect`值。 比方說，個別的網狀結構組件可能代表腿的機器人的輪子上一輛車，而我們可能會指派`BasicEffect`值來做出 wheel 微調或腿的移動。 
+每`Model`個都是由一或`ModelMesh`多個實例所組成, 它們`Meshes`會透過屬性公開。 雖然我們可能會`Model`將視為單一遊戲物件 (例如機器人或汽車), 但每`ModelMesh`一個都可以使用不同`BasicEffect`的值來繪製。 例如, 個別的網格零件可能代表機器人的腿或汽車上的輪子, 而我們可以指派`BasicEffect`值, 讓輪子旋轉或支線移動。 
 
 ### <a name="basiceffect-class"></a>BasicEffect 類別
 
-`BasicEffect`類別會提供屬性來控制呈現選項。 我們對第一次修改`BasicEffect`是呼叫`EnableDefaultLighting`方法。 如同名稱所暗示，這可讓預設的光線，這是非常好用的驗證`Model`會出現在遊戲中如預期般運作。 如果我們取消註解`EnableDefaultLighting`呼叫，則我們會看到轉譯只是紋理，但沒有陰影或反射光暈的模型：
+`BasicEffect`類別提供用來控制轉譯選項的屬性。 我們`BasicEffect`對進行的第一次修改是`EnableDefaultLighting`呼叫方法。 顧名思義, 這會啟用預設光源, 這非常方便用來驗證`Model`是否如預期般出現在遊戲中。 如果我們將`EnableDefaultLighting`呼叫標記為批註, 則只會看到以其材質呈現的模型, 但不含陰影或反射發光:
 
 ```csharp
 //effect.EnableDefaultLighting ();
 ```
 
-![模型呈現只是紋理，但沒有陰影或反射光暈](part1-images/image9.png "呈現只是紋理，但沒有陰影或反射光暈的模型")
+![僅以其材質呈現的模型, 但不含陰影或反射發光](part1-images/image9.png "僅以其材質呈現的模型, 但不含陰影或反射發光")
 
-`World`屬性可以用來調整位置、 旋轉和模型的比例。 使用上述程式碼`Matrix.Identity`值，這表示`Model`會呈現遊戲中指定的完全相同.fbx 檔案中。 我們要探討矩陣和更詳細 3D 座標[第 3 部分](~/graphics-games/monogame/3d/part3.md)，做為範例中，我們可以變更的位置，但`Model`藉由變更`World`屬性，如下所示：
+`World`屬性可以用來調整模型的位置、旋轉和縮放比例。 上述程式碼會使用`Matrix.Identity`值, 這表示會以`Model` fbx 檔案中所指定的方式呈現遊戲中的。 在[第3部分](~/graphics-games/monogame/3d/part3.md)中, 我們將更詳細地說明矩陣和3d 座標, 但我們可以變更`Model` `World`屬性, 如下所示變更的位置:
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -192,24 +192,24 @@ var modelPosition = new Vector3 (0, 0, 3);
 effect.World = Matrix.CreateTranslation (modelPosition); 
 ```
 
-此程式碼會產生 3 個全局單位會移動的物件：
+此程式碼會導致物件由3個世界單位移動:
 
-![此程式碼會產生 3 個全局單位會移動的物件](part1-images/image10.png "此程式碼會產生 3 個全局單位會移動的物件")
+![此程式碼會導致物件由3個世界單位移動](part1-images/image10.png "此程式碼會導致物件由3個世界單位移動")
 
-最後兩個屬性上指派`BasicEffect`都`View`和`Projection`。 我們要探討中的 3D 攝影機[第 3 部分](~/graphics-games/monogame/3d/part3.md)，但做為範例，我們可以修改觀景窗的位置，藉由變更本機`cameraPosition`變數：
+在上`BasicEffect`指派的最後兩個屬性`View`是`Projection`和。 我們將在[第3部分](~/graphics-games/monogame/3d/part3.md)涵蓋3d 攝影機, 但舉例來說, 我們可以藉由變更本機`cameraPosition`變數來修改相機的位置:
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back
 var cameraPosition = new Vector3 (0, 30, 0);
 ```
 
-我們可以看到相機已移進一步後，導致`Model`出現較小，因為檢視方塊：
+我們可以看到相機已向後移動, 使其`Model`因觀點而顯示較小:
 
-![相機已移進一步後，產生在模型中不會出現較小，因為檢視方塊](part1-images/image11.png "相機已移進一步後，導致出現較小，因為檢視方塊的模型")
+![相機已向後移動, 導致模型因觀點而顯示較小](part1-images/image11.png "相機已向後移動, 導致模型因觀點而顯示較小")
 
-## <a name="rendering-multiple-models"></a>轉譯多個模型
+## <a name="rendering-multiple-models"></a>呈現多個模型
 
-如上所述，單一`Model`可以繪製多次。 為了簡化起見我們會移動`Model`繪製到其本身會採用所需的方法的程式碼`Model`做為參數的位置。 完成後，我們`Draw`和`DrawModel`方法看起來像：
+如先前所述, 單一`Model`可以繪製多次。 為了簡化這種作業, 我們會將`Model`繪圖程式碼移至自己的方法, 將`Model`所需的位置當做參數使用。 完成之後, 我們`Draw`的`DrawModel`和方法看起來會像這樣:
 
 
 ```csharp
@@ -253,16 +253,16 @@ void DrawModel(Vector3 modelPosition)
 }
 ```
 
-這會導致機器人所繪製六倍的模型：
+這會導致機器人模型繪製六次:
 
-![這會導致機器人模型所繪製六倍](part1-images/image1.png "這會導致機器人所繪製六倍的模型")
+![這會導致機器人模型繪製六次](part1-images/image1.png "這會導致機器人模型繪製六次")
 
 ## <a name="summary"></a>總結
 
-本逐步解說中導入 MonoGame 的`Model`類別。 它涵蓋了將.fbx 檔案轉換成.xnb，這進而可載入`Model`類別。 它也會示範如何修改`BasicEffect`執行個體可能會影響`Model`繪圖。
+本逐步解說引進了`Model` MonoGame 的類別。 它涵蓋將 fbx 檔案轉換成 xnb, 它可以再載入至`Model`類別。 它也會顯示對實例進行`BasicEffect`修改的方式`Model` , 對繪圖的影響。
 
 ## <a name="related-links"></a>相關連結
 
 - [MonoGame 模型參考](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Graphics_Model)
 - [Content.zip](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)
-- [已完成的專案 （範例）](https://developer.xamarin.com/samples/mobile/ModelRenderingMG/)
+- [完成的專案 (範例)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/)
