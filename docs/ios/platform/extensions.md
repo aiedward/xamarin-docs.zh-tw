@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 74f08a274eec4560846fb0c0067e3209031f5c6e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 4137ce7542a213a0a4c27b6a66b38828e4646520
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511758"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653472"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin 中的 iOS 擴充功能
 
@@ -125,7 +125,7 @@ IOS 10 中新增了[額外的擴充點](~/ios/platform/introduction-to-ios10/ind
     [![](extensions-images/today03.png "確認專案名稱和解決解決方案, 然後按一下 [建立] 按鈕以建立方案")](extensions-images/today03.png#lightbox)
 4. 接下來, 在 **方案總管**中, 以滑鼠右鍵按一下方案, 然後從 **今日擴充**功能 範本新增**iOS 擴充**功能專案: 
 
-    [![](extensions-images/today04.png "接下來, 在 [方案總管中, 以滑鼠右鍵按一下方案, 然後從 [今日擴充功能] 範本新增 iOS 擴充功能專案")](extensions-images/today04.png#lightbox)
+    [![](extensions-images/today04.png "接下來, 在 方案總管中, 以滑鼠右鍵按一下方案, 然後從 [今日擴充功能] 範本新增 iOS 擴充功能專案")](extensions-images/today04.png#lightbox)
 5. 呼叫專案`DaysRemaining` , 然後按 [**下一步]** 按鈕: 
 
     [![](extensions-images/today05.png "呼叫專案 DaysRemaining, 然後按 [下一步] 按鈕")](extensions-images/today05.png#lightbox)
@@ -462,5 +462,5 @@ results.ObjectForKey("NSExtensionJavaScriptPreprocessingResultsKey");
 
 ## <a name="related-links"></a>相關連結
 
-- [ContainerApp (範例)](https://developer.xamarin.com/samples/monotouch/intro-to-extensions)
+- [ContainerApp (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/intro-to-extensions)
 - [在 Xamarin 中建立擴充功能 (影片)](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)
