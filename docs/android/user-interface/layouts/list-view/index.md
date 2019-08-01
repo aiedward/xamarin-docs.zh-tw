@@ -1,49 +1,44 @@
 ---
-title: 在 Xamarin.Android 中使用的 ListView
-description: ListView 是重要的 UI 元件的 Android 應用程式;它用於所有位置的功能表選項的簡短清單中較長的連絡人或網際網路我的最愛清單。 它提供簡單的方式來呈現的資料列，可以使用內建樣式格式化或廣泛地自訂捲動清單。
+title: 在 Xamarin 中使用 ListView
+description: ListView 是 Android 應用程式的重要 UI 元件;其使用方式是從功能表選項的簡短清單, 到長清單的連絡人或網際網路我的最愛。 它提供了一種簡單的方式來呈現資料列的滾動清單, 您可以使用內建樣式或廣泛自訂來進行格式化。
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 2560a451f3a6e7dd09b687f9db8c0c070598def6
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: 79f97382b6d8bd7875e4921c859f92cd6b321687
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740652"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646325"
 ---
-# <a name="listview"></a>ListView
+# <a name="xamarinandroid-listview"></a>Xamarin. Android ListView
 
-_ListView 是重要的 UI 元件的 Android 應用程式;它用於所有位置的功能表選項的簡短清單中較長的連絡人或網際網路我的最愛清單。它提供簡單的方式來呈現的資料列，可以使用內建樣式格式化或廣泛地自訂捲動清單。_
-
+_ListView 是 Android 應用程式的重要 UI 元件;其使用方式是從功能表選項的簡短清單, 到長清單的連絡人或網際網路我的最愛。它提供了一種簡單的方式來呈現資料列的滾動清單, 您可以使用內建樣式或廣泛自訂來進行格式化。_
 
 ## <a name="overview"></a>總覽
 
-清單檢視和配接器包括在 Android 應用程式的最基本建置組塊。 `ListView`類別提供一種彈性的方式來呈現資料，無論是簡短的功能表或長時間捲動清單。 它提供快速捲動、 索引等可協助您建置應用程式的行動設備友善的使用者介面的單一或多個選取的可用性功能。 `ListView` 執行個體需要 *Adapter* 提供資料列檢視中所含的資料給它。
+清單視圖和介面卡包含在 Android 應用程式的最基本組建區塊中。 `ListView`類別提供彈性的方式來呈現資料, 不論是快顯功能表或長時間滾動清單。 它提供快速滾動、索引和單一或多重選取等可用性功能, 可協助您為應用程式建立方便使用的使用者介面。 `ListView` 執行個體需要 *Adapter* 提供資料列檢視中所含的資料給它。
 
-本指南說明如何實作`ListView`和各種`Adapter`在 Xamarin.Android 中的類別。 它也會示範如何自訂外觀`ListView`，以及重新使用中的資料列，以降低記憶體耗用量的重要性。 另外還有一些討論活動開發週期會如何影響`ListView`和`Adapter`使用。 如果您正在使用 Xamarin.iOS，跨平台應用程式`ListView`控制項是結構上類似於 iOS `UITableView` (和 Android`Adapter`類似於`UITableViewSource`)。
+本指南說明如何在 Xamarin `ListView`中執行和`Adapter`各種類別。 它也會示範如何自訂的外觀`ListView`, 並討論資料列重複使用來減少記憶體耗用量的重要性。 此外, 也會討論活動生命週期的影響`ListView`和`Adapter`使用方式。 如果您在使用 Xamarin 的跨平臺應用程式, 則控制項`ListView`的結構類似于 ios `UITableView` (而`UITableViewSource`Android `Adapter`與類似)。
 
-首先，簡短的教學課程介紹`ListView`基本程式碼範例。 接下來，會提供更進階的主題連結，協助您使用`ListView`真實世界應用程式中。
-
+首先, 簡短的教學課程會`ListView`介紹具有基本程式碼範例的。 接下來, 提供更多的主題連結, 協助您在`ListView`真實世界的應用程式中使用。
 
 > [!NOTE]
-> `RecyclerView`小工具是更進階且彈性的版本`ListView`。 因為`RecyclerView`設計為以後續`ListView`(並`GridView`)，我們建議您改用`RecyclerView`而非`ListView`開發新應用程式。 如需詳細資訊，請參閱 < [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)。
-
-
+> Widget 是更先進且彈性的`ListView`版本。 `RecyclerView` 因為`RecyclerView`設計為`ListView` (和`GridView`) 的後續版本`ListView` , 所以我們建議您使用`RecyclerView` , 而不是針對新的應用程式開發。 如需詳細資訊, 請參閱[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)。
 
 ## <a name="listview-tutorial"></a>ListView 教學課程
 
-[`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/) 是 [`ViewGroup`](https://developer.xamarin.com/api/type/Android.Views.ViewGroup/)
-這樣將會產生一份可捲動的項目。 清單項目會自動插入至清單中使用[ `IListAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.IListAdapter/)。
+[`ListView`](xref:Android.Widget.ListView)是[`ViewGroup`](xref:Android.Views.ViewGroup)
+這會建立可滾動專案的清單。 清單專案會使用[`IListAdapter`](xref:Android.Widget.IListAdapter)自動插入清單中。
 
-在本教學課程中，您將建立可捲動所讀取的字串陣列的國家/地區名稱清單。 選取清單項目時，快顯通知訊息會在清單中顯示項目的位置。
+在本教學課程中, 您將建立從字串陣列讀取之國家/地區名稱的可滾動清單。 選取清單專案時, 快顯訊息會顯示清單中專案的位置。
 
+啟動名為**HelloListView**的新專案。
 
-開始新的專案，名為**HelloListView**。
-
-建立名為 XML 檔案**list_item.xml**並將其內部儲存**資源/配置/** 資料夾。 插入下列：
+建立名為**list_item**的 xml 檔案, 並將它儲存在**Resources/Layout/** 資料夾內。 插入下列內容:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -55,17 +50,16 @@ _ListView 是重要的 UI 元件的 Android 應用程式;它用於所有位置�
 </TextView>
 ```
 
-這個檔案會定義每個項目會放在版面配置[ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)。
+這個檔案會定義將放在中[`ListView`](xref:Android.Widget.ListView)之每個專案的版面配置。
 
-開啟`MainActivity.cs`並修改類別，以擴充[ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/) (而非[ `Activity` ](https://developer.xamarin.com/api/type/Android.App.Activity/)):
+開啟`MainActivity.cs`並修改類別以擴充[`ListActivity`](xref:Android.App.ListActivity) (而不是[`Activity`](xref:Android.App.Activity)):
 
 ```csharp
 public class MainActivity : ListActivity
 {
 ```
 
-插入下列程式碼 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
-方法：
+為[`OnCreate()`](xref:Android.App.Activity.OnCreate*)) 方法插入下列程式碼:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -83,33 +77,33 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-請注意這不會載入版面配置檔活動 (這通常是處理[ `SetContentView(int)` ](https://developer.xamarin.com/api/member/Android.App.Activity.SetContentView/(System.Int32)))。
-相反地，設定 [`ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)
-屬性會自動新增 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-以填滿整個畫面[ `ListActivity` ](https://developer.xamarin.com/api/type/Android.App.ListActivity/)。
-這個方法會採用[ `ArrayAdapter<T>` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)，其可管理的清單項目會放入陣列[ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)。
-的 [`ArrayAdapter<T>`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)
-建構函式應用程式[ `Context` ](https://developer.xamarin.com/api/type/Android.Content.Context/)，每個清單項目 （在上一個步驟中建立） 的配置描述和`T[]`或 [`Java.Util.IList<T>`](https://developer.xamarin.com/api/type/Java.Util.IList/)
-要插入的物件陣列 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-（下一步定義）。
+請注意, 這並不會載入活動的配置檔案 (通常是使用[`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)))。
+相反地, 設定[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
+屬性會自動新增[`ListView`](xref:Android.Widget.ListView)
+以填滿的整個畫面[`ListActivity`](xref:Android.App.ListActivity)。
+這個方法會採用[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1), 它會管理要放[`ListView`](xref:Android.Widget.ListView)入中的清單專案陣列。
+該[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)
+「處理常式」 [`Context`](xref:Android.Content.Context)會採用應用程式、每個清單專案 (在上一個步驟中建立) 的`T[]`配置描述, 以及或[`Java.Util.IList<T>`](xref:Java.Util.IList)
+要插入的物件陣列[`ListView`](xref:Android.Widget.ListView)
+(定義下一個)。
 
-的 [`TextFilterEnabled`](https://developer.xamarin.com/api/property/Android.Widget.AbsListView.TextFilterEnabled/)
-屬性會開啟文字篩選[ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)，如此一來，當使用者開始輸入時，會篩選清單。
+該[`TextFilterEnabled`](xref:Android.Widget.AbsListView.TextFilterEnabled)
+屬性會開啟的[`ListView`](xref:Android.Widget.ListView)文字篩選, 因此當使用者開始輸入時, 將會篩選清單。
 
-的 [`ItemClick`](https://developer.xamarin.com/api/event/Android.Widget.AdapterView.ItemClick/)
-事件可以用來訂閱點擊處理常式中。 中的項目 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-已按下，會呼叫處理常式， [`Toast`](https://developer.xamarin.com/api/type/Android.Widget.Toast/)
-會顯示訊息，使用已按下的項目中的文字。
+該[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+事件可以用來訂閱處理常式以進行點擊。 當中的專案[`ListView`](xref:Android.Widget.ListView)
+按一下時, 會呼叫處理常式, 並使用[`Toast`](xref:Android.Widget.Toast)
+訊息隨即顯示, 並使用按下專案中的文字。
 
-您可以使用而不是定義您自己的版面配置檔的平台所提供的清單項目設計[ `ListAdapter` ](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)。
-例如，請嘗試使用`Android.Resource.Layout.SimpleListItem1`而不是`Resource.Layout.list_item`。
+您可以使用平臺所提供的清單專案設計, 而不是定義您自己的配置[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)檔。
+例如, 請嘗試使用`Android.Resource.Layout.SimpleListItem1` , `Resource.Layout.list_item`而不是。
 
-新增下列`using`陳述式：
+新增下列`using`語句:
 
 ```csharp
 using System;
 ```
-接下來，新增下列字串陣列，成員的身分`MainActivity`:
+接下來, 將下列字串陣列新增為的成員`MainActivity`:
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -157,14 +151,14 @@ static readonly string[] countries = new String[] {
   };
 ```
 
-這是字串陣列，將會置於[ `ListView` ](https://developer.xamarin.com/api/type/Android.Widget.ListView/)。
+這是將放入中[`ListView`](xref:Android.Widget.ListView)的字串陣列。
 
-執行應用程式。 您可以捲動清單，或鍵入以篩選，然後按一下的項目，就會看見訊息。 您應該會看到類似下面的內容：
+執行應用程式。 您可以滾動清單或輸入以進行篩選, 然後按一下專案以查看訊息。 您應該會看到類似下面的內容：
 
-[![範例螢幕擷取畫面的 ListView 國家/地區名稱](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
+[![ListView 的範例螢幕擷取畫面, 包含國家/地區名稱](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
-請注意，使用硬式編碼的字串陣列，不是最佳設計做法。 其中一個用來示範在為了簡單起見，本教學課程 [`ListView`](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-小工具。 比較好的作法是參考所定義的外部資源，例如字串陣列`string-array`專案中的資源**Resources/Values/Strings.xml**檔案。 例如:
+請注意, 使用硬式編碼的字串陣列並不是最佳的設計作法。 為了簡單起見, 本教學課程中會使用一個, 以示範[`ListView`](xref:Android.Widget.ListView)
+機械. 較好的作法是參考外部資源所定義的字串陣列, 例如`string-array`專案**資源/值/字串 .xml**檔案中的資源。 例如：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -182,38 +176,38 @@ static readonly string[] countries = new String[] {
 </resources>
 ```
 
-若要使用這些資源字串[ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter%601/)，取代原始 [`ListAdapter`](https://developer.xamarin.com/api/property/Android.App.ListActivity.ListAdapter/)
-取代為下列一行：
+若要將這些資源字串[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter`1)用於, 請取代原始的[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
+使用下列程式程式碼:
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.Array.countries_array);
 ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countries);
 ```
+
 執行應用程式。 您應該會看到類似下面的內容：
 
-[![範例的螢幕擷取畫面 ListView 較小的名稱清單](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
+[![ListView 的範例螢幕擷取畫面, 其中包含較小的名稱清單](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
+## <a name="going-further-with-listview"></a>使用 ListView 進一步發展
 
-## <a name="going-further-with-listview"></a>繼續進行與 ListView
+其餘主題 (連結于`ListView`下方) 會全面探討如何使用類別, 以及您可以與它搭配使用的不同類型介面卡類型。 結構如下所示：
 
-（連結） 的其他主題需要使用的完整介紹`ListView`類別和不同類型的配接器類型，您可以使用它。 結構如下所示：
+-   **視覺外觀**控制項的`ListView`各個部分, 以及它們的使用方式。 &ndash;
 
--   **視覺外觀**&ndash;部份`ListView`控制項和其運作方式。
+-   **類別**概述用來`ListView`顯示的類別。 &ndash;
 
--   **類別**&ndash;用來顯示類別的概觀`ListView`。
+-   **在 ListView 中顯示資料**如何顯示簡單的資料清單、如何執行`ListView's`可用性功能、如何使用不同的內建資料列配置, 以及介面卡如何藉由重新使用資料列視圖來節省記憶體。 &ndash;
 
--   **在 ListView 中顯示資料**&ndash;如何顯示資料的簡單清單; 如何實作`ListView's`可用性功能; 如何使用不同的內建資料列配置; 以及配接器重複使用資料列檢視所節省的記憶體。
+-   **自訂外觀**使用自`ListView`定義版面配置、字型和色彩變更的樣式。 &ndash;
 
--   **自訂外觀**&ndash;變更的樣式`ListView`自訂版面配置、 字型與色彩。
+-   **使用 SQLite**如何使用顯示 SQLite 資料庫中的`CursorAdapter`資料。 &ndash;
 
--   **使用 SQLite** &ndash;如何顯示與 SQLite 資料庫中的資料`CursorAdapter`。
+-   **活動生命週期**&ndash;在執行`ListView`活動時的設計考慮, 包括生命週期中您應填入資料的位置, 以及釋放資源的時機。
 
--   **活動生命週期**&ndash;時實作的設計考量`ListView`活動，包括其中生命週期中您應填入您的資料，以及何時釋放資源。
-
-討論 （分為六個的部分） 開始的概觀`ListView`類別本身之前越來越複雜範例，示範如何使用它。
+討論 (分為六個部分) 從`ListView`類別本身的總覽開始, 再引進更複雜的使用方式範例。
 
 -   [ListView 組件和功能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
--   [填入資料的 ListView](~/android/user-interface/layouts/list-view/populating.md)
+-   [使用資料填入 ListView](~/android/user-interface/layouts/list-view/populating.md)
 -   [自訂 ListView 的外觀](~/android/user-interface/layouts/list-view/customizing-appearance.md)
 -   [使用 CursorAdapters](~/android/user-interface/layouts/list-view/cursor-adapters.md)
 -   [使用 ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
@@ -222,24 +216,24 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 ## <a name="summary"></a>總結
 
-這組主題引進`ListView`並提供如何使用內建功能的一些範例`ListActivity`。 它討論的自訂實作`ListView`允許彩色的配置，並且使用 SQLite 資料庫，並簡要觸及上活動開發週期的相關性您`ListView`實作。
+這組主題會引進`ListView`並提供一些範例, 說明如何使用的內建功能。 `ListActivity` 它討論了允許彩色`ListView`版面配置和使用 SQLite 資料庫的自訂實現, 而且它會簡短觸及您`ListView`的實作為活動生命週期的相關性。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [AccessoryViews （範例）](https://developer.xamarin.com/samples/monodroid/AccessoryViews/)
-- [BasicTableAndroid (sample)](https://developer.xamarin.com/samples/monodroid/BasicTableAndroid/)
-- [BasicTableAdapter （範例）](https://developer.xamarin.com/samples/monodroid/BasicTableAdapter/)
-- [BuiltInViews （範例）](https://developer.xamarin.com/samples/monodroid/BuiltInViews/)
-- [CustomRowView （範例）](https://developer.xamarin.com/samples/monodroid/CustomRowView/)
-- [FastScroll （範例）](https://developer.xamarin.com/samples/monodroid/FastScroll/)
-- [SectionIndex （範例）](https://developer.xamarin.com/samples/monodroid/SectionIndex/)
-- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
-- [CursorTableAdapter （範例）](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
+- [AccessoryViews (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/accessoryviews)
+- [BasicTableAndroid (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableandroid)
+- [BasicTableAdapter (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/basictableadapter)
+- [BuiltInViews (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/builtinviews)
+- [CustomRowView (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/customrowview)
+- [FastScroll (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fastscroll)
+- [SectionIndex (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sectionindex)
+- [SimpleCursorTableAdapter (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/simplecursortableadapter)
+- [CursorTableAdapter (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/cursortableadapter)
 - [活動生命週期教學課程](~/android/app-fundamentals/activity-lifecycle/index.md)
-- [使用資料表和資料格中 （Xamarin.iOS)](~/ios/user-interface/controls/tables/index.md)
-- [ListView 類別參考](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-- [ListActivity 類別參考](https://developer.xamarin.com/api/type/Android.App.ListActivity/)
-- [BaseAdapter 類別參考](https://developer.xamarin.com/api/type/Android.Widget.BaseAdapter/)
-- [ArrayAdapter 類別參考](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
-- [CursorAdapter 類別參考](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)
+- [使用資料表和資料格 (在 Xamarin. iOS 中)](~/ios/user-interface/controls/tables/index.md)
+- [ListView 類別參考](xref:Android.Widget.ListView)
+- [ListActivity 類別參考](xref:Android.App.ListActivity)
+- [BaseAdapter 類別參考](xref:Android.Widget.BaseAdapter)
+- [ArrayAdapter 類別參考](xref:Android.Widget.ArrayAdapter)
+- [CursorAdapter 類別參考](xref:Android.Widget.CursorAdapter)

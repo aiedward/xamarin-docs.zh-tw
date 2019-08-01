@@ -1,133 +1,133 @@
 ---
-title: 在 Xamarin.iOS 中增強的使用者通知
-description: 這篇文章描述在 iOS 10 中導入的使用者通知架構。 它討論本機通知、 遠端通知、 通知管理、 通知動作和更多功能。
+title: 在 Xamarin 中增強的使用者通知
+description: 本文說明 iOS 10 中引進的使用者通知架構。 它討論本機通知、遠端通知、通知管理、通知動作等等。
 ms.prod: xamarin
 ms.assetid: 4E1FF652-28F0-4566-B383-9D12664401A4
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: afa20a264e2509a5658cd0d8f90da3148315e803
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 775675e11b85bb53bb51c36b71129a086d9dd60f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865718"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651253"
 ---
-# <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin.iOS 中增強的使用者通知
+# <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin 中增強的使用者通知
 
-新 iOS 10，使用者通知架構可讓傳遞和本機及遠端通知的處理。 使用此架構，應用程式或應用程式擴充功能可以排程傳遞本機通知藉由指定一組條件，例如位置或一天的時間。
+IOS 10 的新手, 使用者通知架構允許傳遞和處理本機和遠端通知。 藉由使用此架構, 應用程式或應用程式擴充功能可以指定一組條件 (例如位置或一天的時間) 來排程本機通知的傳遞。
 
-## <a name="about-user-notifications"></a>使用者通知的相關資訊
+## <a name="about-user-notifications"></a>關於使用者通知
 
-如上所述，新的使用者通知架構可讓傳遞和本機及遠端通知的處理。 使用此架構，應用程式或應用程式擴充功能可以排程傳遞本機通知藉由指定一組條件，例如位置或一天的時間。
+如上所述, 新的使用者通知架構允許傳遞和處理本機和遠端通知。 藉由使用此架構, 應用程式或應用程式擴充功能可以指定一組條件 (例如位置或一天的時間) 來排程本機通知的傳遞。
 
-此外，應用程式或延伸模組可以接收 （並可能修改） 本機及遠端通知時傳送至使用者的 iOS 裝置。
+此外, 應用程式或延伸模組可以在本機和遠端通知傳遞給使用者的 iOS 裝置時, 同時接收 (而且可能會修改)。
 
-新的使用者通知 UI 架構可讓應用程式或自訂本機及遠端通知的外觀，提供給使用者的應用程式擴充功能。
+新的使用者通知 UI 架構可讓應用程式或應用程式延伸模組在呈現給使用者時, 自訂本機和遠端通知的外觀。
 
-此架構提供下列應用程式可以將通知傳遞給使用者的方式：
+此架構提供下列方式, 讓應用程式可以將通知傳遞給使用者:
 
-- **Visual 警示**-關閉通知會從畫面頂端的橫幅為位置。
-- **音效和振動的情況下**-可以與通知相關聯。
-- **應用程式圖示徽章**-顯示應用程式的圖示顯示新的內容可以使用，例如未閱讀的電子郵件訊息數目的徽章。
+- **視覺效果警示**-通知會從畫面頂端向下匯總為橫幅。
+- **音效和 Vibrations** -可以與通知相關聯。
+- **應用程式圖示徽章**-應用程式的圖示會在其中顯示徽章, 顯示有新的內容可供使用, 例如未閱讀的電子郵件訊息數目。
 
-此外，根據使用者的目前內容中，有許多種通知將會看到：
+此外, 視使用者目前的內容而定, 有不同的方式可以呈現通知:
 
-- 如果裝置已解除鎖定，通知會向下捲動從畫面頂端做為橫幅。
-- 如果裝置已鎖定，則會在使用者的鎖定畫面上顯示通知。
-- 如果使用者已錯過通知，他們可以開啟通知中心，並檢視任何可用，等待通知那里。
+- 如果裝置已解除鎖定, 則會以橫幅的形式從畫面頂端向下復原通知。
+- 如果裝置已鎖定, 通知就會顯示在使用者的鎖定畫面上。
+- 如果使用者錯過了通知, 他們可以開啟 [通知中心], 並在該處查看任何可用、等待中的通知。
 
-Xamarin.iOS 應用程式有兩種類型的使用者就能夠向傳送的通知：
+一個 Xamarin iOS 應用程式有兩種類型的使用者通知可以傳送:
 
-- **本機通知**-這些在本機安裝在使用者裝置上的應用程式所傳送。
-- **遠端通知**-從遠端傳送伺服器並且呈現給使用者，或其所觸發的應用程式內容的背景更新。
+- **本機通知**-這些是由本機使用者裝置上安裝的應用程式所傳送。
+- **遠端通知**-會從遠端伺服器傳送, 並向使用者顯示, 或觸發應用程式內容的背景更新。
 
-### <a name="about-local-notifications"></a>本機通知的相關資訊
+### <a name="about-local-notifications"></a>關於本機通知
 
-IOS 應用程式可以傳送本機通知具有下列功能和屬性：
+IOS 應用程式可以傳送的本機通知具有下列功能和屬性:
 
-- 本機使用者的裝置上的應用程式會傳送它們。 
-- 它們是您可以設定使用時間或位置為基礎的觸發程序。 
-- 應用程式與使用者的裝置排程通知，並符合觸發條件時，它會顯示。
-- 當使用者與通知互動時，應用程式會接收回呼。
+- 它們是由使用者裝置上的本機應用程式所傳送。 
+- 它們可以設定為使用時間或以位置為基礎的觸發程式。 
+- 應用程式會在使用者的裝置上排程通知, 並在符合觸發條件時顯示。
+- 當使用者與通知互動時, 應用程式將會收到回呼。
 
-本機通知的範例包括：
+本機通知的一些範例包括:
 
 - 行事曆警示
 - 提醒警示
-- 位置感知的觸發程序
+- 位置感知觸發程式
 
-如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)文件。
+如需詳細資訊, 請參閱 Apple 的[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)檔。
 
 ### <a name="about-remote-notifications"></a>關於遠端通知
 
-IOS 應用程式可以傳送遠端通知具有下列功能和屬性：
+IOS 應用程式可以傳送的遠端通知具有下列功能和屬性:
 
-- 應用程式擁有與其進行通訊的伺服器端元件。
-- Apple Push Notification Service (APNs) 用來傳輸遠端通知的最佳方式傳遞至使用者的裝置，從開發人員的雲端式伺服器。
-- 當應用程式接收遠端通知時它會顯示給使用者。
-- 當使用者互動與通知時，應用程式會接收回呼。
+- 應用程式具有與其通訊的伺服器端元件。
+- Apple Push Notification Service (APNs) 是用來從開發人員的雲端伺服器, 將遠端通知的最佳傳遞傳送到使用者的裝置。
+- 當應用程式收到遠端通知時, 就會向使用者顯示。
+- 當使用者與通知互動時, 應用程式將會收到回呼。
 
-遠端通知的範例包括：
+遠端通知的一些範例包括:
 
 - 新聞警示
-- 運動的更新
-- 立即訊息的訊息
+- 運動更新
+- 立即訊息訊息
 
-有兩種類型的遠端通知至 iOS 應用程式：
+IOS 應用程式可使用兩種類型的遠端通知:
 
-- **使用者對象**-使用者在裝置上看到這些。
-- **無訊息更新**-這些提供一個機制來更新 iOS 應用程式在背景中的內容。 當收到無訊息的更新時，應用程式可以連到移除的伺服器會下拉最新的內容。
+- **使用者**對向-在裝置上向使用者顯示這些資訊。
+- **無訊息更新**-這些會提供在背景中更新 iOS 應用程式內容的機制。 收到無訊息更新時, 應用程式可以向外移動到「移除伺服器」, 以提取最新的內容。
 
-如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)文件。
+如需詳細資訊, 請參閱 Apple 的[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)檔。
 
-### <a name="about-the-existing-notifications-api"></a>現有的通知 API 的相關資訊
+### <a name="about-the-existing-notifications-api"></a>關於現有的通知 API
 
-IOS 應用程式會使用在 iOS 10 之前,`UIApplication`向系統註冊通知，並排程 （可由時間和地點） 如何觸發該通知。
+在 ios 10 之前, ios 應用程式會使用`UIApplication`向系統註冊通知, 並排程應如何觸發該通知 (依時間或位置)。
 
-有數個使用現有的通知 API 時，開發人員可能會遇到的問題：
+開發人員在使用現有的通知 API 時可能會遇到幾個問題:
 
-- 有個不同的回呼所需的本機或遠端通知可能會導致重複的程式碼。
-- 應用程式之後有已排定與系統有限控制項的通知。
-- 有個不同層級的支援所有 Apple 的現有平台。
+- 本機或遠端通知需要不同的回呼, 這可能會導致程式碼重複。
+- 應用程式在系統排程之後, 對通知的控制受到限制。
+- 所有 Apple 現有平臺的支援各有不同層級。
 
-### <a name="about-the-new-user-notification-framework"></a>有關新的使用者通知架構
+### <a name="about-the-new-user-notification-framework"></a>關於新的使用者通知架構
 
-使用 iOS 10，Apple 已引進新的使用者通知架構，會取代現有`UIApplication`先前所述的方法。
+在 iOS 10 中, Apple 引進了新的使用者通知架構, 其取代了`UIApplication`先前所述的現有方法。
 
-使用者通知架構，提供下列功能：
+使用者通知架構提供下列各項:
 
-- 熟悉的 API，其中包含與先前的方法，方便您移植程式碼從現有的 framework 的功能同位檢查。
-- 包含一組擴充的內容選項，可讓更豐富的通知傳送給使用者。
-- 可由相同的程式碼和回呼處理本機和遠端通知。
-- 簡化處理使用者互動的通知時，會傳送至應用程式的回呼程序。
-- 增強的暫止和已傳遞的通知，包括能夠移除或更新通知的管理。
-- 將執行應用程式內呈現通知的能力。
-- 新增排程和處理應用程式擴充功能中的通知的能力。
-- 加入新的通知本身的擴充點。 
+- 熟悉的 API, 其中包含與先前方法相同的功能, 可讓您輕鬆地從現有的架構移植程式碼。
+- 包含一組擴充的內容選項, 可讓您將更豐富的通知傳送給使用者。
+- 本機和遠端通知都可以透過相同的程式碼和回呼來處理。
+- 簡化在使用者與通知互動時, 處理傳送至應用程式之回呼的進程。
+- 增強的擱置和傳遞通知管理, 包括移除或更新通知的能力。
+- 新增在應用程式內呈現通知的功能。
+- 新增排程和處理應用程式延伸模組內通知的功能。
+- 加入通知本身的新擴充點。 
 
-新的使用者通知架構會提供統一的通知 API 跨平台的多個 Apple 支援包括： 
+新的使用者通知架構在 Apple 支援的多個平臺上提供統一的通知 API, 包括: 
 
-- **iOS** -完整的支援來管理及排程的通知。
-- **tvOS** -將功能加入至本機及遠端通知徽章的應用程式圖示。
-- **watchOS** -新增轉送至其 Apple Watch 通知使用者的配對的 iOS 裝置的功能，並授與監看式應用程式能夠執行直接在 watch 本身上的本機通知。
+- **iOS** -管理和排程通知的完整支援。
+- **tvOS** -新增徽章應用程式圖示的功能, 以進行本機和遠端通知。
+- **watchOS** -新增將通知從使用者的已配對 iOS 裝置轉送至其 Apple Watch 的功能, 並讓 watch 應用程式能夠直接在監看式上執行本機通知。
 
-如需詳細資訊，請參閱 Apple [UserNotifications 架構參照](https://developer.apple.com/reference/usernotifications)並[UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)文件。
+如需詳細資訊, 請參閱 Apple 的[UserNotifications 架構參考](https://developer.apple.com/reference/usernotifications)和[UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)檔。
 
 ## <a name="preparing-for-notification-delivery"></a>準備通知傳遞
 
-之前的 iOS 應用程式可以傳送通知給使用者應用程式必須向系統，並通知是使用者中斷，因為應用程式必須明確地要求權限，再將它們傳送。
+在 iOS 應用程式可以將通知傳送給使用者之前, 必須先向系統註冊應用程式, 而且由於通知會中斷使用者, 因此應用程式必須先明確要求許可權, 才會將其送出。
 
-有三種不同的層級的使用者可以核准應用程式的通知要求：
+使用者可以核准的應用程式有三個不同層級的通知要求:
 
 - 橫幅會顯示。
-- 聲音的警示。
-- 徽章的應用程式圖示。
+- 音效警示。
+- 徽章應用程式圖示。
 
-此外，這些核准的層級必須要求和設定的本機和遠端的通知。
+此外, 您必須針對本機和遠端通知要求和設定這些核准層級。
 
-只要加上下列程式碼，以啟動應用程式不應要求通知的權限`FinishedLaunching`方法`AppDelegate`並設定所需的通知類型 (`UNAuthorizationOptions`):
+只要應用程式啟動, 就應該要求通知許可權`FinishedLaunching` `AppDelegate` , 方法是將下列程式碼新增至的方法, 並設定所需的通知`UNAuthorizationOptions`類型 ():
 
 ```csharp
 using UserNotifications;
@@ -144,7 +144,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-此外，使用者可以隨時變更在任何時候使用的應用程式的通知權限**設定**在裝置上的應用程式。 應用程式應該檢查使用者的要求的通知權限之前顯示通知，使用下列程式碼：
+此外, 使用者隨時都可以使用裝置上的 [**設定**] 應用程式變更應用程式的通知許可權。 應用程式應該先檢查使用者的要求通知許可權, 然後再使用下列程式碼來呈現通知:
 
 ```csharp
 // Get current notification settings
@@ -155,64 +155,64 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 
 ### <a name="configuring-the-remote-notifications-environment"></a>設定遠端通知環境
 
-新增至 iOS 10，開發人員必須通知哪些環境推播通知以開發或生產環境執行的作業系統。 無法提供這項資訊可能會導致應用程式提交到要應用程式存放區，如下所示的通知時遭到拒絕：
+IOS 10 的新功能, 開發人員必須通知 OS 哪個環境推播通知是以開發或實際執行的形式執行。 若無法提供此資訊, 可能會導致應用程式在提交至 iTune App Store 時遭到拒絕, 並出現類似下列的通知:
 
-> 遺漏的推播通知權利-您的應用程式包含一個適用於 Apple Push Notification service，API，但`aps-environment`權利缺少應用程式的簽章。
+> 缺少推播通知權利-您的應用程式包含適用于 Apple 推播通知服務的`aps-environment` API, 但應用程式的簽章中缺少權利。
 
-若要提供必要的權限，執行下列作業：
+若要提供必要的許可權, 請執行下列動作:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 按兩下`Entitlements.plist`檔案中**Solution Pad**以開啟它進行編輯。
-2. 若要切換**來源**檢視： 
+1. 按兩下  **Solution Pad**中`Entitlements.plist`的檔案以開啟它進行編輯。
+2. 切換至 [**來源**] 視圖: 
 
-    [![](enhanced-user-notifications-images/setup01.png "原始碼檢視")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. 按一下  **+** 按鈕以新增新的金鑰。
-4. 輸入`aps-environment`for**屬性**，保留**類型**做為`String`，然後輸入其中一個`development`或`production`的**值**: 
+    [![](enhanced-user-notifications-images/setup01.png "來源視圖")](enhanced-user-notifications-images/setup01.png#lightbox)
+3. **+** 按一下按鈕以加入新的金鑰。
+4. 針對`aps-environment` **屬性**輸入, 並`production`將`String` **類型保留**為, 並輸入  或作為`development`值: 
 
-    [![](enhanced-user-notifications-images/setup02.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
+    [![](enhanced-user-notifications-images/setup02.png "[Ap-環境] 屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. 將變更儲存到檔案。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 按兩下`Entitlements.plist`檔案中**方案總管 中**以開啟它進行編輯。
-2. 按一下  **+** 按鈕以新增新的金鑰。
-3. 輸入`aps-environment`for**屬性**，保留**類型**做為`String`，然後輸入其中一個`development`或`production`的**值**: 
+1. 按兩下 **方案總管**中`Entitlements.plist`的檔案以開啟它進行編輯。
+2. **+** 按一下按鈕以加入新的金鑰。
+3. 針對`aps-environment` **屬性**輸入, 並`production`將`String` **類型保留**為, 並輸入  或作為`development`值: 
 
-    [![](enhanced-user-notifications-images/setup02w.png "Aps 環境屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
+    [![](enhanced-user-notifications-images/setup02w.png "[Ap-環境] 屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
 4. 將變更儲存到檔案。
 
 -----
 
 ### <a name="registering-for-remote-notifications"></a>註冊遠端通知
 
-如果應用程式會同時傳送和接收遠端通知時，它仍必須執行_語彙基元註冊_使用現有`UIApplication`API。 這項註冊需要裝置，以提供即時的網路連接存取 apns 來說，會產生將會傳送至應用程式的必要權杖。 應用程式需要再轉送此權杖來向遠端通知的開發人員的伺服器端應用程式：
+如果應用程式將會傳送和接收遠端通知, 它仍然需要使用現有`UIApplication`的 API 來_註冊權杖_。 此註冊會要求裝置必須具有即時網路連線存取 APNs, 以產生將會傳送至應用程式的必要權杖。 應用程式必須將此權杖轉送至開發人員的伺服器端應用程式, 以註冊遠端通知:
 
-[![](enhanced-user-notifications-images/token01.png "語彙基元註冊概觀")](enhanced-user-notifications-images/token01.png#lightbox)
+[![](enhanced-user-notifications-images/token01.png "權杖註冊總覽")](enhanced-user-notifications-images/token01.png#lightbox)
 
-您可以使用下列程式碼來初始化必要的註冊：
+使用下列程式碼來初始化所需的註冊:
 
 ```csharp
 UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 ```
 
-通知承載一部分的 get 的從伺服器傳送至 APNs 傳送到遠端通知時，要包含需要的語彙基元會傳送給開發人員的伺服器端應用程式：
+傳送給開發人員的伺服器端應用程式的權杖, 必須納入為通知承載的一部分, 而此承載會在傳送遠端通知時, 從伺服器傳送到 APNs:
 
-[![](enhanced-user-notifications-images/token02.png "通知承載中包含此語彙基元")](enhanced-user-notifications-images/token02.png#lightbox)
+[![](enhanced-user-notifications-images/token02.png "包含在通知承載中的權杖")](enhanced-user-notifications-images/token02.png#lightbox)
 
-語彙基元做為繫結在一起的通知和應用程式用來開啟或回應通知的索引鍵。
+Token 會作為系結通知的金鑰, 以及用來開啟或回應通知的應用程式。
 
-如需詳細資訊，請參閱 Apple[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)文件。
+如需詳細資訊, 請參閱 Apple 的[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)檔。
 
 ## <a name="notification-delivery"></a>通知傳遞
 
-完全註冊應用程式和從要求的必要權限，授與使用者應用程式現在已準備好要傳送和接收通知。 
+應用程式已完整註冊, 且使用者要求並授與所需的許可權之後, 應用程式現在已準備好傳送和接收通知。 
 
 ### <a name="providing-notification-content"></a>提供通知內容
 
-新增至 iOS 10，所有通知同時都包含這兩者**標題**並**副標題**，一律會顯示與**主體**通知內容。 還新，是能夠加入**媒體附件**通知內容。
+最新的 iOS 10, 所有通知都包含**標題**和**副標題**, 其中一律會顯示通知內容的**主體**。 此外, 它也是將**媒體附件**新增至通知內容的功能。
 
-若要建立本機通知的內容，請使用下列程式碼：
+若要建立本機通知的內容, 請使用下列程式碼:
 
 ```csharp
 var content = new UNMutableNotificationContent();
@@ -222,7 +222,7 @@ content.Body = "This is the message body of the notification.";
 content.Badge = 1;
 ```
 
-遠端通知，程序會類似：
+針對遠端通知, 此程式類似:
 
 ```csharp
 {
@@ -237,18 +237,18 @@ content.Badge = 1;
 }
 ```
 
-### <a name="scheduling-when-a-notification-is-sent"></a>排程時的通知會傳送
+### <a name="scheduling-when-a-notification-is-sent"></a>排程傳送通知的時間
 
-建立通知的內容，應用程式需要通知會呈現給使用者的設定，排定*觸發程序*。 iOS 10 提供四種不同的觸發程序類型：
+建立通知的內容之後, 應用程式必須透過設定*觸發*程式來排程通知將呈現給使用者的時間。 iOS 10 提供四種不同的觸發程式類型:
 
-- **推播通知**-專門搭配遠端通知，並在裝置上執行的應用程式封裝 APNs 傳送通知時，會觸發。
-- **時間間隔**-可讓本機通知排程的時間間隔開始，現在再結束某些未來的點。 例如： `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
-- **行事曆日期**-可讓特定的日期和時間排程的本機通知。
-- **位置型**-可讓排程時進入或離開特定地理位置或任何藍芽指標指定靠近 iOS 裝置的本機通知。
+- **推播通知**-僅用於遠端通知, 並會在 APNs 將通知套件傳送至裝置上執行的應用程式時觸發。
+- **時間間隔**-允許從時間間隔開始排程本機通知, 從現在開始, 到某個未來點結束。 例如： `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
+- 行事**曆日期**-允許在特定日期和時間排程本機通知。
+- 以**位置為基礎**-允許在 iOS 裝置進入或離開特定地理位置, 或指定接近任何藍牙指標時, 排程本機通知。
 
-備妥本機通知時，應用程式需要呼叫`Add`方法的`UNUserNotificationCenter`排程其顯示給使用者的物件。 遠端通知，伺服器端應用程式會傳送通知承載給 APNs，然後將傳送的封包到使用者的裝置。
+當本機通知準備就緒時, 應用程式需要呼叫`Add` `UNUserNotificationCenter`物件的方法, 以將其顯示排程給使用者。 對於遠端通知, 伺服器端應用程式會將通知承載傳送至 APNs, 然後將封包傳送到使用者的裝置。
 
-請在結合所有部分，本機通知的範例可能都如下：
+將所有元件結合在一起, 範例本機通知可能如下所示:
 
 ```csharp
 using UserNotifications;
@@ -272,9 +272,9 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 });
 ```
 
-## <a name="handling-foreground-app-notifications"></a>處理前景應用程式通知
+## <a name="handling-foreground-app-notifications"></a>處理前景代理程式更新
 
-新增至 iOS 10，應用程式可以通知以不同方式處理時它是在幕前及觸發通知。 藉由提供`UNUserNotificationCenterDelegate`並實作`WillPresentNotification`方法，應用程式可以接管負責顯示通知。 例如：
+IOS 10 的新功能, 應用程式可以在處於前景時以不同的方式處理通知, 並觸發通知。 藉由提供`UNUserNotificationCenterDelegate`並`WillPresentNotification`實施方法, 應用程式可以接管顯示通知的責任。 例如：
 
 ```csharp
 using System;
@@ -305,15 +305,15 @@ namespace MonkeyNotification
 }
 ```
 
-此程式碼直接寫出的內容`UNNotification`應用程式的輸出並要求系統，以顯示標準的警示通知。 
+這段程式碼只是將的內容`UNNotification`寫出至應用程式輸出, 並要求系統顯示通知的標準警示。 
 
-如果應用程式想要在前景時顯示通知訊息本身，而且不不是使用系統預設值，傳遞`None`至完成處理常式。 範例：
+如果應用程式想要在前景時顯示通知本身, 而不是使用系統預設值, 請傳遞`None`至完成處理常式。 範例：
 
 ```csharp
 completionHandler (UNNotificationPresentationOptions.None);
 ```
 
-此程式碼就緒之後，開啟`AppDelegate.cs`檔案進行編輯，並變更`FinishedLaunching`方法看起來如下所示：
+將此程式碼備妥之後, `AppDelegate.cs`請開啟檔案進行編輯, `FinishedLaunching`然後將方法變更為如下所示:
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -330,26 +330,26 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-此程式碼附加自訂`UNUserNotificationCenterDelegate`上述目前`UNUserNotificationCenter`讓應用程式可以處理通知，在作用中狀態，並在前景中。
+此程式碼會將來自`UNUserNotificationCenterDelegate`上述的自訂附加`UNUserNotificationCenter`至目前的, 讓應用程式可以在使用中和前景時處理通知。
 
 ## <a name="notification-management"></a>通知管理
 
-新增至 iOS 10，通知管理提供暫止並傳遞通知的存取，並新增移除、 更新或升級這些通知的能力。
+對於 iOS 10 的新功能, 通知管理可讓您存取擱置和傳遞的通知, 並新增移除、更新或升級這些通知的能力。
 
-是通知管理很重要的一部分_要求識別碼_，時指派給通知它已建立並排程與系統。 遠端通知，這個參數會指派新`apps-collapse-id`HTTP 要求標頭中的欄位。
+通知管理的一個重要部分是在建立和排程系統時指派給通知的_要求識別碼_。 對於遠端通知, 這是透過 HTTP 要求標`apps-collapse-id`頭中的新欄位所指派。
 
-要求識別碼用來選取想要對通知管理的應用程式的通知。
+[要求識別碼] 用來選取應用程式想要在其上執行通知管理的通知。
 
 ### <a name="removing-notifications"></a>移除通知
 
-若要從系統中移除暫止的通知，請使用下列程式碼：
+若要從系統移除暫止的通知, 請使用下列程式碼:
 
 ```csharp
 var requests = new string [] { "sampleRequest" };
 UNUserNotificationCenter.Current.RemovePendingNotificationRequests (requests);
 ```
 
-若要移除的已傳遞的通知，請使用下列程式碼：
+若要移除已傳遞的通知, 請使用下列程式碼:
 
 ```csharp
 var requests = new string [] { "sampleRequest" };
@@ -358,7 +358,7 @@ UNUserNotificationCenter.Current.RemoveDeliveredNotifications (requests);
 
 ### <a name="updating-an-existing-notification"></a>更新現有的通知
 
-若要更新現有的通知，只具有所需的參數，修改 （例如新的觸發程序時間） 建立新的通知，並將它新增至具有相同的要求識別項為必須修改通知系統。 範例：
+若要更新現有的通知, 只要建立新的通知, 並將所需的參數修改 (例如新的觸發程式時間), 並將它新增至具有與需要修改之通知相同的要求識別碼的系統中。 範例：
 
 
 ```csharp
@@ -387,21 +387,21 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 });
 ```
 
-已傳遞的通知，會取得更新並升級至清單頂端的首頁和鎖定畫面上，並在通知中心，如果它已讀取使用者現有的通知。
+對於已經傳遞的通知, 現有的通知將會更新並升級至首頁和鎖定畫面上的清單頂端, 以及已由使用者讀取的通知中心。
 
-## <a name="working-with-notification-actions"></a>使用 通知動作
+## <a name="working-with-notification-actions"></a>使用通知動作
 
-在 iOS 10 中，傳遞給使用者的通知不是靜態的並與他們的使用者可以互動的數種方式提供 （從內建到自訂動作）。
+在 iOS 10 中, 傳遞給使用者的通知不是靜態的, 而且提供了數種使用者可以與其互動的方式 (從內建到自訂動作)。
 
-有三種類型的 iOS 應用程式可以回應的動作：
+IOS 應用程式可以回應的動作有三種類型:
 
-- **預設動作**-這是當使用者點選通知以開啟應用程式，並顯示特定的通知的詳細資料。
-- **自訂動作**-這些已新增在 iOS 8 中，提供快速的方式，讓使用者直接從通知執行自訂的工作，而不需要啟動應用程式。 它們可以顯示為清單中的按鈕可自訂的項目或文字輸入的欄位 （其中應用程式會提供少量的時間才能完成要求） 的背景或前景中執行 （其中啟動應用程式在前景 fulfill 要求)。 自訂動作是適用於 iOS 和 watchOS。
-- **關閉動作**-此動作會傳送至應用程式，當使用者關閉特定的通知。
+- **預設動作**-這是當使用者按下通知來開啟應用程式, 並顯示指定通知的詳細資料時。
+- **自訂動作**-這些是在 iOS 8 中新增的, 並提供快速的方法讓使用者直接從通知執行自訂工作, 而不需要啟動應用程式。 它們可以呈現為具有可自訂標題的按鈕清單, 或可在背景中執行的文字輸入欄位 (應用程式會提供少量時間來完成要求) 或前景 (應用程式會在前景中啟動以 fulfill 要求)。 自訂動作適用于 iOS 和 watchOS。
+- **關閉動作**-當使用者關閉指定的通知時, 此動作會傳送至應用程式。
 
 ### <a name="creating-custom-actions"></a>建立自訂動作
 
-若要建立並註冊自訂動作與系統，請使用下列程式碼：
+若要建立並向系統註冊自訂動作, 請使用下列程式碼:
 
 ```csharp
 // Create action
@@ -421,17 +421,17 @@ var categories = new UNNotificationCategory [] { category };
 UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotificationCategory>(categories)); 
 ```
 
-當建立新`UNNotificationAction`，它被指派的唯一識別碼，並會出現在按鈕的標題。 根據預設，動作會建立以背景的動作，但是可以提供選項，以調整動作的行為 （例如將它設定為前景動作）。
+建立新`UNNotificationAction`的時, 系統會為其指派唯一的識別碼, 以及將出現在按鈕上的標題。 根據預設, 動作將會建立為背景動作, 不過可以提供選項來調整動作的行為 (例如, 將其設定為前景動作)。
 
-每個建立的動作必須要與類別相關聯。 當建立新`UNNotificationCategory`、 指派的唯一識別碼，一份動作來執行，以提供類別目錄中的動作的意圖的詳細資訊和一些選項，以控制行為的類別目錄的意圖識別碼清單。
+所建立的每個動作都必須與一個類別相關聯。 建立新`UNNotificationCategory`的時, 會指派唯一的識別碼、可執行檔動作清單、意圖識別碼清單, 以提供有關類別中動作意圖的詳細資訊, 以及一些控制分類行為的選項。
 
-最後，所有的類別會向系統使用`SetNotificationCategories`方法。
+最後, 所有的類別都會使用`SetNotificationCategories`方法向系統註冊。
 
 ### <a name="presenting-custom-actions"></a>呈現自訂動作
 
-一旦已建立並向系統註冊一組自訂動作和類別目錄，他們可以看到從本機或遠端通知。
+一旦建立了一組自訂動作和類別, 並向系統註冊之後, 就可以從本機或遠端通知呈現。
 
-遠端通知，請設定`category`遠端通知承載符合其中一個先前建立的類別目錄中。 例如：
+若為遠端通知, 請`category`在遠端通知承載中設定, 以符合上述所建立的其中一個類別。 例如：
 
 ```csharp
 {
@@ -442,7 +442,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-本機通知，設定`CategoryIdentifier`屬性`UNMutableNotificationContent`物件。 例如：
+針對本機通知, 請設定`CategoryIdentifier` `UNMutableNotificationContent`物件的屬性。 例如：
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -454,11 +454,11 @@ content.CategoryIdentifier = "message";
 ...
 ```
 
-同樣地，此識別碼必須符合其中一個上面所建立的類別。
+同樣地, 此識別碼必須符合上述所建立的其中一個類別。
 
 ### <a name="handling-dismiss-actions"></a>處理關閉動作
 
-如上所述，關閉的動作可以傳送至應用程式，當使用者關閉通知。 由於這不是標準的動作，將需要類別建立時設定的選項。 例如：
+如上所述, 當使用者關閉通知時, 可以將解除動作傳送至應用程式。 由於這不是標準的動作, 因此在建立類別目錄時, 將需要設定一個選項。 例如：
 
 ```csharp
 var categoryID = "message";
@@ -469,9 +469,9 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ```
 
-### <a name="handling-action-responses"></a>處理動作的回應
+### <a name="handling-action-responses"></a>處理動作回應
 
-當使用者互動的自訂動作與上述建立的類別時，應用程式必須滿足要求的工作。 這是藉由提供`UNUserNotificationCenterDelegate`並實作`UserNotificationCenter`方法。 例如：
+當使用者與上述所建立的自訂動作和類別互動時, 應用程式必須完成要求的工作。 這是藉由提供`UNUserNotificationCenterDelegate`並`UserNotificationCenter`執行方法來完成。 例如：
 
 ```csharp
 using System;
@@ -509,59 +509,59 @@ namespace MonkeyNotification
 }
 ```
 
-傳遞中`UNNotificationResponse`類別具有`ActionIdentifier`屬性，可以是預設的動作 或 關閉 動作。 使用`response.Notification.Request.Identifier`來測試任何自訂動作。
+傳入`UNNotificationResponse`的類別`ActionIdentifier`具有屬性, 可以是預設動作或關閉動作。 用`response.Notification.Request.Identifier`來測試是否有任何自訂動作。
 
-`UserText`屬性會保留任何使用者文字輸入的值。 `Notification`屬性會保留原始的通知，包括要求觸發程序和通知內容。 如果是本機或遠端的通知會根據觸發程序的類型，可以決定應用程式。
+`UserText`屬性會保存任何使用者文字輸入的值。 `Notification`屬性會保留原始通知, 其中包含含有觸發程式和通知內容的要求。 應用程式可以決定它是以觸發程式類型為基礎的本機或遠端通知。
 
 > [!NOTE]
-> iOS 12 就可以自訂通知 UI 來修改其在執行階段的 [動作] 按鈕。 如需詳細資訊，看看[動態通知動作按鈕](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md)文件。
+> iOS 12 讓自訂通知 UI 可以在執行時間修改其動作按鈕。 如需詳細資訊, 請參閱[動態通知動作按鈕](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md)檔。
 
 ## <a name="working-with-service-extensions"></a>使用服務延伸模組
 
-使用 遠端通知時_服務延伸_可用來啟用通知承載內的端對端加密。 服務延伸模組是通知的一個非使用者介面延伸模組 （適用於 iOS 10），與擴充或取代可見內容，它會呈現給使用者之前的主要目的在背景中執行。 
+使用遠端通知時,_服務延伸_提供了在通知承載內啟用端對端加密的方法。 服務延伸是在背景中執行的非使用者介面延伸模組 (在 iOS 10 中提供), 主要目的是要在呈現給使用者之前擴充或取代通知的可見內容。 
 
-[![](enhanced-user-notifications-images/extension01.png "服務延伸模組概觀")](enhanced-user-notifications-images/extension01.png#lightbox)
+[![](enhanced-user-notifications-images/extension01.png "服務延伸模組總覽")](enhanced-user-notifications-images/extension01.png#lightbox)
 
-服務延伸模組要快速地執行，並只可以在短時間執行的系統內。 服務延伸模組無法在分配的時間內完成其工作，就會呼叫後援方法。 如果後援的失敗，原始的通知內容將會顯示給使用者。
+服務延伸的目的是要快速執行, 而且只有在一小段時間內, 系統才會執行。 當服務延伸無法在配置的時間內完成其工作時, 將會呼叫回溯方法。 如果回復失敗, 則會向使用者顯示原始通知內容。
 
-服務延伸模組的一些可能用法包括：
+服務延伸模組的一些可能用法包括:
 
-- 提供遠端通知內容的端對端的加密。
-- 新增遠端的通知，讓它們更豐富的附件。
+- 提供遠端通知內容的端對端加密。
+- 將附件新增至遠端通知以擴充它們。
 
-### <a name="implementing-a-service-extension"></a>實作服務延伸模組
+### <a name="implementing-a-service-extension"></a>執行服務延伸模組
 
-若要實作服務延伸模組的 Xamarin.iOS 應用程式中，執行下列作業：
+若要在 Xamarin iOS 應用程式中執行服務延伸模組, 請執行下列動作:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 應用程式的方案在 Visual Studio for mac 中開啟
-2. 中的方案名稱上按一下滑鼠右鍵**Solution Pad** ，然後選取**新增** > **加入新的專案**。
-3. 選取 [ **iOS** > **延伸模組** > **通知服務延伸**然後按一下**下一步]** 按鈕： 
+1. 在 Visual Studio for Mac 中開啟應用程式的解決方案。
+2. 以滑鼠右鍵按一下**Solution Pad**中的方案名稱, 然後選取   > [新增] [**新增專案**]。
+3. 選取 [ **iOS**  > **延伸** > 模組**通知服務延伸**模組], 然後按 [**下一步]** 按鈕: 
 
-    [![](enhanced-user-notifications-images/extension02.png "選取 通知服務延伸模組")](enhanced-user-notifications-images/extension02.png#lightbox)
-4. 請輸入**名稱**延伸模組，然後按一下 [**下一步]** 按鈕： 
+    [![](enhanced-user-notifications-images/extension02.png "選取通知服務延伸模組")](enhanced-user-notifications-images/extension02.png#lightbox)
+4. 輸入擴充功能的**名稱**, 然後按 [**下一步]** 按鈕: 
 
     [![](enhanced-user-notifications-images/extension03.png "輸入延伸模組的名稱")](enhanced-user-notifications-images/extension03.png#lightbox)
-5. 調整**專案名稱**及/或**方案名稱**如果需要，然後按一下**建立**按鈕： 
+5. 視需要調整 [**專案名稱**] 和/或 [**方案名稱**], 然後按一下 [**建立**] 按鈕: 
 
-    [![](enhanced-user-notifications-images/extension04.png "調整的專案名稱和/或方案名稱")](enhanced-user-notifications-images/extension04.png#lightbox) 
+    [![](enhanced-user-notifications-images/extension04.png "調整專案名稱和 (或) 方案名稱")](enhanced-user-notifications-images/extension04.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Visual Studio 中開啟應用程式的方案。
-2. 中的方案名稱上按一下滑鼠右鍵**方案總管**，然後選取**新增 > 新增專案...** .
-3. 選取  **Visual C# > iOS 延伸模組 > Notification Service 延伸模組**:
+1. 在 Visual Studio 中開啟應用程式的解決方案。
+2. 以滑鼠右鍵按一下**方案總管**中的方案名稱, 然後選取 [**加入 > 新增專案**...]。
+3. 選取 **[ C# Visual > iOS 延伸模組] > 通知服務延伸**模組:
 
-    [![](enhanced-user-notifications-images/extension01.w157-sml.png "選取 通知服務延伸模組")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
-4. 請輸入**名稱**延伸模組，然後按一下 [**確定**] 按鈕。
+    [![](enhanced-user-notifications-images/extension01.w157-sml.png "選取通知服務延伸模組")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
+4. 輸入擴充功能的**名稱**, 然後按一下 [**確定]** 按鈕。
 
 -----
 
 > [!IMPORTANT]
-> 服務延伸模組的套件組合識別碼應符合套件組合識別碼與主應用程式的`.appnameserviceextension`附加至結尾。 例如，如果主要的應用程式的套件組合識別碼`com.xamarin.monkeynotify`，服務延伸模組都應該有的套件組合識別碼`com.xamarin.monkeynotify.monkeynotifyserviceextension`。 這應該會自動設定時的擴充功能加入至方案。 
+> 服務延伸模組的套件組合識別碼應符合主要應用程式的套件組合識別碼, `.appnameserviceextension`並附加至結尾。 例如, 如果主要應用程式的套件組合識別碼為`com.xamarin.monkeynotify`, 則服務延伸模組應具有的套件組合`com.xamarin.monkeynotify.monkeynotifyserviceextension`識別碼。 這應該會在擴充功能新增至解決方案時自動設定。 
 
-中會有一個主要的類別必須修改，以提供必要的功能通知服務延伸模組。 例如：
+在通知服務延伸中, 有一個主要類別需要修改, 才能提供必要的功能。 例如：
 
 ```csharp
 using System;
@@ -610,13 +610,13 @@ namespace MonkeyChatServiceExtension
 }
 ```
 
-第一種方法， `DidReceiveNotificationRequest`，將會傳遞通知識別碼，以及通知內容透過`request`物件。 傳遞在`contentHandler`必須呼叫以呈現給使用者的通知。
+第一個方法`DidReceiveNotificationRequest`會透過`request`物件傳遞通知識別碼和通知內容。 `contentHandler`將需要呼叫傳入的, 以向使用者呈現通知。
 
-第二個方法， `TimeWillExpire`，將會在時間即將用盡服務延伸模組來處理要求之前呼叫。 如果服務延伸模組的失敗呼叫`contentHandler`分配的時間量，在原始的內容將會顯示給使用者。
+第二個方法`TimeWillExpire`會在即將用完服務延伸模組來處理要求之前呼叫。 如果服務延伸`contentHandler`在配置的時間內無法呼叫, 則會向使用者顯示原始內容。
 
-### <a name="triggering-a-service-extension"></a>觸發服務延伸模組
+### <a name="triggering-a-service-extension"></a>觸發服務延伸
 
-副檔名為服務建立及提供應用程式，它可藉由修改遠端通知裝載傳送至裝置。 例如：
+透過應用程式建立並傳遞的服務延伸模組, 可以藉由修改傳送至裝置的遠端通知承載來加以觸發。 例如：
 
 ```csharp
 {
@@ -628,9 +628,9 @@ namespace MonkeyChatServiceExtension
 }
 ```
 
-新`mutable-content`索引鍵會指定服務延伸模組，將需要啟動來更新遠端通知內容。 `encrypted-content`機碼會保有服務延伸模組可以解密再呈現給使用者的加密的資料。
+新`mutable-content`的金鑰會指定需要啟動服務延伸模組, 才能更新遠端通知內容。 `encrypted-content`金鑰會保存服務延伸模組在向使用者呈現之前可以解密的加密資料。
 
-看看下列的範例服務延伸模組：
+請參閱下列範例服務延伸模組:
 
 ```csharp
 using UserNotification;
@@ -659,17 +659,17 @@ namespace myApp {
 }
 ```
 
-此程式碼會解密加密的內容，從`encrypted-content`機碼，請建立新`UNMutableNotificationContent`，設定`Body`屬性，以解密的內容，並使用`contentHandler`向使用者顯示通知。
+此程式`encrypted-content`代碼會解密金鑰中的加密內容、建立新`UNMutableNotificationContent`的、將`Body` `contentHandler`屬性設定為解密的內容, 並使用向使用者呈現通知。
 
 ## <a name="summary"></a>總結
 
-這篇文章已涵蓋所有的使用者通知已經過增強，iOS 10 的方式。 它會顯示新的使用者通知架構，以及如何在 Xamarin.iOS 應用程式或應用程式擴充功能中使用它。
+本文涵蓋了 iOS 10 已增強使用者通知的所有方式。 它呈現新的使用者通知架構, 以及如何在 Xamarin iOS 應用程式或應用程式延伸模組中使用它。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [iOS 10 範例](https://developer.xamarin.com/samples/ios/iOS10/)
+- [iOS 10 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [UserNotifications 架構參考](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)

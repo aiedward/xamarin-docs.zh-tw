@@ -1,105 +1,105 @@
 ---
-title: 在 Xamarin.iOS 中的進階的訊息應用程式擴充功能
-description: 本文說明使用訊息應用程式擴充功能，與在 Messages 應用程式整合，並向使用者呈現的新功能的 Xamarin.iOS 方案中的進階的技術。
+title: Xamarin 中的 Advanced Message 應用程式延伸模組
+description: 本文說明在與訊息應用程式整合的 Xamarin iOS 解決方案中, 使用訊息應用程式延伸模組的先進技術, 並為使用者提供新功能。
 ms.prod: xamarin
 ms.assetid: 394A1FDA-AF70-4493-9B2C-4CFE4BE791B6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: baceb59116dd907918b34eca4f44293051190954
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7175cfa3b671a1510182b1497c941521170f39a9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61155507"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654525"
 ---
-# <a name="advanced-message-app-extensions-in-xamarinios"></a>在 Xamarin.iOS 中的進階的訊息應用程式擴充功能
+# <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin 中的 Advanced Message 應用程式延伸模組
 
-_本文說明使用訊息應用程式擴充功能，與在 Messages 應用程式整合，並向使用者呈現的新功能的 Xamarin.iOS 方案中的進階的技術。_
+_本文說明在與訊息應用程式整合的 Xamarin iOS 解決方案中, 使用訊息應用程式延伸模組的先進技術, 並為使用者提供新功能。_
 
 
-新增至 iOS 10，訊息應用程式擴充功能則是與整合**訊息**給使用者的應用程式並為您介紹新功能。 延伸模組可以傳送文字、 貼紙、 媒體檔案和互動式訊息。
+IOS 10 的新功能, 訊息應用程式延伸模組會與「**訊息**」應用程式整合, 並為使用者提供新功能。 延伸模組可以傳送文字、貼紙、媒體檔案和互動式訊息。
 
-## <a name="about-message-app-extensions"></a>有關訊息的應用程式延伸模組
+## <a name="about-message-app-extensions"></a>關於訊息應用程式延伸模組
 
-如上所述，訊息應用程式擴充功能與整合**訊息**給使用者的應用程式並為您介紹新功能。 延伸模組可以傳送文字、 貼紙、 媒體檔案和互動式訊息。 有兩種類型的訊息應用程式擴充功能：
+如上所述, 訊息應用程式延伸模組會與**訊息**應用程式整合, 並為使用者提供新功能。 延伸模組可以傳送文字、貼紙、媒體檔案和互動式訊息。 有兩種類型的訊息應用程式延伸模組可供使用:
 
-- **貼紙套件**-包含使用者可以新增至訊息的貼紙的集合。 您可以建立貼紙的組件，而不需要撰寫任何程式碼。
-- **iMessage 應用程式**-可以呈現自訂使用者介面中選取貼紙、 輸入文字，包括 （具有選擇性型別轉換） 的媒體檔案與建立、 編輯和互動傳送的訊息應用程式。
+- **不乾膠套件**-包含使用者可以新增至訊息的貼紙集合。 您不需要撰寫任何程式碼, 即可建立貼紙套件。
+- **IMessage 應用程式**-可以在 [訊息] 應用程式中顯示自訂使用者介面, 以選取貼紙、輸入文字, 包括媒體檔案 (具有選擇性的類型轉換), 以及建立、編輯和傳送互動訊息。
 
-訊息應用程式擴充功能提供三種主要的內容類型：
+訊息應用程式延伸模組提供三種主要的內容類型:
 
-- **互動式訊息**-是一種應用程式所產生的自訂訊息內容中，當使用者點選在訊息中，應用程式會在前景中啟動。
-- **貼紙**-可以包含在使用者之間傳送的訊息應用程式所產生的映像。 請參閱我們[冰淇淋產生器](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)貼紙的組件應用程式的範例實作的範例應用程式。
-- **其他支援的內容**-應用程式可以提供內容，例如相片、 影片、 文字或向來都在 Messages 應用程式所支援類型的連結。
+- **互動式訊息**-這是應用程式所產生的一種自訂訊息內容, 當使用者按下該訊息時, 應用程式就會在前景中啟動。
+- **貼紙**-這是應用程式所產生的映射, 可以包含在使用者之間傳送的訊息中。 請參閱我們的[霜淇淋 Builder](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)範例應用程式, 以取得適用于貼紙套件應用程式的範例。
+- **其他支援的內容**-應用程式可以提供內容, 例如「訊息」應用程式一律支援的相片、影片、文字或連結類型。
 
-新增至 iOS 10，訊息應用程式現在包含自己專用的內建的應用程式存放區。 將顯示包含訊息的應用程式擴充功能的任何應用程式，並將它升級這個存放區中。 新的 「 訊息 」 應用程式下拉式清單會顯示任何訊息的應用程式市集，以提供快速的存取權的使用者從已下載的應用程式。
+IOS 10 的新功能, 訊息應用程式現在包含自己專屬的內建 App Store。 包含訊息應用程式延伸模組的任何應用程式都會在此存放區中顯示並升級。 新的訊息應用程式下拉式清單會顯示已從 [訊息] 應用程式存放區下載的任何應用程式, 以提供使用者快速存取。
 
-也新增在 iOS 10 中，Apple 已新增可讓使用者輕鬆地找出應用程式內嵌應用程式屬性。 比方說，如果一位使用者將內容傳送至另一個從第 2 個使用者不需要的應用程式安裝 （例如貼紙的範例），傳送應用程式名稱被列在底下的訊息記錄中的內容。 如果在使用者點選應用程式的名稱，我們開啟訊息應用程式存放區並選取存放區中的應用程式。
+Apple 也已新增 iOS 10 中的新功能, 可讓使用者輕鬆探索應用程式。 例如, 如果某個使用者從第二個使用者未安裝的應用程式 (例如貼紙) 傳送內容至另一個, 則傳送應用程式的名稱會列在訊息歷程記錄中的內容底下。 如果使用者按下應用程式的名稱, 則會開啟訊息應用程式存放區, 並在存放區中選取應用程式。
 
-訊息應用程式延伸模組是類似於現有的 iOS 應用程式開發人員是很熟悉建立，而且會有存取所有標準的架構和標準的 iOS 應用程式的功能。 例如：
+訊息應用程式延伸模組與開發人員熟悉建立的現有 iOS 應用程式類似, 而且可以存取標準 iOS 應用程式的所有標準架構和功能。 例如：
 
 - 他們可以存取應用程式內購買。
-- 他們可以到 Apple Pay 的存取。
-- 他們可以存取，例如相機的裝置硬體。
+- 他們可以存取 Apple Pay。
+- 他們可以存取相機之類的裝置硬體。
 
-IOS 10 只支援訊息的應用程式擴充功能，不過，這些擴充功能所傳送的內容可在 watchOS 和 macOS 裝置上檢視。 新_最近項目頁面_加入 watchOS 3 中，會顯示最新的貼紙已傳送從電話，包括訊息應用程式擴充功能，並允許使用者從監看式傳送這些貼紙。
+只有 iOS 10 支援訊息應用程式延伸模組, 但在 watchOS 和 macOS 裝置上可看到這些延伸模組所傳送的內容。 新增至 watchOS 3 的新 [_最近專案] 頁面_將會顯示最近從電話傳送的貼紙, 包括來自「訊息應用程式」延伸模組的不乾膠, 並允許使用者從「監看」傳送那些貼紙。
 
-## <a name="about-interactive-messages"></a>有關互動式訊息
+## <a name="about-interactive-messages"></a>關於互動式訊息
 
-互動式訊息顯示自訂訊息泡泡，並提供的訊息應用程式擴充功能。 它們可讓使用者建立互動式訊息內容，將其插入訊息的 [輸入] 欄位中，並將它傳送。
+互動式訊息會呈現自訂訊息的反升, 並由訊息應用程式延伸模組提供。 他們可讓使用者建立互動式郵件內容、將它插入訊息輸入欄位, 然後傳送它。
 
-[![](advanced-message-app-extensions-images/interactive01.png "建立互動式訊息的內容")](advanced-message-app-extensions-images/interactive01.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive01.png "建立互動式訊息內容")](advanced-message-app-extensions-images/interactive01.png#lightbox)
 
-接收的使用者可以藉由點選來建立訊息應用程式擴充功能載入訊息歷程記錄中其訊息泡泡回覆互動式訊息。 擴充功能可啟動的全螢幕，而且允許使用者撰寫回覆並將它傳送回原始的使用者。
+接收使用者可以藉由在訊息歷程記錄中的訊息反升來載入建立它的訊息應用程式延伸模組, 來回複互動式訊息。 延伸模組將會以全螢幕的方式啟動, 並可讓使用者撰寫回復, 並將其傳回給原始使用者。
 
-[![](advanced-message-app-extensions-images/interactive02.png "延伸模組啟動的全螢幕")](advanced-message-app-extensions-images/interactive02.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive02.png "延伸模組已啟動全螢幕")](advanced-message-app-extensions-images/interactive02.png#lightbox)
 
 
-下列主題將涵蓋詳細說明如下：
+下列主題將詳細說明如下:
 
-- 訊息 API 概觀
-- 延伸模組的生命週期
-- 撰寫電子郵件
+- 訊息 API 總覽
+- 延伸模組生命週期
+- 撰寫訊息
 - 傳送訊息
 
-## <a name="messages-api-overview"></a>訊息 API 概觀
+## <a name="messages-api-overview"></a>訊息 API 總覽
 
-當使用者叫用，訊息應用程式擴充功能將會顯示底部的 精簡的檢視模式中的訊息記錄：
+當使用者叫用時, 訊息應用程式延伸模組會顯示在 compact view 模式的訊息歷程記錄底部:
 
-[![](advanced-message-app-extensions-images/interactive03.png "訊息 API 概觀")](advanced-message-app-extensions-images/interactive03.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive03.png "訊息 API 總覽")](advanced-message-app-extensions-images/interactive03.png#lightbox)
 
-1. `MSMessageAppViewController`訊息應用程式擴充功能中的物件是擴充功能的檢視會顯示給使用者時，會呼叫的主要類別。
-2. 交談會向使用者`MSConversation`物件執行個體。
-3. `MSMessage`類別代表交談中指定的訊息泡泡。
-4. `MSSession` 控制如何傳送訊息。
-5. `MSMessageTemplateLayout` 控制訊息的顯示方式
+1. 訊息`MSMessageAppViewController`應用程式延伸模組中的物件是在對使用者顯示延伸模組的視圖時, 所呼叫的主要類別。
+2. 交談會以`MSConversation`物件實例的形式呈現給使用者。
+3. `MSMessage`類別代表交談中的指定訊息氣泡。
+4. `MSSession`控制訊息的傳送方式。
+5. `MSMessageTemplateLayout`控制訊息的顯示方式
 
-## <a name="the-extension-lifecycle"></a>延伸模組的生命週期
+## <a name="the-extension-lifecycle"></a>延伸模組生命週期
 
-看看訊息應用程式的擴充功能，成為作用中的程序：
+查看訊息應用程式延伸模組變成作用中的流程:
 
-[![](advanced-message-app-extensions-images/interactive04.png "訊息應用程式的擴充功能，成為作用中的程序")](advanced-message-app-extensions-images/interactive04.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive04.png "訊息應用程式延伸模組變成作用中的進程")](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
-1. 當啟動擴充功能時 （例如從 [應用程式] 下拉式清單中） 時，訊息應用程式會啟動處理程序。
-2. `DidBecomeActive`方法呼叫並傳遞`MSConversation`代表交談訊息應用程式延伸模組中執行。
-3. 因為擴充功能關閉的基礎`UIViewController`兩者`ViewWillAppear`和`ViewDidAppear`稱為。
+1. 當擴充功能啟動時 (例如, 從應用程式選單), 訊息應用程式將會啟動進程。
+2. 會呼叫`MSConversation`方法並傳遞, 代表訊息應用程式延伸模組執行所在的交談。 `DidBecomeActive`
+3. 因為延伸模組是以`UIViewController` `ViewWillAppear`為基礎, 而且`ViewDidAppear`會呼叫。
 
-接下來，看看訊息應用程式的擴充功能，成為停用的程序：
+接下來, 請查看訊息應用程式延伸模組已停用的流程:
 
-[![](advanced-message-app-extensions-images/interactive05.png "訊息應用程式的延伸模組，變成停用的程序")](advanced-message-app-extensions-images/interactive05.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive05.png "訊息應用程式延伸模組已停用的進程")](advanced-message-app-extensions-images/interactive05.png#lightbox)
 
-1. 當訊息應用程式擴充功能已停用時、`ViewWillDisappear`會先呼叫方法。
-2. 然後`ViewDidDisappear`會呼叫方法。
-3. `WillResignActive`方法呼叫並傳遞`MSConversation`代表交談訊息應用程式延伸模組中執行。 此時，訊息 」 應用程式與擴充功能之間的連線，就是即將解除。
-4. 稍後，此程序便會終止在 Messages 應用程式。
+1. 當訊息應用程式延伸模組停用時, `ViewWillDisappear`會先呼叫方法。
+2. 然後會呼叫方法。 `ViewDidDisappear`
+3. 會呼叫`MSConversation`方法並傳遞, 代表訊息應用程式延伸模組執行所在的交談。 `WillResignActive` 此時, 訊息應用程式與延伸模組之間的連接即將發行。
+4. 在稍後的時間點, 進程會由「訊息」應用程式終止。
 
-延伸模組是短暫的程序，因為它是以節省處理和電池電源系統積極地終止。 開發人員應該記住這設計和實作訊息應用程式擴充功能時。
+由於延伸模組是短期的程式, 系統會積極地終止它來節省處理和電池電源。 開發人員在設計和執行訊息應用程式延伸模組時, 應該記住這一點。
 
-## <a name="composing-a-message"></a>撰寫電子郵件
+## <a name="composing-a-message"></a>撰寫訊息
 
-一旦訊息應用程式擴充功能執行的處理序中，並顯示其使用者介面，下列程式碼可以用來撰寫新郵件中：
+一旦訊息應用程式延伸模組在進程中執行, 並顯示其使用者介面, 就可以使用下列程式碼來撰寫新的訊息:
 
 ```csharp
 MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session = null)
@@ -122,31 +122,31 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 }
 ```
 
-此程式碼會建立新`MSMessage`，並設定數個屬性 (例如`Url`)。 雖然訊息只能建立在 iOS 上，可以是傳送至 iOS 和 macOS，要顯示。
+此程式碼會建立`MSMessage`新的, 並設定數個`Url`屬性 (例如)。 雖然訊息只能在 iOS 上建立, 但它可以傳送至 iOS 和 macOS 以顯示。
 
-如果使用者按一下訊息泡泡在 macOS 上的交談中，Mac 會嘗試開啟網頁瀏覽器中的 URL 中指定的位址。 如此一來，開發人員網站應該能夠顯示在 macOS 上的網頁瀏覽器中的訊息部分表示法為基礎的機器。
+如果使用者在 macOS 上按一下交談中的訊息反升, Mac 會嘗試在網頁瀏覽器中開啟 URL 中所指定的位址。 因此, 開發人員的網站應該能夠在以 macOS 為基礎的電腦上的網頁瀏覽器中顯示訊息的某種表示。
 
-`AccessibilityLabel`屬性可由螢幕助讀程式來讀取使用者的交談文字記錄。 `Layout`屬性會指定訊息的顯示方式，目前只有`MSMessageTemplateLayout`支援，而且看起來如下：
+螢幕閱讀程式會使用屬性來讀取與使用者交談的文字記錄。`AccessibilityLabel` 屬性會指定訊息的顯示方式, 目前`MSMessageTemplateLayout`只支援, 而且看起來如下: `Layout`
 
 [![](advanced-message-app-extensions-images/interactive06.png "MSMessageTemplateLayout 範本")](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
-`Image`屬性`MSMessageTemplateLayout`MessageBubble 螢幕上的主要內文中提供內容。 `MediaFileUrl`屬性也會提供訊息泡泡圖中，主體的內容，但不是支援的內容是用來`UIImage`（例如，會在背景循環的視訊檔案）。 如果兩個`Image`並`MediaFileUrl`會提供屬性，`Image`屬性將會優先。 `MediaFileUrl`支援 PNG、 JPEG、 GIF 和影片 （在可以播放 Media Player framework 的任何格式） 的媒體格式。
+的`Image` 屬性`MSMessageTemplateLayout`會提供畫面上 MessageBubble 主要主體的內容。 屬性也會提供訊息內文的內容, 但允許不`UIImage`支援的內容 (例如在背景中迴圈的影片檔案)。 `MediaFileUrl` 如果同時`Image`提供和`MediaFileUrl`屬性, 將會優先`Image`使用屬性。 `MediaFileUrl`支援 PNG、JPEG、GIF 和 video (以任何可由媒體播放機 framework 播放的格式) 媒體格式。
 
-建議的媒體大小為 3 倍解析度的 300 x 300 像素。 也接受稍微較大和較小的資產，並測試幾個不同的大小，以取得最佳結果，Apple 建議。 訊息應用程式將向下取樣，並調整此所需的媒體。
+建議的媒體大小為 300 x 300 圖元, 解析度為3倍。 也會接受稍微較大且較小的資產, 而且 Apple 會以幾個不同的大小來建議測試, 以獲得最佳結果。 訊息應用程式會向下取樣, 並視需要調整此媒體。
 
-當資產會傳送至接收者時，連接任何媒體將會自動透過網路傳輸的最佳化訊息應用程式的轉碼。 因為這個緣故，Apple，而且包括中的媒體，因為媒體會相應減少，並針對傳輸，壓縮會附加至訊息的文字因此可能呈現文字難以辨識。
+當資產傳送至接收者時, [訊息] 應用程式會自動轉碼附加的任何媒體, 以將其從網路傳輸優化。 因此, Apple 不鼓勵在附加至郵件的媒體中包含文字, 因為媒體會相應縮小並壓縮以進行傳輸, 因此可能會轉譯文字模糊。
 
-`ImageTitle`和`ImageSubtitle`屬性提供的媒體，會顯示訊息泡泡圖中的描述。 這些屬性將會傳送為文字到接收端裝置它們將會在較低的左下角的 映像進行清晰地呈現。
+`ImageTitle` 和`ImageSubtitle`屬性會提供訊息反升中顯示之媒體的描述。 這些屬性將會以文字形式傳送到接收裝置, 在此 crisply 中會將它們轉譯成影像的左下角。
 
-`Caption`， `SubCaption`，`TrailingCaption`和`TrailingSubcaption`屬性進一步描述映像，並將在下圖下方區段中呈現。 設定所有這些屬性，以設定`null`會建立不含標題區域的訊息泡泡：
+`Caption` 、`SubCaption`和屬性會進一步描述影像,並會在影像下方的區段中呈現。`TrailingSubcaption` `TrailingCaption` 將所有這些屬性設定為`null` , 將會建立不含標題區域的訊息反升:
 
-[![](advanced-message-app-extensions-images/interactive07.png "標題區域不在訊息泡泡圖")](advanced-message-app-extensions-images/interactive07.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive07.png "沒有標題區域的訊息反升")](advanced-message-app-extensions-images/interactive07.png#lightbox)
 
-要注意的最後一件事是在 Messages 應用程式將會繪製訊息泡泡的左上角的訊息應用程式擴充功能圖示。
+最後要注意的是, 訊息應用程式會在訊息反升的左上角繪製訊息應用程式延伸模組的圖示。
 
 ## <a name="sending-a-message"></a>傳送訊息
 
-一次`MSMessage`已撰寫下列程式碼可以用來將它傳送：
+`MSMessage`一旦組成之後, 您就可以使用下列程式碼來傳送它:
 
 ```csharp
 public void SendMessage (MSMessage message)
@@ -165,30 +165,30 @@ public void SendMessage (MSMessage message)
 }
 ```
 
-`ActiveConversation`屬性`MSMessagesAppViewController`會保留目前啟動訊息的應用程式擴充功能的交談。
+的`ActiveConversation` 屬性`MSMessagesAppViewController`會保存訊息應用程式延伸模組啟動所在的目前交談。
 
-呼叫`InsertMessage`的`MSConversation`納入交談的訊息並處理任何可能發生的錯誤。 成功地包含訊息時，訊息泡泡圖將顯示在 [輸入] 欄位中。
+`InsertMessage` 呼叫的以將訊息包含在交談中,並處理可能`MSConversation`發生的任何錯誤。 如果成功包含訊息, 則會在輸入欄位中顯示訊息反升。
 
-此外，延伸模組可以將不同類型的資料傳送給這類的對話：
+此外, 延伸模組可以將不同類型的資料傳送至交談, 例如:
 
-- **Text** - `ActiveConversation.InsertText ("Message", (error) => {...});`
+- **文字** - `ActiveConversation.InsertText ("Message", (error) => {...});`
 - **附件** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
-- **貼紙** -  `ActiveConversation.InsertSticker (sticker, (obj) => {...});`何處`sticker`是`MSSticker`。
+- **貼紙** -  ,`ActiveConversation.InsertSticker (sticker, (obj) => {...});`其中是`sticker` 。 `MSSticker`
 
-在 輸入 欄位上新的內容之後，使用者可傳送訊息，依序點選 藍色**傳送**按鈕 （就如同任何一般的訊息）。 沒有內容，自動傳送的訊息 」 應用程式擴充功能的方法，此程序是完全控制的使用者。
+當新內容位於輸入欄位之後, 使用者就能夠藉由使用藍色的 [**傳送**] 按鈕 (就如同任何一般訊息) 來傳送訊息。 訊息應用程式延伸模組無法自動傳送內容, 此進程完全在使用者的控制之下。
 
-## <a name="handling-the-compact-and-expanded-modes"></a>處理壓縮和展開的模式
+## <a name="handling-the-compact-and-expanded-modes"></a>處理 Compact 和展開模式
 
-訊息應用程式擴充功能可以顯示在兩個不同的檢視模式的其中一個：
+訊息應用程式延伸模組可以在兩種不同的視圖模式中顯示:
 
-[![](advanced-message-app-extensions-images/interactive08.png "在兩個不同的檢視模式中顯示訊息應用程式擴充功能：壓縮和展開")](advanced-message-app-extensions-images/interactive08.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive08.png "以兩種不同的視圖模式顯示的訊息應用程式延伸模組:已擴充 Compact &")](advanced-message-app-extensions-images/interactive08.png#lightbox)
 
-- **Compact** -這是訊息的應用程式擴充功能會佔用最下方的 25%的 [訊息] 檢視的預設模式。 在精簡的模式下，應用程式並沒有鍵盤、 水平捲動或撥動筆勢辨識器的存取權。 應用程式能夠存取 [輸入] 欄位，並呼叫`InsertMessage`立即會那里對使用者顯示。
-- **展開**-訊息應用程式擴充功能會填滿整個 [訊息] 檢視。 它並沒有存取權來輸入 欄位中，但並沒有鍵盤、 水平捲動和撥動筆勢辨識器的存取。
+- **Compact** -這是預設模式, 其中訊息應用程式延伸模組佔用訊息視圖的底部 25%。 在 Compact 模式中, 應用程式沒有鍵盤、水準滾動或滑動手勢辨識器的存取權。 應用程式可以存取輸入欄位, 而且`InsertMessage`會立即向使用者顯示對的呼叫。
+- 已**展開**-訊息應用程式延伸模組會填滿整個訊息視圖。 它沒有輸入欄位的存取權, 但可以存取鍵盤、水準滾動和滑動手勢辨識器。
 
-訊息應用程式擴充功能可以切換這些模式之間以程式設計方式或以手動方式由使用者在任何時間，而且應該立即回應任何變更檢視模式。
+訊息應用程式延伸模組可以隨時以程式設計或手動方式在這些模式之間切換, 而且應該立即回應視圖模式中的任何變更。
 
-看看下列範例中處理兩個不同的檢視模式之間切換。 兩個不同的檢視控制器都必須針對每個狀態。 `StickerBrowserViewController`控制代碼**Compact**檢視和`AddStickerViewController`處理**展開**檢視：
+請參閱下列在兩個不同的視圖模式之間處理切換的範例。 每個狀態都需要兩個不同的視圖控制器。 會處理**Compact**視圖, 而且  將會處理展開的視圖: `StickerBrowserViewController` `AddStickerViewController`
 
 ```csharp
 using System;
@@ -359,7 +359,7 @@ namespace MessagesExtension {
 }
 ```
 
-`DidTransition`方法會覆寫來處理兩種模式之間切換：
+覆`DidTransition`寫方法以處理兩種模式之間的切換:
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)
@@ -378,48 +378,48 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-或者，也可以使用應用程式`WillTransition`方法以處理檢視模式變更之前 （如同您在上述 Icecream 產生器範例），它會呈現給使用者。 如需詳細資訊，請參閱我們[進一步的貼紙自訂](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)文件。
+(選擇性) 應用程式可能已使用`WillTransition`方法來處理視圖模式變更, 然後才呈現給使用者 (如同上述的 Icecream 產生器範例中所做的)。 如需詳細資訊, 請參閱我們的[進一步的貼紙自訂](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)檔。
 
-## <a name="replying-to-a-message"></a>回覆訊息
+## <a name="replying-to-a-message"></a>回復郵件
 
-有兩個訊息的應用程式擴充功能必須處理的訊息回覆時的情況：
+有兩種情況, 訊息應用程式延伸模組在回復訊息時必須處理:
 
-[![](advanced-message-app-extensions-images/interactive09.png "訊息應用程式擴充功能的非作用中與主動模式")](advanced-message-app-extensions-images/interactive09.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive09.png "處於非作用中和主動模式的訊息應用程式延伸模組")](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
-- **延伸模組為非作用中**-有一個使用者可以點選以啟動延伸模組，並繼續互動式交談的訊息文字記錄中的訊息應用程式擴充功能的訊息 （泡泡）。
-- **延伸模組是主動**-使用者可以點選中輸入的展開檢視模式，然後繼續進行互動的程序，從他們離開的地方將訊息文字記錄的訊息應用程式擴充功能的訊息泡泡。
+- **延伸模組為非**使用中-訊息文字記錄中有其中一個訊息應用程式延伸模組的訊息, 使用者可以點擊此功能來啟動擴充功能並繼續互動式交談。
+- **延伸模組為**作用中-使用者可以在訊息文字記錄中, 按一下訊息應用程式延伸模組的訊息反升, 以進入展開的視圖模式, 並從停止的地方繼續互動進程。
 
 ### <a name="the-extension-is-inactive"></a>延伸模組為非使用中
 
-當訊息泡泡的訊息文字記錄中的使用者點選時，訊息應用程式擴充功能為非使用中時，會發生下列處理序：
+當使用者在訊息文字記錄中對訊息進行反升, 而且訊息應用程式延伸模組處於非使用中狀態時, 將會發生下列進程:
 
-[![](advanced-message-app-extensions-images/interactive10.png "處理非使用中的訊息泡泡圖")](advanced-message-app-extensions-images/interactive10.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive10.png "處理非作用中訊息的反升")](advanced-message-app-extensions-images/interactive10.png#lightbox)
 
-1. 使用者可點選延伸模組的訊息泡泡。
-2. 當啟動擴充功能時，訊息應用程式會啟動處理程序。
-3. `DidBecomeActive`方法呼叫並傳遞`MSConversation`代表交談訊息應用程式延伸模組中執行。
-4. 因為擴充功能關閉的基礎`UIViewController`兩者`ViewWillAppear`和`ViewDidAppear`稱為。
+1. 使用者會點擊擴充功能的訊息反升。
+2. 當擴充功能啟動時, 訊息應用程式將會啟動一個進程。
+3. 會呼叫`MSConversation`方法並傳遞, 代表訊息應用程式延伸模組執行所在的交談。 `DidBecomeActive`
+4. 因為延伸模組是以`UIViewController` `ViewWillAppear`為基礎, 而且`ViewDidAppear`會呼叫。
 
-程序完成時，就會看到訊息應用程式擴充功能中的展開檢視模式。
+當程式完成時, 訊息應用程式延伸模組將會以展開的視圖模式呈現。
 
-### <a name="the-extension-is-active"></a>延伸模組為使用中狀態
+### <a name="the-extension-is-active"></a>延伸模組為作用中
 
-當訊息泡泡的訊息文字記錄中的使用者點選時，並且訊息應用程式擴充功能在作用中時，會使用下列程序：
+當使用者在訊息文字記錄中對訊息進行反升, 且訊息應用程式延伸模組為作用中時, 將會進行下列程式:
 
-[![](advanced-message-app-extensions-images/interactive11.png "處理作用中的訊息泡泡圖")](advanced-message-app-extensions-images/interactive11.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive11.png "處理作用中訊息反升")](advanced-message-app-extensions-images/interactive11.png#lightbox)
 
-1. 使用者可點選延伸模組的訊息泡泡。
-2. 訊息應用程式擴充功能已在使用，因為`WillTransition`方法的`MSMessagesAppViewController`呼叫以處理從精簡型切換成展開檢視模式。
-3. `DidSelectMessage`方法`MSMessagesAppViewController`呼叫並傳遞`MSMessage`和`MSConversation`所屬訊息泡泡。
-4. `DidTransition`方法的`MSMessagesAppViewController`呼叫以處理從精簡型切換成展開檢視模式。
+1. 使用者會點擊擴充功能的訊息反升。
+2. 因為訊息應用程式延伸模組已在使用中`WillTransition` , 所以`MSMessagesAppViewController`會呼叫的方法來處理從 Compact 切換到展開的視圖模式。
+3. 的`DidSelectMessage`方法`MSMessagesAppViewController` 會被呼叫,`MSConversation`並傳遞訊息,並將其設為冒泡所屬的。`MSMessage`
+4. 呼叫的`MSMessagesAppViewController`方法, 以處理從 Compact 切換至展開的視圖模式。 `DidTransition`
 
-同樣地，完成程序時，將會展開檢視模式中看到訊息應用程式擴充功能。
+同樣地, 當程式完成時, 訊息應用程式延伸模組將會以展開的視圖模式呈現。
 
 ### <a name="accessing-the-selected-message"></a>存取選取的訊息
 
-在任一情況下，當使用者點選訊息泡泡屬於訊息應用程式擴充功能，它必須取得的存取權`MSMessage`的點下的使用`SelectedMessage`屬性`MSConversation`。
+不論是哪一種情況, 當使用者按下屬於訊息應用程式延伸模組的訊息反升者時, 都必須`MSMessage` `SelectedMessage`使用的屬性`MSConversation`來存取所繪製的。
 
-例如: 
+例如：
 
 ```csharp
 using System;
@@ -451,19 +451,19 @@ namespace MessageExtension
 }
 ```
 
-選取的訊息應該會顯示在訊息應用程式擴充功能的 UI，並允許使用者撰寫回應。
+選取的訊息應該會顯示在訊息應用程式延伸模組的 UI 中, 而且應該允許使用者撰寫回應。
 
-## <a name="removing-partially-completed-messages"></a>正在移除部分完成的訊息
+## <a name="removing-partially-completed-messages"></a>移除部分完成的訊息
 
-正在傳送之不同步驟的互動式交談的兩個使用者之間的交談中，可以開始部分完成的訊息泡泡會擾亂訊息文字記錄：
+在交談的兩個使用者之間傳送互動式對話的不同步驟的程式中, 部分完成的訊息可能會開始雜亂訊息文字記錄:
 
-[![](advanced-message-app-extensions-images/interactive12.png "部分完成的訊息 （泡泡） 可讓您可以想堆訊息文字記錄")](advanced-message-app-extensions-images/interactive12.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive12.png "部分完成的訊息氣泡可能會雜亂訊息文字記錄")](advanced-message-app-extensions-images/interactive12.png#lightbox)
 
-相反地，訊息應用程式擴充功能應該到簡潔的註解訊息的文字記錄中摺疊前一訊息泡泡：
+相反地, 訊息應用程式延伸模組應折迭先前的訊息, 並在訊息文字記錄中折迭為簡潔的批註:
 
-[![](advanced-message-app-extensions-images/interactive13.png "摺疊訊息文字記錄中先前的訊息 （泡泡）")](advanced-message-app-extensions-images/interactive13.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive13.png "折迭訊息文字記錄中的上一個訊息氣泡")](advanced-message-app-extensions-images/interactive13.png#lightbox)
 
-這處理使用`MSSession`摺疊所有現有的步驟。 因此`DidSelectMessage`方法的`MSMessagesAppViewController`類別無法修改成如下所示：
+這會使用`MSSession`來處理, 以折迭所有現有的步驟。 因此, 可以修改`MSMessagesAppViewController`類別的方法,如下所示:`DidSelectMessage`
 
 ```csharp
 public override void DidSelectMessage (MSMessage message, MSConversation conversation)
@@ -498,56 +498,56 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 }
 ```
 
-如果選取的訊息已結束`MSSession`，否則使用新`MSSession`建立。 `SummaryText`屬性`MSMessage`用來將標題加入至摺疊的上一個步驟。 如果`SummaryText`屬性設定為`null`，交談中的上一個步驟會完全移除交談文字記錄。
+如果選取的訊息已經`MSSession`存在, 則會使用它, 否則會建立新`MSSession`的。 的`SummaryText` 屬性`MSMessage`是用來將標題加入折迭的先前步驟。 如果屬性設定為`null`, 則會從對話文字記錄中完全移除交談中的先前步驟。 `SummaryText`
 
-## <a name="advanced-message-api-features"></a>進階訊息 API 功能
+## <a name="advanced-message-api-features"></a>Advanced Message API 功能
 
-使用上述的詳細說明新的訊息 API 的基本功能，接下來檢查一些更進階 Apple 已內建於 framework 的功能。
+透過上述詳細說明的新訊息 API 的基本功能, 接下來請檢查 Apple 已內建在架構中的一些較先進功能。
 
-首先，有數種其他覆寫方法中的`MSMessagesAppViewController`提供更深入存取交談的類別：
+首先, `MSMessagesAppViewController`類別中有數個其他的覆寫方法, 可讓您更深入地存取對話:
 
-- `DidStartSendingMessage` -這是在使用者點選 [傳送] 按鈕時被呼叫的。 這不表示訊息實際上已傳遞至收件者，只要傳送程序已啟動。
-- `DidCancelSendingMessage` -這會在使用者點選*X*交談文字記錄中的訊息泡泡的右上角的按鈕。
-- `DidReceiveMessage` -使用中訊息的應用程式擴充功能時，會呼叫這個方法從一個交談參與者收到新的訊息。
+- `DidStartSendingMessage`-當使用者按下 [傳送] 按鈕時, 就會呼叫此。 這並不表示訊息實際上已傳遞給收件者, 只是已啟動傳送程式。
+- `DidCancelSendingMessage`-當使用者在對話文字記錄中, 按下 [訊息] 右上角的 [ *X* ] 按鈕時, 就會發生這種情況。
+- `DidReceiveMessage`-當訊息應用程式延伸模組為作用中時, 會呼叫此方法, 從交談中的其中一個參與者收到新的訊息。
 
 ### <a name="group-conversations"></a>群組交談
 
-雖然使用者參與群組對話 （含 3 個或多個個人），這必須列入考量，設計和實作訊息應用程式擴充功能時，可用訊息的應用程式擴充功能。
+訊息應用程式延伸模組可在使用者參與群組交談時使用 (含3個或更多個人), 而且在設計和執行訊息應用程式延伸模組時, 必須考慮這一點。
 
-使用三個使用者群組交談中看看看下列互動：
+請查看與三位使用者在群組交談中的下列互動:
 
-[![](advanced-message-app-extensions-images/interactive14.png "使用三個使用者群組交談中的互動")](advanced-message-app-extensions-images/interactive14.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive14.png "與三位使用者進行群組交談的互動")](advanced-message-app-extensions-images/interactive14.png#lightbox)
 
-1. 使用者 1 傳送互動式訊息的群組要求使用者 2，以及使用者 3 選擇漢堡配料。
-2. 使用者 2 選擇 tomatoes。
-3. 使用者 3 選擇小。
-4. 使用者 2 和 3 使用者的選擇會回到使用者 1 抵達幾乎相同的時間。 如此一來，使用者 2 選擇摺疊成摘要行，而且無法使用。 此情況下可能有也已翻轉、 使用者 2 的選擇顯示和使用者 3 的要摺疊起來。
+1. 使用者1傳送一個群組互動式訊息, 要求使用者2和使用者3選擇漢堡一起享用配料。
+2. 使用者2選擇 [tomatoes]。
+3. 使用者3選擇 pickles。
+4. 使用者2的和使用者3的選擇幾乎會在同一時間抵達使用者1。 因此, 使用者2的選擇會折迭為摘要行, 且無法使用。 此案例也可能已翻轉, 並顯示使用者2的選擇, 而使用者3則會折迭。
 
-在任一情況下，此行為是不想要為使用者 1 應該能夠存取使用者 2 和 3 使用者的選擇。 訊息應用程式擴充功能在雲端中儲存訊息狀態和使用的 URL 屬性，Apple 建議為了處理這種情況下， `MSMessage` （可取得使用者之間傳送的） 來存取此狀態。
+不論是哪一種情況, 都不會出現這種行為, 因為使用者1應該能夠同時存取使用者2的和使用者3的選擇。 為了處理這種情況, Apple 建議訊息應用程式延伸模組會將訊息狀態儲存在雲端, 並使用的 URL 屬性`MSMessage` (在使用者之間傳送) 來存取此狀態。
 
-當使用者傳送訊息時，工作階段權杖產生，並推送至雲端，與目前的訊息狀態。 當使用者點選訊息泡泡交談文字記錄中時，工作階段權杖用來從雲端擷取目前的工作階段狀態。
+當使用者傳送訊息時, 會產生會話權杖, 並將目前的訊息狀態推送至雲端。 當使用者在對話文字記錄中按下訊息反升時, 會使用會話權杖從雲端抓取目前的會話狀態。
 
 ### <a name="sender-identifiers"></a>寄件者識別碼
 
-若要存取訊息的寄件者的識別項的討論，採取群組交談，上述的範例：
+若要討論存取訊息寄件者的識別碼, 請取得上述的群組交談範例:
 
-[![](advanced-message-app-extensions-images/interactive15.png "傳送識別碼的群組交談")](advanced-message-app-extensions-images/interactive15.png#lightbox)
+[![](advanced-message-app-extensions-images/interactive15.png "群組交談傳送識別碼")](advanced-message-app-extensions-images/interactive15.png#lightbox)
 
-1. 同樣地，使用者 1 會傳送互動式訊息的群組要求使用者 2，以及使用者 3 選擇漢堡配料。
-2. 使用者 3 會挑選小。
-3. 選擇使用者 3 的送達回使用者 1 和使用者 2 已不尚未回覆。
-4. 由於 Apple 是非常關心使用者隱私權，訊息應用程式擴充功能只會知道的唯一識別碼 (為`NSUUID`)，指派交談中的每個參與者。 在本機裝置上，即只有目前使用者的識別項。
-5. `MSMessage`具有`SenderIdentifier`符合使用者的其中一個屬性的參與者清單中已知擴充功能。
-6. 每個使用者裝置有它自己的複本，其中同樣地，只有本機使用者的識別碼為已知的參與者清單。
-7. 當傳送訊息時，其`SenderIdentifier`也知道屬性是使用本機使用者。
+1. 同樣地, User 1 會傳送一個群組互動式訊息, 要求使用者2和使用者3選擇漢堡一起享用配料。
+2. 使用者3挑選 pickles。
+3. 使用者3的選擇會回傳給使用者 1, 而使用者2尚未回復。
+4. 因為 Apple 非常關心使用者隱私權, 所以訊息應用程式延伸模組只會知道在交談中指派給每`NSUUID`個參與者的唯一識別碼 (如)。 在本機裝置上, 只知道目前使用者的識別碼。
+5. `MSMessage`具有一個`SenderIdentifier`屬性, 它會符合擴充功能已知的參與者清單中的其中一個使用者。
+6. 每個使用者裝置都有自己的參與者清單複本, 而且只知道本機使用者的識別碼。
+7. 當傳送訊息時, 它`SenderIdentifier`的屬性也稱為「本機使用者」。
 
-寄件者識別碼可以用下列方式：
+傳送者識別碼可以透過下列方式使用:
 
-- 藉由在參與者清單中尋找擴充功能可以在交談中取得使用者的數目。
-- 當使用者從延伸模組接收訊息時，它可以追蹤的傳送者識別項。 如果收到具有相同的傳送者識別項的另一個訊息，擴充功能就會知道它是來自相同的使用者。
-- 它們可用來協助識別交談中的特定使用者。
+- 藉由查看參與者清單, 延伸模組可以取得對話中的使用者數目。
+- 當擴充功能收到來自使用者的訊息時, 它可以追蹤寄件者識別碼。 如果它收到另一個具有相同傳送者識別碼的訊息, 延伸模組就會知道它是來自相同的使用者。
+- 它們可以用來協助識別交談中的特定使用者。
 
-傳送者識別項可以用於任何的文字欄位`MSMessageTemplateLayout`前置詞的方式以貨幣符號 (`$`)。 例如: 
+傳送者識別碼可以用於的`MSMessageTemplateLayout`任何文字欄位中, 其前面會加上貨幣符號 (`$`)。 例如：
 
 ```csharp
 // Pass along the sender identifier
@@ -555,13 +555,13 @@ var layout = new MSMessageTemplateLayout()
 layout.Caption = string.format("${0} wants pickles.",Conversation.LocalParticipantIdentifier.UuidString);
 ```
 
-若在 Messages 應用程式會顯示訊息泡泡，這種類型的格式，它將會取代`$uuid...`中傳送訊息之交談的參與者的連絡人名稱。
+當 [訊息] 應用程式顯示以這種格式設定的訊息反升時, `$uuid...`會將取代為傳送訊息之交談中的參與者連絡人名稱。
 
-傳送者識別項是每個裝置上唯一的因此查看再次注意上, 圖，該使用者 1 的裝置和使用者 3 裝置交談中每個參與者都有不同的唯一寄件者識別碼。
+寄件者識別碼在每個裝置上都是唯一的, 因此請再次查看上面的圖表, 請注意, 使用者1的裝置和使用者3的裝置在交談中的每個參與者都有不同的唯一寄件者識別碼。
 
-寄件者識別項的訊息應用程式擴充功能的安裝範圍。 因此如果使用者解除安裝，並重新安裝訊息的應用程式擴充功能的新安裝將會產生新的寄件者識別項。
+寄件者識別碼的範圍限於訊息應用程式延伸模組的安裝。 因此, 如果使用者卸載並重新安裝訊息應用程式延伸模組, 則會針對新的安裝產生新的傳送者識別碼。
 
-若要存取 寄件者識別碼，延伸模組可以使用下列程式碼：
+若要存取寄件者識別碼, 延伸模組可以使用下列程式碼:
 
 ```csharp
 public override void DidStartSendingMessage (MSMessage message, MSConversation conversation)
@@ -581,34 +581,34 @@ public override void DidStartSendingMessage (MSMessage message, MSConversation c
 
 ## <a name="supported-platforms"></a>支援的平台
 
-訊息應用程式延伸模組所產生的互動式訊息會傳遞下列 Apple 平台上：
+訊息應用程式延伸模組所產生的互動式訊息將會在下列 Apple 平臺上傳遞:
 
 - watchOS 3
 - macOS Sierra
 - iOS 10
 
-三個平台，iOS 10 可讓使用者產生的互動式訊息。 在 macOS Sierra，如果使用者按一下互動式的訊息泡泡圖中，URL 附加到`MSMessage`將會在 Safari 中開啟，而且應該那里顯示訊息的表示法。
+在這三種平臺中, 只有 iOS 10 會允許使用者產生互動式訊息。 在 macOS Sierra 上, 如果使用者按一下互動式訊息反升, 會在 Safari 中開啟附加`MSMessage`至的 URL, 並在該處顯示訊息的標記法。
 
-按一下 watchOS 在 Messages 應用程式可以遞交至連接的 iOS 裝置使用者可以在其中撰寫回覆的互動式訊息。
+在 watchOS 上, 「訊息」應用程式可以將互動式訊息遞交給附加的 iOS 裝置, 讓使用者可以在其中撰寫回復。
 
-如果較舊的 Apple 平台接收互動式訊息時，新的訊息 API 會有後援的支援：
+如果在較舊的 Apple 平臺上收到互動式訊息, 新的訊息 API 就會支援 fallback:
 
 - watchOS 2 +
 - OS X 10.11 +
 - iOS 9 +
 
-它們會以兩個不同的訊息傳遞後援的格式：
+它們會以一種不同的訊息, 以回溯格式傳遞:
 
-- 其中一個會將映像所提供範本版面配置。
-- 另將會是 URL 中提供`MSMessage`。
+- 其中一個會是範本配置所提供的影像。
+- 另一個則是中`MSMessage`所提供的 URL。
 
 ## <a name="summary"></a>總結
 
-這篇文章說明在整合了 Xamarin.iOS 解決方案中使用的訊息應用程式擴充功能的進階的技巧**訊息**應用程式和使用者有新功能。
+本文提供的先進技術, 可讓您在與**訊息**應用程式整合的 Xamarin iOS 解決方案中使用訊息應用程式延伸模組, 並向使用者呈現新功能。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [冰淇淋產生器 （範例）](https://developer.xamarin.com/samples/monotouch/ios10/IceCreamBuilder/)
+- [霜淇淋 Builder (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
 - [訊息參考](https://developer.apple.com/reference/messages)
-- [應用程式擴充功能的程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)
+- [應用程式擴充程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

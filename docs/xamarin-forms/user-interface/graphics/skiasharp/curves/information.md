@@ -7,16 +7,16 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/12/2017
-ms.openlocfilehash: b5d32f486b45005534adc8929caf6158d1c62a4b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 05d5003d349ae11a1ec6a1b6f3d66b2f68ffad8a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61357143"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652873"
 ---
 # <a name="path-information-and-enumeration"></a>路徑資訊與列舉
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _取得路徑的相關資訊，並列舉內容_
 
@@ -24,7 +24,7 @@ _取得路徑的相關資訊，並列舉內容_
 
 有時候，它是很有用來判斷所有的直線和曲線路徑所組成的總長度。 計算這個長度不是以簡單的工作，因此整個類別名為[ `PathMeasure` ](xref:SkiaSharp.SKPathMeasure)專門提供給它。
 
-最好也有時若要取得所有繪圖作業和組成路徑的點。 一開始，這項功能看起來不必要的：如果您的程式已建立的路徑，該程式已經知道的內容。 不過，您已了解也可以藉由建立路徑[路徑效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)並藉由轉換[為路徑的文字字串](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)。 您也可以取得所有繪圖作業和構成這些路徑的點。 其中一個可能性是適用於演算法的轉換所有的點，如，而繞半球：
+最好也有時若要取得所有繪圖作業和組成路徑的點。 一開始, 這種設備看起來可能不是必要的:如果您的程式已建立路徑, 則程式已知道內容。 不過，您已了解也可以藉由建立路徑[路徑效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)並藉由轉換[為路徑的文字字串](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)。 您也可以取得所有繪圖作業和構成這些路徑的點。 其中一個可能性是適用於演算法的轉換所有的點，如，而繞半球：
 
 ![](information-images/pathenumerationsample.png "包裝半球上的文字")
 
@@ -140,7 +140,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 [![](information-images/unicyclehalfpipe-small.png "獨半管道頁面的三個螢幕擷取畫面")](information-images/unicyclehalfpipe-large.png#lightbox "獨半管道頁面的三個螢幕擷取畫面")
 
-`SKPaint`中的欄位定義物件，用於繪製半管道和獨`UnicycleHalfPipePage`類別。 也定義是`SKPath`獨物件：
+用來對半管道和 unicycle 進行筆劃的`UnicycleHalfPipePage` 物件,會定義為類別中的欄位。`SKPaint` 也定義是`SKPath`獨物件：
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -255,7 +255,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 索引鍵是原始的直線，線條分成一系列的較小的直線，線條。 然後可以操作這些個別較小的直線，線條以不同的方式，以形成曲線。
 
-若要協助進行此程序中， [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例包含靜態[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)類別`Interpolate`細分的方法許多較短的行就是只有一個單位的長度成直線。 此外，此類別包含數種方法，轉換成一系列的小的直線，線條估計曲線的貝茲曲線的三種類型。 (一文中提供的參數化的公式[**三種類型的貝茲曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)。)這個過程就叫做_壓平合併_曲線：
+若要協助進行此程序中， [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含靜態[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)類別`Interpolate`細分的方法許多較短的行就是只有一個單位的長度成直線。 此外，此類別包含數種方法，轉換成一系列的小的直線，線條估計曲線的貝茲曲線的三種類型。 (一文中提供的參數化的公式[**三種類型的貝茲曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)。)這個過程就叫做_壓平合併_曲線：
 
 ```csharp
 static class PathExtensions
@@ -523,4 +523,4 @@ public class GlobularTextPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

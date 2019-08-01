@@ -1,22 +1,22 @@
 ---
 title: 平台特性
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用及建立平台特性。
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用和建立平臺細節。
 ms.prod: xamarin
 ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/01/2018
-ms.openlocfilehash: 04cbdaac50b0ea77659d7c495dcd1a9e6d43335c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: f6190b9c0d29d57d6d509bdff25e2ce3572e3a3c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926995"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646841"
 ---
-# <a name="platform-specifics"></a>平台特性
+# <a name="platform-specifics"></a>平台專用
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。_
 
@@ -34,11 +34,11 @@ _平台特性可讓您使用的功能只可在特定的平台，而不需要實�
 
 透過平台特性取用`On<T>`fluent 的程式碼 API 傳回[ `IPlatformElementConfiguration` ](xref:Xamarin.Forms.IPlatformElementConfiguration`2)物件。 這可讓具有階層式方法的相同物件上叫用的多個平台特性。
 
-如需有關提供 Xamarin.Forms 的平台特性的詳細資訊，請參閱[iOS 平台特性](~/xamarin-forms/platform/ios/index.md)， [Android 平台特性](~/xamarin-forms/platform/android/index.md)，和[Windows 平台特性](~/xamarin-forms/platform/windows/index.md).
+如需有關 Xamarin 所提供之平臺細節的詳細資訊, 請參閱[IOS 平臺](~/xamarin-forms/platform/ios/index.md)專屬的[Android 平臺](~/xamarin-forms/platform/android/index.md)詳細資料和[Windows 平臺](~/xamarin-forms/platform/windows/index.md)詳細資料。
 
-## <a name="creating-platform-specifics"></a>建立平台特性
+## <a name="creating-platform-specifics"></a>建立平臺細節
 
-廠商可以建立自己的平台特性，會有的效果。 效果會提供專用的功能，則透過特定平台公開。 結果是可以在透過 XAML，以及透過 fluent 的程式碼 API 更容易取用的效果。
+廠商可以使用效果來建立自己的平臺細節。 效果會提供專用的功能，則透過特定平台公開。 結果是可以在透過 XAML，以及透過 fluent 的程式碼 API 更容易取用的效果。
 
 建立特定平台的程序如下所示：
 
@@ -53,15 +53,15 @@ _平台特性可讓您使用的功能只可在特定的平台，而不需要實�
 > [!NOTE]
 > 它被設想廠商會使用此技巧來建立自己平台特性，以方便取用的使用者。 雖然使用者可以選擇建立自己的平台特性，請注意，它需要更多的程式碼，比建立及使用的效果。
 
-[範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)示範`Shadow`將所顯示的文字陰影的平台特定[ `Label` ](xref:Xamarin.Forms.Label)控制項：
+[範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)會示範`Shadow`平臺特定的, 其會將陰影新增至[`Label`](xref:Xamarin.Forms.Label)控制項所顯示的文字:
 
 ![](images/screenshots.png "陰影特定平台")
 
-[範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)實作`Shadow`特定平台上，請在每個平台，為方便了解。 不過，除了每個平台特定效果實作陰影類別的實作是每個平台基本相同的。 因此，本指南著重於實作陰影類別和相關聯的單一平台上的效果。
+[範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) `Shadow`會在每個平臺上執行平臺特定, 以方便您瞭解。 不過，除了每個平台特定效果實作陰影類別的實作是每個平台基本相同的。 因此，本指南著重於實作陰影類別和相關聯的單一平台上的效果。
 
 如需效果的詳細資訊，請參閱[效果的自訂控制項](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
-### <a name="creating-a-platform-specific-class"></a>建立平台特定類別
+### <a name="creating-a-platform-specific-class"></a>建立平臺特定類別
 
 特定平台會建立為`public static`類別：
 
@@ -77,7 +77,7 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 
 下列各節討論實作`Shadow`平台特定和相關聯的效果。
 
-#### <a name="adding-an-attached-property"></a>加入附加的屬性
+#### <a name="adding-an-attached-property"></a>加入附加屬性
 
 附加的屬性必須新增至`Shadow`平台特定，以允許透過 XAML 的耗用量：
 
@@ -191,7 +191,7 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 
 `IsShadowed`並`SetIsShadowed`擴充方法叫用 get 和 set 存取子的`IsShadowed`附加屬性，分別。 每個擴充方法作`IPlatformElementConfiguration<iOS, FormsElement>`型別，指定可以在上叫用平台專屬[ `Label` ](xref:Xamarin.Forms.Label) iOS 中的執行個體。
 
-#### <a name="creating-the-effect"></a>建立的效果
+#### <a name="creating-the-effect"></a>建立效果
 
 `Shadow`特定平台將加入`MyCompany.LabelShadowEffect`要[ `Label` ](xref:Xamarin.Forms.Label)，並將它移除。 下列程式碼範例示範`LabelShadowEffect`針對 iOS 專案的實作：
 
@@ -252,7 +252,7 @@ namespace ShadowPlatformSpecific.iOS
 
 如需建立效果的詳細資訊，請參閱[建立影響](~/xamarin-forms/app-fundamentals/effects/creating.md)並[傳遞為附加屬性的效果參數](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md)。
 
-### <a name="consuming-the-platform-specific"></a>使用特定平台
+### <a name="consuming-the-platform-specific"></a>使用平臺特定
 
 `Shadow`特定平台由在 XAML 中設定`Shadow.IsShadowed`; 附加屬性`boolean`值：
 
@@ -277,11 +277,11 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
-- [ShadowPlatformSpecific （範例）](https://developer.xamarin.com/samples/xamarin-forms/userinterface/shadowplatformspecific/)
-- [iOS 平台特性](~/xamarin-forms/platform/ios/index.md)
-- [Android 平台特性](~/xamarin-forms/platform/android/index.md)
-- [Windows 平台特性](~/xamarin-forms/platform/windows/index.md)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [ShadowPlatformSpecific （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)
+- [iOS 平臺-細節](~/xamarin-forms/platform/ios/index.md)
+- [Android 平臺-細節](~/xamarin-forms/platform/android/index.md)
+- [Windows 平臺-細節](~/xamarin-forms/platform/windows/index.md)
 - [自訂控制項產生的作用](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [附加屬性](~/xamarin-forms/xaml/attached-properties.md)
 - [PlatformConfiguration API](xref:Xamarin.Forms.PlatformConfiguration)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: cb8aabb3649da3818c1b020508b78a03f513963b
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 5109e3a66e22d885d8dc8b685db0817057709464
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830689"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653684"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>安裝並在 Xamarin 中使用 watchOS
 
@@ -33,7 +33,7 @@ Watch 應用程式是由三個專案所組成：
 
 - **監看式應用程式專案**-這包含所有 UI 資源的使用者介面的分鏡腳本檔案監看式應用程式。
 
-[監看式套件 Catalog 範例](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)在 Xamarin.Studio 中的方案看起來像這樣：
+[監看式套件 Catalog 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)在 Xamarin.Studio 中的方案看起來像這樣：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -45,7 +45,7 @@ Watch 應用程式是由三個專案所組成：
 
 -----
 
-下載並執行[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)範例著手。
+下載並執行[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)範例著手。
 來自範例的螢幕可於[控制項](~/ios/watchos/user-interface/index.md)頁面。
 
 
@@ -172,14 +172,14 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 
 ### <a name="xcode-6-and-watchos-1"></a>Xcode 6 和 watchOS 1
 
-您必須先 *監看式延伸模組專案***啟始專案** 之前執行或偵錯應用程式。 您無法"start"watch 應用程式本身，和如果您選擇的 iOS 應用程式接著就會開始正常的 iOS 模擬器中。
+您必須先 *監看式延伸模組專案* **啟始專案** 之前執行或偵錯應用程式。 您無法"start"watch 應用程式本身，和如果您選擇的 iOS 應用程式接著就會開始正常的 iOS 模擬器中。
 
 預設 watch 應用程式會在標準模式中啟動**應用程式**從 Visual Studio for Mac 的模式 （不摘要 」 或 「 通知模式）**執行**或是**偵錯**命令。
 
 使用 Xcode 6 時僅 iphone 5 以上、 iPhone 5 秒、 iPhone 6 及 iPhone 6 Plus 可以啟用適用於外部顯示器**Apple Watch-38 公釐**或是**Apple Watch-42 公釐**會監看式應用程式顯示此項目。
 
 > [!NOTE]
-> 請記住，[監看式] 畫面時，沒有自動出現的 iOS 模擬器中使用 Xcode 6。
+> 請記住, 使用 Xcode 6 時, [監看式] 畫面不會自動出現在 iOS 模擬器中。
 > 使用**硬體 > 外接式顯示器之間**功能表顯示 [監看式] 畫面。
 
 <a name="custommodes" />
@@ -232,6 +232,6 @@ WatchOS 範本檔案 (例如`InterfaceController`， `ExtensionDelegate`， `Not
 
 ## <a name="related-links"></a>相關連結
 
-- [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchKitCatalog （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Watch 應用程式上的影片](https://blog.xamarin.com/your-first-watch-kit-app/)
 - [Apple 的 WatchKit 秘訣](https://developer.apple.com/watchkit/tips/)

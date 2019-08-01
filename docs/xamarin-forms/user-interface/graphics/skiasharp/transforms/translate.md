@@ -7,16 +7,16 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: a51a441aeacf265093b82ddb65237887b0a30719
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b4fae33f7de8c6022b2298c462ea510ec8ed623f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61382411"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657198"
 ---
 # <a name="the-translate-transform"></a>平移轉換
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用平移轉換移位 SkiaSharp 圖形_
 
@@ -38,7 +38,7 @@ public void Translate (Single dx, Single dy)
 public void Translate (SKPoint point)
 ```
 
-**累積轉譯**頁[ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例程式會示範多個呼叫的`Translate`方法將會累計。 [ `AccumulatedTranslatePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同的矩形的 20 版本，每個位移從先前的矩形剛好夠讓它們沿著對角線 stretch。 以下是`PaintSurface`事件處理常式：
+**累積轉譯**頁[ **SkiaSharpForms** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例程式會示範多個呼叫的`Translate`方法將會累計。 [ `AccumulatedTranslatePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同的矩形的 20 版本，每個位移從先前的矩形剛好夠讓它們沿著對角線 stretch。 以下是`PaintSurface`事件處理常式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -136,7 +136,7 @@ using (SKPaint textPaint = new SKPaint())
 
 第二個範例會呼叫[ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix)。 這會導致所有轉換回到其預設狀態。
 
-第三個範例會將儲存的狀態`SKCanvas`藉由呼叫物件[ `Save` ](xref:SkiaSharp.SKCanvas.Save) ，然後再還原的狀態，藉由呼叫[ `Restore` ](xref:SkiaSharp.SKCanvas.Restore)。 這是最具彈性的方式來操作的繪圖作業的一系列轉換。 這些`Save`和`Restore`呼叫函式，像堆疊一樣：您可以呼叫`Save`多個時間，然後呼叫`Restore`在反向序列，以返回先前的狀態。 `Save`方法會傳回一個整數，而您可以傳遞至該整數[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)有效地呼叫`Restore`多次。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)屬性會傳回目前儲存在堆疊上的狀態數目。
+第三個範例會將儲存的狀態`SKCanvas`藉由呼叫物件[ `Save` ](xref:SkiaSharp.SKCanvas.Save) ，然後再還原的狀態，藉由呼叫[ `Restore` ](xref:SkiaSharp.SKCanvas.Restore)。 這是最具彈性的方式來操作的繪圖作業的一系列轉換。 這些`Save`和`Restore`會呼叫函式, 就像堆疊:您可以呼叫`Save`多次, 然後以反向順序`Restore`呼叫來回到先前的狀態。 `Save`方法會傳回一個整數，而您可以傳遞至該整數[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)有效地呼叫`Restore`多次。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)屬性會傳回目前儲存在堆疊上的狀態數目。
 
 您也可以使用[ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore)還原畫布狀態的類別。 這個類別的建構函式要呼叫`using`陳述式; 畫布狀態就會自動還原結尾`using`區塊。 
 
@@ -307,4 +307,4 @@ public class HendecagramAnimationPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

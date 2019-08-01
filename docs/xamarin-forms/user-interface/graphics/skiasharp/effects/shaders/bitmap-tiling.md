@@ -7,18 +7,18 @@ ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 24c33c61002130fe645bba54c307394bbc2e0656
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7d323aa6616f7547ab91dfe2b394c339e273d61c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61322076"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650019"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp 點陣圖並排顯示
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
 當您在兩個先前的文章中所見[ `SKShader` ](xref:SkiaSharp.SKShader)類別可以建立線性或循環的漸層。 本文著重於`SKShader`利用點陣圖來並排顯示區域的物件。 可重複的點陣圖，水平及垂直，在其原始的方向或或者翻轉水平和垂直大小。 開關，可避免磚之間的不連續：
 
@@ -42,7 +42,7 @@ public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShade
 
 ## <a name="exploring-the-tile-modes"></a>瀏覽的並排顯示模式
 
-中的第一個程式**點陣圖並排**一節**著色器和其他效果**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例示範兩個效果`SKShaderTileMode`引數。 **點陣圖的並排顯示翻轉模式**XAML 檔案會具現化`SKCanvasView`並將兩個`Picker`可讓您選取的檢視`SKShaderTilerMode`水平和垂直並排顯示的值。 請注意，陣列`SKShaderTileMode`中所定義的成員`Resources`區段：
+中的第一個程式**點陣圖並排**一節**著色器和其他效果**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例示範兩個效果`SKShaderTileMode`引數。 **點陣圖的並排顯示翻轉模式**XAML 檔案會具現化`SKCanvasView`並將兩個`Picker`可讓您選取的檢視`SKShaderTilerMode`水平和垂直並排顯示的值。 請注意，陣列`SKShaderTileMode`中所定義的成員`Resources`區段：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -300,7 +300,7 @@ public class PhotographicBrickWallPage : ContentPage
 
 某些工作，才能取得適當的點陣圖，圖格。 此不能很深的基礎構件凸顯出來，因為太多。 定期出現內重複的映像，並揭露此磚牆從較小的點陣圖建構的事實。
 
-**媒體**的資料夾[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例也包含石刀牆上的這個映像：
+**媒體**的資料夾[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例也包含石刀牆上的這個映像：
 
 ![如此背景牆 圖格](bitmap-tiling-images/StoneWallTile.jpg "石背景牆 圖格")
 
@@ -366,7 +366,7 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 
 一節[**圖格對齊**](#tile-alignment)，您會看到範例平移轉換套用至著色器。
 
-獨立[ **Cat 時鐘**](https://developer.xamarin.com/samples/xamarin-forms/CatClock)範例 (不屬於**SkiaSharpFormsDemos**) 會模擬使用點陣圖並排顯示依據此 240 像素的正方形點陣圖 wood 資料粒度背景：
+獨立[ **Cat 時鐘**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)範例 (不屬於**SkiaSharpFormsDemos**) 會模擬使用點陣圖並排顯示依據此 240 像素的正方形點陣圖 wood 資料粒度背景：
 
 ![木資料粒度](bitmap-tiling-images/WoodGrain.png "木資料粒度")
 
@@ -780,5 +780,5 @@ public class AnimatedBitmapTilePage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [CatClock （範例）](https://developer.xamarin.com/samples/xamarin-forms/CatClock/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [CatClock （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)

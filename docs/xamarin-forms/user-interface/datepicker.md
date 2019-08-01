@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 263cbb4aed47794a09341bb8c78c4835510e50c0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 521df49a7698bc149d6bca7460cff2df74402bda
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407883"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657024"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 
 _Xamarin.Forms 檢視，可讓使用者選取日期。_
 
@@ -92,7 +92,7 @@ DatePicker datePicker = new DatePicker
 
 ## <a name="datepicker-in-an-application"></a>應用程式中的 DatePicker
 
-[ **DaysBetweenDates** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)範例包含兩個`DatePicker`其頁面上的檢視。 這些可以用來選取兩個日期，並計劃會計算這些日期之間的天數。 程式不會變更的設定`MinimumDate`和`MaximumDate`屬性，因此兩個日期必須介於 1900年和 2100年。
+[ **DaysBetweenDates** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)範例包含兩個`DatePicker`其頁面上的檢視。 這些可以用來選取兩個日期，並計劃會計算這些日期之間的天數。 程式不會變更的設定`MinimumDate`和`MaximumDate`屬性，因此兩個日期必須介於 1900年和 2100年。
 
 以下是 XAML 檔案：
 
@@ -196,5 +196,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [DaysBetweenDates 範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/DatePicker)
+- [DaysBetweenDates 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 - [DatePicker API](xref:Xamarin.Forms.DatePicker)

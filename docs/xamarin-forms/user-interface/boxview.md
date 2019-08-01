@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/26/2018
-ms.openlocfilehash: 85edbf657382b7c85ab2c5af543431fb51fb0d4e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 21edcf4a660049f2ef4ecf8426741a62b56b71e4
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61019545"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651436"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView) 呈現指定的寬度、 高度和色彩的簡單矩形。 您可以使用`BoxView`裝飾，基本圖形，以及透過觸控使用者互動。
 
@@ -52,9 +52,9 @@ Xamarin.Forms 沒有內建的向量圖形系統，因為`BoxView`補償的協助
 
 `WidthRequest`並`HeightRequest`屬性會被忽略，如果`BoxView`是*限制*在配置中，在其中案例版面配置容器本身的大小會安排`BoxView`。
 
-A`BoxView`可以限制在一個維度中，並在其他未受限制。 比方說，如果`BoxView`子系的垂直`StackLayout`，以垂直維度的`BoxView`是未受限制，而且其水平維度一般條件約束。 但有該水平維度的例外狀況：如果`BoxView`有其`HorizontalOptions`屬性設定為項目以外的其他`LayoutOptions.Fill`，則水平維度也會不受限制。 此外，也可以針對`StackLayout`本身在此情況下有不受限制的水平維度，`BoxView`也會以水平方式不受限制。
+A`BoxView`可以限制在一個維度中，並在其他未受限制。 比方說，如果`BoxView`子系的垂直`StackLayout`，以垂直維度的`BoxView`是未受限制，而且其水平維度一般條件約束。 但是該水準維度有一些例外狀況:如果將`BoxView`其`HorizontalOptions`屬性`LayoutOptions.Fill`設定為以外的某個專案, 則水準維度也不受限制。 此外，也可以針對`StackLayout`本身在此情況下有不受限制的水平維度，`BoxView`也會以水平方式不受限制。
 
-[ **BasicBoxView** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)範例會顯示未受限制一英吋-正方形`BoxView`在其頁面的中心：
+[ **BasicBoxView** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)範例會顯示未受限制一英吋-正方形`BoxView`在其頁面的中心：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -86,7 +86,7 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
 
 ## <a name="rendering-text-decorations"></a>轉譯文字裝飾
 
-您可以使用`BoxView`頁面的水平和垂直線條形式加入一些簡單的裝飾。 [ **TextDecoration** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)為範例。 中所定義的所有程式的視覺效果**MainPage.xaml**檔案，其中包含數個`Label`並`BoxView`中的項目`StackLayout`如下所示：
+您可以使用`BoxView`頁面的水平和垂直線條形式加入一些簡單的裝飾。 [ **TextDecoration** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)為範例。 中所定義的所有程式的視覺效果**MainPage.xaml**檔案，其中包含數個`Label`並`BoxView`中的項目`StackLayout`如下所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -176,7 +176,7 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
 
 [![ListView 色彩](boxview-images/listviewcolors-small.png "ListView 色彩")](boxview-images/listviewcolors-large.png#lightbox "ListView 色彩")
 
-[ **ListViewColors** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ListViewColors/)計畫包含類別，名為`NamedColor`。 靜態建構函式會使用反映來存取的所有欄位`Color`結構，並建立`NamedColor`針對每個物件。 這些儲存在靜態`All`屬性：
+[ **ListViewColors** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors)計畫包含類別，名為`NamedColor`。 靜態建構函式會使用反映來存取的所有欄位`Color`結構，並建立`NamedColor`針對每個物件。 這些儲存在靜態`All`屬性：
 
 ```csharp
 public class NamedColor
@@ -307,7 +307,7 @@ public class NamedColor
 
 遊戲生命週期是首創數學家 John Conway 和普及化的頁面中的行動電話通訊 automaton*科學 American*在 1970 年代。 維基百科文章提供了絕佳的簡介[生命週期 Conway 遊戲](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)。
 
-Xamarin.Forms [ **GameOfLife** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife/)程式還定義了一個名為類別`LifeCell`衍生自`BoxView`。 這個類別會封裝生命週期的遊戲中個別資料格的邏輯：
+Xamarin.Forms [ **GameOfLife** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)程式還定義了一個名為類別`LifeCell`衍生自`BoxView`。 這個類別會封裝生命週期的遊戲中個別資料格的邏輯：
 
 ```csharp
 class LifeCell : BoxView
@@ -362,7 +362,7 @@ class LifeCell : BoxView
 
 ## <a name="creating-a-digital-clock"></a>建立數位時鐘
 
-[ **DotMatrixClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock/)程式會建立 210`BoxView`模擬的舊式的 5-7 點矩陣顯示點的項目。 您可以讀取的時間，以直向或橫向模式中，但較大型架構中：
+[ **DotMatrixClock** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)程式會建立 210`BoxView`模擬的舊式的 5-7 點矩陣顯示點的項目。 您可以讀取的時間，以直向或橫向模式中，但較大型架構中：
 
 [![點陣時鐘](boxview-images/dotmatrixclock-small.png "點陣時鐘")](boxview-images/dotmatrixclock-large.png#lightbox "點陣時鐘")
 
@@ -602,7 +602,7 @@ public partial class MainPage : ContentPage
 
 [![BoxView 時鐘](boxview-images/boxviewclock-small.png "BoxView 時鐘")](boxview-images/boxviewclock-large.png#lightbox "BoxView 時鐘")
 
-中的所有視覺效果[ **BoxViewClock** ](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock/)計劃是子系`AbsoluteLayout`。 這些項目會使用調整大小`LayoutBounds`附加屬性，而使用旋轉`Rotation`屬性。
+中的所有視覺效果[ **BoxViewClock** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)計劃是子系`AbsoluteLayout`。 這些項目會使用調整大小`LayoutBounds`附加屬性，而使用旋轉`Rotation`屬性。
 
 三個`BoxView`時鐘指針的項目在 XAML 檔案中，具現化但未定位或調整大小：
 
@@ -776,7 +776,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-第二個手動處理有點不同：Easing 函式的動畫套用至進行移動，看起來很機械化，而不是 smooth。 每個刻度，秒針會提取回有點，然後超過其目的地。 這一小段的程式碼將許多移動的真實性。
+第二個動作的處理方式稍有不同:會套用動畫緩動函式, 讓移動看起來像是機械, 而不是平滑。 每個刻度，秒針會提取回有點，然後超過其目的地。 這一小段的程式碼將許多移動的真實性。
 
 ## <a name="conclusion"></a>結論
 
@@ -785,10 +785,10 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [基本 BoxView （範例）](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BasicBoxView)
-- [文字裝飾 （範例）](https://developer.xamarin.com/samples/xamarin-forms/BoxView/TextDecoration)
-- [色彩清單方塊 （範例）](https://developer.xamarin.com/samples/xamarin-forms/BoxView/ColorListBox)
-- [遊戲的生命週期 （範例）](https://developer.xamarin.com/samples/xamarin-forms/BoxView/GameOfLife)
-- [點陣時鐘 （範例）](https://developer.xamarin.com/samples/xamarin-forms/BoxView/DotMatrixClock)
-- [BoxView 時鐘 （範例）](https://developer.xamarin.com/samples/xamarin-forms/BoxView/BoxViewClock)
+- [基本 BoxView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+- [文字裝飾 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
+- [ListView 色彩 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)
+- [遊戲的生命週期 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)
+- [點陣時鐘 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)
+- [BoxView 時鐘 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)
 - [BoxView](xref:Xamarin.Forms.BoxView)

@@ -1,86 +1,85 @@
 ---
 title: iOS 11 簡介
-description: 本文件所連結之說明的 iOS 11 中，包括 ARKit、 CoreML，MapKit、 PDFKit、 SiriKit、 視覺架構中，等功能的各種指南。
+description: 本檔連結到描述 iOS 11 功能的各種指南, 包括 ARKit、CoreML、MapKit、PDFKit、SiriKit、願景 framework 等等。
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/19/2017
-ms.openlocfilehash: 1542ae5d7dbdf008dd5b300dfb5820c3f04ae682
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 648b03dc34daa8906adab316c552a9615649800d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268889"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655827"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 簡介
 
-![ARKit 範例](images/arkit.png) ![AR 放置物件](images/arkit2.png) ![CoreML 範例](images/coreml.png) ![MapKit 範例](images/mapkit.png) ![願景矩形範例](images/vision1.png) ![願景臉部範例](images/vision2.png) ![將拖放範例](images/drag-drop.png) ![將拖放範例](images/drag-drop2.png) ![SiriKit 範例](images/sirikit.png)
+![ARKit 範例](images/arkit.png) ![AR 放置物件](images/arkit2.png) ![CoreML 範例](images/coreml.png) ![MapKit 範例](images/mapkit.png) ![視覺矩形範例](images/vision1.png) ![視覺臉部範例](images/vision2.png) ![拖放範例](images/drag-drop.png) ![拖放範例](images/drag-drop2.png) ![SiriKit 範例](images/sirikit.png)
 
-iOS 11 各式架構中包含許多全新的功能和增強功能：
+iOS 11 包含各種不同架構的全新功能和增強功能:
 
-## <a name="preparing-your-app-for-ios-11updating-your-appindexmd"></a>[準備您的應用程式針對 iOS 11](updating-your-app/index.md)
+## <a name="preparing-your-app-for-ios-11updating-your-appindexmd"></a>[為 iOS 11 應用程式做好準備](updating-your-app/index.md)
 
-Apple 已引進架構更新、 新的視覺變更和更新的 iTunes Connect 的程序適用於 iOS 11。 使用本指南，以確定您的 Xamarin.iOS 應用程式已準備好進行新的版本。
+Apple 已引進適用于 iOS 11 的架構更新、新的視覺效果變更和更新的 iTunes Connect 程式。 使用本指南來確保您的 Xamarin iOS 應用程式已準備好發行新版本。
 
 ## <a name="arkitarkitindexmd"></a>[ARKit](arkit/index.md)
 
-ARKit 擴增實境為帶來 iOS、 允許使用者透過裝置的相機與外界互動。
-使用 Xamarin，您也可以使用[ARKit 使用 UrhoSharp](arkit/urhosharp.md)。
+ARKit 將增強的現實帶入 iOS, 讓使用者能夠透過裝置的攝影機與世界互動。
+使用 Xamarin 時, 您也可以搭配使用[ARKit 與 UrhoSharp](arkit/urhosharp.md)。
 
 ## <a name="coremlcoremlmd"></a>[CoreML](coreml.md)
 
-機器學習服務模型可以整合到使用 CoreML iOS 11 應用程式。 CoreML framework 提供了可併入應用程式專案，以允許要分析的問題中的現有模型的簡單 API 應用程式中的權限。
+您可以使用 CoreML 將機器學習模型整合到 iOS 11 應用程式中。 CoreML 架構提供簡單的 API, 可將現有的模型納入應用程式專案中, 以便在應用程式中直接分析問題。
 
 ## <a name="corenfccorenfcmd"></a>[CoreNFC](corenfc.md)
 
-iPhone 7 和更新版本的裝置可以讀取附近欄位距離無線通訊 (NFC) 標記，讓應用程式來偵測已加上標籤的產品、 地點或世界中的項目。
+iPhone 7 和更新版本的裝置可以讀取近距離無線通訊 (NFC) 標籤, 讓應用程式能夠偵測到其周圍的已標記產品、地點或事物。
 
 ## <a name="drag-and-dropdrag-and-dropmd"></a>[拖放](drag-and-drop.md)
 
-拖曳和置放架構帶來了整個 iOS 的支援由觸控式移動資料。 您可以在 iPad 上拖曳內部和之間不同的應用程式;在 iPhone 上，您可以將只能在相同的應用程式。 沒有支援許多類型的自訂，包括豐富的資料類型、 動畫和處理多點觸控筆勢。
+拖放架構提供全 iOS 的支援, 可透過觸控來四處移動資料。 在 iPad 上, 您可以在不同的應用程式內和之間拖曳;在 iPhone 上, 您只能在相同的應用程式內拖曳。 支援許多類型的自訂, 包括豐富的資料類型、動畫, 以及處理多點觸控手勢。
 
 ## <a name="mapkitmapkitmd"></a>[MapKit](mapkit.md)
 
-MapKit 有許多改進功能，包括自動標記群組，並新增至檢視的羅盤的支援。
+MapKit 有一些改良功能, 包括支援自動標記群組, 以及將羅盤新增至視圖。
 
 ## <a name="pdfkit"></a>PDFKit
 
-PDFKit 現可提供 iOS 11，將 PDF 建立和編輯您的應用程式的功能。
+PDFKit 現已于 iOS 11 提供, 可將 PDF 建立和編輯功能帶入您的應用程式。
 
 ## <a name="sirikitsirikitmd"></a>[SiriKit](sirikit.md)
 
-Siri 現在支援更多的互動，包括清單和備忘稿和其他增強功能，例如替代的應用程式名稱。
+Siri 現在支援更多互動, 包括清單和附注, 以及其他增強功能, 例如替代應用程式名稱。
 
 ## <a name="visionvisionmd"></a>[Vision](vision.md)
 
-各種不同的映像處理和分析功能帶入 iOS，包括臉部偵測和辨識、 CoreML 模型、 新條碼偵測 Api、 文字和水平的偵測，以及更一般的物體偵測和追蹤。
+將各種影像處理和分析功能帶入 iOS, 包括臉部偵測和辨識、CoreML 模型、新的條碼偵測 Api、文字和範圍偵測, 以及更一般的物件偵測和追蹤。
 
 ## <a name="samples"></a>範例
 
-我們有許多 C#[範例](https://developer.xamarin.com/samples/ios/iOS11/)可協助您開始：
+我們有一些C# [範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11)可説明您開始使用:
 
-* [ARKit 範例](https://developer.xamarin.com/samples/monotouch/ios11/ARKitSample/)
-* [ARKit 放置物件](https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/)
+* [ARKit 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
+* [ARKit 放置物件](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
 * [ARKit 和 UrhoSharp](arkit/urhosharp.md)
-* [CoreML 範例](https://developer.xamarin.com/samples/monotouch/ios11/CoreML)
-* [CoreML 影像辨識 」 範例](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition)
-* [CoreML 與 Azure 的自訂模型](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel)
-* [CoreNFC 標記讀取器範例](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/)
-* [拖放資料表檢視](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView)
-* [拖曳和卸除集合檢視](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
-* [拖放自訂檢視](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCustomView)
-* [DragBoard 拖放範例](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropDragBoard)
-* [MapKit 範例](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample)
-* [SiriKit 範例](https://developer.xamarin.com/samples/monotouch/ios11/SiriKitSample/)
-* [已更新的相片 framework 範例](https://developer.xamarin.com/samples/monotouch/ios11/SamplePhotoApp/)
-* [願景和 CoreML 範例](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision)
-* [願景矩形偵測範例](https://developer.xamarin.com/samples/monotouch/ios11/VisionRects)
-* [願景臉部偵測範例](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces)
-* [PDKFit 小工具範例](https://developer.xamarin.com/samples/monotouch/ios11/PDFAnnotationWidgetsAdvanced)
-* [PDFKit 水位線範例](https://developer.xamarin.com/samples/monotouch/ios11/PDFDocumentWatermark)
+* [CoreML 影像辨識範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+* [使用 Azure 自訂模型的 CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+* [CoreNFC 標記讀取器範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
+* [拖曳 & Drop Table View](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
+* [拖曳 & Drop Collection View](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+* [拖曳 & 卸載自訂視圖](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
+* [DragBoard 拖曳 & Drop Sample](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
+* [MapKit 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
+* [SiriKit 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+* [更新的相片架構範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
+* [願景 & CoreML 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
+* [視覺矩形偵測範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
+* [視覺臉部偵測範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+* [PDKFit 小工具範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
+* [PDFKit 浮水印範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin iOS 11 範例](https://developer.xamarin.com/samples/ios/iOS11/)
+- [Xamarin iOS 11 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11)

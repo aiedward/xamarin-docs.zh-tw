@@ -7,23 +7,23 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 30f331304ed42a06751aa94ca9c9591aaa46e04e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 5ccbfa3388dac79f187af1d2a4ad00b3ff9d60f6
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102486"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865881"
 ---
 # <a name="getting-started-with-xamarinmac"></a>Xamarin.Mac 使用者入門
 
-##  <a name="installationmacget-startedinstallationmd"></a>[安裝](~/mac/get-started/installation.md)
+## <a name="installationmacget-startedinstallationmd"></a>[安裝](~/mac/get-started/installation.md)
 
 本文涵蓋 Xamarin.Mac 的安裝，包括需求、必要條件軟體及啟用。
 
-##  <a name="hello-macmacget-startedhello-macmd"></a>[Hello, Mac](~/mac/get-started/hello-mac.md)
+## <a name="hello-macmacget-startedhello-macmd"></a>[Hello, Mac](~/mac/get-started/hello-mac.md)
 
 本指南逐步解說建立第一個簡單的 Xamarin.Mac 應用程式的步驟，並在程序中導入開發工具鏈，包括 Visual Studio for Mac、Xcode 和 Interface Builder。 它也導入將 UI 控制項公開到程式碼的「輸出」和「動作」，最後並說明如何建置、執行及測試 Xamarin.Mac 應用程式。
 
-##  <a name="related-documentationmacget-startedrelatedmd"></a>[相關文件](~/mac/get-started/related.md)
+## <a name="related-documentationmacget-startedrelatedmd"></a>[相關文件](~/mac/get-started/related.md)
 
 其他實用文件的連結。

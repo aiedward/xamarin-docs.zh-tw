@@ -1,24 +1,24 @@
 ---
 title: iPad 強制回應頁面呈現樣式
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台特定設定在 iPad 上的強制回應頁面的呈現樣式。
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定設定 iPad 上強制回應頁面的呈現樣式。
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: fa851ddc753d1fb9cb39f4c08dcfde518a123b62
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c8962c46e0b496844bd3fc00346a117b6753f818
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926745"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651951"
 ---
 # <a name="ipad-modal-page-presentation-style"></a>iPad 強制回應頁面呈現樣式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台專屬用來在 iPad 上設定強制回應頁面的呈現樣式。 它由在 XAML 中設定`Page.ModalPresentationStyle`可繫結的屬性，以`UIModalPresentationStyle`列舉值：
+這個 iOS 平臺特定是用來在 iPad 上設定模式頁面的呈現樣式。 它由在 XAML 中設定`Page.ModalPresentationStyle`可繫結的屬性，以`UIModalPresentationStyle`列舉值：
 
 ```xaml
 <ContentPage ...
@@ -61,6 +61,6 @@ public class iOSModalFormSheetPageCS : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

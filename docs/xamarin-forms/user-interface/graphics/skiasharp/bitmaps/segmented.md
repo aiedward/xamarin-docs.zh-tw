@@ -7,16 +7,16 @@ ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: be2d998916c81cb2216251e2112ff8ca2af5d87a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ca6c8fafe4352bac83e5ae60b43627d4c7fdc10f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61410473"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648674"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>分段的顯示的 SkiaSharp 點陣圖
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp`SKCanvas`物件會定義一個名為方法`DrawBitmapNinePatch`和名為兩個方法`DrawBitmapLattice`非常類似。 這些方法會呈現目的地矩形的大小的點陣圖同時而不是一致的方式自動縮放點陣圖，顯示部分點陣圖的像素尺寸的人員，並自動縮放點陣圖的其他部分，使其符合矩形：
 
@@ -44,7 +44,7 @@ canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 
 在中央矩形是相對於點陣圖。 很`SKRectI`值 (整數版本`SKRect`) 以及所有座標和大小都是以像素為單位。 目的矩形是相對於在顯示介面。 `paint` 引數是選擇性的。
 
-**九個修補程式顯示器**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例會先使用靜態建構函式來建立類型的公用靜態屬性`SKBitmap`:
+**九個修補程式顯示器**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例會先使用靜態建構函式來建立類型的公用靜態屬性`SKBitmap`:
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -228,4 +228,4 @@ public class LatticeDisplayPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,16 +7,16 @@ ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
-ms.openlocfilehash: 604067ac853bd53707e059b7db4abf2cfade21ce
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 69f77ef7959a53fa46210d7e6e68b9666692423b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61076885"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653090"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>以動畫顯示 SkiaSharp 點陣圖
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 通常建立動畫 SkiaSharp 圖形的應用程式呼叫`InvalidateSurface`上`SKCanvasView`以固定費率，通常每隔 16 毫秒。 讓介面失效，觸發程序呼叫`PaintSurface`重繪其顯示的處理常式。 當視覺效果會重新繪製 60 次第二個，看起來就像順利建立動畫。
 
@@ -36,7 +36,7 @@ ms.locfileid: "61076885"
 
 Mandelbrot 集合是以視覺化方式酷炫但 computionally 冗長。 (如 Mandelbrot 集合以及此處所使用的數學運算的討論，請參閱 <<c0> [ 的第 20 章_使用 Xamarin.Forms 建立行動應用程式_](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) 666 頁面上啟動。 下列說明假設該背景知識。）
 
-[ **Mandelbrot 動畫**](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)範例使用點陣圖動畫來模擬連續的顯示比例 Mandelbrot 集合中的固定元素。 放大後面縮小，並再循環重複下去，或直到您結束程式。
+[ **Mandelbrot 動畫**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)範例使用點陣圖動畫來模擬連續的顯示比例 Mandelbrot 集合中的固定元素。 放大後面縮小，並再循環重複下去，或直到您結束程式。
 
 這個動畫的程式是藉由建立最多 50 的點陣圖，它會儲存在應用程式的本機儲存體中準備。 每個點陣圖會包含一半的寬度和高度複數平面為先前的點陣圖。 (在程式中，這些點陣圖 non-deterministic 來代表整數_縮放層級_。)序列中隨即顯示點陣圖。 每個點陣圖的縮放比例是以提供從一個點陣圖的 smooth 進展到另一個動畫顯示。
 
@@ -469,7 +469,7 @@ public partial class MainPage : ContentPage
 
 圖形交換格式 (GIF) 規格包含可以使用單一的 GIF 檔案包含多個循序的框架場景連續，通常在迴圈中可顯示的一項功能。 這些檔案也稱為_動畫 Gif_。 網頁瀏覽器可以播放動畫的 Gif，和 SkiaSharp 可讓應用程式擷取的畫面格動畫 GIF 檔案，並循序顯示它們。
 
-[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例包含名為的動畫的 GIF 資源**Newtons_cradle_animation_book_2.gif** DemonDeLuxe 所建立，並從下載[牛頓的底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)維基百科中的頁面。 **動畫 GIF**頁面包含 XAML 檔案，提供該資訊，並具現化`SKCanvasView`:
+[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含名為的動畫的 GIF 資源**Newtons_cradle_animation_book_2.gif** DemonDeLuxe 所建立，並從下載[牛頓的底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)維基百科中的頁面。 **動畫 GIF**頁面包含 XAML 檔案，提供該資訊，並具現化`SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -660,5 +660,5 @@ public partial class AnimatedGifPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [Mandelbrot 動畫 （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/MandelAnima/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [Mandelbrot 動畫 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)

@@ -1,18 +1,18 @@
 ---
 title: 第 28 章摘要。 位置與地圖
-description: 使用 Xamarin.Forms 建立行動應用程式：第 28 章摘要。 位置與地圖
+description: 使用 Xamarin 建立 Mobile Apps:第 28 章摘要。 位置與地圖
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 0abd7e6cb5b8b9650a3dc324338587ff59a80a19
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 846b7fa3c905b208771a110a013283bd77214b72
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331429"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511692"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章摘要。 位置與地圖
 
@@ -58,7 +58,8 @@ Xamarin.Forms`Map`類別不包含的程式，以取得使用者的地理位置�
 
 ### <a name="the-location-tracker-api"></a>位置追蹤程式 API
 
-[ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)方案包含位置追蹤器應用程式開發介面的程式碼。 [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構封裝緯度和經度。 [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種方法可以啟動並暫停位置追蹤程式及使用新的位置時的事件。
+          [
+          **Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)方案包含位置追蹤器應用程式開發介面的程式碼。 [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構封裝緯度和經度。 [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種方法可以啟動並暫停位置追蹤程式及使用新的位置時的事件。
 
 #### <a name="the-ios-location-manager"></a>IOS 位置管理員
 
@@ -66,7 +67,7 @@ IOS 實作`ILocationTracker`已[ `LocationTracker` ](https://github.com/xamarin/
 
 #### <a name="the-android-location-manager"></a>Android 位置管理員
 
-Android 的實作`ILocationTracker`已[ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs)類別會使用 Android [ `LocationManager` ](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)類別。
+Android 的實作`ILocationTracker`已[ `LocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs)類別會使用 Android [ `LocationManager` ](xref:Android.Locations.LocationManager)類別。
 
 #### <a name="the-uwp-geo-locator"></a>UWP 地理定位程式
 

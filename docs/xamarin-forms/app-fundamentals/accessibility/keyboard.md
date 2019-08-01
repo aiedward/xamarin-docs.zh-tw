@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 66cd9f9de712583ea4e8fb9304a9f1642e7e3ee1
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 7f469dab92793eeaa38bd2b73e9d94b138495379
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971268"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67830351"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的鍵盤協助工具
 
@@ -66,10 +66,10 @@ ms.locfileid: "65971268"
 
 在使用預設定位順序或設定 `TabIndex` 屬性時，會套用下列規則：
 
- - `TabIndex` 等於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體會根據其在 XAML 或子集合中的宣告順序新增至定位順序。
- - `TabIndex` 大於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體則會根據其 `TabIndex` 值新增至定位順序。
- - `TabIndex` 小於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體會新增至定位順序並顯示在任何零值之前。
- - `TabIndex` 的衝突由宣告順序來解決。
+- `TabIndex` 等於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體會根據其在 XAML 或子集合中的宣告順序新增至定位順序。
+- `TabIndex` 大於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體則會根據其 `TabIndex` 值新增至定位順序。
+- `TabIndex` 小於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體會新增至定位順序並顯示在任何零值之前。
+- `TabIndex` 的衝突由宣告順序來解決。
 
 在您定義定位順序之後，按下 Tab 鍵時即會以遞增 `TabIndex` 順序循環控制項的焦點，從開頭一直循環到最後一個控制項。
 

@@ -7,25 +7,25 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: 56e50f0c3dffd54fe3d95f4cd140883613c9206f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e2cab7191bb4877deacb3f3f3235a3a4d5c65612
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61297157"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656371"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>在 Xamarin.Forms 中的相依性解析
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
-_這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建立和自訂轉譯器、 效果及 DependencyService 實作的存留期。這篇文章中的程式碼範例取自[使用容器的相依性解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)範例。_
+_這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建立和自訂轉譯器、 效果及 DependencyService 實作的存留期。這篇文章中的程式碼範例取自[使用容器的相依性解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)範例。_
 
 在內容中使用的 Model View ViewModel (MVVM) 模式的 Xamarin.Forms 應用程式，來註冊及解析檢視模型，以及註冊服務和插入檢視模型可以使用相依性插入容器。 檢視模型在建立期間，容器會插入任何所需的相依性。 如果尚未建立這些相依性，會建立容器，並先解析相依性。 如需相依性插入，包括範例相依性插入檢視模型的詳細資訊，請參閱[相依性插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
 
 建立和 Xamarin.Forms，它會使用傳統上執行的平台專案中類型的存留期`Activator.CreateInstance`方法用來建立執行個體的自訂轉譯器的效果，並[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)實作。 不幸的是，這會限制開發人員控制建立和存留期的這些型別，並將它們插入的相依性的能力。 至 Xamarin.Forms 應用程式的相依性插入容器，或透過 Xamarin.Forms，控制如何將會建立類型 – 插入相依性解析方法，就可以變更此行為。 不過請注意沒有將 Xamarin.Forms 中插入相依性解析方法的需求。 Xamarin.Forms 會繼續建立和管理的平台專案中的型別存留期，如果不插入相依性解析方法。
 
 > [!NOTE]
-> 雖然這篇文章著重於解決使用相依性插入容器的已註冊的類型的 Xamarin.Forms 中插入相依性解析方法，您也可將使用 factory 方法來解析的相依性解析方法已註冊的型別。 如需詳細資訊，請參閱 <<c0> [ 使用 Factory 方法的相依性解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/FactoriesDemo/)範例。
+> 雖然這篇文章著重於解決使用相依性插入容器的已註冊的類型的 Xamarin.Forms 中插入相依性解析方法，您也可將使用 factory 方法來解析的相依性解析方法已註冊的型別。 如需詳細資訊，請參閱 <<c0> [ 使用 Factory 方法的相依性解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo)範例。
 
 ## <a name="injecting-a-dependency-resolution-method"></a>插入相依性解析方法
 
@@ -301,7 +301,7 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [使用容器 （範例） 的相依性解析](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
+- [使用容器 （範例） 的相依性解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 - [相依性插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [實作影片播放程式](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [叫用事件的效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

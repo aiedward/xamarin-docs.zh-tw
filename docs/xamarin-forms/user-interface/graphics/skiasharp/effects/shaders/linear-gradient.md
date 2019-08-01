@@ -7,16 +7,16 @@ ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 9551a3b8e093dbb49a55a3761543602c40e81023
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 43a427b4eca174dce4af47bb43cb1a048a6cfe7c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61158397"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647681"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 線性漸層
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [ `SKPaint` ](xref:SkiaSharp.SKPaint)類別會定義[ `Color` ](xref:SkiaSharp.SKPaint.Color)用來繪製線條，或使用純色填滿區域的屬性。 或者繪製線條或填滿的區域_漸層_，這是漸進式混合色彩：
 
@@ -27,7 +27,7 @@ ms.locfileid: "61158397"
 這些方法會傳回類型的物件[ `SKShader` ](xref:SkiaSharp.SKShader)設為[ `Shader` ](xref:SkiaSharp.SKPaint.Shader)屬性`SKPaint`。 如果`Shader`屬性為非 null，它會覆寫`Color`屬性。 任何描邊的一行或任何使用此填滿的區域`SKPaint`物件為基礎的漸層，而不是色彩的純色。
 
 > [!NOTE]
-> `Shader`屬性會被忽略，當您將包含`SKPaint`物件中`DrawBitmap`呼叫。 您可以使用`Color`屬性`SKPaint`若要設定顯示點陣圖的透明度層級 (文件中所述[顯示 SkiaSharp 點陣圖](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))，但是您無法使用`Shader`顯示的屬性漸層的透明度與點陣圖。 其他技術可供顯示使用漸層停駐的投影片的點陣圖：這些文章中所述[SkiaSharp 循環的漸層](circular-gradients.md#radial-gradients-for-masking)並[SkiaSharp 複合 （compositing） 和 blend 模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)。
+> `Shader`屬性會被忽略，當您將包含`SKPaint`物件中`DrawBitmap`呼叫。 您可以使用`Color`屬性`SKPaint`若要設定顯示點陣圖的透明度層級 (文件中所述[顯示 SkiaSharp 點陣圖](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))，但是您無法使用`Shader`顯示的屬性漸層的透明度與點陣圖。 其他技術可用於顯示具有漸層透明效果的點陣圖:這些檔會在[SkiaSharp 迴圈](circular-gradients.md#radial-gradients-for-masking)漸層和[SkiaSharp 複合和 blend 模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)的文章中加以說明。
 
 ## <a name="corner-to-corner-gradients"></a>角-漸層
 
@@ -37,7 +37,7 @@ ms.locfileid: "61158397"
 - 水平擴展至右上角
 - 右下方的對角線，
 
-對角線性漸層所示的第一頁**SkiaSharp 著色器和其他效果**一節[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例。 **角-漸層** 頁面建立`SKCanvasView`其建構函式中。 `PaintSurface`處理常式會建立`SKPaint`物件中`using`陳述式，然後定義置於畫布的 300 像素正方形的矩形：
+對角線性漸層所示的第一頁**SkiaSharp 著色器和其他效果**一節[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例。 **角-漸層** 頁面建立`SKCanvasView`其建構函式中。 `PaintSurface`處理常式會建立`SKPaint`物件中`using`陳述式，然後定義置於畫布的 300 像素正方形的矩形：
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -477,7 +477,7 @@ public class GradientAnimationPage : ContentPage
 
 `OnTimerTick`方法會計算`angle`以動畫顯示從 0 到 2 π 每隔 3 秒的值。 
 
-以下是一個來計算兩個漸層停駐點的方式。 `SKPoint`值並命名為`vector`計算圓形的半徑點延伸從畫布的正中央。 這個向量的方向根據角度的正弦和餘弦值。 然後會計算兩個相反的漸層停駐點：一個點的計算方式是減去的向量從中心點，並加入到中心點的向量來計算其他點：
+以下是一個來計算兩個漸層停駐點的方式。 `SKPoint`值並命名為`vector`計算圓形的半徑點延伸從畫布的正中央。 這個向量的方向根據角度的正弦和餘弦值。 接著會計算兩個相反的漸層點:其中一個點的計算方式是從中心點減去該向量, 而其他點則是藉由將向量新增至中心點來計算:
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -511,7 +511,7 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-以稍有不同的方法需要較少的程式碼。 這個方法會利用[ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))矩陣轉換，最後一個引數的方法多載。 這種方法是中的版本[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例：
+以稍有不同的方法需要較少的程式碼。 這個方法會利用[ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))矩陣轉換，最後一個引數的方法多載。 這種方法是中的版本[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例：
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -617,13 +617,13 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-中的兩個漸層停駐點`CreateLinearGradient`方法會根據兩個定義這個路徑的點：這兩個點都接近左上角。 第一個是在畫布的邊緣和第二個是在畫布左邊緣。 結果如下：
+`CreateLinearGradient`方法中的兩個漸層點是以定義此路徑的兩個點為基礎:這兩個點都靠近左上角。 第一個是在畫布的邊緣和第二個是在畫布左邊緣。 結果如下：
 
 [![Rainbow 漸層故障](linear-gradient-images/RainbowGradientFaulty.png "故障的 Rainbow 漸層")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 
 這是一個有趣的影像，但不是很意圖。 問題是在建立線形漸層時，常數色彩的線條垂直漸層線。 漸層線為基礎的點圖碰觸的上方和左邊的側邊，而那一行通常不是垂直延伸至右下角圖的邊緣。 這種方法可行，只有當畫布已在方形。
 
-若要建立適當的 rainbow 漸層，必須是彩虹的邊緣的垂直漸層線。 這是更複雜的計算。 向量必須定義平行圖的長邊。 讓您可於該側的垂直向量會是旋轉 90 度。 然後要乘以的圖的寬度加長`rainbowWidth`。 兩個漸層停駐點是根據上圖中，旁邊的點以及計算該點再加上向量。 以下是會出現在程式碼**彩虹漸層停駐**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例：
+若要建立適當的 rainbow 漸層，必須是彩虹的邊緣的垂直漸層線。 這是更複雜的計算。 向量必須定義平行圖的長邊。 讓您可於該側的垂直向量會是旋轉 90 度。 然後要乘以的圖的寬度加長`rainbowWidth`。 兩個漸層停駐點是根據上圖中，旁邊的點以及計算該點再加上向量。 以下是會出現在程式碼**彩虹漸層停駐**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例：
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -917,4 +917,4 @@ textBounds.Offset(xText, yText);
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: a38249236e758728452ff25fd0c486c3d03ce8fc
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: dccae3b3da4ab84c8ba14f204263e4230f31e833
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970993"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656778"
 ---
 # <a name="device-orientation"></a>裝置方向
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 
 請務必考慮應用程式使用的方式，以及如何合併橫向，來改善使用者經驗。 個別的版面配置可以設計來容納多個方向，最好使用的可用空間。 應用程式層級，可以停用或啟用旋轉。
 
@@ -71,7 +71,7 @@ Xamarin.Android 支援數個選項來指定方向：
 - **橫向**&ndash;強制應用程式方向為橫向，無論感應器資料。
 - **直向**&ndash;強制應用程式方向是直向，不論感應器資料。
 - **使用者**&ndash;導致應用程式能使用使用者的慣用的方向。
-- **後置**&ndash;會導致應用程式的方向的方向相同[活動](https://developer.xamarin.com/api/type/Android.App.Activity/)背後。
+- **後置**&ndash;會導致應用程式的方向的方向相同[活動](xref:Android.App.Activity)背後。
 - **感應器**&ndash;導致應用程式的方向感應器，來判斷，即使使用者已停用自動旋轉。
 - **SensorLandscape** &ndash;會導致應用程式使用橫向時使用感應器資料變更 （以便讓畫面未顯示為 面朝下），面向螢幕的方向。
 - **SensorPortrait** &ndash;會導致應用程式使用直式方向，同時使用感應器資料變更 （以便讓畫面未顯示為 面朝下），面向螢幕的方向。
@@ -475,7 +475,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 ## <a name="related-links"></a>相關連結
 
-- [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
-- [回應式配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [顯示基礎 堶菾 的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)
+- [版面配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 範例 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [回應式配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+- [顯示基的映像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

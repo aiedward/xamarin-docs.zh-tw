@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的資料格背景色彩
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台特定設定在 iOS 上的儲存格的預設背景色彩。
+title: IOS 上的儲存格背景色彩
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的來設定 iOS 上儲存格的預設背景色彩。
 ms.prod: xamarin
 ms.assetid: 2A3FDACF-5AE2-40DE-8488-6FE41733712F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 6b1e2fe534c8b7d0c3346a18d1b82d797e52dba1
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 24276dce97e4935ba41d7012cf6a9aa8fa2658a8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926774"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651381"
 ---
-# <a name="cell-background-color-on-ios"></a>在 iOS 上的資料格背景色彩
+# <a name="cell-background-color-on-ios"></a>IOS 上的儲存格背景色彩
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台特定設定的預設背景色彩[ `Cell` ](xref:Xamarin.Forms.Cell)執行個體。 它由在 XAML 中設定`Cell.DefaultBackgroundColor`可繫結的屬性，以[ `Color` ](xref:Xamarin.Forms.Color):
+此 iOS 平臺特定會設定[`Cell`](xref:Xamarin.Forms.Cell)實例的預設背景色彩。 `Cell.DefaultBackgroundColor` [將`Color`](xref:Xamarin.Forms.Color)可系結屬性設定為, 即可在 XAML 中使用它:
 
 ```xaml
 <ContentPage ...
@@ -52,14 +52,14 @@ var viewCell = new ViewCell { View = ... };
 viewCell.On<iOS>().SetDefaultBackgroundColor(Color.Teal);
 ```
 
-`ListView.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 `Cell.SetDefaultBackgroundColor`方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，設定為指定的資料格背景色彩[ `Color` ](xref:Xamarin.Forms.Color)。 颾魤 ㄛ`Cell.DefaultBackgroundColor`方法可用來擷取目前的資料格背景色彩。
+`ListView.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 在`Cell.SetDefaultBackgroundColor` [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間中的方法會將儲存格背景色彩設為指定[`Color`](xref:Xamarin.Forms.Color)的。 此外, `Cell.DefaultBackgroundColor`方法可以用來抓取目前的儲存格背景色彩。
 
-結果是中的背景色彩[ `Cell` ](xref:Xamarin.Forms.Cell)可以設定為特定[ `Color` ](xref:Xamarin.Forms.Color):
+結果是中[`Cell`](xref:Xamarin.Forms.Cell)的背景色彩可以設定為特定[`Color`](xref:Xamarin.Forms.Color)的:
 
-[![青綠色群組首資料格，在 iOS 上的螢幕擷取畫面](cell-background-color-images/group-header-cell-color.png "藍綠色群組首資料格與 ListView")](cell-background-color-images/group-header-cell-color-large.png#lightbox "藍綠色群組首資料格與 ListView")
+[IOS(cell-background-color-images/group-header-cell-color.png "ListView 上具有青色群組標頭")儲存格的![青色群組首儲存格的螢幕擷取畫面]](cell-background-color-images/group-header-cell-color-large.png#lightbox "具有藍綠色群組首儲存格的 ListView")
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

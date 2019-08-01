@@ -1,6 +1,6 @@
 ---
 title: 設計跨平台 Xamarin.Forms 應用程式
-description: 這篇文章說明如何使用 XAML 樣式設定樣式的跨平台 Xamarin.Forms 應用程式。
+description: 本文說明如何使用 XAML 樣式, 為跨平臺的 Xamarin. Forms 應用程式建立樣式。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -9,37 +9,37 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
-ms.openlocfilehash: 1b68afc1f3d3c57a5c336e9d30c97ce2375acb9f
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: e26a71ad72b557a27841bfee1d26001126e2a2a2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864351"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654660"
 ---
-# <a name="style-a-cross-platform-xamarinforms-application"></a>跨平台 Xamarin.Forms 應用程式
+# <a name="style-a-cross-platform-xamarinforms-application"></a>建立跨平臺 Xamarin 應用程式的樣式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Styled/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
-在本快速入門中，您將了解如何：
+在本快速入門中, 您將瞭解如何:
 
-- 設定 Xamarin.Forms 應用程式使用 XAML 樣式的樣式。
+- 使用 XAML 樣式, 將 Xamarin. Forms 應用程式樣式。
 
-快速入門逐步解說如何使用 XAML 樣式設定樣式的跨平台 Xamarin.Forms 應用程式。 最終的應用程式如下所示：
+本快速入門將逐步解說如何使用 XAML 樣式來為跨平臺的 Xamarin. Forms 應用程式建立樣式。 最終的應用程式如下所示：
 
-[![](styling-images/screenshots1-sml.png "備忘稿")](styling-images/screenshots1.png#lightbox "備忘稿")
-[![](styling-images/screenshots2-sml.png "附註項目頁面")](styling-images/screenshots2.png#lightbox "附註項目頁面")
+[附注] 頁面[ ![(styling-images/screenshots1-sml.png "")] ][(styling-images/screenshots1.png#lightbox "附注] 頁面")附注輸入頁面(styling-images/screenshots2.png#lightbox "便箋輸入頁面") [ ![(styling-images/screenshots2-sml.png "")] ] 
+
 
 ### <a name="prerequisites"></a>必要條件
 
-您應該已成功完成[先前的快速入門](database.md)之前嘗試本快速入門。 或者，下載[先前的快速入門範例](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Database/)並使用它做為起點，在本快速入門。
+您應該先成功完成[先前的快速入門](database.md), 再嘗試進行本快速入門。 或者, 下載[先前的快速入門範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/), 並使用它做為本快速入門的起點。
 
 ::: zone pivot="windows"
 
 ## <a name="update-the-app-with-visual-studio"></a>使用 Visual Studio 更新應用程式
 
-1. 啟動 Visual Studio，並開啟備忘稿方案。
+1. 啟動 Visual Studio 並開啟 [附注] 解決方案。
 
-2. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**App.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+2. 在**方案總管**的 [ **Notes** ] 專案中, 按兩下 [App.xaml] 以開啟**應用程式**。 然後將現有的程式碼取代為下列程式碼:
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -77,11 +77,11 @@ ms.locfileid: "67864351"
     </Application>
     ```
 
-    此程式碼定義[ `Thickness` ](xref:Xamarin.Forms.Thickness)值，就會有一系列[ `Color` ](xref:Xamarin.Forms.Color)值，以及隱含樣式[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)和[ `ContentPage`](xref:Xamarin.Forms.ContentPage). 注意，這些樣式，也就是在應用程式層級[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，可取用整個應用程式。 如需有關 XAML 樣式設定的詳細資訊，請參閱[樣式](deepdive.md#styling)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼會[`Thickness`](xref:Xamarin.Forms.Thickness)定義值、一系列[`Color`](xref:Xamarin.Forms.Color)的值, [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)以及和[`ContentPage`](xref:Xamarin.Forms.ContentPage)的隱含樣式。 請注意, 應用層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中的這些樣式可在整個應用程式中使用。 如需 XAML 樣式的詳細資訊, 請參閱 Xamarin 中的[樣式](deepdive.md#styling)[快速入門深入探討](deepdive.md)。
 
-    變更儲存到**App.xaml**藉由按下**CTRL + S**，並關閉檔案。
+    按下**CTRL + S**, 將變更儲存至**app.xaml** , 然後關閉檔案。
 
-3. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NotesPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+3. 在**方案總管**的**Notes**專案中, 按兩下**NotesPage**以將其開啟。 然後將現有的程式碼取代為下列程式碼:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -116,11 +116,11 @@ ms.locfileid: "67864351"
     </ContentPage>
     ```
 
-    這個程式碼加入的隱含樣式[ `ListView` ](xref:Xamarin.Forms.ListView)到頁面層級[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，並設定`ListView.Margin`屬性設為值定義於應用程式層級`ResourceDictionary`. 請注意，`ListView`隱含樣式已新增至 頁面層級`ResourceDictionary`，因為它只會取用`NotesPage`。 如需有關 XAML 樣式設定的詳細資訊，請參閱[樣式](deepdive.md#styling)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式[`ListView`](xref:Xamarin.Forms.ListView)代碼會將的隱含樣式加入頁面層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary), 並將`ListView.Margin`屬性設定為應用層級`ResourceDictionary`中定義的值。 請注意, `ResourceDictionary` `NotesPage`隱含樣式已加入頁面層級, 因為它只會`ListView`由使用。 如需 XAML 樣式的詳細資訊, 請參閱 Xamarin 中的[樣式](deepdive.md#styling)[快速入門深入探討](deepdive.md)。
 
-    變更儲存到**NotesPage.xaml**藉由按下**CTRL + S**，並關閉檔案。
+    按下**CTRL + S**, 將變更儲存到**NotesPage** , 然後關閉檔案。
 
-4. 在 [**方案總管] 中**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+4. 在**方案總管**的**Notes**專案中, 按兩下**NoteEntryPage**以將其開啟。 然後將現有的程式碼取代為下列程式碼:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -165,22 +165,22 @@ ms.locfileid: "67864351"
     </ContentPage>
     ```
 
-    這個程式碼加入隱含樣式[ `Editor` ](xref:Xamarin.Forms.Editor)並[ `Button` ](xref:Xamarin.Forms.Button)頁面層級的檢視[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，並設定`StackLayout.Margin`屬性設為值定義於應用程式層級`ResourceDictionary`。 請注意，`Editor`並`Button`隱含樣式已新增至 頁面層級`ResourceDictionary`，因為它們僅供`NoteEntryPage`。 如需有關 XAML 樣式設定的詳細資訊，請參閱[樣式](deepdive.md#styling)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此[`Editor`](xref:Xamarin.Forms.Editor)程式碼會將和[`Button`](xref:Xamarin.Forms.Button) views 的隱含樣式加入頁面`StackLayout.Margin`層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary), 並將屬性設定為應用層級`ResourceDictionary`中定義的值。 請注意, `Button` `ResourceDictionary` `NoteEntryPage`和隱含樣式已加入頁面層級, 因為它們只會由使用。 `Editor` 如需 XAML 樣式的詳細資訊, 請參閱 Xamarin 中的[樣式](deepdive.md#styling)[快速入門深入探討](deepdive.md)。
 
-    變更儲存到**NoteEntryPage.xaml**藉由按下**CTRL + S**，並關閉檔案。
+    按下**CTRL + S**, 將變更儲存到**NoteEntryPage** , 然後關閉檔案。
 
-5. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
+5. 在每個平臺上建立並執行專案。 如需詳細資訊, 請參閱[建立快速入門](single-page.md#building-the-quickstart)。
 
-    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每個頁面上，觀察如何樣式已從先前的快速入門。
+    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每一頁上, 觀察如何從先前的快速入門中變更樣式。
 
 ::: zone-end
 ::: zone pivot="macos"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 更新應用程式
 
-1. 啟動 Visual Studio for Mac，並開啟備忘稿專案。
+1. 啟動 Visual Studio for Mac 並開啟 [Notes] 專案。
 
-2. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**App.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+2. 在  **Solution Pad**的**Notes**專案中, 按兩下  **app.xaml**  加以開啟。 然後將現有的程式碼取代為下列程式碼:
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -218,11 +218,11 @@ ms.locfileid: "67864351"
     </Application>
     ```
 
-    此程式碼定義[ `Thickness` ](xref:Xamarin.Forms.Thickness)值，就會有一系列[ `Color` ](xref:Xamarin.Forms.Color)值，以及隱含樣式[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)和[ `ContentPage`](xref:Xamarin.Forms.ContentPage). 注意，這些樣式，也就是在應用程式層級[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，可取用整個應用程式。 如需有關 XAML 樣式設定的詳細資訊，請參閱[樣式](deepdive.md#styling)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式碼會[`Thickness`](xref:Xamarin.Forms.Thickness)定義值、一系列[`Color`](xref:Xamarin.Forms.Color)的值, [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)以及和[`ContentPage`](xref:Xamarin.Forms.ContentPage)的隱含樣式。 請注意, 應用層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中的這些樣式可在整個應用程式中使用。 如需 XAML 樣式的詳細資訊, 請參閱 Xamarin 中的[樣式](deepdive.md#styling)[快速入門深入探討](deepdive.md)。
 
-    變更儲存到**App.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
+    選擇 [檔案] **> [儲存**] (或按 **&#8984; + S**), 然後關閉檔案, 以儲存對**app.xaml**的變更。
 
-3. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NotesPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+3. 在  **Solution Pad**的**Notes**專案中, 按兩下  **NotesPage**  加以開啟。 然後將現有的程式碼取代為下列程式碼:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -257,11 +257,11 @@ ms.locfileid: "67864351"
     </ContentPage>
     ```
 
-    這個程式碼加入的隱含樣式[ `ListView` ](xref:Xamarin.Forms.ListView)到頁面層級[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，並設定`ListView.Margin`屬性設為值定義於應用程式層級`ResourceDictionary`. 請注意，`ListView`隱含樣式已新增至 頁面層級`ResourceDictionary`，因為它只會取用`NotesPage`。 如需有關 XAML 樣式設定的詳細資訊，請參閱[樣式](deepdive.md#styling)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此程式[`ListView`](xref:Xamarin.Forms.ListView)代碼會將的隱含樣式加入頁面層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary), 並將`ListView.Margin`屬性設定為應用層級`ResourceDictionary`中定義的值。 請注意, `ResourceDictionary` `NotesPage`隱含樣式已加入頁面層級, 因為它只會`ListView`由使用。 如需 XAML 樣式的詳細資訊, 請參閱 Xamarin 中的[樣式](deepdive.md#styling)[快速入門深入探討](deepdive.md)。
 
-    變更儲存到**NotesPage.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
+    選擇 [檔案] **> [儲存**] (或按 **&#8984; + S**), 將變更儲存到**NotesPage** , 然後關閉檔案。
 
-4. 在  **Solution Pad**，請在**備忘稿**專案中，按兩下**NoteEntryPage.xaml**加以開啟。 然後以下列程式碼取代現有的程式碼：
+4. 在  **Solution Pad**的**Notes**專案中, 按兩下  **NoteEntryPage**  加以開啟。 然後將現有的程式碼取代為下列程式碼:
 
     ```xaml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -306,29 +306,29 @@ ms.locfileid: "67864351"
     </ContentPage>
     ```
 
-    這個程式碼加入隱含樣式[ `Editor` ](xref:Xamarin.Forms.Editor)並[ `Button` ](xref:Xamarin.Forms.Button)頁面層級的檢視[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，並設定`StackLayout.Margin`屬性設為值定義於應用程式層級`ResourceDictionary`。 請注意，`Editor`並`Button`隱含樣式已新增至 頁面層級`ResourceDictionary`，因為它們僅供`NoteEntryPage`。 如需有關 XAML 樣式設定的詳細資訊，請參閱[樣式](deepdive.md#styling)中[Xamarin.Forms 快速入門深入探討](deepdive.md)。
+    此[`Editor`](xref:Xamarin.Forms.Editor)程式碼會將和[`Button`](xref:Xamarin.Forms.Button) views 的隱含樣式加入頁面`StackLayout.Margin`層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary), 並將屬性設定為應用層級`ResourceDictionary`中定義的值。 請注意, `Button` `ResourceDictionary` `NoteEntryPage`和隱含樣式已加入頁面層級, 因為它們只會由使用。 `Editor` 如需 XAML 樣式的詳細資訊, 請參閱 Xamarin 中的[樣式](deepdive.md#styling)[快速入門深入探討](deepdive.md)。
 
-    變更儲存到**NoteEntryPage.xaml**選擇**檔案 > 儲存**(或按下 **&#8984; + S**)，然後關閉檔案。
+    選擇 [檔案] **> [儲存**] (或按 **&#8984; + S**), 將變更儲存到**NoteEntryPage** , 然後關閉檔案。
 
-5. 建置並執行專案，每個平台。 如需詳細資訊，請參閱 <<c0> [ 建置快速入門](single-page.md#building-the-quickstart)。
+5. 在每個平臺上建立並執行專案。 如需詳細資訊, 請參閱[建立快速入門](single-page.md#building-the-quickstart)。
 
-    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每個頁面上，觀察如何樣式已從先前的快速入門。
+    在上**NotesPage**按下 **+** 按鈕，巡覽至**NoteEntryPage**和輸入的附註。 在每一頁上, 觀察如何從先前的快速入門中變更樣式。
 
 ::: zone-end
 
 
 ## <a name="next-steps"></a>後續步驟
 
-在此快速入門中，您已了解如何：
+在本快速入門中, 您已瞭解如何:
 
-- 設定 Xamarin.Forms 應用程式使用 XAML 樣式的樣式。
+- 使用 XAML 樣式, 將 Xamarin. Forms 應用程式樣式。
 
-若要深入了解使用 Xamarin.Forms 開發應用程式的基本概念，繼續進行快速入門深入探討。
+若要深入瞭解使用 Xamarin 進行應用程式開發的基本概念, 請繼續進行深入瞭解的快速入門。
 
 > [!div class="nextstepaction"]
 > [下一個](deepdive.md)
 
 ## <a name="related-links"></a>相關連結
 
-- [Notes (範例)](https://developer.xamarin.com/samples/xamarin-forms/GetStarted/Notes/Styled/)
-- [Xamarin.Forms 快速入門深入探討](deepdive.md)
+- [Notes (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+- [Xamarin. 表單快速入門深入探討](deepdive.md)

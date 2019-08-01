@@ -1,53 +1,53 @@
 ---
-title: 在 Xamarin.iOS 中的應用程式的傳輸安全性
-description: 應用程式的傳輸安全性 (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。
+title: Xamarin 中的應用程式傳輸安全性
+description: 應用程式傳輸安全性 (ATS) 會在網際網路資源 (例如應用程式的後端伺服器) 和您的應用程式之間, 強制執行安全的連接。
 ms.prod: xamarin
 ms.assetid: F8C5E444-2D05-4D9B-A2EF-EB052CD6F007
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: a901e16b3d5befc25864af39cb255d1833400e7f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 62ccaea83a3648c5d9b0a029b3a22d136c4f2cee
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60955809"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649416"
 ---
-# <a name="app-transport-security-in-xamarinios"></a>在 Xamarin.iOS 中的應用程式的傳輸安全性
+# <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的應用程式傳輸安全性
 
-_應用程式的傳輸安全性 (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。_
+_應用程式傳輸安全性 (ATS) 會在網際網路資源 (例如應用程式的後端伺服器) 和您的應用程式之間, 強制執行安全的連接。_
 
-本文將介紹應用程式的傳輸安全性會強制執行 iOS 9 應用程式的安全性變更並[這表示您的 Xamarin.iOS 專案](#xamarinsupport)，它將會涵蓋[ATS 組態選項](#config)和它將討論如何[ATS 退出](#optout)ATS 如有必要。 因為預設會啟用 ATS，任何不安全的網際網路連線將會引發 iOS 9 應用程式中的例外狀況 （除非您已明確允許它）。
+本文將介紹應用程式傳輸安全性在 iOS 9 應用程式上強制執行的安全性變更, 以及[這對您的 Xamarin ios 專案所代表的意義。](#xamarinsupport)它會涵蓋[ATS 設定選項](#config), 並涵蓋如何選擇不使用[ATS](#optout)ATS (如有必要)。 因為預設會啟用 ATS, 所以任何不安全的網際網路連線都會在 iOS 9 應用程式中引發例外狀況 (除非您已明確允許)。
 
 
-## <a name="about-app-transport-security"></a>關於應用程式的傳輸安全性
+## <a name="about-app-transport-security"></a>關於應用程式傳輸安全性
 
-如上所述，ATS 可確保所有的網際網路通訊，在 iOS 9 和 OS X El Capitan 符合保護連線安全的最佳作法，藉此防止意外洩露機密的資訊，直接透過您的應用程式或其程式庫耗用。
+如上所述, ATS 可確保 iOS 9 和 OS X El Capitan 中的所有網際網路通訊都符合安全連線最佳作法, 藉此防止意外洩漏敏感性資訊, 無論是直接透過您的應用程式或程式庫耗用.
 
-針對現有的應用程式，實作`HTTPS`盡可能通訊協定。 針對新的 Xamarin.iOS 應用程式，您應該使用`HTTPS`與網際網路資源進行通訊時，以獨佔方式。 此外，您必須使用 TLS 1.2 版與正向加密來加密高階 API 通訊。
+針對現有的應用程式, `HTTPS`盡可能執行此通訊協定。 針對新的 Xamarin iOS 應用程式, 您應該`HTTPS`在與網際網路資源通訊時, 以獨佔方式使用。 此外, 您必須使用具有轉寄密碼的 TLS 1.2 版來加密高階 API 通訊。
 
-與所做的任何連線[NSUrlConnection](xref:Foundation.NSUrlConnection)， [CFUrl](xref:CoreFoundation.CFUrl)或是[NSUrlSession](xref:Foundation.NSUrlSession)適用於 iOS 9 和 OS X 10.11 (El Capitan) 建置的應用程式中的預設會使用 ATS。
+使用[NSUrlConnection](xref:Foundation.NSUrlConnection)、 [CFUrl](xref:CoreFoundation.CFUrl)或[NSUrlSession](xref:Foundation.NSUrlSession)所建立的任何連線, 預設會在 iOS 9 和 OS X 10.11 (El Capitan) 所建立的應用程式中使用 ATS。
 
 ## <a name="default-ats-behavior"></a>預設 ATS 行為
 
-因為在建置適用於 iOS 9 和 OS X 10.11 (El Capitan) 使用的所有連線的應用程式預設會啟用 ATS [NSUrlConnection](xref:Foundation.NSUrlConnection)， [CFUrl](xref:CoreFoundation.CFUrl)或是[NSUrlSession](xref:Foundation.NSUrlSession)會受限於ATS 安全性需求。 如果您的連線不符合這些需求，它們將會失敗並發生例外狀況。
+由於預設會在針對 iOS 9 和 OS X 10.11 (El Capitan) 建立的應用程式中啟用 ATS, 因此使用[NSUrlConnection](xref:Foundation.NSUrlConnection)、 [CFUrl](xref:CoreFoundation.CFUrl)或[NSUrlSession](xref:Foundation.NSUrlSession)的所有連線都將受限於 ATS 安全性需求。 如果您的連線不符合這些需求, 則會失敗並產生例外狀況。
 
-### <a name="ats-connection-requirements"></a>ATS 連線需求
+### <a name="ats-connection-requirements"></a>ATS 連接需求
 
-ATS 會強制所有網際網路連線的下列需求：
+ATS 會針對所有網際網路連線強制執行下列需求:
 
-- 正向加密，必須使用所有的連接加密。 請參閱下方的可接受加密的清單。
-- 傳輸層安全性 (TLS) 通訊協定必須是 1.2 或更新版本。
-- 至少具有 2048 位元或更高的 RSA 金鑰，或 256 位元或更高的 Elliptic Curve (ECC) 金鑰的 SHA256 指紋必須用於所有的憑證。
+- 所有連線加密都必須使用轉寄密碼。 請參閱下列已接受的密碼清單。
+- 傳輸層安全性 (TLS) 通訊協定必須是1.2 或更高版本。
+- 至少有一個 SHA256 指紋具有2048位或更高的 RSA 金鑰, 或是256位或更大的橢圓曲線 (ECC) 金鑰必須用於所有憑證。
 
-同樣地，因為在 iOS 9 的預設會啟用 ATS，嘗試使不符合這些需求的連接將會導致擲回例外狀況。 
+同樣地, 由於 iOS 9 中預設已啟用 ATS, 因此任何嘗試建立不符合這些需求的連線都會導致擲回例外狀況。 
 
 <a name="ATS-Compatible-Ciphers" />
 
-### <a name="ats-compatible-ciphers"></a>ATS 相容的加密
+### <a name="ats-compatible-ciphers"></a>ATS 相容的密碼
 
-保護網際網路通訊的 ATS 接受下列的正向加密的加密類型：
+ATS 安全的網際網路通訊可接受下列轉寄密碼加密類型:
 
 - `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
 - `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
@@ -61,97 +61,97 @@ ATS 會強制所有網際網路連線的下列需求：
 - `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256`
 - `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA`
 
-如需有關使用 iOS 網際網路通訊類別的詳細資訊，請參閱 Apple [NSURLConnection 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/doc/uid/TP40003755)， [CFURL 參考](https://developer.apple.com/library/prerelease/ios/documentation/CoreFoundation/Reference/CFURLRef/index.html#//apple_ref/doc/uid/20001206)或[NSURLSession 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/doc/uid/TP40013435).
+如需有關使用 iOS 網際網路通訊類別的詳細資訊, 請參閱 Apple 的[NSURLConnection 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html#//apple_ref/doc/uid/TP40003755)、 [CFURL 參考](https://developer.apple.com/library/prerelease/ios/documentation/CoreFoundation/Reference/CFURLRef/index.html#//apple_ref/doc/uid/20001206)或[NSURLSession 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/Foundation/Reference/NSURLSession_class/index.html#//apple_ref/doc/uid/TP40013435)。
 
 <a name="xamarinsupport" />
 
-## <a name="supporting-ats-in-xamarinios"></a>在 Xamarin.iOS 中支援 ATS
+## <a name="supporting-ats-in-xamarinios"></a>支援 Xamarin 中的 ATS
 
-由於預設會在 iOS 9 和 OS X El Capitan，啟用 ATS，如果您的 Xamarin.iOS 應用程式的任何程式庫或它所使用的服務會建立連線到網際網路，您必須採取某些動作，或您的連線會導致擲回例外狀況。
+由於預設會在 iOS 9 和 OS X El Capitan 中啟用 ATS, 因此, 如果您的 Xamarin iOS 應用程式或它使用的任何程式庫或服務連線到網際網路, 您必須採取一些動作, 否則您的連線會導致擲回例外狀況。
 
-為現有的應用程式，Apple 會建議您在支援`HTTPS`儘速通訊協定。 如果您是因為您要連接到第 3 方不支援的 web 服務`HTTPS`則支援`HTTPS`不切實際，您可以退出 ATS。 請參閱[Opting 向外延展 ATS](#optout)節以取得詳細資料。
+針對現有的應用程式, Apple 建議您儘快`HTTPS`支援此通訊協定。 如果您無法連線到不支援`HTTPS`的協力廠商 web 服務, 或如果支援`HTTPS`不可行, 您可以選擇不使用 ATS。 如需詳細資訊, 請參閱下面的選擇不[ATS](#optout)一節。
 
-新的 Xamarin.iOS 應用程式中，您應該使用`HTTPS`與網際網路資源進行通訊時，以獨佔方式。 同樣地，可能會有一些情況 （例如使用第 3 個廠商的 web 服務） 不可行，您將需要 ATS 退出。
+針對新的 Xamarin iOS 應用程式, 您應該在`HTTPS`與網際網路資源通訊時, 以獨佔方式使用。 同樣地, 有時可能會發生這種情況 (例如使用協力廠商 web 服務), 而您必須退出宣告 ATS。
 
-此外，強制執行加密與正向加密使用 TLS 1.2 版的高階 API 通訊。 請參閱[ATS 連線需求](#ats-connection-requirements)並[ATS 相容編碼器](#ats-compatible-ciphers)上方區段，如需詳細資訊。
+此外, ATS 會強制使用具有轉寄密碼的 TLS 1.2 版來加密高階 API 通訊。 如需詳細資訊, 請參閱上面的 < [ATS 連線需求](#ats-connection-requirements)和[ATS 相容](#ats-compatible-ciphers)的加密一節。
 
-雖然您可能不熟悉 TLS ([傳輸層安全性](https://en.wikipedia.org/wiki/Transport_Layer_Security)) 是 SSL 的後繼者 ([安全通訊端層](https://en.wikipedia.org/wiki/Transport_Layer_Security))，並提供密碼編譯通訊協定，透過強制執行安全性的集合網路連線。
+雖然您可能不熟悉 TLS ([傳輸層安全性](https://en.wikipedia.org/wiki/Transport_Layer_Security)), 但它是 SSL ([安全通訊端層](https://en.wikipedia.org/wiki/Transport_Layer_Security)) 的後續版本, 並提供一組密碼編譯通訊協定, 以透過網路連線來強制執行安全性。
 
-TLS 層級由您使用 web 服務所控制，因此應用程式的控制之外。 同時`HttpClient`而`ModernHttpClient`應該會自動使用最高層級的伺服器所支援的 TLS 加密。
+TLS 層級是由您使用的 web 服務所控制, 因此在應用程式的控制範圍外。 `HttpClient` 和都應該自動使用伺服器支援的最`ModernHttpClient`高層級 TLS 加密。
 
-根據伺服器，您在跟通訊 （尤其是如果它是第 3 方服務），您可能需要停用轉寄密碼，或選取較低的 TLS 層級。 請參閱[設定 ATS 選項](#configuring-ats-options)節以取得詳細資料。
+根據您所使用的伺服器 (尤其是協力廠商服務), 您可能需要停用轉寄密碼或選取較低的 TLS 層級。 如需詳細資訊, 請參閱下面的設定[ATS 選項](#configuring-ats-options)一節。
 
 > [!IMPORTANT]
-> 應用程式的傳輸安全性不會套用至使用 Xamarin 應用程式**受管理的 HTTPClient 實作**。 它會套用至連線使用 CFNetwork **HTTPClient 實作**或是**NSURLSession HTTPClient 實作**只。
+> 應用程式傳輸安全性不適用於使用**受控 HTTPClient**的 Xamarin 應用程式。 它僅適用于使用 CFNetwork **HTTPClient**執行的連線, 或僅限**NSURLSession HTTPClient**的實作為連接。
 
-### <a name="setting-the-httpclient-implementation"></a>設定 HTTPClient 實作
+### <a name="setting-the-httpclient-implementation"></a>設定 HTTPClient 的執行
 
-若要設定使用 iOS 應用程式的 HTTPClient 實作，請按兩下**專案**中**方案總管**以開啟**專案選項**。 瀏覽至**iOS 組建**，然後選取在所需的用戶端類型**HttpClient 實作**下拉式清單中：
+若要設定 iOS 應用程式所使用的 HTTPClient 執行, 請按兩下 **方案總管**中的**專案**, 以開啟 **專案選項**。 流覽至 [ **IOS 組建**], 然後在 [ **HttpClient 執行**] 下拉式清單中選取所需的用戶端類型:
 
-![](ats-images/client01.png "設定 iOS 建置選項")
+![](ats-images/client01.png "設定 iOS 組建選項")
 
 
-#### <a name="managed-handler"></a>受管理的處理常式
+#### <a name="managed-handler"></a>受控處理常式
 
-受控處理常式是完全受控的 HttpClient 處理常式，與舊版 Xamarin.iOS 已寄出的預設處理常式。
+Managed 處理常式是由舊版的 Xamarin 隨附的完全受控 HttpClient 處理常式, 而且是預設的處理常式。
 
-專業人員：
+展開
 
-- 它是與 Microsoft.NET 和舊版本的 Xamarin 最相容。
+- 它與 Microsoft .NET 和舊版 Xamarin 最相容。
 
-缺點：
+各有利弊
 
-- 它完全不使用 iOS （例如限於 TLS 1.0） 整合。
-- 它是通常比慢很多原生 Api。
-- 它需要更多的 managed 程式碼，並且會建立較大的應用程式。
+- 它不完全與 iOS 整合 (例如, 它僅限於 TLS 1.0)。
+- 通常速度會比原生 Api 慢很多。
+- 它需要更多受控碼, 並建立較大的應用程式。
 
 #### <a name="cfnetwork-handler"></a>CFNetwork 處理常式
 
-CFNetwork 基礎處理常式為基礎的原生`CFNetwork`framework。
+以 CFNetwork 為基礎的處理常式是以`CFNetwork`原生架構為基礎。
 
-專業人員：
+展開
 
-- 使用原生 API 的更佳的效能和較小的可執行檔大小。
-- 加入較新的標準，例如 TLS 1.2 支援。
+- 使用原生 API 以獲得更佳的效能和較小的可執行檔案大小。
+- 新增 TLS 1.2 等較新標準的支援。
 
-缺點：
+各有利弊
 
 - 需要 iOS 6 或更新版本。
-- WatchOS 的無法使用。
-- 某些 HttpClient 功能和選項無法使用。
+- WatchOS 無法使用。
+- 有些 HttpClient 功能和選項無法使用。
 
 #### <a name="nsurlsession-handler"></a>NSUrlSession 處理常式
 
-NSUrlSession 基礎處理常式為基礎的原生`NSUrlSession`API。
+以 NSUrlSession 為基礎的處理常式是以`NSUrlSession`原生 API 為基礎。
 
-專業人員：
+展開
 
-- 使用原生 API 的更佳的效能和較小的可執行檔大小。
-- 加入較新的標準，例如 TLS 1.2 支援。
+- 使用原生 API 以獲得更佳的效能和較小的可執行檔案大小。
+- 新增 TLS 1.2 等較新標準的支援。
 
-缺點：
+各有利弊
 
 - 需要 iOS 7 或更新版本。
-- 某些 HttpClient 功能和選項無法使用。 
+- 有些 HttpClient 功能和選項無法使用。 
 
 ## <a name="diagnosing-ats-issues"></a>診斷 ATS 問題
 
-當嘗試連線到網際網路，直接或從 web 檢視，在 iOS 9 中，您可能會發生錯誤，在表單中：
+嘗試直接或從 iOS 9 中的 web view 連線到網際網路時, 您可能會收到下列格式的錯誤:
 
-> 應用程式的傳輸安全性已封鎖的純文字 HTTP (http://www.-the-blocked-domain.com)資源負載，因為它是不安全。 暫時性例外狀況可以透過您的應用程式 Info.plist 檔案進行設定。
+> 應用程式傳輸安全性已封鎖純文字 HTTP http://www.-the-blocked-domain.com) (資源負載, 因為它不安全。 您可以透過應用程式的 plist 檔案來設定暫時的例外狀況。
 
-IOS9，App Transport Security (ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。 此外，ATS 需要通訊使用`HTTPS`通訊協定和加密正向加密搭配使用 TLS 1.2 版的高階 API 通訊。
+在 iOS9 中, 應用程式傳輸安全性 (ATS) 會在網際網路資源 (例如應用程式的後端伺服器) 和您的應用程式之間強制執行安全的連線。 此外, ATS 需要使用`HTTPS`通訊協定和高階 API 通訊, 以使用具有轉寄密碼的 TLS 1.2 版進行加密。
 
-因為在建置適用於 iOS 9 和 OS X 10.11 (El Capitan) 使用的所有連線的應用程式預設會啟用 ATS `NSURLConnection`，`CFURL`或`NSURLSession`將受限於 ATS 安全性需求。 如果您的連線不符合這些需求，它們將會失敗並發生例外狀況。
+由於預設會在針對 iOS 9 和 OS X 10.11 (El Capitan) 建立的應用程式中啟用 ATS, 因此`NSURLConnection`使用`CFURL`或`NSURLSession`的所有連線都會受到 ATS 的安全性需求。 如果您的連線不符合這些需求, 則會失敗並產生例外狀況。
 
-Apple 也提供[TLSTool 範例應用程式](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2)編譯的 (或選擇性地與 Xamarin 的轉碼和C#)，並用來診斷 ATS/TLS 的問題。 請參閱[Opting 向外延展 ATS](#optout)區段下方，如需如何解決此問題的資訊。
+Apple 也提供可編譯 (或選擇性地轉碼至 Xamarin 和C#) 的[TLSTool 範例應用程式](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2), 並可用來診斷 ATS/TLS 問題。 如需如何解決此問題的相關資訊, 請參閱下面的選擇不[ATS](#optout)一節。
 
 
 <a name="config" />
 
 ## <a name="configuring-ats-options"></a>設定 ATS 選項
 
-您可以在您的應用程式中設定特定的索引鍵的值來設定數個 ATS 的功能**Info.plist**檔案。 下列機碼可供控制 ATS (_縮排，以顯示巢狀方式_):
+您可以設定應用程式**資訊 plist**檔案中特定索引鍵的值, 以設定 ATS 的數個功能。 下列機碼可用於控制 ATS (_縮排以顯示它們的嵌套方式_):
 
 ```csharp
 NSAppTransportSecurity
@@ -169,29 +169,29 @@ NSAppTransportSecurity
         NSThirdPartyExceptionAllowsInsecureHTTPLoads
 ```
 
-每個索引鍵具有下列類型和意義：
+每個索引鍵都有下列類型和意義:
 
-- **NSAppTransportSecurity** (`Dictionary`)-包含所有的設定索引鍵和值 ATS。
-- **NSAllowsArbitraryLoads** (`Boolean`)-如果`YES`任何網域將會停用 ATS**不**中所列`NSExceptionDomains`。 對於列出的網域，您將使用指定的安全性設定。
-- **NSAllowsArbitraryLoadsInWebContent** (`Boolean`)-如果`YES`可正確載入，而應用程式的其餘部分仍啟用 Apple Transport Security (ATS) 保護的網頁。
-- **NSExceptionDomains** (`Dictionary`)-網域的集合，以及 ATS 應該用於指定網域的安全性設定。
-- **< Domain-name-for-exception-as-string >** (`Dictionary`)-針對指定的網域 （例如例外狀況的集合。 `www.xamarin.com`)。
-- **NSExceptionMinimumTLSVersion** (`String`)-為的最低 TLS 版本`TLSv1.0`，`TLSv1.1`或`TLSv1.2`（此為預設值）。
-- **NSExceptionRequiresForwardSecrecy** (`Boolean`)-如果`NO`網域不需要使用轉送安全性加密。 預設值為 `YES`。
-- **NSExceptionAllowsInsecureHTTPLoads** (`Boolean`)-如果`NO`（預設值） 中，必須是與此網域的所有通訊`HTTPS`通訊協定。
-- **NSRequiresCertificateTransparency** (`Boolean`)-如果`YES`網域的安全通訊端層 (SSL) 必須包含有效的透明資料。 預設值為 `NO`。
-- **NSIncludesSubdomains** (`Boolean`)-如果`YES`這些設定會覆寫此網域的所有子網域。 預設值為 `NO`。
-- **NSThirdPartyExceptionMinimumTLSVersion** (`String`)-第 3 個合作對象服務開發人員的控制之外的網域時所使用的 TLS 版本。
-- **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`)-如果`YES`第 3 個合作對象網域需要正向加密。
-- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`)-如果`YES`ATS 會允許不安全的通訊，與第 3 個合作對象網域。
+- **NSAppTransportSecurity**(`Dictionary`)-包含 ATS 的所有設定機碼和值。
+- **NSAllowsArbitraryLoads**(`Boolean`)-如果`YES` ATS 將針對中`NSExceptionDomains`**未**列出的任何網域停用。 針對列出的網域, 將會使用指定的安全性設定。
+- **NSAllowsArbitraryLoadsInWebContent**(`Boolean`)-如果`YES`允許 web 網頁正確載入, 則仍會為應用程式的其餘部分啟用 Apple 傳輸安全性 (ATS) 保護。
+- **NSExceptionDomains**(`Dictionary`)-網域的集合, 以及 ATS 應該針對指定的網域使用的安全性設定。
+- **< 的功能變數名稱-例外狀況字串 >** (`Dictionary`)-指定網域的例外狀況集合 (例如 `www.xamarin.com`)。
+- **NSExceptionMinimumTLSVersion**(`String`)-最低的 TLS 版本`TLSv1.0`, 可為`TLSv1.1` 、 `TLSv1.2`或 (這是預設值)。
+- **NSExceptionRequiresForwardSecrecy**(`Boolean`)-如果`NO`網域不需要使用具有正向安全性的加密。 預設值為 `YES`。
+- **NSExceptionAllowsInsecureHTTPLoads**(`Boolean`)-如果`NO`為 (預設值), 則與此`HTTPS`網域的所有通訊都必須在通訊協定中。
+- **NSRequiresCertificateTransparency**(`Boolean`)-如果`YES`網域的安全通訊端層 (SSL) 必須包含有效的透明度資料。 預設值為 `NO`。
+- **NSIncludesSubdomains**(`Boolean`)-如果`YES`這些設定會覆寫此網域的所有子域。 預設值為 `NO`。
+- **NSThirdPartyExceptionMinimumTLSVersion**(`String`)-當網域是開發人員控制外部的協力廠商服務時, 所使用的 TLS 版本。
+- **NSThirdPartyExceptionRequiresForwardSecrecy**(`Boolean`)-如果`YES`協力廠商網域需要轉寄密碼。
+- **NSThirdPartyExceptionAllowsInsecureHTTPLoads**(`Boolean`)-如果`YES` ATS 將允許與協力廠商網域的非安全通訊。
 
 <a name="optout" />
 
-### <a name="opting-out-of-ats"></a>選擇向外延展 ATS
+### <a name="opting-out-of-ats"></a>退出 ATS
 
-雖然 Apple 高度建議使用`HTTPS`通訊協定和安全的通訊，以網際網路為基礎的資訊，可能會有這不見得永遠可行的時間。 例如，如果您要與第 3 方 web 服務通訊，或使用您的應用程式中提供廣告的網際網路。
+雖然 Apple 強烈建議您使用`HTTPS`通訊協定和安全通訊來與網際網路為基礎的資訊, 但有時可能不一定會發生這種情況。 例如, 如果您正在與協力廠商 web 服務通訊, 或在您的應用程式中使用網際網路提供的廣告。
 
-如果您的 Xamarin.iOS 應用程式必須提出要求，到不安全的網域，下列就會變更為您的應用程式**Info.plist**檔案將會停用強制執行指定的網域安全性預設值：
+如果您的 Xamarin iOS 應用程式必須對不安全的網域提出要求, 則下列應用程式的**資訊 plist**檔案變更將會停用 ATS 針對指定網域強制執行的安全性預設值:
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -213,12 +213,12 @@ NSAppTransportSecurity
 </dict>
 ```
 
-在 Visual Studio for Mac 中，按兩下`Info.plist`檔案中**方案總管**，切換至**來源**檢視，並加入上述機碼：
+在 Visual Studio for Mac 中, 按兩下**方案總管**中`Info.plist`的檔案, 切換至**來源**視圖並新增上述索引鍵:
 
-[![](ats-images/ats01.png "Info.plist 檔案的原始碼 檢視")](ats-images/ats01.png#lightbox)
+[![](ats-images/ats01.png "Plist 檔案的來源視圖")](ats-images/ats01.png#lightbox)
 
 
-如果您的應用程式需要載入，並顯示從非安全的站台的網頁內容，您的應用程式中新增下列**Info.plist**檔案，讓正確載入，而其餘部分仍啟用 Apple Transport Security (ATS) 保護的 web 網頁應用程式：
+如果您的應用程式需要從不安全的網站載入及顯示 web 內容, 請將下列程式新增至您應用程式的**plist**檔案, 讓網頁能夠正確載入, 同時仍會為其餘的應用程式啟用 Apple Transport SECURITY (ATS) 保護功能:
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -228,7 +228,7 @@ NSAppTransportSecurity
 </dict>
 ```
 
-（選擇性） 您可以進行下列變更，您的應用程式**Info.plist**完全停用 ATS 所有網域及網際網路通訊的檔案：
+(選擇性) 您可以對應用程式的**plist**檔案進行下列變更, 以完全停用所有網域和網際網路通訊的 ATS:
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -238,28 +238,28 @@ NSAppTransportSecurity
 </dict>
 ```
 
-在 Visual Studio for Mac 中，按兩下`Info.plist`檔案中**方案總管**，切換至**來源**檢視，並加入上述機碼：
+在 Visual Studio for Mac 中, 按兩下**方案總管**中`Info.plist`的檔案, 切換至**來源**視圖並新增上述索引鍵:
 
-[![](ats-images/ats02.png "Info.plist 檔案的原始碼 檢視")](ats-images/ats02.png#lightbox)
+[![](ats-images/ats02.png "Plist 檔案的來源視圖")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> 如果您的應用程式必須連線至不安全的網站，您應該**一律**例外狀況使用的形式輸入網域`NSExceptionDomains`而不是完全使用時，關閉 ATS `NSAllowsArbitraryLoads`。 `NSAllowsArbitraryLoads` 應該只用在極端的緊急情況下。
+> 如果您的應用程式需要連線到不安全的網站, 您應該**一律**使用`NSExceptionDomains`來輸入網域做為例外狀況, 而不要使用`NSAllowsArbitraryLoads`來完全關閉 ATS。 `NSAllowsArbitraryLoads` 應該只用在極端的緊急情況下。
 
 
 
 
-同樣地，停用 ATS 應該_只_會當作最後的手段時切換到安全的連線無法使用或不實際。
+同樣地, 停用 ATS_只能_做為最後的手段, 如果切換到安全連線是無法使用或不切實際的。
 
 <a name="Summary" />
 
 ## <a name="summary"></a>總結
 
-這篇文章已導入 App Transport Security (ATS)，並說明它會強制執行與網際網路的安全通訊的方式。 首先，我們會涵蓋 ATS 需要在 iOS 9 上執行 Xamarin.iOS 應用程式的變更。 然後我們會涵蓋控制 ATS 功能和選項。 最後，我們會涵蓋退出 ATS Xamarin.iOS 應用程式中。
+本文引進了應用程式傳輸安全性 (ATS), 並說明它如何強制執行與網際網路的安全通訊。 首先, 我們涵蓋了在 iOS 9 上執行的 Xamarin iOS 應用程式所需的變更 ATS。 接著, 我們討論了如何控制 ATS 的功能和選項。 最後, 我們在您的 Xamarin iOS 應用程式仲介紹了退出 ATS。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
-- [iOS 9 的開發人員](https://developer.apple.com/ios/pre-release/)
+- [iOS 9 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [iOS 9 開發人員](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

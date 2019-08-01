@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: e53f6dce47dd7db60267d21c8d816ece554dc46c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9855255464b32b99d78d7a1cdb24acce22d01648
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61319925"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654751"
 ---
 # <a name="listview-data-sources"></a>ListView 的資料來源
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
 A [ `ListView` ](xref:Xamarin.Forms.ListView)用於顯示資料的清單。 我們將了解填入 ListView 與資料，以及我們如何可以將繫結至選取的項目。
 
@@ -58,10 +58,6 @@ listView.ItemsSource = new string[]
   "monomodal",
   "mononucleosis"
 };
-
-//monochrome will not appear in the list because it was added
-//after the list was populated.
-listView.ItemsSource.Add("monochrome");
 ```
 
 ![](data-and-databinding-images/itemssource-simple.png "ListView 顯示的字串清單，")
@@ -88,7 +84,7 @@ employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 如需有關資料繫結的詳細資訊，請參閱 <<c0> [ 資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)這是部分的四[Xamarin.Forms XAML 基本知識文章系列](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
 ### <a name="binding-cells"></a>儲存格繫結
-資料格 （和資料格的子系） 的屬性可以繫結中物件的屬性至`ItemsSource`。 比方說，ListView 可用來呈現的員工清單。
+資料格 （和資料格的子系） 的屬性可以繫結中物件的屬性至`ItemsSource`。 例如, `ListView`可以用來呈現員工清單。
 
 「 員工 」 類別：
 
@@ -99,10 +95,12 @@ public class Employee
 }
 ```
 
-`ObservableCollection<Employee>` 已建立並設定為`ListView`的`ItemsSource`:
+會建立, 並將設定`ListView`為的`ItemsSource`: `ObservableCollection<Employee>`
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
+public ObservableCollection<Employee> Employees { get { return employees; }}
+
 public EmployeeListPage()
 {
   //defined in XAML to follow
@@ -131,11 +129,12 @@ public EmployeeListPage()
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-xmlns:constants="clr-namespace:XamarinFormsSample;assembly=XamarinFormsXamlSample"
-x:Class="XamarinFormsXamlSample.Views.EmployeeListPage"
-Title="Employee List">
-  <ListView x:Name="EmployeeView">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:constants="clr-namespace:XamarinFormsSample;assembly=XamarinFormsXamlSample"
+             x:Class="XamarinFormsXamlSample.Views.EmployeeListPage"
+             Title="Employee List">
+  <ListView x:Name="EmployeeView"
+            ItemsSource="{Binding Employees}">
     <ListView.ItemTemplate>
       <DataTemplate>
         <TextCell Text="{Binding DisplayName}" />
@@ -145,11 +144,7 @@ Title="Employee List">
 </ContentPage>
 ```
 
-雖然它可能已繫結在 XAML 中，請注意繫結已為了簡單起見，程式碼中的設定。
-
-XAML 的上一個位元會定義`ContentPage`，其中包含`ListView`。 資料來源`ListView`透過設定`ItemsSource`屬性。 每個資料列的版面配置`ItemsSource`內定義`ListView.ItemTemplate`項目。
-
-以下是結果：
+此 XAML 範例`ContentPage`會定義`ListView`包含的。 資料來源`ListView`透過設定`ItemsSource`屬性。 中`ItemsSource`每個資料列的配置都是在`ListView.ItemTemplate`元素內定義。 這會導致下列螢幕擷取畫面:
 
 ![](data-and-databinding-images/bound-data.png "使用資料繫結的 ListView")
 
@@ -169,4 +164,4 @@ XAML 的上一個位元會定義`ContentPage`，其中包含`ListView`。 資料
 
 ## <a name="related-links"></a>相關連結
 
-- [雙向繫結 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
+- [雙向繫結 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

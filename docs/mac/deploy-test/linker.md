@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 11/10/2017
-ms.openlocfilehash: 73f652be32c72ef51170f44c28ce1590e6a0e92b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: dd42de4dda4b5d5b09156898fd7a8bab331adf88
+ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50106841"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67865899"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac 連結器選項
 
@@ -46,13 +46,13 @@ _連結是一項功能強大的最佳化工具，可藉由移除不使用的程�
 若要對 Xamarin.Mac 專案的連結器組態進行變更，請執行下列操作：
 
 1. 在 Visual Studio for Mac 中開啟 Xamarin.Mac 專案。
-2. 在 [方案總管] 中，按兩下專案檔以開啟 [專案選項] 對話方塊。
-3. 從 [Mac 組建] 索引標籤中，選取符合您應用程式需求的 [連結器行為]：
+2. 在 [方案總管]  中，按兩下專案檔以開啟 [專案選項]  對話方塊。
+3. 從 [Mac 組建]  索引標籤中，選取符合您應用程式需求的 [連結器行為]  ：
 
-  ![選擇要使用的連結器行為](linker-images/link-behavior.png "選擇要使用的連結器行為")
+    ![選擇要使用的連結器行為](linker-images/link-behavior.png "選擇要使用的連結器行為")
 
-4. 「完整目標架構」的平台連結必須要等到未來更新後，才會出現在 IDE 中。 在那之前，請改為將 `--linkplatform` 新增至 [其他 mmp 引數]。
-5. 按一下 [確定] 按鈕以儲存您的變更。
+4. 「完整目標架構」的平台連結必須要等到未來更新後，才會出現在 IDE 中。 在那之前，請改為將 `--linkplatform` 新增至 [其他 mmp 引數]  。
+5. 按一下 [確定]  按鈕以儲存您的變更。
 
 
 ## <a name="related-links"></a>相關連結

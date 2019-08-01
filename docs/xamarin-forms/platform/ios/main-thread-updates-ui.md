@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上主要執行緒控制更新
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台特定，可讓控制項的配置和轉譯在主執行緒上執行的更新。
+title: IOS 上的主要執行緒控制項更新
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的, 讓控制項版面配置和轉譯更新在主執行緒上執行。
 ms.prod: xamarin
 ms.assetid: 945E711D-9BD2-4BF9-9FB3-CBE0D5B25A49
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: b9f39cd33d660999cfa00f2003edab7af731ca7c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 9603cccc1f08be057bc66012cdde75e1b7391f1a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925713"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655271"
 ---
-# <a name="main-thread-control-updates-on-ios"></a>在 iOS 上主要執行緒控制更新
+# <a name="main-thread-control-updates-on-ios"></a>IOS 上的主要執行緒控制項更新
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-控制項的配置和轉譯要對主執行緒，而不是在背景執行緒上執行的更新，可讓此 iOS 平台專屬。 它應該很少需要但在某些情況下可能會導致當機。 藉由設定其已在使用的 XAML`Application.HandleControlUpdatesOnMainThread`可繫結的屬性，以`true`:
+這個 iOS 平臺特定可讓控制項版面配置和轉譯更新在主執行緒上執行, 而不是在背景執行緒上執行。 它應該很少需要但在某些情況下可能會導致當機。 藉由設定其已在使用的 XAML`Application.HandleControlUpdatesOnMainThread`可繫結的屬性，以`true`:
 
 ```xaml
 <Application ...
@@ -42,6 +42,6 @@ Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 31992c7d9219289847ebc3e9c8af755d54dc18ab
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 39e641d5e911b179ca8da9fc6c1b7685a9644364
+ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57672712"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67831487"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -41,7 +41,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 **全球化**應用程式是讓應用程式「可供全球使用」的程序。 這表示撰寫能夠顯示不同語言的程式碼。
 
-全球化應用程式的其中一個主要部分，就是建立沒有「硬式編碼」文字的使用者介面。 相反地，向使用者顯示的任何內容，都應該擷取自一組已翻譯成其選擇語言的字串。
+全球化應用程式的其中一個主要部分，就是建立沒有「硬式編碼」  文字的使用者介面。 相反地，向使用者顯示的任何內容，都應該擷取自一組已翻譯成其選擇語言的字串。
 
 在本文件中，我們將探討如何使用 RESX 檔案來儲存這些字串，並根據使用者的喜好設定加以擷取顯示。
 
@@ -56,9 +56,9 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 #### <a name="base-language-resource"></a>基礎語言資源
 
-基底資源 (RESX) 檔會包含預設語言字串 (範例假設英文是預設語言)。 以滑鼠右鍵按一下專案，然後選擇 [新增] > [新增檔案...]，將檔案新增至 Xamarin.Forms 通用程式碼專案。
+基底資源 (RESX) 檔會包含預設語言字串 (範例假設英文是預設語言)。 以滑鼠右鍵按一下專案，然後選擇 [新增] > [新增檔案...]  ，將檔案新增至 Xamarin.Forms 通用程式碼專案。
 
-選擇有意義的名稱 (例如 **AppResources**)，然後按 [確定]。
+選擇有意義的名稱 (例如 **AppResources**)，然後按 [確定]  。
 
 [![新增資源檔](text-images/resx-new-file-sml.png "[新增檔案] 對話方塊")](text-images/resx-new-file.png#lightbox "[新增檔案] 對話方塊")
 
@@ -67,7 +67,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 * **AppResources.resx** 檔案，其中可翻譯的字串會儲存為 XML 格式。
 * **AppResources.designer.cs** 檔案，這會宣告部分類別，以包含 RESX XML 檔中建立的所有項目參考。
 
-方案樹狀目錄會將這些檔案顯示為相關。 您「應該」編輯 RESX 檔案來新增可翻譯的字串，但「不應該」編輯 **.designer.cs** 檔案。
+方案樹狀目錄會將這些檔案顯示為相關。 您「應該」  編輯 RESX 檔案來新增可翻譯的字串，但「不應該」  編輯 **.designer.cs** 檔案。
 
 ![](text-images/appresources-tree.png "AppResources.resx 檔案")
 
@@ -75,7 +75,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 根據預設，產生字串的強型別參考時，這些參考對組件是 `internal`。 這是因為 RESX 檔案的預設建置工具會產生具有 `internal` 屬性的 **.designer.cs** 檔案。
 
-選取 **AppResources.resx** 檔案並顯示 **Properties** Pad，以查看此建置工具的設定位置。 下列螢幕擷取畫面顯示 [自訂工具：ResXFileCodeGenerator]。
+選取 **AppResources.resx** 檔案並顯示 **Properties** Pad，以查看此建置工具的設定位置。 下列螢幕擷取畫面顯示 [自訂工具：  ResXFileCodeGenerator]。
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -88,7 +88,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 -----
 
-若要將強型別字串屬性設為 `public`，您必須以手動方式將組態變更為 [自訂工具：PublicResXFileCodeGenerator]，如下列螢幕擷取畫面所示：
+若要將強型別字串屬性設為 `public`，您必須以手動方式將組態變更為 [自訂工具：  PublicResXFileCodeGenerator]，如下列螢幕擷取畫面所示：
 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -106,7 +106,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 這是選擇性變更，只有在您想要參考跨不同組件的當地語系化字串時才需要 (例如，如果您將 RESX 檔案放在與程式碼不同的組件中)。 本主題中的範例會將字串保留為 `internal`，因為定義這些字串所在的 Xamarin.Forms .NET Standard 程式庫組件與使用這些字串所在的組件相同。
 
-您只需要在基底 RESX 檔案上設定自訂工具 (如上所示)，而不需要在特定語言的 RESX 檔案上設定「任何」組建工具 (如下列各節所述)。
+您只需要在基底 RESX 檔案上設定自訂工具 (如上所示)，而不需要在特定語言的 RESX 檔案上設定「任何」  組建工具 (如下列各節所述)。
 
 ##### <a name="editing-the-resx-file"></a>編輯 RESX 檔案
 
@@ -156,7 +156,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 一般模式是使用兩個字母的語言代碼，但有些範例 (例如中文) 使用不同的格式，而其他範例 (例如巴西葡萄牙文) 則需要四個字元的地區設定識別碼。
 
-這些特定語言的資源檔「不」需要 **.designer.cs** 部分類別，因此可當作一般 XML 檔新增，並設定 [建置動作：EmbeddedResource]。 下列螢幕擷取畫面顯示包含特定語言資源檔的方案：
+這些特定語言的資源檔「不」  需要 **.designer.cs** 部分類別，因此可當作一般 XML 檔新增，並設定 [建置動作：  EmbeddedResource]。 下列螢幕擷取畫面顯示包含特定語言資源檔的方案：
 
 ![](text-images/appresources-langs.png "特定語言的資源檔")
 
@@ -241,7 +241,7 @@ foreach (var res in assembly.GetManifestResourceNames())
 }
 ```
 
-在 **AppResources.Designer.cs** 檔案中 (約「第 33 行」處)，已指定完整的「資源管理員名稱」(例如 `"UsingResxLocalization.Resx.AppResources"`)，如下列程式碼所示：
+在 **AppResources.Designer.cs** 檔案中 (約「第 33 行」  處)，已指定完整的「資源管理員名稱」  (例如 `"UsingResxLocalization.Resx.AppResources"`)，如下列程式碼所示：
 
 ```csharp
 System.Resources.ResourceManager temp =
@@ -256,13 +256,13 @@ System.Resources.ResourceManager temp =
 請檢查下列項目，以解決找不到資源的問題：
 
 * 專案的預設命名空間符合 **AppResources.Designer.cs** 檔案中的根命名空間。
-* 如果 **AppResources.resx** 檔案位於子目錄中，則子目錄名稱應該是由部分命名空間「及」部分資源識別項所組成。
-* **AppResources.resx** 檔案具有 [建置動作：EmbeddedResource]。
-* 已核取 [專案選項] > [原始程式碼] > [.NET 命名原則] > [使用 Visual Studio 樣式資源名稱]。 您可以視需要取消核取此選項，但必須在整個應用程式內更新用來參考 RESX 資源的命名空間。
+* 如果 **AppResources.resx** 檔案位於子目錄中，則子目錄名稱應該是由部分命名空間「及」  部分資源識別項所組成。
+* **AppResources.resx** 檔案具有 [建置動作：  EmbeddedResource]。
+* 已核取 [專案選項] > [原始程式碼] > [.NET 命名原則] > [使用 Visual Studio 樣式資源名稱]  。 您可以視需要取消核取此選項，但必須在整個應用程式內更新用來參考 RESX 資源的命名空間。
 
 #### <a name="doesnt-work-in-debug-mode-android-only"></a>不適用於 DEBUG 模式 (僅限 Android)
 
-如果翻譯的字串可用於您的 Android 發行組建，但無法用於偵錯，請以滑鼠右鍵按一下 [Android 專案]，然後選取 [選項] > [組建] > [Android 組建]，並確定「未」核取 [快速部署組件]。 此選項會導致載入資源時發生問題；如果您要測試當地語系化的應用程式，則請勿使用。
+如果翻譯的字串可用於您的 Android 發行組建，但無法用於偵錯，請以滑鼠右鍵按一下 [Android 專案]  ，然後選取 [選項] > [組建] > [Android 組建]  ，並確定「未」核取 [快速部署組件]  。 此選項會導致載入資源時發生問題；如果您要測試當地語系化的應用程式，則請勿使用。
 
 ### <a name="displaying-the-correct-language"></a>顯示正確的語言
 
@@ -433,11 +433,11 @@ namespace UsingResxLocalization.iOS
 >
 > 在 Xamarin.Forms 案例中，某些地區設定在 iOS 中有效，但未對應至 .NET 中的有效 `CultureInfo`，因此上述程式碼會嘗試處理此案例。
 >
-> 例如，iOS 的 [Settings] \(設定\) > [General Language &amp; Region] \(一般語言與區域\) 畫面可讓您將手機的 [Language] \(語言\) 設定為 [English] \(英文)，但將 [Region] \(區域\) 設定為 [Spain] \(西班牙文)，這會導致地區設定字串為 `"en-ES"`。 當 `CultureInfo` 建立失敗時，程式碼會改為只使用前兩個字母來選取顯示語言。
+> 例如，iOS 的 [Settings] \(設定\) > [General Language &amp; Region] \(一般語言與區域\)  畫面可讓您將手機的 [Language] \(語言\)  設定為 [English] \(英文)  ，但將 [Region] \(區域\)  設定為 [Spain] \(西班牙文)  ，這會導致地區設定字串為 `"en-ES"`。 當 `CultureInfo` 建立失敗時，程式碼會改為只使用前兩個字母來選取顯示語言。
 >
 > 開發人員應該修改 `iOSToDotnetLanguage` 和 `ToDotnetFallbackLanguage` 方法，以處理其支援語言所需的特定案例。
 
-iOS 會自動翻譯一些系統定義的使用者介面項目，例如 `Picker` 控制項上的 [完成] 按鈕。 若要強制 iOS 翻譯這些項目，則必須在 **Info.plist** 檔案中指定支援哪些語言。 您可以透過 Info.plist > [來源] 新增這些值，如下所示：
+iOS 會自動翻譯一些系統定義的使用者介面項目，例如 `Picker` 控制項上的 [完成]  按鈕。 若要強制 iOS 翻譯這些項目，則必須在 **Info.plist** 檔案中指定支援哪些語言。 您可以透過 Info.plist > [來源]  新增這些值，如下所示：
 
 ![Info.plist 中的當地語系化索引鍵](text-images/info-plist.png "Info.plist 中的當地語系化索引鍵")
 
@@ -464,7 +464,7 @@ iOS 會自動翻譯一些系統定義的使用者介面項目，例如 `Picker` 
 
 > [!NOTE]
 > 請注意，Apple 處理葡萄牙文的方式與您預期稍有不同。
-> [其文件](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2)指出：「使用 pt 作為巴西所使用的葡萄牙文語言識別碼，並使用 pt-PT 作為葡萄牙所使用的葡萄牙文語言識別碼」。
+> [其文件](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2)指出：「使用 pt 作為巴西所使用的葡萄牙文語言識別碼，並使用 pt-PT 作為葡萄牙所使用的葡萄牙文語言識別碼」  。
 > 這表示在 iOS 上，若在非標準地區設定中選擇葡萄牙文語言，則遞補語言會是巴西葡萄牙文，除非撰寫程式碼來變更此行為 (例如上述的 `ToDotnetFallbackLanguage`)。
 
 如需 iOS 當地語系化的詳細資訊，請參閱 [iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)。
@@ -561,8 +561,8 @@ namespace UsingResxLocalization.Android
 
 一但將此程式碼新增至 Android 應用程式專案之後，就能夠自動顯示翻譯的字串。
 
-> [!NOTE]
->️ **警告：** 如果翻譯的字串可用於您的 Android 發行組建，但無法用於偵錯，請以滑鼠右鍵按一下 [Android 專案]，然後選取 [選項] > [組建] > [Android 組建]，並確定「未」核取 [快速部署組件]。 此選項會導致載入資源時發生問題；如果您要測試當地語系化的應用程式，則請勿使用。
+> [!WARNING]
+> 如果翻譯的字串可用於您的 Android 發行組建，但無法用於偵錯，請以滑鼠右鍵按一下 [Android 專案]  ，然後選取 [選項] > [組建] > [Android 組建]  ，並確定「未」核取 [快速部署組件]  。 此選項會導致載入資源時發生問題；如果您要測試當地語系化的應用程式，則請勿使用。
 
 如需 Android 當地語系化的詳細資訊，請參閱 [Android 當地語系化](~/android/app-fundamentals/localization.md)。
 
@@ -598,7 +598,7 @@ namespace UsingResxLocalization.Android
 <Button Text="Add to list" />
 ```
 
-在理想情況下，我們可以直接在 XAML 中翻譯使用者介面控制項，做法是透過建立「標記延伸」。 以下顯示對 XAML 公開 RESX 資源的標記延伸程式碼。 此類別應該新增至 Xamarin.Forms 通用程式碼 (以及 XAML 頁面)：
+在理想情況下，我們可以直接在 XAML 中翻譯使用者介面控制項，做法是透過建立「標記延伸」  。 以下顯示對 XAML 公開 RESX 資源的標記延伸程式碼。 此類別應該新增至 Xamarin.Forms 通用程式碼 (以及 XAML 頁面)：
 
 ```csharp
 using System;

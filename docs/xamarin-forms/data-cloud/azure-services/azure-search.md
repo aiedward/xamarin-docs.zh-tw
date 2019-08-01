@@ -1,5 +1,5 @@
 ---
-title: 使用 Azure 搜尋服務和 Xamarin.Forms 的搜尋資料
+title: 使用 Azure 搜尋服務和 Xamarin 來搜尋資料
 description: 這篇文章會示範如何使用 Microsoft Azure 搜尋服務程式庫，將 Azure 搜尋服務整合至 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: 0ecb546cfb657aa138f05ade64354eb46380e9ab
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: d13246ddae3f505d04db2a866f785a9f60ce3979
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658635"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652035"
 ---
-# <a name="search-data-with-azure-search-and-xamarinforms"></a>使用 Azure 搜尋服務和 Xamarin.Forms 的搜尋資料
+# <a name="search-data-with-azure-search-and-xamarinforms"></a>使用 Azure 搜尋服務和 Xamarin 來搜尋資料
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Azure 搜尋服務是雲端服務可編製索引和查詢上傳資料的功能。這會移除傳統上相關聯的應用程式中實作搜尋功能的搜尋演算法複雜度與基礎結構需求。這篇文章會示範如何使用 Microsoft Azure 搜尋服務程式庫，將 Azure 搜尋服務整合至 Xamarin.Forms 應用程式。_
 
@@ -279,6 +279,6 @@ async Task AzureSuggestions(string text)
 
 ## <a name="related-links"></a>相關連結
 
-- [Azure 搜尋服務 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/AzureSearch/)
+- [Azure 搜尋服務 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 - [Azure 搜尋服務文件](/azure/search/)
 - [Microsoft Azure 搜尋服務程式庫](https://www.nuget.org/packages/Microsoft.Azure.Search/)

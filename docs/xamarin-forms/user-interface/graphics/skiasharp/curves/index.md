@@ -7,22 +7,22 @@ ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: c71f0c0e5224c3fc4615d570487ed63c957c5556
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 09f2c2c0367b50146a564b370f555a1ed804371e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61344739"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642554"
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp 曲線和路徑
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 繪製曲線，並使用路徑功能_
 
 探勘[ `SKPath` ](xref:SkiaSharp.SKPath)方法和屬性開始[ **SkiaSharp 線條和路徑**](../paths/index.md)文章。 發行項新增至曲線的方法繼續`SKPath`物件，並利用其他強大的路徑 」 功能。 您會看到如何簡潔的文字字串中指定完整的路徑、 如何使用路徑的效果，以及如何深入了解路徑內部項目。
 
-在本節中的所有範例程式都可在**SkiaSharp 曲線和路徑**頁[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)程式，然後在[ **曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)方案的資料夾。
+在本節中的所有範例程式都可在**SkiaSharp 曲線和路徑**頁[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式，然後在[ **曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)方案的資料夾。
 
 ## <a name="three-ways-to-draw-an-arcarcsmd"></a>[繪製弧形的三種方式](arcs.md)
 
@@ -56,4 +56,4 @@ _了解如何使用 SkiaSharp 繪製曲線，並使用路徑功能_
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

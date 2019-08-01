@@ -1,57 +1,57 @@
 ---
 title: ContentProviders 簡介
-description: Android 作業系統使用內容提供者，以便存取共用的資料，例如媒體檔案，連絡人和行事曆資訊。 本文介紹 ContentProvider 類別，並提供如何使用它的兩個範例。
+description: Android 作業系統使用內容提供者來加速存取共用資料, 例如媒體檔案、連絡人和行事曆資訊。 本文介紹 ContentProvider 類別, 並提供兩個如何使用它的範例。
 ms.prod: xamarin
 ms.assetid: 6E1810AA-EB70-9AD0-1B32-D9418908CC97
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 60f9420fc630bcfc44a6b19356b2315ac8bcd523
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2533ad80571e2c8fe94cb4a2dcb0ec0ff0dd68cb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951782"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643592"
 ---
 # <a name="intro-to-contentproviders"></a>ContentProviders 簡介
 
-_Android 作業系統使用內容提供者，以便存取共用的資料，例如媒體檔案，連絡人和行事曆資訊。本文介紹 ContentProvider 類別，並提供如何使用它的兩個範例。_
+_Android 作業系統使用內容提供者來加速存取共用資料, 例如媒體檔案、連絡人和行事曆資訊。本文介紹 ContentProvider 類別, 並提供兩個如何使用它的範例。_
 
 
-## <a name="content-providers-overview"></a>內容提供者概觀
+## <a name="content-providers-overview"></a>內容提供者總覽
 
-A *ContentProvider*封裝資料儲存機制，並提供 API 來存取它。 提供者存在於 Android 應用程式通常也有提供 UI 來顯示/管理資料的一部分。 使用內容提供者的主要優點讓其他應用程式輕鬆地存取封裝的資料使用的提供者用戶端物件 (稱為*ContentResolver*)。 在一起，內容提供者和內容解析程式提供一致的應用程式間 API，很容易建置和取用的資料存取。 任何應用程式可以選擇使用`ContentProviders`內部管理資料並將它公開給其他應用程式。
+*ContentProvider*會封裝資料存放庫, 並提供 API 來存取它。 提供者是 Android 應用程式的一部分, 通常也會提供 UI 來顯示/管理資料。 使用內容提供者的主要優點是讓其他應用程式可以使用提供者用戶端物件 (稱為*ContentResolver*) 輕鬆地存取封裝的資料。 內容提供者和內容解析程式共同提供了一致的應用程式間 API, 可讓您輕鬆建立及取用資料存取。 任何應用程式都可以選擇`ContentProviders`用來在內部管理資料, 並將它公開給其他應用程式。
 
-A`ContentProvider`也會需要您的應用程式，以提供自訂的搜尋建議，或如果您想要提供複雜的資料複製到其他應用程式貼上您的應用程式的能力。 本文件說明如何存取及建置`ContentProviders`Xamarin.Android 使用。
+`ContentProvider`您的應用程式也需要提供自訂搜尋建議, 或者, 如果您想要提供從應用程式複製複雜資料以貼到其他應用程式的功能。 本檔說明如何使用 Xamarin 來存取`ContentProviders`和建立。
 
-本章節的結構如下所示：
+本節的結構如下所示:
 
-- **它的運作方式**&ndash;的功能概觀`ContentProvider`設計，並為它的運作方式。
+- **運作方式**概述設計的`ContentProvider`功能及其運作方式。 &ndash;
 
 - **使用內容提供者**&ndash;存取連絡人清單的範例。
 
-- **使用共用資料的 ContentProvider** &ndash;書寫及取用`ContentProvider`相同的應用程式。
+- **使用 ContentProvider 共用資料**在同`ContentProvider`一個應用程式中撰寫和使用。 &ndash;
 
-`ContentProviders` 並對其資料的資料指標通常用來填入 Listview。 請參閱[Listview 和 Adapter 指南](~/android/user-interface/layouts/list-view/index.md)如需有關如何使用這些類別。
+`ContentProviders`而在其資料上操作的游標通常是用來填入 Listview。 如需如何使用這些類別的詳細資訊, 請參閱[listview 和介面卡指南](~/android/user-interface/layouts/list-view/index.md)。
 
-`ContentProviders` 由 Android （或其他應用程式） 是簡單的方法，以在您的應用程式中包含來自其他來源的資料。 它們可讓您存取和呈現的資料，例如連絡人清單、 相片或從您的應用程式中的行事曆事件，並讓使用者與資料互動。
+`ContentProviders`由 Android (或其他應用程式) 公開, 是在您的應用程式中包含來自其他來源之資料的簡單方式。 它們可讓您從應用程式記憶體取和呈現資料, 例如連絡人清單、相片或行事曆事件, 並讓使用者與該資料互動。
 
-自訂`ContentProviders`是便利的方式來封裝您的資料，以使用您自己的應用程式，或用於其他應用程式 （包括自訂搜尋和複製/貼上等的特殊用途）。
+「 `ContentProviders`自訂」是一種方便的方式, 可將您的資料封裝在您自己的應用程式內使用, 或供其他應用程式使用 (包括自訂搜尋和複製/貼上等特殊用途)。
 
-在本節中的主題提供一些簡單的範例，使用和寫入`ContentProvider`程式碼。
+本節中的主題提供一些使用和撰寫`ContentProvider`程式碼的簡單範例。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [ContactsAdapter 示範 （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/ContactsAdapterDemo/)
-- [SimpleContentProvider （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/SimpleContentProvider)
+- [ContactsAdapter 示範 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
+- [SimpleContentProvider (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)
 - [內容提供者開發人員指南](https://developer.android.com/guide/topics/providers/content-providers.html)
-- [ContentProvider 類別參考](https://developer.xamarin.com/api/type/Android.Content.ContentProvider/)
-- [ContentResolver 類別參考](https://developer.xamarin.com/api/type/Android.Content.ContentResolver/)
-- [ListView 類別參考](https://developer.xamarin.com/api/type/Android.Widget.ListView/)
-- [CursorAdapter 類別參考](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)
-- [UriMatcher 類別參考](https://developer.xamarin.com/api/type/Android.Content.UriMatcher/)
-- [Android.Provider](https://developer.xamarin.com/api/namespace/Android.Provider/)
-- [ContactsContract 類別參考](https://developer.xamarin.com/api/type/Android.Provider.ContactsContract/)
+- [ContentProvider 類別參考](xref:Android.Content.ContentProvider)
+- [ContentResolver 類別參考](xref:Android.Content.ContentResolver)
+- [ListView 類別參考](xref:Android.Widget.ListView)
+- [CursorAdapter 類別參考](xref:Android.Widget.CursorAdapter)
+- [UriMatcher 類別參考](xref:Android.Content.UriMatcher)
+- [Android.Provider](xref:Android.Provider)
+- [ContactsContract 類別參考](xref:Android.Provider.ContactsContract)

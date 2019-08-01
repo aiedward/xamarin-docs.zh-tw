@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 0be5c788b5be3d01234cc9a3124fa6a01ded2394
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 328063fd6924902738722813cfb961e56af5385e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971134"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644467"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的隱含樣式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _隱含樣式是由所有控制項都使用的相同 TargetType，而不需要每個控制項，以參考樣式。_
 
@@ -57,7 +57,7 @@ _隱含樣式是由所有控制項都使用的相同 TargetType，而不需要�
 
 此外，第四個[ `Entry` ](xref:Xamarin.Forms.Entry)覆寫[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)並[ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)屬性的不同的隱含樣式`Color`值。
 
-### <a name="create-an-implicit-style-at-the-control-level"></a>在控制層級建立隱含樣式
+### <a name="create-an-implicit-style-at-the-control-level"></a>在控制項層級建立隱含樣式
 
 除了建立*隱含*頁面層級的樣式，它們也可以建立在控制層級，如下列程式碼範例所示：
 
@@ -121,9 +121,9 @@ public class ImplicitStylesPageCS : ContentPage
 
 ## <a name="apply-a-style-to-derived-types"></a>將樣式套用至衍生類型
 
-[ `Style.ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)屬性可讓要套用到衍生自所參考的基底類型的控制項的樣式[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)屬性。 因此，此屬性設定為`true`可讓單一的樣式，針對多個類型，前提是類型衍生自基底類型中指定`TargetType`屬性。
+屬性可讓樣式套用至衍生自[`TargetType`](xref:Xamarin.Forms.Style.TargetType)屬性所參考之基底類型的控制項。 [`Style.ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) 因此, 將此屬性設定`true`為可讓單一樣式以多個類型為目標, 前提是該類型衍生自`TargetType`屬性中所指定的基底類型。
 
-下列範例示範設定背景色彩的隱含樣式[ `Button` ](xref:Xamarin.Forms.Button)為紅色的執行個體：
+下列範例顯示將[`Button`](xref:Xamarin.Forms.Button)實例的背景色彩設定為紅色的隱含樣式:
 
 ```xaml
 <Style TargetType="Button"
@@ -133,7 +133,7 @@ public class ImplicitStylesPageCS : ContentPage
 </Style>
 ```
 
-將此樣式放在頁面層級[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)將會導致它套用到所有[ `Button` ](xref:Xamarin.Forms.Button)執行個體在頁面上，以及衍生自的任何控制項`Button`。 不過，如果[ `ApplyToDerivedTypes` ](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)屬性保持未設定，該樣式只會套用至`Button`執行個體。
+將此樣式放在頁面層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中, 會導致它套用至頁面[`Button`](xref:Xamarin.Forms.Button)上的所有實例, 也會套用至衍生自`Button`的任何控制項。 不過, 如果[`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)屬性保持未設定, 則樣式只會套用至`Button`實例。
 
 對等的 C# 程式碼是：
 
@@ -157,8 +157,8 @@ Resources = new ResourceDictionary { buttonStyle };
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的樣式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [使用樣式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [基本的樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [樣式](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

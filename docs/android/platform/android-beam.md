@@ -6,41 +6,41 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 9fcabc90875dda28ecdd5d94f1ca2f263ffe4886
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 0c4f7303d3620dcc2c829d732fe7a5f97f0e3883
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60954179"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643767"
 ---
 # <a name="android-beam"></a>Android Beam
 
-Android 資料交換是接近欄位距離無線通訊 (NFC) 技術，可讓透過 NFC 在接近時共用資訊的應用程式的 Android 4.0 中導入。
+Android 橫樑是 Android 4.0 中引進的近距離無線通訊 (NFC) 技術, 可讓應用程式在接近鄰近的情況時, 透過 NFC 分享資訊。
 
-[![說明共用資訊的相近的兩個裝置的圖表](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
+[![說明近近分享資訊中兩個裝置的圖表](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
-Android 資料交換的運作方式是在範圍內兩個裝置時，將訊息推入 NFC 透過。 裝置大約 4 公分彼此可以共用使用 Android 的資料交換的資料。 一個裝置上的活動會建立一則訊息，並指定活動 （或活動），可以將它推送對其進行處理。 當時指定的活動會在前景中的裝置是在範圍內，Android 可以將訊息推送至第二個裝置中。 在接收端的裝置，意圖會叫用包含訊息資料。
+Android 橫樑的運作方式是在兩個裝置都在範圍內時, 透過 NFC 推播訊息。 彼此4cm 的裝置可以使用 Android 橫樑共用資料。 一個裝置上的活動會建立一則訊息, 並指定可處理推送它的活動 (或活動)。 當指定的活動位於前景且裝置在範圍內時, Android 橫樑會將訊息推送到第二個裝置。 在接收的裝置上, 會叫用包含訊息資料的意圖。
 
-Android 支援兩種方式的設定與 Android 的資料交換的訊息：
+Android 支援兩種使用 Android 橫樑設定訊息的方式:
 
--   `SetNdefPushMessage` -Android 可以起始之前，應用程式可以呼叫 SetNdefPushMessage 指定 NdefMessage 推送 NFC，以及會將它推送活動。 當應用程式正在使用中時，訊息不會變更，最適合使用這項機制。
+-   `SetNdefPushMessage`-在開始 Android 橫樑之前, 應用程式可以呼叫 SetNdefPushMessage 來指定要推送到 NFC 的 NdefMessage, 以及要推送它的活動。 當應用程式正在使用中時, 如果訊息不會變更, 最好使用這項機制。
 
--   `SetNdefPushMessageCallback` -Android 可以起始時，應用程式可以處理建立 NdefMessage 回呼。 此機制允許的訊息建立延遲到的裝置是在範圍內。 它支援的案例，訊息可能不盡相同，根據應用程式中的情況。
+-   `SetNdefPushMessageCallback`-當 Android 橫樑起始時, 應用程式可以處理回呼來建立 NdefMessage。 這項機制可讓訊息建立延遲, 直到裝置在範圍內為止。 它支援訊息可能會根據應用程式中發生的情況而有所不同的案例。
 
 
-在任一情況下，將資料與 Android 的資料交換，傳送應用程式傳送`NdefMessage`，在數個資料封裝`NdefRecords`。 讓我們看看我們可以觸發 Android 資料交換前必須解決的關鍵點。 首先，我們將使用建立的回呼樣式`NdefMessage`。
+在任一情況下, 若要使用 Android 橫樑傳送資料, 應用程式`NdefMessage`會傳送, 並在數`NdefRecords`個中封裝資料。 我們來看一下必須解決才能觸發 Android 橫樑的重點。 首先, 我們將使用建立`NdefMessage`的回呼樣式。
 
 
 ## <a name="creating-a-message"></a>建立訊息
 
-我們可以註冊使用的回呼`NfcAdapter`活動中`OnCreate`方法。 例如，假設`NfcAdapter`名為`mNfcAdapter`宣告為類別變數在活動中，我們可以撰寫下列程式碼，建立會建構訊息的回呼：
+我們可以`NfcAdapter`在活動的`OnCreate`方法中, 向註冊回呼。 例如, 假設名`NfcAdapter` `mNfcAdapter`為的會宣告為活動中的類別變數, 我們可以撰寫下列程式碼來建立將會建立訊息的回呼:
 
 ```csharp
 mNfcAdapter = NfcAdapter.GetDefaultAdapter (this);
 mNfcAdapter.SetNdefPushMessageCallback (this, this);
 ```
 
-活動，它會實作`NfcAdapter.ICreateNdefMessageCallback`，會傳遞至`SetNdefPushMessageCallback`上述方法。 系統起始 Android 資料交換時，會呼叫`CreateNdefMessage`，從活動可以建構`NdefMessage`，如下所示：
+執行的活動`NfcAdapter.ICreateNdefMessageCallback`會傳遞`SetNdefPushMessageCallback`給上述方法。 當 Android 橫樑起始時, 系統將會呼叫`CreateNdefMessage`, 活動可以在其中`NdefMessage`建立, 如下所示:
 
 ```csharp
 public NdefMessage CreateNdefMessage (NfcEvent evt)
@@ -68,21 +68,21 @@ public NdefRecord CreateMimeRecord (String mimeType, byte [] payload)
 
 ## <a name="receiving-a-message"></a>接收訊息
 
-在接收端，系統會叫用目的`ActionNdefDiscovered`從中我們可以依下列方式擷取 NdefMessage 的動作：
+在接收端, 系統會叫用具有`ActionNdefDiscovered`動作的意圖, 我們可以在其中解壓縮 NdefMessage, 如下所示:
 
 ```csharp
 IParcelable [] rawMsgs = intent.GetParcelableArrayExtra (NfcAdapter.ExtraNdefMessages);
 NdefMessage msg = (NdefMessage) rawMsgs [0];
 ```
 
-如需使用 Android 資料交換下, 面的螢幕擷取畫面中所示的完整程式碼範例[Android 可以示範](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)範例資源庫中。
+如需使用 Android 橫樑的完整程式碼範例 (如下列螢幕擷取畫面所示), 請參閱範例庫中的[Android 橫樑示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)。
 
-[![從 Android 可以示範的範例螢幕擷取畫面](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
+[![Android 橫樑示範的範例螢幕擷取畫面](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 可以示範 （範例）](https://developer.xamarin.com/samples/monodroid/AndroidBeamDemo/)
-- [簡介 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)
+- [Android 橫樑示範 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
+- [霜淇淋三明治簡介](http://www.android.com/about/ice-cream-sandwich/)
+- [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

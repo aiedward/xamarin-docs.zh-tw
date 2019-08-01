@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 12/02/2016
-ms.openlocfilehash: 87987e79fce2bd5277f8092d09752fe715e2f2ce
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2e4c2ebea7783fe2400298b03a54e951d89960fe
+ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57667648"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329941"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac – 相關文件
 
-除了 [developer.xamarin.com](~/mac/get-started/index.md) 的 Mac 一節外，還有三個很棒的文件來源也可以協助解決 Xamarin.Mac 問題：
+除了 [Microsoft Docs](~/mac/get-started/index.md) 的 Mac 一節外，還有三個很棒的文件來源也可以協助解決 Xamarin.Mac 問題：
 
 - [**Xamarin.iOS 文件**](~/ios/get-started/index.md) - 對許多 API 而言 (主要是 AppKit/UIKit 之外)，iOS 和 macOS 版本之間只有微小的差異。 在某些情況下，當指定的 iOS API 的名稱是 `UIFoo` 時，即可在 macOS 上找到名為 `NSFoo` 的類似 API。 這些範例通常已在 C# 中。
 

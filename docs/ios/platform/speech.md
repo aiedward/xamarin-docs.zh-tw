@@ -1,140 +1,140 @@
 ---
-title: 在 Xamarin.iOS 中的語音辨識
-description: 本文章提供新的語音 API，並示範如何實作在 Xamarin.iOS 應用程式中支援持續的語音辨識，並轉譯成文字的語音功能 （即時或錄製音訊資料流）。
+title: Xamarin 中的語音辨識
+description: 本文提供新的語音 API, 並示範如何在 Xamarin iOS 應用程式中執行它, 以支援連續語音辨識和轉譯語音 (從即時或錄製的音訊串流) 到文字。
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 8af7474036eb0fd6e2236cf52e96b8d12c8bc44e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: fe871985700c5a40db2736ded78588b0b7d4f616
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865711"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655394"
 ---
-# <a name="speech-recognition-in-xamarinios"></a>在 Xamarin.iOS 中的語音辨識
+# <a name="speech-recognition-in-xamarinios"></a>Xamarin 中的語音辨識
 
-_本文章提供新的語音 API，並示範如何實作在 Xamarin.iOS 應用程式中支援持續的語音辨識，並轉譯成文字的語音功能 （即時或錄製音訊資料流）。_
+_本文提供新的語音 API, 並示範如何在 Xamarin iOS 應用程式中執行它, 以支援連續語音辨識和轉譯語音 (從即時或錄製的音訊串流) 到文字。_
 
-新增至 iOS 10，Apple 已發行讓 iOS 應用程式支援持續的語音辨識和轉譯 （從即時或錄製音訊資料流） 的語音文字到語音辨識 API。
+Apple 的新手已發行語音辨識 API, 可讓 iOS 應用程式支援連續語音辨識和轉譯語音 (從即時或錄製的音訊串流) 到文字。
 
-根據 Apple，語音辨識 API 具有下列功能和優點：
+根據 Apple, 語音辨識 API 具有下列功能和優點:
 
-- 高準確率
-- 先進
-- 容易使用
+- 高度精確
+- 美工圖案的狀態
+- 便於使用
 - 快速
-- 支援多國語言
+- 支援多種語言
 - 尊重使用者隱私權
 
 ## <a name="how-speech-recognition-works"></a>語音辨識的運作方式
 
-IOS 應用程式中實作語音辨識取得 （以任何語言，此 API 支援） 的即時或預先錄製音訊，並將它傳遞至語音辨識器傳回純文字的文字稿的讀出的文字。
+語音辨識會在 iOS 應用程式中執行, 方法是取得即時或預先錄製的音訊 (以 API 支援的任何語音語言), 並將它傳遞給語音辨識器, 這會傳回說話單字的純文字轉譯。
 
 [![](speech-images/speech01.png "語音辨識的運作方式")](speech-images/speech01.png#lightbox)
 
 ### <a name="keyboard-dictation"></a>鍵盤聽寫
 
-當 iOS 裝置上，將語音辨識大部分的使用者時，他們認為的內建的 Siri 語音助理，以及鍵盤聽寫發行 iOS 5 與 iPhone 4 秒。
+當大部分使用者在 iOS 裝置上使用語音辨識時, 他們會將內建的 Siri 語音助理和 iOS 5 中的鍵盤聽寫一併視為 iPhone 4S。
 
-鍵盤聽寫受到支援 TextKit 任何介面項目 (例如`UITextField`或`UITextArea`) 是由和啟動使用者按一下 iOS 虛擬鍵盤聽寫 按鈕 （直接向空格鍵的左邊）。
+支援 TextKit 的任何介面元素 (例如`UITextField`或`UITextArea`) 都支援鍵盤聽寫, 而使用者會在 iOS 虛擬鍵盤中按一下 [聽寫] 按鈕 (直接在空格鍵的左邊) 來啟用。
 
-Apple 已發行下列鍵盤聽寫統計資料 （收集自 2011 年）：
+Apple 已發行下列鍵盤聽寫統計資料 (從2011開始收集):
 
-- 發行後已在 iOS 5 中已廣泛使用鍵盤聽寫。
-- 大約 65,000 應用程式所使用的是其每日。
-- 所有 iOS 的第三個有關聽寫是在第 3 個合作對象應用程式。
+- 鍵盤聽寫已廣泛使用, 因為它是在 iOS 5 中發行。
+- 大約65000個應用程式每天會使用它。
+- 在協力廠商應用程式中, 會完成所有 iOS 聽寫的三分之一。
 
-鍵盤聽寫是使用相當簡單，因為它不需要開發人員的組件，而非使用中應用程式的 UI 設計的 TextKit 介面項目上的任何工作。 鍵盤聽寫也的優點是不需要任何特殊權限要求，從應用程式，才能使用。
+鍵盤聽寫非常容易使用, 因為它不需要對開發人員的部分進行任何工作, 而是在應用程式的 UI 設計中使用 TextKit 介面元素。 鍵盤聽寫也具有不需要應用程式任何特殊許可權要求即可使用的優點。
 
-使用新的語音辨識 Api 的應用程式會需要特殊權限可授與使用者，因為語音辨識需要傳輸與 Apple 的伺服器上的資料暫存儲存體。 請參閱我們[安全性和隱私權增強功能](~/ios/app-fundamentals/security-privacy.md)文件，如需詳細資訊。
+使用新語音辨識 Api 的應用程式將需要使用者授與特殊許可權, 因為語音辨識需要在 Apple 伺服器上傳輸和暫時儲存資料。 如需詳細資訊, 請參閱我們的[安全性和隱私權增強功能](~/ios/app-fundamentals/security-privacy.md)檔。
 
-雖然鍵盤聽寫很容易實作，它會隨附數個限制和缺點：
+雖然鍵盤聽寫很容易實行, 但有幾項限制和缺點:
 
-- 它需要文字輸入欄位的使用和鍵盤的顯示方式。
-- 它適用於僅限輸入的即時音訊和應用程式有任何控制音訊錄製程序。
-- 它提供無法控制用來解譯使用者的語音的語言。
-- 沒有任何要知道是否聽寫按鈕，使用者甚至可以使用應用程式的方法。
-- 應用程式無法自訂音訊錄製處理程序。
-- 它提供非常的結果集，缺少例如計時和信賴的資訊。
+- 它需要使用文字輸入欄位和鍵盤顯示。
+- 它僅適用于即時音訊輸入, 且應用程式無法控制音訊錄製程式。
+- 它不會對用來解讀使用者語音的語言提供任何控制。
+- 應用程式沒有辦法知道 [聽寫] 按鈕是否可供使用者使用。
+- 應用程式無法自訂音訊錄製程式。
+- 它提供了一組非常淺層的結果, 其中缺少時間和信心等資訊。
 
 ### <a name="speech-recognition-api"></a>語音辨識 API
 
-新增至 iOS 10，Apple 已發行語音辨識 API 可提供更強大的方式，來實作語音辨識的 iOS 應用程式。 此 API 是同一個 Apple 使用 Siri 和鍵盤聽寫的電源，而且能夠快速轉譯提供先進的精確度。
+Apple 已發行「語音辨識 API」, 這是 iOS 10 的新功能, 可提供更強大的方式讓 iOS 應用程式執行「語音辨識」。 這個 API 與 Apple 用來加強 Siri 和鍵盤聽寫的程式相同, 而且能夠以藝術精確度的狀態提供快速轉譯。
 
-個別的使用者，而不需要收集或存取任何私用的使用者資料的應用程式以透明的方式自訂語音辨識 API 所提供的結果。
+語音辨識 API 所提供的結果會以透明方式自訂給個別使用者, 而不需要應用程式收集或存取任何私用使用者資料。
 
-語音辨識 API 提供結果給呼叫的應用程式中近乎即時的方式，因為使用者說，而且它會提供比只是文字的轉譯結果的詳細資訊。 它們包括：
+語音辨識 API 會在使用者說話時, 以近乎即時的方式將結果傳回給呼叫應用程式, 並提供翻譯結果的詳細資訊, 而不只是文字。 它們包括：
 
-- 使用者所講的多重解譯。
-- 個別翻譯的信心層級。
+- 使用者所說的多項解釋。
+- 個別翻譯的信賴等級。
 - 計時資訊。
 
-如上所述，可能是即時摘要，或從預先錄製的來源，在任何超過 50 種語言和方言 iOS 10 支援可提供翻譯的音訊。
+如上所述, 可以透過即時摘要或預先錄製的來源, 以及 iOS 10 所支援的任何超過50語言和方言, 提供翻譯的音訊。
 
-語音辨識 API 可用在任何執行 iOS 10 的 iOS 裝置上，而且在大部分情況下，需要使用即時網際網路連線，因為大部分的轉譯會在 Apple 的伺服器。 話雖如此，某些較新的 iOS 裝置支援 alwayson，裝置上的特定語言的翻譯。
+語音辨識 API 可用於任何執行 iOS 10 的 iOS 裝置上, 而且在大部分情況下, 都需要即時網際網路連線, 因為大部分的翻譯都是在 Apple 的伺服器上進行。 話雖如此, 某些較新的 iOS 裝置支援特定語言的 always on、裝置上轉譯。
 
-Apple 已包含可用性 API，以判斷給定的語言是否可用來在目前時間的翻譯。 應用程式應該使用此 API，而不是直接測試本身的網際網路連線。
+Apple 已包含可用性 API, 以判斷目前是否有指定的語言可供翻譯。 應用程式應該使用此 API, 而不是直接測試網際網路連線能力本身。
 
-如先前所述鍵盤聽寫區段中，語音辨識需要傳輸與 Apple 的伺服器上的資料暫存儲存體，透過網際網路，因此，應用程式_必須_要求使用者的權限，才能執行藉由辨識`NSSpeechRecognitionUsageDescription`中的索引鍵及其`Info.plist`檔案，並呼叫`SFSpeechRecognizer.RequestAuthorization`方法。 
+如先前在鍵盤聽寫一節中所述, 語音辨識需要透過網際網路在 Apple 伺服器上傳輸和暫時儲存資料, 因此, 應用程式_必須_要求使用者的許可權來執行辨識, 包括`SFSpeechRecognizer.RequestAuthorization`其`NSSpeechRecognitionUsageDescription` 檔案中的索引鍵,`Info.plist`並呼叫方法。 
 
-其他變更為應用程式的原始碼基礎使用語音辨識的音訊，`Info.plist`檔案可能需要。 請參閱我們[安全性和隱私權增強功能](~/ios/app-fundamentals/security-privacy.md)文件，如需詳細資訊。
+根據語音辨識所使用的音訊來源, 可能需要對應用程式`Info.plist`檔案進行其他變更。 如需詳細資訊, 請參閱我們的[安全性和隱私權增強功能](~/ios/app-fundamentals/security-privacy.md)檔。
 
-## <a name="adopting-speech-recognition-in-an-app"></a>採用應用程式中的語音辨識
+## <a name="adopting-speech-recognition-in-an-app"></a>在應用程式中採用語音辨識
 
-有開發人員必須採用在 iOS 應用程式中的 [語音辨識] 所採取的四個主要步驟：
+開發人員必須採取四個主要步驟, 才能在 iOS 應用程式中採用語音辨識:
 
-- 提供在應用程式的使用方式描述`Info.plist`檔案中，使用`NSSpeechRecognitionUsageDescription`索引鍵。 比方說，相機應用程式可能會包含下列描述中， _」 這可讓您拍攝相片，只要說這個字 '起司'。 」_
-- 藉由呼叫要求授權`SFSpeechRecognizer.RequestAuthorization`呈現說明的方法 (提供`NSSpeechRecognitionUsageDescription`上述的索引鍵) 的應用程式為何想語音辨識和存取權的對話方塊中的使用者允許其接受或拒絕。
-- 建立語音辨識要求：
-    * 在磁碟上的預先錄製音訊，使用`SFSpeechURLRecognitionRequest`類別。
-    * 即時音訊 （或從記憶體的音訊），請使用`SFSPeechAudioBufferRecognitionRequest`類別。
-- 傳遞至語音辨識器的 語音辨識要求 (`SFSpeechRecognizer`) 開始辨識。 應用程式可以選擇性地保留傳回`SFSpeechRecognitionTask`來監視和追蹤的辨識結果。
+- 使用金鑰, 在應用程式的`Info.plist`檔案中提供使用方式描述。 `NSSpeechRecognitionUsageDescription` 例如, 相機應用程式可能會包含下列描述: 「_這可讓您只需說出「乳酪」這個字, 就能拍攝相片。_ 」
+- 藉由呼叫`SFSpeechRecognizer.RequestAuthorization`方法來要求授權, 以提供應用程式想要`NSSpeechRecognitionUsageDescription`在對話方塊中存取使用者的語音辨識, 並允許他們接受或拒絕的說明 (在上述金鑰中提供)。
+- 建立語音辨識要求:
+    * 針對磁片上預先錄製的音訊, 請使用`SFSpeechURLRecognitionRequest`類別。
+    * 若為即時音訊 (或記憶體中的音訊), `SFSPeechAudioBufferRecognitionRequest`請使用類別。
+- 將語音辨識要求傳遞給語音辨識器 (`SFSpeechRecognizer`), 以開始辨識。 應用程式可以選擇性地按住傳回`SFSpeechRecognitionTask`的來監視和追蹤辨識結果。
 
-這些步驟會在下方詳細說明。
+下面將詳細說明這些步驟。
 
 ### <a name="providing-a-usage-description"></a>提供使用方式描述
 
-若要提供必要`NSSpeechRecognitionUsageDescription`中的索引鍵`Info.plist`檔案中，執行下列動作：
+若要`NSSpeechRecognitionUsageDescription` `Info.plist`在檔案中提供所需的金鑰, 請執行下列動作:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 按兩下`Info.plist`檔案，以開啟它進行編輯。
-2. 若要切換**來源**檢視： 
+1. `Info.plist`按兩下檔案將其開啟以進行編輯。
+2. 切換至 [**來源**] 視圖: 
 
-    [![](speech-images/speech02.png "原始碼檢視")](speech-images/speech02.png#lightbox)
-3. 按一下**加入新項目**，輸入`NSSpeechRecognitionUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如： 
+    [![](speech-images/speech02.png "來源視圖")](speech-images/speech02.png#lightbox)
+3. 按一下 [**新增專案**], 然後`NSSpeechRecognitionUsageDescription` `String`針對 [**類型**] 和 [**使用描述**] 做為**值**, 輸入做為**屬性**。 例如： 
 
-    [![](speech-images/speech03.png "新增 NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. 如果應用程式將會處理即時音訊轉譯，還需要麥克風使用方式描述。 按一下**加入新項目**，輸入`NSMicrophoneUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如： 
+    [![](speech-images/speech03.png "加入 NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
+4. 如果應用程式將會處理即時音訊轉譯, 則也會需要麥克風使用方式描述。 按一下 [**新增專案**], 然後`NSMicrophoneUsageDescription` `String`針對 [**類型**] 和 [**使用描述**] 做為**值**, 輸入做為**屬性**。 例如： 
 
-    [![](speech-images/speech04.png "新增 NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
+    [![](speech-images/speech04.png "加入 NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
 5. 將變更儲存到檔案。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 按兩下`Info.plist`檔案，以開啟它進行編輯。
-2. 按一下**加入新項目**，輸入`NSSpeechRecognitionUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如： 
+1. `Info.plist`按兩下檔案將其開啟以進行編輯。
+2. 按一下 [**新增專案**], 然後`NSSpeechRecognitionUsageDescription` `String`針對 [**類型**] 和 [**使用描述**] 做為**值**, 輸入做為**屬性**。 例如： 
 
-    [![](speech-images/speech03w.png "新增 NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
-3. 如果應用程式將會處理即時音訊轉譯，還需要麥克風使用方式描述。 按一下**加入新項目**，輸入`NSMicrophoneUsageDescription`如**屬性**，`String`如**類型**和**使用方式描述**作為**值**。 例如： 
+    [![](speech-images/speech03w.png "加入 NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
+3. 如果應用程式將會處理即時音訊轉譯, 則也會需要麥克風使用方式描述。 按一下 [**新增專案**], 然後`NSMicrophoneUsageDescription` `String`針對 [**類型**] 和 [**使用描述**] 做為**值**, 輸入做為**屬性**。 例如： 
 
-    [![](speech-images/speech04w.png "新增 NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
+    [![](speech-images/speech04w.png "加入 NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
 4. 將變更儲存到檔案。
 
 -----
 
 > [!IMPORTANT]
-> 無法提供上述任一`Info.plist`機碼 (`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription`) 可能會導致應用程式嘗試存取語音辨識或即時音訊麥克風時失敗而不發出警告。
+> 無法提供上述`Info.plist`任一金鑰 (`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription`), 會在嘗試存取語音辨識或即時音訊的麥克風時, 導致應用程式失敗, 而不發出警告。
 
 
 
 
-### <a name="requesting-authorization"></a>要求的授權
+### <a name="requesting-authorization"></a>要求授權
 
-若要要求所需的使用者授權，可讓應用程式存取語音辨識，編輯主要的檢視控制器類別並新增下列程式碼：
+若要要求允許應用程式存取語音辨識的必要使用者授權, 請編輯主要視圖控制器類別, 並新增下列程式碼:
 
 ```csharp
 using System;
@@ -181,16 +181,16 @@ namespace MonkeyTalk
 }
 ```
 
-`RequestAuthorization`方法`SFSpeechRecognizer`類別會要求使用者權限來存取語音辨識使用中的開發人員提供的原因`NSSpeechRecognitionUsageDescription`索引鍵`Info.plist`檔案。
+`SFSpeechRecognizer` `NSSpeechRecognitionUsageDescription`類別的`Info.plist`方法會使用開發人員在檔案金鑰中提供的原因, 向使用者要求許可權來存取語音辨識。 `RequestAuthorization`
 
-A`SFSpeechRecognizerAuthorizationStatus`結果會傳回到`RequestAuthorization`可用來採取動作的方法的回呼常式會根據使用者的權限。 
+結果會傳`RequestAuthorization`回到方法的回呼常式, 此常式可用來根據使用者的許可權採取動作。 `SFSpeechRecognizerAuthorizationStatus` 
 
 > [!IMPORTANT]
-> Apple 建議等待，直到使用者已要求此權限之前需要語音辨識的應用程式中啟動動作。
+> Apple 建議等待, 直到使用者在應用程式中啟動需要語音辨識的動作, 然後再要求此許可權。
 
-### <a name="recognizing-pre-recorded-speech"></a>辨識預先錄製的語音
+### <a name="recognizing-pre-recorded-speech"></a>識別預先錄製的語音
 
-如果應用程式想要辨識語音從預先錄製的 WAV 或 MP3 檔案，它可以使用下列程式碼：
+如果應用程式想要從預先錄製的 WAV 或 MP3 檔案辨識語音, 它可以使用下列程式碼:
 
 ```csharp
 using System;
@@ -233,17 +233,17 @@ public void RecognizeFile (NSUrl url)
 }
 ```
 
-查看這個程式碼的詳細資料，首先，它會嘗試建立語音辨識器 (`SFSpeechRecognizer`)。 如果預設的語言不支援語音辨識`null`傳回，函式結束。
+請先仔細查看這段程式碼, 它會嘗試建立語音辨識器 (`SFSpeechRecognizer`)。 如果語音辨識不支援預設語言, 則會`null`傳回, 且函式會結束。
 
-如果語音辨識器的預設語言的功能，應用程式會檢查以查看它是否目前可供辨識使用`Available`屬性。 比方說，辨識可能會無法使用，如果裝置沒有網際網路連線。
+如果語音辨識器適用于預設語言, 應用程式會檢查其目前是否可使用`Available`屬性進行辨識。 例如, 如果裝置沒有作用中的網際網路連線, 則辨識可能無法使用。
 
-A`SFSpeechUrlRecognitionRequest`從建立`NSUrl`交給語音辨識器，利用回呼常式來處理預先錄製在 iOS 裝置，且該檔案的位置。
+會從 iOS 裝置上預先錄製檔案的位置建立,並將它傳遞給語音辨識器以處理回呼常式。`NSUrl` `SFSpeechUrlRecognitionRequest`
 
-當呼叫回呼，如果`NSError`不是`null`必須處理的錯誤。 因為以累加方式完成語音辨識，可能會回呼常式呼叫超過一次，因此`SFSpeechRecognitionResult.Final`經測試屬性，可查看轉譯是否完整翻譯的最佳版本會寫出 (`BestTranscription`)。
+呼叫回呼時, 如果`NSError`不`null`存在必須處理的錯誤, 則為。 因為語音辨識是以累加方式完成, 所以回呼常式可以呼叫多次, 因此`SFSpeechRecognitionResult.Final`會測試屬性, 以查看翻譯是否已完成, 以及是否將翻譯的最佳版本寫出 (`BestTranscription`)。
 
 ### <a name="recognizing-live-speech"></a>辨識即時語音
 
-如果應用程式想要辨識即時語音，此程序是非常類似，以及預先錄製的語音辨識。 例如：
+如果應用程式想要辨識即時語音, 此流程與識別預先錄製的語音非常類似。 例如：
 
 ```csharp
 using System;
@@ -311,7 +311,7 @@ public void CancelRecording ()
 }
 ```
 
-查看這個程式碼的詳細資料，它會建立數個私用變數，來處理辨識程序：
+查看這段程式碼的詳細資訊, 它會建立數個私用變數來處理辨識程式:
 
 ```csharp
 private AVAudioEngine AudioEngine = new AVAudioEngine ();
@@ -320,7 +320,7 @@ private SFSpeechAudioBufferRecognitionRequest LiveSpeechRequest = new SFSpeechAu
 private SFSpeechRecognitionTask RecognitionTask;
 ```
 
-它會使用錄製的音訊會傳遞至 AV Foundation`SFSpeechAudioBufferRecognitionRequest`來處理辨識要求：
+它會使用 AV 基礎來記錄將傳遞至的`SFSpeechAudioBufferRecognitionRequest`音訊, 以處理辨識要求:
 
 ```csharp
 var node = AudioEngine.InputNode;
@@ -331,7 +331,7 @@ node.InstallTapOnBus (0, 1024, recordingFormat, (AVAudioPcmBuffer buffer, AVAudi
 });
 ```
 
-若要開始錄製的應用程式嘗試和任何錯誤的處理，如果無法啟動錄製：
+如果無法啟動錄製, 應用程式會嘗試開始錄製, 並處理任何錯誤:
 
 ```csharp
 AudioEngine.Prepare ();
@@ -346,7 +346,7 @@ if (error != null) {
 }
 ```
 
-辨識工作會啟動和控制代碼保留辨識工作 (`SFSpeechRecognitionTask`):
+辨識工作已啟動, 且控制碼會保留給辨識工作 (`SFSpeechRecognitionTask`):
 
 ```csharp
 RecognitionTask = SpeechRecognizer.GetRecognitionTask (LiveSpeechRequest, (SFSpeechRecognitionResult result, NSError err) => {
@@ -354,53 +354,53 @@ RecognitionTask = SpeechRecognizer.GetRecognitionTask (LiveSpeechRequest, (SFSpe
 });
 ```
 
-回呼用在上面使用預先錄製語音上的一個類似的方式。
+回呼的使用方式與上述在預先錄製的語音上使用的相同。
 
-如果記錄是沒有使用者，則會收到通知，音訊引擎和語音辨識要求：
+如果使用者 stoped 錄製, 則會通知音訊引擎和語音辨識要求:
 
 ```csharp
 AudioEngine.Stop ();
 LiveSpeechRequest.EndAudio ();
 ```
 
-如果使用者取消辨識，然後音訊引擎和辨識工作，會收到通知：
+如果使用者取消辨識, 則會通知「音訊引擎」和「辨識」工作:
 
 ```csharp
 AudioEngine.Stop ();
 RecognitionTask.Cancel ();
 ```
 
-請務必呼叫`RecognitionTask.Cancel`如果使用者取消的翻譯，以釋出記憶體和裝置的處理器。
+如果使用者取消翻譯以`RecognitionTask.Cancel`釋放記憶體和裝置的處理器, 請務必呼叫。
 
 > [!IMPORTANT]
-> 無法提供`NSSpeechRecognitionUsageDescription`或是`NSMicrophoneUsageDescription``Info.plist`金鑰可能會導致應用程式失敗而不發出警告，嘗試存取語音辨識或即時音訊麥克風時 (`var node = AudioEngine.InputNode;`)。 請參閱**提供使用方式描述**上方區段，如需詳細資訊。
+> 無法提供`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription` 金鑰`Info.plist`可能會導致應用程式在嘗試存取語音辨識或麥克風以進行即時音訊 (`var node = AudioEngine.InputNode;`) 時失敗, 而不會發出警告。 如需詳細資訊, 請參閱上面的**提供使用方式描述**一節。
 
 ## <a name="speech-recognition-limits"></a>語音辨識限制
 
-在 iOS 應用程式中使用語音辨識時，Apple 會施加下列限制：
+在 iOS 應用程式中使用語音辨識時, Apple 會強加下列限制:
 
-- 語音辨識所有的應用程式，免費，但其使用方式不是無限制：
-    - 個別的 iOS 裝置會有有限的數目的可執行每日項辨識。
-    - 應用程式會將全域節流以要求每一天為單位。
-- 應用程式必須準備好處理語音辨識的網路連線和使用速率限制失敗。
-- 語音辨識會對高的成本相當高的網路流量和電池清空中使用者的 iOS 裝置，因為這個緣故，Apple 限制嚴格音訊的持續時間為大約一分鐘的最大的語音。
+- 所有應用程式都可以免費使用「語音辨識」, 但其使用量不受限制:
+    - 個別的 iOS 裝置每日可執行檔辨識數目有限。
+    - 應用程式將會以每日要求為基礎進行全域節流。
+- 應用程式必須準備好處理語音辨識網路連線和使用速率限制失敗。
+- 語音辨識在使用者的 iOS 裝置上, 電池耗盡和高網路流量的成本可能會很高, 因此 Apple 會將嚴格的音訊持續時間限制 (大約一分鐘的語音上限) 強加。
 
-如果應用程式會定期達到其速率的節流限制，則 Apple 會要求開發人員與他們連絡。
+如果應用程式定期達到其速率節流限制, Apple 會要求開發人員與他們聯繫。
 
-## <a name="privacy-and-usability-considerations"></a>隱私權和可用性考量
+## <a name="privacy-and-usability-considerations"></a>隱私權和使用性考慮
 
-Apple 已當作透明及包括 iOS 應用程式中的語音辨識時尊重使用者隱私權的下列建議：
+Apple 提供下列建議, 以在 iOS 應用程式中包含語音辨識時, 透明化並尊重使用者的隱私權:
 
-- 當記錄使用者的語音，請務必清楚指出，錄製發生於應用程式的使用者介面。 例如，應用程式可能會播放 「 記錄 」 的音效，並顯示記錄指標。
-- 請勿使用語音辨識敏感性使用者資訊，例如密碼、 健康情況資料或財務資訊。
-- 顯示辨識結果_之前_對它們執行動作。 這不只會提供什麼應用程式正在進行，但可讓使用者處理辨識錯誤，因為它們都會回應。
+- 記錄使用者的語音時, 請務必清楚指出該錄製正在應用程式的使用者介面中進行。 例如, 應用程式可能會播放「錄製」音效, 並顯示錄製指示器。
+- 請勿將語音辨識用於機密的使用者資訊, 例如密碼、健康情況資料或財務資訊。
+- 在對其採取行動_之前, 先_顯示辨識結果。 這不僅會提供應用程式執行內容的意見反應, 還可讓使用者在辨識錯誤發生時加以處理。
 
 ## <a name="summary"></a>總結
 
-本文已出現新的語音 API，並說明如何實作在 Xamarin.iOS 應用程式中支援持續的語音辨識，並轉譯成文字的語音功能 （即時或錄製音訊資料流）。 
+本文介紹了新的語音 API, 並示範如何在 Xamarin iOS 應用程式中執行它, 以支援連續語音辨識和轉譯語音 (從即時或錄製的音訊串流) 到文字。 
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SpeakToMe （範例）](https://developer.xamarin.com/samples/monotouch/ios10/SpeakToMe/)
+- [SpeakToMe (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-speaktome)

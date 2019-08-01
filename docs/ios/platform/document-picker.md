@@ -1,78 +1,78 @@
 ---
-title: 在 Xamarin.iOS 中的文件選擇器
-description: 本文件描述 iOS 文件選擇器，並討論如何在 Xamarin.iOS 中使用它。 它將探討 iCloud、 文件、 常見的安裝程式碼、 文件提供者擴充功能，和更多功能。
+title: Xamarin 中的檔選擇器
+description: 本檔說明 iOS 檔選擇器, 並討論如何在 Xamarin 中使用它。 它會探討 iCloud、檔、一般設定程式碼、檔提供者擴充功能等等。
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: ac77bbc27784d1b836f4a1d26365acd65ac63ae7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4bbb8559108573ef8204ceb5eac900802f9d7134
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61426034"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646022"
 ---
-# <a name="document-picker-in-xamarinios"></a>在 Xamarin.iOS 中的文件選擇器
+# <a name="document-picker-in-xamarinios"></a>Xamarin 中的檔選擇器
 
-文件選擇器可讓應用程式之間共用的文件。 在 iCloud 或不同的應用程式的目錄中，可能會儲存這些文件。 透過一組所共用的文件[文件提供者擴充](~/ios/platform/extensions.md)使用者在其裝置上安裝。 
+檔選擇器可讓您在應用程式之間共用檔。 這些檔可能會儲存在 iCloud 或不同的應用程式目錄中。 檔會透過使用者已安裝在其裝置上的一組[檔提供者延伸](~/ios/platform/extensions.md)模組來共用。 
 
-保持在應用程式和雲端進行同步處理的文件的困難，因為它們會引進一段所需的複雜性。
+由於在應用程式和雲端之間保持檔同步的困難, 因此會造成一定的複雜性。
 
 ## <a name="requirements"></a>需求
 
-需要下列項目來完成這篇文章所述的步驟：
+需要下列專案, 才能完成本文中顯示的步驟:
 
--  **Xcode 7 和 iOS 8 或更新版本**– Apple 的 Xcode 7 和 iOS 8 或更新版本的 Api 需要安裝並設定開發人員電腦上。
--  **Visual Studio 或 Visual Studio for Mac** – 應該安裝最新版的 Visual Studio for Mac。
--  **iOS 裝置**– iOS 裝置執行 iOS 8 或更新版本。
+-  **Xcode 7 和 ios 8 或更新版本**– Apple 的 Xcode 7 和 ios 8 或更新版本的 api 必須在開發人員的電腦上安裝及設定。
+-  **Visual Studio 或 Visual Studio for Mac** –應該安裝最新版本的 Visual Studio for Mac。
+-  **Ios 裝置**–執行 ios 8 或更新版本的 ios 裝置。
 
-## <a name="changes-to-icloud"></a>變更至 iCloud
+## <a name="changes-to-icloud"></a>ICloud 的變更
 
-若要實作的新功能的文件選擇器，已進行下列變更至 Apple 的 iCloud 服務：
+若要執行檔選擇器的新功能, Apple 的 iCloud 服務已進行下列變更:
 
--  精靈已全面改寫，使用 CloudKit iCloud。
--  現有的 iCloud 功能已被重新命名 iCloud Drive。
--  Microsoft Windows 作業系統的支援已新增到 icloud 的功能。
--  在 Mac OS 尋找工具中已新增 iCloud 資料夾。
--  iOS 裝置可以存取的 Mac OS iCloud 資料夾的內容。
+-  ICloud 守護程式已使用 CloudKit 完全重寫。
+-  現有的 iCloud 功能已重新命名為 iCloud 磁片磁碟機。
+-  已將 Microsoft Windows OS 的支援新增到 iCloud。
+-  已在 Mac OS 搜尋工具中新增 iCloud 資料夾。
+-  iOS 裝置可以存取 Mac OS iCloud 資料夾的內容。
 
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
-## <a name="what-is-a-document"></a>什麼是文件？
+## <a name="what-is-a-document"></a>什麼是檔？
 
-當參考到 icloud 文件時，它是單一的獨立實體，而且這類使用者中發現。 使用者可能想要修改的文件，或與其他使用者共用 （透過電子郵件，例如）。
+參考 iCloud 中的檔時, 它是單一的獨立實體, 而且應該被使用者察覺。 使用者可能會想要修改檔或與其他使用者共用 (例如, 使用電子郵件)。
 
-有數種類型的檔案，使用者會立即辨識為文件，例如頁面，重點演說或數字的檔案。 不過，不限於此概念 iCloud。 例如，可以視為文件和儲存在 iCloud 中 （例如 Chess 相符項目） 的遊戲狀態。 這個檔案可能使用者的裝置之間傳遞，並讓其挑選遊戲的地方在不同裝置上。
+使用者會立即將數種類型的檔案辨識為檔, 例如頁面、專題或數位檔案。 不過, iCloud 並不限於此概念。 例如, 遊戲的狀態 (例如, 國際象棋比賽) 可視為檔, 並儲存在 iCloud 中。 此檔案可能會在使用者的裝置之間傳遞, 並可讓他們在不同裝置上離開的遊戲中收取。
 
-## <a name="dealing-with-documents"></a>處理文件
+## <a name="dealing-with-documents"></a>處理檔
 
-前一頭栽進程式碼，以使用 [文件選擇器]，請使用 Xamarin，這篇文章將介紹最佳的作法，來使用 iCloud 文件，以及數個現有的 api 所做的修改，才能支援文件選擇器。
+在深入探討使用檔選擇器搭配 Xamarin 所需的程式碼之前, 本文將討論使用 iCloud 檔的最佳作法, 以及對支援檔選擇器所需的現有 Api 所做的幾項修改。
 
 ### <a name="using-file-coordination"></a>使用檔案協調
 
-因為可以修改檔案，從數個不同的位置，就必須使用協調以避免資料遺失。
+因為可以從數個不同的位置修改檔案, 所以必須使用協調來防止資料遺失。
 
  [![](document-picker-images/image1.png "使用檔案協調")](document-picker-images/image1.png#lightbox)
 
-讓我們看一下上圖中：
+讓我們看一下上面的圖例:
 
-1.  使用檔案協調的 iOS 裝置建立新的文件，並將它儲存至資料夾 icloud 的功能。
-2.  iCloud 將修改過的檔案儲存至雲端，以發佈至每個裝置。
-3.  附加的 Mac 看到 iCloud 資料夾中修改過的檔案，並使用檔案協調變更下複製到檔案中。
-4.  裝置不使用檔案協調對檔案進行變更，並將它儲存至資料夾 icloud 的功能。 這些變更會立即複寫到其他裝置。
+1.  使用「檔案協調」的 iOS 裝置會建立新的檔, 並將它儲存到 iCloud 資料夾。
+2.  iCloud 會將修改過的檔案儲存至雲端, 以散發到每部裝置。
+3.  附加的 Mac 會在 iCloud 資料夾中看到修改過的檔案, 並使用檔案協調將變更複製到檔案中。
+4.  未使用檔案協調的裝置會對檔案進行變更, 並將它儲存到 iCloud 資料夾。 這些變更會立即複寫到其他裝置。
 
-假設原始的 iOS 裝置或 Mac 已編輯檔案，其變更會遺失且未經協調的裝置中的檔案的版本覆寫。 若要避免資料遺失，檔案協調時，必須使用雲端架構的文件。
+假設原始的 iOS 裝置或 Mac 正在編輯檔案, 現在它們的變更會遺失, 並以未經協調裝置的檔案版本加以覆寫。 為避免資料遺失, 檔案協調是使用雲端式檔時的一種必須。
 
 ### <a name="using-uidocument"></a>使用 UIDocument
 
- `UIDocument` 使事情更簡單 (或`NSDocument`在 macOS 上) 執行所有繁重的工作，開發人員。 它提供內建檔案一起使用，以防止封鎖的應用程式 UI 的背景佇列。
+ `UIDocument`藉由為開發人員`NSDocument`執行所有繁重的工作, 讓事情變得簡單 (或在 macOS 上)。 它提供與背景佇列的內建檔案協調, 以防止封鎖應用程式的 UI。
 
- `UIDocument` 會公開多個，需要針對任何用途的開發人員簡化開發工作的 Xamarin 應用程式的高階 Api。
+ `UIDocument`公開多個高階 Api, 讓 Xamarin 應用程式的開發工作得以達到開發人員所需的任何目的。
 
-下列程式碼建立的子類別`UIDocument`實作泛型文字為基礎的文件，可用來儲存及擷取文字從 iCloud:
+下列程式碼會建立的`UIDocument`子類別, 以執行可用於儲存和抓取 iCloud 文字的一般文字型檔:
 
 ```csharp
 using System;
@@ -152,13 +152,13 @@ namespace DocPicker
 }
 ```
 
-`GenericTextDocument`使用 Xamarin.iOS 8 應用程式中的外部文件與文件選擇器時，將這整篇文章使用以上所顯示的類別。
+當`GenericTextDocument`您在 Xamarin iOS 8 應用程式中使用檔選擇器和外部檔時, 將會在本文中使用上面所提供的類別。
 
 ## <a name="asynchronous-file-coordination"></a>非同步檔案協調
 
-iOS 8 提供數種新非同步檔案協調功能，透過新的檔案協調 Api。 IOS 8 之前所有的現有檔案協調 Api 已完全同步。 這表示開發人員負責實作自己的背景佇列來防止檔案協調封鎖應用程式的 UI。
+iOS 8 透過新的檔案協調 Api 提供了數個新的非同步檔案協調功能。 在 iOS 8 之前, 所有現有的檔案協調 Api 都是完全同步的。 這表示開發人員負責執行自己的背景佇列, 以防止檔案協調封鎖應用程式的 UI。
 
-新`NSFileAccessIntent`類別包含 URL，指向 檔案及數個選項可控制協調所需的類型。 下列程式碼示範如何將檔案從一個位置移到另一個使用意圖：
+新`NSFileAccessIntent`的類別包含指向檔案的 URL, 以及用來控制所需之協調類型的數個選項。 下列程式碼示範如何使用意圖, 將檔案從一個位置移至另一個位置:
 
 ```csharp
 // Get source options
@@ -186,66 +186,66 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 });
 ```
 
-## <a name="discovering-and-listing-documents"></a>探索並列出文件
+## <a name="discovering-and-listing-documents"></a>探索和列出檔
 
-探索並列出的文件的方式是使用現有的`NSMetadataQuery`Api。 本節將討論新的功能新增至`NSMetadataQuery`，便於使用的文件甚至比以前更容易。
+探索和列出檔的方式是使用現有`NSMetadataQuery`的 api。 本節將涵蓋新增至`NSMetadataQuery`的新功能, 讓您更輕鬆地使用檔。
 
 ### <a name="existing-behavior"></a>現有的行為
 
-在 iOS 8 之前`NSMetadataQuery`已收取的本機檔案的變更緩慢的這類： 刪除、 建立和重新命名。
+在 iOS 8 之前, `NSMetadataQuery`拾取本機檔案變更的速度很慢, 例如: 刪除、建立和重新命名。
 
- [![](document-picker-images/image2.png "NSMetadataQuery 本機檔案的變更概觀")](document-picker-images/image2.png#lightbox)
+ [![](document-picker-images/image2.png "NSMetadataQuery 本機檔案變更總覽")](document-picker-images/image2.png#lightbox)
 
-在上圖中：
+在上圖中:
 
-1.  在應用程式容器中，已經存在的檔案`NSMetadataQuery`具有現有`NSMetadata`預先建立的記錄，以及多工緩衝處理如此就能立即提供給應用程式。
-1.  應用程式的應用程式容器中建立新的檔案。
-1.  沒有之前的延遲`NSMetadataQuery`會將應用程式容器的修改，並建立必要`NSMetadata`記錄。
-
-
-由於建立延遲`NSMetadata`記錄，應用程式必須有兩個資料來源開啟： 一個本機檔案變更，另一個雲端架構的變更。
-
-### <a name="stitching"></a>編結
-
-在 iOS 8`NSMetadataQuery`直接使用新功能，稱為連結的工作變得更容易：
-
- [![](document-picker-images/image3.png "與新功能的 NSMetadataQuery 稱為連結")](document-picker-images/image3.png#lightbox)
-
-使用在上圖中的連結：
-
-1.  同樣地，針對存在於應用程式容器的檔案`NSMetadataQuery`具有現有`NSMetadata`預先建立的記錄，以及多工緩衝處理。
-1.  應用程式會使用檔案協調的應用程式容器中建立新的檔案。
-1.  修改和呼叫，會看到應用程式容器中的勾點`NSMetadataQuery`來建立必要`NSMetadata`記錄。
-1.  `NSMetadata`記錄檔案後，直接建立，並會提供給應用程式。
+1.  對於已經存在於應用程式容器中的檔案`NSMetadataQuery` , 會`NSMetadata`有預先建立和多工緩衝處理的現有記錄, 讓應用程式立即可供使用。
+1.  應用程式會在應用程式容器中建立新的檔案。
+1.  在看到應用程式容器`NSMetadataQuery`的修改並建立必要`NSMetadata`的記錄之前, 會有延遲。
 
 
-使用連結的應用程式不再具有開啟資料來源來監視本機和雲端基礎檔案變更。 現在應用程式都可以依賴`NSMetadataQuery`直接。
+由於建立`NSMetadata`記錄的延遲, 應用程式必須開啟兩個數據源: 一個用於本機檔案變更, 另一個用於雲端式變更。
+
+### <a name="stitching"></a>縫合
+
+在 iOS 8 中`NSMetadataQuery` , 使用稱為「裝訂」的新功能, 可讓您更輕鬆地直接使用:
+
+ [![](document-picker-images/image3.png "具有新功能的 NSMetadataQuery, 稱為「裝訂」")](document-picker-images/image3.png#lightbox)
+
+使用上圖中的 [裝訂]:
+
+1.  如前所述, 對於已經存在於應用程式容器中的檔案, `NSMetadataQuery`會有`NSMetadata`預先建立和多工緩衝處理的現有記錄。
+1.  應用程式會使用檔案協調在應用程式容器中建立新的檔案。
+1.  應用程式容器中的勾點會看到修改, `NSMetadataQuery`並呼叫來建立`NSMetadata`必要的記錄。
+1.  `NSMetadata`記錄是直接在檔案之後建立, 並可供應用程式使用。
+
+
+藉由使用裝訂應用程式, 不再需要開啟資料來源來監視本機和以雲端為基礎的檔案變更。 現在, 應用程式可以`NSMetadataQuery`直接依賴。
 
 > [!IMPORTANT]
-> 編結僅適用於應用程式正在使用檔案協調，如上節所示。 如果未使用檔案協調，Api 預設為現有的預先 iOS 8 行為。
+> 只有在應用程式使用如上一節所示的檔案協調時, 才會進行裝訂。 如果未使用檔案協調, Api 會預設為現有的 iOS 8 行為。
 
 
 
 
-### <a name="new-ios-8-metadata-features"></a>IOS 8 的中繼資料的新功能
+### <a name="new-ios-8-metadata-features"></a>新的 iOS 8 中繼資料功能
 
-已新增下列新功能至`NSMetadataQuery`在 iOS 8 中：
+IOS 8 中的下列新功能已`NSMetadataQuery`新增至:
 
--   `NSMetatadataQuery` 現在可以列出儲存在雲端中的非本機文件。
--  已新增新的 Api 來存取雲端架構的文件上的中繼資料資訊。 
--  新`NSUrl_PromisedItems`API，將會存取檔案的屬性，可能會或可能沒有提供其內容在本機的檔案。
--  使用 `GetPromisedItemResourceValue`方法來取得指定檔案的相關資訊，或使用`GetPromisedItemResourceValues`方法一次取得多個檔案的資訊。
+-   `NSMetatadataQuery`現在可以列出儲存在雲端中的非本機檔。
+-  已新增 Api 以存取雲端架構檔上的中繼資料資訊。 
+-  有一個新`NSUrl_PromisedItems`的 API, 可存取檔案的檔案屬性, 這些檔案可能或可能沒有其內容可在本機上使用。
+-  使用方法來取得指定檔案的相關資訊, 或`GetPromisedItemResourceValues`使用方法一次取得一個以上的檔案資訊。 `GetPromisedItemResourceValue`
 
 
-已新增兩個新的檔案協調旗標來處理中繼資料：
+已新增兩個新的檔案協調旗標來處理中繼資料:
 
 -   `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
 -   `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
 
 
-使用上述的旗標，可供在本機使用不需要的文件檔案的內容。
+使用上述旗標, 檔檔案的內容不需要在本機提供, 即可供使用。
 
-下列程式碼片段示範如何使用`NSMetadataQuery`查詢特定的檔案是否存在，並建置該檔案，如果不存在：
+下列程式碼片段顯示如何使用`NSMetadataQuery`來查詢特定檔案是否存在, 並建立檔案 (如果不存在的話):
 
 ```csharp
 using System;
@@ -423,62 +423,62 @@ internal void RaiseDocumentLoaded(GenericTextDocument document) {
 #endregion
 ```
 
-### <a name="document-thumbnails"></a>文件縮圖
+### <a name="document-thumbnails"></a>檔縮圖
 
-Apple 會覺得最佳的使用者體驗時列出的應用程式的文件是使用預覽。 這可讓終端使用者內容中，因此它們可以快速識別他們想要使用的文件。
+Apple 認為列出應用程式檔的最佳使用者體驗是使用預覽。 這會提供終端使用者內容, 讓他們可以快速地識別他們想要使用的檔。
 
-在 iOS 8 之前顯示的文件預覽所需的自訂實作。 剛接觸 iOS 8 都可讓開發人員快速地處理文件縮圖的檔案系統屬性。
+在 iOS 8 之前, 會顯示檔預覽, 需要自訂的執行。 IOS 8 的新手是檔案系統屬性, 可讓開發人員快速使用檔縮圖。
 
-#### <a name="retrieving-document-thumbnails"></a>擷取文件縮圖 
+#### <a name="retrieving-document-thumbnails"></a>正在抓取檔縮圖 
 
-藉由呼叫`GetPromisedItemResourceValue`或是`GetPromisedItemResourceValues`方法`NSUrl_PromisedItems`API， `NSUrlThumbnailDictionary`，則會傳回。 這個字典中目前的唯一索引鍵是`NSThumbnial1024X1024SizeKey`和其比對`UIImage`。
+藉由呼叫`GetPromisedItemResourceValue`或`GetPromisedItemResourceValues`方法, `NSUrl_PromisedItems`會傳回 API。 `NSUrlThumbnailDictionary` 目前在此字典中的唯一索引鍵`NSThumbnial1024X1024SizeKey`是和其`UIImage`相符的。
 
-#### <a name="saving-document-thumbnails"></a>正在儲存的文件縮圖
+#### <a name="saving-document-thumbnails"></a>儲存檔縮圖
 
-若要儲存縮圖的最簡單方式是使用`UIDocument`。 藉由呼叫`GetFileAttributesToWrite`方法的`UIDocument`和設定縮圖，它會自動儲存文件檔案時。 ICloud 服務精靈將會看到這項變更，並傳播到 icloud 的功能。 在 Mac OS X、 縮圖會自動為開發人員產生快速尋找外掛程式。
+儲存縮圖最簡單的方式是使用`UIDocument`。 藉由呼叫`GetFileAttributesToWrite`的方法`UIDocument`並設定縮圖, 它會在檔檔案為時自動儲存。 ICloud Daemon 會看到這種變更, 並將其傳播到 iCloud。 在 Mac OS X 上, 快速查閱外掛程式會自動為開發人員產生縮圖。
 
-有的基本知識基礎的 iCloud 中的文件位置，以及修改現有的 API，我們就準備好要實作在 Xamarin iOS 8 中的文件選擇器檢視控制器行動應用程式。
+有了使用 iCloud 檔的基本概念, 以及對現有 API 的修改, 我們已準備好在 Xamarin iOS 8 行動裝置應用程式中執行檔選擇器視圖控制器。
 
 
 ## <a name="enabling-icloud-in-xamarin"></a>在 Xamarin 中啟用 iCloud
 
-文件選擇器可用於 Xamarin.iOS 應用程式之前，就必須同時在您的應用程式，以及透過 Apple 啟用 iCloud 支援。 
+您必須在應用程式中和透過 Apple 啟用 iCloud 支援, 才能在 Xamarin iOS 應用程式中使用檔選擇器。 
 
-下列步驟逐步解說的 iCloud 的佈建程序。
+下列步驟將逐步解說布建 iCloud 的程式。
 
 1. 建立 iCloud 容器。
-2. 建立包含 iCloud App Service 應用程式識別碼。
-3. 建立佈建設定檔，其中包含此應用程式識別碼。
+2. 建立包含 iCloud App Service 的應用程式識別碼。
+3. 建立包含此應用程式識別碼的布建設定檔。
 
-[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南逐步說明的前兩個步驟。 若要建立佈建設定檔，請遵循[佈建設定檔](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device)指南。
+[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南會逐步解說前兩個步驟。 若要建立布建設定檔, 請遵循布建[設定檔](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device)指南中的步驟。
 
 
 
-下列步驟逐步解說設定 iCloud 的應用程式的程序：
+下列步驟會逐步解說為 iCloud 設定應用程式的過程:
 
 請執行下列動作：
 
-1.  在中開啟專案 Visual Studio for Mac 或 Visual Studio。
-2.  在 [**方案總管] 中**，以滑鼠右鍵按一下專案，然後選取選項。
-3.  在 [選項] 對話方塊中選取**iOS 應用程式**，請確認**套件組合識別碼**比對中所定義的一個**應用程式識別碼**上面建立的應用程式。 
-4.  選取  **iOS 套件組合簽署**，選取**開發人員身分識別**並**佈建設定檔**上面所建立。
-5.  按一下 **確定**按鈕以儲存變更並關閉對話方塊。
-6.  以滑鼠右鍵按一下`Entitlements.plist`中**方案總管 中**在編輯器中開啟它。
+1.  在 Visual Studio for Mac 或 Visual Studio 中開啟專案。
+2.  在 **方案總管**中, 以滑鼠右鍵按一下專案, 然後選取 選項。
+3.  在 [選項] 對話方塊中, 選取 [ **IOS 應用程式**], 確定 [套件組合**識別碼**] 符合針對應用程式所建立的 [**應用**程式識別碼] 中所定義的套件組合。 
+4.  選取 [IOS 套件組合**簽署**], 並選取 [**開發人員身分識別**] 和上面建立的布建**設定檔**。
+5.  按一下 [**確定]** 按鈕以儲存變更並關閉對話方塊。
+6.  在 **方案總管**中`Entitlements.plist` , 以滑鼠右鍵按一下 開啟, 在編輯器中開啟它。
 
     > [!IMPORTANT]
-    > 在 Visual Studio 中您可能需要開啟權利編輯器上按一下滑鼠右鍵，選取**開啟方式...** 選取屬性清單編輯器
+    > 在 Visual Studio 您可能需要以滑鼠右鍵按一下 [權利] 編輯器, 選取 [**開啟方式**...] 並選取 [屬性清單編輯器]
 
-7.  請檢查**啟用 iCloud** ， **iCloud 文件**，**機碼值儲存體**並**CloudKit** 。
-8.  請確定**容器**存在應用程式 （如上述所建立）。 範例：`iCloud.com.your-company.AppName`
+7.  勾選 [**啟用 icloud** , **icloud 檔**, 機**碼值儲存**和**CloudKit** ]。
+8.  請確定應用程式的**容器**存在 (如上面所建立)。 範例：`iCloud.com.your-company.AppName`
 9.  將變更儲存到檔案。
 
-如需權利的詳細資訊請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
+如需權利的詳細資訊, 請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
-上述設定，以雲端為基礎的文件和新的文件選擇器檢視控制器，現在可以使用應用程式。
+在上述設定就緒之後, 應用程式現在可以使用雲端式檔和新的檔選擇器視圖控制器。
 
-## <a name="common-setup-code"></a>常見的安裝程式碼
+## <a name="common-setup-code"></a>一般設定程式碼
 
-開始使用文件選擇器檢視控制器之前, 沒有所需的一些標準安裝程式碼。 藉由修改應用程式的啟動`AppDelegate.cs`檔案，並使它看起來如下：
+開始使用檔選擇器視圖控制器之前, 需要一些標準設定程式碼。 一開始先修改應用程式`AppDelegate.cs`的檔案, 讓它看起來如下所示:
 
 ```csharp
 using System;
@@ -794,11 +794,11 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> 上述程式碼包含發掘及列出的文件上一節中的程式碼。 它會顯示以下看來，就會出現在實際的應用程式中。 為了簡單起見，此範例中的運作方式與單一的硬式編碼的檔案 (`test.txt`) 只。
+> 上述程式碼包含上述 [探索和列出檔] 區段中的程式碼。 它會完整顯示在這裡, 因為它會出現在實際的應用程式中。 為了簡單起見, 此範例僅適用于單一、硬式編碼的`test.txt`檔案 ()。
 
-上述程式碼會公開數個 iCloud 磁碟機捷徑，以便更輕鬆在應用程式的其餘部分中使用。
+上述程式碼會公開數個 iCloud 磁片磁碟機快捷方式, 讓它們更容易在應用程式的其餘部分中使用。
 
-接下來，加入下列程式碼的任何檢視或檢視的容器，以使用文件選擇器，或使用雲端架構的文件：
+接下來, 將下列程式碼新增至將使用檔選擇器或使用雲端式檔的任何 view 或 view 容器:
 
 ```csharp
 using CloudKit;
@@ -815,43 +815,43 @@ public AppDelegate ThisApp {
 #endregion
 ```
 
-這會將新增的捷徑，以前往`AppDelegate`並存取先前建立的 iCloud 快速鍵。
+這會新增一個快捷方式, 以`AppDelegate`取得並存取上述所建立的 iCloud 快捷方式。
 
-此程式碼就緒之後，讓我們來看看實作 Xamarin iOS 8 應用程式中的文件選擇器檢視控制器。
+在此程式碼準備就緒之後, 讓我們看看如何在 Xamarin iOS 8 應用程式中執行檔選擇器視圖控制器。
 
-## <a name="using-the-document-picker-view-controller"></a>使用文件選擇器檢視控制器
+## <a name="using-the-document-picker-view-controller"></a>使用檔選擇器視圖控制器
 
-在 iOS 8 之前, 它是很難從另一個應用程式存取文件，因為沒有任何方法可探索從應用程式，應用程式內外部的文件項目。
+在 iOS 8 之前, 很難以從另一個應用程式存取檔, 因為無法從應用程式內探索應用程式外部的檔。
 
 ### <a name="existing-behavior"></a>現有的行為
 
- [![](document-picker-images/image31.png "現有行為概觀")](document-picker-images/image31.png#lightbox)
+ [![](document-picker-images/image31.png "現有的行為總覽")](document-picker-images/image31.png#lightbox)
 
-讓我們看看存取外部文件在 iOS 8 之前：
+讓我們看看如何存取 iOS 8 之前的外部檔:
 
-1.  第一次使用者必須開啟原本建立文件的應用程式。
-1.  選取文件和`UIDocumentInteractionController`用來將文件傳送至新的應用程式。
-1.  最後，原始的文件的複本被放置在新的應用程式容器中。
+1.  首先, 使用者必須開啟原先建立檔的應用程式。
+1.  檔會被選取, 而且`UIDocumentInteractionController`會用來將檔傳送至新的應用程式。
+1.  最後, 原始檔案的複本會放在新應用程式的容器中。
 
 
-從該處文件可供第二個應用程式開啟及編輯。
+檔可供第二個應用程式開啟和編輯。
 
-### <a name="discovering-documents-outside-of-an-apps-container"></a>探索應用程式的容器之外的文件
+### <a name="discovering-documents-outside-of-an-apps-container"></a>探索應用程式容器外的檔
 
-在 iOS 8 中，應用程式是能夠輕鬆地存取自己的應用程式容器之外的文件：
+在 iOS 8 中, 應用程式可以輕鬆地存取自己的應用程式容器外的檔:
 
- [![](document-picker-images/image32.png "探索應用程式的容器之外的文件")](document-picker-images/image32.png#lightbox)
+ [![](document-picker-images/image32.png "探索應用程式容器外的檔")](document-picker-images/image32.png#lightbox)
 
-使用新的 iCloud 文件選擇器 ( `UIDocumentPickerViewController`)，iOS 應用程式以直接探索及存取其應用程式容器之外。 `UIDocumentPickerViewController`提供機制，以供使用者存取權授與和編輯這些權限透過探索文件。
+使用新的 iCloud 檔選擇器`UIDocumentPickerViewController`(), iOS 應用程式可以直接在其應用程式容器外部探索和存取。 `UIDocumentPickerViewController`提供一種機制, 讓使用者透過許可權授與和編輯這些探索到的檔。
 
-應用程式必須 opt-in 以其顯示在 文件選擇器 icloud 的功能，並可供探索和使用方式的其他應用程式的文件。 Xamarin iOS 8 應用程式共用其應用程式容器，並加以編輯`Info.plist`檔案中標準文字編輯器，並將下列兩行新增至字典的底部 (之間`<dict>...</dict>`標記):
+應用程式必須加入宣告, 才能在 iCloud 檔選擇器中顯示其檔, 並可供其他應用程式探索及使用。 若要讓 Xamarin iOS 8 應用程式共用其應用程式容器, `Info.plist`請在標準文字編輯器中編輯它, 並將下列兩行新增至字典的底部 (在`<dict>...</dict>`標記之間):
 
 ```xml
 <key>NSUbiquitousContainerIsDocumentScopePublic</key>
 <true/>
 ```
 
-`UIDocumentPickerViewController`提供絕佳的新 UI，可讓使用者選擇文件。 若要顯示的文件選擇器檢視控制器在 Xamarin iOS 8 應用程式中，執行下列作業：
+`UIDocumentPickerViewController`提供了絕佳的新 UI, 可讓使用者選擇檔。 若要在 Xamarin iOS 8 應用程式中顯示檔選擇器視圖控制器, 請執行下列動作:
 
 ```csharp
 using MobileCoreServices;
@@ -903,63 +903,63 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> 開發人員必須呼叫`StartAccessingSecurityScopedResource`方法的`NSUrl`才能存取外部文件。 `StopAccessingSecurityScopedResource`必須呼叫方法來釋放安全性鎖定，只要在載入文件。
+> 開發人員必須先呼叫`StartAccessingSecurityScopedResource`的方法, `NSUrl`才能存取外部檔。 您必須呼叫方法, 以便在檔載入後立即釋放安全性鎖定。 `StopAccessingSecurityScopedResource`
 
 ### <a name="sample-output"></a>範例輸出
 
-上述程式碼會列印文件的顯示，請在 iPhone 裝置上執行時，文件選擇器的範例如下：
+以下是在 iPhone 裝置上執行時, 上述程式碼如何顯示檔選擇器的範例:
 
-1.  使用者啟動應用程式，並顯示的主要介面：   
+1.  使用者啟動應用程式, 並顯示主要介面:   
  
-    [![](document-picker-images/image33.png "在顯示的主要介面")](document-picker-images/image33.png#lightbox)
-1.  使用者點選**動作**在畫面頂端的按鈕，並選取 要求**文件提供者**從可用的提供者的清單：   
+    [![](document-picker-images/image33.png "會顯示主要介面")](document-picker-images/image33.png#lightbox)
+1.  使用者會在畫面頂端按 [**動作**] 按鈕, 並要求您從可用的提供者清單中選取**檔提供者**:   
  
-    [![](document-picker-images/image34.png "從可用的提供者清單中選取文件提供者")](document-picker-images/image34.png#lightbox)
-1.  **文件選擇器檢視控制器**會顯示選定**文件提供者**:   
+    [![](document-picker-images/image34.png "從可用的提供者清單中選取檔提供者")](document-picker-images/image34.png#lightbox)
+1.  針對選取的**檔提供者**, 會顯示 [**檔選擇器視圖控制器**]:   
  
-    [![](document-picker-images/image35.png "顯示文件選擇器檢視控制器")](document-picker-images/image35.png#lightbox)
-1.  使用者點選**文件資料夾**以顯示其內容：   
+    [![](document-picker-images/image35.png "隨即顯示 [檔選擇器] 視圖控制器")](document-picker-images/image35.png#lightbox)
+1.  使用者可以在**檔資料夾**上點擊以顯示其內容:   
  
-    [![](document-picker-images/image36.png "文件資料夾內容")](document-picker-images/image36.png#lightbox)
-1.  使用者選取**文件**並**文件選擇器**已關閉。
-1.  主要的介面會重新顯示，**文件**從外部的容器，並顯示其內容會載入。
+    [![](document-picker-images/image36.png "檔資料夾內容")](document-picker-images/image36.png#lightbox)
+1.  使用者選取**檔**, 並關閉**檔選擇器**。
+1.  主要介面會重新顯示, 從外部容器載入**檔**及其內容。
 
 
-實際文件選擇器檢視控制器的顯示取決於使用者在裝置上安裝，並已實作的文件選擇器模式。 文件提供者。 上述範例中使用開啟模式，將以下將詳細討論其他的模式類型。
+檔選擇器視圖控制器的實際顯示取決於使用者在裝置上安裝的檔提供者, 以及已執行的檔選擇器模式。 上述範例使用 [開啟] 模式, 以下將詳細討論其他模式類型。
 
-## <a name="managing-external-documents"></a>管理外部的文件
+## <a name="managing-external-documents"></a>管理外部檔
 
-如上所述，在 iOS 8 之前的應用程式可能只會存取屬於其應用程式容器的文件。 在 iOS 8 中的應用程式可以存取文件，從外部來源：
+如先前所述, 在 iOS 8 之前, 應用程式只能存取其應用程式容器中的檔。 在 iOS 8 中, 應用程式可以從外部來源存取檔:
 
- [![](document-picker-images/image37.png "管理外部文件概觀")](document-picker-images/image37.png#lightbox)
+ [![](document-picker-images/image37.png "管理外部檔總覽")](document-picker-images/image37.png#lightbox)
 
-當使用者選取從外部來源的文件時、 參考文件會寫入原始文件會指向應用程式容器。
+當使用者從外部來源選取檔時, 會將參考檔寫入指向原始檔案的應用程式容器。
 
-為了協助加入這項新功能到現有的應用程式，多項新功能已新增至`NSMetadataQuery`API。 一般而言，應用程式使用通用的文件範圍，來列出其應用程式容器內的文件。 使用此範圍，應用程式容器內的文件將會繼續顯示。
+為了協助將這項新功能新增到現有的`NSMetadataQuery`應用程式中, API 已新增數個新功能。 一般而言, 應用程式會使用普遍的檔範圍來列出其應用程式容器內的檔。 使用此範圍時, 只會繼續顯示應用程式容器內的檔。
 
-使用新的通用外部文件範圍，會傳回外部應用程式容器，並為其傳回的中繼資料文件。 `NSMetadataItemUrlKey`會指向 URL 文件所在實際位置。
+使用新的通用外部檔範圍將會傳回應用程式容器外的檔, 並傳回它們的中繼資料。 `NSMetadataItemUrlKey`會指向檔實際所在的 URL。
 
-有時候應用程式不想要使用 指向個參考的文件。 相反地，應用程式想要直接使用參考文件。 比方說，應用程式可能想要顯示在 UI 中，應用程式的資料夾中的文件，或讓使用者參考移動資料夾內。
+有時候應用程式不想使用第一個參考所指向的檔。 相反地, 應用程式想要直接使用參考檔。 例如, 應用程式可能會想要在 UI 中的應用程式資料夾中顯示檔, 或允許使用者在資料夾內移動參考。
 
-在 iOS 8 的新`NSMetadataItemUrlInLocalContainerKey`已提供直接存取參考文件。 此機碼指向外部的文件，在應用程式容器中的實際參考。
+在 iOS 8 中, 已`NSMetadataItemUrlInLocalContainerKey`提供新的來直接存取參考檔。 此機碼會指向應用程式容器中外部檔的實際參考。
 
-`NSMetadataUbiquitousItemIsExternalDocumentKey`用來測試是否有文件是外部應用程式的容器。 `NSMetadataUbiquitousItemContainerDisplayNameKey`用來存取已裝載的外部文件的原始副本容器的名稱。
+`NSMetadataUbiquitousItemIsExternalDocumentKey`是用來測試檔案是否在應用程式的容器外部。 `NSMetadataUbiquitousItemContainerDisplayNameKey`是用來存取存放外部檔之原始複本的容器名稱。
 
-### <a name="why-document-references-are-required"></a>為什麼不需要文件參考
+### <a name="why-document-references-are-required"></a>為什麼需要檔參考
 
-該 iOS 8 使用參考來存取外部文件的主要原因是安全性。 沒有任何應用程式可以存取任何其他應用程式的容器。 文件選擇器可以這麼做，因為是執行外處理，而且有整個系統的存取。
+IOS 8 使用參考存取外部檔的主要原因是安全性。 沒有任何應用程式可存取任何其他應用程式的容器。 只有檔選擇器可以這樣做, 因為是跨進程執行, 而且具有系統範圍的存取權。
 
-若要取得應用程式容器之外的文件的唯一方法是使用文件選擇器中，而且如果所傳回的 URL 選擇器安全性範圍。 安全性範圍 URL 中包含選取的文件，以及已設定領域的權限授與文件的應用程式存取所需的足夠資訊。
+若要取得應用程式容器外的檔, 唯一的方法是使用檔選擇器, 如果選擇器所傳回的 URL 是安全性範圍, 則為。 安全性範圍 URL 只包含足夠的資訊來選取檔, 以及授與應用程式存取檔所需的限定範圍許可權。
 
-請務必請注意，是否安全性範圍 URL 已序列化為字串，然後還原序列化安全性資訊可能會遺失，檔案會導致無法從 URL 存取。 [文件參考] 功能提供一個機制，回到這些 Url 所指向的檔案。
+請務必注意, 如果安全性範圍的 URL 已序列化為字串, 然後再進行還原序列化, 安全性資訊將會遺失, 且無法從 URL 存取該檔案。 檔參考功能會提供一種機制, 讓您回到這些 Url 所指向的檔案。
 
-因此，如果應用程式取得`NSUrl`從其中一個參考文件中，已經有連接的安全性範圍，而且可用來存取檔案。 基於這個理由，強烈建議開發人員使用`UIDocument`因為它會先處理所有此資訊和程序，為它們。
+因此, 如果應用程式`NSUrl`從其中一個參考檔取得, 它已經附加安全性範圍, 而且可以用來存取檔案。 基於這個理由, 強烈建議開發人員使用`UIDocument` , 因為它會處理所有這項資訊和處理常式。
 
 ### <a name="using-bookmarks"></a>使用書籤
 
-您不一定永遠可行列舉應用程式的文件，若要回到特定文件，例如，當執行狀態還原。 iOS 8 提供一個機制來建立直接以給定的文件為目標的書籤。
+您不一定可以列舉應用程式的檔以回到特定檔, 例如, 在執行狀態還原時。 iOS 8 提供一種機制, 可建立直接以指定檔為目標的書簽。
 
-下列程式碼會建立從書籤`UIDocument`的`FileUrl`屬性：
+下列程式碼會從`UIDocument`的`FileUrl`屬性建立書簽:
 
 ```csharp
 // Trap all errors
@@ -989,7 +989,7 @@ catch (Exception e) {
 }
 ```
 
-現有的書籤 API 用來建立針對現有的書籤`NSUrl`，可以儲存及提供直接存取的外部檔案載入。 下列程式碼將會還原上面所建立的書籤：
+現有的書簽 API 可用來針對現有`NSUrl`的建立書簽, 可以儲存並載入, 以提供對外部檔案的直接存取權。 下列程式碼將還原先前建立的書簽:
 
 ```csharp
 if (Bookmark != null) {
@@ -1016,135 +1016,135 @@ if (Bookmark != null) {
 }
 ```
 
-## <a name="open-vs-import-mode-and-the-document-picker"></a>開啟 vs。匯入模式和文件選擇器
+## <a name="open-vs-import-mode-and-the-document-picker"></a>開啟 vs。匯入模式和檔選擇器
 
-文件選擇器檢視控制器具有兩個不同的作業模式：
+檔選擇器視圖控制器具有兩種不同的作業模式:
 
-1.  **開啟 [模式]** -在此模式中，當使用者選取和外部的文件，文件選擇器會建立一個安全性範圍的書籤應用程式容器中。   
+1.  **開啟模式**–在此模式中, 當使用者選取和外部檔時, 檔選擇器會在應用程式容器中建立安全性範圍的書簽。   
  
-    [![](document-picker-images/image37.png "安全性範圍的應用程式容器中的書籤")](document-picker-images/image37.png#lightbox)
-1.  **匯入模式**-在此模式中，當使用者選取和外部文件、 文件選擇器不會建立書籤，但相反地，複製到暫存位置的檔案和提供應用程式存取此位置的文件：   
+    [![](document-picker-images/image37.png "應用程式容器中的安全性範圍書簽")](document-picker-images/image37.png#lightbox)
+1.  匯**入模式**–在此模式中, 當使用者選取和外部檔時, 檔選擇器將不會建立書簽, 而是會將檔案複製到暫存位置, 並在此位置提供應用程式存取權:   
  
-    [![](document-picker-images/image38.png "文件選擇器會將檔案複製到暫存位置，並提供應用程式存取到這個位置的文件")](document-picker-images/image38.png#lightbox)   
- 基於任何因素而終止應用程式，請清空暫存位置，而且移除檔案。 如果應用程式需要維護檔案的存取權，它應該建立複本，並將它放在其應用程式容器中。
+    [![](document-picker-images/image38.png "檔選擇器會將檔案複製到暫存位置, 並提供應用程式存取此位置的檔")](document-picker-images/image38.png#lightbox)   
+ 一旦應用程式因任何原因而終止, 暫存位置就會清空, 並移除該檔案。 如果應用程式需要維護檔案的存取權, 則應該建立複本, 並將它放在其應用程式容器中。
 
 
-開啟模式時，應用程式想要與其他應用程式共同作業及共用的文件與該應用程式進行任何變更。 應用程式不想與其他應用程式共用的文件的修改時，會使用匯入模式。
+當應用程式想要與另一個應用程式共同作業, 並與該應用程式共用對檔所做的任何變更時, [開啟] 模式非常有用。 當應用程式不想要與其他應用程式共用檔的修改時, 會使用匯入模式。
 
-## <a name="making-a-document-external"></a>讓外部文件
+## <a name="making-a-document-external"></a>將檔設為外部
 
-如先前所述，iOS 8 應用程式並沒有自己的應用程式容器之外的容器的存取權。 應用程式可以寫入自己的容器，到暫存位置，或在本機，然後將應用程式容器外產生的文件移至 使用者選擇的位置使用的特殊文件模式。
+如先前所述, iOS 8 應用程式無法存取其本身應用程式容器以外的容器。 應用程式可以在本機寫入其本身的容器或暫存位置, 然後使用特殊檔案模式, 將所產生的檔移到應用程式容器之外的使用者選擇位置。
 
-若要移動到外部位置的文件，執行下列作業：
+若要將檔移到外部位置, 請執行下列動作:
 
-1.  第一次建立新的文件中的本機或暫存位置。
-1.  建立`NSUrl`指向新的文件。
-1.  開啟新的文件選擇器檢視控制器，並將它傳遞`NSUrl`模式與`MoveToService`。 
-1.  一旦使用者選擇新的位置，文件會從其目前位置移到新位置。
-1.  參考文件會寫入應用程式的應用程式容器，以便建立應用程式仍然可以存取檔案。
-
-
-下列程式碼可用來將文件移到外部位置： `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
-
-上述的程序所傳回的參考文件正是其中一個建立的文件選擇器的開啟模式相同。 不過，有些應用程式可能會想要移動文件，而不保留其參考的時候。
-
-若要移動文件，而不會產生參考，請使用`ExportToService`模式。 範例：`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
-
-當使用`ExportToService`模式中，文件會複製到外部的容器，而現有的複本會保留在其原始位置。
-
-## <a name="document-provider-extensions"></a>文件提供者擴充功能
-
-Ios 8，Apple 會想要能夠存取其雲端為基礎的文件，不論其實際所在的任何使用者。 為了達成此目標，iOS 8 會提供新的文件提供者延伸模組機制。
-
-### <a name="what-is-a-document-provider-extension"></a>什麼是文件提供者擴充功能？
-
-簡言之，文件提供者擴充功能可讓開發人員或協力廠商提供給可與現有的 iCloud 儲存體位置完全相同的方式來存取應用程式替代的文件儲存體。
-
-使用者可以從 文件選擇器選取其中一個這些替代儲存體位置，而且它們可以使用完全相同的存取模式 （開啟、 匯入、 移動或匯出） 使用該位置中的檔案。
-
-這是使用兩個不同的延伸模組所實作的：
-
--  **文件選擇器擴充功能**– 提供`UIViewController`提供圖形化的介面，讓使用者選擇從替代儲存位置的文件的子類別。 做為文件選擇器檢視控制器的一部分，就會顯示這個子類別。
--  **提供副檔名**– 這是處理實際提供檔案內容的非 UI 延伸模組。 這些延伸模組提供透過檔案協調 ( `NSFileCoordinator` )。 這是另一個重要的情況下，需要檔案協調的情況。
+1.  首先, 在本機或暫存位置中建立新的檔。
+1.  `NSUrl`建立指向新檔的。
+1.  開啟新的檔選擇器視圖控制器, 並使用`NSUrl`的`MoveToService`模式將它傳遞給它。 
+1.  一旦使用者選擇新的位置, 檔就會從其目前的位置移至新的位置。
+1.  參考檔將會寫入應用程式的應用程式容器, 讓建立應用程式仍可存取該檔案。
 
 
-下圖顯示典型的資料流程，使用 文件提供者擴充功能時：
+下列程式碼可以用來將檔移到外部位置:`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
- [![](document-picker-images/image39.png "使用 文件提供者擴充功能時下, 圖顯示典型的資料流程")](document-picker-images/image39.png#lightbox)
+上述程式所傳回的參考檔, 與檔選擇器的 [開啟] 模式所建立的內容完全相同。 不過, 有時候應用程式可能會想要移動檔, 而不需要保留其參考。
 
-下列程序：
+若要在`ExportToService`不產生參考的情況下移動檔, 請使用模式。 範例：`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
 
-1.  應用程式提供的文件選擇器控制站，以允許使用者選取要使用的檔案。
-1.  使用者選取替代檔案位置和自訂`UIViewController`呼叫延伸模組，以顯示使用者介面。
-1.  使用者從這個位置選取檔案和 URL 傳回給文件選擇器。
-1.  文件選擇器選取檔案的 URL，並傳回它來處理使用者的應用程式。
-1.  URL 會傳遞至檔案協調器，以返回應用程式中的檔案內容。
-1.  檔案協調器會呼叫自訂的檔案提供者延伸模組來擷取檔案。
-1.  檔案的內容會回到檔案協調器。
+使用`ExportToService`模式時, 會將檔案複製到外部容器, 而現有的複本會保留在其原始位置。
+
+## <a name="document-provider-extensions"></a>檔提供者延伸模組
+
+在 iOS 8 中, Apple 希望終端使用者能夠存取其任何雲端式檔, 而不論其實際存在的位置。 為了達到此目標, iOS 8 提供了新的檔提供者延伸模組機制。
+
+### <a name="what-is-a-document-provider-extension"></a>什麼是檔提供者延伸模組？
+
+簡單地說, 檔提供者延伸模組是一種方法, 可讓開發人員或協力廠商提供應用程式替代檔儲存體, 其存取方式與現有 iCloud 儲存位置完全相同。
+
+使用者可以從檔選擇器中選取其中一個替代的儲存位置, 而且它們可以使用完全相同的存取模式 (開啟、匯入、移動或匯出) 來處理該位置中的檔案。
+
+這會使用兩個不同的擴充功能來執行:
+
+-  **檔選擇器延伸**模組– `UIViewController`提供一個子類別, 可提供圖形化介面讓使用者從替代儲存位置選擇檔。 這個子類別會顯示為檔選擇器視圖控制器的一部分。
+-  檔案**提供延伸**模組–這是非 UI 延伸模組, 可處理實際提供檔案內容。 這些延伸模組是透過檔案協調 ( `NSFileCoordinator` ) 提供。 這是需要檔案協調的另一個重要案例。
+
+
+下圖顯示使用檔提供者延伸模組時的一般資料流程:
+
+ [![](document-picker-images/image39.png "下圖顯示使用檔提供者延伸模組時的一般資料流程")](document-picker-images/image39.png#lightbox)
+
+會發生下列進程:
+
+1.  應用程式會呈現檔選擇器控制器, 可讓使用者選取要使用的檔案。
+1.  使用者選取替代檔案位置, 並呼叫自訂`UIViewController`延伸模組來顯示使用者介面。
+1.  使用者從這個位置選取一個檔案, 然後將該 URL 傳回到檔選擇器。
+1.  檔選擇器會選取檔案的 URL, 並將它傳回給應用程式供使用者使用。
+1.  URL 會傳遞至檔案協調器, 以將檔案內容傳回到應用程式。
+1.  檔案協調器會呼叫自訂檔案提供者延伸模組來取出檔案。
+1.  檔案的內容會傳回給檔案協調器。
 1.  檔案的內容會傳回給應用程式。
 
 
-### <a name="security-and-bookmarks"></a>安全性和書籤
+### <a name="security-and-bookmarks"></a>安全性和書簽
 
-本章節會快速查看如何安全性與持續性的檔案存取透過書籤與文件提供者擴充功能的運作方式。 ICloud 文件提供者，它會自動儲存至應用程式容器的安全性和書籤，與文件提供者擴充功能不因為它們不是文件的參考系統的一部分。
+本節將快速查看透過書簽的安全性和持續性檔案存取如何與檔提供者延伸模組搭配運作。 不同于 iCloud 檔提供者, 它會自動將安全性和書簽儲存至應用程式容器, 檔提供者延伸模組不是檔參考系統的一部分。
 
-例如： 在企業設定中，提供它自己全公司的安全資料存放區，系統管理員不想存取或公開 iCloud 伺服器所處理的機密公司資訊。 因此，不能使用內建的文件的參考系統。
+例如: 在提供專屬全公司安全資料存放區的企業設定中, 系統管理員不想要公用 iCloud 伺服器存取或處理機密的公司資訊。 因此, 無法使用內建的檔參考系統。
 
-書籤系統仍然可用，而且檔案提供者延伸模組，來正確地處理加上書籤的 URL，並傳回它所指的文件內容的責任。
+書簽系統仍然可以使用, 而且檔案提供者延伸模組必須負責正確地處理已加入書簽的 URL, 並傳回它所指向之檔的內容。
 
-基於安全考量，iOS 8 有哪些應用程式有權限內的檔案提供者的識別項資訊保存隔離層。 請注意，所有的檔案存取權會受到此隔離層。
+基於安全考慮, iOS 8 具有隔離層, 可保存哪些應用程式可存取檔案提供者內哪個識別碼的相關資訊。 請注意, 所有檔案存取都是由這個隔離層控制。
 
-使用書籤和文件提供者擴充功能時下, 圖顯示資料流程：
+下圖顯示使用書簽和檔提供者延伸模組時的資料流程:
 
- [![](document-picker-images/image40.png "使用書籤和文件提供者擴充功能時，此圖表會顯示資料流程")](document-picker-images/image40.png#lightbox)
+ [![](document-picker-images/image40.png "此圖表顯示使用書簽和檔提供者延伸模組時的資料流程")](document-picker-images/image40.png#lightbox)
 
-下列程序：
+會發生下列進程:
 
-1.  應用程式即將進入背景，而且必須保存其狀態。 它會呼叫`NSUrl`替代儲存體中建立檔案的書籤。
-1.  `NSUrl` 呼叫檔案提供者延伸模組，以取得永續性文件 URL。 
-1.  檔案提供者延伸模組以字串的形式傳回 URL `NSUrl` 。
-1.  `NSUrl`組合成書籤的 URL 並將它傳回至應用程式。
-1.  當應用程式在背景中進行醒來了，而且需要還原狀態時，會傳遞至書籤`NSUrl`。
-1.  `NSUrl` 呼叫檔案提供者延伸模組檔案的 url。
-1.  檔案延伸模組提供者會存取檔案，並傳回檔案的位置`NSUrl`。
-1.  檔案位置是與安全性資訊包裝在一起，並傳回給應用程式。
+1.  應用程式即將進入背景, 而且必須保存其狀態。 它會`NSUrl`呼叫來建立替代儲存體中檔案的書簽。
+1.  `NSUrl`呼叫檔案提供者延伸模組, 以取得檔的持續性 URL。 
+1.  檔案提供者延伸會以字串形式傳回的`NSUrl` URL。
+1.  會`NSUrl`將 URL 組合成書簽, 並將其傳回到應用程式。
+1.  當應用程式在背景 awakes, 而且需要還原狀態時, 它會將書簽傳遞至`NSUrl` 。
+1.  `NSUrl`以檔案的 URL 呼叫檔案提供者延伸模組。
+1.  副檔名提供者會存取檔案, 並將檔案的位置傳回到`NSUrl` 。
+1.  檔案位置會與安全性資訊配套, 並傳回給應用程式。
 
 
-從這裡開始，應用程式可以存取該檔案，並如往常一樣使用它。
+從這裡開始, 應用程式可以存取該檔案, 並正常使用它。
 
 ### <a name="writing-files"></a>寫入檔案
 
-本章節會快速瀏覽到替代位置寫入檔案與文件提供者擴充功能的運作方式。 IOS 應用程式會使用檔案協調將資訊儲存到應用程式容器內的磁碟。 短時間內的檔案已成功寫入後，系統會變更的通知檔案提供者延伸模組。
+本節將快速介紹如何將檔案寫入具有檔提供者延伸模組的替代位置。 IOS 應用程式會使用「檔案協調」將資訊儲存至應用程式容器內的磁片。 成功寫入檔案之後, 檔案提供者延伸模組將會收到變更的通知。
 
-到目前為止，檔案提供者延伸模組可以開始將檔案上傳到替代位置 （或標示為中途和需要上傳的檔案）。
+此時, 檔案提供者延伸模組可以開始將檔案上傳到替代位置 (或將檔案標示為已變更, 並要求上傳)。
 
-### <a name="creating-new-document-provider-extensions"></a>建立新的文件提供者擴充功能
+### <a name="creating-new-document-provider-extensions"></a>建立新的檔提供者延伸模組
 
-建立新的文件提供者擴充功能是本簡介文章的範圍外。 這項資訊是提供這裡顯示，根據使用者在其 iOS 裝置中載入的延伸模組，應用程式可能必須存取 Apple 提供 iCloud 位置之外的文件儲存體位置。
+建立新的檔提供者延伸模組不在這篇簡介文章的範圍內。 這裡提供這項資訊, 以顯示, 根據使用者在其 iOS 裝置中載入的擴充功能, 應用程式可能可以存取 Apple 提供的 iCloud 位置以外的檔儲存位置。
 
-使用文件選擇器時，開發人員應該瞭解這個情況與使用外部文件。 它們不應該假設在 iCloud 中裝載這些文件。
+開發人員在使用檔選擇器並使用外部檔時, 應該要注意這一點。 它們不應假設這些檔是在 iCloud 中主控。
 
-如需有關如何建立儲存體提供者或文件選擇器擴充功能的詳細資訊，請參閱[應用程式延伸模組簡介](~/ios/platform/extensions.md)文件。
+如需有關建立存放裝置提供者或檔選擇器擴充功能的詳細資訊, 請參閱[應用程式擴充功能簡介](~/ios/platform/extensions.md)檔。
 
-## <a name="migrating-to-icloud-drive"></a>移轉至 iCloud Drive
+## <a name="migrating-to-icloud-drive"></a>正在遷移至 iCloud 磁片磁碟機
 
-在 iOS 8，使用者可以選擇繼續使用現有的 iCloud 使用 iOS 7 （和先前的系統） 中的文件系統，或他們可以選擇將現有的文件移轉至新的 iCloud 磁碟機機制。
+在 iOS 8 上, 使用者可以選擇繼續使用 iOS 7 (和先前的系統) 中使用的現有 iCloud 檔案系統, 或者可以選擇將現有檔遷移至新的 iCloud 磁片磁碟機機制。
 
-在 Mac OS X Yosemite，Apple 不會提供回溯相容性讓所有的文件都必須移轉至 iCloud 的磁碟機，或將不再更新裝置上。
+在 Mac OS X Yosemite 上, Apple 不提供回溯相容性, 因此所有檔都必須遷移至 iCloud 磁片磁碟機, 否則將無法在裝置上進行更新。
 
-使用者的帳戶已移轉到 iCloud 的磁碟機之後，只有使用 iCloud 的磁碟機的裝置都能夠將變更傳播到文件在這些裝置。
+將使用者的帳戶遷移至 iCloud 磁片磁碟機之後, 只有使用 iCloud 磁片磁碟機的裝置才能將變更傳播到這些裝置上的檔。
 
 > [!IMPORTANT]
-> 開發人員應該留意這篇文章中涵蓋的新功能才會出現使用者帳戶已移轉到 iCloud Drive。 
+> 開發人員應該注意, 只有在使用者的帳戶已遷移至 iCloud 磁片磁碟機時, 本文中所涵蓋的新功能才可供使用。 
 
 ## <a name="summary"></a>總結
 
-這篇文章已涵蓋現有 iCloud 支援 iCloud 磁碟機與新的文件選擇器檢視控制器所需的 Api 中所做的變更。 它涵蓋檔案協調和為什麼很重要時使用雲端架構的文件。 它涵蓋可以讓雲端為基礎的 Xamarin.iOS 應用程式中的文件所需的設定，並提供簡介看如何使用外部應用程式的應用程式容器使用的文件選擇器檢視控制器的文件。
+本文涵蓋支援 iCloud 磁片磁碟機和新檔選擇器視圖控制器所需的現有 iCloud Api 變更。 其涵蓋檔案協調, 以及使用雲端式檔時的重要性。 其中涵蓋了在 Xamarin iOS 應用程式中啟用雲端式檔所需的設定, 並提供使用檔選擇器視圖控制器在應用程式容器外使用檔的簡介外觀。
 
-此外，這篇文章簡要涵蓋文件提供者擴充功能，以及為什麼撰寫可以處理雲端為基礎的文件的應用程式時，開發人員應該要注意它們。
+此外, 本文簡要介紹了檔提供者延伸模組, 以及開發人員撰寫可處理雲端式檔的應用程式時, 應該要注意的原因。
 
 ## <a name="related-links"></a>相關連結
 
-- [DocPicker （範例）](https://developer.xamarin.com/samples/monotouch/ios8/DocPicker/)
+- [DocPicker (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-docpicker)
 - [iOS 8 簡介](~/ios/platform/introduction-to-ios8.md)
-- [應用程式延伸模組簡介](~/ios/platform/extensions.md)
+- [應用程式擴充功能簡介](~/ios/platform/extensions.md)

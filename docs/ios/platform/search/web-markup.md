@@ -1,69 +1,69 @@
 ---
-title: Web 標記在 Xamarin.iOS 中使用的搜尋
-description: 本文件說明如何建立連結至 Xamarin.iOS 應用程式的網頁搜尋結果。 它討論如何啟用 web 內容編製索引，讓您的應用程式網站可供探索，使用智慧型應用程式內橫幅、 通用連結，和更多功能。
+title: 在 Xamarin 中使用 Web 標記進行搜尋
+description: 本檔說明如何建立連結回到 Xamarin iOS 應用程式的 web 型搜尋結果。 其中討論如何啟用 web 內容編制索引, 讓應用程式的網站可供探索、使用智慧型應用程式橫幅、通用連結等等。
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: a9cf3dab9c112bf7ff99cbc0dd9541c3c1e35142
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: bd4c09b7defcc3038919a4dea841d7bd1d02f39e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830132"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654086"
 ---
-# <a name="search-with-web-markup-in-xamarinios"></a>Web 標記在 Xamarin.iOS 中使用的搜尋
+# <a name="search-with-web-markup-in-xamarinios"></a>在 Xamarin 中使用 Web 標記進行搜尋
 
-提供其內容，透過網站的存取權的應用程式 (不只是從應用程式內)，web 內容可以來標記的特殊連結，將由 Apple 編目，並提供您裝置上應用程式使用者的 iOS 9 的深層連結。
+對於透過網站 (而不只是從應用程式) 存取其內容的應用程式, web 內容可以使用 Apple 進行編目的特殊連結加以標記, 並在使用者的 iOS 9 裝置上提供應用程式的深層連結。
 
-如果您的 iOS 應用程式已經可以支援行動裝置的深層連結，而且您的網站所呈現的深層連結應用程式內，Apple 的內容_Applebot_ web 編目程式將此內容的索引，並自動將它新增至其雲端索引：
+如果您的 iOS 應用程式已支援 mobile 深層連結, 而您的網站呈現您應用程式中內容的深層連結, Apple 的_Applebot_ web 編目程式會為此內容編制索引, 並自動將其新增至其雲端索引:
 
-[![](web-markup-images/webmarkup01.png "雲端索引概觀")](web-markup-images/webmarkup01.png#lightbox)
+[![](web-markup-images/webmarkup01.png "雲端索引總覽")](web-markup-images/webmarkup01.png#lightbox)
 
-Apple 會呈現在 Spotlight 搜尋和 Safari 搜尋結果中的這些結果。
-如果使用者在點選其中一種結果 （而且它們已安裝的應用程式） 則會將他們引導至您的應用程式中的內容：
+Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
+如果使用者按其中一個結果 (並已安裝您的應用程式), 則會將其移至應用程式中的內容:
 
-[![](web-markup-images/webmarkup02.png "從搜尋結果中的網站連結的深度")](web-markup-images/webmarkup02.png#lightbox)
+[![](web-markup-images/webmarkup02.png "在搜尋結果中從網站深層連結")](web-markup-images/webmarkup02.png#lightbox)
 
-## <a name="enabling-web-content-indexing"></a>啟用 Web 內容編製索引
+## <a name="enabling-web-content-indexing"></a>啟用 Web 內容編制索引
 
-有四個要設為您應用程式的內容可使用 Web 標記所需的步驟：
+使用 Web 標記, 讓您的應用程式內容可供搜尋, 需要四個步驟:
 
-1. 確認可以探索 Apple，並藉由定義為索引您的應用程式網站**支援**或是**行銷**在 iTunes Connect 中的網站。
-2. 請確定您的應用程式網站包含必要的標記，以實作行動裝置的深層連結。 請參閱下列各節，如需詳細資訊。
-3. 啟用 iOS 應用程式中處理的深層連結。
-4. 將您的應用程式網站，為使用者提供豐富且吸引人的結果呈現的結構化資料的標記。 雖然這個步驟不是絕對必要，強烈建議由 Apple。
+1. 藉由在 iTunes Connect 中將其定義為**支援**或**行銷**網站, 確保 Apple 能夠探索並編制應用程式網站的索引。
+2. 請確定您應用程式的網站包含執行行動深層連結所需的標記。 如需詳細資訊, 請參閱下列各節。
+3. 在您的 iOS 應用程式中啟用深層連結處理。
+4. 為應用程式網站呈現的結構化資料新增標記, 以提供豐富且吸引人的結果給終端使用者。 雖然此步驟不是絕對必要, 但強烈建議使用 Apple。
 
-下列各節將介紹這些詳細資料中的步驟。
+下列各節將詳細說明這些步驟。
 
-## <a name="make-your-apps-website-discoverable"></a>製作您的應用程式網站探索
+## <a name="make-your-apps-website-discoverable"></a>讓應用程式的網站可供探索
 
-有 Apple 尋找您的應用程式網站的最簡單方式是使用做**支援**或是**行銷**網站，當您將應用程式提交給 Apple 透過 iTunes Connect。
+讓 Apple 尋找應用程式網站的最簡單方式, 就是在您透過 iTunes Connect 將應用程式提交至 Apple 時, 使用它做為**支援**或**行銷**網站。
 
-## <a name="using-smart-app-banners"></a>使用智慧型應用程式內橫幅
+## <a name="using-smart-app-banners"></a>使用智慧型應用程式橫幅
 
-在您的網站，來呈現的明確連結至您的應用程式提供智慧型應用程式內橫幅。 如果尚未安裝應用程式，Safari 將會自動提示使用者安裝您的應用程式。 否則使用可以點選**檢視**連結來啟動您的應用程式從網站。 例如，若要建立智慧型應用程式內橫幅，您可以使用下列程式碼：
+在您的網站上提供智慧型應用程式橫幅, 以在應用程式中呈現清楚的連結。 如果尚未安裝應用程式, Safari 會自動提示使用者安裝您的應用程式。 否則, 您可以使用 [ **view** ] 連結, 從網站啟動您的應用程式。 例如, 若要建立智慧型應用程式橫幅, 您可以使用下列程式碼:
 
 ```xml
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
-如需詳細資訊，請參閱 Apple[升級應用程式與智慧的應用程式內橫幅](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html)文件。
+如需詳細資訊, 請參閱 Apple[使用智慧型應用程式橫幅推廣應用程式](https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html)檔。
 
-## <a name="using-universal-links"></a>使用通用的連結
+## <a name="using-universal-links"></a>使用通用連結
 
-新增至 iOS 9、 通用連結提供較佳替代的智慧型應用程式內橫幅或現有的自訂 URL 配置藉由提供下列：
+適用于 iOS 9 的新連結: 提供下列各項, 為智慧型應用程式橫幅或現有的自訂 URL 配置提供更好的替代方案。
 
-- **唯一**-相同的 URL 不能宣告多個網站。
-- **安全**– 的簽署的憑證時，需要可確保該網站擁有您和有效的網站連結至您的應用程式。
-- **彈性**– 使用者可以控制在網站或應用程式的 URL 是否會啟動。
-- **通用**-相同的 URL 可以用來定義您的網站和您的應用程式的內容。
+- **唯一**-不能有多個網站宣告相同的 URL。
+- **安全**–網站需要已簽署的憑證, 確保網站擁有, 且有效地連結至您的應用程式。
+- **彈性**–終端使用者可以控制 URL 是否啟動網站或應用程式。
+- **通用**–相同的 URL 可以用來定義您的網站和應用程式的內容。
 
 ## <a name="using-twitter-cards"></a>使用 Twitter 卡
 
-您可以提供您的應用程式使用 Twitter 卡的內容的深層連結。 例如：
+您可以使用 Twitter 卡來提供應用程式內容的深層連結。 例如：
 
 ```xml
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -71,11 +71,11 @@ Apple 會呈現在 Spotlight 搜尋和 Safari 搜尋結果中的這些結果。
 <meta name="twitter:app:url:iphone" content="AppNameURL">
 ```
 
-如需詳細資訊，請參閱 Twitter 的[Twitter 卡片通訊協定](http://dev.twitter.com/cards/mobile)文件。
+如需詳細資訊, 請參閱 Twitter 的[Twitter 卡通訊協定](http://dev.twitter.com/cards/mobile)檔。
 
 ## <a name="using-facebook-app-links"></a>使用 Facebook 應用程式連結
 
-您可以提供使用 Facebook 應用程式連結您的應用程式內容的深層連結。 例如：
+您可以使用 Facebook 應用程式連結, 提供應用程式內容的深層連結。 例如：
 
 ```xml
 <meta property="al:ios:app_name" content="AppName">
@@ -83,11 +83,11 @@ Apple 會呈現在 Spotlight 搜尋和 Safari 搜尋結果中的這些結果。
 <meta property="al:ios:url" content="AppNameURL">
 ```
 
-如需詳細資訊，請參閱 Facebook 的[應用程式連結](http://applinks.org)文件。
+如需詳細資訊, 請參閱 Facebook 的[應用程式連結](http://applinks.org)檔。
 
 ## <a name="opening-deep-links"></a>開啟深層連結
 
-您要新增支援開啟和顯示您的 Xamarin.iOS 應用程式深層連結。 編輯**AppDelegate.cs**檔案，並覆寫`OpenURL`方法以處理自訂的 URL 格式。 例如：
+您需要新增在您的 Xamarin iOS 應用程式中開啟和顯示深層連結的支援。 編輯**AppDelegate.cs**檔案, 並覆寫`OpenURL`方法以處理自訂 URL 格式。 例如：
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,15 +113,15 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-在上述程式碼中，我們正在尋找一個 URL，其中包含`/appname`並傳遞的值`query`(`123`在此範例中) 以在我們的應用程式，以向使用者顯示要求的內容中的自訂檢視控制器。
+在上述程式碼中, 我們要尋找包含`/appname`的 URL, 並將的`query`值 (`123`在此範例中為) 傳遞給應用程式中的自訂視圖控制器, 以向使用者顯示要求的內容。
 
-## <a name="providing-rich-results-with-structured-data"></a>提供豐富結構化資料的結果
+## <a name="providing-rich-results-with-structured-data"></a>以結構化資料提供豐富的結果
 
-包含結構化資料標記中，您可以提供豐富的搜尋結果超過只是提供標題與描述的使用者。 包括影像、 應用程式 （例如評等） 的特定資料和動作來使用結構化資料標記的結果。
+藉由包含結構化資料標記, 您可以為使用者提供豐富的搜尋結果, 而不只是標題和描述。 使用結構化資料標記, 將影像、應用程式特定資料 (例如評等) 和動作包含在結果中。
 
-豐富的結果會更豐富，而且可以協助改善您在雲端中的排名基礎搜尋服務索引，方法是它提供更多使用者與它們互動。
+豐富的結果會更具吸引力, 並藉由吸引更多使用者與他們互動, 協助改善您在雲端式搜尋索引中的排名。
 
-提供結構化資料標記的其中一個選項是使用 Open Graph。 例如：
+提供結構化資料標記的其中一個選項是使用 [開啟圖形]。 例如：
 
 ```xml
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -129,9 +129,9 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
 ```
 
-如需詳細資訊，請參閱[Open Graph](http://ogp.me)網站。
+如需詳細資訊, 請參閱[Open Graph](http://ogp.me)網站。
 
-結構化資料標記的另一種常見格式是 schema.org 的微資料格式。 例如：
+結構化資料標記的另一個常見格式是架構. 組織的微資料格式。 例如：
 
 ```xml
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -141,7 +141,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 ```
 
-可以表示相同的資訊，JSON-LD schema.org 的格式：
+相同的資訊可以用架構. 組織的 JSON-LD 格式來表示:
 
 ```xml
 <script type="application/ld+json">
@@ -152,32 +152,32 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 </script>
 ```
 
-以下顯示從您的網站為使用者提供豐富的搜尋結果中繼資料的範例：
+以下顯示網站的中繼資料範例, 提供豐富的搜尋結果給使用者:
 
-[![](web-markup-images/deeplink01.png "豐富的搜尋結果，透過結構化資料標記")](web-markup-images/deeplink01.png#lightbox)
+[![](web-markup-images/deeplink01.png "透過結構化資料標記的豐富搜尋結果")](web-markup-images/deeplink01.png#lightbox)
 
-Apple 目前支援下列的結構描述型別，從 schema.org:
+Apple 目前支援 schema.org 中的下列架構類型:
 
 - AggregateRating
 - ImageObject
 - InteractionCount
-- 供應項目
-- 組織
+- 提高
+- 結構
 - PriceRange
 - 配方
 - SearchAction
 
-如需有關這些配置類型的詳細資訊，請參閱[schema.org](http://schema.org)。
+如需這些配置類型的詳細資訊, 請參閱[schema.org](http://schema.org)。
 
-## <a name="providing-actions-with-structured-data"></a>提供結構化資料的動作
+## <a name="providing-actions-with-structured-data"></a>以結構化資料提供動作
 
-特定類型的結構化資料可讓搜尋結果可由使用者執行動作。 目前支援下列動作：
+特定類型的結構化資料可讓使用者進行搜尋結果。 目前支援下列動作:
 
-- 撥號的電話號碼。
-- 取得對應至指定的地址的方向。
-- 播放音訊或視訊檔案。
+- 撥打電話號碼。
+- 取得給定位址的地圖方向。
+- 播放音訊或影片檔案。
 
-例如，定義要撥打的電話號碼的動作看起來可能如下所示：
+例如, 定義撥號電話號碼的動作可能如下所示:
 
 ```xml
 <div itemscope itemtype="http://schema.org/Organization">
@@ -186,9 +186,9 @@ Apple 目前支援下列的結構描述型別，從 schema.org:
 
 ```
 
-使用者看到此搜尋結果中時，小型手機圖示將顯示在結果中。 如果在使用者點選圖示，就會呼叫指定的數字。
+當此搜尋結果呈現給使用者時, 結果中會顯示一個小電話圖示。 如果使用者按下圖示, 將會呼叫指定的數位。
 
-下列 HTML 可以加入要播放的音訊檔案，從搜尋結果的動作：
+下列 HTML 會加入動作來播放搜尋結果中的音訊檔案:
 
 ```xml
 <div itemscope itemtype="http://schema.org/AudioObject">
@@ -197,7 +197,7 @@ Apple 目前支援下列的結構描述型別，從 schema.org:
 
 ```
 
-最後，下列 HTML 會新增動作以從搜尋結果中取得指示：
+最後, 下列 HTML 會加入動作以從搜尋結果取得指示:
 
 ```xml
 <div itemscope itemtype="http://schema.org/PostalAddress">
@@ -209,13 +209,13 @@ Apple 目前支援下列的結構描述型別，從 schema.org:
 
 ```
 
-如需詳細資訊，請參閱 Apple[應用程式搜尋服務開發人員網站](https://developer.apple.com/ios/search/)。
+如需詳細資訊, 請參閱 Apple 的[應用程式搜尋開發人員網站](https://developer.apple.com/ios/search/)。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [iOS 9 範例](https://developer.xamarin.com/samples/ios/iOS9/)
-- [iOS 9 的開發人員](https://developer.apple.com/ios/pre-release/)
+- [iOS 9 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [iOS 9 開發人員](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [應用程式搜尋程式設計指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

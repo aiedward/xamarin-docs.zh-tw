@@ -1,36 +1,36 @@
 ---
-title: 在 Xamarin.iOS 中群組的通知
-description: 使用 iOS 12，就可以在通知中心或由應用程式或執行緒的鎖定畫面中的群組通知。 本文件說明如何傳送執行緒，以及利用 Xamarin.iOS 的 unthreaded 的通知。
+title: Xamarin 中的群組通知
+description: 使用 iOS 12 時, 您可以在 [通知中心] 或 [應用程式或執行緒的鎖定畫面] 群組通知。 本檔說明如何使用 Xamarin 傳送執行緒和 unthreaded 通知。
 ms.prod: xamarin
 ms.assetid: C6FA7C25-061B-4FD7-8E55-88597D512F3C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/04/2018
-ms.openlocfilehash: 6798c4c5fa7502ba5e99cb8bc209468acaa4a9ec
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3edaabe287bc2b37d2ec5a759ada9f59441c6d3a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402417"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652567"
 ---
-# <a name="grouped-notifications-in-xamarinios"></a>在 Xamarin.iOS 中群組的通知
+# <a name="grouped-notifications-in-xamarinios"></a>Xamarin 中的群組通知
 
-根據預設，iOS 12 置於所有應用程式的通知群組。 鎖定畫面及通知中心顯示此群組為最新通知，在最上層堆疊。 使用者可以展開以查看它包含並關閉整個群組的所有通知群組。
+根據預設, iOS 12 會將應用程式的所有通知放在群組中。 鎖定畫面和通知中心會將此群組顯示為最新通知頂端的堆疊。 使用者可以展開群組來查看它所包含的所有通知, 並將整個群組全部關閉。
 
-應用程式也可以讓使用者更輕鬆地尋找並與他們感興趣的特定資訊進行互動的執行緒群組的通知。
+應用程式也可以依執行緒將通知分組, 讓使用者可以更輕鬆地尋找感興趣的特定資訊並與其互動。
 
-## <a name="sample-app-groupednotifications"></a>範例應用程式：GroupedNotifications
+## <a name="sample-app-groupednotifications"></a>範例應用程式:GroupedNotifications
 
-若要了解如何使用 Xamarin.iOS 中使用群組的通知，看看[GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)範例應用程式。
+若要瞭解如何搭配使用群組通知與 Xamarin, 請參閱[GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)範例應用程式。
 
-此範例應用程式會模擬各種傳送每則訊息的通知，並將它們群組執行緒的朋友交談。 它也會示範如何 unthreaded 的通知進入應用程式層級的群組。
+這個範例應用程式會模擬與各種朋友的交談、傳送每則訊息的通知, 並依執行緒將其分組。 它也會示範 unthreaded 通知在應用層級群組中的居住方式。
 
 本指南中的程式碼片段來自此範例應用程式。
 
-## <a name="request-authorization-and-allow-foreground-notifications"></a>要求授權，並允許前景通知
+## <a name="request-authorization-and-allow-foreground-notifications"></a>要求授權並允許前景通知
 
-應用程式可以傳送本機通知之前，它必須要求權限，若要這樣做。 在範例應用程式之[ `AppDelegate` ](xref:UIKit.UIApplicationDelegate)，則[ `FinishedLaunching` ](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary))方法會要求此權限：
+在應用程式可以傳送本機通知之前, 它必須先要求許可權才能執行此動作。 在範例應用程式的[`AppDelegate`](xref:UIKit.UIApplicationDelegate)中[`FinishedLaunching`](xref:UIKit.UIApplicationDelegate.FinishedLaunching(UIKit.UIApplication,Foundation.NSDictionary)) , 方法會要求此許可權:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -46,7 +46,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-[ `Delegate` ](xref:UserNotifications.UNUserNotificationCenter.Delegate) （設定上述） [ `UNUserNotificationCenter` ](xref:UserNotifications.UNUserNotificationCenter)決定前景應用程式是否應該藉由呼叫傳遞給完成處理常式會顯示內送通知[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions})):
+的 (設定上方) [`UNUserNotificationCenter`](xref:UserNotifications.UNUserNotificationCenter)會決定前景應用程式是否應該藉由呼叫傳遞給的完成處理常式來[`WillPresentNotification`](xref:UserNotifications.UNUserNotificationCenterDelegate_Extensions.WillPresentNotification(UserNotifications.IUNUserNotificationCenterDelegate,UserNotifications.UNUserNotificationCenter,UserNotifications.UNNotification,System.Action{UserNotifications.UNNotificationPresentationOptions}))顯示傳入通知: [`Delegate`](xref:UserNotifications.UNUserNotificationCenter.Delegate)
 
 ```csharp
 [Export("userNotificationCenter:willPresentotification:withCompletionHandler:")]
@@ -56,18 +56,18 @@ public void WillPresentNotification(UNUserNotificationCenter center, UNNotificat
 }
 ```
 
-[ `UNNotificationPresentationOptions.Alert` ](xref:UserNotifications.UNNotificationPresentationOptions)參數指示應用程式應該顯示該警示，但不是播放的音效或更新徽章。
+[`UNNotificationPresentationOptions.Alert`](xref:UserNotifications.UNNotificationPresentationOptions)參數指出應用程式應該顯示警示, 但不播放音效或更新徽章。
 
-## <a name="threaded-notifications"></a>執行緒的通知
+## <a name="threaded-notifications"></a>執行緒通知
 
-點選的範例應用程式**訊息與 Alice**按鈕重複，讓它與名為 Alice 朋友傳送對話的通知。
-由於這項交談的通知屬於同一個執行緒，鎖定畫面及通知中心它們組成群組。
+重複**使用 alice**按鈕的範例應用程式訊息, 讓它使用名為 Alice 的 friend 傳送交談通知。
+由於此交談的通知是相同執行緒的一部分, 因此鎖定畫面和通知中心會將它們組合在一起。
 
-若要開始交談以不同的 friend，點選**選擇新朋友** 按鈕。 此交談的通知會出現在不同的群組。
+若要開始與不同 friend 的交談, 請按 [**選擇新的 friend** ] 按鈕。 此交談的通知會出現在不同的群組中。
 
 ### <a name="threadidentifier"></a>ThreadIdentifier
 
-每當範例應用程式會啟動新的執行緒，它會建立唯一的執行緒識別碼：
+每當範例應用程式啟動新的執行緒時, 它就會建立唯一的執行緒識別碼:
 
 ```csharp
 void StartNewThread()
@@ -77,13 +77,13 @@ void StartNewThread()
 }
 ```
 
-若要傳送執行緒的通知，範例應用程式：
+若要傳送執行緒通知, 範例應用程式:
 
-- 檢查應用程式是否具有授權傳送通知。
-- 建立 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-物件通知的內容，並設定其 [`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
-以上面建立的執行緒識別項。
-- 建立要求，並排程通知：
+- 檢查應用程式是否有傳送通知的授權。
+- 建立[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+通知內容的物件, 並設定其[`ThreadIdentifier`](xref:UserNotifications.UNMutableNotificationContent.ThreadIdentifier)
+至上面建立的執行緒識別碼。
+- 建立要求並排定通知:
 
 ```csharp
 async partial void ScheduleThreadedNotification(UIButton sender)
@@ -119,29 +119,29 @@ async partial void ScheduleThreadedNotification(UIButton sender)
 }
 ```
 
-具有相同的執行緒識別項相同的應用程式的所有通知會都出現在相同的通知群組。
+相同應用程式中具有相同執行緒識別碼的所有通知, 將會出現在相同的通知群組中。
 
 > [!NOTE]
-> 若要設定遠端通知執行緒識別項，新增`thread-id`金鑰來通知的 JSON 承載。 請參閱 Apple[產生遠端通知](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)文件，如需詳細資訊。
+> 若要在遠端通知上設定執行緒識別碼, 請將`thread-id`金鑰新增至通知的 JSON 承載。 如需詳細資訊, 請參閱 Apple 的[產生遠端通知](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)檔。
 
 ### <a name="summaryargument"></a>SummaryArgument
 
-`SummaryArgument` 指定通知將會如何影響左下角的通知所屬的通知群組顯示的摘要文字。 從相同群組中建立的整體摘要描述的通知，iOS 會彙總摘要文字。
+`SummaryArgument`指定通知會對通知所屬通知群組左下角顯示的摘要文字產生何種影響。 iOS 會匯總相同群組中通知的摘要文字, 以建立整體摘要描述。
 
-範例應用程式會使用訊息的作者，做為摘要的引數。 使用這個方法，可能是一群與 Alice 的六個通知的摘要文字**5 更多的通知，Alice 和我從**。
+範例應用程式會使用訊息的作者做為摘要引數。 使用這種方法時, 六個使用 Alice 的通知群組的摘要文字, 可能會有**5 個來自 alice 和 Me 的通知**。
 
-## <a name="unthreaded-notifications"></a>Unthreaded 的通知
+## <a name="unthreaded-notifications"></a>Unthreaded 通知
 
-範例應用程式的每次點選**約會提醒**按鈕會傳送一份的各種約會提醒通知。 這些提醒不會限制執行緒，因為它們會出現在應用程式層級的通知群組中，在鎖定畫面上，在通知中心。
+每個範例應用程式的 [**約會提醒**] 按鈕, 都會傳送各種約會提醒通知的其中一個。 由於這些提醒不是執行緒, 它們會出現在 [鎖定] 畫面和 [通知中心] 的應用層級通知群組中。
 
-若要傳送 unthreaded 的通知，範例應用程式的`ScheduleUnthreadedNotification`方法會使用與上述類似的程式碼。
-不過，它不會設定`ThreadIdentifier`上`UNMutableNotificationContent`物件。
+為了傳送 unthreaded 通知, 範例應用程式的`ScheduleUnthreadedNotification`方法會使用與上述類似的程式碼。
+不過, 它不會`ThreadIdentifier` `UNMutableNotificationContent`在物件上設定。
 
 ## <a name="related-links"></a>相關連結
 
-- [範例應用程式 – GroupedNotifications](https://developer.xamarin.com/samples/monotouch/iOS12/GroupedNotifications)
-- [在 Xamarin.iOS 中的使用者通知架構](~/ios/platform/user-notifications/index.md)
-- [在 使用者通知 (WWDC 2018) 最新消息](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [使用群組的通知 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)
-- [最佳做法和使用者通知 (WWDC 2017) 在最新消息](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [範例應用程式-GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)
+- [Xamarin 中的使用者通知架構](~/ios/platform/user-notifications/index.md)
+- [使用者通知的新功能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [使用群組通知 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)
+- [最佳做法和使用者通知的新功能 (WWDC 2017)](https://developer.apple.com/videos/play/wwdc2017/708/)
 - [產生遠端通知 (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

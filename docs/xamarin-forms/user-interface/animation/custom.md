@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 012fd6e5d9650a58018ccb7456ce48dcc0048405
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: b195e63bcc88c4d1c659216f99ab698773f73e9e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925007"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656816"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的自訂動畫
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Custom/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _動畫類別是所有的 Xamarin.Forms 動畫，以建立一或多個動畫物件 ViewExtensions 類別的擴充方法的建置組塊。這篇文章會示範如何使用動畫類別來建立及取消動畫，並同步處理多個動畫，並建立自訂動畫顯示屬性不是由現有的動畫方法建立動畫的動畫。_
 
@@ -184,6 +184,6 @@ await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 
 ## <a name="related-links"></a>相關連結
 
-- [自訂動畫 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Animation/Custom/)
+- [自訂動畫 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 - [動畫](xref:Xamarin.Forms.Animation)
 - [AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)

@@ -6,46 +6,46 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 9e9fa1e2651661670f89baac7fcd438b3d14bfb3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 19ac5a023b1f97b2e08bbe1821a2b9259280fc98
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61200799"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645144"
 ---
 # <a name="replacing-the-action-bar"></a>取代動作列
 
 ## <a name="overview"></a>總覽
 
-最常見的其中一個用於`Toolbar`就是把自訂的預設動作列`Toolbar`（建立新的 Android 專案時，它會使用預設的動作列）。 因為`Toolbar`讓您能夠新增至活動的應用程式列區段中加上品牌的標誌、 標題、 功能表項目、 瀏覽按鈕和甚至是自訂檢視的 UI，它提供重大升級比預設的動作列。
+最常見的用途`Toolbar`之一, 就是將預設動作列取代為自訂`Toolbar` (建立新的 Android 專案時, 它會使用預設的動作列)。 `Toolbar`因為能夠將品牌標誌、標題、功能表項目、瀏覽按鈕, 甚至是自訂視圖加入至活動 UI 的 [應用程式行] 區段, 所以它在預設動作列上提供了大量的升級。
 
-若要將使用的應用程式的預設動作列`Toolbar`: 
+若要使用`Toolbar`下列內容取代應用程式的預設動作列: 
 
-1.  建立新的自訂佈景主題，並修改應用程式的屬性，使其使用這個新佈景主題。 
+1.  建立新的自訂主題, 並修改應用程式的屬性, 讓它使用這個新主題。 
 
-2.  停用`windowActionBar`自訂佈景主題的屬性，並啟用`windowNoTitle`屬性。
+2.  停用`windowActionBar`自訂主題中的屬性, 並`windowNoTitle`啟用屬性。
 
-3.  定義的配置`Toolbar`。
+3.  定義的`Toolbar`版面配置。
 
-4.  包含`Toolbar`活動中的版面配置**Main.axml**版面配置檔。 
+4.  將配置包含在活動的 axml 版面配置檔案中。 `Toolbar` 
 
-5.  將程式碼加入至活動的`OnCreate`方法來找出`Toolbar`，並呼叫`SetActionBar`安裝`ToolBar`為動作列。
+5.  將程式碼新增至活動`OnCreate`的方法, 找`Toolbar`出`ToolBar`並`SetActionBar`呼叫以安裝做為動作列。
 
-下列各節說明此程序的詳細資料。 建立簡單的應用程式，並取代其動作列以自訂`Toolbar`。 
+下列各節將詳細說明此程式。 隨即建立簡單的應用程式, 並將其動作列取代為`Toolbar`自訂的。 
 
 
 
 ## <a name="start-an-app-project"></a>啟動應用程式專案
 
-建立新的 Android 專案，稱為**ToolbarFun** (請參閱[Hello，Android](~/android/get-started/hello-android/hello-android-quickstart.md)如需有關建立新的 Android 專案)。 此專案建立之後，目標及最低 Android API 層級設定為**Android 5.0 (API Level 21-棒棒糖符號)** 或更新版本。 如需有關設定 Android 版本層級的詳細資訊，請參閱 <<c0> [ 了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。 當應用程式會建置並執行時，它會顯示預設的動作列在這個螢幕擷取畫面所示：
+建立名為**ToolbarFun**的新 Android 專案 (如需有關建立新 Android 專案的詳細資訊, 請參閱[Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md) )。 建立此專案之後, 將目標和最小的 Android API 層級設定為**android 5.0 (API 層級 21-棒糖)** 或更新版本。 如需設定 Android 版本層級的詳細資訊, 請參閱[瞭解 ANDROID API 層級](~/android/app-fundamentals/android-api-levels.md)。 建立並執行應用程式時, 它會顯示預設動作列, 如下列螢幕擷取畫面所示:
 
-[![預設動作列螢幕擷取畫面](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
+[![預設動作列的螢幕擷取畫面](replacing-the-action-bar-images/01-before-sml.png)](replacing-the-action-bar-images/01-before.png#lightbox)
 
 
 
-## <a name="create-a-custom-theme"></a>建立自訂佈景主題
+## <a name="create-a-custom-theme"></a>建立自訂主題
 
-開啟**資源/值**目錄] 和 [建立新的檔案稱為**styles.xml 組**。 其內容取代為下列 XML: 
+開啟**Resources/values**目錄, 然後建立名為**樣式 .xml**的新檔案。 以下列 XML 取代其內容: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -58,39 +58,39 @@ ms.locfileid: "61200799"
 </resources>
 ```
 
-這個 XML 會定義新的自訂佈景主題，以呼叫**MyTheme**為基礎**Theme.Material.Light.DarkActionBar** Lollipop 中的佈景主題。 `windowNoTitle`屬性設為`true`隱藏標題列： 
+此 XML 會定義名為**MyTheme**的新自訂主題, 其以棒糖中的**DarkActionBar**主題為基礎。 屬性會設定為`true`以隱藏標題列: `windowNoTitle` 
 
 ```xml
 <item name="android:windowNoTitle">true</item>
 ```
 
-若要顯示自訂工具列，預設值`ActionBar`必須停用： 
+若要顯示自訂工具列, 必須`ActionBar`停用預設值: 
 
 ```xml
 <item name="android:windowActionBar">false</item>
 ```
 
-Olive-green`colorPrimary`設定適用於工具列的背景色彩： 
+[橄欖綠-綠色`colorPrimary` ] 設定會用於工具列的背景色彩: 
  
 ```xml
 <item name="android:colorPrimary">#5A8622</item>
 ```
 
-## <a name="apply-the-custom-theme"></a>套用自訂佈景主題
+## <a name="apply-the-custom-theme"></a>套用自訂主題
 
-編輯**properties/Androidmanifest.xml**並新增下列`android:theme`屬性設定為`<application>`項目，讓應用程式使用`MyTheme`自訂佈景主題： 
+編輯**Properties/androidmanifest.xml** , 並將下列`android:theme`屬性新增至`<application>` `MyTheme`元素, 讓應用程式使用自訂主題: 
 
 ```xml
 <application android:label="@string/app_name" android:theme="@style/MyTheme"></application>
 ```
 
-如需有關如何將自訂的佈景主題套用至應用程式的詳細資訊，請參閱 <<c0> [ 使用自訂的佈景主題](~/android/user-interface/material-theme.md#customtheme)。 
+如需將自訂主題套用至應用程式的詳細資訊, 請參閱[使用自訂主題](~/android/user-interface/material-theme.md#customtheme)。 
 
 
 
 ## <a name="define-a-toolbar-layout"></a>定義工具列版面配置
 
-在 **資源/配置**目錄中，建立新的檔案，稱為**toolbar.xml**。 其內容取代為下列 XML: 
+在**資源/版面**配置目錄中, 建立名為**toolbar**的新檔案。 以下列 XML 取代其內容: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -103,31 +103,31 @@ Olive-green`colorPrimary`設定適用於工具列的背景色彩：
     android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"/>
 ```
 
-這個 XML 會定義自訂`Toolbar`取代預設的動作列。 最小高度`Toolbar`設為它會取代動作列的大小： 
+此 XML 會定義取代`Toolbar`預設動作列的自訂。 的最小高度`Toolbar`會設定為它所取代的動作列大小: 
 
 ```csharp
 android:minHeight="?android:attr/actionBarSize"
 ```
 
-背景色彩`Toolbar`設定為稍早在定義的 olive-green 色彩**styles.xml 組**:
+的背景色彩`Toolbar`會設定為稍早在**樣式 .xml**中定義的橄欖色-綠色色彩:
 
 ```csharp
 android:background="?android:attr/colorPrimary"
 ```
 
-開頭為棒棒糖符號，`android:theme`屬性可用來設定樣式的個別檢視。 `ThemeOverlay.Material` Lollipop 中引進的佈景主題會使您能夠覆疊預設`Theme.Material`、 覆寫相關的屬性，讓它們淡或暗色調佈景主題。 在此範例中，`Toolbar`使用深色佈景主題，讓其內容是採用淺色： 
+從棒糖開始, `android:theme`屬性可以用來為個別視圖的樣式。 在`ThemeOverlay.Material`棒糖中引進的主題可讓您覆迭`Theme.Material`預設主題, 並覆寫相關的屬性, 使其變亮或深色。 在此範例中, `Toolbar`會使用深色主題, 使其內容具有淺色色彩: 
 
 ```csharp
 android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
 ```
 
-會使用此設定，以便與深的背景色彩相反的功能表項目。
+使用此設定, 讓功能表項目與較暗的背景色彩對比。
 
 
 
 ## <a name="include-the-toolbar-layout"></a>包含工具列版面配置
 
-編輯版面配置檔**Resources/layout/Main.axml**並以下列 XML 取代其內容：
+編輯配置檔案**Resources/layout/axml** , 並將其內容取代為下列 XML:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -140,19 +140,19 @@ android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar"
 </RelativeLayout>
 ```
 
-這項配置包含`Toolbar`中定義**toolbar.xml**並用`RelativeLayout`來指定`Toolbar`UI （上方按鈕） 的最上方放置。 
+此配置包含在`Toolbar` **toolbar**中定義的, 並使用`RelativeLayout`來指定`Toolbar`要放置在 UI 的最上方 (在按鈕上方)。 
 
 
 
-## <a name="find-and-activate-the-toolbar"></a>尋找及啟動工具列
+## <a name="find-and-activate-the-toolbar"></a>尋找並啟動工具列
 
-編輯**MainActivity.cs**並新增下列 using 陳述式：
+編輯**MainActivity.cs**並新增下列 using 語句:
 
 ```csharp
 using Android.Views;
 ```
 
-此外，將下列程式碼行新增至結尾`OnCreate`方法：
+此外, 將下列幾行程式碼新增至`OnCreate`方法的結尾:
 
 ```csharp
 var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -160,41 +160,41 @@ SetActionBar(toolbar);
 ActionBar.Title = "My Toolbar";
 ```
 
-此程式碼會尋找`Toolbar`並呼叫`SetActionBar`以便`Toolbar`會採取預設動作列特性。 在工具列的標題會變成**My 工具列**。 在此程式碼範例中所示`ToolBar`可以直接參考做為動作列。 編譯並執行此應用程式&ndash;自訂`Toolbar`預設動作列中的位置會顯示： 
+此程式碼`Toolbar` `Toolbar`會尋找和`SetActionBar`呼叫, 以便接受預設的動作列特性。 工具列的標題會變更為 [**我的工具列**]。 如這個程式碼範例所`ToolBar`示, 可以直接參考為動作列。 編譯並執行此應用&ndash;程式會`Toolbar`顯示自訂的, 以取代預設動作列: 
 
-[![具有綠色的色彩配置的自訂工具列的螢幕擷取畫面](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png#lightbox)
+[![具有綠色色彩配置的自訂工具列螢幕擷取畫面](replacing-the-action-bar-images/02-after-sml.png)](replacing-the-action-bar-images/02-after.png#lightbox)
 
-請注意，`Toolbar`樣式之外，獨立`Theme.Material.Light.DarkActionBar`佈景主題套用至應用程式的其餘部分。 
+請注意, `Toolbar`的樣式與應用於`Theme.Material.Light.DarkActionBar`應用程式其餘部分的主題無關。 
 
-如果在執行應用程式時發生例外狀況，請參閱[疑難排解](#troubleshooting)下一節。
+如果在執行應用程式時發生例外狀況, 請參閱下面的[疑難排解](#troubleshooting)一節。
 
  
-## <a name="add-menu-items"></a>加入功能表項目 
+## <a name="add-menu-items"></a>新增功能表項目 
 
-在本節中，功能表會加入至`Toolbar`。 右上方`ToolBar`保留供功能表項目&ndash;每個功能表項目 (也稱為*動作項目*) 可以執行的目前活動內的某個動作，或它能執行的動作，代表整個應用程式。 
+在這一節中, 功能表會加入`Toolbar`至。 的右上方區域`ToolBar`會保留供功能表項目&ndash;使用: 每個功能表項目 (也稱為*動作專案*) 都可以在目前的活動內執行動作, 或可以代表整個應用程式執行動作。 
 
-若要新增至功能表`Toolbar`: 
+若要將功能表新增`Toolbar`至: 
 
-1.  將功能表圖示 （如有必要） 加入至`mipmap-`的應用程式專案的資料夾。 Google 提供一組免費的功能表圖示[材料圖示](https://design.google.com/icons/)頁面。 
+1.  將功能表圖示 (如有必要) 新增`mipmap-`至應用程式專案的資料夾。 Google 會在 [[材質] 圖示](https://design.google.com/icons/)頁面上提供一組免費功能表圖示。 
 
-2.  藉由加入新的功能表資源檔下定義的功能表項目內容**資源/功能表**。 
+2.  在 [**資源]/[功能表**] 下新增功能表資源檔, 以定義功能表項目的內容。 
 
-3.  實作`OnCreateOptionsMenu`活動方法&ndash;這個方法會擴大的功能表項目。 
+3.  執行此方法擴大功能表項目&ndash;的活動方法。`OnCreateOptionsMenu` 
 
-4.  實作`OnOptionsItemSelected`活動方法&ndash;時點選功能表項目時，這個方法會執行動作。 
+4.  執行活動&ndash;的方法。當按下功能表項目時, 這個方法會執行動作。 `OnOptionsItemSelected` 
 
-下列各節示範此程序的詳細資料，藉由新增**編輯**並**儲存**要自訂功能表項目`Toolbar`。 
+下列各節會詳細說明此程式, 方法是將 [**編輯**] 和 [**儲存**] 功能表項目新增至自訂`Toolbar`的。 
 
 
 
 ### <a name="install-menu-icons"></a>安裝功能表圖示
 
-繼續進行`ToolbarFun`範例應用程式，將功能表圖示加入至應用程式專案。 下載[工具列圖示](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)、 解壓縮，並複製的內容解壓縮*mipmap-* 專案的資料夾*mipmap-* 下的資料夾**ToolbarFun /資源**和包含在專案中的每個新增的圖示檔案。
+繼續進行`ToolbarFun`範例應用程式, 將功能表圖示新增至應用程式專案。 下載[工具列圖示](https://github.com/xamarin/monodroid-samples/blob/master/Supportv7/AppCompat/Toolbar/Resources/toolbar-icons-plus.zip?raw=true)、解壓縮, 並將解壓縮的*mipmap*資料夾的內容複寫到**ToolbarFun/Resources**底下的專案*mipmap*資料夾, 並在專案中包含每個新增的圖示檔。
 
 
 ### <a name="define-a-menu-resource"></a>定義功能表資源
 
-建立新 **功能表** 下方的子目錄 **資源**。 在 [ **] 功能表**子目錄中，建立新的功能表資源檔，稱為**top_menus.xml**並以下列 XML 取代其內容： 
+建立新 **功能表** 下方的子目錄 **資源**。 在**功能表**子目錄中, 建立名為**top_menus**的新功能表資源檔, 並將其內容取代為下列 xml: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -216,20 +216,20 @@ ActionBar.Title = "My Toolbar";
 </menu>
 ```
 
-這段 XML 會建立三個功能表項目：
+此 XML 會建立三個功能表項目:
 
--   **編輯**使用的功能表項目`ic_action_content_create.png`圖示 （鉛筆）。 
+-   使用`ic_action_content_create.png`圖示的 [**編輯**] 功能表項目 (鉛筆)。 
 
--   A**儲存**使用的功能表項目`ic_action_content_save.png`圖示 （存到磁片）。 
+-   使用`ic_action_content_save.png`圖示 (磁片) 的 [**儲存**] 功能表項目。 
 
--   A**喜好設定**沒有圖示的功能表項目。
+-   沒有圖示的**喜好**設定功能表項目。
 
-`showAsAction`的屬性**編輯**並**儲存**功能表項目會設定為`ifRoom`&ndash;這項設定會導致這些功能表項目，才會出現在`Toolbar`如果沒有足夠的空間可加以顯示。 **喜好設定** 功能表項目集`showAsAction`要`never`&ndash;這樣**喜好設定**才會出現在功能表*溢位*功能表 （三個垂直的點）。 
+`Toolbar` &ndash; `ifRoom` `showAsAction` [**編輯**] 和 [**儲存**] 功能表項目的屬性會設定為此設定, 因此, 如果有足夠的空間可顯示這些功能表項目, 則會在中顯示這些專案。 [**喜好**設定] 功能表`showAsAction`項`never`會將設為&ndash;此, 使 [**喜好**設定] 功能表出現在*溢*位功能表中 (三個垂直點)。 
 
 
-### <a name="implement-oncreateoptionsmenu"></a>實作 OnCreateOptionsMenu
+### <a name="implement-oncreateoptionsmenu"></a>執行 OnCreateOptionsMenu
 
-將下列方法加入**MainActivity.cs**:
+將下列方法新增至**MainActivity.cs**:
 
 ```csharp
 public override bool OnCreateOptionsMenu(IMenu menu)
@@ -239,13 +239,13 @@ public override bool OnCreateOptionsMenu(IMenu menu)
 }
 ```
 
-Android 呼叫`OnCreateOptionsMenu`方法，讓應用程式可以指定活動的功能表資源。 在此方法中， **top_menus.xml**資源會擴大至傳遞`menu`。 此程式碼會使新**編輯**，**儲存**，並**喜好設定**功能表項目，才會出現在`Toolbar`。 
+Android 會呼叫`OnCreateOptionsMenu`方法, 讓應用程式可以指定活動的功能表資源。 在此方法中, **top_menus**會擴大到傳遞`menu`的。 這段程式碼會使新的 [**編輯**]、[**儲存**] 和 [ `Toolbar`**喜好**設定] 功能表項目出現在中。 
 
 
 
-### <a name="implement-onoptionsitemselected"></a>實作 OnOptionsItemSelected
+### <a name="implement-onoptionsitemselected"></a>執行 OnOptionsItemSelected
 
-將下列方法加入**MainActivity.cs**:
+將下列方法新增至**MainActivity.cs**:
 
 ```csharp
 public override bool OnOptionsItemSelected(IMenuItem item)
@@ -256,39 +256,39 @@ public override bool OnOptionsItemSelected(IMenuItem item)
 }
 ```
 
-當使用者點選功能表項目時，Android 會呼叫`OnOptionsItemSelected`方法，並選取功能表項目中的傳遞。 在此範例中，實作只會顯示快顯通知，指出所點選的功能表項目。 
+當使用者按下功能表項目時, Android 會呼叫`OnOptionsItemSelected`方法, 並傳入已選取的功能表項目。 在此範例中, 執行只會顯示一個快顯通知, 指出已點擊哪個功能表項目。 
 
-建置並執行`ToolbarFun`檢視工具列中的新功能表項目。 `Toolbar`現在會顯示三個的功能表圖示，如以下螢幕擷取畫面所示： 
+建立並執行`ToolbarFun` , 以在工具列中看到新的功能表項目。 `Toolbar`現在會顯示三個功能表圖示, 如下列螢幕擷取畫面所示: 
 
-[![儲存圖表的編輯、 示範位置和溢位功能表項目](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png#lightbox)
+[![說明 [編輯]、[儲存] 和 [溢位] 功能表項目位置的圖表](replacing-the-action-bar-images/04-menu-items-sml.png)](replacing-the-action-bar-images/04-menu-items.png#lightbox)
 
-當使用者點選**編輯** 功能表項目，快顯通知會顯示表示`OnOptionsItemSelected`呼叫方法： 
+當使用者按下 [**編輯**] 功能表項目時, 會顯示快顯通知, `OnOptionsItemSelected`指出已呼叫方法: 
 
-[![螢幕擷取畫面的快顯通知時點選 編輯項目時顯示](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png#lightbox)
+[![按 [編輯專案] 時顯示的快顯快顯螢幕擷取畫面](replacing-the-action-bar-images/05-toast-displayed-sml.png)](replacing-the-action-bar-images/05-toast-displayed.png#lightbox)
 
-當使用者點選溢位功能表中，**喜好設定**功能表項目會顯示。 一般而言，較不常見的動作應該放在溢位功能表&ndash;這個範例會使用的溢位功能表**喜好設定**因為不需要經常用作為**編輯**和**儲存**: 
+當使用者按下溢位功能表時, 會顯示 [**喜好**設定] 功能表項目。 通常, 較不常見的動作應該放在溢位功能表&ndash;中, 此範例會使用 [溢位] 功能表作為**喜好**設定, 因為它不常當做 [**編輯**] 和 [**儲存**] 使用: 
 
-[![溢位功能表中顯示的螢幕擷取畫面的喜好設定 功能表項目](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png#lightbox)
+[![出現在溢位功能表中的 [喜好設定] 功能表項目的螢幕擷取畫面](replacing-the-action-bar-images/06-preferences-sml.png)](replacing-the-action-bar-images/06-preferences.png#lightbox)
 
-如需有關 Android 功能表的詳細資訊，請參閱 Android 開發人員[功能表](https://developer.android.com/guide/topics/ui/menus.html)主題。 
+如需 Android 功能表的詳細資訊, 請參閱 Android 開發人員[功能表](https://developer.android.com/guide/topics/ui/menus.html)主題。 
  
 
 ## <a name="troubleshooting"></a>疑難排解
 
-下列秘訣有助於偵錯時取代工具列中的動作列可能發生的問題。
+下列秘訣可協助您在以工具列取代動作列時, 偵測可能發生的問題。
 
 ### <a name="activity-already-has-an-action-bar"></a>活動已經有動作列
 
-如果應用程式未正確設定要使用自訂的佈景主題中所述[將自訂的佈景主題套用](#apply-the-custom-theme)，執行應用程式可能會發生下列例外狀況：
+如果應用程式未正確設定為使用自訂主題, 如套用[自訂主題](#apply-the-custom-theme)中所述, 執行應用程式時可能會發生下列例外狀況:
 
-![不使用自訂的佈景主題時可能發生的錯誤](replacing-the-action-bar-images/03-theme-not-defined.png)
+![未使用自訂主題時可能發生的錯誤](replacing-the-action-bar-images/03-theme-not-defined.png)
 
-此外，可能會產生錯誤訊息如下所示：_Java.Lang.IllegalStateException:此活動已經有視窗 decor 所提供的動作列。_ 
+此外, 可能會產生如下的錯誤訊息:_IllegalStateException:此活動已經有視窗 décor 所提供的動作列。_ 
 
-若要更正這個錯誤，請確認`android:theme`屬性 (attribute) 的自訂佈景主題新增至`<application>`(在**properties/Androidmanifest.xml**) 中稍早所述[套用自訂佈景主題](#apply-the-custom-theme). 此外，此錯誤可能造成如果`Toolbar`版面配置] 或 [自訂的佈景主題未正確設定。
+若要更正此錯誤, 請確認`android:theme`已將自訂主題的屬性新增`<application>`至 (在**Properties/androidmanifest.xml**中), 如稍早的套用[自訂主題](#apply-the-custom-theme)中所述。 此外, 如果`Toolbar`未正確設定版面配置或自訂主題, 可能會導致此錯誤。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [棒棒糖符號工具列 （範例）](https://developer.xamarin.com/samples/monodroid/android5.0/Toolbar/)
-- [AppCompat 工具列 （範例）](https://developer.xamarin.com/samples/monodroid/Supportv7/AppCompat/Toolbar/)
+- [棒糖工具列 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-toolbar)
+- [AppCompat 工具列 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/supportv7-appcompat-toolbar)

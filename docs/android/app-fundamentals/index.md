@@ -37,7 +37,7 @@ ms.locfileid: "67864080"
 
 ## <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
 
-活動是 Android 應用程式的基本建置組塊，而且它們能以數種不同的狀態存在。活動生命週期始於具現化、終止於毀損，而且在期間包括許多狀態。當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動有即將發生的狀態變更並允許它執行程式碼以適應該變更。此文章會檢查活動的生命週期，並說明為了成為行為良好的可靠應用程式，活動在這些狀態變更中每個狀態變更的責任。
+活動是 Android 應用程式的基本建置組塊，而且它們能以數種不同的狀態存在。 活動生命週期始於具現化、終止於毀損，而且在期間包括許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動有即將發生的狀態變更並允許它執行程式碼以適應該變更。 此文章會檢查活動的生命週期，並說明為了成為行為良好的可靠應用程式，活動在這些狀態變更中每個狀態變更的責任。
 
 ## <a name="localizationandroidapp-fundamentalslocalizationmd"></a>[當地語系化](~/android/app-fundamentals/localization.md)
 

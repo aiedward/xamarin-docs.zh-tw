@@ -1,36 +1,36 @@
 ---
-title: 在 Xamarin.Android 中 intent 服務
+title: Xamarin 中的意圖服務
 ms.prod: xamarin
 ms.assetid: A5B86FE4-C8E2-4B0A-84CA-EF8F5119E31B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1301f34ad1f7a0069c542ba81bf237a673fd239d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4c868623ae08ac1366c1c9ea55c8d635f0a6a061
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61013112"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68509129"
 ---
-# <a name="intent-services-in-xamarinandroid"></a>在 Xamarin.Android 中 intent 服務
+# <a name="intent-services-in-xamarinandroid"></a>Xamarin 中的意圖服務
 
-## <a name="intent-services-overview"></a>Intent 服務概觀
+## <a name="intent-services-overview"></a>意圖服務總覽
 
-同時啟動，而且繫結的主執行緒，這表示，若要將效能維持平滑，服務必須以非同步方式執行的工作上執行的服務。 若要解決這個問題最簡單的方法之一是使用_背景工作佇列處理器模式_、 完成的工作由單一執行緒服務的佇列中放置的位置。 
+啟動和系結的服務都是在主執行緒上執行, 這表示為了讓效能保持順暢, 服務必須以非同步方式執行工作。 解決此問題最簡單的方法之一, 就是使用背景_工作佇列處理器模式_, 其中要完成的工作會放在由單一線程服務的佇列中。
 
-[ `IntentService` ](https://developer.xamarin.com/api/type/Android.App.IntentService/)是子類別的`Service`提供 Android 特定實作此模式的類別。 它會管理佇列工作，啟動背景工作執行緒來服務佇列，並提取要求關閉佇列背景工作執行緒上執行。 `IntentService`以無訊息模式將會停止本身並沒有其他工作佇列中的時，移除背景工作執行緒。
- 
-藉由建立工作提交至佇列`Intent`然後再傳遞`Intent`到`StartService`方法。
+[`IntentService`](xref:Android.App.IntentService)是`Service`類別的子類別, 可提供此模式的 Android 特定執行。 它會管理佇列工作、啟動工作者執行緒來服務佇列, 以及從要在背景工作執行緒上執行的佇列提取要求。 會`IntentService`在佇列中沒有其他工作時, 以安靜的方式停止自己, 並移除背景工作執行緒。
 
-不可能停止或中斷`OnHandleIntent`方法`IntentService`時它是否能運作。 這項設計，因為`IntentService`應該保持無狀態&ndash;它不應該仰賴依據作用中連線或通訊的應用程式的其餘部分。 `IntentService`旨在 statelessly 處理工作要求。
+藉由建立`Intent` , 然後將`Intent`其傳遞至`StartService`方法, 即可將工作提交到佇列。
 
-有兩個需求的子類別化`IntentService`:
+當`OnHandleIntent` 方法`IntentService`正在運作時, 不可能停止或中斷它。 基於此設計, `IntentService`應該保持無狀態&ndash; , 而不應該依賴作用中的連接或來自應用程式其餘部分的通訊。 `IntentService`適用于 statelessly 處理工作要求。
 
-1. 新的型別 (由子類別化`IntentService`) 只會覆寫`OnHandleIntent`方法。
-2. 新類型的建構函式需要用來命名背景工作執行緒將會處理要求的字串。 偵錯應用程式時，主要用於此背景工作執行緒的名稱。
+子類別化有兩個`IntentService`需求:
 
-下列程式碼示範`IntentService`實作覆寫的`OnHandleIntent`方法：
+1. 新的類型 (由`IntentService`子類別建立) 只會`OnHandleIntent`覆寫方法。
+2. 新類型的函式需要一個字串, 用來命名將處理要求的背景工作執行緒。 此背景工作執行緒的名稱主要是在偵錯工具時使用。
+
+下列程式`IntentService`代碼顯示具有覆寫`OnHandleIntent`方法的執行:
 
 ```csharp
 [Service]
@@ -39,7 +39,7 @@ public class DemoIntentService: IntentService
     public DemoIntentService () : base("DemoIntentService")
     {
     }
-    
+
     protected override void OnHandleIntent (Android.Content.Intent intent)
     {
         Console.WriteLine ("perform some long running work");
@@ -49,7 +49,7 @@ public class DemoIntentService: IntentService
 }
 ```
 
-工作會傳送至`IntentService`藉由執行個體化`Intent`，然後再呼叫[ `StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/)與，意圖做為參數的方法。 意圖會以參數傳遞至服務`OnHandleIntent`方法。 此程式碼片段是傳送到意圖的工作要求的範例： 
+工作會透過具現`IntentService` `Intent`化的方式傳送至, 然後[`StartService`](xref:Android.Content.Context.StartService*)以該意圖呼叫方法做為參數。 此意圖會當做`OnHandleIntent`方法中的參數傳遞至服務。 此程式碼片段是將工作要求傳送至意圖的範例: 
 
 ```csharp
 // This code might be called from within an Activity, for example in an event
@@ -63,19 +63,18 @@ downloadIntent.Put
 StartService(downloadIntent);
 ```
 
-`IntentService`可以意圖，從擷取的值，此程式碼片段所示：  
+`IntentService`可以從意圖中解壓縮值, 如下列程式碼片段所示:  
 
 ```csharp
 protected override void OnHandleIntent (Android.Content.Intent intent)
 {
     string fileToDownload = intent.GetStringExtra("file_to_download");
-    
+
     Log.Debug("DemoIntentService", $"File to download: {fileToDownload}.");
 }
 ```
 
-
 ## <a name="related-links"></a>相關連結
 
-- [IntentService](https://developer.xamarin.com/api/type/Android.App.IntentService/)
-- [StartService](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/)
+- [IntentService](xref:Android.App.IntentService)
+- [StartService](xref:Android.Content.Context.StartService*)

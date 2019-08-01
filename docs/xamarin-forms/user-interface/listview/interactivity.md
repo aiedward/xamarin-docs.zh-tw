@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 1447526ef925431e3cad5f36d4ce7a528c8ab07c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 833e6d3fc06ceeb5f8f63cb8b8b255b2a940098c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386564"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653881"
 ---
 # <a name="listview-interactivity"></a>ListView 互動性
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
-[`ListView`](xref:Xamarin.Forms.ListView) 它提供與資料互動的支援。
+[`ListView`](xref:Xamarin.Forms.ListView)支援與它所呈現的資料互動。
 
 <a name="selectiontaps" />
 
@@ -37,7 +37,7 @@ ms.locfileid: "61386564"
 兩次點選相同的項目會引發兩個[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)事件，但會只觸發單一[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件。
 
 > [!NOTE]
-> [ `ItemTappedEventArgs` ](xref:Xamarin.Forms.ItemTappedEventArgs)類別，其中包含的事件引數[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)事件，都有[ `Group` ](xref:Xamarin.Forms.ItemTappedEventArgs.Group)和[ `Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)屬性，以及`ItemIndex`屬性的值表示中的索引[ `ListView` ](xref:Xamarin.Forms.ListView)點選的項目。 同樣地， [ `SelectedItemChangedEventArgs` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs)類別，其中包含的事件引數[ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected)事件，都有[ `SelectedItem` ](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)屬性，以及`SelectedItemIndex`屬性的值表示中的索引`ListView`的選取項目。
+> [`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item) [`Group`](xref:Xamarin.Forms.ItemTappedEventArgs.Group) `ItemIndex` [`ListView`](xref:Xamarin.Forms.ListView)類別, 其中包含[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)事件的事件引數、具有和屬性, 以及屬性, 其值代表分項專案之中的索引。 [`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs) 同樣地, [`SelectedItemChangedEventArgs`](xref:Xamarin.Forms.SelectedItemChangedEventArgs)類別 (包含[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)事件的事件引數) 具有[`SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)屬性, 而`SelectedItemIndex`屬性 (property) 的值代表所選項目`ListView`之中的索引。
 
 當[ `SelectionMode` ](xref:Xamarin.Forms.ListView.SelectionMode)屬性設定為[ `Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single)中的項目[ `ListView` ](xref:Xamarin.Forms.ListView)可以選取[ `ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)並[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)會引發事件，而[ `SelectedItem` ](xref:Xamarin.Forms.ListView.SelectedItem)屬性會設定為所選的項目值。
 
@@ -149,7 +149,7 @@ public void OnDelete (object sender, EventArgs e) {
 
 ## <a name="pull-to-refresh"></a>提取以重新整理
 
-使用者都是下拉清單中的資料將會重新整理該清單。 [`ListView`](xref:Xamarin.Forms.ListView) 支援此--蜪鎏。 若要啟用提取以重新整理功能，將[ `IsPullToRefreshEnabled` ](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled)到`true`:
+使用者都是下拉清單中的資料將會重新整理該清單。 [`ListView`](xref:Xamarin.Forms.ListView)支援這種現成的。 若要啟用提取重新整理功能, 請將[`IsPullToRefreshEnabled`](xref:Xamarin.Forms.ListView.IsPullToRefreshEnabled)設定`true`為:
 
 ```xaml
 <ListView ...
@@ -162,7 +162,7 @@ public void OnDelete (object sender, EventArgs e) {
 listView.IsPullToRefreshEnabled = true;
 ```
 
-微調按鈕會出現在重新整理，這是預設的黑色。 藉由設定，不過，可以在 iOS 和 Android 上已變更進度環色彩`RefreshControlColor`屬性，以[ `Color` ](xref:Xamarin.Forms.Color):
+重新整理期間會出現一個微調, 預設為黑色。 不過, 您可以藉由將`RefreshControlColor`屬性設定[`Color`](xref:Xamarin.Forms.Color)為, 在 iOS 和 Android 上變更微調色彩:
 
 ```xaml
 <ListView ...
@@ -176,19 +176,19 @@ listView.IsPullToRefreshEnabled = true;
 listView.RefreshControlColor = Color.Red;
 ```
 
-下列螢幕擷取畫面顯示提取使用者提取以重新整理：
+下列螢幕擷取畫面顯示在使用者提取時的提取重新整理:
 
 ![](interactivity-images/refresh-start.png "ListView 拖動以重新整理進行中")
 
-下列螢幕擷取畫面顯示提取以重新整理之後使用者已隨附微調按鈕顯示的提取，, 雖然[ `ListView` ](xref:Xamarin.Forms.ListView)正在更新：
+下列螢幕擷取畫面顯示在使用者釋放提取之後的提取重新整理, 並在更新時[`ListView`](xref:Xamarin.Forms.ListView)顯示微調按鈕:
 
 ![](interactivity-images/refresh-in-progress.png "ListView 提取以重新整理完成")
 
-[`ListView`](xref:Xamarin.Forms.ListView) 會引發[ `Refreshing` ](xref:Xamarin.Forms.ListView.Refreshing)事件，以起始重新整理，而[ `IsRefreshing` ](xref:Xamarin.Forms.ListView.IsRefreshing)屬性將設定為`true`。 程式碼，才能重新整理的內容`ListView`的事件處理常式應該再執行`Refreshing`事件，或由執行方法[ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)。 一次`ListView`就會重新整理，`IsRefreshing`屬性應設為`false`，或有[ `EndRefresh` ](xref:Xamarin.Forms.ListView.EndRefresh)方法應該呼叫，以指出已完成更新。
+[`ListView`](xref:Xamarin.Forms.ListView)引發事件以起始重新整理, [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing)並將屬性設定為`true`。 [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 要重新整理之`ListView`內容所需的任何程式碼, 都應該由`Refreshing`事件的事件處理常式或由執行[`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)的方法執行。 重新整理之後`IsRefreshing` , 應該將屬性[`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh)設定為`false`, 或應呼叫方法, 以表示重新整理已完成。 `ListView`
 
 > [!NOTE]
-> 定義時[ `RefreshCommand` ](xref:Xamarin.Forms.ListView.RefreshCommand)，則`CanExecute`可指定命令的方法，以啟用或停用的命令。
+> 定義[`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand)時, 可以指定`CanExecute`命令的方法來啟用或停用命令。
 
 ## <a name="related-links"></a>相關連結
 
-- [ListView 互動性 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/interactivity)
+- [ListView 互動性 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

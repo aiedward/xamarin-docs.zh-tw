@@ -1,60 +1,60 @@
 ---
 title: 繫結 .AAR
-description: 本逐步解說提供建立 Xamarin.Android Java 繫結程式庫從 Android 的逐步指示。AAR 檔案。
+description: 本逐步解說提供逐步指示, 說明如何從 Android 建立 Xamarin. Android JAVA 系結程式庫。AAR 檔案。
 ms.prod: xamarin
 ms.assetid: 380413B8-6A99-4BB8-B64C-3EAF9F359C22
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 7f71ccf4ff61c176e73be6d3855136697a5c2130
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 6d80af60ae94c638c7d90229852f304a40ce0b0c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60958044"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643813"
 ---
 # <a name="binding-an-aar"></a>繫結 .AAR
 
-_本逐步解說提供建立 Xamarin.Android Java 繫結程式庫從 Android 的逐步指示。AAR 檔案。_
+_本逐步解說提供逐步指示, 說明如何從 Android 建立 Xamarin. Android JAVA 系結程式庫。AAR 檔案。_
 
 
 ## <a name="overview"></a>總覽
 
-*Android 封存 (。AAR)* 檔案是 Android 程式庫的檔案格式。
-。AAR 檔案。ZIP 封存，其中包含下列項目：
+*Android 封存 (。AAR)* file 是 Android 程式庫的檔案格式。
+,.AAR 檔案是。ZIP 封存, 其中包含下列各項:
 
--   已編譯的 Java 程式碼
+-   已編譯的 JAVA 程式碼
 -   資源識別碼
 -   資源
--   中繼資料 （例如，活動宣告、 權限）
+-   中繼資料 (例如活動宣告、許可權)
 
-本指南中，我們會逐步建立單一繫結程式庫的基本概念。AAR 檔案。 如需 Java 程式庫與繫結在一般情況下 （基本的程式碼範例） 的概觀，請參閱 <<c0> [ 繫結 Java 程式庫](~/android/platform/binding-java-library/index.md)。
+在本指南中, 我們將逐步解說建立單一系結程式庫的基本概念。AAR 檔案。 如需 JAVA 程式庫系結的一般總覽 (包含基本程式碼範例), 請參閱系結[java 程式庫](~/android/platform/binding-java-library/index.md)。
 
 
 > [!IMPORTANT]
-> 繫結專案只能包含一個。AAR 檔案。 如果。在其他 AAR 相依性。AAR，則這些相依性應該包含在自己的繫結專案，並在加以參考。 請參閱[Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)。
+> 系結專案只能包含一個。AAR 檔案。 如果為。AAR 其他的相依性。AAR, 這些相依性應該包含在自己的系結專案中, 然後加以參考。 請參閱[Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)。
 
 
 ## <a name="walkthrough"></a>逐步解說
 
-針對在 Android Studio 中建立 Android 封存檔案的範例，我們將建立繫結程式庫[textanalyzer.aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)。 這。AAR 包含`TextCounter`與計數的母音和子音字串中的靜態方法的類別。 颾魤 ㄛ **textanalyzer.aar**包含影像資源，以顯示計算的結果。
+我們將建立在 Android Studio, [textanalyzer. aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)中建立的範例 Android 封存檔案的系結程式庫。 該表.AAR 包含`TextCounter`具有靜態方法的類別, 其會計算字串中的母音和子音數目。 此外, **textanalyzer aar**包含影像資源, 可協助顯示計數結果。
 
-我們將使用下列步驟來建立從繫結程式庫。AAR 檔案：
+我們將使用下列步驟, 從建立系結程式庫。AAR 檔案:
 
-1. 建立新的 Java 繫結程式庫專案。
+1. 建立新的 JAVA 系結程式庫專案。
 
-2. 新增一個。AAR 檔案加入專案。 繫結專案只能包含單一。AAR。
+2. 新增單一。AAR 檔案加入至專案。 系結專案只能包含單一。AAR.
 
-3. 設定適當的建置動作。AAR 檔案。
+3. 為設定適當的組建動作。AAR 檔案。
 
-4. 選擇目標 framework。AAR 支援。
+4. 選擇的目標 framework。AAR 支援。
 
-5. 建立繫結程式庫。
+5. 建立系結程式庫。
 
-一旦我們建立了繫結程式庫，我們會開發小型的 Android 應用程式會提示使用者輸入文字字串，呼叫。AAR 方法來分析文字，擷取的映像。AAR，並顯示結果以及映像。
+建立系結程式庫之後, 我們會開發一個小型 Android 應用程式, 以提示使用者輸入文字字串, 並呼叫。AAR 方法來分析文字, 並從抓取影像。AAR, 並連同影像一起顯示結果。
 
-範例應用程式將會存取`TextCounter`的類別**textanalyzer.aar**:
+範例應用程式會存取 textanalyzer `TextCounter`的類別 **。 aar**:
 
 ```java
 package com.xamarin.textcounter;
@@ -69,82 +69,82 @@ public class TextCounter
 }
 ```
 
-此外，此範例應用程式會擷取並顯示封裝中的影像資源**textanalyzer.aar**:
+此外, 此範例應用程式將會抓取並顯示封裝在 textanalyzer 中的影像資源 **。 aar**:
 
-[![Xamarin monkey 映像](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
+[![Xamarin 猴子映射](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
 
-此映像資源位於**res/drawable/monkey.png**中**textanalyzer.aar**。
+此映射資源位於**textanalyzer. aar**中的**res/繪製/猴子。**
 
 
 
-### <a name="creating-the-bindings-library"></a>建立繫結程式庫
+### <a name="creating-the-bindings-library"></a>建立系結程式庫
 
-之前開始執行下列步驟，請下載範例[textanalyzer.aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true) Android 封存檔案：
+開始進行下列步驟之前, 請先下載範例[textanalyzer. aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true) Android 封存檔案:
 
-1.  建立新的繫結程式庫專案，開始使用 Android 繫結程式庫範本。 您可以使用 Visual Studio for Mac 或 Visual Studio （下列螢幕擷取畫面顯示 Visual Studio 中，但 Visual Studio for Mac 是非常類似）。 將方案命名為**AarBinding**:
+1.  從 Android 系結程式庫範本開始, 建立新的系結程式庫專案。 您可以使用 Visual Studio for Mac 或 Visual Studio (下列螢幕擷取畫面顯示 Visual Studio, 但 Visual Studio for Mac 很類似)。 將方案命名為**AarBinding**:
 
     [![建立 AarBindings 專案](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
 
-2.  此範本包括**Jar**資料夾，您新增程式。AAR(s) 繫結程式庫專案。 以滑鼠右鍵按一下**Jar**資料夾，然後選取**新增 > 現有項目**:
+2.  此範本包含一個**jar**資料夾, 您可以在其中新增您的。AAR 至系結程式庫專案。 以滑鼠右鍵按一下 [ **jar** ] 資料夾, 然後選取 [**新增 > 現有專案**]:
 
-    [![加入現有項目](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
-
-
-3.  瀏覽至**textanalyzer.aar**稍早下載的檔案、 加以選取，然後按一下**新增**:
-
-    [![新增 textanalayzer.aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
+    [![加入現有專案](binding-an-aar-images/02-add-existing-item-vs-sml.png)](binding-an-aar-images/02-add-existing-item-vs.png#lightbox)
 
 
-4.  確認**textanalyzer.aar**檔案已成功加入至專案：
+3.  流覽至稍早下載的**textanalyzer aar**檔案, 加以選取, 然後按一下 [**新增**]:
 
-    [![已新增 textanalyzer.aar 檔案](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
-
-5.  設定的建置動作**textanalyzer.aar**至`LibraryProjectZip`。 在 Visual Studio for Mac，請以滑鼠右鍵按一下**textanalyzer.aar**設定建置動作。 在 Visual Studio 中，可以在中設定 建置動作**屬性**窗格):
-
-    [![Textanalyzer.aar 建置動作設為 LibraryProjectZip](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
-
-6.  開啟專案屬性來設定*目標 Framework*。 如果。AAR 使用任何 Android Api，將目標架構設為 API 層級。AAR 預期。 (如需有關的目標架構設定和一般的 Android API 層級的詳細資訊，請參閱[了解 Android API 層級](~/android/app-fundamentals/android-api-levels.md)。)
-
-    設定您的繫結程式庫的目標 API 層級。 在此範例中，我們可以免費使用最新的平台 API 層級 （API 層級 23），因為我們**textanalyzer** Android Api 上沒有相依性：
-
-    [![目標層級設定為 API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
-
-7.  建立繫結程式庫。 繫結程式庫專案應建置成功，而且產生的輸出。在下列位置的 DLL:**AarBinding/bin/Debug/AarBinding.dll**
+    [![新增 textanalayzer. aar](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 
+4.  確認**textanalyzer aar**檔案已成功新增至專案:
 
-### <a name="using-the-bindings-library"></a>使用繫結程式庫
+    [![已新增 textanalyzer aar 檔案](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
-若要使用這個應用程式。在您的 Xamarin.Android 應用程式中的 DLL，您必須先新增繫結程式庫的參考。 使用下列步驟：
+5.  將**textanalyzer aar**的組建動作設定為`LibraryProjectZip`。 在 Visual Studio for Mac 中, 以滑鼠右鍵按一下**textanalyzer aar**以設定 [建立] 動作。 在 Visual Studio 中, 您可以在 [**屬性**] 窗格中設定 [建立] 動作:
 
-1.  與繫結程式庫，以簡化本逐步解說的相同方案中，我們將建立此應用程式。 （使用繫結程式庫的應用程式也可能位於不同的解決方案。）建立新的 Xamarin.Android 應用程式： 以滑鼠右鍵按一下方案，然後選取**加入新的專案**。 將新專案命名**BindingTest**:
+    [![將 textanalyzer aar 組建動作設定為 LibraryProjectZip](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
-    [![建立新的 BindingTest 專案](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
+6.  開啟 [專案屬性] 來設定*目標 Framework*。 如果為。AAR 會使用任何 Android Api, 將目標 Framework 設定為的 API 層級。AAR 預期。 (如需有關目標 Framework 設定和一般 Android API 層級的詳細資訊, 請參閱[瞭解 ANDROID Api 層級](~/android/app-fundamentals/android-api-levels.md))。
 
-2.  以滑鼠右鍵按一下**參考**節點**BindingTest**專案，然後選取**加入參考...**:
+    設定系結程式庫的目標 API 層級。 在此範例中, 我們可以免費使用最新的平臺 API 層級 (API 層級 23), 因為我們的**textanalyzer**沒有對 Android api 的相依性:
 
-    [![按一下 新增參考](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
+    [![將目標層級設定為 API 23](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
-3.  選取  **AarBinding**稍早建立的專案，然後按一下**確定**:
-
-    [![AAR 繫結專案簽入](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
-
-4.  開啟**參考**節點**BindingTest**專案，以確認**AarBinding**參考存在於：
-
-    [![[參考] 底下列為 AarBinding](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
-
-
-如果您想要檢視繫結程式庫專案的內容，您可以按兩下以開啟在參考**物件瀏覽器**。 您可以看到對應的內容`Com.Xamarin.Textcounter`命名空間 (使用 Java 從對應`com.xamarin.textanalyzezr`封裝)，您可以檢視的成員`TextCounter`類別：
-
-[![檢視物件瀏覽器](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
-
-上述螢幕擷取畫面會反白顯示兩個`TextAnalyzer`範例應用程式會呼叫的方法： `NumConsonants` (這會包裝基礎 Java`numConsonants`方法)，和`NumVowels`(這會包裝基礎 Java`numVowels`方法)。
+7.  建立系結程式庫。 系結程式庫專案應該成功建立並產生輸出。DLL 位於下列位置:**AarBinding/bin/Debug/AarBinding.dll**
 
 
 
-### <a name="accessing-aar-types"></a>存取。AAR 類型
+### <a name="using-the-bindings-library"></a>使用系結程式庫
 
-您將參考加入您指向繫結程式庫的應用程式之後，您可以存取中的 Java 類型。AAR 為您要存取C#類型 (感謝到C#包裝函式)。 C#應用程式程式碼可以呼叫`TextAnalyzer`方法在此範例中所示：
+以使用此。DLL 在您的 Xamarin Android 應用程式中, 必須先加入系結程式庫的參考。 請使用下列步驟:
+
+1.  我們會在與系結程式庫相同的解決方案中建立此應用程式, 以簡化此逐步解說。 (使用系結程式庫的應用程式也可以位於不同的解決方案中)。建立新的 Xamarin Android 應用程式: 以滑鼠右鍵按一下方案, 然後選取 [**新增專案**]。 將新專案命名為**bindingtest shoppingcart**:
+
+    [![建立新的 Bindingtest shoppingcart 專案](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
+
+2.  以滑鼠右鍵按一下**bindingtest shoppingcart**專案的 [**參考**] 節點, 然後選取 [**新增參考 ...** ]:
+
+    [![按一下 [新增參考]](binding-an-aar-images/08-add-reference-vs-sml.png)](binding-an-aar-images/08-add-reference-vs.png#lightbox)
+
+3.  選取稍早建立的**AarBinding**專案, 然後按一下 **[確定]** :
+
+    [![檢查 AAR 系結專案](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
+
+4.  開啟**bindingtest shoppingcart**專案的 [**參考**] 節點, 以確認**AarBinding**參考是否存在:
+
+    [![AarBinding 列在 [參考] 底下](binding-an-aar-images/10-references-shows-aarbinding-vs-sml.png)](binding-an-aar-images/10-references-shows-aarbinding-vs.png#lightbox)
+
+
+如果您想要查看系結程式庫專案的內容, 您可以按兩下該參考, 在 **物件瀏覽器**中開啟它。 您可以看到`Com.Xamarin.Textcounter`命名空間的對應內容 (從 JAVA `com.xamarin.textanalyzezr`封裝對應), 而且您可以`TextCounter`查看類別的成員:
+
+[![查看物件瀏覽器](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
+
+上述螢幕擷取畫面會反白`TextAnalyzer`顯示範例應用程式將會呼叫的`NumConsonants`兩個方法: (包裝`numConsonants`基礎 java 方法) `NumVowels`和 (包裝基礎 java `numVowels`方法)。
+
+
+
+### <a name="accessing-aar-types"></a>正在.AAR 類型
+
+新增指向系結程式庫之應用程式的參考之後, 您可以存取中的 JAVA 類型。AAR, 如同您存取C#類型一樣 (感謝C#包裝函式)。 C#應用程式程式碼`TextAnalyzer`可以呼叫方法, 如下列範例所示:
 
 ```csharp
 using Com.Xamarin.Textcounter;
@@ -153,16 +153,16 @@ int numVowels = TextCounter.NumVowels (myText);
 int numConsonants = TextCounter.NumConsonants (myText);
 ```
 
-在上述範例中，我們要呼叫靜態方法，`TextCounter`類別。 不過，您也可以具現化類別，並呼叫執行個體方法。 例如，如果您。AAR 包裝類別，稱為`Employee`執行個體方法`buildFullName`，您可以具現化`MyClass`並使用所示：
+在上述範例中, 我們要在`TextCounter`類別中呼叫靜態方法。 不過, 您也可以具現化類別和呼叫實例方法。 例如, 如果您的。AAR 會包裝名`Employee`為且具有實例方法`buildFullName`的類別, 您可以`MyClass`具現化並使用它, 如下所示:
 
 ```csharp
 var employee = new Com.MyCompany.MyProject.Employee();
 var name = employee.BuildFullName ();
 ```
 
-下列步驟會加入至應用程式程式碼，因此它會提示使用者輸入文字，會使用`TextCounter`来分析的文字，然後顯示結果。
+下列步驟會將程式碼新增至應用程式, 讓它提示使用者輸入文字、 `TextCounter`使用來分析文字, 然後顯示結果。
 
-取代**BindingTest**版面配置 (**Main.axml**) 包含下列 XML。 此配置具有`EditText`文字輸入和兩個按鈕，來初始化母音和子音計數：
+以下列 XML 取代**bindingtest shoppingcart** layout (**axml**)。 此版面配置具有`EditText`文字輸入的, 以及用於起始母音和輔音計數的兩個按鈕:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -200,7 +200,7 @@ var name = employee.BuildFullName ();
 </LinearLayout>
 ```
 
-內容取代**MainActivity.cs**為下列程式碼。 此範例所示，按鈕事件處理常式呼叫包裝`TextCounter`位於的方法。AAR 和使用快顯通知來顯示結果。 請注意`using`命名空間的繫結的程式庫的陳述式 (在此情況下， `Com.Xamarin.Textcounter`):
+將**MainActivity.cs**的內容取代為下列程式碼。 如本範例所示, 按鈕事件處理常式會呼叫`TextCounter`位於的已包裝方法。AAR 並使用快顯通知來顯示結果。 請注意系結程式庫命名空間的`Com.Xamarin.Textcounter`語句(在此案例中為):`using`
 
 ```csharp
 using System;
@@ -258,33 +258,33 @@ namespace BindingTest
 }
 ```
 
-編譯並執行**BindingTest**專案。 應用程式將會啟動，並在左邊呈現螢幕擷取畫面 (`EditText`初始化與一些文字，但您可以點選，以變更它)。 當您點選**計數母音**，快顯通知會顯示母音的數目，在右側所示：
+編譯並執行**bindingtest shoppingcart**專案。 應用程式將會啟動, 並在左側顯示幕幕快照 ( `EditText`已使用一些文字進行初始化, 但您可以按一下它來加以變更)。 當您按一下 [**計數母音**] 時, 快顯會顯示正確的母音數目, 如下所示:
 
-[![執行 BindingTest 螢幕擷取畫面](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
+[![執行 Bindingtest shoppingcart 的螢幕擷取畫面](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
-請嘗試點選**計數子音** 按鈕。 此外，您可以修改文字的一行，並點選按鈕再次測試不同的母音和子音計數的功能。
+嘗試點擊 [**計數子音**] 按鈕。 此外, 您也可以修改文字行, 然後再點一下這些按鈕, 以測試不同的母音和輔音計數。
 
 
 
-### <a name="accessing-aar-resources"></a>存取。AAR 資源
+### <a name="accessing-aar-resources"></a>正在.AAR 資源
 
-Xamarin 工具合併**R**的資料。您的應用程式的 AAR**資源**類別。 如此一來，您可以存取。AAR 資源從您的配置 （和程式碼後置） 在相同的方式存取資源所**資源**您專案的路徑。
+Xamarin 工具會將**R**資料與合併。AAR 至您應用程式的**資源**類別。 因此, 您可以存取。從您的配置 (和程式碼後置) AAR 資源, 其方式與存取專案**資源**路徑中的資源相同。
 
-若要存取的影像資源，您使用**Resource.Drawable**封裝內的映像名稱。AAR。 例如，您可以參考**image.png**中。AAR 檔案，使用`@drawable/image`:
+若要存取影像資源, 請使用**資源。** 在內封裝之影像的可繪製名稱。AAR. 例如, 您可以參考中的**圖像 .png** 。使用`@drawable/image`下列方法 AAR 檔案:
 
 ```xml
 <ImageView android:src="@drawable/image" ... />
 ```
 
-您也可以存取位於的資源配置。AAR。 若要這樣做，您使用**Resource.Layout**封裝內的版面配置的名稱。AAR。 例如：
+您也可以存取位於中的資源版面配置。AAR. 若要這樣做, 您可以  針對內封裝的版面配置使用配置名稱。AAR. 例如：
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 ```
 
-**Textanalyzer.aar**範例包含位於映像檔**res/drawable/monkey.png**。 讓我們來存取此映像資源，並在我們的範例應用程式中使用它：
+**Textanalyzer. aar**範例包含位於**res/可繪製/猴子 .png**的影像檔案。 讓我們存取此映射資源, 並在我們的範例應用程式中使用它:
 
-編輯**BindingTest**版面配置 (**Main.axml**)，並新增`ImageView`結尾`LinearLayout`容器。 這`ImageView`會顯示映像，請參閱**@drawable/monkey**; 將載入此映像，從 [資源] 區段的**textanalyzer.aar**:
+編輯**bindingtest shoppingcart**版面配置 (**axml**) `ImageView` , 並將新增至`LinearLayout`容器結尾。 這`ImageView`會顯示 **@drawable/monkey** 找到的影像; 此映射將會從**textanalyzer. aar**的 resource 區段載入:
 
 ```xml
     ...
@@ -298,25 +298,25 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 </LinearLayout>
 ```
 
-編譯並執行**BindingTest**專案。 應用程式將會啟動並顯示螢幕擷取畫面左邊&ndash;當您點選**計數子音**，結果會顯示在右側所示：
+編譯並執行**bindingtest shoppingcart**專案。 當您按下 [**計數子音**] 時, 應用&ndash;程式就會啟動並顯示左側的螢幕擷取畫面, 結果會如右側所示顯示:
 
-[![BindingTest 顯示 consonant 計數](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
+[![顯示輔音計數的 Bindingtest shoppingcart](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
 
-恭喜您！ 您已成功繫結 Java 程式庫。AAR ！
+恭喜您！ 您已成功地系結 JAVA 程式庫。AAR!
 
 
 
 ## <a name="summary"></a>總結
 
-在本逐步解說中，我們建立的繫結程式庫。AAR 檔案，最少的測試應用程式，加入繫結程式庫，並執行應用程式以確認我們C#程式碼可以呼叫中的 Java 程式碼。AAR 檔案。
-此外，我們擴充來存取，並顯示影像資源位於應用程式。AAR 檔案。
+在本逐步解說中, 我們已建立的系結程式庫。AAR 檔案, 將系結程式庫新增至最小測試應用程式, 並執行應用程式, C#以確認我們的程式碼可以呼叫位於的 JAVA 程式碼。AAR 檔案。
+此外, 我們已擴充應用程式來存取和顯示位於的影像資源。AAR 檔案。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [建置 Java 繫結程式庫 （影片）](https://university.xamarin.com/classes#10090)
+- [建立 JAVA 系結程式庫 (影片)](https://university.xamarin.com/classes#10090)
 - [繫結 .JAR](~/android/platform/binding-java-library/binding-a-jar.md)
 - [繫結 Java 程式庫](~/android/platform/binding-java-library/index.md)
-- [AarBinding （範例）](https://developer.xamarin.com/samples/monodroid/JavaIntegration/AarBinding)
-- [Bug 44573 一個專案無法繫結多個.aar 檔案](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)
+- [AarBinding (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/javaintegration-aarbinding)
+- [Bug 44573-一個專案無法系結多個 aar 檔案](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)

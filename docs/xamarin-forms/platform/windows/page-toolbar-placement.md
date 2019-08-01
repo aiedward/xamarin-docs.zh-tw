@@ -1,24 +1,24 @@
 ---
-title: 在 Windows 上的頁面工具列位置
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 Windows 平台特定，以變更頁面上的工具列的位置。
+title: Windows 上的頁面工具列位置
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Windows 平臺特定的來變更頁面上的工具列位置。
 ms.prod: xamarin
 ms.assetid: 99F29E95-0C36-4A3B-BDE8-7E9F119E844E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 6b314a7864ba4c99b980f4b536a0c2103389b666
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 64a44115bcc7ee8781e308c8e116049ef3b06371
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924714"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656878"
 ---
-# <a name="page-toolbar-placement-on-windows"></a>在 Windows 上的頁面工具列位置
+# <a name="page-toolbar-placement-on-windows"></a>Windows 上的頁面工具列位置
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此通用 Windows 平台特定平台-用來變更工具列的位置上[ `Page` ](xref:Xamarin.Forms.Page)，而且由在 XAML 中設定[ `Page.ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) ; 附加屬性值[ `ToolbarPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)列舉型別：
+這個通用 Windows 平臺平臺特定的是用來變更上[`Page`](xref:Xamarin.Forms.Page)的工具列位置, 並藉由[`Page.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty)將附加屬性設[`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement)為列舉的值, 在 XAML 中使用:
 
 ```xaml
 <TabbedPage ...
@@ -46,6 +46,6 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

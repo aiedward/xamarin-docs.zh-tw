@@ -1,28 +1,28 @@
 ---
-title: 載入 XAML 在 Xamarin.Forms 中的執行階段
-description: XAML 可以載入，且在執行階段剖析 LoadFromXaml 的擴充方法。
+title: 在 Xamarin 中的執行時間載入 XAML
+description: 您可以在執行時間使用 LoadFromXaml 擴充方法來載入和剖析 XAML。
 ms.prod: xamarin
 ms.assetid: 25F73FBF-2DD3-468E-A2D8-0897414F0F4A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/12/2018
-ms.openlocfilehash: ce8ba32a1a6a1f69033615558c7ebf15d41e70fe
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e253d2ba949a94637d7773fdc50b479679fd3f41
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61178042"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657246"
 ---
-# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>載入 XAML 在 Xamarin.Forms 中的執行階段
+# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>在 Xamarin 中的執行時間載入 XAML
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/LoadRuntimeXAML/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
-[ `Xamarin.Forms.Xaml` ](xref:Xamarin.Forms.Xaml)命名空間包含兩個[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)擴充方法，可用來載入，並在執行階段剖析 XAML。
+命名空間包含兩[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)種擴充方法, 可在執行時間用來載入和剖析 XAML。 [`Xamarin.Forms.Xaml`](xref:Xamarin.Forms.Xaml)
 
 ## <a name="background"></a>背景
 
-當建構 Xamarin.Forms XAML 類別時， [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)間接呼叫方法。 這是因為 XAML 的程式碼後置檔案類別會呼叫`InitializeComponent`從其建構函式的方法：
+當構造了 Xamarin XAML 類別時, [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)會間接呼叫方法。 之所以會發生這種情況, 是因為 XAML 類別的程式碼`InitializeComponent`後置檔案會從它的「函式」呼叫方法:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -34,7 +34,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-當 Visual Studio 建置的專案其內含的 XAML 檔案時，它會剖析 XAML 檔案來產生C#程式碼檔案 (例如， **MainPage.xaml.g.cs**)，其中包含的定義`InitializeComponent`方法：
+當 Visual Studio 建立包含 XAML 檔案的專案時, 它會剖析 xaml 檔案來產生程式C#代碼檔案 (例如, **MainPage.xaml.g.cs**), 其中包含`InitializeComponent`方法的定義:
 
 ```csharp
 private void InitializeComponent()
@@ -44,16 +44,16 @@ private void InitializeComponent()
 }
 ```
 
-`InitializeComponent`方法呼叫[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法來擷取.NET Standard 程式庫中的 XAML 檔案 （或其已編譯的二進位檔）。 解壓縮後初始化所有 XAML 檔案中定義的物件、 連接它們一起在父子式關聯性，附加在 XAML 檔案中，設定事件的程式碼中定義的事件處理常式以及設定物件的內容結果樹狀結構頁面。
+`InitializeComponent`方法會[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)呼叫方法, 從 .NET Standard 程式庫中解壓縮 XAML 檔案 (或其編譯的二進位檔)。 解壓縮之後, 它會初始化 XAML 檔案中定義的所有物件, 並將它們全部連接在父子式關聯性中, 將程式碼中定義的事件處理常式附加至 XAML 檔案中設定的事件, 並將物件的結果樹狀結構設定為的內容本頁.
 
-## <a name="loading-xaml-at-runtime"></a>在執行階段載入 XAML
+## <a name="loading-xaml-at-runtime"></a>在執行時間載入 XAML
 
-[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法為`public`，因此您可以從載入，Xamarin.Forms 應用程式呼叫和剖析 XAML 在執行階段。 這可讓案例，例如從 web 服務，從 XAML 中，建立所需的檢視，並顯示在應用程式下載 XAML 應用程式。
+這些[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法都`public`是, 因此可以從 Xamarin 應用程式呼叫來載入, 並在執行時間剖析 XAML。 這會允許應用程式從 web 服務下載 XAML、從 XAML 建立必要的視圖, 並在應用程式中顯示這類案例。
 
 > [!WARNING]
-> 在執行階段載入 XAML 顯著的效能成本，而且通常應該避免。
+> 在執行時間載入 XAML 具有顯著的效能成本, 通常應該避免。
 
-下列程式碼範例顯示簡單的使用方式：
+下列程式碼範例顯示簡單的使用方式:
 
 ```csharp
 using Xamarin.Forms.Xaml;
@@ -65,12 +65,12 @@ Button navigationButton = new Button().LoadFromXaml(navigationButtonXAML);
 _stackLayout.Children.Add(navigationButton);
 ```
 
-在此範例中， [ `Button` ](xref:Xamarin.Forms.Button)隨即建立執行個體，而其[ `Text` ](xref:Xamarin.Forms.Button.Text)從 XAML 所設定的屬性值定義在`string`。 `Button`接著會新增至[ `StackLayout` ](xref:Xamarin.Forms.StackLayout) XAML 頁面中已定義的。
+在此範例中, [`Button`](xref:Xamarin.Forms.Button)會建立實例, 並從中[`Text`](xref:Xamarin.Forms.Button.Text) `string`定義的 XAML 設定其屬性值。 接著會加入[`StackLayout`](xref:Xamarin.Forms.StackLayout)至已在該頁面的 XAML 中定義的。 `Button`
 
 > [!NOTE]
-> [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)延伸方法可以讓指定的泛型型別引數。 不過，很少需要指定類型引數，因為它會從執行個體的類型推斷其上運作。
+> [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)擴充方法可讓您指定泛型型別引數。 不過, 很少需要指定型別引數, 因為它會從其操作所在的實例型別推斷而來。
 
-[ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法可用來擴充任何 XAML 中，使用下列的範例並[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) ，然後巡覽至它：
+方法可以用來擴充任何 XAML, 下列範例會[`ContentPage`](xref:Xamarin.Forms.ContentPage)因而誇大並流覽至它: [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)
 
 ```csharp
 using Xamarin.Forms.Xaml;
@@ -83,9 +83,9 @@ ContentPage page = new ContentPage().LoadFromXaml(pageXAML);
 await Navigation.PushAsync(page);
 ```
 
-## <a name="accessing-elements"></a>存取項目
+## <a name="accessing-elements"></a>存取元素
 
-使用在執行階段載入 XAML [ `LoadFromXaml` ](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法中不允許強型別存取 XAML 項目所指定執行階段物件名稱 (使用`x:Name`)。 不過，這些 XAML 項目可以使用來擷取[ `FindByName` ](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)方法，然後視需要存取：
+使用[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)方法在執行時間載入 xaml 時, 不允許對具有指定執行時間物件名稱 (使用`x:Name`) 之 XAML 專案的強型別存取。 不過, 您可以使用[`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)方法來抓取這些 XAML 元素, 然後視需要存取:
 
 ```csharp
 // See the sample for the full XAML string
@@ -97,8 +97,8 @@ monkeyLabel.Text = "Seated Monkey";
 ...
 ```
 
-在此範例中，針對 XAML [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)會擴大。 包含此 XAML [ `Label` ](xref:Xamarin.Forms.Label)名為`monkeyName`，其中會使用擷取[ `FindByName` ](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)方法，它有之前[ `Text` ](xref:Xamarin.Forms.Label.Text)設定屬性。
+在此範例中, 的 XAML [`ContentPage`](xref:Xamarin.Forms.ContentPage)已放大。 此 XAML 包含[`Label`](xref:Xamarin.Forms.Label)名為`monkeyName`的, 它會使用[`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)方法來抓取, 然後才[`Text`](xref:Xamarin.Forms.Label.Text)設定其屬性。
 
 ## <a name="related-links"></a>相關連結
 
-- [LoadRuntimeXAML （範例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/LoadRuntimeXAML/)
+- [LoadRuntimeXAML (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

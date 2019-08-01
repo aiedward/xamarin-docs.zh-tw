@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 1305a8a1f39d34b5e91e478a769750911afb2b3e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8e5d4cf50874a0976c1dd10e35e7bd84518f14c4
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953184"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511147"
 ---
 # <a name="creating-a-cryptoobject"></a>建立 CryptoObject
 
-指紋驗證結果的完整性很重要的應用程式&ndash;是應用程式如何知道使用者的身分識別。 它是理論上，協力廠商惡意程式碼來攔截和竄改指紋掃描器所傳回的結果。 本節將討論的技巧，可以保留指紋辨識結果的有效性。 
+指紋驗證結果的完整性對應用&ndash;程式而言非常重要, 這是應用程式知道使用者身分識別的方式。 理論上, 協力廠商惡意程式碼可能會攔截並篡改指紋掃描器所傳回的結果。 本節將討論用來保留指紋結果有效性的一項技巧。 
 
-`FingerprintManager.CryptoObject`是 Java 密碼編譯 Api 的包裝，而且會由`FingerprintManager`來保護驗證要求的完整性。 一般而言，`Javax.Crypto.Cipher`物件是加密的指紋掃描器結果的機制。 `Cipher`物件本身會使用由使用 Android 金鑰儲存區 Api 的應用程式金鑰。
+是 JAVA 密碼編譯 api 的包裝函式, 並`FingerprintManager`由用來保護驗證要求的完整性。 `FingerprintManager.CryptoObject` 一般而言, `Javax.Crypto.Cipher`物件是加密指紋掃描器結果的機制。 `Cipher`物件本身會使用應用程式使用 Android 金鑰儲存區 api 所建立的金鑰。
 
-若要了解這些類別全部一起運作的方式，我們來看看下列程式碼示範如何建立`CryptoObject`，然後再詳細說明：
+若要瞭解這些類別如何共同合作, 讓我們先查看下列示範如何建立的`CryptoObject`程式碼, 然後再詳細說明:
 
 ```csharp
 public class CryptoObjectHelper
@@ -99,40 +99,40 @@ public class CryptoObjectHelper
 }
 ```
 
-範例程式碼會建立新`Cipher`針對每個`CryptoObject`，使用應用程式所建立的索引鍵。 索引鍵由`KEY_NAME`中的開頭設定的變數`CryptoObjectHelper`類別。 此方法`GetKey`會試著擷取使用 Android 金鑰儲存區 Api 金鑰。 如果索引鍵不存在，則此方法`CreateKey`會建立新的金鑰，應用程式。
+範例程式碼會使用應用程式`Cipher`所建立`CryptoObject`的索引鍵, 為每個建立新的。 此索引鍵是由`KEY_NAME` `CryptoObjectHelper`類別開頭所設定的變數所識別。 方法`GetKey`會使用 Android 金鑰儲存區 api 來嘗試並取得金鑰。 如果機碼不存在, 則方法`CreateKey`會為應用程式建立新的金鑰。
 
-密碼藉由呼叫具現化`Cipher.GetInstance`、 正在接受_轉換_（告訴加密如何加密和解密資料的字串值）。 若要呼叫`Cipher.Init`將會完成藉由提供應用程式的金鑰加密的初始化。 
+加密會使用的呼叫來`Cipher.GetInstance`具現化, 並採用_轉換_(指示加密如何加密和解密資料的字串值)。 對的呼叫`Cipher.Init`會藉由提供應用程式的索引鍵, 完成加密的初始化。 
 
-請務必了解有某些情況下，Android 可能使失效的索引鍵： 
+值得注意的是, 在某些情況下, Android 可能會使金鑰失效: 
 
-* 與裝置已註冊新的指紋。
-* 沒有註冊與裝置的指紋。
+* 已向裝置註冊新的指紋。
+* 未向裝置註冊任何指紋。
 * 使用者已停用螢幕鎖定。
-* 使用者已變更的螢幕鎖定 （screenlock 或所使用的 PIN/模式的類型）。
+* 使用者已變更螢幕鎖定 (screenlock 的類型或使用的 PIN/模式)。
 
-當發生這種情況`Cipher.Init`將會擲回[ `KeyPermanentlyInvalidatedException` ](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)。 上述的範例程式碼會攔截該例外狀況、 刪除機碼，和接著建立一個新。
+發生這種情況`Cipher.Init`時, 將[`KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)會擲回。 上述範例程式碼將會攔截該例外狀況、刪除金鑰, 然後建立一個新的索引鍵。
 
-下一節將討論如何建立金鑰，並將它儲存在裝置上。
+下一節將討論如何建立金鑰, 並將它儲存在裝置上。
 
-## <a name="creating-a-secret-key"></a>建立祕密金鑰
+## <a name="creating-a-secret-key"></a>建立秘密金鑰
 
-`CryptoObjectHelper`類別會使用 Android [ `KeyGenerator` ](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)建立金鑰，並將其儲存在裝置上。 `KeyGenerator`類別可以建立金鑰，但需要一些中繼資料建立的索引鍵的類型有關。 此資訊提供的執行個體所[ `KeyGenParameterSpec` ](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)類別。 
+類別會使用 Android [`KeyGenerator`](xref:Javax.Crypto.KeyGenerator)來建立金鑰, 並將它儲存在裝置上。 `CryptoObjectHelper` `KeyGenerator`類別可以建立金鑰, 但需要一些關於要建立的金鑰類型的中繼資料。 這項[`KeyGenParameterSpec`](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)資訊是由類別的實例所提供。 
 
-A`KeyGenerator`具現化使用`GetInstance`factory 方法。 範例程式碼會使用[_進階加密標準_](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) (_AES_) 做為加密演算法。 AES 將資料分成區塊的固定大小，並加密每個這些區塊。
+`KeyGenerator` 會`GetInstance`使用 factory 方法具現化。 範例程式碼會使用[_進階加密標準_](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)(_AES_) 做為加密演算法。 AES 會將資料分成固定大小的區塊, 並加密每個區塊。
 
-下一步`KeyGenParameterSpec`會使用建立`KeyGenParameterSpec.Builder`。 `KeyGenParameterSpec.Builder`包裝所要建立的索引鍵的下列資訊：
+接下來, `KeyGenParameterSpec`會`KeyGenParameterSpec.Builder`使用建立。 會`KeyGenParameterSpec.Builder`包裝下列有關要建立之金鑰的資訊:
 
 * 金鑰的名稱。
-* 索引鍵必須是有效的加密和解密。
-* 在範例程式碼`BLOCK_MODE`設定為_Cipher Block Chaining_ (`KeyProperties.BlockModeCbc`)，這表示每個區塊會進行 xor 處理，與前一個區塊 （建立每個區塊之間的相依性）。 
-* `CryptoObjectHelper`會使用[_公用金鑰密碼編譯標準 #7_ ](https://tools.ietf.org/html/rfc2315) (_PKCS7_) 來產生出的區塊，以確保其為所有相同的大小會填補位元組數.
-* `SetUserAuthenticationRequired(true)` 表示使用者驗證的必要索引鍵才能使用。
+* 金鑰必須是有效的加密和解密。
+* 在範例`BLOCK_MODE`程式碼中, 會設定為_加密區塊連結_(`KeyProperties.BlockModeCbc`), 這表示每個區塊會與前一個區塊進行 xor (在每個區塊之間建立相依性)。 
+* 會使用[_公開金鑰加密標準 #7_](https://tools.ietf.org/html/rfc2315) (PKCS7) 來產生可填補區塊的位元組, 以確保它們的大小都相同。 `CryptoObjectHelper`
+* `SetUserAuthenticationRequired(true)`表示必須先進行使用者驗證, 才能使用金鑰。
 
-一次`KeyGenParameterSpec`會建立，它用來初始化`KeyGenerator`，這會產生金鑰，並安全地將它儲存在裝置上。 
+建立之後, 它會用來`KeyGenerator`初始化, 它會產生金鑰並將它安全地儲存在裝置上。 `KeyGenParameterSpec` 
 
 ## <a name="using-the-cryptoobjecthelper"></a>使用 CryptoObjectHelper
 
-現在，範例程式碼已封裝建立的邏輯的大部分`CryptoWrapper`成`CryptoObjectHelper`類別，讓我們再次瀏覽本指南開頭的程式碼，並且使用`CryptoObjectHelper`建立加密和啟動指紋掃描器： 
+現在, 範例程式碼已封裝許多用`CryptoWrapper` `CryptoObjectHelper`來建立的邏輯, 接下來讓我們重新流覽`CryptoObjectHelper`本指南開頭的程式碼, 並使用來建立加密並啟動指紋掃描器: 
 
 ```csharp
 protected void FingerPrintAuthenticationExample()
@@ -153,19 +153,19 @@ protected void FingerPrintAuthenticationExample()
 }
 ```
 
-既然我們已了解如何建立`CryptoObject`，可讓您繼續看到如何`FingerprintManager.AuthenticationCallbacks`用來傳送至 Android 應用程式的指紋掃描器服務的結果。
+既然我們已瞭解如何建立`CryptoObject`, 讓我們繼續瞭解`FingerprintManager.AuthenticationCallbacks`如何使用來將指紋掃描器服務的結果傳送至 Android 應用程式。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Cipher](https://developer.xamarin.com/api/type/Javax.Crypto.Cipher/)
+- [分組](xref:Javax.Crypto.Cipher)
 - [FingerprintManager.CryptoObject](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.CryptoObject.html)
 - [FingerprintManagerCompat.CryptoObject](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.CryptoObject.html)
-- [KeyGenerator](https://developer.xamarin.com/api/type/Javax.Crypto.KeyGenerator/)
+- [KeyGenerator](xref:Javax.Crypto.KeyGenerator)
 - [KeyGenParameterSpec](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html)
 - [KeyGenParameterSpec.Builder](https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.Builder.html)
 - [KeyPermanentlyInvalidatedException](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)
 - [KeyProperties](https://developer.android.com/reference/android/security/keystore/KeyProperties.html)
 - [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
-- [RFC 2315 - PCKS #7](https://tools.ietf.org/html/rfc2315)
+- [RFC 2315-PCKS #7](https://tools.ietf.org/html/rfc2315)

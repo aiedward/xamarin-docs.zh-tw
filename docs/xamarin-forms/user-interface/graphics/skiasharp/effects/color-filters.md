@@ -7,16 +7,16 @@ ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/28/2018
-ms.openlocfilehash: 71c0495520a5dd596be2e9cafec6b63e316fb627
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5aa8b2e85d5a7d547af5333dcaf350025b86cc26
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61342394"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647703"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp 色彩篩選器
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 色彩篩選可以轉譯成其他色彩之色調分離例如效果的點陣圖 （或其他映像） 中的色彩：
 
@@ -120,7 +120,7 @@ M44 儲存格是非常重要，因為它會保留不透明度。 它通常是 M4
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-何處`matrix`是 20 個陣列`float`值。 建立陣列時C#，就可以輕鬆地格式化數字，讓它們看起來如 4 × 5 矩陣。 這示範於**灰階矩陣**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例：
+何處`matrix`是 20 個陣列`float`值。 建立陣列時C#，就可以輕鬆地格式化數字，讓它們看起來如 4 × 5 矩陣。 這示範於**灰階矩陣**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例：
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -163,7 +163,7 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-`DrawBitmap`在這段程式碼中使用的方法是來自**BitmapExtension.cs**隨附的檔案[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例。 
+`DrawBitmap`在這段程式碼中使用的方法是來自**BitmapExtension.cs**隨附的檔案[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例。 
 
 以下是在 iOS、 Android 和通用 Windows 平台上執行的結果：
 
@@ -232,7 +232,7 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-陣列一律包含 256 個項目。 在 `CreateTable`方法有一個資料表中，同一個資料表用於紅色、 綠色和藍色元件。 它是一個簡單的查閱資料表：如果來源色彩是 (R、 G、 B)，而目的色彩是 (R'，B'、 G')，然後透過編製索引所取得的目的地元件`table`來源元件：
+陣列一律包含 256 個項目。 在 `CreateTable`方法有一個資料表中，同一個資料表用於紅色、 綠色和藍色元件。 這是一個簡單的查閱資料表:如果來源色彩是 (r, G, b), 而目的地色彩是 (r ', B ', G '), 則會使用來源元件編制索引`table`來取得目的地元件:
 
 `R' = table[R]`
 
@@ -300,4 +300,4 @@ public class PosterizeTablePage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

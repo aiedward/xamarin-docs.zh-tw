@@ -5,12 +5,12 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
-ms.openlocfilehash: 5ddbb6f3d1c1ebf16ca5534b7effd1993c3d8b26
-ms.sourcegitcommit: 0c823f5439f4279a35af23dd466e7a0483e65d50
+ms.openlocfilehash: 73c398a7dbc2b8b7b22b9b8e38177efe2ff48735
+ms.sourcegitcommit: 8fe8d163cb9927917f6a83204b4c387fc50181c2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65804917"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68388495"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:Email
 
@@ -63,22 +63,6 @@ public class EmailTest
 ```
 
 
-## <a name="platform-differences"></a>平台差異
-
-# <a name="androidtabandroid"></a>[Android](#tab/android)
-
-並非所有 Android 電子郵件用戶端都支援 `Html`，原因是完全無法偵測該項目，建議在傳送電子郵件時使用 `PlainText`。
-
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-無平台差異。
-
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
-
-因為嘗試傳送 `Html` 的 `BodyFormat` 會擲回 `FeatureNotSupportedException`，所以僅支援 `PlainText`。
-
------
-
 ## <a name="file-attachments"></a>檔案附件
 
 ![預覽功能](~/media/shared/preview.png)
@@ -108,6 +92,24 @@ message.Attachments.Add(new EmailAttachment(file));
 
 await Email.ComposeAsync(message);
 ```
+
+## <a name="platform-differences"></a>平台差異
+
+# <a name="androidtabandroid"></a>[Android](#tab/android)
+
+並非所有 Android 電子郵件用戶端都支援 `Html`，原因是完全無法偵測該項目，建議在傳送電子郵件時使用 `PlainText`。
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+無平台差異。
+
+# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+
+因為嘗試傳送 `Html` 的 `BodyFormat` 會擲回 `FeatureNotSupportedException`，所以僅支援 `PlainText`。
+
+並非所有電子郵件用戶端都支援傳送附件。 如需詳細資訊，請參閱[文件](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email) \(部分機器翻譯\)。
+
+-----
 
 ## <a name="api"></a>API
 

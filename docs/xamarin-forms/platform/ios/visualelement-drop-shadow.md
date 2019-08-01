@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的 VisualElement 卸除陰影
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台特定，可讓 VisualElement 上的陰影。
+title: IOS 上的 VisualElement 投影
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的, 以在 VisualElement 上啟用陰影。
 ms.prod: xamarin
 ms.assetid: 2147FD66-058E-4BE5-840A-369842B26EC4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 9c576be30eb4b456e2eabcb5a041c57e58bdc747
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 9d58576e67e6e8129b15f4935986c494bb093538
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925641"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649553"
 ---
-# <a name="visualelement-drop-shadows-on-ios"></a>在 iOS 上的 VisualElement 卸除陰影
+# <a name="visualelement-drop-shadows-on-ios"></a>IOS 上的 VisualElement 投影
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台專屬來啟用下拉式陰影[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 它由在 XAML 中設定[ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) ; 附加屬性`true`，以及數個其他選擇性附加控制陰影的屬性：
+這個 iOS 平臺特定是用來啟用上[`VisualElement`](xref:Xamarin.Forms.VisualElement)的投影。 它由在 XAML 中設定[ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) ; 附加屬性`true`，以及數個其他選擇性附加控制陰影的屬性：
 
 ```xaml
 <ContentPage ...
@@ -75,6 +75,6 @@ boxView.On<iOS>()
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

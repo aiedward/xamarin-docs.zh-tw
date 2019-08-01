@@ -7,36 +7,36 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/28/2019
-ms.openlocfilehash: c79dd6430d387d75acfa010e7f5ad01829f8a6f0
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: d170e37b8bf4ce880f9d8f48d30defb42ee6bba2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658935"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648015"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服務
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 
 _WCF 是 Microsoft 的統一的架構，用於建置服務導向應用程式。它可讓開發人員建置安全、 可靠、 交易，且可互通的分散式應用程式。這篇文章會示範如何使用 Xamarin.Forms 應用程式從 WCF 簡易物件存取通訊協定 (SOAP) 服務。_
 
-WCF 會描述服務各種不同的合約，包括：
+WCF 描述具有各種不同合約的服務, 包括:
 
 - **資料合約**– 定義訊息內容的基礎資料結構。
 - **訊息合約**– 撰寫從現有的資料合約的訊息。
 - **錯誤合約**– 允許指定自訂 SOAP 錯誤。
 - **服務合約**– 指定服務支援的作業和訊息所需的互動與每個作業。 它們也會指定可以與每個服務上的作業相關聯的任何自訂的錯誤行為。
 
-同一個提供的功能，ASMX – 透過 HTTP 的 SOAP 訊息有 ASP.NET Web 服務 (ASMX) 和 WCF，但 WCF 支援之間的差異。 如需有關使用 ASMX 服務的詳細資訊，請參閱[取用 ASP.NET Web 服務 (ASMX)](~/xamarin-forms/data-cloud/web-services/asmx.md)。
+ASP.NET Web 服務 (.ASMX) 和 WCF 之間有差異, 但 WCF 支援的功能與 .ASMX 所提供的相同, 也就是透過 HTTP 的 SOAP 訊息。 如需使用 .ASMX 服務的詳細資訊, 請參閱[使用 ASP.NET Web 服務 (.asmx)](~/xamarin-forms/data-cloud/web-services/asmx.md)。
 
 > [!IMPORTANT]
-> WCF 的 Xamarin 平台支援僅限於文字編碼的 SOAP 訊息透過 HTTP/HTTPS 使用`BasicHttpBinding`類別。
+> WCF 的 Xamarin 平臺支援是透過 HTTP/HTTPS 使用`BasicHttpBinding`類別, 限制為文字編碼的 SOAP 訊息。
 >
-> WCF 支援需要使用工具，僅適用於 Windows 環境，以產生 proxy 和裝載 TodoWCFService。 建置和測試 iOS 應用程式，將需要部署 TodoWCFService 的 Windows 電腦上，或為 Azure web 服務。
+> WCF 支援需要使用僅在 Windows 環境中提供的工具來產生 proxy 並裝載 TodoWCFService。 建立和測試 iOS 應用程式需要在 Windows 電腦或 Azure web 服務上部署 TodoWCFService。
 >
-> Xamarin Forms 原生應用程式通常會使用.NET Standard 類別程式庫共用程式碼。 不過，.NET Core 目前不支援 WCF 讓共用的專案必須是舊版的可攜式類別庫。 如需 WCF 支援.NET Core 中的資訊，請參閱 <<c0> [ 為伺服器應用程式選擇.NET Core 和.NET Framework](/dotnet/standard/choosing-core-framework-server)。
+> Xamarin Forms 原生應用程式通常會與 .NET Standard 類別庫共用程式碼。 不過, .NET Core 目前不支援 WCF, 因此共用的專案必須是舊版的可移植類別庫。 如需 .NET Core 中 WCF 支援的詳細資訊, 請參閱[為伺服器應用程式選擇 .Net core 和 .NET Framework](/dotnet/standard/choosing-core-framework-server)。
 
-此範例應用程式方案包含可以在本機執行和下列螢幕擷取畫面所示的 WCF 服務：
+範例應用程式解決方案包含可在本機執行的 WCF 服務, 如下列螢幕擷取畫面所示:
 
 ![](wcf-images/portal.png "範例應用程式")
 
@@ -45,7 +45,7 @@ WCF 會描述服務各種不同的合約，包括：
 >
 > 如果無法使用，可以共選擇 ATS`HTTPS`通訊協定和安全的網際網路資源的通訊。 這可以藉由更新應用程式的達成**Info.plist**檔案。 如需詳細資訊，請參閱[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)。
 
-## <a name="consume-the-web-service"></a>取用 web 服務
+## <a name="consume-the-web-service"></a>使用 web 服務
 
 WCF 服務提供下列作業：
 
@@ -133,7 +133,7 @@ static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 
 這個方法只擷取資料，從產生的 proxy`TodoItem`輸入，並將它設定在新建立`TodoItem`執行個體。
 
-### <a name="retrieve-data"></a>擷取資料
+### <a name="retrieve-data"></a>取出資料
 
 `TodoServiceClient.BeginGetTodoItems`並`TodoServiceClient.EndGetTodoItems`方法來呼叫`GetTodoItems`web 服務所提供的作業。 這些非同步方法，都會封裝在`Task`物件，如下列程式碼範例所示：
 
@@ -226,17 +226,17 @@ public async Task DeleteTodoItemAsync (string id)
 
 Web 服務擲回`FaultException`找出或刪除時`TodoItem`，這由應用程式。
 
-## <a name="configure-remote-access-to-iis-express"></a>設定 IIS Express 的遠端存取
-在 Visual Studio 2017 或 Visual Studio 2019 中，您應該能夠測試 UWP 應用程式不需要其他設定的電腦上。 測試的 Android 和 iOS 的用戶端，可能需要額外的步驟，這一節。 請參閱[從 iOS 模擬器和 Android 模擬器連線至本機 Web 服務](~/cross-platform/deploy-test/connect-to-local-web-services.md)如需詳細資訊。
+## <a name="configure-remote-access-to-iis-express"></a>設定遠端存取 IIS Express
+在 Visual Studio 2017 或 Visual Studio 2019 中, 您應該能夠在不進行其他設定的電腦上測試 UWP 應用程式。 測試 Android 和 iOS 用戶端可能需要本節中的其他步驟。 如需詳細資訊, 請參閱[從 IOS 模擬器和 Android 模擬器連接到本機 Web 服務](~/cross-platform/deploy-test/connect-to-local-web-services.md)。
 
-根據預設，IIS Express 會只回應要求`localhost`。 遠端裝置 （例如 Android 裝置、 iPhone 或甚至是模擬器） 不會有本機的 WCF 服務的存取權。 您必須知道您 Windows 10 工作站的本機網路上 IP 位址。 在此範例中，假設您的工作站的 IP 位址`192.168.1.143`。 下列步驟說明如何設定接受遠端連接，並從實體或虛擬裝置連線到服務的 Windows 10 和 IIS Express:
+根據預設, IIS Express 只會回應對`localhost`的要求。 遠端裝置 (例如 Android 裝置、iPhone 或甚至是模擬器) 將無法存取您的本機 WCF 服務。 您將需要知道您在區域網路上的 Windows 10 工作站 IP 位址。 基於此範例的目的, 假設您的工作站具有 IP 位址`192.168.1.143`。 下列步驟說明如何設定 Windows 10 和 IIS Express 以接受遠端連線, 並從實體或虛擬裝置連線至服務:
 
-1. **加入 Windows 防火牆的例外狀況**。 您必須開啟連接埠通過 Windows 防火牆在您的子網路上的應用程式可以用來與 WCF 服務進行通訊。 建立在防火牆中開啟連接埠 49393 的輸入的規則。 系統管理命令提示字元中，執行此命令：
+1. **將例外狀況新增至 Windows 防火牆**。 您必須透過 Windows 防火牆開啟埠, 子網中的應用程式才能用來與 WCF 服務進行通訊。 建立輸入規則, 以在防火牆中開啟埠49393。 從系統管理命令提示字元中, 執行下列命令:
     ```
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```
 
-1. **接受遠端連線設定 IIS Express**。 您可以設定 IIS Express 的 IIS Express 在編輯組態檔 **[方案目錄]\.vs\config\applicationhost.config**。尋找`site`同名的項目`TodoWCFService`。 它看起來應該類似下列的 XML:
+1. **設定 IIS Express 以接受遠端連線**。 您可以在 **[方案目錄\.] vs\config\applicationhost.config**中編輯 IIS Express 的設定檔, 以設定 IIS Express。尋找名稱`TodoWCFService`為的元素。`site` 看起來應該類似下列 XML:
 
     ```xml
     <site name="TodoWCFService" id="2">
@@ -249,14 +249,14 @@ Web 服務擲回`FaultException`找出或刪除時`TodoItem`，這由應用程�
     </site>
     ```
 
-    您必須新增兩個`binding`項目，以開啟 設定連接埠 49393 外部流量，並在 Android 模擬器。 繫結使用`[IP address]:[port]:[hostname]`指定 IIS Express 將如何回應要求的格式。 外部要求會有必須為指定的主機名稱`binding`。 新增下列 XML 來`bindings`項目，以您自己的 IP 位址取代 IP 位址：
+    您將需要新增兩個`binding`元素, 以開啟埠49393至外部流量和 Android 模擬器。 系結會使用`[IP address]:[port]:[hostname]`指定 IIS Express 如何回應要求的格式。 外部要求的主機名稱必須指定為`binding`。 將下列 XML 新增至`bindings`元素, 並將 ip 位址取代為您自己的 ip 位址:
 
     ```xml
     <binding protocol="http" bindingInformation="*:49393:192.168.1.143" />
     <binding protocol="http" bindingInformation="*:49393:127.0.0.1" />
     ```
 
-    在您的變更之後`bindings`項目應該如下所示：
+    變更之後, `bindings`元素看起來應該如下所示:
 
     ```xml
     <site name="TodoWCFService" id="2">
@@ -272,19 +272,19 @@ Web 服務擲回`FaultException`找出或刪除時`TodoItem`，這由應用程�
     ```
 
     >[!IMPORTANT]
-    >根據預設，IIS Express 不會接受來自外部來源，基於安全性考量的連線。 若要啟用來自遠端裝置的連線您必須執行 IIS Express 以系統管理權限。 若要這樣做最簡單的方式是以系統管理權限執行 Visual Studio 2017。 這會啟動 IIS Express 以系統管理權限執行 TodoWCFService 時。
+    >根據預設, 基於安全性理由, IIS Express 不會接受來自外部來源的連接。 若要啟用遠端裝置的連接, 您必須以系統管理許可權執行 IIS Express。 若要這麼做, 最簡單的方法是使用系統管理許可權來執行 Visual Studio 2017。 這會在執行 TodoWCFService 時, 以系統管理許可權啟動 IIS Express。
 
-    完成這些步驟中，您應該能夠執行 TodoWCFService 並從您的子網路上的其他裝置連線。 您可以藉由執行您的應用程式，並瀏覽測試`http://localhost:49393/TodoService.svc`。 如果您收到**不正確的要求**錯誤造訪該 URL，當您`bindings`可能不正確的 IIS Express 的組態 （要求達到 IIS Express，但遭到拒絕） 中。 如果您收到不同的錯誤可能是您的應用程式未執行，或您的防火牆設定不正確。
+    完成這些步驟之後, 您應該能夠執行 TodoWCFService, 並從子網的其他裝置進行連線。 您可以藉由執行您的應用程式並`http://localhost:49393/TodoService.svc`造訪來進行測試。 如果您在流覽該 URL 時收到不正確的**要求**錯誤`bindings` , 您在 IIS Express 設定中可能不正確 (要求 IIS Express 但遭到拒絕)。 如果您收到不同的錯誤, 可能是您的應用程式未執行, 或您的防火牆設定不正確。
 
-    若要允許 IIS Express 以保持執行，並提供服務，關閉**編輯後繼續**選項**專案屬性 > Web > 偵錯工具**。
+    若要讓 IIS Express 繼續執行並提供服務, 請關閉 **專案屬性 > Web > 調試**程式 中的 **編輯後繼續** 選項。
 
-1. **自訂裝置用來存取服務端點**。 此步驟牽涉到設定用戶端執行的應用程式，在實體或模擬裝置上，來存取 WCF 服務。
+1. **自訂用來存取服務的端點裝置**。 此步驟牽涉到設定在實體或模擬裝置上執行的用戶端應用程式, 以存取 WCF 服務。
 
-    Android 模擬器會使用內部 proxy，可防止直接存取主機電腦的模擬器`localhost`位址。 相反地，地址`10.0.2.2`在模擬器上會路由傳送至`localhost`透過內部的 proxy 主機電腦上。 這些 proxy 的要求將會有`127.0.0.1`為要求標頭中的主機名稱，這也是為什麼您在上述步驟中建立此主機名稱的 IIS Express 繫結。
+    Android 模擬器會利用內部 proxy, 讓模擬器無法直接存取主機電腦的`localhost`位址。 相反地, 模擬器`10.0.2.2`上的位址會透過內部`localhost` proxy 路由傳送至主機電腦上的。 這些代理的要求在`127.0.0.1`要求標頭中會有作為主機名稱, 這就是您在上述步驟中為此主機名稱建立 IIS Express 系結的原因。
 
-    模擬器會在 Mac 執行的 iOS 組建主機，即使您使用[遠端 iOS 模擬器的 Windows](~/tools/ios-simulator/index.md)。 從模擬器的網路要求將會有您工作站的 IP 主機名稱在本機網路上 (在此範例中有`192.168.1.143`，但實際的 IP 位址可能會不同)。 這就是為什麼您在上述步驟中建立此主機名稱的 IIS Express 繫結。
+    IOS 模擬器會在 Mac 組建主機上執行, 即使您使用[適用于 Windows 的遠端 iOS](~/tools/ios-simulator/index.md)模擬器也一樣。 來自模擬器的網路要求會在區域網路上將您的工作站 IP 做為主機名稱 (在此範例`192.168.1.143`中為), 但您的實際 IP 位址可能會不同。 這就是您在上述步驟中為此主機名稱建立 IIS Express 系結的原因。
 
-    請確定`SoapUrl`中的屬性**Constants.cs** TodoWCF （可攜式） 專案檔中的有對您的網路而言是正確的值：
+    請確定`SoapUrl` TodoWCF (便攜) 專案中**Constants.cs**檔案中的屬性具有您的網路的正確值:
 
     ```csharp
     public static string SoapUrl
@@ -307,10 +307,10 @@ Web 服務擲回`FaultException`找出或刪除時`TodoItem`，這由應用程�
     }
     ```
 
-    一旦您已設定**Constants.cs**透過適當的端點，您應該能夠連線到執行 Windows 10 工作站上，從實體或虛擬裝置 TodoWCFService。
+    使用適當的端點設定**Constants.cs**之後, 您應該能夠從實體或虛擬裝置連接到在 Windows 10 工作站上執行的 TodoWCFService。
 
 ## <a name="related-links"></a>相關連結
 
-- [TodoWCF （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoWCF/)
+- [TodoWCF （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 - [如何：建立 Windows Communication Foundation 用戶端](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
-- [ServiceModel Metadata Utility Tool (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [System.servicemodel 中繼資料公用程式工具 (svcutil .exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

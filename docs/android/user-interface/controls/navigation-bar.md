@@ -1,39 +1,39 @@
 ---
-title: 巡覽列
+title: Xamarin Android 導覽列
 ms.prod: xamarin
 ms.assetid: 6023DB7E-9E72-4B90-A96A-11BC297B8A3D
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 9455cac81a0f9ea81e08cf63397e45c1698e1c1b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c017ab96bdd78a41b31a3305021c5bc1f8e472d0
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153622"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644917"
 ---
-# <a name="navigation-bar"></a>巡覽列
+# <a name="xamarinandroid-navigation-bar"></a>Xamarin Android 導覽列
 
 Android 4 也引入了新系統使用者介面功能，稱為 *瀏覽列* ，以提供不包含硬體按鈕的裝置上的導覽控制項 **首頁** ， **回** ，並 **功能表** 。
-下列螢幕擷取畫面顯示導覽列，從 Nexus 質數裝置：
+下列螢幕擷取畫面顯示來自「結點主要裝置的流覽列:
 
- [![Android 導覽列中的範例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
+ [![Android 導覽列範例](navigation-bar-images/19-navbar.png)](navigation-bar-images/19-navbar.png#lightbox)
 
-有幾個新旗標，以控制可見性的巡覽列及其子控制項，以及 Android 3 中引進的 [系統] 列的可見性。 中所定義的旗標`Android.View.View`類別，並如下所示：
+有數個新的旗標可控制導覽列及其控制項的可見度, 以及在 Android 3 中引進的系統列可見度。 旗標會定義在`Android.View.View`類別中, 並列示如下:
 
--   `SystemUiFlagVisible` &ndash; 可導覽列中顯示。 
--   `SystemUiFlagLowProfile` &ndash; Dims 導覽列中的控制項。 
--   `SystemUiFlagHideNavigation` &ndash; 隱藏巡覽列。 
+-   `SystemUiFlagVisible`&ndash;讓巡覽列顯示。 
+-   `SystemUiFlagLowProfile`&ndash;在導覽列中縮小控制項的亮度。 
+-   `SystemUiFlagHideNavigation`&ndash;隱藏巡覽列。 
 
 
-這些旗標可以藉由設定套用至任何檢視中檢視階層`SystemUiVisibility`屬性。 如果多個檢視都有這個屬性設定，系統就會結合 OR 運算，並套用它們，只要 [旗標設定] 視窗會保留焦點。 當您移除檢視時，也會移除它已設定任何旗標。
+您可以藉由設定`SystemUiVisibility`屬性, 將這些旗標套用至視圖階層中的任何視圖。 如果多個 views 已設定此屬性, 則系統會將它們與或作業結合, 並套用它們, 只要設定旗標的視窗會保留焦點。 當您移除視圖時, 它所設定的任何旗標也會一併移除。
 
-下列範例顯示簡單的應用程式，按一下按鈕的任何變更`SystemUiVisibility`:
+下列範例顯示一個簡單的應用程式, 其中按一下任何按鈕會變更`SystemUiVisibility`:
 
- [![示範看得見、 低設定檔，以及隱藏 SystemUiVisibility 的螢幕擷取畫面](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
+ [![示範可見、低設定檔和隱藏 SystemUiVisibility 的螢幕擷取畫面](navigation-bar-images/18-systemuivisibility.png)](navigation-bar-images/18-systemuivisibility.png#lightbox)
 
-若要變更的程式碼`SystemUiVisibility`中設定屬性`TextView`從每個按鈕的 click 事件處理常式，如下所示：
+要變更的`SystemUiVisibility`程式碼會`TextView`從每個按鈕的 click 事件處理常式, 設定上的屬性, 如下所示:
 
 ```csharp
 var tv = FindViewById<TextView> (Resource.Id.systemUiFlagTextView);
@@ -56,7 +56,7 @@ visibleButton.Click += delegate {
 }
 ```
 
-此外，`SystemUiVisibility`變更引發`SystemUiVisibilityChange`事件。 就像設定`SystemUiVisibility`屬性中的處理常式`SystemUiVisibilityChange`可以註冊事件，以便在階層中的任何檢視。 例如，以下的程式碼會使用`TextView`報名活動的執行個體：
+此外, `SystemUiVisibility`變更也會`SystemUiVisibilityChange`引發事件。 就像設定`SystemUiVisibility`屬性一樣, 可以針對階層中`SystemUiVisibilityChange`的任何視圖註冊事件的處理常式。 例如, 下列程式碼會使用`TextView`實例來註冊事件:
 
 ```csharp
 tv.SystemUiVisibilityChange +=
@@ -69,6 +69,6 @@ tv.SystemUiVisibilityChange +=
 
 ## <a name="related-links"></a>相關連結
 
-- [SystemUIVisibilityDemo （範例）](https://developer.xamarin.com/samples/monodroid/SystemUIVisibilityDemo/)
-- [簡介 Ice Cream Sandwich](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平台](https://developer.android.com/sdk/android-4.0.html)
+- [SystemUIVisibilityDemo (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/systemuivisibilitydemo)
+- [霜淇淋三明治簡介](http://www.android.com/about/ice-cream-sandwich/)
+- [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

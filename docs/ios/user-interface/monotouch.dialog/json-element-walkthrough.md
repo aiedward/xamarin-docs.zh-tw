@@ -1,46 +1,46 @@
 ---
-title: 若要建立使用者介面在 Xamarin.iOS 中使用 JSON
-description: MonoTouch.Dialog (MTD） 包含支援動態 UI 透過 JSON 資料的產生。 在本教學課程中，我們將逐步解說如何使用 JSONElement 建立使用者介面，從所包含的應用程式，或從遠端的 Url 載入的 JSON。
+title: 在 Xamarin 中使用 JSON 建立使用者介面
+description: MonoTouch。對話方塊 (MT。D) 包含透過 JSON 資料產生動態 UI 的支援。 在本教學課程中, 我們將逐步解說如何使用 JSONElement 來建立 JSON 中的使用者介面, 其包含在應用程式中, 或從遠端 Url 載入。
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: e1eae07fab4a74a4f47f565d4c4ca0b7f6bc1aa9
-ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.openlocfilehash: 64b35588afa06a6a8f4a206f10827409f9de316f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039672"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645225"
 ---
-# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>若要建立的使用者介面在 Xamarin.iOS 中使用 JSON
+# <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>在 Xamarin 中使用 JSON 建立使用者介面
 
-_MonoTouch.Dialog (MTD） 包含支援動態 UI 透過 JSON 資料的產生。在本教學課程中，我們將逐步解說如何使用 JSONElement 建立使用者介面，從所包含的應用程式，或從遠端的 Url 載入的 JSON。_
+_MonoTouch。對話方塊 (MT。D) 包含透過 JSON 資料產生動態 UI 的支援。在本教學課程中, 我們將逐步解說如何使用 JSONElement 來建立 JSON 中的使用者介面, 其包含在應用程式中, 或從遠端 Url 載入。_
 
-MTD 支援在 JSON 中宣告的建立使用者介面。 當使用 JSON，MT 宣告的項目D 將相關聯的項目為您自動建立。 JSON 可以載入從本機檔案，剖析`JsonObject`執行個體或甚至是遠端的 Url。
+MT.D 支援建立以 JSON 宣告的使用者介面。 使用 JSON、MT 宣告元素時。D 會自動為您建立相關聯的元素。 您可以從本機檔案、剖析的`JsonObject`實例或甚至是遠端 Url 來載入 JSON。
 
-MTD 支援時，可以使用元素 API 中使用 JSON 功能的完整範圍。 比方說，下列螢幕擷取畫面中的應用程式的完全宣告使用 JSON 中：
+MT.D 支援在使用 JSON 時, 元素 API 中可用的完整功能範圍。 例如, 下列螢幕擷取畫面中的應用程式是使用 JSON 來完全宣告:
 
 [![](json-element-walkthrough-images/01-load-from-file.png "例如，此螢幕擷取畫面中的應用程式完全宣告使用 JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![](json-element-walkthrough-images/01-load-from-file.png "比方說，此螢幕擷取畫面中的應用程式完全使用宣告JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
-從範例重新瀏覽[項目 API 逐步解說](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)教學課程中，顯示如何加入 工作詳細資料螢幕使用 JSON。
+讓我們來回顧[ELEMENTS API 逐步](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)解說教學課程中的範例, 示範如何使用 JSON 加入工作詳細資料畫面。
 
-## <a name="setting-up-mtd"></a>MT 的設定D
+## <a name="setting-up-mtd"></a>設定 MT。D
 
-MTD Xamarin.iOS 一起散發。 若要使用它，以滑鼠右鍵按一下**參考**節點的 Xamarin.iOS 專案在 Visual Studio 2017 或 Visual Studio for Mac，並加入參考**MonoTouch.Dialog 1**組件。 然後，新增`using MonoTouch.Dialog`視您在來源中的陳述式的程式碼。
+MT.D 與 Xamarin 一起散發。 若要使用它, 請以滑鼠右鍵按一下 Visual Studio 2017 或 Visual Studio for Mac 中之 Xamarin 專案的 [**參考**] 節點, 然後新增**MonoTouch**元件的參考。 然後, 視`using MonoTouch.Dialog`需要在您的原始程式碼中新增語句。
 
 ## <a name="json-walkthrough"></a>JSON 逐步解說
 
-本逐步解說的範例可讓您建立的工作。 第一個畫面上選取一項工作時，詳細資料畫面會顯示所示：
+此逐步解說的範例可讓您建立工作。 當第一個畫面上選取了工作時, 會顯示詳細資料畫面, 如下所示:
 
- [![](json-element-walkthrough-images/03-task-list.png "如所示，第一個畫面上選取一項工作時，會顯示詳細資料畫面")](json-element-walkthrough-images/03-task-list.png#lightbox)
+ [![](json-element-walkthrough-images/03-task-list.png "當第一個畫面上選取了工作時, 會顯示詳細資料畫面, 如下所示")](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>建立 JSON
 
-針對此範例中，我們會從名為專案中的檔案載入 JSON `task.json`。 MTD 會預期要符合鏡像處理項目 API 語法的 JSON。 就像使用元素 API 從程式碼，當使用 JSON 時，我們宣告區段，並在這些章節中，我們新增項目。 若要宣告區段和 JSON 中的項目，我們使用的字串 「 區段 」 和 「 項目 」 分別做為索引鍵。 對於每個項目中，相關聯的項目類型設定使用`type`索引鍵。 每個項目屬性是設定索引鍵屬性名稱。
+在此範例中, 我們會從名為`task.json`的專案中的檔案載入 JSON。 MT.D 預期 JSON 必須符合會反映元素 API 的語法。 就像使用程式碼中的 Elements API 一樣, 使用 JSON 時, 我們會宣告區段, 並在這些區段中新增元素。 為了在 JSON 中宣告區段和專案, 我們分別使用字串 "sections" 和 "elements" 作為索引鍵。 針對每個專案, 會使用`type`索引鍵來設定相關聯的元素類型。 每個其他專案屬性都是以屬性名稱做為索引鍵來設定。
 
-例如，下列的 JSON 描述的區段和工作詳細資料的項目：
+例如, 下列 JSON 描述工作詳細資料的區段和元素:
 
 ```json
 {
@@ -65,17 +65,17 @@ MTD Xamarin.iOS 一起散發。 若要使用它，以滑鼠右鍵按一下**參�
 }
 ```
 
-請注意上述的 JSON 包含每個項目的 id。 任何項目可以包含一個識別碼，來參考它在執行階段。 我們會看到如何使用此名稱稍後當我們示範如何將程式碼中的 JSON。
+請注意, 上述 JSON 包含每個元素的識別碼。 任何元素都可以包含識別碼, 以便在執行時間參考它。 當我們示範如何在程式碼中載入 JSON 時, 我們會看到這種情況的使用方式。
 
-## <a name="loading-the-json-in-code"></a>正在載入程式碼中的 JSON
+## <a name="loading-the-json-in-code"></a>在程式碼中載入 JSON
 
-一旦已定義的 JSON，我們需要將它載入 MT使用 D`JsonElement`類別。 假設使用前面所建立的 JSON 檔案已經加入到專案中名稱 sample.json 並指定在建置動作載入的內容為`JsonElement`很簡單，只要呼叫下列程式碼行：
+定義 JSON 之後, 我們需要將它載入至 MT。使用類別的`JsonElement` D。 假設我們先前建立的 JSON 檔案已新增至名稱為 sample 的專案, 並指定內容的建立動作, `JsonElement`則載入會像呼叫下列程式碼一樣簡單:
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
 ```
 
-由於我們要將它新增隨每次建立工作時，我們可以修改先前的項目 API 範例中，如下所示所按的按鈕：
+因為我們會在每次建立工作時依需求新增此專案, 所以我們可以從先前的 Elements API 範例中修改按一下的按鈕, 如下所示:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -89,9 +89,9 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
-## <a name="accessing-elements-at-runtime"></a>在執行階段存取的項目
+## <a name="accessing-elements-at-runtime"></a>在執行時間存取元素
 
-您應該記得我們將新增識別碼至這兩個項目，當我們在 JSON 檔案中宣告。 我們可以使用 id 屬性來存取在執行階段來修改其屬性，在程式碼中的每個項目。 例如，下列程式碼參考的項目和日期的項目來設定從工作物件的值：
+回想一下, 我們已在 JSON 檔案中宣告這兩個專案時, 將識別碼新增至這兩個元素。 我們可以使用 id 屬性來存取執行時間中的每個專案, 以在程式碼中修改其屬性。 例如, 下列程式碼會參考 entry 和 date 元素, 以設定 task 物件的值:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {
@@ -121,7 +121,7 @@ _addButton.Clicked += (sender, e) => {
 
 ## <a name="loading-json-from-a-url"></a>從 url 載入 JSON
 
-MTD 也支援以動態方式載入 JSON 從外部 Url 只是將 Url 傳遞至建構函式的`JsonElement`。 MTD 將會展開宣告在 JSON 中依需求為您在畫面之間瀏覽的階層。 例如，請考慮下面類似的 JSON 檔案位於本機 web 伺服器的根目錄：
+MT.D 也支援透過直接將 Url 傳遞至`JsonElement`的函式, 從外部 URL 動態載入 JSON。 MT.當您在畫面之間流覽時, D 會視需要擴充 JSON 中所宣告的階層。 例如, 假設有一個 JSON 檔案, 如下所示, 位於本機 web 伺服器的根目錄:
 
 ```json
 {
@@ -147,7 +147,7 @@ MTD 也支援以動態方式載入 JSON 從外部 Url 只是將 Url 傳遞至建
 }
 ```
 
-我們可以載入此使用`JsonElement`如下列程式碼所示：
+我們可以使用`JsonElement`來載入此, 如下列程式碼所示:
 
 ```csharp
 _rootElement = new RootElement ("Json Example") {
@@ -157,21 +157,21 @@ _rootElement = new RootElement ("Json Example") {
 };
 ```
 
-在執行階段，檔案將會擷取和剖析 MT當使用者導覽至第二個檢視，如以下螢幕擷取畫面所示的 D:
+在執行時間, 檔案將會由 MT 抓取和剖析。D 當使用者流覽至第二個視圖時, 如下列螢幕擷取畫面所示:
 
- [![](json-element-walkthrough-images/04-json-web-example.png "檔案會擷取並剖析 MT當使用者導覽到第二個檢視的 D")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
+ [![](json-element-walkthrough-images/04-json-web-example.png "檔案將會由 MT 抓取和剖析。D 當使用者流覽至第二個視圖時")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
 ## <a name="summary"></a>總結
 
-這篇文章說明如何建立使用 MT 介面從 JSON D。 它示範了如何將檔案與應用程式，以及從遠端的 Url 中包含的 JSON。 它也會示範如何存取 JSON 中所述，在執行階段的項目。
+本文說明如何使用 MT 來建立 using 介面。D from JSON。 它示範如何使用應用程式以及從遠端 Url 載入包含在檔案中的 JSON。 它也示範如何在執行時間存取 JSON 中所述的元素。
 
 ## <a name="related-links"></a>相關連結
 
-- [MTDJsonDemo （範例）](https://developer.xamarin.com/samples/monotouch/MTDJsonDemo/)
-- [MonoTouch.Dialog 簡介](~/ios/user-interface/monotouch.dialog/index.md)
-- [項目 API 逐步解說](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
+- [MTDJsonDemo (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdjsondemo)
+- [MonoTouch 簡介](~/ios/user-interface/monotouch.dialog/index.md)
+- [Elements API 逐步解說](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [反映 API 逐步解說](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
-- [在 Github 上的 MonoTouch 對話方塊](https://github.com/migueldeicaza/MonoTouch.Dialog)
+- [Github 上的 MonoTouch 對話方塊](https://github.com/migueldeicaza/MonoTouch.Dialog)
 - [TweetStation 應用程式](https://github.com/migueldeicaza/TweetStation)
 - [UITableViewController 類別參考](https://developer.apple.com/library/ios/#DOCUMENTATION/UIKit/Reference/UITableViewController_Class/Reference/Reference.html)
 - [UINavigationController 類別參考](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UINavigationController_Class/Reference/Reference.html)

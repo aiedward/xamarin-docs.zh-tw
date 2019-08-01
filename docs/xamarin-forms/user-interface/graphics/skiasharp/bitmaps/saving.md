@@ -7,16 +7,16 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 885bba381e1371d273000fa0d970b465e9ca9c0b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4414ce498bdf69e82269137c35af8f27b9e5f541
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61410640"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649570"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp 應用程式已建立或修改點陣圖之後，應用程式可能會想要將點陣圖儲存到使用者的相片媒體櫃：
 
@@ -46,7 +46,7 @@ SkiaSharp 應用程式已建立或修改點陣圖之後，應用程式可能會�
 
 颾魤 ㄛ [ `SKCodec` ](xref:SkiaSharp.SKCodec)類別有兩個方法，名為`Create`，可以建立`SKCodec`從壓縮的來源物件，並允許應用程式在解密程序中取得更複雜。 (`SKCodec`類別會顯示在 發行項[**動畫 SkiaSharp 點陣圖**](animating.md#gif-animation)與解碼的動畫的 GIF 檔案。)
 
-點陣圖的編碼方式，詳細資訊時需要：編碼器必須知道特定的檔案格式的應用程式想要使用 （JPEG 或 PNG 或其他項目）。 如果需要失真格式，則編碼也必須知道所需的等級的品質。
+對點陣圖進行編碼時, 需要詳細資訊:編碼器必須知道應用程式想要使用的特定檔案格式 (JPEG 或 PNG 或其他內容)。 如果需要失真格式，則編碼也必須知道所需的等級的品質。
 
 `SKBitmap`類別會定義其中一個[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法，使用下列語法：
 
@@ -68,7 +68,7 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 如果您想要由其他應用程式共用的檔案時，它必須儲存到使用者的相片媒體櫃中。 這項工作需要平台特定程式碼並使用 Xamarin.Forms [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)。
 
-**SkiaSharpFormsDemo**專案中[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)應用程式會定義`IPhotoLibrary`搭配使用的介面`DependencyService`類別。 這會定義的語法`SavePhotoAsync`方法：
+**SkiaSharpFormsDemo**專案中[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式會定義`IPhotoLibrary`搭配使用的介面`DependencyService`類別。 這會定義的語法`SavePhotoAsync`方法：
 
 ```csharp
 public interface IPhotoLibrary
@@ -280,7 +280,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 
 `SKManagedWStream`類別衍生自`SKWStream`（這代表 「 可寫入資料流 」）。 `Encode`方法會寫入該資料流中的編碼的點陣圖檔案。 該程式碼中的註解，請參閱檢查可能需要執行一些錯誤。
 
-**儲存的檔案格式**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)應用程式會使用類似的程式碼可讓您試驗不同的格式儲存點陣圖。
+**儲存的檔案格式**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式會使用類似的程式碼可讓您試驗不同的格式儲存點陣圖。
 
 XAML 檔案中包含`SKCanvasView`顯示點陣圖、 應用程式頁面的其餘部分包含的所有項目時要呼叫`Encode`方法`SKBitmap`。 它有`Picker`成員的`SKEncodedImageFormat`列舉型別`Slider`失真的點陣圖格式的品質引數的兩個`Entry`檔案名稱和資料夾名稱時，請檢視和`Button`以儲存檔案。
 
@@ -471,7 +471,7 @@ public partial class SaveFileFormatsPage : ContentPage
 
 [**手指繪製在 SkiaSharp** ](../paths/finger-paint.md)文章示範如何使用追蹤來實作基本的手指繪製程式的觸控。 程式支援只有一個色彩] 和 [只有一個筆觸寬度，但保留集合中的整個繪圖`SKPath`物件。
 
-**使用手指繪製儲存**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例也會保留整個集合中的繪圖`SKPath`物件，但它也呈現的點陣圖，它可以將它儲存到您的相片媒體櫃中的繪圖。
+**使用手指繪製儲存**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例也會保留整個集合中的繪圖`SKPath`物件，但它也呈現的點陣圖，它可以將它儲存到您的相片媒體櫃中的繪圖。
 
 此程式大多是類似於原始**手指繪製**程式。 加強的部分是，XAML 檔案現在會具現化標示的按鈕**清楚**並**儲存**:
 
@@ -655,7 +655,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 `UpdateBitmap`方法會重繪`saveBitmap`藉由建立新`SKCanvas`，清除它，然後轉譯點陣圖上的所有路徑。 它結束時，會使失效`canvasView`，以便顯示畫面上，可以繪製點陣圖。
 
-以下是兩個按鈕的處理常式。 **清楚** 按鈕會清除這兩個路徑的集合，更新`saveBitmap`（這會導致清除點陣圖），則`SKCanvasView`:
+以下是兩個按鈕的處理常式。           **清楚** 按鈕會清除這兩個路徑的集合，更新`saveBitmap`（這會導致清除點陣圖），則`SKCanvasView`:
 
 ```csharp
 public partial class FingerPaintSavePage : ContentPage
@@ -698,7 +698,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 [![手指儲存的小畫家](saving-images/FingerPaintSave.png "手指繪製儲存")](saving-images/FingerPaintSave-Large.png#lightbox)
 
-用於非常類似的技巧[ **SpinPaint** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/)範例。 這也是手指繪製程式不同之處在於使用者繪製然後重現上其其他四個象限的設計轉動式磁碟上。 旋轉的手指繪製變更色彩的磁碟：
+用於非常類似的技巧[ **SpinPaint** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)範例。 這也是手指繪製程式不同之處在於使用者繪製然後重現上其其他四個象限的設計轉動式磁碟上。 旋轉的手指繪製變更色彩的磁碟：
 
 [![啟動 小畫家](saving-images/SpinPaint.png "微調 [小畫家]")](saving-images/SpinPaint-Large.png#lightbox)
 
@@ -707,5 +707,5 @@ public partial class FingerPaintSavePage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
-- [SpinPaint （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/SpinPaint/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SpinPaint （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)

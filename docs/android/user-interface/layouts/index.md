@@ -1,52 +1,52 @@
 ---
 title: 版面配置
-description: 定義您的 Xamarin.Android 應用程式的視覺結構
+description: 定義您的 Xamarin Android 應用程式的視覺化結構
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/18/2017
-ms.openlocfilehash: e0a9ce52d70079884e7960ccfee9eb7fcbb0f2fb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b4ffe10278c5764d945ab2387daa9e383d2ad36a
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61311452"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510142"
 ---
-# <a name="layouts"></a>版面配置
+# <a name="xamarinandroid-layouts"></a>Xamarin. Android 版面配置
 
-版面配置用來排列項目構成 UI 介面的螢幕 （例如活動）。 下列各節說明如何在 Xamarin.Android 應用程式使用最常使用的配置。
+版面配置是用來排列組成螢幕 UI 介面的元素 (例如活動)。 下列各節說明如何在 Xamarin Android 應用程式中使用最常使用的版面配置。
 
--   [LinearLayout](~/android/user-interface/layouts/linear-layout.md)是顯示子檢視項目，垂直或水平的線性方向中，檢視群組。
+-   [LinearLayout](~/android/user-interface/layouts/linear-layout.md)是一個視圖群組, 會以垂直或水準方式, 以線性方向顯示子視圖元素。
 
-    ![線性配置範例](images/linear-layout.png)
+    ![線性版面配置範例](images/linear-layout.png)
 
--   [RelativeLayout](~/android/user-interface/layouts/relative-layout.md)檢視群組，其中會顯示子檢視項目相對的位置。 可以指定檢視的位置，相對於同層級項目。
+-   [RelativeLayout](~/android/user-interface/layouts/relative-layout.md)是 view 群組, 會在相對位置顯示子視圖專案。 View 的位置可以指定為相對於兄弟元素。
 
-    ![相對配置範例](images/relative-layout.png)
+    ![範例相對版面配置](images/relative-layout.png)
 
--   [TableLayout](~/android/user-interface/layouts/table-layout.md)是檢視群組，它會顯示資料列和資料行中的子檢視項目。
+-   [TableLayout](~/android/user-interface/layouts/table-layout.md)是一個視圖群組, 會在資料列和資料行中顯示子視圖元素。
 
-    ![範例資料表配置](images/table-layout.png)
+    ![範例資料表版面配置](images/table-layout.png)
 
--   [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)是 UI 項目清單或方格中，讓使用者能夠捲動瀏覽集合中顯示的項目集合。
+-   [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)是一個 UI 元素, 會顯示清單或方格中的專案集合, 讓使用者可以在集合中進行滾動。
 
-    ![範例 Recycler 檢視](images/recycler-view.png)
+    ![範例 Recycler 視圖](images/recycler-view.png)
 
--   [ListView](~/android/user-interface/layouts/list-view/index.md)是檢視群組，它會建立一份可捲動的項目。 清單項目會自動插入至使用清單配接器清單。 `ListView`是 Android 應用程式的重要 UI 元件，因為它用於所有位置的功能表選項的簡短清單中較長的連絡人或網際網路我的最愛清單。 它提供簡單的方式來呈現的資料列，可以使用內建樣式格式化或廣泛地自訂捲動清單。 ListView 的執行個體需要配接器以摘要資料列檢視中所含的資料。
+-   [ListView](~/android/user-interface/layouts/list-view/index.md)是建立可滾動專案清單的視圖群組。 清單專案會使用清單介面卡自動插入清單中。 `ListView`是 Android 應用程式的重要 UI 元件, 因為它是從功能表選項的簡短清單中的任何位置使用, 到長清單的連絡人或網際網路我的最愛。 它提供了一種簡單的方式來呈現資料列的滾動清單, 您可以使用內建樣式或廣泛自訂來進行格式化。 ListView 實例需要介面卡以資料列視圖中包含的資料摘要。
 
-    ![範例清單檢視](images/list-view.png)
+    ![範例清單視圖](images/list-view.png)
 
--   [GridView](~/android/user-interface/layouts/grid-view.md)是 UI 項目可以捲動的二維方格中顯示的項目。
+-   [GridView](~/android/user-interface/layouts/grid-view.md)是一個 UI 元素, 會在二維方格中顯示可以滾動的專案。
 
-    ![範例資料格檢視](images/grid-view.png)
+    ![方格視圖範例](images/grid-view.png)
 
--   [GridLayout](~/android/user-interface/layouts/grid-layout.md)是支援在 2D 方格中，類似於 HTML 表格的檢視版面配置檢視群組。
+-   [GridLayout](~/android/user-interface/layouts/grid-layout.md)是一種視圖群組, 支援在2d 方格中配置視圖, 類似于 HTML 表格。
 
-    ![範例格線版面配置](images/grid-layout.png)
+    ![範例方格版面配置](images/grid-layout.png)
 
--   [索引標籤式版面配置](~/android/user-interface/layouts/tab-layout/index.md)由於其簡易性和可用性是行動應用程式的廣大的使用者介面模式。 它們提供的應用程式中的各個畫面之間瀏覽的一致且簡單的方法。
+-   索引標籤[式版面](~/android/user-interface/layouts/tab-layout/index.md)配置是行動應用程式中的熱門使用者介面模式, 因為其簡易性和可用性。 它們提供一致且簡單的方法, 在應用程式中的各種畫面之間流覽。
 
     ![範例索引標籤式版面配置](images/tabbed-layout.png)
  

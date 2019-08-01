@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的安全區域版面配置輔助線
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台特定，以確保頁面內容位於而言是安全的所有使用 iOS 11 和更新版本裝置的螢幕區域。
+title: IOS 上的安全區域版面配置指南
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺專屬的, 以確保頁面內容位於螢幕上的某個區域, 而這些裝置在使用 iOS 11 和更新版本的所有裝置上都是安全的。
 ms.prod: xamarin
 ms.assetid: 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: f38064027b4eb6dada2becc69b4163d6fa6082fb
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c6a2ec5a4d1466b7118e6cc7b03cc5518b27e2fb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65927012"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644535"
 ---
-# <a name="safe-area-layout-guide-on-ios"></a>在 iOS 上的安全區域版面配置輔助線
+# <a name="safe-area-layout-guide-on-ios"></a>IOS 上的安全區域版面配置指南
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台專屬用來確保頁面內容位於而言是安全的所有使用 iOS 11 和更新版本裝置的螢幕區域。 具體來說，它會幫助，以確定該內容不由裝置圓角邊角、 家用的指標或在 iPhone X 上的感應器外罩裁剪。它由在 XAML 中設定`Page.UseSafeArea`附加屬性`boolean`值：
+這個 iOS 平臺特定的是用來確保頁面內容位於螢幕區域上, 對於使用 iOS 11 和更新版本的所有裝置而言都是安全的。 具體來說，它會幫助，以確定該內容不由裝置圓角邊角、 家用的指標或在 iPhone X 上的感應器外罩裁剪。它由在 XAML 中設定`Page.UseSafeArea`附加屬性`boolean`值：
 
 ```xaml
 <ContentPage ...
@@ -65,6 +65,6 @@ protected override void OnAppearing()
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

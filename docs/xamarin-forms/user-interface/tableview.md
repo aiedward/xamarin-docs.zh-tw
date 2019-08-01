@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: c18eba873dc1a1dae36c401507d55652ed233b00
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fc3837cd0d69d49b9939b04da667010aac919fe2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61194551"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657127"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TableView)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
 
-[`TableView`](xref:Xamarin.Forms.TableView) 是一種檢視來顯示可捲動清單的資料或選擇在不會共用相同的範本的資料列。 不同於[ListView](~/xamarin-forms/user-interface/listview/index.md)，`TableView`沒有別的`ItemsSource`，因此項目必須以手動方式加入做為子系。
+[`TableView`](xref:Xamarin.Forms.TableView)這是一個視圖, 用於顯示不共用相同範本之資料列的可滾動清單。 `TableView`不同[于 ListView](~/xamarin-forms/user-interface/listview/index.md), 沒有的概念,因此必須以手動方式將專案新增為子系。`ItemsSource`
 
 ![](tableview-images/tableview-all-sml.png "TableView 範例")
 
@@ -26,19 +26,19 @@ ms.locfileid: "61194551"
 
 ## <a name="use-cases"></a>使用案例
 
-[`TableView`](xref:Xamarin.Forms.TableView) 將很有用：
+[`TableView`](xref:Xamarin.Forms.TableView)適用于:
 
 - 顯示設定清單
 - 在表單中收集資料或
 - 顯示資料列 （例如數字、 百分比和映像） 從資料列以不同的方式呈現的資料。
 
-[`TableView`](xref:Xamarin.Forms.TableView) 處理捲動和吸引人的各節，一般都需要針對上述案例中的資料列的版面配置。 `TableView`控制項可讓您使用每個平台的基礎時可供使用，建立每個平台的原生外觀的對等檢視。
+[`TableView`](xref:Xamarin.Forms.TableView)在吸引人的區段中處理資料列的滾動和版面配置, 這是上述案例的常見需求。 `TableView`控制項可讓您使用每個平台的基礎時可供使用，建立每個平台的原生外觀的對等檢視。
 
 <a name="TableView_Structure" />
 
 ## <a name="structure"></a>結構
 
-中的項目[ `TableView` ](xref:Xamarin.Forms.TableView)區分成區段。 根目錄`TableView`已[ `TableRoot` ](xref:Xamarin.Forms.TableRoot)，這是一或多個父[ `TableSection` ](xref:Xamarin.Forms.TableSection)執行個體。 每個[ `TableSection` ](xref:Xamarin.Forms.TableSection)包含標題和一或多個[ `ViewCell` ](xref:Xamarin.Forms.ViewCell)執行個體：
+中的專案[`TableView`](xref:Xamarin.Forms.TableView)會組織成幾個區段。 在的根目錄`TableView`是, 它是[`TableRoot`](xref:Xamarin.Forms.TableRoot)一個或多個[`TableSection`](xref:Xamarin.Forms.TableSection)實例的父系。 每[`TableSection`](xref:Xamarin.Forms.TableSection)個都包含一個標題和一個或[`ViewCell`](xref:Xamarin.Forms.ViewCell)多個實例:
 
 ```xaml
 <TableView Intent="Settings">
@@ -73,22 +73,22 @@ Content = new TableView
 
 ## <a name="appearance"></a>外觀
 
-[`TableView`](xref:Xamarin.Forms.TableView) 會公開[ `Intent` ](xref:Xamarin.Forms.TableView.Intent)屬性，可以設定的任何[ `TableIntent` ](xref:Xamarin.Forms.TableIntent)列舉成員：
+[`TableView`](xref:Xamarin.Forms.TableView)公開屬性, 可設定為任何[`TableIntent`](xref:Xamarin.Forms.TableIntent)列舉成員: [`Intent`](xref:Xamarin.Forms.TableView.Intent)
 
-- `Data` – 用於顯示資料的項目時。 請注意， [ListView](~/xamarin-forms/user-interface/listview/index.md)可能是更好的選項，可捲動的資料清單。
-- `Form` – 用於 TableView 做為表單時。
-- `Menu` – 用於呈現一個功能表的 選取項目時。
-- `Settings` – 用於時顯示的組態設定清單。
+- `Data`–在顯示資料項目時使用。 請注意， [ListView](~/xamarin-forms/user-interface/listview/index.md)可能是更好的選項，可捲動的資料清單。
+- `Form`–在 TableView 做為表單時使用。
+- `Menu`–在呈現選取專案的功能表時使用。
+- `Settings`–在顯示設定的清單時使用。
 
-[ `TableIntent` ](xref:Xamarin.Forms.TableIntent)值，您可以選擇可能會影響如何[ `TableView` ](xref:Xamarin.Forms.TableView)會出現在每個平台上。 即使有未清除的差異，最好在其中選取`TableIntent`最符合您想要使用資料表的方式。
+您[`TableIntent`](xref:Xamarin.Forms.TableIntent)選擇的值可能會影響每[`TableView`](xref:Xamarin.Forms.TableView)個平臺上顯示的方式。 即使有未清除的差異，最好在其中選取`TableIntent`最符合您想要使用資料表的方式。
 
-此外，文字的色彩顯示每個[ `TableSection` ](xref:Xamarin.Forms.TableSection)可以藉由設定變更`TextColor`屬性設[ `Color` ](xref:Xamarin.Forms.Color)。
+此外, 您可以藉由[`TableSection`](xref:Xamarin.Forms.TableSection) `TextColor`將屬性設定為[`Color`](xref:Xamarin.Forms.Color), 來變更每個顯示的文字色彩。
 
 <a name="Built-In_Cells" />
 
-## <a name="built-in-cells"></a>內建的儲存格
+## <a name="built-in-cells"></a>內建資料格
 
-Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[ `ListView` ](xref:Xamarin.Forms.ListView)並[ `TableView` ](xref:Xamarin.Forms.TableView)可以使用所有相同的儲存格[ `SwitchCell` ](xref:Xamarin.Forms.SwitchCell)並[ `EntryCell` ](xref:Xamarin.Forms.EntryCell)最相關的`TableView`案例。
+Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[`ListView`](xref:Xamarin.Forms.ListView) [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)和[`TableView`](xref:Xamarin.Forms.TableView)可以使用所有相同的儲存格, [`EntryCell`](xref:Xamarin.Forms.EntryCell)但與`TableView`案例最為相關。
 
 請參閱[ListView 儲存格的外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)如需詳細的說明[TextCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell)並[ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell)。
 
@@ -96,15 +96,15 @@ Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[ 
 
 ### <a name="switchcell"></a>SwitchCell
 
-[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 是用來呈現和擷取控制項開啟/關閉或`true` / `false`狀態。 它會定義下列屬性：
+[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 是用來呈現和擷取控制項開啟/關閉或`true` / `false`狀態。 它會定義下列屬性:
 
-- `Text` – 要顯示參數旁邊的文字。
-- `On` – 切換是否顯示為 開啟或關閉。
-- `OnColor` – [ `Color` ](xref:Xamarin.Forms.Color)處於 on 的位置時的交換器。
+- `Text`–要顯示在參數旁邊的文字。
+- `On`–參數是否顯示為開啟或關閉。
+- `OnColor`[`Color`](xref:Xamarin.Forms.Color) –參數在 on 位置時的。
 
-所有這些屬性都是可繫結。
+所有這些屬性都是可系結的。
 
-[`SwitchCell`](xref:Xamarin.Forms.SwitchCell) 也會公開`OnChanged`事件，讓您回應中的儲存格狀態變更。
+[`SwitchCell`](xref:Xamarin.Forms.SwitchCell)也會公開`OnChanged`事件, 讓您能夠回應儲存格狀態的變更。
 
 ![](tableview-images/switch-cell.png "SwitchCell 範例")
 
@@ -112,16 +112,16 @@ Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[ 
 
 ### <a name="entrycell"></a>EntryCell
 
-[`EntryCell`](xref:Xamarin.Forms.EntryCell) 您需要顯示使用者可以編輯的文字資料時很有用。 它會定義下列屬性：
+[`EntryCell`](xref:Xamarin.Forms.EntryCell) 您需要顯示使用者可以編輯的文字資料時很有用。 它會定義下列屬性:
 
-- `Keyboard` – 若要在編輯時顯示鍵盤。 有件事，例如數值、 電子郵件、 電話號碼等選項。[請參閱 API 文件](xref:Xamarin.Forms.Keyboard)。
-- `Label` – 要顯示的文字輸入欄位左邊的標籤文字。
-- `LabelColor` – 在標籤文字的色彩。
-- `Placeholder` – 它是 null 或空白時顯示的項目欄位中的文字。 文字項目開始時，這段文字就會消失。
-- `Text` – 文字輸入欄位中。
-- `HorizontalTextAlignment` – 水平對齊的文字。 可以 center，左邊或右邊對齊。 [請參閱 API 文件](xref:Xamarin.Forms.TextAlignment)。
+- `Keyboard`–編輯時要顯示的鍵盤。 有件事，例如數值、 電子郵件、 電話號碼等選項。[請參閱 API 文件](xref:Xamarin.Forms.Keyboard)。
+- `Label`–要顯示在文字輸入欄位左側的標籤文字。
+- `LabelColor`–標籤文字的色彩。
+- `Placeholder`–當專案為 null 或空白時, 要顯示在輸入欄位中的文字。 文字項目開始時，這段文字就會消失。
+- `Text`–輸入欄位中的文字。
+- `HorizontalTextAlignment`–文字的水準對齊方式。 可以 center，左邊或右邊對齊。 [請參閱 API 文件](xref:Xamarin.Forms.TextAlignment)。
 
-[`EntryCell`](xref:Xamarin.Forms.EntryCell) 也會公開`Completed`時使用者按下 'done' 的按鈕，在鍵盤上編輯文字時引發的事件。
+[`EntryCell`](xref:Xamarin.Forms.EntryCell)也會公開`Completed`事件, 當使用者在編輯文字時按下鍵盤上的 [完成] 按鈕時, 就會引發此事件。
 
 ![](tableview-images/entry-cell.png "EntryCell 範例")
 
@@ -137,7 +137,7 @@ Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[ 
 
 ![](tableview-images/custom-cell.png "自訂儲存格範例")
 
-下列範例示範用來建立 XAML [ `TableView` ](xref:Xamarin.Forms.TableView)在上述螢幕擷取畫面：
+下列範例顯示用來建立上述螢幕擷取畫面中[`TableView`](xref:Xamarin.Forms.TableView)的 XAML:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -194,10 +194,10 @@ table.Root = new TableRoot ()
 Content = table;
 ```
 
-根項目底下[ `TableView` ](xref:Xamarin.Forms.TableView)是[ `TableRoot` ](xref:Xamarin.Forms.TableRoot)，而且沒有[ `TableSection` ](xref:Xamarin.Forms.TableSection)立即下方`TableRoot`。 [ `ViewCell` ](xref:Xamarin.Forms.ViewCell)定義正下方`TableSection`，和[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)用以管理配置的自訂儲存格，不過這裡可以使用任何版面配置。
+下[`TableView`](xref:Xamarin.Forms.TableView)的根項目[`TableRoot`](xref:Xamarin.Forms.TableRoot)是[`TableSection`](xref:Xamarin.Forms.TableSection) , 而且緊接在`TableRoot`正下方的。 會直接定義`TableSection`在底下, 而且[`StackLayout`](xref:Xamarin.Forms.StackLayout)會用來管理自訂資料格的配置, 不過這裡可以使用任何版面配置。 [`ViewCell`](xref:Xamarin.Forms.ViewCell)
 
 > [!NOTE]
-> 不同於[ `ListView` ](xref:Xamarin.Forms.ListView)， [ `TableView` ](xref:Xamarin.Forms.TableView)不需要該自訂 （或任何） 中所定義的資料格`ItemTemplate`。
+> 不同[`ListView`](xref:Xamarin.Forms.ListView)于[`TableView`](xref:Xamarin.Forms.TableView) , 不需要在中定義自訂 (或任何) 資料`ItemTemplate`格。
 
 ## <a name="row-height"></a>資料列高度
 
@@ -263,4 +263,4 @@ void OnViewCellTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [TableView （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/TableView)
+- [TableView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)

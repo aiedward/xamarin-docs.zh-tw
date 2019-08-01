@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: afeae9d893b2ebe161943286d348f7a7a1074b0b
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 2e4fa5f1fb96077b0237dbeac9074006e761bc09
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925395"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655296"
 ---
 # <a name="layout-options-in-xamarinforms"></a>在 Xamarin.Forms 中的版面配置選項
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutOptions/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
 _每個 Xamarin.Forms 檢視具有 HorizontalOptions 和 VerticalOptions 屬性，類型 LayoutOptions。這篇文章說明上對齊和展開的檢視具有 LayoutOptions 的每個值的效果。_
 
@@ -160,5 +160,5 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>相關連結
 
-- [LayoutOptions （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/LayoutOptions/)
+- [LayoutOptions （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 - [LayoutOptions](xref:Xamarin.Forms.LayoutOptions)

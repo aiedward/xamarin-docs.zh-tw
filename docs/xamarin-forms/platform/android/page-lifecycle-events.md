@@ -1,24 +1,24 @@
 ---
-title: 在 Android 上的網頁生命週期事件
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 Android 平台特定，會停用 Disappearing 並 Appearing 網頁事件，應用程式上的暫停和繼續，請分別。
+title: Android 上的頁面週期事件
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Android 平臺特定的, 分別停用應用程式暫停和繼續時的消失和顯示頁面事件。
 ms.prod: xamarin
 ms.assetid: F6E3759C-D347-407A-91A2-CF9B3B7D4CBD
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 295b060ee795244184b3ea88b101c720436d1fe5
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 1745f137f2eeb04c0894c57bb0e45e5c43be7d0b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926532"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649938"
 ---
-# <a name="page-lifecycle-events-on-android"></a>在 Android 上的網頁生命週期事件
+# <a name="page-lifecycle-events-on-android"></a>Android 上的頁面週期事件
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平台專屬用來停用[ `Disappearing` ](xref:Xamarin.Forms.Page.Appearing)並[ `Appearing` ](xref:Xamarin.Forms.Page.Appearing)網頁事件，應用程式上的暫停和繼續分別使用 AppCompat 的應用程式。 此外，它能夠控制是否繼續執行後，會顯示螢幕小鍵盤，如果它顯示在暫停時，已提供螢幕小鍵盤的作業模式設定為[ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)。
+此 Android 平臺特定是用來分別針對使用[`Disappearing`](xref:Xamarin.Forms.Page.Appearing) AppCompat [`Appearing`](xref:Xamarin.Forms.Page.Appearing)的應用程式, 停用應用程式暫停和繼續時的和頁面事件。 此外，它能夠控制是否繼續執行後，會顯示螢幕小鍵盤，如果它顯示在暫停時，已提供螢幕小鍵盤的作業模式設定為[ `WindowSoftInputModeAdjust.Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)。
 
 > [!NOTE]
 > 請注意，預設會啟用這些事件以保留現有的事件所依賴的應用程式的行為。 停用這些事件，使符合 pre AppCompat 事件循環 AppCompat 事件循環。
@@ -59,7 +59,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific.AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

@@ -1,497 +1,496 @@
 ---
-title: 棒棒糖符號功能
-description: 本文章提供 Android 5.0 (Lollipop) 中所引進的新功能的高階概觀。 這些功能包括新的使用者介面樣式，稱為材料佈景主題，以及新支援的功能，例如動畫、 檢視陰影和可繪製濃淡。 Android 5.0 也包含增強的通知、 兩個新的 UI widget、 新的工作排程器，以及少數幾個新的 Api 來改善儲存體、 網路、 連線和多媒體功能。
+title: 棒糖功能
+description: 本文提供 Android 5.0 (棒棒) 中引進之新功能的高階總覽。 這些功能包括新的使用者介面樣式, 稱為材質主題, 以及動畫、視圖陰影和繪製色調等新的支援功能。 Android 5.0 也包含增強的通知、兩個新的 UI widget、新的工作排程器, 以及一些新的 Api, 以改善儲存體、網路、連線能力和多媒體功能。
 ms.prod: xamarin
 ms.assetid: 1CE99CFE-FAAC-49FC-AEDC-1A21FC6E946E
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d6173e1886eaf807decd960b07acc022bb17c04d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c89b78e58918d2b561c6236ac273ffdb872211f0
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61177450"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511402"
 ---
-# <a name="lollipop-features"></a>棒棒糖符號功能
+# <a name="lollipop-features"></a>棒糖功能
 
-_本文章提供 Android 5.0 (Lollipop) 中所引進的新功能的高階概觀。這些功能包括新的使用者介面樣式，稱為材料佈景主題，以及新支援的功能，例如動畫、 檢視陰影和可繪製濃淡。Android 5.0 也包含增強的通知、 兩個新的 UI widget、 新的工作排程器，以及少數幾個新的 Api 來改善儲存體、 網路、 連線和多媒體功能。_
+_本文提供 Android 5.0 (棒棒) 中引進之新功能的高階總覽。這些功能包括新的使用者介面樣式, 稱為材質主題, 以及動畫、視圖陰影和繪製色調等新的支援功能。Android 5.0 也包含增強的通知、兩個新的 UI widget、新的工作排程器, 以及一些新的 Api, 以改善儲存體、網路、連線能力和多媒體功能。_
 
-## <a name="lollipop-overview"></a>棒棒糖符號概觀
+## <a name="lollipop-overview"></a>棒糖總覽
 
-Android 5.0 (Lollipop) 導入了新的設計語言， *Material Design*，並使用它的支援轉換的新功能，可讓應用程式更容易且更直覺地使用。 材料設計 Android 5.0 不僅提供 Android 手機的外觀;它也會提供一組新的設計規則 for android 平板電腦、 桌上型電腦、 監看式和智慧型電視。 這些設計規則強調簡易性和 minimalism 同時透過使用熟悉的 tactile 屬性 （例如實際的介面和 edge 提示） 來協助使用者快速和直覺地了解介面。
+Android 5.0 (棒糖) 引進新的設計語言、*材質設計*, 並支援新功能的轉型, 讓應用程式更容易且更直覺地使用。 使用材質設計時, Android 5.0 不僅會為 Android 手機提供 facelift;它也為 Android 型平板電腦、桌上型電腦、監看和智慧型電視提供了一組新的設計規則。 這些設計規則強調簡單性和 minimalism, 同時使用熟悉的觸覺屬性 (例如實際的表面和邊緣提示), 協助使用者快速且直覺地瞭解介面。
 
-*材料佈景主題*是在 Android 中這些 UI 設計原則的體現。 這篇文章一開始會涵蓋材料佈景主題的支援功能：
+*材質主題*是這些 UI 設計原則在 Android 中的體現。 本文一開始會涵蓋材質主題的支援功能:
 
--   **動畫** &ndash; *觸控的意見反應*動畫*活動轉換*動畫*檢視狀態轉換*動畫以及*顯示效果*。
+-   **動畫**   觸控意見動畫、活動轉換動畫、檢視狀態轉換動畫, 以及顯示效果。 &ndash;
 
--   **檢視陰影和提高權限**&ndash;檢視現在具有`elevation`屬性，以檢視較高`elevation`值轉型的較大的陰影的背景。
+-   **視圖陰影和提高許可權**Views 現在具有屬性, 而值較高`elevation`的視圖則會在背景上轉換較大的陰影。 `elevation` &ndash;
 
--   **色彩功能** &ndash; *Drawable 濃淡*可讓您藉由變更其色彩，重複使用的影像資產並*顯著色彩擷取*可協助您以動態方式您的應用程式根據影像中的色彩佈景主題。
+-   **色彩功能**可繪製的*色調*可讓您藉由變更色彩來重複使用影像資產, 而*顯著的色彩提取*則可協助您根據影像中的色彩, 以動態方式建立應用程式的主題。 &ndash;
 
-許多功能已內建的材料佈景主題 Android 5.0 UI 體驗，而其他人必須明確地新增至應用程式。 例如，部分標準檢視 （例如按鈕） 已經包含觸控的意見反應動畫，而應用程式必須啟用大部分的檢視陰影。
+許多材質主題功能已內建于 Android 5.0 UI 體驗中, 有些則必須明確地新增至應用程式。 例如, 某些標準視圖 (例如按鈕) 已經包含觸控意見反應動畫, 而應用程式必須啟用大部分的視圖陰影。
 
-除了帶來透過材料佈景主題 UI 增強功能的情況下，Android 5.0 也包含數個其他新功能涵蓋這篇文章中：
+除了透過材質主題引進的 UI 改良功能之外, Android 5.0 也包含本文所涵蓋的其他幾項新功能:
 
--   **增強型通知** &ndash; Android 5.0 中的通知已大幅更新為新的外觀、 支援鎖定畫面通知，以及新*抬頭*通知的呈現格式。
+-   **增強的通知**Android 5.0 中的通知已經過全新的外觀、鎖定通知的支援, 以及新的標題通知呈現格式來進行大幅更新。  &ndash;
 
--   **新的 UI widget** &ndash;新`RecyclerView`小工具可讓傳達大型資料集和複雜資訊，以及新的應用程式輕鬆`CardView`widget 可提供簡化的類似卡的呈現格式來顯示文字和映像。
+-   **新的 UI** widget新的小工具可讓應用程式更輕鬆地傳達大型資料集和複雜資訊, 而`CardView`新的 widget 則提供簡化的卡片呈現格式來顯示文字和影像。 `RecyclerView` &ndash;
 
--   **新的 Api** &ndash; Android 5.0 將新的 Api，如需多個網路支援，改善藍芽連線、 方便的儲存體管理和多媒體播放程式和網路攝影機裝置的更有彈性的控制項。 新的工作排程功能是可執行工作，以非同步方式在排定的時間。 這項功能有助於改善電池壽命，比方說，排程工作，當裝置插入電源時與收費。
+-   **新的 api**&ndash; Android 5.0 新增了多個網路支援的新 api、改良的藍牙連線能力、更輕鬆的存放裝置管理, 以及更有彈性的多媒體播放機和相機裝置控制。 新的作業排程功能可在排程時間以非同步方式執行工作。 這項功能可協助改善電池壽命, 例如, 在裝置插入和收費時, 排程工作會發生。
 
 
 ## <a name="requirements"></a>需求
 
-需要下列項目以 Xamarin 為基礎的應用程式中使用新的 Android 5.0 功能：
+若要在 Xamarin 應用程式中使用新的 Android 5.0 功能, 需要下列各項:
 
--   **Xamarin.Android** &ndash; Xamarin.Android 4.20 或更新版本必須安裝並設定與 Visual Studio 或 Visual Studio for mac。 
+-   您必須安裝並設定 Visual Studio 或 Visual Studio for Mac 的**xamarin android** &ndash; xamarin. android 4.20 或更新版本。 
 
--   **Android SDK** &ndash; Android 5.0 (API 21) 或更新版本必須安裝 Android SDK 管理員透過。
+-   **Android SDK**&ndash; Android 5.0 (API 21) 或更新版本必須透過 Android SDK Manager 安裝。
 
--   **Java Developer Kit** &ndash; Xamarin.Android 需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本，如果您正在開發的 API 層級 24 或更大 （JDK 1.8 也支援 API 層級早於 24，包括棒棒糖符號）。 如果您使用自訂控制項或表單預覽程式需要 64 位元版本的 JDK 1.8。
+-   **JAVA 開發人員套件**如果您要針對 API 層級24或更高版本進行開發, 則 Xamarin 會需要[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本 (jdk 1.8 也支援早于24的 api 層級, 包括棒糖)。 &ndash; 如果您使用自訂控制項或表單預覽器, 則需要 JDK 1.8 的64位版本。
 
-您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發特別針對 API 層級 23 或更早版本。
+如果您是特別針對 API 層級23或更早的版本進行開發, 您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。
 
 
 ## <a name="setting-up-an-android-50-project"></a>設定 Android 5.0 專案
 
-若要建立 Android 5.0 專案時，您必須安裝最新工具和 SDK 封裝。 您可以使用下列步驟來設定 Xamarin.Android 專案目標 Android 5.0:
+若要建立 Android 5.0 專案, 您必須安裝最新的工具和 SDK 套件。 使用下列步驟來設定以 Android 5.0 為目標的 Xamarin Android 專案:
 
-1. 安裝 Xamarin.Android 工具，並啟用 Xamarin 授權。 請參閱[設定與安裝](~/android/get-started/installation/index.md)如需安裝 Xamarin.Android 的詳細資訊。
+1. 安裝 Xamarin Android 工具並啟用您的 Xamarin 授權。 如需安裝 Xamarin 的詳細資訊, 請參閱[設定和安裝](~/android/get-started/installation/index.md)。
 
-2. 如果您使用 Visual Studio for Mac，請安裝最新的 Android 5.0 更新。
+2. 如果您使用 Visual Studio for Mac, 請安裝最新的 Android 5.0 更新。
 
-3. 啟動 Android SDK 管理員 (在 Visual Studio for Mac 中，使用**工具&gt;開啟 Android SDK 管理員&hellip;**) 並安裝 Android SDK Tools 23.0.5 或更新版本：
+3. 啟動 Android SDK 管理員 (在 Visual Studio for Mac 中, 使用 **[ &gt;工具] [&hellip;開啟 Android SDK 管理員**]), 然後安裝 Android SDK Tools 23.0.5 或更新版本:
 
-    [![選取 Android SDK Manager 中的 Android SDK 工具](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
+    [![在 Android SDK 管理員中選取 Android SDK 工具](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
 
-   此外，安裝最新的 Android 5.0 SDK 套件 (API 21 或更新版本):
+   此外, 請安裝最新的 Android 5.0 SDK 套件 (API 21 或更新版本):
 
-    [![在 Android SDK 管理員安裝 Android 5.0 SDK 套件](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
+    [![在 Android SDK Manager 中安裝 Android 5.0 SDK 套件](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
-   如需使用 Android SDK 管理員的詳細資訊，請參閱[SDK 管理員](https://developer.android.com/tools/help/sdk-manager.html)。
+   如需使用 Android SDK 管理員的詳細資訊, 請參閱[SDK 管理員](https://developer.android.com/tools/help/sdk-manager.html)。
 
-4. 建立新的 Xamarin.Android 專案。 如果您是使用 Xamarin 進行 Android 開發的新手，請參閱[Hello，Android](~/android/get-started/hello-android/index.md)來了解如何建立 Android 專案。 當您建立 Android 專案時，請務必設定 Android 5.0 的版本設定。
-   在 Visual Studio for Mac 中，瀏覽至**專案選項&gt;建置&gt;一般**並設定**目標 framework**至**Android 5.0 (Lollipop)** 或更新版本：
+4. 建立新的 Xamarin Android 專案。 如果您不熟悉使用 Xamarin 進行 Android 開發的新手, 請參閱[Hello, Android](~/android/get-started/hello-android/index.md)以瞭解如何建立 android 專案。 當您建立 Android 專案時, 請務必設定 Android 5.0 的版本設定。
+   在 Visual Studio for Mac 中, 流覽至 **[ &gt;專案&gt;選項] [組建] [一般**], 並將 [**目標 framework** ] 設定為**Android 5.0**
 
-    ![目標 Framwework 設為 Android 5.0 Lollipop](lollipop-images/target-framework.png)
+    ![將目標 Framwework 設定為 Android 5.0 棒糖](lollipop-images/target-framework.png)
 
-   底下**專案選項&gt;建置&gt;Android 應用程式**，設定 最小值和目標 Android 版本設**自動-使用目標 framework 版本**:
+   在 [**專案&gt;選項&gt; ] [建立 android 應用程式**] 下, 將 [最低和目標 Android 版本] 設定為 [**自動使用目標 framework 版本**]:
 
-    ![為 自動設定的最小值和目標 Android 版本](lollipop-images/minimum-android-version.png)
+    ![將最小和目標 Android 版本設定為自動](lollipop-images/minimum-android-version.png)
 
-5. 設定模擬器或 Android 裝置來測試您的應用程式。 如果您正使用模擬器，請參閱[Android Emulator 安裝](~/android/get-started/installation/android-emulator/index.md)以了解如何使用 Xamarin Studio 或 Visual Studio 中設定 Android 模擬器使用。 如果您使用 Android 裝置，請參閱[設定註冊預覽 SDK](https://developer.android.com/preview/setup-sdk.html)以了解如何為 Android 5.0 更新您的裝置。 若要設定 Android 裝置的執行和偵錯 Xamarin.Android 應用程式，請參閱[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)。
+5. 設定模擬器或 Android 裝置來測試您的應用程式。 如果您使用模擬器, 請參閱[Android Emulator 安裝程式](~/android/get-started/installation/android-emulator/index.md), 以瞭解如何設定 Android 模擬器以與 Xamarin Studio 或 Visual Studio 搭配使用。 如果您使用 Android 裝置, 請參閱[設定預覽 SDK](https://developer.android.com/preview/setup-sdk.html) , 以瞭解如何為 android 5.0 更新您的裝置。 若要設定您的 Android 裝置來執行和偵測 Xamarin Android 應用程式, 請參閱[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)。
 
-注意:如果您要更新現有的 Android 專案的目標 Android L 預覽，您必須更新**目標 Framework**並**Android 版本**上面所述的值。
+注意:如果您要更新以 Android L Preview 為目標的現有 Android 專案, 您必須將**目標 Framework**和**Android 版本**更新為上述的值。
 
 ## <a name="important-changes"></a>重要變更
 
-先前已發行的 Android 應用程式可能會影響 Android 5.0 中的變更。 特別是，Android 5.0 會使用新的執行階段，並大幅變更的通知格式。
+先前發佈的 Android 應用程式可能會受到 Android 5.0 中的變更所影響。 特別是, Android 5.0 會使用新的執行時間和明顯變更的通知格式。
 
-### <a name="android-runtime"></a>Android 執行階段
+### <a name="android-runtime"></a>Android 執行時間
 
-Android 5.0 會使用預設執行階段，而不是 Dalvik 新 Android 執行階段 （藝術）。 美工圖案會實作數個主要的新功能：
+Android 5.0 使用新的 Android 執行時間 (美工) 做為預設執行時間, 而不是 Dalvik。 美工會實行數個主要的新功能:
 
--   **預先-(AOT) 編譯** &ndash; AOT 可以改善應用程式效能，藉由編譯應用程式程式碼之前先啟動應用程式。 安裝應用程式時，圖案會產生已編譯的應用程式可執行檔的目標裝置。
+-   **預先 (AOT) 編譯**&ndash;在第一次啟動應用程式之前, AOT 可以藉由編譯應用程式程式碼來改善應用程式效能。 安裝應用程式時, 美工圖案會為目標裝置產生已編譯的應用程式可執行檔。
 
--   **改善記憶體回收 (GC)** &ndash;圖案中的 GC 增強功能也可以改善應用程式效能。 記憶體回收集合現在會使用一個 GC 暫停而非兩個，以及並行 GC 作業完成更 neodpověděl včas。
+-   **改良的垃圾收集 (GC)** &ndash;美工圖案中的 GC 改善也可以改善應用程式效能。 記憶體回收集合現在會使用一個 GC 暫停而非兩個，以及並行 GC 作業完成更 neodpověděl včas。
 
--   **改善應用程式偵錯**&ndash;圖案提供更多診斷的詳細資訊，以協助分析例外狀況和當機報告。
+-   **改良的應用程式調試**&ndash;美工提供更多診斷詳細資料, 以協助分析例外狀況和當機報告。
 
-現有的應用程式不在封面變更用於&ndash;除了惡意探索技術特有先前 Dalvik 執行階段的應用程式，這可能無法運作下美工圖案。 如需有關這些變更的詳細資訊，請參閱 <<c0> [ 驗證應用程式行為上 Android 執行階段 （藝術）](https://developer.android.com/guide/practices/verifying-apps-art.html)。
+現有的應用程式應該在沒有變更&ndash;的情況下工作, 除非應用程式會利用舊版 Dalvik 執行時間獨有的技術, 而這可能無法在美工圖案下工作。 如需這些變更的詳細資訊, 請參閱在[Android 執行時間上驗證應用程式行為 (美工)](https://developer.android.com/guide/practices/verifying-apps-art.html)。
 
 
 ### <a name="notification-changes"></a>通知變更
 
-通知已大幅變更，在 Android 5.0:
+Android 5.0 中的通知已大幅變更:
 
--   **以不同方式處理音效和震動**&ndash;通知音效和振動的情況下會立即由`Notification.Builder`而不是`Ringtone`， `MediaPlayer`，和`Vibrator`。
+-   **聲音和震動的處理方式不同**`Ringtone` `Notification.Builder` `Vibrator` `MediaPlayer`通知音效和 vibrations 現在是由所處理, 而不是、和。 &ndash;
 
--   **新的色彩配置**&ndash;根據材料佈景主題，通知會以深色的文字轉譯透過白色或非常輕微的背景。 此外，Android 協調系統色彩配置可能修改通知圖示中的 alpha 色板。 
+-   **新的色彩配置**&ndash;根據材質主題, 會以暗文字或非常淺的背景呈現通知。 此外, 在通知圖示中的 Alpha 聲道可能會由 Android 修改以與系統色彩配置協調。 
 
--   **鎖定畫面通知**&ndash;現在會在裝置鎖定畫面上顯示通知。
+-   **鎖屏通知**&ndash;通知現在會出現在裝置的鎖屏上。
 
--   **抬頭**&ndash;高優先順序通知現在會出現在小型的浮動視窗 （抬頭通知） 時解除鎖定裝置為止，並已開啟 螢幕。
+-   **列印頭**&ndash;當裝置解除鎖定且螢幕已開啟時, 高優先順序的通知現在會出現在小型的浮動視窗 (列印頭通知) 中。
 
-在大部分情況下，移植現有的應用程式通知功能，以 Android 5.0 需要下列步驟：
+在大部分情況下, 將現有的代理程式更新功能移植到 Android 5.0 需要執行下列步驟:
 
-1.  若要使用的程式碼轉換`Notification.Builder`(或`NotificationsCompat.Builder`) 來建立通知。 
+1.  轉換您的程式碼`Notification.Builder` , 以`NotificationsCompat.Builder`使用 (或) 來建立通知。 
 
-2.  請確認您現有的通知資產是可在 新的材料佈景主題色彩配置。
+2.  確認現有的通知資產可以在新的 [材質主題色彩配置] 中看到。
 
-3.  決定哪些時出現在鎖定畫面上，應該有您的通知的可見性。 通知不是公用的如果內容應該鎖定畫面上顯示？
+3.  決定當通知出現在鎖屏時, 應該有哪些可見度。 如果通知不是公用的, 則會在鎖屏上顯示哪些內容？
 
-4.  設定通知的類別，讓它們能夠正確處理新的 Android 5.0 *「 請勿打擾 」* 模式。
+4.  設定通知的類別, 以便在新的 [Android 5.0] [*請勿打擾*] 模式中正確處理。
 
-如果您的通知會顯示傳輸控制項，顯示媒體播放狀態，請使用`RemoteControlClient`，或致電`ActivityManager.GetRecentTasks`，請參閱[重要的行為變更](https://developer.android.com/preview/api-overview.html#Behaviors)如需有關更新您適用於 Android 的通知5.0。
+如果您的通知呈現了傳輸控制、顯示「媒體播放`RemoteControlClient`狀態」、 `ActivityManager.GetRecentTasks`「使用」或「呼叫」, 請參閱[重要行為變更](https://developer.android.com/preview/api-overview.html#Behaviors), 以取得有關更新 Android 5.0 通知的詳細資訊。
 
-如需建立通知，在 Android 中的資訊，請參閱[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)。 [相容性](~/android/app-fundamentals/notifications/local-notifications.md#compatibility)這篇文章的一節說明如何建立通知，向下相容舊版的 Android。
-
+如需在 Android 中建立通知的詳細資訊, 請參閱[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)。
 
 ## <a name="material-theme"></a>材質佈景主題
 
-新的 Android 5.0 材料佈景主題的外觀及操作 Android 的 UI 帶來重大的變更。 視覺項目現在會使用 tactile 介面上，採取粗體的圖形、 印刷樣式，以及列印型設計的明亮的色彩。 材料佈景主題的範例如下列螢幕擷取畫面所述：
+新的 Android 5.0 材質主題為 Android UI 的外觀與風格帶來了最全面的變更。 視覺效果元素現在會使用以列印為基礎之設計的粗體圖形、印刷樣式和明亮色彩為觸覺的表面。 如下列螢幕擷取畫面所示, 材質主題的範例:
 
-[![材料佈景主題主畫面及應用程式 畫面中，設定畫面的螢幕擷取畫面](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
+[![材質主題主畫面、應用程式畫面和設定畫面的螢幕擷取畫面](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
 
-Android 5.0 會回應您與主畫面左邊所示。 Center 螢幕擷取畫面是 [應用程式] 清單中的第一個畫面和螢幕擷取畫面，在右側**設定**螢幕。 Google [Material Design](https://material.io/guidelines/material-design/introduction.html)規格會說明新材料佈景主題概念背後的基本設計規則。
+Android 5.0 問候左側顯示的主畫面。 中央螢幕擷取畫面是應用程式清單的第一個畫面, 右側的螢幕擷取畫面是 [**設定**] 畫面。 Google 的[材質設計](https://material.io/guidelines/material-design/introduction.html)規格說明了新材質主題概念背後的基礎設計規則。
 
-材料佈景主題包含您可以使用您的應用程式中的三種內建類型：`Theme.Material`暗色調佈景主題 （預設值），`Theme.Material.Light`佈景主題，而`Theme.Material.Light.DarkActionBar`佈景主題： 
+材質主題包含三種內建的類型, 可讓您在應用程式中`Theme.Material`使用: 深色主題 (預設值) `Theme.Material.Light` 、主題和`Theme.Material.Light.DarkActionBar`主題: 
 
-[![暗的螢幕擷取畫面、 光線及 DarkActionBar 佈景主題](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
+[![深色、淺色和 DarkActionBar 主題的螢幕擷取畫面](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
-如需有關在 Xamarin.Android 應用程式中使用材料佈景主題功能的詳細資訊，請參閱[材料佈景主題](~/android/user-interface/material-theme.md)。
+如需在 Xamarin Android 應用程式中使用材質主題功能的詳細資訊, 請參閱[材質主題](~/android/user-interface/material-theme.md)。
 
 
 ## <a name="animations"></a>Animations
 
-Android 5.0 提供觸控的意見反應動畫、 活動轉換動畫，以及讓應用程式介面更直覺地使用的檢視狀態轉換動畫。 此外，Android 5.0 應用程式可以使用*顯示效果*來隱藏或顯示檢視動畫。 您可以使用*弧形影片*呈現設定來設定快或慢動畫。
+Android 5.0 提供觸控式意見反應動畫、活動轉換動畫, 以及檢視狀態轉換動畫, 讓應用程式介面更具直覺化可供使用。 此外, Android 5.0 應用程式也可以使用*顯示效果*動畫來隱藏或顯示 views。 您可以使用*彎曲的動作*設定來設定轉譯動畫的速度和速度。
 
 
-### <a name="touch-feedback-animations"></a>觸控的意見反應的動畫
+### <a name="touch-feedback-animations"></a>觸控意見動畫
 
-當檢視已接觸到，觸控的意見反應動畫會提供使用者視覺化回饋。 例如，按鈕現在會顯示產生漣漪效果時，它們接觸&ndash;這是 Android 5.0 預設觸控意見反應的動畫。 Ripple 動畫藉由新`RippleDrawable`類別。 產生漣漪效果可設定為在檢視的範圍結束，或超出檢視的範圍中。 例如，以下的螢幕擷取畫面順序說明按鈕中產生漣漪效果觸控動畫播放期間：
+觸控回饋動畫可在觸及視圖時, 為使用者提供視覺上的意見反應。 例如, 按鈕現在會在觸碰&ndash;時顯示 ripple 效果, 這是 Android 5.0 中的預設觸控意見動畫。 Ripple 動畫是由新`RippleDrawable`的類別所執行。 Ripple 效果可以設定為在視圖範圍外結束, 或延伸到超出視野的範圍。 例如, 下列螢幕擷取畫面的順序說明觸控動畫期間在按鈕中的 ripple 效果:
 
-![框架的漣波動畫按鈕上的框架螢幕擷取畫面](lollipop-images/touch-animation.png)
+![按鈕上 ripple 動畫的框架並排螢幕擷取畫面](lollipop-images/touch-animation.png)
 
-初始的觸控與按鈕會在左邊的第一個映像，而其餘的順序 （從左到右） 說明如何產生漣漪效果分散至按鈕的邊緣。 Ripple 動畫結束時，此檢視會傳回原始外觀。 預設 ripple 動畫發生在幾分之一秒，但還長或短的時間長度，可以自訂動畫的長度。
+具有按鈕的初始 touch contact 會出現在左邊的第一個影像中, 而剩餘的順序 (由左至右) 則說明 ripple 效果如何散佈至按鈕的邊緣。 當 ripple 動畫結束時, 視圖會回到其原始外觀。 預設的 ripple 動畫會以一秒的分數進行, 但是動畫的長度可以自訂為較長或較短的時間長度。
 
-如需詳細資訊 」 的 「 修改 Android 5.0 中的意見反應動畫，請參閱 <<c0> [ 自訂觸控的意見反應](https://developer.android.com/training/material/animations.html#Touch)。
+如需 Android 5.0 中觸控意見反應動畫的詳細資訊, 請參閱[自訂 Touch 意見](https://developer.android.com/training/material/animations.html#Touch)反應。
 
 
 ### <a name="activity-transition-animations"></a>活動轉換動畫
 
-活動轉換動畫為使用者提供視覺化的持續性的了解當一個活動轉換到另一個。 應用程式可以指定三種類型的轉換動畫：
+活動轉換動畫可讓使用者在某個活動轉換至另一個活動時有視覺的持續性。 應用程式可以指定三種類型的轉換動畫:
 
--   **輸入轉換**&ndash;的活動時進入場景。
+-   **輸入轉換**&ndash;活動進入場景的時間。
 
--   **結束轉換**&ndash;的活動結束的場景時。
+-   結束**轉換**&ndash;當活動結束場景時。
 
--   **共用項目轉換**&ndash;的第一個活動轉換到下一個通用的兩個活動檢視的變更時。
+-   **共用元素轉換**&ndash;當兩個活動共通的視圖變更為第一個活動轉換成下一個時。
 
-例如，以下的螢幕擷取畫面順序說明共用的項目轉換：
+例如, 下列螢幕擷取畫面的順序說明共用專案轉換:
 
-[![框架的共用項目過場動畫畫面格螢幕擷取畫面](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
+[![共用專案轉換動畫的框架 (依框架) 螢幕擷取畫面](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
 
-共用的項目 （毛蟲的相片） 是其中一個第一次的活動; 中的數個檢視它會放大成為唯一的檢視，在第二個的第一個活動轉換的第二個活動。
+共用元素 (caterpillar 的相片) 是第一個活動中的數個視圖之一;它會放大為第二個活動的唯一顯示, 因為第一個活動會轉換成第二個活動。
 
-#### <a name="enter-transition-animation-types"></a>輸入轉換的動畫類型
+#### <a name="enter-transition-animation-types"></a>輸入轉換動畫類型
 
-Enter 轉換 Android 5.0 提供三種動畫類型：
+針對 enter 轉換, Android 5.0 提供三種類型的動畫:
 
--   **Explode 動畫**&ndash;放大檢視，以從場景的中心。
+-   **分解動畫**&ndash;從場景中央放大視圖。
 
--   **投影片動畫**&ndash;移動的檢視，其中一個場景的邊緣。
+-   投影**片動畫**&ndash;從場景的其中一個邊緣移動視圖。
 
--   **淡出動畫**&ndash;淡場景的檢視。
+-   **淡出動畫**&ndash;將視圖淡入場景中。
 
 #### <a name="exit-transition-animation-types"></a>結束轉換動畫類型
 
-結束轉換 Android 5.0 提供三種動畫類型：
+針對結束轉換, Android 5.0 提供三種類型的動畫:
 
--   **Explode 動畫**&ndash;至場景的中心縮小檢視。
+-   **分解動畫**&ndash;將視野縮小到場景的中央。
 
--   **投影片動畫**&ndash;場景的邊緣的其中一個移的檢視。
+-   投影**片動畫**&ndash;將視圖向外移動到場景的其中一個邊緣。
 
--   **淡出動畫**&ndash;淡出場景的檢視。
+-   **淡出動畫**&ndash;將視圖從場景淡出。
 
-#### <a name="shared-element-transition-animation-types"></a>共用項目轉換動畫類型
+#### <a name="shared-element-transition-animation-types"></a>共用元素轉換動畫類型
 
-共用的項目轉換支援多種類型的動畫，例如：
+共用元素轉換支援多種動畫類型, 例如:
 
--   變更檢視的版面配置或剪輯的界限。
+-   變更視圖的版面配置或剪輯邊界。
 
--   變更縮放比例和檢視的旋轉。
+-   變更視圖的縮放和旋轉。
 
--   變更檢視的大小和縮放比例類型。
+-   變更視圖的大小和縮放比例類型。
 
-如需有關 Android 5.0 中的活動轉換動畫的詳細資訊，請參閱[來自訂活動轉換](https://developer.android.com/training/material/animations.html#Transitions)。
+如需 Android 5.0 中活動轉換動畫的詳細資訊, 請參閱[自訂活動轉換](https://developer.android.com/training/material/animations.html#Transitions)。
 
 
 ### <a name="view-state-transition-animations"></a>檢視狀態轉換動畫
 
-Android 5.0 可讓檢視狀態變更時執行的動畫。 您可以使用下列技巧的其中一個，以動畫顯示檢視狀態轉換：
+當視圖的狀態變更時, Android 5.0 可以讓動畫執行。 您可以使用下列其中一種技術, 以動畫顯示狀態轉換:
 
--   建立可繪製，而資源來以動畫顯示的特定檢視相關聯的狀態變更。 新`AnimatedStateListDrawable`類別可讓您建立可繪製資源來顯示 檢視狀態變更之間的動畫。
+-   建立可繪製資源, 以建立與特定視圖相關聯之狀態變更的動畫。 新`AnimatedStateListDrawable`的類別可讓您建立可繪製資源, 以顯示檢視狀態變更之間的動畫。
 
--   定義的檢視狀態變更時執行的動畫功能。 新`StateListAnimator`類別可讓您定義的檢視狀態變更時執行動畫。
+-   定義當視圖的狀態變更時所執行的動畫功能。 新`StateListAnimator`的類別可讓您定義在檢視狀態變更時執行的 animator。
 
-如需有關 Android 5.0 中的檢視狀態轉換動畫的詳細資訊，請參閱[以動畫顯示的檢視狀態變更](https://developer.android.com/training/material/animations.html#ViewState)。
+如需 Android 5.0 中檢視狀態轉換動畫的詳細資訊, 請參閱[動畫檢視狀態變更](https://developer.android.com/training/material/animations.html#ViewState)。
 
 
 ### <a name="reveal-effect"></a>顯示效果
 
-*顯示效果*會裁剪圓形來顯示或隱藏檢視該變更 radius。 您可以設定初始和最終裁剪圓形的半徑，以控制此效果。 以下循序的螢幕擷取畫面說明從中心螢幕的顯示效果動畫：
+*顯示效果*是變更半徑以顯示或隱藏視圖的裁剪圓形。 您可以藉由設定裁剪圓形的初始和最終半徑來控制此效果。 下列螢幕擷取畫面的順序說明從畫面中央顯示效果動畫:
 
-[![依畫面格的螢幕擷取畫面顯示動畫的框架](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
+[![顯示動畫的框架 (依框架螢幕擷取畫面)](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
 
-下一步 的循序說明發生從畫面的左下角的顯示效果動畫：
+下一個順序說明從畫面左下角進行的顯示效果動畫:
 
-[![框架的裁剪動畫畫面格螢幕擷取畫面](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
+[![裁剪動畫的框架 (依框架) 螢幕擷取畫面](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
 
-顯示可反轉動畫;亦即裁剪圓形可以壓縮成隱藏檢視而放大視覺效果以顯示檢視。
+您可以反轉顯示動畫;也就是說, 裁剪圓形可以縮小以隱藏視圖, 而不是放大以顯示視圖。
 
-如需有關中的 Android 5.0 顯示效果的詳細資訊，請參閱[使用的顯示效果](https://developer.android.com/training/material/animations.html#Reveal)。
-
-
-### <a name="curved-motion"></a>曲線的動作
-
-除了這些動畫功能，Android 5.0 也提供新的 Api，可讓您指定的時間和移動動畫的曲線。 Android 5.0 會使用這些曲線時態表和空間移動進行插補，動畫期間。 Android 5.0 中，會定義三個曲線：
-
--   **快速\_放大\_線性\_中**&ndash;快速加速和加速動畫結束之前會繼續。
-
--   **快速\_放大\_緩慢\_中** &ndash; Accelerates 緩慢又減速的動畫的結尾。
-
--   **線性\_放大\_緩慢\_中**&ndash;與尖峰速度緩慢的開始減速的動畫結尾。
-
-您可以使用新`PathInterpolator`類別，以指定動畫內插補點進行的方式。 `PathInterpolator` 是會根據指定的控制點和影片曲線動畫路徑周遊 interpolator。 如需如何在 Android 5.0 中指定曲線的動作設定的詳細資訊，請參閱[使用曲線影片](https://developer.android.com/training/material/animations.html#CurvedMotion)。
+如需 Android 5.0 顯示效果在中的詳細資訊, 請參閱[使用顯示效果](https://developer.android.com/training/material/animations.html#Reveal)。
 
 
-## <a name="view-shadows--elevation"></a>檢視陰影] & [提高權限
+### <a name="curved-motion"></a>彎曲動作
 
-在 Android 5.0 中，您可以指定*提高權限*藉由設定 新檢視的`Z`屬性。 大於`Z`值會導致要大上投射陰影的背景，製作檢視似乎背景上較高的浮點數的檢視。 您可以藉由設定來設定檢視的初始權限提升其`elevation`版面配置中的屬性。
+除了這些動畫功能, Android 5.0 也提供新的 Api, 可讓您指定動畫的時間和動畫曲線。 Android 5.0 會使用這些曲線來插入動畫期間的時態和空間移動。 Android 5.0 中定義了三個曲線:
 
-下列範例說明轉型為空的陰影`TextView`控制當它的提高權限屬性設定為 2dp、 4dp，且 6dp，分別：
+-   **快速快速地\_加速線性, 並繼續加速直到動畫結束為止。\_ \_**  &ndash;
 
-[![Progessively 較大的檢視陰影的螢幕擷取畫面](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
+-   **快速\_放大緩慢\_會快速且緩慢減速到動畫的結尾。\_**  &ndash;
 
-檢視陰影設定可以是靜態 （如上所示），或用於動畫進行暫時提高，檢視的背景上方顯示的檢視。 您可以使用`ViewPropertyAnimator`類別以動畫顯示檢視的提高權限。 檢視的權限提高為其配置的總和`elevation`設定加上`translationZ`屬性，您可以透過設定`ViewPropertyAnimator`方法呼叫。
+-   **線性\_輸出\_緩慢會\_從尖峰速度開始** ,並慢慢減速至動畫的結尾。&ndash;
 
-如需有關 Android 5.0 中的檢視陰影的詳細資訊，請參閱[定義的陰影和裁剪檢視](https://developer.android.com/training/material/shadows-clipping.html)。
+您可以使用新`PathInterpolator`的類別來指定動作插補的發生方式。 `PathInterpolator`是根據指定的控制點和動作曲線來進行動畫路徑的插即用。 如需如何在 Android 5.0 中指定彎曲動作設定的詳細資訊, 請參閱[使用彎曲動作](https://developer.android.com/training/material/animations.html#CurvedMotion)。
+
+
+## <a name="view-shadows--elevation"></a>視圖陰影 & 提高許可權
+
+在 Android 5.0 中, 您可以藉由設定新`Z`的屬性來指定高度的*提升許可權*。 較大`Z`的值會導致視圖在背景上轉型較大的陰影, 讓視圖顯示在背景上方的浮動位置。 您可以藉由在版面配置中設定其`elevation`屬性, 來設定視圖的初始高度。
+
+下列範例說明當其提高許可權屬性分別設定`TextView`為2dp、4dp 和6dp 時, 空白控制項的陰影轉換:
+
+[![Progessively 較大視圖陰影的螢幕擷取畫面](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
+
+視圖陰影設定可以是靜態的 (如上所示), 也可以在動畫中用來讓視圖顯示, 暫時高於視圖的背景。 您可以使用`ViewPropertyAnimator`類別來建立高度提升許可權的動畫。 View 的高度是其`elevation`配置設定`translationZ`加上`ViewPropertyAnimator`您可以透過方法呼叫來設定之屬性的總和。
+
+如需 Android 5.0 中視圖陰影的詳細資訊, 請參閱[定義陰影和裁剪視圖](https://developer.android.com/training/material/shadows-clipping.html)。
 
 
 ## <a name="color-features"></a>色彩功能
 
-Android 5.0 提供兩項新功能，來管理應用程式的色彩：
+Android 5.0 提供兩個新功能來管理應用程式中的色彩:
 
--   *可繪製濃淡*可讓您藉由變更版面配置屬性來變更色彩的影像資產。
+-   「可*繪製*色彩」可讓您藉由變更版面配置屬性來改變影像資產的色彩。
 
--   *顯著色彩擷取*可讓您以動態方式自訂您的應用程式來協調與顯示的影像的色彩調色盤的色彩佈景主題。
+-   *明顯的色彩提取*可讓您以動態方式自訂應用程式的色彩主題, 以與所顯示影像的調色板進行協調。
 
 
-### <a name="drawable-tinting"></a>可繪製濃淡
+### <a name="drawable-tinting"></a>繪製色調
 
-Android 5.0 的版面配置辨識新`tint`屬性可供您的色彩可繪製資源來設定而不需要建立多個版本的這些資產，以顯示不同的色彩。 若要使用這項功能，您必須定義點陣圖的 alpha 遮罩與使用`tint`屬性來定義資產的色彩。 這項功能可讓您一次建立資產，並在您的版面配置，以符合您的佈景主題色彩它們。
+Android 5.0 配置會辨識新`tint`的屬性, 您可以用來設定可繪製資源的色彩, 而不需要建立這些資產的多個版本來顯示不同的色彩。 若要使用這項功能, 您可以將點陣圖定義為 Alpha mask, `tint`並使用屬性來定義資產的色彩。 如此一來, 您就可以建立資產一次, 並在版面配置中將其色彩配置, 以符合您的主題。
 
-在下列範例中，單一映像的資產&ndash;透明背景的白色標誌&ndash;用來建立濃淡變化：
+在下列範例中, 單一影像資產&ndash;具有透明背景&ndash;的白色標誌會用來建立色調變化:
 
 ![具有透明背景的白色 Xamarin 標誌](lollipop-images/xamarin-logo-white.png)
 
-此標誌會顯示藍色圓形的背景上方，如下列範例所示。 在左側影像是標誌的顯示不`tint`設定。 在中央映像，標誌的`tint`屬性設定為暗灰色。 在右側，影像中`tint`設定為淺灰色：
+此標誌會以藍色迴圈背景顯示, 如下列範例所示。 左邊的影像是標誌出現的方式, 沒有`tint`設定。 在中央影像中, 標誌的`tint`屬性會設定為暗灰色。 在右邊的影像中, `tint`會設定為淺灰色:
 
-![使用不同的濃淡設定上述的標誌的範例](lollipop-images/drawable-tinting.png)
+![使用不同色調設定的上述標誌範例](lollipop-images/drawable-tinting.png)
 
-如需詳細資訊可繪製濃淡 Android 5.0 中，請參閱 < [Drawable 濃淡](https://developer.android.com/training/material/drawables.html#DrawableTint)。
-
-
-### <a name="prominent-color-extraction"></a>顯著色彩擷取
-
-新的 Android 5.0`Palette`類別可讓您從映像擷取色彩，以便您可以動態地將它們套用至自訂的調色盤。 `Palette`類別六種色彩擷取映像和標籤根據其相對的層級的色彩飽和度和亮度這些色彩：
-
--   充滿活力
-
--   活躍的深色
-
--   活躍的光線
-
--   靜音
-
--   靜音的深色
-
--   靜音的光線
-
-比方說，在下列螢幕擷取畫面，相片瀏覽應用程式上顯示的映像中擷取重要的色彩，並使用這些色彩調整應用程式的色彩配置以符合映像：
-
-[![綠色、 粉紅色，和藍色佈景主題色彩擷取的螢幕擷取畫面](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
-
-在上述螢幕擷取畫面中，動作列設定為擷取的"活躍 light"色彩和背景設定為擷取 「 活躍暗色調 」 色彩。 在每個上述範例中，小型彩色方塊的資料列會包含說明從映像擷取的調色盤色彩。
-
-如需 Android 5.0 中的色彩擷取相關資訊，請參閱 <<c0> [ 從映像擷取顯著色彩](https://developer.android.com/training/material/drawables.html#ColorExtract)。
+如需有關在 Android 5.0 中可繪製色調的詳細資訊, 請參閱可[繪製的色調](https://developer.android.com/training/material/drawables.html#DrawableTint)。
 
 
-## <a name="new-ui-widgets"></a>新的 UI Widget
+### <a name="prominent-color-extraction"></a>顯著色彩的解壓縮
 
-Android 5.0 導入了兩個新的 UI widget:
+新的 Android 5.0 `Palette`類別可讓您從影像中解壓縮色彩, 讓您可以動態地將它們套用至自訂調色盤。 `Palette`類別會從影像中解壓縮六種色彩, 並根據色彩飽和度和亮度的相對層級來標記這些色彩:
 
--   `RecyclerView` &ndash; 顯示可捲動的項目清單檢視群組。
+-   活力
 
--   `CardView` &ndash; 具有圓角的基本版面配置。
+-   生動深
 
-這兩個小工具包括了內建支援材料佈景主題功能;例如，`RecyclerView`動畫用於加入及移除檢視，和`CardView`使用檢視進行似乎一直浮在背景每張卡片的陰影。 這些新的小工具的範例如下列螢幕擷取畫面所示：
+-   活躍光線
 
-[![RecyclerView 以建置應用程式的螢幕擷取畫面](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
+-   減弱
 
-在左側螢幕擷取畫面是範例`RecyclerView`上用於電子郵件應用程式和螢幕擷取畫面右邊是舉例說明`CardView`旅遊預約應用程式中使用。
+-   黑色深色
+
+-   淺色燈
+
+例如, 在下列螢幕擷取畫面中, 相片觀賞應用程式會從顯示影像中取出明顯的色彩, 並使用這些色彩來調整應用程式的色彩配置, 以符合影像:
+
+[![綠色、粉紅色和藍色主題色提取的螢幕擷取畫面](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
+
+在上述螢幕擷取畫面中, 動作列設定為已解壓縮的「生動光源」色彩, 而背景設定為已解壓縮的「生動暗」色彩。 在上述每個範例中, 會包含一個小顏色方塊的資料列, 以說明從影像中解壓縮的調色板色彩。
+
+如需 Android 5.0 中色彩解壓縮的詳細資訊, 請參閱[從影像中解壓縮顯著的色彩](https://developer.android.com/training/material/drawables.html#ColorExtract)。
+
+
+## <a name="new-ui-widgets"></a>新的 UI widget
+
+Android 5.0 引進兩個新的 UI 小工具:
+
+-   `RecyclerView`&ndash;顯示可滾動專案清單的視圖群組。
+
+-   `CardView`&ndash;具有圓角的基本版面配置。
+
+這兩個小工具都包含材質主題功能的內建支援;例如, `RecyclerView`會使用動畫來新增和移除視圖, 並`CardView`使用 view shadows 讓每張卡片在背景上方顯示為浮動。 下列螢幕擷取畫面顯示這些新 widget 的範例:
+
+[![以 RecyclerView 建立之應用程式的螢幕擷取畫面](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
+
+左側的螢幕擷取畫面是在電子郵件應用`RecyclerView`程式中使用的範例, 右側的螢幕擷取畫面是在旅遊保留應用程式中`CardView`使用的範例。
 
 
 ### <a name="recyclerview"></a>RecyclerView
 
-`RecyclerView` 類似於`ListView,`但它比較適合大量檢視或動態變更的項目清單。 例如`ListView,`指定配接器以存取基礎資料集。 不過，不同於`ListView,`您使用*配置管理員*往內的項目`RecyclerView`。 配置管理員也會負責回收檢視;它會管理已不再對使用者顯示的項目檢視重複使用。
+`RecyclerView`類似于, `ListView,`但較適合具有動態變更之元素的大型視圖或清單集。 就`ListView,`像您指定介面卡來存取基礎資料集。 不過, 不同`ListView,`于您使用*版面建構管理員*來定位中`RecyclerView`的專案。 版面建構管理員也會負責查看回收;它會管理使用者不會再看到的專案流覽重複使用方式。
 
-當您使用`RecyclerView`小工具之後，您必須指定`LayoutManager`和配接器。 上圖所示`LayoutManager`是配接器之間的媒介和`RecyclerView`:
+當您使用`RecyclerView` widget 時, 必須`LayoutManager`指定和介面卡。 如上圖所示, `LayoutManager`是介面卡`RecyclerView`與之間的媒介:
 
-![圖表的 RecyclerView 與支援 LayoutManager、 配接器和資料集](lollipop-images/recyclerview-diagram.png)
+![支援 LayoutManager、介面卡和資料集的 RecyclerView 圖](lollipop-images/recyclerview-diagram.png)
 
-下列螢幕擷取畫面說明`RecyclerView`包含 100 個項目 (每個項目組成`ImageView`和`TextView`):
+下列螢幕擷取畫面說明`RecyclerView`包含100專案的 (每個專案都是由`ImageView`和`TextView`組成):
 
-[![捲動 映像的 RecyclerView 應用程式的螢幕擷取畫面](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
+[![透過影像滾動 RecyclerView 應用程式的螢幕擷取畫面](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
 
-`RecyclerView` 輕鬆地處理這個大型的資料集&ndash;捲動從一開始来結束之清單的清單在此範例中的應用程式只需要幾秒鐘。 `RecyclerView` 也支援動畫;事實上，預設會啟用動畫來新增和移除項目。 當項目加入至`RecyclerView`，它的淡入淡在這一系列的螢幕擷取畫面所示：
+`RecyclerView`處理此大型資料集, 輕鬆&ndash;地從清單的開頭開始, 到此範例應用程式中的清單結尾, 只需要幾秒鐘的時間。 `RecyclerView`也支援動畫;事實上, 預設會啟用新增和移除專案的動畫。 當專案新增至`RecyclerView`時, 它會淡入, 如下列螢幕擷取畫面的順序所示:
 
-[![由框架螢幕擷取畫面中的相片項目淡出的框架](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
+[![相片專案的框架螢幕擷取畫面影像淡入](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
 
-如需詳細資訊`RecyclerView`，請參閱 < [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)。
+如需的`RecyclerView`詳細資訊, 請參閱[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)。
 
 
 ### <a name="cardview"></a>CardView
 
-`CardView` 是會模擬具有圓角浮動卡片的簡單檢視。 因為`CardView`具有內建檢視陰影，它提供簡單的方法，以視覺化的深度加入您的應用程式。 下列螢幕擷取畫面顯示三個文字導向的範例`CardView`:
+`CardView`是一個簡單的視圖, 可模擬具有圓角的浮動卡片。 因為`CardView`具有內建的視圖陰影, 所以可讓您輕鬆地在應用程式中加入視覺深度。 下列螢幕擷取畫面顯示三個文字導向的`CardView`範例:
 
-[![應用程式使用 CardView 型項目 RecyclerView 範例螢幕擷取畫面](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
+[![使用 RecyclerView 搭配以 CardView 為基礎的專案之應用程式的範例螢幕擷取畫面](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
-在上述範例中的卡片的每一個都包含`TextView`; 的背景色彩透過設定`cardBackgroundColor`屬性。
+上述範例中的每張卡片都包含`TextView`; 背景色彩是透過`cardBackgroundColor`屬性來設定。
 
-如需詳細資訊`CardView`，請參閱 < [CardView](~/android/user-interface/controls/card-view.md)。
+如需的`CardView`詳細資訊, 請參閱[CardView](~/android/user-interface/controls/card-view.md)。
 
 
 ## <a name="enhanced-notifications"></a>增強的通知
 
-新的視覺格式與新的功能已大幅更新 Android 5.0 的通知系統。 通知會在 Android 5.0 中的新的外觀。 例如，Android 5.0 中的通知現在會使用深色的文字在淺色背景上：
+Android 5.0 中的通知系統已使用新的視覺效果格式和新功能大幅更新。 通知在 Android 5.0 中有新的外觀。 例如, Android 5.0 中的通知現在會在淺背景使用深色文字:
 
-![未展開的 Android 5.0 通知的範例](lollipop-images/expanded-notification-contracted.png)
+![未展開的 Android 5.0 通知範例](lollipop-images/expanded-notification-contracted.png)
 
-當大型圖示會顯示在通知中 （如上述範例所示） 時，則 Android 5.0 會顯示以徽章形式之小圖示大型圖示上方。 
+當通知中顯示大型圖示時 (如上述範例所示), Android 5.0 會在大型圖示上以徽章呈現小圖示。 
 
-在 Android 5.0 中，也可以在裝置鎖定畫面上出現通知。
-例如，以下是單一的通知與鎖定畫面中的範例螢幕擷取畫面：
+在 Android 5.0 中, 通知也可能會出現在裝置上的鎖屏。
+例如, 以下是具有單一通知之鎖屏的範例螢幕擷取畫面:
 
-[![在鎖定畫面上顯示通知的螢幕擷取畫面](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
+[![鎖定畫面上顯示的通知螢幕擷取畫面](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
 
-使用者可以點選來解除鎖定裝置，並跳至產生該通知，應用程式鎖定畫面上的通知或撥動以關閉通知。 有新的通知*可視性*決定設定鎖定畫面上，可以顯示多少內容。 使用者可以選擇是否允許要在鎖定畫面通知中顯示的敏感性內容。
+使用者可以在鎖屏上按兩下通知, 以解除鎖定裝置, 並跳至產生該通知的應用程式, 或滑動以關閉通知。 通知會有新的*可見度*設定, 可決定可以在鎖定上顯示多少內容。 使用者可以選擇是否允許在鎖屏通知中顯示機密內容。
 
-Android 5.0 引進新的高優先順序通知呈現格式，稱為*抬頭*。 抬頭通知從畫面頂端滑向下幾秒鐘的時間，且然後撤退回到在畫面頂端的通知陰影效果。 抬頭通知可讓系統 UI，而不會中斷目前正在執行的活動放置在使用者之前的重要資訊。 下列範例說明簡單的預告通知應用程式最上層顯示：
+Android 5.0 引進新的高優先順序通知簡報格式, 稱為「*列印頭*」。 標題通知會從畫面頂端向下滑動幾秒鐘, 然後回頭回到畫面頂端的通知網底。 標頭通知讓系統 UI 可以將重要資訊放在使用者前方, 而不會中斷目前執行的活動。 下列範例說明在應用程式頂端顯示的簡單標題通知:
 
-[![Heads-up 通知範例](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
+[![標題通知的範例](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
-抬頭通知通常會使用下列事件：
+標頭通知通常用於下列事件:
 
 -   新的下一個訊息
 
--   連入的通話
+-   撥打電話
 
--   電力偏低表示
+-   電力偏低指示
 
--   警示
+-   鬧鐘
 
-Android 5.0 抬頭格式顯示通知，只有當它具有高或最大的優先順序設定時。
+Android 5.0 只有在具有高或最大優先順序設定時, 才會以列印頭格式顯示通知。
 
-在 Android 5.0 中，您可以提供通知的中繼資料，以協助 Android 排序及更有效地顯示通知。 Android 5.0 會組織根據優先順序、 可見性和類別目錄的通知。
-通知類別用來篩選可以顯示的通知，當裝置處於 *「 請勿打擾 」* 模式。
+在 Android 5.0 中, 您可以提供通知中繼資料, 協助 Android 排序並更聰明地顯示通知。 Android 5.0 會根據優先順序、可見度和類別來組織通知。
+通知類別是用來篩選當裝置處於「*請勿打擾*」模式時, 可以呈現哪些通知。
 
-如需建立和啟動通知的最新的 Android 5.0 功能的詳細資訊，請參閱[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)。
+如需使用最新的 Android 5.0 功能來建立和啟動通知的詳細資訊, 請參閱[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)。
 
 
 ## <a name="new-apis"></a>新的 API
 
-除了上面所述的新外觀和操作功能，Android 5.0 會加入新的 Api 來延伸現有的多媒體功能、 儲存和無線/連線功能。 此外，Android 5.0 包含新的 Api，提供新的工作排程器功能的支援。
+除了上述的新外觀與風格功能以外, Android 5.0 還新增了新的 Api, 可擴充現有多媒體、存放裝置和無線/連線功能的功能。 此外, Android 5.0 包含新的 Api, 可提供新作業排程器功能的支援。
 
 ### <a name="camera"></a>觀景窗
 
-Android 5.0 提供增強的相機功能的數個新的 Api。 新`Android.Hardware.Camera2`命名空間包含的功能，如存取個別的網路攝影機裝置連接到 Android 裝置。 此外，`Android.Hardware.Camera2`模型做為管線的每個網路攝影機裝置： 它會接受擷取要求、 擷取映像，並再將結果輸出。 這種方法可讓多個相機的裝置擷取要求排入佇列的應用程式。
+Android 5.0 提供數個新的 Api, 以增強相機功能。 新`Android.Hardware.Camera2`的命名空間包含存取連線至 Android 裝置之個別相機裝置的功能。 此外, `Android.Hardware.Camera2`會將每個相機裝置當做管線來建立模型: 它會接受 capture 要求、捕獲影像, 然後輸出結果。 這種方法可讓應用程式將多個捕獲要求佇列至相機裝置。
 
-下列 Api 讓這些新功能：
+下列 Api 可讓您實現這些新功能:
 
--   `CameraManager.GetCameraIdList` &ndash; 可協助您以程式設計方式存取網路攝影機裝置;您使用`CameraManager.OpenCamera`連接到特定的網路攝影機裝置。
+-   `CameraManager.GetCameraIdList`可協助您以程式設計方式存取相機裝置`CameraManager.OpenCamera` ; 您可以使用連接到特定的相機裝置。 &ndash;
 
--   `CameraCaptureSession` &ndash; 擷取，或從網路攝影機裝置的影像資料流。 您實作`CameraCaptureSession.CaptureListener`介面，以處理新的映像擷取事件。
+-   `CameraCaptureSession`&ndash;從相機裝置捕獲或串流影像。 您會執行`CameraCaptureSession.CaptureListener`介面來處理新的影像捕捉事件。
 
--   `CaptureRequest` &ndash; 定義擷取參數。
+-   `CaptureRequest`&ndash;定義 capture 參數。
 
--   `CaptureResult` &ndash; 提供映像擷取作業的結果。
+-   `CaptureResult`&ndash;提供影像捕獲作業的結果。
 
-如需新的數位相機 Android 5.0 中的 Api 相關資訊，請參閱 <<c0> [ 媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
+如需 Android 5.0 中新相機 Api 的詳細資訊, 請參閱[媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
 ### <a name="audio-playback"></a>音訊播放
 
-Android 5.0 更新`AudioTrack`更好的音訊播放的類別：
+Android 5.0 會更新`AudioTrack`類別, 以進行更好的音訊播放:
 
--   `ENCODING_PCM_FLOAT` &ndash; 設定`AudioTrack`接受更好的動態範圍、 更高的空餘空間，以及 （多虧有更高的精確度） 的更高品質的浮點格式的音訊資料。 此外，浮點數格式有助於避免音訊剪輯。
+-   `ENCODING_PCM_FLOAT`&ndash; 設定以浮點數格式接受音訊資料,以獲得更好的動態範圍、較大的空間,以及更高的品質(感謝增加`AudioTrack`的精確度)。 此外, 浮點格式有助於避免音訊裁剪。
 
--   `ByteBuffer` &ndash; 您現在可以提供要的音訊資料`AudioTrack`做為位元組陣列。
+-   `ByteBuffer`您現在可以將音訊資料提供`AudioTrack`給做為位元組陣列。 &ndash;
 
--   `WRITE_NON_BLOCKING` &ndash; 此選項可讓您簡化緩衝處理和多執行緒對於某些應用程式。
+-   `WRITE_NON_BLOCKING`&ndash;此選項可簡化某些應用程式的緩衝和多執行緒處理。
 
-如需詳細資訊`AudioTrack`改善 Android 5.0 版，請參閱[媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
+如需 Android `AudioTrack` 5.0 改良功能的詳細資訊, 請參閱[媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
-### <a name="media-playback-control"></a>媒體播放控制項
+### <a name="media-playback-control"></a>媒體播放控制
 
-Android 5.0 引進新`Android.Media.MediaController`類別，取代了`RemoteControlClient`。 `Android.Media.MediaController` 提供簡化的傳輸控制 Api，並提供具備執行緒安全控制項的播放的 UI 內容之外。 下列新的 Api 來處理傳輸控制項：
+Android 5.0 引進了新`Android.Media.MediaController`的類別, 它`RemoteControlClient`會取代。 `Android.Media.MediaController`提供簡化的傳輸控制 Api, 並提供執行緒安全控制, 以在 UI 內容之外播放。 下列新的 Api 會處理傳輸控制:
 
--   `Android.Media.Session.MediaSession` &ndash; 媒體控制工作階段會處理多個控制站。 您呼叫`MediaSession.GetSessionToken`要求您的應用程式會使用與工作階段互動的權杖。
+-   `Android.Media.Session.MediaSession`&ndash;處理多個控制器的媒體控制會話。 您會`MediaSession.GetSessionToken`呼叫以要求您的應用程式用來與會話互動的權杖。
 
--   `MediaController.TransportControls` &ndash; 處理傳輸命令，例如**播放**，**停止**，並**略過**。
+-   `MediaController.TransportControls`處理傳輸命令, 例如 [**播放**]、[**停止**] 和 [**略過**]。 &ndash;
 
-此外，您可以使用新`Android.App.Notification.MediaStyle`類別 （例如擷取和顯示專輯封面） 的豐富內容通知內容相關聯的媒體工作階段。
+此外, 您也可以使用新`Android.App.Notification.MediaStyle`的類別, 將媒體會話與豐富通知內容產生關聯 (例如, 解壓縮和顯示專輯封面)。
 
-如需有關 Android 5.0 的新的媒體播放控制項功能的詳細資訊，請參閱[媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
+如需 Android 5.0 中新媒體播放控制功能的詳細資訊, 請參閱[媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
 ### <a name="storage"></a>存放裝置
 
-Android 5.0 更新儲存體存取架構，以簡化應用程式，以使用目錄與文件：
+Android 5.0 會更新儲存體存取架構, 讓應用程式更容易使用目錄和檔:
 
--   若要選取子樹狀目錄，您可以建立並傳送`Android.Intent.Action.OPEN_DOCUMENT_TREE`意圖。 此意圖會導致系統顯示 支援的樹狀子目錄選取; 的所有提供者執行個體然後使用者會瀏覽並選取目錄。
+-   若要選取目錄子樹狀結構, 您可以建立和`Android.Intent.Action.OPEN_DOCUMENT_TREE`傳送意圖。 此意圖會使系統顯示支援子樹選取的所有提供者實例;使用者接著流覽並選取目錄。
 
--   若要建立及管理新的文件] 或 [任何位置下的樹狀子目錄的目錄，您使用新`CreateDocument`， `RenameDocument`，並`DeleteDocument`方法`DocumentsContract`。
+-   若要在子樹下的任何位置建立和管理新的檔或目錄`CreateDocument`, 請使用`DeleteDocument`的新`DocumentsContract`、 `RenameDocument`和方法。
 
--   若要取得所有的共用的存放裝置上的媒體的目錄路徑，請呼叫新`Android.Content.Context.GetExternalMediaDirs`方法。
+-   若要取得所有共用存放裝置上的媒體目錄路徑, 您可以呼叫`Android.Content.Context.GetExternalMediaDirs`新的方法。
 
-如需有關新的儲存體 Android 5.0 中的 Api 的詳細資訊，請參閱[儲存體](https://developer.android.com/preview/api-overview.html#Storage)。
+如需 Android 5.0 中新儲存體 Api 的詳細資訊, 請參閱[儲存體](https://developer.android.com/preview/api-overview.html#Storage)。
 
-### <a name="wireless--connectivity"></a>無線與連線能力
+### <a name="wireless--connectivity"></a>無線 & 連線能力
 
-Android 5.0 新增無線及連線的下列 API 增強功能：
+Android 5.0 新增下列適用于無線和連線能力的 API 增強功能:
 
--   新*多重網路*讓應用程式，以尋找並選取特定功能的網路進行連線之前的 Api。
+-   新的*多網路*api, 可讓應用程式在建立連線之前, 尋找並選取具有特定功能的網路。
 
--   可讓 Android 5.0 裝置，以做為低電源的藍牙周邊設備的藍芽廣播功能。
+-   可讓 Android 5.0 裝置做為低能源藍牙周邊的藍牙廣播功能。
 
--   NFC 增強功能可讓您更輕鬆地共用資料與其他裝置使用近通訊功能。
+-   NFC 增強功能, 可讓您更輕鬆地使用近距離無線通訊功能來與其他裝置共用資料。
 
-如需詳細資訊，新的無線及 Android 5.0 中的 Api 連線，請參閱 <<c0> [ 無線及連線](https://developer.android.com/preview/api-overview.html#Wireless)。
+如需 Android 5.0 中新無線和連線 Api 的詳細資訊, 請參閱[無線和連線能力](https://developer.android.com/preview/api-overview.html#Wireless)。
 
-### <a name="job-scheduling"></a>工作排程
+### <a name="job-scheduling"></a>作業排程
 
-Android 5.0 引進新`JobScheduler`API，可協助使用者減少電池清空裝置插入電源時，才執行特定工作的排程和收費。 這個工作排程器功能也可以用於排程要條件更適合該工作，例如裝置透過 Wi-fi 網路，而非計量付費網路連線時下載大型檔案時執行的工作。
+Android 5.0 引進了新`JobScheduler`的 API, 可協助使用者將特定工作排程為只有在裝置插入和收費時才執行, 以將電池清空降至最低。 這項工作排程器功能也可以用來排定工作, 以便在條件較適合該工作時執行, 例如在裝置透過 Wi-fi 網路 (而非計量付費網路) 連線時下載大型檔案。
 
-如需詳細資訊的新的工作排程在 Android 5.0 中的 Api，請參閱 <<c0> [ 排程工作](https://developer.android.com/preview/api-overview.html#JobScheduler)。
+如需 Android 5.0 中新作業排程 Api 的詳細資訊, 請參閱[排程工作](https://developer.android.com/preview/api-overview.html#JobScheduler)。
 
 ## <a name="summary"></a>總結
 
-這篇文章適用於 Xamarin.Android 應用程式開發人員提供 Android 5.0 中的重要新功能的概觀：
+本文概述適用于 Xamarin 的 Android 5.0 重要新功能。 Android 應用程式開發人員:
 
 -   材質佈景主題
 
 -   Animations
 
--   檢視陰影或提高權限
+-   視圖陰影和提高許可權
 
--   色彩功能，例如可繪製濃淡及顯著色彩擷取
+-   色彩功能, 例如繪製色彩和醒目顏色的抽取
 
--   新`RecyclerView`和`CardView`widget
+-   新`RecyclerView`的和`CardView`小工具
 
--   通知的增強功能
+-   通知增強功能
 
--   新的 Api，如相機、 音訊播放、 media 控制項、 儲存體、 無線/連線和工作排程
+-   適用于相機、音訊播放、媒體控制、存放裝置、無線/連線和工作排程的新 Api
 
-如果您是 Xamarin Android 開發的新手，閱讀[設定與安裝](~/android/get-started/installation/index.md)可協助您開始使用 Xamarin.Android。
-[Hello，Android](~/android/get-started/hello-android/index.md)是絕佳的簡介，以了解如何建立 Android 專案。
+如果您不熟悉 Xamarin Android 開發, 請閱讀[安裝和安裝](~/android/get-started/installation/index.md), 以協助您開始使用 Xamarin. Android。
+[Hello, Android](~/android/get-started/hello-android/index.md)是學習如何建立 Android 專案的絕佳簡介。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 的 L 開發人員預覽](https://developer.android.com/preview/index.html)
+- [Android L 開發人員預覽](https://developer.android.com/preview/index.html)
 - [取得 Android SDK](https://developer.android.com/sdk/index.html#Other)
-- [材料設計](https://developer.android.com/preview/material/index.html)
-- [材料設計原則](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)
+- [材質設計](https://developer.android.com/preview/material/index.html)
+- [材質設計原則](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

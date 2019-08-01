@@ -24,7 +24,7 @@ ms.locfileid: "61424594"
 * 表示片段示範如何使用`RepresentationManager`來加強轉譯使用內建的表示法。
 * `Person`物件和其相關聯的 JavaScript 轉譯器會示範如何使用`ISerializableObject`而不需要經過表示提供者。
 
-另請參閱[SkiaSharp] [ skiasharp]整合，使用現有的真實世界範例[表示](~/tools/workbooks/sdk/representations.md)Xamarin 活頁簿來呈現其型別所提供。
+另請參閱[SkiaSharp][skiasharp]整合，使用現有的真實世界範例[表示](~/tools/workbooks/sdk/representations.md)Xamarin 活頁簿來呈現其型別所提供。
 
 [KitchenSink]: https://github.com/xamarin/Workbooks/tree/master/SDK/Samples/KitchenSink
 [skiasharp]: https://github.com/mono/SkiaSharp/tree/master/source/SkiaSharp.Workbooks

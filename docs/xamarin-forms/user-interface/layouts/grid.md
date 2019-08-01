@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 1d445e3ef8869c74f052eb1153774dfab51ffd45
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 38206812fbd746a63c5bff18111779c25deedc66
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649589"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648527"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 [`Grid`](xref:Xamarin.Forms.Grid) 排列成資料列和資料行的檢視表的支援。 資料列和資料行，都可以設定成比例的大小或絕對的大小。 `Grid`版面配置不應混淆與傳統的資料表，而不是呈現表格式資料。 `Grid` 沒有資料列、 資料行或資料格的格式化概念。 不同於 HTML 資料表，`Grid`純粹是用來配置內容。
 
@@ -54,7 +54,7 @@ ms.locfileid: "67649589"
 - **絕對**&ndash;大小資料行和資料列以特定的固定高度和寬度的值。 指定為值和`GridUnitType.Absolute`C# 中，以及`#`XAML，在使用`#`所需的值。
 
 > [!NOTE]
-> 資料行的寬度值會設定為`*`藉由在 Xamarin.Forms 中的預設值，這可確保資料行，將會填滿可用空間。 資料列的高度值也會設為`*`預設。
+> 在 Xamarin 中, 資料行的寬度`*`值預設會設定為, 這樣可確保資料行會填滿可用的空間。 資料列的高度值預設也會設定`*`為。
 
 請考慮需要三個資料列和兩個資料行的應用程式。 下方的資料列必須是完全 200px 高，第一列必須是兩次中間的資料列一樣高。 左邊的資料行必須是寬度不足以容納內容，並正確的資料行必須以填滿剩餘的空間。
 
@@ -137,7 +137,7 @@ grid.Children.Add(bottomRight, 1, 1);
 
 上述程式碼建立四個標籤、 兩個資料行，與兩個資料列的格線。 請注意，每個標籤會有相同的大小和擴充資料列時，會以使用所有可用的空間。
 
-在上述範例中，檢視會新增至[ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)集合[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/)指定左邊和頂端的引數的多載。 使用時[ `Add` ](https://developer.xamarin.com/api/member/Xamarin.Forms.Grid+IGridList%3CT%3E.Add/p/Xamarin.Forms.View/System.Int32/System.Int32/System.Int32/System.Int32/)多載，指定左、 右、 上框線和下引數，而左邊和頂端的引數一律會參考儲存格內[ `Grid` ](xref:Xamarin.Forms.Grid)，右邊和下方的引數可能會參考儲存格以外的`Grid`。 這是因為右引數一律必須晚於左邊的引數，以及底部引數一律必須晚於最上層的引數。 下列範例示範使用這兩個對等的程式碼`Add`多載：
+在上述範例中，檢視會新增至[ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)集合[ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)指定左邊和頂端的引數的多載。 使用時[ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)多載，指定左、 右、 上框線和下引數，而左邊和頂端的引數一律會參考儲存格內[ `Grid` ](xref:Xamarin.Forms.Grid)，右邊和下方的引數可能會參考儲存格以外的`Grid`。 這是因為右引數一律必須晚於左邊的引數，以及底部引數一律必須晚於最上層的引數。 下列範例示範使用這兩個對等的程式碼`Add`多載：
 
 ```csharp
 // left, top
@@ -384,5 +384,5 @@ public CalculatorGridCode ()
 
 - [使用 Xamarin.Forms 時，第 17 章建立行動應用程式](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
 - [格線](xref:Xamarin.Forms.Grid)
-- [版面配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
-- [BusinessTumble 範例 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
+- [版面配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 範例 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

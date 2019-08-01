@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 7a149a41a6e50d3b18da166d9c7cb61e36f2d0e7
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 567985b1d6c6aff87e0a6879f05ab711a0095d6f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970459"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647209"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的明確樣式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
 
-## <a name="create-an-explicit-style-in-xaml"></a>在 XAML 中建立明確的樣式
+## <a name="create-an-explicit-style-in-xaml"></a>在 XAML 中建立明確樣式
 
 若要宣告[ `Style` ](xref:Xamarin.Forms.Style)在頁面層級[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必須加入至頁面並再一或多個`Style`宣告可以包含在`ResourceDictionary`。 A`Style`更為*明確*藉由提供其宣告`x:Key`屬性，讓它的描述性的索引鍵中`ResourceDictionary`。 *明確*樣式必須再套用到特定的視覺項目設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性。
 
@@ -70,7 +70,7 @@ _明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
 
 此外，最終[ `Label` ](xref:Xamarin.Forms.Label)具有[ `Style` ](xref:Xamarin.Forms.Style)套用至其中，但也會覆寫[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)屬性，以不同`Color`值。
 
-### <a name="create-an-explicit-style-at-the-control-level"></a>在控制層級建立明確的樣式
+### <a name="create-an-explicit-style-at-the-control-level"></a>在控制項層級建立明確樣式
 
 除了建立*明確*頁面層級的樣式，它們也可以建立在控制層級，如下列程式碼範例所示：
 
@@ -97,7 +97,7 @@ _明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
 
 如需建立應用程式中的樣式[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，請參閱[全域樣式](~/xamarin-forms/user-interface/styles/application.md)。
 
-## <a name="create-an-explicit-style-in-c35"></a>在 C 中建立明確的樣式&#35;
+## <a name="create-an-explicit-style-in-c35"></a>在 C 中建立明確樣式&#35;
 
 [`Style`](xref:Xamarin.Forms.Style) 執行個體可以加入至網頁[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) C# 中建立新的集合[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，再以新增`Style`執行個體`ResourceDictionary`，如下所示下列程式碼範例：
 
@@ -184,8 +184,8 @@ public class ExplicitStylesPageCS : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的樣式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/BasicStyles/)
-- [使用樣式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [基本的樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [樣式](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 2c7daca80a207d0c060fc3a867b1eda03dd65258
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 803cd1babc32e3a42d957c4bac0cc93c4552fb8c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61082866"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656127"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>設定選擇器的 ItemsSource 屬性
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
 
 _選擇器 檢視是從資料的清單中選取的文字項目控制項。這篇文章說明如何藉由設定 ItemsSource 屬性，填入資料的選擇器，以及如何回應使用者的項目選取。_
 
 已增強 Xamarin.Forms 2.3.4 [ `Picker` ](xref:Xamarin.Forms.Picker)加上能夠藉由設定以資料填入的檢視其[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)屬性，以及從擷取選取的項目[`SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)屬性。 此外，變更選取的項目文字的色彩，藉由設定[ `TextColor` ](xref:Xamarin.Forms.Picker.TextColor)屬性設[ `Color` ](xref:Xamarin.Forms.Color)。
 
-## <a name="populating-a-picker-with-data"></a>填入資料的選擇器
+## <a name="populating-a-picker-with-data"></a>以資料填入選擇器
 
 A [ `Picker` ](xref:Xamarin.Forms.Picker)可以填入資料，藉由設定其[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)屬性設`IList`集合。 集合中的每個項目必須是的或衍生自類型`object`。 可以在 XAML 中加入項目，初始化`ItemsSource`從項目的陣列的屬性：
 
@@ -63,7 +63,7 @@ var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
 picker.ItemsSource = monkeyList;
 ```
 
-## <a name="responding-to-item-selection"></a>回應的項目選取
+## <a name="responding-to-item-selection"></a>回應專案選取
 
 A [ `Picker` ](xref:Xamarin.Forms.Picker)支援一次選取一個項目。 當使用者選取項目， [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)事件引發時， [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性更新為整數，表示選取的項目在清單中，索引和[`SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)屬性更新為`object`代表選取的項目。 [ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性是以零為起始的數字，指出使用者已選取的項目。 如果未不選取任何項目，則這是當[ `Picker` ](xref:Xamarin.Forms.Picker)先建立並初始化，`SelectedIndex`會是-1。
 
@@ -103,7 +103,7 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 > [!NOTE]
 > A [ `Picker` ](xref:Xamarin.Forms.Picker)可以藉由設定顯示特定的項目初始化[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)或是[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)屬性。 不過，這些屬性必須設定在初始化之後[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)集合。
 
-## <a name="populating-a-picker-with-data-using-data-binding"></a>使用資料繫結的資料填入的選擇器
+## <a name="populating-a-picker-with-data-using-data-binding"></a>使用資料系結將資料填入選擇器
 
 A [ `Picker` ](xref:Xamarin.Forms.Picker)可以也使用資料來填入繫結中使用資料繫結其[ `ItemsSource` ](xref:Xamarin.Forms.Picker.ItemsSource)屬性設`IList`集合。 在 XAML 中，這達成與[ `Binding` ](xref:Xamarin.Forms.Xaml.BindingExtension)標記延伸模組：
 
@@ -136,7 +136,7 @@ public class Monkey
 
 繫結至物件的清單時[ `Picker` ](xref:Xamarin.Forms.Picker)必須被告知要顯示的每個物件的屬性。 這藉由設定來達成[ `ItemDisplayBinding` ](xref:Xamarin.Forms.Picker.ItemDisplayBinding)必要的屬性來從每個物件的屬性。 在上述的程式碼範例`Picker`設定為顯示每個`Monkey.Name`屬性值。
 
-### <a name="responding-to-item-selection"></a>回應的項目選取
+### <a name="responding-to-item-selection"></a>回應專案選取
 
 資料繫結可以用來把物件設為[ `SelectedItem` ](xref:Xamarin.Forms.Picker.SelectedItem)屬性值變更時：
 
@@ -182,7 +182,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 ## <a name="related-links"></a>相關連結
 
-- [選擇器示範 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PickerDemo/)
-- [Monkey 應用程式 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/MonkeyAppPicker/)
-- [可繫結選擇器 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindablePicker/)
+- [選擇器示範 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+- [Monkey 應用程式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
+- [可繫結選擇器 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
 - [選擇器 API](xref:Xamarin.Forms.Picker)

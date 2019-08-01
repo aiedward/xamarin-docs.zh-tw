@@ -1,35 +1,35 @@
 ---
-title: 使用 Xamarin.Android 和損耗的 OS 中的螢幕大小
+title: 使用 Xamarin. Android 和磨損 OS 中的螢幕大小
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: a9b71fb069a428d9bec03481c986f4deb4c904ea
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 93e6797f2b00df32b8d3ae361f40fd487b7adac3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827730"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647720"
 ---
-# <a name="working-with-screen-sizes"></a>使用 螢幕大小
+# <a name="working-with-screen-sizes"></a>使用螢幕大小
 
-Android Wear 裝置可以有矩形或圓形的顯示，也可以是不同的大小。
+Android 磨損裝置可以有矩形或圓形顯示, 這也可以是不同的大小。
 
-![矩形和圓形損耗的螢幕擷取畫面顯示](screen-sizes-images/moyeu-wear.png)
+![矩形和圓角磨損顯示的螢幕擷取畫面](screen-sizes-images/moyeu-wear.png)
 
-## <a name="identifying-screen-type"></a>用來識別畫面中輸入
+## <a name="identifying-screen-type"></a>識別螢幕類型
 
-Wear 支援程式庫提供一些控制項，可協助您偵測並適應不同畫面的圖形，而這類`WatchViewStub`和`BoxInsetLayout`。
+「磨損支援」程式庫提供一些控制項, 可協助您偵測和適應不同的螢幕圖形`WatchViewStub` , `BoxInsetLayout`例如和。
 
-請注意的一些其他支援程式庫控制項 (例如`GridViewPager`)*自動*偵測畫面圖形本身並不應該在如下所述的控制項的子系加入。
+請注意, 有些其他支援程式庫控制項 (例如`GridViewPager`)*會自動*偵測畫面圖形本身, 而不應新增為下面所述控制項的子系。
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-請參閱[WatchViewStub](https://developer.xamarin.com/samples/monodroid/wear/WatchViewStub/)範例以了解如何偵測畫面中，輸入，並顯示每種類型的不同版面配置。
+請參閱[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)範例, 以瞭解如何偵測螢幕類型, 並針對每種類型顯示不同的版面配置。
 
-主要的版面配置檔案包含`android.support.wearable.view.WatchViewStub`會參考不同的版面配置，針對使用的矩形和圓形螢幕`app:rectLayout`和`app:roundLayout`屬性：
+主要版面配置檔案包含`android.support.wearable.view.WatchViewStub` , 它會`app:rectLayout`使用和`app:roundLayout`屬性來參考矩形和圓角螢幕的不同版面配置:
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -41,48 +41,48 @@ Wear 支援程式庫提供一些控制項，可協助您偵測並適應不同畫
   app:roundLayout="@layout/round_layout" />
 ```
 
-解決方案包含每個樣式會在執行階段中選取不同的版面配置：
+解決方案包含各種不同的版面配置, 適用于在執行時間選取的每種樣式:
 
-![顯示在 資源/版面配置檔](screen-sizes-images/solution.png)
+![[資源]/[配置] 底下顯示的檔案](screen-sizes-images/solution.png)
 
 
 ### <a name="boxinsetlayout"></a>BoxInsetLayout
 
-而不是建置的每個畫面中，輸入不同的版面配置，您也可以建立單一檢視，適用於矩形或圓形的畫面。
+您也可以建立適應矩形或圓形畫面的單一視圖, 而不是為每個螢幕類型建立不同的版面配置。
 
-這[Google 範例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)示範如何使用`BoxInsetLayout`矩形和圓形畫面上使用相同的配置。
-
-
-## <a name="wear-ui-designer"></a>穿戴式 UI 設計工具
-
-Xamarin Android Designer 支援矩形和圓形畫面：
-
-![選取 Xamarin Android Designer 中的 Android Wear 正方形畫面](screen-sizes-images/design-screen-type.png)
-
-矩形的樣式中的設計介面如下所示：
-
-![在矩形的樣式中的設計介面](screen-sizes-images/design-rect.png) 
-
-捨入樣式中的設計介面如下所示：
-
-![捨入樣式在設計介面](screen-sizes-images/design-round.png)
+此[Google 範例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)示範如何使用`BoxInsetLayout` , 在矩形和圓角畫面上使用相同的版面配置。
 
 
-## <a name="wear-simulator"></a>Wear 模擬器
+## <a name="wear-ui-designer"></a>磨損 UI 設計工具
 
-**Google 模擬器管理員**螢幕類型包含裝置定義。 您可以建立矩形和圓形的模擬器，來測試您的應用程式。
+Xamarin Android Designer 同時支援矩形和圓角畫面:
 
-![穿戴式裝置定義顯示在 Google 模擬器管理員](screen-sizes-images/emulator-devices.png)
+![在 Xamarin Android Designer 中選取 Android 磨損正方形畫面](screen-sizes-images/design-screen-type.png)
 
-矩形螢幕，模擬器會轉譯如下：
+矩形樣式的設計介面如下所示:
 
-![模擬器矩形螢幕的轉譯](screen-sizes-images/recipe-2.png) 
+![矩形樣式的設計介面](screen-sizes-images/design-rect.png) 
 
-圓螢幕，它會轉譯如下：
+Round 樣式中的設計介面如下所示:
 
-![模擬器轉譯圓螢幕](screen-sizes-images/recipe-2-round.png)
+![以圓角樣式呈現的設計介面](screen-sizes-images/design-round.png)
+
+
+## <a name="wear-simulator"></a>磨損模擬器
+
+「 **Google 模擬器管理員**」包含兩種螢幕類型的裝置定義。 您可以建立矩形和圓角模擬器來測試您的應用程式。
+
+![Google 模擬器管理員中顯示的磨損裝置定義](screen-sizes-images/emulator-devices.png)
+
+模擬器會針對矩形畫面呈現如下:
+
+![矩形螢幕的模擬器呈現](screen-sizes-images/recipe-2.png) 
+
+它會針對圓角畫面呈現如下:
+
+![圓角畫面的模擬器呈現](screen-sizes-images/recipe-2-round.png)
 
 ## <a name="video"></a>視訊
 
-[全螢幕應用程式的 Android Wear](https://www.youtube.com/watch?v=naf_WbtFAlY)從[developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw)。
+[適用于 Android 的全螢幕應用程式](https://www.youtube.com/watch?v=naf_WbtFAlY)會從[developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw)磨損。
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: d703de90378991d262a4b056b9ebc98d183e3fb8
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 6f03ae1030ef4a69b15c5e219785eee12c4e603b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658725"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656569"
 ---
 # <a name="emotion-recognition-using-the-face-api"></a>使用人臉識別 API 的表情辨識
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _人臉識別 API 的臉部表情作為輸入，映像，並傳回資料，包括跨一組影像中每個臉部表情的信心層級。這篇文章說明如何使用人臉識別 API，可辨識這些表情，若要評比 Xamarin.Forms 應用程式。_
 
@@ -181,5 +181,5 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 ## <a name="related-links"></a>相關連結
 
 - [臉部 API](/azure/cognitive-services/face/overview/)。
-- [待辦事項 Cognitive Services （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [待辦事項 Cognitive Services （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [人臉識別 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

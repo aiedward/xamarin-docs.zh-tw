@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 9a54743ed7dc3ce23c3306589c0bae1e0fd3206c
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: ed6992f946512cd88b4b2b8cfcf4c826bdd6b837
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658675"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645340"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>使用 Bing 拼字檢查 API 的拼字檢查
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Bing 拼字檢查，會執行內容的拼字檢查的文字，提供針對拼錯的字組內嵌建議。這篇文章說明如何使用 Bing 拼字檢查 REST API 來更正 Xamarin.Forms 應用程式中的拼字錯誤。_
 
@@ -156,7 +156,7 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 ![](spell-check-images/after-spell-check.png "拼字檢查之後")
 
 > [!NOTE]
-> 上述範例使用`Replace`為了簡單起見，而是跨大量文字的網域控制站可以取代不正確的 token。 API 提供`offset`應該在生產環境應用程式中用來識別正確的位置，執行更新的來源文字中的值。
+> 上述範例使用`Replace`來簡化, 但在大量的文字中, 它可能會取代錯誤的 token。 API 提供的`offset`值應該用於生產應用程式, 以識別來源文字中要執行更新的正確位置。
 
 ## <a name="summary"></a>總結
 
@@ -166,5 +166,5 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 - [Bing 拼字檢查文件](/azure/cognitive-services/bing-spell-check/)
 - [使用 RESTful Web 服務](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [待辦事項 Cognitive Services （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [待辦事項 Cognitive Services （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Bing 拼字檢查 API v7 參考](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

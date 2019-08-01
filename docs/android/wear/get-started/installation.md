@@ -1,49 +1,49 @@
 ---
-title: '安裝和設定 Wear OS onXamarin.Android '
-description: 這篇文章會逐步引導完成安裝步驟和準備您的電腦和裝置進行 Android Wear 開發所需的組態詳細資料。 根據這篇文章結束時，就會看到可運作的 Xamarin.Android Wear 安裝整合至 Visual Studio for Mac 和/或 Microsoft Visual Studio 中，而您就能開始建置第一個 Xamarin.Android Wear 應用程式。
+title: '安裝和設定磨損作業系統 onXamarin '
+description: 本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發所需的安裝步驟和設定詳細資料。 在本文結尾, 您將會有一個整合到 Visual Studio for Mac 和/或 Microsoft Visual Studio 的已運作的 Xamarin Android 磨損安裝, 而且您將可以開始建立您的第一個 Xamarin. Android 磨損應用程式。
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 0bae98a204ba3478834894d6c093259a8b2139b2
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: 0099414529027a9a6e52b79393cfa6f0f3bc24d6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827725"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647795"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
-_這篇文章會逐步引導完成安裝步驟和準備您的電腦和裝置進行 Android Wear 開發所需的組態詳細資料。根據這篇文章結束時，就會看到可運作的 Xamarin.Android Wear 安裝整合至 Visual Studio for Mac 和/或 Microsoft Visual Studio 中，而您就能開始建置第一個 Xamarin.Android Wear 應用程式。_
+_本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發所需的安裝步驟和設定詳細資料。在本文結尾, 您將會有一個整合到 Visual Studio for Mac 和/或 Microsoft Visual Studio 的已運作的 Xamarin Android 磨損安裝, 而且您將可以開始建立您的第一個 Xamarin. Android 磨損應用程式。_
 
 ## <a name="requirements"></a>需求
 
-需要下列項目來建立以 Xamarin 為基礎的 Android 穿戴式應用程式：
+若要建立以 Xamarin 為基礎的 Android 磨損應用程式, 您必須具備下列各項:
 
--   **Visual Studio 或 Visual Studio for Mac** &ndash; Visual Studio 2017 Community 或更新版本。
+-   **Visual Studio 或 Visual Studio for Mac**&ndash;需要 Visual Studio 2017 的社區或更新版本。
 
--   **Xamarin.Android** &ndash; Xamarin.Android 4.17 或更新版本必須安裝並設定與 Visual Studio 或 Visual Studio for mac。
+-   您必須安裝並設定 Visual Studio 或 Visual Studio for Mac 的**xamarin android** &ndash; xamarin. android 4.17 或更新版本。
 
--   **Android SDK** -Android SDK 5.0.1 (API 21) 或更新版本必須安裝 Android SDK 管理員透過。
+-   **Android SDK** Android SDK 5.0.1 (API 21) 或更新版本必須透過 Android SDK 管理員進行安裝。
 
--   **Java Developer Kit** &ndash; Xamarin Android 開發需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)如果您是開發的 API 層級 24 或更高 （JDK 1.8 也支援 API 層級早於 24）。
+-   **JAVA 開發人員套件**如果您要針對 API 層級24或更高版本進行開發, 則 Xamarin Android 開發需要[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (jdk 1.8 也支援早于24的 api 層級)。 &ndash;
 
-您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)如果您是開發特別針對 API 層級 23 或更早版本。
+如果您是特別針對 API 層級23或更早的版本進行開發, 您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支援 JDK 9。
 
 ## <a name="installation"></a>安裝
 
-您已安裝 Xamarin.Android 之後，執行下列步驟，以便您準備好建置及測試 Android Wear 的應用程式： 
+安裝 Xamarin 之後, 請執行下列步驟, 讓您準備好建立和測試 Android 磨損應用程式: 
 
 1.  安裝必要的 Android SDK 和工具。
 2.  設定測試裝置。
-3.  建立第一個 Android Wear 應用程式。
+3.  建立您的第一個 Android 磨損應用程式。
 
-下列各節說明這些步驟。
+下列各節將說明這些步驟。
 
 
 ### <a name="install-android-sdk-and-tools"></a>安裝 Android SDK 和工具 
@@ -52,75 +52,75 @@ _這篇文章會逐步引導完成安裝步驟和準備您的電腦和裝置進�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![如何啟動 Android SDK 管理員，在 Visual Studio 中](installation-images/vs/sdk-menu.png)
+![如何在 Visual Studio 中啟動 Android SDK 管理員](installation-images/vs/sdk-menu.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![如何啟動 Android SDK 管理員，在 Visual Studio for Mac](installation-images/xs/sdk-menu.png)
+![如何在 Visual Studio for Mac 中啟動 Android SDK 管理員](installation-images/xs/sdk-menu.png)
 
 -----
 
 
-請確定您具有下列 Android SDK 及工具安裝：
+請確定您已安裝下列 Android SDK 和工具:
 
-* Android SDK Tools v 24.0.0 或更高版本，以及
-* Android 4.4W (API20)，或
+* Android SDK Tools v 24.0.0 或更高版本, 以及
+* Android 4.4 W (API20), 或
 * Android 5.0.1 (API21) 或更高版本。
 
-如果您沒有最新的 SDK 和工具安裝、 下載必要的 SDK 工具*並*API 位元 (您可能需要捲動以找出它們有點&ndash;API 選取如下所示): 
+如果您未安裝最新的 sdk 和工具, 請下載所需的 sdk 工具*和*api 位 (您可能需要逐一滾動以尋找&ndash; api 選取專案, 如下所示): 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![啟用 Android 5.0.1 的螢幕擷取畫面範例 SDK Manager 元件](installation-images/vs/sdk-select.png)
+![啟用 Android 5.0.1 元件的範例 SDK 管理員螢幕擷取畫面](installation-images/vs/sdk-select.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![啟用 Android 4.4 和 5.0.1 的螢幕擷取畫面範例 SDK Manager 元件](installation-images/xs/sdk-select.png)
+![啟用 Android 4.4 和5.0.1 元件的範例 SDK 管理員螢幕擷取畫面](installation-images/xs/sdk-select.png)
 
 -----
 
 
 ## <a name="configuration"></a>組態
 
-您可以使用之前測試應用程式，您必須設定 Android Wear 模擬器或實際的 Android Wear 裝置。 
+在您可以使用測試應用程式之前, 您必須先設定 Android 磨損模擬器或實際的 Android 磨損裝置。 
 
 
-### <a name="android-wear-emulator"></a>Android Wear 模擬器
+### <a name="android-wear-emulator"></a>Android 磨損模擬器
 
-您可以使用 Android Wear 模擬器之前，您必須設定 Android Wear Android 虛擬裝置 (AVD) 使用**Google 模擬器管理員**:
+您必須先使用**Google 模擬器管理員**來設定 Android 磨損 Android 虛擬裝置 (AVD), 才能使用 android 磨損模擬器:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![如何啟動 Android Emulator 管理員，從 Visual Studio](installation-images/vs/emulator-menu.png)
+![如何從 Visual Studio 啟動 Android Emulator 管理員](installation-images/vs/emulator-menu.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![如何啟動 Android Emulator 管理員，從 Visual Studio for Mac](installation-images/xs/emulator-menu.png)
+![如何從 Visual Studio for Mac 啟動 Android Emulator 管理員](installation-images/xs/emulator-menu.png)
 
 -----
 
-如需有關設定 Android Wear 模擬器的詳細資訊，請參閱[偵錯的模擬器上的 Android Wear](~/android/wear/deploy-test/debug-on-emulator.md)。
+如需設定 Android 磨損模擬器的詳細資訊, 請參閱[在模擬器上進行 Android 磨損的偵錯工具](~/android/wear/deploy-test/debug-on-emulator.md)。
 
 
-### <a name="android-wear-device"></a>Android Wear 裝置
+### <a name="android-wear-device"></a>Android 磨損裝置
 
-如果您有 Android Wear 的裝置，例如 Android Wear Smartwatch 時，您可以偵錯此裝置，而不是使用模擬器上的應用程式。 如需使用在 Wear 裝置進行開發，請參閱[穿戴式裝置上偵錯](~/android/wear/deploy-test/debug-on-device.md)。
+如果您有 Android 磨損裝置 (例如 Android 磨損 Smartwatch), 您可以在此裝置上進行應用程式的偵錯工具, 而不是使用模擬器。 如需使用磨損裝置進行開發的相關資訊, 請參閱[在磨損裝置上進行 Debug](~/android/wear/deploy-test/debug-on-device.md)。
 
 
-## <a name="create-your-first-android-wear-app"></a>建立第一個 Android Wear 應用程式
+## <a name="create-your-first-android-wear-app"></a>建立您的第一個 Android 磨損應用程式
 
-請遵循[大家好，Wear](~/android/wear/get-started/hello-wear.md)指示，來建置您的第一個監看式應用程式。
+遵循[Hello, 磨損](~/android/wear/get-started/hello-wear.md)的指示來建立您的第一個監看式應用程式。
 
 
 ## <a name="packaging-your-app"></a>封裝您的應用程式
 
-Android wear 應用程式一律會使用隨附的 Android 手機應用程式散發。 
+Android 磨損應用程式一律會與隨附的 Android 手機應用程式一起散發。 
 
-當您新增 Android Wear 應用程式做為參考您主要的 Android 應用程式時它會自動假設為 Android Wear 的專案，並會為您產生所有必要的 XML 和中繼資料。 此外，它會驗證套件和版本號碼的符合，因此您可以至 Google Play 輕鬆寄送您的應用程式。 
+當您新增 Android 磨損應用程式作為主要 Android 應用程式的參考時, 會自動假設為 Android 磨損專案, 並會為您產生所有必要的 XML 和中繼資料。 此外, 它也會驗證套件和版本號碼是否相符, 讓您可以輕鬆地將應用程式寄送到 Google Play。 
 
-若要深入了解封裝 Wear 應用程式，請參閱[使用 封裝](~/android/wear/deploy-test/packaging.md)。
+若要深入瞭解封裝磨損應用程式, 請參閱[使用封裝](~/android/wear/deploy-test/packaging.md)。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SkeletonWear （範例）](https://developer.xamarin.com/samples/monodroid/wear/SkeletonWear/)
+- [SkeletonWear (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-skeletonwear)

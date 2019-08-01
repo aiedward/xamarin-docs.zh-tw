@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: b1cc043ac94fb48e3e7fe6b7ba647cfb19a4c7eb
-ms.sourcegitcommit: 450106d5f05b4473bf7f5b9100b2eaf18c9110de
+ms.openlocfilehash: 6f3427641ba4ace3b640fcc970fd33f55087a9c8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67522943"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644104"
 ---
 # <a name="foreground-services"></a>前景服務
 
-前景服務是一種特殊的繫結的服務或已啟動的服務。 有時候服務會執行使用者必須留意主動的工作，這些服務稱為_前景服務_。 前景服務的範例是提供使用者的指示進行時開車或步行的應用程式。 即使應用程式處於背景時，仍然十分重要，服務會有足夠的資源，才能正常運作，而且使用者擁有快速且方便的方式，來存取應用程式。 適用於 Android 的 app，這表示前景服務應該會收到較高的優先順序高於 「 一般 」 的服務，而且前景服務必須提供`Notification`Android 將會顯示，只要服務正在執行。
- 
-若要啟動的前景服務，應用程式就必須分派意圖，告知 Android，以啟動服務。 然後，服務必須註冊本身為前景服務與 Android。 Android 8.0 （或更高版本） 上執行的應用程式應該使用`Context.StartForegroundService`方法來啟動服務，而應該使用較舊版本的 Android 裝置執行的應用程式 `Context.StartService`
+前景服務是一種特殊類型的系結服務或已啟動的服務。 服務偶爾會執行使用者必須主動留意的工作, 這些服務就是所謂的「_前景服務_」。 前景服務的一個範例是一個應用程式, 可在駕駛或流覽時提供指示給使用者。 即使應用程式在背景中, 服務必須有足夠的資源才能正常運作, 而且使用者有快速且方便的存取應用程式的方式。 對於 Android 應用程式, 這表示前景服務應會收到高於「一般」服務的優先順序, 而且前景服務必須提供, 只要服務`Notification`正在執行, Android 就會顯示。
 
-這個 C# 擴充方法是如何啟動前景服務的範例。 在 Android 8.0 和更新版本則會使用`StartForegroundService`方法，否則為較舊`StartService`將使用的方法。  
+若要啟動前景服務, 應用程式必須分派指示 Android 啟動服務的意圖。 然後, 服務必須將其本身註冊為 Android 的前景服務。 在 android 8.0 (或更新版本) 上執行的應用程式應該`Context.StartForegroundService`使用方法來啟動服務, 而在具有舊版 Android 的裝置上執行的應用程式應該使用`Context.StartService`
+
+這個C#擴充方法是如何啟動前景服務的範例。 在 Android 8.0 和更新版本上, 它`StartForegroundService`會使用方法, 否則`StartService`將會使用較舊的方法。
 
 ```csharp
 public static void StartForegroundServiceCompat<T>(this Context context, Bundle args = null) where T : Service
@@ -43,16 +43,16 @@ public static void StartForegroundServiceCompat<T>(this Context context, Bundle 
 
 ## <a name="registering-as-a-foreground-service"></a>註冊為前景服務
 
-前景服務啟動之後，它必須將自己登錄與 Android 所叫用[ `StartForeground` ](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)。 如果服務一開始`Service.StartForegroundService`方法但不會註冊本身，則 Android 會停止服務，並為沒有回應的應用程式的旗標。
+一旦啟動前景服務, 就必須叫用來[`StartForeground`](xref:Android.App.Service.StartForeground*)向 Android 註冊其本身。 如果使用`Service.StartForegroundService`方法來啟動服務, 但未自行註冊, 則 Android 會停止服務, 並將應用程式標示為無回應。
 
-`StartForeground` 採用兩個參數，這兩者都是必要項目：
- 
-* 整數值，來識別服務應用程式中是唯一的。
-* A `Notification` Android 將會顯示的 [狀態] 列中，只要服務正在執行的物件。
+`StartForeground`採用兩個參數, 兩者都是強制的:
 
-Android 會將通知顯示在狀態列的只要服務正在執行。 該通知上方，至少會提供視覺提示給使用者的服務正在執行。 在理想情況下，應用程式或可能是某些動作的按鈕，來控制應用程式的捷徑使用者應該提供通知。 這個範例是音樂播放器&ndash;所顯示的通知可能會有按鈕來暫停/播放音樂，若要回到上一首歌曲，或跳到下一首歌曲。 
+- 在應用程式中用來識別服務的唯一整數值。
+- 只要服務正在執行, Android 就會顯示在狀態列中的物件。`Notification`
 
-此程式碼片段是以前景服務中註冊服務的範例：   
+只要服務正在執行, Android 就會在狀態列中顯示通知。 通知至少會提供視覺提示給執行服務的使用者。 在理想的情況下, 通知應為使用者提供應用程式的快捷方式, 或可能有一些動作按鈕可控制應用程式。 其中一個範例是音樂播放機&ndash; , 顯示的通知可能會有按鈕可以暫停/播放音樂、倒轉至上一首歌曲, 或跳到下一個歌曲。 
+
+此程式碼片段是將服務註冊為前景服務的範例:   
 
 ```csharp
 // This is any integer value unique to the application.
@@ -62,7 +62,7 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 {
     // Code not directly related to publishing the notification has been omitted for clarity.
     // Normally, this method would hold the code to be run when the service is started.
-    
+
     var notification = new Notification.Builder(this)
         .SetContentTitle(Resources.GetString(Resource.String.app_name))
         .SetContentText(Resources.GetString(Resource.String.notification_text))
@@ -78,31 +78,31 @@ public override StartCommandResult OnStartCommand(Intent intent, StartCommandFla
 }
 ```
 
-先前的通知會顯示狀態列通知，如下所示：
+先前的通知會顯示狀態列通知, 如下所示:
 
-![在狀態列中顯示通知的映像](foreground-services-images/foreground-services-01.png "狀態列中顯示通知的影像")
+在![狀態列中顯示通知的影像]在(foreground-services-images/foreground-services-01.png "狀態列中顯示通知的影像")
 
-此螢幕擷取畫面會顯示已展開的通知的兩個動作可讓使用者控制的服務，通知系統匣中：
+這個螢幕擷取畫面顯示通知紙匣中展開的通知, 其中包含可讓使用者控制服務的兩個動作:
 
-![顯示已展開的通知的映像](foreground-services-images/foreground-services-02.png "影像顯示展開的通知。")
+![顯示展開通知的影像](foreground-services-images/foreground-services-02.png "顯示展開通知的影像。")
 
-通知的詳細資訊位於[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)一節[Android 通知](~/android/app-fundamentals/notifications/index.md)指南。
+關於通知的詳細資訊可在[Android 通知](~/android/app-fundamentals/notifications/index.md)指南的[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)一節中取得。
 
-## <a name="unregistering-as-a-foreground-service"></a>正在移除註冊做為前景服務
+## <a name="unregistering-as-a-foreground-service"></a>取消註冊為前景服務
 
-服務可以取消列出本身為前景服務呼叫的方法來`StopForeground`。 `StopForeground` 將不會停止服務，但它會移除訊號可以向下關閉這項服務，如有必要的 Android 與通知圖示。
+服務可以藉由呼叫方法`StopForeground`, 將其本身解除清單為前景服務。 `StopForeground`將不會停止服務, 但會移除通知圖示並向 Android 發出信號, 以在必要時關閉此服務。
 
-狀態列通知隨即出現，也可以藉由傳遞移除`true`方法： 
+您也可以藉由傳遞`true`至方法來移除顯示的狀態列通知: 
 
 ```csharp
 StopForeground(true);
 ```
 
-如果服務藉由呼叫暫止`StopSelf`或`StopService`，狀態列通知將會移除。
+如果服務因呼叫`StopSelf`或`StopService`而停止, 則會移除狀態列通知。
 
 ## <a name="related-links"></a>相關連結
 
-- [Android.App.Service](https://developer.xamarin.com/api/type/Android.App.Service/)
-- [Android.App.Service.StartForeground](https://developer.xamarin.com/api/member/Android.App.Service.StartForeground/p/System.Int32/Android.App.Notification/)
+- [Android.App.Service](xref:Android.App.Service)
+- [Android.App.Service.StartForeground](xref:Android.App.Service.StartForeground*)
 - [本機通知](~/android/app-fundamentals/notifications/local-notifications.md)
-- [ForegroundServiceDemo （範例）](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/ServiceSamples/ForegroundServiceDemo/)
+- [ForegroundServiceDemo (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-servicesamples-foregroundservicedemo)

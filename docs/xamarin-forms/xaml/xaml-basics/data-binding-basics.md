@@ -7,22 +7,22 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 6d8ed5e2ec4707af2b61e299ee8274402f3a88a4
-ms.sourcegitcommit: e45f0cd6d7d4a77dba5ecaad4d7894025005a2dc
+ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67309523"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655244"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _資料繫結可讓連結，以便變更一個變更造成另兩個物件的屬性。這是相當有用的工具，而且雖然資料繫結可以定義完全以程式碼中，XAML 提供捷徑] 與 [便利性。因此，最重要的標記延伸模組，在 Xamarin.Forms 中的其中一個繫結。_
 
 ## <a name="data-bindings"></a>資料繫結
 
-資料繫結連接屬性的兩個物件，稱為*來源*並*目標*。 在程式碼，則需要兩個步驟：`BindingContext`目標物件的屬性必須設定為來源物件，而`SetBinding`方法 (通常用於搭配`Binding`類別) 必須在目標物件，該物件的屬性繫結至來源屬性上呼叫物件。
+資料繫結連接屬性的兩個物件，稱為*來源*並*目標*。 在程式碼中, 需要兩個步驟:目標`BindingContext`物件的屬性必須設定為來源物件, `SetBinding`而且必須在目標物件上呼叫方法 (通常與`Binding`類別一起使用), 才能將該物件的屬性系結至來源的屬性。目標.
 
 目標屬性必須是可繫結的屬性，表示目標物件必須衍生自`BindableObject`。 線上 Xamarin.Forms 文件會指出哪一個屬性是可繫結的屬性。 屬性`Label`這類`Text`可繫結的屬性相關聯`TextProperty`。
 
@@ -114,11 +114,11 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 - `OneWay` — 值都會從來源傳送到目標
 - `OneWayToSource` — 值會從目標傳送到來源
 - `TwoWay` — 值會傳送來源與目標之間的這兩種方式
-- `OneTime` — 資料會從來源移到目標，但只有在`BindingContext`變更
+- `OneTime`: 資料會從來源移至目標, 但只有在`BindingContext`變更時
 
 下列程式會示範常見用法之一`OneWayToSource`和`TwoWay`繫結模式。 四個`Slider`檢視要控制`Scale`， `Rotate`， `RotateX`，並`RotateY`屬性`Label`。 首先，它看起來好像這四個屬性的`Label`應該是資料繫結目標，因為每個正在設定`Slider`。 不過，`BindingContext`的`Label`可以只有一個物件，而且有四個不同的滑桿。
 
-基於這個理由，所有繫結中設定看似回溯的方式：`BindingContext`的每四個滑桿設`Label`，並繫結上設定`Value`滑桿的屬性。 藉由使用`OneWayToSource`並`TwoWay`模式，這些`Value`屬性可以設定來源屬性，也就是`Scale`， `Rotate`， `RotateX`，和`RotateY`屬性`Label`:
+基於這個理由, 所有的系結都會以看似回溯的方式設定:四個滑杆中每一個的會設定`Label`為, 而系結則設定于滑杆的`Value`屬性上。 `BindingContext` 藉由使用`OneWayToSource`並`TwoWay`模式，這些`Value`屬性可以設定來源屬性，也就是`Scale`， `Rotate`， `RotateX`，和`RotateY`屬性`Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -255,7 +255,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
 > [!NOTE]
-> 儲存格和資料格的子系的繫結來源是`ListView.ItemsSource`集合。
+> 資料格的系結來源和資料格的子系是`ListView.ItemsSource`集合。
 
 `Label`元素設定為`View`屬性`ViewCell`。 (`ViewCell.View`因為不需要標記`View`屬性是內容屬性`ViewCell`。)此標記會顯示`FriendlyName`每個屬性`NamedColor`物件：
 
@@ -410,7 +410,7 @@ namespace XamlSamples
 
 ## <a name="related-links"></a>相關連結
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 1 部分：開始使用 XAML （範例）](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第 2 部分：基本 XAML 語法 （範例）](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部分：XAML 標記延伸模組 （範例）](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

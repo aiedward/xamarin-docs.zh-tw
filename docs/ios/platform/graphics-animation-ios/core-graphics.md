@@ -1,50 +1,50 @@
 ---
-title: 在 Xamarin.iOS 中的核心圖形
-description: 這篇文章討論 Core Graphics iOS 架構。 它示範如何使用核心圖形繪製幾何、 影像和 Pdf。
+title: Xamarin 中的核心圖形
+description: 本文討論核心的圖形 iOS 架構。 它會顯示如何使用核心圖形來繪製幾何、影像和 Pdf。
 ms.prod: xamarin
 ms.assetid: 4A30F480-0723-4B8A-9049-7CEB6211304A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f3fe22e56a2c45524923a316ef28e54e5a3cc3f8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dac81a40983ea8414ec730f10c4c1f17e4d9915c
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61372387"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68653802"
 ---
-# <a name="core-graphics-in-xamarinios"></a>在 Xamarin.iOS 中的核心圖形
+# <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心圖形
 
-_這篇文章討論 Core Graphics iOS 架構。它示範如何使用核心圖形繪製幾何、 影像和 Pdf。_
+_本文討論核心的圖形 iOS 架構。它會顯示如何使用核心圖形來繪製幾何、影像和 Pdf。_
 
-包含 iOS [ *Core Graphics* ](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html)架構提供低階繪圖的支援。 這些架構也讓 UIKit 中豐富的圖形化功能。 
+iOS 包含[*核心圖形*](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html)架構, 可提供低層級的繪圖支援。 這些架構可讓您在 UIKit 中提供豐富的圖形功能。 
 
-Core 圖形是允許繪圖裝置獨立圖形的低層級的 2D 圖形架構。 所有的 2D 繪圖 UIKit 中會在內部使用核心圖形。
+核心圖形是低層級的2D 圖形架構, 可讓您繪製裝置獨立的圖形。 UIKit 中的所有2D 繪圖會在內部使用核心圖形。
 
-Core 圖形支援繪製在幾個案例包括：
+核心圖形支援數種案例中的繪圖, 包括:
 
--  [透過螢幕繪圖`UIView` ](#Drawing_in_a_UIView_Subclass) 。
--  [在記憶體中或在螢幕上繪製影像](#Drawing_Images_and_Text)。
--  建立和繪製成 PDF。
+-  透過[繪製到螢幕`UIView` ](#Drawing_in_a_UIView_Subclass) 。
+-  [在記憶體或螢幕上繪製影像](#Drawing_Images_and_Text)。
+-  建立和繪製 PDF。
 -  讀取和繪製現有的 PDF。
 
 
-## <a name="geometric-space"></a>空間幾何
+## <a name="geometric-space"></a>幾何空間
 
-此案例中，不論透過核心圖形的所有繪圖是在都完成幾何空間，這表示它適用於在抽象的點，而不是像素為單位。 您描述要繪製 geometry 和繪製狀態，例如色彩、 線條樣式等方面，核心圖形處理的所有項目轉譯為像素為單位。 這類狀態會加入至圖形內容，您可以將像是繪製器的畫布。
+不論何種情況, 使用核心圖形完成的所有繪製都是在幾何空間中完成, 這表示它是以抽象點運作, 而不是圖元。 您會根據幾何和繪圖狀態 (例如色彩、線條樣式等等) 來描述所要繪製的內容, 而核心圖形則會處理將所有專案轉譯成圖元的情況。 這種狀態會加入圖形內容中, 您可以將它視為油漆畫布。
 
-有這種方法的幾個優點：
+這種方法有幾個優點:
 
--  繪圖程式碼會變成動態的並接著可以修改在執行階段的圖形。
--  減少應用程式套件組合中的靜態映像，可以減少應用程式的大小。
--  圖形跨裝置變得更有彈性，解析的變更。
+-  繪製程式碼變成動態的, 之後就可以在執行時間修改圖形。
+-  減少應用程式套件組合中的靜態映射需求, 可以減少應用程式的大小。
+-  圖形在跨裝置的解析度變更方面變得更有彈性。
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
-## <a name="drawing-in-a-uiview-subclass"></a>UIView 子類別中的繪圖
+## <a name="drawing-in-a-uiview-subclass"></a>在 UIView 子類別中繪製
 
-每隔`UIView`具有`Draw`需要繪製時，會將由系統呼叫的方法。 若要將繪圖程式碼新增至檢視中，子類別`UIView`，並覆寫`Draw`:
+每隔`UIView`具有`Draw`需要繪製時，會將由系統呼叫的方法。 若要將繪圖程式碼加入至視圖`UIView` , 子`Draw`類別和覆寫:
 
 ```csharp
 public class TriangleView : UIView
@@ -56,23 +56,23 @@ public class TriangleView : UIView
 }
 ```
 
-繪製應該永遠不會直接呼叫。 執行的迴圈處理期間，它會呼叫系統。 第一次執行迴圈時檢視加入至檢視階層之後, 它`Draw`呼叫方法。 後續呼叫`Draw`檢視會標示為需要繪製呼叫時，會發生`SetNeedsDisplay`或`SetNeedsDisplayInRect`檢視上。
+絕對不要直接呼叫 Draw。 執行的迴圈處理期間，它會呼叫系統。 第一次執行迴圈時檢視加入至檢視階層之後, 它`Draw`呼叫方法。 後續呼叫`Draw`檢視會標示為需要繪製呼叫時，會發生`SetNeedsDisplay`或`SetNeedsDisplayInRect`檢視上。
 
-### <a name="pattern-for-graphics-code"></a>如圖形程式碼的模式
+### <a name="pattern-for-graphics-code"></a>圖形程式碼的模式
 
-中的程式碼`Draw`實作應該描述它想繪製。 繪圖程式碼會遵循的模式，它會設定一些繪圖的狀態並呼叫方法來要求它繪製。 此模式可以歸納，如下所示：
+`Draw`執行程式中的程式碼應該描述它所要繪製的內容。 繪圖程式碼會遵循其設定某些繪製狀態的模式, 並呼叫方法來要求繪製它。 此模式可以一般化, 如下所示:
 
 1. 取得圖形內容。
 
-2. 設定繪製屬性。
+2. 設定繪圖屬性。
 
-3. 從繪圖基本項目中建立一些幾何。
+3. 從繪製基本專案建立一些幾何。
 
-4. 呼叫繪製效果或筆觸的方法。
+4. 呼叫繪製或筆觸方法。
 
 ### <a name="basic-drawing-example"></a>基本繪圖範例
 
-例如，請考慮下列程式碼片段：
+例如, 請考慮下列程式碼片段:
 
 ```csharp
 //get graphics context
@@ -99,14 +99,14 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 }
 ```
 
-讓我們細分這段程式碼：
+讓我們將此程式碼細分:
 
 ```csharp
 using (CGContext g = UIGraphics.GetCurrentContext ()) {
 ...
 }
 ```
-使用下列這一行中，它會先取得用於繪製的目前圖形內容。 您可以將圖形內容做為畫布，繪圖上發生的狀況，其中包含關於繪圖，例如筆觸和填滿色彩，以及要繪製的幾何的所有狀態。
+使用這一行, 它會先取得目前用於繪製的圖形內容。 您可以將圖形內容視為繪製發生所在的畫布, 其中包含繪圖的所有狀態, 例如筆劃和填滿色彩, 以及要繪製的幾何。
 
 ```csharp
 g.SetLineWidth (10);
@@ -114,9 +114,9 @@ UIColor.Blue.SetFill ();
 UIColor.Red.SetStroke ();
 ``` 
 
-取得圖形內容之後程式碼設定一些屬性來繪製，如上所示時使用。 在此情況下，系統會設定線條的寬度，筆觸和填滿色彩。 任何後續的繪圖就會使用這些屬性，因為它們保留的圖形內容的狀態。
+取得圖形內容之後, 程式碼會設定一些要在繪製時使用的屬性, 如上所示。 在此情況下, 會設定線條寬度、筆觸和填滿色彩。 接著, 任何後續的繪圖都會使用這些屬性, 因為它們是以圖形內容的狀態進行維護。
 
-若要建立幾何的程式碼會使用`CGPath`，可讓圖形的路徑描述從直線和曲線。 在此情況下，路徑會新增線條連接點以三角形所構成的陣列。 如下所示 Core 圖形會使用檢視繪圖座標系統中，原始伺服器所在的左上方，使用右和向下的正數 y 方向的正 x direct:
+若要建立 geometry `CGPath`, 程式碼會使用, 這可讓您從線條和曲線描述圖形路徑。 在此情況下, 路徑會加入連接點陣列的線條來組成三角形。 如下所示, 核心圖形會使用座標系統來進行視圖繪製, 其中原點位於左上方, 而右 x 直接指向右邊, 而正 y 方向為向下:
 
 ```csharp
 var path = new CGPath ();
@@ -129,15 +129,15 @@ new CGPoint (220, 200)});
 path.CloseSubpath ();
 ``` 
 
-一旦建立路徑時，就會新增至圖形內容，以便呼叫`AddPath`和`DrawPath`分別可以繪製它。
+建立路徑之後, 會將它新增至圖形內容, 讓呼叫`AddPath`和`DrawPath`分別可以繪製它。
 
-產生的檢視如下所示：
+產生的視圖如下所示:
 
  ![](core-graphics-images/00-bluetriangle.png "範例輸出三角形")
 
 ## <a name="creating-gradient-fills"></a>建立漸層填滿
 
-更豐富的形式也是繪圖的可用的。 例如，核心圖形讓您建立漸層填滿和套用裁剪路徑。 若要繪製在路徑漸層填滿上一個範例中，路徑必須先設定裁剪路徑為：
+也提供更豐富的繪圖形式。 例如, 核心圖形允許建立漸層填滿和套用裁剪路徑。 若要在上一個範例的路徑內繪製漸層填滿, 首先必須將路徑設為裁剪路徑:
 
 ```csharp
 // add the path back to the graphics context so that it is the current path
@@ -146,7 +146,7 @@ g.AddPath (path);
 g.Clip ();
 ```
 
-這設定目前的路徑，如同裁剪路徑限制的路徑，例如下列程式碼中，幾何內的所有後續繪圖繪製線形漸層：
+將目前的路徑設定為裁剪路徑, 會限制路徑幾何中的所有後續繪製, 例如下列程式碼, 其繪製線性漸層:
 
 ```csharp
 // the color space determines how Core Graphics interprets color information
@@ -165,30 +165,30 @@ g.Clip ();
     }
 ```
 
-這些變更會產生漸層填滿，如下所示：
+這些變更會產生漸層填滿, 如下所示:
 
- ![](core-graphics-images/01-gradient-fill.png "使用漸層填滿的範例")
+ ![](core-graphics-images/01-gradient-fill.png "具有漸層填滿的範例")
 
 ## <a name="modifying-line-patterns"></a>修改線條模式
 
-線條的繪製屬性也可以修改核心圖形。 這包括變更線條的寬度和筆觸色彩，以及在列模式，如下列程式碼所示：
+您也可以使用核心圖形來修改線條的繪圖屬性。 這包括變更線條寬度和筆觸色彩, 以及線條模式本身, 如下列程式碼所示:
 
 ```csharp
 //use a dashed line
 g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 ```
 
-新增此程式碼，再繪製的任何作業結果長，請使用連字號之間的間距的 4 個單位的虛線的筆劃 10 單位，如下所示：
+在任何繪圖作業之前加入此程式碼會產生以10個單位長的虛線筆觸, 而虛線之間有4個間距, 如下所示:
 
- ![](core-graphics-images/02-dashed-stroke.png "虛線的筆劃加入此程式碼，再繪製的任何作業結果")
+ ![](core-graphics-images/02-dashed-stroke.png "在任何繪製作業之前加入此程式碼會產生虛線筆劃")
  
-請注意，當使用 Unified API Xamarin.iOS 中，陣列型別必須是`nfloat`，而且也必須明確轉換成 Math.PI。
+請注意, 當您在 Xamarin 中使用 Unified API 時, 陣列型別必須是`nfloat`, 而且也需要明確轉換成 Math。
 
 <a name="Drawing_Images_and_Text"/>
 
-## <a name="drawing-images-and-text"></a>繪圖影像和文字
+## <a name="drawing-images-and-text"></a>繪製影像和文字
 
-除了檢視的圖形內容中繪製路徑，Core Graphics 也支援影像和文字。 若要繪製影像，只要建立`CGImage`並將它傳遞給`DrawImage`呼叫：
+除了在視圖的圖形內容中繪製路徑, 核心圖形也支援繪製影像和文字。 若要繪製影像, 只要建立`CGImage` , 並將它傳遞`DrawImage`給呼叫即可:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -201,13 +201,13 @@ public override void Draw (CGRect rect)
 }
 ```
 
-不過，這會產生映像上下顚倒，如下所示：
+不過, 這會產生一個上下繪製的影像, 如下所示:
 
- ![](core-graphics-images/03-upside-down-monkey.png "上下顚倒映像")
+ ![](core-graphics-images/03-upside-down-monkey.png "朝下繪製的影像")
 
-原因是映像的繪圖的核心圖形原點位於左下方，而檢視的左上方的原點。 因此，若要正確地顯示映像，來源必須經過修改，這可藉由修改*目前的轉換矩陣* *(CMT)*。 CMT 定義點所在，也稱為*使用者空間*。 反轉在 y 方向 CMT 和移位所負 y 方向的邊界的高度可以翻轉影像。
+此情況的原因是影像繪圖的核心圖形原點位於左下方, 而視圖的原點在左上方。 因此, 若要正確顯示影像, 則需要修改來源, 這可以藉由修改*目前的轉換矩陣* *(cmt)* 來完成。 CMT 會定義點的上線位置, 也稱為*使用者空間*。 將 y 方向的 CMT 反轉, 並以負 y 方向的界限高度移位, 可以翻轉影像。
 
-圖形內容會提供 helper 方法來轉換 CMT。 在此情況下， `ScaleCTM` 「 翻轉 」 繪圖和`TranslateCTM`移至左上方，如下所示：
+圖形內容具有 helper 方法, 可轉換 CMT。 在此情況下`ScaleCTM` , 「翻轉」繪圖並`TranslateCTM`將其移至左上方, 如下所示:
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -223,16 +223,16 @@ public override void Draw (CGRect rect)
 }   
 ```
 
-產生的映像接著會顯示垂直：
+產生的影像就會顯示為直立的:
 
- ![](core-graphics-images/04-upright-monkey.png "範例映像顯示垂直")
+ ![](core-graphics-images/04-upright-monkey.png "以垂直顯示的範例影像")
 
 > [!IMPORTANT]
-> 圖形內容的變更套用至所有後續的繪圖作業。 因此，CMT 轉換時，它會影響任何其他繪圖。 比方說，如果您可以繪製三角形 CMT 轉換之後，它會出現上下顛倒。
+> 圖形內容的變更會套用至所有後續的繪製作業。 因此, 轉換 CMT 時, 它會影響任何其他繪圖。 例如, 如果您在 [CMT] 轉換後繪製三角形, 它會顯示為 [倒置]。
 
-### <a name="adding-text-to-the-image"></a>將文字新增至映像
+### <a name="adding-text-to-the-image"></a>將文字新增至影像
 
-為使用路徑和映像，將文字繪製為核心圖形牽涉到設定某些圖形的狀態，並呼叫繪製方法的相同基本模式。 在案例文字，來顯示文字的方法是`ShowText`。 新增至繪圖範例映像時，下列程式碼就會繪製某些使用核心圖形的文字：
+如同路徑和影像, 使用核心圖形繪製文字牽涉到設定一些圖形狀態和呼叫方法來繪製的基本模式。 在文字的案例中, 顯示文字的方法是`ShowText`。 新增至影像繪圖範例時, 下列程式碼會使用核心圖形來繪製一些文字:
 
 ```csharp
 public override void Draw (RectangleF rect)
@@ -260,31 +260,31 @@ public override void Draw (RectangleF rect)
 }
 ```
 
-如您所見，將文字繪製的圖形狀態是類似於繪製幾何。 進行文字繪製不過、 繪圖模式和字型的文字也會套用。 在此情況下，陰影也會套用，雖然套用陰影的運作方式繪製的路徑相同。
+如您所見, 設定文字繪製的圖形狀態與繪製幾何類似。 不過, 文字繪製模式和字型也會一併套用。 在此情況下, 也會套用陰影, 雖然套用陰影的運作方式與路徑繪製相同。
 
-產生的文字會顯示與映像，如下所示：
+產生的文字會與影像一起顯示, 如下所示:
 
- ![](core-graphics-images/05-text-on-image.png "產生的文字會顯示與映像")
+ ![](core-graphics-images/05-text-on-image.png "產生的文字會與影像一起顯示")
 
-## <a name="memory-backed-images"></a>記憶體為基礎的映像
+## <a name="memory-backed-images"></a>記憶體支援的映射
 
-除了檢視的圖形內容的繪圖，繪製記憶體的核心圖形支援備份映像，也就繪製到螢幕外。 這種方式需要：
+除了繪製至視圖的圖形內容, 核心圖形也支援繪製記憶體備份的影像, 也稱為在螢幕上繪圖。 這麼做需要:
 
--  建立圖形內容會受到在記憶體中點陣圖
--  設定繪圖的狀態並發出繪製命令
--  從內容取得的映像
+-  建立由記憶體中點陣圖所支援的圖形內容
+-  設定繪製狀態和發出繪製命令
+-  從內容取得影像
 -  移除內容
 
 
-不同於`Draw`方法，其中內容會提供檢視中，在此情況下您建立的內容中有兩種：
+不同于`Draw`方法, 其中的內容是由視圖提供, 在此情況下, 您可以使用下列兩種方式之一來建立內容:
 
-1. 藉由呼叫`UIGraphics.BeginImageContext`(或`BeginImageContextWithOptions`)
+1. 藉由`UIGraphics.BeginImageContext`呼叫 ( `BeginImageContextWithOptions`或)
 
-2. 藉由建立新的 `CGBitmapContextInstance`
+2. 藉由建立新的`CGBitmapContextInstance`
 
- `CGBitmapContextInstance` 您正在直接使用的映像位元，這類情況下，您會在其中使用自訂映像操作演算法時很有用。 在其他情況下，您應該使用`BeginImageContext`或`BeginImageContextWithOptions`。
+ `CGBitmapContextInstance`當您直接使用影像位時 (例如, 在使用自訂影像操作演算法的情況下), 相當有用。 在所有其他情況下, 您應該`BeginImageContext`使用`BeginImageContextWithOptions`或。
 
-映像內容之後，加入 繪圖程式碼就如同在`UIView`子類別。 例如，稍早用來繪製三角形的程式碼範例可用來繪製的映像，而不是在記憶體中`UIView`，如下所示：
+一旦擁有影像內容, 加入繪圖程式碼就像它在子`UIView`類別中一樣。 例如, 稍早用來繪製三角形的程式碼範例, 可以用來繪製至記憶體中的影像`UIView`, 而不是中的, 如下所示:
 
 ```csharp
 UIImage DrawTriangle ()
@@ -324,7 +324,7 @@ UIImage DrawTriangle ()
 }
 ```
 
-繪圖，以記憶體為基礎的點陣圖的常見用法是擷取映像從任何`UIView`。 例如，下列程式碼呈現檢視的圖層，以點陣圖內容，並建立`UIImage`從它：
+繪製到記憶體支援點陣圖的常見用法是從任何`UIView`一個抓取影像。 例如, 下列程式碼會將視圖的圖層轉譯為點陣圖內容, 並`UIImage`從它建立:
 
 ```csharp
 UIGraphics.BeginImageContext (cellView.Frame.Size);
@@ -339,13 +339,13 @@ UIGraphics.EndImageContext ();
 
 ## <a name="drawing-pdfs"></a>繪製 Pdf
 
-除了映像，核心圖形支援 PDF 繪圖。 例如映像，您可以呈現在記憶體中的 PDF，以及讀取以轉譯 PDF `UIView`。
+除了影像, 核心圖形也支援 PDF 繪圖。 就像影像一樣, 您可以在記憶體中轉譯 PDF, 以及讀取 PDF 以在中`UIView`呈現。
 
-### <a name="pdf-in-a-uiview"></a>在 UIView PDF
+### <a name="pdf-in-a-uiview"></a>UIView 中的 PDF
 
-Core 圖形也支援從檔案讀取的 PDF 和轉譯檢視使用`CGPDFDocument`類別。 `CGPDFDocument`類別代表在程式碼中的 PDF，並可用來讀取和繪製頁面。
+核心圖形也支援從檔案讀取 PDF, 並使用`CGPDFDocument`類別在視圖中呈現。 `CGPDFDocument`類別代表程式碼中的 PDF, 可以用來讀取和繪製頁面。
 
-例如，下列程式碼中`UIView`子類別會從檔案讀取 PDF `CGPDFDocument`:
+例如, 子`UIView`類別中的下列程式碼會將檔案中的 PDF 讀取`CGPDFDocument`至:
 
 ```csharp
 public class PDFView : UIView
@@ -365,7 +365,7 @@ public class PDFView : UIView
 }
 ```
 
-`Draw`方法可用`CGPDFDocument`讀取到頁面`CGPDFPage`轉譯藉由呼叫`DrawPDFPage`，如下所示：
+方法接著可以`CGPDFDocument` `DrawPDFPage`使用`CGPDFPage`來讀取頁面, 並藉由呼叫來呈現它, 如下所示: `Draw`
 
 ```csharp
 public override void Draw (CGRect rect)
@@ -395,9 +395,9 @@ public override void Draw (CGRect rect)
 
 ### <a name="memory-backed-pdf"></a>記憶體支援的 PDF
 
-您需要的記憶體中 PDF，藉由呼叫建立 PDF 內容`BeginPDFContext`。 繪製成 PDF 是細微的頁面。 藉由呼叫啟動每一頁`BeginPDFPage`並完成藉由呼叫`EndPDFContent`，圖形程式碼之間。 此外，因為映像的繪圖，與記憶體支援繪圖會使用 PDF 左下方，可以藉由只修改 CMT 佔用 origin 例如映像中。
+對於記憶體中的 PDF, 您需要藉由呼叫`BeginPDFContext`來建立 pdf 內容。 繪製到 PDF 是細微的頁面。 每個頁面都是藉`BeginPDFPage`由呼叫來啟動`EndPDFContent`, 並以中的圖形程式碼來完成。 此外, 與影像繪圖一樣, 記憶體支援的 PDF 繪圖會使用左下方的原點, 只要像使用影像一樣修改 CMT 即可。
 
-下列程式碼示範如何繪製文字至 PDF:
+下列程式碼示範如何將文字繪製至 PDF:
 
 ```csharp
 //data buffer to hold the PDF
@@ -420,16 +420,16 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 UIGraphics.EndPDFContent ();
 ```
 
-產生的文字繪製成 PDF，然後包含在`NSData`，可供儲存、 上傳、 電子郵件等。
+產生的文字會繪製到 PDF, 然後包含在`NSData`可以儲存、上傳、以電子郵件傳送等的。
 
 
 ## <a name="summary"></a>總結
 
-在本文中我們探討了透過提供的圖形功能*Core Graphics* framework。 我們了解如何使用核心圖形的內容中繪製幾何、 影像和 Pdf`UIView,`以及以記憶體為基礎的圖形內容。
+在本文中, 我們探討了透過*核心圖形*架構提供的圖形功能。 我們已瞭解如何使用核心圖形, 在的內容中繪製幾何、影像和 pdf, `UIView,`以及記憶體支援的圖形內容。
 
 ## <a name="related-links"></a>相關連結
 
-- [Core 圖形範例](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
+- [核心圖形範例](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)
 - [圖形和動畫逐步解說](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [Core 動畫](~/ios/platform/graphics-animation-ios/core-animation.md)
-- [Core 動畫配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)
+- [核心動畫配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

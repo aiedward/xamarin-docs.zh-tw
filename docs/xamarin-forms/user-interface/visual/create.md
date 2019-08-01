@@ -1,45 +1,45 @@
 ---
-title: 建立 Xamarin.Forms 視覺效果轉譯器
-description: 建立 Xamarin.Forms 選擇性地套用至 VisualElement 物件，而不需要子類別 Xamarin.Forms 檢視的視覺效果。
+title: 建立 Xamarin. Forms 視覺效果轉譯器
+description: 建立可選擇性套用至 VisualElement 物件的 Xamarin 視覺效果, 而不需要將 Xamarin. 表單檢視設為子類別。
 ms.prod: xamarin
 ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: a11c2045fa6119d0689834c35794bc8913c80bd6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 71836021b29094911f9d1ad43639ed103fa18b73
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023699"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652825"
 ---
-# <a name="create-a-xamarinforms-visual-renderer"></a>建立 Xamarin.Forms 視覺效果轉譯器
+# <a name="create-a-xamarinforms-visual-renderer"></a>建立 Xamarin. Forms 視覺效果轉譯器
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VisualDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
-Xamarin.Forms 的視覺效果可讓系統建立，並選擇性地套用到的轉譯器[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)物件，而不需要子類別 Xamarin.Forms 檢視。 指定的轉譯器`IVisual`一部分的型別，其`ExportRendererAttribute`，將會用來呈現檢視，而不是預設的轉譯器中選擇。 在轉譯器選取項目時，`Visual`屬性檢視的檢查，且包含在轉譯器選取項目程序。
+[Xamarin] 視覺效果可讓轉譯器建立並選擇性地[`VisualElement`](xref:Xamarin.Forms.VisualElement)套用至物件, 而不需要將 Xamarin. 表單檢視設為子類別。 指定`IVisual`類型做為其`ExportRendererAttribute`一部分的轉譯器將用來轉譯加入宣告的視圖, 而不是預設轉譯器。 在轉譯器選取項目時，`Visual`屬性檢視的檢查，且包含在轉譯器選取項目程序。
 
 > [!IMPORTANT]
-> 目前[ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)呈現的檢視，但這會在未來版本中變更之後，就無法變更屬性。
+> 目前無法在呈現視圖之後變更[屬性,但未來的版本將會變更。`Visual`](xref:Xamarin.Forms.VisualElement.Visual)
 
-建立及使用 Xamarin.Forms 視覺效果轉譯器的程序是：
+建立和使用 Xamarin 的程式如下:
 
-1. 建立所需的檢視的平台轉譯器。 如需詳細資訊，請參閱 <<c0> [ 建立轉譯器](#create-platform-renderers)。
-1. 建立衍生自類型`IVisual`。 如需詳細資訊，請參閱 <<c0> [ 建立 IVisual 類型](#create-an-ivisual-type)。
-1. 註冊`IVisual`一部分的型別`ExportRendererAttribute`裝飾的轉譯器。 如需詳細資訊，請參閱 <<c0> [ 註冊 IVisual 類型](#register-the-ivisual-type)。
-1. 取用 Visual 轉譯器設定[ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)若要在檢視上的屬性`IVisual`名稱。 如需詳細資訊，請參閱 <<c0> [ 取用 Visual 轉譯器](#consume-the-visual-renderer)。
-1. [選用]註冊的名稱`IVisual`型別。 如需詳細資訊，請參閱 <<c0> [ 註冊 IVisual 類型的名稱](#register-a-name-for-the-ivisual-type)。
+1. 建立必要視圖的平臺轉譯器。 如需詳細資訊, 請參閱[建立](#create-platform-renderers)轉譯器。
+1. 建立衍生自`IVisual`的類型。 如需詳細資訊, 請參閱[建立 IVisual 類型](#create-an-ivisual-type)。
+1. `IVisual` 將`ExportRendererAttribute`類型註冊為裝飾轉譯器之的一部分。 如需詳細資訊, 請參閱[註冊 IVisual 類型](#register-the-ivisual-type)。
+1. 將視圖上的[`Visual`](xref:Xamarin.Forms.VisualElement.Visual)屬性設定`IVisual`為名稱, 以取用視覺效果轉譯器。 如需詳細資訊, 請參閱[使用視覺效果](#consume-the-visual-renderer)轉譯器。
+1. 選擇性註冊`IVisual`類型的名稱。 如需詳細資訊, 請參閱[註冊 IVisual 類型的名稱](#register-a-name-for-the-ivisual-type)。
 
-## <a name="create-platform-renderers"></a>建立平台的轉譯器
+## <a name="create-platform-renderers"></a>建立平臺轉譯器
 
-如需建立轉譯器類別的詳細資訊，請參閱[自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。 不過請注意 Xamarin.Forms 視覺效果轉譯器套用至檢視，而不需要子類別的檢視。
+如需建立轉譯器類別的詳細資訊, 請參閱[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器。 不過, 請注意, [Xamarin] 視覺效果轉譯器會套用至視圖, 而不需要將此視圖設為子類別。
 
-此處概述的轉譯器類別會實作自訂[ `Button` ](xref:Xamarin.Forms.Button)會顯示其含陰影的文字。
+這裡所述的轉譯器類別會[`Button`](xref:Xamarin.Forms.Button)執行自訂, 它會以陰影顯示其文字。
 
 ### <a name="ios"></a>iOS
 
-下列程式碼範例顯示適用於 iOS 的按鈕轉譯器：
+下列程式碼範例顯示 iOS 的按鈕轉譯器:
 
 ```csharp
 public class CustomButtonRenderer : ButtonRenderer
@@ -64,7 +64,7 @@ public class CustomButtonRenderer : ButtonRenderer
 
 ### <a name="android"></a>Android
 
-下列程式碼範例顯示適用於 Android 的按鈕轉譯器：
+下列程式碼範例顯示適用于 Android 的按鈕轉譯器:
 
 ```csharp
 public class CustomButtonRenderer : Xamarin.Forms.Platform.Android.AppCompat.ButtonRenderer
@@ -92,7 +92,7 @@ public class CustomButtonRenderer : Xamarin.Forms.Platform.Android.AppCompat.But
 
 ## <a name="create-an-ivisual-type"></a>建立 IVisual 類型
 
-在您跨平台程式庫中，建立衍生自類型`IVisual`:
+在跨平臺程式庫中, 建立一個衍生自`IVisual`的類型:
 
 ```csharp
 public class CustomVisual : IVisual
@@ -100,11 +100,11 @@ public class CustomVisual : IVisual
 }
 ```
 
-`CustomVisual`型別可以再向轉譯器類別，允許[ `Button` ](xref:Xamarin.Forms.Button)選擇使用轉譯器的物件。
+然後, 可以針對轉譯器類別註冊[`Button`](xref:Xamarin.Forms.Button) 類型,允許物件使用轉譯器加入宣告。`CustomVisual`
 
 ## <a name="register-the-ivisual-type"></a>註冊 IVisual 類型
 
-在平台專案中，裝飾的轉譯器類別`ExportRendererAttribute`:
+在平臺專案中, 使用`ExportRendererAttribute`來裝飾轉譯器類別:
 
 ```csharp
 [assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer), new[] { typeof(CustomVisual) })]
@@ -117,11 +117,11 @@ public class CustomButtonRenderer : ButtonRenderer
 }
 ```
 
-在此範例中，`ExportRendererAttribute`指定`CustomButtonRenderer`類別將用來呈現耗用[ `Button` ](xref:Xamarin.Forms.Button)物件，與`IVisual`類型註冊為第三個引數。 指定的轉譯器`IVisual`一部分的型別，其`ExportRendererAttribute`，將會用來呈現檢視，而不是預設的轉譯器中選擇。
+在此範例中, `ExportRendererAttribute`會指定`CustomButtonRenderer`將使用類別來呈現[`Button`](xref:Xamarin.Forms.Button)使用中的物件, 並將`IVisual`類型註冊為第三個引數。 指定`IVisual`類型做為其`ExportRendererAttribute`一部分的轉譯器將用來轉譯加入宣告的視圖, 而不是預設轉譯器。
 
-## <a name="consume-the-visual-renderer"></a>取用 Visual 轉譯器
+## <a name="consume-the-visual-renderer"></a>使用視覺效果轉譯器
 
-A [ `Button` ](xref:Xamarin.Forms.Button)物件可以選擇使用轉譯器類別，藉由設定其[ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)屬性設`Custom`:
+物件可以藉由將其[`Visual`](xref:Xamarin.Forms.VisualElement.Visual)屬性設為, `Custom`選擇使用轉譯器類別: [`Button`](xref:Xamarin.Forms.Button)
 
 ```xaml
 <Button Visual="Custom"
@@ -132,7 +132,7 @@ A [ `Button` ](xref:Xamarin.Forms.Button)物件可以選擇使用轉譯器類別
 ```
 
 > [!NOTE]
-> 在 XAML 中，型別轉換子不需要包含在"Visual"後的置詞[ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)屬性值。 不過，也可以指定完整型別名稱。
+> 在 XAML 中, 類型轉換器不需要在[`Visual`](xref:Xamarin.Forms.VisualElement.Visual)屬性值中包含 "Visual" 尾碼。 不過, 您也可以指定完整的類型名稱。
 
 對等的 C# 程式碼是：
 
@@ -141,23 +141,23 @@ Button button = new Button { Text = "CUSTOM BUTTON", ... };
 button.Visual = new CustomVisual();
 ```
 
-在轉譯器選取項目時， [ `Visual` ](xref:Xamarin.Forms.VisualElement.Visual)屬性[ `Button` ](xref:Xamarin.Forms.Button)是檢查，而且包含在轉譯器選取程序。 如果轉譯器不位於項目，則將使用 Xamarin.Forms 預設轉譯器。
+在轉譯器選取時間, [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) [`Button`](xref:Xamarin.Forms.Button)會檢查的屬性, 並將其包含在轉譯器選取進程中。 如果找不到轉譯器, 則會使用 [Xamarin] 預設轉譯器。
 
-下列螢幕擷取畫面顯示轉譯[ `Button` ](xref:Xamarin.Forms.Button)，其中顯示其含陰影的文字：
+下列螢幕擷取畫面顯示呈現[`Button`](xref:Xamarin.Forms.Button)的, 它會以陰影顯示其文字:
 
-[![使用陰影的文字、 iOS 和 Android 上的自訂按鈕的螢幕擷取畫面](material-visual-images/custom-button.png "陰影的文字與按鈕")](material-visual-images/custom-button-large.png#lightbox)
+[![在 iOS 和 Android 上具有陰影文字之自訂按鈕的螢幕擷取畫面](material-visual-images/custom-button.png "具有陰影文字的按鈕")](material-visual-images/custom-button-large.png#lightbox)
 
 ## <a name="register-a-name-for-the-ivisual-type"></a>註冊 IVisual 類型的名稱
 
-[ `VisualAttribute` ](xref:Xamarin.Forms.VisualAttribute)可用來選擇性地註冊不同的名稱`IVisual`型別。 這種方法可以用來解決命名衝突之間不同的視覺化程式庫，或在您只想要視覺效果，請參閱的情況下，由其型別名稱不同的名稱。
+可以用來選擇性地為`IVisual`類型註冊不同的名稱。 [`VisualAttribute`](xref:Xamarin.Forms.VisualAttribute) 這種方法可用來解決不同視覺程式庫之間的命名衝突, 或在您只想要以不同于其類型名稱的名稱來參考視覺效果的情況下使用。
 
-[ `VisualAttribute` ](xref:Xamarin.Forms.VisualAttribute)應該在任一個的跨平台程式庫或平台專案中的組件層級定義：
+[`VisualAttribute`](xref:Xamarin.Forms.VisualAttribute)應定義于跨平臺程式庫或平臺專案中的元件層級:
 
 ```csharp
 [assembly: Visual("MyVisual", typeof(CustomVisual))]
 ```
 
-`IVisual`類型可以使用透過已註冊的名稱：
+然後`IVisual` , 可以透過其註冊的名稱取用類型:
 
 ```xaml
 <Button Visual="MyVisual"
@@ -165,10 +165,10 @@ button.Visual = new CustomVisual();
 ```
 
 > [!NOTE]
-> 取用時的視覺效果，透過已註冊的名稱，則必須包含任何"Visual"後置詞。
+> 透過其註冊的名稱來取用視覺效果時, 必須包含任何 "Visual" 尾碼。
 
 ## <a name="related-links"></a>相關連結
 
-- [材質的視覺效果 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/VisualDemos/)
-- [Xamarin.Forms 資料視覺效果](material-visual.md)
+- [材質視覺效果 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+- [Xamarin. 表單材質視覺效果](material-visual.md)
 - [自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

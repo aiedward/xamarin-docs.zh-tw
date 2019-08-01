@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 671abb0f61a5582a99165aa16c6b99db2ee8b1ee
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 1aacd9a29ca13335d14f66175b2d2a4ccb19c9dc
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512872"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655960"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 裝置類別
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 [ `Device` ](xref:Xamarin.Forms.Device)類別包含多種屬性和方法，以協助開發人員自訂版面配置和每個平台為基礎的功能。
 
-除了方法與屬性，以在特定硬體類型和大小，目標程式碼`Device`類別包含可用來從背景執行緒的 UI 控制項進行互動的方法。 如需詳細資訊，請參閱 <<c0> [ 從背景執行緒 UI 互動](#interact-with-the-ui-from-background-threads)。
+除了在特定硬體類型和大小以程式碼為目標的`Device`方法和屬性之外, 類別還包含可用來從背景執行緒與 UI 控制項互動的方法。 如需詳細資訊, 請參閱[從背景執行緒與 UI 互動](#interact-with-the-ui-from-background-threads)。
 
-## <a name="providing-platform-specific-values"></a>提供平台專屬值
+## <a name="providing-platform-specific-values"></a>提供平臺特定的值
 
 在 Xamarin.Forms 2.3.4 之前, 的平台執行應用程式無法取得 dimension&gt [ `Device.OS` ](xref:Xamarin.Forms.Device.OS)屬性，並比較它[ `TargetPlatform.iOS` ](xref:Xamarin.Forms.TargetPlatform.iOS)， [`TargetPlatform.Android` ](xref:Xamarin.Forms.TargetPlatform.Android)， [ `TargetPlatform.WinPhone` ](xref:Xamarin.Forms.TargetPlatform.WinPhone)，和[ `TargetPlatform.Windows` ](xref:Xamarin.Forms.TargetPlatform.Windows)列舉值。 同樣地，其中[ `Device.OnPlatform` ](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action))多載可用來提供控制項的平台特定值。
 
@@ -180,24 +180,24 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 如果內部計時器的程式碼互動的使用者介面 (例如設定的文字`Label`或顯示警示) 應該在`BeginInvokeOnMainThread`運算式 （請參閱下文）。
 
-## <a name="interact-with-the-ui-from-background-threads"></a>與從背景執行緒 UI 互動
+## <a name="interact-with-the-ui-from-background-threads"></a>從背景執行緒與 UI 互動
 
-大部分的作業系統，包括 iOS、 Android 和通用 Windows 平台，會使用單一執行緒模型牽涉到的使用者介面的程式碼。 通常都會呼叫此執行緒*主執行緒*或*UI 執行緒*。 此模型的結果是所有的程式碼存取使用者介面項目必須在應用程式的主執行緒上執行。
+大部分的作業系統 (包括 iOS、Android 和通用 Windows 平臺) 都會針對涉及使用者介面的程式碼使用單一執行緒模型。 這個執行緒通常稱為*主要執行緒*或*UI 執行緒*。 此模型的結果是, 存取使用者介面專案的所有程式碼都必須在應用程式的主執行緒上執行。
 
-有時，應用程式會使用背景執行緒來執行可能長時間執行的作業，例如從 web 服務擷取資料。 如果在背景執行緒上執行的程式碼需要存取使用者介面項目，必須在主執行緒上執行該程式碼。
+應用程式有時會使用背景執行緒來執行可能長時間執行的作業, 例如從 web 服務抓取資料。 如果在背景執行緒上執行的程式碼需要存取使用者介面元素, 則必須在主執行緒上執行該程式碼。
 
-`Device`類別包含下列`static`方法可用來與使用者互動的介面從背景執行緒的項目：
+類別包含下列`static`方法, 可以用來與背景執行緒中的使用者介面專案互動: `Device`
 
-| 方法 | 引數 | Returns | 用途 |
+| 方法 | 引數 | 傳回值 | 用途 |
 |---|---|---|---|
-| `BeginInvokeOnMainThread` | `Action` | `void` | 叫用`Action`主執行緒，而不會等到它完成。 |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 叫用`Func<T>`主執行緒，然後等候它完成。 |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | 叫用`Action`主執行緒，然後等候它完成。 |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 叫用`Func<Task<T>>`主執行緒，然後等候它完成。 |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 叫用`Func<Task>`主執行緒，然後等候它完成。 |
-| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 傳回`SynchronizationContext`主執行緒。 |
+| `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主執行緒上叫用, 並不等待它完成。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主`Func<T>`執行緒上叫用, 並等候它完成。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | `Action`在主執行緒上叫用, 並等候它完成。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 在主`Func<Task<T>>`執行緒上叫用, 並等候它完成。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 在主`Func<Task>`執行緒上叫用, 並等候它完成。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | `SynchronizationContext`傳回主執行緒的。 |
 
-下列程式碼顯示使用範例`BeginInvokeOnMainThread`方法：
+下列程式碼顯示使用`BeginInvokeOnMainThread`方法的範例:
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>
@@ -208,6 +208,6 @@ Device.BeginInvokeOnMainThread (() =>
 
 ## <a name="related-links"></a>相關連結
 
-- [裝置範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithDevice/)
-- [設定樣式範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithStyles/)
+- [裝置範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+- [設定樣式範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [裝置](xref:Xamarin.Forms.Device)

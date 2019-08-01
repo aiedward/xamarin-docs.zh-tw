@@ -1,67 +1,65 @@
 ---
-title: 位置服務
-description: 本指南介紹 Android 應用程式中的位置感知，並說明如何取得 Google 的位置服務 API 中使用 Android 的位置服務 API，以及可用的積的位置提供者的使用者的位置。
+title: Android 上的位置服務
+description: 本指南介紹 Android 應用程式中的位置感知, 並說明如何使用 Android 位置服務 API 來取得使用者的位置, 以及搭配 Google 位置服務 API 提供的融合式位置提供者。
 ms.prod: xamarin
 ms.assetid: 0008682B-6CEF-0C1D-3200-56ECF58F5D3C
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 76f98f1e660f22ec25c48407f2e87cec60ff12ef
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: b44bb52dc69aae1d3d058a1eae7c3be13ec5dc53
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827677"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643344"
 ---
-# <a name="location-services"></a>位置服務
+# <a name="location-services-on-android"></a>Android 上的位置服務
 
-_本指南介紹 Android 應用程式中的位置感知，並說明如何取得 Google 的位置服務 API 中使用 Android 的位置服務 API，以及可用的積的位置提供者的使用者的位置。_
+_本指南介紹 Android 應用程式中的位置感知, 並說明如何使用 Android 位置服務 API 來取得使用者的位置, 以及搭配 Google 位置服務 API 提供的融合式位置提供者。_
 
-## <a name="location-services-overview"></a>位置服務概觀
+Android 可讓您存取各種不同的位置技術, 例如儲存格塔式位置、Wi-fi 和 GPS。 每個位置技術的詳細資料都是透過*位置提供者*來抽象化, 讓應用程式以相同的方式取得位置, 而不論所使用的提供者為何。 本指南介紹「融合的位置提供者」, 這是 Google Play Services 的一部分, 可根據可用的提供者和裝置的使用方式, 以智慧方式判斷取得裝置位置的最佳方法。 Android 位置服務 API, 並顯示如何使用`LocationManager`來與系統位置服務通訊。 本指南的第二個部分會使用`LocationManager`探索 ANDROID 定位服務 API。
 
-Android 提供各種不同的位置技術，例如儲存格塔台位置、 Wi-fi 和 GPS 的存取。 每個位置技術的詳細資料會透過抽象化*位置提供者*，讓應用程式取得相同的方式，不論使用的提供者的位置。 本指南介紹積的位置提供者，Google Play 服務，以智慧方式決定若要取得根據哪些提供者可以使用，以及如何使用裝置的裝置的位置，最好的一部分。 Android 的位置服務 API，並說明如何彼此通訊的系統位置服務使用`LocationManager`。 本指南的第二部分探討 Android 位置服務 API 使用`LocationManager`。
- 
-一般的經驗法則，應用程式應該偏好使用積的位置提供者，切換回舊版 Android 位置服務 API 只在必要時。
+根據一般經驗法則, 應用程式應該偏好使用已融合的位置提供者, 只有在必要時才回復較舊的 Android 位置服務 API。
 
-## <a name="location-fundamentals"></a>位置的基本概念
+## <a name="location-fundamentals"></a>位置基本概念
 
-在 Android 中，不論您選擇使用位置資料的哪些 API 的幾個概念維持不變。 本節將介紹位置提供者和位置與相關的權限。
+在 Android 中, 不論您選擇使用哪個 API 來處理位置資料, 有幾個概念保持不變。 本節介紹位置提供者和與位置相關的許可權。
 
 ### <a name="location-providers"></a>位置提供者
 
-數種技術是在內部用來找出使用者的位置。 類型取決於所使用的硬體*位置提供者*選取收集資料的作業。 Android 會使用三個位置提供者：
+在內部使用數種技術來找出使用者的位置。 使用的硬體取決於為收集資料所選取的*位置提供者*類型。 Android 使用三個位置提供者:
 
--   **GPS 的提供者** &ndash; GPS 提供最精確的位置、 使用的最大的電力，及最適合戶外活動。 此提供者會使用 GPS 以及輔助的 GPS 的組合 ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS))，它會傳回行動電話塔台所收集的 GPS 資料。
+-   **GPS 提供者**&ndash; GPS 提供最精確的位置、使用最多的功能, 而且在戶外的效果最佳。 此提供者會使用 GPS 和輔助 GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)) 的組合, 這會傳回行動電話塔所收集的 GPS 資料。
 
--   **網路提供者**&ndash;提供的 WiFi 和行動數據使用的資料，包括收集的資料格 towers aGPS 資料組合。 它使用較少的電量比 GPS 提供者，但會傳回位置資料的各種不同的精確度。
+-   **網路提供者**&ndash;提供 WiFi 和行動電話資料的組合, 包括資料格塔所收集的 aGPS 資料。 其使用的功能比 GPS 提供者少, 但會傳回不同精確度的位置資料。
 
--   **被動的提供者**&ndash;使用由其他應用程式或服務提供者來產生應用程式中的位置資料的 「 承載 」 選項。 這是較不可靠但省電選項適合不需要運作的常數的位置更新的應用程式。
+-   **被動提供者**&ndash;使用其他應用程式或服務所要求的提供者, 在應用程式中產生位置資料的「可攜帶」選項。 這是較不可靠但省電選項, 適用于不需要常數位置更新才能正常執行的應用程式。
 
-位置提供者不一定可用。 比方說，我們可能會想要使用我們的應用程式的 GPS，但 GPS 可能已關閉，在 [設定]，或裝置可能沒有 GPS 完全。 如果找不到特定的提供者，就必須選擇該提供者可能會傳回`null`。
+位置提供者不一定可供使用。 例如, 我們可能會想要針對我們的應用程式使用 GPS, 但 GPS 可能會在 [設定] 中關閉, 或者裝置可能完全沒有 GPS。 如果特定提供者無法使用, 則選擇該提供者可能`null`會傳回。
 
-### <a name="location-permissions"></a>位置的權限
+### <a name="location-permissions"></a>位置許可權
 
-位置感知的應用程式需要存取裝置的硬體感應器接收 GPS、 Wi-fi 及行動數據。 存取控制是透過應用程式的 Android 資訊清單中的適當權限。
-有兩個權限&ndash;根據您的應用程式需求和您選擇的 API，您會想要允許其中一個：
+有位置感知的應用程式需要存取裝置的硬體感應器, 才能接收 GPS、Wi-fi 和行動資料。 存取權是透過應用程式的 Android 資訊清單中的適當許可權來控制。
+視您的應用程式&ndash;需求和您選擇的 API 而定, 有兩個可用的許可權, 您會想要允許一個:
 
--   `ACCESS_FINE_LOCATION` &ndash; 允許 GPS 應用程式存取。
-    所需*GPS 提供者*並*被動的提供者*選項 (*被動的提供者需要存取另一個應用程式或服務所收集的 GPS 資料的權限*)。 選擇性的權限*網路提供者*。
+-   `ACCESS_FINE_LOCATION`&ndash;允許應用程式存取 GPS。
+    *GPS 提供者*和*被動提供者*選項的必要項 (*被動提供者需要許可權才能存取其他應用程式或服務所收集的 GPS 資料*)。 *網路提供者*的選擇性許可權。
 
--   `ACCESS_COARSE_LOCATION` &ndash; 可讓應用程式存取行動數據和 Wi-fi 的位置。 所需*網路提供者*如果`ACCESS_FINE_LOCATION`未設定。
+-   `ACCESS_COARSE_LOCATION`&ndash;允許應用程式存取行動電話和 wi-fi 位置。 如果`ACCESS_FINE_LOCATION`未設定, 則為*網路提供者*所需。
 
-目標 API 版本為 21 (Android 5.0 Lollipop) 應用程式，或更新版本中，您可以啟用`ACCESS_FINE_LOCATION`和仍然沒有 GPS 硬體的裝置上執行。 如果您的應用程式需要 GPS 硬體，您應該明確新增`android.hardware.location.gps` `uses-feature` Android 資訊清單的項目。 如需詳細資訊，請參閱 Android[會使用功能](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)項目參考。
+針對以 API 第21版 (Android 5.0 棒) 或更高版本為目標的`ACCESS_FINE_LOCATION`應用程式, 您可以啟用並繼續在沒有 GPS 硬體的裝置上執行。 如果您的應用程式需要 GPS 硬體, 您應該明確`android.hardware.location.gps`地將`uses-feature`元素新增至 Android 資訊清單。 如需詳細資訊, 請參閱 Android[使用-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)元素參考。
 
-若要設定權限，展開**屬性**中的資料夾**Solution Pad** ，然後按兩下**AndroidManifest.xml**。 權限將會列在**必要的權限**:
+若要設定許可權, 請展開  **Solution Pad**中的 **屬性** 資料夾, 然後按兩下  **androidmanifest.xml**。 許可權會列在 [**必要許可權**] 底下:
 
-[![Android 資訊清單所需權限設定的螢幕擷取畫面](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
+[![Android 資訊清單所需許可權設定的螢幕擷取畫面](location-images/location-01-xs.png)](location-images/location-01-xs.png#lightbox)
 
-設定這些權限，會告知 Android 應用程式必須從使用者的權限，才能存取的位置提供者。 裝置的 API 層級 22 (Android 5.1) 或執行較低會要求這些權限授與應用程式會安裝每次使用者。 執行 API 的裝置層級 23 (Android 6.0) 或更新版本中，應用程式應該執行的執行階段權限檢查，再提出要求的位置提供者。 
+設定其中任一許可權會告訴 Android, 您的應用程式需要使用者的許可權, 才能存取位置提供者。 執行 API 層級 22 (Android 5.1) 或更低版本的裝置, 會要求使用者在每次安裝應用程式時授與這些許可權。 在執行 API 層級 23 (Android 6.0) 或更高版本的裝置上, 應用程式應該在提出位置提供者的要求之前, 先執行執行時間許可權檢查。 
 
 > [!NOTE]
->注意:設定`ACCESS_FINE_LOCATION`表示這兩個廣泛且沒問題的位置資料的存取權。 您應該永遠不需要設定這兩個權限，只有*最小*您的應用程式運作所需的權限。
+>注意:設定`ACCESS_FINE_LOCATION`意指對粗略和精確位置資料的存取。 您永遠都不需要設定這兩個許可權, 只有應用程式需要的*最低*許可權才能正常執行。
 
-此程式碼片段是如何檢查應用程式有權限的範例`ACCESS_FINE_LOCATION`權限：
+此程式碼片段是如何檢查應用程式是否有`ACCESS_FINE_LOCATION`許可權許可權的範例:
 
 ```csharp
  if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) == Permission.Granted)
@@ -75,30 +73,30 @@ else
 }
 ```
 
-應用程式必須成為可容忍其中使用者未授與權限 （或已撤銷的權限） 的案例，並有辦法應付這種情況下，依正常程序。 請參閱[權限指南](~/android/app-fundamentals/permissions.md)如需詳細資訊，在執行階段權限的實作會檢查在 Xamarin.Android 中。
+應用程式必須能夠容忍使用者不會授與許可權 (或已撤銷許可權) 的情況, 並且能夠以適當的方式處理這種情況。 如需在 Xamarin. Android 中執行執行時間許可權檢查的詳細資訊, 請參閱[許可權指南](~/android/app-fundamentals/permissions.md)。
 
 
-## <a name="using-the-fused-location-provider"></a>使用積的位置提供者
+## <a name="using-the-fused-location-provider"></a>使用融合的位置提供者
 
-積的位置提供者是慣用的 Android 應用程式，以接收來自裝置的位置更新，因為它會有效率地選取在執行階段提供最佳的位置資訊，以電池有效率的方式的位置提供者的方式。 比方說，出外四處戶外的使用者取得讀取含有 GPS 的最佳位置。 如果使用者再一一查核室內，其中 GPS 的運作不佳 （如果有的話），積的位置提供者可能會自動切換至 WiFi 運作更好的室內。
+「融合位置提供者」是 Android 應用程式從裝置接收位置更新的慣用方式, 因為它會在執行時間有效率地選取位置提供者, 以符合電池效率的方式提供最佳的位置資訊。 例如, 使用者在戶外流覽時, 會取得使用 GPS 閱讀的最佳位置。 如果使用者接著走到室內, 其中 GPS 的運作效果不佳 (如果有的話), 則已融合的位置提供者可能會自動切換至 WiFi, 其運作效果較佳。
  
-積的位置提供者 API 提供各種不同的其他工具，讓定位感知應用程式，包括地理柵欄和活動監視。 在本節中，我們將焦點設定的基本概念`LocationClient`、 建立提供者，以及取得使用者的位置。
+「融合的位置提供者 API」提供各種其他工具來強化位置感知應用程式, 包括地理柵欄和活動監視。 在本節中, 我們將著重于設定`LocationClient`、建立提供者, 以及取得使用者位置的基本概念。
 
-積的位置提供者是一部分[Google Play 服務](https://developer.android.com/google/play-services/index.html)。
-Google Play 服務套件必須安裝並在運作，積的位置提供者 API 的應用程式中正確設定，裝置必須擁有 Google Play Services APK 安裝。
+「融合位置提供者」是[Google Play Services](https://developer.android.com/google/play-services/index.html)的一部分。
+Google Play Services 套件必須在應用程式中正確安裝並設定, 才能讓融合的位置提供者 API 運作, 而且裝置必須已安裝 Google Play Services APK。
 
-之前的 Xamarin.Android 應用程式可以使用積的位置提供者，它必須新增**Xamarin.GooglePlayServices.Maps**至專案的封裝。 此外，下列`using`陳述式應該新增至參考的類別，如下所述的任何來源檔案：
+在 Xamarin Android 應用程式可以使用已融合的位置提供者之前, 它必須先將**GooglePlayServices**套件新增至專案。 此外, 下列`using`語句應新增至任何參考下列類別的原始程式檔:
 
 ```csharp
 using Android.Gms.Common;
 using Android.Gms.Location;
 ```
 
-### <a name="checking-if-google-play-services-is-installed"></a>檢查是否已安裝 Google Play 服務
+### <a name="checking-if-google-play-services-is-installed"></a>檢查是否已安裝 Google Play Services
 
-Xamarin.Android 會當機，如果它嘗試時未安裝 Google Play 服務，請使用積的位置提供者 （或過期），則執行階段例外狀況就會發生。  如果未安裝 Google Play 服務，然後應用程式應該改為 Android 上面所討論的位置服務。 Google Play 服務已過期，如果應用程式無法向使用者要求他們更新已安裝的版本的 Google Play 服務顯示訊息。
+如果 Google Play Services 未安裝 (或已過期), 則 Xamarin 會在嘗試使用已融合的位置提供者時損毀, 然後會發生執行時間例外狀況。  如果未安裝 Google Play Services, 應用程式應該會回到上面討論的 Android 位置服務。 如果 Google Play Services 已過期, 應用程式可能會向使用者顯示訊息, 要求他們更新已安裝的 Google Play Services 版本。
 
-此程式碼片段是如何 Android 活動可以透過程式設計方式檢查是否已安裝 Google Play 服務的範例：
+此程式碼片段是 Android 活動如何以程式設計方式檢查是否已安裝 Google Play Services 的範例:
 
 ```csharp
 bool IsGooglePlayServicesInstalled()
@@ -116,7 +114,7 @@ bool IsGooglePlayServicesInstalled()
         var errorString = GoogleApiAvailability.Instance.GetErrorString(queryResult);
         Log.Error("MainActivity", "There is a problem with Google Play Services on this device: {0} - {1}",
                   queryResult, errorString);
-                  
+
         // Alternately, display the error to the user.
     }
 
@@ -126,9 +124,9 @@ bool IsGooglePlayServicesInstalled()
 
 ### <a name="fusedlocationproviderclient"></a>FusedLocationProviderClient
 
-若要與積的位置提供者互動，Xamarin.Android 應用程式必須的執行個體`FusedLocationProviderClient`。 這個類別會公開訂閱位置更新，以及擷取裝置的最後一個已知的位置所需的方法。
+若要與融合位置提供者互動, Xamarin. Android 應用程式必須具有的`FusedLocationProviderClient`實例。 此類別會公開訂閱位置更新的必要方法, 以及取得裝置的最後一個已知位置。
 
-`OnCreate`活動的方法是一個適合的位置，來取得參考`FusedLocationProviderClient`，如下列程式碼片段所示：
+活動`OnCreate`的方法是取得參考`FusedLocationProviderClient`的適當位置, 如下列程式碼片段所示:
 
 ```csharp
 public class MainActivity: AppCompatActivity
@@ -144,9 +142,9 @@ public class MainActivity: AppCompatActivity
 
 ### <a name="getting-the-last-known-location"></a>取得最後一個已知的位置
 
-`FusedLocationProviderClient.GetLastLocationAsync()`方法提供簡單、 非封鎖方式，快速取得的裝置有額外負荷最少的程式碼的最後一個已知的位置為 Xamarin.Android 應用程式。
+`FusedLocationProviderClient.GetLastLocationAsync()`方法為 Xamarin Android 應用程式提供簡單且非封鎖的方式, 以最少的編碼額外負荷來快速取得裝置的最後一個已知位置。
 
-此程式碼片段示範如何使用`GetLastLocationAsync`方法來擷取裝置的位置：
+此程式碼片段顯示如何使用`GetLastLocationAsync`方法來抓取裝置的位置:
 
 ```csharp
 async Task GetLastLocationFromDevice()
@@ -169,14 +167,15 @@ async Task GetLastLocationFromDevice()
 
 ### <a name="subscribing-to-location-updates"></a>訂閱位置更新
 
-Xamarin.Android 應用程式也可以訂閱位置更新從積的位置提供者使用`FusedLocationProviderClient.RequestLocationUpdatesAsync`方法，此程式碼片段所示：
+Xamarin Android 應用程式也可以使用`FusedLocationProviderClient.RequestLocationUpdatesAsync`方法, 從已融合的位置提供者訂閱位置更新, 如下列程式碼片段所示:
 
 ```csharp
 await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, locationCallback);
 ```
-這個方法會採用兩個參數：
 
--   **`Android.Gms.Location.LocationRequest`** &ndash; A`LocationRequest`物件是 Xamarin.Android 應用程式上積的位置提供者的運作方式所傳遞的參數。 `LocationRequest`保留資訊這類方式應該進行頻繁的要求，或應該是重要性的精確位置更新。 比方說，重要的位置要求會導致裝置使用 GPS，並因此更多的能力，判斷位置時。 此程式碼片段示範如何建立`LocationRequest`高精確度的位置，檢查大約每隔五分鐘位置更新 （但不超過兩分鐘的要求之間的更快）。 積的位置提供者會使用`LocationRequest`為位置提供者使用時，嘗試判斷裝置位置的指導方針：
+這個方法會採用兩個參數:
+
+-   **`Android.Gms.Location.LocationRequest`** &ndash; 物件是XamarinAndroid應用程式如何傳遞「融合位置提供者」應該`LocationRequest`如何使用的參數。 會`LocationRequest`保留資訊, 例如要求的執行頻率, 或正確位置更新的重要性。 例如, 在判斷位置時, 重要的位置要求將會導致裝置使用 GPS, 因而更強大。 此程式碼片段示範如何`LocationRequest`針對具有高精確度的位置建立, 並每隔五分鐘檢查一次位置更新 (但不會在要求之間的兩分鐘內)。 已融合的位置提供者會`LocationRequest`使用, 做為嘗試判斷裝置位置時所要使用之位置提供者的指引:
 
     ```csharp
     LocationRequest locationRequest = new LocationRequest()
@@ -184,16 +183,15 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
                                       .SetInterval(60 * 1000 * 5)
                                       .SetFastestInterval(60 * 1000 * 2);
     ```
-                                          
 
--   **`Android.Gms.Location.LocationCallback`** &ndash; 若要接收位置更新，Xamarin.Android 應用程式必須子類別化`LocationProvider`抽象類別。 這個類別會公開積的位置提供者位置資訊更新的應用程式可能叫用兩種方法。 這將在下面詳細討論。
+-   **`Android.Gms.Location.LocationCallback`** 為了接收位置更新, Xamarin. Android 應用程式必須`LocationProvider`子類別化抽象類別。 &ndash; 此類別公開了兩種方法, 可供融合位置提供者用來以位置資訊更新應用程式。 下面將更詳細地討論這一點。
 
-若要通知的位置更新的 Xamarin.Android 應用程式，將會叫用積的位置提供者`LocationCallBack.OnLocationResult(LocationResult result)`。 `Android.Gms.Location.LocationResult`參數會包含更新位置資訊。
+若要通知 Xamarin Android 應用程式的位置更新, 已融合的位置提供者將會`LocationCallBack.OnLocationResult(LocationResult result)`叫用。 `Android.Gms.Location.LocationResult`參數將包含更新位置資訊。
 
-當積的位置提供者偵測到的位置資料可用性的變更時，它會呼叫`LocationProvider.OnLocationAvailability(LocationAvailability
-locationAvailability)`方法。 如果`LocationAvailability.IsLocationAvailable`屬性會傳回`true`，則可以假設所報告裝置位置結果`OnLocationResult`精確且為最新狀態所需的`LocationRequest`。 如果`IsLocationAvailable`為 false，則不會傳回任何位置結果`OnLocationResult`。
+當融合的位置提供者偵測到位置資料的可用性變更時, 它會呼叫`LocationProvider.OnLocationAvailability(LocationAvailability
+locationAvailability)`方法。 `LocationAvailability.IsLocationAvailable`如果`OnLocationResult` `LocationRequest`屬性傳回,則可以假設所報告的裝置位置結果是正確的,並且是所需的`true`最新狀態。 如果`IsLocationAvailable`為 false, 則不會`OnLocationResult`傳回任何位置結果。
 
-此程式碼片段是範例實作`LocationCallback`物件：
+此程式碼片段是`LocationCallback`物件的範例執行:
 
 ```csharp
 public class FusedLocationProviderCallback : LocationCallback
@@ -227,48 +225,48 @@ public class FusedLocationProviderCallback : LocationCallback
 
 ## <a name="using-the-android-location-service-api"></a>使用 Android 位置服務 API
 
-Android 的位置服務是在 Android 上使用位置資訊的較舊的 API。 是由硬體感應器收集位置資料，並將其收集的系統服務，即可存取應用程式中`LocationManager`類別和`ILocationListener`。
+Android 位置服務是舊版的 API, 可在 Android 上使用位置資訊。 位置資料是由硬體感應器收集, 並由系統服務所收集, 其會在具有`LocationManager`類別`ILocationListener`和的應用程式中存取。
 
-位置服務是最適合用於必須在沒有安裝的 Google Play 服務的裝置執行的應用程式。
+「位置」服務最適合必須在未安裝 Google Play Services 的裝置上執行的應用程式。
 
-位置服務是一種特殊型別的[服務](https://developer.android.com/guide/components/services.html)系統所管理。 系統服務與裝置硬體互動，而是一律執行。 若要善用我們的應用程式中的位置更新，我們將會訂閱位置更新從系統位置服務使用`LocationManager`和`RequestLocationUpdates`呼叫。
+「位置服務」是系統所管理的特殊[服務](https://developer.android.com/guide/components/services.html)類型。 系統服務會與裝置硬體互動, 而且一律會執行。 若要在我們的應用程式中切入位置更新, 我們將使用`LocationManager` `RequestLocationUpdates`和呼叫來訂閱系統位置服務的位置更新。
 
-若要取得使用者的位置使用 Android 的位置服務牽涉到幾個步驟：
+若要使用 Android 位置服務來取得使用者的位置, 需要執行幾個步驟:
 
-1.  取得參考`LocationManager`服務。
-2.  實作`ILocationListener`位置變更時，介面並處理事件。
-3.  使用`LocationManager`要求指定的提供者的位置更新。 `ILocationListener`從上一個步驟將會用來接收回呼從`LocationManager`。
-4.  當應用程式適合不會再接收更新，請停止位置更新。
+1.  取得`LocationManager`服務的參考。
+2.  `ILocationListener`執行介面, 並在位置變更時處理事件。
+3.  `LocationManager`使用來要求指定提供者的位置更新。 上`ILocationListener`一個步驟中的會用來接收來自的`LocationManager`回呼。
+4.  當應用程式不再適合接收更新時, 停止位置更新。
 
 ### <a name="location-manager"></a>位置管理員
 
-我們可以存取的執行個體的系統位置服務`LocationManager`類別。 `LocationManager` 是特殊的類別，可讓我們的系統位置服務進行互動，並對它呼叫方法。 應用程式可以取得參考`LocationManager`藉由呼叫`GetSystemService`並傳入服務類型，如下所示：
+我們可以使用`LocationManager`類別的實例來存取系統位置服務。 `LocationManager`是特殊類別, 可讓我們與系統位置服務互動, 並對其呼叫方法。 應用程式可以藉由呼叫`LocationManager` `GetSystemService`並傳入服務類型來取得的參考, 如下所示:
 
 ```csharp
 LocationManager locationManager = (LocationManager) GetSystemService(Context.LocationService);
 ```
 
-`OnCreate` 取得參考適合`LocationManager`。
-它是個不錯的主意，保留`LocationManager`為類別變數，可讓我們在活動開發週期中各個點呼叫。
+`OnCreate`是取得參考`LocationManager`的絕佳位置。
+最好將保留`LocationManager`為類別變數, 讓我們可以在活動生命週期的不同點呼叫它。
 
 ### <a name="request-location-updates-from-the-locationmanager"></a>從 LocationManager 要求位置更新
 
-參考應用程式一旦`LocationManager`，它需要向`LocationManager`何種位置資訊的需要，而且該資訊是要更新的頻率。 執行這項操作，藉由呼叫`RequestLocationUpdates`上`LocationManager`物件，並傳入部分更新和回呼，會收到位置更新的準則。 此回呼是一種類型，必須實作`ILocationListener`（稍後在本指南詳細說明） 的介面。
+一旦應用程式具有的`LocationManager`參考, 它就必須`LocationManager`告訴您所需的位置資訊類型, 以及該資訊的更新頻率。 若要這麼做`RequestLocationUpdates` , 請`LocationManager`在物件上呼叫, 並傳入一些更新準則, 以及接收位置更新的回呼。 此回呼是必須實作為`ILocationListener`介面的型別 (本指南稍後會詳細說明)。
 
-`RequestLocationUpdates`方法會告訴系統位置服務，您的應用程式想要開始接收位置更新。 這個方法可讓您指定的提供者，以及時間和距離的臨界值來控制更新頻率。 例如，下列方法，要求位置從 GPS 位置提供者會更新每個 2000年毫秒為單位，並只有位置有所變更時超過 1 metre:
+`RequestLocationUpdates`方法會告訴系統位置服務, 您的應用程式會想要開始接收位置更新。 這個方法可讓您指定提供者, 以及用來控制更新頻率的時間和距離閾值。 例如, 下列方法會要求來自 GPS 位置提供者的位置更新每2000毫秒, 而且只有在位置變更超過1米時:
 
 ```csharp
 // For this example, this method is part of a class that implements ILocationListener, described below
 locationManager.RequestLocationUpdates(LocationManager.GpsProvider, 2000, 1, this);
 ```
 
-應用程式應該只視需要正確執行應用程式要求位置更新。 這會保留電池壽命，並建立使用者更好的體驗。
+應用程式應該只要求應用程式正常執行所需的位置更新。 這會保留電池壽命, 並為使用者建立更好的體驗。
 
-### <a name="responding-to-updates-from-the-locationmanager"></a>更新回應來自 LocationManager
+### <a name="responding-to-updates-from-the-locationmanager"></a>回應來自 LocationManager 的更新
 
-一旦應用程式已要求的更新`LocationManager`，它可以從服務收到資訊，藉由實作[ `ILocationListener` ](https://developer.xamarin.com/api/type/Android.Locations.ILocationListener/)介面。 這個介面會提供四種方法來接聽服務的位置和位置提供者， `OnLocationChanged`。 系統會呼叫`OnLocationChanged`當使用者的位置變更不足以將位置變更，根據要求位置更新時所設定的準則。 
+應用程式從`LocationManager`要求更新之後, 就可以藉由[`ILocationListener`](xref:Android.Locations.ILocationListener)執行介面, 從服務接收資訊。 這個介面提供四種接聽位置服務和位置提供者`OnLocationChanged`的方法。 當使用者的位置`OnLocationChanged`變更時, 系統將會呼叫, 以便根據要求位置更新時所設定的準則, 以符合位置的變更。 
 
-下列程式碼會顯示在方法`ILocationListener`介面：
+下列程式碼顯示`ILocationListener`介面中的方法:
 
 ```csharp
 public class MainActivity : AppCompatActivity, ILocationListener
@@ -300,7 +298,7 @@ public class MainActivity : AppCompatActivity, ILocationListener
 
 ### <a name="unsubscribing-to-locationmanager-updates"></a>取消訂閱 LocationManager 更新
 
-為了節省系統資源，應用程式應該取消訂閱位置更新儘速。 `RemoveUpdates`方法會告訴`LocationManager`停止將更新傳送至我們的應用程式。  例如，活動可以呼叫`RemoveUpdates`在`OnPause`方法使我們能夠節省電力，如果應用程式不需要位置更新其活動不是在螢幕上時：
+為了節省系統資源, 應用程式應該儘快取消訂閱位置更新。 方法會指示停止`LocationManager`將更新傳送至我們的應用程式。 `RemoveUpdates`  例如, 活動可能會`RemoveUpdates` `OnPause`在方法中呼叫, 以便在應用程式的活動不在畫面上時, 可以節省電源:
 
 ```csharp
 protected override void OnPause ()
@@ -310,15 +308,15 @@ protected override void OnPause ()
 }
 ```
 
-如果您的應用程式需要取得在背景中的位置更新，您會想要建立訂閱的系統位置服務的自訂服務。 請參閱[背景與 Android 服務](~/android/app-fundamentals/services/index.md)指南以取得詳細的資訊。
+如果您的應用程式需要在背景中取得位置更新, 您會想要建立訂閱系統位置服務的自訂服務。 如需詳細資訊, 請參閱[使用 Android 服務的背景處理](~/android/app-fundamentals/services/index.md)指南。
 
 ### <a name="determining-the-best-location-provider-for-the-locationmanager"></a>判斷 LocationManager 的最佳位置提供者
 
-上述應用程式將設定 GPS 位置提供者。 不過，GPS 可能無法在所有情況下，例如如果裝置是室內，或沒有 GPS 接收器。 如果發生這種情況，結果是`null`傳回提供者。
+上述應用程式會將 GPS 設定為位置提供者。 不過, GPS 可能無法在所有情況下使用, 例如裝置為室內或沒有 GPS 接收器。 如果是這種情況, 則結果會`null`傳回提供者。
 
-若要取得您的應用程式運作 GPS 無法使用時，您使用`GetBestProvider`尋求最佳的可用 （支援的裝置和啟用使用者） 的位置提供者中，於應用程式啟動的方法。 在特定的提供者，而您所見`GetBestProvider`-例如正確度和電力-與提供者的需求[`Criteria`物件](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)。 `GetBestProvider` 傳回給定準則的最佳提供者。
+若要讓您的應用程式在 GPS 無法使用時能夠運作, `GetBestProvider`您可以使用方法, 在應用程式啟動時要求最佳可用 (裝置支援和使用者啟用) 位置提供者。 您可以不傳遞特定的提供者, 而是`GetBestProvider`告訴提供者的需求, 例如精確度和[ `Criteria`具有物件](xref:Android.Locations.Criteria)的電源。 `GetBestProvider`傳回指定準則的最佳提供者。
 
-下列程式碼示範如何取得最佳可用的提供者並要求位置更新時，請使用它：
+下列程式碼顯示如何取得最佳的可用提供者, 並在要求位置更新時使用:
 
 ```csharp
 Criteria locationCriteria = new Criteria();   
@@ -338,29 +336,28 @@ else
 ```
 
 > [!NOTE]
->  如果使用者已停用所有的位置提供者`GetBestProvider`會傳回`null`。 若要查看此程式碼在實際裝置上的運作方式，一定要啟用 GPS、 Wi-fi 和行動電話通訊網路下的**Google 設定 > 位置 > 模式**這個螢幕擷取畫面所示：
+>  如果使用者已停用所有位置提供者`GetBestProvider` , `null`則會傳回。 若要查看此程式碼如何在實際裝置上運作, 請務必啟用 Google 設定 下的 GPS、Wi-fi 和行動網路, **> 位置 > 模式**, 如下列螢幕擷取畫面所示:
 
-[![在 Android 手機上的設定位置模式螢幕](location-images/location-02.png)](location-images/location-02.png#lightbox)
+[![Android 手機上的設定位置模式畫面](location-images/location-02.png)](location-images/location-02.png#lightbox)
 
-以下螢幕擷取畫面示範位置的應用程式執行的方式`GetBestProvider`:
+下列螢幕擷取畫面示範使用`GetBestProvider`執行的位置應用程式:
 
-[![顯示緯度、 經度和提供者的 GetBestProvider 應用程式](location-images/location-03.png)](location-images/location-03.png#lightbox)
+[![顯示緯度、經度和提供者的 GetBestProvider 應用程式](location-images/location-03.png)](location-images/location-03.png#lightbox)
 
-請記住，`GetBestProvider`不會以動態方式變更提供者。 相反地，它會判斷最佳可用的提供者活動生命週期期間，一次。 如果提供者狀態變更時設定它之後，應用程式將會需要額外的程式碼中`ILocationListener`方法&ndash; `OnProviderEnabled`， `OnProviderDisabled`，並`OnStatusChanged`&ndash;來處理每個相關的可能性提供者參數。
+請記住, `GetBestProvider`不會動態變更提供者。 相反地, 它會在活動生命週期期間決定最適合的提供者一次。 如果提供者狀態在設定之後變更, 應用程式`ILocationListener`將需要`OnProviderDisabled`方法`OnStatusChanged` &ndash; `OnProviderEnabled` &ndash;中的額外程式碼, 以及處理與提供者切換。
 
 ## <a name="summary"></a>總結
 
-本指南涵蓋了取得使用者的位置使用 Android 的位置服務和積的位置提供者，從 Google 位置服務 API。
-
+本指南涵蓋從 Google 位置服務 API 使用 Android 定位服務和融合位置提供者來取得使用者的位置。
 
 ## <a name="related-links"></a>相關連結
 
-- [位置 （範例）](https://developer.xamarin.com/samples/monodroid/Location/)
-- [FusedLocationProvider （範例）](https://developer.xamarin.com/samples/monodroid/FusedLocationProvider/)
-- [Google Play 服務](https://developer.android.com/google/play-services/index.html)
-- [準則類別](https://developer.xamarin.com/api/type/Android.Locations.Criteria/)
-- [LocationManager 類別](https://developer.xamarin.com/api/type/Android.Locations.LocationManager/)
-- [LocationListener 類別](https://developer.xamarin.com/api/type/Android.Locations.ILocationListener/)
+- [位置 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/location)
+- [FusedLocationProvider (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fusedlocationprovider)
+- [Google Play Services](https://developer.android.com/google/play-services/index.html)
+- [Criteria 類別](xref:Android.Locations.Criteria)
+- [LocationManager 類別](xref:Android.Locations.LocationManager)
+- [LocationListener 類別](xref:Android.Locations.ILocationListener)
 - [LocationClient API](https://developer.android.com/reference/com/google/android/gms/location/LocationClient.html)
 - [LocationListener API](https://developer.android.com/reference/com/google/android/gms/location/LocationListener.html)
 - [LocationRequest API](https://developer.android.com/reference/com/google/android/gms/location/LocationRequest.html)

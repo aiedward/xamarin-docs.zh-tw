@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/03/2018
-ms.openlocfilehash: 28475df4baa225cc9a608607be6ed673ad0e6e8a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 105d06c7cea23ac0873c8de68d7ad1ad62ae1ffc
+ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61251273"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68665707"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的程式碼建立 iOS 使用者介面
 
@@ -89,10 +89,10 @@ Visual Studio for Mac 不提供空白的範本。 所有範本都隨附支援分
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -118,10 +118,10 @@ public class AppDelegate : UIApplicationDelegate
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
         // create a new window instance based on the screen size
-        window = new UIWindow(UIScreen.MainScreen.Bounds);
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
         // make the window visible
-        window.MakeKeyAndVisible();
+        Window.MakeKeyAndVisible();
 
         return true;
     }
@@ -132,7 +132,7 @@ public class AppDelegate : UIApplicationDelegate
 
 ## <a name="adding-a-controller"></a>新增控制器
 
-您的應用程式可以包含許多檢視控制器，但它需要有一個根檢視控制器來控制所有檢視控制器。  將控制器新增至 視窗中，藉由建立`UIViewController`執行個體，並將它設定為`window.RootViewController`屬性：
+您的應用程式可以包含許多檢視控制器，但它需要有一個根檢視控制器來控制所有檢視控制器。  將控制器新增至 視窗中，藉由建立`UIViewController`執行個體，並將它設定為`Window.RootViewController`屬性：
 
 ```csharp
 public class AppDelegate : UIApplicationDelegate
@@ -632,4 +632,4 @@ Apple 建議.xib 或分鏡腳本檔案，用於以 iOS 8 為目標的應用程�
 
 ## <a name="related-links"></a>相關連結
 
-- [SimpleLogin （範例）](https://developer.xamarin.com/samples/monotouch/SimpleLogin)
+- [SimpleLogin （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/simplelogin)

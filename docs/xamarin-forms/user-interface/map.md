@@ -7,23 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2019
-ms.openlocfilehash: 60d78797406f2e69c435fb597e36775d906852f9
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 51555382e38412b7fa2c5c821b252984758bb1ec
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513102"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656971"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 _Xamarin.Forms 會在每個平台上使用原生的對應 Api。_
 
-Xamarin.Forms.Maps 會使用原生的對應 Api，每個平台。 這對於使用者而言，提供快速、 熟悉對應體驗，但表示一些設定步驟所需遵守每個平台 API 的需求。
+Xamarin.Forms.Maps 會使用原生的對應 Api，每個平台。 這可為使用者提供快速且熟悉的地圖體驗, 但這表示需要一些設定步驟, 以符合每個平臺的 API 需求。
 設定後，`Map`控制運作方式就像一般的程式碼中的任何其他 Xamarin.Forms 元素。
 
-地圖控制項用於[MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)範例，如下所示。
+地圖控制項用於[MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)範例，如下所示。
 
  [![MobileCRM 範例中的地圖](map-images/maps-zoom-sml.png "地圖控制項範例")](map-images/maps-zoom.png#lightbox "地圖控制項範例")
 
@@ -31,7 +31,7 @@ Xamarin.Forms.Maps 會使用原生的對應 Api，每個平台。 這對於使�
 
 <a name="Maps_Initialization" />
 
-## <a name="map-initialization"></a>網站導覽初始設定
+## <a name="map-initialization"></a>對應初始化
 
 將對應新增至 Xamarin.Forms 應用程式時**Xamarin.Forms.Maps**是個別的 NuGet 套件，您應該將它新增至方案中的每個專案。
 在 Android 上，這也會相依於當您將新增 Xamarin.Forms.Maps 自動下載 GooglePlayServices (另一個 NuGet)。
@@ -60,11 +60,11 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 -  **Android** -在 MainActivity.cs 檔案`OnCreate`方法。
 -  **UWP** -在 MainPage.xaml.cs 檔案`MainPage`建構函式。
 
-當已加入 NuGet 套件，而且初始設定方法呼叫內每個應用程式， `Xamarin.Forms.Maps` Api 可用於一般的.NET Standard 程式庫專案或共用專案的程式碼。
+新增 NuGet 套件並在每個應用程式內呼叫初始化方法之後, `Xamarin.Forms.Maps`即可在通用 .NET Standard 程式庫專案或共用的專案程式碼中使用 api。
 
 <a name="Platform_Configuration" />
 
-## <a name="platform-configuration"></a>平台組態
+## <a name="platform-configuration"></a>平臺設定
 
 地圖會顯示之前在某些平台需要額外的設定步驟。
 
@@ -108,7 +108,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 </application>
 ```
 
-如果沒有有效的 API 金鑰對應控制項會顯示為灰色方塊在 Android 上。
+如果沒有有效的 API 金鑰, maps 控制項就會在 Android 上顯示為灰色方塊。
 
 > [!NOTE]
 > 請注意，為了讓您存取 Google 地圖的 APK，您必須包含 sha-1 指紋和封裝名稱的每個金鑰儲存區 （偵錯和發行），您用來簽署您的 APK。 比方說，如果您使用一部電腦進行偵錯和產生發行 APK 的另一部電腦時，您應該包含 sha-1 憑證指紋，從第一部電腦的偵錯金鑰儲存區和從發行金鑰儲存區的 sha-1 憑證指紋第二部電腦中。 也請務必編輯金鑰的認證，如果應用程式的**封裝名稱**變更。 請參閱[取得 Google Maps API v2 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
@@ -129,7 +129,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 這兩個所需的因為應用程式需要下載地圖資料的網路連線。 了解 Android[權限](https://developer.android.com/reference/android/Manifest.permission.html)若要深入了。
 
-此外，Android 9 bootclasspath，已移除 Apache HTTP 用戶端程式庫，因此它無法提供給應用程式為目標的 API 28 或更高版本。 下面這一行必須新增至`application`節點的您**AndroidManifest.xml**繼續使用 Apache HTTP 用戶端 API 28 或更高版本為目標的應用程式中的檔案：
+此外, Android 9 已從 bootclasspath 移除 Apache HTTP 用戶端程式庫, 因此不適用於以 API 28 或更高版本為目標的應用程式。 您必須將下列這一行新增至`application` **androidmanifest.xml**的節點, 才能繼續在以 API 28 或更高版本為目標的應用程式中使用 Apache HTTP 用戶端:
 
 ```xml
 <application ...>
@@ -146,7 +146,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 <a name="Using_Maps" />
 
-## <a name="map-configuration"></a>對應組態
+## <a name="map-configuration"></a>對應設定
 
 請參閱[MapPage.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/MobileCRM/MobileCRM.Shared/Pages/MapPage.cs)在 MobileCRM 範例中，如需如何使用地圖控制項，在程式碼中的範例。 簡單`MapPage`類別可能類似此-請注意，新`MapSpan`會建立以位置地圖的檢視：
 
@@ -168,7 +168,7 @@ public class MapPage : ContentPage {
 }
 ```
 
-### <a name="map-type"></a>地圖類型
+### <a name="map-type"></a>對應類型
 
 地圖內容也可以藉由設定變更`MapType`屬性，以顯示規則的街道地圖 （預設值）、 衛星影像或兩者的組合。
 
@@ -203,7 +203,7 @@ slider.ValueChanged += (sender, e) => {
 
  [![包含縮放地圖](map-images/maps-zoom-sml.png "地圖控制項縮放")](map-images/maps-zoom.png#lightbox "地圖控制項縮放")
 
-### <a name="map-pins"></a>對應的 pin
+### <a name="map-pins"></a>地圖釘選
 
 位置可以在地圖上標示`Pin`物件。
 
@@ -218,18 +218,18 @@ var pin = new Pin {
 map.Pins.Add(pin);
 ```
 
-`PinType` 可以設定為下列值，這可能會影響轉譯 pin （取決於平台） 的方式之一：
+`PinType`可以設定為下列其中一個值, 這可能會影響釘選的呈現方式 (視平臺而定):
 
 -  泛型
 -  位置
 -  SavedPin
 -  SearchResult
 
-### <a name="map-clicks"></a>按一下地圖
+### <a name="map-clicks"></a>對應點擊
 
-`Map` 定義`MapClicked`時點選對應時引發的事件。 `MapClickedEventArgs`隨附的物件`MapClicked`事件會有一個名為的單一屬性`Position`，型別的`Position`。 當事件引發時，值`Position`屬性設定為點下的對應位置。
+`Map`定義繪製對應時所引發的事件。`MapClicked` 伴隨事件的`MapClickedEventArgs`物件具有名為的單一屬性, `Position`其類型`Position`為。 `MapClicked` 當引發事件時, `Position`屬性的值會設定為所按下的地圖位置。
 
-下列程式碼範例顯示的事件處理常式`MapClicked`事件：
+下列程式碼範例顯示`MapClicked`事件的事件處理常式:
 
 ```csharp
 map.MapClicked += OnMapClicked;
@@ -240,13 +240,13 @@ void OnMapClicked(object sender, MapClickedEventArgs e)
 }
 ```
 
-在此範例中，`OnMapClicked`事件處理常式會輸出代表點選的對應位置的經度與緯度。
+在此範例中, `OnMapClicked`事件處理常式會輸出代表螺紋對應位置的緯度和經度。
 
 <a name="Using_Xaml" />
 
 ### <a name="create-a-map-in-xaml"></a>在 XAML 中建立對應
 
-也可以將對應建立 XAML 中,，在此範例中所示：
+您也可以在 XAML 中建立對應, 如下列範例所示:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -266,9 +266,9 @@ void OnMapClicked(object sender, MapClickedEventArgs e)
 ```
 
 > [!NOTE]
-> 額外`xmlns`命名空間定義，才可參考 Xamarin.Forms.Maps 控制項。
+> 需要額外`xmlns`的命名空間定義, 才能參考 Xamarin. Forms 控制項。
 
-`MapRegion`並`Pins`可以使用的具名的參考的程式碼中設定`Map`:
+在程式`Pins`代碼中, 可以使用的命名參考來`Map`設定和:`MapRegion`
 
 ```csharp
 MyMap.MoveToRegion(
@@ -276,18 +276,18 @@ MyMap.MoveToRegion(
         new Position(37,-122), Distance.FromMiles(1)));
 ```
 
-## <a name="populate-a-map-with-data-using-data-binding"></a>使用資料繫結的資料以填入對應
+## <a name="populate-a-map-with-data-using-data-binding"></a>使用資料系結將資料填入地圖
 
-[ `Map` ](xref:Xamarin.Forms.Maps.Map)類別也會公開下列屬性：
+[`Map`](xref:Xamarin.Forms.Maps.Map)類別也會公開下列屬性:
 
-- `ItemsSource` – 指定的集合`IEnumerable`要顯示的項目。
-- `ItemTemplate` – 指定[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)来套用至顯示的項目集合中的每個項目。
-- `ItemTemplateSelector` – 指定[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector) ，將會用來選擇[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)對於在執行階段的項目。
+- `ItemsSource`–指定要顯示的`IEnumerable`專案集合。
+- `ItemTemplate`–指定[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)要套用至所顯示專案集合中每個專案的。
+- `ItemTemplateSelector`–指定[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)將用來在執行時間為專案[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)選擇的。
 
 > [!NOTE]
-> `ItemTemplate`屬性會優先時同時`ItemTemplate`和`ItemTemplateSelector`設定屬性。
+> 當`ItemTemplate` 同時設定`ItemTemplateSelector`和屬性時, 會優先使用屬性。 `ItemTemplate`
 
-A [ `Map` ](xref:Xamarin.Forms.Maps.Map)可以填入資料繫結中使用資料繫結其`ItemsSource`屬性設`IEnumerable`集合：
+您可以使用資料系結將其`ItemsSource`屬性`IEnumerable`系結至集合, 以填入資料: [`Map`](xref:Xamarin.Forms.Maps.Map)
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -311,17 +311,17 @@ A [ `Map` ](xref:Xamarin.Forms.Maps.Map)可以填入資料繫結中使用資料�
 </ContentPage>
 ```
 
-`ItemsSource`屬性的資料繫結至`Locations`屬性的已連接的檢視模型，它會傳回`ObservableCollection`的`Location`是自訂類型的物件。 每個`Location`物件會定義`Address`並`Description`類型的屬性`string`，和`Position`型別的屬性[ `Position` ](xref:Xamarin.Forms.Maps.Position)。
+屬性資料會系結至`Locations`已連接之視圖`ObservableCollection`模型的屬性, 它會傳回`Location`物件的, 這是自訂類型。 `ItemsSource` 每`Location`個物件`Address`都會`Description`定義類型的`string`和屬性, 以及`Position`類型[`Position`](xref:Xamarin.Forms.Maps.Position)的屬性。
 
-在每個項目的外觀`IEnumerable`藉由設定定義集合`ItemTemplate`屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)包含[ `Pin` ](xref:Xamarin.Forms.Maps.Pin)物件資料繫結至適當的屬性。
+`IEnumerable`集合中每個專案的外觀定義方式是將`ItemTemplate`屬性設定[`Pin`](xref:Xamarin.Forms.Maps.Pin)為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) , 其中包含資料系結至適當屬性的物件。
 
-下列螢幕擷取畫面所示[ `Map` ](xref:Xamarin.Forms.Maps.Map)顯示[ `Pin` ](xref:Xamarin.Forms.Maps.Pin)使用資料繫結的集合：
+下列螢幕擷取畫面顯示[`Map`](xref:Xamarin.Forms.Maps.Map)使用資料系結[`Pin`](xref:Xamarin.Forms.Maps.Pin)顯示集合:
 
-[![螢幕擷取畫面的地圖與資料繫結 iOS 和 Android 上的 pin](map-images/pins-itemssource.png "對應的資料繫結的 pin")](map-images/pins-itemssource-large.png#lightbox "對應的資料繫結的 pin")
+[ ![IOS 和 Android 上具有資料系結圖釘的對應螢幕擷取畫面](map-images/pins-itemssource.png "與資料")]系結的釘選圖(map-images/pins-itemssource-large.png#lightbox "具有資料系結圖釘的對應")
 
-### <a name="choose-item-appearance-at-runtime"></a>選擇在執行階段的項目外觀
+### <a name="choose-item-appearance-at-runtime"></a>在執行時間選擇專案外觀
 
-在每個項目的外觀`IEnumerable`可以在執行階段，設定項目值，根據選擇集合`ItemTemplateSelector`屬性設[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector):
+藉由`IEnumerable` `ItemTemplateSelector`將屬性設定為[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector), 您可以在執行時間根據專案值選擇集合中每個專案的外觀:
 
 ```xaml
 <ContentPage ...
@@ -356,7 +356,7 @@ A [ `Map` ](xref:Xamarin.Forms.Maps.Map)可以填入資料繫結中使用資料�
 </ContentPage>
 ```
 
-下列範例所示`MapItemTemplateSelector`類別：
+下列範例顯示`MapItemTemplateSelector`類別:
 
 ```csharp
 public class MapItemTemplateSelector : DataTemplateSelector
@@ -371,13 +371,14 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MapItemTemplateSelector`類別會定義`DefaultTemplate`並`XamarinTemplate` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)屬性設定為不同的資料範本。 `OnSelectTemplate`方法會傳回`XamarinTemplate`，其中顯示 「 Xamarin 」 做為標籤時`Pin`點選時，項目有包含"San Francisco"的位址時。 當項目沒有包含"San Francisco"的地址`OnSelectTemplate`方法會傳回`DefaultTemplate`。
+類別會定義`DefaultTemplate`設定`XamarinTemplate`為不同資料範本的和[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `MapItemTemplateSelector` 當`OnSelectTemplate`專案具有包含`XamarinTemplate`「三藩市」的位址時, 此方法`Pin`會傳回, 當按下時, 會將 "Xamarin" 顯示為標籤。 當專案沒有包含「三藩市」的位址時, 此`OnSelectTemplate`方法`DefaultTemplate`會傳回。
 
-如需有關資料範本選取器的詳細資訊，請參閱[建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+如需資料範本選取器的詳細資訊, 請參閱[建立 Xamarin DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [MapsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithMaps/)
+- [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [對應自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
-- [Xamarin.Forms 範例](https://developer.xamarin.com/samples/xamarin-forms/all/)
-- [建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [Maps API](xref:Xamarin.Forms.Maps)

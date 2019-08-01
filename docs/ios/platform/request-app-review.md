@@ -1,34 +1,34 @@
 ---
-title: 要求在 Xamarin.iOS 中的應用程式檢閱
-description: 這篇文章描述 RequestReview 方法新增至 iOS 10，該 Apple，並討論如何在 Xamarin.iOS 中加以實作。
+title: 在 Xamarin 中要求應用程式審查
+description: 本文說明 Apple 新增至 iOS 10 的 RequestReview 方法, 並討論如何在 Xamarin 中執行。
 ms.prod: xamarin
 ms.assetid: 6408e707-b7dc-4557-b931-16a4d79b8930
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: f72aaa781b0712e206cf02725cfc434594287f41
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: c65e29a5499c33fd8d36dfa39bda05ec3b300148
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61365787"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656298"
 ---
-# <a name="request-app-review-in-xamarinios"></a>要求在 Xamarin.iOS 中的應用程式檢閱
+# <a name="request-app-review-in-xamarinios"></a>在 Xamarin 中要求應用程式審查
 
-_本文章涵蓋 RequestReview 方法新增至 iOS 10，以及如何在 Xamarin.iOS 中實作該 Apple。_
+_本文涵蓋 Apple 新增至 iOS 10 的 RequestReview 方法, 以及如何在 Xamarin 中加以執行。_
 
-剛接觸 iOS 10.3，`RequestReview()`方法可讓 iOS 應用程式以要求使用者評等或檢閱它。 使用者從 App Store 安裝的傳送應用程式中呼叫這個方法時，iOS 10 會處理整個的評等，和開發人員適用的檢閱程序。 此程序應用程式存放區原則所控管，因為警示可能會或可能不會顯示。
+Ios 10.3 的`RequestReview()`新功能, 方法可讓 ios 應用程式要求使用者對其進行評分或檢查。 當使用者已從 App Store 安裝的出貨應用程式中呼叫此方法時, iOS 10 將會處理開發人員的整個評等和審查流程。 由於此程式是由 App Store 原則所控管, 因此不一定會顯示警示。
 
-![](request-app-review-images/review01.png "檢閱要求警示範例")
+![](request-app-review-images/review01.png "範例審查要求警示")
 
-## <a name="requesting-a-rating-or-review"></a>要求評分或評論
+## <a name="requesting-a-rating-or-review"></a>要求評等或評論
 
-雖然`RequestReview()`靜態方法`SKStoreReviewController`類別可以呼叫隨時派得上用場的使用者體驗中，檢閱程序會控管，而且由應用程式存放區原則。 如此一來，這個方法可能會或可能不會顯示警示，並永遠不可叫用以回應使用者動作，例如點選按鈕，即可。
+雖然可以在使用者體驗中`SKStoreReviewController`合理地呼叫類別的靜態方法,但審核程式是由AppStore原則進行控管和處理。`RequestReview()` 因此, 此方法不一定會顯示警示, 而且永遠不會呼叫以回應使用者動作, 例如點擊按鈕。
 
-例如，應用程式可能會要求的檢閱之後，啟動以指定重試次數，或遊戲在播放程式完成層級之後，可能會要求檢閱。
+例如, 應用程式可能會在啟動指定的次數之後要求審查, 或在玩家完成一層樓之後, 遊戲可能會要求審查。
 
-要求檢閱的 Xamarin.iOS 應用程式可讓您完成啟動，因為會進行下列變更以`AppDelegate.cs`檔案：
+若要在 Xamarin iOS 應用程式完成啟動時立即要求審查, 請對檔案進行下列變更`AppDelegate.cs` :
 
 ```csharp
 using Foundation;
@@ -57,20 +57,20 @@ namespace iOSTenThree
 ```
 
 > [!NOTE]
-> 呼叫`RequestReview()`少量的程式開發中應用程式將一律顯示評等和檢閱對話方塊中，因此可進行測試。 這不適用於透過 TestFlight，方法呼叫將會忽略已散發的應用程式。
+> 在`RequestReview()`開發中的應用程式中呼叫, 一律會顯示 [評等] 和 [審查] 對話方塊, 讓它可以進行測試。 這不適用於透過 TestFlight 散發的應用程式, 其中會忽略方法呼叫。
 
-當`RequestReview()`使用者從 App Store 安裝的傳送應用程式中呼叫方法，iOS 10 開發人員處理整個的評等和檢閱程序。 同樣地，因為此程序應用程式存放區原則所控管，警示可能會或可能不會顯示。
+當使用者已從 app Store 安裝的出貨應用程式中呼叫方法時,iOS10將會處理開發人員的整個評等和審查流程。`RequestReview()` 同樣地, 因為此程式是由 App Store 原則所控管, 所以不一定會顯示警示。
 
-## <a name="linking-to-an-app-store-product-page"></a>連結至 App Store 的產品頁面 
+## <a name="linking-to-an-app-store-product-page"></a>連結至 App Store 產品頁面 
 
-除了新`RequestReview`方法，開發人員仍可提供應用程式中從 App Store 中的應用程式的產品頁面的深層連結。 藉由附加`action=write-review`至產品頁面 URL 的結尾，頁面將會開啟使用者可以撰寫自動檢閱應用程式。 
+除了新`RequestReview`的方法之外, 開發人員仍然可以從應用程式內提供應用程式商店中應用程式產品頁面的深層連結。 藉由`action=write-review`將附加至產品頁面 URL 的結尾, 頁面將會開啟, 讓使用者能夠自動撰寫應用程式的審核。 
 
 ## <a name="summary"></a>總結
 
-這篇文章已涵蓋 RequestReview 方法新增至 iOS 10，以及如何在 Xamarin.iOS 中實作該 Apple。
+本文涵蓋 Apple 新增至 iOS 10 的 RequestReview 方法, 以及如何在 Xamarin 中執行。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [iOSTenThree 範例](https://developer.xamarin.com/samples/ios/iOS10/iOSTenThree)
+- [iOSTenThree 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree/)

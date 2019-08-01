@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 264bdcc9a7a0d73ebe3385246ee6dfae3d9a850f
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: f49416eddb69e2900eb427f27057cd8f1cb9ceb5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741000"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68654694"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>使用 watchOS 在 Xamarin 中瀏覽
 
@@ -53,7 +53,7 @@ DismissController();
 
 如同 iOS 左邊緣撥動向後巡覽至的階層式導覽堆疊中的父控制站。
 
-這兩個[WatchKitCatalog](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)並[WatchTables](https://developer.xamarin.com/samples/monotouch/watchOS/WatchTables/)範例包括階層式導覽。
+這兩個[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)並[WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)範例包括階層式導覽。
 
 ### <a name="pushing-and-popping-in-code"></a>推進和拉出程式碼中
 
@@ -117,5 +117,5 @@ PresentController (controllerNames, contexts);
 
 ## <a name="related-links"></a>相關連結
 
-- [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchKitCatalog （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WatchTables （範例）](https://developer.xamarin.com//samples/monotouch/watchOS/WatchTables/)

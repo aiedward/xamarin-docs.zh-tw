@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: 7a5c09bfe46b9e775383889e07fd93094ba9bf68
-ms.sourcegitcommit: a9c60f50b40203dd784e3e790b0d83e2bfc86129
+ms.openlocfilehash: bf9b630613dcc5c25dac96cad71e54022ead1812
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65731527"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68649589"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從 Xamarin.Forms XAML 檔案。原生的檢視，可以設定屬性和事件處理常式，它們可以與 Xamarin.Forms 檢視互動。這篇文章會示範如何使用 Xamarin.Forms XAML 檔案中的原生檢視。_
 
@@ -38,7 +38,7 @@ _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從
 1. 在 XAML 檔案中建立原生檢視的執行個體。
 
 > [!IMPORTANT]
-> 使用原生檢視的任何 XAML 頁面必須停用已編譯的 XAML。 這可藉由裝飾您的 XAML 頁面的程式碼後置類別`[XamlCompilation(XamlCompilationOptions.Skip)]`屬性。 如需 XAML 編譯的詳細資訊，請參閱[Xamarin.Forms 中 XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
+> 針對任何使用原生視圖的 XAML 頁面, 必須停用編譯的 XAML。 這可以藉由使用`[XamlCompilation(XamlCompilationOptions.Skip)]`屬性來裝飾 XAML 頁面的程式碼後置類別來完成。 如需 XAML 編譯的詳細資訊, 請參閱[Xamarin 中的 Xaml 編譯](~/xamarin-forms/xaml/xamlc.md)。
 
 若要從程式碼後置檔案參考原生的檢視，您必須使用共用資產專案 (SAP)，並將條件式編譯指示詞與平台特定程式碼包裝。 如需詳細資訊，請參閱[從程式碼參考原生檢視](#native_view_code)。
 
@@ -184,7 +184,7 @@ Android 的小工具的建構函式通常需要 Android`Context`物件引數，�
 
 [ `UIFont.FromName` ](xref:UIKit.UIFont.FromName*) Factory 方法用於設定[ `UILabel.Font` ](xref:UIKit.UILabel.Font)屬性，以新[ `UIFont` ](xref:UIKit.UIFont)在 iOS 上。 `UIFont`子系的方法引數所指定的名稱和大小`x:Arguments`屬性。
 
-[ `Typeface.Create` ](https://developer.xamarin.com/api/member/Android.Graphics.Typeface.Create/p/System.String/Android.Graphics.TypefaceStyle/) Factory 方法用於設定[ `TextView.Typeface` ](https://developer.xamarin.com/api/property/Android.Widget.TextView.Typeface/)屬性，以新[ `Typeface` ](https://developer.xamarin.com/api/type/Android.Graphics.Typeface/)在 Android 上。 `Typeface`子系的方法引數所指定系列名稱和樣式`x:Arguments`屬性。
+[ `Typeface.Create` ](xref:Android.Graphics.Typeface.Create*) Factory 方法用於設定[ `TextView.Typeface` ](xref:Android.Widget.TextView.Typeface)屬性，以新[ `Typeface` ](xref:Android.Graphics.Typeface)在 Android 上。 `Typeface`子系的方法引數所指定系列名稱和樣式`x:Arguments`屬性。
 
 [ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)建構函式用來設定[ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily)屬性，以新`FontFamily`通用 Windows 平台 (UWP) 上。 `FontFamily`子系的方法引數所指定名稱`x:Arguments`屬性。
 
@@ -325,7 +325,7 @@ IOS 和 Android 的原生按鈕會共用相同`OnButtonTap`事件處理常式，
 
 此頁面也包含每個平台的原生的選擇器 檢視。 每個原生的檢視會顯示水果的集合繫結及其`ItemSource`屬性設`SubclassedNativeControlsPageViewModel.Fruits`集合。 這可讓使用者從中挑選的成果，如下列螢幕擷取畫面所示：
 
-![](xaml-images/sub-classed.png "子類別化之原生檢視")
+![](xaml-images/sub-classed.png "子類別化的原生視圖")
 
 在 iOS 和 Android 原生的選擇器會使用方法，來設定控制項。 因此，這些選擇器必須公開屬性，使其適合 XAML 的子類別。 在通用 Windows 平台 (UWP)，`ComboBox`已經是適合 XAML 的因此不需要子類別化。
 
@@ -423,7 +423,7 @@ class PickerModel : UIPickerViewModel
 
 ### <a name="android"></a>Android
 
-Android 的實作子類別[ `Spinner` ](https://developer.xamarin.com/api/type/Android.Widget.Spinner/) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
+Android 的實作子類別[ `Spinner` ](xref:Android.Widget.Spinner) 檢視中，並公開屬性，屬性可以從 XAML 輕鬆地取用的事件：
 
 ```csharp
 class MySpinner : Spinner
@@ -481,7 +481,7 @@ class MySpinner : Spinner
 }
 ```
 
-`MySpinner`類別會公開`ItemsSource`並`SelectedObject`屬性，並有`ItemSelected`事件。 所顯示的項目`MySpinner`類別所提供的[ `Adapter` ](https://developer.xamarin.com/api/type/Android.Widget.Adapter/)相關聯的檢視，以及項目會填入`Adapter`當`ItemsSource`屬性第一次設定。 每當在選取的項目`MySpinner`類別的變更，`OnBindableSpinnerItemSelected`事件處理常式更新`SelectedObject`屬性。
+`MySpinner`類別會公開`ItemsSource`並`SelectedObject`屬性，並有`ItemSelected`事件。 所顯示的項目`MySpinner`類別所提供的[ `Adapter` ](xref:Android.Widget.Adapter)相關聯的檢視，以及項目會填入`Adapter`當`ItemsSource`屬性第一次設定。 每當在選取的項目`MySpinner`類別的變更，`OnBindableSpinnerItemSelected`事件處理常式更新`SelectedObject`屬性。
 
 ## <a name="summary"></a>總結
 
@@ -490,9 +490,9 @@ class MySpinner : Spinner
 
 ## <a name="related-links"></a>相關連結
 
-- [NativeSwitch （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeSwitch/)
-- [Forms2Native （範例）](https://developer.xamarin.com/samples/xamarin-forms/Forms2Native/)
-- [NativeViewInsideContentView （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/NativeViewInsideContentView/)
-- [SubclassedNativeControls （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/NativeViews/SubclassedNativeControls/)
+- [NativeSwitch （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+- [Forms2Native （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/forms2native)
+- [NativeViewInsideContentView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
+- [SubclassedNativeControls （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
 - [原生格式](~/xamarin-forms/platform/native-forms.md)
 - [在 XAML 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)

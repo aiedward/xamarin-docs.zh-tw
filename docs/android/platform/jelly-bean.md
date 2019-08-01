@@ -1,42 +1,42 @@
 ---
-title: Jelly Bean 功能
-description: 本文件將 Android 4.1 中導入開發人員提供的新功能的高階概觀。 這些功能包括： 增強式通知，Android 的資料交換 」 共用大型檔案、 多媒體、 對等網路探索、 動畫、 新的權限的更新的更新。
+title: 軟糖 Bean 功能
+description: '本檔將針對 Android 4.1 中引進的開發人員提供新功能的高階總覽。 這些功能包括: 增強的通知、Android 橫樑更新以共用大型檔案、更新為多媒體、對等網路探索、動畫、新許可權。'
 ms.prod: xamarin
 ms.assetid: 23F57634-2EF9-5C15-C710-B3E19A5AF7E1
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 24fc14b0342591c56f5bf91862b0d94759a42834
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e54f499316d2b99d87d05fbd202308eecaaed220
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61078394"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643364"
 ---
-# <a name="jelly-bean-features"></a>Jelly Bean 功能
+# <a name="jelly-bean-features"></a>軟糖 Bean 功能
 
-_本文件將 Android 4.1 中導入開發人員提供的新功能的高階概觀。這些功能包括： 增強式通知，Android 的資料交換 」 共用大型檔案、 多媒體、 對等網路探索、 動畫、 新的權限的更新的更新。_
+_本檔將針對 Android 4.1 中引進的開發人員提供新功能的高階總覽。這些功能包括: 增強的通知、Android 橫樑更新以共用大型檔案、更新為多媒體、對等網路探索、動畫、新許可權。_
 
 
 
 ## <a name="overview"></a>總覽
 
-Android 4.1 (API 層級 16)，也稱為"Jelly Bean，「 已於 2012 年 7 月 9 日發行。 這篇文章會使用 Xamarin.Android 開發人員提供的一些 Android 4.1 的新功能的高階簡介。 有些推出這些新功能是啟動活動，如相機、 新的音效，並改善應用程式堆疊巡覽支援動畫的增強功能。 您現可以剪下並貼上包含 」 用途。
+Android 4.1 (API 層級 16) (也稱為「軟糖 Bean」) 已于2012年7月9日發行。 本文將針對使用 Xamarin 的開發人員提供 Android 4.1 中一些新功能的高階簡介。 引進的部分新功能包括啟動活動的動畫、攝影機的新聲音, 以及改善應用程式堆疊導覽的支援。 現在可以使用意圖進行剪下和貼上。
 
-Android 應用程式的穩定性改進能夠找出的相依性不穩定的內容提供者。 服務也可能隔離，使其僅可供存取啟動它們的活動。
+Android 應用程式的穩定性已經過改善, 可讓您隔離相依性不穩定的內容提供者。 服務也可能會隔離, 使其只能由啟動它們的活動存取。
 
-支援已新增網路服務探索使用 Bonjour、 UPnP 或多點傳送的 DNS 為基礎的服務。 您現在可更豐富文字、 動作按鈕和大型映像已格式化的通知。
+已針對使用 Bonjour、UPnP 或多播 DNS 服務的網路服務探索新增支援。 現在有可能會有更豐富的通知, 其中包含格式化文字、動作按鈕和大型影像。
 
-最後幾個新的權限已加入於 Android 4.1。
+最後, Android 4.1 中已新增數個新的許可權。
 
 
 
 ## <a name="requirements"></a>需求
 
-若要開發 Xamarin.Android 應用程式，使用 Jelly Bean 需要 Xamarin.Android 4.2.6 或更高的及 Android 4.1 (API 層級 16) 透過 Android SDK 管理員安裝如下列螢幕擷取畫面所示：
+若要使用軟糖 Bean 開發 Xamarin. Android 應用程式, 您必須透過 Android SDK Manager 安裝 Xamarin 4.2.6 或更高版本, 以及 Android 4.1 (API 層級 16), 如下列螢幕擷取畫面所示:
 
-[![選取 Android SDK 管理員中的 Android 4.1](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
+[![在 Android SDK 管理員中選取 Android 4。1](jelly-bean-images/image1.png)](jelly-bean-images/image1.png#lightbox)
 
 
 
@@ -46,14 +46,14 @@ Android 應用程式的穩定性改進能夠找出的相依性不穩定的內容
 
 ### <a name="animations"></a>Animations
 
-活動可能會使用顯示比例動畫或自訂動畫來啟動`ActivityOptions`類別。 若要支援這些動畫提供下列新方法：
+您可以使用 [縮放動畫] 或 [ `ActivityOptions`自訂動畫] 來啟動活動, 方法是使用類別。 提供下列新方法以支援這些動畫:
 
--   `MakeScaleUpAnimation` – 這會建立相應增加從開始位置和大小，在螢幕上的活動時段的動畫。
--   `MakeThumbnailScaleUpAnimation` – 這會從螢幕上的指定位置的縮圖映像建立的動畫，相應增加。
--   `MakeCustomAnimation` – 這會從應用程式中的資源建立動畫。 沒有針對該活動便會開啟一個動畫，而另一個活動時停止。
+-   `MakeScaleUpAnimation`–這會建立動畫, 從螢幕上的開始位置和大小相應增加活動時段。
+-   `MakeThumbnailScaleUpAnimation`–這會建立一個動畫, 從螢幕上指定的位置相應增加縮圖影像。
+-   `MakeCustomAnimation`–這會從應用程式中的資源建立動畫。 當活動開啟時, 會有一個動畫, 另一個則用於活動停止的時間。
 
 
-新`TimeAnimator`類別提供的介面`TimeAnimator.ITimeListener`，可以通知應用程式，每次在範圍內變更的動畫。 例如，請考慮下列實作`TimeAnimator.ITimeListener`:
+新`TimeAnimator`的類別會提供介面`TimeAnimator.ITimeListener` , 每次在動畫中變更畫面格時, 就會通知應用程式。 例如, 請考慮下列`TimeAnimator.ITimeListener`的執行:
 
 ```csharp
 class MyTimeListener : Java.Lang.Object,  TimeAnimator.ITimeListener
@@ -65,7 +65,7 @@ class MyTimeListener : Java.Lang.Object,  TimeAnimator.ITimeListener
 }
 ```
 
-若要使用的類別的執行個體現在`TimeAnimator`建立時，並設定接聽程式：
+現在若要使用類別, `TimeAnimator`會建立的實例, 並設定接聽程式:
 
 ```csharp
 var animator = new TimeAnimator();
@@ -73,31 +73,31 @@ animator.SetTimeListener(new MyTimeListener());
 animator.Start();
 ```
 
-作為`TimeAnimator`執行個體正在執行，它會叫用`ITimeAnimator.ITimeListener`，這將會再記錄如何動畫有長久以來一直執行，以及多久它如已在上次方法叫用。
+當實例正在執行時, 它`ITimeAnimator.ITimeListener`會叫用, 接著會記錄 animator 的執行時間, 以及自上一次叫用方法以來的時間長度。 `TimeAnimator`
 
 
 
 ### <a name="application-stack-navigation"></a>應用程式堆疊導覽
 
-Android 4.1 改善 Android 3.0 中導入的應用程式堆疊導覽。 藉由指定`ParentName`的屬性`ActivityAttribute`，Android 可以開啟適當的父活動，當使用者按下[向上按鈕](https://developer.android.com/design/patterns/navigation.html#up-vs-back)動作列-Android 將會執行個體化所指定的活動`ParentName`屬性。 這可讓應用程式，以保留的活動將指定的工作階層。
+Android 4.1 改善了 Android 3.0 中引進的應用程式堆疊導覽。 藉由指定`ParentName`的屬性`ActivityAttribute`, 當使用者按下動作列上的 [上一層][按鈕](https://developer.android.com/design/patterns/navigation.html#up-vs-back)時, android 就可以開啟適當的父活動-android `ParentName`會將屬性所指定的活動具現化。 這可讓應用程式保留進行指定工作的活動階層。
 
-對於大部分的應用程式設定`ParentName`活動資訊就足以讓 Android 導覽應用程式堆疊，提供正確的行為Android 會藉由建立一系列的對應方式為每個父活動合成必要上一頁堆疊。 不過，因為這是人的應用程式堆疊，每個綜合活動不會自然的活動會有儲存的狀態。 若要提供綜合的父活動的已儲存的狀態，活動可能會覆寫`OnPrepareNavigationUpTaskStack`方法。 這個方法會接收`TaskStackBuilder`會有一組的意圖的執行個體物件，Android 會使用建立上一頁堆疊。 活動可以修改這些意圖，以便建立綜合活動時，它會收到適當的狀態資訊。
+對於大部分的應用程式`ParentName` , 在活動上設定的足夠資訊, 可讓 Android 針對流覽應用程式堆疊提供正確的行為;Android 會針對每個父活動建立一系列意圖, 以合成必要的後端堆疊。 不過, 因為這是人工應用程式堆疊, 所以每個綜合活動都不會有自然活動所具有的儲存狀態。 若要將儲存的狀態提供給綜合父活動, 活動可能會`OnPrepareNavigationUpTaskStack`覆寫方法。 這個方法會接收`TaskStackBuilder`一個實例, 其中會有一組 Android 將用來建立後端堆疊的意圖物件。 活動可能會修改這些意圖, 以便在建立綜合活動時, 將會收到適當的狀態資訊。
 
-更複雜的情況下，新的方法上有活動類別，可用來處理上巡覽的行為，並建構上一頁堆疊：
+針對更複雜的案例, 活動類別上有新的方法可用來處理向上導覽並建立後端堆疊的行為:
 
--   `OnNavigateUp` – 藉由覆寫這個方法是能夠執行自訂動作時<span class="ui">向上</span>按下按鈕時。
--   `NavigateUpTo` -呼叫這個方法會導致應用程式目前的活動從瀏覽至所指定的意圖指定的活動。
--   `ParentActivityIntent` – 這用來取得意圖，將會啟動目前活動之父活動。
--   `ShouldUpRecreateTask` – 此方法用以查詢來瀏覽到父活動是否必須建立綜合的上一頁堆疊。 傳回`true`如果必須建立綜合的堆疊。 
--   `FinishAffinity` -呼叫這個方法會完成目前活動與中的所有活動其下目前的工作具有相同的工作親和性。
--   `OnCreateNavigateUpTaskStack` – 此方法會覆寫時，就必須擁有完整控制權的綜合堆疊的建立方式。
+-   `OnNavigateUp`–藉由覆寫這個方法, 您可以在按下 [<span class="ui">向上</span>] 按鈕時執行自訂動作。
+-   `NavigateUpTo`-呼叫這個方法會導致應用程式從目前的活動流覽至指定意圖所指定的活動。
+-   `ParentActivityIntent`–這是用來取得將啟動目前活動之父活動的意圖。
+-   `ShouldUpRecreateTask`–這個方法是用來查詢是否必須建立綜合後端堆疊, 才能導覽至父活動。 `true`如果必須建立綜合堆疊, 則傳回。 
+-   `FinishAffinity`-呼叫這個方法將會在目前的工作中, 完成目前的活動和其底下的所有活動, 並具有相同的工作相似性。
+-   `OnCreateNavigateUpTaskStack`–當需要完全控制如何建立綜合堆疊時, 會覆寫這個方法。
 
 
 
 
 ### <a name="camera"></a>觀景窗
 
-沒有新的介面， `Camera.IAutoFocusMoveCallback`，可用來偵測時自動焦點已啟動或停止移動。 下列程式碼片段中，就可以看到這個新介面的範例：
+有一個新的介面, `Camera.IAutoFocusMoveCallback`可用來偵測自動焦點已開始或停止移動的時間。 此新介面的範例可在下列程式碼片段中看到:
 
 ```csharp
 public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
@@ -118,15 +118,15 @@ public class AutoFocusCallbackActivity : Activity, Camera.IAutoFocusCallback
 }
 ```
 
-新的類別`MediaActionSound`提供一組 API，以便產生音效的各種媒體動作。 有可能發生的相機，這些會列舉所定義的數個動作`Android.Media.MediaActionSoundType`:
+新的類別`MediaActionSound`會提供一組 API, 以產生各種媒體動作的音效。 相機有數個可能發生的動作, 這些都是由列舉`Android.Media.MediaActionSoundType`所定義:
 
--   `MediaActionSoundType.FocusComplete` – 將焦點放完成時，就會播放此音效。
--   `MediaActionSoundType.ShutterClick` – 建立靜態影像圖片時，就會播放此音效。
--   `MediaActionSoundType.StartVideoRecording` – 此音效會使用指示的視訊錄製開頭。
--   `MediaActionSoundType.StopVideoRecording` – 將播放此音效，指出結尾的視訊錄製。
+-   `MediaActionSoundType.FocusComplete`–完成焦點時所播放的音效。
+-   `MediaActionSoundType.ShutterClick`–當拍攝靜止影像圖片時, 將會播放此音效。
+-   `MediaActionSoundType.StartVideoRecording`–使用此音效表示影片錄製開始。
+-   `MediaActionSoundType.StopVideoRecording`–將會播放此音效, 指出影片錄製結束。
 
 
-使用方式的範例`MediaActionSound`類別中所見下列程式碼片段：
+在下列程式碼片段中, 可以`MediaActionSound`看到如何使用類別的範例:
 
 ```csharp
 var mediaActionPlayer = new MediaActionSound();
@@ -151,139 +151,139 @@ mediaActionPlayer.Release();
 
 #### <a name="android-beam"></a>Android Beam
 
-Android 資料交換是一種 NFC 基礎技術，讓兩個彼此通訊的 Android 裝置。 Android 4.1 移轉大型檔案提供更好的支援。 使用新的方法時`NfcAdapter.SetBeamPushUris()`Android 會替代傳輸機制 （例如藍芽） 之間切換以達到快速傳輸速度。
+Android 橫樑是一種以 NFC 為基礎的技術, 可讓兩個 Android 裝置彼此通訊。 Android 4.1 針對大型檔案的傳輸提供更佳的支援。 使用新的方法`NfcAdapter.SetBeamPushUris()`時, Android 會在替代傳輸機制 (例如藍牙) 之間切換, 以達到快速傳送速率。
 
 
 
-#### <a name="network-services-discovery"></a>網路服務探索
+#### <a name="network-services-discovery"></a>網絡服務探索
 
-Android 4.1 包含新的 API 的多點傳送以 DNS 為基礎的服務探索。
-這可讓應用程式偵測，並透過 Wi-fi 連線到其他裝置，例如印表機、 相機或媒體裝置。 這些新的 API 位於`Android.Net.Nsd`封裝。
+Android 4.1 包含新的 API, 適用于多播 DNS 服務探索。
+這可讓應用程式偵測並透過 Wi-fi 連線到其他裝置, 例如印表機、攝影機和媒體裝置。 這些新的 API 位於`Android.Net.Nsd`套件中。
 
-若要建立可供其他服務，服務`NsdServiceInfo`類別用來建立物件，將會定義服務的屬性。 此物件則提供給`NsdManager.RegisterService()`連同實作`NsdManager.ResolveListener`。 實作`NsdManager.ResolveListener`用來註冊成功的通知，以及取消註冊服務。
+若要建立其他服務可能取用的服務, 則`NsdServiceInfo`會使用類別來建立將定義服務屬性的物件。 然後, 這個物件會與`NsdManager.RegisterService()`的`NsdManager.ResolveListener`執行一起提供。 的`NsdManager.ResolveListener`執行是用來通知成功註冊, 以及取消註冊服務。
 
-若要探索的網路和實作上的服務`Nsd.DiscoveryListener`傳遞至`NsdManager.discoverServices()`。
+探索網路上的服務, 並`Nsd.DiscoveryListener`將傳遞至。 `NsdManager.discoverServices()`
 
 
 
 #### <a name="network-usage"></a>網路使用量
 
-新的方法，`ConnectivityManager.IsActiveNetworkMetered`可讓裝置以檢查是否已連接到計量付費網路。 這個方法可用來協助您管理資料使用量是準確地通知使用者，可能昂貴的費用，進行資料作業。
+新的方法`ConnectivityManager.IsActiveNetworkMetered`可讓裝置檢查是否已連線到計量付費網路。 這個方法可用來藉由正確地通知使用者, 資料作業的費用可能會很高, 而協助管理資料的使用。
 
 
 
-#### <a name="wifi-direct-service-discovery"></a>WiFi 直接服務探索
+#### <a name="wifi-direct-service-discovery"></a>WiFi Direct 服務探索
 
-`WifiP2pManager`類別來支援 Android 4.0 中導入*zeroconf*。 Zeroconf （零設定網路功能） 是一組技術，可讓裝置 （電腦、 印表機、 電話），自動連線到網路，而人為的網路操作員或特殊的組態伺服器的介入。
+類別是在 Android 4.0 中引進, 以支援*zeroconf。* `WifiP2pManager` Zeroconf (零設定網路) 是一組技術, 可讓裝置 (電腦、印表機、手機) 自動連線到網路, 並介入人力網路操作員或特殊設定伺服器。
 
-在 Jelly Bean`WifiP2pManager`可以找出使用的裝置附近*Bonjour*或是*Upnp*。 Bonjour 是 zeroconf Apple 的實作。 Upnp 網路通訊協定，也支援 zeroconf 的設定。 下列方法新增至`WiFiP2pManager`支援 Wi-fi 服務探索：
+在軟糖 Bean 中`WifiP2pManager` , 可以使用*Bonjour*或*Upnp*來探索附近的裝置。 Bonjour 是 Apple 的 zeroconf 實行。 Upnp 是一組也支援 zeroconf 的網路通訊協定。 已將下列方法新增至`WiFiP2pManager` , 以支援 wi-fi 服務探索:
 
--   `AddLocalService()` – 此方法可透過 Wi-fi 宣佈為服務應用程式，探索的對等。
--   `AddServiceRequest(` ) – 此方法是將服務探索要求傳送至架構。 它用來初始化 Wi-fi 服務探索。
--   `SetDnsSdResponseListeners()` – 此方法用來註冊要接收 Bonjour 探索要求的回應上叫用的回呼。
--   `SetUpnpServiceResponseListener()` – 此方法用來註冊要接收的回應探索要求 Upnp 上叫用的回呼。
+-   `AddLocalService()`–此方法是用來透過 Wi-fi 宣告應用程式即服務, 以進行對等的探索。
+-   `AddServiceRequest(`) –此方法會將服務探索要求傳送至架構。 它是用來初始化 Wi-fi 服務探索。
+-   `SetDnsSdResponseListeners()`–此方法用來註冊接收來自 Bonjour 之探索要求的回應時, 所要叫用的回呼。
+-   `SetUpnpServiceResponseListener()`–這個方法是用來註冊要在接收對探索要求的回應時叫用的回呼。
 
 
 
 
 ### <a name="content-providers"></a>內容提供者
 
-`ContentResolver`類別已收到新的方法， `AcquireUnstableContentProvider`。 這個方法可讓應用程式取得 「 不穩定 」 的內容提供者。 一般來說，當應用程式取得內容的提供者，且該內容的提供者損毀，因此將應用程式。 此方法的呼叫，取代應用程式將不會損毀如果損毀，內容提供者。 相反地，`Android.OS.DeadObjectionException`從內容提供者上的呼叫以通知應用程式內容提供者已結束離開，就會擲回。 「 不穩定 」 的內容提供者是很有用，與從其他應用程式的內容提供者互動時一樣，它是比較不可能從另一個應用程式的不良程式碼將會影響另一個應用程式。
+類別已收到新的`AcquireUnstableContentProvider`方法。 `ContentResolver` 這個方法可讓應用程式取得「不穩定」的內容提供者。 一般來說, 當應用程式取得內容提供者, 而且該內容提供者損毀時, 應用程式就會出現。 使用此方法呼叫時, 如果內容提供者損毀, 應用程式將不會當機。 相反地`Android.OS.DeadObjectionException` , 會從內容提供者的呼叫擲回, 以通知應用程式內容提供者已消失。 當與其他應用程式的內容提供者互動時, 「不穩定」的內容提供者很有用–另一個應用程式的錯誤程式碼較不可能會影響另一個應用程式。
 
 
 
-### <a name="copy-and-paste-with-intents"></a>複製並貼上包含 」 用途
+### <a name="copy-and-paste-with-intents"></a>使用意圖複製並貼上
 
-`Intent`類別現在可以有`ClipData`透過相關聯的物件`Intent.ClipData`屬性。 這個方法可讓額外的資料，從 [剪貼簿] 中，把即將傳輸的目的。 執行個體`ClipData`可以包含一或多個`ClipData.Item`。 `ClipData.Item`下列類型的項目：
+類別現在可以透過`Intent.ClipData`屬性, 將物件與其相關聯。`ClipData` `Intent` 這個方法可讓剪貼簿中的額外資料與意圖一起傳輸。 的`ClipData`實例可以包含一或多個`ClipData.Item`。 `ClipData.Item`是下列類型的專案:
 
--   **文字**– 這是任何文字，其中一個 HTML 字串，或跨越任何內建 Android 樣式所支援之格式的字串。
--  **意圖**– 任一`Intent`物件。
--   **Uri** – 這可以是任何 URI，例如 HTTP 書籤或內容提供者的 URI。
+-   **Text** –這是任何文字字串, HTML 或內建 Android 樣式範圍支援其格式的任何字串。
+-  **意圖**-任何`Intent`物件。
+-   **Uri** –這可以是任何 Uri, 例如 HTTP 書簽或內容提供者的 uri。
 
 
 
 
 ### <a name="isolated-services"></a>隔離的服務
 
-獨立的服務是一項服務，它自己特殊的處理序下執行，而且有自己的沒有權限。 與服務的唯一通訊時，啟動服務，並透過服務 API 的繫結至它。 可設定屬性來宣告做為獨立的服務`IsolatedProcess="true"`在`ServiceAttribute`，裝飾的服務類別。
+隔離服務是以自己的特殊進程執行的服務, 而且沒有自己的許可權。 只有在啟動服務並透過服務 API 系結至該服務時, 才是唯一與服務的通訊。 您可以在裝飾服務類別的`IsolatedProcess="true"` `ServiceAttribute`中設定屬性, 以將服務宣告為隔離。
 
 
 ### <a name="media"></a>媒體
 
-新`Android.Media.MediaCodec`類別提供低階的媒體轉碼器的 API。 應用程式可以查詢系統以找出在裝置上可用的最低層級轉碼器。
+新`Android.Media.MediaCodec`的類別提供低層級媒體編解碼器的 API。 應用程式可以查詢系統, 找出裝置上可用的低層級編解碼器。
 
-新`Android.Media.Audiofx.AudioEffect`子類別已新增以支援其他音訊擷取音訊預先處理：
+已加入`Android.Media.Audiofx.AudioEffect`新的子類別, 以支援已捕捉音訊的其他音訊前置處理:
 
--   `Android.Media.Audiofx.AcousticEchoCanceler` – 這個類別的前置處理音訊來移除遠端合作對象擷取到的音訊訊號的訊號。 比方說，移除語音通訊應用程式的回應。
--   `Android.Media.Audiofx.AutomaticGainControl` – 這個類別用來將擷取的訊號標準化藉由提升或降低輸入的訊號，以便輸出訊號保持不變。
--   `Android.Media.Audiofx.NoiseSuppressor` – 這個類別將會移除背景噪音，從擷取的信號。
+-   `Android.Media.Audiofx.AcousticEchoCanceler`–此類別用於前置處理音訊, 以從已捕捉的音訊信號移除遠端合作物件的信號。 例如, 從語音通訊應用程式中移除回應。
+-   `Android.Media.Audiofx.AutomaticGainControl`–這個類別是用來藉由增加或減少輸入信號, 讓輸出信號保持不變, 藉以正規化已捕捉的信號。
+-   `Android.Media.Audiofx.NoiseSuppressor`–這個類別會從捕捉信號中移除背景雜訊。
 
 
-並非所有裝置將都支援這些效果。 此方法`AudioEffect.IsAvailable`應該由應用程式來查看有問題的音訊效果是否支援執行應用程式在裝置上呼叫。
+並非所有裝置都支援這些效果。 應用程式`AudioEffect.IsAvailable`應該呼叫方法, 以查看執行應用程式的裝置是否支援問題中的音訊效果。
 
-`MediaPlayer`類別現可支援 gapless 播放`SetNextMediaPlayer()`方法。 這個新的方法指定下一步 以啟動目前的媒體播放器完成其播放 MediaPlayer。
+類別現在支援`SetNextMediaPlayer()`使用方法的 gapless 播放。 `MediaPlayer` 這個新方法會指定當目前的媒體播放機完成播放時, 要啟動的下一個 MediaPlayer。
 
-下列的新類別會提供標準的機制和 UI 選取會播放媒體：
+下列新類別提供標準的機制和 UI, 可用於選取媒體的播放位置:
 
--   `MediaRouter` – 這個類別可讓應用程式來控制從裝置到外接式喇叭或其他裝置的媒體通道的路由。
--   `MediaRouterActionProvider` 和`MediaRouteButton`– 這些類別可協助提供一致的 UI 選取和播放媒體。
+-   `MediaRouter`–此類別可讓應用程式控制從裝置到外部喇叭或其他裝置的媒體通道路由。
+-   `MediaRouterActionProvider`和`MediaRouteButton` –這些類別可協助提供一致的 UI 來選取和播放媒體。
 
 
 
 
 ### <a name="notifications"></a>通知
 
-更多的彈性和控制顯示通知，android 4.1 可讓應用程式。 應用程式現在可以向使用者顯示更大更好的通知。 新的方法，`NotificationBuilder.SetStyle()`要在通知設定可讓其中一個新的三個新的樣式：
+Android 4.1 可讓應用程式更有彈性和控制顯示通知。 應用程式現在可以向使用者顯示更大且更好的通知。 新的方法`NotificationBuilder.SetStyle()`可讓您在通知上設定新三個新樣式的其中一個:
 
--   `Notification.BigPictureStyle` – 這是一個 helper 類別，也會產生中會有映像的通知。 下圖顯示具有巨量的映像的通知的範例：
+-   `Notification.BigPictureStyle`–這是協助程式類別, 會產生會在其中包含影像的通知。 下圖顯示具有大影像的通知範例:
 
 
  [![BigPictureStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
--   `Notification.BigTextStyle` – 這是一個 helper 類別，也會產生具有多行文字，例如電子郵件通知。 下列螢幕擷取畫面中，就可以看到這個新的通知樣式的範例：
+-   `Notification.BigTextStyle`–這是協助程式類別, 會產生會有多行文字的通知, 例如電子郵件。 此新通知樣式的範例可在下列螢幕擷取畫面中看到:
 
 
  [![BigTextStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
--   `Notification.InboxStyle` – 這是一個 helper 類別，將會產生包含一份字串，例如電子郵件訊息，從程式碼片段的通知，此螢幕擷取畫面所示：
+-   `Notification.InboxStyle`–這是協助程式類別, 會產生包含字串清單的通知, 例如來自電子郵件訊息的程式碼片段, 如下列螢幕擷取畫面所示:
 
 
- [![Notification.InboxStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
+ [![InboxStyle 通知的範例螢幕擷取畫面](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
 
-就可以通知使用標準或更大的樣式時，底部的通知訊息中新增最多兩個動作按鈕。
-這個範例可以看到下列的螢幕擷取畫面，其中動作按鈕可底部的通知：
+當通知使用正常或較大的樣式時, 可以在通知訊息底部新增最多兩個動作按鈕。
+您可以在下列螢幕擷取畫面中看到這種情況的範例, 其中動作按鈕會顯示在通知的底部:
 
- [![範例螢幕擷取畫面顯示下列通知訊息的動作按鈕](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
+ [![在通知訊息底下顯示之動作按鈕的範例螢幕擷取畫面](jelly-bean-images/image5.png)](jelly-bean-images/image5.png#lightbox)
 
-`Notification`類別已收到新的常數，可讓開發人員指定其中一個通知的五個優先權層級。 這些可以設定通知使用`Priority`屬性。
-
-
-
-### <a name="permissions"></a>權限
-
-已新增下列新的權限：
-
--   `READ_EXTERNAL_STORAGE` -應用程式需要唯讀的存取到外部儲存體。 所有應用程式目前會根據預設，擁有讀取權限，但 Android 的未來版本將會需要應用程式明確要求的讀取權限。
--   `READ_USER_DICTIONARY` -允許讀取權限加入使用者的 word 字典。
--   `READ_CALL_LOG` -允許應用程式取得傳入和傳出呼叫的相關資訊，請閱讀 通話記錄。
--   `WRITE_CALL_LOG` -可讓應用程式將寫入電話的通話記錄。
--   `WRITE_USER_DICTIONARY` -允許的應用程式，以寫入使用者的 word 字典。
+`Notification`類別已收到新的常數, 可讓開發人員為通知指定五個優先權層級的其中一個。 這些可以使用`Priority`屬性在通知上設定。
 
 
-要注意的重要變更`READ_EXTERNAL_STORAGE`– 目前此權限會自動授與 android。 Android 的未來版本將會需要應用程式要求此權限，才能授與權限。
+
+### <a name="permissions"></a>Permissions
+
+已新增下列新許可權:
+
+-   `READ_EXTERNAL_STORAGE`-應用程式需要外部儲存體的唯讀存取權。 根據預設, 所有應用程式都有讀取權限, 但未來版本的 Android 會要求應用程式明確要求讀取權限。
+-   `READ_USER_DICTIONARY`-允許對使用者的字組字典進行讀取存取。
+-   `READ_CALL_LOG`-允許應用程式藉由讀取通話記錄來取得傳入和撥出電話的相關資訊。
+-   `WRITE_CALL_LOG`-允許應用程式寫入電話上的通話記錄。
+-   `WRITE_USER_DICTIONARY`-允許應用程式寫入使用者的單字字典。
+
+
+要注意`READ_EXTERNAL_STORAGE`的重要變更-目前, Android 會自動授與此許可權。 Android 的未來版本將會要求應用程式在授與許可權之前要求此許可權。
 
 
 
 ## <a name="summary"></a>總結
 
-這篇文章介紹一些新 API 的 Android 4.1 (API 層級 16) 中所提供。 它會反白顯示的一些變更的動畫建立動畫的活動中，啟動，並導入的新 API 的其他裝置使用 Bonjour 或 UPnP 等通訊協定的網路探索。 Api 的其他變更反白顯示，例如剪下並貼上資料對應方式，透過能夠使用外掛式的服務或 「 不穩定 」 的內容提供者的能力。
+本文介紹 Android 4.1 (API 層級 16) 中提供的一些新 API。 它會反白顯示動畫的一些變更, 並以動畫方式啟動活動, 並引進新的 API, 以使用 Bonjour 或 UPnP 等通訊協定來探索其他裝置的網路。 API 的其他變更也會反白顯示, 例如能夠透過意圖來剪下和貼上資料、使用隔離服務或「不穩定」內容提供者的能力。
 
-這篇文章再出在引進的更新通知，並討論了一些 Android 4.1 的新權限
+本文接著會介紹通知的更新, 並討論一些已使用 Android 4.1 引進的新許可權
 
 
 ## <a name="related-links"></a>相關連結
 
-- [時間動畫範例 （範例）](https://developer.xamarin.com/samples/monodroid/PlatformFeatures/TimeAnimatorExample/)
+- [時間動畫範例 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-timeanimatorexample)
 - [Android 4.1 Api](https://developer.android.com/about/versions/android-4.1.html)
-- [工作和上一頁堆疊](https://developer.android.com/guide/components/tasks-and-back-stack.html)
-- [使用上一頁] 和 [向上巡覽](https://developer.android.com/design/patterns/navigation.html)
+- [工作和後端堆疊](https://developer.android.com/guide/components/tasks-and-back-stack.html)
+- [使用上一頁和 Up 導覽](https://developer.android.com/design/patterns/navigation.html)

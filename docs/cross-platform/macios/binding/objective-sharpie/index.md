@@ -6,12 +6,12 @@ ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
 author: asb3993
 ms.author: amburns
 ms.date: 10/11/2017
-ms.openlocfilehash: cbe0be19e38892d06a79831d7974fbddcb71a9ac
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: c298d3dc772929a123b6b65b0efe929f023a6563
+ms.sourcegitcommit: 7dbfac5f68c55f40dd726aa1b03cff62082fe711
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978479"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67866360"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>建立繫結與目標 Sharpie
 
@@ -43,7 +43,7 @@ _本節提供目標 Sharpie，用來自動化程序建立繫結到 OBJECTIVE-C �
 
 ## <a name="related-links"></a>相關連結
 
-- [目標 Sharpie 下載](https://dl.xamarin.com/objective-sharpie/ObjectiveSharpie.pkg)
+- [目標 Sharpie 下載](https://aka.ms/objective-sharpie)
 - [逐步解說：繫結 Objective C 程式庫](~/ios/platform/binding-objective-c/walkthrough.md)
 - [繫結 Objective-C 程式庫](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [繫結詳細資料](~/cross-platform/macios/binding/overview.md)

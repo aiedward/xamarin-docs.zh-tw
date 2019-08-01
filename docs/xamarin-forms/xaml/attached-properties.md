@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: c1fb596abb580cf42edda21ab71f2c70de59a547
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c8be9220f17a0f0f046f09ff61ae76d1fed7e15f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924557"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644779"
 ---
 # <a name="attached-properties"></a>附加屬性
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _附加的屬性是特殊類型的可繫結的屬性，定義一個類別中，但連接至其他物件，並可辨識在 XAML 做為屬性中包含的類別，以句號分隔屬性名稱。本文章提供附加屬性的簡介，並示範如何建立和使用它們。_
 
@@ -147,6 +147,6 @@ ShadowEffect.SetHasShadow (label, true);
 
 - [可繫結的屬性](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 命名空間](~/xamarin-forms/xaml/namespaces.md)
-- [延伸陰影效果 （範例）](https://developer.xamarin.com/samples/xamarin-forms/Effects/ShadowEffect/)
+- [延伸陰影效果 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 - [BindableProperty](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject](xref:Xamarin.Forms.BindableObject)

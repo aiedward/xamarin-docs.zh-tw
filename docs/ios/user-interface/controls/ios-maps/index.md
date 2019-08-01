@@ -1,26 +1,26 @@
 ---
-title: 在 Xamarin.iOS 中的對應
-description: 本文件說明 iOS MapKit 架構以及如何搭配 Xamarin.iOS。 它討論如何將地圖，樣式，移動瀏覽和縮放、 使用使用者位置、 加入註解、 使用圖說文字和覆疊，並執行本機搜尋。
+title: Xamarin 中的對應
+description: 本檔說明 iOS MapKit 架構, 以及它如何與 Xamarin 搭配使用。 它討論如何新增地圖、樣式、平移和縮放、使用使用者位置、新增注釋、使用標注和重迭, 以及執行本機搜尋。
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c61b5a8bd99afda5e8fbeea44e3362574fa7feea
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4b0e540bdcdf061f64880ea961a5e07a0a45b22e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61226649"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68642911"
 ---
-# <a name="maps-in-xamarinios"></a>在 Xamarin.iOS 中的對應
+# <a name="maps-in-xamarinios"></a>Xamarin 中的對應
 
-對應是在所有現代的行動作業系統中的常見功能。 iOS 提供原生透過 Map Kit 架構的對應支援。 Map Kit 與應用程式可以輕鬆地加入豐富的互動式地圖。 在各種不同的方式，例如加入註解標記在地圖上的位置，以及在覆疊的任意形狀的圖形中，您可以自訂這些對應。 Map Kit 甚至還有用於顯示裝置的目前位置的內建支援。
+Maps 是所有新式行動作業系統中的一項常見功能。 iOS 透過「地圖套件架構」提供原本的對應支援。 透過地圖套件, 應用程式可以輕鬆地加入豐富的互動式地圖。 這些對應可以透過各種方式進行自訂, 例如新增注釋以標記地圖上的位置, 以及覆迭任意圖形的圖形。 地圖套件甚至具有內建支援, 可顯示裝置的目前位置。
 
-## <a name="adding-a-map"></a>新增地圖
+## <a name="adding-a-map"></a>新增對應
 
-將地圖加入至應用程式藉由加入`MKMapView`檢視階層中，執行個體，如下所示：
+新增對應至應用程式的方式, 是將`MKMapView`實例加入至視圖階層, 如下所示:
 
 ```csharp
 // map is an MKMapView declared as a class variable
@@ -28,31 +28,31 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView` 是`UIView`會顯示對應的子類別。 只要加上地圖使用上述程式碼會產生互動式地圖：
+ `MKMapView`是顯示`UIView`對應的子類別。 只要使用上述程式碼新增對應, 就會產生互動式地圖:
 
  ![](images/00-map.png "範例對應")
 
 ## <a name="map-style"></a>地圖樣式
 
- `MKMapView` 支援對應的 3 個不同的樣式。 若要套用地圖樣式，請設定`MapType`屬性設為從值`MKMapType`列舉型別：
+ `MKMapView`支援3種不同的對應樣式。 若要套用地圖樣式, 只要將`MapType`屬性設定為`MKMapType`列舉中的值即可:
  ```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
  ```
-  下列螢幕擷取畫面顯示不同的地圖樣式可用：
+  下列螢幕擷取畫面顯示可用的不同地圖樣式:
 
- ![](images/01-mapstyles.png "此螢幕擷取畫面顯示有不同的地圖樣式")
+ ![](images/01-mapstyles.png "這個螢幕擷取畫面顯示可用的不同地圖樣式")
 
-## <a name="panning-and-zooming"></a>移動瀏覽和縮放
+## <a name="panning-and-zooming"></a>移動流覽和縮放
 
- `MKMapView` 包含地圖互動功能的支援，例如：
+ `MKMapView`包含地圖互動功能的支援, 例如:
 
--  透過捏合手勢縮放
--  透過移動瀏覽軌跡移動瀏覽
+-  透過縮小手勢縮放
+-  透過平移手勢移動
 
 
-這些功能可以啟用或停用，只`ZoomEnabled`並`ScrollEnabled`的屬性`MKMapView`執行個體，其中的預設值是兩個，則為 true。 比方說，若要顯示靜態地圖，只要設定適當的屬性為 false:
+只要設定`ZoomEnabled` `MKMapView`實例的和`ScrollEnabled`屬性, 就可以啟用或停用這些功能, 其中兩者的預設值都是 true。 例如, 若要顯示靜態對應, 只要將適當的屬性設為 false 即可:
 
 ```csharp
 map.ZoomEnabled = false;
@@ -61,7 +61,7 @@ map.ScrollEnabled = false;
 
 ## <a name="user-location"></a>使用者位置
 
-除了使用者互動，`MKMapView`也有內建支援顯示裝置的位置。 作法是使用*Core 位置*framework。 您可以存取使用者的位置之前，您必須提示使用者。 若要這樣做，建立的執行個體`CLLocationManager`並呼叫`RequestWhenInUseAuthorization`。
+除了使用者互動之外, `MKMapView`也提供內建的支援, 以顯示裝置的位置。 它會使用*核心位置*架構來執行此工作。 在您可以存取使用者的位置之前, 您必須先提示使用者。 若要這麼做, 請建立的`CLLocationManager`實例, `RequestWhenInUseAuthorization`並呼叫。
 
 ```csharp
 CLLocationManager locationManager = new CLLocationManager();
@@ -69,40 +69,40 @@ locationManager.RequestWhenInUseAuthorization();
 //locationManager.RequestAlwaysAuthorization(); //requests permission for access to location data while running in the background
 ```
 
-請注意，在 iOS 8.0，嘗試呼叫之前的版本`RequestWhenInUseAuthorization`會導致錯誤。 請務必檢查的 iOS 版本，再進行呼叫，如果您想要支援 8 之前的版本。
+請注意, 在8.0 之前的 iOS 版本中, 嘗試呼叫`RequestWhenInUseAuthorization`將會導致錯誤。 如果您想要支援8之前的版本, 請務必先檢查 iOS 版本, 再進行該呼叫。
 
-存取使用者的位置也需要修改**Info.plist**。 以下是應該設定的位置資料相關機碼：
+存取使用者的位置也需要修改**plist**。 以下是應該設定的位置資料相關機碼：
 
 - **NSLocationWhenInUseUsageDescription** - 用於當您在使用者與應用程式互動期間存取使用者位置時。
 - **NSLocationAlwaysUsageDescription** - 用於您的應用程式在背景中存取使用者的位置時。
 
-您可以將這些索引鍵，開啟**Info.plist** ，然後選取*來源*編輯器的底部。
+您可以開啟 [ **plist** ], 然後選取編輯器底部的 [*來源*] 來新增這些金鑰。
 
-一旦您已更新**Info.plist**提示使用者輸入其位置的存取權限，您可以在地圖上顯示使用者的位置，藉由設定`ShowsUserLocation`屬性設為 true:
+當您更新**plist**並提示使用者取得其位置的存取權限後, 您可以將`ShowsUserLocation`屬性設定為 true, 以在對應上顯示使用者的位置:
 
 ```csharp
 map.ShowsUserLocation = true;
 ```
 
- ![](images/02-location-alert.png "允許的位置存取警示")
+ ![](images/02-location-alert.png "允許位置存取警示")
  
 ## <a name="annotations"></a>標註
 
- `MKMapView` 也支援稱為 註解，在地圖上顯示影像。 這些可以是自訂映像或系統定義的 pin，各種色彩。 例如，下列螢幕擷取畫面顯示具有這兩個 pin 的對應和自訂映像：
+ `MKMapView`也支援在地圖上顯示影像, 稱為「批註」。 這些可以是自訂影像或系統定義的各種色彩 pin。 例如, 下列螢幕擷取畫面顯示具有 pin 和自訂影像的地圖:
 
- ![](images/03-annotations.png "此螢幕擷取畫面顯示具有這兩個 pin 的對應和自訂映像")
+ ![](images/03-annotations.png "此螢幕擷取畫面顯示具有 pin 和自訂影像的對應")
 
-### <a name="adding-an-annotation"></a>新增註解
+### <a name="adding-an-annotation"></a>加入批註
 
-註解本身有兩個部分：
+批註本身有兩個部分:
 
--  `MKAnnotation`物件，其中包含模型資料的相關註釋，例如標題和註解的位置。
--  `MKAnnotationView` ，其中包含要顯示和 （選擇性） 圖說文字會顯示當使用者點選註釋的映像。
+-  `MKAnnotation`物件, 包含關於注釋的模型資料, 例如批註的標題和位置。
+-  `MKAnnotationView` , 其中包含要顯示的影像, 以及當使用者按下注釋時所顯示的選擇性標注。
 
 
-Map Kit 使用 iOS 委派模式，來將附註加入至地圖，其中`Delegate`的屬性`MKMapView`設定為執行個體`MKMapViewDelegate`。 這是負責傳回的這個委派實作`MKAnnotationView`註釋。
+對應套件`Delegate` `MKMapView`會使用 iOS 委派模式將注釋加入至對應, 其中的屬性會設定`MKMapViewDelegate`為的實例。 這是委派的實作為, 負責`MKAnnotationView`傳回批註的。
 
-若要加入註解，首先會加入註釋藉由呼叫`AddAnnotations`上`MKMapView`執行個體：
+若要新增批註, 請先在`AddAnnotations` `MKMapView`實例上呼叫來加入批註:
 
 ```csharp
 // add an annotation
@@ -112,9 +112,9 @@ map.AddAnnotations (new MKPointAnnotation (){
 });
 ```
 
-在圖中可以看到的附註的位置時`MKMapView`會呼叫它的委派`GetViewForAnnotation`方法來取得`MKAnnotationView`來顯示。
+當注釋的位置會在地圖上顯示時, `MKMapView`會呼叫其委派的`GetViewForAnnotation`方法, 以取得要顯示`MKAnnotationView`的。
 
-例如，下列程式碼會傳回系統提供`MKPinAnnotationView`:
+例如, 下列程式碼會傳回系統提供`MKPinAnnotationView`的:
 
 ```csharp
 string pId = "PinAnnotation";
@@ -137,34 +137,34 @@ public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObje
 }
 ```
 
-### <a name="reusing-annotations"></a>重複使用的註解
+### <a name="reusing-annotations"></a>重複使用批註
 
-若要節省記憶體，`MKMapView`允許重複使用，便可重複使用表格儲存格的方式類似的共用中的註釋檢視。 取得註釋檢視從集區是藉由呼叫`DequeueReusableAnnotation`:
+為了節省記憶體, `MKMapView`允許將注釋視圖集區用於重複使用, 類似于重複使用資料表單元格的方式。 從集區取得注釋視圖是透過呼叫來`DequeueReusableAnnotation`完成:
 
 ```csharp
 MKAnnotationView pinView = (MKPinAnnotationView)mapView.DequeueReusableAnnotation (pId);
 ```
 
-#### <a name="showing-callouts"></a>顯示的圖說文字
+#### <a name="showing-callouts"></a>顯示標注
 
-如先前所述，註解可以選擇性地顯示圖說文字。 若要只顯示一個圖說文字`CanShowCallout`設為 true，在`MKAnnotationView`。 這會導致註解的標題時，顯示點選註解時，所示：
+如先前所述, 批註可以選擇性地顯示標注。 若要`CanShowCallout` `MKAnnotationView`在上顯示一個標注, 請直接將設定為 true。 這會導致在按下注釋時顯示批註的標題, 如下所示:
 
- ![](images/04-callout.png "所顯示的註解標題")
+ ![](images/04-callout.png "要顯示的注釋標題")
 
-### <a name="customizing-the-callout"></a>自訂圖說文字
+### <a name="customizing-the-callout"></a>自訂標注
 
-圖說文字，也可以自訂向左和右配件檢視中，如下所示：
+注標也可以自訂, 以顯示左和右的配件視圖, 如下所示:
 
 ```csharp
 pinView.RightCalloutAccessoryView = UIButton.FromType (UIButtonType.DetailDisclosure);
 pinView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile ("monkey.png"));
 ```
 
-此程式碼會產生下列的註標：
+此程式碼會產生下列標注:
 
- ![](images/05-callout-accessories.png "範例圖說文字")
+ ![](images/05-callout-accessories.png "範例標注")
 
-若要處理的點選正確的附屬應用程式的使用者，只要實作`CalloutAccessoryControlTapped`方法中的`MKMapViewDelegate`:
+若要處理使用者點擊正確的附件, 只要`CalloutAccessoryControlTapped` `MKMapViewDelegate`在中執行方法:
 
 ```csharp
 public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotationView view, UIControl control)
@@ -175,35 +175,35 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 ### <a name="overlays"></a>覆疊
 
-在地圖上的圖層圖形的另一種方式使用重疊。 重疊支援繪製隨地圖縮放比例的圖形內容。 iOS 提供數種覆疊，包括支援：
+在地圖上將圖形階層式另一種方式是使用重迭。 重疊支援繪製隨地圖縮放比例的圖形內容。 iOS 提供數種重迭類型的支援, 包括:
 
 -  多邊形-通常用來反白顯示地圖上的某些區域。
--  聚合線條-經常會看到顯示路由時。
--  圓形-用來反白顯示對應的循環區域。
+-  折線-顯示路由時通常會出現。
+-  圓形-用來反白顯示地圖的迴圈區域。
 
 
-此外，可以建立自訂覆疊顯示任意幾何與細微且可自訂的繪圖程式碼。 比方說，天氣雷達圖會是自訂的覆疊的良好候選項目。
+此外, 您可以建立自訂重迭, 以顯示具有細微、自訂繪圖程式碼的任意幾何。 例如, 氣象雷達圖是自訂重迭的理想候選。
 
-#### <a name="adding-an-overlay"></a>新增覆疊
+#### <a name="adding-an-overlay"></a>新增重迭
 
-類似於註釋，新增覆疊包含 2 個部分：
+與注釋類似, 新增覆迭牽涉到2個部分:
 
--  建立用於覆疊模型物件，並將它新增至`MKMapView`。
--  建立檢視表中的覆疊`MKMapViewDelegate`。
+-  建立重迭的模型物件, 並將它新增至`MKMapView` 。
+-  在中`MKMapViewDelegate`建立重迭的視圖。
 
 
-重疊的模型可以是任何`MKShape`子類別。 包含 Xamarin.iOS`MKShape`子類別的多邊形，聚合線條和圓形，透過`MKPolygon`，`MKPolyline`和`MKCircle`分別為類別。
+重迭的模型可以是任何`MKShape`子類別。 Xamarin 會分別透過`MKShape` `MKPolygon`、 `MKPolyline`和`MKCircle`類別, 包含多邊形、折線和圓形的子類別。
 
-比方說，下列程式碼用來新增`MKCircle`:
+例如, 下列程式`MKCircle`代碼是用來加入:
 
 ```csharp
 var circleOverlay = MKCircle.Circle (mapCenter, 1000);
 map.AddOverlay (circleOverlay);
 ```
 
-覆疊的檢視是`MKOverlayView`所傳回的執行個體`GetViewForOverlay`在`MKMapViewDelegate`。 每個`MKShape`都有對應`MKOverlayView`，知道如何顯示指定的圖形。 針對`MKPolygon`沒有`MKPolygonView`。 同樣地，`MKPolyline`對應至`MKPolylineView`，並針對`MKCircle`沒有`MKCircleView`。
+重迭的視圖是`MKOverlayView`的實例, 由中`MKMapViewDelegate`的所`GetViewForOverlay`傳回。 每`MKShape`個都有`MKOverlayView`對應的, 知道如何顯示指定的形狀。 `MKPolygon`有。`MKPolygonView` 同樣地`MKPolyline` , 對應`MKPolylineView`至, 而`MKCircle`在中`MKCircleView`則是。
 
-例如，下列程式碼會傳回`MKCircleView`針對`MKCircle`:
+例如, 下列程式`MKCircleView` `MKCircle`代碼會傳回的:
 
 ```csharp
 public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject overlay)
@@ -215,31 +215,31 @@ public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject ove
 }
 ```
 
-這會顯示圓形地圖上所示：
+這會在地圖上顯示一個圓形, 如下所示:
 
- ![](images/06-circle-overlay.png "地圖上顯示圓形")
+ ![](images/06-circle-overlay.png "在地圖上顯示的圓形")
 
-## <a name="local-search"></a>當地搜尋
+## <a name="local-search"></a>本機搜尋
 
-iOS 會包含當地搜尋 API 與 Map Kit，可讓非同步搜尋指定的地理區域中感興趣的點。
+iOS 包含具有地圖套件的本機搜尋 API, 可讓您以非同步方式在指定的地理區域中搜尋感興趣的點。
 
-若要執行的本機搜尋，應用程式必須遵循下列步驟：
+若要執行本機搜尋, 應用程式必須遵循下列步驟:
 
 1.  建立`MKLocalSearchRequest`物件。
-1.  建立`MKLocalSearch`物件從`MKLocalSearchRequest`。
-1.  呼叫`Start`方法`MKLocalSearch`物件。
-1.  擷取`MKLocalSearchResponse`於回呼中的物件。
+1.  從建立`MKLocalSearch`物件。 `MKLocalSearchRequest`
+1.  在物件上呼叫`Start`方法 `MKLocalSearch` 。
+1.  取得回呼`MKLocalSearchResponse`中的物件。
 
 
-當地搜尋 API 本身未提供使用者介面。 它甚至不需要使用對應。 不過，若要讓實際使用的當地搜尋，應用程式必須提供某種方式來指定搜尋查詢，並顯示結果。 此外，因為結果會包含位置資料，它通常會使得在地圖上顯示它們的意義。
+本機搜尋 API 本身不提供使用者介面。 它甚至不需要使用對應。 不過, 若要實際使用本機搜尋, 應用程式必須提供一些方法來指定搜尋查詢並顯示結果。 此外, 由於結果會包含位置資料, 因此在地圖上顯示時通常很合理。
 
 <a name="Adding_a_Local_Search_UI"/>
 
 ### <a name="adding-a-local-search-ui"></a>新增本機搜尋 UI
 
-若要接受搜尋輸入的一個方法是使用`UISearchBar`，其中所提供`UISearchController`，並將結果顯示資料表中。
+接受搜尋輸入的其中一種方式是`UISearchBar`使用 ( `UISearchController`由提供), 並將結果顯示在資料表中。
 
-下列程式碼加入`UISearchController`（其中的搜尋列屬性） 中`ViewDidLoad`方法`MapViewController`:
+下列程式碼會`UISearchController` `ViewDidLoad`在的方法`MapViewController`中加入 (具有搜尋列屬性):
 
 ```csharp
 //Creates an instance of a custom View Controller that holds the results
@@ -269,12 +269,12 @@ DefinesPresentationContext = true;
 NavigationItem.TitleView = searchController.SearchBar;
 ```
 
-請注意，您負責併入使用者介面中的搜尋列物件。 在此範例中，我們將它指派給 TitleView 的導覽列中，但是如果您未在您的應用程式中使用瀏覽控制器必須尋找另一個用來顯示它的地方。
+請注意, 您必須負責將搜尋列物件併入使用者介面中。 在此範例中, 我們將它指派給導覽列的 TitleView, 但是如果您沒有在應用程式中使用流覽控制器, 就必須尋找另一個位置來顯示它。
 
-在此程式碼片段中，我們建立另一個自訂檢視控制器 – `searchResultsController` – 顯示搜尋結果，並接著我們使用此物件來建立我們的搜尋控制站物件。 此外，我們也會建立新的搜尋更新程式，而成為作用中使用者互動的搜尋列時。 它會接收通知有關與每個按鍵輸入的搜尋，而且會負責更新 UI。
-我們將探討如何實作這兩`searchResultsController`而`searchResultsUpdater`本指南稍後的。
+在此程式碼片段中, 我們建立了另一個自`searchResultsController`定義視圖控制器––它會顯示搜尋結果, 然後我們使用此物件來建立搜尋控制器物件。 我們也建立了新的搜尋更新程式, 當使用者與搜尋列互動時, 就會變成作用中。 它會接收每個擊鍵搜尋的相關通知, 並負責更新 UI。
+我們將探討如何執行`searchResultsController`本指南`searchResultsUpdater`稍後的和。
 
-這會產生如下所示，在地圖上顯示 [搜尋] 列中：
+這會導致在地圖上顯示搜尋列, 如下所示:
 
  ![](images/07-searchbar.png "在地圖上顯示的搜尋列")
  
@@ -282,8 +282,8 @@ NavigationItem.TitleView = searchController.SearchBar;
 
 ### <a name="displaying-the-search-results"></a>顯示搜尋結果
 
-若要顯示搜尋結果，我們需要建立自訂的檢視控制器;通常`UITableViewController`。 如上所示，`searchResultsController`傳遞至建構函式的`searchController`它正在建立時。
-下列程式碼是如何建立此自訂的檢視控制器的範例：
+若要顯示搜尋結果, 我們需要建立自訂視圖控制器;通常是`UITableViewController`。 如上所示, `searchResultsController`會在建立`searchController`時傳遞至的的函式。
+下列程式碼是如何建立此自訂視圖控制器的範例:
 
 ```csharp
 public class SearchResultsViewController : UITableViewController
@@ -354,11 +354,11 @@ public class SearchResultsViewController : UITableViewController
 }
 ```
 
-### <a name="updating-the-search-results"></a>正在更新搜尋結果
+### <a name="updating-the-search-results"></a>更新搜尋結果
 
-`SearchResultsUpdater`做為中繼程序之間`searchController`的搜尋列中，搜尋結果。 
+會作為的搜尋列和搜尋`searchController`結果之間的中繼程式。 `SearchResultsUpdater` 
 
-在此範例中，我們必須先建立中的搜尋方法`SearchResultsViewController`。 若要這樣做，我們必須建立`MKLocalSearch`物件，並使用它來發出搜尋`MKLocalSearchRequest`，在回呼中傳遞給擷取的結果`Start`方法`MKLocalSearch`物件。 然後會傳回結果`MKLocalSearchResponse`物件的陣列`MKMapItem`物件：
+在此範例中, 我們必須先在中`SearchResultsViewController`建立搜尋方法。 `MKLocalSearch`若要這麼做`MKLocalSearchRequest`, 我們必須建立物件, 並使用它來發出的搜尋, 並在傳遞`MKLocalSearch`給`Start`物件方法的回呼中抓取結果。 然後, 結果會在包含物件`MKLocalSearchResponse`陣列的`MKMapItem`物件中傳回:
 
 ```csharp
 public void Search (string forSearchString)
@@ -384,7 +384,7 @@ public void Search (string forSearchString)
 }
 ```
 
-然後，在我們`MapViewController`我們將建立的自訂實作`UISearchResultsUpdating`，為指派給`SearchResultsUpdater`屬性我們`searchController`中[加入本機的搜尋 UI](#Adding_a_Local_Search_UI)區段：
+然後, `MapViewController`我們將在我們的中建立自訂`UISearchResultsUpdating`的執行, `SearchResultsUpdater`它會指派給我們`searchController`在[新增本機搜尋 UI](#Adding_a_Local_Search_UI)一節中的屬性:
 
 ```csharp
 public class SearchResultsUpdator : UISearchResultsUpdating
@@ -398,20 +398,20 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 }
 ```
 
-上述實作地圖上加註解時，從結果選取項目，如下所示：
+上述的執行方式會在從結果中選取專案時, 將批註新增至地圖, 如下所示:
 
- ![](images/08-search-results.png "註解加入至地圖中，從結果中選取項目")
+ ![](images/08-search-results.png "從結果中選取專案時, 新增至地圖的注釋")
  
 > [!IMPORTANT]
-> `UISearchController` 在 iOS 8 中實作。 如果您想要支援裝置之前，則您必須使用`UISearchDisplayController`。
+> `UISearchController`已在 iOS 8 中執行。 如果您想要支援早于此的裝置, 則必須使用`UISearchDisplayController`。
 
 
 
 ## <a name="summary"></a>總結
 
-檢查這篇文章*地圖* *Kit*適用於 iOS 的架構。 首先，它會探討`MKMapView`類別可讓應用程式中要包含的互動式地圖。 然後它會示範如何使用註釋及重疊的對應，進一步自訂。 最後，它會檢查本機搜尋功能新增至對應套件使用 iOS 6.1，示範如何使用執行觀光點位置為基礎的查詢，並將其新增至對應。
+本文已檢查適用于 iOS 的*地圖* *套件*架構。 首先, 它探討了`MKMapView`類別如何讓互動式對應包含在應用程式中。 然後示範如何使用注釋和重迭進一步自訂地圖。 最後, 它會檢查已使用 iOS 6.1 新增至地圖套件的本機搜尋功能, 並示範如何使用針對感利率的執行位置查詢, 並將其新增至地圖。
 
 ## <a name="related-links"></a>相關連結
 
 - [SearchController](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
-- [MapDemo （範例）](https://developer.xamarin.com/samples/monotouch/MapDemo)
+- [MapDemo (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)

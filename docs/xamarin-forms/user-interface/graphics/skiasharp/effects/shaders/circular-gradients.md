@@ -7,16 +7,16 @@ ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: a17ddf438856600870c9bb3da60a5f4667128d57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: df45908af9e2d13dcaeff732e8e8b1b49c523934
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218112"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68647663"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 循環的漸層
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [ `SKShader` ](xref:SkiaSharp.SKShader)類別定義來建立漸層的四種不同類型的靜態方法。 [ **SkiaSharp 線性漸層**](linear-gradient.md)文章討論[ `CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient*)方法。 本文章涵蓋其他三種類型的漸層，全部都根據圓形。
 
@@ -54,7 +54,7 @@ A [ `CreateRadialGradient` ](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSh
 
 如果您使用`CreateRadialGradient`填滿的圓形，您可以設定漸層中心的圓圈，中心和圓形的半徑漸層的半徑。 在此情況下，`SKShaderTileMode`引數具有不會影響呈現之漸層。 但是，如果大於圓形定義漸層的漸層填滿的區域則`SKShaderTileMode`引數具有深遠影響圓圈外發生的事件。
 
-效果`SKShaderMode`所示**放射狀漸層**頁面[ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)範例。 此頁面的 XAML 檔案會具現化`Picker`，可讓您選取其中一個的三個成員`SKShaderTileMode`列舉型別：
+效果`SKShaderMode`所示**放射狀漸層**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例。 此頁面的 XAML 檔案會具現化`Picker`，可讓您選取其中一個的三個成員`SKShaderTileMode`列舉型別：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,7 +140,7 @@ public partial class RadialGradientPage : ContentPage
 
 [![放射狀漸層](circular-gradients-images/RadialGradient.png "放射狀漸層")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-在所有三個情況下，漸層填滿畫布。 在左側的 [iOS] 畫面上超過 radius 漸層會繼續進行最後的色彩為白色。 所產生的`SKShaderTileMode.Clamp`。 Android 的畫面會顯示的效果`SKShaderTileMode.Repeat`:從中心的 100 個像素，漸層開始一次的第一個色彩，也就是黑色。 漸層會重複半徑的每個 100 像素。 
+在所有三個情況下，漸層填滿畫布。 在左側的 [iOS] 畫面上超過 radius 漸層會繼續進行最後的色彩為白色。 所產生的`SKShaderTileMode.Clamp`。 [Android] 畫面會顯示下列`SKShaderTileMode.Repeat`各項的效果:從中央起的100圖元開始, 漸層會以第一個色彩 (也就是黑色) 重新開始。 漸層會重複半徑的每個 100 像素。 
 
 在右側顯示的 [通用 Windows 平台] 畫面如何`SKShaderTileMode.Mirror`造成的漸層來替代指示。 第一個漸層是從中央黑色到白色，在 100 像素為單位的半徑。 下一步是從 100 像素 radius 為黑色 200 像素半徑，在白色與下一個漸層會反轉一次。
 
@@ -620,4 +620,4 @@ public class ConicalSpecularHighlightPage : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

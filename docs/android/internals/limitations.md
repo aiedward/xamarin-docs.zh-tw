@@ -1,42 +1,40 @@
 ---
-title: Xamarin.Android vs。桌面： 在 Mono 執行階段中的差異
+title: Xamarin. Android 與Mono 執行時間中的桌面差異
 ms.prod: xamarin
 ms.assetid: F953F9B4-3596-8B3A-A8E4-8219B5B9F7CA
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 115d715214d7af3174c41d9d82e894ce429dab42
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 18e6e82011460a51a96df4694f15b36c5ec94ab5
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60953340"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510702"
 ---
 # <a name="limitations"></a>限制
 
-在 Android 上的應用程式需要在建置流程期間產生 Java proxy 型別，因為它不可能產生在執行階段的所有程式碼。
+因為 Android 上的應用程式需要在建立過程中產生 JAVA proxy 類型, 所以無法在執行時間產生所有程式碼。
 
-相較於 Mono 桌面的 Xamarin.Android 限制如下：
-
+以下是相較于桌面 Mono 的 Xamarin Android 限制:
 
 ## <a name="limited-dynamic-language-support"></a>有限的動態語言支援
 
- [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)所需的任何 Android 執行階段需要叫用 managed 程式碼的時間。 Android 可呼叫包裝函式會在編譯時期，根據產生的 IL 的靜態分析。 這個最後的結果： 您*無法*做為動態語言 （IronPython、 IronRuby 等） 在任何情況下 （包括間接子類別化），需要子類別化的 Java 類型的位置沒有擷取這些動態類型的方法在編譯時期產生必要 Android 可呼叫包裝函式。
+ 當 Android 執行時間需要叫用 managed 程式碼時, 就需要 Android 可呼叫[包裝](~/android/platform/java-integration/android-callable-wrappers.md)函式。 Android 可呼叫包裝函式會在編譯時期根據 IL 的靜態分析來產生。 結果的最後一項: 您*無法*在需要 JAVA 類型子類別化的任何情況下 (包括間接子類別化) 使用動態語言 (IronPython、IronRuby 等), 因為在編譯時期無法將這些動態類型解壓縮到產生必要的 Android 可呼叫包裝函式。
 
+## <a name="limited-java-generation-support"></a>有限的 JAVA 產生支援
 
-## <a name="limited-java-generation-support"></a>產生的有限的 Java 支援
-
-[Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)需要 Java 程式碼來呼叫 managed 程式碼的順序來產生。 *依預設*，Android 可呼叫包裝函式只會包含 （特定） 的宣告建構函式和方法會覆寫虛擬的 Java 方法 (也就是它有[ `RegisterAttribute` ](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)) 或實作的 Java 介面方法 （介面同樣具有`Attribute`)。
+您必須產生 Android 可呼叫[包裝](~/android/platform/java-integration/android-callable-wrappers.md)函式, JAVA 程式碼才能呼叫 managed 程式碼。 *根據預設*, Android 可呼叫包裝函式只會包含 (特定) 宣告的函式和方法, 以覆寫虛擬 JAVA [`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)方法 (也就是它具有) 或實作為`Attribute`JAVA 介面方法 (介面同樣具有)。
   
-4.1 發行之前，可以不宣告任何額外的方法。 4.1 版本中， [`Export`並`ExportField`自訂屬性可以用來宣告 Java 方法和 Android 的可呼叫包裝函式內的欄位](~/android/platform/java-integration/working-with-jni.md)。
+在4.1 版之前, 不會宣告任何其他方法。 使用4.1 版本時, [ `Export` `ExportField`和自訂屬性可以用來宣告 Android 可呼叫包裝函式中的 JAVA 方法和欄位](~/android/platform/java-integration/working-with-jni.md)。
 
-### <a name="missing-constructors"></a>遺漏的建構函式
+### <a name="missing-constructors"></a>遺漏的析構函式
 
-建構函式仍需要一些技巧，除非[ `ExportAttribute` ](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute)用。 產生 Android 可呼叫包裝函式建構函式的演算法是如果將會發出 Java 建構函式：
+除非使用, 否則[`ExportAttribute`](xref:Java.Interop.ExportAttribute) , 處理函式會保持不變。 產生 Android 可呼叫包裝函式的演算法, 是在下列情況發出 JAVA 的程式:
 
-1. 所有參數類型的 Java 都對應
-2. 基底類別宣告相同的建構函式&ndash;這是必要的因為 Android 可呼叫包裝函式*必須*叫用對應的基底類別建構函式; （因為不容易，就可以使用任何預設引數判斷值應該是在 Java 中使用)。
+1. 所有參數類型都有 JAVA 對應
+2. 基類宣告相同&ndash;的函式, 這是必要的, 因為 Android 可呼叫包裝函式*必須*叫用對應的基類檢查程式; 不能使用任何預設引數 (因為沒有簡單的方法可以判斷哪些值應該在 JAVA 中使用)。
 
 例如，請參考下列類別：
 
@@ -49,7 +47,7 @@ class MyIntentService : IntentService {
 }
 ```
 
-雖然這看起來完全邏輯，產生 Android 可呼叫包裝函式*發行組建中*將不會包含預設建構函式。 因此，如果您嘗試啟動此服務 (例如[ `Context.StartService` ](https://developer.xamarin.com/api/member/Android.Content.Context.StartService/p/Android.Content.Intent/))，它將會失敗：
+雖然這看起來完全合乎邏輯, 在*發行組建中*產生的 Android 可呼叫包裝函式將不會包含預設的函式。 因此, 如果您嘗試啟動此服務 (例如[`Context.StartService`](xref:Android.Content.Context.StartService*), 它將會失敗:
 
 ```shell
 E/AndroidRuntime(31766): FATAL EXCEPTION: main
@@ -72,7 +70,7 @@ E/AndroidRuntime(31766):        at android.app.ActivityThread.handleCreateServic
 E/AndroidRuntime(31766):        ... 10 more
 ```
 
-因應措施是宣告預設建構函式，它與裝飾`ExportAttribute`，並設定[ `ExportAttribute.SuperStringArgument` ](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/): 
+因應措施是宣告預設的處理函式, 並使用`ExportAttribute`來裝飾它, [`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)然後設定: 
 
 ```csharp
 [Service]
@@ -89,10 +87,10 @@ class MyIntentService : IntentService {
 
 ### <a name="generic-c-classes"></a>泛型C#類別
 
-泛型C#類別僅提供部分支援。 有下列限制：
+只有C#部分支援泛型類別。 有下列限制:
 
 
--   不得使用泛型型別`[Export]`或`[ExportField`]。 嘗試執行此作業會產生`XA4207`時發生錯誤。
+-   泛型型別可能不會`[Export]`使用`[ExportField`或]。 嘗試這麼做會產生`XA4207`錯誤。
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -105,7 +103,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   泛型方法不能使用`[Export]`或`[ExportField]`:
+-   泛型方法可能不會`[Export]`使用`[ExportField]`或:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -120,7 +118,7 @@ class MyIntentService : IntentService {
     }
     ```
 
--   `[ExportField]` 傳回方法不會用於`void`:
+-   `[ExportField]`不能用於傳回的`void`方法:
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -133,8 +131,8 @@ class MyIntentService : IntentService {
     }
     ```
 
--   泛型型別的執行個體_不得_從 Java 程式碼建立。
-    它們只安全地建立從 managed 程式碼：
+-   泛型型別的實例_不得_從 JAVA 程式碼建立。
+    只能從 managed 程式碼安全地建立它們:
 
     ```csharp
     [Activity (Label="Die!", MainLauncher=true)]
@@ -147,17 +145,15 @@ class MyIntentService : IntentService {
     }
     ```
 
+## <a name="partial-java-generics-support"></a>部分 JAVA 泛型支援
 
-## <a name="partial-java-generics-support"></a>泛型的部分的 Java 支援
-
-Java 繫結的泛型支援僅限於。 特別是，一般的執行個體類別衍生自另一個的泛型 （非具現化） 類別中的成員則會保留公開為 Java.Lang.Object。 例如， [Android.Content.Intent.GetParcelableExtra](https://developer.xamarin.com/api/member/Android.Content.Intent.GetParcelableExtra/p/System.String/)方法會傳回 Java.Lang.Object。 這是因為它們的 Java 泛型。
-我們有一些類別，不會套用這項限制，但它們會以手動方式進行調整。
-
+JAVA 泛型系結支援有限。 特別是, 從另一個泛型 (非具現化) 類別衍生的泛型實例類別中的成員, 會被遺留成以 JAVA. Lang.ini 物件的形式公開。 例如, [GetParcelableExtra](xref:Android.Content.Intent.GetParcelableExtra*)方法會傳回 JAVA. lang.ini 物件。 這是因為已清除的 JAVA 泛型。
+我們有一些類別不會套用這項限制, 但會以手動方式調整。
 
 ## <a name="related-links"></a>相關連結
 
 - [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
-- [ExportAttribute](https://developer.xamarin.com/api/type/Java.Interop.ExportAttribute/)
-- [SuperString](https://developer.xamarin.com/api/property/Java.Interop.ExportAttribute.SuperArgumentsString/)
-- [RegisterAttribute](https://developer.xamarin.com/api/type/Android.Runtime.RegisterAttribute/)
+- [ExportAttribute](xref:Java.Interop.ExportAttribute)
+- [SuperString](xref:Java.Interop.ExportAttribute.SuperArgumentsString)
+- [RegisterAttribute](xref:Android.Runtime.RegisterAttribute)

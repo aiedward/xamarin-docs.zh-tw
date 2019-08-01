@@ -1,24 +1,24 @@
 ---
-title: 在 iOS 上的頁面狀態 列可見性
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 iOS 平台專屬的設定頁面上的 [狀態] 列的可見性。
+title: IOS 上的頁面狀態列可見度
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的來設定頁面上狀態列的可見度。
 ms.prod: xamarin
 ms.assetid: D8BB7C24-A27F-4758-8557-6A81F909ABD9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 66bd6c1ca2ccc3e5335a790950cbf1a792a7df82
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: a187efa9310fa150ddc884d8b42da5ccb9ecee11
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925405"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655850"
 ---
-# <a name="page-status-bar-visibility-on-ios"></a>在 iOS 上的頁面狀態 列可見性
+# <a name="page-status-bar-visibility-on-ios"></a>IOS 上的頁面狀態列可見度
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台專屬用來設定 [狀態] 列的可見性[ `Page` ](xref:Xamarin.Forms.Page)，其中包含能夠控制狀態列如何進入或離開`Page`。 它由在 XAML 中設定`Page.PrefersStatusBarHidden`附加屬性的值`StatusBarHiddenMode`列舉型別，並選擇性地`Page.PreferredStatusBarUpdateAnimation`附加屬性的值`UIStatusBarAnimation`列舉型別：
+這個 iOS 平臺特定是用來設定上[`Page`](xref:Xamarin.Forms.Page)狀態列的可見度, 並包含控制狀態列進入或`Page`離開之方式的能力。 它由在 XAML 中設定`Page.PrefersStatusBarHidden`附加屬性的值`StatusBarHiddenMode`列舉型別，並選擇性地`Page.PreferredStatusBarUpdateAnimation`附加屬性的值`UIStatusBarAnimation`列舉型別：
 
 ```xaml
 <ContentPage ...
@@ -53,6 +53,6 @@ On<iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True)
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

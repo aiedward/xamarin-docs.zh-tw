@@ -8,16 +8,16 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: ba0a76b44f5942db5528e9f5d11a1d2c3f027c40
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.openlocfilehash: f41bcc3ccaa6b4dd8c001ceb5ead165486745283
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66354033"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650253"
 ---
 # <a name="resource-dictionaries"></a>資源字典
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
 _XAML 資源是可共用及重複使用在 Xamarin.Forms 應用程式的物件定義。_
 
@@ -150,7 +150,7 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 
 但請注意，背景列[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)仍然是黃色，因為[ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)屬性設定的值為`PageBackgroundColor`應用程式中定義的資源層級`ResourceDictionary`。
 
-以下是另一種方式思考`ResourceDictionary`優先順序：當 XAML 剖析器遇到`StaticResource`走過註冊視覺化樹狀結構透過搜尋相符的索引鍵，使用第一個相符項目找到。 如果此搜尋網頁上就會結束，且金鑰仍尚未發現，XAML 剖析器會搜尋`ResourceDictionary`附加至`App`物件。 如果仍然找不到索引鍵，則會引發例外狀況。
+以下是另一種考慮`ResourceDictionary`優先順序的方法:當 XAML 剖析器遇到`StaticResource`時, 它會使用所找到的第一個相符項, 透過視覺化樹狀結構來搜尋相符的索引鍵。 如果此搜尋網頁上就會結束，且金鑰仍尚未發現，XAML 剖析器會搜尋`ResourceDictionary`附加至`App`物件。 如果仍然找不到索引鍵，則會引發例外狀況。
 
 ## <a name="stand-alone-resource-dictionaries"></a>獨立的資源字典
 
@@ -196,7 +196,7 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 
 執行個體`MyResourceDictionary`設定為`Resources`屬性`ContentPage`物件。
 
-不過，這種方法有一些限制：`Resources`的屬性`ContentPage`參考僅此一個`ResourceDictionary`。 在大部分情況下，您想要包括其他選項`ResourceDictionary`執行個體，可能是其他資源，以及。
+不過, 這種方法有一些限制:的屬性只會參考此項`ResourceDictionary`。 `ContentPage` `Resources` 在大部分情況下，您想要包括其他選項`ResourceDictionary`執行個體，可能是其他資源，以及。
 
 這項工作需要合併的資源字典。
 
@@ -306,7 +306,7 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 
 ## <a name="related-links"></a>相關連結
 
-- [資源字典 （範例）](https://developer.xamarin.com/samples/xamarin-forms/XAML/ResourceDictionaries/)
+- [資源字典 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [樣式](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 

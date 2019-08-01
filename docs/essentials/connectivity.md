@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/08/2019
 ms.custom: video
-ms.openlocfilehash: 749eec6d2000e9ffa84b1d3ac04aa575ebeb212f
-ms.sourcegitcommit: 7db5be0bb11e8914e1d1760e5f969ed17731e3a1
+ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
+ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54114962"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67855764"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials:連線能力
 
@@ -27,7 +27,7 @@ ms.locfileid: "54114962"
 
 需要 `AccessNetworkState` 權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties]  資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
@@ -35,13 +35,13 @@ ms.locfileid: "54114962"
 
 或更新 Android 資訊清單：
 
-開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容。
+開啟 [Properties]  資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest]  節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並檢查 [存取網路狀態] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]  下，尋找 [必要權限]  區域並檢查 [存取網路狀態]  權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -101,7 +101,7 @@ public class ConnectivityTest
         Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
     }
 
-    void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs  e)
+    void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
     {
         var access = e.NetworkAccess;
         var profiles = e.ConnectionProfiles;

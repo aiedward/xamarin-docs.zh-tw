@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms 和 Azure 認知服務簡介
+title: Xamarin. Forms 和 Azure 認知服務簡介
 description: 本文將示範如何叫用一些 Microsoft 認知服務 Api 的範例應用程式的簡介。
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 36aa53a6d257d8f5311cab84485e608bef3e97f8
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659265"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652317"
 ---
-# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms 和 Azure 認知服務簡介
+# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin. Forms 和 Azure 認知服務簡介
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由新增功能，例如臉部辨識、 語音辨識和語言理解，讓他們的應用程式更有智慧服務。本文將示範如何叫用一些 Microsoft 認知服務 Api 的範例應用程式的簡介。_
 
@@ -50,9 +50,9 @@ _Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由
 
 `RateAppPage`可讓使用者拍照他們的臉部，並顯示傳回表情與提交給人臉識別 API。
 
-## <a name="understand-the-application-anatomy"></a>了解應用程式結構
+## <a name="understand-the-application-anatomy"></a>瞭解應用程式的剖析
 
-範例應用程式的共用程式碼專案包含五個主要資料夾：
+範例應用程式的共用程式碼專案包含五個主要資料夾:
 
 |資料夾|用途|
 |--- |--- |
@@ -62,7 +62,7 @@ _Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由
 |公用程式|包含`Timer`類別，這將由`AuthenticationService`每隔 9 分鐘更新的 JWT 存取權杖的類別。|
 |檢視|包含應用程式的網頁。|
 
-共用程式碼專案也包含一些重要的檔案：
+共用程式碼專案也包含一些重要的檔案:
 
 |檔案|用途|
 |--- |--- |
@@ -80,7 +80,7 @@ _Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由
 
 此外，這些 NuGet 套件也會安裝它們自己的相依性。
 
-### <a name="model-the-data"></a>資料模型
+### <a name="model-the-data"></a>建立資料模型
 
 範例應用程式使用`TodoItem`類別來建立模型的資料，會顯示並儲存在本機 SQLite 資料庫。 下列程式碼範例顯示 `TodoItem` 類別：
 
@@ -96,7 +96,7 @@ public class TodoItem
 
 `ID`屬性用來唯一識別每個`TodoItem`執行個體，並將屬性設為自動遞增的主索引鍵在資料庫中的 SQLite 屬性裝飾。
 
-### <a name="invoke-database-operations"></a>叫用的資料庫作業
+### <a name="invoke-database-operations"></a>叫用資料庫作業
 
 `TodoItemRepository`類別會實作資料庫作業，而您可以透過類別的執行個體`App.TodoManager`屬性。 `TodoItemRepository`類別提供下列方法來叫用的資料庫作業：
 
@@ -105,9 +105,9 @@ public class TodoItem
 - **SaveItemAsync** – 建立或更新本機 SQLite 資料庫中的項目。
 - **DeleteItemAsync** – 從本機 SQLite 資料庫中刪除指定的項目。
 
-### <a name="platform-project-implementations"></a>平台專案的實作
+### <a name="platform-project-implementations"></a>平臺專案的實現
 
-`Services`共用的程式碼專案的資料夾包含`IFileHelper`並`IAudioRecorderService`介面，可供`DependencyService`類別，以找出在平台專案中實作之介面的類別。
+共用`Services`程式碼專案中的資料夾`IFileHelper`包含和`IAudioRecorderService`介面, `DependencyService`類別會使用這些介面來尋找在平臺專案中執行介面的類別。
 
 `IFileHelper`介面由實作`FileHelper`每個平台專案中的類別。 此類別包含單一方法`GetLocalFilePath`，它會傳回本機檔案路徑來儲存 SQLite 資料庫。
 
@@ -125,4 +125,4 @@ public class TodoItem
 ## <a name="related-links"></a>相關連結
 
 - [Microsoft 認知服務文件](https://www.microsoft.com/cognitive-services/documentation)
-- [待辦事項 Cognitive Services （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [待辦事項 Cognitive Services （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

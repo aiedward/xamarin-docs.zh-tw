@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 73d5695b5f08a3f9085e1960260f2e2e4f30d78a
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5739246ec7804b58d900ec790f427dab37504b1f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67658695"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68655023"
 ---
 # <a name="text-translation-using-the-translator-api"></a>文字轉譯使用 Translator API
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Translator API 可用來將語音及透過 REST API 的文字翻譯。這篇文章說明如何使用 Microsoft Translator Text API 來轉譯至 Xamarin.Forms 應用程式中的另一種語言的文字。_
 
@@ -147,5 +147,5 @@ API 回應會傳回 XML 格式。 下列 XML 資料會顯示一般的成功回�
 
 - [Translator Text API 文件](/azure/cognitive-services/translator/)。
 - [使用 RESTful Web 服務](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [待辦事項 Cognitive Services （範例）](https://developer.xamarin.com/samples/xamarin-forms/WebServices/TodoCognitiveServices/)
+- [待辦事項 Cognitive Services （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Microsoft Translator Text API](http://docs.microsofttranslator.com/text-translate.html)。

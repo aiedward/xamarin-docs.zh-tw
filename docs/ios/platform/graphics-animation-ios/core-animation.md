@@ -1,55 +1,55 @@
 ---
-title: 在 Xamarin.iOS 中的核心動畫
-description: 這篇文章審視 Core 動畫架構中，顯示如何讓高效能、 在 UIKit，流暢的動畫，以及如何將它直接用於較低層級動畫控制項。
+title: Xamarin 中的核心動畫
+description: 本文將探討核心動畫架構, 其中顯示如何在 UIKit 中啟用高效能、流暢的動畫, 以及如何直接將其用於較低層級的動畫控制項。
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a40d0911b7dabc900a4c6e50c692e4f091f22be9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 12bb8fe6f8ed77ea9091c165d4656da292266679
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61206210"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656611"
 ---
-# <a name="core-animation-in-xamarinios"></a>在 Xamarin.iOS 中的核心動畫
+# <a name="core-animation-in-xamarinios"></a>Xamarin 中的核心動畫
 
-_這篇文章審視 Core 動畫架構中，顯示如何讓高效能、 在 UIKit，流暢的動畫，以及如何將它直接用於較低層級動畫控制項。_
+_本文將探討核心動畫架構, 其中顯示如何在 UIKit 中啟用高效能、流暢的動畫, 以及如何直接將其用於較低層級的動畫控制項。_
 
-包含 iOS [ *Core Animation* ](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html)提供動畫支援您的應用程式中的檢視。
-所有的超級 smooth 動畫在 iOS 中捲動資料表等撥動不同檢視之間，以及它們執行，因為它們依賴 Core 動畫在內部執行。
+iOS 包含[*核心動畫*](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html), 可為應用程式中的 views 提供動畫支援。
+IOS 中所有超平滑的動畫 (例如, 在不同的視圖之間滾動資料表和輕量) 都會執行, 因為它們會在內部依賴核心動畫。
 
-Core 動畫及 Core Graphics 架構如何共同運作，以建立漂亮的 2D 圖形以動畫顯示。 事實上 Core 動畫甚至可以轉換 2D 圖形，在 3D 空間中，建立令人讚嘆、 場景的體驗。 不過，若要建立真正的 3D 圖形，您想要使用的項目，例如 OpenGL ES 或遊戲輪到您的 API，例如 MonoGame，雖然 3D 已超出本文的範圍。
+核心動畫與核心圖形架構可以共同合作, 建立美觀的動畫2D 圖形。 事實上, 核心動畫甚至可以轉換3D 空間中的2D 圖形, 建立令人驚奇的 cinematic 體驗。 不過, 若要建立真正的3D 圖形, 您必須使用像是 OpenGL ES 的東西, 或讓遊戲轉型為 API (例如 MonoGame), 雖然3D 已超出本文的範圍。
 
 <a name="Using_Core_Animation" />
 
 ## <a name="core-animation"></a>Core Animation
 
-iOS 會使用的 Core 動畫架構，來建立動畫效果，例如檢視之間轉換、 滑動功能表和捲動效果等等。 有兩種方式可處理動畫：
+iOS 使用核心動畫架構來建立動畫效果, 例如在視圖之間轉換、滑動功能表和滾動效果等。 有兩種方式可以使用動畫:
 
-- [透過 UIKit](#Using_UIKit_Animation)，其中包括檢視為基礎的動畫，以及控制站之間的動畫的轉換。
-- [透過 Core Animation](#Using_Core_Animation)，哪些圖層，直接以更精細的控制。
+- 透過[UIKit](#Using_UIKit_Animation), 其中包括以視圖為基礎的動畫, 以及在控制器之間的動畫轉換。
+- 透過[核心動畫](#Using_Core_Animation), 這是直接層級, 可讓您進行更精細的控制。
 
 <a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>使用 UIKit 動畫
 
-UIKit 提供數個功能，輕鬆地將動畫加入至應用程式。 雖然它在內部使用核心動畫，但是它抽走它，您只能使用檢視和控制器的工作。
+UIKit 提供數個功能, 可讓您輕鬆地將動畫新增至應用程式。 雖然它會在內部使用核心動畫, 但它會將其抽象化, 讓您只使用 views 和控制器。
 
-本章節將討論 UIKit 動畫功能，包括：
+本節討論 UIKit 動畫功能, 包括:
 
--  控制站之間的轉換
--  檢視之間的轉換
--  檢視屬性的動畫
+-  控制器之間的轉換
+-  Views 之間的轉換
+-  View 屬性動畫
 
 
 ### <a name="view-controller-transitions"></a>檢視控制器轉換
 
- `UIViewController` 透過檢視控制器之間轉換時，提供內建支援`PresentViewController`方法。 當使用`PresentViewController`，可以選擇性地使用動畫轉換至第二個控制站。
+ `UIViewController`提供內建的支援, 可讓您透過`PresentViewController`方法在視圖控制器之間轉換。 使用`PresentViewController`時, 可以選擇性地將轉換至第二個控制器的動畫。
 
-例如，假設應用程式具有兩個控制器，其中碰觸的第一個控制器中的按鈕呼叫`PresentViewController`来顯示的第二個控制站。 若要控制哪些過場動畫用來顯示的第二個控制站，請設定其[ `ModalTransitionStyle` ](xref:UIKit.UIModalTransitionStyle)屬性，如下所示：
+例如, 假設有兩個控制器的應用程式, 其中觸及第一個控制器呼叫`PresentViewController`中的按鈕, 以顯示第二個控制器。 若要控制用來顯示第二個控制器的轉換動畫, 只需[`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle)設定其屬性, 如下所示:
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -57,28 +57,28 @@ SecondViewController vc2 = new SecondViewController {
 };
 ```
 
-在此情況下`PartialCurl`使用動畫，但其他許多選項可供選擇，包括：
+在此情況下`PartialCurl` , 會使用動畫, 雖然有其他幾個可用的, 包括:
 
--  `CoverVertical` – 投影片上從畫面底部
--  `CrossDissolve` – 舊的檢視淡出，與新的檢視會淡入
--  `FlipHorizontal` -從右至左的水平翻轉。 在 dismissal 轉換翻轉左到右。
+-  `CoverVertical`–從畫面底部滑動
+-  `CrossDissolve`–舊的視圖會淡出 & 新的視圖淡入
+-  `FlipHorizontal`-水準由右至左翻轉。 在關閉上, 轉換會從左至右翻轉。
 
 
-若要以動畫顯示轉換，請傳遞`true`做為第二個引數`PresentViewController`:
+若要以動畫顯示轉換`true` , 請將當做第`PresentViewController`二個引數傳遞至:
 
 ```csharp
 PresentViewController (vc2, true, null);
 ```
 
-下列螢幕擷取畫面顯示轉換的外觀`PartialCurl`案例：
+下列螢幕擷取畫面顯示`PartialCurl`案例的轉換樣子:
 
  ![](core-animation-images/06-view-transitions.png "此螢幕擷取畫面顯示 PartialCurl 轉換")
 
-### <a name="view-transitions"></a>檢視轉換
+### <a name="view-transitions"></a>視圖轉換
 
-除了控制站之間的轉換，UIKit 也支援動畫交換另一個檢視的檢視之間的轉換。
+除了控制器之間的轉換之外, UIKit 也支援在 views 之間製作動畫轉換, 以交換另一個視圖。
 
-例如，假設您有此控制器會執行`UIImageView`，其中點選映像應該會顯示第二個`UIImageView`。 若要建立映像的動畫轉換至第二個映像檢視的檢視表的超級檢視表很簡單，只要呼叫`UIView.Transition`，將其傳遞`toView`和`fromView`，如下所示：
+例如, 假設您有一個控制器`UIImageView`, 其中的點擊影像應該會顯示第二個。 `UIImageView` 若要以動畫顯示影像視圖的 superview 頂端以轉換到第二個影像視圖, 就`UIView.Transition`像呼叫一樣簡單`toView` , `fromView`傳遞給它, 如下所示:
 
 ```csharp
 UIView.Transition (
@@ -90,25 +90,25 @@ UIView.Transition (
     completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition` 也會採用`duration`參數，可控制動畫執行多久，以及[ `options` ](xref:UIKit.UIViewAnimationOptions)指定動畫等的項目，使用和 easing 函式。 此外，您可以指定動畫完成時所呼叫的完成處理常式。
+`UIView.Transition`也會使用`duration`參數來控制動畫執行的時間長度, [`options`](xref:UIKit.UIViewAnimationOptions)以及指定要使用的動畫和緩動函式等專案。 此外, 您可以指定在動畫完成時將呼叫的完成處理常式。
 
-以下顯示的螢幕擷取畫面之間的映像的動畫的轉換檢視時`TransitionFlipFromTop`用：
+下列螢幕擷取畫面顯示使用時`TransitionFlipFromTop` , 影像視圖之間的動畫轉換:
 
- ![](core-animation-images/07-animated-transition.png "此螢幕擷取畫面顯示使用 TransitionFlipFromTop 時在映像檢視之間的動畫的轉換")
+ ![](core-animation-images/07-animated-transition.png "當使用 TransitionFlipFromTop 時, 此螢幕擷取畫面顯示影像視圖之間的動畫轉換")
 
-### <a name="view-property-animations"></a>檢視屬性的動畫
+### <a name="view-property-animations"></a>View 屬性動畫
 
-UIKit 支援建立各種不同屬性的動畫上`UIView`類別供免費使用，包括：
+UIKit 支援在`UIView`類別上免費製作各種屬性的動畫, 包括:
 
 -  Frame
--  繫結
+-  超出
 -  置中
 -  Alpha
 -  資料轉換
 -  色彩
 
 
-這些動畫可以藉由指定中的屬性變更以隱含方式會發生`NSAction`委派傳遞給靜態`UIView.Animate`方法。 例如，下列程式碼建立動畫的中心點`UIImageView`:
+這些動畫會藉由在傳遞至靜態`NSAction` `UIView.Animate`方法的委派中指定屬性變更來隱含地發生。 例如, 下列程式碼會以`UIImageView`動畫的中心點繪製:
 
 ```csharp
 pt = imgView.Center;
@@ -126,29 +126,29 @@ UIView.Animate (
 );
 ```
 
-這會導致映像以動畫顯示來回頂端的畫面中，如下所示：
+這會導致影像在畫面頂端來回動畫, 如下所示:
 
- ![](core-animation-images/08-animate-center.png "映像以動畫顯示來回螢幕頂端做為輸出")
+ ![](core-animation-images/08-animate-center.png "影像在畫面頂端來回動畫作為輸出")
 
-如同`Transition`方法，`Animate`允許設定，以及加/減速函式的持續時間。 此範例也使用`UIViewAnimationOptions.Autoreverse`選項時，這會導致以動畫顯示的值，回到第一個動畫。 不過，程式碼也會設定`Center`回其初始的值，在完成處理常式。 動畫一段時間的變化屬性值，而實際的模型屬性的值一律是最終的值已設定。 在此範例中，值會是超級檢視表的右側附近的點。 如果沒有設定`Center`初始的點，這是因為動畫的結束位置`Autoreverse`正在設定映像會貼齊回右側動畫完成之後，如下所示：
+如同方法, `Animate`允許設定持續時間, 以及緩時函數。 `Transition` 這個範例也使用了`UIViewAnimationOptions.Autoreverse`選項, 這會導致動畫以動畫顯示從值回到初始的動畫。 不過, 此程式碼也會`Center`在完成處理常式中將設回其初始值。 當動畫在一段時間內插入屬性值時, 屬性的實際模型值一律是已設定的最終值。 在此範例中, 值是接近 superview 頂端右邊的點。 `Center`若未將設定為初始點 (也就是動畫因`Autoreverse`設定而完成的位置), 影像會在動畫完成後貼回右側, 如下所示:
 
- ![](core-animation-images/09-animation-complete.png "而不需要設定中央到初始的點，將映像會貼齊回右側動畫完成之後")
+ ![](core-animation-images/09-animation-complete.png "若不將置中設為初始點, 影像會在動畫完成後貼回右側")
 
 ## <a name="using-core-animation"></a>使用核心動畫
 
- `UIView` 動畫允許大量功能，並且應該盡可能使用因為實作簡單。 如先前所述，UIView 動畫會使用核心動畫架構。 不過，某些項目不能透過`UIView`動畫，例如以動畫顯示檢視，無法以動畫顯示的其他屬性或非線性的路徑是否插入而定。 在此情況下，您需要更細微的控制，可以直接也使用核心動畫。
+ `UIView`動畫允許很多的功能, 而且應該在可能的情況下使用, 因為這是容易執行的工作。 如先前所述, UIView 動畫會使用核心動畫架構。 不過, 有些東西無法透過`UIView`動畫來完成, 例如動畫無法以視圖動畫顯示的其他屬性, 或是沿著非線性路徑進行插上。 在您需要更精細控制的情況下, 也可以直接使用核心動畫。
 
-### <a name="layers"></a>圖層
+### <a name="layers"></a>分層
 
-當使用 Core 動畫，動畫會透過*層級*，類型`CALayer`。 沒有層階層，更像是檢視階層，圖層在概念上類似的檢視。 實際上，圖層會將檢視中的，使用 [新增支援使用者互動] 檢視。 您可以透過檢視表的任何檢視的圖層`Layer`屬性。 事實上，在中使用的內容`Draw`方法的`UIView`實際上會建立從圖層。 就內部而言，備份的圖層`UIView`已設為檢視本身，也就是所謂的其委派`Draw`。 因此，當繪製`UIView`，實際上要繪製到其圖層。
+使用核心動畫時, 動畫會透過類型`CALayer`為的*圖層*進行。 圖層在概念上類似于「圖層」 (layer) 階層, 與「視圖」階層很類似。 實際上, 圖層會並排顯示, 而此視圖會新增使用者互動的支援。 您可以透過視圖的`Layer`屬性存取任何視圖的圖層。 事實上, 在的`Draw` `UIView`方法中使用的內容實際上是從圖層建立的。 就內部而言, 支援的`UIView`層級會將其委派設定為 view 本身, 也就`Draw`是所呼叫的內容。 因此`UIView`, 當繪製到時, 您實際上是繪製到其圖層。
 
-圖層的動畫可以是隱含或明確。 隱含的動畫是宣告式。 您只要宣告應該變更的圖層屬性，動畫就會運作。 明確的動畫的另一方面被建立為透過動畫類別加入至圖層上的數字。 明確的動畫可加入控制動畫的建立方式。 下列各節探討更深入的隱含和明確的動畫。
+圖層動畫可以是隱含或明確的。 隱含動畫是宣告式。 您只需要宣告應該變更的圖層屬性, 動畫就能正常運作。 另一方面, 明確的動畫是透過新增至圖層的動畫類別來建立。 明確的動畫可讓您對動畫的建立方式進行額外的控制。 下列各節將深入探討隱含和明確的動畫。
 
-### <a name="implicit-animations"></a>隱含的動畫
+### <a name="implicit-animations"></a>隱含動畫
 
-以動畫顯示的圖層屬性的一個方式是透過隱含的動畫。 `UIView` 動畫建立隱含的動畫。 不過，您可以建立隱含的動畫，直接針對一個圖層。
+以動畫顯示圖層屬性的其中一種方式是透過隱含動畫。 `UIView`動畫會建立隱含動畫。 不過, 您也可以直接針對圖層建立隱含動畫。
 
-例如，下列程式碼會將設定圖層的`Contents`從映像，設定框線寬度和色彩，並將圖層加入檢視的圖層的副層為：
+例如, 下列程式碼會`Contents`從影像設定圖層、設定框線寬度和色彩, 並將圖層加入為視圖圖層的子層級:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -167,7 +167,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-若要加入圖層的隱含動畫，只要換行中的屬性變更`CATransaction`。 這可讓您建立不是檢視的動畫，動畫這類的屬性動畫`BorderWidth`和`BorderColor`，如下所示：
+若要加入圖層的隱含動畫, 只要將屬性變更包裝在`CATransaction`中即可。 這可讓您將不會使用 view 動畫 animatable 的屬性進行動畫處理, `BorderWidth`例如`BorderColor`和, 如下所示:
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -183,21 +183,21 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-此程式碼也以動畫顯示的圖層的`Position`，這是從左上方的 superlayer 的座標為單位的圖層的錨點的位置。 錨點圖層是標準化的點圖層的座標系統中。
+這段程式碼也會以`Position`動畫呈現圖層的, 也就是圖層錨點的位置, 從 superlayer 座標的左上方測量。 圖層的錨點是圖層座標系統內的正規化點。
 
-下圖顯示的位置和錨點：
+下圖顯示位置和錨點:
 
- ![](core-animation-images/10-postion-anchorpt.png "此圖顯示的位置和錨點")
+ ![](core-animation-images/10-postion-anchorpt.png "此圖顯示位置和錨點")
 
-執行範例時， `Position`，`BorderWidth`和`BorderColor`以動畫顯示，如下列螢幕擷取畫面所示：
+執行此範例時, `Position`和`BorderColor`會以`BorderWidth`動畫顯示, 如下列螢幕擷取畫面所示:
 
- ![](core-animation-images/11-implicit-animation.png "執行範例時，位置、 框線寬度和框線色彩以動畫顯示所示")
+ ![](core-animation-images/11-implicit-animation.png "執行此範例時, 會顯示位置、BorderWidth 和顏色邊框的動畫, 如下所示")
 
-### <a name="explicit-animations"></a>明確的動畫
+### <a name="explicit-animations"></a>明確動畫
 
-除了隱含的動畫、 Core Animation 包含各種不同的類別繼承自`CAAnimation`，可讓您封裝將會明確新增至圖層的動畫。 這些行為允許更精密的控制，透過動畫，例如修改動畫的起始值、 分組動畫以及指定主要畫面格，以允許非線性的路徑。
+除了隱含動畫以外, Core 動畫還包含各種繼承自`CAAnimation`的類別, 可讓您封裝動畫, 然後明確新增至圖層。 這些可讓您更精細地控制動畫, 例如修改動畫的開始值、將動畫分組, 以及指定主要畫面格允許非線性路徑。
 
-下列程式碼示範使用明確的動畫`CAKeyframeAnimation`稍早所示 （隱含的動畫 區段中） 的圖層：
+下列程式碼示範如何針對稍早所示的圖`CAKeyframeAnimation`層使用的明確動畫範例 (在 [隱含動畫] 區段中):
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -228,19 +228,19 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-此程式碼變更`Position`所建立的路徑，然後用來定義主要畫面格動畫的圖層。 請注意，圖層的`Position`設定的最後一個值為`Position`動畫。 如果沒有這麼做，圖層會突然回到其`Position`system.windows.media.animation.repeatbehavior> 的動畫，因為動畫只能變更展示值而非實際模型值。 藉由設定的最終值的模型值，從動畫，圖層會保留在動畫結束時。
+此程式碼會`Position`藉由建立用來定義主要畫面格動畫的路徑, 來變更圖層的。 請注意, 圖層`Position`的會設定為動畫`Position`中的最後一個值。 如果沒有這麼做, 圖層會突然回到`Position`其前的動畫, 因為動畫只會變更呈現值, 而不是實際的模型值。 藉由將模型值設定為動畫中的最後一個值, 圖層就會留在動畫的結尾。
 
-下列螢幕擷取畫面顯示圖層包含映像以動畫顯示到指定的路徑：
+下列螢幕擷取畫面顯示包含影像的圖層, 並透過指定的路徑製作動畫:
 
- ![](core-animation-images/12-explicit-animation.png "此螢幕擷取畫面顯示層級，包含指定的路徑透過映像建立動畫")
+ ![](core-animation-images/12-explicit-animation.png "此螢幕擷取畫面顯示包含影像的圖層, 並透過指定的路徑製作動畫")
  
 ## <a name="summary"></a>總結
 
-在本文中我們探討了透過提供的動畫功能*Core Animation*架構。 Core 動畫，同時也提供在 UIKit，動畫的方式，以及如何使用它直接為較低層級動畫控制項顯示，我們檢查。
+在本文中, 我們探討了透過*核心動畫*架構所提供的動畫功能。 我們已檢查核心動畫, 同時顯示它如何在 UIKit 中提供動畫, 以及如何直接將其用於較低層的動畫控制。
 
 ## <a name="related-links"></a>相關連結
 
-- [Core 動畫範例](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
+- [核心動畫範例](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)
 - [Core 圖形](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [圖形和動畫逐步解說](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [Core 動畫](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

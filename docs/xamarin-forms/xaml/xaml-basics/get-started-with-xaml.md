@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 855bbc61fb5e4e653dbd39ddf05fac3e2fb42d8c
-ms.sourcegitcommit: 00deecefc17a98210bed12b4ef99ecca710275f1
+ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67493363"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656505"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內容及一起運作C#程式碼後置檔案。_
 
@@ -102,7 +102,7 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 </ContentPage>
 ```
 
-兩個 XML 命名空間 (`xmlns`) 宣告的 Uri，看似在 Xamarin 的網站上的第一個和第二個在 Microsoft 的參考。 不需要檢查哪些這些 Uri 指向。 裡面沒有東西。 他們只是由 Xamarin 與 Microsoft 所擁有的 Uri，它們基本上函式做為版本識別碼。
+這兩個 XML 命名`xmlns`空間 () 宣告參考 uri, 第一個看似在 Xamarin 的網站上, 第二個則是 Microsoft 的。 不需要檢查哪些這些 Uri 指向。 裡面沒有東西。 他們只是由 Xamarin 與 Microsoft 所擁有的 Uri，它們基本上函式做為版本識別碼。
 
 第一個 XML 命名空間宣告表示，沒有前置詞在 XAML 檔中定義的標記是指類別在 Xamarin.Forms 中，例如`ContentPage`。 第二個命名空間宣告中定義的前置詞`x`。 這用數個項目和屬性的 XAML 內建函式本身的支援和 XAML 的其他實作。 不過，這些項目和屬性會內嵌在 URI 中的年份而略有不同。 Xamarin.Forms 可支援在 2009 XAML 規格中，但不是它全部。
 
@@ -203,9 +203,9 @@ namespace XamlSamples
 
 也請注意，`Title`屬性已設定根標記上。
 
-在此階段中，類別、 屬性和 XML 之間的關聯性應顯而易見：Xamarin.Forms 類別 (例如`ContentPage`或`Label`) 會出現在 XAML 檔案的 XML 項目。 該類別的屬性，包括`Title`上`ContentPage`和七個屬性`Label`— 通常會顯示為 XML 屬性。
+此時, 類別、屬性和 XML 之間的關聯性應該很明顯:在 XAML 檔案中, 會以 XML `ContentPage`元素`Label`的形式顯示 Xamarin 類別 (例如或)。 該類別的屬性，包括`Title`上`ContentPage`和七個屬性`Label`— 通常會顯示為 XML 屬性。
 
-若要設定這些屬性的值存在許多捷徑。 有些屬性是基本資料類型：比方說，`Title`和`Text`屬性都屬於型別`String`，`Rotation`屬於型別`Double`，和`IsVisible`(也就是`true`預設且僅供說明以下設定) 為類型`Boolean`.
+若要設定這些屬性的值存在許多捷徑。 某些屬性為基本資料類型:例如`Title` , 和`IsVisible` `Double` `true`屬性的`String`類型為,且的類型為,而(根據預設,只有在此處設定)為類型`Rotation` `Text` `Boolean`.
 
 `HorizontalTextAlignment`屬性的類型是`TextAlignment`，這是列舉型別。 對於任何列舉類型的屬性，您只需要提供是成員名稱。
 
@@ -453,7 +453,7 @@ public partial class XamlPlusCodePage : ContentPage {
 
 ## <a name="related-links"></a>相關連結
 
-- [XamlSamples](https://developer.xamarin.com/samples/xamarin-forms/XamlSamples/)
+- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第 2 部分：基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第 3 部分：XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [第 4 部分：資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

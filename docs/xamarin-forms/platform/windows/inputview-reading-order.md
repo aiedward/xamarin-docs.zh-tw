@@ -1,24 +1,24 @@
 ---
-title: 在 Windows 上的 InputView 讀取順序
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 這篇文章說明如何使用 Windows 平台特定，可讓已偵測到動態雙向文字的讀取順序。
+title: InputView Windows 上的讀取順序
+description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Windows 平臺特定的, 以動態方式偵測雙向文字的讀取順序。
 ms.prod: xamarin
 ms.assetid: E61BAEE0-C8B7-4F33-8DDC-FA1B9CA8E81D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: d5d2e963a326b5bc750527a49008f2d2a40cac9f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: c184424a982aa82712685dbc33ad57422f2f8338
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924864"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651430"
 ---
-# <a name="inputview-reading-order-on-windows"></a>在 Windows 上的 InputView 讀取順序
+# <a name="inputview-reading-order-on-windows"></a>InputView Windows 上的讀取順序
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此通用 Windows 平台特定平台-可讓雙向文字中的讀取順序 （由左到右或從右至左） [ `Entry` ](xref:Xamarin.Forms.Entry)， [ `Editor` ](xref:Xamarin.Forms.Editor)，以及[ `Label` ](xref:Xamarin.Forms.Label)動態偵測到的執行個體。 它由在 XAML 中設定[ `InputView.DetectReadingOrderFromContent` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.InputView.DetectReadingOrderFromContentProperty) (如`Entry`並`Editor`執行個體) 或[ `Label.DetectReadingOrderFromContent` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Label.DetectReadingOrderFromContentProperty) ; 附加屬性`boolean`值：
+此通用 Windows 平臺平臺特定的會啟用、 [`Entry`](xref:Xamarin.Forms.Entry) [`Editor`](xref:Xamarin.Forms.Editor)和[`Label`](xref:Xamarin.Forms.Label)實例中雙向文字的讀取順序 (由左至右或由右至左), 以動態方式偵測。 它由在 XAML 中設定[ `InputView.DetectReadingOrderFromContent` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.InputView.DetectReadingOrderFromContentProperty) (如`Entry`並`Editor`執行個體) 或[ `Label.DetectReadingOrderFromContent` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Label.DetectReadingOrderFromContentProperty) ; 附加屬性`boolean`值：
 
 ```xaml
 <ContentPage ...
@@ -55,6 +55,6 @@ editor.On<Windows>().SetDetectReadingOrderFromContent(!editor.On<Windows>().GetD
 
 ## <a name="related-links"></a>相關連結
 
-- [PlatformSpecifics （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/PlatformSpecifics/)
+- [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [建立平台特性](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

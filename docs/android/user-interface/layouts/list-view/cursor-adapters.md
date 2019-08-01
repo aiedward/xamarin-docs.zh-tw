@@ -6,31 +6,28 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/25/2017
-ms.openlocfilehash: 42b9bd528459d8ee941cc293372bf5662a493342
-ms.sourcegitcommit: 2eb8961dd7e2a3e06183923adab6e73ecb38a17f
+ms.openlocfilehash: ce2f62869057fc83b04b58af37d6ffffd5ad7fb8
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66827622"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646480"
 ---
-# <a name="using-cursoradapters"></a>使用 CursorAdapters
+# <a name="using-cursoradapters-with-xamarinandroid"></a>使用 CursorAdapters 搭配 Xamarin. Android
 
+Android 會特別提供介面卡類別, 以顯示 SQLite 資料庫查詢的資料:
 
-## <a name="overview"></a>總覽
+ **SimpleCursorAdapter** –類似于, `ArrayAdapter`因為它可以在不具子類別化的情況下使用。 只要在函式中提供必要的參數 (例如資料指標和配置資訊), 然後將指派給`ListView`。
 
-Android 提供配接器類別，特別是用來顯示資料的 SQLite 資料庫查詢：
+ **CursorAdapter** –當您需要更充分掌控資料值與版面配置控制項 (例如隱藏/顯示控制項或變更其屬性) 的系結時, 您可以繼承自的基類。
 
- **SimpleCursorAdapter** -類似以`ArrayAdapter`因為配合子類別化。 只需要在建構函式中提供必要的參數 （例如資料指標和配置的資訊），然後指派給`ListView`。
-
- **CursorAdapter** – 您可以繼承自當您需要更充分掌控資料繫結的基底類別值至版面配置控制項 （例如，隱藏/顯示控制項或變更其屬性）。
-
-資料指標的配接器提供高效能來捲動瀏覽儲存在 SQLite 中的資料的詳細清單。 使用的程式碼必須定義在 SQL 查詢`Cursor`物件，並接著說明如何建立及填入每個資料列的檢視。
+資料指標介面卡可讓您以高效能的方式, 來流覽儲存于 SQLite 中的長清單資料。 取用程式碼必須在`Cursor`物件中定義 SQL 查詢, 然後描述如何建立並填入每個資料列的視圖。
 
 
 ## <a name="creating-an-sqlite-database"></a>建立 SQLite 資料庫
 
-若要示範游標配接器需要簡單的 SQLite 資料庫實作。 中的程式碼**SimpleCursorTableAdapter/VegetableDatabase.cs**包含程式碼和 SQL 來建立資料表，並填入一些資料。
-完整`VegetableDatabase`類別如下所示：
+若要示範游標介面卡, 需要簡單的 SQLite 資料庫執行。 **SimpleCursorTableAdapter/VegetableDatabase**中的程式碼包含用來建立資料表的程式碼和 SQL, 並在其中填入一些資料。
+完整`VegetableDatabase`的類別如下所示:
 
 ```csharp
 class VegetableDatabase  : SQLiteOpenHelper {
@@ -57,14 +54,14 @@ class VegetableDatabase  : SQLiteOpenHelper {
 }
 ```
 
-`VegetableDatabase`類別會在具現化`OnCreate`方法`HomeScreen`活動。 `SQLiteOpenHelper`基底類別管理資料庫檔案的安裝程式，並可確保在 SQL 其`OnCreate`方法只執行一次。 這個類別會在下列兩個範例，說明`SimpleCursorAdapter`和`CursorAdapter`。
+類別將會在`HomeScreen`活動的`OnCreate`方法中具現化。 `VegetableDatabase` 基類會管理資料庫檔案的設定, 並確保其`OnCreate`方法中的 SQL 只會執行一次。 `SQLiteOpenHelper` 這個類別用於`SimpleCursorAdapter`和`CursorAdapter`的下列兩個範例中。
 
-資料指標查詢*必須*有整數資料行`_id`如`CursorAdapter`運作。 如果基礎資料表沒有名為整數資料行`_id`然後使用另一個唯一的整數中的資料行別名`RawQuery`組成資料指標。 請參閱[Android docs](https://developer.xamarin.com/api/type/Android.Widget.CursorAdapter/)如需詳細資訊。
+資料指標查詢*必須*有整數資料行`_id` , `CursorAdapter`才能正常執行。 如果基礎資料表沒有名為`_id`的整數資料行, 則在組成資料指標的`RawQuery`中, 使用另一個唯一整數的資料行別名。 如需詳細資訊, 請參閱[Android](xref:Android.Widget.CursorAdapter)檔。
 
 
 ### <a name="creating-the-cursor"></a>建立資料指標
 
-範例會使用`RawQuery`若要開啟 SQL 查詢至`Cursor`物件。 傳回從資料指標的資料行清單會定義可供資料指標配接器中顯示的資料行。 建立資料庫中的程式碼**SimpleCursorTableAdapter/HomeScreen.cs** `OnCreate`方法如下所示：
+這些範例會使用`RawQuery`將 SQL 查詢`Cursor`轉換成物件。 從游標處傳回的資料行清單, 會定義可在游標介面卡中顯示的資料行。 在**SimpleCursorTableAdapter/HomeScreen** `OnCreate`方法中建立資料庫的程式碼如下所示:
 
 ```csharp
 vdb = new VegetableDatabase(this);
@@ -73,35 +70,35 @@ StartManagingCursor(cursor);
 // use either SimpleCursorAdapter or CursorAdapter subclass here!
 ```
 
-呼叫任何程式碼`StartManagingCursor`也應該呼叫`StopManagingCursor`。 範例會使用`OnCreate`若要開始，和`OnDestroy`來關閉資料指標。 `OnDestroy`方法包含此程式碼：
+呼叫`StartManagingCursor`的任何程式碼也應`StopManagingCursor`呼叫。 這些範例會`OnCreate`使用來啟動, `OnDestroy`並關閉資料指標。 `OnDestroy`方法包含此程式碼:
 
 ```csharp
 StopManagingCursor(cursor);
 cursor.Close();
 ```
 
-一旦應用程式都有可用的 SQLite 資料庫，並已建立的資料指標的物件，如所示，它可以利用其中一個`SimpleCursorAdapter`或 子類別`CusorAdapter`顯示中的資料列`ListView`。
+一旦應用程式有可用的 SQLite 資料庫, 並已建立如下所示的資料指標物件, 它就`SimpleCursorAdapter`可以利用或的`CusorAdapter`子類別`ListView`來顯示中的資料列。
 
 
 ## <a name="using-simplecursoradapter"></a>使用 SimpleCursorAdapter
 
-`SimpleCursorAdapter` 就像`ArrayAdapter`，但進行特製化與 SQLite 搭配使用。 其不需要子類別化-建立物件時，只是設定一些簡單的參數，然後再將它指派給`ListView`的`Adapter`屬性。
+`SimpleCursorAdapter`類似`ArrayAdapter`于, 但專供與 SQLite 搭配使用。 它不需要子類別化-只要在建立物件時設定一些簡單的參數, 然後將它`ListView`指派`Adapter`給的屬性即可。
 
-SimpleCursorAdapter 建構函式的參數如下：
+SimpleCursorAdapter 函數的參數如下:
 
- **內容**– 包含的活動的參考。
+ **CoNtext** –包含活動的參考。
 
- **版面配置**– 若要使用的資料列檢視的資源識別碼。
+ **版面**配置-要使用之資料列視圖的資源識別碼。
 
- **ICursor** – 包含 SQLite 查詢以顯示資料的資料指標。
+ **ICursor** –包含要顯示之資料的 SQLite 查詢的游標。
 
- **從**字串陣列 – 對應至資料指標中的資料行名稱的字串陣列。
+ **從**字串陣列–對應于資料指標中資料行名稱的字串陣列。
 
- **若要**整數陣列 – 對應至資料列版面配置中控制項的配置識別碼的陣列。 在指定的資料行值`from`陣列將會繫結至這個相同的索引處的陣列中指定的 ControlID。
+ **至**整數陣列–對應至資料列配置中控制項的版面配置識別碼陣列。 `from`陣列中指定之資料行的值將系結至相同索引處的這個陣列中指定的 ControlID。
 
-`from`和`to`陣列必須有相同數目的項目，因為它們形成版面配置控制項的對應資料來源檢視中。
+`from` 和`to`陣列必須有相同數目的專案, 因為它們會形成從資料來源到視圖中版面配置控制項的對應。
 
-**SimpleCursorTableAdapter/HomeScreen.cs**向上範例程式碼線`SimpleCursorAdapter`如下所示：
+**SimpleCursorTableAdapter/HomeScreen .cs**範例程式碼`SimpleCursorAdapter`會如下所示:
 
 ```csharp
 // which columns map to which layout controls
@@ -113,25 +110,25 @@ listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.Simple
        toControlIDs);
 ```
 
-`SimpleCursorAdapter` 是快速又簡單的方式，SQLite 中的資料顯示`ListView`。 主要限制是它只能繫結控制項顯示的資料行值，它不允許您變更資料列配置 （例如，顯示/隱藏控制項或變更屬性） 的其他層面。
+`SimpleCursorAdapter`是在中`ListView`顯示 SQLite 資料的快速且簡單的方式。 主要的限制是它只能系結資料行值來顯示控制項, 而不允許您變更資料列配置的其他層面 (例如, 顯示/隱藏控制項或變更屬性)。
 
 
 ## <a name="subclassing-cursoradapter"></a>子類別化 CursorAdapter
 
-A`CursorAdapter`子類別會具有相同的效能優勢，做為`SimpleCursorAdapter`針對顯示資料的 SQLite，但它也可讓您建立和每個資料列檢視的版面配置的完整控制權。 `CursorAdapter`實作是非常不同的子類別化`BaseAdapter`因為不覆寫`GetView`， `GetItemId`，`Count`或`this[]`索引子。
+子`CursorAdapter`類別與從 SQLite 顯示資料的效能`SimpleCursorAdapter`優勢相同, 但它也可讓您完整控制每一個資料列視圖的建立和版面配置。 `GetItemId` `GetView` `BaseAdapter` `Count` `this[]`執行與子類別化非常不同, 因為它不會覆寫、或索引子。 `CursorAdapter`
 
-指定可運作的 SQLite 資料庫中，您只需要覆寫兩種方法可以建立`CursorAdapter`子類別：
+假設有一個可運作的 SQLite 資料庫, 您只需要覆寫兩個`CursorAdapter`方法來建立子類別:
 
-- **BindView** – 假設一個檢視，更新，以提供資料指標中顯示的資料。
+- **BindView** –如果有一個視圖, 請更新它, 以在提供的資料指標中顯示資料。
 
-- **NewView** – 時呼叫`ListView`需要新的檢視，以顯示。 `CursorAdapter`會負責回收檢視 (不同於`GetView`一般配接器上的方法)。
+- **NewView** –當`ListView`需要顯示新的視圖時呼叫。 會處理回收視圖 (與一般介面卡上`GetView`的方法不同)。 `CursorAdapter`
 
-先前範例中的配接器子類別有方法傳回的資料列數目，以及擷取目前的項目 –`CursorAdapter`不需要這些方法，因為這項資訊可以收集從本身的資料指標。 藉由將分割的建立和擴展到這兩種方法，每個檢視的`CursorAdapter`會強制執行 檢視重複使用。 這是相較之下的一般配接器就可以略過`convertView`參數`BaseAdapter.GetView`方法。
+先前範例中的介面卡子類別有方法可以傳回資料列數目, 並取得目前的專案– `CursorAdapter`不需要這些方法, 因為該資訊可以從資料指標本身以往累積所有。 藉由將每個 view 的建立和擴展分割成這兩個`CursorAdapter`方法, 就可以重複使用「強制觀看」。 這與一般介面卡相反, 可以忽略`convertView` `BaseAdapter.GetView`方法的參數。
 
 
-### <a name="implementing-the-cursoradapter"></a>實作 CursorAdapter
+### <a name="implementing-the-cursoradapter"></a>執行 CursorAdapter
 
-中的程式碼**CursorTableAdapter/HomeScreenCursorAdapter.cs**包含`CursorAdapter`子類別。 它會儲存內容的參考傳遞至建構函式，使其可以存取`LayoutInflater`在`NewView`方法。 完整的類別看起來像這樣：
+**CursorTableAdapter/HomeScreenCursorAdapter**中的程式碼包含子`CursorAdapter`類別。 它會儲存傳遞至此函式的內容參考, 讓它可以`LayoutInflater`存取`NewView`方法中的。 完整的類別看起來像這樣:
 
 ```csharp
 public class HomeScreenCursorAdapter : CursorAdapter {
@@ -156,9 +153,9 @@ public class HomeScreenCursorAdapter : CursorAdapter {
 
 ### <a name="assigning-the-cursoradapter"></a>指派 CursorAdapter
 
-在  `Activity` ，將會顯示`ListView`，建立資料指標和`CursorAdapter`然後將它指派給 清單 檢視。
+在會顯示的`ListView`中`CursorAdapter` , 建立游標, 然後將它指派給清單視圖。 `Activity`
 
-執行此動作中的程式碼**CursorTableAdapter/HomeScreen.cs** `OnCreate`方法如下所示：
+在**CursorTableAdapter/HomeScreen** `OnCreate`方法中執行此動作的程式碼如下所示:
 
 ```csharp
 // create the cursor
@@ -170,11 +167,11 @@ StartManagingCursor(cursor);
 listView.Adapter = (IListAdapter)new HomeScreenCursorAdapter(this, cursor, false);
 ```
 
-`OnDestroy`方法包含`StopManagingCursor`先前所述的方法呼叫。
+方法包含先前所`StopManagingCursor`述的方法呼叫。 `OnDestroy`
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SimpleCursorTableAdapter (sample)](https://developer.xamarin.com/samples/monodroid/SimpleCursorTableAdapter/)
-- [CursorTableAdapter （範例）](https://developer.xamarin.com/samples/monodroid/CursorTableAdapter/)
+- [SimpleCursorTableAdapter (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/simplecursortableadapter)
+- [CursorTableAdapter (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/cursortableadapter)

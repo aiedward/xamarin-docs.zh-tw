@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 4613eec9db017f27f6ab890522867ab4d68b4684
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ad1c033b35da548921ec47d8cc2f3a8ef87d2fa8
+ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830839"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68486061"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -120,23 +120,19 @@ ms.locfileid: "67830839"
                                                             <ul class="noBullet">
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/single-page.md">
-                                                                        <img src="~/media/icons/i_xaml-forms.svg" alt="">
-檔案 > 新增行動應用程式 </a>
+                                                                        <img src="~/media/icons/i_xaml-forms.svg" alt=""> [檔案] > [新增行動裝置 App] </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/multi-page.md">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_class.svg" alt="">
-新增巡覽 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_class.svg" alt=""> 新增巡覽 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/database.md">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_generic-database.svg" alt="">
-新增資料庫 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_generic-database.svg" alt=""> 新增資料庫 </a>
                                                                 </li>
                                                                  <li>
                                                                     <a class="barLink" href="~/get-started/quickstarts/styling.md">
-                                                                        <img src="https://docs.microsoft.com/xamarin/media/icons/i_user-interface.svg" alt="">
-設計應用程式 </a>
+                                                                        <img src="https://docs.microsoft.com/xamarin/media/icons/i_user-interface.svg" alt=""> 設計應用程式樣式 </a>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -146,8 +142,7 @@ ms.locfileid: "67830839"
                                                             <ul class="noBullet">
                                                                 <li>
                                                                     <a class="barLink" href="~/cross-platform/index.yml">
-                                                                    <img src="https://docs.microsoft.com/media/common/i_guidelines.svg" alt="">
-Xamarin 開發指引</a>
+                                                                    <img src="https://docs.microsoft.com/media/common/i_guidelines.svg" alt=""> Xamarin 開發指南</a>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -171,33 +166,27 @@ Xamarin 開發指引</a>
                                                             <ul class="noBullet">
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/stacklayout/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_dashboard.svg" alt="">
-堆疊版面配置 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_dashboard.svg" alt=""> 堆疊版面配置 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/label/index.yml">
-                                                                        <img src="~/media/icons/i_form-label.svg" alt="">
-標籤 </a>
+                                                                        <img src="~/media/icons/i_form-label.svg" alt=""> 標籤 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/button/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_button.svg" alt="">
-按鈕 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_button.svg" alt=""> 按鈕 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/entry/index.yml">
-                                                                        <img src="~/media/icons/i_form-entry.svg" alt="">
-文字輸入 </a>
+                                                                        <img src="~/media/icons/i_form-entry.svg" alt=""> 文字輸入 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/editor/index.yml">
-                                                                        <img src="~/media/icons/i_form-editor.svg" alt="">
-文字編輯器 </a>
+                                                                        <img src="~/media/icons/i_form-editor.svg" alt=""> 文字編輯器 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/image/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_account-management.svg" alt="">
-影像 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_account-management.svg" alt=""> 影像 </a>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -205,33 +194,27 @@ Xamarin 開發指引</a>
                                                             <ul class="noBullet">
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/grid/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_table.svg" alt="">
-方格版面配置 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_table.svg" alt=""> 格線版面配置 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/listview/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_sharepoint-list.svg" alt="">
-清單 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_sharepoint-list.svg" alt=""> 清單 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/pop-ups/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_alert.svg" alt="">
-快顯視窗 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_alert.svg" alt=""> 快顯視窗 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/app-lifecycle/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_agile.svg" alt="">
-應用程式生命週期 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_agile.svg" alt=""> 應用程式生命週期 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/local-database/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_generic-database.svg" alt="">
-資料庫 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_generic-database.svg" alt=""> 資料庫 </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="barLink" href="~/get-started/tutorials/web-service/index.yml">
-                                                                        <img src="https://docs.microsoft.com/media/common/i_server.svg" alt="">
-Web 服務 </a>
+                                                                        <img src="https://docs.microsoft.com/media/common/i_server.svg" alt=""> Web 服務 </a>
                                                                 </li>
                                                             </ul>
                                                         </td>
@@ -256,20 +239,17 @@ Web 服務 </a>
                                                 <ul class="noBullet">
                                                     <li>
                                                         <a class="barLink" href="~/cross-platform/desktop/index.md">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt="">
-.NET 桌面 (UWP、WPF、WinForms)</a>
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_NET.svg" alt=""> .NET 桌面 (UWP、WPF、WinForms)</a>
                                                     </li>
                                                     </ul></td><td style="border-top-color:transparent!important;padding-left:0;"><ul class="noBullet">
                                                     <li>
                                                         <a class="barLink" href="~/android/get-started/java-developers.md">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_java.svg" alt="">
-Android 與 Java</a>
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_java.svg" alt=""> Android 與 Java</a>
                                                     </li>
                                                     </ul></td><td style="border-top-color:transparent!important;padding-left:0;"><ul class="noBullet">
                                                     <li>
                                                         <a class="barLink" href="~/ios/get-started/objective-c-developers/index.md">
-                                                            <img src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt="">
-iOS 與 Objective-C</a>
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_xcode.svg" alt=""> iOS 與 Objective-C</a>
                                                     </li>
                                                 </ul></td></tr></table>
                                             </div>
@@ -371,7 +351,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/platform/index.md">
+                                <a href="~/xamarin-forms/platform/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -428,7 +408,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/deploy-test/index.md">
+                                <a href="~/xamarin-forms/deploy-test/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -447,7 +427,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/internals/index.md">
+                                <a href="~/xamarin-forms/internals/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

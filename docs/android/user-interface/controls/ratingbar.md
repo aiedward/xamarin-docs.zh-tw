@@ -1,5 +1,5 @@
 ---
-title: RatingBar
+title: Xamarin. Android RatingBar
 description: 如何將 RatingBar widget 新增至 Android 活動。
 ms.prod: xamarin
 ms.assetid: d7a1f9bb-926d-4f93-9e8e-0fa933e330e7
@@ -7,24 +7,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 97d2a126be70e210d2e8f4ebf4d7a25ff8777a02
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4e98dd824d5044367b975ae66c77327f10e826f1
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945433"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68510186"
 ---
-# <a name="ratingbar"></a>RatingBar
+# <a name="xamarinandroid-ratingbar"></a>Xamarin. Android RatingBar
 
-RatingBar 是一種 UI widget，顯示從一個到五顆星的評等。 使用者可能選擇評等，藉由點選在這一節中的星號上，您將建立一種 widget，可讓使用者提供評等[ `RatingBar` ](https://developer.xamarin.com/api/type/Android.Widget.RatingBar/)小工具。
+RatingBar 是一個 UI widget, 可顯示一到五顆星的評等。 使用者可以在本節中的星星點選選取評等, 您將建立一個 widget, 讓使用者可以使用[`RatingBar`](xref:Android.Widget.RatingBar) widget 提供評等。
 
 ![RatingBar 的範例](ratingbar-images/01-ratingbar.png)
 
 
 ## <a name="creating-a-ratingbar"></a>建立 RatingBar
 
-1. 開啟**Resource/layout/Main.axml**檔案，並新增 [`RatingBar`](https://developer.xamarin.com/api/type/Android.Widget.RatingBar/)
-   項目 (在[ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+1. 開啟**資源/layout/axml**檔案, 並新增[`RatingBar`](xref:Android.Widget.RatingBar)
+   元素 (在內[`LinearLayout`](xref:Android.Widget.LinearLayout)):
 
     ```xml
     <RatingBar android:id="@+id/ratingbar"
@@ -33,10 +33,10 @@ RatingBar 是一種 UI widget，顯示從一個到五顆星的評等。 使用�
             android:numStars="5"
             android:stepSize="1.0"/>
     ```
-   `android:numStars`屬性可讓您定義要顯示 [分級] 列的幾個星號。 `android:stepSize`屬性定義每一顆星星的資料粒度 (例如，值`0.5`允許半顆星的評等)。
+   `android:numStars`屬性會定義要針對評等列顯示多少顆星。 屬性會定義每個星形的資料細微性 (例如, 的`0.5`值允許半星分級)。 `android:stepSize`
 
-2. 已經設定新的評等時，請執行一些作業，請將下列程式碼新增至結尾 [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/p/Android.OS.Bundle/Android.OS.PersistableBundle)
-   方法：
+2. 若要在設定新的評等時執行某些動作, 請將下列程式碼新增至結尾[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+   方法
 
     ```csharp
     RatingBar ratingbar = FindViewById<RatingBar>(Resource.Id.ratingbar);
@@ -46,7 +46,7 @@ RatingBar 是一種 UI widget，顯示從一個到五顆星的評等。 使用�
     };
     ```
 
-    這會擷取[ `RatingBar` ](https://developer.xamarin.com/api/type/Android.Widget.RatingBar/)小工具的版面配置，與從[ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/)然後設定事件的方法，則會定義當使用者設定評等時要執行的動作。 在此情況下，簡單[ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/)訊息會顯示新的評比。
+    這會使用[`RatingBar`](xref:Android.Widget.RatingBar) [`FindViewById`](xref:Android.App.Activity.FindViewById*)從配置中捕捉 widget, 然後設定事件方法, 然後定義當使用者設定分級時要執行的動作。 在此情況下, 簡單[`Toast`](xref:Android.Widget.Toast)的訊息會顯示新的評等。
 
 3.  執行應用程式。
 

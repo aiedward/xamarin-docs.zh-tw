@@ -7,16 +7,16 @@ ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: cf31f3bd6f84a040d21420e865737417c374d947
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 50174844100eb852ac7daf5ce3f33b02b490ceb2
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61078058"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646652"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>裁剪 SkiaSharp 點陣圖
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 [**建立和繪製 SkiaSharp 點陣圖**](drawing.md)一文所述方式`SKBitmap`物件可以傳遞至`SKCanvas`建構函式。 要呈現在點陣圖上該畫布原因圖形上呼叫任何繪製方法。 這些繪製方法包括`DrawBitmap`，這表示，這項技術可讓傳送部分或全部的一個點陣圖到另一個點陣圖，可能與套用的轉換。
 
@@ -445,7 +445,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>裝載相片 cropper 畫布檢視
 
-與處理裁剪的邏輯，這兩個類別**裁剪相片**頁面 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式有很少的工作来執行。 XAML 檔案會具現化`Grid`主機`PhotoCropperCanvasView`並**完成**按鈕：
+與處理裁剪的邏輯，這兩個類別**裁剪相片**頁面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式有很少的工作来執行。 XAML 檔案會具現化`Grid`主機`PhotoCropperCanvasView`並**完成**按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -536,7 +536,7 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 知名的 Xamarin.Forms 版本 14 或 15 謎題出現在本書第 22 章[_使用 Xamarin.Forms 建立行動應用程式_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)而且可以下載作為[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 不過，拼圖會變得更多樂趣 （且通常更具挑戰性） 當它根據您自己的相片媒體櫃中的影像。
 
-這個版本的 14-15 個謎題是一部分 **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** 應用程式中，組成一連串的頁面標題為**相片拼圖**。
+這個版本的 14-15 個謎題是一部分 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中，組成一連串的頁面標題為**相片拼圖**。
 
 **PhotoPuzzlePage1.xaml**檔案的組成`Button`:
 
@@ -765,4 +765,4 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （範例）](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
+- [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

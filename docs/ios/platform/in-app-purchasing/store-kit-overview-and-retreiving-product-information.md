@@ -1,126 +1,126 @@
 ---
-title: StoreKit 概觀與在 Xamarin.iOS 中的擷取產品資訊
-description: 本文件提供 StoreKit 概觀。 它會描述類別搭配 StoreKit 測試 StoreKit 互動、 顯示銷售的產品、 處理無效的產品，並顯示當地語系化的價格。
+title: StoreKit 總覽和在 Xamarin 中取出產品資訊
+description: 本檔提供 StoreKit 的總覽。 其中描述與 StoreKit 搭配使用的類別、測試 StoreKit 互動、顯示銷售產品、處理無效產品, 以及顯示當地語系化價格。
 ms.prod: xamarin
 ms.assetid: FC21192E-6325-4389-C060-E92DBB5EBD87
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 0dcda2e4fd1ca7773668a0a6fdf46e01f2f0841d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4eb115889b65819e969b8024fc9fbcdc02b566fb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61366909"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68648199"
 ---
-# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 概觀與在 Xamarin.iOS 中的擷取產品資訊
+# <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 總覽和在 Xamarin 中取出產品資訊
 
-以下螢幕擷取畫面顯示的應用程式內購買的使用者介面。
-任何交易發生之前，應用程式必須擷取產品的價格和顯示的描述。 然後當使用者按下**購買**，應用程式會對 StoreKit 用來管理 Apple ID 登入與確認對話方塊中的要求。 假設，之後交易又成功，StoreKit 通知的應用程式程式碼中，這必須交易結果儲存，並提供存取權及其購買的使用者。   
+應用程式內購買的使用者介面如下列螢幕擷取畫面所示。
+在進行任何交易之前, 應用程式必須先取得產品的價格和顯示的描述。 然後, 當使用者按下 [**購買**] 時, 應用程式會向 StoreKit 提出要求, 以管理確認對話方塊和 Apple ID 登入。 假設交易成功, StoreKit 會通知應用程式代碼, 這必須儲存交易結果, 並為使用者提供其購買的存取權。   
 
    
- [![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit 通知應用程式程式碼，其必須儲存的交易結果，且使用者提供存取權及其購買")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image14.png "StoreKit 會通知應用程式代碼, 這必須儲存交易結果, 並為使用者提供其購買的存取權")](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
 
 ## <a name="classes"></a>類別
 
-您需要從 StoreKit framework 的下列類別，才能實作應用程式內購買項目：   
+若要執行應用程式內購買, 需要 StoreKit 架構中的下列類別:   
    
- **SKProductsRequest** – StoreKit 的要求核准的產品銷售 （應用程式存放區）。 可以設定以產品識別碼的數字。
+ **SKProductsRequest** –針對核准的產品要銷售的 StoreKit 要求 (App Store)。 可以使用多個產品識別碼來設定。
 
--   **SKProductsRequestDelegate** – 宣告方法，以處理產品要求和回應。 
--   **SKProductsResponse** – 從 StoreKit (App Store) 傳送回給委派。 包含符合 Id 與要求中傳送此產品 SKProducts。 
--   **SKProduct** – StoreKit （即您已在 iTunes Connect 中設定） 從擷取的產品。 包含的產品，例如產品識別碼、 標題、 描述和價格的相關資訊。 
--   **SKPayment** – 建立產品識別碼，並加入付款佇列進行購買。 
--   **SKPaymentQueue** – 已排入佇列付款要求傳送至 Apple。 因為正在處理每個付款，會觸發通知。 
--   **SKPaymentTransaction** – 代表已完成的交易 （採購單要求已處理的應用程式市集並傳送回您的應用程式，透過 StoreKit）。 交易可能購買、 還原或失敗。 
--   **SKPaymentTransactionObserver** – StoreKit 付款佇列所產生的事件回應的自訂子類別。 
--   **StoreKit 的作業是非同步**– 之後啟動 SKProductRequest 或 SKPayment 新增至佇列，將控制項傳回給您的程式碼。 StoreKit 會在您的 SKProductsRequestDelegate 或 SKPaymentTransactionObserver 子類別上呼叫方法，從 Apple 伺服器接收資料時。 
+-   **SKProductsRequestDelegate** –宣告處理產品要求和回應的方法。 
+-   **SKProductsResponse** –從 StoreKit (App Store) 傳送回委派。 包含符合要求所傳送之產品識別碼的 SKProducts。 
+-   **SKProduct** –從 StoreKit (您在 iTunes Connect 中設定) 取出的產品。 包含產品的相關資訊, 例如產品識別碼、標題、描述和價格。 
+-   **SKPayment** –使用產品識別碼建立, 並新增至付款佇列以執行購買。 
+-   **SKPaymentQueue** –要傳送給 Apple 的佇列付款要求。 由於每個付款處理的結果, 都會觸發通知。 
+-   **SKPaymentTransaction** –代表已完成的交易 (已由 App Store 處理並透過 StoreKit 傳送回您的應用程式的購買要求)。 交易可能已購買、還原或失敗。 
+-   **SKPaymentTransactionObserver** –回應 StoreKit 付款佇列所產生之事件的自訂子類別。 
+-   **StoreKit 作業是非同步**的–啟動 SKProductRequest 之後, 或將 SKPayment 新增至佇列之後, 控制權就會傳回給您的程式碼。 StoreKit 會在您的 SKProductsRequestDelegate 或 SKPaymentTransactionObserver 子類別接收來自 Apple 伺服器的資料時, 呼叫方法。 
 
 
-下圖顯示各種 StoreKit 類別 （在您的應用程式必須實作抽象類別） 之間的關聯性：   
+下圖顯示各種 StoreKit 類別之間的關聯性 (必須在您的應用程式中實作為抽象類別):   
    
    
    
- [![](store-kit-overview-and-retreiving-product-information-images/image15.png "在應用程式必須實作各種的 StoreKit 類別抽象類別之間的關聯性")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image15.png "各種 StoreKit 類別之間的關聯性必須在應用程式中實作為抽象類別")](store-kit-overview-and-retreiving-product-information-images/image15.png#lightbox)   
    
    
    
- 本文件稍後的更詳細地說明這些類別。
+ 本檔稍後會更詳細說明這些類別。
 
 ## <a name="testing"></a>測試
 
-StoreKit 的大部分作業需要實際的裝置進行測試。 正在擷取產品資訊 （即 價格&amp;描述) 可在模擬器而購買和還原作業會傳回錯誤 (例如 FailedTransaction 程式碼 = 5002 發生未知的錯誤)。
+大部分的 StoreKit 作業都需要實際的裝置進行測試。 正在抓取產品資訊 (ie)。 價格&amp;描述) 會在模擬器中運作, 但是購買和還原作業將會傳回錯誤 (例如 FailedTransaction 碼 = 5002 發生未知的錯誤)。
 
-注意:StoreKit iOS 模擬器中無法運作。 在 iOS 模擬器中執行您的應用程式，當 StoreKit 會記錄警告，如果您的應用程式嘗試擷取付款佇列。 必須在實際裝置上完成測試存放區。   
+注意:StoreKit 不會在 iOS 模擬器中運作。 當您的應用程式在 iOS 模擬器中執行時, 如果您的應用程式嘗試取出付款佇列, StoreKit 會記錄警告。 測試存放區必須在實際裝置上完成。   
    
    
    
- 重要事項：不使用登入您的測試帳戶，在 [設定] 應用程式。 您可以使用設定應用程式簽署，無法使用任何現有的 Apple ID 帳戶，然後在提示時，您必須等到*在您的應用程式內購買序列*使用測試 Apple ID 登入   
+ 重要事項：請勿在 [設定] 應用程式中使用您的測試帳戶登入。 您可以使用 [設定] 應用程式來登出任何現有的 Apple ID 帳戶, 然後您必須等到*應用程式內購買順序中*出現提示, 才能使用測試 Apple ID 登入。   
    
    
    
 
-如果您嘗試登入測試帳戶的實際存放區，它會自動轉換成實際的 Apple id。 該帳戶將不再可用於測試。
+如果您嘗試使用測試帳戶來登入實際的存放區, 它會自動轉換成實際的 Apple ID。 該帳戶將無法再供測試之用。
 
-為測試 StoreKit 的程式碼中，您可以必須登出您的一般 iTunes 測試帳戶和登入使用特殊的測試帳戶 （在 iTunes Connect 中建立） 連結到測試存放區。 若要登出目前的帳戶，請造訪**設定 > iTunes App Store 和**如下所示：
+若要測試 StoreKit 程式碼, 您必須登出一般 iTunes 測試帳戶, 並使用與測試存放區連結的特殊測試帳戶 (在 iTunes Connect 中建立) 來登入。 若要登出目前的帳戶, 請造訪 **> iTunes 和 App Store 的設定**, 如下所示:
 
- [![](store-kit-overview-and-retreiving-product-information-images/image16.png "若要登出目前的帳戶，請造訪設定 iTunes 與 App Store")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image16.png "若要登出目前的帳戶, 請造訪設定 iTunes 和 App Store")](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
  
-然後使用測試帳戶登入*StoreKit 要求應用程式內時*:
+然後, 在*您的應用程式中 StoreKit 要求時*, 使用測試帳戶登入:
 
 
 
-若要建立測試使用者，在 iTunes Connect 中的按一下**使用者和角色**的主頁面上。
+若要在 iTunes Connect 中建立測試使用者, 請按一下主頁面上的 [**使用者和角色**]。
 
- [![](store-kit-overview-and-retreiving-product-information-images/image17.png "若要建立測試使用者在 iTunes Connect 按一下使用者和角色的主頁面上")](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image17.png "若要在 iTunes Connect 中建立測試使用者, 請按一下主頁面上的 [使用者和角色]")](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
 
 選取**沙箱測試人員**
 
- [![](store-kit-overview-and-retreiving-product-information-images/image18.png "選取 沙箱測試人員")](store-kit-overview-and-retreiving-product-information-images/image18.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image18.png "選取沙箱測試人員")](store-kit-overview-and-retreiving-product-information-images/image18.png#lightbox)
 
-現有使用者的清單隨即顯示。 您可以新增新的使用者，或刪除現有的記錄。 在入口網站並不會 （目前） 可讓您檢視或編輯現有的測試使用者，因此建議您保持良好的記錄，每個測試使用者而建立 （尤其是在您指派的密碼）。 一旦您刪除的測試使用者電子郵件地址不得重複使用另一個測試帳戶。  
+隨即顯示現有使用者的清單。 您可以加入新的使用者, 或刪除現有的記錄。 入口網站不會使用 (目前) 讓您查看或編輯現有的測試使用者, 因此建議您針對每個建立的測試使用者 (尤其是您指派的密碼) 保留良好的記錄。 一旦您刪除測試使用者, 電子郵件地址就無法重複用於另一個測試帳戶。  
    
- [![](store-kit-overview-and-retreiving-product-information-images/image19.png "會顯示現有的使用者清單")](store-kit-overview-and-retreiving-product-information-images/image19.png#lightbox)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image19.png "隨即顯示現有使用者的清單")](store-kit-overview-and-retreiving-product-information-images/image19.png#lightbox)   
    
- 新的測試使用者有類似的屬性，以實際的 Apple ID （例如名稱、 密碼、 祕密問題及回答）。 追蹤記錄的 在此處輸入的所有詳細資料。 **選取 iTunes Store**欄位將會決定哪一個貨幣，並使用應用程式內購買的語言時已登入以該使用者。
+ 新的測試使用者對真實的 Apple ID 具有類似的屬性 (例如名稱、密碼、秘密問題和答案)。 保留此處輸入之所有詳細資料的記錄。 [**選取 ITunes Store** ] 欄位會決定在以該使用者身分登入時, 應用程式內購買會使用的貨幣和語言。
 
- [![](store-kit-overview-and-retreiving-product-information-images/image20.png "選取 iTunes Store 欄位將會決定使用者的貨幣和語言進行其應用程式內購買")](store-kit-overview-and-retreiving-product-information-images/image20.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image20.png "[選取 iTunes Store] 欄位將決定使用者在應用程式內購買的貨幣和語言")](store-kit-overview-and-retreiving-product-information-images/image20.png#lightbox)
 
-## <a name="retrieving-product-information"></a>正在擷取產品資訊
+## <a name="retrieving-product-information"></a>正在抓取產品資訊
 
-銷售應用程式內購買產品的第一個步驟將它顯示： 顯示應用程式存放區中擷取目前的價格和描述。   
+銷售應用程式內購買產品的第一個步驟是顯示它: 從 App Store 中取得目前的價格和描述, 以供顯示。   
    
    
    
- 不論哪一種產品應用程式銷售 （取用，非取用或類型的訂用帳戶），擷取顯示的產品資訊的程序都相同。 本文所附的 InAppPurchaseSample 程式碼包含名為的專案*消耗*，示範如何擷取顯示的實際執行環境資訊。 它會示範如何：
+ 無論應用程式銷售的產品類型為何 (可取用、非取用或類型的訂用帳戶), 取得產品資訊以供顯示的流程都相同。 本文隨附的 InAppPurchaseSample 程式碼包含名為「*耗材*」的專案, 示範如何取出實際執行資訊以供顯示。 它會顯示如何:
 
--  建立實作`SKProductsRequestDelegate`並實作`ReceivedResponse`抽象方法。 範例程式碼會將此稱為`InAppPurchaseManager`類別。 
--  請看看是否允許付款 StoreKit (使用`SKPaymentQueue.CanMakePayments`)。 
--  具現化`SKProductsRequest`具有已定義在 iTunes Connect 中的產品識別碼。 這會在此範例的`InAppPurchaseManager.RequestProductData`方法。 
--  在呼叫 Start 方法`SKProductsRequest`。 這會觸發應用程式存放區伺服器的非同步呼叫。 委派 ( `InAppPurchaseManager` ) 將會呼叫後的結果。 
--  委派的 ( `InAppPurchaseManager` )`ReceivedResponse`方法會傳回從 App Store （產品價格和描述或不正確的產品相關的訊息） 的資料以更新 UI。 
+-  建立的`SKProductsRequestDelegate`執行, 並`ReceivedResponse`執行抽象方法。 範例程式碼會呼叫這個`InAppPurchaseManager`類別。 
+-  請使用 StoreKit 查看是否允許付款 (使用`SKPaymentQueue.CanMakePayments` )。 
+-  `SKProductsRequest`使用已在 iTunes Connect 中定義的產品識別碼來具現化。 這會在範例的`InAppPurchaseManager.RequestProductData`方法中完成。 
+-  在上`SKProductsRequest`呼叫 Start 方法。 這會觸發對 App Store 伺服器的非同步呼叫。 將會呼叫`InAppPurchaseManager`委派 (), 並傳回結果。 
+-  委派的 ( `InAppPurchaseManager` ) `ReceivedResponse`方法會以 App Store 傳回的資料來更新 UI (產品價格 & 描述, 或有關無效產品的訊息)。 
 
-整體的互動看起來像這樣 ( **StoreKit**內建於 iOS，而**App Store**代表 Apple 的伺服器):
+整體互動看起來像這樣 ( **StoreKit**已內建至 iOS, 而**App Store**代表 Apple 的伺服器):
 
- [![](store-kit-overview-and-retreiving-product-information-images/image21.png "正在擷取產品資訊的圖形")](store-kit-overview-and-retreiving-product-information-images/image21.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image21.png "正在抓取產品資訊圖表")](store-kit-overview-and-retreiving-product-information-images/image21.png#lightbox)
 
 ### <a name="displaying-product-information-example"></a>顯示產品資訊範例
 
-[InAppPurchaseSample](https://developer.xamarin.com/samples/monotouch/StoreKit/) *消耗*範例程式碼示範如何擷取產品資訊的方式。 此範例的主畫面會顯示從應用程式存放區擷取這兩項產品資訊：   
+[InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)的*耗材*範例程式碼會示範如何取得產品資訊。 範例的主畫面會顯示從 App Store 抓取之兩項產品的資訊:   
    
    
    
- [![](store-kit-overview-and-retreiving-product-information-images/image23.png "主畫面會顯示從應用程式存放區擷取的資訊產品")](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image23.png "主畫面會顯示從 App Store 取得的資訊產品")](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
    
    
    
- 擷取並顯示產品資訊的範例程式碼會在下面詳細說明。
+ 下面將更詳細說明用來抓取和顯示產品資訊的範例程式碼。
 
 
 #### <a name="viewcontroller-methods"></a>ViewController 方法
 
-`ConsumableViewController`類別會管理的產品 Id 為硬式編碼在類別中的兩個產品價格的顯示方式。
+`ConsumableViewController`類別會管理兩個產品的價格顯示, 其產品識別碼會在類別中硬式編碼。
 
 ```csharp
 public static string Buy5ProductId = "com.xamarin.storekit.testing.consume5credits",
@@ -135,13 +135,13 @@ public ConsumableViewController () : base()
 }
 ```
 
-在類別層級也必須有 NSObject 宣告，將用來安裝`NSNotificationCenter`觀察者：
+在類別層級, 也應該有一個宣告的 NSObject, 將用來設定`NSNotificationCenter`觀察者:
 
 ```csharp
 NSObject priceObserver;
 ```
 
-ViewWillAppear 方法中會建立觀察者，並將其指派使用預設的通知中心中：
+在 Viewwillappear: 每當方法中, 會使用預設的通知中心來建立和指派觀察者:
 
 ```csharp
 priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
@@ -153,13 +153,13 @@ priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
 
    
    
- 在結尾`ViewWillAppear`方法中，呼叫`RequestProductData`; 方法來啟始 StoreKit 要求。 一旦發出此要求，StoreKit 將以非同步方式與 Apple 的伺服器，以取得的資訊，並將其饋送回到您的應用程式。 這所達成`SKProductsRequestDelegate`子類別 ( `InAppPurchaseManager`)，會在下一節中說明。
+ 在`ViewWillAppear`方法的結尾, `RequestProductData`呼叫方法以起始 StoreKit 要求。 提出此要求之後, StoreKit 會以非同步方式連線到 Apple 的伺服器以取得資訊, 並將它送回您的應用程式。 這是由`SKProductsRequestDelegate`子類別 ( `InAppPurchaseManager`) 達成, 會在下一節中說明。
 
 ```csharp
 iap.RequestProductData(products);
 ```
 
-顯示的價格和描述的程式碼只要從 SKProduct 擷取資訊，並將它指派給 UIKit 控制項 (請注意，我們會顯示`LocalizedTitle`和`LocalizedDescription`– StoreKit 會自動解析正確的文字和基礎價格使用者的帳戶設定）。 下列程式碼位於前面所建立的通知：
+顯示價格和描述的程式碼只會從 SKProduct 中抓取資訊, 並將其指派給 UIKit 控制項 (請注意, 我們`LocalizedTitle`會`LocalizedDescription`顯示和– StoreKit 會自動解析正確的文字和價格, 依據使用者的帳戶設定)。 下列程式碼屬於我們先前建立的通知:
 
 ```csharp
 priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
@@ -177,7 +177,7 @@ priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (
 }
 ```
 
-最後，`ViewWillDisappear`方法應該確保移除觀察者：
+最後, `ViewWillDisappear`方法應該確定已移除觀察者:
 
 ```csharp
 NSNotificationCenter.DefaultCenter.RemoveObserver (priceObserver);
@@ -185,7 +185,7 @@ NSNotificationCenter.DefaultCenter.RemoveObserver (priceObserver);
 
 #### <a name="skproductrequestdelegate-inapppurchasemanager-methods"></a>SKProductRequestDelegate (InAppPurchaseManager) 方法
 
-`RequestProductData`應用程式想要擷取產品價格和其他資訊時，會呼叫方法。 它會剖析成正確的資料類型的產品識別碼集合，然後建立`SKProductsRequest`具有相關資訊。 呼叫 Start 方法，會導致對 Apple 伺服器的網路要求。 要求會以非同步方式執行，並呼叫`ReceivedResponse`方法的委派時順利完成。
+當應用程式想要取得產品價格和其他資訊時, 會呼叫方法。`RequestProductData` 它會將產品識別碼的集合剖析成正確的資料類型, 然後`SKProductsRequest`使用該資訊建立。 呼叫 Start 方法會導致向 Apple 伺服器發出網路要求。 要求會以非同步方式執行, 並`ReceivedResponse`在成功完成時呼叫委派的方法。
 
 ```csharp
 public void RequestProductData (List<string> productIds)
@@ -201,11 +201,11 @@ public void RequestProductData (List<string> productIds)
 }
 ```
 
-iOS 會自動將要求路由至 App Store，根據應用程式以 – 執行哪些佈建設定檔的 「 沙箱 」 或 'production' 版本讓您開發或測試您的應用程式時要求將能夠存取每個產品在 iTunes Connect （即使尚未已送出或由 Apple 核准） 中設定。 當您的應用程式在生產環境中，StoreKit 要求只會傳回的資訊**Approved**產品。   
+iOS 會根據應用程式所執行的布建設定檔, 自動將要求路由至 App Store 的「沙箱」或「生產」版本, 因此當您開發或測試您的應用程式時, 要求將會擁有每項產品的存取權在 iTunes Connect 中設定 (即使是 Apple 尚未提交或核准的連線)。 當您的應用程式在生產環境中時, StoreKit 要求只會傳回**已核准**產品的資訊。   
    
    
    
- `ReceivedResponse` Apple 的伺服器回應的資料之後會呼叫覆寫的方法。 因為這在背景中進行呼叫，所以程式碼應該剖析有效的資料，並使用通知將產品資訊傳送至任何 ViewControllers '接聽' 該通知。 有效的產品資訊的收集和傳送通知的程式碼如下所示：
+ 在`ReceivedResponse` Apple 的伺服器回應資料之後, 會呼叫覆寫的方法。 因為這是在背景中呼叫, 所以程式碼應剖析有效的資料, 並使用通知將產品資訊傳送到任何為該通知「接聽」的 ViewControllers。 收集有效產品資訊並傳送通知的程式碼如下所示:
 
 ```csharp
 public override void ReceivedResponse (SKProductsRequest request, SKProductsResponse response)
@@ -225,7 +225,7 @@ public override void ReceivedResponse (SKProductsRequest request, SKProductsResp
 }
 ```
 
-雖然未顯示在圖表中，`RequestFailed`應該也會覆寫方法，以便您可以提供意見給使用者，萬一應用程式存放區伺服器無法連線 （或其他某些錯誤，就會發生）。 範例程式碼只會寫入主控台，但實際的應用程式可能會選擇進行查詢以`error.Code`屬性及實作自訂行為 （例如使用者警示）。
+雖然圖表中沒有顯示, `RequestFailed`但也應該覆寫方法, 以便在無法連線到應用程式存放區伺服器 (或發生其他錯誤) 時, 為使用者提供一些意見反應。 範例程式碼只會寫入至主控台, 但實際的應用程式可能會選取查詢`error.Code`屬性並執行自訂行為 (例如, 對使用者發出警示)。
 
 ```csharp
 public override void RequestFailed (SKRequest request, NSError error)
@@ -234,29 +234,29 @@ public override void RequestFailed (SKRequest request, NSError error)
 }
 ```
 
-此螢幕擷取畫面顯示範例應用程式之後立即載入 （當產品不未提供任何資訊）：
+這個螢幕擷取畫面會在載入後立即顯示範例應用程式 (沒有可用的產品資訊時):
 
- [![](store-kit-overview-and-retreiving-product-information-images/image24.png "範例應用程式之後立即載入時不未提供任何產品資訊")](store-kit-overview-and-retreiving-product-information-images/image24.png#lightbox)
+ [![](store-kit-overview-and-retreiving-product-information-images/image24.png "未提供任何產品資訊時, 在載入後立即進行的範例應用程式")](store-kit-overview-and-retreiving-product-information-images/image24.png#lightbox)
 
-## <a name="invalid-products"></a>無效的產品
+## <a name="invalid-products"></a>不正確產品
 
-`SKProductsRequest`也可能會傳回無效的產品識別碼的清單。 無效的產品通常會傳回下列其中一項：   
+`SKProductsRequest`可能也會傳回無效產品識別碼的清單。 通常會傳回不正確產品, 因為下列其中一項:   
    
    
    
- **輸入產品識別碼**– 接受只有效的產品識別碼。   
+ **產品識別碼輸入錯誤**-只接受有效的產品識別碼。   
    
- **產品尚未核准**– 測試時，請清除銷售的所有產品應該都傳回`SKProductsRequest`; 不過，在生產環境中會都傳回僅已核准的產品。   
+ **產品尚未核准**–進行測試時, 所有針對銷售清除的產品都應該由`SKProductsRequest`傳回; 不過, 在生產環境中, 只會傳回已核准的產品。   
    
- **應用程式識別碼不是明確**– 萬用字元應用程式識別碼 （將以星號） 不允許應用程式內購買。   
+ **應用程式識別碼不是明確**的–萬用字元應用程式識別碼 (含星號) 不允許應用程式內購買。   
    
- **不正確的佈建設定檔**– 如果您進行變更 （例如啟用應用程式內購買），在佈建入口網站中的應用程式組態，請記得重新產生，並建置應用程式時，請使用正確的佈建設定檔。   
+ **不正確**的布建設定檔–如果您在布建入口網站中對應用程式設定進行變更 (例如, 啟用應用程式內購買), 請記得在建立應用程式時重新產生並使用正確的布建設定檔。   
    
- **iOS 付費應用程式合約不是就地**– StoreKit 功能將完全無法運作除非您在 Apple 開發人員帳戶的有效合約。   
+ **IOS 付費應用程式合約不**存在–除非您的 Apple 開發人員帳戶有有效的合約, 否則 StoreKit 功能將完全不適用。   
    
- **二進位檔位於已拒絕狀態**– 如果有先前提交的二進位檔中 （無論是使用 App Store 團隊，或由開發人員） 已拒絕狀態則 StoreKit 功能將無法運作。
+ **二進位檔處於拒絕狀態**–如果先前提交的二進位檔處於已拒絕狀態 (由 App Store 小組或開發人員), 則 StoreKit 功能將無法使用。
 
-`ReceivedResponse`方法的範例程式碼會輸出到主控台無效的產品：
+範例`ReceivedResponse`程式碼中的方法會將不正確產品輸出到主控台:
 
 ```csharp
 public override void ReceivedResponse (SKProductsRequest request, SKProductsResponse response)
@@ -268,9 +268,9 @@ public override void ReceivedResponse (SKProductsRequest request, SKProductsResp
 }
 ```
 
-## <a name="displaying-localized-prices"></a>顯示當地語系化的價格
+## <a name="displaying-localized-prices"></a>顯示當地語系化價格
 
-價格層之間所有的國際應用程式存放區指定每項產品的特定價格。 若要確保每個貨幣價格會正確顯示，使用下列的擴充方法 (定義於`SKProductExtension.cs`) 而不是 [價格] 屬性，每個`SKProduct`:
+價位層會為所有國際應用程式商店中的每個產品指定特定價格。 為確保每個貨幣都能正確顯示價格, 請使用下列擴充方法 (定義`SKProductExtension.cs`于中), 而不是每`SKProduct`一個的價格屬性:
 
 ```csharp
 public static class SKProductExtension {
@@ -286,24 +286,24 @@ public static class SKProductExtension {
 }
 ```
 
-設定按鈕的標題的程式碼會使用擴充方法，就像這樣：
+設定按鈕標題的程式碼會使用擴充方法, 如下所示:
 
 ```csharp
 string Buy = "Buy {0}"; // or a localizable string
 buy5Button.SetTitle(String.Format(Buy, product.LocalizedPrice()), UIControlState.Normal);
 ```
 
-使用兩個不同的 iTunes 測試帳戶 （一個用於美國的存放區），另一個用於日文的存放區會導致下列的螢幕擷取畫面：   
+使用兩個不同的 iTunes 測試帳戶 (一個用於美國商店, 另一個用於日文商店) 會產生下列螢幕擷取畫面:   
    
    
    
- [![](store-kit-overview-and-retreiving-product-information-images/image25.png "兩個不同的 iTunes 測試帳戶的顯示語言特定的結果")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
+ [![](store-kit-overview-and-retreiving-product-information-images/image25.png "兩個不同的 iTunes 測試帳戶, 顯示語言特定的結果")](store-kit-overview-and-retreiving-product-information-images/image25.png#lightbox)   
    
    
    
- 請注意，存放區會影響用來提供產品資訊和價格貨幣，而標籤和其他當地語系化的內容，會影響裝置的語言設定的語言。   
+ 請注意, 存放區會影響用於產品資訊和價格貨幣的語言, 而裝置的語言設定則會影響標籤和其他當地語系化的內容。   
    
    
    
- 您應該記得，若要使用不同的存放區測試帳戶，您必須**登出**中**設定 > iTunes App Store 和**並重新啟動應用程式以使用不同的帳戶登入。 若要變更裝置的語言，請移至**設定 > 一般 > 國際 > 語言**。
+ 回想一下, 若要使用不同的存放區測試帳戶, 您必須**登出** **> ITunes 和 App Store**中的設定, 然後重新開機應用程式以使用不同的帳戶登入。 若要變更裝置的語言, 請移至 **[設定] > [一般] > [國際 > 語言**]。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f5961987e28c09ad703988083f1b127cd7b9dbd0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60897185"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645913"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS 在 Xamarin 中的通知
 
@@ -69,11 +69,11 @@ Watch 應用程式可以接收通知，如果包含的 iOS 應用程式支援它
 
 通知可以來自遠端伺服器 ([Apple 推播通知服務](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)，或 APNS) 或 iOS 應用程式可在本機產生。
 
-請參閱[iOS 通知逐步解說](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)如需如何產生本機通知，而[WatchNotifications 範例](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)如需實用範例。
+請參閱[iOS 通知逐步解說](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)如需如何產生本機通知，而[WatchNotifications 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)如需實用範例。
 
 必須有本機通知`AlertTitle`設定為顯示在 Apple Watch 中-`AlertTitle`字串會顯示於短外觀的介面。 同時`AlertTitle`並`AlertBody`會顯示在 [通知] 清單中; 而`AlertBody`會顯示在長時間查詢介面。
 
-此螢幕擷取畫面顯示`AlertTitle`顯示在 [通知] 清單中，而`AlertBody`會顯示在長時間查詢介面 (使用[範例程式碼](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)):
+此螢幕擷取畫面顯示`AlertTitle`顯示在 [通知] 清單中，而`AlertBody`會顯示在長時間查詢介面 (使用[範例程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)):
 
 ![](notifications-images/watch-notificationslist-sml.png "此螢幕擷取畫面顯示在 [通知] 清單中顯示 AlertTitle") ![](notifications-images/watch-notificationcontroller-sml.png "AlertBody 在長時間查詢介面中顯示")
 
@@ -98,7 +98,7 @@ Watch 應用程式可以接收通知，如果包含的 iOS 應用程式支援它
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac 會顯示其他選項，監控擴充功能會設定為當**啟始專案**。
-監看式延伸模組專案上按一下滑鼠右鍵，然後選擇 **執行與 > 自訂參數...**:
+監看式延伸模組專案上按一下滑鼠右鍵，然後選擇 **執行與 > 自訂參數...** :
     
 [![](notifications-images/runwith-customparams-sml.png "執行具有自訂屬性")](notifications-images/runwith-customparams.png#lightbox)
     
@@ -126,7 +126,7 @@ Visual Studio for Mac 會顯示其他選項，監控擴充功能會設定為當*
 
 ### <a name="example-notification-payload"></a>通知承載範例
 
-在 [監看式套件目錄](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)有範例是範例承載 JSON 檔案**NotificationPayload.json** （如下所示）。
+在 [監看式套件目錄](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)有範例是範例承載 JSON 檔案**NotificationPayload.json** （如下所示）。
 
 ```csharp
 {
@@ -151,6 +151,6 @@ Visual Studio for Mac 會顯示其他選項，監控擴充功能會設定為當*
 
 ## <a name="related-links"></a>相關連結
 
-- [WatchNotifications （本機通知） （範例）](https://developer.xamarin.com/samples/monotouch/WatchKit/WatchNotifications/)
-- [WatchKitCatalog （範例）](https://developer.xamarin.com/samples/monotouch/watchOS/WatchKitCatalog/)
+- [WatchNotifications （本機通知） （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)
+- [WatchKitCatalog （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple Watch 套件通知文件](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)

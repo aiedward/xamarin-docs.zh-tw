@@ -1,76 +1,76 @@
 ---
-title: Xamarin.Mac 中的 macOS 使用者介面控制項
-description: 描述各種使用者介面控制項 Xamarin.Mac 開發人員可使用的指南的這個文件連結。 連結的內容將探討 windows、 對話方塊、 警示、 功能表、 工具列、 資料表檢視、 大綱檢視等等。
+title: 在 Xamarin. Mac 中 macOS 使用者介面控制項
+description: 本檔連結的指南會描述 Xamarin. Mac 開發人員可使用的各種使用者介面控制項。 連結的內容會查看視窗、對話方塊、警示、功能表、工具列、表格視圖、大綱視圖等等。
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/27/2018
-ms.openlocfilehash: a12553cf0b7b9584bb8ff7bc04ed326ad4a7ad2a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 7dfd8392abf832e53cb90d0a09990fc5ef57b0bb
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61281593"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656314"
 ---
-# <a name="macos-user-interface-controls-in-xamarinmac"></a>Xamarin.Mac 中的 macOS 使用者介面控制項
+# <a name="macos-user-interface-controls-in-xamarinmac"></a>在 Xamarin. Mac 中 macOS 使用者介面控制項
 
-_本文會連結至說明各種 macOS UI 控制項的指南。_
+_本文會連結描述各種 macOS UI 控制項的指南。_
 
-當在 Xamarin.Mac 應用程式中使用 C# 和.NET，您可以存取到相同的使用者介面控制項工作的開發人員*OBJECTIVE-C*並*Xcode*沒有。 由於 Xamarin.Mac 直接與 Xcode 整合，您可以使用 Xcode 的_Interface Builder_來建立，並維護您的使用者介面 （或選擇直接在 C# 程式碼中建立它們）。
+在 Xamarin. C# Mac 應用程式中使用和 .net 時, 您可以存取開發人員在*目標-C*和*Xcode*中工作的相同使用者介面控制項。 因為 Xamarin 會直接與 Xcode 整合, 所以您可以使用 Xcode 的_Interface Builder_來建立和維護使用者介面 (或選擇直接在程式碼中C#建立)。
 
-下列指南提供使用 macOS UI 項目，Xamarin.Mac 應用程式中的詳細的資訊。 強烈建議您逐步[Hello，Mac](~/mac/get-started/hello-mac.md)發行項的第一次，具體來說[Xcode 和 Interface Builder 簡介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)並[輸出和動作](~/mac/get-started/hello-mac.md#outlets-and-actions)各節中，因為它涵蓋重要概念和技術，我們將使用每篇文章中。
+下列指南提供有關在 Xamarin. Mac 應用程式中使用 macOS UI 元素的詳細資訊。 強烈建議您先流覽[Hello, Mac](~/mac/get-started/hello-mac.md)文章, 特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介, 其中涵蓋了我們將在中使用的重要概念和技巧。每篇文章。
 
-您可能想要看看[公開 C# 類別 / 方法，以 OBJECTIVE-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c)一節[Xamarin.Mac 內部](~/mac/internals/how-it-works.md)文件，它會說明`Register`和`Export`用來連線接您的 C# 類別 OBJECTIVE-C 物件和 UI 元素的屬性。
+您可能想要查看[Xamarin. Mac 內部](~/mac/internals/how-it-works.md)檔`Register`的將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c)一節, 因為它會說明用來連接您C#的類別`Export`的和屬性。目標-C 物件和 UI 元素。
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 
-這篇文章涵蓋使用 「 windows 」 和 「 在 Xamarin.Mac 應用程式中的面板。 它涵蓋了建立與維護 windows server 和在 Xcode 和 Interface Builder，載入 windows 中的面板及面板從.storyboard 或.xib 檔案、 使用 windows，並回應 「 視窗在 C# 程式碼。
+本文說明如何在 Xamarin. Mac 應用程式中使用 windows 和麵板。 它涵蓋了如何在 Xcode 和 Interface Builder 中建立和維護 windows 和麵板、從分鏡腳本或 xib 檔案載入視窗和麵板、使用 windows, 以及在C#程式碼中回應 windows。
 
 ## <a name="dialogsmacuser-interfacedialogmd"></a>[對話方塊](~/mac/user-interface/dialog.md)
 
-本文涵蓋在 Xamarin.Mac 應用程式中的強制回應視窗與對話方塊。 它涵蓋了建立和維護在 Xcode 和 Interface Builder，使用標準的對話方塊，並顯示和回應 「 視窗在 C# 程式碼中的強制回應視窗。
+本文涵蓋在 Xamarin. Mac 應用程式中使用對話方塊和強制回應視窗。 其中涵蓋了如何在 Xcode 和 Interface Builder 中建立和維護模式視窗、使用標準對話方塊, 以及在程式碼中C#顯示和回應視窗。
 
 ## <a name="alertsmacuser-interfacealertmd"></a>[警示](~/mac/user-interface/alert.md)
 
-本文涵蓋在 Xamarin.Mac 應用程式中的警示。 它涵蓋了建立和顯示警示，從 C# 程式碼和回應警示。
+本文說明如何在 Xamarin. Mac 應用程式中使用警示。 其中包含從C#程式碼建立和顯示警示, 以及回應警示。
 
 ## <a name="menusmacuser-interfacemenumd"></a>[功能表](~/mac/user-interface/menu.md)
 
-Mac 應用程式的使用者介面; 的各個部分中使用功能表從應用程式的主功能表頂端的螢幕快顯功能表和可以出現在視窗中的任何位置的內容功能表。 功能表是 Mac 應用程式使用者體驗不可或缺的一部分。 本文涵蓋使用 「 Cocoa 功能表在 Xamarin.Mac 應用程式。
+功能表用於 Mac 應用程式使用者介面的各個部分;從畫面頂端的應用程式主功能表, 到可顯示在視窗任何位置的快顯功能表。 功能表是 Mac 應用程式使用者體驗不可或缺的一部分。 本文說明如何在 Xamarin. Mac 應用程式中使用 Cocoa 功能表。
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[標準控制項](~/mac/user-interface/standard-controls.md)
 
-使用標準的完整 AppKit 控制項，例如按鈕、 標籤、 文字欄位中，核取方塊和在 Xamarin.Mac 應用程式的分段的控制項。 本指南涵蓋將它們新增至 Xcode 的 Interface Builder 中的使用者介面設計、 將其公開到程式碼，透過輸出和動作，以及使用 C# 程式碼的完整 AppKit 控制項。
+使用標準 AppKit 控制項 (例如按鈕、標籤、文字欄位、核取方塊, 以及 Xamarin. Mac 應用程式中的分段控制項)。 本指南說明如何將這些專案新增至 Xcode Interface Builder 中的使用者介面設計、透過輸出和動作將其公開至程式碼, 以及在C#程式碼中使用 AppKit 控制項。
 
 ## <a name="toolbarsmacuser-interfacetoolbarmd"></a>[工具列](~/mac/user-interface/toolbar.md)
 
-本文章涵蓋使用 「 在 Xamarin.Mac 應用程式中的工具列。 其中涵蓋建立與維護 「 工具列在 Xcode 和 Interface Builder 中的如何公開到程式碼使用輸出和動作、 啟用和停用工具列項目，以及最後在 C# 程式碼中的工具列項目回應的工具列項目。
+本文說明如何在 Xamarin. Mac 應用程式中使用工具列。 它涵蓋了如何建立和維護 Xcode 和 Interface Builder 中的工具列, 如何使用輸出和動作將工具列專案公開至程式碼、啟用和停用工具列專案, 最後回應程式C#代碼中的工具列專案。
 
-## <a name="table-viewsmacuser-interfacetable-viewmd"></a>[資料表檢視](~/mac/user-interface/table-view.md)
+## <a name="table-viewsmacuser-interfacetable-viewmd"></a>[資料表視圖](~/mac/user-interface/table-view.md)
 
-本文涵蓋在 Xamarin.Mac 應用程式中的資料表檢視。 其中涵蓋建立與維護 「 資料表檢視，在 Xcode 和 Interface Builder 中的如何公開 （expose） 資料表檢視項目使用輸出和動作的程式碼，填入資料表檢視 」，在 C# 程式碼中的資料表檢視項目回應。
+本文說明如何在 Xamarin. Mac 應用程式中使用資料表的 views。 其中涵蓋在 Xcode 和 Interface Builder 中建立和維護資料表的視圖、如何使用輸出和動作將資料表視圖專案公開至程式碼、填入資料表視圖, 以及回應程式碼中C#的資料表視圖專案。
 
-## <a name="outline-viewsmacuser-interfaceoutline-viewmd"></a>[大綱檢視](~/mac/user-interface/outline-view.md)
+## <a name="outline-viewsmacuser-interfaceoutline-viewmd"></a>[大綱視圖](~/mac/user-interface/outline-view.md)
 
-本文涵蓋在 Xamarin.Mac 應用程式中的大綱檢視。 其中涵蓋建立與維護 「 大綱檢視在 Xcode 和 Interface Builder 中的如何公開大綱檢視項目使用輸出和動作的程式碼，填入 「 大綱檢視 」，回應大綱檢視中 C# 程式碼項目。
+本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。 其中涵蓋在 Xcode 和 Interface Builder 中建立和維護大綱視圖、如何使用輸出和動作將大綱視圖專案公開至程式碼、填入大綱視圖, 以及回應程式碼中的C#大綱視圖專案。
 
 ## <a name="source-listsmacuser-interfacesource-listmd"></a>[來源清單](~/mac/user-interface/source-list.md)
 
-本文涵蓋在 Xamarin.Mac 應用程式中的來源清單。 它涵蓋了建立與維護 「 來源清單，在 Xcode 和 Interface Builder 中的如何公開到程式碼使用輸出和動作、 填入 「 來源清單，在 C# 程式碼中的來源清單項目回應的來源清單項目。
+本文說明如何在 Xamarin. Mac 應用程式中使用來源清單。 它涵蓋了如何建立和維護 Xcode 和 Interface Builder 中的來源清單、如何使用輸出和動作將來源清單專案公開給程式碼、填入來源清單, 以及回應程式C#代碼中的來源清單專案。
 
-## <a name="collection-viewsmacuser-interfacecollection-viewmd"></a>[集合檢視](~/mac/user-interface/collection-view.md)
+## <a name="collection-viewsmacuser-interfacecollection-viewmd"></a>[集合視圖](~/mac/user-interface/collection-view.md)
 
-本文涵蓋在 Xamarin.Mac 應用程式中的集合檢視使用。 其中涵蓋建立與維護 「 集合檢視，在 Xcode 和 Interface Builder 中的如何公開集合檢視項目使用輸出和動作的程式碼，填入 「 集合檢視，以及在 C# 程式碼中的集合檢視回應。
+本文說明如何在 Xamarin. Mac 應用程式中使用集合視圖。 其中涵蓋在 Xcode 和 Interface Builder 中建立和維護集合視圖、如何使用輸出和動作將集合視圖專案公開至程式碼、填入集合視圖, 以及回應程式碼中C#的集合視圖。
 
 ## <a name="creating-custom-controlsmacuser-interfacecustom-controlsmd"></a>[建立自訂控制項](~/mac/user-interface/custom-controls.md)
 
-這篇文章說明如何建立自訂使用者介面控制項 (藉由繼承自`NSControl`)、 繪製控制項的自訂介面，以及建立可與 Xcode 的 Interface Builder 的自訂動作。
+本文說明如何建立自訂使用者介面控制項 (藉由`NSControl`繼承)、繪製控制項的自訂介面, 以及建立可與 Xcode 的 Interface Builder 搭配使用的自訂動作。
 
 ## <a name="mac-samples-gallery"></a>Mac 範例庫
 
-我們也建議您看一下[Mac 範例庫](https://developer.xamarin.com/samples/mac/all/)。 它包含豐富的已準備好使用程式碼，可協助您快速開始 Xamarin.Mac 專案開始運作。
+我們也建議您看一下[Mac 範例庫](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)。 其中包含許多立即可用的程式碼, 可協助您快速地將 Xamarin. Mac 專案離線。
 
 ## <a name="related-links"></a>相關連結
 

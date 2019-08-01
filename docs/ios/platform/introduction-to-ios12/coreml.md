@@ -1,34 +1,34 @@
 ---
-title: 核心機器學習服務 2 在 Xamarin.iOS 中
-description: 本文件說明 iOS 12 一部分的核心機器學習服務可用的更新。 特別是，它會查看新的批次預測 API 相關聯的效能改進。
+title: Xamarin 中的核心 ML 2
+description: 本檔說明在 iOS 12 中提供的核心 ML 更新。 特別是, 它會查看與新批次預測 API 相關聯的效能改進。
 ms.prod: xamarin
 ms.assetid: 408E752C-2C78-4B20-8B43-A6B89B7E6D1B
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/15/2018
-ms.openlocfilehash: 50d59f0b6ff2133c5870d84a1d740547768116e0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4fc72e855101f110310a46145c577b272a647ac3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61398841"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645710"
 ---
-# <a name="core-ml-2-in-xamarinios"></a>核心機器學習服務 2 在 Xamarin.iOS 中
+# <a name="core-ml-2-in-xamarinios"></a>Xamarin 中的核心 ML 2
 
-核心機器學習服務是機器學習技術，可在 iOS、 macOS、 tvOS 和 watchOS。 它可讓應用程式，以根據機器學習模型進行預測。
+核心 ML 是 iOS、macOS、tvOS 和 watchOS 上提供的機器學習服務技術。 它可讓應用程式根據機器學習模型進行預測。
 
-在 iOS 12 中，核心 ML 會包含 API 的批次處理。 此 API 讓核心 ML 更有效率，而且可在其中使用模型來進行預測的一連串的情況下提升效能。
+在 iOS 12 中, 核心 ML 包含批次處理 API。 此 API 可讓核心 ML 更有效率, 並在使用模型來做出一系列預測的案例中提供效能改進。
 
-## <a name="sample-app-marshabitatcoremltimer"></a>範例應用程式：MarsHabitatCoreMLTimer
+## <a name="sample-app-marshabitatcoremltimer"></a>範例應用程式:MarsHabitatCoreMLTimer
 
-為了示範如何使用核心 ML 批次預測，看看[MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)範例應用程式。 核心 ML 模型定型以預測成本上的建置 habitat Mars，此範例會使用根據各種不同的輸入： 數目 solar 面板、 greenhouses，數目以及英畝數目。
+若要示範使用 Core ML 的批次預測, 請參閱[MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)範例應用程式。 這個範例會使用已定型的核心 ML 模型來預測根據各種輸入, 在 Mars 上建立 habitat 的成本: 日光面板數目、greenhouses 數目和英畝數目。
 
-本文件中的程式碼片段來自此範例。
+本檔中的程式碼片段來自此範例。
 
 ## <a name="generate-sample-data"></a>產生範例資料
 
-在  `ViewController`，範例應用程式`ViewDidLoad`方法呼叫`LoadMLModel`，載入包含的核心 ML 模型：
+在`ViewController`中, 範例應用程式`ViewDidLoad`的方法`LoadMLModel`會呼叫, 它會載入包含的核心 ML 模型:
 
 ```csharp
 void LoadMLModel()
@@ -38,7 +38,7 @@ void LoadMLModel()
 }
 ```
 
-然後，範例應用程式會建立 100,000`MarsHabitatPricerInput`物件做為輸入使用循序的核心 ML 預測。 每個產生的範例有隨機的值為太陽能面板、 greenhouses，數目和英畝數目的數目：
+然後, 範例應用程式會建立`MarsHabitatPricerInput` 100000 物件, 以作為連續核心 ML 預測的輸入。 每個產生的範例都會針對日光面板數目、greenhouses 數目和英畝數設定隨機值:
 
 ```csharp
 async void CreateInputs(int num)
@@ -59,7 +59,7 @@ async void CreateInputs(int num)
 }
 ```
 
-點選任何應用程式的三個按鈕會執行兩個序列的預測： 一個使用`for`迴圈，並使用新的批次的另一個`GetPredictions`iOS 12 中導入的方法：
+點擊任一應用程式的三個按鈕, 會執行兩個預測序列: 一個`for`使用迴圈, 另一個使用 iOS 12 `GetPredictions`中引進的新批次方法:
 
 ```csharp
 async void RunTest(int num)
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for 迴圈
 
-`for`迴圈版本的測試這個逐一查看指定的輸入數目，呼叫[ `GetPrediction` ](xref:CoreML.MLModel.GetPrediction*)每個及捨棄結果。 方法逾做出預測需要多久：
+測試`for`輕鬆自在管理的迴圈版本會逐一查看指定的輸入數目, 並針對每[`GetPrediction`](xref:CoreML.MLModel.GetPrediction*)一個呼叫, 並捨棄結果。 方法會花太多時間來進行預測:
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -92,10 +92,10 @@ async Task FetchNonBatchResults(int num)
 }
 ```
 
-## <a name="getpredictions-new-batch-api"></a>GetPredictions （新批次 API）
+## <a name="getpredictions-new-batch-api"></a>GetPredictions (新的 batch API)
 
-建立測試批次版`MLArrayBatchProvider`輸入陣列中的物件 (因為這是必要的輸入的參數，如`GetPredictions`方法)，建立 [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
-物件，可防止預測的 cpu，限制的計算，並使用`GetPredictions`API 以擷取一次並捨棄結果的預測：
+測試的批次版本會從輸入`MLArrayBatchProvider`陣列建立物件 (因為這是`GetPredictions`方法的必要輸入參數), 會建立[`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
+防止預測計算限制為 CPU 的物件, 並使用`GetPredictions` API 來提取預測, 然後再次捨棄結果:
 
 ```csharp
 async Task FetchBatchResults(int num)
@@ -118,13 +118,13 @@ async Task FetchBatchResults(int num)
 
 ## <a name="results"></a>結果
 
-在模擬器和裝置，`GetPredictions`迴圈為基礎的核心 ML 預測比更快速地完成。
+在模擬器和裝置上, `GetPredictions`完成的速度會比迴圈式核心 ML 預測更快。
 
 ## <a name="related-links"></a>相關連結
 
-- [範例應用程式 – MarsHabitatCoreMLTimer](https://developer.xamarin.com/samples/monotouch/iOS12/MarsHabitatCoreMLTimer)
-- [在核心 ML 中，第 1 部分 (WWDC 2018) 最新消息](https://developer.apple.com/videos/play/wwdc2018/708/)
-- [在核心 ML 中，第 2 部分 (WWDC 2018) 最新消息](https://developer.apple.com/videos/play/wwdc2018/709/)
-- [在 Xamarin.iOS 中的核心機器學習服務簡介](https://docs.microsoft.com/xamarin/ios/platform/introduction-to-ios11/coreml)
-- [核心機器學習服務 (Apple)](https://developer.apple.com/documentation/coreml?language=objc)
-- [使用核心機器學習服務模型](https://developer.apple.com/machine-learning/build-run-models/)
+- [範例應用程式-MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)
+- [Core ML 的新功能, 第1部分 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/708/)
+- [Core ML 的新功能, 第2部分 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/709/)
+- [Xamarin 中的核心 ML 簡介](https://docs.microsoft.com/xamarin/ios/platform/introduction-to-ios11/coreml)
+- [核心 ML (Apple)](https://developer.apple.com/documentation/coreml?language=objc)
+- [使用核心 ML 模型](https://developer.apple.com/machine-learning/build-run-models/)

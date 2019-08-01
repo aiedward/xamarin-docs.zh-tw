@@ -1,45 +1,45 @@
 ---
-title: 延伸 RecyclerView 範例
-description: RecyclerView 範例應用程式中加入項目 click 事件處理常式。
+title: 擴充 RecyclerView 範例
+description: 將專案按一下事件處理常式新增至 RecyclerView 範例應用程式。
 ms.prod: xamarin
 ms.assetid: 707EE1CE-C164-485B-944C-82C6795E8A24
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: eca0f58a470228ce8e6331defe88c1ef727cef57
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: fd813427836b0250b84941eca54d6bbe6219518e
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036016"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68645325"
 ---
-# <a name="extending-the-recyclerview-example"></a>延伸 RecyclerView 範例
+# <a name="extending-the-recyclerview-example"></a>擴充 RecyclerView 範例
 
 
-基本的應用程式中所述[基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)實際上還沒有其他&ndash;只是捲動，並顯示相片項目，以便瀏覽的固定的清單。 在真實世界應用程式，使用者應該能夠藉由點選中顯示的項目互動的應用程式。 此外，基礎資料來源可以變更 （或變更應用程式），而且顯示的內容必須保持一致與這些變更的功能。 在下列章節中，您將了解如何處理項目按一下事件，並更新`RecyclerView`當基礎資料來源變更。
+[基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)中所述的基本應用程式實際上並不&ndash;會這麼做, 只是滾動並顯示固定的相片專案清單, 以方便流覽。 在真實世界的應用程式中, 使用者希望能夠藉由點擊顯示中的專案來與應用程式互動。 此外, 基礎資料來源也可以變更 (或由應用程式變更), 而且顯示的內容必須與這些變更保持一致。 在下列各節中, 您將學習如何在基礎資料來源變更時處理`RecyclerView`專案點擊事件和更新。
 
 
-### <a name="handling-item-click-events"></a>處理項目按一下事件
+### <a name="handling-item-click-events"></a>處理專案點擊事件
 
-當使用者碰觸的項目中`RecyclerView`，產生的項目按一下事件通知哪一種項目已接觸到的應用程式。 此事件不會產生`RecyclerView`&ndash;相反地，項目檢視 （也就包裝在檢視持有者） 偵測到的修飾，並會回報這些修飾，按一下 [事件]。
+當使用者觸及中`RecyclerView`的專案時, 會產生專案按下事件, 以通知應用程式已觸及哪一個專案。 這個事件不是由所`RecyclerView`產生, 而是由&ndash;專案視圖 (包裝在視圖預留位置中) 偵測到觸控, 並將這些觸控視為 click 事件。
 
-為了說明如何處理項目按一下事件，下列步驟會說明基本的相片檢視應用程式如何修改的報表的照片有被接觸到的使用者。 範例應用程式中的項目按一下事件時，下列順序發生：
+為了說明如何處理專案點擊事件, 下列步驟將說明如何修改基本相片觀賞應用程式, 以報告使用者已觸及哪些相片。 當範例應用程式中發生專案按下事件時, 會發生下列順序:
 
-1.  相片的`CardView`偵測到的項目 click 事件，並通知配接器。
+1.  相片`CardView`會偵測到專案點擊事件並通知介面卡。
 
-2.  配接器會將 （具有項目位置的資訊） 的事件轉送至活動的項目-click 處理常式。
+2.  介面卡會將事件 (含有專案位置資訊) 轉送到活動的專案按一下處理常式。
 
-3.  活動的項目-click 處理常式會回應項目的 click 事件。
+3.  活動的專案按一下處理常式會回應專案點擊事件。
 
-首先，事件處理常式成員呼叫`ItemClick`新增至`PhotoAlbumAdapter`類別定義：
+首先, 會將名`ItemClick`為的事件處理常式成員加入`PhotoAlbumAdapter`至類別定義:
 
 ```csharp
 public event EventHandler<int> ItemClick;
 ```
 
-接下來，將項目按一下 事件處理常式方法加入至`MainActivity`。
-這個處理常式會短暫顯示快顯通知，指出已觸及的相片項目：
+接下來, 會將專案按一下事件處理常式方法加入`MainActivity`至。
+此處理程式會短暫顯示一個快顯通知, 指出觸及了哪個相片專案:
 
 ```csharp
 void OnItemClick (object sender, int position)
@@ -50,7 +50,7 @@ void OnItemClick (object sender, int position)
 
 ```
 
-接下來，若要註冊所需一行程式碼`OnItemClick`處理常式和`PhotoAlbumAdapter`。 若要這樣做的好地方是緊接`PhotoAlbumAdapter`建立： 
+接下來, 需要`OnItemClick` `PhotoAlbumAdapter`程式程式碼以向註冊處理常式。 建立之後`PhotoAlbumAdapter` , 您可以立即完成此動作: 
 
 ```csharp
 mAdapter = new PhotoAlbumAdapter (mPhotoAlbum);
@@ -58,9 +58,9 @@ mAdapter.ItemClick += OnItemClick;
 
 ```
 
-在此基本範例中，處理常式註冊進行中的主要活動`OnCreate`方法，但生產應用程式可能會註冊中的處理常式`OnResume`和取消註冊在`OnPause`&ndash;看到[活動開發週期](~/android/app-fundamentals/activity-lifecycle/index.md)如需詳細資訊。
+在此基本範例中, 處理常式註冊會在主要活動的`OnCreate`方法中進行, 但生產應用程式可能會在`OnResume`中註冊處理常式`OnPause` , 並在中&ndash;將其取消註冊, 以查看更多的[活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)更多資訊.
 
-`PhotoAlbumAdapter` 現在會呼叫`OnItemClick`當它收到的項目按一下事件。 下一個步驟是建立處理常式中的介面卡，會將此引發`ItemClick`事件。 下列方法`OnClick`，緊接在後面的介面卡新增`ItemCount`方法：
+`PhotoAlbumAdapter`現在會在`OnItemClick`收到專案點擊事件時呼叫。 下一個步驟是在介面卡中建立可引發此`ItemClick`事件的處理常式。 下列方法`OnClick`會緊接在介面卡的`ItemCount`方法之後加入:
 
 ```csharp
 void OnClick (int position)
@@ -70,8 +70,8 @@ void OnClick (int position)
 }
 ```
 
-這`OnClick`方法是配接器的*接聽程式*的項目檢視的項目按一下事件。 與項目檢視 （透過項目檢視的檢視持有者），可以註冊此接聽程式之前`PhotoViewHolder`建構函式必須修改才能接受做為額外的引數，這個方法，並註冊`OnClick`項目檢視`Click`事件。
-以下是 已修改`PhotoViewHolder`建構函式：
+這個`OnClick`方法是來自專案視圖  之專案按一下事件的介面卡接聽程式。 在`PhotoViewHolder`此接聽程式可以向專案視圖註冊 (透過專案視圖的視圖持有者) 之前, 必須修改此函式, 以接受此方法做為其他引數, `OnClick`並向專案視圖`Click`事件註冊。
+以下是修改過`PhotoViewHolder`的構造函式:
 
 ```csharp
 public PhotoViewHolder (View itemView, Action<int> listener)
@@ -85,19 +85,19 @@ public PhotoViewHolder (View itemView, Action<int> listener)
 
 ```
 
-`itemView`參數包含參考`CardView`，已處理的使用者。 請注意檢視持有者的基底類別知道項目配置位置 (`CardView`)，它表示 (透過`LayoutPosition`屬性)，而這個位置會傳遞至配接器的`OnClick`方法在項目按一下事件發生時。 配接器的`OnCreateViewHolder`方法會將配接器的修改`OnClick`檢視預留位置的建構函式的方法：
+參數包含使用者觸及之的`CardView`參考。 `itemView` 請注意, 「視圖預留位置」基類知道它所代表`CardView` `LayoutPosition`之專案 () 的版面配置位置 (透過屬性), 而這個位置會在專案按下事件`OnClick`發生時傳遞至介面卡的方法。 介面卡`OnCreateViewHolder`的方法經過修改後, 會將`OnClick`介面卡的方法傳遞至視圖持有者的函式:
 
 ```csharp
 PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 ```
 
-現在當您建置並執行範例相片檢視應用程式時，點選在顯示的相片會導致報告已觸及的相片會出現快顯通知：
+現在, 當您建立並執行相片觀看應用程式範例時, 在顯示畫面中的相片將會出現快顯通知, 報告已觸及的相片:
 
-[![在點選時相片卡片所顯示的範例快顯通知](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
+[![點擊相片卡時顯示的範例快顯](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
-此範例示範只是其中一種方法實作事件處理常式與`RecyclerView`。 無法在這裡使用的另一種方法是將事件放在檢視持有者，並有訂閱這些事件的介面卡。 如果範例相片應用程式提供相片編輯功能，會需要不同的事件`ImageView`而`TextView`每個內`CardView`： 會牽涉到`TextView`會啟動`EditView`對話方塊，讓使用者編輯標題和修飾上的`ImageView`會啟動相片 touchup 工具可讓使用者裁剪或旋轉相片。 根據您的應用程式的需求，您必須設計最適合處理和回應觸控事件的方法。
+這個範例只示範使用`RecyclerView`來執行事件處理常式的一種方法。 這裡可使用的另一種方法是將事件放在視圖持有者上, 並讓介面卡訂閱這些事件。 如果範例相片應用程式提供相片編輯功能, 則會需要個別`ImageView`的事件, 而且`TextView`每個`TextView` `CardView`中的都是: 上的觸控會`EditView`啟動可讓使用者編輯的對話方塊標題和上`ImageView`的觸控會啟動相片 touchup 工具, 讓使用者裁剪或旋轉相片。 視您應用程式的需求而定, 您必須設計處理和回應觸控事件的最佳方法。
 
-若要示範如何`RecyclerView`可以更新時可以修改的資料集的變更，範例相片檢視應用程式，以隨機挑選資料來源中的相片，並交換與第一張相片。 首先，**隨機挑選** 按鈕新增至範例相片應用程式**Main.axml**版面配置：
+為了示範如何`RecyclerView`在資料集變更時進行更新, 可以修改相片觀看應用程式範例, 以隨機挑選資料來源中的相片, 並將它與第一張相片交換。 首先, 會將**隨機挑選**按鈕新增至範例相片應用程式的**axml**版面配置:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -120,7 +120,7 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 </LinearLayout>
 ```
 
-接下來，程式碼會加入主活動的結尾處`OnCreate`方法來找出`Random Pick`按鈕在配置中，並在附加的處理常式：
+接下來, 在主要活動的`OnCreate`方法結尾加入程式碼, 以找出配置中的`Random Pick`按鈕, 並將處理常式附加至它:
 
 ```csharp
 Button randomPickBtn = FindViewById<Button>(Resource.Id.randPickButton);
@@ -136,9 +136,9 @@ randomPickBtn.Click += delegate
 
 ```
 
-此處理常式會呼叫相簿`RandomSwap`方法時**隨機挑選**點選按鈕時。 `RandomSwap`方法隨機交換第一張相片，資料來源中之相片，則會傳回隨機交換相片的索引。 當您編譯和執行範例應用程式，以下列程式碼時，點選**隨機挑選** 按鈕不會導致顯示變更因為`RecyclerView`並不知道資料來源的變更。
+這個處理常式會在按下`RandomSwap` [**隨機挑選**] 按鈕時, 呼叫相片專輯的方法。 `RandomSwap`方法會隨機交換相片與資料來源中的第一張相片, 然後傳回隨機交換相片的索引。 當您使用此程式碼編譯並執行範例應用程式時, 點擊 [**隨機播放**] 按鈕並不會造成顯示變更`RecyclerView` , 因為不知道資料來源的變更。
 
-要保留`RecyclerView`之後的資料來源的變更，更新**隨機挑選**按一下 處理常式必須呼叫配接器的修改`NotifyItemChanged`方法已變更之集合中的每個項目 （在此情況下，兩個項目有變更： 第一張相片並已交換的相片)。 這會導致`RecyclerView`來更新它的顯示畫面，使其與新資料來源的狀態一致：
+若要`RecyclerView`在資料來源變更之後繼續更新, 您必須修改**隨機挑選**的 click 處理常式, 以針對`NotifyItemChanged`集合中已變更的每個專案呼叫介面卡的方法 (在此案例中, 兩個專案已變更: 第一張相片和已交換的相片)。 這會`RecyclerView`導致更新其顯示, 使其與資料來源的新狀態一致:
 
 ```csharp
 Button randomPickBtn = FindViewById<Button>(Resource.Id.randPickButton);
@@ -159,17 +159,17 @@ randomPickBtn.Click += delegate
 
 ```
 
-現在，當**隨機挑選**點選按鈕時，`RecyclerView`更新以顯示該相片進一步向下集合中已與交換集合中第一張相片的顯示：
+現在, 當您按下 [**隨機挑選**] `RecyclerView`按鈕時, 會更新顯示畫面, 以顯示集合中進一步的相片已與集合中的第一張相片交換:
 
-[![交換，交換後的第二個螢幕擷取畫面之前的第一個螢幕擷取畫面](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
+[![交換前的第一個螢幕擷取畫面, 交換後的第二個螢幕擷取畫面](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
-當然`NotifyDataSetChanged`可能呼叫而不是將兩個呼叫`NotifyItemChanged`，因此會強制這麼做，但`RecyclerView`重新整理整個集合，即使只有兩個集合中的項目已變更。 呼叫`NotifyItemChanged`會比呼叫更具效率`NotifyDataSetChanged`。
+當然, `NotifyDataSetChanged`您可能已呼叫, 而不是對`NotifyItemChanged`進行兩次呼叫, 但是這麼做會`RecyclerView`強制重新整理整個集合, 即使集合中只有兩個專案已變更也一樣。 呼叫`NotifyItemChanged`遠比呼叫`NotifyDataSetChanged`更有效率。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [RecyclerViewer （範例）](https://developer.xamarin.com/samples/monodroid/android5.0/RecyclerViewer)
+- [RecyclerViewer (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
-- [RecyclerView 組件和功能](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
-- [基本的 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
+- [RecyclerView 元件和功能](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
+- [基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
 - [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)
