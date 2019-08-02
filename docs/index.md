@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: ad1c033b35da548921ec47d8cc2f3a8ef87d2fa8
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 00e48907f3044fab8dcf23d0bbb5838bc587bb2f
+ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486061"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68681076"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -294,7 +294,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/app-fundamentals/index.md">
+                                <a href="~/xamarin-forms/app-fundamentals/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -305,7 +305,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>應用程式基本概念</h3>
-                                                    <p>建置應用程式時的一切須知，例如使用檔案、影像、資料庫等等。</p>
+                                                    <p>您要開發 Xamarin.Forms 應用程式所需知道的一切，例如導覽、手勢、資料繫結等等。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -656,7 +656,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>連續整合</h3>
+                                                    <h3>持續整合</h3>
                                                     <p>如何將 Xamarin 專案合併到持續組建與整合管線。</p>
                                                 </div>
                                             </div>
