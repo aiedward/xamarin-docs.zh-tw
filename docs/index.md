@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: 00e48907f3044fab8dcf23d0bbb5838bc587bb2f
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 0d9d98c00fa9a75cc542fa95252fd4a849c884c4
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68681076"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739048"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -332,7 +332,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/xaml/index.md">
+                                <a href="~/xamarin-forms/xaml/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -656,7 +656,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>持續整合</h3>
+                                                    <h3>連續整合</h3>
                                                     <p>如何將 Xamarin 專案合併到持續組建與整合管線。</p>
                                                 </div>
                                             </div>
