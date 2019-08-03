@@ -1,68 +1,68 @@
 ---
-title: Xamarin.Forms CollectionView 版面配置
-description: 根據預設，CollectionView 會以垂直清單顯示其項目。 不過，可以指定垂直和水平清單與格線。
+title: Xamarin. Forms CollectionView 版面配置
+description: 根據預設, CollectionView 會在垂直清單中顯示其專案。 不過, 您可以指定垂直和水準清單和格線。
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2019
-ms.openlocfilehash: 786cea04718022847bba2ecffed8f377dd49bd8b
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 5fb92882f443007e5b3dd693f54e582757db1905
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512794"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739027"
 ---
-# <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView 版面配置
+# <a name="xamarinforms-collectionview-layout"></a>Xamarin. Forms CollectionView 版面配置
 
 ![](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 會定義下列屬性，控制配置：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義下列控制配置的屬性:
 
-- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)型別的[ `IItemsLayout` ](xref:Xamarin.Forms.IItemsLayout)，指定要使用的配置。
-- [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)型別的[ `ItemSizingStrategy` ](xref:Xamarin.Forms.ItemSizingStrategy)，指定要使用的項目量值策略。
+- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout), 屬於類型[`IItemsLayout`](xref:Xamarin.Forms.IItemsLayout), 可指定要使用的版面配置。
+- [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy), 屬於類型[`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy), 可指定要使用的專案量值策略。
 
-這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這表示屬性可以是資料系結的目標。
 
-根據預設， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)會以垂直清單顯示其項目。 不過，為下列配置的任何可用：
+根據預設, [`CollectionView`](xref:Xamarin.Forms.CollectionView)會在垂直清單中顯示其專案。 不過, 您可以使用下列任何版面配置:
 
-- 垂直清單-以垂直方式成長，因為新的項目會加入單一資料行清單。
-- 水平清單 – 水平成長加入新項目時的單一資料列清單。
-- 垂直格線 – 垂直成長，因為新的項目會加入多重資料行方格。
-- 水平格線 – 新的項目新增時，水平成長的多重資料列方格。
+- 垂直清單-加入新專案時, 垂直成長的單一資料行清單。
+- 水準清單-加入新專案時水準成長的單一資料列清單。
+- 垂直格線–在新增專案時, 以垂直方式成長的多重資料行方格。
+- 水準方格–在加入新專案時水準成長的多列方格。
 
-可以設定來指定這些版面配置[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)類別的屬性衍生自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)類別。 這個類別會定義下列屬性：
+將[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設定為衍生[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)自類別的類別, 即可指定這些配置。 這個類別會定義下列屬性:
 
-- [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)型別的[ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)，在其中指定的方向[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)擴充項目會加入。
-- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)型別的[ `SnapPointsAlignment` ](xref:Xamarin.Forms.SnapPointsAlignment)，指定與項目貼齊點的對齊方式。
-- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)型別的[ `SnapPointsType` ](xref:Xamarin.Forms.SnapPointsType)，指定捲動時貼齊點的行為。
+- [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation), 屬於類型[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation), [`CollectionView`](xref:Xamarin.Forms.CollectionView)可指定要在其中加入做為專案展開的方向。
+- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment), 屬於類型[`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment), 指定對齊點與專案對齊的方式。
+- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType), 屬於類型[`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType), 會在滾動時指定貼齊點的行為。
 
-這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。 如需貼齊點的詳細資訊，請參閱[貼齊點](scrolling.md#snap-points)中[Xamarin.Forms CollectionView 捲動](scrolling.md)指南。
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這表示屬性可以是資料系結的目標。 如需有關貼齊點的詳細資訊, 請參閱[CollectionView 滾動](scrolling.md)指南中的[貼齊點](scrolling.md#snap-points)。
 
-[ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉會定義下列成員：
+[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉會定義下列成員:
 
-- `Vertical` 指出[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)加入項目時將會以垂直方式展開。
-- `Horizontal` 指出[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)加入項目時將會水平展開。
+- `Vertical`表示將會[`CollectionView`](xref:Xamarin.Forms.CollectionView)在加入專案時垂直展開。
+- `Horizontal`表示將會[`CollectionView`](xref:Xamarin.Forms.CollectionView)在加入專案時, 以水準方式展開。
 
-[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)類別繼承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)類別，並定義`ItemSpacing`類型的屬性， `double`，表示每個項目周圍的空白空間。 這個屬性的預設值為 0，而且其值必須一律是大於或等於 0。 `ListItemsLayout`類別也會定義靜態`Vertical`和`Horizontal`成員。 可用來建立垂直或水平清單中，分別設定了這些成員。 或者，`ListItemsLayout`可以建立物件，指定[ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員，做為引數。
+類別繼承[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)自類別,並定義`double`類型為的屬性,代表每個專案周圍的空白空間。`ItemSpacing` [`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout) 這個屬性的預設值為 0, 且其值必須一律大於或等於0。 類別也會定義靜態`Vertical`和`Horizontal`成員。 `ListItemsLayout` 這些成員可以分別用來建立垂直或水準清單。 或者, `ListItemsLayout`也可以建立物件, 並[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)指定列舉成員做為引數。
 
-[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)類別繼承自[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsLayout)類別，並定義下列屬性：
+[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)類別[繼承`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)自類別, 並定義下列屬性:
 
-- `VerticalItemSpacing`型別的`double`，表示每個項目周圍的垂直空白空間。 這個屬性的預設值為 0，而且其值必須一律是大於或等於 0。
-- `HorizontalItemSpacing`型別的`double`，表示每個項目周圍的水平空白空間。 這個屬性的預設值為 0，而且其值必須一律是大於或等於 0。
-- `Span`型別的`int`，表示資料行或在方格中顯示的資料列數目。 這個屬性的預設值為 1，而且其值必須一律是大於或等於 1。
+- `VerticalItemSpacing`, 屬於類型`double`, 表示每個專案周圍的垂直空白空間。 這個屬性的預設值為 0, 且其值必須一律大於或等於0。
+- `HorizontalItemSpacing`, 屬於類型`double`, 表示每個專案周圍的水準空白空間。 這個屬性的預設值為 0, 且其值必須一律大於或等於0。
+- `Span`, 屬於類型`int`, 表示要在方格中顯示的資料行或資料列數目。 這個屬性的預設值為 1, 且其值必須一律大於或等於1。
 
-這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這表示屬性可以是資料系結的目標。
 
 > [!NOTE]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 您可以使用原生的版面配置引擎來執行版面配置。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)使用原生版面配置引擎來執行版面配置。
 
 ## <a name="vertical-list"></a>垂直清單
 
-根據預設， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)會垂直清單配置中顯示其項目。 因此，不需要設定[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性，以使用這種版面配置：
+根據預設, [`CollectionView`](xref:Xamarin.Forms.CollectionView)會以垂直清單版面配置顯示其專案。 因此, 不需要將[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設定為使用此配置:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -96,7 +96,7 @@ ms.locfileid: "67512794"
 </CollectionView>
 ```
 
-不過，基於完整性， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以設定以垂直清單顯示其項目，藉由設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設`VerticalList`:
+不過, 基於完整性, [`CollectionView`](xref:Xamarin.Forms.CollectionView)您可以將其[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設定為`VerticalList`, 將設定為以垂直清單顯示其專案:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -105,7 +105,7 @@ ms.locfileid: "67512794"
 </CollectionView>
 ```
 
-或者，這也可透過設定[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)之物件的屬性[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)類別中，指定`Vertical` [ `ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員，做為引數：
+或者, 也[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)可以藉由將屬性設定為[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)類別的物件, 並將[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定`Vertical`為引數, 來完成這項作業:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -130,13 +130,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-這會產生單一資料行清單中，以垂直方式成長，因為會加入新項目：
+這會產生單一資料行清單, 當加入新專案時, 會以垂直方式成長:
 
-[![CollectionView 垂直清單版面配置，在 iOS 和 Android 上的螢幕擷取畫面](layout-images/vertical-list.png "CollectionView 垂直清單配置")](layout-images/vertical-list-large.png#lightbox "CollectionView 垂直清單版面配置")
+[ ![CollectionView 垂直清單版面配置在 IOS 和 Android 上的螢幕擷取畫面](layout-images/vertical-list.png "CollectionView 垂直清單版面")]配置(layout-images/vertical-list-large.png#lightbox "CollectionView 垂直清單版面")配置
 
-## <a name="horizontal-list"></a>水平清單
+## <a name="horizontal-list"></a>水準清單
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 其項目水平清單顯示設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設`HorizontalList`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以將專案的[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設定為, `HorizontalList`以將其專案顯示在水準清單中:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -173,7 +173,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-或者，這也可透過設定[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)物件，指定`Horizontal` [ `ItemsLayoutOrientation` ](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員，做為引數：
+或者, 也可以[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)藉由將屬性設定[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)為物件, 將[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定`Horizontal`為引數, 來完成這項作業:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -198,13 +198,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-這會產生單一資料列清單中，水平成長加入新項目時：
+這會產生單一資料列清單, 這會在新增新專案時水準成長:
 
-[![CollectionView 水平清單版面配置，在 iOS 和 Android 上的螢幕擷取畫面](layout-images/horizontal-list.png "CollectionView 水平清單配置")](layout-images/horizontal-list-large.png#lightbox "CollectionView 水平清單版面配置")
+[ ![CollectionView 水準清單配置在 IOS 和 Android 上的螢幕擷取畫面](layout-images/horizontal-list.png "CollectionView 水準清單版面")]配置(layout-images/horizontal-list-large.png#lightbox "CollectionView 水準清單版面")配置
 
 ## <a name="vertical-grid"></a>垂直格線
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以顯示其項目中垂直格線設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)物件，其[ `Orientation` ](xref:Xamarin.Forms.ItemsLayout.Orientation)屬性設定為`Vertical`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以將[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)專案的屬性設定為[`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)屬性設為`Vertical`的[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)物件, 以在垂直方格中顯示其專案:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -254,13 +254,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-根據預設，垂直[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)會顯示單一資料行中的項目。 不過，此範例會將`GridItemsLayout.Span`屬性設為 2。 這會導致兩欄方格中，以垂直方式成長，因為會加入新項目：
+根據預設, 垂直[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)會在單一資料行中顯示專案。 不過, 此範例會將`GridItemsLayout.Span`屬性設定為2。 這會產生兩個數據行的方格, 在加入新專案時, 會以垂直方式成長:
 
-[![CollectionView 垂直格線版面配置，在 iOS 和 Android 上的螢幕擷取畫面](layout-images/vertical-grid.png "CollectionView 垂直格線版面配置")](layout-images/vertical-grid-large.png#lightbox "CollectionView 垂直格線版面配置")
+[ ![CollectionView 垂直格線版面配置的螢幕擷取畫面, 在 IOS 和 Android 上](layout-images/vertical-grid.png "CollectionView 垂直格線版面")]配置(layout-images/vertical-grid-large.png#lightbox "CollectionView 垂直格線版面")配置
 
-## <a name="horizontal-grid"></a>水平格線
+## <a name="horizontal-grid"></a>水準方格
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以顯示水平格線中的其項目設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)物件，其[`Orientation` ](xref:Xamarin.Forms.ItemsLayout.Orientation)屬性設定為`Horizontal`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以將[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)專案的屬性設定為[`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)屬性設為`Horizontal`的[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)物件, 以水準方格顯示其專案:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -310,15 +310,15 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-根據預設，水平[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)會顯示單一資料列中的項目。 不過，此範例會將`GridItemsLayout.Span`屬性設為 4。 這會導致資料列的四個方格中，水平成長加入新項目時：
+根據預設, 水準[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)會顯示單一資料列中的專案。 不過, 此範例會將`GridItemsLayout.Span`屬性設定為4。 這會產生四個數據列的方格, 這會在新增新專案時水準成長:
 
-[![CollectionView 水平格線版面配置，在 iOS 和 Android 上的螢幕擷取畫面](layout-images/horizontal-grid.png "CollectionView 水平格線版面配置")](layout-images/horizontal-grid-large.png#lightbox "CollectionView 水平格線版面配置")
+[ ![CollectionView 水準格線版面配置的螢幕擷取畫面, 在 IOS 和 Android 上](layout-images/horizontal-grid.png "CollectionView 水準方格版面")]配置(layout-images/horizontal-grid-large.png#lightbox "CollectionView 水準格線版面")配置
 
-## <a name="item-spacing"></a>項目間距
+## <a name="item-spacing"></a>專案間距
 
-根據預設，每個項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)沒有其周圍的任何空白區域。 來變更此行為，請設定屬性上使用的項目配置`CollectionView`。
+根據預設, 中的[`CollectionView`](xref:Xamarin.Forms.CollectionView)每個專案都不會有任何空白空間。 您可以藉由在所使用`CollectionView`的專案配置上設定屬性來變更這個行為。
 
-當[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設[ `ListItemsLayout` ](xref:Xamarin.Forms.ListItemsLayout)物件`ListItemsLayout.ItemSpacing`屬性可以設定為`double`值，表示每個項目周圍的空白空間：
+[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) [當將`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)其屬性[`CollectionView`](xref:Xamarin.Forms.CollectionView)設定為物件`double`時, 可以將屬性設定為代表每個專案周圍空白空間的值:`ListItemsLayout.ItemSpacing`
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -334,7 +334,7 @@ CollectionView collectionView = new CollectionView
 ```
 
 > [!NOTE]
-> `ListItemsLayout.ItemSpacing`屬性設有驗證回呼，以確保屬性的值一律是大於或等於 0。
+> `ListItemsLayout.ItemSpacing`屬性具有驗證回呼集, 可確保屬性的值一律大於或等於0。
 
 對等的 C# 程式碼是：
 
@@ -349,11 +349,11 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-此程式碼會產生在垂直的單一資料行清單中，具有每個項目周圍的 20 個間距：
+此程式碼會產生垂直單一資料行清單, 每個專案的間距為 20:
 
-[![螢幕擷取畫面，以在 iOS 和 Android 上的項目間距 collectionview během](layout-images/vertical-list-spacing.png "CollectionView 項目間距")](layout-images/vertical-list-spacing-large.png#lightbox "CollectionView 項目間距")
+[![在 IOS 和 Android CollectionView 專案間距上具有專案間距的 CollectionView 螢幕擷取畫面](layout-images/vertical-list-spacing.png " ") ](layout-images/vertical-list-spacing-large.png#lightbox "CollectionView 專案間距")
 
-當[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)設定其[ `ItemsLayout` ](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設[ `GridItemsLayout` ](xref:Xamarin.Forms.GridItemsLayout)物件`GridItemsLayout.VerticalItemSpacing`和`GridItemsLayout.HorizontalItemSpacing`屬性可以是若要設定`double`代表每個項目周圍的空白空間垂直和水平的值：
+[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) `GridItemsLayout.HorizontalItemSpacing` 當將`GridItemsLayout.VerticalItemSpacing`其屬性`double`設定為物件時, 可以將和屬性設定為代表每個專案之垂直和水準的空白空間值: [`CollectionView`](xref:Xamarin.Forms.CollectionView)
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -368,7 +368,7 @@ CollectionView collectionView = new CollectionView
 ```
 
 > [!NOTE]
-> `GridItemsLayout.VerticalItemSpacing`和`GridItemsLayout.HorizontalItemSpacing`屬性有設定，它們可確保屬性的值都大於或等於 0 的驗證回撥。
+> `GridItemsLayout.VerticalItemSpacing` 和`GridItemsLayout.HorizontalItemSpacing`屬性已設定驗證回呼, 這可確保屬性的值一律大於或等於0。
 
 對等的 C# 程式碼是：
 
@@ -384,21 +384,21 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-此程式碼會產生垂直的雙資料行格線，具有垂直間距設為每個項目，周圍的 20 和 30，每個項目周圍的水平間距：
+這段程式碼會產生垂直的兩個數據行方格, 其中每個專案的垂直間距為 20, 而每個專案的水準間距為 30:
 
-[![螢幕擷取畫面，以在 iOS 和 Android 上的項目間距 collectionview během](layout-images/vertical-grid-spacing.png "CollectionView 項目間距")](layout-images/vertical-grid-spacing-large.png#lightbox "CollectionView 項目間距")
+[![在 IOS 和 Android CollectionView 專案間距上具有專案間距的 CollectionView 螢幕擷取畫面](layout-images/vertical-grid-spacing.png " ") ](layout-images/vertical-grid-spacing-large.png#lightbox "CollectionView 專案間距")
 
-## <a name="item-sizing"></a>項目調整大小
+## <a name="item-sizing"></a>專案大小
 
-根據預設，每個項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)個別測量和調整大小，前提是中的 UI 元素[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)未指定固定的大小。 此行為，可以變更，由[ `CollectionView.ItemSizingStrategy` ](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)屬性值。 這個屬性值可以設定為其中一個[ `ItemSizingStrategy` ](xref:Xamarin.Forms.ItemSizingStrategy)列舉成員：
+根據預設, 中[`CollectionView`](xref:Xamarin.Forms.CollectionView)的每個專案會個別測量並調整大小, 但前提是[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中的 UI 元素不會指定固定大小。 這個行為 (可以變更) 是由[`CollectionView.ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)屬性值指定。 這個屬性值可以設定為其中一個[`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)列舉成員:
 
-- `MeasureAllItems` – 個別測量每個項目。 這是預設值。
-- `MeasureFirstItem` – 只有第一個項目使用進行測量，所有後續的項目提供第一個項目相同的大小。
+- `MeasureAllItems`–會個別測量每個專案。 這是預設值。
+- `MeasureFirstItem`–只測量第一個專案, 並將所有後續專案的大小指定為與第一個專案相同。
 
 > [!IMPORTANT]
-> `MeasureFirstItem`調整大小策略時，會導致更高的效能時，項目大小的目的是跨所有項目是統一的情況下使用。
+> 當`MeasureFirstItem`專案大小要在所有專案之間保持一致時, 調整大小策略會導致效能增加。
 
-下列程式碼範例顯示設定[ `ItemSizingStrategy` ](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)屬性：
+下列程式碼範例示範如何設定[`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)屬性:
 
 ```xaml
 <CollectionView ...
@@ -417,9 +417,9 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-## <a name="dynamic-resizing-of-items"></a>動態調整大小的項目
+## <a name="dynamic-resizing-of-items"></a>動態調整專案大小
 
-中的項目[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以動態調整大小在執行階段變更版面配置相關的屬性內之項目的[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)。 例如，下列程式碼範例會變更[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)並[ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)屬性[ `Image` ](xref:Xamarin.Forms.Image)物件：
+中[`CollectionView`](xref:Xamarin.Forms.CollectionView)的專案可以在執行時間以動態方式調整大小, [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)方法是在中變更元素的版面配置相關屬性。 例如, 下列程式[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) [`Image`](xref:Xamarin.Forms.Image)代碼範例會變更物件的[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)和屬性:
 
 ```csharp
 void OnImageTapped(object sender, EventArgs e)
@@ -429,13 +429,13 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-`OnImageTapped`事件處理常式會執行以回應[ `Image` ](xref:Xamarin.Forms.Image)物件被佔用，並變更影像的維度，以便更輕鬆地檢視：
+系統會執行[`Image`](xref:Xamarin.Forms.Image) 事件處理常式,以回應所按下的物件,並變更影像的維度,以便更`OnImageTapped`輕鬆地查看:
 
-[![螢幕擷取畫面與動態項目調整大小，在 iOS 和 Android 上 collectionview během](layout-images/runtime-resizing.png "CollectionView 動態項目調整大小")](layout-images/runtime-resizing-large.png#lightbox "CollectionView 動態項目調整大小")
+[在 iOS 和 Android(layout-images/runtime-resizing.png "CollectionView 動態專案大小")![上動態專案調整大小的 CollectionView 螢幕擷取畫面]](layout-images/runtime-resizing-large.png#lightbox "CollectionView 動態專案大小")
 
-## <a name="right-to-left-layout"></a>從右至左的配置
+## <a name="right-to-left-layout"></a>由右至左的版面配置
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以藉由設定版面配置其內容由右至左的流向它[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)屬性設[ `RightToLeft` ](xref:Xamarin.Forms.FlowDirection.RightToLeft)。 不過，`FlowDirection`應該在理想情況下上設定屬性頁面或根版面配置，這會導致頁面上或根版面配置中的所有項目，以回應流程方向：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以將其內容設定為[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft), 以由右至左的流程方向來配置其內容。 不過, 在`FlowDirection`理想的情況下, 屬性應該設定在頁面或根配置上, 這會導致頁面或根配置中的所有元素回應流程方向:
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -452,14 +452,14 @@ void OnImageTapped(object sender, EventArgs e)
 </ContentPage>
 ```
 
-預設值[ `FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)元素與父代[ `MatchParent` ](xref:Xamarin.Forms.FlowDirection.MatchParent)。 因此， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)繼承`FlowDirection`屬性值從[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)，依序繼承`FlowDirection`屬性值從[`ContentPage`](xref:Xamarin.Forms.ContentPage). 這會導致從右至左配置中的下列螢幕擷取畫面所示：
+具有父系[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)之元素的預設值為。 [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) 因此, [`CollectionView`](xref:Xamarin.Forms.CollectionView)會`FlowDirection`從`FlowDirection` [`ContentPage`](xref:Xamarin.Forms.ContentPage)繼承屬性值[,而後者又會繼承的屬性值。`StackLayout`](xref:Xamarin.Forms.StackLayout) 這會導致由右至左的版面配置, 如下列螢幕擷取畫面所示:
 
-[![CollectionView 垂直清單中由右至左配置，在 iOS 和 Android 上的螢幕擷取畫面](layout-images/vertical-list-rtl.png "CollectionView 垂直清單中由右至左配置")](layout-images/vertical-list-rtl-large.png#lightbox "CollectionView 由右至左垂直清單版面配置")
+[ ![CollectionView 由右至左垂直清單版面配置的螢幕擷取畫面, 在 IOS 和 Android 上 CollectionView 由](layout-images/vertical-list-rtl.png "右至左的垂直清單版面")]配置(layout-images/vertical-list-rtl-large.png#lightbox "CollectionView 由右至左垂直清單版面")配置
 
-如需有關資料流程方向的詳細資訊，請參閱[由右至左當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
+如需流程方向的詳細資訊, 請參閱由[右至左當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
-- [從右至左的當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [Xamarin.Forms CollectionView 捲動](scrolling.md)
+- [CollectionView (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [由右至左當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
+- [Xamarin. 表單 CollectionView 滾動](scrolling.md)

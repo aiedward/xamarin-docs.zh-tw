@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 321448453ebe38bd7d43665a3c8bade4fe0f68c2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645247"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739170"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本機資料庫
 
@@ -24,7 +24,7 @@ _Xamarin.Forms 使用 SQLite 資料庫引擎來支援資料庫驅動型應用程
 
 Xamarin.Forms 應用程式可以使用 [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) 套件，透過參考 NuGet 中隨附的 `SQLite` 類別，將資料庫作業併入共用程式碼中。 這些資料庫作業可在 Xamarin.Forms 解決方案的 .NET Standard 程式庫專案中定義。
 
-隨附的[範例應用程式](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo)是簡單的待辦事項清單應用程式。 下列螢幕擷取畫面顯示該範例在每個平台上的外觀：
+隨附的[範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)是簡單的待辦事項清單應用程式。 下列螢幕擷取畫面顯示該範例在每個平台上的外觀：
 
 [![Xamarin.Forms 資料庫範例螢幕擷取畫面](databases-images/todo-list-sml.png "TodoList 第一頁螢幕擷取畫面")](databases-images/todo-list.png#lightbox "TodoList 第一頁螢幕擷取畫面") [ ![Xamarin.Forms 資料庫範例螢幕擷取畫面](databases-images/todo-list-sml.png "TodoList 第一頁螢幕擷取畫面")](databases-images/todo-list.png#lightbox "TodoList 第一頁螢幕擷取畫面")
 
@@ -124,4 +124,3 @@ Xamarin.Forms 使用 SQLite 資料庫引擎來支援資料庫驅動型應用程�
 
 - [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 - [Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-

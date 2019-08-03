@@ -1,73 +1,73 @@
 ---
-title: Xamarin.Forms Switch
-description: Xamarin.Forms 交換器是按鈕的一種可由使用者切換開啟和關閉狀態操作。 這篇文章說明如何使用參數類別顯示切換的 UI 項目。
+title: Xamarin. Forms 參數
+description: '[Xamarin] 參數是一種按鈕類型, 可由使用者操作以在 [開啟] 和 [關閉] 狀態之間切換。 本文說明如何使用 Switch 類別來顯示切換的 UI 元素。'
 ms.prod: xamarin
 ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/03/2019
-ms.openlocfilehash: 22a17f9a916d94a3a0f44a451512de43c943e95a
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 58755c54ce2afe80a8bf43adc25a0cf2d90a0bb5
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675034"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739460"
 ---
-# <a name="xamarinforms-switch"></a>Xamarin.Forms Switch
+# <a name="xamarinforms-switch"></a>Xamarin. Forms 參數
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SwitchDemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch)是一個可以管理之間進行切換開啟和關閉狀態，這由使用者的水平的切換按鈕`boolean`值。 `Switch`類別繼承自[ `View` ](xref:Xamarin.Forms.View)。
+[Xamarin [`Switch`](xref:Xamarin.Forms.Switch) ] 是水準切換按鈕, 可由使用者操作以切換開啟和關閉狀態 (以`boolean`值表示)。 類別繼承自[`View`。](xref:Xamarin.Forms.View) `Switch`
 
-下列螢幕擷取畫面顯示`Switch`控制在其**上**並**關閉**切換 iOS 和 Android 上的狀態：
+下列螢幕擷取畫面顯示 iOS `Switch`和 Android**上**開啟和**關閉**切換狀態的控制項:
 
-![螢幕擷取畫面的參數中開啟和關閉狀態，在 iOS 和 Android 上](switch-images/switch-states-default.png "iOS 和 Android 上的參數")
+![IOS 和 Android 上開啟和關閉狀態的切換畫面快照](switch-images/switch-states-default.png "IOS 和 Android 上的交換器")
 
-`Switch`控制項會定義兩個屬性：
+`Switch`控制項會定義兩個屬性:
 
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor) 已`Color`影響如何`Switch`會呈現已切換，或**上**，狀態。
-* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) 已`boolean`值，指出是否`Switch`是**上**。
+* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是, 它會影響在`Switch`切換或狀態下呈現的方式。 `Color`
+* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)這是指出`Switch`是否**開啟**的值。`boolean`
 
-這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示`Switch`可自訂樣式和資料繫結的目標。
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這`Switch`表示可以設定樣式, 並作為資料系結的目標。
 
-`Switch`控制項定義`Toggled`時引發的事件`IsToggled`屬性變更，透過使用者操作，或當應用程式設定`IsToggled`屬性。 `ToggledEventArgs`隨附的物件`Toggled`事件會有一個名為的單一屬性`Value`，型別的`bool`。 當事件引發時，windows 7`Value`屬性會反映新的值`IsToggled`屬性。
+控制項會定義當`IsToggled`屬性變更時 (不論是透過`IsToggled`使用者操作, 還是當應用程式設定屬性時, 所引發的事件)。`Toggled` `Switch` 伴隨事件的`ToggledEventArgs`物件具有名為的單一屬性, `Value`其類型`bool`為。 `Toggled` 當引發事件時, `Value`屬性的值會反映`IsToggled`屬性的新值。
 
 ## <a name="create-a-switch"></a>建立交換器
 
-A`Switch`可以在 XAML 中具現化。 其`IsToggled`屬性可以設定為切換`Switch`。 根據預設，`IsToggled`屬性是`false`。 下列範例示範如何具現化`Switch`搭配可省略的 XAML 中`IsToggled`屬性集：
+`Switch`可以在 XAML 中具現化。 其`IsToggled`屬性可以設定為`Switch`切換。 根據預設, `IsToggled`屬性為`false`。 下列範例顯示如何`Switch`在 XAML 中使用選擇性`IsToggled`屬性集來具現化:
 
 ```xaml
 <Switch IsToggled="true"/>
 ```
 
-A`Switch`也可以建立程式碼中：
+也`Switch`可以在程式碼中建立:
 
 ```csharp
 Switch switch = new Switch { IsToggled = true };
 ```
 
-### <a name="switch-style-properties"></a>交換器樣式內容
+### <a name="switch-style-properties"></a>轉場樣式屬性
 
-`OnColor`屬性可以設定來定義`Switch`色彩時切換到其**上**狀態。 下列範例示範如何具現化`Switch`中使用的 XAML`OnColor`屬性集：
+屬性可以設定為在切換為其`Switch` [開啟] 狀態時定義色彩。 `OnColor` 下列範例顯示如何`Switch`在 XAML 中`OnColor`使用屬性集來具現化:
 
 ```xaml
 <Switch OnColor="Orange" />
 ```
 
-`OnColor`屬性也可以設定建立時`Switch`在程式碼中：
+`Switch`在程式碼中建立時, `OnColor`也可以設定屬性:
 
 ```csharp
 Switch switch = new Switch { OnColor = Color.Orange };
 ```
 
-下列螢幕擷取畫面顯示`Switch`在其**上**並**關閉**切換狀態，與`OnColor`屬性設定為`Color.Orange`iOS 和 Android 上：
+`Switch`下列螢幕擷取畫面顯示在 iOS 和 Android 上, 在其 [ `OnColor`開啟] 和 [關閉] 切換狀態中, 將屬性設定為: `Color.Orange`
 
-![螢幕擷取畫面的參數中開啟和關閉狀態，在 iOS 和 Android 上](switch-images/switch-states-oncolor.png "iOS 和 Android 上的參數")
+![IOS 和 Android 上開啟和關閉狀態的切換畫面快照](switch-images/switch-states-oncolor.png "IOS 和 Android 上的交換器")
 
-## <a name="respond-to-a-switch-state-change"></a>回應參數狀態變更
+## <a name="respond-to-a-switch-state-change"></a>回應交換器狀態變更
 
-當`IsToggled`屬性變更，透過使用者操作，或當應用程式設定`IsToggled`屬性，`Toggled`引發事件。 此事件的事件處理常式可登錄以便回應變更：
+當屬性變更時, 不論是透過使用者操作, 或當應用程式`IsToggled`設定屬性時`Toggled` , 都會引發事件。 `IsToggled` 您可以註冊此事件的事件處理常式, 以回應變更:
 
 ```xaml
 <Switch Toggled="OnToggled" />
@@ -82,9 +82,9 @@ void OnToggled(object sender, ToggledEventArgs e)
 }
 ```
 
-`sender`事件處理常式的引數是`Switch`負責引發此事件。 您可以使用`sender`屬性來存取`Switch`物件，或若要區別多個`Switch`共用相同的物件`Toggled`事件處理常式。
+事件`sender`處理常式中的引數`Switch`是負責引發此事件。 您可以使用`sender`屬性來`Switch`存取物件, 或區別共用同一個`Toggled`事件處理`Switch`程式的多個物件。
 
-`Toggled`事件處理常式也可以在程式碼中指派：
+`Toggled`事件處理常式也可以在程式碼中指派:
 
 ```csharp
 Switch switch = new Switch {...};
@@ -94,9 +94,9 @@ switch.Toggled += (sender, e) =>
 }
 ```
 
-## <a name="data-bind-a-switch"></a>將資料繫結的參數
+## <a name="data-bind-a-switch"></a>資料系結參數
 
-`Toggled`事件處理常式會消除，可以使用資料繫結和觸發程序來回應`Switch`變更切換狀態。
+您可以使用資料系結和觸發程式來回應變更的`Switch`切換狀態, 以消除事件處理常式。`Toggled`
 
 ```xaml
 <Switch x:Name="styleSwitch" />
@@ -114,15 +114,15 @@ switch.Toggled += (sender, e) =>
 </Label>
 ```
 
-在此範例中， [ `Label` ](xref:Xamarin.Forms.Label)會使用中的繫結運算式`DataTrigger`監視`IsToggled`屬性`Switch`名為`styleSwitch`。 當這個屬性會變成`true`，則`FontAttributes`並`FontSize`的屬性`Label`變更。 時`IsToggled`屬性會傳回到`false`，則`FontAttributes`並`FontSize`的屬性`Label`會重設為其初始狀態。
+在此範例中, [`Label`](xref:Xamarin.Forms.Label)會使用`DataTrigger`中的系結運算式來監視`IsToggled`名為`styleSwitch`之`Switch`的屬性。 當這個屬性變成`true`時`FontAttributes` , 的`FontSize`和屬性`Label`就會變更。 `FontAttributes`當屬性回到時`FontSize` , 的和屬性`Label`會重設為其初始狀態。 `false` `IsToggled`
 
-如需觸發程序的詳細資訊，請參閱[Xamarin.Forms 觸發程序](~/xamarin-forms/app-fundamentals/triggers.md)。
+如需觸發程式的詳細資訊, 請參閱[Xamarin。](~/xamarin-forms/app-fundamentals/triggers.md)
 
-## <a name="disable-a-switch"></a>停用參數
+## <a name="disable-a-switch"></a>停用交換器
 
-應用程式可能會進入狀態其中`Switch`要切換並不是有效的作業。 在此情況下，`Switch`您可以藉由設定停用其`IsEnabled`屬性設`false`。 這會防止使用者操作`Switch`。
+應用程式可能會進入正在切換的`Switch`狀態, 而這不是有效的作業。 在這種情況下`Switch` , 可以藉由將其`IsEnabled`屬性設`false`為來停用。 這會讓使用者無法操作`Switch`。
 
 ## <a name="related-links"></a>相關連結
 
-* [切換示範](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/SwitchDemos)
-* [Xamarin.Forms 的觸發程序](~/xamarin-forms/app-fundamentals/triggers.md)
+* [切換示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+* [Xamarin. 表單觸發程式](~/xamarin-forms/app-fundamentals/triggers.md)

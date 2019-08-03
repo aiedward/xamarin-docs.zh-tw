@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: f43779fd0a61bd3ad04f3f7445faa6517fb9c989
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645892"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738885"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 點陣圖基本概念
 
@@ -22,7 +22,7 @@ _從各種來源載入點陣圖並加以顯示。_
 
 SkiaSharp 點陣圖的支援是很龐大。 本文章涵蓋的基本概念&mdash;如何載入點陣圖，以及如何顯示它們：
 
-![](bitmaps-images/bitmapssample.png "顯示的兩個點陣圖")
+![](bitmaps-images/basicbitmaps-small.png "顯示的兩個點陣圖")
 
 一節中可以找到更深入探索的點陣圖[SkiaSharp 點陣圖](../bitmaps/index.md)。
 
@@ -98,7 +98,7 @@ protected override async void OnAppearing()
 
 使用時，Android 作業系統會引發例外狀況`Stream`傳回從`GetStreamAsync`在`SKBitmap.Decode`方法因為它正在執行主執行緒上的長時間作業。 基於這個理由，點陣圖檔案的內容複製到`MemoryStream`物件使用`CopyToAsync`。
 
-靜態`SKBitmap.Decode`方法會負責解碼點陣圖檔案。 它會搭配 JPEG、 PNG 和 GIF 點陣圖格式，並將結果儲存在內部 SkiaSharp 格式。 在此時`SKCanvasView`需要失效，以允許`PaintSurface`處理常式來更新顯示。 
+靜態`SKBitmap.Decode`方法會負責解碼點陣圖檔案。 它會搭配 JPEG、 PNG 和 GIF 點陣圖格式，並將結果儲存在內部 SkiaSharp 格式。 在此時`SKCanvasView`需要失效，以允許`PaintSurface`處理常式來更新顯示。
 
 ## <a name="loading-a-bitmap-resource"></a>正在載入點陣圖資源
 
