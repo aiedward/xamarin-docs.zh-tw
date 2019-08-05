@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: d3fa958e999a10832d5fa15e4190077955b0e6df
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 8fae741f308a8269facef5ca84d34adb48868aec
+ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997372"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68486016"
 ---
 # <a name="introduction-to-effects"></a>效果簡介
 
@@ -38,7 +38,7 @@ Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/contr
 
 下表列出每個平台上 `PlatformEffect` 類別的命名空間，以及其屬性的類型：
 
-|Platform|命名空間|容器|控制項|
+|平台|命名空間|容器|控制|
 |--- |--- |--- |--- |
 |iOS|Xamarin.Forms.Platform.iOS|UIView|UIView|
 |Android|Xamarin.Forms.Platform.Android|ViewGroup|檢視|
@@ -54,7 +54,7 @@ Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/contr
 
 每個平台特定的 `PlatformEffect` 類別會公開下列方法，必須加以覆寫才能實作效果：
 
-- [`OnAttached`](xref:Xamarin.Forms.Effect.OnAttached) – 當效果附加至 Xamarin.Forms 控制項時呼叫。 在每個平台特定的效果類別中，此方法之覆寫版本是執行控制項自訂的位置，也可以用來處理無法將效果套用至指定 Xamarin.Forms 控制項時的例外狀況。
+- [`OnAttached`](xref:Xamarin.Forms.Effect.OnAttached) – 當效果附加至 Xamarin.Forms 控制項時呼叫。 在每個平台專屬的效果類別中，這個方法覆寫的版本就是執行控制項自訂的位置，也可以用來處理無法將效果套用至指定 Xamarin.Forms 控制項時的例外狀況。
 - [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached) – 當效果從 Xamarin.Forms 控制項中斷連結時呼叫。 在每個平台特定的效果類別中，此方法的覆寫版本是執行任何效果清除 (例如取消註冊事件處理常式) 的位置。
 
 此外，`PlatformEffect` 會公開 [`OnElementPropertyChanged`](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)) 方法，該方法也可能會遭到覆寫。 當項目的屬性變更時，就會呼叫此方法。 在每個平台特定的效果類別中，此方法的覆寫版本是回應 Xamarin.Forms 控制項上可繫結屬性變更的位置。 因為此覆寫會呼叫多次，所以請一律檢查變更的屬性。

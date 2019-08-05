@@ -9,16 +9,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 849c60507fe0ff7b8bf1743be5bbf89ca94b9d6f
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 61bf1c99b90d21d701dd923dcca4a203c96b69a3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865569"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68657049"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS 多重畫面 – 快速入門
 
-此逐步解說的這個部分會在 Phoneword 應用程式中新增第二個畫面，其中將顯示使用應用程式所撥打之電話號碼的歷程記錄。 最終的應用程式將具有第二個畫面來顯示通話記錄，如下列螢幕擷取畫面所示：
+逐步解說的這個部分會在 Phoneword 應用程式中新增第二個畫面，其中顯示使用應用程式撥打的電話號碼歷程記錄。 最終的應用程式將具有第二個畫面來顯示通話記錄，如下列螢幕擷取畫面所示：
 
 [![](hello-ios-multiscreen-quickstart-images/00.png "最終的應用程式將具有第二個畫面來顯示通話記錄，如此螢幕擷取畫面所示")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
@@ -26,7 +26,7 @@ ms.locfileid: "67865569"
 
 ## <a name="requirements"></a>需求
 
-本指南會從 Hello, iOS 文件未完成的地方繼續，而且必須完成 [Hello, iOS 快速入門](~/ios/get-started/hello-ios/index.md)。 您可以從 [Hello, iOS 範例](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)下載完整版的 Phoneword 應用程式。
+本指南會從 Hello, iOS 文件未完成的地方繼續，而且必須完成 [Hello, iOS 快速入門](~/ios/get-started/hello-ios/index.md)。 從 [Hello, iOS 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)下載完整版的 Phoneword 應用程式。
 
 ::: zone pivot="macos"
 
@@ -34,7 +34,7 @@ ms.locfileid: "67865569"
 
 本逐步解說將會在 **Phoneword** 應用程式中新增 [通話記錄] 畫面。
 
-1. 在 Visual Studio for Mac 中開啟 **Phoneword** 應用程式。 如有必要，可從[這裡](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)下載 [Hello, iOS 逐步解說](~/ios/get-started/hello-ios/index.md)指南的完整 Phoneword 應用程式。
+1. 在 Visual Studio for Mac 中開啟 **Phoneword** 應用程式。 如有必要，可從[這裡](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)下載 [Hello, iOS 逐步解說](~/ios/get-started/hello-ios/index.md)指南的完整 Phoneword 應用程式。
 
 2. 從 **Solution Pad** 開啟 **Main.storyboard** 檔案：
 
@@ -256,7 +256,7 @@ ms.locfileid: "67865569"
 
     這裡有幾件事會發生：
 
-    - 已將變數 `translatedNumber` 從 `ViewDidLoad` 方法移至「類別層級變數」  。
+    - 變數 `translatedNumber` 已從 `ViewDidLoad` 方法移到「類別層級變數」  。
     - 已修改 **CallButton** 程式碼，透過呼叫 `PhoneNumbers.Add(translatedNumber)` 來將撥打的號碼新增至電話號碼清單。
     - 已新增 `PrepareForSegue` 方法。
 
@@ -275,7 +275,7 @@ ms.locfileid: "67865569"
 
 本逐步解說將會在 **Phoneword** 應用程式中新增 [通話記錄] 畫面。
 
-1. 在 Visual Studio 中開啟 **Phoneword** 應用程式。 如有必要，可從 [Hello, iOS 逐步解說](~/ios/get-started/hello-ios/index.md)指南下載[完整的 Phoneword 應用程式](https://developer.xamarin.com/samples/monotouch/Hello_iOS/)。 請記住，需要連線到 [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)，才能使用 iOS 設計工具和 iOS 模擬器。
+1. 在 Visual Studio 中開啟 **Phoneword** 應用程式。 如有必要，可從 [Hello, iOS 逐步解說](~/ios/get-started/hello-ios/index.md)指南下載[完整的 Phoneword 應用程式](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)。 請記住，需要連線到 [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)，才能使用 iOS 設計工具和 iOS 模擬器。
 
 2. 從編輯使用者介面開始。 從 [方案總管]  中開啟 **Main.storyboard** 檔案，確定已將 [檢視方式]  設為 [iPhone 6]  ：
 
@@ -517,6 +517,6 @@ ms.locfileid: "67865569"
 
 ## <a name="related-links"></a>相關連結
 
-- [Hello, iOS (範例)](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) \(英文\)
+- [Hello, iOS (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) \(英文\)
 - [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) \(英文\)
 - [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action) \(英文\)
