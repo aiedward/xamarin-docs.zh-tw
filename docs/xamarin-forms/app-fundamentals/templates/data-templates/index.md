@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: ab48d6d3a463a287af8de7d3926287b799ae43a6
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 6cb828f59505159c972d40905f22995055f207df
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926261"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646849"
 ---
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms 資料範本
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _DataTemplate 用於在支援的控制項中指定資料外觀，通常會繫結至要顯示的資料。_
 
@@ -35,4 +35,4 @@ Xamarin.Forms 資料範本可以在支援的控制項上定義資料呈現方式
 
 ## <a name="related-links"></a>相關連結
 
-- [資料範本 (範例)](https://developer.xamarin.com/samples/xamarin-forms/Templates/DataTemplates/)
+- [資料範本 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)

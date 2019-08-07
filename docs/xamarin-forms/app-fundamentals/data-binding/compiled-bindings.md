@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2018
-ms.openlocfilehash: a5273897539cdce4aeb0abde28a0912e8327284a
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 8effabc66b51b1cf32e3be455428c44eeea3f26d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53052176"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656231"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms 編譯的繫結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms 應用程式中的資料繫結效能。_
 
@@ -35,14 +35,14 @@ _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms �
 > [!NOTE]
 > 建議在檢視階層架構中與設定 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 相同的層級設定 `x:DataType` 屬性。
 
-在 XAML 編譯期間，任何無效的繫結運算式都會回報為建置錯誤。 不過，XAML 編譯器只會在第一次遇到無效的繫結運算式時回報建置錯誤。 定義於 `VisualElement` 或其子系的任何有效繫結運算式都會經過編譯，無論 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 是在 XAML 或程式碼中設定。 編譯繫結運算式會產生經過編譯的程式碼，該程式碼會從「來源」屬性取得一個值，並在標記中指定的「目標」屬性上進行設定。 此外，視繫結運算式而定，產生的程式碼可以在「來源」屬性值中觀察變更並重新整理「目標」屬性，也可以將變更從「目標」推送回到「來源」。
+在 XAML 編譯期間，任何無效的繫結運算式都會回報為建置錯誤。 不過，XAML 編譯器只會在第一次遇到無效的繫結運算式時回報建置錯誤。 定義於 `VisualElement` 或其子系的任何有效繫結運算式都會經過編譯，無論 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 是在 XAML 或程式碼中設定。 編譯繫結運算式會產生經過編譯的程式碼，該程式碼會從「來源」  屬性取得一個值，並在標記中指定的「目標」  屬性上進行設定。 此外，視繫結運算式而定，產生的程式碼可以在「來源」  屬性值中觀察變更並重新整理「目標」  屬性，也可以將變更從「目標」  推送回到「來源」  。
 
 > [!IMPORTANT]
 > 定義 [`Source`](xref:Xamarin.Forms.Binding.Source) 屬性的任何繫結運算式目前已停用編譯的繫結。 這是因為 `Source` 屬性一律使用 `x:Reference` 標記延伸設定，因此無法在編譯時間進行解析。
 
 ## <a name="using-compiled-bindings"></a>使用編譯的繫結
 
-[Compiled Color Selector] \(編譯的色彩選取器\) 頁面示範如何在 Xamarin.Forms 檢視與 ViewModel 屬性之間使用編譯的繫結：
+[Compiled Color Selector] \(編譯的色彩選取器\)  頁面示範如何在 Xamarin.Forms 檢視與 ViewModel 屬性之間使用編譯的繫結：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,7 +89,7 @@ _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms �
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中的繫結是在所要樣板化的物件內容中進行解譯。 因此，在 `DataTemplate` 中使用編譯的繫結時，`DataTemplate` 必須使用 `x:DataType` 屬性來宣告其資料物件類型。
 
-[Compiled Color List] \(編譯的色彩清單\) 頁面示範如何在 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中使用編譯的繫結：
+[Compiled Color List] \(編譯的色彩清單\)  頁面示範如何在 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中使用編譯的繫結：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -136,7 +136,7 @@ _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms �
 
 只有在已定義 `x:DataType` 屬性的檢視階層架構中才能編譯繫結運算式。 相反地，未定義 `x:DataType` 屬性之階層架構中的任何檢視則會使用傳統繫結。 因此，您可以將編譯的繫結與傳統繫結合併成一頁。 例如，在上一節中，[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中的檢視使用所編譯繫結，而設定為 [`ListView`](xref:Xamarin.Forms.ListView) 中所選色彩的 [`BoxView`](xref:Xamarin.Forms.BoxView) 則否。
 
-因此，您可以謹慎建構 `x:DataType` 屬性，來產生同時使用編譯繫結和傳統繫結的頁面。 或者，您可以在檢視階層架構中的任何位置，使用 `x:Null` 標記延伸將 `x:DataType` 屬性重新定義為 `null`。 這樣做表示檢視階層架構中的任何繫結運算式都會使用傳統繫結。 [Mixed Bindings] \(混合繫結\) 頁面會示範此方法：
+因此，您可以謹慎建構 `x:DataType` 屬性，來產生同時使用編譯繫結和傳統繫結的頁面。 或者，您可以在檢視階層架構中的任何位置，使用 `x:Null` 標記延伸將 `x:DataType` 屬性重新定義為 `null`。 這樣做表示檢視階層架構中的任何繫結運算式都會使用傳統繫結。 [Mixed Bindings] \(混合繫結\)  頁面會示範此方法：
 
 ```xaml
 <StackLayout x:DataType="local:HslColorViewModel">
@@ -175,4 +175,4 @@ _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms �
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))

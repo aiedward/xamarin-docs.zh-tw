@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
-ms.openlocfilehash: 505b5bfb9681e5bc30ff84aa90c8e148ed6db4b1
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 67fd8070ae36bdc1a90b8a33b25f13369d8d995d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53058281"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650203"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 繫結後援
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 有時，資料繫結會因為無法解析繫結來源，或繫結成功但卻傳回 `null` 值而失敗。 雖然這些情況都可以透過值轉換器或其他額外程式碼來處理，但您可以藉由定義繫結程序失敗時要使用的後援值，讓資料繫結更穩固。 您可以在繫結運算式中定義 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 和 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性來完成上述作業。 因為這些屬性位於 [ `BindingBase` ](xref:Xamarin.Forms.BindingBase) 類別中，因此可以搭配使用繫結、編譯的繫結與 `Binding` 標記延伸。
 
@@ -25,7 +25,7 @@ ms.locfileid: "53058281"
 
 ## <a name="defining-a-fallback-value"></a>定義後援值
 
-[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 屬性可讓您定義在無法解析繫結「來源」時要使用的後援值。 設定這個屬性的常見案例是：當您要繫結之來源屬性並未存在於異質類型繫結集合中的所有物件時。
+[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 屬性可讓您定義在無法解析繫結「來源」  時要使用的後援值。 設定這個屬性的常見案例是：當您要繫結之來源屬性並未存在於異質類型繫結集合中的所有物件時。
 
 **MonkeyDetail** 頁面說明如何設定 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 屬性：
 
@@ -57,7 +57,7 @@ ms.locfileid: "53058281"
 
 ## <a name="defining-a-null-replacement-value"></a>定義 Null 取代值
 
-[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性可讓您定義在已解析繫結「來源」但值為 `null` 時要使用的取代值。 設定這個屬性的常見案例是：當您要繫結的來源屬性可能是繫結集合中的 `null` 時。
+[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性可讓您定義在已解析繫結「來源」  但值為 `null` 時要使用的取代值。 設定這個屬性的常見案例是：當您要繫結的來源屬性可能是繫結集合中的 `null` 時。
 
 **Monkeys** 頁面說明如何設定 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 屬性：
 
@@ -106,4 +106,4 @@ ms.locfileid: "53058281"
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))

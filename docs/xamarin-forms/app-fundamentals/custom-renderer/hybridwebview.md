@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: d09188373d11b33f3b3d78b92faa46bf754797f6
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: cd4bb8cae59e5d9cdcc36a58fb37e71e56d580b3
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268981"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650871"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 View 類別。本文示範如何建立 HybridWebView 自訂控制項的自訂轉譯器，該自訂控制項會示範如何強化平台特定的 Web 控制項，允許從 JavaScript 叫用 C# 程式碼。_
 
@@ -377,7 +377,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-`HybridWebViewRenderer` 類別會將 `HybridWebView.Uri` 屬性中所指定網頁載入到原生的 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 控制項中，並在網頁載入完成後，使用 `JavascriptWebViewClient` 類別的 `OnPageFinished` 覆寫將 `invokeCSharpAction` JavaScript 函式插入至網頁：
+`HybridWebViewRenderer` 類別會將 `HybridWebView.Uri` 屬性中所指定網頁載入到原生的 [`WebView`](xref:Android.Webkit.WebView) 控制項中，並在網頁載入完成後，使用 `JavascriptWebViewClient` 類別的 `OnPageFinished` 覆寫將 `invokeCSharpAction` JavaScript 函式插入至網頁：
 
 ```csharp
 public class JavascriptWebViewClient : WebViewClient
@@ -401,10 +401,10 @@ public class JavascriptWebViewClient : WebViewClient
 
 - 假設自訂轉譯器附加於新的 Xamarin.Forms 項目：
   - 假設 `Control` 屬性是 `null`，則執行下列作業：
-    - 建立原生 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 執行個體 (控制項中已啟用 JavaScript)，並將 `JavascriptWebViewClient` 執行個體設為 `WebViewClient` 的實作。
-    - 然後會呼叫 `SetNativeControl` 方法，將原生 [`WebView`](https://developer.xamarin.com/api/type/Android.Webkit.WebView/) 控制項的參考指派給 `Control` 屬性。
-  - [`WebView.AddJavascriptInterface`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.AddJavascriptInterface/p/Java.Lang.Object/System.String/) 方法會將新的 `JSBridge` 執行個體插入至 WebView JavaScript 內容的主框架，將它命名為 `jsBridge`。 以便從 JavaScript 存取 `JSBridge` 類別中的方法。
-  - [`WebView.LoadUrl`](https://developer.xamarin.com/api/member/Android.Webkit.WebView.LoadUrl/p/System.String/) 方法會載入 `HybridWebView.Uri` 屬性所指定的 HTML 檔案。 程式碼指定該檔案會儲存在專案的 `Content` 資料夾中。
+    - 建立原生 [`WebView`](xref:Android.Webkit.WebView) 執行個體 (控制項中已啟用 JavaScript)，並將 `JavascriptWebViewClient` 執行個體設為 `WebViewClient` 的實作。
+    - 然後會呼叫 `SetNativeControl` 方法，將原生 [`WebView`](xref:Android.Webkit.WebView) 控制項的參考指派給 `Control` 屬性。
+  - [`WebView.AddJavascriptInterface`](xref:Android.Webkit.WebView.AddJavascriptInterface*) 方法會將新的 `JSBridge` 執行個體插入至 WebView JavaScript 內容的主框架，將它命名為 `jsBridge`。 以便從 JavaScript 存取 `JSBridge` 類別中的方法。
+  - [`WebView.LoadUrl`](xref:Android.Webkit.WebView.LoadUrl*) 方法會載入 `HybridWebView.Uri` 屬性所指定的 HTML 檔案。 程式碼指定該檔案會儲存在專案的 `Content` 資料夾中。
   - 在 `JavascriptWebViewClient` 類別中，`invokeCSharpAction` JavaScript 函式會在頁面載入完成後插入至網頁。
 - 當轉譯器附加至的項目變更時：
   - 釋放資源。
@@ -511,5 +511,5 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [CustomRendererHybridWebView (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/HybridWebView/)
+- [CustomRendererHybridWebView (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 - [從 JavaScript 呼叫 C#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)

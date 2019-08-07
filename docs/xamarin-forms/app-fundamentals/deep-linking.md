@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: e7b8ae57f127b4c9397ab4e5f7e097fa330e827a
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 36069bc20a5341b87d55b60f83466e89f263b2ec
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650651"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68646121"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式索引和深層連結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DeepLinking/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _應用程式索引讓經過少數幾次使用就遺忘的應用程式能出現在搜尋結果中，藉此保有關聯性。深層連結可讓應用程式回應包含應用程式資料的搜尋結果，方式通常是瀏覽到參考自深層連結的頁面。本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。_
 
@@ -39,7 +39,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，用來在使用者�
 > [!NOTE]
 > Xamarin.Forms 應用程式索引和深層連結功能僅可在 iOS 和 Android 平台使用，且最低版本分別為 iOS 9 與 API 23。
 
-## <a name="setup"></a>安裝程式
+## <a name="setup"></a>設定
 
 以下章節提供在 iOS 和 Android 平台使用此功能的任何額外設定指示。
 
@@ -248,7 +248,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 ## <a name="related-links"></a>相關連結
 
-- [深層連結 (範例)](https://developer.xamarin.com/samples/xamarin-forms/DeepLinking/)
+- [深層連結 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 - [iOS 搜尋 API](~/ios/platform/search/index.md)
 - [Android 6.0 中的應用程式連結](~/android/platform/app-linking.md)
 - [AppLinkEntry](xref:Xamarin.Forms.AppLinkEntry)

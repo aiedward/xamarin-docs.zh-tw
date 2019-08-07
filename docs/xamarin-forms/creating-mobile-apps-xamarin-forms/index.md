@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: c05bc88ef6d182f282decedff3e4fb03b4bb96b1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: feae1a33b2e090ccfe3573285c75978aacd1799a
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334540"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739208"
 ---
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用 Xamarin.Forms book 建立行動應用程式
 
@@ -26,11 +26,11 @@ ms.locfileid: "61334540"
 
 下載您慣用的電子書的格式，從 Microsoft Virtual Academy:
 
-*    [**PDF (56Mb)**](https://aka.ms/xamebook)
+*    [**PDF (56Mb)** ](https://aka.ms/xamebook)
 
-*    [**ePub (151Mb)**](https://aka.ms/xamebook/epub)
+*    [**ePub (151Mb)** ](https://aka.ms/xamebook/epub)
 
-*    [**Kindle edition (325 Mb)**](https://aka.ms/xamebook/mobi)
+*    [**Kindle edition (325 Mb)** ](https://aka.ms/xamebook/mobi)
 
 您也可以[下載個別的章節](#download-chapters-and-summaries)為 PDF 檔案。
 
@@ -103,7 +103,7 @@ Xamarin.Forms 應用程式通常會使用程式庫共用不同的平台之間的
 
 <i>使用 Xamarin.Forms 建立行動應用程式</i>一開始會描述如何撰寫使用 C# 的 Xamarin.Forms 應用程式。 Extensible Application Markup Language (XAML) 不之前所引入[第 7 章。XAML vs。程式碼](summaries/chapter07.md)。
 
-XAML 現在有更大的角色，在 Xamarin.Forms 中。 與 Visual Studio 一起散發的 Xamarin.Forms 方案範本會建立以 XAML 為基礎的分頁檔。 盡早使用 Xamarin.Forms 的開發人員應該先熟悉 XAML。 [可延伸應用程式標記語言 (XAML)](~/xamarin-forms/xaml/index.md) Xamarin.Forms 文件章節包含有關 XAML 可協助您開始的數個文件。
+XAML 現在有更大的角色，在 Xamarin.Forms 中。 與 Visual Studio 一起散發的 Xamarin.Forms 方案範本會建立以 XAML 為基礎的分頁檔。 盡早使用 Xamarin.Forms 的開發人員應該先熟悉 XAML。 [可延伸應用程式標記語言 (XAML)](~/xamarin-forms/xaml/index.yml) Xamarin.Forms 文件章節包含有關 XAML 可協助您開始的數個文件。
 
 ### <a name="supported-platforms"></a>支援的平台
 

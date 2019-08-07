@@ -28,7 +28,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 安裝程式
+            text: 設定
             href: ~/get-started/requirements.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
@@ -50,14 +50,14 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
             text: 樣式快速入門
             href: ~/get-started/quickstarts/styling.md
-  - title: 輔助線
+  - title: 手冊
     items:
       - type: list
         style: cards
         className: cardsB
         items:
           - href: ~/xamarin-forms/app-fundamentals/
-            html: 您要建置 Xamarin.Forms 應用程式所需知道的一切，例如使用檔案、影像、資料庫等等。
+            html: 您要開發 Xamarin.Forms 應用程式所需知道的一切，例如導覽、手勢、資料繫結等等。
             image:
               src: ~/media/icons/i_app-build.svg
               href: ~/xamarin-forms/app-fundamentals/

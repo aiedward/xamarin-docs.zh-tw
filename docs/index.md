@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 02/12/2019
 featureFlags:
 - clicktale
-ms.openlocfilehash: ad1c033b35da548921ec47d8cc2f3a8ef87d2fa8
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 561210de29c878b13cda63be337b0b72458b81d2
+ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486061"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68820989"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -294,7 +294,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/app-fundamentals/index.md">
+                                <a href="~/xamarin-forms/app-fundamentals/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -305,7 +305,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>應用程式基本概念</h3>
-                                                    <p>建置應用程式時的一切須知，例如使用檔案、影像、資料庫等等。</p>
+                                                    <p>您要開發 Xamarin.Forms 應用程式所需知道的一切，例如導覽、手勢、資料繫結等等。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -313,7 +313,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/user-interface/index.md">
+                                <a href="~/xamarin-forms/user-interface/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -332,7 +332,7 @@ Xamarin.Forms 是可以在 Android、iOS、Mac 及 Windows 上使用 C# 及 .NET
                                 </a>
                             </li>
                             <li>
-                                <a href="~/xamarin-forms/xaml/index.md">
+                                <a href="~/xamarin-forms/xaml/index.yml">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">

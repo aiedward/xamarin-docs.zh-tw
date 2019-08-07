@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: f0ad51738e0bbe785773f653b06fe5f582527f0b
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 722dfbb301d6698ee58d42029c8f6b82ecddc37b
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50120875"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68508989"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 環境
 
@@ -30,13 +30,13 @@ adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
 Android 系統屬性會針對目標裝置上所有的處理序進行設定。
 
-從 Xamarin.Android 4.6 開始，系統屬性和環境變數都可藉由將「環境檔案」新增至專案，以每個應用程式為基礎來進行設定或覆寫。 環境檔案是一個帶有 [`AndroidEnvironment` **建置動作**](~/android/deploy-test/building-apps/build-process.md)的 UNIX 格式純文字檔案。
+從 Xamarin.Android 4.6 開始，系統屬性和環境變數都可藉由將「環境檔案」  新增至專案，以每個應用程式為基礎來進行設定或覆寫。 環境檔案是一個帶有 [`AndroidEnvironment` **建置動作**](~/android/deploy-test/building-apps/build-process.md)的 UNIX 格式純文字檔案。
 環境檔案包含以此格式撰寫的行：*key=value*。
 註解是開頭為 `#` 的行。 空白行會遭到忽略。
 
 若 *key* 的開頭為大寫字元，則 *key* 便會作為環境變數處理，而 **setenv**(3) 則是用於在處理序啟動時將環境變數設為指定的 *value*。
 
-若 *key* 的開頭為小寫字元，則 *key* 便會作為 Android 系統屬性來處理，其 *value* 為*預設值*：控制 Xamarin.Android 執行行為的 Android 系統屬性會先從 Android 系統屬性儲存區尋找，若找不到，則便會使用環境檔案中指定的值。 這可允許 `adb shell setprop` 用於覆寫環境檔案中的值，作為診斷之用。
+如果 *key* 的開頭為小寫字母，系統會將 *key* 視為 Android 系統屬性，*value* 則是「預設值」  ：系統會先從 Android 系統屬性存放區查詢控制 Xamarin.Android 執行行為的 Android 系統屬性，如果不存在任何值，則會使用環境檔案中指定的值。 這可允許 `adb shell setprop` 用於覆寫環境檔案中的值，作為診斷之用。
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android 環境變數
 
@@ -49,8 +49,8 @@ Xamarin.Android 支援 `XA_HTTP_CLIENT_HANDLER_TYPE` 變數，可透過 `adb she
 
 在 Xamarin.Android 6.1 中，預設不會設定環境變數，並且會使用 [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1)。
 
-或者，`Xamarin.Android.Net.AndroidClientHandler` 的值可以指定為針對網路存取使用 [`java.net.URLConnection`](https://developer.xamarin.com/api/type/Java.Net.URLConnection/)，
-「可」允許使用 TLS 1.2 (若 Android 支援它的話)。
+或者，`Xamarin.Android.Net.AndroidClientHandler` 的值可以指定為針對網路存取使用 [`java.net.URLConnection`](xref:Java.Net.URLConnection)，
+「可」  允許使用 TLS 1.2 (若 Android 支援它的話)。
 
 已在 Xamarin.Android 6.1 中新增。
 
@@ -90,24 +90,24 @@ Xamarin.Android 支援下列系統屬性，可透過 `adb shell setprop` 或 `$(
 控制 Xamarin.Android 記錄到 `adb logcat` 的額外資訊。
 它是一個逗號分隔的字串 (`,`)，包含下列值中的其中一個：
 
-* `all`：印出「所有」訊息。 這通常不是一個好主意，因為其包含了 `lref` 訊息。
-* `assembly`：印出 `.apk` 和組件剖析訊息。
-* `gc`：印出與 GC 相關的訊息。
-* `gref`：印出 JNI 全域參考訊息。
-* `lref`：印出 JNI 區域參考訊息。  
-    *注意*：這「真的」會讓 `adb logcat` 充斥許多垃圾訊息。  
-    在 Xamarin.Android 5.1 中，這也會建立一個 `.__override__/lrefs.txt` 檔案，該檔案可能會變得「非常大」。  
+* `all`：列印出「所有」  訊息。 這通常不是一個好主意，因為其包含了 `lref` 訊息。
+* `assembly`：列印出 `.apk` 和組件剖析訊息。
+* `gc`：列印出與 GC 相關的訊息。
+* `gref`：列印出 JNI 全域參考訊息。
+* `lref`：列印出 JNI 區域參考訊息。  
+    *注意*：這「真的」  會讓 `adb logcat` 充斥許多垃圾訊息。  
+    在 Xamarin.Android 5.1 中，這也會建立一個 `.__override__/lrefs.txt` 檔案，該檔案可能會變得「非常大」  。  
     請避免。
-* `timing`：印出某些方法計時資訊。 這也會建立 `.__override__/methods.txt` 及 `.__override__/counters.txt` 檔案。
+* `timing`：列印出某些方法計時資訊。 這也會建立 `.__override__/methods.txt` 及 `.__override__/counters.txt` 檔案。
 
 
 ### `debug.mono.max_grefc`
 
 `debug.mono.max_grefc` 系統屬性的值為一個整數。
-它的值會「覆寫」針對目標裝置預設偵測到的最大 GRF 計數。
+它的值會「覆寫」  針對目標裝置預設偵測到的最大 GRF 計數。
 
-注意：這僅在使用 `adb shell setprop
-debug.mono.max_grefc` 時可用，因為該值在使用 **environment.txt** 檔案時將無法及時可用。
+*請注意：* 這只可搭配 `adb shell setprop
+debug.mono.max_grefc` 使用，因為該值在搭配 **environment.txt** 檔案時將無法及時可用。
 
 ### `debug.mono.profile`
 
@@ -123,21 +123,21 @@ debug.mono.max_grefc` 時可用，因為該值在使用 **environment.txt** 檔�
 `debug.mono.trace` 系統屬性會啟用追蹤。
 它相當於 `mono --trace` 選項，並且使用相同的值。 (請參閱 [**mono**(1)](http://docs.go-mono.com/?link=man%3amono(1)) 手冊頁面以取得詳細資訊。)
 
-一般情況下，「請勿使用」。 使用追蹤會讓 `adb logcat` 輸出充斥垃圾訊息，嚴重降低程式行為的速度，並會改變程式的行為 (最高並會包含導致其他錯誤狀況)。
+一般情況下，「請勿使用」  。 使用追蹤會讓 `adb logcat` 輸出充斥垃圾訊息，嚴重降低程式行為的速度，並會改變程式的行為 (最高並會包含導致其他錯誤狀況)。
 
-然而，「有時候」，它可讓您執行一些額外的調查...
+然而，「有時候」  ，它可讓您執行一些額外的調查...
 
 ### `debug.mono.wref`
 
 `debug.mono.wref` 系統屬性會允許覆寫預設偵測到的 JNI 弱式參考機制。 有兩個支援的值：
 
 * `jni`：使用 JNI 弱式參考，由 `JNIEnv::NewWeakGlobalRef()` 建立並由 `JNIEnv::DeleteWeakGlobalREf()` 終結。
-* `java`：使用 JNI 全域參考，參考 `java.lang.WeakReference` 執行個體。
+* `java`：使用 JNI 全域參考，其參考 `java.lang.WeakReference` 執行個體。
 
 直到 API-7 及啟用 ART 的 API-19 (Kit Kat) 都會預設使用 `java`。 (API-8 新增 `jni` 參考，ART 會*破壞* `jni` 參考。)
 
 此系統屬性在測試及特定形式的調查時很有用。
-「一般情況下」，您不應變更它。
+「一般情況下」  ，您不應變更它。
 
 ### <a name="xahttpclienthandlertype"></a>XA\_HTTP\_CLIENT\_HANDLER\_TYPE
 

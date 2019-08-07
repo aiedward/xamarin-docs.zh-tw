@@ -5,7 +5,7 @@ metadata:
   description: 跨平台的 Xamarin.Mac 範例應用程式可供行動裝置開發人員使用。
   author: conceptdev
   ms.author: crdun
-  ms.date: 02/27/2018
+  ms.date: 07/30/2019
   ms.topic: sample
 abstract:
   description: 'Xamarin iOS 範例應用程式及程式碼示範可協助您開始使用 C# 與 Xamarin 建置行動應用程式。'

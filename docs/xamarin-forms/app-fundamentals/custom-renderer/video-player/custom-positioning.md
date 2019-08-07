@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: a962c61027fa6f9f05c59272c900a3ca32e1b01f
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926126"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650650"
 ---
 # <a name="custom-video-positioning"></a>自訂影片定位
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 每個平台實作的傳輸控制項都包括位置列。 此列類似於滑桿或捲軸，而且會顯示影片在其總持續時間內的目前位置。 此外，使用者可以操作位置列，向前或向後移至影片中的新位置。
 
@@ -70,7 +70,7 @@ namespace FormsVideoLibrary
 
 另請注意呼叫 `SetTimeToEnd` 方法的屬性變更處理常式，本文稍後將加以描述。
 
-在設定 `VideoPlayer` 的 `Source` 屬性之後，「無法」立即取得影片的持續時間。 必須下載一部分的影片檔案，基礎影片播放程式才能判斷其持續時間。
+在設定 `VideoPlayer` 的 `Source` 屬性之後，「無法」  立即取得影片的持續時間。 必須下載一部分的影片檔案，基礎影片播放程式才能判斷其持續時間。
 
 以下說明每個平台轉譯器如何取得影片的持續時間：
 
@@ -418,7 +418,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文件�
 
 這是很好的建議，但已有三個 `VideoPlayerRenderer` 類別間接使用計時器來更新 `Position` 屬性。 若發生 `UpdateStatus` 事件 (每秒僅引發 10 次)，則會變更處理常式中的 `Position` 屬性。
 
-因此，`VideoPlayer` 的 `Position` 屬性可以繫結至 `PositionSlider` 的 `Position` 屬性，而不會有效能問題，如 [Custom Position Bar] \(自訂位置列\) 頁面所示：
+因此，`VideoPlayer` 的 `Position` 屬性可以繫結至 `PositionSlider` 的 `Position` 屬性，而不會有效能問題，如 [Custom Position Bar] \(自訂位置列\)  頁面所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -473,7 +473,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文件�
 </ContentPage>
 ```
 
-第一個省略符號 (···) 會隱藏 `ActivityIndicator`，這與上一頁 [Custom Transport] \(自訂傳輸\) 相同。 注意顯示 `Position` 和 `TimeToEnd` 屬性的兩個 `Label` 項目。 這兩個 `Label` 項目之間的省略符號會隱藏 [Custom Transport] \(自訂傳輸\) 頁面中所顯示兩個 `Button` 項目 (用於播放、暫停和停止)。 程式碼後置邏輯也與 [Custom Transport] \(自訂傳輸\) 頁面相同。
+第一個省略符號 (···) 會隱藏 `ActivityIndicator`，這與上一頁 [Custom Transport] \(自訂傳輸\)  相同。 注意顯示 `Position` 和 `TimeToEnd` 屬性的兩個 `Label` 項目。 這兩個 `Label` 項目之間的省略符號會隱藏 [Custom Transport] \(自訂傳輸\)  頁面中所顯示兩個 `Button` 項目 (用於播放、暫停和停止)。 程式碼後置邏輯也與 [Custom Transport] \(自訂傳輸\)  頁面相同。
 
 [![自訂定位](custom-positioning-images/custompositioning-small.png "自訂定位")](custom-positioning-images/custompositioning-large.png#lightbox "自訂定位")
 
@@ -481,4 +481,4 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文件�
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/VideoPlayerDemos/) (視訊播放程式示範 (範例))
+- [Video Player Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) (視訊播放程式示範 (範例))

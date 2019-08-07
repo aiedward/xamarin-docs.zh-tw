@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 2cacf429efb11c5dd19276d62b997acae767516e
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.openlocfilehash: 4954b83b75618128f32b0e5fceed2f04df183433
+ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870387"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68511476"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
@@ -109,7 +109,7 @@ container.AddSubview (new MyView (container));
 
 #### <a name="weak-attribute"></a>弱式屬性
 
-[Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) 引入 `[Weak]` 屬性。 例如 `WeakReference <T>`，`[Weak]` 可用來中斷[強式循環參考](https://docs.microsoft.com/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)，但使用更少的程式碼。
+[Xamarin.iOS 11.10](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_11/xamarin.ios_11.10.md#WeakAttribute) 引入 `[Weak]` 屬性。 例如 `WeakReference <T>`，`[Weak]` 可用來中斷[強式循環參考](https://docs.microsoft.com/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)，但使用更少的程式碼。
 
 請考慮下列使用 `WeakReference <T>` 的程式碼：
 
@@ -211,7 +211,7 @@ class MyChild : UIView
 ```
 
 如需有關釋放強式參考的詳細資訊，請參閱[釋放 IDisposable 資源](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)。
-此部落格文章中也有精彩的討論：[Xamarin.iOS - 記憶體回收行程與我](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/) \(英文\)。
+此部落格文章中也有精彩的討論：[Xamarin.iOS - 記憶體回收行程與我](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me) \(英文\)。
 
 ### <a name="more-information"></a>詳細資訊
 

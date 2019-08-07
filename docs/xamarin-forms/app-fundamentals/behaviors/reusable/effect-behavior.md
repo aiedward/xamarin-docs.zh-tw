@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 840fa1b40858ccf3bff15f7027735ce98081d23c
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 38ecd765b1c6bc81054b2c42426b6c15bb99b9d9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925136"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650981"
 ---
 # <a name="reusable-effectbehavior"></a>可重複使用的 EffectBehavior
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 
-對於將效果新增至控制項，行為是很實用的方法，可從程式碼後置檔案中移除以定案效果方式處理的程式碼。本文示範如何建立及使用 Xamarin.Forms 行為來將效果新增至控制項。
+對於將效果新增至控制項，行為是很實用的方法，可從程式碼後置檔案中移除以定案效果方式處理的程式碼。  本文示範如何建立及使用 Xamarin.Forms 行為來將效果新增至控制項。
 
 ## <a name="overview"></a>總覽
 
@@ -32,7 +32,7 @@ ms.locfileid: "65925136"
 如需效果的詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 > [!NOTE]
-> `EffectBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在[效果行為範例](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/)中找到。
+> `EffectBehavior` 是自訂類別，並不屬於 Xamarin.Forms 的一部分；您可以在[效果行為範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)中找到。
 
 ## <a name="creating-the-behavior"></a>建立行為
 
@@ -169,6 +169,6 @@ label.Behaviors.Add (new EffectBehavior {
 ## <a name="related-links"></a>相關連結
 
 - [Effects](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [Effect Behavior (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Behaviors/EffectBehavior/) (效果行為 (範例))
+- [Effect Behavior (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior) (效果行為 (範例))
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

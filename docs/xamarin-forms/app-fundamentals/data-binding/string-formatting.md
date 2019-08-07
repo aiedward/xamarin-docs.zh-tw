@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 2dd7efb9f295143775961afb97e70b5f241d1337
-ms.sourcegitcommit: be6f6a8f77679bb9675077ed25b5d2c753580b74
+ms.openlocfilehash: 87972df2b15a5bc1f6323a6953f809379cae4a50
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53056119"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644530"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字串格式化
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 有時候，使用資料繫結來顯示物件或值的字串表示相當方便。 例如，您可能想要使用 `Label` 來顯示目前 `Slider` 的值。 在此資料繫結中，`Slider` 是來源，而目標則是 `Label` 的 `Text` 屬性。
 
@@ -180,12 +180,12 @@ XAML 檔案中的下一個區段是 `StackLayout`，其 `BindingContext` 已設�
 
 您可能會不清楚如何以傳統二位數十六進位格式來顯示 RGB (紅、綠、藍) 值。 這是因為這些值都無法直接從 `Color` 結構使用。 其中一種解決方法是計算 ViewModel 中色彩元件的整數值，並將它們作為屬性公開。 接著您可以使用 `X2` 格式化規格將它們格式化。
 
-另一種方法更加常見：您可以撰寫「繫結值轉換器」，這會在之後的[**繫結值轉換器**](converters.md)一文中提到。
+另一種方法更加常見：您可以撰寫「繫結值轉換器」  ，這會在之後的[**繫結值轉換器**](converters.md)一文中提到。
 
 不過，下一篇文章會更詳細地探索[**繫結路徑**](binding-path.md)，並向您示範如何使用它參考子屬性及集合中的項目。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
 - [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

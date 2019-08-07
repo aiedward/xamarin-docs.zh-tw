@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 634ba351d419b1d18dcc5d5bdbf5e248f510329d
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: 17e6f4a935924b9c7e282747443bb579d08a5ab9
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971251"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651112"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>在 Xamarin.Forms 中的自動化屬性
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 _Xamarin.Forms 可讓協助在使用者介面項目上，使用來自 AutomationProperties 類別的附加屬性設定協助工具值，然後附加屬性會設定原生的協助工具值。本文說明如何使用 AutomationProperties 類別，讓螢幕助讀程式可以讀出頁面上的項目。_
 
@@ -179,4 +179,4 @@ master.IconImageSource.AutomationId = "btnMDPAutomationID";
 ## <a name="related-links"></a>相關連結
 
 - [附加屬性](~/xamarin-forms/xaml/attached-properties.md)
-- [Accessibility (Samples)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/) (協助工具 (範例))
+- [Accessibility (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility) (協助工具 (範例))

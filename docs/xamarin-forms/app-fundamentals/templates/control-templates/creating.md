@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/14/2019
-ms.openlocfilehash: 0642f304589d30284bc8d3577c0383099e349033
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: fbc966fdf1d79ecc9794d2156db81b583694ce36
+ms.sourcegitcommit: 84764b9c51e769d6d6570a362af8451607c7e0d2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513040"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68665690"
 ---
 # <a name="create-a-controltemplate"></a>建立 ControlTemplate
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplates-simpletheme)
 
 _控制項範本可在應用程式層級或頁面層級定義。本文示範如何建立和使用控制項範本。_
 
@@ -236,7 +236,7 @@ class MyCustomControl : ContentView
 {
     Label myLabel;
 
-    protected override OnApplyTemplate()
+    protected override void OnApplyTemplate()
     {  
         myLabel = GetTemplateChild("myLabel");
     }
@@ -249,7 +249,7 @@ class MyCustomControl : ContentView
 ## <a name="related-links"></a>相關連結
 
 - [樣式](~/xamarin-forms/user-interface/styles/index.md)
-- [Simple Theme (Samples)](https://developer.xamarin.com/samples/xamarin-forms/Templates/ControlTemplates/SimpleTheme/) (簡單的佈景主題 (範例))
+- [Simple Theme (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplates-simpletheme) (簡單的佈景主題 (範例))
 - [ControlTemplate](xref:Xamarin.Forms.ControlTemplate)
 - [ContentPresenter](xref:Xamarin.Forms.ContentPresenter)
 - [ContentView](xref:Xamarin.Forms.ContentView)

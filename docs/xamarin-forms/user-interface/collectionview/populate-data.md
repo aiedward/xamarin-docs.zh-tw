@@ -1,35 +1,35 @@
 ---
-title: Xamarin.Forms CollectionView 資料
-description: CollectionView 填入資料，藉由設定它的 ItemsSource 屬性至任何實作 IEnumerable 的集合。
+title: Xamarin. 表單 CollectionView 資料
+description: CollectionView 會藉由將其 ItemsSource 屬性設定為任何可執行 IEnumerable 的集合來填入資料。
 ms.prod: xamarin
 ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: d2729250c0f991564ae70ddf6a15b40425ed6c46
-ms.sourcegitcommit: 0596004d4a0e599c1da1ddd75a6ac928f21191c2
+ms.openlocfilehash: ce745109ea2852b597de3a8a5922a171ad83e289
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66005273"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68738910"
 ---
-# <a name="xamarinforms-collectionview-data"></a>Xamarin.Forms CollectionView 資料
+# <a name="xamarinforms-collectionview-data"></a>Xamarin. 表單 CollectionView 資料
 
 ![](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 會定義下列屬性，定義要顯示的資料和它的外觀：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義下列定義要顯示之資料的屬性, 以及其外觀:
 
-- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)型別的`IEnumerable`，指定要顯示的項目集合而且具有預設值是`null`。
-- [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)型別的[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)，指定要套用至要顯示的項目集合中的每個項目範本。
+- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource), 屬於類型`IEnumerable`, 可指定要顯示的專案集合, 並具有的預設`null`值。
+- [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate), 屬於類型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate), 可指定要套用至要顯示的專案集合中每個專案的範本。
 
-這些屬性都會受到[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)物件，這表示，屬性可以是資料繫結的目標。
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這表示屬性可以是資料系結的目標。
 
-## <a name="populate-a-collectionview-with-data"></a>填入資料 CollectionView
+## <a name="populate-a-collectionview-with-data"></a>在 CollectionView 中填入資料
 
-A [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)藉由設定資料填入其[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性來實作任何集合`IEnumerable`。 可以在 XAML 中加入項目，初始化`ItemsSource`從字串陣列的屬性：
+會[`CollectionView`](xref:Xamarin.Forms.CollectionView)藉由[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)將資料的屬性設定`IEnumerable`為任何可執行檔集合, 來填入資料。 藉由從字串陣列初始化`ItemsSource`屬性, 可以在 XAML 中加入專案:
 
 ```xaml
 <CollectionView>
@@ -67,17 +67,17 @@ collectionView.ItemsSource = new string[]
 ```
 
 > [!IMPORTANT]
-> 如果[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)是需要重新整理，如新增、 移除或變更基礎集合中的項目，基礎集合應該是`IEnumerable`傳送屬性的集合變更通知，例如`ObservableCollection`.
+> 如果在基礎集合中加入、移除或變更專案時需要重新整理, 基礎集合應該`IEnumerable`是傳送屬性`ObservableCollection`變更通知的集合, 例如。 [`CollectionView`](xref:Xamarin.Forms.CollectionView)
 
-根據預設， [ `CollectionView` ](xref:Xamarin.Forms.CollectionView)在垂直清單中，會顯示項目，如下列螢幕擷取畫面所示：
+根據預設, [`CollectionView`](xref:Xamarin.Forms.CollectionView)會在垂直清單中顯示專案, 如下列螢幕擷取畫面所示:
 
-[![螢幕擷取畫面的 CollectionView，包含文字的項目，在 iOS 和 Android 上](populate-data-images/text.png "CollectionView 中的文字項目")](populate-data-images/text-large.png#lightbox "CollectionView 中的文字項目")
+[ (populate-data-images/text.png "CollectionView 中") ![iOS 和 Android 文字專案上包含文字專案之 CollectionView 的螢幕擷取畫面]](populate-data-images/text-large.png#lightbox "CollectionView 中的文字專案")
 
-如需如何變更[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)版面配置，請參閱[指定配置](layout.md)。 如需如何定義在每個項目的外觀`CollectionView`，請參閱 <<c2> [ 定義項目外觀](#define-item-appearance)。
+如需如何變更版面配置的[`CollectionView`](xref:Xamarin.Forms.CollectionView)詳細資訊, 請參閱[指定版面](layout.md)配置。 如需如何在中`CollectionView`定義每個專案外觀的詳細資訊, 請參閱[定義專案外觀](#define-item-appearance)。
 
 ### <a name="data-binding"></a>資料繫結
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以使用資料來填入繫結中使用資料繫結及其[ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性設`IEnumerable`集合。 在 XAML，這達成與`Binding`標記延伸模組：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以使用資料系結將其[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性`IEnumerable`系結至集合, 以填入資料。 在 XAML 中, 這是透過`Binding`標記延伸來達成:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}" />
@@ -90,16 +90,16 @@ CollectionView collectionView = new CollectionView();
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-在此範例中， [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性的資料繫結至`Monkeys`連接的檢視模型的屬性。
+在此範例中, [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性資料會系結`Monkeys`至已連接之視圖模型的屬性。
 
 > [!NOTE]
-> 可以啟用已編譯的繫結，以改善在 Xamarin.Forms 應用程式中的資料繫結效能。 如需詳細資訊，請參閱 <<c0> [ 編譯的繫結](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
+> 可以啟用編譯的系結, 以改善 Xamarin 中的資料系結效能。 如需詳細資訊, 請參閱[編譯](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)的系結。
 
 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
-## <a name="define-item-appearance"></a>定義項目外觀
+## <a name="define-item-appearance"></a>定義專案外觀
 
-在每個項目的外觀[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以藉由設定定義[ `CollectionView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)屬性設[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate):
+將[`CollectionView`](xref:Xamarin.Forms.CollectionView) [屬性`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)設定為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate), 即可定義中每個專案的外觀:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -167,7 +167,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-在指定的項目[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)定義清單中的每個項目的外觀。 在範例中，內的版面配置`DataTemplate`受[ `Grid` ](xref:Xamarin.Forms.Grid)。 `Grid`包含[ `Image` ](xref:Xamarin.Forms.Image)物件，以及兩個[ `Label` ](xref:Xamarin.Forms.Label)物件時，所有繫結的屬性至`Monkey`類別：
+在中[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)指定的元素會定義清單中每個專案的外觀。 在此範例中, 中的`DataTemplate`配置是[`Grid`](xref:Xamarin.Forms.Grid)由所管理。 包含物件和[`Label`](xref:Xamarin.Forms.Label)兩個物件`Monkey` , 全都系結至類別的屬性: `Grid` [`Image`](xref:Xamarin.Forms.Image)
 
 ```csharp
 public class Monkey
@@ -179,15 +179,15 @@ public class Monkey
 }
 ```
 
-下列螢幕擷取畫面的清單中，每個項目將顯示的範本結果：
+下列螢幕擷取畫面顯示清單中每個專案的範本化結果:
 
-[![螢幕擷取畫面的 CollectionView，其中每個項目是範本，在 iOS 和 Android 上](populate-data-images/datatemplate.png "CollectionView 中的樣板化項目")](populate-data-images/datatemplate-large.png#lightbox "CollectionView 中的樣板化項目")
+[ ![CollectionView 的螢幕擷取畫面, 其中每個專案都樣板化,](populate-data-images/datatemplate.png "CollectionView 中")的 iOS 和 Android 樣板化專案](populate-data-images/datatemplate-large.png#lightbox "CollectionView 中的樣板化專案")
 
 如需資料範本的詳細資訊，請參閱 [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
-## <a name="choose-item-appearance-at-runtime"></a>選擇在執行階段的項目外觀
+## <a name="choose-item-appearance-at-runtime"></a>在執行時間選擇專案外觀
 
-在每個項目的外觀[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)可以選擇在執行階段，設定項目值，根據[ `CollectionView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)屬性設[ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)物件：
+藉由[`CollectionView`](xref:Xamarin.Forms.CollectionView) [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)將屬性設定為[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)物件, 可在執行時間根據專案值選擇中每個專案的外觀:
 
 ```xaml
 <ContentPage ...
@@ -221,7 +221,7 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[ `ItemTemplate` ](xref:Xamarin.Forms.ItemsView.ItemTemplate)屬性設定為`MonkeyDataTemplateSelector`物件。 下列範例所示`MonkeyDataTemplateSelector`類別：
+屬性會設定`MonkeyDataTemplateSelector`為物件。 [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) 下列範例顯示`MonkeyDataTemplateSelector`類別:
 
 ```csharp
 public class MonkeyDataTemplateSelector : DataTemplateSelector
@@ -236,15 +236,18 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MonkeyDataTemplateSelector`類別會定義`AmericanMonkey`並`OtherMonkey` [ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate)屬性設定為不同的資料範本。 `OnSelectTemplate`覆寫會傳回`AmericanMonkey`範本 monkey 名稱和位置顯示青綠色中,，當 monkey 名稱包含"America 」。 Monkey 名稱未包含 「 美國 」，當`OnSelectTemplate`覆寫會傳回`OtherMonkey`範本，其中顯示 silver monkey 名稱和位置：
+類別會定義`AmericanMonkey`設定`OtherMonkey`為不同資料範本的和[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `MonkeyDataTemplateSelector` `AmericanMonkey`此`OnSelectTemplate`覆寫會傳回範本, 當猴子名稱包含 "北美洲" 時, 會以青色顯示猴子名稱和位置。 當猴子名稱不包含 "北美洲" 時, `OnSelectTemplate`覆寫`OtherMonkey`會傳回範本, 以顯示銀級中的猴子名稱和位置:
 
-[![螢幕擷取畫面的 CollectionView 執行階段項目範本選項中，在 iOS 和 Android 上](populate-data-images/datatemplateselector.png "CollectionView 中的執行階段項目範本選擇")](populate-data-images/datatemplateselector-large.png#lightbox "執行階段項目範本中的選取項目CollectionView")
+[ ![CollectionView runtime 專案範本選取專案的螢幕擷取畫面, 在 IOS 和 Android 執行時間](populate-data-images/datatemplateselector.png "專案範本中選取 CollectionView") ](populate-data-images/datatemplateselector-large.png#lightbox "CollectionView 中的執行時間專案範本選擇")
 
-如需有關資料範本選取器的詳細資訊，請參閱[建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+如需資料範本選取器的詳細資訊, 請參閱[建立 Xamarin DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+
+> [!IMPORTANT]
+> 使用[`CollectionView`](xref:Xamarin.Forms.CollectionView)時, 絕對不會將[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)物件的根項目設定為`ViewCell`。 這會導致擲回例外狀況, 因為`CollectionView`沒有資料格的概念。
 
 ## <a name="related-links"></a>相關連結
 
-- [CollectionView （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/CollectionViewDemos/)
-- [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [CollectionView (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin. 表單資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

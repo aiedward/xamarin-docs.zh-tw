@@ -8,16 +8,16 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: e74231133c0a52ba0fe4e5589f09aab15e1b9924
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 78288680a1a522b2c6c413e1f8a2cec2a07835d6
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978608"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656973"
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
 _從右至左的當地語系化，會將由右至左文字方向的支援新增至 Xamarin.Forms 應用程式。_
 
@@ -79,7 +79,7 @@ this.FlowDirection = Device.FlowDirection;
 您可以將 **Info.plist** 中所指定的裝置/模擬器語言和地區變更為由右至左地區設定，以測試由右至左當地語系化。
 
 > [!WARNING]
-> 請注意，在 iOS 上將語言和地區變更為由右至左地區設定時，如果您未包含地區設定所需的資源，則任何 [`DatePicker`](xref:Xamarin.Forms.DatePicker) 檢視都會擲回例外狀況。 例如，當測試具有 `DatePicker` 的阿拉伯文應用程式時，請務必選取 [iOS 組建] 窗格 [國際化] 區段中的 [中東]。
+> 請注意，在 iOS 上將語言和地區變更為由右至左地區設定時，如果您未包含地區設定所需的資源，則任何 [`DatePicker`](xref:Xamarin.Forms.DatePicker) 檢視都會擲回例外狀況。 例如，當測試具有 `DatePicker` 的阿拉伯文應用程式時，請務必選取 [iOS 組建]  窗格 [國際化]  區段中的 [中東]  。
 
 ### <a name="android"></a>Android
 
@@ -94,7 +94,7 @@ this.FlowDirection = Device.FlowDirection;
 </manifest>
 ```
 
-您可以啟用 [設定] > [開發人員選項] 中的 [Force RTL layout direction] \(強制 RTL 配置方向\)，將裝置/模擬器語言和地區變更為使用由右至左語言，以測試由右至左當地語系化。
+您可以啟用 [設定] > [開發人員選項]  中的 [Force RTL layout direction] \(強制 RTL 配置方向\)  ，將裝置/模擬器語言和地區變更為使用由右至左語言，以測試由右至左當地語系化。
 
 ### <a name="universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP)
 
@@ -154,4 +154,4 @@ Xamarin.Forms 由右至左當地語系化目前有一些限制：
 
 ## <a name="related-links"></a>相關連結
 
-- [TodoLocalizedRTL 範例應用程式](https://developer.xamarin.com/samples/xamarin-forms/TodoLocalizedRTL/)
+- [TodoLocalizedRTL 範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: b6e68f6b99803edd8d50a172d598a3410aa1bbf4
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: b40617dc9ed2054540ce04d5527fae8de6e2285b
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66740755"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644902"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 _Xamarin.Forms 包含簡易傳訊服務，可傳送與接收訊息。_
 
@@ -113,6 +113,6 @@ MessagingCenter 是降低結合程度 (特別是檢視模型之間) 的簡易方
 
 ## <a name="related-links"></a>相關連結
 
-- [MessagingCenterSample](https://developer.xamarin.com/samples/xamarin-forms/UsingMessagingCenter)
+- [MessagingCenterSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)
 - [在相依性低的元件之間通訊](~/xamarin-forms/enterprise-application-patterns/communicating-between-loosely-coupled-components.md)

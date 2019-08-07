@@ -9,12 +9,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: c0e772e0207d2ccc9a94aefd9655dc1bb6776bba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 997c9e023a743b8e5128ffc566e50da63652f945
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653478"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739009"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin. 表單快速入門深入探討
 
@@ -24,7 +24,7 @@ ms.locfileid: "68653478"
 
 ## <a name="introduction-to-visual-studio"></a>Visual Studio 簡介
 
-Visual Studio 會將程式碼組織成「方案」  和「專案」  。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含四個專案的方案所組成, 如下列螢幕擷取畫面所示:
+Visual Studio 會將程式碼組織成「方案」和「專案」。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含四個專案的方案所組成, 如下列螢幕擷取畫面所示:
 
 ![](deepdive-images/vs/solution.png "Visual Studio 方案總管")
 
@@ -51,7 +51,7 @@ Visual Studio 會將程式碼組織成「方案」  和「專案」  。 方案�
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac 簡介
 
-[Visual Studio for Mac](/visualstudio/mac/) 遵循 Visual Studio 的做法，將程式碼組織成「方案」  和「專案」  。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含三個專案的方案所組成, 如下列螢幕擷取畫面所示:
+[Visual Studio for Mac](/visualstudio/mac/) 遵循 Visual Studio 的做法，將程式碼組織成「方案」和「專案」。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含三個專案的方案所組成, 如下列螢幕擷取畫面所示:
 
 ![](deepdive-images/vsmac/solution.png "Visual Studio for Mac 方案窗格")
 
@@ -350,7 +350,7 @@ Xamarin.Forms 會根據所使用的 [`Page`](xref:Xamarin.Forms.Page) 類型，�
 
 在階層式導覽中[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) , 會使用類別, 視需要向前和[`ContentPage`](xref:Xamarin.Forms.ContentPage)向後流覽物件堆疊。 此類別會實作一堆後進先出 (LIFO) 的 [`Page`](xref:Xamarin.Forms.Page) 物件導覽。 若要將一頁移到另一頁，應用程式會將新的頁面推送到導覽堆疊上，該頁面就會變成使用中的頁面。 若要返回到上一頁，應用程式將會從導覽堆疊中快顯目前的頁面，新的最上層頁面就會變成使用中的頁面。
 
-`NavigationPage` 類別也會將巡覽列新增到顯示標題，以及返回上一頁之平台相應 [上一頁]  按鈕的頁面頂端。
+`NavigationPage` 類別也會將巡覽列新增到顯示標題，以及返回上一頁之平台相應 [上一頁] 按鈕的頁面頂端。
 
 新增至導覽堆疊的第一頁稱為應用程式的*根*頁面, 而下列程式碼範例示範如何在 Notes 應用程式中完成這項作業:
 
@@ -370,7 +370,7 @@ await Navigation.PushAsync(new NoteEntryPage());
 
 這會導致新`NoteEntryPage`物件推送到導覽堆疊上, 而它會變成使用中的頁面。
 
-無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁]  按鈕都可以從導覽堆疊快顯使用中的頁面。 若要以程式設計的方式返回到原始頁面，`NoteEntryPage` 物件必須叫用 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，如下列程式碼範例所示：
+無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁] 按鈕都可以從導覽堆疊快顯使用中的頁面。 若要以程式設計的方式返回到原始頁面，`NoteEntryPage` 物件必須叫用 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，如下列程式碼範例所示：
 
 ```csharp
 await Navigation.PopAsync();
@@ -532,7 +532,7 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 
 ## <a name="related-links"></a>相關連結
 
-- [可擴充應用程式標記語言 (XAML)](~/xamarin-forms/xaml/index.md)
+- [可擴充應用程式標記語言 (XAML)](~/xamarin-forms/xaml/index.yml)
 - [資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [控制項參考](~/xamarin-forms/user-interface/controls/index.md)
 - [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)

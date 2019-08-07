@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 7f469dab92793eeaa38bd2b73e9d94b138495379
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: ba29e57008bfea420562d88ab1612c09f4460e85
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830351"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68651066"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的鍵盤協助工具
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 如果應用程式未提供適當的鍵盤存取，可能會讓需使用螢幕閱讀程式或行動不便的使用者遇到使用上的困難。 Xamarin.Forms 應用程式可以指定預期的定位順序，以改善其可用性和協助工具。 指定控制項的定位順序時，可啟用鍵盤導覽、讓應用程式頁面做好以特定順序接收輸入的準備，以及允許螢幕閱讀程式向使用者朗讀可設定焦點的元素。
 
@@ -146,4 +146,4 @@ ms.locfileid: "67830351"
 
 ## <a name="related-links"></a>相關連結
 
-- [Accessibility (Samples)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Accessibility/) (協助工具 (範例))
+- [Accessibility (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility) (協助工具 (範例))

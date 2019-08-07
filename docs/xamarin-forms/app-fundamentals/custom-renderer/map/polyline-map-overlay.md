@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 5c67684f7d8cb763d4698de86c904e2887185361
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 19da0de80819a48259a28b30e003c32923d37378
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925181"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650690"
 ---
 # <a name="highlighting-a-route-on-a-map"></a>醒目提示地圖上的路線
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polyline/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polyline)
 
 _本文說明如何將聚合線條重疊新增至地圖。聚合線條重疊是一系列的連接線段，通常用來顯示地圖上的路線，或形成任何需要的圖形。_
 
@@ -304,6 +304,6 @@ namespace MapOverlay.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [Polyline Map Ovlerlay (Samples)](https://developer.xamarin.com/samples/xamarin-forms/CustomRenderers/Map/Polyline/) (聚合線條地圖重疊 (範例))
+- [Polyline Map Ovlerlay (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polyline) (聚合線條地圖重疊 (範例))
 - [自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)
 - [Xamarin.Forms.Maps](xref:Xamarin.Forms.Maps)

@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 4583b703d6c6b15105d60a98e7a1064e6a2e9263
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 20a6dab34f290c6e5f170d861183dabbfe382970
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977779"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68650214"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 繫結模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-在[前一篇文章](basic-bindings.md)中，[替代程式碼繫結] 和 [替代 XAML 繫結] 頁面顯示的 `Label`，其 `Scale` 屬性繫結至 `Slider` 的 `Value` 屬性。 因為 `Slider` 初始值為 0，這導致 `Label` 的 `Scale` 屬性設為 0，而不是 1，並讓 `Label` 消失。
+在[前一篇文章](basic-bindings.md)中，[替代程式碼繫結]  和 [替代 XAML 繫結]  頁面顯示的 `Label`，其 `Scale` 屬性繫結至 `Slider` 的 `Value` 屬性。 因為 `Slider` 初始值為 0，這導致 `Label` 的 `Scale` 屬性設為 0，而不是 1，並讓 `Label` 消失。
 
-在 [**DataBindingDemos**](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) 範例中，[反向繫結] 頁面與上一篇文章中的程式類似，不同之處在於其資料繫結是定義於 `Slider` 之上，而非 `Label`：
+在 [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) 範例中，[反向繫結]  頁面與上一篇文章中的程式類似，不同之處在於其資料繫結是定義於 `Slider` 之上，而非 `Label`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -51,7 +51,7 @@ ms.locfileid: "64977779"
 
 但您可能會覺得奇怪為何 `Slider` 仍繼續運作，如 Android 和 UWP 的螢幕擷取畫面所示。 這似乎表示由於初始化如我們預期般運作，因此當繫結目標是 `Slider` 而非 `Label` 時，資料繫結運作效果較佳。
 
-**反向繫結**範例和稍早範例之間的差異與「繫結模式」有關。
+**反向繫結**範例和稍早範例之間的差異與「繫結模式」  有關。
 
 ## <a name="the-default-binding-mode"></a>預設繫結模式
 
@@ -107,9 +107,9 @@ ms.locfileid: "64977779"
 
 ## <a name="viewmodels-and-property-change-notifications"></a>ViewModel 和屬性變更通知
 
-[Simple Color Selector] \(簡易色彩選取器\) 頁面會示範如何使用簡易的 ViewModel。 資料繫結可讓使用者透過色調、飽和度和亮度三個 `Slider` 項目來選取色彩。
+[Simple Color Selector] \(簡易色彩選取器\)  頁面會示範如何使用簡易的 ViewModel。 資料繫結可讓使用者透過色調、飽和度和亮度三個 `Slider` 項目來選取色彩。
 
-ViewModel 是資料繫結來源。 ViewModel「不會」定義可繫結的屬性，但它會實作通知機制，以在屬性值變更時通知繫結基礎結構。 此通知機制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 介面，其會定義名為 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的單一事件。 實作這個介面的類別通常會在其中一個公用屬性變更值時引發事件。 如果屬性從不變更，就不需要引發事件  (`BindableObject` 也會實作 `INotifyPropertyChanged` 介面，並在可繫結的屬性值變更時引發 `PropertyChanged` 事件)。
+ViewModel 是資料繫結來源。 ViewModel「不會」  定義可繫結的屬性，但它會實作通知機制，以在屬性值變更時通知繫結基礎結構。 此通知機制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 介面，其會定義名為 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的單一事件。 實作這個介面的類別通常會在其中一個公用屬性變更值時引發事件。 如果屬性從不變更，就不需要引發事件 (`BindableObject` 也會實作 `INotifyPropertyChanged` 介面，並在可繫結的屬性值變更時引發 `PropertyChanged` 事件)。
 
 `HslColorViewModel` 類別定義五個屬性：`Hue`、`Saturation`、`Luminosity` 和 `Color` 屬性相互關聯。 當這三個色彩元件其中之一變更值時，即會重新計算 `Color` 屬性，並引發所有四個屬性的 `PropertyChanged` 事件：
 
@@ -211,7 +211,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 不過，當目標屬性 (或目標屬性上的 `Binding` 定義) 具有 `OneTime` 的 `BindingMode` 時，繫結基礎結構就不需要將處理常式附加到 `PropertyChanged` 事件。 只有在 `BindingContext` 變更時 (而非來源屬性本身變更時)，才會更新目標屬性。
 
-[Simple Color Selector] \(簡易色彩選取器\) XAML 檔案會具現化頁面資源字典中的 `HslColorViewModel`，並初始化 `Color` 屬性。 `Grid` 的 `BindingContext` 屬性會設為 `StaticResource` 繫結延伸模組以參考該資源：
+[Simple Color Selector] \(簡易色彩選取器\)  XAML 檔案會具現化頁面資源字典中的 `HslColorViewModel`，並初始化 `Color` 屬性。 `Grid` 的 `BindingContext` 屬性會設為 `StaticResource` 繫結延伸模組以參考該資源：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -265,7 +265,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 當您操作滑桿時，`BoxView` 和 `Label` 會隨之更新，如 Android 及 UWP 螢幕擷取畫面所示。
 
-具現化資源字典中的 ViewModel 是一個常見的方法。 您也可以針對 `BindingContext` 屬性，具現化屬性項目標記內的 ViewModel。 在 [Simple Color Selector] \(簡易色彩選取器\) XAML 檔案中，嘗試從資源字典中移除 `HslColorViewModel`，並將它設定為 `Grid` 的 `BindingContext` 屬性，如下所示：
+具現化資源字典中的 ViewModel 是一個常見的方法。 您也可以針對 `BindingContext` 屬性，具現化屬性項目標記內的 ViewModel。 在 [Simple Color Selector] \(簡易色彩選取器\)  XAML 檔案中，嘗試從資源字典中移除 `HslColorViewModel`，並將它設定為 `Grid` 的 `BindingContext` 屬性，如下所示：
 
 ```xaml
 <Grid>
@@ -284,7 +284,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 如果目標屬性的預設繫結模式不適用於特定資料繫結，您可以將 `Binding` 的 [`Mode`](xref:Xamarin.Forms.BindingBase.Mode) 屬性 (或 `Binding` 標記延伸的 [`Mode`](xref:Xamarin.Forms.Xaml.BindingExtension.Mode) 屬性) 設為其中一個 `BindingMode` 列舉成員，以將其覆寫。
 
-不過，將 `Mode` 屬性設為 `TwoWay` 不一定一律如預期般有效。 例如，嘗試修改 [替代 XAML 繫結] XAML 檔案，以在繫結定義中包含 `TwoWay`：
+不過，將 `Mode` 屬性設為 `TwoWay` 不一定一律如預期般有效。 例如，嘗試修改 [替代 XAML 繫結]  XAML 檔案，以在繫結定義中包含 `TwoWay`：
 
 ```xaml
 <Label Text="TEXT"
@@ -298,7 +298,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 您可能預期 `Slider` 會初始化為 `Scale` 屬性的初始值，也就是 1，但實際並不會發生。 當 `TwoWay` 繫結初始化時，會先從來源設定目標，這表示 `Scale` 屬性會設為 `Slider` 預設值 0。 當 `Slider` 設定了 `TwoWay` 繫結時，一開始會從來源設定 `Slider`。
 
-您可以將 [替代 XAML 繫結] 範例中的繫結模式設定為 `OneWayToSource`：
+您可以將 [替代 XAML 繫結]  範例中的繫結模式設定為 `OneWayToSource`：
 
 ```xaml
 <Label Text="TEXT"
@@ -317,7 +317,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 若要使用 `TwoWay` 覆寫預設繫結模式，其中一個實用的應用程式牽涉到 `ListView` 的 `SelectedItem` 屬性。 預設繫結模式為 `OneWayToSource`。 當 `SelectedItem` 屬性設定了資料繫結以參考 ViewModel 中的來源屬性時，則會從 `ListView` 選取項目設定該來源屬性。 不過，在某些情況下，您可能也希望從 ViewModel 初始化 `ListView`。
 
-[範例設定] 頁面會示範這項技術。 此頁面表示簡易的應用程式設定實作，其通常定義於 ViewModel 中，例如這個 `SampleSettingsViewModel` 檔案：
+[範例設定]  頁面會示範這項技術。 此頁面表示簡易的應用程式設定實作，其通常定義於 ViewModel 中，例如這個 `SampleSettingsViewModel` 檔案：
 
 ```csharp
 public class SampleSettingsViewModel : INotifyPropertyChanged
@@ -684,5 +684,5 @@ public partial class SampleSettingsPage : ContentPage
 
 ## <a name="related-links"></a>相關連結
 
-- [Data Binding Demos (Samples)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) (資料繫結示範 (範例))
+- [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
 - [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

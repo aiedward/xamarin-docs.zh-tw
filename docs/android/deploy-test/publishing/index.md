@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 4b50d230be642466de68c54957a3fe9a79c1093b
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: ebf29e99e1145c23bf476cb80e068e79f72816f5
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57670936"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68643908"
 ---
 # <a name="publishing-an-application"></a>發行應用程式
 
@@ -55,7 +55,7 @@ Google Play 可說是最全方位且最受歡迎的 Android 應用程式市集�
 
 ## <a name="related-links"></a>相關連結
 
-- [HelloWorldPublishing (範例)](https://developer.xamarin.com/samples/monodroid/HelloWorldPublishing/)
+- [HelloWorldPublishing (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/helloworldpublishing)
 - [建置流程](~/android/deploy-test/building-apps/build-process.md)
 - [連結](~/android/deploy-test/linker.md)
 - [取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
