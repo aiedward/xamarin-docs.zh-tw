@@ -85,13 +85,13 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 
 在此範例中, `TopFollowers`集合中的每個專案都會`CircleImage`由中定義的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)視圖顯示:
 
-![具有 DataTemplate]的可繫結版面配置(bindable-layouts-images/top-followers.png "具有資料範本的")可繫結版面配置
+![具有 DataTemplate 的可繫結版面配置](bindable-layouts-images/top-followers.png "具有資料範本的可繫結版面配置")
 
 如需資料範本的詳細資訊，請參閱 [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="choosing-item-appearance-at-runtime"></a>在執行時間選擇專案外觀
 
-藉由將`BindableLayout.ItemTemplateSelector`附加屬性設定[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)為, 可以在執行時間根據專案值選擇可繫結版面配置中每個專案的外觀:
+藉由將 `BindableLayout.ItemTemplateSelector` 附加屬性設定為 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)，可以根據項目值在執行階段選擇可繫結版面配置中每個項目的外觀：
 
 ```xaml
 <FlexLayout BindableLayout.ItemsSource="{Binding User.FavoriteTech}"
@@ -125,7 +125,7 @@ public class TechItemTemplateSelector : DataTemplateSelector
 
 類別會定義`DefaultTemplate`設定`XamarinFormsTemplate`為不同資料範本的和[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `TechItemTemplateSelector` `OnSelectTemplate`方法會傳回,這會在專案與"Xamarin"相等時,以深紅色顯示專案,並在其旁邊`XamarinFormsTemplate`有一個心形。 當專案不等於 "Xamarin" 時, `OnSelectTemplate`方法`DefaultTemplate`會傳回, 它會使用的預設色彩[`Label`](xref:Xamarin.Forms.Label)來顯示專案:
 
-![具有 DataTemplateSelector]的可繫結版面配置(bindable-layouts-images/favorite-tech.png "使用資料範本選取器進行")可繫結的版面配置
+![具有 DataTemplateSelector 的可繫結版面配置](bindable-layouts-images/favorite-tech.png "具有資料範本選取器的可繫結版面配置")
 
 如需資料範本選取器的詳細資訊, 請參閱[建立 Xamarin DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
