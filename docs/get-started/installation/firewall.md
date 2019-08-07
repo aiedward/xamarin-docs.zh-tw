@@ -39,7 +39,7 @@ _您需要在防火牆中允許的主機清單, 以便讓 Xamarin 平臺能為�
 
 您必須新增下列位址，才能存取 NuGet (Xamarin.Forms 已封裝為 NuGet)：
 
-- www.nuget.org (以存取 NuGet)
+- [www.nuget.org](www.nuget.org) (以存取 NuGet)
 - globalcdn.nuget.org (NuGet 下載)
 - dl-ssl.google.com (適用於 Android 和 Xamarin.Forms 的 Google 元件)
 
