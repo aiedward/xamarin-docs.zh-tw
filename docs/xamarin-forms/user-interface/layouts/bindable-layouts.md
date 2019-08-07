@@ -1,6 +1,6 @@
 ---
 title: Xamarin 中可繫結的版面配置
-description: 可繫結的版面配置可讓配置類別繫結至專案集合, 以產生其內容, 並選擇使用 DataTemplate 來設定每個專案的外觀。
+description: 可繫結的版面配置可讓配置類別繫結至專案集合，以產生其內容，並選擇使用 DataTemplate 來設定每個專案的外觀。
 ms.prod: xamarin
 ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
 ms.technology: xamarin-forms
@@ -18,7 +18,7 @@ ms.locfileid: "68647899"
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
-可繫結的版面配置可讓任何衍生[`Layout<T>`](xref:Xamarin.Forms.Layout`1)自類別的版面配置類別, 藉由繫結至專案集合來產生其內容, 並提供選項來設定每[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)個專案的外觀。 可繫結的配置是`BindableLayout`由類別所提供, 它會公開下列附加屬性:
+可繫結的版面配置可讓衍生自 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 的任何版面配置類別透過繫結至項目集合來產生其內容 (並提供使用 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 來設定每個項目外觀的選項)。可繫結的配置是由 `BindableLayout` 類別所提供，此類別會公開下列附加屬性：
 
 - `ItemsSource`–指定要由配置`IEnumerable`顯示的專案集合。
 - `ItemTemplate`–指定[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)要套用至配置所顯示專案集合中每個專案的。
@@ -31,14 +31,14 @@ ms.locfileid: "68647899"
 
 `Layout<T>`類別會[`Children`](xref:Xamarin.Forms.Layout`1.Children)公開集合, 其中會加入配置的子項目。 當屬性設定為專案的集合, 並且附加[`Layout<T>`](xref:Xamarin.Forms.Layout`1)至衍生類別時, `Layout<T>.Children`集合中的每個專案都會加入集合中, 供配置顯示。 `BinableLayout.ItemsSource` 然後`Layout<T>`, 衍生的類別會在基礎集合變更時, 更新其子視圖。 如需有關 [Xamarin] 版面配置週期的詳細資訊, 請參閱[建立自訂版面](~/xamarin-forms/user-interface/layouts/custom.md)配置。
 
-只有當要顯示的專案集合很小, 而且不需要進行滾動和選取時, 才應該使用可繫結的版面配置。 雖然可以藉由在中[`ScrollView`](xref:Xamarin.Forms.ScrollView)包裝可繫結的配置來提供滾動, 但不建議將此功能當做可繫結的配置缺乏 UI 虛擬化。 需要進行滾動時, 應該使用包含 UI 虛擬化的可滾動視圖[`ListView`](xref:Xamarin.Forms.ListView) , [`CollectionView`](xref:Xamarin.Forms.CollectionView)例如或。 若無法觀察這項建議, 可能會導致效能問題。
+只有當要顯示的專案集合很小，而且不需要進行捲動及選取時，才應該使用可繫結的版面配置。雖然可以透過在 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 中包裝可繫結的版面配置來提供捲動，但建議不要這樣做，因為可繫結的版面配置缺乏 UI 虛擬化。需要進行捲動時，應該使用包含 UI 虛擬化的可捲動檢視，例如 [`ListView`](xref:Xamarin.Forms.ListView) 或 [`CollectionView`](xref:Xamarin.Forms.CollectionView)。若未遵循此建議，可能會導致效能問題。
 
 > [!IMPORTANT]
->雖然技術上可以將可繫結的配置附加[`Layout<T>`](xref:Xamarin.Forms.Layout`1)至衍生自類別的任何版面配置類別, 但這樣做並不一定可行, 特別是[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)針對、 [`Grid`](xref:Xamarin.Forms.Grid)和[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)類別。 例如, 假設您想要[`Grid`](xref:Xamarin.Forms.Grid)使用可繫結的版面配置來顯示中的資料集合, 其中集合中的每個專案都是包含多個屬性的物件。 中的`Grid`每個資料列應該會顯示集合中的物件, 而中的`Grid`每個資料行會顯示物件的其中一個屬性。 因為可[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)繫結配置的只能包含單一物件, 所以該物件必須是包含多個 views 的版面配置類別, 而每個視圖都會在特定`Grid`資料行中顯示物件的其中一個屬性。 雖然可以使用可繫結的配置來 realised 此案例, 但它`Grid`會產生一個`Grid`父系, 其中包含繫結集合中每個專案的子繫, 這對配置`Grid`而言非常沒有效率且有問題的用法。
+>雖然技術上可以將可繫結的版面配置附加到衍生自 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 類別的任何版面配置類別，但這樣做並不一定可行，特別是對 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)、[`Grid`](xref:Xamarin.Forms.Grid) 與 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 類別而言。例如，假設您想要使用可繫結的版面配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中顯示資料集合，其中集合中的每個項目都是包含多個屬性的物件。`Grid` 中的每列都應該會顯示來自集合的物件，而 `Grid` 中的每欄都會顯示物件的其中一個屬性。因為可繫結版面配置的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 只能包含單一物件，所以該物件必須是包含多個檢視 (其中每個檢視都會顯示特定 `Grid` 欄中其中一個物件屬性) 的版面配置類別。雖然可以使用可繫結版面配置來實現此案例，但它會針對繫結集合中的每個項目產生包含子系 `Grid` 的父系 `Grid`，這種使用 `Grid` 版面配置的方式不僅非常沒效率，而且很容易發生問題。
 
 ## <a name="populating-a-bindable-layout-with-data"></a>以資料填入可繫結的版面配置
 
-可繫結的配置會將其`ItemsSource`屬性設定為任何可執行檔集合`IEnumerable`, [`Layout<T>`](xref:Xamarin.Forms.Layout`1)並將其附加至衍生類別, 以填入資料:
+可繫結的配置會透過將其 `ItemsSource` 屬性設定為實作`IEnumerable` 的任何集合並將它附加到 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 衍生類別，以填入資料：
 
 ```xaml
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
