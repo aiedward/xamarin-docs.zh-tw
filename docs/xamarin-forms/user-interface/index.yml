@@ -1,0 +1,195 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Forms 使用者介面
+metadata:
+  title: Xamarin.Forms 使用者介面
+  description: 了解如何使用 Xamarin.Forms 建立使用者介面。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 07/31/2019
+abstract:
+  description: 了解如何使用 Xamarin.Forms 建立使用者介面。
+sections:
+  - title: null
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: activityindicator.md
+            html: 了解如何使用 ActivityIndicator，向使用者指出應用程式在進行長時間的活動，而不提供進度指示。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: activityindicator.md
+            title: ActivityIndicator
+          - href: animation/index.md
+            html: 了解如何在 Xamarin.Forms 中建立動畫。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: animation/index.md
+            title: 動畫
+          - href: boxview.md
+            html: 了解如何使用 BoxView 建立彩色矩形。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: boxview.md
+            title: BoxView
+          - href: button.md
+            html: 了解如何使用 Button 指示應用程式執行特定工作。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: button.md
+            title: 按鈕
+          - href: checkbox.md
+            html: 了解如何使用 CheckBox 設定布林值。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: checkbox.md
+            title: 核取方塊
+          - href: collectionview/index.md
+            html: 了解如何使用 CollectionView，使用不同的版面配置規格來呈現資料清單。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: collectionview/index.md
+            title: CollectionView
+          - href: colors.md
+            html: 了解如何使用 Color 類別，跨平台定義及使用色彩。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: colors.md
+            title: 色彩
+          - href: controls/index.md
+            html: 了解可在 Xamarin.Forms 中使用的頁面、版面配置、檢視和資料格。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: controls/index.md
+            title: 控制項參考
+          - href: datepicker.md
+            html: 了解如何使用 DatePicker，允許選取指定範圍內的日期。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: datepicker.md
+            title: DatePicker
+          - href: pop-ups.md
+            html: 了解如何顯示對話方塊，詢問使用者簡單的問題及引導使用者完成工作。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: pop-ups.md
+            title: 顯示快顯
+          - href: graphics/skiasharp/index.md
+            html: 了解如何使用 SkiaSharp 將圖形併入 Xamarin.Forms 應用程式中。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: graphics/skiasharp/index.md
+            title: 使用 Skiasharp 的圖形
+          - href: images.md
+            html: 了解如何使用 Image 控制項顯示影像。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: images.md
+            title: 影像
+          - href: imagebutton.md
+            html: 了解如何使用 ImageButton 控制項顯示影像，以及回應點選，指示應用程式完成特定工作。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: imagebutton.md
+            title: ImageButton
+          - href: layouts/index.md
+            html: 了解如何使用 Xamarin.Forms 中的版面配置控制項和功能來安排內容
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: layouts/index.md
+            title: 版面配置
+          - href: listview/index.md
+            html: 了解如何使用 ListView 控制項呈現資料清單。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: listview/index.md
+            title: ListView
+          - href: map.md
+            html: 了解如何使用 Map 控制項，包括必要的平台設定，以及如何在地圖中填入圖釘。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: map.md
+            title: 地圖
+          - href: picker/index.md
+            html: 了解如何使用 Picker 控制項，從資料清單中選取文字項目。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: picker/index.md
+            title: Picker
+          - href: progressbar.md
+            html: 了解如何使用 ProgressBar，指出應用程式在進行長時間的活動。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: progressbar.md
+            title: 進度列
+          - href: searchbar.md
+            html: 了解如何使用 SearchBar 控制項起始搜尋。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: searchbar.md
+            title: 搜尋列
+          - href: slider.md
+            html: 了解如何透過 Slider 控制項，允許使用者從連續的範圍中選取數值。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: slider.md
+            title: 滑桿
+          - href: stepper.md
+            html: 了解如何透過 Stepper 控制項，允許使用者從值的範圍中選取數值。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: stepper.md
+            title: Stepper
+          - href: styles/index.md
+            html: 了解如何使用 XAML Styles 和階層式樣式表 (CSS) 建立使用者介面的樣式。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: styles/index.md
+            title: 樣式
+          - href: switch.md
+            html: 了解如何使用 Switch 設定布林值。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: switch.md
+            title: 參數
+          - href: tableview.md
+            html: 了解如何使用 TableView 顯示可捲動的資料或選項清單，其中各列不會共用相同的範本。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: tableview.md
+            title: TableView
+          - href: text/index.md
+            html: 了解用來呈現和接收文字的 Xamarin.Forms 控制項。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: text/index.md
+            title: Text
+          - href: timepicker.md
+            html: 了解如何使用 TimePicker 允許選取時間。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: timepicker.md
+            title: TimePicker
+          - href: visual/index.md
+            html: 了解如何使用 Xamarin.Forms Material Visual，建立在 iOS 和 Android 上看起來完全相同或大致相同的應用程式。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: visual/index.md
+            title: 視覺效果
+          - href: visual-state-manager.md
+            html: 了解如何使用 VisualStateManager 類別定義使用者介面的視覺狀態，及啟動狀態。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: visual-state-manager.md
+            title: Visual State Manager
+          - href: webview.md
+            html: 了解如何在 Xamarin.Forms 應用程式中顯示 HTML 和 Web 內容。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: webview.md
+            title: WebView
