@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 62e825a497e6d2cb06414a2553ba1cfe2864fca1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: dac059576b8821d218cca44ae1c049010e364cfc
+ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832210"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68739354"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>從圖片媒體櫃挑選相片
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 本文會逐步說明如何建立可讓使用者從手機圖片媒體櫃挑選相片的應用程式。 由於 Xamarin.Forms 不包含這項功能，因此您必須使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 存取每個平台的原生 API。
 
@@ -280,6 +280,6 @@ async void OnPickPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [Dependency Service (Samples)](https://github.com/xamarin/xamarin-forms-samples/tree/master/DependencyService) (相依性服務 (範例))
+- [Dependency Service (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/) (相依性服務 (範例))
 - [從資源庫選擇相片 (iOS)](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
 - [選取影像 (Android)](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)

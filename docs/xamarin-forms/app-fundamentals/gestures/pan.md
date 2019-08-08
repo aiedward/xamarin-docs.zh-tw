@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 03b9c5f903cea67032a9560754a32ac552635e92
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 73e312a1af56091a7e579d3fcbcea810ee0efb1e
+ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653866"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68820976"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>新增平移手勢辨識器
 
@@ -48,9 +48,6 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
   // Handle the pan
 }
 ```
-
-> [!NOTE]
-> 在 Android 上正確平移至少需要 [Xamarin.Forms 2.1.0-pre1 NuGet 套件](https://www.nuget.org/packages/Xamarin.Forms/2.1.0.6501-pre1)。
 
 ## <a name="creating-a-pan-container"></a>建立平移容器
 
@@ -147,7 +144,7 @@ void OnPanUpdated (object sender, PanUpdatedEventArgs e)
 在未佔滿螢幕的項目中平移內容時，檢視區的高度和寬度可從項目的 [`Height`](xref:Xamarin.Forms.VisualElement.Height) 和 [`Width`](xref:Xamarin.Forms.VisualElement.Width) 屬性取得。
 
 > [!NOTE]
-> 顯示高解析度影像可能會大幅增加應用程式的記憶體使用量。 因此，請務必只有在必要時才加以建立，並在應用程式不再需要時立即釋出。 如需詳細資訊，請參閱[最佳化影像資源](~/xamarin-forms/deploy-test/performance.md#optimizeimages)。
+> 顯示高解析度影像可能會大幅增加應用程式的記憶體使用量。 因此，請務必只有在必要時才加以建立，並在應用程式不再需要時立即釋出。 如需詳細資訊，請參閱[最佳化影像資源](~/xamarin-forms/deploy-test/performance.md#optimize-image-resources)。
 
 ## <a name="related-links"></a>相關連結
 
