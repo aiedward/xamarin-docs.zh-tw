@@ -1,5 +1,5 @@
 ---
-title: 使用人臉識別 API 的表情辨識
+title: 使用臉部 API 的認知表情辨識
 description: 人臉識別 API 的臉部表情作為輸入，映像，並傳回資料，包括跨一組影像中每個臉部表情的信心層級。 這篇文章說明如何使用人臉識別 API，可辨識這些表情，若要評比 Xamarin.Forms 應用程式。
 ms.prod: xamarin
 ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
@@ -7,22 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 6f03ae1030ef4a69b15c5e219785eee12c4e603b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05dfa69a70bcd43b66cf6b572aee7d5720a81d76
+ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656569"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869400"
 ---
-# <a name="emotion-recognition-using-the-face-api"></a>使用人臉識別 API 的表情辨識
+# <a name="perceived-emotion-recognition-using-the-face-api"></a>使用臉部 API 的認知表情辨識
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_人臉識別 API 的臉部表情作為輸入，映像，並傳回資料，包括跨一組影像中每個臉部表情的信心層級。這篇文章說明如何使用人臉識別 API，可辨識這些表情，若要評比 Xamarin.Forms 應用程式。_
+臉部 API 可執行表情偵測, 以根據人類半截所認知的注釋, 在臉部運算式中偵測生氣、藐視、厭惡、恐懼、快樂、中性、悲傷和驚喜。 不過, 請務必注意, 臉部運算式本身可能不一定代表人員的內部狀態。
 
-## <a name="overview"></a>總覽
-
-人臉識別 API 可以執行情緒偵測來偵測生氣、 藐視、 厭惡、 恐懼、 快樂、 悲傷及驚喜，臉部的運算式中。 這些表情是通用和不同溝通透過相同的基本臉部表情。 傳回運算式臉部表情結果，以及人臉識別 API 也可以傳回偵測到的臉部的週框方塊。 請注意，必須使用人臉識別 API 取得 API 金鑰。 這可在取得[試用認知服務](https://azure.microsoft.com/try/cognitive-services/?api=face-api)。
+除了傳回臉部運算式的表情結果以外, 臉部 API 也可以針對偵測到的臉部傳回周框方塊。 請注意，必須使用人臉識別 API 取得 API 金鑰。 這可在取得[試用認知服務](https://azure.microsoft.com/try/cognitive-services/?api=face-api)。
 
 透過用戶端程式庫，和透過 REST API，您可以執行表情辨識。 本文著重於執行表情辨識透過 REST API。 如需有關 REST API 的詳細資訊，請參閱 <<c0> [ 臉部 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
 
@@ -44,7 +42,7 @@ public FaceRecognitionService()
 
 將有效的 API 金鑰的臉部 api 的失敗會導致 401 回應時發生錯誤。
 
-## <a name="performing-emotion-recognition"></a>執行表情辨識
+## <a name="perform-emotion-recognition"></a>執行表情辨識
 
 藉由 POST 要求包含映像以執行表情辨識`detect`API `https://[location].api.cognitive.microsoft.com/face/v1.0`，其中`[location]]`是您用來取得您的 API 金鑰的區域。 選擇性的要求參數如下：
 
@@ -81,7 +79,7 @@ public async Task<Face[]> DetectAsync(Stream imageStream, bool returnFaceId, boo
 > [!NOTE]
 > 為您用來取得您的訂用帳戶金鑰的臉部 API 呼叫中，您必須使用相同的區域。 例如，如果您取得您的訂用帳戶金鑰，從`westus`區域，是臉部偵測端點`https://westus.api.cognitive.microsoft.com/face/v1.0/detect`。
 
-### <a name="sending-the-request"></a>傳送要求
+### <a name="send-the-request"></a>傳送要求
 
 `SendRequestAsync`方法對人臉識別 API 的 POST 要求，並傳回結果做`Face`陣列：
 
@@ -132,7 +130,7 @@ POST 要求然後傳送至`detect`API。 回應是讀取、 還原序列化，�
 
 `detect` API 會在回應中，提供要求是有效的表示要求成功，且要求的資訊會在回應中傳送 HTTP 狀態碼 200 （確定）。 如需可能的錯誤回應的清單，請參閱 <<c0> [ 臉部 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
 
-### <a name="processing-the-response"></a>處理回應
+### <a name="process-the-response"></a>處理回應
 
 API 回應會傳回 JSON 格式。 下列 JSON 資料會顯示一般的成功回應訊息會提供範例應用程式所要求的資料：
 
@@ -173,10 +171,6 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 下列螢幕擷取畫面顯示範例應用程式中的表情辨識程序的結果：
 
 ![](emotion-recognition-images/emotion-recognition.png "表情辨識")
-
-## <a name="summary"></a>總結
-
-這篇文章說明如何使用人臉識別 API，可辨識這些表情，若要評比 Xamarin.Forms 應用程式。 人臉識別 API 的臉部表情作為輸入，映像，並傳回資料，包括跨一組影像中每個臉部表情的信心。
 
 ## <a name="related-links"></a>相關連結
 
