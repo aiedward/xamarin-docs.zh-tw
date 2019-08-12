@@ -151,6 +151,7 @@
 #### [版面配置](user-interface/controls/layouts.md)
 #### [檢視](user-interface/controls/views.md)
 #### [儲存格](user-interface/controls/cells.md)
+#### [第三方控制項](user-interface/controls/thirdparty.md)
 ### [DataPages](user-interface/datapages/index.md)
 #### [開始使用](user-interface/datapages/get-started.md)
 #### [控制項參考](user-interface/datapages/controls.md)
@@ -339,7 +340,7 @@
 #### [語音辨識](data-cloud/azure-cognitive-services/speech-recognition.md)
 #### [拼字檢查](data-cloud/azure-cognitive-services/spell-check.md)
 #### [文字轉譯](data-cloud/azure-cognitive-services/text-translation.md)
-#### [情緒辨識](data-cloud/azure-cognitive-services/emotion-recognition.md)
+#### [認知表情辨識](data-cloud/azure-cognitive-services/emotion-recognition.md)
 ### Web 服務
 #### [Web 服務概觀](data-cloud/web-services/index.md)
 #### [簡介](data-cloud/web-services/introduction.md)
