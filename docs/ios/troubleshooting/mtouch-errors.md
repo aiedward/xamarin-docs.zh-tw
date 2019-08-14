@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: da19b9071695f11a7c5591b7e715d85daa01841b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 3291589f4a61fad7d7465e0ac2bd4844ae4a0655
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508724"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980741"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 錯誤
 
@@ -137,7 +137,7 @@ Xamarin 在錯誤訊息中所述的位置找不到元件。 請確認路徑是�
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015:不正確 ABI: *。 支援的 Abi 包括: i386、x86_64、armv7、armv7 + llvm、armv7 + llvm + thumb2、armv7s、armv7s + llvm、armv7s + llvm + thumb2、arm64 和 arm64 + llvm。
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x86_64--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015:不正確 ABI: *。 支援的 Abi 包括: i386、x86_64、armv7、armv7 + llvm、armv7 + llvm + thumb2、armv7s、armv7s + llvm、armv7s + llvm + thumb2、arm64 和 arm64 + llvm。
 
 傳遞了不正確 ABI 給 mtouch。 請指定有效的 ABI。
 
@@ -252,7 +252,7 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 <a name="MT0037" />
 
-### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x8664"></a>MT0037: monotouch 與64位不相容。 參考 Xamarin 或不是針對64位架構 (ARM64 和/或 x86_64) 所建立。
+### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037: monotouch 與64位不相容。 參考 Xamarin 或不是針對64位架構 (ARM64 和/或 x86_64) 所建立。
 
 <a name="MT0038" />
 
@@ -838,7 +838,7 @@ class Program {
 
 觸控檔案時發生失敗 (這是為了確保部分組建正確地完成)。
 
-可能會忽略此警告;發生任何問題時, 請提出 bug (https://bugzilla.xamarin.com ] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) ), 將會進行調查。
+可能會忽略此警告;發生任何問題時, 會提出 bug [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) , 並進行調查。
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx:專案相關的錯誤訊息
 
@@ -1678,7 +1678,7 @@ Parameter name: instruction
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvancedtopicslimitationsreversecallbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002:AOT 限制:方法 ' * ' 必須是靜態的, 因為它是以 [MonoPInvokeCallback] 裝飾。 請參閱[developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002:AOT 限制:方法 ' * ' 必須是靜態的, 因為它是以 [MonoPInvokeCallback] 裝飾。 請參閱[developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 此錯誤訊息來自 AOT 編譯器。
 
@@ -1824,7 +1824,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112:註冊機構發現不正確類型`*`。 不支援向目標-C 註冊泛型型別, 而且可能會導致隨機行為和/或損毀 (以提供與舊版 Xamarin 的回溯相容性。 iOS 可以藉由傳遞`--unsupported--enable-generics-in-registrar`為其他 mtouch 來忽略此錯誤專案的 [iOS 組建選項] 頁面中的引數。 如需詳細資訊, 請參閱[developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) )。
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112:註冊機構發現不正確類型`*`。 不支援向目標-C 註冊泛型型別, 而且可能會導致隨機行為和/或損毀 (以提供與舊版 Xamarin 的回溯相容性。 iOS 可以藉由傳遞`--unsupported--enable-generics-in-registrar`為其他 mtouch 來忽略此錯誤專案的 [iOS 組建選項] 頁面中的引數。 如需詳細資訊, 請參閱[developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) )。
 
 <a name="MT4113" />
 
@@ -2110,7 +2110,7 @@ Objectice-C 類別的名稱不能包含空白字元, 這表示對應的 managed 
 
 <a name="MT4168" />
 
-### <a name="mt4168-cannot-register-the-type-managedname-because-its-objective-c-name-exportedname-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168:無法註冊類型 ' {受控\_名稱} ', 因為它的目標-c 名稱 ' {已匯出\_名稱} ' 是目標-c 關鍵字。 請使用不同的名稱。
+### <a name="mt4168-cannot-register-the-type-managed_name-because-its-objective-c-name-exported_name-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168:無法註冊類型 ' {受控\_名稱} ', 因為它的目標-c 名稱 ' {已匯出\_名稱} ' 是目標-c 關鍵字。 請使用不同的名稱。
 
 有問題之類型的目標-C 名稱不是有效的目標-C 識別碼。
 
@@ -3017,6 +3017,6 @@ Xamarin 在執行時間找不到必要的方法 (將委派轉換成區塊)。
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:找不到智慧列舉 ' {smart_type} ' 的有效延伸模組類型。 請將 bug 歸檔在 https://bugzilla.xamarin.com 。
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:找不到智慧列舉 ' {smart_type} ' 的有效延伸模組類型。 請將 bug 歸檔在 https://bugzilla.xamarin.com 。
 
 這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。

@@ -6,12 +6,12 @@ ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 47ed7fc1b4485864646a17940aceed395a4a8983
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 1a94a29f0da6f7916eca697a24ad504a0af46b7c
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680915"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978395"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>使用 MonoGame 進行遊戲開發的簡介
 
@@ -23,18 +23,17 @@ MonoGame 是跨平臺的硬體加速 API, 提供圖形、音訊、遊戲狀態�
 
 本逐步解說的第一節著重于設定空的專案。 最後一節涵蓋撰寫所有遊戲邏輯和內容, 其中大部分都是跨平臺。
 
-在本逐步解說結束時, 我們將建立一個簡單的遊戲, 讓播放程式可以透過觸控輸入來控制動畫字元。  雖然這在技術上並不是一項完整的遊戲 (因為它沒有任何獲勝或遺失的情況), 但它會示範許多遊戲開發概念, 並可做為許多遊戲類型的基礎。 
+在本逐步解說結束時, 我們將建立一個簡單的遊戲, 讓播放程式可以透過觸控輸入來控制動畫字元。  雖然這在技術上並不是一項完整的遊戲 (因為它沒有任何獲勝或遺失的情況), 但它會示範許多遊戲開發概念, 並可做為許多遊戲類型的基礎。
 
 以下顯示此逐步解說的結果:
 
 ![遵循滑鼠後的範例遊戲字元動畫](images/image1.gif)
 
-## <a name="monogame-and-xna"></a>Monogame 和
+## <a name="monogame-and-xna"></a>MonoGame 和
 
-MonoGame 程式庫的目的是要以語法和功能來模擬 Microsoft 的「主要」程式庫。  所有的 MonoGame 物件都存在於 MonoGame 中, 可讓大部分的未修改的程式碼都能在中使用。 
+MonoGame 程式庫的目的是要以語法和功能來模擬 Microsoft 的「主要」程式庫。  所有的 MonoGame 物件都存在於 MonoGame 中, 可讓大部分的未修改的程式碼都能在中使用。
 
 熟悉的應用程式開發人員將已熟悉 MonoGame 的語法, 而開發人員若要取得使用 MonoGame 的其他資訊, 就能夠參考現有的線上的執行集區逐步解說、API 檔和討論。
-
 
 ## <a name="walkthrough-parts"></a>逐步解說部分
 
