@@ -49,6 +49,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: hot-reload.md
+            html: 了解如何使用 XAML 熱重載來快速驗證 UI 變更。
+            image:
+              src: ~/media/icons/i_quickstart-3.svg
+              href: hot-reload.md
+            title: 熱重載
           - href: toolbox.md
             html: 了解如何使用 XAML 工具箱將 Xamarin.Forms 控制項與版面配置拖曳到 XAML 編輯器中。
             image:

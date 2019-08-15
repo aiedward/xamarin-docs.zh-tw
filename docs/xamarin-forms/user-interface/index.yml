@@ -9,7 +9,7 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/31/2019
+  ms.date: 08/07/2019
 abstract:
   description: 了解如何使用 Xamarin.Forms 建立使用者介面。
 sections:
@@ -115,6 +115,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: map.md
             title: 地圖
+          - href: menuitem.md
+            html: 了解如何使用 MenuItem 類別，將項目新增到 ListView 資料格的操作功能表。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: menuitem.md
+            title: MenuItem
           - href: picker/index.md
             html: 了解如何使用 Picker 控制項，從資料清單中選取文字項目。
             image:
@@ -169,12 +175,24 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: text/index.md
             title: Text
+          - href: theming.md
+            html: 了解如何建立 Xamarin.Forms 應用程式的主題，以及在執行時間變更佈景主題。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: theming.md
+            title: 佈景主題
           - href: timepicker.md
             html: 了解如何使用 TimePicker 允許選取時間。
             image:
               src: ~/media/icons/i_user-interface.svg
               href: timepicker.md
             title: TimePicker
+          - href: toolbaritem.md
+            html: 了解如何使用 ToolbarItem 將按鈕新增到導覽列。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: toolbaritem.md
+            title: ToolbarItem
           - href: visual/index.md
             html: 了解如何使用 Xamarin.Forms Material Visual，建立在 iOS 和 Android 上看起來完全相同或大致相同的應用程式。
             image:

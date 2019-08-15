@@ -1,5 +1,5 @@
 ---
-title: 建立自訂的版面配置
+title: 在 Xamarin 中建立自訂版面配置
 description: 本文說明如何撰寫自訂的版面配置的類別，並示範如何在頁面上，水平排列其子系，然後將包裝至其他資料列的後續子系的顯示方向區分 WrapLayout 類別。
 ms.prod: xamarin
 ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
@@ -7,20 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 11707a1e871b0988847ab4a2c266d268db063000
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0f2136aa4a07d289e1e8aecc6cb37460fdc5727c
+ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645196"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69024523"
 ---
-# <a name="creating-a-custom-layout"></a>建立自訂的版面配置
+# <a name="create-a-custom-layout-in-xamarinforms"></a>在 Xamarin 中建立自訂版面配置
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms 可定義四種版面配置類別 – StackLayout、 AbsoluteLayout、 RelativeLayout 和方格中，和每個以不同方式來排列其子系。不過，有時候就必須以組織使用不提供 Xamarin.Forms 版面配置的頁面內容。本文說明如何撰寫自訂的版面配置的類別，並示範如何在頁面上，水平排列其子系，然後將包裝至其他資料列的後續子系的顯示方向區分 WrapLayout 類別。_
-
-## <a name="overview"></a>總覽
 
 在 Xamarin.Forms 中，所有的版面配置類別衍生自[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)類別，並將泛型類型，以限制[ `View` ](xref:Xamarin.Forms.View)和其衍生的類型。 依次`Layout<T>`類別衍生自[ `Layout` ](xref:Xamarin.Forms.Layout)類別，可提供機制，用來定位和調整大小的子元素。
 
@@ -67,7 +65,7 @@ _Xamarin.Forms 可定義四種版面配置類別 – StackLayout、 AbsoluteLayo
 
 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)可以實作快取以減少重複的引動過程的覆寫[ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))版面配置的子系的方法。 覆寫`InvalidateLayout`方法會提供當加入或從配置中移除子系的通知。 同樣地， [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)可以覆寫方法，以提供的通知，當其中一個版面配置的子系變更大小。 針對這兩個方法覆寫中，自訂的版面配置回應時應該清除快取。 如需詳細資訊，請參閱 <<c0> [ 計算和快取資料](#caching)。
 
-## <a name="creating-a-custom-layout"></a>建立自訂的版面配置
+## <a name="create-a-custom-layout"></a>建立自訂版面配置
 
 建立自訂的版面配置的程序如下所示：
 
@@ -89,7 +87,7 @@ _Xamarin.Forms 可定義四種版面配置類別 – StackLayout、 AbsoluteLayo
 
 <a name="creating" />
 
-### <a name="creating-a-wraplayout"></a>建立 WrapLayout
+### <a name="create-a-wraplayout"></a>建立 WrapLayout
 
 範例應用程式示範方向區分`WrapLayout`類別在頁面上，水平排列其子系，然後將包裝的後續的子系，額外的資料列顯示。
 
@@ -107,7 +105,7 @@ public class WrapLayout : Layout<View>
 
 <a name="caching" />
 
-#### <a name="calculating-and-caching-layout-data"></a>計算和快取配置資料
+#### <a name="calculate-and-cache-layout-data"></a>計算和快取版面配置資料
 
 `LayoutData`結構將相關的子系集合的資料儲存在數個屬性：
 
@@ -200,7 +198,7 @@ LayoutData GetLayoutData(double width, double height)
 
 <a name="adding_properties" />
 
-#### <a name="adding-properties-backed-by-bindable-properties"></a>加入可繫結屬性所支援的屬性
+#### <a name="add-properties-backed-by-bindable-properties"></a>新增可系結屬性所支援的屬性
 
 `WrapLayout`類別會定義`ColumnSpacing`和`RowSpacing`屬性，其值用來分隔的資料列和資料行，在配置中，且其享有的支援可繫結屬性。 可繫結的屬性是以下列程式碼範例所示：
 
@@ -230,7 +228,7 @@ public static readonly BindableProperty RowSpacingProperty = BindableProperty.Cr
 
 <a name="onmeasure" />
 
-#### <a name="overriding-the-onmeasure-method"></a>覆寫 OnMeasure 方法
+#### <a name="override-the-onmeasure-method"></a>覆寫 OnMeasure 方法
 
 `OnMeasure`覆寫以下列程式碼範例所示：
 
@@ -256,7 +254,7 @@ protected override SizeRequest OnMeasure(double widthConstraint, double heightCo
 
 <a name="layoutchildren" />
 
-#### <a name="overriding-the-layoutchildren-method"></a>覆寫 LayoutChildren 方法
+#### <a name="override-the-layoutchildren-method"></a>覆寫 LayoutChildren 方法
 
 `LayoutChildren`覆寫以下列程式碼範例所示：
 
@@ -307,7 +305,7 @@ protected override void LayoutChildren(double x, double y, double width, double 
 
 <a name="invalidatelayout" />
 
-#### <a name="overriding-the-invalidatelayout-method"></a>覆寫 InvalidateLayout 方法
+#### <a name="overridethe-invalidatelayout-method"></a>Overridethe InvalidateLayout 方法
 
 [ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)來新增或移除在版面配置，或當一子系時，會叫用覆寫的`WrapLayout`屬性變更值，如下列程式碼範例所示：
 
@@ -326,7 +324,7 @@ protected override void InvalidateLayout()
 
 <a name="onchildmeasureinvalidated" />
 
-#### <a name="overriding-the-onchildmeasureinvalidated-method"></a>覆寫 OnChildMeasureInvalidated 方法
+#### <a name="override-the-onchildmeasureinvalidated-method"></a>覆寫 OnChildMeasureInvalidated 方法
 
 [ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)覆寫會叫用時配置的子系的其中一個變更大小，以及下列的程式碼範例所示：
 
@@ -342,7 +340,7 @@ protected override void OnChildMeasureInvalidated()
 
 <a name="consuming" />
 
-### <a name="consuming-the-wraplayout"></a>使用 WrapLayout
+### <a name="consume-the-wraplayout"></a>使用 WrapLayout
 
 `WrapLayout`類別可供將它放入[ `Page` ](xref:Xamarin.Forms.Page)衍生型別，如下列 XAML 程式碼範例所示：
 
