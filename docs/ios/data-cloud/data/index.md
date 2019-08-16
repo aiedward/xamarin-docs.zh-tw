@@ -1,56 +1,56 @@
 ---
-title: Xamarin.iOS 資料存取
-description: 本文件所連結說明如何使用本機資料庫中的 Xamarin.iOS 應用程式的指南。 連結的內容討論 SQLite.NET、 ADO.NET 以及更多。
+title: Xamarin. iOS 資料存取
+description: 本檔連結的指南會描述如何在 Xamarin iOS 應用程式中使用本機資料庫。 連結的內容會討論 SQLite.NET、ADO.NET 等等。
 ms.prod: xamarin
 ms.assetid: 3AEDFD8D-FB10-4CEF-BE04-CCD14E95F02C
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/11/2016
-ms.openlocfilehash: 420f52a055dc1c03a017723ab34c2fc3b5363656
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 110d6c95c1bcc93d541b908807fe26c700eb656e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650234"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526596"
 ---
-# <a name="xamarinios-data-access"></a>Xamarin.iOS 資料存取
+# <a name="xamarinios-data-access"></a>Xamarin. iOS 資料存取
 
-Xamarin.iOS 支援資料庫存取 Api，例如：
+Xamarin 支援資料庫存取 Api, 例如:
 
--  ADO.NET 架構。
--  SQLite NET 第 3 方程式庫。
+- ADO.NET 架構。
+- SQLite-NET 協力廠商程式庫。
 
-本指南提供在說明如何存取您的 Xamarin.iOS 應用程式中的 SQLite 資料庫設定 ADO.NET 和 SQLite.NET 之前一般資料庫的高階概觀。 
+本指南在說明如何設定 ADO.NET 和 SQLite.NET 來存取您的 Xamarin iOS 應用程式中的 SQLite 資料庫之前, 一般會先提供資料庫的高階總覽。 
 
-這份文件中的程式碼大多是完全跨平台，並會在 iOS 或 Android 上執行，而不需修改。 有兩個所討論的範例應用程式：
+本檔中的大部分程式碼都是跨平臺, 並會在 iOS 或 Android 上執行, 而不需要修改。 已討論兩個範例應用程式:
 
--  [**DataAccess_Basic** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) -簡單的資料作業寫入以文字顯示結果顯示控制項;
--  [**DataAccess_Advanced** ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) – 小型的工作應用程式，列出編輯簡單的資料結構中整合資料作業。
+- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) –簡單的資料作業會將結果寫入文字顯示控制項;
+- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) –將資料作業整合到小型的工作應用程式, 以列出和編輯簡單的資料結構。
 
-這兩個範例方案包含 iOS 和 Android 範例應用程式專案。
+這兩個範例解決方案都包含 iOS 和 Android 範例應用程式專案。
 
-針對 Xamarin.Forms 應用程式，請閱讀[使用資料庫](~/xamarin-forms/data-cloud/data/databases.md)其中說明如何使用 SQLite 與 Xamarin.Forms PCL 程式庫。
+針對 Xamarin 應用程式, 請參閱使用[資料庫](~/xamarin-forms/data-cloud/data/databases.md), 其中說明如何在具有 XAMARIN 的 PCL 程式庫中使用 SQLite。
 
 ## <a name="sections"></a>章節
 
--  [簡介](introduction.md)
--  [組態](configuration.md)
--  [使用 SQLite.NET ORM](using-sqlite-orm.md)
--  [使用 ADO.NET](using-adonet.md)
--  [在應用程式中使用資料](using-data-in-an-app.md)
+- [簡介](introduction.md)
+- [組態](configuration.md)
+- [使用 SQLite.NET ORM](using-sqlite-orm.md)
+- [使用 ADO.NET](using-adonet.md)
+- [在應用程式中使用資料](using-data-in-an-app.md)
 
 ## <a name="summary"></a>總結
 
-這一章所述使用 SQLite 的資料庫引擎的 Xamarin.iOS 中的資料存取。 「 直接 」 使用 ADO.NET 語法就可以存取資料庫，或您可以包含 SQLite.NET ORM，並在 C# 中執行資料作業。
+本章節使用 SQLite 做為資料庫引擎, 討論了 Xamarin 中的資料存取。 您可以使用 ADO.NET 語法來「直接」存取資料庫, 也可以在中C#包含 SQLite.NET ORM 和執行資料作業。
 
-我們會檢閱兩個範例： 一個包含非常簡單的資料存取程式碼的輸出到文字欄位，以及簡單的應用程式，其中包含建立、 讀取、 更新和刪除功能。 此外，我們也會討論執行緒，以及如何植入您的應用程式，以預先填入的 SQLite 資料庫。
+我們審查了兩個範例: 一個包含非常簡單的資料存取程式碼, 會輸出到文字欄位, 以及一個包含建立、讀取、更新和刪除功能的簡單應用程式。 我們也討論過執行緒, 以及如何使用預先填入的 SQLite 資料庫來植入您的應用程式。
 
-如需跨平台資料存取的其他範例，請參閱我們[Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)案例研究。
+如需跨平臺資料存取的其他範例, 請參閱我們的[Tasky Pro](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)案例研究。
 
 ## <a name="related-links"></a>相關連結
 
-- [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [DataAccess 基本 (範例)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess Advanced (範例)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin.Forms 資料存取](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin. 表單資料存取](~/xamarin-forms/data-cloud/data/databases.md)

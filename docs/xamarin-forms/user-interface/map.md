@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2019
-ms.openlocfilehash: 51555382e38412b7fa2c5c821b252984758bb1ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e818495d45435546f9d2fc9c5593d9c7caa608ea
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656971"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528878"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
@@ -56,9 +56,9 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 此呼叫在中新增每個平台的下列檔案：
 
--  **iOS** -在 AppDelegate.cs 檔案`FinishedLaunching`方法。
--  **Android** -在 MainActivity.cs 檔案`OnCreate`方法。
--  **UWP** -在 MainPage.xaml.cs 檔案`MainPage`建構函式。
+- **iOS** -在 AppDelegate.cs 檔案`FinishedLaunching`方法。
+- **Android** -在 MainActivity.cs 檔案`OnCreate`方法。
+- **UWP** -在 MainPage.xaml.cs 檔案`MainPage`建構函式。
 
 新增 NuGet 套件並在每個應用程式內呼叫初始化方法之後, `Xamarin.Forms.Maps`即可在通用 .NET Standard 程式庫專案或共用的專案程式碼中使用 api。
 
@@ -178,16 +178,16 @@ map.MapType == MapType.Street;
 
 有效`MapType`的值為：
 
--  混合式
--  附屬
--  Street （預設值）
+- 混合式
+- 附屬
+- Street （預設值）
 
 ### <a name="map-region-and-mapspan"></a>對應區域和 MapSpan
 
 上述程式碼片段所示，提供`MapSpan`map 建構函式的執行個體設定的初始檢視 （中心點和縮放層級） 時就會載入對應。 `MoveToRegion` Map 類別上的方法可以再用來變更對應的位置或縮放層級。 有兩種方式來建立新的`MapSpan`執行個體：
 
--  **MapSpan.FromCenterAndRadius()** -靜態方法，以建立來自`Position`並指定`Distance`。
--  **新的 MapSpan （)** -使用的建構函式`Position`和程度的緯度和經度來顯示。
+- **MapSpan.FromCenterAndRadius()** -靜態方法，以建立來自`Position`並指定`Distance`。
+- **新的 MapSpan （)** -使用的建構函式`Position`和程度的緯度和經度來顯示。
 
 
 若要變更地圖的縮放層級但是不會改變位置，建立新`MapSpan`使用目前的位置，從`VisibleRegion.Center`地圖控制項的屬性。 A`Slider`可用來控制地圖縮放，像這樣 （不過，縮放直接在地圖控制項中目前無法更新滑桿的值）：
@@ -220,10 +220,10 @@ map.Pins.Add(pin);
 
 `PinType`可以設定為下列其中一個值, 這可能會影響釘選的呈現方式 (視平臺而定):
 
--  泛型
--  位置
--  SavedPin
--  SearchResult
+- 泛型
+- 位置
+- SavedPin
+- SearchResult
 
 ### <a name="map-clicks"></a>對應點擊
 

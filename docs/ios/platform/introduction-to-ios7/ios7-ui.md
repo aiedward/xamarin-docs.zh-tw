@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 5ebfa7348e13e5b168dd7f2decbef921bd7d69e3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e943b10623507278c073e73e5b755bcb5954bdaa
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652117"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528327"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 使用者介面概觀
 
@@ -130,9 +130,9 @@ cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 
 除了 UIKit 中的變更之外, iOS 7 也引進了 UI 的各種視覺變更, 包括:
 
--  全螢幕內容
--  橫條外觀
--  色調色彩
+- 全螢幕內容
+- 橫條外觀
+- 色調色彩
 
 <a name="fullscreen" />
 

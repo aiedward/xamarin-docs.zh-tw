@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: e73695046786e4d9949fd46bdbba665ff4f6cc72
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 46729df70d08b8d6d1b5b953d74f5619a5dc5858
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645169"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528681"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 設計工具中使用表格
 
@@ -58,9 +58,9 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式, 它�
 
 分鏡腳本會以三個步驟進行編輯:
 
--  首先, 配置必要的視圖控制器並設定其屬性。
--  第二, 將物件拖放到您的視圖上, 以建立您的 UI
--  最後, 將必要的 UIKit 類別新增至每個視圖, 並提供各種控制項的名稱, 以便在程式碼中參考它們。
+- 首先, 配置必要的視圖控制器並設定其屬性。
+- 第二, 將物件拖放到您的視圖上, 以建立您的 UI
+- 最後, 將必要的 UIKit 類別新增至每個視圖, 並提供各種控制項的名稱, 以便在程式碼中參考它們。
 
 
 完成腳本之後, 您可以加入程式碼, 讓所有專案都能順利進行。
@@ -71,19 +71,19 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式, 它�
 
 腳本的第一次變更是刪除現有的詳細資料檢視, 並以 UITableViewController 取代它。 請遵循下列步驟：
 
-1.  選取視圖控制器底部的列, 然後將它刪除。
-2.  從 [工具箱] 將 [**流覽控制器**] 和 [**資料表視圖控制器**] 拖曳至分鏡腳本。 
-3.  從根視圖控制器建立 segue 到剛才新增的第二個數據表視圖控制器。 若要建立 segue, 請*從 [詳細資料] 儲存格*控制 + 拖曳至新加入的 UITableViewController。 選擇 [ **Segue**選項] 底下的 [**顯示**] 選項。 
-4.  選取您建立的新 segue, 並為它提供一個識別碼, 以在程式碼中參考此 segue。 按一下 segue, 然後`TaskSegue`在  **Properties Pad**中輸入作為**識別碼**, 如下所示:    
+1. 選取視圖控制器底部的列, 然後將它刪除。
+2. 從 [工具箱] 將 [**流覽控制器**] 和 [**資料表視圖控制器**] 拖曳至分鏡腳本。 
+3. 從根視圖控制器建立 segue 到剛才新增的第二個數據表視圖控制器。 若要建立 segue, 請*從 [詳細資料] 儲存格*控制 + 拖曳至新加入的 UITableViewController。 選擇 [ **Segue**選項] 底下的 [**顯示**] 選項。 
+4. 選取您建立的新 segue, 並為它提供一個識別碼, 以在程式碼中參考此 segue。 按一下 segue, 然後`TaskSegue`在  **Properties Pad**中輸入作為**識別碼**, 如下所示:    
   [![在屬性面板中命名 segue](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. 接下來, 選取兩個數據表, 並使用 Properties Pad 來進行設定。 請務必選取 [View, not View Controller] –您可以使用 [檔大綱] 來協助選取。
 
-6.  將根視圖控制器變更為**內容:動態原型** (Design Surface 上的視圖將會標示為**原型內容**):
+6. 將根視圖控制器變更為**內容:動態原型** (Design Surface 上的視圖將會標示為**原型內容**):
 
     [![將內容屬性設定為動態原型](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7.  將新的**UITableViewController**變更為**Content:靜態資料**格。 
+7. 將新的**UITableViewController**變更為**Content:靜態資料**格。 
 
 
 8. 新的 UITableViewController 必須設定其類別名稱和識別碼。 選取 視圖控制器, 然後在  **Properties Pad**中輸入**類別**的_TaskDetailViewController_ –這會在`TaskDetailViewController.cs` Solution Pad 中建立新的檔案。 輸入**StoryboardID**做為_詳細資料_, 如下列範例所示。 稍後會用來在程式碼中C#載入此視圖:  
@@ -114,9 +114,9 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式, 它�
 
 請執行下列動作： 
 
--  將 [**橫條] 按鈕專案**從 [工具箱] 拖曳至導覽列的_右邊_。
--  在 **Properties Pad** 下方 **列按鈕項目** 選取 **識別碼：新增** (以便 *+* 加號按鈕)。 
--  為它命名, 以便在稍後的程式碼中識別。 請注意, 您將需要為根視圖控制器提供類別名稱 (例如**ItemViewController**), 以允許您設定橫條按鈕專案的名稱。
+- 將 [**橫條] 按鈕專案**從 [工具箱] 拖曳至導覽列的_右邊_。
+- 在 **Properties Pad** 下方 **列按鈕項目** 選取 **識別碼：新增** (以便 *+* 加號按鈕)。 
+- 為它命名, 以便在稍後的程式碼中識別。 請注意, 您將需要為根視圖控制器提供類別名稱 (例如**ItemViewController**), 以允許您設定橫條按鈕專案的名稱。
 
 
 #### <a name="taskdetail-view-controller"></a>TaskDetail View 控制器
@@ -129,10 +129,10 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式, 它�
 
 選取 [資料表] 視圖並開啟 [**屬性] 面板**。 更新下列屬性:
 
--  **區段**:_2_ 
--  **樣式**:_歸入_
--  **分隔符號**:_無_
--  **選取範圍**:_沒有選取專案_
+- **區段**:_2_ 
+- **樣式**:_歸入_
+- **分隔符號**:_無_
+- **選取範圍**:_沒有選取專案_
 
 選取頂端區段, 然後在 **屬性 > 資料表視圖 區段**中, 將資料**列**變更為_3_, 如下所示:
 
@@ -141,16 +141,16 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式, 它�
 
 針對每個資料格, 開啟**Properties Pad**並設定:
 
--  **樣式**:_自訂_
--  **識別碼**:為每個資料格選擇唯一的識別碼 (例如 「_標題_」、「_附注_」、「_完成_」)。
--  拖曳所需的控制項, 以產生螢幕擷取畫面中顯示的配置 (將**UILabel**、 **UITextField**和**UISwitch**放在正確的資料格上, 並適當地設定標籤, 例如。標題、附注和完成)。
+- **樣式**:_自訂_
+- **識別碼**:為每個資料格選擇唯一的識別碼 (例如 「_標題_」、「_附注_」、「_完成_」)。
+- 拖曳所需的控制項, 以產生螢幕擷取畫面中顯示的配置 (將**UILabel**、 **UITextField**和**UISwitch**放在正確的資料格上, 並適當地設定標籤, 例如。標題、附注和完成)。
 
 
 在第二個區段中, 將資料**列**設定為_1_ , 並抓取資料格的底部調整大小控點, 使其更高。
 
--  **將識別碼: 設定**為唯一值 (例如 [儲存])。 
--  **設定背景**:_清除色彩_。
--  將兩個按鈕拖曳到資料格上, 並適當地設定其標題 (即 [_儲存_] 和 [_刪除_]), 如下所示:
+- **將識別碼: 設定**為唯一值 (例如 [儲存])。 
+- **設定背景**:_清除色彩_。
+- 將兩個按鈕拖曳到資料格上, 並適當地設定其標題 (即 [_儲存_] 和 [_刪除_]), 如下所示:
 
    [![在下一節中設定兩個按鈕](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
 
@@ -160,11 +160,11 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式, 它�
 
 建立腳本的最後幾個步驟。 首先, 我們必須為每個控制項提供一個 [身分識別] 底下的名稱 **> 名稱**, 以便稍後在程式碼中使用。 將這些名稱命名如下:
 
--  **標題 UITextField** :_TitleText_
--  **附注 UITextField** :_NotesText_
--  **UISwitch** :_DoneSwitch_
--  **刪除 UIButton** :_DeleteButton_
--  **儲存 UIButton** :_SaveButton_
+- **標題 UITextField** :_TitleText_
+- **附注 UITextField** :_NotesText_
+- **UISwitch** :_DoneSwitch_
+- **刪除 UIButton** :_DeleteButton_
+- **儲存 UIButton** :_SaveButton_
 
 
 <a name="Adding_Code" />
@@ -346,10 +346,10 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 此範例示範:
 
--  建立具有原型內容的資料表, 其中的資料格會定義為重複使用來顯示資料清單。 
--  建立具有靜態內容的資料表來建立輸入表單。 這包括變更資料表樣式, 以及新增區段、儲存格和 UI 控制項。 
--  如何建立 segue 並覆寫`PrepareForSegue`方法, 以通知目標視圖其所需的任何參數。 
--  使用`Storyboard.InstantiateViewController`方法直接載入分鏡腳本視圖。
+- 建立具有原型內容的資料表, 其中的資料格會定義為重複使用來顯示資料清單。 
+- 建立具有靜態內容的資料表來建立輸入表單。 這包括變更資料表樣式, 以及新增區段、儲存格和 UI 控制項。 
+- 如何建立 segue 並覆寫`PrepareForSegue`方法, 以通知目標視圖其所需的任何參數。 
+- 使用`Storyboard.InstantiateViewController`方法直接載入分鏡腳本視圖。
 
 
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 25287e5aa52eeac712f93c3973e02c7e14c89a78
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 065c68ce6fbe816e503ace0ab42b3e86aa6916a7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645092"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522829"
 ---
 # <a name="toolbar"></a>工具列
 
@@ -29,45 +29,45 @@ Widget (在 Android 5.0 棒糖中引進) 可視為動作列介面&ndash;的一�
 
 和動作列之間有一些重要`Toolbar`的差異: 
 
--   `Toolbar`可以放在使用者介面中的任何位置。
+- `Toolbar`可以放在使用者介面中的任何位置。
 
--   可以在同一個畫面上顯示多個工具列。
+- 可以在同一個畫面上顯示多個工具列。
 
--   如果使用片段, 每個片段都可以擁有它`Toolbar`自己的。 
+- 如果使用片段, 每個片段都可以擁有它`Toolbar`自己的。 
 
--   `Toolbar`可以設定為只跨越螢幕的部分寬度。 
+- `Toolbar`可以設定為只跨越螢幕的部分寬度。 
 
--   因為不`Toolbar`會系結至使用中視窗 décor 的色彩配置, 所以它可以有以視覺方式區分的色彩配置。 
+- 因為不`Toolbar`會系結至使用中視窗 décor 的色彩配置, 所以它可以有以視覺方式區分的色彩配置。 
 
--   不同于動作列, `Toolbar`不會在左側包含圖示。 它在右側的功能表使用較少的空間。 
+- 不同于動作列, `Toolbar`不會在左側包含圖示。 它在右側的功能表使用較少的空間。 
 
--   高度`Toolbar`是可調整的。 
+- 高度`Toolbar`是可調整的。 
 
--   其他的`Toolbar`視圖可以包含在內。 
+- 其他的`Toolbar`視圖可以包含在內。 
 
 `Toolbar`可以包含下列一個或多個元素: 
 
--   瀏覽按鈕
+- 瀏覽按鈕
 
--   品牌標誌影像
+- 品牌標誌影像
 
--   標題和副標題
+- 標題和副標題
 
--   自訂視圖
+- 自訂視圖
 
--   動作功能表
+- 動作功能表
 
--   溢位功能表
+- 溢位功能表
 
 Google 的[材質設計指導方針](https://material.google.com/)建議您使用這些元素, 讓應用程式具有不同的外觀 (而不是只依賴應用程式圖示和標題)。 
 
 本指南涵蓋最常使用`Toolbar`的案例:
 
--   將`Toolbar`活動的預設動作列取代為。 
+- 將`Toolbar`活動的預設動作列取代為。 
 
--   將第二`Toolbar`個加入至活動。
+- 將第二`Toolbar`個加入至活動。
 
--   使用**android 支援程式庫 v7 AppCompat**程式庫 (在本指南的其餘部分稱為「 *AppCompat* 」) 部署`Toolbar`在舊版的 android 上。 
+- 使用**android 支援程式庫 v7 AppCompat**程式庫 (在本指南的其餘部分稱為「 *AppCompat* 」) 部署`Toolbar`在舊版的 android 上。 
 
  
  

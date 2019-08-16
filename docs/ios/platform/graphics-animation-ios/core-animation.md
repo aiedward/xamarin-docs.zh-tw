@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 12bb8fe6f8ed77ea9091c165d4656da292266679
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9412012949cd012d572b65b7af6e2890160338dc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656611"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527941"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin 中的核心動畫
 
@@ -40,9 +40,9 @@ UIKit 提供數個功能, 可讓您輕鬆地將動畫新增至應用程式。 �
 
 本節討論 UIKit 動畫功能, 包括:
 
--  控制器之間的轉換
--  Views 之間的轉換
--  View 屬性動畫
+- 控制器之間的轉換
+- Views 之間的轉換
+- View 屬性動畫
 
 
 ### <a name="view-controller-transitions"></a>檢視控制器轉換
@@ -59,9 +59,9 @@ SecondViewController vc2 = new SecondViewController {
 
 在此情況下`PartialCurl` , 會使用動畫, 雖然有其他幾個可用的, 包括:
 
--  `CoverVertical`–從畫面底部滑動
--  `CrossDissolve`–舊的視圖會淡出 & 新的視圖淡入
--  `FlipHorizontal`-水準由右至左翻轉。 在關閉上, 轉換會從左至右翻轉。
+- `CoverVertical`–從畫面底部滑動
+- `CrossDissolve`–舊的視圖會淡出 & 新的視圖淡入
+- `FlipHorizontal`-水準由右至左翻轉。 在關閉上, 轉換會從左至右翻轉。
 
 
 若要以動畫顯示轉換`true` , 請將當做第`PresentViewController`二個引數傳遞至:
@@ -100,12 +100,12 @@ UIView.Transition (
 
 UIKit 支援在`UIView`類別上免費製作各種屬性的動畫, 包括:
 
--  Frame
--  超出
--  置中
--  Alpha
--  資料轉換
--  色彩
+- Frame
+- 超出
+- 置中
+- Alpha
+- 資料轉換
+- 色彩
 
 
 這些動畫會藉由在傳遞至靜態`NSAction` `UIView.Animate`方法的委派中指定屬性變更來隱含地發生。 例如, 下列程式碼會以`UIImageView`動畫的中心點繪製:

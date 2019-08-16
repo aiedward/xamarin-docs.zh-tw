@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 6826088dcc192f4bc4dcfa7424236f98391e0bd6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656709"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528401"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -72,7 +72,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 1. 開啟**預覽**中的圖示影像, 然後選擇 [檔案] **> [匯出**]。
 
-2. 出現的對話方塊會包含 Alpha 複選  框 (如果有 Alpha 色板的話)。
+2. 出現的對話方塊會包含 Alpha 複選框 (如果有 Alpha 色板的話)。
 
     ![](troubleshooting-images/remove-alpha-sml.png "出現的對話方塊會包含 Alpha 核取方塊 (如果有 Alpha 色板)")
 
@@ -105,37 +105,39 @@ with an alpha channel. Icons should not have an alpha channel.
 
 4. 關閉分鏡腳本, 並返回 Visual Studio for Mac。 在C# **監看式應用程式擴充**功能專案中, 建立新的檔案**MyInterfaceController.cs** (或任何您喜歡的名稱) (不是監看式應用程式本身的腳本)。 新增下列程式碼 (更新命名空間、classname 和函數名稱):
 
-        using System;
-        using WatchKit;
-        using Foundation;
-        
-        namespace WatchAppExtension  // remember to update this
+    ```csharp
+    using System;
+    using WatchKit;
+    using Foundation;
+
+    namespace WatchAppExtension  // remember to update this
+    {
+        public partial class MyInterfaceController // remember to update this
+        : WKInterfaceController
         {
-            public partial class MyInterfaceController // remember to update this
-            : WKInterfaceController
+            public MyInterfaceController // remember to update this
+            (IntPtr handle) : base (handle)
             {
-                public MyInterfaceController // remember to update this
-                (IntPtr handle) : base (handle)
-                {
-                }
-                public override void Awake (NSObject context)
-                {
-                    base.Awake (context);
-                    // Configure interface objects here.
-                    Console.WriteLine ("{0} awake with context", this);
-                }
-                public override void WillActivate ()
-                {
-                    // This method is called when the watch view controller is about to be visible to the user.
-                    Console.WriteLine ("{0} will activate", this);
-                }
-                public override void DidDeactivate ()
-                {
-                    // This method is called when the watch view controller is no longer visible to the user.
-                    Console.WriteLine ("{0} did deactivate", this);
-                }
+            }
+            public override void Awake (NSObject context)
+            {
+                base.Awake (context);
+                // Configure interface objects here.
+                Console.WriteLine ("{0} awake with context", this);
+            }
+            public override void WillActivate ()
+            {
+                // This method is called when the watch view controller is about to be visible to the user.
+                Console.WriteLine ("{0} will activate", this);
+            }
+            public override void DidDeactivate ()
+            {
+                // This method is called when the watch view controller is no longer visible to the user.
+                Console.WriteLine ("{0} did deactivate", this);
             }
         }
+    }
+    ```
 
 5. 在C# **監看式應用程式擴充**功能專案中, 建立另一個新的檔案**MyInterfaceController.designer.cs** , 並新增下列程式碼。 請務必更新命名空間、classname 和`Register`屬性:
 
@@ -188,22 +190,22 @@ with an alpha channel. Icons should not have an alpha channel.
 
 11. 儲存分鏡腳本變更並關閉 Xcode 之後, 請返回 Visual Studio for Mac。 它會偵測標頭檔變更, 並自動將程式碼新增至**designer.cs**檔案:
 
+    ```csharp
+    [Register ("MyInterfaceController")]
+    partial class MyInterfaceController
+    {
+        [Outlet]
+        WatchKit.WKInterfaceButton myButton { get; set; }
 
-        [Register ("MyInterfaceController")]
-        partial class MyInterfaceController
+        void ReleaseDesignerOutlets ()
         {
-            [Outlet]
-            WatchKit.WKInterfaceButton myButton { get; set; }
-        
-            void ReleaseDesignerOutlets ()
-            {
-                if (myButton != null) {
-                    myButton.Dispose ();
-                    myButton = null;
-                }
+            if (myButton != null) {
+                myButton.Dispose ();
+                myButton = null;
             }
         }
-
+    }
+    ```
 
 您現在可以在中C#參考控制項 (或執行動作)!
 
@@ -213,7 +215,7 @@ with an alpha channel. Icons should not have an alpha channel.
 ## <a name="launching-the-watch-app-from-the-command-line"></a>從命令列啟動 Watch 應用程式
 
 > [!IMPORTANT]
-> 您可以使用 Visual Studio for Mac 和 Visual Studio 中的[自訂執行參數](~/ios/watchos/get-started/installation.md#custommodes), 以一般應用  程式模式  啟動監看式應用程式。
+> 您可以使用 Visual Studio for Mac 和 Visual Studio 中的[自訂執行參數](~/ios/watchos/get-started/installation.md#custommodes), 以一般應用程式模式啟動監看式應用程式。
 
 
 您也可以使用命令列來控制 iOS 模擬器。 用來啟動監看式應用程式的命令列工具是**mtouch**。

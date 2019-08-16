@@ -1,61 +1,61 @@
 ---
-title: 使用 Xamarin.iOS 中的屬性清單
-description: 本文件會介紹 Visual Studio for Mac 的圖形化和進階屬性清單 (.plist) 編輯器來使用 Info.plist 和 Entitlements.plist。 它說明如何設定圖示和啟動影像的 iOS 應用程式在 Visual Studio for mac。
+title: 使用 Xamarin 中的屬性清單
+description: 本檔介紹 Visual Studio for Mac 的圖形化和先進的屬性清單 (. plist) 編輯器, 以使用 plist 和 plist。 其中說明如何設定圖示, 並從 Visual Studio for Mac 內啟動 iOS 應用程式的映射。
 ms.prod: xamarin
 ms.assetid: 5E687043-0443-377C-9A12-9C5A05958646
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 87015163eca9fdb2fb8cee35e74d5031314fd42e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ca3622e01d6c7b616dc115b89ffcccf64022b1a1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61245482"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527134"
 ---
-# <a name="working-with-property-lists-in-xamarinios"></a>使用 Xamarin.iOS 中的屬性清單
+# <a name="working-with-property-lists-in-xamarinios"></a>使用 Xamarin 中的屬性清單
 
-_本文件會介紹 Visual Studio for Mac 的圖形化和進階屬性清單 (.plist) 編輯器來使用 Info.plist 和 Entitlements.plist。它說明如何設定圖示和啟動影像的 iOS 應用程式在 Visual Studio for mac。_
+_本檔介紹 Visual Studio for Mac 的圖形化和先進的屬性清單 (. plist) 編輯器, 以使用 plist 和 plist。其中說明如何設定圖示, 並從 Visual Studio for Mac 內啟動 iOS 應用程式的映射。_
 
-Visual Studio for Mac 功能的圖形化的.plist 編輯器可編輯的應用程式屬性和功能更容易。 Visual Studio for Mac 具有兩個.plists-`Info.plist`編輯應用程式屬性和圖示和`Entitlements.plist`管理應用程式功能。 本指南介紹 Info.plists，並概述使用它們在 Visual Studio for mac。 在 Entitlements.plist 上的資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
+Visual Studio for Mac 的特色是 plist 編輯器, 可讓您更輕鬆地編輯應用程式屬性和功能。 Visual Studio for Mac 有兩個 plists- `Info.plist`用於編輯應用程式屬性和圖示, `Entitlements.plist`以及用來管理應用程式功能。 本指南介紹 plists, 並概述如何在 Visual Studio for Mac 中使用它們。 如需 plist 的詳細資訊, 請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
 ## <a name="infoplist"></a>Info.plist
 
-資訊屬性清單 ( `Info.plist`) 是提供給系統的應用程式的組態資訊的必要的 iOS 檔案。 Visual Studio for Mac 的自訂`Info.plist`底部的索引標籤所控制的三個面板方的 [編輯器] 視窗的編輯器功能：
+資訊屬性清單 ( `Info.plist`) 是必要的 iOS 檔案, 可提供您的應用程式設定至系統的相關資訊。 Visual Studio for Mac 的自`Info.plist`定義編輯器有三個面板, 由 [編輯器] 視窗左下方的索引標籤所控制:
 
- [![](property-lists-images/tabs.png "Info.plist 編輯器索引標籤底部方的 [編輯器] 視窗")](property-lists-images/tabs.png#lightbox)
+ [![](property-lists-images/tabs.png "編輯器視窗左下方的 [plist 編輯器] 索引標籤")](property-lists-images/tabs.png#lightbox)
 
-每個面板控制項不同的屬性，如下所示：
+每個面板都會控制不同的屬性, 如下所述:
 
--  **應用程式面板**-圖形介面，可設定一般的應用程式屬性，以及圖示和啟動映像，指定地圖整合 」 和 「 背景模式。
--  **進階面板**-進階的面板可供指定支援的文件類型 Uti，和 URL 類型。
--  **來源面板**-[來源] 面板可控制較不常見的屬性，以及應用程式的自訂屬性。
+- **應用程式面板**-設定通用應用程式屬性以及圖示和啟動影像的圖形化介面;指定 maps 整合和背景處理模式。
+- [**高級] 面板**-[advanced] 面板是用來指定支援的檔案類型、UTI 和 URL 類型的位置。
+- **來源面板**-[來源] 面板會控制較不常用的屬性, 以及應用程式的自訂屬性。
 
 
-接下來三節調查更多詳細資料中的每個面板的功能。
+接下來的三節會更詳細地探討每個面板的功能。
 
 ## <a name="application-panel"></a>應用程式面板
 
-Visual Studio for Mac 功能編輯常見的圖形化介面`Info.plist`應用程式的項目：
+Visual Studio for Mac 具有圖形化介面, 可用於`Info.plist`編輯應用程式的一般專案:
 
-1.  應用程式屬性
-1.  支援的裝置類型
-1.  每個裝置類型支援方向
-1.  狀態列樣式和色彩
-1.  圖示和啟動畫面
-1.  對應和背景模式
+1. 應用程式屬性
+1. 支援的裝置類型
+1. 每種裝置類型的支援方向
+1. 狀態列樣式和色彩
+1. 圖示和啟動畫面
+1. 地圖和背景模式
 
 
-在下一節中詳細說明。
+下一節將詳細說明這些功能。
 
  <a name="iOS_Application_Target" />
 
 
 ### <a name="ios-application-target"></a>iOS 應用程式目標
 
-本節將描述您的應用程式的重要資訊。
-**識別碼**儲存這裡必須符合在 iTunes Connect （適用於應用程式市集應用程式），也在開發和散佈的憑證與 iOS 佈建入口網站應用程式識別碼清單輸入套件組合識別碼。
+本節包含描述應用程式的重要資訊。
+此處儲存的**識別碼**必須符合在 iTunes Connect (適用于 App Store 應用程式) 中輸入的配套識別碼, 以及 iOS 布建入口網站應用程式 id 清單和開發和散發憑證。
 
  [![](property-lists-images/image24.png "iOS 應用程式目標")](property-lists-images/image24.png#lightbox)
 
@@ -63,102 +63,102 @@ Visual Studio for Mac 功能編輯常見的圖形化介面`Info.plist`應用程�
 
  [![](property-lists-images/deployment.png "裝置部署")](property-lists-images/deployment.png#lightbox)
 
-裝置**部署**根據中的選取範圍會選擇性地顯示資訊區段**裝置**下拉式清單中的**應用程式目標**上一節。 **主要介面**下拉式清單設為**MainStoryboard**分鏡腳本驅動的應用程式中。 如果使用者介面完全以程式碼撰寫，則這可以保留空白。
+[裝置**部署**資訊] 區段會選擇性地顯示, 視上述 [**應用程式目標**] 區段的 [**裝置**] 下拉式清單中的選取專案而定。 **主要介面**下拉式會在分鏡腳本驅動的應用程式中設定為**mainstoryboard.storyboard** 。 如果使用者介面是以程式碼完整撰寫, 則可以保留空白。
 
 ### <a name="supported-device-orientations"></a>支援的裝置方向
 
- **支援裝置方向**控制應用程式如何回應裝置旋轉。 它是非常普遍的 iPhone/iPad 應用程式，以支援僅**縱向**，或所有項目，但**上下顚倒**。 一般遊戲以外的所有 iPad 應用程式應該都支援所有方向。
+ **支援的裝置方向**可控制應用程式回應裝置旋轉的方式。 IPhone/iPad 應用程式通常只支援直**向**或所有專案, 但卻很有説明。 一般來說, 遊戲以外的所有 iPad 應用程式都應該支援所有方向。
 
 ### <a name="status-bar-styles"></a>狀態列樣式
 
-**狀態的列樣式**一節是編輯應用程式的圖形化介面`UIStatusBarStyle`:
+**狀態列樣式**區段是用來編輯應用程式`UIStatusBarStyle`之的圖形化介面:
 
  [![](property-lists-images/status.png "狀態列樣式")](property-lists-images/status.png#lightbox)
 
  <a name="Icons" />
 
 
-### <a name="icons-launch-images-and-itunes-artwork"></a>圖示、 啟動映像和 iTunes 插圖
+### <a name="icons-launch-images-and-itunes-artwork"></a>圖示、啟動影像和 iTunes 插圖
 
-中，可以找到有關使用 Info.plist 檔案中的圖示、 影像和插圖[處理映像](~/ios/app-fundamentals/images-icons/index.md)指南。
-
-
+您可以在使用[影像](~/ios/app-fundamentals/images-icons/index.md)指南中找到在 plist 檔案中使用圖示、影像和插圖的資訊。
 
 
-### <a name="maps-integration-and-background-modes"></a>地圖整合 」 和 「 背景模式
 
-`Info.plist`包含指定地圖整合 」 和 「 背景模式的特殊區段。 選擇您想要支援的選項會將您的應用程式，為您所需的屬性。
 
- [![](property-lists-images/maps.png "地圖整合")](property-lists-images/maps.png#lightbox)
+### <a name="maps-integration-and-background-modes"></a>地圖整合和背景模式
 
-如需有關使用對應的詳細資訊，請參閱 Xamarin [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md)指南。
+包含`Info.plist`用來指定 maps 整合和背景處理模式的特殊區段。 選擇您想要支援的選項, 就會為您將必要的屬性新增至您的應用程式。
+
+ [![](property-lists-images/maps.png "Maps 整合")](property-lists-images/maps.png#lightbox)
+
+如需使用地圖的詳細資訊, 請參閱 Xamarin [IOS 地圖](~/ios/user-interface/controls/ios-maps/index.md)指南。
 
  [![](property-lists-images/bging.png "背景模式")](property-lists-images/bging.png#lightbox)
 
-如需有關背景模式的詳細資訊，請參閱 Xamarin [ios 中的背景](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)指南。
+如需背景模式的詳細資訊, 請參閱《 [iOS 中](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)的 Xamarin 背景處理指南》。
 
-## <a name="advanced-panel"></a>進階的面板
+## <a name="advanced-panel"></a>[Advanced] 面板
 
-[進階] 面板會控制文件類型和應用程式支援的 URL 配置。
+[Advanced] 面板可控制應用程式支援的檔案類型和 URL 配置。
 
- [![](property-lists-images/image34.png "進階的面板")](property-lists-images/image34.png#lightbox)
+ [![](property-lists-images/image34.png "[Advanced] 面板")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
 
 
-## <a name="document-types"></a>文件類型
+## <a name="document-types"></a>檔案類型
 
-對於支援開啟特定檔案類型的應用程式，提供 iOS`CFBundleDocumentTypes`索引鍵。 如果我們想要我們的應用程式，以支援特定已知的檔案類型-例如 Pdf-我們會將 PDF 值加入至機碼。 本節提供便利的方式輸入的資料會儲存在`CFBundleDocumentTypes`中的索引鍵`Info.plist`檔案。
+對於支援開啟特定檔案類型的應用程式, iOS 提供`CFBundleDocumentTypes`了金鑰。 如果我們想要讓應用程式支援某些已知的檔案類型 (例如 Pdf), 我們會將 PDF 值新增至金鑰。 本節提供一個便利的方式, 讓您輸入將儲存在檔案中的`CFBundleDocumentTypes`索引鍵`Info.plist`中的資料。
 
-參閱文件上[註冊檔案類型您的應用程式支援](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)如需有關如何設定這些值。
+如需有關如何設定這些值的詳細資訊, 請參閱[註冊應用程式支援的檔案類型](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)的相關檔。
 
 ## <a name="utis"></a>Uti
 
-有時候應用程式必須支援開啟自訂檔案類型。 比方說，我們可能會想要開啟的自訂延伸模組映像檔 *.xam*。 若要指定自訂檔案類型，我們將建立自訂 UTI-通用類型識別碼-使用`UIExportedTypeDeclarations`索引鍵。 以下螢幕擷取畫面說明如何建立自訂的 UTI.xam 延伸模組：
+有時候應用程式必須支援開啟自訂檔案類型。 例如, 我們可能會想要開啟具有自訂擴充功能的影像檔案 *。* 為了指定自訂檔案類型, 我們將使用`UIExportedTypeDeclarations`金鑰來建立自訂的 UTI-通用類型識別碼。 下列螢幕擷取畫面說明如何建立適用于. xam 擴充功能的自訂 UTI:
 
  [![](property-lists-images/uti.png "Uti 編輯器")](property-lists-images/uti.png#lightbox)
 
-只為匯出的類型 Uti 指定您的應用程式特有的自訂 Uti*匯入類型 Uti* (`UIImportedTypeDeclarations`金鑰) 指定自訂類型支援，但不是屬於您的應用程式。
+就像匯出的類型 uti 指定您的應用程式專屬的自訂 uti, 匯`UIImportedTypeDeclarations` *入的類型 uti* (金鑰) 會指定您的應用程式支援但不擁有的自訂類型。
 
-如需有關如何使用自訂 Uti 的詳細資訊，請參閱 Apple[註冊檔案類型您的應用程式支援](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1)指南。
+如需使用自訂 Uti 的詳細資訊, 請參閱 Apple 的[註冊檔案類型您的應用程式支援](https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_declare/understand_utis_declare.html#//apple_ref/doc/uid/TP40001319-CH204-SW1)指南。
 
 ## <a name="custom-urls"></a>自訂 Url
 
-URL 配置名稱 （也稱為通訊協定） 是 URL 的第一個部分。 例如，`http://`和`https://`常見的 URL 配置。 您可以選擇建立自訂的 URL 配置，您的應用程式。 自訂的 URL 配置用來通訊，並使用其他應用程式來回傳送的資料。 下列螢幕擷取畫面說明如何建立新自訂呼叫的 URL 配置`monkeys://`:
+URL 配置名稱 (也稱為通訊協定) 是 URL 的第一個部分。 例如, `http://`和`https://`都是常見的 URL 配置。 您可以選擇為您的應用程式建立自訂 URL 配置。 自訂 URL 配置是用來與其他應用程式來回通訊和傳送資料。 下列螢幕擷取畫面說明如何建立名`monkeys://`為的新自訂 URL 配置:
 
  [![](property-lists-images/url.png "自訂 Url")](property-lists-images/url.png#lightbox)
 
 
 
-如需有關如何實作自訂的 URL 配置的詳細資訊，請參閱 Apple 的[本指南的實作自訂的 URL 配置區段](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
+如需有關如何執行自訂 URL 配置的詳細資訊, 請參閱[本指南的 Apple 的執行自訂 url 配置一節](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)。
 
 ## <a name="source-panel"></a>來源面板
 
-**來源**索引標籤`Info.plist`檔可讓自訂值以新增或編輯。 Visual Studio for Mac 提供最常見的屬性清單：
+檔案的 [**來源**] `Info.plist`索引標籤可讓您新增或編輯自訂值。 Visual Studio for Mac 提供最常見的屬性清單:
 
- [![](property-lists-images/image31.png "從下拉式清單中加入新的屬性")](property-lists-images/image31.png#lightbox)
+ [![](property-lists-images/image31.png "從下拉式清單新增屬性")](property-lists-images/image31.png#lightbox)
 
-已知的屬性 Visual Studio for Mac 會一份有效的值，如下列螢幕擷取畫面所示：
+若為已知屬性 Visual Studio for Mac 將會是有效值的清單, 如下列螢幕擷取畫面所示:
 
- [![](property-lists-images/image32.png "從已知值清單中選取值")](property-lists-images/image32.png#lightbox)
+ [![](property-lists-images/image32.png "從 [知道值] 清單中選取一個值")](property-lists-images/image32.png#lightbox)
 
-Visual Studio for Mac 也會偵測屬性類型，如所示：
+Visual Studio for Mac 也會偵測屬性類型, 如下所示:
 
  [![](property-lists-images/image33.png "可用的屬性類型")](property-lists-images/image33.png#lightbox)
 
-檢閱 Apple[應用程式的相關資源](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)之選擇性的屬性上的其他資訊連結。
+如需選擇性屬性的其他資訊, 請參閱 Apple 的[應用程式相關資源](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)連結。
 
  <a name="Entitlements" />
 
 ## <a name="summary"></a>總結
 
-這篇文章示範如何使用圖形化和進階的.plist 編輯器來編輯通用應用程式設定也指定圖示和啟動影像。 它也引進了`Entitlements.plist`新增和管理應用程式功能。
+本文示範了如何使用圖形化和先進的 plist 編輯器來編輯一般應用程式設定, 以及指定圖示和啟動影像。 此外, 也引進`Entitlements.plist`了新增和管理應用程式功能的。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [IDE](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide)
 - [應用程式相關資源](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)
-- [註冊檔案類型的應用程式支援](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
-- [實作自訂的 URL 配置](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
+- [註冊應用程式支援的檔案類型](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Articles/RegisteringtheFileTypesYourAppSupports.html)
+- [執行自訂 URL 配置](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)
 - [資產目錄格式參考](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_ref-Asset_Catalog_Format/index.html#//apple_ref/doc/uid/TP40015170-CH18-SW1)

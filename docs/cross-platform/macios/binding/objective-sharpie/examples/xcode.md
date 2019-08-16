@@ -1,30 +1,31 @@
 ---
 title: 使用 Xcode 專案的真實世界範例
-description: 本文件說明如何使用 Xcode 專案做為目標 Sharpie，簡化的建立程序直接輸入C#繫結 OBJECTIVE-C 程式碼。
+description: 本檔說明如何使用 Xcode 專案作為目標 Sharpie 的直接輸入, 簡化建立C#目標 C 程式碼系結的流程。
 ms.prod: xamarin
 ms.assetid: 168AA64C-E181-4937-A1F2-AD095B9A36F2
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: ccfc2f1760d8971e2d824cf65344fa2a5e158c12
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: 083bebd093a8db92b0e64ba11d13bd32da88f604
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978360"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521939"
 ---
 # <a name="real-world-example-using-an-xcode-project"></a>使用 Xcode 專案的真實世界範例
 
-**這個範例會使用[POP 程式庫，從 Facebook](https://github.com/facebook/pop)。**
+**這個範例使用[來自 Facebook 的 POP 程式庫](https://github.com/facebook/pop)。**
 
-新的 3.0 版開始，目標 Sharpie 支援 Xcode 專案做為輸入。 這些專案指定正確的標頭檔和編譯器旗標需要編譯原生程式庫，並因此不必太將它繫結。 目標 Sharpie 會選取第一個_目標_並不指示，否則如果專案的預設設定。
+3\.0 版的新功能, 目標 Sharpie 支援將 Xcode 專案當做輸入。 這些專案會指定正確的標頭檔和編譯原生程式庫所需的編譯器旗標, 因此也需要進行系結。 目標 Sharpie 會選取專案的第一個目標和預設_設定_(如果未指示的話)。
 
-目標 Sharpie 嘗試剖析專案檔和標頭檔之前，您必須建置它。 專案通常會有正確地將結構外部的耗用量和整合，標頭檔，讓最好是一律建置完整的專案，然後再嘗試將它繫結的建置階段。
+在目標 Sharpie 嘗試剖析專案和標頭檔之前, 必須先建立它。 專案的組建階段通常會正確地將標頭檔的結構設為外部耗用量和整合, 因此最好一律先建立完整的專案, 然後再嘗試系結。
 
-<pre>$ <b>git clone https://github.com/facebook/pop.git</b>
+```
+$ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
-   <em>(more git clone output)</em>
+   (more git clone output)
 
-$ <b>cd pop</b>
-$ <b>sharpie bind pop.xcodeproj -sdk iphoneos9.0</b></pre>
-
+$ cd pop
+$ sharpie bind pop.xcodeproj -sdk iphoneos9.0
+```

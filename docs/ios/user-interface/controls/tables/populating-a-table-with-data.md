@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a27bc699d6c7a77c8a970e363ca55bf54751df66
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 32cb0e376646478ad01a6ea7784094d23529b0b4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655646"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528616"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>以 Xamarin 中的資料填入資料表
 
@@ -34,8 +34,8 @@ ms.locfileid: "68655646"
 
 若要讓資料表顯示資料, 只需要兩個強制方法:
 
--   **RowsInSection** – [`nint`](~/cross-platform/macios/nativetypes.md)傳回資料表應該顯示之資料列總數的計數。
--   **GetCell** – `UITableCellView`針對傳遞至方法的對應資料列索引, 傳回已填入資料的。
+- **RowsInSection** – [`nint`](~/cross-platform/macios/nativetypes.md)傳回資料表應該顯示之資料列總數的計數。
+- **GetCell** – `UITableCellView`針對傳遞至方法的對應資料列索引, 傳回已填入資料的。
 
 
 BasicTable 範例檔案**TableSource.cs**具有最簡單的`UITableViewSource`可能執行。 您可以在下面的程式碼片段中看到, 它接受要顯示在資料表中的字串陣列, 並傳回包含每個字串的預設儲存格樣式:
@@ -239,9 +239,9 @@ keys = indexedTableItems.Keys.ToArray ();
 
 然後子`Dictionary<>`類別需要新增或修改的下列方法, 才能使用: `UITableViewSource`
 
--   **NumberOfSections** –此方法是選擇性的, 根據預設, 資料表會假設一個區段。 顯示索引時, 這個方法應該會傳回索引中的專案數 (例如, 如果索引包含英文字母的所有字母, 則為 26)。
--   **RowsInSection** –傳回給定區段中的資料列數目。
--   **SectionIndexTitles** –傳回將用來顯示索引的字串陣列。 範例程式碼會傳回字母陣列。
+- **NumberOfSections** –此方法是選擇性的, 根據預設, 資料表會假設一個區段。 顯示索引時, 這個方法應該會傳回索引中的專案數 (例如, 如果索引包含英文字母的所有字母, 則為 26)。
+- **RowsInSection** –傳回給定區段中的資料列數目。
+- **SectionIndexTitles** –傳回將用來顯示索引的字串陣列。 範例程式碼會傳回字母陣列。
 
 
 範例檔案**BasicTableIndex/TableSource**中的更新方法如下所示:
@@ -275,8 +275,8 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 若要顯示標頭和`UITableViewSource`頁尾, 子類別需要下列額外的方法:
 
--   **TitleForHeader** –傳回要當做標頭使用的文字
--   **TitleForFooter** –傳回要當做頁尾使用的文字。
+- **TitleForHeader** –傳回要當做標頭使用的文字
+- **TitleForFooter** –傳回要當做頁尾使用的文字。
 
 
 範例檔案**BasicTableHeaderFooter/Code/TableSource**中的更新方法如下所示:

@@ -1,5 +1,5 @@
 ---
-title: 驗證的 RESTful Web 服務
+title: 驗證 RESTful Web 服務
 description: 基本驗證會提供資源的存取權的用戶端具有正確的認證。 這篇文章說明如何使用基本驗證保護 RESTful web 服務資源的存取權。
 ms.prod: xamarin
 ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
@@ -7,14 +7,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: bf334c7fde8433b7bbe45c8caaf962705c39320d
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5a0e820c8a9f04b7ad9173893852285d53dbe7a6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650392"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529198"
 ---
-# <a name="authenticate-a-restful-web-service"></a>驗證的 RESTful Web 服務
+# <a name="authenticate-a-restful-web-service"></a>驗證 RESTful Web 服務
 
 _HTTP 支援使用數種驗證機制，來控制資源存取權。基本驗證會提供資源的存取權的用戶端具有正確的認證。這篇文章會示範如何使用基本驗證保護 RESTful web 服務資源的存取權。_
 
@@ -35,7 +35,7 @@ _HTTP 支援使用數種驗證機制，來控制資源存取權。基本驗證�
 ![](rest-images/basic-authentication-success.png "基本驗證成功")
 
 > [!NOTE]
-> 基本驗證應該只用於透過 HTTPS 連線。 透過 HTTP 連線，使用時<code>Authorization</code>標頭容易解碼，如果攻擊者會擷取 HTTP 流量。
+> 基本驗證應該只用於透過 HTTPS 連線。 透過 HTTP 連線，使用時`Authorization`標頭容易解碼，如果攻擊者會擷取 HTTP 流量。
 
 ## <a name="specifying-basic-authentication-in-a-web-request"></a>在 Web 要求中指定基本驗證
 
@@ -73,11 +73,11 @@ public class RestService : IRestService
 然後要求至 web 服務作業提出要求時使用簽署`Authorization`標頭，指出使用者是否已叫用作業的權限。
 
 > [!NOTE]
-> 雖然這段程式碼會將認證儲存為常數，它們不應該儲存在已發行的應用程式中不安全的格式。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet 提供安全地儲存認證的功能。 如需詳細資訊，請參閱[中儲存及擷取在裝置上的帳戶資訊](~/xamarin-forms/data-cloud/authentication/oauth.md)。
+> 雖然此程式碼會將認證儲存為常數, 但不應以不安全的格式儲存在已發行的應用程式中。 [Xamarith.Auth](https://www.nuget.org/packages/Xamarin.Auth/) NuGet 提供安全地儲存認證的功能。 如需詳細資訊，請參閱[中儲存及擷取在裝置上的帳戶資訊](~/xamarin-forms/data-cloud/authentication/oauth.md)。
 
 ## <a name="processing-the-authorization-header-server-side"></a>處理授權標頭伺服器端
 
-REST 服務應該裝飾具有每個動作`[BasicAuthentication]`屬性。 這個屬性用來剖析`Authorization`標頭，並判斷的 base64 編碼認證是否有效，針對中儲存的值做比較*Web.config*。雖然此方法很適合使用的範例服務，它需要向外公開 web 服務延伸。
+REST 服務應使用`[BasicAuthentication]`屬性來裝飾每個動作。 這個屬性是用來剖析`Authorization`標頭, 並藉由比較它們與儲存在*web.config*中的值來判斷 base64 編碼的認證是否有效。雖然此方法適用于範例服務, 但它需要針對公開的 web 服務進行擴充。
 
 在 IIS 所使用的基本驗證模組，會向他們的 Windows 認證來驗證使用者。 因此，使用者必須擁有伺服器的網域上的帳戶。 不過，可以設定基本驗證模型，以允許自訂驗證，會對外部來源，例如資料庫進行驗證的使用者帳戶。 如需詳細資訊，請參閱[ASP.NET Web API 中的基本驗證](http://www.asp.net/web-api/overview/security/basic-authentication)ASP.NET 網站上。
 

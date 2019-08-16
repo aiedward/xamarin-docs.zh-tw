@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 79f97382b6d8bd7875e4921c859f92cd6b321687
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3817a6a111bb8a19248127d3be31a719fac68ba8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646325"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522564"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin. Android ListView
 
@@ -192,26 +192,26 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 其餘主題 (連結于`ListView`下方) 會全面探討如何使用類別, 以及您可以與它搭配使用的不同類型介面卡類型。 結構如下所示：
 
--   **視覺外觀**控制項的`ListView`各個部分, 以及它們的使用方式。 &ndash;
+- **視覺外觀**控制項的`ListView`各個部分, 以及它們的使用方式。 &ndash;
 
--   **類別**概述用來`ListView`顯示的類別。 &ndash;
+- **類別**概述用來`ListView`顯示的類別。 &ndash;
 
--   **在 ListView 中顯示資料**如何顯示簡單的資料清單、如何執行`ListView's`可用性功能、如何使用不同的內建資料列配置, 以及介面卡如何藉由重新使用資料列視圖來節省記憶體。 &ndash;
+- **在 ListView 中顯示資料**如何顯示簡單的資料清單、如何執行`ListView's`可用性功能、如何使用不同的內建資料列配置, 以及介面卡如何藉由重新使用資料列視圖來節省記憶體。 &ndash;
 
--   **自訂外觀**使用自`ListView`定義版面配置、字型和色彩變更的樣式。 &ndash;
+- **自訂外觀**使用自`ListView`定義版面配置、字型和色彩變更的樣式。 &ndash;
 
--   **使用 SQLite**如何使用顯示 SQLite 資料庫中的`CursorAdapter`資料。 &ndash;
+- **使用 SQLite**如何使用顯示 SQLite 資料庫中的`CursorAdapter`資料。 &ndash;
 
--   **活動生命週期**&ndash;在執行`ListView`活動時的設計考慮, 包括生命週期中您應填入資料的位置, 以及釋放資源的時機。
+- **活動生命週期**&ndash;在執行`ListView`活動時的設計考慮, 包括生命週期中您應填入資料的位置, 以及釋放資源的時機。
 
 討論 (分為六個部分) 從`ListView`類別本身的總覽開始, 再引進更複雜的使用方式範例。
 
--   [ListView 組件和功能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
--   [使用資料填入 ListView](~/android/user-interface/layouts/list-view/populating.md)
--   [自訂 ListView 的外觀](~/android/user-interface/layouts/list-view/customizing-appearance.md)
--   [使用 CursorAdapters](~/android/user-interface/layouts/list-view/cursor-adapters.md)
--   [使用 ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
--   [ListView 和活動生命週期](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
+- [ListView 組件和功能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
+- [使用資料填入 ListView](~/android/user-interface/layouts/list-view/populating.md)
+- [自訂 ListView 的外觀](~/android/user-interface/layouts/list-view/customizing-appearance.md)
+- [使用 CursorAdapters](~/android/user-interface/layouts/list-view/cursor-adapters.md)
+- [使用 ContentProvider](~/android/user-interface/layouts/list-view/content-provider.md)
+- [ListView 和活動生命週期](~/android/user-interface/layouts/list-view/activity-lifecycle.md)
 
 
 ## <a name="summary"></a>總結

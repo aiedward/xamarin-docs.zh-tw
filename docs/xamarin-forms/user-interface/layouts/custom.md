@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 0f2136aa4a07d289e1e8aecc6cb37460fdc5727c
-ms.sourcegitcommit: 157da886e1f304c6b482aa3f265ef7d78b696ab7
+ms.openlocfilehash: d6bcecd27e0380221febc34f787f71d20e0fcaf9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69024523"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526961"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在 Xamarin 中建立自訂版面配置
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms 可定義四種版面配置類別 – StackLayout、 AbsoluteLayout、 RelativeLayout 和方格中，和每個以不同方式來排列其子系。不過，有時候就必須以組織使用不提供 Xamarin.Forms 版面配置的頁面內容。本文說明如何撰寫自訂的版面配置的類別，並示範如何在頁面上，水平排列其子系，然後將包裝至其他資料列的後續子系的顯示方向區分 WrapLayout 類別。_
 
@@ -428,6 +428,6 @@ async Task<ImageList> GetImageListAsync()
 - [WrapLayout （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [自訂版面配置](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [建立在 Xamarin.Forms 中的自訂配置 （影片）](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
-- [版面配置<T>](xref:Xamarin.Forms.Layout`1)
+- [版面\<配置 T >](xref:Xamarin.Forms.Layout`1)
 - [版面配置](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

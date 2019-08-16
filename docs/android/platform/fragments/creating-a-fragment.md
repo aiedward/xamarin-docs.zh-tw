@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/07/2018
-ms.openlocfilehash: b20ce0dc76cbe663d35e7fab01d9a4ba943c0cd6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1948c700827f1cc235de5857cde9a2a149af8412
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510613"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524373"
 ---
 # <a name="creating-a-fragment"></a>建立片段
 
@@ -34,9 +34,9 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 有兩種方式可將片段裝載于活動內:
 
--   **以宣告方式**您可以使用`<Fragment>`標記, 在`.axml`版面配置檔案內以宣告方式使用片段。 &ndash;
+- **以宣告方式**您可以使用`<Fragment>`標記, 在`.axml`版面配置檔案內以宣告方式使用片段。 &ndash;
 
--   **以**程式設計您也可以`FragmentManager`使用類別的 API, 以動態方式將片段具現化。 &ndash;
+- **以**程式設計您也可以`FragmentManager`使用類別的 API, 以動態方式將片段具現化。 &ndash;
 
 本指南稍後會`FragmentManager`討論透過類別的程式設計使用方式。
 
@@ -67,9 +67,9 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 每個片段都必須指派一個唯一識別碼:
 
--  **android: 識別碼**&ndash;如同版面配置檔案中的其他 UI 元素, 這是唯一的識別碼。
+- **android: 識別碼**&ndash;如同版面配置檔案中的其他 UI 元素, 這是唯一的識別碼。
 
--  **android: 標記**&ndash;此屬性是唯一的字串。
+- **android: 標記**&ndash;此屬性是唯一的字串。
 
 如果先前的兩個方法都未使用, 則片段會假設容器視圖的識別碼。 在下列範例`android:id`中, 不提供`android:tag`和, Android 會將識別碼`fragment_container`指派給片段:
 
@@ -115,37 +115,37 @@ OR
 
 下列清單顯示建立片段時, 其生命週期中各種回呼的流程:
 
--   **`OnInflate()`** &ndash;當片段建立為視圖配置的一部分時呼叫。 這可能會在從 XML 配置檔案以宣告方式建立片段之後立即呼叫。 此片段尚未與其活動相關聯, 但是來自 view 階層的**活動**、組合和**AttributeSet**會當做參數傳入。 這個方法最適合用來剖析**AttributeSet** , 以及用來儲存片段稍後可能會用到的屬性。
+- **`OnInflate()`** &ndash;當片段建立為視圖配置的一部分時呼叫。 這可能會在從 XML 配置檔案以宣告方式建立片段之後立即呼叫。 此片段尚未與其活動相關聯, 但是來自 view 階層的**活動**、組合和**AttributeSet**會當做參數傳入。 這個方法最適合用來剖析**AttributeSet** , 以及用來儲存片段稍後可能會用到的屬性。
 
--   **`OnAttach()`** &ndash;在片段與活動相關聯後呼叫。 這是當片段備妥可供使用時, 所要執行的第一個方法。 一般來說, 片段不應執行一個函式, 或覆寫預設的函式。 片段所需的任何元件都應該在這個方法中初始化。
+- **`OnAttach()`** &ndash;在片段與活動相關聯後呼叫。 這是當片段備妥可供使用時, 所要執行的第一個方法。 一般來說, 片段不應執行一個函式, 或覆寫預設的函式。 片段所需的任何元件都應該在這個方法中初始化。
 
--   **`OnCreate()`** &ndash;由活動呼叫以建立片段。 呼叫這個方法時, 裝載活動的視圖階層可能不會完全具現化, 因此片段不應依賴活動的視圖階層架構的任何部分, 直到稍後在片段的生命週期中。 例如, 請勿使用這個方法對應用程式的 UI 進行任何調整或調整。 這是片段可以開始收集所需資料的最早時間。 此時, 片段會在 UI 執行緒中執行, 因此請避免任何冗長的處理, 或在背景執行緒上執行該處理。 如果呼叫**SetRetainInstance (true)** , 則可以略過這個方法。
+- **`OnCreate()`** &ndash;由活動呼叫以建立片段。 呼叫這個方法時, 裝載活動的視圖階層可能不會完全具現化, 因此片段不應依賴活動的視圖階層架構的任何部分, 直到稍後在片段的生命週期中。 例如, 請勿使用這個方法對應用程式的 UI 進行任何調整或調整。 這是片段可以開始收集所需資料的最早時間。 此時, 片段會在 UI 執行緒中執行, 因此請避免任何冗長的處理, 或在背景執行緒上執行該處理。 如果呼叫**SetRetainInstance (true)** , 則可以略過這個方法。
     下面將更詳細地說明此替代方案。
 
--   **`OnCreateView()`** &ndash;建立片段的視圖。
+- **`OnCreateView()`** &ndash;建立片段的視圖。
     一旦活動的**OnCreate ()** 方法完成後, 就會呼叫這個方法。 此時, 可以安全地與活動的視圖階層進行互動。 這個方法應該會傳回片段將使用的 view。
 
--   **`OnActivityCreated()`** OnCreate 已由裝載活動完成後呼叫。  &ndash;
+- **`OnActivityCreated()`** OnCreate 已由裝載活動完成後呼叫。 &ndash;
     此時應該會對使用者介面進行最後的調整。
 
--   **`OnStart()`** &ndash;在包含的活動已繼續後呼叫。 這會讓使用者看到片段。 在許多情況下, 片段會包含在活動的**OnStart ()** 方法中的程式碼。
+- **`OnStart()`** &ndash;在包含的活動已繼續後呼叫。 這會讓使用者看到片段。 在許多情況下, 片段會包含在活動的**OnStart ()** 方法中的程式碼。
 
--   **`OnResume()`** &ndash;這是在使用者可以與片段互動之前呼叫的最後一個方法。 在此方法中應該執行的程式碼種類範例, 會啟用使用者可能與之互動的裝置功能, 例如位置服務的相機。 這類服務可能會造成過多的電池耗盡, 而應用程式應該將其使用方式降到最低, 以維持電池壽命。
+- **`OnResume()`** &ndash;這是在使用者可以與片段互動之前呼叫的最後一個方法。 在此方法中應該執行的程式碼種類範例, 會啟用使用者可能與之互動的裝置功能, 例如位置服務的相機。 這類服務可能會造成過多的電池耗盡, 而應用程式應該將其使用方式降到最低, 以維持電池壽命。
 
 
 ### <a name="fragment-destruction-lifecycle-methods"></a>片段銷毀生命週期方法
 
 下一份清單說明被終結的生命週期方法, 會被終結:
 
--   **`OnPause()`** &ndash;使用者無法再與片段互動。 這種情況存在的原因是其他片段作業正在修改此片段, 或主控活動已暫停。 裝載此片段的活動可能仍然可見, 也就是說, 焦點的活動是部分透明的, 或不會佔用全螢幕。 當此方法變成作用中時, 這就是使用者離開片段的第一個指示。 片段應會儲存任何變更。
+- **`OnPause()`** &ndash;使用者無法再與片段互動。 這種情況存在的原因是其他片段作業正在修改此片段, 或主控活動已暫停。 裝載此片段的活動可能仍然可見, 也就是說, 焦點的活動是部分透明的, 或不會佔用全螢幕。 當此方法變成作用中時, 這就是使用者離開片段的第一個指示。 片段應會儲存任何變更。
 
--   **`OnStop()`** &ndash;不會再看到此片段。 主機活動可能已停止, 或片段作業正在活動中修改。 此回呼的用途與**活動**的相同。
+- **`OnStop()`** &ndash;不會再看到此片段。 主機活動可能已停止, 或片段作業正在活動中修改。 此回呼的用途與**活動**的相同。
 
--   **`OnDestroyView()`** &ndash;呼叫這個方法來清除與此視圖相關聯的資源。 當與片段相關聯的視圖已終結時, 就會呼叫此。
+- **`OnDestroyView()`** &ndash;呼叫這個方法來清除與此視圖相關聯的資源。 當與片段相關聯的視圖已終結時, 就會呼叫此。
 
--   **`OnDestroy()`** &ndash;當片段不再使用時, 會呼叫這個方法。 它仍與活動相關聯, 但該片段已不再運作。 這個方法應該釋放任何由片段使用的資源, 例如可能用於攝影機的[**SurfaceView**](xref:Android.Views.SurfaceView) 。 如果呼叫**SetRetainInstance (true)** , 則可以略過這個方法。 下面將更詳細地說明此替代方案。
+- **`OnDestroy()`** &ndash;當片段不再使用時, 會呼叫這個方法。 它仍與活動相關聯, 但該片段已不再運作。 這個方法應該釋放任何由片段使用的資源, 例如可能用於攝影機的[**SurfaceView**](xref:Android.Views.SurfaceView) 。 如果呼叫**SetRetainInstance (true)** , 則可以略過這個方法。 下面將更詳細地說明此替代方案。
 
--   **`OnDetach()`** &ndash;只有在片段不再與活動相關聯之前, 才會呼叫這個方法。 片段的視圖階層已不存在, 而且該片段使用的所有資源都應該在此時釋放。
+- **`OnDetach()`** &ndash;只有在片段不再與活動相關聯之前, 才會呼叫這個方法。 片段的視圖階層已不存在, 而且該片段使用的所有資源都應該在此時釋放。
 
 
 ### <a name="using-setretaininstance"></a>使用 SetRetainInstance
@@ -194,9 +194,9 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 
 雖然使用`OnSaveInstanceState`可讓您輕鬆地儲存暫時性資料, 但使用此方法有一些限制:
 
--  如果未將片段新增至後端堆疊, 則當使用者按下 [**上一頁**] 按鈕時, 將不會還原其狀態。
+- 如果未將片段新增至後端堆疊, 則當使用者按下 [**上一頁**] 按鈕時, 將不會還原其狀態。
 
--  當配套用來儲存資料時, 該資料會進行序列化。 這可能會導致處理延遲。
+- 當配套用來儲存資料時, 該資料會進行序列化。 這可能會導致處理延遲。
 
 
 ## <a name="contributing-to-the-menu"></a>參與功能表

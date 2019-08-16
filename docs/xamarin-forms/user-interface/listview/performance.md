@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: 4a0a7a4db4b0ca982a162ec3a0b67dc729af0ed2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a1fae280f42f91fce4b4fe28c3f728cf14c7a21c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655945"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528911"
 ---
 # <a name="listview-performance"></a>ListView 效能
 
@@ -163,20 +163,20 @@ public class CustomListView : ListView
 
 有許多技巧可提升效能的`ListView`:
 
--  繫結`ItemsSource`屬性，以`IList<T>`而不是集合`IEnumerable<T>`集合，因為`IEnumerable<T>`集合不支援隨機存取。
--  使用內建的儲存格 (例如`TextCell`  /  `SwitchCell` ) 而不是`ViewCell`每當即可。
--  使用較少的項目。 例如，請考慮使用單一`FormattedString`而不是多個標籤的標籤。
--  取代`ListView`與`TableView`顯示非同質性的資料-也就是不同類型的資料。
--  使用限制[ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize)方法。 如果過度使用而使，它會降低效能。
--  在 Android 上，請避免設定`ListView`的資料列分隔符號的可見性或色彩之後執行個體化，因為它會造成大量的效能負面影響。
--  避免變更為基礎的儲存格配置[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)。 這會產生大型的版面配置和初始化成本。
--  應避免階層深度巢狀版面配置。 使用`AbsoluteLayout`或`Grid`以減少巢狀結構。
--  避免特定`LayoutOptions`以外的其他`Fill`（填滿是成本來計算）。
--  避免在放置`ListView`內`ScrollView`，原因如下：
+- 繫結`ItemsSource`屬性，以`IList<T>`而不是集合`IEnumerable<T>`集合，因為`IEnumerable<T>`集合不支援隨機存取。
+- 使用內建的儲存格 (例如`TextCell`  /  `SwitchCell` ) 而不是`ViewCell`每當即可。
+- 使用較少的項目。 例如，請考慮使用單一`FormattedString`而不是多個標籤的標籤。
+- 取代`ListView`與`TableView`顯示非同質性的資料-也就是不同類型的資料。
+- 使用限制[ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize)方法。 如果過度使用而使，它會降低效能。
+- 在 Android 上，請避免設定`ListView`的資料列分隔符號的可見性或色彩之後執行個體化，因為它會造成大量的效能負面影響。
+- 避免變更為基礎的儲存格配置[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)。 這會產生大型的版面配置和初始化成本。
+- 應避免階層深度巢狀版面配置。 使用`AbsoluteLayout`或`Grid`以減少巢狀結構。
+- 避免特定`LayoutOptions`以外的其他`Fill`（填滿是成本來計算）。
+- 避免在放置`ListView`內`ScrollView`，原因如下：
     - `ListView`實作自己的捲動。
     - `ListView` ，將會由父代，則不會收到任何筆勢， `ScrollView`。
     - `ListView`可以呈現的自訂標頭和頁尾捲動清單中，可能會提供功能的項目`ScrollView`有人使用了。 如需詳細資訊，請參閱[頁首和頁尾](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)。
--  如果您需要非常特定且複雜的設計，儲存格所述，請考慮自訂轉譯器。
+- 如果您需要非常特定且複雜的設計，儲存格所述，請考慮自訂轉譯器。
 
 `AbsoluteLayout` 若要執行而沒有單一量值呼叫的配置可能會發生。 這可讓您非常強大的效能。 如果`AbsoluteLayout`無法使用，請考慮[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)。 如果使用`RelativeLayout`，直接傳遞條件約束相當大的速度會比使用 API 的運算式。 這是因為運算式 API 會使用 JIT，並在 iOS 上的樹狀目錄中對解譯，以較慢。 API 運算式是適合的版面配置，它只需要在初始的版面配置與輪替，但在`ListView`，其中執行持續期間向下捲動，它都會損及效能。
 

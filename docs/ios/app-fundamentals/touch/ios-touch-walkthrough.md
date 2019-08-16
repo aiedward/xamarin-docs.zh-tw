@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f772bf1309330b41f9faea812e2cdcdba8e969cb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653130"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527062"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>逐步解說：在 Xamarin 中使用觸控
 
@@ -181,8 +181,8 @@ ms.locfileid: "68653130"
 [上一節](#Touch_Samples)示範如何使用觸控事件, 在螢幕上拖曳物件。
 在本節中, 我們將會清除觸控事件, 並示範如何使用下列筆勢辨識器:
 
--  , `UIPanGestureRecognizer`用於在螢幕周圍拖曳影像。
--  要`UITapGestureRecognizer`對螢幕上的按兩下進行回應的。
+- , `UIPanGestureRecognizer`用於在螢幕周圍拖曳影像。
+- 要`UITapGestureRecognizer`對螢幕上的按兩下進行回應的。
 
 如果您執行[起始範例程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start), 並按一下 [**筆勢辨識器範例**] 按鈕, 您應該會看到下列畫面:
 

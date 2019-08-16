@@ -1,137 +1,137 @@
 ---
-title: 跨平台應用程式案例研究：Tasky
-description: 本文件說明如何設計和建置跨平台行動應用程式為 Tasky Portable 範例應用程式。 它討論應用程式的需求、 介面、 資料模型、 核心功能、 實作及更多。
+title: 跨平臺應用程式案例研究:Tasky
+description: 本檔說明如何以跨平臺行動應用程式的方式設計和建立 Tasky 可移植的範例應用程式。 其中討論應用程式的需求、介面、資料模型、核心功能、執行等。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: 7bea80c22f6931858d0629382f6882203dfd374f
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 38f4e079529bec0dfc721d0c37686a6d90533b7e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829942"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527014"
 ---
-# <a name="cross-platform-app-case-study-tasky"></a>跨平台應用程式案例研究：Tasky
+# <a name="cross-platform-app-case-study-tasky"></a>跨平臺應用程式案例研究:Tasky
 
-*Tasky* *可攜式*是一個簡單的待辦事項清單應用程式。 本文將探討如何的設計和建置，都要遵循的指導方針[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)文件。 討論內容涵蓋下列領域：
+*Tasky* *可移植*性是簡單的待辦事項清單應用程式。 本檔將討論如何設計和建立, 遵循[建立跨平臺應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)檔的指引。 討論內容涵蓋下列領域:
 
 <a name="Design_Process" />
 
-## <a name="design-process"></a>設計程序
+## <a name="design-process"></a>設計流程
 
-建議您建立的藍圖為您想要達到您開始撰寫程式碼之前。 這是特別適用於跨平台開發，您要在其中建置將會以多種方式公開的功能。 從開始清楚瞭解哪些您要建置可節省時間和精力稍後在開發週期。
+建議您在開始撰寫程式碼之前, 先建立一個您想要達到的道路圖。 這對於跨平臺開發特別適用, 因為您正在建立將以多種方式公開的功能。 從現在開始, 您可以清楚瞭解您所建立的內容, 在未來的開發週期中節省時間和工作量。
 
  <a name="Requirements" />
 
 ### <a name="requirements"></a>需求
 
-設計應用程式的第一個步驟是找出所需的功能。 這些可以是高階目標或是詳細的使用案例。 Tasky 具有簡單的功能性需求：
+設計應用程式的第一個步驟是識別所需的功能。 這些可以是高階目標或詳細的使用案例。 Tasky 具有直接的功能性需求:
 
--  檢視工作清單
--  加入、 編輯和刪除工作
--  將工作的狀態設為 [完成]
+- 查看工作清單
+- 新增、編輯和刪除工作
+- 將工作的狀態設定為「完成」
 
-您應該考慮使用平台專屬功能。  可以 Tasky 利用 iOS 地理圍欄或 Windows Phone 動態磚？ 即使您未使用平台專屬功能的第一個版本中，您應該先確定您的商務和資料層級可以配合這些事先規劃。
+您應該考慮使用平臺特有的功能。  Tasky 可以利用 iOS 地理柵欄或 Windows Phone 動態磚嗎？ 即使您未使用第一個版本中的平臺特定功能, 您仍應事先規劃, 以確保您的企業 & 資料層可以容納它們。
 
  <a name="User_Interface_Design" />
 
 ### <a name="user-interface-design"></a>使用者介面設計
 
-開始使用可實作目標平台的高階設計。 請小心注意 UI 平台特定的條件約束。 比方說，`TabBarController`在 iOS 中可以顯示五個按鈕，而 Windows Phone 對等項目可以顯示最多四個。
-繪製畫面 flow 使用您的選擇 （文件適用於） 的工具。
+從可在目標平臺上執行的高階設計開始。 請小心注意平臺特定的 UI 條件約束。 例如, iOS 中`TabBarController`的可以顯示五個以上的按鈕, 而 Windows Phone 對等的則最多可以顯示四個。
+使用您選擇的工具 (紙張工作) 繪製螢幕流程。
 
- [![](case-study-tasky-images/taskydesign.png "繪製畫面 flow 使用您選擇的紙張運作的工具")](case-study-tasky-images/taskydesign.png#lightbox)
+ [![](case-study-tasky-images/taskydesign.png "使用您選擇的工具繪製螢幕流程工作")](case-study-tasky-images/taskydesign.png#lightbox)
 
  <a name="Data_Model" />
 
 ### <a name="data-model"></a>資料模型
 
-了解哪些資料需要儲存，可協助判斷要使用哪一個持續性機制。 請參閱[跨平台的資料存取](~/cross-platform/app-fundamentals/index.md)如需可用的儲存機制和它們之間做決定的說明資訊。 此專案中，我們將使用 SQLite.NET。
+知道需要儲存哪些資料將有助於判斷要使用的持續性機制。 如需可用儲存機制的詳細資訊, 以及協助在兩者之間做出決定, 請參閱[跨平臺資料存取](~/cross-platform/app-fundamentals/index.md)。 針對此專案, 我們將使用 SQLite.NET。
 
-Tasky 需要針對每個 'TaskItem' 儲存三個屬性：
+Tasky 需要為每個 ' TaskItem ' 儲存三個屬性:
 
-- **名稱**– 字串
-- **附註**– 字串
-- **完成**– 布林值
+- **名稱**–字串
+- **附注**–字串
+- **完成**-布林值
 
  <a name="Core_Functionality" />
 
 ### <a name="core-functionality"></a>核心功能
 
-請考慮使用者介面必須取用以符合需求的 API。 待辦事項清單需要下列功能：
+請考慮使用者介面需要使用的 API, 以符合需求。 待辦事項清單需要下列功能:
 
-- **列出所有工作**– 顯示所有可用工作的主畫面都清單
-- **取得一個工作**– 當工作的資料列都會被接觸到
-- **儲存一項工作**– 編輯工作時
-- **刪除一個工作**– 當工作被刪除時
-- **建立空白的工作**– 建立新的工作時
+- **列出所有**工作–顯示所有可用工作的主要畫面清單
+- **取得一項**工作–觸及工作資料列時
+- **儲存一項**工作–編輯工作時
+- **刪除一項**工作–刪除工作時
+- **建立空白**工作-建立新工作時
 
-若要達到重複使用程式碼，此 API 應該一次在實作*可攜式類別庫*。
+若要讓程式碼重複使用, 此 API 應該在*可移植類別庫*中執行一次。
 
  <a name="Implementation" />
 
 ### <a name="implementation"></a>實作
 
-一旦應用程式的設計都同意，請考慮可能會將它實作為一個跨平台應用程式的方式。 這會成為應用程式的架構。 中的指導方針[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)文件中，應用程式程式碼應該會中斷清單分成下列部分：
+一旦應用程式設計經過同意, 請考慮如何將其實作為跨平臺應用程式。 這會變成應用程式的架構。 遵循[建立跨平臺應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)檔中的指導方針, 應用程式代碼應細分為下列部分:
 
-- **常見的程式碼**– 常見的專案，包含要儲存的工作資料的重複使用程式碼; 公開模型類別和 API，以管理儲存及載入資料。
-- **平台特定程式碼**– 實作原生 UI 每個作業系統，請使用通用的程式碼，做為後端' 的平台特定專案。
+- **通用程式碼**–包含可重複使用的程式碼以儲存工作資料的通用專案;公開模型類別和 API, 以管理資料的儲存和載入。
+- **平臺**專屬的程式碼–平臺特定的專案, 為每個作業系統執行原生 UI, 並利用通用程式碼做為「後端」。
 
-[![](case-study-tasky-images/taskypro-architecture.png "平台專屬專案實作原生 UI 每個作業系統，請使用通用的程式碼，做為後端")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![](case-study-tasky-images/taskypro-architecture.png "平臺特定專案會針對每個作業系統執行原生 UI, 並利用通用程式碼做為後端")](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
-這兩個部分是由下列各節所述。
+下列各節將說明這兩個部分。
 
  <a name="Common_(PCL)_Code" />
 
-## <a name="common-pcl-code"></a>通用 (PCL) 程式碼
+## <a name="common-pcl-code"></a>一般 (PCL) 程式碼
 
-可攜式 tasky 使用可攜式類別庫策略來進行共用通用程式碼。 請參閱[共用程式碼選項](~/cross-platform/app-fundamentals/code-sharing.md)文件的程式碼共用選項的說明。
+Tasky 可攜性會使用可移植的類別庫策略來共用通用程式碼。 如需程式碼共用選項的說明, 請參閱[共用程式碼選項](~/cross-platform/app-fundamentals/code-sharing.md)檔。
 
-所有的通用程式碼，包括資料存取層、 資料庫程式碼和合約，會放在程式庫專案。
+所有通用程式碼 (包括資料存取層、資料庫程式碼和合約) 都會放在程式庫專案中。
 
-完整的 PCL 專案如下所示。 只與每個目標平台相容的可攜式程式庫中的程式碼。 部署時，每個原生應用程式將會參考該程式庫。
+完整的 PCL 專案如下所示。 便攜媒體櫃中的所有程式碼都與每個目標平臺相容。 部署時, 每個原生應用程式都會參考該程式庫。
 
-![](case-study-tasky-images/portable-project.png "每個原生應用程式部署時，會參考該程式庫")
+![](case-study-tasky-images/portable-project.png "部署時, 每個原生應用程式都會參考該程式庫")
 
-類別圖會顯示依層的類別。 `SQLiteConnection`類別是從 Sqlite NET 封裝的未定案程式碼。 類別的其餘部分是 Tasky 的自訂程式碼。 `TaskItemManager`和`TaskItem`類別代表特定平台應用程式公開 API。
+下列類別圖顯示依圖層分組的類別。 `SQLiteConnection`類別是 Sqlite 網路套件中的重複程式碼。 其餘的類別是 Tasky 的自訂程式碼。 `TaskItemManager` 和`TaskItem`類別代表對平臺特定應用程式公開的 API。
 
- [![](case-study-tasky-images/classdiagram-core.png "TaskItemManager 和 TaskItem 類別代表特定平台應用程式公開 API")](case-study-tasky-images/classdiagram-core.png#lightbox)
+ [![](case-study-tasky-images/classdiagram-core.png "TaskItemManager 和 TaskItem 類別代表對平臺特定應用程式公開的 API。")](case-study-tasky-images/classdiagram-core.png#lightbox)
 
-至個別的圖層中使用命名空間可協助管理每個圖層之間的參考。 平台專屬專案應該只需要包含`using`商務圖層的陳述式。 資料存取層和資料層應該封裝所公開的 api`TaskItemManager`商務層中。
+使用命名空間來分隔圖層有助於管理每個圖層之間的參考。 平臺特定專案應該只需要包含`using`適用于商務層的語句。 資料存取層和資料層應封裝`TaskItemManager`在商務層中公開的 API。
 
  <a name="References" />
 
 ### <a name="references"></a>參考
 
-可攜式類別庫需要可以跨多個平台，各有不同層級的支援平台和架構的功能。 因此，有的限制的套件和 framework 程式庫可用。 例如，Xamarin.iOS 不支援 c#`dynamic`關鍵字，因此可攜式類別庫無法使用任何動態程式碼，而定的封裝，即使這類程式碼會在 Android 上運作。 Visual Studio for Mac 會妨礙您將不相容的套件及參考資料，但您會想要保留在心，以避免意外更新版本上的限制。
+可移植的類別庫必須可在多個平臺上使用, 而且各有不同的平臺和架構功能支援層級。 因此, 可以使用的套件和架構程式庫有一些限制。 例如, Xamarin 不支援 c # `dynamic`關鍵字, 因此可移植的類別庫不能使用相依于動態程式碼的任何套件, 即使這類程式碼可以在 Android 上運作也一樣。 Visual Studio for Mac 將會讓您無法新增不相容的套件和參考, 但您會想要保留限制以避免日後發生意外。
 
-注意:您會看到您的專案參考您未曾使用過的 framework 程式庫。 這些參考所包含的 Xamarin 專案範本。 當應用程式會編譯時，連結的程序會移除未參考的程式碼，因此即使`System.Xml`已參考，它將不會包含在最終的應用程式因為我們不使用任何 Xml 函式。
+注意:您會看到您的專案參考您尚未使用的架構程式庫。 這些參考會納入為 Xamarin 專案範本的一部分。 當應用程式進行編譯時, 連結進程將會移除未參考的程式`System.Xml`代碼, 因此即使已被參考, 也不會包含在最終的應用程式中, 因為我們不會使用任何 Xml 函數。
 
  <a name="Data_Layer_(DL)" />
 
 ### <a name="data-layer-dl"></a>資料層 (DL)
 
-資料層包含執行的資料 – 實體儲存到資料庫、 一般檔案或其他機制的程式碼。 Tasky 資料層是由兩個部分所組成： SQLite NET 程式庫及自訂的程式碼加入至連接它。
+資料層包含執行資料實體儲存的程式碼–不論是資料庫、一般檔案或其他機制。 Tasky 資料層是由兩個部分組成: SQLite 程式庫和新增的自訂程式碼, 以連線到網路。
 
-Tasky 依賴 Sqlite.net nuget 套件 （由 Frank Kreuger 發行） 將提供的物件關聯式對應 (ORM) 資料庫介面的 SQLite NET 程式碼內嵌。 `TaskItemDatabase`類別繼承自`SQLiteConnection`，並將需要的建立、 讀取、 更新、 刪除 (CRUD) 方法來讀取和寫入資料至 SQLite。 它是簡單的未定案泛型方法的實作 CRUD 可在其他專案中重複使用。
+Tasky 依賴 Sqlite-net nuget 套件 (由 Frank Kreuger 發行) 來內嵌 SQLite .NET 程式碼, 以提供物件關聯式對應 (ORM) 資料庫介面。 類別繼承自`SQLiteConnection` , 並新增必要的 Create、read、Update、Delete (CRUD) 方法來讀取和寫入資料至 SQLite。 `TaskItemDatabase` 這是可在其他專案中重複使用之一般 CRUD 方法的簡單方式。
 
-`TaskItemDatabase`是單一值，確保所有存取，都會針對相同的執行個體。 鎖定用來防止從多個執行緒並行存取。
+`TaskItemDatabase`是單一的, 確保所有存取都是針對相同的實例進行。 鎖定是用來防止平行存取多個執行緒。
 
  <a name="SQLite_on_WIndows_Phone" />
 
-#### <a name="sqlite-on-windows-phone"></a>在 Windows Phone 上的 SQLite
+#### <a name="sqlite-on-windows-phone"></a>Windows Phone 上的 SQLite
 
-IOS 和 Android 都提供使用 SQLite 作為作業系統的一部分，而 Windows Phone 不包含相容的資料庫引擎。 跨所有的三個平台共用程式碼的 SQLite 的 Windows phone 原生版本是必要的。 請參閱[使用本機資料庫](~/xamarin-forms/data-cloud/data/databases.md)如需有關設定 Windows Phone 專案，sqlite。
+雖然 iOS 和 Android 都隨附于 SQLite 做為作業系統的一部分, 但 Windows Phone 並不包含相容的資料庫引擎。 若要跨三個平臺共用程式碼, 必須要有 Windows phone 原生版本的 SQLite。 如需為 Sqlite 設定 Windows Phone 專案的詳細資訊, 請參閱[使用本機資料庫](~/xamarin-forms/data-cloud/data/databases.md)。
 
  <a name="Using_an_Interface_to_Generalize_Data_Access" />
 
-#### <a name="using-an-interface-to-generalize-data-access"></a>使用介面來一般化資料存取
+#### <a name="using-an-interface-to-generalize-data-access"></a>使用介面將資料存取一般化
 
-資料層依存於`BL.Contracts.IBusinessIdentity`以便它可以實作需要主索引鍵的抽象資料存取方法。 實作介面的任何商務層類別接著可以保存資料層。
+資料層會相依于`BL.Contracts.IBusinessIdentity` , 使其可以執行需要主鍵的抽象資料存取方法。 任何執行介面的商務層級類別, 都可以保存在資料層中。
 
-介面只會指定整數作為主索引鍵屬性：
+介面只會指定要做為主鍵的整數屬性:
 
 ```csharp
 public interface IBusinessEntity {
@@ -139,7 +139,7 @@ public interface IBusinessEntity {
 }
 ```
 
-基底類別實作介面，並將 SQLite NET 屬性，將它標示為 自動遞增的主索引鍵。 商務層實作這個基底類別中的任何類別接著可以保存在資料層：
+基類會執行介面並新增 SQLite-NET 屬性, 以將其標示為自動遞增的主鍵。 商務層中任何可實作為此基類的類別, 都可以保存在資料層中:
 
 ```csharp
 public abstract class BusinessEntityBase : IBusinessEntity {
@@ -149,7 +149,7 @@ public abstract class BusinessEntityBase : IBusinessEntity {
 }
 ```
 
-資料層中的使用介面的泛型方法的範例如下`GetItem<T>`方法：
+在使用介面的資料層中, 泛型方法的範例是這個`GetItem<T>`方法:
 
 ```csharp
 public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
@@ -162,9 +162,9 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
  <a name="Locking_to_prevent_Concurrent_Access" />
 
-#### <a name="locking-to-prevent-concurrent-access"></a>鎖定以防止並行存取
+#### <a name="locking-to-prevent-concurrent-access"></a>鎖定以防止平行存取
 
-A[鎖定](https://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx)內實作`TaskItemDatabase`類別避免並行存取資料庫。 這是為了確保序列化從不同的執行緒並行存取 （否則 UI 元件可能會嘗試在背景執行緒正在更新的同時讀取資料庫）。 鎖定的實作方式的範例如下所示：
+[鎖定](https://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx)會在`TaskItemDatabase`類別內執行, 以防止平行存取資料庫。 這是為了確保會序列化來自不同執行緒的平行存取 (否則, 當背景執行緒正在更新時, UI 元件可能會嘗試讀取資料庫)。 如何執行鎖定的範例如下所示:
 
 ```csharp
 static object locker = new object ();
@@ -182,19 +182,19 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 }
 ```
 
-大部分的資料層程式碼無法在其他專案中重複使用。 只有特定應用程式中的程式碼層`CreateTable<TaskItem>`呼叫中`TaskItemDatabase`建構函式。
+大部分的資料層程式碼都可以在其他專案中重複使用。 圖層中唯一的應用程式特定程式碼是`CreateTable<TaskItem>`在此`TaskItemDatabase`函式中的呼叫。
 
  <a name="Data_Access_Layer_(DAL)" />
 
 ### <a name="data-access-layer-dal"></a>資料存取層 (DAL)
 
-`TaskItemRepository`類別會封裝資料儲存機制，提供強類型的 api，可讓`TaskItem`物件來建立、 刪除、 擷取和更新。
+類別會使用強型別 API 來封裝資料儲存機制, 讓`TaskItem`物件能夠建立、刪除、抓取和更新。 `TaskItemRepository`
 
  <a name="Using_Conditional_Compilation" />
 
 #### <a name="using-conditional-compilation"></a>使用條件式編譯
 
-類別會使用條件式編譯到設定檔的位置-這是實作平台分歧的範例。 傳回路徑的屬性會編譯成不同的程式碼，在每個平台上。 如下所示的程式碼和特定平台編譯器指示詞：
+類別會使用條件式編譯來設定檔案位置, 這是執行平臺分歧的範例。 傳回路徑的屬性會編譯為每個平臺上的不同程式碼。 程式碼和平臺特定的編譯器指示詞如下所示:
 
 ```csharp
 public static string DatabaseFilePath {
@@ -220,70 +220,70 @@ public static string DatabaseFilePath {
 }
 ```
 
-輸出將會根據平台，「<app
-path>/Library/TaskDB.db3 」 適用於 iOS、 「<app
-path>/Documents/TaskDB.db3"適用於 Android 或只是 「 TaskDB.db3 「 適用於 Windows Phone。
+視平臺而定, 輸出將會是 "<app
+path>/Library/TaskDB.db3" (適用于 iOS<app
+path>)、"/Documents/TaskDB.db3" (適用于 Android), 或僅針對 Windows Phone 的 "TaskDB"。
 
 ### <a name="business-layer-bl"></a>商務層 (BL)
 
-商務層會實作模型類別，來管理它們的外觀。
-模型是在 Tasky`TaskItem`類別及`TaskItemManager`實作外觀模式提供 API 管理`TaskItems`。
+商務層會執行模型類別和外觀來管理它們。
+在 Tasky 中, 此模型`TaskItem`是類別`TaskItemManager` , 並會執行面板模式來提供用於管理`TaskItems`的 API。
 
  <a name="Façade" />
 
-#### <a name="faade"></a>Façade
+#### <a name="faade"></a>外觀
 
- `TaskItemManager` 包裝`DAL.TaskItemRepository`可提供 Get、 儲存及刪除用來在應用程式和 UI 層參考的方法。
+ `TaskItemManager`包裝, `DAL.TaskItemRepository`以提供應用程式和 UI 層將參考的 Get、Save 和 Delete 方法。
 
-商務規則和邏輯會放在此視需要 – 例如在儲存物件之前，必須滿足任何驗證規則。
+如有需要, 商務規則和邏輯會放在這裡-例如, 在儲存物件之前必須滿足的任何驗證規則。
 
  <a name="API_for_Platform-Specific_Code" />
 
-### <a name="api-for-platform-specific-code"></a>適用於平台特定程式碼的 API
+### <a name="api-for-platform-specific-code"></a>平臺特定程式碼的 API
 
-一旦已撰寫一般程式碼，必須建置使用者介面，可收集並顯示它所公開的資料。 `TaskItemManager`類別會實作外觀模式，可提供簡單的 API 應用程式程式碼存取。
+撰寫通用程式碼之後, 必須建立使用者介面來收集並顯示其所公開的資料。 `TaskItemManager`類別會執行面板模式, 以提供簡單的 API 讓應用程式程式碼存取。
 
-每個平台專屬專案中撰寫的程式碼會通常緊密結合至該裝置的原生 SDK，而且只能存取一般的程式碼使用 API 所定義`TaskItemManager`。 這包括方法和商務它會公開，這類類別`TaskItem`。
+在每個平臺特定專案中撰寫的程式碼, 通常會與該裝置的原生 SDK 緊密結合, 而且只會使用所定義`TaskItemManager`的 API 來存取通用程式碼。 這包括其公開的方法和商業類別, 例如`TaskItem`。
 
-映像並不跨平台共用，而個別加入每個專案。 這很重要，因為每個平台映像以不同方式處理，使用不同的檔案名稱、 目錄和解決方式。
+映射不會跨平臺共用, 而是獨立新增至每個專案。 這很重要, 因為每個平臺會使用不同的檔案名、目錄和解析度, 以不同的方式處理影像。
 
-其餘各節將討論 Tasky UI 的平台特定實作詳細資料。
+其餘各節將討論 Tasky UI 的平臺專屬的執行詳細資料。
 
  <a name="iOS_App" />
 
 ## <a name="ios-app"></a>iOS 應用程式
 
-有只有少數幾個實作 iOS Tasky 使用一般的 PCL 專案，來儲存和擷取資料的應用程式所需的類別。 如下所示完成 iOS 的 Xamarin.iOS 專案：
+使用一般 PCL 專案來儲存和抓取資料時, 只需要少數幾個類別就可以執行 iOS Tasky 應用程式。 完整的 iOS Xamarin. iOS 專案如下所示:
 
- ![](case-study-tasky-images/taskyios-solution.png "如下所示的 iOS 專案")
+ ![](case-study-tasky-images/taskyios-solution.png "iOS 專案顯示在這裡")
 
-在此圖中，分組為圖層顯示的類別。
+此圖表中會顯示類別, 並分組為圖層。
 
- [![](case-study-tasky-images/classdiagram-android.png "在此圖中，分組為圖層顯示的類別")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![](case-study-tasky-images/classdiagram-android.png "此圖表中會顯示類別, 並分組為圖層")](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References" />
 
 ### <a name="references"></a>參考
 
-IOS 應用程式會參考特定平台 SDK 程式庫 – 例如。 Xamarin.iOS 和 MonoTouch.Dialog-1。
+IOS 應用程式參考平臺特定的 SDK 程式庫–例如 [Xamarin] 和 [MonoTouch]。對話方塊-1。
 
-它也必須參考`TaskyPortableLibrary`PCL 專案。
-參考清單如下所示：
+它也必須參考`TaskyPortableLibrary` PCL 專案。
+[參考] 清單如下所示:
 
- ![](case-study-tasky-images/taskyios-references.png "如下所示的參考清單")
+ ![](case-study-tasky-images/taskyios-references.png "參考清單如下所示")
 
-使用者介面層與應用程式層會在此專案中使用這些參考實作。
+應用層和使用者介面層會在此專案中使用這些參考來執行。
 
  <a name="Application_Layer_(AL)" />
 
-### <a name="application-layer-al"></a>應用程式層 (AL)
+### <a name="application-layer-al"></a>應用層 (AL)
 
-應用程式層包含 '' 將物件繫結公開至 UI PCL 的所需的平台特定類別。 IOS 專屬的應用程式具有可顯示工作的兩個類別：
+應用層包含將 PCL 公開的物件「系結」至 UI 所需的平臺特定類別。 IOS 特定應用程式有兩個類別可協助顯示工作:
 
-- **EditingSource** – 這個類別用來繫結的使用者介面工作的清單。 因為`MonoTouch.Dialog`曾針對工作清單中，我們必須實作才能啟用撥動--刪除功能，在此協助程式`UITableView`。 撥動--刪除是在 iOS，但不是 Android 或 Windows Phone 上常見的因此 iOS 特定專案是唯一實作它。
-- **TaskDialog** – 這個類別用來繫結至 UI 的單一工作。 它會使用`MonoTouch.Dialog`反映 API，以 '包裝'`TaskItem`包含正確的屬性，來允許輸入的螢幕格式正確的類別的物件。
+- **EditingSource** –這個類別是用來將工作清單系結至使用者介面。 因為`MonoTouch.Dialog`已用於工作清單, 所以我們需要執行此協助程式, 以便`UITableView`在中啟用「刪除滑動」功能。 在 iOS (而不是 Android 或 Windows Phone) 上, 輕輕鬆刪除是常見的, 因此 iOS 特定專案是唯一可進行的工作。
+- **TaskDialog** –這個類別是用來將單一工作系結至 UI。 它會使用`MonoTouch.Dialog`反映 API, 以包含正確屬性`TaskItem`的類別來「包裝」物件, 以允許正確格式化輸入畫面。
 
-`TaskDialog`類別會使用`MonoTouch.Dialog`類別的屬性為基礎的屬性，以建立螢幕。 此類別看起來像這樣：
+類別會使用`MonoTouch.Dialog`屬性, 根據類別的屬性來建立畫面。 `TaskDialog` 類別看起來像這樣:
 
 ```csharp
 public class TaskDialog {
@@ -310,117 +310,117 @@ public class TaskDialog {
 }
 ```
 
-請注意`OnTap`屬性需要一個方法名稱，這些方法必須存在於類別所在`MonoTouch.Dialog.BindingContext`建立 (在此情況下，`HomeScreen`下一節所述的類別)。
+請注意`OnTap` , 屬性需要方法名稱–這些方法必須存在於建立的`MonoTouch.Dialog.BindingContext`類別中 (在此案例中為下一`HomeScreen`節所討論的類別)。
 
  <a name="User_Interface_Layer_(UI)" />
 
-### <a name="user-interface-layer-ui"></a>使用者介面層級 (UI)
+### <a name="user-interface-layer-ui"></a>使用者介面層 (UI)
 
-使用者介面層級包含下列類別：
+使用者介面層包含下列類別:
 
-1.   **AppDelegate** – 包含外觀 API 的呼叫來設定應用程式中使用的色彩與字型的樣式。 Tasky 是一個簡單的應用程式，因此會有其他執行的初始設定工作`FinishedLaunching`。
-2.   **畫面**-的子類別`UIViewController`可定義每個畫面和它的行為。 畫面結合在一起的 UI 應用程式層的類別和通用的 API ( `TaskItemManager` )。 在此範例程式碼中，建立畫面，但它們可能已設計成使用 Xcode 的 Interface Builder] 或 [分鏡腳本設計工具。
-3.   **映像**– 視覺項目是每個應用程式中很重要的一部分。 Tasky 已啟動顯示畫面和圖示映像，這適用於 iOS 必須按照標準與 Retina 解析度來提供。
+1. **AppDelegate** –包含對外觀 API 的呼叫, 以樣式應用程式中所使用的字型和色彩。 Tasky 是簡單的應用程式, 因此不會在中`FinishedLaunching`執行其他初始化工作。
+2. **畫面**–定義每`UIViewController`個畫面和其行為的子類別。 畫面會將 UI 與應用層類別和通用 API ( `TaskItemManager` ) 結合在一起。 在此範例中, 畫面是以程式碼建立, 但它們可以使用 Xcode 的 Interface Builder 或分鏡腳本設計工具來設計。
+3. **影像**–視覺元素是每個應用程式中很重要的一部分。 Tasky 具有啟動顯示畫面和圖示影像, 適用于 iOS 的一般和 Retina 解析必須提供。
 
  <a name="Home_Screen" />
 
 #### <a name="home-screen"></a>主畫面
 
-[首頁] 畫面是`MonoTouch.Dialog`畫面會顯示一份工作之 SQLite 資料庫。 它繼承自`DialogViewController`並實作程式碼以設定`Root`若要包含集合的`TaskItem`顯示的物件。
+[首頁] 畫面是`MonoTouch.Dialog`一個畫面, 其中顯示 SQLite 資料庫中的工作清單。 它繼承自`DialogViewController`並執行程式碼, 以`Root`將設定為包含要`TaskItem`顯示之物件的集合。
 
- [![](case-study-tasky-images/ios-taskylist.png "它繼承自 DialogViewController 和實作程式碼以設定根包含顯示 TaskItem 物件的集合")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "它繼承自 DialogViewController 並執行程式碼, 以將根設定為包含要顯示的 TaskItem 物件集合")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
-若要顯示，並與其互動的工作清單相關的兩個主要方法如下：
+與工作清單顯示和互動的兩個主要方法如下:
 
-1.   **PopulateTable** – 會使用商務層`TaskManager.GetTasks`方法來擷取集合`TaskItem`来顯示的物件。
-2.   **選取**– 當資料列都會被接觸到時，在新的畫面會顯示工作。
+1. **PopulateTable** –使用商務層的`TaskManager.GetTasks`方法來取出要顯示的`TaskItem`物件集合。
+2. 已**選取**–觸及資料列時, 會在新畫面中顯示工作。
 
  <a name="Task_Details_Screen" />
 
 #### <a name="task-details-screen"></a>工作詳細資料畫面
 
-工作詳細資料是允許編輯或刪除工作的輸入的畫面。
+工作詳細資料是允許編輯或刪除工作的輸入畫面。
 
-使用 tasky`MonoTouch.Dialog`的反映 API，以顯示畫面中，因此會有任何`UIViewController`實作。 相反地，`HomeScreen`類別會具現化，並顯示`DialogViewController`使用`TaskDialog`應用程式層的類別。
+Tasky 會`MonoTouch.Dialog`使用的反映 API 來顯示畫面, 因此不會執行`UIViewController`任何動作。 相反地, `HomeScreen`類別會具現化`DialogViewController`並顯示`TaskDialog` , 並使用來自應用層的類別。
 
-此螢幕擷取畫面顯示空白畫面，示範`Entry`屬性中設定浮水印文字**名稱**並**備忘稿**欄位：
+這個螢幕擷取畫面顯示一個空白畫面, 示範`Entry`在 [**名稱**] 和 [**附注**] 欄位中設定浮水印文字的屬性:
 
- [![](case-study-tasky-images/ios-taskydetail.png "此螢幕擷取畫面顯示空白畫面，示範在 [名稱] 和 附註欄位中設定浮水印文字的項目屬性")](case-study-tasky-images/ios-taskydetail.png#lightbox)
+ [![](case-study-tasky-images/ios-taskydetail.png "這個螢幕擷取畫面顯示一個空白畫面, 其中示範專案屬性設定 [名稱] 和 [附注] 欄位中的浮水印文字")](case-study-tasky-images/ios-taskydetail.png#lightbox)
 
-功能**工作詳細資料**中，必須實作 （例如儲存或刪除工作） 畫面`HomeScreen`類別，因為這正是`MonoTouch.Dialog.BindingContext`建立。 下列`HomeScreen`方法支援工作詳細資料畫面：
+[工作**詳細資料**] 畫面的功能 (例如儲存或刪除工作) 必須在`HomeScreen`類別中執行, 因為這是建立的`MonoTouch.Dialog.BindingContext`位置。 下列`HomeScreen`方法支援 [工作詳細資料] 畫面:
 
-1.   **ShowTaskDetails** – 建立`MonoTouch.Dialog.BindingContext`呈現的畫面。 它會建立輸入的畫面使用反映來擷取屬性的名稱，並從型別`TaskDialog`類別。 其他資訊，例如浮水印文字輸入方塊中，是使用屬性的屬性實作。
-2.   **SaveTask** – 此方法中參考`TaskDialog`類別透過`OnTap`屬性。 它時，會呼叫**儲存**按下時，並使用`MonoTouch.Dialog.BindingContext`來擷取使用者輸入的資料，然後儲存變更，使用`TaskItemManager`。
-3.   **DeleteTask** – 此方法中參考`TaskDialog`類別透過`OnTap`屬性。 它會使用`TaskItemManager`刪除使用的主索引鍵 （[識別碼] 屬性） 的資料。
+1. **ShowTaskDetails** –建立`MonoTouch.Dialog.BindingContext`以呈現螢幕。 它會使用反映建立輸入畫面, 以從`TaskDialog`類別取出屬性名稱和類型。 其他資訊 (例如輸入方塊的浮水印文字) 會實作為屬性上的屬性。
+2. **SaveTask** –這個方法是在`TaskDialog`類別`OnTap`中透過屬性參考。 當按下 [**儲存**] 時, 會呼叫它`MonoTouch.Dialog.BindingContext` , 並使用來取出使用者輸入的資料, 然後再`TaskItemManager`使用儲存變更。
+3. **DeleteTask** –這個方法是在`TaskDialog`類別`OnTap`中透過屬性參考。 它會`TaskItemManager`使用, 以使用 primary key (ID 屬性) 來刪除資料。
 
  <a name="Android_App" />
 
-## <a name="android-app"></a>Android App
+## <a name="android-app"></a>Android 應用程式
 
-完整的 Xamarin.Android 專案，如圖如下所示：
+完整的 Xamarin. Android 專案如下圖所示:
 
- ![](case-study-tasky-images/taskyandroid-solution.png "在此圖顯示 android 專案")
+ ![](case-study-tasky-images/taskyandroid-solution.png "Android 專案的說明如下所示")
 
-類別圖表中，依層的類別：
+類別圖, 其中的類別依圖層分組:
 
- [![](case-study-tasky-images/classdiagram-android.png "類別圖表中，依層的類別")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![](case-study-tasky-images/classdiagram-android.png "類別圖, 其中的類別依圖層分組")](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References" />
 
 ### <a name="references"></a>參考
 
-Android 應用程式專案必須參考從 Android SDK 平台專屬 Xamarin.Android 組件存取類別。
+Android 應用程式專案必須參考平臺特定的 Xamarin. Android 元件, 才能從 Android SDK 存取類別。
 
-它也必須 （例如參考 PCL 專案。 TaskyPortableLibrary) 存取的常見的資料和商務層程式碼所示。
+它也必須參考 PCL 專案 (例如 TaskyPortableLibrary) 存取通用資料和商務層程式碼。
 
- ![](case-study-tasky-images/taskyandroid-references.png "若要存取的常見的資料和商務層程式碼的 TaskyPortableLibrary")
+ ![](case-study-tasky-images/taskyandroid-references.png "存取通用資料和商務層程式碼的 TaskyPortableLibrary")
 
  <a name="Application_Layer_(AL)" />
 
-### <a name="application-layer-al"></a>應用程式層 (AL)
+### <a name="application-layer-al"></a>應用層 (AL)
 
-類似於我們討論過的 iOS 版本更早版本，應用程式層中的 Android 版本包含 '' 將物件繫結公開至 UI 的核心的所需的平台特定類別。
+類似于稍早所探討的 iOS 版本, Android 版本中的應用層包含將核心公開的物件「系結」至 UI 所需的平臺特定類別。
 
- **TaskListAdapter** – 顯示清單<T>我們需要實作一個配接器，以顯示自訂物件中的物件`ListView`。 配接器可讓您控制哪些的版面配置，用於清單中的每個項目 – 程式碼會在此情況下使用 Android 的內建版面配置`SimpleListItemChecked`。
+ **TaskListAdapter** -若要顯示物件\<的清單 T > 我們需要執行介面卡, 以便在中顯示`ListView`自訂物件。 介面卡會控制清單中每個專案所使用的版面配置, 在此情況下, 程式碼會使用 Android 內`SimpleListItemChecked`建版面配置。
 
  <a name="User_Interface_(UI)" />
 
 ### <a name="user-interface-ui"></a>使用者介面 (UI)
 
-Android 應用程式的使用者介面層是結合程式碼和 XML 標記。
+Android 應用程式的使用者介面層是程式碼和 XML 標記的組合。
 
-- **資源/配置**– 畫面版面配置和資料列儲存格實作為 AXML 檔案的設計。 AXML 可以是以手動的方式，撰寫或配置不足以視覺化方式使用適用於 Android 的 Xamarin UI 設計工具。
-- **資源/Drawable** – 影像 （圖示） 和自訂的按鈕。
-- **畫面**– 定義每個畫面和它的行為的活動子類別。 繫結在一起的 UI 應用程式層的類別和通用的 API (`TaskItemManager`)。
+- **資源/** 配置-螢幕佈局和實作為 AXML 檔案的資料列儲存格設計。 AXML 可以手動撰寫, 或使用適用于 Android 的 Xamarin UI 設計工具以視覺化方式呈現。
+- **資源/繪製**–影像 (圖示) 和自訂按鈕。
+- **畫面**–定義每個畫面和其行為的活動子類別。 將 UI 與應用層類別和通用 API (`TaskItemManager`) 結合在一起。
 
  <a name="Home_Screen" />
 
 #### <a name="home-screen"></a>主畫面
 
-組成活動子類別的 [首頁] 畫面`HomeScreen`而`HomeScreen.axml`檔案可定義版面配置 （按鈕和工作清單的位置）。 畫面看起來像這樣：
+[首頁] 畫面包含一個活動子`HomeScreen`類別`HomeScreen.axml` , 以及一個定義版面配置 (按鈕和工作清單的位置) 的檔案。 畫面看起來像這樣:
 
  [![](case-study-tasky-images/android-taskylist.png "畫面看起來像這樣")](case-study-tasky-images/android-taskylist.png#lightbox)
 
-主畫面的程式碼會定義按一下按鈕，按一下在清單中，項目，以及填入的清單中的處理常式`OnResume`方法，因此它會反映在 工作詳細資料畫面中所做的變更）。 使用商務圖層的載入資料`TaskItemManager`而`TaskListAdapter`應用程式層。
+主畫面程式碼會定義按一下按鈕並按一下清單中的專案, 以及在`OnResume`方法中填入清單 (以便反映在 [工作詳細資料] 畫面中所做的變更) 的處理常式。 資料是使用商務層`TaskItemManager`和應用層的`TaskListAdapter`來載入。
 
  <a name="Task_Details_Screen" />
 
 #### <a name="task-details-screen"></a>工作詳細資料畫面
 
-也包含 工作詳細資料畫面`Activity`子類別和 AXML 版面配置檔案。 版面配置判斷輸入控制項的位置和C#類別會定義載入及儲存行為`TaskItem`物件。
+[工作詳細資料] 畫面也包含`Activity`子類別和 AXML 配置檔案。 版面配置會決定輸入控制項的位置, 而C#類別會定義載入和儲存`TaskItem`物件的行為。
 
- [![](case-study-tasky-images/android-taskydetail.png "此類別會定義載入及儲存 TaskItem 物件行為")](case-study-tasky-images/android-taskydetail.png#lightbox)
+ [![](case-study-tasky-images/android-taskydetail.png "類別會定義載入和儲存 TaskItem 物件的行為")](case-study-tasky-images/android-taskydetail.png#lightbox)
 
-所有參考 PCL 程式庫則都是透過`TaskItemManager`類別。
+PCL 程式庫的所有參考都是透過`TaskItemManager`類別。
 
  <a name="Windows_Phone_App" />
 
-## <a name="windows-phone-app"></a>Windows Phone App
-完整的 Windows Phone 專案中：
+## <a name="windows-phone-app"></a>Windows Phone 應用程式
+完整的 Windows Phone 專案:
 
- ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone 應用程式的完整的 Windows Phone 專案")
+ ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone 應用程式完成完整的 Windows Phone 專案")
 
-下圖顯示分組為圖層的類別：
+下圖顯示分組為圖層的類別:
 
  [![](case-study-tasky-images/classdiagram-wp7.png "此圖顯示分組為圖層的類別")](case-study-tasky-images/classdiagram-wp7.png#lightbox)
 
@@ -428,56 +428,56 @@ Android 應用程式的使用者介面層是結合程式碼和 XML 標記。
 
 ### <a name="references"></a>參考
 
-平台專屬專案必須參考所需的平台專屬程式庫 (例如`Microsoft.Phone`和`System.Windows`) 來建立有效的 Windows Phone 應用程式。
+平臺特定專案必須參考所需的平臺特定程式庫 (例如`Microsoft.Phone`和`System.Windows`), 才能建立有效的 Windows Phone 應用程式。
 
-它也必須 （例如參考 PCL 專案。 `TaskyPortableLibrary`) 利用`TaskItem`類別和資料庫。
+它也必須參考 PCL 專案 (例如 `TaskyPortableLibrary`) 以利用`TaskItem`類別和資料庫。
 
- ![](case-study-tasky-images/taskywp7-references.png "TaskyPortableLibrary 利用 TaskItem 類別與資料庫")
+ ![](case-study-tasky-images/taskywp7-references.png "要利用 TaskItem 類別和資料庫的 TaskyPortableLibrary")
 
  <a name="Application_Layer_(AL)" />
 
-### <a name="application-layer-al"></a>應用程式層 (AL)
+### <a name="application-layer-al"></a>應用層 (AL)
 
-同樣地，如 iOS 和 Android 版本，應用程式層都包含協助將資料繫結至使用者介面的非視覺項目。
+同樣地, 如同 iOS 和 Android 版本, 應用層是由可協助您將資料系結至使用者介面的非視覺元素所組成。
 
  <a name="ViewModels" />
 
 #### <a name="viewmodels"></a>ViewModels
 
-Viewmodel 包裝 PCL 中的資料 ( `TaskItemManager`)，並呈現可供 Silverlight/XAML 資料繫結的方式。 （如跨平台應用程式文件所述），這會是平台專屬行為的範例。
+Viewmodel 會從 PCL ( `TaskItemManager`) 包裝資料, 並以可供 Silverlight/XAML 資料系結使用的方式呈現。 這是平臺特定行為的範例 (如跨平臺應用程式檔中所討論)。
 
  <a name="User_Interface_(UI)" />
 
 ### <a name="user-interface-ui"></a>使用者介面 (UI)
 
-XAML 有獨特的資料繫結功能，可以在標記中宣告，並減少顯示的物件所需的程式碼數量：
+XAML 具有唯一的資料系結功能, 可在標記中宣告, 並減少顯示物件所需的程式碼數量:
 
-1.   **頁面**– XAML 檔案和其程式碼後置定義的使用者介面，並參考 Viewmodel 和 PCL 專案，來顯示和收集資料。
-2.   **映像**– 啟動顯示畫面、 背景和圖示的影像是使用者介面的重要部分。
+1. **頁面**– XAML 檔案和其後置的定義使用者介面, 並參考 VIEWMODEL 和 PCL 專案來顯示和收集資料。
+2. **影像**–啟動顯示畫面、背景和圖示影像是使用者介面的重要部分。
 
  <a name="MainPage" />
 
 #### <a name="mainpage"></a>MainPage
 
-MainPage 類別會使用`TaskListViewModel`顯示使用 XAML 的資料繫結功能的資料。 在頁面的`DataContext`設為 「 檢視模型，其中會以非同步方式填入。 `{Binding}`中 XAML 語法可讓您決定如何顯示資料。
+MainPage 類別會使用`TaskListViewModel` , 以使用 XAML 的資料系結功能來顯示資料。 頁面的`DataContext`會設定為以非同步方式填入的視圖模型。 XAML `{Binding}`中的語法會決定資料的顯示方式。
 
  <a name="TaskDetailsPage" />
 
 #### <a name="taskdetailspage"></a>TaskDetailsPage
 
-會顯示每個工作，藉由繫結`TaskViewModel`至 TaskDetailsPage.xaml 中定義的 XAML。 工作擷取的資料是透過`TaskItemManager`商務層中。
+藉由`TaskViewModel`將系結至 TaskDetailsPage 中定義的 xaml, 即可顯示每項工作。 工作資料是透過商務層中`TaskItemManager`的來抓取。
 
  <a name="Results" />
 
 ## <a name="results"></a>結果
 
-每個平台上，產生的應用程式看起來像這樣：
+產生的應用程式在每個平臺上看起來像這樣:
 
  <a name="iOS" />
 
 #### <a name="ios"></a>iOS
 
-應用程式使用 iOS 標準使用者介面的設計，例如 新增 按鈕被放置在導覽列中，並使用內建**加號 （+）** 圖示。 它也會使用預設值`UINavigationController`[上一頁] 按鈕的行為，並支援 ' 撥動-delete' 在資料表中的。
+應用程式會使用 iOS 標準使用者介面設計, 例如定位在導覽列中的 [新增] 按鈕, 並使用內建的**加號 (+)** 圖示。 它也會使用預設`UINavigationController`的 [返回] 按鈕行為, 並支援資料表中的「滑動到刪除」。
 
  [![](case-study-tasky-images/ios-taskylist.png "它也會使用預設 UINavigationController 上一頁按鈕行為，並支援資料表撥動至刪除")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "它也會使用預設 UINavigationController備份按鈕的行為，並支援表撥動-delete")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
@@ -485,29 +485,29 @@ MainPage 類別會使用`TaskListViewModel`顯示使用 XAML 的資料繫結功�
 
 #### <a name="android"></a>Android
 
-Android 應用程式會使用內建控制項，包括需要顯示 '刻度' 的資料列的內建版面配置。 除了螢幕返回按鈕支援硬體/系統後的行為。
+Android 應用程式會使用內建控制項, 包括需要顯示「滴答」的資料列內建版面配置。 除了螢幕上的 [上一頁] 按鈕, 也支援硬體/系統返回行為。
 
- [![](case-study-tasky-images/android-taskylist.png "除了螢幕返回按鈕支援硬體/系統後行為")](case-study-tasky-images/android-taskylist.png#lightbox)[![](case-study-tasky-images/android-taskylist.png "除了支援硬體/系統後行為螢幕上上一步按鈕")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [![](case-study-tasky-images/android-taskylist.png "除了螢幕上的上一頁按鈕")](case-study-tasky-images/android-taskylist.png#lightbox)[![]以外, 還支援硬體/系統返回行為(case-study-tasky-images/android-taskylist.png ", 除了螢幕上的 [上一頁] 按鈕以外, 還支援硬體/系統返回行為")](case-study-tasky-images/android-taskylist.png#lightbox)
 
  <a name="Windows_Phone" />
 
 #### <a name="windows-phone"></a>Windows Phone
 
-Windows Phone 應用程式會使用標準的版面配置，填入應用程式列中，而不是在上方瀏覽列在螢幕的底部。
+Windows Phone 應用程式會使用標準版面配置, 在畫面底部填入應用程式行, 而不是頂端的導覽列。
 
- [![](case-study-tasky-images/wp-taskylist.png "Windows Phone 應用程式使用的標準版面配置，填入應用程式列中，而不是在上方瀏覽列在螢幕的底部")](case-study-tasky-images/wp-taskylist.png#lightbox) [ ![](case-study-tasky-images/wp-taskylist.png "Windows Phone 應用程式使用標準版面配置，填入應用程式列中的，而不是在上方瀏覽列螢幕底部")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [Windows Phone 應用程式會使用標準版面配置, 在畫面底部填入應用程式行, 而不是頂端的導覽列。 ![(case-study-tasky-images/wp-taskylist.png "")] ](case-study-tasky-images/wp-taskylist.png#lightbox)[Windows Phone 應用(case-study-tasky-images/wp-taskylist.png "程式會使用標準版面配置, 在畫面底部填入應用程式行, 而不是頂端")的導覽列。 ![]](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 
 ## <a name="summary"></a>總結
 
-本文件提供的多層式應用程式的設計原則如何套用至簡單的應用程式，以促進跨三個行動平台的 重複使用程式碼的詳細的說明： iOS、 Android 和 Windows Phone。
+本檔提供詳細說明如何將分層應用程式設計的原則套用至簡單的應用程式, 以加速跨三個行動平臺 (iOS、Android 和 Windows Phone) 使用程式碼。
 
-它描述用來設計應用程式層級的程序，並討論哪些程式碼&amp;每個圖層中，已實作功能。
+其中已說明用來設計應用層的程式, 並討論每個&amp;層級中已執行的程式碼功能。
 
-您可以從下載的程式碼[github](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)。
+您可以從[github](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)下載程式代碼。
 
 ## <a name="related-links"></a>相關連結
 
-- [建置跨平台應用程式 （主要的文件）](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
-- [Tasky 可攜式範例應用程式 (github)](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)
+- [建立跨平臺應用程式 (主要檔)](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+- [Tasky 可移植範例應用程式 (github)](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)

@@ -1,64 +1,64 @@
 ---
 title: iOS 應用程式架構
-description: 本文件說明 Xamarin.iOS 在最低層級，討論如何在原生和 managed 程式碼互動，AOT 編譯、 選取器，註冊機構、 應用程式啟動和產生器。
+description: 本檔以較低的層級描述 Xamarin, 討論原生和 managed 程式碼的互動方式、AOT 編譯、選擇器、註冊機構、應用程式啟動和產生器。
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 426c5ef5cc32877546ebb88cb485a81723816e6e
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 3178c47fbbea66d1e88b3ff48654faff14462f9a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675059"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526459"
 ---
 # <a name="ios-app-architecture"></a>iOS 應用程式架構
 
-Mono 執行環境中，執行 Xamarin.iOS 應用程式，並使用完整的預先 (AOT) 編譯來編譯C#ARM 組合語言的程式碼。 這會執行並排顯示以[Objective C 執行階段](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)。 這兩個執行階段環境上執行類似 UNIX 的核心，特別[XNU](https://en.wikipedia.org/wiki/XNU)，並公開至使用者程式碼，讓開發人員能夠存取基礎原生或 managed 系統的各種 Api。
+Xamarin iOS 應用程式會在 Mono 執行環境中執行, 並使用完整的時間 (AOT) 編譯, 將C#程式碼編譯為 ARM 元件語言。 這會與[目標-C 運行](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)時間並存執行。 這兩個執行時間環境會在類似 UNIX 的核心上執行, 特別是[XNU](https://en.wikipedia.org/wiki/XNU), 並將各種 api 公開給使用者程式碼, 讓開發人員能夠存取基礎的原生或受控系統。
 
-下圖顯示此架構的基本概觀：
+下圖顯示此架構的基本總覽:
 
-[![](architecture-images/ios-arch-small.png "下圖顯示預先 (AOT) 編譯架構的基本概觀")](architecture-images/ios-arch.png#lightbox)
+[![](architecture-images/ios-arch-small.png "此圖顯示時間先行 (AOT) 編譯架構的基本總覽")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>原生和 Managed 程式碼：說明
+## <a name="native-and-managed-code-an-explanation"></a>原生和受控碼:說明
 
-適用於 Xamarin 開發時條款*原生和 managed*經常使用的程式碼。 [Managed 程式碼](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)是已由其執行的程式碼[.NET Framework Common Language Runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)，或在 Xamarin 的案例中： Mono 執行階段。 這是我們所謂的中繼語言。
+針對 Xamarin 進行開發時, 通常會使用*原生和 managed*程式碼的詞彙。 [Managed 程式碼](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)是[.NET Framework Common Language runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)所管理的程式碼, 或在 Xamarin 的案例中: Mono 執行時間。 這就是我們所謂的中繼語言。
 
-原生程式碼是將特定的平台 （例如，OBJECTIVE-C 或甚至 AOT 編譯程式碼，在 ARM 晶片上的） 的原生方式執行的程式碼。 本指南探索如何 AOT 編譯至機器碼、 managed 程式碼，並說明如何在 Xamarin.iOS 應用程式的運作方式，充分運用透過繫結，使用 Apple 的 iOS Api 同時也擁有存取權。NET 的 BCL 和複雜的語言，例如C#。
+機器碼是以原生方式在特定平臺上執行的程式碼 (例如, 在 ARM 晶片上的目標 C 或甚至是 AOT 編譯器代碼)。 本指南將探討 AOT 如何將您的 managed 程式碼編譯為機器碼, 並說明如何使用系結來充分利用 Apple 的 iOS Api, 同時也可存取。NET 的 BCL 和複雜的語言, 例如C#。
 
 ## <a name="aot"></a>AOT
 
-當您編譯任何 Xamarin 平台應用程式，Mono C# (或F#) 編譯器會執行，而且將會編譯您C#和F#程式碼到 Microsoft Intermediate Language (MSIL)。 如果您在模擬器中，執行 Xamarin.Android、 Xamarin.Mac 應用程式或甚至是 Xamarin.iOS 應用程式[.NET Common Language Runtime (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)編譯使用 Just in Time (JIT) 編譯器的 MSIL。 在這會編譯成原生程式碼的執行階段，這可以在您的應用程式的正確架構上執行。
+當您編譯任何 Xamarin 平臺應用程式時, C# Mono ( F#或) 編譯器將會執行, 並C#將F#您的和程式碼編譯成 Microsoft 中繼語言 (MSIL)。 如果您在模擬器上執行 Xamarin、Xamarin 應用程式, 或甚至是 Xamarin iOS 應用程式, [.Net Common Language Runtime (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)會使用即時 (JIT) 編譯器來編譯 MSIL。 在執行時間, 這會編譯成機器碼, 這可以在應用程式的正確架構上執行。
 
-不過，還有在 iOS 上，Apple 不允許在裝置上的動態產生程式碼執行所設定的安全性限制。
-若要確保，我們會遵守這些安全性通訊協定，Xamarin.iOS 會改用預先 (AOT) 編譯器來編譯 managed 程式碼。 這會產生原生 iOS 二進位，選擇性地針對可以部署在 Apple 的 ARM 處理器的裝置，以最佳化使用 LLVM。 這如何相互配合的概略圖表如下所示：
+不過, iOS 上有安全性限制, 由 Apple 設定, 不允許在裝置上執行動態產生的程式碼。
+為了確保我們遵守這些安全通訊協定, Xamarin 會改為使用前方 (AOT) 編譯器來編譯 managed 程式碼。 這會產生原生 iOS 二進位檔, 並選擇性地使用適用于裝置的 LLVM 進行優化, 可部署在 Apple 的 ARM 型處理器上。 下面將說明如何搭配使用這種方式的粗略圖表:
 
-[![](architecture-images/aot.png "這如何相互配合概略圖表")](architecture-images/aot-large.png#lightbox)
+[![](architecture-images/aot.png "如何搭配使用的粗略圖表")](architecture-images/aot-large.png#lightbox)
 
-使用 AOT 有幾項限制中詳述[限制](~/ios/internals/limitations.md)指南。 它也提供了許多改進功能透過 JIT 透過減少啟動時間，以及各種效能最佳化
+使用 AOT 有一些限制, 在[限制](~/ios/internals/limitations.md)指南中有詳細說明。 它也透過縮短啟動時間和各種效能優化, 提供許多 JIT 的改良功能
 
-現在我們已探索的程式碼如何從來源編譯原生程式碼，讓我們看探討以查看如何 Xamarin.iOS 可讓我們撰寫完整的原生的 iOS 應用程式
+既然我們已經探討了程式碼如何從原始程式碼編譯成機器碼, 讓我們來看看如何讓我們撰寫完全原生的 iOS 應用程式
 
 ## <a name="selectors"></a>選取器
 
-有了 Xamarin，我們必須要有兩個不同的生態系統，.NET 和 Apple，我們需要將一起變得越好，以確保最終目標是流暢的使用者體驗，簡化。 我們在前兩個執行階段通訊的方式，一節中討論過，您可能會非常適合已經聽過的詞彙 '繫結' 可讓原生的 iOS Api，以在 Xamarin 中使用。 繫結的深入說明我們[OBJECTIVE-C 繫結](~/cross-platform/macios/binding/overview.md)文件，所以現在讓我們來探索 iOS 幕後的運作方式。
+有了 Xamarin, 我們有兩個不同的生態系統 (.NET 和 Apple), 我們需要將它們結合在一起, 以確保最終目標是順暢的使用者體驗。 我們在上一節看到了這兩個執行時間的通訊方式, 而您可能已經聽過「系結」一詞, 這可讓您在 Xamarin 中使用原生 iOS Api。 我們將在我們的[目標-C](~/cross-platform/macios/binding/overview.md)系結檔中深入說明系結, 因此現在讓我們來探索 iOS 在幕後的運作方式。
 
-首先，必須要有的方式來公開以 OBJECTIVE-C C#，其中會透過選取器。 選取器是一則訊息會傳送至物件或類別。 與 OBJECTIVE-C 這透過完成[objc_msgSend](~/cross-platform/macios/binding/overview.md)函式。
-如需有關如何使用選取器的詳細資訊，請參閱[OBJECTIVE-C 選取器](~/ios/internals/objective-c-selectors.md)指南。 也必須是公開以 OBJECTIVE-C、 managed 程式碼因為的 Objective C 不了解 managed 程式碼，這是更複雜的方式。 若要解決這個問題，我們使用*註冊機構*。 這些會在下一節中詳細說明。
+首先, 必須有一種方法可將目標-C 公開給C#, 這是透過選取器來完成的。 「選取器」是傳送至物件或類別的訊息。 使用目標-C, 這是透過[objc_msgSend](~/cross-platform/macios/binding/overview.md)函數來完成。
+如需使用選取器的詳細資訊, 請參閱[目標-C 選取器](~/ios/internals/objective-c-selectors.md)指南。 此外, 也必須有方法可以將 managed 程式碼公開至目標-C, 因為目標-C 並不知道 managed 程式碼的任何內容, 因此更複雜。 為了解決這個情況, 我們使用*註冊機構*。 下一節會更詳細地說明這些功能。
 
 ## <a name="registrars"></a>註冊機構
 
-如先前所述，註冊機構是程式碼，會公開 managed 程式碼以 OBJECTIVE-C 它會藉由建立衍生自 NSObject 的每個 managed 類別的清單：
+如先前所述, 註冊機構是將 managed 程式碼公開至目標-C 的程式碼。 它會建立一個衍生自 NSObject 的每個 managed 類別清單來執行這項操作:
 
-- 針對不會包裝現有的 OBJECTIVE-C 類別的所有類別，它會建立新的 Objective C 類別與鏡像的所有受管理的成員的 Objective C 成員 [`Export`] 屬性。
+- 對於未包裝現有目標 c 類別的所有類別, 它會建立新的目標 c 類別, 其中的目標 c 成員會鏡像具有 [`Export`] 屬性的所有 managed 成員。
 
-- 在每個目標 – C 成員實作中，程式碼會自動新增至呼叫的鏡像受管理的成員。
+- 在每個目標– C 成員的執行中, 會自動加入程式碼來呼叫鏡像的 managed 成員。
 
-下列虛擬程式碼示範如何做到這點：
+下列虛擬程式碼顯示如何完成此作業的範例:
 
-**C#（managed 程式碼）**
+**C#(Managed 程式碼)**
 
 ```csharp
  class MyViewController : UIViewController{
@@ -69,7 +69,7 @@ Mono 執行環境中，執行 Xamarin.iOS 應用程式，並使用完整的預�
  }
 ```
 
-**本節目標 c:**
+**目標-C:**
 
 ```objectivec
 @interface MyViewController : UIViewController { }
@@ -87,38 +87,38 @@ Mono 執行環境中，執行 Xamarin.iOS 應用程式，並使用完整的預�
 
 ```
 
-Managed 程式碼可包含屬性，`[Register]`和`[Export]`，註冊機構會知道物件需要公開以 OBJECTIVE-C
-`[Register]`屬性用來指定所產生的 Objective C 類別的名稱，如果預設產生的名稱不適合。 所有的類別衍生自 NSObject 自動向 OBJECTIVE-C
-必要`[Export]`屬性包含字串，也就是使用所產生的 Objective C 類別中的選取器。
+Managed 程式碼可以包含屬性, `[Register]`以及`[Export]`註冊機構用來知道物件需要公開至目標-C 的屬性。
+當預設產生的名稱不適用時,屬性會用來指定所產生之目標C類別的名稱。`[Register]` 所有衍生自 NSObject 的類別都會自動向目標-C 註冊。
+必要`[Export]`的屬性包含字串, 這是在產生的目標-C 類別中使用的選取器。
 
-有兩種類型的註冊機構用於 Xamarin.iOS – 動態和靜態：
+有兩種類型的註冊機構用於 Xamarin. iOS –動態和靜態:
 
 
-- **動態註冊機構**– 動態註冊機構會在執行階段組件中的所有類型的註冊。 其做法是使用所提供的函式[Objective C 的執行階段 API](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)。 動態註冊機構，因此有速度較慢啟動，但更快建置時間。 這是 iOS 模擬器的預設值。 原生函式 （通常是在 C 中)，稱為 trampolines，會將數字做方法實作，當使用動態的註冊機構。 兩者的不同架構之間的差異。
+- **動態**登錄庫–動態註冊機構會在執行時間註冊元件中的所有類型。 它會使用由[目標 C 的執行時間 API](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)所提供的函式來執行這項工作。 因此, 動態註冊機構的啟動速度較慢, 但組建時間較快。 這是 iOS 模擬器的預設值。 使用動態註冊機構時, 原生函式 (通常在 C 中) 稱為 trampolines, 可做為方法的執行。 它們在不同的架構之間有所不同。
 
-- **靜態註冊機構**– 靜態註冊機構會 OBJECTIVE-C 程式碼產生期間建置，然後編譯成靜態程式庫並連結至可執行檔。 這允許較快的啟動，但所花費的時間在建置階段。 這預設會使用針對裝置組建。 靜態註冊機構也可搭配 iOS 模擬器藉由傳遞`--registrar:static`做為`mtouch`屬性在您的專案組建選項中，如下所示：
+- **靜態註冊機構**–靜態註冊機構會在組建期間產生目標 C 程式碼, 然後將其編譯成靜態程式庫並連結至可執行檔。 這可加快啟動速度, 但會在組建期間耗費較長的時間。 預設會針對裝置組建使用此方法。 靜態註冊機構也可以搭配 iOS 模擬器使用, 方法是在`--registrar:static`專案的`mtouch`組建選項中傳遞做為屬性, 如下所示:
 
     [![](architecture-images/image1.png "設定其他 mtouch 引數")](architecture-images/image1.png#lightbox)
 
-更多細節 iOS Xamarin.iOS 所使用的型別註冊系統的詳細資訊，請參閱[型別註冊機構](~/ios/internals/registrar.md)指南。
+如需有關 Xamarin 所使用之 iOS 類型登錄系統細節的詳細資訊, 請參閱[類型註冊機構](~/ios/internals/registrar.md)指南。
 
-## <a name="application-launch"></a>啟動應用程式
+## <a name="application-launch"></a>應用程式啟動
 
-所有 Xamarin.iOS 的可執行檔的進入點由呼叫的函式提供`xamarin_main`，這會初始化 mono。
+所有 Xamarin. iOS 可執行檔的進入點是由名`xamarin_main`為的函式所提供, 該函式會初始化 mono。
 
-根據專案類型，下列作法：
+視專案類型而定, 會執行下列動作:
 
-- 如需一般 iOS 和 tvOS 應用程式，稱為受管理的 Main 方法，Xamarin 應用程式所提供。 此管理 Main 方法接著會呼叫`UIApplication.Main`，這是 OBJECTIVE-C 的進入點 UIApplication.Main 是繫結 Objective c 的`UIApplicationMain`方法。
-- 擴充功能，原生的函式 – `NSExtensionMain`或 (`NSExtensionmain` WatchOS 延伸模組) – 提供 Apple 所呼叫的程式庫。 由於這些專案是類別庫並不是可執行專案，有任何受管理的 Main 方法來執行。
+- 針對一般 iOS 和 tvOS 應用程式, 會呼叫 Xamarin 應用程式所提供的 managed Main 方法。 這個 managed Main 方法接著會`UIApplication.Main`呼叫, 這是目標-C 的進入點。 UIApplication 是目標 C 的`UIApplicationMain`方法的系結。
+- 針對延伸模組, 會呼叫 Apple `NSExtensionMain`程式庫`NSExtensionmain`所提供的原生函式 (或適用于 WatchOS 擴充功能)。 由於這些專案是類別庫, 而不是可執行檔專案, 因此不會執行任何 managed Main 方法。
 
-這個啟動順序的所有會編譯成靜態程式庫，讓您的應用程式知道如何開始會接著連結至您的最終可執行檔。
+所有此啟動順序都會編譯成靜態程式庫, 然後連結至您的最終可執行檔, 讓您的應用程式知道如何開始使用。
 
-我們的應用程式已啟動此時 Mono 執行，我們是以 managed 程式碼，我們知道如何呼叫原生程式碼，並回呼。 接下來我們要做為實際開始新增控制項，並讓應用程式更具互動性。
+此時, 我們的應用程式已啟動, Mono 正在執行, 我們在受控碼中, 而且我們知道如何呼叫機器碼並回呼。 接下來我們要實際開始加入控制項, 讓應用程式成為互動。
 
 
 ## <a name="generator"></a>Generator
 
-Xamarin.iOS 將包含每個單一的 iOS API 定義。 您可以在瀏覽任一[MaciOS github 存放庫](https://github.com/xamarin/xamarin-macios/tree/master/src)。 這些定義會包含介面的屬性，以及任何必要的方法和屬性。 例如，下列程式碼用以定義 UIToolbar 中 UIKit[命名空間](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327)。 請注意，它含有一些方法和屬性的介面：
+Xamarin 會包含每個單一 iOS API 的定義。 您可以流覽[MaciOS github](https://github.com/xamarin/xamarin-macios/tree/master/src)存放庫中的任何一項。 這些定義包含具有屬性的介面, 以及任何必要的方法和屬性。 例如, 下列程式碼是用來定義 UIKit[命名空間](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327)中的 UIToolbar。 請注意, 它是具有許多方法和屬性的介面:
 
 ```csharp
 [BaseType (typeof (UIView))]
@@ -153,30 +153,30 @@ public interface UIToolbar : UIBarPositioning {
 }
 ```
 
-產生器，稱為[ `btouch` ](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs) Xamarin.iOS，都會採用這些定義檔案，並使用.NET 工具[它們編譯成暫存組件](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318)。 不過，此暫存組件並不會使用呼叫 OBJECTIVE-C 程式碼。 產生器接著會讀取暫存組件，並產生C#可以在執行階段使用的程式碼。
-這是為什麼，比方說，您隨機屬性新增至您定義的.cs 檔案時，如果它不會顯示在輸出的程式碼。 產生器並不知道，因此`btouch`還不知道要在其輸出的暫存組件中尋找它。
+在 Xamarin 中呼叫[`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs)的產生器會採用這些定義檔, 並使用 .net 工具將[它們編譯成暫時的元件](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318)。 不過, 此暫存元件無法用來呼叫目標-C 程式碼。 然後, 產生器會讀取暫存元件, C#並產生可在執行時間使用的程式碼。
+例如, 如果您將隨機屬性新增至定義 .cs 檔案, 它就不會顯示在輸出程式碼中。 產生器並不知道它, 因此`btouch`不知道要在暫存元件中尋找它來輸出它。
 
-一旦建立 Xamarin.iOS.dll，mtouch 會連結相同的所有元件在一起。
+建立了 Xamarin 後, mtouch 會將所有元件組合在一起。
 
-概括而言，它的做法是執行下列工作：
+在高階中, 它會執行下列工作來達到此程度:
 
--   建立應用程式套件組合結構。
--   複製您的 managed 組件中。
--   如果啟用連結時，執行受管理的連結器，以擷取出未使用的組件，以最佳化您的組件。
--   AOT 編譯。
--   建立原生的可執行檔會輸出一系列的靜態程式庫 （一個用於每個組件） 連結到原生可執行檔，以便啟動程式碼、 登錄器程式碼 （如果有靜態），以及 AOT 的所有輸出組成的原生可執行檔編譯器
+- 建立應用程式套件組合結構。
+- 複製您的 managed 元件。
+- 如果已啟用連結, 請執行 managed 連結器, 藉由將未使用的部分翻錄出來來優化您的元件。
+- AOT 編譯。
+- 建立原生可執行檔, 它會輸出一系列連結至原生可執行檔的靜態程式庫 (每個元件各一個), 使原生可執行檔包含啟動器程式碼、註冊機構程式碼 (如果是靜態) 和所有來自 AOT 的輸出編譯器
 
 
-如需詳細的連結器和使用方式的詳細資訊，請參閱[連結器](~/ios/deploy-test/linker.md)指南。
+如需連結器和其使用方式的詳細資訊, 請參閱[連結器](~/ios/deploy-test/linker.md)指南。
 
 ## <a name="summary"></a>總結
 
-本指南討論過的 Xamarin.iOS 應用程式，並瀏覽的 Xamarin.iOS 和 OBJECTIVE-C 深入了解其關聯性的 AOT 編譯。
+本指南探討了 Xamarin iOS 應用程式的 AOT 編譯, 以及探索到的 Xamarin 和其與目標的深入關係。
 
 ## <a name="related-links"></a>相關連結
 
 - [限制](~/ios/internals/limitations.md)
 - [繫結 Objective-C](~/cross-platform/macios/binding/overview.md)
-- [OBJECTIVE-C 選取器](~/ios/internals/objective-c-selectors.md)
-- [型別註冊機構](~/ios/internals/registrar.md)
+- [目標-C 選取器](~/ios/internals/objective-c-selectors.md)
+- [輸入註冊機構](~/ios/internals/registrar.md)
 - [連結器](~/ios/deploy-test/linker.md)

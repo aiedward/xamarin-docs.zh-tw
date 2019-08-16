@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: e22d1d8a1c2604c1bbe710fcaf1ba7793455e6f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c4050f439f3499289063c286afd255241bf0343
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508868"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521451"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 層級
 
@@ -23,11 +23,11 @@ _Xamarin 有數個 Android API 層級設定, 可決定您的應用程式與多�
 
 Xamarin 會公開三個 Android API 層級專案設定:
 
--   [目標 Framework](#framework)&ndash;指定要用來建立應用程式的架構。 這個 API 層級是在*編譯*時期由 Xamarin 所使用。
+- [目標 Framework](#framework)&ndash;指定要用來建立應用程式的架構。 這個 API 層級是在*編譯*時期由 Xamarin 所使用。
 
--   [Android 最低版本](#minimum)&ndash;指定您想要讓應用程式支援的最舊 Android 版本。 Android 會在*運行*時間使用此 API 層級。
+- [Android 最低版本](#minimum)&ndash;指定您想要讓應用程式支援的最舊 Android 版本。 Android 會在*運行*時間使用此 API 層級。
 
--   以[Android 版本為目標](#target)&ndash;指定您的應用程式要在其上執行的 Android 版本。 Android 會在*運行*時間使用此 API 層級。
+- 以[Android 版本為目標](#target)&ndash;指定您的應用程式要在其上執行的 Android 版本。 Android 會在*運行*時間使用此 API 層級。
 
 您必須先安裝該 API 層級的 SDK 平臺元件, 才可以設定專案的 API 層級。 如需下載和安裝 Android SDK 元件的詳細資訊, 請參閱[Android SDK 設定](~/android/get-started/installation/android-sdk.md)。
 
@@ -81,9 +81,9 @@ Xamarin 會公開三個 Android API 層級專案設定:
 
 Android 的每個版本都有多個名稱:
 
--   Android 版本, 例如**android 9.0**
--   程式碼 (或甜點) 名稱, 例如_圓形圖_
--   對應的 API 層級, 例如**api 層級 28**
+- Android 版本, 例如**android 9.0**
+- 程式碼 (或甜點) 名稱, 例如_圓形圖_
+- 對應的 API 層級, 例如**api 層級 28**
 
 Android 程式碼名稱可能對應至多個版本和 API 層級 (如下表所示), 但每個 Android 版本只會對應至一個 API 層級。
 
@@ -100,9 +100,9 @@ Android 程式碼名稱可能對應至多個版本和 API 層級 (如下表所�
 
 建立應用程式時, 它會包含下列 API 層級資訊:
 
--   建立應用程式所用的 Android*目標*API 層級。
+- 建立應用程式所用的 Android*目標*API 層級。
 
--   Android 裝置必須擁有才能執行應用程式的*最低*android API 層級。 
+- Android 裝置必須擁有才能執行應用程式的*最低*android API 層級。 
 
 這些設定是用來確保正確執行應用程式所需的功能, 可在安裝時于 Android 裝置上使用。 如果不是, 則應用程式會遭到封鎖而無法在該裝置上執行。 例如, 如果 Android 裝置的 API 層級低於您為應用程式指定的最低 API 層級, 則 Android 裝置會阻止使用者安裝您的應用程式。
 
@@ -263,9 +263,9 @@ else
 
 最低 android 版本和目標 android 版本設定無法使用, 因為產生的程式庫不是獨立應用程式&ndash; , 程式庫可以在任何 Android 版本上執行, 視其封裝的應用程式而定。 您可以指定要如何*編譯*程式庫, 但無法預測該程式庫將在哪一個平臺 API 層級上執行。 記住這一點之後, 使用或建立程式庫時, 應該觀察下列最佳作法:
 
--   **使用 Android 程式庫時**如果您要在應用程式中使用 Android 程式庫, 請務必將應用程式的 [目標 framework] 設定設定為至少比程式庫的 [目標 framework] 設定高的 API 層級。  &ndash;
+- **使用 Android 程式庫時**如果您要在應用程式中使用 Android 程式庫, 請務必將應用程式的 [目標 framework] 設定設定為至少比程式庫的 [目標 framework] 設定高的 API 層級。 &ndash;
 
--   **建立 Android 程式庫時**&ndash;如果您要建立可供其他應用程式使用的 Android 程式庫, 請務必將其 [目標 Framework] 設定設定為編譯所需的最低 API 層級。
+- **建立 Android 程式庫時**&ndash;如果您要建立可供其他應用程式使用的 Android 程式庫, 請務必將其 [目標 Framework] 設定設定為編譯所需的最低 API 層級。
 
 建議使用這些最佳作法, 以協助防止程式庫嘗試呼叫在執行時間無法使用的 API (這可能會造成應用程式當機) 的情況。 如果您是程式庫開發人員, 您應該致力於將 API 呼叫的使用限制為總 API 介面區的小型和共同建立子集。 這麼做有助於確保您的程式庫可在更廣泛的 Android 版本之間安全地使用。
 

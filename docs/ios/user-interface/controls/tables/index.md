@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/06/2016
-ms.openlocfilehash: d01814bc241dcfb7b62f40bef226ee720a96ff23
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0dd3830b4903658d0b014eceaad9c57859963c04
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657011"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528638"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>在 Xamarin 中使用資料表和資料格
 
@@ -22,10 +22,10 @@ ms.locfileid: "68657011"
 
 這些文章將全面探討如何使用資料表, 包括:
 
--   **資料表元件**-簡介和說明`UITableView`控制項的視覺元素。 
--   **在資料表中顯示資料**–示範如何建立和填入資料表、使用不同的資料表和儲存格樣式, 以及藉由回收資料格物件來避免發生記憶體問題。 
--   **Advanced usage** –建立自訂資料格, 並使用 UITableView 類別的編輯功能。 
--   以**視覺化方式建立資料表**–使用 Xamarin Designer for iOS 來建立具有分鏡腳本的資料表驅動介面。 
+- **資料表元件**-簡介和說明`UITableView`控制項的視覺元素。 
+- **在資料表中顯示資料**–示範如何建立和填入資料表、使用不同的資料表和儲存格樣式, 以及藉由回收資料格物件來避免發生記憶體問題。 
+- **Advanced usage** –建立自訂資料格, 並使用 UITableView 類別的編輯功能。 
+- 以**視覺化方式建立資料表**–使用 Xamarin Designer for iOS 來建立具有分鏡腳本的資料表驅動介面。 
 
 ## <a name="contents"></a>內容
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2018
-ms.openlocfilehash: 9307e440a780d60a8301c58d70ee882fbbdebab1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a2487fd0f7d90b70ec0dc1fb1978ca06a3108822
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646392"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522612"
 ---
 # <a name="customizing-a-listviews-appearance-with-xamarinandroid"></a>使用 Xamarin 自訂 ListView 的外觀
 
@@ -164,17 +164,17 @@ Console.WriteLine();
 
 這個範例與先前的範例有幾種不同:
 
--  繼承自`Activity` , 而`ListActivity`不是。 您可以自訂任何`ListView`專案的資料列, 但其他控制項也可以包含`Activity`在配置中 (例如標題、按鈕或其他使用者介面元素)。 這個範例會在`ListView`上方加入一個標題來說明。
+- 繼承自`Activity` , 而`ListActivity`不是。 您可以自訂任何`ListView`專案的資料列, 但其他控制項也可以包含`Activity`在配置中 (例如標題、按鈕或其他使用者介面元素)。 這個範例會在`ListView`上方加入一個標題來說明。
 
--  需要畫面的 AXML 版面配置檔案;在先前的範例中`ListActivity` , 不需要版面配置檔案。 這個 AXML 包含`ListView`控制項宣告。
+- 需要畫面的 AXML 版面配置檔案;在先前的範例中`ListActivity` , 不需要版面配置檔案。 這個 AXML 包含`ListView`控制項宣告。
 
--  需要 AXML 版面配置檔案才能轉譯每個資料列。 這個 AXML 檔包含具有自訂字型和色彩設定的文字和影像控制項。
+- 需要 AXML 版面配置檔案才能轉譯每個資料列。 這個 AXML 檔包含具有自訂字型和色彩設定的文字和影像控制項。
 
--  使用選擇性的自訂選取器 XML 檔案, 在選取資料列時設定其外觀。
+- 使用選擇性的自訂選取器 XML 檔案, 在選取資料列時設定其外觀。
 
--  此`Adapter`實作為`GetView`從覆寫傳回自訂的版面配置。
+- 此`Adapter`實作為`GetView`從覆寫傳回自訂的版面配置。
 
--  `ItemClick`必須以不同的方式宣告 (事件處理常式已`ListView.ItemClick`附加至, 而`OnListItemClick`不`ListActivity`是中的覆寫)。
+- `ItemClick`必須以不同的方式宣告 (事件處理常式已`ListView.ItemClick`附加至, 而`OnListItemClick`不`ListActivity`是中的覆寫)。
 
 
 這些變更詳述如下, 從建立活動的視圖和自訂資料列視圖開始, 然後涵蓋介面卡和活動的修改來呈現它們。

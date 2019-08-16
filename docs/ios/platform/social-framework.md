@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 715fd408cc05671beba0277a690585fdbb558c7e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff406b8bd6630ef9e17011e0b4b6b996fa944d89
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654022"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528794"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin 中的社交架構
 
@@ -55,9 +55,9 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 
  `SLComposeViewController`永遠不會直接傳送推文, 而不需要使用者介入。 不過, 它可以使用下列方法進行初始化:
 
--   `SetInitialText`–新增要在推文中顯示的初始文字。 
--  `AddUrl`–新增推文的 Url。
--  `AddImage`–將影像新增至推文。
+- `SetInitialText`–新增要在推文中顯示的初始文字。 
+- `AddUrl`–新增推文的 Url。
+- `AddImage`–將影像新增至推文。
 
 
 一旦初始化之後, `PresentVIewController`呼叫就會顯示所`SLComposeViewController`建立的視圖。 然後, 使用者可以選擇性地編輯和傳送推文, 或取消傳送它。 不論是哪一種情況, 都應該在中`CompletionHandler`關閉控制器, 其中也可以檢查結果, 以查看推文是否已傳送或取消, 如下所示:

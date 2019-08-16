@@ -7,23 +7,23 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 881590b7b2b7277a2f8f2cc17ce1c8bdff68c626
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bb64a0457ad5228e32f233d630576da2836547c1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655780"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528052"
 ---
 # <a name="eventkit-in-xamarinios"></a>在 Xamarin 中 EventKit
 
 iOS 有兩個內建的行事曆相關應用程式: 行事曆應用程式和提醒應用程式。 這很簡單, 足以瞭解行事曆應用程式管理行事歷數據的方式, 但提醒應用程式比較不明顯。 提醒實際上在到期時、何時完成等方面, 都有與其相關聯的日期。因此, iOS 會將所有行事歷數據 (不論是行事曆事件或提醒) 儲存在一個位置, 稱為行事*曆資料庫*。
 
-EventKit 架構可讓您存取行事曆資料庫  儲存的行事曆、行事*曆事件*和*提醒*資料。 從 iOS 4 開始就可以存取行事曆和行事曆事件, 但在 iOS 6 中, 提醒的存取是新的。
+EventKit 架構可讓您存取行事曆資料庫儲存的行事曆、行事*曆事件*和*提醒*資料。 從 iOS 4 開始就可以存取行事曆和行事曆事件, 但在 iOS 6 中, 提醒的存取是新的。
 
 在本指南中, 我們將討論:
 
--   **EventKit 基本概念**–這會透過主要類別介紹 EventKit 的基本部分, 並提供其使用方式的瞭解。 在處理檔的下一個部分之前, 必須先閱讀這一節。 
--   **一般**工作–一般工作一節是關於如何執行一般事項的快速參考, 例如:列舉行事曆、建立、儲存和抓取行事曆事件和提醒, 以及使用內建的控制器來建立和修改行事曆事件。 這一節不需要由 front 重新讀取, 因為它是特定工作的參考。 
+- **EventKit 基本概念**–這會透過主要類別介紹 EventKit 的基本部分, 並提供其使用方式的瞭解。 在處理檔的下一個部分之前, 必須先閱讀這一節。 
+- **一般**工作–一般工作一節是關於如何執行一般事項的快速參考, 例如:列舉行事曆、建立、儲存和抓取行事曆事件和提醒, 以及使用內建的控制器來建立和修改行事曆事件。 這一節不需要由 front 重新讀取, 因為它是特定工作的參考。 
 
 
 本指南中的所有工作都可在隨附範例應用程式中取得:
@@ -219,7 +219,7 @@ protected class CreateEventEditViewDelegate : EventKitUI.EKEventEditViewDelegate
 }
 ```
 
-(選擇性) 在委派中, 您可以在  `Completed`方法中檢查動作來修改事件並重新儲存, 或執行其他工作 (如果已取消), 等等:
+(選擇性) 在委派中, 您可以在 `Completed`方法中檢查動作來修改事件並重新儲存, 或執行其他工作 (如果已取消), 等等:
 
 ```csharp
 public override void Completed (EventKitUI.EKEventEditViewController controller, EKEventEditViewAction action)
@@ -262,7 +262,7 @@ newEvent.Notes = "This is your motivational event to go and do 30 minutes of exe
 newEvent.Calendar = App.Current.EventStore.DefaultCalendarForNewEvents;
 ```
 
-若要儲存事件, 請在  上`EventStore`呼叫 SaveEvent 方法:
+若要儲存事件, 請在上`EventStore`呼叫 SaveEvent 方法:
 
 ```csharp
 NSError e;
@@ -287,7 +287,7 @@ reminder.Title = "Do something awesome!";
 reminder.Calendar = App.Current.EventStore.DefaultCalendarForNewReminders;
 ```
 
-若要儲存, 請  在上`EventStore`呼叫 SaveReminder 方法:
+若要儲存, 請在上`EventStore`呼叫 SaveReminder 方法:
 
 ```csharp
 NSError e;
@@ -306,7 +306,7 @@ EKEvent mySavedEvent = App.Current.EventStore.EventFromIdentifier ( newEvent.Eve
 
 ### <a name="retrieving-a-reminder-by-id"></a>依識別碼抓取提醒
 
-若要取得提醒, 請在  上`EventStore`使用 GetCalendarItem 方法, 並將*CalendarItemIdentifier*傳遞給它:
+若要取得提醒, 請在上`EventStore`使用 GetCalendarItem 方法, 並將*CalendarItemIdentifier*傳遞給它:
 
 ```csharp
 EKCalendarItem myReminder = App.Current.EventStore.GetCalendarItem ( reminder.CalendarItemIdentifier );
@@ -329,7 +329,7 @@ App.Current.EventStore.RemoveEvent ( mySavedEvent, EKSpan.ThisEvent, true, out e
 
 ### <a name="deleting-a-reminder"></a>刪除提醒
 
-若要刪除提醒, 請  在上`EventStore`呼叫 RemoveReminder, 並將參考傳遞給提醒:
+若要刪除提醒, 請在上`EventStore`呼叫 RemoveReminder, 並將參考傳遞給提醒:
 
 ```csharp
 NSError e;

@@ -1,165 +1,165 @@
 ---
-title: RecyclerView 組件和功能
-description: RecyclerView 配置管理員配接器及檢視的持有者的概觀。
+title: RecyclerView 元件和功能
+description: RecyclerView 版面建構管理員、介面卡及檢視器的總覽。
 ms.prod: xamarin
 ms.assetid: 54F999BE-2732-4BC7-A466-D17373961C48
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 13678d3b1bca102e6f608ad1c11838db1f14cd08
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 89b7f70ae69987edbd465d669f1bac17ddebc7c8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61309158"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522451"
 ---
-# <a name="recyclerview-parts-and-functionality"></a>RecyclerView 組件和功能
+# <a name="recyclerview-parts-and-functionality"></a>RecyclerView 元件和功能
 
 
-`RecyclerView` 某些工作需要在內部 （例如捲動和檢視的回收），但它的控制代碼是基本上協調協助程式類別來顯示集合的管理員。 `RecyclerView` 在下列的協助程式類別的委派工作：
+`RecyclerView`在內部處理某些工作 (例如, 視圖的滾動和回收), 但它基本上是協調 helper 類別以顯示集合的管理員。 `RecyclerView`將工作委派給下列 helper 類別:
 
--   **`Adapter`** &ndash; 擴大項目配置 （具現化的版面配置檔案的內容） 和資料繫結至檢視，會顯示在`RecyclerView`。 配接器也會報告項目按一下事件。
+- **`Adapter`** 擴大專案版面配置 (具現化配置檔案的內容), 並將資料系結至`RecyclerView`中顯示的視圖。 &ndash; 介面卡也會報告按專案的事件。
 
--   **`LayoutManager`** &ndash; 量值，並將項目檢視內`RecyclerView`及管理檢視所回收的原則。
+- **`LayoutManager`** 測量並定位`RecyclerView`中的專案查看, 並管理用於回收的原則。 &ndash;
 
--   **`ViewHolder`** &ndash; 查閱，並將檢視的參考。 檢視持有者也有助於偵測項目檢視按一下。
+- **`ViewHolder`** &ndash;查閱並儲存 view 參考。 視圖持有者也有助於偵測專案-視圖的點擊。
 
--   **`ItemDecoration`** &ndash; 可讓應用程式來繪製項目、 重點提示、 和視覺化群組界限之間的分隔線的特定檢視中加入特殊的繪製和配置的位移。
+- **`ItemDecoration`** &ndash;允許應用程式將特殊繪圖和版面配置位移新增至特定的視圖, 以繪製專案、醒目提示和視覺效果群組邊界之間的分隔線。
 
--   **`ItemAnimator`** &ndash; 定義項目動作期間進行，或變更不會對配接器的動畫。
+- **`ItemAnimator`** &ndash;定義在專案動作期間或對介面卡進行變更時所發生的動畫。
 
-之間的關聯性`RecyclerView`， `LayoutManager`，和`Adapter`類別在下列圖表中所述：
+下圖描述`RecyclerView`、 `LayoutManager`和`Adapter`類別之間的關聯性:
 
-![使用配接器，來存取資料集，在含有 LayoutManager RecyclerView 的圖表](parts-and-functionality-images/01-recyclerview-diagram.png)
+![包含 LayoutManager 的 RecyclerView 圖, 使用介面卡來存取資料集](parts-and-functionality-images/01-recyclerview-diagram.png)
 
-如本圖所示`LayoutManager`可以視為之間的媒介`Adapter`而`RecyclerView`。 `LayoutManager`呼叫`Adapter`方法代表`RecyclerView`。 例如，`LayoutManager`呼叫`Adapter`方法來建立新的檢視中的特定項目位置的時候`RecyclerView`。 `Adapter`擴大該項目的版面配置，並建立`ViewHolder`（未顯示） 的執行個體以檢視該位置的快取參考。 當`LayoutManager`呼叫`Adapter`若要將特定的項目繫結至資料集，`Adapter`找出該項目的資料、 擷取資料集，並將它複製到相關聯的項目檢視。
+如本圖所示, `LayoutManager`可以將視為與`Adapter`之間`RecyclerView`的媒介。 會代表`Adapter` 呼叫`RecyclerView`方法。 `LayoutManager` 例如, 當您`LayoutManager`在中`Adapter`建立`RecyclerView`特定專案位置的新 view 時, 會呼叫方法。 會擴大該專案的版面配置, 並`ViewHolder`建立實例 (未顯示), 以快取該位置之 views 的參考。 `Adapter` `LayoutManager`當`Adapter`呼叫來將特定專案系結至資料集時, 會找出該專案的資料、從資料集抓取它, 然後將它複製到相關聯的專案視圖。 `Adapter`
 
-當使用`RecyclerView`在您的應用程式中，若要建立下列類別的衍生型別是必要：
+在您`RecyclerView`的應用程式中使用時, 需要建立下列類別的衍生類型:
 
--   **`RecyclerView.Adapter`** &ndash; 提供從您的應用程式的資料集 （也就是針對您的應用程式） 的繫結，會顯示內的項目檢視`RecyclerView`。 配接器知道如何建立關聯中的每個項目檢視位置`RecyclerView`到資料來源中的特定位置。 此外，配接器處理每個個別項目檢視中之內容的配置，並建立每個檢視的檢視持有者。 配接器也會報告偵測到的項目檢視項目按一下事件。
+- **`RecyclerView.Adapter`** 提供從您應用程式的資料集 (即您的應用程式特定) 到`RecyclerView`中顯示之專案視圖的系結。 &ndash; 介面卡知道如何將中的`RecyclerView`每個專案視圖位置與資料來源中的特定位置產生關聯。 此外, 介面卡會處理每個個別專案視圖中內容的版面配置, 並建立每個視圖的視圖持有者。 介面卡也會報告專案視圖所偵測到的專案點擊事件。
 
--   **`RecyclerView.ViewHolder`** &ndash; 會快取項目的版面配置檔中檢視的參考，這樣不會不必要地重複資源查閱。 檢視持有者也會排列項目按一下 事件轉送到配接器，當使用者點選檢視持有人相關聯的項目檢視。
+- **`RecyclerView.ViewHolder`** &ndash;快取專案配置檔案中 views 的參考, 讓資源查閱不會不必要地重複。 當使用者按了視圖器的相關聯專案視圖時, 視圖持有者也會針對要轉送到介面卡的專案點擊事件進行排列。
 
--   **`RecyclerView.LayoutManager`** &ndash; 將項目內`RecyclerView`。 您可以使用數個預先定義的配置管理員的其中一個，或者您可以實作自己的自訂版面配置管理員。
-    `RecyclerView` 委派，配置管理員，所以您可以外掛在不同的版面配置管理員中，而不需要進行大量的配置原則會變更您的應用程式。
+- **`RecyclerView.LayoutManager`** 在中放置專案。 `RecyclerView` &ndash; 您可以使用數個預先定義的建構管理員之一, 也可以執行您自己的自訂版面建構管理員。
+    `RecyclerView`將配置原則委派給版面建構管理員, 讓您可以插入不同的版面建構管理員, 而不需要對應用程式進行重大變更。
 
-此外，您可以選擇性地擴充下列類別，若要變更的外觀與風格`RecyclerView`應用程式中：
+此外, 您可以選擇性地擴充下列類別, 以變更應用程式`RecyclerView`中的外觀與風格:
 
--   **`RecyclerView.ItemDecoration`**
--   **`RecyclerView.ItemAnimator`**
+- **`RecyclerView.ItemDecoration`**
+- **`RecyclerView.ItemAnimator`**
 
-如果您不會延伸`ItemDecoration`並`ItemAnimator`，`RecyclerView`會使用預設實作。 本指南不會說明如何建立自訂`ItemDecoration`並`ItemAnimator`類別，如需有關這些類別的詳細資訊，請參閱[RecyclerView.ItemDecoration](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemDecoration.html)和[RecyclerView.ItemAnimator](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemAnimator.html).
+如果您沒有擴充`ItemDecoration`和`ItemAnimator`, `RecyclerView`會使用預設的執行。 本指南不會說明如何建立自訂`ItemDecoration`和`ItemAnimator`類別; 如需這些類別的詳細資訊, 請參閱[RecyclerView. ItemDecoration](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemDecoration.html)和[RecyclerView. ItemAnimator](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ItemAnimator.html)。
 
 
 <a name="recycling" />
 
-### <a name="how-view-recycling-works"></a>如何檢視 回收運作方式
+### <a name="how-view-recycling-works"></a>視圖回收的運作方式
 
-`RecyclerView` 不會在您的資料來源中的每一個項目配置的項目檢視。 配置只適合螢幕大小的項目檢視次數而它會重複使用為使用者捲動這些項目配置中。 在使其看不先捲動檢視時，會經過回收的處理序，如下圖所示：
+`RecyclerView`不會為數據源中的每個專案設定項目視圖。 相反地, 它只會配置適合螢幕的專案數, 並在使用者滾動時重複使用這些專案版面配置。 當此視圖首次向外滾動時, 會經歷下圖所示的回收程式:
 
-[![說明檢視回收的六個步驟的圖表](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
+[![說明視圖回收六個步驟的圖表](parts-and-functionality-images/02-view-recycling-sml.png)](parts-and-functionality-images/02-view-recycling.png#lightbox)
 
-1.  當檢視捲動隱密，並且不會再顯示時，它會變成*丟棄檢視*。
+1. 當視圖向外滾動, 且不再顯示時, 它會變成*廢料視圖*。
 
-2.  剪輯資料檢視會放在集區，而變得*回收檢視*。
-    此集區是檢視，其中顯示相同的資料類型的快取。
+2. [廢料] 視圖會放在集區中, 並成為*回收視圖*。
+    此集區是顯示相同資料類型之視圖的快取。
 
-3.  要顯示新的項目時，檢視是取自回收集區，以供重複使用。 此檢視必須重新繫結，配接器才會顯示，因為它會呼叫*中途檢視*。
+3. 當要顯示新的專案時, 會從回收集區取得一個視圖以供重複使用。 因為介面卡必須在顯示之前重新系結此視圖, 所以它稱為「中途*查看*」。
 
-4.  已變更的檢視就會回收： 配接器找出下一個項目，要顯示的資料，並將此資料複製到這個項目的檢視。 這些檢視的參考會從與回收檢視相關聯的檢視持有者擷取。
+4. 中途查看已回收: 介面卡會找出要顯示的下一個專案的資料, 並將此資料複製到這個專案的 views。 這些視圖的參考會從與回收視圖相關聯的視圖持有者中抓取。
 
-5.  回收的檢視新增至清單中的項目`RecyclerView`，即將螢幕上移。
+5. [回收] 視圖會加入至 [ `RecyclerView`即將進入] 畫面中的專案清單。
 
-6.  回收的檢視畫面上會因使用者捲動`RecyclerView`清單中下一個項目。 同時，另一個檢視使其看不捲動，並回收根據上述的步驟。
+6. 當使用者將滾動`RecyclerView`到清單中的下一個專案時, 回收視圖就會進入螢幕上。 同時, 另一個 view 會向外滾動, 並根據上述步驟進行回收。
 
-項目檢視重複使用，除了`RecyclerView`也會使用另一種效率最佳化： 檢視持有者。 A*檢視的持有者*是一個簡單的快取檢視參考的類別。 配接器會擴大為項目配置檔案中，每次它也會建立對應的檢視持有者。 檢視持有者會使用`FindViewById`擴大的項目配置檔案中取得檢視的參考。 這些參考會用來檢視新的資料載入，每次配置就會回收以顯示新的資料。
+除了專案視圖的重複使用之外, `RecyclerView`也會使用另一個效率優化: view 持有者。 *視圖預留位置*是快取視圖參考的簡單類別。 每次介面卡擴大專案配置檔案時, 它也會建立對應的視圖持有者。 視圖持有者會`FindViewById`使用來取得放大專案配置檔案內的視圖參考。 這些參考是用來在每次回收配置以顯示新資料時, 將新資料載入至 views。
  
 
 
-### <a name="the-layout-manager"></a>配置管理員
+### <a name="the-layout-manager"></a>版面建構管理員
 
-配置管理員會負責定位在項目`RecyclerView`顯示; 它決定展示型別 （清單或方格）、 （是否項目會顯示垂直或水平） 的方向，以及應該顯示方向的項目（在一般順序或以相反順序）。 配置管理員也會負責計算的大小和位置中的每個項目的**RecycleView**顯示。
+版面建構管理員會負責定位`RecyclerView`顯示中的專案; 它會決定呈現類型 (清單或方格)、方向 (專案是否以垂直或水準方式顯示), 以及應該顯示的方向專案(以一般順序或反向順序)。 版面建構管理員也會負責計算**RecycleView**顯示中每個專案的大小和位置。
 
-配置管理員有額外的用途： 它會決定何時回收不再顯示給使用者的項目檢視原則。
-由於配置管理員是了解哪些檢視會顯示 （與並不是），則為要決定當檢視可以回收的最佳位置。 若要回收的檢視，請配置管理員通常會呼叫配接器回收檢視的內容取代為不同的資料，如先前所述[檢視回收的運作方式](#recycling)。
+版面建構管理員有額外的用途: 它會決定何時回收使用者不再可見之專案視圖的原則。
+由於版面建構管理員知道哪些視圖是可見的 (而不是), 因此它在決定何時可以回收視圖的最佳位置。 為了回收視圖, 版面建構管理員通常會呼叫介面卡, 以不同的資料來取代回收視圖的內容, 如先前在[查看回收運作方式](#recycling)中所述。
 
-您可以擴充`RecyclerView.LayoutManager`來建立您自己的配置管理員 中，或者您可以使用預先定義的配置管理員。 `RecyclerView` 提供下列預先定義的版面配置管理員：
+您可以擴充`RecyclerView.LayoutManager`以建立您自己的建構管理員, 或者可以使用預先定義的建構管理員。 `RecyclerView`提供下列預先定義的版面建構管理員:
 
--   **`LinearLayoutManager`** &ndash; 排列項目可以水平捲動的資料列或可垂直捲動的資料行中。
+- **`LinearLayoutManager`** &ndash;在可以垂直捲動的資料行中, 或在可水準滾動的資料列中排列專案。
 
--   **`GridLayoutManager`** &ndash; 在方格中顯示項目。
+- **`GridLayoutManager`** &ndash;在方格中顯示專案。
 
--   **`StaggeredGridLayoutManager`** &ndash; 在交錯的方格中，其中某些項目有不同的高度和寬度，會顯示項目。
+- **`StaggeredGridLayoutManager`** &ndash;在交錯的方格中顯示專案, 其中有些專案具有不同的高度和寬度。
 
-若要指定配置管理員，您所選的配置管理員具現化，並將它傳遞給`SetLayoutManager`方法。 請注意，您*必須*指定的配置管理員&ndash;`RecyclerView`不會選取預設的預先定義的配置管理員。
+若要指定建構管理員, 請將您選擇的建構管理員具現化`SetLayoutManager` , 並將其傳遞給方法。 請注意, 您*必須*指定 [版面&ndash;建構管理員`RecyclerView` ] 預設不會選取預先定義的版面建構管理員。
 
-如需有關配置管理員的詳細資訊，請參閱[RecyclerView.LayoutManager 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)。
-
-
-### <a name="the-view-holder"></a>檢視持有者
-
-檢視持有者是您定義快取檢視參考的類別。 配接器會使用這些檢視參考繫結至其內容的每個檢視。 在每個項目`RecyclerView`具有相關聯的檢視持有者執行個體所快取的檢視參考，該項目。 若要建立檢視的持有者，請使用下列步驟來定義類別以包裝每個項目檢視一組正確：
-
-1.  子類別`RecyclerView.ViewHolder`。
-2.  實作，查閱，並將檢視參考的建構函式。
-3.  實作配接器可用來存取這些參考的屬性。
-
-詳細的範例`ViewHolder`實作所示[基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)。
-如需詳細資訊`RecyclerView.ViewHolder`，請參閱 < [RecyclerView.ViewHolder 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
+如需版面建構管理員的詳細資訊, 請參閱[RecyclerView. LayoutManager 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)。
 
 
-### <a name="the-adapter"></a>配接器
+### <a name="the-view-holder"></a>視圖持有者
 
-大部分的 「 處理的麻煩"`RecyclerView`整合程式碼會發生在配接器。 `RecyclerView` 會要求您提供衍生自配接器`RecyclerView.Adapter`以存取您的資料來源，並填入每個項目，以從資料來源的內容。
-因為應用程式專屬資料來源，您必須實作配接器功能了解如何存取您的資料。 配接器從資料來源中擷取資訊，並將其載入至每個項目`RecyclerView`集合。
+視圖預留位置是您針對快取視圖參考所定義的類別。 介面卡會使用這些視圖參考, 將每個視圖系結至其內容。 中的`RecyclerView`每個專案都有相關聯的「視圖預留位置」實例, 可快取該專案的視圖參考。 若要建立視圖持有者, 請使用下列步驟來定義類別, 以保存每個專案的確切視圖集:
 
-欞迶飹晱配接器如何將透過檢視持有者的資料來源中的內容對應至在每個資料列項目內的個別檢視`RecyclerView`:
+1. 子`RecyclerView.ViewHolder`類別。
+2. 執行查詢並儲存 view 參考的函式。
+3. 執行介面卡可用於存取這些參考的屬性。
 
-[![說明資料來源連線至 ViewHolders 配接器的圖表](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
-
-配接器載入每一個`RecyclerView`具有特定資料列項目的資料列。 資料列位置*P*，例如，配接器找出相關聯的資料位置*P*內的資料來源和複製這項資料給資料列項目位置*P*中`RecyclerView`集合。
-在上述繪圖中，比方說，配接器使用的檢視持有者查閱的參考`ImageView`並`TextView`在該位置，因此不需要重複呼叫`FindViewById`這些檢視的使用者身分的捲動 集合和會重複使用檢視。
-
-當您實作配接器時，您必須覆寫下列`RecyclerView.Adapter`方法：
-
--   **`OnCreateViewHolder`** &ndash; 具現化項目配置檔案並檢視持有者。
-
--   **`OnBindViewHolder`** &ndash; 載入其參考儲存在指定的檢視持有者檢視中位於指定位置的資料。
-
--   **`ItemCount`** &ndash; 傳回資料來源中的項目數目。
-
-配置管理員呼叫這些方法，而它定位內的項目`RecyclerView`。 
+[基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)中會`ViewHolder`顯示執行的詳細範例。
+如需的詳細`RecyclerView.ViewHolder`資訊, 請參閱[RecyclerView. ViewHolder 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
 
 
+### <a name="the-adapter"></a>介面卡
 
-### <a name="notifying-recyclerview-of-data-changes"></a>通知 RecyclerView 的資料變更
+大部分的`RecyclerView`整合程式碼「繁重」都是在介面卡中進行。 `RecyclerView`要求您提供衍生自`RecyclerView.Adapter`的介面卡來存取資料來源, 並在每個專案中填入資料來源的內容。
+因為資料來源是應用程式特定的, 所以您必須執行瞭解如何存取資料的介面卡功能。 介面卡會從資料來源中提取資訊, 並將其載入集合中`RecyclerView`的每個專案。
 
-`RecyclerView` 不會自動更新其顯示時其資料的內容來源的變更;配接器必須通知`RecyclerView`資料集中的變更時。 資料集可以變更多種的方式;比方說，可以變更的項目內容，或可能會修改資料的整體結構。
-`RecyclerView.Adapter` 提供許多您可以呼叫的方法，讓`RecyclerView`最有效率的方式回應資料變更：
+下圖說明介面卡如何透過 view 持有者, 將資料來源中的內容對應至中每個資料列專案`RecyclerView`內的個別視圖:
 
--  **`NotifyItemChanged`** &ndash; 指定位置處的項目已變更的訊號。
+[![說明介面卡將資料來源連接到 ViewHolders 的圖表](parts-and-functionality-images/03-recyclerviewer-adapter-sml.png)](parts-and-functionality-images/03-recyclerviewer-adapter.png#lightbox)
 
--  **`NotifyItemRangeChanged`** &ndash; 指定的範圍內的位置的項目已變更的訊號。
+介面卡會載入`RecyclerView`每個資料列, 其中包含特定資料列專案的資料。 例如, 針對資料列位置*p*, 介面卡會在資料來源中的位置*p*找出相關聯的資料, 並將此資料複製到 `RecyclerView`集合中位置 p 的資料列專案。
+例如, 在上圖中, 介面卡會使用視圖持有者來查閱`ImageView`和`TextView`位置的參考, 因此當使用者在集合中滾動時, 不`FindViewById`需要重複呼叫這些視圖。重複使用 views。
 
--  **`NotifyItemInserted`** &ndash; 指定的位置中的項目有新插入的訊號。
+當您執行介面卡時, 必須覆寫下列`RecyclerView.Adapter`方法:
 
--  **`NotifyItemRangeInserted`** &ndash; 指定的範圍內的位置的項目有新插入的訊號。
+- **`OnCreateViewHolder`** &ndash;具現化專案配置檔案和視圖預留位置。
 
--  **`NotifyItemRemoved`** &ndash; 指定的位置中的項目已移除的訊號。
+- **`OnBindViewHolder`** &ndash;將位於指定位置的資料載入至其參考儲存在指定之視圖持有者的視圖中。
 
--  **`NotifyItemRangeRemoved`** &ndash; 指定的範圍內的位置的項目已移除的訊號。
+- **`ItemCount`** &ndash;傳回資料來源中的專案數。
 
--  **`NotifyDataSetChanged`** &ndash; 資料集已變更的訊號 （強制的完整更新）。
+當版面建構管理員在中`RecyclerView`定位專案時, 會呼叫這些方法。 
 
-如果您完全了解如何您的資料集已變更，您可以呼叫適當的方法和更新版本，以重新整理`RecyclerView`最有效率的方式。 如果您不知道到底如何您的資料集已變更，您可以呼叫`NotifyDataSetChanged`，這是目前比較沒有效率因為`RecyclerView`必須重新整理會對使用者顯示的所有檢視。 如需這些方法的詳細資訊，請參閱[RecyclerView.Adapter](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)。
 
-在下一個主題中，[基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)，範例應用程式會實作以示範實際的程式碼範例的組件和上面所述的功能。
+
+### <a name="notifying-recyclerview-of-data-changes"></a>通知 RecyclerView 資料變更
+
+`RecyclerView`當其資料來源的內容變更時, 不會自動更新其顯示;當資料集發生`RecyclerView`變更時, 介面卡必須通知。 資料集可以透過許多方式變更;例如, 專案內的內容可能會變更, 或資料的整體結構可能會改變。
+`RecyclerView.Adapter`提供一些您可以呼叫的方法, 以便`RecyclerView`以最有效率的方式回應資料變更:
+
+- **`NotifyItemChanged`** &ndash;通知指定位置的專案已變更。
+
+- **`NotifyItemRangeChanged`** &ndash;表示指定位置範圍內的專案已變更。
+
+- **`NotifyItemInserted`** &ndash;表示已新插入指定位置的專案。
+
+- **`NotifyItemRangeInserted`** &ndash;表示已新插入指定範圍內的專案。
+
+- **`NotifyItemRemoved`** &ndash;表示已移除指定位置中的專案。
+
+- **`NotifyItemRangeRemoved`** &ndash;表示已移除指定位置範圍內的專案。
+
+- **`NotifyDataSetChanged`** &ndash;指示資料集已變更 (強制執行完整更新)。
+
+如果您確切知道資料集的變更方式, 您可以呼叫上述適當的方法, 以`RecyclerView`最有效率的方式重新整理。 如果您不知道資料集變更的確切方式, 可以呼叫`NotifyDataSetChanged`, 因為`RecyclerView`必須重新整理使用者看得見的所有視圖, 所以效率較低。 如需這些方法的詳細資訊, 請參閱[RecyclerView。](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html)
+
+在下一個主題中,[基本的 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)中, 範例應用程式會實作為示範上述元件和功能的實際程式碼範例。
 
 
 ## <a name="related-links"></a>相關連結
 
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
-- [基本的 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
-- [延伸 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
+- [基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)
+- [擴充 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/extending-the-example.md)
 - [RecyclerView](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)

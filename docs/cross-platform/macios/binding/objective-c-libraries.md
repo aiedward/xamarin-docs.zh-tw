@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 1d4c93e625b92275828428917ebbc86d931e8363
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daca6d1cc5ec8a5e47f068f140f835219bd24c86
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649498"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522012"
 ---
 # <a name="binding-objective-c-libraries"></a>系結目標-C 程式庫
 
@@ -97,10 +97,10 @@ namespace Cocos2D {
 
 若要產生完整的系結, 您通常會處理四個元件:
 
--  API 定義檔 (`ApiDefinition.cs`在範本中)。
--  選擇性: API 定義檔所需的任何列舉、類型、結構 (`StructsAndEnums.cs`在範本中)。
--  選擇性: 可能會展開所產生之系結的額外來源, 或C#提供更易記的C# API (任何您加入至專案的檔案)。
--  您要系結的原生程式庫。
+- API 定義檔 (`ApiDefinition.cs`在範本中)。
+- 選擇性: API 定義檔所需的任何列舉、類型、結構 (`StructsAndEnums.cs`在範本中)。
+- 選擇性: 可能會展開所產生之系結的額外來源, 或C#提供更易記的C# API (任何您加入至專案的檔案)。
+- 您要系結的原生程式庫。
 
 此圖表顯示檔案之間的關聯性:
 
@@ -132,7 +132,7 @@ public partial class Camera {
 
 建立程式庫將會產生您的原生系結。
 
-若要完成此系結, 您應該將原生程式庫加入至專案。  若要這麼做, 您可以將原生程式庫加入至專案, 方法是將原生程式庫從搜尋工具拖放至方案 explorer 中的專案, 或以滑鼠右鍵按一下專案, 然後選擇 [**新增** > ] [新增檔案至]  選取原生程式庫。
+若要完成此系結, 您應該將原生程式庫加入至專案。  若要這麼做, 您可以將原生程式庫加入至專案, 方法是將原生程式庫從搜尋工具拖放至方案 explorer 中的專案, 或以滑鼠右鍵按一下專案, 然後選擇 [**新增** > ] [新增檔案至]選取原生程式庫。
 依慣例的原生程式庫會以 "lib" 一字開頭, 並以副檔名 ". a" 結尾。 當您這麼做時, Visual Studio for Mac 將會加入兩個檔案: 檔案和自動填入C#的檔案, 其中包含原生程式庫所包含內容的相關資訊:
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "依慣例的原生程式庫會以 lib 開頭, 並以副檔名結尾。")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
@@ -309,10 +309,10 @@ interface MyMutableTree {
 
 此`btouch-native`工具會在您的類別中自動產生 fours 的函式, `Foo`針對指定的類別, 它會產生:
 
--  `Foo ()`: 預設的函式 (對應至目標-C 的 "init" 函數)
--  `Foo (NSCoder)`: 在還原序列化筆尖檔案期間使用的函式 (對應至目標-C 的 "initWithCoder:" 程式化)。
--  `Foo (IntPtr handle)`: 以控制碼為基礎之建立的函式, 執行時間需要從非受控物件公開 managed 物件時, 會叫用此函數。
--  `Foo (NSEmptyFlag)`: 衍生類別會使用這個來避免雙重初始化。
+- `Foo ()`: 預設的函式 (對應至目標-C 的 "init" 函數)
+- `Foo (NSCoder)`: 在還原序列化筆尖檔案期間使用的函式 (對應至目標-C 的 "initWithCoder:" 程式化)。
+- `Foo (IntPtr handle)`: 以控制碼為基礎之建立的函式, 執行時間需要從非受控物件公開 managed 物件時, 會叫用此函數。
+- `Foo (NSEmptyFlag)`: 衍生類別會使用這個來避免雙重初始化。
 
 針對您所定義的函式, 必須在介面定義內使用下列簽章來宣告這些函式`IntPtr` : 它們必須傳回值, 而且方法的名稱應該是「構造函式」。 例如, 若要`initWithFrame:`系結此函式, 這就是您要使用的:
 
@@ -545,14 +545,14 @@ interface LonelyClass {
 
 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性可以套用至下列資料類型:
 
--  `NSString`參考 (僅限唯讀屬性)
--  `NSArray`參考 (僅限唯讀屬性)
--  32位整數 (`System.Int32`)
--  64位整數 (`System.Int64`)
--  32-位浮點數`System.Single`()
--  64-位浮點數`System.Double`()
--  `System.Drawing.SizeF`
--  `CGSize`
+- `NSString`參考 (僅限唯讀屬性)
+- `NSArray`參考 (僅限唯讀屬性)
+- 32位整數 (`System.Int32`)
+- 64位整數 (`System.Int64`)
+- 32-位浮點數`System.Single`()
+- 64-位浮點數`System.Double`()
+- `System.Drawing.SizeF`
+- `CGSize`
 
 除了原生功能變數名稱以外, 您還可以藉由傳遞程式庫名稱來指定欄位所在的程式庫名稱:
 
@@ -1197,9 +1197,9 @@ void SomeString (ref NSObject byref);
 
 上述會將值標示為具有「保留」的語法。 可用的語法如下:
 
--  指派
--  複製
--  保留
+- 指派
+- 複製
+- 保留
 
 <a name="Style_Guidelines" />
 
@@ -1255,9 +1255,9 @@ interface MyClassDelegate {
 
 若要包裝類別, 您必須:
 
--  在您的主機類別中, 將新增至您的[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
+- 在您的主機類別中, 將新增至您的[`[BaseType]`](~/cross-platform/macios/binding/binding-types-reference.md#BaseTypeAttribute)  
    宣告作為其委派的類型, 以及您所公開C#的名稱。 在上述範例中, 它們`typeof (MyClassDelegate)`分別`WeakDelegate`是和。
--  在您的委派類別中, 每個具有兩個以上參數的方法上, 您必須指定要用於自動產生的 EventArgs 類別的型別。
+- 在您的委派類別中, 每個具有兩個以上參數的方法上, 您必須指定要用於自動產生的 EventArgs 類別的型別。
 
 系結產生器不限於僅包裝單一事件目的地, 某些目標 C 類別可能會發出訊息給多個委派, 因此您必須提供陣列以支援此設定。 大部分的服務都不需要它, 但產生器已準備好支援這些案例。
 

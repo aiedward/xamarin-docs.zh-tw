@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: b73f00eb704d80da6b0bab3a34f08f2d1cb70a16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0870139def82317646981f154116a704d84cfa0e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646182"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528000"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS Objective-C 程式庫
 
@@ -45,10 +45,10 @@ _本文提供的實際操作逐步解說, 是為現有的 InfColorPicker 的目�
 
 本文假設您已熟悉 Xcode 和目標 C 語言, 而且您已閱讀我們的系結[目標-c](~/cross-platform/macios/binding/index.md)檔。 此外, 若要完成顯示的步驟, 需要下列各項:
 
--  **Xcode 和 IOS SDK** -Apple 的 Xcode 和最新的 ios API 必須在開發人員的電腦上安裝及設定。
--  **[Xcode 命令列工具](#Installing_the_Xcode_Command_Line_Tools)** -必須針對目前安裝的 Xcode 版本安裝 Xcode 命令列工具 (如需安裝詳細資料, 請參閱下文)。
--  **Visual Studio for Mac 或 Visual Studio** -必須在開發電腦上安裝及設定最新版本的 Visual Studio for Mac 或 Visual Studio。 需要 Apple Mac 才能開發 Xamarin iOS 應用程式, 而使用 Visual Studio 您必須連線到[Xamarin ios 組建主機](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
--  **目標 Sharpie 的最新版本**-從[這裡](~/cross-platform/macios/binding/objective-sharpie/get-started.md)下載的目標 Sharpie 工具的目前複本。 如果您已安裝目標 Sharpie, 您可以使用, 將其更新為最新版本`sharpie update`
+- **Xcode 和 IOS SDK** -Apple 的 Xcode 和最新的 ios API 必須在開發人員的電腦上安裝及設定。
+- **[Xcode 命令列工具](#Installing_the_Xcode_Command_Line_Tools)** -必須針對目前安裝的 Xcode 版本安裝 Xcode 命令列工具 (如需安裝詳細資料, 請參閱下文)。
+- **Visual Studio for Mac 或 Visual Studio** -必須在開發電腦上安裝及設定最新版本的 Visual Studio for Mac 或 Visual Studio。 需要 Apple Mac 才能開發 Xamarin iOS 應用程式, 而使用 Visual Studio 您必須連線到[Xamarin ios 組建主機](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
+- **目標 Sharpie 的最新版本**-從[這裡](~/cross-platform/macios/binding/objective-sharpie/get-started.md)下載的目標 Sharpie 工具的目前複本。 如果您已安裝目標 Sharpie, 您可以使用, 將其更新為最新版本`sharpie update`
 
 <a name="Installing_the_Xcode_Command_Line_Tools"/>
 
@@ -332,7 +332,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 -----
 
-當檔案  新增至專案時, Xamarin. iOS 會自動將檔案的**組建動作**設定為**ObjcBindingNativeLibrary**, 並建立名`libInfColorPickerSDK.linkwith.cs`為的特殊檔案。
+當檔案新增至專案時, Xamarin. iOS 會自動將檔案的**組建動作**設定為**ObjcBindingNativeLibrary**, 並建立名`libInfColorPickerSDK.linkwith.cs`為的特殊檔案。
 
 
 此檔案包含的`LinkWith`屬性會告知 Xamarin。 iOS 如何處理剛才新增的靜態程式庫。 此檔案的內容會顯示在下列程式碼片段中:

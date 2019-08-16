@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 21d25315aec5c056df90da11b8a51ee1493a45a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656676"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529234"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的檔案處理
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 _使用 .NET Standard 程式庫的程式碼或使用內嵌的資源，可以使用 Xamarin.Forms 處理檔案。_
 
@@ -115,8 +115,8 @@ listView.ItemsSource = monkeys;
 
 共用專案的這個問題有兩個解決方案：
 
--  **同步專案** - 編輯每個平台的專案屬性，使用**相同的**組件名稱和預設命名空間。 然後，這個值就會「硬式編碼」為共用專案的內嵌資源識別碼前置詞。
--  **#if 編譯器指示詞** - 使用編譯器指示詞設定正確的資源識別碼前置詞，並使用該值以動態方式建構正確的資源識別碼。
+- **同步專案** - 編輯每個平台的專案屬性，使用**相同的**組件名稱和預設命名空間。 然後，這個值就會「硬式編碼」為共用專案的內嵌資源識別碼前置詞。
+- **#if 編譯器指示詞** - 使用編譯器指示詞設定正確的資源識別碼前置詞，並使用該值以動態方式建構正確的資源識別碼。
 
 
 以下為示範第二個選項的程式碼。 編譯器指示詞用以選取硬式編碼的資源前置詞 (一般和參考專案的預設命名空間相同)。 然後串連資源前置詞與內嵌的資源檔案名稱，使用 `resourcePrefix` 變數建立有效的資源識別碼。
@@ -148,7 +148,7 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="debugging-embedded-resources"></a>偵錯內嵌資源
 
-因為有時很難了解為什麼未載入特定的資源，所以下列偵錯程式碼會暫時新增至應用程式，協助確認已正確設定資源。 它會將內嵌在指定組件中的所有已知資源輸出到 [錯誤]  板，協助偵錯資源載入問題。
+因為有時很難了解為什麼未載入特定的資源，所以下列偵錯程式碼會暫時新增至應用程式，協助確認已正確設定資源。 它會將內嵌在指定組件中的所有已知資源輸出到 [錯誤] 板，協助偵錯資源載入問題。
 
 ```csharp
 using System.Reflection;

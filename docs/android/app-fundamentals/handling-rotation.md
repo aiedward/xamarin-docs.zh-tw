@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b1039dd433456731b775399ab42222fe0e4cc6d9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 198d667ea52fcad4758c2845e5f2e935d1f74a0b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644375"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521115"
 ---
 # <a name="handling-rotation"></a>處理旋轉
 
@@ -25,9 +25,9 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 
 本指南會檢查下列方向主題:
 
--   **宣告式版面配置旋轉**&ndash;如何使用 Android 資源系統來建立可感知方向的應用程式, 包括如何載入特定方向的版面配置和可繪製資源。
+- **宣告式版面配置旋轉**&ndash;如何使用 Android 資源系統來建立可感知方向的應用程式, 包括如何載入特定方向的版面配置和可繪製資源。
 
--   程式**設計版面配置旋轉**&ndash;如何以程式設計方式加入控制項, 以及如何手動處理方向變更。
+- 程式**設計版面配置旋轉**&ndash;如何以程式設計方式加入控制項, 以及如何手動處理方向變更。
 
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>以宣告方式使用版面配置來處理旋轉
@@ -35,9 +35,9 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 藉由將檔案包含在遵循命名慣例的資料夾中, Android 會在方向變更時自動載入適當的檔案。
 這包括的支援:
 
--   *版面配置資源*&ndash;指定針對每個方向放大的配置檔案。
+- *版面配置資源*&ndash;指定針對每個方向放大的配置檔案。
 
--   *繪製資源*&ndash;指定每個方向所要載入的可繪製資源。
+- *繪製資源*&ndash;指定每個方向所要載入的可繪製資源。
 
 
 ### <a name="layout-resources"></a>版面配置資源
@@ -133,12 +133,12 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 
 若要以程式設計方式加入控制項, 應用程式需要執行下列步驟:
 
--  建立版面配置。
--  設定版面配置參數。
--  建立控制項。
--  設定控制項版面配置參數。
--  將控制項加入至版面配置。
--  將版面配置設定為內容視圖。
+- 建立版面配置。
+- 設定版面配置參數。
+- 建立控制項。
+- 設定控制項版面配置參數。
+- 將控制項加入至版面配置。
+- 將版面配置設定為內容視圖。
 
 例如, 假設有一個由加入`TextView` `RelativeLayout`至的單一控制群組成的使用者介面, 如下列程式碼所示。
 

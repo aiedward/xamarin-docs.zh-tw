@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 62ccaea83a3648c5d9b0a029b3a22d136c4f2cee
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6890846a1cb5cd44429c9157b3aeb75c7a1f2f4b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649416"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521424"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的應用程式傳輸安全性
 
@@ -175,7 +175,7 @@ NSAppTransportSecurity
 - **NSAllowsArbitraryLoads**(`Boolean`)-如果`YES` ATS 將針對中`NSExceptionDomains`**未**列出的任何網域停用。 針對列出的網域, 將會使用指定的安全性設定。
 - **NSAllowsArbitraryLoadsInWebContent**(`Boolean`)-如果`YES`允許 web 網頁正確載入, 則仍會為應用程式的其餘部分啟用 Apple 傳輸安全性 (ATS) 保護。
 - **NSExceptionDomains**(`Dictionary`)-網域的集合, 以及 ATS 應該針對指定的網域使用的安全性設定。
-- **< 的功能變數名稱-例外狀況字串 >** (`Dictionary`)-指定網域的例外狀況集合 (例如 `www.xamarin.com`)。
+- **功能變數名稱-適用于例外狀況的字串 > ()-指定網域的例外狀況集合 (例如\<**  `Dictionary` `www.xamarin.com`)。
 - **NSExceptionMinimumTLSVersion**(`String`)-最低的 TLS 版本`TLSv1.0`, 可為`TLSv1.1` 、 `TLSv1.2`或 (這是預設值)。
 - **NSExceptionRequiresForwardSecrecy**(`Boolean`)-如果`NO`網域不需要使用具有正向安全性的加密。 預設值為 `YES`。
 - **NSExceptionAllowsInsecureHTTPLoads**(`Boolean`)-如果`NO`為 (預設值), 則與此`HTTPS`網域的所有通訊都必須在通訊協定中。

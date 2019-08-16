@@ -1,41 +1,41 @@
 ---
-title: C#6 的新功能概觀
-description: 第 6 版的C#語言持續發展的語言有較少的未定案程式碼、 改善的清晰度和較佳的一致性。 更簡潔的初始化語法，能夠使用 catch/finally 區塊，以及 null 條件中的 await 嗎？ 運算子會特別有用。
+title: C#6個新功能總覽
+description: 第6版的C#語言會繼續進化語言, 使其具有較少的重複使用程式碼、改善的清晰度, 以及更高的一致性。 清除程式初始化語法、在 catch/finally 區塊中使用 await 的能力, 以及 null 條件的功能嗎？ 運算子特別有用。
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: 0fd7f4e9972f7bf762a44c9edf30fa13f9d989bc
-ms.sourcegitcommit: 0845ed2daa65468b6fe12ac4e9386f3315d72f4d
+ms.openlocfilehash: 1b559f3f96088e511250e09684f7c9e120d32b73
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850954"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521671"
 ---
-# <a name="c-6-new-features-overview"></a>C#6 的新功能概觀
+# <a name="c-6-new-features-overview"></a>C#6個新功能總覽
 
-_第 6 版的C#語言持續發展的語言有較少的未定案程式碼、 改善的清晰度和較佳的一致性。更簡潔的初始化語法，能夠使用 catch/finally 區塊，以及 null 條件中的 await 嗎？運算子會特別有用。_
+_第6版的C#語言會繼續進化語言, 使其具有較少的重複使用程式碼、改善的清晰度, 以及更高的一致性。清除程式初始化語法、在 catch/finally 區塊中使用 await 的能力, 以及 null 條件的功能嗎？運算子特別有用。_
 
 > [!NOTE]
-> 如需最新版的C#語言 – 第 7 版 – 請參閱文章[的新功能C#7.0](/dotnet/csharp/whats-new/csharp-7)
+> 如需最新C#語言版本的詳細資訊–第7版–請參閱[ C# 7.0 的新功能](/dotnet/csharp/whats-new/csharp-7)文章
 
-本文件介紹的新功能C#6。 Mono 編譯器完全支援和開發人員就可以開始使用所有 Xamarin 目標平台的新功能。
+本檔介紹C# 6 的新功能。 Mono 編譯器完全支援它, 而開發人員可以開始在所有 Xamarin 目標平臺上使用新功能。
 
 > [!VIDEO https://youtube.com/embed/7UdV7zGPfMU]
 
-**新功能C#影片的 6**
+**C# 6 的新功能影片**
 
-## <a name="using-c-6"></a>使用C#6
+## <a name="using-c-6"></a>使用C# 6
 
-C# 6 編譯器可在所有的最新版本的 Visual Studio for mac。
-使用命令列編譯器應該確認`mcs --version`傳回 4.0 或更新版本。
-Visual Studio for Mac 使用者可以檢查是否有 4 個 （或更新版本） 的 Mono 安裝藉由參考**關於 Visual Studio for Mac > Visual Studio for Mac > 顯示詳細資料**。
+C# 6 個編譯器會用於所有最新版本的 Visual Studio for Mac。
+使用命令列編譯器的`mcs --version`那些應用程式應該確認傳回4.0 或更高版本。
+Visual Studio for Mac 使用者可以藉由參考**About Visual Studio for Mac > Visual Studio for Mac > 顯示詳細資料**, 檢查是否已安裝 Mono 4 (或更新版本)。
 
-## <a name="less-boilerplate"></a>少的樣板
+## <a name="less-boilerplate"></a>較少的樣板
 ### <a name="using-static"></a>使用靜態
-列舉和特定類別，例如`System.Math`，是主要的靜態值和函式的持有者。 在C#6，您可以匯入單一類型的所有靜態成員`using static`陳述式。 比較中的典型三角函式C#5 和C#6:
+列舉和特定類別 (例如`System.Math`) 主要是靜態值和函數的持有者。 在C# 6 中, 您可以使用單一`using static`語句匯入類型的所有靜態成員。 比較5和C# C# 6 中的一般三角函數函數:
 
 ```csharp
 // Classic C#
@@ -61,16 +61,16 @@ class MyClass
 }
 ```
 
-`using static` 不會公開`const`欄位，例如`Math.PI`和`Math.E`、 直接存取：
+`using static`不會讓公用`const`欄位 ( `Math.PI`例如和`Math.E`) 可直接存取:
 
 ```csharp
 for (var angle = 0.0; angle <= Math.PI * 2.0; angle += Math.PI / 8) ... 
 //PI is const, not static, so requires Math.PI
 ```
 
-### <a name="using-static-with-extension-methods"></a>擴充方法使用靜態
+### <a name="using-static-with-extension-methods"></a>搭配使用 static 與擴充方法
 
-`using static`設備運作稍有不同的擴充方法。 雖然擴充方法撰寫使用`static`，它們也沒有意義沒有運算執行個體。 因此當`using static`定義擴充方法，其目標類型上可用的擴充方法的類型搭配使用 (方法的`this`型別)。 比方說，`using static System.Linq.Enumerable`可用來擴充的 API`IEnumerable<T>`物件，而不將所有 LINQ 類型：
+`using static`設備的運作方式與擴充方法稍有不同。 雖然擴充方法是使用`static`撰寫的, 但沒有要在其上運作的實例並沒有意義。 因此, `using static`當搭配定義擴充方法的類型使用時, 擴充方法會在其目標型別 (方法的`this`類型) 上變成可用。 例如, 可以`using static System.Linq.Enumerable`用來擴充`IEnumerable<T>`物件的 API, 而不需要帶入所有的 LINQ 類型:
 
 ```csharp
 using static System.Linq.Enumerable;
@@ -87,16 +87,16 @@ class Program
 }
 ```
 
-前一個範例示範的行為差異： 擴充方法`Enumerable.Where`陣列中的靜態方法時相關聯`String.Join`可以不使用參考呼叫`String`型別。
+上一個範例示範行為的差異: 擴充方法`Enumerable.Where`與陣列相關聯, 而靜態方法`String.Join`則可以在不參考該`String`類型的情況下呼叫。
 
 ### <a name="nameof-expressions"></a>nameof 運算式
-您想要參考的某些情況下，您已獲得的變數或欄位的名稱。 在C#第 6`nameof(someVariableOrFieldOrType)`會傳回字串`"someVariableOrFieldOrType"`。 比方說，在擲回時`ArgumentException`就很可能會想要命名的引數無效：
+有時候, 您會想要參考您已提供變數或欄位的名稱。 在C# 6 中`nameof(someVariableOrFieldOrType)` , 會傳回字串`"someVariableOrFieldOrType"`。 比方說, 當擲回`ArgumentException`時, 您很可能想要將不正確引數命名為:
 
 ```csharp
 throw new ArgumentException ("Problem with " + nameof(myInvalidArgument))
 ```
 
-主要的優點`nameof`運算式就是它們會檢查類型，並使用重構工具架構相容。 類型檢查的`nameof`運算式會在情況下特別歡迎其中`string`用來以動態方式將類型產生關聯。 例如，在 iOS`string`用來指定用來建立原型的型別`UITableViewCell`中的物件`UITableView`。 `nameof` 可確保此關聯不會因拼字錯誤或草率重構而失敗：
+`nameof`運算式的主要優點是它們的類型為已核取, 而且與工具支援的重整相容。 在用來動態關聯`nameof`類型的情況下`string` , 運算式的類型檢查特別歡迎。 例如, 在 iOS a `string`中, 是用來指定在中`UITableView`用來`UITableViewCell`原型物件的型別。 `nameof`可以確保這個關聯不會因為拼寫錯誤或這個散漫重構而失敗:
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -107,7 +107,7 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 }
 ```
 
-雖然您可以傳遞限定的名稱得以`nameof`，最後一個項目 (最後一個之後`.`) 會傳回。 比方說，您也可以在 Xamarin.Forms 中加入資料繫結：
+雖然您可以將限定名稱傳遞給`nameof`, 但只會傳回最後一個專案 ( `.`在最後一個後面)。 例如, 您可以在 Xamarin 中加入資料系結。表單:
 
 ```csharp
 var myReactiveInstance = new ReactiveType ();
@@ -117,10 +117,10 @@ var myLabelOld.SetBinding (Label.TextProperty, "StringField");
 var myLabelNew.SetBinding (Label.TextProperty, nameof(ReactiveType.StringField));
 ```
 
-這兩個呼叫`SetBinding`傳遞相同的值：`nameof(ReactiveType.StringField)`是`"StringField"`，而非`"ReactiveType.StringField"`如您一開始所預期。
+對`SetBinding`的兩個呼叫會傳遞相同的`nameof(ReactiveType.StringField)`值`"StringField"`: 是`"ReactiveType.StringField"` , 而不是您最初預期的方式。
 
-## <a name="null-conditional-operator"></a>Null 條件運算子
-先前的更新C#導入的概念，可為 null 的型別以及 null 聯合運算子`??`減少時處理可為 null 值的未定案程式碼數量。 C#6 會繼續使用 「 null 條件運算子 」 此佈景主題`?.`。 如果物件不是 null 條件運算子運算式的右側物件上使用時，會傳回成員值`null`和`null`否則：
+## <a name="null-conditional-operator"></a>Null-條件運算子
+先前的更新C#導入了可為 null 的型別和 null 聯合`??`運算子的概念, 以減少處理可為 null 值時的重複採用程式碼數量。 C#6使用「null 條件運算子`?.`」繼續此主題。 當用於運算式右邊的物件時, 如果物件不`null`是, `null`則 null 條件運算子會傳回成員值, 否則會傳回:
 
 ```csharp
 var ss = new string[] { "Foo", null };
@@ -129,19 +129,19 @@ var length1 = ss [1]?.Length; // null
 var lengths = ss.Select (s => s?.Length ?? 0); //[3, 0]
 ```
 
-(兩者`length0`並`length1`推斷為類型`int?`)
+`length0` (和`length1`都會推斷成類型`int?`)
 
-在上一個範例所示的最後一行`?`null 條件運算子結合`??`null 聯合運算子。 新C#6 個 null 條件運算子會傳回`null`第 2 個項目，在陣列中，此時 null 聯合運算子就會執行並提供 0 上`lengths`陣列 （無論是適當或不是，當然，問題-專用）。
+上一個範例中的最後一行顯示`?` null 條件運算子`??`與 null 聯合運算子的組合。 新C#的6個 null 條件運算子`null`會在陣列中的第二個元素上傳回, 此時 null 聯合運算子就會開始, 並提供0給`lengths`陣列 (當然,問題特定)。
 
-Null 條件運算子應該可大幅減少在許多應用程式中的未定案 null 檢查所需。
+Null 條件運算子應該可大幅減少許多應用程式中所需的重複執行 null 檢查量。
 
-有一些限制，因為模稜兩可的 null 條件運算子。 您無法立即遵循`?`使用括號括住的引數清單中，您可能希望如何處理委派：
+因為不明確, 所以 null 條件運算子有一些限制。 您不能緊接在`?`加上括弧的引數清單之後, 您可能想要使用委派來執行下列動作:
 
 ```csharp
 SomeDelegate?("Some Argument") // Not allowed
 ```
 
-不過，`Invoke`可以用來分隔`?`引數清單和移轉仍是標示的改進`null`-檢查未定案的區塊：
+不過, `Invoke`可以用來分隔引數`?`清單中的, 而且仍然是已標示為重複使用`null`的檢查區塊的改善:
 
 ```csharp
 public event EventHandler HandoffOccurred;
@@ -153,23 +153,23 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 ```
 
 ## <a name="string-interpolation"></a>字串插值
-`String.Format`函式具有傳統上使用索引做為預留位置的格式字串，例如`String.Format("Expected: {0} Received: {1}.", expected, received`)。 當然，加入新的值時，一律具有涉及起跳引數及重新編號的預留位置，以正確的順序，引數清單中插入新的引數的煩人小工作。
+函式過去使用了索引做為格式字串中的預留位置, 例如`String.Format("Expected: {0} Received: {1}.", expected, received`)。 `String.Format` 當然, 在引數清單中, 加入新的值時, 一定會有一個令人討厭的小工作, 包括計算引數、重新排序預留位置, 以及將新引數插入正確的順序。
 
-C#6 的新字串內插補點功能可大幅改良`String.Format`。 現在，您可以直接名稱前面會加上字串中的變數`$`。 若是執行個體：
+C#6的新字串插補功能大幅改善`String.Format`了。 現在, 您可以在前面`$`加上的字串中, 直接命名變數。 若是執行個體：
 
 ```csharp
 $"Expected: {expected} Received: {received}."
 ```
 
-當然，檢查變數和拼字錯誤或非可用的變數會造成編譯器錯誤。
+當然, 變數是已核取狀態, 而拼錯或不可用的變數會造成編譯器錯誤。
 
-預留位置不需要是簡單的變數，它們可以是任何運算式。 這些預留位置，在中，您可以使用引號*而不需要*逸出這些引號。 比方說，請注意`"s"`如下：
+預留位置不需要是簡單變數, 可以是任何運算式。 在這些預留位置中, 您可以使用引號,*而不會*將這些引號轉義。 例如, 請注意`"s"`下列各項:
 
 ```csharp
 var s = $"Timestamp: {DateTime.Now.ToString ("s", System.Globalization.CultureInfo.InvariantCulture )}"
 ```
 
-字串內插補點支援的對齊方式和格式化語法`String.Format`。 就如同您先前撰寫`{index, alignment:format}`，請在C#6 您撰寫`{placeholder, alignment:format}`:
+字串插補支援的對齊和格式化語法`String.Format`。 就像您先前所`{index, alignment:format}`撰寫的C#一樣, 在`{placeholder, alignment:format}`6 中您可以撰寫:
 
 ```csharp
 using static System.Linq.Enumerable;
@@ -187,23 +187,25 @@ class Program
     }
 }
 ```
-中的結果：
+產生的結果:
 
-    The value is       1.00.
-    The value is       2.00.
-    The value is       3.00.
-    The value is       4.00.
-    The value is      12.00.
-    The value is 123,456.00.
-    Minimum is 1.00.
+```
+The value is       1.00.
+The value is       2.00.
+The value is       3.00.
+The value is       4.00.
+The value is      12.00.
+The value is 123,456.00.
+Minimum is 1.00.
+```
 
-字串內插補點時的語法而已`String.Format`： 它不能搭配`@""`字串常值和與不相容`const`，即使沒有預留位置會使用：
+字串插補是的`String.Format`語法: 它不能`@""`用於字串常值`const`, 而且與不相容, 即使沒有使用預留位置也一樣:
 
 ```csharp
 const string s = $"Foo"; //Error : const requires value
 ```
 
-在常見的使用案例的建置使用字串插補的函式引數，您仍然需要小心逸出、 編碼及文化特性的問題。 SQL 和 URL 的查詢至關重要，當然，若要處理。 如同`String.Format`，字串內插補點會使用`CultureInfo.CurrentCulture`。 使用`CultureInfo.InvariantCulture`是稍微冗長：
+在使用字串內插補點建立函式引數的常見使用案例中, 您仍然需要特別注意有關轉義、編碼和文化特性的問題。 SQL 和 URL 查詢當然是要淨化的關鍵。 如同, 字串插補會`CultureInfo.CurrentCulture`使用。 `String.Format` 使用`CultureInfo.InvariantCulture`稍微冗長:
 
 ```csharp
 Thread.CurrentThread.CurrentCulture  = new CultureInfo ("de");
@@ -213,11 +215,11 @@ Console.WriteLine ($"Today is: {DateTime.Now.ToString(CultureInfo.InvariantCultu
 
 ## <a name="initialization"></a>初始化
 
-C#6 提供簡潔的方式，來指定屬性、 欄位和成員數目。
+C#6提供幾種簡單的方式來指定屬性、欄位和成員。
 
-### <a name="auto-property-initialization"></a>Auto 屬性初始設定
+### <a name="auto-property-initialization"></a>自動屬性初始化
 
-現在可以在相同的簡潔方式，做為欄位初始化 auto 屬性。 不可變的 auto 屬性可以使用只有 getter 撰寫：
+自動屬性現在可以用與欄位相同的簡潔方式初始化。 不可變的自動屬性只能以 getter 撰寫:
 
 ```csharp
 class ToDo
@@ -226,7 +228,7 @@ class ToDo
     public DateTime Created { get; } = DateTime.Now;
 ```
 
-在建構函式，您可以設定的僅限 getter 的 auto 屬性的值：
+在此函數中, 您可以設定僅限 getter 的 auto 屬性值:
 
 ```csharp
 class ToDo
@@ -241,11 +243,11 @@ class ToDo
     }
 ```
 
-此初始化 auto 屬性是一般的節省空間的功能和開發人員想要強調其物件中的不變性一大福音。
+這種自動屬性的初始化是一般的空間儲存功能, 以及想要強調其物件中不可變性的開發人員所 boon 的。
 
 ### <a name="index-initializers"></a>索引初始設定式
 
-C#6 引進索引初始設定式，可讓您設定索引子的型別中的金鑰和值。 一般而言，這是針對`Dictionary`-樣式資料結構：
+C#6引進索引初始化運算式, 這可讓您在具有索引子的類型中設定索引鍵和值。 一般來說, 這是針對`Dictionary`樣式的資料結構:
 
 ```csharp
 partial void ActivateHandoffClicked (WatchKit.WKInterfaceButton sender)
@@ -260,23 +262,23 @@ partial void ActivateHandoffClicked (WatchKit.WKInterfaceButton sender)
 }
 ```
 
-### <a name="expression-bodied-function-members"></a>運算式主體的函式成員
+### <a name="expression-bodied-function-members"></a>運算式主體函數成員
 
-Lambda 函式有幾項優點，其中只節省空間。 同樣地，運算式主體的類別成員允許小型函式，來表示有點更簡潔的方式比在舊版的C#6。
+Lambda 函式有數個優點, 其中一個只是儲存空間。 同樣地, 運算式主體類別成員允許小型函式的表示方式比在舊版C# 6 中可能更簡潔。
 
-運算式主體的函式成員使用 lambda 箭號語法，而不是傳統的區塊的語法：
+運算式主體函數成員會使用 lambda 箭號語法, 而不是傳統的區塊語法:
 
 ```csharp
 public override string ToString () => $"{FirstName} {LastName}";
 ```
 
-請注意，lambda 箭號語法不會使用明確`return`。 針對函式，會傳回`void`，運算式也必須在陳述式：
+請注意, lambda 箭號語法不會使用明確`return`的。 針對傳回的函式,運算式也必須是語句:`void`
 
 ```csharp
 public void Log(string message) => System.Console.WriteLine($"{DateTime.Now.ToString ("s", System.Globalization.CultureInfo.InvariantCulture )}: {message}");
 ```
 
-運算式主體成員仍受限於此規則的`async`方法，而不是屬性的支援：
+運算式主體成員仍然受限於方法所支援的規則`async` , 而不是屬性:
 
 ```csharp
 //A method, so async is valid
@@ -287,11 +289,11 @@ public async Task<int> LeisureHours => await Task.FromResult<char> (DateTime.Now
 
 ## <a name="exceptions"></a>例外狀況
 
-沒有任何相關的兩種方式： 例外狀況處理很難正確。 中的新功能C#6 進行例外狀況處理，更有彈性且一致。
+有兩種方法: 例外狀況處理很難正確地取得。 6的C#新功能讓例外狀況處理更具彈性且一致。
 
 ### <a name="exception-filters"></a>例外狀況篩選條件
 
-根據定義，在不尋常的情況下，都會發生例外狀況，而且可能原因和相關的程式碼很難*所有*可能發生特定類型的例外狀況的方式。 C#6 引進了保護的執行處理常式與執行階段評估篩選條件。 這是藉由新增`when (bool)`之後的一般模式`catch(ExceptionType)`宣告。 在下列程式碼，篩選區分相關的剖析錯誤`date`相對於其他剖析錯誤的參數。
+根據定義, 例外狀況會在不尋常的情況中發生, 而且可能會很難以撰寫特定類型例外的原因和程式碼。 C#6引進了使用執行時間評估的篩選準則來保護執行處理常式的功能。 這是藉由在一般`when (bool)` `catch(ExceptionType)`宣告之後加入模式來完成。 在下列中, 篩選器會區分與`date`參數相關的剖析錯誤, 而不是其他剖析錯誤。
 
 ```csharp
 public void ExceptionFilters(string aFloat, string date, string anInt)
@@ -309,9 +311,9 @@ public void ExceptionFilters(string aFloat, string date, string anInt)
 }
 ```
 
-### <a name="await-in-catchfinally"></a>在 catch 中等候的...最後...
+### <a name="await-in-catchfinally"></a>catch 中的 await 。最後 。
 
-`async`中引進的功能C#5 已遊戲換片機語言。 在C#第 5`await`中不允許`catch`並`finally`區塊中使用，惱人的值指派給`async/await`功能。 C#6 會移除這項限制，允許非同步等候以一致的方式透過計劃中的下列程式碼片段所示的結果：
+5 `async`中C#引進的功能是語言的遊戲變更器。 在C# 5 `await`中, 在和`finally`區塊`catch`中不允許, 因為`async/await`功能的值, 而無干擾。 C#6移除這項限制, 讓非同步結果能夠以一致的方式透過程式等候, 如下列程式碼片段所示:
 
 ```csharp
 async void SomeMethod()
@@ -329,9 +331,9 @@ async void SomeMethod()
 
 ## <a name="summary"></a>總結
 
-C#語言持續發展，讓開發人員的生產力，同時升級的最佳做法，並支援工具。 本文件提供的新語言功能的概觀C#6 和簡短示範如何使用它們。
+此C#語言會持續演進, 讓開發人員更具生產力, 同時也能推廣良好的實務和支援的工具。 本檔概述6中C#的新語言功能, 並簡要示範其使用方式。
 
 ## <a name="related-links"></a>相關連結
 
-- [中的新語言功能C#6](https://github.com/dotnet/roslyn/wiki/New-Language-Features-in-C%23-6)
+- [6中的C#新語言功能](https://github.com/dotnet/roslyn/wiki/New-Language-Features-in-C%23-6)
 

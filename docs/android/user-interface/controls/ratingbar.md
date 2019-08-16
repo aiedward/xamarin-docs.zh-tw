@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 4e98dd824d5044367b975ae66c77327f10e826f1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 729daef1a7a003613bebc4f82067bc267dab8e00
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510186"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522852"
 ---
 # <a name="xamarinandroid-ratingbar"></a>Xamarin. Android RatingBar
 
@@ -48,5 +48,5 @@ RatingBar 是一個 UI widget, 可顯示一到五顆星的評等。 使用者可
 
     這會使用[`RatingBar`](xref:Android.Widget.RatingBar) [`FindViewById`](xref:Android.App.Activity.FindViewById*)從配置中捕捉 widget, 然後設定事件方法, 然後定義當使用者設定分級時要執行的動作。 在此情況下, 簡單[`Toast`](xref:Android.Widget.Toast)的訊息會顯示新的評等。
 
-3.  執行應用程式。
+3. 執行應用程式。
 

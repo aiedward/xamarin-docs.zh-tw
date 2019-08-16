@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 03c18c50b15db05d26e1cec20e571367219f8643
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 818d5c734e8e662c271e20c26347e5e941ddad3e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643066"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527867"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中對 StoreKit 所做的變更
 
@@ -244,8 +244,8 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 我們的範例應用程式包含銷售的書籍章節–每個章節內容套件將包含:
 
--  文字檔, 以及
--  用來表示章節的影像。
+- 文字檔, 以及
+- 用來表示章節的影像。
 
 
 首先從功能表中選取 [檔案] **> [新增專案**], 然後選擇 [**應用程式內購買內容**]:

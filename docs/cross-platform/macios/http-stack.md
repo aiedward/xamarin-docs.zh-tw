@@ -1,89 +1,89 @@
 ---
-title: HttpClient 和適用於 iOS/macOS 的 SSL/TLS 實作選擇器
-description: HttpClient 堆疊與 SSL/TLS 實作選擇器，決定將由您的 Xamarin iOS、 tvOS 或 macOS 應用程式的 HttpClient 和 SSL/TLS 實作。
+title: 適用于 iOS/macOS 的 HttpClient 和 SSL/TLS 執行選取器
+description: '[HttpClient 堆疊] 和 [SSL/TLS 執行] 選取器會決定您的 Xamarin iOS、tvOS 或 macOS 應用程式將使用的 HttpClient 和 SSL/TLS 執行。'
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: fd48c7148aadd8d156544113e2d719295294bf40
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f00a25bbb86e9ec57ef2290c1a7e37a8891e1064
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61261269"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521875"
 ---
-# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>適用於 iOS/macOS 的 HttpClient 和 SSL/TLS 實作選擇器
+# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>適用于 iOS/macOS 的 HttpClient 和 SSL/TLS 執行選取器
 
-**HttpClient 實作選擇器**適用於 Xamarin.iOS，Xamarin.tvOS 和 Xamarin.Mac 控制其`HttpClient`若要使用的實作。 您可以切換為使用 iOS、 tvOS 或 macOS 的原生傳輸的實作 (`NSUrlSession`或`CFNetwork`，取決於作業系統)。 優點是 TLS 1.2 支援、 較小的二進位檔，並更快下載;缺點是它需要事件迴圈的執行中執行的非同步作業。
+TvOS 和 xamarin 的**HttpClient 執行選取器**會控制要使用的`HttpClient`執行方式。 您可以切換至使用 iOS、tvOS 或 macOS 原生傳輸 (`NSUrlSession`或`CFNetwork`, 視作業系統而定) 的執行。 其優勢在於 TLS 1.2-支援、較小的二進位檔, 以及更快速的下載;其缺點是, 它需要執行事件迴圈, 才能執行非同步作業。
 
-專案必須參考**System.Net.Http**組件。
+專案必須參考**系統 .net. Http**元件。
 
 > [!WARNING]
-> **2018 年 4 月，** – 因為更高的安全性需求，包括 PCI 合規性，主要雲端提供者和 web 伺服器會停止支援 TLS 1.2 與較舊的版本。  在舊版的 Visual Studio 預設使用 TLS 的較舊版本中建立的 Xamarin 專案。
+> **2018 年4月,** 由於增加的安全性需求 (包括 PCI 合規性), 主要雲端提供者和網頁伺服器預期會停止支援超過1.2 的 TLS 版本。 在舊版中建立的 Xamarin 專案 Visual Studio 預設為使用舊版的 TLS。
 >
-> 為了確保您的應用程式可以繼續使用這些伺服器或服務，**您應該更新您的 Xamarin 專案，與`NSUrlSession`設定如下所示，然後重新建置並重新部署您的應用程式**給您的使用者。
+> 為了確保您的應用程式能夠繼續使用這些伺服器和服務,**您應該使用如下`NSUrlSession`所示的設定來更新 Xamarin 專案, 然後重新建立應用程式, 並將其重新部署**給使用者。
 
 ### <a name="selecting-an-httpclient-stack"></a>選取 HttpClient 堆疊
 
-若要調整`HttpClient`正由您的應用程式：
+若要調整`HttpClient`您的應用程式所使用的:
 
-1. 按兩下**專案名稱**中**方案總管] 中**以開啟 [專案選項。
-2. 切換至**建置**專案設定 (例如**iOS 組建**Xamarin.iOS 應用程式)。
-3. 從**HttpClient 實作**下拉式清單中，選取`HttpClient`輸入做為下列其中之一：**NSUrlSession** （建議）， **CFNetwork**，或**受控**。
+1. 按兩下 **方案總管**中的**專案名稱**, 以開啟 專案選項。
+2. 切換至專案的**組建**設定 (例如, 適用于 Xamarin ios 應用程式的**ios 組建**)。
+3. 從 [ **HttpClient 執行**] 下拉式清單中`HttpClient` , 選取下列其中一種類型:**NSUrlSession**(建議)、 **CFNetwork**或**受控**。
 
 [![從受管理、 CFNetwork 或 NSUrlSession 選擇 HttpClient 實作](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
 > [!TIP]
-> 如需 TLS 1.2 支援`NSUrlSession`建議選項。
+> 針對 TLS 1.2 支援, `NSUrlSession`建議使用選項。
 
 ### <a name="nsurlsession"></a>NSUrlSession
 
-`NSURLSession`-根據處理常式為基礎的原生`NSURLSession`架構，可在 iOS 7 及更新版本。 
+以為基礎的處理常式是以 iOS `NSURLSession` 7 和更新版本中提供的原生架構為基礎。 `NSURLSession` 
 **這是建議的設定。**
 
-#### <a name="pros"></a>專業人員
+#### <a name="pros"></a>展開
 
-- 它會使用原生 Api 更好的效能和較小的可執行檔大小。
-- 最新的標準，例如 TLS 1.2 支援。
+- 它會使用原生 Api 來提升效能和較小的可執行檔案大小。
+- 支援最新的標準, 例如 TLS 1.2。
 
-#### <a name="cons"></a>缺點
+#### <a name="cons"></a>各有利弊
 
 - 需要 iOS 7 或更新版本。
-- 某些`HttpClient`功能/選項都無法使用。
+- 有些`HttpClient`功能/選項無法使用。
 
 ### <a name="cfnetwork"></a>CFNetwork
 
-`CFNetwork`-根據處理常式為基礎的原生`CFNetwork`framework，適用於 iOS 6 和更新版本。
+以為基礎的處理常式是以 iOS `CFNetwork` 6 和更新版本中提供的原生架構為基礎。 `CFNetwork`
 
-#### <a name="pros"></a>專業人員
+#### <a name="pros"></a>展開
 
-- 它會使用原生 Api 更好的效能和較小的可執行檔大小。
-- 較新的標準，例如 TLS 1.2 支援。
+- 它會使用原生 Api 來提升效能和較小的可執行檔案大小。
+- 支援較新的標準, 例如 TLS 1.2。
 
-#### <a name="cons"></a>缺點
+#### <a name="cons"></a>各有利弊
 
 - 需要 iOS 6 或更新版本。
-- WatchOS 上無法使用。
-- 無法使用某些 HttpClient 功能] / [選項。
+- 無法在 watchOS 上使用。
+- 有些 HttpClient 功能/選項無法使用。
 
 ### <a name="managed"></a>Managed
 
-受控處理常式是隨附舊版 Xamarin 的完全受控的 HttpClient 處理常式。
+受控處理常式是由舊版 Xamarin 隨附的完全受控 HttpClient 處理常式。
 
-#### <a name="pros"></a>專業人員
+#### <a name="pros"></a>展開
 
-- 它有最相容的功能集 MICROSOFT.NET 和 Xamarin 上的舊版。
+- 它與 Microsoft .NET 和舊版 Xamarin 具有最相容的功能集。
 
-#### <a name="cons"></a>缺點
+#### <a name="cons"></a>各有利弊
 
-- 它與 Apple Os 不完全整合，並僅限於 TLS 1.0。 它可能無法連線到安全的 web 伺服器，或在未來雲端服務。
-- 它通常遠低於在像加密之類的原生 Api。
-- 它需要更 managed 程式碼，以建立可散發的較大的應用程式。
+- 它不完全與 Apple Os 整合, 而且僅限於 TLS 1.0。 未來可能無法連接到安全的 web 伺服器或雲端服務。
+- 在加密方面, 通常會比原生 Api 慢很多。
+- 它需要更多受控碼, 因此會建立更大的應用程式可散發。
 
 ### <a name="programmatically-setting-the-httpmessagehandler"></a>以程式設計方式設定 HttpMessageHandler
 
-除了上述的整個專案的組態，您可以也具現化`HttpClient`，並將所需`HttpMessageHandler`透過建構函式，這些程式碼片段所示：
+除了上面所示的專案範圍設定之外, 您也可以具現化`HttpClient` , 並透過此`HttpMessageHandler`函式插入所需的 (如下列程式碼片段所示):
 
 ```csharp
 // This will use the default message handler for the application; as
@@ -97,11 +97,11 @@ HttpClient client = new HttpClient(new CFNetworkHandler());
 HttpClient client = new HttpClient(new NSUrlSessionHandler());
 ```
 
-這讓您能夠使用不同`HttpMessageHandler`從項目中宣告**專案選項**對話方塊。
+這可讓您使用不同`HttpMessageHandler`于 [**專案選項**] 對話方塊中所宣告的。
 
-## <a name="ssltls-implementation"></a>SSL/TLS 實作
+## <a name="ssltls-implementation"></a>SSL/TLS 實行
 
-SSL （安全通訊端層） 和及其後繼者 TLS （傳輸層安全性），提供支援 HTTP 及其他網路連線，透過`System.Net.Security.SslStream`。 Xamarin.iOS、 Xamarin.tvOS 或 Xamarin.Mac 的`System.Net.Security.SslStream`實作會呼叫 Apple 原生 SSL/TLS 實作，而不要使用 Mono 所提供的 managed 的實作。 Apple 的原生實作支援 TLS 1.2。
+SSL (安全通訊端層) 及其後續的 TLS (傳輸層安全性), 透過提供對 HTTP 和其他網路`System.Net.Security.SslStream`連線的支援。 TvOS 或 xamarin 的`System.Net.Security.SslStream`執行會呼叫 Apple 的原生 SSL/TLS 實作為, 而不是使用 Mono 所提供的 managed 執行。 Apple 的原生實作為支援 TLS 1.2。
 
 > [!WARNING]
 > 即將推出的 Xamarin.Mac 4.8 版只會支援 macOS 10.9 或更高版本。
@@ -109,27 +109,27 @@ SSL （安全通訊端層） 和及其後繼者 TLS （傳輸層安全性），�
 
 ## <a name="app-transport-security"></a>應用程式傳輸安全性
 
-Apple_應用程式的傳輸安全性_(ATS) 會強制執行 （例如應用程式的後端伺服器） 的網際網路資源與您的應用程式之間的安全連線。 ATS 可確保所有的網際網路通訊符合保護連線安全的最佳作法，藉此防止意外洩露機密的資訊，直接透過您的應用程式或它正在使用的程式庫。
+Apple 的_應用程式傳輸安全性_(ATS) 會在網際網路資源 (例如應用程式的後端伺服器) 和您的應用程式之間, 強制執行安全的連接。 ATS 可確保所有網際網路通訊都符合安全連線最佳作法, 藉此防止意外洩漏敏感性資訊, 無論是直接透過您的應用程式或它所耗用的程式庫。
 
-因為在 iOS 9、 tvOS 9 和 OS X 10.11 (El Capitan) 建置的應用程式預設會啟用 ATS 和更新版本中，使用的所有連線`NSUrlConnection`，`CFUrl`或`NSUrlSession`將受限於 ATS 安全性需求。 如果您的連線不符合這些需求，它們將會失敗並發生例外狀況。
+由於預設會在針對 iOS 9、tvOS 9 和 OS X 10.11 (El Capitan) 和更新版本建立的應用程式中啟用 ATS, `NSUrlConnection`因此`CFUrl`使用`NSUrlSession`或的所有連線都將受限於 ATS 的安全性需求。 如果您的連線不符合這些需求, 則會失敗並產生例外狀況。
 
-根據您的 HttpClient 堆疊與 SSL/TLS 實作選擇，您可能需要修改您的應用程式與 ATS 正確運作。
+根據您的 HttpClient 堆疊和 SSL/TLS 的執行選項, 您可能需要對應用程式進行修改, 才能正確地與 ATS 搭配運作。
 
-若要深入了解 ATS，請參閱我們[應用程式的傳輸安全性指南](~/ios/app-fundamentals/ats.md)。
+若要深入瞭解 ATS, 請參閱我們的[應用程式傳輸安全性指南](~/ios/app-fundamentals/ats.md)。
 
 ## <a name="known-issues"></a>已知問題
 
-本節將討論 TLS 支援在 Xamarin.iOS 中已知的的問題。
+本節將涵蓋 Xamarin 中 TLS 支援的已知問題。
 
-### <a name="project-failed-to-load-with-error-requested-value-appletls-wasnt-found"></a>無法載入錯誤 「 找不到 AppleTLS 要求值 」 專案
+### <a name="project-failed-to-load-with-error-requested-value-appletls-wasnt-found"></a>專案載入失敗, 發生錯誤「找不到要求的值 AppleTLS」
 
-Xamarin.iOS 9.8 版導入了一些新的設定，包含 **.csproj** Xamarin.iOS 應用程式檔案。 在開啟使用舊版 Xamarin.iOS 的專案時，這些變更可能會造成問題。 下列螢幕擷取畫面是可能會顯示在此案例中的錯誤訊息的範例：
+Xamarin. iOS 9.8 引進了一些新設定, 其中包含適用于 Xamarin iOS 應用程式的 **.csproj**檔案。 當使用舊版的 Xamarin 開啟專案時, 這些變更可能會造成問題。 下列螢幕擷取畫面是在此案例中可能顯示的錯誤訊息範例:
 
-![嘗試載入專案時發生錯誤的螢幕擷取畫面會要求找不到的值舊版](http-stack-images/tlserror-xs.png)
+![嘗試載入專案時發生錯誤的螢幕擷取畫面, 找不到要求的舊值](http-stack-images/tlserror-xs.png)
 
-此錯誤因為引進`MtouchTlsProvider`設為 Xamarin.iOS 9.8 版中的專案檔。 如果不是可更新至 Xamarin.iOS 9.8 版 （或更新版本），因應措施是手動編輯 **.csproj**檔案的應用程式中，移除`MtouchTlsprovider`項目，然後儲存變更的專案檔。
+此錯誤是因為在 Xamarin. iOS 9.8 `MtouchTlsProvider`中將設定引入專案檔所造成。 如果無法更新為 Xamarin. iOS 9.8 (或更高版本), 則解決方法是手動編輯 **.csproj**檔案應用程式, 移除`MtouchTlsprovider`元素, 然後儲存變更的專案檔。
 
-下列程式碼片段是什麼的範例`MtouchTlsProvider`設定可能看起來像是內 **.csproj**檔案：
+下列程式碼片段是在`MtouchTlsProvider` **.csproj**檔案中設定可能外觀的範例:
 
 ```xml
 <MtouchTlsProvider>Default</MtouchTlsProvider>

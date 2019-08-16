@@ -7,22 +7,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/02/2018
-ms.openlocfilehash: c42be49aff56453bb1bc3b3c732cad151ccd62e0
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 05d72c2b9cea3972a8173ea0656f5a84c2b3d51c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674451"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523499"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>調整適用於 Android Designer 的 JAVA 記憶體參數
 
-啟動時會用到的預設記憶體參數`java`處理 Android 設計工具可能與某些系統組態不相容。
+啟動 Android designer 的`java`進程時使用的預設記憶體參數可能與某些系統組態不相容。
 
-開始使用 Xamarin Studio 5.7.2.7 （和更新版本中，Visual Studio for Mac） 和 Visual Studio Tools for Xamarin 3.9.344，這些設定可以針對每個專案進行自訂。
+從 Xamarin Studio 5.7.2.7 (和更新版本、Visual Studio for Mac) 和適用于 Xamarin 3.9.344 的 Visual Studio Tools 開始, 可以根據每個專案來自訂這些設定。
 
-## <a name="new-android-designer-properties-and-corresponding-java-options"></a>新的 Android 設計工具屬性和對應的 Java 選項
+## <a name="new-android-designer-properties-and-corresponding-java-options"></a>新的 Android 設計工具屬性和對應的 JAVA 選項
 
-下列屬性名稱對應至指定的 java[命令列選項](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html)
+下列屬性名稱會對應至指定的 java[命令列選項](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/java.html)
 
 - **AndroidDesignerJavaRendererMinMemory** -Xms
 
@@ -33,17 +33,17 @@ ms.locfileid: "67674451"
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中開啟您的方案。
+1. 在 Visual Studio 中開啟您的方案。
 
-2.  在 [方案總管] 中選取一個接著一個的每個 Android 專案，然後按一下[顯示所有檔案](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))兩次上每個專案。 您可以略過不包含任何專案`.axml`版面配置檔。 此步驟可確保每個專案目錄包含`.csproj.user`檔案。
+2. 在方案總管中逐一選取每一個 Android 專案, 然後按一下每個專案上的 [[顯示所有](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))檔案] 兩次。 您可以略過不包含任何`.axml`版面配置檔案的專案。 此步驟可確保每個專案目錄都包含`.csproj.user`一個檔案。
 
-3.  結束 Visual Studio。
+3. 結束 Visual Studio。
 
-4.  找出`.csproj.user`的每個步驟 2 中的專案檔。
+4. 針對步驟`.csproj.user` 2 中的每個專案找出檔案。
 
-5.  編輯每個`.csproj.user`在文字編輯器中的檔案。
+5. 在文本`.csproj.user`編輯器中編輯每個檔案。
 
-6.  新增 any 或 all 中的新 Android 設計工具的記憶體屬性`<PropertyGroup>`項目。 您可以使用現有`<PropertyGroup>`或建立新的帳戶。 以下是完整的範例`.csproj.user`檔案，其中包含所有 3 個屬性設定為其預設值：
+6. 在`<PropertyGroup>`元素內新增任何或所有新的 Android designer 記憶體屬性。 您可以使用現有`<PropertyGroup>`的或建立一個新的。 以下是完整的範例`.csproj.user`檔案, 其中包含設定為預設值的三個屬性:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -59,29 +59,29 @@ ms.locfileid: "67674451"
     </Project>
     ```
 
-7.  儲存並關閉所有更新後的`.csproj.user`檔案。
+7. 儲存並關閉所有更新過`.csproj.user`的檔案。
 
-8.  重新啟動 Visual Studio 並重新開啟您的解決方案。
+8. 重新開機 Visual Studio, 然後重新開啟您的解決方案。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  開啟您在 Visual Studio for Mac，以確保方案目錄中的方案包含`.userprefs`檔案。
+1. 在 Visual Studio for Mac 中開啟您的方案, 以確保方案目錄`.userprefs`包含檔案。
 
-2.  結束 Visual Studio for mac。
+2. 結束 Visual Studio for Mac。
 
-3.  找出`.userprefs`的方案目錄中的檔案。
+3. 找出`.userprefs`方案目錄中的檔案。
 
-4.  編輯`.userprefs`在文字編輯器中的檔案。
+4. `.userprefs`在文字編輯器中編輯檔案。
 
-5.  找到現有的 XML 項目，其格式如下。 這個項目名稱的最後一個部分會比對您的專案名稱：「 AndroidApplication1 「 在此範例中：
+5. 找出具有下列格式的現有 XML 元素。 此元素名稱的最後一個部分會符合您的專案名稱:本範例中的 "AndroidApplication1":
 
     ```xml
     <MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >
     ```
 
-6.  如果`<MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >`項目不存在時，在封入的任何位置建立它`<Properties>`項目。 請務必以您專案的名稱取代"AndroidApplication1 」。
+6. 如果專案不存在, 請在封閉`<Properties>`專案內的任何位置建立該元素。`<MonoDevelop.Ide.ItemProperties.AndroidApplication1 ... >` 請務必以您的專案名稱取代 "AndroidApplication1"。
 
-7.  為元素的屬性，新增任何或所有新的 Android 設計工具的記憶體屬性。 以下是完整的範例`.userprefs`檔案，其中包含所有 3 個屬性設定為其預設值：
+7. 新增任何或所有新的 Android designer 記憶體屬性作為元素的屬性。 以下是完整的範例`.userprefs`檔案, 其中包含設定為預設值的三個屬性:
 
     ```xml
     <Properties StartupItem="AndroidApplication1\AndroidApplication1.csproj">
@@ -95,11 +95,11 @@ ms.locfileid: "67674451"
     </Properties>
     ```
 
-8.  重複步驟 5-7，每個 Android 專案方案中包含任何`.axml`版面配置檔。 (也就是新增一個`<MonoDevelop.Ide.ItemProperties.ProjectName>`每個專案的項目。)
+8. 針對包含任何`.axml`版面配置檔案之方案中的每個 Android 專案重複步驟5-7。 (也就是為每`<MonoDevelop.Ide.ItemProperties.ProjectName>`個專案加入一個元素)。
 
-9.  儲存並關閉`.userprefs`檔案。
+9. 儲存並關閉`.userprefs`檔案。
 
-10. 重新啟動 Visual Studio for Mac，並重新開啟方案。
+10. 重新開機 Visual Studio for Mac, 然後重新開啟您的解決方案。
 
 -----
 

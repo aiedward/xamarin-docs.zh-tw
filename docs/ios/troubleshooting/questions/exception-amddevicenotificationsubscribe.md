@@ -7,28 +7,28 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4fb0712366422e8810a2db60d40c3b85d9f4cd82
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: d834c06c5fa5ee55e5e3b91bd16b5b4d326c42ee
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61421940"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528167"
 ---
 # <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>傳回了 System.Exception AMDeviceNotificationSubscribe ...
 
 > [!IMPORTANT]
-> 這個問題已經解決最新版 Xamarin。 不過，如果最新版本的軟體，就會發生問題，請指導，申請[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)您完整的版本控制資訊和完整建置記錄檔輸出。
+> 此問題已在最新版本的 Xamarin 中解決。 不過, 如果軟體的最新版本發生問題, 請使用完整版本設定資訊和完整組建記錄檔輸出來提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
 
 
 ## <a name="fix"></a>修正
 
-1.  Kill`usbmuxd`處理，因此系統會重新啟動它：
+1. `usbmuxd`終止進程, 讓系統重新開機程式:
 
     ```csharp
     sudo killall -QUIT usbmuxd
     ```
 
-2.  如果這樣無法解決問題，重新啟動 mac。
+2. 如果這樣做無法解決問題, 請重新開機 Mac。
 
 ## <a name="error-message"></a>錯誤訊息
 
@@ -42,13 +42,13 @@ AMDeviceNotificationSubscribe returned: 3892314211
   at Mtb.Application.MainClass.Main (System.String[] args) [0x00000] in <filename unknown="">:0
 ```
 
-當您第一次啟動 Visual Studio for Mac，或在 [錯誤] 對話方塊中會出現此訊息`mtbserver.log`Xamarin.iOS Build Host 應用程式中的檔案 (**Xamarin.iOS Build Host > 檢視建置主應用程式記錄檔**)。
+當您第一次啟動 Visual Studio for Mac 時, 或在 Xamarin ios 組建主機應用程式`mtbserver.log` (**xamarin ios 組建主機 > View 組建主機記錄**檔) 中的檔案中, 此訊息可能會出現在錯誤對話方塊中。
 
-請注意，這是常見的問題。 如果 Visual Studio 無法連接到 Mac 組建主機，還有更有可能會出現在其他錯誤`mtbserver.log`檔案。
+請注意, 這是不常見的問題。 如果 Visual Studio 連線到 Mac 組建主機時發生問題, 檔案中`mtbserver.log`可能會出現其他錯誤。
 
-### <a name="errors-in-systemlog"></a>在 [system.log] 中的錯誤
+### <a name="errors-in-systemlog"></a>System .log 中的錯誤
 
-在某些情況下下列兩個錯誤訊息可能也會出現中重複`/var/log/system.log`:
+在某些情況下, 下列兩個錯誤訊息可能也會`/var/log/system.log`在中重複出現:
 
 ```csharp
 17:17:11.369 usbmuxd[55040]: dnssd_clientstub ConnectToServer: socket failed 24 Too many open files
@@ -57,10 +57,10 @@ AMDeviceNotificationSubscribe returned: 3892314211
 
 ## <a name="additional-information"></a>其他資訊
 
-一個猜出錯誤的根本原因是 OS X 系統服務負責報告 iOS 裝置和模擬器的資訊可在極少數的情況下，輸入未預期的狀態。 Xamarin 無法與系統服務，在此狀態下正確互動。 重新啟動電腦時，會重新啟動系統服務，並可解決問題。
+在發生錯誤的根本原因時, 其中一項猜測是負責報告 iOS 裝置和模擬器資訊的 OS X 系統服務, 在罕見的情況下可能會進入非預期的狀態。 在此狀態下, Xamarin 無法與系統服務正常互動。 重新開機電腦會重新開機系統服務, 並解決問題。
 
-根據從錯誤`system.log`它會出現此問題可能與 Bonjour (`mDNSResponder`)。 切換不同的 WiFi 網路似乎會提高遇到問題的機會。
+根據出現的錯誤`system.log` , 此問題可能與 Bonjour (`mDNSResponder`) 相關。 在不同的 WiFi 網路之間進行變更似乎會增加遇到問題的機會。
 
 ## <a name="references"></a>參考
 
-*   [Bug 11789-MonoTouch.MobileDevice.MobileDeviceException:AMDeviceNotificationSubscribe 傳回：0XE8000063 [解析 NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)
+* [Bug 11789-MonoTouch. MobileDevice. Xamarin.macdev.mobiledeviceexception:AMDeviceNotificationSubscribe 傳回:0xe8000063 [已解析的 NORESPONSE]](https://bugzilla.xamarin.com/show_bug.cgi?id=11789)

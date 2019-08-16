@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: 209d8a61e6505e34fdf714b94ba40465f7f6aa4b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a3ec307061c47736722c5dacef9a939518586ded
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646377"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528795"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS 快速入門手冊
 
@@ -38,10 +38,10 @@ TvOS 可讓您使用在*Swift* (或*目標-C*) C#和*Xcode*中進行開發時所
 
 我們將涵蓋下列概念:
 
--  **Visual Studio for Mac** – Visual Studio for Mac 簡介, 以及如何使用它來建立 tvOS 應用程式。
--  **TvOS 應用程式的剖析**– tvOS 應用程式包含的內容。
--  **建立使用者介面**–如何使用 Xamarin Designer for iOS 來建立使用者介面。
--  **部署和測試**–如何在 tvOS 模擬器和 real tvOS 硬體上執行和測試您的應用程式。
+- **Visual Studio for Mac** – Visual Studio for Mac 簡介, 以及如何使用它來建立 tvOS 應用程式。
+- **TvOS 應用程式的剖析**– tvOS 應用程式包含的內容。
+- **建立使用者介面**–如何使用 Xamarin Designer for iOS 來建立使用者介面。
+- **部署和測試**–如何在 tvOS 模擬器和 real tvOS 硬體上執行和測試您的應用程式。
 
 ## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中啟動新的 tvOS 應用程式
 
@@ -77,12 +77,12 @@ Visual Studio for Mac 使用**方案**和**專案**, 與 Visual Studio 的方式
 
 讓我們看一下專案中的檔案:
 
--   `Main.cs` – 這包含應用程式的主要進入點。 當應用程式啟動時，這包含執行的第一個類別與方法。
--   `AppDelegate.cs`–此檔案包含主要的應用程式類別, 負責接聽作業系統的事件。
--   `Info.plist`–此檔案包含應用程式屬性, 例如應用程式名稱、圖示等。
--   `ViewController.cs`–這是代表主視窗並控制其生命週期的類別。
--   `ViewController.designer.cs`–此檔案包含配管程式碼, 可協助您與主畫面的使用者介面整合。
--  `Main.storyboard`–主視窗的 UI。 此檔案可由 Xamarin Designer for iOS 建立及維護。
+- `Main.cs` – 這包含應用程式的主要進入點。 當應用程式啟動時，這包含執行的第一個類別與方法。
+- `AppDelegate.cs`–此檔案包含主要的應用程式類別, 負責接聽作業系統的事件。
+- `Info.plist`–此檔案包含應用程式屬性, 例如應用程式名稱、圖示等。
+- `ViewController.cs`–這是代表主視窗並控制其生命週期的類別。
+- `ViewController.designer.cs`–此檔案包含配管程式碼, 可協助您與主畫面的使用者介面整合。
+- `Main.storyboard`–主視窗的 UI。 此檔案可由 Xamarin Designer for iOS 建立及維護。
 
 在下列各節中, 我們將快速查看其中一些檔案。 我們稍後會更詳細地探索這些專案, 但最好先瞭解其基本概念。
 
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-我們`ViewDidLoad`需要使用, 而不是其他方法  `.storyboard` `Initialize`(例如), `ViewDidLoad`因為在 OS 已載入並從檔案具現化使用者介面時, 會呼叫。 如果我們嘗試在檔案完全載入並具現`.storyboard`化之前存取標籤控制項, 我們會`NullReferenceException`收到錯誤, 因為 label 控制項尚未建立。
+我們`ViewDidLoad`需要使用, 而不是其他方法 `.storyboard` `Initialize`(例如), `ViewDidLoad`因為在 OS 已載入並從檔案具現化使用者介面時, 會呼叫。 如果我們嘗試在檔案完全載入並具現`.storyboard`化之前存取標籤控制項, 我們會`NullReferenceException`收到錯誤, 因為 label 控制項尚未建立。
 
 接下來, 我們需要新增程式碼, 以回應使用者按一下按鈕。 將下列內容新增至我們建立的部分類別:
 
@@ -435,8 +435,8 @@ partial void Clicked (UIButton sender)
 
 當我們建立應用程式時, 我們可以選擇想要的組建種類:
 
--   **Debug** – debug 組建會編譯成具有額外中繼資料的 ' ' (應用程式) 檔案, 讓我們能夠在應用程式執行時, 進行 debug。
--   **發行**-發行組建也會建立 ' ' 檔案, 但不包含偵錯工具資訊, 因此較小且執行速度更快。  
+- **Debug** – debug 組建會編譯成具有額外中繼資料的 ' ' (應用程式) 檔案, 讓我們能夠在應用程式執行時, 進行 debug。
+- **發行**-發行組建也會建立 ' ' 檔案, 但不包含偵錯工具資訊, 因此較小且執行速度更快。  
 
 您可以從 [Visual Studio for Mac] 畫面左上角的設定選取**器**中, 選取組建的類型:
 
@@ -452,9 +452,9 @@ partial void Clicked (UIButton sender)
 
 若要執行應用程式, 我們有三個選項:
 
--  按下 **⌘+Enter**。
--  從 [執行]  功能表中選擇 [偵錯]  。
--  按一下 Visual Studio for Mac 工具列中的 [播放]  按鈕 (在 [方案總管]  上方)。
+- 按下 **⌘+Enter**。
+- 從 [執行] 功能表中選擇 [偵錯]。
+- 按一下 Visual Studio for Mac 工具列中的 [播放] 按鈕 (在 [方案總管] 上方)。
 
 應用程式將會建立 (如果尚未建立), 啟動進入 debug 模式, tvOS 模擬器將會啟動, 且應用程式將會啟動, 並顯示其主要介面視窗:
 

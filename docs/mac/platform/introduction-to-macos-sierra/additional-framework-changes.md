@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: d48f7012d0389b262e2dfce560d4f8aa925c21d5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c8b2b20d037edd35fd3c50d1418df2110cb8e4c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655658"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528886"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>其他 macOS Sierra 架構變更
 
@@ -39,12 +39,12 @@ MacOS Sierra 的 AppKit 架構已進行下列增強功能:
 - 延遲的視圖配置傳遞已經過優化和擴充。
 - 拖放 API 現在包含新`NSFilePromiseProvider`的和`NSFilePromiseReceiver`類別, 以支援拖曳 flocking。
 - 現有的控制項中已加入數個便利的函式:
-    -  `NSButton`包含用來建立推播按鈕、核取方塊和選項按鈕的新程式。
-    -  `NSTextField`包含新的函式, 用於建立換行和非包裝標籤、屬性化標籤和可編輯的文字欄位。
-    -  `NSSegmentedControl`包含新的函式, 可從一組標籤或影像建立分段的控制項。
-    -  `NSSlider`包含用來建立水平線性滑杆的新函式。
-    -  `NSImageView`包含新的函式, 可從指定`NSImage`的建立不可編輯的影像視圖。
--  已將`NSGridView`新的新增至將子視圖集合自動設定到具有可變大小之資料列和資料行的方格中, 可以動態地隱藏或顯示。
+    - `NSButton`包含用來建立推播按鈕、核取方塊和選項按鈕的新程式。
+    - `NSTextField`包含新的函式, 用於建立換行和非包裝標籤、屬性化標籤和可編輯的文字欄位。
+    - `NSSegmentedControl`包含新的函式, 可從一組標籤或影像建立分段的控制項。
+    - `NSSlider`包含用來建立水平線性滑杆的新函式。
+    - `NSImageView`包含新的函式, 可從指定`NSImage`的建立不可編輯的影像視圖。
+- 已將`NSGridView`新的新增至將子視圖集合自動設定到具有可變大小之資料列和資料行的方格中, 可以動態地隱藏或顯示。
 
 <a name="AVFoundation-Framework-Enhancements" />
 

@@ -1,37 +1,37 @@
 ---
-title: 使用 Razor 範本建置 HTML 檢視
-description: " 使用全螢幕網頁來呈現 HTML，可以是簡單且有效的方式來呈現複雜的格式，跨平台的方式，尤其是如果您已經有 HTML、 JavaScript 和 CSS 從網站專案。"
+title: 使用 Razor 範本建立 HTML 視圖
+description: " 使用全螢幕網頁來轉譯 HTML, 是以跨平臺方式轉譯複雜格式的簡單且有效的方式, 特別是當您已經有網站專案的 HTML、JavaScript 和 CSS 時。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: 539f59b9835cab6281327bcd1a37482ef82b62cc
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: c6c279a31b6081f7e20b4047e2a8e82c79aeac23
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650182"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521812"
 ---
-# <a name="building-html-views-using-razor-templates"></a>使用 Razor 範本建置 HTML 檢視
+# <a name="building-html-views-using-razor-templates"></a>使用 Razor 範本建立 HTML 視圖
 
-在行動裝置開發世界中詞彙 「 混合式應用程式 」 通常是指託管的 web 檢視器控制項內的 HTML 網頁呈現部分 （或所有） 其畫面的應用程式。
+在行動裝置開發環境中, 「混合式應用程式」一詞通常是指在主控的 web 檢視器控制項內, 將其畫面呈現為 HTML 網頁的應用程式。
 
-有某些開發環境，可讓您建置行動應用程式完全以 HTML 和 JavaScript，但這些應用程式可能會受到影響的效能問題時嘗試完成複雜的處理或 UI 效果，而且是也限制在平台他們可以存取的功能。
+有一些開發環境可讓您完全以 HTML 和 JavaScript 建立您的行動應用程式, 不過當嘗試完成複雜的處理或 UI 效果時, 這些應用程式可能會受到效能問題的影響, 而且也會在平臺中受到限制。他們可以存取的功能。
 
-Xamarin 會提供最佳的兩者的優點，尤其是當使用 Razor HTML 範本化引擎。 您可以在使用 Xamarin 建置跨平台樣板化 HTML 檢視，使用 JavaScript 和 CSS，但是也有完整存取基礎平台 Api，而且快速處理使用彈性C#。
+Xamarin 提供兩種世界的最佳選擇, 特別是在使用 Razor HTML 範本化引擎時。 有了 Xamarin, 您可以彈性地建立使用 JavaScript 和 CSS 的跨平臺樣板化 HTML 視圖, 但也可以完整存取基礎平臺 Api, 並使用C#快速處理。
 
-本文件說明如何使用 Razor 範本化引擎來建置可用於使用 Xamarin 的行動平台的 HTML + JavaScript + CSS 檢視。
+本檔說明如何使用 Razor 範本化引擎來建立可跨行動平臺使用 Xamarin 的 HTML + JavaScript + CSS 視圖。
 
-## <a name="using-web-views-programmatically"></a>以程式設計方式使用 Web 檢視
+## <a name="using-web-views-programmatically"></a>以程式設計方式使用 Web Views
 
-我們了解 Razor 之前這一節會說明如何使用 web 檢視，以顯示 HTML 內容直接 – 特別是 HTML 應用程式內產生的內容。
+在瞭解 Razor 之前, 本節涵蓋如何使用 web views 直接顯示 HTML 內容, 特別是在應用程式內產生的 HTML 內容。
 
-Xamarin iOS 和 Android 上提供完整存取基礎平台 Api，因此很容易建立和顯示使用 C# 的 HTML。 每個平台的基本語法如下所示。
+Xamarin 提供 iOS 和 Android 上基礎平臺 Api 的完整存取權, 讓您可以輕鬆地使用C#建立和顯示 HTML。 每個平臺的基本語法如下所示。
 
 ### <a name="ios"></a>iOS
 
-在 Xamarin.iOS 中 UIWebView 控制項中顯示 HTML 時，也會採用在短短幾行程式碼：
+在 Xamarin 的 UIWebView 控制項中顯示 HTML。 iOS 也只需要幾行程式碼:
 
 ```csharp
 var webView = new UIWebView (View.Bounds);
@@ -41,11 +41,11 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 ```
 
-請參閱[iOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/)更多有關使用 UIWebView 控制項的訣竅。
+如需使用 UIWebView 控制項的詳細資訊, 請參閱[IOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/)配方。
 
 ### <a name="android"></a>Android
 
-使用 Xamarin.Android 的 WebView 控制項內顯示 HTML 可在短短幾行程式碼來完成：
+只需幾行程式碼, 即可在使用 Xamarin 的 Web 視圖控制項中顯示 HTML:
 
 ```csharp
 // webView is declared in an AXML layout file
@@ -58,11 +58,11 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 ```
 
-請參閱[Android WebView](http://docs.xamarin.com/recipes/android/controls/webview/)更多有關使用 WebView 控制項的訣竅。
+如需使用 Web 視圖控制項的詳細資訊, 請參閱[Android web](http://docs.xamarin.com/recipes/android/controls/webview/)程式。
 
-### <a name="specifying-the-base-directory"></a>指定的基底目錄
+### <a name="specifying-the-base-directory"></a>指定基底目錄
 
-在這兩個平台上沒有指定的 HTML 網頁的基底目錄的參數。 這是用來解析相對參考資源，例如影像和 CSS 檔案的裝置的檔案系統上的位置。 例如，想標記
+在這兩個平臺上, 有一個參數可指定 HTML 網頁的基底目錄。 這是裝置的檔案系統上用來解析資源 (例如影像和 CSS 檔案) 之相對參考的位置。 例如, 標記如下:
 
 ```html
 <link rel="stylesheet" href="style.css" />
@@ -70,51 +70,51 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 <script type="text/javascript" src="jscript.js">
 ```
 
-這些檔案，請參閱： **style.css**， **monkey.jpg**並**jscript.js**。 基底目錄設定會告訴 web 檢視這些檔案的所在位置以便可載入的頁面。
+請參閱下列檔案: **style .css**、**猴子 .jpg**和**jscript**。 [基底目錄] 設定會告訴 web view 該檔案的所在位置, 以便將它們載入至頁面。
 
 #### <a name="ios"></a>iOS
 
-範本輸出呈現在 iOS 中使用下列 C# 程式碼：
+範本輸出會在 iOS 中以下列C#程式碼呈現:
 
 ```csharp
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
-基底目錄指定為`NSBundle.MainBundle.BundleUrl`就是指在安裝應用程式的目錄。 中的所有檔案**資源**這類資料夾複製到這個位置**style.css**檔案如下所示：
+指定基底目錄, `NSBundle.MainBundle.BundleUrl`其參照的是應用程式安裝所在的目錄。 **Resources**資料夾中的所有檔案都會複製到這個位置, 例如**style .css**檔案, 如下所示:
 
  ![iPhoneHybrid 解決方案](images/image1_240x163.png)
 
-所有的靜態內容檔案的建置動作應該**BundleResource**:
+所有靜態內容檔案的組建動作都應該是**BundleResource**:
 
- ![iOS 專案的建置動作：BundleResource](images/image2_250x131.png)
+ ![iOS 專案組建動作:BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
-Android 也需要在 web 檢視中顯示 html 字串時，做為參數傳遞的基底目錄。
+在 web 視圖中顯示 html 字串時, Android 也需要以參數的形式傳遞基底目錄。
 
 ```csharp
 webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8", null);
 ```
 
-特殊字串**file:///android_asset/** 係指在您應用程式中顯示以下包含 Android 資產資料夾**style.css**檔案。
+特殊字元串**file:///android_asset/** 指的是應用程式中的 android 資產資料夾, 如下所示, 其中包含**style .css**檔案。
 
  ![AndroidHybrid 解決方案](images/image3_240x167.png)
 
-所有的靜態內容檔案的建置動作應該**AndroidAsset**。
+所有靜態內容檔案的組建動作都應該是**AndroidAsset**。
 
- ![Android 專案的建置動作：AndroidAsset](images/image4_250x71.png)
+ ![Android 專案組建動作:AndroidAsset](images/image4_250x71.png)
 
-### <a name="calling-c-from-html-and-javascript"></a>呼叫C#從 HTML 和 JavaScript
+### <a name="calling-c-from-html-and-javascript"></a>從C# HTML 和 JavaScript 呼叫
 
-Html 網頁載入網頁檢視時，它會將連結和表單如果從伺服器載入網頁的一樣。 這表示，如果使用者按一下連結或送出表單 web 檢視會嘗試瀏覽至指定的目標。
+將 html 網頁載入 web 視圖時, 它會將連結和表單視為頁面是從伺服器載入的。 這表示, 如果使用者按一下連結或提交表單, web view 會嘗試流覽至指定的目標。
 
-如果連結至外部伺服器 （例如 google.com) 網頁檢視將會嘗試載入外部網站 （假設沒有網際網路連線）。
+如果連結到外部伺服器 (例如 google.com), 則 web 視圖會嘗試載入外部網站 (假設有網際網路連線)。
 
 ```html
 <a href="http://google.com/">Google</a>
 ```
 
-如果是相對的連結 web 檢視將會嘗試從其基底目錄載入該內容。 顯然沒有網路連線是為了此做法能夠運作，因為內容會儲存在裝置上的應用程式。
+如果連結是相對的, 則 web 視圖會嘗試從基底目錄載入該內容。 很明顯地, 此作業不需要網路連線, 因為內容會儲存在裝置上的應用程式中。
 
 ```html
 <a href="somepage.html">Local content</a>
@@ -127,13 +127,13 @@ Html 網頁載入網頁檢視時，它會將連結和表單如果從伺服器載
 <form method="get" action="somepage.html"></form>
 ```
 
-您不打算裝載 web 伺服器上的用戶端。不過，您可以使用相同的伺服器通訊技術運用在現今的回應式設計模式透過 HTTP GET 時，呼叫服務，並發出 JavaScript 以非同步方式處理回應 （或呼叫的 JavaScript 已裝載在 web 檢視中）。 這可讓您輕鬆地將資料從 HTML 傳遞回處理之後顯示結果傳回 HTML 網頁的 C# 程式碼。
+您不會在用戶端上裝載網頁伺服器;不過, 您可以使用現今回應式設計模式中所採用的相同伺服器通訊技術, 透過 HTTP GET 呼叫服務, 併發出 JavaScript 以非同步方式處理回應 (或呼叫已經裝載于 web view 中的 JavaScript)。 這可讓您輕鬆地將 HTML 中的資料傳遞C#回程序代碼進行處理, 然後將結果顯示在 html 網頁上。
 
-IOS 和 Android 提供機制來攔截這些巡覽事件，讓應用程式的程式碼可以回應 （如有必要） 的應用程式程式碼。 這項功能，請務必要建置混合式應用程式，因為它可讓 web 檢視進行互動的原生程式碼。
+IOS 和 Android 都提供應用程式代碼的機制來攔截這些導覽事件, 讓應用程式程式碼可以回應 (如有需要)。 這項功能對於建立混合式應用程式很重要, 因為它可讓機器碼與 web view 互動。
 
 #### <a name="ios"></a>iOS
 
-在 iOS 中的 [web] 檢視中的 ShouldStartLoad 事件可以覆寫，以允許應用程式程式碼來處理巡覽要求 （例如，連結按一下）。 方法參數提供的所有資訊
+您可以覆寫 iOS 中 web view 上的 ShouldStartLoad 事件, 以允許應用程式程式碼處理導覽要求 (例如連結按一下)。 方法參數提供所有資訊
 
 ```csharp
 bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNavigationType navigationType) {
@@ -142,7 +142,7 @@ bool HandleShouldStartLoad (UIWebView webView, NSUrlRequest request, UIWebViewNa
 }
 ```
 
-並將指定的事件處理常式：
+然後指派事件處理常式:
 
 ```csharp
 webView.ShouldStartLoad += HandleShouldStartLoad;
@@ -150,7 +150,7 @@ webView.ShouldStartLoad += HandleShouldStartLoad;
 
 #### <a name="android"></a>Android
 
-在 Android 上只要子類別來處理，然後實作程式碼來回應巡覽要求。
+在 Android 上, 只要將來處理子類別化, 然後再執行程式碼來回應導覽要求即可。
 
 ```csharp
 class HybridWebViewClient : WebViewClient {
@@ -161,7 +161,7 @@ class HybridWebViewClient : WebViewClient {
 }
 ```
 
-然後設定 web 檢視中的 用戶端：
+然後在 web view 上設定用戶端:
 
 ```csharp
 webView.SetWebViewClient (new HybridWebViewClient ());
@@ -169,11 +169,11 @@ webView.SetWebViewClient (new HybridWebViewClient ());
 
 ### <a name="calling-javascript-from-c"></a>從呼叫 JavaScriptC#
 
-除了告訴 web 檢視，以載入新的 HTML 網頁中，C#程式碼也可以在目前顯示的頁面內執行 JavaScript。 整個 JavaScript 程式碼區塊可以使用建立C#字串，並執行，或您可以製作方法呼叫透過頁面上已提供 JavaScript`script`標記。
+除了告訴 web view 載入新的 HTML 網頁, C#程式碼也可以在目前顯示的頁面內執行 JavaScript。 您可以使用C#字串來建立整個 javascript 程式碼區塊, 並加以執行, 或者您可以透過標籤, 為頁面`script`上已提供的 javascript 製作方法呼叫。
 
 #### <a name="android"></a>Android
 
-建立 JavaScript 程式碼來執行，然後將它與前置詞"javascript: 」，並指示網頁檢視載入該字串：
+建立要執行的 JavaScript 程式碼, 然後在其前面加上 "JavaScript:", 並指示 web view 載入該字串:
 
 ```csharp
 var js = "alert('test');";
@@ -182,7 +182,7 @@ webView.LoadUrl ("javascript:" + js);
 
 #### <a name="ios"></a>iOS
 
-iOS web 檢視會提供特別要呼叫 JavaScript 的方法：
+iOS web views 提供專門用來呼叫 JavaScript 的方法:
 
 ```csharp
 var js = "alert('test');";
@@ -191,31 +191,31 @@ webView.EvaluateJavascript (js);
 
 ### <a name="summary"></a>總結
 
-這一節介紹 web 檢視控制項，讓我們建置使用 Xamarin，混合式應用程式的 iOS 和 Android 上的功能包括：
+本節已引進 Android 和 iOS 上的 web view 控制項功能, 可讓我們使用 Xamarin 建立混合式應用程式, 包括:
 
--  從程式碼中，產生的字串載入 HTML 的能力
--  參考本機檔案 （CSS、 JavaScript、 影像或其他 HTML 檔案） 的能力
--  能夠攔截 C# 程式碼、 巡覽要求
--  能夠呼叫 JavaScript 從C#程式碼。
+- 能夠從程式碼中產生的字串載入 HTML。
+- 參考本機檔案 (CSS、JavaScript、影像或其他 HTML 檔案) 的能力,
+- 能夠攔截程式碼中C#的導覽要求,
+- 從C#程式碼呼叫 JavaScript 的能力。
 
 
-下一節介紹 Razor，方便在混合式應用程式中建立要使用的 HTML。
+下一節介紹 Razor, 這可讓您輕鬆地建立要在混合式應用程式中使用的 HTML。
 
 ## <a name="what-is-razor"></a>Razor 是什麼？
 
-Razor 是引進了使用 ASP.NET MVC，原本要在伺服器上執行，並產生 HTML，以提供給 web 瀏覽器的樣板化引擎。
+Razor 是 ASP.NET MVC 引進的範本化引擎, 最初是在伺服器上執行, 並產生 HTML 以提供給網頁瀏覽器。
 
-Razor 範本化引擎會擴充標準的 HTML 語法，與C#，讓您可以表示的配置，並輕鬆地將 CSS 樣式表和 JavaScript。 範本可以參考的模型類別，它可以是任何自訂類型和其屬性可直接從範本。 其主要優點之一是能夠輕鬆地混用 HTML 與 C# 語法。
+Razor 樣板化引擎會使用C#擴充標準 HTML 語法, 讓您可以快速表達版面配置, 並輕鬆地結合 CSS 樣式表單和 JavaScript。 範本可以參考模型類別, 它可以是任何自訂類型, 而且可以直接從範本存取其屬性。 其中一個主要優點是能夠輕鬆地混合 HTML 和C#語法。
 
-Razor 範本並不限於伺服器端使用，也可以包含 Xamarin 應用程式中。 使用 Razor 範本，以及能夠以程式設計方式處理 web 檢視可讓使用 Xamarin 來建置複雜的跨平台混合式應用程式。
+Razor 範本不限於伺服器端使用, 它們也可以包含在 Xamarin 應用程式中。 使用 Razor 範本以及透過程式設計的方式來處理 web views, 讓複雜的跨平臺混合式應用程式能夠以 Xamarin 建立。
 
-### <a name="razor-template-basics"></a>Razor 範本的基本概念
+### <a name="razor-template-basics"></a>Razor 範本基本概念
 
-Razor 範本檔案已 **.cshtml**副檔名。 加入 Xamarin 專案中的文字範本化一節**新的檔案**對話方塊：
+Razor 範本檔案的副檔名為 **.** #。 您可以從 [**新增**檔案] 對話方塊中的 [文字模板化] 區段, 將它們加入 Xamarin 專案:
 
- ![新的檔案-Razor 範本](images/image5_400x201.png)
+ ![新增檔案-Razor 範本](images/image5_400x201.png)
 
-簡單的 Razor 範本 ( **RazorView.cshtml**) 如下所示。
+簡單的 Razor 範本 ( **RazorView. cshtml**) 如下所示。
 
 ```html
 @model string
@@ -226,31 +226,31 @@ Razor 範本檔案已 **.cshtml**副檔名。 加入 Xamarin 專案中的文字�
 </html>
 ```
 
-請注意從一般的 HTML 檔案的下列差異：
+請注意下列與一般 HTML 檔案的差異:
 
--  `@`符號 Razor 範本中具有特殊意義-它表示下列運算式是 C# 進行評估。
-- `@model` 指示詞一律會顯示為 Razor 範本檔案的第一行。
--  `@model`指示詞後面應該接著型別。 在此範例中簡單的字串傳遞至範本，但這可能是任何自訂的類別。
--  當`@Model`參考在範本中，它提供產生 （在此範例中，它會是一個字串） 時，傳遞至範本物件的參考。
--  IDE 會自動產生的範本的部分類別 (檔案與 **.cshtml**延伸模組)。 您可以檢視這段程式碼，但它不可編輯。
- ![RazorView.cshtml](images/image6_125x34.png)部分類別名為 RazorView 符合.cshtml 範本檔案名稱。 它是用來參考 C# 程式碼中的範本，此名稱。
-- `@using` 陳述式也可以包含在 Razor 範本以包含其他命名空間的頂端。
+- 符號在 Razor 範本中具有特殊意義, 這表示C#要評估下列運算式。 `@`
+- `@model`指示詞一律會顯示為 Razor 範本檔案的第一行。
+- `@model`指示詞後面應該接著型別。 在此範例中, 會將簡單字串傳遞至範本, 但這可能是任何自訂類別。
+- 在`@Model`整個範本中參考時, 它會在產生時提供傳遞至範本之物件的參考 (在此範例中, 它會是字串)。
+- IDE 會自動產生範本的部分類別 (副檔名為**cshtml**的檔案)。 您可以查看此程式碼, 但不能進行編輯。
+ ![RazorView 部分類別的名稱為 RazorView, 以符合. cshtml 範本檔案名。](images/image6_125x34.png) 這是用來在程式碼中C#參考範本的名稱。
+- `@using`語句也可以包含在 Razor 範本的頂端, 以包含其他命名空間。
 
 
-下列 C# 程式碼時，可以再產生最終的 HTML 輸出。 請注意，我們會指定為字串"Hello World"將會合併到轉譯的範本輸出的模型。
+接著, 您可以使用下列C#程式碼來產生最終的 HTML 輸出。 請注意, 我們將模型指定為字串 "Hello World", 這會併入轉譯的範本輸出中。
 
 ```csharp
 var template = new RazorView () { Model = "Hello World" };
 var page = template.GenerateString ();
 ```
 
-以下是在 iOS 模擬器、 Android 模擬器上的 web 檢視中顯示的輸出：
+以下是 iOS 模擬器上 web 視圖中顯示的輸出, 並 Android Emulator:
 
  ![Hello World](images/image7_523x135.png)
 
-### <a name="more-razor-syntax"></a>更多的 Razor 語法
+### <a name="more-razor-syntax"></a>更多 Razor 語法
 
-在本節中我們將介紹一些基本的 Razor 語法，可協助您開始使用它。 在本節中的範例填入下列資料類別，並顯示使用 Razor:
+在本節中, 我們將介紹一些基本 Razor 語法, 以協助您開始使用它。 本節中的範例會將資料填入下列類別, 並使用 Razor 加以顯示:
 
 ```csharp
 public class Monkey {
@@ -260,7 +260,7 @@ public class Monkey {
 }
 ```
 
-所有範例都使用下列的資料初始化程式碼
+所有範例都會使用下列資料初始化程式碼
 
 ```csharp
 var animal = new Monkey {
@@ -273,7 +273,7 @@ var animal = new Monkey {
 
 #### <a name="displaying-model-properties"></a>顯示模型屬性
 
-當模型具有屬性的類別，輕鬆地參考這些 Razor 範本中，在此範例範本中所示：
+當模型是具有屬性的類別時, 會在 Razor 範本中輕鬆地參考它們, 如下列範例範本所示:
 
 ```html
 @model Monkey
@@ -285,20 +285,20 @@ var animal = new Monkey {
 </html>
 ```
 
-這可以轉譯成字串，使用下列程式碼：
+這可以使用下列程式碼轉譯為字串:
 
 ```csharp
 var template = new RazorView () { Model = animal };
 var page = template.GenerateString ();
 ```
 
-在 iOS 模擬器、 Android 模擬器上的 web 檢視如下所示的最終輸出：
+最後的輸出會顯示在 iOS 模擬器的 web 視圖中, 並 Android Emulator:
 
  ![Rupert](images/image8_516x160.png)
 
-#### <a name="c-statements"></a>C# 陳述式
+#### <a name="c-statements"></a>C#報表
 
-更複雜的 C# 可以包含在範本中，例如模型屬性的更新和年齡計算，在此範例中：
+範本中C#可以包含更複雜的內容, 例如模型屬性更新和此範例中的年齡計算:
 
 ```html
 @model Monkey
@@ -315,13 +315,13 @@ var page = template.GenerateString ();
 </html>
 ```
 
-您可以撰寫複雜單行的 C# 運算式 （例如格式化年齡） 周圍的程式碼`@()`。
+您可以使用`@()`括住程式碼C# , 來撰寫複雜的單行運算式 (例如格式化年齡)。
 
-可以寫入多個 C# 陳述式以它們周圍`@{}`。
+您C#可以使用`@{}`來括住多個語句來撰寫。
 
-#### <a name="if-else-statements"></a>If else 陳述式
+#### <a name="if-else-statements"></a>If-else 語句
 
-可以使用表示程式碼分支`@if`此範本範例所示。
+您可以使用來表示程式`@if`代碼分支, 如此範本範例中所示。
 
 ```html
 @model Monkey
@@ -340,9 +340,9 @@ var page = template.GenerateString ();
 </html>
 ```
 
-#### <a name="loops"></a>迴圈
+#### <a name="loops"></a>環回
 
-迴圈建構，例如`foreach`也可以加入。 `@`迴圈變數上，可以使用前置詞 (`@food`在此情況下) 來呈現 HTML 中。
+也可以新增`foreach`迴圈結構, 例如。 前置詞可用於迴圈變數 ( `@food`在此案例中為), 以便在 HTML 中呈現。 `@`
 
 ```html
 @model Monkey
@@ -365,95 +365,95 @@ var page = template.GenerateString ();
 </html>
 ```
 
-上述範本的輸出會顯示在 iOS 模擬器、 Android 模擬器上執行：
+上述範本的輸出會顯示在 iOS 模擬器上執行, 並 Android Emulator:
 
- ![Rupert X Monkey](images/image9_520x277.png)
+ ![Rupert X 猴子](images/image9_520x277.png)
 
-本節涵蓋使用 Razor 範本來呈現簡單的唯讀檢視之基本概念。 下節將說明如何建置更完整的應用程式使用 Razor 可接受使用者輸入，並在 [HTML] 檢視中的 JavaScript 之間交互操作和C#。
+本節涵蓋使用 Razor 範本轉譯簡單唯讀視圖的基本概念。 下一節說明如何使用 Razor 建立更完整的應用程式, 以接受使用者輸入, 並在 HTML 視圖和C#中的 JavaScript 之間相交互操作。
 
-## <a name="using-razor-templates-with-xamarin"></a>搭配 Xamarin 使用 Razor 範本
+## <a name="using-razor-templates-with-xamarin"></a>搭配使用 Razor 範本與 Xamarin
 
-本節說明如何使用建置自己的解決方案範本在 Visual Studio for mac 中使用的混合式應用程式 有三個範本可從**檔案 > 新增 > 方案...** 視窗：
+本節說明如何使用 Visual Studio for Mac 中的解決方案範本, 以建立您自己的混合式應用程式。 檔案中有三個可用的範本 **> 新的 > 解決方案 ...**  視窗:
 
-- **Android > 應用程式 > Android WebView 應用程式**
-- **iOS > 應用程式 > WebView 應用程式**
+- **Android > 應用程式 > Android Web 視圖應用程式**
+- **iOS > App > Web 應用程式**
 - **ASP.NET MVC 專案**
 
 
 
-**新的方案**iPhone 和 Android 專案視窗看起來像這樣-右側的方案描述反白顯示的 Razor 範本化引擎的支援。
+[**新增解決方案**] 視窗在 IPhone 和 Android 專案中看起來像這樣: 在右側的解決方案描述會強調 Razor 範本化引擎的支援。
 
- ![建立 iPhone 和 Android 的方案](images/image13_1139x959.png)
+ ![建立 iPhone 和 Android 解決方案](images/image13_1139x959.png)
 
-請注意，您可以輕鬆地新增 **.cshtml** Razor 範本*任何*現有的 Xamarin 專案，它不需要使用這些解決方案範本。 iOS 專案不需要是; 使用 Razor 分鏡腳本只要將 UIWebView 控制項加入任何檢視中以程式設計方式，您可以轉譯 Razor 範本整個 C# 程式碼。
+請注意, 您可以輕鬆地將**cshtml** Razor 範本新增至*任何*現有的 Xamarin 專案, 而不需要使用這些解決方案範本。 iOS 專案不需要分鏡腳本就可以使用 Razor;只要以程式設計方式將 UIWebView 控制項新增至任何視圖, 您就可以在C#程式碼中轉譯 Razor 範本。
 
-IPhone 和 Android 專案的預設範本方案內容如下所示：
+IPhone 和 Android 專案的預設範本解決方案內容如下所示:
 
- ![iPhone 和 Android 的範本](images/image10_428x310.png)
+ ![iPhone 和 Android 範本](images/image10_428x310.png)
 
-範本可讓您準備就緒應用程式基礎結構，以載入資料模型物件的 Razor 範本、 處理使用者輸入和傳回給使用者，透過 JavaScript 通訊。
+範本可讓您準備好使用應用程式基礎結構, 以透過資料模型物件載入 Razor 範本、處理使用者輸入, 以及透過 JavaScript 與使用者通訊。
 
-此解決方案的重要部分是：
+解決方案的重要部分包括:
 
--  這類靜態內容**style.css**檔案。
--  Razor.cshtml 範本檔案，例如**RazorView.cshtml** 。
--  模型中的 Razor 範本這類參考的類別**ExampleModel.cs** 。
--  建立 web 檢視，並呈現此範本中，這類的平台特定類別`MainActivity`在 Android 上和`iPhoneHybridViewController`在 iOS 上。
+- 靜態內容, 例如**style .css**檔案。
+- Razor. cshtml 範本檔案, 例如**RazorView。**
+- Razor 範本中參考的模型類別, 例如**ExampleModel.cs** 。
+- 建立 web view 並轉譯範本的平臺特定類別, 例如 Android 上的`MainActivity` `iPhoneHybridViewController`和 iOS 上的。
 
 
-下一節說明專案的運作方式。
+下一節將說明專案的工作方式。
 
 ### <a name="static-content"></a>靜態內容
 
-靜態內容包括 CSS 樣式表、 影像、 JavaScript 檔案或其他內容，可以從連結或網頁檢視中顯示 HTML 檔案參考。
+靜態內容包括 CSS 樣式表單、影像、JavaScript 檔案或其他內容, 可從 web 視圖中顯示的 HTML 檔案連結或加以參考。
 
-範本專案包含示範如何在混合式應用程式中包含靜態內容的最小的樣式表。 CSS 樣式表這類範本中參考：
+範本專案包含最小的樣式表單, 以示範如何在混合式應用程式中包含靜態內容。 CSS 樣式表單會在範本中參考, 如下所示:
 
 ```html
 <link rel="stylesheet" href="style.css" />
 ```
 
-您可以新增任何樣式表和 JavaScript 檔案，您也需要包括 JQuery 等架構。
+您可以新增所需的任何樣式表單和 JavaScript 檔案, 包括 JQuery 之類的架構。
 
 ### <a name="razor-cshtml-templates"></a>Razor cshtml 範本
 
-此範本包括 Razor **.cshtml**有預先撰寫的程式碼來協助傳達 HTML/JavaScript 之間資料的檔案和C#。 這可讓您建置複雜的混合式應用程式，不只是顯示唯讀資料模型，但也接受 HTML 中的使用者輸入並將它傳遞回處理或儲存體的 C# 程式碼。
+此範本包含 Razor **. cshtml**檔案, 該檔案具有預先撰寫的程式碼, 可協助在 HTML/JavaScript 和C#之間傳達資料。 這可讓您建立複雜的混合式應用程式, 而不只會顯示模型中的唯讀資料, 也會接受 HTML 中的使用者輸入, 並將C#其傳遞回程序代碼以進行處理或儲存。
 
 #### <a name="rendering-the-template"></a>轉譯範本
 
-呼叫`GenerateString`範本呈現可立即在 web 檢視中顯示的 HTML。 如果範本會使用模型，則它應該提供再進行轉譯。 此圖說明轉譯的運作方式 – 不所解決的靜態資源的 web 檢視，在執行階段，使用提供的基底目錄以尋找指定的檔案。
+在範本`GenerateString`上呼叫, 可呈現 HTML 準備好在 web 視圖中顯示。 如果範本使用模型, 則應該在呈現之前提供。 此圖說明轉譯的運作方式, 而不是 web view 在執行時間解析靜態資源, 而是使用提供的基底目錄來尋找指定的檔案。
 
- ![Razor 的流程圖](images/image12_700x421.png)
+ ![Razor 流程圖](images/image12_700x421.png)
 
-#### <a name="calling-c-code-from-the-template"></a>從範本中呼叫 C# 程式碼
+#### <a name="calling-c-code-from-the-template"></a>從C#範本呼叫程式碼
 
-藉由設定 web 檢視的 URL，然後攔截 C# 中的要求，而不重新載入網頁檢視處理原生的要求是回呼至 C# 呈現的網頁檢視的通訊。
+從轉譯的 web 視圖進行通訊的方式C#是設定 web 視圖的 URL, 然後在中C#攔截要求以處理原生要求, 而不需要重載 web view。
 
-中如何處理 RazorView 的按鈕，就可以查看範例。 按鈕具有下列 HTML:
+您可以在 RazorView 的按鈕處理方式中看到範例。 按鈕具有下列 HTML:
 
 ```html
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-`InvokeCSharpWithFormValues` JavaScript 函式會讀取所有的值來自 HTML 表單和集合`location.href`web 檢視：
+JavaScript 函式會讀取 HTML 表單中的所有值, 並設定 web view 的`location.href`: `InvokeCSharpWithFormValues`
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
 ```
 
-這會嘗試瀏覽至 URL，以使用自訂配置 （例如 web 檢視 `hybrid:`)
+這會嘗試將 web view 流覽至具有自訂配置的 URL (例如, `hybrid:`)
 
 ```
 hybrid:UpdateLabel?textbox=SomeValue&UpdateLabel=Click
 ```
 
-當原生 web 檢視會處理此巡覽要求時，我們有機會攔截它。 在 iOS 中，這是由處理 UIWebView HandleShouldStartLoad 事件。 在 Android 中，我們只是子類別來處理在表單中，使用，並覆寫 ShouldOverrideUrlLoading。
+當原生 web view 處理此流覽要求時, 我們有機會攔截它。 在 iOS 中, 這是藉由處理 UIWebView 的 HandleShouldStartLoad 事件來完成。 在 Android 中, 我們只會將表單中使用的來處理子類別化, 並覆寫 ShouldOverrideUrlLoading。
 
-這些兩個瀏覽攔截器的內部資訊基本上都相同。
+這兩個流覽攔截器的內部基本上是相同的。
 
-首先，請檢查 URL，web 檢視嘗試載入，而且如果它不會開始使用自訂配置 (`hybrid:`)，允許瀏覽發生如往常。
+首先, 檢查 web view 嘗試載入的 URL, 如果它不是以自訂配置 (`hybrid:`) 開頭, 則允許導覽正常執行。
 
-適用於自訂的 URL 配置，在配置之間的 URL 中的所有項目和 「？ 」 是 （在此情況下，「 UpdateLabel"） 中處理的方法名稱。 查詢字串中的所有項目將會被視為方法呼叫的參數：
+針對自訂 URL 配置, 此配置與 "？" 之間的 URL 中的所有專案 這是要處理的方法名稱 (在此案例中為 "UpdateLabel")。 查詢字串中的所有專案都會被視為方法呼叫的參數:
 
 ```csharp
 var resources = url.Substring(scheme.Length).Split('?');
@@ -461,68 +461,68 @@ var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-`UpdateLabel` 在此範例中的最少的字串操作 （前面加上"C# says"的字串），在文字方塊中參數，並回呼至 web 檢視。
+`UpdateLabel`在此範例中, 會在 textbox 參數上進行最少量的字串操作 (C#在字串前面加上「表示」), 然後回呼至 web view。
 
-之後處理的 URL，方法會中止瀏覽，以便 web 檢視不會嘗試完成瀏覽至自訂 URL。
+處理 URL 之後, 方法會中止流覽, 讓 web view 不會嘗試完成流覽至自訂 URL。
 
-#### <a name="manipulating-the-template-from-c"></a>管理從 C# 範本
+#### <a name="manipulating-the-template-from-c"></a>從操作範本C#
 
-要轉譯的 HTML 網頁檢視從通訊C#是藉由呼叫 JavaScript 網頁檢視中。 在 iOS 上，這是藉由呼叫`EvaluateJavascript`UIWebView 上：
+從C#到轉譯的 HTML web view 的通訊是藉由呼叫 web view 中的 JavaScript 來完成。 在 iOS 上, 您可以在 UIWebView `EvaluateJavascript`上呼叫來完成這項作業:
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-在 Android 上，JavaScript 可以叫用網頁檢視中載入 URL，使用 JavaScript `"javascript:"` URL 配置：
+在 Android 上, 您可以在 web view 中叫用 javascript, 方法是使用`"javascript:"` url 配置將 javascript 載入為 url:
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
 ```
 
-## <a name="making-an-app-truly-hybrid"></a>讓應用程式真正的混合式
+## <a name="making-an-app-truly-hybrid"></a>讓應用程式真正混合
 
-這些範本就不會讓使用的每個平台上的原生控制項 – 單一 web 檢視填滿整個螢幕。
+這些範本不會使用每個平臺上的原生控制項–整個畫面會以單一 web 視圖填滿。
 
-HTML 可以是適合用來建立原型，而且顯示的各種網路是最適合例如 rtf 文字和回應式配置。 例如，HTML 和 JavaScript – 捲動的資料，較長的清單適合不過並非所有的工作執行最好在 Android 上使用原生 UI 控制項，例如 (UITableView 在 iOS 上的) 或 ListView。
+HTML 非常適合用來建立原型, 並顯示 web 最適合的專案類型, 例如 rtf 和回應式版面配置。 不過, 並非所有工作都適用于 HTML 和 JavaScript –透過長資料清單進行滾動, 例如, 使用原生 UI 控制項 (例如 iOS 上的 UITableView 或 Android 上的 ListView) 執行得更好。
 
-在範本中的 web 檢視可以輕易地與平台專屬控制項 – 只要編輯增強**MainStoryboard.storyboard** iOS 設計工具中的**Resources/layout/Main.axml**在 Android 上。
+範本中的 web views 可以輕鬆地使用平臺特定控制項來增強–只要在 iOS 設計工具中編輯**mainstoryboard.storyboard** , 或在 Android 上編輯**Resources/layout/axml** 。
 
-### <a name="razortodo-sample"></a>RazorTodo Sample
+### <a name="razortodo-sample"></a>RazorTodo 範例
 
-[RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)存放庫包含兩個不同的解決方案，以顯示完整的 HTML 驅動的應用程式與 HTML 結合原生控制項的應用程式之間的差異：
+[RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)存放庫包含兩個不同的解決方案, 以顯示完全以 html 為導向的應用程式, 以及結合 HTML 與原生控制項的應用程式之間的差異:
 
--  **RazorTodo** -使用 Razor 範本的完整 HTML 驅動應用程式。
--  **RazorNativeTodo** -使用適用於 iOS 和 Android 的原生的清單檢視控制項，但會顯示使用 HTML 和 Razor 編輯畫面。
+- **RazorTodo** -使用 Razor 範本的完全 HTML 驅動應用程式。
+- **RazorNativeTodo** -使用適用于 IOS 和 Android 的原生清單視圖控制項, 但以 HTML 和 Razor 顯示編輯畫面。
 
 
-在 iOS 和 Android，使用可攜式類別庫 (Pcl) 共用通用的程式碼，例如資料庫和模型類別上，執行這些 Xamarin 應用程式。 Razor **.cshtml**範本也可以包含在 PCL 中以便輕鬆地在跨平台共用。
+這些 Xamarin 應用程式會在 iOS 和 Android 上執行, 利用可移植的類別庫 (Pcl) 來共用一般程式碼, 例如資料庫和模型類別。 您也可以在 PCL 中包含 Razor 樣板範本, 以便輕鬆地跨平臺共用它們。
 
-這兩個範例應用程式納入 Twitter 共用和示範，使用 Xamarin 的混合式應用程式還是可以存取所有的基礎功能從 HTML Razor 範本驅動檢視原生平台，從文字轉換語音 Api。
+這兩個範例應用程式都是從原生平臺納入 Twitter 共用和文字轉換語音 Api, 示範使用 Xamarin 的混合式應用程式仍可從 HTML Razor 範本驅動的視圖存取所有基礎功能。
 
-**RazorTodo**應用程式中使用清單] 和 [編輯檢視 HTML Razor 範本。 這表示我們可以在建置應用程式幾乎完全共用的可攜式類別庫 (包括資料庫和 **.cshtml** Razor 範本)。 以下螢幕擷取畫面會顯示 iOS 和 Android 應用程式。
+**RazorTodo**應用程式會針對 [清單] 和 [編輯] 視圖使用 HTML Razor 範本。 這表示我們幾乎可以在共用的可攜性類別庫 (包括資料庫和 **. cshtml** Razor 範本) 中完全建立應用程式。 下列螢幕擷取畫面顯示 iOS 和 Android 應用程式。
 
  ![RazorTodo](images/Both_700x290.png)
 
-**RazorNativeTodo**應用程式的 [編輯] 檢視中，會使用 HTML Razor 範本，但每個平台上實作原生的捲動清單。 這會提供一些優點包括：
+**RazorNativeTodo**應用程式會針對 [編輯] 視圖使用 HTML Razor 範本, 但會在每個平臺上執行原生滾動清單。 這可提供許多優點, 包括:
 
--  效能-原生的捲動控制項使用虛擬化來確保快速、 平滑捲動即使有很長資料的清單。
--  原生體驗-平台特定 UI 項目會輕鬆地啟用，例如快速捲動索引中的支援 iOS 和 Android。
+- 效能-原生的滾動控制項使用虛擬化來確保快速、順暢地滾動, 即使有非常長的資料清單也一樣。
+- 原生體驗-可以輕鬆地啟用平臺特定的 UI 元素, 例如 iOS 和 Android 中的快速滾動索引支援。
 
 
-建置使用 Xamarin 的混合式應用程式的主要優點是您可以用來啟動具有完全的 HTML 驅動的使用者介面 （例如第一個範例中），然後再新增時 （如第二個範例所示） 所需的平台專屬功能。 原生清單畫面和 HTML Razor 編輯畫面，這兩個 ios 和 Android 如下所示。
+使用 Xamarin 建立混合式應用程式的主要優點是, 您可以從完全以 HTML 為導向的使用者介面 (例如第一個範例) 開始, 然後在必要時新增平臺特定的功能 (如第二個範例所示)。 IOS 和 Android 上的原生清單畫面和 HTML Razor 編輯畫面如下所示。
 
  ![RazorNativeTodo](images/BothNative_700x290.png)
 
 ## <a name="summary"></a>總結
 
-本文說明可用的 web 檢視控制項的功能在 iOS 和 Android，方便建置混合式應用程式。
+本文說明可在 iOS 和 Android 上使用的 web view 控制項功能, 有助於建立混合式應用程式。
 
-然後會討論 Razor 範本化引擎，可用來輕鬆地產生 HTML，Xamarin 應用程式使用中的語法。**cshtml** Razor 範本檔案。 它也會說明 Visual Studio for Mac 解決方案範本可讓您快速開始建置使用 Xamarin 的混合式應用程式。
+接著討論過 Razor 範本化引擎和語法, 可使用在 Xamarin 應用程式中輕鬆地產生 HTML。**cshtml**Razor 範本檔案。 其中也說明了 Visual Studio for Mac 解決方案範本, 可讓您快速開始使用 Xamarin 建立混合式應用程式。
 
-最後，它會引進 RazorTodo 範例示範如何使用原生使用者介面與 Api 結合 web 檢視。
+最後, 它引進了 RazorTodo 範例, 示範如何結合 web views 與原生使用者介面和 Api。
 
 ### <a name="related-links"></a>相關連結
 
-- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
-- [MVC 3-Razor 檢視引擎 (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
-- [使用 Razor 語法 (Microsoft) 的 ASP.NET Web 程式設計簡介](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
+- [RazorTodo 範例](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [MVC 3-Razor View 引擎 (Microsoft)](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
+- [使用 Razor 語法 ASP.NET Web 程式設計的簡介 (Microsoft)](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

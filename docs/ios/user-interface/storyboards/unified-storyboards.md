@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 02bc6fe7109f13629e776c800657846fca02641e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 20010fb3704da54ae1e1133c25f332e8481a1b87
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657137"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528536"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的整合分鏡腳本
 
@@ -28,8 +28,8 @@ iOS 8 包含新的、更簡單易用的機制, 可建立使用者介面, 也就�
 
 裝置是由大小類別以垂直和水準軸定義, 而 iOS 8 中有兩種大小類別:
 
--  **一般**–這適用于大型螢幕大小 (例如 iPad) 或小工具, 可提供大大小的印象 (例如`UIScrollView`
--  **Compact** –這適用于較小的裝置 (例如 iPhone)。 此大小會考慮裝置的方向。
+- **一般**–這適用于大型螢幕大小 (例如 iPad) 或小工具, 可提供大大小的印象 (例如`UIScrollView`
+- **Compact** –這適用于較小的裝置 (例如 iPhone)。 此大小會考慮裝置的方向。
 
 
 如果同時使用這兩個概念, 結果會是 2 x 2 方格, 定義可用於不同方向的各種可能大小, 如下圖所示:
@@ -51,8 +51,8 @@ IPhone 根據裝置的方向而有不同大小的類別:
 
  [![](unified-storyboards-images/iphonesizeclasses.png "iPhone 大小類別")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
--  當裝置處於直向模式時, 螢幕會水準且垂直地具有**精簡**類別 
--  當裝置處於橫向模式時, 螢幕類別會從直向模式反轉。
+- 當裝置處於直向模式時, 螢幕會水準且垂直地具有**精簡**類別
+- 當裝置處於橫向模式時, 螢幕類別會從直向模式反轉。
 
 ### <a name="iphone-6-plus-size-classes"></a>iPhone 6 加上大小類別
 
@@ -91,11 +91,11 @@ IOS 8 的新手, 開發人員可以在 Xcode 中建立單一`.xib` 、不可部�
 
 特性環境是 iOS 8 中的新介面, 而且能夠傳回下列物件的特性集合:
 
--  畫面 ( `UIScreens` )。
--  Windows ( `UIWindows` )。
--  視圖控制器 ( `UIViewController` )。
--  Views ( `UIView` )。
--  展示控制器 ( `UIPresentationController` )。
+- 畫面 ( `UIScreens` )。
+- Windows ( `UIWindows` )。
+- 視圖控制器 ( `UIViewController` )。
+- Views ( `UIView` )。
+- 展示控制器 ( `UIPresentationController` )。
 
 
 開發人員使用特性環境所傳回的特性集合, 以決定應該如何配置使用者介面。
@@ -138,7 +138,7 @@ IOS 8 的新手, 開發人員可以在 Xcode 中建立單一`.xib` 、不可部�
 
 如果開發人員使用 Apple 提供的其中一種建立方法 (例如`UITraitCollection.FromHorizontalSizeClass`) 來建立新的集合, 則也會取得部分合格的特性集合。
 
-可以在多個特性集合上執行的一項作業, 是將它們彼此進行比較, 包括詢問一個特性集合 (如果它包含另一個特性)。 內含專案的意義  是, 針對第二個集合中指定的任何特性, 此值必須與第一個集合中的值完全相符。
+可以在多個特性集合上執行的一項作業, 是將它們彼此進行比較, 包括詢問一個特性集合 (如果它包含另一個特性)。 內含專案的意義是, 針對第二個集合中指定的任何特性, 此值必須與第一個集合中的值完全相符。
 
 若要測試兩個特性`Contains` , 請使用`UITraitCollection`傳入要測試之特徵值的方法。
 
@@ -230,16 +230,16 @@ iOS 8 提供幾個回呼, 讓開發人員可以用來參與特性變更, 如下�
 
 現在讓我們仔細看一下, 當分割視圖控制器從兩個數據行折迭到一個資料行視圖時, 會發生什麼事。 在這項變更中, 有兩個需要進行的進程:
 
--  根據預設, 分割視圖控制器會在折迭發生後, 使用主要視圖控制器做為視圖。 開發人員可以覆寫這個行為`GetPrimaryViewControllerForCollapsingSplitViewController` `UISplitViewControllerDelegate` , 其方式是覆寫的方法, 並提供他們想要在折迭狀態中顯示的任何視圖控制器。
--  次要視圖控制器必須合併到主要視圖控制器。 開發人員通常不需要針對此步驟採取任何動作;分割視圖控制器包含以硬體裝置為基礎的此階段自動處理。 不過, 在某些特殊情況下, 開發人員可能會想要與這種變更進行互動。 呼叫的`UISplitViewControllerDelegate`方法, 可在折迭發生時顯示主要視圖控制器, 而不是詳細資料檢視。 `CollapseSecondViewController`
+- 根據預設, 分割視圖控制器會在折迭發生後, 使用主要視圖控制器做為視圖。 開發人員可以覆寫這個行為`GetPrimaryViewControllerForCollapsingSplitViewController` `UISplitViewControllerDelegate` , 其方式是覆寫的方法, 並提供他們想要在折迭狀態中顯示的任何視圖控制器。
+- 次要視圖控制器必須合併到主要視圖控制器。 開發人員通常不需要針對此步驟採取任何動作;分割視圖控制器包含以硬體裝置為基礎的此階段自動處理。 不過, 在某些特殊情況下, 開發人員可能會想要與這種變更進行互動。 呼叫的`UISplitViewControllerDelegate`方法, 可在折迭發生時顯示主要視圖控制器, 而不是詳細資料檢視。 `CollapseSecondViewController`
 
 
 ### <a name="expanding-the-split-view-controller"></a>展開分割視圖控制器
 
 現在讓我們進一步瞭解當分割視圖控制器從折迭狀態展開時, 會發生什麼事。 同樣地, 需要進行兩個階段:
 
--  首先, 定義新的主要視圖控制器。 根據預設, 分割視圖控制器會自動從折迭的視圖使用主要視圖控制器。 同樣地, 開發人員可以使用`GetPrimaryViewControllerForExpandingSplitViewController`的方法`UISplitViewControllerDelegate`來覆寫此行為。
--  選擇主要視圖控制器後, 就必須重新建立次要視圖控制器。 同樣地, 分割視圖控制器包含以硬體裝置為基礎的此階段自動處理。 開發人員可以藉由呼叫`SeparateSecondaryViewController`的方法`UISplitViewControllerDelegate`來覆寫此行為。
+- 首先, 定義新的主要視圖控制器。 根據預設, 分割視圖控制器會自動從折迭的視圖使用主要視圖控制器。 同樣地, 開發人員可以使用`GetPrimaryViewControllerForExpandingSplitViewController`的方法`UISplitViewControllerDelegate`來覆寫此行為。
+- 選擇主要視圖控制器後, 就必須重新建立次要視圖控制器。 同樣地, 分割視圖控制器包含以硬體裝置為基礎的此階段自動處理。 開發人員可以藉由呼叫`SeparateSecondaryViewController`的方法`UISplitViewControllerDelegate`來覆寫此行為。
 
 
 在分割視圖控制器中, 主要視圖控制器會藉由執行`CollapseSecondViewController`的和`SeparateSecondaryViewController`方法`UISplitViewControllerDelegate`, 在展開和折迭的瀏覽器中播放部分。 `UINavigationController`會執行這些方法, 以自動推送和彈出次要視圖控制器。
@@ -250,8 +250,8 @@ Apple 對 iOS 8 所做的另一項變更, 就是開發人員顯示視圖控制�
 
 這在流覽控制器與其執行所在的環境之間呈現非常緊密的結合。 在 iOS 8 中, Apple 藉由提供兩種新方法來將其解除耦合:
 
--  `ShowViewController`–調整以根據其環境顯示新的視圖控制器。 例如, 在中`UINavigationController` , 它只會將新的視圖推送至堆疊上。 在分割視圖控制器中, 新的視圖控制器會顯示在左側, 做為新的主要視圖控制器。 如果沒有容器視圖控制器存在, 新的視圖會顯示為強制回應視圖控制器。
--  `ShowDetailViewController`-的運作方式與類似`ShowViewController`, 但會在分割視圖控制器上執行, 以將詳細資料檢視取代為傳入的新視圖控制器。 如果分割視圖控制器已折迭 (如 iPhone 應用程式中所示), 則會將呼叫重新導向至`ShowViewController`方法, 而新的視圖會顯示為主要視圖控制器。 同樣地, 如果沒有容器視圖控制器存在, 新的視圖就會顯示為強制回應視圖控制器。
+- `ShowViewController`–調整以根據其環境顯示新的視圖控制器。 例如, 在中`UINavigationController` , 它只會將新的視圖推送至堆疊上。 在分割視圖控制器中, 新的視圖控制器會顯示在左側, 做為新的主要視圖控制器。 如果沒有容器視圖控制器存在, 新的視圖會顯示為強制回應視圖控制器。
+- `ShowDetailViewController`-的運作方式與類似`ShowViewController`, 但會在分割視圖控制器上執行, 以將詳細資料檢視取代為傳入的新視圖控制器。 如果分割視圖控制器已折迭 (如 iPhone 應用程式中所示), 則會將呼叫重新導向至`ShowViewController`方法, 而新的視圖會顯示為主要視圖控制器。 同樣地, 如果沒有容器視圖控制器存在, 新的視圖就會顯示為強制回應視圖控制器。
 
 
 這些方法的運作方式是從分葉視圖控制器開始, 並向上切入視圖階層, 直到找到正確的容器視圖控制器來處理新視圖的顯示為止。
@@ -266,8 +266,8 @@ Apple 對 iOS 8 所做的另一項變更, 就是開發人員顯示視圖控制�
 
 這個方法會逐步引導階層鏈, 直到找到正確的容器視圖控制器為止。 例如：
 
-1.  如果呼叫`ShowViewController`方法, 則執行此方法之鏈中的第一個 View 控制器是「流覽控制器」, 因此它會當做新視圖的父系使用。
-1.  如果改為呼叫方法,分割視圖控制器就是第一個要執行它的viewcontroller,因此它會當做父系使用。`ShowDetailViewController`
+1. 如果呼叫`ShowViewController`方法, 則執行此方法之鏈中的第一個 View 控制器是「流覽控制器」, 因此它會當做新視圖的父系使用。
+1. 如果改為呼叫方法,分割視圖控制器就是第一個要執行它的viewcontroller,因此它會當做父系使用。`ShowDetailViewController`
 
 
 `GetTargetForAction`方法的運作方式是尋找可執行指定動作的視圖控制器, 然後在它想要接收該動作時, 詢問該視圖控制器。 因為此方法是公用的, 所以開發人員可以建立自己的自訂方法, 其運作`ShowViewController`方式`ShowDetailViewController`就像內建和方法一樣。
@@ -558,9 +558,9 @@ IOS 8 的新手, 整合的分鏡腳本可讓開發人員建立一個整合的分
 
 整合分鏡腳本的主要優點如下:
 
--  針對 iPhone 和 iPad 使用相同的分鏡腳本檔案。
--  向 iOS 6 和 iOS 7 回溯部署。
--  在 Xamarin iOS 設計工具內, 預覽不同裝置、方向和 OS 版本的版面配置。
+- 針對 iPhone 和 iPad 使用相同的分鏡腳本檔案。
+- 向 iOS 6 和 iOS 7 回溯部署。
+- 在 Xamarin iOS 設計工具內, 預覽不同裝置、方向和 OS 版本的版面配置。
 
 這項功能在 Visual Studio for Mac 中受到完整支援
 
@@ -625,7 +625,7 @@ IOS 設計工具會確認開發人員想要將分鏡腳本的格式轉換成使�
 
 ### <a name="adaptive-segue-types"></a>適應性 Segue 類型
 
-如果開發人員之前已使用過分鏡腳本, 則會熟悉**推送、強制**回應和**Popover**的  現有 segue 類型。 在統一的分鏡腳本檔案上啟用大小類別時, 會提供下列調適型 Segue 類型 (對應至上面討論的新 View Controller API):**顯示**並**顯示詳細資料**。
+如果開發人員之前已使用過分鏡腳本, 則會熟悉**推送、強制**回應和**Popover**的現有 segue 類型。 在統一的分鏡腳本檔案上啟用大小類別時, 會提供下列調適型 Segue 類型 (對應至上面討論的新 View Controller API):**顯示**並**顯示詳細資料**。
 
 > [!IMPORTANT]
 > 當啟用大小類別時, 任何現有的 segue 都會轉換成新的類型。

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: 0c4f7303d3620dcc2c829d732fe7a5f97f0e3883
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 83fa64ca207358b712341e1923a3a9a67a449e1f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643767"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524732"
 ---
 # <a name="android-beam"></a>Android Beam
 
@@ -23,9 +23,9 @@ Android 橫樑的運作方式是在兩個裝置都在範圍內時, 透過 NFC �
 
 Android 支援兩種使用 Android 橫樑設定訊息的方式:
 
--   `SetNdefPushMessage`-在開始 Android 橫樑之前, 應用程式可以呼叫 SetNdefPushMessage 來指定要推送到 NFC 的 NdefMessage, 以及要推送它的活動。 當應用程式正在使用中時, 如果訊息不會變更, 最好使用這項機制。
+- `SetNdefPushMessage`-在開始 Android 橫樑之前, 應用程式可以呼叫 SetNdefPushMessage 來指定要推送到 NFC 的 NdefMessage, 以及要推送它的活動。 當應用程式正在使用中時, 如果訊息不會變更, 最好使用這項機制。
 
--   `SetNdefPushMessageCallback`-當 Android 橫樑起始時, 應用程式可以處理回呼來建立 NdefMessage。 這項機制可讓訊息建立延遲, 直到裝置在範圍內為止。 它支援訊息可能會根據應用程式中發生的情況而有所不同的案例。
+- `SetNdefPushMessageCallback`-當 Android 橫樑起始時, 應用程式可以處理回呼來建立 NdefMessage。 這項機制可讓訊息建立延遲, 直到裝置在範圍內為止。 它支援訊息可能會根據應用程式中發生的情況而有所不同的案例。
 
 
 在任一情況下, 若要使用 Android 橫樑傳送資料, 應用程式`NdefMessage`會傳送, 並在數`NdefRecords`個中封裝資料。 我們來看一下必須解決才能觸發 Android 橫樑的重點。 首先, 我們將使用建立`NdefMessage`的回呼樣式。

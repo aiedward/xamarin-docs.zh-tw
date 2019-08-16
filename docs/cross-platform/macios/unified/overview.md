@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 9d36101c1416ea8ddf451f5677258972c4f34990
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 1e8723fd8cc2119c6d65ea760d514373d00ce1d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511137"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521818"
 ---
 # <a name="unified-api-overview"></a>Unified API 總覽
 
@@ -40,8 +40,8 @@ Xamarin 的 Unified API 可讓您在 Mac 和 iOS 之間共用程式碼, 並以�
 
 從這裡開始, 我們的 Api 會以兩種方式呈現:
 
--  **Classic API:** 限制為32位 (僅限), 並在`monotouch.dll`和`XamMac.dll`元件中公開。
--  **Unified API:** 使用`Xamarin.iOS.dll` 和`Xamarin.Mac.dll`元件中提供的單一 API, 同時支援32和64位開發。
+- **Classic API:** 限制為32位 (僅限), 並在`monotouch.dll`和`XamMac.dll`元件中公開。
+- **Unified API:** 使用`Xamarin.iOS.dll` 和`Xamarin.Mac.dll`元件中提供的單一 API, 同時支援32和64位開發。
 
 這表示對於企業開發人員 (不瞄準 App Store), 您可以繼續使用現有的傳統 Api, 因為我們會持續保留它們, 或者您可以升級至新的 Api。
 
@@ -55,8 +55,8 @@ Xamarin 的 Unified API 可讓您在 Mac 和 iOS 之間共用程式碼, 並以�
 
 這可讓您更輕鬆地在 Mac 和 iOS 平臺之間共用程式碼, 而不需要進行條件式編譯, 並且會減少原始程式碼檔案頂端的雜訊。
 
--  **Classic API:** 命名空間`MonoTouch.`使用`MonoMac.`或前置詞。
--  **Unified API:** 沒有命名空間前置詞
+- **Classic API:** 命名空間`MonoTouch.`使用`MonoMac.`或前置詞。
+- **Unified API:** 沒有命名空間前置詞
 
 ## <a name="runtime-defaults"></a>執行時間預設值
 
@@ -179,9 +179,9 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 在 Xamarin 中, 會以兩種不同的`[Obsolete]`方式使用屬性:
 
--  **已淘汰的 iOS API:** 這是當您要停止使用 API 的 Apple 提示, 因為它是由較新的應用程式所取代。 Classic API 仍然正常, 而且通常是必要的 (如果您支援舊版的 iOS)。
+- **已淘汰的 iOS API:** 這是當您要停止使用 API 的 Apple 提示, 因為它是由較新的應用程式所取代。 Classic API 仍然正常, 而且通常是必要的 (如果您支援舊版的 iOS)。
  這類 API (和`[Obsolete]`屬性) 會包含在新的 Xamarin iOS 元件中。
--  **不正確的 API**有些 API 的名稱有錯誤。
+- **不正確的 API**有些 API 的名稱有錯誤。
 
 針對原始元件 (monotouch .dll 和 XamMac), 我們將舊版程式碼保持為可供相容, 但已從 Unified API 元件 (Xamarin. .dll 和 Xamarin) 中移除。
 
@@ -195,7 +195,9 @@ public static NSDate DateTimeToNSDate(this DateTime date)
 
 為了避免這類問題`IntPtr` , 這些函式現在`protected`位於**整合**API 中, 僅用於子類別化。 這可確保使用正確/安全的 API, 從控制碼建立受控實例, 亦即
 
-    var label = Runtime.GetNSObject<UILabel> (handle);
+```csharp
+var label = Runtime.GetNSObject<UILabel> (handle);
+```
 
 此 API 會傳回現有的受控實例 (如果它已經存在), 或將建立一個新的 (如有需要)。 這項功能已在傳統和統一的 API 中提供。
 
@@ -222,15 +224,17 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 先前這會是`Action`編譯器錯誤`NSAction`, 因為無法指派給, `Action`但因為`UITapGestureRecognizer`現在會接受, 而不`NSAction`是它在統一 api 中是有效的。
 
-### <a name="custom-delegates-replaced-with-actiont"></a>以 Action 取代的自訂委派<T>
+### <a name="custom-delegates-replaced-with-actiont"></a>自訂委派已取代\<為動作 T >
 
 在**統一**的部分簡單 (例如一個參數) 中, .net 委派已`Action<T>`取代為。 例如，
 
-    public delegate void NSNotificationHandler (NSNotification notification);
+```csharp
+public delegate void NSNotificationHandler (NSNotification notification);
+```
 
 現在可以當做來使用`Action<NSNotification>`。 這會提升程式碼重複使用, 並減少在 Xamarin 和您自己的應用程式內重複的程式碼。
 
-### <a name="taskbool-replaced-with-taskbooleannserror"></a>工作<bool>已取代為工作 < 布林值, NSError > >
+### <a name="taskbool-replaced-with-taskbooleannserror"></a>Task\<bool > 取代為 task < Boolean, NSError > >
 
 在**傳統**中`Task<bool>`, 有一些非同步 api 會傳回。 不過, 其中有些是簽章的一部分時`NSError`要使用的, 也就是說`bool` , 已經`true`是, 而您必須攔截例外狀況才能取得`NSError`。
 
@@ -242,11 +246,15 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 **傳統**
 
-    public virtual string ReuseIdentifier { get; }
+```csharp
+public virtual string ReuseIdentifier { get; }
+```
 
 **整合**
 
-    public virtual NSString ReuseIdentifier { get; }
+```csharp
+public virtual NSString ReuseIdentifier { get; }
+```
 
 一般來說, 我們偏好使用 .net `System.String`型別。 不過, 儘管 Apple 方針, 某些原生 API 會比較常數指標 (而不是字串本身), 而且只有在將常數公開為`NSString`時才能使用。
 
@@ -260,23 +268,31 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 **傳統**
 
-    public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual AVAssetResourceLoaderDelegate Delegate { get; }
+```
 
 **整合**
 
-    public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```csharp
+public virtual IAVAssetResourceLoaderDelegate Delegate { get; }
+```
 
-前置詞表示 ObjC 通訊協定的整合會公開介面, 而不是特定類型。  `I` 當您不想要將所提供之特定類型的子類別化時, 這會很容易。
+前置詞表示 ObjC 通訊協定的整合會公開介面, 而不是特定類型。 `I` 當您不想要將所提供之特定類型的子類別化時, 這會很容易。
 
 它也允許某些 API 更精確且便於使用, 例如:
 
 **傳統**
 
-    public virtual void SelectionDidChange (NSObject uiTextInput);
+```csharp
+public virtual void SelectionDidChange (NSObject uiTextInput);
+```
 
 **整合**
 
-    public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```csharp
+public virtual void SelectionDidChange (IUITextInput uiTextInput);
+```
 
 這類 API 現在可讓我們更輕鬆地使用, 而不需參考檔, 而您的 IDE 程式碼完成將會根據通訊協定/介面提供更實用的建議。
 

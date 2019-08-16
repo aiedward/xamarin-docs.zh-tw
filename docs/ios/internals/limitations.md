@@ -1,42 +1,42 @@
 ---
-title: Xamarin.iOS 的限制
-description: 本文件說明 Xamarin.iOS，討論泛型、 泛型子類別的 NSObjects、 P/Invokes 中泛型的物件，以及其他的限制。
+title: Xamarin 的限制
+description: 本檔說明 Xamarin 的限制、討論泛型、NSObjects 的一般子類別、泛型物件中的 P/Invoke 等等。
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: 86f41bf227b97ef24651f482ff133a065226ee14
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: f3baa6756b4e72b750ff1b128b72802f8f1ce6d9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67830394"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527346"
 ---
-# <a name="limitations-of-xamarinios"></a>Xamarin.iOS 的限制
+# <a name="limitations-of-xamarinios"></a>Xamarin 的限制
 
-使用 Xamarin.iOS 應用程式會編譯成靜態程式碼，因為它不使用任何需要在執行階段產生的程式碼的功能。
+由於使用 Xamarin 的應用程式會編譯為靜態程式碼, 因此無法在執行時間使用需要產生程式碼的任何功能。
 
-相較於 Mono 桌面的 Xamarin.iOS 限制如下：
+相較于桌面 Mono, 這些是 Xamarin 的限制:
 
  <a name="Limited_Generics_Support" />
 
 
 ## <a name="limited-generics-support"></a>有限的泛型支援
 
-不同於傳統 Mono/.NET，iPhone 上的程式碼會以靜態方式編譯而不是由 JIT 編譯器正在編譯視事先。
+與傳統 Mono/NET.TCP 不同的是, iPhone 上的程式碼會在一段時間內以靜態方式編譯, 而不是由 JIT 編譯程式視需要進行編譯。
 
-Mono[完整 AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot)技術有幾項限制對於泛型，因為您可以事先判斷不是每個可能的泛型具現化，在編譯時期，這些造成。 因為程式碼一律會在執行階段使用 Just in 編譯器編譯，這是不一般的.NET 或 Mono 執行階段發生問題。 但是，這會造成類似 Xamarin.iOS 靜態編譯器的挑戰。
+Mono 的[完整 AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot)技術對於泛型有一些限制, 因為並非每個可能的泛型具現化都可以在編譯時期預先決定。 這不是一般 .NET 或 Mono 執行時間的問題, 因為程式碼一律會使用即時編譯器在執行時間編譯。 但是, 這對像是 Xamarin 的靜態編譯器造成挑戰。
 
-一些常見的問題，開發人員執行，包括：
+開發人員遇到的一些常見問題包括:
 
  <a name="Generic_Subclasses_of_NSObjects_are_limited" />
 
 
-### <a name="generic-subclasses-of-nsobjects-are-limited"></a>泛型 NSObjects 子類別會受到限制
+### <a name="generic-subclasses-of-nsobjects-are-limited"></a>NSObjects 的一般子類別受到限制
 
-Xamarin.iOS 目前具有有限的支援建立 NSObject 類別，例如不支援泛型方法的泛型子類別。 從 7.2.1，開始使用 NSObjects 的泛型子類別，是可行的與下列類似的：
+在建立 NSObject 類別的泛型子類別 (例如, 不支援泛型方法) 時, Xamarin 目前僅提供有限的支援。 從 7.2.1, 您可以使用 NSObjects 的一般子類別, 如下所示:
 
 ```csharp
 class Foo<T> : UIView {
@@ -45,7 +45,7 @@ class Foo<T> : UIView {
 ```
 
 > [!NOTE]
-> 雖然可能會有 NSObjects 的泛型子類別，有一些限制。 讀取[NSObject 的泛型子](~/ios/internals/api-design/nsobject-generics.md)文件的詳細資訊
+> 雖然可以使用 NSObjects 的一般子類別, 但還是有一些限制。 如需詳細資訊, 請閱讀 NSObject 檔的[一般子類別](~/ios/internals/api-design/nsobject-generics.md)
 
 
  <a name="No_Dynamic_Code_Generation" />
@@ -53,12 +53,12 @@ class Foo<T> : UIView {
 
 ## <a name="no-dynamic-code-generation"></a>不產生動態程式碼
 
-因為 iOS 核心會防止應用程式，以動態方式產生程式碼，Xamarin.iOS 不支援任何形式的動態程式碼產生。 它們包括：
+由於 iOS 核心會防止應用程式動態產生程式碼, 因此 Xamarin 不支援任何形式的動態程式碼產生。 它們包括：
 
--  無法使用 System.Reflection.Emit。
--  System.Runtime.Remoting 不支援。
--  不支援動態建立型別 (沒有 Type.GetType ("MyType ' 1"))，雖然查閱現有型別 (Type.GetType ("System.String")，例如運作正常)。 
--  反向的回呼必須向執行階段，在編譯時期。
+- 無法使用 [System.object]。
+- 不支援 System.web. Remoting。
+- 不支援動態建立類型 (沒有類型. GetType ("MyType ' 1")), 不過, 雖然查閱現有的類型 (例如, 類型. GetType ("System.string")) 也沒問題。 
+- 反向回呼必須在編譯時期向執行時間註冊。
 
 
  
@@ -67,26 +67,26 @@ class Foo<T> : UIView {
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-System.Reflection 缺乏。 **發出**取決於執行階段程式碼產生任何程式碼運作的方式。 這包括像是：
+缺少 System.object。 **發出**表示不會有任何相依于執行時間程式碼產生作業的程式碼。 這包括如下的內容:
 
--  Dynamic Language Runtime。
--  動態語言執行平台為基礎的任何語言。
--  遠端處理之 TransparentProxy 或任何其他項目，會導致執行階段動態產生程式碼。 
+- 動態語言執行時間。
+- 以動態語言執行時間為基礎的任何語言。
+- 遠端處理的 TransparentProxy 或任何其他動作都會造成執行時間動態產生程式碼。 
 
 
   > [!IMPORTANT]
-  > 請勿混淆**Reflection.Emit**具有**反映**。 Reflection.Emit 即將以動態方式產生程式碼，並具有該程式碼加以 Jit 和編譯為原生程式碼。 在 iOS （沒有 JIT 編譯） 上的限制不是支援此。
+  > 請勿混淆**反映。** 使用**反映**發出。 反映: 發出的是關於動態產生程式碼, 並將該程式碼加以 jit 和編譯為機器碼。 由於 iOS (無 JIT 編譯) 的限制, 不支援這種情況。
 
-但是，整個的反映 API，包括 Type.GetType (「 someClass") 方法，列出屬性，擷取屬性和值可正常運作。
+但是整個反映 API, 包括類型. GetType ("someClass")、清單方法、清單屬性、提取屬性和值都能正常運作。
 
-### <a name="using-delegates-to-call-native-functions"></a>使用委派來呼叫原生函式
+### <a name="using-delegates-to-call-native-functions"></a>使用委派呼叫原生函式
 
-若要呼叫原生的函式，透過 C# 委派，委派的宣告必須使用其中一個下列的屬性裝飾：
+若要透過C#委派呼叫原生函式, 委派的宣告必須以下列其中一個屬性裝飾:
 
-- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) （偏好選項，因為它是跨平台和相容於.NET Standard 1.1 +）
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute)(偏好, 因為它是跨平臺且與 .NET Standard 1.1 + 相容)
 - [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
-無法提供其中一個屬性，會導致執行階段錯誤，例如：
+若無法提供其中一個屬性, 將會產生執行階段錯誤, 例如:
 
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
@@ -95,35 +95,35 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
  <a name="Reverse_Callbacks" />
 
 
-### <a name="reverse-callbacks"></a>反向的回呼
+### <a name="reverse-callbacks"></a>反向回呼
 
-在標準 Mono 中就可以傳遞至 unmanaged 程式碼取代函式指標的 C# 委派執行個體。 執行階段通常會將這些函式指標轉換成小型的 thunk，可讓 unmanaged 程式碼來回呼至 managed 程式碼中。
+在標準 Mono 中, 可以將委派C#實例傳遞給非受控程式碼, 代替函式指標。 執行時間通常會將這些函式指標轉換成可讓非受控碼回呼 managed 程式碼的小型 Thunk。
 
-在 Mono 中這些橋接器由在時間只要編譯器。 當使用預先 just-in-time 編譯器所需的 iPhone 有兩個重要的限制的此時：
+在 Mono 中, 這些橋接器是由即時編譯器所執行。 當使用 iPhone 所需的預先編譯器時, 此時有兩個重要的限制:
 
--  您必須加上旗標的回呼方法與所有[MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)
--  方法必須是靜態方法，沒有支援執行個體方法。
+- 您必須使用[MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)來標示所有的回呼方法。
+- 這些方法必須是靜態方法, 不支援實例方法。
  
 <a name="No_Remoting" />
 
-## <a name="no-remoting"></a>沒有遠端執行功能
+## <a name="no-remoting"></a>無遠端處理
 
-無法在 Xamarin.iOS 上使用遠端堆疊。
+在 Xamarin. iOS 上無法使用遠端堆疊。
 
 
  <a name="Runtime_Disabled_Features" />
 
 
-## <a name="runtime-disabled-features"></a>執行階段停用功能
+## <a name="runtime-disabled-features"></a>執行時間停用的功能
 
-在 iOS 中 Mono 執行階段已停用下列功能：
+Mono 的 iOS 執行時間已停用下列功能:
 
--  程式碼剖析工具
--  Reflection.Emit
--  Reflection.Emit.Save 功能
--  COM 繫結
--  JIT 引擎
--  中繼資料驗證器 （因為沒有任何 JIT）
+- 程式碼剖析工具
+- Reflection.Emit
+- 反映。發出。儲存功能
+- COM 系結
+- JIT 引擎
+- 中繼資料驗證器 (因為沒有 JIT)
 
 
  <a name=".NET_API_Limitations" />
@@ -131,8 +131,8 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ## <a name="net-api-limitations"></a>.NET API 限制
 
-因為並非所有使用 iOS 中，公開的.NET API 會是完整架構的子集。 請參閱常見問題集[目前支援的組件清單](~/cross-platform/internals/available-assemblies.md)。
+公開的 .NET API 是完整架構的子集, 並非所有專案都可在 iOS 中使用。 如需[目前支援的元件清單](~/cross-platform/internals/available-assemblies.md), 請參閱常見問題。
 
 
 
-特別是，使用 Xamarin.iOS 的 API 設定檔不包含 System.Configuration，因此無法使用外部 XML 檔案來設定執行階段行為。
+特別是, Xamarin 所使用的 API 設定檔不包含 System. Configuration, 因此無法使用外部 XML 檔案來設定執行時間的行為。

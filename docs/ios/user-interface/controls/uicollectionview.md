@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 256f38b4e08b1a7cb91b0a0a977ef222f7affbb4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 871020ff1f69edc20b582806a584dfd51982d336
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642868"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528604"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin 中的集合視圖
 
@@ -28,9 +28,9 @@ iOS 提供名`UICollectionViewFlowLayout`為的配置類別, 可讓您建立以�
 
 `UICollectionView`類別是由三個不同的專案所組成:
 
--  **儲存格**–每個專案的資料驅動型視圖
--  **補充視圖**–與區段相關聯的資料驅動視圖。
--  **裝飾視圖**–版面配置所建立的非資料驅動型視圖
+- **儲存格**–每個專案的資料驅動型視圖
+- **補充視圖**–與區段相關聯的資料驅動視圖。
+- **裝飾視圖**–版面配置所建立的非資料驅動型視圖
 
 ## <a name="cells"></a>資料格
 
@@ -40,9 +40,9 @@ iOS 提供名`UICollectionViewFlowLayout`為的配置類別, 可讓您建立以�
 
 `UICollectionViewCell`類別具有以下每個視圖的下列屬性:
 
--   `ContentView`–此視圖包含儲存格所呈現的內容。 它會在螢幕上以最上層的迭置順序呈現。
--   `SelectedBackgroundView`–儲存格已內建支援選取專案。 這個視圖用來以視覺方式表示已選取儲存格。 當選取資料格時, `ContentView`它就會呈現在正下方。
--   `BackgroundView`–資料格也可以顯示背景, 這是由`BackgroundView`呈現。 這個視圖會呈現在`SelectedBackgroundView`下方。
+- `ContentView`–此視圖包含儲存格所呈現的內容。 它會在螢幕上以最上層的迭置順序呈現。
+- `SelectedBackgroundView`–儲存格已內建支援選取專案。 這個視圖用來以視覺方式表示已選取儲存格。 當選取資料格時, `ContentView`它就會呈現在正下方。
+- `BackgroundView`–資料格也可以顯示背景, 這是由`BackgroundView`呈現。 這個視圖會呈現在`SelectedBackgroundView`下方。
 
 
 藉由設定`ContentView` , 使其`BackgroundView`小於和`SelectedBackgroundView`, `BackgroundView` `SelectedBackgroundView`可以用來以視覺化方式呈現內容, 而當選取資料格時, 將會顯示, 如下所示:
@@ -142,10 +142,10 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 如同 ios 的其他部分 (例如`UITableView`和`MKMapView`), `UICollectionView`會從*資料來源*取得其資料 **`UICollectionViewDataSource`** , 而這會透過類別在 Xamarin. iOS 中公開。 此類別會負責將內容提供給, `UICollectionView`例如:
 
--  **儲存格**–從`GetCell`方法傳回。
--  **補充視圖**–從`GetViewForSupplementaryElement`方法傳回。
--  **區段數目**–從`NumberOfSections`方法傳回。 如果未執行, 則預設為1。
--  **每個區段的專案數**–從`GetItemsCount`方法傳回。
+- **儲存格**–從`GetCell`方法傳回。
+- **補充視圖**–從`GetViewForSupplementaryElement`方法傳回。
+- **區段數目**–從`NumberOfSections`方法傳回。 如果未執行, 則預設為1。
+- **每個區段的專案數**–從`GetItemsCount`方法傳回。
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 為了方便起見, `UICollectionViewController`可以使用類別。這會自動設定為同時是下一節所討論的委派, 以及其`UICollectionView` view 的資料來源。
@@ -193,9 +193,9 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
 類別會使用類型`UICollectionViewDelegate`的委派, 以支援與中的內容`UICollectionView`互動。 `UICollectionView` 這可讓您控制:
 
--  資料**格選取**–決定是否選取儲存格。
--  資料**格**醒目提示–判斷是否正在觸及儲存格。
--  資料**格功能表**-針對儲存格顯示的功能表, 以回應長按下手勢。
+- 資料**格選取**–決定是否選取儲存格。
+- 資料**格**醒目提示–判斷是否正在觸及儲存格。
+- 資料**格功能表**-針對儲存格顯示的功能表, 以回應長按下手勢。
 
 
 如同資料來源, `UICollectionViewController`預設會將設定為的委派。 `UICollectionView`
@@ -250,9 +250,9 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 中的每個`UICollectionView`資料格都能夠顯示功能表, 讓您可以選擇性地支援剪下、複製和貼上。 若要在資料格上建立 [編輯] 功能表:
 
-1.  如果`ShouldShowMenu`專案應該顯示功能表, 則覆寫並傳回 true。
-1.  針對`CanPerformAction`專案可執行檔每個動作覆寫並傳回 true, 這將會是剪下、複製或貼上。
-1.  覆`PerformAction`寫以執行 [編輯]、[貼上] 操作。
+1. 如果`ShouldShowMenu`專案應該顯示功能表, 則覆寫並傳回 true。
+1. 針對`CanPerformAction`專案可執行檔每個動作覆寫並傳回 true, 這將會是剪下、複製或貼上。
+1. 覆`PerformAction`寫以執行 [編輯]、[貼上] 操作。
 
 
 下列螢幕擷取畫面顯示長時間按下資料格時的功能表:
@@ -274,8 +274,8 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 中`UICollectionView`的版面配置定義于繼承自`UICollectionViewLayout`的類別中。 版面配置的執行負責為中的`UICollectionView`每個專案建立版面配置屬性。 有兩種方式可建立版面配置:
 
--  使用內`UICollectionViewFlowLayout`建的。
--  從`UICollectionViewLayout`繼承, 以提供自訂的版面配置。
+- 使用內`UICollectionViewFlowLayout`建的。
+- 從`UICollectionViewLayout`繼承, 以提供自訂的版面配置。
 
 
  <a name="Flow_Layout" />
@@ -287,14 +287,14 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 若要使用流程版面配置:
 
--  建立的`UICollectionViewFlowLayout`實例:
+- 建立的`UICollectionViewFlowLayout`實例:
 
 
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
--  將實例傳遞至`UICollectionView`的函式:
+- 將實例傳遞至`UICollectionView`的函式:
 
 
 ```csharp
@@ -332,10 +332,10 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 若要透過子類別`UICollectionViewFlowLayout`化來執行此動作, 需要:
 
--  將套用至配置本身的任何版面配置屬性, 或在此函式中的版面配置中的所有專案初始化。
--  覆`ShouldInvalidateLayoutForBoundsChange`寫, 傳回 true, 如此`UICollectionView`一來, 當變更的界限時, 就會重新計算資料格的版面配置。 在此情況下, 這是為了確保套用到 centermost 儲存格的轉換程式碼將會在滾動期間套用。
--  覆`TargetContentOffset`寫, 讓 [centermost] 儲存格貼齊至`UICollectionView`的中央, 做為「滾動」停止。
--  覆`LayoutAttributesForElementsInRect`寫以傳回的`UICollectionViewLayoutAttributes`陣列。 每`UICollectionViewLayoutAttribute`個都包含如何配置特定專案的資訊, 包括如其`Center` 、 `Size` `ZIndex`和`Transform3D`的屬性。
+- 將套用至配置本身的任何版面配置屬性, 或在此函式中的版面配置中的所有專案初始化。
+- 覆`ShouldInvalidateLayoutForBoundsChange`寫, 傳回 true, 如此`UICollectionView`一來, 當變更的界限時, 就會重新計算資料格的版面配置。 在此情況下, 這是為了確保套用到 centermost 儲存格的轉換程式碼將會在滾動期間套用。
+- 覆`TargetContentOffset`寫, 讓 [centermost] 儲存格貼齊至`UICollectionView`的中央, 做為「滾動」停止。
+- 覆`LayoutAttributesForElementsInRect`寫以傳回的`UICollectionViewLayoutAttributes`陣列。 每`UICollectionViewLayoutAttribute`個都包含如何配置特定專案的資訊, 包括如其`Center` 、 `Size` `ZIndex`和`Transform3D`的屬性。
 
 
 下列程式碼顯示這類的實作為:
@@ -416,9 +416,9 @@ namespace SimpleCollectionView
 
 要覆寫的主要方法如下:
 
--   `PrepareLayout`–用來執行將在整個版面配置過程中使用的初始幾何計算。
--   `CollectionViewContentSize`–傳回用來顯示內容的區域大小。
--   `LayoutAttributesForElementsInRect`–如同稍早所示的 UICollectionViewFlowLayout 範例, 這個方法是用來提供有關如何`UICollectionView`配置每個專案的資訊。 不過, 與不同`UICollectionViewFlowLayout`的是, 在建立自訂版面配置時, 您可以選擇放置專案。
+- `PrepareLayout`–用來執行將在整個版面配置過程中使用的初始幾何計算。
+- `CollectionViewContentSize`–傳回用來顯示內容的區域大小。
+- `LayoutAttributesForElementsInRect`–如同稍早所示的 UICollectionViewFlowLayout 範例, 這個方法是用來提供有關如何`UICollectionView`配置每個專案的資訊。 不過, 與不同`UICollectionViewFlowLayout`的是, 在建立自訂版面配置時, 您可以選擇放置專案。
 
 
 例如, 相同的內容可能會以迴圈配置呈現, 如下所示:

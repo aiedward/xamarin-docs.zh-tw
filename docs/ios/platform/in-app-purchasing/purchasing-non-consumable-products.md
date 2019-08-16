@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 99723c390b217600e6aaea570195cf21b177abf0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e09d8511dc74bdf9368497ff8fe39bd87b62565c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648159"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528300"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>在 Xamarin 中購買不可耗用的產品
 
@@ -55,14 +55,14 @@ ms.locfileid: "68648159"
    
  在某些情況下, 應用程式無法判斷是否已購買非可使用的產品:
 
--  如果在裝置上刪除並重新安裝應用程式, 所有的採購記錄都會消失 (除非使用者執行備份還原)。 
--  如果使用者將應用程式安裝在兩部 (或以上) 的裝置上, 並在其中一部裝置上進行購買。 其他裝置會繼續顯示可供購買的產品。 
--  如果客戶在這些情況下嘗試重新購買不可取用的產品, App Store 將會再次完成產品而不收費。 使用者介面一開始會顯示執行購買 (例如, 會顯示確認警示, 而且需要 Apple ID), 但是使用者會看到一則訊息, 告知他們已購買產品。  
+- 如果在裝置上刪除並重新安裝應用程式, 所有的採購記錄都會消失 (除非使用者執行備份還原)。 
+- 如果使用者將應用程式安裝在兩部 (或以上) 的裝置上, 並在其中一部裝置上進行購買。 其他裝置會繼續顯示可供購買的產品。 
+- 如果客戶在這些情況下嘗試重新購買不可取用的產品, App Store 將會再次完成產品而不收費。 使用者介面一開始會顯示執行購買 (例如, 會顯示確認警示, 而且需要 Apple ID), 但是使用者會看到一則訊息, 告知他們已購買產品。  
    
    
    
  此案例中的程式碼路徑與一般購買完全相同, 唯一的差別如下:
 
--  使用者不會再次針對該產品收費。
--  傳遞至應用程式的`OriginalTransaction` 物件將會有一個屬性,它會參考最初購買產品時所產生的交易。`SKPaymentTransaction` 
--  銷售非取用產品的應用程式也必須執行 StoreKit 的**還原**功能, 以協助使用者取得現有的購買專案。 
+- 使用者不會再次針對該產品收費。
+- 傳遞至應用程式的`OriginalTransaction` 物件將會有一個屬性,它會參考最初購買產品時所產生的交易。`SKPaymentTransaction` 
+- 銷售非取用產品的應用程式也必須執行 StoreKit 的**還原**功能, 以協助使用者取得現有的購買專案。 

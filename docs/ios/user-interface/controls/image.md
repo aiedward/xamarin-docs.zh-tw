@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/13/2018
-ms.openlocfilehash: fb51d0d04c86274d43e23e4912ed16765b7cdc8b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7f1e61f9364a6a59f2bbacd1c773fe49cc338db9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657522"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528821"
 ---
 # <a name="displaying-images-with-xamarinios"></a>使用 Xamarin 來顯示影像
 
@@ -48,8 +48,8 @@ Visual Studio for Mac 通常會自動選擇正確的**組建動作**, 但您應�
 
 放在**Resources**目錄中的檔案會以不同于一般檔案的方式處理- **resources**資料夾的內容會複製到應用程式的根目錄, 並可在您的程式碼中加以參考。 這可能很有用, 原因如下:
 
--  儲存在應用程式屬性中設定的映射, 例如預設啟動映射和應用程式圖示。
--  將其他映射和檔案與程式碼分開儲存, 使其更容易管理 (當複製資原始目錄內容時, 會保留子目錄)。
+- 儲存在應用程式屬性中設定的映射, 例如預設啟動映射和應用程式圖示。
+- 將其他映射和檔案與程式碼分開儲存, 使其更容易管理 (當複製資原始目錄內容時, 會保留子目錄)。
 
 
 **Resources**目錄在程式庫專案中特別有用, 因為程式碼可以假設這些影像會複製到取用應用程式的根目錄, 讓您更輕鬆地撰寫需要影像、音效、影片、XML 或的共用程式碼程式庫。其他檔案。

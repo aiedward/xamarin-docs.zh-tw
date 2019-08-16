@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: f0f15647e439381c2aa291234b444d668d1b63d0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869361"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524617"
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
@@ -55,21 +55,21 @@ Xamarin. Android JAVA 系結連結**庫**會嘗試將系結現有 Android 程式
 
 您可以在專案的 [**轉換**] 資料夾中找到這些 XML 對應檔案:
 
--   MetaData 允許對最終 API 進行變更, 例如變更所產生系結的命名空間。 &ndash; 
+- MetaData 允許對最終 API 進行變更, 例如變更所產生系結的命名空間。 &ndash; 
 
--   C# **EnumFields**包含JAVA`int`常數和`enums`之間的對應。 &ndash; 
+- C# **EnumFields**包含JAVA`int`常數和`enums`之間的對應。 &ndash; 
 
--   C# `enums` `int` **EnumMethods**可讓您將方法參數和傳回類型從 JAVA 常數變更為。 &ndash; 
+- C# `enums` `int` **EnumMethods**可讓您將方法參數和傳回類型從 JAVA 常數變更為。 &ndash; 
 
 **中繼資料 .xml**檔案最容易匯入這些檔案, 因為它允許對系結進行一般用途的變更, 例如:
 
--   重新命名命名空間、類別、方法或欄位, 使其遵循 .NET 慣例。 
+- 重新命名命名空間、類別、方法或欄位, 使其遵循 .NET 慣例。 
 
--   移除不需要的命名空間、類別、方法或欄位。 
+- 移除不需要的命名空間、類別、方法或欄位。 
 
--   將類別移至不同的命名空間。 
+- 將類別移至不同的命名空間。 
 
--   新增其他支援類別, 讓系結的設計遵循 .NET framework 模式。 
+- 新增其他支援類別, 讓系結的設計遵循 .NET framework 模式。 
 
 讓我們繼續討論**中繼資料**的詳細資訊。
 
@@ -103,13 +103,13 @@ Xamarin. Android JAVA 系結連結**庫**會嘗試將系結現有 Android 程式
 
 以下列出 JAVA API 的一些較常用的 XPath 元素:
 
--   `interface`&ndash;用來尋找 JAVA 介面。 `/interface[@name='AuthListener']`例如。
+- `interface`&ndash;用來尋找 JAVA 介面。 `/interface[@name='AuthListener']`例如。
 
--   `class`&ndash;用來尋找類別。 `/class[@name='MapView']`例如。
+- `class`&ndash;用來尋找類別。 `/class[@name='MapView']`例如。
 
--   `method`&ndash;用來尋找 JAVA 類別或介面上的方法。 `/class[@name='MapView']/method[@name='setTitleSource']`例如。
+- `method`&ndash;用來尋找 JAVA 類別或介面上的方法。 `/class[@name='MapView']/method[@name='setTitleSource']`例如。
 
--   `parameter`&ndash;識別方法的參數。 例如`/parameter[@name='p0']`
+- `parameter`&ndash;識別方法的參數。 例如`/parameter[@name='p0']`
 
 
 

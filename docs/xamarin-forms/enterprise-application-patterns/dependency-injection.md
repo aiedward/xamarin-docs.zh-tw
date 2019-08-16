@@ -1,32 +1,32 @@
 ---
 title: 相依性插入
-description: 本章說明 eShopOnContainers 的行動裝置應用程式如何使用相依性插入來減少從程式碼相依於這些類型的具象類型。
+description: 本章說明 eShopOnContainers 行動應用程式如何使用相依性插入, 將具象的類型與依賴這些類型的程式碼分離。
 ms.prod: xamarin
 ms.assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 97b95ccb3e756f02c945adc63b9e173a9f9e0226
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 6cbcd6612323acc8619004d56fff82461e005e9e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832691"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529133"
 ---
 # <a name="dependency-injection"></a>相依性插入
 
-一般而言，具現化物件時，會叫用的類別建構函式和物件所需的任何值做為引數傳遞至建構函式。 這是相依性插入的範例，具體而言就所謂*建構函式插入*。 物件所需的相依性會插入建構函式。
+一般而言, 當具現化物件時, 會叫用類別的函式, 而且物件所需的任何值都會當做引數傳遞至函式。 這是相依性插入的範例, 特別是所謂的「程式性*插入*」。 物件所需的相依性會插入至此函式中。
 
-藉由指定做為介面類型的相依性，相依性插入會啟用具象類型，取決於這些類型的程式碼分開處理。 此外，它通常會使用保存的註冊與介面和抽象的型別之間的對應清單的容器和實作或擴充這些類型的具象型別。
+藉由將相依性指定為介面類別型, 相依性插入可將具象的類型與依賴這些類型的程式碼分離。 它通常會使用容器來保存介面與抽象類別型之間的註冊和對應清單, 以及用來執行或擴充這些類型的實體類型。
 
-另外還有其他類型的相依性插入，這類*屬性 setter 資料隱碼攻擊*，並*方法呼叫插入*，但較不常看到它們。 因此，這一章將著重於執行具有相依性插入容器的建構函式插入。
+另外還有其他類型的相依性插入, 例如*屬性 setter 插入*和*方法呼叫插入*, 但較不常看到。 因此, 本章僅著重于使用相依性插入容器來執行函式插入。
 
 <a name="introduction_to_dependency_injection" />
 
 ## <a name="introduction-to-dependency-injection"></a>相依性插入簡介
 
-相依性插入是一種特殊的控制反轉 (IoC) 模式，其中要反轉的考量是取得必要的相依性的程序。 使用相依性插入另一個類別負責在執行階段物件中插入相依性。 下列程式碼範例示範如何`ProfileViewModel`類別的結構時使用相依性插入：
+相依性插入是一種特製化版本的控制反轉 (IoC) 模式, 其中的顧慮是指取得所需相依性的過程。 使用相依性插入時, 另一個類別會負責在執行時間將相依性插入物件中。 下列程式碼範例示範如何`ProfileViewModel`在使用相依性插入時結構化類別:
 
 ```csharp
 public class ProfileViewModel : ViewModelBase  
@@ -41,165 +41,165 @@ public class ProfileViewModel : ViewModelBase
 }
 ```
 
-`ProfileViewModel`建構函式會接收`IOrderService`做為引數，插入由其他類別的執行個體。 中的唯一相依性`ProfileViewModel`類別是介面類型。 因此，`ProfileViewModel`類別沒有任何類別的知識，負責具現化`IOrderService`物件。 類別負責具現化`IOrderService`物件，並將它插入`ProfileViewModel`類別中，就所謂*相依性插入容器*。
+此`ProfileViewModel`函式會`IOrderService`接收實例做為引數, 並由另一個類別插入。 `ProfileViewModel`類別中的唯一相依性是在介面型別上。 因此, `ProfileViewModel`類別並不知道負責具現`IOrderService`化物件的類別。 負責具現化`IOrderService`物件並將其插入`ProfileViewModel`至類別的類別, 稱為相依性*插入容器*。
 
-相依性插入容器會降低藉由提供具現化類別執行個體，並管理其存留期，根據容器的組態功能的物件之間的結合程度。 在物件建立時，容器會將任何物件需要的相依性插入至它。 如果這些相依性有尚未建立，容器會建立，並先解析其相依性。
+相依性插入容器會提供一個可具現化類別實例的功能, 並根據容器的設定來管理其存留期, 藉此減少物件之間的耦合。 建立物件時, 容器會在其中插入物件所需的任何相依性。 如果尚未建立這些相依性, 容器會先建立並解析其相依性。
 
 > [!NOTE]
-> 相依性插入也可以手動使用 factory 來實作。 不過，使用容器提供額外的功能，例如存留期管理，以及透過掃描組件的註冊。
+> 您也可以使用 factory 手動實作為相依性插入。 不過, 使用容器會提供額外的功能, 例如生命週期管理, 並透過元件掃描進行註冊。
 
-有數個使用相依性插入容器的優點：
+使用相依性插入容器有幾個優點:
 
--   容器中移除類別能夠找出其相依性和管理其存留期的需求。
--   容器允許實作的相依性對應，而不會影響該類別。
--   容器允許模擬的相依性，從而完成可測試性。
--   容器會增加可維護性，藉由使用新的類別，輕鬆地新增至應用程式。
+- 容器不需要類別來尋找其相依性並管理其存留期。
+- 容器允許對應已執行的相依性, 而不會影響類別。
+- 容器可讓您模擬相依性, 藉此協助測試。
+- 容器可讓您輕鬆地將新的類別新增至應用程式, 以提高維護性。
 
-在內容中使用 MVVM 的 Xamarin.Forms 應用程式，來註冊及解析檢視模型，以及註冊服務和插入檢視模型通常會使用相依性插入容器。
+在使用 MVVM 的 Xamarin Forms 應用程式內容中, 相依性插入容器通常會用來註冊和解析視圖模型, 以及註冊服務並將其插入視圖模型。
 
-有許多相依性插入容器，eShopOnContainers 行動應用程式使用 Autofac 管理檢視模型的具現化和服務應用程式中的類別。 Autofac 有助於建立鬆散偶合的應用程式，並提供所有相依性插入容器，包括註冊型別對應和物件執行個體的方法中經常發現的功能解析物件、 管理物件存留期，以及插入建構函式的物件，它會解析成的相依物件。 如需 Autofac 的詳細資訊，請參閱[Autofac](http://autofac.readthedocs.io/en/latest/index.html) readthedocs.io 上。
+有許多相依性插入容器可用, 使用 Autofac 來管理應用程式中的視圖模型和服務類別的具現化 eShopOnContainers 行動應用程式。 Autofac 有助於建立鬆散結合的應用程式, 並提供在相依性插入容器中常用的所有功能, 包括註冊型別對應和物件實例、解析物件、管理物件存留期, 以及插入相依物件放入其解析之物件的構造函式中。 如需 Autofac 的詳細資訊, 請參閱 readthedocs.io 上的[Autofac](http://autofac.readthedocs.io/en/latest/index.html) 。
 
-中，`IContainer`介面提供相依性插入容器。 圖 3-1 顯示的相依性，使用此容器，會具現化時`IOrderService`物件，並將它插入`ProfileViewModel`類別。
+在 Autofac 中, `IContainer`介面會提供相依性插入容器。 [圖 3-1] 顯示使用此容器時的相依性, `IOrderService`它會具現化物件`ProfileViewModel` , 並將其插入至類別。
 
-![](dependency-injection-images/dependencyinjection.png "當使用相依性插入的相依性範例")
+![](dependency-injection-images/dependencyinjection.png "使用相依性插入時的相依性範例")
 
-**圖 3-1:** 當使用相依性插入的相依性
+**圖 3-1:** 使用相依性插入時的相依性
 
-在執行階段，容器必須知道哪一個實作`IOrderService`介面，它應該具現化，它可以具現化之前`ProfileViewModel`物件。 這牽涉到：
+在執行時間, 容器必須知道它應該具現`IOrderService`化之介面的執行, 才能具現`ProfileViewModel`化物件。 這包括:
 
--   決定如何實作的物件具現化的容器`IOrderService`介面。 這就所謂*註冊*。
--   實作的物件具現化的容器`IOrderService`介面，而`ProfileViewModel`物件。 這就所謂*解析度*。
+- 容器, 決定如何具現化可實作為`IOrderService`介面的物件。 這就是所謂的*註冊*。
+- 具現化可實作為`IOrderService`介面之物件的容器, `ProfileViewModel`以及物件。 這就是所謂的*解決方案*。
 
-最後，應用程式將會完成使用`ProfileViewModel`物件，而且它的可用記憶體回收。 此時，記憶體回收行程應該處置`IOrderService`執行個體，如果其他類別不會共用相同的執行個體。
+最後, 應用程式將會使用`ProfileViewModel`物件完成, 而且它將會變成可供垃圾收集之用。 此時, 如果其他類別不共用相同的實例, `IOrderService`垃圾收集行程就應該處置實例。
 
 > [!TIP]
-> 寫入容器無關的程式碼。 永遠嘗試寫入容器無關的程式碼分離應用程式所使用的特定相依性容器。
+> 撰寫與容器無關的程式碼。 請一律嘗試撰寫與容器無關的程式碼, 以將應用程式與所使用的特定相依性容器分離。
 
 ## <a name="registration"></a>註冊
 
-相依性可以插入物件之前，相依性的類型必須先註冊與容器。 註冊類型通常會牽涉到傳遞容器，介面和實作介面的具象類型。
+在將相依性插入物件之前, 必須先向容器註冊相依性的類型。 註冊類型通常牽涉到將介面和實作為介面的具象型別傳遞給容器。
 
-有兩種方式註冊透過程式碼容器中的型別和物件：
+有兩種方式可透過程式碼在容器中註冊類型和物件:
 
--   向容器註冊類型或對應。 必要時，容器會建置指定型別的執行個體。
--   註冊容器中的現有物件，為單一值。 必要時，容器就會傳回現有物件的參考。
+- 向容器註冊類型或對應。 必要時, 容器將會建立指定類型的實例。
+- 在容器中, 將現有的物件註冊為 singleton。 必要時, 容器會傳回現有物件的參考。
 
 > [!TIP]
-> 相依性插入容器並不一定適合。 相依性插入會引進額外的複雜性和可能無法適當或最實用小型的應用程式的需求。 如果類別沒有任何相依性，或不是其他類型的相依性，它可能毫無意義，將它放在容器中。 此外，如果類別具有單一設定相依性類型不可或缺的且永遠不會變更，它可能沒有任何要將它放在容器中的意義。
+> 相依性插入容器不一定是合適的。 相依性插入導入了對小型應用程式可能不適用或很有用的額外複雜性和需求。 如果類別沒有任何相依性, 或不是其他類型的相依性, 則將它放在容器中可能沒有意義。 此外, 如果類別具有一組屬於類型的整數相依性, 而且永遠不會變更, 則將它放在容器中可能沒有意義。
 
-需要相依性插入類型的註冊應該執行中應用程式的單一方法，應叫用這個方法，以確保應用程式會留意其類別之間的相依性的應用程式的生命週期中及早。 在 eShopOnContainers 的行動裝置應用程式這由執行`ViewModelLocator`類別，哪些組建`IContainer`物件，並會保留該物件的參考應用程式中的唯一類別。 下列程式碼範例示範 eShopOnContainers 的行動裝置應用程式的宣告方式`IContainer`物件中`ViewModelLocator`類別：
+需要相依性插入的類型註冊應該在應用程式的單一方法中執行, 而且應該在應用程式的生命週期早期叫用此方法, 以確保應用程式知道其類別之間的相依性。 在 eShopOnContainers 行動應用程式中, 這是由`ViewModelLocator`類別所執行, 它`IContainer`會建立物件, 而是應用程式中的唯一類別, 它會保存該物件的參考。 下列程式碼範例顯示 eShopOnContainers 行動應用程式`IContainer`如何`ViewModelLocator`在類別中宣告物件:
 
 ```csharp
 private static IContainer _container;
 ```
 
-類型和執行個體中註冊`RegisterDependencies`方法中的`ViewModelLocator`類別。 做法是先建立`ContainerBuilder`執行個體，下列程式碼範例所示：
+類型和實例會在`RegisterDependencies` `ViewModelLocator`類別的方法中註冊。 這是藉由先建立`ContainerBuilder`實例來達成, 如下列程式碼範例所示:
 
 ```csharp
 var builder = new ContainerBuilder();
 ```
 
-類型和執行個體再向註冊`ContainerBuilder`物件，並在下列程式碼範例示範最常見的型別註冊的形式：
+然後, 會向`ContainerBuilder`物件註冊型別和實例, 而下列程式碼範例會示範最常見的型別註冊形式:
 
 ```csharp
 builder.RegisterType<RequestProvider>().As<IRequestProvider>();
 ```
 
-`RegisterType`如下所示的方法會將介面類型對應到具象型別。 它會告訴要具現化的容器`RequestProvider`物件時需要的資料隱碼的物件具現化`IRequestProvider`透過建構函式。
+這裡`RegisterType`所示的方法會將介面型別對應至實體型別。 它會指示容器在具現`RequestProvider`化物件時, 將物件具現化, 而此`IRequestProvider`物件需要透過函式的插入。
 
-具象型別也未對應，以從介面類型，直接註冊，如下列程式碼範例所示：
+實體類型也可以直接註冊, 而不需要介面類別型的對應, 如下列程式碼範例所示:
 
 ```csharp
 builder.RegisterType<ProfileViewModel>();
 ```
 
-當`ProfileViewModel`類型解析，容器就會插入必要的相依性。
+`ProfileViewModel`當類型解析時, 容器將會插入其所需的相依性。
 
-Autofac 也可讓執行個體註冊其中容器是負責維護的參考類型的單一執行個體。 例如，下列程式碼範例顯示如何 eShopOnContainers 的行動裝置應用程式註冊時要使用的具象類型`ProfileViewModel`執行個體都需要`IOrderService`執行個體：
+Autofac 也允許實例註冊, 其中容器會負責維護類型之單一實例的參考。 例如, 下列程式碼範例示範當`ProfileViewModel`實例`IOrderService`需要實例時, eShopOnContainers mobile 應用程式如何註冊要使用的具體類型:
 
 ```csharp
 builder.RegisterType<OrderService>().As<IOrderService>().SingleInstance();
 ```
 
-`RegisterType`如下所示的方法會將介面類型對應到具象型別。 `SingleInstance`方法則會設定註冊，讓每個相依的物件會接收相同的共用執行個體。 因此，只有一個`OrderService`執行個體出現在容器中，由需要插入的物件共用`IOrderService`透過建構函式。
+這裡`RegisterType`所示的方法會將介面型別對應至實體型別。 `SingleInstance`方法會設定註冊, 讓每個相依物件接收相同的共用實例。 因此, 容器中只`OrderService`會有一個實例, 這是由需要`IOrderService`透過函式的插入的物件所共用。
 
-您也可以與執行執行個體註冊`RegisterInstance`方法，以下列程式碼範例所示：
+實例註冊也可以使用`RegisterInstance`方法來執行, 如下列程式碼範例所示:
 
 ```csharp
 builder.RegisterInstance(new OrderMockService()).As<IOrderService>();
 ```
 
-`RegisterInstance`如下所示的方法建立新`OrderMockService`執行個體，並向容器。 因此，只有一個`OrderMockService`執行個體存在於容器中，由需要插入的物件共用`IOrderService`透過建構函式。
+此處`RegisterInstance`顯示的方法會建立新`OrderMockService`的實例, 並向容器註冊它。 因此, 容器中只`OrderMockService`會有一個實例, 這是由需要`IOrderService`透過函式的插入的物件所共用。
 
-下列類型和執行個體註冊`IContainer`物件必須先建置，這下列程式碼範例所示：
+在註冊類型和實例之後, `IContainer`必須建立物件, 如下列程式碼範例所示:
 
 ```csharp
 _container = builder.Build();
 ```
 
-叫用`Build`方法`ContainerBuilder`執行個體會建立新的相依性插入容器，其中包含已註冊。
+在實例`ContainerBuilder`上叫用方法時,會建立新的相依性插入容器,其中包含已`Build`建立的註冊。
 
 > [!TIP]
-> 請考慮`IContainer`視為不變。 雖然 Autofac 提供`Update`方法來更新現有的容器，呼叫這個方法中的註冊應該盡可能避免。 會修改容器之後它所建置，, 特別是如果容器已使用的風險。 如需詳細資訊，請參閱 <<c0> [ 不可變的容器，請考慮](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable)readthedocs.io 上。
+> 將`IContainer`視為不可變。 雖然 Autofac 提供`Update`方法來更新現有容器中的註冊, 但應該盡可能避免呼叫此方法。 在建立容器之後修改它會有風險, 特別是在已使用容器的情況下。 如需詳細資訊, 請參閱在 readthedocs.io 上[將容器視為不可變](http://docs.autofac.org/en/latest/best-practices/#consider-a-container-as-immutable)。
 
 <a name="resolution" />
 
-## <a name="resolution"></a>解決方式
+## <a name="resolution"></a>解析度
 
-型別登錄之後，它可以解決或插入作為相依性。 正在解析型別，而且容器需要時建立新的執行個體，它會將任何相依性插入至執行個體中。
+註冊型別之後, 可以將它解析或插入為相依性。 當類型已解析且容器需要建立新的實例時, 它會將任何相依性插入實例。
 
-通常，解析為型別時，三個事項之一發生：
+一般而言, 當類型解析時, 會發生下列三種情況之一:
 
-1.  如果尚未註冊類型，容器就會擲回例外狀況。
-1.  如果類型具有尚未註冊為單一性，容器就會傳回的單一執行個體。 如果這是呼叫類型的第一次，容器會視需要加以建立，並維護它的參考。
-1.  如果尚未註冊類型為單一性，容器會傳回新的執行個體，並不會維護它的參考。
+1. 如果類型尚未註冊, 容器會擲回例外狀況。
+1. 如果類型已註冊為 singleton, 則容器會傳回單一實例。 如果這是第一次針對呼叫類型, 容器會在必要時建立它, 並維護它的參考。
+1. 如果類型尚未註冊為 singleton, 容器會傳回新的實例, 而且不會維護它的參考。
 
-下列程式碼範例示範如何`RequestProvider`先前已向 Autofac 的型別可以是已解決：
+下列程式碼範例會示範如何`RequestProvider`解析先前向 Autofac 註冊的類型:
 
 ```csharp
 var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-在此範例中，若要解決的具象類型要求 Autofac`IRequestProvider`型別，以及任何相依性。 一般而言，`Resolve`需要特定類型的執行個體時，會呼叫方法。 如需控制已解決物件的存留期資訊，請參閱 <<c0> [ 管理存留期的已解決物件](#managing_the_lifetime_of_resolved_objects)。
+在此範例中, 會要求 Autofac 解析`IRequestProvider`類型的具象類型, 以及任何相依性。 一般而言, 當`Resolve`需要特定類型的實例時, 會呼叫方法。 如需控制已解析物件之存留期的詳細資訊, 請參閱[管理已解析物件的存留期](#managing_the_lifetime_of_resolved_objects)。
 
-下列程式碼範例示範如何在 eShopOnContainers 的行動應用程式具現化的檢視模型類型和其相依性：
+下列程式碼範例顯示 eShopOnContainers 行動應用程式如何具現化視圖模型類型及其相依性:
 
 ```csharp
 var viewModel = _container.Resolve(viewModelType);
 ```
 
-在此範例中，Autofac 要求解析要求的檢視模型的檢視模型型別，容器也會解析任何相依性。 當解析`ProfileViewModel`型別，要解析的相依性是`IOrderService`物件。 因此，Autofac 先建構`OrderService`物件，並再將它傳遞給建構函式的`ProfileViewModel`類別。 如 eShopOnContainers 的行動裝置應用程式如何建構檢視的詳細資訊模型，並將它們關聯至檢視，請參閱 <<c0> [ 自動建立檢視模型的檢視模型定位器](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
+在此範例中, 系統會要求 Autofac 為要求的視圖模型解析視圖模型類型, 而且容器也會解析任何相依性。 解析`ProfileViewModel`類型時, 要解析的相依性`IOrderService`是物件。 因此, Autofac 會先`OrderService`建立物件, 然後將它傳遞給`ProfileViewModel`類別的函式。 如需 eShopOnContainers 行動應用程式如何建立視圖模型並將其與視圖產生關聯的詳細資訊, 請參閱[使用視圖模型定位器自動建立視圖模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
 
 > [!NOTE]
-> 註冊及解析與容器的型別具有效能的容器使用反映來建立每個類型，因為成本，尤其是相依性會為每個應用程式中的頁面巡覽重新建構。 如果有許多或深層相依性，可以大幅增加成本的建立。
+> 使用容器來登錄和解析類型具有效能成本，因為容器會使用反映來建立每種類型，特別是在針對應用程式中的每個頁面巡覽重建相依性時。 如果有許多或深度相依性，則建立的成本可能會大幅增加。
 
 <a name="managing_the_lifetime_of_resolved_objects" />
 
-## <a name="managing-the-lifetime-of-resolved-objects"></a>管理已解決物件的存留期
+## <a name="managing-the-lifetime-of-resolved-objects"></a>管理已解析物件的存留期
 
-在註冊之後的型別，Autofac 的預設行為是建立新的執行個體的已註冊的型別每次的類型解析，或當相依性機制會插入其他類別的執行個體。 在此案例中，容器不會保留已解決物件的參考。 不過，當註冊執行個體，Autofac 的預設行為是管理為單一物件的存留期。 因此，執行個體保持在範圍內中是容器位於範圍內，而容器超出範圍，且已記憶體回收，在處置時，或當程式碼明確處置容器。
+註冊型別之後, Autofac 的預設行為是在每次解析型別時, 或是在相依性機制將實例插入其他類別時, 建立已註冊型別的新實例。 在此案例中, 容器不會保存解析物件的參考。 不過, 在註冊實例時, Autofac 的預設行為是將物件的存留期當做 singleton 來管理。 因此, 當容器在範圍內時, 實例會維持在範圍內, 而且會在容器超出範圍並已進行垃圾收集時處置, 或是在程式碼明確處置容器時進行處置。
 
-Autofac 執行個體範圍可用來指定單一行為，Autofac 從已註冊的型別所建立的物件。 Autofac 執行個體範圍管理的容器來具現化物件存留期。 預設執行個體範圍`RegisterType`方法是`InstancePerDependency`範圍。 不過，`SingleInstance`可以搭配範圍`RegisterType`方法，以便建立容器，或傳回類型的單一執行個體時呼叫`Resolve`方法。 下列程式碼範例示範如何使用 Autofac 指示建立的單一執行個體`NavigationService`類別：
+Autofac 實例範圍可以用來指定 Autofac 從已註冊類型建立之物件的單一行為。 Autofac 實例範圍會管理由容器具現化的物件存留期。 `RegisterType`方法的預設實例範圍`InstancePerDependency`是範圍。 不過, `SingleInstance`範圍可以搭配`RegisterType`方法使用, 以便在呼叫`Resolve`方法時, 容器會建立或傳回類型的單一實例。 下列程式碼範例顯示如何指示 Autofac 建立`NavigationService`類別的單一實例:
 
 ```csharp
 builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
 ```
 
-第一次`INavigationService`介面是解決、 建立新的容器`NavigationService`物件，並會維護它的參考。 上的任何後續的解決方案`INavigationService`介面，容器會傳回參考`NavigationService`先前建立的物件。
+第一次`INavigationService`解析介面時, 容器會建立新`NavigationService`的物件, 並維護它的參考。 在任何後續的`INavigationService`介面解析中, 容器都會傳回先前建立之`NavigationService`物件的參考。
 
 > [!NOTE]
-> 在處置容器時，SingleInstance 範圍就會處置已建立的物件。
+> SingleInstance 範圍會在處置容器時處置已建立的物件。
 
-Autofac 包含額外的執行個體範圍。 如需詳細資訊，請參閱 <<c0> [ 執行個體範圍](http://autofac.readthedocs.io/en/latest/lifetime/instance-scope.html)readthedocs.io 上。
+Autofac 包含其他實例範圍。 如需詳細資訊, 請參閱 readthedocs.io 上的[實例範圍](http://autofac.readthedocs.io/en/latest/lifetime/instance-scope.html)。
 
 ## <a name="summary"></a>總結
 
-相依性插入可分離的具象類型取決於這些類型的程式碼。 它通常會使用保存的註冊與介面和抽象的型別之間的對應清單的容器和實作或擴充這些類型的具象型別。
+相依性插入可將具象的類型與依賴這些類型的程式碼分離。 它通常會使用容器來保存介面與抽象類別型之間的註冊和對應清單, 以及用來執行或擴充這些類型的實體類型。
 
-Autofac 有助於建立鬆散偶合的應用程式，並提供所有相依性插入容器，包括註冊型別對應和物件執行個體的方法中經常發現的功能解析物件、 管理物件存留期，以及插入建構函式的物件，它會解析成的相依物件。
+Autofac 有助於建立鬆散結合的應用程式, 並提供在相依性插入容器中常用的所有功能, 包括註冊型別對應和物件實例、解析物件、管理物件存留期, 以及插入相依物件放入其解析之物件的構造函式中。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [下載電子書 (2 Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) （範例）](https://github.com/dotnet-architecture/eShopOnContainers)
+- [下載電子書 (2 Mb 的 PDF)](https://aka.ms/xamarinpatternsebook)
+- [eShopOnContainers (GitHub) (範例)](https://github.com/dotnet-architecture/eShopOnContainers)

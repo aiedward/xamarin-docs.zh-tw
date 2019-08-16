@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: c017ab96bdd78a41b31a3305021c5bc1f8e472d0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3bb2b47623c03d335ae1edc4bf87881622823ea1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644917"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522928"
 ---
 # <a name="xamarinandroid-navigation-bar"></a>Xamarin Android 導覽列
 
@@ -22,9 +22,9 @@ Android 4 也引入了新系統使用者介面功能，稱為 *瀏覽列* ，以
 
 有數個新的旗標可控制導覽列及其控制項的可見度, 以及在 Android 3 中引進的系統列可見度。 旗標會定義在`Android.View.View`類別中, 並列示如下:
 
--   `SystemUiFlagVisible`&ndash;讓巡覽列顯示。 
--   `SystemUiFlagLowProfile`&ndash;在導覽列中縮小控制項的亮度。 
--   `SystemUiFlagHideNavigation`&ndash;隱藏巡覽列。 
+- `SystemUiFlagVisible`&ndash;讓巡覽列顯示。 
+- `SystemUiFlagLowProfile`&ndash;在導覽列中縮小控制項的亮度。 
+- `SystemUiFlagHideNavigation`&ndash;隱藏巡覽列。 
 
 
 您可以藉由設定`SystemUiVisibility`屬性, 將這些旗標套用至視圖階層中的任何視圖。 如果多個 views 已設定此屬性, 則系統會將它們與或作業結合, 並套用它們, 只要設定旗標的視窗會保留焦點。 當您移除視圖時, 它所設定的任何旗標也會一併移除。

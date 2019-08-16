@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: efb55b060243950640978ae2cfc3fe6998efdb87
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3e68ac0a39d3268ce7c84f583c64b247e9f82362
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643466"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524191"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -22,13 +22,13 @@ _Android 4.4 (KitKat) 已載入供使用者和開發人員使用的功能多。�
 
 Android 4.4 (API 層級 19) (也稱為 "KitKat") 已于晚期2013發行。 KitKat 提供各種新功能和改進, 包括:
 
--  [使用者體驗](#user_experience)&ndash;使用轉換架構、半透明狀態和流覽列, 以及全螢幕沉浸式模式的簡單動畫, 有助於為使用者建立更好的體驗。
+- [使用者體驗](#user_experience)&ndash;使用轉換架構、半透明狀態和流覽列, 以及全螢幕沉浸式模式的簡單動畫, 有助於為使用者建立更好的體驗。
 
--  [使用者內容](#user_content)&ndash;使用存放裝置存取架構簡化使用者檔案管理; 列印圖片、網站和其他內容, 都能更輕鬆地使用改良的列印 api。
+- [使用者內容](#user_content)&ndash;使用存放裝置存取架構簡化使用者檔案管理; 列印圖片、網站和其他內容, 都能更輕鬆地使用改良的列印 api。
 
--  [硬體](#hardware)使用 nfc 主機型插卡模擬, 將任何應用程式轉換為 nfc 記憶卡; 執行具有的`SensorManager`低電源感應器。 &ndash;
+- [硬體](#hardware)使用 nfc 主機型插卡模擬, 將任何應用程式轉換為 nfc 記憶卡; 執行具有的`SensorManager`低電源感應器。 &ndash;
 
--  [開發人員工具](#developer_tools)&ndash;使用 Android Debug Bridge 用戶端來螢幕錄製影片應用程式, 可做為 Android SDK 的一部分。
+- [開發人員工具](#developer_tools)&ndash;使用 Android Debug Bridge 用戶端來螢幕錄製影片應用程式, 可做為 Android SDK 的一部分。
 
 
 本指南提供將現有的 Xamarin Android 應用程式遷移至 KitKat, 以及適用于 Xamarin. Android 開發人員的高階 KitKat 總覽的指引。
@@ -79,11 +79,11 @@ KitKat 不再讓您設定完全重複的警示。 使用的應用程式[`SetRepe
 
 外部儲存體現在分成兩種類型: 您的應用程式特有的儲存體, 以及多個應用程式所共用的資料。 讀取和寫入您的應用程式在外部儲存體上的特定位置不需要任何特殊許可權。 與共享儲存體上的資料互動現在需要`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`許可權。 這兩種類型可以分類為:
 
--  如果您是藉由呼叫上`Context`的方法取得檔案或目錄路徑-例如,[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
+- 如果您是藉由呼叫上`Context`的方法取得檔案或目錄路徑-例如,[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
    或[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
    - 您的應用程式不需要額外的許可權。
 
--  如果您是藉由存取屬性或在上`Environment`呼叫方法來取得檔案或目錄路徑, 例如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
+- 如果您是藉由存取屬性或在上`Environment`呼叫方法來取得檔案或目錄路徑, 例如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
    或[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
    , 您的`READ_EXTERNAL_STORAGE`應用程式需要`WRITE_EXTERNAL_STORAGE`或許可權。
 
@@ -284,11 +284,11 @@ TransitionManager.Go (scene1, transition);
 
 KitKat 可讓您更充分掌控應用程式與選擇性透明狀態和導覽列的主題。 您可以在用來定義 Android 主題的相同 XML 檔案中, 變更系統 UI 元素的半透明度。 KitKat 導入了下列屬性:
 
--  `windowTranslucentStatus`-設定為 true 時, 讓頂端狀態列變成半透明。
+- `windowTranslucentStatus`-設定為 true 時, 讓頂端狀態列變成半透明。
 
--  `windowTranslucentNavigation`-設定為 true 時, 讓底部導覽列變成半透明。
+- `windowTranslucentNavigation`-設定為 true 時, 讓底部導覽列變成半透明。
 
--  `fitsSystemWindows`-根據預設, 將頂端或底部列設定為 [transcluent] 會將內容移至透明 UI 元素下。 將這個屬性設定`true`為, 是防止內容與半透明系統 UI 元素重迭的簡單方式。
+- `fitsSystemWindows`-根據預設, 將頂端或底部列設定為 [transcluent] 會將內容移至透明 UI 元素下。 將這個屬性設定`true`為, 是防止內容與半透明系統 UI 元素重迭的簡單方式。
 
 
 下列程式碼會定義具有半透明狀態和導覽列的主題:
@@ -376,7 +376,7 @@ StartActivityForResult (intentCreate, write_request_code);
 
 [![使用者在下載目錄中將檔案名變更為 NewDoc 的螢幕擷取畫面](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
-當使用者按下  [儲存`OnActivityResult` ] 時, `Android.Net.Uri`會傳遞新建立之檔案的 (可透過存取`data.Data`)。 Uri 可以用來將資料串流至新檔案:
+當使用者按下[儲存`OnActivityResult` ] 時, `Android.Net.Uri`會傳遞新建立之檔案的 (可透過存取`data.Data`)。 Uri 可以用來將資料串流至新檔案:
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -537,9 +537,9 @@ HCE 需要在應用程式的`Nfc` `AndroidManifest.xml`中註冊 HCE 功能和�
 
 若要運作, HCE 必須能夠在背景中執行, 而且必須在使用者進行 NFC 交易時啟動, 即使使用 HCE 的應用程式不在執行中也一樣。 我們可以撰寫 HCE 程式碼做為來完成這`Service`項工作。 HCE 服務`HostApduService`會執行介面, 它會實作為下列方法:
 
--  *ProcessCommandApdu* -應用程式通訊協定資料單位 (APDU) 是 NFC 讀取器與 HCE 服務之間傳送的內容。 這個方法會使用讀取器中的 ADPU, 並傳回資料單位以回應。
+- *ProcessCommandApdu* -應用程式通訊協定資料單位 (APDU) 是 NFC 讀取器與 HCE 服務之間傳送的內容。 這個方法會使用讀取器中的 ADPU, 並傳回資料單位以回應。
 
--  *OnDeactivated* - `HostAdpuService`當 HCE 服務不再與 NFC 讀取器通訊時, 會停用。
+- *OnDeactivated* - `HostAdpuService`當 HCE 服務不再與 NFC 讀取器通訊時, 會停用。
 
 
 HCE 服務也必須向應用程式的資訊清單註冊, 並以適當的許可權、意圖篩選和中繼資料裝飾。 下列程式碼是`HostApduService` `Service`使用屬性向 Android 資訊清單註冊的範例 (如需有關屬性的詳細資訊, 請參閱 Xamarin[使用 Android 資訊清單](~/android/platform/android-manifest.md)指南):
@@ -591,9 +591,9 @@ KitKat 透過[`SensorManager`](xref:Android.Hardware.SensorManager)提供裝置�
 
 KitKat 也隨附兩個新的感應器類型來追蹤使用者的步驟。 這些是以加速計為基礎, 其中包括:
 
--  *StepDetector* -當使用者採取步驟時, 應用程式會收到通知/喚醒, 而偵測器會提供步驟發生時的時間值。
+- *StepDetector* -當使用者採取步驟時, 應用程式會收到通知/喚醒, 而偵測器會提供步驟發生時的時間值。
 
--  *StepCounter* -記錄在*下一次裝置重新開機之前*, 使用者從感應器註冊以來所採取的步驟數目。
+- *StepCounter* -記錄在*下一次裝置重新開機之前*, 使用者從感應器註冊以來所採取的步驟數目。
 
 下列螢幕擷取畫面說明作用中的步驟計數器:
 
@@ -678,29 +678,29 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 除了上面所述的變更之外, KitKat 還可讓您:
 
--  *使用全螢幕*KitKat 導入了新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))來流覽內容、播放遊戲, 以及執行其他可從全螢幕體驗獲益的應用程式。
+- *使用全螢幕*KitKat 導入了新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))來流覽內容、播放遊戲, 以及執行其他可從全螢幕體驗獲益的應用程式。
 
--  *自訂通知*-使用來取得系統通知的其他詳細資料[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
-   。 這可讓您以不同的方式呈現應用程式內的資訊。
+- *自訂通知*-使用來取得系統通知的其他詳細資料[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
+   . 這可讓您以不同的方式呈現應用程式內的資訊。
 
--  *鏡像的可以繪製資源*-繪製資源有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
+- *鏡像的可以繪製資源*-繪製資源有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
    屬性, 告訴系統針對需要從左至右配置翻轉的影像建立鏡像版本。
 
--  *暫停動畫*-暫停和繼續使用建立的動畫[`Animator`](xref:Android.Animation.Animator)
+- *暫停動畫*-暫停和繼續使用建立的動畫[`Animator`](xref:Android.Animation.Animator)
    類別的新執行個體。
 
--  *閱讀動態變更文字*-代表 UI 的部分, 以新的文字動態更新為「即時區域」, 新的[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+- *閱讀動態變更文字*-代表 UI 的部分, 以新的文字動態更新為「即時區域」, 新的[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
    屬性, 以便在協助工具模式中自動讀取新的文字。
 
--  *增強音訊體驗*-讓追蹤更大[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
+- *增強音訊體驗*-讓追蹤更大[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
    , 使用, 尋找音訊串流的尖峰和 RMS[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
    類別, 並從[音訊時間戳記](xref:Android.Media.AudioTimestamp)取得資訊, 以協助進行音訊影片同步處理。
 
--  *在自訂間隔同步處理 ContentResolver* -KitKat 會在執行同步處理要求的時間內新增一些變動性。 藉由呼叫`ContentResolver.RequestSync`並傳入, 在`SyncRequest`自訂時間或間隔同步。 `ContentResolver`
+- *在自訂間隔同步處理 ContentResolver* -KitKat 會在執行同步處理要求的時間內新增一些變動性。 藉由呼叫`ContentResolver.RequestSync`並傳入, 在`SyncRequest`自訂時間或間隔同步。 `ContentResolver`
 
--  *區分控制器*-在 KitKat 中, 控制器會被指派可透過裝置的`ControllerNumber`屬性存取的唯一整數識別碼。 這可讓您更輕鬆地分辨遊戲中的玩家。
+- *區分控制器*-在 KitKat 中, 控制器會被指派可透過裝置的`ControllerNumber`屬性存取的唯一整數識別碼。 這可讓您更輕鬆地分辨遊戲中的玩家。
 
--  *遠端控制*-只有硬體和軟體端的一些變更, KitKat 可讓您使用紅外線發送器將裝置科系轉換成遠端控制`ConsumerIrService`, 並透過新的來與週邊裝置互動[`RemoteController`](xref:Android.Media.RemoteController)
+- *遠端控制*-只有硬體和軟體端的一些變更, KitKat 可讓您使用紅外線發送器將裝置科系轉換成遠端控制`ConsumerIrService`, 並透過新的來與週邊裝置互動[`RemoteController`](xref:Android.Media.RemoteController)
    Api.
 
 如需上述 API 變更的詳細資訊, 請參閱 Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)總覽。

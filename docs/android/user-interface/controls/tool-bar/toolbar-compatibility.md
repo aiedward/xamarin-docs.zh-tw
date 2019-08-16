@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: ce13532026e2c49cb733e5afc0f6abd41ff1abdd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 31602b14179691d13d8058c90cf20a6f7f667124
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645027"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522815"
 ---
 # <a name="toolbar-compatibility"></a>工具列相容性
 
@@ -24,13 +24,13 @@ ms.locfileid: "68645027"
 
 若要修改應用程式以使用 AppCompat 版本的工具列: 
 
-1.  設定應用程式的最小和目標 Android 版本。
+1. 設定應用程式的最小和目標 Android 版本。
 
-2.  安裝 AppCompat NuGet 套件。
+2. 安裝 AppCompat NuGet 套件。
 
-3.  使用 AppCompat 主題, 而不是內建的 Android 主題。
+3. 使用 AppCompat 主題, 而不是內建的 Android 主題。
 
-4.  修改`MainActivity` , 使其成為`AppCompatActivity`子類別`Activity`, 而不是。 
+4. 修改`MainActivity` , 使其成為`AppCompatActivity`子類別`Activity`, 而不是。 
 
 下列各節將詳細說明每個步驟。
 

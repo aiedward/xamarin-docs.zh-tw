@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 82320b069156828101d17e79ca48a8933b8a8777
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655087"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528457"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>使用 Elements API 建立 Xamarin iOS 應用程式
 
 _本文是根據 [MonoTouch 簡介] 對話方塊文章中所呈現的資訊來建立。它會提供逐步解說, 說明如何使用 MonoTouch (MT)。D) Elements API, 快速開始使用 MT 來建立應用程式。D._
 
-在本逐步解說中, 我們將使用 MT。D Elements API, 用來建立顯示工作清單之應用程式的主版詳細資料樣式。 當使用者選取導覽列<span class="ui">+</span>中的按鈕時, 新的資料列就會加入至工作的資料表。 選取資料列將會流覽至 [詳細資料] 畫面, 讓我們更新工作描述和到期日, 如下所示:
+在本逐步解說中, 我們將使用 MT。D Elements API, 用來建立顯示工作清單之應用程式的主版詳細資料樣式。 當使用者選取導覽列 **+** 中的按鈕時, 新的資料列就會加入至工作的資料表。 選取資料列將會流覽至 [詳細資料] 畫面, 讓我們更新工作描述和到期日, 如下所示:
 
  [![](elements-api-walkthrough-images/01-task-list-app.png "選取資料列將會流覽至 [詳細資料] 畫面, 讓我們更新工作描述和到期日")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
@@ -36,11 +36,11 @@ MT.D 與 Xamarin 一起散發。 若要使用它, 請以滑鼠右鍵按一下 Vi
 
 若要使用 MonoTouch 建立多畫面應用程式, 我們需要:
 
-1.  建立`UINavigationController.`
-1.  建立`DialogViewController.`
-1.  將新增`DialogViewController`為的根目錄`UINavigationController.` 
-1.  將新增`RootElement`至`DialogViewController.`
-1.  將`Sections` 和`Elements`新增至`RootElement.` 
+1. 建立`UINavigationController.`
+1. 建立`DialogViewController.`
+1. 將新增`DialogViewController`為的根目錄`UINavigationController.` 
+1. 將新增`RootElement`至`DialogViewController.`
+1. 將`Sections` 和`Elements`新增至`RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>使用 UINavigationController
 
@@ -77,14 +77,14 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="using-dialogviewcontroller"></a>使用 DialogViewController
 
-做為子`DialogViewController` `UITableViewController`類別的是, 具有做為其 view。 `UITableView` 在此範例中, 我們想要在每次按<span class="ui">+</span>下按鈕時, 將專案加入至資料表。 `UINavigationController` `RightBarButton` <span class="ui">+</span>因為已新增至`NavigationItem`, 所以我們可以使用的屬性來新增按鈕, 如下所示: `DialogViewController`
+做為子`DialogViewController` `UITableViewController`類別的是, 具有做為其 view。 `UITableView` 在此範例中, 我們想要在每次按 **+** 下按鈕時, 將專案加入至資料表。 `UINavigationController` `RightBarButton` **+** 因為已新增至`NavigationItem`, 所以我們可以使用的屬性來新增按鈕, 如下所示: `DialogViewController`
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-當我們稍`RootElement`早建立時, 我們會將單一`Section`實例傳遞給它, 讓我們<span class="ui">+</span>可以加入專案, 因為使用者會按下按鈕。 我們可以使用下列程式碼, 在按鈕的事件處理常式中完成這項操作:
+當我們稍`RootElement`早建立時, 我們會將單一`Section`實例傳遞給它, 讓我們 **+** 可以加入專案, 因為使用者會按下按鈕。 我們可以使用下列程式碼, 在按鈕的事件處理常式中完成這項操作:
 
 ```csharp
 _addButton.Clicked += (sender, e) => {                

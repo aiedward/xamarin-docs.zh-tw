@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: b44bb52dc69aae1d3d058a1eae7c3be13ec5dc53
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f6bc5891e416d7cb6c9b80c0502a9cc5d2d911d1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643344"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523995"
 ---
 # <a name="location-services-on-android"></a>Android 上的位置服務
 
@@ -30,11 +30,11 @@ Android 可讓您存取各種不同的位置技術, 例如儲存格塔式位置�
 
 在內部使用數種技術來找出使用者的位置。 使用的硬體取決於為收集資料所選取的*位置提供者*類型。 Android 使用三個位置提供者:
 
--   **GPS 提供者**&ndash; GPS 提供最精確的位置、使用最多的功能, 而且在戶外的效果最佳。 此提供者會使用 GPS 和輔助 GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)) 的組合, 這會傳回行動電話塔所收集的 GPS 資料。
+- **GPS 提供者**&ndash; GPS 提供最精確的位置、使用最多的功能, 而且在戶外的效果最佳。 此提供者會使用 GPS 和輔助 GPS ([aGPS](https://en.wikipedia.org/wiki/Assisted_GPS)) 的組合, 這會傳回行動電話塔所收集的 GPS 資料。
 
--   **網路提供者**&ndash;提供 WiFi 和行動電話資料的組合, 包括資料格塔所收集的 aGPS 資料。 其使用的功能比 GPS 提供者少, 但會傳回不同精確度的位置資料。
+- **網路提供者**&ndash;提供 WiFi 和行動電話資料的組合, 包括資料格塔所收集的 aGPS 資料。 其使用的功能比 GPS 提供者少, 但會傳回不同精確度的位置資料。
 
--   **被動提供者**&ndash;使用其他應用程式或服務所要求的提供者, 在應用程式中產生位置資料的「可攜帶」選項。 這是較不可靠但省電選項, 適用于不需要常數位置更新才能正常執行的應用程式。
+- **被動提供者**&ndash;使用其他應用程式或服務所要求的提供者, 在應用程式中產生位置資料的「可攜帶」選項。 這是較不可靠但省電選項, 適用于不需要常數位置更新才能正常執行的應用程式。
 
 位置提供者不一定可供使用。 例如, 我們可能會想要針對我們的應用程式使用 GPS, 但 GPS 可能會在 [設定] 中關閉, 或者裝置可能完全沒有 GPS。 如果特定提供者無法使用, 則選擇該提供者可能`null`會傳回。
 
@@ -43,10 +43,10 @@ Android 可讓您存取各種不同的位置技術, 例如儲存格塔式位置�
 有位置感知的應用程式需要存取裝置的硬體感應器, 才能接收 GPS、Wi-fi 和行動資料。 存取權是透過應用程式的 Android 資訊清單中的適當許可權來控制。
 視您的應用程式&ndash;需求和您選擇的 API 而定, 有兩個可用的許可權, 您會想要允許一個:
 
--   `ACCESS_FINE_LOCATION`&ndash;允許應用程式存取 GPS。
+- `ACCESS_FINE_LOCATION`&ndash;允許應用程式存取 GPS。
     *GPS 提供者*和*被動提供者*選項的必要項 (*被動提供者需要許可權才能存取其他應用程式或服務所收集的 GPS 資料*)。 *網路提供者*的選擇性許可權。
 
--   `ACCESS_COARSE_LOCATION`&ndash;允許應用程式存取行動電話和 wi-fi 位置。 如果`ACCESS_FINE_LOCATION`未設定, 則為*網路提供者*所需。
+- `ACCESS_COARSE_LOCATION`&ndash;允許應用程式存取行動電話和 wi-fi 位置。 如果`ACCESS_FINE_LOCATION`未設定, 則為*網路提供者*所需。
 
 針對以 API 第21版 (Android 5.0 棒) 或更高版本為目標的`ACCESS_FINE_LOCATION`應用程式, 您可以啟用並繼續在沒有 GPS 硬體的裝置上執行。 如果您的應用程式需要 GPS 硬體, 您應該明確`android.hardware.location.gps`地將`uses-feature`元素新增至 Android 資訊清單。 如需詳細資訊, 請參閱 Android[使用-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html)元素參考。
 
@@ -175,7 +175,7 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
 
 這個方法會採用兩個參數:
 
--   **`Android.Gms.Location.LocationRequest`** &ndash; 物件是XamarinAndroid應用程式如何傳遞「融合位置提供者」應該`LocationRequest`如何使用的參數。 會`LocationRequest`保留資訊, 例如要求的執行頻率, 或正確位置更新的重要性。 例如, 在判斷位置時, 重要的位置要求將會導致裝置使用 GPS, 因而更強大。 此程式碼片段示範如何`LocationRequest`針對具有高精確度的位置建立, 並每隔五分鐘檢查一次位置更新 (但不會在要求之間的兩分鐘內)。 已融合的位置提供者會`LocationRequest`使用, 做為嘗試判斷裝置位置時所要使用之位置提供者的指引:
+- **`Android.Gms.Location.LocationRequest`** &ndash; 物件是XamarinAndroid應用程式如何傳遞「融合位置提供者」應該`LocationRequest`如何使用的參數。 會`LocationRequest`保留資訊, 例如要求的執行頻率, 或正確位置更新的重要性。 例如, 在判斷位置時, 重要的位置要求將會導致裝置使用 GPS, 因而更強大。 此程式碼片段示範如何`LocationRequest`針對具有高精確度的位置建立, 並每隔五分鐘檢查一次位置更新 (但不會在要求之間的兩分鐘內)。 已融合的位置提供者會`LocationRequest`使用, 做為嘗試判斷裝置位置時所要使用之位置提供者的指引:
 
     ```csharp
     LocationRequest locationRequest = new LocationRequest()
@@ -184,7 +184,7 @@ await fusedLocationProviderClient.RequestLocationUpdatesAsync(locationRequest, l
                                       .SetFastestInterval(60 * 1000 * 2);
     ```
 
--   **`Android.Gms.Location.LocationCallback`** 為了接收位置更新, Xamarin. Android 應用程式必須`LocationProvider`子類別化抽象類別。 &ndash; 此類別公開了兩種方法, 可供融合位置提供者用來以位置資訊更新應用程式。 下面將更詳細地討論這一點。
+- **`Android.Gms.Location.LocationCallback`** 為了接收位置更新, Xamarin. Android 應用程式必須`LocationProvider`子類別化抽象類別。 &ndash; 此類別公開了兩種方法, 可供融合位置提供者用來以位置資訊更新應用程式。 下面將更詳細地討論這一點。
 
 若要通知 Xamarin Android 應用程式的位置更新, 已融合的位置提供者將會`LocationCallBack.OnLocationResult(LocationResult result)`叫用。 `Android.Gms.Location.LocationResult`參數將包含更新位置資訊。
 
@@ -233,10 +233,10 @@ Android 位置服務是舊版的 API, 可在 Android 上使用位置資訊。 �
 
 若要使用 Android 位置服務來取得使用者的位置, 需要執行幾個步驟:
 
-1.  取得`LocationManager`服務的參考。
-2.  `ILocationListener`執行介面, 並在位置變更時處理事件。
-3.  `LocationManager`使用來要求指定提供者的位置更新。 上`ILocationListener`一個步驟中的會用來接收來自的`LocationManager`回呼。
-4.  當應用程式不再適合接收更新時, 停止位置更新。
+1. 取得`LocationManager`服務的參考。
+2. `ILocationListener`執行介面, 並在位置變更時處理事件。
+3. `LocationManager`使用來要求指定提供者的位置更新。 上`ILocationListener`一個步驟中的會用來接收來自的`LocationManager`回呼。
+4. 當應用程式不再適合接收更新時, 停止位置更新。
 
 ### <a name="location-manager"></a>位置管理員
 

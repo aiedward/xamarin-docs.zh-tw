@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: f374da4a541b81bb1bcf84f2b9342785551c15a4
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: e7739642bdb9a10046286035c4aa1a3699bb75b0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512970"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526787"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 實用的程式碼共用策略
 
@@ -29,7 +29,7 @@ ms.locfileid: "67512970"
 
 SQLite 是開放原始碼資料庫實作。 來源和文件，請參閱[SQLite.org](http://www.sqlite.org/)。SQLite 支援是可在每個行動平台：
 
--  **iOS** – 內建於作業系統。
+- **iOS** – 內建於作業系統。
 - **Android** – 內建於作業系統自 Android 2.2 (API 層級 10)。
 - **Windows** – 請參閱 <<c2> [ 適用於通用 Windows 平台延伸模組的 SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936)。
 
@@ -97,10 +97,10 @@ SQLite NET 做為簡單的 ORM，可讓您儲存和擷取您的類別，而在 S
 
 SQLite NET 的功能：
 
--  資料表是透過將屬性加入至模型類別定義。
--  資料庫執行個體表示的子類別`SQLiteConnection`，SQLite Net 程式庫中的主要類別。
--  可插入的資料，查詢和刪除使用的物件。 （雖然您可以撰寫 SQL 陳述式，如有必要），不則需要任何 SQL 陳述式。
--  基本 Linq 查詢可以對 SQLite NET 所傳回的集合。
+- 資料表是透過將屬性加入至模型類別定義。
+- 資料庫執行個體表示的子類別`SQLiteConnection`，SQLite Net 程式庫中的主要類別。
+- 可插入的資料，查詢和刪除使用的物件。 （雖然您可以撰寫 SQL 陳述式，如有必要），不則需要任何 SQL 陳述式。
+- 基本 Linq 查詢可以對 SQLite NET 所傳回的集合。
 
 
 原始程式碼和 SQLite NET 的文件將會位於[github 上的 SQLite Net](https://github.com/praeclarum/sqlite-net) ，並已在這兩個案例研究中實作。 SQLite NET 程式碼的簡單範例 (來自*Tasky Pro*案例研究) 如下所示。
@@ -141,9 +141,9 @@ Table<TodoItem>.ToList(); // returns all rows in a collection
 
 檔案存取是一定是任何應用程式的重要部分。 常見範例可能是一部分的應用程式包含的檔案：
 
--  SQLite 資料庫檔案。
--  使用者產生的資料 （文字、 影像、 聲音、 視訊）。
--  下載快取 （影像、 html 或 PDF 檔案） 的詳細資料。
+- SQLite 資料庫檔案。
+- 使用者產生的資料 （文字、 影像、 聲音、 視訊）。
+- 下載快取 （影像、 html 或 PDF 檔案） 的詳細資料。
 
 
 
@@ -154,10 +154,10 @@ Xamarin.iOS 和 Xamarin.Android 允許使用類別中的檔案系統存取`Syste
 
 每個平台會有不同的存取限制必須列入考量：
 
--  具有非常有限的檔案系統存取權的沙箱中，執行 iOS 應用程式。 Apple 進一步決定您應該如何使用檔案系統藉由指定會備份的特定位置 （以及其他不是）。 請參閱[使用 Xamarin.iOS 中的檔案系統](~/ios/app-fundamentals/file-system.md)指南以取得詳細資料。
--  Android 也會限制存取特定應用程式中，相關的目錄，但它也支援外部媒體 （例如。 Sd 記憶卡），並存取共用的資料。
--  Windows Phone 8 (Silverlight) 不允許直接與檔案存取 – 檔案只可操作使用`IsolatedStorage`。
--  Windows 8.1 WinRT 和 Windows 10 UWP 專案只會提供透過非同步檔案作業`Windows.Storage`不同於其他平台的 Api。
+- 具有非常有限的檔案系統存取權的沙箱中，執行 iOS 應用程式。 Apple 進一步決定您應該如何使用檔案系統藉由指定會備份的特定位置 （以及其他不是）。 請參閱[使用 Xamarin.iOS 中的檔案系統](~/ios/app-fundamentals/file-system.md)指南以取得詳細資料。
+- Android 也會限制存取特定應用程式中，相關的目錄，但它也支援外部媒體 （例如。 Sd 記憶卡），並存取共用的資料。
+- Windows Phone 8 (Silverlight) 不允許直接與檔案存取 – 檔案只可操作使用`IsolatedStorage`。
+- Windows 8.1 WinRT 和 Windows 10 UWP 專案只會提供透過非同步檔案作業`Windows.Storage`不同於其他平台的 Api。
 
 #### <a name="example-for-ios-and-android"></a>適用於 iOS 和 Android 的範例
 
@@ -216,10 +216,10 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 大部分的行動應用程式將會有網路元件，例如：
 
--  下載影像、 視訊和音訊 （例如。 縮圖、 相片、 音樂）。
--  下載文件 （例如。 HTML、 PDF)。
--  正在上傳 （例如相片或文字） 的使用者資料。
--  存取 web 服務或第 3 方 （包括 SOAP、 XML 或 JSON） 的 Api。
+- 下載影像、 視訊和音訊 （例如。 縮圖、 相片、 音樂）。
+- 下載文件 （例如。 HTML、 PDF)。
+- 正在上傳 （例如相片或文字） 的使用者資料。
+- 存取 web 服務或第 3 方 （包括 SOAP、 XML 或 JSON） 的 Api。
 
 
 .NET Framework 來存取網路資源提供了幾個不同的類別： `HttpClient`， `WebClient`，和`HttpWebRequest`。
@@ -290,9 +290,9 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 
 行動裝置應用程式可能需要在這些情況下的動作包括：
 
--  如果網路無法使用時，通知使用者。 如果它們已手動停用它 （例如。 飛航模式或關閉 Wi-fi） 然後他們可以解決此問題。
--  如果連線是 3g，應用程式可能會有不同的行為 （例如，Apple 不允許應用程式超過 20 Mb 下載超過 3g）。 應用程式可以使用這項資訊來警告使用者過多的下載逾時擷取大型檔案。
--  即使在網路為可用，最好要確認與目標伺服器的連線，然後再起始其他要求。 這會防止應用程式的網路作業逾時重複，並也允許更具參考性的錯誤訊息，以顯示給使用者。
+- 如果網路無法使用時，通知使用者。 如果它們已手動停用它 （例如。 飛航模式或關閉 Wi-fi） 然後他們可以解決此問題。
+- 如果連線是 3g，應用程式可能會有不同的行為 （例如，Apple 不允許應用程式超過 20 Mb 下載超過 3g）。 應用程式可以使用這項資訊來警告使用者過多的下載逾時擷取大型檔案。
+- 即使在網路為可用，最好要確認與目標伺服器的連線，然後再起始其他要求。 這會防止應用程式的網路作業逾時重複，並也允許更具參考性的錯誤訊息，以顯示給使用者。
 
 
 沒有[Xamarin.iOS 範例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (根據 Apple[連線能力的範例程式碼](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 來協助偵測網路可用性。
@@ -378,10 +378,10 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 不會利用平行的工作程式庫的程式碼，每個平台會有自己的語法，封送處理回 UI 執行緒的作業：
 
--  **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
--  **Android** – `owner.RunOnUiThread(action)`
--  **Xamarin.Forms** – `Device.BeginInvokeOnMainThread(action)`
--  **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
+- **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
+- **Android** – `owner.RunOnUiThread(action)`
+- **Xamarin.Forms** – `Device.BeginInvokeOnMainThread(action)`
+- **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
 
 
 

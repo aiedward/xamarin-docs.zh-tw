@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 11bca4bc74316f87ab7b329c897efcd4b768bc03
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f81a9d232e1702d112e837a80d35403162e3adca
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657111"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529337"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結至 MVVM
 
@@ -304,26 +304,26 @@ namespace XamlSamples
 
 若要允許更獨立於特定的使用者介面物件，但仍然允許在 ViewModel，要呼叫方法的 Viewmodel*命令*介面存在。 在 Xamarin.Forms 中的下列項目支援此命令介面：
 
--  `Button`
--  `MenuItem`
--  `ToolbarItem`
--  `SearchBar`
--  `TextCell` (因此也`ImageCell`)
--  `ListView`
--  `TapGestureRecognizer`
+- `Button`
+- `MenuItem`
+- `ToolbarItem`
+- `SearchBar`
+- `TextCell` (因此也`ImageCell`)
+- `ListView`
+- `TapGestureRecognizer`
 
 除了`SearchBar`和`ListView`項目，這些項目會定義兩個屬性：
 
--  `Command` 型別  `System.Windows.Input.ICommand`
--  `CommandParameter` 型別  `Object`
+- `Command` 型別  `System.Windows.Input.ICommand`
+- `CommandParameter` 型別  `Object`
 
 `SearchBar`定義`SearchCommand`並`SearchCommandParameter`屬性，而`ListView`定義`RefreshCommand`型別的屬性`ICommand`。
 
 `ICommand`介面會定義兩個方法和一個事件：
 
--  `void Execute(object arg)`
--  `bool CanExecute(object arg)`
--  `event EventHandler CanExecuteChanged`
+- `void Execute(object arg)`
+- `bool CanExecute(object arg)`
+- `event EventHandler CanExecuteChanged`
 
 ViewModel 可以定義類型的屬性`ICommand`。 您接著可以繫結至這些屬性`Command`每個屬性`Button`或其他項目或可能是實作這個介面的自訂檢視。 您可以選擇性地設定`CommandParameter`屬性來識別個別`Button`物件 （或其他項目） 的繫結至這個 ViewModel 屬性。 就內部而言，`Button`呼叫`Execute`方法，每當使用者點選`Button`，以傳遞`Execute`方法及其`CommandParameter`。
 

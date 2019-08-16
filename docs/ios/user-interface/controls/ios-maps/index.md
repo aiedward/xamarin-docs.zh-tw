@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4b0e540bdcdf061f64880ea961a5e07a0a45b22e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d7bd3d64d7e9f4ad8298120a017719b3cbb1410e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642911"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528692"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin 中的對應
 
@@ -48,8 +48,8 @@ map.MapType = MKMapType.Hybrid;
 
  `MKMapView`包含地圖互動功能的支援, 例如:
 
--  透過縮小手勢縮放
--  透過平移手勢移動
+- 透過縮小手勢縮放
+- 透過平移手勢移動
 
 
 只要設定`ZoomEnabled` `MKMapView`實例的和`ScrollEnabled`屬性, 就可以啟用或停用這些功能, 其中兩者的預設值都是 true。 例如, 若要顯示靜態對應, 只要將適當的屬性設為 false 即可:
@@ -96,8 +96,8 @@ map.ShowsUserLocation = true;
 
 批註本身有兩個部分:
 
--  `MKAnnotation`物件, 包含關於注釋的模型資料, 例如批註的標題和位置。
--  `MKAnnotationView` , 其中包含要顯示的影像, 以及當使用者按下注釋時所顯示的選擇性標注。
+- `MKAnnotation`物件, 包含關於注釋的模型資料, 例如批註的標題和位置。
+- `MKAnnotationView` , 其中包含要顯示的影像, 以及當使用者按下注釋時所顯示的選擇性標注。
 
 
 對應套件`Delegate` `MKMapView`會使用 iOS 委派模式將注釋加入至對應, 其中的屬性會設定`MKMapViewDelegate`為的實例。 這是委派的實作為, 負責`MKAnnotationView`傳回批註的。
@@ -177,9 +177,9 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 在地圖上將圖形階層式另一種方式是使用重迭。 重疊支援繪製隨地圖縮放比例的圖形內容。 iOS 提供數種重迭類型的支援, 包括:
 
--  多邊形-通常用來反白顯示地圖上的某些區域。
--  折線-顯示路由時通常會出現。
--  圓形-用來反白顯示地圖的迴圈區域。
+- 多邊形-通常用來反白顯示地圖上的某些區域。
+- 折線-顯示路由時通常會出現。
+- 圓形-用來反白顯示地圖的迴圈區域。
 
 
 此外, 您可以建立自訂重迭, 以顯示具有細微、自訂繪圖程式碼的任意幾何。 例如, 氣象雷達圖是自訂重迭的理想候選。
@@ -188,8 +188,8 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 與注釋類似, 新增覆迭牽涉到2個部分:
 
--  建立重迭的模型物件, 並將它新增至`MKMapView` 。
--  在中`MKMapViewDelegate`建立重迭的視圖。
+- 建立重迭的模型物件, 並將它新增至`MKMapView` 。
+- 在中`MKMapViewDelegate`建立重迭的視圖。
 
 
 重迭的模型可以是任何`MKShape`子類別。 Xamarin 會分別透過`MKShape` `MKPolygon`、 `MKPolyline`和`MKCircle`類別, 包含多邊形、折線和圓形的子類別。
@@ -225,10 +225,10 @@ iOS 包含具有地圖套件的本機搜尋 API, 可讓您以非同步方式在�
 
 若要執行本機搜尋, 應用程式必須遵循下列步驟:
 
-1.  建立`MKLocalSearchRequest`物件。
-1.  從建立`MKLocalSearch`物件。 `MKLocalSearchRequest`
-1.  在物件上呼叫`Start`方法 `MKLocalSearch` 。
-1.  取得回呼`MKLocalSearchResponse`中的物件。
+1. 建立`MKLocalSearchRequest`物件。
+1. 從建立`MKLocalSearch`物件。 `MKLocalSearchRequest`
+1. 在物件上呼叫`Start`方法 `MKLocalSearch` 。
+1. 取得回呼`MKLocalSearchResponse`中的物件。
 
 
 本機搜尋 API 本身不提供使用者介面。 它甚至不需要使用對應。 不過, 若要實際使用本機搜尋, 應用程式必須提供一些方法來指定搜尋查詢並顯示結果。 此外, 由於結果會包含位置資料, 因此在地圖上顯示時通常很合理。

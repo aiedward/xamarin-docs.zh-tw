@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: dfc50defb6eafe705cc9c59b1b9793f1ce48c527
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984300"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522022"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms ToolbarItem
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
 [Xamarin [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) ] 類別是一種特殊類型的按鈕, 可以加入`Page`物件的`ToolbarItems`集合中。 每`ToolbarItem`個物件會在應用程式的導覽列中顯示為按鈕。 `ToolbarItem`實例可以有圖示, 並顯示為主要或次要功能表項目。 類別繼承自[`MenuItem`。](xref:Xamarin.Forms.MenuItem) `ToolbarItem`
 
@@ -37,6 +37,9 @@ ms.locfileid: "68984300"
 * [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是, 它會指定應傳遞至的`SearchCommand`參數。 `object`
 
 這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援`ToolbarItem` , 因此實例可以是資料系結的目標。
+
+> [!NOTE]
+> 從[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)物件建立工具列的替代方法是[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty)將附加屬性設定為包含多個視圖的版面配置類別。 如需詳細資訊, 請參閱在[導覽列中顯示 Views](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar)。
 
 ## <a name="create-a-toolbaritem"></a>建立 ToolbarItem
 
