@@ -1,25 +1,25 @@
 ---
 title: iOS 背景處理技術
-description: 這份文件連結至說明各種 backgrounding 的技巧，在 iOS 中的輔助線： 背景工作、 背景傳送服務、 背景擷取和遠端通知。
+description: '本檔連結的指南會描述 iOS 中的各種背景處理技術: 背景工作、背景傳送服務、背景提取和遠端通知。'
 ms.prod: xamarin
 ms.assetid: 011A8D48-1CDC-486A-A2B0-C4946118E7A9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 00cca0c75cc79858f6edda5d6fb954611d81161b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e438ed1a2367dee722a0129fce2e44f5083b757a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61169602"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521293"
 ---
 # <a name="ios-backgrounding-techniques"></a>iOS 背景處理技術
 
-在下列章節中，我們將探討下列的 iOS 功能，以及現有 backgrounding 選項：
+在下列各節中, 我們將探索下列 iOS 功能與現有的背景處理選項:
 
--  [隨機的背景工作](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md#background_tasks_in_iOS_7)-保留裝置醒著的其他處理程序時，請在隨機區塊 （chunk） 中執行背景工作的電池壽命。
--  [背景傳送服務](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md#background-transfers)-可靠地將上傳和下載檔案，無論網路狀態或檔案大小。
--  [背景擷取](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/updating-an-application-in-the-background.md#background_fetch)-重新整理背景應用程式在系統決定的時間間隔。
--  [遠端通知](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/updating-an-application-in-the-background.md#remote_notifications)-使用推播通知來觸發在背景中的內容更新之前在使用者開啟應用程式時，通知使用者，或以無訊息模式更新的選項。
--  **背景的 UI 更新**-準備應用程式 UI 的使用者，並更新應用程式的快照集，所有的背景。
+- 可執行檔[背景](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md#background_tasks_in_iOS_7)工作-當裝置處於喚醒狀態以進行其他處理時, 請在機會區塊中執行背景工作, 以保留電池壽命。
+- [背景傳送服務](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md#background-transfers)-無論網路狀態或檔案大小, 都能可靠地上傳和下載檔案。
+- [背景提取](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/updating-an-application-in-the-background.md#background_fetch)-在系統決定的間隔期間, 從背景重新整理應用程式。
+- [遠端通知](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/updating-an-application-in-the-background.md#remote_notifications)-使用推播通知, 在使用者開啟應用程式之前, 于背景觸發內容更新, 並提供通知使用者或以無訊息方式更新的選項。
+- **背景 UI 更新**-準備使用者的應用程式 UI, 並從背景更新應用程式的快照集。

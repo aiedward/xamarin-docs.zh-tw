@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2019
-ms.openlocfilehash: 644728d70946180f79523eeb98baabdb6daa1980
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 3e0f508a9c980c02681f1be581846f9f2f25e2d0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984360"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529285"
 ---
 # <a name="theming-a-xamarinforms-application"></a>主題為 Xamarin 應用程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
 Xamarin: Forms 應用程式可以使用`DynamicResource`標記延伸, 在執行時間動態回應樣式變更。 此標記延伸類似`StaticResource`于標記延伸, 這兩者都使用字典索引鍵[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)從提取值。 不過, 當`StaticResource`標記延伸執行單一字典查閱時`DynamicResource` , 標記延伸會維護字典索引鍵的連結。 因此, 如果已取代與索引鍵相關聯的值, 變更就會套用至[`VisualElement`](xref:Xamarin.Forms.VisualElement)。 這可讓執行時間主題在 Xamarin. Forms 應用程式中執行。
 
@@ -89,7 +89,7 @@ Xamarin: Forms 應用程式可以使用`DynamicResource`標記延伸, 在執行�
 </Application>
 ```
 
-如需合併資源字典的詳細資訊, 請參閱[在 Xamarin 中合併字典。表單 3.0](~/xamarin-forms/xaml/resource-dictionaries.md#merging-dictionaries-in-xamarinforms-30)。
+如需合併資源字典的詳細資訊, 請參閱[合併的資源字典](~/xamarin-forms/xaml/resource-dictionaries.md#merged-resource-dictionaries)。
 
 ## <a name="consume-theme-resources"></a>使用主題資源
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 736195182713eb35ad18fb1ae12c5cc7ddce0787
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.openlocfilehash: 77174070b227bf8cba94078b1ed1f0a6a8fcf1f8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012527"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528708"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 錯誤
 
@@ -130,8 +130,8 @@ Xamarin 在錯誤訊息中所述的位置找不到元件。 請確認路徑是�
 
 這可能會在下列情況下發生:
 
-*  已啟用 ARMv6, 且已安裝 Xcode 4.5 或更新版本。
-*  已啟用 ARMv7s, 且已安裝 Xcode 4.4 或更早版本。
+* 已啟用 ARMv6, 且已安裝 Xcode 4.5 或更新版本。
+* 已啟用 ARMv7s, 且已安裝 Xcode 4.4 或更早版本。
 
 請確認已安裝的 Xcode 版本支援選取的架構。
 
@@ -165,12 +165,12 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 有數個 mtouch 選項無法同時使用:
 
--  --logdev
--  --installdev
--  --killdev
--  --launchdev
--  --launchdebug
--  --launchsim
+- --logdev
+- --installdev
+- --killdev
+- --launchdev
+- --launchdebug
+- --launchsim
 
 <a name="MT0020" />
 
@@ -334,7 +334,7 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 <a name="MT0056" />
 
-### <a name="mt0056-cannot-find-xcode-in-the-default-location-applicationsxcodeapp-please-install-xcode-or-pass-a-custom-path-using---sdkroot-path"></a>MT0056:在預設位置 (/Applications/Xcode.app) 找不到 Xcode。 請安裝 Xcode, 或使用--sdkroot <path>傳遞自訂路徑。
+### <a name="mt0056-cannot-find-xcode-in-the-default-location-applicationsxcodeapp-please-install-xcode-or-pass-a-custom-path-using---sdkroot-path"></a>MT0056:在預設位置 (/Applications/Xcode.app) 找不到 Xcode。 請安裝 Xcode, 或使用--sdkroot \<path > 傳遞自訂路徑。
 
 <a name="MT0057" />
 
@@ -585,7 +585,9 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 例如：
 
-    --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
+```
+  --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
+```
 
 這個範例會嘗試使用相同的 make (`MyBinary`) 建立動態連結程式庫和架構。
 
@@ -597,7 +599,9 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 例如：
 
-    --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
+```
+--assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
+```
 
 這個範例會嘗試建立由兩個元件`MyBinary`(`Assembly1.dll`和`Assembly2.dll`) 組成的靜態物件 (), 這是不允許的。
 
@@ -619,7 +623,9 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 例如, 這些值將會觸發此錯誤:
 
-    --assembly-build-target:Assembly1.dll=staticobject=my/path.o
+```
+--assembly-build-target:Assembly1.dll=staticobject=my/path.o
+```
 
 因為`my/path.o`不是有效的檔案名, 因為目錄分隔符號。
 
@@ -1143,7 +1149,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="mt1108-could-not-find-developer-tools-for-this-xx-yy-device"></a>MT1108:找不到此 XX (YY) 裝置的開發人員工具。
 
-Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個檔案是 Xcode 的一部分, 而且通常是相對於您用來建立的 SDK (在<tt>Xcode. app/內容/開發人員/iPhoneOS</tt>) 中。
+Mtouch 的少數作業需要`DeveloperDiskImage.dmg`檔案存在。   這個檔案是 Xcode 的一部分, 而且通常是相對於您用來建立的 SDK (在中`Xcode.app/Contents/Developer/iPhoneOS.platform/DeviceSupport/VERSION/DeveloperDiskImage.dmg`)。
 
 發生此錯誤的原因可能是您沒有符合已連線裝置的 DeveloperDiskImage dmg。
 
@@ -1254,7 +1260,7 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 嘗試修正此問題的事項:
 
 * 在 Xcode 中使用模擬器一次。
-* 使用--sdk <version>傳遞明確的 SDK 版本。
+* 使用--SDK \<版本 > 傳遞明確的 SDK 版本。
 * 重新安裝 Xcode。
 
 <a name="MT1221" />
@@ -1425,7 +1431,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證程式庫的格式:
 
-    file -arch all -l /path/to/library.dylib
+```
+file -arch all -l /path/to/library.dylib
+```
 
 <a name="MT1601" />
 
@@ -1437,7 +1445,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證程式庫的格式:
 
-    file -arch all -l /path/to/library.a
+```
+file -arch all -l /path/to/library.a
+```
 
 <a name="MT1602" />
 
@@ -1449,7 +1459,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證程式庫的格式:
 
-    file -arch all -l /path/to/library.dylib
+```
+file -arch all -l /path/to/library.dylib
+```
 
 <a name="MT1603" />
 
@@ -1461,7 +1473,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證 fat 封存的格式:
 
-    file -arch all -l /path/to/file
+```
+file -arch all -l /path/to/file
+```
 
 <a name="MT1604" />
 
@@ -1473,7 +1487,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證檔案的格式:
 
-    file -arch all -l /path/to/file
+```
+file -arch all -l /path/to/file
+```
 
 ## <a name="mt2xxx-linker-error-messages"></a>MT2xxx:連結器錯誤訊息
 
@@ -2225,7 +2241,9 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 * 協力廠商系結需要架構, 但系結不會在其`[LinkWith]`屬性中指定此項。 適用
   - 如果您是協力廠商系結的作者, 或具有其來源的存取權, 請修改系結`[LinkWith]`的屬性, 以包含所需的架構:
 
-            [LinkWith ("mylib.a", Frameworks = "SystemConfiguration")]
+    ```csharp
+    [LinkWith ("mylib.a", Frameworks = "SystemConfiguration")]
+    ```
 
   - 如果您無法修改協力廠商系結, 您可以藉由傳遞`-gcc_flags '-framework SystemFramework'`至來`mtouch`手動連結所需的架構 (這是透過在專案的 [iOS 組建選項] 頁面中修改其他 mtouch 引數來完成的。 請記住, 這必須針對每個專案設定進行。
 * 在某些情況下, managed 系結是由數個原生程式庫所組成, 而全部都必須包含在系結中。 每個系結專案中都可以有一個以上的原生程式庫, 因此解決方案只會將所有必要的原生程式庫加入至系結專案。</li>
@@ -2235,9 +2253,11 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 * 協力廠商系結/程式庫是使用C++建立的, 但是系結不會在其`[LinkWith]`屬性中指定這個。 這通常相當容易辨識, 因為符號的C++符號不變 (一個常見的範例是`__ZNKSt9exception4whatEv`)。
   - 如果您是協力廠商系結的作者, 或具有其來源的存取權, 請修改系結`[LinkWith]`的屬性來`IsCxx`設定旗標:
 
-            [LinkWith ("mylib.a", IsCxx = true)]
+    ```csharp
+    [LinkWith ("mylib.a", IsCxx = true)]
+    ```
 
-  - 如果您無法修改協力廠商系結, 或使用協力廠商程式庫手動連結, 您可以藉由傳遞<code>-cxx</code>至 mtouch 來設定對等旗標 (這是藉由在專案的 [iOS 組建選項] 頁面中修改其他 mtouch 引數來完成). 請記住, 這必須針對每個專案設定進行。
+  - 如果您無法修改協力廠商系結, 或使用協力廠商程式庫手動連結, 您可以藉由傳遞`-cxx`至 mtouch 來設定對等旗標 (這是藉由在專案的 [iOS 組建選項] 頁面中修改其他 mtouch 引數來完成). 請記住, 這必須針對每個專案設定進行。
 
 <a name="MT5211" />
 
@@ -2245,14 +2265,16 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 
 當原生連結器找不到在某處參考的目標-C 類別時, 就會發生這種情況。 有幾個原因可能會發生這種情況: 與[MT5210](#MT5210)和此外:
 
-* 協力廠商系結系結了目標 C 通訊協定, 但未使用其 api 定義<code>[Protocol]</code>中的屬性為其加上批註。 適用
+* 協力廠商系結系結了目標 C 通訊協定, 但未使用其 api 定義`[Protocol]`中的屬性為其加上批註。 適用
   - 新增遺漏`[Protocol]`的屬性:
 
-              [BaseType (typeof (NSObject))]
-              [Protocol] // Add this
-              public interface MyProtocol
-              {
-              }
+    ```csharp
+    [BaseType (typeof (NSObject))]
+    [Protocol] // Add this
+    public interface MyProtocol
+    {
+    }
+    ```
 
 <a name="MT5212" />
 
@@ -2265,48 +2287,54 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 * 未正確建立原生程式庫, 且包含相同的符號多次。
   您可以從終端機使用下列命令集來確認這一點 (根據您所建立的架構, 以 x86_64/armv7/armv7s/arm64 取代 i386):
 
-        # Native libraries are usually fat libraries, containing binary code for
-        # several architectures in the same file. First we extract the binary
-        # code for the architecture we're interested in.
-        lipo libNative.a -thin i386 -output libNative.i386.a
+  ```
+  # Native libraries are usually fat libraries, containing binary code for
+  # several architectures in the same file. First we extract the binary
+  # code for the architecture we're interested in.
+  lipo libNative.a -thin i386 -output libNative.i386.a
 
-        # Now query the native library for the duplicated symbol.
-        nm libNative.i386.a | fgrep 'SYMBOL'
+  # Now query the native library for the duplicated symbol.
+  nm libNative.i386.a | fgrep 'SYMBOL'
 
-        # You can also list the object files inside the native library.
-        # In most cases this will reveal duplicated object files.
-        ar -t libNative.i386.a
+  # You can also list the object files inside the native library.
+  # In most cases this will reveal duplicated object files.
+  ar -t libNative.i386.a
+  ```
 
   有幾個可能的方法可以修正此問題:
 
   - 要求原生程式庫的提供者修正此問題, 並提供更新的版本。
   - 藉由移除額外的物件檔案 (這僅適用于問題是否為重複的物件檔案) 來修正
 
-            # Find out if the library is a fat library, and which
-            # architectures it contains.
-            lipo -info libNative.a
+  ```
+  # Find out if the library is a fat library, and which
+  # architectures it contains.
+  lipo -info libNative.a
 
-            # Extract each architecture (i386/x86_64/armv7/armv7s/arm64) to a separate file
-            lipo libNative.a -thin ARCH -output libNative.ARCH.a
+  # Extract each architecture (i386/x86_64/armv7/armv7s/arm64) to a separate file
+  lipo libNative.a -thin ARCH -output libNative.ARCH.a
 
-            # Extract the object files for the offending architecture
-            # This will remove the duplicates by overwriting them
-            # (since they have the same filename)
-            mkdir -p ARCH
-            cd ARCH
-            ar -x ../libNative.ARCH.a
+  # Extract the object files for the offending architecture
+  # This will remove the duplicates by overwriting them
+  # (since they have the same filename)
+  mkdir -p ARCH
+  cd ARCH
+  ar -x ../libNative.ARCH.a
 
-            # Reassemble the object files in an .a
-            ar -r ../libNative.ARCH.a *.o
-            cd ..
+  # Reassemble the object files in an .a
+  ar -r ../libNative.ARCH.a *.o
+  cd ..
 
-            # Reassemble the fat library
-            lipo *.a -create -output libNative.a
+  # Reassemble the fat library
+  lipo *.a -create -output libNative.a
+  ```
 
   - 要求連結器移除未使用的程式碼。 如果符合下列所有條件, 則 Xamarin 會自動執行此動作:
     - 所有協力廠商系結`[LinkWith]`的屬性都已啟用 SmartLink:
 
-            [assembly: LinkWith ("libNative.a", SmartLink = true)]
+      ```csharp
+      [assembly: LinkWith ("libNative.a", SmartLink = true)]
+      ```
 
     - [ `-gcc_flags`否] 會傳遞給 mtouch (在專案的 iOS 組建選項的 [其他 mtouch 引數] 欄位中)。
     - 您也可以在專案的 iOS 組建選項中新增`-gcc_flags -dead_strip`至其他 mtouch 引數, 以直接要求連結器移除未使用的程式碼。
@@ -2751,7 +2779,7 @@ Xamarin iOS 專案通常會動態參考原生符號, 這表示原生連結器可
 - dict
 - bool
 - 實數
-- 整數
+- integer
 - 日期
 - 資料
 

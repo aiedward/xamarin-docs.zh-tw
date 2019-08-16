@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/29/2018
-ms.openlocfilehash: a53baed9d5f291628d7d1a8da05739e43412d473
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: af74ae3c7c87f501bff519bcfa361264205ca3f1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509721"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522385"
 ---
 # <a name="xamarinandroid-relativelayout"></a>Xamarin. Android RelativeLayout
 
@@ -76,7 +76,7 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main` 方法會載入設定檔案, 而資源識別碼所指定的則是指 Resources/layout/axml 設定檔案。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
+[`Activity`](xref:Android.App.Activity) &mdash; `Resource.Layout.Main`方法會載入設定檔案, 而資源識別碼所指定的則是指 Resources/layout/axml 設定檔案。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
 
 執行應用程式。 您應該會看到下列版面配置:
 
@@ -90,5 +90,4 @@ protected override void OnCreate (Bundle savedInstanceState)
 - [`EditText`](xref:Android.Widget.EditText)
 - [`Button`](xref:Android.Widget.Button)
 
-*此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改, 並根據*
-[*創意 Commons 2.5 屬性授權*](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。
+_此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改, 並根據[創意 Commons 2.5 屬性授權](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。_

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: 94a0bddcb3a9a1e7236bed4b4c95fc38e1f9f0dd
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: f25ce3c5bfe7e3d8032709e9df99e7538e978862
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510430"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523422"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何將 Android NUnit 測試專案自動化？
 
@@ -28,7 +28,7 @@ adb shell am instrument
 
 下列步驟說明此程式:
 
-1.  建立名為**TestInstrumentation.cs**的新檔案: 
+1. 建立名為**TestInstrumentation.cs**的新檔案: 
 
     ```cs 
     using System;
@@ -37,16 +37,16 @@ adb shell am instrument
     using Android.Content;
     using Android.Runtime;
     using Xamarin.Android.NUnitLite;
-     
+
     namespace App.Tests {
-     
+
         [Instrumentation(Name="app.tests.TestInstrumentation")]
         public class TestInstrumentation : TestSuiteInstrumentation {
-     
+
             public TestInstrumentation (IntPtr handle, JniHandleOwnership transfer) : base (handle, transfer)
             {
             }
-     
+
             protected override void AddTests ()
             {
                 AddTest (Assembly.GetExecutingAssembly ());
@@ -54,11 +54,12 @@ adb shell am instrument
         }
     }
     ```
+
     在此檔案中`Xamarin.Android.NUnitLite.TestSuiteInstrumentation` , (來自**NUnitLite**) 會被子類別化來建立`TestInstrumentation`。
 
-2.  執行此`TestInstrumentation`函式`AddTests`和方法。 `AddTests`方法會控制實際執行的測試。
+2. 執行此`TestInstrumentation`函式`AddTests`和方法。 `AddTests`方法會控制實際執行的測試。
 
-3.  修改檔案以新增**TestInstrumentation.cs。** `.csproj` 例如：
+3. 修改檔案以新增**TestInstrumentation.cs。** `.csproj` 例如：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -74,13 +75,13 @@ adb shell am instrument
     </Project>
     ```
 
-4.  使用下列命令來執行單元測試。 將`PACKAGE_NAME`取代為應用程式的套件名稱 (套件名稱可在位於**androidmanifest.xml**的`/manifest/@package`應用程式屬性中找到):
+4. 使用下列命令來執行單元測試。 將`PACKAGE_NAME`取代為應用程式的套件名稱 (套件名稱可在位於**androidmanifest.xml**的`/manifest/@package`應用程式屬性中找到):
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-5.  (選擇性) 您可以修改`.csproj`檔案以`RunTests`新增 MSBuild 目標。 這讓您可以使用如下的命令來叫用單元測試:
+5. (選擇性) 您可以修改`.csproj`檔案以`RunTests`新增 MSBuild 目標。 這讓您可以使用如下的命令來叫用單元測試:
 
     ```shell
     msbuild /t:RunTests Project.csproj

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: b40b2d2d5083f32edcb0fc08c8365096e6d4fda9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82423e48f844cde60bcd5e85c5bbe3cb8bc856b8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645359"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522461"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本 RecyclerView 範例
 
@@ -152,7 +152,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 
 ### <a name="adapter"></a>配接器
 
-介面卡會使用`RecyclerView`特定相片的資料來載入每一列。 例如, 針對位於資料列位置*p*的指定相片, 介面卡會在資料來源中的位置*p*處尋找相關聯的資料, 並將此資料複製到  `RecyclerView`集合中位置 p 的資料列專案。 介面卡會使用視圖持有者來查閱`ImageView`和`TextView`該位置的參考, 因此當使用者滾動相片集合並重複`FindViewById`使用 views 時, 不需要重複呼叫這些視圖。
+介面卡會使用`RecyclerView`特定相片的資料來載入每一列。 例如, 針對位於資料列位置*p*的指定相片, 介面卡會在資料來源中的位置*p*處尋找相關聯的資料, 並將此資料複製到 `RecyclerView`集合中位置 p 的資料列專案。 介面卡會使用視圖持有者來查閱`ImageView`和`TextView`該位置的參考, 因此當使用者滾動相片集合並重複`FindViewById`使用 views 時, 不需要重複呼叫這些視圖。
 
 在**RecyclerViewer**中, 介面卡類別衍生自`RecyclerView.Adapter`以建立`PhotoAlbumAdapter`:
 
@@ -171,11 +171,11 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 `mPhotoAlbum`成員包含傳遞至此函式的資料來源 (相片專輯); 此函式會將相片專輯複製到這個成員變數中。 會實作為`RecyclerView.Adapter`下列必要方法:
 
--   **`OnCreateViewHolder`** &ndash;具現化專案配置檔案和視圖預留位置。
+- **`OnCreateViewHolder`** &ndash;具現化專案配置檔案和視圖預留位置。
 
--   **`OnBindViewHolder`** &ndash;將位於指定位置的資料載入至其參考儲存在指定之視圖持有者的視圖中。
+- **`OnBindViewHolder`** &ndash;將位於指定位置的資料載入至其參考儲存在指定之視圖持有者的視圖中。
 
--   **`ItemCount`** &ndash;傳回資料來源中的專案數。
+- **`ItemCount`** &ndash;傳回資料來源中的專案數。
 
 當版面建構管理員在中`RecyclerView`定位專案時, 會呼叫這些方法。 下列各節會檢查這些方法的執行。
 
@@ -262,7 +262,7 @@ public override void
 ```
 
 傳入的 view 預留位置物件必須先轉換成衍生的視圖預留位置類型 (在此案例中為), `PhotoViewHolder`才能使用它。
-介面卡會將影像資源載入至 view 持有人的`Image`屬性所參考的視圖中, 並將標題文字複製到 view 持有人的`Caption`屬性所參考的視圖中。 這  會將相關聯的視圖與其資料系結。
+介面卡會將影像資源載入至 view 持有人的`Image`屬性所參考的視圖中, 並將標題文字複製到 view 持有人的`Caption`屬性所參考的視圖中。 這會將相關聯的視圖與其資料系結。
 
 請注意`OnBindViewHolder` , 是直接處理資料結構的程式碼。 在此情況下`OnBindViewHolder` , 瞭解如何將`RecyclerView`專案位置對應至資料來源中的相關資料項目。 在此情況下, 此對應很簡單, 因為此位置可當做相片專輯的陣列索引使用;不過, 更複雜的資料來源可能需要額外的程式碼, 才能建立這種對應。
 

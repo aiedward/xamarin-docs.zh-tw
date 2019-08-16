@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: c5348ab754139dbd4012f6bfe9d22068ac16d12b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d5b3f084be7adc664dcb52342af617788f4dde48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509250"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526230"
 ---
 # <a name="creating-a-service"></a>建立服務
 
@@ -75,7 +75,7 @@ public class DemoService : Service
 
 在 Android 中啟動服務的最基本方式是分派`Intent` , 其中包含中繼資料, 以協助識別應該啟動的服務。 有兩種不同的意圖樣式可以用來啟動服務:
 
--   **明確意圖**明確的意圖會確切地識別應該使用哪一種服務來完成指定的動作。  &ndash; 明確的意圖可以視為具有特定位址的字母;Android 會將意圖路由傳送至明確識別的服務。 此程式碼片段是使用明確意圖來啟動名`DownloadService`為之服務的其中一個範例:
+- **明確意圖**明確的意圖會確切地識別應該使用哪一種服務來完成指定的動作。 &ndash; 明確的意圖可以視為具有特定位址的字母;Android 會將意圖路由傳送至明確識別的服務。 此程式碼片段是使用明確意圖來啟動名`DownloadService`為之服務的其中一個範例:
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ public class DemoService : Service
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
--   **隱含意圖**&ndash;這種意圖會鬆散識別使用者希望執行的動作, 但完成該動作的確切服務是未知的。 隱含的意圖可以視為「可能會關注的目標」的字母。
+- **隱含意圖**&ndash;這種意圖會鬆散識別使用者希望執行的動作, 但完成該動作的確切服務是未知的。 隱含的意圖可以視為「可能會關注的目標」的字母。
     Android 會檢查意圖的內容, 並判斷是否有符合意圖的現有服務。
 
     _意圖篩選_是用來協助符合隱含意圖與已註冊的服務。 意圖篩選是新增至**androidmanifest.xml**的 xml 專案, 其中包含必要的中繼資料, 以協助符合具有隱含意圖的服務。

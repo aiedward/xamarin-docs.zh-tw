@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: fb58cb000d8179422979d9661950db82d1884414
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: a9297d9a19ef56d658e983c38329b1aa400ffd05
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680945"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521713"
 ---
 # <a name="async-support-overview"></a>非同步支援概觀
 
@@ -120,9 +120,9 @@ public async Task<int> DownloadHomepage()
 
 請注意下列幾點:
 
--  方法宣告包含`async`關鍵字。
--  傳回型別是`Task<int>` , 因此呼叫程式碼可以`int`存取在這個方法中計算的值。
--  Return 語句是`return exampleInt;`一個整數物件– `Task<int>`方法傳回的事實是語言改善的一部分。
+- 方法宣告包含`async`關鍵字。
+- 傳回型別是`Task<int>` , 因此呼叫程式碼可以`int`存取在這個方法中計算的值。
+- Return 語句是`return exampleInt;`一個整數物件– `Task<int>`方法傳回的事實是語言改善的一部分。
 
 
 ### <a name="calling-an-async-method-1"></a>呼叫非同步方法1
@@ -148,11 +148,11 @@ GetButton.Click += async (sender, e) => {
 
 附註：
 
--  匿名委派具有 async 關鍵字前置詞。
--  非同步方法 DownloadHomepage 會傳回儲存在<int> sizeTask 變數中的工作。
--  程式碼會等候 sizeTask 變數。  *這*是方法暫止的位置, 控制權會傳回給呼叫程式碼, 直到非同步工作在自己的執行緒上完成為止。
--  當工作  在方法的第一行建立時, 執行不會暫停, 而是在其中建立工作。 Await 關鍵字表示暫停執行的位置。
--  當非同步工作完成時, 會從 await 行設定 intResult 並繼續執行原始執行緒。
+- 匿名委派具有 async 關鍵字前置詞。
+- 非同步方法 DownloadHomepage 會傳回儲存在\<sizeTask 變數中的工作 int >。
+- 程式碼會等候 sizeTask 變數。  *這*是方法暫止的位置, 控制權會傳回給呼叫程式碼, 直到非同步工作在自己的執行緒上完成為止。
+- 當工作在方法的第一行建立時, 執行不會暫停, 而是在其中建立工作。 Await 關鍵字表示暫停執行的位置。
+- 當非同步工作完成時, 會從 await 行設定 intResult 並繼續執行原始執行緒。
 
 
 ### <a name="calling-an-async-method-2"></a>呼叫非同步方法2
@@ -181,9 +181,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 一些重點:
 
--  方法已標記為, `async` `void`但傳回。 這通常只會針對事件處理常式完成 (否則, 您`Task`會傳回或`Task<TResult>` )。
--  方法上的程式碼`await`會直接在變數的指派上 ( `intResult` ), 與先前的範例不同, 我們使用了`Task<int>`中繼變數來參考工作。 `DownloadHomepage`  *這*是在非同步方法于另一個執行緒上完成之前, 將控制權傳回給呼叫者的位置。
--  當非同步方法完成並傳回時, 會繼續`await`執行, 這表示會傳回整數結果, 然後在 UI widget 中呈現。
+- 方法已標記為, `async` `void`但傳回。 這通常只會針對事件處理常式完成 (否則, 您`Task`會傳回或`Task<TResult>` )。
+- 方法上的程式碼`await`會直接在變數的指派上 ( `intResult` ), 與先前的範例不同, 我們使用了`Task<int>`中繼變數來參考工作。 `DownloadHomepage`  *這*是在非同步方法于另一個執行緒上完成之前, 將控制權傳回給呼叫者的位置。
+- 當非同步方法完成並傳回時, 會繼續`await`執行, 這表示會傳回整數結果, 然後在 UI widget 中呈現。
 
 
 ## <a name="summary"></a>總結
