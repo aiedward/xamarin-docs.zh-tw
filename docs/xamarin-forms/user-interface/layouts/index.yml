@@ -1,0 +1,105 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Xamarin.Forms 版面配置
+metadata:
+  title: Xamarin.Forms 版面配置
+  description: 了解 Xamarin.Forms 的版面配置類別與版面配置特性。
+  ms.topic: landing-page
+  ms.prod: xamarin
+  ms.assetid: CF6BD41F-CD4B-4576-841D-B8A49A4EC754
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 08/14/2019
+abstract:
+  description: 了解 Xamarin.Forms 的版面配置類別與版面配置特性。
+sections:
+  - title: null
+    items:
+      - type: list
+        style: cards
+        className: cardsB
+        items:
+          - href: stack-layout.md
+            html: 了解如何以水平或垂直方式組織一維堆疊中的檢視。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: stack-layout.md
+            title: StackLayout
+          - href: grid.md
+            html: 了解如何將檢視組織成有相稱或絕對大小的資料列和資料行。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: grid.md
+            title: Grid
+          - href: flex-layout.md
+            html: 了解如何利用環繞功能來直向或橫向排列檢視。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: flex-layout.md
+            title: FlexLayout
+          - href: absolute-layout.md
+            html: 了解如何設定座標與大小值的比例或絕對值來排列檢視。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: AbsoluteLayout
+          - href: relative-layout.md
+            html: 了解如何設定相對於版面配置或同層級檢視來排列檢視。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: absolute-layout.md
+            title: RelativeLayout
+          - href: scroll-view.md
+            html: 了解如何在檢視無法顯示在螢幕界限內時提供捲軸。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: scroll-view.md
+            title: ScrollView
+          - href: frame.md
+            html: 了解如何利用可以設定色彩、陰影的框架及其他選項來環繞檢視。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: frame.md
+            title: Frame
+          - href: layout-options.md
+            html: 了解如何定義檢視，使其對齊父版面配置。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: layout-options.md
+            title: LayoutOptions
+          - href: margin-and-padding.md
+            html: 了解如何控制項目和其鄰近項目及其子項目之間的距離。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: margin-and-padding.md
+            title: 邊界和邊框間距
+          - href: device-orientation.md
+            html: 了解如何設定及配合裝置方向的變更。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: device-orientation.md
+            title: 裝置方向
+          - href: tablet.md
+            html: 了解如何最佳化平板電腦與桌上型電腦之應用程式的版面配置。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: tablet.md
+            title: 平板電腦與桌上型電腦的版面配置
+          - href: bindable-layouts.md
+            html: 了解如何允許版面配置類別藉由繫結到項目集合來產生其內容及設定其外觀。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: bindable-layouts.md
+            title: 可繫結的版面配置
+          - href: layout-compression.md
+            html: 了解如何從視覺化樹狀結構移除特定的版面配置物件，以改進頁面呈現的效能。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: layout-compression.md
+            title: 版面配置壓縮
+          - href: custom.md
+            html: 了解如何建立可以處理方向的自訂版面配置類別。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: custom.md
+            title: 自訂版面配置
