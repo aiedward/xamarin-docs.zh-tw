@@ -1,24 +1,24 @@
 ---
 title: MonoTouch.Dialog Json 標記
-description: 本文件說明可用來建置使用 MonoTouch.Dialog Xamarin.iOS 使用者介面的 JSON 語法。
+description: 本檔說明可以用來建立使用 MonoTouch 之 Xamarin iOS 使用者介面的 JSON 語法。
 ms.prod: xamarin
 ms.assetid: 59F3E18C-3A73-69B8-DA5E-21B19B9DFB98
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: bc6842871a2f59c9851e90adbc6609707a7ecd1f
-ms.sourcegitcommit: 85c45dc28ab3625321c271804768d8e4fce62faf
+ms.openlocfilehash: 08f10dc02380a09b7ab81ff1539f5da6a9d768f6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67039653"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528435"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 標記
 
-此頁面描述接受 MonoTouch.Dialog 的 Json 標記[JsonElement](xref:MonoTouch.Dialog.JsonElement)
+此頁面說明 MonoTouch 所接受的 Json 標記。對話方塊的[JsonElement](xref:MonoTouch.Dialog.JsonElement)
 
-讓我們開始的範例。 以下是完整的 Json 檔案，才能傳遞至 JsonElement。
+讓我們從範例開始。 以下是可傳遞至 JsonElement 的完整 Json 檔案。
 
 ```json
 {     
@@ -77,9 +77,9 @@ ms.locfileid: "67039653"
 
 上述標記會產生下列 UI:
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "建立所指定標記的 UI")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "指定標記所建立的 UI")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
-在樹狀目錄中的每個項目可以包含屬性`"id"`。 您可在執行階段參考個別章節或使用 JsonElement 索引子的項目。 與下列類似：
+樹狀結構中的每個元素都可以`"id"`包含屬性。 您可以在執行時間使用 JsonElement 索引子來參考個別區段或元素。 與下列類似：
 
 ```csharp
 var jsonElement = JsonElement.FromFile ("demo.json");
@@ -94,103 +94,103 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
 ## <a name="root-element-syntax"></a>根項目語法
 
-根項目包含下列值：
+根項目包含下列值:
 
--  `title`
--  `sections` (選擇性)
+- `title`
+- `sections` (選擇性)
 
 
-根項目可顯示區段內，為要建立的巢狀的控制站的項目。 在此情況下，額外的屬性`"type"`必須設為 `"root"`
+根項目可以出現在區段內, 做為建立嵌套控制器的元素。 在此情況下, 必須將`"type"`額外的屬性設定為`"root"`
 
  <a name="url" />
 
 
 ### <a name="url"></a>URL
 
-如果`"url"`設定屬性時，如果使用者點選此 RootElement，程式碼會從指定的 url 要求檔案，並將內容顯示的新資訊。 您可以使用此選項來建立從伺服器會根據使用者的點選延伸使用者介面。
+如果已設定屬性, 則當使用者按下此 RootElement 時, 程式碼將會從指定的 url 要求檔案, 並讓內容顯示新的資訊。 `"url"` 您可以使用這個來根據使用者所按的內容, 從伺服器擴充使用者介面。
 
  <a name="group" />
 
 
 ### <a name="group"></a>群組
 
-如果設定，這會將根項目的群組名稱。 群組名稱用來挑選會顯示為根項目，其中一個項目中的巢狀項目值的摘要。 這是值的核取方塊或選項按鈕的值。
+如果設定, 這會設定根項目的組名。 組名是用來挑選摘要, 其會顯示為元素中其中一個嵌套元素的根項目值。 這可能是核取方塊的值或選項按鈕的值。
 
  <a name="radioselected" />
 
 
 ### <a name="radioselected"></a>radioselected
 
-識別在巢狀項目中選取的選項項目
+識別在 [嵌套專案] 中選取的選項按鈕
 
  <a name="title" />
 
 
 ### <a name="title"></a>標題
 
-如果有的話，它會用於 RootElement 標題
+如果存在, 則會是用於 RootElement 的標題
 
  <a name="type" />
 
 
-### <a name="type"></a>類型
+### <a name="type"></a>型別
 
-必須設定為`"root"`時這會出現在 （這用來建立巢狀控制站） 一節。
+當出現在區段`"root"`中時, 必須設為 (用於嵌套控制器)。
 
  <a name="sections" />
 
 
 ### <a name="sections"></a>區段
 
-這是 Json 陣列，具有個別的區段
+這是具有個別區段的 Json 陣列
 
  <a name="Section_Syntax" />
 
 
 ## <a name="section-syntax"></a>區段語法
 
-此部分包含：
+區段包含:
 
--  `header` (選擇性)
--  `footer` (選擇性)
--  `elements` 陣列
+- `header` (選擇性)
+- `footer` (選擇性)
+- `elements` 陣列
 
 
  <a name="header" />
 
 
-### <a name="header"></a>標頭
+### <a name="header"></a>頁首
 
-如果有的話，標頭文字會顯示與區段的標題。
+如果有, 則標頭文字會顯示為區段的標題。
 
  <a name="footer" />
 
 
-### <a name="footer"></a>頁尾
+### <a name="footer"></a>尾
 
-如果有的話，顯示頁尾區段的底部。
+如果有的話, 頁尾會顯示在區段底部。
 
  <a name="elements" />
 
 
 ### <a name="elements"></a>項目
 
-這是元素的陣列。 每個項目必須包含至少一個索引鍵，`"type"`用來識別要建立項目類型的索引鍵。
-某些項目共用一些通用的屬性，例如`"caption"`和`"value"`。 以下是支援的項目清單：
+這是元素的陣列。 每個元素都必須包含至少一個金鑰, `"type"`也就是用來識別要建立之專案類型的索引鍵。
+某些元素會共用一些通用屬性, 例如`"caption"`和`"value"`。 以下是支援的元素清單:
 
--  `string` 項目 （兩者都包含或不含樣式）
--  `entry` 行 （「 一般 」 或 「 密碼 」）
--  `boolean` 值 （使用參數或影像）
+- `string`元素 (包含和不含樣式)
+- `entry`行 (一般或密碼)
+- `boolean`值 (使用參數或影像)
 
 
-字串項目可用來當做按鈕所提供的方法，在使用者點選附屬應用程式或儲存格上時要叫用
+字串元素可以做為按鈕使用, 方法是提供在使用者點擊儲存格或附件時叫用的方法。
 
  <a name="Rendering_Elements" />
 
 
-## <a name="rendering-elements"></a>轉譯項目
+## <a name="rendering-elements"></a>轉譯元素
 
-轉譯項目根據C#StringElement 和 StyledStringElement 可以轉譯以各種方式的資訊，並就能夠以各種方式呈現它們。 您可以建立最簡單的項目，像這樣：
+轉譯專案是以C# StringElement 和 StyledStringElement 為基礎, 而且可以各種方式轉譯資訊, 而且可能會以各種方式呈現。 最簡單的元素可以建立如下:
 
 ```json
 {
@@ -199,7 +199,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 }
 ```
 
-這會顯示一個簡單的字串，包含所有預設值： 字型、 背景、 文字色彩和裝飾。 您可對這些項目的動作連結，並將其設定的行為與按鈕一樣`"ontap"`屬性或`"onaccessorytap"`屬性：
+這會顯示一個簡單字串, 其中包含所有預設值: 字型、背景、文字色彩和裝飾。 您可以將動作連結至這些專案, 並藉由設定`"ontap"`屬性`"onaccessorytap"`或屬性, 使其行為類似按鈕:
 
 ```json
 {
@@ -209,7 +209,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 }
 ```
 
-上述會叫用 「 ShowPhotos 」 類別中的方法"Acme.PhotoLibrary 」。 `"onaccessorytap"`很類似，但它將才會叫用使用者點選來代替點選的資料格附屬應用程式。 若要這麼做，您也必須設定 附屬應用程式：
+上述將會叫用類別 "Acme. PhotoLibrary" 中的 "ShowPhotos" 方法。 `"onaccessorytap"`類似, 但只有在使用者點擊附件而不是在儲存格上時, 才會叫用。 若要啟用此動作, 您也必須設定此附件:
 
 ```json
 {
@@ -221,7 +221,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 }
 ```
 
-轉譯項目可以顯示兩個字串一次，其中一個是標題，另一個是值。 如何這些字串會轉譯樣式而定，您可以將此使用`"style"`屬性。 預設值會顯示標題左側和右側的值。 如需詳細資訊的樣式，請參閱節。 色彩是使用 '#' 符號，後面接著十六進位的數字，代表紅色、 綠色、 藍色和 alpha 可能值的值來編碼。 以簡短形式 （3 或 4 個十六進位數字） 代表 RGB 或 RGBA 值，可以編碼內容。 或代表 RGBA 或 RGB 值的長表單 （6 或 8 位數）。 簡短版本是兩次撰寫相同的十六進位數字的縮寫。 "#1bc"常數所以 intepreted 為紅色 = 0x11，綠色 = 0xbb 而藍色 = 0xcc。 如果不存在的 alpha 值，色彩就是不透明。 一些範例如下：
+轉譯元素可以同時顯示兩個字串, 其中一個是標題, 另一個則是值。 這些字串的轉譯方式取決於樣式, 您可以使用`"style"`屬性來進行設定。 預設值將會在左邊顯示標題, 並在右側顯示值。 如需詳細資訊, 請參閱樣式一節。 色彩的編碼方式是使用 ' # ' 符號, 後面接著十六進位數位, 代表紅色、綠色、藍色和可能 Alpha 值的值。 內容可以用簡短形式 (3 或4個十六進位數位) 編碼, 代表 RGB 或 RGBA 值。 或是代表 RGB 或 RGBA 值的長格式 (6 或8位數)。 簡短版本是寫入相同十六進位數位兩次的縮寫。 因此 "#1bc" 常數會把為 red = 0x11, 綠色 = 0xbb 和 blue = 0xcc。 如果 Alpha 值不存在, 則色彩是不透明的。 一些範例如下：
 
 ```json
 "background": "#f00"
@@ -231,48 +231,48 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
  <a name="accessory" />
 
 
-### <a name="accessory"></a>附屬應用程式
+### <a name="accessory"></a>棒
 
-會決定要顯示在轉譯元素中，可能的值為附屬應用程式的類型：
+決定要在轉譯專案中顯示的附件類型, 可能的值如下:
 
--  `checkmark`
--  `detail-disclosure`
--  `disclosure-indicator`
+- `checkmark`
+- `detail-disclosure`
+- `disclosure-indicator`
 
 
-如果值不存在，會不顯示任何附屬應用程式
+如果值不存在, 則不會顯示任何附件
 
  <a name="background" />
 
 
 ### <a name="background"></a>背景
 
-背景屬性會設定儲存格的背景色彩。 值是其中一個映像的 URL （在此情況下，會叫用非同步影像下載程式和映像下載完成後，將會更新背景） 也可以使用色彩語法指定的色彩。
+Background 屬性會設定儲存格的背景色彩。 值是影像的 URL (在此情況下, 將會叫用非同步映射下載程式, 並在下載影像後更新背景), 或者可以是使用色彩語法指定的色彩。
 
  <a name="caption" />
 
 
-### <a name="caption"></a>標題
+### <a name="caption"></a>字幕
 
-要轉譯項目上會顯示主要的字串。 可以藉由設定自訂的字型和色彩`"textcolor"`和`"font"`屬性。 轉譯樣式由`"style"`屬性。
+要在轉譯元素上顯示的主要字串。 您可以藉由設定`"textcolor"`和`"font"`屬性來自訂字型和色彩。 轉譯樣式是由`"style"`屬性所決定。
 
  <a name="color_and_detailcolor" />
 
 
 ### <a name="color-and-detailcolor"></a>色彩和 detailcolor
 
-要作為主要的文字與詳細的文字色彩。
+要用於主要文字或詳細文字的色彩。
 
  <a name="detailfont_and_font" />
 
 
 ### <a name="detailfont-and-font"></a>detailfont 和字型
 
-若要使用的標題或詳細資料的文字字型。 字型規格的格式是後面接著選擇性地以連字號和點大小的字型名稱。
-以下是有效的字型規格：
+用於標題或詳細資料文字的字型。 字型規格的格式是字型名稱, 並選擇性地加上虛線和點大小。
+以下是有效的字型規格:
 
--  "新細明體"
--  "新細明體 14"
+- Helvetica
+- "Helvetica-14"
 
 
  <a name="linebreak" />
@@ -280,24 +280,24 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
 ### <a name="linebreak"></a>linebreak
 
-決定行進行分解。 可能值為：
+決定如何分解行。 可能值為：
 
--  `character-wrap`
--  `clip`
--  `head-truncation`
--  `middle-truncation`
--  `tail-truncation`
--  `word-wrap`
+- `character-wrap`
+- `clip`
+- `head-truncation`
+- `middle-truncation`
+- `tail-truncation`
+- `word-wrap`
 
 
-兩者`character-wrap`並`word-wrap`可用並搭配`"lines"`屬性設定為 0 時可將轉譯項目轉換成多行項目。
+和`character-wrap` `"lines"`都可以與設定為零的屬性一起使用, 以將轉譯專案轉換成多行元素。 `word-wrap`
 
  <a name="ontap_and_onaccessorytap" />
 
 
 ### <a name="ontap-and-onaccessorytap"></a>ontap 和 onaccessorytap
 
-這些屬性必須指向接受物件做為參數的應用程式中的靜態方法名稱。 當您建立階層使用 JsonDialog.FromFile 或 JsonDialog.FromJson 方法時，您可以傳遞選擇性的物件值。 此物件的值然後傳遞至您的方法。 您可以使用此傳遞一些內容到您的靜態方法。 例如:
+這些屬性必須指向您的應用程式中的靜態方法名稱, 以接受物件做為參數。 當您使用 JsonDialog. FromFile 或 JsonDialog 方法建立階層時, 您可以傳遞選擇性的物件值。 這個物件值接著會傳遞至您的方法。 您可以使用這個來傳遞一些內容給您的靜態方法。 例如：
 
 ```csharp
 class Foo {
@@ -319,20 +319,20 @@ class Foo {
 
 ### <a name="lines"></a>線條
 
-如果此值設為零，它就會根據所含的字串內容項目自動調整大小。 針對此目的，您也必須設定`"linebreak"`屬性，以`"character-wrap"`或`"word-wrap"`。
+如果此值設定為零, 則會根據包含的字串內容, 使元素變成自動大小。 若要讓此作業正常, 您也必須`"linebreak"`將屬性`"character-wrap"`設定`"word-wrap"`為或。
 
  <a name="style" />
 
 
 ### <a name="style"></a>樣式
 
-樣式會決定將用來呈現內容的儲存格樣式的類型和它們對應到 UITableViewCellStyle 列舉值。
+樣式會決定要用來呈現內容的儲存格樣式類型, 並對應至 UITableViewCellStyle 列舉值。
 可能值為：
 
--  `"default"`
--  `"value1"`
--  `"value2"`
--  `"subtitle"` ： 子標題的文字。
+- `"default"`
+- `"value1"`
+- `"value2"`
+- `"subtitle"`: 具有子標題的文字。
 
 
  <a name="subtitle" />
@@ -340,29 +340,29 @@ class Foo {
 
 ### <a name="subtitle"></a>子標題
 
-要用於翻譯字幕的值。 這是要將樣式設定為捷徑`"subtitle"`並設定`"value"`屬性設為字串。
-這會同時與單一項目。
+要用於子標題的值。 這是將樣式設定為`"subtitle"` , 並`"value"`將屬性設定為字串的快捷方式。
+這會使用單一專案來執行。
 
  <a name="textcolor" />
 
 
 ### <a name="textcolor"></a>textcolor
 
-若要使用的文字色彩。
+要用於文字的色彩。
 
  <a name="value" />
 
 
 ### <a name="value"></a>value
 
-要轉譯項目上顯示的次要值。 這個配置會受到`"style"`設定。 可以藉由設定自訂的字型和色彩`"detailfont"`和`"detailcolor"`。
+要顯示在轉譯元素上的次要值。 此`"style"`設定會影響此配置。 您可以藉由設定`"detailfont"`和`"detailcolor"`自訂字型和色彩。
 
  <a name="Boolean_Elements" />
 
 
-## <a name="boolean-elements"></a>布林值項目
+## <a name="boolean-elements"></a>布林值元素
 
-布林值項目應將 type 設為`"bool"`，可以包含`"caption"`來顯示和`"value"`設為 true 或 false。 如果`"on"`和`"off"`設定屬性，它們會假設為映像。 映像，在解決相對於目前工作目錄的應用程式中。 如果您想要參考相對套件組合的檔案，您可以使用`"~"`來代表應用程式套件組合目錄的捷徑。 例如`"~/favorite.png"`會包含在組合檔案 favorite.png。 例如:
+布林值元素應將類型設定`"bool"`為、可以包含`"caption"`要顯示的, `"value"`而且會設定為 true 或 false。 如果已設定`"off"`和屬性, 則會假設為影像。 `"on"` 映射會相對於應用程式中目前的工作目錄來解析。 如果您想要參考配套相關的檔案, 您可以使用`"~"`做為代表應用程式套件組合目錄的快捷方式。 例如, `"~/favorite.png"`將會是包含在組合檔案中的最愛 .png。 例如：
 
 ```json
 { 
@@ -383,16 +383,16 @@ class Foo {
  <a name="type" />
 
 
-### <a name="type"></a>類型
+### <a name="type"></a>型別
 
-類型可以設定為`"boolean"`或`"checkbox"`。 如果設定為布林值，則會使用 UISlider 或映像 (如果有兩個`"on"`和`"off"`設定)。 如果設定為核取方塊，則會使用一個核取方塊。 `"group"`屬性可以用來標記為屬於特定群組的布林值項目。 這是很有用，如果也有包含根`"group"`屬性做為將摘要說明隸屬於相同的群組結果中的所有布林值 （或核取方塊） 的計數。
+類型可以設定為`"boolean"`或。 `"checkbox"` 如果設定為布林值, 則會使用 UISlider 或影像 (如果`"on"`同時`"off"`設定和)。 如果設定為 checkbox, 則會使用 checkbox。 `"group"`屬性可以用來標記屬於特定群組的布林專案。 如果包含的根也具有`"group"`屬性做為根, 將會以屬於相同群組的所有布林值 (或核取方塊) 的計數來匯總結果, 這會很有用。
 
  <a name="Entry_Elements" />
 
 
-## <a name="entry-elements"></a>項目項目
+## <a name="entry-elements"></a>Entry 元素
 
-您可以使用項目的項目，讓使用者輸入的資料。 項目元素的類型是`"entry"`或`"password"`。 `"caption"`屬性設定為文字以顯示在右側，而`"value"`為初始值設定為設定的項目。 `"placeholder"`用來顯示提示使用者輸入 （它會顯示灰色） 的空白項目。 以下是一些範例：
+您可以使用 entry 元素, 讓使用者輸入資料。 Entry 元素的類型為`"entry"`或。 `"password"` 屬性會設定為要在右側顯示的文字, `"value"`而會設定為初始值以將專案設定為。 `"caption"` `"placeholder"`是用來向使用者顯示空白專案的提示 (顯示為灰色)。 以下是一些範例：
 
 ```json
 {
@@ -424,29 +424,29 @@ class Foo {
  <a name="autocorrect" />
 
 
-### <a name="autocorrect"></a>自動校正
+### <a name="autocorrect"></a>校正
 
-決定要使用的項目自動校正樣式。 可能的值為 true 或 false (或字串`"yes"`和`"no"`)。
+決定要用於專案的自動校正樣式。 可能的值為 true 或 false (或字串`"yes"`和`"no"`)。
 
  <a name="capitalization" />
 
 
 ### <a name="capitalization"></a>大小寫
 
-若要使用之項目的大小寫樣式。 可能值為：
+要用於專案的大小寫樣式。 可能值為：
 
--  `all`
--  `none`
--  `sentences`
--  `words`
+- `all`
+- `none`
+- `sentences`
+- `words`
 
 
  <a name="caption" />
 
 
-### <a name="caption"></a>標題
+### <a name="caption"></a>字幕
 
-若要使用之項目的標題
+要用於專案的標題
 
  <a name="keyboard" />
 
@@ -455,42 +455,42 @@ class Foo {
 
 要用於資料輸入的鍵盤類型。 可能值為：
 
--  `ascii`
--  `decimal`
--  `default`
--  `email`
--  `name`
--  `numbers`
--  `numbers-and-punctuation`
--  `twitter`
--  `url`
+- `ascii`
+- `decimal`
+- `default`
+- `email`
+- `name`
+- `numbers`
+- `numbers-and-punctuation`
+- `twitter`
+- `url`
 
 
  <a name="placeholder" />
 
 
-### <a name="placeholder"></a>預留位置
+### <a name="placeholder"></a>占
 
-當項目具有空值會顯示提示文字。
+當專案具有空白值時所顯示的提示文字。
 
  <a name="return-key" />
 
 
-### <a name="return-key"></a>傳回索引鍵
+### <a name="return-key"></a>return 鍵
 
-傳回索引鍵所用的標籤。 可能值為：
+用於傳回索引鍵的標籤。 可能值為：
 
--  `default`
--  `done`
--  `emergencycall`
--  `go`
--  `google`
--  `join`
--  `next`
--  `route`
--  `search`
--  `send`
--  `yahoo`
+- `default`
+- `done`
+- `emergencycall`
+- `go`
+- `google`
+- `join`
+- `next`
+- `route`
+- `search`
+- `send`
+- `yahoo`
 
 
  <a name="value" />
@@ -498,22 +498,22 @@ class Foo {
 
 ### <a name="value"></a>value
 
-項目的初始值
+專案的初始值
 
  <a name="Radio_Elements" />
 
 
-## <a name="radio-elements"></a>選項項目
+## <a name="radio-elements"></a>單選元素
 
-選項項目具有型別`"radio"`。 已選取的項目由所選取`radioselected`其包含的根項目上的屬性。
-此外，如果值為`"group"`屬性，這個選項按鈕所屬的群組。
+單選元素的類型`"radio"`為。 所選取的專案是由其包含根`radioselected`元素的屬性所選取。
+此外, 如果設定`"group"`了屬性的值, 這個選項按鈕就屬於該群組。
 
  <a name="Date_and_Time_Elements" />
 
 
-## <a name="date-and-time-elements"></a>日期和時間項目
+## <a name="date-and-time-elements"></a>日期和時間元素
 
-項目型別`"datetime"`，`"date"`和`"time"`用來呈現日期與時間、 日期或時間。 標題和值，這些項目會採用做為參數。 值可以撰寫.NET DateTime.Parse 函數所支援的任何格式。 範例：
+專案類型`"datetime"` `"date"`和會用來轉譯具有時間、日期或時間的日期。`"time"` 這些元素會以標題和值做為參數。 此值可以使用 .NET DateTime. Parse 函式所支援的任何格式來撰寫。 範例：
 
 ```json
 "header": "Dates and Times",
@@ -537,9 +537,9 @@ class Foo {
  <a name="Html/Web_Element" />
 
 
-## <a name="htmlweb-element"></a>Html/Web 項目
+## <a name="htmlweb-element"></a>Html/Web 元素
 
-您可以建立一個儲存格，當點選會將內嵌轉譯指定的 URL，內容 UIWebView 本機或遠端使用`"html"`型別。 只有兩個屬性，這個項目的`"caption"`和`"url"`:
+當按下時, 您可以建立資料格, 以使用`"html"`類型來內嵌呈現指定 URL 內容 (本機或遠端) 的 UIWebView。 這個元素的唯一兩個屬性是`"caption"`和`"url"`:
 
 ```json
 {

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 1f29f283207ed8c1382424b3680177886ad2c806
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f68e192db0b7acceb325ad44f40dce9cb229a26a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653162"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528980"
 ---
 # <a name="colors-in-xamarinforms"></a>在 Xamarin.Forms 中的色彩
 
@@ -24,12 +24,12 @@ _Xamarin.Forms 提供彈性的跨平台色彩類別。_
 
 `Color`類別提供多種方法來建立色彩的執行個體
 
--  **命名色彩**-集合的一般具名色彩，包括`Red`， `Green`，和`Blue`。
--  **FromHex** -類似于 HTML 中使用之語法的字串值, 例如 "00FF00"。 您可以選擇性地將 Alpha 指定為第一對字元 ("CC00FF00")。
--  **FromHsla** -色調、 飽和度和亮度`double`具選擇性的 alpha 值 (介於 0.0-1.0) 的值。
--  **FromRgb** -紅色、 綠色和藍色`int`值 (0-255)。
--  **FromRgba** -紅色、 綠色、 藍色和 alpha`int`值 (0-255)。
--  **FromUint** -將單一`double`值，表示**argb**。
+- **命名色彩**-集合的一般具名色彩，包括`Red`， `Green`，和`Blue`。
+- **FromHex** -類似于 HTML 中使用之語法的字串值, 例如 "00FF00"。 您可以選擇性地將 Alpha 指定為第一對字元 ("CC00FF00")。
+- **FromHsla** -色調、 飽和度和亮度`double`具選擇性的 alpha 值 (介於 0.0-1.0) 的值。
+- **FromRgb** -紅色、 綠色和藍色`int`值 (0-255)。
+- **FromRgba** -紅色、 綠色、 藍色和 alpha`int`值 (0-255)。
+- **FromUint** -將單一`double`值，表示**argb**。
 
 以下是一些範例的色彩，指派給`BackgroundColor`的某些標籤，使用不同的允許的語法變化：
 
@@ -69,11 +69,11 @@ IOS 和 Android 上這個執行個體設定為以對比的色彩，會顯示在�
 
 `Color` 執行個體包含額外的方法，可用來建立新的色彩：
 
--  **AddLuminosity** -藉由提供差異所修改的明暗度會傳回新的色彩。
--  **WithHue** -傳回新的色彩，以提供的值取代色調。
--  **WithLuminosity** -傳回新的色彩，以提供的值取代的明暗度。
--  **WithSaturation** -傳回新的色彩、 飽和度取代所提供的值。
--  **MultiplyAlpha** -藉由修改的 alpha，乘以所提供的 alpha 值傳回新的色彩。
+- **AddLuminosity** -藉由提供差異所修改的明暗度會傳回新的色彩。
+- **WithHue** -傳回新的色彩，以提供的值取代色調。
+- **WithLuminosity** -傳回新的色彩，以提供的值取代的明暗度。
+- **WithSaturation** -傳回新的色彩、 飽和度取代所提供的值。
+- **MultiplyAlpha** -藉由修改的 alpha，乘以所提供的 alpha 值傳回新的色彩。
 
 ## <a name="implicit-conversions"></a>隱含轉換
 

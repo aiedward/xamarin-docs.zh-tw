@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2256e52e1b2a468ecbed97d5c7ed2d0a05f6cc4e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d1a96c81da8d71d92e3ce5acd9928b293f3cf3dd
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510752"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524700"
 ---
 # <a name="app-linking-in-android"></a>Android 中的應用程式連結
 
@@ -159,7 +159,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
 
 有兩個可以執行的測試, 以確保意圖篩選已正確設定, 且應用程式已設定為 URI 的預設處理常式:
 
-1.  數位資產檔案已正確裝載, 如上所述。 第一次測試會分派 Android 應重新導向至行動應用程式的意圖。 Android 應用程式應該會啟動, 並顯示為 URL 註冊的活動。 在命令提示字元中, 輸入:
+1. 數位資產檔案已正確裝載, 如上所述。 第一次測試會分派 Android 應重新導向至行動應用程式的意圖。 Android 應用程式應該會啟動, 並顯示為 URL 註冊的活動。 在命令提示字元中, 輸入:
 
     ```shell
     $ adb shell am start -a android.intent.action.VIEW \
@@ -167,7 +167,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
         -d "http://<domain1>/recipe/scalloped-potato"
     ```
 
-2.  針對安裝在指定裝置上的應用程式顯示現有的連結處理原則。 下列命令會使用下列資訊, 傾印裝置上每個使用者的連結原則清單。 在命令提示字元中輸入下列命令：
+2. 針對安裝在指定裝置上的應用程式顯示現有的連結處理原則。 下列命令會使用下列資訊, 傾印裝置上每個使用者的連結原則清單。 在命令提示字元中輸入下列命令：
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps

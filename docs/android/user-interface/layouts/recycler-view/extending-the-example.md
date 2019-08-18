@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: fd813427836b0250b84941eca54d6bbe6219518e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ea3bfccd9133f6bb4cdf2e2a72bd20a307fb80d1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645325"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522500"
 ---
 # <a name="extending-the-recyclerview-example"></a>擴充 RecyclerView 範例
 
@@ -26,11 +26,11 @@ ms.locfileid: "68645325"
 
 為了說明如何處理專案點擊事件, 下列步驟將說明如何修改基本相片觀賞應用程式, 以報告使用者已觸及哪些相片。 當範例應用程式中發生專案按下事件時, 會發生下列順序:
 
-1.  相片`CardView`會偵測到專案點擊事件並通知介面卡。
+1. 相片`CardView`會偵測到專案點擊事件並通知介面卡。
 
-2.  介面卡會將事件 (含有專案位置資訊) 轉送到活動的專案按一下處理常式。
+2. 介面卡會將事件 (含有專案位置資訊) 轉送到活動的專案按一下處理常式。
 
-3.  活動的專案按一下處理常式會回應專案點擊事件。
+3. 活動的專案按一下處理常式會回應專案點擊事件。
 
 首先, 會將名`ItemClick`為的事件處理常式成員加入`PhotoAlbumAdapter`至類別定義:
 
@@ -70,7 +70,7 @@ void OnClick (int position)
 }
 ```
 
-這個`OnClick`方法是來自專案視圖  之專案按一下事件的介面卡接聽程式。 在`PhotoViewHolder`此接聽程式可以向專案視圖註冊 (透過專案視圖的視圖持有者) 之前, 必須修改此函式, 以接受此方法做為其他引數, `OnClick`並向專案視圖`Click`事件註冊。
+這個`OnClick`方法是來自專案視圖之專案按一下事件的介面卡接聽程式。 在`PhotoViewHolder`此接聽程式可以向專案視圖註冊 (透過專案視圖的視圖持有者) 之前, 必須修改此函式, 以接受此方法做為其他引數, `OnClick`並向專案視圖`Click`事件註冊。
 以下是修改過`PhotoViewHolder`的構造函式:
 
 ```csharp

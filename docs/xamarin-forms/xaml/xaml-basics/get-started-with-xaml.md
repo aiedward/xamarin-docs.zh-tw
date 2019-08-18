@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 085960b92aa0f349d4cb2737385e723d8b6aa6b7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f4acadc1153c93ebade7453cfd7a79f5b052e513
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656505"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528364"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
@@ -211,9 +211,9 @@ namespace XamlSamples
 
 針對更複雜類型的屬性，不過，轉換器會用於剖析的 XAML。 這些是衍生自的 Xamarin.Forms 中的類別`TypeConverter`。 有許多是公用類別，但有些不是。 這個特定的 XAML 檔案，這些類別的數個播放在幕後的角色：
 
--  `LayoutOptionsConverter` 針對`VerticalOptions`屬性
--  `FontSizeConverter` 針對`FontSize`屬性
--  `ColorTypeConverter` 針對`TextColor`屬性
+- `LayoutOptionsConverter` 針對`VerticalOptions`屬性
+- `FontSizeConverter` 針對`FontSize`屬性
+- `ColorTypeConverter` 針對`TextColor`屬性
 
 這些轉換子控管的屬性設定可允許的語法。
 

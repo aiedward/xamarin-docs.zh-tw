@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 775675e11b85bb53bb51c36b71129a086d9dd60f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ccb10829f10ddd76fe7402143d66a32949daccc1
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651253"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980796"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin 中增強的使用者通知
 
@@ -78,7 +78,7 @@ IOS 應用程式可以傳送的遠端通知具有下列功能和屬性:
 IOS 應用程式可使用兩種類型的遠端通知:
 
 - **使用者**對向-在裝置上向使用者顯示這些資訊。
-- **無訊息更新**-這些會提供在背景中更新 iOS 應用程式內容的機制。 收到無訊息更新時, 應用程式可以向外移動到「移除伺服器」, 以提取最新的內容。
+- **無訊息更新**-這些會提供在背景中更新 iOS 應用程式內容的機制。 收到無訊息更新時, 應用程式可以連接到遠端伺服器, 以提取最新的內容。
 
 如需詳細資訊, 請參閱 Apple 的[本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)檔。
 
@@ -168,7 +168,7 @@ IOS 10 的新功能, 開發人員必須通知 OS 哪個環境推播通知是以�
 
     [![](enhanced-user-notifications-images/setup01.png "來源視圖")](enhanced-user-notifications-images/setup01.png#lightbox)
 3. **+** 按一下按鈕以加入新的金鑰。
-4. 針對`aps-environment` **屬性**輸入, 並`production`將`String` **類型保留**為, 並輸入  或作為`development`值: 
+4. 針對`aps-environment` **屬性**輸入, 並`production`將`String` **類型保留**為, 並輸入或作為`development`值: 
 
     [![](enhanced-user-notifications-images/setup02.png "[Ap-環境] 屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
 5. 將變更儲存到檔案。
@@ -177,7 +177,7 @@ IOS 10 的新功能, 開發人員必須通知 OS 哪個環境推播通知是以�
 
 1. 按兩下 **方案總管**中`Entitlements.plist`的檔案以開啟它進行編輯。
 2. **+** 按一下按鈕以加入新的金鑰。
-3. 針對`aps-environment` **屬性**輸入, 並`production`將`String` **類型保留**為, 並輸入  或作為`development`值: 
+3. 針對`aps-environment` **屬性**輸入, 並`production`將`String` **類型保留**為, 並輸入或作為`development`值: 
 
     [![](enhanced-user-notifications-images/setup02w.png "[Ap-環境] 屬性")](enhanced-user-notifications-images/setup02.png#lightbox)
 4. 將變更儲存到檔案。
@@ -536,7 +536,7 @@ namespace MonkeyNotification
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中開啟應用程式的解決方案。
-2. 以滑鼠右鍵按一下**Solution Pad**中的方案名稱, 然後選取   > [新增] [**新增專案**]。
+2. 以滑鼠右鍵按一下**Solution Pad**中的方案名稱, 然後選取  > [新增] [**新增專案**]。
 3. 選取 [ **iOS**  > **延伸** > 模組**通知服務延伸**模組], 然後按 [**下一步]** 按鈕: 
 
     [![](enhanced-user-notifications-images/extension02.png "選取通知服務延伸模組")](enhanced-user-notifications-images/extension02.png#lightbox)

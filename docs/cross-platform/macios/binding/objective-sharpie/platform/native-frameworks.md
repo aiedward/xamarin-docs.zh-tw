@@ -1,37 +1,41 @@
 ---
 title: 繫結原生架構
-description: 本文件說明如何使用目標 Sharpie-建立繫結至程式庫的架構選項分散式的架構。
+description: 本檔說明如何使用目標 Sharpie 的架構選項, 建立以架構形式散發之程式庫的系結。
 ms.prod: xamarin
 ms.assetid: 91AE058A-3A1F-41A9-9DE4-4B96880A1869
 author: asb3993
 ms.author: amburns
 ms.date: 01/15/2016
-ms.openlocfilehash: 0da40918c8ae36c4ab3d4c41128429b49706d653
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: cb6c39b2110161b3f839b8adc03701007f09cc4d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977647"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521891"
 ---
 # <a name="binding-native-frameworks"></a>繫結原生架構
 
-原生程式庫散發為有時[framework](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)。 目標 Sharpie 提供方便的功能，正確地繫結定義架構透過`-framework`選項。
+有時, 原生程式庫會以[架構](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WhatAreFrameworks.html)的形式散發。 目標 Sharpie 提供便利的功能, 可透過`-framework`選項系結已適當定義的架構。
 
-比方說，繫結[Adobe Creative SDK 架構](https://creativesdk.adobe.com/downloads.html)iOS 是簡單：
+例如, 系結適用于 iOS 的[Adobe 創意 SDK 架構](https://creativesdk.adobe.com/downloads.html)很簡單:
 
-<pre>$ <b>sharpie bind \
+```
+$ sharpie bind \
     -framework AdobeCreativeSDKFoundation.framework \
-    -sdk iphoneos8.1</b></pre>
+    -sdk iphoneos8.1
+```
 
-在某些情況下，將指定的一種架構**Info.plist**應該編譯表示針對哪個 SDK 架構。 這項資訊有和任何明確`-sdk`傳遞選項，目標 Sharpie 會推斷它從架構的**Info.plist** (任一`DTSDKName`機碼或多種`DTPlatformName`和`DTPlatformVersion`索引鍵)。
+在某些情況下, 架構會指定**plist** , 以指出應該編譯架構的 SDK。 如果這項資訊存在, 而且`-sdk`未傳遞任何明確的選項, 則目標 Sharpie 會從架構的**Info. plist** ( `DTSDKName`索引鍵或`DTPlatformName`和`DTPlatformVersion`索引鍵的組合) 推斷它。
 
-`-framework`選項不允許明確的標頭檔，來傳遞。 依照慣例為基礎的架構名稱選擇傘標頭檔。 如果找不到的傘狀標頭，目標 Sharpie 不會嘗試繫結架構提供剖析，以及針對 clang 任何 framework 引數的正確保護傘標頭檔，您必須以手動方式執行繫結 (例如`-F`架構搜尋路徑選項)。
+`-framework`選項不允許傳遞明確的標頭檔。 根據架構名稱, 慣例會選擇傘標頭檔案。 如果找不到傘標頭, 目標 Sharpie 就不會嘗試系結架構, 而且您必須藉由提供要剖析的正確傘標頭檔, 以及 clang 的任何架構引數, 來手動執行系結 (例如`-F`架構搜尋路徑選項)。
 
-在幕後，指定`-framework`的捷徑。 下列繫結引數會與相同`-framework`上述的速記。
-是特殊的重要性`-F .`提供給 clang 架構搜尋路徑 （請注意空格和期限，也就是必要的命令的一部分）。
+實際上, 指定`-framework`只是一個快捷方式。 下列系結引數與上述的`-framework`縮寫相同。
+特別重要的是`-F .`提供給 clang 的架構搜尋路徑 (請注意需要做為命令一部分的空格和句點)。
 
-<pre>$ <b>sharpie bind \
+```
+$ sharpie bind \
     -sdk iphoneos8.1 \
     AdobeCreativeSDKFoundation.framework/Headers/AdobeCreativeSDKFoundation.h \
     -scope AdobeCreativeSDKFoundation.framework/Headers \
-    -c -F .</b></pre>
+    -c -F .
+```

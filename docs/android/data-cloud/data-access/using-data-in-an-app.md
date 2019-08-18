@@ -6,37 +6,37 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 7d402e6f665baa8db68d571945490a8d1ae18881
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 62e3e6944118e82cbd7712a80eb8098f3c6541fc
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649558"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525976"
 ---
 # <a name="using-data-in-an-app"></a>在應用程式中使用資料
 
-**DataAccess_Adv**範例會顯示可用的應用程式，可讓使用者輸入和 CRUD （建立、 讀取、 更新和刪除） 資料庫功能。 在應用程式包含兩個畫面： 清單，以及資料輸入表單。 所有資料存取程式碼都會重複使用 iOS 和 Android 中而不需修改。
+**DataAccess_Adv**範例會顯示可運作的應用程式, 允許使用者輸入和 CRUD (建立、讀取、更新和刪除) 資料庫功能。 應用程式包含兩個畫面: 清單和資料輸入表單。 所有的資料存取程式碼都可在 iOS 和 Android 中重複使用, 而不需要修改。
 
-新增一些資料後的應用程式的畫面看起來像這樣在 Android 上：
+新增一些資料之後, 應用程式畫面在 Android 上看起來像這樣:
 
 ![Android 範例清單](using-data-in-an-app-images/image11.png "Android 範例清單")
 
-![Android 範例詳細](using-data-in-an-app-images/image12.png "Android 範例詳細資料")
+![Android 範例詳細資料](using-data-in-an-app-images/image12.png "Android 範例詳細資料")
 
-如下所示的 Android 專案&ndash;顯示這一節的程式碼包含在**Orm**目錄：
+Android 專案顯示在此區段&ndash;所顯示的程式碼下方, 包含在**Orm**目錄中:
 
 ![Android 專案樹狀結構](using-data-in-an-app-images/image14.png "Android 專案樹狀結構")
 
-原生的 UI 程式碼，在 Android 中的活動不在本文的範圍。 請參閱[Android Listview 和 Adapter](~/android/user-interface/layouts/list-view/index.md)對 UI 控制項的詳細資訊的指南。
+Android 中活動的原生 UI 程式碼超出本檔的範圍。 如需 UI 控制項的詳細資訊, 請參閱[Android listview 和介面卡](~/android/user-interface/layouts/list-view/index.md)指南。
 
 ## <a name="read"></a>讀取
 
-有幾個範例中的讀取作業：
+範例中有幾個讀取作業:
 
--  閱讀清單
--  讀取個別的記錄
+- 讀取清單
+- 讀取個別記錄
 
-中的兩個方法`StockDatabase`類別：
+`StockDatabase`類別中的兩個方法是:
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -53,11 +53,11 @@ public Stock GetStock (int id)
 }
 ```
 
-Android 會將資料轉譯為`ListView`。
+Android 會將資料呈現為`ListView`。
 
 ## <a name="create-and-update"></a>建立和更新
 
-若要簡化應用程式程式碼，單一 save 方法是提供執行 Insert 或 Update 取決於是否已設定主索引鍵。 因為`Id`屬性標記著`[PrimaryKey]`則不應該將其程式碼中的屬性。 這個方法會偵測是否已擷取先前儲存 （藉由檢查主索引鍵屬性），然後插入或據以更新物件：
+為了簡化應用程式的程式碼, 會根據是否已設定 PrimaryKey 來進行插入或更新, 提供單一 save 方法。 因為屬性是`[PrimaryKey]`以屬性標記, 所以您不應該在程式碼中設定它。 `Id` 這個方法會偵測先前是否已儲存值 (藉由檢查 primary key 屬性), 並據以插入或更新物件:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -73,11 +73,11 @@ public int SaveStock (Stock item)
 }
 ```
 
-真實世界應用程式通常會需要一些驗證 （例如必要的欄位、 最小長度或其他商務規則）。 良好的跨平台應用程式實作的邏輯越好共用的程式碼，傳遞驗證錯誤，備份至根據平台的功能顯示的 UI 中的驗證。
+真實世界的應用程式通常需要進行一些驗證 (例如必要欄位、最小長度或其他商務規則)。 良好的跨平臺應用程式可在共用程式碼中盡可能地實作為驗證邏輯, 將驗證錯誤傳回給 UI, 以根據平臺的功能來顯示。
 
 ## <a name="delete"></a>刪除
 
-不同於`Insert`並`Update`方法`Delete<T>`方法可以接受只是主索引鍵的值而不是完整`Stock`物件。 在此範例中`Stock`物件傳遞至方法，但只能使用 Id 屬性會傳遞給`Delete<T>`方法。
+`Delete<T>` `Stock`與和方法`Update`不同的是, 方法只能接受主鍵值, 而不是完整的物件。 `Insert` 在此範例`Stock`中, 會將物件傳遞至方法, 但只會將 Id 屬性傳遞`Delete<T>`給方法。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -90,15 +90,15 @@ public int DeleteStock(Stock stock)
 
 ## <a name="using-a-pre-populated-sqlite-database-file"></a>使用預先填入的 SQLite 資料庫檔案
 
-有些應用程式隨附已填入資料的資料庫。 您可以輕鬆地達成行動應用程式中傳送您的應用程式與現有的 SQLite 資料庫檔案，並將它複製到可寫入的目錄中，才能存取它。 SQLite 是許多平台使用的標準檔案格式，因為有許多工具可用來建立具有 SQLite 的資料庫檔案：
+有些應用程式隨附于已填入資料的資料庫。 您可以在行動應用程式中輕鬆完成此動作, 方法是在應用程式中傳送現有的 SQLite 資料庫檔案, 並將它複製到可寫入的目錄, 然後再存取該檔案。 因為 SQLite 是在許多平臺上使用的標準檔案格式, 所以有一些工具可用來建立 SQLite 資料庫檔案:
 
--   **SQLite Manager Firefox 的延伸模組**&ndash;適用於 Mac 和 Windows 並且產生使用 iOS 和 Android 的相容的檔案。
+- **SQLite Manager Firefox 延伸**模組&ndash;適用于 Mac 和 Windows, 並產生與 iOS 和 Android 相容的檔案。
 
--   **命令列**&ndash;請參閱[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 。
+- **命令列**請參閱[www.sqlite.org/sqlite.html。](http://www.sqlite.org/sqlite.html) &ndash;
 
-使用您的應用程式中建立發佈的資料庫檔案，請留意以確保它們符合您的程式碼的預期，尤其是如果您使用 SQLite.NET 會預期以符合您的 C# 類別和屬性名稱的資料表和資料行命名 （或相關聯的自訂屬性）。
+建立與您的應用程式一起散發的資料庫檔案時, 請留意資料表和資料行的命名, 以確保它們符合您的程式碼所預期的內容, 特別是當您使用的是會C#預期名稱符合您的類別和屬性的 SQLite.NET 時 (或相關聯的自訂屬性)。
 
-若要確保某些程式碼執行 Android 應用程式中的其他任何動作之前，您可以將它放在載入的第一個活動，或者您可以建立`Application`載入任何活動之前的子類別。 以下顯示的程式碼`Application`複製現有的資料庫檔案的子類別**data.sqlite**共 **/Resources/Raw/** 目錄。
+若要確保某些程式碼會在 Android 應用程式中的任何其他專案之前執行, 您可以將它放在要載入的第`Application`一個活動中, 或者您可以建立在任何活動之前載入的子類別。 下列程式`Application`代碼顯示的子類別會複製現有的資料庫檔案**資料。 sqlite**超出 **/Resources/Raw/** 目錄。
 
 ```csharp
 [Application]
@@ -137,7 +137,7 @@ public class YourAndroidApp : Application {
 
 ## <a name="related-links"></a>相關連結
 
-- [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [DataAccess 基本 (範例)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess Advanced (範例)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms 資料存取](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin. 表單資料存取](~/xamarin-forms/data-cloud/data/databases.md)

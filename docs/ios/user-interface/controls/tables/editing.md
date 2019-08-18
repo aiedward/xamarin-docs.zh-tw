@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: a95e772ab0ba5fa6687ef941034f1de87f5d608a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f82057957e76ee683e2a649fdf6c2350bf282c18
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655916"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528647"
 ---
 # <a name="editing-tables-with-xamarinios"></a>使用 Xamarin 編輯資料表
 
@@ -27,9 +27,9 @@ ms.locfileid: "68655916"
 
 有三種方法覆寫會影響滑動手勢, 以在資料格中顯示 [**刪除**] 按鈕:
 
--   **CommitEditingStyle** –資料表來源會偵測是否已覆寫這個方法, 並自動啟用輕刷刪除手勢。 方法的執行應該`DeleteRows` `UITableView`在上呼叫, 使資料格消失, 同時也從您的模型中移除基礎資料 (例如, 陣列、字典或資料庫)。 
--   **CanEditRow** –如果覆寫 CommitEditingStyle, 則會假設所有資料列都可供編輯。 如果這個方法已實作為, 並傳回 false (針對某些特定資料列或所有資料列), 則該資料格中將無法使用「滑動至刪除」手勢。 
--   **TitleForDeleteConfirmation** –選擇性地指定 [**刪除**] 按鈕的文字。 如果未執行此方法, 按鈕文字將會是 "Delete"。 
+- **CommitEditingStyle** –資料表來源會偵測是否已覆寫這個方法, 並自動啟用輕刷刪除手勢。 方法的執行應該`DeleteRows` `UITableView`在上呼叫, 使資料格消失, 同時也從您的模型中移除基礎資料 (例如, 陣列、字典或資料庫)。 
+- **CanEditRow** –如果覆寫 CommitEditingStyle, 則會假設所有資料列都可供編輯。 如果這個方法已實作為, 並傳回 false (針對某些特定資料列或所有資料列), 則該資料格中將無法使用「滑動至刪除」手勢。 
+- **TitleForDeleteConfirmation** –選擇性地指定 [**刪除**] 按鈕的文字。 如果未執行此方法, 按鈕文字將會是 "Delete"。 
 
 
 這些方法會在`TableSource`類別中執行, 如下所示:
@@ -71,10 +71,10 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 
 上`UITableViewSource`有許多不同的方法會影響資料表的編輯模式行為:
 
--   **CanEditRow** –是否可以編輯每個資料列。 傳回 false, 以避免在編輯模式中進行輕刷刪除和刪除。 
--   **CanMoveRow** –傳回 true 以啟用移動 ' handle ' 或 false 以防止移動。 
--   **EditingStyleForRow** –當資料表處於編輯模式時, 這個方法的傳回值會決定資料格是否顯示紅色刪除圖示或綠色的新增圖示。 `UITableViewCellEditingStyle.None`如果資料列不應該是可編輯的, 則傳回。 
--   **MoveRow** –在移動資料列時呼叫, 以便可以修改基礎資料結構, 以符合資料表中顯示的資料。 
+- **CanEditRow** –是否可以編輯每個資料列。 傳回 false, 以避免在編輯模式中進行輕刷刪除和刪除。 
+- **CanMoveRow** –傳回 true 以啟用移動 ' handle ' 或 false 以防止移動。 
+- **EditingStyleForRow** –當資料表處於編輯模式時, 這個方法的傳回值會決定資料格是否顯示紅色刪除圖示或綠色的新增圖示。 `UITableViewCellEditingStyle.None`如果資料列不應該是可編輯的, 則傳回。 
+- **MoveRow** –在移動資料列時呼叫, 以便可以修改基礎資料結構, 以符合資料表中顯示的資料。 
 
 
 前三個方法的實值相當簡單, 除非您想要使用`indexPath`來變更特定資料列的行為, 只要將整個資料表的傳回值硬式編碼即可。
@@ -137,15 +137,15 @@ table.SetEditing (false, true);
 
 上`UITableViewSource`有許多不同的方法會影響資料表的編輯模式行為。 在範例程式碼中, 這些方法已實作為下列方式:
 
--   **EditingStyleForRow** – `UITableViewCellEditingStyle.Delete`傳回包含`UITableViewCellEditingStyle.Insert`資料的資料列, 並傳回最後一列 (會特別新增為 [插入] 按鈕的行為)。 
--   **CustomizeMoveTarget** –當使用者移動資料格時, 此選擇性方法的傳回值可能會覆寫其位置的選擇。 這表示您可以防止它們在特定位置「卸載」資料格, 例如, 此範例會防止任何資料列在 [ **(加入新的)** ] 資料列之後移動。 
--   **CanMoveRow** –傳回 true 以啟用移動 ' handle ' 或 false 以防止移動。 在此範例中, 最後一個資料列的移動「控制碼」已隱藏, 因為它的目的只是做為 [插入] 按鈕。 
+- **EditingStyleForRow** – `UITableViewCellEditingStyle.Delete`傳回包含`UITableViewCellEditingStyle.Insert`資料的資料列, 並傳回最後一列 (會特別新增為 [插入] 按鈕的行為)。 
+- **CustomizeMoveTarget** –當使用者移動資料格時, 此選擇性方法的傳回值可能會覆寫其位置的選擇。 這表示您可以防止它們在特定位置「卸載」資料格, 例如, 此範例會防止任何資料列在 [ **(加入新的)** ] 資料列之後移動。 
+- **CanMoveRow** –傳回 true 以啟用移動 ' handle ' 或 false 以防止移動。 在此範例中, 最後一個資料列的移動「控制碼」已隱藏, 因為它的目的只是做為 [插入] 按鈕。 
 
 
 我們也加入了兩個自訂方法來新增「插入」資料列, 然後在不再需要時將它移除。 它們是從 [**編輯**] 和 [**完成**] 按鈕進行呼叫:
 
--   **WillBeginTableEditing** –觸及 [**編輯**] 按鈕時, 它`SetEditing`會呼叫將資料表置於編輯模式。 這會觸發 WillBeginTableEditing 方法, 在資料表的結尾顯示 **(加入新的)** 資料列, 以作為「插入按鈕」。 
--   **DidFinishTableEditing** –觸及`SetEditing` [完成] 按鈕時, 會再次呼叫以關閉編輯模式。 當不再需要編輯時, 範例程式碼會從資料表中移除 **(加入新的)** 資料列。 
+- **WillBeginTableEditing** –觸及 [**編輯**] 按鈕時, 它`SetEditing`會呼叫將資料表置於編輯模式。 這會觸發 WillBeginTableEditing 方法, 在資料表的結尾顯示 **(加入新的)** 資料列, 以作為「插入按鈕」。 
+- **DidFinishTableEditing** –觸及`SetEditing` [完成] 按鈕時, 會再次呼叫以關閉編輯模式。 當不再需要編輯時, 範例程式碼會從資料表中移除 **(加入新的)** 資料列。 
 
 
 這些方法覆寫會在範例檔案**TableEditModeAdd/Code/TableSource**中執行:

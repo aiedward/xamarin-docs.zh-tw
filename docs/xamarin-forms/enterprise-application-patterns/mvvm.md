@@ -1,95 +1,95 @@
 ---
-title: Model View ViewModel 模式
-description: 本章說明如何 eShopOnContainers 的行動裝置應用程式會使用 MVVM 模式以明確區分其使用者介面的應用程式的商務和呈現邏輯。
+title: 模型視圖-ViewModel 模式
+description: 本章說明 eShopOnContainers 行動應用程式如何使用 MVVM 模式, 將應用程式的商務和展示邏輯與使用者介面完全分開。
 ms.prod: xamarin
 ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 87448c556c66ea086db70699848227e1f671792b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1e3e1a2165c9acee127a543301f00262aa4bdc4f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61299599"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529092"
 ---
-# <a name="the-model-view-viewmodel-pattern"></a>Model View ViewModel 模式
+# <a name="the-model-view-viewmodel-pattern"></a>模型視圖-ViewModel 模式
 
-在 XAML 中，建立使用者介面，然後再新增 會在使用者介面運作的程式碼後，通常牽涉到 Xamarin.Forms 開發人員體驗。 當應用程式修改，並成長的大小和範圍時，可能會發生複雜的維護工作的問題。 這些問題包括 UI 控制項和商務邏輯，這樣會讓 UI 修改，以及單元測試這類程式碼的困難度的成本增加的緊密連結。
+Xamarin 的開發人員體驗通常牽涉到在 XAML 中建立使用者介面, 然後加入在使用者介面上運作的程式碼後置。 隨著應用程式的修改, 以及大小和範圍的成長, 可能會發生複雜的維護問題。 這些問題包括 UI 控制項與商務邏輯之間的緊密結合, 這會增加進行 UI 修改的成本, 以及對這類程式碼進行單元測試的困難。
 
-Model View ViewModel (MVVM) 模式可協助以明確區分從其使用者介面 (UI) 的應用程式的商務和呈現邏輯。 維護應用程式邏輯和 UI 清楚劃分幫助您解決許多開發問題，並可讓您更輕鬆地測試、 維護及改進的應用程式。 它可以也可大幅提升程式碼重複使用機會，並可讓開發人員和開發的應用程式及其個別組件時，UI 設計工具，能夠更輕易地共同作業。
+模型 ViewModel (MVVM) 模式有助於將應用程式的商務和展示邏輯與其使用者介面 (UI) 完全分開。 維護應用程式邏輯與 UI 之間的清楚分隔, 有助於解決許多開發問題, 並可讓應用程式更容易測試、維護和發展。 它也可以大幅改善程式碼重複使用的機會, 並可讓開發人員和 UI 設計工具在開發應用程式的個別部分時, 更輕鬆地共同作業。
 
 ## <a name="the-mvvm-pattern"></a>MVVM 模式
 
-MVVM 模式有三個核心元件： 模型、 檢視和檢視模型。 每個有不同的用途時。 圖 2-1 會顯示三個元件之間的關聯性。
+MVVM 模式中有三個核心元件: 模型、視圖和視圖模型。 每個服務都有不同的用途。 圖2-1 顯示這三個元件之間的關聯性。
 
 ![](mvvm-images/mvvm.png "MVVM 模式")
 
 **圖 2-1**:MVVM 模式
 
-除了了解每個元件的責任，也很重要，若要了解它們如何彼此互動。 概括而言，檢視 「 知道 」 檢視模型中，檢視模型 「 知道 」 模型，但模型不會知道檢視模型，並檢視模型未察覺的檢視。 因此，檢視模型將隔離模型，從檢視，而且可讓模型發展與檢視分開。
+除了瞭解每個元件的責任之外, 也請務必瞭解它們彼此互動的方式。 概括而言, 視圖「知道」視圖模型, 而視圖模型「知道」模型, 但模型不知道視圖模型, 而且視圖模型不知道此視圖。 因此, 視圖模型會從模型中隔離此視圖, 並允許模型獨立于視圖之外進行進化。
 
-使用 MVVM 模式的優點如下所示：
+使用 MVVM 模式的優點如下:
 
--   如果沒有現有的模型實作封裝現有的商務邏輯，很難或有風險，若要變更它。 在此案例中，檢視模型做為模型類別的配接器，並可讓您避免模型程式碼進行任何重大的變更。
--   開發人員可以建立檢視模型與模型中，單元的測試，而不使用檢視。 檢視模型的單元測試可以執行完全相同的功能所用的檢視。
--   可以不必變更程式碼中，重新設計應用程式 UI，前提是完全以 XAML 實作的檢視。 因此，新檢視的版本應該使用現有的檢視模型。
--   設計人員和開發人員可以使用獨立和同時其元件在開發程序。 設計工具可以專注於檢視中，而開發人員可以處理的檢視模型和模型元件。
+- 如果現有的模型執行封裝了現有的商務邏輯, 變更它可能會很艱難或有風險。 在此案例中, 視圖模型會做為模型類別的介面卡, 並可讓您避免對模型程式碼進行任何重大變更。
+- 開發人員可以建立視圖模型和模型的單元測試, 而不需要使用 view。 視圖模型的單元測試可以執行與視圖所使用的完全相同功能。
+- 應用程式 UI 可以重新設計, 而不需要觸及程式碼, 前提是該視圖完全以 XAML 執行。 因此, 新的視圖版本應該與現有的視圖模型搭配使用。
+- 設計師和開發人員可以在開發程式期間, 獨立且同時在其元件上工作。 設計師可以專注于 view, 而開發人員可以處理視圖模型和模型元件。
 
-要有效地使用 MVVM 的索引鍵是了解如何建構正確的類別，將應用程式程式碼並了解類別互動的方式。 下列各節討論的每個類別中的 MVVM 模式的責任。
+使用 MVVM 的關鍵在於瞭解如何將應用程式程式碼納入正確的類別, 以及瞭解類別的互動方式。 下列各節將討論 MVVM 模式中每個類別的責任。
 
 ### <a name="view"></a>檢視
 
-負責定義結構、 配置和外觀的使用者會看到畫面上檢視。 在理想情況下，每個檢視定義在 XAML，以限制程式碼後置不包含商務邏輯。 不過，在某些情況下，程式碼後置可能會包含 UI 邏輯實作很難表達 XAML，例如動畫的視覺行為。
+此視圖會負責定義使用者在螢幕上看到的結構、版面配置和外觀。 在理想的情況下, 每個視圖都會以 XAML 定義, 而程式碼後置則不會包含商務邏輯。 不過, 在某些情況下, 程式碼後置可能會包含 UI 邏輯, 此介面會執行不容易在 XAML 中表達的視覺行為, 例如動畫。
 
-在 Xamarin.Forms 應用程式中，檢視是通常[ `Page` ](xref:Xamarin.Forms.Page)-衍生或[ `ContentView` ](xref:Xamarin.Forms.ContentView)-衍生的類別。 不過，檢視也可以由一個資料範本，其中指定用來以視覺方式表示物件，它顯示時的 UI 項目表示。 資料範本做為檢視並沒有任何程式碼後置，而且設計來繫結至特定檢視的模型型別。
+在 Xamarin Forms 應用程式中, view 通常[`Page`](xref:Xamarin.Forms.Page)是衍生或[`ContentView`](xref:Xamarin.Forms.ContentView)衍生類別。 不過, 您也可以使用資料範本來表示 views, 這會指定要在顯示物件時用來以視覺方式表示的 UI 元素。 資料範本做為視圖並不會有任何程式碼後置, 而是設計來系結至特定的視圖模型類型。
 
 > [!TIP]
-> 避免啟用和停用 UI 項目，在程式碼後置中。 請確定檢視模型負責定義邏輯的狀態變更會影響檢視的顯示，例如命令是否可用，或指出作業已暫止的某些層面。 因此，啟用和停用 UI 項目繫結至檢視模型屬性，而不是啟用和停用它們的程式碼後置。
+> 避免在程式碼後置中啟用和停用 UI 元素。 請確定視圖模型負責定義會影響視圖顯示某些層面的邏輯狀態變更, 例如是否有可用的命令, 或指示作業是否已暫止。 因此, 藉由系結來啟用和停用 UI 元素, 而不是在程式碼後置中啟用和停用它們。
 
-有數個選項，以回應互動的檢視，檢視模型上執行程式碼，例如按鈕點選或選擇項目。 如果控制項支援的命令，該控制項的`Command`屬性可以是資料繫結至`ICommand`上檢視模型的屬性。 叫用控制項的命令時，就會執行檢視模型中的程式碼。 除了命令之外，行為可以附加至檢視中的物件，而且要叫用的命令或引發的事件，可接聽。 在回應時，便可以叫用此行為`ICommand`上檢視模型或檢視模型上的方法。
+有數個選項可在視圖模型上執行程式碼, 以回應視圖上的互動, 例如按一下按鈕或專案選取。 如果控制項支援命令, 控制項的`Command`屬性可以資料系結`ICommand`至視圖模型上的屬性。 叫用控制項的命令時, 將會執行視圖模型中的程式碼。 除了命令之外, 行為也可以附加至視圖中的物件, 並可接聽要叫用的命令或引發的事件。 在回應中, 行為可以接著`ICommand`在視圖模型上叫用, 或在 view 模型上叫用方法。
 
 ### <a name="viewmodel"></a>ViewModel
 
-檢視模型實作屬性和命令的檢視可資料繫結，並通知透過變更通知事件的任何狀態變更的檢視。 內容和檢視模型提供的命令定義的功能，以提供 ui，但檢視可讓您決定要顯示這項功能有何。
+視圖模型會執行 view 可以將資料系結至其中的屬性和命令, 並透過變更通知事件來通知所有狀態變更的觀點。 視圖模型所提供的屬性和命令會定義 UI 提供的功能, 但此視圖會決定要如何顯示該功能。
 
 > [!TIP]
-> 保留 UI 回應使用非同步作業。 行動裝置應用程式應該讓 UI 執行緒解除封鎖以改善使用者的認知效能。 因此，在檢視模型中，使用 I/O 作業的非同步方法，並引發事件，以非同步方式通知屬性變更的檢視。
+> 使用非同步作業讓 UI 保持回應。 行動應用程式應讓 UI 執行緒保持解除封鎖, 以改善使用者對效能的認知。 因此, 在視圖模型中, 使用非同步方法進行 i/o 作業, 並引發事件以非同步方式通知屬性變更的觀點。
 
-檢視模型也會負責協調的檢視所需的任何模型類別互動的。 通常是檢視模型與模型類別之間的一對多關聯性。 檢視模型可能會選擇要公開 （expose） 直接至檢視模型類別，以便在檢視中的控制項可以直接的資料繫結。 在此情況下，模型類別必須設計為支援資料繫結，並將變更通知事件。
+視圖模型也會負責協調視圖與所需之任何模型類別的互動。 在視圖模型和模型類別之間, 通常會有一對多關聯性。 視圖模型可能會選擇將模型類別直接公開至視圖, 讓視圖中的控制項可以直接將資料系結至它們。 在此情況下, 模型類別必須設計成支援資料系結和變更通知事件。
 
-每個檢視模型提供的表單，可以輕鬆地使用檢視模型中的資料。 若要這麼做，檢視模型有時會執行資料轉換。 這項資料轉換置於檢視模型是個不錯的主意，因為它會提供檢視可以繫結至的屬性。 例如，檢視模型可能會結合以方便顯示由檢視的兩個屬性的值。
+每個 view 模型都會從一個表單中的模型提供資料, 讓您可以輕鬆地取用。 為了達成此目的, 視圖模型有時候會執行資料轉換。 將此資料轉換放在視圖模型中是個不錯的主意, 因為它會提供可系結的屬性。 例如, 視圖模型可能會結合兩個屬性的值, 讓視圖更容易顯示。
 
 > [!TIP]
-> 集中在轉換層中的資料轉換。 它也可作為個別的資料轉換層位於檢視模型和檢視之間使用轉換器。 比方說，當資料需要特殊格式，不會提供檢視模型，這可能是必要的。
+> 集中化轉換層中的資料轉換。 您也可以使用轉換器做為位於視圖模型和視圖之間的個別資料轉換層。 例如, 當資料需要視圖模型不提供的特殊格式時, 這可能是必要的。
 
-為了讓參與雙向資料繫結與檢視的檢視模型，其屬性必須引發`PropertyChanged`事件。 檢視模型滿足此需求，藉由實作`INotifyPropertyChanged`介面，並引發`PropertyChanged`屬性變更時的事件。
+為了讓視圖模型參與與 view 的雙向資料系結, 其屬性必須引發`PropertyChanged`事件。 視圖模型會藉由執行`INotifyPropertyChanged`介面來滿足這項需求, 並在屬性變更時`PropertyChanged`引發事件。
 
-集合，請檢視友善`ObservableCollection<T>`提供。 此集合會實作變更通知，減輕開發人員不必實作`INotifyCollectionChanged`集合上的介面。
+針對集合, 會提供易記`ObservableCollection<T>`的視圖。 這個集合會執行集合已變更的通知, 讓開發人員不必在`INotifyCollectionChanged`集合上實作為介面。
 
 ### <a name="model"></a>型號
 
-模型類別是在非 visual 類別來封裝應用程式的資料。 因此，模型可以視為代表應用程式的網域模型，其中通常包含資料模型，以及商務和驗證邏輯。 模型物件的範例包括資料傳輸物件 (Dto)、 純舊 CLR 物件 (Poco)，以及產生的實體和 proxy 物件。
+模型類別是封裝應用程式資料的非視覺類別。 因此, 您可以將模型視為代表應用程式的領域模型, 這通常會包含資料模型以及商務和驗證邏輯。 模型物件的範例包括資料傳輸物件 (Dto)、簡單的 CLR 物件 (Poco), 以及產生的實體和 proxy 物件。
 
-模型類別通常用於搭配服務或封裝資料存取和快取的儲存機制。
+模型類別通常會與封裝資料存取和快取的服務或存放庫搭配使用。
 
-## <a name="connecting-view-models-to-views"></a>連接至檢視的檢視模型
+## <a name="connecting-view-models-to-views"></a>將視圖模型連接到 Views
 
-可以使用 Xamarin.Forms 的資料繫結功能，將檢視模型連線至檢視。 有許多可用來建構檢視和檢視模型，並在執行階段產生關聯的方法。 這些方法分為兩種類別，稱為檢視第一個組合和檢視模型中的第一個組合。 檢視第一個組合和檢視模型的第一個組合的喜好設定與複雜性問題之間進行選擇。 不過，所有的方法會共用相同的目的是要有指派給其 BindingContext 屬性的檢視模型的檢視。
+您可以使用 Xamarin 的資料系結功能, 將視圖模型連接到 views。 有許多方法可以用來在執行時間建立視圖及查看模型, 並將它們相關聯。 這些方法分為兩種類別, 稱為「視圖」第一次撰寫, 以及「視圖模型」第一次組合。 選擇 [第一次撰寫視圖] 和 [觀看模型] [第一次撰寫] 是喜好設定和複雜度的問題。 不過, 所有方法都共用相同的目標, 這是為了讓視圖具有指派給其 BindingCoNtext 屬性的視圖模型。
 
-檢視第一個組合應用程式是在概念上被組成連接到所相依的檢視模型的檢視。 這種方法的主要優點是，它可以輕鬆建構鬆散耦合、 單元測試應用程式因為檢視模型都不有自己的檢視表上的任何相依性。 也很容易了解應用程式的結構，藉由遵循其視覺結構，而不需要追蹤程式碼執行，以了解如何建立及相關聯的類別。 此外，檢視第一個建構對齊 Xamarin.Forms 導覽系統負責建構頁面瀏覽時，複雜且不當與平台，讓檢視模型的第一個組合。
+透過「視圖」第一次撰寫, 應用程式在概念上是由連接到其所依賴之視圖模型的視圖所組成。 這種方法的主要優點是, 它可讓您輕鬆地建立鬆散結合、可測試單元的應用程式, 因為視圖模型不會相依于 views 本身。 您也可以遵循應用程式的視覺化結構來瞭解其結構, 而不必追蹤程式碼的執行, 以瞭解如何建立和關聯類別。 此外, 視圖的第一個結構與 Xamarin 流覽系統一致, 負責在導覽發生時建立頁面, 這使得視圖模型的第一次撰寫複雜, 且與平臺不對齊。
 
-檢視模型的第一個組合應用程式是在概念上組成檢視模型與服務，負責尋找檢視模型的檢視。 檢視模型中的第一個組合感覺一些開發人員，更自然的因為檢視表的建立，可抽象化，進而將焦點放在應用程式邏輯的非 UI 結構。 此外，它可讓其他檢視模型所建立的檢視模型。 不過，這種方法通常很複雜，而且它可能會變得難以了解如何建立及相關聯的應用程式的各個部分。
+透過「視圖模型」第一次撰寫應用程式, 在概念上是由視圖模型組成, 而服務負責尋找視圖模型的視圖。 視圖模型的第一個組合對某些開發人員而言會更加自然, 因為可以將建立視圖抽象化, 讓它們專注于應用程式的邏輯非 UI 結構。 此外, 它還允許其他視圖模型建立視圖模型。 不過, 這種方法通常很複雜, 而且很難瞭解如何建立和關聯應用程式的各個部分。
 
 > [!TIP]
-> 請檢視模型和檢視的獨立。 繫結到資料來源中屬性的檢視應在其對應的檢視模型檢視的主體的相依性。 具體而言，不參考檢視的型別，例如[ `Button` ](xref:Xamarin.Forms.Button)和[ `ListView` ](xref:Xamarin.Forms.ListView)，從檢視模型。 依照此處所述的原則，可以在隔離中，因此減少軟體缺失的可能性，藉由限制範圍測試檢視模型。
+> 讓視圖模型和視圖彼此獨立。 將視圖系結至資料來源中的屬性, 應為其對應視圖模型的視圖主體相依性。 具體而言，不參考檢視的型別，例如[`Button`](xref:Xamarin.Forms.Button)和[`ListView`](xref:Xamarin.Forms.ListView)，從檢視模型。 藉由遵循這裡所述的原則, 可隔離地測試檢視模型, 因此藉由限制範圍來降低軟體缺失的可能性。
 
-下列各節會討論連接至檢視的檢視模型的主要方法。
+下列各節將討論將視圖模型連接到 views 的主要方法。
 
-### <a name="creating-a-view-model-declaratively"></a>以宣告方式建立檢視模型
+### <a name="creating-a-view-model-declaratively"></a>以宣告方式建立視圖模型
 
-簡單的方法是以宣告方式具現化在 XAML 中其對應的檢視模型的檢視。 當建構檢視時，也會建構對應的檢視模型物件。 這種方法是以下列程式碼範例所示：
+最簡單的方法是讓 view 在 XAML 中以宣告方式具現化其對應的視圖模型。 當此視圖經過結構化時, 也會一併建立對應的視圖模型物件。 這種方法是以下列程式碼範例所示：
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:eShop">  
@@ -100,13 +100,13 @@ MVVM 模式有三個核心元件： 模型、 檢視和檢視模型。 每個有
 </ContentPage>
 ```
 
-當[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)建立的執行個體`LoginViewModel`會自動建構並設為檢視[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)。
+當建立時, 會自動建立的實例`LoginViewModel` , 並將其設定為視圖的[`BindingContext`。](xref:Xamarin.Forms.BindableObject.BindingContext) [`ContentPage`](xref:Xamarin.Forms.ContentPage)
 
-這個宣告式的建構和指派所檢視的檢視模型的優點是它很簡單，但它需要的檢視模型中的預設 （無參數） 建構函式的缺點則是。
+View 模型的這個宣告式結構和指派具有簡單的優點, 但是它的缺點是在視圖模型中需要預設 (無參數) 的函式。
 
-### <a name="creating-a-view-model-programmatically"></a>以程式設計方式建立檢視模型
+### <a name="creating-a-view-model-programmatically"></a>以程式設計方式建立視圖模型
 
-檢視可以在指派給的檢視模型中產生的程式碼後置檔案的程式碼及其[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)屬性。 通常這是在檢視表的建構函式，如下列程式碼範例所示：
+一個視圖可以在程式碼後置檔案中擁有程式碼, 以將 view 模型指派給其[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)屬性。 這通常會在視圖的函式中完成, 如下列程式碼範例所示:
 
 ```csharp
 public LoginView()  
@@ -116,23 +116,23 @@ public LoginView()
 }
 ```
 
-以程式設計方式建構和指派的檢視程式碼後置中檢視模型的好處很簡單。 不過，這種方法的主要缺點是需要提供任何必要的相依性的檢視模型檢視。 使用相依性插入容器可協助您維護鬆散耦合的檢視和檢視模型之間。 如需詳細資訊，請參閱 <<c0> [ 相依性插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
+在視圖程式碼後置中, 以程式設計方式建立視圖模型並加以指派, 有其優點。 不過, 此方法的主要缺點是, 此視圖需要提供具有任何必要相依性的視圖模型。 使用相依性插入容器有助於維護視圖和視圖模型之間的鬆散結合。 如需詳細資訊, 請參閱相依性[插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
 
-### <a name="creating-a-view-defined-as-a-data-template"></a>建立檢視表定義為資料範本
+### <a name="creating-a-view-defined-as-a-data-template"></a>建立定義為資料範本的視圖
 
-檢視可以定義為資料範本，並檢視模型類型相關聯。 資料範本可以定義為資源，或者可以是會顯示檢視模型在控制項內的內嵌定義。 控制項的內容是檢視模型執行個體，並用來以視覺方式表示該資料範本。 這項技術是在其中檢視模型具現化第一次，接著檢視的建立情況的範例。
+View 可以定義為資料範本, 並與視圖模型類型建立關聯。 資料範本可以定義為資源, 也可以在將顯示視圖模型的控制項內以內嵌方式定義。 控制項的內容是 view model 實例, 而資料範本則用來以視覺方式表示。 這項技術是一種情況的範例, 其中會先具現化視圖模型, 然後再建立視圖。
 
 <a name="automatically_creating_a_view_model_with_a_view_model_locator" />
 
-### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>自動建立檢視模型的檢視模型定位器
+### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>使用視圖模型定位器自動建立視圖模型
 
-檢視模型定位器是管理的具現化的檢視模型和檢視其關聯的自訂類別。 在 eShopOnContainers 的行動應用程式中`ViewModelLocator`類別具有附加的屬性， `AutoWireViewModel`，用來將檢視模型與檢視結合。 在檢視的 XAML，此附加的屬性是設定為 true，指出檢視模型應該會自動連接至檢視，如下列程式碼範例所示：
+視圖模型定位器是一個自訂類別, 可管理檢視模型的具現化, 以及其與 views 的關聯。 在 eShopOnContainers 行動裝置應用程式中`ViewModelLocator` , 類別具有附加的屬性`AutoWireViewModel`, 用來將視圖模型與視圖產生關聯。 在此視圖的 XAML 中, 此附加屬性會設定為 true, 表示視圖模型應該自動連接至視圖, 如下列程式碼範例所示:
 
 ```xaml
 viewModelBase:ViewModelLocator.AutoWireViewModel="true"
 ```
 
-`AutoWireViewModel`屬性是可繫結的屬性，會初始化為 false，和其值變更時`OnAutoWireViewModelChanged`會呼叫事件處理常式。 這個方法會解析檢視的檢視模型。 下列程式碼範例顯示如何即可達成此目的：
+屬性是可系結的屬性, 它會初始化為 false, 而當其值`OnAutoWireViewModelChanged`變更時, 會呼叫事件處理常式。 `AutoWireViewModel` 這個方法會解析視圖的視圖模型。 下列程式碼範例顯示如何達成此目的:
 
 ```csharp
 private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)  
@@ -159,34 +159,34 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, obj
 }
 ```
 
-`OnAutoWireViewModelChanged`方法會嘗試解決使用以慣例為基礎的方法，在檢視模型。 這個慣例假設：
+`OnAutoWireViewModelChanged`方法會嘗試使用以慣例為基礎的方法來解析視圖模型。 此慣例假設:
 
--   檢視模型是在相同的組件的檢視類型。
--   檢視表位於。檢視子命名空間。
--   檢視模型位於。Viewmodel 子命名空間。
--   檢視模型名稱與檢視名稱的對應，並以 「 ViewModel"結尾。
+- 視圖模型與檢視類型位於相同的元件中。
+- Views 位於。Views 子命名空間。
+- 視圖模型位於中。Viewmodel 子命名空間。
+- 視圖模型名稱會對應到視圖名稱, 並以 "ViewModel" 結尾。
 
-最後，`OnAutoWireViewModelChanged`方法會設定[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)解析的檢視的模型型別檢視型別。 如需有關如何解決檢視模型類型的詳細資訊，請參閱[解析度](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution)。
+最後, `OnAutoWireViewModelChanged`方法會[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)將檢視類型的設定為已解析的視圖模型類型。 如需有關解析視圖模型類型的詳細資訊, 請參閱[解決](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution)方式。
 
-這種方法的優點是，應用程式必須負責具現化的檢視模型和其連線至檢視的單一類別。
+此方法的優點是應用程式具有單一類別, 負責具現化視圖模型和其與視圖的連接。
 
 > [!TIP]
-> 使用檢視模型定位器，以方便的替代。 檢視模型定位器也可用的替代實作相依性，替代成這類的單元測試或設計階段資料。
+> 使用視圖模型定位器以方便替換。 「視圖模型定位器」也可用來做為替代相依性 (例如單元測試或設計階段資料) 的替換點。
 
-## <a name="updating-views-in-response-to-changes-in-the-underlying-view-model-or-model"></a>更新的檢視，以回應變更，在基礎檢視模型
+## <a name="updating-views-in-response-to-changes-in-the-underlying-view-model-or-model"></a>更新視圖以回應基礎視圖模型或模型中的變更
 
-所有的檢視模型和存取檢視的模型類別應實作`INotifyPropertyChanged`介面。 檢視模型或模型類別中實作這個介面可讓基礎的屬性值變更時，提供任何資料繫結的控制項檢視中的變更通知的類別。
+所有可供視圖存取的視圖模型和模型類別都應該執行`INotifyPropertyChanged`介面。 在視圖模型或模型類別中執行此介面, 可讓類別在基礎屬性值變更時, 將變更通知提供給視圖中的任何資料繫結控制項。
 
-應該符合下列需求，將應用程式建構的屬性變更通知時的正確用法：
+應用程式應透過符合下列需求, 架構以正確使用屬性變更通知:
 
--   一律引發`PropertyChanged`公用屬性的值變更時的事件。 請勿假設該引發`PropertyChanged`可以忽略事件，因為知識的 XAML 繫結的進行方式。
--   一律引發`PropertyChanged`任何事件計算的屬性的值用在檢視中的其他屬性的模型。
--   一律引發`PropertyChanged`事件的方法，可變更的屬性，或當已知為安全的狀態中的物件的結尾。 引發事件時，中斷作業以同步方式叫用事件處理常式。 如果發生這種情況進行的作業，它可能會公開回呼函式物件，當它是在不安全，部分更新的狀態。 此外，就可能所觸發的串聯式變更`PropertyChanged`事件。 串聯的變更通常需要安全地執行串聯的變更才會完成的更新。
--   永遠不會引發`PropertyChanged`如果屬性不會變更的事件。 這表示您必須再引發比較新舊值`PropertyChanged`事件。
--   永遠不會引發`PropertyChanged`期間如果您要初始化屬性的檢視模型的建構函式的事件。 此時收到變更通知未都會訂閱檢視中的資料繫結控制項。
--   永遠不會引發多個`PropertyChanged`事件與單一同步叫用類別的公用方法內的相同屬性名稱引數。 例如，假設`NumberOfItems`屬性是支援的存放區`_numberOfItems`欄位中，如果方法會遞增`_numberOfItems`五十個時間在執行迴圈時，它應該只引發屬性變更通知上`NumberOfItems`屬性一次，完成所有工作之後。 如需非同步方法，引發`PropertyChanged`非同步接續鏈結的每個同步區段中指定的屬性名稱的事件。
+- 當公用屬性`PropertyChanged`的值變更時, 一律引發事件。 請不要假設引發`PropertyChanged`事件可能因為瞭解 XAML 系結的發生方式而被忽略。
+- 一律針對任何`PropertyChanged`計算的屬性引發事件, 而這些屬性的值是由視圖模型或模型中的其他屬性所使用。
+- 一律在進行`PropertyChanged`屬性變更的方法結尾, 或當物件已知為安全狀態時, 引發事件。 引發事件會以同步方式叫用事件的處理常式來中斷作業。 如果發生這種情況, 當作業處於不安全、部分更新的狀態時, 它可能會將物件公開給回呼函式。 此外, 也有可能會由`PropertyChanged`事件觸發串聯變更。 串聯式變更通常需要先完成更新, 才能執行串聯式變更。
+- 若屬性未`PropertyChanged`變更, 絕對不會引發事件。 這表示在引發`PropertyChanged`事件之前, 您必須先比較新舊值。
+- 如果您要`PropertyChanged`初始化屬性, 請勿在視圖模型的函式期間引發事件。 在此情況下, 視圖中的資料繫結控制項將不會訂閱以接收變更通知。
+- 絕對不要在類別的`PropertyChanged`公用方法的單一同步調用中, 以相同的屬性名稱引數來引發一個以上的事件。 例如, 假設有一個`NumberOfItems`屬性的備份存放區`_numberOfItems`是欄位, 如果方法在迴圈`_numberOfItems`執行期間增加50倍, 則應該只引發屬性一次的`NumberOfItems`屬性變更通知。完成所有工作之後。 針對非同步方法, 針對非同步`PropertyChanged`接續鏈的每個同步區段中的指定屬性名稱, 引發事件。
 
-EShopOnContainers 的行動裝置應用程式會使用`ExtendedBindableObject`類別，以提供變更通知，這下列程式碼範例所示：
+EShopOnContainers mobile 應用程式會使用`ExtendedBindableObject`類別來提供變更通知, 如下列程式碼範例所示:
 
 ```csharp
 public abstract class ExtendedBindableObject : BindableObject  
@@ -204,9 +204,9 @@ public abstract class ExtendedBindableObject : BindableObject
 }
 ```
 
-Xamarin.Form [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)類別會實作`INotifyPropertyChanged`介面，並提供[ `OnPropertyChanged` ](xref:Xamarin.Forms.BindableObject.OnPropertyChanged(System.String))方法。 `ExtendedBindableObject`類別會提供`RaisePropertyChanged`方法來叫用屬性的變更通知，並在此情況下會使用所提供的功能`BindableObject`類別。
+Xamarin 的[`BindableObject`](xref:Xamarin.Forms.BindableObject)類別會實作為`INotifyPropertyChanged` [`OnPropertyChanged`](xref:Xamarin.Forms.BindableObject.OnPropertyChanged(System.String))介面, 並提供方法。 類別提供方法來叫用屬性變更通知, 而在這麼做時, 會使用`BindableObject`類別所提供的功能。 `RaisePropertyChanged` `ExtendedBindableObject`
 
-在 eShopOnContainers 的行動裝置應用程式中每個檢視模型類別衍生自`ViewModelBase`類別，又衍生自`ExtendedBindableObject`類別。 因此，每個檢視模型類別會使用`RaisePropertyChanged`方法中的`ExtendedBindableObject`類別，以提供屬性變更通知。 下列程式碼範例示範如何在 eShopOnContainers 的行動應用程式叫用屬性變更通知使用 lambda 運算式：
+EShopOnContainers 行動應用程式中的每個 view 模型類別衍生`ViewModelBase`自類別, 而後者又衍生`ExtendedBindableObject`自類別。 因此, 每個 view 模型類別都會`RaisePropertyChanged`使用`ExtendedBindableObject`類別中的方法來提供屬性變更通知。 下列程式碼範例示範 eShopOnContainers mobile 應用程式如何使用 lambda 運算式來叫用屬性變更通知:
 
 ```csharp
 public bool IsLogin  
@@ -223,47 +223,47 @@ public bool IsLogin
 }
 ```
 
-請注意，使用 lambda 運算式以這種方式都會涉及很少的效能成本，因為 lambda 運算式必須評估每個呼叫。 雖然效能成本很小，而且通常不會影響應用程式，有許多變更通知時，可以會產生成本。 不過，這種方法的優點是，它會提供編譯時期型別安全和重新命名屬性時的重構支援。
+請注意, 以這種方式使用 lambda 運算式牽涉到較小的效能成本, 因為必須針對每個呼叫評估 lambda 運算式。 雖然效能成本很小, 而且通常不會影響應用程式, 但在有許多變更通知時, 成本可能會累積。 不過, 這種方法的優點在於, 它會在重新命名屬性時提供編譯時間型別安全和重整支援。
 
 ## <a name="ui-interaction-using-commands-and-behaviors"></a>使用命令和行為的 UI 互動
 
-行動裝置應用程式，是通常叫用動作以回應使用者動作，例如按一下按鈕，在可透過程式碼後置檔案中建立事件處理常式實作。 不過，在 MVVM 模式中，實作動作的責任就是檢視模型，而且應該避免在程式碼後置中的放置程式碼。
+在行動裝置應用程式中, 通常會叫用動作以回應使用者動作 (例如按一下按鈕), 這可以藉由在程式碼後置檔案中建立事件處理常式來執行。 不過, 在 MVVM 模式中, 實作用此動作的責任是使用 view 模型, 而且應該避免在程式碼後置中放置程式碼。
 
-命令提供便利的方式來代表可繫結至控制項的 UI 中的動作。 這些封裝實作動作的程式碼，並協助保持分開它們在檢視中的視覺表示。 Xamarin.Forms 包含可以命令，以宣告方式連接的控制項，這些控制項將會叫用命令，當使用者與控制項互動。
+命令提供便利的方式來表示可以系結至 UI 中控制項的動作。 它們會封裝用來執行動作的程式碼, 並協助將它與視圖中的視覺表示分離。 Xamarin 包含可以宣告方式連接至命令的控制項, 而這些控制項將會在使用者與控制項互動時叫用此命令。
 
-行為也可讓控制項以宣告方式連線到命令。 不過，行為可用來叫用一組控制項所引發的事件相關聯的動作。 因此，行為時提供更高的彈性和控制有解決許多相同的案例，以啟用命令的控制項。 此外，行為也可用來關聯已不專為與命令互動的控制項中的命令物件或方法。
+行為也允許以宣告方式將控制項連接到命令。 不過, 行為可以用來叫用與控制項所引發的事件範圍相關聯的動作。 因此, 行為會解決許多與命令啟用控制項相同的案例, 同時提供更大的彈性和控制程度。 此外, 行為也可以用來將命令物件或方法與不是專門設計來與命令互動的控制項建立關聯。
 
-### <a name="implementing-commands"></a>實作命令
+### <a name="implementing-commands"></a>執行命令
 
-檢視模型通常會公開命令屬性，從檢視中，繫結所實作的物件執行個體`ICommand`介面。 數字，Xamarin.Forms 控制項提供`Command`屬性，它可以是資料繫結至`ICommand`檢視模型所提供的物件。 `ICommand`介面會定義`Execute`方法中，封裝本身的作業，其中`CanExecute`方法，表示是否可以叫用命令，與`CanExecuteChanged`變更是否發生影響時，就會發生的事件此命令應該執行。 [ `Command` ](xref:Xamarin.Forms.Command)並[ `Command<T>` ](xref:Xamarin.Forms.Command) Xamarin.Forms，所提供的類別實作`ICommand`介面，其中`T`是的引數的型別`Execute`和`CanExecute`。
+視圖模型通常會公開命令屬性, 以便從視圖進行系結, 也就是實作為`ICommand`介面的物件實例。 許多 Xamarin 控制項提供一個`Command`屬性, 它可以是系結`ICommand`至視圖模型所提供之物件的資料。 介面會`CanExecute`定義方法, 其會封裝作業本身、方法, 這會指出是否可以叫用命令, 以及發生變更時`CanExecuteChanged`所發生的事件, 而這種情況會影響是否`Execute` `ICommand`命令應該會執行。 `T` `ICommand` `Execute` `CanExecute`和類別 (由 Xamarin 所提供) 會執行介面, 其中是和的引數類型。 [`Command<T>`](xref:Xamarin.Forms.Command) [`Command`](xref:Xamarin.Forms.Command)
 
-在檢視模型中，應該是類型的物件[ `Command` ](xref:Xamarin.Forms.Command)或是[ `Command<T>` ](xref:Xamarin.Forms.Command)類型的檢視模型中的每個公用屬性`ICommand`。 `Command`或是`Command<T>`建構函式需要`Action`具有時呼叫的回呼物件`ICommand.Execute`叫用方法。 `CanExecute`方法是選擇性的建構函式參數，且`Func`傳回`bool`。
+在視圖模型中, 類型[`Command`](xref:Xamarin.Forms.Command) `ICommand`的視圖模型中的每個[`Command<T>`](xref:Xamarin.Forms.Command)公用屬性都應該要有類型為或的物件。 或函式`ICommand.Execute`需要叫用方法時所呼叫的回呼物件。 `Action` `Command<T>` `Command` 方法是選擇性的函式參數, 而`Func`是會`bool`傳回的。 `CanExecute`
 
-下列程式碼示範如何[ `Command` ](xref:Xamarin.Forms.Command)執行個體，代表註冊命令，這藉由指定的委派建構`Register`檢視模型的方法：
+下列程式碼示範如何透過[`Command`](xref:Xamarin.Forms.Command)指定`Register` view model 方法的委派, 來建立代表 register 命令的實例:
 
 ```csharp
 public ICommand RegisterCommand => new Command(Register);
 ```
 
-此命令會公開至檢視的屬性來傳回的參考`ICommand`。 當`Execute`上呼叫方法[ `Command` ](xref:Xamarin.Forms.Command)物件，它只會轉送至透過委派中所指定的檢視模型中的方法呼叫`Command`建構函式。
+命令會透過傳回之參考`ICommand`的屬性, 向視圖公開。 在物件上呼叫方法時, 它只會透過在此`Command`函式中指定的委派, 將呼叫轉送到視圖模型中的方法。 `Execute` [`Command`](xref:Xamarin.Forms.Command)
 
-非同步方法可以使用叫用命令`async`並`await`關鍵字指定的命令時`Execute`委派。 這表示回呼是`Task`且應該等候。 例如，下列程式碼示範如何[ `Command` ](xref:Xamarin.Forms.Command)執行個體，代表登入命令，這藉由指定的委派建構`SignInAsync`檢視模型的方法：
+指定命令的`async` `await` 委派時,命令可以使用和關鍵字來叫`Execute`用非同步方法。 這表示回呼是`Task` , 而且應該等候。 例如, 下列程式碼會示範如何透過[`Command`](xref:Xamarin.Forms.Command)指定`SignInAsync` view model 方法的委派, 來建立代表登入命令的實例:
 
 ```csharp
 public ICommand SignInCommand => new Command(async () => await SignInAsync());
 ```
 
-可以將參數傳遞給`Execute`並`CanExecute`使用的動作[ `Command<T>` ](xref:Xamarin.Forms.Command)來具現化命令的類別。 例如，下列程式碼示範如何`Command<T>`執行個體用來指出`NavigateAsync`方法將會需要類型的引數`string`:
+參數可以傳遞至`Execute`和`CanExecute`動作, 方法是使用[`Command<T>`](xref:Xamarin.Forms.Command)類別來具現化命令。 例如, 下列程式碼會示範如何`Command<T>`使用實例來表示此`NavigateAsync`方法需要類型`string`為的引數:
 
 ```csharp
 public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 ```
 
-在這兩[ `Command` ](xref:Xamarin.Forms.Command)並[ `Command<T>` ](xref:Xamarin.Forms.Command)類別，來委派`CanExecute`每個建構函式中的方法是選擇性的。 如果未指定委派`Command`會傳回`true`如`CanExecute`。 不過，檢視模型可以指出在命令中的變更`CanExecute`狀態，藉由呼叫`ChangeCanExecute`方法`Command`物件。 這會導致`CanExecuteChanged`會引發事件。 任何在 UI 中的控制項繫結至命令會更新以反映可用性的資料繫結命令及其已啟用的狀態。
+[`Command`](xref:Xamarin.Forms.Command)在和[`Command<T>`](xref:Xamarin.Forms.Command)類別中`CanExecute` , 每個函式中方法的委派都是選擇性的。 如果未指定委派, `Command` `true`會針對`CanExecute`傳回。 不過, 視圖模型可以藉由呼叫`CanExecute` `Command`物件上的`ChangeCanExecute`方法, 指出命令狀態的變更。 這會導致`CanExecuteChanged`引發事件。 任何系結至命令的 UI 控制項都會更新其啟用狀態, 以反映資料系結命令的可用性。
 
-#### <a name="invoking-commands-from-a-view"></a>叫用命令，從檢視表
+#### <a name="invoking-commands-from-a-view"></a>從視圖叫用命令
 
-下列程式碼範例示範如何[ `Grid` ](xref:Xamarin.Forms.Grid)中`LoginView`繫結至`RegisterCommand`中`LoginViewModel`藉由類別[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)執行個體：
+下列程式[`Grid`](xref:Xamarin.Forms.Grid)代碼範例示範如何使用`RegisterCommand` `LoginView` `LoginViewModel` [實例,將中的系結至`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)類別中的:
 
 ```xaml
 <Grid Grid.Column="1" HorizontalOptions="Center">  
@@ -274,23 +274,23 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 </Grid>
 ```
 
-命令參數也可以選擇性地定義使用[ `CommandParameter` ](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性。 中指定必要的引數的型別`Execute`和`CanExecute`目標方法。 [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)就會在使用者與附加的控制項互動時自動呼叫目標命令。 命令參數，如果提供，將做為引數傳遞至命令的`Execute`委派。
+您也可以使用屬性, [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)選擇性地定義命令參數。 預期的引數類型是在`Execute`和`CanExecute`目標方法中指定。 當[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)使用者與附加的控制項互動時, 將會自動叫用目標命令。 命令參數 (如果有提供的話) 會當做引數傳遞給命令的`Execute`委派。
 
 <a name="implementing_behaviors" />
 
-### <a name="implementing-behaviors"></a>實作行為
+### <a name="implementing-behaviors"></a>執行行為
 
-行為允許功能新增至 UI 控制項，而不具有子類別。 相反地，功能會在行為類別中實作並附加至控制項，如同控制項本身的一部分。 行為可讓您實作程式碼，您通常必須撰寫程式碼後置，因為它直接互動的方式，您可以精確附加至控制項，並跨多個檢視或應用程式封裝以供重複使用控制項的 API。 在內容中的 MVVM，行為會是個實用的方法，如控制項連接到命令。
+行為可讓您將功能新增至 UI 控制項, 而不需要將其設為子類別。 相反地，功能會在行為類別中實作並附加至控制項，如同控制項本身的一部分。 行為可讓您實作為程式碼後置來執行程式碼, 因為它會直接與控制項的 API 互動, 使其可以精確附加至控制項, 並封裝在多個視圖或應用程式之間重複使用。 在 MVVM 的內容中, 行為是將控制項連接至命令的實用方法。
 
-附加至控制項，以透過附加屬性的行為就所謂*附加行為*。 行為接著可以使用公開的 API，它所附加到將功能新增至該控制項或其他控制項，檢視的視覺化樹狀結構中的項目。 EShopOnContainers 的行動應用程式包含`LineColorBehavior`類別，這是附加的行為。 如需有關此行為的詳細資訊，請參閱 <<c0> [ 顯示驗證錯誤](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)。
+透過附加屬性附加至控制項的行為, 稱為*附加的行為*。 然後, 行為可以使用其附加之專案的公開 API, 在視圖的視覺化樹狀結構中加入該控制項的功能, 或其他控制項。 EShopOnContainers 行動應用程式包含`LineColorBehavior`類別, 這是附加的行為。 如需此行為的詳細資訊, 請參閱[顯示驗證錯誤](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)。
 
-Xamarin.Forms 行為是類別，衍生自[ `Behavior` ](xref:Xamarin.Forms.Behavior)或是[ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)類別，其中`T `行為應該套用至控制項的類型。 這些類別提供`OnAttachedTo`和`OnDetachingFrom`提供時的行為是附加至和中斷連結控制項將會執行的邏輯應該覆寫的方法。
+Xamarin 形式行為是衍生自[`Behavior`](xref:Xamarin.Forms.Behavior)或[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)類別的類別, 其中`T `是應該套用行為的控制項類型。 這些類別會`OnAttachedTo`提供`OnDetachingFrom`和方法, 這些都應該加以覆寫, 以提供當行為附加至控制項並中斷連結時, 將會執行的邏輯。
 
-在 eShopOnContainers 的行動應用程式中`BindableBehavior<T>`類別衍生自[ `Behavior<T>` ](xref:Xamarin.Forms.Behavior`1)類別。 目的`BindableBehavior<T>`類別是為需要的 Xamarin.Forms 行為提供基底類別[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)設為附加的控制項的行為。
+在 eShopOnContainers 行動裝置應用程式中`BindableBehavior<T>` , 類別衍生[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)自類別。 `BindableBehavior<T>`類別的目的是要提供 Xamarin 的基類。表單行為[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)需要將行為的設定為附加的控制項。
 
-`BindableBehavior<T>`類別會提供可覆寫`OnAttachedTo`方法，以設定[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)的行為，以及可覆寫`OnDetachingFrom`方法會清除`BindingContext`。 此外，該類別會在 `AssociatedObject` 屬性中儲存對附加控制項的參考。
+[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) `OnDetachingFrom` `BindingContext`類別提供可覆寫`OnAttachedTo`的方法, 其會設定行為的, 以及會清除的可覆寫方法。 `BindableBehavior<T>` 此外，該類別會在 `AssociatedObject` 屬性中儲存對附加控制項的參考。
 
-EShopOnContainers 的行動裝置應用程式包含`EventToCommandBehavior`類別，以回應事件在發生執行命令。 這個類別衍生自`BindableBehavior<T>`類別，使行為可以繫結至並執行`ICommand`所指定`Command`屬性時的行為會取用。 下列程式碼範例顯示 `EventToCommandBehavior` 類別：
+EShopOnContainers 行動應用程式包含`EventToCommandBehavior`類別, 它會執行命令以回應發生的事件。 這個類別衍生自`BindableBehavior<T>`類別, 讓行為可以在使用行為時, 系結至`Command`屬性所`ICommand`指定並執行。 下列程式碼範例顯示 `EventToCommandBehavior` 類別：
 
 ```csharp
 public class EventToCommandBehavior : BindableBehavior<View>  
@@ -334,13 +334,13 @@ public class EventToCommandBehavior : BindableBehavior<View>
 }
 ```
 
-`OnAttachedTo`並`OnDetachingFrom`方法來註冊及取消註冊事件處理常式中定義事件`EventName`屬性。 然後，當事件引發時，`OnFired`叫用方法時，它就會執行命令。
+和方法是用來註冊和取消註冊`EventName`屬性中所定義事件的事件處理常式。 `OnDetachingFrom` `OnAttachedTo` 然後, 當事件引發`OnFired`時, 會叫用方法, 以執行命令。
 
-使用的優點`EventToCommandBehavior`執行命令，當事件引發時，是 命令可以是未設計成與命令互動的控制項相關聯。 此外，這會將移事件處理程式碼來檢視模型，它可以在其中進行單元測試。
+當事件引發時, `EventToCommandBehavior`使用來執行命令的優點是, 命令可以與未設計成與命令互動的控制項建立關聯。 此外, 這會移動事件處理常式代碼來查看模型, 其中可以進行單元測試。
 
-#### <a name="invoking-behaviors-from-a-view"></a>叫用從檢視表的行為
+#### <a name="invoking-behaviors-from-a-view"></a>從視圖叫用行為
 
-`EventToCommandBehavior`特別適用於附加至的控制項，不支援命令的命令。 例如，`ProfileView`會使用`EventToCommandBehavior`來執行`OrderDetailCommand`時[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)上就會引發事件[ `ListView` ](xref:Xamarin.Forms.ListView)所示，其中會列出使用者的訂單下列程式碼：
+`EventToCommandBehavior`特別適合用來將命令附加至不支援命令的控制項。 `ProfileView`例如, `OrderDetailCommand`當[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)事件在列出`EventToCommandBehavior`使用者訂單的[`ListView`](xref:Xamarin.Forms.ListView)上引發時, 會使用來執行, 如下列程式碼所示:
 
 ```xaml
 <ListView>  
@@ -354,18 +354,18 @@ public class EventToCommandBehavior : BindableBehavior<View>
 </ListView>
 ```
 
-在執行階段`EventToCommandBehavior`會回應互動[ `ListView` ](xref:Xamarin.Forms.ListView)。 當選取的項目`ListView`，則[ `ItemTapped` ](xref:Xamarin.Forms.ListView.ItemTapped)就會引發事件，會同時執行`OrderDetailCommand`在`ProfileViewModel`。 根據預設，事件的事件引數會傳遞至命令。 這項資料會轉換來源和目標之間傳遞中指定轉換器所`EventArgsConverter`屬性，會傳回[ `Item` ](xref:Xamarin.Forms.ItemTappedEventArgs.Item)的`ListView`從[ `ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs). 因此，當`OrderDetailCommand`執行時，所選`Order`做為參數傳遞至註冊的動作。
+在執行時間, `EventToCommandBehavior`會回應與的[`ListView`](xref:Xamarin.Forms.ListView)互動。 在中`ListView`選取專案時[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) , 將會引發事件`OrderDetailCommand` , 這`ProfileViewModel`會在中執行。 根據預設, 事件的事件引數會傳遞至命令。 這項資料會轉換, 因為它是在來源與目標之間傳遞, 並由`EventArgsConverter`屬性中指定的轉換器[`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item) ( `ListView`從[`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs)傳回)。 因此, 當執行`OrderDetailCommand`時, 選取`Order`的會當做參數傳遞給已註冊的動作。
 
-如需行為的詳細資訊，請參閱[行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
+如需行為的詳細資訊, 請參閱[行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
 
 ## <a name="summary"></a>總結
 
-Model View ViewModel (MVVM) 模式可協助以明確區分從其使用者介面 (UI) 的應用程式的商務和呈現邏輯。 維護應用程式邏輯和 UI 清楚劃分幫助您解決許多開發問題，並可讓您更輕鬆地測試、 維護及改進的應用程式。 它可以也可大幅提升程式碼重複使用機會，並可讓開發人員和開發的應用程式及其個別組件時，UI 設計工具，能夠更輕易地共同作業。
+模型 ViewModel (MVVM) 模式有助於將應用程式的商務和展示邏輯與其使用者介面 (UI) 完全分開。 維護應用程式邏輯與 UI 之間的清楚分隔, 有助於解決許多開發問題, 並可讓應用程式更容易測試、維護和發展。 它也可以大幅改善程式碼重複使用的機會, 並可讓開發人員和 UI 設計工具在開發應用程式的個別部分時, 更輕鬆地共同作業。
 
-使用 MVVM 模式的應用程式 UI 和基礎的簡報及商務邏輯區分為三個不同的類別： 檢視中，封裝的 UI 和 UI 邏輯;檢視模型中，封裝呈現邏輯和狀態;與模型中，封裝應用程式的商務邏輯和資料。
+使用 MVVM 模式, 應用程式的 UI 和基礎簡報和商務邏輯會分成三個不同的類別: 此視圖會封裝 UI 和 UI 邏輯;會封裝呈現邏輯和狀態的視圖模型;和模型, 其會封裝應用程式的商務邏輯和資料。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [下載電子書 (2 Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) （範例）](https://github.com/dotnet-architecture/eShopOnContainers)
+- [下載電子書 (2 Mb 的 PDF)](https://aka.ms/xamarinpatternsebook)
+- [eShopOnContainers (GitHub) (範例)](https://github.com/dotnet-architecture/eShopOnContainers)

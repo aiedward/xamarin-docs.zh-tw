@@ -1,54 +1,54 @@
 ---
-title: 註冊在背景中執行的 Xamarin.iOS 應用程式
-description: 本文件說明如何註冊的 Xamarin.iOS 應用程式，以在背景執行。 它討論音訊應用程式、 VoIP 應用程式、 外部的附屬應用程式和藍芽、 等等。
+title: 註冊要在背景中執行的 Xamarin iOS 應用程式
+description: 本檔說明如何註冊要在背景中執行的 Xamarin iOS 應用程式。 它討論音訊應用程式、VoIP 應用程式、外部配件和藍牙等等。
 ms.prod: xamarin
 ms.assetid: 8F89BE63-DDB5-4740-A69D-F60AEB21150D
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: a0a66571d0249ef6fd65ff382f14c38f48a8af37
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 67cc2028276b6e1415c88cb8957e2cd567fa5bae
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61393698"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521274"
 ---
-# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>註冊在背景中執行的 Xamarin.iOS 應用程式
+# <a name="registering-xamarinios-apps-to-run-in-the-background"></a>註冊要在背景中執行的 Xamarin iOS 應用程式
 
-註冊個別工作的背景權限適用於某些應用程式，但如果應用程式持續執行重要 」、 「 長時間執行的工作，例如取得透過 GPS 使用者指示，說明如何呼叫時，會發生什麼事？ 這類的應用程式應該改為註冊為已知的背景必要應用程式。
+註冊背景許可權的個別工作適用于某些應用程式, 但如果不斷呼叫應用程式來執行重要、長時間執行的工作 (例如透過 GPS 取得使用者的指示), 會發生什麼事？ 這些應用程式應該改為註冊為已知的背景必要應用程式。
 
-註冊應用程式通知至 iOS 應用程式應該指定在背景中執行工作所需的特殊權限。
+向 iOS 註冊代理程式更新, 應用程式應獲得在背景執行工作所需的特殊許可權。
 
 ## <a name="application-registration-categories"></a>應用程式註冊類別
 
-已註冊的應用程式可以分成數個類別：
+已註冊的應用程式可分為數個類別:
 
--  **音訊**-音樂播放器和其他音訊內容所使用的應用程式可能會註冊以繼續播放音訊甚至當應用程式已不存在於前景。 如果此類別中的應用程式嘗試播放音訊或在背景中的下載以外執行任何動作時，iOS 會終止它。
--  **VoIP** -Voice Over Internet Protocol (VoIP) 應用程式取得的相同的權限授與音訊的應用程式，以保留處理在背景中的音訊。 它們也允許回應，視需要它們，以維持其連線開機的 VoIP 服務。
--  **外部配件和藍芽**-保留給需要與藍芽裝置和其他外部硬體附屬應用程式進行通訊的應用程式，註冊這些類別可讓應用程式，以保持連線到的硬體。
--  **Newsstand** -Newsstand 應用程式可以繼續在背景中的內容同步處理。
--  **位置**-應用程式使用的 GPS 或網路位置的資料可以傳送和接收位置更新在背景中。
--  **擷取 (iOS 7 +)** -的背景擷取權限可以在定期間隔中，向使用者顯示更新的內容傳回給應用程式時檢查新內容的提供者註冊的應用程式。
--  **遠端通知 (iOS 7 +)** -應用程式可以註冊以接收通知，從提供者，並開始更新之前在使用者開啟應用程式中使用的通知。 通知可以傳入 推播通知的形式，或選擇要以無訊息方式喚醒應用程式。
+- **音訊**-可以註冊音樂播放機和其他使用音訊內容的應用程式, 即使應用程式已不在前景中也能繼續播放音訊。 如果此類別中的應用程式嘗試在背景中執行「播放音訊」或「下載」以外的任何動作, iOS 會將其終止。
+- **Voip** -語音 Over 網際網路通訊協定 (voip) 應用程式取得與音訊應用程式相同的許可權, 以在背景中持續處理音訊。 也可以視需要對其供電的 VoIP 服務做出回應, 讓其連線保持運作。
+- **外部配件和藍牙**-保留給需要與 Bluetooth 裝置和其他外部硬體配件通訊的應用程式, 在這些類別下註冊可讓應用程式保持連接到硬體。
+- **Newsstand** -Newsstand 應用程式可以繼續在背景中同步處理內容。
+- **位置**-利用 GPS 或網路位置資料的應用程式, 可以在背景中傳送和接收位置更新。
+- **Fetch (iOS 7 +)** -針對背景提取許可權註冊的應用程式可以定期檢查提供者是否有新的內容, 並在使用者返回應用程式時向其呈現更新內容。
+- **遠端通知 (iOS 7 +)** -應用程式可以註冊以接收來自提供者的通知, 並在使用者開啟應用程式之前, 使用通知來啟動更新。 通知可以是推播通知的形式, 或選擇以無訊息方式喚醒應用程式。
 
 
-應用程式可以藉由設定登錄**必要的背景模式**應用程式的屬性*Info.plist*。 應用程式可以註冊多個類別，因為它需要︰
+您可以在應用程式的*plist*中設定必要的 [**背景模式**] 屬性來註冊應用程式。 應用程式可以視需要在多個類別中註冊:
 
- [![](registering-applications-to-run-in-background-images/bgmodes.png "設定 背景模式")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/bgmodes.png "設定背景模式")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
-註冊背景位置更新應用程式的逐步指南，請參閱 <<c0> [ 背景位置逐步解說](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)。
+如需註冊應用程式以取得背景位置更新的逐步指南, 請參閱[背景位置](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)逐步解說。
 
-## <a name="application-does-not-run-in-background-property"></a>應用程式不會執行以背景屬性
+## <a name="application-does-not-run-in-background-property"></a>應用程式不會在 Background 屬性中執行
 
-中可設定的另一個屬性*Info.plist*是*應用程式不會在背景中執行*，或`UIApplicationExitsOnSuspend`屬性：
+另一個可在*Info. plist*中設定的屬性是,*應用程式不會在背景*或`UIApplicationExitsOnSuspend`屬性中執行:
 
- [![](registering-applications-to-run-in-background-images/plist.png "停用背景執行")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![](registering-applications-to-run-in-background-images/plist.png "正在停用背景執行")](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
-這有完全相同的效果設定背景重新整理應用程式設定為 關閉 iOS 7 + 中，但只能在開發人員端，加以變更，而且是適用於 iOS 4 和更新版本。 應用程式之後立即輸入背景，即會暫止，並不能執行任何處理。
+這與在 iOS 7 + 中將 [背景應用程式重新整理] 設定設定為 [關閉] 的效果完全相同, 不同之處在于它只能在開發人員端變更, 並且適用于 iOS 4 和更新版本。 應用程式會在進入背景後立即暫停, 而且將無法執行任何處理。
 
-如果您的應用程式不是設計用來處理背景處理，因為這有助於避免非預期的行為，請使用這個屬性。
+如果您的應用程式不是設計來處理背景處理, 請使用這個屬性, 因為這有助於避免非預期的行為。
 
-## <a name="background-fetch-and-remote-notifications"></a>背景擷取及遠端通知
+## <a name="background-fetch-and-remote-notifications"></a>背景提取和遠端通知
 
-背景擷取和遠端通知是特殊的註冊類別在 iOS 7 中引進。 這些類別可讓應用程式，以接收來自提供者，新的內容，並在背景中更新。 下一節探討 fetch 和更高的詳細資訊，在遠端通知，並也引進定位知悉等功能，表示更新 iOS 6 在背景中的應用程式。
+背景提取和遠端通知是 iOS 7 引進的特殊註冊類別。 這些類別可讓應用程式從提供者接收新的內容, 並在背景中更新。 下一節會更詳細地探討提取和遠端通知, 同時也引進了位置感知, 做為在 iOS 6 背景中更新應用程式的方法。

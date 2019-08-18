@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e4676314b361bac17b3c6df64631572e62f4d870
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6960fe3db1ddf7d6d911fe8151e49b1a42388d26
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653734"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527851"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin 中的核心映射
 
@@ -22,9 +22,9 @@ _核心映射是 iOS 5 引進的新架構, 可提供影像處理和即時影片�
 
 本檔包含簡單的範例:
 
--  臉部偵測。
--  將篩選套用至影像
--  列出可用的篩選準則。
+- 臉部偵測。
+- 將篩選套用至影像
+- 列出可用的篩選準則。
 
 
 這些範例應協助您開始將核心映射功能整合到您的 Xamarin iOS 應用程式中。
@@ -49,12 +49,12 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 
 功能陣列將會填入`CIFaceFeature`物件 (如果偵測到任何臉部)。 每個臉部`CIFaceFeature`都有一個。 `CIFaceFeature`具有下列屬性:
 
--  HasMouthPosition –是否偵測到此臉部的嘴。
--  HasLeftEyePosition –是否已偵測到此臉部的向左眼睛。
--  HasRightEyePosition –是否在此臉部中偵測到適當的眼睛。 
--  MouthPosition –此臉部的嘴座標。
--  LeftEyePosition –此臉部的左邊眼座標。
--  RightEyePosition –此臉部的適當眼睛座標。
+- HasMouthPosition –是否偵測到此臉部的嘴。
+- HasLeftEyePosition –是否已偵測到此臉部的向左眼睛。
+- HasRightEyePosition –是否在此臉部中偵測到適當的眼睛。 
+- MouthPosition –此臉部的嘴座標。
+- LeftEyePosition –此臉部的左邊眼座標。
+- RightEyePosition –此臉部的適當眼睛座標。
 
 
 所有這些屬性的座標在左下方都有其原點, 與使用左上角作為原點的 UIKit 不同。 使用上`CIFaceFeature`的座標時, 請務必「翻轉」它們。 在 CoreImage\CoreImageViewController.cs 中, 這個非常基本的自訂影像視圖會示範如何在影像上繪製「臉部指標」 `FlipForBottomOrigin`三角形 (請注意方法):
@@ -114,7 +114,7 @@ faceView.SetNeedsDisplay();
 
 因為臉部辨識的運作方式, 有時會偵測到人臉以外的事物 (例如, 這些玩具猴仔!)。
 
-## <a name="filters"></a>篩選條件
+## <a name="filters"></a>篩選器
 
 有超過50個不同的內建篩選準則, 而架構是可擴充的, 因此可以實作為新的篩選準則。
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a13426f4213d7c306c0de6922d336d4bb7723d72
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037418"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69541436"
 ---
 [`ListView`](xref:Xamarin.Forms.ListView) 會使用類型為 `IEnumerable` 的 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性來填入資料。 上一個步驟已使用字串陣列填入 XAML 中的 `ListView`。 不過，一般而言，`ListView` 會從程式碼後置中所定義且實作 `IEnumerable` 的集合填入資料。
 
@@ -12,7 +12,7 @@ ms.locfileid: "61037418"
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. 在 [方案總管] 的 **ListViewTutorial** 專案中，新增包含下列程式碼且名為 `Monkey` 的類別：
+1. 在 [方案總管]  的 **ListViewTutorial** 專案中，新增包含下列程式碼且名為 `Monkey` 的類別：
 
     ```csharp
     public class Monkey
@@ -30,7 +30,7 @@ ms.locfileid: "61037418"
 
     此程式碼會定義 `Monkey` 物件，此物件會儲存猴子影像的名稱、位置和 URL。 此外，該類別會覆寫 `ToString` 方法以傳回 `Name` 屬性值。
 
-1. 在 [方案總管] 的 **ListViewTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [方案總管]  的 **ListViewTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```csharp
     using System.Collections.Generic;
@@ -177,7 +177,7 @@ ms.locfileid: "61037418"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性會透過視覺化樹狀結構繼承。 因此，由於其已設定於 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，所以 `ContentPage` 的子物件會繼承其值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-1.  在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.Image) 宣告，以將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為 `Monkeys` 集合：
+1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.Image) 宣告，以將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為 `Monkeys` 集合：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -185,7 +185,7 @@ ms.locfileid: "61037418"
 
     此程式碼資料會將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性繫結到 `Monkeys` 集合。 在執行階段中，[`ListView`](xref:Xamarin.Forms.ListView) 會針對 `Monkeys` 集合查看其 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，並且從此集合填入資料。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 中從集合填入資料的 ListView 螢幕擷取畫面](../images/populate-data.png "從集合顯示資料的 ListView")](../images/populate-data-large.png#lightbox "從集合顯示資料的 ListView")
 
@@ -193,7 +193,7 @@ ms.locfileid: "61037418"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 [Solution Pad] 的 **ListViewTutorial** 專案中，新增包含下列程式碼且名為 `Monkey` 的類別：
+1. 在 [Solution Pad]  的 **ListViewTutorial** 專案中，新增包含下列程式碼且名為 `Monkey` 的類別：
 
     ```csharp
     public class Monkey
@@ -211,7 +211,7 @@ ms.locfileid: "61037418"
 
     此程式碼會定義 `Monkey` 物件，此物件會儲存猴子影像的名稱、位置和 URL。 此外，該類別會覆寫 `ToString` 方法以傳回 `Name` 屬性值。
 
-1. 在 [Solution Pad] 的 **ListViewTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [Solution Pad]  的 **ListViewTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後在 **MainPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```csharp
     using System.Collections.Generic;
@@ -358,7 +358,7 @@ ms.locfileid: "61037418"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性會透過視覺化樹狀結構繼承。 因此，由於其已設定於 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，所以 `ContentPage` 的子物件會繼承其值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-1.  在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.Image) 宣告，以將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為 `Monkeys` 集合：
+1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.Image) 宣告，以將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為 `Monkeys` 集合：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -366,7 +366,7 @@ ms.locfileid: "61037418"
 
     此程式碼資料會將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性繫結到 `Monkeys` 集合。 在執行階段中，[`ListView`](xref:Xamarin.Forms.ListView) 會針對 `Monkeys` 集合查看其 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，並且從此集合填入資料。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 中從集合填入資料的 ListView 螢幕擷取畫面](../images/populate-data.png "從集合顯示資料的 ListView")](../images/populate-data-large.png#lightbox "從集合顯示資料的 ListView")
 

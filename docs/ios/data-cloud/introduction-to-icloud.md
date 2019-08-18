@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/09/2016
-ms.openlocfilehash: e4728d14e4fdb914fbfc950ffe38abee031b4c49
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d25ad46b0d8797da8f14987f54006b63d2b8233d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649649"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527573"
 ---
 # <a name="using-icloud-with-xamarinios"></a>使用 iCloud 搭配 Xamarin. iOS
 
@@ -45,9 +45,9 @@ IOS 5 中的 iCloud 儲存體 API 可讓應用程式將使用者檔和應用程�
 
 若要正確地設定應用程式來存取 iCloud:
 
--   **尋找您的 TeamID**登入[developer.apple.com](https://developer.apple.com) , 並流覽**成員中心 > 您的帳戶 > 開發人員帳戶摘要**, 以取得您的小組識別碼 (或單一開發人員的個別識別碼)。 它會是10個字元的字串 (例如**A93A5CM278** )-這會形成「容器識別碼」的一部分。
+- **尋找您的 TeamID**登入[developer.apple.com](https://developer.apple.com) , 並流覽**成員中心 > 您的帳戶 > 開發人員帳戶摘要**, 以取得您的小組識別碼 (或單一開發人員的個別識別碼)。 它會是10個字元的字串 (例如**A93A5CM278** )-這會形成「容器識別碼」的一部分。
 
--   **建立新的應用程式識別碼**-若要建立應用程式識別碼, 請依照裝置布建指南中的布建[儲存技術一節](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)中所述的步驟進行, 並務必檢查**iCloud**是否為允許的服務:
+- **建立新的應用程式識別碼**-若要建立應用程式識別碼, 請依照裝置布建指南中的布建[儲存技術一節](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)中所述的步驟進行, 並務必檢查**iCloud**是否為允許的服務:
 
  [![](introduction-to-icloud-images/icloud-sml.png "檢查 iCloud 是否為允許的服務")](introduction-to-icloud-images/icloud.png#lightbox)
 

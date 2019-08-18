@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/18/2017
-ms.openlocfilehash: f577af88140c5797182617a22efbb2e7991a8abc
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 22c3217eec1b2e531ad4534fc1cb35a701a06e34
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510560"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524081"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>JAVA 與 Xamarin 整合
 
@@ -24,11 +24,11 @@ _JAVA 生態系統包含各種不同的元件集合。其中許多元件都可�
 
 有三種可能的方式可以在 Xamarin Android 應用程式中重複使用 JAVA 程式庫: 
 
--   **建立 JAVA**系結程式庫使用這項技術時, 會使用 Xamarin. Android 專案來C#建立 JAVA 類型的包裝函式。 &ndash; 然後, Xamarin 應用程式可以參考此專案C#所建立的包裝函式, 然後使用該`.jar`檔案。 
+- **建立 JAVA**系結程式庫使用這項技術時, 會使用 Xamarin. Android 專案來C#建立 JAVA 類型的包裝函式。 &ndash; 然後, Xamarin 應用程式可以參考此專案C#所建立的包裝函式, 然後使用該`.jar`檔案。 
 
--   **Java Native Interface** &ndash; *Java 原生* *介面*(JNI) 是一種架構，可讓非 Java 程式碼 (例如C++或C#) 呼叫，或由 Java 程式碼呼叫JVM 內執行。 
+- **JAVA 原生介面**C++ C# JAVA 原生介面 (JNI) 是一種架構, 可讓非 JAVA 程式碼 (例如或) 呼叫或由在 JVM 內執行的 JAVA 程式碼呼叫。 &ndash; 
 
--   **埠程式碼**此方法牽涉到取得 JAVA 原始程式碼, 然後將它轉換成C# &ndash; 這可以手動執行, 或使用自動化工具 (例如「銳化」) 來完成。 
+- **埠程式碼**此方法牽涉到取得 JAVA 原始程式碼, 然後將它轉換成C# &ndash; 這可以手動執行, 或使用自動化工具 (例如「銳化」) 來完成。 
 
 前兩項技術的核心是*JAVA 原生介面*(JNI)。 JNI 是一種架構, 可讓不是以 JAVA 撰寫的應用程式與在 JAVA 虛擬機器中執行的 JAVA 程式碼互動。 Xamarin 會使用 JNI 來建立程式代碼的C#系結。 
 

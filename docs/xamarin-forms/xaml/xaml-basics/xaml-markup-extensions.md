@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 2417d6400faf80ad9b3b24a032046e7e867814f5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0ce718bf0380c47033129755d6ca9d40c1136e2c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655480"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529263"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -441,9 +441,9 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 數個標記延伸是 XAML 內建函式，並支援 Xamarin.Forms XAML 檔案中。 其中某些不常使用，但在需要時是不可或缺：
 
--  如果屬性的非`null`數值，依預設，但您想要將它設定為`null`，將它設定為`{x:Null}`標記延伸。
--  如果屬性型別的`Type`，您可以將它指派給`Type`物件使用標記延伸`{x:Type someClass}`。
--  您可以定義在 XAML 中使用的陣列`x:Array`標記延伸。 這個標記延伸具有必要的屬性，名為`Type`表示陣列中的項目型別。
+- 如果屬性的非`null`數值，依預設，但您想要將它設定為`null`，將它設定為`{x:Null}`標記延伸。
+- 如果屬性型別的`Type`，您可以將它指派給`Type`物件使用標記延伸`{x:Type someClass}`。
+- 您可以定義在 XAML 中使用的陣列`x:Array`標記延伸。 這個標記延伸具有必要的屬性，名為`Type`表示陣列中的項目型別。
 - `Binding`標記延伸述[第 4 部分。資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 ## <a name="the-constraintexpression-markup-extension"></a>ConstraintExpression 標記延伸

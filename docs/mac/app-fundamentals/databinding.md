@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: dfc4c8a5f00fd11d1554dcadf5e35018046e49f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: beb063d423c860958948751d162af661040004b7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642903"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529006"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac 中的資料系結和索引鍵-值編碼
 
@@ -20,7 +20,7 @@ _本文涵蓋使用索引鍵/值編碼和索引鍵-值觀察, 以允許資料系
 
 ## <a name="overview"></a>總覽
 
-在 Xamarin. C# Mac 應用程式中使用和 .net 時, 您可以存取開發人員在*Xcode*中運作的相同索引鍵值編碼和資料系結技術  。 因為 Xamarin 會直接與 Xcode 整合, 所以您可以使用 Xcode 的_Interface Builder_來與 UI 元素進行資料系結, 而不是撰寫程式碼。
+在 Xamarin. C# Mac 應用程式中使用和 .net 時, 您可以存取開發人員在*Xcode*中運作的相同索引鍵值編碼和資料系結技術 。 因為 Xamarin 會直接與 Xcode 整合, 所以您可以使用 Xcode 的_Interface Builder_來與 UI 元素進行資料系結, 而不是撰寫程式碼。
 
 藉由在 Xamarin. Mac 應用程式中使用索引鍵/值編碼和資料系結技術, 您可以大幅減少必須撰寫和維護的程式碼數量, 以填入和使用 UI 元素。 您也可以進一步將您的支援資料 (_資料模型_) 與您的前端使用者介面 (_模型視圖控制器_) 分離, 讓您更容易維護、更有彈性的應用程式設計。
 
@@ -586,7 +586,7 @@ public override void AwakeFromNib ()
 
     ![新增必要的機碼路徑](databinding-images/table05.png "新增必要的機碼路徑")
 4. 這會告訴陣列控制器它管理的陣列, 以及應該公開的屬性 (透過金鑰)。
-5. 切換至 系結 偵測**器**, 然後  在 **內容陣列** 底下選取 系結 和 **資料表視圖控制器** 輸入**模型索引鍵路徑** `self.personModelArray`:  
+5. 切換至 系結 偵測**器**, 然後在 **內容陣列** 底下選取 系結 和 **資料表視圖控制器** 輸入**模型索引鍵路徑** `self.personModelArray`:  
 
     ![輸入金鑰路徑](databinding-images/table06.png "輸入金鑰路徑")
 6. 這`PersonModels`會將陣列控制器與我們在視圖控制器上公開的陣列結合。
@@ -704,7 +704,7 @@ public override void AwakeFromNib ()
 
     ![新增必要的機碼路徑](databinding-images/outline05.png "新增必要的機碼路徑")
 4. 這會告訴樹狀結構控制器它管理的陣列, 以及應該公開的屬性 (透過金鑰)。
-5. 在 [**樹狀結構控制器**] 區段`personModelArray`下, `NumberOfEmployees`針對 [**子**系  ] 輸入, `isEmployee`然後在 [分**葉**] 底下輸入  
+5. 在 [**樹狀結構控制器**] 區段`personModelArray`下, `NumberOfEmployees`針對 [**子**系 ] 輸入, `isEmployee`然後在 [分**葉**] 底下輸入  
 
     ![設定樹狀控制器金鑰路徑](databinding-images/outline05.png "設定樹狀控制器金鑰路徑")
 6. 這會告訴樹狀結構控制器要在何處尋找任何子節點、有多少個子節點, 以及目前節點是否有子節點。
@@ -816,8 +816,8 @@ Now we need to create our Collection View, double-click the **Main.storyboard** 
 
 When you add a Collection View to a User Interface design, two extra elements are also added:
 
-1.  **Collection View Item** -  That manages a single instance of an item in the collection.
-2.  **View** - A custom view that provides the visual size and appearance of each item in the collection. This view is tied to and managed by the **Collection View Item**.
+1. **Collection View Item** -  That manages a single instance of an item in the collection.
+2. **View** - A custom view that provides the visual size and appearance of each item in the collection. This view is tied to and managed by the **Collection View Item**.
 
 Select the view and make it look like the following using an Image View and two Text Fields:
 

@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 2efc782386b8ec39ecca21aaf88738c813c260f0
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511663"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529054"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -143,8 +143,8 @@ Xamarin Profiler 的支援可在下列平臺上取得:
 
 #### <a name="launching-from-visual-studio"></a>從 Visual Studio 啟動
 
-1.  首先, 請確定您已在 Visual Studio 中載入應用程式, 並選取 (預設) [Debug] 設定, 如上面所指定。
-2.  流覽以分析 Visual Studio 中的 **> Xamarin Profiler** , 以開啟 Profiler, 如下圖所示:
+1. 首先, 請確定您已在 Visual Studio 中載入應用程式, 並選取 (預設) [Debug] 設定, 如上面所指定。
+2. 流覽以分析 Visual Studio 中的 **> Xamarin Profiler** , 以開啟 Profiler, 如下圖所示:
 
 ![從 Visual Studio 啟動 Profiler](images/start-profiling-vs.png)
 
@@ -231,8 +231,8 @@ Xamarin Profiler 是由五個區段組成, 如下所示:
 配置的 [偵測器] 視圖會提供篩選和分組物件的選項、提供所配置記憶體的統計資料和最上層配置, 以及堆疊追蹤的視圖和根的路徑。
 
 - **呼叫樹狀結構**–這會顯示應用程式中所有線程的整個呼叫樹狀結構, 並包含每個節點上所配置之記憶體的相關資訊。 在清單中選取專案時, 所有的同輩節點都會顯示為灰色。 您可以展開樹狀結構, 或按兩下元素以向下切入。顯示此資料檢視時, 可以使用 [顯示設定] 偵測器視圖來變更其呈現方式。 目前有兩個選項:
-    1.  **反向呼叫樹狀結構**–這會將堆疊追蹤從上到下考慮。 這是一個方便的視圖選項, 因為它會指出 CPU 已花費時間的最深方法。
-    2.  **以執行緒分隔**–此選項會依執行緒組織呼叫樹狀結構。
+    1. **反向呼叫樹狀結構**–這會將堆疊追蹤從上到下考慮。 這是一個方便的視圖選項, 因為它會指出 CPU 已花費時間的最深方法。
+    2. **以執行緒分隔**–此選項會依執行緒組織呼叫樹狀結構。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
-ms.openlocfilehash: 71836021b29094911f9d1ad43639ed103fa18b73
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bc95b9be0605c353ee9f914cb065f79711b9f92b
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652825"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978281"
 ---
 # <a name="create-a-xamarinforms-visual-renderer"></a>建立 Xamarin. Forms 視覺效果轉譯器
 
@@ -104,20 +104,23 @@ public class CustomVisual : IVisual
 
 ## <a name="register-the-ivisual-type"></a>註冊 IVisual 類型
 
-在平臺專案中, 使用`ExportRendererAttribute`來裝飾轉譯器類別:
+在平臺專案中, 于元件`ExportRendererAttribute`層級新增:
 
 ```csharp
 [assembly: ExportRenderer(typeof(Xamarin.Forms.Button), typeof(CustomButtonRenderer), new[] { typeof(CustomVisual) })]
-public class CustomButtonRenderer : ButtonRenderer
+namespace VisualDemos.iOS
 {
-    protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+    public class CustomButtonRenderer : ButtonRenderer
     {
-        ...
+        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+        {
+            // ...
+        }
     }
 }
 ```
 
-在此範例中, `ExportRendererAttribute`會指定`CustomButtonRenderer`將使用類別來呈現[`Button`](xref:Xamarin.Forms.Button)使用中的物件, 並將`IVisual`類型註冊為第三個引數。 指定`IVisual`類型做為其`ExportRendererAttribute`一部分的轉譯器將用來轉譯加入宣告的視圖, 而不是預設轉譯器。
+在此 iOS 平臺專案的`ExportRendererAttribute`範例中, 會指定`CustomButtonRenderer`將使用類別來[`Button`](xref:Xamarin.Forms.Button)轉譯使用中的物件, 並將`IVisual`類型註冊為第三個引數。 指定`IVisual`類型做為其`ExportRendererAttribute`一部分的轉譯器將用來轉譯加入宣告的視圖, 而不是預設轉譯器。
 
 ## <a name="consume-the-visual-renderer"></a>使用視覺效果轉譯器
 

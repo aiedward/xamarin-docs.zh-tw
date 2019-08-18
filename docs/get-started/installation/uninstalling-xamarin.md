@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: asb3993
 ms.author: amburns
 ms.date: 04/08/2017
-ms.openlocfilehash: 6a0fe95d6d471bfb464234f0540b8398acb22e6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 97b870d96a2ffc599e010e049554b51b550a7311
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61262882"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521589"
 ---
 # <a name="uninstalling-xamarin"></a>解除安裝 Xamarin
 
@@ -196,14 +196,18 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 1. 以滑鼠右鍵按一下指令碼，並選取 [另存新檔...] 以將檔案儲存至 Mac。
 
-2.  開啟**終端機**，並將工作目錄變更為已下載指令碼的位置：
+2. 開啟**終端機**，並將工作目錄變更為已下載指令碼的位置：
 
-        $ cd /location/of/file
+    ```
+    cd /location/of/file
+    ```
 
 3. 將指令碼設為可執行，並使用 **sudo** 執行它：
 
-        $ chmod +x ./xamarin_uninstall.sh
-        $ sudo ./xamarin_uninstall.sh
+    ```
+    chmod +x ./xamarin_uninstall.sh
+    sudo ./xamarin_uninstall.sh
+    ```
 
 4. 最後，刪除解除安裝指令碼。
 
@@ -224,7 +228,7 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 ### <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2019 和 Visual Studio 2017
 
-從 Visual Studio 2019 和使用安裝程式應用程式的 Visual Studio 2017 將 Xamarin 解除安裝：
+Xamarin 會使用安裝程式應用程式從 Visual Studio 2019 和 Visual Studio 2017 卸載:
 
 1. 使用 [開始] 功能表來開啟 **Visual Studio 安裝程式**。
 

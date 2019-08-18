@@ -1,93 +1,93 @@
 ---
-title: .xib 在 Xamarin.iOS 中的程式碼產生
-description: 本文件說明如何為 Xamarin.iOS 產生對應到.xib 檔案的程式碼C#，以程式設計方式進行視覺控制項可供存取。
+title: 。在 Xamarin 中產生 xib 程式碼
+description: 本檔說明 Xamarin iOS 如何產生程式碼以將 xib 檔案對應至C#, 使視覺控制項可透過程式設計方式存取。
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 57988374b4383f5659e29edff3834958b8f99f1b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 280802adbb5326854b4d47045bbb1569dd123f30
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61035906"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527338"
 ---
-# <a name="xib-code-generation-in-xamarinios"></a>.xib 在 Xamarin.iOS 中的程式碼產生
+# <a name="xib-code-generation-in-xamarinios"></a>。在 Xamarin 中產生 xib 程式碼
 
 > [!IMPORTANT]
->  本文件說明 Visual Studio for Mac 的整合，使用 Xcode 的 Interface Builder，因為動作與出口不會用於 Xamarin 的設計工具適用於 iOS。 如需有關 iOS 設計工具的詳細資訊，請檢閱[iOS 設計工具](~/ios/user-interface/designer/index.md)文件。
+>  本檔說明 Visual Studio for Mac 與 Xcode 的 Interface Builder 的整合, 因為 Xamarin Designer for iOS 中不會使用動作和輸出。 如需 iOS 設計工具的詳細資訊, 請參閱[Ios 設計](~/ios/user-interface/designer/index.md)工具檔。
 
-Apple Interface Builder 工具 ("IB 」) 可用來以視覺化方式設計使用者介面。 由 IB 介面定義會儲存在 **.xib**檔案。 Widget 和中的其他物件 **.xib**檔案提供 「 類別身分識別 」，它可以是自訂的使用者定義型別。 這可讓您自訂的小工具的行為，以及寫入自訂小工具。
+Apple Interface Builder 工具 (「IB」) 可以用來以視覺化方式設計使用者介面。 IB 所建立的介面定義會儲存在**xib**檔案中。 **Xib**檔案中的 widget 和其他物件可能會被授與「類別識別」, 這可以是自訂的使用者定義型別。 這可讓您自訂小工具的行為, 以及撰寫自訂 widget。
 
-這些使用者類別會正常 UI 控制器類別的子類別。 還*插座*（類似屬性） 和*動作*（類似於事件），可以連線到介面的物件。 在執行階段，載入 IB 檔案時，會建立物件，並輸出和動作連線到不同的 UI 物件以動態方式。 在定義這些受管理的類別時，您必須定義的所有動作和以符合 IB 預期的輸出。 Visual Studio for Mac 會使用類似程式碼後置的模型，為了簡化此作業。 這類似於 Xcode 功能適用於 OBJECTIVE-C，但程式碼產生模型和慣例調整以.NET 開發人員比較熟悉。
+這些使用者類別通常是 UI 控制器類別的子類別。 它們具有可以連接到介面物件的*輸出*(類似屬性) 和*動作*(類似事件)。 在執行時間, 載入 IB 檔案時, 會建立物件, 而輸出和動作會以動態方式連接到各種 UI 物件。 定義這些 managed 類別時, 您必須定義所有動作和輸出, 以符合 IB 所預期的。 Visual Studio for Mac 使用類似後置模式的模型來簡化這種情況。 這與 Xcode 針對目標-C 的用途類似, 但程式碼產生模型和慣例已調整為更熟悉 .NET 開發人員。
 
-使用 **.xib**檔案目前不支援在 Xamarin.iOS for Visual Studio。
+Visual Studio 的 Xamarin 目前不支援使用**xib**檔案。
 
-## <a name="xib-files-and-custom-classes"></a>.xib 檔案和自訂類別
+## <a name="xib-files-and-custom-classes"></a>xib 檔案和自訂類別
 
-以及使用現有的類型，從 Cocoa Touch 時，就可以定義中的自訂型別 **.xib**檔案。 您也可使用其他定義的類型 **.xib**檔案，或單純中定義C#程式碼。 目前並不知道外目前定義之類型的詳細資料的 Interface Builder **.xib**檔案，因此它不會列出這些或顯示其自訂的輸出和動作。 移除這項限制是計劃在未來一段時間。
+此外, 您也可以在**xib**檔案中定義自訂類型, 以及從 Cocoa Touch 使用現有的類型。 您也可以使用在其他**xib**檔中定義的類型, 或純粹以C#程式碼定義的類型。 目前, Interface Builder 不知道在**xib**檔案外部定義的類型詳細資料, 因此不會列出它們或顯示其自訂的輸出和動作。 未來已規劃移除這項限制。
 
-中可以定義自訂類別 **.xib**檔案中，使用 Interface Builder 的 「 類別 」 索引標籤中的 「 新增子類別 」 命令。 我們將這些稱為 「 程式碼後置 」 類別。 如果 **.xib**檔案具有 「。 xib.designer.cs 」 專案，然後 Visual Studio for Mac 中的對應檔案會自動填入部分類別定義中的所有自訂類別 **.xib**。 我們將這些部分的類別稱為 「 設計工具類別 」。
+您可以使用 Interface Builder 的 [類別] 索引標籤中的 [新增子類別] 命令, 在**xib**檔案中定義自訂類別。 我們稱之為「後置」類別。 如果**xib**檔案的專案中有 "xib.designer.cs" 對應檔案, Visual Studio for Mac 會自動為**xib**中的所有自訂類別填入部分類別定義。 我們將這些部分類別稱為「設計工具類別」。
 
 ## <a name="generating-code"></a>產生程式碼
 
-針對任何 **{0}.xib**檔案的建置動作*頁面*時，如果 **{0}。 xib.designer.cs**檔案也存在於專案中，Visual Studio for Mac將會產生部分類別的設計工具檔案中的所有使用者類別中可找到 **.xib**檔案，請為輸出的屬性和部分方法的所有動作。 此檔案只會啟用程式碼產生。
+針對具有 [建立] 動作為 [*頁面*] 的任何 **{0}xib**檔案 **{0}** , 如果專案中也有 xib.designer.cs 檔案, Visual Studio for Mac 將會在設計工具檔案中, 為其所有使用者類別產生部分類別可以在**xib**檔案中找到, 其中包含所有動作的輸出屬性和部分方法。 只要此檔案存在, 就會啟用程式碼產生。
 
-設計工具檔案會自動更新的時機 **.xib**檔案變更和 Visual Studio for Mac 重新取得焦點。 設計工具的檔案應該無法手動修改，變更將會覆寫下一次 Visual Studio for Mac 更新檔案。
+當**xib**檔案變更時, 會自動更新設計工具檔案, 並 Visual Studio for Mac 重新取得焦點。 設計工具檔案不應手動修改, 因為下次 Visual Studio for Mac 更新檔案時, 將會覆寫變更。
 
 ## <a name="registration-and-namespaces"></a>註冊和命名空間
 
-Visual Studio for Mac 會產生使用專案的預設命名空間，設計工具的檔案位置，將一般的.NET 專案命名空間與一致的設計工具類別。 設計工具檔案的命名空間會隨專案的 「 預設命名空間 」 及 「.NET 命名原則 」 設定。 請注意，是否您的專案預設命名空間變更，MD 會重新產生新的命名空間中的類別讓您可能會發現您的部分類別不再符合。
+Visual Studio for Mac 會使用設計工具檔案位置的專案預設命名空間來產生設計工具類別, 使其與一般 .NET 專案命名空間如此一致。 設計工具檔案的命名空間是由專案的「預設命名空間」及其「.NET 命名原則」設定所驅動。 請注意, 如果您專案的預設命名空間變更, MD 會重新產生新命名空間中的類別, 因此您可能會發現您的部分類別已不再相符。
 
-若要讓類別可探索 Objective C 執行階段，Visual Studio for Mac 會套用`[Register (name)]`屬性加入該類別。 雖然會自動註冊 Xamarin.iOS `NSObject`-衍生的類別，它會使用完整的.NET 名稱。 Visual studio for Mac 會覆寫此選項以確保每個類別所套用的屬性註冊中所使用的名稱 **.xib**檔案。 如果您使用自訂類別 IB 中不包含 Visual Studio for Mac 來產生設計工具檔案，您可能要套用此選項以手動方式可讓您比對必須是 OBJECTIVE-C 類別名稱的 managed 的類別。
+為了讓目標-C 執行時間可以探索類別, Visual Studio for Mac 會將`[Register (name)]`屬性套用至類別。 雖然 Xamarin 會自動註冊`NSObject`衍生的類別, 但它會使用完整的 .net 名稱。 Visual Studio for Mac 所套用的屬性會覆寫這個, 以確保每個類別都是使用**xib**檔案中所使用的名稱來註冊。 如果您使用 IB 中的自訂類別, 而不使用 Visual Studio for Mac 來產生設計工具檔案, 您可能必須手動套用此功能, 讓您的 managed 類別符合預期的目標-C 類別名稱。
 
-類別不能定義於多部 **.xib**，或它們將會發生衝突。
+無法在一個以上**的 xib**中定義類別, 否則將會衝突。
 
-## <a name="non-designer-class-parts"></a>非設計工具類別的組件
+## <a name="non-designer-class-parts"></a>非設計工具類別元件
 
-設計工具的部分類別不可做為是。 輸出是私用，並指定沒有基底類別。 每個類別會具有對應的 「 非設計工具 」 類別組件，在另一個檔案中，可設定的基底類別、 使用或公開 （expose） 的輸出，並定義才能載入時，具現化原生程式碼類別的建構函式預期 **.xib**。 預設值 **.xib**範本執行這項操作，但定義中的任何額外的自訂類別 **.xib**，您必須手動新增非設計工具的一部分。
+設計工具部分類別不適合用來依原本使用。 輸出為私用, 且未指定任何基底類別。 預期每個類別在另一個檔案中將會有對應的「非設計師」類別部分, 而這個檔案會設定基類、使用或公開輸出, 以及定義在載入時從機器碼具現化類別所需的函式 **。 xib**. **Xib**範本會執行這項操作, 但針對您在**xib**中定義的任何其他自訂類別, 您必須手動新增非設計工具元件。
 
-這是彈性的需求。 例如，多個程式碼後置類別可以共同管理的抽象類別的子類別要衍生子類別透過 IB 類別的子類別。
+這是需要彈性的原因。 例如, 多個程式碼後置類別可以子類別化通用的 managed 抽象類別, 這會將類別分類為由 IB 進行子類別化。
 
-它會將這些放傳統 **{0}。 xib.cs**檔案旁邊 **{0}。 xib.designer.cs**設計工具檔案。
+傳統的方式是將這些檔案放在 **{0}xib.designer.cs**設計工具檔案旁邊的 **{0}xib.cs**檔案中。
 
 <a name="generated" />
 
-## <a name="generated-actions-and-outlets"></a>產生的動作與出口
+## <a name="generated-actions-and-outlets"></a>產生的動作和輸出
 
-在部分的設計工具類別中，Visual Studio for Mac 會產生對應至任何已連線的輸出，IB，與對應至任何已連線的動作的部分方法中定義的屬性。
+在部分設計工具類別中, Visual Studio for Mac 會產生對應于 IB 中所定義之任何連接的輸出的屬性, 以及對應于任何已連接動作的部分方法。
 
-### <a name="outlet-properties"></a>輸出屬性
+### <a name="outlet-properties"></a>插座屬性
 
-設計工具類別會包含對應至自訂類別上定義的所有輸出的屬性。 事實上，這些屬性是實作細節的 Objective C bridge Xamarin.iOS，以啟用消極式繫結。 您應該考慮它們等同於適用於只能從程式碼後置類別的私用欄位。 如果您想要將它們設為公用，加入存取子屬性的非設計工具類別部分中，如同任何其他私用欄位。
+設計工具類別包含的屬性會對應至自訂類別上定義的所有輸出。 這些是屬性的事實, 就是要啟用延遲系結的 Xamarin. iOS 到目標 C 橋接器的執行詳細資料。 您應該將它們視為與私用欄位相等, 其目的只是要從程式碼後置類別使用。 如果您想要將其設為公用, 請將存取子屬性加入非設計工具類別部分, 如同其他任何私用欄位一樣。
 
-若要將輸出屬性定義為具有型別`id`(相當於`NSObject`) 則設計工具的程式碼產生器目前決定的最強的可能型別，以根據物件連接至該插座，為了方便起見。
-不過，這可能不被支援在未來版本中，所以我們建議您定義自訂類別時，明確強類型的輸出。
+如果將`id` [輸出] 屬性定義為具有類型 (相當於`NSObject`), 則設計工具程式碼產生器目前會根據連接到該輸出的物件來決定最強的可能類型, 以方便使用。
+不過, 未來的版本可能不支援此功能, 因此建議您在定義自訂類別時明確地輸入輸出。
 
 ### <a name="action-properties"></a>動作屬性
 
-設計工具類別包含部分方法對應至自訂類別上定義的所有動作。 這些是沒有實作的方法。 部分方法的目的有兩個：
+設計工具類別包含與自訂類別上定義的所有動作對應的部分方法。 這些是沒有執行的方法。 部分方法的目的是雙重:
 
-1.  如果您輸入`partial`在類別主體中非 designer 類別組件，Visual Studio for Mac 將會提供自動完成命令的所有非實作部分方法簽章。
-2.  部分方法簽章有套用公開這些屬性的 Objective C 的世界中，因此它們可以取得處理做為對應的動作的屬性。
+1. 如果您輸入`partial`非設計工具類別部分的類別主體, Visual Studio for Mac 將會提供自動完成所有未實作為部分方法的簽章。
+2. 部分方法簽章具有套用的屬性, 可將其公開至目標-C 世界, 以便將其視為對應的動作來處理。
 
 
-如果您想，可能會略過部分的方法，和實作的動作，藉由將屬性套用至不同的方法，或讓它落入的基底類別。
+如果您想要的話, 可以忽略部分方法, 並將屬性套用至不同的方法來執行動作, 或讓它通過基類。
 
-若要將動作定義為具有寄件者型別`id`(相當於`NSObject`)，則目前的設計工具程式碼產生器會決定最強的可能類型，以連接到該動作的物件為基礎。 不過，這可能不被支援在未來版本中，所以我們建議您定義自訂類別時，明確強類型的動作。
+如果將動作定義為具有的傳送者類型`id` (相當於`NSObject`), 則設計工具程式碼產生器目前會根據連接到該動作的物件, 決定最強的可能類型。 不過, 未來的版本可能不支援此功能, 因此建議您在定義自訂類別時明確地輸入動作。
 
-請注意，這些部分方法只會針對建立C#，因為 CodeDOM 不支援部分的方法，因此不會產生如其他語言。
+請注意, 這些部分方法只會針對C#建立, 因為 CodeDOM 不支援部分方法, 因此不會針對其他語言產生。
 
-## <a name="cross-xib-class-usage"></a>跨 XIB 類別的使用方式
+## <a name="cross-xib-class-usage"></a>跨 XIB 類別使用方式
 
-有時候，使用者想要從多個參考相同的類別 **.xib**檔案，例如使用索引標籤上控制站。 這可以由另一個參考類別定義的明確 **.xib**檔案，或藉由定義相同的類別名稱，一次在第二個 **.xib**。
+有時候, 使用者想要從多個**xib**檔案參考相同的類別, 例如使用索引標籤控制器。 這可以藉由明確從另一個**xib**檔案參考類別定義來完成, 或在第二個 **. xib**中再次定義相同的類別名稱。
 
-後者的情況下可能會因為 Visual Studio for Mac 處理造成問題 **.xib**個別檔案。 它無法自動偵測，並合併重複的定義，因此您可能會得到相同的部分類別定義多個設計工具檔案中的使用者註冊屬性套用多次的衝突。 最新版本的 Visual Studio for Mac 會嘗試解析，但它可能不一定如預期般運作。 這是可能會變成不受支援，在未來，並改為 Visual Studio for Mac 會在所有已定義的所有型別 **.xib**檔案和所有直接顯示專案中的 managed 程式碼 **.xib**檔案。
+第二種情況可能會造成問題, 因為 Visual Studio for Mac 個別處理**xib**檔案。 它無法自動偵測及合併重複的定義, 因此當您在多個設計工具檔案中定義相同的部分類別時, 您可能會發現多次套用 Register 屬性的衝突。 最新版本的 Visual Studio for Mac 嘗試解決此問題, 但可能不一定會如預期般運作。 在未來, 這可能會變得不受支援, 而是 Visual Studio for Mac 會讓專案中所有**xib**檔案和 managed 程式碼中定義的所有型別直接顯示在所有**xib**檔中。
 
-## <a name="type-resolution"></a>型別解析
+## <a name="type-resolution"></a>類型解析
 
-IB 中使用的類型都是 OBJECTIVE-C 型別名稱。 這些會對應至透過暫存器屬性使用的 CLR 型別。 當產生輸出和動作的程式碼，Visual Studio for Mac 會解析所有 Xamarin.iOS 核心所包裝的 Objective C 類型對應的 CLR 型別，並完整限定其型別名稱。
+在 IB 中使用的類型是目標-C 類型名稱。 這些會透過使用 Register 屬性來對應至 CLR 類型。 產生輸出和動作程式碼時, Visual Studio for Mac 將會針對由 Xamarin. iOS core 包裝的所有目標-C 類型解析對應的 CLR 類型, 並完整限定其類型名稱。
 
-不過，程式碼產生器目前無法解決從 OBJECTIVE-C 型別名稱，在使用者程式碼或程式庫中的 CLR 型別，因此在此情況下它會輸出逐字的型別名稱。 這表示對應的 CLR 型別必須有 OBJECTIVE-C 型別相同的名稱，而且是正在使用它的程式碼相同的命名空間。 這是藉由考慮專案中所有的 Objective C 類型程式碼產生期間在未來一段時間修正計劃。
+不過, 程式碼產生器目前無法從使用者程式碼或程式庫中的目標 C 類型名稱解析 CLR 類型, 因此在這種情況下, 它會逐字輸出類型名稱。 這表示對應的 CLR 型別必須與目標-C 型別具有相同的名稱, 而且在與使用它的程式碼相同的命名空間中。 在程式碼產生期間, 考慮專案中的所有目標 C 類型, 計畫在未來的某個時間修正此問題。

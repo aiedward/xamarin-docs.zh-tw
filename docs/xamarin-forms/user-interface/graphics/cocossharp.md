@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: f5a672f6b34edf02eeac0f2820989d0656342167
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a6077029a82577cccbf060f14cdd7586c2793a94
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648833"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529262"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
 
@@ -62,7 +62,7 @@ Xamarin.Forms 是以原生、 平台特定編碼 UI 系統為基礎。 例如，
 CocosSharp Nuget 套件包含所有建立 CocosSharp 物件所需的物件。
 CocosSharp.Forms nuget 套件包含`CocosSharpView`類別，用來主控 CocosSharp 在 Xamarin.Forms 中。
 新增**CocosSharp.Forms** NuGet 並**CocosSharp**將會自動加入以及。
-若要這樣做，以滑鼠右鍵按一下<span class="UIItem">封裝</span>資料夾中，.NET Standard 程式庫專案，然後選取<span class="UIItem">新增套件...</span>.輸入搜尋字詞<span class="UIItem">CocosSharp.Forms</span>，選取<span class="UIItem">適用於 Xamarin.Forms CocosSharp</span>，然後按一下<span class="UIItem">加入封裝</span>。
+若要這樣做，以滑鼠右鍵按一下**封裝**資料夾中，.NET Standard 程式庫專案，然後選取**新增套件...** .輸入搜尋字詞**CocosSharp.Forms**，選取**適用於 Xamarin.Forms CocosSharp**，然後按一下**加入封裝**。
 
 ![](cocossharp-images/image1.png "新增套件 對話方塊")
 

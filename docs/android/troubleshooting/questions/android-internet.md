@@ -7,27 +7,27 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: cd27d5c884086cd0fade4364851039fd0cd915a0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: dc84ecc0ee3a71cc4e1d4233f4d6d5f22f597b07
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60945457"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523489"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>為何我的 Android 發行組建無法連線到網際網路？
 
 ## <a name="cause"></a>原因
 
-此問題最常見的原因在於**網際網路**權限會自動包含在偵錯組建，但必須手動設定的發行組建。 這是因為網際網路權限用來允許偵錯工具附加至處理序，如"DebugSymbols 」 所述[此處](~/android/deploy-test/building-apps/build-process.md)。
+此問題最常見的原因是**網際網路**許可權會自動包含在 debug 組建中, 但必須針對發行組建手動設定。 這是因為網際網路許可權是用來允許偵錯工具附加至進程, 如[這裡](~/android/deploy-test/building-apps/build-process.md)的「DebugSymbols」所述。
 
 
 ## <a name="fix"></a>修正
 
-若要解決此問題，您可以要求網際網路權限，在 Android 資訊清單。 這可以透過資訊清單編輯器] 或 [資訊清單的 sourcecode 完成：
+若要解決此問題, 您可以在 Android 資訊清單中要求網際網路許可權。 這可以透過資訊清單編輯器或資訊清單的 sourcecode 來完成:
 
--   修正在編輯器中：在您的 Android 專案中，移至**內容]-> [AndroidManifest.xml]-> [必要權限**，並檢查**網際網路**
+- 在編輯器中修正:在您的 Android 專案中, 移至 **屬性-> androidmanifest.xml-> 必要許可權** 和 檢查**網際網路**
 
--   修正在 Sourcecode:在 原始檔編輯器中開啟 AndroidManifest 並加入標記內的權限`<Manifest>`標記：
+- 在 Sourcecode 中修正:在原始檔編輯器中開啟 androidmanifest.xml, 並在`<Manifest>`標記內新增許可權標記:
 
     ```xml
     <Manifest>

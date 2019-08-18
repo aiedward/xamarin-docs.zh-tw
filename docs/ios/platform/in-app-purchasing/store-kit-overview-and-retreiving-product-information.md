@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4eb115889b65819e969b8024fc9fbcdc02b566fb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64ad867dca0bbbf27d39b69dc7a1acba73728ca2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648199"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527794"
 ---
 # <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit 總覽和在 Xamarin 中取出產品資訊
 
@@ -28,14 +28,14 @@ ms.locfileid: "68648199"
    
  **SKProductsRequest** –針對核准的產品要銷售的 StoreKit 要求 (App Store)。 可以使用多個產品識別碼來設定。
 
--   **SKProductsRequestDelegate** –宣告處理產品要求和回應的方法。 
--   **SKProductsResponse** –從 StoreKit (App Store) 傳送回委派。 包含符合要求所傳送之產品識別碼的 SKProducts。 
--   **SKProduct** –從 StoreKit (您在 iTunes Connect 中設定) 取出的產品。 包含產品的相關資訊, 例如產品識別碼、標題、描述和價格。 
--   **SKPayment** –使用產品識別碼建立, 並新增至付款佇列以執行購買。 
--   **SKPaymentQueue** –要傳送給 Apple 的佇列付款要求。 由於每個付款處理的結果, 都會觸發通知。 
--   **SKPaymentTransaction** –代表已完成的交易 (已由 App Store 處理並透過 StoreKit 傳送回您的應用程式的購買要求)。 交易可能已購買、還原或失敗。 
--   **SKPaymentTransactionObserver** –回應 StoreKit 付款佇列所產生之事件的自訂子類別。 
--   **StoreKit 作業是非同步**的–啟動 SKProductRequest 之後, 或將 SKPayment 新增至佇列之後, 控制權就會傳回給您的程式碼。 StoreKit 會在您的 SKProductsRequestDelegate 或 SKPaymentTransactionObserver 子類別接收來自 Apple 伺服器的資料時, 呼叫方法。 
+- **SKProductsRequestDelegate** –宣告處理產品要求和回應的方法。 
+- **SKProductsResponse** –從 StoreKit (App Store) 傳送回委派。 包含符合要求所傳送之產品識別碼的 SKProducts。 
+- **SKProduct** –從 StoreKit (您在 iTunes Connect 中設定) 取出的產品。 包含產品的相關資訊, 例如產品識別碼、標題、描述和價格。 
+- **SKPayment** –使用產品識別碼建立, 並新增至付款佇列以執行購買。 
+- **SKPaymentQueue** –要傳送給 Apple 的佇列付款要求。 由於每個付款處理的結果, 都會觸發通知。 
+- **SKPaymentTransaction** –代表已完成的交易 (已由 App Store 處理並透過 StoreKit 傳送回您的應用程式的購買要求)。 交易可能已購買、還原或失敗。 
+- **SKPaymentTransactionObserver** –回應 StoreKit 付款佇列所產生之事件的自訂子類別。 
+- **StoreKit 作業是非同步**的–啟動 SKProductRequest 之後, 或將 SKPayment 新增至佇列之後, 控制權就會傳回給您的程式碼。 StoreKit 會在您的 SKProductsRequestDelegate 或 SKPaymentTransactionObserver 子類別接收來自 Apple 伺服器的資料時, 呼叫方法。 
 
 
 下圖顯示各種 StoreKit 類別之間的關聯性 (必須在您的應用程式中實作為抽象類別):   
@@ -95,11 +95,11 @@ ms.locfileid: "68648199"
    
  無論應用程式銷售的產品類型為何 (可取用、非取用或類型的訂用帳戶), 取得產品資訊以供顯示的流程都相同。 本文隨附的 InAppPurchaseSample 程式碼包含名為「*耗材*」的專案, 示範如何取出實際執行資訊以供顯示。 它會顯示如何:
 
--  建立的`SKProductsRequestDelegate`執行, 並`ReceivedResponse`執行抽象方法。 範例程式碼會呼叫這個`InAppPurchaseManager`類別。 
--  請使用 StoreKit 查看是否允許付款 (使用`SKPaymentQueue.CanMakePayments` )。 
--  `SKProductsRequest`使用已在 iTunes Connect 中定義的產品識別碼來具現化。 這會在範例的`InAppPurchaseManager.RequestProductData`方法中完成。 
--  在上`SKProductsRequest`呼叫 Start 方法。 這會觸發對 App Store 伺服器的非同步呼叫。 將會呼叫`InAppPurchaseManager`委派 (), 並傳回結果。 
--  委派的 ( `InAppPurchaseManager` ) `ReceivedResponse`方法會以 App Store 傳回的資料來更新 UI (產品價格 & 描述, 或有關無效產品的訊息)。 
+- 建立的`SKProductsRequestDelegate`執行, 並`ReceivedResponse`執行抽象方法。 範例程式碼會呼叫這個`InAppPurchaseManager`類別。 
+- 請使用 StoreKit 查看是否允許付款 (使用`SKPaymentQueue.CanMakePayments` )。 
+- `SKProductsRequest`使用已在 iTunes Connect 中定義的產品識別碼來具現化。 這會在範例的`InAppPurchaseManager.RequestProductData`方法中完成。 
+- 在上`SKProductsRequest`呼叫 Start 方法。 這會觸發對 App Store 伺服器的非同步呼叫。 將會呼叫`InAppPurchaseManager`委派 (), 並傳回結果。 
+- 委派的 ( `InAppPurchaseManager` ) `ReceivedResponse`方法會以 App Store 傳回的資料來更新 UI (產品價格 & 描述, 或有關無效產品的訊息)。 
 
 整體互動看起來像這樣 ( **StoreKit**已內建至 iOS, 而**App Store**代表 Apple 的伺服器):
 

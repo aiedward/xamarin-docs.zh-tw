@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 067d97e6a36dae6c11f056241c08c21899e96c08
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 885cf4b77d4eac0668a2e70c57187e9b23a91dd1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649338"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527564"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 簡介
 
@@ -28,8 +28,8 @@ iOS 7 增強了 UIKit 中的動畫支援, 讓應用程式能夠執行先前需�
 
  `UIView`現在支援以彈簧效果建立屬性變更的動畫。 若要新增此項, 請`AnimateNotify`呼叫`AnimateNotifyAsync`或方法, 傳入彈簧阻尼比例和初始彈簧速度的值, 如下所述:
 
--  `springWithDampingRatio`–介於0和1之間的值, 其中的震盪會增加較小的值。
--  `initialSpringVelocity`–初始彈簧速度, 以每秒動畫距離總計的百分比表示。
+- `springWithDampingRatio`–介於0和1之間的值, 其中的震盪會增加較小的值。
+- `initialSpringVelocity`–初始彈簧速度, 以每秒動畫距離總計的百分比表示。
 
 
 當影像視圖的中心變更時, 下列程式碼會產生彈簧效果:
@@ -97,19 +97,19 @@ API 本質上是宣告式。 您可以藉由建立稱為「*行為*」的物件�
 
 有幾個不同的基本行為可用於觸發複雜的互動, 包括:
 
--  `UIAttachmentBehavior`–附加兩個動態專案, 使其一起移動, 或將動態專案附加至附加點。
--  `UICollisionBehavior`-允許動態專案參與衝突。
--  `UIDynamicItemBehavior`–指定一組要套用至動態專案的一般屬性, 例如彈性、密度和摩擦。
--  `UIGravityBehavior`-將重心套用至動態專案, 使專案以 gravitational 方向加速。
--  `UIPushBehavior`–將 force 套用至動態專案。
--  `UISnapBehavior`–允許動態專案貼齊至具有彈簧效果的位置。
+- `UIAttachmentBehavior`–附加兩個動態專案, 使其一起移動, 或將動態專案附加至附加點。
+- `UICollisionBehavior`-允許動態專案參與衝突。
+- `UIDynamicItemBehavior`–指定一組要套用至動態專案的一般屬性, 例如彈性、密度和摩擦。
+- `UIGravityBehavior`-將重心套用至動態專案, 使專案以 gravitational 方向加速。
+- `UIPushBehavior`–將 force 套用至動態專案。
+- `UISnapBehavior`–允許動態專案貼齊至具有彈簧效果的位置。
 
 
 雖然有許多基本類型, 但使用 UIKit Dynamics 將以物理為基礎的互動新增至視圖的一般程式, 在行為上是一致的:
 
-1.  建立動態 animator。
-1.  建立行為。
-1.  將行為新增到動態 animator。
+1. 建立動態 animator。
+1. 建立行為。
+1. 將行為新增到動態 animator。
 
 
 ### <a name="dynamics-example"></a>Dynamics 範例
@@ -230,9 +230,9 @@ var dynBehavior = new UIDynamicItemBehavior (dynItems) {
 
 iOS 7 會變更背景工作的執行時間和方式。 當工作在背景中執行時, iOS 7 中的工作完成不會再讓應用程式保持喚醒狀態, 而且應用程式會以非連續的方式喚醒背景處理。 iOS 7 也新增了三個新的 Api, 可讓您在背景中以新內容更新應用程式:
 
--  背景提取–可讓應用程式定期更新背景中的內容。
--  遠端通知-允許應用程式在收到推播通知時更新內容。 通知可以是「無訊息」, 或可以在鎖定畫面上顯示橫幅。
--  背景傳送服務–允許上傳和下載資料 (例如大型檔案), 而不會有固定時間限制。
+- 背景提取–可讓應用程式定期更新背景中的內容。
+- 遠端通知-允許應用程式在收到推播通知時更新內容。 通知可以是「無訊息」, 或可以在鎖定畫面上顯示橫幅。
+- 背景傳送服務–允許上傳和下載資料 (例如大型檔案), 而不會有固定時間限制。
 
 
 如需新多工功能的詳細資訊, 請參閱 Xamarin[背景處理指南](~/ios/app-fundamentals/backgrounding/index.md)的 iOS 小節。

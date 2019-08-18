@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: d3e5b36f2cbc48dac09b55bfba8c3613db12bbc8
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fa0a3a75a4cc2cfd04b607f17206faa822af0474
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643275"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523637"
 ---
 # <a name="using-native-libraries"></a>使用原生程式庫
 
@@ -24,8 +24,8 @@ Xamarin 支援透過標準 PInvoke 機制來使用原生程式庫。 您也可�
 請注意, 因為 Android 支援多個應用程式二進位介面 (Abi), 所以 Xamarin。 Android 必須知道原生程式庫所建立的 ABI。
 方法有二：
 
-1.  路徑「探查」
-1.  藉由使用`AndroidNativeLibrary/Abi`專案檔中的元素
+1. 路徑「探查」
+1. 藉由使用`AndroidNativeLibrary/Abi`專案檔中的元素
 
 
 路徑探查會使用原生程式庫的父目錄名稱來指定程式庫的目標 ABI。 因此, 如果您將`lib/armeabi/libfoo.so`新增至專案, 則 ABI 會是 "探查", 做`armeabi`為。

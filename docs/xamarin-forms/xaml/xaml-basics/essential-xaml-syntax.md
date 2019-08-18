@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: d8052e00809b15f0858583ee2919c47cfd8af00b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7526349c1b4b61495af95dfc200a5055cea5650e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646563"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529292"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 
@@ -82,9 +82,9 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 
 使用此新的語法，可能會造成一些好用的術語：
 
--  `Label` 已*物件項目*。 它是以 XML 項目表示 Xamarin.Forms 物件。
--  `Text``VerticalOptions`，`FontAttributes`並`FontSize`會*property 屬性*。 它們都是以 XML 屬性的 Xamarin.Forms 屬性。
--  在該最終程式碼片段`TextColor`日益*property 項目*。 它是 Xamarin.Forms 屬性，但它現在是 XML 項目。
+- `Label` 已*物件項目*。 它是以 XML 項目表示 Xamarin.Forms 物件。
+- `Text``VerticalOptions`，`FontAttributes`並`FontSize`會*property 屬性*。 它們都是以 XML 屬性的 Xamarin.Forms 屬性。
+- 在該最終程式碼片段`TextColor`日益*property 項目*。 它是 Xamarin.Forms 屬性，但它現在是 XML 項目。
 
 
 定義的屬性項目可能會在第一次似乎是 XML 語法的違規情形，但它不是。 期限在 XML 中沒有任何特殊意義。 以 XML 的解碼器，`Label.TextColor`是只是一般的子元素。
@@ -176,13 +176,13 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 
 每一個子系的標記內`Grid`您指定的資料列和資料行的子系使用下列屬性：
 
--  `Grid.Row`
--  `Grid.Column`
+- `Grid.Row`
+- `Grid.Column`
 
 這些屬性的預設值為 0。 您也可以指定是否子系跨越多個資料列或資料行，這些屬性：
 
--  `Grid.RowSpan`
--  `Grid.ColumnSpan`
+- `Grid.RowSpan`
+- `Grid.ColumnSpan`
 
 這兩個屬性有預設值為 1。
 

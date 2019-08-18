@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 646a26b4c9b2d44595315a6a32b7294b18c42d7a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7dd3889e9fcbb2260165a96f32f56f437df15ade
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648955"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528844"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆疊視圖
 
@@ -85,9 +85,9 @@ Stack 視圖控制項 (`UIStackView`) 會利用自動設定和大小類別的功
 有數種版面配置類型可搭配堆疊視圖控制項運作。 根據 Apple, 以下是幾個較常見的用法:
 
 - **定義沿著軸的大小**–藉由將兩個邊緣沿著堆疊視圖`Axis`和其中一個相鄰邊緣釘選來設定位置, 堆疊視圖會沿著軸成長, 以符合其子檢視所定義的空間。
-*  **定義子視圖的位置**–藉由釘選到堆疊視圖的相鄰邊緣與其父視圖, 堆疊視圖會同時在這兩個維度中成長, 以符合其包含的子檢視。
+- **定義子視圖的位置**–藉由釘選到堆疊視圖的相鄰邊緣與其父視圖, 堆疊視圖會同時在這兩個維度中成長, 以符合其包含的子檢視。
 - **定義堆疊的大小和位置**–藉由將堆疊視圖的全部四個邊緣釘選到父視圖, 堆疊視圖會根據堆疊視圖內定義的空間來排列子檢視。
-*  **定義垂直軸的大小**–藉由將邊緣垂直`Axis`放在堆疊視圖和軸上的其中一個邊緣來設定位置, 堆疊視圖會沿著軸垂直成長, 以符合其子檢視所定義的空間。
+- **定義垂直軸的大小**–藉由將邊緣垂直`Axis`放在堆疊視圖和軸上的其中一個邊緣來設定位置, 堆疊視圖會沿著軸垂直成長, 以符合其子檢視所定義的空間。
 
 <a name="Stack-Views-and-Storyboards" />
 

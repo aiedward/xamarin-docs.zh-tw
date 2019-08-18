@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: 43c57b552ab9465e67290018fe5f1908eecf2ee9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 82a2e2b4abe5bc634c74c083b860d1f4f59a90b7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656039"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528481"
 ---
 # <a name="view-controller-transitions-in-xamarinios"></a>在 Xamarin 中查看控制器轉換
 
@@ -24,10 +24,10 @@ IOS 7 中的視圖控制器之間的動畫轉換可完全自訂。 `UIViewContro
 
 若要搭配使用自訂`PresentViewController`轉換:
 
-1.  在要呈現`UIModalPresentationStyle.Custom`的控制器上, 將設為。`ModalPresentationStyle`
-2.  執行`UIViewControllerTransitioningDelegate`以建立 animator 類別, 這是的`UIViewControllerAnimatedTransitioning`實例。
-3.  將屬性設定為的`UIViewControllerTransitioningDelegate`實例, 也會在要呈現的控制器上。 `TransitioningDelegate`
-4.  呈現視圖控制器。
+1. 在要呈現`UIModalPresentationStyle.Custom`的控制器上, 將設為。`ModalPresentationStyle`
+2. 執行`UIViewControllerTransitioningDelegate`以建立 animator 類別, 這是的`UIViewControllerAnimatedTransitioning`實例。
+3. 將屬性設定為的`UIViewControllerTransitioningDelegate`實例, 也會在要呈現的控制器上。 `TransitioningDelegate`
+4. 呈現視圖控制器。
 
 
 例如, 下列程式碼會顯示型`ControllerTwo`別為的視圖控制器-a 子`UIViewController`類別:
@@ -80,8 +80,8 @@ public class TransitioningDelegate : UIViewControllerTransitioningDelegate
 
 `UIViewControllerAnimatedTransitioning`類別會處理實際的動畫。 必須實作為兩種方法:
 
-1.  `TransitionDuration`–傳回動畫的持續時間 (以秒為單位)。
-1.  `AnimateTransition`–執行實際的動畫。
+1. `TransitionDuration`–傳回動畫的持續時間 (以秒為單位)。
+1. `AnimateTransition`–執行實際的動畫。
 
 
 例如, 下列類別會實行`UIViewControllerAnimatedTransitioning`以動畫顯示控制器視圖的框架:
@@ -126,18 +126,18 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
 
 集合視圖具有建立動畫轉換的內建支援:
 
--  **導覽控制器**–兩個`UICollectionViewController`實例之間的動畫轉換可以在`UINavigationController`管理它們時, 選擇性地自動處理。
--  **轉換**配置–新`UICollectionViewTransitionLayout`的類別允許在版面配置之間進行互動式轉換。
+- **導覽控制器**–兩個`UICollectionViewController`實例之間的動畫轉換可以在`UINavigationController`管理它們時, 選擇性地自動處理。
+- **轉換**配置–新`UICollectionViewTransitionLayout`的類別允許在版面配置之間進行互動式轉換。
 
 
 ### <a name="navigation-controller-transitions"></a>流覽控制器轉換
 
 在流覽控制器中使用時, `UICollectionViewController`包含在控制器之間進行動畫轉換的支援。 這項支援是內建的功能, 而且只需要幾個簡單的步驟就能執行:
 
-1.  將`UseLayoutToLayoutNavigationTransitions`設定`false`為上`UICollectionViewController`的。
-1.  將的實例`UICollectionViewController`加入至流覽控制器堆疊的根目錄。
-1.  建立第二`UICollectionViewController`個, 並`UseLayoutToLayoutNavigtionTransitions`將其`true`屬性設定為。
-1.  將第二`UICollectionViewController`個推送至流覽控制器的堆疊。
+1. 將`UseLayoutToLayoutNavigationTransitions`設定`false`為上`UICollectionViewController`的。
+1. 將的實例`UICollectionViewController`加入至流覽控制器堆疊的根目錄。
+1. 建立第二`UICollectionViewController`個, 並`UseLayoutToLayoutNavigtionTransitions`將其`true`屬性設定為。
+1. 將第二`UICollectionViewController`個推送至流覽控制器的堆疊。
 
 
 下列程式碼會將`UICollectionViewController`名`ImagesCollectionViewController`為的子類別新增至流覽控制器`UseLayoutToLayoutNavigationTransitions`的堆疊的根目錄, 並將屬性`false`設定為:
@@ -208,13 +208,13 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 
 使用`UICollectionViewTransitionLayout`在筆勢辨識器中執行互動式轉換的步驟如下所示:
 
-1.  建立手勢辨識器。
-1.  呼叫的`UICollectionView`方法, 並將目標配置和完成處理常式傳遞給它。 `StartInteractiveTransition`
-1.  設定從`StartInteractiveTransition`方法傳回之`UICollectionViewTransitionLayout`實例的屬性。`TransitionProgress`
-1.  使版面配置失效。
-1.  呼叫的`UICollectionView` `CancelInteractiveTransition`方法, 以完成轉換或方法來取消它。 `FinishInteractiveTransition`  `FinishInteractiveTransition`讓動畫完成其轉換至目標版面配置, 而`CancelInteractiveTransition`導致動畫回到原始的版面配置。
-1.  在`StartInteractiveTransition`方法的完成處理常式中處理轉換完成。
-1.  將手勢辨識器新增至集合視圖。
+1. 建立手勢辨識器。
+1. 呼叫的`UICollectionView`方法, 並將目標配置和完成處理常式傳遞給它。 `StartInteractiveTransition`
+1. 設定從`StartInteractiveTransition`方法傳回之`UICollectionViewTransitionLayout`實例的屬性。`TransitionProgress`
+1. 使版面配置失效。
+1. 呼叫的`UICollectionView` `CancelInteractiveTransition`方法, 以完成轉換或方法來取消它。 `FinishInteractiveTransition`  `FinishInteractiveTransition`讓動畫完成其轉換至目標版面配置, 而`CancelInteractiveTransition`導致動畫回到原始的版面配置。
+1. 在`StartInteractiveTransition`方法的完成處理常式中處理轉換完成。
+1. 將手勢辨識器新增至集合視圖。
 
 
 下列程式碼會在縮小手勢辨識器內實行互動式版面配置轉換:

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 360ea18de0c9d30988d63602ba3c17c3d00ed83a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 33d0e87e8823db6bf0fd0bc5541f37bd41b6dcde
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644084"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526259"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在遠端進程中執行 Android 服務
 
@@ -83,7 +83,7 @@ _一般而言, Android 應用程式中的所有元件都會在相同的進程中
 
 服務將在哪種進程中執行, 取決於`Process`屬性的值。 Android 會識別三種不同類型的進程:
 
--   **私**用程式&ndash;私用程式是僅供啟動它的應用程式使用的進程。 若要將進程識別為私用, 其名稱必須以 **:** (分號) 開頭。 先前的程式碼片段中所描述的服務和螢幕擷取畫面是私用程式。 下列程式碼片段是的範例`ServiceAttribute`:
+- **私**用程式&ndash;私用程式是僅供啟動它的應用程式使用的進程。 若要將進程識別為私用, 其名稱必須以 **:** (分號) 開頭。 先前的程式碼片段中所描述的服務和螢幕擷取畫面是私用程式。 下列程式碼片段是的範例`ServiceAttribute`:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -91,7 +91,7 @@ _一般而言, Android 應用程式中的所有元件都會在相同的進程中
              Exported=true)]
     ```
 
--   **全域**程式&ndash;在全域程式中執行的服務, 可供在裝置上執行的所有應用程式存取。 全域處理常式必須是以小寫字元開頭的完整類別名稱。
+- **全域**程式&ndash;在全域程式中執行的服務, 可供在裝置上執行的所有應用程式存取。 全域處理常式必須是以小寫字元開頭的完整類別名稱。
     (除非採取步驟來保護服務, 否則其他應用程式可能會系結並與其互動。 本指南稍後將討論如何保護服務免于未經授權的使用。)
 
     ```csharp
@@ -100,7 +100,7 @@ _一般而言, Android 應用程式中的所有元件都會在相同的進程中
              Exported=true)]
     ```
 
--   **隔離的進程**&ndash;隔離的進程是在自己的沙箱中執行的進程, 與系統的其餘部分隔離, 而且沒有自己的特殊許可權。 若要在隔離的進程中執行服務, `IsolatedProcess`的屬性`ServiceAttribute`會設定為`true` , 如下列程式碼片段所示:
+- **隔離的進程**&ndash;隔離的進程是在自己的沙箱中執行的進程, 與系統的其餘部分隔離, 而且沒有自己的特殊許可權。 若要在隔離的進程中執行服務, `IsolatedProcess`的屬性`ServiceAttribute`會設定為`true` , 如下列程式碼片段所示:
     
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -393,7 +393,7 @@ Android 提供四種不同的許可權等級:
 
 有兩個常見的方法可以使用 Android 許可權保護服務:
 
-1.  **執行簽章層級安全性**&ndash;簽章層級安全性表示系統會自動授與許可權給那些使用相同金鑰簽署的應用程式, 而該索引鍵是用來簽署保留服務的 APK。 這是一種簡單的方法, 讓開發人員保護其服務, 同時讓他們可以從自己的應用程式中存取。 簽章層級許可權的宣告方式`Permission`是將的`ServiceAttribute`屬性`signature`設定為:
+1. **執行簽章層級安全性**&ndash;簽章層級安全性表示系統會自動授與許可權給那些使用相同金鑰簽署的應用程式, 而該索引鍵是用來簽署保留服務的 APK。 這是一種簡單的方法, 讓開發人員保護其服務, 同時讓他們可以從自己的應用程式中存取。 簽章層級許可權的宣告方式`Permission`是將的`ServiceAttribute`屬性`signature`設定為:
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -404,7 +404,7 @@ Android 提供四種不同的許可權等級:
     }
     ```
 
-2.  **建立自訂許可權**&ndash;服務的開發人員可以建立服務的自訂許可權。 當開發人員想要與其他開發人員的應用程式共用其服務時, 這是最適合的做法。 自訂許可權需要更多的執行工作, 並將于下面討論。
+2. **建立自訂許可權**&ndash;服務的開發人員可以建立服務的自訂許可權。 當開發人員想要與其他開發人員的應用程式共用其服務時, 這是最適合的做法。 自訂許可權需要更多的執行工作, 並將于下面討論。
 
 下一節將說明建立自`normal`定義許可權的簡單範例。 如需 Android 許可權的詳細資訊, 請參閱 Google 的檔, 以取得[& 安全性的最佳做法](https://developer.android.com/training/articles/security-tips.html)。 如需 Android 許可權的詳細資訊, 請參閱應用程式資訊清單之 Android 檔的[許可權一節](https://developer.android.com/guide/topics/manifest/manifest-intro.html#perms), 以取得 android 許可權的詳細資訊。
 

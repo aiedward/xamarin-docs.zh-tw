@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: da19b9071695f11a7c5591b7e715d85daa01841b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 77174070b227bf8cba94078b1ed1f0a6a8fcf1f8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508724"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528708"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 錯誤
 
@@ -30,7 +30,7 @@ ms.locfileid: "68508724"
 
 ### <a name="mt0000-unexpected-error---please-fill-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MT0000:意外的錯誤-請于前填寫錯誤報表 https://github.com/xamarin/xamarin-macios/issues/new
 
-發生未預期的錯誤狀況。 請以盡可能多的資訊來提出[bug 報告](https://github.com/xamarin/xamarin-macios/issues/new), 包括:
+發生未預期的錯誤狀況。 請在[GitHub](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題, 並盡可能提供最多資訊, 包括:
 
 * 完整組建記錄檔, 最高詳細資訊 ( `-v -v -v -v`例如在**其他 mtouch 引數**中);
 * 重現錯誤的最小測試案例;和
@@ -94,7 +94,7 @@ Xamarin 在錯誤訊息中所述的位置找不到元件。 請確認路徑是�
 
 ### <a name="mt0009-error-while-loading-assemblies-"></a>MT0009:載入元件時發生錯誤: *。
 
-載入根元件所參考的元件時發生錯誤。 可能會在組建輸出中提供詳細資訊。
+從根元件參考載入元件時發生錯誤。 可能會在組建輸出中提供詳細資訊。
 
 <a name="MT0010" />
 
@@ -130,14 +130,14 @@ Xamarin 在錯誤訊息中所述的位置找不到元件。 請確認路徑是�
 
 這可能會在下列情況下發生:
 
-*  已啟用 ARMv6, 且已安裝 Xcode 4.5 或更新版本。
-*  已啟用 ARMv7s, 且已安裝 Xcode 4.4 或更早版本。
+* 已啟用 ARMv6, 且已安裝 Xcode 4.5 或更新版本。
+* 已啟用 ARMv7s, 且已安裝 Xcode 4.4 或更早版本。
 
 請確認已安裝的 Xcode 版本支援選取的架構。
 
 <a name="MT0015" />
 
-### <a name="mt0015-invalid-abi--supported-abis-are-i386-x8664--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015:不正確 ABI: *。 支援的 Abi 包括: i386、x86_64、armv7、armv7 + llvm、armv7 + llvm + thumb2、armv7s、armv7s + llvm、armv7s + llvm + thumb2、arm64 和 arm64 + llvm。
+### <a name="mt0015-invalid-abi--supported-abis-are-i386-x86_64--armv7-armv7llvm-armv7llvmthumb2-armv7s-armv7sllvm-armv7sllvmthumb2-arm64-and-arm64llvm"></a>MT0015:不正確 ABI: *。 支援的 Abi 包括: i386、x86_64、armv7、armv7 + llvm、armv7 + llvm + thumb2、armv7s、armv7s + llvm、armv7s + llvm + thumb2、arm64 和 arm64 + llvm。
 
 傳遞了不正確 ABI 給 mtouch。 請指定有效的 ABI。
 
@@ -165,12 +165,12 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 有數個 mtouch 選項無法同時使用:
 
--  --logdev
--  --installdev
--  --killdev
--  --launchdev
--  --launchdebug
--  --launchsim
+- --logdev
+- --installdev
+- --killdev
+- --launchdev
+- --launchdebug
+- --launchsim
 
 <a name="MT0020" />
 
@@ -252,7 +252,7 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 <a name="MT0037" />
 
-### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x8664"></a>MT0037: monotouch 與64位不相容。 參考 Xamarin 或不是針對64位架構 (ARM64 和/或 x86_64) 所建立。
+### <a name="mt0037-monotouchdll-is-not-64-bit-compatible-either-reference-xamariniosdll-or-do-not-build-for-a-64-bit-architecture-arm64-andor-x86_64"></a>MT0037: monotouch 與64位不相容。 參考 Xamarin 或不是針對64位架構 (ARM64 和/或 x86_64) 所建立。
 
 <a name="MT0038" />
 
@@ -324,7 +324,7 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 ### <a name="mt0054-unable-to-canonicalize-the-path--"></a>MT0054:無法正常化路徑 ' * ': *
 
-這是內部錯誤。 如果您看到此錯誤，請將 bug 歸檔[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)。
+這是內部錯誤。 如果您看到此錯誤, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新的問題。
 
 <a name="MT0055" />
 
@@ -334,7 +334,7 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 <a name="MT0056" />
 
-### <a name="mt0056-cannot-find-xcode-in-the-default-location-applicationsxcodeapp-please-install-xcode-or-pass-a-custom-path-using---sdkroot-path"></a>MT0056:在預設位置 (/Applications/Xcode.app) 找不到 Xcode。 請安裝 Xcode, 或使用--sdkroot <path>傳遞自訂路徑。
+### <a name="mt0056-cannot-find-xcode-in-the-default-location-applicationsxcodeapp-please-install-xcode-or-pass-a-custom-path-using---sdkroot-path"></a>MT0056:在預設位置 (/Applications/Xcode.app) 找不到 Xcode。 請安裝 Xcode, 或使用--sdkroot \<path > 傳遞自訂路徑。
 
 <a name="MT0057" />
 
@@ -374,7 +374,7 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 每個 plist 都必須有可執行檔 (使用 CFBundleExecutable 專案), 不過, 在組建期間應該會自動產生一個專案。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0064" />
 
@@ -394,13 +394,13 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 ### <a name="mt0066-invalid-build-registrar-assembly-"></a>MT0066:組建註冊機構元件無效: *
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0067" />
 
 ### <a name="mt0067-invalid-registrar-"></a>MT0067:註冊機構無效: *
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0068" />
 
@@ -422,13 +422,13 @@ Mtouch 無法辨識錯誤訊息中所述的命令列引數。
 
 ### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071:未知的平臺: *。 這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 http://bugzilla.xamarin.com 與測試案例。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0072" />
 
 ### <a name="mt0072-extensions-are-not-supported-for-the-platform-"></a>MT0072:平臺 ' * ' 不支援延伸模組。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0073" />
 
@@ -454,19 +454,19 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 <a name="MT0076" />
 
-### <a name="mt0075-no-architecture-specified-using-the---abi-argument-an-architecture-is-required-for--projects"></a>MT0075:未指定任何架構 (使用--abi 引數)。 \* 專案需要架構。
+### <a name="mt0076-no-architecture-specified-using-the---abi-argument-an-architecture-is-required-for--projects"></a>MT0076:未指定任何架構 (使用--abi 引數)。 \* 專案需要架構。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0077" />
 
-### <a name="mt0076-watchos-projects-must-be-extensions"></a>MT0076:WatchOS 專案必須是延伸模組。
+### <a name="mt0077-watchos-projects-must-be-extensions"></a>MT0077:WatchOS 專案必須是延伸模組。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0078" />
 
-### <a name="mt0077-incremental-builds-are-enabled-with-a-deployment-target--80-currently--this-is-not-supported-the-resulting-application-will-not-launch-on-ios-9-so-the-deployment-target-will-be-set-to-80"></a>MT0077:以部署目標啟用累加組建 < 8.0 (目前為 *)。 這不受支援 (產生的應用程式將不會在 iOS 9 上啟動), 因此部署目標會設定為8.0。
+### <a name="mt0078-incremental-builds-are-enabled-with-a-deployment-target--80-currently--this-is-not-supported-the-resulting-application-will-not-launch-on-ios-9-so-the-deployment-target-will-be-set-to-80"></a>MT0078:以部署目標啟用累加組建 < 8.0 (目前為 *)。 這不受支援 (產生的應用程式將不會在 iOS 9 上啟動), 因此部署目標會設定為8.0。
 
 這是一則警告, 通知此組建的部署目標已設定為 8.0, 讓累加式組建正常運作。
 
@@ -474,7 +474,7 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 <a name="MT0079" />
 
-### <a name="mt0078-the-recommended-xcode-version-for-xamarinios--is-xcode--or-later-the-current-xcode-version-found-in--is-"></a>MT0078:建議的 Xcode 版本為 Xcode * 或更新版本。 目前的 Xcode 版本 (在 * 中找到) 是 *。
+### <a name="mt0079-the-recommended-xcode-version-for-xamarinios--is-xcode--or-later-the-current-xcode-version-found-in--is-"></a>MT0079:建議的 Xcode 版本為 Xcode * 或更新版本。 目前的 Xcode 版本 (在 * 中找到) 是 *。
 
 這項警告會通知目前版本的 Xcode 不是此版本之 Xamarin 的建議 Xcode 版本。
 
@@ -512,7 +512,7 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 ### <a name="mt0086-a-target-framework---target-framework-must-be-specified-when-building-for-tvos-or-watchos"></a>MT0086:建立 TVOS 或 WatchOS 時, 必須指定目標 framework (--目標架構)。
 
-這通常表示 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT0087" />
 
@@ -561,7 +561,7 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 當 Xamarin 中的內部一致性檢查失敗時, 就會回報此錯誤訊息。
 
-這表示在 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0100" />
 
@@ -569,7 +569,7 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 當 Xamarin 中的內部一致性檢查失敗時, 就會回報此錯誤訊息。
 
-這一律是 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試案例。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT0101" />
 
@@ -585,7 +585,9 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 例如：
 
-    --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
+```
+  --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
+```
 
 這個範例會嘗試使用相同的 make (`MyBinary`) 建立動態連結程式庫和架構。
 
@@ -597,7 +599,9 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 例如：
 
-    --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
+```
+--assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
+```
 
 這個範例會嘗試建立由兩個元件`MyBinary`(`Assembly1.dll`和`Assembly2.dll`) 組成的靜態物件 (), 這是不允許的。
 
@@ -619,7 +623,9 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 例如, 這些值將會觸發此錯誤:
 
-    --assembly-build-target:Assembly1.dll=staticobject=my/path.o
+```
+--assembly-build-target:Assembly1.dll=staticobject=my/path.o
+```
 
 因為`my/path.o`不是有效的檔案名, 因為目錄分隔符號。
 
@@ -838,7 +844,19 @@ class Program {
 
 觸控檔案時發生失敗 (這是為了確保部分組建正確地完成)。
 
-可能會忽略此警告;發生任何問題時, 請提出 bug (https://bugzilla.xamarin.com ] (https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) ), 將會進行調查。
+可能會忽略此警告;若發生任何問題, 請在[GitHub](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題, 並進行調查。
+
+<a name="MT0135" />
+
+### <a name="mt0135-did-not-link-system-framework-0-referenced-by-assembly-1-because-it-was-introduced-in-2-3-and-were-using-the-2-4-sdk"></a>MT0135:並未{0}連結系統架構 ' ' (由元件 '{1}' 所參考), 因為它是在{2}中導入{3}, 而我們{2}使用的{4}是 SDK。
+
+若要建立您的應用程式, Xamarin 必須針對系統程式庫進行連結, 其中有些是根據錯誤訊息中指定的 SDK 版本而定。 由於您使用的是較舊版本的 SDK, 因此對這些 Api 的叫用可能會在執行時間失敗。
+
+若要修正此錯誤, 建議的方法是升級 Xcode 以取得所需的 SDK。 如果您已安裝多個版本的 Xcode, 或想要在非預設位置中使用 Xcode, 請務必在 IDE 的喜好設定中設定正確的 Xcode 位置。
+
+或者, 啟用 managed[連結器](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/linker)以移除未使用的 api, 包括 (在大多數情況下) 需要指定程式庫的新資源。 不過, 如果您的專案所需的 Api 與您的 Xcode 所提供的版本不同, 則這將無法正常執行。
+
+作為最後 straw 的解決方案, 請使用不需要這些新 Sdk 的舊版 Xamarin 就能在建立程式期間出現。
 
 ## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx:專案相關的錯誤訊息
 
@@ -864,6 +882,8 @@ class Program {
 <a name="MT1004" />
 
 ### <a name="mt1004-could-not-get-the-list-of-installed-applications"></a>MT1004:無法取得已安裝應用程式的清單。
+
+## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx:專案相關的錯誤訊息
 
 <a name="MT1005" />
 
@@ -901,7 +921,7 @@ $ launchctl list|grep UIKitApplication|awk '{print $3}'|xargs launchctl remove
 sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/*/*.mdb
 ```
 
-不過，因為在最新的 Xamarin.iOS 版本中已解決此問題，請將新 bug 歸檔在[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)完整版本資訊與組建記錄檔輸出。
+不過, 由於已在最新版的 Xamarin 中解決此問題, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新的問題, 並提供完整的版本資訊和組建記錄檔輸出。
 
 <a name="MT1010" />
 
@@ -919,7 +939,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013:相依性追蹤錯誤: 沒有要比較的檔案。 請提出錯誤報告在 http://bugzilla.xamarin.com 與測試案例。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 與測試 caes。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出新問題。
 
 <a name="MT1014" />
 
@@ -1129,7 +1149,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="mt1108-could-not-find-developer-tools-for-this-xx-yy-device"></a>MT1108:找不到此 XX (YY) 裝置的開發人員工具。
 
-Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個檔案是 Xcode 的一部分, 而且通常是相對於您用來建立的 SDK (在<tt>Xcode. app/內容/開發人員/iPhoneOS</tt>) 中。
+Mtouch 的少數作業需要`DeveloperDiskImage.dmg`檔案存在。   這個檔案是 Xcode 的一部分, 而且通常是相對於您用來建立的 SDK (在中`Xcode.app/Contents/Developer/iPhoneOS.platform/DeviceSupport/VERSION/DeveloperDiskImage.dmg`)。
 
 發生此錯誤的原因可能是您沒有符合已連線裝置的 DeveloperDiskImage dmg。
 
@@ -1240,7 +1260,7 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 嘗試修正此問題的事項:
 
 * 在 Xcode 中使用模擬器一次。
-* 使用--sdk <version>傳遞明確的 SDK 版本。
+* 使用--SDK \<版本 > 傳遞明確的 SDK 版本。
 * 重新安裝 Xcode。
 
 <a name="MT1221" />
@@ -1411,7 +1431,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證程式庫的格式:
 
-    file -arch all -l /path/to/library.dylib
+```
+file -arch all -l /path/to/library.dylib
+```
 
 <a name="MT1601" />
 
@@ -1423,7 +1445,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證程式庫的格式:
 
-    file -arch all -l /path/to/library.a
+```
+file -arch all -l /path/to/library.a
+```
 
 <a name="MT1602" />
 
@@ -1435,7 +1459,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證程式庫的格式:
 
-    file -arch all -l /path/to/library.dylib
+```
+file -arch all -l /path/to/library.dylib
+```
 
 <a name="MT1603" />
 
@@ -1447,7 +1473,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證 fat 封存的格式:
 
-    file -arch all -l /path/to/file
+```
+file -arch all -l /path/to/file
+```
 
 <a name="MT1604" />
 
@@ -1459,7 +1487,9 @@ Mtouch 的少數作業需要有<tt>DeveloperDiskImage dmg</tt>檔案。   這個
 
 您可以使用來自終端機的`file`命令來驗證檔案的格式:
 
-    file -arch all -l /path/to/file
+```
+file -arch all -l /path/to/file
+```
 
 ## <a name="mt2xxx-linker-error-messages"></a>MT2xxx:連結器錯誤訊息
 
@@ -1565,7 +1595,7 @@ Parameter name: instruction
 
 ### <a name="mt202x-binding-optimizer-failed-processing-"></a>MT202x:系結優化工具`...`處理失敗。
 
-嘗試優化產生的系結程式碼時, 發生非預期的狀況。 造成此問題的元素會在錯誤訊息中命名。 若要修正這個問題, 必須在[bug 報告](http://bugzilla.xamarin.com)中提供名為的元件 (或包含名為的型別或方法), 以及已啟用詳細資訊的完整組建記錄`-v -v -v -v`檔 (也就是在**其他 mtouch 引數**中)。
+嘗試優化產生的系結程式碼時, 發生非預期的狀況。 造成此問題的元素會在錯誤訊息中命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)的新問題中提供名為的元件 (或包含名為的類型或方法), 以及已啟用詳細資訊的完整組建記錄檔`-v -v -v -v` (也就是在**其他 mtouch 引數**中)。
 
 最後一個數位`x`會是:
 * `0`若為元件名稱, 則為
@@ -1576,7 +1606,7 @@ Parameter name: instruction
 
 ### <a name="mt2030-remove-user-resources-failed-processing-"></a>MT2030:移除使用者資源處理`...`失敗。
 
-嘗試移除使用者資源時發生未預期的問題。 造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](http://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+嘗試移除使用者資源時發生未預期的問題。 造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 使用者資源是元件內所包含的檔案 (如資源), 必須在組建時加以解壓縮, 才能建立應用程式套件組合。 包括：
 
@@ -1587,37 +1617,37 @@ Parameter name: instruction
 
 ### <a name="mt2040-default-httpmessagehandler-setter-failed-processing-"></a>MT2040:預設 HttpMessageHandler setter 無法處理`...`。
 
-嘗試設定應用程式的預設值`HttpMessageHandler`時, 發生未預期的問題。 請提出[錯誤報表](http://bugzilla.xamarin.com), 以及已啟用詳細資訊的完整組建記錄檔 (亦`-v -v -v -v`即在**其他 mtouch 引數**中)。
+嘗試設定應用程式的預設值`HttpMessageHandler`時, 發生未預期的問題。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新的問題, 以及已啟用詳細資訊的完整組建記錄檔`-v -v -v -v` (亦即在**其他 mtouch 引數**中)。
 
 <a name="MT2050" />
 
 ### <a name="mt2050-code-remover-failed-processing-"></a>MT2050:程式碼 Remover 處理`...`失敗。
 
-嘗試從使用應用程式的 BCL 出貨移除程式碼時, 發生非預期的問題。 請提出[錯誤報表](http://bugzilla.xamarin.com), 以及已啟用詳細資訊的完整組建記錄檔 (亦`-v -v -v -v`即在**其他 mtouch 引數**中)。
+嘗試從使用應用程式的 BCL 出貨移除程式碼時, 發生非預期的問題。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新的問題, 以及已啟用詳細資訊的完整組建記錄檔`-v -v -v -v` (亦即在**其他 mtouch 引數**中)。
 
 <a name="MT2060" />
 
 ### <a name="mt2060-sealer-failed-processing-"></a>MT2060:Sealer 處理`...`失敗。
 
-嘗試密封類型或方法 (最後) 或 devirtualizing 某些方法時, 發生非預期的狀況。 造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](http://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+嘗試密封類型或方法 (最後) 或 devirtualizing 某些方法時, 發生非預期的狀況。 造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 <a name="MT2070" />
 
 ### <a name="mt2070-metadata-reducer-failed-processing-"></a>MT2070:中繼資料歸納器處理`...`失敗。
 
-嘗試減少應用程式的中繼資料時, 發生非預期的問題。 造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](http://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+嘗試減少應用程式的中繼資料時, 發生非預期的問題。 造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 <a name="MT2080" />
 
 ### <a name="mt2080-marknsobjects-failed-processing-"></a>MT2080:MarkNSObjects 處理`...`失敗。
 
-嘗試從應用程式標記`NSObject`子類別時發生非預期的狀況。 造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](http://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+嘗試從應用程式標記`NSObject`子類別時發生非預期的狀況。 造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 <a name="MT2090" />
 
 ### <a name="mt2090-inliner-failed-processing-"></a>MT2090:章處理`...`失敗。
 
-嘗試從應用程式內嵌程式碼時發生非預期的問題。 造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](https://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+嘗試從應用程式內嵌程式碼時發生非預期的問題。 造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 <!-- MT21xx: more linker errors -->
 
@@ -1627,7 +1657,7 @@ Parameter name: instruction
 
 ### <a name="mt2100-smart-enum-conversion-preserver-failed-processing-"></a>MT2100:智慧列舉轉換保留無法處理`...`。
 
-嘗試從應用程式標記智慧型列舉的轉換方法時, 發生非預期的狀況。 造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](https://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+嘗試從應用程式標記智慧型列舉的轉換方法時, 發生非預期的狀況。 造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 <a name="MT2101" />
 
@@ -1635,7 +1665,7 @@ Parameter name: instruction
 
 處理錯誤訊息中所述的方法時, 發現不正確元件參考。
 
-造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](https://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 <a name="MT2102" />
 
@@ -1643,7 +1673,7 @@ Parameter name: instruction
 
 嘗試標記錯誤訊息中所述的方法時, 發生未預期的問題。
 
-造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](https://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 <a name="MT2103" />
 
@@ -1651,7 +1681,7 @@ Parameter name: instruction
 
 處理元件時發生未預期的錯誤。
 
-造成此問題的元件是在錯誤訊息中所命名。 若要修正這個問題, 必須在[錯誤報表](https://bugzilla.xamarin.com)中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
+造成此問題的元件是在錯誤訊息中所命名。 若要修正此問題, 必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)上的新問題中提供元件, 以及啟用詳細資訊的完整組建記錄檔 ( `-v -v -v -v`也就是在**其他 mtouch 引數**中)。
 
 <a name="MT2104" />
 
@@ -1659,7 +1689,7 @@ Parameter name: instruction
 
 連結器無法處理混合模式元件。
 
-請參閱 https://msdn.microsoft.com/library/x0w2664k.aspx 如需有關混合模式組件。
+請參閱 https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies 如需有關混合模式組件。
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx:AOT 錯誤訊息
 
@@ -1672,13 +1702,13 @@ Parameter name: instruction
 
 ### <a name="mt3001-could-not-aot-the-assembly-"></a>MT3001:無法對元件 ' * ' 進行 AOT
 
-這通常表示 AOT 編譯器中的 bug。 請將 bug 歸檔[http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)可以用來重現錯誤的專案。
+這通常表示 AOT 編譯器中的 bug。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新的問題, 並提供可用於重現錯誤的專案。
 
 有時可以藉由停用專案的 iOS 組建選項中的累加組建來解決此問題 (但仍是 bug, 因此請務必回報)。
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvancedtopicslimitationsreversecallbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002:AOT 限制:方法 ' * ' 必須是靜態的, 因為它是以 [MonoPInvokeCallback] 裝飾。 請參閱[developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002:AOT 限制:方法 ' * ' 必須是靜態的, 因為它是以 [MonoPInvokeCallback] 裝飾。 請參閱[developer.xamarin.com/guides/ios/advanced_topics/limitations/#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 此錯誤訊息來自 AOT 編譯器。
 
@@ -1734,13 +1764,13 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 ### <a name="mt4001-the-main-template-could-not-be-expanded-to-"></a>MT4001:無法將主要範本展開為`*`。
 
-產生 main. m 時發生錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+產生`main.m`時發生錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT4002" />
 
 ### <a name="mt4002-failed-to-compile-the-generated-code-for-pinvoke-methods-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4002:無法編譯 P/Invoke 方法所產生的程式碼。 請提出錯誤報告在 http://bugzilla.xamarin.com
 
-無法編譯 P/Invoke 方法所產生的程式碼。 請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+無法編譯 P/Invoke 方法所產生的程式碼。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 ### <a name="mt41xx-registrar"></a>MT41xx:登錄器
 
@@ -1754,7 +1784,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 在匯出的 API 中找到類型, 執行時間不知道如何在目標-C 中進行封送處理。
 
-如果您認為 Xamarin 應支援有問題的類型, 請在上[http://bugzilla.xamarin.com](http://bugzilla.xamarin.com)提出增強要求。
+如果您認為 Xamarin 應支援問題類型, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出增強要求。
 
 <a name="MT4102" />
 
@@ -1774,13 +1804,13 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 在匯出的 API 中找到類型, 執行時間不知道如何在目標-C 中進行封送處理。
 
-如果您認為 Xamarin 應支援有問題的類型, 請在上[http://bugzilla.xamarin.com](http://bugzilla.xamarin.com)提出增強要求。
+如果您認為 Xamarin 應支援問題類型, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出增強要求。
 
 <a name="MT4105" />
 
 ### <a name="mt4105-the-registrar-cannot-marshal-the-parameter-of-type--in-signature-for-method-"></a>MT4105:註冊機構無法封送處理方法`*` `*`的簽章中類型的參數。
 
-如果您認為 Xamarin 應支援有問題的類型, 請在上[http://bugzilla.xamarin.com](http://bugzilla.xamarin.com)提出增強要求。
+如果您認為 Xamarin 應支援問題類型, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出增強要求。
 
 <a name="MT4106" />
 
@@ -1788,7 +1818,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 在匯出的 API 中找到類型, 執行時間不知道如何在目標-C 中進行封送處理。
 
-如果您認為 Xamarin 應支援有問題的類型, 請在上[http://bugzilla.xamarin.com](http://bugzilla.xamarin.com)提出增強要求。
+如果您認為 Xamarin 應支援問題類型, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出增強要求。
 
 <a name="MT4107" />
 
@@ -1796,7 +1826,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 在匯出的 API 中找到類型, 執行時間不知道如何在目標-C 中進行封送處理。
 
-如果您認為 Xamarin 應支援有問題的類型, 請在上[http://bugzilla.xamarin.com](http://bugzilla.xamarin.com)提出增強要求。
+如果您認為 Xamarin 應支援問題類型, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出增強要求。
 
 <a name="MT4108" />
 
@@ -1804,7 +1834,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 在匯出的 API 中找到類型, 執行時間不知道如何在目標-C 中進行封送處理。
 
-如果您認為 Xamarin 應支援有問題的類型, 請在上[http://bugzilla.xamarin.com](http://bugzilla.xamarin.com)提出增強要求。
+如果您認為 Xamarin 應支援問題類型, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出增強要求。
 
 <a name="MT4109" />
 
@@ -1812,7 +1842,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 無法為註冊機構編譯產生的程式碼。 組建記錄檔會包含原生編譯器的輸出, 說明程式碼不會編譯的原因。
 
-這一律是 Xamarin.iOS; 中的 bug請提出錯誤報告在 [http://bugzilla.xamarin.com](http://bugzilla.xamarin.com) 與您的專案或測試案例。
+這在 Xamarin 中一律是 bug;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出您的專案或測試案例的新問題。
 
 <a name="MT4110" />
 
@@ -1824,7 +1854,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvancedtopicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112:註冊機構發現不正確類型`*`。 不支援向目標-C 註冊泛型型別, 而且可能會導致隨機行為和/或損毀 (以提供與舊版 Xamarin 的回溯相容性。 iOS 可以藉由傳遞`--unsupported--enable-generics-in-registrar`為其他 mtouch 來忽略此錯誤專案的 [iOS 組建選項] 頁面中的引數。 如需詳細資訊, 請參閱[developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) )。
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112:註冊機構發現不正確類型`*`。 不支援向目標-C 註冊泛型型別, 而且可能會導致隨機行為和/或損毀 (以提供與舊版 Xamarin 的回溯相容性。 iOS 可以藉由傳遞`--unsupported--enable-generics-in-registrar`為其他 mtouch 來忽略此錯誤專案的 [iOS 組建選項] 頁面中的引數。 如需詳細資訊, 請參閱[developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) )。
 
 <a name="MT4113" />
 
@@ -1854,7 +1884,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 ### <a name="mt4120-the-registrar-found-an-unknown-field-type--in-field--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4120:註冊機構在欄位 '\* \*. * ' 中找到未知的欄位類型 ' '。 請提出錯誤報告在 http://bugzilla.xamarin.com
 
-此錯誤表示在 Xamarin. iOS 中發生錯誤。 請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+此錯誤表示在 Xamarin. iOS 中發生錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT4121" />
 
@@ -1872,7 +1902,7 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 
 ### <a name="mt4124-invalid--found-on--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4124:' * ' 上找到不正確 *。 請提出錯誤報告在 http://bugzilla.xamarin.com
 
-此錯誤表示在 Xamarin. iOS 中發生錯誤。 請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+此錯誤表示在 Xamarin. iOS 中發生錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT4125" />
 
@@ -1990,7 +2020,7 @@ class MyCustomNSObject : MyNSObject
 
 ### <a name="mt4144-cannot-register-the-method--since-it-does-not-have-an-associated-trampoline-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4144:無法註冊方法 ' * ', 因為它沒有相關聯的 trampoline。 請提出錯誤報告在 http://bugzilla.xamarin.com 。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT4145" />
 
@@ -2080,7 +2110,7 @@ Objectice-C 類別的名稱不能包含空白字元, 這表示對應的 managed 
 
 ### <a name="mt4163-internal-error-in-the-registrar--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4163:註冊機構 (*) 發生內部錯誤。 請提出錯誤報告在 http://bugzilla.xamarin.com
 
-此錯誤表示在 Xamarin. iOS 中發生錯誤。 請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+此錯誤表示在 Xamarin. iOS 中發生錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT4164" />
 
@@ -2094,23 +2124,23 @@ Objectice-C 類別的名稱不能包含空白字元, 這表示對應的 managed 
 
 ### <a name="mt4165-the-registrar-couldnt-find-the-type-systemvoid-in-any-of-the-referenced-assemblies"></a>MT4165:註冊機構在任何參考的元件中找不到類型 ' System.object '。
 
-此錯誤最可能表示在 Xamarin 中發生錯誤。 請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+此錯誤最可能表示在 Xamarin 中發生錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT4166" />
 
 ### <a name="mt4166-cannot-register-the-method--because-the-signature-contains-a-type--that-isnt-a-reference-type"></a>MT4166:無法註冊方法 '\*', 因為簽章包含不是參考型別的類型 (\*)。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中有錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT4167" />
 
 ### <a name="mt4167-cannot-register-the-method--because-the-signature-contains-a-generic-type--with-a-generic-argument-type-that-isnt-an-nsobject-subclass-"></a>MT4167:無法註冊方法 '\*', 因為簽章包含的泛型型別 (\*) 具有不是 NSObject 子類別 (*) 的泛型引數類型。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中有錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT4168" />
 
-### <a name="mt4168-cannot-register-the-type-managedname-because-its-objective-c-name-exportedname-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168:無法註冊類型 ' {受控\_名稱} ', 因為它的目標-c 名稱 ' {已匯出\_名稱} ' 是目標-c 關鍵字。 請使用不同的名稱。
+### <a name="mt4168-cannot-register-the-type-managed_name-because-its-objective-c-name-exported_name-is-an-objective-c-keyword-please-use-a-different-name"></a>MT4168:無法註冊類型 ' {受控\_名稱} ', 因為它的目標-c 名稱 ' {已匯出\_名稱} ' 是目標-c 關鍵字。 請使用不同的名稱。
 
 有問題之類型的目標-C 名稱不是有效的目標-C 識別碼。
 
@@ -2141,12 +2171,9 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 
 註冊機構不支援在提及的類型之間進行轉換。
 
-這是 Xamarin 中的錯誤 (如果有問題的 API 是由 Xamarin 所提供)。請于[http://bugzilla.xamarin.com][1]提出錯誤。
+這是 Xamarin 中的錯誤。如果有問題的 API 是由 Xamarin 所提供, 則為 iOS。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
-如果您在開發原生程式庫的系結專案時遇到此情況, 我們會開放加入新類型組合的支援。 如果是這種情況, 請使用測試案例提出增強[http://bugzilla.xamarin.com][2]要求 (), 我們會進行評估。
-
-[1]: https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS
-[2]: https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS&component=General&bug_severity=enhancement
+如果您在開發原生程式庫的系結專案時遇到此情況, 我們會開放加入新類型組合的支援。 如果是這種情況, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上使用測試案例提出增強要求, 我們將會進行評估。
 
 ## <a name="mt5xxx-gcc-and-toolchain-error-messages"></a>MT5xxx:GCC 和工具鏈錯誤訊息
 
@@ -2179,7 +2206,7 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 
 ### <a name="mt5106-could-not-compile-the-files--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT5106:無法編譯檔案 ' * '。 請提出錯誤報告在 http://bugzilla.xamarin.com
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中的錯誤;請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 ### <a name="mt52xx-linking"></a>MT52xx:連結
 
@@ -2214,7 +2241,9 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 * 協力廠商系結需要架構, 但系結不會在其`[LinkWith]`屬性中指定此項。 適用
   - 如果您是協力廠商系結的作者, 或具有其來源的存取權, 請修改系結`[LinkWith]`的屬性, 以包含所需的架構:
 
-            [LinkWith ("mylib.a", Frameworks = "SystemConfiguration")]
+    ```csharp
+    [LinkWith ("mylib.a", Frameworks = "SystemConfiguration")]
+    ```
 
   - 如果您無法修改協力廠商系結, 您可以藉由傳遞`-gcc_flags '-framework SystemFramework'`至來`mtouch`手動連結所需的架構 (這是透過在專案的 [iOS 組建選項] 頁面中修改其他 mtouch 引數來完成的。 請記住, 這必須針對每個專案設定進行。
 * 在某些情況下, managed 系結是由數個原生程式庫所組成, 而全部都必須包含在系結中。 每個系結專案中都可以有一個以上的原生程式庫, 因此解決方案只會將所有必要的原生程式庫加入至系結專案。</li>
@@ -2224,9 +2253,11 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 * 協力廠商系結/程式庫是使用C++建立的, 但是系結不會在其`[LinkWith]`屬性中指定這個。 這通常相當容易辨識, 因為符號的C++符號不變 (一個常見的範例是`__ZNKSt9exception4whatEv`)。
   - 如果您是協力廠商系結的作者, 或具有其來源的存取權, 請修改系結`[LinkWith]`的屬性來`IsCxx`設定旗標:
 
-            [LinkWith ("mylib.a", IsCxx = true)]
+    ```csharp
+    [LinkWith ("mylib.a", IsCxx = true)]
+    ```
 
-  - 如果您無法修改協力廠商系結, 或使用協力廠商程式庫手動連結, 您可以藉由傳遞<code>-cxx</code>至 mtouch 來設定對等旗標 (這是藉由在專案的 [iOS 組建選項] 頁面中修改其他 mtouch 引數來完成). 請記住, 這必須針對每個專案設定進行。
+  - 如果您無法修改協力廠商系結, 或使用協力廠商程式庫手動連結, 您可以藉由傳遞`-cxx`至 mtouch 來設定對等旗標 (這是藉由在專案的 [iOS 組建選項] 頁面中修改其他 mtouch 引數來完成). 請記住, 這必須針對每個專案設定進行。
 
 <a name="MT5211" />
 
@@ -2234,14 +2265,16 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 
 當原生連結器找不到在某處參考的目標-C 類別時, 就會發生這種情況。 有幾個原因可能會發生這種情況: 與[MT5210](#MT5210)和此外:
 
-* 協力廠商系結系結了目標 C 通訊協定, 但未使用其 api 定義<code>[Protocol]</code>中的屬性為其加上批註。 適用
+* 協力廠商系結系結了目標 C 通訊協定, 但未使用其 api 定義`[Protocol]`中的屬性為其加上批註。 適用
   - 新增遺漏`[Protocol]`的屬性:
 
-              [BaseType (typeof (NSObject))]
-              [Protocol] // Add this
-              public interface MyProtocol
-              {
-              }
+    ```csharp
+    [BaseType (typeof (NSObject))]
+    [Protocol] // Add this
+    public interface MyProtocol
+    {
+    }
+    ```
 
 <a name="MT5212" />
 
@@ -2254,48 +2287,54 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 * 未正確建立原生程式庫, 且包含相同的符號多次。
   您可以從終端機使用下列命令集來確認這一點 (根據您所建立的架構, 以 x86_64/armv7/armv7s/arm64 取代 i386):
 
-        # Native libraries are usually fat libraries, containing binary code for
-        # several architectures in the same file. First we extract the binary
-        # code for the architecture we're interested in.
-        lipo libNative.a -thin i386 -output libNative.i386.a
+  ```
+  # Native libraries are usually fat libraries, containing binary code for
+  # several architectures in the same file. First we extract the binary
+  # code for the architecture we're interested in.
+  lipo libNative.a -thin i386 -output libNative.i386.a
 
-        # Now query the native library for the duplicated symbol.
-        nm libNative.i386.a | fgrep 'SYMBOL'
+  # Now query the native library for the duplicated symbol.
+  nm libNative.i386.a | fgrep 'SYMBOL'
 
-        # You can also list the object files inside the native library.
-        # In most cases this will reveal duplicated object files.
-        ar -t libNative.i386.a
+  # You can also list the object files inside the native library.
+  # In most cases this will reveal duplicated object files.
+  ar -t libNative.i386.a
+  ```
 
   有幾個可能的方法可以修正此問題:
 
   - 要求原生程式庫的提供者修正此問題, 並提供更新的版本。
   - 藉由移除額外的物件檔案 (這僅適用于問題是否為重複的物件檔案) 來修正
 
-            # Find out if the library is a fat library, and which
-            # architectures it contains.
-            lipo -info libNative.a
+  ```
+  # Find out if the library is a fat library, and which
+  # architectures it contains.
+  lipo -info libNative.a
 
-            # Extract each architecture (i386/x86_64/armv7/armv7s/arm64) to a separate file
-            lipo libNative.a -thin ARCH -output libNative.ARCH.a
+  # Extract each architecture (i386/x86_64/armv7/armv7s/arm64) to a separate file
+  lipo libNative.a -thin ARCH -output libNative.ARCH.a
 
-            # Extract the object files for the offending architecture
-            # This will remove the duplicates by overwriting them
-            # (since they have the same filename)
-            mkdir -p ARCH
-            cd ARCH
-            ar -x ../libNative.ARCH.a
+  # Extract the object files for the offending architecture
+  # This will remove the duplicates by overwriting them
+  # (since they have the same filename)
+  mkdir -p ARCH
+  cd ARCH
+  ar -x ../libNative.ARCH.a
 
-            # Reassemble the object files in an .a
-            ar -r ../libNative.ARCH.a *.o
-            cd ..
+  # Reassemble the object files in an .a
+  ar -r ../libNative.ARCH.a *.o
+  cd ..
 
-            # Reassemble the fat library
-            lipo *.a -create -output libNative.a
+  # Reassemble the fat library
+  lipo *.a -create -output libNative.a
+  ```
 
   - 要求連結器移除未使用的程式碼。 如果符合下列所有條件, 則 Xamarin 會自動執行此動作:
     - 所有協力廠商系結`[LinkWith]`的屬性都已啟用 SmartLink:
 
-            [assembly: LinkWith ("libNative.a", SmartLink = true)]
+      ```csharp
+      [assembly: LinkWith ("libNative.a", SmartLink = true)]
+      ```
 
     - [ `-gcc_flags`否] 會傳遞給 mtouch (在專案的 iOS 組建選項的 [其他 mtouch 引數] 欄位中)。
     - 您也可以在專案的 iOS 組建選項中新增`-gcc_flags -dead_strip`至其他 mtouch 引數, 以直接要求連結器移除未使用的程式碼。
@@ -2338,7 +2377,7 @@ class MyImports {
 
 連結 AOT 編譯器的輸出時, 會回報此錯誤。
 
-此錯誤最可能表示在 Xamarin 中發生錯誤。 請提出錯誤報告在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+此錯誤最可能表示在 Xamarin 中發生錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT5217" />
 
@@ -2740,7 +2779,7 @@ Xamarin iOS 專案通常會動態參考原生符號, 這表示原生連結器可
 - dict
 - bool
 - 實數
-- 整數
+- integer
 - 日期
 - 資料
 
@@ -2915,19 +2954,19 @@ Xamarin iOS 專案通常會動態參考原生符號, 這表示原生連結器可
 
 ### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008:已載入的 Xamarin. .dll 版本已針對 * 位編譯, 而此程式是 * 位。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
-這表示在組建程式中發生錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在組建程式中發生錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8009" />
 
 ### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009:找不到要委派方法之轉換方法的區塊 *。* 's 參數 # *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
-這表示 API 未正確系結。 如果這是 Xamarin 所公開的 API, 請在我們的 bugzilla ([http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)) 中提出 bug, 如果它是協力廠商系結, 請洽詢廠商。
+這表示 API 未正確系結。 如果這是 Xamarin 所公開的 API, 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新的問題。 如果是協力廠商系結, 請洽詢廠商。
 
 <a name="MT8010" />
 
 ### <a name="mt8010-native-type-size-mismatch-between-xamariniosmacdll-and-the-executing-architecture-xamariniosmacdll-was-built-for--bit-while-the-current-process-is--bit"></a>MT8010:Xamarin 之間的原生類型大小不相符。[iOS |Mac] .dll 和執行中的架構。 Xamarin.[iOS |Mac] .dll 是針對 * 位所建立, 而目前的進程是 * 位。
 
-這表示在組建程式中發生錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在組建程式中發生錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8011" />
 
@@ -2935,7 +2974,7 @@ Xamarin iOS 專案通常會動態參考原生符號, 這表示原生連結器可
 
 Xamarin 在執行時間找不到必要的方法 (將委派轉換成區塊)。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中有錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8012" />
 
@@ -2943,23 +2982,23 @@ Xamarin 在執行時間找不到必要的方法 (將委派轉換成區塊)。
 
 有問題之方法的 DelegateProxy 屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中有錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8013" />
 
 ### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013:方法的傳回值的 DelegateProxyAttribute 無效 *。* :委派 ({2}) 會指定沒有 ' Handler ' 欄位的類型。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
-有問題之方法的 DelegateProxy 屬性無效。
+有`[DelegateProxy]`問題之方法的屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中有錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8014" />
 
 ### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014:方法的傳回值的 DelegateProxyAttribute 無效 *。* :委派的 ({2}) ' Handler ' 欄位是 null。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
-有問題之方法的 DelegateProxy 屬性無效。
+有`[DelegateProxy]`問題之方法的屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中有錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8015" />
 
@@ -2967,15 +3006,15 @@ Xamarin 在執行時間找不到必要的方法 (將委派轉換成區塊)。
 
 有問題之方法的 DelegateProxy 屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中有錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8016" />
 
 ### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016:無法將方法的傳回值的委派轉換為 block *。* 因為輸入不是委派, 所以它是 *。 請將 bug 歸檔在 http://bugzilla.xamarin.com 。
 
-有問題之方法的 DelegateProxy 屬性無效。
+有`[DelegateProxy]`問題之方法的屬性無效。
 
-這通常表示 Xamarin.iOS; 中的 bug請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這通常表示在 Xamarin. iOS 中有錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <!-- 8017 is used by mmp -->
 
@@ -2983,40 +3022,40 @@ Xamarin 在執行時間找不到必要的方法 (將委派轉換成區塊)。
 
 ### <a name="mt8018-internal-consistency-error-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8018:內部一致性錯誤。 請提出錯誤報告在 http://bugzilla.xamarin.com 。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8019" />
 
 ### <a name="mt8019-could-not-find-the-assembly--in-the-loaded-assemblies"></a>MT8019:在載入的元件中找不到元件 *。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8020" />
 
 ### <a name="mt8020-could-not-find-the-module-with-metadatatoken--in-the-assembly-"></a>MT8020:在元件 * 中找不到具有 MetadataToken * 的模組。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8021" />
 
 ### <a name="mt8021-unknown-implicit-token-type-"></a>MT8021:未知的隱含 token 類型: *。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8022" />
 
 ### <a name="mt8022-expected-the-token-reference--to-be-a--but-its-a--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8022:權杖參考 * 必須是 *, 但它是 *。 請提出錯誤報告在 http://bugzilla.xamarin.com 。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8023" />
 
 ### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023:需要實例物件, 才能為開放式泛型方法: * (token 參考: *) 建立封閉式泛型方法。 請提出錯誤報告在 http://bugzilla.xamarin.com 。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smarttype-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:找不到智慧列舉 ' {smart_type} ' 的有效延伸模組類型。 請將 bug 歸檔在 https://bugzilla.xamarin.com 。
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024:找不到智慧列舉 ' {smart_type} ' 的有效延伸模組類型。 請將 bug 歸檔在 https://bugzilla.xamarin.com 。
 
-這表示在 Xamarin. iOS 中的錯誤。 請將 bug 歸檔在 [http://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
+這表示在 Xamarin. iOS 中的錯誤。 請在[github](https://github.com/xamarin/xamarin-macios/issues/new)上提出新問題。

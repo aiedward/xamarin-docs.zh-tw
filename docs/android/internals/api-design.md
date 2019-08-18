@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 2958e456aeb25ba39697ad82500d574907e963e4
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: d32b96cd489f84ea93e7ada9b6458272d0dea1c0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510754"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524868"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin. Android API 設計原則
 
@@ -24,23 +24,23 @@ ms.locfileid: "68510754"
 
 這些是我們的一些 Xamarin Android 系結設計原則
 
--  符合 .NET Framework 的[設計方針](https://docs.microsoft.com/dotnet/standard/design-guidelines/)。
+- 符合 .NET Framework 的[設計方針](https://docs.microsoft.com/dotnet/standard/design-guidelines/)。
 
--  允許開發人員將 JAVA 類別設為子類別。
+- 允許開發人員將 JAVA 類別設為子類別。
 
--  子類別應該搭配C#標準結構使用。
+- 子類別應該搭配C#標準結構使用。
 
--  衍生自現有的類別。
+- 衍生自現有的類別。
 
--  呼叫基底函式來進行連鎖。
+- 呼叫基底函式來進行連鎖。
 
--  覆寫方法應使用C#的覆寫系統來完成。
+- 覆寫方法應使用C#的覆寫系統來完成。
 
--  讓常見的 JAVA 工作變得簡單, 而且可能會有困難的 JAVA 工作。
+- 讓常見的 JAVA 工作變得簡單, 而且可能會有困難的 JAVA 工作。
 
--  將 JavaBean 屬性公開C#為屬性。
+- 將 JavaBean 屬性公開C#為屬性。
 
--  公開強型別 API:
+- 公開強型別 API:
 
     - 增加型別安全。
 
@@ -50,7 +50,7 @@ ms.locfileid: "68510754"
 
     - 允許 IDE 快顯視窗檔。
 
--  鼓勵在 IDE 中探索 Api:
+- 鼓勵在 IDE 中探索 Api:
 
     - 利用架構替代專案, 將 JAVA Classlib 的風險降到最低。
 
@@ -73,13 +73,13 @@ Android 平臺的系結會包含在`Mono.Android.dll`元件中。 此元件包�
 
 Android Api 會廣泛利用 util 集合來提供清單、集合和對應。 我們會使用系結中的[system.object](xref:System.Collections.Generic)介面來公開這些元素。 基本對應如下:
 
--   [ util<E> ](https://developer.android.com/reference/java/util/Set.html)會對應到系統類型[<T>ICollection](xref:System.Collections.Generic.ICollection`1), helper 類別[JAVASet<T> ](xref:Android.Runtime.JavaSet`1)。
+- [>\<](https://developer.android.com/reference/java/util/Set.html)對應至 system 類型[ICollection\<T >](xref:System.Collections.Generic.ICollection`1), helper 類別[JAVASet\<T >](xref:Android.Runtime.JavaSet`1)。」
 
--   [ util<E> ](https://developer.android.com/reference/java/util/List.html)會對應至系統類型[<T>IList](xref:System.Collections.Generic.IList`1)、helper 類別[JAVAList<T> ](xref:Android.Runtime.JavaList`1)。
+- [util. List\<E >](https://developer.android.com/reference/java/util/List.html)對應到系統類型[IList\<T >](xref:System.Collections.Generic.IList`1), helper class [JAVAList\<t >](xref:Android.Runtime.JavaList`1)。
 
--   [util < K, v >](https://developer.android.com/reference/java/util/Map.html)對應到系統類型[IDictionary < TKey、TValue >](xref:System.Collections.Generic.IDictionary`2)、Helper class [Android. JAVADictionary < K、V >](xref:Android.Runtime.JavaDictionary`2)。
+- [util < K, v >](https://developer.android.com/reference/java/util/Map.html)對應到系統類型[IDictionary < TKey、TValue >](xref:System.Collections.Generic.IDictionary`2)、Helper class [Android. JAVADictionary < K、V >](xref:Android.Runtime.JavaDictionary`2)。
 
--   [ util<E> ](https://developer.android.com/reference/java/util/Collection.html)會對應到系統類型[<T>ICollection](xref:System.Collections.Generic.ICollection`1), helper 類別[JAVACollection<T> ](xref:Android.Runtime.JavaCollection`1)。
+- [> util\<](https://developer.android.com/reference/java/util/Collection.html)會對應到系統類型[ICollection\<T >](xref:System.Collections.Generic.ICollection`1), helper 類別[JAVACollection\<t >](xref:Android.Runtime.JavaCollection`1)。
 
 我們已提供 helper 類別, 以加速 copyless 這些類型的封送處理。 可能的話, 建議使用這些提供的集合, 而不是架構所提供的[`List<T>`](xref:System.Collections.Generic.List`1)實[`Dictionary<TKey, TValue>`](xref:System.Collections.Generic.Dictionary`2)作為, 例如或。 [Android. 運行](xref:Android.Runtime)時間會在內部利用原生 JAVA 集合, 因此在傳遞至 Android API 成員時, 不需要在原生集合中進行複製。
 
@@ -108,13 +108,13 @@ if (goodSource.Count != 4) // false
 
 JAVA 方法會在適當時轉換成屬性:
 
--  JAVA 方法配對`T getFoo()`和`void setFoo(T)`會轉換為`Foo`屬性。 範例：[Activity. 意圖](xref:Android.App.Activity.Intent)。
+- JAVA 方法配對`T getFoo()`和`void setFoo(T)`會轉換為`Foo`屬性。 範例：[Activity. 意圖](xref:Android.App.Activity.Intent)。
 
--  JAVA 方法`getFoo()`會轉換成隻讀的 Foo 屬性。 範例：[PackageName](xref:Android.Content.Context.PackageName)。
+- JAVA 方法`getFoo()`會轉換成隻讀的 Foo 屬性。 範例：[PackageName](xref:Android.Content.Context.PackageName)。
 
--  不會產生僅限設定的屬性。
+- 不會產生僅限設定的屬性。
 
--  如果屬性類型會是陣列, 則*不*會產生屬性。
+- 如果屬性類型會是陣列, 則*不*會產生屬性。
 
 
 
@@ -154,7 +154,7 @@ C#只有在 Android 事件註冊方法時, 才會自動產生事件或屬性:
 
 1. `void`具有傳回類型。
 
-1. 只接受一個參數, 參數類型為介面, 介面只有一個方法, 而介面名稱以結尾`Listener` , 例如[View OnClick ](xref:Android.Views.View.IOnClickListener)接聽程式。
+1. 只接受一個參數, 參數類型為介面, 介面只有一個方法, 而介面名稱以結尾`Listener` , 例如[View OnClick](xref:Android.Views.View.IOnClickListener)接聽程式。
 
 
 此外, 如果接聽程式介面方法的傳回型別是**布林值**, 而不是**void**, 則產生的*EventArgs*子類別會包含已*處理*的屬性。 [已*處理* *]* 屬性的值會當做接聽程式方法的傳回值使用, 而且預設為`true`。
@@ -234,7 +234,7 @@ JAVA 介面會轉譯成兩種類型:
 
 例如, 請考慮[Parcelable](xref:Android.OS.Parcelable)介面。
 *Parcelable*介面包含方法、巢狀型別和常數。 *Parcelable*介面方法會放入[IParcelable](xref:Android.OS.IParcelable)介面中。
-*Parcelable*介面常數會放入[ParcelableConsts](xref:Android.OS.ParcelableConsts)類型中。 因為泛型支援的限制, 所以 Parcelable 目前未系結[&lt;](https://developer.android.com/reference/android/os/Parcelable.Creator.html)的 nested [ &lt;ClassLoaderCreator > t](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html) > 類型; 如果支援, 則為, 否則為。會以*IParcelableClassLoaderCreator*和*IParcelableCreator*介面的形式呈現。 例如, 嵌套的[IBinder. DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)介面會系結為[IBinderDeathRecipient](xref:Android.OS.IBinderDeathRecipient)介面。
+*Parcelable*介面常數會放入[ParcelableConsts](xref:Android.OS.ParcelableConsts)類型中。 因為泛型支援的限制, 所以 Parcelable 目前未系結[\<](https://developer.android.com/reference/android/os/Parcelable.Creator.html)的 nested [ \<ClassLoaderCreator > t](https://developer.android.com/reference/android/os/Parcelable.ClassLoaderCreator.html) > 類型; 如果支援, 則為, 否則為。會以*IParcelableClassLoaderCreator*和*IParcelableCreator*介面的形式呈現。 例如, 嵌套的[IBinder. DeathRecipient](https://developer.android.com/reference/android/os/IBinder.DeathRecipient.html)介面會系結為[IBinderDeathRecipient](xref:Android.OS.IBinderDeathRecipient)介面。
 
 > [!NOTE]
 > 從 Xamarin 1.9 開始, JAVA 介面常數是為了簡化移植 JAVA 程式碼而_複製_的。 這有助於改善依賴[android 提供者](https://developer.android.com/reference/android/provider/package-summary.html)介面常數的 JAVA 程式碼移植。
@@ -268,21 +268,23 @@ JAVA 介面會轉譯成兩種類型:
 
 例如, 包含使用者介面配置 ( `main.axml`)、國際化資料表字串 ( `strings.xml`) 和一些圖示 ( `drawable-*/icon.png`) 的 Android 應用程式範例, 會將其資源保留在應用程式的 "resources" 目錄中:
 
-    Resources/
-        drawable-hdpi/
-            icon.png
+```
+Resources/
+    drawable-hdpi/
+        icon.png
 
-        drawable-ldpi/
-            icon.png
+    drawable-ldpi/
+        icon.png
 
-        drawable-mdpi/
-            icon.png
+    drawable-mdpi/
+        icon.png
 
-        layout/
-            main.axml
+    layout/
+        main.axml
 
-        values/
-            strings.xml
+    values/
+        strings.xml
+```
 
 原生 Android Api 不會直接與檔案名一起運作, 而是會在資源識別碼上操作。 當您編譯使用資源的 Android 應用程式時, 組建系統會封裝要散發的資源, 並產生名`Resource`為的類別, 其中包含每個所含資源的權杖。 例如, 針對上述資源版面配置, R 類別會公開:
 

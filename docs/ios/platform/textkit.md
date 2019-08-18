@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 4d4785d6e556c856b0f7b4db2accd87f5297e277
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0bed0e272293d3462d32fe5134147112e38116f0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655361"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528725"
 ---
 # <a name="textkit-in-xamarinios"></a>在 Xamarin 中 TextKit
 
@@ -20,17 +20,17 @@ TextKit 是新的 API, 提供強大的文字版面配置和轉譯功能。 它�
 
 為了讓 TextKit 的功能可供標準控制項使用, 已將數個 iOS 文字控制項重新實作為使用 TextKit, 包括:
 
--  UITextView
--  UITextField
--  UILabel
+- UITextView
+- UITextField
+- UILabel
 
 ## <a name="architecture"></a>架構
 
 TextKit 提供了多層式架構, 可將文字儲存與版面配置和顯示區隔開, 包括下列類別:
 
--  `NSTextContainer`-提供用於配置文字的座標系統和 geometry。
--  `NSLayoutManager`–藉由將文字轉換成字元來配置文字。 
--  `NSTextStorage`–保存文字資料, 以及處理批次文字屬性更新。 所有批次更新都會交給建構管理員進行實際的變更處理, 例如重新計算版面配置和重繪文字。
+- `NSTextContainer`-提供用於配置文字的座標系統和 geometry。
+- `NSLayoutManager`–藉由將文字轉換成字元來配置文字。 
+- `NSTextStorage`–保存文字資料, 以及處理批次文字屬性更新。 所有批次更新都會交給建構管理員進行實際的變更處理, 例如重新計算版面配置和重繪文字。
 
 
 這三個類別會套用至呈現文字的視圖。 內建的文字處理視圖 ( `UITextView`例如、 `UITextField`和`UILabel` ) 已設定, 但您也可以建立它們並將它們套用至任何`UIView`實例。

@@ -829,6 +829,8 @@
               href: troubleshooting/questions/exception-marshal-obj-c.md
             - name: 執行階段錯誤 - 找不到或無法載入組件 mscorlib.dll
               href: troubleshooting/questions/error-mscorlib-not-found.md
+            - name: 編譯錯誤 – 無法為產生之散佈重新配置的位移 X 進行編碼
+              href: troubleshooting/questions/error-encode-offset-scattered-relocation.md
             - name: IPA 檔案為 0 個位元組
               href: troubleshooting/questions/ipa-zero-bytes.md
             - name: IBTool 錯誤 - 作業無法完成。

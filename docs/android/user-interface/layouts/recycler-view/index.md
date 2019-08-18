@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 01/03/2018
-ms.openlocfilehash: 95d71beff2bd5219712494deb43f1f9fb4b082ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7c98686a1aa99e250b3fd1d0fcc6ae64d625a11f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646301"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522403"
 ---
 # <a name="recyclerview"></a>RecyclerView
 
@@ -27,9 +27,9 @@ _RecyclerView 是用來顯示集合的視圖群組;其設計目的是更有彈�
 
 `RecyclerView`提供兩種強大的功能:
 
--  它具有彈性的架構, 可讓您藉由插入慣用的元件來修改其行為。
+- 它具有彈性的架構, 可讓您藉由插入慣用的元件來修改其行為。
 
--  大型集合的效率很高, 因為它會重複使用專案視圖, 而且需要使用*view 持*者來快取視圖參考。
+- 大型集合的效率很高, 因為它會重複使用專案視圖, 而且需要使用*view 持*者來快取視圖參考。
 
 本指南說明如何在 xamarin `RecyclerView` android 應用程式中使用`RecyclerView` , 它會說明如何`RecyclerView`將套件新增至您的 xamarin 專案, 並說明一般應用程式中的函式。 我們提供了實際的程式碼範例, 示範如何`RecyclerView`將整合到您的應用程式、如何執行專案查看的點擊, 以及`RecyclerView`如何在其基礎資料變更時重新整理。 本指南假設您已熟悉 Xamarin. Android 開發。
 
@@ -38,27 +38,27 @@ _RecyclerView 是用來顯示集合的視圖群組;其設計目的是更有彈�
 
 雖然`RecyclerView`通常與 Android 5.0 棒的相關聯, 但它是以支援連結&ndash;庫`RecyclerView`的形式提供, 適用于以 API 層級 7 (Android 2.1) 和更新版本為目標的應用程式。 下列是在以 Xamarin 為`RecyclerView`基礎的應用程式中使用的必要條件:
 
--  您必須安裝並設定 Visual Studio 或 Visual Studio for Mac 的**xamarin android** &ndash; xamarin. android 4.20 或更新版本。
+- 您必須安裝並設定 Visual Studio 或 Visual Studio for Mac 的**xamarin android** &ndash; xamarin. android 4.20 或更新版本。
 
--  您的應用程式專案必須包含**v7. RecyclerView**套件。 如需安裝 NuGet 套件的詳細資訊, [請參閱逐步解說:在您的專案](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)中包含 NuGet。
+- 您的應用程式專案必須包含**v7. RecyclerView**套件。 如需安裝 NuGet 套件的詳細資訊, [請參閱逐步解說:在您的專案](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)中包含 NuGet。
 
 
 ### <a name="overview"></a>總覽
 
 `RecyclerView`可視為 Android 中`ListView`和`GridView` widget 的取代。 如同其前身, `RecyclerView`設計為在小視窗中顯示大型資料集, 但`RecyclerView`提供更多的版面配置選項, 並且更適合顯示大型集合。 如果您已熟悉`ListView`, 和`RecyclerView`之間`ListView`有幾項重要的差異:
 
--   `RecyclerView`使用起來稍微複雜一點: 您必須撰寫比更多的程式碼`RecyclerView`來使用`ListView`。
+- `RecyclerView`使用起來稍微複雜一點: 您必須撰寫比更多的程式碼`RecyclerView`來使用`ListView`。
 
--   `RecyclerView`不提供預先定義的介面卡;您必須執行可存取資料來源的介面卡程式碼。 不過, Android 包含數個可與`ListView`和`GridView`搭配使用的預先定義介面卡。
+- `RecyclerView`不提供預先定義的介面卡;您必須執行可存取資料來源的介面卡程式碼。 不過, Android 包含數個可與`ListView`和`GridView`搭配使用的預先定義介面卡。
 
--   `RecyclerView`當使用者按了專案時, 不會提供專案按的事件;而是由協助程式類別來處理專案按一下事件。 相反地, `ListView`會提供專案按一下事件。
+- `RecyclerView`當使用者按了專案時, 不會提供專案按的事件;而是由協助程式類別來處理專案按一下事件。 相反地, `ListView`會提供專案按一下事件。
 
--   `RecyclerView`藉由回收視圖並強制執行視圖持有者模式來增強效能, 這會排除不必要的配置資源查閱。 在中`ListView`, 使用視圖預留位置模式是選擇性的。
+- `RecyclerView`藉由回收視圖並強制執行視圖持有者模式來增強效能, 這會排除不必要的配置資源查閱。 在中`ListView`, 使用視圖預留位置模式是選擇性的。
 
--   `RecyclerView`是以模組化設計為基礎, 可讓您更輕鬆地進行自訂。 例如, 您可以插入不同的版面配置原則, 而不需要對應用程式進行重大的程式碼變更。
+- `RecyclerView`是以模組化設計為基礎, 可讓您更輕鬆地進行自訂。 例如, 您可以插入不同的版面配置原則, 而不需要對應用程式進行重大的程式碼變更。
     相反地, `ListView`在結構中相當整合。
 
--   `RecyclerView`包括新增和移除專案的內建動畫。 `ListView`動畫需要在應用程式開發人員中進行一些額外的工作。
+- `RecyclerView`包括新增和移除專案的內建動畫。 `ListView`動畫需要在應用程式開發人員中進行一些額外的工作。
 
 
 ### <a name="sections"></a>章節

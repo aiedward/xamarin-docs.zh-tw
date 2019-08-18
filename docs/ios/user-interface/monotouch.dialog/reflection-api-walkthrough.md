@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: 9dc98480d57dc7d4883306e9f4fc530599af9bd7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6482d0626874b3f2ca5e90efb0e376be60551fd7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652422"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528456"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>使用反映 API 建立 Xamarin iOS 應用程式
 
@@ -26,9 +26,9 @@ MT.D 與 Xamarin 一起散發。 若要使用它, 請以滑鼠右鍵按一下 Vi
 
 使用反映 API 的方式很簡單:
 
-1.  建立以 MT 裝飾的類別。D 屬性。
-1.  `BindingContext`建立實例, 並將上述類別的實例傳遞給它。 
-1.  建立, 並`BindingContext’s` 將`RootElement`它傳遞給它。 `DialogViewController` 
+1. 建立以 MT 裝飾的類別。D 屬性。
+1. `BindingContext`建立實例, 並將上述類別的實例傳遞給它。 
+1. 建立, 並`BindingContext’s` 將`RootElement`它傳遞給它。 `DialogViewController` 
 
 
 讓我們來看一個範例, 以說明如何使用反映 API。 在此範例中, 我們將建立簡單的資料輸入畫面, 如下所示:

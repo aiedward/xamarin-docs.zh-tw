@@ -1,41 +1,41 @@
 ---
-title: 單元測試企業應用程式
-description: 本章將說明如何在 eShopOnContainers 的行動裝置應用程式執行單元測試。
+title: 對企業應用程式進行單元測試
+description: 本章節說明如何在 eShopOnContainers 行動應用程式中執行單元測試。
 ms.prod: xamarin
 ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: d83cdce7076eac5a022863b583ecb01346ae440a
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: c631ca73d69ea630592920a32804512f89d5baaf
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831088"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529068"
 ---
-# <a name="unit-testing-enterprise-apps"></a>單元測試企業應用程式
+# <a name="unit-testing-enterprise-apps"></a>對企業應用程式進行單元測試
 
-行動裝置應用程式會有唯一的問題，而桌面和 web 應用程式不需要擔心。 行動使用者會由裝置它們所使用的網路連線服務的可用性和範圍的其他因素而有所不同。 因此，行動裝置應用程式應該經過測試，因為它們會使用真實世界中來改善其品質、 可靠性和效能。 有許多類型的測試應該執行的應用程式，包括單元測試、 整合測試，以及使用者介面測試、 單元測試所測試的最常見的表單上。
+行動應用程式有獨特的問題, 而桌上型電腦和 web 應用程式都不需要擔心。 行動使用者會因其使用的裝置、網路連線能力、服務的可用性和各種其他因素而有所不同。 因此, 行動裝置應用程式應該經過測試, 因為它們會在現實世界中用來改善其品質、可靠性和效能。 應用程式必須執行許多類型的測試, 包括單元測試、整合測試和使用者介面測試, 而單元測試是最常見的測試形式。
 
-單元測試會採用應用程式時，通常是一種方法小單位、 將它與程式碼的其餘部分隔離，並確認其行為如預期般運作。 其目標是功能的要檢查的每個單位如預期般執行，使錯誤不會傳播整個應用程式。 偵測的錯誤發生的位置會更有效率，觀察的 bug，以間接在次要失敗點影響。
+單元測試會採用應用程式的小型單位, 通常是方法, 將它與其余的程式碼隔離, 並驗證它是否如預期般運作。 其目標是檢查每個功能單位是否如預期般執行, 讓錯誤不會在整個應用程式中傳播。 偵測發生錯誤的 bug 更有效率, 因為它會在次要失敗點間接觀察錯誤的效果。
 
-軟體開發工作流程中不可或缺的一部分時，單元測試會有程式碼品質的影響最大。 已寫入的方法，因為應該的驗證方法，以回應標準、 界限和不正確的情況下，輸入資料，以及該檢查的行為的程式碼所做的任何明確或隱含假設撰寫單元測試。 或者，使用測試導向開發，撰寫單元測試程式碼之前。 此案例中，單元測試做為設計文件和功能規格。
+當單元測試是軟體發展工作流程不可或缺的一部分時, 對程式碼品質的影響最大。 一旦撰寫方法, 就應該撰寫單元測試, 以驗證方法的行為, 以回應輸入資料的標準、界限和不正確案例, 並檢查程式碼所做的任何明確或隱含假設。 或者, 透過測試導向開發, 單元測試會在程式碼之前寫入。 在此案例中, 單元測試會同時做為設計檔和功能規格。
 
 > [!NOTE]
-> 單元測試是針對迴歸 – 也就是用來搭配使用，但具有已更新錯誤的干擾的功能非常有效。
+> 單元測試對回歸非常有效, 也就是用來運作但受到錯誤更新干擾的功能。
 
-單元測試通常會使用排列 act assert 模式：
+單元測試通常會使用 [排列-act-assert] 模式:
 
--   *排列*的單元測試方法的區段會初始化物件，並設定傳遞至受測方法的資料值。
--   *處理*區段會叫用具有必要的引數的受測方法。
--   *判斷提示*區段會驗證受測方法的動作會在如預期般運作。
+- 單元測試方法的 [*排列*] 區段會初始化物件, 並設定傳遞給受測方法之資料的值。
+- *Act*區段會使用必要的引數叫用受測的方法。
+- [判斷提示] 區段會驗證受測方法的動作是否如預期般運作。
 
-遵循此模式可確保單元測試的可讀取且一致。
+遵循此模式可確保單元測試是可讀取和一致的。
 
 ## <a name="dependency-injection-and-unit-testing"></a>相依性插入和單元測試
 
-採用鬆散偶合的架構的動機之一是它能進行單元測試。 其中一個使用 Autofac 註冊類型是`OrderService`類別。 下列程式碼範例會示範這個類別的大綱：
+採用鬆散結合架構的動機之一, 就是它可協助單元測試。 向 Autofac 註冊的其中一個類型是`OrderService`類別。 下列程式碼範例顯示此類別的大綱:
 
 ```csharp
 public class OrderDetailViewModel : ViewModelBase  
@@ -50,34 +50,34 @@ public class OrderDetailViewModel : ViewModelBase
 }
 ```
 
-`OrderDetailViewModel`類別具有相依性`IOrderService`類型的容器可以解決當具現化`OrderDetailViewModel`物件。 不過，而不是建立`OrderService`單元測試的物件`OrderDetailViewModel`類別，相反地，取代`OrderService`基於測試目的 mock 物件。 圖 10-1 說明這個關聯性。
+類別相依于容器在具現`IOrderService`化`OrderDetailViewModel`物件時所解析的類型。 `OrderDetailViewModel` 不過, 不是建立`OrderService`物件來對`OrderDetailViewModel`類別進行單元測試`OrderService` , 而是將物件取代為測試用途的 mock。 圖10-1 說明此關聯性。
 
-![](unit-testing-images/unittesting.png "實作 IOrderService 介面的類別")
+![](unit-testing-images/unittesting.png "執行 IOrderService 介面的類別")
 
-**圖 10-1:** 實作 IOrderService 介面的類別
+**圖 10-1:** 執行 IOrderService 介面的類別
 
-此方法可讓`OrderService`傳遞至物件`OrderDetailViewModel`類別在執行階段，以及在感興趣的可測試性，它可讓`OrderMockService`類別，以傳遞至`OrderDetailViewModel`在測試階段的類別。 這種方法的主要優點是它可讓單元測試執行，但是不需要龐大的資源，例如 web 服務或資料庫。
+這種方法可`OrderService`讓物件在執行時間傳遞`OrderDetailViewModel`至類別, 而且在可測試性的興趣下, 它允許`OrderMockService`將類別傳遞至`OrderDetailViewModel`測試階段的類別。 這種方法的主要優點是, 它可讓您執行單元測試, 而不需要難以處理的資源, 例如 web 服務或資料庫。
 
 ## <a name="testing-mvvm-applications"></a>測試 MVVM 應用程式
 
-測試模型和檢視模型從 MVVM 應用程式等同於測試任何其他類別，而且相同的工具和技術 – 例如單元測試與模擬 (mock)，可用。 不過，有一些模式的一般模型和檢視模型類別，可從特定的單元測試技術獲益。
+從 MVVM 應用程式測試模型和視圖模型, 與測試任何其他類別相同, 而且可以使用相同的工具和技術, 例如單元測試和模擬。 不過, 有些模式通常是模型和視圖模型類別, 可受益于特定的單元測試技術。
 
 > [!TIP]
-> 測試與每個單元測試的一件事。 不會想要讓單元測試練習的單位行為的多個層面的。 這樣會導致難以讀取和更新的測試。 它也可能導致混淆解譯失敗時。
+> 在每個單元測試中測試一件事。 請不要讓單元測試練習在單元的行為中有一個以上的層面。 這麼做會導致測試不容易閱讀和更新。 這也可能會在解讀失敗時造成混淆。
 
-EShopOnContainers 的行動裝置應用程式會使用[xUnit](https://xunit.github.io/)執行單元測試，可支援兩種不同的單元測試：
+EShopOnContainers 行動應用程式會使用[xUnit](https://xunit.github.io/)來執行單元測試, 以支援兩種不同類型的單元測試:
 
--   事實是永遠都不成立，測試的測試條件而異。
--   理論是僅適用於特定的資料集的測試。
+- 事實是永遠為 true 的測試, 這會測試不變的條件。
+- 理論是僅適用于一組特定資料的測試。
 
-隨附在 eShopOnContainers 的行動裝置應用程式的單元測試是事實的測試，以及每個單元測試方法因此裝飾了`[Fact]`屬性。
+EShopOnContainers 行動應用程式包含的單元測試是事實測試, 因此每個單元測試方法都會以`[Fact]`屬性裝飾。
 
 > [!NOTE]
-> xUnit 測試是由測試執行器執行。 若要執行的測試執行器，執行必要的平台的 eShopOnContainers.TestRunner 專案。
+> 測試執行器會執行 xUnit 測試。 若要執行測試執行器, 請執行所需平臺的 eShopOnContainers TestRunner 專案。
 
 ### <a name="testing-asynchronous-functionality"></a>測試非同步功能
 
-實作 MVVM 模式時，檢視模型通常是叫用作業的服務，通常以非同步的方式。 通常將這些作業會叫用的程式碼測試的實際服務取代為使用模擬 （mock）。 下列程式碼範例會示範測試將模擬 （mock） 的服務傳遞至檢視模型的非同步功能：
+在執行 MVVM 模式時, view 模型通常會以非同步方式叫用服務上的作業。 針對叫用這些作業的程式碼進行測試時, 通常會使用模擬做為實際服務的替代專案。 下列程式碼範例將示範如何藉由將 mock 服務傳遞至視圖模型來測試非同步功能:
 
 ```csharp
 [Fact]  
@@ -93,15 +93,15 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 }
 ```
 
-此單元測試會檢查`Order`的屬性`OrderDetailViewModel`執行個體都有值之後`InitializeAsync`叫用方法。 `InitializeAsync`檢視模型的對應檢視巡覽時，會叫用方法。 如需有關瀏覽的詳細資訊，請參閱[瀏覽](~/xamarin-forms/enterprise-application-patterns/navigation.md)。
+這個單元測試會檢查`Order` `OrderDetailViewModel`實例的屬性在叫用`InitializeAsync`方法之後是否具有值。 當視圖模型的對應視圖流覽至時, 會叫用方法。`InitializeAsync` 如需有關導覽的詳細資訊, 請參閱[導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md)。
 
-當`OrderDetailViewModel`會建立執行個體，它會預期`OrderService`做為引數指定的執行個體。 不過，`OrderService`從 web 服務擷取資料。 因此，`OrderMockService`執行個體，也就是模擬 （mock） 版本的`OrderService`類別中，指定的引數為`OrderDetailViewModel`建構函式。 然後，當檢視模型`InitializeAsync`方法會叫用，這會叫用`IOrderService`作業，模擬 （mock） 的資料是擷取，而不是與 web 服務通訊。
+建立實例時, 它會`OrderService`預期實例會指定為引數。 `OrderDetailViewModel` 不過, `OrderService`會從 web 服務抓取資料。 因此, `OrderMockService`實例 (也就是`OrderService`類別的模擬版本) 會指定`OrderDetailViewModel`為函式的引數。 然後, 當叫用視圖模型`InitializeAsync`的方法 ( `IOrderService`叫用作業) 時, 就會抓取模擬資料, 而不是與 web 服務進行通訊。
 
-### <a name="testing-inotifypropertychanged-implementations"></a>測試實作 INotifyPropertyChanged
+### <a name="testing-inotifypropertychanged-implementations"></a>測試 INotifyPropertyChanged 的部署
 
-實作`INotifyPropertyChanged`介面可讓檢視，以回應變更源自於檢視模型和模型。 這些變更不一定要在控制項中顯示的資料，它們也可以用來控制檢視中，例如造成動畫要啟動或停用控制項的檢視模型狀態。
+`INotifyPropertyChanged`執行介面可讓視圖回應源自視圖模型和模型的變更。 這些變更不限於控制項中顯示的資料, 它們也可用來控制視圖, 例如導致動畫啟動的視圖模型狀態或停用控制項。
 
-進行測試的單元測試可以直接更新的屬性，請附加至事件處理常式`PropertyChanged`事件，並檢查是否設定屬性的新值之後引發的事件。 下列程式碼範例會顯示這類測試：
+可以透過將事件處理常式附加至`PropertyChanged`事件, 並檢查是否在設定屬性的新值之後引發事件, 來測試可直接由單元測試更新的屬性。 下列程式碼範例顯示這類測試:
 
 ```csharp
 [Fact]  
@@ -123,11 +123,11 @@ public async Task SettingOrderPropertyShouldRaisePropertyChanged()
 }
 ```
 
-叫用此單元測試`InitializeAsync`方法`OrderViewModel`類別，會造成其`Order`是要更新屬性。 單元測試會成功，但前提`PropertyChanged`引發事件`Order`屬性。
+這個單元測試`InitializeAsync`會叫用`OrderViewModel`類別的方法, 這會導致`Order`更新其屬性。 單元測試將會通過, 但前提`PropertyChanged`是會`Order`針對屬性引發事件。
 
-### <a name="testing-message-based-communication"></a>測試訊息式通訊
+### <a name="testing-message-based-communication"></a>測試以訊息為基礎的通訊
 
-檢視模型，使用[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)通訊鬆散偶合的類別之間可進行單元測試訂閱正在測試的程式碼所傳送的訊息，如下列程式碼範例所示的類別：
+使用[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)類別在鬆散耦合類別之間進行通訊的視圖模型, 可以藉由訂閱受測程式碼所傳送的訊息來進行單元測試, 如下列程式碼範例所示:
 
 ```csharp
 [Fact]  
@@ -148,11 +148,11 @@ public void AddCatalogItemCommandSendsAddProductMessageTest()
 }
 ```
 
-此單元測試會檢查`CatalogViewModel`發佈`AddProduct`訊息，以回應其`AddCatalogItemCommand`正在執行。 因為[ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)類別支援多點傳送的訊息的訂用帳戶、 單元測試可以訂閱`AddProduct`訊息，並執行以接收該回應的回呼委派。 此回呼委派，指定 lambda 運算式，為設定`boolean`欄位，可由`Assert`陳述式來確認測試的行為。
+此單元測試會`CatalogViewModel`檢查是否`AddProduct`發行訊息以回應其`AddCatalogItemCommand`正在執行的。 因為類別支援多點傳播訊息訂閱, 所以單元測試可以訂閱`AddProduct`訊息, 並執行回呼委派以回應接收它。 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 這個回呼委派 (指定為 lambda 運算式) 會設定`boolean` `Assert`語句用來驗證測試行為的欄位。
 
 ### <a name="testing-exception-handling"></a>測試例外狀況處理
 
-單元測試也可以寫入該檢查的特定例外狀況擲回無效的動作，或輸入，如下列程式碼範例所示：
+您也可以撰寫單元測試, 以檢查是否針對不正確動作或輸入擲回特定的例外狀況, 如下列程式碼範例所示:
 
 ```csharp
 [Fact]  
@@ -168,16 +168,16 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 }
 ```
 
-此單元測試會擲回的例外狀況，因為[ `ListView` ](xref:Xamarin.Forms.ListView)控制項並沒有名為事件`OnItemTapped`。 `Assert.Throws<T>`方法是泛型方法其中`T`是預期的例外狀況的型別。 將引數傳遞`Assert.Throws<T>`方法是將會擲回例外狀況的 lambda 運算式。 因此，單元測試將會通過前提是 lambda 運算式則會擲回`ArgumentException`。
+這個單元測試將會擲回例外狀況, [`ListView`](xref:Xamarin.Forms.ListView)因為控制項沒有名為`OnItemTapped`的事件。 方法是泛型方法, 其中`T`是預期的例外狀況類型。 `Assert.Throws<T>` 傳遞至`Assert.Throws<T>`方法的引數是將擲回例外狀況的 lambda 運算式。 因此, 如果 lambda 運算式`ArgumentException`擲回, 則單元測試將會通過。
 
 > [!TIP]
-> 避免撰寫單元測試，檢查例外狀況訊息字串。 例外狀況訊息字串可能會隨著時間變更，並因此依賴它們的存在的單元測試會視為不完善。
+> 避免撰寫可檢查例外狀況訊息字串的單元測試。 例外狀況訊息字串可能會隨著時間而改變, 因此依賴其目前狀態的單元測試會被視為脆弱。
 
 ### <a name="testing-validation"></a>測試驗證
 
-有兩個層面來測試驗證的實作： 測試，正確地實作任何驗證規則，以及測試，`ValidatableObject<T>`類別會執行，如預期般運作。
+測試驗證的執行有兩個層面: 測試是否已正確實作為驗證規則, 以及測試`ValidatableObject<T>`類別是否如預期般執行。
 
-驗證邏輯是若要測試，通常是簡單的因為它通常是獨立的處理程序輸出會根據輸入。 叫用的結果應該會有測試`Validate`方法的每一個屬性有至少一個相關聯的驗證規則，如下列程式碼範例所示：
+驗證邏輯通常很容易測試, 因為它通常是一個獨立的進程, 其中的輸出取決於輸入。 在至少有一個相關聯的驗證規則的`Validate`每個屬性上叫用方法的結果應該會進行測試, 如下列程式碼範例所示:
 
 ```csharp
 [Fact]  
@@ -193,9 +193,9 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 }
 ```
 
-此單元測試會驗證成功時，檢查兩個`ValidatableObject<T>`中的屬性`MockViewModel`這兩個的執行個體都有資料。
+當`ValidatableObject<T>` 實例`MockViewModel`中的兩個屬性都有資料時, 此單元測試會檢查驗證是否成功。
 
-檢查驗證成功，以及驗證單元測試也應該檢查的值`Value`， `IsValid`，並`Errors`每個屬性`ValidatableObject<T>`執行個體，以確認此類別會在如預期般執行。 下列程式碼範例示範此單元測試：
+除了檢查驗證是否成功, 驗證單元測試也應檢查`Value`每個`ValidatableObject<T>`實例的、 `IsValid`和`Errors`屬性值, 以確認類別是否如預期般執行。 下列程式碼範例示範執行此動作的單元測試:
 
 ```csharp
 [Fact]  
@@ -216,18 +216,18 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 }
 ```
 
-此單元測試會驗證失敗時，檢查`Surname`屬性`MockViewModel`沒有任何資料，而`Value`， `IsValid`，和`Errors`每個屬性`ValidatableObject<T>`執行個體已正確設定。
+當的`Surname`屬性`IsValid` `Value` `Errors` `ValidatableObject<T>`沒有任何資料, 而且每個實例的、和屬性都已正確設定時, 此單元測試會檢查驗證是否失敗。 `MockViewModel`
 
 ## <a name="summary"></a>總結
 
-單元測試會採用應用程式時，通常是一種方法小單位、 將它與程式碼的其餘部分隔離，並確認其行為如預期般運作。 其目標是功能的要檢查的每個單位如預期般執行，使錯誤不會傳播整個應用程式。
+單元測試會採用應用程式的小型單位, 通常是方法, 將它與其余的程式碼隔離, 並驗證它是否如預期般運作。 其目標是檢查每個功能單位是否如預期般執行, 讓錯誤不會在整個應用程式中傳播。
 
-取代模擬相依性物件的行為的模擬 （mock） 物件的相依物件，可以隔離受測物件的行為。 這可讓單元測試執行，但是不需要龐大的資源，例如 web 服務或資料庫。
+將相依物件取代為模擬相依物件行為的 mock 物件, 即可隔離受測物件的行為。 這可讓您執行單元測試, 而不需要很難以利用的資源, 例如 web 服務或資料庫。
 
-測試模型和檢視模型從 MVVM 應用程式等同於測試任何其他類別，並使用相同的工具和技術。
+從 MVVM 應用程式測試模型和視圖模型, 與測試任何其他類別相同, 而且可以使用相同的工具和技術。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [下載電子書 (2 Mb PDF)](https://aka.ms/xamarinpatternsebook)
-- [eShopOnContainers (GitHub) （範例）](https://github.com/dotnet-architecture/eShopOnContainers)
+- [下載電子書 (2 Mb 的 PDF)](https://aka.ms/xamarinpatternsebook)
+- [eShopOnContainers (GitHub) (範例)](https://github.com/dotnet-architecture/eShopOnContainers)

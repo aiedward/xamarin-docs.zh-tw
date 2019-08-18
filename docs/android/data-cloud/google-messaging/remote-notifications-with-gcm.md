@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 8c816bf98d9997d09b73e7c9cb0d2ff436b65fbb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: fd34532e647f0595ed8afa5ef7ad044b84b7d918
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643976"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525792"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google 雲端通訊的遠端通知
 
@@ -31,12 +31,12 @@ _本逐步解說提供如何使用 Google 雲端通訊在 Xamarin Android 應用
 
 我們將使用下列步驟來建立具備 GCM 功能的 Xamarin 用戶端應用程式:
 
-1.  安裝與 GCM 伺服器通訊所需的其他套件。
-2.  設定應用程式許可權以存取 GCM 伺服器。
-3.  執行程式碼以檢查 Google Play Services 是否存在。 
-4.  針對註冊權杖, 執行與 GCM 協商的註冊意圖服務。
-5.  執行可接聽 GCM 註冊權杖更新的實例識別碼接聽程式服務。
-6.  執行 GCM 接聽程式服務, 以透過 GCM 接收來自應用程式伺服器的遠端訊息。
+1. 安裝與 GCM 伺服器通訊所需的其他套件。
+2. 設定應用程式許可權以存取 GCM 伺服器。
+3. 執行程式碼以檢查 Google Play Services 是否存在。 
+4. 針對註冊權杖, 執行與 GCM 協商的註冊意圖服務。
+5. 執行可接聽 GCM 註冊權杖更新的實例識別碼接聽程式服務。
+6. 執行 GCM 接聽程式服務, 以透過 GCM 接收來自應用程式伺服器的遠端訊息。
 
 此應用程式將使用稱為*主題訊息*的新 GCM 功能。 在主題訊息中, 應用程式伺服器會將訊息傳送至主題, 而不是個別裝置的清單。 訂閱該主題的裝置可以接收主題訊息做為推播通知。 如需 GCM 主題訊息的詳細資訊, 請參閱 Google 的[實施主題訊息](https://developers.google.com/cloud-messaging/topic-messaging)。 
 
@@ -87,14 +87,14 @@ using Android.Util;
 
 Android 應用程式必須先設定下列許可權, 才能接收來自 Google 雲端通訊的通知: 
 
--   `com.google.android.c2dm.permission.RECEIVE`&ndash;授與應用程式的許可權, 以註冊和接收來自 Google 雲端通訊的訊息。 (這是`c2dm`什麼意思？ 這代表_雲端到裝置的通訊_, 這是 GCM 的現在已淘汰的前身。 
+- `com.google.android.c2dm.permission.RECEIVE`&ndash;授與應用程式的許可權, 以註冊和接收來自 Google 雲端通訊的訊息。 (這是`c2dm`什麼意思？ 這代表_雲端到裝置的通訊_, 這是 GCM 的現在已淘汰的前身。 
     GCM 仍然會`c2dm`在其許多許可權字串中使用)。 
 
--   `android.permission.WAKE_LOCK`&ndash; (選擇性) 在接聽訊息時, 防止裝置 CPU 進入睡眠狀態。 
+- `android.permission.WAKE_LOCK`&ndash; (選擇性) 在接聽訊息時, 防止裝置 CPU 進入睡眠狀態。 
 
--   `android.permission.INTERNET`&ndash;授與網際網路存取權, 讓用戶端應用程式可以與 GCM 通訊。 
+- `android.permission.INTERNET`&ndash;授與網際網路存取權, 讓用戶端應用程式可以與 GCM 通訊。 
 
--   *package_name 會向 Android* `.permission.C2D_MESSAGE`註冊應用程式, 並要求許可權以獨佔方式接收所有的 C2D (雲端到裝置) 訊息。 &ndash; *Package_name*前置詞與您的應用程式識別碼相同。 
+- *package_name 會向 Android* `.permission.C2D_MESSAGE`註冊應用程式, 並要求許可權以獨佔方式接收所有的 C2D (雲端到裝置) 訊息。 &ndash; *Package_name*前置詞與您的應用程式識別碼相同。 
 
 我們會在 Android 資訊清單中設定這些許可權。 讓我們編輯**androidmanifest.xml** , 並將內容取代為下列 xml: 
 
@@ -116,7 +116,7 @@ Android 應用程式必須先設定下列許可權, 才能接收來自 Google �
 </manifest>
 ```
 
-在上述 XML 中, 將*YOUR_PACKAGE_NAME*變更為用戶端應用程式專案的套件名稱。 例如， `com.xamarin.gcmexample` 。 
+在上述 XML 中, 將*YOUR_PACKAGE_NAME*變更為用戶端應用程式專案的套件名稱。 例如： `com.xamarin.gcmexample` 。 
 
 ### <a name="check-for-google-play-services"></a>檢查是否有 Google Play Services
 
@@ -205,11 +205,11 @@ protected override void OnCreate (Bundle bundle)
 
 在應用程式可以從應用程式伺服器接收遠端通知之前, 它必須向 GCM 註冊並取回註冊權杖。 向 GCM 註冊應用程式的工作是由`IntentService`我們建立的所處理。 我們`IntentService`會執行下列步驟: 
 
-1.  會使用[InstanceID](https://developers.google.com/instance-id/) API 來產生安全性權杖, 以授權我們的用戶端應用程式存取應用程式伺服器。 傳回時, 我們會從 GCM 取得註冊權杖。
+1. 會使用[InstanceID](https://developers.google.com/instance-id/) API 來產生安全性權杖, 以授權我們的用戶端應用程式存取應用程式伺服器。 傳回時, 我們會從 GCM 取得註冊權杖。
 
-2.  將註冊權杖轉送至應用程式伺服器 (如果應用程式伺服器需要的話)。
+2. 將註冊權杖轉送至應用程式伺服器 (如果應用程式伺服器需要的話)。
 
-3.  訂閱一或多個通知主題通道。
+3. 訂閱一或多個通知主題通道。
 
 在我們執行此`IntentService`工作之後, 我們會進行測試, 以查看我們是否從 GCM 取得註冊權杖。
 
@@ -272,11 +272,11 @@ namespace ClientApp
 
 在上述範例程式碼中, 將*YOUR_SENDER_ID*變更為用戶端應用程式專案的寄件者識別碼。 若要取得專案的寄件者識別碼: 
 
-1.  登入[Google Cloud 主控台](https://console.cloud.google.com/), 然後從下拉式功能表中選取您的專案名稱。 在針對專案顯示的 [**專案資訊**] 窗格中, 按一下 [**移至專案設定**]:
+1. 登入[Google Cloud 主控台](https://console.cloud.google.com/), 然後從下拉式功能表中選取您的專案名稱。 在針對專案顯示的 [**專案資訊**] 窗格中, 按一下 [**移至專案設定**]:
 
     [![選取 XamarinGCM 專案](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
-2.  在 [**設定**] 頁面上, 找出 [**專案編號** &ndash; ], 這是您專案的 [寄件者識別碼]:
+2. 在 [**設定**] 頁面上, 找出 [**專案編號** &ndash; ], 這是您專案的 [寄件者識別碼]:
 
     [![顯示的專案編號](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
@@ -510,7 +510,7 @@ SendNotification (message);
 
 讓我們看看此 XML 中的每個設定有何作用:
 
-|設定|描述|
+|設定|說明|
 |---|---|
 |`com.google.android.gms.gcm.GcmReceiver`|宣告我們的應用程式會執行可捕獲和處理傳入推播通知訊息的 GCM 接收者。|
 |`com.google.android.c2dm.permission.SEND`|宣告只有 GCM 伺服器可以直接將訊息傳送至應用程式。|

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 1c3be128749b9fd0f67aa83038b3d30f4b2fcd2d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7fe03fbbdff02df9494317abe223ede5ed386c48
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657532"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528925"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>索引標籤列和在 Xamarin.iOS 中的索引標籤列控制器
 
@@ -26,8 +26,8 @@ ms.locfileid: "68657532"
 
 `UITabBarController`支援索引標籤式應用程式開發，由下列：
 
--  允許多個控制站新增至它。
--  提供索引標籤式的使用者介面，透過`UITabBar`類別，以允許使用者控制站和及其檢視之間切換。 
+- 允許多個控制站新增至它。
+- 提供索引標籤式的使用者介面，透過`UITabBar`類別，以允許使用者控制站和及其檢視之間切換。 
 
 
 控制站新增至`UITabBarController`透過其`ViewControllers`屬性，這是`UIViewController`陣列。 `UITabBarController`本身會處理載入適當的控制站，並呈現其根據選取的索引標籤的檢視。
@@ -69,9 +69,9 @@ ms.locfileid: "68657532"
 
 若要實作`UITabBarController`我們需要執行下列動作：
 
-1.  設定的基底類別`TabController`至`UITabBarController`。 
-1.  建立`UIViewController`執行個體加入至`TabController`。 
-1.  新增`UIViewController`指派給陣列的執行個體`ViewControllers`屬性`TabController`。 
+1. 設定的基底類別`TabController`至`UITabBarController`。 
+1. 建立`UIViewController`執行個體加入至`TabController`。 
+1. 新增`UIViewController`指派給陣列的執行個體`ViewControllers`屬性`TabController`。 
 
 
 將下列程式碼加入`TabController`類別，以達到下列步驟：
@@ -283,8 +283,8 @@ Visual Studio for Mac 會自動產生的類別和設計工具所需的檔案，�
 
 我們想要拖曳`Label`並`Button`到從 ViewController1**工具箱**在右手邊。 接下來我們將使用 Properties Pad 編輯名稱與文字的控制項如下：
 
--  **標籤**:`Text` = **同一**
--  **按鈕**:`Title` = **使用者採取一些初始動作**
+- **標籤**:`Text` = **同一**
+- **按鈕**:`Title` = **使用者採取一些初始動作**
 
 
 我們會控制在按鈕的可見性`TouchUpInside`事件，我們需要在程式碼後置中參考它。 讓我們找出與其**名稱**`aButton`中 [屬性] 面板，如下列螢幕擷取畫面所示：

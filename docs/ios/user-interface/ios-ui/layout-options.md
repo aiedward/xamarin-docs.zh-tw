@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: b825b0d7f9e18350514e3f84e70f901f5fcb6724
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 06d7ef896a560040f2e2820945264b92d9cf2ada
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655920"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528494"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin 中的版面配置選項
 
 有兩種不同的機制, 可在調整視圖大小或旋轉時控制版面配置:
 
--  **自動調整大小**–設計工具中的自動調整大小偵測器提供設定`AutoresizingMask`屬性的方式。 這會讓控制項錨定到其容器的邊緣, 並 (或) 修正其大小。 自動調整大小適用于所有版本的 iOS。 下面將更詳細地說明這一點
--  **自動**配置– iOS 6 中引進的一項功能, 可讓您更精細地控制 UI 控制項的關聯性。 它會允許控制項相對於設計介面上其他元素的位置。 本主題將在[使用 Xamarin IOS 設計工具的自動版面](~/ios/user-interface/designer/designer-auto-layout.md)配置指南中更詳細地討論。
+- **自動調整大小**–設計工具中的自動調整大小偵測器提供設定`AutoresizingMask`屬性的方式。 這會讓控制項錨定到其容器的邊緣, 並 (或) 修正其大小。 自動調整大小適用于所有版本的 iOS。 下面將更詳細地說明這一點
+- **自動**配置– iOS 6 中引進的一項功能, 可讓您更精細地控制 UI 控制項的關聯性。 它會允許控制項相對於設計介面上其他元素的位置。 本主題將在[使用 Xamarin IOS 設計工具的自動版面](~/ios/user-interface/designer/designer-auto-layout.md)配置指南中更詳細地討論。
 
 ## <a name="autosizing"></a>自動調整大小
 

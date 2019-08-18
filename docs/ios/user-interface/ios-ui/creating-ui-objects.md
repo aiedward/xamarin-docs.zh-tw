@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dd935e6feb14d9077c1ad98a2e7e10e67646dc4f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f77a4f2f31c72726515e33dc273616f175df2891
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650109"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528533"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中建立使用者介面物件
 
@@ -28,9 +28,9 @@ using UIKit;
 
 您可以透過三種方式來編輯 UI 控制項和版面配置:
 
--  **[Xamarin IOS 設計](~/ios/user-interface/designer/index.md)** 工具–使用 xamarin 的內建版面配置設計工具來設計畫面。 按兩下 [分鏡腳本] 或 [XIB 檔案], 以使用內建的設計工具進行編輯。
--  **Xcode Interface Builder** -使用 Interface Builder 將控制項拖曳至您的螢幕佈局。 在  **Solution Pad**中的檔案上按一下滑鼠右鍵, 然後選擇 **以 > Xcode Interface Builder 開啟**, 以開啟 Xcode 中的腳本或 XIB 檔案。
--  **使用C#**  –控制項也可以透過程式碼以程式設計方式來建立, 並加入至視圖階層。
+- **[Xamarin IOS 設計](~/ios/user-interface/designer/index.md)** 工具–使用 xamarin 的內建版面配置設計工具來設計畫面。 按兩下 [分鏡腳本] 或 [XIB 檔案], 以使用內建的設計工具進行編輯。
+- **Xcode Interface Builder** -使用 Interface Builder 將控制項拖曳至您的螢幕佈局。 在  **Solution Pad**中的檔案上按一下滑鼠右鍵, 然後選擇 **以 > Xcode Interface Builder 開啟**, 以開啟 Xcode 中的腳本或 XIB 檔案。
+- **使用C#**  –控制項也可以透過程式碼以程式設計方式來建立, 並加入至視圖階層。
 
 以滑鼠右鍵按一下 iOS 專案, 然後選擇 [**加入 > 新增**檔案 ...], 即可新增分鏡腳本和 XIB 檔案。
 
@@ -76,7 +76,7 @@ using UIKit;
 
  [![](creating-ui-objects-images/image5a.png "Xcode 物件程式庫")](creating-ui-objects-images/image5a.png#lightbox)
 
-當您使用 Interface Builder 設計 UI 時, 您必須為  想要在C#其中參考的每個控制項建立一個插座。 這是藉由使用 [Xcode] 工具列按鈕上的 [center**編輯器**] 按鈕開啟 [**助理編輯器**] 來完成:
+當您使用 Interface Builder 設計 UI 時, 您必須為想要在C#其中參考的每個控制項建立一個插座。 這是藉由使用 [Xcode] 工具列按鈕上的 [center**編輯器**] 按鈕開啟 [**助理編輯器**] 來完成:
 
  [![](creating-ui-objects-images/image6a.png "[助理編輯器] 按鈕")](creating-ui-objects-images/image6a.png#lightbox)
 
@@ -92,12 +92,12 @@ using UIKit;
 
 如果您決定使用C#以程式設計方式建立使用者介面物件 (例如, 在 View 或 view 控制器中), 請遵循下列步驟:
 
--  宣告使用者介面物件的類別層級欄位。 在中`ViewDidLoad`建立控制項本身一次, 例如。 然後可以在視圖控制器的整個生命週期方法中參考物件 (例如,
+- 宣告使用者介面物件的類別層級欄位。 在中`ViewDidLoad`建立控制項本身一次, 例如。 然後可以在視圖控制器的整個生命週期方法中參考物件 (例如,
 `ViewWillAppear`)。
--  `CGRect`建立, 以定義控制項的框架 (其在畫面上的 X 和 Y 座標, 以及其寬度和高度)。 您需要確定您有`using CoreGraphics`此的指示詞。
--  呼叫此函式, 以建立並指派控制項。
--  設定任何屬性或事件處理常式。
--  呼叫`Add()` , 將控制項加入至視圖階層。
+- `CGRect`建立, 以定義控制項的框架 (其在畫面上的 X 和 Y 座標, 以及其寬度和高度)。 您需要確定您有`using CoreGraphics`此的指示詞。
+- 呼叫此函式, 以建立並指派控制項。
+- 設定任何屬性或事件處理常式。
+- 呼叫`Add()` , 將控制項加入至視圖階層。
 
 以下是使用C#在視圖控制器中建立`UILabel`的簡單範例:
 

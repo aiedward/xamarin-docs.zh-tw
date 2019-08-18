@@ -1,131 +1,131 @@
 ---
-title: 在應用程式內購買基本概念和在 Xamarin.iOS 中的設定
-description: 本文件說明 Xamarin.iOS、 規則、 設定和 iTunes Connect 的相關討論相關的資訊中的應用程式內購買。
+title: Xamarin 中的應用程式內購買基本概念和設定
+description: 本檔說明在 Xamarin 中的應用程式內購買, 討論規則、設定和 iTunes Connect 的相關資訊。
 ms.prod: xamarin
 ms.assetid: 11FB7F02-41B3-2B34-5A4F-69F12897FE10
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 267dac5b6aec263f1d8b69d81f34f732118c1802
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 4c8e08c5393bed1f96baa7c1bced85eed3d2d0c6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61406812"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527911"
 ---
-# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>在應用程式內購買基本概念和在 Xamarin.iOS 中的設定
+# <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin 中的應用程式內購買基本概念和設定
 
-實作應用程式內購買項目需要利用 StoreKit API，在裝置上的應用程式。 StoreKit 管理與 Apple iTunes 伺服器，以取得產品資訊，並執行交易的所有通訊。 佈建設定檔必須由應用程式內購買，並在 iTunes Connect 中，必須輸入產品資訊。
+若要執行應用程式內購買, 應用程式必須在裝置上使用 StoreKit API。 StoreKit 會管理與 Apple iTunes 伺服器的所有通訊, 以取得產品資訊並執行交易。 必須針對應用程式內購買設定布建設定檔, 而且必須在 iTunes Connect 中輸入產品資訊。
 
- [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit 管理所有與 Apple 的通訊，此圖中所示")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image1.png "StoreKit 會管理與 Apple 的所有通訊, 如下圖所示")](in-app-purchase-basics-and-configuration-images/image1.png#lightbox)
 
-使用以提供應用程式內購買的應用程式存放區需要下列設定，並設定：
+使用 App Store 來提供應用程式內購買需要下列安裝和設定:
 
--  **iTunes Connect** – 設定銷售的產品，並設定沙箱使用者帳戶，以測試購買。 您必須也提供您的銀行和稅務資訊給 Apple 讓它們可以匯款代替您收集的資金。
--   **iOS 佈建入口網站**– 建立套件組合識別碼，並啟用您的應用程式的應用程式存放區存取。
--  **儲存套件**– 程式碼加入至您的應用程式，顯示產品、 購買產品和還原的交易。
--  **自訂程式碼**– 若要追蹤客戶的購物記錄，以及提供的產品或他們所購買的服務。 您可能也需要實作伺服器端程序，以驗證回條，如果您的產品是由從伺服器 （例如書籍和雜誌的問題） 下載的內容所組成。
+- **ITunes Connect** –將產品設定為銷售和設定沙箱使用者帳戶, 以測試購買。 您也必須提供您的銀行和稅務資訊給 Apple, 讓他們可以代表您所收集的資金。
+- **iOS 布建入口網站**–建立套件組合識別碼, 並啟用應用程式的 app Store 存取。
+- **商店套件**–將程式碼新增至您的應用程式, 以顯示產品、購買產品和還原交易。
+- **自訂程式碼**–用來追蹤客戶所進行的購買, 並提供他們所購買的產品或服務。 如果您的產品是由從伺服器下載的內容 (例如書籍和雜誌問題) 所組成, 您也可能需要執行伺服器端程式來驗證收據。
 
 
-有兩個套件存放區 」 伺服器環境 」:
+有兩個存放套件「伺服器環境」:
 
--  **生產**– 與實際成本的交易。 只可透過存取提交和核准的 Apple 應用程式。 必須也檢閱並核准才可在實際執行環境中應用程式內購買產品。
--  **沙箱**-您的測試會發生。 產品會提供以下建立 （核准程序僅適用於生產環境） 的後面。 在沙箱中的交易要求來執行交易的測試使用者 (並非真正的 Apple Id)。
+- **生產**–實際費用的交易。 只能透過 Apple 提交及核准的應用程式存取。 應用程式內購買產品在生產環境中可供使用之前, 也必須先經過審查和核准。
+- **沙箱**–發生測試的位置。 產品會在建立之後立即提供 (核准程式僅適用于生產環境)。 沙箱中的交易需要測試使用者 (不是真實的 Apple Id) 來執行交易。
 
-## <a name="in-app-purchase-rules"></a>在應用程式內購買規則
+## <a name="in-app-purchase-rules"></a>應用程式內購買規則
 
-您無法接受您的應用程式內的付款數位產品或服務的其他形式，也不提及它們或請參閱您的使用者從應用程式中。 這表示，您無法接受信用卡或 PayPal 時應用程式內購買的最適當的付款機制。 購買應用程式外的數位產品的特殊案例，但對於使用，例如購買網站上特定 「 登入 」 相關聯的書籍，以及使用應用程式中的 [登入] 可讓使用者存取的應用程式的已購買的書籍。
-提及或連結至外部購買的功能不允許操作這種方式的應用程式 – 開發人員必須傳達給使用者以其他方式 （也許是透過電子郵件行銷或一些其他的直接通道） 這項功能。
+您不能在應用程式內接受數位產品或服務的其他付款形式, 也不能在應用程式中提及或參考您的使用者。 這表示當應用程式內購買是最適當的付款機制時, 您無法接受信用卡或 PayPal。 在應用程式外購買數位產品, 但在應用程式中使用的特殊案例, 例如在與特定「登入」相關聯的網站上購買書籍, 並在應用程式中使用該「登入」, 可讓使用者存取購買的書籍。
+以這種方式運作的應用程式不允許提及或連結至外部購買功能–開發人員必須以其他方式 (可能是透過電子郵件行銷或其他直接頻道) 與使用者溝通這項功能。
 
-不過，因為您無法使用應用程式內購買之項目實體的產品，允許您的案例可以使用替代的付款機制 （例如。 信用卡、 paypal 等） 從應用程式內。
+不過, 由於您無法使用實體商品的應用程式內購買, 因此, 您可以使用替代的付款機制 (例如, 信用卡, PayPal)。
 
-Apple 必須核准每個產品之前它會在銷售 – 名稱、 描述以及螢幕擷取畫面的 產品所需的檢閱。 產品檢閱時間都是與應用程式評論時相同。
+Apple 必須先核准每個產品, 才會上線–需要「產品」的名稱、描述和螢幕擷取畫面才能進行審查。 產品審核時間與應用程式評論相同。
 
-您無法選擇任何價格為您的產品，您可能只會選取 [價格層]，Apple 支援每個國家/貨幣會有特定的值。 您不能有不同的價格層不同的市場。
+您不能選擇產品的任何價格–您只能選取在 Apple 支援的每個國家/地區具有特定值的「價格層」。 不同市場中不能有不同的定價層。
 
 ## <a name="configuration"></a>組態
 
-撰寫任何應用程式內購買的程式碼之前，您必須執行一些設定工作，在 iTunes Connect 中的 ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 和 iOS 佈建入口網站 ( [developer.apple.com/iOS](https://developer.apple.com/iOS))。
+在撰寫任何應用程式內購買程式碼之前, 您必須先在 iTunes Connect ( [itunesconnect.apple.com](http://itunesconnect.apple.com)) 和 iOS 布建入口網站 ( [developer.apple.com/iOS](https://developer.apple.com/iOS)) 中進行一些設定工作。
 
-撰寫任何程式碼之前應該完成這三個步驟：
+在撰寫任何程式碼之前, 必須先完成這三個步驟:
 
--  **Apple 開發人員帳戶**– 提交給 Apple 銀行和稅務資訊。
--  **iOS 佈建入口網站**-請確定您的應用程式具有有效的應用程式識別碼 (不包含星號萬用字元 * 中)，並在購買應用程式啟用。
--  **iTunes Connect 應用程式管理**– 將產品加入至您的應用程式。
+- **Apple 開發人員帳戶**–將您的銀行和稅務資訊提交給 apple。
+- **iOS 布建入口網站**–確保您的應用程式具有有效的應用程式識別碼 (不是具有星號 * 的萬用字元), 而且已啟用應用程式購買。
+- **ITunes Connect 應用程式管理**–將產品新增至您的應用程式。
 
 
 ### <a name="apple-developer-account"></a>Apple 開發人員帳戶
 
-建置和發佈免費的應用程式需要在組態設定很少[iTunes Connect](https://itunesconnect.apple.com)，但銷售付費應用程式或應用程式內購買要求您提供 Apple 銀行和稅務資訊。 按一下 **合約、 稅務和銀行**從主功能表如下所示：
+建立和散發免費的應用程式需要在[ITunes Connect](https://itunesconnect.apple.com)中設定非常少, 不過若要銷售付費應用程式或應用程式內購買, 您必須為 Apple 提供銀行和稅務資訊。 按一下主功能表中的 [**協定]、[稅務和銀行],** 如下所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image2.png "按一下 合約、 稅務和銀行從主功能表上")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image2.png "按一下主功能表上的 [協定]、[稅務和銀行]")](in-app-purchase-basics-and-configuration-images/image2.png#lightbox)
 
-您的開發人員帳戶應有**iOS 付費應用程式**合約生效時，此螢幕擷取畫面所示：
+您的開發人員帳戶應具有作用中的**IOS 付費應用程式**合約, 如下列螢幕擷取畫面所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image3.png "應有付費應用程式合約作用中的 iOS 開發人員帳戶。")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image3.png "您的開發人員帳戶應該有 iOS 付費應用程式合約生效")](in-app-purchase-basics-and-configuration-images/image3.png#lightbox)
 
-您不能測試任何 StoreKit 功能，直到處理完**iOS 付費應用程式**合約： StoreKit 呼叫程式碼中的將會失敗 Apple 已處理完之前您**合約、 稅金和銀行**資訊。
+在您擁有**IOS 付費應用程式**合約之前, 您將無法測試任何 StoreKit 功能, 除非 Apple 已處理您的**合約、稅務和銀行**資訊, 否則您的程式碼中的 StoreKit 呼叫將會失敗。
 
 ### <a name="ios-provisioning-portal"></a>iOS 佈建入口網站
 
-新的應用程式中已設定**應用程式識別碼**一節**iOS 佈建入口網站**。 若要建立新的應用程式識別碼，請前往[Member Center 的 iOS 佈建入口網站](https://developer.apple.com/membercenter/index.action)，瀏覽至**憑證、 識別碼和設定檔**入口網站中，然後按一下 上的一節**識別碼**底下*iOS 應用程式*。 然後，按一下 [+] 頂端的權限產生新的應用程式識別碼。
+新的應用程式會在 IOS 布建**入口網站**的 [**應用程式識別碼**] 區段中設定。 若要建立新的應用程式識別碼, 請移至 iOS 布建[入口網站的成員中心](https://developer.apple.com/membercenter/index.action), 流覽至入口網站的 [**憑證、識別碼及設定檔**] 區段, 然後按一下 [ *iOS 應用程式*] 底下的 [**識別碼**]。 然後按一下右上方的 "+", 以產生新的應用程式識別碼。
 
 
-建立新的表單**應用程式識別碼**
+用來建立新**應用程式識別碼**的表單
 
- 看起來像這樣：
+ 如下所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image4.png "表單的表單建立新的應用程式識別碼")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image4.png "用來建立新應用程式識別碼的表單")](in-app-purchase-basics-and-configuration-images/image4.png#lightbox)
 
-輸入適合*描述*，因此您可以輕鬆地識別此清單中的應用程式識別碼。 針對*應用程式識別碼的前置詞*，選取 「 小組識別碼 」。
+輸入適用于*描述*的內容, 以便您可以在清單中輕鬆地識別此應用程式識別碼。 針對 [*應用程式識別碼] 前置*詞, 選取 [小組識別碼]。
 
-#### <a name="bundle-identifierapp-id-suffix-format"></a>套件組合識別碼/應用程式識別碼後置詞格式
+#### <a name="bundle-identifierapp-id-suffix-format"></a>套件組合識別碼/應用程式識別碼尾碼格式
 
-您可以使用您喜歡的任何字串您**套件組合識別碼**（只要它是在您的帳戶中是唯一的），然而，Apple 建議您遵循的反向 DNS 格式而不使用任何任意字串。 本文所附的範例應用程式套件組合識別碼，使用 com.xamarin.storekit.testing，不過，若要使用的識別碼，例如 my_store_example （即使 Apple 不建議採用） 同樣有效。
+您可以使用您喜歡的任何字串作為套件組合**識別碼**(只要它在您的帳戶中是唯一的), 不過 Apple 建議您遵循反向 DNS 格式, 而不要使用任何任一字元串。 本文隨附的範例應用程式會使用 storekit 來測試套件組合識別碼, 不過, 使用類似 my_store_example 的識別碼 (即使 Apple 不建議它) 也會同樣有效。
 
 > [!IMPORTANT]
-> Apple 也允許加入結尾的萬用字元星號**套件組合識別碼**以便單一的應用程式識別碼可用於多個應用程式，不過_萬用字元應用程式識別碼不能用於 AppPurchase_. 範例可能 com.xamarin.* 萬用字元套件組合識別碼。
+> Apple 也允許將萬用字元星號新增至組合**識別碼**的結尾, 讓單一應用程式 id 可以用於多個應用程式, 但_萬用字元應用程式識別碼無法用於 AppPurchase_。 例如, 萬用字元套件組合識別碼可能是 .com. *
 
 #### <a name="enabling-app-services"></a>啟用應用程式服務
 
-請注意，**應用程式內購買**將會自動啟用服務 清單中：
+請注意,**應用程式內購買**會在 [服務] 清單中自動啟用:
 
- [![](in-app-purchase-basics-and-configuration-images/image5.png "在 [服務] 清單中將自動啟用應用程式內購買")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image5.png "應用程式內購買會自動在服務清單中啟用")](in-app-purchase-basics-and-configuration-images/image5.png#lightbox)
 
 #### <a name="provisioning-profiles"></a>佈建設定檔
 
-建立開發和生產佈建設定檔，您通常會選取您已設定應用程式內購買的應用程式識別碼。 請參閱[iOS 裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)並[發佈至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)輔助線，如需詳細資訊。
+如往常般建立開發和生產布建設定檔, 並選取您為應用程式內購買所設定的應用程式識別碼。 如需詳細資訊, 請參閱[IOS 裝置](~/ios/get-started/installation/device-provisioning/index.md)布建和[發佈至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)指南。
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
-按一下  **My Apps**在 iTunes Connect，以建立或編輯的 iOS 應用程式項目中。 應用程式的 [概觀] 頁面將如下所示：
+按一下 iTunes Connect 中的 [**我的應用程式**], 以建立或編輯 iOS 應用程式專案。 [應用程式總覽] 頁面如下所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image6.png "應用程式的 [概觀] 頁面")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image6.png "應用程式總覽頁面")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
-按一下 **應用程式內購買**建立或編輯您的產品銷售。 此螢幕擷取畫面顯示範例應用程式有幾項產品已經新增：
+按一下 [**應用程式內購買**] 以建立或編輯您的產品以進行銷售。 此螢幕擷取畫面顯示已新增數個產品的範例應用程式:
 
- [![](in-app-purchase-basics-and-configuration-images/image7.png "有幾項產品已經新增範例應用程式")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image7.png "已新增數個產品的範例應用程式")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
-新增新產品的程序有兩個步驟：
+加入新產品的程式有兩個步驟:
 
-1.   選擇產品類型：[![](in-app-purchase-basics-and-configuration-images/image8.png "選擇產品類型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   輸入產品的屬性，包括產品識別碼、 定價層和當地語系化的描述：[![](in-app-purchase-basics-and-configuration-images/image9.png "輸入的產品屬性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1. 選擇產品類型:[![](in-app-purchase-basics-and-configuration-images/image8.png "選擇產品類型")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2. 輸入產品的屬性, 包括產品識別碼、定價層和當地語系化的描述:[![](in-app-purchase-basics-and-configuration-images/image9.png "輸入 products 屬性")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
-每個應用程式內購買產品所需的欄位如下所示：
+以下說明每個應用程式內購買產品所需的欄位:
 
 
 ### <a name="reference-name"></a>參考名稱
 
-參考名稱不會顯示給使用者;它僅供內部使用，並在 iTunes Connect 中，才會出現。
+參考名稱不會對您的使用者顯示;僅供內部使用, 而且只會出現在 iTunes Connect 中。
 
 ### <a name="product-id-format"></a>產品識別碼格式
 
-產品識別碼只能包含英數字元 (A-Z、 a-z、 0-9)、 底線 (_) 和句號 （.） 字元。 雖然您可以使用任何字串，您的識別項，Apple 建議的反向 DNS 格式。 例如，範例應用程式會使用這個套件組合識別碼：
+產品識別碼只能包含英數位元 (a-z、a-z、0-9)、底線 (_) 和句號 (.) 字元。 雖然您可以將任何字串用於識別碼, 但 Apple 會建議使用反向 DNS 格式。 例如, 範例應用程式會使用此配套識別碼:
 
  `com.xamarin.storekit.testing`
 
-因此若要找出應用程式內購買產品的慣例會，如下所示：
+因此, 用來識別應用程式內購買產品的慣例如下所示:
 
 ```csharp
 com.xamarin.storekit.testing.consume5credits
@@ -134,67 +134,67 @@ com.xamarin.storekit.testing.sepia
 com.xamarin.storekit.testing.greyscale
 ```
 
-不會強制執行此命名慣例，只是為了協助您管理您的產品建議。 此外，儘管遵循相同的反向 DNS 慣例，產品識別碼都*無關*到套件組合識別碼且不需要以相同的字串為開頭。 此外，您仍然可以有效使用像是 photo_product_greyscale 的識別項 （即使 Apple 不建議）。
+此命名慣例不會強制執行, 只是協助您管理產品的建議。 此外, 儘管遵循相同的反向 DNS 慣例, 產品識別碼並不會與套件組合識別碼*相關*, 而且也不需要以相同的字串開頭。 使用識別碼 (例如 photo_product_greyscale) 仍然有效 (即使 Apple 不建議這麼做)。
 
-產品識別碼不會顯示給使用者，但它用來參考您的應用程式程式碼中的產品。
+產品識別碼不會顯示給您的使用者, 但會用來參考應用程式代碼中的產品。
 
 ### <a name="product-type"></a>產品類型
 
-有五種類型的應用程式內購買產品，您可以提供：
+有五種類型的應用程式內購買產品可供您提供:
 
-1.  **需求的可取用**– 項目 '使用向上'，例如遊戲中播放程式可以花費的貨幣。 如果使用者進行備份/還原，否則他們的裝置重新整理需求的可取用的交易不會不取得一併還原 （這可有效地讓播放程式上一次相同的優點）。 應用程式程式碼必須確定提供可取用的 item'，因為在交易完成。
-1.  **非取用**– 使用者 '擁有' 一次購買產品，例如數位雜誌問題或遊戲的層級。
-1.  **自動更新的訂用帳戶**– 就像真實世界的雜誌訂閱，訂閱期間的結尾 Apple 自動再次費用的客戶並擴充訂用帳戶一詞，下去，或直到客戶明確取消它。 這是 Newsstand 應用程式的慣用的付款方式 （事實上，應用程式必須支援這種付款方法 Newsstand 發佈核准）。
-1.  **免費訂用帳戶**– 才會提供在 Newsstand 啟用應用程式，並讓其所有裝置上的客戶存取訂用帳戶內容。 免費訂用帳戶 」 永不過期。
-1.  **非更新訂用帳戶**– 應該用來銷售時間有限的存取權等靜態內容使用，一個月的相片封存權限。
+1. 取用–「已用完」的專案, 例如玩家可以花費的遊戲中貨幣。 如果使用者執行備份/還原, 或以其他方式重新整理其裝置, 則也不會還原可取用的交易 (這會有效地讓玩家再次獲得相同的權益)。 當交易完成時, 應用程式代碼必須務必提供「可耗用專案」。
+1. **非**取用–使用者「擁有」購買的產品, 例如數位雜誌問題或遊戲等級。
+1. **自動可續訂訂閱**–就像是實際的雜誌訂用帳戶一樣, 在訂閱期間結束時, Apple 會再次自動向客戶收費並延長訂用帳戶期限, 永遠或直到客戶明確取消為止。 這是 Newsstand 應用程式的慣用付款條件 (事實上, 應用程式必須支援此付款方法以核准 Newsstand 散發)。
+1. **免費訂**用帳戶–只能在啟用 Newsstand 的應用程式中提供, 並可讓客戶存取其所有裝置上的訂用帳戶內容。 免費訂閱永遠不會過期。
+1. **非續約訂**用帳戶–應該用來銷售對靜態內容的限時存取, 例如一個月的相片封存存取權。
 
 
- *本文件目前涵蓋只有前兩個產品類型 （可使用和非取用）。*
+ *本檔目前僅涵蓋前兩個產品類型 (可耗用和非可耗用)。*
 
  <a name="Price_Tiers" />
 
-### <a name="price-tiers"></a>價格層
+### <a name="price-tiers"></a>定價層
 
-應用程式存放區不會讓您選擇以任意的價格為您的產品，Apple 提供您可以選擇的固定的價格層。 固定在每個貨幣的價格和 Apple 保留的權限 （例如，在特定的貨幣與美元之間的相對外幣匯率速率持續變更） 後調整相對的價格。
+App Store 不會讓您為您的產品選擇任意價格– Apple 提供您可以選擇的固定價格層。 價格是以每個貨幣來固定, 而 Apple 保留調整相對價格的權利 (例如, 在特定貨幣與美國元之間的相對外匯率持續變更之後)。
 
-Apple 提供價格矩陣，以協助您選取正確的層，您想要的貨幣/價格。 價格矩陣 (年 8 月 2012) 的摘錄，如下所示：
+Apple 提供價格對照表, 協助您針對所需的貨幣/價格選取正確的層。 價格矩陣的摘錄 (2012 年8月) 如下所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image10.png "摘錄自 2012 年 8 月的價格矩陣")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image10.png "2012年8月價格對照表的摘錄")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-在撰寫 (2013) 的階段中，有 87 層從美元 USD 999.99 到 0.99。 定價矩陣會顯示的價格，您的客戶將付和也的量，您會收到來自 Apple – 這是小於其 30%費用以及任何當地稅金這些項目才能收集 （請注意，在美國和加拿大地區的銷售者會收到 99 的 c p 70 c 範例roduct，而澳洲的銷售者會收到僅 63 c，因為 '貨物&amp;服務稅' levied 的銷售價格)。
+在撰寫本文時 (2013 年6月), 有87層從美元0.99 到美元的999.99。 定價矩陣會顯示您的客戶將支付的價格, 以及您將從 Apple 收到的金額–這少於 30% 的費用, 也會收取任何需要收集的當地稅金 (請注意, 美國和加拿大賣方接收 70c 99c p 的範例產品, 而澳大利亞銷售人員只會收到 63c, 因為&amp; 「貨物服務稅務」會收取售價。
 
-可以更新您的產品價格，在任何時間，包括排程的價格會在未來的日期上生效的變更。 此螢幕擷取畫面顯示如何加入的未來日期的價格變更 – 價格會被暫時變更從第 1 層到第 3 層九月的月刊只有：
+您產品的定價可以隨時更新, 包括在未來日期生效的排程價格變更。 此螢幕擷取畫面顯示如何新增未來的價格變更–從第1層到第3層的價格暫時變更為9月份:
 
- [![](in-app-purchase-basics-and-configuration-images/image11.png "其中價格會被暫時變更從第 1 層到第 3 層九月的月刊只未來日期的價格變更")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
+ [![](in-app-purchase-basics-and-configuration-images/image11.png "未來的價格變更, 其價格將從第1層暫時改為9月份的第3層")](in-app-purchase-basics-and-configuration-images/image11.png#lightbox)
 
 ### <a name="free-products-not-supported"></a>不支援的免費產品
 
-Apple 提供的特殊 Newsstand 應用程式的免費訂用帳戶選項，雖然它不可以針對任何其他應用程式內購買類型設定為零 （免費） 的價格。 雖然您可以編輯 (亦即。 較低) 的促銷價格，您不能透過 iTunes Connect 的 「 免費 」 的應用程式內購買。
+雖然 Apple 已為 Newsstand apps 提供特殊的免費訂用帳戶選項, 但不可能為任何其他應用程式內購買類型設定零 (免費) 的價格。 雖然您可以編輯 (如較低) 銷售促銷的價格, 但無法透過 iTunes Connect 讓應用程式內購買「免費」。
 
 ### <a name="localization"></a>當地語系化
 
-在 iTunes Connect 中您可以為任何數目的受支援的語言輸入不同的名稱和描述文字。 每一種語言可以新增/編輯中透過快顯視窗：
+在 iTunes Connect 中, 您可以為任何數目的支援語言輸入不同的名稱和描述文字。 在中, 您可以透過快顯來新增/編輯每種語言:
 
- [![](in-app-purchase-basics-and-configuration-images/image12.png "每一種語言可以新增/編輯中透過快顯視窗")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
+ [![](in-app-purchase-basics-and-configuration-images/image12.png "在中, 您可以透過快顯來新增/編輯每種語言")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
    
    
    
- 當您在應用程式中顯示產品資訊時，就有一個當地語系化的文字可供您透過 StoreKit 顯示。 也必須以顯示正確的符號和十進位格式 – 此格式本文件稍後涵蓋當地語系化貨幣顯示。
+ 當您在應用程式中顯示產品資訊時, 可透過 StoreKit 顯示當地語系化的文字。 您也必須當地語系化貨幣顯示, 以顯示正確的符號和十進位格式–此格式會在本檔稍後討論。
 
-### <a name="app-store-review"></a>應用程式市集審查
+### <a name="app-store-review"></a>App Store 審查
 
-相同應用程式 – 每個產品檢閱由 Apple 才允許前往-銷售。 產品不適當內容的名稱或描述，可能會遭到拒絕或 Apple 可能會決定您所選擇的錯誤的產品類型 （例如。 您已建立書籍或雜誌的問題，但使用可取用的產品類型）。 產品檢閱可能需要長達應用程式審查。
+與應用程式相同– Apple 會先審查每個產品, 然後才可以開始使用。 產品可能會因為名稱或描述中不適當的內容而遭到拒絕, 或 Apple 可能會決定您選擇了錯誤的產品類型 (例如, 您已建立書籍或雜誌的問題, 但使用的是可取用的產品類型)。 只要應用程式審查, 產品評論就可以進行。
 
-第一次應用程式提交應用程式內購買已啟用 （不論它是新的應用程式，或功能已新增至現有） 您也必須選擇要提交與它的某些產品。 在 iTunes Connect 入口網站會提示您這樣做，請在此螢幕擷取畫面所示：
+第一次提交應用程式時, 若已啟用應用程式內購買 (無論是新的應用程式, 或是已新增功能), 您也必須選擇要與它一起提交的產品。 ITunes Connect 入口網站會提示您執行這項操作, 如下列螢幕擷取畫面所示:
 
- [![](in-app-purchase-basics-and-configuration-images/image13.png "在 iTunes Connect 入口網站會提示您送出某些產品以及")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
+ [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect 入口網站也會提示您提交一些產品")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
    
    
    
- 應用程式和應用程式內購買項目將檢閱在一起，使它們全都在 （讓該應用程式不會傳送至存放區沒有任何已核准的產品 ！） 取得一次核准。
+ 應用程式和應用程式內購買將會一起審核, 讓他們一次獲得核准 (如此一來, 應用程式就不會進入存放區, 而不會有任何核准的產品!)。
 
-已核准您第一次的版本和應用程式內購買功能之後，您可以新增其他的產品，並將它們提交檢閱在任何時間。 您也可以選擇要提交新的版本，以及特定的應用程式內購買的產品，使用**版本的詳細資訊**頁面提示所示。
+當您的第一個版本具有應用程式內購買功能之後, 您可以隨時新增並提交進一步的產品, 以供日後審查。 您也可以選擇隨特定的應用程式內購買產品一起提交新版本, 並使用 [**版本詳細資料**] 頁面做為提示的建議。
 
-請參閱[App Store 審核指南](https://developer.apple.com/appstore/guidelines.html)如需詳細資訊。
+如需詳細資訊, 請參閱[App Store 審查指導方針](https://developer.apple.com/appstore/guidelines.html)。
 
- [第 2 部分-存放區概觀與擷取產品資訊](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)
+ [第2部分-商店套件總覽和檢索產品資訊](~/ios/platform/in-app-purchasing/store-kit-overview-and-retreiving-product-information.md)

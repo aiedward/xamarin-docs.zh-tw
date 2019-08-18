@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/14/2016
-ms.openlocfilehash: 7bc728360c26321c16839c5d67b93a91d2593602
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 26c418355c83da807d6dfa514e58f9bf1675759f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655504"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528422"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchOS –逐步解說
 
 在您依照[安裝和安裝](~/ios/watchos/get-started/installation.md)中的步驟建立解決方案之後, 您將會有3個專案:
 
-- IOS 父系應用程式, 用於安裝程式或其他裝置上的系統管理工作。 (使用其他類型的 iOS 延伸模組, 這通常稱為「容器」應用程式)。使用 Watch 應用程式, 使用者就可以開始執行 Watch 應用程式, 而不需要  執行父系應用程式;
+- IOS 父系應用程式, 用於安裝程式或其他裝置上的系統管理工作。 (使用其他類型的 iOS 延伸模組, 這通常稱為「容器」應用程式)。使用 Watch 應用程式, 使用者就可以開始執行 Watch 應用程式, 而不需要執行父系應用程式;
 - 監看式延伸模組, 其中包含監看式應用程式的程式碼;和
 - 監看式應用程式, 它會保存顯示在監看式上的分鏡腳本和影像資源。
 
@@ -43,10 +43,10 @@ ms.locfileid: "68655504"
 按兩下監看式應用程式中的介面, 以啟動 Xamarin iOS 設計工具 (如果您是在 Mac 上, 您也可以用滑鼠右鍵按一下並**開啟, > Xcode Interface Builder**)
 
 
-1.  確定 [**工具箱**] 和 [**屬性**] 板可見,
-1.  按一下以選取介面控制器,
-1.  將介面控制器的識別碼和標題設定為**interfaceController**和**Hi Watch**,
-1.  確認**類別**已設定為**InterfaceController**
+1. 確定 [**工具箱**] 和 [**屬性**] 板可見,
+1. 按一下以選取介面控制器,
+1. 將介面控制器的識別碼和標題設定為**interfaceController**和**Hi Watch**,
+1. 確認**類別**已設定為**InterfaceController**
 
     ![](hello-watch-images/interfacecontrollerattributes.png "將介面控制器的識別碼和標題設定為 interfaceController 和 Hi Watch")
 
@@ -54,10 +54,10 @@ ms.locfileid: "68655504"
 
 按兩下 [監看式] 應用程式中的 [腳本], 在 Visual Studio 中使用 Xamarin iOS 設計工具進行編輯:
 
-1.  開啟 [屬性] 窗格;
-1.  將類別變更為**InterfaceController**;
-1.  按一下介面控制器;和
-1.  將介面控制器的識別碼和標題設定為**interfaceController**和**Hi Watch**。
+1. 開啟 [屬性] 窗格;
+1. 將類別變更為**InterfaceController**;
+1. 按一下介面控制器;和
+1. 將介面控制器的識別碼和標題設定為**interfaceController**和**Hi Watch**。
 
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "將介面控制器的識別碼和標題設定為 interfaceController 和 Hi Watch")
 

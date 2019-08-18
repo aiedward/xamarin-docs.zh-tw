@@ -1,28 +1,26 @@
 ---
-title: 目標 Sharpie 工具與命令
-description: 本文件提供隨附於目標 Sharpie 和命令列引數來使用這些工具的概觀。
+title: 目標 Sharpie 工具 & 命令
+description: 本檔概述目標 Sharpie 所包含的工具, 以及要搭配使用的命令列引數。
 ms.prod: xamarin
 ms.assetid: A84E209B-8932-4CC1-BAD1-7FD51F798A97
 author: asb3993
 ms.author: amburns
 ms.date: 10/05/2015
-ms.openlocfilehash: 51a0b81204b743824e24cfed83bd73308fa8d506
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: ddfe0f99991808214a6006c9504d267179adf2ab
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977669"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521864"
 ---
-# <a name="objective-sharpie-tools--commands"></a>目標 Sharpie 工具與命令
+# <a name="objective-sharpie-tools--commands"></a>目標 Sharpie 工具 & 命令
 
-_包含在與目標 Sharpie 命令列引數來使用這些工具的概觀。_
+_概述目標 Sharpie 所包含的工具, 以及使用它們的命令列引數。_
 
-<style type="text/css"> .terminal-blue { color: rgb(10,96,254); } .terminal-green { color: rgb(12,156,26); } .terminal-magenta { color: rgb(152,12,103); } </style>
+成功[安裝](~/cross-platform/macios/binding/objective-sharpie/get-started.md)目標 Sharpie 之後, 請開啟終端機, 並熟悉 [目標 Sharpie] 所提供的*命令*:
 
-
-一旦目標 Sharpie 成功[安裝](~/cross-platform/macios/binding/objective-sharpie/get-started.md)，開啟終端機，並熟悉<em>命令</em>目標 Sharpie 所提供：
-
-<pre>$ <b>sharpie -help</b>
+```
+$ sharpie -help
 usage: sharpie [OPTIONS] TOOL [TOOL_OPTIONS]
 
 Options:
@@ -48,22 +46,24 @@ Available Tools:
   bind               Create a Xamarin C# binding to Objective-C APIs
   update             Update to the latest release of Objective Sharpie
   verify-docs        Show cross reference documentation for [Verify] attributes
-  docs               Open the Objective Sharpie online documentation</pre>
+  docs               Open the Objective Sharpie online documentation
+```
 
-目標 Sharpie 提供下列工具：
+目標 Sharpie 提供下列工具:
 
 |工具|描述|
 |--- |--- |
-|**xcode**|提供目前的 Xcode 安裝和版本的 iOS 和 Mac Sdk 所提供的資訊。 我們將使用這項資訊稍後當我們產生我們的繫結。|
-|**pod**|搜尋、 設定、 安裝 （在本機目錄中），並繫結 OBJECTIVE-C [CocoaPod](https://cocoapods.org/)主要規格的儲存機制從程式庫。 此工具會評估來自動推算要傳遞至正確的輸入已安裝的 CocoaPod`bind`下列工具。 在 3.0 新功能 ！|
-|**bind**|剖析的標頭檔 (`*.h`) 在初始的 Objective C 程式庫中[ApiDefinition.cs 和 StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)檔案。|
-|**update**|檢查有較新版本的目標 Sharpie 下載並啟動安裝程式，如果有的話。|
-|**verify-docs**|顯示詳細的資訊，關於`[Verify]`屬性。|
-|**docs**|瀏覽至您的預設網頁瀏覽器中的這份文件。|
+|**xcode**|提供目前的 Xcode 安裝以及可用的 iOS 和 Mac Sdk 版本的相關資訊。 稍後當我們產生系結時, 我們將會用到此資訊。|
+|**pod**|搜尋、設定、安裝 (在本機目錄中), 並系結主要規格存放庫中可用的[CocoaPod](https://cocoapods.org/)程式庫。 此工具會評估已安裝的 CocoaPod, 以自動推算要傳遞至`bind`下列工具的正確輸入。 3\.0 中的新功能!|
+|**bind**|將目標 C 程式庫`*.h`中的標頭檔 () 剖析為初始[ApiDefinition.cs 和 StructsAndEnums.cs](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)檔案。|
+|**update**|檢查是否有較新版本的目標 Sharpie 和下載, 並啟動安裝程式 (如果有的話)。|
+|**verify-docs**|顯示`[Verify]`屬性的詳細資訊。|
+|**docs**|在您的預設網頁瀏覽器中流覽到這份檔。|
 
-若要取得特定的目標 Sharpie 工具的說明，請輸入工具的名稱和`-help`選項。 比方說，`sharpie xcode -help`傳回下列輸出：
+若要取得特定目標 Sharpie 工具的說明, 請輸入工具的名稱和`-help`選項。 例如, `sharpie xcode -help`會傳回下列輸出:
 
-<pre>$ <b>sharpie xcode -help</b>
+```
+$ sharpie xcode -help
 usage: sharpie xcode [OPTIONS]
 
 Options:
@@ -71,17 +71,20 @@ Options:
   -v, -verbose     Be verbose with output
 
 Xcode Options:
-  -sdks            List all available Xcode SDKs. Pass -verbose for more details.</pre>
+  -sdks            List all available Xcode SDKs. Pass -verbose for more details.
+```
 
-我們可以開始繫結程序之前，我們需要在終端機中輸入下列命令來取得我們目前已安裝的 Sdk 的相關資訊`sharpie xcode -sdks`。 您的輸出取決於您已安裝的 Xcode 版本而異。 尋找 Sdk 安裝在任何目標 Sharpie`Xcode*.app`下`/Applications`目錄：
+在開始進行系結程式之前, 我們必須先在終端`sharpie xcode -sdks`機中輸入下列命令, 以取得目前已安裝 sdk 的相關資訊。 您的輸出可能會根據您已安裝的 Xcode 版本而有所不同。 目標 Sharpie 會尋找安裝在`Xcode*.app` `/Applications`目錄底下任一處的 sdk:
 
-<pre>$ <b>sharpie xcode -sdks</b>
-<span class="terminal-blue">sdk:</span> appletvos9.0    <span class="terminal-green">arch:</span> arm64
-<span class="terminal-blue">sdk:</span> iphoneos9.1     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> iphoneos9.0     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> iphoneos8.4     <span class="terminal-green">arch:</span> arm64   armv7
-<span class="terminal-blue">sdk:</span> macosx10.11     <span class="terminal-green">arch:</span> x86_64  i386
-<span class="terminal-blue">sdk:</span> macosx10.10     <span class="terminal-green">arch:</span> x86_64  i386
-<span class="terminal-blue">sdk:</span> watchos2.0      <span class="terminal-green">arch:</span> armv7</pre>
+```
+$ sharpie xcode -sdks
+sdk: appletvos9.0    arch: arm64
+sdk: iphoneos9.1     arch: arm64   armv7
+sdk: iphoneos9.0     arch: arm64   armv7
+sdk: iphoneos8.4     arch: arm64   armv7
+sdk: macosx10.11     arch: x86_64  i386
+sdk: macosx10.10     arch: x86_64  i386
+sdk: watchos2.0      arch: armv7
+```
 
-從上述項目，我們可以看到，我們有`iphoneos9.1`SDK 安裝在電腦上，而且有`arm64`架構支援。 我們將在本節中的所有範例使用此值。 在利用此資訊的地方，我們已準備好將 OBJECTIVE-C 程式庫標頭檔案剖析為初始`ApiDefinition.cs`和`StructsAndEnums.cs`繫結專案。
+在上述程式中, 我們可以看到我們的`iphoneos9.1`機器上已安裝 SDK, 而且它具有`arm64`架構支援。 本章節中的所有範例都會使用此值。 有了這項資訊之後, 我們就可以開始將目標 C 程式庫標頭檔剖析成系`ApiDefinition.cs`結`StructsAndEnums.cs`專案的初始和。

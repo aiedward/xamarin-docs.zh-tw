@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 3837e28fa657764312cdbe379ba66caf9ccf18a4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: df13c1080be5fd466c4875ed8a3bdc2012a70df0
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644207"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526167"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Firebase 雲端通訊的遠端通知
 
@@ -26,11 +26,11 @@ _本逐步解說提供如何在 Xamarin Android 應用程式中使用 Firebase �
 
 將探索下列主題範圍:
 
-1.  背景通知
+1. 背景通知
 
-2.  主題訊息
+2. 主題訊息
 
-3.  前景通知
+3. 前景通知
 
 在此逐步解說中, 您會以累加方式將功能新增至**FCMClient** , 並在裝置或模擬器上執行, 以瞭解它如何與 FCM 互動。 您將使用記錄來見證 FCM 伺服器的即時應用程式交易, 而且您會觀察到如何從您輸入至 Firebase 主控台通知 GUI 的 FCM 訊息產生通知。
 
@@ -55,9 +55,9 @@ _本逐步解說提供如何在 Xamarin Android 應用程式中使用 Firebase �
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  開啟**FCMClient**專案的屬性。
+1. 開啟**FCMClient**專案的屬性。
 
-2.  在 [ **Android 資訊清單**] 頁面中, 設定封裝名稱。
+2. 在 [ **Android 資訊清單**] 頁面中, 設定封裝名稱。
 
 在下列範例中, 封裝名稱會設定為`com.xamarin.fcmexample`:
 
@@ -67,9 +67,9 @@ _本逐步解說提供如何在 Xamarin Android 應用程式中使用 Firebase �
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  開啟**FCMClient**專案的屬性。
+1. 開啟**FCMClient**專案的屬性。
 
-2.  在 [ **Android 應用程式**] 頁面中, 設定封裝名稱。
+2. 在 [ **Android 應用程式**] 頁面中, 設定封裝名稱。
 
 在下列範例中, 封裝名稱會設定為`com.xamarin.fcmexample`:
 
@@ -88,21 +88,21 @@ _本逐步解說提供如何在 Xamarin Android 應用程式中使用 Firebase �
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中, 以滑鼠右鍵按一下 **參考 > 管理 NuGet 套件 ...** 。
+1. 在 Visual Studio 中, 以滑鼠右鍵按一下 **參考 > 管理 NuGet 套件 ...** 。
 
-2.  按一下 [**流覽**] 索引標籤, 然後搜尋**GooglePlayServices**。
+2. 按一下 [**流覽**] 索引標籤, 然後搜尋**GooglePlayServices**。
 
-3.  將此套件安裝到**FCMClient**專案:
+3. 將此套件安裝到**FCMClient**專案:
 
     [![安裝 Google Play Services 基底](remote-notifications-with-fcm-images/02-google-play-services-vs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  在 Visual Studio for Mac 中, 以滑鼠右鍵按一下 **套件 > 新增封裝**...。
+1. 在 Visual Studio for Mac 中, 以滑鼠右鍵按一下 **套件 > 新增封裝**...。
 
-2.  搜尋**GooglePlayServices**。
+2. 搜尋**GooglePlayServices**。
 
-3.  將此套件安裝到**FCMClient**專案:
+3. 將此套件安裝到**FCMClient**專案:
 
     [![安裝 Google Play Services 基底](remote-notifications-with-fcm-images/02-google-play-services-xs-sml.png)](remote-notifications-with-fcm-images/02-google-play-services-xs.png#lightbox)
 
@@ -125,21 +125,21 @@ using Android.Gms.Common;
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  在 Visual Studio 中, 以滑鼠右鍵按一下 **參考 > 管理 NuGet 套件 ...** 。
+1. 在 Visual Studio 中, 以滑鼠右鍵按一下 **參考 > 管理 NuGet 套件 ...** 。
 
 2. 搜尋**Firebase。**
 
-3.  將此套件安裝到**FCMClient**專案:
+3. 將此套件安裝到**FCMClient**專案:
 
     [![安裝 Xamarin Firebase 訊息](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  在 Visual Studio for Mac 中, 以滑鼠右鍵按一下 **套件 > 新增封裝**...。
+1. 在 Visual Studio for Mac 中, 以滑鼠右鍵按一下 **套件 > 新增封裝**...。
 
-2.  搜尋**Firebase。**
+2. 搜尋**Firebase。**
 
-3.  將此套件安裝到**FCMClient**專案:
+3. 將此套件安裝到**FCMClient**專案:
 
     [![安裝 Xamarin Firebase 訊息](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
@@ -163,13 +163,13 @@ using Android.Util;
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  將**google 服務 json**複製到專案資料夾。
+1. 將**google 服務 json**複製到專案資料夾。
 
-2.  將**google-服務**新增至應用程式專案 (按一下 **方案總管**中的 **顯示所有**檔案, 以滑鼠右鍵按一下  **google-服務**, 然後選取 **包含在專案中**)。
+2. 將**google-服務**新增至應用程式專案 (按一下 **方案總管**中的 **顯示所有**檔案, 以滑鼠右鍵按一下  **google-服務**, 然後選取 **包含在專案中**)。
 
-3.  在 [**方案總管**] 視窗中選取 [ **google-服務**]。
+3. 在 [**方案總管**] 視窗中選取 [ **google-服務**]。
 
-4.  在 [**屬性**] 窗格中, 將 [**組建] 動作**設定為**GoogleServicesJson**:
+4. 在 [**屬性**] 窗格中, 將 [**組建] 動作**設定為**GoogleServicesJson**:
 
     [![將組建動作設定為 GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-vs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-vs.png#lightbox)
 
@@ -178,13 +178,13 @@ using Android.Util;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  將**google 服務 json**複製到專案資料夾。
+1. 將**google 服務 json**複製到專案資料夾。
 
-2.  將**google-服務**新增至應用程式專案。
+2. 將**google-服務**新增至應用程式專案。
 
-3.  以滑鼠右鍵按一下 [ **google-服務 json**]。
+3. 以滑鼠右鍵按一下 [ **google-服務 json**]。
 
-4.  將 [**組建] 動作**設定為**GoogleServicesJson**:
+4. 將 [**組建] 動作**設定為**GoogleServicesJson**:
 
     [![將組建動作設定為 GoogleServicesJson](remote-notifications-with-fcm-images/04-google-services-json-xs-sml.png)](remote-notifications-with-fcm-images/04-google-services-json-xs.png#lightbox)
 
@@ -309,7 +309,7 @@ protected override void OnCreate (Bundle bundle)
 [![應用程式指出 Google Play Services 可供使用](remote-notifications-with-fcm-images/05-gps-available-sml.png)](remote-notifications-with-fcm-images/05-gps-available.png#lightbox)
 
 如果您沒有取得此結果, 請確認您的裝置上已安裝 Google Play Services APK (如需詳細資訊, 請參閱[設定 Google Play Services](https://developers.google.com/android/guides/setup))。
-此外, 請確認您已如  先前所述, 將**FCMClient**專案新增至您的 [node.js] 套件。
+此外, 請確認您已如先前所述, 將**FCMClient**專案新增至您的 [node.js] 套件。
 
 
 ## <a name="add-the-instance-id-receiver"></a>新增實例識別碼接收者
@@ -338,11 +338,11 @@ protected override void OnCreate (Bundle bundle)
 
 此 XML 會執行下列動作:
 
--   宣告可為每個應用程式實例提供[唯一識別碼](https://developers.google.com/instance-id/)的執行。`FirebaseInstanceIdReceiver` 此收件者也會驗證並授權動作。
+- 宣告可為每個應用程式實例提供[唯一識別碼](https://developers.google.com/instance-id/)的執行。`FirebaseInstanceIdReceiver` 此收件者也會驗證並授權動作。
 
--   宣告的內部`FirebaseInstanceIdInternalReceiver`實作，用來安全地啟動服務。
+- 宣告的內部`FirebaseInstanceIdInternalReceiver`實作，用來安全地啟動服務。
 
--   [應用程式識別碼](./firebase-cloud-messaging.md#fcm-in-action-app-id)會儲存在已[新增至專案](#add-googleplayservices-json)的**google-服務 json**檔案中。 Firebase 系結會將權杖`${applicationId}`取代為應用程式識別碼; 用戶端應用程式不需要額外的程式碼來提供應用程式識別碼。
+- [應用程式識別碼](./firebase-cloud-messaging.md#fcm-in-action-app-id)會儲存在已[新增至專案](#add-googleplayservices-json)的**google-服務 json**檔案中。 Firebase 系結會將權杖`${applicationId}`取代為應用程式識別碼; 用戶端應用程式不需要額外的程式碼來提供應用程式識別碼。
 
 `FirebaseInstanceIdReceiver` `FirebaseInstanceIdService`是, 它會接收`FirebaseInstanceId`和`FirebaseMessaging`事件, 並將它們傳遞至您衍生自的類別。 `WakefulBroadcastReceiver`
 
@@ -351,9 +351,9 @@ protected override void OnCreate (Bundle bundle)
 向 FCM 註冊應用程式的工作是由您提供的自`FirebaseInstanceIdService`定義服務所處理。
 `FirebaseInstanceIdService`會執行下列步驟:
 
-1.  會使用[實例識別碼 API](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID)來產生安全性權杖, 以授權用戶端應用程式存取 FCM 和應用程式伺服器。 在傳回時, 應用程式會從 FCM 中取得[註冊權杖](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)。
+1. 會使用[實例識別碼 API](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID)來產生安全性權杖, 以授權用戶端應用程式存取 FCM 和應用程式伺服器。 在傳回時, 應用程式會從 FCM 中取得[註冊權杖](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#fcm-in-action-registration-token)。
 
-2.  如果應用程式伺服器需要, 請將註冊權杖轉送至應用程式伺服器。
+2. 如果應用程式伺服器需要, 請將註冊權杖轉送至應用程式伺服器。
 
 新增名為**MyFirebaseIIDService.cs**的新檔案, 並將其範本程式碼取代為下列內容:
 
@@ -393,13 +393,13 @@ Log.Debug(TAG, "Refreshed token: " + refreshedToken);
 
 `OnTokenRefresh`不常叫用: 在下列情況下, 它會用來更新權杖:
 
--   安裝或卸載應用程式時。
+- 安裝或卸載應用程式時。
 
--   當使用者刪除應用程式資料時。
+- 當使用者刪除應用程式資料時。
 
--   當應用程式清除實例識別碼時。
+- 當應用程式清除實例識別碼時。
 
--   當令牌的安全性遭到洩露時。
+- 當令牌的安全性遭到洩露時。
 
 根據 Google 的[實例識別碼](https://developers.google.com/instance-id/guides/android-implementation)檔, FCM 實例識別碼服務會要求應用程式定期重新整理其權杖 (通常是每6個月)。
 
@@ -573,19 +573,19 @@ subscribeButton.Click += delegate {
 
 使用下列步驟來傳送主題訊息:
 
-1.  在 Firebase 主控台中, 按一下 [**新增訊息**]。
+1. 在 Firebase 主控台中, 按一下 [**新增訊息**]。
 
-2.  在 [**撰寫訊息**] 頁面上, 輸入郵件內文, 然後選取 [**主題**]。
+2. 在 [**撰寫訊息**] 頁面上, 輸入郵件內文, 然後選取 [**主題**]。
 
-3.  在 [**主題**] 下拉式功能表中, 選取內建主題 [**新聞**]:
+3. 在 [**主題**] 下拉式功能表中, 選取內建主題 [**新聞**]:
 
     [![選取新聞主題](remote-notifications-with-fcm-images/16-topic-message-sml.png)](remote-notifications-with-fcm-images/16-topic-message.png#lightbox)
 
-4.  在 Android 裝置 (或模擬器) 上, 藉由點擊 [Android**總覽**] 按鈕並觸及主畫面, 以背景應用程式。
+4. 在 Android 裝置 (或模擬器) 上, 藉由點擊 [Android**總覽**] 按鈕並觸及主畫面, 以背景應用程式。
 
-5.  當裝置準備就緒時, 請按一下 Firebase 主控台中的 [**傳送訊息**]。
+5. 當裝置準備就緒時, 請按一下 Firebase 主控台中的 [**傳送訊息**]。
 
-6.  檢查 [IDE 輸出] 視窗以查看記錄輸出中的 **/topics/news** :
+6. 檢查 [IDE 輸出] 視窗以查看記錄輸出中的 **/topics/news** :
 
     [![顯示來自/topic/news 的訊息](remote-notifications-with-fcm-images/17-message-arrived-sml.png)](remote-notifications-with-fcm-images/17-message-arrived.png#lightbox)
 
@@ -653,19 +653,19 @@ Log.Debug(TAG, "Notification Message Body: " + body);
 
 卸載應用程式, 重建它, 再執行一次, 然後遵循下列步驟來傳送另一則訊息:
 
-1.  在 Firebase 主控台中, 按一下 [**新增訊息**]。
+1. 在 Firebase 主控台中, 按一下 [**新增訊息**]。
 
-2.  在 [**撰寫訊息**] 頁面上, 輸入郵件內文, 然後選取 [**單一裝置**]。
+2. 在 [**撰寫訊息**] 頁面上, 輸入郵件內文, 然後選取 [**單一裝置**]。
 
-3.  從 IDE 的 [輸出] 視窗複製權杖字串, 然後將它貼入 Firebase 主控台的 [ **FCM 註冊權杖**] 欄位中, 如同之前一樣。
+3. 從 IDE 的 [輸出] 視窗複製權杖字串, 然後將它貼入 Firebase 主控台的 [ **FCM 註冊權杖**] 欄位中, 如同之前一樣。
 
-4.  確認應用程式正在前景執行, 然後按一下 Firebase 主控台中的 [**傳送訊息**]:
+4. 確認應用程式正在前景執行, 然後按一下 Firebase 主控台中的 [**傳送訊息**]:
 
     [![從主控台傳送另一則訊息](remote-notifications-with-fcm-images/19-hello-again-sml.png)](remote-notifications-with-fcm-images/19-hello-again.png#lightbox)
 
-5.  顯示 [**審查訊息**] 對話方塊時, 按一下 [**傳送**]。
+5. 顯示 [**審查訊息**] 對話方塊時, 按一下 [**傳送**]。
 
-6.  傳入訊息會記錄到 IDE 的 [輸出] 視窗:
+6. 傳入訊息會記錄到 IDE 的 [輸出] 視窗:
 
     [![列印到輸出視窗的訊息內文](remote-notifications-with-fcm-images/20-logged-message.png)](remote-notifications-with-fcm-images/20-logged-message.png#lightbox)
 
@@ -679,7 +679,7 @@ using FCMClient;
 using System.Collections.Generic;
 ```
 
-將下列方法新增至`MyFirebaseMessagingService`:
+將下列方法新增至 `MyFirebaseMessagingService`：
 
 <a name="sendnotification-method"></a>
 
@@ -741,13 +741,13 @@ public override void OnMessageReceived(RemoteMessage message)
 
 卸載應用程式, 重建它, 再執行一次, 然後使用下列步驟來傳送最後一則訊息:
 
-1.  在 Firebase 主控台中, 按一下 [**新增訊息**]。
+1. 在 Firebase 主控台中, 按一下 [**新增訊息**]。
 
-2.  在 [**撰寫訊息**] 頁面上, 輸入郵件內文, 然後選取 [**單一裝置**]。
+2. 在 [**撰寫訊息**] 頁面上, 輸入郵件內文, 然後選取 [**單一裝置**]。
 
-3.  從 IDE 的 [輸出] 視窗複製權杖字串, 然後將它貼入 Firebase 主控台的 [ **FCM 註冊權杖**] 欄位中, 如同之前一樣。
+3. 從 IDE 的 [輸出] 視窗複製權杖字串, 然後將它貼入 Firebase 主控台的 [ **FCM 註冊權杖**] 欄位中, 如同之前一樣。
 
-4.  確認應用程式正在前景執行, 然後按一下 Firebase 主控台中的 [**傳送訊息**]:
+4. 確認應用程式正在前景執行, 然後按一下 Firebase 主控台中的 [**傳送訊息**]:
 
     [![傳送前景訊息](remote-notifications-with-fcm-images/21-console-fg-msg-sml.png)](remote-notifications-with-fcm-images/21-console-fg-msg.png#lightbox)
 

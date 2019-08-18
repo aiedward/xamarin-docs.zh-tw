@@ -1,39 +1,39 @@
 ---
 title: 索引標籤式版面配置
-description: 在 Android 中的索引標籤式版面配置的概觀
+description: Android 中索引標籤式版面配置的總覽
 ms.prod: xamarin
 ms.assetid: 1CFF590A-AC86-C3B3-36CA-A70248BC7F97
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2017
-ms.openlocfilehash: 32d1ce4e440a962e02fda052375171bea7676053
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5f67ec30ce04993701634387f7c2023a0f92004f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61303245"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522356"
 ---
 # <a name="tabbed-layouts"></a>索引標籤式版面配置
 
 
 ## <a name="overview"></a>總覽
 
-索引標籤會是行動應用程式的廣大的使用者介面模式，因為其簡易性和可用性。 它們提供的應用程式中的各個畫面之間瀏覽的一致且簡單的方法。 Android 提供數個 API 的索引標籤式介面： 
+索引標籤是行動應用程式中的熱門使用者介面模式, 因為其簡易性和可用性。 它們提供一致且簡單的方法, 在應用程式中的各種畫面之間流覽。 Android 有數個適用于索引標籤式介面的 API: 
 
--   **ActionBar** &ndash;這是新的 API 中引進了 Android 3.0 （API 層級 11） 提供一致的目標集的一部分瀏覽和檢視切換的介面。 它已經回移植到 Android 2.2 （API 層級 8），與[Android 支援程式庫 v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)。 
+- **ActionBar**&ndash;這是在 Android 3.0 (API 層級 11) 中引進的一組新 API 的一部分, 其目標是要提供一致的導覽和視圖切換介面。 其已使用[Android 支援程式庫 v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)回到 android 2.2 (API 層級 8)。 
 
--   **PagerTabStrip** &ndash;表示目前下, 一步] 和 [上一個頁面的`ViewPager`。 `ViewPager` 只能透過[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)。
-     如需詳細資訊`PagerTabStrip`，請參閱 < [ViewPager](~/android/user-interface/controls/view-pager/index.md)。
+- **PagerTabStrip**指出的目前、下一頁`ViewPager`和上一頁。 &ndash; `ViewPager`只能透過[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)來使用。
+     如需的詳細`PagerTabStrip`資訊, 請參閱[ViewPager](~/android/user-interface/controls/view-pager/index.md)。
 
--   **工具列** &ndash; `Toolbar`是較新且更具彈性的動作列元件，它會取代`ActionBar`。 `Toolbar` 適用於 Android 5.0 Lollipop 或更新版本，同時它也是適用於舊版的 Android 透過[Android 支援程式庫 v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet 套件。 
-    `Toolbar` 目前建議的動作列元件，以用於 Android 的應用程式。
-    如需詳細資訊，請參閱 <<c0> [ 工具列](~/android/user-interface/controls/tool-bar/index.md)。 
+- **工具列**是較新且更有彈性的動作列元件, 會取代`ActionBar`。 &ndash; `Toolbar` `Toolbar`適用于 Android 5.0 或更新版本, 也適用于較舊版本的 Android (透過[Android 支援程式庫 v7](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) NuGet 套件)。 
+    `Toolbar`是目前建議在 Android 應用程式中使用的動作列元件。
+    如需詳細資訊, 請參閱[工具列](~/android/user-interface/controls/tool-bar/index.md)。 
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [材料設計-索引標籤](https://material.io/guidelines/components/tabs.html)- [ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
-- [Android 支援程式庫 v7 AppCompat NuGet 封裝](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
+- [材質設計-](https://material.io/guidelines/components/tabs.html) - 索引標籤[ActionBar](https://developer.android.com/guide/topics/ui/actionbar.html)
+- [Android 支援程式庫 v7 AppCompat NuGet 套件](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)
 - [v7 appcompat 程式庫](https://developer.android.com/tools/support-library/features.html#v7-appcompat)

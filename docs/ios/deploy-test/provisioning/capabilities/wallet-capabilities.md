@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 0ae5dd86341912354938a8509668c843d412367b
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 25ebf101dfe0cc3d51e8411b7977e6dc0b061f2d
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832583"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978398"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 的電子錢包功能
 
@@ -65,6 +65,6 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 * 在您的應用程式中使用架構命名空間。
 * 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在應用程式的 [iOS 套件組合簽署] **** 中，確定 [自訂權利] **** 已設定為 **Entitlements.plist**。 這「不是」 __  「偵錯」和「iOS 模擬器」組建的預設設定。
+* 在應用程式的 [iOS 套件組合簽署]  中，確定 [自訂權利]  已設定為 **Entitlements.plist**。 這「不是」  「偵錯」和「iOS 模擬器」組建的預設設定。
 
 如果您在應用程式服務方面遇到問題，請參閱主要指南的[疑難排解](~/ios/deploy-test/provisioning/capabilities/index.md)一節。

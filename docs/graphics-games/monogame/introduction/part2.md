@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 7c7b58266b4f5168fdb231258390fa64278963f8
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 44ba9188a059cc28c7b4d89143cef1921a0b1701
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680946"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978473"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>第2部分–執行 WalkingGame
 
@@ -29,12 +29,11 @@ _本逐步解說示範如何將遊戲邏輯和內容新增至空白的 MonoGame 
 - 將移動加入至字元
 - 符合的移動和動畫
 
-
 ## <a name="unzipping-our-game-content"></a>解壓縮遊戲內容
 
 在我們開始撰寫程式碼之前, 我們會想要將遊戲*內容*解壓縮。 遊戲開發人員通常會使用「*內容*」一詞來指稱非程式碼檔案, 這些檔案通常是由 visual 演出者、遊戲設計人員或音訊設計師所建立。 常見的內容類型包括用來顯示視覺效果、播放音效或控制人工智慧 (AI) 行為的檔案。 從遊戲開發小組的觀點來看, 通常是由非程式設計人員所建立。
 
-這裡所使用的內容可以[在 github 上](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)找到。 我們需要將這些檔案下載到稍後將在本逐步解說中存取的位置。
+這裡所使用的內容可以[在 GitHub 上](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)找到。 我們需要將這些檔案下載到稍後將在本逐步解說中存取的位置。
 
 ## <a name="monogame-class-overview"></a>MonoGame 類別總覽
 
@@ -57,11 +56,11 @@ _本逐步解說示範如何將遊戲邏輯和內容新增至空白的 MonoGame 
 
 若要新增遊戲內容, 請以滑鼠右鍵按一下 **內容** 資料夾, 然後選取 **新增 > 新增檔案 ...** 流覽至已解壓縮內容 .zip 檔案的位置, 然後選取  **charactersheet**  檔案。 如果系統詢問您如何將檔案新增至資料夾, 我們應該選取 [**複製**] 選項:
 
-![](part2-images/image1.png "如果系統詢問您如何將檔案新增至資料夾, 請選取 [複製] 選項")
+![如果系統詢問您如何將檔案新增至資料夾, 請選取 [複製] 選項](part2-images/image1.png)
 
 Content 資料夾現在包含 charactersheet .png 檔案:
 
-![](part2-images/image2.png "Content 資料夾現在包含 charactersheet .png 檔案")
+![Content 資料夾現在包含 charactersheet .png 檔案](part2-images/image2.png)
 
 接下來, 我們將新增程式碼以載入 charactersheet 檔案, 並建立`Texture2D`。 若要這麼做, `Game1.cs`請開啟檔案, 並將下欄欄位新增至 Game1.cs 類別:
 
@@ -117,7 +116,7 @@ protected override void Draw(GameTime gameTime)
 
 執行遊戲現在會顯示一個顯示從 charactersheet 建立之材質的單一 sprite:
 
-![](part2-images/image3.png "執行遊戲現在會顯示一個顯示從 charactersheet 建立之材質的單一 sprite")
+![執行遊戲現在會顯示一個顯示從 charactersheet 建立之材質的單一 sprite](part2-images/image3.png)
 
 ## <a name="creating-the-characterentity"></a>建立 CharacterEntity
 
@@ -132,7 +131,6 @@ protected override void Draw(GameTime gameTime)
 - 可以動態建立和終結, 例如播放程式出現並收集的電源
 
 實體組織系統可能很複雜, 而且許多遊戲引擎都提供類別來協助管理實體。 我們將會實行非常簡單的實體系統, 因此值得注意的是, 完整的遊戲通常在開發人員的部分需要更多的組織。
-
 
 ### <a name="defining-the-characterentity"></a>定義 CharacterEntity
 
@@ -215,7 +213,6 @@ namespace WalkingGame
 
 這是因為當相同`SpriteBatch`的實例用於所有`Draw`呼叫, 以及在單一集合`Begin`和`End`呼叫之間進行所有`Draw`呼叫時, 最有效率的呈現方式。 當然, 我們的遊戲只會包含單一實體實例, 但更複雜的遊戲將受益于允許多個實體使用相同`SpriteBatch`實例的模式。
 
-
 ## <a name="adding-characterentity-to-the-game"></a>將 CharacterEntity 新增至遊戲
 
 既然我們已加入我們`CharacterEntity`的程式碼來呈現本身, 我們可以取代中`Game1.cs`的程式碼, 以使用這個新實體的實例。 若要這樣做, 我們會`Texture2D`將欄位`CharacterEntity`取代為中`Game1`的欄位:
@@ -278,7 +275,7 @@ protected override void Draw(GameTime gameTime)
 
 如果我們執行遊戲, 我們現在會看到該字元。 由於 X 和 Y 預設為 0, 因此字元會放在畫面的左上角:
 
-![](part2-images/image4.png "因為 X 和 Y 預設為 0, 所以字元會放在畫面的左上角。")
+![因為 X 和 Y 預設為 0, 所以字元會放在畫面的左上角。](part2-images/image4.png)
 
 ## <a name="creating-the-animation-class"></a>建立動畫類別
 
@@ -286,11 +283,9 @@ protected override void Draw(GameTime gameTime)
 
 我們將建立`Animation`類別, 以控制 CharacterEntity 動畫的邏輯和狀態。 動畫類別是可用於任何實體的一般類別, 而不只`CharacterEntity`是動畫。 最後, `Animation`類別會`Rectangle`提供`CharacterEntity` , 以在繪製本身時使用。 我們也會建立一個`AnimationFrame`類別, 用來定義動畫。
 
-
 ### <a name="defining-animationframe"></a>定義 AnimationFrame
 
 `AnimationFrame`將不會包含與動畫相關的任何邏輯。 我們只會使用它來儲存資料。 若要加入`AnimationFrame`類別, 請以滑鼠右鍵按一下, 或按一下 [ **WalkingGame** ] 共用專案, 然後選取 [**加入 > 新增**檔案 ...]。輸入名稱**AnimationFrame** , 然後按一下 [**新增**] 按鈕。 我們會修改`AnimationFrame.cs`檔案, 使其包含下列程式碼:
-
 
 ```csharp
 using System;
@@ -504,7 +499,7 @@ protected override void Update(GameTime gameTime)
 
 現在會播放其`walkDown`動畫: `CharacterEntity`
 
-![](part2-images/image5.gif "現在 CharacterEntity 會播放其 walkDown 動畫")
+![現在 CharacterEntity 會播放其 walkDown 動畫](part2-images/image5.gif)
 
 ## <a name="adding-movement-to-the-character"></a>將移動加入至字元
 
@@ -513,7 +508,6 @@ protected override void Update(GameTime gameTime)
 ### <a name="defining-getdesiredvelocityfrominput"></a>定義 GetDesiredVelocityFromInput
 
 我們將使用 MonoGame 的`TouchPanel`類別, 它會提供觸控式螢幕目前狀態的相關資訊。 讓我們新增一個方法, 它會檢查`TouchPanel`並傳回字元的所需速度:
-
 
 ```csharp
 Vector2 GetDesiredVelocityFromInput()
@@ -552,7 +546,6 @@ Vector2 GetDesiredVelocityFromInput()
 
 `if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`語句正在檢查速度是否為非零, 換句話說, 它會檢查以確定使用者不會觸及與字元目前位置相同的位置。 如果不是, 則不論觸控的距離為何, 我們都必須將字元的速度設定為常數。 我們藉由正規化速度向量來完成這項操作, 因而導致其長度為1。 「速度向量」為1表示字元會每秒移動1圖元。 我們會將值乘以所需的200速度來加速。
 
-
 ### <a name="applying-velocity-to-position"></a>將速度套用至位置
 
 從`GetDesiredVelocityFromInput`傳回的速度必須套用至字元的`X`和`Y`值, 才能在執行時間生效。 我們會修改`Update`方法, 如下所示:
@@ -578,7 +571,7 @@ public void Update(GameTime gameTime)
 
 如果我們現在執行遊戲, 就會看到該字元正移往觸控位置:
 
-![](part2-images/image6.gif "字元正移往觸控位置")
+![字元正移往觸控位置](part2-images/image6.gif)
 
 ## <a name="matching-movement-and-animation"></a>符合的移動和動畫
 
@@ -661,7 +654,6 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 
 接下來, 我們會根據字元移動的方向調整邏輯, 或根據最後一個動畫 (如果該字元剛停止) 來使用動畫。 若要這麼做, 我們將修改`Update`方法:
 
-
 ```csharp
 public void Update(GameTime gameTime)
 {
@@ -736,7 +728,7 @@ public void Update(GameTime gameTime)
 
 這段程式碼的結果是, 在進行流覽時, 字元會適當製作動畫, 然後面對它停止時的最後一個方向:
 
-![](part2-images/image7.gif "這段程式碼的結果是, 在進行流覽時, 字元會適當製作動畫, 然後面對它停止時的最後一個方向")
+![這段程式碼的結果是, 在進行流覽時, 字元會適當製作動畫, 然後面對它停止時的最後一個方向](part2-images/image7.gif)
 
 ## <a name="summary"></a>總結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: fe0f3c6904255284c01cbb3277086b01ec852d7b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 54e910d0a4f3301ca441fd18ddb27da930e9415c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654059"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528781"
 ---
 # <a name="touch-id-in-xamarinios"></a>Xamarin 中的 Touch ID
 
@@ -53,7 +53,7 @@ Keychain 無法自行解密 Keychain 專案;相反地, 它是在*安全記憶體
 |裝置設定|原則評估|備份機制|
 |--- |--- |--- |
 |不具密碼的裝置|無存取權|無|
-|具有密碼的裝置|需要密碼|無|
+|具有密碼的裝置|需要密碼|None|
 |具有 Touch ID 的裝置|偏好 Touch ID|允許密碼|
 
 安全記憶體保護區內的所有作業都可以互相信任。 這表示我們可以使用 Touch ID 驗證結果來授權 Keychain 專案解密。 安全記憶體保護區也會保留失敗 Touch ID 相符的計數器, 在此情況下, 使用者必須使用密碼還原為。
@@ -127,7 +127,7 @@ IOS 8 中稱為「_本機驗證_」的新架構, 可支援在裝置內進行此�
 3. 將新的**View Controller**從 [**工具箱**] 拖曳至 [ **Design Surface**]。 將此設定為**根視圖控制器**, 方法是**Ctrl + 拖曳** **流覽控制器**:
 
     [![](touchid-images/image4.png "設定根視圖控制器")](touchid-images/image4.png#lightbox)
-4.  將新的 View Controller `AuthenticationViewController`命名為。
+4. 將新的 View Controller `AuthenticationViewController`命名為。
 5. 接下來, 拖曳按鈕, 並將它放`AuthenticationViewController`在上。 呼叫此`AuthenticateButton`, 並為它提供文字`Add a Chore`。
 6. 在呼叫`AuthenticateButton` `AuthenticateMe`的上建立事件。
 7. 若要建立手動 segue `AuthenticationViewController` , 請按一下底部的黑色列, 然後從列中按**Ctrl + 拖曳**至`MasterViewController` , 然後選擇 [**推送**] (或 [**顯示**是否使用大小] 類別):

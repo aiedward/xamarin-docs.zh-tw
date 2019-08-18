@@ -6,30 +6,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 7f68695b4fa6b8abb7938dd96794eb1d0d1d13a5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 274c441e0507f100697fc153a9f748de1bce4cf3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643959"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526077"
 ---
 # <a name="touch-in-android"></a>Android 中的觸控
 
 Android 和 iOS 非常類似, 它會建立一個物件, 其中保存使用者與螢幕&ndash; `Android.View.MotionEvent`上的實體互動相關資料。 這個物件會保存資料, 例如執行的動作、觸控發生的位置、套用的壓力等等。`MotionEvent`物件會將移動分解成下列值:
 
--  描述動作類型的動作代碼, 例如初始觸控、在螢幕上移動的觸控, 或觸控結束。
+- 描述動作類型的動作代碼, 例如初始觸控、在螢幕上移動的觸控, 或觸控結束。
 
--  一組軸值, 描述`MotionEvent`和其他移動屬性的位置, 例如觸控的發生位置、觸控發生的時間, 以及使用了多少壓力。
+- 一組軸值, 描述`MotionEvent`和其他移動屬性的位置, 例如觸控的發生位置、觸控發生的時間, 以及使用了多少壓力。
    軸值可能會因裝置而有所不同, 因此上一個清單不會描述所有的軸值。
 
 
 `MotionEvent`物件將會傳遞至應用程式中的適當方法。 有三種方式可讓 Xamarin Android 應用程式回應觸控事件:
 
--  *將事件處理常式指派`View.Touch`給*- `Android.Views.View`類別具有`EventHandler<View.TouchEventArgs>`可將處理常式指派給的應用程式。 這是典型的 .NET 行為。
+- *將事件處理常式指派`View.Touch`給*- `Android.Views.View`類別具有`EventHandler<View.TouchEventArgs>`可將處理常式指派給的應用程式。 這是典型的 .NET 行為。
 
--  *執行`View.IOnTouchListener`* 此介面的實例可能會使用 view 指派給 view 物件。 `SetOnListener`方法.這在功能上相當於將事件處理常式指派`View.Touch`給事件。 如果有許多不同的視圖在觸及時可能需要的常見或共用邏輯, 建立類別並執行這個方法會比指派每個 view 自己的事件處理常式更有效率。
+- *執行`View.IOnTouchListener`* 此介面的實例可能會使用 view 指派給 view 物件。 `SetOnListener`方法.這在功能上相當於將事件處理常式指派`View.Touch`給事件。 如果有許多不同的視圖在觸及時可能需要的常見或共用邏輯, 建立類別並執行這個方法會比指派每個 view 自己的事件處理常式更有效率。
 
--  *覆`View.OnTouchEvent`寫*-Android 子類別`Android.Views.View`中的所有 views。 觸及視圖時, Android 會呼叫`OnTouchEvent` , 並將`MotionEvent`物件當做參數傳給它。
+- *覆`View.OnTouchEvent`寫*-Android 子類別`Android.Views.View`中的所有 views。 觸及視圖時, Android 會呼叫`OnTouchEvent` , 並將`MotionEvent`物件當做參數傳給它。
 
 
 > [!NOTE]
@@ -67,17 +67,17 @@ public override bool OnTouchEvent(MotionEvent e)
 當的實例`GestureDetector`識別感關注的手勢時, 它會藉由引發事件或透過所`GestureDetector.IOnGestureListener`提供的回呼, 來通知活動或應用程式。
 此介面針對各種手勢提供六種方法:
 
--  *OnDown* -當點一下出現但未釋放時呼叫。
+- *OnDown* -當點一下出現但未釋放時呼叫。
 
--  *OnFling* -在 codingjar 發生時呼叫, 並在觸發事件的開始和結束觸控上提供資料。
+- *OnFling* -在 codingjar 發生時呼叫, 並在觸發事件的開始和結束觸控上提供資料。
 
--  *OnLongPress* -當長按下出現時呼叫。
+- *OnLongPress* -當長按下出現時呼叫。
 
--  *OnScroll* -發生 scroll 事件時呼叫。
+- *OnScroll* -發生 scroll 事件時呼叫。
 
--  *OnShowPress* -在 OnDown 發生後呼叫, 而且尚未執行 move 或 up 事件。
+- *OnShowPress* -在 OnDown 發生後呼叫, 而且尚未執行 move 或 up 事件。
 
--  *OnSingleTapUp* -在進行單鍵時呼叫。
+- *OnSingleTapUp* -在進行單鍵時呼叫。
 
 
 在許多情況下, 應用程式可能只對手勢的子集感興趣。 在此情況下, 應用程式應該擴充類別 GestureDetector. SimpleOnGestureListener, 並覆寫對應至其感興趣之事件的方法。

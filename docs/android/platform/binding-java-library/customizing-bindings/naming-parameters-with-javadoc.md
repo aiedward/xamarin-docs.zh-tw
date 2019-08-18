@@ -1,46 +1,46 @@
 ---
-title: 在 Javadoc 命名參數
-description: 這篇文章說明如何使用 Java 專案從產生的 Javadoc 復原 Java 繫結專案中的參數名稱。
+title: 使用 JAVAdoc 具名引數
+description: 本文說明如何使用 JAVA 專案所產生的 JAVAdoc 來復原 JAVA 系結專案中的參數名稱。
 ms.prod: xamarin
 ms.assetid: 59E8EF16-1322-486A-BB16-353804B77356
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/20/2017
-ms.openlocfilehash: e394377043953a297afed36a3ce0747a3e6d1512
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 77cd5ac86a24769947eefb6941229c56efc3297b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60955867"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524557"
 ---
-# <a name="naming-parameters-with-javadoc"></a>在 Javadoc 命名參數
+# <a name="naming-parameters-with-javadoc"></a>使用 JAVAdoc 具名引數
 
-_這篇文章說明如何使用 Java 專案從產生的 Javadoc 復原 Java 繫結專案中的參數名稱。_
+_本文說明如何使用 JAVA 專案所產生的 JAVAdoc 來復原 JAVA 系結專案中的參數名稱。_
 
 
 ## <a name="overview"></a>總覽
 
-當繫結現有的 Java 程式庫，一些有關繫結的 API 中繼資料將會遺失。 特別是方法參數的名稱。 參數名稱會成為`p0`，`p1`等等。這是因為 Java`.class`檔案不會保留在 Java 程式碼中所使用的參數名稱。 
+系結現有的 JAVA 程式庫時, 會遺失一些關於系結 API 的中繼資料。 特別是方法的參數名稱。 參數名稱將會顯示`p0`為`p1`、等。這是因為 java `.class`檔案不會保留 java 原始碼中使用的參數名稱。 
 
-如果它可以存取的 Javadoc html 從原始的程式庫，Xamarin.Android Java 繫結專案可以提供參數名稱。 
+如果 Xamarin 的 JAVA 系結專案可從原始程式庫存取 JAVAdoc HTML, 則可以提供參數名稱。 
 
-## <a name="integrating-javadoc-html-into-a-java-binding-project"></a>整合繫結專案的 Java 的 Javadoc HTML
+## <a name="integrating-javadoc-html-into-a-java-binding-project"></a>將 JAVAdoc HTML 整合到 JAVA 系結專案
 
-整合 Java 繫結的專案中的 Javadoc HTML 是手動程序包含下列步驟： 
+將 JAVAdoc HTML 整合到 JAVA 系結專案中, 是由下列步驟組成的手動程式: 
 
-1.  下載程式庫的 Javadoc
-2.  編輯`.csproj`檔案，並新增`<JavaDocPaths>`屬性：
-3.  清除並重建專案
+1. 下載文件庫的 JAVAdoc
+2. 編輯檔案並`<JavaDocPaths>`新增屬性: `.csproj`
+3. 清除並重建專案
 
-完成之後，原始的 Java 參數名稱應該會出現在 繫結 Java 繫結專案的 Api。 
+完成這項作業之後, 原始 JAVA 參數名稱應該會出現在 JAVA 系結專案所系結的 Api 中。 
 
 
 > [!NOTE]
-> 有很多的 JavaDoc 輸出中的變異數。 。JAR 繫結工具鏈不支援每個單一可能的排列，因此某些參數可能不正確命名。
+> JAVADoc 輸出中有大量的變異數。 該.JAR 系結工具鏈不支援每一種可能的排列, 因此某些參數可能無法正確命名。
 
 
 ## <a name="summary"></a>總結
 
-本文涵蓋如何使用 Java 繫結專案中 Javadoc，提供意義參數名稱，繫結的 api。 
+本文涵蓋如何在 JAVA 系結專案中使用 JAVAdoc, 為系結的 Api 提供意義的參數名稱。 
 

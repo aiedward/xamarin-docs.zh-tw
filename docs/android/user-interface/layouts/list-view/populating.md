@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2017
-ms.openlocfilehash: abc7bb09791df115536f552979b48a3a12b4f443
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e92aada7be8a296baeaa9eebfb18fe906b5c3b63
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646339"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522535"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>以資料填入 Xamarin. Android ListView
 
@@ -62,14 +62,14 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 `ArrayAdapter<string>`非常簡單, 但非常有限。 不過, 通常您會有商業實體的集合, 而不只是您想要系結的字串。
 例如, 如果您的資料包含 Employee 類別的集合, 則您可能會想要讓清單只顯示每個員工的名稱。 若要自訂的行為`ListView`以控制要顯示哪些資料, 您必須實作用的`BaseAdapter`子類別, 以覆寫下列四個專案:
 
--   **計數**&ndash;以告知控制項資料中有多少資料列。
+- **計數**&ndash;以告知控制項資料中有多少資料列。
 
--   **GetView**&ndash;若要傳回每個資料列的視圖, 請填入資料。
+- **GetView**&ndash;若要傳回每個資料列的視圖, 請填入資料。
     這個方法具有的`ListView`參數, 可用於傳入現有、未使用的資料列以供重複使用。
 
--   **GetItemId**&ndash;傳回資料列識別碼 (通常是資料列編號, 雖然它可以是任何您想要的長數值)。
+- **GetItemId**&ndash;傳回資料列識別碼 (通常是資料列編號, 雖然它可以是任何您想要的長數值)。
 
--   **此 [int]** 索引&ndash;器可傳回與特定資料列編號相關聯的資料。
+- **此 [int]** 索引&ndash;器可傳回與特定資料列編號相關聯的資料。
 
 **BasicTableAdapter/HomeScreenAdapter**中的範例程式碼示範如何子類別`BaseAdapter`化:
 
@@ -159,11 +159,11 @@ ListView.FastScrollEnabled = true;
 
 若要`ISectionIndexer`執行, 您必須將三個方法新增到介面卡:
 
--   **GetSections**&ndash;提供可顯示之區段索引標題的完整清單。 這個方法需要 JAVA 物件的陣列, 因此程式碼必須`Java.Lang.Object[]`從 .net 集合建立。 在我們的範例中, 它會以形式`Java.Lang.String`傳回清單中的初始字元清單。
+- **GetSections**&ndash;提供可顯示之區段索引標題的完整清單。 這個方法需要 JAVA 物件的陣列, 因此程式碼必須`Java.Lang.Object[]`從 .net 集合建立。 在我們的範例中, 它會以形式`Java.Lang.String`傳回清單中的初始字元清單。
 
--   **GetPositionForSection**&ndash;傳回指定之區段索引的第一個資料列位置。
+- **GetPositionForSection**&ndash;傳回指定之區段索引的第一個資料列位置。
 
--   **GetSectionForPosition**&ndash;傳回要針對指定資料列顯示的區段索引。
+- **GetSectionForPosition**&ndash;傳回要針對指定資料列顯示的區段索引。
 
 
 範例`SectionIndex/HomeScreenAdapter.cs`檔案會在函式中執行這些方法, 以及一些額外的程式碼。 此函式會建立區段索引, 方法是逐一查看每個資料列, 並將標題的第一個字元解壓縮 (這些專案必須已經過排序才能正常執行)。

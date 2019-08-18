@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: bed8180c513eefd5765be767a5dca7cecefa6101
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 70555a0e2df3bcdd9c3abe47cf8231145891a826
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865955"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528413"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>使用 watchOS 在 Xamarin 中的當地語系化
 
@@ -56,7 +56,7 @@ Watch 應用程式包含分鏡腳本，描述應用程式的使用者介面。 �
 
 1. 建立**Base.lproj**目錄和移動**Interface.storyboard**到其中。
 
-2. 建立 **<language>.lproj**針對您想要支援每種語言的目錄。
+2. 針對您想要支援的每種語言, 建立 **\<語言 > .lproj**目錄。
 
 3. **.Lproj**目錄應該包含**Interface.strings**文字檔案 （檔案名稱應該符合 storboard 的名稱）。 您可以選擇性地放置任何需要當地語系化這些目錄中的映像。
 
@@ -125,7 +125,7 @@ displayText.SetText (localizedDisplay);
 
 兩種方式，就可以設定程式碼會填入的映像。
 
-1. 您可以變更`Image`控制項，其值設定為影像的字串名稱，已經存在於 Watch 應用程式，例如
+1. 您可以變更`Image`控制項, 其方式是將其值設定為監看式應用程式中已存在之映射的字串名稱, 例如
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
@@ -139,7 +139,7 @@ displayText.SetText (localizedDisplay);
     }
     ```
 
-    請注意，您不需要指定 **@2x** 參照映像的檔案名稱時。
+    請注意, 在參照影像的檔案名 **@2x** 時, 您不需要指定。
 
 第二種方法也是適用於您從遠端伺服器上監看式; 呈現下載映像不過在此情況下您應該確定您所下載的映像已正確當地語系化根據使用者的喜好設定。
 

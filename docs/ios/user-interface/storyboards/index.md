@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 9b4f71599ecf85e51899c41c37aecc63e44e7188
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 86198c7a2fa0460070d012afd0b7b9d078d2a5f3
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646418"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528573"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的分鏡腳本簡介
 
@@ -66,11 +66,11 @@ ms.locfileid: "68646418"
 
 轉換有不同的類型, 每個都能控制如何向使用者呈現新的 view controller, 以及如何與腳本中的其他視圖控制器互動。 如下所述。 您也可以將 segue 物件子類別化, 以執行自訂轉換:
 
--  **顯示/推送**–推播 segue 會將視圖控制器新增至導覽堆疊。 它假設源自推播的 view controller 屬於與要新增至堆疊的視圖控制器相同的流覽控制器。 這會執行與相同`pushViewController`的工作, 而且通常會在畫面上的資料有某種關聯性時使用。 使用推播 segue 可讓您有更好的導覽列, 其中包含將 [上一頁] 按鈕和標題新增至堆疊上的每個視圖, 讓您能夠在視圖階層中向下切入導覽。
--  強制回應: 強制回應 segue 會在專案中的任何兩個視圖控制器之間建立關聯性, 並顯示動畫轉換的選項。 當您進入視圖時, 子視圖控制器將會完全遮蔽父系視圖控制器。 不同于推播 segue, 這會為我們新增 [上一頁] 按鈕;使用強制回應 segue `DismissViewController`時, 必須使用強制回應, 才能回到先前的視圖控制器。
--  **Custom** –任何自訂 segue 都可以建立為的`UIStoryboardSegue`子類別。
--  回溯-回溯 segue 可以用來透過推送或強制回應 segue 進行流覽 (例如, 藉由關閉以模式呈現的視圖控制器)。 除此之外, 您不只可以回溯到一個, 而是一系列的推送和強制回應 segue, 並使用單一回溯動作在流覽階層中返回多個步驟。 若要瞭解如何在 iOS 中使用回溯 segue, 請閱讀[建立回溯 segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)配方。
--  **Segue** – segue segue 會指出包含初始 view controller 的場景, 因此使用者會先看到該控制項。 其以 segue 表示, 如下所示:  
+- **顯示/推送**–推播 segue 會將視圖控制器新增至導覽堆疊。 它假設源自推播的 view controller 屬於與要新增至堆疊的視圖控制器相同的流覽控制器。 這會執行與相同`pushViewController`的工作, 而且通常會在畫面上的資料有某種關聯性時使用。 使用推播 segue 可讓您有更好的導覽列, 其中包含將 [上一頁] 按鈕和標題新增至堆疊上的每個視圖, 讓您能夠在視圖階層中向下切入導覽。
+- 強制回應: 強制回應 segue 會在專案中的任何兩個視圖控制器之間建立關聯性, 並顯示動畫轉換的選項。 當您進入視圖時, 子視圖控制器將會完全遮蔽父系視圖控制器。 不同于推播 segue, 這會為我們新增 [上一頁] 按鈕;使用強制回應 segue `DismissViewController`時, 必須使用強制回應, 才能回到先前的視圖控制器。
+- **Custom** –任何自訂 segue 都可以建立為的`UIStoryboardSegue`子類別。
+- 回溯-回溯 segue 可以用來透過推送或強制回應 segue 進行流覽 (例如, 藉由關閉以模式呈現的視圖控制器)。 除此之外, 您不只可以回溯到一個, 而是一系列的推送和強制回應 segue, 並使用單一回溯動作在流覽階層中返回多個步驟。 若要瞭解如何在 iOS 中使用回溯 segue, 請閱讀[建立回溯 segue](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)配方。
+- **Segue** – segue segue 會指出包含初始 view controller 的場景, 因此使用者會先看到該控制項。 其以 segue 表示, 如下所示:  
 
     [![](images/sourcelesssegue.png "Segue segue")](images/sourcelesssegue.png#lightbox)
 
@@ -142,12 +142,14 @@ if (callHistoryController != null) {
     這相當於在應用程式委派內的`FinishedLaunching`方法中具現化初始視圖控制器。 設定此選項後, 應用程式會具現化視窗 (如下所示)、載入主要的分鏡腳本, 並將分鏡腳本的初始視圖控制器 (segue Segue 旁邊的) 實例`RootViewController`指派為視窗的屬性, 然後進行畫面上顯示的視窗。
 
 3. `Window`在中`AppDelegate`, 覆寫預設方法, 並使用下列程式碼來執行視窗屬性:
-        
-        public override UIWindow Window {
-            get;
-            set;
-            }
-            
+
+    ```csharp
+    public override UIWindow Window {
+        get;
+        set;
+    }
+    ```
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 以滑鼠右鍵按一下專案以建立新的分鏡腳本檔案,**將 > 新檔案 > iOS > 空白**分鏡腳本, 如下所示: 
@@ -162,11 +164,13 @@ if (callHistoryController != null) {
 
 3. `Window`在中`AppDelegate`, 覆寫預設方法, 並使用下列程式碼來執行視窗屬性:
 
-        public override UIWindow Window {
-            get;
-            set;
-            }
-            
+    ```csharp
+    public override UIWindow Window {
+        get;
+        set;
+    }
+    ```
+
 -----
 
 ## <a name="creating-a-storyboard-with-the-ios-designer"></a>使用 iOS 設計工具建立分鏡腳本
@@ -311,7 +315,7 @@ public partial class MainViewController : UIViewController
 
 ## <a name="conditional-segues"></a>條件式 Segue
 
-通常, 從一個 view 控制器移到下一個, 會視特定條件而定。 例如, 如果我們建立一個簡單的登入畫面, 只有在使用者名稱和密碼經過驗證之後  , 才會想要移到下一個畫面。
+通常, 從一個 view 控制器移到下一個, 會視特定條件而定。 例如, 如果我們建立一個簡單的登入畫面, 只有在使用者名稱和密碼經過驗證之後 , 才會想要移到下一個畫面。
 
 在下一個範例中, 我們會在上述範例中新增密碼欄位。 只有當使用者輸入正確的密碼時, 才能夠存取*PinkViewController* , 否則會顯示錯誤。
 
@@ -378,7 +382,7 @@ public partial class MainViewController : UIViewController
 
 若要加入外部分鏡腳本的參考, 請執行下列動作:
 
-1. 在 **方案總管**中, 以滑鼠右鍵按一下專案名稱, 然後   > 選取 **新增檔案 ...** 。 > iOS分 > 鏡腳本。  輸入新分鏡腳本的**名稱**, 然後按一下 [**新增**] 按鈕:
+1. 在 **方案總管**中, 以滑鼠右鍵按一下專案名稱, 然後  > 選取 **新增檔案 ...** 。 > iOS分 > 鏡腳本。 輸入新分鏡腳本的**名稱**, 然後按一下 [**新增**] 按鈕:
     
     [![](images/ref01.png "新的 [檔案] 對話方塊")](images/ref01.png#lightbox)
     

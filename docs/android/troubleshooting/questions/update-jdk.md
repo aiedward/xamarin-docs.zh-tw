@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2018
-ms.openlocfilehash: 02768bfcae9da06d8fd86ada63dd2d463245d254
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 193f9f92f112608908d2feb50f815a670d48b39c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510457"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523411"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>如何更新 Java 開發套件 (JDK) 版本？
 
@@ -27,19 +27,19 @@ Xamarin 會使用 JAVA 開發工具組 (JDK) 來與建立 Android 應用程式�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1.  從[Oracle 網站](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下載 JDK 8 (1.8):
+1. 從[Oracle 網站](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下載 JDK 8 (1.8):
 
     ![Oracle 網站上 JDK 下載頁面的螢幕擷取畫面](update-jdk-images/image1.png)
 
-2.  挑選64位版本, 以允許在 Xamarin Android 設計工具中呈現[自訂控制項](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/vs/xamarin.vs_4/xamarin.vs_4.2/index.md#androiddesignercustomcontrols):
+2. 挑選64位版本, 以允許在 Xamarin Android 設計工具中呈現[自訂控制項](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/vs/xamarin.vs_4/xamarin.vs_4.2/index.md#androiddesignercustomcontrols):
 
     ![從 JDK 下載頁面選取要下載的 Windows x64 JDK 套件](update-jdk-images/image2.png)
 
-3.  執行 .exe 並安裝**開發工具**:
+3. 執行 .exe 並安裝**開發工具**:
 
     ![在 JDK 安裝程式中安裝開發工具](update-jdk-images/image3.png)
 
-4.  開啟 Visual Studio 並更新**JAVA 開發工具組位置**, 以指向 工具 > 選項 下的新 JDK, **> Xamarin > Android 設定 > JAVA 開發工具組位置**:
+4. 開啟 Visual Studio 並更新**JAVA 開發工具組位置**, 以指向 工具 > 選項 下的新 JDK, **> Xamarin > Android 設定 > JAVA 開發工具組位置**:
 
     [![[Android 設定] 頁面中 JDK 的路徑設定](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
@@ -47,11 +47,11 @@ Xamarin 會使用 JAVA 開發工具組 (JDK) 來與建立 Android 應用程式�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1.  從[Oracle 網站](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下載 JDK 8 (1.8):
+1. 從[Oracle 網站](https://www.oracle.com/technetwork/java/javase/downloads/index.html)下載 JDK 8 (1.8):
 
     ![Oracle 網站上 JDK 下載頁面的螢幕擷取畫面](update-jdk-images/image1.png)
 
-2.  開啟 dmg 檔案, 並執行 .pkg 安裝程式:
+2. 開啟 dmg 檔案, 並執行 .pkg 安裝程式:
 
     ![在 macOS 上執行 JDK 安裝程式](update-jdk-images/image5.png)
 

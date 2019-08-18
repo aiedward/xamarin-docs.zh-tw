@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 19ac5a023b1f97b2e08bbe1821a2b9259280fc98
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d59acaec36c63c62fe934f145d06bfbb78d11f6c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645144"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522866"
 ---
 # <a name="replacing-the-action-bar"></a>取代動作列
 
@@ -21,15 +21,15 @@ ms.locfileid: "68645144"
 
 若要使用`Toolbar`下列內容取代應用程式的預設動作列: 
 
-1.  建立新的自訂主題, 並修改應用程式的屬性, 讓它使用這個新主題。 
+1. 建立新的自訂主題, 並修改應用程式的屬性, 讓它使用這個新主題。 
 
-2.  停用`windowActionBar`自訂主題中的屬性, 並`windowNoTitle`啟用屬性。
+2. 停用`windowActionBar`自訂主題中的屬性, 並`windowNoTitle`啟用屬性。
 
-3.  定義的`Toolbar`版面配置。
+3. 定義的`Toolbar`版面配置。
 
-4.  將配置包含在活動的 axml 版面配置檔案中。 `Toolbar` 
+4. 將配置包含在活動的 axml 版面配置檔案中。 `Toolbar` 
 
-5.  將程式碼新增至活動`OnCreate`的方法, 找`Toolbar`出`ToolBar`並`SetActionBar`呼叫以安裝做為動作列。
+5. 將程式碼新增至活動`OnCreate`的方法, 找`Toolbar`出`ToolBar`並`SetActionBar`呼叫以安裝做為動作列。
 
 下列各節將詳細說明此程式。 隨即建立簡單的應用程式, 並將其動作列取代為`Toolbar`自訂的。 
 
@@ -175,13 +175,13 @@ ActionBar.Title = "My Toolbar";
 
 若要將功能表新增`Toolbar`至: 
 
-1.  將功能表圖示 (如有必要) 新增`mipmap-`至應用程式專案的資料夾。 Google 會在 [[材質] 圖示](https://design.google.com/icons/)頁面上提供一組免費功能表圖示。 
+1. 將功能表圖示 (如有必要) 新增`mipmap-`至應用程式專案的資料夾。 Google 會在 [[材質] 圖示](https://design.google.com/icons/)頁面上提供一組免費功能表圖示。 
 
-2.  在 [**資源]/[功能表**] 下新增功能表資源檔, 以定義功能表項目的內容。 
+2. 在 [**資源]/[功能表**] 下新增功能表資源檔, 以定義功能表項目的內容。 
 
-3.  執行此方法擴大功能表項目&ndash;的活動方法。`OnCreateOptionsMenu` 
+3. 執行此方法擴大功能表項目&ndash;的活動方法。`OnCreateOptionsMenu` 
 
-4.  執行活動&ndash;的方法。當按下功能表項目時, 這個方法會執行動作。 `OnOptionsItemSelected` 
+4. 執行活動&ndash;的方法。當按下功能表項目時, 這個方法會執行動作。 `OnOptionsItemSelected` 
 
 下列各節會詳細說明此程式, 方法是將 [**編輯**] 和 [**儲存**] 功能表項目新增至自訂`Toolbar`的。 
 
@@ -218,11 +218,11 @@ ActionBar.Title = "My Toolbar";
 
 此 XML 會建立三個功能表項目:
 
--   使用`ic_action_content_create.png`圖示的 [**編輯**] 功能表項目 (鉛筆)。 
+- 使用`ic_action_content_create.png`圖示的 [**編輯**] 功能表項目 (鉛筆)。 
 
--   使用`ic_action_content_save.png`圖示 (磁片) 的 [**儲存**] 功能表項目。 
+- 使用`ic_action_content_save.png`圖示 (磁片) 的 [**儲存**] 功能表項目。 
 
--   沒有圖示的**喜好**設定功能表項目。
+- 沒有圖示的**喜好**設定功能表項目。
 
 `Toolbar` &ndash; `ifRoom` `showAsAction` [**編輯**] 和 [**儲存**] 功能表項目的屬性會設定為此設定, 因此, 如果有足夠的空間可顯示這些功能表項目, 則會在中顯示這些專案。 [**喜好**設定] 功能表`showAsAction`項`never`會將設為&ndash;此, 使 [**喜好**設定] 功能表出現在*溢*位功能表中 (三個垂直點)。 
 

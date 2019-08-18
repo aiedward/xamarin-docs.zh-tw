@@ -1,34 +1,34 @@
 ---
-title: 觸控事件和在 Xamarin.iOS 中的筆勢
-description: 本文件說明如何使用觸控事件、 多點觸控、 手勢、 多個筆勢和在 Xamarin.iOS 應用程式中的自訂軌跡。
+title: Xamarin 中的觸控事件和手勢
+description: 本檔說明如何在 Xamarin iOS 應用程式中使用觸控事件、多點觸控、筆勢、多個手勢和自訂手勢。
 ms.prod: xamarin
 ms.assetid: DA666DC9-446E-4CD1-B5A0-C6FFBC7E53AD
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f7160c48e1b1ac85f4aa0173c0eb9f42b8fefca2
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 70c46282c9eebfed45bbdae75fdb2216e7f4c889
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61218614"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526609"
 ---
-# <a name="touch-events-and-gestures-in-xamarinios"></a>觸控事件和在 Xamarin.iOS 中的筆勢
+# <a name="touch-events-and-gestures-in-xamarinios"></a>Xamarin 中的觸控事件和手勢
 
-務必了解觸控事件和觸控 Api 的 iOS 應用程式，因為它們是與裝置的所有實體互動的核心。 所有的觸控互動涉及`UITouch`物件。 在本文中我們將了解如何使用`UITouch`類別和其 Api，以支援觸控。 稍後，我們將探討我們所知，了解如何支援筆勢。
+請務必瞭解 iOS 應用程式中的觸控事件和觸控 Api, 因為它們是與裝置的所有實體互動的核心。 所有觸控互動都牽涉`UITouch`到物件。 在本文中, 我們將學習如何使用`UITouch`類別和其 api 來支援觸控。 我們稍後將在我們的知識中擴展, 以瞭解如何支援手勢。
 
 ## <a name="enabling-touch"></a>啟用觸控
 
-中的控制項`UIKit`– 這些子類別化之從 ui 控制 – 是根據它們有筆勢 UIKit 中內建的使用者互動，因此不需要啟用觸控。 已啟用。
+中`UIKit`的控制項–從 UIControl 子類別化的控制項, 相依于使用者的互動, 其具有內建的手勢 UIKit, 因此不需要啟用觸控。 已啟用此功能。
 
-不過，許多中檢視的`UIKit`沒有觸控式預設會啟用。 有兩種方式可啟用觸控式控制項上。 第一種方式是核取方塊啟用的使用者互動的 「 iOS 設計工具，[屬性] 面板中，下列螢幕擷取畫面所示：
+不過, 中`UIKit`的許多視圖預設不會啟用觸控功能。 有兩種方式可啟用控制項的觸控。 第一種方式是在 iOS 設計工具的屬性 Pad 中檢查 [已啟用使用者互動] 核取方塊, 如下列螢幕擷取畫面所示:
 
- [![](touch-in-ios-images/image1.png "核取方塊啟用的使用者互動的 「 iOS 設計工具的 [屬性] 面板中")](touch-in-ios-images/image1.png#lightbox)
+ [![](touch-in-ios-images/image1.png "在 iOS 設計工具的屬性 Pad 中, 核取 [啟用使用者互動] 核取方塊")](touch-in-ios-images/image1.png#lightbox)
 
-我們也可以使用一個控制器來設定`UserInteractionEnabled`屬性設為 true，在`UIView`類別。 如果程式碼建立 UI，這是必要的。
+我們也可以使用控制器, `UserInteractionEnabled` `UIView`在類別上將屬性設定為 true。 如果是在程式碼中建立 UI, 這就是必要的。
 
-下列程式碼是範例：
+下列程式程式碼是一個範例:
 
 ```csharp
 imgTouchMe.UserInteractionEnabled = true;
@@ -36,18 +36,18 @@ imgTouchMe.UserInteractionEnabled = true;
 
 ## <a name="touch-events"></a>觸控事件
 
-有三個階段使用者觸控螢幕，將他們的手指，或是移除他們的手指時，發生觸控。 這些方法的定義位於`UIResponder`，這是 UIView 的基底類別。 iOS 會在項目覆寫關聯的方法`UIView`而`UIViewController`處理觸控：
+當使用者觸及螢幕、移動手指或移除手指時, 會發生三個階段的觸控。 這些方法是在中`UIResponder`定義, 這是 UIView 的基類。 iOS 將覆寫`UIView` `UIViewController`和上的相關聯方法, 以處理觸控:
 
--  `TouchesBegan` – 這第一次接觸到螢幕時呼叫。
--  `TouchesMoved` – 這是在使用者的觸控式變更位置滑動他們的手指在螢幕上時被呼叫的。
--  `TouchesEnded` 或是`TouchesCancelled`–`TouchesEnded`使用者手指在螢幕會被提取時，會呼叫。  `TouchesCancelled` 取得呼叫 iOS 取消觸控 – 比方說，如果，如果使用者的投影片他或她手指離開取消按的按鈕。
+- `TouchesBegan`–這是在第一次接觸畫面時呼叫。
+- `TouchesMoved`–當觸控的位置隨著使用者在螢幕上旋轉手指而變更時, 就會呼叫此方法。
+- `TouchesEnded`或`TouchesCancelled` –`TouchesEnded`在使用者的手指從螢幕中提起時呼叫。  `TouchesCancelled`如果 iOS 取消觸控, 則會呼叫, 例如, 如果使用者將其手指滑掉按鈕以取消按下。
 
 
-向下觸控事件的移動以遞迴方式，透過 UIViews，來檢查的檢視物件的範圍內是否為觸控事件的堆疊。 這通常稱為_點擊測試_。 將第一次呼叫上的最上層`UIView`或是`UIViewController`然後會在呼叫`UIView`和`UIViewControllers`下方檢視階層中。
+觸控事件會以遞迴方式在 UIViews 的堆疊中往下移動, 以檢查觸控事件是否在 view 物件的界限內。 這通常稱為_點擊測試_。 首先會在最`UIView`上層或`UIViewController`上呼叫, 然後在視圖階層中的`UIView`下方和`UIViewControllers`其底下呼叫。
 
-A`UITouch`物件將會建立每個使用者接觸到螢幕的時間。 `UITouch`物件包含觸控，例如觸控發生時，發生的位置，如果觸控撥動等等的相關資料。觸控事件傳遞修飾屬性 –`NSSet`包含一或多個修飾。 我們可以使用這個屬性來取得的觸控式的參考，並決定應用程式的回應。
+每次使用者接觸螢幕時, 就會建立物件。`UITouch` `UITouch`物件包含觸控的相關資料, 例如觸控發生的時間、發生的位置、觸碰的觸控等等。觸控事件會通過觸控屬性– `NSSet`包含一個或多個觸控。 我們可以使用這個屬性來取得觸控的參考, 並決定應用程式的回應。
 
-覆寫其中一個觸控事件的類別應該先呼叫基底實作，然後取得`UITouch`事件相關聯的物件。 若要取得第一個觸控式的參考，請呼叫`AnyObject`屬性並將它轉換為`UITouch`做為顯示在下列範例中：
+覆寫其中一個觸控事件的類別應該先呼叫基底實作為, 然後取得`UITouch`與事件相關聯的物件。 若要取得第一個觸控的參考, 請呼叫`AnyObject`屬性, 並將它轉換`UITouch`為, 如下列範例所示:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -61,7 +61,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-iOS 會自動識別後續的快速接觸到螢幕上，並會收集這些做為在單一點選`UITouch`物件。 這可讓檢查點兩下，只要檢查`TapCount`屬性，如下列程式碼所示：
+iOS 會自動辨識螢幕上的連續快速操作, 並將其全部收集為單一`UITouch`物件中的一點觸控。 如此一來, 就可以像檢查`TapCount`屬性一樣簡單地檢查, 如下列程式碼所示:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -80,17 +80,17 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 ## <a name="multi-touch"></a>多點觸控
 
-預設會在控制項上未啟用多點觸控。 「 IOS 設計工具，可以啟用多點觸控，如下列螢幕擷取畫面所示：
+在控制項上預設不會啟用多點觸控功能。 您可以在 iOS 設計工具中啟用多點觸控, 如下列螢幕擷取畫面所示:
 
- [![](touch-in-ios-images/image2.png "啟用 iOS 設計工具中的多點觸控")](touch-in-ios-images/image2.png#lightbox)
+ [![](touch-in-ios-images/image2.png "IOS 設計工具中已啟用多點觸控")](touch-in-ios-images/image2.png#lightbox)
 
-您也可透過設定以程式設計方式設定多點觸控`MultipleTouchEnabled`屬性，如下列程式碼所示：
+您也可以藉由設定`MultipleTouchEnabled`屬性, 以程式設計方式設定多點觸控, 如下列程式程式碼所示:
 
 ```csharp
 imgTouchMe.MultipleTouchEnabled = true;
 ```
 
-若要判斷多少手指接觸到螢幕，請使用`Count`屬性上的`UITouch`屬性：
+若要判斷有多少手指觸及螢幕, 請`Count` `UITouch`在屬性上使用屬性:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -102,7 +102,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 
 ## <a name="determining-touch-location"></a>判斷觸控位置
 
-此方法`UITouch.LocationInView`傳回 CGPoint 物件，包含指定的檢視中觸控的座標。 此外，我們可以測試以查看該位置是否在控制項中，藉由呼叫方法`Frame.Contains`。 下列程式碼片段會顯示這個範例：
+方法`UITouch.LocationInView`會傳回 CGPoint 物件, 其中保存指定之視圖內的觸控座標。 此外, 我們也可以藉由呼叫方法`Frame.Contains`, 來測試該位置是否在控制項內。 下列程式碼片段顯示這種情況的範例:
 
 ```csharp
 if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
@@ -111,94 +111,94 @@ if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
 }
 ```
 
-既然我們已經了解觸控事件，在 iOS 中，讓我們深入了解筆勢辨識器。
+既然我們已瞭解 iOS 中的觸控事件, 讓我們來瞭解手勢辨識器。
 
-## <a name="gesture-recognizers"></a>筆勢辨識器
+## <a name="gesture-recognizers"></a>手勢辨識器
 
-筆勢辨識器可以大幅簡化並減少應用程式中支援觸控的程式設計工作。 iOS 筆勢辨識器來彙總成單一觸控事件一系列的觸控事件。
+手勢辨識器可大幅簡化並減少程式設計工作, 以支援應用程式中的觸控。 iOS 手勢辨識器會將一系列的觸控事件匯總成單一觸控事件。
 
-提供類別，Xamarin.iOS`UIGestureRecognizer`為下列的內建的筆勢辨識器的基底類別：
+在下列內建手勢辨識`UIGestureRecognizer`器中, Xamarin 會提供類別做為基類:
 
--  *UITapGestureRecognizer* – 這是一或多個點選。
--  *UIPinchGestureRecognizer* – Pinching 和分配分開手指。
--  *UIPanGestureRecognizer* -移動或拖曳。
--  *UISwipeGestureRecognizer* – 撥動以任何方向。
--  *UIRotationGestureRecognizer* – 順時針或逆時針方向移動中的兩指的旋轉。
--  *UILongPressGestureRecognizer* – 按住不放，有時稱為長按下或長按。
+- *UITapGestureRecognizer* –這適用于一或多個分次。
+- *UIPinchGestureRecognizer* –捏合並散佈一手指。
+- *UIPanGestureRecognizer* –移動或拖曳。
+- *UISwipeGestureRecognizer* –以任何方向刷。
+- *UIRotationGestureRecognizer* –以順時針或逆時針的運動旋轉兩個手指。
+- *UILongPressGestureRecognizer* –按住, 有時稱為長按或按一下。
 
 
-若要使用的筆勢辨識器的基本模式如下所示：
+使用筆勢辨識器的基本模式如下所示:
 
-1.  **筆勢辨識器具現化**-首先，具現化`UIGestureRecognizer`子類別。 具現化的物件將會以檢視相關聯，並會進行記憶體回收時的檢視，會處置。 您不需要建立此檢視為類別層級變數。
-1.  **設定任何筆勢**– 下一步是設定筆勢辨識器。 請參閱上的 Xamarin 的文件`UIGestureRecognizer`如需可設定來控制行為的屬性的清單及其子類別`UIGestureRecognizer`執行個體。
-1.  **設定目標**– 因為其 Objective C 的傳承，Xamarin.iOS 不引發事件的筆勢辨識器符合筆勢時。  `UIGestureRecognizer` 方法 – `AddTarget` – 可以接受匿名委派或 OBJECTIVE-C 選取器，以程式碼執行時的筆勢辨識器相符項目。
-1.  **啟用筆勢辨識器**– 就像使用觸控事件時，軌跡只辨識如果啟用觸控式互動。
-1.  **筆勢辨識器新增至檢視**– 最後一個步驟是將軌跡新增至檢視中，藉由呼叫`View.AddGestureRecognizer`，並將其傳遞的筆勢辨識器物件。
+1. 具現**化手勢辨識器**–先將`UIGestureRecognizer`子類別具現化。 已具現化的物件將會由視圖建立關聯, 並會在處置此視圖時進行垃圾收集。 您不需要將此視圖建立為類別層級變數。
+1. **設定任何手勢設定**-下一個步驟是設定手勢辨識器。 如需可設定以`UIGestureRecognizer`控制`UIGestureRecognizer`實例行為的屬性清單, 請參閱中的 Xamarin 檔及其子類別。
+1. 設定**目標**–因為其目標-C 遺產, 所以當手勢辨識器與手勢相符時, Xamarin 不會引發事件。  `UIGestureRecognizer`具有方法– `AddTarget` –, 可以接受匿名委派或目標 C 選取器, 其中包含筆勢辨識器進行比對時所要執行的程式碼。
+1. **啟用手勢辨識器**–就像使用觸控事件一樣, 只有在啟用觸控互動時才會辨識手勢。
+1. **將手勢辨識器新增至視圖**–最後一個步驟是藉由呼叫`View.AddGestureRecognizer`來將手勢新增至視圖, 並將筆勢辨識器物件傳遞給它。
 
-請參閱[筆勢辨識器範例](~/ios/app-fundamentals/touch/ios-touch-walkthrough.md#Gesture_Recognizer_Samples)如需有關如何在程式碼中實作它們。
+如需如何在程式碼中執行的詳細資訊, 請參閱[手勢辨識器範例](~/ios/app-fundamentals/touch/ios-touch-walkthrough.md#Gesture_Recognizer_Samples)。
 
-呼叫筆勢的目標時，它會傳遞發生的筆勢的參考。 這可讓筆勢目標以取得發生的筆勢的相關資訊。 所提供的資訊範圍取決於所使用的筆勢辨識器的類型。 Xamarin 的文件的每個可用資料的相關資訊，請參閱`UIGestureRecognizer`子類別。
+呼叫手勢的目標時, 會將所發生之手勢的參考傳遞給它。 這可讓手勢目標取得所發生之手勢的相關資訊。 可用資訊的範圍取決於所使用的手勢辨識器類型。 如需每個`UIGestureRecognizer`子類別可用資料的相關資訊, 請參閱 Xamarin 的檔。
 
-請務必記住，一旦筆勢辨識器已新增至檢視，檢視 （和其下的任何檢視） 將不會收到任何觸控事件。 若要允許觸控事件，同時運用筆勢`CancelsTouchesInView`屬性必須設為 false，如下列程式碼所示：
+請務必記住, 一旦將手勢辨識器新增至視圖之後, 視圖 (以及其下的任何視圖) 就不會收到任何觸控事件。 若要同時允許觸控事件與手勢, `CancelsTouchesInView`屬性必須設定為 false, 如下列程式碼所示:
 
 ```csharp
 _tapGesture.Recognizer.CancelsTouchesInView = false;
 ```
 
-每個`UIGestureRecognizer`已提供狀態相關的重要資訊的筆勢辨識器的狀態屬性。 每次這個屬性的值變更時，iOS 會呼叫訂閱提供更新的方法。 如果自訂的筆勢辨識器永遠不會更新 [狀態] 屬性，「 訂閱者 」 會永遠不會呼叫，轉譯的筆勢辨識器沒有什麼用處。
+每`UIGestureRecognizer`個都有 State 屬性, 可提供筆勢辨識器狀態的重要資訊。 每次此屬性的值變更時, iOS 會呼叫訂閱者法以提供更新。 如果自訂手勢辨識器永遠不會更新狀態屬性, 則永遠不會呼叫「訂閱者」, 而呈現手勢辨識器毫無用處。
 
-筆勢可總結為兩種類型之一：
+手勢可以摘要為下列兩種類型的其中一種:
 
-1.  *離散*– 它們會辨識這些筆勢只引發的第一個時間。
-1.  *連續*– 這些筆勢繼續引發，因為它們會被辨識。
-
-
-筆勢辨識器存在於下列狀態其中之一：
-
--  *可能*– 這是所有的筆勢辨識器的初始狀態。 這是預設值的狀態屬性。
--  *開始*– 在第一次識別持續的筆勢，狀態會設為開始。 這可讓訂閱區分筆勢辨識啟動時與變更時。
--  *已變更*– 連續筆勢開始進行，但尚未完成之後，狀態將設 Changed 每次在觸控移動或變更時，只要它是仍在筆勢的預期的參數內。
--  *取消*– 如果辨識器已開始從已變更，並不會再變更的方式而修飾然後符合筆勢的模式，將會設定此狀態。
--  *辨識*– 筆勢辨識器符合一組的修飾，並將用來告知筆勢已完成的 「 訂閱者 」 時，就會設定的狀態。
--  *結束*– 這是 Recognized 狀態的別名。
--  *失敗*– 當筆勢辨識器可以不再符合與其正在接聽的狀態會變更為 Failed 修飾。
+1. *離散*–這些手勢只會在第一次被辨識時引發。
+1. *連續*–這些手勢會繼續引發, 只要它們被辨識即可。
 
 
-Xamarin.iOS 代表這些值`UIGestureRecognizerState`列舉型別。
+筆勢辨識器存在下列其中一種狀態:
 
-## <a name="working-with-multiple-gestures"></a>處理多個筆勢
+- *可能*–這是所有手勢辨識器的初始狀態。 這是 State 屬性的預設值。
+- *開始*-第一次辨識連續手勢時, 狀態會設定為 [已開始]。 這讓訂閱能夠區別手勢辨識開始和變更的時間。
+- *已變更*–連續手勢開始但尚未完成之後, 只要觸控移動或變更時, 狀態就會設定為變更, 前提是它仍然在筆勢的預期參數內。
+- 已*取消*–如果辨識器來自開始變更, 則會設定此狀態, 然後觸控會變更, 使其不再符合手勢的模式。
+- 已辨識–當手勢辨識器符合一組觸控時, 將會設定狀態, 並通知訂閱者筆勢已完成。
+- 已*結束*–這是可辨識狀態的別名。
+- *Failed* –當手勢辨識器無法再符合它正在接聽的觸控時, 狀態會變更為 [失敗]。
 
-根據預設，iOS 不允許同時執行的預設筆勢。 相反地，每個筆勢辨識器會在不具決定性的順序收到觸控事件。 下列程式碼片段說明如何讓同時執行的筆勢辨識器：
+
+[Xamarin] 代表列舉中的`UIGestureRecognizerState`這些值。
+
+## <a name="working-with-multiple-gestures"></a>使用多個手勢
+
+根據預設, iOS 不允許同時執行預設手勢。 相反地, 每個手勢辨識器都會以不具決定性的順序接收觸控事件。 下列程式碼片段說明了如何讓手勢辨識器同時執行:
 
 ```csharp
 gesture.ShouldRecognizeSimultaneously += (UIGestureRecognizer r) => { return true; };
 ```
 
-它也可停用在 iOS 中的筆勢。 有兩個委派屬性，可讓以檢查狀態的應用程式和目前的觸控事件，可讓決定要如何和筆勢應該要辨識的筆勢辨識器。 兩個事件︰
+您也可以停用 iOS 中的手勢。 有兩個委派屬性可讓手勢辨識器檢查應用程式的狀態和目前的觸控事件, 以決定是否應該辨識手勢。 這兩個事件如下:
 
-1.  *ShouldReceiveTouch* – 筆勢辨識器傳遞觸控事件，並讓您有機會檢查修飾，並決定哪些修飾交由筆勢辨識器之前，會呼叫這個委派。
-1.  *ShouldBegin* – 這在辨識器會嘗試從可能的狀態變更為某個其他狀態時呼叫。 傳回 false，將會強制筆勢辨識器變更為失敗的狀態。
+1. *ShouldReceiveTouch* –在將觸控事件傳遞至手勢辨識器之前, 會呼叫此委派, 並讓您有機會檢查觸控, 並決定手勢辨識器會處理哪些觸控。
+1. *ShouldBegin* –當辨識器嘗試將狀態從可能變更為其他狀態時呼叫。 傳回 false 會強制手勢辨識器的狀態變更為 Failed。
 
 
-您可以覆寫這些方法可搭配強型別`UIGestureRecognizerDelegate`、 弱式委派或繫結，透過事件處理常式語法，如下列程式碼片段所示：
+您可以透過強型別、弱式`UIGestureRecognizerDelegate`委派或透過事件處理常式語法系結來覆寫這些方法, 如下列程式碼片段所示:
 
 ```csharp
 gesture.ShouldReceiveTouch += (UIGestureRecognizer r, UITouch t) => { return true; };
 ```
 
-最後，就可能筆勢辨識器排入佇列，如此它才會成功另一個的筆勢辨識器就會失敗。 比方說，只要點選一下筆勢辨識器應該只會成功連點兩下筆勢辨識器失敗時。 下列程式碼片段提供一個範例：
+最後, 您可以將手勢辨識器排入佇列, 使其只有在其他手勢辨識器失敗時才會成功。 例如, 只有在按兩下手勢辨識器失敗時, 才會成功執行單一點按手勢辨識器。 下列程式碼片段提供一個範例:
 
 ```csharp
 singleTapGesture.RequireGestureRecognizerToFail(doubleTapGesture);
 ```
 
-## <a name="creating-a-custom-gesture"></a>建立自訂的筆勢
+## <a name="creating-a-custom-gesture"></a>建立自訂手勢
 
-雖然 iOS 會提供一些預設的筆勢辨識器，可能需要在某些情況下建立自訂的筆勢辨識器。 建立自訂的筆勢辨識器包含下列步驟：
+雖然 iOS 提供一些預設手勢辨識器, 但在某些情況下可能需要建立自訂手勢辨識器。 建立自訂手勢辨識器包含下列步驟:
 
-1.  子類別`UIGestureRecognizer`。
-1.  覆寫適當的觸控事件的方法。
-1.  事件反昇辨識透過基底類別的狀態屬性的狀態。
+1. 子`UIGestureRecognizer`類別。
+1. 覆寫適當的觸控事件方法。
+1. 透過基類的 State 屬性, 將辨識狀態反升。
 
 
-一個實用的範例涵蓋[在 iOS 中使用觸控](ios-touch-walkthrough.md)逐步解說。
+在[iOS 中使用觸控](ios-touch-walkthrough.md)逐步解說會涵蓋這種情況的實際範例。

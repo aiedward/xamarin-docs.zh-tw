@@ -49,6 +49,12 @@ sections:
         style: cards
         className: cardsB
         items:
+          - href: hot-reload.md
+            html: 了解如何使用 XAML 熱重載來快速驗證 UI 變更。
+            image:
+              src: ~/media/icons/i_quickstart-3.svg
+              href: hot-reload.md
+            title: 熱重載
           - href: toolbox.md
             html: 了解如何使用 XAML 工具箱將 Xamarin.Forms 控制項與版面配置拖曳到 XAML 編輯器中。
             image:
@@ -101,7 +107,7 @@ sections:
             html: 了解如何建立附加的屬性，以及如何從 XAML 取用它們。
             image:
               src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
-              href: bindable-properties.md
+              href: attached-properties.md
             title: 附加屬性
           - href: resource-dictionaries.md
             html: 了解如何建立 XAML 資源，以及透過 Xamarin.Forms 應用程式重複使用它們。

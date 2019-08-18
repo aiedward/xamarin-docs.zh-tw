@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: dac81a40983ea8414ec730f10c4c1f17e4d9915c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0c606e001552f1c4267ffc29bd69b2f38f2ec971
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653802"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527925"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心圖形
 
@@ -24,10 +24,10 @@ iOS 包含[*核心圖形*](https://developer.apple.com/library/prerelease/ios/do
 
 核心圖形支援數種案例中的繪圖, 包括:
 
--  透過[繪製到螢幕`UIView` ](#Drawing_in_a_UIView_Subclass) 。
--  [在記憶體或螢幕上繪製影像](#Drawing_Images_and_Text)。
--  建立和繪製 PDF。
--  讀取和繪製現有的 PDF。
+- 透過[繪製到螢幕`UIView` ](#Drawing_in_a_UIView_Subclass) 。
+- [在記憶體或螢幕上繪製影像](#Drawing_Images_and_Text)。
+- 建立和繪製 PDF。
+- 讀取和繪製現有的 PDF。
 
 
 ## <a name="geometric-space"></a>幾何空間
@@ -36,9 +36,9 @@ iOS 包含[*核心圖形*](https://developer.apple.com/library/prerelease/ios/do
 
 這種方法有幾個優點:
 
--  繪製程式碼變成動態的, 之後就可以在執行時間修改圖形。
--  減少應用程式套件組合中的靜態映射需求, 可以減少應用程式的大小。
--  圖形在跨裝置的解析度變更方面變得更有彈性。
+- 繪製程式碼變成動態的, 之後就可以在執行時間修改圖形。
+- 減少應用程式套件組合中的靜態映射需求, 可以減少應用程式的大小。
+- 圖形在跨裝置的解析度變更方面變得更有彈性。
 
 <a name="Drawing_in_a_UIView_Subclass"/>
 
@@ -270,10 +270,10 @@ public override void Draw (RectangleF rect)
 
 除了繪製至視圖的圖形內容, 核心圖形也支援繪製記憶體備份的影像, 也稱為在螢幕上繪圖。 這麼做需要:
 
--  建立由記憶體中點陣圖所支援的圖形內容
--  設定繪製狀態和發出繪製命令
--  從內容取得影像
--  移除內容
+- 建立由記憶體中點陣圖所支援的圖形內容
+- 設定繪製狀態和發出繪製命令
+- 從內容取得影像
+- 移除內容
 
 
 不同于`Draw`方法, 其中的內容是由視圖提供, 在此情況下, 您可以使用下列兩種方式之一來建立內容:

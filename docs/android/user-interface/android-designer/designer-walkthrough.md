@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 9387b44419af87785d45a25ab254d3361a5615a3
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
+ms.openlocfilehash: 71784e18b9becf9851ad9ed9d4730a82d0ff94f7
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68485928"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523658"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>使用 Xamarin. Android Designer
 
@@ -25,9 +25,9 @@ Android 使用者介面可以使用 XML 檔案以宣告方式建立, 或藉由�
 本文示範如何使用 Xamarin. Android Designer 以視覺化方式建立使用者介面。
 
 > [!TIP]
-> 較新版本的 Visual Studio 支援在 Android Designer 中開啟 .xml 檔案。
+> 較新版的 Visual Studio 支援在 Android Designer 中開啟 .xml 檔案。
 >
-> Android Designer 中都支援 axml 和 .xml 檔案。
+> Android Designer 同時支援 .axml 和 .xml 檔案。
 
 ## <a name="walkthrough"></a>逐步解說
 
@@ -105,11 +105,11 @@ Android 使用者介面可以使用 XML 檔案以宣告方式建立, 或藉由�
 
 下一個步驟是修改 UI, 以`ImageView`在左側顯示, 並將兩個`TextView`小工具堆疊`ImageView`到的右邊。
 
-1.  選取 `ImageView`。
+1. 選取 `ImageView`。
 
-2.  在 **屬性視窗**的 搜尋 方塊中, 輸入*width* , 並找出 **版面配置寬度**。
+2. 在 **屬性視窗**的 搜尋 方塊中, 輸入*width* , 並找出 **版面配置寬度**。
 
-3.  將 [**版面配置寬度**] `wrap_content`設定變更為:
+3. 將 [**版面配置寬度**] `wrap_content`設定變更為:
 
 ![設定自動換行內容](designer-walkthrough-images/vs/15-wrap-content-w158.png)
 
@@ -141,7 +141,7 @@ Android 使用者介面可以使用 XML 檔案以宣告方式建立, 或藉由�
 [![設定填補](designer-walkthrough-images/vs/19-padding-widths-w158-sml.png)](designer-walkthrough-images/vs/19-padding-widths-w158.png#lightbox)
 
 下、左、右和上填補設定可以個別設定, 其方式是將值輸入到**下填補**、**左邊填補**、**右填補**和**填補頂端**欄位。
-例如, 將 [填補]**左邊**欄位設定`5dp`為, 並將 [**右**填補]、[填補] 和`10dp`[**填補] 頂端**欄位設為:
+例如, 將 [填補]**左邊**欄位設定`5dp`為,並將 [**右**填補]、[填補] 和`10dp`[**填補] 頂端**欄位設為:
 
 [![自訂填補設定](designer-walkthrough-images/vs/20-custom-padding-w158-sml.png)](designer-walkthrough-images/vs/20-custom-padding-w158.png#lightbox)
 
@@ -153,11 +153,11 @@ Android 使用者介面可以使用 XML 檔案以宣告方式建立, 或藉由�
 
 `ImageView`由於是用來顯示色彩 (而非影像), 因此下一個步驟是移除範本所新增的預設影像來源。
 
-1.  在設計`ImageView`工具**介面**上, 選取。
+1. 在設計`ImageView`工具**介面**上, 選取。
 
-2.  在 [**屬性**] 的 [搜尋] 方塊中, 輸入*src* 。
+2. 在 [**屬性**] 的 [搜尋] 方塊中, 輸入*src* 。
 
-3.  按一下**Src**屬性設定右邊的小方形, 然後選取 [**重設**]:
+3. 按一下**Src**屬性設定右邊的小方形, 然後選取 [**重設**]:
 
 [![清除 ImageView src 設定](designer-walkthrough-images/vs/22-clear-img-src-w158-sml.png)](designer-walkthrough-images/vs/22-clear-img-src-w158.png#lightbox)
 
@@ -357,11 +357,11 @@ Widget 應該位於中`linearLayout1` , 如下所示: `Text (Large)`
 
 下一個步驟是修改 UI, 以`ImageView`在左側顯示, 並將兩個`TextView`小工具堆疊`ImageView`到的右邊。
 
-1.  使用選取`ImageView`的, 按一下 [**屬性**] 索引標籤。
+1. 使用選取`ImageView`的, 按一下 [**屬性**] 索引標籤。
 
-2.  在 [**屬性**] 索引標籤正下方, 按一下 [配置]。
+2. 在 [**屬性**] 索引標籤正下方, 按一下 [配置]。
 
-3.  向下**ViewGroup** , 並將`Width`設定變更為: `wrap_content`
+3. 向下**ViewGroup** , 並將`Width`設定變更為: `wrap_content`
 
 [![設定自動換行內容](designer-walkthrough-images/xs/15-wrap-content-m75-sml.png)](designer-walkthrough-images/xs/15-wrap-content-m75.png#lightbox)
 
@@ -380,7 +380,7 @@ Widget 應該位於中`linearLayout1` , 如下所示: `Text (Large)`
 
 ### <a name="modifying-the-spacing"></a>修改間距
 
-下一步是修改 UI 中的填補和邊界設定, 以在 widget 之間提供更多空間。 選取, 然後按一下 [**屬性**] 底下的 [配置] 索引標籤。  `ImageView` `50dp` `10dp`將變更`Min Width`為、 `Min Height`設為`70dp`,並`Padding`將變更為。
+下一步是修改 UI 中的填補和邊界設定, 以在 widget 之間提供更多空間。 選取, 然後按一下 [**屬性**] 底下的 [配置] 索引標籤。 `ImageView` `50dp` `10dp`將變更`Min Width`為、 `Min Height`設為`70dp`,並`Padding`將變更為。
 這會在的`ImageView`所有側邊套用填補, 並以垂直方式 elongates:
 
 [![設定填補](designer-walkthrough-images/xs/20-padding-widths-m75-sml.png)](designer-walkthrough-images/xs/20-padding-widths-m75.png#lightbox)
@@ -397,11 +397,11 @@ Widget 應該位於中`linearLayout1` , 如下所示: `Text (Large)`
 
 `ImageView`由於是用來顯示色彩 (而非影像), 因此下一個步驟是移除範本所新增的預設影像來源。
 
-1.  選取 `ImageView`。
+1. 選取 `ImageView`。
 
-2.  按一下 [**屬性**] 底下的 [ **Widget** ] 索引標籤。
+2. 按一下 [**屬性**] 底下的 [ **Widget** ] 索引標籤。
 
-3.  `Src`清除設定, 使其空白:
+3. `Src`清除設定, 使其空白:
 
 [![清除 ImageView src 設定](designer-walkthrough-images/xs/23-clear-src-m75-sml.png)](designer-walkthrough-images/xs/23-clear-src-m75.png#lightbox)
 

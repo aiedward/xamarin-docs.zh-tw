@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: d6ad088f9223dccb1966148fe8f53d76e85040a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ff0773b3073221bead48439b7d99f1db993e3353
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645609"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69528587"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的資料表元件和功能
 
 UITableView 可以有「群組」或「純文字」樣式, 並由下列部分組成:
 
--  [區段標頭](#Section_Header)
--  資料[格](#Cells)(或資料列, 如果您想要的話)
--  [區段頁尾](#Section_Footer)
--  [Tuple](#Index)
--  [編輯模式](#Edit_Features)(包含「滑動至刪除」和拖曳控點以變更資料列順序) 
+- [區段標頭](#Section_Header)
+- 資料[格](#Cells)(或資料列, 如果您想要的話)
+- [區段頁尾](#Section_Footer)
+- [Tuple](#Index)
+- [編輯模式](#Edit_Features)(包含「滑動至刪除」和拖曳控點以變更資料列順序) 
 
 這些螢幕擷取畫面顯示區段列、頁首、頁尾、編輯控制項和索引的顯示方式。
 

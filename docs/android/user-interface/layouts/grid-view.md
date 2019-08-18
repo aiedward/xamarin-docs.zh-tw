@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: a1bcb83d6057cb7d4a43c510d7b5805b574812e6
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: f71c275dd2beee6aedf41ecd19c8a4a39ab5a36f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510055"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522637"
 ---
 # <a name="xamarinandroid-gridview"></a>Xamarin. Android GridView
 
@@ -166,5 +166,4 @@ public class ImageAdapter : BaseAdapter
 - [`ImageView`](xref:Android.Widget.ImageView)
 - [`BaseAdapter`](xref:Android.Widget.BaseAdapter)
 
-*此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改, 並根據*
-[*創意 Commons 2.5 屬性授權*](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。
+_此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改, 並根據[創意 Commons 2.5 屬性授權](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。_
