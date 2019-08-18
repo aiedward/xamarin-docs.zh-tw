@@ -58,7 +58,7 @@ BindableLayout.SetItemsSource(grid, items);
 
 當 `BindableLayout.ItemsSource` 附加屬性設定於版面配置上, 但 未設定 `BindableLayout.ItemTemplate` 附加屬性時, 在 `IEnumerable` 集合中的每個資料項目都將會由 `BindableLayout` 類別建立 [`Label`](xref:Xamarin.Forms.Label) 來顯示資料。 
 
-## <a name="defining-item-appearance"></a>定義專案外觀
+## <a name="defining-item-appearance"></a>定義資料項目外觀
 
 將 `BindableLayout.ItemTemplate` 附加屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate), 即可定義可繫結配置到每個資料項目的外觀中:
 
@@ -93,7 +93,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 
 如需資料範本的詳細資訊，請參閱 [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
-## <a name="choosing-item-appearance-at-runtime"></a>在執行時期選擇專案外觀
+## <a name="choosing-item-appearance-at-runtime"></a>在執行時期選擇資料項目外觀
 
 藉由將 `BindableLayout.ItemTemplateSelector` 附加屬性設定為 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)，可以根據項目值在執行時期才選擇可繫結版面配置中每個項目的外觀：
 
@@ -137,5 +137,5 @@ public class TechItemTemplateSelector : DataTemplateSelector
 
 - [可繫結的版面配置示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 - [建立自訂版面配置](~/xamarin-forms/user-interface/layouts/custom.md)
-- [Xamarin. 表單資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [建立 Xamarin.Forms 的 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
