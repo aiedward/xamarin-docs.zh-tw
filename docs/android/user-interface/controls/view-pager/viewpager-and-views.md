@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 15ff11c5100f697e1945793da0baca68add082be
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a4e165f6156bf5224881327049b2c3ed48b5c2fe
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646554"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522754"
 ---
 # <a name="viewpager-with-views"></a>使用檢視的 ViewPager
 
@@ -101,11 +101,11 @@ protected override void OnCreate(Bundle bundle)
 
 此程式碼會執行下列動作:
 
-1.  設定**axml**版面配置資源的視圖。
+1. 設定**axml**版面配置資源的視圖。
 
-2.  從版面配置抓取的`ViewPager`參考。
+2. 從版面配置抓取的`ViewPager`參考。
 
-3.  實例化新`TreeCatalog`做為資料來源。
+3. 實例化新`TreeCatalog`做為資料來源。
 
 當您建立並執行此程式碼時, 您應該會看到類似下列螢幕擷取畫面的顯示: 
 
@@ -120,13 +120,13 @@ protected override void OnCreate(Bundle bundle)
 
 當您執行`PagerAdapter`時, 必須覆寫下列各項:
 
--   **InstantiateItem**建立指定位置的`View`頁面 () `ViewPager`, 並將其加入至的視圖集合。 &ndash; 
+- **InstantiateItem**建立指定位置的`View`頁面 () `ViewPager`, 並將其加入至的視圖集合。 &ndash; 
 
--   **DestroyItem**&ndash;從指定的位置移除頁面。
+- **DestroyItem**&ndash;從指定的位置移除頁面。
 
--   **計數**&ndash;唯讀屬性, 可傳回可用的視圖 (頁面) 數目。 
+- **計數**&ndash;唯讀屬性, 可傳回可用的視圖 (頁面) 數目。 
 
--   **IsViewFromObject**&ndash;判斷頁面是否與特定索引鍵物件相關聯。 (此物件是由`InstantiateItem`方法所建立)。在此範例中, 索引鍵物件是`TreeCatalog`資料物件。
+- **IsViewFromObject**&ndash;判斷頁面是否與特定索引鍵物件相關聯。 (此物件是由`InstantiateItem`方法所建立)。在此範例中, 索引鍵物件是`TreeCatalog`資料物件。
 
 新增名為**TreePagerAdapter.cs**的新檔案, 並將其內容取代為下列程式碼: 
 
@@ -173,7 +173,7 @@ namespace TreePager
 
 ### <a name="implement-the-constructor"></a>執行此函式
 
-當應用程式具現`TreePagerAdapter`化時, 它會提供內容`MainActivity`() 和具`TreeCatalog`現化的。 在 TreePagerAdapter.cs 中, 將下列成員變數和函式新增`TreePagerAdapter`至類別  的頂端: 
+當應用程式具現`TreePagerAdapter`化時, 它會提供內容`MainActivity`() 和具`TreeCatalog`現化的。 在 TreePagerAdapter.cs 中, 將下列成員變數和函式新增`TreePagerAdapter`至類別的頂端: 
 
 ```csharp
 Context context;
@@ -224,14 +224,14 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 
 此程式碼會執行下列動作:
 
-1.  具現化`ImageView`新的, 以在指定的位置顯示樹狀結構影像。 應用程式`MainActivity`的是將傳遞至此`ImageView`函式的內容。
+1. 具現化`ImageView`新的, 以在指定的位置顯示樹狀結構影像。 應用程式`MainActivity`的是將傳遞至此`ImageView`函式的內容。
 
-2.  將資源設定為位於`TreeCatalog`指定位置的映射資源識別碼。 `ImageView`
+2. 將資源設定為位於`TreeCatalog`指定位置的映射資源識別碼。 `ImageView`
 
-3.  將傳遞的容器`View`轉換`ViewPager`為參考。
+3. 將傳遞的容器`View`轉換`ViewPager`為參考。
     請注意, 您必須`JavaCast<ViewPager>()`使用正確地執行此轉換 (這是必要的, 以便 Android 執行執行時間檢查的類型轉換)。
 
-4.  將具現`ImageView`化的`ViewPager`加入至, `ImageView`並將傳回給呼叫端。
+4. 將具現`ImageView`化的`ViewPager`加入至, `ImageView`並將傳回給呼叫端。
 
 當顯示影像時, 它會顯示此`ImageView`畫面。 `position` `ViewPager` 一開始`InstantiateItem`會呼叫兩次, 以使用 views 填入前兩個頁面。 當使用者進行滾動時, 會再次呼叫它, 以維護目前所顯示專案的後方和前方的視圖。 
 
@@ -253,11 +253,11 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 
 此程式碼會執行下列動作:
 
-1.  將傳遞的容器`View`轉換`ViewPager`為參考。
+1. 將傳遞的容器`View`轉換`ViewPager`為參考。
 
-2.  將傳遞的 JAVA 物件 (`view`) 轉換C# `View`成 (`view as View`);
+2. 將傳遞的 JAVA 物件 (`view`) 轉換C# `View`成 (`view as View`);
 
-3.  從中`ViewPager`移除此視圖。 
+3. 從中`ViewPager`移除此視圖。 
 
 
 

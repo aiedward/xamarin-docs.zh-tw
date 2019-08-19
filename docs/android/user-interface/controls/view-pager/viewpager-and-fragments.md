@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 90bffc2360654f571728f76810f144e702a81e57
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0657e89e3026cbe2d146d538ca0158ed1d1806d2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646095"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522748"
 ---
 # <a name="viewpager-with-fragments"></a>ViewPager 與 Fragment
 
@@ -106,11 +106,11 @@ protected override void OnCreate(Bundle bundle)
 
 此程式碼會執行下列動作:
 
-1.  設定**axml**版面配置資源的視圖。
+1. 設定**axml**版面配置資源的視圖。
 
-2.  從版面配置抓取的`ViewPager`參考。
+2. 從版面配置抓取的`ViewPager`參考。
 
-3.  實例化新`FlashCardDeck`做為資料來源。
+3. 實例化新`FlashCardDeck`做為資料來源。
 
 當您建立並執行此程式碼時, 您應該會看到類似下列螢幕擷取畫面的顯示: 
 
@@ -248,9 +248,9 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 當您執行`FragmentPagerAdapter`時, 必須覆寫下列各項:
 
--   **計數**&ndash;唯讀屬性, 可傳回可用的視圖 (頁面) 數目。
+- **計數**&ndash;唯讀屬性, 可傳回可用的視圖 (頁面) 數目。
 
--   **GetItem**&ndash;傳回要針對指定頁面顯示的片段。
+- **GetItem**&ndash;傳回要針對指定頁面顯示的片段。
 
 新增名為**FlashCardDeckAdapter.cs**的新檔案, 並將其內容取代為下列程式碼:
 
@@ -288,7 +288,7 @@ namespace FlashCardPager
 
 ### <a name="implement-the-adapter-constructor"></a>執行介面卡的函式
 
-當應用程式具現`FlashCardDeckAdapter`化時, 它會提供片段管理員和具現化`FlashCardDeck`的參考。 在 FlashCardDeckAdapter.cs 中, 將下列成員變數新增至`FlashCardDeckAdapter`類別的  頂端: 
+當應用程式具現`FlashCardDeckAdapter`化時, 它會提供片段管理員和具現化`FlashCardDeck`的參考。 在 FlashCardDeckAdapter.cs 中, 將下列成員變數新增至`FlashCardDeckAdapter`類別的頂端: 
 
 ```csharp
 public FlashCardDeck flashCardDeck;
@@ -335,13 +335,13 @@ public override Android.Support.V4.App.Fragment GetItem(int position)
 
 此程式碼會執行下列動作:
 
-1.  針對指定的位置, 查閱`FlashCardDeck`牌中的數學問題字串。 
+1. 針對指定的位置, 查閱`FlashCardDeck`牌中的數學問題字串。 
 
-2.  針對指定的位置, 查閱`FlashCardDeck`牌中的答案字串。 
+2. 針對指定的位置, 查閱`FlashCardDeck`牌中的答案字串。 
 
-3.  呼叫 `FlashCardFragment` 處理站方法 `newInstance`，並傳入字卡問題和解答字串。 
+3. 呼叫 factory 方法`newInstance`, 傳入快閃卡問題和答案字串。 `FlashCardFragment` 
 
-4.  建立並傳回新的字卡 `Fragment`，其中包含該位置的問題和答案文字。 
+4. 建立並傳回新的快閃`Fragment`卡, 其中包含該位置的問題和答案文字。 
 
 當 `ViewPager` 呈現位於 `position` 的 `Fragment` 時，它會顯示 `TextBox`，其中包含位於字卡堆疊之 `position` 位置的數學問題字串。 
 
@@ -433,7 +433,7 @@ questionBox.Click += delegate
 
 [![FlashCardPager 應用程式在點擊數學問題時所快顯通知的螢幕擷取畫面](viewpager-and-fragments-images/05-answer-sml.png)](viewpager-and-fragments-images/05-answer.png#lightbox)
 
-本  逐步解說中所呈現的 FlashCardPager `MainActivity`會使用`FragmentActivity`衍生自, 但您也`MainActivity`可以`AppCompatActivity`衍生自 (這也提供管理片段的支援)。 若要查看`AppCompatActivity`範例, 請參閱範例庫中的[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager) 。
+本逐步解說中所呈現的 FlashCardPager `MainActivity`會使用`FragmentActivity`衍生自, 但您也`MainActivity`可以`AppCompatActivity`衍生自 (這也提供管理片段的支援)。 若要查看`AppCompatActivity`範例, 請參閱範例庫中的[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager) 。
 
 
 

@@ -1,18 +1,18 @@
 ---
 title: 第 26 章的摘要。 自訂版面配置
-description: 使用 Xamarin.Forms 建立行動應用程式：第 26 章的摘要。 自訂版面配置
+description: 使用 Xamarin 建立 Mobile Apps:第 26 章的摘要。 自訂版面配置
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 9fa9802f94e10612c4b0fe02c84ddcabc89820a8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 46a9887d12d251e60cf6767fe89f6125fe1438d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331556"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529242"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章的摘要。 自訂版面配置
 
@@ -116,7 +116,7 @@ Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](xref:Xamarin.Forms.L
 
 [ **ExploreChildSize** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/ExploreChildSizes)顯示條件約束和大小要求的簡單版面配置資訊。
 
-## <a name="deriving-from-layoutview"></a>衍生自版面配置<View>
+## <a name="deriving-from-layoutview"></a>衍生自版面\<配置視圖 >
 
 自訂版面配置類別衍生自`Layout<View>`。 它有兩個責任：
 
@@ -153,7 +153,9 @@ Xamarin.Forms 包含數個類別衍生自[ `Layout<View>` ](xref:Xamarin.Forms.L
 
 ### <a name="a-layout-with-properties"></a>版面配置屬性
 
-[ `WrapLayout` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs)類別[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)假設所有子系是相同的大小，和會子系從一個資料列 （或資料行）下一步。 它會定義`Orientation`的屬性，例如`StackLayout`，和`ColumnSpacing`並`RowSpacing`屬性，例如`Grid`，和快取子系的大小。
+          [
+          `WrapLayout`
+          ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs)類別[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)假設所有子系是相同的大小，和會子系從一個資料列 （或資料行）下一步。 它會定義`Orientation`的屬性，例如`StackLayout`，和`ColumnSpacing`並`RowSpacing`屬性，例如`Grid`，和快取子系的大小。
 
 [ **PhotoWrap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap)範例 puts`WrapLayout`在`ScrollView`顯示內建的相片。
 
