@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 87542bbd158b8c8ab0f48bb57fa0d19ce8f374c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 94a10213f8ae42d6e8f3407b18051021d92be5bc
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651681"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68978554"
 ---
 # <a name="invoking-events-from-effects"></a>從效果叫用事件
 
@@ -40,7 +40,7 @@ iOS、Android 和通用 Windows 平台都包含一個低層級的 API，可讓�
 
 在通用 Windows 平台 (UWP) 上，`UIElement` 類別會定義名為 `PointerPressed`、`PointerMoved` 和 `PointerReleased` 的事件。 在 [MSDN 上的處理指標輸入](/windows/uwp/input-and-devices/handle-pointer-input/)一文和 [`UIElement`](/uwp/api/windows.ui.xaml.uielement/) 類別的 API 文件中會描述這些事件。
 
-通用 Windows 平台的 `Pointer` API 主要用於整合滑鼠、觸控及手寫筆輸入。 基於這個理由，即使未按下滑鼠按鈕，當滑鼠在項目內移動時，也會叫用 `PointerMoved` 事件。 伴隨著這些事件的 `PointerRoutedEventArgs` 物件具有名為 `Pointer` 的屬性，該屬性具有名為 `IsInContact` 的屬性，用來表示是否按下滑鼠按鈕或手指是否接觸到螢幕。
+通用 Windows 平台的 `Pointer` API 主要用於整合滑鼠、觸控及手寫筆輸入。 因此，當滑鼠移過項目時，即使未按下滑鼠按鈕，也會叫用 `PointerMoved` 事件。 伴隨著這些事件的 `PointerRoutedEventArgs` 物件具有名為 `Pointer` 的屬性，該屬性具有名為 `IsInContact` 的屬性，用來表示是否按下滑鼠按鈕或手指是否接觸到螢幕。
 
 此外，UWP 還會定義兩個以上名為 `PointerEntered` 和 `PointerExited` 的事件。 這些事件指出滑鼠或手指何時從某個項目移到另一個項目。 例如，假設兩個名為 A 和 B 的相鄰項目。這兩個項目已安裝指標事件的處理常式。 當手指按下 A 時，將叫用 `PointerPressed` 事件。 隨著手指移動，A 會叫用 `PointerMoved` 事件。 如果手指從 A 移到 B，A 會叫用 `PointerExited` 事件，而 B 會叫用 `PointerEntered` 事件。 如果再放開手指，B 會叫用 `PointerReleased` 事件。
 
