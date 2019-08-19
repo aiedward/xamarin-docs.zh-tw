@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2017
-ms.openlocfilehash: 40a44b2748b29b21a1456c55cb75514f18506dd7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: d4a3ba0ae860f2e6b42fc4cf349ec1bc8e83979e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648563"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527070"
 ---
 # <a name="images-in-xamarinforms"></a>在 Xamarin.Forms 中的影像
 
@@ -204,7 +204,7 @@ public class ImageResourceExtension : IMarkupExtension
 
 #### <a name="debugging-code"></a>偵錯程式碼
 
-因為有時很難了解為什麼未載入特定的影像資源，可以暫時將下列偵錯程式碼新增到應用程式，以協助確認是否已正確設定資源。 它會輸出指定組件中內嵌的所有已知的資源到<span class="UIItem">主控台</span>以協助針對資源載入問題進行偵錯。
+因為有時很難了解為什麼未載入特定的影像資源，可以暫時將下列偵錯程式碼新增到應用程式，以協助確認是否已正確設定資源。 它會輸出指定組件中內嵌的所有已知的資源到**主控台**以協助針對資源載入問題進行偵錯。
 
 ```csharp
 using System.Reflection;

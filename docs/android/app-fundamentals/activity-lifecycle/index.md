@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: eda75041add4b5fc9f7998f426aab42ed2618c4b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 91e49c387818ca4d7472325efa665a5c2bfd9e64
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508804"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522036"
 ---
 # <a name="activity-lifecycle"></a>活動開發週期
 
@@ -29,9 +29,9 @@ _活動是 Android 應用程式的基本組建區塊, 而且可以存在於許�
 
 本章會詳細檢查活動生命週期, 包括:
 
--  活動狀態
--  生命週期方法
--  保留應用程式的狀態
+- 活動狀態
+- 生命週期方法
+- 保留應用程式的狀態
 
 
 本節也包含[逐步](~/android/app-fundamentals/activity-lifecycle/saving-state.md)解說, 提供如何在活動生命週期期間有效率地儲存狀態的實用範例。 在本章結尾, 您應該瞭解活動生命週期, 以及如何在 Android 應用程式中加以支援。
@@ -48,14 +48,14 @@ Android OS 會根據其狀態仲裁活動。 這可協助 Android 識別不再�
 
 這些狀態可以分成4個主要群組, 如下所示:
 
-1.  使用中*或正在*執行&ndash;如果活動在前景 (也稱為活動堆疊的頂端), 則會將它們視為作用中或正在執行。 這在 Android 中被視為最高優先順序的活動, 因此只有在極端情況下, 作業系統才會終止, 例如活動嘗試使用超過裝置上可用的記憶體, 因為這可能會導致 UI 變得沒有回應。
+1. 使用中*或正在*執行&ndash;如果活動在前景 (也稱為活動堆疊的頂端), 則會將它們視為作用中或正在執行。 這在 Android 中被視為最高優先順序的活動, 因此只有在極端情況下, 作業系統才會終止, 例如活動嘗試使用超過裝置上可用的記憶體, 因為這可能會導致 UI 變得沒有回應。
 
-1.  已*暫停*&ndash;當裝置進入睡眠狀態, 或某個活動仍然可見, 但有一項新的非完整大小或透明活動部分隱藏時, 活動會被視為已暫停。 已暫停的活動仍在運作中, 亦即, 它們會維護所有狀態和成員資訊, 並繼續附加至視窗管理員。 這會被視為 Android 中第二個最高優先順序的活動, 因此, 只有在結束此活動時, 作業系統才會終止這項活動, 以滿足讓作用中/執行中的活動穩定且快速回應所需的資源需求。
+1. 已*暫停*&ndash;當裝置進入睡眠狀態, 或某個活動仍然可見, 但有一項新的非完整大小或透明活動部分隱藏時, 活動會被視為已暫停。 已暫停的活動仍在運作中, 亦即, 它們會維護所有狀態和成員資訊, 並繼續附加至視窗管理員。 這會被視為 Android 中第二個最高優先順序的活動, 因此, 只有在結束此活動時, 作業系統才會終止這項活動, 以滿足讓作用中/執行中的活動穩定且快速回應所需的資源需求。
 
-1.  *已停止/背景執行*&ndash;另一個活動所完全遮蔽的活動會被視為已停止或在背景中。
+1. *已停止/背景執行*&ndash;另一個活動所完全遮蔽的活動會被視為已停止或在背景中。
     已停止的活動仍會盡可能地嘗試保留其狀態和成員資訊, 但已停止的活動會視為三種狀態的最低優先順序, 因此, OS 會先終止處於此狀態的活動, 以滿足資源較高優先順序活動的需求。
 
-1.  *重新開機*&ndash;在生命週期中, 從暫停到停止的活動可能會被 Android 從記憶體移除。 如果使用者流覽回到活動, 它必須重新開機、還原到先前儲存的狀態, 然後向使用者顯示。
+1. *重新開機*&ndash;在生命週期中, 從暫停到停止的活動可能會被 Android 從記憶體移除。 如果使用者流覽回到活動, 它必須重新開機、還原到先前儲存的狀態, 然後向使用者顯示。
 
 
 ### <a name="activity-re-creation-in-response-to-configuration-changes"></a>重新建立活動以回應設定變更
@@ -116,11 +116,11 @@ protected override void OnCreate(Bundle bundle)
 當活動準備好開始與使用者互動時, 系統就會呼叫[OnResume](xref:Android.App.Activity.OnResume) 。
 活動應該覆寫此方法來執行下列工作:
 
--  向上加速畫面播放速率 (遊戲開發的一般工作)
--  起始動畫
--  接聽 GPS 更新
--  顯示任何相關的警示或對話方塊
--  連接外部事件處理常式
+- 向上加速畫面播放速率 (遊戲開發的一般工作)
+- 起始動畫
+- 接聽 GPS 更新
+- 顯示任何相關的警示或對話方塊
+- 連接外部事件處理常式
 
 
 例如, 下列程式碼片段顯示如何初始化相機:
@@ -143,15 +143,15 @@ public void OnResume()
 
 當系統即將將活動放入背景, 或活動變成部分模糊時, 會呼叫[OnPause](xref:Android.App.Activity.OnPause) 。 活動應該覆寫此方法, 如果他們需要:
 
--   認可持續性資料的未儲存變更
+- 認可持續性資料的未儲存變更
 
--   損毀或清除其他耗用資源的物件
+- 損毀或清除其他耗用資源的物件
 
--   向下移動畫面播放速率和暫停動畫
+- 向下移動畫面播放速率和暫停動畫
 
--   取消註冊外部事件處理常式或通知處理常式 (也就是系結至服務的相關聯)。 這必須完成, 以避免活動記憶體流失。
+- 取消註冊外部事件處理常式或通知處理常式 (也就是系結至服務的相關聯)。 這必須完成, 以避免活動記憶體流失。
 
--   同樣地, 如果活動已顯示任何對話或警示, 就必須使用`.Dismiss()`方法來清除它們。
+- 同樣地, 如果活動已顯示任何對話或警示, 就必須使用`.Dismiss()`方法來清除它們。
 
 例如, 下列程式碼片段會放開相機, 因為活動無法在暫停時使用它:
 
@@ -171,17 +171,17 @@ public void OnPause()
 
 有兩種可能的生命週期方法會在之後`OnPause`呼叫:
 
-1.  `OnResume`如果活動要傳回前景, 將會呼叫。
-1.  `OnStop`如果活動放在背景中, 將會呼叫。
+1. `OnResume`如果活動要傳回前景, 將會呼叫。
+1. `OnStop`如果活動放在背景中, 將會呼叫。
 
 
 #### <a name="onstop"></a>OnStop
 
 當使用者不再看到活動時, 會呼叫[OnStop](xref:Android.App.Activity.OnStop) 。 當發生下列其中一種情況時, 就會發生這種情況:
 
--  正在啟動新的活動, 並已涵蓋此活動。
--  正在將現有的活動帶入前景。
--  活動已終結。
+- 正在啟動新的活動, 並已涵蓋此活動。
+- 正在將現有的活動帶入前景。
+- 活動已終結。
 
 
 `OnStop`不一定會在記憶體不足的情況下呼叫, 例如當 Android 耗盡資源時, 無法正確背景活動。 基於這個理由, 最好不要依賴在`OnStop`準備要終結的活動時呼叫。 下一次可能會呼叫的生命週期方法, 會是`OnDestroy`活動是否已消失, 或`OnRestart`活動是否回到與使用者互動。
@@ -215,7 +215,7 @@ public void OnPause()
 當活動停止或損毀時, 系統會提供機會來儲存活動的狀態, 以供日後解除凍結。
 這個儲存的狀態稱為實例狀態。 Android 提供三個選項, 可在活動生命週期期間儲存實例狀態:
 
-1. 將基本型別儲存在`Dictionary`稱為[配套](xref:Android.OS.Bundle)中, 以供 Android 用來儲存狀態。
+1. 將基本型別儲存在`Dictionary`稱為「[配套](xref:Android.OS.Bundle) 」中, 以供 Android 用來儲存狀態。
 
 1. 建立會保存複雜值 (例如點陣圖) 的自訂類別。 Android 會使用此自訂類別來儲存狀態。
 
@@ -225,7 +225,7 @@ public void OnPause()
 
 ### <a name="bundle-state"></a>配套狀態
 
-儲存實例狀態的主要選項是使用稱為[組合](xref:Android.OS.Bundle)的索引鍵/值字典物件。
+儲存實例狀態的主要選項是使用稱為「[組合](xref:Android.OS.Bundle)」的索引鍵/值字典物件。
 回想一下, 當建立`OnCreate`了方法, 並將組合當做參數傳遞時, 可以使用此配套來還原實例狀態。 不建議您針對較複雜的資料使用組合, 而不會快速或輕鬆地序列化成索引鍵/值組 (例如點陣圖);而是應該用於簡單的值 (例如字串)。
 
 活動提供方法來協助儲存和抓取組合中的實例狀態:
@@ -330,11 +330,11 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 
 雖然`OnSaveInstanceState`可讓您輕鬆地儲存暫時性資料, 但還是有一些限制:
 
--   在所有情況下都不會呼叫它。 例如, 按**Home**或**Back**鍵結束活動`OnSaveInstanceState`不會導致被呼叫。
+- 在所有情況下都不會呼叫它。 例如, 按**Home**或**Back**鍵結束活動`OnSaveInstanceState`不會導致被呼叫。
 
--   傳入的組合`OnSaveInstanceState`不是針對大型物件 (例如影像) 所設計。 在大型物件的情況下, 最好是從[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)儲存物件, 如下所述。
+- 傳入的組合`OnSaveInstanceState`不是針對大型物件 (例如影像) 所設計。 在大型物件的情況下, 最好是從[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)儲存物件, 如下所述。
 
--   使用配套儲存的資料會序列化, 這可能會導致延遲。
+- 使用配套儲存的資料會序列化, 這可能會導致延遲。
 
 套件組合狀態適用于不會使用太多記憶體的簡單資料, 而*非設定實例資料*適用于較複雜的資料, 或是抓取耗費資源的資料, 例如來自 web 服務呼叫或複雜的資料庫查詢。 非設定實例資料會視需要儲存在物件中。 下一節將`OnRetainNonConfigurationInstance`介紹如何透過設定變更來保留更複雜的資料類型。
 
@@ -343,9 +343,9 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 
 除了保存配套中的資料之外, Android 也支援藉由覆寫[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)並傳回包含要保存之資料`Java.Lang.Object`的實例來儲存資料。 使用`OnRetainNonConfigurationInstance`來儲存狀態有兩個主要優點:
 
--   從`OnRetainNonConfigurationInstance`傳回的物件會對較大且更複雜的資料類型執行良好的處理, 因為記憶體會保留此物件。
+- 從`OnRetainNonConfigurationInstance`傳回的物件會對較大且更複雜的資料類型執行良好的處理, 因為記憶體會保留此物件。
 
--   只有在需要時, 才會呼叫方法。`OnRetainNonConfigurationInstance` 這比使用手動快取更經濟實惠。
+- 只有在需要時, 才會呼叫方法。`OnRetainNonConfigurationInstance` 這比使用手動快取更經濟實惠。
 
 使用`OnRetainNonConfigurationInstance`適合用來多次抓取資料的情況, 例如在 web 服務呼叫中。 例如, 請考慮下列搜尋 Twitter 的程式碼:
 

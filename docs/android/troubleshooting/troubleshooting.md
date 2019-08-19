@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: f57736238fc01d865d7655d72da427e2c18dca59
-ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
-ms.translationtype: HT
+ms.openlocfilehash: 5fccc07d35eda1ba420f48a8058d8d2a00b18fd9
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68757252"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523192"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
@@ -22,9 +22,9 @@ ms.locfileid: "68757252"
 在追蹤各種 bug 時, Xamarin 有幾個地方需要尋找。
 它們包括：
 
-1.  診斷 MSBuild 輸出。
-2.  裝置部署記錄。
-3.  Android Debug 記錄輸出。
+1. 診斷 MSBuild 輸出。
+2. 裝置部署記錄。
+3. Android Debug 記錄輸出。
 
 
 <a name="Diagnostic_MSBuild_Output" />
@@ -35,23 +35,23 @@ ms.locfileid: "68757252"
 
 若要在 Visual Studio 內啟用診斷 MSBuild 輸出：
 
-1.  按一下 [**工具] > 選項 ...**
-2.  在左側樹狀檢視中, 選取 [**專案和方案] > [建立並執行**]
-3.  在右側面板中, 將 [MSBuild 組建輸出詳細資訊] 下拉式清單設定為 [診斷]
-4.  按一下 **[確定]** 。
-5.  清除並重建您的套件。
-6.  診斷輸出會顯示在 [輸出] 面板中。
+1. 按一下 [**工具] > 選項 ...**
+2. 在左側樹狀檢視中, 選取 [**專案和方案] > [建立並執行**]
+3. 在右側面板中, 將 [MSBuild 組建輸出詳細資訊] 下拉式清單設定為 [診斷]
+4. 按一下 **[確定]** 。
+5. 清除並重建您的套件。
+6. 診斷輸出會顯示在 [輸出] 面板中。
 
 
 若要在 Visual Studio for Mac/OS X 內啟用診斷 MSBuild 輸出:
 
-1.  按一下 [ **Visual Studio for Mac > 喜好**設定 ...]
-2.  在左側樹狀檢視中, 選取 [專案] [ **> 組建**]
-3.  在右側面板中, 將 [記錄詳細資訊] 下拉式按鈕設定為 [診斷]
-4.  按一下 **[確定]** 。
-5.  重新啟動 Visual Studio for Mac
-6.  清除並重建您的套件。
-7.  按一下 [組建輸出] 按鈕, 即可在 [錯誤] 面板中看到診斷輸出 (**View > pad > 錯誤**)。
+1. 按一下 [ **Visual Studio for Mac > 喜好**設定 ...]
+2. 在左側樹狀檢視中, 選取 [專案] [ **> 組建**]
+3. 在右側面板中, 將 [記錄詳細資訊] 下拉式按鈕設定為 [診斷]
+4. 按一下 **[確定]** 。
+5. 重新啟動 Visual Studio for Mac
+6. 清除並重建您的套件。
+7. 按一下 [組建輸出] 按鈕, 即可在 [錯誤] 面板中看到診斷輸出 (**View > pad > 錯誤**)。
 
 
 
@@ -60,16 +60,16 @@ ms.locfileid: "68757252"
 
 若要在 Visual Studio 內啟用裝置部署記錄:
 
-1.  **工具 > 選項 。** >
-2.  在左側樹狀檢視中, 選取 [ **Xamarin > Android 設定**]
-3.  在右側面板中, 啟用 [X] 延伸模組的 [**偵錯工具記錄 (將 monodroid 寫入您的桌面)** ] 核取方塊。
-4.  記錄檔訊息會寫入您桌面上的 monodroid 檔案。
+1. **工具 > 選項 。** >
+2. 在左側樹狀檢視中, 選取 [ **Xamarin > Android 設定**]
+3. 在右側面板中, 啟用 [X] 延伸模組的 [**偵錯工具記錄 (將 monodroid 寫入您的桌面)** ] 核取方塊。
+4. 記錄檔訊息會寫入您桌面上的 monodroid 檔案。
 
 
 Visual Studio for Mac 一律會寫入裝置部署記錄。 尋找它們有點棘手,每隔一天會建立一個*AndroidUtils*記錄檔, 一次部署發生的時間, 例如:**AndroidTools-2012-10-24 _12-35-45 .log**。
 
--  在 Windows 上, 記錄檔會寫入`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
--  在 OS X 上, 記錄檔會寫入`$HOME/Library/Logs/XamarinStudio-{VERSION}`至。
+- 在 Windows 上, 記錄檔會寫入`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
+- 在 OS X 上, 記錄檔會寫入`$HOME/Library/Logs/XamarinStudio-{VERSION}`至。
 
 
 
@@ -91,9 +91,9 @@ adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 
 Xamarin 支援下列系統屬性:
 
--   *debug*:如果是非空白字串, 則這相當於`*mono-debug*`。
+- *debug*:如果是非空白字串, 則這相當於`*mono-debug*`。
 
--   *debug. env*:在初始化 mono*之前*, 要 *|* 在應用程式啟動期間匯出之環境變數的管線分隔 (' ') 清單。 這可讓您設定控制 mono 記錄的環境變數。
+- *debug. env*:在初始化 mono*之前*, 要 *|* 在應用程式啟動期間匯出之環境變數的管線分隔 (' ') 清單。 這可讓您設定控制 mono 記錄的環境變數。
 
     - *注意*：因為值是以 ' *|* ' 分隔, 所以此值必須有額外的引號, \`因為*adb shell* \`命令會移除一組引號。
 
@@ -101,18 +101,20 @@ Xamarin 支援下列系統屬性:
 
     - 範例：
 
-            adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+      ```
+      adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+      ```
 
--   *debug .log*:應該將其他訊息列印到Android 偵錯工具記錄檔的元件清單 (以逗號分隔)。 根據預設, 不會設定任何內容。 元件包括:
+- *debug .log*:應該將其他訊息列印到Android 偵錯工具記錄檔的元件清單 (以逗號分隔)。 根據預設, 不會設定任何內容。 元件包括:
 
-    -   *全部*:列印所有訊息
-    -   *gc*:列印與 GC 相關的訊息。
-    -   *grf*:Print (弱式、全域) 參考配置和解除配置訊息。
-    -   *lref*:列印本機參考配置和解除配置訊息。
+    - *全部*:列印所有訊息
+    - *gc*:列印與 GC 相關的訊息。
+    - *grf*:Print (弱式、全域) 參考配置和解除配置訊息。
+    - *lref*:列印本機參考配置和解除配置訊息。
 
     *注意*: 這些是*非常*詳細的資訊。 除非您真的需要, 否則請勿啟用。
 
--   *debug. trace*:允許設定[mono--追蹤](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定。
+- *debug. trace*:允許設定[mono--追蹤](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定。
 
 ## <a name="deleting-bin-and-obj"></a>刪除`bin`和`obj`
 
@@ -213,10 +215,10 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 
 有四個結果訊息:
 
--  全域參考建立: 這些是開頭為 *+ g +* 的行, 並會提供建立程式碼路徑的堆疊追蹤。
--  全域參考終結: 這些是開頭為 *-g-* 的行, 而且可能會針對全域參考的程式碼路徑處置提供堆疊追蹤。 如果 GC 正在處置 grf, 則不會提供任何堆疊追蹤。
--  弱式全域參考建立: 這些是以 *+ w +* 開頭的行。
--  弱式全域參考銷毀: 這些是以 *-w-* 開頭的行。
+- 全域參考建立: 這些是開頭為 *+ g +* 的行, 並會提供建立程式碼路徑的堆疊追蹤。
+- 全域參考終結: 這些是開頭為 *-g-* 的行, 而且可能會針對全域參考的程式碼路徑處置提供堆疊追蹤。 如果 GC 正在處置 grf, 則不會提供任何堆疊追蹤。
+- 弱式全域參考建立: 這些是以 *+ w +* 開頭的行。
+- 弱式全域參考銷毀: 這些是以 *-w-* 開頭的行。
 
 
 在所有訊息中, *grefc*值是 xamarin 所建立的全域參考計數, 而*Grefwc*值是 xamarin 所建立的弱式全域參考計數。 *控制碼*或*obj 控制碼*值是 JNI 控制碼值, 而 */* ' ' 之後的字元則是控制碼值的型別: */l*代表本機參考, */g*用於全域參考, 而 */w*用於弱式全域參考。
@@ -345,15 +347,15 @@ emulator -partition-size 512 -avd MonoDroid
 
 Android 套件名稱*必須*包含句點 (' *.* ')。 編輯您的套件名稱, 使其包含句點。
 
--   在 Visual Studio 內:
-    -   以滑鼠右鍵按一下您的專案 > 屬性
-    -   按一下左側的 [Android 資訊清單] 索引標籤。
-    -   更新 [封裝名稱] 欄位。
-        -   如果您看到 [找&ldquo;不到 androidmanifest.xml] 訊息。 按一下以加入一個。&rdquo;, 按一下連結, 然後更新 [套件名稱] 欄位。
--   在 Visual Studio for Mac 內:
-    -   以滑鼠右鍵按一下您的專案, > 選項。
-    -   流覽至 [Build/Android 應用程式] 區段。
-    -   將 [封裝名稱] 欄位變更為包含 '. '。
+- 在 Visual Studio 內:
+    - 以滑鼠右鍵按一下您的專案 > 屬性
+    - 按一下左側的 [Android 資訊清單] 索引標籤。
+    - 更新 [封裝名稱] 欄位。
+        - 如果您看到 [找&ldquo;不到 androidmanifest.xml] 訊息。 按一下以加入一個。&rdquo;, 按一下連結, 然後更新 [套件名稱] 欄位。
+- 在 Visual Studio for Mac 內:
+    - 以滑鼠右鍵按一下您的專案, > 選項。
+    - 流覽至 [Build/Android 應用程式] 區段。
+    - 將 [封裝名稱] 欄位變更為包含 '. '。
 
 
 
@@ -375,15 +377,15 @@ Android 套件會指定`<uses-library/>`元素所需的共用程式庫。 如果
 
 Android 套件有三個需求:
 
--   它們必須包含 '. '(請參閱上一個專案)
--   它們必須有唯一的字串套件名稱 (因此, 在 Android 應用程式名稱中看到的反向 tld 慣例, 例如適用于 Chrome 應用程式的 .com. chrome)
--   升級封裝時, 封裝必須具有相同的簽署金鑰。
+- 它們必須包含 '. '(請參閱上一個專案)
+- 它們必須有唯一的字串套件名稱 (因此, 在 Android 應用程式名稱中看到的反向 tld 慣例, 例如適用于 Chrome 應用程式的 .com. chrome)
+- 升級封裝時, 封裝必須具有相同的簽署金鑰。
 
 因此, 請想像一下這種情況:
 
-1.  您建立 & 將應用程式部署為 Debug 應用程式
-2.  您可以變更簽署金鑰, 例如做為發行應用程式使用 (或因為您不喜歡預設提供的 Debug 簽署金鑰)
-3.  您會在不先移除應用程式的情況下進行安裝, 例如 Debug > 啟動而不在 Visual Studio 內進行調試
+1. 您建立 & 將應用程式部署為 Debug 應用程式
+2. 您可以變更簽署金鑰, 例如做為發行應用程式使用 (或因為您不喜歡預設提供的 Debug 簽署金鑰)
+3. 您會在不先移除應用程式的情況下進行安裝, 例如 Debug > 啟動而不在 Visual Studio 內進行調試
 
 
 發生這種情況時, 套件安裝將會失敗\_,\_並\_出現安裝失敗的更新不相容錯誤, 因為在簽署金鑰執行時, 套件名稱並未變更。 [Android Debug 記錄](~/android/deploy-test/debugging/android-debug-log.md)檔也會包含類似以下的訊息:
@@ -433,10 +435,10 @@ E/AndroidRuntime( 1710):        at java.lang.Runtime.loadLibrary(Runtime.java:36
 
 若是如此, 可能會有兩個原因:
 
-1.  Apk 不會提供目標裝置支援的 ABI。
+1. Apk 不會提供目標裝置支援的 ABI。
     例如, apk 只包含 armeabi armeabi-v7a 二進位檔, 而目標裝置僅支援 armeabi。
 
-2.  [Android bug](http://code.google.com/p/android/issues/detail?id=21670)。 如果是這種情況, 請將應用程式卸載, 並在您的手指上進行, 然後重新安裝應用程式。
+2. [Android bug](http://code.google.com/p/android/issues/detail?id=21670)。 如果是這種情況, 請將應用程式卸載, 並在您的手指上進行, 然後重新安裝應用程式。
 
 若要修正 (1), 請編輯專案選項/屬性, 並[將所需 ABI 的支援新增至支援的 abi 清單](~/android/app-fundamentals/cpu-architectures.md)。 若要判斷您需要新增的 ABI, 請針對您的目標裝置執行下列 adb 命令:
 
@@ -457,7 +459,7 @@ $ adb shell getprop | grep ro.product.cpu
 
 這通常表示您有一部 HP 電腦, 而環境&ldquo;變數&rdquo;平臺已設定為類似 MCD 或 HPD。 這與&ldquo;通常設定為任何 CPU&rdquo;或&ldquo;x86&rdquo;的 MSBuild 平臺屬性衝突。 您必須先從電腦移除此環境變數, MSBuild 才能運作:
 
--   控制台 > 系統 > Advanced > 環境變數
+- 控制台 > 系統 > Advanced > 環境變數
 
 重新開機 Visual Studio 或 Visual Studio for Mac 並嘗試重建。 專案現在應該會如預期般運作。
 
@@ -686,11 +688,11 @@ E/dalvikvm( 123): VM aborting
 
 ### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>在發行組建中, 會在執行時間針對動態程式碼進行 MissingMethodException。
 
--   您的應用程式專案很可能不會參考到 System.object、Microsoft CSharp .dll 或 Mono. CSharp .dll。 請確定已參考這些元件。
+- 您的應用程式專案很可能不會參考到 System.object、Microsoft CSharp .dll 或 Mono. CSharp .dll。 請確定已參考這些元件。
 
-    -   請記住, 動態程式碼一律會花費成本。 如果您需要有效率的程式碼, 請考慮不要使用動態程式碼。
+    - 請記住, 動態程式碼一律會花費成本。 如果您需要有效率的程式碼, 請考慮不要使用動態程式碼。
 
--   在第一個預覽版本中, 除非應用程式代碼明確使用每個元件中的類型, 否則會排除這些元件。 如需因應措施, 請參閱下列各項:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+- 在第一個預覽版本中, 除非應用程式代碼明確使用每個元件中的類型, 否則會排除這些元件。 如需因應措施, 請參閱下列各項:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 
 ## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>在 x86 裝置上使用 AOT 和 LLVM 損毀建立的專案

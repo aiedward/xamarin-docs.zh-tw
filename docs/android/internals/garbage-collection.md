@@ -6,19 +6,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 3b89f63d42b01140d73cd1551c75211d2fea8e27
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 7563dede151d2f72e9496d71041a0f590f0cf68e
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510719"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524799"
 ---
 # <a name="garbage-collection"></a>記憶體回收
 
 Xamarin 會使用 Mono 的[簡單代垃圾收集](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/)行程。 這是具有兩個層代和*大型物件空間*的標記和清除行程, 其中包含兩種集合: 
 
--   次要集合 (收集 Gen0 堆積) 
--   主要集合 (收集 Gen1 和大型物件空間堆積)。 
+- 次要集合 (收集 Gen0 堆積) 
+- 主要集合 (收集 Gen1 和大型物件空間堆積)。 
 
 > [!NOTE]
 > 如果沒有透過 GC 的明確集合, 則為[。收集 ()](xref:System.GC.Collect)集合視*需要*而定, 視堆積配置而定。 *這不是參考計數系統*;一旦沒有未處理的參考, 或範圍結束時,*就不會收集*物件。 當次要堆積已用完新配置的記憶體不足時, 就會執行 GC。 如果沒有任何配置, 就不會執行。
@@ -34,35 +34,35 @@ Xamarin 會使用 Mono 的[簡單代垃圾收集](https://www.mono-project.com/d
 
 有三種類別的物件類型。
 
--   **Managed 物件**:*不會*繼承自[.java. Object](xref:Java.Lang.Object)的類型, 例如[system.string](xref:System.String)。 
+- **Managed 物件**:*不會*繼承自[.java. Object](xref:Java.Lang.Object)的類型, 例如[system.string](xref:System.String)。 
     這些是由 GC 正常收集的。 
 
--   **JAVA 物件**:存在於 Android 執行時間 VM 中, 但不會公開至 Mono VM 的 JAVA 類型。 這些是乏味的, 不會進一步討論。 這些通常是由 Android 執行時間 VM 所收集。 
+- **JAVA 物件**:存在於 Android 執行時間 VM 中, 但不會公開至 Mono VM 的 JAVA 類型。 這些是乏味的, 不會進一步討論。 這些通常是由 Android 執行時間 VM 所收集。 
 
--   **對等物件**: 用來執行[IJAVAObject](xref:Android.Runtime.IJavaObject)的類型, 例如所有的[Java.Lang.Object](xref:Java.Lang.Object) 和 [Java.Lang.Throwable](xref:Java.Lang.Throwable)類別。 這些類型的實例有兩個「halfs」*受控對等*體和*原生對等*體。 受管理的對等是C#類別的實例。 原生對等是 Android 執行時間 VM 中 JAVA 類別的實例, 而C# [IJAVAObject](xref:Android.Runtime.IJavaObject.Handle)屬性包含原生對等的 JNI 全域參考。 
+- **對等物件**: 用來執行[IJAVAObject](xref:Android.Runtime.IJavaObject)的類型, [Java.Lang.Object](xref:Java.Lang.Object)例如所有的[java.lang.throwable](xref:Java.Lang.Throwable)子類別。 這些類型的實例有兩個「halfs」*受控對等*體和*原生對等*體。 受管理的對等是C#類別的實例。 原生對等是 Android 執行時間 VM 中 JAVA 類別的實例, 而C# [IJAVAObject](xref:Android.Runtime.IJavaObject.Handle)屬性包含原生對等的 JNI 全域參考。 
 
 
 原生對等的類型有兩種:
 
--   **架構對等**:「一般」 JAVA 類型, 其不知道任何的 Xamarin, 例如[android. 內容](xref:Android.Content.Context)。
+- **架構對等**:「一般」 JAVA 類型, 其中不知道任何的 Xamarin, 例如  [android. 內容](xref:Android.Content.Context)。
 
--   **使用者對等**:[Android](~/android/platform/java-integration/working-with-jni.md)可呼叫包裝函式, 會在組建期間針對應用程式內的每個 JAVA. lang.ini 物件子類別產生。
+- **使用者對等**: [Android](~/android/platform/java-integration/working-with-jni.md)可呼叫包裝函式, 會在組建期間針對應用程式內的每個 JAVA. lang.ini 物件子類別產生。
 
 
 因為在 Xamarin Android 程式中有兩個 Vm, 所以有兩種類型的垃圾收集:
 
--   Android 執行時間集合 
--   Mono 集合 
+- Android 執行時間集合 
+- Mono 集合 
 
 Android 執行時間集合會正常運作, 但有一點要注意: JNI 全域參考會被視為 GC 根。 因此, 如果有一個 JNI 的全域參考保存在 Android 執行時間 VM 物件上, 則*無法*收集物件, 即使它也適用于集合亦然。
 
 Mono 集合是一種有趣的地方。 系統會正常收集受管理物件。 對等物件是藉由執行下列進程來收集:
 
-1.  所有適用于 Mono 集合的對等物件, 其 JNI 全域參考都會取代為 JNI 弱式全域參考。 
+1. 所有適用于 Mono 集合的對等物件, 其 JNI 全域參考都會取代為 JNI 弱式全域參考。 
 
-2.  已叫用 Android 執行時間 VM GC。 可能會收集任何原生對等實例。 
+2. 已叫用 Android 執行時間 VM GC。 可能會收集任何原生對等實例。 
 
-3.  系統會檢查在 (1) 中建立的 JNI 弱式全域參考。 如果已收集弱式參考, 則會收集對等物件。 如果*未*收集弱式參考, 則會以 JNI 全域參考取代弱式參考, 且不會收集對等物件。 注意: 在 API 14 + 上, 這表示從`IJavaObject.Handle`傳回的值可能會在 GC 之後變更。 
+3. 系統會檢查在 (1) 中建立的 JNI 弱式全域參考。 如果已收集弱式參考, 則會收集對等物件。 如果*未*收集弱式參考, 則會以 JNI 全域參考取代弱式參考, 且不會收集對等物件。 注意: 在 API 14 + 上, 這表示從`IJavaObject.Handle`傳回的值可能會在 GC 之後變更。 
 
 最後的結果就是對等物件的實例而言, 只要 managed 程式碼 (例如, 儲存在`static`變數中) 或 JAVA 程式碼所參考, 就會存留。 此外, 原生對等的存留期將會延伸到不會發生的情況, 因為原生對等將不會被可回收, 直到原生對等和 Managed 對等都可回收為止。
 
@@ -94,27 +94,27 @@ Xamarin 提供與 Android 和 Android 執行時間透明的記憶體管理。 �
 
 GC 橋接器會在 Mono 垃圾收集期間運作, 並指出哪些對等物件需要使用 Android 執行時間堆積來驗證其「活動」。 GC 橋接器會執行下列步驟 (依序) 來進行這項判斷:
 
-1.  將無法連線之對等物件的 mono 參考圖形, 引發到它們所代表的 JAVA 物件中。 
+1. 將無法連線之對等物件的 mono 參考圖形, 引發到它們所代表的 JAVA 物件中。 
 
-2.  執行 JAVA GC。
+2. 執行 JAVA GC。
 
-3.  確認哪些物件真正失效。 
+3. 確認哪些物件真正失效。 
 
 這個複雜的程式可讓的`Java.Lang.Object`子類別自由地參考任何物件, 而不會移除任何可系結至C#JAVA 物件的限制。 基於此複雜性, 橋接器程式可能非常昂貴, 而且可能會在應用程式中造成明顯的暫停。 如果應用程式發生重大暫停, 值得調查下列三個 GC 橋接器的其中一個: 
 
--   **Tarjan** -以[Robert Tarjan 的演算法和回溯參考傳播](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)為基礎之 GC Bridge 的全新設計。
+- **Tarjan** -以[Robert Tarjan 的演算法和回溯參考傳播](https://en.wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm)為基礎之 GC Bridge 的全新設計。
     它在模擬的工作負載下具有最佳效能, 但也有更大的實驗性程式碼共用。 
 
--   **新**的-原始程式碼的主要修復, 它會修正兩個二次方行為實例, 但會保留核心演算法 (根據[Kosaraju 的演算法](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)來尋找強式連接的元件)。 
+- **新**的-原始程式碼的主要修復, 它會修正兩個二次方行為實例, 但會保留核心演算法 (根據[Kosaraju 的演算法](https://en.wikipedia.org/wiki/Kosaraju's_algorithm)來尋找強式連接的元件)。 
 
--   **Old** -原始的實作為 (視為最穩定的三種)。 這是當`GC_BRIDGE`可以接受暫停時, 應用程式應該使用的橋接器。 
+- **Old** -原始的實作為 (視為最穩定的三種)。 這是當`GC_BRIDGE`可以接受暫停時, 應用程式應該使用的橋接器。 
 
 
 要找出哪一個 GC 橋接器的最大效果, 唯一的方法就是在應用程式中實驗並分析輸出。 有兩種方式可收集資料以進行效能評定: 
 
--   針對每個 GC 橋接器選項**啟用記錄**功能 (如[設定](~/android/internals/garbage-collection.md)一節中所述), 然後捕獲並比較每個設定的記錄輸出。 檢查每`GC`個選項的訊息, 特別是`GC_BRIDGE`訊息。 最多可容忍非互動式應用程式的 150ms, 但針對非常互動的應用程式 (例如遊戲), 暫停上述60毫秒是個問題。 
+- 針對每個 GC 橋接器選項**啟用記錄**功能 ( 如[設定](~/android/internals/garbage-collection.md)一節中所述), 然後捕獲並比較每個設定的記錄輸出。 檢查每`GC`個選項的訊息, 特別是`GC_BRIDGE`訊息。 最多可容忍非互動式應用程式的 150ms, 但針對非常互動的應用程式 (例如遊戲), 暫停上述60毫秒是個問題。 
 
--   **啟用橋接器帳戶**處理-橋接器帳戶會顯示橋接器程式中每個物件所指向之物件的平均成本。 依大小排序這項資訊, 將會提供有關保留最大數量之額外物件的提示。 
+- **啟用橋接器帳戶**處理-橋接器帳戶會顯示橋接器程式中每個物件所指向之物件的平均成本。 依大小排序這項資訊, 將會提供有關保留最大數量之額外物件的提示。 
 
 
 若要指定`GC_BRIDGE`應用程式應該使用的選項、 `bridge-implementation=old` `bridge-implementation=new`傳遞或`bridge-implementation=tarjan` `MONO_GC_PARAMS`環境變數, 例如: 
@@ -193,7 +193,7 @@ using (var listener = new MyClickListener ())
 
 #### <a name="using-explicit-checks-to-avoid-exceptions"></a>使用明確檢查來避免例外狀況
 
-如果您已執行了[Java.Lang.Object.Dispose](xref:Java.Lang.Object.Dispose*) JNI, 請避免觸及牽涉到的物件。 這麼做可能會建立一種*雙重處置*情況, 讓您的程式碼可以 (嚴重) 嘗試存取已進行垃圾收集的基礎 JAVA 物件。 這樣做會產生類似下列的例外狀況: 
+如果您已執行了[Java.Lang.Object.Dispose](xref:Java.Lang.Object.Dispose*)，請避免觸及牽涉到的物件。 這麼做可能會建立一種*雙重處置*情況, 讓您的程式碼可以 (嚴重) 嘗試存取已進行垃圾收集的基礎 JAVA 物件。 這樣做會產生類似下列的例外狀況: 
 
 ```shell
 System.ArgumentException: 'jobject' must not be IntPtr.Zero.
@@ -319,9 +319,9 @@ class BetterActivity : Activity {
 
 如果您的應用程式有一項「工作週期」, 在此過程中會進行相同的作業, 建議您在工作週期結束後手動執行次要集合。 範例的責任週期包括: 
 
--  單一遊戲框架的轉譯迴圈。
--  與指定應用程式對話方塊的整體互動 (開啟、填滿、關閉) 
--  重新整理/同步應用程式資料的一組網路要求。
+- 單一遊戲框架的轉譯迴圈。
+- 與指定應用程式對話方塊的整體互動 (開啟、填滿、關閉) 
+- 重新整理/同步應用程式資料的一組網路要求。
 
 
 
@@ -333,9 +333,9 @@ class BetterActivity : Activity {
 
 主要集合應僅以手動方式叫用 (如果有的話): 
 
--   在漫長的工作週期結束後, 如果長時間暫停, 使用者就不會有任何問題。 
+- 在漫長的工作週期結束後, 如果長時間暫停, 使用者就不會有任何問題。 
 
--   在覆寫的[OnLowMemory ()](xref:Android.App.Activity.OnLowMemory)方法內。 
+- 在覆寫的[OnLowMemory ()](xref:Android.App.Activity.OnLowMemory)方法內。 
 
 
 
@@ -351,16 +351,16 @@ class BetterActivity : Activity {
 
 `MONO_GC_PARAMS`環境變數是以逗號分隔的下列參數清單: 
 
--   `nursery-size` = *大小*:設定托兒所的大小。 大小是以位元組為單位指定, 而且必須是2的乘冪。 尾碼`k` `m`和可以分別用來指定千位、百萬位元和gb。`g` 托兒所是第一代 (共二個)。 較大的托兒所通常會加速程式, 但明顯會使用較多的記憶體。 預設的托兒所大小 512 kb。 
+- `nursery-size` = *大小*:設定托兒所的大小。 大小是以位元組為單位指定, 而且必須是2的乘冪。 尾碼`k` `m`和可以分別用來指定千位、百萬位元和gb。`g` 托兒所是第一代 (共二個)。 較大的托兒所通常會加速程式, 但明顯會使用較多的記憶體。 預設的托兒所大小 512 kb。 
 
--   `soft-heap-limit` = *大小*:應用程式的目標最大受控記憶體耗用量。 當記憶體使用量低於指定的值時, GC 就會針對執行時間 (較少的集合) 進行優化。 
+- `soft-heap-limit` = *大小*:應用程式的目標最大受控記憶體耗用量。 當記憶體使用量低於指定的值時, GC 就會針對執行時間 (較少的集合) 進行優化。 
     超過此限制, GC 已針對記憶體使用量優化 (更多集合)。 
 
--   `evacuation-threshold` = *閾值*:設定撤離臨界值 (以百分比表示)。 值必須是介於0到100之間的整數。 預設值為66。 如果集合的清除階段發現特定堆積區塊類型的佔用量小於此百分比, 則會在下一個主要集合中為該區塊類型執行複製集合, 藉此將佔用的空間還原至接近 100%。 值為0會關閉撤離。 
+- `evacuation-threshold` = *閾值*:設定撤離臨界值 (以百分比表示)。 值必須是介於0到100之間的整數。 預設值為66。 如果集合的清除階段發現特定堆積區塊類型的佔用量小於此百分比, 則會在下一個主要集合中為該區塊類型執行複製集合, 藉此將佔用的空間還原至接近 100%。 值為0會關閉撤離。 
 
--   `bridge-implementation` = *橋接器*執行:這會設定 GC Bridge 選項, 以協助解決 GC 效能問題。 有三個可能的值: [*舊*]、[*新增*]、[ *tarjan*]。
+- `bridge-implementation` = *橋接器*執行:這會設定 GC Bridge 選項, 以協助解決 GC 效能問題。 有三個可能的值: [*舊*]、[*新增*]、[ *tarjan*]。
 
--   `bridge-require-precise-merge`：Tarjan 橋接器包含優化, 在少數情況下, 可能會在第一次變成垃圾之後, 將物件收集到一個 GC。 包括這個選項會停用該優化, 使 Gc 更容易預測, 但可能較慢。
+- `bridge-require-precise-merge`：Tarjan 橋接器包含優化, 在少數情況下, 可能會在第一次變成垃圾之後, 將物件收集到一個 GC。 包括這個選項會停用該優化, 使 Gc 更容易預測, 但可能較慢。
 
 例如, 若要將 GC 設定為具有128mb 的堆積大小限制, 請使用的**組建動作** `AndroidEnvironment`將新檔案新增至您的專案, 其內容如下: 
 

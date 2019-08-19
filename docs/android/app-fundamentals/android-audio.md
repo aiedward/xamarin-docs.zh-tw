@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/28/2018
-ms.openlocfilehash: 256871fd225808af1fdebf14c4eb2b43e575e105
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 960b4eb058209547c65a3b438bed541c3ade257c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644344"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521262"
 ---
 # <a name="android-audio"></a>Android 音訊
 
@@ -25,13 +25,13 @@ _Android OS 為多媒體提供廣泛的支援, 同時包含音訊和影片。本
 
 Android 提供多媒體的廣泛支援。 本文會探討如何使用 Android 中的音訊, 並涵蓋下列主題
 
-1.  **使用 MediaPlayer 播放音訊**&ndash;使用`AudioTrack`內`MediaPlayer`建類別來播放音訊, 包括本機音訊檔案和使用類別的資料流程音訊檔案。
+1. **使用 MediaPlayer 播放音訊**&ndash;使用`AudioTrack`內`MediaPlayer`建類別來播放音訊, 包括本機音訊檔案和使用類別的資料流程音訊檔案。
 
-2.  **錄製音訊**&ndash;使用內`MediaRecorder`建類別錄製音訊。
+2. **錄製音訊**&ndash;使用內`MediaRecorder`建類別錄製音訊。
 
-3.  使用**音訊通知**&ndash;使用音訊通知來建立運作正常的應用程式, 藉由暫停或取消其音訊輸出來正確回應事件 (例如來電)。
+3. 使用**音訊通知**&ndash;使用音訊通知來建立運作正常的應用程式, 藉由暫停或取消其音訊輸出來正確回應事件 (例如來電)。
 
-4.  使用**低層級的音訊**藉由直接寫入`AudioTrack`記憶體緩衝區, 使用類別來播放音訊。 &ndash; 使用`AudioRecord`類別錄製音訊, 並直接從記憶體緩衝區讀取。
+4. 使用**低層級的音訊**藉由直接寫入`AudioTrack`記憶體緩衝區, 使用類別來播放音訊。 &ndash; 使用`AudioRecord`類別錄製音訊, 並直接從記憶體緩衝區讀取。
 
 
 ## <a name="requirements"></a>需求
@@ -228,15 +228,15 @@ recorder.Release();
 
 要求裝置的音訊資源所需執行的步驟如下:
 
-1.  取得`AudioManager`系統服務的控制碼。
+1. 取得`AudioManager`系統服務的控制碼。
 
-2.  建立回呼類別的實例。
+2. 建立回呼類別的實例。
 
-3.  藉由呼叫`RequestAudioFocus` `AudioManager`上的方法, 來要求裝置的音訊資源。 這些參數是回呼物件、資料流程類型 (音樂、語音通話、響鈴等) 和所要求的存取權類型 (例如, 可以短暫要求音訊資源, 或不限時間)。
+3. 藉由呼叫`RequestAudioFocus` `AudioManager`上的方法, 來要求裝置的音訊資源。 這些參數是回呼物件、資料流程類型 (音樂、語音通話、響鈴等) 和所要求的存取權類型 (例如, 可以短暫要求音訊資源, 或不限時間)。
 
-4.  如果已授與要求, `playMusic`則會立即叫用方法, 而音訊會開始播放。
+4. 如果已授與要求, `playMusic`則會立即叫用方法, 而音訊會開始播放。
 
-5.  如果要求遭到拒絕, 則不會採取進一步的動作。 在此情況下, 只有在稍後授與要求時, 才會播放音訊。
+5. 如果要求遭到拒絕, 則不會採取進一步的動作。 在此情況下, 只有在稍後授與要求時, 才會播放音訊。
 
 
 下列程式碼範例顯示這些步驟:
@@ -267,11 +267,11 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 低層級的音訊 Api 可讓您更有效地控制音訊播放和錄製, 因為它們會直接與記憶體緩衝區互動, 而不是使用檔案 Uri。 在某些情況下, 最好採用此方法。 這類案例包括:
 
-1.  從加密的音訊檔案播放時。
+1. 從加密的音訊檔案播放時。
 
-2.  播放連續的短剪輯時。
+2. 播放連續的短剪輯時。
 
-3.  音訊串流。
+3. 音訊串流。
 
 
 ### <a name="audiotrack-class"></a>AudioTrack 類別
@@ -283,17 +283,17 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 若要播放音訊, 必須具現`AudioTrack`化的新實例。 傳入此函式的自[constructor](xref:Android.Media.AudioTrack)變數清單會指定如何播放包含在緩衝區中的音訊範例。 引數為:
 
-1.  串流類型&ndash;語音、鈴聲、音樂、系統或警示。
+1. 串流類型&ndash;語音、鈴聲、音樂、系統或警示。
 
-2.  以&ndash; Hz 表示的取樣率頻率。
+2. 以&ndash; Hz 表示的取樣率頻率。
 
-3.  頻道設定&ndash; Mono 或身歷聲。
+3. 頻道設定&ndash; Mono 或身歷聲。
 
-4.  音訊格式&ndash; 8 位或16位編碼。
+4. 音訊格式&ndash; 8 位或16位編碼。
 
-5.  緩衝區大小&ndash; (以位元組為單位)。
+5. 緩衝區大小&ndash; (以位元組為單位)。
 
-6.  緩衝區模式&ndash;串流或靜態。
+6. 緩衝區模式&ndash;串流或靜態。
 
 
 在結構之後, 會叫用`AudioTrack`的 [Play](xref:Android.Media.AudioTrack.Play) 方法來設定它, 以開始播放。 將音訊緩衝區寫入至`AudioTrack`會開始播放:
@@ -354,17 +354,17 @@ audioTrack.Release();
 
 第一個步驟是建立新的[AudioRecord](xref:Android.Media.AudioRecord)物件。 傳入此函式的自[constructor](xref:Android.Media.AudioRecord)變數清單會提供記錄所需的所有資訊。 不同于`AudioTrack`中的引數大多是列舉, 中`AudioRecord`的對等引數是整數。 它們包括：
 
-1.  硬體音訊輸入來源, 例如麥克風。
+1. 硬體音訊輸入來源, 例如麥克風。
 
-2.  串流類型&ndash;語音、鈴聲、音樂、系統或警示。
+2. 串流類型&ndash;語音、鈴聲、音樂、系統或警示。
 
-3.  以&ndash; Hz 表示的取樣率頻率。
+3. 以&ndash; Hz 表示的取樣率頻率。
 
-4.  頻道設定&ndash; Mono 或身歷聲。
+4. 頻道設定&ndash; Mono 或身歷聲。
 
-5.  音訊格式&ndash; 8 位或16位編碼。
+5. 音訊格式&ndash; 8 位或16位編碼。
 
-6.  緩衝區大小 (以位元組為單位)
+6. 緩衝區大小 (以位元組為單位)
 
 
 在`AudioRecord`結構化之後, 就會叫用其[StartRecording](xref:Android.Media.AudioRecord.StartRecording)方法。 現在已準備好開始錄製。 會`AudioRecord`持續讀取音訊緩衝區以進行輸入, 並將此輸入寫出至音訊檔案。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/28/2019
-ms.openlocfilehash: 329f7dc9cc43582f630a4895fba452a8496bae9a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: c18c4e63831a03cbe28accfe10f4c7da31130803
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656178"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529302"
 ---
 # <a name="fonts-in-xamarinforms"></a>在 Xamarin.Forms 中的字型
 
@@ -58,9 +58,9 @@ label.FontSize = 24;
 
 這類設定字型的樣式**粗體**並*斜體*上，可以設定`FontAttributes`屬性。 目前支援下列值：
 
--  **無**
--  **粗體**
--  **斜體**
+- **無**
+- **粗體**
+- **斜體**
 
 `FontAttribute`列舉型別可用，如下所示 (您可以指定單一屬性或`OR`接合):
 
@@ -100,7 +100,7 @@ Xamarin.Forms 會控制所有具有該顯示文字`FontSize`可以在 XAML 中�
 <Label Text="Use size 72" FontSize="72" />
 ```
 
-[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) 也可在 XAML 中呈現每個平台上不同的字型。 下列範例會在 iOS 上使用自訂的字型 (<span style="font-family:MarkerFelt-Thin">MarkerFelt 精簡</span>) 和其他平台上，指定只有大小/屬性：
+[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#providing-platform-specific-values) 也可在 XAML 中呈現每個平台上不同的字型。 下列範例使用 iOS 上的自訂字型 (MarkerFelt-瘦), 並僅指定其他平臺上的大小/屬性:
 
 ```xaml
 <Label Text="Hello Forms with XAML">
@@ -183,7 +183,7 @@ new Label
 
 ### <a name="windows"></a>Windows
 
-適用於 Windows 平台 Xamarin.Forms 可以參考自訂字型已加入至專案遵循特定的命名標準。 首先將字型檔案，以新增 **/Assets 字型美金**資料夾中的應用程式專案和組<span class="UIItem">建置動作： 內容</span>。 然後使用完整路徑和字型的檔案名稱，後面接著雜湊 （#） 和<span class="UIItem">字型名稱</span>，如下列程式碼片段所示：
+適用於 Windows 平台 Xamarin.Forms 可以參考自訂字型已加入至專案遵循特定的命名標準。 首先將字型檔案，以新增 **/Assets 字型美金**資料夾中的應用程式專案和組**建置動作： 內容**。 然後使用完整路徑和字型的檔案名稱，後面接著雜湊 （#） 和**字型名稱**，如下列程式碼片段所示：
 
 ```csharp
 new Label

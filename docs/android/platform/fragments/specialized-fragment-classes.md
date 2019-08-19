@@ -6,22 +6,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/08/2018
-ms.openlocfilehash: 67fb12fd66d4d218f6e8bd40e21499e6c07e9e15
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: e49f12dd656d5e07feccd34e231a00124d81048a
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510593"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524282"
 ---
 # <a name="specialized-fragment-classes"></a>特製的片段類別
 
 片段 API 會提供其他子類別, 以封裝在應用程式中找到的一些較常見功能。 這些子類別包括:
 
--   **ListFragment**&ndash;這個片段是用來顯示系結至資料來源的專案清單, 例如陣列或游標。
+- **ListFragment**&ndash;這個片段是用來顯示系結至資料來源的專案清單, 例如陣列或游標。
 
--   **DialogFragment**&ndash;此片段是用來做為對話的包裝函式。 片段會在其活動上方顯示對話方塊。
+- **DialogFragment**&ndash;此片段是用來做為對話的包裝函式。 片段會在其活動上方顯示對話方塊。
 
--   **PreferenceFragment**&ndash;此片段是用來將喜好設定物件顯示為清單。
+- **PreferenceFragment**&ndash;此片段是用來將喜好設定物件顯示為清單。
 
 
 
@@ -91,9 +91,9 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 A `DialogFragment`可確保片段和對話方塊之間的狀態保持一致。 對話物件的所有互動和控制都應該透過`DialogFragment` API 進行, 而不是對 dialog 物件進行直接呼叫。 此`DialogFragment` API 會為每個實例`Show()`提供一個用來顯示片段的方法。 有兩種方式可以清除片段:
 
--  在實例上呼叫`DialogFragment.Dismiss()` `DialogFragment` 。 
+- 在實例上呼叫`DialogFragment.Dismiss()` `DialogFragment` 。 
 
--  顯示另`DialogFragment`一個。
+- 顯示另`DialogFragment`一個。
 
 若要建立`DialogFragment`, 類別會繼承自`Android.App.DialogFragment,` , 然後覆寫下列兩個方法的其中一個:
 
@@ -191,7 +191,7 @@ public class AlertDialogFragment : DialogFragment
 
 ## <a name="preferencefragment"></a>PreferenceFragment
 
-為了協助管理喜好設定, 片段 API 會提供`PreferenceFragment`子類別。 `PreferenceFragment`與 [PreferenceActivity](xref:Android.Preferences.PreferenceActivity)&ndash;類似 , 它會在片段中向使用者顯示喜好設定的階層。 當使用者與喜好設定互動時, 系統會自動將其儲存至[SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)。
+為了協助管理喜好設定, 片段 API 會提供`PreferenceFragment`子類別。 `PreferenceFragment`與 [PreferenceActivity](xref:Android.Preferences.PreferenceActivity) 類似&ndash;，它會在片段中向使用者顯示喜好設定的階層。 當使用者與喜好設定互動時, 系統會自動將其儲存至[SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)。
 在 Android 3.0 或更高版本的應用`PreferenceFragment`程式中, 使用來處理應用程式中的喜好設定。 下圖顯示的範例`PreferenceFragment`:
 
 [![具有內嵌、對話方塊和啟動喜好設定的範例 PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
@@ -271,7 +271,7 @@ public class PrefFragment : PreferenceFragment
 
 ### <a name="querying-activities-to-create-a-preference-fragment"></a>查詢活動以建立喜好設定片段
 
-建立的`PreferenceFragment`另一個技術包含查詢活動。 每個活動都可以使用將指向 XML 資源檔的[元\_資料索引鍵\_喜好](xref:Android.Preferences.PreferenceManager.MetadataKeyPreferences)設定屬性。 在 Xamarin 中, 這是藉由使用`MetaDataAttribute`裝飾活動, 然後指定要使用的資源檔來完成。 `PreferenceFragment`類別會提供方法 [AddPreferenceFromIntent](xref:Android.Preferences.PreferenceFragment.AddPreferencesFromIntent*), 可用來查詢活動以尋找此 XML 資源, 並為其擴充喜好設定階層。
+建立的`PreferenceFragment`另一個技術包含查詢活動。 每個活動都可以使用將指向 XML 資源檔的[元\_資料索引鍵\_喜好](xref:Android.Preferences.PreferenceManager.MetadataKeyPreferences)設定屬性。 在 Xamarin 中, 這是藉由使用`MetaDataAttribute`裝飾活動, 然後指定要使用的資源檔來完成。 類別會提供方法 [AddPreferenceFromIntent](xref:Android.Preferences.PreferenceFragment.AddPreferencesFromIntent*)，可用來查詢活動以尋找此 XML 資源, 並為其擴充喜好設定階層。`PreferenceFragment`
 
 下列程式碼片段中提供此程式的範例, 其使用`AddPreferencesFromIntent`來`PreferenceFragment`建立:
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 5d2fec537f10ad3ef5300275c9851d4f57bc961d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 4d9bf7b7a43c7c258bc60e9dfea1626e5c304b03
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645160"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522873"
 ---
 # <a name="adding-a-second-toolbar"></a>新增第二個工具列
 
@@ -86,13 +86,13 @@ android:background="?android:attr/colorAccent
 
 若要將功能表項目加入至`Toolbar`次要資料庫: 
 
-1.  將功能表圖示新增至`mipmap-`應用程式專案的資料夾 (如有需要)。
+1. 將功能表圖示新增至`mipmap-`應用程式專案的資料夾 (如有需要)。
 
-2.  將其他功能表資源檔新增至**資源/功能表**, 以定義功能表項目的內容。 
+2. 將其他功能表資源檔新增至**資源/功能表**, 以定義功能表項目的內容。 
 
-3.  在活動的`OnCreate`方法中, `Toolbar`尋找 (藉由`Toolbar`呼叫`FindViewById`) 並擴大的功能表。
+3. 在活動的`OnCreate`方法中, `Toolbar`尋找 (藉由`Toolbar`呼叫`FindViewById`) 並擴大的功能表。
 
-4.  在中`OnCreate` , 為新的功能表項目執行 click 處理常式。 
+4. 在中`OnCreate` , 為新的功能表項目執行 click 處理常式。 
 
 下列各節將詳細說明此程式:[**剪**下]、[**複製**] 和 [**貼**上] `Toolbar`功能表項目會加入至底部。 
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 209d70c2e158261ca671e6a889e979de39362d53
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 38d58350cf067a2d5f7813250590cc0715b6c9ea
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647978"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527379"
 ---
 # <a name="introduction-to-3d-touch-in-xamarinios"></a>Xamarin 中的 3D Touch 簡介
 
@@ -274,11 +274,11 @@ public override void ViewDidLoad ()
   - `UIApplicationShortcutIconTypeTime`
   - `UIApplicationShortcutIconTypeUpdate`
 
-        ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType imagery")
+  ![](3d-touch-images/uiapplicationshortcuticontype.png "UIApplicationShortcutIconType 影像")
 
-* `UIApplicationShortcutItemSubtitle`-定義專案的子標題。
-* `UIApplicationShortcutItemTitle`-定義專案的標題。
-* `UIApplicationShortcutItemType`-這是我們將用來識別應用程式中專案的字串值。 如需詳細資訊，請參閱下一節。
+- `UIApplicationShortcutItemSubtitle`-定義專案的子標題。
+- `UIApplicationShortcutItemTitle`-定義專案的標題。
+- `UIApplicationShortcutItemType`-這是我們將用來識別應用程式中專案的字串值。 如需詳細資訊，請參閱下一節。
 
 > [!IMPORTANT]
 > 在檔案中`Info.plist`設定的快速動作快捷方式專案無法`Application.ShortcutItems`使用屬性來存取。 它們只會傳遞至`HandleShortcutItem`事件處理常式。

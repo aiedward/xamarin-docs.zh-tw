@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/16/2018
-ms.openlocfilehash: 19998f685955ce118ffe37e7624fd43b082ab994
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 3ff6bc9c603360232b22a36dadb42b6caf31cada
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644422"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522390"
 ---
 # <a name="local-notifications-on-android"></a>Android 上的本機通知
 
@@ -30,9 +30,9 @@ Android 提供兩個系統控制的區域, 以向使用者顯示通知圖示和�
 
 Android 通知會使用兩種類型的版面配置:
 
--   ***基本版面***配置&ndash;精簡且固定的簡報格式。
+- ***基本版面***配置&ndash;精簡且固定的簡報格式。
 
--   ***展開的版面***配置&ndash;簡報格式, 可展開為較大的大小, 以顯示詳細資訊。
+- ***展開的版面***配置&ndash;簡報格式, 可展開為較大的大小, 以顯示詳細資訊。
 
 下列各節將說明這些版面配置類型 (以及如何建立它們)。
 
@@ -43,13 +43,13 @@ Android 通知會使用兩種類型的版面配置:
 
 所有 Android 通知都是以基本版面配置格式為基礎, 其中至少包含下列元素:
 
-1.  表示原始應用程式的*通知圖示*, 如果應用程式支援不同類型的通知, 則為通知類型。
+1. 表示原始應用程式的*通知圖示*, 如果應用程式支援不同類型的通知, 則為通知類型。
 
-2.  通知*標題*, 或寄件者的名稱 (如果通知是個人訊息)。
+2. 通知*標題*, 或寄件者的名稱 (如果通知是個人訊息)。
 
-3.  通知訊息。
+3. 通知訊息。
 
-4.  *時間戳記*。
+4. *時間戳記*。
 
 如下圖所示, 會顯示這些元素:
 
@@ -75,11 +75,11 @@ Android 5.0 引進了稱為「*列印頭*」的高優先順序通知簡報格式
 
 Android 包含通知中繼資料的支援, 可讓您以智慧方式排序和顯示通知。 通知中繼資料也會控制通知在鎖定畫面上的呈現方式, 以及如何以標題的格式顯示。 應用程式可以設定下列類型的通知中繼資料:
 
--   **優先順序**&ndash;優先順序層級決定通知的呈現方式和時機。 例如, 在 Android 5.0 中, 高優先順序的通知會顯示為「標題通知」。
+- **優先順序**&ndash;優先順序層級決定通知的呈現方式和時機。 例如, 在 Android 5.0 中, 高優先順序的通知會顯示為「標題通知」。
 
--   **可見度**&ndash;指定當通知出現在鎖定畫面上時, 要顯示多少通知內容。
+- **可見度**&ndash;指定當通知出現在鎖定畫面上時, 要顯示多少通知內容。
 
--   **類別**通知系統如何在各種情況下處理通知, 例如裝置處於「*請勿打擾*」模式時。 &ndash;
+- **類別**通知系統如何在各種情況下處理通知, 例如裝置處於「*請勿打擾*」模式時。 &ndash;
 
 > [!NOTE]
 > **可視性** 並 **分類** 在 Android 5.0 和無法使用在舊版的 Android 中推出。 從 Android 8.0 開始,[通知通道](#notif-chan)會用來控制向使用者呈現通知的方式。
@@ -97,11 +97,11 @@ Android 包含通知中繼資料的支援, 可讓您以智慧方式排序和顯�
 
 Android 針對單一事件通知支援三種擴充的版面配置樣式:
 
--   ***Big Text***&ndash;在 [已合約] 模式中, 會顯示訊息第一行的摘錄, 後面接著兩個句點。 在展開模式中, 會顯示整個訊息 (如上述範例所示)。
+- ***Big Text***&ndash;在 [已合約] 模式中, 會顯示訊息第一行的摘錄, 後面接著兩個句點。 在展開模式中, 會顯示整個訊息 (如上述範例所示)。
 
--   ***收件***匣&ndash;在 [已合約] 模式中, 會顯示新的訊息數目。 在 [擴充] 模式中, 會顯示第一封電子郵件訊息, 或收件匣中的郵寄清單。
+- ***收件***匣&ndash;在 [已合約] 模式中, 會顯示新的訊息數目。 在 [擴充] 模式中, 會顯示第一封電子郵件訊息, 或收件匣中的郵寄清單。
 
--   ***影像***&ndash;在 [已合約] 模式中, 只會顯示郵件內文。 在展開模式中, 會顯示文字和影像。
+- ***影像***&ndash;在 [已合約] 模式中, 只會顯示郵件內文。 在展開模式中, 會顯示文字和影像。
 
 [超出基本通知](#beyond-the-basic-notification)(本文稍後) 說明如何建立*大文字*、*收件*匣和*影像*通知。
 
@@ -121,15 +121,15 @@ Android 針對單一事件通知支援三種擴充的版面配置樣式:
 
 在此畫面中, 使用者可以執行下列動作來修改**下載**通知通道的行為:
 
--   將 [重要性] 層級設為 [**緊急**]、[**高**]、[**中**] 或 [**低**], 以設定音效和視覺中斷的層級。
+- 將 [重要性] 層級設為 [**緊急**]、[**高**]、[**中**] 或 [**低**], 以設定音效和視覺中斷的層級。
 
--   開啟或關閉通知點。
+- 開啟或關閉通知點。
 
--   開啟或關閉閃爍的燈。
+- 開啟或關閉閃爍的燈。
 
--   在鎖定畫面上顯示或隱藏通知。
+- 在鎖定畫面上顯示或隱藏通知。
 
--   覆寫 [**請勿打擾**] 設定。
+- 覆寫 [**請勿打擾**] 設定。
 
 **一般通知**通道具有類似的設定:
 
@@ -144,19 +144,19 @@ Android 針對單一事件通知支援三種擴充的版面配置樣式:
 
 `NotificationCompat.Builder`提供方法來設定通知中的各種選項, 例如:
 
--   內容, 包括標題、郵件內文和通知圖示。
+- 內容, 包括標題、郵件內文和通知圖示。
 
--   通知的樣式, 例如「*大文字*」、「*收件*匣」或「*影像*樣式」。
+- 通知的樣式, 例如「*大文字*」、「*收件*匣」或「*影像*樣式」。
 
--   通知的優先順序: [最低]、[低]、[預設]、[高] 或 [最大值]。 在 Android 8.0 和更新版本上, 優先順序是透過[_通知通道_](#notification-channels)來設定。
+- 通知的優先順序: [最低]、[低]、[預設]、[高] 或 [最大值]。 在 Android 8.0 和更新版本上, 優先順序是透過[_通知通道_](#notification-channels)來設定。
 
--   鎖定畫面上的通知可見度: [公用]、[私人] 或 [秘密]。
+- 鎖定畫面上的通知可見度: [公用]、[私人] 或 [秘密]。
 
--   分類中繼資料, 可協助 Android 分類和篩選通知。
+- 分類中繼資料, 可協助 Android 分類和篩選通知。
 
--   選擇性的意圖, 表示在點擊通知時要啟動的活動。
+- 選擇性的意圖, 表示在點擊通知時要啟動的活動。
 
--   通知將發佈于的通知通道識別碼 (Android 8.0 和更新版本)。
+- 通知將發佈于的通知通道識別碼 (Android 8.0 和更新版本)。
 
 在建立器中設定這些選項之後, 您會產生包含設定的通知物件。 若要發佈通知, 請將此通知物件傳遞給*通知管理員*。 Android 提供[NotificationManager](xref:Android.App.NotificationManager)類別, 負責發佈通知並向使用者顯示。 您可以從任何內容 (例如活動或服務) 取得此類別的參考。
 
@@ -200,21 +200,21 @@ void CreateNotificationChannel()
 
 若要在 Android 中產生通知, 請遵循下列步驟:
 
-1.  具現化物件。 `NotificationCompat.Builder`
+1. 具現化物件。 `NotificationCompat.Builder`
 
-2.  呼叫物件上的`NotificationCompat.Builder`各種方法來設定通知選項。
+2. 呼叫物件上的`NotificationCompat.Builder`各種方法來設定通知選項。
 
-3.  呼叫`NotificationCompat.Builder`物件的[Build](xref:Android.App.Notification.Builder.Build)方法, 以具現化通知物件。
+3. 呼叫`NotificationCompat.Builder`物件的[Build](xref:Android.App.Notification.Builder.Build)方法, 以具現化通知物件。
 
-4.  呼叫通知管理員的 [[通知](xref:Android.App.NotificationManager.Notify*)] 方法來發佈通知。
+4. 呼叫通知管理員的 [[通知](xref:Android.App.NotificationManager.Notify*)] 方法來發佈通知。
 
 針對每個通知, 您至少必須提供下列資訊:
 
--   小型圖示 (24x24 的 dp 大小)
+- 小型圖示 (24x24 的 dp 大小)
 
--   簡短標題
+- 簡短標題
 
--   通知的文字
+- 通知的文字
 
 下列程式碼範例說明如何使用`NotificationCompat.Builder`來產生基本通知。 請注意`NotificationCompat.Builder` , 方法支援[方法連結](https://en.wikipedia.org/wiki/Method_chaining); 也就是說, 每個方法會傳回 builder 物件, 因此您可以使用最後一個方法呼叫的結果來叫用下一個方法呼叫:
 
@@ -321,11 +321,11 @@ notificationManager.Notify (notificationId, notification);
 
 通知會保持可見, 直到發生三件事之一為止:
 
--   使用者關閉通知 (或點擊 [*全部清除*])。
+- 使用者關閉通知 (或點擊 [*全部清除*])。
 
--   應用程式會呼叫`NotificationManager.Cancel`, 傳入通知發行時所指派的唯一通知識別碼。
+- 應用程式會呼叫`NotificationManager.Cancel`, 傳入通知發行時所指派的唯一通知識別碼。
 
--   應用程式會`NotificationManager.CancelAll`呼叫。
+- 應用程式會`NotificationManager.CancelAll`呼叫。
 
 如需有關更新 Android 通知的詳細資訊, 請參閱[修改通知](https://developer.android.com/training/notify-user/managing.html#Updating)。
 
@@ -604,22 +604,22 @@ builder.SetStyle (inboxStyle);
 
 在 Android 7.1 和更低版本上執行的應用程式, 需要直接在通知本身設定優先順序。 通知的優先順序設定會決定發佈通知時的兩個結果:
 
--   通知會出現在與其他通知相關的位置。
+- 通知會出現在與其他通知相關的位置。
     例如, 高優先順序的通知會顯示在 [通知] 選單中較低優先順序的通知上方, 不論每個通知發佈的時間為何。
 
--   通知是否以標題通知格式顯示 (Android 5.0 和更新版本)。 只有 [*高*] 和 [*最高*優先順序] 通知會顯示為 [標題通知]。
+- 通知是否以標題通知格式顯示 (Android 5.0 和更新版本)。 只有 [*高*] 和 [*最高*優先順序] 通知會顯示為 [標題通知]。
 
 Xamarin 會定義下列設定通知優先順序的列舉:
 
--   `NotificationPriority.Max`&ndash;將使用者警示到緊急或重大狀況 (例如, 來電、輪流指示或緊急警示)。 在 Android 5.0 和更新版本的裝置上, 最高優先順序的通知會以標題向上的格式顯示。
+- `NotificationPriority.Max`&ndash;將使用者警示到緊急或重大狀況 (例如, 來電、輪流指示或緊急警示)。 在 Android 5.0 和更新版本的裝置上, 最高優先順序的通知會以標題向上的格式顯示。
 
--   `NotificationPriority.High`&ndash;通知使用者重要的事件 (例如重要的電子郵件或即時聊天訊息的抵達)。 在 Android 5.0 和更新版本的裝置上, 高優先順序的通知會以標題向上的格式顯示。
+- `NotificationPriority.High`&ndash;通知使用者重要的事件 (例如重要的電子郵件或即時聊天訊息的抵達)。 在 Android 5.0 和更新版本的裝置上, 高優先順序的通知會以標題向上的格式顯示。
 
--   `NotificationPriority.Default`&ndash;通知使用者有中等重要性層級的條件。
+- `NotificationPriority.Default`&ndash;通知使用者有中等重要性層級的條件。
 
--   `NotificationPriority.Low`&ndash;針對需要通知使用者的非緊急資訊 (例如, 軟體更新提醒或社交網路更新)。
+- `NotificationPriority.Low`&ndash;針對需要通知使用者的非緊急資訊 (例如, 軟體更新提醒或社交網路更新)。
 
--   `NotificationPriority.Min`&ndash;針對使用者只會在查看通知時所注意的背景資訊 (例如, 位置或天氣資訊)。
+- `NotificationPriority.Min`&ndash;針對使用者只會在查看通知時所注意的背景資訊 (例如, 位置或天氣資訊)。
 
 若要設定通知的優先順序, 請呼叫`NotificationCompat.Builder`物件的[SetPriority](xref:Android.App.Notification.Builder.SetPriority*)方法, 並傳入優先權層級。 例如：
 
@@ -649,11 +649,11 @@ builder.SetPriority (NotificationPriority.High);
 從 Android 5.0 開始,*可見度*設定可用來控制要在安全鎖定畫面上顯示多少通知內容。
 Xamarin 會定義下列設定通知可見度的列舉:
 
--   `NotificationVisibility.Public`&ndash;通知的完整內容會顯示在安全鎖定畫面上。
+- `NotificationVisibility.Public`&ndash;通知的完整內容會顯示在安全鎖定畫面上。
 
--   `NotificationVisibility.Private`&ndash;只有基本資訊才會顯示在安全鎖定畫面上 (例如通知圖示和張貼的應用程式名稱), 但會隱藏通知詳細資料的其餘部分。 所有通知都會預設`NotificationVisibility.Private`為。
+- `NotificationVisibility.Private`&ndash;只有基本資訊才會顯示在安全鎖定畫面上 (例如通知圖示和張貼的應用程式名稱), 但會隱藏通知詳細資料的其餘部分。 所有通知都會預設`NotificationVisibility.Private`為。
 
--   `NotificationVisibility.Secret`&ndash;安全鎖定畫面上不會顯示任何內容, 甚至是通知圖示。 只有在使用者解除鎖定裝置之後, 才能使用通知內容。
+- `NotificationVisibility.Secret`&ndash;安全鎖定畫面上不會顯示任何內容, 甚至是通知圖示。 只有在使用者解除鎖定裝置之後, 才能使用通知內容。
 
 為了設定通知的可見度, 應用程式會呼叫`SetVisibility` `NotificationCompat.Builder`物件的方法, 並傳入可見度設定。 例如, 此呼叫`SetVisibility`會發出通知: `Private`
 
@@ -671,33 +671,33 @@ builder.SetVisibility (NotificationVisibility.Private);
 
 從 Android 5.0 開始, 預先定義的類別可用於排名和篩選通知。 Xamarin 會針對這些類別提供下列列舉:
 
--   `Notification.CategoryCall`&ndash;撥打電話。
+- `Notification.CategoryCall`&ndash;撥打電話。
 
--   `Notification.CategoryMessage`&ndash;傳入的文字訊息。
+- `Notification.CategoryMessage`&ndash;傳入的文字訊息。
 
--   `Notification.CategoryAlarm`&ndash;警示條件或計時器到期日。
+- `Notification.CategoryAlarm`&ndash;警示條件或計時器到期日。
 
--   `Notification.CategoryEmail`&ndash;傳入的電子郵件訊息。
+- `Notification.CategoryEmail`&ndash;傳入的電子郵件訊息。
 
--   `Notification.CategoryEvent`&ndash;行事曆事件。
+- `Notification.CategoryEvent`&ndash;行事曆事件。
 
--   `Notification.CategoryPromo`&ndash;促銷訊息或廣告。
+- `Notification.CategoryPromo`&ndash;促銷訊息或廣告。
 
--   `Notification.CategoryProgress`&ndash;背景作業的進度。
+- `Notification.CategoryProgress`&ndash;背景作業的進度。
 
--   `Notification.CategorySocial`&ndash;社交網路更新。
+- `Notification.CategorySocial`&ndash;社交網路更新。
 
--   `Notification.CategoryError`&ndash;背景作業或驗證進程失敗。
+- `Notification.CategoryError`&ndash;背景作業或驗證進程失敗。
 
--   `Notification.CategoryTransport`&ndash;媒體播放更新。
+- `Notification.CategoryTransport`&ndash;媒體播放更新。
 
--   `Notification.CategorySystem`&ndash;保留供系統使用 (系統或裝置狀態)。
+- `Notification.CategorySystem`&ndash;保留供系統使用 (系統或裝置狀態)。
 
--   `Notification.CategoryService`&ndash;表示背景服務正在執行。
+- `Notification.CategoryService`&ndash;表示背景服務正在執行。
 
--   `Notification.CategoryRecommendation`&ndash;與目前正在執行之應用程式相關的建議訊息。
+- `Notification.CategoryRecommendation`&ndash;與目前正在執行之應用程式相關的建議訊息。
 
--   `Notification.CategoryStatus`&ndash;裝置的相關資訊。
+- `Notification.CategoryStatus`&ndash;裝置的相關資訊。
 
 當通知已排序時, 通知的優先順序會優先于其類別設定。 例如, 高優先順序的通知會顯示為標題, 即使它屬於`Promo`類別目錄也一樣。 若要設定通知的類別, 您可以呼叫`SetCategory` `NotificationCompat.Builder`物件的方法, 並傳入分類設定。 例如：
 
