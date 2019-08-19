@@ -1,104 +1,102 @@
 ---
 title: 圖形和動畫
-description: Android 會提供一個非常豐富且多樣化的架構，以支援 2D 圖形和動畫。 本主題介紹這些架構，並討論如何建立自訂圖形和動畫用於 Xamarin.Android 應用程式中。
+description: Android 提供非常豐富且多樣化的架構, 可支援2D 圖形和動畫。 本主題將介紹這些架構, 並討論如何建立自訂的圖形和動畫, 以用於 Xamarin. Android 應用程式。
 ms.prod: xamarin
 ms.assetid: 80086318-6FE4-4711-9A71-5C8F8C28C754
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 7f4f7fd3af1e90307a84037f01ddf8e52b1ee030
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
+ms.openlocfilehash: 7f21964fff0ac37fd87b8dcc6321e47c42c78a49
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61020015"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644328"
 ---
-# <a name="graphics-and-animation"></a>圖形和動畫
+# <a name="android-graphics-and-animation"></a>Android 圖形和動畫
 
-_Android 會提供一個非常豐富且多樣化的架構，以支援 2D 圖形和動畫。本主題介紹這些架構，並討論如何建立自訂圖形和動畫用於 Xamarin.Android 應用程式中。_
-
+_Android 提供非常豐富且多樣化的架構, 可支援2D 圖形和動畫。本主題將介紹這些架構, 並討論如何建立自訂的圖形和動畫, 以用於 Xamarin. Android 應用程式。_
 
 ## <a name="overview"></a>總覽
 
-雖然傳統的有限電源的裝置上執行，最高的評等行動裝置應用程式通常具有複雜使用者體驗 (UX)，完整的高品質的圖形和提供直覺式、 回應、 動態的風格的動畫。 因為行動裝置應用程式取得更多，而且更複雜，使用者已開始從應用程式發生越來越多的情況。
+儘管在傳統上有電力限制的裝置上執行, 最高等級的行動應用程式通常會有精密的使用者體驗 (UX), 並以高品質的圖形和動畫 (提供直覺且快速的動態風格) 來完成。 隨著行動應用程式變得更複雜, 使用者也開始期待應用程式的越來越多。
 
-幸運的是，現代的行動平台會有非常強大的架構，用於建立複雜的動畫和自訂圖形，同時保留容易使用。 這可讓開發人員將豐富的互動，事半功倍。
+幸運的是, 現代化的行動平臺具有非常強大的架構, 可建立精密的動畫和自訂圖形, 同時保有方便使用。 這可讓開發人員輕鬆地加入豐富的互動。
 
-在 Android 中的 UI API 架構大致上可以分成兩個類別：圖形和動畫。
+Android 中的 UI API 架構大致可以分成兩個類別:圖形和動畫。
 
-圖形會進一步分成不同的方法，以執行 2D 和 3D 圖形。 3D 圖形可透過數個內建架構，例如 OpenGL ES （行動裝置特定版本的 OpenGL），以及協力廠商架構，例如 MonoGame （跨平台工具組與 XNA 工具組相容）。 雖然這篇文章的範圍內，3D 圖形不是，我們將檢視的內建的 2D 繪圖技術。
+圖形會進一步分割成不同的方法來執行2D 和3D 圖形。 3D 圖形可透過多個內建的架構 (例如 OpenGL ES) 和協力廠商架構 (例如, MonoGame (與同型工具組相容的跨平臺工具組) 來取得。 雖然3D 圖形不在本文的討論範圍內, 但我們將會探討內建的2D 繪圖技術。
 
-Android 提供兩個不同 API，以建立 2D 圖形。 其中一個是高層級的宣告式方法和其他程式設計的低階 API:
+Android 提供兩個不同的 API 來建立2D 圖形。 其中一個是高階宣告式方法, 另一個是程式設計低層級 API:
 
--   **可繪製資源**&ndash;這些可用來建立自訂圖形 （通常） 或以程式設計方式內嵌在 XML 檔案中的繪製指令。 可繪製資源通常被定義為包含指示或動作來轉譯 2D 圖形的 android 版的 XML 檔案。 
+-   **繪製資源**&ndash;這些是用來以程式設計方式建立自訂圖形, 或藉由在 XML 檔案中內嵌繪圖指令來建立 (更常見)。 可繪製的資源通常會定義為 XML 檔案, 其中包含 Android 呈現2D 圖形的指示或動作。 
 
--   **畫布**&ndash;這是牽涉到直接在基礎的點陣圖上繪製的最低層級 API。 它提供非常精確控制所顯示的內容。 
+-   **畫布**&ndash;這是低層級的 API, 牽涉到直接在基礎點陣圖上繪製。 它可以對顯示的內容提供非常細微的控制。 
 
-除了這些 2D 圖形技術，Android 也會提供數種建立動畫的不同方式：
+除了這些2D 圖形技術, Android 也提供數種不同的方式來建立動畫:
 
--   **可繪製動畫** &ndash; Android 也支援稱為的畫面格的畫面格動畫*可繪製動畫*。 這是最簡單的動畫 API。 Android 循序載入和顯示 （很像卡通） 的序列中的可繪製資源。
+-   **繪製動畫**Android 也支援以框架為依據的動畫, 稱為「可*繪製動畫*」。 &ndash; 這是最簡單的動畫 API。 Android 會依序載入和顯示依序排列的繪製資源 (非常類似于卡通)。
 
--   **檢視動畫** &ndash; *檢視動畫*原始動畫 API 的 Android 中，而且僅可用於所有版本的 Android。 此 API 僅限於，因為它只適用於檢視物件，且只能在這些檢視表上執行簡單的轉換。
-    檢視動畫通常定義於 XML 檔案中找到`/Resources/anim`資料夾。
+-   **視圖動畫**觀看動畫是 android 中的原始動畫 API, 並可在所有版本的 android 中使用。 &ndash; 這個 API 的限制在於, 它只會使用 View 物件, 而且只能對那些視圖執行簡單的轉換。
+    視圖動畫通常會定義在`/Resources/anim`資料夾中找到的 XML 檔案中。
 
--   **屬性動畫** &ndash; Android 3.0 引進了一組新的動畫 API 稱為*屬性動畫*。 這些新的 API 引進了可擴充且彈性的系統，可用來以動畫顯示任何物件的屬性，不只是檢視的物件。 這種彈性可讓封裝在不同的類別，讓程式碼更容易共用的動畫。
+-   **屬性動畫**Android 3.0 引進一組新的動畫 API, 稱為*屬性動畫。* &ndash; 這些新的 API 引進了可擴充且彈性的系統, 可用來以動畫顯示任何物件的屬性, 而不只是 View 物件。 這種彈性可讓動畫封裝在不同的類別中, 使程式碼共用變得更容易。
 
 
-檢視動畫是更適合必須支援舊版前 Android 3.0 API （API 層級 11） 的應用程式。 否則應用程式應該使用較新屬性動畫的 API，如上方所述的原因。
+視圖動畫更適合必須支援舊版 Android 3.0 API 的應用程式 (API 層級 11)。 否則, 應用程式應該使用較新的屬性動畫 API, 原因如下所述。
 
-一種架構都是基本的可行選項，不過可能的話，喜好設定應該提供給屬性的動畫，因為它是一個更有彈性的 API，可使用。 屬性動畫，讓動畫邏輯封裝在不同的類別，可更輕鬆地共用程式碼，並簡化程式碼維護工作。
+所有這些架構都是可行的選項, 但在可能的情況下, 應該將喜好設定提供給屬性動畫, 因為這是更有彈性的 API 可供使用。 屬性動畫允許將動畫邏輯封裝在不同的類別中, 使程式碼共用變得更容易, 並簡化程式碼維護。
 
 
 ## <a name="accessibility"></a>協助工具選項
 
-圖形和動畫進行 Android 應用程式更吸引人的協助和使用起來樂趣不過，務必記住，某些互動會透過助讀，替代輸入裝置，或透過輔助縮放。
-此外，不含音訊功能的一些互動可能會發生。
+圖形和動畫有助於讓 Android 應用程式更具吸引力且更有趣的使用;不過, 請務必記住, 某些互動會透過螢幕助讀程式、替代輸入裝置或輔助縮放來進行。
+此外, 某些互動可能會在沒有音訊功能的情況下發生。
 
-應用程式是更能在這些情況下，如果它們有障礙的設計： 提供提示，而在使用者介面中，瀏覽協助，並確保沒有文字內容或圖形 UI 元素的描述。
+在這些情況下, 如果應用程式已設計為具有協助工具, 就更能使用: 在使用者介面中提供提示和導覽協助, 並確保 UI 的圖形元素有文字內容或描述。
 
-請參閱[Google 的協助工具指南](https://developer.android.com/guide/topics/ui/accessibility/)如需有關如何使用 Android 的協助工具的 Api。
+如需如何使用 Android 協助工具 Api 的詳細資訊, 請參閱[Google 的協助工具指南](https://developer.android.com/guide/topics/ui/accessibility/)。
 
 
 
 ## <a name="2d-graphics"></a>2D 圖形
 
-可繪製資源是在 Android 應用程式中的常用技巧。 因為其他資源，可繪製資源是宣告式&ndash;定義 XML 檔案中。 這種方法可讓程式碼的資源從清楚的分隔。 這可簡化開發和維護，因為它不需要變更程式碼來更新或變更 Android 應用程式中的圖形。 不過，適用於許多簡單且常見的圖形需求可繪製資源時，他們沒有足夠的強大功能與控制的畫布 API。
+可繪製資源是 Android 應用程式中常用的技術。 如同其他資源, 可繪製的資源會&ndash;以宣告方式定義于 XML 檔案中。 這種方法可讓您清楚區分程式碼與資源。 這可以簡化開發和維護, 因為不需要變更程式碼來更新或變更 Android 應用程式中的圖形。 不過, 雖然可繪製資源適用于許多簡單和一般的圖形需求, 但它們缺乏畫布 API 的強大功能和控制權。
 
-其他技術，使用[畫布](https://developer.xamarin.com/api/type/Android.Graphics.Canvas/)物件，非常類似於其他傳統的 API 架構，例如 System.Drawing 或 iOS 的核心繪圖。 使用畫布物件可提供建立如何 2D 圖形的最多的控制權。 它是適用於可繪製資源將無法運作，或將很難使用。 比方說，它可能需要繪製自訂滑桿控制項的外觀會變更滑桿的值與相關的計算基礎。
+另一種使用[Canvas](xref:Android.Graphics.Canvas)物件的技巧, 非常類似于其他傳統 API 架構, 例如 System. 繪圖或 IOS 的核心繪圖。 使用 Canvas 物件可讓您充分掌控2D 圖形的建立方式。 這適用于可繪製資源無法使用或很難以處理的情況。 例如, 您可能必須繪製自訂滑杆控制項, 其外觀會根據與滑杆值相關的計算而變更。
 
-我們先看看可繪製資源。 它們會簡單，而且會涵蓋最常見的自訂繪圖案例。
+讓我們先檢查可繪製的資源。 它們比較簡單, 並涵蓋最常見的自訂繪圖案例。
 
 
-### <a name="drawable-resources"></a>可繪製資源
+### <a name="drawable-resources"></a>繪製資源
 
-可繪製資源會定義在目錄中的 XML 檔案`/Resources/drawable`。 不同於內嵌 PNG 或 JPEG 的不需要提供的可繪製資源的密度的特定版本。
-在執行階段，Android 應用程式會載入這些資源，並使用包含在這些 XML 檔案中的指示來建立 2D 圖形。
-Android 會定義許多不同類型的可繪製資源：
+可繪製的資源定義于目錄`/Resources/drawable`中的 XML 檔案。 與內嵌 PNG 或 JPEG 不同的是, 不需要提供可繪製資源的密度特定版本。
+在執行時間, Android 應用程式會載入這些資源, 並使用這些 XML 檔案中包含的指示來建立2D 圖形。
+Android 定義數種不同類型的繪製資源:
 
--   [ShapeDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape) &ndash;這是繪製基本的幾何圖形，且適用於一組有限的圖形化的效果，該圖形上的可繪製物件。 它們非常適合用於自訂按鈕，或設定 TextViews 背景等項目。 我們會看到如何使用範例`ShapeDrawable`本文稍後。
+-   [ShapeDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)&ndash;這是可繪製基本幾何形狀並對該圖形套用一組有限圖形效果的可繪製物件。 它們非常適合用於自訂按鈕或設定 Textview 的背景等專案。 我們會在本文稍後看到如何使用的`ShapeDrawable`範例。
 
--   [StateListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#StateList) &ndash;這是會變更外觀的小工具/控制項的狀態為基礎的可繪製資源。 例如，按鈕可能會變更其外觀取決於是否被按下或未。
+-   [StateListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#StateList)&ndash;這是可繪製的資源, 會根據 widget/控制項的狀態變更外觀。 例如, 按鈕可能會根據是否按下而變更其外觀。
 
--   [LayerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) &ndash; ，就會在另一個之上堆疊數個其他可繪製資源來一本可繪製資源。 舉例*LayerDrawable*以下的螢幕擷取畫面所示：
+-   [LayerDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList)&ndash;這個可繪製的資源會在另一個上堆疊多個其他可繪製資源。 *LayerDrawable*的範例如下列螢幕擷取畫面所示:
 
     ![LayerDrawable 範例](graphics-and-animation-images/image1.png)
 
--   [TransitionDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition) &ndash;這是第*LayerDrawable*但有一項差異。 A *TransitionDrawable*能夠顯示之上另一個圖層以動畫顯示。
+-   [TransitionDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Transition)這是 LayerDrawable, 但有一項差異。 &ndash; *TransitionDrawable*能夠以動畫顯示在另一個圖層上方。
 
--   [LevelListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) &ndash;這是非常類似於*StateListDrawable* ，因為它會顯示特定條件為基礎的映像。 不過，不同於*StateListDrawable*，則*LevelListDrawable*顯示整數值為基礎的映像。 舉例*LevelListDrawable*是顯示 WiFi 訊號強度。 WiFi 訊號變更程度，作為可繪製顯示也會跟著變更。
+-   [LevelListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList)這非常類似于 StateListDrawable, 因為它會根據特定條件來顯示影像。 &ndash; 不過, 不同于*StateListDrawable*, *LevelListDrawable*會根據整數值來顯示影像。 *LevelListDrawable*的範例是顯示 WiFi 信號的強度。 當 WiFi 信號的強度變更時, 顯示的可繪製會隨之改變。
 
--   [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash;正如其名，這些可繪製資源來提供調整和裁剪功能。 *ScaleDrawable*擴充另一個可繪製，while *ClipDrawable*會裁剪其他 Drawable。
+-   [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale) / [ ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip)正&ndash;如其名, 這些可繪製資源同時提供縮放和裁剪功能。 *ScaleDrawable*會調整另一個可繪製的, 而*ClipDrawable*會裁剪另一個可繪製的。
 
--   [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash;可繪製這將會套用至內凹另一個可繪製資源側邊。 它是用來檢視必須小於檢視的實際界限的背景。
+-   [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset)&ndash;此可繪製會將內凹套用至另一個可繪製資源的側邊。 當視圖需要的背景小於此視圖的實際界限時, 就會使用它。
 
--   XML [BitmapDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;這個檔案是一組指示，在 XML 中，包含要在實際的點陣圖上執行。 Android 可以執行某些動作是 tiling、 抖色處理，並消除鋸齒。 這個非常常見的用途之一是磚的版面配置背景的點陣圖。
+-   Xml [BitmapDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Bitmap) &ndash;此檔案是一組以 xml 表示的指示, 會在實際點陣圖上執行。 Android 可執行檔某些動作包括並排、抖動和消除鋸齒。 其中一個非常常見的用法是在版面配置的背景並排顯示點陣圖。
 
+#### <a name="drawable-example"></a>繪製範例
 
-#### <a name="drawable-example"></a>可繪製的範例
-
-讓我們看看如何使用下列方法建立 2D 圖形的快速範例`ShapeDrawable`。 A`ShapeDrawable`可以定義四種基本圖形的其中一個： 矩形、 橢圓形、 線條與信號。 它也可套用的基本的效果，例如漸層、 圓形及大小。 下列 XML 是`ShapeDrawable`，可能會出現在*AnimationsDemo*隨附的專案 (檔案中`Resources/drawable/shape_rounded_blue_rect.xml`)。
-它會定義具有紫色的漸層背景的矩形，並圓角：
+讓我們看一下如何使用`ShapeDrawable`建立2d 圖形的快速範例。 `ShapeDrawable`可以定義四種基本圖形的其中一個: 矩形、橢圓形、線條和環形。 也可以套用基本效果, 例如漸層、色彩和大小。 下列 XML 是`ShapeDrawable`可以在*AnimationsDemo*附屬專案`Resources/drawable/shape_rounded_blue_rect.xml`(在檔案中) 中找到的。
+它會定義具有紫色漸層背景和圓角的矩形:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -122,7 +120,7 @@ Android 會定義許多不同類型的可繪製資源：
 </shape>
 ```
 
-我們可以參考此可繪製資源，以宣告方式在版面配置或其他 Drawable，如下列 XML 所示：
+我們可以在版面配置或其他繪製中以宣告方式參考此可繪製資源, 如下列 XML 所示:
 
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -137,52 +135,50 @@ Android 會定義許多不同類型的可繪製資源：
 </RelativeLayout>
 ```
 
-可繪製資源也可以在以程式設計方式套用。 下列程式碼片段示範如何以程式設計方式設定的 TextView 背景：
+可繪製的資源也可以透過程式設計方式套用。 下列程式碼片段顯示如何以程式設計方式設定 TextView 的背景:
 
 ```csharp
 TextView tv = FindViewById<TextView>(Resource.Id.shapeDrawableTextView);
 tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 ```
 
-若要查看這會看起來，執行*AnimationsDemo*專案，然後從主功能表中選取的圖形可繪製的項目。 我們應該會看到類似下列螢幕擷取畫面：
+若要查看這看起來的樣子, 請執行*AnimationsDemo*專案, 然後從主功能表中選取 [圖形可繪製] 專案。 我們應該會看到類似下列螢幕擷取畫面的內容:
 
-![具有自訂背景，可繪製具有漸層停駐和圓角的 Textview](graphics-and-animation-images/image1.png)
+![具有自訂背景的 Textview, 以漸層和圓角繪製](graphics-and-animation-images/image1.png)
 
-如需進一步瞭解 XML 項目和可繪製資源的語法的詳細資訊，請參閱[Google 的文件](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)。
+如需有關可繪製資源的 XML 元素和語法的詳細資訊, 請參閱[Google 的檔](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)。
 
 
-### <a name="using-the-canvas-drawing-api"></a>使用畫布繪圖 API
+### <a name="using-the-canvas-drawing-api"></a>使用畫布繪製 API
 
-可繪製資源來強大，但的確有其限制。 某些項目都不是可能的或者是以非常複雜 (例如： 將篩選套用至裝置上的相機所拍攝的圖片)。 它會很難使用可繪製資源來套用消除紅眼而減少。
-相反地，畫布 API 可讓應用程式會有極精細的控制，若要選擇性地變更圖片的特定組件中的色彩。
+可繪製資源功能強大, 但有其限制。 某些事項可能不可行或非常複雜 (例如: 將篩選套用至裝置上的相機所拍攝的圖片)。 藉由使用可繪製的資源, 將會非常難以縮減紅眼。
+取而代之的是, 畫布 API 可讓應用程式有非常細微的控制, 以選擇性地變更圖片特定部分的色彩。
 
-通常，用於在畫布上的一個類別是[小畫家](https://developer.xamarin.com/api/type/Android.Graphics.Paint/)類別。 這個類別包含有關如何繪製色彩和樣式資訊。 它用來提供項目，這類的色彩和透明度。
+通常與畫布搭配使用的一個類別是[油漆](xref:Android.Graphics.Paint)類別。 這個類別會保存如何繪製的色彩和樣式資訊。 它是用來提供色彩和透明度等專案。
 
-畫布 API 會使用*繪製器的模型*繪製 2D 圖形。
-因為連續數層彼此以套用作業。 每個作業將涵蓋一些基礎點陣圖的區域。 當區域重疊先前繪製的區域時，新的 [小畫家] 將部分或難理解舊。 這是相同的方式，例如 System.Drawing 和 iOS 的核心圖形的其他許多繪圖 Api 運作。
+畫布 API 會使用此*油漆模式*來繪製2d 圖形。
+作業會在彼此之上的後續層中套用。 每項作業都會涵蓋基礎點陣圖的某個區域。 當區域與先前繪製的區域重迭時, 新的繪製會部分或完全遮蔽舊的。 這與其他許多繪圖 Api (例如, System. 繪圖和 iOS 的核心圖形) 的使用方式相同。
 
-有兩種方式可取得`Canvas`物件。 第一種方法牽涉到定義[點陣圖](https://developer.xamarin.com/api/type/Android.Graphics.Bitmap/)物件，然後具現化`Canvas`與它的物件。 比方說，下列程式碼片段會建立新的畫布與基礎的點陣圖：
+有兩種方式可取得`Canvas`物件。 第一種方式包括定義[點陣圖](xref:Android.Graphics.Bitmap)物件, 然後使用它來`Canvas`具現化物件。 例如, 下列程式碼片段會建立具有基礎點陣圖的新畫布:
 
 ```csharp
 Bitmap bitmap = Bitmap.CreateBitmap(100, 100, Bitmap.Config.Argb8888);
 Canvas canvas = new Canvas(b);
 ```
 
-若要取得的其他方式`Canvas`物件是由[OnDraw](https://developer.xamarin.com/api/member/Android.Views.View.OnDraw/)提供的回呼方法[檢視](https://developer.xamarin.com/api/type/Android.Views.View/)基底類別。 Android 會呼叫這個方法，決定檢視需要繪製本身，並傳入`Canvas`來使用檢視的物件。
+取得`Canvas`物件的另一種方式是透過提供[View](xref:Android.Views.View)基類的[OnDraw](xref:Android.Views.View.OnDraw*)回呼方法。 當 Android 決定視圖需要繪製本身, 並傳入`Canvas`物件供視圖使用時, 會呼叫此方法。
 
-畫布類別會公開方法，以程式設計的方式提供的繪製指示。 例如: 
+Canvas 類別會公開方法, 以程式設計方式提供繪製指示。 例如：
 
--   [Canvas.DrawPaint](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawPaint/p/Android.Graphics.Paint/) &ndash;使用指定的小畫家填滿整個畫布的點陣圖。
+- [Canvas.DrawPaint](xref:Android.Graphics.Canvas.DrawPaint*)&ndash;會以指定的繪製填滿整個畫布的點陣圖。
 
--   [Canvas.DrawPath](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawPath/p/Android.Graphics.Path/Android.Graphics.Paint/) &ndash;繪製指定的幾何形狀，使用指定的 [小畫家]。
+- [Canvas.DrawPath](xref:Android.Graphics.Canvas.DrawPath*) &ndash;使用指定的繪製繪製指定的幾何形狀。
 
--   [Canvas.DrawText](https://developer.xamarin.com/api/member/Android.Graphics.Canvas.DrawText/p/System.String/System.Single/System.Single/Android.Graphics.Paint/) &ndash;滿指定的圓形畫布上繪製的文字。 在位置繪製文字`x,y`。
+- [Canvas.DrawText](xref:Android.Graphics.Canvas.DrawText*) &ndash;會以指定的色彩繪製畫布上的文字。 文字會在位置`x,y`繪製。
 
+#### <a name="drawing-with-the-canvas-api"></a>使用畫布 API 繪製
 
-
-#### <a name="drawing-with-the-canvas-api"></a>繪製與 Canvas API
-
-我們來看看作用中的畫布 API 的範例。 下列程式碼片段示範如何繪製檢視：
+讓我們看一下作用中畫布 API 的範例。 下列程式碼片段顯示如何繪製視圖:
 
 ```csharp
 public class MyView : View
@@ -209,53 +205,53 @@ public class MyView : View
 }
 ```
 
-上面這個程式碼會先建立紅色小畫家和綠色的 [小畫家] 的物件。 它使用紅色，填滿畫布的內容，然後指示繪製綠色矩形的 25%，畫布的寬度為畫布。 這個範例中可以看到由`AnimationsDemo`隨附於本文的原始程式碼的專案。 正在啟動應用程式，並從主要功能表中選取 繪製項目，我們應該類似下面的畫面：
+上述程式碼會先建立紅色繪製和綠色繪製物件。 它會以紅色填滿畫布的內容, 然後指示畫布繪製一個綠色矩形, 其為畫布寬度的 25%。 這種情況的範例可在包含于`AnimationsDemo`本文原始程式碼的專案中看到。 藉由啟動應用程式, 然後從主功能表中選取繪製專案, 我們應該會顯示類似下面的畫面:
 
-![紅色小畫家和綠色的 [小畫家] 物件的畫面](graphics-and-animation-images/image3.png)
+![具有紅色繪製和綠色繪製物件的畫面](graphics-and-animation-images/image3.png)
 
 
 ## <a name="animation"></a>動畫
 
-使用者會喜歡在其應用程式中移動的項目。 動畫是適合用來改善使用者體驗的應用程式，且有助於突顯出來。最佳的動畫是使用者未注意到，因為他們認為自然的項目。 Android 的動畫，提供下列三個 API:
+使用者喜歡在其應用程式中移動的專案。 動畫是改善應用程式使用者體驗並協助它脫穎而出的絕佳方式。最佳動畫是使用者不會注意到的效果, 因為他們覺得自然。 Android 為動畫提供下列三個 API:
 
--   **檢視動畫**&ndash;這是原始的 API。 這些動畫會繫結到特定的檢視，而且可以對檢視的內容執行簡單的轉換。 因為它的簡單起見，此 API 仍適用於項目，例如 alpha 動畫、 旋轉和其他等等。
+-   **觀看動畫**&ndash;這是原始 API。 這些動畫會系結至特定的視圖, 而且可以對視圖內容執行簡單的轉換。 因為這是簡單的, 此 API 仍然適用于 Alpha 動畫、旋轉等專案。
 
--   **屬性的動畫** &ndash; Android 3.0 中導入屬性的動畫。 它們可讓應用程式以動畫顯示絶大部分項目。 屬性動畫可用來變更任何屬性的任何物件，即使該物件不在畫面上看到。
+-   **屬性動畫**&ndash; Android 3.0 引進了屬性動畫。 它們可讓應用程式建立幾乎任何專案的動畫。 屬性動畫可以用來變更任何物件的任何屬性, 即使該物件在螢幕上看不到也一樣。
 
--   **可繪製動畫**&ndash;這用來將非常簡單的動畫套用特殊的可繪製資源影響配置。
+-   **繪製動畫**&ndash;這是一種特殊的可繪製資源, 用來將非常簡單的動畫效果套用至版面配置。
 
-一般情況下，屬性動畫是慣用的系統使用，因為它會更有彈性，並提供更多的功能。
-
-
-### <a name="view-animations"></a>檢視動畫
-
-檢視動畫僅限於檢視，並且只能執行動畫值，例如開始和結束點、 大小、 旋轉和透明度。
-這種動畫通常稱為*tween 動畫*。 兩種方式可以定義檢視動畫&ndash;以程式設計方式在程式碼，或藉由使用 XML 檔案。 XML 檔案會宣告檢視動畫的慣用的方法，因為它們更容易理解且容易維護。
-
-動畫的 XML 檔案會儲存在`/Resources/anim`Xamarin.Android 專案的目錄。 這個檔案必須有一個下列項目當做根項目：
-
--   `alpha` &ndash; 淡入或淡出動畫。
-
--   `rotate` &ndash; 旋轉的動畫。
-
--   `scale` &ndash; 調整大小的動畫。
-
--   `translate` &ndash; 水平及/或垂直的動作。
-
--   `set` &ndash; 可能有一或多個其他的動畫元素的容器。
-
-根據預設，XML 檔案中的所有動畫都將會同時都套用。 若要讓動畫都會循序進行，請設定`android:startOffset`其中一項以上定義的項目上的屬性。
-
-很可能會影響使用的動畫中的變動率*interpolator*。 Interpolator 能夠加速、 重複，或 decelerated 動畫效果。 Android 架構會提供數個 interpolators 內建的例如 （但不是限於）：
-
--   `AccelerateInterpolator` / `DecelerateInterpolator` &ndash; 這些 interpolators 增加或減少的動畫中的變動率。
-
--   `BounceInterpolator` &ndash; 變更不斷彈跳直到結尾。
-
--   `LinearInterpolator` &ndash; 變更的速率是常數。
+一般而言, 屬性動畫是慣用的系統, 因為它較有彈性, 並提供更多功能。
 
 
-下列 XML 顯示動畫檔案則結合這些元素的一些的範例：
+### <a name="view-animations"></a>視圖動畫
+
+視圖動畫僅限於視圖, 而且只能對起點和終點、大小、旋轉和透明度等值執行動畫。
+這些類型的動畫通常稱為「*補間動畫*」。 您可以透過程式碼或使用&ndash; XML 檔案, 以程式設計方式定義兩種方式的視圖動畫。 XML 檔案是宣告視圖動畫的慣用方式, 因為它們更容易閱讀且更易於維護。
+
+動畫 XML 檔案會儲存在 Xamarin Android 專案`/Resources/anim`的目錄中。 此檔案必須具有下列其中一個元素做為根項目:
+
+-   `alpha`&ndash;淡入或淡出動畫。
+
+-   `rotate`&ndash;旋轉動畫。
+
+-   `scale`&ndash;調整大小動畫。
+
+-   `translate`&ndash;水準和/或垂直動作。
+
+-   `set`&ndash;可能保存一或多個其他動畫元素的容器。
+
+根據預設, 會同時套用 XML 檔案中的所有動畫。 若要依序執行動畫, 請`android:startOffset`在上面定義的其中一個元素上設定屬性。
+
+您可以使用*插*轉器來影響動畫中變更的速率。 插即用可以加速、重複或 decelerated 動畫效果。 Android framework 提供幾個現成可用的 interpolators, 例如 (但不限於):
+
+-   `AccelerateInterpolator`這些 interpolators 會增加或減少動畫中的變更率。 / `DecelerateInterpolator` &ndash;
+
+-   `BounceInterpolator`&ndash;這種變更會在結束時退回。
+
+-   `LinearInterpolator`&ndash;變更的速率是固定的。
+
+
+下列 XML 顯示結合下列部分元素的動畫檔案範例:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -300,9 +296,9 @@ public class MyView : View
 </set>
 ```
 
-這個動畫會執行所有的動畫同時。 第一個刻度動畫會水平伸展影像，並以垂直方式，將它縮小，然後將映像會同時以逆時針方向旋轉 45 度和壓縮，請從畫面消失。
+這個動畫會同時執行所有的動畫。 第一個尺規動畫會水準延展影像並垂直縮小, 然後影像會以順時針和縮小的方式同時旋轉45度 (從螢幕中消失)。
 
-動畫可以以程式設計方式套用到檢視擴張動畫，並將它套用至檢視。 Android 提供的協助程式類別`Android.Views.Animations.AnimationUtils`，將會擴充動畫資源，並傳回的執行個體`Android.Views.Animations.Animation`。 這個物件時，會套用至檢視上，藉由呼叫`StartAnimation`並傳遞`Animation`物件。 下列程式碼片段會顯示這個範例：
+動畫可以透過因而誇大動畫, 然後套用至視圖, 以程式設計方式套用至視圖。 Android 提供 helper 類別`Android.Views.Animations.AnimationUtils` , 會擴大動畫資源並傳回的`Android.Views.Animations.Animation`實例。 這個物件會藉由呼叫`StartAnimation`並`Animation`傳遞物件, 套用至視圖。 下列程式碼片段顯示這種情況的範例:
 
 ```csharp
 Animation myAnimation = AnimationUtils.LoadAnimation(Resource.Animation.MyAnimation);
@@ -310,45 +306,45 @@ ImageView myImage = FindViewById<ImageView>(Resource.Id.imageView1);
 myImage.StartAnimation(myAnimation);
 ```
 
-既然我們已經有基本了解檢視動畫的運作方式，可讓將移至屬性的動畫。
+既然我們已經對觀看動畫的工作方式有基本瞭解, 讓我們移至屬性動畫。
 
 
 ### <a name="property-animations"></a>屬性動畫
 
-屬性揮灑是 Android 3.0 中引進的新 API。
-它們提供了更具擴充性的 API，可用來以動畫顯示任何物件上的任何屬性。
+屬性 animators 是在 Android 3.0 中引進的新 API。
+它們提供更可擴充的 API, 可以用來建立任何物件上任何屬性的動畫。
 
-所有的屬性動畫所建立的執行個體[動畫](https://developer.xamarin.com/api/type/Android.Animation.Animator/)子類別。 應用程式不直接使用這個類別，改為使用其中的子類別：
+所有屬性動畫都是由[Animator](xref:Android.Animation.Animator)子類別的實例所建立。 應用程式不會直接使用此類別, 而是使用其中一個子類別:
 
--   [ValueAnimator](https://developer.xamarin.com/api/type/Android.Animation.ValueAnimator/) &ndash;這個類別是在整個屬性動畫 API 中最重要的類別。 它會計算需要變更的屬性的值。 `ViewAnimator`不會直接更新這些值; 相反地，它會引發事件，可用來更新動畫的物件。
+-   [ValueAnimator](xref:Android.Animation.ValueAnimator)&ndash;這個類別是整個屬性動畫 API 中最重要的類別。 它會計算需要變更之屬性的值。 不`ViewAnimator`會直接更新那些值, 而是會引發可用來更新動畫物件的事件。
 
--   [ObjectAnimator](https://developer.xamarin.com/api/type/Android.Animation.ObjectAnimator/) &ndash;這個類別是子類別的`ValueAnimator`。 它是用來簡化物件製作動畫的程序接受目標物件和更新的屬性。
+-   [ObjectAnimator](xref:Android.Animation.ObjectAnimator)這個類別是的`ValueAnimator`子類別。 &ndash; 它的目的是要藉由接受目標物件和要更新的屬性, 來簡化物件的動畫處理常式。
 
--   [AnimationSet](https://developer.xamarin.com/api/type/Android.Animation.AnimatorSet/) &ndash;這個類別是負責協調相對於動畫執行至另一個方式。 動畫可能會執行同時、 循序或指定的延遲，兩者之間。
+-   [AnimationSet](xref:Android.Animation.AnimatorSet)&ndash;這個類別負責協調動畫的相互關聯方式。 動畫可能會依序執行, 或在兩者之間有指定的延遲。
 
 
-*評估工具*揮灑用來計算新值的動畫播放期間的特殊類別。 根據預設，Android 會提供下列評估：
+*評估*工具是 animators 在動畫期間用來計算新值的特殊類別。 Android 提供下列評估工具:
 
--   [IntEvaluator](https://developer.xamarin.com/api/type/Android.Animation.IntEvaluator/) &ndash;計算整數屬性的值。
+-   [IntEvaluator](xref:Android.Animation.IntEvaluator)&ndash;計算整數屬性的值。
 
--   [FloatEvaluator](https://developer.xamarin.com/api/type/Android.Animation.FloatEvaluator/) &ndash;計算浮點數屬性值。
+-   [FloatEvaluator](xref:Android.Animation.FloatEvaluator)&ndash;計算 float 屬性的值。
 
--   [ArgbEvaluator](https://developer.xamarin.com/api/type/Android.Animation.ArgbEvaluator/) &ndash;計算圓形的屬性值。
+-   [ArgbEvaluator](xref:Android.Animation.ArgbEvaluator)&ndash;計算色彩屬性的值。
 
-如果正在顯示動畫的屬性不是`float`，`int`的圓形，應用程式可以建立自己的評估工具藉由實作`ITypeEvaluator`介面。 （實作自訂的評估工具已超出本主題的範圍。）
+如果正在製作動畫的屬性不`float` `int`是或色彩, 應用程式可以藉由執行`ITypeEvaluator`介面來建立自己的評估工具。 (執行自訂評估工具已超出本主題的範圍)。
 
 #### <a name="using-the-valueanimator"></a>使用 ValueAnimator
 
-有任何動畫的兩個部分： 計算動畫的值，然後在某個物件上的屬性上設定這些值。 
-[ValueAnimator](https://developer.xamarin.com/api/type/Android.Animation.ValueAnimator/)只會計算值，但它不會運作直接物件上。 相反地，會在動畫存留期間將會叫用的事件處理常式內更新的物件。 此設計可讓數個屬性，從一個動畫的值更新。
+任何動畫都有兩個部分: 計算動畫值, 然後在某個物件的屬性上設定這些值。 
+[ValueAnimator](xref:Android.Animation.ValueAnimator)只會計算值, 但不會直接在物件上操作。 相反地, 物件將會在動畫存留期間所叫用的事件處理常式內更新。 此設計可讓您從一個動畫值更新數個屬性。
 
-取得的執行個體`ValueAnimator`藉由呼叫其中一個下列的 factory 方法：
+您可以藉由呼叫`ValueAnimator`下列其中一個 factory 方法來取得的實例:
 
 -  `ValueAnimator.OfInt`
 -  `ValueAnimator.OfFloat`
 -  `ValueAnimator.OfObject`
 
-完成後完成的動作，`ValueAnimator`執行個體必須具有其持續時間設定，並再加以啟動。 下列範例顯示如何以動畫顯示 1000年毫秒的範圍內的從 0 到 1 的值：
+完成後, `ValueAnimator`實例必須設定其持續時間, 然後可以啟動。 下列範例示範如何在1000毫秒的範圍內, 以動畫顯示0到1之間的值:
 
 ```csharp
 ValueAnimator animator = ValueAnimator.OfInt(0, 100);
@@ -356,7 +352,7 @@ animator.SetDuration(1000);
 animator.Start();
 ```
 
-本身，上述程式碼片段不是很有用，但&ndash;動畫會執行，但沒有任何目標更新值。 `Animator`類別將會引發更新事件，當它判定這是必要通知接聽程式有新的值。 應用程式可能會提供事件處理常式來回應此事件，如下列程式碼片段所示：
+但是, 上述程式碼片段本身並不是很有用&ndash; , 因為 animator 會執行, 但不會有更新值的目標。 當`Animator`此類別決定必須通知新值的接聽程式時, 就會引發 Update 事件。 應用程式可以提供事件處理常式來回應此事件, 如下列程式碼片段所示:
 
 ```csharp
 MyCustomObject myObj = new MyCustomObject();
@@ -370,13 +366,13 @@ animator.Update += (object sender, ValueAnimator.AnimatorUpdateEventArgs e) =>
 };
 ```
 
-既然我們已經了解`ValueAnimator`，可讓您深入了解`ObjectAnimator`。
+既然我們已經瞭解`ValueAnimator`, 讓我們進一步瞭解。 `ObjectAnimator`
 
 #### <a name="using-the-objectanimator"></a>使用 ObjectAnimator
 
-[ObjectAnimator](https://developer.xamarin.com/api/type/Android.Animation.ObjectAnimator/)是的子類別`ViewAnimator`，結合的計時引擎和值計算`ValueAnimator`與連接事件處理常式所需的邏輯。 `ValueAnimator`明確地將傳送的事件處理常式的應用程式必須&ndash;`ObjectAnimator`此步驟會為我們處理。
+[ObjectAnimator](xref:Android.Animation.ObjectAnimator)是的子類別`ViewAnimator` , 會結合的`ValueAnimator`計時引擎和值計算與連接事件處理常式所需的邏輯。 需要應用程式明確地連接事件處理常式&ndash; `ObjectAnimator` , 才會為我們處理此步驟。 `ValueAnimator`
 
-適用於 API`ObjectAnimator`非常類似的 API `ViewAnimator`，但會要求您提供的物件及要更新之屬性的名稱。 下列範例顯示使用範例`ObjectAnimator`:
+的 api `ObjectAnimator`與的`ViewAnimator`api 非常類似, 但需要您提供物件和要更新之屬性的名稱。 下列範例顯示使用`ObjectAnimator`的範例:
 
 ```csharp
 MyCustomObject myObj = new MyCustomObject();
@@ -387,14 +383,14 @@ animator.SetDuration(1000);
 animator.Start();
 ```
 
-您可以從先前的程式碼片段中，看到`ObjectAnimator`可以減少並簡化所需以動畫顯示物件的程式碼。
+如您在先前的程式碼片段中所見`ObjectAnimator` , 可以減少和簡化以動畫顯示物件所需的程式碼。
 
 
-### <a name="drawable-animations"></a>可繪製動畫
+### <a name="drawable-animations"></a>繪製動畫
 
-最後一個動畫 API 是可繪製動畫 API。 載入的一系列可繪製資源一個接著一個可繪製動畫，並循序顯示類似 flip it 草圖。
+最後的動畫 API 是可繪製的動畫 API。 可繪製的動畫會逐一載入一系列的可繪製資源, 並依序顯示它們, 類似于「翻轉-it」卡通。
 
-可繪製資源會定義在 XML 檔案具有`<animation-list>`項目當做根項目和一系列的`<item>`定義每個畫面格動畫中的項目。 此 XML 檔案會儲存在`/Resource/drawable`應用程式的資料夾。 下列 XML 是可繪製動畫的範例：
+可繪製的資源定義于 XML 檔案中, 該`<animation-list>`檔案具有做為根項目的元素, `<item>`以及定義動畫中每個框架的一系列元素。 這個 XML 檔案會儲存在應用`/Resource/drawable`程式的資料夾中。 下列 XML 是可繪製動畫的範例:
 
 ```xml
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
@@ -407,7 +403,7 @@ animator.Start();
 </animation-list>
 ```
 
-這個動畫會執行六個畫面格。 `android:duration`屬性會宣告將會顯示每個畫面格的時間長度。 下一步 的程式碼片段示範建立可繪製動畫，然後啟動它，當使用者按一下螢幕上的按鈕：
+這個動畫將會執行六個畫面格。 屬性`android:duration`會宣告每個畫面格的顯示時間長度。 下一個程式碼片段顯示一個範例, 示範如何建立可繪製的動畫, 並在使用者按一下螢幕上的按鈕時啟動它:
 
 ```csharp
 AnimationDrawable _asteroidDrawable;
@@ -431,21 +427,21 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-此時，我們已涵蓋動畫中的 Android 應用程式提供 Api 的基礎。
+此時, 我們已涵蓋 Android 應用程式中可用動畫 Api 的基礎。
 
 
 ## <a name="summary"></a>總結
 
-本文介紹許多新概念及 API，協助將某些圖片新增到 Android 應用程式。 第一次它討論各種 2D 圖形 API，並示範如何 Android 可讓應用程式直接繪製畫面使用的畫布物件。 我們也會發現一些替代的方法可以讓使用 XML 檔案以宣告方式建立的圖形。 然後我們出在討論的舊和新 API 的 Android 中建立動畫。
+本文引進了許多新概念和 API, 以協助將一些圖形新增至 Android 應用程式。 首先, 它討論了各種2D 圖形 API, 並示範了 Android 如何讓應用程式使用 Canvas 物件直接繪製到螢幕上。 我們也看到一些替代的技術, 可讓您使用 XML 檔案以宣告方式建立圖形。 然後我們會討論如何在 Android 中建立動畫的新舊 API。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [動畫示範 （範例）](https://developer.xamarin.com/samples/monodroid/AnimationDemo)
+- [動畫示範 (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/animationdemo)
 - [動畫和圖形](https://developer.android.com/guide/topics/graphics/index.html)
-- [若要將您的行動裝置應用程式融入生活使用動畫](http://youtu.be/ikSk_ILg3d0)
-- [AnimationDrawable](https://developer.xamarin.com/api/type/Android.Graphics.Drawables.AnimationDrawable/)
-- [Canvas](https://developer.xamarin.com/api/type/Android.Graphics.Canvas/)
-- [物件的動畫](https://developer.xamarin.com/api/type/Android.Animation.ObjectAnimator/)
-- [值的動畫](https://developer.xamarin.com/api/type/Android.Animation.ValueAnimator/)
+- [使用動畫讓您的 Mobile Apps 生活](http://youtu.be/ikSk_ILg3d0)
+- [AnimationDrawable](xref:Android.Graphics.Drawables.AnimationDrawable)
+- [Canvas](xref:Android.Graphics.Canvas)
+- [物件 Animator](xref:Android.Animation.ObjectAnimator)
+- [值 Animator](xref:Android.Animation.ValueAnimator)

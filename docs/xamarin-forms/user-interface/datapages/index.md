@@ -1,76 +1,76 @@
 ---
-title: Xamarin.Forms DataPages
-description: 本文介紹 Xamarin.Forms DataPages，提供 API，以快速並輕鬆地將資料來源繫結至預先建立的檢視。
+title: Xamarin. Forms DataPages
+description: 本文介紹 DataPages, 其提供 API 來快速且輕鬆地將資料來源系結至預先建立的視圖。
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 2a74b636a41a72b26776157a774f0a33ef45a075
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9dc34f412549c4be6099b373ddae7cbd2e8d21c8
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61407666"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980777"
 ---
-# <a name="xamarinforms-datapages"></a>Xamarin.Forms DataPages
+# <a name="xamarinforms-datapages"></a>Xamarin. Forms DataPages
 
 ![](~/media/shared/preview.png "此 API 目前為預覽狀態")
 
 > [!IMPORTANT]
-> 需要 DataPages [Xamarin.Forms 佈景主題](~/xamarin-forms/user-interface/themes/index.md)呈現的參考。
+> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [Xamarin.Forms.Theme.Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)nuget 套件安裝到您的專案中, 後面接著 [Xamarin.Forms.Theme.Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) 或 [Xamarin.Forms.Theme.Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)。
 
-Xamarin.Forms DataPages 發表於發展 2016年，並可讓客戶試用並提供意見以預覽的形式。
+DataPages 已于演進2016宣佈, 並可供客戶試用並提供意見反應。
 
-DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的檢視。 清單項目和詳細資料頁面會自動轉譯資料，並可使用佈景主題。
+DataPages 提供 API，以快速且輕鬆地繫結資料來源至預先建立的檢視。 [清單專案] 和 [詳細資料] 頁面會自動轉譯資料, 而且可以使用主題進行自訂。
 
-若要查看發展專題示範的運作方式，請參閱[快速入門指南](get-started.md)。
+若要查看進化專題示範如何運作, 請參閱[快速入門手冊](get-started.md)。
 
 [![](images/demo-sml.png "DataPages 範例應用程式")](images/demo.png#lightbox "DataPages 範例應用程式")
 
 ## <a name="introduction"></a>簡介
 
-資料來源和相關聯的資料頁可讓開發人員快速且輕鬆地使用支援的資料來源，並呈現它使用佈景主題中的 UI scaffolding，您可以自訂的內建。
+資料來源和相關聯的資料頁可讓開發人員快速且輕鬆地取用支援的資料來源, 並使用可以使用主題自訂的內建 UI 樣板來呈現它。
 
-DataPages 會新增至 Xamarin.Forms 應用程式包括**Xamarin.Forms.Pages** Nuget 套件。
+DataPages 會加入至 Xamarin 應用程式, 方法是包含 [ **xamarin** ] Nuget 套件。
 
 ### <a name="data-sources"></a>Data Sources
 
-預覽具有某些預先建置的資料來源可供使用：
+預覽中有一些可供使用的預先建立資料來源:
 
 * **JsonDataSource**
-* **AzureDataSource** （分隔 Nuget）
-* **AzureEasyTableDataSource** （分隔 Nuget）
+* **AzureDataSource**(個別 Nuget)
+* **AzureEasyTableDataSource**(個別 Nuget)
 
-請參閱[快速入門指南](get-started.md)的使用範例`JsonDataSource`。
-
-
-### <a name="pages--controls"></a>頁面和控制項
-
-下列網頁及控制項是包含以允許簡易的繫結至所提供的資料來源：
-
-* **ListDataPage** – 請參閱 <<c2> [ 快速入門範例](get-started.md)。
-* **DirectoryPage** – 已啟用群組清單。
-* **PersonDetailPage** – 單一資料項目的特定物件類型 （連絡人項目） 的自訂檢視。
-* **DataView** – 一種檢視來公開資料來源的資料以一般的方法。
-* **CardView** – 有檢視，其中包含影像、 標題文字和說明文字的樣式。
-* **HeroImage** – 影像呈現檢視。
-* **ListItem** – 預先建置的原生 iOS 和 Android 的清單項目類似的版面配置檢視。
-
-請參閱[DataPages 控制項參考](controls.md)的範例。
+如需使用`JsonDataSource`的範例, 請參閱[快速入門手冊](get-started.md)。
 
 
+### <a name="pages--controls"></a>頁面 & 控制項
 
-### <a name="under-the-hood"></a>背後原理
+包含下列頁面和控制項可讓您輕鬆地系結至提供的資料來源:
 
-Xamarin.Forms 資料來源會遵守`IDataSource`介面。
+* **ListDataPage** –請參閱使用者入門[範例](get-started.md)。
+* **DirectoryPage** –已啟用群組的清單。
+* **PersonDetailPage** –針對特定物件類型 (連絡人項目) 自訂的單一資料項目視圖。
+* **DataView** –以一般方式從來源公開資料的視圖。
+* **CardView** –樣式化的視圖, 其中包含影像、標題文字和描述文字。
+* **HeroImage** –影像呈現視圖。
+* [專案] –預先建立的視圖, 其版面配置類似于原生 IOS 和 Android 清單專案。
 
-Xamarin.Forms 基礎結構互動的資料來源，藉由下列屬性：
+如需範例, 請參閱[DataPages 控制項參考](controls.md)。
 
-* `Data` -可以顯示的資料項目的唯讀清單。
-* `IsLoading` – 布林值，指出資料是否已載入且可供轉譯。
-* `[key]` – 索引子來擷取項目。
 
-有兩種方法`MaskKey`和`UnmaskKey`，可用來隱藏 （或顯示） （即資料的項目屬性 不會加以轉譯）。
-索引鍵對應至資料的項目物件上的具名的屬性。
+
+### <a name="under-the-hood"></a>幕後
+
+[ `IDataSource` Xamarin] 資料來源會遵循介面。
+
+[Xamarin] 基礎結構會透過下列屬性與資料來源進行互動:
+
+* `Data`–可以顯示之資料項目的唯讀清單。
+* `IsLoading`–布林值, 指出資料是否已載入並可供呈現。
+* `[key]`-用來抓取元素的索引子。
+
+有兩種方法`MaskKey` `UnmaskKey`可用來隱藏 (或顯示) 資料項目屬性 (ie)。 防止轉譯這些專案)。
+索引鍵會對應至資料項目物件上的名稱屬性。

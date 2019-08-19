@@ -1,108 +1,108 @@
 ---
-title: Xamarin.mac 的分鏡腳本簡介
-description: 本文提供在 Xamarin.Mac 應用程式中使用的分鏡腳本的簡介。 其中涵蓋使用分鏡腳本和 Xcode 的 Interface Builder 建立與維護應用程式的 UI。
+title: Xamarin 中的分鏡腳本簡介
+description: 本文提供在 Xamarin. Mac 應用程式中使用分鏡腳本的簡介。 其中涵蓋使用分鏡腳本和 Xcode 的 Interface Builder 建立與維護應用程式的 UI。
 ms.prod: xamarin
 ms.assetid: F37BA503-0B25-489F-80A8-58C493291A55
 ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8a5a2f87c16a5dd040cefb2fbc615b01431ebcf5
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 75affbdb6e919c15c644a68ae45e7ff657a53f6a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832297"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68652285"
 ---
-# <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin.mac 的分鏡腳本簡介
+# <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的分鏡腳本簡介
 
-_本文提供在 Xamarin.Mac 應用程式中使用的分鏡腳本的簡介。它涵蓋了建立和維護應用程式的 UI 使用分鏡腳本和 Xcode 的 Interface Builder。_
+_本文提供在 Xamarin. Mac 應用程式中使用分鏡腳本的簡介。其中涵蓋使用分鏡腳本和 Xcode 的 Interface Builder 來建立和維護應用程式的 UI。_
 
-分鏡腳本可讓您開發使用者介面，讓您不只包含 [定義] 視窗和控制項，但也包含不同的視窗之間的連結的 Xamarin.Mac 應用程式 (透過 segue) 和檢視狀態。
+分鏡腳本可讓您開發 Xamarin. Mac 應用程式的使用者介面, 不僅包含視窗定義和控制項, 還包含不同視窗之間的連結 (透過 segue) 和檢視狀態。
 
-[![](images/intro01.png "Ui 돨 튌 절 在 Xcode 中")](images/intro01.png#lightbox)
+[![](images/intro01.png "Xcode 中的範例 UI")](images/intro01.png#lightbox)
 
-這篇文章會提供定義 Xamarin.Mac 應用程式的使用者介面中使用分鏡腳本的簡介。
+本文將提供使用分鏡腳本來定義 Xamarin 應用程式使用者介面的簡介。
 
 <a name="What-are-Storyboards" />
 
-## <a name="what-are-storyboards"></a>分鏡腳本有哪些？
+## <a name="what-are-storyboards"></a>什麼是分鏡腳本？
 
-使用分鏡腳本，所有的 Xamarin.Mac 應用程式的 UI 可以定義在單一位置與所有其個別項目和使用者介面之間導覽。 Xamarin.Mac 的分鏡腳本以分鏡腳本非常類似的方式用於 Xamarin.iOS。 不過，它們包含一組不同的_Segue 類型_因為不同的介面的慣用語。
+藉由使用分鏡腳本, 您可以在單一位置定義 Xamarin. Mac 應用程式的 UI, 並在其個別專案和使用者介面之間進行所有導覽。 Xamarin 的分鏡腳本, 與 Xamarin 的分鏡腳本非常類似。 不過, 由於不同的介面慣用語, 它們包含一組不同的_Segue 類型_。
 
 <a name="Working-with-Scenes" />
 
-### <a name="working-with-scenes"></a>使用 場景
+### <a name="working-with-scenes"></a>使用場景
 
-如上方所述，分鏡腳本會定義所有指定的應用程式細分為功能的概觀的 UI 及其_檢視控制器_。 在 Xcode 的 Interface Builder，這些控制站的每個存在於自己_場景_。
+如上所述, 分鏡腳本會定義給定應用程式的所有 UI, 並細分為其_視圖控制器_的功能總覽。 在 Xcode 的 Interface Builder 中, 每個控制器都存在於自己的_場景_中。
 
-[![](images/intro02.png "此範例中的檢視控制器")](images/intro02.png#lightbox)
+[![](images/intro02.png "範例視圖控制器")](images/intro02.png#lightbox)
 
-每個場景均代表連接的線條 （稱為 Segue） 每個場景，在 UI 中，因此顯示其關聯性的一組指定的 「 檢視 」 和 「 檢視控制器配對。 某些 Segue 定義一個檢視控制器包含一或多個子檢視 」 或 「 檢視控制器。 其他的 Segue，定義 （例如顯示 popover 或對話方塊的方塊） 的檢視控制器之間的轉換。 
+每個場景都代表一個給定的視圖和視圖控制器配對, 其中包含一組線 (稱為 Segue), 可連接 UI 中的每個場景, 進而顯示其關聯性。 某些 Segue 會定義一個 View Controller 如何包含一個或多個子視圖或視圖控制器。 其他 Segue, 定義 View Controller (例如顯示 popover 或對話方塊) 之間的轉換。 
 
 [![](images/intro03.png "範例 segue")](images/intro03.png#lightbox)
 
-最值得注意的是每個 Segue 代表某種形式的應用程式的 UI 的指定項目之間的資料的流程。
+最重要的一點是要注意的是, 每個 Segue 都代表應用程式 UI 的指定元素之間某種形式的資料流程程。
 
 <a name="Working-with-View-Controllers" />
 
-### <a name="working-with-view-controllers"></a>使用檢視控制器
+### <a name="working-with-view-controllers"></a>使用視圖控制器
 
-檢視控制器會定義指定的檢視的 Mac 應用程式中的資訊和提供該資訊的資料模型之間的關聯性。 分鏡腳本中的每個最上層場景均代表一個 Xamarin.Mac 應用程式的程式碼中的檢視控制器。
+視圖控制器會定義 Mac 應用程式內的特定資訊視圖與提供該資訊的資料模型之間的關聯性。 分鏡腳本中的每個最上層場景都代表 Xamarin 應用程式代碼中的一個 View Controller。
 
-[![](images/intro04.png "範例下滑至檢視控制器")](images/intro04.png#lightbox)
+[![](images/intro04.png "範例進度視圖控制器")](images/intro04.png#lightbox)
 
-如此一來，每個檢視控制器會是獨立的可重複使用的配對資訊的視覺表示法 （檢視） 和邏輯，以呈現，並控制這項資訊。
+如此一來, 每個 View Controller 都是獨立、可重複使用的資訊的視覺標記法 (View) 和邏輯, 以呈現及控制該資訊。
 
-內給定的場景，您可以執行所有會通常已處理個別的項目`.xib`檔案： 
+在指定場景內, 您可以執行所有通常已由個別`.xib`檔案處理的專案: 
 
-- 位置 subviews，和控制項 （例如按鈕和文字方塊）。
-- 定義項目位置及自動版面配置條件約束。
-- 連接動作與出口公開到程式碼的 UI 項目。
+- 放置子檢視和控制項 (例如按鈕和文字方塊)。
+- 定義元素位置和自動版面配置條件約束。
+- 連線動作和輸出, 以向程式碼公開 UI 元素。
 
 <a name="Working-with-Segues" />
 
 ### <a name="working-with-segues"></a>使用 Segue
 
-如上方所述，Segue 會提供所有的場景，定義您的應用程式 UI 之間的關聯性。 如果您已熟悉在分鏡腳本，在 iOS 中，您必須知道 Segue 的 iOS 通常定義全螢幕檢視之間的轉換。 這不同於 macOS Segue 通常會定義 「 內含項目 」 （其中一個場景是場景父系的子系） 時所示。
+如上所述, Segue 提供定義應用程式 UI 的所有場景之間的關聯性。 如果您很熟悉如何在 iOS 中使用分鏡腳本, 您知道 Segue for iOS 通常會定義全螢幕流覽之間的轉換。 這不同于 macOS, Segue 通常會定義「內含專案」 (其中一個場景是父場景的子系)。
 
-在 macOS 中大部分的應用程式通常會將他們的看法，一起在相同的視窗中使用 UI 元素，例如分割檢視和索引標籤。 不同於 iOS，其中檢視需要開啟和關閉畫面轉換，因為受限制的實體顯示空間。
+在 macOS 中, 大部分的應用程式通常會使用分割視圖和索引標籤等 UI 元素, 在同一個視窗內將其 views 群組在一起。 不同于 iOS, 因為實體顯示空間有限, 所以必須在畫面上轉換 views。
 
-指定內含項目針對 macOS 的傾向，有很多情況下所在_簡報 Segue_使用，例如強制回應的 Windows、 檢視表和 Popovers。
+針對內含專案 macOS 的喜好傾向, 在某些情況下會使用_展示 segue_ , 例如強制回應視窗、工作表視圖和 Popovers。
 
-當使用 Segue 簡報時，您可以覆寫`PrepareForSegue`簡報中，以便初始化和變數的父檢視控制器方法和任何資料提供給正在呈現的檢視控制器。
+使用 [簡報 segue] 時, 您可以`PrepareForSegue`覆寫用於簡報的父系視圖控制器的方法, 以初始化和變數, 並將任何資料提供給呈現的視圖控制器。
 
 <a name="Design-and-Run-Times" />
 
 ### <a name="design-and-run-times"></a>設計和執行時間
 
-在設計階段 (當在 Xcode 的 Interface Builder 中的 ui 的版面配置)，應用程式的 UI 的每個項目細分成它的構成項目：
+在設計階段 (配置 Xcode 的 Interface Builder 中的 UI 時), 應用程式 UI 的每個元素會細分為其組成專案:
 
-- **場景**，亦是所組成：
-    - **檢視控制器**-定義檢視和支援它們的資料之間的關聯性。
-    - **檢視和子檢視**-構成使用者介面的實際項目。
-    - **內含項目 Segue** -定義場景之間的父子式關聯性。
-- **簡報 Segue** -定義個別的簡報模式。 
+- **場景**-由下列組成:
+    - **View Controller** -定義 Views 與支援它們的資料之間的關聯性。
+    - **Views 和子檢視**-組成使用者介面的實際元素。
+    - 內含專案**segue** -定義場景之間的父子式關聯性。
+- **簡報 segue** -定義個別的呈現模式。 
 
-藉由定義每個項目，如此一來，它可讓消極式載入的每個項目只視它是在執行階段。 在 macOS，整個程序設計成可讓開發人員建立需要的備份程式碼，使其工作時，最低限度的複雜且彈性的使用者介面同時盡可能在效率與系統資源。
+藉由以這種方式定義每個專案, 它允許每個專案的延遲載入, 只有在執行時間時才需要。 在 macOS 中, 整個程式的設計目的是要讓開發人員能夠建立複雜且彈性的使用者介面, 只需要最少的支援程式碼, 就能使其正常執行, 同時也能以更有效率的方式使用系統資源。
 
 <a name="Storyboard-Quick-Start" />
 
-## <a name="storyboard-quick-start"></a>分鏡腳本的快速入門
+## <a name="storyboard-quick-start"></a>分鏡腳本快速入門
 
-在 [分鏡腳本快速入門](~/mac/platform/storyboards/quickstart.md)指南中，我們將建立簡單的 Xamarin.Mac 應用程式，將會介紹使用分鏡腳本建立的使用者介面的重要概念。 範例應用程式將會包含一個濺檢視，其中包含_內容區域_並_Inspector 區域_，它會顯示簡單的喜好設定 對話方塊視窗。 我們將使用 Segue 來結合所有的使用者介面項目。
+在分鏡腳本[快速入門](~/mac/platform/storyboards/quickstart.md)指南中, 我們將建立簡單的 Xamarin. Mac 應用程式, 其仲介紹使用分鏡腳本建立使用者介面的重要概念。 範例應用程式將包含包含_內容區域_和偵測_器區域_的分成視圖, 並會顯示一個簡單的 [喜好設定] 對話方塊視窗。 我們會使用 Segue 將所有的使用者介面元素結合在一起。
 
 <a name="Working-with-Storyboards" />
 
 ## <a name="working-with-storyboards"></a>使用 Storyboards
 
-本節涵蓋的深入詳細資料[使用分鏡腳本](~/mac/platform/storyboards/indepth.md)Xamarin.Mac 應用程式中。 我們會深入探討場景，以及檢視控制器和檢視所組成。 然後，我們將探討如何場景會繫結以及 Segue。 最後，我們將看看如何使用 Segue 的自訂型別。 
+本節涵蓋在 Xamarin. Mac 應用程式中[使用分鏡腳本](~/mac/platform/storyboards/indepth.md)的深入詳細資料。 我們會深入探討場景, 以及它們如何由視圖控制器和視圖組成。 然後, 我們將探討幕後如何與 Segue 系結在一起。 最後, 我們將探討如何使用自訂的 Segue 類型。 
 
 <a name="Complex-Storyboard-Example" />
 
 ## <a name="complex-storyboard-example"></a>複雜的分鏡腳本範例
 
-如需使用分鏡腳本的 Xamarin.Mac 應用程式中的複雜的範例的範例，請參閱[SourceWriter 範例應用程式](https://developer.xamarin.com/samples/mac/SourceWriter/)。 SourceWriter 是簡單的原始程式碼編輯器，可支援程式碼完成功能和簡單的語法反白顯示。
+如需在 Xamarin. Mac 應用程式中使用分鏡腳本的複雜範例範例, 請參閱[SourceWriter 範例應用程式](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter)。 SourceWriter 是簡單的原始程式碼編輯器，可支援程式碼完成功能和簡單的語法反白顯示。
 
 SourceWriter 程式碼有完整註解，在適當的情況下會提供從關鍵技術或方法到 Xamarin.Mac 指南文件中相關資訊的連結。
 
@@ -110,13 +110,13 @@ SourceWriter 程式碼有完整註解，在適當的情況下會提供從關鍵�
 
 ## <a name="summary"></a>總結
 
-這篇文章已快速查看在 Xamarin.Mac 應用程式中使用的分鏡腳本。 我們看到如何建立新的應用程式使用分鏡腳本，以及如何定義使用者介面。 我們還瞭解到如何在不同的視窗之間瀏覽和檢視狀態使用 segue。
+本文已快速探討如何在 Xamarin. Mac 應用程式中使用分鏡腳本。 我們已瞭解如何使用分鏡腳本建立新的應用程式, 以及如何定義使用者介面。 我們也看到了如何使用 segue 在不同的視窗和檢視狀態之間流覽。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Hello, Mac (範例)](https://developer.xamarin.com/samples/mac/Hello_Mac/)
+- [Hello, Mac (範例)](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [使用 Windows](~/mac/user-interface/window.md)
 - [OS X 人性化介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) \(英文\)
-- [Windows 的簡介](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)
+- [Windows 簡介](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

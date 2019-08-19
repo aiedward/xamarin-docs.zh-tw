@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: a77ebd8a6c64d2ee44011e8d51977adf88b52be9
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d47a8d4a0fa72cee59a054554e9868f20323d00b
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832432"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980794"
 ---
 # <a name="getting-started-with-datapages"></a>Getting Started with DataPages
 
@@ -21,8 +21,7 @@ ms.locfileid: "67832432"
 ![](~/media/shared/preview.png "此 API 目前為預覽狀態")
 
 > [!IMPORTANT]
-> 需要 DataPages [Xamarin.Forms 佈景主題](~/xamarin-forms/user-interface/themes/index.md)呈現的參考。
-
+> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [Xamarin.Forms.Theme.Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)nuget 套件安裝到您的專案中, 後面接著 [Xamarin.Forms.Theme.Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) 或 [Xamarin.Forms.Theme.Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)。
 
 若要開始建置使用 DataPages 預覽的簡單資料驅動頁面，請遵循下列步驟。 在預覽中的硬式編碼樣式 （「 事件 」） 建置的這個示範會使用僅適用於特定程式碼中的 JSON 格式。
 
@@ -52,7 +51,7 @@ ms.locfileid: "67832432"
 ```
 
 > [!IMPORTANT]
-> 您也應該遵循的步驟[佈景主題 （如下所示） 的組件載入](#loadtheme)某些未定案程式碼加入至 iOS`AppDelegate`和 Android `MainActivity`。 這會改善未來的預覽版。
+> 您也應該遵循步驟來[載入主題元件 (如下)](#loadtheme) , 方法是將一些未定案的程式`AppDelegate`代碼新增`MainActivity`至 iOS 和 Android。 這會改善未來的預覽版。
 
 
 ## <a name="3-add-a-xaml-page"></a>3.新增 XAML 頁面
@@ -100,7 +99,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 刪除`Content`項目並將它取代為`p:ListDataPage.DataSource`來填入資料的頁面。 在下面的遠端的 Json 範例資料檔案從 URL 載入。
 
 > [!NOTE]
-> 預覽*需要*`StyleClass`提供呈現提示資料來源的屬性。 `StyleClass="Events"`預先定義在預覽中，並包含樣式的配置是指*硬式編碼*以符合所使用的 JSON 資料來源。
+> 預覽*需要* `StyleClass`屬性來提供資料來源的呈現提示。 `StyleClass="Events"`預先定義在預覽中，並包含樣式的配置是指*硬式編碼*以符合所使用的 JSON 資料來源。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,7 +176,7 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
 
-很多一點的工作，若要從頭開始建立佈景主題 (請參閱[佈景主題指南](~/xamarin-forms/user-interface/themes/index.md))，但未來的預覽版本將這項執行的工作變得更容易。
+從頭開始建立主題還有更多工作, 但未來的預覽版本可讓您更輕鬆地完成這件事。
 
 
 ## <a name="troubleshooting"></a>疑難排解

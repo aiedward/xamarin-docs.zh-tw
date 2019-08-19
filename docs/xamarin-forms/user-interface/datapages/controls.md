@@ -1,30 +1,29 @@
 ---
 title: DataPages 控制項參考
-description: 本文介紹 Xamarin.Forms DataPages NuGet 套件中可用的控制項。
+description: 本文介紹 DataPages NuGet 套件中提供的控制項。
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: c907d55f09d334e167c831a19f9d0edc4c97732f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2af4bc3bd4dc6ae47f573c58c84aad54f41d42cd
+ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61161576"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68980808"
 ---
 # <a name="datapages-controls-reference"></a>DataPages 控制項參考
 
 ![](~/media/shared/preview.png "此 API 目前為預覽狀態")
 
 > [!IMPORTANT]
-> 需要 DataPages [Xamarin.Forms 佈景主題](~/xamarin-forms/user-interface/themes/index.md)呈現的參考。
+> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [Xamarin.Forms.Theme.Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)nuget 套件安裝到您的專案中, 後面接著 [Xamarin.Forms.Theme.Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) 或 [Xamarin.Forms.Theme.Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)。
 
+DataPages Nuget 包含許多可以利用資料來源系結的控制項。
 
-Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項數目。
-
-若要在 XAML 中使用這些控制項，確保已經包含命名空間，例如看到`xmlns:pages`下列宣告：
+若要在 XAML 中使用這些控制項, 請確定已包含命名空間, 例如, `xmlns:pages`請參閱下面的宣告:
 
 ```xaml
 <ContentPage
@@ -34,7 +33,7 @@ Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項�
     x:Class="DataPagesDemo.Detail">
 ```
 
-下列範例包含`DynamicResource`必須存在於專案的運作的資源字典中的參考。 另外還有如何建置範例[自訂控制項](#custom)
+下列範例包含`DynamicResource`必須存在於專案資源字典中才能正常執行的參考。 另外還有如何建立[自訂控制項](#custom)的範例
 
 ## <a name="built-in-controls"></a>內建控制項
 
@@ -45,12 +44,12 @@ Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項�
 
 ### <a name="heroimage"></a>HeroImage
 
-`HeroImage`控制項有四個屬性：
+`HeroImage`控制項有四個屬性:
 
 * 文字
 * 詳細資料
 * ImageSource
-* 長寬
+* 面
 
 ```xaml
 <pages:HeroImage
@@ -73,15 +72,15 @@ Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項�
 
 ### <a name="listitem"></a>ListItem
 
-`ListItem`控制項的版面配置是類似於原生 iOS 和 Android 的清單或資料表的資料列，不過它也可用來當做一般的檢視。 在範例中其下方的程式碼所示內裝載`StackLayout`，但是它可以用在資料繫結 scolling 清單控制項中。
+`ListItem`控制項的版面配置類似于原生 iOS 和 Android 清單或資料表資料列, 不過它也可以當做一般的視圖使用。 在下面的範例程式碼中, 它會顯示`StackLayout`裝載于內, 但也可用於資料系結的 scolling 清單控制項。
 
-有五個屬性：
+有五個屬性:
 
 * 標題
 * 詳細資料
 * ImageSource
 * PlaceholdImageSource
-* 長寬
+* 面
 
 ```xaml
 <StackLayout Spacing="0">
@@ -93,28 +92,28 @@ Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項�
     />
 ```
 
-這些螢幕擷取畫面顯示`ListItem`在 iOS 和 Android 平台使用同時淺色調和暗色調佈景主題：
+這些螢幕擷取畫面會`ListItem`在 iOS 和 Android 平臺上顯示, 同時使用淺色和深色主題:
 
 **Android**
 
-![](controls-images/listitem-light-android.png "在 Android 上的 ListItem 控制項") ![](controls-images/listitem-dark-android.png "在 Android 上的 ListItem 控制項")
+![](controls-images/listitem-light-android.png "Android 上的上個控制項")![](controls-images/listitem-dark-android.png "Android 上的上個控制項")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "在 iOS 上的 ListItem 控制項") ![](controls-images/listitem-dark-ios.png "在 iOS 上的 ListItem 控制項")
+![](controls-images/listitem-light-ios.png "IOS 上的上個控制項")![](controls-images/listitem-dark-ios.png "IOS 上的上個控制項")
 
 
 ## <a name="custom-control-example"></a>自訂控制項範例
 
-此自訂的目標`CardView`控制項時看起來像原生 Android CardView。
+此自訂`CardView`控制項的目標是要與原生 Android CardView 類似。
 
-它會包含三個屬性：
+它會包含三個屬性:
 
 * 文字
 * 詳細資料
 * ImageSource
 
-目標是看起來像下列程式碼的自訂控制項 (請注意，自訂`xmlns:local`需要參考目前的組件):
+目標是自訂控制項, 看起來會類似下列程式碼 (請注意, 需要`xmlns:local`自訂才能參考目前的元件):
 
 ```xaml
 <local:CardView
@@ -124,7 +123,7 @@ Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項�
 />
 ```
 
-它看起來應該像下面使用對應至內建的淺色調和暗色調佈景主題色彩螢幕擷取畫面：
+它看起來應該類似以下的螢幕擷取畫面, 使用與內建淺色和深色主題對應的色彩:
 
 **Android**
 
@@ -136,21 +135,21 @@ Xamarin.Forms DataPages Nuget 包括可以利用資料來源繫結的控制項�
 
 <a name="custom" />
 
-### <a name="building-the-custom-cardview"></a>建置自訂 CardView
+### <a name="building-the-custom-cardview"></a>建立自訂 CardView
 
 1. [DataView 子類別](#1)
-2. [定義字型、 配置和邊界](#2)
-3. [建立樣式控制項的子系](#3)
-4. [建立控制項的版面配置範本](#4)
-5. [新增佈景主題特定資源](#5)
-6. [設定的 ControlTemplate CardView 類別](#6)
-7. [將控制項加入頁面](#7)
+2. [定義字型、版面配置和邊界](#2)
+3. [建立控制項子系的樣式](#3)
+4. [建立控制項版面配置範本](#4)
+5. [新增主題特定資源](#5)
+6. [設定 CardView 類別的 ControlTemplate](#6)
+7. [將控制項新增至頁面](#7)
 
 <a name="1" />
 
 #### <a name="1-dataview-subclass"></a>1.DataView 子類別
 
-C# 子類別的`DataView`定義控制項的可繫結屬性。
+的C#子類別`DataView`會定義控制項的可系結屬性。
 
 ```csharp
 public class CardView : DataView
@@ -190,11 +189,11 @@ public class CardView : DataView
 
 <a name="2" />
 
-#### <a name="2-define-font-layout-and-margins"></a>2.定義字型、 配置和邊界
+#### <a name="2-define-font-layout-and-margins"></a>2.定義字型、版面配置和邊界
 
-控制項設計工具會找出這些值，做為自訂控制項的使用者介面設計的一部分。 在特定平台規格是必要的`OnPlatform`使用項目。
+控制項設計工具會在自訂控制項的使用者介面設計中, 找出這些值。 需要平臺特定規格時, `OnPlatform`會使用元素。
 
-請注意，某些值是指`StaticResource`s – 這些將在中定義[步驟 5](#5)。
+請注意, 有些值參考`StaticResource`s –這些會在[步驟 5](#5)中定義。
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -248,9 +247,9 @@ public class CardView : DataView
 
 <a name="3" />
 
-#### <a name="3-create-styles-for-the-controls-children"></a>3.建立樣式控制項的子系
+#### <a name="3-create-styles-for-the-controls-children"></a>3.建立控制項子系的樣式
 
-參考自訂控制項中建立的子系就是所定義的所有項目：
+參考所有定義的元素, 以建立將在自訂控制項中使用的子系:
 
 ```xml
 <!-- EXPLICIT STYLES (will be Classes) -->
@@ -280,9 +279,9 @@ public class CardView : DataView
 
 <a name="4" />
 
-#### <a name="4-create-the-control-layout-template"></a>4.建立控制項的版面配置範本
+#### <a name="4-create-the-control-layout-template"></a>4.建立控制項版面配置範本
 
-自訂控制項的視覺化設計已明確宣告在控制項範本中，使用以上定義的資源：
+自訂控制項的視覺化設計會使用上述定義的資源, 在控制項範本中明確宣告:
 
 ```xml
 <!--- CARDVIEW -->
@@ -324,11 +323,11 @@ public class CardView : DataView
 
 <a name="5" />
 
-#### <a name="5-add-the-theme-specific-resources"></a>5.新增佈景主題特定資源
+#### <a name="5-add-the-theme-specific-resources"></a>5.新增主題特定資源
 
-由於這是自訂控制項，將符合您使用的資源字典的佈景主題資源：
+因為這是自訂控制項, 所以請新增符合您使用資源字典之主題的資源:
 
-##### <a name="light-theme-colors"></a>淺色佈景主題色彩
+##### <a name="light-theme-colors"></a>淺色主題色彩
 
 ```xaml
 <Color x:Key="iOSCardViewBackgroundColor">#FFFFFF</Color>
@@ -341,7 +340,7 @@ public class CardView : DataView
 <Color x:Key="iOSCardViewDetailTextColor">#8F8E94</Color>
 ```
 
-##### <a name="dark-theme-colors"></a>深色佈景主題色彩
+##### <a name="dark-theme-colors"></a>深色主題色彩
 
 ```xaml
 <!-- CARD VIEW COLORS -->
@@ -357,9 +356,9 @@ public class CardView : DataView
 
 <a name="6" />
 
-#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6.設定的 ControlTemplate CardView 類別
+#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6.設定 CardView 類別的 ControlTemplate
 
-最後，請確定在中建立的 C# 類別[步驟 1](#1)會使用控制項範本中定義[步驟 4](#4)使用`Style``Setter`項目
+最後, 請確定C#在[步驟 1](#1)中建立的類別使用在`Style` `Setter` [步驟 4](#4)中使用元素定義的控制項範本
 
 ```xml
 <Style TargetType="local:CardView">
@@ -371,9 +370,9 @@ public class CardView : DataView
 
 <a name="7" />
 
-#### <a name="7-add-the-control-to-a-page"></a>7.將控制項加入頁面
+#### <a name="7-add-the-control-to-a-page"></a>7.將控制項新增至頁面
 
-`CardView`控制項現在加入至頁面。 下列範例示範它託管於`StackLayout`:
+`CardView`控制項現在可以加入至頁面。 下列範例顯示它裝載于中`StackLayout`:
 
 ```xaml
 <StackLayout Spacing="0">

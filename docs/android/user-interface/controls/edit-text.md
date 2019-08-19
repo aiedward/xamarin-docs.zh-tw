@@ -1,24 +1,24 @@
 ---
 title: 編輯文字
-description: 如何使用接受使用者輸入的 EditText 小工具。
+description: 如何使用 EditText 小工具來接受使用者輸入。
 ms.prod: xamarin
 ms.assetid: E513BCBC-438E-15E8-B83A-4B768A8E8B32
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/09/2018
-ms.openlocfilehash: 518c13aea431a8e973579768cc70b8281a31acac
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: a937de27fc032b0d88dfdf717339b47e0df8e58d
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674722"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68644625"
 ---
-# <a name="edit-text"></a>編輯文字
+# <a name="xamarinandroid-edit-text"></a>Xamarin. Android 編輯文字
 
-在本節中，您將使用[EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/)小工具建立的使用者輸入的文字欄位。 一旦在欄位中，輸入文字後**Enter**金鑰會顯示快顯訊息中的文字。
+在本節中, 您將使用[EditText](xref:Android.Widget.EditText)小工具來建立使用者輸入的文字欄位。 在欄位中輸入文字之後, **Enter**鍵會在快顯訊息中顯示文字。
 
-開啟**Resources/layout/activity_main.axml**並加入[EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/)要包含的版面配置項目。 下例**activity_main.axml**已`EditText`已加入至`LinearLayout`:
+開啟**Resources/layout/activity_main. axml** , 並將[EditText](xref:Android.Widget.EditText)專案新增至包含的版面配置。 下列範例**activity_main。 axml**具有`EditText`已新增至`LinearLayout`的:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -35,10 +35,10 @@ ms.locfileid: "67674722"
 </LinearLayout>
 ```
 
-在此範例中，`EditText`屬性`android:imeOptions`設定為`actionGo`。 此設定會變更預設值[完成](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE)動作來[移](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO)動作以便點選**Enter**金鑰觸發程序`KeyPress`輸入處理常式。
-(通常`actionGo`可讓**Enter**索引鍵會讓使用者存取 URL 中輸入的目標。)
+在此程式碼範例中`EditText` , `android:imeOptions`屬性設定為`actionGo`。 此設定會將預設的[完成](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE)動作變更為 [執行](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) 動作, 讓按**Enter**鍵會觸發`KeyPress`輸入處理常式。
+(通常會`actionGo`使用, 讓**Enter**鍵將使用者帶到所輸入 URL 的目標)。
 
-若要處理使用者輸入文字，將下列程式碼新增至結尾[OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/)方法中的**MainActivity.cs**:
+若要處理使用者文字輸入, 請將下列程式碼新增至**MainActivity.cs**中[OnCreate](xref:Android.App.Activity.OnCreate*)方法的結尾:
 
 ```csharp
 EditText edittext = FindViewById<EditText>(Resource.Id.edittext);
@@ -52,21 +52,21 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 };
 ```
 
-此外，新增下列`using`頂端的陳述式**MainActivity.cs**如果尚不存在：
+此外, 如果不存在, `using`請將下列語句新增至**MainActivity.cs**的頂端:
 
 ```csharp
 using Android.Views;
 ```
 
-此程式碼範例會擴大[EditText](https://developer.xamarin.com/api/type/Android.Widget.EditText/)版面配置項目，並將[KeyPress](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/)定義的動作，此 widget 具有焦點時按下按鍵時的處理常式。 在此情況下，方法定義來接聽**Enter**鍵 （當點選），然後快顯[快顯](https://developer.xamarin.com/api/type/Android.Widget.Toast/)已輸入的文字訊息。 請注意， [Handled](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/)屬性應該一律是`true`如果在處理事件。 這是為了防止事件反昇向上 （這會產生歸位字元的文字欄位中）。
+這個程式碼範例會從配置中擴大[EditText](xref:Android.Widget.EditText)專案, 並加入[KeyPress](xref:Android.Views.View.KeyPress)處理常式, 以定義在 widget 具有焦點時按下按鍵時要進行的動作。 在此情況下, 會定義方法來接聽**Enter**鍵 (按下時), 然後使用已輸入的文字來顯示[快顯](xref:Android.Widget.Toast)訊息。 請注意,如果事件已處理, 則[已處理](xref:Android.Views.View.KeyEventArgs.Handled)的屬性應該一律為`true`。 這是防止事件反升 (這會導致文字欄位中的回車) 的必要專案。
 
-執行應用程式，並在文字欄位中輸入一些文字。 當您按下**Enter**索引鍵、 快顯通知將會顯示在右側所示：
+執行應用程式, 並在文字欄位中輸入一些文字。 當您按下**enter**鍵時, 將會顯示快顯通知, 如下所示:
 
-[![文字輸入 EditText 範例](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
+[![在 EditText 中輸入文字的範例](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*此頁面上的部分是根據所建立的工作修改並* [ *Android 的開放原始碼專案所共用*](http://code.google.com/policies.html) *和依據中所述的條款來使用* [ *2.5 的 creative Commons Attribution License* ](http://creativecommons.org/licenses/by/2.5/) *。本教學課程根據* [ *Android 表單項目教學課程*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html) *。*
+*此頁面的部分是根據所建立的工作進行修改,* [*由 Android 開放原始碼專案共用*](http://code.google.com/policies.html)*並根據中所述的詞彙使用*[*創意 Commons 2.5 歸屬授權*](http://creativecommons.org/licenses/by/2.5/) *.本教學課程是以* [*Android 表單內容教學課程*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html)為基礎 *。*
 
 
 ## <a name="related-links"></a>相關連結
 
-- [EditTextSample](https://developer.xamarin.com/samples/monodroid/UserInterface/EditTextSample/)
+- [EditTextSample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-edittextsample)

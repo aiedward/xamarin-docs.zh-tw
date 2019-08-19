@@ -7,143 +7,161 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: b2f11bd09e1b1b3fd7af29a026229494a081ad11
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
+ms.openlocfilehash: f57736238fc01d865d7655d72da427e2c18dca59
+ms.sourcegitcommit: e02b725e48af867eb2c53ac9e17805f778fbbc8c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085030"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757252"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
 
 ## <a name="getting-diagnostic-information"></a>取得診斷資訊
 
-Xamarin.Android 會有幾個地方，來追蹤各種 bug 時的外觀。
+在追蹤各種 bug 時, Xamarin 有幾個地方需要尋找。
 它們包括：
 
 1.  診斷 MSBuild 輸出。
-2.  裝置部署記錄檔。
-3.  Android 偵錯記錄檔輸出。
+2.  裝置部署記錄。
+3.  Android Debug 記錄輸出。
 
 
 <a name="Diagnostic_MSBuild_Output" />
 
 ## <a name="diagnostic-msbuild-output"></a>診斷 MSBuild 輸出
 
-診斷 MSBuild 可能包含有關封裝建置的其他資訊，而且可能包含某些套件的部署資訊。
+診斷 MSBuild 可以包含與封裝建立相關的其他資訊, 而且可能包含一些封裝部署資訊。
 
 若要在 Visual Studio 內啟用診斷 MSBuild 輸出：
 
-1.  按一下 **工具 > 選項...**
-2.  在左側的樹狀結構檢視中，選取 **專案和方案 > 建置並執行**
-3.  在右窗格中，請設定 MSBuild 建置輸出詳細等級的下拉式清單中為診斷
-4.  按一下 [確定] 
+1.  按一下 [**工具] > 選項 ...**
+2.  在左側樹狀檢視中, 選取 [**專案和方案] > [建立並執行**]
+3.  在右側面板中, 將 [MSBuild 組建輸出詳細資訊] 下拉式清單設定為 [診斷]
+4.  按一下 **[確定]** 。
 5.  清除並重建您的套件。
 6.  診斷輸出會顯示在 [輸出] 面板中。
 
 
-若要啟用診斷 MSBuild 輸出，在 Visual Studio for Mac/OS x:
+若要在 Visual Studio for Mac/OS X 內啟用診斷 MSBuild 輸出:
 
-1.  按一下  **Visual Studio for Mac > 喜好設定...**
-2.  在左側的樹狀結構檢視中，選取 **專案 > 建置**
-3.  在右窗格中，設定記錄檔的詳細資訊下拉式清單為診斷
-4.  按一下 [確定] 
+1.  按一下 [ **Visual Studio for Mac > 喜好**設定 ...]
+2.  在左側樹狀檢視中, 選取 [專案] [ **> 組建**]
+3.  在右側面板中, 將 [記錄詳細資訊] 下拉式按鈕設定為 [診斷]
+4.  按一下 **[確定]** 。
 5.  重新啟動 Visual Studio for Mac
 6.  清除並重建您的套件。
-7.  診斷輸出會顯示錯誤板內 (**檢視 > 板 > 錯誤**)，依序按一下 [建置輸出] 按鈕。
+7.  按一下 [組建輸出] 按鈕, 即可在 [錯誤] 面板中看到診斷輸出 (**View > pad > 錯誤**)。
 
 
 
 
 ## <a name="device-deployment-logs"></a>裝置部署記錄檔
 
-若要啟用 Visual Studio 內的裝置部署記錄功能：
+若要在 Visual Studio 內啟用裝置部署記錄:
 
-1.  **工具 > 選項...**>
-2.  在左側的樹狀結構檢視中，選取  **Xamarin > Android 設定**
-3.  在右窗格中，啟用 [X]**延伸模組的偵錯記錄 （將 monodroid.log 寫入您的桌面）** 核取方塊。
-4.  在您的桌面上 monodroid.log 檔案會寫入記錄訊息。
-
-
-Visual Studio for Mac 一律會寫入裝置的部署記錄檔。 找到這些物件是略為困難;*AndroidUtils*每個日期 + 時間部署，例如建立記錄檔：**AndroidTools-2012-10-24_12-35-45.log**。
-
--  在 Windows 中，記錄檔會寫入至`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
--  在 OS X 上記錄檔會寫入至`$HOME/Library/Logs/XamarinStudio-{VERSION}`。
+1.  **工具 > 選項 。** >
+2.  在左側樹狀檢視中, 選取 [ **Xamarin > Android 設定**]
+3.  在右側面板中, 啟用 [X] 延伸模組的 [**偵錯工具記錄 (將 monodroid 寫入您的桌面)** ] 核取方塊。
+4.  記錄檔訊息會寫入您桌面上的 monodroid 檔案。
 
 
+Visual Studio for Mac 一律會寫入裝置部署記錄。 尋找它們有點棘手,每隔一天會建立一個*AndroidUtils*記錄檔, 一次部署發生的時間, 例如:**AndroidTools-2012-10-24 _12-35-45 .log**。
+
+-  在 Windows 上, 記錄檔會寫入`%LOCALAPPDATA%\XamarinStudio-{VERSION}\Logs`。
+-  在 OS X 上, 記錄檔會寫入`$HOME/Library/Logs/XamarinStudio-{VERSION}`至。
 
 
-## <a name="android-debug-log-output"></a>Android 偵錯記錄輸出
 
-Android 會寫入許多訊息[Android 偵錯記錄檔](~/android/deploy-test/debugging/android-debug-log.md)。
-Xamarin.Android 會使用 Android 系統屬性來控制 Android 偵錯記錄檔的其他訊息的產生。 可以透過設定 android 系統屬性*setprop*命令內[Android Debug Bridge (adb)](https://developer.android.com/guide/developing/tools/adb.html):
+
+## <a name="android-debug-log-output"></a>Android Debug 記錄輸出
+
+Android 會將許多訊息寫入[Android Debug 記錄](~/android/deploy-test/debugging/android-debug-log.md)檔。
+Xamarin 會使用 Android 系統屬性來控制對 Android Debug 記錄檔的額外訊息產生。 Android 系統屬性可以透過[Android Debug Bridge (adb)](https://developer.android.com/guide/developing/tools/adb.html)內的*setprop*命令來設定:
 
 ```shell
 adb shell setprop PROPERTY_NAME PROPERTY_VALUE
 ```
 
-系統屬性程序在啟動期間，會讀取，因此必須先設定應用程式就會啟動，或是必須重新啟動應用程式之後會變更的系統屬性。
+系統屬性會在進程啟動期間讀取, 因此必須在啟動應用程式之前設定, 或者必須在變更系統屬性之後重新開機應用程式。
 
 
 
 ### <a name="xamarinandroid-system-properties"></a>Xamarin.Android 系統屬性
 
-Xamarin.Android 支援下列系統屬性：
+Xamarin 支援下列系統屬性:
 
--   *debug.mono.debug*:如果非空白字串，這就相當於`*mono-debug*`。
+-   *debug*:如果是非空白字串, 則這相當於`*mono-debug*`。
 
--   *debug.mono.env*:以管道分隔 ('*|*') 的應用程式在啟動期間，匯出的環境變數清單*之前*mono 已初始化。 這可讓設定環境變數，控制 mono 的記錄功能。
+-   *debug. env*:在初始化 mono*之前*, 要 *|* 在應用程式啟動期間匯出之環境變數的管線分隔 (' ') 清單。 這可讓您設定控制 mono 記錄的環境變數。
 
-    - *注意*：由於的值為 '*|*'-分隔，值必須具有額外的層級的引號，作為\` *adb 殼層*\`命令會移除引號括住的一組。
+    - *注意*：因為值是以 ' *|* ' 分隔, 所以此值必須有額外的引號, \`因為*adb shell* \`命令會移除一組引號。
 
-    - *注意*：Android 系統屬性值可以是不超過 92 個字元的長度。
+    - *注意*：Android 系統屬性值的長度不能超過92個字元。
 
     - 範例：
 
             adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
--   *debug.mono.log*:以逗號分隔 ('*，*') 的列印到 Android 偵錯記錄檔的其他訊息的元件清單。 根據預設，不會設定。 元件包括：
+-   *debug .log*:應該將其他訊息列印到Android 偵錯工具記錄檔的元件清單 (以逗號分隔)。 根據預設, 不會設定任何內容。 元件包括:
 
-    -   *所有*:列印所有訊息
+    -   *全部*:列印所有訊息
     -   *gc*:列印與 GC 相關的訊息。
-    -   *gref*:列印弱式 （通用） 的參考配置和解除配置的訊息。
-    -   *lref*:列印本機參考的配置和解除配置的訊息。
+    -   *grf*:Print (弱式、全域) 參考配置和解除配置訊息。
+    -   *lref*:列印本機參考配置和解除配置訊息。
 
-    *附註*： 這些是*極*詳細資訊。 除非您真的需要否則請不要啟用。
+    *注意*: 這些是*非常*詳細的資訊。 除非您真的需要, 否則請勿啟用。
 
--   *debug.mono.trace*:允許您設定[mono-追蹤](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定。
+-   *debug. trace*:允許設定[mono--追蹤](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定。
 
+## <a name="deleting-bin-and-obj"></a>刪除`bin`和`obj`
 
+在過去的情況下, 會發生下列情況:
 
-## <a name="xamarinandroid-cannot-resolve-systemvaluetuple"></a>Xamarin.Android 無法解析 System.ValueTuple
+- 您遇到奇怪的組建或執行階段錯誤。
+- 您`Clean`的`Rebuild`、或會手動刪除`bin`您`obj`的和目錄。
+- 問題消失了。
 
-這個錯誤是因為使用 Visual Studio 不相容。
+我們致力於修正這些問題, 因為它們會影響開發人員的生產力。
 
-- **Visual Studio 2017 Update 1** （版本 15.1 或更舊版本） 才相容**System.ValueTuple NuGet 4.3.0** （或更舊版本）。
+如果發生如下的問題:
 
-- **Visual Studio 2017 Update 2** （版本 15.2 或更新版本） 才相容**System.ValueTuple NuGet 4.3.1** （或更新版本）。
+1. 請注意。 您的專案進入此狀態的最後一個動作是什麼？
+1. 儲存您目前的組建記錄檔。 再次嘗試建立, 並記錄[診斷組建記錄](#diagnostic-msbuild-output)檔。
+1. 提交[錯誤報表][bug]。
 
-請選擇正確的 System.ValueTuple NuGet 與您的 Visual Studio 2017 安裝相對應。
+在刪除您`bin`的`obj`和目錄之前, 請先將其壓縮並加以儲存, 以供稍後進行診斷。 您可能只`Clean`需要您的 Xamarin. Android 應用程式專案, 就能讓事情再次運作。
+
+[bug]: https://github.com/xamarin/xamarin-android/wiki/Submitting-Bugs,-Feature-Requests,-and-Pull-Requests
+
+## <a name="xamarinandroid-cannot-resolve-systemvaluetuple"></a>Xamarin 無法解析 System.valuetuple
+
+此錯誤是因為與 Visual Studio 不相容所造成。
+
+- **Visual Studio 2017 Update 1**(15.1 版或更舊版本) 只與**System.valuetuple NuGet 4.3.0** (或更舊版本) 相容。
+
+- **Visual Studio 2017 Update 2**(15.2 版或更新版本) 只與**System.valuetuple NuGet 4.3.1** (或更新版本) 相容。
+
+請選擇與您的 Visual Studio 2017 安裝對應的正確 System.valuetuple NuGet。
 
 
 ## <a name="gc-messages"></a>GC 訊息
 
-GC 元件訊息可檢視 debug.mono.log 系統屬性設定為包含 gc 的值。
+將 [debug .log 系統] 屬性設定為包含 gc 的值, 即可查看 GC 元件訊息。
 
-GC 會執行，並提供關於多少工作 GC 並未的資訊時，會產生 GC 的訊息：
+每當 GC 執行時, 系統就會產生 GC 訊息, 並提供 GC 所執行工作的相關資訊:
 
 ```shell
 I/monodroid-gc(12331): GC cleanup summary: 81 objects tested - resurrecting 21.
 ```
 
-可以產生其他的 GC 資訊，例如計時資訊，藉由設定`MONO_LOG_LEVEL`環境變數，以`debug`:
+您可以藉由將`MONO_LOG_LEVEL`環境變數設定為, `debug`來產生其他 GC 資訊 (例如計時資訊):
 
 ```shell
 adb shell setprop debug.mono.env MONO_LOG_LEVEL=debug
 ```
 
-這會導致 （大量） 額外 Mono 的訊息，包括下列三個後果：
+這會導致 (許多) 額外的 Mono 訊息, 包括下列三種結果:
 
 ```shell
 D/Mono (15723): GC_BRIDGE num-objects 1 num_hash_entries 81226 sccs size 81223 init 0.00ms df1 285.36ms sort 38.56ms dfs2 50.04ms setup-cb 9.95ms free-data 106.54ms user-cb 20.12ms clenanup 0.05ms links 5523436/5523436/5523096/1 dfs passes 1104 6883/11046605
@@ -151,27 +169,27 @@ D/Mono (15723): GC_MINOR: (Nursery full) pause 2.01ms, total 287.45ms, bridge 22
 D/Mono ( 2073): GC_MAJOR: (user request) pause 2.17ms, total 2.47ms, bridge 28.77 major 576K/576K los 0K/16K
 ```
 
-在 `GC_BRIDGE`訊息中，`num-objects`是此階段的考量，橋接器物件的數目和`num_hash_entries`是橋接程式碼的這個引動過程期間處理的物件數目。
+在訊息中, `num-objects`是此傳遞所考慮的橋接器物件數目, 而`num_hash_entries`是在此橋接器程式碼調用期間處理的物件數目。 `GC_BRIDGE`
 
-中`GC_MINOR`並`GC_MAJOR`訊息，`total`是一段時間，而世界已暫停 （沒有執行緒正在執行） 時`bridge`是橋接器處理程式碼 （這會處理與 Java VM） 中所花費的時間量。 항 상*不*暫停橋接器處理發生時。
+`total` `bridge`在和訊息`GC_MAJOR`中, 是世界暫停的時間量 (不會執行任何執行緒), 而則是在橋接器處理常式代碼中所花費的時間量 (這會處理 JAVA VM)。 `GC_MINOR` 在進行橋接器處理時, 世界*不*會暫停。
 
- *一般情況下*的值愈大`num_hash_entries`，則更多時間`bridge`需要集合，和較大`total`會收集所花費的時間。
+ *一般來說*, 的值`num_hash_entries`愈大, `bridge`集合將會花費更多時間, 而所花的`total`時間也會愈大。
 
 
 
 ## <a name="global-reference-messages"></a>全域參考訊息
 
-若要啟用全域參考 loggig (GRF) 記錄*debug.mono.log*系統的屬性必須包含*grf*，例如：
+若要啟用全域參考 loggig (GRF) 記錄, *debug .log*系統屬性必須包含*grf*, 例如:
 
 ```shell
 adb shell setprop debug.mono.log gref
 ```
 
-Xamarin.Android 會使用 Android 的全域參考，來叫用的 Java 執行個體必須要提供給 Java Java 方法時，提供做為 Java 執行個體和相關的 managed 執行個體之間的對應。
+Xamarin 會使用 Android 全域參考來提供 JAVA 實例和相關聯的受控實例之間的對應, 如同叫用 JAVA 方法時, JAVA 實例必須提供給 JAVA。
 
-不幸的是，Android 模擬器只允許 2000年全域參考存在一次。 硬體有更高限制的 52000 全域的參考。 較低的限制可能會造成問題，因此了解，在模擬器上執行應用程式時*其中*執行個體來自可能非常有用。
+可惜的是, Android 模擬器一次只允許2000個全域參考存在。 硬體具有更高的52000全域參照限制。 在模擬器上執行應用程式時, 較低的限制可能會造成問題, 因此知道實例的來源可能非常有用。
 
- *請注意*： 全域的參考計數是內部 Xamarin.Android，並不會 （而且也無法） 包含由其他處理程序所載入的原生程式庫的全域參考。 使用全域的參考計數為估計值。
+ *注意*: 全域參考計數是 Xamarin 的內部, 而且不會 (也不能) 包含載入至進程的其他原生程式庫所採取的全域參考。 使用全域參考計數做為估計值。
 
 ```shell
 I/monodroid-gref(12405): +g+ grefc 108 gwrefc 0 obj-handle 0x40517468/L -> new-handle 0x40517468/L from    at Java.Lang.Object.RegisterInstance(IJavaObject instance, IntPtr value, JniHandleOwnership transfer)
@@ -193,34 +211,34 @@ I/monodroid-gref(27679): +w+ grefc 1916 gwrefc 296 obj-handle 0x406b2b98/G -> ne
 I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take_global_ref_jni
 ```
 
-有四個訊息的結果：
+有四個結果訊息:
 
--  全域參考建立： 這些是開頭的行會 *+ g +* ，並會提供堆疊追蹤建立的程式碼路徑。
--  全域參考解構： 這些是開頭的行會 *-g-* ，處置全域參考的程式碼路徑可能會提供堆疊追蹤。 如果 GC 正在處置的 grf，將會不提供任何堆疊追蹤。
--  全域的弱式參考建立： 這些是開頭的行會 *+ w +* 。
--  全域的弱式參考解構： 這些是開頭行會 *-w-* 。
+-  全域參考建立: 這些是開頭為 *+ g +* 的行, 並會提供建立程式碼路徑的堆疊追蹤。
+-  全域參考終結: 這些是開頭為 *-g-* 的行, 而且可能會針對全域參考的程式碼路徑處置提供堆疊追蹤。 如果 GC 正在處置 grf, 則不會提供任何堆疊追蹤。
+-  弱式全域參考建立: 這些是以 *+ w +* 開頭的行。
+-  弱式全域參考銷毀: 這些是以 *-w-* 開頭的行。
 
 
-在所有的訊息中， *grefc*值是 Xamarin.Android 所建立，全域參考計數而*grefwc*值是弱式全域參考 Xamarin.Android 所建立的計數。 *處理*或是*obj 控制代碼*的值是 JNI 控制代碼值，而且後面的字元 ' */*' 是控制代碼值的型別： */L*本機參考，如 */G*全域的參考，和 */W*為全域的弱式參考。
+在所有訊息中, *grefc*值是 xamarin 所建立的全域參考計數, 而*Grefwc*值是 xamarin 所建立的弱式全域參考計數。 *控制碼*或*obj 控制碼*值是 JNI 控制碼值, 而 */* ' ' 之後的字元則是控制碼值的型別: */l*代表本機參考, */g*用於全域參考, 而 */w*用於弱式全域參考。
 
-GC 程序的一部分，全域的參考 （+ g +） 會轉換成全域的弱式參考 (造成 a + w + 和-g-)、 開始 Java 端 GC，以及再弱式全域參考會檢查以查看所收集。 如果仍在執行，弱式參考的建立新 grf (+ g +，-w-)，否則為弱式參考被終結時 (-w)。
+做為 GC 程式的一部分, 全域參考 (+ g +) 會轉換成弱式全域參考 (導致 + w + 和-g-), 並會開始 JAVA 端 GC, 然後檢查弱式全域參考以查看是否已收集。 如果它仍在運作中, 就會以弱式 ref (+ g +,-w-) 來建立新的 grf, 否則弱式 ref 會被終結 (-w)。
 
-## <a name="java-instance-is-created-and-wrapped-by-a-mcw"></a>建立並由 MCW 包裝 Java 執行個體
+## <a name="java-instance-is-created-and-wrapped-by-a-mcw"></a>JAVA 實例是由 MCW 所建立和包裝的
 
 ```shell
 I/monodroid-gref(27679): +g+ grefc 2211 gwrefc 0 obj-handle 0x4066df10/L -> new-handle 0x4066df10/L from ...
 I/monodroid-gref(27679): handle 0x4066df10; key_handle 0x4066df10: Java Type: `android/graphics/drawable/TransitionDrawable`; MCW type: `Android.Graphics.Drawables.TransitionDrawable`
 ```
 
-## <a name="a-gc-is-being-performed"></a>正在執行 GC...
+## <a name="a-gc-is-being-performed"></a>正在執行 GC 。
 
 ```shell
 I/monodroid-gref(27679): +w+ grefc 1953 gwrefc 259 obj-handle 0x4066df10/G -> new-handle 0xde68f95f/W from take_weak_global_ref_jni
 I/monodroid-gref(27679): -g- grefc 1952 gwrefc 259 handle 0x4066df10/G from take_weak_global_ref_jni
 ```
 
-## <a name="object-is-still-alive-as-handle--null"></a>物件是否仍保持運作，為控制代碼 ！ = null
-## <a name="wref-turned-back-into-a-gref"></a>轉換回 grf wref
+## <a name="object-is-still-alive-as-handle--null"></a>物件仍在作用中, 如 handle! = null
+## <a name="wref-turned-back-into-a-gref"></a>wref 已轉換回 grf
 
 ```shell
 I/monodroid-gref(27679): *try_take_global obj=0x4976f080 -> wref=0xde68f95f handle=0x4066df10
@@ -228,159 +246,159 @@ I/monodroid-gref(27679): +g+ grefc 1930 gwrefc 39 obj-handle 0xde68f95f/W -> new
 I/monodroid-gref(27679): -w- grefc 1930 gwrefc 38 handle 0xde68f95f/W from take_global_ref_jni
 ```
 
-## <a name="object-is-dead-as-handle--null"></a>物件是死了，為控制代碼 = = null
-## <a name="wref-is-freed-no-new-gref-created"></a>wref 已釋放，任何新建立的 grf
+## <a name="object-is-dead-as-handle--null"></a>物件無效, 控制碼 = = null
+## <a name="wref-is-freed-no-new-gref-created"></a>已釋放 wref, 未建立任何新 grf
 
 ```shell
 I/monodroid-gref(27679): *try_take_global obj=0x4976f080 -> wref=0xde68f95f handle=0x0
 I/monodroid-gref(27679): -w- grefc 1914 gwrefc 296 handle 0xde68f95f/W from take_global_ref_jni
 ```
 
-還有一個 「 有趣 」 的缺點： 於執行 Android 4.0 之前的目標，grf 值相當於 Java 物件的位址在 Android 執行階段的記憶體中。 （也就是 GC 是非移動，保守，收集器，而且它會處理這些物件的直接參考）。因此之後 + g + + w +、-g-、 + g +，-w 順序，產生 grf 會有原始 grf 值相同的值。 這可讓透過記錄檔的 grepping 相當簡單。
+這裡有一個「有趣」的功能: 在4.0 之前執行 Android 的目標上, grf 值等於 Android 執行時間記憶體中 JAVA 物件的位址。 (也就是說, GC 是一個非移動、保守、收集器, 它會直接參考這些物件)。因此, 在 + g +、+ w +、-g-、+ g +、-w 序列之後, 產生的 grf 將會具有與原始 grf 值相同的值。 這讓 grepping 的記錄非常簡單。
 
-Android 4.0，不過，已移動的收集器，而且不會再將 Android 執行階段的直接參考 VM 物件。 因此之後, + g + + w +、-g-、 + g +、-w 順序、 grf 值*將會不同*。 如果物件不受影響多個 Gc，它會變成由數個 grf 值，以致更難以判斷實際從配置執行個體。
+不過, android 4.0 有移動的收集器, 且不再直接參考 Android 執行時間 VM 物件。 因此, 在 + g +、+ w +、-g-、+ g +、-w 序列之後, grf 值將會*不同*。 如果物件不受多個 Gc, 則會有數個 grf 值, 因此難以判斷實例實際配置來源的位置。
 
 ### <a name="querying-programmatically"></a>以程式設計方式查詢
 
-您可以藉由查詢來查詢 GRF 」 和 「 WREF 計數`JniRuntime`物件。
+您可以藉由`JniRuntime`查詢物件來查詢 grf 和 WREF 計數。
 
-`Java.Interop.JniRuntime.CurrentRuntime.GlobalReferenceCount` 全域的參考計數
+`Java.Interop.JniRuntime.CurrentRuntime.GlobalReferenceCount`-全域參考計數
 
-`Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount` -弱式參考計數
-
-
-
-## <a name="android-debug-logs"></a>Android 偵錯記錄檔
-
-[Android 偵錯記錄檔](~/android/deploy-test/debugging/android-debug-log.md)可能會提供有關您所見的任何執行階段錯誤的其他內容。
+`Java.Interop.JniRuntime.CurrentRuntime.WeakGlobalReferenceCount`-弱式參考計數
 
 
 
-## <a name="floating-point-performance-is-terrible"></a>浮點數的效能很可怕的 ！
+## <a name="android-debug-logs"></a>Android Debug 記錄檔
 
-或者，「 我的應用程式執行速度快 10 倍比偵錯組建與發行組建 ！ 」
+[Android Debug 記錄](~/android/deploy-test/debugging/android-debug-log.md)檔可能會提供有關您所看到的任何執行階段錯誤的其他內容。
 
-Xamarin.Android 支援多個裝置 Abi: *armeabi*， *armeabi-v7a*，並*x86*。 在中指定裝置 Abi**專案屬性 > 應用程式 索引標籤 > 支援的架構**。
 
-偵錯組建會使用 Android 套件提供所有的 Abi，並因此會使用最快速的 ABI 的目標裝置。
 
-發行組建只會包含在專案屬性 索引標籤中選取的 Abi。您可以選取多個。
+## <a name="floating-point-performance-is-terrible"></a>浮點效能變得很可怕!
 
-*armeabi*是預設值的 ABI，且最廣泛的裝置支援。 *不過*，armeabi 不支援多個 CPU 的裝置和硬體浮點、 amont 其他項目。 因此，應用程式使用 armeabi 版本執行階段會繫結至單一核心，而且將會使用軟浮點實作。 這兩種都可以參與您的應用程式明顯變慢的效能。
+或者, 「我的應用程式使用 Debug 組建比發行組建更快執行10倍!」
 
-如果您的應用程式需要適當的浮點數效能 （例如遊戲），您應該啟用*armeabi-v7a* ABI。 您可能想要只支援*armeabi-v7a*執行階段，這表示，雖然較舊的裝置僅支援*armeabi*將無法執行您的應用程式。
+Xamarin 支援多個裝置 Abi: *armeabi*、 *armeabi armeabi-v7a*和*x86*。 可以在專案屬性中指定裝置 Abi, **> 應用程式**索引標籤 > 支援的架構。
+
+「偵錯工具組建」使用提供所有 Abi 的 Android 套件, 因此會針對目標裝置使用最快速的 ABI。
+
+發行組建只會包含在 [專案屬性] 索引標籤中選取的 Abi。可以選取一個以上的。
+
+*armeabi*是預設 ABI, 具有最廣泛的裝置支援。 *不過*, armeabi 不支援多 CPU 裝置和硬體浮點, amont 其他專案。 因此, 使用 armeabi 版本執行時間的應用程式將會系結至單一核心, 並會使用軟浮點執行。 這兩種情況都會導致應用程式的效能明顯降低。
+
+如果您的應用程式需要相當可觀的浮點效能 (例如遊戲), 您應該啟用*armeabi-Armeabi-v7a* ABI。 您可能只想要支援*armeabi armeabi-v7a*執行時間, 這表示只支援*armeabi*的舊版裝置將無法執行您的應用程式。
 
 
 
 ## <a name="could-not-locate-android-sdk"></a>找不到 Android SDK
 
-有 2 下載從 Google 的 Android SDK for Windows。
-如果您選擇.exe 安裝程式時，它會寫入告訴 Xamarin.Android 安裝所在的登錄機碼。 如果您選擇的.zip 檔案，並將它解壓縮自行，Xamarin.Android 就不知道哪裡可找到 SDK。 您可以告訴 Xamarin.Android 其中 SDK 是 Visual Studio 中前往**工具 > 選項 > Xamarin > Android 設定**:
+適用于 Windows 的 Android SDK 可從 Google 取得2個下載。
+如果您選擇 .exe 安裝程式, 它將會寫入登錄機碼, 告訴 Xamarin Android 安裝所在的位置。 如果您自行選擇 .zip 檔案並將它解壓縮, 則 Xamarin 不知道要在哪裡尋找 SDK。 您可以前往 [工具] [ **> 選項] > [xamarin > Android 設定**], 告訴您 SDK 所在的 Visual Studio:
 
-[![Xamarin Android 設定 中的 android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+[![Xamarin Android 設定中的 Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 
 
 ## <a name="ide-does-not-display-target-device"></a>IDE 不會顯示目標裝置
 
-有時候您會嘗試在應用程式部署至裝置，但您想要部署至未顯示在 [選取裝置] 對話方塊的裝置。 當 Android Debug Bridge 決定要去渡假時，也可會發生。
+有時候您會嘗試將應用程式部署至裝置, 但您想要部署的裝置不會顯示在 [選取裝置] 對話方塊中。 當 Android Debug Bridge 決定休假時, 就可能發生這種情況。
 
-若要診斷此問題，找出[adb 程式](~/android/deploy-test/debugging/android-debug-log.md)，然後執行：
+若要診斷此問題, 請尋找[adb 程式](~/android/deploy-test/debugging/android-debug-log.md), 然後執行:
 
 ```shell
 adb devices
 ```
 
-如果您的裝置不存在，您就需要重新啟動 Android Debug Bridge 伺服器，以便可以找到您的裝置：
+如果您的裝置不存在, 則需要重新開機 Android Debug Bridge 伺服器, 才能找到您的裝置:
 
 ```shell
 adb kill-server
 adb start-server
 ```
 
-HTC 同步處理軟體可能會阻止**adb 開始伺服器**無法正常運作。 如果**adb 開始伺服器**命令不會列印出連接埠啟動，請結束 HTC 同步處理軟體，然後嘗試重新啟動 adb 伺服器。
+HTC 同步處理軟體可能會阻止**adb 的啟動伺服器**正常運作。 如果**adb start-server**命令未列印出其啟動的埠, 請結束 HTC 同步處理軟體, 然後嘗試重新開機 adb 伺服器。
 
 
-## <a name="the-specified-task-executable-keytool-could-not-be-run"></a>無法執行指定的工作可執行檔"keytool"
+## <a name="the-specified-task-executable-keytool-could-not-be-run"></a>無法執行指定的工作可執行檔 "keytool"
 
-這表示您的路徑不包含 Java SDK 的 bin 目錄所在的目錄。 請檢查您已遵循這些步驟，從[安裝](~/android/get-started/installation/index.md)指南。
+這表示您的路徑不包含 JAVA SDK 的 bin 目錄所在的目錄。 請確認您已遵循[安裝](~/android/get-started/installation/index.md)指南中的步驟進行。
 
 
-## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>monodroid.exe 或 aresgen.exe 已結束，代碼 1
+## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>monodroid 或 aresgen 已結束, 代碼為1
 
-若要協助您偵錯這個問題，請到 Visual Studio 變更 MSBuild 詳細資訊層級，若要這樣做，請選取：**工具 > 選項 > 專案**並**解決方案 > 建置**並**執行 > MSBuild 專案建置輸出詳細等級**並將此值設定為**一般**。
+若要協助您進行此問題的調試, 請移至 Visual Studio 並變更 MSBuild 詳細等級, 若要這樣做, 請選取:[**工具] > 選項 > 專案**和**方案 > 建立**並**執行 > MSBuild 專案組建輸出詳細**資訊, 並將此值設定為 [**正常**]。
 
-重建和檢查 Visual Studio 輸出 窗格，其中應包含完整的錯誤。
+重建, 並檢查 Visual Studio 的 [輸出] 窗格, 其中應包含完整的錯誤。
 
-## <a name="there-is-not-enough-storage-space-on-the-device-to-deploy-the-package"></a>若要將封裝部署在裝置上沒有足夠的儲存空間
+## <a name="there-is-not-enough-storage-space-on-the-device-to-deploy-the-package"></a>裝置上的儲存空間不足, 無法部署套件
 
-會發生這種情況時不啟動 Visual Studio 中的從模擬器。 當啟動模擬器，Visual Studio 之外，您需要傳遞`-partition-size 512`選項，例如
+當您未從 Visual Studio 中啟動模擬器時, 就會發生這種情況。 在 Visual Studio 外啟動模擬器時, 您必須傳遞`-partition-size 512`選項, 例如
 
 ```shell
 emulator -partition-size 512 -avd MonoDroid
 ```
 
-請確定您使用正確的模擬器名稱，亦即[時設定模擬器，您使用的名稱](~/android/get-started/installation/windows.md#device)。
+請確定您使用的是正確的模擬器名稱, 亦即您在設定模擬器[時使用的名稱](~/android/get-started/installation/windows.md#device)。
 
 
-## <a name="installfailedinvalidapk-when-installing-a-package"></a>安裝\_失敗\_無效\_安裝套件時的 APK
+## <a name="install_failed_invalid_apk-when-installing-a-package"></a>安裝\_套件\_時\_安裝失敗的無效 APK
 
-Android 套件名稱*必須*包含句號 ('*。*')。 使其包含句號，請編輯您的套件名稱。
+Android 套件名稱*必須*包含句點 (' *.* ')。 編輯您的套件名稱, 使其包含句點。
 
--   在 Visual Studio:
-    -   以滑鼠右鍵按一下專案 > 屬性
-    -   按一下左側 [Android 資訊清單] 索引標籤。
+-   在 Visual Studio 內:
+    -   以滑鼠右鍵按一下您的專案 > 屬性
+    -   按一下左側的 [Android 資訊清單] 索引標籤。
     -   更新 [封裝名稱] 欄位。
-        -   如果您看到訊息&ldquo;否 AndroidManifest.xml 找到。 按一下以新增一個。&rdquo;，按一下  連結，然後更新 封裝名稱 欄位。
--   在 Visual Studio for Mac:
-    -   以滑鼠右鍵按一下專案 > 選項。
-    -   瀏覽至組建 / Android 應用程式一節。
-    -   變更封裝名稱欄位必須包含 '。 '。
+        -   如果您看到 [找&ldquo;不到 androidmanifest.xml] 訊息。 按一下以加入一個。&rdquo;, 按一下連結, 然後更新 [套件名稱] 欄位。
+-   在 Visual Studio for Mac 內:
+    -   以滑鼠右鍵按一下您的專案, > 選項。
+    -   流覽至 [Build/Android 應用程式] 區段。
+    -   將 [封裝名稱] 欄位變更為包含 '. '。
 
 
 
 
-## <a name="installfailedmissingsharedlibrary-when-installing-a-package"></a>安裝\_失敗\_MISSING\_共用\_安裝套件時的程式庫
+## <a name="install_failed_missing_shared_library-when-installing-a-package"></a>安裝\_套件\_時安裝\_失敗的共用\_程式庫
 
-稱為 「 共用程式庫 」 在此內容中的是*未*原生共用程式庫 (*libfoo.so*) 檔案; 而是必須分別安裝在目標裝置，例如 Google 地圖的程式庫。
+此內容中的「共用程式庫」*不*是原生共用程式庫 (*libfoo.so*) 檔案;而是必須分別安裝在目標裝置上的程式庫, 例如 Google Maps。
 
-Android 套件可讓您指定的共用程式庫是必要項目`<uses-library/>`項目。 如果*必要*程式庫不存在於目標裝置上 (例如`//uses-library/@android:required`是*true*，預設值)，則套件安裝將會失敗並*安裝\_失敗\_遺漏\_SHARED\_程式庫*。
+Android 套件會指定`<uses-library/>`元素所需的共用程式庫。 如果目標裝置上沒有*必要*的程式庫 (例如`//uses-library/@android:required` , 為*true*, 這是預設值), 則套件安裝將會失敗, 並顯示 [  *\_安裝\_ \_失敗] [遺失共用]\_程式庫*。
 
-若要判斷哪一個共用的程式庫所需，請檢視*產生*
-**AndroidManifest.xml**檔案 (例如**obj\\偵錯\\android\\AndroidManifest.xml**)，並尋找`<uses-library/>`項目。 `<uses-library/>` 可以手動新增項目，在您的專案**屬性\\AndroidManifest.xml**檔案並透過[UsesLibraryAttribute 自訂屬性](https://developer.xamarin.com/api/type/Android.App.UsesLibraryAttribute/)。
+若要判斷需要哪些共用程式庫, 請查看*產生*
+的**androidmanifest.xml .xml**檔案 (例如**obj\\Debug\\android\\androidmanifest.xml**), 並尋找`<uses-library/>`元素。 `<uses-library/>`您可以在專案的**屬性\\androidmanifest.xml .xml**檔案中, 以及透過[UsesLibraryAttribute 自訂屬性](xref:Android.App.UsesLibraryAttribute), 手動加入元素。
 
-例如，將加入的組件參考*Mono.Android.GoogleMaps.dll*會隱含地新增`<uses-library/>`Google Maps 共用程式庫。
-
-
-
-## <a name="installfailedupdateincompatible-when-installing-a-package"></a>安裝\_失敗\_更新\_不相容的安裝套件時
-
-Android 套件有三個需求：
-
--   它們必須包含 '。 '（請參閱先前的項目）
--   它們必須有唯一字串的套件名稱 (因此在 Android 應用程式名稱，例如 Chrome 應用程式的 com.android.chrome 中看到的反向 tld 慣例)
--   升級封裝時，封裝必須有相同的簽署金鑰。
-
-因此，假設：
-
-1.  您建置與部署您的應用程式，做為偵錯應用程式
-2.  您將變更簽章的金鑰，例如為做為發行應用程式 （或因為您不喜歡預設提供偵錯簽署金鑰）
-3.  您安裝應用程式，而不需先移除它，例如偵錯 > 啟動但不偵錯 Visual Studio 內
+例如, 將元件參考加入至*GoogleMaps* , 會以隱含方式`<uses-library/>`為 Google Maps 共用程式庫加入。
 
 
-當發生這種情況時，套件安裝將會失敗並安裝\_失敗\_更新\_不相容的錯誤，因為封裝名稱未變更時的簽署金鑰未。 [Android 偵錯記錄檔](~/android/deploy-test/debugging/android-debug-log.md)也會包含類似的訊息：
+
+## <a name="install_failed_update_incompatible-when-installing-a-package"></a>安裝\_套件\_時\_安裝失敗的更新不相容
+
+Android 套件有三個需求:
+
+-   它們必須包含 '. '(請參閱上一個專案)
+-   它們必須有唯一的字串套件名稱 (因此, 在 Android 應用程式名稱中看到的反向 tld 慣例, 例如適用于 Chrome 應用程式的 .com. chrome)
+-   升級封裝時, 封裝必須具有相同的簽署金鑰。
+
+因此, 請想像一下這種情況:
+
+1.  您建立 & 將應用程式部署為 Debug 應用程式
+2.  您可以變更簽署金鑰, 例如做為發行應用程式使用 (或因為您不喜歡預設提供的 Debug 簽署金鑰)
+3.  您會在不先移除應用程式的情況下進行安裝, 例如 Debug > 啟動而不在 Visual Studio 內進行調試
+
+
+發生這種情況時, 套件安裝將會失敗\_,\_並\_出現安裝失敗的更新不相容錯誤, 因為在簽署金鑰執行時, 套件名稱並未變更。 [Android Debug 記錄](~/android/deploy-test/debugging/android-debug-log.md)檔也會包含類似以下的訊息:
 
 ```shell
 E/PackageManager(  146): Package [PackageName] signatures do not match the previously installed version; ignoring!
 ```
 
-若要修正這個錯誤，完全移除應用程式從您的裝置再重新安裝。
+若要修正此錯誤, 請在重新安裝之前, 從您的裝置完全移除應用程式。
 
 
-## <a name="installfaileduidchanged-when-installing-a-package"></a>安裝\_失敗\_UID\_安裝套件時，變更
+## <a name="install_failed_uid_changed-when-installing-a-package"></a>安裝\_套件\_時\_安裝失敗的 UID 已變更
 
-安裝 Android 套件時，它會指派*使用者識別碼*(UID)。
-*有時候*，目前為未知原因，透過已安裝的應用程式安裝時，安裝將會失敗並`INSTALL_FAILED_UID_CHANGED`:
+安裝 Android 套件時, 系統會將*使用者識別碼*(UID) 指派給它。
+*有時候*, 目前不明的原因是, 當您在已安裝的應用程式上安裝時, `INSTALL_FAILED_UID_CHANGED`安裝將會失敗, 並出現:
 
 ```shell
 ERROR [2015-03-23 11:19:01Z]: ANDROID: Deployment failed
@@ -391,19 +409,19 @@ Mono.AndroidTools.InstallFailedException: Failure [INSTALL_FAILED_UID_CHANGED]
    at System.Threading.Tasks.Task.Execute()
 ```
 
-若要解決這個問題，請*完全解除安裝*Android 套件，藉由從 Android 目標的 GUI 安裝應用程式，或使用`adb`:
+若要解決此問題, 請*完整卸載*android 套件, 方法是從 android 目標的 GUI 安裝應用程式, 或使用`adb`:
 
 ```shell
 $ adb uninstall @PACKAGE_NAME@
 ```
 
-**請勿使用** `adb uninstall -k`，這*保留*應用程式資料，並因此保留衝突的 UID，目標裝置上。
+**不要使用**, 因為這會保留應用程式資料, 因此會在目標裝置上保留衝突的 UID。 `adb uninstall -k`
 
 
 
 ## <a name="release-apps-fail-to-launch-on-device"></a>發行應用程式無法在裝置上啟動
 
-Android 偵錯記錄檔輸出會包含類似的訊息：
+Android Debug 記錄輸出會包含類似以下的訊息:
 
 ```shell
 D/AndroidRuntime( 1710): Shutting down VM
@@ -413,21 +431,21 @@ E/AndroidRuntime( 1710): java.lang.UnsatisfiedLinkError: Couldn't load monodroid
 E/AndroidRuntime( 1710):        at java.lang.Runtime.loadLibrary(Runtime.java:365)
 ```
 
-如果是的話，有兩個可能的原因：
+若是如此, 可能會有兩個原因:
 
-1.  .Apk 不提供目標裝置支援的 ABI。
-    比方說，.apk 只包含 armeabi-v7a 二進位檔，而且目標裝置僅支援 armeabi。
+1.  Apk 不會提供目標裝置支援的 ABI。
+    例如, apk 只包含 armeabi armeabi-v7a 二進位檔, 而目標裝置僅支援 armeabi。
 
-2.  [Android bug](http://code.google.com/p/android/issues/detail?id=21670)。 如果發生這種情況，解除安裝應用程式、 跨手指，並重新安裝應用程式。
+2.  [Android bug](http://code.google.com/p/android/issues/detail?id=21670)。 如果是這種情況, 請將應用程式卸載, 並在您的手指上進行, 然後重新安裝應用程式。
 
-若要修正 (1)，編輯 專案選項/屬性並[必要的 ABI 的支援新增至支援的 Abi 清單](~/android/app-fundamentals/cpu-architectures.md)。 若要判斷您需要新增哪個 ABI，請針對您的目標裝置執行下列 adb 命令：
+若要修正 (1), 請編輯專案選項/屬性, 並[將所需 ABI 的支援新增至支援的 abi 清單](~/android/app-fundamentals/cpu-architectures.md)。 若要判斷您需要新增的 ABI, 請針對您的目標裝置執行下列 adb 命令:
 
 ```shell
 adb shell getprop ro.product.cpu.abi
 adb shell getprop ro.product.cpu.abi2
 ```
 
-輸出會包含主要 （和選擇性次要） Abi。
+輸出將包含主要 (和選擇性的次要) Abi。
 
 ```shell
 $ adb shell getprop | grep ro.product.cpu
@@ -435,17 +453,17 @@ $ adb shell getprop | grep ro.product.cpu
 [ro.product.cpu.abi]: [armeabi-v7a]
 ```
 
-## <a name="the-outpath-property-is-not-set-for-project-ldquomyappcsprojrdquo"></a>專案未設定 OutPath 屬性&ldquo;MyApp.csproj&rdquo;
+## <a name="the-outpath-property-is-not-set-for-project-ldquomyappcsprojrdquo"></a>未設定專案&ldquo;MyApp .csproj 的 OutPath 屬性&rdquo;
 
-這通常表示您有 HP 電腦和環境變數&ldquo;平台&rdquo;MCD 或 HPD 等已設定為項目。 這通常設定為 MSBuild 平台屬性與衝突&ldquo;任何 CPU&rdquo;或是&ldquo;x86&rdquo;。 您必須從電腦移除這個環境變數，然後 MSBuild 才能運作：
+這通常表示您有一部 HP 電腦, 而環境&ldquo;變數&rdquo;平臺已設定為類似 MCD 或 HPD。 這與&ldquo;通常設定為任何 CPU&rdquo;或&ldquo;x86&rdquo;的 MSBuild 平臺屬性衝突。 您必須先從電腦移除此環境變數, MSBuild 才能運作:
 
--   控制台 > System > 進階 > 環境變數
+-   控制台 > 系統 > Advanced > 環境變數
 
-重新啟動 Visual Studio 或 Visual Studio for Mac，然後再次嘗試重建。 項目現在應該在如預期般運作。
+重新開機 Visual Studio 或 Visual Studio for Mac 並嘗試重建。 專案現在應該會如預期般運作。
 
-## <a name="javalangclasscastexception-monoandroidruntimejavaobject-cannot-be-cast-to"></a>java.lang.ClassCastException: mono.android.runtime.JavaObject 無法轉換成...
+## <a name="javalangclasscastexception-monoandroidruntimejavaobject-cannot-be-cast-to"></a>發生 classcastexception: mono. JAVAObject 無法轉換為 .....。
 
-Xamarin.Android 4.x 不正確地封送處理巢狀泛型類型正確。 例如，請考慮下列 C\#使用程式碼[SimpleExpandableListAdapter](https://developer.xamarin.com/api/type/Android.Widget.SimpleExpandableListAdapter/):
+Xamarin 5.x 未正確地正確封送處理已嵌套的泛型型別。 例如, 請考慮下列 C\#程式碼使用[SimpleExpandableListAdapter](xref:Android.Widget.SimpleExpandableListAdapter):
 
 
 ```csharp
@@ -478,7 +496,7 @@ mAdapter = new SimpleExpandableListAdapter (
 ```
 
 
-問題在於，Xamarin.Android 不正確地封送處理巢狀泛型類型。 `List<IDictionary<string, object>>`要封送處理至[java.lang.ArrrayList](https://developer.xamarin.com/api/type/Java.Util.ArrayList/)，但`ArrayList`這包含`mono.android.runtime.JavaObject`執行個體 (其中參考`Dictionary<string, object>`執行個體) 而不是實作的項目[java.util.Map](https://developer.xamarin.com/api/type/Java.Util.IMap/)，產生的下列例外狀況：
+問題在於, Xamarin 不正確地封送處理嵌套的泛型型別。 `List<IDictionary<string, object>>` 會封送處理至 [java.lang.ArrrayList](xref:Java.Util.ArrayList), 但`ArrayList`包含`mono.android.runtime.JavaObject`實例 (參考`Dictionary<string, object>`實例), 而不是執行 [java.util.Map](xref:Java.Util.IMap)的物件。 產生下列例外狀況:
 
 ```shell
 E/AndroidRuntime( 2991): FATAL EXCEPTION: main
@@ -492,7 +510,7 @@ E/AndroidRuntime( 2991):        at android.widget.ListView.fillFromTop(ListView.
 E/AndroidRuntime( 2991):        at android.widget.ListView.layoutChildren(ListView.java:1622)
 ```
 
-因應措施為使用所提供[Java 集合型別](~/android/internals/api-design.md)而不是`System.Collections.Generic`型別的&ldquo;內部&rdquo;型別。 封送處理的執行個體時，這會導致適當的 Java 類型。 （下列程式碼會比以降低 grf 存留期需要更複雜。 它可以改變原始的程式碼，透過簡化`s/List/JavaList/g`和`s/Dictionary/JavaDictionary/g`如果 grf 存留期不擔心。)
+因應措施是使用所提供的[JAVA集合類型](~/android/internals/api-design.md),而不是`System.Collections.Generic`內部&ldquo;類型的類型。 這會在封送處理實例時, 產生適當的 JAVA 類型。 (下列程式碼比所需更複雜, 以便減少 grf 的存留期。 您可以透過來簡化原始程式碼`s/List/JavaList/g`的變更, 而且`s/Dictionary/JavaDictionary/g`如果 grf 存留期不需要擔心)。
 
 ```csharp
 // insert good code here
@@ -525,12 +543,12 @@ using (var groupData = new JavaList<IDictionary<string, object>> ()) {
 }
 ```
 
-[這將在未來版本中修正](https://bugzilla.xamarin.com/show_bug.cgi?id=5401)。
+[未來的版本將會修正此](https://bugzilla.xamarin.com/show_bug.cgi?id=5401)問題。
 
 
 ## <a name="unexpected-nullreferenceexceptions"></a>非預期的 NullReferenceExceptions
 
-偶爾[Android 偵錯記錄檔](~/android/deploy-test/debugging/android-debug-log.md)會提及 NullReferenceExceptions，&ldquo;不會發生&rdquo;或來自 Mono for Android 執行階段應用程式就會中斷之前的程式碼：
+[Android Debug 記錄](~/android/deploy-test/debugging/android-debug-log.md)檔偶爾會提及無法發生&ldquo;的 NullReferenceExceptions,&rdquo;或在應用程式無法執行之前, 從 Mono for Android 執行時間程式碼推出:
 
 ```shell
 E/mono(15202): Unhandled Exception: System.NullReferenceException: Object reference not set to an instance of an object
@@ -550,28 +568,28 @@ E/mono    ( 4176): at Android.Runtime.JNIEnv.NewString (string)
 E/mono    ( 4176): at Android.Util.Log.Info (string,string)
 ```
 
-當 Android 執行階段決定中止可能發生的原因，包括達到目標的 GRF 限制，或執行任意數目的程序，可以發生此狀況&ldquo;錯誤&rdquo;使用 JNI。
+當 Android 執行時間決定中止進程時, 可能會發生這種情況, 包括達到目標的 grf 限制, 或使用 JNI 來執行一些&ldquo;錯誤。&rdquo;
 
-若要查看是否為這種情況下，檢查 Android 的偵錯記錄檔訊息，以從您的程序類似於：
+若要查看是否為這種情況, 請檢查 Android Debug 記錄檔, 以取得您進程中的訊息, 如下所示:
 
 ```shell
 E/dalvikvm(  123): VM aborting
 ```
 
 
-## <a name="abort-due-to-global-reference-exhaustion"></a>因為全域參考耗盡中止
+## <a name="abort-due-to-global-reference-exhaustion"></a>因為全域參考耗盡而中止
 
-Android 執行階段的 JNI 層僅支援有限的數目的 JNI 物件參考的時間會在任何指定時間點有效。 當超過這個限制時，事情就會中斷。
+Android 執行時間的 JNI 層僅支援有限數目的 JNI 物件參考, 在任何指定的時間點都是有效的。 超過此限制時, 就會發生中斷的情況。
 
-GRF (*全域參考*) 限制為 2000年參考在模擬器中，而在硬體上的 ~ 52000 參考。
+GRF (*全域參考*) 限制為模擬器中的2000參考, 而硬體上的 ~ 52000 參考。
 
-您知道您正在建立太多 GREFs，當您看到這類 Android 的偵錯記錄檔中的訊息：
+當您在 Android Debug 記錄檔中看到如下訊息時, 您就會開始建立太多 GREFs:
 
 ```shell
 D/dalvikvm(  602): GREF has increased to 1801
 ```
 
-當您到達 GRF 限制時，會列印訊息，如下所示：
+當您達到 GRF 限制時, 會列印如下的訊息:
 
 ```shell
 D/dalvikvm(  602): GREF has increased to 2001
@@ -642,16 +660,16 @@ E/dalvikvm(  602): VM aborting
 ```
 
 
-在上述範例中 (即順帶一提，來自[bug 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)) 問題是，太多 Android.Graphics.Point 正在建立執行個體，請參閱[註解\#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2)的修正程式清單這個特定的錯誤。
+在上述範例中 (也就是來自[bug 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)), 問題是有太多的 Android. 圖形。正在建立點實例;如需此特定 bug 的修正清單, 請參閱[批註\#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2) 。
 
-通常很實用的解決方案是要尋找的型別有太多的執行個體配置&ndash;上述的傾印中 Android.Graphics.Point&ndash;然後尋找 其中建立您的原始程式碼和處置它們適當地 (使其Java-object 存留期已縮短)。 這不一定都適合 (\#685215 是多執行緒，因此簡單式解決方案可避免 Dispose 呼叫)，但首先来考慮。
+一般來說, 有用的解決方案是找出哪一種類型有太多&ndash;配置的 Android 實例。在&ndash;上述傾印中指向的位置, 然後在您的原始程式碼中尋找它們的建立位置, 並適當地處置它們 (使其JAVA-物件存留期已縮短)。 這不一定適合 (\#685215 是多執行緒的, 因此, 簡單的解決方案會避免處置呼叫), 但這是第一個要考慮的事項。
 
-您可以讓[GRF 記錄](~/android/troubleshooting/index.md)GREFs 建立時，以及多少存在。
+您可以啟用[Grf 記錄](~/android/troubleshooting/index.md), 以查看 GREFs 的建立時間和存在的數目。
 
 
-## <a name="abort-due-to-jni-type-mismatch"></a>中止因為 JNI 類型不符
+## <a name="abort-due-to-jni-type-mismatch"></a>因 JNI 類型不符而中止
 
-如果您手動-向前復原 JNI 程式碼，很可能類型不符合正確，例如： 如果您嘗試叫用`java.lang.Runnable.run`不會實作的型別上`java.lang.Runnable`。 當發生這種情況時，會有一則訊息像這樣 Android 偵錯記錄檔中：
+如果您手動變換 JNI 程式碼, 類型可能會無法正確地比對, 例如, 如果您嘗試`java.lang.Runnable.run`在未執行`java.lang.Runnable`的類型上叫用。 發生這種情況時, Android Debug 記錄檔中將會出現類似下面的訊息:
 
 ```shell
 W/dalvikvm( 123): JNI WARNING: can't call Ljava/Type;;.method on instance of Lanother/java/Type;
@@ -662,26 +680,26 @@ E/dalvikvm( 123): VM aborting
 
 ## <a name="dynamic-code-support"></a>動態程式碼支援
 
-### <a name="dynamic-code-does-not-compile"></a>動態程式碼無法編譯
+### <a name="dynamic-code-does-not-compile"></a>動態程式碼不會編譯
 
-若要使用 C\#動態應用程式或程式庫中，您有 system.core.dll 的參考、 Microsoft.CSharp.dll 和 Mono.CSharp.dll 加入您的專案。
+若要在\#您的應用程式或程式庫中使用 C 動態, 您必須在專案中加入 system.string、Microsoft csharp 和 Mono。
 
-### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>在發行組建 MissingMethodException 動態程式碼在執行階段發生。
+### <a name="in-release-build-missingmethodexception-occurs-for-dynamic-code-at-run-time"></a>在發行組建中, 會在執行時間針對動態程式碼進行 MissingMethodException。
 
--   很可能您的應用程式專案沒有 system.core.dll 的參考、 Microsoft.CSharp.dll 或 Mono.CSharp.dll 參考。 請確定會參考這些組件。
+-   您的應用程式專案很可能不會參考到 System.object、Microsoft CSharp .dll 或 Mono. CSharp .dll。 請確定已參考這些元件。
 
-    -   請記住該動態程式碼一律成本。 如果您需要有效率的程式碼，請考慮不使用動態程式碼。
+    -   請記住, 動態程式碼一律會花費成本。 如果您需要有效率的程式碼, 請考慮不要使用動態程式碼。
 
--   在第一個預覽中，除非應用程式程式碼會明確地使用每個組件中的型別，這些組件都已排除。 請參閱以下的因應措施： [http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
+-   在第一個預覽版本中, 除非應用程式代碼明確使用每個元件中的類型, 否則會排除這些元件。 如需因應措施, 請參閱下列各項:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 
 
-## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>在 x86 上使用 AOT + LLVM 損毀所建置的專案的裝置
+## <a name="projects-built-with-aotllvm-crash-on-x86-devices"></a>在 x86 裝置上使用 AOT 和 LLVM 損毀建立的專案
 
-部署以建置應用程式時[AOT + LLVM](~/android/deploy-test/release-prep/index.md) x86 型裝置上，您可能會看到類似如下的例外狀況錯誤訊息：
+在 x86 裝置上部署以[AOT + LLVM](~/android/deploy-test/release-prep/index.md)建立的應用程式時, 您可能會看到類似下面的例外狀況錯誤訊息:
 
 ```shell
 Assertion: should not be reached at /Users/.../external/mono/mono/mini/tramp-x86.c:124
 Fatal signal 6 (SIGABRT), code -6 in tid 4051 (amarin.bug56111)
 ```
 
-這是所報告的已知的問題[56111](https://bugzilla.xamarin.com/show_bug.cgi?id=56111)。 因應措施是停用 LLVM。
+這是[56111](https://bugzilla.xamarin.com/show_bug.cgi?id=56111)中回報的已知問題。 解決方法是停用 LLVM。

@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/28/2019
-ms.openlocfilehash: de77be818abbe1250946ee2ce1599235b79d8c01
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
-ms.translationtype: MT
+ms.openlocfilehash: 329f7dc9cc43582f630a4895fba452a8496bae9a
+ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67512973"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68656178"
 ---
 # <a name="fonts-in-xamarinforms"></a>在 Xamarin.Forms 中的字型
 
-[![下載範例](~/media/shared/download.png)下載範例](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFonts/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
-這篇文章描述 Xamarin.Forms 如何讓您指定的字型屬性 （包括權數和大小） 上顯示文字的控制項。 字型資訊可能[程式碼中指定](#Setting_Font_in_Code)或是[XAML 中指定](#Setting_Font_in_Xaml)。 它具有 ' 也可以使用[自訂字型](#Using_a_Custom_Font)，並[顯示字型圖示](#display-font-icons)。
+這篇文章描述 Xamarin.Forms 如何讓您指定的字型屬性 （包括權數和大小） 上顯示文字的控制項。 字型資訊可能[程式碼中指定](#Setting_Font_in_Code)或是[XAML 中指定](#Setting_Font_in_Xaml)。 也可以使用[自訂字型](#Using_a_Custom_Font), 並[顯示字型圖示](#display-font-icons)。
 
 <a name="Setting_Font_in_Code" />
 
-## <a name="set-the-font-in-code"></a>在程式碼中設定的字型
+## <a name="set-the-font-in-code"></a>在程式碼中設定字型
 
 使用顯示文字的任何控制項的三個與字型相關屬性：
 
@@ -50,7 +50,7 @@ var about = new Label {
 label.FontSize = 24;
 ```
 
-Xamarin.Forms 也會定義中的欄位[ `NamedSize` ](xref:Xamarin.Forms.NamedSize)列舉，代表特定的字型大小。 如需有關具名的字型的詳細資訊，請參閱[名為字型大小](#named-font-sizes)。
+[ [`NamedSize`](xref:Xamarin.Forms.NamedSize) Xamarin] 也會在列舉中定義代表特定字型大小的欄位。 如需有關命名的字型大小的詳細資訊, 請參閱[命名字型大小](#named-font-sizes)。
 
 <a name="FontAttributes" />
 
@@ -68,7 +68,7 @@ Xamarin.Forms 也會定義中的欄位[ `NamedSize` ](xref:Xamarin.Forms.NamedSi
 label.FontAttributes = FontAttributes.Bold | FontAttributes.Italic;
 ```
 
-### <a name="set-font-info-per-platform"></a>每個平台設定的字型資訊
+### <a name="set-font-info-per-platform"></a>設定每個平臺的字型資訊
 
 或者，`Device.RuntimePlatform`屬性可以用來設定每個平台上的不同的字型名稱，此程式碼所示：
 
@@ -83,7 +83,7 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
 
 <a name="Setting_Font_in_Xaml" />
 
-## <a name="set-the-font-in-xaml"></a>在 XAML 中設定的字型
+## <a name="set-the-font-in-xaml"></a>在 XAML 中設定字型
 
 Xamarin.Forms 會控制所有具有該顯示文字`FontSize`可以在 XAML 中設定的屬性。 將字型設定在 XAML 中的最簡單方式是使用具名的大小的列舉值，在此範例中所示：
 
@@ -92,7 +92,7 @@ Xamarin.Forms 會控制所有具有該顯示文字`FontSize`可以在 XAML 中�
 <Label Text="Instructions" FontSize="Small"/>
 ```
 
-沒有內建的轉換器`FontSize`屬性，可讓所有的字型設定，以表示在 XAML 中的字串值。 颾魤 ㄛ`FontAttributes`屬性可以用來指定的字型屬性：
+沒有內建的轉換器`FontSize`屬性，可讓所有的字型設定，以表示在 XAML 中的字串值。 此外, `FontAttributes`屬性也可以用來指定字型屬性:
 
 ```xaml
 <Label Text="Italics are supported" FontAttributes="Italic" />
@@ -116,9 +116,9 @@ Xamarin.Forms 會控制所有具有該顯示文字`FontSize`可以在 XAML 中�
 
 指定自訂的字型字樣，它一律是個不錯的主意，若要使用`OnPlatform`，很難找到可用於所有平台的字型。
 
-## <a name="named-font-sizes"></a>具名的字型大小
+## <a name="named-font-sizes"></a>命名字型大小
 
-Xamarin.Forms 可定義中的欄位[ `NamedSize` ](xref:Xamarin.Forms.NamedSize)列舉，代表特定的字型大小。 下表顯示`NamedSize`成員，以及其在 iOS、 Android 和通用 Windows 平台 (UWP) 上的預設大小：
+Xamarin 會定義[`NamedSize`](xref:Xamarin.Forms.NamedSize)列舉中的欄位, 以代表特定字型大小。 下表顯示成員及其`NamedSize`在 iOS、Android 和通用 Windows 平臺 (UWP) 上的預設大小:
 
 | 成員 | iOS | Android | UWP |
 | --- | --- | --- | --- |
@@ -133,18 +133,18 @@ Xamarin.Forms 可定義中的欄位[ `NamedSize` ](xref:Xamarin.Forms.NamedSize)
 | `Subtitle` | 22 | 16 | 20 |
 | `Caption` | 12 | 12 | 12 |
 
-可以透過 XAML 和程式碼中設定具名的字型大小。 颾魤 ㄛ`Device.GetNamedSize`方法可以呼叫以傳回`double`，代表具名的字型大小：
+您可以透過 XAML 和程式碼來設定命名的字型大小。 此外, `Device.GetNamedSize`您可以呼叫方法, 以`double`傳回代表已命名字型大小的:
 
 ```csharp
 label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 ```
 
 > [!NOTE]
-> 在 iOS 和 Android 上，具名的字型的大小，將會根據作業系統協助工具選項的自動調整。 此行為可以在 iOS 與特定平台上停用。 如需詳細資訊，請參閱 <<c0> [ 協助工具調整在 iOS 上名為字型大小](~/xamarin-forms/platform/ios/named-font-size-scaling.md)。
+> 在 iOS 和 Android 上, 命名的字型大小會根據作業系統協助工具選項自動調整。 您可以在 iOS 上使用平臺特定來停用此行為。 如需詳細資訊, 請參閱[iOS 上命名的字型大小的協助工具調整](~/xamarin-forms/platform/ios/named-font-size-scaling.md)。
 
 <a name="Using_a_Custom_Font" />
 
-## <a name="use-a-custom-font"></a>使用自訂的字型
+## <a name="use-a-custom-font"></a>使用自訂字型
 
 使用非內建的字樣的字型不需要某些平台特定程式碼。 此螢幕擷取畫面顯示自訂字型**Lobster**從[Google 的開放原始碼字型](https://www.google.com/fonts)使用 Xamarin.Forms 來呈現。
 
@@ -157,7 +157,7 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 您可先確保已將它載入，然後使用 Xamarin.Forms 來依據名稱參考它，藉此顯示自訂字型`Font`方法。
 請依照下列中的指示[此部落格文章](https://blog.xamarin.com/custom-fonts-in-ios/):
 
-1. 加入字型檔案**建置動作：BundleResource**，及
+1. 新增具有**組建動作的字型檔案:BundleResource**, 和
 2. 更新**Info.plist**檔案 (**應用程式所提供的字型**，或`UIAppFonts`、 索引鍵)，然後
 3. 它依名稱參考任何您定義在 Xamarin.Forms 中的字型位置 ！
 
@@ -171,7 +171,7 @@ new Label
 
 ### <a name="android"></a>Android
 
-適用於 Android 的 Xamarin.Forms 可以參考自訂字型已加入至專案遵循特定的命名標準。 首先將字型檔案，以新增**資產**資料夾中的應用程式專案和組*建置動作：AndroidAsset*。 然後使用完整路徑和*字型名稱*隔開雜湊 （#） 做為在 Xamarin.Forms 中，字型名稱，如下列程式碼片段所示：
+適用於 Android 的 Xamarin.Forms 可以參考自訂字型已加入至專案遵循特定的命名標準。 首先, 將字型檔案新增至應用程式專案中的 [**資產**] *資料夾, 並設定 [組建動作]:AndroidAsset*。 然後使用完整路徑和*字型名稱*隔開雜湊 （#） 做為在 Xamarin.Forms 中，字型名稱，如下列程式碼片段所示：
 
 ```csharp
 new Label
@@ -216,19 +216,19 @@ new Label
 
 ## <a name="display-font-icons"></a>顯示字型圖示
 
-字型圖示可顯示的 Xamarin.Forms 應用程式藉由指定的字型圖示資料`FontImageSource`物件。 這個類別衍生自[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)類別中，具有下列屬性：
+您可以藉由指定`FontImageSource`物件中的字型圖示資料, 將字型圖示顯示在表單應用程式中。 這個類別衍生自[`ImageSource`](xref:Xamarin.Forms.ImageSource)類別, 具有下列屬性:
 
-- `Glyph` -[字型] 圖示，為指定的 unicode 字元值`string`。
-- `Size` –`double`值，指出的大小，以裝置獨立單位，呈現的字型的圖示。 預設值為 30。
-- `FontFamily` –`string`表示字型圖示所屬的字型系列。
-- `Color` – 選擇性[ `Color` ](xref:Xamarin.Forms.Color)顯示字型圖示時使用的值。
+- `Glyph`–字型圖示的 unicode 字元值, 指定為`string`。
+- `Size``double` –值, 指出轉譯字型圖示的大小 (以與裝置無關的單位)。 預設值為30。
+- `FontFamily``string` –代表字型圖示所屬的字型系列。
+- `Color`–顯示字型[`Color`](xref:Xamarin.Forms.Color)圖示時要使用的選擇性值。
 
-這項資料用來建立可顯示的任何檢視中，可以顯示 PNG `ImageSource`。 這種方法可以讓字型圖示，例如 emoji，要由多個檢視，而不是限制字型圖示顯示，單一文字，例如呈現檢視，以顯示[ `Label` ](xref:Xamarin.Forms.Label)。
+這項資料是用來建立 PNG, 可以顯示`ImageSource`的任何視圖顯示。 這種方法允許多個視圖顯示字型圖示 (例如 emoji), 而不是將字型圖示顯示限制為單一文字呈現視圖, 例如[`Label`](xref:Xamarin.Forms.Label)。
 
 > [!IMPORTANT]
-> 字型圖示目前只可以指定其 unicode 字元表示法。
+> 字型圖示目前只能以 unicode 字元標記法來指定。
 
-下列 XAML 範例具有所要顯示單一字型圖示[ `Image` ](xref:Xamarin.Forms.Image)檢視：
+下列 XAML 範例有一個由[`Image`](xref:Xamarin.Forms.Image)視圖顯示的單一字型圖示:
 
 ```xaml
 <Image BackgroundColor="#D1D1D1">
@@ -240,7 +240,7 @@ new Label
 </Image>
 ```
 
-此程式碼中顯示 XBox 圖示，Ionicons 字型家族中，從[ `Image` ](xref:Xamarin.Forms.Image)檢視。 請注意，雖然 unicode 字元的這個圖示`\uf30c`，它必須在 XAML 中的逸出字元，並因此會變成`&#xf30c;`。 對等的 C# 程式碼是：
+此程式碼會在[`Image`](xref:Xamarin.Forms.Image)視圖中顯示 XBox 圖示, 從 Ionicons 字型系列。 請注意, 雖然這個圖示的 unicode 字元是`\uf30c`, 但它必須在 XAML 中以轉義, 因此`&#xf30c;`會變成。 對等的 C# 程式碼是：
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };
@@ -252,13 +252,13 @@ image.Source = new FontImageSource
 };
 ```
 
-下列螢幕擷取畫面中，從[可繫結的配置](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindableLayouts/)範例，顯示可繫結的版面配置所要顯示的數個字型圖示：
+下列螢幕擷取畫面是[可系結的版面配置](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)範例, 顯示由可系結的配置顯示的幾個字型圖示:
 
-![字型圖示顯示，在 iOS 和 Android 上的螢幕擷取畫面](fonts-images/font-image-source.png "映像檢視中顯示的字型圖示")
+![在 iOS 和 Android 上顯示的字型圖示螢幕擷取畫面](fonts-images/font-image-source.png "影像視圖中顯示的字型圖示")
 
 ## <a name="related-links"></a>相關連結
 
-- [FontsSample](https://developer.xamarin.com/samples/xamarin-forms/WorkingWithFonts/)
-- [文字 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Text/)
-- [可繫結的配置 （範例）](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BindableLayouts/)
+- [FontsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
+- [文字 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [可系結版面配置 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 - [可繫結的版面配置](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
