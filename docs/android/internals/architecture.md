@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 2b8e524d95fb60c8eb45b3dd5b64b68469d97ad1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: ec93083ee3d99dbf748309b23248e982b793ce13
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68510737"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69524848"
 ---
 # <a name="architecture"></a>架構
 
@@ -20,7 +20,7 @@ ms.locfileid: "68510737"
 
 您可以使用[System](xref:System)、 [System.IO](xref:System.IO)、 [System.Net](xref:System.Net)和其他 .net 類別庫, 來存取基礎 Linux 作業系統設施。
 
-在 Android 上, 大部分的系統裝置 (例如音訊、圖形、OpenGL 和電話語音) 都無法直接提供給原生應用程式使用, 只會透過位於其中一個[JAVA](xref:Java.Lang) * 命名空間或 [Android](xref:Android) * 命名空間的 android 執行時間 JAVA api 來公開。 架構大致如下:
+在 Android 上, 大部分的系統裝置 (例如音訊、圖形、OpenGL 和電話語音) 都無法直接提供給原生應用程式使用, 只會透過位於其中一個[JAVA](xref:Java.Lang). * 命名空間或 Android 的 [android](xref:Android) 執行時間 JAVA api 來公開。* 命名空間。 架構大致如下:
 
 [![核心上方和 .NET/JAVA + 系結之下的 Mono 和美工圖](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
@@ -33,12 +33,11 @@ Xamarin。 Android 開發人員可存取作業系統中的各種功能, 方法�
 
 Android 應用程式套件是具有副檔名*apk*的 ZIP 容器。 Xamarin Android 應用程式套件與一般 Android 套件具有相同的結構和配置, 並新增下列專案:
 
--   應用程式元件 (包含 IL) 會以未壓縮的形式*儲存*在 [*元件*] 資料夾內。 在發行組建中的進程啟動期間, *apk*會在進程中*mmap ()* ed, 而且會從記憶體載入元件。 這允許更快速的應用程式啟動, 因為元件不需要在執行之前先解壓縮。  
--   *注意：* 元件位置資訊, 例如[元件。位置](xref:System.Reflection.Assembly.Location)和[元件。程式碼基](xref:System.Reflection.Assembly.CodeBase)
-    底*無法依賴*發行組建。 它們不會以不同的檔案系統專案的形式存在, 而且沒有可用的位置。
+- 應用程式元件 (包含 IL) 會以未壓縮的形式*儲存*在 [*元件*] 資料夾內。 在發行組建中的進程啟動期間, *apk*會在進程中*mmap ()* ed, 而且會從記憶體載入元件。 這允許更快速的應用程式啟動, 因為元件不需要在執行之前先解壓縮。  
+- *注意：* 元件位置資訊, 例如[元件。位置](xref:System.Reflection.Assembly.Location)和[元件。程式碼基](xref:System.Reflection.Assembly.CodeBase)底*無法依賴*發行組建。 它們不會以不同的檔案系統專案的形式存在, 而且沒有可用的位置。
 
 
--   包含 Mono 執行時間的原生程式庫會出現在*apk*中。 Xamarin Android 應用程式必須包含所需/目標 Android 架構的原生程式庫, 例如*armeabi* 、 *armeabi-armeabi-v7a* 、 *x86* 。 Xamarin Android 應用程式無法在平臺上執行, 除非它包含適當的執行時間程式庫。
+- 包含 Mono 執行時間的原生程式庫會出現在*apk*中。 Xamarin Android 應用程式必須包含所需/目標 Android 架構的原生程式庫, 例如*armeabi* 、 *armeabi-armeabi-v7a* 、 *x86* 。 Xamarin Android 應用程式無法在平臺上執行, 除非它包含適當的執行時間程式庫。
 
 
 Xamarin Android 應用程式也包含*android*可呼叫包裝函式, 可讓 android 呼叫 managed 程式碼。
@@ -92,25 +91,25 @@ Managed 可呼叫包裝函式子類別是指所有「有趣」的應用程式特
 
 當 ACW LogTextBox 實例第一次進入 managed 程式碼, 然後叫用 LogTextBox (CoNtext, IAttributeSet,) 時, 透過[LogTextView (IntPtr, JniHandleOwnership)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L28)的處理常式具現化實例 LogTextBox, 即可支援此情況。 [int)](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox.cs#L41)在 ACW 的函式執行時 *, 在同一個實例上的*函數。
 
-事件的順序:
+事件的順序：
 
-1.  版面配置 XML 會載入至[ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)。
+1. 版面配置 XML 會載入至[ContentView](https://github.com/xamarin/monodroid-samples/blob/f01b5c31/ApiDemo/Text/LogTextBox1.cs#L41)。
 
-2.  Android 會將版面設定物件圖形具現化, 並具現化 monodroid 的實例*apidemo. LogTextBox* , ACW for *LogTextBox* 。
+2. Android 會將版面設定物件圖形具現化, 並具現化 monodroid 的實例*apidemo. LogTextBox* , ACW for *LogTextBox* 。
 
-3.  *Monodroid. apidemo. LogTextBox*函式會執行[TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29)的函式。
+3. *Monodroid. apidemo. LogTextBox*函式會執行[TextView](https://developer.android.com/reference/android/widget/TextView.html#TextView%28android.content.Context,%20android.util.AttributeSet%29)的函式。
 
-4.  *TextView*的函式呼叫會叫用*monodroid ()* 。
+4. *TextView*的函式呼叫會叫用*monodroid ()* 。
 
-5.  *monodroid. apidemo. getDefaultMovementMethod (* ) 會叫用 LogTextBox *. n_getDefaultMovementMethod* (), 它會叫用 (), 它會叫用 *()* , 它會叫用[。 GetObject&lt;TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) 。
+5. *monodroid. apidemo. getDefaultMovementMethod (* ) 會叫用 LogTextBox *. n_getDefaultMovementMethod* (), 它會叫用 (), 它會叫用 *()* , 它會叫用[。 GetObject&lt;TextView&gt; (handle, JniHandleOwnership. DoNotTransfer)](xref:Java.Lang.Object.GetObject*) 。
 
-6.  *TextView&gt;() 會檢查是否已經有相對應的實例來處理。&lt;*  C# 如果有, 則會傳回它。 在此情況下,*物件。 GetObject&lt; &gt;t ()* 必須建立一個。
+6. *TextView&gt;() 會檢查是否已經有相對應的實例來處理。&lt;*  C# 如果有, 則會傳回它。 在此情況下,*物件。 GetObject&lt; &gt;t ()* 必須建立一個。
 
-7.  *物件。 GetObject&lt;T&gt;()* 會尋找*LogTextBox (IntPtr, JniHandleOwneship)* 的函式、叫用它、建立*控制碼*與建立的實例之間的對應, 然後傳回建立的實例。
+7. *物件。 GetObject&lt;T&gt;()* 會尋找*LogTextBox (IntPtr, JniHandleOwneship)* 的函式、叫用它、建立*控制碼*與建立的實例之間的對應, 然後傳回建立的實例。
 
-8.  *TextView. n_GetDefaultMovementMethod ()* 會叫用*LogTextBox. DefaultMovementMethod*屬性 getter。
+8. *TextView. n_GetDefaultMovementMethod ()* 會叫用*LogTextBox. DefaultMovementMethod*屬性 getter。
 
-9.  控制項會回到*TextView*的函式, 它會完成執行。
+9. 控制項會回到*TextView*的函式, 它會完成執行。
 
 10. *Monodroid. apidemo. LogTextBox*函式會執行, 叫用*TypeManager。 Activate ()* 。
 
@@ -178,7 +177,7 @@ I/mono-stdout( 2993): [Managed: Value=]
 ## <a name="application-startup"></a>應用程式啟動
 
 當活動、服務等啟動時, Android 會先檢查是否已有執行中的進程來裝載活動/服務/等等。如果沒有這樣的進程, 則會建立新的進程、讀取[androidmanifest.xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) , 而且會載入並具現化[/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm)屬性中指定的類型。 接下來, [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm)屬性值所指定的所有類型都會具現化, 並叫用其[ContentProvider. attachInfo% 28)](xref:Android.Content.ContentProvider.AttachInfo*)方法。 [Xamarin] 會藉由新增 mono 來攔截 *。* 在建立程式期間, 請尋找 mono.monoruntimeprovider *ContentProvider*至 androidmanifest.xml。 *Mono。請尋找 mono.monoruntimeprovider. attachInfo ()* 方法負責將 Mono 執行時間載入進程中。
-在此點之前使用 Mono 的任何嘗試都會失敗。 (*注意*:這就是為什麼當應用程式實例在 Mono 可以初始化之前建立時, 應用程式所需提供[(IntPtr, JniHandleOwnership)函式](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)的類別[Android.App.Application](xref:Android.App.Application)。
+在此點之前使用 Mono 的任何嘗試都會失敗。 (*注意*:這就是為什麼當應用[Android.App.Application](xref:Android.App.Application)程式實例在 Mono 可以初始化之前建立時, 應用程式所需提供 [(IntPtr, JniHandleOwnership) 函式](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)的類別。
 
 完成進程初始化之後, `AndroidManifest.xml`我們會諮詢以尋找活動/服務的類別名稱/等等, 以啟動。 例如, [ /manifest/application/activity/@android:name屬性](https://developer.android.com/guide/topics/manifest/activity-element.html#nm)是用來決定要載入的活動名稱。 若為活動, 此類型必須繼承[android. app. 活動](xref:Android.App.Activity)。
 指定的型別是透過[class.forname ()](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String))載入, 它會要求型別必須是 JAVA 型別, 也就是 Android 可呼叫包裝函式, 然後再具現化。 建立 Android 可呼叫包裝函式實例, 將會觸發建立對應C#類型的實例。 然後, Android 會叫用[onCreate (配套)](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) , 這將會叫用對應的[onCreate (配套)](xref:Android.App.Activity.OnCreate*) , 而您也不會遇到競爭情形。
