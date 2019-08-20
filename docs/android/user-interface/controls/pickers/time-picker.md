@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/06/2018
-ms.openlocfilehash: fea96ab645b2d01b774f691402a5796eec1f1dba
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: dfee003ba327b199974ae277a93cb1ca55a81b0d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644962"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69522889"
 ---
 # <a name="android-time-picker"></a>Android 時間選擇器
 
@@ -167,20 +167,20 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 
 `TimePickerFragment`會執行數個方法: factory 方法、對話方塊具現化方法, 以及`OnTimeSet` `TimePickerDialog.IOnTimeSetListener`所需的處理常式方法。
 
--   `TimePickerFragment`是的`DialogFragment`子類別。 它也`TimePickerDialog.IOnTimeSetListener`會執行介面 (也就是, 它會提供`OnTimeSet`所需的方法):
+- `TimePickerFragment`是的`DialogFragment`子類別。 它也`TimePickerDialog.IOnTimeSetListener`會執行介面 (也就是, 它會提供`OnTimeSet`所需的方法):
 
     ```csharp
     public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetListener
     ```
 
--   `TAG`會針對記錄目的進行初始化 (*MyTimePickerFragment*可以變更為您想要使用的任何字串)。 `timeSelectedHandler`動作會初始化為空的委派, 以避免 null 參考例外狀況:
+- `TAG`會針對記錄目的進行初始化 (*MyTimePickerFragment*可以變更為您想要使用的任何字串)。 `timeSelectedHandler`動作會初始化為空的委派, 以避免 null 參考例外狀況:
 
     ```csharp
     public static readonly string TAG = "MyTimePickerFragment";
     Action<DateTime> timeSelectedHandler = delegate { };
     ```
 
--   呼叫 factory 方法, 以具現化新`TimePickerFragment`的。 `NewInstance` 當使用者在中`Action<DateTime>`按一下 [**確定]** 按鈕時, 這個方法會使用一個叫`TimePickerDialog`用的處理常式:
+- 呼叫 factory 方法, 以具現化新`TimePickerFragment`的。 `NewInstance` 當使用者在中`Action<DateTime>`按一下 [**確定]** 按鈕時, 這個方法會使用一個叫`TimePickerDialog`用的處理常式:
 
     ```csharp
     public static TimePickerFragment NewInstance(Action<DateTime> onTimeSelected)
@@ -191,7 +191,7 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
     }
     ```
 
--   當片段顯示時, Android 會呼叫`DialogFragment` [OnCreateDialog](xref:Android.App.DialogFragment.OnCreateDialog*)方法。
+- 當片段顯示時, Android 會呼叫`DialogFragment` [OnCreateDialog](xref:Android.App.DialogFragment.OnCreateDialog*)方法。
     這個方法會建立新`TimePickerDialog`的物件, 並使用活動、回呼物件 (也就是的目前實例`TimePickerFragment`) 來初始化它, 以及目前的時間:
 
     ```csharp
@@ -205,7 +205,7 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
     }
     ```
 
--   當使用者變更`TimePicker`對話方塊中的時間設定時`OnTimeSet` , 會叫用方法。 `OnTimeSet`使用目前的日期建立物件,並在使用者選取的時間(小時和分鐘)內合併:`DateTime`
+- 當使用者變更`TimePicker`對話方塊中的時間設定時`OnTimeSet` , 會叫用方法。 `OnTimeSet`使用目前的日期建立物件,並在使用者選取的時間(小時和分鐘)內合併:`DateTime`
 
     ```csharp
     public void OnTimeSet(TimePicker view, int hourOfDay, int minute)
@@ -215,7 +215,7 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
     ```
 
 
--   這個`DateTime`物件會傳遞至在`timeSelectedHandler`建立時向`TimePickerFragment`物件註冊的。 `OnTimeSet`叫用此處理程式, 將活動的時間顯示更新為選取的時間 (此處理程式會在下一節中執行):
+- 這個`DateTime`物件會傳遞至在`timeSelectedHandler`建立時向`TimePickerFragment`物件註冊的。 `OnTimeSet`叫用此處理程式, 將活動的時間顯示更新為選取的時間 (此處理程式會在下一節中執行):
 
     ```csharp
     timeSelectedHandler (selectedTime);
@@ -225,7 +225,7 @@ public class TimePickerFragment : DialogFragment, TimePickerDialog.IOnTimeSetLis
 
 現在已經實作為, 接下來要`DialogFragment`使用`NewInstance` factory 方法具現化, 並藉由叫用 DialogFragment 來顯示它[。 Show](xref:Android.App.DialogFragment.Show*): `DialogFragment`
 
-將下列方法新增至`MainActivity`:
+將下列方法新增至 `MainActivity`：
 
 ```csharp
 void TimeSelectOnClick (object sender, EventArgs eventArgs)

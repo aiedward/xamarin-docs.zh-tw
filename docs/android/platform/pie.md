@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 52141141ab525c7407fa2f3ff2dca749473b39c1
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: d4d7379e1d4d2dd605331b30d692df299f5f5c13
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511447"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69523671"
 ---
 # <a name="android-pie-features"></a>Android 圓形圖功能
 
@@ -35,7 +35,7 @@ Xamarin. Android 9.0 提供 Android 圓形圖的支援。 如需適用于 Androi
 
 - 9\.0.0.17 或更新版本必須與 Visual Studio 一起安裝 (xamarin. android 會在**使用 .net**工作負載進行行動裝置開發的過程中自動安裝)。 &ndash;
 
-- **JAVA 開發人員套件**&ndash;Xamarin Android 9.0 開發需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (您也可以嘗試預覽 Microsoft 的 [OpenJDK](~/android/get-started/installation/openjdk.md) 散發)。 JDK8 會在**使用 .net**工作負載進行行動裝置開發的過程中自動安裝。
+- **JAVA 開發人員套件**Xamarin Android 9.0 開發需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (您也可以嘗試預覽 Microsoft 的 O [penJDK](~/android/get-started/installation/openjdk.md) 散發)。 &ndash; JDK8 會在**使用 .net**工作負載進行行動裝置開發的過程中自動安裝。
 
 - **Android SDK**&ndash; Android SDK API 28 或更新版本必須透過 Android SDK 管理員安裝。
 
@@ -95,13 +95,13 @@ Xamarin. Android 9.0 提供 Android 圓形圖的支援。 如需適用于 Androi
 
 Android 圓形圖引進了各種新功能。 其中一些新功能的目的是要利用最新的 Android 裝置所提供的新硬體功能, 而有些則是設計來進一步增強 Android 使用者體驗:
 
--   **顯示切除支援**提供 api, 以在較新的 Android 裝置上尋找位於畫面頂端的切除位置和形狀。 &ndash;
+- **顯示切除支援**提供 api, 以在較新的 Android 裝置上尋找位於畫面頂端的切除位置和形狀。 &ndash;
 
--   **通知增強功能**通知訊息現在可以顯示影像, 而新`Person`的類別則用來簡化交談參與者。 &ndash;
+- **通知增強功能**通知訊息現在可以顯示影像, 而新`Person`的類別則用來簡化交談參與者。 &ndash;
 
--   **室內定位**&ndash; Wifi 來回時間通訊協定的平臺支援, 讓應用程式可以使用 wifi 裝置在室內設定中進行導覽。
+- **室內定位**&ndash; Wifi 來回時間通訊協定的平臺支援, 讓應用程式可以使用 wifi 裝置在室內設定中進行導覽。
 
--   **多攝影機支援**&ndash;提供從多個實體相機 (例如, 雙前方和雙背相機) 同時存取串流的功能。
+- **多攝影機支援**&ndash;提供從多個實體相機 (例如, 雙前方和雙背相機) 同時存取串流的功能。
 
 
 下列各節將強調這些功能, 並提供簡短的程式碼範例, 以協助您開始在應用程式中使用它們。
@@ -115,11 +115,11 @@ Android 圓形圖引進了各種新功能。 其中一些新功能的目的是�
 
 若要管理應用程式視窗在顯示切除的裝置上顯示其內容的方式, Android 圓形圖已加入新的[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)視窗版面配置屬性。 這個屬性可以設為下列其中一個值:
 
--   [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;視窗永遠不允許與切除區域重迭。
+- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;視窗永遠不允許與切除區域重迭。
 
--   [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;視窗可以擴充到裁剪區域, 但只能延伸到螢幕的短邊緣。 
+- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;視窗可以擴充到裁剪區域, 但只能延伸到螢幕的短邊緣。 
 
--   [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;如果裁剪包含在系統列內, 則可以將視窗延伸至裁剪區域。
+- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;如果裁剪包含在系統列內, 則可以將視窗延伸至裁剪區域。
 
 例如, 若要防止應用程式視窗與切除區域重迭, 請將版面配置的圖樣模式設定為*永不*: 
 
@@ -145,13 +145,13 @@ Window.Attributes.LayoutInDisplayCutoutMode =
 
 Android 圓形圖引進下列增強功能, 以改善訊息體驗:
 
--   通知通道 (在[Android Oreo](~/android/platform/oreo.md)中引進) 現在支援封鎖通道群組。
+- 通知通道 (在[Android Oreo](~/android/platform/oreo.md)中引進) 現在支援封鎖通道群組。
 
--   通知系統有三個新的「不打擾」類別 (排列警示、系統音效和媒體來源的優先順序)。 此外, 還有七個新的「不打擾」模式可用來隱藏視覺中斷 (例如徽章、通知燈、狀態列外觀, 以及啟動全螢幕活動)。
+- 通知系統有三個新的「不打擾」類別 (排列警示、系統音效和媒體來源的優先順序)。 此外, 還有七個新的「不打擾」模式可用來隱藏視覺中斷 (例如徽章、通知燈、狀態列外觀, 以及啟動全螢幕活動)。
 
--   已加入新的[Person](https://developer.android.com/reference/android/app/Person.html)類別來表示訊息的寄件者。 使用此類別有助於藉由識別與交談相關的人員 (包括其虛擬人偶和 Uri) 來優化每個通知的呈現。
+- 已加入新的[Person](https://developer.android.com/reference/android/app/Person.html)類別來表示訊息的寄件者。 使用此類別有助於藉由識別與交談相關的人員 (包括其虛擬人偶和 Uri) 來優化每個通知的呈現。
 
--   通知現在可以顯示影像。 
+- 通知現在可以顯示影像。 
 
 下列範例說明如何使用新的 Api 來產生包含影像的通知。 在下列螢幕擷取畫面中, 文字通知已張貼, 後面接著具有內嵌影像的通知。 當通知展開 (如右側所示) 時, 會顯示第一個通知的文字, 並放大第二個通知中內嵌的影像:
 
@@ -169,7 +169,7 @@ Android 圓形圖引進下列增強功能, 以改善訊息體驗:
         .Build();
     ```
 
-2. 建立 `Notification.MessagingStyle.Message`, 其中包含要傳送的影像, 並將影像傳遞至新的 [Notification.MessagingStyle.Message.SetData](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri) 方法。
+2. 建立, 其中包含要傳送的影像, 並將影像傳遞至新的  [MessagingStyle 方法](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)。`Notification.MessagingStyle.Message`
    例如：
 
     ```csharp
@@ -230,13 +230,13 @@ Android 圓形圖也包含新的[SessionConfiguration](https://developer.android
 
 此外, Android 圓形圖也支援其他幾項新功能:
 
--   新的[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)類別, 可以用來繪製和顯示動畫影像。
+- 新的[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)類別, 可以用來繪製和顯示動畫影像。
 
--   取代`BitmapFactory`的新[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)類別。 `ImageDecoder`可以用來`AnimatedImageDrawable`解碼。
+- 取代`BitmapFactory`的新[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)類別。 `ImageDecoder`可以用來`AnimatedImageDrawable`解碼。
 
--   支援 HDR (高動態範圍) 影片和 HEIF (高效率的影像檔案格式) 影像。
+- 支援 HDR (高動態範圍) 影片和 HEIF (高效率的影像檔案格式) 影像。
 
--   [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)已經過增強, 可更聰明地處理網路相關的工作。 [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters)類別的新[GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)方法會傳回最佳網路, 以執行給定作業的任何網路要求。
+- [JobScheduler](https://developer.android.com/reference/android/app/job/JobScheduler.html)已經過增強, 可更聰明地處理網路相關的工作。 [JobParameters](https://developer.android.com/reference/android/app/job/JobParameters)類別的新[GetNetwork](https://developer.android.com/reference/android/app/job/JobParameters#getNetwork%28%29)方法會傳回最佳網路, 以執行給定作業的任何網路要求。
 
 如需最新 Android 圓形圖功能的詳細資訊, 請參閱[android 9 功能和 api](https://developer.android.com/about/versions/pie/android-9.0)。
 
@@ -245,11 +245,11 @@ Android 圓形圖也包含新的[SessionConfiguration](https://developer.android
 
 當目標 Android 版本設定為 API 層級28時, 有數個平臺變更可能會影響應用程式的行為, 即使您未執行上述的新功能。 下列清單是這些變更的簡短摘要:
 
--  應用程式現在必須先要求前景許可權, 才能使用前景服務。
+- 應用程式現在必須先要求前景許可權, 才能使用前景服務。
 
--  如果您的應用程式有一個以上的進程, 它就無法跨進程共用單一的[web](xref:Android.Webkit.WebView)程式資料目錄。
+- 如果您的應用程式有一個以上的進程, 它就無法跨進程共用單一的[web](xref:Android.Webkit.WebView)程式資料目錄。
 
--  不再允許依路徑直接存取另一個應用程式的資料目錄。
+- 不再允許依路徑直接存取另一個應用程式的資料目錄。
 
 如需以 Android P 為目標之應用程式行為變更的詳細資訊, 請參閱[行為變更](https://developer.android.com/about/versions/pie/android-9.0-changes-all#p-apps)。
 
