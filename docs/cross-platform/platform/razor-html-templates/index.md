@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: asb3993
 ms.author: amburns
 ms.date: 07/24/2018
-ms.openlocfilehash: c6c279a31b6081f7e20b4047e2a8e82c79aeac23
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d822a4dc50d3f33ba4c217b8fcc557acc2bfdb3e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521812"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621039"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 範本建立 HTML 視圖
 
@@ -167,7 +167,7 @@ class HybridWebViewClient : WebViewClient {
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>從呼叫 JavaScriptC#
+### <a name="calling-javascript-from-c"></a>從 C 呼叫 JavaScript\#
 
 除了告訴 web view 載入新的 HTML 網頁, C#程式碼也可以在目前顯示的頁面內執行 JavaScript。 您可以使用C#字串來建立整個 javascript 程式碼區塊, 並加以執行, 或者您可以透過標籤, 為頁面`script`上已提供的 javascript 製作方法呼叫。
 
@@ -465,7 +465,7 @@ var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 
 處理 URL 之後, 方法會中止流覽, 讓 web view 不會嘗試完成流覽至自訂 URL。
 
-#### <a name="manipulating-the-template-from-c"></a>從操作範本C#
+#### <a name="manipulating-the-template-from-c"></a>從 C 操作範本\#
 
 從C#到轉譯的 HTML web view 的通訊是藉由呼叫 web view 中的 JavaScript 來完成。 在 iOS 上, 您可以在 UIWebView `EvaluateJavascript`上呼叫來完成這項作業:
 

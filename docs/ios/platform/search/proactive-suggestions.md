@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: fe3dc38d632d921ebd636ead381babbba448d62e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 49e1b382d711f3486782e9e8747ef422c6853979
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654136"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620983"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin 中的主動式建議簡介
 
@@ -346,54 +346,54 @@ using Intents;
 
 namespace MonkeyNotification
 {
-    public class DonateInteraction
+  public class DonateInteraction
+  {
+    #region Constructors
+    public DonateInteraction ()
     {
-        #region Constructors
-        public DonateInteraction ()
-        {
-        }
-        #endregion
-
-        #region Public Methods
-        public void SendMessageIntent (string text, INPerson from, INPerson[] to)
-        {
-
-            // Create App Activity
-            var activity = new NSUserActivity ("com.xamarin.message");
-
-            // Define details
-            var info = new NSMutableDictionary ();
-            info.Add (new NSString ("message"), new NSString (text));
-
-            // Populate Activity
-            activity.Title = "Sent MonkeyChat Message";
-            activity.UserInfo = info;
-
-            // Enable capabilities
-            activity.EligibleForSearch = true;
-            activity.EligibleForHandoff = true;
-            activity.EligibleForPublicIndexing = true;
-
-            // Inform system of Activity
-            activity.BecomeCurrent ();
-
-            // Create message Intent
-            var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
-
-            // Create Intent Reaction
-            var response = new INSendMessageIntentResponse (INSendMessageIntentResponseCode.Success, activity);
-
-            // Create interaction
-            var interaction = new INInteraction (intent, response);
-
-            // Donate interaction to the system
-            interaction.DonateInteraction ((err) => {
-                // Handle donation error
-                ...
-            });
-        }
-        #endregion
     }
+    #endregion
+
+    #region Public Methods
+    public void SendMessageIntent (string text, INPerson from, INPerson[] to)
+    {
+
+      // Create App Activity
+      var activity = new NSUserActivity ("com.xamarin.message");
+
+      // Define details
+      var info = new NSMutableDictionary ();
+      info.Add (new NSString ("message"), new NSString (text));
+
+      // Populate Activity
+      activity.Title = "Sent MonkeyChat Message";
+      activity.UserInfo = info;
+
+      // Enable capabilities
+      activity.EligibleForSearch = true;
+      activity.EligibleForHandoff = true;
+      activity.EligibleForPublicIndexing = true;
+
+      // Inform system of Activity
+      activity.BecomeCurrent ();
+
+      // Create message Intent
+      var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
+
+      // Create Intent Reaction
+      var response = new INSendMessageIntentResponse (INSendMessageIntentResponseCode.Success, activity);
+
+      // Create interaction
+      var interaction = new INInteraction (intent, response);
+
+      // Donate interaction to the system
+      interaction.DonateInteraction ((err) => {
+        // Handle donation error
+        ...
+      });
+    }
+    #endregion
+  }
 }
 ```
 
@@ -420,8 +420,8 @@ var interaction = new INInteraction (intent, response);
 ```csharp
 // Donate interaction to the system
 interaction.DonateInteraction ((err) => {
-    // Handle donation error
-    ...
+  // Handle donation error
+  ...
 });
 ```
 
@@ -453,25 +453,25 @@ Schema.org 可以提供與網站相同的位置型互動類型。 Apple 已設�
 
 例如, 如果網頁包含下列資料:
 
-```xml
-<script type="application/ld+json>
+```html
+<script type="application/ld+json">
 {
-    "@context":"http://schema.org",
-    "@type":"Restaurant",
-    "telephone":"(415) 781-1111",
-    "url":"https://www.yanksing.com",
-    "address":{
-        "@type":"PostalAddress",
-        "streetAddress":"101 Spear St",
-        "addressLocality":"San Francisco",
-        "postalCode":"94105",
-        "addressRegion":"CA"
-    },
-    "aggregateRating":{
-        "@type":"AggregateRating",
-        "ratingValue":"3.5",
-        "reviewCount":"2022"
-    }
+  "@context":"http://schema.org",
+  "@type":"Restaurant",
+  "telephone":"(415) 781-1111",
+  "url":"https://www.yanksing.com",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"101 Spear St",
+    "addressLocality":"San Francisco",
+    "postalCode":"94105",
+    "addressRegion":"CA"
+  },
+  "aggregateRating":{
+    "@type":"AggregateRating",
+    "ratingValue":"3.5",
+    "reviewCount":"2022"
+  }
 }
 </script>
 ```
@@ -544,29 +544,29 @@ using CoreLocation;
 
 namespace MonkeyChat
 {
-    [Register ("AppDelegate")]
-    public class AppDelegate : UIApplicationDelegate, IUISplitViewControllerDelegate
+  [Register ("AppDelegate")]
+  public class AppDelegate : UIApplicationDelegate, IUISplitViewControllerDelegate
+  {
+    ...
+    
+    public override bool OpenUrl (UIApplication app, NSUrl url, NSDictionary options)
     {
-        ...
-        
-        public override bool OpenUrl (UIApplication app, NSUrl url, NSDictionary options)
-        {
-            if (MKDirectionsRequest.IsDirectionsRequestUrl (url)) {
-                var request = new MKDirectionsRequest (url);
-                var coordinate = request.Destination?.Placemark.Location?.Coordinate;
-                var address = request.Destination.Placemark.AddressDictionary;
-                if (coordinate.IsValid()) {
-                    var geocoder = new CLGeocoder ();
-                    geocoder.GeocodeAddress (address, (place, err) => {
-                        // Handle the display of the address
+      if (MKDirectionsRequest.IsDirectionsRequestUrl (url)) {
+        var request = new MKDirectionsRequest (url);
+        var coordinate = request.Destination?.Placemark.Location?.Coordinate;
+        var address = request.Destination.Placemark.AddressDictionary;
+        if (coordinate.IsValid()) {
+          var geocoder = new CLGeocoder ();
+          geocoder.GeocodeAddress (address, (place, err) => {
+            // Handle the display of the address
 
-                    });
-                }
-            }
-
-            return true;
+          });
         }
-    }       
+      }
+
+      return true;
+    }
+  }    
 }
 ```
 
@@ -587,8 +587,8 @@ IOS 10 的新功能, 應用程式可以傳送不具有地理座標的位址, 因
 ```csharp
 var geocoder = new CLGeocoder();
 geocoder.GeocodeAddress(address, (place, err)=> {
-    // Handle the display of the address
-    
+  // Handle the display of the address
+  
 });
 
 ```
@@ -602,9 +602,9 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 - iOS 會根據其先前的行為來升級使用者可能會使用的應用程式。
 - 與應用程式相關的建議會以焦點和今天的觀點呈現。
 - 如果應用程式符合下列其中一個觸發程式, 它可能會提升為鎖定畫面的建議:
-    - 插入耳機或藍牙裝置之後, 會建立連接。
-    - 進入汽車之後。
-    - 抵達家裡或工作之後。 
+  - 插入耳機或藍牙裝置之後, 會建立連接。
+  - 進入汽車之後。
+  - 抵達家裡或工作之後。 
 
 藉由在 iOS 10 中包含簡單的 API 呼叫, 開發人員可以為媒體應用程式的使用者建立更吸引人的鎖定畫面體驗。 藉由使用`MPPlayableContentManager`類別來管理媒體播放, 系統會在應用程式的鎖定畫面上顯示完整的媒體控制項 (例如音樂應用程式所呈現的控制項)。
 
@@ -616,66 +616,66 @@ using UIKit;
 
 namespace MonkeyPlayer
 {
-    public class PlayableContentDelegate : MPPlayableContentDelegate
+  public class PlayableContentDelegate : MPPlayableContentDelegate
+  {
+    #region Constructors
+    public PlayableContentDelegate ()
     {
-        #region Constructors
-        public PlayableContentDelegate ()
-        {
-        }
-        #endregion
-
-        #region Override methods
-        public override void InitiatePlaybackOfContentItem (MPPlayableContentManager contentManager, Foundation.NSIndexPath indexPath, Action<Foundation.NSError> completionHandler)
-        {
-            // Access the media item to play
-            var item = LoadMediaItem (indexPath);
-
-            // Populate the lock screen
-            PopulateNowPlayingItem (item);
-
-            // Prep item to be played
-            var status = PreparePlayback (item);
-
-            // Call completion handler
-            completionHandler (null);
-        }
-        #endregion
-
-        #region Public Methods
-        public MPMediaItem LoadMediaItem (Foundation.NSIndexPath indexPath)
-        {
-            var item = new MPMediaItem ();
-
-            // Load item from media store
-            ...
-
-            return item;
-        }
-
-        public void PopulateNowPlayingItem (MPMediaItem item)
-        {
-            // Get Info Center and album art
-            var infoCenter = MPNowPlayingInfoCenter.DefaultCenter;
-            var albumArt = (item.Artwork == null) ? new MPMediaItemArtwork (UIImage.FromFile ("MissingAlbumArt.png")) : item.Artwork;
-
-            // Populate Info Center
-            infoCenter.NowPlaying.Title = item.Title;
-            infoCenter.NowPlaying.Artist = item.Artist;
-            infoCenter.NowPlaying.AlbumTitle = item.AlbumTitle;
-            infoCenter.NowPlaying.PlaybackDuration = item.PlaybackDuration;
-            infoCenter.NowPlaying.Artwork = albumArt;
-        }
-
-        public bool PreparePlayback (MPMediaItem item)
-        {
-            // Prepare media item for playback
-            ...
-
-            // Return results
-            return true;
-        }
-        #endregion
     }
+    #endregion
+
+    #region Override methods
+    public override void InitiatePlaybackOfContentItem (MPPlayableContentManager contentManager, Foundation.NSIndexPath indexPath, Action<Foundation.NSError> completionHandler)
+    {
+      // Access the media item to play
+      var item = LoadMediaItem (indexPath);
+
+      // Populate the lock screen
+      PopulateNowPlayingItem (item);
+
+      // Prep item to be played
+      var status = PreparePlayback (item);
+
+      // Call completion handler
+      completionHandler (null);
+    }
+    #endregion
+
+    #region Public Methods
+    public MPMediaItem LoadMediaItem (Foundation.NSIndexPath indexPath)
+    {
+      var item = new MPMediaItem ();
+
+      // Load item from media store
+      ...
+
+      return item;
+    }
+
+    public void PopulateNowPlayingItem (MPMediaItem item)
+    {
+      // Get Info Center and album art
+      var infoCenter = MPNowPlayingInfoCenter.DefaultCenter;
+      var albumArt = (item.Artwork == null) ? new MPMediaItemArtwork (UIImage.FromFile ("MissingAlbumArt.png")) : item.Artwork;
+
+      // Populate Info Center
+      infoCenter.NowPlaying.Title = item.Title;
+      infoCenter.NowPlaying.Artist = item.Artist;
+      infoCenter.NowPlaying.AlbumTitle = item.AlbumTitle;
+      infoCenter.NowPlaying.PlaybackDuration = item.PlaybackDuration;
+      infoCenter.NowPlaying.Artwork = albumArt;
+    }
+
+    public bool PreparePlayback (MPMediaItem item)
+    {
+      // Prepare media item for playback
+      ...
+
+      // Return results
+      return true;
+    }
+    #endregion
+  }
 }
 ```
 

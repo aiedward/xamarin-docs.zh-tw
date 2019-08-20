@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5c8b2b20d037edd35fd3c50d1418df2110cb8e4c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b382b7dd66722df6acb4bb7c90e401e5895c0947
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528886"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620898"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>其他 macOS Sierra 架構變更
 
@@ -33,17 +33,17 @@ ms.locfileid: "69528886"
 MacOS Sierra 的 AppKit 架構已進行下列增強功能:
 
 - 下列幾項`NSCollectionView`增強功能:
-    - 可折迭的**區段**-允許使用者將集合視圖區段折迭成單一水準資料列。
-    - **浮動標頭**-頁首和頁尾現在可以使用與 IOS 中[UICOLLECTIONVIEW](https://developer.apple.com/reference/uikit/uicollectionview)相同的 API 來浮動 (在流程版面配置中)。
-    - 可**滾動的背景視圖**-集合 Views 背景現在可以設定為與內容一起滾動。
+  - 可折迭的**區段**-允許使用者將集合視圖區段折迭成單一水準資料列。
+  - **浮動標頭**-頁首和頁尾現在可以使用與 IOS 中[UICOLLECTIONVIEW](https://developer.apple.com/reference/uikit/uicollectionview)相同的 API 來浮動 (在流程版面配置中)。
+  - 可**滾動的背景視圖**-集合 Views 背景現在可以設定為與內容一起滾動。
 - 延遲的視圖配置傳遞已經過優化和擴充。
 - 拖放 API 現在包含新`NSFilePromiseProvider`的和`NSFilePromiseReceiver`類別, 以支援拖曳 flocking。
 - 現有的控制項中已加入數個便利的函式:
-    - `NSButton`包含用來建立推播按鈕、核取方塊和選項按鈕的新程式。
-    - `NSTextField`包含新的函式, 用於建立換行和非包裝標籤、屬性化標籤和可編輯的文字欄位。
-    - `NSSegmentedControl`包含新的函式, 可從一組標籤或影像建立分段的控制項。
-    - `NSSlider`包含用來建立水平線性滑杆的新函式。
-    - `NSImageView`包含新的函式, 可從指定`NSImage`的建立不可編輯的影像視圖。
+  - `NSButton`包含用來建立推播按鈕、核取方塊和選項按鈕的新程式。
+  - `NSTextField`包含新的函式, 用於建立換行和非包裝標籤、屬性化標籤和可編輯的文字欄位。
+  - `NSSegmentedControl`包含新的函式, 可從一組標籤或影像建立分段的控制項。
+  - `NSSlider`包含用來建立水平線性滑杆的新函式。
+  - `NSImageView`包含新的函式, 可從指定`NSImage`的建立不可編輯的影像視圖。
 - 已將`NSGridView`新的新增至將子視圖集合自動設定到具有可變大小之資料列和資料行的方格中, 可以動態地隱藏或顯示。
 
 <a name="AVFoundation-Framework-Enhancements" />

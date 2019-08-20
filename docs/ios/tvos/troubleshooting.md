@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ad0952bb620645a4cbc5fbc17b21f6a977c889ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2503b8a96e8f1c6f08dfcd19672db3b93a5ce7e1
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657315"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620313"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>針對以 Xamarin 建立的 tvOS 應用程式進行疑難排解
 
@@ -26,10 +26,10 @@ _本文涵蓋您在使用 Xamarin 的 tvOS 支援時可能會遇到的問題。_
 目前的 Xamarin tvOS 支援版本具有下列已知問題:
 
 - **Mono Framework** – Mono 4.3 密碼編譯。 ProtectedData 無法將資料從 Mono 4.2 解密。 如此一來, 當設定受保護的 NuGet 來源時, `Data unprotection failed` NuGet 套件將無法還原並產生錯誤。
-    - 因應措施-在 Visual Studio for Mac 中, 您必須先將任何使用密碼驗證的 NuGet 套件來源新增回, 再重新嘗試還原封裝。
+  - 因應措施-在 Visual Studio for Mac 中, 您必須先將任何使用密碼驗證的 NuGet 套件來源新增回, 再重新嘗試還原封裝。
 - **Visual Studio for Mac w/ F#增益集**–在 Windows 上建立F# Android 範本時發生錯誤。 這在 Mac 上仍應能正常運作。
 - [ **Xamarin** ] –執行 [xamarin] 整合範本專案, 並將目標 Framework 設定為`Unsupported`時, 可能會出現快顯視窗。 `Could not connect to the debugger`
-    - **可能**的因應措施-降級我們穩定通道中可用的 Mono framework 版本。
+  - **可能**的因應措施-降級我們穩定通道中可用的 Mono framework 版本。
 - **Xamarin Visual Studio & xamarin** -在 Visual Studio 中部署 WatchKit 應用程式時, 可能會`The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist`出現錯誤。
 
 請報告您在[GitHub](https://github.com/xamarin/xamarin-macios/issues/new)上找到的任何 bug。
@@ -115,7 +115,7 @@ _「只有包含 arm64 配量的應用程式, 在 UIRequiredDeviceCapabilities �
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
 <array>
-    <string>arm64</string>
+  <string>arm64</string>
 </array>
 ```
 

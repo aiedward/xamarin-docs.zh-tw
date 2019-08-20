@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 75affbdb6e919c15c644a68ae45e7ff657a53f6a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: afaba327299461af6b71846a39eb6c455125feae
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652285"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620377"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的分鏡腳本簡介
 
@@ -79,9 +79,9 @@ _本文提供在 Xamarin. Mac 應用程式中使用分鏡腳本的簡介。其�
 在設計階段 (配置 Xcode 的 Interface Builder 中的 UI 時), 應用程式 UI 的每個元素會細分為其組成專案:
 
 - **場景**-由下列組成:
-    - **View Controller** -定義 Views 與支援它們的資料之間的關聯性。
-    - **Views 和子檢視**-組成使用者介面的實際元素。
-    - 內含專案**segue** -定義場景之間的父子式關聯性。
+  - **View Controller** -定義 Views 與支援它們的資料之間的關聯性。
+  - **Views 和子檢視**-組成使用者介面的實際元素。
+  - 內含專案**segue** -定義場景之間的父子式關聯性。
 - **簡報 segue** -定義個別的呈現模式。 
 
 藉由以這種方式定義每個專案, 它允許每個專案的延遲載入, 只有在執行時間時才需要。 在 macOS 中, 整個程式的設計目的是要讓開發人員能夠建立複雜且彈性的使用者介面, 只需要最少的支援程式碼, 就能使其正常執行, 同時也能以更有效率的方式使用系統資源。

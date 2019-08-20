@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 5aad72de5d894a83d734cd53fce3ac060125d740
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 85dad3bdd46401b1acf9a1cb5acc206508cd611f
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656934"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620727"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 架構變更
 
@@ -182,8 +182,8 @@ IOS 10 中的 SpriteKit 架構已進行下列增強功能:
 IOS 10.3 中的 ScrollView 控制項已進行下列增強功能:
 
 - `UIScrollView`現在包含`IndexDisplayMode`屬性, 以控制當使用者將滾動`UIScrollViewIndexDisplayMode`為的時, 如何顯示索引:
-    - `Automatic`-索引顯示是由 OS 所控制。
-    - `AlwaysHidden`-索引顯示一律會隱藏。
+  - `Automatic`-索引顯示是由 OS 所控制。
+  - `AlwaysHidden`-索引顯示一律會隱藏。
 
 如需使用方式, 請參閱[IOSTenThree 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree)。
 

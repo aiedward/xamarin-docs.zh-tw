@@ -1,46 +1,46 @@
 ---
-title: 與進行 UrhoSharp 程式設計F#
-description: 本文件說明如何建立簡單的 hello world UrhoSharp 應用程式使用F#在 Visual Studio for mac。
+title: 程式設計 UrhoSharpF#
+description: 本檔說明如何在 Visual Studio for Mac 中使用F#來建立簡單的 Hello world UrhoSharp 應用程式。
 ms.prod: xamarin
 ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 6269a7f2fa097136f492657d0ba7c6a1f056c38c
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: d87749bd74cf2c478e96284060fed7386d10b853
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832323"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621010"
 ---
-# <a name="programming-urhosharp-with-f"></a>與進行 UrhoSharp 程式設計F#
+# <a name="programming-urhosharp-with-f"></a>使用 F 程式設計 UrhoSharp\#
 
-可以用編寫 UrhoSharpF#使用相同的程式庫和所使用的概念C#程式設計人員。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)文章概述 UrhoSharp 引擎，並應該在這篇文章之前閱讀。
+UrhoSharp 可以F#使用程式C#設計人員所使用的相同程式庫和概念來進行程式設計。 [使用 UrhoSharp](~/graphics-games/urhosharp/using.md)一文提供 UrhoSharp 引擎的總覽, 而且應該在本文之前閱讀。
 
-例如，在產生的許多程式庫C++的世界中，許多 UrhoSharp 函式會傳回布林值或整數，指出成功或失敗。 您應該使用`|> ignore`要略過這些值。
+就像C++世界各地的許多程式庫一樣, 許多 UrhoSharp 函式會傳回布林值或整數, 指出成功或失敗。 您應該使用`|> ignore`來忽略這些值。
 
-[範例程式](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)UrhoSharp 從做為 「 Hello World 」 F#。
+[範例程式](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)是從F#UrhoSharp 的「Hello World」。
 
 ## <a name="creating-an-empty-project"></a>建立空專案
 
-有任何F#範本 UrhoSharp 尚未可用，因此，若要建立您可以開始使用您自己 UrhoSharp 專案[範例](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)或遵循下列步驟：
+尚未提供可用F#的 UrhoSharp 範本, 因此若要建立您自己的 UrhoSharp 專案, 您可以從[範例](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)開始, 或遵循下列步驟:
 
-1. 從 Visual Studio for Mac 中，建立新**解決方案**。 選擇**iOS > 應用程式 > 單一檢視應用程式**，然後選取**F#** 做為實作語言。 
-1. 刪除**Main.storyboard**檔案。 開啟**Info.plist**檔案並在**iPhone / iPod 部署資訊**窗格中，刪除`Main`字串**主要介面**下拉式清單。
-1. 刪除**ViewController.fs**檔案。
+1. 從 Visual Studio for Mac 建立新的**方案**。 選擇 [ **iOS > 應用程式 > 單一視圖應用程式**], 然後選取**F#** 作為 [執行語言]。 
+1. 刪除**主要**的分鏡腳本檔案。 開啟**plist**檔案, 然後在 [ **iPhone/iPod 部署資訊**] 窗格中, 刪除`Main` **主要介面**下拉式清單中的字串。
+1. 也刪除**ViewController**檔案。
 
-## <a name="building-hello-world-in-urho"></a>Urho 建置 Hello World
+## <a name="building-hello-world-in-urho"></a>在 Urho 中建立 Hello World
 
-您現在已準備好開始定義您的遊戲類別。 至少，您必須定義的子類別`Urho.Application`，並覆寫其`Start`方法。 若要建立此檔案，以滑鼠右鍵按一下您F#專案中，選擇**加入新的檔案...** 並新增空白F#類別，以您的專案。 新的檔案會新增至您的專案中的檔案清單的結尾，但您必須將它拖曳，使其出現*之前*它使用於**AppDelegate.fs**。
+您現在已準備好開始定義遊戲的類別。 您至少需要定義的子類別`Urho.Application` , 並覆寫其`Start`方法。 若要建立這個檔案, 請以滑鼠右鍵F#按一下您的專案, 選擇 [**加入新檔案 ...** ], F#然後將空的類別新增至您的專案。 新檔案將會新增至專案中的檔案清單結尾, 但您必須將它拖曳,*才*會在**AppDelegate**中使用它。
 
-1. 加入 Urho NuGet 套件的參考。
-1. 從現有 Urho 專案中，複製 （大） 的目錄**CoreData /** 並**資料 /** 至您的專案**資源 /** 目錄。 在您F#專案中，以滑鼠右鍵按一下**資源**資料夾，然後使用**Add / 新增現有資料夾**將所有這些檔案新增至您的專案。
+1. 新增 Urho NuGet 套件的參考。
+1. 從現有的 Urho 專案中, 將 (大型) 目錄**CoreData/** 和**資料**複製到您專案的**資源/** 目錄。 在您F#的專案中, 以滑鼠右鍵按一下 [**資源**] 資料夾, 然後使用 [**新增/加入現有資料夾**] 將所有這些檔案新增至您的專案。
 
-您的專案結構現在看起來應該類似：
+您的專案結構現在看起來應該像這樣:
 
-![](fsharp-images/solutionpane.png "專案結構現在看起來應該像")
+![](fsharp-images/solutionpane.png "專案結構現在看起來應該像這樣")
 
-您新建立的類別定義為的子型別`Urho.Application`，並覆寫其`Start`方法：
+將新建立的類別定義為的`Urho.Application`子類型, 並覆寫其`Start`方法:
 
 ```fsharp
 namespace HelloWorldUrho1
@@ -69,11 +69,11 @@ override this.Start() =
             
 ```
 
-程式碼是非常簡單。 它會使用`Urho.Gui.Text`類別，以顯示與特定字型和色彩大小置中對齊的字串。 
+程式碼非常簡單。 它會使用`Urho.Gui.Text`類別, 以特定字型和色彩大小來顯示置中對齊的字串。 
 
-執行此程式碼之前，不過，必須先初始化 UrhoSharp。 
+不過, 在此程式碼可以執行之前, 必須先初始化 UrhoSharp。 
 
-開啟並修改 AppDelegate.fs 檔案`FinishedLaunching`方法，如下所示：
+開啟 AppDelegate 檔案並修改`FinishedLaunching`方法, 如下所示:
 
 ```fsharp
 namespace HelloWorldUrho1
@@ -97,14 +97,14 @@ type AppDelegate () =
         true
 ```
 
-`ApplicationOptions.Default`提供橫向模式應用程式的預設選項。 傳遞這些`ApplicationOptions`的預設建構函式您`Application`子類別 (請注意，當您定義`HelloWorld`類別，行`inherit Application(o)`呼叫基底類別建構函式)。
+會`ApplicationOptions.Default`提供橫向模式應用程式的預設選項。 將這些`ApplicationOptions`傳遞給子`Application`類別的預設函式 (請注意, 當您`HelloWorld`定義類別時, `inherit Application(o)`這一行會呼叫基類的「函式」 (base class))。
 
-`Run`方法的程式`Application`啟動程式。 它定義為傳回`int`，這可以輸送到`ignore`。
+的`Run` 方法`Application`會起始程式。 其定義為`int`傳回, 可以輸送至`ignore`。
 
-產生的程式看起來應該類似此螢幕擷取畫面：
+產生的程式看起來應該像這樣的螢幕擷取畫面:
 
-![產生的程式的螢幕擷取畫面](fsharp-images/helloworldfsharp.png)
+![產生之程式的螢幕擷取畫面](fsharp-images/helloworldfsharp.png)
 
 ## <a name="related-links"></a>相關連結
 
-- [瀏覽 GitHub （範例）](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [流覽 GitHub (範例)](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
-ms.openlocfilehash: 1e3e1a2165c9acee127a543301f00262aa4bdc4f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2bd704b17f5aff1b4d3f2da1813d1eb19ef29e59
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529092"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620687"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>模型視圖-ViewModel 模式
 
@@ -284,7 +284,7 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 透過附加屬性附加至控制項的行為, 稱為*附加的行為*。 然後, 行為可以使用其附加之專案的公開 API, 在視圖的視覺化樹狀結構中加入該控制項的功能, 或其他控制項。 EShopOnContainers 行動應用程式包含`LineColorBehavior`類別, 這是附加的行為。 如需此行為的詳細資訊, 請參閱[顯示驗證錯誤](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)。
 
-Xamarin 形式行為是衍生自[`Behavior`](xref:Xamarin.Forms.Behavior)或[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)類別的類別, 其中`T `是應該套用行為的控制項類型。 這些類別會`OnAttachedTo`提供`OnDetachingFrom`和方法, 這些都應該加以覆寫, 以提供當行為附加至控制項並中斷連結時, 將會執行的邏輯。
+Xamarin 形式行為是衍生自[`Behavior`](xref:Xamarin.Forms.Behavior)或[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)類別的類別, 其中`T`是應該套用行為的控制項類型。 這些類別會`OnAttachedTo`提供`OnDetachingFrom`和方法, 這些都應該加以覆寫, 以提供當行為附加至控制項並中斷連結時, 將會執行的邏輯。
 
 在 eShopOnContainers 行動裝置應用程式中`BindableBehavior<T>` , 類別衍生[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)自類別。 `BindableBehavior<T>`類別的目的是要提供 Xamarin 的基類。表單行為[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)需要將行為的設定為附加的控制項。
 

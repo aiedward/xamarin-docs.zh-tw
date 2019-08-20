@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/06/2018
-ms.openlocfilehash: 77174070b227bf8cba94078b1ed1f0a6a8fcf1f8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 588c46274aa0b4d77742d004bf1fbe91e56a42c6
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528708"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620598"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 錯誤
 
@@ -24,7 +24,7 @@ ms.locfileid: "69528708"
 <!--
  MT0xxx mtouch itself, e.g. parameters, environment (e.g. missing tools)
  https://github.com/xamarin/xamarin-macios/blob/master/tools/mtouch/error.cs
-    -->
+  -->
 
 <a name="MT0000" />
 
@@ -1975,14 +1975,14 @@ Bitcode 支援需要使用 LLVM AOT 後端 (--LLVM)。
 ```csharp
 class MyNSObject : NSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -1995,14 +1995,14 @@ class MyNSObject : NSObject
 
 class MyCustomNSObject : MyNSObject
 {
-    [Export ("retain")]
-    new void Retain () {}
+  [Export ("retain")]
+  new void Retain () {}
 
-    [Export ("release")]
-    new void Release () {}
+  [Export ("release")]
+  new void Release () {}
 
-    [Export ("dealloc")]
-    new void Dealloc () {}
+  [Export ("dealloc")]
+  new void Dealloc () {}
 }
 ```
 
@@ -2414,8 +2414,8 @@ Xamarin iOS 專案通常會動態參考原生符號, 這表示原生連結器可
 這有兩個主要原因:
 
 * 符號名稱不正確。
-    * 不要在符號名稱前面加上底線。
-    * 目標-C 類別的符號為`OBJC_CLASS_$_<classname>`。
+  * 不要在符號名稱前面加上底線。
+  * 目標-C 類別的符號為`OBJC_CLASS_$_<classname>`。
 * 符號是正確的, 但它是以一般方式保留的符號 (某些組建選項會導致動態符號的確切清單有所不同)。
 
 ### <a name="mt53xx-other-tools"></a>MT53xx:其他工具

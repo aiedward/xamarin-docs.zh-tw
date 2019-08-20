@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: bd4c09b7defcc3038919a4dea841d7bd1d02f39e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 77d526fd49ac62788bea1ab885cb1248ffc5697e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654086"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620950"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>在 Xamarin 中使用 Web 標記進行搜尋
 
@@ -46,7 +46,7 @@ Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
 
 在您的網站上提供智慧型應用程式橫幅, 以在應用程式中呈現清楚的連結。 如果尚未安裝應用程式, Safari 會自動提示使用者安裝您的應用程式。 否則, 您可以使用 [ **view** ] 連結, 從網站啟動您的應用程式。 例如, 若要建立智慧型應用程式橫幅, 您可以使用下列程式碼:
 
-```xml
+```html
 <meta name="AppName" content="app-id=123456, app-argument=http://company.com/AppName">
 ```
 
@@ -65,7 +65,7 @@ Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
 
 您可以使用 Twitter 卡來提供應用程式內容的深層連結。 例如：
 
-```xml
+```html
 <meta name="twitter:app:name:iphone" content="AppName">
 <meta name="twitter:app:id:iphone" content="AppNameID">
 <meta name="twitter:app:url:iphone" content="AppNameURL">
@@ -77,7 +77,7 @@ Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
 
 您可以使用 Facebook 應用程式連結, 提供應用程式內容的深層連結。 例如：
 
-```xml
+```html
 <meta property="al:ios:app_name" content="AppName">
 <meta property="al:ios:app_store_id" content="AppNameID">
 <meta property="al:ios:url" content="AppNameURL">
@@ -93,23 +93,23 @@ Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
 {
 
-    // Handling a URL in the form http://company.com/appname/?123
-    try {
-        var components = new NSUrlComponents(url,true);
-        var path = components.Path;
-        var query = components.Query;
+  // Handling a URL in the form http://company.com/appname/?123
+  try {
+    var components = new NSUrlComponents(url,true);
+    var path = components.Path;
+    var query = components.Query;
 
-        // Is this a known format?
-        if (path == "/appname") {
-            // Display the view controller for the content
-            // specified in query (123)
-            return ContentViewController.LoadContent(query);
-        }
-    } catch {
-        // Ignore issue for now
+    // Is this a known format?
+    if (path == "/appname") {
+      // Display the view controller for the content
+      // specified in query (123)
+      return ContentViewController.LoadContent(query);
     }
+  } catch {
+    // Ignore issue for now
+  }
 
-    return false;
+  return false;
 }
 ```
 
@@ -123,7 +123,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 提供結構化資料標記的其中一個選項是使用 [開啟圖形]。 例如：
 
-```xml
+```html
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
 <meta property="og:audio" content="http://company.com/appname/theme.m4a">
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
@@ -133,22 +133,20 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 結構化資料標記的另一個常見格式是架構. 組織的微資料格式。 例如：
 
-```xml
+```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <span itemprop="ratingValue">4** stars -
-    <span itemprop="reviewCount">255** reviews
-
-
+  <span itemprop="ratingValue">4** stars -
+  <span itemprop="reviewCount">255** reviews
 ```
 
 相同的資訊可以用架構. 組織的 JSON-LD 格式來表示:
 
-```xml
+```html
 <script type="application/ld+json">
-    "@content":"http://schema.org",
-    "@type":"AggregateRating",
-    "ratingValue":"4",
-    "reviewCount":"255"
+  "@content":"http://schema.org",
+  "@type":"AggregateRating",
+  "ratingValue":"4",
+  "reviewCount":"255"
 </script>
 ```
 
@@ -179,34 +177,28 @@ Apple 目前支援 schema.org 中的下列架構類型:
 
 例如, 定義撥號電話號碼的動作可能如下所示:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/Organization">
-    <span itemprop="telephone">(408) 555-1212**
-
-
+  <span itemprop="telephone">(408) 555-1212**
 ```
 
 當此搜尋結果呈現給使用者時, 結果中會顯示一個小電話圖示。 如果使用者按下圖示, 將會呼叫指定的數位。
 
 下列 HTML 會加入動作來播放搜尋結果中的音訊檔案:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/AudioObject">
-    <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
-
-
+  <span itemprop="contentUrl">http://company.com/appname/greeting.m4a**
 ```
 
 最後, 下列 HTML 會加入動作以從搜尋結果取得指示:
 
-```xml
+```html
 <div itemscope itemtype="http://schema.org/PostalAddress">
-    <span itemprop="streetAddress">1 Infinite Loop**
-    <span itemprop="addressLocality">Cupertino**
-    <span itemprop="addressRegion">CA**
-    <span itemprop="postalCode">95014**
-
-
+  <span itemprop="streetAddress">1 Infinite Loop**
+  <span itemprop="addressLocality">Cupertino**
+  <span itemprop="addressRegion">CA**
+  <span itemprop="postalCode">95014**
 ```
 
 如需詳細資訊, 請參閱 Apple 的[應用程式搜尋開發人員網站](https://developer.apple.com/ios/search/)。

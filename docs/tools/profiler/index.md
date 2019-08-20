@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: 4541a795d819c3738fffbb3224ef35dce5fc5521
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ac77977f3832b0ab7ba440a2c795037e8fcf5f2e
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529054"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621000"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -68,21 +68,21 @@ Xamarin Profiler 為開發人員提供一種方法, 讓您能夠從 Visual Studi
 Xamarin Profiler 的支援可在下列平臺上取得:
 
 - Visual Studio for Mac (macOS, 含 Enterprise 授權)
-    - Android
-        - 裝置和模擬器
-    - iOS
-        - 裝置和模擬器
-    - tvOS (不支援時間檢測)
-        - 裝置和模擬器
-    - Mac
+  - Android
+    - 裝置和模擬器
+  - iOS
+    - 裝置和模擬器
+  - tvOS (不支援時間檢測)
+    - 裝置和模擬器
+  - Mac
 
 - Visual Studio (僅限**企業**版)
-    - Android
-        - 裝置和模擬器
-    - iOS [實驗性]
-        - 裝置和模擬器
-    - tvOS
-        - 裝置和模擬器
+  - Android
+    - 裝置和模擬器
+  - iOS [實驗性]
+    - 裝置和模擬器
+  - tvOS
+    - 裝置和模擬器
 
 請注意, 您**只能**分析**調試**程式設定。
 

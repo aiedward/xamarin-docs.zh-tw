@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/07/2017
-ms.openlocfilehash: 8f1e77d112eae951f3441484df94772da1b0f303
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5abd28dc9a6fc2a0dca5fa31908731a5496ce5fa
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655526"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621052"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 簡介
 
@@ -21,17 +21,17 @@ _本文介紹適用于 Xamarin 開發人員的 watchOS 3 中的所有新的和�
 本檔將涵蓋下列主題:
 
 - [WatchOS 3 的新功能](#Whats-New-in-watchOS-3)
-    - [Apple Pay 增強功能](#Apple-Pay-Enhancements)會在 Apple Watch 上新增應用程式內付款支援。
-    - [背景](#Background-Tasks)工作可讓應用程式在背景中更新其資訊, 以便在使用者需要時準備就緒。
-    - 為應用程式提供新功能的 watchOS 3 已進行[複雜的增強](#Complications-Enhancements)功能。
-    - [新推出](#Newly-Available-Frameworks)的架構已公開給 watchOS apps。
-    - [主動式建議](#Proactive-Suggestions)可讓應用程式主動向使用者顯示資訊。
-    * 已對 watchOS 3 進行幾項[安全性和隱私權增強](#Security-and-Privacy-Enhancements)。
-    - [快照集和 Dock](#Snapshots-and-Dock)可讓使用者快速存取應用程式 watchOS 應用程式。
-    - [使用者通知](#User-Notifications)會為使用者提供本機和遠端通知。
-    * WatchOS 3 中有數個[Watch 連線架構的增強功能](#Watch-Connectivity-Framework-Enhancements)。
-    * 已在 watchOS 3 中進行數個[WatchKit 架構的增強功能](#WatchKit-Framework-Enhancements)。
-    - [健身應用程式增強功能](#Workout-App-Enhancements)可為健身相關 Apple Watch 應用程式提供新的功能。
+  - [Apple Pay 增強功能](#Apple-Pay-Enhancements)會在 Apple Watch 上新增應用程式內付款支援。
+  - [背景](#Background-Tasks)工作可讓應用程式在背景中更新其資訊, 以便在使用者需要時準備就緒。
+  - 為應用程式提供新功能的 watchOS 3 已進行[複雜的增強](#Complications-Enhancements)功能。
+  - [新推出](#Newly-Available-Frameworks)的架構已公開給 watchOS apps。
+  - [主動式建議](#Proactive-Suggestions)可讓應用程式主動向使用者顯示資訊。
+  - 已對 watchOS 3 進行幾項[安全性和隱私權增強](#Security-and-Privacy-Enhancements)。
+  - [快照集和 Dock](#Snapshots-and-Dock)可讓使用者快速存取應用程式 watchOS 應用程式。
+  - [使用者通知](#User-Notifications)會為使用者提供本機和遠端通知。
+  - WatchOS 3 中有數個[Watch 連線架構的增強功能](#Watch-Connectivity-Framework-Enhancements)。
+  - 已在 watchOS 3 中進行數個[WatchKit 架構的增強功能](#WatchKit-Framework-Enhancements)。
+  - [健身應用程式增強功能](#Workout-App-Enhancements)可為健身相關 Apple Watch 應用程式提供新的功能。
 - WatchOS 3 中的[其他架構變更](#Additional-Framework-Changes)已進行。
 - WatchOS 3 中已[淘汰的 api](#Deprecated-APIs) 。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/13/2017
-ms.openlocfilehash: aa5d257fd08c82e17b4ecbc5ca9a9ab67742e8e7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 93ad7d6adbecac2b2d5cf32d1dfc84edba718407
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644570"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620893"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>在 Xamarin 中 watchOS 背景工作
 
@@ -63,22 +63,22 @@ using WatchKit;
 
 namespace MonkeyWatch.MonkeySeeExtension
 {
-    public class ExtensionDelegate : WKExtensionDelegate
+  public class ExtensionDelegate : WKExtensionDelegate
+  {
+    #region Constructors
+    public ExtensionDelegate ()
     {
-        #region Constructors
-        public ExtensionDelegate ()
-        {
-        }
-        #endregion
-
-        #region Override Methods
-        public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
-        {
-            // Handle background request here
-            ...
-        }
-        #endregion
     }
+    #endregion
+
+    #region Override Methods
+    public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
+    {
+      // Handle background request here
+      ...
+    }
+    #endregion
+  }
 }
 ```
 
@@ -230,23 +230,23 @@ WatchOS 應用程式在此生態系統中的工作, 藉由限制其對系統共�
 ```csharp
 private void ScheduleNextBackgroundUpdate ()
 {
-    // Create a fire date 30 minutes into the future
-    var fireDate = NSDate.FromTimeIntervalSinceNow (30 * 60);
+  // Create a fire date 30 minutes into the future
+  var fireDate = NSDate.FromTimeIntervalSinceNow (30 * 60);
 
-    // Create 
-    var userInfo = new NSMutableDictionary ();
-    userInfo.Add (new NSString ("LastActiveDate"), NSDate.FromTimeIntervalSinceNow(0));
-    userInfo.Add (new NSString ("Reason"), new NSString ("UpdateScore"));
+  // Create 
+  var userInfo = new NSMutableDictionary ();
+  userInfo.Add (new NSString ("LastActiveDate"), NSDate.FromTimeIntervalSinceNow(0));
+  userInfo.Add (new NSString ("Reason"), new NSString ("UpdateScore"));
 
-    // Schedule for update
-    WKExtension.SharedExtension.ScheduleBackgroundRefresh (fireDate, userInfo, (error) => {
-        // Was the Task successfully scheduled?
-        if (error == null) {
-            // Yes, handle if needed
-        } else {
-            // No, report error
-        }
-    });
+  // Schedule for update
+  WKExtension.SharedExtension.ScheduleBackgroundRefresh (fireDate, userInfo, (error) => {
+    // Was the Task successfully scheduled?
+    if (error == null) {
+      // Yes, handle if needed
+    } else {
+      // No, report error
+    }
+  });
 }
 ```
 
@@ -277,15 +277,15 @@ private void ScheduleNextBackgroundUpdate ()
 ```csharp
 private void ScheduleURLUpdateSession ()
 {
-    // Create new configuration
-    var configuration = NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration ("com.example.urlsession");
+  // Create new configuration
+  var configuration = NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration ("com.example.urlsession");
 
-    // Create new session
-    var backgroundSession = NSUrlSession.FromConfiguration (configuration);
+  // Create new session
+  var backgroundSession = NSUrlSession.FromConfiguration (configuration);
 
-    // Create and start download task
-    var downloadTask = backgroundSession.CreateDownloadTask (new NSUrl ("https://example.com/gamexxx/currentScores.json"));
-    downloadTask.Resume ();
+  // Create and start download task
+  var downloadTask = backgroundSession.CreateDownloadTask (new NSUrl ("https://example.com/gamexxx/currentScores.json"));
+  downloadTask.Resume ();
 }
 ```
 
@@ -305,49 +305,49 @@ using WatchKit;
 
 namespace MonkeySoccer.MonkeySoccerExtension
 {
-    public class ExtensionDelegate : WKExtensionDelegate
+  public class ExtensionDelegate : WKExtensionDelegate
+  {
+    #region Computed Properties
+    public List<WKRefreshBackgroundTask> PendingTasks { get; set; } = new List<WKRefreshBackgroundTask> ();
+    #endregion
+
+    ...
+    
+    #region Public Methods
+    public void CompleteTask (WKRefreshBackgroundTask task)
     {
-        #region Computed Properties
-        public List<WKRefreshBackgroundTask> PendingTasks { get; set; } = new List<WKRefreshBackgroundTask> ();
-        #endregion
-
-        ...
-        
-        #region Public Methods
-        public void CompleteTask (WKRefreshBackgroundTask task)
-        {
-            // Mark the task completed and remove from the collection
-            task.SetTaskCompleted ();
-            PendingTasks.Remove (task);
-        }
-        #endregion 
-
-        #region Override Methods
-        public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
-        {
-            // Handle background request
-            foreach (WKRefreshBackgroundTask task in backgroundTasks) {
-                // Is this a background session task?
-                var urlTask = task as WKUrlSessionRefreshBackgroundTask;
-                if (urlTask != null) {
-                    // Create new configuration
-                    var configuration = NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration (urlTask.SessionIdentifier);
-
-                    // Create new session
-                    var backgroundSession = NSUrlSession.FromConfiguration (configuration, new BackgroundSessionDelegate (this, task), null);
-
-                    // Keep track of all pending tasks
-                    PendingTasks.Add (task);
-                } else {
-                    // Ensure that all tasks are completed
-                    task.SetTaskCompleted ();
-                }
-            }
-        }
-        #endregion
-        
-        ...
+      // Mark the task completed and remove from the collection
+      task.SetTaskCompleted ();
+      PendingTasks.Remove (task);
     }
+    #endregion 
+
+    #region Override Methods
+    public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
+    {
+      // Handle background request
+      foreach (WKRefreshBackgroundTask task in backgroundTasks) {
+        // Is this a background session task?
+        var urlTask = task as WKUrlSessionRefreshBackgroundTask;
+        if (urlTask != null) {
+          // Create new configuration
+          var configuration = NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration (urlTask.SessionIdentifier);
+
+          // Create new session
+          var backgroundSession = NSUrlSession.FromConfiguration (configuration, new BackgroundSessionDelegate (this, task), null);
+
+          // Keep track of all pending tasks
+          PendingTasks.Add (task);
+        } else {
+          // Ensure that all tasks are completed
+          task.SetTaskCompleted ();
+        }
+      }
+    }
+    #endregion
+    
+    ...
+  }
 }
 ```
 
@@ -372,10 +372,10 @@ PendingTasks.Add (task);
 
 ```csharp
 if (urlTask != null) {
-    ...
+  ...
 } else {
-    // Ensure that all tasks are completed
-    task.SetTaskCompleted ();
+  // Ensure that all tasks are completed
+  task.SetTaskCompleted ();
 }
 ```
 
@@ -392,35 +392,35 @@ using WatchKit;
 
 namespace MonkeySoccer.MonkeySoccerExtension
 {
-    public class BackgroundSessionDelegate : NSUrlSessionDownloadDelegate
+  public class BackgroundSessionDelegate : NSUrlSessionDownloadDelegate
+  {
+    #region Computed Properties
+    public ExtensionDelegate WatchExtensionDelegate { get; set; }
+
+    public WKRefreshBackgroundTask Task { get; set; }
+    #endregion
+
+    #region Constructors
+    public BackgroundSessionDelegate (ExtensionDelegate extensionDelegate, WKRefreshBackgroundTask task)
     {
-        #region Computed Properties
-        public ExtensionDelegate WatchExtensionDelegate { get; set; }
-
-        public WKRefreshBackgroundTask Task { get; set; }
-        #endregion
-
-        #region Constructors
-        public BackgroundSessionDelegate (ExtensionDelegate extensionDelegate, WKRefreshBackgroundTask task)
-        {
-            // Initialize
-            this.WatchExtensionDelegate = extensionDelegate;
-            this.Task = task;
-        }
-        #endregion
-
-        #region Override Methods
-        public override void DidFinishDownloading (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, NSUrl location)
-        {
-            // Handle the downloaded data
-            ...
-
-            // Mark the task completed
-            WatchExtensionDelegate.CompleteTask (Task);
-
-        }
-        #endregion
+      // Initialize
+      this.WatchExtensionDelegate = extensionDelegate;
+      this.Task = task;
     }
+    #endregion
+
+    #region Override Methods
+    public override void DidFinishDownloading (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, NSUrl location)
+    {
+      // Handle the downloaded data
+      ...
+
+      // Mark the task completed
+      WatchExtensionDelegate.CompleteTask (Task);
+
+    }
+    #endregion
+  }
 }
 ```
 
@@ -435,23 +435,23 @@ namespace MonkeySoccer.MonkeySoccerExtension
 ```csharp
 private void ScheduleSnapshotUpdate ()
 {
-    // Create a fire date of now
-    var fireDate = NSDate.FromTimeIntervalSinceNow (0);
+  // Create a fire date of now
+  var fireDate = NSDate.FromTimeIntervalSinceNow (0);
 
-    // Create user info dictionary
-    var userInfo = new NSMutableDictionary ();
-    userInfo.Add (new NSString ("lastActiveDate"), NSDate.FromTimeIntervalSinceNow (0));
-    userInfo.Add (new NSString ("reason"), new NSString ("UpdateScore"));
+  // Create user info dictionary
+  var userInfo = new NSMutableDictionary ();
+  userInfo.Add (new NSString ("lastActiveDate"), NSDate.FromTimeIntervalSinceNow (0));
+  userInfo.Add (new NSString ("reason"), new NSString ("UpdateScore"));
 
-    // Schedule for update
-    WKExtension.SharedExtension.ScheduleSnapshotRefresh (fireDate, userInfo, (error) => {
-        // Was the Task successfully scheduled?
-        if (error == null) {
-            // Yes, handle if needed
-        } else {
-            // No, report error
-        }
-    });
+  // Schedule for update
+  WKExtension.SharedExtension.ScheduleSnapshotRefresh (fireDate, userInfo, (error) => {
+    // Was the Task successfully scheduled?
+    if (error == null) {
+      // Yes, handle if needed
+    } else {
+      // No, report error
+    }
+  });
 }
 ```
 
@@ -468,41 +468,41 @@ private void ScheduleSnapshotUpdate ()
 ```csharp
 public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
 {
-    // Handle background request
-    foreach (WKRefreshBackgroundTask task in backgroundTasks) {
-        // Take action based on task type
-        if (task is WKUrlSessionRefreshBackgroundTask) {
-            var urlTask = task as WKUrlSessionRefreshBackgroundTask;
+  // Handle background request
+  foreach (WKRefreshBackgroundTask task in backgroundTasks) {
+    // Take action based on task type
+    if (task is WKUrlSessionRefreshBackgroundTask) {
+      var urlTask = task as WKUrlSessionRefreshBackgroundTask;
 
-            // Create new configuration
-            var configuration = NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration (urlTask.SessionIdentifier);
+      // Create new configuration
+      var configuration = NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration (urlTask.SessionIdentifier);
 
-            // Create new session
-            var backgroundSession = NSUrlSession.FromConfiguration (configuration, new BackgroundSessionDelegate (this, task), null);
+      // Create new session
+      var backgroundSession = NSUrlSession.FromConfiguration (configuration, new BackgroundSessionDelegate (this, task), null);
 
-            // Keep track of all pending tasks
-            PendingTasks.Add (task);
-        } else if (task is WKSnapshotRefreshBackgroundTask) {
-            var snapshotTask = task as WKSnapshotRefreshBackgroundTask;
+      // Keep track of all pending tasks
+      PendingTasks.Add (task);
+    } else if (task is WKSnapshotRefreshBackgroundTask) {
+      var snapshotTask = task as WKSnapshotRefreshBackgroundTask;
 
-            // Update UI
-            ...
+      // Update UI
+      ...
 
-            // Create a expiration date 30 minutes into the future
-            var expirationDate = NSDate.FromTimeIntervalSinceNow (30 * 60);
+      // Create a expiration date 30 minutes into the future
+      var expirationDate = NSDate.FromTimeIntervalSinceNow (30 * 60);
 
-            // Create user info dictionary
-            var userInfo = new NSMutableDictionary ();
-            userInfo.Add (new NSString ("lastActiveDate"), NSDate.FromTimeIntervalSinceNow (0));
-            userInfo.Add (new NSString ("reason"), new NSString ("UpdateScore"));
+      // Create user info dictionary
+      var userInfo = new NSMutableDictionary ();
+      userInfo.Add (new NSString ("lastActiveDate"), NSDate.FromTimeIntervalSinceNow (0));
+      userInfo.Add (new NSString ("reason"), new NSString ("UpdateScore"));
 
-            // Mark task complete
-            snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
-        } else {
-            // Ensure that all tasks are completed
-            task.SetTaskCompleted ();
-        }
+      // Mark task complete
+      snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
+    } else {
+      // Ensure that all tasks are completed
+      task.SetTaskCompleted ();
     }
+  }
 }
 ```
 
@@ -543,8 +543,8 @@ snapshotTask.SetTaskCompleted (false, expirationDate, userInfo);
 
 - 只有幾秒鐘的時間才能完成任何指定的工作。 系統不僅會考慮已通過的時間量, 也會考慮應用程式耗用多少 CPU 功能來衍生此限制。
 - 任何超過其限制的應用程式將會終止, 並出現下列錯誤代碼:
-    - **CPU** -0xc51bad01
-    - 0xc51bad02**時**
+  - **CPU** -0xc51bad01
+  - 0xc51bad02**時**
 - 系統會根據它要求應用程式執行的背景工作類型來強加不同的限制。 例如, `WKApplicationRefreshBackgroundTask`和`WKURLSessionRefreshBackgroundTask`工作會透過其他類型的背景工作, 提供稍微較長的執行時間。
 
 <a name="Complications-and-App-Updates" />
@@ -578,32 +578,32 @@ using System.Linq;
 private void UpdateComplication ()
 {
 
-    // Get session and the number of remaining transfers
-    var session = WCSession.DefaultSession;
-    var transfers = session.RemainingComplicationUserInfoTransfers;
+  // Get session and the number of remaining transfers
+  var session = WCSession.DefaultSession;
+  var transfers = session.RemainingComplicationUserInfoTransfers;
 
-    // Create user info dictionary
-    var iconattrs = new Dictionary<NSString, NSObject>
-        {
-            {new NSString ("lastActiveDate"), NSDate.FromTimeIntervalSinceNow (0)},
-            {new NSString ("reason"), new NSString ("UpdateScore")}
-        };
+  // Create user info dictionary
+  var iconattrs = new Dictionary<NSString, NSObject>
+    {
+      {new NSString ("lastActiveDate"), NSDate.FromTimeIntervalSinceNow (0)},
+      {new NSString ("reason"), new NSString ("UpdateScore")}
+    };
 
-    var userInfo = NSDictionary<NSString, NSObject>.FromObjectsAndKeys (iconattrs.Values.ToArray (), iconattrs.Keys.ToArray ());
+  var userInfo = NSDictionary<NSString, NSObject>.FromObjectsAndKeys (iconattrs.Values.ToArray (), iconattrs.Keys.ToArray ());
 
-    // Take action based on the number of transfers left
-    if (transfers < 1) {
-        // No transfers left, either attempt to send or inform
-        // user of situation.
-        ...
-    } else if (transfers < 11) {
-        // Running low on transfers, only send on important updates
-        // else conserve for a significant change.
-        ...
-    } else {
-        // Send data
-        session.TransferCurrentComplicationUserInfo (userInfo);
-    }
+  // Take action based on the number of transfers left
+  if (transfers < 1) {
+    // No transfers left, either attempt to send or inform
+    // user of situation.
+    ...
+  } else if (transfers < 11) {
+    // Running low on transfers, only send on important updates
+    // else conserve for a significant change.
+    ...
+  } else {
+    // Send data
+    session.TransferCurrentComplicationUserInfo (userInfo);
+  }
 }
 ```
 
@@ -649,15 +649,15 @@ private void UpdateComplication ()
 - 排定應用程式需要更新的頻率。 每次執行應用程式時, 它應該會重新評估其未來的需求, 並視需要調整此排程。
 - 如果系統傳送背景重新整理工作, 但應用程式不需要更新, 請順延強制, 直到實際需要更新為止。
 - 請考慮應用程式可使用的所有執行時間機會:
-    - 停駐和前景啟用。
-    - 提醒.
-    - 複雜的更新。
-    - 背景重新整理。
+  - 停駐和前景啟用。
+  - 提醒.
+  - 複雜的更新。
+  - 背景重新整理。
 - 用於一般用途的背景執行時間, 例如: `ScheduleBackgroundRefresh`
-    - 輪詢系統以取得相關資訊。
-    - 排程未來`NSURLSessions`要求背景資料。 
-    - 已知的時間轉換。
-    - 觸發複雜的更新。
+  - 輪詢系統以取得相關資訊。
+  - 排程未來`NSURLSessions`要求背景資料。 
+  - 已知的時間轉換。
+  - 觸發複雜的更新。
 
 <a name="Snapshot-Best-Practices" />
 

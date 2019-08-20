@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 83b8b6b443a794b1001c581f45299dbd22133c80
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ddefae8ad24b74a3c9ed05bf46b54430c00beaea
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656422"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620515"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin 中 watchOS 3 的快速互動技術
 
@@ -47,12 +47,12 @@ _本文涵蓋 Apple 已在 watchOS 3 中新增的快速互動技術, 以及如�
 Apple 已將數個新功能和 Api 新增至 WatchKit, 以協助開發人員新增其 Apple Watch 應用程式的快速互動:
 
 - watchOS 3 提供對新使用者輸入類型的存取, 例如:
-    - 手勢辨識器
-    - Digital Crown 旋轉 
+  - 手勢辨識器
+  - Digital Crown 旋轉 
 - watchOS 3 提供新的方式來顯示及更新資訊, 例如:
-    - 增強型資料表流覽
-    - 新的使用者通知架構支援
-    - SpriteKit 和 SceneKit 整合
+  - 增強型資料表流覽
+  - 新的使用者通知架構支援
+  - SpriteKit 和 SceneKit 整合
 
 藉由實施這些新功能, 開發人員可以確保其 watchOS 3 應用程式 Glanceable、可採取動作且回應迅速。
 
@@ -63,11 +63,11 @@ Apple 已將數個新功能和 Api 新增至 WatchKit, 以協助開發人員新�
 watchOS 3 將支援四個下列的手勢辨識器:
 
 - 離散手勢類型:
-    - 滑動手勢 (`WKSwipeGestureRecognizer`)。
-    - 攻點手勢 (`WKTapGestureRecognizer`)。
+  - 滑動手勢 (`WKSwipeGestureRecognizer`)。
+  - 攻點手勢 (`WKTapGestureRecognizer`)。
 - 連續手勢類型:
-    - 平移手勢 (`WKPanGestureRecognizer`)。
-    - 長按手勢 (`WKLongPressGestureRecognizer`)。
+  - 平移手勢 (`WKPanGestureRecognizer`)。
+  - 長按手勢 (`WKLongPressGestureRecognizer`)。
 
 若要執行其中一個新的手勢辨識器, 只需將它拖曳到 iOS 設計工具的設計介面上 Visual Studio for Mac 並設定其屬性。
 
@@ -96,8 +96,8 @@ watchOS 3 將支援四個下列的手勢辨識器:
 - 將手勢辨識器新增至群組元素, 而不是個別的控制項。 由於 Apple Watch 的實體螢幕大小較小, 因此群組元素通常會是更大且更容易進行的目標, 讓使用者得以點擊。 此外, 筆勢辨識器可能會與已經在原生 UI 控制項中的內建手勢衝突。
 - 在監看式應用程式的分鏡腳本中設定相依性關聯性。
 - 有些手勢的優先順序高於其他手勢類型, 例如:
-    - 捲動
-    - Force Touch
+  - 捲動
+  - Force Touch
  
 ### <a name="digital-crown-rotation"></a>Digital Crown 旋轉
 
@@ -137,28 +137,28 @@ using Foundation;
 
 namespace MonkeyWatch.MonkeySeeExtension
 {
-    public class CrownDelegate : WKCrownDelegate
+  public class CrownDelegate : WKCrownDelegate
+  {
+    #region Computed Properties
+    public double AccumulatedRotations { get; set;}
+    #endregion
+
+    #region Constructors
+    public CrownDelegate ()
     {
-        #region Computed Properties
-        public double AccumulatedRotations { get; set;}
-        #endregion
-
-        #region Constructors
-        public CrownDelegate ()
-        {
-        }
-        #endregion
-
-        #region Override Methods
-        public override void CrownDidRotate (WKCrownSequencer crownSequencer, double rotationalDelta)
-        {
-            base.CrownDidRotate (crownSequencer, rotationalDelta);
-
-            // Accumulate rotations
-            AccumulatedRotations += rotationalDelta;
-        }
-        #endregion
     }
+    #endregion
+
+    #region Override Methods
+    public override void CrownDidRotate (WKCrownSequencer crownSequencer, double rotationalDelta)
+    {
+      base.CrownDidRotate (crownSequencer, rotationalDelta);
+
+      // Accumulate rotations
+      AccumulatedRotations += rotationalDelta;
+    }
+    #endregion
+  }
 }
 ```
 
@@ -225,8 +225,8 @@ MenuTable.PerformSegue (0);
 - 針對定義良好且呈現的通知, 使用者不會執行任何動作, 只會關閉通知。
 - 他們也可以按一下通知來啟動 watchOS 應用程式。
 - 對於支援自訂動作的通知, 使用者可能會選取其中一個自訂動作。 這些可以是:
-    - **前景動作**-這些會啟動應用程式來執行動作。
-    - **背景動作**-一律會路由傳送至 watchOS 2 中的 iPhone, 但可以路由至 watchOS 3 中的 watchApp。
+  - **前景動作**-這些會啟動應用程式來執行動作。
+  - **背景動作**-一律會路由傳送至 watchOS 2 中的 iPhone, 但可以路由至 watchOS 3 中的 watchApp。
 
 WatchOS 3 的新內容:
 

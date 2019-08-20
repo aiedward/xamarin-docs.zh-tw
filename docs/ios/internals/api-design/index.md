@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 11d9c3d27fa9cf9ba830648d95ef8af9ed386afb
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 5fe0c4d02dbe6cc5b3768ea92179b3781ef09aa9
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526480"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620849"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin iOS API 設計
 
@@ -48,16 +48,16 @@ ms.locfileid: "69526480"
 - 鼓勵在 IDE 中探索 Api:
 
   - 例如, 而不是公開弱類型陣列, 如下所示:
-    
+
     ```objc
     NSArray *getViews
     ```
     公開強型別, 如下所示:
-    
+
     ```csharp
     NSView [] Views { get; set; }
     ```
-    
+
     這可讓 Visual Studio for Mac 在流覽 API 時執行自動完成的功能, 讓所有`System.Array`作業都能在傳回的值上使用, 並允許傳回值參與 LINQ。
 
 - 原C#生類型:
@@ -72,8 +72,8 @@ ms.locfileid: "69526480"
 
 - 支援目標-C 委派模式:
 
-    - C#事件系統
-    - 將C#委派 (lambda、匿名方法和`System.Delegate`) 公開為目標-C api 做為區塊
+  - C#事件系統
+  - 將C#委派 (lambda、匿名方法和`System.Delegate`) 公開為目標-C api 做為區塊
 
 ### <a name="assemblies"></a>組件
 

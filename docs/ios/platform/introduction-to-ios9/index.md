@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 733f50954c7ea6bd4ada7468eb14443f4f3b1f1d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 69a599b6a7534cb77dd9e023d937f10a6b0523fb
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654420"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620675"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 簡介
 
@@ -124,12 +124,12 @@ IOS 9 中的遞交已擴大, 也支援新的增強型搜尋功能。 如需詳�
 - **新的音訊單元擴充點**–使用此延伸模組點來提供音訊效果、音樂儀器、音效產生器等等, 以便在其他音訊單元主機應用程式中使用 (例如 GarageBand)。 這個擴充點也可讓您在 App Store 上銷售_音訊單元_(音訊外掛程式)。
 - **新的索引維護擴充點**-使用此延伸模組可支援重新編制應用程式資料的索引, 而不需要重新開機應用程式。
 - **新增網路擴充點**(這些需要 Apple 的特殊許可權):
-    - **應用程式 Proxy 提供者延伸**模組—使用此延伸模組點來執行自訂透明用戶端網路 Proxy。
-    - **篩選 Data Provider/篩選控制提供者延伸**模組-使用這些擴充點, 在裝置上執行動態網路內容篩選。
-    - 封**包通道提供者延伸**模組—使用此延伸模組點來執行自訂 VPN 通道通訊協定用戶端。
+  - **應用程式 Proxy 提供者延伸**模組—使用此延伸模組點來執行自訂透明用戶端網路 Proxy。
+  - **篩選 Data Provider/篩選控制提供者延伸**模組-使用這些擴充點, 在裝置上執行動態網路內容篩選。
+  - 封**包通道提供者延伸**模組—使用此延伸模組點來執行自訂 VPN 通道通訊協定用戶端。
 - **新的 Safari 擴充點**:
-    - **內容封鎖延伸模組**—使用此擴充點來定義使用者流覽網站時, 不會顯示的已封鎖內容清單。
-    - **共用連結延伸**模組—使用此延伸模組點, 即可在 Safari 的共用連結中, 查看應用程式的內容。
+  - **內容封鎖延伸模組**—使用此擴充點來定義使用者流覽網站時, 不會顯示的已封鎖內容清單。
+  - **共用連結延伸**模組—使用此延伸模組點, 即可在 Safari 的共用連結中, 查看應用程式的內容。
 
 如需詳細資訊, 請參閱我們的[擴充功能簡介](~/ios/platform/extensions.md)和 Apple 的[應用程式延伸模組程式設計指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)檔。
 

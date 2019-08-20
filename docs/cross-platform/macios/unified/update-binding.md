@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 4046dcff5cb572890ad41ab57efe6345d09f61fd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 16cf976b252e409ae4302ab51eb594370a6689d1
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646287"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620944"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>將繫結移轉至 Unified API
 
@@ -140,7 +140,8 @@ IntPtr Constructor (CGRect frame);
 
 因此, 請考慮`MakeFile`下列事項:
 
-```csharp
+<!--markdownlint-disable MD010 -->
+```makefile
 BINDDIR=/src/binding
 XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
 PROJECT_ROOT=XMBindingLibrarySample
@@ -172,19 +173,22 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 clean:
     -rm -f *.a *.dll
 ```
+<!--markdownlint-enable MD010 -->
 
 我們需要從呼叫`btouch`切換到`btouch-native`, 所以我們會調整巨集定義, 如下所示:
 
-```csharp
+```makefile
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch-native
 ```
 
 我們會更新對的呼叫`btouch` , 並`--new-style`新增選項, 如下所示:
 
-```csharp
+<!--markdownlint-disable MD010 -->
+```makefile
 XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMBindingLibrarySampleUniversal.a
     $(BTOUCH) -unsafe --new-style -out:$@ XMBindingLibrarySample.cs -x=AssemblyInfo.cs -x=extras.cs --link-with=libXMBindingLibrarySampleUniversal.a,libXMBindingLibrarySampleUniversal.a
 ```
+<!--markdownlint-enable MD010 -->
 
 我們現在可以`MakeFile`照常執行, 以建立 API 的新64位版本。
 

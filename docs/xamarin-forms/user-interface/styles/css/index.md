@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: 5d4d7358ca6188f2528ea200f901823f04324ba3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ed9a376da0fcfebffd707e2e93919237adfef87b
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647473"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69620843"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表 (CSS) 樣式設定 Xamarin.Forms 應用程式
 
@@ -129,7 +129,7 @@ stacklayout>image {
 
 如需有關資源字典的詳細資訊，請參閱[資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)。
 
-### <a name="c"></a>C#
+### <a name="c"></a>C\#
 
 在C#，可以做為內嵌資源載入並加入樣式表[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
 
