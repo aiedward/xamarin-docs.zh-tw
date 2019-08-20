@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 4137ce7542a213a0a4c27b6a66b38828e4646520
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dbc0802b39e8fa736ec3b71dc23f488d08fd8a42
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653472"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621086"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin 中的 iOS 擴充功能
 
@@ -27,7 +27,7 @@ Ios 8 中引進的延伸模組是由 ios `UIViewControllers`在標準內容 (例
 
 ## <a name="extension-points"></a>擴充點
 
-|類型|描述|擴充點|主機應用程式|
+|類型|說明|擴充點|主機應用程式|
 |--- |--- |--- |--- |
 |動作|特定媒體類型的特殊編輯器或檢視器|`com.apple.ui-services`|Any|
 |檔提供者|允許應用程式使用遠端檔存放區|`com.apple.fileprovider-ui`|使用[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)的應用程式|
@@ -91,13 +91,13 @@ IOS 10 中新增了[額外的擴充點](~/ios/platform/introduction-to-ios10/ind
 
 - 它必須具有以容器應用程式的套件組合識別碼開頭的套件組合識別碼。 例如, 如果容器應用程式的套件組合識別碼為`com.myCompany.ContainerApp`, 延伸模組的識別碼可能是: `com.myCompany.ContainerApp.MyExtension` 
 
-    ![](extensions-images/bundleidentifiers.png) 
+  ![](extensions-images/bundleidentifiers.png) 
 - 它必須`NSExtensionPointIdentifier`在其`com.apple.widget-extension` 檔案中定義具有適當值的金鑰(例如今日通知中心widget的`Info.plist` )。
-- 它也必須在  `NSExtensionMainStoryboard` `NSExtensionPrincipalClass` 其`Info.plist`檔案中以適當的值定義金鑰或金鑰:
-    - 使用索引`.storyboard`鍵來指定呈現延伸模組之主要 UI 的分鏡腳本名稱 (減號)。 `NSExtensionMainStoryboard` 例如, `Main` `Main.storyboard`針對檔案。
-    - 使用索引`NSExtensionPrincipalClass`鍵來指定將在啟動擴充功能時初始化的類別。 此值必須符合的**Register**值`UIViewController`: 
+- 它也必須在 `NSExtensionMainStoryboard` `NSExtensionPrincipalClass` 其`Info.plist`檔案中以適當的值定義金鑰或金鑰:
+  - 使用索引`.storyboard`鍵來指定呈現延伸模組之主要 UI 的分鏡腳本名稱 (減號)。 `NSExtensionMainStoryboard` 例如, `Main` `Main.storyboard`針對檔案。
+  - 使用索引`NSExtensionPrincipalClass`鍵來指定將在啟動擴充功能時初始化的類別。 此值必須符合的**Register**值`UIViewController`: 
 
-    ![](extensions-images/registerandprincipalclass.png)
+  ![](extensions-images/registerandprincipalclass.png)
 
 特定類型的擴充功能可能會有額外的需求。 例如, **Today**或**通知中心**延伸的主體類別必須執行[INCWidgetProviding](xref:NotificationCenter.INCWidgetProviding)。
 
@@ -120,10 +120,10 @@ IOS 10 中新增了[額外的擴充點](~/ios/platform/introduction-to-ios10/ind
 2. 呼叫專案`TodayContainer` , 然後按 [**下一步]** 按鈕: 
 
     [![](extensions-images/today02.png "呼叫專案 TodayContainer, 然後按 [下一步] 按鈕")](extensions-images/today02.png#lightbox)
-3. 確認**專案名稱**和解決  解決方案, 然後按一下 [**建立**] 按鈕以建立方案: 
+3. 確認**專案名稱**和解決解決方案, 然後按一下 [**建立**] 按鈕以建立方案: 
 
     [![](extensions-images/today03.png "確認專案名稱和解決解決方案, 然後按一下 [建立] 按鈕以建立方案")](extensions-images/today03.png#lightbox)
-4. 接下來, 在 **方案總管**中, 以滑鼠右鍵按一下方案, 然後從 **今日擴充**功能 範本新增**iOS 擴充**功能專案: 
+4. 接下來, 在 **方案總管**中, 以滑鼠右鍵按一下方案, 然後從 [**今日擴充**功能] 範本新增**iOS 擴充**功能專案: 
 
     [![](extensions-images/today04.png "接下來, 在 方案總管中, 以滑鼠右鍵按一下方案, 然後從 [今日擴充功能] 範本新增 iOS 擴充功能專案")](extensions-images/today04.png#lightbox)
 5. 呼叫專案`DaysRemaining` , 然後按 [**下一步]** 按鈕: 
@@ -182,28 +182,28 @@ using CoreGraphics;
 
 namespace DaysRemaining
 {
-    [Register("CodeBasedViewController")]
-    public class CodeBasedViewController : UIViewController, INCWidgetProviding
+  [Register("CodeBasedViewController")]
+  public class CodeBasedViewController : UIViewController, INCWidgetProviding
+  {
+    public CodeBasedViewController ()
     {
-        public CodeBasedViewController ()
-        {
-        }
-
-        public override void ViewDidLoad ()
-        {
-            base.ViewDidLoad ();
-
-            // Add label to view
-            var TodayMessage = new UILabel (new CGRect (0, 0, View.Frame.Width, View.Frame.Height)) {
-                TextAlignment = UITextAlignment.Center
-            };
-
-            View.AddSubview (TodayMessage);
-            
-            // Insert code to power extension here...
-
-        }
     }
+
+    public override void ViewDidLoad ()
+    {
+      base.ViewDidLoad ();
+
+      // Add label to view
+      var TodayMessage = new UILabel (new CGRect (0, 0, View.Frame.Width, View.Frame.Height)) {
+        TextAlignment = UITextAlignment.Center
+      };
+
+      View.AddSubview (TodayMessage);
+
+      // Insert code to power extension here...
+
+    }
+  }
 }
 ```
 
@@ -216,19 +216,19 @@ namespace DaysRemaining
 ```csharp
 public override void ViewDidLoad ()
 {
-    base.ViewDidLoad ();
+  base.ViewDidLoad ();
 
-    // Calculate the values
-    var dayOfYear = DateTime.Now.DayOfYear;
-    var leapYearExtra = DateTime.IsLeapYear (DateTime.Now.Year) ? 1 : 0;
-    var daysRemaining = 365 + leapYearExtra - dayOfYear;
+  // Calculate the values
+  var dayOfYear = DateTime.Now.DayOfYear;
+  var leapYearExtra = DateTime.IsLeapYear (DateTime.Now.Year) ? 1 : 0;
+  var daysRemaining = 365 + leapYearExtra - dayOfYear;
 
-    // Display the message
-    if (daysRemaining == 1) {
-        TodayMessage.Text = String.Format ("Today is day {0}. There is one day remaining in the year.", dayOfYear);
-    } else {
-        TodayMessage.Text = String.Format ("Today is day {0}. There are {1} days remaining in the year.", dayOfYear, daysRemaining);
-    }
+  // Display the message
+  if (daysRemaining == 1) {
+    TodayMessage.Text = String.Format ("Today is day {0}. There is one day remaining in the year.", dayOfYear);
+  } else {
+    TodayMessage.Text = String.Format ("Today is day {0}. There are {1} days remaining in the year.", dayOfYear, daysRemaining);
+  }
 }
 ```
 

@@ -6,12 +6,12 @@ ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: c1a374feaadf28898b7fde8e364cf0adab83acd5
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dc23aed074360a06fcef6ad540d91aa98a19318b
+ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509597"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560298"
 ---
 # <a name="updating-existing-mac-apps"></a>更新現有的 Mac 應用程式
 
@@ -31,7 +31,7 @@ Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具, 可將 Classic
 
 解決警告之後, 請在 Visual Studio for Mac 或 Visual Studio 中選取現有的 Mac 專案, 然後從 [**專案**] 功能表選擇 [**遷移至 Xamarin. Mac Unified API** ]。 例如：
 
-![](updating-mac-apps-images/beta-tool1.png "從 [專案] 功能表選擇 [遷移至 Xamarin. Mac Unified API")
+![](updating-mac-apps-images/beta-tool1.png "從 [專案] 功能表選擇 遷移至 Xamarin. Mac Unified API")
 
 您必須先同意此警告, 才會執行自動遷移 (顯然, 您應該先確定您擁有備份/原始檔控制, 再于此登機上進行此動作):
 
@@ -40,7 +40,7 @@ Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具, 可將 Classic
 在 Xamarin. Mac 應用程式中使用 Unified API 時, 可以選取兩種支援的目標架構類型:
 
 - **Xamarin. Mac 行動架構**-這是 Xamarin. IOS 和 xamarin 所使用的微調 .net Framework, 支援完整**桌面**架構的子集。 這是建議的架構, 因為它會提供較高的平均二進位檔, 因為這是上層連結行為。
-- **Xamarin .net 4.5 framework** -此架構又是**桌面**架構的子集。 不過, 它會修剪比行動架構更少的完整**桌面**架構  , 而且應該「_僅_」與大部分的 NuGet 套件或協力廠商程式庫搭配使用。 這可讓開發人員取用標準**桌面**元件, 同時仍使用支援的架構, 但此選項會產生較大的應用程式套件組合。 這是建議的架構, 其中使用的是協力廠商 .NET 元件, 與**Xamarin. Mac 行動架構**不相容。 如需支援的元件清單, 請參閱我們的[元件](~/cross-platform/internals/available-assemblies.md)檔。
+- **Xamarin .net 4.5 framework** -此架構又是**桌面**架構的子集。 不過, 它會修剪比行動架構更少的完整**桌面**架構 , 而且應該「_僅_」與大部分的 NuGet 套件或協力廠商程式庫搭配使用。 這可讓開發人員取用標準**桌面**元件, 同時仍使用支援的架構, 但此選項會產生較大的應用程式套件組合。 這是建議的架構, 其中使用的是協力廠商 .NET 元件, 與**Xamarin. Mac 行動架構**不相容。 如需支援的元件清單, 請參閱我們的[元件](~/cross-platform/internals/available-assemblies.md)檔。
 
 如需有關目標 Framework 的詳細資訊, 以及為您的 Xamarin 應用程式選取特定目標的含意, 請參閱我們的[目標 framework](~/mac/platform/target-framework.md)檔。 
 
@@ -70,7 +70,7 @@ Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具, 可將 Classic
 
 範例：
 
-![](updating-mac-apps-images/csproj3.png "在 < AssemblyName > 元素之後新增這些程式程式碼")
+![在\<AssemblyName > 元素後面加入這些程式程式碼](updating-mac-apps-images/csproj3.png)
 
 ### <a name="2-update-project-references"></a>2.更新專案參考
 
@@ -88,7 +88,7 @@ Xamarin 提供 Visual Studio for Mac 和 Visual Studio 的工具, 可將 Classic
 
 ### <a name="3-remove-monomac-from-namespaces"></a>3.從命名空間移除 MonoMac
 
-從語句  中的命名空間移除`using` MonoMac 前置詞, 或在 classname 已完整限定的任何位置 (例如 `MonoMac.AppKit`只`AppKit`會變成)。
+從語句中的命名空間移除`using` MonoMac 前置詞, 或在 classname 已完整限定的任何位置 (例如 `MonoMac.AppKit`只`AppKit`會變成)。
 
 ### <a name="4-remap-types"></a>4.重新對應類型
 
