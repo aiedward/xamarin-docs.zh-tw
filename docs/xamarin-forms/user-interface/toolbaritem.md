@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: b42a300d9d76a18322891856486720116eb6a8d4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522022"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658051"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms ToolbarItem
 
@@ -24,17 +24,17 @@ ms.locfileid: "69522022"
 
 「 ![Android 和 iOS 上的 ToolbarItem 示範螢幕擷取畫面]」(toolbaritem-images/toolbaritem-device-screenshot.png "Android 和 iOS 上的 ToolbarItem 示範螢幕擷取畫面")
 
-`ToolbarItem`控制項會定義下列屬性:
+`ToolbarItem`類別會定義下列屬性:
 
 * [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)這是`ToolbarItemOrder`一個列舉值, 可判斷`ToolbarItem`實例是否會顯示在主要或次要功能表中。
 * [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)這是`integer`一個值, 可決定`Page`物件`ToolbarItems`集合中專案的顯示順序。
 
 `ToolbarItem`類別會`MenuItem`從類別繼承下列常用的屬性:
 
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)是, 可決定`ToolbarItem`物件上的顯示文字。 `string`
-* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)這是`ImageSource`一個值, 可決定`ToolbarItem`物件上的顯示圖示。
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command)`ICommand`是, 允許將使用者動作 (例如滑鼠點按或按一下) 系結至 viewmodel 上定義的命令。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是, 它會指定應傳遞至的`SearchCommand`參數。 `object`
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是, 它會指定應傳遞至的`Command`參數。 `object`
+* [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)這是`ImageSource`一個值, 可決定`ToolbarItem`物件上的顯示圖示。
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text)是, 可決定`ToolbarItem`物件上的顯示文字。 `string`
 
 這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援`ToolbarItem` , 因此實例可以是資料系結的目標。
 
@@ -119,3 +119,4 @@ void OnItemClicked(object sender, EventArgs e)
 
 * [ToolbarItem 示範](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Xamarin 中的影像](~/xamarin-forms/user-interface/images.md)
+* [Xamarin. 表單 MenuItem](~/xamarin-forms/user-interface/menuitem.md)

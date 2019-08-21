@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/01/2019
-ms.openlocfilehash: 68560c6cc814f54bb8ba9348bc53334089c36a93
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 396853e2e61904689069b7abd157c73d1da59fed
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984470"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658099"
 ---
 # <a name="xamarinforms-menuitem"></a>Xamarin. 表單 MenuItem
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 
-[Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem) ] 類別是用來定義功能表的功能表項目, `ListView`例如專案內容功能表和 Shell 應用程式飛出視窗功能表。
+[Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem) ] 類別會定義功能表的功能表項目, `ListView`例如專案內容功能表和 Shell 應用程式飛出視窗功能表。
 
 下列螢幕擷取畫面顯示`MenuItem` iOS 和 Android `ListView`上內容功能表中的物件:
 

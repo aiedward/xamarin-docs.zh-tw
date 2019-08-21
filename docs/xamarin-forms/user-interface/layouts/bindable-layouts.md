@@ -27,9 +27,9 @@ ms.locfileid: "68647899"
 這些屬性可以附加至 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)、[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)、[`Grid`](xref:Xamarin.Forms.Grid)、[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 和 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 類別，它們全都衍生自 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 類別。
 
 > [!NOTE]
-> 當`ItemTemplate` 同時設定`ItemTemplateSelector`和屬性時, 會優先使用屬性。 `ItemTemplate`
+> 當`ItemTemplate` 與 `ItemTemplateSelector`兩個屬性都已設定時，會優先使用 `ItemTemplate` 屬性。
 
-`Layout<T>`類別會[`Children`](xref:Xamarin.Forms.Layout`1.Children)公開集合, 其中會加入配置的子項目。 當屬性設定為專案的集合, 並且附加[`Layout<T>`](xref:Xamarin.Forms.Layout`1)至衍生類別時, `Layout<T>.Children`集合中的每個專案都會加入集合中, 供配置顯示。 `BinableLayout.ItemsSource` 然後`Layout<T>`, 衍生的類別會在基礎集合變更時, 更新其子視圖。 如需有關 [Xamarin] 版面配置週期的詳細資訊, 請參閱[建立自訂版面](~/xamarin-forms/user-interface/layouts/custom.md)配置。
+`Layout<T>` 類別會公開 [`Children`](xref:Xamarin.Forms.Layout`1.Children)集合，版面配置的子元素會新增到此集合中。 當 `BinableLayout.ItemsSource`屬性設定為項目集合並附加到 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 衍生類別時，集合中的每個項目都會新增到 `Layout<T>.Children` 集合。以由版面配置顯示。 `Layout<T>` 衍生類別接著會在底層集合變更時更新其子檢視。 如需有關 [Xamarin.Forms] 版面配置週期的詳細資訊，請參閱[建立自訂版面配置](~/xamarin-forms/user-interface/layouts/custom.md)(部分機器翻譯)。
 
 只有當要顯示的項目集合很小，而且不需要捲動及選取時，才應該使用可繫結的版面配置。 雖然可以透過在 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 中包裝可繫結的版面配置來提供捲動，但建議不要這樣做，因為可繫結的版面配置缺乏 UI 虛擬化。 需要進行捲動時，應該使用包含 UI 虛擬化的可捲動檢視，例如  [`ListView`](xref:Xamarin.Forms.ListView) 或 [`CollectionView`](xref:Xamarin.Forms.CollectionView)。 若未遵循此建議，可能會導致效能問題。
 

@@ -7,17 +7,17 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/09/2019
-ms.openlocfilehash: 78c5f38428e20a2e0c6a15d0964f8fd505a8d082
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: a4cfc6c54eb2864707f328106761af029e0734cf
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739406"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658085"
 ---
 # <a name="xamarinforms-progressbar"></a>Xamarin. Forms ProgressBar
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
-[Xamarin [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) ] 是一種控制項, 以視覺化方式將進度表示為水準橫條, 填滿以`float`值表示的百分比。 類別繼承自[`View`。](xref:Xamarin.Forms.View) `ProgressBar`
+[Xamarin [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) ] 控制項會以水準橫條表示進度, 填滿以`float`值表示的百分比。 類別繼承自[`View`。](xref:Xamarin.Forms.View) `ProgressBar`
 
 下列螢幕擷取畫面顯示 iOS `ProgressBar`和 Android 上的:
 
@@ -37,7 +37,7 @@ ms.locfileid: "68739406"
 
 ## <a name="create-a-progressbar"></a>建立 ProgressBar
 
-`ProgressBar`可以在 XAML 中具現化。 您`Progress`可以設定其屬性, 以決定內部彩色橫條的填滿百分比。 如果未設定屬性, 則會預設為0。 `Progress` 下列範例顯示如何`ProgressBar`在 XAML 中使用選擇性`Progress`屬性集來具現化:
+`ProgressBar`可以在 XAML 中具現化。 其`Progress`屬性會決定內部彩色橫條的填滿百分比。 預設`Progress`屬性值為0。 下列範例顯示如何`ProgressBar`在 XAML 中使用選擇性`Progress`屬性集來具現化:
 
 ```xaml
 <ProgressBar Progress="0.5" />
@@ -54,7 +54,7 @@ ProgressBar progressBar = new ProgressBar { Progress = 0.5f };
 
 ## <a name="progressbar-appearance-properties"></a>ProgressBar 外觀屬性
 
-當屬性大於零時, `ProgressColor`可以設定屬性來定義內部橫條圖色彩。 `Progress` 下列範例顯示如何`ProgressBar`在 XAML 中`ProgressColor`使用屬性集來具現化:
+當屬性大於零時, `ProgressColor`屬性會定義內部橫條色彩。 `Progress` 下列範例顯示如何`ProgressBar`在 XAML 中`ProgressColor`使用屬性集來具現化:
 
 ```xaml
 <ProgressBar OnColor="Orange" />
@@ -66,7 +66,7 @@ ProgressBar progressBar = new ProgressBar { Progress = 0.5f };
 ProgressBar progressBar = new ProgressBar { ProgressColor = Color.Orange };
 ```
 
-下列螢幕擷取畫面顯示`ProgressBar` `ProgressColor`在 iOS 和 Android 上, `Color.Orange`屬性設為的:
+下列螢幕擷取畫面顯示`ProgressBar` `ProgressColor`在 iOS 和 Android 上, `Color.Orange`將屬性設定為:
 
 ![IOS 和 Android 上的樣式 ProgressBar 螢幕擷取畫面](progressbar-images/progressbars-styled.png "IOS 和 Android 上的樣式 ProgressBar")
 

@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/03/2019
-ms.openlocfilehash: 58755c54ce2afe80a8bf43adc25a0cf2d90a0bb5
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739460"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658038"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin. Forms 參數
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-[Xamarin [`Switch`](xref:Xamarin.Forms.Switch) ] 是水準切換按鈕, 可由使用者操作以切換開啟和關閉狀態 (以`boolean`值表示)。 類別繼承自[`View`。](xref:Xamarin.Forms.View) `Switch`
+[Xamarin [`Switch`](xref:Xamarin.Forms.Switch) ] 控制項是一個水準切換按鈕, 可由使用者操作以切換 [開啟] 和 [關閉] 狀態 (以`boolean`值表示)。 類別繼承自[`View`。](xref:Xamarin.Forms.View) `Switch`
 
-下列螢幕擷取畫面顯示 iOS `Switch`和 Android**上**開啟和**關閉**切換狀態的控制項:
+下列螢幕擷取畫面會在`Switch` iOS 和 Android 上的 [**開啟**] 和 [**關閉**] 切換狀態中顯示控制項:
 
 ![IOS 和 Android 上開啟和關閉狀態的切換畫面快照](switch-images/switch-states-default.png "IOS 和 Android 上的交換器")
 
@@ -44,7 +44,7 @@ ms.locfileid: "68739460"
 也`Switch`可以在程式碼中建立:
 
 ```csharp
-Switch switch = new Switch { IsToggled = true };
+Switch switchControl = new Switch { IsToggled = true };
 ```
 
 ### <a name="switch-style-properties"></a>轉場樣式屬性
@@ -58,10 +58,10 @@ Switch switch = new Switch { IsToggled = true };
 `Switch`在程式碼中建立時, `OnColor`也可以設定屬性:
 
 ```csharp
-Switch switch = new Switch { OnColor = Color.Orange };
+Switch switchControl = new Switch { OnColor = Color.Orange };
 ```
 
-`Switch`下列螢幕擷取畫面顯示在 iOS 和 Android 上, 在其 [ `OnColor`開啟] 和 [關閉] 切換狀態中, 將屬性設定為: `Color.Orange`
+下列螢幕擷取畫面顯示其`Switch` [**開啟**] 和 [**關閉**] 切換狀態, `OnColor`並在 iOS `Color.Orange`和 Android 上將屬性設為:
 
 ![IOS 和 Android 上開啟和關閉狀態的切換畫面快照](switch-images/switch-states-oncolor.png "IOS 和 Android 上的交換器")
 
@@ -87,8 +87,8 @@ void OnToggled(object sender, ToggledEventArgs e)
 `Toggled`事件處理常式也可以在程式碼中指派:
 
 ```csharp
-Switch switch = new Switch {...};
-switch.Toggled += (sender, e) =>
+Switch switchControl = new Switch {...};
+switchControl.Toggled += (sender, e) =>
 {
     // Perform an action after examining e.Value
 }

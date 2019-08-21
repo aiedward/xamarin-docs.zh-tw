@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/12/2019
-ms.openlocfilehash: 391820cf2e94c1131f4082798ee9efa05d8489b8
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 41bb9e082f042e7ca2933d72b4b71a4ff6c4fef4
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739392"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658029"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms 搜尋列
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 [Xamarin [`SearchBar`](xref:Xamarin.Forms.SearchBar) ] 是用來起始搜尋的使用者輸入控制項。 `SearchBar`控制項支援預留位置文字、查詢輸入、搜尋執行和取消。 下列螢幕擷取畫面顯示`SearchBar`查詢, 其中顯示`ListView`的結果如下:
 
 Ios 和[(searchbar-images/device-searchbars-cropped.png "android 上")![的 ios 和 Android 搜尋列上的搜尋列螢幕擷取畫面]](searchbar-images/device-searchbars.png#lightbox "IOS 和 Android 上的搜尋列")
 
-會`SearchBar`定義下列屬性:
+`SearchBar`類別會定義下列屬性:
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)`Color`是, 定義 [取消] 按鈕的色彩。
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes)這是`FontAttributes`一個列舉值, 可決定`SearchBar`字型為粗體、斜體, 或兩者皆非。
@@ -66,7 +66,7 @@ SearchBar searchBar = new SearchBar{ Placeholder = "Search items..." };
            FontAttributes="Italic" />
 ```
 
-`SearchBar`在程式碼中建立時, 您也可以指定這些屬性:
+在程式碼中建立`SearchBar`物件時, 也可以指定這些屬性:
 
 ```csharp
 SearchBar searchBar = new SearchBar
@@ -80,7 +80,7 @@ SearchBar searchBar = new SearchBar
 };
 ```
 
-下列螢幕擷取畫面顯示所產生`SearchBar`的:
+下列螢幕擷取畫面顯示產生`SearchBar`的控制項:
 
 Ios 和 Android 上[![自訂搜尋列的螢幕擷取畫面 Ios 和 android 上的]自(searchbar-images/device-searchbars-styled-cropped.png "定義搜尋列")](searchbar-images/device-searchbars-styled.png#lightbox "IOS 和 Android 上的自訂搜尋列")
 

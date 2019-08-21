@@ -7,32 +7,32 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/10/2019
-ms.openlocfilehash: e13a46e1022f4e33ace6f9f19bb5cea5d1ac784b
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: de93927728271e9f0d9d2ef850b70eeeee249c84
+ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739159"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658103"
 ---
 # <a name="xamarinforms-activityindicator"></a>Xamarin. Forms ActivityIndicator
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
-[Xamarin[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) ] 是顯示動畫的控制項, 可顯示應用程式正在進行長時間的活動。 與不同的是`ActivityIndicator` [,不會提供進度的指示。`ProgressBar`](xref:Xamarin.Forms.ProgressBar) `ActivityIndicator`繼承[自`View`](xref:Xamarin.Forms.View)。
+[Xamarin[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) ] 控制項會顯示一個動畫, 顯示應用程式正在進行較長的活動。 與不同的是`ActivityIndicator` [,不會提供進度的指示。`ProgressBar`](xref:Xamarin.Forms.ProgressBar) `ActivityIndicator`繼承[自`View`](xref:Xamarin.Forms.View)。
 
-下列螢幕擷取畫面顯示 iOS `ActivityIndicator`和 Android 上的控制項:
+下列螢幕擷取畫面顯示`ActivityIndicator` iOS 和 Android 上的控制項:
 
 ![IOS 和 Android 上的 ActivityIndicator 螢幕擷取畫面](activityindicator-images/activityindicators-default.png "IOS 和 Android 上的 ActivityIndicator 螢幕擷取畫面")
 
 `ActivityIndicator`控制項會定義下列屬性:
 
-* [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)這是`bool`一個值, 表示`ActivityIndicator`是否應該顯示、建立動畫或隱藏。 當值為`false` `ActivityIndicator`時, 將不會顯示。
 * [`Color`](xref:Xamarin.Forms.ActivityIndicator.Color)這是定義顯示色彩`ActivityIndicator`的值。`Color`
+* [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)這是`bool`一個值, 表示`ActivityIndicator`是否應該顯示、建立動畫或隱藏。 當值為時`false` , `ActivityIndicator`則不會顯示。
 
 這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這表示`ActivityIndicator`可以設定樣式, 並作為資料系結的目標。
 
 ## <a name="create-an-activityindicator"></a>建立 ActivityIndicator
 
-`ActivityIndicator`可以在 XAML 中具現化。 您`IsRunning`可以設定它的屬性, 以判斷控制項是否為可見並建立動畫。 如果未設定`false` `ActivityIndicator`屬性, 則會預設為, 且不會顯示。 `IsRunning` 下列範例示範如何使用選擇性`ActivityIndicator` `IsRunning`的屬性集, 在 XAML 中具現化:
+`ActivityIndicator`類別可以在 XAML 中具現化。 其`IsRunning`屬性會決定控制項是否為可見和動畫。 屬性預設為`false`。 `IsRunning` 下列範例示範如何使用選擇性`ActivityIndicator` `IsRunning`的屬性集, 在 XAML 中具現化:
 
 ```xaml
 <ActivityIndicator IsRunning="true" />
@@ -46,7 +46,7 @@ ActivityIndicator activityIndicator = new ActivityIndicator { IsRunning = true }
 
 ## <a name="activityindicator-appearance-properties"></a>ActivityIndicator 外觀屬性
 
-您可以設定`ActivityIndicator`屬性來定義色彩。 `Color` 下列範例顯示如何`ActivityIndicator`在 XAML 中`Color`使用屬性集來具現化:
+`Color`屬性會`ActivityIndicator`定義色彩。 下列範例顯示如何`ActivityIndicator`在 XAML 中`Color`使用屬性集來具現化:
 
 ```xaml
 <ActivityIndicator Color="Orange" />
@@ -58,7 +58,7 @@ ActivityIndicator activityIndicator = new ActivityIndicator { IsRunning = true }
 ActivityIndicator activityIndicator = new ActivityIndicator { Color = Color.Orange };
 ```
 
-下列螢幕擷取畫面顯示`ActivityIndicator` `Color`在 iOS 和 Android 上, `Color.Orange`屬性設為的:
+下列螢幕擷取畫面顯示`ActivityIndicator` `Color`在 iOS 和 Android 上, `Color.Orange`將屬性設定為:
 
 ![IOS 和 Android 上的樣式 ActivityIndicator 螢幕擷取畫面](activityindicator-images/activityindicators-styled.png "IOS 和 Android 上的樣式 ActivityIndicator 螢幕擷取畫面")
 
