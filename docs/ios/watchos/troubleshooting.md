@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 37b04b5aaca269f3053010127010369c92a5cda4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4ce217d31811df82f0779a22d0c64464b5295fcc
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528401"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629663"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -92,7 +92,7 @@ with an alpha channel. Icons should not have an alpha channel.
 *如果*您使用 Xcode Interface Builder, 請遵循下列步驟來為您的 watch 應用程式建立新的介面控制器, 並啟用與 Xcode 的同步處理, 以便在C#中提供輸出和動作:
 
 1. 在**Xcode Interface Builder**中開啟監看式應用程式的**介面。**
-    
+
     ![](troubleshooting-images/add-6.png "在 Xcode 中開啟腳本 Interface Builder")
 
 2. 將新`InterfaceController`的拖曳至分鏡腳本:
@@ -144,7 +144,7 @@ with an alpha channel. Icons should not have an alpha channel.
     ```csharp
     using Foundation;
     using System.CodeDom.Compiler;
-    
+
     namespace HelloWatchExtension  // remember to update this
     {
         [Register ("MyInterfaceController")] // remember to update this
@@ -156,9 +156,10 @@ with an alpha channel. Icons should not have an alpha channel.
         }
     }
     ```
-    
-    提示：您可以 (選擇性地) 將此檔案設為第一個檔案的子節點, 方法是將C#它拖曳至 Visual Studio for Mac Solution Pad 中的另一個檔案。 它會如下所示:
-    
+
+    > [!TIP]
+    > 您可以 (選擇性地) 將此檔案設為第一個檔案的子節點, 方法是將C#它拖曳至 Visual Studio for Mac Solution Pad 中的另一個檔案。 它會如下所示:
+
     ![](troubleshooting-images/add-5.png "Solution pad")
 
 6. 選取 [**組建] > [組建全部**], 讓 Xcode 同步處理能夠辨識我們`Register`使用的新類別 (透過屬性)。
@@ -168,7 +169,7 @@ with an alpha channel. Icons should not have an alpha channel.
     ![](troubleshooting-images/add-6.png "在 Interface Builder 中開啟腳本")
 
 8. 選取您的新介面控制器, 並為它提供您在上方定義的 classname, 例如 `MyInterfaceController`.
-如果一切都正常運作, 它應該會自動出現在 [**類別:** ] 下拉式清單中, 而且您可以從該處選取它。
+    如果一切都正常運作, 它應該會自動出現在 [**類別:** ] 下拉式清單中, 而且您可以從該處選取它。
 
     ![](troubleshooting-images/add-4.png "設定自訂類別")
 

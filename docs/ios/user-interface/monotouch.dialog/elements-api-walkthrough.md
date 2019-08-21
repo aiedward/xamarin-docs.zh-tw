@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: lobrien
 ms.author: laobri
-ms.openlocfilehash: ab7761071ef0795d054febbfb302702e09d80c53
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 88823aa2d86b7cc5db72b3949453cd6aa464bd74
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528457"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629632"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>使用 Elements API 建立 Xamarin iOS 應用程式
 
@@ -20,9 +20,9 @@ _本文是根據 [MonoTouch 簡介] 對話方塊文章中所呈現的資訊來�
 
 在本逐步解說中, 我們將使用 MT。D Elements API, 用來建立顯示工作清單之應用程式的主版詳細資料樣式。 當使用者選取導覽列 **+** 中的按鈕時, 新的資料列就會加入至工作的資料表。 選取資料列將會流覽至 [詳細資料] 畫面, 讓我們更新工作描述和到期日, 如下所示:
 
- [![](elements-api-walkthrough-images/01-task-list-app.png "選取資料列將會流覽至 [詳細資料] 畫面, 讓我們更新工作描述和到期日")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
+[![](elements-api-walkthrough-images/01-task-list-app.png "選取資料列將會流覽至 [詳細資料] 畫面, 讓我們更新工作描述和到期日")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
- ## <a name="setting-up-mtd"></a>設定 MT。D
+## <a name="setting-up-mtd"></a>設定 MT。D
 
 MT.D 與 Xamarin 一起散發。 若要使用它, 請以滑鼠右鍵按一下 Visual Studio 2017 或 Visual Studio for Mac 中之 Xamarin 專案的 [**參考**] 節點, 然後新增**MonoTouch**元件的參考。 然後, 視`using MonoTouch.Dialog`需要在您的原始程式碼中新增語句。
 

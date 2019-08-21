@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/17/2019
-ms.openlocfilehash: 765f34af3b3c43531857b705bb4a39ea56e32f61
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a13501218b6d3039f189693512d185a9d546d23f
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656128"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629652"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 驗證使用者
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 
 _Azure Active Directory B2C 為取用者面向的 web 和行動應用程式提供雲端身分識別管理。本文說明如何使用 Azure Active Directory B2C, 將身分識別管理整合到具有 Microsoft 驗證程式庫的行動應用程式中。_
 
@@ -57,7 +57,7 @@ public static class Constants
 
 ## <a name="register-your-mobile-application-with-azure-active-directory-b2c"></a>向 Azure Active Directory B2C 註冊您的行動應用程式
 
-行動應用程式必須先向租使用者註冊, 才能夠連線並驗證使用者。 註冊程式會將唯一的**應用程式識別碼**指派給應用程式, 並將驗證之後將回應導向回應用程式的重新**導向 URL** 。 如需詳細資訊, [請參閱 Azure Active Directory B2C:註冊您的](/azure/active-directory-b2c/active-directory-b2c-app-registration/)應用程式。 您必須知道指派給應用程式的**應用程式識別碼**, 這會列在 [屬性] 視圖中的應用程式名稱後面。 下列螢幕擷取畫面顯示哪裡可以找到應用程式識別碼:
+行動應用程式必須先向租使用者註冊, 才能夠連線並驗證使用者。 註冊程式會將唯一的**應用程式識別碼**指派給應用程式, 並將驗證之後將回應導向回應用程式的重新**導向 URL** 。 如需詳細資訊，請參閱 [Azure Active Directory B2C：註冊您的](/azure/active-directory-b2c/active-directory-b2c-app-registration/)應用程式。 您必須知道指派給應用程式的**應用程式識別碼**, 這會列在 [屬性] 視圖中的應用程式名稱後面。 下列螢幕擷取畫面顯示哪裡可以找到應用程式識別碼:
 
 [![Azure 應用程式屬性視圖中的應用程式識別碼](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
 
@@ -81,7 +81,7 @@ public static class Constants
 
 ## <a name="create-sign-up-and-sign-in-policies-and-forgot-password-policies"></a>建立註冊和登入原則, 並忘記密碼原則
 
-原則是使用者完成一項工作 (例如建立帳戶或重設密碼) 的經驗。 原則也會指定當使用者從經驗返回時, 應用程式所收到的權杖內容。 您必須設定帳戶註冊和登入的原則, 以及重設密碼。 Azure 具有內建原則, 可簡化常見原則的建立。 如需詳細資訊, [請參閱 Azure Active Directory B2C:內建原則](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
+原則是使用者完成一項工作 (例如建立帳戶或重設密碼) 的經驗。 原則也會指定當使用者從經驗返回時, 應用程式所收到的權杖內容。 您必須設定帳戶註冊和登入的原則, 以及重設密碼。 Azure 具有內建原則, 可簡化常見原則的建立。 如需詳細資訊，請參閱 [Azure Active Directory B2C：內建原則](/azure/active-directory-b2c/active-directory-b2c-reference-policies/)。
 
 當您完成原則設定時, Azure 入口網站的 [**使用者流程 (原則)** ] 視圖中應該有兩個原則。 下列螢幕擷取畫面示範 Azure 入口網站中設定的兩個原則:
 
@@ -129,7 +129,7 @@ public partial class App : Application
     ...
 ```
 
-LoginPage.xaml.cs `OnAppearing`程式碼後置  中的事件處理`AcquireTokenSilentAsync`程式會呼叫, 以重新整理先前已登入之使用者的驗證權杖。 `LogoutPage`如果成功, 驗證程式會重新導向至, 而不會在失敗時執行任何作業。 下列範例顯示中`OnAppearing`的無訊息重新驗證程式:
+LoginPage.xaml.cs `OnAppearing`程式碼後置中的事件處理`AcquireTokenSilentAsync`程式會呼叫, 以重新整理先前已登入之使用者的驗證權杖。 `LogoutPage`如果成功, 驗證程式會重新導向至, 而不會在失敗時執行任何作業。 下列範例顯示中`OnAppearing`的無訊息重新驗證程式:
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -247,7 +247,7 @@ public partial class LogoutPage : ContentPage
 
 ### <a name="ios"></a>iOS
 
-在 iOS 上, 使用 Azure Active Directory B2C 註冊的自訂 URL 配置必須在**Info. plist**中註冊。 MSAL 預期 URL 配置遵守特定模式, 如先前在[Azure Active Directory B2C 註冊行動應用程式](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)中所述。 下列螢幕擷取畫面顯示**Info. plist**中的自訂 URL 配置。
+在 iOS 上, 使用 Azure Active Directory B2C 註冊的自訂 URL 配置必須在**Info. plist**中註冊。 MSAL 預期 URL 配置遵守特定模式, 如先前在[Azure Active Directory B2C 註冊行動應用程式](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)中所述。 下列螢幕擷取畫面顯示**Info. plist**中的自訂 URL 配置。
 
 ![「在 iOS 上註冊自訂 URL 配置」](azure-ad-b2c-images/customurl-ios.png)
 
@@ -277,7 +277,7 @@ namespace TodoAzure.iOS
 
 ### <a name="android"></a>Android
 
-在 Android 上, 使用 Azure Active Directory B2C 註冊的自訂 URL 配置必須在**androidmanifest.xml**中註冊。 MSAL 預期 URL 配置遵守特定模式, 如先前在[Azure Active Directory B2C 註冊行動應用程式](/docs/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)中所述。 下列範例顯示**androidmanifest.xml**中的自訂 URL 配置。
+在 Android 上, 使用 Azure Active Directory B2C 註冊的自訂 URL 配置必須在**androidmanifest.xml**中註冊。 MSAL 預期 URL 配置遵守特定模式, 如先前在[Azure Active Directory B2C 註冊行動應用程式](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)中所述。 下列範例顯示**androidmanifest.xml**中的自訂 URL 配置。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -289,7 +289,9 @@ namespace TodoAzure.iOS
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <data android:scheme="INSERT_URI_SCHEME_HERE" android:host="auth" />"
+        <!-- example -->
+        <!-- <data android:scheme="msalaaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" android:host="auth" /> -->
+        <data android:scheme="INSERT_URI_SCHEME_HERE" android:host="auth" />
       </intent-filter>
     </activity>"
   </application>
