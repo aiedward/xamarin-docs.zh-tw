@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2018
-ms.openlocfilehash: 37e5e68aff293910db4638c52f592e10fd60abfa
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d26f8f68b2cf4eca2d28a365c921b533e657c64b
+ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528119"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69629617"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>適用于 Xamarin 的疑難排解秘訣 
 
@@ -212,7 +212,8 @@ int count = ((ICollection<Foo>) array).Count;
 
 請附加 XS 記錄、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **ANDROIDTOOLS-{timestamp} .log**和**元件-{timestamp} .log** (在較舊版本的 XS/MonoDevelop 中, 只傳送 **~/Library/Logs/MonoDevelop-(3.0 | 2.8 | 2.6)/MonoDevelop.log**)。
 
- **注意：XS 2.2 最後已修正上述問題**
+> [!NOTE]
+> 上述問題已在 XS 2.2 最後的版本中修正 * *
 
 ## <a name="compiled-application-is-very-large"></a>編譯的應用程式非常大
 
