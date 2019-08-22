@@ -55,6 +55,12 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
               href: scroll-view.md
             title: ScrollView
+          - href: contentview.md
+            html: 了解如何使用 ContentView 建立自訂控制項。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
+              href: contentview.md
+            title: Frame
           - href: frame.md
             html: 了解如何利用可以設定色彩、陰影的框架及其他選項來環繞檢視。
             image:
