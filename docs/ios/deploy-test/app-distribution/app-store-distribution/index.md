@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: 8b3782554615c5ce3350294fc3300e3c369f8af7
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: e6f7ec4fe018181b6f470de4201d5e5a3f90d4da
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67831512"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527634"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -64,11 +64,11 @@ ms.locfileid: "67831512"
 
 或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請遵循下列步驟：
 
-1.   選取您的小組，並按一下 [管理憑證…]  ：[![](images/selectteam.png "選取小組並檢視詳細資料")](images/selectteam.png#lightbox)
+1. 選取您的小組，並按一下 [管理憑證…]  ：[![](images/selectteam.png "選取小組並檢視詳細資料")](images/selectteam.png#lightbox)
 
-2.   接著，按一下 [iOS Distribution Certificate] (iOS 散發憑證)  旁邊的 [建立]  按鈕：[![](images/selectcert.png "建立 iOS 散發憑證")](images/selectcert.png#lightbox)
+2. 接著，按一下 [iOS Distribution Certificate] (iOS 散發憑證)  旁邊的 [建立]  按鈕：[![](images/selectcert.png "建立 iOS 散發憑證")](images/selectcert.png#lightbox)
 
-3.   如下所示，將根據您小組的權限產生簽署識別；您也可能需要等待小組專員或管理員批准：[![](images/generated.png "將產生簽署識別和顯示對話方塊")](images/generated.png#lightbox)
+3. 如下所示，將根據您小組的權限產生簽署識別；您也可能需要等待小組專員或管理員批准：[![](images/generated.png "將產生簽署識別和顯示對話方塊")](images/generated.png#lightbox)
 
 
 <a name="creatingprofile" />
@@ -119,7 +119,7 @@ ms.locfileid: "67831512"
 
     [![](images/distribute06.png "針對新的散發設定檔輸入名稱")](images/distribute06.png#lightbox)
 
-7. 按一下 [產生]  按鈕，以建立新的設定檔，並完成程序。
+7. 按一下 [產生]  按鈕，以建立新的設定檔，並完成流程。
 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)

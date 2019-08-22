@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: e1792eb9150aa92b04b873ae18ccd89723722529
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 8236dc01f31141544bef88011d87a457f18072e8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108037"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526559"
 ---
 # <a name="fastlane-for-ios--cert"></a>適用於 iOS 的 fastlane - cert
 
@@ -45,7 +45,7 @@ ms.locfileid: "50108037"
 
 ## <a name="what-is-cert"></a>什麼是 cert？
 
-cert 提供一個終端機介面，可針對開發和散發環境建立新的程式碼簽署身分識別 (通常稱為開發人員「憑證」)。
+cert 提供一個終端機介面，可針對開發和散發環境建立新的程式碼簽署身分識別 (通常稱為開發人員「憑證」  )。
 
 <a name="using" />
 
@@ -53,11 +53,15 @@ cert 提供一個終端機介面，可針對開發和散發環境建立新的程
 
 若要使用 cert 公用程式，請在終端機 CLI 中輸入下列命令：
 
-    fastlane cert
+```
+fastlane cert
+```
 
 根據預設，這會建立散發憑證。 若要建立開發憑證，請傳遞 `--development` 旗標：
 
-    fastlane cert --development
+```
+fastlane cert --development
+```
 
 cert 會提示您輸入 Apple ID 和密碼，因此請立即輸入此資訊：
 
@@ -68,7 +72,9 @@ cert 會提示您輸入 Apple ID 和密碼，因此請立即輸入此資訊：
 
 您也可以使用下列命令將 Apple ID 當作引數來傳遞：
 
-    fastlane cert -u myemailadress@domain.com
+```
+fastlane cert -u myemailadress@domain.com
+```
 
 如果您的 Apple ID 與多個小組連線，此處將會顯示這些小組。 請選取與您想要使用之小組對應的號碼：
 
@@ -76,7 +82,9 @@ cert 會提示您輸入 Apple ID 和密碼，因此請立即輸入此資訊：
 
 您也可以使用下列旗標來傳遞「小組識別碼」：
 
-    fastlane cert -l 2TU993NY9J
+```
+fastlane cert -l 2TU993NY9J
+```
 
 fastlane 會檢查您的本機電腦上是否有安裝任何可用的簽署憑證，如果有，就會使用它。
 
@@ -99,12 +107,15 @@ fastlane 會檢查您的本機電腦上是否有安裝任何可用的簽署憑�
 
 - 使用 `-–help` 旗標可顯示所有可用命令的清單：
 
-        fastlane cert --help
+    ```
+    fastlane cert --help
+    ```
 
 - 使用 `-–verbose` 旗標可提高輸出的詳細程度
 
-        fastlane cert --development --verbose
-
+    ```
+    fastlane cert --development --verbose
+    ```
 
 ## <a name="related-links"></a>相關連結
 

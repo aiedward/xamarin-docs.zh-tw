@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 4f6a0b45d37252c141b2741dd0b37a980c958a51
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 59b72daecdc1159494d069bec044ee1891916d11
+ms.sourcegitcommit: fd349a121164c85545f4b0881940eefdd0cf3b65
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984530"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69896397"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>適用于 Xamarin 的 XAML 熱重載 (預覽)
 
@@ -30,7 +30,7 @@ Xamarin.Forms | 4.1 或更高版本
 
 ## <a name="use-xaml-hot-reload-for-xamarinforms"></a>針對 Xamarin 使用 XAML 熱重載
 
-不需要進行其他安裝或設定, 就能使用 XAML 熱重載。 它內建在 Visual Studio 中, 而且可以在 IDE 設定中啟用。 啟用之後, 您就可以在模擬器、模擬器或實體裝置上對應用程式進行偵測, 以開始使用 XAML 熱重載。
+不需要進行其他安裝或設定, 就能使用 XAML 熱重載。 它內建在 Visual Studio 中, 而且可以在 IDE 設定中啟用。 啟用之後, 您就可以在模擬器、模擬器或實體裝置上對應用程式進行偵測, 以開始使用 XAML 熱重載。 目前, XAML 熱重載僅適用于在 iOS 或 Android 上進行調試時。
 
 在 Windows 上, 您可以在 [**工具** > ] [**選項** > ] [**xamarin**  > **熱重載**] 中勾選 [**啟用 Xamarin 熱**重載] 核取方塊, 以啟用 XAML 熱重載。
 

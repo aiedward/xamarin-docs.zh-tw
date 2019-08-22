@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: asb3993
 ms.author: amburns
 ms.date: 03/22/2017
-ms.openlocfilehash: caf43e6cb975b65240f5c0f8538b9be175978eac
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: bf934d50c90efaba266cbfac00aa5140ea92009b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780456"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526682"
 ---
 # <a name="custom-linker-configuration"></a>自訂連結器組態
 
@@ -20,12 +20,12 @@ ms.locfileid: "34780456"
 您可以向連結器提供額外的定義，以確保不會將類型、方法和 (或) 欄位自應用程式中去除。 在您自己的程式碼中，慣用的方法是使用 `[Preserve]` 自訂屬性，如[在 iOS 上連結](~/ios/deploy-test/linker.md)和[在 Android 上連結](~/android/deploy-test/linker.md)指南所述。
 不過，如果您需要一些來自 SDK 或產品組件的定義，則使用 XML 檔案可能是您的最佳解決方案 (與新增程式碼來確保連結器不會去除您所需的項目相比)。
 
-若要這樣做，您需定義一個 XML 檔案，此檔案的最上層元素為 <linker>，其中包含 *assembly* 節點，接著包含 *type* 節點，再接著包含 *method* 和 *field* 節點。
+若要這樣做，您需定義一個 XML 檔案，此檔案的最上層元素為 `<linker>`，其中包含 *assembly* 節點，接著包含 *type* 節點，再接著包含 *method* 和 *field* 節點。
 
 有了這個連結器描述檔之後，請將它新增到您的專案中，然後：
 
--  **針對 Android**將 [建置動作] 設定為 [LinkDescription]
--  **針對 iOS**將 [建置動作] 設定為 [LinkDescription]
+- **針對 Android**將 [建置動作]  設定為 [LinkDescription] 
+- **針對 iOS**將 [建置動作]  設定為 [LinkDescription] 
 
 
 下列範例示範 XML 檔案看起來的樣子：

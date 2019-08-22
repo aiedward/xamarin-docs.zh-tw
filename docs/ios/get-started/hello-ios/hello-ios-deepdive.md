@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 050f084086df02314faecaca42a93007e6cc5246
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: adfc8e34d64b6091ba8ffc56c0f93bcf560128b1
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647042"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527715"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深度剖析
 
@@ -442,14 +442,14 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 - [**Sketch**](https://www.sketchapp.com") \(英文\)：Sketch 是一個用來設計使用者介面、圖示等內容的 Mac 應用程式。 這是用來設計 Xamarin 應用程式圖示和啟動影像集的應用程式。 App Store 上目前提供 Sketch 3。 您也可以試用免費的 [Sketch 工具](http://bohemiancoding.com/sketch/tool/) \(英文\)。
 - [**Pixelmator**](http://www.pixelmator.com/) \(英文\)：適用於 Mac 的多用途影像編輯應用程式，成本大約 $30 美元。
 - [**Glyphish**](http://www.glyphish.com/) \(英文\)：高品質的預先建置圖示集，可供免費下載及購買。
-- [**Fiverr**](http://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。  如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
+- [**Fiverr**](http://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。 如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
 
 ::: zone-end
 ::: zone pivot="windows"
 
 * Visual Studio：您可以使用此產品，直接在 IDE 中為您的應用程式建立簡單的圖示集。
 - [**Glyphish**](http://www.glyphish.com/) \(英文\)：高品質的預先建置圖示集，可供免費下載及購買。
-- [**Fiverr**](http://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。  如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
+- [**Fiverr**](http://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。 如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
 
 ::: zone-end
 

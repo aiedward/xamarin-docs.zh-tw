@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: aac558f52423132bef53f1754307e743c69f6f22
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 1b3bc6874a8584b60b15d1d373ad97fde565dfc4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121201"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527123"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS 不同裝置的編譯
 
-可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建]\(在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
+可執行檔的組建屬性可從專案的 [iOS 組建]  屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建]  \(在 Visual Studio for Mac 中) 和 [屬性]  \(在 Visual Studio 中)：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -128,8 +128,8 @@ Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thum
 
 如果要這麼做，請執行下列步驟：
 
--  開啟 [專案選項]，然後瀏覽至 [iOS 組建] 窗格。
--  針對您想要進行弱式連結的每個組態，在 [其他選項] 中新增 `'-gcc_flags "-weak_framework iAd"'`：
+- 開啟 [專案選項]  ，然後瀏覽至 [iOS 組建]  窗格。
+- 針對您想要進行弱式連結的每個組態，在 [其他選項]  中新增 `'-gcc_flags "-weak_framework iAd"'`：
 
 
 [![](compiling-for-different-devices-images/image3.png "其他選項")](compiling-for-different-devices-images/image3.png#lightbox)

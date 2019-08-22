@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 6d0e6fe402a657b3df0a03f2a9ce30ce22702f20
-ms.sourcegitcommit: d3f48bfe72bfe03aca247d47bc64bfbfad1d8071
+ms.openlocfilehash: d64f92c9bb145da6ab4bfa688ea52bffb4de22d4
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66741104"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526485"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 Xamarin
 
@@ -28,8 +28,8 @@ Xamarin 能提供以 iOS 為目標的開發人員將其非使用者介面程式�
 
 您可以在我們的文件網站找到可協助輕鬆轉換至 Xamarin 的豐富資訊，它們將能示範如何將 C# 程式碼與您既有的知識整合在一起。 可協助您開始的一些重點包括：
 
--   [適用於 Objective-C 開發人員的 C# 入門](primer.md)：適用於想要移至 Xamarin 和 C# 語言之 Objective-C 開發人員的入門。 
--   [逐步解說：對 Objective-C 程式庫進行繫結](~/ios/platform/binding-objective-c/walkthrough.md)：在 Xamarin.iOS 應用程式中重複使用現有 Objective-C 程式碼的逐步解說。 
+- [適用於 Objective-C 開發人員的 C# 入門](primer.md)：適用於想要移至 Xamarin 和 C# 語言之 Objective-C 開發人員的入門。 
+- [逐步解說：對 Objective-C 程式庫進行繫結](~/ios/platform/binding-objective-c/walkthrough.md)：在 Xamarin.iOS 應用程式中重複使用現有 Objective-C 程式碼的逐步解說。 
 
 
 ## <a name="binding-objective-c"></a>繫結 Objective C

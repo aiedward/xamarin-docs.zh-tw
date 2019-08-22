@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3c00f074e2f002d82795e9bd445fdf617275089f
-ms.sourcegitcommit: 19b37f33b0eb9a927633a3198574b779374775ff
+ms.openlocfilehash: d20ec990253ff86e7b426baad8da5a919a91ef6c
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50301262"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525017"
 ---
 # <a name="manually-signing-the-apk"></a>手動簽署 APK
 
 
 建置要發行的應用程式之後，必須先簽署 APK 後再進行散發，這樣它才能在 Android 裝置上執行。 此程序通常會使用 IDE 來處理，不過，在某些情況下，需要在命令列手動簽署 APK。 以下是簽署 APK 的相關步驟：
 
-1.   **建立私密金鑰** &ndash; 此步驟只需執行一次。 需要私密金鑰，才能以數位方式簽署 APK。
+1. **建立私密金鑰** &ndash; 此步驟只需執行一次。 需要私密金鑰，才能以數位方式簽署 APK。
     備妥私密金鑰之後，即可針對未來的發行組建略過此步驟。
 
-2.   **Zipalign APK** &ndash; *Zipalign* 是在應用程式上執行的最佳化程序。 它讓 Android 能夠在執行階段，更有效率地與 APK 互動。 Xamarin.Android 會在執行階段進行檢查，而且如果尚未針對 APK 進行 zipalign，則不允許應用程式執行。
+2. **Zipalign APK** &ndash; *Zipalign* 是在應用程式上執行的最佳化程序。 它讓 Android 能夠在執行階段，更有效率地與 APK 互動。 Xamarin.Android 會在執行階段進行檢查，而且如果尚未針對 APK 進行 zipalign，則不允許應用程式執行。
 
-3.  **簽署 APK** &ndash; 這個步驟包含使用 Android SDK 的 **apksigner** 公用程式，並使用上一個步驟中所建立的私密金鑰來簽署 APK。 使用版本早於 v24.0.3 的 Android SDK 建置工具開發的應用程式，將會使用 JDK 的 **jarsigner** 應用程式。 以下將更詳細討論這兩種工具。 
+3. **簽署 APK** &ndash; 這個步驟包含使用 Android SDK 的 **apksigner** 公用程式，並使用上一個步驟中所建立的私密金鑰來簽署 APK。 使用版本早於 v24.0.3 的 Android SDK 建置工具開發的應用程式，將會使用 JDK 的 **jarsigner** 應用程式。 以下將更詳細討論這兩種工具。 
 
 步驟的順序很重要，而且取決於用來簽署 APK 的工具。 使用 **apksigner** 時，務必先針對應用程式進行 **zipalign**，然後使用 **apksigner** 來簽署它。  如果需要使用 **jarsigner** 簽署 APK，則務必先簽署 APK，然後執行 **zipalign**。 
 
@@ -39,7 +39,7 @@ ms.locfileid: "50301262"
 
 ## <a name="create-a-private-keystore"></a>建立私密金鑰儲存區
 
-「金鑰儲存區」是一個安全性憑證的資料庫，此資料庫是使用 Java SDK 的 [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) \(英文\) 程式所建立。 金鑰儲存區對於發行 Xamarin.Android 應用程式而言是不可或缺的，因為 Android 將不會執行未經過數位簽署的應用程式。
+「金鑰儲存區」  是一個安全性憑證的資料庫，此資料庫是使用 Java SDK 的 [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) \(英文\) 程式所建立。 金鑰儲存區對於發行 Xamarin.Android 應用程式而言是不可或缺的，因為 Android 將不會執行未經過數位簽署的應用程式。
 
 在開發期間，Xamarin.Android 會使用偵錯金鑰儲存區來簽署應用程式，讓應用程式能夠直接部署至模擬器，或部署至設定來使用可偵錯應用程式的裝置。
 不過，無法將此金鑰儲存區辨識為用於散發應用程式目的的有效金鑰儲存區。

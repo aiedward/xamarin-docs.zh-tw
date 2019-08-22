@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 0363f6fa1611a15c6925717f7bdf3905f467831e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 92631fa50dc4826e70df4333bb55f7f69937d053
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50107790"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526553"
 ---
 # <a name="fastlane-for-ios---match"></a>適用於 iOS 的 fastlane - match
 
@@ -53,13 +53,15 @@ match 則是會為您建立和維護所有憑證與設定檔，並將其儲存�
 
 使用您的終端機將目錄變更至專案目錄，然後執行：
 
-    fastlane match init
+```
+fastlane match init
+```
 
 出現提示時，輸入 Git 存放庫的 URL：
 
  [![](match-images/fastlane-image7.png "輸入 Git 存放庫的 URL")](match-images/fastlane-image7.png#lightbox)
 
-若要尋找及複製此 URL，請在 github.com 上按一下 [Clone or Download] \(複製或下載\) 按鈕，如下所示：
+若要尋找及複製此 URL，請在 github.com 上按一下 [Clone or Download] \(複製或下載\)  按鈕，如下所示：
 
 [![](match-images/fastlane-image6.png "github.com 上 [Clone or Download] \(複製或下載\) 按鈕底下的 URL")](match-images/fastlane-image6.png#lightbox)
 
@@ -76,11 +78,13 @@ match 則是會為您建立和維護所有憑證與設定檔，並將其儲存�
 
 視您所需的環境而定，您可以使用下列任何命令來建立憑證和佈建設定檔，並將其儲存在新的 Git 存放庫中：
 
-    fastlane match appstore
+```
+fastlane match appstore
 
-    fastlane match adhoc
+fastlane match adhoc
 
-    fastlane match development
+fastlane match development
+```
 
 除了建立新憑證和設定檔之外，使用這任何一個命令也會將下列項目新增 (或如果已經存在，則會更新) 至您的 Git 存放庫：
 
@@ -99,15 +103,21 @@ match 則是會為您建立和維護所有憑證與設定檔，並將其儲存�
 
 如果您有凌亂的憑證，您可以使用下列命令以 `nuke` 撤銷每個環境的憑證和設定檔：
 
-    fastlane match nuke
+```
+fastlane match nuke
+```
 
 撤銷特定環境的所有憑證和佈建設定檔：
 
-    fastlane match nuke development
+```
+fastlane match nuke development
+```
 
  或
 
-    fastlane match nuke distribution
+```
+fastlane match nuke distribution
+```
 
 fastlane 會先確認將移除的檔案，然後才會將其刪除。
 
@@ -127,15 +137,21 @@ fastlane 會先確認將移除的檔案，然後才會將其刪除。
 
 - 使用 `-–help` 旗標可顯示所有可用命令的清單：
 
-        fastlane match cert --help
+    ```
+    fastlane match cert --help
+    ```
 
 - 使用 `-–verbose` 旗標可提高輸出的詳細程度：
 
-        fastlane match --development --verbose
+    ```
+    fastlane match --development --verbose
+    ```
 
 - 使用 `--force_for_new_devices` 旗標可強制更新佈建設定檔 (如果開發人員入口網站上的裝置計數已變更的話)
 
-        fastlane match development --force_for_new_devices
+    ```
+    fastlane match development --force_for_new_devices
+    ```
 
 ## <a name="related-links"></a>相關連結
 

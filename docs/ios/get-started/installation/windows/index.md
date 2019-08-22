@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/16/2018
-ms.openlocfilehash: 7c7a3e311a6c5f19242b51dd14f59bcdc9a75c64
-ms.sourcegitcommit: 91a4fcb715506e18e8070bc89bf2cb14d079ad32
+ms.openlocfilehash: 2f580571e7b871e724ca1a760060a238098e4f44
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59574711"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526505"
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安裝 Xamarin.iOS
 
@@ -71,10 +71,10 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 
 若要在 Windows 上使用 Visual Studio 2017 建置 Xamarin.iOS 應用程式，則您需要：
 
--  已安裝 Visual Studio 2017 的 Windows 電腦。 這可以是實體或虛擬機器。
+- 已安裝 Visual Studio 2017 的 Windows 電腦。 這可以是實體或虛擬機器。
     - [Windows 系統需求](~/cross-platform/get-started/requirements.md#windows-requirements)
     
--  已設定 Apple 組建工具和 Xamarin.iOS 的網路可存取 Mac。 Visual Studio 2017 透過網路連線存取這部電腦，以使用用於編譯原生 iOS 應用程式所需的 Apple 組建工具。 
+- 已設定 Apple 組建工具和 Xamarin.iOS 的網路可存取 Mac。 Visual Studio 2017 透過網路連線存取這部電腦，以使用用於編譯原生 iOS 應用程式所需的 Apple 組建工具。 
     - [Mac 系統需求](~/cross-platform/get-started/requirements.md#macos-requirements)
 
 ## <a name="setup"></a>安裝程式

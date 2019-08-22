@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/29/2016
-ms.openlocfilehash: 4954b83b75618128f32b0e5fceed2f04df183433
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 47211f60d55f1f355a92307eff53ed9af754eda2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511476"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69527408"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
@@ -62,10 +62,10 @@ container.AddSubview (new MyView (container));
 
 在包含之物件保留其容器連結的情況下，有幾個選項可用來處理循環參考：
 
--  手動中斷循環，方法是將容器連結設定為 `null`。
--  手動從容器移除所包含的物件。
--  呼叫物件上的 `Dispose`。
--  避免循環參考保留容器的弱式參考。 如需弱式參考的相關詳細資訊。
+- 手動中斷循環，方法是將容器連結設定為 `null`。
+- 手動從容器移除所包含的物件。
+- 呼叫物件上的 `Dispose`。
+- 避免循環參考保留容器的弱式參考。 如需弱式參考的相關詳細資訊。
 
 ### <a name="using-weakreferences"></a>使用 WeakReferences
 

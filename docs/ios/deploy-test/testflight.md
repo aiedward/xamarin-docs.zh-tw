@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 27fd8cac85cdf139278d3824ebf71e54cdc7d140
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5729c32ca671a4fcc309d235a34929dcba6a3d03
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865585"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621106"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 散發 Xamarin.iOS 應用程式
 
@@ -55,21 +55,21 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 3. 管理 Beta 測試：
     - 新增中繼資料。
     - 新增內部使用者：
-        - 最多 25 個使用者。
+      - 最多 25 個使用者。
     - 新增外部使用者：
-        - 最多 1000 個使用者。
-        - 需要 Beta 測試審查，這需要符合 Apple 指導方針的規範。
+      - 最多 1000 個使用者。
+      - 需要 Beta 測試審查，這需要符合 Apple 指導方針的規範。
 4. 接收來自使用者的意見反應，對其採取動作，然後返回步驟 2。
 
 ## <a name="create-an-itunes-connect-record"></a>建立 iTunes Connect 記錄
 
-1.  使用 Apple 開發人員認證登入 [iTunes Connect 入口網站](https://itunesconnect.apple.com/)。
-2.  選取 [我的應用程式]  ：
+1. 使用 Apple 開發人員認證登入 [iTunes Connect 入口網站](https://itunesconnect.apple.com/)。
+2. 選取 [我的應用程式]  ：
 
     [![](testflight-images/my-apps.png "選取 [我的應用程式]")](testflight-images/my-apps.png#lightbox)
 
 
-3.  在 [我的應用程式]  畫面上，按一下畫面左上角的 **+** 按鈕以加入新的應用程式。 如果您有 Mac 和 iOS 開發人員帳戶，系統會提示您在此處選擇新的應用程式類型。
+3. 在 [我的應用程式]  畫面上，按一下畫面左上角的 **+** 按鈕以加入新的應用程式。 如果您有 Mac 和 iOS 開發人員帳戶，系統會提示您在此處選擇新的應用程式類型。
 
 您將會看到 [新 iOS 應用程式]  提交視窗，其中必須包含與您應用程式的 Info.plist 完全相同的資訊
 
@@ -84,12 +84,12 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 [![](testflight-images/infoplist.png "應用程式的 Info.plist")](testflight-images/infoplist.png#lightbox)
 [ ![](testflight-images/newiosapp.png "iTunes Connect 上的表單")](testflight-images/newiosapp.png#lightbox)
 
--  **名稱**：設定應用程式套件組合時所使用的描述性名稱。 這必須完全符合您 `Info.plist` 中的**應用程式名稱**項目。
--  **主要語言**：應用程式內使用的基礎語言。 這通常是您本身所使用的語言。
--  **套件組合識別碼**：列出您開發人員帳戶上建立之所有應用程式識別碼的下拉式功能表。
-    *   **套件組合識別碼尾碼**：如果您已選取萬用字元套件組合識別碼 (亦即結尾為 * 的識別碼，如以上範例所示)，螢幕將會出現額外的方塊，提示您輸入套件組合識別碼尾碼。 在該範例中，[套件組合識別碼]  為 `mobi.chkn.*`，[尾碼] 則為 **PageView**。 這些在 `Info.plist` 中，就會組成 [套件組合識別碼]  。
--  **版本**：所上傳之應用程式的版本號碼。 這是由開發人員所選擇。
--  **SKU**：SKU 是應用程式的唯一識別碼，使用者將看不到這個識別碼。 它與產品識別碼類似。 在上述範例中，我已經選擇日期，以及該日期的版本號碼。
+- **名稱**：設定應用程式套件組合時所使用的描述性名稱。 這必須完全符合您 `Info.plist` 中的**應用程式名稱**項目。
+- **主要語言**：應用程式內使用的基礎語言。 這通常是您本身所使用的語言。
+- **套件組合識別碼**：列出您開發人員帳戶上建立之所有應用程式識別碼的下拉式功能表。
+  - **套件組合識別碼尾碼**：如果您已選取萬用字元套件組合識別碼 (亦即結尾為 * 的識別碼，如以上範例所示)，螢幕將會出現額外的方塊，提示您輸入套件組合識別碼尾碼。 在該範例中，[套件組合識別碼]  為 `mobi.chkn.*`，[尾碼] 則為 **PageView**。 這些在 `Info.plist` 中，就會組成 [套件組合識別碼]  。
+- **版本**：所上傳之應用程式的版本號碼。 這是由開發人員所選擇。
+- **SKU**：SKU 是應用程式的唯一識別碼，使用者將看不到這個識別碼。 它與產品識別碼類似。 在上述範例中，我已經選擇日期，以及該日期的版本號碼。
 
 
 ## <a name="upload-your-app"></a>上傳您的應用程式
@@ -190,9 +190,9 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 內部測試人員是在 iTunes Connect 中，獲指派下列其中一個角色的開發小組成員：
 
--  **系統管理員**：系統管理員負責在 iTunes Connect 中新增和管理新使用者。
--  **法務**：Team 代理程式將會是唯一獲指派法務角色的系統管理員使用者。 此角色可讓他們簽署法律合約。
--  **技術**：技術使用者可以變更與應用程式相關的大部分屬性。 例如，編輯應用程式資訊、上傳二進位檔，以及傳送應用程式以供複審。
+- **系統管理員**：系統管理員負責在 iTunes Connect 中新增和管理新使用者。
+- **法務**：Team 代理程式將會是唯一獲指派法務角色的系統管理員使用者。 此角色可讓他們簽署法律合約。
+- **技術**：技術使用者可以變更與應用程式相關的大部分屬性。 例如，編輯應用程式資訊、上傳二進位檔，以及傳送應用程式以供複審。
 
 每個組建最多可與 25 個成員共用。
 

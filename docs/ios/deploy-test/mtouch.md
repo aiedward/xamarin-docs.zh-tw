@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/05/2017
-ms.openlocfilehash: 4f545893ca4cde441cd05fc3d8e52ecf0f6aae98
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: c67544824f23ea72ad325d39347330a863846c2b
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669488"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526544"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 搭售 Xamarin.iOS 應用程式
 
@@ -45,9 +45,9 @@ export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
 
 `mtouch` 命令可使用三種不同的方式編譯程式碼：
 
--  編譯來進行模擬器測試。
--  編譯來部署裝置。
--  將可執行檔部署至裝置。
+- 編譯來進行模擬器測試。
+- 編譯來部署裝置。
+- 將可執行檔部署至裝置。
 
 
 ### <a name="building-for-the-simulator"></a>模擬器的建置

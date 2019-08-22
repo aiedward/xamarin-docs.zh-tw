@@ -8,12 +8,12 @@ author: asb3993
 ms.author: amburns
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: d4bb117273e669cc3c520c42451296e16b6023eb
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 796c196b5c8ebcd70a0529112189cea6116a9ab0
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865326"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890106"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自動佈建
 
@@ -43,12 +43,15 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 > [!IMPORTANT]
 > 開始之前，請務必登入 [iTunes Connect](https://itunesconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com)，以檢查您是否已經接受最新的 Apple 帳戶原則。 如果出現提示，請完成步驟，以接受來自 Apple 的任何新帳戶合約。 如果您不接受自 2018 年 5 月起的隱私權合約，即會在嘗試佈建裝置時看到下列其中一個警示：
+>
 > ```
 > Unexpected authentication failure. Reason: {
 > "authType" : "sa"
 > }
 > ```
+>
 > 或
+>
 > ```
 > Authentication Service Is Unavailable
 > ```

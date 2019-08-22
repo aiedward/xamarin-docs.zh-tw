@@ -6,16 +6,16 @@ ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
 author: conceptdev
 ms.author: crdun
 ms.date: 07/16/2019
-ms.openlocfilehash: f958e53a2468263898ffedf0ca2ab6afc42d2923
-ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
+ms.openlocfilehash: 372aee9d48866ac49f34b9550fdfa37b7cc0b646
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68290115"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526675"
 ---
 # <a name="what-is-xamarin"></a>什麼是 Xamarin？
 
-建置行動裝置應用程式非常簡單，您只需要開啟 IDE、撰寫及測試應用程式，並提交到 App Store 即可，只要一個下午即可全部完成。 或者也可以是涉及下列操作的極端複雜程序：嚴苛的預先設計、可用性測試、在數以千計的裝置上進行 QA 測試、完整的 Beta 生命週期；再透過許多不同的方式進行部署。
+建置行動裝置應用程式非常簡單，您只需要開啟 IDE、撰寫及測試應用程式，並提交到 App Store 即可，只要一個下午即可全部完成。 或者也可以是涉及下列操作的極端複雜流程：嚴苛的預先設計、可用性測試、在數以千計的裝置上進行 QA 測試、完整的 Beta 生命週期；再透過許多不同的方式進行部署。
 
 此文件介紹 Xamarin 平台的概念。 若要深入了解從設計到測試的行動裝置應用程式建置*程序*，請參閱[行動軟體開發生命週期簡介](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)。
 
@@ -29,12 +29,12 @@ Xamarin 允許您使用可跨許多平台 (iOS、Android 與 Windows) 執行的�
 
 Xamarin 結合原生平台的所有功能，並加上自己的一些強大功能，包括：
 
-1.   **針對基礎 SDK 的完整繫結** – Xamarin 包含針對幾乎整個 iOS 及 Android 基礎平台 SDK 的繫結。 此外，這些繫結都是強型別，這表示巡覽及使用相當容易，並在開發期間提供強固的類型檢查。 這有助於減少執行階段錯誤及品質更優良的應用程式。
-1.   **Objective-C、Java、C 及 C++ Interop** – Xamarin 提供直接叫用 Objective-C、Java、C 及 C++ 程式庫的設施，賦予您使用範圍更廣、已經存在之協力廠商程式碼的能力。 這可讓您利用使用 Objective-C、Java 或 C/C++ 撰寫的現有 iOS 與 Android 程式庫。 此外，Xamarin 提供繫結專案，允許您輕鬆使用宣告式的語法來繫結原生 Objective-C 及 Java 程式庫。
-1.   **現代化語言建構** – Xamarin 應用程式是使用 C# 撰寫的，即一種相較於 Objective-C 和 Java 包含重大改善的現代化語言，例如「動態語言功能」  ；「功能建構」，例如 Lambda、LINQ、「平行程式設計」  功能、複雜的「泛型」等。
-1.   **令人驚豔的基底類別庫 (BCL)** – Xamarin 應用程式使用 .NET BCL，它是包含完整且簡化功能的一個大型類別集合，例如強大的 XML、資料庫、序列化、IO、字串及網路支援等。 現有 C# 程式碼也能編譯並在應用程式中使用，這提供數以千計的程式庫，使您能夠執行 BCL 未涵蓋的動作。
-1.   **現代化的整合式開發環境 (IDE)** – Xamarin 在 macOS 上使用 Visual Studio for Mac，在 Windows 上則使用 Visual Studio。 兩者皆是現代化的 IDE，包含例如程式碼自動完成、複雜的專案及解決方案管理系統、完整的專案範本程式庫、整合式原始檔控制等功能。
-1.   **行動裝置跨平台支援** – Xamarin 針對三個主要的行動平台 (iOS、Android 與 Windows) 提供複雜的跨平台支援。 撰寫的應用程式可共用高達 90% 的程式碼，而我們的 Xamarin.Mobile 程式庫更提供統一的 API 以存取三個平台中常見的資源。 這可以大幅降低開發成本及以三個熱門行動平台為目標之行動裝置應用程式開發人員進行行銷的時間。
+1. **針對基礎 SDK 的完整繫結** – Xamarin 包含針對幾乎整個 iOS 及 Android 基礎平台 SDK 的繫結。 此外，這些繫結都是強型別，這表示巡覽及使用相當容易，並在開發期間提供強固的類型檢查。 這有助於減少執行階段錯誤及品質更優良的應用程式。
+1. **Objective-C、Java、C 及 C++ Interop** – Xamarin 提供直接叫用 Objective-C、Java、C 及 C++ 程式庫的設施，賦予您使用範圍更廣、已經存在之協力廠商程式碼的能力。 這可讓您利用使用 Objective-C、Java 或 C/C++ 撰寫的現有 iOS 與 Android 程式庫。 此外，Xamarin 提供繫結專案，允許您輕鬆使用宣告式的語法來繫結原生 Objective-C 及 Java 程式庫。
+1. **現代化語言建構** – Xamarin 應用程式是使用 C# 撰寫的，即一種相較於 Objective-C 和 Java 包含重大改善的現代化語言，例如「動態語言功能」  ；「功能建構」，例如 Lambda、LINQ、「平行程式設計」  功能、複雜的「泛型」等。
+1. **令人驚豔的基底類別庫 (BCL)** – Xamarin 應用程式使用 .NET BCL，它是包含完整且簡化功能的一個大型類別集合，例如強大的 XML、資料庫、序列化、IO、字串及網路支援等。 現有 C# 程式碼也能編譯並在應用程式中使用，這提供數以千計的程式庫，使您能夠執行 BCL 未涵蓋的動作。
+1. **現代化的整合式開發環境 (IDE)** – Xamarin 在 macOS 上使用 Visual Studio for Mac，在 Windows 上則使用 Visual Studio。 兩者皆是現代化的 IDE，包含例如程式碼自動完成、複雜的專案及解決方案管理系統、完整的專案範本程式庫、整合式原始檔控制等功能。
+1. **行動裝置跨平台支援** – Xamarin 針對三個主要的行動平台 (iOS、Android 與 Windows) 提供複雜的跨平台支援。 撰寫的應用程式可共用高達 90% 的程式碼，而我們的 Xamarin.Mobile 程式庫更提供統一的 API 以存取三個平台中常見的資源。 這可以大幅降低開發成本及以三個熱門行動平台為目標之行動裝置應用程式開發人員進行行銷的時間。
 
 因為 Xamarin 強大及完整的功能組，它正好滿足想要使用現代化語言及平台開發跨平台行動應用程式之應用程式開發人員的需求。
 

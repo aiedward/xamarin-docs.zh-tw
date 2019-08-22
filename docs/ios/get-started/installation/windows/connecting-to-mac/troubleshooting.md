@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 864c801597f251940e55232e8c59d3a6ea19c392
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 5722a3a208942e8ecef6e5b3c092ac6c9825395f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865795"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890155"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 組建主機的連線疑難排解
 
@@ -83,6 +83,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
     ```bash
     ssh amyb@10.1.8.95
     ```
+
     <a name="stepnine" />
 
 9. 如果**步驟 8 成功**，您便可以嘗試透過連線執行簡單的命令 (例如 `ls`)：
@@ -218,7 +219,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 除非您注意到連線對話方塊並未顯示 Mac 組建主機的 IP 位址，否則可忽略此訊息。 如果該對話方塊中「遺漏」  IP 位址，您仍然可以[手動新增 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
 
-#### <a name="invalid-user-a-from-101895-and-inputuserauthrequest-invalid-user-a-preauth"></a>「來自 10.1.8.95 的使用者 a 無效" 及 "input\_userauth\_request：無效的使用者 a [preauth]」
+#### <a name="invalid-user-a-from-101895-and-input_userauth_request-invalid-user-a-preauth"></a>「來自 10.1.8.95 的使用者 a 無效" 及 "input\_userauth\_request：無效的使用者 a [preauth]」
 
 如果您查看 **sshd.log**，可能就會注意到此訊息。 這些訊息是正常連線程序的一部分。 之所以會出現這些訊息，是因為 Xamarin 在擷取「SSH 指紋」  時，暫時使用了使用者名稱 **a**。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: a6fe5cc3a126cc42c07f38b89c5d1de308b3c0dc
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 9bff233b5507e3456ba3620315bd967d0ac7018d
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109909"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525787"
 ---
 # <a name="application-package-size"></a>應用程式的套件大小
 
@@ -49,7 +49,7 @@ Xamarin.Android 使用了各種機制來將套件大小降至最低，同時維�
 
 相較之下，Android 複製及安裝套件的速度較慢，因此我們會希望套件大小能越小越好。 如同我們在上述內容中所討論，其中一個可能的方式便是透過連結器將套件大小減至最低。 然而，連結的過程相當緩慢，並且通常我們只想要部署自上一次部署之後應用程式的變更部分。 為了達到此目的，我們會將應用程式與核心 Xamarin.Android 元件區隔開來。
 
-第一次在裝置上進行偵錯時，我們會複製兩個分別名為「共用執行階段」及「共用平台」的大型套件。 共用執行階段包含 Mono 執行階段及 BCL，共用平台則包含特定 Android API 層級的組件：
+第一次在裝置上進行偵錯時，我們會複製兩個分別名為「共用執行階段」  及「共用平台」  的大型套件。 共用執行階段包含 Mono 執行階段及 BCL，共用平台則包含特定 Android API 層級的組件：
 
 [![共用執行階段套件大小](app-package-size-images/shared-runtime-package-size.png)](app-package-size-images/shared-runtime-package-size.png#lightbox)
 
@@ -59,21 +59,21 @@ Xamarin.Android 使用了各種機制來將套件大小降至最低，同時維�
 
 ### <a name="fast-assembly-deployment"></a>快速組件部署
 
-[快速部署組件] 建置選項可透過不在應用程式套件中包含組件、直接在裝置上一次性的安裝組件，然後只複製自上一次部署之後修改過的檔案，來更進一步的降低偵錯安裝套件的大小。
+[快速部署組件]  建置選項可透過不在應用程式套件中包含組件、直接在裝置上一次性的安裝組件，然後只複製自上一次部署之後修改過的檔案，來更進一步的降低偵錯安裝套件的大小。
 
-若要啟用 [快速部署組件]，請執行下列作業：
+若要啟用 [快速部署組件]  ，請執行下列作業：
 
-1.  以滑鼠右鍵按一下方案總管中的 Android 專案，然後選取 [選項]。
+1. 以滑鼠右鍵按一下方案總管中的 Android 專案，然後選取 [選項]  。
 
-2.  在 [專案選項] 對話方塊中，選取 [Android 建置]：  
+2. 在 [專案選項] 對話方塊中，選取 [Android 建置]  ：  
 
     ![Android 建置專案選項](app-package-size-images/fastdev0.png)
 
-3.  勾選 [使用共用 Mono 執行階段] 核取方塊，以及 [快速部署組件] 核取方塊：  
+3. 勾選 [使用共用 Mono 執行階段]  核取方塊，以及 [快速部署組件]  核取方塊：  
 
     ![[封裝] 索引標籤下已選取的核取方塊](app-package-size-images/fastdev.png)
 
-4.  按一下 [確定] 按鈕來儲存變更，並關閉 [專案選項] 對話方塊。
+4. 按一下 [確定]  按鈕來儲存變更，並關閉 [專案選項] 對話方塊。
 
 
 下一次應用程式針對偵錯進行建置時，組件便會直接安裝在裝置上 (若尚未安裝的話)，並且安裝在裝置上的應用程式套件將會更小 (因為其不包含組件)。 這會縮短將變更套用到應用程式及執行測試的時間。

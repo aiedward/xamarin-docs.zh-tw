@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 9ce29df9070ee99bb3de9579025f5b0f366d6331
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c7572c3d3a785264e9f26c17e74c41ee28e8af6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655895"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526532"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 
@@ -41,7 +41,7 @@ MVC 模式很實用，因為它提供 GUI 應用程式之不同組件間的邏�
 > [!NOTE]
 > MVC 模式大致上類似於 ASP.NET 網頁或 WPF 應用程式的結構。 在這些範例中，檢視是實際上負責描述 UI 的元件，而且對應至 ASP.NET 中的 ASPX (HTML) 網頁，或對應至 WPF 應用程式中的 XAML。 控制器是負責管理檢視的元件，對應至 ASP.NET 或 WPF 中的程式碼後置。
 
-### <a name="model"></a>模型
+### <a name="model"></a>型號
 
 模型物件通常是要顯示於檢視或輸入到檢視之資料的應用程式專用表示法。 模型通常是鬆散定義的，例如，在 **Phoneword_iOS** 應用程式中，電話號碼的清單 (顯示為字串清單) 即為模型。 如果我們正在建置跨平台應用程式，則可選擇在 iOS 和 Android 應用程式之間共用 **PhonewordTranslator** 程式碼。 我們也可以將該共用程式碼視為模型。
 
@@ -56,7 +56,7 @@ MVC 完全不知道模型的「資料持續性」  和「存取」  。 換句�
 
 檢視是負責轉譯使用者介面的元件。 幾乎在使用 MVC 模式的所有平台中，使用者介面都是由檢視階層所組成。 我們可以將 MVC 中的檢視想像為位於階層頂端且具有單一檢視的檢視階層 (又稱為根檢視)，而在其下方有任意數目的子項檢視 (又稱為子檢視)。 在 iOS 中，畫面的內容檢視階層會對應到 MVC 中的檢視元件。
 
-### <a name="controller"></a>Controller
+### <a name="controller"></a>控制器
 
 控制器物件是將一切連接在一起的元件，在 iOS 中透過 `UIViewController` 來呈現。 我們可以將控制器想像為一個畫面或一組檢視的支援程式碼。 控制器負責接聽來自使用者的要求，並傳回適當的檢視階層。 它會接聽來自檢視 (按鈕按一下、文字輸入等) 的要求，並執行適當的處理、檢視修改，以及重新載入檢視。 控制器也會負責從支援的資料存放區存在於應用程式的地方建立或擷取模型，並使用它的資料填入檢視。
 
@@ -72,17 +72,17 @@ MVC 完全不知道模型的「資料持續性」  和「存取」  。 換句�
 
 瀏覽控制器提供三個主要功能：
 
--  **提供向前瀏覽的勾點**：瀏覽控制器使用會將內容檢視階層「推送」  到「瀏覽堆疊」  的階層式瀏覽隱喻。 您可以將瀏覽堆疊想像為一疊撲克牌，只能看見最上方的牌，如下圖所示：  
+- **提供向前瀏覽的勾點**：瀏覽控制器使用會將內容檢視階層「推送」  到「瀏覽堆疊」  的階層式瀏覽隱喻。 您可以將瀏覽堆疊想像為一疊撲克牌，只能看見最上方的牌，如下圖所示：  
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "此圖以一疊卡片來說明導覽")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 
--  **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」  ，讓使用者能夠向後瀏覽。 按 [上一頁] 按鈕即會從瀏覽堆疊中「快顯」  目前的檢視控制器，並將上一個內容檢視階層載入到視窗：  
+- **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」  ，讓使用者能夠向後瀏覽。 按 [上一頁] 按鈕即會從瀏覽堆疊中「快顯」  目前的檢視控制器，並將上一個內容檢視階層載入到視窗：  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "此圖說明如何從堆疊中取出卡片")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 
--  **提供標題列**：瀏覽控制器的上半部稱為「標題列」  。 它負責顯示檢視控制器標題，如下圖所示：  
+- **提供標題列**：瀏覽控制器的上半部稱為「標題列」  。 它負責顯示檢視控制器標題，如下圖所示：  
 
     [![](hello-ios-multiscreen-deepdive-images/04.png "標題列負責顯示檢視控制器標題")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
@@ -191,9 +191,9 @@ CallHistoryButton.TouchUpInside += (object sender, EventArgs e) => {
 
 Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包括：
 
--  **自動建立檢視控制器**：當我們在 **Properties Pad** 中輸入檢視控制器的類別名稱時，iOS 設計工具會檢查該類別是否存在，然後為我們產生檢視控制器支援類別。 如需此功能與其他 iOS 設計工具功能的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
--  **資料表檢視控制器**：`CallHistoryController` 是一個資料表檢視控制器。 資料表檢視控制器包含資料表檢視，這是 iOS 中最常見的版面配置與資料顯示工具。 資料表已超出本指南的範圍。 如需資料表檢視控制器的詳細資訊，請參閱[使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)指南。
--   **分鏡腳本識別碼**：設定分鏡腳本識別碼會在 Objective-C 中建立檢視控制器類別，其中包含適用於分鏡腳本中檢視控制器的程式碼後置。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
+- **自動建立檢視控制器**：當我們在 **Properties Pad** 中輸入檢視控制器的類別名稱時，iOS 設計工具會檢查該類別是否存在，然後為我們產生檢視控制器支援類別。 如需此功能與其他 iOS 設計工具功能的詳細資訊，請參閱 [iOS 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
+- **資料表檢視控制器**：`CallHistoryController` 是一個資料表檢視控制器。 資料表檢視控制器包含資料表檢視，這是 iOS 中最常見的版面配置與資料顯示工具。 資料表已超出本指南的範圍。 如需資料表檢視控制器的詳細資訊，請參閱[使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)指南。
+- **分鏡腳本識別碼**：設定分鏡腳本識別碼會在 Objective-C 中建立檢視控制器類別，其中包含適用於分鏡腳本中檢視控制器的程式碼後置。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
 
 ## <a name="summary"></a>總結
 

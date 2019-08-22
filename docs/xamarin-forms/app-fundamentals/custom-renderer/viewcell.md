@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: aa1093336a79689380e920783dd772c5e68c76b9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6fd952fc929fc11d19d8ceb0153aa8d7702a21a7
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650435"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889232"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
@@ -68,6 +68,7 @@ public class NativeCell : ViewCell
   }
 }
 ```
+
 在 .NET Standard 程式庫專案中建立的 `NativeCell` 類別，會為自訂資料格定義 API。 自訂資料格會公開可透過資料繫結顯示的 `Name`、`Category` 和 `ImageFilename` 屬性。 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 <a name="Consuming_the_Custom_Cell" />

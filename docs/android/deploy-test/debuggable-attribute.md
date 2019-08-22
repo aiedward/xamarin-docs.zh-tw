@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: 66bbc7015daaba04f8431b31f639c9173484c790
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: e0fb6c1ced4953fd03939f56eb4011d956dfcca6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50108661"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525609"
 ---
 # <a name="debuggable-attribute"></a>可偵錯的屬性
 
@@ -21,8 +21,8 @@ ms.locfileid: "50108661"
 
 JDWP 的值可為 Android 應用程式中的 `android:debuggable` 屬性。 Xamarin.Android 提供下列方式來設定這個屬性：
 
-1.  建立 `AndroidManifext.xml` 檔案，並在其中設定 `android:debuggable` 屬性。
-2.  在 `.CS` 檔案中包含 `ApplicationAttribute`，如：`[assembly: Application(Debuggable=false)]`。
+1. 建立 `AndroidManifext.xml` 檔案，並在其中設定 `android:debuggable` 屬性。
+2. 在 `.CS` 檔案中包含 `ApplicationAttribute`，如：`[assembly: Application(Debuggable=false)]`。
 
 
 若同時具有 `AndroidManifest.xml` 及 `ApplicationAttribute`，則 `AndroidManifest.xml` 的內容會優先於 `ApplicationAttribute` 所指定的內容。

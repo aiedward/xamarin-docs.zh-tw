@@ -6,12 +6,12 @@ ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: b6b95f730b966ef5edaabbe7b0f333c2cacf5bc5
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: bc983fb43e0c649e3b7e231f42fce9d6af40e047
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58070835"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526741"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>使用 NuGet 安裝 NUnit 2.6.4
 
@@ -40,11 +40,11 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 下列步驟描述如何安裝 NUnit 2.6.4。
 
 
-1. **開啟套件管理員** - 以滑鼠右鍵按一下 [套件]，然後從快顯功能表中選取 [新增套件]：
+1. **開啟套件管理員** - 以滑鼠右鍵按一下 [套件]  ，然後從快顯功能表中選取 [新增套件]  ：
 
     [![](installing-nunit-using-nuget-images/add-packages-xs.png "以滑鼠右鍵按一下 [套件]，然後從快顯功能表中選取 [新增套件]")](installing-nunit-using-nuget-images/add-packages-xs.png#lightbox)
     
-1. **搜尋`NUnit version:2.6.4`** - Visual Studio for Mac 會將 NUnit 3.0 解除安裝 (如有必要)，然後下載並安裝 NUnit 2.6.4。 在 [新增套件] 對話方塊右上角的 [搜尋] 欄位中，輸入文字 `nunit version:2.6.4`。 從搜尋結果中選取 [NUnit]，然後按一下 [新增套件] 按鈕：
+1. **搜尋`NUnit version:2.6.4`** - Visual Studio for Mac 會將 NUnit 3.0 解除安裝 (如有必要)，然後下載並安裝 NUnit 2.6.4。 在 [新增套件]  對話方塊右上角的 [搜尋]  欄位中，輸入文字 `nunit version:2.6.4`。 從搜尋結果中選取 [NUnit]  ，然後按一下 [新增套件]  按鈕：
 
     [![](installing-nunit-using-nuget-images/nunit-search-xs.png "從搜尋結果中選取 [NUnit]，然後按一下 [新增套件] 按鈕")](installing-nunit-using-nuget-images/nunit-search-xs.png#lightbox)
 
@@ -62,10 +62,10 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>在 Visual Studio 中安裝 NUnit 2.6.4
 
-本節著重在 Visual Studio 2015 或更新版本中使用「NuGet 套件管理員主控台」，將 NUnit 3.0 解除安裝，然後安裝 NUnit 2.6.4。
+本節著重在 Visual Studio 2015 或更新版本中使用「NuGet 套件管理員主控台」  ，將 NUnit 3.0 解除安裝，然後安裝 NUnit 2.6.4。
 
 
-1. **啟動 NuGet 套件管理員主控台** - 選取 [工具] > [NuGet 套件管理員] > [套件管理員主控台]：
+1. **啟動 NuGet 套件管理員主控台** - 選取 [工具] > [NuGet 套件管理員] > [套件管理員主控台]  ：
 
     [![](installing-nunit-using-nuget-images/package-manager-console.png "啟動 NuGet 套件管理員主控台 - 選取 [工具]  [NuGet 套件管理員]  [套件管理員主控台]")](installing-nunit-using-nuget-images/package-manager-console.png#lightbox)
     
@@ -84,25 +84,29 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 
 1. **將 NUnit 3.0 解除安裝** - 使用 `Uninstall-Package` 指令程式來將 NUnit 3.0 解除安裝：
 
-        <PM> Uninstall-Package NUnit -Project <TEST PROJECT NAME>
-        Attempting to gather dependencies information for package 'NUnit.3.0.1' with respect to project '<TEST PROJECT NAME>', targeting '.NETFramework,Version=v4.5'
-        Resolving actions to uninstall package 'NUnit.3.0.1'
-        Resolved actions to uninstall package 'NUnit.3.0.1'
-        Removed package 'NUnit.3.0.1' from 'packages.config'
-        Successfully uninstalled 'NUnit.3.0.1' from <TEST PROJECT NAME>
+    ```
+    <PM> Uninstall-Package NUnit -Project <TEST PROJECT NAME>
+    Attempting to gather dependencies information for package 'NUnit.3.0.1' with respect to project '<TEST PROJECT NAME>', targeting '.NETFramework,Version=v4.5'
+    Resolving actions to uninstall package 'NUnit.3.0.1'
+    Resolved actions to uninstall package 'NUnit.3.0.1'
+    Removed package 'NUnit.3.0.1' from 'packages.config'
+    Successfully uninstalled 'NUnit.3.0.1' from <TEST PROJECT NAME>
+    ```
 
 1. **安裝 NUnit 2.6.4** - 使用 `Install-Package` 指令程式來安裝 Nunit 2.6.4，如下列程式碼片段所示：
 
-        <PM> Install-Package NUnit -Version 2.6.4 -Project <TEST PROJECT NAME>
-        Attempting to gather dependencies information for package 'NUnit.2.6.4' with respect to project '<TEST PROJECT NAME>', targeting '.NETFramework,Version=v4.5'
-        Attempting to resolve dependencies for package 'NUnit.2.6.4' with DependencyBehavior 'Lowest'
-        Resolving actions to install package 'NUnit.2.6.4'
-        Resolved actions to install package 'NUnit.2.6.4'
-        Adding package 'NUnit.2.6.4' to folder 'Z:\Desktop\DowngradeNunit\packages'
-        Added package 'NUnit.2.6.4' to folder 'Z:\Desktop\DowngradeNunit\packages'
-        Added package 'NUnit.2.6.4' to 'packages.config'
-        Successfully installed 'NUnit 2.6.4' to <TEST PROJECT NAME>
-    
+    ```
+    <PM> Install-Package NUnit -Version 2.6.4 -Project <TEST PROJECT NAME>
+    Attempting to gather dependencies information for package 'NUnit.2.6.4' with respect to project '<TEST PROJECT NAME>', targeting '.NETFramework,Version=v4.5'
+    Attempting to resolve dependencies for package 'NUnit.2.6.4' with DependencyBehavior 'Lowest'
+    Resolving actions to install package 'NUnit.2.6.4'
+    Resolved actions to install package 'NUnit.2.6.4'
+    Adding package 'NUnit.2.6.4' to folder 'Z:\Desktop\DowngradeNunit\packages'
+    Added package 'NUnit.2.6.4' to folder 'Z:\Desktop\DowngradeNunit\packages'
+    Added package 'NUnit.2.6.4' to 'packages.config'
+    Successfully installed 'NUnit 2.6.4' to <TEST PROJECT NAME>
+    ```
+
 ## <a name="summary"></a>總結
 
 本指南會討論如何在 Visual Studio 2015 或更新版本中使用套件管理員主控台將 NUnit 3.0 降級至 NUnit 2.6.4。

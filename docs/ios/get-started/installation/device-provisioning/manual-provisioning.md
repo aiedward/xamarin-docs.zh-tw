@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/15/2017
-ms.openlocfilehash: ce48296ab6e979241630fe8d039ba6b284eed5dc
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 993588a46c8d7048c7494908d6f59a5bbe2ddda6
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865887"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526627"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手動佈建
 
@@ -193,14 +193,14 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 在 Apple Developer Portal (Apple 開發人員入口網站) 中建立的憑證和佈建設定檔可能不會自動顯示在 Xcode 中。 因此，可能必須下載它們，如此 Visual Studio for Mac 和 Visual Studio 才能存取它們。 若要更新和下載在 Apple Developer Portal (Apple 開發人員入口網站) 中建立的任何憑證，請執行下列動作：
 
-1.   結束 Visual Studio for Mac 或 Visual Studio。
-2.   啟動 Xcode。
-3.   選擇 [Xcode] 功能表 > [Preferences...] \(偏好設定\) 
-4.   按一下 [Accounts] \(帳戶\)  索引標籤。
-5.   選取一個小組，然後按一下 [Download Manual Profiles] \(下載手動設定檔\)  按鈕：[![](manual-provisioning-images/selectteam1.png "下載手動設定檔")](manual-provisioning-images/selectteam1.png#lightbox)
+1. 結束 Visual Studio for Mac 或 Visual Studio。
+2. 啟動 Xcode。
+3. 選擇 [Xcode] 功能表 > [Preferences...] \(偏好設定\) 
+4. 按一下 [Accounts] \(帳戶\)  索引標籤。
+5. 選取一個小組，然後按一下 [Download Manual Profiles] \(下載手動設定檔\)  按鈕：[![](manual-provisioning-images/selectteam1.png "下載手動設定檔")](manual-provisioning-images/selectteam1.png#lightbox)
 
-6.   結束 Xcode。
-7.  啟動 Visual Studio for Mac 或 Visual Studio。
+6. 結束 Xcode。
+7. 啟動 Visual Studio for Mac 或 Visual Studio。
 
 新憑證或佈建設定檔將會出現在 Visual Studio for Mac 或 Visual Studio 中，並已可供使用。
 

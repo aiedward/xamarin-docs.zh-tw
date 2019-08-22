@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: 1d900a7a3fc1bfabc9498852fa37579f5d5a4615
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 0016a26ea7e44b64154eae9b503c2d726626e73f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645246"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890412"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – 快速入門
 
@@ -450,6 +450,7 @@ Xamarin.iOS 可與下列設定搭配運作：
             }
     };
     ```
+
     如果檔案的命名空間不同，請包含 `using Phoneword;`。
 
 1. 新增程式碼來回應按下第二個名為 `CallButton` 之按鈕的使用者。 將下列程式碼放置於 `TranslateButton` 的程式碼底下，然後在檔案頂端新增 `using Foundation;`：

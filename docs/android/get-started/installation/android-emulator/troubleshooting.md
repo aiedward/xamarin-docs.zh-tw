@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5f8d977c126cfe4bdfdb48470841ee17de6bda31
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 421d51cbb1ae3adb80aef6e4bf3cf1da38d6de8e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117729"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887827"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator 疑難排解
 
@@ -29,7 +29,7 @@ _本文描述設定及執行 Android Emulator 時所發生的最常見警告訊�
 
 如果您看到有關無法在模擬器上安裝 APK 或無法執行 Android Debug Bridge (**adb**) 的錯誤，請確認 Android SDK 可連線至您的模擬器。 若要確認模擬器連線，請使用下列步驟：
 
-1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動])。
+1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動]  )。
 
 2. 開啟命令提示字元，然後移至安裝 **adb** 的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
 
@@ -39,19 +39,19 @@ _本文描述設定及執行 Android Emulator 時所發生的最常見警告訊�
    adb devices
    ```
 
-4. 如果可從 Android SDK 存取模擬器，模擬器應該會顯示在連接的裝置清單中。 例如: 
+4. 如果可從 Android SDK 存取模擬器，模擬器應該會顯示在連接的裝置清單中。 例如：
 
    ```shell
    List of devices attached
    emulator-5554   device
    ```
 
-5. 如果模擬器未出現在此清單中，請啟動 [Android SDK 管理員]、套用所有更新，然後重新嘗試啟動模擬器。
+5. 如果模擬器未出現在此清單中，請啟動 [Android SDK 管理員]  、套用所有更新，然後重新嘗試啟動模擬器。
 
 
 ### <a name="mmio-access-error"></a>MMIO 存取錯誤
 
-若顯示 [發生 MMIO 存取錯誤] 訊息，請重新啟動模擬器。
+若顯示 [發生 MMIO 存取錯誤]  訊息，請重新啟動模擬器。
 
 
 <a name="gps-win" />
@@ -152,11 +152,11 @@ VT feature disabled in BIOS/UEFI
 
 ### <a name="hyper-v-issues"></a>Hyper-V 問題
 
-在某些情況下，在 [開啟或關閉 Windows 功能] 對話方塊中同時啟用 **Hyper-V** 和 **Windows Hypervisor 平台**可能會無法適當地啟用 Hyper-V。 若要確認是否已啟用 Hyper-V，請使用下列步驟：
+在某些情況下，在 [開啟或關閉 Windows 功能]  對話方塊中同時啟用 **Hyper-V** 和 **Windows Hypervisor 平台**可能會無法適當地啟用 Hyper-V。 若要確認是否已啟用 Hyper-V，請使用下列步驟：
 
 1. 在 Windows 搜尋方塊中，輸入 **powershell**。
 
-2. 以滑鼠右鍵按一下搜尋結果中的 **Windows PowerShell**，然後選取 [以系統管理員身分執行]。
+2. 以滑鼠右鍵按一下搜尋結果中的 **Windows PowerShell**，然後選取 [以系統管理員身分執行]  。
 
 3. 在 PowerShell 主控台中，輸入下列命令：
 
@@ -164,7 +164,7 @@ VT feature disabled in BIOS/UEFI
     Get-WindowsOptionalFeature -FeatureName Microsoft-Hyper-V-All -Online
     ```
 
-    如果未啟用 Hyper-V，則會顯示類似下列範例的訊息，指出 Hyper-V 的狀態為 [已停用]：
+    如果未啟用 Hyper-V，則會顯示類似下列範例的訊息，指出 Hyper-V 的狀態為 [已停用]  ：
 
     ```
     FeatureName      : Microsoft-Hyper-V-All
@@ -180,7 +180,8 @@ VT feature disabled in BIOS/UEFI
     ```powershell
     Get-WindowsOptionalFeature -FeatureName HypervisorPlatform -Online
     ```
-    如果未啟用 Hypervisor，則會顯示類似下列範例的訊息，指出 Hypervisor 平台的狀態為 [已停用]：
+
+    如果未啟用 Hypervisor，則會顯示類似下列範例的訊息，指出 Hypervisor 平台的狀態為 [已停用]  ：
 
     ```
     FeatureName      : HypervisorPlatform
@@ -260,9 +261,9 @@ HAXM 可能與其他使用虛擬化的技術發生衝突，例如 Hyper-V、Wind
 
 您可以遵循下列步驟從控制台停用 Hyper-V：
 
-1. 在 Windows 搜尋方塊中輸入 **Windows 功能**，然後在搜尋結果中選取 [開啟或關閉 Windows 功能]。
+1. 在 Windows 搜尋方塊中輸入 **Windows 功能**，然後在搜尋結果中選取 [開啟或關閉 Windows 功能]  。
 
-2. 取消核取 [Hyper-V]：
+2. 取消核取 [Hyper-V]  ：
 
     ![正在 [Windows 功能] 對話方塊中停用 Hyper-V](troubleshooting-images/win/03-uncheck-hyper-v.png)
 
@@ -282,36 +283,38 @@ Intel HAXM 和 Microsoft Hyper-V 不可同時啟動。 不幸的是，不重新�
 
 Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyper-V。 此情況通常會發生在已加入網域且由組織進行設定和控制的電腦上。 在 Windows 10 上，使用下列步驟來查看 **Device Guard** 是否正在執行：
 
-1. 在 Windows 搜尋方塊中輸入**系統資訊**，然後在搜尋結果中選取 [系統資訊]。
+1. 在 Windows 搜尋方塊中輸入**系統資訊**，然後在搜尋結果中選取 [系統資訊]  。
 
-2. 在 [系統摘要] 中，查看 [Device Guard 虛擬化型安全性] 是否存在且處於 [執行中] 狀態：
+2. 在 [系統摘要]  中，查看 [Device Guard 虛擬化型安全性]  是否存在且處於 [執行中]  狀態：
 
    [![Device Guard 存在且正在執行](troubleshooting-images/win/04-device-guard-sml.png)](troubleshooting-images/win/04-device-guard.png#lightbox)
 
 如果已啟用 Device Guard，請使用下列步驟來停用它：
 
-1. 確認 [Hyper-V] 已停用 (位於 [開啟或關閉 Windows 功能] 下方)，如上一節所述。
+1. 確認 [Hyper-V]  已停用 (位於 [開啟或關閉 Windows 功能]  下方)，如上一節所述。
 
-2. 在 Windows 搜尋方塊中，輸入 **gpedit**，然後選取 [編輯群組原則] 搜尋結果。 這些步驟會啟動 [本機群組原則編輯器]。
+2. 在 Windows 搜尋方塊中，輸入 **gpedit**，然後選取 [編輯群組原則]  搜尋結果。 這些步驟會啟動 [本機群組原則編輯器]  。
 
-3. 在 [本機群組原則編輯器] 中，瀏覽至 [電腦設定] > [系統管理範本] > [系統] > [Device Guard]：
+3. 在 [本機群組原則編輯器]  中，瀏覽至 [電腦設定] > [系統管理範本] > [系統] > [Device Guard]  ：
 
    [![[本機群組原則編輯器] 中的 Device Guard](troubleshooting-images/win/05-group-policy-editor-sml.png)](troubleshooting-images/win/05-group-policy-editor.png#lightbox)
 
-4. 將 [開啟虛擬化型安全性] 變更為 [已停用] (如上所示)，然後結束 [本機群組原則編輯器]。
+4. 將 [開啟虛擬化型安全性]  變更為 [已停用]  (如上所示)，然後結束 [本機群組原則編輯器]  。
 
-5. 在 Windows 搜尋方塊中，輸入 **cmd**。 當 [命令提示字元] 在搜尋結果中出現時，以滑鼠右鍵按一下 [命令提示字元]，然後選取 [以系統管理員身分執行]。
+5. 在 Windows 搜尋方塊中，輸入 **cmd**。 當 [命令提示字元]  在搜尋結果中出現時，以滑鼠右鍵按一下 [命令提示字元]  ，然後選取 [以系統管理員身分執行]  。
 
 6. 複製下列命令，並將之貼入命令提示字元視窗 (如果磁碟機 **Z:** 正在使用中，請改為挑選未使用的磁碟機代號)：
 
-        mountvol Z: /s
-        copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
-        bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
-        bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
-        bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
-        mountvol Z: /d
+    ```cmd
+    mountvol Z: /s
+    copy %WINDIR%\System32\SecConfig.efi Z:\EFI\Microsoft\Boot\SecConfig.efi /Y
+    bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
+    bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
+    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=Z:
+    mountvol Z: /d
+    ```
 
 7. 重新啟動電腦。 在開機畫面上，您應該會看到類似下列訊息的提示：
 
@@ -374,7 +377,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 如果您看到有關無法在模擬器上安裝 APK 或無法執行 Android Debug Bridge (**adb**) 的錯誤，請確認 Android SDK 可連線至您的模擬器。 若要確認連線，請使用下列步驟：
 
-1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動])。
+1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動]  )。
 
 2. 開啟命令提示字元，然後移至安裝 **adb** 的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
 
@@ -384,19 +387,19 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
    adb devices
    ```
 
-4. 如果可從 Android SDK 存取模擬器，模擬器應該會顯示在連接的裝置清單中。 例如: 
+4. 如果可從 Android SDK 存取模擬器，模擬器應該會顯示在連接的裝置清單中。 例如：
 
    ```shell
    List of devices attached
    emulator-5554   device
    ```
 
-5. 如果模擬器未出現在此清單中，請啟動 [Android SDK 管理員]、套用所有更新，然後重新嘗試啟動模擬器。
+5. 如果模擬器未出現在此清單中，請啟動 [Android SDK 管理員]  、套用所有更新，然後重新嘗試啟動模擬器。
 
 
 ### <a name="mmio-access-error"></a>MMIO 存取錯誤
 
-如果顯示 [發生 MMIO 存取錯誤]，請重新啟動模擬器。
+如果顯示 [發生 MMIO 存取錯誤]  ，請重新啟動模擬器。
 
 <a name="gps-mac" />
 
@@ -429,7 +432,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 ### <a name="hardware-acceleration-is-not-enabled"></a>未啟用硬體加速
 
-如果未啟用硬體加速，當您將應用程式部署至 Android Emulator 時，則會快顯包含訊息的對話方塊，例如 [裝置會在未加速狀態下執行]。 如果您不確定電腦上是否已啟用硬體加速 (或您想要了解哪個技術提供加速)，請參閱下面的[硬體加速問題](#accel-issues-mac)，以了解您可以採取哪些步驟來確認及啟用硬體加速。
+如果未啟用硬體加速，當您將應用程式部署至 Android Emulator 時，則會快顯包含訊息的對話方塊，例如 [裝置會在未加速狀態下執行]  。 如果您不確定電腦上是否已啟用硬體加速 (或您想要了解哪個技術提供加速)，請參閱下面的[硬體加速問題](#accel-issues-mac)，以了解您可以採取哪些步驟來確認及啟用硬體加速。
 
 
 ### <a name="acceleration-is-enabled-but-the-emulator-runs-too-slowly"></a>已啟用加速但模擬器執行速度太慢 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
-ms.openlocfilehash: b1f2dbe87fed951223e731912b696c649d0b6edb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 11ad1fb18d1263eb77ef037350a3633510934c42
+ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647196"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621092"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
@@ -366,5 +366,5 @@ public class TitleViewPage : ContentPage
 - [Passing Data (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata) (傳遞資料 (範例))
 - [LoginFlow (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
 - [Title View (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview) (標題檢視 (範例))
-- [如何在 Xamarin.Forms 中建立登入畫面流程影片](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms) \(英文\)
+- [如何在 Xamarin.Forms 中建立登入畫面流程影片](https://www.youtube.com/watch?v=qKQ7pyyG1fo) \(英文\)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)
