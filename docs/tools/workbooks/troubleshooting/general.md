@@ -1,70 +1,71 @@
 ---
-title: 已知的問題與因應措施
-description: 本文件將說明 Xamarin 活頁簿的已知的問題和因應措施。 它討論 CultureInfo 問題、 JSON 問題和更多功能。
+title: 已知問題 & 因應措施
+description: 本檔說明 Xamarin Workbooks 的已知問題和因應措施。 其中討論了 CultureInfo 問題、JSON 問題等等。
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 221ed97db17da62f513448b6c85d4df205a7cbaf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 21f61b4504367dafc2907fd6471af333f636b521
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61268869"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889394"
 ---
-# <a name="known-issues--workarounds"></a>已知的問題與因應措施
+# <a name="known-issues--workarounds"></a>已知問題 & 因應措施
 
-## <a name="persistence-of-cultureinfo-across-cells"></a>儲存格之間的持續性的 CultureInfo
+## <a name="persistence-of-cultureinfo-across-cells"></a>資料格之間的 CultureInfo 持續性
 
-設定`System.Threading.CurrentThread.CurrentCulture`或是`System.Globalization.CultureInfo.CurrentCulture`不會保存在 Mono 為基礎的活頁簿目標 （Mac、 iOS 和 Android） 上的活頁簿資料格之間由於[在 Mono 中的 bug `AppContext.SetSwitch` ] [ appcontext-bug]實作.
+設定`System.Threading.CurrentThread.CurrentCulture` 或`System.Globalization.CultureInfo.CurrentCulture`不會保存在 mono 型活頁簿 (Mac、iOS 和 Android) 上的活頁簿資料格, 因為[mono `AppContext.SetSwitch`的執行中有錯誤][appcontext-bug]。
 
 ### <a name="workarounds"></a>替代解決辦法
 
-* 設定應用程式的網域本機`DefaultThreadCurrentCulture`:
+* 設定應用程式-網域-本機`DefaultThreadCurrentCulture`:
+
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* 或更新活頁簿 1.2.1 或更新版本，這將會重寫指派給`System.Threading.CurrentThread.CurrentCulture`和`System.Globalization.CultureInfo.CurrentCulture`提供所要的行為 （解決 Mono 的 bug）。
+* 或者, 更新至活頁簿1.2.1 或更新版本, 這會將`System.Threading.CurrentThread.CurrentCulture`指派`System.Globalization.CultureInfo.CurrentCulture`重寫至和, 以提供所需的行為 (解決 Mono 錯誤)。
 
-## <a name="unable-to-use-newtonsoftjson"></a>無法使用 Newtonsoft.Json
+## <a name="unable-to-use-newtonsoftjson"></a>無法使用 Newtonsoft
 
 ### <a name="workaround"></a>因應措施
 
-* 更新活頁簿 1.2.1，如此便會安裝 Newtonsoft.Json 9.0.1 （英文)。
-  1.3 的活頁簿目前處於 alpha 色板，支援 10 及更新版本的版本。
+* 更新為1.2.1 版的活頁簿, 將會安裝 Newtonsoft 9.0.1。
+  目前在 Alpha 通道中的活頁簿1.3 支援10和更新版本。
 
 ### <a name="details"></a>詳細資料
 
-這藉其相依性 Microsoft.CSharp 互相衝突的活頁簿發行支援發行 Newtonsoft.Json 10 `dynamic`。 為解決此問題在活頁簿 1.3 預覽版本中，但現在，我們已解決這個問題的釘選的 Newtonsoft.Json，專為版本 9.0.1 （英文）。
+已發行 Newtonsoft, 其 i 藉相依于與支援`dynamic`的活頁簿版本相衝突的 Microsoft CSharp。 這在活頁簿 1.3 preview 版本中已解決, 但現在我們已藉由將 Newtonsoft 特別釘選至9.0.1 版來解決此問題。
 
-明確地根據 Newtonsoft.Json 10 或更新版本的 NuGet 套件只支援活頁簿 1.3 中目前處於 alpha 色板。
+NuGet 套件會根據 Newtonsoft 明確地進行, 只有在目前位於 Alpha 色板的活頁簿1.3 中才支援。
 
-## <a name="code-tooltips-are-blank"></a>程式碼的工具提示則空白
+## <a name="code-tooltips-are-blank"></a>程式碼工具提示空白
 
-沒有[摩納哥編輯器中的 bug] [ monaco-bug]在 Safari/WebKit，用 Mac 活頁簿應用程式中，這會導致程式碼不包含文字的工具提示呈現。
+Safari/WebKit 中的[摩納哥編輯器][monaco-bug]中有一個 bug, 用於 Mac 活頁簿應用程式, 這會導致程式碼工具提示不使用文字呈現。
 
 ![](general-images/monaco-signature-help-bug.png)
 
 ### <a name="workaround"></a>因應措施
 
-* 按一下之後它會出現工具提示會強制要呈現的文字。
+* 在工具提示出現之後按一下它, 將會強制文字呈現。
 
-* 或更新活頁簿 1.2.1 或更新版本
+* 或更新為1.2.1 或更新版本的活頁簿
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
 
-## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>SkiaSharp 轉譯器為活頁簿 1.3 中遺失
+## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>活頁簿1.3 中遺漏 SkiaSharp 轉譯器
 
-從活頁簿 1.3 開始，我們已移除我們隨附 SkiaSharp 轉譯器中的活頁簿 0.99.0，改用 SkiaSharp 本身提供的轉譯器，請使用我們[SDK](~/tools/workbooks/sdk/index.md)。
+從活頁簿1.3 開始, 我們移除了在 [活頁簿] 0.99.0 中所提供的 SkiaSharp 轉譯器, 而是使用我們的[SDK](~/tools/workbooks/sdk/index.md), 以 SkiaSharp 提供轉譯器本身。
 
 ### <a name="workaround"></a>因應措施
 
-* 在 NuGet 中的最新版本更新 SkiaSharp。 在撰寫本文時，這是 1.57.1。
+* 將 SkiaSharp 更新為 NuGet 中的最新版本。 在撰寫本文時, 這是1.57.1。
 
 ## <a name="related-links"></a>相關連結
 
-- [回報 Bug](~/tools/workbooks/install.md#reporting-bugs)
+- [報告錯誤](~/tools/workbooks/install.md#reporting-bugs)

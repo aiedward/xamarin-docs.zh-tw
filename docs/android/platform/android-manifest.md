@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: ef1ccd07eb4807cd84094cad1200d8a1ed7cea8b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 1aaacae8cebed2396661a28c189af44c25238e7b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524691"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887834"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
 
@@ -148,7 +148,7 @@ public class MyActivity : Activity
 ```
 
 
-### <a name="permissions"></a>權限
+### <a name="permissions"></a>Permissions
 
 當您將許可權新增至 Android 資訊清單時 (如[將許可權新增至 Android 資訊清單](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)中所述), 這些許可權會記錄在**Properties/androidmanifest.xml**中。 例如, 如果您設定`INTERNET`許可權, 下列元素會新增至**Properties/androidmanifest.xml**: 
 
@@ -227,6 +227,7 @@ Android 資訊清單也提供一種方式, 讓您宣告整個應用程式的屬�
              android:theme="@android:style/Theme.Light"
                 ... />
 ```
+
 在此範例中, 應用程式中的所有活動都會預設`Theme.Light`為樣式。 如果您將活動的主題設定為`Theme.Dialog`, 則只有該活動會`Theme.Dialog`使用樣式, 而應用程式中的所有其他活動都會預設`Theme.Light`為專案中`<application>`設定的樣式。 
 
 元素不是設定`<application>`屬性的唯一方法。 `Application` 或者, 您也可以將屬性直接插入`<application>` **Properties/androidmanifest.xml**的元素中。 這些設定會合並到位於`<application>` **obj/Debug/android/androidmanifest.xml**中的最後一個元素。 請注意, **Properties/androidmanifest.xml**的內容一律會覆寫自訂屬性所提供的資料。 

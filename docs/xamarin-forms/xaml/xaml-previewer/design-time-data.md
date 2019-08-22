@@ -1,26 +1,26 @@
 ---
-title: 使用 XAML 預覽程式的設計階段資料
-description: 這篇文章說明如何使用以 XAML 預覽程式中顯示大量資料的版面配置，而不需執行您的應用程式的設計階段資料。
+title: 將設計階段資料與 XAML 預覽器搭配使用
+description: 本文說明如何使用設計階段資料, 在 XAML 預覽程式中顯示資料繁重的配置, 而不需要執行您的應用程式。
 ms.prod: xamarin
 ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 60074c3c1b69a57d313ad0243246ba6db93dde3d
-ms.sourcegitcommit: 0cb62b02a7efb5426f2356d7dbdfd9afd85f2f4a
+ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557427"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887846"
 ---
-# <a name="use-design-time-data-with-the-xaml-previewer"></a>使用 XAML 預覽程式的設計階段資料
+# <a name="use-design-time-data-with-the-xaml-previewer"></a>將設計階段資料與 XAML 預覽器搭配使用
 
-_某些版面配置是難想像沒有資料。若要充分利用預覽您的大量資料的頁面中 XAML 預覽程式中使用這些秘訣。_
+_有些版面配置難以視覺化而不會有資料。使用這些秘訣, 讓您充分利用 XAML 預覽程式中的資料繁重頁面。_
 
-## <a name="design-time-data-basics"></a>設計階段資料的基本概念
+## <a name="design-time-data-basics"></a>設計階段資料基本概念
 
-設計階段資料是假的資料，您將設定為在 XAML 預覽程式中更輕鬆地以視覺化方式檢視您的控制項。 若要開始，請將下列程式碼行加入 XAML 頁面的標頭：
+設計階段資料是您設定的假資料, 讓您的控制項更容易在 XAML 預覽程式中視覺化。 若要開始使用, 請將下列幾行程式碼新增至 XAML 頁面的標頭:
 
 ```xaml
 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -28,40 +28,41 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-新增命名空間之後, 您可以放入`d:`前面的任何屬性或其顯示在 XAML 預覽程式中的控制項。 具有項目`d:`不會顯示在執行階段。
+加入命名空間之後, 您可以將`d:`它放在任何屬性或控制項的前方, 以在 XAML 預覽中顯示它。 具有的`d:`專案不會在執行時間顯示。
 
-例如，您可以將文字加入通常具有資料繫結到它的標籤。
+例如, 您可以將文字新增至通常已系結資料的標籤。
 
 ```xaml
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![設計時間資料標籤中的文字](xaml-previewer-images/designtimedata-label-sm.png "設計時間的文字資料標籤")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![以標籤中的文字設計階段資料](xaml-previewer-images/designtimedata-label-sm.png "以文字加上標籤的設計階段資料")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-在此範例中，而不需要`d:Text`，XAML 預覽程式會顯示任何標籤。 相反地，它會顯示 「 名稱 」 ！ 其中的標籤會有在執行階段的實際資料。
+在此範例中, `d:Text`如果沒有, XAML 預覽程式將不會對標籤顯示任何內容。 相反地, 它會顯示「Name!」 其中的標籤在執行時間會有實際資料。
 
-您可以使用`d:`Xamarin.Forms 控制項，例如色彩、 字型大小、 和間距的任何屬性。 您甚至可以將它加入控制項本身：
+您可以將`d:`與任何屬性用於 Xamarin. form 控制項, 例如色彩、字型大小和間距。 您甚至可以將它新增至控制項本身:
 
 ```xaml
 <d:Button Text="Design Time Button" />
 ```
 
-[![設計階段資料與按鈕控制項](xaml-previewer-images/designtimedata-controls-sm.png "設計階段資料與按鈕控制項")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[![使用 Button 控制項設計階段資料](xaml-previewer-images/designtimedata-controls-sm.png "使用 Button 控制項設計階段資料")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
-在此範例中，按鈕才會出現在設計階段。 使用這個方法可放在預留位置[XAML 預覽程式不支援的自訂控制項](render-custom-controls.md)。
+在此範例中, 按鈕只會在設計階段出現。 您可以使用這個方法, 針對[XAML 預覽程式不支援的自訂控制項](render-custom-controls.md)放入中的預留位置。
 
 ## <a name="preview-images-at-design-time"></a>在設計階段預覽影像
 
-您可以設定設計時間來源所繫結至頁面，或以動態方式載入的映像。 在您的 Android 專案中，新增您想要在 XAML 預覽程式中顯示的映像**資源 > Drawable**資料夾。 在您的 iOS 專案中新增影像**資源**資料夾。 您接著可以在 XAML 預覽程式中顯示該映像，在設計階段：
+您可以設定系結至頁面或以動態方式載入之影像的設計階段來源。 在您的 Android 專案中, 將您想要在 XAML 預覽程式中顯示的影像新增至**資源 > 可繪製**資料夾。 在您的 iOS 專案中, 將影像新增至 [**資源**] 資料夾。 接著, 您可以在設計階段于 XAML 預覽程式中顯示該影像:
 
 ```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
-[![設計階段資料與映像](xaml-previewer-images/designtimedata-image-sm.png "設計 iamges 時間資料")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+
+[![以影像設計階段資料](xaml-previewer-images/designtimedata-image-sm.png "使用 Iamges 設計階段資料")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Listview 的設計階段資料
 
-Listview 是一種常見的方式顯示資料的行動應用程式。 不過，它們很難不包含實際的資料視覺化。 若要使用這些設計階段資料，您必須建立設計階段陣列作為 ItemsSource。 XAML 預覽程式會顯示功能的設計階段您 ListView 中的陣列。
+Listview 是在行動裝置應用程式中顯示資料的熱門方式。 不過, 如果沒有實際的資料, 就很容易將它們視覺化。 若要搭配使用設計階段資料, 您必須建立設計階段陣列做為 ItemsSource 使用。 XAML 預覽程式會在設計階段顯示 ListView 中該陣列的內容。
 
 ```xaml
 <StackLayout>
@@ -83,26 +84,26 @@ Listview 是一種常見的方式顯示資料的行動應用程式。 不過，�
 </StackLayout>
 ```
 
-[![設計時間資料的 ListView](xaml-previewer-images/designtimedata-itemssource-sm.png "設計時間資料的 ListView")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[![使用 ListView 設計階段資料](xaml-previewer-images/designtimedata-itemssource-sm.png "使用 ListView 設計階段資料")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-此範例中會顯示三個 TextCells 的 ListView 中 XAML 預覽程式。 您可以變更`x:String`到專案中現有的資料模型。
+這個範例會在 XAML 預覽器中顯示 ListView 的三個 TextCells。 您可以變更`x:String`為專案中現有的資料模型。
 
-請參閱[James Montemagno Hanselman.Forms 應用程式](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)更複雜的範例。
+如需更複雜的範例, 請參閱[James Montemagno 的 Hanselman 應用程式](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)。
 
-## <a name="alternative-hardcode-a-static-viewmodel"></a>替代程序：硬式編碼的靜態 ViewModel
+## <a name="alternative-hardcode-a-static-viewmodel"></a>判斷硬式編碼靜態 ViewModel
 
-如果您不想要新增為個別控制項的設計階段資料，您可以繫結至您的頁面設定的模擬 （mock） 的資料存放區。 請參閱 James Montemagno[新增設計階段資料的部落格文章](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)以了解如何將繫結至 XAML 中的靜態 ViewModel。
+如果您不想要將設計階段資料新增至個別控制項, 您可以設定模擬資料存放區來系結至您的頁面。 請參閱 James Montemagno 的[關於新增設計階段資料的 blog 文章](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data), 以瞭解如何在 XAML 中系結至靜態 ViewModel。
 
 ## <a name="troubleshooting"></a>疑難排解
 
 ### <a name="requirements"></a>需求
 
-設計階段資料需要的最低版本為 Xamarin.Forms 3.6。
+設計階段資料需要最小版本的 Xamarin. 表單3.6。
 
-### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense 會顯示曲線下的 我的設計階段資料
+### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense 在 [我的設計階段資料] 底下顯示波浪線
 
-這是已知的問題，而且會在下一版的 Visual Studio 中修正。 專案仍會建置無誤。
+這是已知的問題, 將會在即將推出的 Visual Studio 版本中修正。 專案仍會建立, 而不會發生錯誤。
 
-### <a name="the-xaml-previewer-stopped-working"></a>XAML 預覽程式停止運作
+### <a name="the-xaml-previewer-stopped-working"></a>XAML 預覽器已停止運作
 
-請嘗試關閉並重新開啟 XAML 檔案，並清除和重建您的專案。
+請嘗試關閉並重新開啟 XAML 檔案, 並清除和重建您的專案。

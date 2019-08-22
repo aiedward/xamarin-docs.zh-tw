@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 32cb0e376646478ad01a6ea7784094d23529b0b4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d700aa8c0744d08e6536614b8cb8b024a99c84e1
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528616"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889797"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>以 Xamarin 中的資料填入資料表
 
@@ -109,6 +109,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 ```csharp
 HomeScreen owner;
 ```
+
 將函式新增至 UITableViewSource 類別, 它會採用 view controller 做為參數, 並將它儲存在欄位中:
 
 ```csharp
@@ -119,11 +120,13 @@ public TableSource (string[] items, HomeScreen owner)
 
 }
 ```
+
 修改建立 UITableViewSource 類別的 ViewDidLoad 方法, 以傳遞`this`參考:
 
 ```csharp
 table.Source = new TableSource(tableItems, this);
 ```
+
 最後, 回到您`RowSelected`的方法, 在快取的欄位上呼叫: `PresentViewController`
 
 ```csharp

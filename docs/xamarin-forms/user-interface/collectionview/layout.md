@@ -6,19 +6,19 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/01/2019
-ms.openlocfilehash: 5fb92882f443007e5b3dd693f54e582757db1905
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/12/2019
+ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739027"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888660"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin. Forms CollectionView 版面配置
 
 ![](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義下列控制配置的屬性:
 
@@ -105,16 +105,12 @@ ms.locfileid: "68739027"
 </CollectionView>
 ```
 
-或者, 也[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)可以藉由將屬性設定為[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)類別的物件, 並將[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定`Vertical`為引數, 來完成這項作業:
+或者, 也可以藉[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)由將屬性設定為[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)類別的物件, 並將[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定`Vertical`為`Orientation`屬性值, 來完成這項作業:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
     <CollectionView.ItemsLayout>
-        <ListItemsLayout>
-            <x:Arguments>
-                <ItemsLayoutOrientation>Vertical</ItemsLayoutOrientation>    
-            </x:Arguments>
-        </ListItemsLayout>
+        <ListItemsLayout Orientation="Vertical" />
     </CollectionView.ItemsLayout>
     ...
 </CollectionView>
@@ -173,16 +169,12 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-或者, 也可以[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)藉由將屬性設定[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)為物件, 將[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定`Horizontal`為引數, 來完成這項作業:
+或者, 也可以藉[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)由將屬性設定為[`ListItemsLayout`](xref:Xamarin.Forms.ListItemsLayout)類別的物件, 並將[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定`Horizontal`為`Orientation`屬性值, 來完成這項作業:
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
     <CollectionView.ItemsLayout>
-        <ListItemsLayout>
-            <x:Arguments>
-                <ItemsLayoutOrientation>Horizontal</ItemsLayoutOrientation>    
-            </x:Arguments>
-        </ListItemsLayout>
+        <ListItemsLayout Orientation="Horizontal" />
     </CollectionView.ItemsLayout>
     ...
 </CollectionView>
@@ -313,6 +305,147 @@ CollectionView collectionView = new CollectionView
 根據預設, 水準[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)會顯示單一資料列中的專案。 不過, 此範例會將`GridItemsLayout.Span`屬性設定為4。 這會產生四個數據列的方格, 這會在新增新專案時水準成長:
 
 [ ![CollectionView 水準格線版面配置的螢幕擷取畫面, 在 IOS 和 Android 上](layout-images/horizontal-grid.png "CollectionView 水準方格版面")]配置(layout-images/horizontal-grid-large.png#lightbox "CollectionView 水準格線版面")配置
+
+## <a name="headers-and-footers"></a>頁首和頁尾
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以呈現使用清單中的專案來滾動的頁首和頁尾。 頁首和頁尾可以是字串、views 或[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)物件。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義用來指定頁首和頁尾的下列屬性:
+
+- `Header`, 屬於類型`object`, 可指定要在清單開頭顯示的字串、系結或查看。
+- `HeaderTemplate`, 屬於類型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate), `DataTemplate`可指定要用來格式化的`Header`。
+- `Footer`, 屬於類型`object`, 可指定要顯示在清單結尾的字串、系結或查看。
+- `FooterTemplate`, 屬於類型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate), `DataTemplate`可指定要用來格式化的`Footer`。
+
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這表示屬性可以是資料系結的目標。
+
+> [!IMPORTANT]
+> 目前只有 Android 支援頁首和頁尾。
+
+當標頭加入至水準成長的版面配置時 (從左至右), 標題會顯示在清單的左邊。 同樣地, 當頁尾加入至水準成長的版面配置時 (從左至右), 頁尾會顯示在清單的右邊。
+
+### <a name="display-strings-in-the-header-and-footer"></a>在頁首和頁尾中顯示字串
+
+和屬性可以設定為`string`值, 如下列範例所示: `Footer` `Header`
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                Header="Monkeys"
+                Footer="2019">
+    ...
+</CollectionView>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    Header = "Monkeys",
+    Footer = "2019"
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+### <a name="display-views-in-the-header-and-footer"></a>在頁首和頁尾中顯示 views
+
+`Header` 和`Footer`屬性可以設定為一個視圖。 這可以是單一視圖, 或包含多個子視圖的視圖。 `Header`下列範例顯示每個設定`Footer`為包含[`Label`](xref:Xamarin.Forms.Label)物件之[`StackLayout`](xref:Xamarin.Forms.StackLayout)物件的和屬性:
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.Header>
+        <StackLayout BackgroundColor="LightGray">
+            <Label Margin="10,0,0,0"
+                   Text="Monkeys"
+                   FontSize="Small"
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </CollectionView.Header>
+    <CollectionView.Footer>
+        <StackLayout BackgroundColor="LightGray">
+            <Label Margin="10,0,0,0"
+                   Text="Friends of Xamarin Monkey"
+                   FontSize="Small"
+                   FontAttributes="Bold" />
+        </StackLayout>
+    </CollectionView.Footer>
+    ...
+</CollectionView>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    Header = new StackLayout
+    {
+        Children =
+        {
+            new Label { Text = "Monkeys", ... }
+        }
+    },
+    Footer = new StackLayout
+    {
+        Children =
+        {
+            new Label { Text = "Friends of Xamarin Monkey", ... }
+        }
+    }
+};
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
+
+### <a name="display-a-templated-header-and-footer"></a>顯示樣板化頁首和頁尾
+
+和屬性可以設定為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)用來格式化頁首和頁尾的物件。 `FooterTemplate` `HeaderTemplate` 在此案例中, `Header`和`Footer`屬性必須系結至要套用之範本的目前來源, 如下列範例所示:
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}"
+                Header="{Binding .}"
+                Footer="{Binding .}">
+    <CollectionView.HeaderTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="LightGray">
+                <Label Margin="10,0,0,0"
+                       Text="Monkeys"
+                       FontSize="Small"
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </DataTemplate>
+    </CollectionView.HeaderTemplate>
+    <CollectionView.FooterTemplate>
+        <DataTemplate>
+            <StackLayout BackgroundColor="LightGray">
+                <Label Margin="10,0,0,0"
+                       Text="Friends of Xamarin Monkey"
+                       FontSize="Small"
+                       FontAttributes="Bold" />
+            </StackLayout>
+        </DataTemplate>
+    </CollectionView.FooterTemplate>
+    ...
+</CollectionView>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    HeaderTemplate = new DataTemplate(() =>
+    {
+        return new StackLayout { };
+    }),
+    FooterTemplate = new DataTemplate(() =>
+    {
+        return new StackLayout { };
+    })
+};
+collectionView.SetBinding(ItemsView.HeaderProperty, ".");
+collectionView.SetBinding(ItemsView.FooterProperty, ".");
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+```
 
 ## <a name="item-spacing"></a>專案間距
 

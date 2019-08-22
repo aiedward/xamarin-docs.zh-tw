@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2018
-ms.openlocfilehash: f25ce3c5bfe7e3d8032709e9df99e7538e978862
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 53dce7cc6cc614cde252aa34248fa299c89fafa3
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523422"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887713"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何將 Android NUnit 測試專案自動化？
 
@@ -86,6 +86,7 @@ adb shell am instrument
     ```shell
     msbuild /t:RunTests Project.csproj
     ```
+
     (請注意, 不需要使用這個新的目標, `adb` `msbuild`而可以使用先前的命令, 而不是)。
 
 如需使用`adb shell am instrument`命令執行單元測試的詳細資訊, 請參閱 < 使用[ADB 執行測試](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)的 Android 開發人員主題。

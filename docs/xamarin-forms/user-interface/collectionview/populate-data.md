@@ -6,19 +6,19 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: ce745109ea2852b597de3a8a5922a171ad83e289
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/13/2019
+ms.openlocfilehash: 6942baed6af2a2e9b2c713a8fe08cf4c8ed4416b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738910"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888539"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin. 表單 CollectionView 資料
 
 ![](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義下列定義要顯示之資料的屬性, 以及其外觀:
 
@@ -26,6 +26,11 @@ ms.locfileid: "68738910"
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate), 屬於類型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate), 可指定要套用至要顯示的專案集合中每個專案的範本。
 
 這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這表示屬性可以是資料系結的目標。
+
+> [!NOTE]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義屬性, 代表將`CollectionView`新專案加入其中時的滾動行為。 `ItemsUpdatingScrollMode` 如需這個屬性的詳細資訊, 請參閱[在新增新專案時控制捲軸位置](scrolling.md#control-scroll-position-when-new-items-are-added)。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)也可以在使用者滾動時, 以累加方式載入資料。 如需詳細資訊, 請參閱[以累加方式載入資料](#load-data-incrementally)。
 
 ## <a name="populate-a-collectionview-with-data"></a>在 CollectionView 中填入資料
 
@@ -90,10 +95,10 @@ CollectionView collectionView = new CollectionView();
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-在此範例中, [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性資料會系結`Monkeys`至已連接之視圖模型的屬性。
+在此範例中, [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性資料會系結`Monkeys`至已連接之 viewmodel 的屬性。
 
 > [!NOTE]
-> 可以啟用編譯的系結, 以改善 Xamarin 中的資料系結效能。 如需詳細資訊, 請參閱[編譯](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)的系結。
+> 可以啟用編譯的系結, 以改善 Xamarin 中的資料系結效能。 如需詳細資訊，請參閱[編譯繫結](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)。
 
 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
@@ -245,9 +250,59 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 > [!IMPORTANT]
 > 使用[`CollectionView`](xref:Xamarin.Forms.CollectionView)時, 絕對不會將[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)物件的根項目設定為`ViewCell`。 這會導致擲回例外狀況, 因為`CollectionView`沒有資料格的概念。
 
+## <a name="load-data-incrementally"></a>以累加方式載入資料
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)當使用者透過專案滾動時, 支援以累加方式載入資料。 這可讓您在使用者滾動時, 從 web 服務以非同步方式載入資料頁等案例。 此外, 您可以設定載入更多資料的時間點, 讓使用者看不到空白空間, 或停止滾動。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義下列屬性來控制資料的累加式載入:
+
+- `RemainingItemsThreshold`, 屬於類型`int`, `RemainingItemsThresholdReached`這是在引發事件的清單中尚未顯示的專案閾值。
+- `RemainingItemsThresholdReachedCommand`, 屬於類型`ICommand`, 這是在到達`RemainingItemsThreshold`時執行的。
+- `RemainingItemsThresholdReachedCommandParameter`，屬於 `object` 類型，這是傳遞至 `RemainingItemsThresholdReachedCommand` 的參數。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)也會定義`RemainingItemsThresholdReached`當向上滾動到`CollectionView`尚未顯示專案的`RemainingItemsThreshold`程度時, 所引發的事件。 您可以處理這個事件, 以載入更多專案。 此外, 當`RemainingItemsThresholdReached`事件`RemainingItemsThresholdReachedCommand`引發時, 會執行, 以便在 viewmodel 中進行累加式資料載入。
+
+`RemainingItemsThreshold`屬性的預設值為-1, 表示`RemainingItemsThresholdReached`永遠不會引發事件。 當屬性值為0時, 當`RemainingItemsThresholdReached` [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中的最後一個專案顯示時, 就會引發事件。 對於大於0的值, `RemainingItemsThresholdReached` `ItemsSource`當包含尚未滾動到的專案數目時, 就會引發事件。
+
+> [!NOTE]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)`RemainingItemsThreshold`驗證屬性, 使其值一律大於或等於-1。
+
+下列 XAML 範例顯示[`CollectionView`](xref:Xamarin.Forms.CollectionView) , 它會以累加方式載入資料:
+
+```xaml
+<CollectionView ItemsSource="{Binding Animals}"
+                RemainingItemsThreshold="5"
+                RemainingItemsThresholdReached="OnCollectionViewRemainingItemsThresholdReached">
+    ...
+</CollectionView>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    RemainingItemsThreshold = 5
+};
+collectionView.RemainingItemsThresholdReached += OnCollectionViewRemainingItemsThresholdReached;
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
+```
+
+在此程式碼範例中`RemainingItemsThresholdReached` , 當有5個專案尚未滾動到時, 就會引發事件, 而`OnCollectionViewRemainingItemsThresholdReached`在回應中會執行事件處理常式:
+
+```csharp
+void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
+{
+    // Retrieve more data here and add it to the CollectionView's ItemsSource collection.
+}
+```
+
+> [!NOTE]
+> 您也可以藉由`RemainingItemsThresholdReachedCommand`將系結`ICommand`至 viewmodel 中的實作為增量方式載入資料。
+
 ## <a name="related-links"></a>相關連結
 
 - [CollectionView (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin. 表單資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -6,13 +6,13 @@ ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 07/03/2019
-ms.openlocfilehash: 825561c6106ba2ab8e5886df64c3ff850750587b
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.date: 07/18/2019
+ms.openlocfilehash: 1f2ef838287e32df5df42f73e4b43816d618552d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658038"
+ms.locfileid: "69887880"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin. Forms 參數
 
@@ -26,8 +26,9 @@ ms.locfileid: "69658038"
 
 `Switch`控制項會定義兩個屬性:
 
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是, 它會影響在`Switch`切換或狀態下呈現的方式。 `Color`
 * [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)這是指出`Switch`是否**開啟**的值。`boolean`
+* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是, 它會影響在`Switch`切換或狀態下呈現的方式。 `Color`
+* `ThumbColor``Color`是切換捲動方塊的。
 
 這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這`Switch`表示可以設定樣式, 並作為資料系結的目標。
 
@@ -47,23 +48,24 @@ ms.locfileid: "69658038"
 Switch switchControl = new Switch { IsToggled = true };
 ```
 
-### <a name="switch-style-properties"></a>轉場樣式屬性
+## <a name="switch-appearance"></a>切換外觀
 
-屬性可以設定為在切換為其`Switch` [開啟] 狀態時定義色彩。 `OnColor` 下列範例顯示如何`Switch`在 XAML 中`OnColor`使用屬性集來具現化:
+[`Switch`](xref:Xamarin.Forms.Switch)除了繼承`Switch` `OnColor` `ThumbColor`自類別的屬性之外, 也會定義和屬性。 [`View`](xref:Xamarin.Forms.View) `Color` `Switch` `ThumbColor`屬性可以設定為在切換到其 [開啟] 狀態時定義色彩, 而屬性可以設定為定義參數捲動方塊的。 `OnColor` 下列範例示範如何`Switch`在 XAML 中使用這些屬性集來具現化:
 
 ```xaml
-<Switch OnColor="Orange" />
+<Switch OnColor="Orange"
+        ThumbColor="Green" />
 ```
 
-`Switch`在程式碼中建立時, `OnColor`也可以設定屬性:
+`Switch`在程式碼中建立時, 也可以設定屬性:
 
 ```csharp
-Switch switchControl = new Switch { OnColor = Color.Orange };
+Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 ```
 
-下列螢幕擷取畫面顯示其`Switch` [**開啟**] 和 [**關閉**] 切換狀態, `OnColor`並在 iOS `Color.Orange`和 Android 上將屬性設為:
+下列螢幕擷取畫面顯示`Switch`在其 [**開啟**] 和 [**關閉**] 切換狀態`OnColor`中`ThumbColor` , 並設定了和屬性:
 
-![IOS 和 Android 上開啟和關閉狀態的切換畫面快照](switch-images/switch-states-oncolor.png "IOS 和 Android 上的交換器")
+![IOS 和 Android 上開啟和關閉狀態的切換畫面快照](switch-images/switch-states-colors.png "IOS 和 Android 上的交換器")
 
 ## <a name="respond-to-a-switch-state-change"></a>回應交換器狀態變更
 

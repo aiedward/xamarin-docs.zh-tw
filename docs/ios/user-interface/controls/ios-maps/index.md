@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: d7bd3d64d7e9f4ad8298120a017719b3cbb1410e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528692"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887480"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin 中的對應
 
@@ -28,25 +28,27 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView`是顯示`UIView`對應的子類別。 只要使用上述程式碼新增對應, 就會產生互動式地圖:
+`MKMapView`是顯示`UIView`對應的子類別。 只要使用上述程式碼新增對應, 就會產生互動式地圖:
 
- ![](images/00-map.png "範例對應")
+![](images/00-map.png "範例對應")
 
 ## <a name="map-style"></a>地圖樣式
 
- `MKMapView`支援3種不同的對應樣式。 若要套用地圖樣式, 只要將`MapType`屬性設定為`MKMapType`列舉中的值即可:
- ```
+`MKMapView`支援3種不同的對應樣式。 若要套用地圖樣式, 只要將`MapType`屬性設定為`MKMapType`列舉中的值即可:
+
+```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
- ```
-  下列螢幕擷取畫面顯示可用的不同地圖樣式:
+```
 
- ![](images/01-mapstyles.png "這個螢幕擷取畫面顯示可用的不同地圖樣式")
+下列螢幕擷取畫面顯示可用的不同地圖樣式:
+
+![](images/01-mapstyles.png "這個螢幕擷取畫面顯示可用的不同地圖樣式")
 
 ## <a name="panning-and-zooming"></a>移動流覽和縮放
 
- `MKMapView`包含地圖互動功能的支援, 例如:
+`MKMapView`包含地圖互動功能的支援, 例如:
 
 - 透過縮小手勢縮放
 - 透過平移手勢移動

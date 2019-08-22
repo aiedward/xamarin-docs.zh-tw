@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 20010fb3704da54ae1e1133c25f332e8481a1b87
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6085f85a1b13bdeb4fe7b906beeca0bdc7a45a17
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528536"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890179"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的整合分鏡腳本
 
@@ -71,6 +71,7 @@ IOS 中的映射載入行為也會辨識`@3x`影像檔案的尾碼。 例如, �
 ```csharp
 UIImage icon = UIImage.FromFile("MonkeyImage.png");
 ```
+
 `MonkeyIcon.png`或者`MonkeyIcon@3x.png` , 如果使用 iOS 設計工具將影像指派給 UI 元素, 則會在 iPhone 6 Plus 上再次使用。
 
 <a name="dynamic-launch-screens" />

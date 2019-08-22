@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 198d667ea52fcad4758c2845e5f2e935d1f74a0b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 394feda6f5a13855be1d1166dc22bb2a5c890d26
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521115"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887779"
 ---
 # <a name="handling-rotation"></a>處理旋轉
 
@@ -228,6 +228,7 @@ protected override void OnCreate (Bundle bundle)
 ```csharp
 [Activity (Label = "CodeLayoutActivity", ConfigurationChanges=Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
 ```
+
 現在當裝置旋轉時, 不會重新開機活動。 為了在此情況下手動處理方向變更, 活動可以覆寫`OnConfigurationChanged`方法, 並`Configuration`從傳入的物件判斷方向, 如同下列活動的新執行:
 
 ```csharp

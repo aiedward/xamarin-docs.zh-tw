@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2018
-ms.openlocfilehash: cb569a425bf636a51dd6d132f6efa539e74443a0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9b99421755b1ad979b4beed279bef6e194659ab7
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644583"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888860"
 ---
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服務
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _將 web 服務整合到應用程式是常見的案例。這篇文章會示範如何使用 Xamarin.Forms 應用程式的 RESTful web 服務。_
 
@@ -173,6 +173,7 @@ public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
   ...
 }
 ```
+
 營運`PutAsync`方法等同於`PostAsync`用於 web 服務中建立資料的方法。 不過，不同的 web 服務傳送的可能回應。
 
 REST 服務傳送的 HTTP 狀態碼`HttpResponseMessage.IsSuccessStatusCode`屬性，以指示 HTTP 要求是否成功或失敗。 這項作業的常見回應有：

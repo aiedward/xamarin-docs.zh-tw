@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 16cf976b252e409ae4302ab51eb594370a6689d1
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e6aac37561d107cb7e3f646c15621b86385dd0ee
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620944"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887516"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>將繫結移轉至 Unified API
 
@@ -89,6 +89,7 @@ int Add(int operandUn, int operandDeux);
 [Export("add:and:")]
 nint Add(nint operandUn, nint operandDeux);
 ```
+
 如果我們對應的是較新的協力廠商程式庫, 而不是我們最初連結的版本, 則`.h`需要檢查程式庫的標頭檔, 並查看是否有任何結束`int`、 `int32_t`明確呼叫`uint32_t` 、 `unsigned int`、或。已升級為`NSInteger`、 `NSUInteger`或。`CGFloat` `float` 若是如此, 也必須對`nint`、 `nuint`和`nfloat`類型進行相同的修改。
 
 若要深入瞭解這些資料類型的變更, 請參閱[原生類型](~/cross-platform/macios/nativetypes.md)檔。

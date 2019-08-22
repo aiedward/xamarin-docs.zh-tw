@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 5fe0c4d02dbe6cc5b3768ea92179b3781ef09aa9
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 39786fa9aef526488837ce2fe7c078a23d12cc10
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620849"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889946"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin iOS API 設計
 
@@ -52,6 +52,7 @@ ms.locfileid: "69620849"
     ```objc
     NSArray *getViews
     ```
+
     公開強型別, 如下所示:
 
     ```csharp

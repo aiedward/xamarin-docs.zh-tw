@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 4c4aaeaa451a67da16057cd9b345fbbcd0af6f35
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 634081b63ce4a70368ef7621837932a3ae6de0a8
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621015"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890398"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS Objective-C 程式庫
 
@@ -490,6 +490,7 @@ Europa:Resources kmullins$
 [BaseType(typeof(NSObject))]
 [Model]
 ```
+
 如此一來, 定義就會如下所示:
 
 [![](walkthrough-images/os11.png "定義")](walkthrough-images/os11.png#lightbox)
@@ -660,6 +661,7 @@ public override void ViewDidLoad ()
   selector = new ColorSelectedDelegate (this);
 }
 ```
+
 **執行方法 HandleTouchUpInsideWithStrongDelegate** -下一步會在使用者觸及**ColorChangeButton**時, 執行的事件處理常式。 編輯`ViewController`, 並新增下列方法:
 
 ```csharp
@@ -698,6 +700,7 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
     picker.PresentModallyOverViewController (this);
 }
 ```
+
 **更新 ViewDidLoad** -我們必須變更`ViewDidLoad` , 讓它使用我們剛才建立的事件處理常式。 [ `ViewController`編輯] `ViewDidLoad`和 [變更為] 類似下列程式碼片段:
 
 

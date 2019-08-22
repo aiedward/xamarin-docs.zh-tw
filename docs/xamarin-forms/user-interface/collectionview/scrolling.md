@@ -6,25 +6,68 @@ ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 89bbe402f056b875a7dadd96527364847ad470e8
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 08/13/2019
+ms.openlocfilehash: 303266f44664f7f57aeaf36869a3a06c8eb91870
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738930"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888642"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin. 表單 CollectionView 滾動
 
 ![](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義兩[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)個方法, 可將專案滾動到 view。 其中一個多載會將指定索引處的專案滾動到 view, 而另一個則會將指定的專案滾動到 view。 這兩個多載都有額外的引數, 可指定以指出專案在捲軸完成後的確切位置, 以及是否要以動畫顯示捲軸。
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義叫[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)用其中一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法時所引發的事件。 `IsAnimated` `Item` `Index` `ScrollToPosition`事件隨附的[物件有許多屬性,包括、、和。`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs) `ScrollToRequested` 這些屬性是由`ScrollTo`方法呼叫中指定的引數所設定。
 
+此外, [`CollectionView`](xref:Xamarin.Forms.CollectionView)會`Scrolled`定義引發的事件, 以指出發生滾動。 事件隨附的`ItemsViewScrolledEventArgs`物件有`Scrolled`許多屬性。 如需詳細資訊, 請參閱偵測[滾動](#detect-scrolling)。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)也會定義`ItemsUpdatingScrollMode`屬性, 代表將`CollectionView`新專案加入其中時的滾動行為。 如需這個屬性的詳細資訊, 請參閱[在新增新專案時控制捲軸位置](#control-scroll-position-when-new-items-are-added)。
+
 當使用者撥動起始捲軸時, 可以控制捲軸的結束位置, 以便完全顯示專案。 這項功能稱為「貼齊」, 因為當滾動停止時, 專案會貼齊位置。 如需詳細資訊, 請參閱[貼齊點](#snap-points)。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)也可以在使用者滾動時, 以累加方式載入資料。 如需詳細資訊, 請參閱[以累加方式載入資料](populate-data.md#load-data-incrementally)。
+
+## <a name="detect-scrolling"></a>偵測滾動
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義引發的事件, 表示已發生滾動。 `Scrolled` 下列 XAML 範例顯示`CollectionView` , 它會設定`Scrolled`事件的事件處理常式:
+
+```xaml
+<CollectionView Scrolled="OnCollectionViewScrolled">
+    ...
+</CollectionView>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView();
+collectionView.Scrolled += OnCollectionViewScrolled;
+```
+
+在此程式碼範例中`OnCollectionViewScrolled` , 事件處理常式會在`Scrolled`事件引發時執行:
+
+```csharp
+void OnCollectionViewScrolled(object sender, ItemsViewScrolledEventArgs e)
+{
+    Debug.WriteLine("HorizontalDelta: " + e.HorizontalDelta);
+    Debug.WriteLine("VerticalDelta: " + e.VerticalDelta);
+    Debug.WriteLine("HorizontalOffset: " + e.HorizontalOffset);
+    Debug.WriteLine("VerticalOffset: " + e.VerticalOffset);
+    Debug.WriteLine("FirstVisibleItemIndex: " + e.FirstVisibleItemIndex);
+    Debug.WriteLine("CenterItemIndex: " + e.CenterItemIndex);
+    Debug.WriteLine("LastVisibleItemIndex: " + e.LastVisibleItemIndex);
+}
+```
+
+事件處理常式會輸出事件隨附`ItemsViewScrolledEventArgs`之物件的值。 `OnCollectionViewScrolled`
+
+> [!IMPORTANT]
+> 引發使用者起始滾動的事件,並以程式設計方式進行滾動。`Scrolled`
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>將索引中的專案滾動到 view
 
@@ -33,6 +76,9 @@ ms.locfileid: "68738930"
 ```csharp
 collectionView.ScrollTo(12);
 ```
+
+> [!NOTE]
+> 叫[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)用[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法時, 就會引發事件。
 
 ## <a name="scroll-an-item-into-view"></a>將專案滾動到視野中
 
@@ -43,6 +89,17 @@ MonkeysViewModel viewModel = BindingContext as MonkeysViewModel;
 Monkey monkey = viewModel.Monkeys.FirstOrDefault(m => m.Name == "Proboscis Monkey");
 collectionView.ScrollTo(monkey);
 ```
+
+> [!NOTE]
+> 叫[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)用[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法時, 就會引發事件。
+
+## <a name="scroll-bar-visibility"></a>捲軸可見度
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性, 並由可系結屬性支援。 這些屬性會取得或設定[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)列舉值, 表示水準或垂直捲動條何時可見。 `ScrollBarVisibility` 列舉會定義下列成員：
+
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)表示平臺的預設捲軸行為, 而是`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性的預設值。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)表示捲軸會顯示出來, 即使內容適合在視圖中也一樣。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)表示即使內容無法放在視圖中, 也不會顯示捲軸。
 
 ## <a name="control-scroll-position"></a>控制項捲軸位置
 
@@ -105,6 +162,31 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 ```csharp
 collectionView.ScrollTo(monkey, animate: false);
+```
+
+## <a name="control-scroll-position-when-new-items-are-added"></a>新增新專案時的控制項捲軸位置
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)`ItemsUpdatingScrollMode`定義屬性, 它是由可系結屬性所支援。 這個屬性會取得或設定`ItemsUpdatingScrollMode`列舉值, 表示將`CollectionView`新專案加入其中時的滾動行為。 `ItemsUpdatingScrollMode` 列舉會定義下列成員：
+
+- `KeepItemsInView`調整捲軸位移, 以在新增新專案時保持顯示第一個可見的專案。
+- `KeepScrollOffset`當加入新專案時, 會維護相對於清單開頭的捲軸位移。
+- `KeepLastItemInView`調整捲軸位移, 以在新增新專案時讓最後一個專案保持可見。
+
+`ItemsUpdatingScrollMode`屬性的預設值為`KeepItemsInView`。 因此, 將新的專案加入至[`CollectionView`](xref:Xamarin.Forms.CollectionView)清單中的第一個可見專案時, 將會維持顯示狀態。 若要確保新增的專案一律會顯示在清單底部, `ItemsUpdatingScrollMode`屬性應該設定為: `KeepLastItemInView`
+
+```xaml
+<CollectionView ItemsUpdatingScrollMode="KeepLastItemInView">
+    ...
+</CollectionView>
+```
+
+對等的 C# 程式碼是：
+
+```csharp
+CollectionView collectionView = new CollectionView
+{
+    ItemsUpdatingScrollMode = ItemsUpdatingScrollMode.KeepLastItemInView
+};
 ```
 
 ## <a name="snap-points"></a>貼齊點

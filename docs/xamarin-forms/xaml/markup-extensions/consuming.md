@@ -6,13 +6,13 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/10/2019
-ms.openlocfilehash: 6eeafcd943f9d92cf8fb2c19cea40a491413f78b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 07/18/2019
+ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657283"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887915"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
@@ -28,6 +28,7 @@ XAML 標記延伸模組可協助增強的威力與彈性的 XAML，藉由將從�
 - [`OnPlatform`](#onplatform) – 自訂每個平台為基礎的 UI 外觀。
 - [`OnIdiom`](#onidiom) – 自訂的裝置執行應用程式的慣用句為基礎的 UI 外觀。
 - [`DataTemplate`](#datatemplate-markup-extension)-將類型轉換成[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。
+- [`FontImage`](#fontimage-markup-extension)-在任何可顯示`ImageSource`的視圖中顯示字型圖示。
 
 其他的 XAML 標記延伸在過去已經支援其他 XAML 實作中，和 Xamarin.Forms 也支援。 這些是其他文章中更完整說明：
 
@@ -556,6 +557,37 @@ public partial class TypeDemoPage : ContentPage
 在此範例中`MonkeysPage` , 會[`ContentPage`](xref:Xamarin.Forms.ContentPage)從[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)轉換成, `ShellContent.ContentTemplate`這會設定為屬性的值。 這可確保`MonkeysPage`只會在流覽至頁面時發生, 而不是在應用程式啟動時建立。
 
 如需 Shell 應用程式的詳細資訊, 請參閱[Xamarin. Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
+
+## <a name="fontimage-markup-extension"></a>FontImage 標記延伸
+
+標記延伸可讓您在任何可`ImageSource`顯示的視圖中顯示字型圖示。 `FontImage` 它會提供與`FontImageSource`類別相同的功能, 但具有更精確的標記法。
+
+類別支援`FontImageExtension`標記延伸, 其定義下列屬性: `FontImage`
+
+- `FontFamily`類型`string`的, 字型圖示所屬的字型系列。
+- `Glyph`屬於類型`string`的 unicode 字元值 (字型圖示)。
+- `Color`類型`Color`的, 顯示字型圖示時要使用的色彩。
+- `Size`類型`double`的, 呈現的字型圖示的大小 (以與裝置無關的單位)。
+
+> [!NOTE]
+> XAML 剖析器允許`FontImageExtension`將類別縮寫為。 `FontImage`
+
+`Glyph`屬性是內容屬性`FontImageExtension`。 因此，對於 XAML 標記運算式以大括號表示，您可以排除`Glyph=`一部分的運算式，只要是第一個引數。
+
+[ **FontImage 示範**] 頁面會顯示如何使用`FontImage`標記延伸:
+
+```xaml
+<Image BackgroundColor="#D1D1D1"
+       Source="{FontImage &#xf30c;, FontFamily={OnPlatform iOS=Ionicons, Android=ionicons.ttf#}, Size=44}" />
+```
+
+在此範例中, `FontImageExtension`類別名稱的縮寫版本是用來從[`Image`](xref:Xamarin.Forms.Image)中的 Ionicons 字型系列顯示 XBox 圖示。 運算式也會使用`OnPlatform`標記延伸, 在 iOS 和 Android 上指定不同`FontFamily`的屬性值。 此外, 運算式的`Glyph=`部分會被排除, 而設定的標記延伸屬性會以逗號分隔。 請注意, 當圖示的 unicode 字元是`\uf30c`時, 它必須在 XAML 中以轉義, 因此會變成。 `&#xf30c;`
+
+以下是程式執行情況：
+
+[ ![FontImage 標記延伸](consuming-images/fontimagedemo.png "FontImage 示範")的螢幕擷取畫面](consuming-images/fontimagedemo-large.png#lightbox "FontImage 示範")
+
+如需在`FontImageSource`物件中指定字型圖示資料來顯示字型圖示的詳細資訊, 請參閱[顯示字型圖示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
 ## <a name="define-your-own-markup-extensions"></a>定義您自己的標記延伸
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/30/2018
-ms.openlocfilehash: 82423e48f844cde60bcd5e85c5bbe3cb8bc856b8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ca80dc9a064e81d9b81b1cd53237df818d409576
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522461"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887536"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本 RecyclerView 範例
 
@@ -145,6 +145,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
     }
 }
 ```
+
 在此程式碼範例中`PhotoViewHolder` , 會將參考傳遞至`PhotoViewHolder`包裝的父專案視圖`CardView`()。 請注意, 您一律會將父專案視圖轉送至基底函式。 此`PhotoViewHolder`函式`FindViewById`會在父專案視圖上呼叫, 以找出它的每`ImageView`一個`TextView`子視圖參考, 並分別`Image`將`Caption`結果儲存在和屬性中。 之後, 介面卡會在以新資料更新此`CardView`子視圖時, 從這些屬性中抓取 view 參考。
 
 如需的詳細`RecyclerView.ViewHolder`資訊, 請參閱[RecyclerView. ViewHolder 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。

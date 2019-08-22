@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 1e8723fd8cc2119c6d65ea760d514373d00ce1d2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0fff049c48a613937513d9826647f3fc37753684
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521818"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887454"
 ---
 # <a name="unified-api-overview"></a>Unified API 總覽
 
@@ -216,6 +216,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (new NSAction (del
     ShowDropDownAnimated (tblDataView);
 }));
 ```
+
 現在可以使用簡單的 lambda 來取代它:
 
 ```csharp

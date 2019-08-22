@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: ed9a376da0fcfebffd707e2e93919237adfef87b
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 1de7ec7dc87fc4ba61e76603240197fc9d041255
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620843"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887941"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表 (CSS) 樣式設定 Xamarin.Forms 應用程式
 
@@ -131,25 +131,7 @@ stacklayout>image {
 
 ### <a name="c"></a>C\#
 
-在C#，可以做為內嵌資源載入並加入樣式表[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
-
-```csharp
-public partial class MyPage : ContentPage
-{
-    public MyPage()
-    {
-        InitializeComponent();
-
-        this.Resources.Add(StyleSheet.FromAssemblyResource(
-            IntrospectionExtensions.GetTypeInfo(typeof(MyPage)).Assembly,
-            "MyProject.Assets.styles.css"));
-    }
-}
-```
-
-第一個引數`StyleSheet.FromAssemblyResource`方法是包含樣式表的組件，而第二個引數是`string`代表的資源識別碼。 資源識別項可以取自**屬性**CSS 檔案已被選取時，視窗。
-
-或者，載入樣式表，從`StringReader`，並加入[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
+在C#中, 您可以從`StringReader`載入樣式表單[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary), 並將其新增至:
 
 ```csharp
 public partial class MyPage : ContentPage

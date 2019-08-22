@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/28/2019
-ms.openlocfilehash: d170e37b8bf4ce880f9d8f48d30defb42ee6bba2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 28cb1573262b63cc2b0ccad9f468fe36c682718d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648015"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888853"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服務
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 
 _WCF 是 Microsoft 的統一的架構，用於建置服務導向應用程式。它可讓開發人員建置安全、 可靠、 交易，且可互通的分散式應用程式。這篇文章會示範如何使用 Xamarin.Forms 應用程式從 WCF 簡易物件存取通訊協定 (SOAP) 服務。_
 
@@ -232,6 +232,7 @@ Web 服務擲回`FaultException`找出或刪除時`TodoItem`，這由應用程�
 根據預設, IIS Express 只會回應對`localhost`的要求。 遠端裝置 (例如 Android 裝置、iPhone 或甚至是模擬器) 將無法存取您的本機 WCF 服務。 您將需要知道您在區域網路上的 Windows 10 工作站 IP 位址。 基於此範例的目的, 假設您的工作站具有 IP 位址`192.168.1.143`。 下列步驟說明如何設定 Windows 10 和 IIS Express 以接受遠端連線, 並從實體或虛擬裝置連線至服務:
 
 1. **將例外狀況新增至 Windows 防火牆**。 您必須透過 Windows 防火牆開啟埠, 子網中的應用程式才能用來與 WCF 服務進行通訊。 建立輸入規則, 以在防火牆中開啟埠49393。 從系統管理命令提示字元中, 執行下列命令:
+
     ```
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```

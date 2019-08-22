@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 0c606e001552f1c4267ffc29bd69b2f38f2ec971
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a5587d5a4ed5201b8f09dfa3b4d2d292abd008d3
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527925"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889847"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心圖形
 
@@ -106,6 +106,7 @@ using (CGContext g = UIGraphics.GetCurrentContext ()) {
 ...
 }
 ```
+
 使用這一行, 它會先取得目前用於繪製的圖形內容。 您可以將圖形內容視為繪製發生所在的畫布, 其中包含繪圖的所有狀態, 例如筆劃和填滿色彩, 以及要繪製的幾何。
 
 ```csharp

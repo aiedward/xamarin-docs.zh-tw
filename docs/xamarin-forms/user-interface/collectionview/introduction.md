@@ -6,21 +6,21 @@ ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 25e2d9bad11614cf594980480db14ddc18125a96
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 07/24/2019
+ms.openlocfilehash: 5832cb28162602a41d31026bc4a0ed54ac6bfb34
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738899"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888603"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin. Forms CollectionView 簡介
 
 ![](~/media/shared/preview.png "此 API 目前是發行前版本")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)這是使用不同的版面配置規格來呈現資料清單的視圖。 它的目的是要提供更具彈性且更高效[`ListView`](xref:Xamarin.Forms.ListView)能的替代方案。 例如, 下列螢幕擷取畫面顯示`CollectionView`使用兩個數據行垂直格線, 並允許多重選取的:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 是使用不同版面配置規格呈現資料清單的檢視。 它的目的是要提供更具彈性且更高效[`ListView`](xref:Xamarin.Forms.ListView)能的替代方案。 例如, 下列螢幕擷取畫面顯示`CollectionView`使用兩個數據行垂直格線, 並允許多重選取的:
 
 [![螢幕擷取畫面: IOS 和 Android 上的 CollectionView 垂直格線版面配置,](introduction-images/verticalgrid-multipleselection.png "具有多重選取專案的 CollectionView 垂直格線版面")]配置(introduction-images/verticalgrid-multipleselection-large.png#lightbox "具有多個選取範圍的 CollectionView 垂直格線版面")配置
 
@@ -57,8 +57,8 @@ Forms.SetFlags("CollectionView_Experimental");
 | 選取 | `SelectionMode`、 `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)支援單一和多重選取。 如需詳細資訊, 請參閱[CollectionView 選取專案](selection.md)。 |
 | 資料列高度 | `HasUnevenRows`、 `RowHeight` | 在中`ItemSizingStrategy` , 每個專案的資料列高度取決於屬性。 `CollectionView` 如需詳細資訊, 請參閱[專案大小](layout.md#item-sizing)。|
 | 快取 | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)會自動使用基礎原生控制項所提供的虛擬化。 |
-| 頁首和頁尾 | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | 目前不支援`CollectionView`頁首和頁尾, 但會在未來的版本中加入。|
-| 群組 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | 目前不支援`CollectionView`群組, 但會在未來的版本中加入。 |
+| 頁首和頁尾 | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)可以透過`Header`、 `Footer`、 `HeaderTemplate`和屬性,呈現與清單中的專案一起滾動的頁首和頁尾。`FooterTemplate` 如需詳細資訊, 請參閱頁首[和](layout.md#headers-and-footers)頁尾。 |
+| 群組 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)將`IsGrouped`屬性設定為, 以`true`顯示正確群組的資料。 您可以將`GroupHeaderTemplate`和`GroupFooterTemplate`屬性設定為物件, 以[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)自訂群組標頭和群組尾。 如需詳細資訊, 請參閱 < [Xamarin CollectionView 群組](grouping.md)。 |
 | 提取至重新整理 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 目前不支援`CollectionView`提取至重新整理, 但會在未來的版本中加入。 |
 | 內容動作 | `ContextActions` | 目前不支援`CollectionView`內容動作, 但會在未來的版本中加入。 |
 | 捲動 | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義`ScrollTo`將專案滾動到視野的方法。 如需詳細資訊, 請參閱[滾動](scrolling.md)。 |

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: e340b45148c7528eff1aa511ee9902a4ac2658c0
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: 379791d4dda676140425d79eca696cdca94cd55b
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658155"
+ms.locfileid: "69888425"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
@@ -61,7 +61,7 @@ ms.locfileid: "69658155"
 > [!NOTE]
 > `BorderColor`屬性會影響多個專案, 以供示範之用。 如有需要, 此屬性可分為三個屬性。
 
-每個屬性都是由`BindableProperty`實例所支援。 支援`BindableProperty`可讓每個屬性使用 MVVM 模式來進行樣式化和系結。 如需詳細資訊, 請參閱[使用 MVVM](#bind-data-with-mvvm)系結資料。
+每個屬性都是由`BindableProperty`實例所支援。 支援`BindableProperty`可讓每個屬性使用 MVVM 模式來進行樣式化和系結。
 
 下列範例顯示如何建立支援`BindableProperty`:
 
@@ -151,117 +151,6 @@ CardView card = new CardView
     IconImageSource = ImageSource.FromFile("user.png")
 };
 ```
-
-### <a name="bind-data-with-mvvm"></a>使用 MVVM 系結資料
-
-類別中的`BindableProperty`物件允許模型視圖 ViewModel (MVVM) 樣式系結。 `CardView` 範例應用程式包含`PersonCollectionViewModel`定義單一集合屬性的類別:
-
-```csharp
-public class PersonCollectionViewModel : INotifyPropertyChanged
-{
-    ...
-    public List<PersonViewModel> Items
-    {
-        get
-        {
-            return items;
-        }
-        set
-        {
-            items = value;
-            NotifyPropertyChanged();
-        }
-    }
-    ...
-}
-```
-
-`PersonViewModel`類別代表個人設定檔:
-
-```csharp
-public class PersonViewModel : INotifyPropertyChanged
-{
-    ...
-
-    string photo;
-    public string Photo
-    {
-        get
-        {
-            return photo;
-        }
-        set
-        {
-            photo = value;
-            NotifyPropertyChanged();
-        }
-    }
-
-    string name;
-    public string Name
-    {
-        get
-        {
-            return name;
-        }
-        set
-        {
-            name = value;
-            NotifyPropertyChanged();
-        }
-    }
-
-    string bio;
-    public string Bio
-    {
-        get
-        {
-            return bio;
-        }
-        set
-        {
-            bio = value;
-            NotifyPropertyChanged();
-        }
-    }
-    ...
-}
-```
-
-可以用來將`PersonViewModel`物件集合呈現為卡片清單。 `CardView` 下列範例顯示如何將`PersonViewCollection`實例系結至 XAML 中的`StackLayout`實例:
-
-```xaml
-<StackLayout HorizontalOptions="Fill"
-             VerticalOptions="Fill"
-             BindableLayout.ItemsSource="{Binding Items}">
-    <BindableLayout.ItemTemplate>
-        <DataTemplate>
-            <controls:CardView Margin="4"
-                               BorderColor="DarkGray"
-                               IconBackgroundColor="SlateGray"
-                               BindingContext="{Binding .}"
-                               CardTitle="{Binding Name}"
-                               CardDescription="{Binding Bio}"
-                               IconImageSource="{Binding Photo}"/>
-        </DataTemplate>
-    </BindableLayout.ItemTemplate>
-</StackLayout>
-```
-
-實例上的`Items`屬性會使用可系結`StackLayout`的版面配置系結至。 `PersonViewCollection` 會定義每個`CardView`物件的外觀, 並將資料系結至上`PersonViewModel`的屬性。 `DataTemplate` 當設定時`CardView` , 將`PersonView` 會`Items`為集合中的每個物件建立物件。 `BindingContext` `BindingContext`已設定, 如下列範例所示:
-
-```csharp
-public partial class CardViewMvvmPage : ContentPage
-{
-    public CardViewMvvmPage()
-    {
-        InitializeComponent();
-        BindingContext = DataService.GetPersonCollection();
-    }
-}
-```
-
-如需資料系結的詳細資訊, 請參閱[Xamarin. 表單資料](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結。 如需`BindableProperty`物件的詳細資訊, 請參閱可系結[屬性](~/xamarin-forms/xaml/bindable-properties.md)。
 
 ## <a name="customize-appearance-with-a-controltemplate"></a>使用 ControlTemplate 自訂外觀
 

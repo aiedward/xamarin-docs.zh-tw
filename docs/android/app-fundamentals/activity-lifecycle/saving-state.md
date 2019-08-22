@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 9fafc6965c5d2dec79f440579a5cf3746a545bae
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: febb9b297712a97c03613468b79ca583ec300e77
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644400"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887717"
 ---
 # <a name="walkthrough---saving-the-activity-state"></a>逐步解說 - 儲存活動狀態
 
@@ -60,6 +60,7 @@ _我們在活動生命週期指南中涵蓋了儲存狀態的理論;現在, 讓�
 [ActivityLifecycle.SecondActivity] Activity B - OnStop
 [ActivityLifecycle.SecondActivity] Activity B - OnDestroy
 ```
+
 ### <a name="adding-a-click-counter"></a>加入 Click 計數器
 
 接下來, 我們要變更應用程式, 讓我們有一個會計算的按鈕, 並顯示按一下的次數。 首先, 讓我們將`_counter`執行個體變數新增至: `MainActivity`

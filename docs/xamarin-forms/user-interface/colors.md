@@ -6,13 +6,13 @@ ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/15/2017
-ms.openlocfilehash: f68e192db0b7acceb325ad44f40dce9cb229a26a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.date: 07/18/2019
+ms.openlocfilehash: 2a17b037803d1ca6e54000ea7ba3f05c8ce6034f
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528980"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888464"
 ---
 # <a name="colors-in-xamarinforms"></a>在 Xamarin.Forms 中的色彩
 
@@ -20,9 +20,9 @@ ms.locfileid: "69528980"
 
 _Xamarin.Forms 提供彈性的跨平台色彩類別。_
 
-這篇文章介紹的各種方式`Color`類別可用於 Xamarin.Forms。
+本文介紹[`Color`](xref:Xamarin.Forms.Color)類別可以在 Xamarin 中使用的各種方式。
 
-`Color`類別提供多種方法來建立色彩的執行個體
+[`Color`](xref:Xamarin.Forms.Color)類別提供數種方法來建立色彩實例:
 
 - **命名色彩**-集合的一般具名色彩，包括`Red`， `Green`，和`Blue`。
 - **FromHex** -類似于 HTML 中使用之語法的字串值, 例如 "00FF00"。 您可以選擇性地將 Alpha 指定為第一對字元 ("CC00FF00")。
@@ -67,13 +67,14 @@ IOS 和 Android 上這個執行個體設定為以對比的色彩，會顯示在�
 
 ## <a name="additional-methods"></a>其他方法
 
-`Color` 執行個體包含額外的方法，可用來建立新的色彩：
+[`Color`](xref:Xamarin.Forms.Color)實例包含下列其他方法:
 
-- **AddLuminosity** -藉由提供差異所修改的明暗度會傳回新的色彩。
-- **WithHue** -傳回新的色彩，以提供的值取代色調。
-- **WithLuminosity** -傳回新的色彩，以提供的值取代的明暗度。
-- **WithSaturation** -傳回新的色彩、 飽和度取代所提供的值。
-- **MultiplyAlpha** -藉由修改的 alpha，乘以所提供的 alpha 值傳回新的色彩。
+- **AddLuminosity** - `Color`藉由以提供的差異修改亮度來傳回。
+- **MultiplyAlpha** - `Color`藉由修改 Alpha 來傳回, 並將其乘以提供的 Alpha 值。
+- **ToHex** -傳回的十六進位`string`表示。 `Color`
+- **WithHue** - `Color`傳回, 以提供的值取代色調。
+- **WithLuminosity** - `Color`傳回, 以提供的值取代亮度。
+- **WithSaturation** - `Color`傳回, 以提供的值取代飽和度。
 
 ## <a name="implicit-conversions"></a>隱含轉換
 
@@ -104,7 +105,7 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 
 ## <a name="using-from-xaml"></a>使用 XAML
 
-色彩也可以輕鬆地參考在 XAML 使用的已定義的色彩名稱或十六進位表示法，如下所示：
+您也可以使用定義的色彩名稱或這裡所示的十六進位標記法, 在 XAML 中參考色彩:
 
 ```xaml
 <Label Text="Sea color" BackgroundColor="Aqua" />
@@ -115,12 +116,7 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 ```
 
 > [!NOTE]
-> 在使用 XAML 編譯時，色彩名稱不區分大小寫，因此可以撰寫以小寫字母。 如需 XAML 編譯的詳細資訊，請參閱[XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
-
-## <a name="summary"></a>總結
-
-Xamarin.Forms`Color`類別用來建立平台感知色彩的參考。 它可以用於共用程式碼和 XAML。
-
+> 在使用 XAML 編譯時，色彩名稱不區分大小寫，因此可以撰寫以小寫字母。 如需 XAML 編譯的詳細資訊，請參閱 [XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
 
 ## <a name="related-links"></a>相關連結
 

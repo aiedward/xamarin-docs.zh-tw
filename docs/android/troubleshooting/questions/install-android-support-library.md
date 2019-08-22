@@ -7,27 +7,28 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 84ee33fe174c01656144e55bc3cbba7c773950fd
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a43a2ed4498be76a99ab4b6b54d3048f2f80af5c
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61153423"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887662"
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>如何手動安裝 Xamarin.Android.Support 套件所需的 Android 支援程式庫？
 
-## <a name="example-steps-for-xamarinandroidsupportv4"></a>Xamarin.Android.Support.v4 的範例步驟 
+## <a name="example-steps-for-xamarinandroidsupportv4"></a>支援 v4 的範例步驟 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-下載所需的 Xamarin.Android.Support NuGet 套件 （例如藉由使用 NuGet 套件管理員，請安裝它）。
+下載所需的 Xamarin 支援 NuGet 套件 (例如, 使用 NuGet 套件管理員安裝它)。
 
-使用`ildasm`若要檢查的版本**android_m2repository.zip** NuGet 套件需要：
+使用`ildasm`來檢查 NuGet 套件所需的**android_m2repository**版本:
 
 ```cmd
 ildasm /caverbal /text /item:Xamarin.Android.Support.v4 packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll | findstr SourceUrl
 ```
-範例輸出：
+
+範例輸出︰
 
 ```cmd
 property string 'SourceUrl' = string('https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip')
@@ -35,35 +36,37 @@ property string 'SourceUrl' = string('https://dl-ssl.google.com/android/reposito
 property string 'SourceUrl' = string('https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip')
 ```
 
-下載**android\_m2repository.zip** Google 使用 URL 從傳回**ildasm**。 或者，您可以檢查哪一個版本的_Android Support Repository_您目前已安裝 Android SDK 管理員：
+使用從**ildasm**傳回的 URL 下載 Google 的 **\_android m2repository。** 或者, 您可以檢查 Android SDK Manager 中目前安裝的_Android 支援儲存_機制版本:
 
-![[顯示 Android Support Repository 版本安裝的 32 android SDK 管理員]](install-android-support-library-images/sdk-extras.png)
+![「Android SDK Manager 顯示 Android 支援存放庫32版已安裝」](install-android-support-library-images/sdk-extras.png)
 
-如果版本符合您需要適用於 NuGet 套件，您不需要下載任何新項目。 您可以改為重新壓縮現有**m2repository**之下的目錄**extras\\android**中_SDK 路徑_（如下所示的 Android 頂端SDK 管理員 視窗）。
+如果版本與您所需的 NuGet 套件相符, 則您不需要下載任何新的專案。 您可以改為在_SDK 路徑_中, 將位於 **\\額外 android**底下的現有**m2repository**目錄重新壓縮 (如 [Android SDK 管理員] 視窗的頂端所示)。
 
-計算的 MD5 雜湊從傳回的 URL **ildasm**。 格式化產生使用全部大寫的字母和不含空格的字串。 比方說，調整`$url`變數所需，且然後執行下列 2 個幾行 (根據[原始C#程式碼從 Xamarin.Android](https://github.com/xamarin/xamarin-android/blob/8e8a4dd90f26eb39172876cc52181b6639e20524/src/Xamarin.Android.Build.Tasks/Tasks/GetAdditionalResourcesFromAssemblies.cs#L208)) 在 PowerShell 中：
+計算從**ildasm**傳回之 URL 的 MD5 雜湊。 將產生的字串格式化, 以使用全部大寫字母且不含空格。 例如, 視需要調整`$url`變數, 然後在 PowerShell 中執行下列2行 (根據[Xamarin 中的C#原始程式碼](https://github.com/xamarin/xamarin-android/blob/8e8a4dd90f26eb39172876cc52181b6639e20524/src/Xamarin.Android.Build.Tasks/Tasks/GetAdditionalResourcesFromAssemblies.cs#L208)):
 
 ```powershell
 $url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip"
 (([System.Security.Cryptography.MD5]::Create()).ComputeHash([System.Text.Encoding]::UTF8.GetBytes($url)) | %{ $_.ToString("X02") }) -join ""
 ```
-範例輸出：
+
+範例輸出︰
 
 ```powershell
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-複製**android\_m2repository.zip**成 **%LOCALAPPDATA%\\Xamarin\\zips\\** 資料夾。 若要使用從上一個計算步驟的 MD5 雜湊的 MD5 雜湊檔案重新命名。 例如：
+將**android\_m2repository**複製到 **%\\LOCALAPPDATA% Xamarin\\zips\\** 資料夾。 將檔案重新命名, 以使用先前的 MD5 雜湊計算步驟中的 MD5 雜湊。 例如：
 
 **%LOCALAPPDATA%\\Xamarin\\zips\\F16A3455987DBAE5783F058F19F7FCDF.zip**
 
-（選擇性）將檔案解壓縮 **%LOCALAPPDATA%\\Xamarin\\Xamarin.Android.Support.v4\\23.4.0.0\\內容\\** (建立**內容\\m2repository**子目錄)。 如果您略過此步驟中，然後使用程式庫的第一個組建會較長的時間因為它必須完成此步驟。
-子目錄的版本號碼 (**23.4.0.0**在此範例中) 不是 NuGet 套件版本完全相同。 您可以使用`ildasm`來尋找正確的版本號碼：
+選擇性將檔案解壓縮至 **% LOCALAPPDATA%\\xamarin\\xamarin\\. 23.4.0.0\\ \\內容**(建立**內容 m2repository\\** 子目錄)。 如果您略過此步驟, 則使用該程式庫的第一個組建將需要較長的時間, 因為它需要完成此步驟。
+子目錄的版本號碼 (在此範例中為**23.4.0.0** ) 與 NuGet 套件版本不相同。 您可以使用`ildasm`來尋找正確的版本號碼:
 
 ```cmd
 ildasm /caverbal /text /item:Xamarin.Android.Support.v4 packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll | findstr /C:"string 'Version'"
 ```
-範例輸出：
+
+範例輸出︰
 
 ```cmd
 property string 'Version' = string('23.4.0.0')}
@@ -73,49 +76,50 @@ property string 'Version' = string('23.4.0.0')}
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-下載所需的 Xamarin.Android.Support NuGet 套件 （例如藉由使用 NuGet 套件管理員，請安裝它）。
+下載所需的 Xamarin 支援 NuGet 套件 (例如, 使用 NuGet 套件管理員安裝它)。
 
-按兩下_Xamarin.Android.Support.v4_下方的組件_參考_的 Visual Studio for Mac 將會在組件瀏覽器中開啟組件中的 Android 專案的一節。 請確認_語言_下拉式清單設為_C#_ ，然後選取最上層_Xamarin.Android.Support.v4_從組件瀏覽器瀏覽樹狀目錄的組件. 找出`SourceUrl`下的其中一個屬性`IncludeAndroidResourcesFrom`或`JavaLibraryReference`屬性：
+在 Visual Studio for Mac 的 Android 專案的 [_參考_] 區段下, 按兩下 [ _Xamarin. Support._ ], 以在 [元件瀏覽器] 中開啟元件。 確定 [_語言_] 下拉式的設定為_C#_ , 並從 [元件瀏覽器] 導覽樹狀目錄中選取最上層的 [ _Xamarin_ ]。 找出`SourceUrl` `IncludeAndroidResourcesFrom`其中一個或`JavaLibraryReference`屬性底下的屬性:
 
 ```csharp
 [assembly: IncludeAndroidResourcesFrom ("./", PackageName = "Xamarin.Android.Support.v4", SourceUrl = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip", EmbeddedArchive = "m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0.aar", Version = "23.4.0.0")]
 ```
 
-下載**android\_m2repository.zip**使用 Google`SourceUrl`傳回**ildasm**。 或者，您可以檢查哪一個版本的_Android Support Repository_您目前已安裝 Android SDK 管理員：
+使用從**ildasm**傳回的來下載來自 Google `SourceUrl`的**android\_m2repository。** 或者, 您可以檢查 Android SDK Manager 中目前安裝的_Android 支援儲存_機制版本:
 
-![[顯示 Android Support Repository 版本安裝的 32 android SDK 管理員]](install-android-support-library-images/sdk-extras.png)
+![「Android SDK Manager 顯示 Android 支援存放庫32版已安裝」](install-android-support-library-images/sdk-extras.png)
 
-如果版本符合您需要適用於 NuGet 套件，您不需要下載任何新項目。 您可以改為重新壓縮現有**m2repository**之下的目錄**extras/android**中_SDK 路徑_（如下所示的 [Android SDK 管理員] 視窗頂端）.
+如果版本與您所需的 NuGet 套件相符, 則您不需要下載任何新的專案。 您可以改為在_SDK 路徑_中, 將位於 [**額外/android** ] 底下的現有**m2repository**目錄重新壓縮 (如 [Android SDK 管理員] 視窗的頂端所示)。
 
-計算的 MD5 雜湊從傳回的 URL **ildasm**。 格式化產生使用全部大寫的字母和不含空格的字串。 比方說，調整 為所需的 URL 字串，然後執行下列命令中**Terminal.app**命令提示字元：
+計算從**ildasm**傳回之 URL 的 MD5 雜湊。 將產生的字串格式化, 以使用全部大寫字母且不含空格。 例如, 視需要調整 URL 字串, 然後在終端機中執行下列命令 **。應用程式**命令提示字元:
 
 ```bash
 echo -n "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip" | md5 | tr '[:lower:]' '[:upper:]'
 ```
 
-另一個選項是使用`csharp`解譯器以執行[相同C#本身的 Xamarin.Android 所使用的程式碼](https://github.com/xamarin/xamarin-android/blob/8e8a4dd90f26eb39172876cc52181b6639e20524/src/Xamarin.Android.Build.Tasks/Tasks/GetAdditionalResourcesFromAssemblies.cs#L208)。
-若要這樣做，請調整`url`變數所需，且在中，然後執行下列命令**Terminal.app**命令提示字元：
+另一個選項是使用`csharp`解譯器來執行[Xamarin Android C#本身所使用的相同程式碼](https://github.com/xamarin/xamarin-android/blob/8e8a4dd90f26eb39172876cc52181b6639e20524/src/Xamarin.Android.Build.Tasks/Tasks/GetAdditionalResourcesFromAssemblies.cs#L208)。
+若要這麼做, 請`url`視需要調整變數, 然後在終端機中執行下列命令 **。應用程式**命令提示字元:
 
 ```bash
 csharp -e 'var url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip"; string.Concat((System.Security.Cryptography.MD5.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes(url))).Select(b => b.ToString("X02")))'
 ```
-範例輸出：
+
+範例輸出︰
 
 ```bash
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-複製**android\_m2repository.zip**要 **$HOME/.local/share/Xamarin/zips/** 資料夾。 若要使用從上一個計算步驟的 MD5 雜湊的 MD5 雜湊檔案重新命名。 例如: 
+將**android\_m2repository**複製到 $HOME 的 **/.local/share/xamarin/zips/** 資料夾。 將檔案重新命名, 以使用先前的 MD5 雜湊計算步驟中的 MD5 雜湊。 例如：
 
 **$HOME/.local/share/Xamarin/zips/F16A3455987DBAE5783F058F19F7FCDF.zip**
 
-（選擇性）將解壓縮到檔案： 
+選擇性將檔案解壓縮至: 
 
 **$HOME/.local/share/Xamarin/Xamarin.Android.Support.v4/23.4.0.0/content/**
 
-(建立**內容/m2repository**子目錄)。 如果您略過此步驟中，然後使用程式庫的第一個組建會較長的時間因為它必須完成此步驟。
+(建立**content/m2repository**子目錄)。 如果您略過此步驟, 則使用該程式庫的第一個組建將需要較長的時間, 因為它需要完成此步驟。
 
-子目錄的版本號碼 (**23.4.0.0**在此範例中) 不是 NuGet 套件版本完全相同。 依照**ildasm**稍早步驟中，您也可以在 Visual Studio for Mac 中使用組件瀏覽器，尋找正確的版本號碼。 尋求`Version`下的其中一個屬性`IncludeAndroidResourcesFrom`或`JavaLibraryReference`屬性：
+子目錄的版本號碼 (在此範例中為**23.4.0.0** ) 與 NuGet 套件版本不相同。 如同稍早在**ildasm**步驟中, 您可以使用 Visual Studio for Mac 中的元件瀏覽器來尋找正確的版本號碼。 在其中一個`IncludeAndroidResourcesFrom`或`JavaLibraryReference`屬性下尋找屬性:`Version`
 
 ```csharp
 [assembly: IncludeAndroidResourcesFrom ("./", PackageName = "Xamarin.Android.Support.v4", SourceUrl = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip", EmbeddedArchive = "m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0.aar", Version = "23.4.0.0")]
@@ -124,13 +128,13 @@ F16A3455987DBAE5783F058F19F7FCDF
 -----
 
 
-## <a name="additional-references"></a>其他參考資料
+## <a name="additional-references"></a>其他參考
 
-- [Bug 43245](https://bugzilla.xamarin.com/show_bug.cgi?id=43245) – 錯誤"下載失敗。 請下載{0}並將它放到{1}目錄。 」 和 「 請安裝套件: '{0}' SDK 安裝程式中，您可以使用 「 Xamarin.Android.Support 套件相關的錯誤訊息
+- [Bug 43245](https://bugzilla.xamarin.com/show_bug.cgi?id=43245) –不正確的下載失敗。 請下載{0}並放{1}到目錄。」 並在與 Xamarin 相關的錯誤{0}訊息中, 安裝 SDK 安裝程式中提供的套件: ' '。支援封裝
 
 ### <a name="next-steps"></a>後續步驟
 
-本文件討論截至年 2016年目前的行為。 這份文件中所述的技巧不是 Xamarin 的套件，穩定的測試套件的一部分，因此它可能在未來會中斷。
+本檔討論2016年8月起的目前行為。 本檔中所述的技術不是適用于 Xamarin 的穩定測試套件的一部分, 因此未來可能會中斷。
 
-如需進一步協助，請連絡我們，或如果此問題持續，即使利用上述的資訊，請參閱[適用於 Xamarin 有哪些支援選項？](~/cross-platform/troubleshooting/support-options.md)如需連絡選項，建議，以及如何如有需要請提出新錯誤報告。
+如需進一步的協助, 請洽詢我們, 或即使在使用上述資訊之後仍然會發生此問題, 請參閱[什麼是適用于 Xamarin 的支援選項？](~/cross-platform/troubleshooting/support-options.md)以取得連絡人選項、建議, 以及如何在需要時提出新 bug 的相關資訊.
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: dba8fc3c239a8c20795913d6d1e5409a478c4072
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64b666e8e8621019da4f2acb71ab5b3bf22fad3a
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642736"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889766"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注釋和重迭
 
@@ -178,6 +178,7 @@ ms.locfileid: "68642736"
     
     map.AddOverlay (hotelOverlay);  
     ```
+
 這會完成中`ViewDidLoad`的程式碼。 現在, 我們需要`MapDelegate`實作為類別來分別處理批註和重迭視圖的建立。
 
 
@@ -192,6 +193,7 @@ ms.locfileid: "68642736"
         ...
     }
     ```
+
     這裡只有一個批註, 因此重複使用的程式碼並不是絕對必要的, 但最好是將它納入。
 
 1. 使用本逐步解說中包含的 **.png**影像`ConferenceAnnotation` , 執行方法以傳回的視圖:`GetViewForAnnotation`
@@ -261,6 +263,7 @@ ms.locfileid: "68642736"
         }
     }
     ```
+
     我們現在已備妥批註的程式碼。 剩下的就是將程式碼`MapDelegate`新增至, 以建立飯店重迭的視圖。
 
 1. 將下列的實`GetViewForOverlay`作為新增`MapDelegate`至:

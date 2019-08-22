@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/13/2019
-ms.openlocfilehash: e818495d45435546f9d2fc9c5593d9c7caa608ea
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.date: 07/18/2019
+ms.openlocfilehash: 4cfedad6ccf87dfef819b677233be1edb2d2c62d
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528878"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69887968"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
@@ -173,35 +173,41 @@ public class MapPage : ContentPage {
 地圖內容也可以藉由設定變更`MapType`屬性，以顯示規則的街道地圖 （預設值）、 衛星影像或兩者的組合。
 
 ```csharp
-map.MapType == MapType.Street;
+map.MapType = MapType.Street;
 ```
 
 有效`MapType`的值為：
 
-- 混合式
-- 附屬
-- Street （預設值）
+- `Hybrid`
+- `Satellite`
+- `Street` （預設值）
 
 ### <a name="map-region-and-mapspan"></a>對應區域和 MapSpan
 
-上述程式碼片段所示，提供`MapSpan`map 建構函式的執行個體設定的初始檢視 （中心點和縮放層級） 時就會載入對應。 `MoveToRegion` Map 類別上的方法可以再用來變更對應的位置或縮放層級。 有兩種方式來建立新的`MapSpan`執行個體：
+上述程式碼片段所示，提供`MapSpan`map 建構函式的執行個體設定的初始檢視 （中心點和縮放層級） 時就會載入對應。 有兩種方式來建立新的`MapSpan`執行個體：
 
 - **MapSpan.FromCenterAndRadius()** -靜態方法，以建立來自`Position`並指定`Distance`。
 - **新的 MapSpan （)** -使用的建構函式`Position`和程度的緯度和經度來顯示。
 
-
-若要變更地圖的縮放層級但是不會改變位置，建立新`MapSpan`使用目前的位置，從`VisibleRegion.Center`地圖控制項的屬性。 A`Slider`可用來控制地圖縮放，像這樣 （不過，縮放直接在地圖控制項中目前無法更新滑桿的值）：
+`MoveToRegion` Map 類別上的方法可以再用來變更對應的位置或縮放層級。 若要變更地圖的縮放層級但是不會改變位置，建立新`MapSpan`使用目前的位置，從`VisibleRegion.Center`地圖控制項的屬性。 `Slider`可以用來控制地圖縮放比例, 如下所示 (不過, 直接在地圖控制項中縮放, 目前無法更新滑杆的值):
 
 ```csharp
-var slider = new Slider (1, 18, 1);
-slider.ValueChanged += (sender, e) => {
+Slider slider = new Slider (1, 18, 1);
+slider.ValueChanged += (sender, e) =>
+{
     var zoomLevel = e.NewValue; // between 1 and 18
     var latlongdegrees = 360 / (Math.Pow(2, zoomLevel));
     map.MoveToRegion(new MapSpan (map.VisibleRegion.Center, latlongdegrees, latlongdegrees));
 };
 ```
 
- [![包含縮放地圖](map-images/maps-zoom-sml.png "地圖控制項縮放")](map-images/maps-zoom.png#lightbox "地圖控制項縮放")
+[![包含縮放地圖](map-images/maps-zoom-sml.png "地圖控制項縮放")](map-images/maps-zoom.png#lightbox "地圖控制項縮放")
+
+此外, [`Map`](xref:Xamarin.Forms.Maps.Map)類別`MoveToLastRegionOnLayoutChange`具有類型`bool`的屬性, 它是由可系結的屬性所支援。 根據預設, 此屬性`true`為, 這表示顯示的對應區域會在配置變更發生時, 從其目前的區域移至其先前設定的區域, 例如裝置旋轉。 當這個屬性設定為`false`時, 顯示的對應區域將會在版面配置變更時保留在中央。 下列範例會示範如何設定此屬性:
+
+```csharp
+map.MoveToLastRegionOnLayoutChange = false;
+```
 
 ### <a name="map-pins"></a>地圖釘選
 
@@ -282,10 +288,10 @@ MyMap.MoveToRegion(
 
 - `ItemsSource`–指定要顯示的`IEnumerable`專案集合。
 - `ItemTemplate`–指定[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)要套用至所顯示專案集合中每個專案的。
-- `ItemTemplateSelector`–指定[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)將用來在執行時間為專案[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)選擇的。
+- `ItemTemplateSelector` – 指定將用來在執行階段為項目選擇 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 的 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)。
 
 > [!NOTE]
-> 當`ItemTemplate` 同時設定`ItemTemplateSelector`和屬性時, 會優先使用屬性。 `ItemTemplate`
+> 當`ItemTemplate` 與 `ItemTemplateSelector`兩個屬性都已設定時，會優先使用 `ItemTemplate` 屬性。
 
 您可以使用資料系結將其`ItemsSource`屬性`IEnumerable`系結至集合, 以填入資料: [`Map`](xref:Xamarin.Forms.Maps.Map)
 
@@ -297,6 +303,7 @@ MyMap.MoveToRegion(
     <Grid>
         ...
         <maps:Map x:Name="map"
+                  MoveToLastRegionOnLayoutChange="false"
                   ItemsSource="{Binding Locations}">
             <maps:Map.ItemTemplate>
                 <DataTemplate>
@@ -373,12 +380,12 @@ public class MapItemTemplateSelector : DataTemplateSelector
 
 類別會定義`DefaultTemplate`設定`XamarinTemplate`為不同資料範本的和[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `MapItemTemplateSelector` 當`OnSelectTemplate`專案具有包含`XamarinTemplate`「三藩市」的位址時, 此方法`Pin`會傳回, 當按下時, 會將 "Xamarin" 顯示為標籤。 當專案沒有包含「三藩市」的位址時, 此`OnSelectTemplate`方法`DefaultTemplate`會傳回。
 
-如需資料範本選取器的詳細資訊, 請參閱[建立 Xamarin DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+如需資料範本選取器的詳細資訊，請參閱[建立 Xamarin DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="related-links"></a>相關連結
 
 - [MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [對應自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
 - [Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
 - [Maps API](xref:Xamarin.Forms.Maps)
