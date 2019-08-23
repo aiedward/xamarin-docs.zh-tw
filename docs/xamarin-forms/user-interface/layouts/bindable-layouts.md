@@ -52,7 +52,7 @@ var grid = new Grid();
 BindableLayout.SetItemsSource(grid, items);
 ```
 
-`BindableLayout` [`Label`](xref:Xamarin.Forms.Label) `IEnumerable` `BindableLayout.ItemTemplate`當附加屬性設定于版面配置上, 但未設定附加屬性時, 集合中的每個專案都會由類別所建立的來顯示。 `BindableLayout.ItemsSource`
+當在版面配置上設定 `BindableLayout.ItemsSource` 附加屬性，但未設定 `BindableLayout.ItemTemplate` 附加屬性時，`IEnumerable` 集合中的每個項目都將會由 [`Label`](xref:Xamarin.Forms.Label) (由 `BindableLayout` 類別所建立) 來顯示。
 
 ## <a name="defining-item-appearance"></a>定義項目外觀
 
@@ -123,7 +123,7 @@ public class TechItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-類別會定義`DefaultTemplate`設定`XamarinFormsTemplate`為不同資料範本的和[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `TechItemTemplateSelector` `OnSelectTemplate`方法會傳回,這會在專案與"Xamarin"相等時,以深紅色顯示專案,並在其旁邊`XamarinFormsTemplate`有一個心形。 當專案不等於 "Xamarin" 時, `OnSelectTemplate`方法`DefaultTemplate`會傳回, 它會使用的預設色彩[`Label`](xref:Xamarin.Forms.Label)來顯示專案:
+`TechItemTemplateSelector` 類別定義設定為不同資料範本的 `DefaultTemplate` 與 `XamarinFormsTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 屬性。 `OnSelectTemplate` 方法會傳回 `XamarinFormsTemplate`，這會以深紅色顯示項目，而且它旁邊有一個心形符號。 當項目不等於 "Xamarin.Forms" 時，`OnSelectTemplate` 方法會傳回 `DefaultTemplate`，它會使用 [`Label`](xref:Xamarin.Forms.Label) 的預設色彩來顯示項目：
 
 ![具有 DataTemplateSelector 的可繫結版面配置](bindable-layouts-images/favorite-tech.png "具有資料範本選取器的可繫結版面配置")
 
