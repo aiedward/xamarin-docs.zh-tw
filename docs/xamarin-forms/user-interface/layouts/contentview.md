@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 379791d4dda676140425d79eca696cdca94cd55b
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 2dde7415f40c9db205351a81d63d273fc211ed2b
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888425"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976590"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-cardview/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
 
 [Xamarin [`ContentView`](xref:Xamarin.Forms.ContentView) ] 類別是一`Layout`種包含單一子專案的類型, 通常用來建立自訂、可重複使用的控制項。 類別繼承自[`TemplatedView`。](xref:Xamarin.Forms.TemplatedView) `ContentView` 本文和相關的`CardView` `ContentView`範例, 說明如何根據類別建立自訂控制項。
 
@@ -205,7 +205,7 @@ CardView card = new CardView
 
 ## <a name="related-links"></a>相關連結
 
-* [CardView 範例應用程式](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-cardview/)
+* [ContentView 範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentview/)
 * [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * 可系結[屬性](~/xamarin-forms/xaml/bindable-properties.md)。
 * [Xamarin. Forms 控制項範本](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)

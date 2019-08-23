@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/01/2019
-ms.openlocfilehash: 396853e2e61904689069b7abd157c73d1da59fed
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: cbc39ee38ce623ce446d50494829119058fc88dc
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658099"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976478"
 ---
 # <a name="xamarinforms-menuitem"></a>Xamarin. 表單 MenuItem
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 
 [Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem) ] 類別會定義功能表的功能表項目, `ListView`例如專案內容功能表和 Shell 應用程式飛出視窗功能表。
 
@@ -215,5 +215,5 @@ public MenuItemXamlMvvmPage()
 
 ## <a name="related-links"></a>相關連結
 
-* [MenuItem 示範](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
+* [MenuItem 示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitem/)
 * [Xamarin 中的影像](~/xamarin-forms/user-interface/images.md)

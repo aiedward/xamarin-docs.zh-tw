@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/06/2019
-ms.openlocfilehash: 329edf455a4778efa5f6fbd1ec88cfb274c5cb49
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 619b29a9d65594b1badd805c3361fe1a174d7174
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68984420"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976492"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin. 表單框架
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
 [Xamarin [`Frame`](xref:Xamarin.Forms.Frame) ] 類別是用來包裝視圖的版面配置, 其框線可使用色彩、陰影和其他選項進行設定。 框架通常用來在控制項周圍建立框線, 但可用來建立更複雜的 UI。 如需詳細資訊, 請參閱[先進的框架使用](#advanced-frame-usage)方式。
 
@@ -193,5 +193,5 @@ Frame circleImageFrame = new Frame
 
 ## <a name="related-links"></a>相關連結
 
-* [畫面格示範](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+* [畫面格示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 * [Xamarin 中的影像](~/xamarin-forms/user-interface/images.md)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: fe2cc5fb7c51425c8030d31015236473a5264efb
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: aa72daae1727e0d100592873a7895a7d8942b4f2
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509013"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525497"
 ---
 # <a name="gdb"></a>GDB
 
@@ -24,9 +24,9 @@ Xamarin.Android 4.10 引進了透過 `_Gdb` MSBuild 目標來使用 `gdb` 的部
 
 有三種方式可以使用 `gdb`：
 
-1.  [啟用 Fast Deployment 的偵錯組建](#Debug_Builds_with_Fast_Deployment)。
-1.  [停用 Fast Deployment 的偵錯組建](#Debug_Builds_without_Fast_Deployment)。
-1.  [發行組建](#Release_Builds)。
+1. [啟用 Fast Deployment 的偵錯組建](#Debug_Builds_with_Fast_Deployment)。
+1. [停用 Fast Deployment 的偵錯組建](#Debug_Builds_without_Fast_Deployment)。
+1. [發行組建](#Release_Builds)。
 
 
 當發生錯誤時，請參閱[疑難排解](#Troubleshooting)一節。
@@ -83,8 +83,8 @@ GNU gdb (GDB) 7.3.1-gg2
 
 有兩種因應措施：
 
--   設定 `debug.mono.log` 系統屬性，以建立 `.__override__` 目錄。
--   在您的 `.apk` 中包含 `gdbserver`。
+- 設定 `debug.mono.log` 系統屬性，以建立 `.__override__` 目錄。
+- 在您的 `.apk` 中包含 `gdbserver`。
 
 ### <a name="setting-the-debugmonolog-system-property"></a>設定 `debug.mono.log` 系統屬性
 
@@ -141,9 +141,9 @@ GNU gdb (GDB) 7.3.1-gg2
 
 `gdb` 支援需要三個項目：
 
-1.  `INTERNET` 權限。
-2.  啟用應用程式偵錯。
-3.  可存取的 `gdbserver`。
+1. `INTERNET` 權限。
+2. 啟用應用程式偵錯。
+3. 可存取的 `gdbserver`。
 
 根據預設，偵錯應用程式中會啟用 `INTERNET` 權限。 若您的應用程式中尚未存在，您可以藉由編輯 **Properties/AndroidManifest.xml** 或編輯[專案屬性](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)來新增它。
 
@@ -161,7 +161,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 ## <a name="troubleshooting"></a>疑難排解
 
-### <a name="monopmip-doesnt-work"></a>`mono_pmip` 無法運作
+### <a name="mono_pmip-doesnt-work"></a>`mono_pmip` 無法運作
 
 `mono_pmip` 功能 (用於[取得受控堆疊框架](https://www.mono-project.com/docs/debug+profile/debug/#debugging-with-gdb)上很有用) 會從 `libmonosgen-2.0.so` 中匯出，是 `_Gdb` 目標目前無法下拉的項目。 (這將會在未來的版本中修正。)
 

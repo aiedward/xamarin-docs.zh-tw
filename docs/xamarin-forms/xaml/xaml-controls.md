@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2019
-ms.openlocfilehash: 9d9d07388c2dc32e82fb780d0ed09e586e401662
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f146fc25af5b5c62acece5c736522773e6dc455d
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648648"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976526"
 ---
 # <a name="xaml-controls"></a>XAML 控制項
 
@@ -40,7 +40,7 @@ ms.locfileid: "68648648"
 | --- | --- |
 | <h3>按鈕</h3>顯示矩形物件中的文字。<p align="center">![按鈕的螢幕擷取畫面](xaml-controls-images/Button.png "按鈕")</p>[API](xref:Xamarin.Forms.Button) /  [指南](~/xamarin-forms/user-interface/button.md) | <p valign="center"><pre>&lt;Button Text="Click Me!"<br />        Font="Large"<br />        BorderWidth="1"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand"<br />        Clicked="OnButtonClicked" /&gt;</pre></p> |
 | <h3>ImageButton</h3>顯示矩形物件中的影像。<p align="center">![ImageButton 的螢幕擷取畫面](xaml-controls-images/ImageButton.png "ImageButton")</p>[API](xref:Xamarin.Forms.ImageButton) /  [指南](~/xamarin-forms/user-interface/imagebutton.md) | <p valign="center"><pre>&lt;ImageButton Source="XamarinLogo.png"<br />             HorizontalOptions="Center"<br />             VerticalOptions="CenterAndExpand"<br />             Clicked="OnImageButtonClicked" /&gt;</pre></p> |
-| <h3>搜尋列</h3>顯示搜尋列以執行搜尋。<p align="center">![搜尋列的螢幕擷取畫面](xaml-controls-images/SearchBar.png "搜尋列")</p>[API](xref:Xamarin.Forms.SearchBar) | <p valign="center"><pre>&lt;SearchBar Placeholder="Xamarin.Forms Property"<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
+| <h3>搜尋列</h3>顯示搜尋列以執行搜尋。<p align="center">![搜尋列的螢幕擷取畫面](xaml-controls-images/SearchBar.png "搜尋列")</p>[API](xref:Xamarin.Forms.SearchBar) /  [指南](~/xamarin-forms/user-interface/searchbar.md) | <p valign="center"><pre>&lt;SearchBar Placeholder="Xamarin.Forms Property"<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-for-setting-values"></a>設定值的檢視
@@ -67,8 +67,8 @@ ms.locfileid: "68648648"
 
 |     |     |
 | --- | --- |
-| <h3>ActivityIndicator</h3>顯示一個動畫, 顯示應用程式正在進行長時間的活動, 而不會提供進度的指示。<p align="center">![ActivityIndicator 的螢幕擷取畫面](xaml-controls-images/ActivityIndicator.png "ActivityIndicator")</p>[API](xref:Xamarin.Forms.ActivityIndicator) | <p valign="center"><pre>&lt;ActivityIndicator IsRunning="True"<br />                   VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>進度列</h3>顯示動畫, 以顯示應用程式正在經歷冗長的活動。<p align="center">![ProgressBar 的螢幕擷取畫面](xaml-controls-images/ProgressBar.png "ProgressBar")</p>[API](xref:Xamarin.Forms.ProgressBar) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>ActivityIndicator</h3>顯示一個動畫, 顯示應用程式正在進行長時間的活動, 而不會提供進度的指示。<p align="center">![ActivityIndicator 的螢幕擷取畫面](xaml-controls-images/ActivityIndicator.png "ActivityIndicator")</p>[API](xref:Xamarin.Forms.ActivityIndicator) /  [指南](~/xamarin-forms/user-interface/activityindicator.md) | <p valign="center"><pre>&lt;ActivityIndicator IsRunning="True"<br />                   VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>進度列</h3>顯示動畫, 以顯示應用程式正在經歷冗長的活動。<p align="center">![ProgressBar 的螢幕擷取畫面](xaml-controls-images/ProgressBar.png "ProgressBar")</p>[API](xref:Xamarin.Forms.ProgressBar) /  [指南](~/xamarin-forms/user-interface/progressbar.md) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-that-display-collections"></a>顯示集合的檢視

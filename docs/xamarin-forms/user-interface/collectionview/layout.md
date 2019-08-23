@@ -6,13 +6,13 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/12/2019
-ms.openlocfilehash: e22b79fada5582adfec05ce7c5ebeddd6fe7e5d2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.date: 08/22/2019
+ms.openlocfilehash: ac32e340212dd42c373a39df138436e7ee313958
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888660"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976577"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin. Forms CollectionView 版面配置
 
@@ -319,9 +319,6 @@ CollectionView collectionView = new CollectionView
 
 這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援, 這表示屬性可以是資料系結的目標。
 
-> [!IMPORTANT]
-> 目前只有 Android 支援頁首和頁尾。
-
 當標頭加入至水準成長的版面配置時 (從左至右), 標題會顯示在清單的左邊。 同樣地, 當頁尾加入至水準成長的版面配置時 (從左至右), 頁尾會顯示在清單的右邊。
 
 ### <a name="display-strings-in-the-header-and-footer"></a>在頁首和頁尾中顯示字串
@@ -346,6 +343,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+此程式碼會產生下列螢幕擷取畫面, 其中的標頭顯示在 iOS 螢幕擷取畫面中, 而頁尾顯示于 Android 螢幕擷取畫面:
+
+[ ![CollectionView 字串頁首和頁尾 (在 IOS 和 Android 上) 的螢幕擷取畫面](layout-images/header-footer-string.png "CollectionView 字串標頭和")]頁尾(layout-images/header-footer-string-large.png#lightbox "CollectionView 字串頁首和")頁尾
 
 ### <a name="display-views-in-the-header-and-footer"></a>在頁首和頁尾中顯示 views
 
@@ -395,6 +396,10 @@ CollectionView collectionView = new CollectionView
 };
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+此程式碼會產生下列螢幕擷取畫面, 其中的標頭顯示在 iOS 螢幕擷取畫面中, 而頁尾顯示于 Android 螢幕擷取畫面:
+
+[在 iOS 和 Android(layout-images/header-footer-view.png "CollectionView view 頁首和")頁尾![上使用 views CollectionView 頁首和頁尾的螢幕擷取畫面]](layout-images/header-footer-view-large.png#lightbox "CollectionView view 頁首和")頁尾
 
 ### <a name="display-a-templated-header-and-footer"></a>顯示樣板化頁首和頁尾
 
@@ -446,6 +451,10 @@ collectionView.SetBinding(ItemsView.HeaderProperty, ".");
 collectionView.SetBinding(ItemsView.FooterProperty, ".");
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
+
+此程式碼會產生下列螢幕擷取畫面, 其中的標頭顯示在 iOS 螢幕擷取畫面中, 而頁尾顯示于 Android 螢幕擷取畫面:
+
+[![在 IOS 和 Android 上使用範本的 CollectionView 頁首和頁尾螢幕擷取畫面](layout-images/header-footer-template.png "CollectionView 範本頁首和")]頁尾(layout-images/header-footer-template-large.png#lightbox "CollectionView 範本頁首和")頁尾
 
 ## <a name="item-spacing"></a>專案間距
 

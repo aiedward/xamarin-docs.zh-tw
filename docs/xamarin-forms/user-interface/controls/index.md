@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2019
-ms.openlocfilehash: 925e97292d19745b0b89fb98103d205ab8476157
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: dfc6c71a252b57bb39b464425b89fe8f5bda7d3e
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68980768"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976508"
 ---
 # <a name="controls-reference"></a>控制項參考
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 Xamarin 應用程式的使用者介面是由對應至每個目標平臺原生控制項的物件所構成。 這可讓 iOS、Android 和通用 Windows 平臺的平臺特定應用程式使用包含在[.NET Standard 程式庫](~/cross-platform/app-fundamentals/net-standard.md)中的 Xamarin。
 

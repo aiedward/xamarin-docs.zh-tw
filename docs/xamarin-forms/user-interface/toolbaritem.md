@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 9bb041206dbafb68c1bb60bbbb3068f0a2001b55
-ms.sourcegitcommit: 9178e2e689f027212ea3e623b556b312985d79fe
+ms.openlocfilehash: e6ce55f25b130c64b72a5a7e2ec2ec9a00291d14
+ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658051"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976336"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms ToolbarItem
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
 [Xamarin [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) ] 類別是一種特殊類型的按鈕, 可以加入`Page`物件的`ToolbarItems`集合中。 每`ToolbarItem`個物件會在應用程式的導覽列中顯示為按鈕。 `ToolbarItem`實例可以有圖示, 並顯示為主要或次要功能表項目。 類別繼承自[`MenuItem`。](xref:Xamarin.Forms.MenuItem) `ToolbarItem`
 
@@ -117,6 +117,6 @@ void OnItemClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-* [ToolbarItem 示範](https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+* [ToolbarItem 示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Xamarin 中的影像](~/xamarin-forms/user-interface/images.md)
 * [Xamarin. 表單 MenuItem](~/xamarin-forms/user-interface/menuitem.md)
