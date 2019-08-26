@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f6f3377c4fdeedefa3277d05012ec868f6626c41
-ms.sourcegitcommit: 57e8a0a10246ff9a4bd37f01d67ddc635f81e723
+ms.openlocfilehash: 2166cbbb3d15cde1af83b3071a0d83a1e8f51071
+ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57669995"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560275"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -25,16 +25,16 @@ ProGuard 可偵測和移除封裝應用程式的未使用類別、欄位、方�
 
 ProGuard 會使用下列步驟來處理 APK 的輸入： 
 
-1.  **壓縮步驟** &ndash; ProGuard 會以遞迴方式判斷使用的類別和類別成員。 所有其他類別與類別成員都會被捨棄。 
+1. **壓縮步驟** &ndash; ProGuard 會以遞迴方式判斷使用的類別和類別成員。 所有其他類別與類別成員都會被捨棄。 
 
-2.  **最佳化步驟** &ndash; ProGuard 會進一步將程式碼最佳化。 
+2. **最佳化步驟** &ndash; ProGuard 會進一步將程式碼最佳化。 
     在其他最佳化之中，並非進入點的類別與方法可設為私人、靜態或最終的進入點，可以移除未使用的參數，而且可以內嵌某些方法。 
 
-3.  **混淆步驟** &ndash; 在原生的 Android 開發中，ProGuard 會重新命名不是進入點的類別與類別成員。 保留進入點可確保仍可透過其原始名稱來存取。 但是 Xamarin.Android 並不支援這項步驟，原因是該應用程式以中繼語言 (IL) 編譯而成。
+3. **混淆步驟** &ndash; 在原生的 Android 開發中，ProGuard 會重新命名不是進入點的類別與類別成員。 保留進入點可確保仍可透過其原始名稱來存取。 但是 Xamarin.Android 並不支援這項步驟，原因是該應用程式以中繼語言 (IL) 編譯而成。
 
-4.  **預先驗證步驟** &ndash; 在執行階段之前對 Java 位元組程式碼執行檢查，並標註類別檔案，方便 Java VM 使用。 這是唯一不需要知道進入點的步驟。 
+4. **預先驗證步驟** &ndash; 在執行階段之前對 Java 位元組程式碼執行檢查，並標註類別檔案，方便 Java VM 使用。 這是唯一不需要知道進入點的步驟。 
 
-這些全都是「選擇性」步驟。 如下一節中所說明，Xamarin.Android ProGuard 只會使用這些步驟的某些步驟。 
+這些全都是「選擇性」  步驟。 如下一節中所說明，Xamarin.Android ProGuard 只會使用這些步驟的某些步驟。 
 
 
 
@@ -46,9 +46,9 @@ Xamarin.Android ProGuard 組態不會混淆 APK。 事實上，您無法透過 P
 
 使用 ProGuard 之前要事先知道的一個重要項目就是它在 `Xamarin.Android` 建置處理序中的運作方式。 此程序會使用兩個不同的步驟： 
 
-1.  Xamarin Android 連結器
+1. Xamarin Android 連結器
 
-2.  ProGuard
+2. ProGuard
 
 所有這些步驟都會描述如下。
 
@@ -58,11 +58,11 @@ Xamarin.Android ProGuard 組態不會混淆 APK。 事實上，您無法透過 P
 
 Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷下列各項： 
 
--   實際上會使用哪些組件。
+- 實際上會使用哪些組件。
 
--   實際上會使用哪些類型。
+- 實際上會使用哪些類型。
 
--   實際上會使用哪些成員。 
+- 實際上會使用哪些成員。 
 
 連結器一律會在 ProGuard 步驟之前執行。 因此，連結器能移除您可能預期 ProGuard 要在其上執行的組件/類型/成員 (如需 Xamarin.Android 中之連結的詳細資訊，請參閱 [Android 上的連結](~/android/deploy-test/linker.md))。
 
@@ -84,65 +84,67 @@ Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷�
 
 使用下列步驟以在您的應用程式專案中啟用 ProGuard：
 
-1.  請務必將專案設定為 [發行] 組態 (這相當重要，因為連結器必須執行，ProGuard才能執行)： 
+1. 請務必將專案設定為 [發行]  組態 (這相當重要，因為連結器必須執行，ProGuard 才能執行)： 
 
     [![選取發行組態](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png#lightbox)
    
-2.  在 [屬性] > [Android 選項] 的 [封裝] 索引標籤下，選取 [啟用 ProGuard] 選項以啟用 ProGuard： 
+2. 在 [屬性] > [Android 選項]  的 [封裝]  索引標籤下，選取 [啟用 ProGuard]  選項以啟用 ProGuard： 
 
     [![選取了 [啟用 Proguard] 選項](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png#lightbox)
 
-針對大部分的 Xamarin.Android 應用程式而言，Xamarin.Android 提供的預設 ProGuard 組態檔即足以移除所有 (且僅限) 未使用的程式碼。 若要檢視預設 ProGuard 組態，請開啟位在 **obj\\Release\\proguard\\proguard_xamarin.cfg** 的檔案。 下一節說明如何建立自訂的 ProGuard 組態檔。 
+針對大部分的 Xamarin.Android 應用程式而言，Xamarin.Android 提供的預設 ProGuard 組態檔即足以移除所有 (且僅限) 未使用的程式碼。 若要檢視預設 ProGuard 組態，請開啟位在 **obj\\Release\\proguard\\proguard_xamarin.cfg** 的檔案。
 
+下列範例示範一般產生的 **proguard_xamarin.cfg** 檔案：
 
+```cfg
+# This is Xamarin-specific (and enhanced) configuration.
+
+-dontobfuscate
+
+-keep class mono.MonoRuntimeProvider { *; <init>(...); }
+-keep class mono.MonoPackageManager { *; <init>(...); }
+-keep class mono.MonoPackageManager_Resources { *; <init>(...); }
+-keep class mono.android.** { *; <init>(...); }
+-keep class mono.java.** { *; <init>(...); }
+-keep class mono.javax.** { *; <init>(...); }
+-keep class opentk.platform.android.AndroidGameView { *; <init>(...); }
+-keep class opentk.GameViewBase { *; <init>(...); }
+-keep class opentk_1_0.platform.android.AndroidGameView { *; <init>(...); }
+-keep class opentk_1_0.GameViewBase { *; <init>(...); }
+
+-keep class android.runtime.** { <init>(***); }
+-keep class assembly_mono_android.android.runtime.** { <init>(***); }
+# hash for android.runtime and assembly_mono_android.android.runtime.
+-keep class md52ce486a14f4bcd95899665e9d932190b.** { *; <init>(...); }
+-keepclassmembers class md52ce486a14f4bcd95899665e9d932190b.** { *; <init>(...); }
+
+# Android's template misses fluent setters...
+-keepclassmembers class * extends android.view.View {
+   *** set*(***);
+}
+
+# also misses those inflated custom layout stuff from xml...
+-keepclassmembers class * extends android.view.View {
+   <init>(android.content.Context,android.util.AttributeSet);
+   <init>(android.content.Context,android.util.AttributeSet,int);
+}
+```
+
+下一節說明如何建立自訂的 ProGuard 組態檔。 
 
 ### <a name="customizing-proguard"></a>自訂 ProGuard
 
-您可以選擇新增自訂的 ProGuard 組態檔以對 ProGuard 工具施加更多控制。 例如，您可能想要明確告訴 ProGuard 要保留哪些類別。 若要執行此動作，請建立新的 **.cfg** 檔案，並在 [方案總管] 的 [屬性] 窗格中套用 `ProGuardConfiguration` 建置動作： 
+您可以選擇新增自訂的 ProGuard 組態檔以對 ProGuard 工具施加更多控制。 例如，您可能想要明確告訴 ProGuard 要保留哪些類別。 若要執行此動作，請建立新的 **.cfg** 檔案，並在 [方案總管]  的 [屬性]  窗格中套用 `ProGuardConfiguration` 建置動作： 
 
 [![選取了 ProguardConfiguration 建置動作](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png#lightbox)
 
 請記住，由於 ProGuard 會使用兩者，所以此組態檔不會取代 Xamarin.Android **proguard_xamarin.cfg** 檔案。 
 
-下列範例說明典型的 ProGuard 組態檔：
-    
-
-    # This is Xamarin-specific (and enhanced) configuration.
-
-    -dontobfuscate
-
-    -keep class mono.MonoRuntimeProvider { *; <init>(...); }
-    -keep class mono.MonoPackageManager { *; <init>(...); }
-    -keep class mono.MonoPackageManager_Resources { *; <init>(...); }
-    -keep class mono.android.** { *; <init>(...); }
-    -keep class mono.java.** { *; <init>(...); }
-    -keep class mono.javax.** { *; <init>(...); }
-    -keep class opentk.platform.android.AndroidGameView { *; <init>(...); }
-    -keep class opentk.GameViewBase { *; <init>(...); }
-    -keep class opentk_1_0.platform.android.AndroidGameView { *; <init>(...); }
-    -keep class opentk_1_0.GameViewBase { *; <init>(...); }
-
-    -keep class android.runtime.** { <init>(***); }
-    -keep class assembly_mono_android.android.runtime.** { <init>(***); }
-    # hash for android.runtime and assembly_mono_android.android.runtime.
-    -keep class md52ce486a14f4bcd95899665e9d932190b.** { *; <init>(...); }
-    -keepclassmembers class md52ce486a14f4bcd95899665e9d932190b.** { *; <init>(...); }
-
-    # Android's template misses fluent setters...
-    -keepclassmembers class * extends android.view.View {
-       *** set*(***);
-    }
-
-    # also misses those inflated custom layout stuff from xml...
-    -keepclassmembers class * extends android.view.View {
-       <init>(android.content.Context,android.util.AttributeSet);
-       <init>(android.content.Context,android.util.AttributeSet,int);
-    }
-    
-
 有些情況可能是 ProGuard 無法適當分析應用程式；它可能會移除應用程式真正需要的程式碼。 如果發生這種情況，您可以將 `-keep` 這行加入自訂 ProGuard 組態檔： 
 
-    -keep public class MyClass
+```
+-keep public class MyClass
+```
 
 在此範例中，`MyClass` 設定為您想要 ProGuard 略過的實際類別名稱。
 
@@ -156,35 +158,35 @@ ProGuard 提供一些您可以設定的選項，以對其作業進行更細微�
 Xamarin.Android 支援下列 ProGuard 選項： 
 
 
--    [輸入/輸出選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#iooptions)
+- [輸入/輸出選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#iooptions)
 
--    [保留選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#keepoptions)
+- [保留選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#keepoptions)
 
--    [壓縮選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#shrinkingoptions)
+- [壓縮選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#shrinkingoptions)
 
--    [一般選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#generaloptions)
+- [一般選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#generaloptions)
 
--    [類別路徑](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#classpath)
+- [類別路徑](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#classpath)
 
--    [檔案名稱](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#filename)
+- [檔案名稱](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#filename)
 
--    [檔案篩選條件](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#filefilters)
+- [檔案篩選條件](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#filefilters)
 
--    [篩選](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#filters)
+- [篩選](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#filters)
 
--    [`Keep` 選項概觀](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#keepoverview)
+- [`Keep` 選項概觀](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#keepoverview)
 
--    [保留選項修飾詞](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#keepoptionmodifiers)
+- [保留選項修飾詞](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#keepoptionmodifiers)
 
--    [類別規格](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#classspecification)
+- [類別規格](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#classspecification)
 
-Xamarin.Android 會乎略下列選項：
+Xamarin.Android 會乎略  下列選項：
 
--    [最佳化選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#optimizationoptions)
+- [最佳化選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#optimizationoptions)
 
--    [混淆選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#obfuscationoptions) 
+- [混淆選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#obfuscationoptions) 
 
--    [預先驗證選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#preverificationoptions)
+- [預先驗證選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#preverificationoptions)
 
 
 
@@ -206,61 +208,64 @@ Xamarin.Android 會乎略下列選項：
 
 下列範例說明簡單 Android 活動的組態：
 
-    -injars  bin/classes
-    -outjars bin/classes-processed.jar
-    -libraryjars /usr/local/java/android-sdk/platforms/android-9/android.jar
+```
+-injars  bin/classes
+-outjars bin/classes-processed.jar
+-libraryjars /usr/local/java/android-sdk/platforms/android-9/android.jar
 
-    -dontpreverify
-    -repackageclasses ''
-    -allowaccessmodification
-    -optimizations !code/simplification/arithmetic
+-dontpreverify
+-repackageclasses ''
+-allowaccessmodification
+-optimizations !code/simplification/arithmetic
 
-    -keep public class mypackage.MyActivity
+-keep public class mypackage.MyActivity
+```
 
 ### <a name="a-complete-android-application"></a>完整的 Android 應用程式
 
 下列範例說明完整 Android 應用程式的組態：
 
-    -injars  bin/classes
-    -injars  libs
-    -outjars bin/classes-processed.jar
-    -libraryjars /usr/local/java/android-sdk/platforms/android-9/android.jar
+```
+-injars  bin/classes
+-injars  libs
+-outjars bin/classes-processed.jar
+-libraryjars /usr/local/java/android-sdk/platforms/android-9/android.jar
 
-    -dontpreverify
-    -repackageclasses ''
-    -allowaccessmodification
-    -optimizations !code/simplification/arithmetic
-    -keepattributes *Annotation*
+-dontpreverify
+-repackageclasses ''
+-allowaccessmodification
+-optimizations !code/simplification/arithmetic
+-keepattributes *Annotation*
 
-    -keep public class * extends android.app.Activity
-    -keep public class * extends android.app.Application
-    -keep public class * extends android.app.Service
-    -keep public class * extends android.content.BroadcastReceiver
-    -keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
 
-    -keep public class * extends android.view.View {
-    public <init>(android.content.Context);
-    public <init>(android.content.Context, android.util.AttributeSet);
-    public <init>(android.content.Context, android.util.AttributeSet, int);
-    public void set*(...);
-    }
+-keep public class * extends android.view.View {
+public <init>(android.content.Context);
+public <init>(android.content.Context, android.util.AttributeSet);
+public <init>(android.content.Context, android.util.AttributeSet, int);
+public void set*(...);
+}
 
-    -keepclasseswithmembers class * {
-    public <init>(android.content.Context, android.util.AttributeSet);
-    }
+-keepclasseswithmembers class * {
+public <init>(android.content.Context, android.util.AttributeSet);
+}
 
-    -keepclasseswithmembers class * {
-    public <init>(android.content.Context, android.util.AttributeSet, int);
-    }
+-keepclasseswithmembers class * {
+public <init>(android.content.Context, android.util.AttributeSet, int);
+}
 
-    -keepclassmembers class * implements android.os.Parcelable {
-    static android.os.Parcelable$Creator CREATOR;
-    }
+-keepclassmembers class * implements android.os.Parcelable {
+static android.os.Parcelable$Creator CREATOR;
+}
 
-    -keepclassmembers class **.R$* {
-    public static <fields>;
-    }
-
+-keepclassmembers class **.R$* {
+public static <fields>;
+}
+```
 
 ## <a name="proguard-and-the-xamarinandroid-build-process"></a>ProGuard 與 Xamarin.Android 建置處理序
 
@@ -279,33 +284,35 @@ java -jar proguard.jar options ...
 
 ProGuard 工作可在 **Xamarin.Android.Build.Tasks.dll** 組件內找到。 它是 `_CompileToDalvikWithDx` 目標的一部分，也是 `_CompileDex` 目標的一部分。 
 
-下列清單提供的範例是您使用 [檔案] > [新增專案] 建立新專案之後產生的預設參數： 
+下列清單提供的範例是您使用 [檔案] > [新增專案]  建立新專案之後產生的預設參數： 
 
-    ProGuardJarPath = C:\Android\android-sdk\tools\proguard\lib\proguard.jar
-    AndroidSdkDirectory = C:\Android\android-sdk\
-    JavaToolPath = C:\Program Files (x86)\Java\jdk1.8.0_92\\bin
-    ProGuardToolPath = C:\Android\android-sdk\tools\proguard\
-    JavaPlatformJarPath = C:\Android\android-sdk\platforms\android-25\android.jar
-    ClassesOutputDirectory = obj\Release\android\bin\classes
-    AcwMapFile = obj\Release\acw-map.txt
-    ProGuardCommonXamarinConfiguration = obj\Release\proguard\proguard_xamarin.cfg
-    ProGuardGeneratedReferenceConfiguration = obj\Release\proguard\proguard_project_references.cfg
-    ProGuardGeneratedApplicationConfiguration = obj\Release\proguard\proguard_project_primary.cfg
-    ProGuardConfigurationFiles
+```
+ProGuardJarPath = C:\Android\android-sdk\tools\proguard\lib\proguard.jar
+AndroidSdkDirectory = C:\Android\android-sdk\
+JavaToolPath = C:\Program Files (x86)\Java\jdk1.8.0_92\\bin
+ProGuardToolPath = C:\Android\android-sdk\tools\proguard\
+JavaPlatformJarPath = C:\Android\android-sdk\platforms\android-25\android.jar
+ClassesOutputDirectory = obj\Release\android\bin\classes
+AcwMapFile = obj\Release\acw-map.txt
+ProGuardCommonXamarinConfiguration = obj\Release\proguard\proguard_xamarin.cfg
+ProGuardGeneratedReferenceConfiguration = obj\Release\proguard\proguard_project_references.cfg
+ProGuardGeneratedApplicationConfiguration = obj\Release\proguard\proguard_project_primary.cfg
+ProGuardConfigurationFiles
 
-      {sdk.dir}tools\proguard\proguard-android.txt;
-      {intermediate.common.xamarin};
-      {intermediate.references};
-      {intermediate.application};
-      ;
-     
-    JavaLibrariesToEmbed = C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v7.0\mono.android.jar
-    ProGuardJarInput = obj\Release\proguard\__proguard_input__.jar
-    ProGuardJarOutput = obj\Release\proguard\__proguard_output__.jar
-    DumpOutput = obj\Release\proguard\dump.txt
-    PrintSeedsOutput = obj\Release\proguard\seeds.txt
-    PrintUsageOutput = obj\Release\proguard\usage.txt
-    PrintMappingOutput = obj\Release\proguard\mapping.txt
+    {sdk.dir}tools\proguard\proguard-android.txt;
+    {intermediate.common.xamarin};
+    {intermediate.references};
+    {intermediate.application};
+    ;
+
+JavaLibrariesToEmbed = C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v7.0\mono.android.jar
+ProGuardJarInput = obj\Release\proguard\__proguard_input__.jar
+ProGuardJarOutput = obj\Release\proguard\__proguard_output__.jar
+DumpOutput = obj\Release\proguard\dump.txt
+PrintSeedsOutput = obj\Release\proguard\seeds.txt
+PrintUsageOutput = obj\Release\proguard\usage.txt
+PrintMappingOutput = obj\Release\proguard\mapping.txt
+```
 
 接下來的範例說明從 IDE 執行的典型 ProGuard 命令：
 
@@ -319,13 +326,15 @@ C:\Program Files (x86)\Java\jdk1.8.0_92\\bin\java.exe -jar C:\Android\android-sd
 
 當 ProGuard 讀取其組態檔時，可能會顯示下列錯誤訊息： 
 
-    Unknown option '-keep' in line 1 of file 'proguard.cfg'
+```
+Unknown option '-keep' in line 1 of file 'proguard.cfg'
+```
 
-此問題通常是在 Windows 上發生，原因是 `.cfg` 檔案的編碼錯誤。 ProGuard 無法處理可能會以文字檔呈現的「位元組順序標記」(BOM)。 如果有 BOM 存在，ProGuard 會隨即結束並出現上述錯誤。 
+此問題通常是在 Windows 上發生，原因是 `.cfg` 檔案的編碼錯誤。 ProGuard 無法處理可能會以文字檔呈現的「位元組順序標記」  (BOM)。 如果有 BOM 存在，ProGuard 會隨即結束並出現上述錯誤。 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要避免這個問題，請從儲存檔案時允許不含 BOM 的文字編輯器中編輯自訂組態檔。 若要解決此問題，請確定文字編輯器將其編碼設定為 `UTF-8`。 例如，在儲存檔案時，在文字編輯器 [Notepad++](https://notepad-plus-plus.org/) 選取 [編碼] &gt; [編譯成 UTF-8 碼〈檔首無 BOM〉]，即可儲存不含 BOM 的檔案。 
+若要避免這個問題，請從儲存檔案時允許不含 BOM 的文字編輯器中編輯自訂組態檔。 若要解決此問題，請確定文字編輯器將其編碼設定為 `UTF-8`。 例如，在儲存檔案時，在文字編輯器 [Notepad++](https://notepad-plus-plus.org/) 選取 [編碼] &gt; [編譯成 UTF-8 碼〈檔首無 BOM〉]  ，即可儲存不含 BOM 的檔案。 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

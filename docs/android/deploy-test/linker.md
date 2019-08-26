@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/30/2018
-ms.openlocfilehash: a79dcf14ddefd13d17e218602030a6467a3f1448
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4e9a7df9ef418eb9a671979da6d61f7afe03a49f
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643833"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525427"
 ---
 # <a name="linking-on-android"></a>在 Android 上連結
 
@@ -19,7 +19,7 @@ Xamarin.Android 應用程式會使用「連結器」  來縮小應用程式的�
 
 例如，[Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) 範例：
 
-|組態|1.2.0 大小|4.0.1 大小|
+|Configuration|1.2.0 大小|4.0.1 大小|
 |---|---|---|
 |沒有連結的版本：|14.0 MB|16.0 MB|
 |有連結的版本：|4.2 MB|2.9 MB|
@@ -28,7 +28,7 @@ Xamarin.Android 應用程式會使用「連結器」  來縮小應用程式的�
 
 
 
-## <a name="control"></a>控制
+## <a name="control"></a>控制項
 
 連結乃根據「靜態分析」(  。 因此，無法偵測相依於執行階段環境的任何項目：
 
@@ -55,9 +55,9 @@ public class MyActivity {
 
 控制連結器的主要機制位於 [專案選項]  對話方塊中的 [連結器行為]  (Visual Studio 中的 [連結]  ) 下拉式功能表。 有三種選項：
 
-1.  **不要連結** (Visual Studio 中的 [無]  )
-1.  **連結 SDK 組件** (僅 SDK 組件) 
-1.  []**連結所有組件** (SDK 及使用者組件) 
+1. **不要連結** (Visual Studio 中的 [無]  )
+1. **連結 SDK 組件** (僅 SDK 組件) 
+1. []**連結所有組件** (SDK 及使用者組件) 
 
 
 [不要連結]  選項會關閉連結器，上述「沒有連結的版本」應用程式大小範例便使用了這項行為。 這在針對執行階段進行疑難排解失敗時非常有用，可查看問題是否出於連結器。 這項設定通常不建議用於正式版本。
@@ -90,13 +90,13 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>保留程式碼
 
-連結器有時候會移除您想要保留的程式碼。 例如︰
+連結器有時候會移除您想要保留的程式碼。 例如：
 
--   您也有可能會透過 `System.Reflection.MemberInfo.Invoke` 動態呼叫程式碼。
+- 您可能也有透過 `System.Reflection.MemberInfo.Invoke` 動態呼叫的程式碼。
 
--   若您是以動態方式來具現化類型，您可能會想要保留您類型的預設建構函式。
+- 若以動態方式具現化類型，您可能會想要保留您類型的預設建構函式。
 
--   若您使用的是 XML 序列化，則您可能會想要保留您類型的屬性。
+- 若使用 XML 序列化，您可能會想要保留您類型的屬性。
 
 在這些案例下，您可以使用 [Android.Runtime.Preserve](xref:Android.Runtime.PreserveAttribute) 屬性。 由於每個未由應用程式靜態連結的成員都會遭到移除，因此這個屬性可用來標示沒有靜態參考，但您的應用程式仍然需要的成員。 您可以將此屬性套用到類型的每個成員，或是類型本身。
 
@@ -198,27 +198,27 @@ class MyActivity {
 
 連結組件時，會從所有成員移除下列自訂屬性類型：
 
--  System.ObsoleteAttribute
--  System.MonoDocumentationNoteAttribute
--  System.MonoExtensionAttribute
--  System.MonoInternalNoteAttribute
--  System.MonoLimitationAttribute
--  System.MonoNotSupportedAttribute
--  System.MonoTODOAttribute
--  System.Xml.MonoFIXAttribute
+- System.ObsoleteAttribute
+- System.MonoDocumentationNoteAttribute
+- System.MonoExtensionAttribute
+- System.MonoInternalNoteAttribute
+- System.MonoLimitationAttribute
+- System.MonoNotSupportedAttribute
+- System.MonoTODOAttribute
+- System.Xml.MonoFIXAttribute
 
 
 連結組件時，會從發行組建中的所有成員移除下列自訂屬性類型：
 
--  System.Diagnostics.DebuggableAttribute
--  System.Diagnostics.DebuggerBrowsableAttribute
--  System.Diagnostics.DebuggerDisplayAttribute
--  System.Diagnostics.DebuggerHiddenAttribute
--  System.Diagnostics.DebuggerNonUserCodeAttribute
--  System.Diagnostics.DebuggerStepperBoundaryAttribute
--  System.Diagnostics.DebuggerStepThroughAttribute
--  System.Diagnostics.DebuggerTypeProxyAttribute
--  System.Diagnostics.DebuggerVisualizerAttribute
+- System.Diagnostics.DebuggableAttribute
+- System.Diagnostics.DebuggerBrowsableAttribute
+- System.Diagnostics.DebuggerDisplayAttribute
+- System.Diagnostics.DebuggerHiddenAttribute
+- System.Diagnostics.DebuggerNonUserCodeAttribute
+- System.Diagnostics.DebuggerStepperBoundaryAttribute
+- System.Diagnostics.DebuggerStepThroughAttribute
+- System.Diagnostics.DebuggerTypeProxyAttribute
+- System.Diagnostics.DebuggerVisualizerAttribute
 
 
 ## <a name="related-links"></a>相關連結

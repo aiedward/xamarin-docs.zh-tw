@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 4c0fc5edd309d5ed8103c5fc3e33817001049241
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739261"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888961"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
@@ -91,7 +91,7 @@ about
 若要導覽至 `dogs` 路由的 `ShellContent` 物件，絕對路由 URI 為 `//animals/domestic/dogs`。 同樣地，若要導覽至 `about` 路由的 `ShellContent` 物件，絕對路由 URI 為 `//about`。
 
 > [!IMPORTANT]
-> 允許路由名稱重複。 但是不允許路由重複。 如果偵測到重複的路由，將會在應用程式啟動時擲回 `ArgumentException`。
+> 如果偵測到重複的路由，將會在應用程式啟動時擲回 `ArgumentException`。 如果階層中有兩個以上的同層級路由共用一個路由名稱，也會擲回此例外狀況。
 
 #### <a name="register-page-routes"></a>註冊頁面路由
 
@@ -123,7 +123,7 @@ Routing.RegisterRoute("elephants/details", typeof(ElephantDetailPage));
 此範例會啟用內容相關式頁面導覽，其中，從 `monkeys` 路由的頁面導覽至 `details` 路由會顯示 `MonkeyDetailPage`。 同樣地，從 `elephants` 路由的頁面導覽至 `details` 路由會顯示 `ElephantDetailPage`。
 
 > [!IMPORTANT]
-> 目前在使用 `Routing.RegisterRoute` 方法時，允許路由名稱重複，但重複註冊會覆寫先前的註冊。
+> 如果 `Routing.RegisterRoute` 方法嘗試向兩個以上的不同類型註冊相同的路由，則會擲回 `ArgumentException`。
 
 ## <a name="perform-navigation"></a>執行導覽
 

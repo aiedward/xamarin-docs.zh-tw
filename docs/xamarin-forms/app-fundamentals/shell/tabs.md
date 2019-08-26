@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/23/2019
-ms.openlocfilehash: 25fcf40f7ad94bf5c2ba03fca7413fcaaedba09e
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: a6d99197adca9d07fec5b996d2a74e2ac336d2e9
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739239"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69888975"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms Shell 索引標籤
 
@@ -163,6 +163,9 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 ```
 
 在每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件中，都可以導覽至其他 `ContentPage` 物件。 如需有關導覽的詳細資訊，請參閱 [Xamarin.Forms Shell 導覽](navigation.md)。
+
+> [!NOTE]
+> 每個 `ShellContent` 物件的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 都繼承自父 `Tab` 物件。
 
 ### <a name="shellcontent-class"></a>ShellContent 類別
 

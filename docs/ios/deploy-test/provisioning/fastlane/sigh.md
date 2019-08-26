@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 88cc4899956b03d7236d7aa5c2bd30a5f6880507
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: bb2fd504cccb7aa81831288762ba623824e52554
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50119510"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69526518"
 ---
 # <a name="fastlane-for-ios-sigh"></a>適用於 iOS 的 fastlane - sigh
 
@@ -50,7 +50,7 @@ ms.locfileid: "50119510"
 
 ## <a name="what-is-sigh"></a>什麼是 sigh
 
-sigh 提供一個終端機介面，可讓您為下列所有組態建立和更新佈建設定檔：開發、App Store 散發、Ad Hoc 散發及企業散發。 此外，它也提供一個簡單的方式來下載和修復佈建設定檔。
+sigh 提供的終端機介面，可讓您建立及更新所有組態的佈建設定檔：開發、App Store 散發、臨機操作散發和企業散發。 此外，它也提供一個簡單的方式來下載和修復佈建設定檔。
 
 <a name="appid" />
 
@@ -58,7 +58,9 @@ sigh 提供一個終端機介面，可讓您為下列所有組態建立和更新
 
 您可以使用下列命令來建立「應用程式識別碼」：
 
-    fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
+fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
+```
 
 其中 `com.company.appname` 是您應用程式的套件組合識別碼，您可以在 Xamarin.iOS 應用程式的 Info.plist 檔案中找到此識別碼，如下所示：
 

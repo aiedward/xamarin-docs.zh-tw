@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: edd6fc92603783dc9de64b10304e8d48f97bdef3
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fd28143a2d4678a240d9d6f9f1cc3b1c5da80222
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509216"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525704"
 ---
 # <a name="android-debug-log"></a>Android 偵錯記錄檔
 
@@ -22,8 +22,8 @@ ms.locfileid: "68509216"
 
 [偵錯記錄檔]  工具能提供在透過 Visual Studio 對應用程式進行偵錯的期間檢視記錄檔輸出的方式。 偵錯記錄檔支援下列裝置：
 
--   實體 Android 手機、平板電腦及穿戴式裝置。
--   在 Android Emulator 上執行的 Android 虛擬裝置。 
+- 實體 Android 手機、平板電腦及穿戴式裝置。
+- 在 Android Emulator 上執行的 Android 虛擬裝置。 
 
 > [!NOTE]
 > [偵錯記錄檔]  工具無法搭配 Xamarin Live Player 運作。
@@ -41,24 +41,24 @@ ms.locfileid: "68509216"
 
 或是從下列其中一項功能表選項，啟動 [裝置記錄檔]  工具：
 
--   [檢視] -> [其他視窗] -> [裝置記錄檔] 
--   [工具] -> [Android] -> [裝置記錄檔] 
+- [檢視] -> [其他視窗] -> [裝置記錄檔] 
+- [工具] -> [Android] -> [裝置記錄檔] 
 
 下列螢幕擷取畫面會示範 [偵錯工具]  視窗的各個部分：
 
 [![[偵錯工具] 視窗的各個部分](android-debug-log-images/vswin-03-features-sml.png)](android-debug-log-images/vswin-03-features.png#lightbox)
 
--   **裝置選取器** &ndash; 選取要監視的實體裝置或執行中的模擬器。
+- **裝置選取器** &ndash; 選取要監視的實體裝置或執行中的模擬器。
 
--   **記錄檔項目** &ndash; 來自 logcat 的記錄訊息資料表。
+- **記錄檔項目** &ndash; 來自 logcat 的記錄訊息資料表。
 
--   **清除記錄檔項目** &ndash; 從資料表中清除所有目前的記錄檔項目。
+- **清除記錄檔項目** &ndash; 從資料表中清除所有目前的記錄檔項目。
 
--   **播放/暫停** &ndash; 在更新或暫停新記錄檔項目的顯示之間切換。
+- **播放/暫停** &ndash; 在更新或暫停新記錄項目的顯示之間切換。
 
--   **停止** &ndash; 中止新記錄檔項目的顯示。
+- **停止** &ndash; 中止新記錄檔項目的顯示。
 
--   **搜尋方塊** &ndash; 在此方塊中輸入搜尋字串以篩選出記錄檔項目的子集。
+- **搜尋方塊** &ndash; 在此方塊中輸入搜尋字串以篩選出記錄項目的子集。
 
 
 顯示 [偵錯記錄檔]  工具視窗時，請使用裝置下拉式功能表來選擇要監視的 Android 裝置：
@@ -78,23 +78,23 @@ ms.locfileid: "68509216"
 
 [![[偵錯工具] 視窗的功能](android-debug-log-images/vsmac-03-features-sml.png)](android-debug-log-images/vsmac-03-features.png#lightbox)
 
--   **裝置選取器** &ndash; 選取要監視的實體裝置或執行中的模擬器。
+- **裝置選取器** &ndash; 選取要監視的實體裝置或執行中的模擬器。
 
--   **記錄檔項目** &ndash; 來自 logcat 的記錄訊息資料表。
+- **記錄檔項目** &ndash; 來自 logcat 的記錄訊息資料表。
 
--   **清除記錄檔項目** &ndash; 從資料表中清除所有目前的記錄檔項目。
+- **清除記錄檔項目** &ndash; 從資料表中清除所有目前的記錄檔項目。
 
--   **搜尋方塊** &ndash; 在此方塊中輸入搜尋字串以篩選出記錄檔項目的子集。
+- **搜尋方塊** &ndash; 在此方塊中輸入搜尋字串以篩選出記錄項目的子集。
 
--   **顯示訊息** &ndash; 切換告知性訊息的顯示。
+- **顯示訊息** &ndash; 切換告知性訊息的顯示。
 
--   **顯示警告** &ndash; 切換警告訊息的顯示 (警告訊息會以黃色顯示)。
+- **顯示警告** &ndash; 切換警告訊息的顯示 (警告訊息會以黃色顯示)。
 
--   **顯示錯誤** &ndash; 切換錯誤訊息的顯示 (錯誤訊息會以紅色顯示)。
+- **顯示錯誤** &ndash; 切換錯誤訊息的顯示 (錯誤訊息會以紅色顯示)。
 
--   **重新連線** &ndash; 重新連線至裝置並重新整理記錄檔項目顯示。
+- **重新連線** &ndash; 重新連線至裝置並重新整理記錄檔項目顯示。
 
--   **新增標記** &ndash; 在最新的記錄檔項目之後插入標記訊息 (例如 `--- Marker N ---`)，其中 _N_ 為從 1 開始的計數器，並會隨新標記的新增而以 1 遞增。
+- **新增標記** &ndash; 在最新的記錄項目之後插入標記訊息 (例如 `--- Marker N ---`)，其中 _N_ 為從 1 開始的計數器，並會隨新標記的新增以 1 為單位遞增。
 
 顯示 [偵錯記錄檔] 工具視窗時，請使用裝置下拉式功能表來選擇要監視的 Android 裝置：
 
@@ -138,7 +138,7 @@ $ ./adb logcat
 ## <a name="writing-to-the-debug-log"></a>寫入至偵錯記錄檔
 
 您可以使用 [Android.Util.Log](xref:Android.Util.Log) \(英文\) 類別上的方法將訊息寫入至**偵錯記錄檔**。
-例如︰ 
+例如： 
 
 ```csharp
 string tag = "myapp";

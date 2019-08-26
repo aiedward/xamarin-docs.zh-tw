@@ -8,19 +8,19 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 400075a1cbd2303f2ecddb9b1cc9465bbcbde32d
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: d2999a21debefb05e5aa3cdaace56cb4f3ac2d81
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680269"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525575"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 應用程式
 
 將您的應用程式部署至 App store 之前，必須先找出並修正任何效能瓶頸、過多的記憶體使用量問題，或網路資源使用效率不佳等問題。 兩個分析工具可用於此用途：
 
--  Xamarin Profiler 
--  Android Studio 中的 Android Profiler
+- Xamarin Profiler 
+- Android Studio 中的 Android Profiler
 
 本指南介紹 Xamarin Profiler，並提供開始使用 Android Profiler 的詳細資訊。
 
@@ -40,38 +40,38 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 
 下列步驟說明如何在 Android Studio 的 Android Profiler 工具中啟動 Xamarin Android 應用程式。 在下面的範例螢幕擷取畫面中，Xamarin Forms [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) 應用程式已建立，且使用 Android Profiler 分析：
 
-1.  在 Android 專案建置選項中，停用 [使用共用執行階段]  。 這可確保在不依賴共用的開發階段 Mono 執行階段的情況下，建置 Android 應用程式套件 (APK)。
+1. 在 Android 專案建置選項中，停用 [使用共用執行階段]  。 這可確保在不依賴共用的開發階段 Mono 執行階段的情況下，建置 Android 應用程式套件 (APK)。
 
     ![停用 [使用共用執行階段]](profiling-images/vswin/01-turn-off-shared-runtime.png)
 
-2.  建置**偵錯**應用程式並將它部署到實體裝置或模擬器。 這會導致建置 APK 的已簽署**偵錯**版本。
+2. 建置**偵錯**應用程式並將它部署到實體裝置或模擬器。 這會導致建置 APK 的已簽署**偵錯**版本。
     在 **XamagonXuzzle** 的範例中，產生的 APK 名為 **com.companyname.XamagonXuzzle Signed.apk**。
 
-3.  開啟專案資料夾並巡覽至 **bin/Debug**。 在這個資料夾中，找到應用程式的 **Signed.apk** 版本，並將它複製到方便存取的位置 (例如桌面)。 在下列螢幕擷取畫面中，找到 APK **com.companyname.XamagonXuzzle Signed.apk** 並複製到桌面：
+3. 開啟專案資料夾並巡覽至 **bin/Debug**。 在這個資料夾中，找到應用程式的 **Signed.apk** 版本，並將它複製到方便存取的位置 (例如桌面)。 在下列螢幕擷取畫面中，找到 APK **com.companyname.XamagonXuzzle Signed.apk** 並複製到桌面：
 
     [![偵錯已簽署 APK 檔案的位置](profiling-images/vswin/02-locating-the-debug-apk-sml.png)](profiling-images/vswin/02-locating-the-debug-apk.png#lightbox)
 
-4.  啓動 Android Studio 並選取**設定檔或偵錯 APK**：
+4. 啓動 Android Studio 並選取**設定檔或偵錯 APK**：
 
     ![從 Android Studio 啟動畫面啓動分析工具](profiling-images/vswin/03-android-studio.png)
 
-5.  在 選取 APK 檔案  對話方塊中，巡覽至您之前建立並複製的 APK。 選取 APK 然後按一下 [確定]  ： 
+5. 在 選取 APK 檔案  對話方塊中，巡覽至您之前建立並複製的 APK。 選取 APK 然後按一下 [確定]  ： 
     
     ![在 [選取 APK 檔案] 對話方塊中選取 APK](profiling-images/vswin/04-select-apk-dialog.png)
 
-6.  Android Studio 會載入 APK 並反組譯 **classes.dex**：
+6. Android Studio 會載入 APK 並反組譯 **classes.dex**：
 
     ![設定 APK](profiling-images/vswin/05-setting-up-the-apk.png)
 
-7.  載入 APK 後，Android Studio 會顯示以下 APK 專案畫面。 以滑鼠右鍵按一下左側樹狀檢視中的應用程式名稱，然後選取 [Open Module Settings] \(開啟模組設定\)  ：
+7. 載入 APK 後，Android Studio 會顯示以下 APK 專案畫面。 以滑鼠右鍵按一下左側樹狀檢視中的應用程式名稱，然後選取 [Open Module Settings] \(開啟模組設定\)  ：
 
     [![[Open Module Settings] \(開啟模組設定\) 功能表項目的位置](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
 
-8.  巡覽至 [專案設定] > [模組]  ，選取應用程式的 **-Signed** 節點，然後按一下 [&lt;無 SDK&gt;]  ：
+8. 巡覽至 [專案設定] > [模組]  ，選取應用程式的 **-Signed** 節點，然後按一下 [&lt;無 SDK&gt;]  ：
 
     [![巡覽至 SDK 設定](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
 
-9.  在 [Module SDK] \(模組 SDK\)  下拉式功能表中，選取用來建置應用程式的 Android SDK 層級 (本範例使用 API 層級 26 建置 **XamagonXuzzle**)：
+9. 在 [Module SDK] \(模組 SDK\)  下拉式功能表中，選取用來建置應用程式的 Android SDK 層級 (本範例使用 API 層級 26 建置 **XamagonXuzzle**)：
 
     [![設定專案 SDK 層級](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
 
@@ -107,8 +107,8 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 使用 Android Profiler 的詳細資訊包含在 [Android Studio 文件](https://developer.android.com/studio/profile/android-profiler.html)中。
 下列為 Xamarin Android 開發人員感興趣的主題：
 
--   [CPU 分析工具](https://developer.android.com/studio/profile/cpu-profiler.html) &ndash; 說明如何檢查即時的應用程式 CPU 使用量和執行緒活動。
+- [CPU 分析工具](https://developer.android.com/studio/profile/cpu-profiler.html) &ndash; 說明如何檢查即時的應用程式 CPU 使用量和執行緒活動。
 
--   [記憶體分析工具](https://developer.android.com/studio/profile/memory-profiler.html) &ndash; 顯示應用程式記憶體使用量的即時圖形，包含記錄記憶體配置以供分析的按鈕。
+- [記憶體分析工具](https://developer.android.com/studio/profile/memory-profiler.html) &ndash; 顯示應用程式記憶體使用量的即時圖形，包含記錄記憶體配置以供分析的按鈕。
 
--   [網路分析工具](https://developer.android.com/studio/profile/network-profiler.html) &ndash; 顯示應用程式傳送和接收資料的即時網路活動。
+- [網路分析工具](https://developer.android.com/studio/profile/network-profiler.html) &ndash; 顯示應用程式傳送和接收資料的即時網路活動。

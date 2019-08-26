@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/20/2017
-ms.openlocfilehash: eedfcfe2ed274ddf541addec67e66250deab7899
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 47b9d76cb0b7b2fc48fe83d291479f7d1ed00eb8
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50114622"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69525210"
 ---
 # <a name="google-licensing-services"></a>Google 授權服務
 
@@ -30,9 +30,9 @@ ms.locfileid: "50114622"
 
 上圖說明以下工作流程： 
 
--   應用程式提供套件名稱、用來驗證伺服器回應的 *nonce* (密碼編譯驗證器)，以及能夠以非同步方式處理回應的回呼。 
+- 應用程式提供套件名稱、用來驗證伺服器回應的 *nonce* (密碼編譯驗證器)，以及能夠以非同步方式處理回應的回呼。 
 
--   Google Play 提供資訊 (例如 Google 帳戶) 和裝置本身 (例如 IMSI 號碼)。 
+- Google Play 提供資訊 (例如 Google 帳戶) 和裝置本身 (例如 IMSI 號碼)。 
 
 「Google 授權」服務也是 APK 擴充檔 (本文件稍後會提供說明) 的主要元件。 APK 擴充檔會利用「Google 授權」服務來取得將下載之擴充檔的 URL。
 

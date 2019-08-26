@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: db5fd78a7907826bcb60ce1c2635491e01f0c02b
-ms.sourcegitcommit: 215b507b2e5a44bb023abc2c804c824b1a6190d8
+ms.openlocfilehash: afb4da5e424fd86a386b85d8b64bd2a126af6add
+ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194943"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69521099"
 ---
 # <a name="contributing"></a>貢獻
 
@@ -18,7 +18,7 @@ ms.locfileid: "67194943"
 
 ### <a name="small-changes--edits"></a>少量變更和編輯
 
-若要更正和進行少量更新，您可以按一下任何頁面上的 [編輯] 按鈕並使用 GitHub 網站來投稿，或是遵循下列步驟：
+若要更正和進行少量更新，您可以按一下任何頁面上的 [編輯]  按鈕並使用 GitHub 網站來投稿，或是遵循下列步驟：
 
 1. 派生 `MicrosoftDocs/xamarin-docs` 存放庫。
 
@@ -45,15 +45,17 @@ ms.locfileid: "67194943"
 
 如果這是新主題，您可以使用[範本檔案](../contributing-guidelines/template.md)作為起點。 其包含撰寫指導方針，同時也會說明每篇文章所需的中繼資料，例如作者資訊。
 
-針對影像及其他靜態資源，請將其新增至稱為 **<mypage>-images** 的子資料夾。 如果您要為內容建立新的資料夾，請將 images 資料夾新增至新的資料夾。
+針對影像及其他靜態資源，請將其新增至稱為 **\<mypage>-images** 的子資料夾。 如果您要為內容建立新的資料夾，請將 images 資料夾新增至新的資料夾。
 
 #### <a name="example-structure"></a>範例結構
 
-    docs
-      /android
-          mypage.md
-          /mypage-images
-              some-image.png
+```
+docs
+    /android
+        mypage.md
+        /mypage-images
+            some-image.png
+```
 
 請務必遵循正確的 Markdown 語法。 如需詳細資訊，請參閱[樣式指南](../contributing-guidelines/template.md)。
 

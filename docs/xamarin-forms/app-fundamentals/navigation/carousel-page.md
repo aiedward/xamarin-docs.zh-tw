@@ -7,20 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: b96877045a3f289cb4b9ba83a8159d26ed768d99
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: a243acc0273931c963a586fbfda29586623b612e
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655600"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889161"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms 浮動切換頁面
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
 
 _Xamarin.Forms CarouselPage 可讓使用者如同使用資源庫，從頁面的一端撥動到另一端，以便巡覽內容頁面。本文示範如何使用 CarouselPage 來巡覽頁面集合。_
-
-## <a name="overview"></a>總覽
 
 下列螢幕擷取畫面顯示每個平台上的 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)：
 
@@ -36,12 +34,19 @@ _Xamarin.Forms CarouselPage 可讓使用者如同使用資源庫，從頁面的�
 
 再次從右至左撥動可前往第三個頁面，而從左至右撥動會回到前一個頁面。
 
+> [!NOTE]
+> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 不支援 UI 虛擬化。 因此，如果 `CarouselPage` 包含太多子項目，效能可能會受影響。
+
+如果 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 內嵌到 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 的 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 頁面中，則 [`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) 屬性應設為 `false` 以避免在 `CarouselPage` 和 `MasterDetailPage` 之間發生手勢衝突。
+
+如需 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 的詳細資訊，請參閱 Charles Petzold 所著 Xamarin.Forms 一書的[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)。
+
 <!--
 > [!NOTE]
 > The [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) has been deprecated, and will be removed from Xamarin.Forms in a future release. Instead, the [`CarouselView`](xref:Xamarin.Forms.CarouselView) should be used to provide a gallery-like view, where users can swipe from side to side to move through a collection of items.
 -->
 
-## <a name="creating-a-carouselpage"></a>建立 CarouselPage
+## <a name="create-a-carouselpage"></a>建立 CarouselPage
 
 有兩種方法可用來建立 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)：
 
@@ -55,7 +60,7 @@ _Xamarin.Forms CarouselPage 可讓使用者如同使用資源庫，從頁面的�
 
 <a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
-### <a name="populating-a-carouselpage-with-a-page-collection"></a>透過頁面集合填入 CarouselPage
+### <a name="populate-a-carouselpage-with-a-page-collection"></a>以頁面集合填入 CarouselPage
 
 下列 XAML 程式碼範例示範會顯示三個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體的 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)：
 
@@ -143,18 +148,11 @@ public class MainPageCS : CarouselPage
 
 每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 只會顯示特定色彩的 [`Label`](xref:Xamarin.Forms.Label)，以及該色彩的 [`BoxView`](xref:Xamarin.Forms.BoxView)。
 
-> [!NOTE]
-> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 不支援 UI 虛擬化。 因此，如果 `CarouselPage` 包含太多子項目，效能可能會受影響。
-
-如果 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 內嵌到 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 的 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 頁面中，則 [`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) 屬性應設為 `false` 以避免在 `CarouselPage` 和 `MasterDetailPage` 之間發生手勢衝突。
-
-如需 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 的詳細資訊，請參閱 Charles Petzold 所著 Xamarin.Forms 一書的[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)。
-
 <a name="Populating_a_CarouselPage_with_a_Template" />
 
-### <a name="populating-a-carouselpage-with-a-template"></a>透過範本填入 CarouselPage
+### <a name="populate-a-carouselpage-with-a-template"></a>以範本填入 CarouselPage
 
-下列 XAML 程式碼範例示範 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)，其藉由將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指派至 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 屬性以傳回集合中物件的頁面來建構：
+下列 XAML 程式碼範例會顯示一個 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)，其建構方式是透過將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指派給 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 屬性，來傳回集合中物件的頁面：
 
 ```xaml
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -239,18 +237,6 @@ public class MainPageCS : CarouselPage
 ```
 
 每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 只會顯示特定色彩的 [`Label`](xref:Xamarin.Forms.Label)，以及該色彩的 [`BoxView`](xref:Xamarin.Forms.BoxView)。
-
-> [!NOTE]
-> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 不支援 UI 虛擬化。 因此，如果 `CarouselPage` 包含太多子項目，效能可能會受影響。
-
-如果 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 內嵌到 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 的 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 頁面中，則 [`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) 屬性應設為 `false` 以避免在 `CarouselPage` 和 `MasterDetailPage` 之間發生手勢衝突。
-
-如需 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 的詳細資訊，請參閱 Charles Petzold 所著 Xamarin.Forms 一書的[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)。
-
-## <a name="summary"></a>總結
-
-本文示範如何使用 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 來巡覽頁面集合。 `CarouselPage` 可讓使用者如同使用資源庫，從頁面的一端撥動到另一端，以便巡覽內容頁面。
-
 
 ## <a name="related-links"></a>相關連結
 

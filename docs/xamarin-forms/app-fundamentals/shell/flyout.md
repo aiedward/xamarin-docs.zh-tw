@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: 9f2aecf1bcac8f9603db40e3562f49123e924bfc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.date: 07/19/2019
+ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
+ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739293"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889211"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 飛出視窗
 
@@ -130,6 +130,32 @@ Shell.Current.FlyoutIsPresented = false;
     ...
 </Shell>
 ```
+
+## <a name="flyout-background-image"></a>飛出視窗背景影像
+
+飛出視窗可有選擇性的背景影像，它會出現在飛出視窗的標題下方，和所有飛出視窗項目和功能表項目的後方。 將類型為 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 的 `FlyoutBackgroundImage` 可繫結屬性設定為檔案、內嵌資源、URI 或資料流，即可指定背景影像。
+
+將類型為 [`Aspect`](xref:Xamarin.Forms.Aspect) 的 `FlyoutBackgroundImageAspect` 可繫結屬性設定為 `Aspect` 其中一個列舉成員，即可設定背景影像的外觀比例：
+
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill) - 裁剪影像使其填滿顯示區域，同時保留外觀比例。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) - 視需要為影像加上上下黑邊，使影像與顯示區域相契合，並根據影像的寬度或高度，在上下左右新增空白空間。
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill) - 完全自動縮放影像並剛好填滿顯示區域。 這可能會導致影像失真。
+
+根據預設，`FlyoutBackgroundImageAspect` 屬性會設定為 `AspectFit`。
+
+下列範例會示範如何設定這些屬性：
+
+```xaml
+<Shell ...
+       FlyoutBackgroundImage="photo.jpg"
+       FlyoutBackgroundImageAspect="AspectFill">
+    ...
+</Shell>
+```
+
+這會導致背景影像出現在飛出視窗中：
+
+![飛出視窗背景影像的螢幕擷取畫面](flyout-images/flyout-backgroundimage.png "飛出視窗背景影像")
 
 ## <a name="flyout-items"></a>飛出視窗項目
 
