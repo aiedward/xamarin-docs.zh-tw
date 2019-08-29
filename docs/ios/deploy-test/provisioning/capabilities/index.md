@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 7249b699a5f692269d124550a9e7d291f4315903
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 7bb4e142a8b7bd0cf0691da381729dc226028193
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832173"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121363"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
@@ -21,28 +21,28 @@ _為應用程式新增功能通常需要額外的佈建設定。_ 本指南說�
 Apple 為開發人員提供「功能」  (通常稱為「應用程式服務」)  來延伸 iOS 應用程式的功能及擴大其用途範圍。 這些功能可讓開發人員在其應用程式中加入更深的平台功能整合，例如：能夠從應用程式、額外的裝置服務 (例如 Siri) 等起始金錢交易。
 這些功能可以與 Xamarin.iOS 專案搭配使用。 以下提供完整的服務清單說明：
 
-* 應用程式群組
-* 相關聯的網域
-* 資料保護
-* Game Center
-* HealthKit
-* HomeKit
-* 無線配件組態
-* iCloud
-* App 內購買
-* Inter-App 音訊
-* Apple Pay
-* 電子錢包
-* 推播通知
-* 個人 VPN
-* Siri
-* 地圖
-* 背景模式
-* Keychain 共用
-* 網路延伸
-* 作用區組態
-* 多重路徑
-* NFC 標籤讀取
+- 應用程式群組
+- 相關聯的網域
+- 資料保護
+- Game Center
+- HealthKit
+- HomeKit
+- 無線配件組態
+- iCloud
+- App 內購買
+- Inter-App 音訊
+- Apple Pay
+- 電子錢包
+- 推播通知
+- 個人 VPN
+- Siri
+- 地圖
+- 背景模式
+- Keychain 共用
+- 網路延伸
+- 作用區組態
+- 多重路徑
+- NFC 標籤讀取
 
 您可以透過 Visual Studio for Mac 和 Visual Studio 2019 來啟用功能，也可以在 Apple Developer Portal (Apple 開發人員入口網站) 中以手動方式啟用功能。 有些功能 (例如「電子錢包」、Apple Pay 及 iCloud) 需要額外的「應用程式識別碼」組態。
 
@@ -57,16 +57,16 @@ Apple 為開發人員提供「功能」  (通常稱為「應用程式服務」) 
 > [!IMPORTANT]
 > 並非所有功能都可以使用自動化佈建來新增和管理。 以下清單包含支援的功能：
 >
->* HealthKit 
->* HomeKit 
->* 個人 VPN 
->* 無線配件組態 
->* Inter-App 音訊 
->* SiriKit 
->* 作用區 
->* 網路延伸 
->* NFC 標籤讀取
->* 多重路徑 
+>- HealthKit 
+>- HomeKit 
+>- 個人 VPN 
+>- 無線配件組態 
+>- Inter-App 音訊 
+>- SiriKit 
+>- 作用區 
+>- 網路延伸 
+>- NFC 標籤讀取
+>- 多重路徑 
 >
 >目前不支援「推播通知」、Game Center、「App 內購買」、「地圖」、「Keychain 共用」、「相關聯的網域」及「資料保護」功能。 若要新增這些功能，請使用手動佈建並依照[開發人員中心](#devcenter)一節中的步驟進行操作。
 
@@ -85,8 +85,8 @@ Apple 為開發人員提供「功能」  (通常稱為「應用程式服務」) 
     ![將功能新增至 entitlements.plist 檔案](images/image17.png)
 
     選取功能會執行兩項工作：
-    * 將該功能新增至您的「應用程式識別碼」
-    * 將權利的成對「機碼/值」新增至您的 Entitlements.plist 檔案。
+    - 將該功能新增至您的「應用程式識別碼」
+    - 將權利的成對「機碼/值」新增至您的 Entitlements.plist 檔案。
 
     當執行完這些工作時，Visual Studio for Mac 會藉由顯示下列成功訊息來告知您：
 
@@ -108,8 +108,8 @@ Apple 為開發人員提供「功能」  (通常稱為「應用程式服務」) 
 
     儲存 **Entitlement.plist** 會執行兩項工作：
 
-    * 將該功能新增至您的「應用程式識別碼」
-    * 將權利的成對「機碼/值」新增至您的 Entitlements.plist 檔案。
+    - 將該功能新增至您的「應用程式識別碼」
+    - 將權利的成對「機碼/值」新增至您的 Entitlements.plist 檔案。
 
 -----
 
@@ -196,8 +196,8 @@ Apple 為開發人員提供「功能」  (通常稱為「應用程式服務」) 
 
 在伺服器端啟用某項「功能」之後，還需要進行一些工作，才能讓您的應用程式使用功能。 以下清單說明可能需要進行的額外步驟：
 
-*   在您的應用程式中使用架構命名空間。
-*   為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[權利簡介](~/ios/deploy-test/provisioning/entitlements.md)指南。
+- 在您的應用程式中使用架構命名空間。
+- 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[權利簡介](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
 <a name="troubleshooting" />
 

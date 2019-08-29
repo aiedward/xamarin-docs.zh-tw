@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 0dcc0c9499a1f4085e489fe6d8dcfa3fbf2fa3e0
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: 20aa1da478916bf4c8949103a5ce7fbf1f5d8f93
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832410"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70064832"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS 的應用程式群組功能
 
@@ -20,9 +20,9 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 「應用程式群組」可讓不同的應用程式 (或應用程式及其擴充功能) 存取共用檔案儲存體位置。 「應用程式群組」可用於資料下列資料：
 
-*   [Apple Watch 設定](~/ios/watchos/app-fundamentals/settings.md)
-*   [共用 NSUserDefaults](~/ios/app-fundamentals/user-defaults.md)
-*   [共用檔案](~/ios/watchos/app-fundamentals/parent-app.md#files)
+* [Apple Watch 設定](~/ios/watchos/app-fundamentals/settings.md)
+* [共用 NSUserDefaults](~/ios/app-fundamentals/user-defaults.md)
+* [共用檔案](~/ios/watchos/app-fundamentals/parent-app.md#files)
 
 ## <a name="configure-a-new-app-group"></a>設定新的應用程式群組
 

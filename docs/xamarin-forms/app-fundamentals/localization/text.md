@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: a00b8052bfa2cd3a762e1b78409ffaa85cdae70c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 54a1f32d4e2102654a6111dc1fb27bc1ba9aabcc
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646755"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119119"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -24,12 +24,12 @@ _您可以使用 .NET 資源檔將 Xamarin.Forms 應用程式當地語系化。_
 
 用於將 .NET 應用程式當地語系化的內建機制，使用 [RESX 檔案](https://msdn.microsoft.com/library/ekyft91f(v=vs.90).aspx)和 `System.Resources`、`System.Globalization` 命名空間中的類別。 包含已翻譯字串的 RESX 檔案內嵌在 Xamarin.Forms 組件中，外加編譯器產生的類別，此類別提供對翻譯的強型別存取。 然後即可在程式碼中擷取已翻譯文字。
 
-### <a name="sample-code"></a>範例程式碼
+### <a name="sample-code"></a>程式碼範例
 
 本文件有兩個相關範例：
 
-* [UsingResxLocalization](https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingResxLocalization) 簡單示範所說明的概念。 以下顯示的程式碼片段全部來自於此範例。
-* [TodoLocalized](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized) 是使用這些當地語系化技術的基本工作應用程式。
+- [UsingResxLocalization](https://github.com/xamarin/xamarin-forms-samples/tree/master/UsingResxLocalization) 簡單示範所說明的概念。 以下顯示的程式碼片段全部來自於此範例。
+- [TodoLocalized](https://github.com/xamarin/xamarin-forms-samples/tree/master/TodoLocalized) 是使用這些當地語系化技術的基本工作應用程式。
 
 #### <a name="shared-projects-are-not-recommended"></a>不建議使用共用專案
 
@@ -64,8 +64,8 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 會有兩個檔案新增至專案：
 
-* **AppResources.resx** 檔案，其中可翻譯的字串會儲存為 XML 格式。
-* **AppResources.designer.cs** 檔案，這會宣告部分類別，以包含 RESX XML 檔中建立的所有項目參考。
+- **AppResources.resx** 檔案，其中可翻譯的字串會儲存為 XML 格式。
+- **AppResources.designer.cs** 檔案，這會宣告部分類別，以包含 RESX XML 檔中建立的所有項目參考。
 
 方案樹狀目錄會將這些檔案顯示為相關。 您「應該」  編輯 RESX 檔案來新增可翻譯的字串，但「不應該」  編輯 **.designer.cs** 檔案。
 
@@ -112,10 +112,10 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 不幸的是，Visual Studio for Mac 中沒有內建 RESX 編輯器。 新增可翻譯的字串時，需要針對每個字串新增 XML `data` 項目。 每個 `data` 項目可以包含下列項目：
 
-* `name` 屬性 (必要)，這是可翻譯字串的索引鍵。 它必須是有效的 C# 屬性名稱，不得使用空格或特殊字元。
-* `value` 項目 (必要)，這是應用程式中顯示的實際字串。
-* `comment` 項目 (選擇性)，可包含翻譯人員的指示，說明字串的使用方式。
-* `xml:space` 屬性 (選擇性)，可控制字串中保留間距的方式。
+- `name` 屬性 (必要)，這是可翻譯字串的索引鍵。 它必須是有效的 C# 屬性名稱，不得使用空格或特殊字元。
+- `value` 項目 (必要)，這是應用程式中顯示的實際字串。
+- `comment` 項目 (選擇性)，可包含翻譯人員的指示，說明字串的使用方式。
+- `xml:space` 屬性 (選擇性)，可控制字串中保留間距的方式。
 
 以下顯示一些範例 `data` 項目：
 
@@ -145,14 +145,14 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 針對我們想要支援的每種語言，會新增一個額外的 RESX 檔案。
 特定語言的資源檔必須遵循特定命名慣例：使用與基底資源檔相同的檔名 (例如 **AppResources**)，後面接著句號 (.)，再接著語言代碼。 簡單的範例包括：
 
-* **AppResources.fr.resx** - 法文語言翻譯。
-* **AppResources.es.resx** - 西班牙文語言翻譯。
-* **AppResources.de.resx** - 德文語言翻譯。
-* **AppResources.ja.resx** - 日文語言翻譯。
-* **AppResources.zh-Hans.resx** - 中文 (簡體) 語言翻譯。
-* **AppResources.zh-Hant.resx** - 中文 (繁體) 語言翻譯。
-* **AppResources.pt.resx** - 葡萄牙文語言翻譯。
-* **AppResources.pt-BR.resx** - 巴西葡萄牙文語言翻譯。
+- **AppResources.fr.resx** - 法文語言翻譯。
+- **AppResources.es.resx** - 西班牙文語言翻譯。
+- **AppResources.de.resx** - 德文語言翻譯。
+- **AppResources.ja.resx** - 日文語言翻譯。
+- **AppResources.zh-Hans.resx** - 中文 (簡體) 語言翻譯。
+- **AppResources.zh-Hant.resx** - 中文 (繁體) 語言翻譯。
+- **AppResources.pt.resx** - 葡萄牙文語言翻譯。
+- **AppResources.pt-BR.resx** - 巴西葡萄牙文語言翻譯。
 
 一般模式是使用兩個字母的語言代碼，但有些範例 (例如中文) 使用不同的格式，而其他範例 (例如巴西葡萄牙文) 則需要四個字元的地區設定識別碼。
 
@@ -255,10 +255,10 @@ System.Resources.ResourceManager temp =
 如果不正確，`AppResources` 類別將無法載入其資源。
 請檢查下列項目，以解決找不到資源的問題：
 
-* 專案的預設命名空間符合 **AppResources.Designer.cs** 檔案中的根命名空間。
-* 如果 **AppResources.resx** 檔案位於子目錄中，則子目錄名稱應該是由部分命名空間「及」  部分資源識別項所組成。
-* **AppResources.resx** 檔案具有 [建置動作：  EmbeddedResource]。
-* 已核取 [專案選項] > [原始程式碼] > [.NET 命名原則] > [使用 Visual Studio 樣式資源名稱]  。 您可以視需要取消核取此選項，但必須在整個應用程式內更新用來參考 RESX 資源的命名空間。
+- 專案的預設命名空間符合 **AppResources.Designer.cs** 檔案中的根命名空間。
+- 如果 **AppResources.resx** 檔案位於子目錄中，則子目錄名稱應該是由部分命名空間「及」  部分資源識別項所組成。
+- **AppResources.resx** 檔案具有 [建置動作：  EmbeddedResource]。
+- 已核取 [專案選項] > [原始程式碼] > [.NET 命名原則] > [使用 Visual Studio 樣式資源名稱]  。 您可以視需要取消核取此選項，但必須在整個應用程式內更新用來參考 RESX 資源的命名空間。
 
 #### <a name="doesnt-work-in-debug-mode-android-only"></a>不適用於 DEBUG 模式 (僅限 Android)
 
@@ -654,13 +654,13 @@ namespace UsingResxLocalization
 
 下列項目符號說明上述程式碼中的重要項目：
 
-* 類別的名稱為 `TranslateExtension`，但依照慣例，我們可以在標記中以 **Translate** 來參考它。
-* 類別會實作 `IMarkupExtension`，Xamarin.Forms 需要此實作才能運作。
-* `"UsingResxLocalization.Resx.AppResources"` 是 RESX 資源的資源識別項。 它包含我們的預設命名空間、資源檔所在的資料夾，以及預設 RESX 檔名。
-* `ResourceManager` 類別是使用 `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` 所建立 (以決定要從中載入資源的目前組件)，並可在靜態 `ResMgr` 欄位中快取。 它是以 `Lazy` 類型建立，因此會延遲到第一次在 `ProvideValue` 方法中使用才建立。
-* `ci` 使用相依性服務，從原生作業系統取得使用者所選擇的語言。
-* `GetString` 是從資源檔擷取實際翻譯字串的方法。 在通用 Windows 平台上，由於這些平台上不會實作 `ILocalize` 介面，因此 `ci` 為 Null。 這相當於呼叫 `GetString` 方法，但只提供第一個參數。 相反地，資源架構會自動辨識地區設定，並從適當的 RESX 檔案擷取所翻譯字串。
-* 其中已包含錯誤處理功能，藉由擲回例外狀況來協助偵錯遺漏的資源 (僅限 `DEBUG` 模式)。
+- 類別的名稱為 `TranslateExtension`，但依照慣例，我們可以在標記中以 **Translate** 來參考它。
+- 類別會實作 `IMarkupExtension`，Xamarin.Forms 需要此實作才能運作。
+- `"UsingResxLocalization.Resx.AppResources"` 是 RESX 資源的資源識別項。 它包含我們的預設命名空間、資源檔所在的資料夾，以及預設 RESX 檔名。
+- `ResourceManager` 類別是使用 `IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly)` 所建立 (以決定要從中載入資源的目前組件)，並可在靜態 `ResMgr` 欄位中快取。 它是以 `Lazy` 類型建立，因此會延遲到第一次在 `ProvideValue` 方法中使用才建立。
+- `ci` 使用相依性服務，從原生作業系統取得使用者所選擇的語言。
+- `GetString` 是從資源檔擷取實際翻譯字串的方法。 在通用 Windows 平台上，由於這些平台上不會實作 `ILocalize` 介面，因此 `ci` 為 Null。 這相當於呼叫 `GetString` 方法，但只提供第一個參數。 相反地，資源架構會自動辨識地區設定，並從適當的 RESX 檔案擷取所翻譯字串。
+- 其中已包含錯誤處理功能，藉由擲回例外狀況來協助偵錯遺漏的資源 (僅限 `DEBUG` 模式)。
 
 下列 XAML 程式碼片段示範如何使用標記延伸。 有兩個執行步驟：
 
@@ -691,8 +691,8 @@ namespace UsingResxLocalization
 
 雖然我們可以在 Xamarin.Forms 程式碼中處理使用者介面的翻譯，但有些項目必須在每個平台特定的專案中完成。 本節將討論如何當地語系化：
 
-* 應用程式名稱
-* 映像
+- Application Name
+- 影像
 
 範例專案包含稱為 **flag.png** 的當地語系化影像，在 C# 中參考如下：
 
@@ -729,7 +729,7 @@ switch (Device.RuntimePlatform)
 
 iOS 使用稱為「當地語系化專案」的命名標準或 **.lproj** 目錄來包含影像和字串資源。 這些目錄可包含應用程式中所使用影像的當地語系化版本，以及可用來當地語系化應用程式名稱的 **InfoPlist.strings** 檔案。 如需 iOS 當地語系化的詳細資訊，請參閱 [iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)。
 
-#### <a name="images"></a>映像
+#### <a name="images"></a>影像
 
 下列螢幕擷取畫面顯示 iOS 範例應用程式及特定語言的 **.lproj** 目錄。 西班牙文目錄稱為 **es.lproj**，其中包含預設影像的當地語系化版本，以及 **flag.png**：
 
@@ -753,7 +753,7 @@ iOS 使用稱為「當地語系化專案」的命名標準或 **.lproj** 目錄�
 
 Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串**目錄搭配語言代碼後置字元來儲存當地語系化影像。 需要四個字母的地區設定代碼時 (例如 zh-TW 或 pt-BR)，請注意 Android 要求在連字號之後/地區設定代碼之前加上 **r** (例如 zh-rTW 或 pt-rBR)。 如需 Android 當地語系化的詳細資訊，請參閱 [Android 當地語系化](~/android/app-fundamentals/localization.md)。
 
-#### <a name="images"></a>映像
+#### <a name="images"></a>影像
 
 下列螢幕擷取畫面顯示 Android 範例，其中包含一些當地語系化的可繪製資源和字串：
 
@@ -789,7 +789,7 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 
 通用 Windows 平台擁有可簡化影像和應用程式名稱當地語系化的資源基礎結構。 如需 UWP 當地語系化的詳細資訊，請參閱 [UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)。
 
-#### <a name="images"></a>映像
+#### <a name="images"></a>影像
 
 將影像放在資源特定資料夾中即可當地語系化，如下列螢幕擷取畫面所示：
 

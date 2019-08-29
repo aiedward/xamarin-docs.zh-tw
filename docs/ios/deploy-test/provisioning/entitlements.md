@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/13/2018
-ms.openlocfilehash: 0314ec958b2c38e702c56ef64d1cc2bba1383060
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: bbc01416fe49b361b163808f3502533db8e39d8c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865836"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121330"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>使用 Xamarin.iOS 中的權利
 
@@ -94,13 +94,13 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 ### <a name="wallet"></a>電子錢包
 
-*   **說明**：正式名稱為 Passbook，錢包是儲存及管理票卡的應用程式。 這些票卡可能是信用卡、商店卡、登機證或票證。
+- **說明**：正式名稱為 Passbook，錢包是儲存及管理票卡的應用程式。 這些票卡可能是信用卡、商店卡、登機證或票證。
 
     - **票卡類型識別碼**
-        * **機碼**：com.apple.developer.pass-type-identifiers
-        * **字串**：`$(TeamIdentifierPrefix)*`
+        - **機碼**：com.apple.developer.pass-type-identifiers
+        - **字串**：`$(TeamIdentifierPrefix)*`
 
-* **附註**：
+- **附註**：
     - 這可讓您的應用程式允許所有票卡類型。 若要限制您的應用程式而只允許部分小組票卡類型，請將字串值設定為：`$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
 
     其中 pass.$(CFBundleIdentifier) 是[上述](~/ios/platform/passkit.md)建立的「票卡識別碼」
@@ -109,7 +109,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 ### <a name="icloud"></a>iCloud
 
-*   **描述**：iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在裝置之間共用該內容。 開發人員可透過四種方式使用 iCloud 為其使用者提供儲存方式：機碼值儲存、UIDocument 儲存、CoreData 及直接使用 CloudKit 來提供個別檔案及目錄的儲存。 如需有關這些方法的詳細資訊，請參閱《iCloud 簡介》指南。
+- **描述**：iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在裝置之間共用該內容。 開發人員可透過四種方式使用 iCloud 為其使用者提供儲存方式：機碼值儲存、UIDocument 儲存、CoreData 及直接使用 CloudKit 來提供個別檔案及目錄的儲存。 如需有關這些方法的詳細資訊，請參閱《iCloud 簡介》指南。
 
     - **iCloud 文件和 CloudKit**
         - **機碼**：com.apple.developer.ubiquity-container-identifiers
@@ -118,7 +118,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
         - **機碼**：com.apple.developer.ubiquity-kvstore-identifier
         - **字串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
-* **附註**：
+- **附註**：
     - 若要尋找 `$(TeamIdentifierPrefix)` 字串，請登入 developer.apple.com，然後瀏覽 [Member Center] \(會員中心\) > [Your Account] \(您的帳戶\) > [Developer Account Summary] \(開發人員帳戶摘要\)  以取得您的 Team ID (小組識別碼) (如果是單一開發人員，則為 Individual ID (個人識別碼))。 它將是一個 10 個字元的字串 (例如 A93A5CM278)。
     - `$(CFBundleIdentifier)` 字串的開頭為 `iCloud`，在建立 iCloud 容器 (依據[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南中的步驟) 時，會設定此字串。
     - 可以使用 $`(TeamIdentifierPrefix)` 和 `$(CFBundleIdentifier)` 預留位置，在建置階段將會以正確的值取代這些預留位置。

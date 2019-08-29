@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: afb4da5e424fd86a386b85d8b64bd2a126af6add
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14d4f5de500c8e8ced6cbeb67019f9152ed63df3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521099"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118917"
 ---
 # <a name="contributing"></a>貢獻
 
@@ -12,7 +12,7 @@ ms.locfileid: "69521099"
 
 本頁面涵蓋更新 [Xamarin 文件](https://docs.microsoft.com/xamarin)中內容的基本程序。
 
-* [參與者授權合約](LICENSE)
+- [參與者授權合約](LICENSE)
 
 ## <a name="process-for-contributing"></a>投稿程序
 

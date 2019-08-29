@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 25ebf101dfe0cc3d51e8411b7977e6dc0b061f2d
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 8cb5d1cb29f5668194d15102c0b2fb4118388e94
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978398"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065465"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 的電子錢包功能
 
@@ -22,11 +22,11 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 開發人員可以透過各種方式使用「電子錢包」：
 
-*   若要存取票卡，並不需要建置應用程式。 Passfile (票卡檔) 是一個 ZIP 壓縮封存，其中包含一些 JSON 檔案和選擇性的中繼資料檔案。 若要準備此檔案，必須要有[票卡類型識別碼](~/ios/platform/passkit.md)和[票卡憑證](~/ios/platform/passkit.md)。 然後以 JSON 檔案宣告此資訊。 如需有關佈建 Passfile (票卡檔) 的詳細資訊，請參閱 [PassKit 簡介](~/ios/platform/passkit.md)指南。
+* 若要存取票卡，並不需要建置應用程式。 Passfile (票卡檔) 是一個 ZIP 壓縮封存，其中包含一些 JSON 檔案和選擇性的中繼資料檔案。 若要準備此檔案，必須要有[票卡類型識別碼](~/ios/platform/passkit.md)和[票卡憑證](~/ios/platform/passkit.md)。 然後以 JSON 檔案宣告此資訊。 如需有關佈建 Passfile (票卡檔) 的詳細資訊，請參閱 [PassKit 簡介](~/ios/platform/passkit.md)指南。
 
-*   撰寫「隨附應用程式」來散發票卡。 這些應用程式也具備建立、編輯及更新票卡的功能，然後還能將這些票卡新增至「電子錢包」應用程式。 這類應用程式的其中一個良好範例就是電影院應用程式 – 在使用者透過應用程式購買票證之後，便可直接從應用程式將該票證新增至「電子錢包」。 若要使用隨附應用程式，您的佈建設定檔必須包含具有「電子錢包」功能的 App ID (應用程式識別碼)，這可以透過依照下列步驟來進行設定。 您的應用程式比須也包含必要的權利。
+* 撰寫「隨附應用程式」來散發票卡。 這些應用程式也具備建立、編輯及更新票卡的功能，然後還能將這些票卡新增至「電子錢包」應用程式。 這類應用程式的其中一個良好範例就是電影院應用程式 – 在使用者透過應用程式購買票證之後，便可直接從應用程式將該票證新增至「電子錢包」。 若要使用隨附應用程式，您的佈建設定檔必須包含具有「電子錢包」功能的 App ID (應用程式識別碼)，這可以透過依照下列步驟來進行設定。 您的應用程式比須也包含必要的權利。
 
-*   「導管應用程式」(Conduit Apps) 係指不會直接操控票卡的應用程式。 除了接收票卡並提供選項給使用者以將票卡新增至「電子錢包」之外，它們與票卡只有最低限度的互動。 這些應用程式不需要任何特殊的佈建或權利，但會使用一些來自「PassKit 架構」的方法。
+* 「導管應用程式」(Conduit Apps) 係指不會直接操控票卡的應用程式。 除了接收票卡並提供選項給使用者以將票卡新增至「電子錢包」之外，它們與票卡只有最低限度的互動。 這些應用程式不需要任何特殊的佈建或權利，但會使用一些來自「PassKit 架構」的方法。
 
 ## <a name="developer-center"></a>開發人員中心
 
@@ -57,7 +57,7 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 如需有關使用「電子錢包」的詳細資訊，請參閱下列指南：
 
-*   [PassKit 簡介](~/ios/platform/passkit.md)
+* [PassKit 簡介](~/ios/platform/passkit.md)
  
 ## <a name="next-steps"></a>後續步驟
  

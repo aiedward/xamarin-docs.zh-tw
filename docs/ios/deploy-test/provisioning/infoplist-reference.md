@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/18/2017
-ms.openlocfilehash: 654eca1098f9486e0c41fd296b3f8d381ac7ea34
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
+ms.openlocfilehash: 2a61a4a313fa23b5cdc629279bee39f1eed792cc
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50105372"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120494"
 ---
 # <a name="infoplist-reference-for-xamarinios"></a>Xamarin.iOS 的 Info.plist 參考
 
@@ -22,8 +22,8 @@ ms.locfileid: "50105372"
 
 存取使用者的位置也需要修改 Info.plist。 以下是應該設定的位置資料相關機碼： 
 
-* **NSLocationWhenInUseUsageDescription** - 用於當您在使用者與應用程式互動期間存取使用者位置時。 
-* **NSLocationAlwaysUsageDescription** - 用於您的應用程式在背景中存取使用者的位置時。
+- **NSLocationWhenInUseUsageDescription** - 用於當您在使用者與應用程式互動期間存取使用者位置時。 
+- **NSLocationAlwaysUsageDescription** - 用於您的應用程式在背景中存取使用者的位置時。
 
 ## <a name="photos"></a>相片 
 

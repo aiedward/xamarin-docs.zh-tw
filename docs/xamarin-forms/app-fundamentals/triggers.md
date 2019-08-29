@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: e21ae2c335a1ffe410317ef8870ee074a3a5ebe2
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
+ms.openlocfilehash: d9e3055130a66fe240bf378ad2f63679e71bec14
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629619"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121144"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
@@ -24,13 +24,13 @@ ms.locfileid: "69629619"
 
 觸發程序可分為四種類型：
 
-* [屬性觸發程序](#property) - 發生於控制項上的屬性設定為特定值時。
+- [屬性觸發程序](#property) - 發生於控制項上的屬性設定為特定值時。
 
-* [資料觸發程序](#data) - 使用資料繫結，根據另一個控制項的屬性觸發。
+- [資料觸發程序](#data) - 使用資料繫結，根據另一個控制項的屬性觸發。
 
-* [事件觸發程序](#event) - 發生於控制項上發生事件時。
+- [事件觸發程序](#event) - 發生於控制項上發生事件時。
 
-* [多個觸發程序](#multi) - 允許在動作發生之前，設定多個觸發程序條件。
+- [多個觸發程序](#multi) - 允許在動作發生之前，設定多個觸發程序條件。
 
 <a name="property" />
 
@@ -52,15 +52,15 @@ ms.locfileid: "69629619"
 
 觸發程序宣告的重要部分包括：
 
-* **TargetType** - 觸發程序適用的控制項類型。
+- **TargetType** - 觸發程序適用的控制項類型。
 
-* **Property** - 控制項上受監視的屬性。
+- **Property** - 控制項上受監視的屬性。
 
-* **Value** - 針對受監視的屬性發生時，導致啟動觸發程序的值。
+- **Value** - 針對受監視的屬性發生時，導致啟動觸發程序的值。
 
-* **Setter** - 符合觸發程序條件時可以新增 `Setter` 項目的集合。 您必須指定要設定的 `Property` 和 `Value`。
+- **Setter** - 符合觸發程序條件時可以新增 `Setter` 項目的集合。 您必須指定要設定的 `Property` 和 `Value`。
 
-* **EnterActions 和 ExitActions** (未顯示) - 以程式碼撰寫，且可以和 `Setter` 項目一起使用，或是用來代替它。 其[描述如下](#enterexit)。
+- **EnterActions 和 ExitActions** (未顯示) - 以程式碼撰寫，且可以和 `Setter` 項目一起使用，或是用來代替它。 其[描述如下](#enterexit)。
 
 ### <a name="applying-a-trigger-using-a-style"></a>使用樣式套用觸發程序
 
@@ -140,11 +140,11 @@ ms.locfileid: "69629619"
 
 觸發程序動作實作應該：
 
-* 實作泛型 `TriggerAction<T>` 類別，且泛型參數對應觸發程序將套用至的控制項類型。 您可以使用 Superclass，例如 `VisualElement`，來撰寫使用各種控制項的觸發程序動作，或指定如 `Entry` 控制項類型。
+- 實作泛型 `TriggerAction<T>` 類別，且泛型參數對應觸發程序將套用至的控制項類型。 您可以使用 Superclass，例如 `VisualElement`，來撰寫使用各種控制項的觸發程序動作，或指定如 `Entry` 控制項類型。
 
-* 覆寫 `Invoke` 方法 - 每當符合觸發程序準則時便會呼叫它。
+- 覆寫 `Invoke` 方法 - 每當符合觸發程序準則時便會呼叫它。
 
-* 選擇性地公開可在觸發程序宣告時在 XAML 中設定的屬性 (例如，在此範例中的 `Anchor`、`Scale` 和 `Length`)。
+- 選擇性地公開可在觸發程序宣告時在 XAML 中設定的屬性 (例如，在此範例中的 `Anchor`、`Scale` 和 `Length`)。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -236,9 +236,9 @@ public class MultiTriggerConverter : IValueConverter
 
 XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異：
 
-* 按鈕預設已設定 `IsEnabled="false"`。
-* 多重觸發程序條件使用轉換器，將 `Text.Length` 值變為 `boolean`。
-* 所有條件都為 `true` 時，setter 會讓按鈕的 `IsEnabled` 屬性成為 `true`。
+- 按鈕預設已設定 `IsEnabled="false"`。
+- 多重觸發程序條件使用轉換器，將 `Text.Length` 值變為 `boolean`。
+- 所有條件都為 `true` 時，setter 會讓按鈕的 `IsEnabled` 屬性成為 `true`。
 
 ```xaml
 <Entry x:Name="user" Text="" Placeholder="user name" />

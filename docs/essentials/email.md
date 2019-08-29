@@ -4,13 +4,13 @@ description: Xamarin.Essentials 中的電子郵件類別使應用程式能夠開
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 04/02/2019
-ms.openlocfilehash: f2c275260625fe3842b4473e404f49c71d1d28ae
-ms.sourcegitcommit: 9f37dc00c2adab958025ad1cdba9c37f0acbccd0
+ms.date: 08/20/2019
+ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012495"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060089"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:Email
 
@@ -62,18 +62,9 @@ public class EmailTest
 }
 ```
 
-
 ## <a name="file-attachments"></a>檔案附件
 
-![預覽功能](~/media/shared/preview.png)
-
-以電子郵件寄送檔案在 Xamarin.Essentials 1.1.0 版為實驗性預覽功能。 這項功能讓您可以在應用程式中，以裝置的電子郵件用戶端寄送檔案。 若要啟用這項功能，請在您應用程式的啟動程式碼中設定下列屬性：
-
-```csharp
-ExperimentalFeatures.Enable(ExperimentalFeatures.EmailAttachments);
-```
-
-啟用此功能之後，任何檔案都可透過電子郵件來寄送。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求將檔案新增為附件。 每個電子郵件用戶端都不同，可能只支援特定的副檔名，也可能完全都不支援。
+這項功能讓您可以在應用程式中，以裝置的電子郵件用戶端寄送檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求將檔案新增為附件。 每個電子郵件用戶端都不同，可能只支援特定的副檔名，也可能完全都不支援。
 
 下列範例示範如何將文字寫入磁碟，並將它新增為電子郵件附件：
 

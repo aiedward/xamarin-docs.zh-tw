@@ -1,18 +1,18 @@
 ---
 title: Xamarin.iOS 測試及部署 - 疑難排解
-description: 此文件提供與程式碼簽署和佈建、TestFlight，以及將 iOS 應用程式套件組合從 Mac 組建主機複製到 Windows 的相關疑難排解祕訣。
+description: 本文件提供與程式碼簽署和佈建、TestFlight，以及將 iOS 應用程式套件組合從 Mac 組建主機複製到 Windows 的相關疑難排解祕訣。
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/23/2017
-ms.openlocfilehash: e57254ce724c5660e53dcd9deaa0f4a27bf91400
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: a290f29707bd59a22f612f31e544a211488eba0d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675191"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121489"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS 測試及部署 - 疑難排解
 
@@ -20,19 +20,19 @@ ms.locfileid: "67675191"
 
 利用 iOS 進行程式碼簽署和佈建可能非常棘手，因此務必要確定程式碼簽署憑證與佈建設定檔井然有序。
 
-* 大型的團隊應該避免使用 Xcode 中的 [Fix issue] \(修正問題\) 按鈕，如下圖所示：
+- 大型的團隊應該避免使用 Xcode 中的 [Fix issue] \(修正問題\) 按鈕，如下圖所示：
 
     [![](troubleshooting-images/fixissue.png "[Fix issue] \(修正問題\) 對話方塊")](troubleshooting-images/fixissue.png#lightbox)
 
     這將會建立新的佈建設定檔和憑證。 從好處想，這會在每次小組成員按一下佈建設定檔時建立一個佈建設定檔，造成設定檔混亂。 從壞處想，它將會撤銷公司內其他人的憑證，導致其應用程式停止運作。
 
-* 保持「鑰匙圈存取」井然有序，並刪除過期的憑證和設定檔。 企業憑證可持續使用三年，其他憑證則僅能持續使用一年。 您無法更新憑證，因此需要在舊的憑證到期之前建立新的憑證。 請務必撤銷並刪除舊的憑證，並使用新的憑證重新簽署應用程式。
+- 保持「鑰匙圈存取」井然有序，並刪除過期的憑證和設定檔。 企業憑證可持續使用三年，其他憑證則僅能持續使用一年。 您無法更新憑證，因此需要在舊的憑證到期之前建立新的憑證。 請務必撤銷並刪除舊的憑證，並使用新的憑證重新簽署應用程式。
 
-* 安裝新的佈建設定檔時，移除舊的佈建設定檔。 這表示 Visual Studio for Mac 不需要決定要使用哪個設定檔。 若要達成此目的，請先確定刪除 Apple 開發人員中心中的設定檔，然後瀏覽至 [Preferences] \(喜好設定\) > [Your Account] \(您的帳戶\) > [View Details] \(檢視詳細資料\)  。選取佈建設定檔，然後按一下 [顯示於 Finder]  。 這將顯示設定檔在 Mac 檔案系統中的位置，之後就可以使用 Finder 刪除該位置。
+- 安裝新的佈建設定檔時，移除舊的佈建設定檔。 這表示 Visual Studio for Mac 不需要決定要使用哪個設定檔。 若要達成此目的，請先確定刪除 Apple 開發人員中心中的設定檔，然後瀏覽至 [Preferences] \(喜好設定\) > [Your Account] \(您的帳戶\) > [View Details] \(檢視詳細資料\)  。選取佈建設定檔，然後按一下 [顯示於 Finder]  。 這將顯示設定檔在 Mac 檔案系統中的位置，之後就可以使用 Finder 刪除該位置。
 
-* 請確認所有必要的憑證和對應的私密金鑰都可以使用。 因為每個小組都需要一個開發人員憑證 (以便在自己的裝置上安裝應用程式)，以及一個散發憑證 (以安裝在其他裝置上)
+- 請確認所有必要的憑證和對應的私密金鑰都可以使用。 因為每個小組都需要一個開發人員憑證 (以便在自己的裝置上安裝應用程式)，以及一個散發憑證 (以安裝在其他裝置上)
 
-* 安裝新的佈建設定檔或憑證時，重新啟動 Xcode 和 Visual Studio for Mac / Visual Studio。
+- 安裝新的佈建設定檔或憑證時，重新啟動 Xcode 和 Visual Studio for Mac / Visual Studio。
 
 ## <a name="testflight"></a>TestFlight
 

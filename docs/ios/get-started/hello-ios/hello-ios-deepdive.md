@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 10/05/2018
-ms.openlocfilehash: adfc8e34d64b6091ba8ffc56c0f93bcf560128b1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 42edb04cb6dfe5fca59a6cc96f34cb8f9c5e1e88
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527715"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120578"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深度剖析
 
@@ -447,7 +447,7 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 ::: zone-end
 ::: zone pivot="windows"
 
-* Visual Studio：您可以使用此產品，直接在 IDE 中為您的應用程式建立簡單的圖示集。
+- Visual Studio：您可以使用此產品，直接在 IDE 中為您的應用程式建立簡單的圖示集。
 - [**Glyphish**](http://www.glyphish.com/) \(英文\)：高品質的預先建置圖示集，可供免費下載及購買。
 - [**Fiverr**](http://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。 如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
 

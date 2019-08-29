@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/22/2018
-ms.openlocfilehash: 4aa549258d3261d00c0623c2b21a2cebaa226e54
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 32ededcda1fdfc463269c7e4a2db444edab51d22
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524943"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119768"
 ---
 # <a name="windows-installation"></a>Windows 安裝
 
@@ -74,9 +74,9 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 
 在電腦上模擬 Android 裝置包含下列元件：
 
-* **Google Android 模擬器** &ndash; 這是以 [QEMU](https://www.qemu.org/) 為基礎的模擬器，QEMU 會建立在開發人員工作站上執行的虛擬裝置。
-* **模擬器映像** &ndash; _模擬器映像_是應該虛擬化之硬體和作業系統的範本或規格。 例如，一個模擬器映像會識別在已安裝 Google Play 服務之 Android 7.0 上執行的 Nexus 5X 硬體需求。 另一個模擬器映像可能專門針對執行 Android 6.0 的特定 10 吋平板電腦。
-* **Android 虛擬裝置 (AVD)** &ndash; _Android 虛擬裝置_是從模擬器映像建立的模擬 Android 裝置。 執行和測試 Android 應用程式時，Xamarin.Android 會啟動 Android 模擬器 (啟動特定的 AVD)、安裝 APK，然後執行應用程式。
+- **Google Android 模擬器** &ndash; 這是以 [QEMU](https://www.qemu.org/) 為基礎的模擬器，QEMU 會建立在開發人員工作站上執行的虛擬裝置。
+- **模擬器映像** &ndash; _模擬器映像_是應該虛擬化之硬體和作業系統的範本或規格。 例如，一個模擬器映像會識別在已安裝 Google Play 服務之 Android 7.0 上執行的 Nexus 5X 硬體需求。 另一個模擬器映像可能專門針對執行 Android 6.0 的特定 10 吋平板電腦。
+- **Android 虛擬裝置 (AVD)** &ndash; _Android 虛擬裝置_是從模擬器映像建立的模擬 Android 裝置。 執行和測試 Android 應用程式時，Xamarin.Android 會啟動 Android 模擬器 (啟動特定的 AVD)、安裝 APK，然後執行應用程式。
 
 使用針對 x86 架構最佳化的特殊模擬器映像以及兩種虛擬化技術其中之一，在 x86 電腦上執行開發工作時可顯著改善效能：
 

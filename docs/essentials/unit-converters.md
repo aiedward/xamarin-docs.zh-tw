@@ -5,12 +5,12 @@ ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 23126359c3b5e1c7e3562177b82f12596d2893a4
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.openlocfilehash: be560a156647274932265597ae5b83f22255d061
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58176029"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120142"
 ---
 # <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials:單位轉換器
 
@@ -36,29 +36,29 @@ var celcius = UnitConverters.FahrenheitToCelsius(32.0);
 
 以下為可用的轉換清單：
 
-* FahrenheitToCelsius
-* CelsiusToFahrenheit
-* CelsiusToKelvin
-* KelvinToCelsius
-* MilesToMeters
-* MilesToKilometers
-* KilometersToMiles
-* DegreesToRadians
-* RadiansToDegrees
-* DegreesPerSecondToRadiansPerSecond
-* RadiansPerSecondToDegreesPerSecond
-* DegreesPerSecondToHertz
-* RadiansPerSecondToHertz
-* HertzToDegreesPerSecond
-* HertzToRadiansPerSecond
-* KilopascalsToHectopascals
-* HectopascalsToKilopascals
-* KilopascalsToPascals
-* HectopascalsToPascals
-* AtmospheresToPascals
-* PascalsToAtmospheres
-* CoordinatesToMiles
-* CoordinatesToKilometers
+- FahrenheitToCelsius
+- CelsiusToFahrenheit
+- CelsiusToKelvin
+- KelvinToCelsius
+- MilesToMeters
+- MilesToKilometers
+- KilometersToMiles
+- DegreesToRadians
+- RadiansToDegrees
+- DegreesPerSecondToRadiansPerSecond
+- RadiansPerSecondToDegreesPerSecond
+- DegreesPerSecondToHertz
+- RadiansPerSecondToHertz
+- HertzToDegreesPerSecond
+- HertzToRadiansPerSecond
+- KilopascalsToHectopascals
+- HectopascalsToKilopascals
+- KilopascalsToPascals
+- HectopascalsToPascals
+- AtmospheresToPascals
+- PascalsToAtmospheres
+- CoordinatesToMiles
+- CoordinatesToKilometers
 
 ## <a name="api"></a>API
 

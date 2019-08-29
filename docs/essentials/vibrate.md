@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials：震動
+title: Xamarin.Essentials:震動
 description: 本文件描述 Xamarin.Essentials 中的震動類別，可讓您在所需的時間內啟動和停止震動功能。
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: d9bf7a1e5e0d15f1fdc909745cd439115b6f8463
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898931"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120107"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials：震動
+# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials:震動
 
 **震動**類別可讓您在所需的時間內啟動和停止震動功能。
 
@@ -26,7 +26,7 @@ ms.locfileid: "52898931"
 
 需要震動權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties]  資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Vibrate)]
@@ -34,13 +34,13 @@ ms.locfileid: "52898931"
 
 或更新 Android 資訊清單：
 
-開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容。
+開啟 [Properties]  資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest]  節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並選取 [震動] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]  下，尋找 [必要權限]  區域並選取 [震動]  權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -107,9 +107,9 @@ catch (Exception ex)
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
-* 僅在裝置設定為「鈴響時震動」時震動。
-* 一律震動 500 毫秒。
-* 無法取消震動。
+- 僅在裝置設定為「鈴響時震動」時震動。
+- 一律震動 500 毫秒。
+- 無法取消震動。
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 

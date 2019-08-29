@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2018
-ms.openlocfilehash: 4ddae1ae4f49c01220b2f5ce78dc19122b3015a0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3560c58c6fbb9920cfaf9c3830cd442bca443571
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525283"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119623"
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
@@ -319,15 +319,15 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 **解決方案清單**會顯示至少有一個封存專案的解決方案。 **解決方案清單**包括下列區段：
 
-* **目前的解決方案** &ndash; 顯示目前的解決方案。 請注意，如果目前的解決方案無現有的封存，此區域可能會是空的。
-* **所有封存** &ndash;顯示所有具有封存的解決方案。
-* [搜尋]  文字方塊 (位於頂端) &ndash; 根據文字方塊中輸入的搜尋字串，來篩選 [所有封存]  清單中所列的解決方案。
+- **目前的解決方案** &ndash; 顯示目前的解決方案。 請注意，如果目前的解決方案無現有的封存，此區域可能會是空的。
+- **所有封存** &ndash;顯示所有具有封存的解決方案。
+- [搜尋]  文字方塊 (位於頂端) &ndash; 根據文字方塊中輸入的搜尋字串，來篩選 [所有封存]  清單中所列的解決方案。
 
 [封存清單]  顯示所選取解決方案之所有封存的清單。 [封存清單]  包括下列區段：
 
-* **選取的解決方案名稱** &ndash; 顯示在**解決方案清單**中所選取解決方案的名稱。 [封存清單]  中顯示的所有資訊是指這個選取的解決方案。
-* **平台篩選** &ndash; 這個欄位可讓封存管理員根據平台類型 (例如 iOS 或 Android) 來篩選封存。
-* **封存項目** &ndash;所選取之解決方案的封存清單。 此清單中的每個項目都包括專案名稱、建立日期和平台。 在封存或發佈項目時，也可以顯示其他資訊，例如進度。
+- **選取的解決方案名稱** &ndash; 顯示在**解決方案清單**中所選取解決方案的名稱。 [封存清單]  中顯示的所有資訊是指這個選取的解決方案。
+- **平台篩選** &ndash; 這個欄位可讓封存管理員根據平台類型 (例如 iOS 或 Android) 來篩選封存。
+- **封存項目** &ndash;所選取之解決方案的封存清單。 此清單中的每個項目都包括專案名稱、建立日期和平台。 在封存或發佈項目時，也可以顯示其他資訊，例如進度。
 
 **詳細資料面板**可顯示每個封存的其他相關資訊。 它也可讓使用者開始散發工作流程或開啟散發建立所在的資料夾。 [組建註解]  區段可以在封存中包括組建註解。
 
@@ -343,9 +343,9 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 您可選擇下列其中一個散發通道：
 
-* **臨機操作** &ndash; 將簽署的 APK 儲存至可側載至 Android 裝置的磁碟。 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」  版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
+- **臨機操作** &ndash; 將簽署的 APK 儲存至可側載至 Android 裝置的磁碟。 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」  版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
 
-* **Google Play** &ndash; 可將簽署的 APK 發佈至 Google Play。 繼續前往[發佈至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何在 Google Play 商店中簽署和發佈 APK。
+- **Google Play** &ndash; 可將簽署的 APK 發佈至 Google Play。 繼續前往[發佈至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何在 Google Play 商店中簽署和發佈 APK。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

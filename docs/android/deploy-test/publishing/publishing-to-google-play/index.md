@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: fc14c2279fd8ca7e1d67dcf58f98af33a5e4d87f
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b976f540fb5b9aa7ea86cabb5b50276e53bed9a6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525478"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119814"
 ---
 # <a name="publishing-to-google-play"></a>發行至 Google Play
 
@@ -246,10 +246,10 @@ OAuth 用戶端的預設名稱為「Google Play Android 開發人員」  。 此
 
 接著，就會顯示 [Google Play 追蹤]  對話方塊。 Google Play 提供四個可能的追蹤方式來上傳您的應用程式：
 
-* **Alpha** &ndash; 用來將非常初期的應用程式版本上傳到小份的測試清單中。
-* **搶鮮版 (Beta)** &ndash; 用來將初期的應用程式版本上傳到較大份的測試清單中。
-* **首度發行** &ndash; 可讓某個百分比的使用者接收已更新的應用程式版本；這可讓您在消除錯誤 (bug) 的時，慢慢提高百分比，例如從 10% 的使用者增加到 100% 的使用者。
-* **生產環境** &ndash; 當應用程式已經準備就緒而可從 Google Play 商店完整散發時，請選取此追蹤方式。
+- **Alpha** &ndash; 用來將非常初期的應用程式版本上傳到小份的測試清單中。
+- **搶鮮版 (Beta)** &ndash; 用來將初期的應用程式版本上傳到較大份的測試清單中。
+- **首度發行** &ndash; 可讓某個百分比的使用者接收已更新的應用程式版本；這可讓您在消除錯誤 (bug) 的時，慢慢提高百分比，例如從 10% 的使用者增加到 100% 的使用者。
+- **生產環境** &ndash; 當應用程式已經準備就緒而可從 Google Play 商店完整散發時，請選取此追蹤方式。
 
 請選擇要使用哪一個 Google Play 追蹤方式來上傳應用程式，然後按一下 [上傳]  。 如果選取 [首度發行]  ，請務必輸入百分比值：
 
