@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 12/05/2017
-ms.openlocfilehash: 5109e3a66e22d885d8dc8b685db0817057709464
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b4d827715870d54de3116067a3e24e229ecda530
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653684"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065628"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>安裝並在 Xamarin 中使用 watchOS
 
@@ -29,9 +29,9 @@ Watch 應用程式是由三個專案所組成：
 
 - **IPhone 應用程式的 Xamarin.iOS 專案**-這是正常的 iPhone 專案，它可以是任何 Xamarin.iOS 範本。 Watch 應用程式和其擴充功能將會配套在此主要專案內。
 
-- **監看式延伸模組專案**-這包含監看式應用程式 （例如，控制器類別） 的程式碼。
+- **監看延伸專案**-這包含監看式應用程式的程式碼 (例如控制器類別)。
 
-- **監看式應用程式專案**-這包含所有 UI 資源的使用者介面的分鏡腳本檔案監看式應用程式。
+- **監看應用程式專案**-這包含具有 Watch 應用程式所有 UI 資源的使用者介面分鏡腳本檔案。
 
 [監看式套件 Catalog 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)在 Xamarin.Studio 中的方案看起來像這樣：
 
@@ -220,10 +220,10 @@ Visual Studio for Mac 可以啟動監看式應用程式，以通知_啟動模式
 
 <!--
 To test the functionality in your  and 
-    methods, use the **Hardware > Lock** command in the iOS Simulator.
-    Locking will trigger the `DidDeactivate` method and the watch simulator
-    will indicate that it has been locked. Swipe the iOS Simulator to unlock,
-    which triggers the `WillActivate` method of the watch app.
+  methods, use the **Hardware > Lock** command in the iOS Simulator.
+  Locking will trigger the `DidDeactivate` method and the watch simulator
+  will indicate that it has been locked. Swipe the iOS Simulator to unlock,
+  which triggers the `WillActivate` method of the watch app.
 -->
 
 WatchOS 範本檔案 (例如`InterfaceController`， `ExtensionDelegate`， `NotificationController`，和`ComplicationController`) 隨附於已實作其所需的生命週期方法。 新增`Console.WriteLine`呼叫，並閱讀**應用程式輸出**以深入了解事件生命週期。

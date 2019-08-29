@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 4c47e12468d9107cbe03d4bc45ffa77e4ad918e9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: e8113a9cefad5f53b66595728340f71101faa9de
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652054"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065568"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin 中顯示警示
 
@@ -23,17 +23,17 @@ ms.locfileid: "68652054"
 用`UIAlertControllerStyle`來表示要顯示的警示類型。 這些警示類型包括:
 
 - **UIAlertControllerStyleActionSheet**
-    * 預先 iOS 8 這會是 UIActionSheet
+  * 預先 iOS 8 這會是 UIActionSheet
 - **UIAlertControllerStyleAlert**
-    * IOS 前8的 UIAlertView 
+  * IOS 前8的 UIAlertView 
 
 建立警示控制器時, 需要採取下列三個步驟:
 
 - 使用下列方式建立和設定警示:
-    * 標題
-    * 訊息
-    * preferredStyle
-    
+  * 標題
+  * 訊息
+  * preferredStyle
+
 - 選擇性加入文字欄位
 - 新增必要的動作
 - 呈現視圖控制器

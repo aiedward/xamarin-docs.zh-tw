@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 833e6d3fc06ceeb5f8f63cb8b8b255b2a940098c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
+ms.openlocfilehash: 180ffa7cf723d841021a8bf7d1f1a285c882c103
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653881"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065554"
 ---
 # <a name="listview-interactivity"></a>ListView 互動性
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
 [`ListView`](xref:Xamarin.Forms.ListView)支援與它所呈現的資料互動。
 
@@ -75,7 +75,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 根據預設，功能表項目會具有無從得知它屬於哪一個儲存格。 `CommandParameter` 位於`MenuItem`儲存物件，例如背後的 MenuItem ViewCell 物件。 `CommandParameter` 可以在 XAML 和 C# 兩種設定。
 
-### <a name="c"></a>C#  
+### <a name="c"></a>C\#
 
 內容動作可以在任何實作`Cell`子類別 （只要沒有正在使用群組標頭的形式） 建立`MenuItem`s，並將它們加入至`ContextActions`儲存格的集合。 您有下列屬性可以設定內容動作：
 

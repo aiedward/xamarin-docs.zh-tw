@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 352a312d795ba292b47621ddb84540c2259ea10a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: MT
+ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527062"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065444"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>逐步解說：在 Xamarin 中使用觸控
 
@@ -37,7 +37,7 @@ ms.locfileid: "69527062"
 
 
 1. 開啟 [專案**Touch_Start**]。 首先執行專案, 確定一切都沒問題, 並觸及**觸控範例**按鈕。 您應該會看到類似下面的畫面 (雖然沒有任何按鈕可以使用):
-    
+
     [![](ios-touch-walkthrough-images/image4.png "使用非作用中按鈕執行的範例應用程式")](ios-touch-walkthrough-images/image4.png#lightbox)
 
 
@@ -164,11 +164,11 @@ ms.locfileid: "69527062"
         touchStartedInside = false;
     }
     ```
-    
+
     這兩種方法都會將`touchStartedInside`旗標重設為 false。 `TouchesEnded`也會顯示`TouchesEnded`在畫面上。
 
 1. 此時, [Touch 範例] 畫面已完成。 請注意, 當您與每個影像互動時, 畫面會如何改變, 如下列螢幕擷取畫面所示:
-        
+
     [![](ios-touch-walkthrough-images/image4.png "啟動應用程式畫面")](ios-touch-walkthrough-images/image4.png#lightbox)
     
     [![](ios-touch-walkthrough-images/image5.png "使用者拖曳按鈕之後的畫面")](ios-touch-walkthrough-images/image5.png#lightbox)

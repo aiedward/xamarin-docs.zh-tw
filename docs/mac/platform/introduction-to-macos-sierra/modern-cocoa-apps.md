@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: f79e7f3576748737a4feb9204fb9840afdbb1ef4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 914afe63136323e3506bb40d4759869f97fb264c
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645441"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065688"
 ---
 # <a name="building-modern-macos-apps"></a>建置現代化的 macOS 應用程式
 
@@ -177,7 +177,7 @@ public override void ViewWillAppear ()
 
 若要新增附屬視圖控制器, 請執行下列動作:
 
-1. 在方案總管  中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
+1. 在方案總管中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
 2. 將**自訂視圖控制器**拖曳至視窗的階層: 
 
     [![](modern-cocoa-apps-images/content05.png "加入新的自訂視圖控制器")](modern-cocoa-apps-images/content05.png#lightbox)

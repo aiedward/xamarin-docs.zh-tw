@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: a3273b4bed13c3982b9d9b4df874e4ad2ee30e3f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 39c77b4016027171a4e76bc4fb15c77d733cf5ba
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645913"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065364"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS 在 Xamarin 中的通知
 
@@ -37,7 +37,7 @@ Watch 應用程式可以接收通知，如果包含的 iOS 應用程式支援它
 
 有兩種類型的通知：
 
-- **短外觀**-非可捲動系統所定義的靜態檢視。
+- 系統所定義的「**短期**不受滾動」靜態視圖。
 
 - **長時間查詢**-可捲動，所以您所定義的自訂檢視 ！ 可以指定更簡單、 靜態版本和更複雜的動態版本。
 
@@ -99,21 +99,21 @@ Watch 應用程式可以接收通知，如果包含的 iOS 應用程式支援它
 
 Visual Studio for Mac 會顯示其他選項，監控擴充功能會設定為當**啟始專案**。
 監看式延伸模組專案上按一下滑鼠右鍵，然後選擇 **執行與 > 自訂參數...** :
-    
+
 [![](notifications-images/runwith-customparams-sml.png "執行具有自訂屬性")](notifications-images/runwith-customparams.png#lightbox)
-    
+
 這會開啟**執行引數**視窗，其中包含**WatchKit** ] 索引標籤。選取 [**通知**，並提供 JSON 承載，然後按**Execute**在模擬器中啟動監看式應用程式：
-    
+
 [![](notifications-images/runwith-execargs-sml.png "選取通知承載的預設值")](notifications-images/runwith-execargs.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要設定測試通知裝載在 Visual Studio 以滑鼠右鍵按一下，監看式擴充功能，以編輯**專案屬性**。 移至**偵錯**區段，然後從清單中 （它會自動將會列出專案中包含的所有 JSON 檔案） 選取通知 JSON 檔案。
-    
+
 [![](notifications-images/runwith-execargs-sml-vs.png "選取通知 JSON 檔案")](notifications-images/runwith-execargs-vs.png#lightbox)
 
 監看式延伸模組時**啟始專案**，Visual Studio 會顯示其他選項，如下所示。 選擇其中一個**通知**監看式應用程式的啟動選項**通知**（使用 [屬性] 視窗中選取的 JSON 檔案） 的模式：
-    
+
 ![](notifications-images/runwith-vs.png "[裝置] 功能表")
 
 -----
@@ -128,7 +128,7 @@ Visual Studio for Mac 會顯示其他選項，監控擴充功能會設定為當*
 
 在 [監看式套件目錄](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)有範例是範例承載 JSON 檔案**NotificationPayload.json** （如下所示）。
 
-```csharp
+```json
 {
     "aps": {
         "alert": "Test message content",

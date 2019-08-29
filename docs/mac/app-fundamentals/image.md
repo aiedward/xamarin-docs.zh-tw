@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 197600f713527ed79d9a52768d367589d9edf2fa
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: bdd4ba57dfce96e469639e4b90b06c73c339b0f0
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646877"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065389"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin. Mac 中的影像
 
@@ -44,7 +44,7 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用影像和圖示。其�
 
 - **主要專案樹狀結構 [取代]** -可以將影像直接加入至專案樹狀結構。 從程式碼呼叫儲存在主要專案樹狀結構中的影像時, 未指定資料夾位置。 例如：`NSImage image = NSImage.ImageNamed("tags.png");`。 
 - **Resources 資料夾 [取代]** -[特殊**資源**] 資料夾適用于將成為應用程式組合之一部分的任何檔案, 例如圖示、啟動畫面或一般映射 (或開發人員希望新增的任何其他映射或檔案)。 從程式碼呼叫儲存在**Resources**資料夾中的影像時, 就像是儲存在主要專案樹狀結構中的影像一樣, 並不會指定任何資料夾位置。 例如：`NSImage.ImageNamed("tags.png")`。
-- **自訂資料夾或子資料夾 [取代]** -開發人員可以將自訂資料夾加入至專案來源樹狀結構, 並在該處儲存影像。 新增檔案的位置可以嵌套在子資料夾中, 以進一步協助組織專案。 例如, 如果開發人員已將`Card`資料夾新增至專案, 並將  的`Hearts` `Hearts`子資料夾加入至該資料夾, 則會在此資料夾中儲存影像, `NSImage.ImageNamed("Card/Hearts/Jack.png")`並在執行時間載入影像。
+- **自訂資料夾或子資料夾 [取代]** -開發人員可以將自訂資料夾加入至專案來源樹狀結構, 並在該處儲存影像。 新增檔案的位置可以嵌套在子資料夾中, 以進一步協助組織專案。 例如, 如果開發人員已將`Card`資料夾新增至專案, 並將的`Hearts` `Hearts`子資料夾加入至該資料夾, 則會在此資料夾中儲存影像, `NSImage.ImageNamed("Card/Hearts/Jack.png")`並在執行時間載入影像。
 - **資產目錄映射集 [慣用]** -新增在 OS X El Capitan 中,**資產目錄影像集**包含支援應用程式的各種裝置和調整因素所需之映射的所有版本或標記法。 而不是依賴影像資產 filename ( **@1x** , **@2x** )。
 
 <a name="asset-catalogs" />
@@ -335,7 +335,7 @@ view.AddSubview (view.TextField);
 view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 ```
 
-範例輸出：
+範例輸出︰
 
 [![在應用程式中顯示影像的範例](image-images/tables01.png "在應用程式中顯示影像的範例")](image-images/tables01-large.png#lightbox)
 
@@ -438,7 +438,7 @@ view.AddSubview (view.TextField);
 view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 ```
 
-範例輸出：
+範例輸出︰
 
 [![在大綱視圖中顯示的影像範例](image-images/outline01.png "在大綱視圖中顯示的影像範例")](image-images/outline01-large.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 05/24/2017
-ms.openlocfilehash: 432e875969164b6481671d769d488c5f34458fe0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ee1b3043033ea1d6e024619e6a176947733e9f24
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657267"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065477"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin 中的集合視圖
 
@@ -199,7 +199,7 @@ namespace MacDatabinding
 
 請執行下列動作：
 
-1. 在 **方案總管**中, 以滑鼠右鍵按一下專案名稱, 然後   > 選取 **新增檔案 ...** 。
+1. 在 **方案總管**中, 以滑鼠右鍵按一下專案名稱, 然後  > 選取 **新增檔案 ...** 。
 2. 選取 [ **Mac**  >  **View Controller**], 為它命名 (例如`EmployeeItem`在此範例中為), 然後按一下 [**新增**] 按鈕以建立: 
 
     ![加入新的視圖控制器](collection-view-images/proto01.png)
@@ -209,7 +209,7 @@ namespace MacDatabinding
 4. `NSBox`將、 `NSImageView`和兩個`NSLabel`控制項加入至視圖, 並依照下列方式進行排列:
 
     ![設計資料格原型的版面配置](collection-view-images/proto02.png)
-5. 開啟 [**助理編輯器**] 並建立  的 [ `NSBox`輸出], 讓它可以用來表示資料格的選取狀態:
+5. 開啟 [**助理編輯器**] 並建立的 [ `NSBox`輸出], 讓它可以用來表示資料格的選取狀態:
 
     ![公開插座中的 NSBox](collection-view-images/proto03.png)
 6. 返回**標準編輯器**, 然後選取影像視圖。

@@ -1,39 +1,39 @@
 ---
-title: 程式設計語言支援，在 Xamarin 中
-description: 本文件說明 Xamarin 支援各種程式設計語言。 它會討論C#， F#，可攜式 Visual Basic.NET 和 Razor 範本。
+title: Xamarin 中的程式設計語言支援
+description: 本檔說明 Xamarin 支援的各種程式設計語言。 它討論C#、 F#、可移植的視覺效果 Basic.NET 和 Razor 範本。
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
 author: asb3993
 ms.author: amburns
 ms.date: 02/18/2018
-ms.openlocfilehash: 6c0b8e6de0c414fb708c4027f4c536a21b6b011a
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 2ec934b2747f89e959d659615629489e86449660
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864368"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065159"
 ---
-# <a name="programming-language-support-in-xamarin"></a>程式設計語言支援，在 Xamarin 中
+# <a name="programming-language-support-in-xamarin"></a>Xamarin 中的程式設計語言支援
 
-## <a name="c"></a>C# 
+## <a name="c"></a>C\#
 
 ### <a name="async-support-overviewcross-platformplatformasyncmd"></a>[非同步支援概觀](~/cross-platform/platform/async.md)
 
-第 5 版的C#導入兩個新的關鍵字來表示非同步作業： async 和 await。 這些關鍵字可讓您撰寫簡單的程式碼會使用工作平行程式庫來執行長時間執行的作業 （例如網路存取），另一個執行緒，並輕鬆地存取完成的結果。 Xamarin.iOS 和 Xamarin.Android 的最新版本支援 async 和 await-本文提供說明和使用 Xamarin 的新語法的範例。
+第5版C#引進了兩個新的關鍵字來表示非同步作業: async 和 await。 這些關鍵字可讓您撰寫簡單的程式碼, 利用工作平行程式庫在另一個執行緒中執行長時間執行的作業 (例如網路存取), 並在完成時輕鬆地存取結果。 最新版本的 Xamarin 和 Xamarin 支援 async 和 await-本檔提供使用新語法與 Xamarin 的說明和範例。
 
 ### <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[C# 6 語言功能](~/cross-platform/platform/csharp-six.md)
 
-最新版的C#語言 – 第 6 版 – 持續發展的語言有較少的未定案、 改善的清晰度和較佳的一致性。 更簡潔的初始化語法、 使用的能力`await`中`catch/finally`區塊，以及 null 條件`?`運算子時特別有用。
+最新版的C#語言–第6版–會繼續發展語言, 使其具有較少的重複使用性、改良的清晰度, 以及更多的一致性。 清除程式初始化語法、區塊中`await` `catch/finally`使用的功能, 以及 null 條件`?`運算子特別有用。
 
 ## <a name="ffsharpindexmd"></a>[F#](fsharp/index.md)
 
-建置行動應用程式與F#和 Xamarin。
+使用F#和 Xamarin 建立行動裝置應用程式。
 
-## <a name="portable-visual-basicnetcross-platformplatformvisual-basicindexmd"></a>[可攜式 Visual Basic.NET](~/cross-platform/platform/visual-basic/index.md)
+## <a name="portable-visual-basicnetcross-platformplatformvisual-basicindexmd"></a>[可移植的視覺效果 Basic.NET](~/cross-platform/platform/visual-basic/index.md)
 
-Visual Studio 支援使用 Visual Basic.NET 然後可以結合到 Xamarin 應用程式的可攜式類別庫建立。 本文說明如何建立新的 Visual Basic PCL，並將它用於 Xamarin.iOS、 Xamarin.Android 和 Windows Phone 應用程式範例。
+Visual Studio 支援使用 Visual Basic.NET 建立可移植的類別庫, 然後再將其併入 Xamarin 應用程式中。 本文說明如何建立新的 Visual Basic PCL, 然後在範例 Xamarin. iOS、Xamarin 和 Windows Phone 應用程式中使用它。
 
-## <a name="building-html-views-using-razor-templatescross-platformplatformrazor-html-templatesindexmd"></a>[使用 Razor 範本建置 HTML 檢視](~/cross-platform/platform/razor-html-templates/index.md)
+## <a name="building-html-views-using-razor-templatescross-platformplatformrazor-html-templatesindexmd"></a>[使用 Razor 範本建立 HTML 視圖](~/cross-platform/platform/razor-html-templates/index.md)
 
-Xamarin 可讓開發人員利用 Razor 範本化引擎，原本推出與 ASP.NET MVC 中，連同C#輕鬆地使用 HTML、 Javascript 和 CSS 結合資料，而不必煩惱手動建置程式碼中的 HTML 字串。
-這篇文章會示範如何搭配 Xamarin 使用 Razor 範本，適用於 Android 和 iOS。
+Xamarin 可讓開發人員運用 Razor 樣板化引擎, 其原本是以 ASP.NET MVC 引進C# , 並可輕鬆地結合 Html、JAVASCRIPT 和 CSS 的資料, 而不需要在程式碼中手動建立 html 字串。
+本文示範如何搭配適用于 Android 和 iOS 的 Xamarin 使用 Razor 範本。
