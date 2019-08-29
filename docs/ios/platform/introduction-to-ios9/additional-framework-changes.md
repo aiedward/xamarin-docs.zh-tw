@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 886a6145851720c088e39818b3a6e42a7b66e4bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eaae0859ddce1c7601b0429381c8643c0884c3ac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654410"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121385"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -78,8 +78,8 @@ Apple 在 iOS 9 中的基礎架構包含下列變更:
 
 IOS 9 的[NSBundle](xref:Foundation.NSBundle)類別已進行下列變更:
 
-* `GetPreservationPriorityForTag (NSString tag)`-取得具有指定標記之資源的目前保留優先順序。 有效值在範圍`0.0` `1.0`內, 將會先清除優先順序最低的資源。
-* `SetPreservationPriorityForTag (double priority, NSSet tags)`-設定具有指定標記之資源的目前保留優先順序。 有效值在範圍`0.0` `1.0`內, 將會先清除優先順序最低的資源。
+- `GetPreservationPriorityForTag (NSString tag)`-取得具有指定標記之資源的目前保留優先順序。 有效值在範圍`0.0` `1.0`內, 將會先清除優先順序最低的資源。
+- `SetPreservationPriorityForTag (double priority, NSSet tags)`-設定具有指定標記之資源的目前保留優先順序。 有效值在範圍`0.0` `1.0`內, 將會先清除優先順序最低的資源。
 
 如需詳細資訊, 請參閱 Apple 的[NSBundle 參考](https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class/index.html#//apple_ref/occ/cl/NSBundle)。
 

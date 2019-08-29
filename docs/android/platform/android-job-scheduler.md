@@ -1,86 +1,86 @@
 ---
 title: Android 工作排程器
-description: 本指南會討論如何使用 Android 工作排程器 API 的背景工作的排程。
+description: 本指南將討論如何使用 Android 工作排程器 API 排定背景工作。
 ms.prod: xamarin
 ms.assetid: 673BB8C3-C5CC-43EC-BA8F-758F15D986C9
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: f1a83eab0783baf8e96057fbdc4f70dc2864db47
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 95d4194e0ed1a1da435a233e40a74f506c49b539
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65924886"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119880"
 ---
 # <a name="android-job-scheduler"></a>Android 工作排程器
 
-_本指南將告訴您如何使用 Android 的工作排程器 API，也就是在執行 Android 5.0 (API level 21) 的 Android 裝置上可用的背景工作的排程和更新版本。_
+_本指南討論如何使用 Android 工作排程器 API (可在執行 Android 5.0 (API 層級 21) 和更高版本的 Android 裝置上取得) 來排定背景工作。_
 
 
 ## <a name="overview"></a>總覽 
 
-將 Android 應用程式回應使用者的最佳方式之一是確保複雜或長時間執行的工作在背景中執行。 不過，很重要，背景工作不會造成負面影響的使用者經驗與裝置。 
+讓 Android 應用程式回應使用者的最佳方式之一, 是確保在背景執行複雜或長時間的工作。 不過, 背景工作不會對裝置的使用者體驗造成負面影響。 
 
-比方說，背景工作可能分鐘輪詢一次網站每隔三或四個查詢的特定資料集的變更。 不過，它會造成災難性影響電池壽命，這似乎良性的。 應用程式重複會喚醒裝置、 提高至更高的電源狀態的 CPU、 收音機開啟電源，請網路要求，然後處理結果。 因為裝置不會立即會在關閉電源，並返回 低電源閒置狀態時，它會更糟。 效能不佳的排程背景工作可能會不小心保護裝置的不必要和多餘電力需求的狀態中。 這個看似無害的活動 （輪詢網站） 會使裝置在相對較短的一段時間無法使用。
+例如, 背景工作可能會每隔三或四分鐘輪詢一次網站, 以查詢特定資料集的變更。 這似乎無害, 但會對電池壽命造成災難性的影響。 應用程式會重複喚醒裝置、將 CPU 提升為較高的電源狀態、開啟無線電、進行網路要求, 然後處理結果。 因為裝置不會立即關閉電源並回到低電源閒置狀態, 所以會變得更糟。 排程不良的背景工作可能會不小心讓裝置處於不必要和過度的電源需求的狀態。 這個看似無害的活動 (輪詢網站) 將在相當短的時間內, 使裝置無法使用。
 
-Android 提供下列 Api 可協助在背景中執行工作，但本身不足夠的智慧型作業排程。 
+Android 提供下列 Api 來協助在背景中執行工作, 但本身並不足以進行智慧型作業排程。 
 
-* **[Intent 服務](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash;意圖服務適合用於執行工作，但它們提供無法排定工作。
-* **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)**  &ndash;這些 Api 只允許排程，但提供沒辦法實際執行工作的工作。 此外，AlarmManager 只允許以時間為基礎的條件約束，這表示在特定時間，或經過一段時間之後，發出警示。 
-* **[廣播接收器](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android 應用程式可以設定來執行工作以回應系統事件或意圖的廣播的接收器。 不過，廣播的接收器不提供任何控制何時應執行作業。 Android 作業系統的變更也會限制當廣播的接收器是可行的或它們可以回應的工作種類。 
+- **[意圖服務](~/android/app-fundamentals/services/creating-a-service/intent-services.md)** &ndash;意圖服務很適合用來執行工作, 但不提供任何方式來排程工作。
+- **[AlarmManager](https://developer.android.com/reference/android/app/AlarmManager.html)** &ndash;這些 api 只允許排程工作, 但不提供實際執行工作的方式。 此外, AlarmManager 只允許以時間為基礎的條件約束, 這表示在特定時間或經過一段特定時間之後引發警示。 
+- **[廣播接收器](~/android/app-fundamentals/broadcast-receivers.md)** &ndash; Android 應用程式可以設定廣播接收器來執行工作, 以回應全系統的事件或意圖。 不過, 廣播接收器不會對應執行作業的時機提供任何控制。 Android 作業系統中的變更也會限制廣播接收者的運作時間, 或其可以回應的工作類型。 
 
-有兩個重要的功能，有效率地執行背景工作 (有時稱為_背景工作_或是_作業_):
+有兩個主要功能可有效率地執行背景工作 (有時稱為_背景作業_或_作業_):
 
-1. **聰明的工作排程**&ndash;很重要，當應用程式負責在背景中的工作，它會以良好的公民。 在理想情況下，應用程式不應要求執行作業。 相反地，應用程式應指定作業可以執行，以及然後排程該工作會在符合條件時執行工作的作業系統必須符合的條件。 這可讓 Android 執行作業，以確保在裝置上的最高效率。 比方說，網路要求，可能會批次處理以發揮最大的負擔與網路有關的所有項目執行。
-2. **封裝工作**&ndash;執行背景工作的程式碼應該封裝在個別的元件可以獨立使用者介面中執行，以及將相當容易重新排定工作無法完成時因為某些原因。
+1. 以**智慧方式排程工作**&ndash;當應用程式在背景執行工作時, 請務必將其做為良好公民。 在理想情況下, 應用程式不應該要求執行作業。 相反地, 應用程式應該指定作業可以執行時必須符合的條件, 然後使用符合條件時將執行工作的作業系統, 排程該作業。 這可讓 Android 執行此作業, 以確保裝置上的最高效率。 例如, 網路要求可能會批次處理成同時執行, 以充分利用網路所涉及的額外負荷。
+2. **封裝工作**&ndash;執行背景工作的程式碼應該封裝在可獨立于使用者介面之外執行的離散元件中, 而且如果工作因某些原因而無法完成, 則會相對容易重新排定。
 
-Android 工作排程器是內建 Android 作業系統可提供簡化的排程背景工作的 fluent API 的架構。  Android 工作排程器是由下列類型所組成：
+Android 工作排程器是內建于 Android 作業系統的架構, 可提供 Fluent API 來簡化排程背景工作。  Android 工作排程器是由下列類型組成:
 
-* `Android.App.Job.JobScheduler`是一種系統服務，用來排程、 執行和必要時取消，代表 Android 應用程式的工作。
-* `Android.App.Job.JobService`是抽象類別必須使用會在應用程式的主執行緒執行作業的邏輯擴充。 這表示`JobService`負責是以非同步方式執行工作的方式。
-* `Android.App.Job.JobInfo`物件會保存引導 Android 時，工作應該執行的準則。
+- `Android.App.Job.JobScheduler`是一種系統服務, 用來代表 Android 應用程式進行排程、執行, 以及在必要時取消作業。
+- `Android.App.Job.JobService`是抽象類別, 必須使用將在應用程式的主執行緒上執行作業的邏輯進行擴充。 這表示`JobService`會負責以非同步方式執行工作。
+- `Android.App.Job.JobInfo`物件會保留準則, 以便在工作應該執行時引導 Android。
 
-若要排程與 Android 的工作排程器工作，Xamarin.Android 應用程式必須封裝可擴充的類別中的程式碼`JobService`類別。 `JobService` 有三個可以呼叫作業的存留期間的生命週期方法：
+若要排定與 android 工作排程器搭配使用, Xamarin. Android 應用程式必須將程式碼封裝在擴充`JobService`類別的類別中。 `JobService`有三個生命週期方法, 可在作業的存留期間呼叫:
 
-* **bool （JobParameters 參數） OnStartJob** &ndash;藉由呼叫這個方法`JobScheduler`執行工作和應用程式的主執行緒上執行的。 它負責`JobService`來以非同步方式執行的工作並`true`剩餘，如果沒有工作或`false`如果工作已完成。
+- **Bool OnStartJob (JobParameters 參數)** 這個方法是由所`JobScheduler`呼叫, 以執行工作, 並在應用程式的主執行緒上執行。 &ndash; 必須負責`JobService`以非同步方式執行工作, 以及`true`是否剩餘工作, 或`false`工作是否已完成。
     
-    當`JobScheduler`呼叫這個方法，它將會要求，並在作業期間保留從 Android wakelock。 當工作完成時，它負責`JobService`告訴`JobScheduler`呼叫此事實`JobFinished`（接下來所述） 的方法。
+    `JobScheduler`當呼叫這個方法時, 它會在工作的持續期間要求並保留 Android 的 wakelock。 當作業完成時, 會負責`JobService`藉由呼叫`JobFinished`方法 (如下所述`JobScheduler` ) 來告知這項事實。
 
-* **（JobParameters 參數，bool needsReschedule） JobFinished** &ndash;必須由呼叫這個方法`JobService`告訴`JobScheduler`中完成工作的。 如果`JobFinished`不會呼叫，`JobScheduler`將不會移除 wakelock，導致不必要的電池清空。 
+- **JobFinished (JobParameters 參數, Bool needsReschedule)** 這個方法必須`JobService`由呼叫, 以告知`JobScheduler`工作已完成。 &ndash; 如果`JobFinished`未呼叫`JobScheduler` , 將不會移除 wakelock, 造成不必要的電池耗盡。 
 
-* **bool （JobParameters 參數） OnStopJob** &ndash; Android 提前停止工作時，這會呼叫。 它應該傳回`true`如果應該重試準則 （詳述如下） 為基礎重新排程作業。
+- **Bool OnStopJob (JobParameters 參數)** &ndash;當 Android 停止工作時, 會呼叫此項。 `true`如果應該根據重試準則來重新排程作業, 則應該傳回 (更詳細討論)。
 
-您可指定_條件約束_或是_觸發程序_，將控制作業時可以或應該執行。 比方說，就可以限制作業，使其只會執行當裝置正在充電或啟動的工作，當圖片。
+您可以指定_條件約束_或_觸發_程式, 以控制何時應執行作業。 例如, 您可以限制作業, 使其只會在裝置充電時執行, 或在拍照時啟動工作。
 
-本指南會討論詳述如何實作`JobService`類別，並將它與排程`JobScheduler`。
+本指南將詳細討論如何執行`JobService`類別, 並使用將`JobScheduler`它排程。
 
 ## <a name="requirements"></a>需求
 
-Android 工作排程器需要 Android API level 21 (Android 5.0) 或更高版本。 
+Android 工作排程器需要 Android API 層級 21 (Android 5.0) 或更高版本。 
 
 ## <a name="using-the-android-job-scheduler"></a>使用 Android 工作排程器
 
-有三個步驟，使用 Android JobScheduler API:
+使用 Android JobScheduler API 有三個步驟:
 
-1. 實作 JobService 型別來封裝工作。
-2. 使用`JobInfo.Builder`物件來建立`JobInfo`物件，將存放的準則`JobScheduler`来執行此作業。 
-3. 作業使用排程`JobScheduler.Schedule`。
+1. 執行 JobService 類型來封裝工作。
+2. 使用物件來`JobInfo`建立物件, 以`JobScheduler`保存執行作業的準則。 `JobInfo.Builder` 
+3. 使用`JobScheduler.Schedule`排程工作。
 
-### <a name="implement-a-jobservice"></a>實作 JobService
+### <a name="implement-a-jobservice"></a>執行 JobService
 
-Android 工作排程器程式庫所執行的所有工作都必須在此型別擴充`Android.App.Job.JobService`抽象類別。 建立`JobService`非常類似於建立`Service`Android 架構： 
+Android 工作排程器程式庫所執行的所有工作都必須在擴充`Android.App.Job.JobService`抽象類別的類型中完成。 建立非常類似于`Service`使用 Android framework 建立: `JobService` 
 
-1. 擴充`JobService`類別。
-2. 裝飾具有子類別`ServiceAttribute`並設定`Name`封裝名稱和類別的名稱組成的字串參數 （請參閱下列範例）。
-3. 設定`Permission`上的屬性`ServiceAttribute`字串`android.permission.BIND_JOB_SERVICE`。
-4. 覆寫`OnStartJob`方法，加入程式碼來執行工作。 Android 會叫用這個方法來執行作業的應用程式的主執行緒上。 需要較久的幾毫秒，應該以避免封鎖應用程式的執行緒上執行的工作。
-5. 工作完成時，`JobService`必須呼叫`JobFinished`方法。 這個方法是如何`JobService`告知`JobScheduler`工作已完成。 若要呼叫的失敗`JobFinished`將會導致`JobService`放在裝置上，縮短電池壽命的不必要的需求。 
-6. 它是個不錯的主意，也會覆寫`OnStopJob`方法。 當作業正在關閉之前已完成，並提供 Android 便會呼叫此方法`JobService`得以正確地處置任何資源。 這個方法會傳回`true`如有必要重新排定工作，或`false`如果不是說不定重新執行工作。
+1. `JobService`擴充類別。
+2. 使用`ServiceAttribute`裝飾子類別, 並`Name`將參數設定為由封裝名稱和類別名稱所組成的字串 (請參閱下列範例)。
+3. 將上的`Permission`屬性設定`android.permission.BIND_JOB_SERVICE`為字串 `ServiceAttribute` 。
+4. 覆寫`OnStartJob`方法, 並加入程式碼來執行工作。 Android 會在應用程式的主執行緒上叫用此方法, 以執行作業。 需要線上程上執行數毫秒的工作, 以避免封鎖應用程式。
+5. 當工作完成時, `JobService`必須`JobFinished`呼叫方法。 這個方法會`JobService`告訴該`JobScheduler`工作已完成。 呼叫`JobFinished`失敗時, 會導致裝置`JobService`上不必要的要求, 縮短電池壽命。 
+6. 也可以覆寫`OnStopJob`方法, 這是個不錯的主意。 此方法是由 Android 在工作完成前關閉, 並提供`JobService`有機會適當處置任何資源的情況。 `true`如果需要重新排程作業, 或`false`如果沒有 desireable 來重新執行作業, 則這個方法應該會傳回。
    
 
-下列程式碼是簡單的範例`JobService`應用程式，請使用 TPL 以非同步方式執行一些工作：
+下列程式碼是應用程式最簡單`JobService`的範例, 使用 TPL 以非同步方式執行一些工作:
 
 ```csharp
 [Service(Name = "com.xamarin.samples.downloadscheduler.DownloadJob", 
@@ -109,15 +109,15 @@ public class DownloadJob : JobService
 }
 ```
 
-### <a name="creating-a-jobinfo-to-schedule-a-job"></a>建立排程作業 JobInfo
+### <a name="creating-a-jobinfo-to-schedule-a-job"></a>建立排程工作的 JobInfo
 
-Xamarin.Android 應用程式進行具現化`JobService`直接管理，而是會通過`JobInfo`物件到`JobScheduler`。 `JobScheduler`會具現化要求`JobService`物件，排程及執行`JobService`中的中繼資料根據`JobInfo`。 A`JobInfo`物件必須包含下列資訊：
+Xamarin: Android 應用程式不會`JobService`直接具現化, 而是會將`JobInfo`物件傳遞`JobScheduler`至。 會將要求`JobService`的物件具現化`JobService` , 並根據中`JobInfo`的中繼資料來排程和執行。 `JobScheduler` `JobInfo`物件必須包含下列資訊:
 
-* **JobId** &ndash;這是第`int`值，用來識別工作以`JobScheduler`。 重複使用此值將會更新任何現有的作業。 值必須是唯一的應用程式。 
-* **JobService** &ndash;這個參數是`ComponentName`明確識別型別，`JobScheduler`應該使用來執行作業。 
+- **JobId**這是用來識別作業的`JobScheduler`值。`int` &ndash; 重複使用這個值將會更新任何現有的作業。 此值對應用程式而言必須是唯一的。 
+- **JobService**這個參數是, 它會明確`JobScheduler`識別應該用來執行作業的型別。 `ComponentName` &ndash; 
   
 
-這個擴充方法示範如何建立`JobInfo.Builder`android `Context`，例如活動：
+這個擴充方法示範如何`JobInfo.Builder`使用 Android `Context`建立, 例如活動:
 
 ```csharp
 public static class JobSchedulerHelpers
@@ -136,31 +136,31 @@ var jobBuilder = this.CreateJobBuilderUsingJobId<DownloadJob>(1);
 var jobInfo = jobBuilder.Build();  // creates a JobInfo object.
 ```
 
-Android 工作排程器的強大功能之一是能夠控制作業的執行，或在什麼條件作業可能會執行。 下表描述的一些方法上`JobInfo.Builder`，可讓應用程式，以影響作業可以執行時：  
+Android 工作排程器的強大功能之一, 就是能夠控制作業的執行時間, 或在作業可能執行的條件下。 下表描述中`JobInfo.Builder`可讓應用程式影響作業何時可以執行的一些方法:  
 
 
-|  方法 | 描述   |
+|  方法 | 說明   |
 |---|---|
-| `SetMinimumLatency`  | 指定執行工作之前，應該要觀察的延遲 （以毫秒為單位）。 |
-| `SetOverridingDeadline`  | 宣告的作業都必須執行才能經過這個時間 （以毫秒為單位）。 |
+| `SetMinimumLatency`  | 指定在執行作業之前應觀察的延遲 (以毫秒為單位)。 |
+| `SetOverridingDeadline`  | 宣告作業必須在這段時間之前執行 (以毫秒為單位) 的。 |
 | `SetRequiredNetworkType`  | 指定作業的網路需求。 |
-| `SetRequiresBatteryNotLow` | 當裝置未向使用者顯示 「 電力偏低 」 警告，可能只會執行作業。 |
-| `SetRequiresCharging` | 當電池在充電時，可能只會執行作業。 |
-| `SetDeviceIdle` | 當裝置正在使用中時，會執行作業。 |
-| `SetPeriodic` | 指定應定期執行作業。 |
-| `SetPersisted` | 作業會在裝置重新啟動期間應該 perisist。 | 
+| `SetRequiresBatteryNotLow` | 只有在裝置未向使用者顯示「電力不足」警告時, 才能執行此作業。 |
+| `SetRequiresCharging` | 只有在電池充電時, 才可以執行此作業。 |
+| `SetDeviceIdle` | 當裝置忙碌時, 將會執行此作業。 |
+| `SetPeriodic` | 指定應該定期執行作業。 |
+| `SetPersisted` | 作業應該會在裝置重新開機時 perisist。 | 
 
 
-`SetBackoffCriteria`提供一些指引長度`JobScheduler`應等待嘗試再次執行工作。 有兩個部分的輪詢準則： 應該使用毫秒 （30 秒的預設值） 和類型的撤退延遲 (有時稱為_輪詢原則_或_重試原則_). 兩個原則，都會封裝在`Android.App.Job.BackoffPolicy`列舉：
+會提供一些指引, 說明在嘗試`JobScheduler`再次執行作業之前, 應該等候多久。 `SetBackoffCriteria` 輪詢準則有兩個部分: 延遲 (以毫秒為單位) (預設值為30秒), 以及應該使用的後端類型 (有時稱為「輪詢_原則_」或「_重試原則_」)。 這兩個原則會封裝在`Android.App.Job.BackoffPolicy`列舉中:
 
-* `BackoffPolicy.Exponential` &ndash; 指數輪詢原則會以指數方式增加初始輪詢值之後每個失敗。 工作失敗，第一次程式庫會在等候之前先重新排定工作 – 也就是範例 30 秒內指定的初始間隔。 作業失敗時，第二次程式庫會等候至少 60 秒，然後再嘗試執行此作業。 第三個嘗試失敗之後，程式庫會等待 120 秒，以此類推。 這是預設值。
-* `BackoffPolicy.Linear` &ndash; 此策略是線性的輪詢應該重新排定工作，可以執行設定的間隔 （直到成功）。 線性輪詢最適合針對必須儘速完成的工作或將快速自行解決問題。 
+- `BackoffPolicy.Exponential`&ndash;指數輪詢原則會在每次失敗後, 以指數方式增加初始輪詢值。 第一次作業失敗時, 程式庫會等待重新排程作業之前指定的初始間隔–範例為30秒。 第二次作業失敗時, 程式庫會等待至少60秒, 然後才嘗試執行此作業。 第三次嘗試失敗之後, 程式庫會等候120秒, 依此類推。 這是預設值。
+- `BackoffPolicy.Linear`&ndash;此策略是一種線性輪詢, 應將作業重新排程為在設定的間隔執行 (直到成功為止)。 線性輪詢最適用于必須儘快完成的工作, 或可快速解決的問題。 
 
-如需更多有關建立`JobInfo`物件，請閱讀[Google 的文件`JobInfo.Builder`類別](https://developer.android.com/reference/android/app/job/JobInfo.Builder.html)。
+如需有關建立`JobInfo`物件的詳細資訊, 請參閱[Google 的`JobInfo.Builder`類別檔](https://developer.android.com/reference/android/app/job/JobInfo.Builder.html)。
 
-#### <a name="passing-parameters-to-a-job-via-the-jobinfo"></a>將參數傳遞至透過 JobInfo 作業
+#### <a name="passing-parameters-to-a-job-via-the-jobinfo"></a>透過 JobInfo 將參數傳遞至作業
 
-藉由建立的參數傳遞至作業`PersistableBundle`連同傳遞`Job.Builder.SetExtras`方法：
+藉由建立`PersistableBundle` `Job.Builder.SetExtras`與方法一起傳遞的, 將參數傳遞至作業:
 
 ```csharp
 var jobParameters = new PersistableBundle();
@@ -171,7 +171,7 @@ var jobBuilder = this.CreateJobBuilderUsingJobId<DownloadJob>(1)
                      .Build();
 ```
 
-`PersistableBundle`從存取`Android.App.Job.JobParameters.Extras`中的屬性`OnStartJob`方法`JobService`:
+會從的`OnStartJob`方法中的屬性存取:`JobService` `Android.App.Job.JobParameters.Extras` `PersistableBundle`
 
 ```csharp
 public override bool OnStartJob(JobParameters jobParameters)
@@ -184,12 +184,12 @@ public override bool OnStartJob(JobParameters jobParameters)
 
 ### <a name="scheduling-a-job"></a>排程工作
 
-若要排程的作業，Xamarin.Android 應用程式會參考`JobScheduler`系統服務，並呼叫`JobScheduler.Schedule`方法`JobInfo`在上一個步驟中建立的物件。 `JobScheduler.Schedule` 會立即傳回並提供兩個整數值的其中一個：
+若要排程作業, Xamarin. Android 應用程式會取得`JobScheduler`系統服務的參考, 並使用在上一個步驟中建立的`JobInfo`物件來`JobScheduler.Schedule`呼叫方法。 `JobScheduler.Schedule`會立即傳回兩個整數值的其中一個:
 
-* **JobScheduler.ResultSuccess** &ndash;作業順利排程。 
-* **JobScheduler.ResultFailure** &ndash;無法排程工作。 這種情形通常因衝突`JobInfo`參數。
+- **JobScheduler。 ResultSuccess** &ndash;作業已成功排程。 
+- **JobScheduler。 ResultFailure** &ndash;無法排程作業。 這通常是因為參數衝突`JobInfo`所造成。
 
-此程式碼是排程工作和通知使用者有排程嘗試的結果範例：
+這段程式碼是排程作業和通知使用者排程嘗試結果的範例:
 
 ```csharp
 var jobScheduler = (JobScheduler)GetSystemService(JobSchedulerService);
@@ -207,9 +207,9 @@ else
 }
 ```
  
-### <a name="cancelling-a-job"></a>正在取消工作
+### <a name="cancelling-a-job"></a>取消作業
 
-它是可以取消已排程的所有作業或只是單一工作，使用`JobsScheduler.CancelAll()`方法或`JobScheduler.Cancel(jobId)`方法：
+您可以使用`JobsScheduler.CancelAll()`方法`JobScheduler.Cancel(jobId)`或方法, 取消已排程的所有作業, 或只是單一作業:
 
 ```csharp
 // Cancel all jobs
@@ -221,12 +221,12 @@ jobScheduler.Cancel(1)
   
 ## <a name="summary"></a>總結
 
-本指南會討論如何使用 Android 工作排程器以聰明的方式在背景中執行的工作。 它討論如何將封裝執行的工作`JobService`以及如何使用`JobScheduler`排程工作，指定與條件`JobTrigger`和失敗應該如何處理包含`RetryStrategy`。
+本指南將討論如何使用 Android 工作排程器, 以智慧方式在背景中執行工作。 它討論了如何封裝`JobService`要當做執行的工作, 以及如何`JobScheduler`使用來排程該工作、 `JobTrigger`指定的準則, `RetryStrategy`以及如何使用來處理失敗。
 
 ## <a name="related-links"></a>相關連結
 
-- [智慧型工作排程](https://developer.android.com/topic/performance/scheduling.html)
+- [智慧型作業-排程](https://developer.android.com/topic/performance/scheduling.html)
 - [JobScheduler API 參考](https://developer.android.com/reference/android/app/job/JobScheduler.html)
-- [排程作業像 JobScheduler 與專業](https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129)
-- [Android 使用電池及記憶體最佳化-Google I/O 2016 （影片）](https://www.youtube.com/watch?v=VC2Hlb22mZM&feature=youtu.be)
+- [使用 JobScheduler 來排程工作, 例如專業人員](https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129)
+- [Android 電池和記憶體優化-Google i/o 2016 (影片)](https://www.youtube.com/watch?v=VC2Hlb22mZM&feature=youtu.be)
 - [Android JobScheduler-René Ruppert](https://www.youtube.com/watch?v=aSjBBPYjelE)

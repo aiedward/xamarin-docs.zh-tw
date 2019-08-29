@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b865f08c9f6506996b5303bb80677977f1d0fa21
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ac373d20cbe08719fd7aa8e3888bbd608d8549c7
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643569"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119529"
 ---
 # <a name="fingerprint-authentication"></a>指紋驗證
 
@@ -27,9 +27,9 @@ FingerprintManager Api 會以具有指紋掃描器的裝置為目標, 且執行�
 
 [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) (及其支援程式庫對應的[FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)) 是使用指紋掃描硬體的主要類別。 這個類別是管理與硬體本身互動之系統層級服務的 Android SDK 包裝函式。 它負責啟動指紋掃描器, 以及回應掃描器的意見反應。 這個類別具有相當直接的介面, 只有三個成員:
 
-* **`Authenticate`** &ndash;這個方法會初始化硬體掃描器, 並在背景啟動服務, 等待使用者掃描其指紋。
-* **`EnrolledFingerprints`** 如果使用者`true`已向裝置註冊一或多個指紋, 則此屬性會傳回。 &ndash;
-* **`HardwareDetected`** &ndash;此屬性是用來判斷裝置是否支援指紋掃描。
+- **`Authenticate`** &ndash;這個方法會初始化硬體掃描器, 並在背景啟動服務, 等待使用者掃描其指紋。
+- **`EnrolledFingerprints`** 如果使用者`true`已向裝置註冊一或多個指紋, 則此屬性會傳回。 &ndash;
+- **`HardwareDetected`** &ndash;此屬性是用來判斷裝置是否支援指紋掃描。
 
 Android 應用程式會使用方法來啟動指紋掃描器。`FingerprintManager.Authenticate` 下列程式碼片段是如何使用支援程式庫相容性 Api 叫用它的範例:
 

@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: daca6d1cc5ec8a5e47f068f140f835219bd24c86
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 667a3726a2d214c9e33e20a73f629c9ca532eab1
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522012"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120468"
 ---
 # <a name="binding-objective-c-libraries"></a>系結目標-C 程式庫
 
@@ -918,8 +918,8 @@ public class  XyzOptions {
 
 若要這樣做, 您需要執行幾項工作:
 
-* 建立強型別類別, 子類別會[DictionaryContainer](xref:Foundation.DictionaryContainer)並提供每個屬性的各種 getter 和 setter。
-* 針對接受新的強型`NSDictionary`別版本的方法宣告多載。
+- 建立強型別類別, 子類別會[DictionaryContainer](xref:Foundation.DictionaryContainer)並提供每個屬性的各種 getter 和 setter。
+- 針對接受新的強型`NSDictionary`別版本的方法宣告多載。
 
 您可以手動建立強型別類別, 或使用產生器為您執行這項工作。  我們會先探索如何手動執行此動作, 讓您瞭解發生了什麼事, 然後再進行自動方法。
 
@@ -1404,3 +1404,4 @@ class Demo {
 ## <a name="related-links"></a>相關連結
 
 - [系結範例](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
+ 

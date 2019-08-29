@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7dd3889e9fcbb2260165a96f32f56f437df15ade
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528844"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120733"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆疊視圖
 
@@ -61,16 +61,16 @@ Stack 視圖控制項 (`UIStackView`) 會利用自動設定和大小類別的功
 
 一般來說, 這表示至少要釘選堆疊視圖的兩個邊緣, 以擴充和合約, 進而定義其位置。 如果沒有任何額外的條件約束, 則會自動調整堆疊視圖的大小, 以符合其所有的子檢視, 如下所示:
 
-* 連同`Axis`所有子視圖大小的總和, 以及每個子視圖之間已定義的任何空間, 都是大小。
-* 如果屬性為`true`, 則堆疊 Views 大小也會包含邊界的空間。 `LayoutMarginsRelativeArrangement`
-* 垂直于的`Axis`大小會設定為集合中最大的子視圖。
+- 連同`Axis`所有子視圖大小的總和, 以及每個子視圖之間已定義的任何空間, 都是大小。
+- 如果屬性為`true`, 則堆疊 Views 大小也會包含邊界的空間。 `LayoutMarginsRelativeArrangement`
+- 垂直于的`Axis`大小會設定為集合中最大的子視圖。
 
 此外, 您可以指定堆疊視圖的**高度**和**寬度**的條件約束。 在此情況下, 子檢視會配置 (調整大小), 以填滿堆疊視圖所指定的空間 (由`Distribution`和`Alignment`屬性所決定)。
 
 `true` - 如果屬性為, 則會根據第一個或最後一個子視圖的基準來配置子檢視, 而不是使用上、下或 * 置中 Y 位置。 `BaselineRelativeArrangement` 這些是在堆疊視圖的內容上計算, 如下所示:
 
-* 垂直堆疊視圖會傳回第一個基準的第一個子視圖, 最後一個是最後一個。 如果其中一個子檢視本身是堆疊視圖, 則會使用其第一個或最後一個基準。
-* 水準堆疊視圖會針對第一個和最後一個基準使用其最高的子視圖。 如果最高的視圖也是堆疊視圖, 它會使用其最高的子視圖作為基準。
+- 垂直堆疊視圖會傳回第一個基準的第一個子視圖, 最後一個是最後一個。 如果其中一個子檢視本身是堆疊視圖, 則會使用其第一個或最後一個基準。
+- 水準堆疊視圖會針對第一個和最後一個基準使用其最高的子視圖。 如果最高的視圖也是堆疊視圖, 它會使用其最高的子視圖作為基準。
 
 > [!IMPORTANT]
 > 基準對齊不適用於延伸或壓縮的子視圖大小, 因為基準會計算到錯誤的位置。 針對 [基準對齊], 請確定子視圖的**高度**符合內建內容視圖的**高度**。

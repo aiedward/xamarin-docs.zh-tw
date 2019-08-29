@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 49bb3f901f2b1f8ed4ae26650cb0509aabfd2369
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1355f65a192cf8f7f119a2ee77f334c115650578
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647622"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121641"
 ---
 # <a name="customizing-listview-appearance"></a>自訂 ListView 的外觀
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
 [`ListView`](xref:Xamarin.Forms.ListView)除了清單中每個資料列的[`ViewCell`](xref:Xamarin.Forms.ViewCell)實例之外, 還能夠控制清單的呈現方式。
 
@@ -214,8 +214,8 @@ ListView HeaderList = new ListView() {
 ## <a name="row-separators"></a>資料列分隔符號
 之間顯示分隔符號行`ListView`預設會在 iOS 和 Android 上的項目。 如果您不希望隱藏在 iOS 和 Android 上的分隔線，請設定`SeparatorVisibility`您 ListView 上的屬性。 選項`SeparatorVisibility`是：
 
-* **預設**-iOS 和 Android 上顯示的分隔線。
-* **無**-隱藏所有平台上的分隔符號。
+- **預設**-iOS 和 Android 上顯示的分隔線。
+- **無**-隱藏所有平台上的分隔符號。
 
 預設的可見性：
 

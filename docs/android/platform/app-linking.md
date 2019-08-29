@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d1a96c81da8d71d92e3ce5acd9928b293f3cf3dd
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 9ca14ff360fb3f1d7fdc8df277a93b0d30c4394c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524700"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119698"
 ---
 # <a name="app-linking-in-android"></a>Android 中的應用程式連結
 
@@ -55,12 +55,12 @@ Android 6.0 使用自動連結處理來改善這項操作。 Android 可以自�
 
 您必須設定意圖篩選, 以將 URI (或可能的一組 Uri) 從網站對應至 Android 應用程式中的活動。 在 Xamarin 中, 此關聯性是藉由使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)來裝飾活動來建立。 意圖篩選準則必須宣告下列資訊:
 
-* **`Intent.ActionView`** &ndash;這會註冊意圖篩選來回應 view 資訊的要求
-* **`Categories`** &ndash;  意圖篩選應該註冊兩個 **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 並 **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** 能夠正確處理網頁的 URI。
-* **`DataScheme`** 意圖篩選必須宣告和/或`https`。 `http` &ndash; 這些是唯一的兩個有效配置。
-* **`DataHost`** &ndash;這是 uri 將源自的網域。
-* **`DataPathPrefix`** &ndash;這是網站上資源的選擇性路徑。
-* **`AutoVerify`** &ndash; 屬性會告知Android驗證應用程式與網站`autoVerify`之間的關聯性。 下面將詳細討論這一點。
+- **`Intent.ActionView`** &ndash;這會註冊意圖篩選來回應 view 資訊的要求
+- **`Categories`** &ndash;  意圖篩選應該註冊兩個 **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 並 **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** 能夠正確處理網頁的 URI。
+- **`DataScheme`** 意圖篩選必須宣告和/或`https`。 `http` &ndash; 這些是唯一的兩個有效配置。
+- **`DataHost`** &ndash;這是 uri 將源自的網域。
+- **`DataPathPrefix`** &ndash;這是網站上資源的選擇性路徑。
+- **`AutoVerify`** &ndash; 屬性會告知Android驗證應用程式與網站`autoVerify`之間的關聯性。 下面將詳細討論這一點。
 
 下列範例示範如何使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)來處理來自`https://www.recipe-app.com/recipes`和的`http://www.recipe-app.com/recipes`連結:
 
@@ -90,9 +90,9 @@ Android 6.0 應用程式連結需要 Android 先確認應用程式與網站之�
 
 數位資產檔案包含 Android 用來驗證關聯所需的中繼資料。 **Assetlinks json**檔案具有下列索引鍵/值組:
 
-* `namespace`&ndash; Android 應用程式的命名空間。
-* `package_name`&ndash; Android 應用程式的套件名稱 (在應用程式資訊清單中宣告)。
-* `sha256_cert_fingerprints`&ndash;已簽署應用程式的 SHA256 指紋。 如需如何取得應用程式 SHA1 指紋的詳細資訊, 請參閱[尋找金鑰儲存區的 MD5 或 SHA1](~/android/deploy-test/signing/keystore-signature.md)簽章指南。
+- `namespace`&ndash; Android 應用程式的命名空間。
+- `package_name`&ndash; Android 應用程式的套件名稱 (在應用程式資訊清單中宣告)。
+- `sha256_cert_fingerprints`&ndash;已簽署應用程式的 SHA256 指紋。 如需如何取得應用程式 SHA1 指紋的詳細資訊, 請參閱[尋找金鑰儲存區的 MD5 或 SHA1](~/android/deploy-test/signing/keystore-signature.md)簽章指南。
 
 下列程式碼片段是**assetlinks**的範例, 其中列出單一應用程式:
 
@@ -173,9 +173,9 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    * **`Package`** &ndash;應用程式的封裝名稱。
-    * **`Domain`** &ndash;應用程式將會處理其 web 連結的網域 (以空格分隔)
-    * **`Status`** &ndash;這是應用程式目前的連結處理狀態。 的值**一律**表示應用程式已`android:autoVerify=true`宣告並已通過系統驗證。 後面接著一個十六進位數位, 代表 Android 系統的喜好設定記錄。
+    - **`Package`** &ndash;應用程式的封裝名稱。
+    - **`Domain`** &ndash;應用程式將會處理其 web 連結的網域 (以空格分隔)
+    - **`Status`** &ndash;這是應用程式目前的連結處理狀態。 的值**一律**表示應用程式已`android:autoVerify=true`宣告並已通過系統驗證。 後面接著一個十六進位數位, 代表 Android 系統的喜好設定記錄。
 
     例如：
 

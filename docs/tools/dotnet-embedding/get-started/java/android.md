@@ -6,26 +6,26 @@ ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: lobrien
 ms.author: laobri
 ms.date: 03/28/2018
-ms.openlocfilehash: df29a7f595973a0447899666838e21418ff69330
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d1d05c75b8026112e8b81c91144361b65ad3a8e0
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650078"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120027"
 ---
 # <a name="getting-started-with-android"></a>開始使用 Android
 
 除了[開始使用 JAVA](~/tools/dotnet-embedding/get-started/java/index.md)指南中的需求之外, 您還需要:
 
-* [Xamarin. Android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本
-* 使用 JAVA 1.8 [Android Studio](https://developer.android.com/studio/index.html) 3。x
+- [Xamarin. Android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本
+- 使用 JAVA 1.8 [Android Studio](https://developer.android.com/studio/index.html) 3。x
 
 概括而言, 我們將:
 
-* 建立C# Android 程式庫專案
-* 透過 NuGet 安裝 .NET 嵌入
-* 在 Android 程式庫元件上執行 .NET 內嵌
-* 在 Android Studio 的 JAVA 專案中使用產生的 AAR 檔案
+- 建立C# Android 程式庫專案
+- 透過 NuGet 安裝 .NET 嵌入
+- 在 Android 程式庫元件上執行 .NET 內嵌
+- 在 Android Studio 的 JAVA 專案中使用產生的 AAR 檔案
 
 ## <a name="create-an-android-library-project"></a>建立 Android 程式庫專案
 
@@ -159,17 +159,17 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 
 請注意這裡發生的情況:
 
-* 我們有一個C#類別, `HelloActivity`也就是子類別的 JAVA
-* 我們有 Android 資源檔
-* 我們在 Android Studio 中使用了這些功能
+- 我們有一個C#類別, `HelloActivity`也就是子類別的 JAVA
+- 我們有 Android 資源檔
+- 我們在 Android Studio 中使用了這些功能
 
 若要讓此範例能夠運作, 請在最後一個 APK 中設定下列各項:
 
-* 已在應用程式啟動時設定 Xamarin. Android
-* 包含在**資產/元件**中的 .net 元件
-* **Androidmanifest.xml**您C#的活動的 xml 修改等等。
-* .NET 程式庫中的 Android 資源和資產
-* 適用于任何`Java.Lang.Object`子類別的 [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)
+- 已在應用程式啟動時設定 Xamarin. Android
+- 包含在**資產/元件**中的 .net 元件
+- **Androidmanifest.xml**您C#的活動的 xml 修改等等。
+- .NET 程式庫中的 Android 資源和資產
+- 適用于任何`Java.Lang.Object`子類別的 [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)
 
 如果您要尋找額外的逐步解說, 請查看下列影片, 其中示範如何在 Android Studio 專案中內嵌 Charles Petzold 的[FingerPaint 示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint):
 
@@ -223,8 +223,8 @@ public class ViewSubclass : TextView
 }
 ```
 
-* `[Register]`需要對應到所需的 JAVA 套件名稱
-* `[Export]`需要讓 JAVA 能夠看見方法
+- `[Register]`需要對應到所需的 JAVA 套件名稱
+- `[Export]`需要讓 JAVA 能夠看見方法
 
 我們可以在`ViewSubclass` JAVA 中使用, 如下所示:
 
@@ -243,18 +243,18 @@ v.apply("Hello");
 
 這會造成難題, 因為 .NET 內嵌需要在最終的 AAR 中包含許多類型的檔案, 例如:
 
-* Android 資產
-* Android 資源
-* Android 原生程式庫
-* Android java 來源
+- Android 資產
+- Android 資源
+- Android 原生程式庫
+- Android java 來源
 
 您很可能不想要將這些檔案從 Android 支援程式庫或 Google Play Services 納入您的 AAR, 但會在 Android Studio 中使用 Google 的官方版本。
 
 以下是建議的方法:
 
-* 傳遞 .NET 內嵌您擁有的任何元件 (具有的來源), 並想要從 JAVA 呼叫
-* 傳遞 .NET 內嵌您需要 Android 資產、原生程式庫或資源的任何元件
-* 新增 JAVA 相依性, 例如 Android 支援程式庫或 Google Play Services Android Studio
+- 傳遞 .NET 內嵌您擁有的任何元件 (具有的來源), 並想要從 JAVA 呼叫
+- 傳遞 .NET 內嵌您需要 Android 資產、原生程式庫或資源的任何元件
+- 新增 JAVA 相依性, 例如 Android 支援程式庫或 Google Play Services Android Studio
 
 因此您的命令可能是:
 
@@ -277,11 +277,11 @@ dependencies {
 
 ## <a name="further-reading"></a>進一步閱讀
 
-* [Android 上的回呼](~/tools/dotnet-embedding/android/callbacks.md)
-* [初稿 Android Research](~/tools/dotnet-embedding/android/index.md)
-* [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
-* [參與開放原始碼專案](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
-* [錯誤碼和描述](~/tools/dotnet-embedding/errors.md)
+- [Android 上的回呼](~/tools/dotnet-embedding/android/callbacks.md)
+- [初稿 Android Research](~/tools/dotnet-embedding/android/index.md)
+- [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
+- [參與開放原始碼專案](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
+- [錯誤碼和描述](~/tools/dotnet-embedding/errors.md)
 
 ## <a name="related-links"></a>相關連結
 

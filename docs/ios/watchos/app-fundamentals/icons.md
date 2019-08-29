@@ -1,48 +1,48 @@
 ---
-title: 使用 watchOS 在 Xamarin 中的圖示
-description: 本文件說明各種所需的 watchOS 應用程式，以及如何設定解決方案，以包含這些圖示的圖示。
+title: 使用 Xamarin 中的 watchOS 圖示
+description: 本檔說明 watchOS 應用程式所需的各種圖示, 以及如何設定解決方案以包含這些圖示。
 ms.prod: xamarin
 ms.assetid: EE3D45BD-8091-4C04-BA83-371371D8BEB9
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/26/2018
-ms.openlocfilehash: 75b5d1f941921a84d96579a4b0d0666ae0c2522d
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f65d4faa0e006517366ab6aacf3f596b18385ccb
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864978"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120511"
 ---
-# <a name="working-with-watchos-icons-in-xamarin"></a>使用 watchOS 在 Xamarin 中的圖示
+# <a name="working-with-watchos-icons-in-xamarin"></a>使用 Xamarin 中的 watchOS 圖示
 
-Apple Watch 解決方案需要兩個集合的圖示：
+Apple Watch 解決方案需要兩組圖示:
 
-* 會出現在 iPhone iOS 應用程式圖示。
-* Apple Watch 通知畫面和 [監看式] 功能表上的圓圈中呈現的圖示。 監看式應用程式圖示也會出現在[Apple Watch](~/ios/watchos/app-fundamentals/settings.md) iOS 應用程式。
+- 將出現在 iPhone 上的 iOS 應用程式圖示。
+- Apple Watch 圖示, 將會在 [監看式] 功能表和通知畫面上的圓圈中轉譯。 [監看式應用程式] 圖示也會出現在[Apple Watch](~/ios/watchos/app-fundamentals/settings.md) iOS 應用程式中。
 
 ## <a name="apple-watch-icons"></a>Apple Watch 圖示
 
 | | | |
 |-|-|-|
-|iOS 應用程式圖示|在 iPhone 上隨即出現，並啟動父應用程式|![iOS 應用程式圖示](icons-images/icon-ios.png)|
-|監看式應用程式圖示|Apple Watch 主畫面上會出現|![watchOS 應用程式圖示](icons-images/icon-home.png)|
-||會出現在 監看式通知|![watchOS 通知圖示](icons-images/notification-icon.png)|
-||會出現在[iOS Apple Watch 應用程式](~/ios/watchos/app-fundamentals/settings.md)|![iOS Watch 應用程式圖示](icons-images/watch-app-sml.png)|
+|iOS 應用程式圖示|出現在 iPhone 上並啟動父系應用程式|![iOS 應用程式圖示](icons-images/icon-ios.png)|
+|監看應用程式圖示|出現在 Apple Watch 主畫面上|![watchOS 應用程式圖示](icons-images/icon-home.png)|
+||出現在監看式通知上|![watchOS 通知圖示](icons-images/notification-icon.png)|
+||出現在[iOS Apple Watch 應用程式](~/ios/watchos/app-fundamentals/settings.md)中|![iOS 監看式應用程式圖示](icons-images/watch-app-sml.png)|
 
 ## <a name="configuring-your-solution"></a>設定您的解決方案
 
-若要確保您的 iOS 應用程式和 watch 應用程式會示範正確的名稱和圖示，請遵循下列指示每個專案：
+若要確保您的 iOS 應用程式和監看式應用程式都顯示正確的名稱和圖示, 請針對每個專案遵循下列指示:
 
 ### <a name="ios-app"></a>iOS 應用程式
 
-請參閱[iOS 應用程式圖示引導](~/ios/app-fundamentals/images-icons/app-icons.md)以確保您的 iOS 應用程式圖示已正確設定。
+請參閱[Ios 應用程式圖示指南](~/ios/app-fundamentals/images-icons/app-icons.md), 以確保您的 ios 應用程式圖示已正確設定。
 
 #### <a name="infoplist"></a>Info.plist
 
-中的應用程式監看式旁邊顯示的字串[Apple Watch 設定 應用程式](~/ios/watchos/app-fundamentals/settings.md)中設定**iOS 應用程式的 Info.plist**。
+在 [ [Apple Watch 設定] 應用程式](~/ios/watchos/app-fundamentals/settings.md)的監看式應用程式旁顯示的字串, 是在**iOS 應用程式的 plist**中設定。
 
-確認您**Info.plist**已`CFBundleName`索引鍵和值 (注意： 這與不同`CFBundleDisplayName`，您可以同時具有):
+請確認您的**plist**有`CFBundleName`索引鍵和值 (注意: 這`CFBundleDisplayName`與不同, 您可以同時擁有兩者):
 
 ```xml
 <key>CFBundleName</key>
@@ -51,39 +51,39 @@ Apple Watch 解決方案需要兩個集合的圖示：
 
 ### <a name="apple-watch-app"></a>Apple Watch 應用程式
 
-一旦您[父應用程式](~/ios/watchos/app-fundamentals/parent-app.md)已設定其圖示，您需要監看式應用程式中新增的應用程式圖示資產目錄。
+一旦您的[父系應用](~/ios/watchos/app-fundamentals/parent-app.md)程式已設定其圖示, 您就必須將應用程式圖示資產類別目錄新增至 watch 應用程式。
 
-1. 監看式應用程式專案上按一下滑鼠右鍵，然後選取**檔案 > 新增 > 新增檔案...> iOS > 資產目錄**將資產目錄加入至專案。
+1. 以滑鼠右鍵按一下 監看式應用程式 專案, 然後選取 檔案 **> 加入 > 新增檔案 ...> iOS > 資產目錄**, 將資產目錄新增至專案。
 
-    ![](icons-images/newasset.png "加入專案中的資產目錄")
+    ![](icons-images/newasset.png "將資產目錄新增至專案")
 
-2. 按兩下**AppIcon.appiconset/Contents.json**檔案
+2. 按兩下**appicons.appiconset/內容 json**檔案
 
-    ![](icons-images/xcassets-iconset-sml.png "Assets.xcassets 內容")
+    ![](icons-images/xcassets-iconset-sml.png "AppIcon 內容")
 
-3. 新增 watchOS 映像時，，在此螢幕擷取畫面所示：
+3. 新增所有 watchOS 的映射, 如下列螢幕擷取畫面所示:
 
-    [![](icons-images/appicons-sml.png "此螢幕擷取畫面所示，新增所有 watchOS 映像，")](icons-images/appicons.png#lightbox)
+    [![](icons-images/appicons-sml.png "新增所有 watchOS 的映射, 如下列螢幕擷取畫面所示")](icons-images/appicons.png#lightbox)
 
-    請參閱[Apple 圖示的指導方針](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/)（維度也會顯示在螢幕上） 的必要大小。 請記住，這些圖示會自動裁剪在圓形中轉譯。
+    請參閱[Apple 的圖示指導方針](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/menu-icons/), 以取得所需的大小 (這些維度也會顯示在畫面上)。 請記住, 這些圖示會自動裁剪以在圓形中呈現。
 
-    圖示清單看起來應該像這樣：
+    您的圖示清單看起來應該像這樣:
 
-    ![](icons-images/xcassets-complete-sml.png "在 [方案總管] 中的圖示清單")
+    ![](icons-images/xcassets-complete-sml.png "方案總管中的圖示清單")
 
-4. 若要確保資產目錄包含應用程式中，新增下列索引鍵和值加入**監看式應用程式的 Info.plist**:
+4. 若要確保資產目錄包含在應用程式中, 請將下列索引鍵和值新增至**Watch 應用程式的 Info. plist**:
 
     ```xml
     <key>XSAppIconAssets</key>
     <string>Images.xcassets/AppIcon.appiconset</string>
     ```
 
-您可以確認圖示會藉由檢查設定正確[Apple Watch 設定 應用程式](~/ios/watchos/app-fundamentals/settings.md)在 iPhone 模擬器中，或產生[通知](~/ios/watchos/platform/notifications.md)和確認圖示會出現在通知畫面。
+您可以檢查 iPhone 模擬器中的 [ [Apple Watch 設定] 應用程式](~/ios/watchos/app-fundamentals/settings.md), 或產生[通知](~/ios/watchos/platform/notifications.md)並確認圖示是否出現在通知畫面上, 確認已正確設定圖示。
 
 > [!NOTE]
-> 圖示不能有 alpha 色頻 （alpha 色頻是否存在，將應用程式市集提交期間拒絕應用程式）。 您可以檢查 alpha 色頻是否存在，並將它移除[Mac OS X 上使用預覽應用程式](~/ios/watchos/troubleshooting.md#noalpha)。
+> 圖示不能有 Alpha 色板 (如果有 Alpha 色板, 應用程式將會在 App Store 提交期間遭到拒絕)。 您可以[使用 Mac OS X 上的預覽應用程式](~/ios/watchos/troubleshooting.md#noalpha), 檢查 Alpha 通道是否存在, 並將其移除。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Apple 的 watchOS 圖示和影像指南](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/)
+- [Apple 的 watchOS 圖示 & 影像指南](https://developer.apple.com/design/human-interface-guidelines/watchos/icons-and-images/)

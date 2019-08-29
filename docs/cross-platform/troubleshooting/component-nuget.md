@@ -1,47 +1,47 @@
 ---
-title: 元件參考更新為 NuGet
-description: 本文件說明如何以取代您元件的參考 NuGet 套件，以未來考驗您的應用程式，因為已停用 Xamarin 元件存放區。
+title: 正在更新 NuGet 的元件參考
+description: 本檔說明如何將您的元件參考取代為 NuGet 套件, 以供日後證明應用程式, 因為 Xamarin 元件存放區已停止。
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: asb3993
 ms.author: amburns
 ms.date: 04/18/2018
-ms.openlocfilehash: fbef8f60a31511be926ee2adf5e239ad8955b208
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 270d02fb5045e322b167101d82de9a61c64ce836
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864529"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70118949"
 ---
-# <a name="updating-component-references-to-nuget"></a>元件參考更新為 NuGet
+# <a name="updating-component-references-to-nuget"></a>正在更新 NuGet 的元件參考
 
 > [!IMPORTANT]
-> 自 2018 5 月 15 日起，已停用元件存放區 (此終止原本[宣布](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)在 2017 年 11 月)。
+> 元件存放區已于2018年5月15日停止 (此結束原本是在2017年11月)[推出](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)。
 >
-> Xamarin 元件不再支援在 Visual Studio 中，並應取代為 NuGet 套件。 請遵循下列指示來手動移除您的專案中的元件參考。
+> Visual Studio 不再支援 Xamarin 元件, 應由 NuGet 套件取代。 請依照下列指示, 手動移除專案中的元件參考。
 
-請參閱這些指示上新增 NuGet 套件[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或是[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
+請參閱這些指示, 以在[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)或[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)上新增 NuGet 套件。
 
-一份常用的 Xamarin[外掛程式和程式庫](https://github.com/xamarin/XamarinComponents/blob/master/README.md)能夠協助找出替代項目，也就是以 NuGet 套件，您無法使用的元件。
+您可以使用常用的 Xamarin[外掛程式和程式庫](https://github.com/xamarin/XamarinComponents/blob/master/README.md)清單, 以協助找出 NuGet 套件無法使用的元件替代專案。
 
-## <a name="manually-removing-component-references"></a>以手動方式移除元件的參考
+## <a name="manually-removing-component-references"></a>手動移除元件參考
 
-15.6 版的 Visual Studio 和 Visual studio for Mac 7.4 版本不再支援元件，在您的專案。 
+15.6 版的 Visual Studio 和7.4 版的 Visual Studio for Mac 不再支援您專案中的元件。 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-如果您將專案載入 Visual Studio 時，會顯示下列對話方塊，說明，您必須移除任何元件從您的專案以手動方式：
+如果您將專案載入 Visual Studio, 就會顯示下列對話方塊, 說明您必須手動從專案中移除任何元件:
 
-![警示對話方塊說明元件專案中找到，且必須移除](component-nuget-images/component-alert-vs.png)
+![警示對話方塊, 其中會說明在您的專案中已找到元件, 必須將其移除](component-nuget-images/component-alert-vs.png)
 
-若要從您的專案中移除的元件：
+若要從專案中移除元件:
 
-1. 開啟 **.csproj**檔案。 若要這樣做，請以滑鼠右鍵按一下專案名稱，然後選取**卸載專案**。 
+1. 開啟 **.csproj**檔案。 若要這麼做, 請在專案名稱上按一下滑鼠右鍵, 然後選取 **[卸載專案**]。 
 
-2. 卸載的專案上按一下滑鼠右鍵，然後選取**編輯 {您的專案名稱}.csproj**。
+2. 在卸載的專案上再次以滑鼠右鍵按一下, 然後選取 [**編輯 {您的專案名稱} .csproj**]。
 
-3. 尋找檔案中的任何參考`XamarinComponentReference`。 它看起來應該類似下列的範例：
+3. 尋找檔案中的`XamarinComponentReference`任何參考。 看起來應該類似下列範例:
 
     ```xml
     <ItemGroup>
@@ -60,23 +60,23 @@ ms.locfileid: "67864529"
     </ItemGroup>
     ```
 
-4. 移除參考`XamarinComponentReference`並儲存檔案。 在上述範例中，會安全地移除整個`ItemGroup`。
+4. 移除的參考`XamarinComponentReference` , 並儲存檔案。 在上述範例中, 您可以放心地移除整個`ItemGroup`。
 
-5. 一旦儲存的檔案，以滑鼠右鍵按一下專案名稱，然後選取**重新載入專案**。
+5. 儲存檔案之後, 以滑鼠右鍵按一下專案名稱, 然後選取 [**重載專案**]。
 
-6. 您的方案中每個專案重複上述步驟。
+6. 針對方案中的每個專案重複上述步驟。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-如果您專案載入 Visual Studio for Mac 中，會顯示下列對話方塊，說明，您必須移除任何元件從您的專案以手動方式：
+如果您將專案載入 Visual Studio for Mac, 就會顯示下列對話方塊, 說明您必須手動從專案中移除任何元件:
 
-![警示對話方塊說明元件專案中找到，且必須移除](component-nuget-images/component-alert.png)
+![警示對話方塊, 其中會說明在您的專案中已找到元件, 必須將其移除](component-nuget-images/component-alert.png)
 
-若要從您的專案中移除的元件：
+若要從專案中移除元件:
 
-1. 開啟.csproj 檔案。 若要這樣做，請以滑鼠右鍵按一下專案名稱，然後選取**工具 > 編輯檔案**。
+1. 開啟 .csproj 檔案。 若要這麼做, 請在專案名稱上按一下滑鼠右鍵, 然後選取 [**工具] > [編輯**檔案]。
 
-2. 尋找檔案中的任何參考`XamarinComponentReference`。 它看起來應該類似下列的範例：
+2. 尋找檔案中的`XamarinComponentReference`任何參考。 看起來應該類似下列範例:
 
     ```xml
     <ItemGroup>
@@ -95,115 +95,115 @@ ms.locfileid: "67864529"
     </ItemGroup>
     ```
 
-3. 移除參考`XamarinComponentReference`並儲存檔案。 在上述範例中，會安全地移除整個 `ItemGroup`
+3. 移除的參考`XamarinComponentReference` , 並儲存檔案。 在上述範例中, 您可以放心地移除整個`ItemGroup`
 
-4. 您的方案中每個專案重複上述步驟。
+4. 針對方案中的每個專案重複上述步驟。
 
 -----
 
 > [!WARNING]
-> 下列指示只適用於舊版的 Visual Studio。
-> **元件**節點已無法再使用新版本中的 Visual Studio 2017 或 Visual Studio for mac。
+> 下列指示僅適用于較舊版本的 Visual Studio。
+> 目前版本的 Visual Studio 2017 或 Visual Studio for Mac 已不再提供 [**元件**] 節點。
 
-下列各節說明如何更新現有的 Xamarin 方案，才能變更 NuGet 套件的元件參考。
+下列各節說明如何更新現有的 Xamarin 解決方案, 以變更 NuGet 套件的元件參考。
 
 - [包含 NuGet 套件的元件](#contain)
-- [使用 NuGet 取代的元件](#replace)
+- [包含 NuGet 更換的元件](#replace)
 
-大部分元件歸類到其中一個上述的類別。
-如果您使用的元件，不會出現的對等的 NuGet 封裝，請閱讀[沒有 NuGet 移轉路徑元件](#require-update)下一節。
+大部分的元件都屬於上述類別的其中一個。
+如果您使用的元件似乎沒有對等的 NuGet 套件, 請閱讀下面的「[沒有 NuGet 遷移路徑的元件](#require-update)」一節。
 
 <a name="contain" />
 
 ## <a name="components-that-contain-nuget-packages"></a>包含 NuGet 套件的元件
 
-許多元件已經包含 NuGet 套件，並移轉路徑只是刪除其元件參考。
+許多元件已經包含 NuGet 套件, 而遷移路徑只是用來刪除元件參考。
 
-您可以判斷元件是否已經包含在解決方案中的元件上按兩下的 NuGet 套件：
+您可以按兩下解決方案中的元件, 判斷元件是否已包含 NuGet 套件:
 
-![展開的 [元件] 節點](component-nuget-images/solution-sml.png)
+![展開的元件節點](component-nuget-images/solution-sml.png)
 
-**封裝** 索引標籤會列出任何在元件中的 NuGet 套件：
+[**封裝**] 索引標籤會列出元件中包含的任何 NuGet 套件:
 
-![套件索引標籤包含 NuGet](component-nuget-images/packages-tab-sml.png)
+![[套件] 索引標籤包含 NuGet](component-nuget-images/packages-tab-sml.png)
 
-請注意，**組件** 索引標籤將會是空白：
+請注意, [**元件**] 索引標籤會是空的:
 
-![是空的組件 索引標籤](component-nuget-images/assemblies-tab-empty-sml.png)
+![[元件] 索引標籤是空的](component-nuget-images/assemblies-tab-empty-sml.png)
 
-### <a name="updating-the-solution"></a>正在更新解決方案
+### <a name="updating-the-solution"></a>更新方案
 
-若要更新您的解決方案，請刪除**元件**解決方案中的項目：
+若要更新您的解決方案, 請從解決方案中刪除**元件**專案:
 
 ![刪除元件](component-nuget-images/delete-component-sml.png)
 
-NuGet 套件仍列於**封裝**節點，您的應用程式會編譯，並如往常般執行。 在未來，此套件的更新會透過執行**Nuget**更新功能：
+NuGet 套件會繼續列在 [**套件**] 節點中, 且您的應用程式會如往常般編譯並執行。 未來, 將會透過**Nuget**更新功能來執行此套件的更新:
 
 ![更新 NuGet 套件](component-nuget-images/nuget-update-sml.png)
 
 
 <a name="replace" />
 
-## <a name="components-with-nuget-replacements"></a>使用 NuGet 取代的元件
+## <a name="components-with-nuget-replacements"></a>包含 NuGet 更換的元件
 
-如果元件資訊頁面**組件** 索引標籤包含的項目，如下所示，您必須以手動方式尋找對等的 NuGet 套件。
+如果 [元件資訊]頁面 [元件] 索引標籤包含如下所示的專案, 您將需要手動尋找對等的 NuGet 套件。
 
-![包含組件](component-nuget-images/assemblies-tab-sml.png)
+![包含元件](component-nuget-images/assemblies-tab-sml.png)
 
-請注意，**封裝** 索引標籤可能是空白的：
+請注意, [**封裝**] 索引標籤可能會是空的:
 
 ![](component-nuget-images/packages-tab-empty-sml.png)
 
-_它可能包含 NuGet 相依性，但可予以忽略。_
+_它可能包含 NuGet 相依性, 但可以忽略這些相依性。_
 
-若要確認更換 NuGet 封裝存在，搜尋[NuGet.org](https://www.nuget.org/packages)，使用 元件名稱，或者依作者。
+若要確認取代 NuGet 套件存在, 請使用元件名稱或作者來搜尋[NuGet.org](https://www.nuget.org/packages)。
 
-例如，您可以尋找熱門**sqlite net pcl**藉由搜尋的封裝：
+例如, 您可以藉由搜尋下列內容來尋找熱門的**sqlite 網路-pcl**套件:
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) – 產品名稱。
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) – 作者設定檔。
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)–產品名稱。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)–作者的設定檔。
 
-### <a name="updating-the-solution"></a>正在更新解決方案
+### <a name="updating-the-solution"></a>更新方案
 
-一旦確認元件可在 NuGet 中，請遵循下列步驟：
+一旦您確認 NuGet 中有該元件, 請遵循下列步驟:
 
 #### <a name="delete-the-component"></a>刪除元件
 
-在方案中的元件上按一下滑鼠右鍵，然後選擇**移除**:
+以滑鼠右鍵按一下方案中的元件, 然後選擇 [**移除**]:
 
 ![移除元件](component-nuget-images/remove-component-sml.png)
 
-這將刪除的元件和任何參考。 這會中斷您的組建，直到您將新增對等的 NuGet 套件，將它取代。
+這會刪除元件和任何參考。 這會中斷您的組建, 直到您新增對等的 NuGet 套件以取代它為止。
 
 #### <a name="add-the-nuget-package"></a>新增 NuGet 套件
 
-1. 以滑鼠右鍵按一下**封裝**節點，然後選擇 **新增套件...** .
-2. 搜尋依名稱或作者 NuGet 取代：
+1. 以滑鼠右鍵按一下 [**套件**] 節點, 然後選擇 [**新增套件**]。
+2. 依名稱或作者搜尋 NuGet 取代:
 
     ![](component-nuget-images/nuget-search-sml.png)
 
-3. 按下**將套件新增**。
+3. 按 [**新增套件**]。
 
-NuGet 封裝會新增至您的專案，以及任何相依性。
-如此應可修正組建。 如果組建持續失敗，請調查每個錯誤，以查看是否有元件和 NuGet 套件的 API 差異。
+NuGet 套件會連同任何相依性新增至您的專案。
+這應該會修正組建。 如果組建持續失敗, 請調查每個錯誤, 以查看元件和 NuGet 套件之間是否有 API 差異。
 
 <a name="require-update" />
 
-## <a name="components-without-a-nuget-migration-path"></a>元件沒有 NuGet 移轉路徑
+## <a name="components-without-a-nuget-migration-path"></a>沒有 NuGet 遷移路徑的元件
 
-不是擔心，如果您不立即發現您的應用程式中使用元件的取代項目。 現有的元件將會繼續以用於 Visual Studio 15.5 中，而**元件**節點會如往常般出現在您的解決方案。
+如果您不想立即找到應用程式中所用元件的取代, 請不要擔心。 現有元件會繼續在 Visual Studio 15.5 中工作, 而 [**元件**] 節點會如往常般出現在您的方案中。
 
-不過，將未來的 Visual Studio 版本_不_還原或更新的元件。
-這表示如果您開啟新的電腦上的解決方案時，元件將不會下載並安裝;作者將無法更新為您提供。 您應該規劃先：
+不過, 未來 Visual Studio 版本將_不_會還原或更新元件。
+這表示如果您在新電腦上開啟方案, 將不會下載並安裝該元件;作者將無法提供更新。 您應該規劃:
 
-* 從元件擷取組件，並直接在您的專案中參考它們。
-* 請連絡元件作者，並詢問有關移轉至 NuGet 的計劃。
-* 調查替代的 NuGet 套件，或如果元件是開放原始碼搜尋的原始程式碼。
+- 從元件解壓縮元件, 並直接在您的專案中參考它們。
+- 請洽詢元件作者, 並詢問要遷移至 NuGet 的計畫。
+- 調查替代的 NuGet 套件, 或在元件為開放原始碼的情況下搜尋原始程式碼。
 
-仍在使用移轉至 NuGet，許多元件廠商和其他人 （包括販售的產品） 可能會調查替代的傳遞選項。
+許多元件廠商仍在致力於遷移至 NuGet, 而其他專案 (包括商用產品) 可能會調查替代的傳遞選項。
 
 
 ## <a name="related-links"></a>相關連結
-- [熱門的 Xamarin 外掛程式和程式庫的清單](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
-- [安裝並使用 NuGet 套件 (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
+- [熱門 Xamarin 外掛程式和程式庫的清單](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
+- [安裝和使用 NuGet 套件 (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [包含 NuGet 套件 (Mac)](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

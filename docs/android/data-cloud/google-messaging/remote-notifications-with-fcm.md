@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: df13c1080be5fd466c4875ed8a3bdc2012a70df0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a7276b6a3269c012ad57e13510b6479266c43209
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526167"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119778"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Firebase 雲端通訊的遠端通知
 
@@ -731,9 +731,9 @@ public override void OnMessageReceived(RemoteMessage message)
 
 當應用程式在背景時,[訊息](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)的承載會決定處理訊息的方式:
 
-* **通知**訊息將會傳送到系統匣。 &ndash; 本機通知會出現在該處。 當使用者點擊通知時, 應用程式將會啟動。
-* **資料**訊息將由`OnMessageReceived`處理。 &ndash;
-* **兩者**&ndash;同時具有通知和資料裝載的訊息, 將會傳遞至系統匣。 當應用程式啟動時, 資料承載會出現在用`Extras`來啟動`Intent`應用程式的中。
+- **通知**訊息將會傳送到系統匣。 &ndash; 本機通知會出現在該處。 當使用者點擊通知時, 應用程式將會啟動。
+- **資料**訊息將由`OnMessageReceived`處理。 &ndash;
+- **兩者**&ndash;同時具有通知和資料裝載的訊息, 將會傳遞至系統匣。 當應用程式啟動時, 資料承載會出現在用`Extras`來啟動`Intent`應用程式的中。
 
 在此範例中, 如果應用程式是背景執行`SendNotification` , 則會在訊息具有資料裝載時執行。 否則, 將會啟動背景通知 (本逐步解說稍早所說明)。
 

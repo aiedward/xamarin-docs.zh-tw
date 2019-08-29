@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/04/2018
-ms.openlocfilehash: 6b585783f21cc18112ef766819c9851baac96ef1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ae1e8332f1d62a4690863a97f63c0c1bef1ee127
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644194"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119092"
 ---
 # <a name="bound-services-in-xamarinandroid"></a>Xamarin 中的系結服務
 
@@ -22,9 +22,9 @@ _系結服務是 Android 服務, 提供用戶端 (例如 Android 活動) 可與�
 
 提供用戶端伺服器介面的服務, 可讓用戶端直接與服務互動, 稱為系結_服務_。  可以同時有多個用戶端連線到服務的單一實例。 系結服務和用戶端會彼此隔離。 相反地, Android 提供一系列的中繼物件來管理兩者之間的連接狀態。 這個狀態是由執行[`Android.Content.IServiceConnection`](xref:Android.Content.IServiceConnection)介面的物件維護。  這個物件是由用戶端所建立, 並以參數的形式[`BindService`](xref:Android.Content.Context.BindService*)傳遞給方法。 可在任何[`Android.Content.Context`](xref:Android.Content.Context)物件 (例如活動) 上使用。 `BindService` 這是對 Android 作業系統提出的要求, 可啟動服務並將用戶端系結至它。 有三種方式可以使用`BindService`方法, 將用戶端系結至服務:
 
-* **服務**系結器服務系結器是執行[`Android.OS.IBinder`](xref:Android.OS.IBinder)介面的類別。 &ndash; 大部分的應用程式都不會直接執行此介面, 而是[`Android.OS.Binder`](xref:Android.OS.Binder)會擴充類別。 這是最常見的方法, 適用于服務和用戶端存在於相同的進程中。
-* **使用 Messenger**&ndash;當服務可能存在於不同的進程時, 這項技術適用于。 相反地, 服務要求會透過在用戶端和服務[`Android.OS.Messenger`](xref:Android.OS.Messenger)之間進行封送處理。 會在服務中建立`Messenger` [,以處理要求。`Android.OS.Handler`](xref:Android.OS.Handler) 這會在另一個指南中涵蓋。
-* **使用 Android 介面定義語言 (AIDL)** &ndash; [AIDL](https://developer.android.com/guide/components/aidl) 是不會在本指南中涵蓋的先進技術。
+- **服務**系結器服務系結器是執行[`Android.OS.IBinder`](xref:Android.OS.IBinder)介面的類別。 &ndash; 大部分的應用程式都不會直接執行此介面, 而是[`Android.OS.Binder`](xref:Android.OS.Binder)會擴充類別。 這是最常見的方法, 適用于服務和用戶端存在於相同的進程中。
+- **使用 Messenger**&ndash;當服務可能存在於不同的進程時, 這項技術適用于。 相反地, 服務要求會透過在用戶端和服務[`Android.OS.Messenger`](xref:Android.OS.Messenger)之間進行封送處理。 會在服務中建立`Messenger` [,以處理要求。`Android.OS.Handler`](xref:Android.OS.Handler) 這會在另一個指南中涵蓋。
+- **使用 Android 介面定義語言 (AIDL)** &ndash; [AIDL](https://developer.android.com/guide/components/aidl) 是不會在本指南中涵蓋的先進技術。
 
 一旦用戶端已系結至服務, 就`Android.OS.IBinder`會透過物件進行這兩者之間的通訊。  這個物件會負責讓用戶端與服務互動的介面。 每個 Xamarin Android 應用程式都不需要從頭開始執行此介面, Android SDK 提供的[`Android.OS.Binder`](xref:Android.OS.Binder)類別會處理用戶端與服務之間的封送處理物件所需的大部分程式碼。
 
@@ -53,10 +53,10 @@ _系結服務是 Android 服務, 提供用戶端 (例如 Android 活動) 可與�
 
 若要使用 Xamarin 建立服務, 則必須`Service` [`ServiceAttribute`](xref:Android.App.ServiceAttribute)使用子類別化, 並以裝飾類別。 在應用程式的 Androidmanifest.xml 中, 會使用屬性來正確地將服務註冊到 app 的檔案中, 就像活動一樣, 系結服務擁有其本身的生命週期, 以及與中重大事件相關聯的回呼方法它的生命週期。 下列清單是服務將會執行的一些較常見的回呼方法範例:
 
-* `OnCreate`&ndash;這個方法是由 Android 叫用, 因為它會將服務具現化。 它是用來初始化服務存留期期間所需的任何變數或物件。 這個方法是一個選擇項目。
-* `OnBind`&ndash;這個方法必須由所有系結的服務來執行。 當第一個用戶端嘗試連接到服務時, 就會叫用它。 它會傳回的實例`IBinder` , 讓用戶端可以與服務互動。 只要服務正在執行, `IBinder`就會使用物件來滿足未來任何要系結至服務的用戶端要求。
-* `OnUnbind`&ndash;當所有系結的用戶端都已解除系結時, 會呼叫這個方法。 藉由`OnRebind` `OnUnbind`從這個方法傳回, 服務會在新的用戶端系結至時, 使用傳遞至的意圖來呼叫。 `true` 當服務在解除系結之後繼續執行時, 您會這麼做。 如果最近解除系結的服務也是已啟動的服務, 而且`StopService`或`StopSelf`尚未呼叫, 就會發生這種情況。 在這種情況下`OnRebind` , 會允許抓取意圖。 預設會傳回`false` , 這不會執行任何操作。 選擇性。
-* `OnDestroy`&ndash;當 Android 終結服務時, 會呼叫這個方法。 任何必要的清除作業 (例如釋放資源) 都應該在這個方法中執行。 選擇性。
+- `OnCreate`&ndash;這個方法是由 Android 叫用, 因為它會將服務具現化。 它是用來初始化服務存留期期間所需的任何變數或物件。 這個方法是一個選擇項目。
+- `OnBind`&ndash;這個方法必須由所有系結的服務來執行。 當第一個用戶端嘗試連接到服務時, 就會叫用它。 它會傳回的實例`IBinder` , 讓用戶端可以與服務互動。 只要服務正在執行, `IBinder`就會使用物件來滿足未來任何要系結至服務的用戶端要求。
+- `OnUnbind`&ndash;當所有系結的用戶端都已解除系結時, 會呼叫這個方法。 藉由`OnRebind` `OnUnbind`從這個方法傳回, 服務會在新的用戶端系結至時, 使用傳遞至的意圖來呼叫。 `true` 當服務在解除系結之後繼續執行時, 您會這麼做。 如果最近解除系結的服務也是已啟動的服務, 而且`StopService`或`StopSelf`尚未呼叫, 就會發生這種情況。 在這種情況下`OnRebind` , 會允許抓取意圖。 預設會傳回`false` , 這不會執行任何操作。 選擇性。
+- `OnDestroy`&ndash;當 Android 終結服務時, 會呼叫這個方法。 任何必要的清除作業 (例如釋放資源) 都應該在這個方法中執行。 選擇性。
 
 系結服務的主要生命週期事件如下圖所示:
 
@@ -232,9 +232,9 @@ namespace BoundServiceDemo
 
 若要使用系結服務, 用戶端 (例如活動) 必須具現化可執行`Android.Content.IServiceConnection` `BindService`方法的物件。 `BindService`如果服務系結至, 則會傳回`false` , 否則會傳回。 `true` `BindService` 方法採用三個參數：
 
-* 意圖應該明確識別要連接的服務。 **`Intent`** &ndash;
-* **物件`IServiceConnection`**  這個物件是一個媒介,可提供回呼方法,以便在系結服務啟動和&ndash;停止時通知用戶端。
-* enum 此參數是系統在系結物件時所使用的一組旗標。 **[`Android.Content.Bind`](xref:Android.Content.Bind)** &ndash; 最常使用的值是[`Bind.AutoCreate`](xref:Android.Content.Bind.AutoCreate), 它會自動啟動服務 (如果尚未執行)。
+- 意圖應該明確識別要連接的服務。 **`Intent`** &ndash;
+- **物件`IServiceConnection`**  這個物件是一個媒介,可提供回呼方法,以便在系結服務啟動和&ndash;停止時通知用戶端。
+- enum 此參數是系統在系結物件時所使用的一組旗標。 **[`Android.Content.Bind`](xref:Android.Content.Bind)** &ndash; 最常使用的值是[`Bind.AutoCreate`](xref:Android.Content.Bind.AutoCreate), 它會自動啟動服務 (如果尚未執行)。
 
 下列程式碼片段是如何在活動中使用明確意圖啟動系結服務的範例:
 

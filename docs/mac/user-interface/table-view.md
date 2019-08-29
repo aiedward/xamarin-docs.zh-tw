@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: b5ffa884def5acb01dc07ce39a2189e2570209c3
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: 09e4ca561f962e46dfe4eccbaf1cf284f4bb2827
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620580"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120835"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin 中的資料表視圖
 
@@ -40,8 +40,8 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用資料表的 views。�
 
 建立資料表視圖時, Apple 會建議下列各項:
 
-* 允許使用者按一下資料行標頭來排序資料表。
-* 建立資料行標頭, 其為名詞或簡短名詞片語, 可描述該資料行中所顯示的資料。
+- 允許使用者按一下資料行標頭來排序資料表。
+- 建立資料行標頭, 其為名詞或簡短名詞片語, 可描述該資料行中所顯示的資料。
 
 如需詳細資訊, 請參閱 Apple [OS X 人體介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[內容流覽](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsView.html#//apple_ref/doc/uid/20000957-CH52-SW1)一節。
 

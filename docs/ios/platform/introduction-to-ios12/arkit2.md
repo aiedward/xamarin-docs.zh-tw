@@ -7,21 +7,21 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/22/2018
-ms.openlocfilehash: 747eed60c40f7faee0ed7512d6db05116c81b50d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4af5e7ea9c1d744cd3b5ea5444312ba68bfcea11
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645741"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120445"
 ---
 # <a name="arkit-2-in-xamarinios"></a>Xamarin 中的 ARKit 2
 
 ARKit 自過去一年的 iOS 11 開始已經大幅成熟。 首先, 最重要的是, 您現在可以偵測垂直和水準平面, 以大幅改善室內增強型現實體驗的實用性。 此外, 還有一些新功能:
 
-* 辨識參照影像和物件作為真實世界與數位影像之間的連接
-* 模擬真實世界光源的新光源模式
-* 共用和保存 AR 環境的能力
-* 儲存 AR 內容時慣用的新檔案格式
+- 辨識參照影像和物件作為真實世界與數位影像之間的連接
+- 模擬真實世界光源的新光源模式
+- 共用和保存 AR 環境的能力
+- 儲存 AR 內容時慣用的新檔案格式
 
 ## <a name="recognizing-reference-objects"></a>識別參考物件
 
@@ -31,11 +31,11 @@ ARKit 2 中的一個展示功能是辨識參照影像和物件的能力。 您�
 
 「[掃描和偵測3D 物件](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-scanninganddetecting3dobjects)」範例是[Apple 專案](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects?language=objc)的埠, 示範:
 
-* 使用[`NSNotification`](xref:Foundation.NSNotification)物件的應用程式狀態管理
-* 自訂視覺效果
-* 複雜手勢
-* 物件掃描
-* 儲存[`ARReferenceObject`](xref:ARKit.ARReferenceObject)
+- 使用[`NSNotification`](xref:Foundation.NSNotification)物件的應用程式狀態管理
+- 自訂視覺效果
+- 複雜手勢
+- 物件掃描
+- 儲存[`ARReferenceObject`](xref:ARKit.ARReferenceObject)
 
 掃描參考物件是需要大量電池和處理器, 而且舊的裝置通常無法達到穩定追蹤的問題。
 
@@ -43,17 +43,17 @@ ARKit 2 中的一個展示功能是辨識參照影像和物件的能力。 您�
 
 此應用程式會使用在下列狀態之間轉換的狀態機器:
 
-* `AppState.StartARSession`
-* `AppState.NotReady`
-* `AppState.Scanning`
-* `AppState.Testing`
+- `AppState.StartARSession`
+- `AppState.NotReady`
+- `AppState.Scanning`
+- `AppState.Testing`
 
 此外, 在中`AppState.Scanning`, 還會使用內嵌的狀態和轉換集合:
 
-* `Scan.ScanState.Ready`
-* `Scan.ScanState.DefineBoundingBox`
-* `Scan.ScanState.Scanning`
-* `Scan.ScanState.AdjustingOrigin`
+- `Scan.ScanState.Ready`
+- `Scan.ScanState.DefineBoundingBox`
+- `Scan.ScanState.Scanning`
+- `Scan.ScanState.AdjustingOrigin`
 
 應用程式會使用回應式架構, 將狀態轉換通知張貼[`NSNotificationCenter`](xref:Foundation.NSNotificationCenter)到並訂閱這些通知。 安裝程式看起來就像以下`ViewController.cs`的程式碼片段:
 
@@ -121,9 +121,9 @@ internal void EnterStateTesting()
 
 此雲端適用于屬性中的[`ARFrame.RawFeaturePoints`](xref:ARKit.ARFrame.RawFeaturePoints)開發人員。 有效率地將點雲端視覺化可能會是一種棘手的問題。 逐一查看點, 然後針對每個點建立並放置新的 SceneKit 節點, 將會終止畫面播放速率。 或者, 如果以非同步方式完成, 則會有延遲。 此範例會使用三個部分的策略來維護效能:
 
-* 使用 unsafe 程式碼來就地釘選資料, 並將資料解讀為位元組的原始緩衝區。
-* 將[`SCNGeometrySource`](xref:SceneKit.SCNGeometrySource)該原始緩衝區轉換成, 並建立「 [`SCNGeometryElement`](xref:SceneKit.SCNGeometryElement)範本」物件。
-* 使用, 快速地將原始資料和範本「一起裝訂」[`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](xref:SceneKit.SCNGeometry.Create(SceneKit.SCNGeometrySource[],SceneKit.SCNGeometryElement[]))
+- 使用 unsafe 程式碼來就地釘選資料, 並將資料解讀為位元組的原始緩衝區。
+- 將[`SCNGeometrySource`](xref:SceneKit.SCNGeometrySource)該原始緩衝區轉換成, 並建立「 [`SCNGeometryElement`](xref:SceneKit.SCNGeometryElement)範本」物件。
+- 使用, 快速地將原始資料和範本「一起裝訂」[`SCNGeometry.Create(SCNGeometrySource[], SCNGeometryElement[])`](xref:SceneKit.SCNGeometry.Create(SceneKit.SCNGeometrySource[],SceneKit.SCNGeometryElement[]))
 
 ```csharp
 internal static SCNGeometry CreateVisualization(NVector3[] points, UIColor color, float size)
@@ -251,11 +251,11 @@ internal partial class ThresholdRotationGestureRecognizer : UIRotationGestureRec
 
 現在, 您可以使用下列任何一項做為混合現實體驗的基礎:
 
-* 僅限裝置加速計[`AROrientationTrackingConfiguration`](xref:ARKit.AROrientationTrackingConfiguration)(, iOS 11)
-* 臉部 ([`ARFaceTrackingConfiguration`](xref:ARKit.ARFaceTrackingConfiguration), iOS 11)
-* 參考影像 ([`ARImageTrackingConfiguration`](xref:ARKit.ARImageTrackingConfiguration), iOS 12)
-* 掃描3d 物件 ([`ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration)、iOS 12)
-* Visual 慣性 odometry ([`ARWorldTrackingConfiguration`](xref:ARKit.ARWorldTrackingConfiguration), 在 iOS 12 中改進)
+- 僅限裝置加速計[`AROrientationTrackingConfiguration`](xref:ARKit.AROrientationTrackingConfiguration)(, iOS 11)
+- 臉部 ([`ARFaceTrackingConfiguration`](xref:ARKit.ARFaceTrackingConfiguration), iOS 11)
+- 參考影像 ([`ARImageTrackingConfiguration`](xref:ARKit.ARImageTrackingConfiguration), iOS 12)
+- 掃描3d 物件 ([`ARObjectScanningConfiguration`](xref:ARKit.ARObjectScanningConfiguration)、iOS 12)
+- Visual 慣性 odometry ([`ARWorldTrackingConfiguration`](xref:ARKit.ARWorldTrackingConfiguration), 在 iOS 12 中改進)
 
 `AROrientationTrackingConfiguration`在[這篇 blog 文章F#和範例](https://github.com/lobrien/FSharp_Face_AR)中討論的是最受限制的, 並提供不佳的混合現實體驗, 因為它只會將數位物件與裝置的運動相關, 而不會嘗試將裝置和螢幕系結到真實世界。
 
@@ -284,8 +284,8 @@ configuration.TrackingImages = referenceImages;
 
 此設定有兩個有趣的層面:
 
-* 它很有效率, 而且可以與可能大量的參考影像搭配使用
-* 數位影像會錨定到影像, 即使該影像會在真實世界中移動 (例如, 如果已辨識書的封面, 它也會追蹤從貨位拉出的書、配置給下等)。
+- 它很有效率, 而且可以與可能大量的參考影像搭配使用
+- 數位影像會錨定到影像, 即使該影像會在真實世界中移動 (例如, 如果已辨識書的封面, 它也會追蹤從貨位拉出的書、配置給下等)。
 
 `ARObjectScanningConfiguration`先前[已討論過](#recognizing-reference-objects), 而且是以開發人員為中心的設定, 用於掃描3d 物件。 這是高度處理器和耗用電池, 不應用於終端使用者應用程式。 [掃描和偵測3D 物件](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-scanninganddetecting3dobjects)範例示範如何使用此設定。
 
@@ -299,8 +299,8 @@ ARKit 2 支援「環境紋理」, 其使用已捕捉的影像來估計光源, �
 
 若要使用環境紋理:
 
-* 您[`SCNMaterial`](xref:SceneKit.SCNMaterial)的物件必須[`SCNLightingModel.PhysicallyBased`](xref:SceneKit.SCNLightingModel.PhysicallyBased)使用並指派介於[`Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents) 0 到1範圍中的[`Metalness.Contents`](xref:SceneKit.SCNMaterial.Metalness)值, 以及和
-* 您的追蹤設定必須[`EnvironmentTexturing`](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)設定 =  [`AREnvironmentTexturing.Automatic`](xref:ARKit.AREnvironmentTexturing.Automatic) :
+- 您[`SCNMaterial`](xref:SceneKit.SCNMaterial)的物件必須[`SCNLightingModel.PhysicallyBased`](xref:SceneKit.SCNLightingModel.PhysicallyBased)使用並指派介於[`Roughness.Contents`](xref:SceneKit.SCNMaterialProperty.Contents) 0 到1範圍中的[`Metalness.Contents`](xref:SceneKit.SCNMaterial.Metalness)值, 以及和
+- 您的追蹤設定必須[`EnvironmentTexturing`](xref:ARKit.ARWorldTrackingConfiguration.EnvironmentTexturing)設定 =  [`AREnvironmentTexturing.Automatic`](xref:ARKit.AREnvironmentTexturing.Automatic) :
 
 ```csharp
 var sphere = SCNSphere.Create(0.33F);

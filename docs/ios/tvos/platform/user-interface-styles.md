@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: ca3580648d357d2c943274717af66ad5d825ce75
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: f4004b4b9cdc8f8c6555be82cf1da5b92a83d45c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065583"
+ms.locfileid: "70120050"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>在 Xamarin 中 tvOS 使用者介面樣式
 
@@ -183,22 +183,22 @@ SetOverrideTraitCollection (trait, this);
 
 在 Interface Builder 中編輯 tvOS 分鏡腳本時, Apple 已加入下列功能:
 
-* 開發人員可以根據**屬性偵測器**中的 UI 主題, 指定不同的使用者介面元素變化:
+- 開發人員可以根據**屬性偵測器**中的 UI 主題, 指定不同的使用者介面元素變化:
 
-  * 現在有數個屬性 **+** 旁邊的可以按一下以新增 UI 佈景主題特定版本：
+  - 現在有數個屬性 **+** 旁邊的可以按一下以新增 UI 佈景主題特定版本：
 
     [![](user-interface-styles-images/theme08.png "新增 UI 主題特定版本")](user-interface-styles-images/theme08.png#lightbox)
 
-  * 開發人員可以指定新的屬性, 或按一下 [ **x** ] 按鈕將它移除:
+  - 開發人員可以指定新的屬性, 或按一下 [ **x** ] 按鈕將它移除:
 
     [![](user-interface-styles-images/theme09.png "指定新的屬性, 或按一下 [x] 按鈕將它移除")](user-interface-styles-images/theme09.png#lightbox)
-* 開發人員可以在 Interface Builder 中, 預覽淺色或深色主題中的 UI 設計:
+- 開發人員可以在 Interface Builder 中, 預覽淺色或深色主題中的 UI 設計:
 
-  * Design Surface 的底部可讓開發人員切換目前的 UI 主題:
+  - Design Surface 的底部可讓開發人員切換目前的 UI 主題:
 
     [![](user-interface-styles-images/theme10.png "Design Surface 的底部")](user-interface-styles-images/theme10.png#lightbox)
 
-  * 新的主題會顯示在 Interface Builder 中, 而且會顯示任何特性集合特定的調整:
+  - 新的主題會顯示在 Interface Builder 中, 而且會顯示任何特性集合特定的調整:
 
     [![](user-interface-styles-images/theme11.png "顯示在 Interface Builder 中的主題")](user-interface-styles-images/theme11.png#lightbox)
 

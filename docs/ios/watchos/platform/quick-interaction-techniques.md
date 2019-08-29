@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: ddefae8ad24b74a3c9ed05bf46b54430c00beaea
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: e04b6be1547183869fb49955703245e19365bdb3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69620515"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120162"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin 中 watchOS 3 的快速互動技術
 
@@ -230,16 +230,16 @@ MenuTable.PerformSegue (0);
 
 WatchOS 3 的新內容:
 
-* 通知會在所有平臺 (iOS、watchOS、tvOS 和 macOS) 上使用類似的 API。
-* 本機通知可以在 Apple Watch 上排程。
-* 背景通知會路由傳送至應用程式的延伸模組 (如果已在 Apple Watch 上排程)。
+- 通知會在所有平臺 (iOS、watchOS、tvOS 和 macOS) 上使用類似的 API。
+- 本機通知可以在 Apple Watch 上排程。
+- 背景通知會路由傳送至應用程式的延伸模組 (如果已在 Apple Watch 上排程)。
 
 #### <a name="notification-scheduling-and-delivery"></a>通知排程和傳遞
 
 當下列情況發生時, 來自使用者 iPhone 的通知將會轉送到 Apple Watch:
 
-* IPhone 的畫面已關閉。
-* Apple Watch 已磨損, 而且已解除鎖定。
+- IPhone 的畫面已關閉。
+- Apple Watch 已磨損, 而且已解除鎖定。
 
 在 watchOS 3 中, 本機通知可以在 Apple Watch 上排程, 而且只會在監看式上傳遞。 開發人員必須排程對應的 iPhone 通知 (如果應用程式需要的話)。
 

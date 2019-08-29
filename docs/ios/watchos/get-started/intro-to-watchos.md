@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/13/2016
-ms.openlocfilehash: 364e10b8b59fcc8d640799ab6a0f11dcf4ded818
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6367ab41be821c5b1add4fface6bd17eb00b763b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644515"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121604"
 ---
 # <a name="introduction-to-watchos"></a>WatchOS 簡介
 
@@ -124,11 +124,11 @@ Apple Watch 有兩個臉部大小:38mm 和 42mm, 兩者都有5:4 顯示比例, �
 
 請參閱 Apple 的文件：
 
-* [針對 監看式套件進行開發](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html#//apple_ref/doc/uid/TP40014969-CH8-SW1)
+- [針對 監看式套件進行開發](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/index.html#//apple_ref/doc/uid/TP40014969-CH8-SW1)
 
-* [觀看套件程式設計指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/DesigningaWatchKitApp.html)
+- [觀看套件程式設計指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/DesigningaWatchKitApp.html)
 
-* [Apple Watch 人性化介面指導方針](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/index.html#//apple_ref/doc/uid/TP40014992-CH3-SW1)
+- [Apple Watch 人性化介面指導方針](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/index.html#//apple_ref/doc/uid/TP40014992-CH3-SW1)
 
 
 ## <a name="related-links"></a>相關連結

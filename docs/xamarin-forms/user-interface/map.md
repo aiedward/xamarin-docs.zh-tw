@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
-ms.openlocfilehash: 4cfedad6ccf87dfef819b677233be1edb2d2c62d
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 5eee9fea7ea0fffe9dc254ac4340ff05d087ce33
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887968"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121564"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
 
@@ -115,13 +115,13 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 您也需要啟用 Android 專案上按一下滑鼠右鍵，然後選取適當的權限**選項 > 建置 > Android 應用程式**和計時下列：
 
-* `AccessCoarseLocation`
-* `AccessFineLocation`
-* `AccessLocationExtraCommands`
-* `AccessMockLocation`
-* `AccessNetworkState`
-* `AccessWifiState`
-* `Internet`
+- `AccessCoarseLocation`
+- `AccessFineLocation`
+- `AccessLocationExtraCommands`
+- `AccessMockLocation`
+- `AccessNetworkState`
+- `AccessWifiState`
+- `Internet`
 
 這些都是以以下螢幕擷取畫面所示：
 
@@ -378,7 +378,7 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-類別會定義`DefaultTemplate`設定`XamarinTemplate`為不同資料範本的和[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `MapItemTemplateSelector` 當`OnSelectTemplate`專案具有包含`XamarinTemplate`「三藩市」的位址時, 此方法`Pin`會傳回, 當按下時, 會將 "Xamarin" 顯示為標籤。 當專案沒有包含「三藩市」的位址時, 此`OnSelectTemplate`方法`DefaultTemplate`會傳回。
+`MapItemTemplateSelector` 類別定義設定為不同資料範本的 `DefaultTemplate` 與 `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 屬性。 當`OnSelectTemplate`專案具有包含`XamarinTemplate`「三藩市」的位址時, 此方法`Pin`會傳回, 當按下時, 會將 "Xamarin" 顯示為標籤。 當專案沒有包含「三藩市」的位址時, 此`OnSelectTemplate`方法`DefaultTemplate`會傳回。
 
 如需資料範本選取器的詳細資訊，請參閱[建立 Xamarin DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: d8b522ce75b2b594242dca167242ad0362f6cbfc
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a7e98f64672788f13b247aa6cbba8adca84bb319
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528313"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121540"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基本知識
 
@@ -22,12 +22,12 @@ XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.F
 
 ## <a name="xaml-basics-contents"></a>XAML 基本內容
 
-* [概觀](#Overview)
-* [第 1 部分：開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-* [第 2 部分：基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-* [第 3 部分：XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-* [第 4 部分：資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-* [第 5 部分：從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [概觀](#Overview)
+- [第 1 部分：開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [第 2 部分：基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [第 3 部分：XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [第 4 部分：資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [第 5 部分：從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
 
 除了這些 XAML 基本知識文章中，您可以下載一書的章節[使用 Xamarin.Forms 建立行動應用程式](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md):
 

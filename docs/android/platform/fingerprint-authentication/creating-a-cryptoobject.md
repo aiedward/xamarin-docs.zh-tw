@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 8e5d4cf50874a0976c1dd10e35e7bd84518f14c4
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 03796af880aaef74c2d4b54007ac34ef1c5dc180
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511147"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119830"
 ---
 # <a name="creating-a-cryptoobject"></a>建立 CryptoObject
 
@@ -105,10 +105,10 @@ public class CryptoObjectHelper
 
 值得注意的是, 在某些情況下, Android 可能會使金鑰失效: 
 
-* 已向裝置註冊新的指紋。
-* 未向裝置註冊任何指紋。
-* 使用者已停用螢幕鎖定。
-* 使用者已變更螢幕鎖定 (screenlock 的類型或使用的 PIN/模式)。
+- 已向裝置註冊新的指紋。
+- 未向裝置註冊任何指紋。
+- 使用者已停用螢幕鎖定。
+- 使用者已變更螢幕鎖定 (screenlock 的類型或使用的 PIN/模式)。
 
 發生這種情況`Cipher.Init`時, 將[`KeyPermanentlyInvalidatedException`](https://developer.android.com/reference/android/security/keystore/KeyPermanentlyInvalidatedException.html)會擲回。 上述範例程式碼將會攔截該例外狀況、刪除金鑰, 然後建立一個新的索引鍵。
 
@@ -122,11 +122,11 @@ public class CryptoObjectHelper
 
 接下來, `KeyGenParameterSpec`會`KeyGenParameterSpec.Builder`使用建立。 會`KeyGenParameterSpec.Builder`包裝下列有關要建立之金鑰的資訊:
 
-* 金鑰的名稱。
-* 金鑰必須是有效的加密和解密。
-* 在範例`BLOCK_MODE`程式碼中, 會設定為_加密區塊連結_(`KeyProperties.BlockModeCbc`), 這表示每個區塊會與前一個區塊進行 xor (在每個區塊之間建立相依性)。 
-* 會使用[_公開金鑰加密標準 #7_](https://tools.ietf.org/html/rfc2315) (PKCS7) 來產生可填補區塊的位元組, 以確保它們的大小都相同。 `CryptoObjectHelper`
-* `SetUserAuthenticationRequired(true)`表示必須先進行使用者驗證, 才能使用金鑰。
+- 金鑰的名稱。
+- 金鑰必須是有效的加密和解密。
+- 在範例`BLOCK_MODE`程式碼中, 會設定為_加密區塊連結_(`KeyProperties.BlockModeCbc`), 這表示每個區塊會與前一個區塊進行 xor (在每個區塊之間建立相依性)。 
+- 會使用[_公開金鑰加密標準 #7_](https://tools.ietf.org/html/rfc2315) (PKCS7) 來產生可填補區塊的位元組, 以確保它們的大小都相同。 `CryptoObjectHelper`
+- `SetUserAuthenticationRequired(true)`表示必須先進行使用者驗證, 才能使用金鑰。
 
 建立之後, 它會用來`KeyGenerator`初始化, 它會產生金鑰並將它安全地儲存在裝置上。 `KeyGenParameterSpec` 
 

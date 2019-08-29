@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 634081b63ce4a70368ef7621837932a3ae6de0a8
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: ffd244a77ae75fefcf42f185bad1e8f7ccdbe560
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69890398"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121342"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS Objective-C 程式庫
 
@@ -22,9 +22,9 @@ _本文提供的實際操作逐步解說, 是為現有的 InfColorPicker 的目�
 
 一般來說, 在 iOS 生態系統中, 您可以找到3種類別的程式庫:
 
-* 做為具有`.a`副檔名的先行編譯靜態程式庫檔案及其標頭 (.h 檔)。 例如, [Google 的分析程式庫](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
-* 做為先行編譯架構。 這只是一個資料夾, 其中包含靜態程式庫、標頭, 有時還有`.framework`其他具有副檔名的資源。 例如, [Google 的 AdMob 程式庫](https://developers.google.com/admob/ios/download)。
-* 就像原始程式碼檔案一樣。 例如, 包含只有`.m`和`.h`目標 C 檔案的程式庫。
+- 做為具有`.a`副檔名的先行編譯靜態程式庫檔案及其標頭 (.h 檔)。 例如, [Google 的分析程式庫](https://developers.google.com/analytics/devguides/collection/ios/v3/sdk-download?hl=es#download_sdk)
+- 做為先行編譯架構。 這只是一個資料夾, 其中包含靜態程式庫、標頭, 有時還有`.framework`其他具有副檔名的資源。 例如, [Google 的 AdMob 程式庫](https://developers.google.com/admob/ios/download)。
+- 就像原始程式碼檔案一樣。 例如, 包含只有`.m`和`.h`目標 C 檔案的程式庫。
 
 在第一個和第二個案例中, 將會有預先編譯的 CocoaTouch 靜態程式庫, 因此在本文中, 我們將著重于第三個案例。 請記住, 在您開始建立系結之前, 請一律檢查程式庫所提供的授權, 以確保您可以隨意系結它。
 

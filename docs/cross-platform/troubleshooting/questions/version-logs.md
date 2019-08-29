@@ -7,12 +7,12 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 1977da75e430e72bee151814abc4502ee090b40c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b421378f8aa99728fa13f104e284b9c410abe2b3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521489"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119971"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>可以在哪裡找到我的版本資訊和記錄？
 
@@ -182,9 +182,9 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 ### <a name="a-idios-simulator-logs-nameios-simulator-logs-ios-simulator-logs-on-mac"></a><a id="ios-simulator-logs" name="ios-simulator-logs" />iOS 模擬器記錄檔 (在 Mac 上)
 
-* 若要存取系統記錄檔, 請選取 [Debug] > 開啟 iOS 模擬器應用程式中的 [**系統記錄檔 ...** ]。
+- 若要存取系統記錄檔, 請選取 [Debug] > 開啟 iOS 模擬器應用程式中的 [**系統記錄檔 ...** ]。
 
-* 若要從模擬器查看損毀報告, 請開啟 [主控台], `~/Library/Logs > DiagnosticReports`然後流覽至。
+- 若要從模擬器查看損毀報告, 請開啟 [主控台], `~/Library/Logs > DiagnosticReports`然後流覽至。
 
 ### <a name="a-idios-device-logs-nameios-device-logs-ios-device-logs-on-mac"></a><a id="ios-device-logs" name="ios-device-logs" />iOS 裝置記錄 (在 Mac 上)
 

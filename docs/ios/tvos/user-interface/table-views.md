@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3df0d8f686ec521a55948a9eb4632d77e5c3691f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 42749bf07f3b0239a550e66247fc0377fdc1a0b4
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652328"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121378"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 資料表視圖
 
@@ -844,7 +844,7 @@ namespace tvTable
 }
 ```
 
-在這裡, 我們提供了  以屬性`AttractionInformation`顯示的遊樂設施 (), 並建立了`UpdateUI`一個方法, 可在介面設計工具中填入加入至視圖的 UI widget。
+在這裡, 我們提供了以屬性`AttractionInformation`顯示的遊樂設施 (), 並建立了`UpdateUI`一個方法, 可在介面設計工具中填入加入至視圖的 UI widget。
 
 我們也將快捷方式定義回分割視圖控制器 (`SplitView`), 以用來將變更傳回到資料表視圖 (`AcctractionTableView`)。
 
@@ -883,8 +883,8 @@ namespace tvTable
 
 同樣地, 這個類別只會定義幾個快捷方式, 讓您更輕鬆地在分割視圖控制器的兩邊進行通訊:
 
-* `SplitView`-這是流覽視圖控制器所屬之分割視圖`MainSpiltViewController`控制器 () 的連結。
-* `TableController`-取得顯示為導覽視圖控制器`AttractionTableViewController`中頂端視圖的資料表視圖控制器 ()。
+- `SplitView`-這是流覽視圖控制器所屬之分割視圖`MainSpiltViewController`控制器 () 的連結。
+- `TableController`-取得顯示為導覽視圖控制器`AttractionTableViewController`中頂端視圖的資料表視圖控制器 ()。
 
 <a name="The-Split-View-Controller" />
 

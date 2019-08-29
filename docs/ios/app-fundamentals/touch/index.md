@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 01/23/2017
-ms.openlocfilehash: f11e72e433c443fbb9639b1f972ec4d87adf8b58
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 60bd87adb56e311407280ba98f48d8c3e2160836
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526909"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121010"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>在 Xamarin iOS 應用程式中處理觸控
 
@@ -34,8 +34,8 @@ iOS 會將觸控資料封裝`UITouch`在類別中, 透過一`UIResponder`系列�
 
 本指南可做為 iOS 的觸控簡介。 如需有關在 ios 9 和10中分別引進的 3D Touch 和 Haptic 意見反應的詳細資訊, 請參閱以下的特定指南:
 
-* [3D Touch](~/ios/platform/3d-touch.md)
-* [提供 Haptic 意見反應](~/ios/user-interface/ios-ui/haptic-feedback.md)
+- [3D Touch](~/ios/platform/3d-touch.md)
+- [提供 Haptic 意見反應](~/ios/user-interface/ios-ui/haptic-feedback.md)
 
 ## <a name="related-links"></a>相關連結
 

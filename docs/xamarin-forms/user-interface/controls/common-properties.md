@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/21/2019
-ms.openlocfilehash: c487442af7df4e4b8dc8860dcea4cd6065087a7f
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 6d10e665c6461655440ddfb2c524cb56a14337f6
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70075654"
+ms.locfileid: "70121352"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin. Forms 通用控制項屬性、方法和事件
 
@@ -80,11 +80,15 @@ ms.locfileid: "70075654"
 
 ### [`MinimumHeightRequest`](xref:Xamarin.Forms.VisualElement.MinimumHeightRequest)
 
-屬性是一個`double`值, 可決定控制項的最小所需高度。 `MinimumHeightRequest` 如需詳細資訊, 請參閱[要求屬性](#request-properties)。
+屬性是一個`double`值, 可決定當兩個元素爭用有限的空間時, 如何處理溢位。 `MinimumHeightRequest` `MinimumHeightRequest`設定屬性可讓配置程式將元素向下調整至所要求的最小維度。 如果未指定, 則預設值為-1, 而配置處理常式會將`HeightRequest`視為最小值。 `MinimumHeightRequest` 這表示沒有`MinimumHeightRequest`值的元素不會有可調整的高度。
+
+如需詳細資訊, 請參閱[最小要求屬性](#minimum-request-properties)。
 
 ### [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest)
 
-屬性是一個`double`值, 可決定控制項的最小所需寬度。 `MinimumWidthRequest` 如需詳細資訊, 請參閱[要求屬性](#request-properties)。
+屬性是一個`double`值, 可決定當兩個元素爭用有限的空間時, 如何處理溢位。 `MinimumWidthRequest` `MinimumWidthRequest`設定屬性可讓配置程式將元素向下調整至所要求的最小維度。 如果未指定, 則預設值為-1, 而配置處理常式會將`WidthRequest`視為最小值。 `MinimumWidthRequest` 這表示沒有`MinimumWidthRequest`值的專案將不會有可調整的寬度。
+
+如需詳細資訊, 請參閱[最小要求屬性](#minimum-request-properties)。
 
 ### [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity)
 
@@ -229,6 +233,35 @@ Android、iOS 和 UWP 平臺各有不同的度量單位, 可能會因裝置而�
 ## <a name="request-properties"></a>要求屬性
 
 名稱包含 "request" 的屬性會定義想要的值, 這可能不符合實際轉譯的值。 例如, `HeightRequest`可能會設定為 150, 但如果配置只允許100單位的空間, 則控制項的`Height`呈現只會是100。 轉譯的大小會受到可用空間和包含元件的影響。
+
+## <a name="minimum-request-properties"></a>最小要求屬性
+
+要求的最小`MinimumHeightRequest`值`MinimumWidthRequest`屬性包括和, 並可讓您更精確地控制元素如何彼此相對的處理溢位。 不過, 與這些屬性相關的版面配置行為有一些重要考慮。
+
+### <a name="unspecified-minimum-property-values"></a>未指定的最小屬性值
+
+如果未設定最小值, 則最小屬性的預設值為-1。 版面配置程式會忽略此值, 並將絕對值視為最小值。 這個行為的實際結果是, 未指定最小值的元素**將不會**壓縮。 指定最小值的元素**將會**縮小。
+
+下列 XAML 會以水準`BoxView` `StackLayout`方式顯示兩個元素:
+
+```xaml
+<StackLayout Orientation="Horizontal">
+    <BoxView HeightRequest="100" BackgroundColor="Purple" WidthRequest="500"></BoxView>
+    <BoxView HeightRequest="100" BackgroundColor="Green" WidthRequest="500" MinimumWidthRequest="250"></BoxView>
+</StackLayout>
+```
+
+第一個`BoxView`實例要求的寬度為 500, 且未指定最小寬度。 第二`BoxView`個實例要求的寬度為 500, 而最小寬度為250。 如果父`StackLayout`元素的寬度不夠寬, 而無法在其要求的寬度同時包含這兩`BoxView`個元件, 則配置處理常式會將第一個實例視為最小寬度 500, 因為未指定其他有效的最小值。 第二`BoxView`個實例可相應減少到 250, 而且會縮小以符合, 直到其寬度達到250單位為止。
+
+如果所要的行為是讓第`BoxView`一個實例在沒有最小寬度的情況下`MinimumWidthRequest`相應減少, 則必須設定為有效的值, 例如0。
+
+### <a name="minimum-and-absolute-property-values"></a>最小和絕對屬性值
+
+當最小值大於絕對值時, 不會有未定義的行為。 例如, 如果`MinimumWidthRequest`設定為 100 `WidthRequest` , 屬性絕對不應超過100。 指定最小的屬性值時, 您應該一律指定絕對值, 以確保絕對值大於最小值。
+
+### <a name="minimum-properties-within-a-grid"></a>方格中的最小屬性
+
+`Grid`版面配置有自己的系統, 可用於資料列和資料行的相對大小調整。 在`MinimumWidthRequest` 版面`Grid`配置中使用或`MinimumHeightRequest`不會有效果。 如需詳細資訊, 請參閱[Xamarin. 表單方格](~/xamarin-forms/user-interface/layouts/grid.md)。
 
 ## <a name="related-links"></a>相關連結
 

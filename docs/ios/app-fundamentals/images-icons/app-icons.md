@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/22/2017
-ms.openlocfilehash: 0f20e7dafaa855e3610595886537ee4910b09d2e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: dd712940ff6e7000ffd9181f808a8ab32093b38d
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643059"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121467"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的應用程式圖示
 
 將會詳細介紹下列主題：
 
-* [應用程式、焦點和設定圖示](#icon-types)-iOS 應用程式所需的不同圖示類型。
-* [以資產目錄管理圖示](#managing)-使用資產目錄管理應用程式圖示。
-* [Itunes 插圖](#itunes)-針對傳遞應用程式的臨機操作方法提供必要的 iTunes 插圖。
+- [應用程式、焦點和設定圖示](#icon-types)-iOS 應用程式所需的不同圖示類型。
+- [以資產目錄管理圖示](#managing)-使用資產目錄管理應用程式圖示。
+- [Itunes 插圖](#itunes)-針對傳遞應用程式的臨機操作方法提供必要的 iTunes 插圖。
 
 <a name="icon-types" />
 

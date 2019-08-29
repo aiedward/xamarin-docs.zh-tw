@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 6a9bb5fae84b6883943410d0c2585ce60a1208a4
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 37bc5bf32bc1d218179ef1176e1632239b1cb45f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526449"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119530"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear 簡介
 
@@ -183,12 +183,12 @@ Android 磨損2.0 應用程式可以獨立于掌上型應用程式使用。 這�
 
 以下是一些可執行 Android 磨損的裝置範例:
 
-* [Motorola 360](https://moto360.motorola.com/)
-* [LG G 監看](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
-* [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
-* [Samsung 齒輪直播](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
-* [索尼 SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
-* [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
+- [Motorola 360](https://moto360.motorola.com/)
+- [LG G 監看](http://www.lg.com/us/smart-watches/lg-W100-g-watch)
+- [LG G Watch R](http://www.lg.com/us/smartwatch/g-watch-r)
+- [Samsung 齒輪直播](http://www.samsung.com/global/microsite/gear/gearlive_design.html)
+- [索尼 SmartWatch 3](http://www.sonymobile.com/global-en/products/smartwear/smartwatch-3-swr50/)
+- [ASUS ZenWatch](http://www.asus.com/us/Phones/ASUS_ZenWatch_WI500Q/)
 
 
 
@@ -196,10 +196,10 @@ Android 磨損2.0 應用程式可以獨立于掌上型應用程式使用。 這�
 
 查看 Google 的 Android 磨損檔:
 
-* [關於 Android 磨損](http://www.android.com/wear/)
-* [Android 磨損應用程式設計](https://developer.android.com/design/wear/index.html)
-* [穿戴式程式庫](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-* [Android 磨損2。0](https://developer.android.com/wear/preview/index.html)
+- [關於 Android 磨損](http://www.android.com/wear/)
+- [Android 磨損應用程式設計](https://developer.android.com/design/wear/index.html)
+- [穿戴式程式庫](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
+- [Android 磨損2。0](https://developer.android.com/wear/preview/index.html)
 
 
 

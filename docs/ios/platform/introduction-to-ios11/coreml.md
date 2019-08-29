@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/30/2017
-ms.openlocfilehash: c2092cd9e7beb233c9478869ebff91d85b5b30c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c2747b24c47e826e0d832faa36ddb93d8aa06f37
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649610"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121524"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin 中的 CoreML 簡介
 
@@ -171,11 +171,11 @@ void HandleClassification(VNRequest request, NSError error){
 
 有三個 CoreML 範例可嘗試:
 
-* [Mars Habitat 價格預測器範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)具有簡單的數值輸入和輸出。
+- [Mars Habitat 價格預測器範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)具有簡單的數值輸入和輸出。
 
-* 「[願景 & CoreML 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)會接受影像參數, 並使用視覺架構來識別影像中的正方形區域, 而這些方塊會傳遞給可辨識單一數位的 CoreML 模型。
+- 「[願景 & CoreML 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)會接受影像參數, 並使用視覺架構來識別影像中的正方形區域, 而這些方塊會傳遞給可辨識單一數位的 CoreML 模型。
 
-* 最後, [CoreML 影像辨識範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)會使用 CoreML 來識別相片中的功能。 根據預設, 它會使用較小的**SqueezeNet**模型 (5mb), 但它已被寫入, 讓您可以下載並併入較大的**VGG16**模型 (553MB)。 如需詳細資訊, 請參閱[範例的讀我檔案](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)。
+- 最後, [CoreML 影像辨識範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)會使用 CoreML 來識別相片中的功能。 根據預設, 它會使用較小的**SqueezeNet**模型 (5mb), 但它已被寫入, 讓您可以下載並併入較大的**VGG16**模型 (553MB)。 如需詳細資訊, 請參閱[範例的讀我檔案](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)。
 
 ## <a name="related-links"></a>相關連結
 

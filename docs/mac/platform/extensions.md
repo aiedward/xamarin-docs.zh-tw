@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 5138062cec6ee71f1db17d0118001b59dd7bc02c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 58250770b925c20b912b71e5591b1d0e252c801a
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642954"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119029"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 延伸模組支援
 
@@ -28,9 +28,9 @@ ms.locfileid: "68642954"
 
 以下是在 Xamarin 中開發延伸模組時可能會發生的限制和已知問題:
 
-* Visual Studio for Mac 中目前沒有任何調試支援。 所有的調試作業都必須透過**NSLog**和**主控台**來完成。 如需詳細資訊, 請參閱以下的秘訣一節。
-* 延伸模組必須包含在主應用程式中, 當執行一次與系統的註冊時, 就會發生此情況。 然後必須在 [**系統偏好**設定] 的 [**延伸**模組] 區段中啟用。 
-* 某些延伸模組損毀可能會使主機應用程式不穩定, 並會造成奇怪的行為。 特別是, 「搜尋者」和「**今天**」的「**通知中心**」區段可能會變成「卡住」, 而且會變成沒有回應。 這在 Xcode 的擴充專案中也有經驗, 目前與 Xamarin 無關。 通常可以在系統記錄檔中看到這種情況 (透過**主控台**, 請參閱詳細資訊的秘訣) 列印重複的錯誤訊息。 重新開機 macOS 會顯示修正此問題。
+- Visual Studio for Mac 中目前沒有任何調試支援。 所有的調試作業都必須透過**NSLog**和**主控台**來完成。 如需詳細資訊, 請參閱以下的秘訣一節。
+- 延伸模組必須包含在主應用程式中, 當執行一次與系統的註冊時, 就會發生此情況。 然後必須在 [**系統偏好**設定] 的 [**延伸**模組] 區段中啟用。 
+- 某些延伸模組損毀可能會使主機應用程式不穩定, 並會造成奇怪的行為。 特別是, 「搜尋者」和「**今天**」的「**通知中心**」區段可能會變成「卡住」, 而且會變成沒有回應。 這在 Xcode 的擴充專案中也有經驗, 目前與 Xamarin 無關。 通常可以在系統記錄檔中看到這種情況 (透過**主控台**, 請參閱詳細資訊的秘訣) 列印重複的錯誤訊息。 重新開機 macOS 會顯示修正此問題。
 
 <a name="Tips" />
 

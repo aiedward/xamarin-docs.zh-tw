@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/01/2017
-ms.openlocfilehash: 4c01022e01c5ba6a9099b88e99558bd7d7ce728d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b795a53fc78adee19e1e2d1c57c9c4344aa4281b
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524553"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119638"
 ---
 # <a name="binding-a-java-library"></a>繫結 Java 程式庫
 
@@ -68,36 +68,36 @@ using Com.Company.Package;
 
 系結現有的 Android 程式庫時, 必須記住下列幾點:
 
-* **程式庫是否有任何外部相依性？** &ndash;Android 程式庫所需的任何 JAVA 相依性都必須以**ReferenceJar**或**EmbeddedReferenceJar**的形式包含在 Xamarin android 專案中。 任何原生元件都必須加入至系結專案做為**EmbeddedNativeLibrary**。  
+- **程式庫是否有任何外部相依性？** &ndash;Android 程式庫所需的任何 JAVA 相依性都必須以**ReferenceJar**或**EmbeddedReferenceJar**的形式包含在 Xamarin android 專案中。 任何原生元件都必須加入至系結專案做為**EmbeddedNativeLibrary**。  
 
-* **Android 程式庫的目標是哪個版本的 Android API？** &ndash;不可能「降級」 Android API 層級;確定 [Xamarin] 系結專案的目標是與 Android 程式庫相同的 API 層級 (或更高版本)。
+- **Android 程式庫的目標是哪個版本的 Android API？** &ndash;不可能「降級」 Android API 層級;確定 [Xamarin] 系結專案的目標是與 Android 程式庫相同的 API 層級 (或更高版本)。
 
-* **用來編譯程式庫的 JDK 版本為何？** &ndash;如果 Android 程式庫是使用不同于 Xamarin 的 JDK 版本所建立, 則可能會發生系結錯誤。 可能的話, 請使用您的 Xamarin 安裝所使用的相同 JDK 版本來重新編譯 Android 程式庫。
+- **用來編譯程式庫的 JDK 版本為何？** &ndash;如果 Android 程式庫是使用不同于 Xamarin 的 JDK 版本所建立, 則可能會發生系結錯誤。 可能的話, 請使用您的 Xamarin 安裝所使用的相同 JDK 版本來重新編譯 Android 程式庫。
 
 
 ## <a name="build-actions"></a>建置動作
 
 當您建立系結程式庫時, 您會在 **.jar**或上設定*組建動作*。您併入系結程式庫專案&ndash;中的 AAR 檔案: 每個組建動作都會決定 **.jar**或的方式。AAR 檔案將內嵌至您的系結程式庫 (或由其參考)。 下列清單摘要列出這些組建動作:
 
-* `EmbeddedJar`將 .jar 內嵌至產生的系結程式庫 DLL, 做為內嵌資源。 &ndash; 這是最簡單且最常使用的組建動作。 當您想要將 **.jar**自動編譯成位元組程式碼並封裝到系結程式庫時, 請使用此選項。
+- `EmbeddedJar`將 .jar 內嵌至產生的系結程式庫 DLL, 做為內嵌資源。 &ndash; 這是最簡單且最常使用的組建動作。 當您想要將 **.jar**自動編譯成位元組程式碼並封裝到系結程式庫時, 請使用此選項。
 
-* `InputJar`不會將 .jar 內嵌到產生的系結程式庫中。 &ndash;URLMON.DLL. 您的系結程式庫。DLL 在執行時間會相依于這個 **.jar** 。 當您不想要在系結程式庫 (例如, 基於授權原因) 中包含 **.jar**時, 請使用此選項。 如果您使用此選項, 您必須確定在執行應用程式的裝置上可以使用輸入 **.jar** 。
+- `InputJar`不會將 .jar 內嵌到產生的系結程式庫中。 &ndash;URLMON.DLL. 您的系結程式庫。DLL 在執行時間會相依于這個 **.jar** 。 當您不想要在系結程式庫 (例如, 基於授權原因) 中包含 **.jar**時, 請使用此選項。 如果您使用此選項, 您必須確定在執行應用程式的裝置上可以使用輸入 **.jar** 。
 
-* `LibraryProjectZip`&ndash;內嵌。AAR 檔案放入產生的系結程式庫中。URLMON.DLL. 這類似于 EmbeddedJar, 不同之處在于您可以在系結中存取資源 (以及程式碼)。AAR 檔案。 當您想要內嵌時, 請使用此選項。AAR 至您的系結程式庫。
+- `LibraryProjectZip`&ndash;內嵌。AAR 檔案放入產生的系結程式庫中。URLMON.DLL. 這類似于 EmbeddedJar, 不同之處在于您可以在系結中存取資源 (以及程式碼)。AAR 檔案。 當您想要內嵌時, 請使用此選項。AAR 至您的系結程式庫。
 
-* `ReferenceJar`指定一個參考 .jar: 一個參考 .jar 是您所系結的 .jar 或的 .jar。 &ndash;AAR 檔案視而定。 這個參考 **.jar**僅用於滿足編譯時間相依性。 當您使用這個組建動作時C# , 不會為參考建立系結, 而且它不會內嵌在產生的系結程式庫中。URLMON.DLL. 當您要建立參考 **.jar**的系結程式庫, 但尚未完成時, 請使用此選項。 這個組建動作適用于封裝多個 **.jar**(和/或)。AARs) 分成多個相互相依的系結程式庫。
+- `ReferenceJar`指定一個參考 .jar: 一個參考 .jar 是您所系結的 .jar 或的 .jar。 &ndash;AAR 檔案視而定。 這個參考 **.jar**僅用於滿足編譯時間相依性。 當您使用這個組建動作時C# , 不會為參考建立系結, 而且它不會內嵌在產生的系結程式庫中。URLMON.DLL. 當您要建立參考 **.jar**的系結程式庫, 但尚未完成時, 請使用此選項。 這個組建動作適用于封裝多個 **.jar**(和/或)。AARs) 分成多個相互相依的系結程式庫。
 
-* `EmbeddedReferenceJar`將參考 .jar 內嵌到產生的系結程式庫中。 &ndash;URLMON.DLL. 當您想要為輸入 **.jar** (或C# ) 建立系結時, 請使用此組建動作。AAR) 及其所有在您的系結程式庫中的參考 **。**
+- `EmbeddedReferenceJar`將參考 .jar 內嵌到產生的系結程式庫中。 &ndash;URLMON.DLL. 當您想要為輸入 **.jar** (或C# ) 建立系結時, 請使用此組建動作。AAR) 及其所有在您的系結程式庫中的參考 **。**
 
-* `EmbeddedNativeLibrary`將原生. 內嵌到系結中。 &ndash; 這個組建動作用於 **。因此**, 會系結 **.jar**檔所需的檔案。 在從 JAVA 程式庫執行程式碼之前, 可能需要手動載入 **。** 如下所述。
+- `EmbeddedNativeLibrary`將原生. 內嵌到系結中。 &ndash; 這個組建動作用於 **。因此**, 會系結 **.jar**檔所需的檔案。 在從 JAVA 程式庫執行程式碼之前, 可能需要手動載入 **。** 如下所述。
 
 這些組建動作會在下列指南中詳細說明。
 
 此外, 下列組建動作是用來協助匯入 JAVA API 檔, 並將其C#轉換成 XML 檔:
 
-* `JavaDocJar`是用來指向符合 Maven 封裝樣式之 JAVA 程式庫的 JAVAdoc 封存 Jar (通常`FOOBAR-javadoc**.jar**`是)。
-* `JavaDocIndex`是用來在 API `index.html`參考檔 HTML 中指向檔案。
-* `JavaSourceJar`是用來補充`JavaDocJar`, 以便先從來源產生 JAVADoc, 然後將`JavaDocIndex`結果視為, 針對符合 Maven 封裝樣式的 JAVA 程式庫 (通常`FOOBAR-sources**.jar**`是)。
+- `JavaDocJar`是用來指向符合 Maven 封裝樣式之 JAVA 程式庫的 JAVAdoc 封存 Jar (通常`FOOBAR-javadoc**.jar**`是)。
+- `JavaDocIndex`是用來在 API `index.html`參考檔 HTML 中指向檔案。
+- `JavaSourceJar`是用來補充`JavaDocJar`, 以便先從來源產生 JAVADoc, 然後將`JavaDocIndex`結果視為, 針對符合 Maven 封裝樣式的 JAVA 程式庫 (通常`FOOBAR-sources**.jar**`是)。
 
 API 檔應該是來自 JAVA8、JAVA7 或 JAVA6 SDK 的預設 doclet (兩者都是不同的格式), 或 DroidDoc 樣式。
 

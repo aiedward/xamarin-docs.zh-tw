@@ -1,51 +1,51 @@
 ---
-title: IOS 13 簡介
-description: 本文件提供的 Xamarin 預覽版本提供某些 iOS 13 Api 的高層級描述C#繫結。
+title: iOS 13 簡介
+description: 本檔提供一些適用于 Xamarin preview 版本提供C#系結之 IOS 13 api 的高階說明。
 ms.prod: xamarin
 ms.assetid: AB486B2F-6E3B-4E0B-ABB8-58F5804D56D2
 ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: eaa479f220c9cd0115fd2d4496fbfb1202fb3aa0
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.openlocfilehash: ea7ebdf5e589f3c24f8c607d1464e86678012f23
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558715"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120624"
 ---
-# <a name="introduction-to-ios-13"></a>IOS 13 簡介
+# <a name="introduction-to-ios-13"></a>iOS 13 簡介
 
 ![預覽功能](~/media/shared/preview.png)
 
-請遵循這些[指示](~/ios/platform/ios13/get-started.md)開始著手。
+請遵循這些[指示](~/ios/platform/ios13/get-started.md)以開始使用。
 
-## <a name="dark-mode"></a>深色的模式
+## <a name="dark-modedark-modemd"></a>[深色模式](dark-mode.md)
 
-iOS 13 導入了新的深色模式可提供開發人員輕鬆地讓自己的應用程式，以符合的方法。 新的工具可讓您同時設計您的應用程式使用淺色與深色佈景主題。
+iOS 13 引進新的深色模式, 讓開發人員能夠輕鬆地將應用程式納入考慮。 新的工具可讓您同時使用淺色和深色的主題來設計應用程式。
 
-## <a name="augmented-reality"></a>擴增的實境
+## <a name="augmented-reality"></a>增強的現實
 
-在 iOS 13 擴增的實境現在有更多的功能，包括新的 「 人阻擋"函式可讓應用程式的 AR 尊重人類的目前狀態，並隨之移動其周圍的內容。
+IOS 13 中的增強式現實現在有更多的功能, 包括新的「人員遮蔽」功能, 可讓應用程式的 AR 內容遵守人類的狀態, 並據以四處移動。
 
 ## <a name="siri"></a>Siri
 
-Siri 已經過擴充，以便進行處理的音訊內容，以及更妥善地處理的透過快速鍵應用程式的捷徑。
+Siri 已經過擴充, 可讓您處理音訊內容, 以及透過快捷方式應用程式更有效率地處理快捷方式。
 
-## <a name="machine-learning"></a>機器學習服務
+## <a name="machine-learning"></a>Machine Learning
 
-核心 ML 3 可讓您輕鬆地訓練 ML 模型使用其裝置的硬體功能。
+核心 ML 3 可讓您使用裝置的硬體功能, 輕鬆地將 ML 模型定型。
 
 ## <a name="ipados"></a>iPadOS
 
-iPadOS 是特別以記住 iPad 的 iOS 的擴充功能。
+iPadOS 是一種專為 iPad 而建立的 iOS 擴充功能。
 
-IPadOS，使用中，您可以讓更大用處 Apple 鉛筆 PencilKit 使用新的筆勢，允許使用多個視窗和應用程式之間的拖放各種內容。 iPadOS 也可以允許應用程式，以提供全系統字型。
+透過 iPadOS, 您可以使用 PencilKit 搭配新的手勢來更充分利用 Apple 鉛筆、允許使用多個視窗, 以及在應用程式之間拖放各種內容。 iPadOS 也可以讓應用程式提供全系統的字型。
 
 ## <a name="privacy-and-security"></a>隱私權和安全性
 
-iOS 13 提供用來登入使用 Apple 裝置時，可讓您能夠更有信心地個人資訊未使用登入的應用程式的新功能遭竊，或藉由採取 2FA 利用和一組有限的提供以任何方式收集資訊。
+iOS 13 提供新的功能, 可讓您登入使用 Apple 裝置登入的應用程式, 讓您更有信心地利用2FA 和所提供的有限集合, 以任何方式竊取或收集自己的個人資訊。更多資訊.
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.iOS preview 版本資訊](/xamarin/ios/release-notes/12/12.99)
+- [Xamarin iOS preview 版本資訊](/xamarin/ios/release-notes/12/12.99)

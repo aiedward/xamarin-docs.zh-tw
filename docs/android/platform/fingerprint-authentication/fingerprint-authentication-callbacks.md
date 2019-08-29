@@ -6,21 +6,21 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/06/2017
-ms.openlocfilehash: cb4933695d34a0805be4139c7b345f7a70f33613
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: f1fc484931ba7a574ac660b4856f20b1cb1e08a3
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524331"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119590"
 ---
 # <a name="responding-to-authentication-callbacks"></a>回應驗證回呼
 
 指紋掃描器會在自己的執行緒上以背景執行, 而完成後, 它會在 UI 執行緒上叫用的`FingerprintManager.AuthenticationCallback`一個方法, 以報告掃描的結果。 Android 應用程式必須提供自己的處理常式, 以擴充此抽象類別, 並執行下列所有方法:
 
-* **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash;當發生無法復原的錯誤時呼叫。 除了可能會再試一次以外, 應用程式或使用者不能執行任何動作來修正這種情況。
-* **`OnAuthenticationFailed()`** &ndash;當偵測到指紋但裝置無法辨識時, 就會叫用此方法。
-* **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash;當有可復原的錯誤時呼叫, 例如透過掃描器快速撥動的手指。
-* **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash;當指紋已被辨識時, 就會呼叫此程式。
+- **`OnAuthenticationError(int errorCode, ICharSequence errString)`** &ndash;當發生無法復原的錯誤時呼叫。 除了可能會再試一次以外, 應用程式或使用者不能執行任何動作來修正這種情況。
+- **`OnAuthenticationFailed()`** &ndash;當偵測到指紋但裝置無法辨識時, 就會叫用此方法。
+- **`OnAuthenticationHelp(int helpMsgId, ICharSequence helpString)`** &ndash;當有可復原的錯誤時呼叫, 例如透過掃描器快速撥動的手指。
+- **`OnAuthenticationSucceeded(FingerprintManagerCompati.AuthenticationResult result)`** &ndash;當指紋已被辨識時, 就會呼叫此程式。
 
 如果在呼叫`Authenticate`時使用了, 建議您在中`OnAuthenticationSuccessful`呼叫`Cipher.DoFinal`。 `CryptoObject`
 `DoFinal`如果加密遭篡改或初始化不正確, 將會擲回例外狀況, 表示指紋掃描器的結果可能已在應用程式外部遭到篡改。

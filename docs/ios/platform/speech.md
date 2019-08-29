@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: fe871985700c5a40db2736ded78588b0b7d4f616
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 65644673bde426fff92530a7a36812d1c95b5995
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655394"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70121279"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin 中的語音辨識
 
@@ -89,8 +89,8 @@ Apple 已包含可用性 API, 以判斷目前是否有指定的語言可供翻�
 - 使用金鑰, 在應用程式的`Info.plist`檔案中提供使用方式描述。 `NSSpeechRecognitionUsageDescription` 例如, 相機應用程式可能會包含下列描述: 「_這可讓您只需說出「乳酪」這個字, 就能拍攝相片。_ 」
 - 藉由呼叫`SFSpeechRecognizer.RequestAuthorization`方法來要求授權, 以提供應用程式想要`NSSpeechRecognitionUsageDescription`在對話方塊中存取使用者的語音辨識, 並允許他們接受或拒絕的說明 (在上述金鑰中提供)。
 - 建立語音辨識要求:
-    * 針對磁片上預先錄製的音訊, 請使用`SFSpeechURLRecognitionRequest`類別。
-    * 若為即時音訊 (或記憶體中的音訊), `SFSPeechAudioBufferRecognitionRequest`請使用類別。
+    - 針對磁片上預先錄製的音訊, 請使用`SFSpeechURLRecognitionRequest`類別。
+    - 若為即時音訊 (或記憶體中的音訊), `SFSPeechAudioBufferRecognitionRequest`請使用類別。
 - 將語音辨識要求傳遞給語音辨識器 (`SFSpeechRecognizer`), 以開始辨識。 應用程式可以選擇性地按住傳回`SFSpeechRecognitionTask`的來監視和追蹤辨識結果。
 
 下面將詳細說明這些步驟。

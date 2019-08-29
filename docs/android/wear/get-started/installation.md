@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 1f6fa57bbe47bbc2fe97bbd0df7018fc1cd3897a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d85c199f6243fc49c1ca924bbd60cfef48b6d91f
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522176"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120009"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -63,9 +63,9 @@ _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發�
 
 請確定您已安裝下列 Android SDK 和工具:
 
-* Android SDK Tools v 24.0.0 或更高版本, 以及
-* Android 4.4 W (API20), 或
-* Android 5.0.1 (API21) 或更高版本。
+- Android SDK Tools v 24.0.0 或更高版本, 以及
+- Android 4.4 W (API20), 或
+- Android 5.0.1 (API21) 或更高版本。
 
 如果您未安裝最新的 sdk 和工具, 請下載所需的 sdk 工具*和*api 位 (您可能需要逐一滾動以尋找&ndash; api 選取專案, 如下所示): 
 

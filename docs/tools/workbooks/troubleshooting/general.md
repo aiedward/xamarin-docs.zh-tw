@@ -6,12 +6,12 @@ ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
 author: lobrien
 ms.author: laobri
 ms.date: 03/30/2017
-ms.openlocfilehash: 21f61b4504367dafc2907fd6471af333f636b521
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 3701a2a111c5c18f694def241b1e888fa6f4ce19
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889394"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120323"
 ---
 # <a name="known-issues--workarounds"></a>已知問題 & 因應措施
 
@@ -21,20 +21,20 @@ ms.locfileid: "69889394"
 
 ### <a name="workarounds"></a>替代解決辦法
 
-* 設定應用程式-網域-本機`DefaultThreadCurrentCulture`:
+- 設定應用程式-網域-本機`DefaultThreadCurrentCulture`:
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-* 或者, 更新至活頁簿1.2.1 或更新版本, 這會將`System.Threading.CurrentThread.CurrentCulture`指派`System.Globalization.CultureInfo.CurrentCulture`重寫至和, 以提供所需的行為 (解決 Mono 錯誤)。
+- 或者, 更新至活頁簿1.2.1 或更新版本, 這會將`System.Threading.CurrentThread.CurrentCulture`指派`System.Globalization.CultureInfo.CurrentCulture`重寫至和, 以提供所需的行為 (解決 Mono 錯誤)。
 
 ## <a name="unable-to-use-newtonsoftjson"></a>無法使用 Newtonsoft
 
 ### <a name="workaround"></a>因應措施
 
-* 更新為1.2.1 版的活頁簿, 將會安裝 Newtonsoft 9.0.1。
+- 更新為1.2.1 版的活頁簿, 將會安裝 Newtonsoft 9.0.1。
   目前在 Alpha 通道中的活頁簿1.3 支援10和更新版本。
 
 ### <a name="details"></a>詳細資料
@@ -51,9 +51,9 @@ Safari/WebKit 中的[摩納哥編輯器][monaco-bug]中有一個 bug, 用於 Mac
 
 ### <a name="workaround"></a>因應措施
 
-* 在工具提示出現之後按一下它, 將會強制文字呈現。
+- 在工具提示出現之後按一下它, 將會強制文字呈現。
 
-* 或更新為1.2.1 或更新版本的活頁簿
+- 或更新為1.2.1 或更新版本的活頁簿
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
@@ -64,7 +64,7 @@ Safari/WebKit 中的[摩納哥編輯器][monaco-bug]中有一個 bug, 用於 Mac
 
 ### <a name="workaround"></a>因應措施
 
-* 將 SkiaSharp 更新為 NuGet 中的最新版本。 在撰寫本文時, 這是1.57.1。
+- 將 SkiaSharp 更新為 NuGet 中的最新版本。 在撰寫本文時, 這是1.57.1。
 
 ## <a name="related-links"></a>相關連結
 

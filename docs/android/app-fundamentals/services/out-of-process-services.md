@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 33d0e87e8823db6bf0fd0bc5541f37bd41b6dcde
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2794a1d23cd7c1eab9cf4e94eaa805ad2b8bca61
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526259"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119124"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在遠端進程中執行 Android 服務
 
@@ -33,9 +33,9 @@ _一般而言, Android 應用程式中的所有元件都會在相同的進程中
 
 在許多方面, 系結至在另一個處理常式中執行的服務, 與系結[至本機服務](~/android/app-fundamentals/services/creating-a-service/bound-services.md)相同。 用戶端會`BindService`叫用來系結 (並視需要啟動) 服務。 系統`Android.OS.IServiceConnection`會建立一個物件來管理用戶端與服務之間的連接。 如果用戶端成功系結至服務, 則 Android 會透過傳回物件`IServiceConnection` , 其可用於在服務上叫用方法。 接著, 用戶端會使用這個物件與服務互動。 若要進行檢查, 以下是系結至服務的步驟:
 
-* **建立意圖**&ndash;明確的意圖必須用來系結至服務。
-* **執行物件, 並`IServiceConnection`** 具現`IServiceConnection`化&ndash;物件, 做為用戶端與服務之間的媒介。  負責監視用戶端與伺服器之間的連接。
-* **`BindService`** 叫用&ndash;呼叫的`BindService`方法會將先前步驟中建立的意圖和服務連線分派至 Android, 這將負責啟動服務, 並建立之間的通訊。用戶端和服務。
+- **建立意圖**&ndash;明確的意圖必須用來系結至服務。
+- **執行物件, 並`IServiceConnection`** 具現`IServiceConnection`化&ndash;物件, 做為用戶端與服務之間的媒介。  負責監視用戶端與伺服器之間的連接。
+- **`BindService`** 叫用&ndash;呼叫的`BindService`方法會將先前步驟中建立的意圖和服務連線分派至 Android, 這將負責啟動服務, 並建立之間的通訊。用戶端和服務。
 
 跨進程界限的需求會帶來額外的複雜性: 通訊是單向 (用戶端到伺服器), 而用戶端無法直接叫用服務類別上的方法。 回想一下, 當服務與用戶端執行相同的程式時, Android 會提供`IBinder`可能允許雙向通訊的物件。 當服務在自己的進程中執行時, 就不會發生這種情況。 用戶端會透過`Android.OS.Messenger`類別的協助與遠端服務進行通訊。
 
@@ -68,9 +68,9 @@ _一般而言, Android 應用程式中的所有元件都會在相同的進程中
 
 如上所述, 服務會在自己的進程中執行, 這表示牽涉到一些不同的 Api。 簡單的介紹, 以下是系結和使用遠端服務的步驟:  
 
-* **`Service`**  建立子`Service`類別的型別, 並為系結的服務實作為生命週期方法。 &ndash; 您也必須設定中繼資料來通知 Android, 服務會在自己的進程中執行。
-* 執行負責分析用戶端要求、解壓縮從用戶端傳遞的任何參數, 以及在服務上叫用適當的方法。 **`Handler`** &ndash; `Handler`
-* `Handler` `Service` `Messenger` **`Messenger`** 如上面所述具現化,每個都必須維護一個類別的實例,以將用戶端要求路由傳送至在上一個步驟中建立的。&ndash;
+- **`Service`**  建立子`Service`類別的型別, 並為系結的服務實作為生命週期方法。 &ndash; 您也必須設定中繼資料來通知 Android, 服務會在自己的進程中執行。
+- 執行負責分析用戶端要求、解壓縮從用戶端傳遞的任何參數, 以及在服務上叫用適當的方法。 **`Handler`** &ndash; `Handler`
+- `Handler` `Service` `Messenger` **`Messenger`** 如上面所述具現化,每個都必須維護一個類別的實例,以將用戶端要求路由傳送至在上一個步驟中建立的。&ndash;
 
 要在自己的進程中執行的服務, 基本上是系結服務。 服務類別會擴充基類`Service` , 並`ServiceAttribute`使用包含 android 需要在 android 資訊清單中配套之中繼資料的來裝飾。 一開始, 的下列屬性`ServiceAttribute`對跨進程服務很重要:
 
@@ -133,8 +133,8 @@ _一般而言, Android 應用程式中的所有元件都會在相同的進程中
 
 範例應用程式中的下列程式碼片段會顯示的`HandleMessage`其中一個範例。 在此範例中, 用戶端可以要求服務的動作有兩種:
 
-* 第一個動作是_Hello, World_訊息, 用戶端已將簡單訊息傳送給服務。
-* 第二個動作會在服務上叫用方法並抓取字串, 在此案例中, 字串是傳回服務啟動時間和其執行時間長度的訊息:
+- 第一個動作是_Hello, World_訊息, 用戶端已將簡單訊息傳送給服務。
+- 第二個動作會在服務上叫用方法並抓取字串, 在此案例中, 字串是傳回服務啟動時間和其執行時間長度的訊息:
 
 ```csharp
 public class TimestampRequestHandler : Android.OS.Handler
@@ -384,10 +384,10 @@ if (clientMessenger!= null)
 
 Android 提供四種不同的許可權等級:
 
-* **正常**&ndash;這是預設的許可權層級。 它可用來識別可由 Android 自動授與要求它的用戶端的低風險許可權。 使用者不需要明確授與這些許可權, 但可以在應用程式設定中查看許可權。
-* 簽章&ndash;這是特殊的許可權類別, 會由 Android 自動授與所有以相同憑證簽署的應用程式。 此許可權的設計可讓應用程式開發人員輕鬆地在其應用程式之間共用元件或資料, 而不需要中斷使用者進行持續核准。
-* **signatureOrSystem**這與上面所述的簽章許可權非常類似。 &ndash; 除了自動授與由相同憑證簽署的應用程式之外, 此許可權也會授與給已簽署相同憑證的應用程式, 該憑證是用來簽署與 Android 系統映射一起安裝的應用程式。 此許可權通常僅供 Android ROM 開發人員使用, 以允許其應用程式使用協力廠商應用程式。 這種應用程式通常不會使用這種方式, 因為公用的一般散發是大型的。
-* **危險**&ndash;危險的許可權是可能會對使用者造成問題的許可權。 基於這個理由, 使用者必須明確核准**危險**的許可權。
+- **正常**&ndash;這是預設的許可權層級。 它可用來識別可由 Android 自動授與要求它的用戶端的低風險許可權。 使用者不需要明確授與這些許可權, 但可以在應用程式設定中查看許可權。
+- 簽章&ndash;這是特殊的許可權類別, 會由 Android 自動授與所有以相同憑證簽署的應用程式。 此許可權的設計可讓應用程式開發人員輕鬆地在其應用程式之間共用元件或資料, 而不需要中斷使用者進行持續核准。
+- **signatureOrSystem**這與上面所述的簽章許可權非常類似。 &ndash; 除了自動授與由相同憑證簽署的應用程式之外, 此許可權也會授與給已簽署相同憑證的應用程式, 該憑證是用來簽署與 Android 系統映射一起安裝的應用程式。 此許可權通常僅供 Android ROM 開發人員使用, 以允許其應用程式使用協力廠商應用程式。 這種應用程式通常不會使用這種方式, 因為公用的一般散發是大型的。
+- **危險**&ndash;危險的許可權是可能會對使用者造成問題的許可權。 基於這個理由, 使用者必須明確核准**危險**的許可權。
 
 因為`signature`和`normal`許可權會在 Android 安裝的時間自動授與, 所以在包含用戶端的 APK 之前, 必須**先**安裝 APK 裝載服務的關鍵。 如果先安裝用戶端, 則 Android 不會授與許可權。 在此情況下, 必須將用戶端 APK 卸載、安裝服務 APK, 然後重新安裝用戶端 APK。
 

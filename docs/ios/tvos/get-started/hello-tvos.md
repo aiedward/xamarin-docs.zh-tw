@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 02/02/2018
-ms.openlocfilehash: a3ec307061c47736722c5dacef9a939518586ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 59019e08c279a9910281de98fe64db798379e1a4
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528795"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119170"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>Hello, tvOS 快速入門手冊
 
@@ -327,8 +327,8 @@ namespace HellotvOS
 
 有兩種主要方式可從程式碼存取您在 iOS 設計工具中新增的控制項:
 
-* 在控制項上建立事件處理常式。
-* 提供控制項的名稱, 讓我們稍後可以參考它。
+- 在控制項上建立事件處理常式。
+- 提供控制項的名稱, 讓我們稍後可以參考它。
 
 當加入其中一項時, `ViewController.designer.cs`將會更新內的部分類別以反映變更。 這可讓您接著存取 View Controller 中的控制項。
 

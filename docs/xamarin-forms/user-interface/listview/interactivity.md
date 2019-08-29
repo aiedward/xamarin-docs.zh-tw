@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: 180ffa7cf723d841021a8bf7d1f1a285c882c103
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 3949dd85492a8181ee53e23b3ba2e986e59f8f47
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065554"
+ms.locfileid: "70121619"
 ---
 # <a name="listview-interactivity"></a>ListView 互動性
 
@@ -79,9 +79,9 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 內容動作可以在任何實作`Cell`子類別 （只要沒有正在使用群組標頭的形式） 建立`MenuItem`s，並將它們加入至`ContextActions`儲存格的集合。 您有下列屬性可以設定內容動作：
 
-* **文字**&ndash;功能表項目中顯示的字串。
-* **按下**&ndash;事件，當按一下項目。
-* **IsDestructive** &ndash; （選擇性） 若為 true 的項目不同的方式呈現在 iOS 上。
+- **文字**&ndash;功能表項目中顯示的字串。
+- **按下**&ndash;事件，當按一下項目。
+- **IsDestructive** &ndash; （選擇性） 若為 true 的項目不同的方式呈現在 iOS 上。
 
 內容的多個動作可以加入至資料格，但只有一個應有`IsDestructive`設定為`true`。 下列程式碼示範如何操作動作將會新增至`ViewCell`:
 

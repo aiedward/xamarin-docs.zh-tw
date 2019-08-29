@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 1e1bba499a14b92965a5fb544ccf321b0e453894
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: bd6f40a117734712941585b6ce0d630105e54693
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065444"
+ms.locfileid: "70121032"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>逐步解說：在 Xamarin 中使用觸控
 
@@ -96,9 +96,9 @@ ms.locfileid: "70065444"
     
     這個方法的運作方式是檢查`UITouch`物件, 如果存在, 則根據觸控發生的位置執行一些動作:
 
-    * _TouchImage 內部_–在標籤`Touches Began`中顯示文字並變更影像。
-    * _內部 DoubleTouchImage_ –如果筆勢是按兩下, 則變更所顯示的影像。
-    * _內部 DragImage_ –設定旗標, 表示已開始觸控。 方法`TouchesMoved`會使用此旗標來判斷是否`DragImage`應該在畫面周圍移動, 如我們在下一個步驟中所見。
+    - _TouchImage 內部_–在標籤`Touches Began`中顯示文字並變更影像。
+    - _內部 DoubleTouchImage_ –如果筆勢是按兩下, 則變更所顯示的影像。
+    - _內部 DragImage_ –設定旗標, 表示已開始觸控。 方法`TouchesMoved`會使用此旗標來判斷是否`DragImage`應該在畫面周圍移動, 如我們在下一個步驟中所見。
 
     上述程式碼只會處理個別的觸控, 如果使用者在螢幕上移動手指, 仍然沒有任何行為。 若要回應移動, 請`TouchesMoved`執行, 如下列程式碼所示:
 

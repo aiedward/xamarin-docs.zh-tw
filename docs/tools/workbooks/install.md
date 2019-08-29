@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: lobrien
 ms.author: laobri
 ms.date: 06/19/2018
-ms.openlocfilehash: d94a14bcd1486b7b64e9ce6d9fee6d36406b2710
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dd1e0838fbd3c3606021ddc996bf94cabc084f77
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511846"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119986"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝和需求
 
@@ -42,7 +42,7 @@ ms.locfileid: "68511846"
 
 #### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
-|應用程式平臺|OS 支援|附註|
+|應用程式平臺|OS 支援|注意|
 |--- |--- |--- |
 |Mac|僅在 Mac 上支援|
 |iOS|在 Mac 和 Windows 上支援|您必須在 Mac 上安裝 Xamarin. iOS 11.0 和 Xcode 9.0 或更新版本。 在 Windows 上執行 iOS 活頁簿需要 Mac 組建主機, 並在 Windows 上安裝上述所有和[遠端 iOS](~/tools/ios-simulator/index.md)模擬器。|
@@ -78,7 +78,7 @@ ms.locfileid: "68511846"
 
 從活頁簿的主功能表:
 
-* **協助 > 複製版本資訊**
+- **協助 > 複製版本資訊**
 
 #### <a name="instructions-for-workbooks-13-and-earlier"></a>活頁簿1.3 和更早版本的指示:
 
@@ -113,7 +113,7 @@ Visual Studio
 
 ## <a name="uninstall"></a>解除安裝
 
-### <a name="windows"></a>視窗
+### <a name="windows"></a>Windows
 
 視您取得活頁簿的方式而定, 您可能需要執行兩個卸載程式。 請檢查這兩項, 以完全卸載軟體。
 

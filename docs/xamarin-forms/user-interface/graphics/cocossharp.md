@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: a6077029a82577cccbf060f14cdd7586c2793a94
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d6440518149a4fab8e9667a2a41d3df818e2a879
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529262"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70120532"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
 
@@ -28,9 +28,9 @@ _CocosSharp 可用來加入應用程式的進階視覺效果中的精確的圖�
 
 CocosSharp 是一種有彈性且功能強大的技術，用於顯示圖形、 讀取具備觸控輸入、 播放音效，與管理內容。 本指南說明如何將 CocosSharp 新增至 Xamarin.Forms 應用程式。 它涵蓋下列資訊：
 
-* [CocosSharp 是什麼？](#what)
-* [新增 CocosSharp Nuget 套件](#nuget)
-* [逐步解說：將 CocosSharp 新增至 Xamarin. Forms 應用程式](#add)
+- [CocosSharp 是什麼？](#what)
+- [新增 CocosSharp Nuget 套件](#nuget)
+- [逐步解說：將 CocosSharp 新增至 Xamarin. Forms 應用程式](#add)
 
 <a name="what" />
 
@@ -39,11 +39,11 @@ CocosSharp 是一種有彈性且功能強大的技術，用於顯示圖形、 �
 [CocosSharp](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/index.md)是一個開放原始碼遊戲引擎，可在 Xamarin 平台上取得。
 CocosSharp 是執行階段有效的程式庫包括下列功能：
 
-* 使用`CCSprite`類別呈現影像
-* 使用`CCDrawNode`類別呈現圖形
-* 使用類別的`CCNode.Schedule`每個畫面格邏輯
-* 內容管理 (使用, 載入和卸載資源, 例如 .png 檔案)`CCTextureCache`
-* 使用類別的`CCAction`動畫
+- 使用`CCSprite`類別呈現影像
+- 使用`CCDrawNode`類別呈現圖形
+- 使用類別的`CCNode.Schedule`每個畫面格邏輯
+- 內容管理 (使用, 載入和卸載資源, 例如 .png 檔案)`CCTextureCache`
+- 使用類別的`CCAction`動畫
 
 CocosSharp 的主要焦點在於簡化跨平台的 2D 遊戲; 建立不過，它也可以是 Xamarin 表單應用程式增添絕佳的工具。 遊戲通常需要有效的轉譯和精確地控制視覺效果，因為 CocosSharp 可用來將強大的視覺效果和效果新增至非遊戲應用程式。
 
@@ -273,9 +273,9 @@ public class GameScene : CCScene
 
 上圖顯示像素尺寸外部的黑色文字中的畫面。 單位會顯示在內部的白色文字中的圖表。 以下是一些上方顯示的重要詳細資料：
 
-* CocosSharp 顯示的原點位於左下方。 向右移動會增加 X 值，並向上移增加的 Y 值。 請注意，要反轉的 Y 值相較於其他一些 2D 版面配置引擎，其中 (0，0) 是畫布的左上方。
-* CocosSharp 的預設行為是要維持其檢視的外觀比例。 由於在方格中的第一個資料列寬度比高度長，CocosSharp 不填滿的整個寬度其儲存格，虛線的白色矩形所示。 此行為可以變更，如中所述[處理 CocosSharp 中的多個解決方法指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/resolutions.md)。
-* 在此範例中，寬度與高度，無論規模大小的 100 個單位的顯示區域或其裝置的外觀比例，將會維持 CocosSharp。 這表示程式碼可以假設，X = 100 表示最右側的繫結 CocosSharp 的顯示，請在所有裝置上一致的保留配置。
+- CocosSharp 顯示的原點位於左下方。 向右移動會增加 X 值，並向上移增加的 Y 值。 請注意，要反轉的 Y 值相較於其他一些 2D 版面配置引擎，其中 (0，0) 是畫布的左上方。
+- CocosSharp 的預設行為是要維持其檢視的外觀比例。 由於在方格中的第一個資料列寬度比高度長，CocosSharp 不填滿的整個寬度其儲存格，虛線的白色矩形所示。 此行為可以變更，如中所述[處理 CocosSharp 中的多個解決方法指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/resolutions.md)。
+- 在此範例中，寬度與高度，無論規模大小的 100 個單位的顯示區域或其裝置的外觀比例，將會維持 CocosSharp。 這表示程式碼可以假設，X = 100 表示最右側的繫結 CocosSharp 的顯示，請在所有裝置上一致的保留配置。
 
 #### <a name="ccdrawnode-details"></a>Ccdrawnode 建立詳細資料
 

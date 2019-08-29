@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 0f92dca71f74266e1408cd65c842f729a9a648ce
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: cb71fc75b01621ed381f42b41df68fc80309f22c
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065670"
+ms.locfileid: "70121293"
 ---
 # <a name="touch-id-in-xamarinios"></a>Xamarin 中的 Touch ID
 
@@ -102,15 +102,15 @@ IOS 8 中稱為「_本機驗證_」的新架構, 可支援在裝置內進行此�
 
 若要利用本機驗證 API 來使用 Touch ID 而不 keychain, 有幾個函數可供我們使用。 以下詳細說明如下:
 
-* `CanEvaluatePolicy`–這只會查看裝置是否能夠接受 Touch ID。
-* `EvaluatePolicy`–這會啟動驗證作業並顯示 UI, 並`true`傳回或`false`回答。
-* `DeviceOwnerAuthenticationWithBiometrics`–這是可以用來顯示 [Touch ID] 畫面的原則。 值得注意的是, 此處沒有密碼回溯機制, 您應該改為在應用程式中執行此回復, 讓使用者略過觸控識別碼驗證。
+- `CanEvaluatePolicy`–這只會查看裝置是否能夠接受 Touch ID。
+- `EvaluatePolicy`–這會啟動驗證作業並顯示 UI, 並`true`傳回或`false`回答。
+- `DeviceOwnerAuthenticationWithBiometrics`–這是可以用來顯示 [Touch ID] 畫面的原則。 值得注意的是, 此處沒有密碼回溯機制, 您應該改為在應用程式中執行此回復, 讓使用者略過觸控識別碼驗證。
 
 使用本機驗證有幾個注意事項, 如下所示:
 
-* 如同 Keychain, 它只能在前景中執行。 在背景執行緒上呼叫它會導致它失敗。
-* 請記住, 原則評估可能會失敗。 [密碼] 按鈕將需要實作為回復。
-* 您必須提供`localizedReason`來說明為何需要驗證。 這有助於與使用者建立信任關係。
+- 如同 Keychain, 它只能在前景中執行。 在背景執行緒上呼叫它會導致它失敗。
+- 請記住, 原則評估可能會失敗。 [密碼] 按鈕將需要實作為回復。
+- 您必須提供`localizedReason`來說明為何需要驗證。 這有助於與使用者建立信任關係。
 
 接下來, 在下一節中, 我們將探討如何執行 API, 將這些注意事項納入考慮。
 

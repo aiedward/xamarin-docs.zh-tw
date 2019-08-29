@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 05b8be21373930ae2b501c84757b7be11f794aa9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: d6cb1e407740fa4c182639a77e3725baec4286ac
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524617"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119847"
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
@@ -79,9 +79,9 @@ Xamarin. Android JAVA 系結連結**庫**會嘗試將系結現有 Android 程式
 如同我們已瞭解的, 系結產生器會使用檔案**Metadata .xml**來影響系結元件的建立。
 元資料格式使用[XPath](https://www.w3.org/TR/xpath/)語法, 幾乎與[GAPI 中繼資料](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)指南中所述的*GAPI 中繼資料*完全相同。 這項實現幾乎是完整的 XPath 1.0 實作為, 因此支援1.0 標準中的專案。 此檔案是功能強大的 XPath 型機制, 可變更、新增、隱藏或移動 API 檔案中的任何元素或屬性。 中繼資料規格中的所有規則元素都包含 path 屬性, 用以識別要套用規則的節點。 規則會依照下列順序套用:
 
-* **新增節點**&ndash;將子節點附加至 path 屬性所指定的節點。
-* **attr**&ndash;設定 path 屬性所指定之元素的屬性值。
-* **移除-node**&ndash;移除符合指定 XPath 的節點。
+- **新增節點**&ndash;將子節點附加至 path 屬性所指定的節點。
+- **attr**&ndash;設定 path 屬性所指定之元素的屬性值。
+- **移除-node**&ndash;移除符合指定 XPath 的節點。
 
 以下是**中繼資料 .xml**檔案的範例:
 
@@ -248,8 +248,8 @@ NavigationManager.2DSignNextManueverEventArgs
 
 模糊 JAVA 程式庫的工具可能會干擾 Xamarin 的系結產生器, 以及它產生C#包裝函式類別的能力。 模糊類別的特性包括: 
 
-* 類別名稱會包含 **$** ，也就是 **$.class**
-* 類別名稱完全洩露小寫字元, 亦即**類別**
+- 類別名稱會包含 **$** ，也就是 **$.class**
+- 類別名稱完全洩露小寫字元, 亦即**類別**
 
 此程式碼片段是如何產生「未混淆」 C#類型的範例:
 
