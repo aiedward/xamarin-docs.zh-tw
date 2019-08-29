@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2018
-ms.openlocfilehash: 9f8a092b63da413974f387aca02d81efef9c1625
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: c434c39c12403bfc61e146041eb2a0780f29eb3e
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528314"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119180"
 ---
 # <a name="passkit-in-xamarinios"></a>在 Xamarin 中 PassKit
 
@@ -326,9 +326,9 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 
 傳遞可以透過下列方式新增至錢包:
 
-* **管道應用程式**–這些不會直接操作傳遞, 而是只會載入傳遞檔案, 並提供使用者將其新增至錢包的選項。 
+- **管道應用程式**–這些不會直接操作傳遞, 而是只會載入傳遞檔案, 並提供使用者將其新增至錢包的選項。 
 
-* **附屬應用程式**–這些是由提供者所撰寫, 以散發階段, 並提供額外的功能來流覽或編輯它們。 Xamarin iOS 應用程式可完整存取 PassKit API, 以建立及操作階段。 然後, 可以使用`PKAddPassesViewController`將傳遞新增至錢包。 本檔的**隨附應用程式**一節會更詳細地說明此流程。
+- **附屬應用程式**–這些是由提供者所撰寫, 以散發階段, 並提供額外的功能來流覽或編輯它們。 Xamarin iOS 應用程式可完整存取 PassKit API, 以建立及操作階段。 然後, 可以使用`PKAddPassesViewController`將傳遞新增至錢包。 本檔的**隨附應用程式**一節會更詳細地說明此流程。
 
 ### <a name="conduit-applications"></a>管道應用程式
 
