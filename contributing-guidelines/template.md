@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: eac7d316b65b57231d2fc25ef6b859293650d3f8
-ms.sourcegitcommit: 6be6374664cd96a7d924c2e0c37aeec4adf8be13
+ms.openlocfilehash: e4c8e404f447dd88b338123335a291bc9f23e449
+ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "53709590"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70119011"
 ---
 # <a name="metadata-and-markdown-template"></a>中繼資料和 Markdown 範本
 
@@ -42,7 +42,7 @@ ms.custom: Analytics data, a field that gets imported into SkyEye so you can use
 
 重點提示：
 
-- 請「務必」在中繼資料項目的值和冒號 (:) 之間加上一個空格。
+- 請「務必」  在中繼資料項目的值和冒號 (:) 之間加上一個空格。
 - 選擇性的中繼資料元素沒有值，請將它刪除 (請勿保留空白，或者使用 "na")。
 - 在值中出現冒號 (例如標題) 會中斷中繼資料剖析器。 在此情況下，請使用雙引號括住標題 (例如，`title: "Writing .NET Core console apps: An advanced step-by-step guide"`)。
 - **title**：此標題會出現在搜尋引擎的搜尋結果中。 此標題不需要與 H1 標題中的標題相同，且應包含最多 60 個字元。
@@ -65,12 +65,12 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 ## <a name="file-name"></a>檔案名稱
 
 檔案名稱使用下列規則︰
-* 只包含小寫字母、數字和連字號。
-* 不使用空格或標點符號。 使用連字號來分隔檔名中的文字和數字。
-* 使用明確的動作動詞，例如 develop、buy、build、troubleshoot。 不使用 -ing 字詞。
-* 不使用短字詞，例如 a、and、the、in、or 等等。
-* 必須為 Markdown 格式且使用副檔名 .md。
-* 盡可能保持檔名簡短。 它們會是文章 URL 的一部分。
+- 只包含小寫字母、數字和連字號。
+- 不使用空格或標點符號。 使用連字號來分隔檔名中的文字和數字。
+- 使用明確的動作動詞，例如 develop、buy、build、troubleshoot。 不使用 -ing 字詞。
+- 不使用短字詞，例如 a、and、the、in、or 等等。
+- 必須為 Markdown 格式且使用副檔名 .md。
+- 盡可能保持檔名簡短。 它們會是文章 URL 的一部分。
 
 
 
@@ -82,7 +82,7 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 
 標題應使用 atx 樣式，也就是在行開頭以 1 至 6 個井字號 (#) 來表示標題，這會對應到 HTML 標題層級 H1 至 H6。 上面使用的是第一和第二層級標題的範例。
 
-請「務必」確定主題中只有一個第一層級標題 (H1)，該標題會顯示為頁面標題。
+請「務必」  確定主題中只有一個第一層級標題 (H1)，該標題會顯示為頁面標題。
 
 如果您的標題結尾是 `#` 字元，則您必須在結尾另外加上一個 `#` 以使標題正確轉譯。 例如，`# Async Programming in F# #`。
 
@@ -95,11 +95,11 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 
 ## <a name="text-styling"></a>文字樣式
 
-「斜體」用於檔案、資料夾、路徑 (較長的項目請分割為各行) - 新詞彙 - URL (除非轉譯為連結，這是預設值)。
+「斜體」  用於檔案、資料夾、路徑 (較長的項目請分割為各行) - 新詞彙 - URL (除非轉譯為連結，這是預設值)。
 
 **粗體** 用於 UI 元素。
 
-## <a name="links"></a>連結
+## <a name="links"></a>「連結」
 
 ### <a name="internal-links"></a>內部連結
 
