@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 667a3726a2d214c9e33e20a73f629c9ca532eab1
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 36b5ace881ba8f7fb45fef9d0350ffca67e0c951
+ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120468"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169261"
 ---
 # <a name="binding-objective-c-libraries"></a>系結目標-C 程式庫
 
@@ -325,7 +325,7 @@ IntPtr Constructor (CGRect frame);
 
 ### <a name="binding-protocols"></a>系結通訊協定
 
-如 API 設計檔中所述, 在[討論模型和通訊協定](~/ios/internals/api-design/index.md#Models)一節中, Xamarin 會將目標 C 通訊協定對應至已標記為的類別。[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
+如 API 設計檔中所述, 在[討論模型和通訊協定](~/ios/internals/api-design/index.md#models)一節中, Xamarin 會將目標 C 通訊協定對應至已標記為的類別。[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)
 特性. 這通常是在執行目標-C 委派類別時使用。
 
 一般系結類別和委派類別之間的最大差異在於, 委派類別可能會有一或多個選擇性方法。
@@ -1404,4 +1404,3 @@ class Demo {
 ## <a name="related-links"></a>相關連結
 
 - [系結範例](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
- 

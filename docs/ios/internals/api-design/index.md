@@ -1,26 +1,26 @@
 ---
 title: Xamarin iOS API 設計
-description: 本檔說明一些用來架構 Xamarin. iOS Api 的指導方針, 以及這些原則與目標-C 的關係。
+description: '指導原則: 用來架構 Xamarin. iOS Api, 以及它們與目標-C 的關係。'
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 39786fa9aef526488837ce2fe7c078a23d12cc10
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: f453e6a7d4f516ee87dda25141cfd9ff81b9110d
+ms.sourcegitcommit: 21182d07d4bbddc26cd36f1c5b86b79011f6984a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889946"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169254"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin iOS API 設計
 
 除了屬於 Mono 的核心基類庫, [Xamarin](http://www.xamarin.com/iOS)也隨附各種 ios api 的系結, 可讓開發人員使用 Mono 建立原生 iOS 應用程式。
 
-在 Xamarin 的核心中, 有一個 interop 引擎可將C#世界與目標-c 的世界銜接, 以及以 iOS C 為基礎的 api 系結 (例如 CoreGraphics 和[OpenGL ES](#OpenGLES))。
+在 Xamarin 的核心中, 有一個 interop 引擎可將C#世界與目標-c 的世界銜接, 以及以 iOS C 為基礎的 api 系結 (例如 CoreGraphics 和[OpenGL ES](#opengles))。
 
-要與目標 C 程式碼通訊的低層級執行時間位於[MonoTouch. ObjCRuntime](#MonoTouch.ObjCRuntime)。 在此之上, 會提供[Foundation](#MonoTouch.Foundation)、CoreFoundation 和[UIKit](#MonoTouch.UIKit)的系結。
+要與目標 C 程式碼通訊的低層級執行時間位於[MonoTouch. ObjCRuntime](#objcruntime)。 在此之上, 會提供[Foundation](#foundation)、CoreFoundation 和[UIKit](#uikit)的系結。
 
 ## <a name="design-principles"></a>設計原則
 
@@ -80,16 +80,12 @@ ms.locfileid: "69889946"
 
 Xamarin 包含許多構成*Xamarin 設定檔*的元件。 [[元件](~/cross-platform/internals/available-assemblies.md)] 頁面包含詳細資訊。
 
-### <a name="major-namespaces"></a>主要命名空間 
-
-<a name="MonoTouch.ObjCRuntime" />
+### <a name="major-namespaces"></a>主要命名空間
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
 [ObjCRuntime](xref:ObjCRuntime)命名空間可讓開發人員橋接與C#目標-C 之間的世界。
 這是根據 Cocoa # 和 Gtk # 的經驗, 特別針對 iOS 所設計的新系結。
-
-<a name="MonoTouch.Foundation" />
 
 #### <a name="foundation"></a>打下
 
@@ -105,7 +101,6 @@ Xamarin 包含許多構成*Xamarin 設定檔*的元件。 [[元件](~/cross-plat
 
 如需有關系結 Api 的詳細資訊, 請參閱 < [Xamarin](~/cross-platform/macios/binding/binding-types-reference.md)系結產生器一節。
 
-
 ##### <a name="nsobject"></a>NSObject
 
 [NSObject](xref:Foundation.NSObject)類型是所有目標 C 系結的基礎。 Xamarin iOS 類型會從 iOS CocoaTouch Api 鏡像兩種類型的類別: C 類型 (通常稱為 CoreFoundation 類型) 和目標-C 類型 (這些全都衍生自 NSObject 類別)。
@@ -115,7 +110,6 @@ Xamarin 包含許多構成*Xamarin 設定檔*的元件。 [[元件](~/cross-plat
 雖然 Mono 會提供所有物件的垃圾收集, `Foundation.NSObject`但會執行[IDisposable](xref:System.IDisposable)介面。 這表示您可以明確釋放任何指定 NSObject 的資源, 而不需要等候垃圾收集行程啟動。 當您使用繁重的 NSObjects (例如, UIImages 可能會保存大型資料區塊的指標) 時, 這是很重要的。
 
 如果您的型別需要執行決定性的結束, 請覆寫[NSObject](xref:Foundation.NSObject.Dispose(System.Boolean))的參數為「bool 處置」, 而如果設定為 true, 則表示會呼叫您的 dispose 方法, 因為使用者已明確呼叫物件上的 Dispose ()。 如果值為 false, 則表示您的 Dispose (bool 處置) 方法是從完成項執行緒上的 finalizer 呼叫。
-
 
 ##### <a name="categories"></a>Categories
 
@@ -169,7 +163,7 @@ public static class MyStringCategory
 [Category (typeof (UIViewController))]
 public static class MyViewControllerCategory
 {
-    [Export ("shouldAudoRotate")]
+    [Export ("shouldAutoRotate")]
     static bool GlobalRotate ()
     {
         return true;
@@ -190,7 +184,6 @@ class Rotation_IOS6 {
 }
 ```
 
-
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
 PreserveAttribute 是一個自訂屬性, 用來告訴 mtouch –在處理應用程式以減少其大小時, 會在階段中保留類型或類型的成員。
@@ -201,26 +194,21 @@ PreserveAttribute 是一個自訂屬性, 用來告訴 mtouch –在處理應用�
 
 您可以將此屬性套用到某個類型的每個成員，或是套用到類型本身。 如果您想要保留整個類型, 可以在類型上使用語法 [保留 (AllMembers = true)]。
 
-<a name="MonoTouch.UIKit" />
-
 #### <a name="uikit"></a>UIKit
 
 [UIKit](xref:UIKit)命名空間包含以C#類別的形式組成 CocoaTouch 之所有 UI 元件的一對一對應。 API 已修改為遵循C#語言中使用的慣例。
 
-C#委派是針對一般作業提供的。 如需詳細資訊, 請參閱[委派](#Delegates)一節。
-
-<a name="OpenGLES" />
+C#委派是針對一般作業提供的。 如需詳細資訊, 請參閱[委派](#delegates)一節。
 
 #### <a name="opengles"></a>OpenGLES
 
 針對 OpenGLES, 我們會將[修改過](xref:OpenTK)的[opentk 簡介](http://www.opentk.com/)API 版本散發給已修改為使用 CoreGraphics 資料類型和結構的 OpenGL 的物件導向系結, 以及僅公開 iOS 上可用的功能。
 
-OpenGLES 1.1 功能可透過 ES11.GL 類型取得, 記載于[此處](xref:OpenTK.Graphics.ES11.GL)的類型。
+OpenGLES 1.1 功能可透過[ES11.GL 類型](xref:OpenTK.Graphics.ES11.GL)來取得。
 
-OpenGLES 2.0 功能可透過 ES20.GL 類型取得, 記載于[此處](xref:OpenTK.Graphics.ES20.GL)的類型。
+OpenGLES 2.0 功能可透過[ES20.GL 類型](xref:OpenTK.Graphics.ES20.GL)來取得。
 
-OpenGLES 3.0 功能可透過 ES30.GL 類型取得, 記載于[此處](xref:OpenTK.Graphics.ES30.GL)的類型。
-
+OpenGLES 3.0 功能可透過[ES30.GL 類型](xref:OpenTK.Graphics.ES30.GL)來取得。
 
 ### <a name="binding-design"></a>系結設計
 
@@ -229,8 +217,6 @@ OpenGLES 3.0 功能可透過 ES30.GL 類型取得, 記載于[此處](xref:OpenTK
 就像 P/Invoke 是在 Windows 和 Linux 上叫用原生程式庫一樣有用的工具, 或者因為 IJW 支援可用於 Windows 上的 COM Interop, 但 Xamarin 則會擴充運行C#時間, 以支援將物件系結至目標 C 物件。
 
 建立 Xamarin iOS 應用程式的使用者不需要接下來幾節中的討論, 但可協助開發人員瞭解如何完成工作, 以及在建立更複雜的應用程式時提供協助。
-
-
 
 #### <a name="types"></a>型別
 
@@ -252,14 +238,11 @@ UIView [] GetViews ();
 
 此外, 在**Classic API** , 而不是`CGRect`公開`CGPoint`和`CGSize` CoreGraphics API, 我們會將`System.Drawing` `RectangleF`它們取代為執行, `PointF`並`SizeF`因為他們可以協助開發人員保留使用 opentk 簡介的現有 OpenGL 程式碼。 使用新的64位**Unified API**時, 應該使用 CoreGraphics API。
 
-<a name="Inheritance" />
-
 #### <a name="inheritance"></a>繼承
 
 Xamarin iOS API 的設計可讓開發人員以擴充C#類型的相同方式擴充原生的目標 C 類型、在衍生類別上使用 "override" 關鍵字, 以及使用 "base" C#連結到基底執行關鍵字.
 
 這項設計可讓開發人員避免在開發過程中處理目標 C 選取器, 因為整個目標 C 系統已包裝在 Xamarin 程式庫內。
-
 
 #### <a name="types-and-interface-builder"></a>類型和 Interface Builder
 
@@ -274,9 +257,6 @@ public partial class void MyView : UIView {
 }
 ```
 
-<a name="Delegates" />
-
-
 #### <a name="delegates"></a>委派
 
 目標-C, C#並對每種語言的單字委派有不同的意義。
@@ -289,20 +269,17 @@ public partial class void MyView : UIView {
 - 為數據視覺效果控制項執行模型。
 - 以驅動控制項的行為。
 
-
 程式設計模式的設計, 是為了將衍生類別的建立最小化, 以改變控制項的行為。 這個解決方案與其他 GUI 工具組在多年來進行的精神很類似:Gtk 的信號、Qt 位置、Winforms 事件、WPF/Silverlight 事件等等。 為了避免有數百個介面 (每個動作各一個), 或要求開發人員執行不需要的方法太多, 目標-C 支援選擇性的方法定義。 這不同于C#需要實作為所有方法的介面。
 
 在 [目標-C] 類別中, 您會看到使用此程式設計模式的類別會公開一個`delegate`屬性 (通常稱為), 這是執行介面的必要部分以及零個或更多的選擇性元件所需的。
 
 在 Xamarin 中, 會提供系結至這些委派的三種互斥機制:
 
-1. [Via 事件](#Via_Events)。
-2. [透過屬性的`Delegate`強型別](#StrongDelegate)
-3. [透過`WeakDelegate`屬性鬆散輸入](#WeakDelegate)
+1. [Via 事件](#via-events)。
+2. [透過屬性的`Delegate`強型別](#strongly-typed-via-a-delegate-property)
+3. [透過`WeakDelegate`屬性鬆散輸入](#loosely-typed-via-the-weakdelegate-property)
 
 例如, 請考慮[UIWebView](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)類別。 這會分派給指派給[委派](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)屬性的[UIWebViewDelegate](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)實例。
-
-<a name="Via_Events" />
 
 ##### <a name="via-events"></a>Via 事件
 
@@ -320,7 +297,6 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.LoadStarted += (o, e) => startTime = DateTime.Now;
 web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
-
 
 ##### <a name="via-properties"></a>Via 屬性
 
@@ -341,8 +317,6 @@ void SetupTextField (UITextField tf)
 ```
 
 在此情況下, `UITextField`的屬性會採用傳回bool值的委派做為引數,並判斷此欄位是否應該在按下[返回]按鈕時執行某些動作。`ShouldReturn` 在我們的方法中, 我們會將*true*傳回給呼叫者, 但我們也會從螢幕中移除鍵盤 (當欄位`ResignFirstResponder`呼叫時就會發生這種情況)。
-
-<a name="StrongDelegate"/>
 
 ##### <a name="strongly-typed-via-a-delegate-property"></a>透過委派屬性的強型別
 
@@ -379,8 +353,6 @@ web.Delegate = new Notifier ();
 
 此模式也會用來提供幾個控制項的隨選資料。 例如, [UITableView](xref:UIKit.UITableView)控制項是功能強大的資料表轉譯控制項–而且外觀和內容都是由[UITableViewDataSource](xref:UIKit.UITableViewDataSource)的實例所驅動
 
-<a name="WeakDelegate"/>
-
 ### <a name="loosely-typed-via-the-weakdelegate-property"></a>透過 WeakDelegate 屬性鬆散輸入
 
 除了強型別屬性之外, 還有一個弱型別委派, 可讓開發人員在需要時以不同的方式系結專案。
@@ -413,12 +385,11 @@ web.WeakDelegate = new Notifier ();
 
 請注意, 一旦`WeakDelegate`指派屬性之後`Delegate` , 就不會使用屬性。 此外, 如果您在想要 [匯出] 的繼承基類中執行方法, 您必須將它設為公用方法。
 
-
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c35"></a>將目標-C 委派模式對應到 C&#35;
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c"></a>將目標-C 委派模式對應到 C\#
 
 當您看到如下所示的目標-C 範例:
 
-```csharp
+```objc
 foo.delegate = [[SomethingDelegate] alloc] init]
 ```
 
@@ -430,8 +401,7 @@ foo.Delegate = new SomethingDelegate ();
 
 在 Xamarin 中, 我們已提供對應至目標-C 委派類別的強型別類別。 若要使用這些專案, 您將會子類別化並覆寫由 Xamarin. iOS 的實作為定義的方法。 如需其使用方式的詳細資訊, 請參閱下面的「模型」一節。
 
-
-##### <a name="mapping-delegates-to-c35"></a>將委派對應至 C&#35;
+### <a name="mapping-delegates-to-c"></a>將委派對應至 C\#
 
 UIKit 一般會使用兩種形式的目標-C 委派。
 
@@ -474,7 +444,6 @@ web.LoadStarted += () => { startTime = DateTime.Now; }
 web.LoadFinished += () => { endTime = DateTime.Now; }
 ```
 
-
 #### <a name="responding-to-events"></a>回應事件
 
 在目標 C 程式碼中, 有時候多個控制項的多個控制項和資訊提供者的事件處理常式, 將裝載于相同的類別中。 這是可能的, 因為類別會回應訊息, 而且只要類別回應訊息, 就可以將物件連結在一起。
@@ -505,8 +474,6 @@ public class MyCallbacks : NSObject {
 
 使用這種程式設計樣式時, 請確定C#參數符合執行時間引擎將傳遞的實際類型。
 
-<a name="Models" />
-
 #### <a name="models"></a>模型
 
 在 UIKit 儲存設施中, 或在使用協助程式類別來執行的回應中, 這些通常稱為「委派」 (delegate), 並實作為通訊協定。
@@ -514,7 +481,6 @@ public class MyCallbacks : NSObject {
 目標-C 通訊協定就像介面, 但支援選擇性的方法, 也就是說, 並非所有方法都必須執行, 才能讓通訊協定正常操作。
 
 有兩種方式可以執行模型。 您可以手動執行, 或使用現有的強型別定義。
-
 
 當您嘗試執行的類別尚未受到 Xamarin 的系結時, 需要手動機制。 這麼簡單:
 
@@ -566,8 +532,7 @@ public class AppController : UIApplicationDelegate {
 
 其優點是不需要深入探索目標 C 標頭檔來尋找選取器、引數的類型, 或與的對應C#, 以及從 Visual Studio for Mac 取得 intellisense 以及強式類型
 
-
-#### <a name="xib-outlets-and-c35"></a>XIB 輸出和 C&#35;
+#### <a name="xib-outlets-and-c"></a>XIB 輸出和 C\#
 
 > [!IMPORTANT]
 > 本節說明使用 XIB 檔時的 IDE 與輸出口的整合。 使用 Xamarin Designer for iOS 時, 會在 IDE 的 [屬性] 區段中, 于 [**識別 > 名稱**] 下輸入名稱來取代此項, 如下所示:
