@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9fcd4820b5e22254356250ef2d26714dc32a59f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c818cac3b26e94710a64938a80690b8d4946320
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655214"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200209"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 安全性和隱私權功能
 
 _本文涵蓋如何使用 iOS 中的安全性和隱私權, 以及它們如何影響 Xamarin iOS 應用程式。_
 
 Apple 在 iOS 10 (及更新版本) 中提供了許多安全性和隱私權方面的增強功能, 可協助開發人員改善其應用程式的安全性, 並確保使用者的隱私權。 本文將討論如何在 Xamarin iOS 應用程式中執行這些功能。
-    
+
 <a name="General-Enhancements" />
 
 ## <a name="general-enhancements"></a>一般增強功能
@@ -51,9 +51,9 @@ IOS 10 中的安全性和隱私權已進行下列一般變更:
 - **隱私權-健康情況更新使用方式描述**(`NSHealthUpdateUsageDescription`)-可讓開發人員描述應用程式為何想要編輯使用者的健康情況資料。 如需詳細資訊, 請參閱 Apple 的[HKHealthStore 類別參考](https://developer.apple.com/reference/healthkit/hkhealthstore)。
 - **隱私權-HomeKit 使用方式描述**(`NSHomeKitUsageDescription`)-可讓開發人員描述應用程式想要存取使用者的 HomeKit 設定資料的原因。
 - **隱私權-位置一律使用方式描述**(`NSLocationAlwaysUsageDescription`)-可讓開發人員描述應用程式為何想要一律擁有使用者位置的存取權。
-- 不再**隱私權-位置使用方式描述**(`NSLocationUsageDescription`)-可讓開發人員描述應用程式想要存取使用者位置的原因。 *下IOS 8 (和更新版本) 中的這個金鑰已被取代。請`NSLocationAlwaysUsageDescription`改用`NSLocationWhenInUseUsageDescription`或。*
+- 不再**隱私權-位置使用方式描述**(`NSLocationUsageDescription`)-可讓開發人員描述應用程式想要存取使用者位置的原因。 *注意：IOS 8 (和更新版本) 中的這個金鑰已被取代。請`NSLocationAlwaysUsageDescription`改用`NSLocationWhenInUseUsageDescription`或。*
 - **隱私權-使用中的位置描述**(`NSLocationWhenInUseUsageDescription`)-可讓開發人員描述應用程式在執行時, 要存取使用者位置的原因。
-- 不再**隱私權-媒體櫃使用方式描述**-可讓開發人員描述應用程式想要存取使用者媒體櫃的原因。 *下IOS 8 (和更新版本) 中的這個金鑰已被取代。請`NSAppleMusicUsageDescription`改用。*
+- 不再**隱私權-媒體櫃使用方式描述**-可讓開發人員描述應用程式想要存取使用者媒體櫃的原因。 *注意：IOS 8 (和更新版本) 中的這個金鑰已被取代。請`NSAppleMusicUsageDescription`改用。*
 - **隱私權-麥克風使用方式描述**(`NSMicrophoneUsageDescription`)-可讓開發人員描述應用程式想要存取裝置麥克風的原因。
 - **隱私權-動作使用方式描述**(`NSMotionUsageDescription`)-可讓開發人員描述應用程式想要存取裝置加速計的原因。
 - **隱私權-相片媒體櫃使用方式描述**(`NSPhotoLibraryUsageDescription`)-可讓開發人員描述應用程式為何要存取使用者的相片媒體櫃。
@@ -94,7 +94,7 @@ Visual Studio 目前不支援從預設的 iOS 資訊清單編輯器中編輯**pl
 
 若要設定任何隱私權金鑰, 請執行下列動作:
 
-1. 在 [方案總管]  中，按兩下 [Info.plist]  檔案以開啟它進行編輯。
+1. 在 [方案總管] 中，按兩下 [Info.plist] 檔案以開啟它進行編輯。
 2. 在畫面底部, 切換至 [**來源**] 視圖。
 3. 將新**專案**新增至清單。
 4. 從下拉式清單中選取隱私權金鑰 (例如 [**隱私權-HomeKit 使用方式描述**]): 

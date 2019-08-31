@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: 4f2d16ca2ff258da1b65bf7c7174c989ead7782c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 09c20b776f2c5d4ddd36e8b515f5bcbf6d92d7a4
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527361"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199700"
 ---
 # <a name="using-adonet-with-xamarinios"></a>使用 ADO.NET 搭配 Xamarin. iOS
 
@@ -56,7 +56,7 @@ Xamarin 具有可在 iOS 上取得之 SQLite 資料庫的內建支援, 並使用
     ```
 
     如先前所述, 不應在不同的執行緒之間重複使用連接。 如果有疑問, 請視需要建立連線, 並在完成時將它關閉;但要注意的是, 這項作業的執行頻率高於需求。
-    
+
 3. **建立和執行資料庫命令**-一旦有了連接, 我們就可以對它執行任意 SQL 命令。 下列程式碼顯示正在執行的 CREATE TABLE 語句。
 
     ```csharp

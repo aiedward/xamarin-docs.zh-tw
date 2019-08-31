@@ -7,38 +7,38 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/09/2018
-ms.openlocfilehash: 0b8f3aa736cba6e70fbf346766499c23a9bbe270
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1e746a44deb024894a5d1f94fab21128126287e8
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61418204"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198789"
 ---
 # <a name="where-can-i-find-the-dsym-file-to-symbolicate-ios-crash-logs"></a>在哪裡可以找到用來將 iOS 當機記錄檔符號化的 .dSYM 檔案？
 
-建置 iOS 應用程式與 Visual Studio for Mac 或 Visual Studio 2017，當需要當機報告符號化的.dSYM 檔案會置於相同的目錄階層，做為您的應用程式專案檔 (.csproj)。 確切的位置取決於您的專案組建設定：
+建立具有 Visual Studio for Mac 或 Visual Studio 2017 的 iOS 應用程式時, 將損毀報告所需的 dSYM 檔案將會放在與您應用程式的專案檔 (.csproj) 相同的目錄階層中。 確切的位置取決於您專案的組建設定:
 
-- 如果您已啟用裝置專用的組建，.dSYM 位於下列目錄：
+- 如果您已啟用裝置特定組建, 則可以在下列目錄中找到 dSYM:
 
-    **&lt;project directory&gt;/bin/&lt;platform&gt;/&lt;configuration&gt;/device-builds/&lt;device&gt;-&lt;os-version&gt;/**
+    **&lt;專案目錄&gt;/bin/&lt;平臺&gt;設定/device-builds/裝置&gt; &gt; &lt; / &lt; - &lt;作業系統版本&gt;/**
 
     例如：
   
     **TestApp/bin/iPhone/Release/device-builds/iphone8.4-11.3.1/**
 
-- 如果您尚未啟用裝置專用的組建，.dSYM 位於下列目錄：
+- 如果您尚未啟用裝置特定組建, 則可以在下列目錄中找到 dSYM:
 
-    **&lt;專案目錄&gt;/bin/&lt;平台&gt;/&lt;組態&gt;/**
+    **&lt;專案目錄&gt;/bin/&lt;平臺&gt;設定/ &lt;&gt;/**
 
-    例如: 
+    例如：
 
     **TestApp/bin/iPhone/Release/**
 
 > [!NOTE]
-> 建置程序的一部分，Visual Studio 2017，請從 Windows 到 Mac 組建主機複製符號化的.dSYM 檔案。 如果看不到在 Windows 上的符號化的.dSYM 檔案，請確定您已設定您的應用程式建置設定，以[建立.ipa 檔](~/ios/deploy-test/app-distribution/ipa-support.md)。
+> 在建立程式期間, Visual Studio 2017 會將 dSYM 檔案從 Mac 組建主機複製到 Windows。 如果您在 Windows 上看不到 dSYM 檔案, 請確定您已設定應用程式的組建設定, 以[建立 .ipa](~/ios/deploy-test/app-distribution/ipa-support.md)檔案。
 
 ## <a name="see-also"></a>另請參閱
 
-- [Symbolicating iOS 當機的檔案 (Xamarin.iOS)](http://jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
-- [Demystifying iOS 應用程式當機記錄檔](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
+- [Symbolicating iOS 損毀檔案 (Xamarin. iOS)](https://www.jmillerdev.net/symbolicating-ios-crash-files-xamarin-ios/)
+- [揭密 iOS 應用程式損毀記錄](https://www.raywenderlich.com/23704/demystifying-ios-application-crash-logs)
 

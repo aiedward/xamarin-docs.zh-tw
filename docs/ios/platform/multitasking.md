@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: 98b68423012fad479f3949452d53c2a49e2a677e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c3f0130e96ae61838b9a7abcd68ccd219a327d4d
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654303"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198477"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin 中 iPad 的多工作業
 
@@ -57,7 +57,7 @@ iOS 9 增加了多工支援, 可在特定 iPad 硬體上同時執行兩個應用
 
 ## <a name="about-multitasking-for-ipad"></a>關於 iPad 的多工作業
 
-iOS 9 在 iPad 上提供新的多工功能, 包含_投影片_、_分割視圖_(iPad Air 2、iPad 迷你4和 ipad Pro) 和  圖片。 我們將在下列各節中進一步瞭解這些功能。
+iOS 9 在 iPad 上提供新的多工功能, 包含_投影片_、_分割視圖_(iPad Air 2、iPad 迷你4和 ipad Pro) 和圖片。 我們將在下列各節中進一步瞭解這些功能。
 
 <a name="Slide-Over" />
 

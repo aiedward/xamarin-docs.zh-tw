@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 42749bf07f3b0239a550e66247fc0377fdc1a0b4
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 0d93978d6f7b3dff6d0d7ebf7c9f9afbe3572079
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121378"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199917"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 資料表視圖
 
@@ -69,7 +69,7 @@ Apple 對於使用資料表視圖儲存格有下列建議:
 若要開始，請執行下列動作：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. 在 Visual Studio for Mac 中, 啟動新的 tvOS 應用程式專案, 然後選取 [ **tvOS**  >  **app**  > **單一視圖應用程式**], 然後按 [**下一步]** 按鈕: 
 
     [![](table-views-images/table02.png "選取單一視圖應用程式")](table-views-images/table02.png#lightbox)
@@ -112,9 +112,9 @@ Apple 對於使用資料表視圖儲存格有下列建議:
 
     [![](table-views-images/table15.png "UI 版面配置")](table-views-images/table15.png#lightbox)
 1. 將您的變更儲存至分鏡腳本。
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. 在 Visual Studio 中, 啟動新的 tvOS 應用程式專案, 然後選取 [ **tvOS**  > **單一視圖應用程式**], 並輸入您的應用程式名稱。 按一下 [確定] 按鈕以建立新的解決方案: 
 
     [![](table-views-images/table02-vs.png "選取單一視圖應用程式")](table-views-images/table02-vs.png#lightbox)
@@ -153,7 +153,7 @@ Apple 對於使用資料表視圖儲存格有下列建議:
 
     [![](table-views-images/table15.png "UI 版面配置")](table-views-images/table15.png#lightbox)
 1. 將您的變更儲存至分鏡腳本。
-    
+
 -----
 
 <a name="Designing-a-Data-Model" />

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/25/2018
-ms.openlocfilehash: 6ab1b4ad5493075e8806190e77f6d234354af9ff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ab82b98351b95fbdea9c33a9eae7142c7a54fc77
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648965"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200301"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>在 Xamarin 中使用 tvOS 進度指示器
 
@@ -46,7 +46,7 @@ Apple 具有下列使用進度列的建議:
 在 tvOS 應用程式中使用進度列指示器最簡單的方式, 就是使用 iOS 設計工具將它新增至應用程式的 UI。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. 在  **Solution Pad**中, 按兩下**主要**的分鏡腳本檔案, 並將其開啟以進行編輯。
 
 2. 從 [**工具箱**] 將**活動指標**拖曳至 [view]: 
@@ -72,7 +72,7 @@ Apple 具有下列使用進度列的建議:
 6. 儲存您的變更。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. 在 **方案總管**中, 按兩下**主要**的分鏡腳本檔案, 並將其開啟以進行編輯。
 
 2. 從 [**工具箱**] 將**活動指標**拖曳至 [view]: 

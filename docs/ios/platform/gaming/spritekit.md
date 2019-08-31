@@ -1,61 +1,61 @@
 ---
-title: 在 Xamarin.iOS 中的 SpriteKit
-description: 本文件說明 SpriteKit，Apple 的 2D 圖形的架構與 SceneKit 整合、 併入物理學與動畫，包括支援光源和陰影，等等。 SpriteKit 可用來建立 2D 遊戲。
+title: 在 Xamarin 中 SpriteKit
+description: 本檔描述 SpriteKit、Apple 的2D 圖形架構, 其與 SceneKit 整合、併入物理和動畫, 包括對光源和陰影的支援等等。 SpriteKit 可以用來建立2D 遊戲。
 ms.prod: xamarin
 ms.assetid: 93971DAE-ED6B-48A8-8E61-15C0C79786BB
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/14/2017
-ms.openlocfilehash: ef1e9a98b76166f4ee5638d1ab9762896d1e3bc8
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 432ae6013988946eb516a632ae054f072ca25f9a
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61293857"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200353"
 ---
-# <a name="spritekit-in-xamarinios"></a>在 Xamarin.iOS 中的 SpriteKit
+# <a name="spritekit-in-xamarinios"></a>在 Xamarin 中 SpriteKit
 
-SpriteKit，Apple 的 2D 圖形架構有一些有趣的新功能，在 iOS 8 和 OS X Yosemite。 這些包括整合 SceneKit、 著色器的支援、 光源、 shadows、 條件約束、 法線貼圖產生與物理增強功能。 特別是，新的物理功能讓很容易在遊戲中加入實際的效果。
+SpriteKit 是 Apple 的2D 圖形架構, 在 iOS 8 和 OS X Yosemite 中有一些有趣的新功能。 其中包括與 SceneKit、著色器支援、光源、陰影、條件約束、一般地圖產生和物理增強功能的整合。 特別的是, 新的物理功能讓您很容易就能在遊戲中加入實際的效果。
 
-## <a name="physics-bodies"></a>物理內文
+## <a name="physics-bodies"></a>物理主體
 
-SpriteKit 包含 2D，rigid body 物理 API。 每個 sprite 具有相關聯的物理主體 (`SKPhysicsBody`) 物理世界中定義的物理條件屬性，例如大型和分歧，以及主體的幾何。
+SpriteKit 包括2D 的固定主體物理 API。 每個 sprite 都有相關聯的`SKPhysicsBody`物理主體 (), 以定義物理屬性 (例如大量和摩擦), 以及實體在物理世界中的幾何。
 
-## <a name="creating-a-physics-body-from-a-texture"></a>從紋理建立物理主體
-SpriteKit 現在支援衍生從其材質的 sprite 物理主體。 這可讓您輕鬆地實作看起來更自然的衝突。
+## <a name="creating-a-physics-body-from-a-texture"></a>從材質建立物理主體
+SpriteKit 現在支援從其材質衍生 sprite 的物理主體。 這可讓您輕鬆地執行看起來更自然的衝突。
 
-例如，請注意，在下列衝突 banana 和 monkey 衝突幾乎在每個映像的介面的方式：
+例如, 在下列衝突中, 請注意, 香蕉和猴子在每個影像的表面上幾乎會互相衝突:
  
-![](spritekit-images/image13.png "Banana 和 monkey 衝突幾乎在每個映像的介面")
+![](spritekit-images/image13.png "香蕉和猴子幾乎會在每個影像的表面上衝突")
 
-SpriteKit 建立這類的物理主體可讓使用一行程式碼。 只要呼叫`SKPhysicsBody.Create`使用紋理和大小： sprite。PhysicsBody = SKPhysicsBody.Create （原件。紋理，sprite。大小）;
+SpriteKit 可讓您使用一行程式碼來建立這種物理主體。 只要使用`SKPhysicsBody.Create`材質和大小來呼叫: sprite。PhysicsBody = SKPhysicsBody。 Create (sprite。材質、sprite。大小);
 
-## <a name="alpha-threshold"></a>Alpha 臨界值
+## <a name="alpha-threshold"></a>Alpha 閾值
 
-除了只需要設定`PhysicsBody`屬性直接為衍生自材質的幾何，應用程式可以設定和控制如何衍生之幾何的 alpha 臨界值。 
+除了直接將`PhysicsBody`屬性設定為衍生自材質的幾何之外, 應用程式也可以設定和 Alpha 臨界值, 以控制幾何的衍生方式。 
 
-Alpha 的臨界值會定義要包含在產生的物理本文中必須像素的最小 alpha 值。 比方說，下列程式碼會產生稍微不同的物理主體：
+Alpha 臨界值會定義圖元必須包含在產生的物理主體中的最小 Alpha 值。 例如, 下列程式碼會產生稍微不同的物理主體:
 
 ```chsarp
 sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 ```
 
-調整 alpha 的臨界值，就像這樣的效果會調整先前的衝突，使得 monkey 落碰撞的 banana 時：
+調整 Alpha 臨界值的效果, 就像這樣會微調先前的衝突, 如此一來, 當與香蕉發生衝突時, 猴子就會落在一起:
 
-![](spritekit-images/image14.png "Monkey 落碰撞的 banana 時")
+![](spritekit-images/image14.png "當與香蕉發生衝突時, 猴子會落在一起")
  
 ## <a name="physics-fields"></a>物理欄位
 
-SpriteKit 增添另一個絕佳的工具是新的物理欄位支援。 這些可讓您新增項目，例如旋風欄位星形重力欄位和 spring 欄位等等。
+SpriteKit 的另一個絕佳的新增物理欄位支援。 這些功能可讓您將 vortex 欄位、星形引力欄位和彈簧欄位等專案加入至簡單的名稱。
 
-建立使用 SKFieldNode 類別，它會加入至場景，就像任何其他物理欄位`SKNode`。 上有各種不同的 factory 方法`SKFieldNode`建立不同的物理條件欄位。 您可以呼叫來建立 spring 欄位`SKFieldNode.CreateSpringField()`，藉由呼叫星形重力欄位`SKFieldNode.CreateRadialGravityField()`，依此類推。
+物理欄位是使用 SKFieldNode 類別建立的, 它會加入場景中, 就像任何其他`SKNode`情況一樣。 上`SKFieldNode`有各種不同的 factory 方法可建立不同的物理欄位。 您可以藉由`SKFieldNode.CreateSpringField()`呼叫來建立彈簧欄位, `SKFieldNode.CreateRadialGravityField()`方法是呼叫, 依此類推。
 
-`SKFieldNode` 也有控制欄位長度、 欄位區域中，等欄位強制的衰減欄位屬性的屬性。
+`SKFieldNode`也有控制欄位屬性的屬性, 例如欄位強度、欄位區域, 以及欄位強制的衰減。
 
-## <a name="spring-field"></a>Spring 欄位
+## <a name="spring-field"></a>彈簧欄位
 
-例如，下列程式碼會建立 spring 欄位，並將它新增至場景：
+例如, 下列程式碼會建立一個彈簧欄位, 並將它新增至場景:
 
 ```csharp
 SKFieldNode fieldNode = SKFieldNode.CreateSpringField ();
@@ -66,7 +66,7 @@ fieldNode.Region = new SKRegion(Frame.Size);
 AddChild (fieldNode);
 ```
 
-您可以新增 sprite 並設定其`PhysicsBody`屬性的物理欄位將會影響 sprite，，和時使用者觸控螢幕，執行下列程式碼：
+接著, 您可以新增 sprite 並設定`PhysicsBody`其屬性, 讓物理欄位會影響 sprite, 如同下列程式碼會在使用者觸及畫面時執行:
 
 ```csharp
 public override void TouchesBegan (NSSet touches, UIEvent evt)
@@ -83,13 +83,13 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 }
 ```
 
-這會導致以類似 [欄位] 節點周圍 spring oscillate bananas:
+這會導致香蕉 oscillate, 如同欄位節點的彈簧:
 
-![](spritekit-images/image15.png "Bananas oscillate 像 [欄位] 節點周圍的 spring")
+![](spritekit-images/image15.png "香蕉 oscillate 類似于欄位節點的彈簧")
  
-## <a name="radial-gravity-field"></a>放射狀重力欄位
+## <a name="radial-gravity-field"></a>星形引力欄位
 
-加入另一個欄位的方法類似。 比方說，下列程式碼會建立星形重力欄位：
+新增不同的欄位很類似。 例如, 下列程式碼會建立星形引力欄位:
 
 ```csharp
 SKFieldNode fieldNode = SKFieldNode.CreateRadialGravityField ();
@@ -99,6 +99,6 @@ fieldNode.Strength = 10.0f;
 fieldNode.Falloff = 1.0f;
 ```
 
-這會導致不同的強制欄位，其中 bananas 提取 radially 關於欄位：
+這會產生不同的 [強制] 欄位, 其中香蕉會提取有關欄位的 radially:
 
-![](spritekit-images/image16.png "欄位周圍 radially 提取 bananas")
+![](spritekit-images/image16.png "香蕉會在欄位周圍提取 radially")

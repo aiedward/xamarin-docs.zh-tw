@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/19/2017
-ms.openlocfilehash: 245c406a1b62b454ff9935ebb7cd3531a624aea3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6446bd7ef196fadae25c0e4dc18542d269424d6d
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656591"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200280"
 ---
 # <a name="healthkit-in-xamarinios"></a>在 Xamarin 中 HealthKit
 
@@ -65,7 +65,7 @@ ms.locfileid: "68656591"
 
 建立明確的**應用程式識別碼**和適當的布建**設定檔**, 會在 Apple 的[iOS 開發人員中心](https://developer.apple.com/devcenter/ios/index.action)內完成。 
 
-您目前的**應用程式**識別碼會列在開發人員中心的 [[憑證]、[識別碼 & 設定檔](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)] 區段內。 通常, 此清單會顯示  的`*`識別碼值, 表示**應用程式識別碼** - **名稱**可以與任意數目的尾碼搭配使用。 這類*萬用字元應用程式識別碼*無法與健康情況套件搭配使用。
+您目前的**應用程式**識別碼會列在開發人員中心的 [[憑證]、[識別碼 & 設定檔](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)] 區段內。 通常, 此清單會顯示的`*`識別碼值, 表示**應用程式識別碼** - **名稱**可以與任意數目的尾碼搭配使用。 這類*萬用字元應用程式識別碼*無法與健康情況套件搭配使用。
  
 若要建立明確 **應用程式識別碼**，按一下 **+** 帶您到右上方中的按鈕 **註冊 iOS 應用程式識別碼** 頁面：
 

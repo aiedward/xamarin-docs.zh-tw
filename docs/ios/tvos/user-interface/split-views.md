@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 52160d11c8c17a67a5db92e6a95f94815d54a0a6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7735f53d96977041f518a0ee56fb103a449e6cba
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648934"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198195"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>使用 Xamarin 中的 tvOS 分割視圖控制器
 
@@ -85,7 +85,7 @@ Apple 對於使用分割視圖控制器有下列建議:
     [![](split-views-images/activity04.png "內容版面配置")](split-views-images/activity04.png#lightbox)
 1. 在 [**屬性] 瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**, C#以在程式碼中使用您的 UI 控制項。
 1. 儲存您的變更。
-    
+
 -----
 
 如需使用分鏡腳本的詳細資訊, 請參閱我們的[Hello, tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。

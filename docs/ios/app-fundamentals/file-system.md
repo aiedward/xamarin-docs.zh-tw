@@ -4,25 +4,25 @@ description: 本檔說明如何在 Xamarin 中使用檔案系統。 其中討論
 ms.prod: xamarin
 ms.assetid: 37DF2F38-901E-8F8E-269A-5EE0CCD28C08
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/12/2018
-ms.openlocfilehash: e52f9abb31090f3acc361eb5a3f9ae2e12600b36
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: daa9625ccbac3661d3678889d4efd6319e0bd424
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653522"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198138"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin 中的檔案系統存取
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
 
 您可以使用 Xamarin 和`System.IO` *.net 基類庫 (BCL)* 中的類別來存取 iOS 檔案系統。 `File` 類別可讓您建立、刪除和讀取檔案，而 `Directory` 類別可讓您建立、刪除或列舉目錄內容。 您也可以使用`Stream`子類別, 以提供更高程度的檔案作業控制 (例如壓縮或檔案內的位置搜尋)。
 
 iOS 對應用程式可對檔案系統執行哪些動作, 以保留應用程式資料的安全性, 以及保護使用者不受惡性應用程式的限制。 這些限制是*應用程式沙箱*的一部分–一組規則, 可限制應用程式對檔案、喜好設定、網路資源、硬體等的存取權。應用程式只能在其主目錄 (安裝的位置) 中讀取和寫入檔案;它無法存取另一個應用程式的檔案。
 
-iOS 也有一些檔案系統特有的功能: 某些目錄在備份和升級方面需要特別的處理, 而且應用程式也可以與其他檔案和檔案應用  程式共用檔案 (自 iOS 11), 以及透過 iTunes。
+iOS 也有一些檔案系統特有的功能: 某些目錄在備份和升級方面需要特別的處理, 而且應用程式也可以與其他檔案和檔案應用程式共用檔案 (自 iOS 11), 以及透過 iTunes。
 
 本文討論 iOS 檔案系統的功能和限制, 並包含範例應用程式, 示範如何使用 Xamarin 來執行一些簡單的檔案系統作業:
 
@@ -153,9 +153,9 @@ File.WriteAllText(filename, json);
 
 ### <a name="case-sensitivity"></a>區分大小寫
 
-請務必瞭解 iOS 檔案系統*區分大小寫*。 區分大小寫表示您的檔案和目錄名稱必須完全相符– readme.txt 和 readme.txt 會  被視為不同的檔案名。
+請務必瞭解 iOS 檔案系統*區分大小寫*。 區分大小寫表示您的檔案和目錄名稱必須完全相符– readme.txt 和 readme.txt 會被視為不同的檔案名。
 
-對於較熟悉 Windows 檔案系統的 .NET 開發人員而言, 這可能會造成混淆, 但不*區分大小寫*–檔案、檔案  和檔案全都參考相同的目錄。
+對於較熟悉 Windows 檔案系統的 .NET 開發人員而言, 這可能會造成混淆, 但不*區分大小寫*–檔案、檔案和檔案全都參考相同的目錄。
 
 > [!WARNING]
 > IOS 模擬器不區分大小寫。
@@ -198,7 +198,7 @@ iOS 使用正斜線 '/' 做為路徑分隔符號 (這與使用反斜線 ' \ ' �
 
 &nbsp;
 
-|Directory|描述|
+|目錄|說明|
 |---|---|
 |[ApplicationName].app/|**在 iOS 7 和更早版本中**, `ApplicationBundle`這是儲存應用程式可執行檔的目錄。 您在應用程式中建立的目錄結構存在於此目錄中 (例如, 您在 Visual Studio for Mac 專案中標示為資源的影像和其他檔案類型)。<br /><br />如果您需要存取應用程式套件組合內的內容檔案, 可以透過`NSBundle.MainBundle.BundlePath`屬性取得此目錄的路徑。|
 |單據|使用此目錄來儲存使用者檔和應用程式資料檔。<br /><br />此目錄的內容可供使用者透過 iTunes 檔案共用使用 (雖然預設為停用)。 `UIFileSharingEnabled`將布林值索引鍵新增至 plist 檔案, 以允許使用者存取這些檔案。<br /><br />即使應用程式不會立即啟用檔案共用, 您仍應避免將應該在此目錄中的使用者隱藏的檔案 (例如資料庫檔案) 放入, 除非您想要共用這些檔案。 只要機密檔案保持隱藏, 如果未來版本中已啟用檔案共用, 則這些檔案不會公開 (且可能會在 iTunes 中移動、修改或刪除)。<br /><br /> 您可以使用`Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)`方法來取得應用程式之檔目錄的路徑。<br /><br />ITunes 會備份此目錄的內容。|
@@ -241,11 +241,11 @@ var tmp = Path.Combine (documents, "..", "tmp");
 
 ## <a name="sharing-with-the-files-app"></a>與檔案應用程式共用
 
-iOS 11 引進檔案  應用程式-適用于 iOS 的檔案瀏覽器, 可讓使用者在 iCloud 中查看其檔案並與其互動, 也會由任何支援它的應用程式儲存。 若要允許使用者直接存取您應用程式中的檔案, 請在**plist** `LSSupportsOpeningDocumentsInPlace`檔案中建立新的布林值索引鍵, 並`true`將它設定為, 如下所示:
+iOS 11 引進檔案應用程式-適用于 iOS 的檔案瀏覽器, 可讓使用者在 iCloud 中查看其檔案並與其互動, 也會由任何支援它的應用程式儲存。 若要允許使用者直接存取您應用程式中的檔案, 請在**plist** `LSSupportsOpeningDocumentsInPlace`檔案中建立新的布林值索引鍵, 並`true`將它設定為, 如下所示:
 
 ![在 Info. plist 中設定 LSSupportsOpeningDocumentsInPlace](file-system-images/51-supports-opening.png)
 
-應用程式的**Documents**目錄現在可在檔案應用程式中流覽  。 在 [檔案] 應用程式中, 流覽至 [**我的 iPhone] 上**的, 並顯示每個具有共用檔案的應用程式。 下列螢幕擷取畫面顯示[FileSystem 範例應用程式](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)看起來的樣子:
+應用程式的**Documents**目錄現在可在檔案應用程式中流覽 。 在 [檔案] 應用程式中, 流覽至 [**我的 iPhone] 上**的, 並顯示每個具有共用檔案的應用程式。 下列螢幕擷取畫面顯示[FileSystem 範例應用程式](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)看起來的樣子:
 
 ![iOS 11 檔案應用程式](file-system-images/50-files-app-1-sml.png) ![流覽我的 iPhone 檔案](file-system-images/50-files-app-2-sml.png) ![範例應用程式檔](file-system-images/50-files-app-3-sml.png)
 
@@ -292,7 +292,7 @@ iOS 11 引進檔案  應用程式-適用于 iOS 的檔案瀏覽器, 可讓使用
 
 Apple 引進了與 iOS 5 的*ICloud 備份*功能。 當 icloud 備份啟用時, 您應用程式主目錄中的所有檔案 (不包括通常不會備份的目錄, 例如應用程式套件組合、 `Caches`和`tmp`) 都會備份到 iCloud 伺服器。 這項功能可讓使用者在裝置遺失、遭竊或損毀時, 擁有完整的備份。
 
-因為 iCloud 只會為每位使用者提供 5 Gb 的「免費」空間, 並避免不必要地使用頻寬, 所以 Apple 預期應用程式只會備份重要的使用者產生資料。 若要遵守 iOS 資料儲存指導方針, 您應該藉由遵循下列專案來限制備份的資料量:
+因為 iCloud 只會為每位使用者提供 5 Gb 的可用空間, 並避免不必要地使用頻寬, 所以 Apple 預期應用程式只會備份重要的使用者所產生的資料。 若要遵守 iOS 資料儲存指導方針, 您應該藉由遵循下列專案來限制備份的資料量:
 
 - 在 [檔] 目錄 (已備份) 中, 只儲存使用者產生的資料或無法重新建立的資料。
 - 儲存可以在或`Library/Caches` `tmp`中輕鬆重新建立或重新下載的任何其他資料 (不會備份, 也可以「已清理」)。

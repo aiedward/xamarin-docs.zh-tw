@@ -6,12 +6,12 @@ ms.assetid: B5237770-0FC3-4B01-9E22-766B35C9A952
 author: asb3993
 ms.author: amburns
 ms.date: 01/25/2016
-ms.openlocfilehash: 9d43bbdb49fe4ab1ff909f709a37f979c360ceb9
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 6b6a7b8bb2efdd099d7fde6bb5397e6330258bcc
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509596"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199398"
 ---
 # <a name="native-types-for-ios-and-macos"></a>IOS 和 macOS 的原生類型
 
@@ -45,9 +45,9 @@ Mac 和 iOS Api 會使用在32位平臺上一律為32位的架構專屬資料類
 
 當可能遺失資料時, 會提供明確的轉換運算子 (64 位值會儲存在32或可能的32儲存位置)。
 
- `int`、 `uint` `nint`和`float`全都可隱含轉換成, `nuint`而`nfloat` 32 位一律會納入32或64位。
+`int`、 `uint` `nint`和`float`全都可隱含轉換成, `nuint`而`nfloat` 32 位一律會納入32或64位。
 
- `nint`、 `nuint` `long`和`nfloat`全都可隱含轉換成, `ulong`而且`double` 32 或64位值一律會納入64位儲存區中。
+`nint`、 `nuint` `long`和`nfloat`全都可隱含轉換成, `ulong`而且`double` 32 或64位值一律會納入64位儲存區中。
 
 您必須使用從`nint`、 `nuint`和`nfloat`到`int`的明確轉換`uint` , `float`因為原生類型可能會保留64位的儲存區。
 

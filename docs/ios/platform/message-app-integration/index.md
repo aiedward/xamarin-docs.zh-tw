@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2016
-ms.openlocfilehash: 7cb079beac7fd97072333bccf3ff387a9e8c5465
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8f029084982237d7dd16c8f3e5e5ae46f5d0223c
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654311"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198988"
 ---
 # <a name="message-app-integration-in-xamarinios"></a>Xamarin 中的訊息應用程式整合
 
@@ -20,7 +20,6 @@ _這些文章說明如何在與訊息應用程式整合的 Xamarin iOS 解決方
 
 IOS 10 的新功能, 訊息應用程式延伸模組會與「**訊息**」應用程式整合, 並為使用者提供新功能。 延伸模組可以傳送文字、貼紙、媒體檔案和互動式訊息。
 
-    
 ## <a name="message-app-extension-basicsiosplatformmessage-app-integrationintro-to-message-app-extensionsmd"></a>[訊息應用程式延伸模組基本概念](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)
 
 本文說明如何在與**訊息**應用程式整合的 Xamarin iOS 解決方案中加入訊息應用程式延伸模組, 並為使用者提供新功能。

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 61b9d84d6d5882d447a78e6583a399013f8919ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 43da869cfdb4ccbf5fcd8836a6fa5ca5ca732bfa
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656553"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199885"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>在 Xamarin. Mac 中複製並貼上
 
@@ -67,7 +67,7 @@ _本文說明如何使用貼夾, 以在 Xamarin. Mac 應用程式中提供複製
 
 ![將 NSDocument 新增至專案](copy-paste-images/sample03.png "將 NSDocument 新增至專案")
 
-輸入 `ImageDocument` 作為 [名稱]  ，然後按一下 [新增]  按鈕。 編輯**ImageDocument.cs**類別, 使其看起來如下所示:
+輸入 `ImageDocument` 作為 [名稱]，然後按一下 [新增] 按鈕。 編輯**ImageDocument.cs**類別, 使其看起來如下所示:
 
 ```csharp
 using System;
@@ -974,7 +974,7 @@ public ImageInfo(NSCoder decoder) {
 }
 ```
 
-首先, 我們會在  的預設目標-C 方法`init`下公開空的函式。
+首先, 我們會在的預設目標-C 方法`init`下公開空的函式。
 
 接下來, 我們會`NSCoding`公開相容的函式, 此函式會在貼上匯出的`initWithCoder`名稱下時, 用來從貼夾建立物件的新實例。
 
@@ -1069,7 +1069,7 @@ public static string[] GetReadableTypesForPasteboard (NSPasteboard pasteboard){
 }
 ```
 
-同樣地, 這些會定義為簡單的 Uti, 而且與我們在上一節  中所定義的類型相同。
+同樣地, 這些會定義為簡單的 Uti, 而且與我們在上一節中所定義的類型相同。
 
 接下來, 我們需要使用下列方法, 告訴剪貼簿_如何_讀取每個 UTI 的類型:
 

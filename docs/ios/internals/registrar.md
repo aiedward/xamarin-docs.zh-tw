@@ -1,58 +1,58 @@
 ---
-title: 適用於 Xamarin.iOS 的型別註冊機構
-description: 本文件說明 Xamarin.iOS 類型註冊機構，讓C#Objective C 執行階段的可用類別。
+title: 為 Xamarin 輸入註冊機構
+description: 本檔說明「Xamarin 類型註冊機構」, 這讓C#類別可供目標-C 執行時間使用。
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2018
-ms.openlocfilehash: 83340ce2d5db145c29166d90d3a5180b1767d7ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9817ac2df7a60b5358316599ce02702448b0c307
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036388"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199715"
 ---
-# <a name="type-registrar-for-xamarinios"></a>適用於 Xamarin.iOS 的型別註冊機構
+# <a name="type-registrar-for-xamarinios"></a>為 Xamarin 輸入註冊機構
 
-本文件說明 Xamarin.iOS 所使用的型別註冊系統。
+本檔說明 Xamarin 所使用的類型註冊系統。
 
-## <a name="registration-of-managed-classes-and-methods"></a>註冊受管理的類別和方法
+## <a name="registration-of-managed-classes-and-methods"></a>註冊 managed 類別和方法
 
-在啟動期間，將會註冊 Xamarin.iOS:
+在啟動期間, Xamarin 會註冊:
 
-- 類別與[[註冊]](xref:Foundation.RegisterAttribute) OBJECTIVE-C 類別當做屬性。
-- 類別與[[Category]](xref:ObjCRuntime.CategoryAttribute) OBJECTIVE-C 類別的屬性。
-- 與互動[[通訊協定]](xref:Foundation.ProtocolAttribute)與 OBJECTIVE-C 通訊協定的屬性。
-- 具有成員[[匯出]](xref:Foundation.ExportAttribute)，使得適用於 OBJECTIVE-C 可以存取它們。
+- 具有[[Register]](xref:Foundation.RegisterAttribute)屬性的類別做為目標-C 類別。
+- 具有[[Category]](xref:ObjCRuntime.CategoryAttribute)屬性的類別做為目標-C 類別。
+- 以[[Protocol]](xref:Foundation.ProtocolAttribute)屬性作為目標 C 通訊協定的介面。
+- 具有[[Export]](xref:Foundation.ExportAttribute)的成員, 可讓目標-C 存取它們。
 
-例如，假設 managed`Main`在 Xamarin.iOS 應用程式中常見的方法：
+例如, 請考慮 Xamarin iOS `Main`應用程式中常見的 managed 方法:
 
 ```csharp
 UIApplication.Main (args, null, "AppDelegate");
 ```
 
-此程式碼會告訴 Objective C 執行階段使用的型別，稱為`AppDelegate`為應用程式的委派類別。 若要能夠建立的執行個體 Objective C 執行階段C#`AppDelegate`類別，必須註冊類別。
+此程式碼會指示目標 C 執行時間使用稱為`AppDelegate`的類型做為應用程式的委派類別。 若要讓目標-C 執行時間能夠建立C# `AppDelegate`類別的實例, 則必須註冊該類別。
 
-自動在執行階段 （動態註冊），或在編譯時期 （靜態註冊） 時，Xamarin.iOS 將執行註冊。
+「Xamarin」會在執行時間 (動態註冊) 或在編譯時期 (靜態註冊) 自動執行註冊。
 
-動態註冊使用反映在啟動時若要尋找所有類別和方法，若要註冊，將它們傳遞至 OBJECTIVE-C 執行階段。 對於模擬器組建，則預設會使用動態註冊。
+動態登錄會在啟動時使用反映, 以尋找所有要註冊的類別和方法, 並將它們傳遞至目標-C 執行時間。 預設會針對模擬器組建使用動態註冊。
 
-靜態註冊會檢查，在編譯時期，應用程式所使用的組件。 它的類別和方法，以向 OBJECTIVE-C 會決定，並產生對應，且會內嵌到您的二進位檔。
-然後，在啟動時，它會向地圖 OBJECTIVE-C 執行階段。 靜態註冊用於裝置組建。
+靜態註冊會在編譯時期檢查應用程式所使用的元件。 它會判斷要向目標 C 註冊的類別和方法, 並產生內嵌于二進位的對應。
+然後, 在啟動時, 它會向目標-C 執行時間註冊對應。 靜態註冊用於裝置組建。
 
-### <a name="categories"></a>分類
+### <a name="categories"></a>Categories
 
-從 Xamarin.iOS 8.10 開始，就可以建立使用 OBJECTIVE-C 類別C#語法。
+從 Xamarin. iOS 8.10 開始, 您可以使用C#語法建立目標 C 類別。
 
-若要建立類別目錄，使用`[Category]`屬性，指定要擴充的型別。 例如，下列程式碼擴充`NSString`:
+若要建立類別目錄, 請`[Category]`使用屬性, 並指定要擴充的類型。 例如, 下列程式碼會擴充`NSString`:
 
 ```csharp
 [Category (typeof (NSString))]
 ```
 
-每個類別的方法有`[Export]`屬性，將它提供給 OBJECTIVE-C 執行階段：
+類別的每個方法都有一個`[Export]`屬性, 讓它可供目標-C 執行時間使用:
 
 ```csharp
 [Export ("today")]
@@ -62,7 +62,7 @@ public static string Today ()
 }
 ```
 
-所有受管理的擴充方法必須是靜態的但是仍可以建立使用標準的 Objective C 執行個體方法C#擴充方法的語法：
+所有 managed 擴充方法都必須是靜態的, 但您可以使用擴充方法的標準C#語法來建立目標-C 實例方法:
 
 ```csharp
 [Export ("toUpper")]
@@ -72,7 +72,7 @@ public static string ToUpper (this NSString self)
 }
 ```
 
-擴充方法的第一個引數是叫用方法時所在的執行個體：
+擴充方法的第一個引數是叫用方法所在的實例:
 
 ```csharp
 [Category (typeof (NSString))]
@@ -86,7 +86,7 @@ public static class MyStringCategory
  }
  ```
 
-此範例會新增原生`toUpper`執行個體方法，以`NSString`類別。 可以呼叫這個方法，從目標 c:
+這個範例會將原生`toUpper`實例方法新增`NSString`至類別。 您可以從目標-C 呼叫這個方法:
 
 ```csharp
 [Category (typeof (UIViewController))]
@@ -102,7 +102,7 @@ public static class MyViewControllerCategory
 
 ### <a name="protocols"></a>通訊協定
 
-與 Xamarin.iOS 8.10 從開始，介面`[Protocol]`屬性將會匯出到 OBJECTIVE-C 通訊協定為：
+從 Xamarin. iOS 8.10 開始, 具有屬性的`[Protocol]`介面將會匯出至目標-C 作為通訊協定:
 
 ```csharp
 [Protocol ("MyProtocol")]
@@ -120,27 +120,27 @@ class MyClass : IMyProtocol
 }
 ```
 
-此程式碼會將匯出`IMyProtocol`Objective C 做為通訊協定來呼叫`MyProtocol`類別呼叫`MyClass`實作通訊協定。
+此程式碼`IMyProtocol` `MyClass`會匯出至目標-C 作為名`MyProtocol`為的通訊協定, 以及會執行此通訊協定的類別。
 
 ## <a name="new-registration-system"></a>新的註冊系統
 
-從穩定的 6.2.6 版和 beta 6.3.4 版中，我們已新增新的靜態註冊機構。 在 7.2.1 版本中，我們做了新的註冊機構的預設值。
+從穩定的6.2.6 版本和搶鮮版 (Beta) 6.3.4 版本開始, 我們新增了新的靜態註冊機構。 在7.2.1 版本中, 我們已將新的註冊機構設為預設值。
 
-這個新的註冊系統會提供下列新功能：
+這個新的註冊系統提供下列新功能:
 
-- 編譯時期偵測的程式設計錯誤：
-    - 正在註冊具有相同名稱的兩個類別。
-    - 匯出至回應相同的選取器的多個方法
-- 移除未使用的原生程式碼：
-    - 新的註冊系統會加入程式碼，用於靜態程式庫，可刪除未使用的原生程式碼產生的二進位檔從原生連結器的強式參考。 在 Xamarin 的範例繫結，大部分的應用程式變得較小至少 300 k。
+- 程式設計人員錯誤的編譯時間偵測:
+    - 使用相同名稱註冊兩個類別。
+    - 匯出了一個以上的方法來回應相同的選取器
+- 移除未使用的機器碼:
+    - 新的註冊系統將會對靜態程式庫中使用的程式碼加入強式參考, 讓原生連結器可以從產生的二進位檔中去除未使用的機器碼。 在 Xamarin 的範例系結上, 大部分的應用程式會變成至少300k.wvx 的小。
 
-- 支援的泛型子`NSObject`; 請參閱 < [NSObject 的泛型](~/ios/internals/api-design/nsobject-generics.md)如需詳細資訊。 此外在新的註冊系統會攔截不支援泛型建構先前會導致在執行階段隨機的行為。
+- 支援的泛型子類別`NSObject`; 如需詳細資訊, 請參閱[NSObject 泛型](~/ios/internals/api-design/nsobject-generics.md)。 此外, 新的註冊系統將會攔截不受支援的泛型結構, 這在執行時間會造成隨機行為。
 
-### <a name="errors-caught-by-the-new-registrar"></a>新的註冊機構所攔截到的錯誤
+### <a name="errors-caught-by-the-new-registrar"></a>新註冊機構攔截到的錯誤
 
-以下是新的註冊機構所攔截到錯誤的一些範例。
+以下是新註冊機構所攔截到之錯誤的一些範例。
 
-- 匯出一次以上相同類別中相同的選取器：
+- 在同一個類別中多次匯出相同的選取器:
 
     ```csharp
     [Register]
@@ -153,7 +153,7 @@ class MyClass : IMyProtocol
     }
     ```
 
-- 匯出有同名的 Objective C 的多個 managed 的類別：
+- 匯出多個具有相同目標-C 名稱的 managed 類別:
 
     ```csharp
     [Register ("Class")]
@@ -163,7 +163,7 @@ class MyClass : IMyProtocol
     class YourClass : NSObject {}
     ```
 
-- 匯出的泛型方法：
+- 匯出泛型方法:
 
     ```csharp
     [Register]
@@ -174,61 +174,61 @@ class MyClass : IMyProtocol
     }
     ```
 
-### <a name="limitations-of-the-new-registrar"></a>新的註冊機構的限制
+### <a name="limitations-of-the-new-registrar"></a>新註冊機構的限制
 
-新的註冊機構留意一些事項︰
+關於新的註冊機構, 請注意下列事項:
 
-- 某些協力廠商程式庫必須更新為使用新的註冊系統。 請參閱[需要修改](#required-modifications)下方以取得詳細資料。
+- 某些協力廠商程式庫必須更新, 才能與新的註冊系統搭配使用。 如需詳細資訊, 請參閱下面的[必要修改](#required-modifications)。
 
-- 短期的缺點也是如果會使用帳戶的架構，必須使用 Clang (這是因為 Apple **accounts.h**標頭只可以由 Clang)。 新增`--compiler:clang`其他 mtouch 引數，如果您使用 Xcode 4.6 或更早版本使用 Clang （Xamarin.iOS 會自動選取 Clang Xcode 5.0 或更新版本）。
+- 短期的缺點也是, 如果使用帳戶架構, 就必須使用 Clang (這是因為 Apple 的**帳戶 .h**標頭只能由 Clang 編譯)。 如果`--compiler:clang`您使用 Xcode 4.6 或更早版本, 請將新增至其他 mtouch 引數以使用 Clang (Xamarin. iOS 會自動選取 Xcode 5.0 或更新版本中的 Clang)。
 
-- 如果 Xcode 4.6 （或更早版本），使用 GCC / G + + 必須選取 如果匯出型別名稱包含非 ASCII 字元 （這是因為 OBJECTIVE-C 程式碼中使用 Xcode 4.6 Clang 隨附的版本不支援識別碼內的非 ASCII 字元）。 新增`--compiler:gcc`使用 GCC 其他 mtouch 引數。
+- 如果使用 Xcode 4.6 (或更早版本), 則當匯出的類型名稱包含非 ASCII 字元時, 必須選取 GCC/G + + (這是因為隨附于 Xcode 4.6 的 Clang 版本不支援在目標-C 程式碼中的識別碼內有非 ASCII 字元)。 將`--compiler:gcc`新增至其他 mtouch 引數, 以使用 GCC。
 
 ## <a name="selecting-a-registrar"></a>選取註冊機構
 
-您可以藉由將下列選項的其中一個其他 mtouch 引數，在專案中選取不同的註冊機構**iOS 組建**設定：
+您可以在專案的 [ **IOS 組建**] 設定中, 將下列其中一個選項新增至其他 mtouch 引數, 以選取不同的註冊機構:
 
-- `--registrar:static` -針對裝置組建預設值
-- `--registrar:dynamic` – 對於模擬器組建預設值
+- `--registrar:static`–裝置組建的預設值
+- `--registrar:dynamic`-模擬器組建的預設值
 
 > [!NOTE]
-> Xamarin 的傳統 API 支援其他選項這類`--registrar:legacystatic`和`--registrar:legacydynamic`。 不過，透過統一的 API 不支援這些選項。
+> Xamarin 的 Classic API 支援其他選項`--registrar:legacystatic` , 例如和。 `--registrar:legacydynamic` 不過, Unified API 不支援這些選項。
 
-## <a name="shortcomings-in-the-old-registration-system"></a>在舊的註冊系統的缺點
+## <a name="shortcomings-in-the-old-registration-system"></a>舊的註冊系統中的缺點
 
-舊的註冊系統會有下列缺點：
+舊的註冊系統具有下列缺點:
 
-- 沒有任何 （原生） 的靜態參考，OBJECTIVE-C 類別和方法，在第三方原生程式庫，這表示我們無法要求原生連結器移除實際上不是在 （因為會移除所有項目） 所使用的第三方原生程式碼。 這是基於`-force_load libNative.a`每個第三方繫結必須執行 (或同等權限`ForceLoad=true`在`[LinkWith]`屬性)。
-- 您可以匯出具有兩個受管理的類型有同名的 Objective C 不發出警告。 罕見的案例是具有兩個得到`AppDelegate`不同命名空間中的類別。 在執行階段會完全隨機哪一個已挑選 （事實上，它執行的應用程式，即使未重建的-對非常令人感到困惑且令人沮喪的偵錯體驗之間各不相同）。
-- 您可以匯出兩個具有相同的 Objective C 簽章的方法。 一次會從 OBJECTIVE-C 呼叫的其中一個是隨機 （但這個問題不雖不如前一個位置，這多半是因為實際上會遇到這個錯誤的唯一方式是覆寫背受管理的方法）。
-- 已匯出的方法組是動態和靜態組建之間稍有不同。
-- 它無法正常運作時匯出泛型類別 （在執行階段中執行的確切的泛型實作會是隨機的有效地產生未定的行為）。
+- 協力廠商原生程式庫中的目標 C 類別和方法沒有 (原生) 靜態參考, 這表示我們無法要求原生連結器移除未實際使用的協力廠商原生程式碼 (因為所有專案都會被移除)。 這是每個第三`-force_load libNative.a`方系結必須執行 (或`[LinkWith]`屬性中的對等`ForceLoad=true` ) 的原因。
+- 您可以使用相同的目標-C 名稱匯出兩個 managed 類型, 而不發出警告。 在不同的命名空間中, 常見的`AppDelegate`案例是有兩個類別。 在執行時間, 已挑選的是完全隨機的 (事實上, 它會隨著應用程式的執行不會重建而改變, 這是為了進行非常令人困惑且令人沮喪的調試經驗)。
+- 您可以使用相同的目標-C 簽章匯出兩個方法。 同樣地, 從目標-C 呼叫其中一個是隨機的 (但此問題並不像前一個), 這通常是因為實際遇到此 bug 的唯一方式是覆寫假面具受管理的方法)。
+- 在動態和靜態組建之間, 已匯出的一組方法稍有不同。
+- 匯出泛型類別時, 它無法正常運作 (在執行時間執行的確切泛型實作為隨機, 實際上會產生不確定的行為)。
 
 <a name="required-modifications" />
 
-## <a name="new-registrar-required-changes-to-bindings"></a>新的註冊機構： 必要的繫結的變更
+## <a name="new-registrar-required-changes-to-bindings"></a>新的註冊機構: 系結的必要變更
 
-本章節描述繫結變更，必須變更才能使用新的註冊機構。
+本節說明必須進行的系結變更, 才能使用新的註冊機構。
 
 ### <a name="protocols-must-have-the-protocol-attribute"></a>通訊協定必須具有 [Protocol] 屬性
 
-現在必須具有通訊協定`[Protocol]`屬性。 如果不這麼做，您將這類會原生連結器錯誤：
+通訊協定現在必須具有`[Protocol]`屬性。 如果您不這麼做, 將會發生原生連結器錯誤, 例如:
 
 ```console
 Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", referenced from: ...
 ```
 
-### <a name="selectors-must-have-a-valid-number-of-parameters"></a>選取器必須是有效的參數數目
+### <a name="selectors-must-have-a-valid-number-of-parameters"></a>選取器必須有有效的參數數目
 
-所有的選取器必須正確指出參數的數目。 之前，這些錯誤，所以忽略，而且可能會造成執行階段問題。
+所有的選取器都必須正確指出參數的數目。 先前已忽略這些錯誤, 而且可能會造成執行時間問題。
 
-簡單地說，冒號數目必須符合參數的數目：
+簡言之, 冒號的數目必須符合參數數目:
 
-- 沒有參數： `foo`
-- 一個參數： `foo:`
-- 兩個參數： `foo:parameterName2:`
+- 沒有參數:`foo`
+- 一個參數:`foo:`
+- 兩個參數:`foo:parameterName2:`
 
-以下是不正確的使用：
+下列是不正確的用法:
 
 ```csharp
 // Invalid: export takes no arguments, but function expects one
@@ -242,7 +242,7 @@ void Display ();
 
 ### <a name="use-isvariadic-parameter-in-export"></a>在匯出中使用 IsVariadic 參數
 
-Variadic 函式必須使用`IsVariadic`引數`[Export]`屬性：
+Variadic 函數必須使用`IsVariadic` `[Export]`屬性的引數:
 
 ```csharp
 [Export ("variadicMethod:", IsVariadic = true)]
@@ -251,5 +251,5 @@ void VariadicMethod (NSObject first, IntPtr subsequent);
 
 ### <a name="must-link-to-existing-symbols"></a>必須連結到現有的符號
 
-就無法繫結不存在於原生程式庫中的類別。
-如果已移除或在原生程式庫中重新命名的類別，請務必更新以符合繫結項目。
+不可能系結不存在於原生程式庫中的類別。
+如果已在原生程式庫中移除或重新命名類別, 請務必更新要符合的系結。

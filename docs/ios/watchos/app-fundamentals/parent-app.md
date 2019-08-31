@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 0dc3c8e4c8b4db99b07114e855910ccfe5fe180f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 05dfb419834c2eee94f98d023df3a3fe8d6eee90
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654559"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198125"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>運用 watchOS 父系應用程式，在 Xamarin 中使用
 
@@ -22,11 +22,11 @@ ms.locfileid: "68654559"
 
 有不同的方式，watch 應用程式和其隨附的 iOS 應用程式之間進行通訊：
 
-- 監看式延伸模組可以[呼叫的方法](#code)針對父應用程式的 iPhone 上背景中執行。
+- 監看式擴充功能可以針對在 iPhone 上背景執行的父應用程式[呼叫方法](#code)。
 
 - 監看式延伸模組可以[共用儲存體位置](#storage)與父代的 iPhone 應用程式。
 
-- 您可以使用遞移式來將資料從摘要或通知傳遞至監看式應用程式，將使用者傳送至應用程式中的特定介面控制站。
+- 使用遞交將資料從概覽或通知傳遞至監看式應用程式, 並將使用者傳送至應用程式中的特定介面控制器。
 
 父應用程式有時也稱為容器應用程式。
 

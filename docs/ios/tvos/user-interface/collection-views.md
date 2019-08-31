@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3246dcbf58a1b6dda6838b5eb81442fdbc429af5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 616b20872a01b4df6c3f27c636ce7b8ee912414e
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652356"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200347"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 收集視圖
 
@@ -125,7 +125,7 @@ public CityCollectionView (IntPtr handle) : base (handle)
 1. 選取 [集合視圖] 資料格, 並將`CityCollectionViewCell`其類別設定為 [ **Widget]** 索引標籤中的: 
 
     [![](collection-views-images/collection09.png "將類別設定為 CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
-1. 在 [**小工具]** 索引卷  標中`Flow` , 確定版面配置為`Vertical` , 且捲軸**方向**為 [集合視圖]: 
+1. 在 [**小工具]** 索引卷標中`Flow` , 確定版面配置為`Vertical` , 且捲軸**方向**為 [集合視圖]: 
 
     [![](collection-views-images/collection10.png "[Widget] 索引標籤")](collection-views-images/collection10.png#lightbox)
 1. 選取 [集合視圖] 資料格, 並在`CityCell` [ **Widget]** 索引標籤中將其**識別**設定為: 
@@ -163,7 +163,7 @@ public CityCollectionView (IntPtr handle) : base (handle)
 1. 選取 [集合視圖] 資料格, 並將`CityCollectionViewCell`其類別設定為 [ **Widget]** 索引標籤中的: 
 
     [![](collection-views-images/collection09vs.png "將類別設定為 CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
-1. 在 [**小工具]** 索引卷  標中`Flow` , 確定版面配置為`Vertical` , 且捲軸**方向**為 [集合視圖]: 
+1. 在 [**小工具]** 索引卷標中`Flow` , 確定版面配置為`Vertical` , 且捲軸**方向**為 [集合視圖]: 
 
     [![](collection-views-images/collection10vs.png "[Widget] 索引標籤")](collection-views-images/collection10vs.png#lightbox)
 1. 選取 [集合視圖] 資料格, 並在`CityCell` [ **Widget]** 索引標籤中將其**識別**設定為: 

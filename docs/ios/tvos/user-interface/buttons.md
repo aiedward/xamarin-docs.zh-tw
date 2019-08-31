@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/07/2017
-ms.openlocfilehash: e0f2939c534c009e54d6812c3a45ac6c759d1247
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c53344d2e2e9458585439fd90a1f71a4869026be
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657298"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200192"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>使用 Xamarin 中的 tvOS 按鈕
 

@@ -1,61 +1,61 @@
 ---
-title: 新的參考計數在 Xamarin.iOS 中的系統
-description: 本文件說明 Xamarin 的增強的參考計數系統中，依預設，所有的 Xamarin.iOS 應用程式中啟用。
+title: Xamarin 中的新參考計數系統
+description: 本檔說明 Xamarin 的增強型參照計數系統, 預設會在所有的 Xamarin iOS 應用程式中啟用。
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 11/25/2015
-ms.openlocfilehash: 8c7b1a88284156cb5d4261f18d5659ed66dfaf64
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 221c3a3bb82b5b46f4afea5ec43fcdd5c00b0556
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61037156"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199322"
 ---
-# <a name="new-reference-counting-system-in-xamarinios"></a>新的參考計數在 Xamarin.iOS 中的系統
+# <a name="new-reference-counting-system-in-xamarinios"></a>Xamarin 中的新參考計數系統
 
-Xamarin.iOS 9.2.1 導入了增強的參考計數所有的應用程式的系統預設值。 它可用來消除許多難以追蹤並修正舊版 Xamarin.iOS 中的記憶體問題。
+根據預設, 9.2.1 會將增強的參考計數系統引進到所有應用程式。 它可以用來消除許多難以在舊版 Xamarin 中追蹤和修正的記憶體問題。
 
 ## <a name="enabling-the-new-reference-counting-system"></a>啟用新的參考計數系統
 
-截至 Xamarin 9.2.1 啟用新的參考計數系統**所有**預設的應用程式。
+從 Xamarin 9.2.1 開始, 預設會為**所有**應用程式啟用新的 ref 計數系統。
 
-如果您正在開發的現有應用程式，您可以檢查.csproj 檔案，以確保所有發生次數`MtouchUseRefCounting`設定為`true`，例如下列：
+如果您正在開發現有的應用程式, 您可以檢查 .csproj 檔案, 以確保所有出現的`MtouchUseRefCounting`都已設定為`true`, 如下所示:
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-如果設定為`false`您的應用程式不會使用新的工具。
+如果設定為, `false`您的應用程式將不會使用新的工具。
 
 ### <a name="using-older-versions-of-xamarin"></a>使用舊版 Xamarin
 
-Xamarin.iOS 7.2.1 和上述功能增強我們新的參考計數系統的預覽。
+7\.2.1 和更新版本提供新的參考計算系統的增強預覽功能。
 
-**傳統的 API:**
+**Classic API:**
 
-若要啟用這個新參考計數 」 的系統，請檢查**使用參考計數擴充功能**中找到的核取方塊**進階**您的專案 索引標籤**iOS 組建 選項**如下所示： 
+若要啟用這個新的參考計數系統, 請核取您專案的**IOS 組建選項**之 [ **Advanced** ] 索引標籤中的 [**使用參考計數延伸**] 核取方塊, 如下所示: 
 
 [![](newrefcount-images/image1.png "啟用新的參考計數系統")](newrefcount-images/image1.png#lightbox)
 
-請注意，這些選項中已移除較新版本的 Visual Studio for mac。
+請注意, 這些選項已在較新版本的 Visual Studio for Mac 中移除。
 
- **[統一的 API:](~/cross-platform/macios/unified/index.md)**
+ **[Unified API:](~/cross-platform/macios/unified/index.md)**
 
- 新的參考計數擴充功能需要統一的 API，並應該依預設啟用。 IDE 的較舊版本不能自動檢查此值，您可能要加上核取它自己。
+ Unified API 需要新的參考計數延伸模組, 而且應該預設為啟用。 較舊版本的 IDE 可能不會自動檢查此值, 您可能必須自行進行檢查。
 
-    
+
 > [!IMPORTANT]
-> 較早版本的這項功能已經周圍 MonoTouch 5.2，但卻是只適用於**sgen**為實驗性的預覽。 這個新的增強版本現已也供**Boehm**記憶體回收行程。
+> 這項功能的較早版本已存在於 MonoTouch 5.2, 但僅供**sgen**作為實驗性預覽之用。 這個新的增強版本現在也適用于**Boehm**垃圾收集行程。
 
 
-過去曾經發生過兩種類型的受管理的 Xamarin.iOS 物件： 這些只是一個包裝函式的原生的物件 （對等物件） 以及擴充，或合併 （衍生物件） 的新功能，通常就是藉由保留額外記憶體中狀態。 原本可能我們可以增強具有狀態的對等物件 (例如藉由加入C#事件處理常式)，但我們讓移未參考，然後再收集到的物件。 這在稍後可能會造成當機 (例如如果 OBJECTIVE-C 執行階段回撥到 managed 物件)。
+在過去, Xamarin 會管理兩種類型的物件: 只是原生物件 (對等物件) 的包裝函式, 以及擴充或併入新功能 (衍生物件) 的物件, 通常是藉由保留額外的記憶體內部狀態。 之前, 我們可以使用狀態 (例如, 藉由新增C#事件處理常式) 來擴大對等物件, 但我們會讓物件成為未參考, 然後再進行收集。 這可能會導致稍後損毀 (例如, 如果目標-C 執行時間被回呼到 managed 物件)。
 
-新的系統會自動升級為它們所儲存的任何額外資訊時，由執行階段的物件的對等物件。
+當物件儲存任何額外的資訊時, 新系統會自動將對等物件升級為由執行時間所管理的物件。
 
-這解決了各種損毀發生在這種情況下：
+這可解決在這類情況下發生的各種損毀:
 
 ```csharp
 class MyTableSource : UITableViewSource {
@@ -73,10 +73,10 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-參考計數擴充功能沒有此程式碼會損毀因為`cell`變成可回收，因此其`TouchDown`委派，這會轉譯為懸空的指標。
+如果沒有參考計數延伸, 此程式碼會`cell`損毀, 因為會成為`TouchDown`可回收, 而其委派會轉譯成無關聯的指標。
 
-參考計數擴充功能可確保受管理的物件會保持運作，並避免其集合中，提供原生物件保留的原生程式碼。
+參考計數延伸可確保 managed 物件維持運作狀態, 並防止其集合, 前提是機器碼會保留原生物件。
 
-新的系統也不需要*大部分*私用支援欄位繫結-這是預設方法，以維持執行個體中使用。 受管理的連結器會聰明，足以移除所有那些*不需要*欄位從 應用程式使用的新參考計數擴充功能。
+新的系統也不再需要系結中使用的*大部分*私用支援欄位, 這是維持實例運作的預設方法。 受管理的連結器非常聰明, 可以使用新的參考計數延伸模組, 從應用程式中移除所有不*需要*的欄位。
 
-這表示每個受管理的物件執行個體使用較少比之前的記憶體。 它也可以解決其中一些支援的欄位會保存已不再需要由 OBJECTIVE-C 執行階段，因此很難回收一些記憶體的參考相關的問題。
+這表示每個受管理物件實例所耗用的記憶體比以前少。 它也會解決相關的問題, 其中某些支援欄位會保留目標-C 執行時間不再需要的參考, 因此很難回收一些記憶體。

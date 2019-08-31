@@ -7,12 +7,12 @@ ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 47b4a1bb0249bc21bd75e82067cb00b3f272e202
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5235f00a28a047260a91cb708e26e262cafbad07
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642674"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200242"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>顯示 SkiaSharp 點陣圖
 
@@ -22,7 +22,7 @@ ms.locfileid: "68642674"
 
 ![顯示範例](displaying-images/DisplayingSample.png "顯示範例")
 
-          `DrawBitmapLattice`並`DrawBitmapNinePatch`文章中所討論的方法會 **[分段顯示 SkiaSharp 點陣圖](segmented.md)** 。
+`DrawBitmapLattice`並`DrawBitmapNinePatch`文章中所討論的方法會 **[分段顯示 SkiaSharp 點陣圖](segmented.md)** 。
 
 在此頁面上的範例是來自 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式。 從該應用程式的首頁上，選擇**SkiaSharp 點陣圖**，然後移至**顯示點陣圖**一節。
 

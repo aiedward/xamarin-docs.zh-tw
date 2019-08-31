@@ -7,12 +7,12 @@ ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 4414ce498bdf69e82269137c35af8f27b9e5f541
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4500714ae28a6cd26fe7f0dc8657f26131bef53d
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649570"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197793"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
 
@@ -655,7 +655,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 `UpdateBitmap`方法會重繪`saveBitmap`藉由建立新`SKCanvas`，清除它，然後轉譯點陣圖上的所有路徑。 它結束時，會使失效`canvasView`，以便顯示畫面上，可以繪製點陣圖。
 
-以下是兩個按鈕的處理常式。           **清楚** 按鈕會清除這兩個路徑的集合，更新`saveBitmap`（這會導致清除點陣圖），則`SKCanvasView`:
+以下是兩個按鈕的處理常式。 **清楚** 按鈕會清除這兩個路徑的集合，更新`saveBitmap`（這會導致清除點陣圖），則`SKCanvasView`:
 
 ```csharp
 public partial class FingerPaintSavePage : ContentPage

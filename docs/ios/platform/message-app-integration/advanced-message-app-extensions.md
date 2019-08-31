@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 7175cfa3b671a1510182b1497c941521170f39a9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e55e6d908bbeb9b4b42ccbcad8121a1b410b79af
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654525"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200140"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin 中的 Advanced Message 應用程式延伸模組
 
@@ -188,7 +188,7 @@ public void SendMessage (MSMessage message)
 
 訊息應用程式延伸模組可以隨時以程式設計或手動方式在這些模式之間切換, 而且應該立即回應視圖模式中的任何變更。
 
-請參閱下列在兩個不同的視圖模式之間處理切換的範例。 每個狀態都需要兩個不同的視圖控制器。 會處理**Compact**視圖, 而且  將會處理展開的視圖: `StickerBrowserViewController` `AddStickerViewController`
+請參閱下列在兩個不同的視圖模式之間處理切換的範例。 每個狀態都需要兩個不同的視圖控制器。 會處理**Compact**視圖, 而且將會處理展開的視圖: `StickerBrowserViewController` `AddStickerViewController`
 
 ```csharp
 using System;

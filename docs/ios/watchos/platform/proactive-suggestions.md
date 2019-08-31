@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 8593ef34922fca076aa13c70faa4289824f94374
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 95e0eb77719a9bcc642dfb1385d7371652943155
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889508"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198814"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>在 Xamarin 中 watchOS 主動式建議
 
@@ -314,7 +314,7 @@ namespace MonkeyChat
     public class AppDelegate : UIApplicationDelegate, IUISplitViewControllerDelegate
     {
         ...
-        
+
         public override bool OpenUrl (UIApplication app, NSUrl url, NSDictionary options)
         {
             if (MKDirectionsRequest.IsDirectionsRequestUrl (url)) {
@@ -332,7 +332,7 @@ namespace MonkeyChat
 
             return true;
         }
-    }       
+    }
 }
 ```
 
@@ -354,7 +354,7 @@ WatchOS 3 的新功能, 應用程式可以傳送不具有地理座標的位址, 
 var geocoder = new CLGeocoder();
 geocoder.GeocodeAddress(address, (place, err)=> {
     // Handle the display of the address
-    
+
 });
 
 ```

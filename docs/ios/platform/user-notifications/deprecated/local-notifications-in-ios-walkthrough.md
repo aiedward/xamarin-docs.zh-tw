@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/18/2017
-ms.openlocfilehash: f7290d8284f90db4f53a38dc89f7b5a1a10213c0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 376f046769e27586d9611d634aef89811c7b3be8
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655542"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200378"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>逐步解說-在 Xamarin 中使用本機通知
 
@@ -62,29 +62,28 @@ _在本節中, 我們將逐步解說如何在 Xamarin iOS 應用程式中使用�
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
-            var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes (
-                UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null
-            );
+        var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes (
+            UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null
+        );
 
-            application.RegisterUserNotificationSettings (notificationSettings);
-        }
+        application.RegisterUserNotificationSettings (notificationSettings);
+    }
     ```
 
 1. 仍然在`AppDelegate.cs`中, 新增下列方法, 這會在收到通知時呼叫:
 
     ```csharp
     public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
-            {
-                // show an alert
-                UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
-                okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+    {
+        // show an alert
+        UIAlertController okayAlertController = UIAlertController.Create(notification.AlertAction, notification.AlertBody, UIAlertControllerStyle.Alert);
+        okayAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-                UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
+        UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(okayAlertController, true, null);
 
-                // reset our badge
-                UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
-            }
-
+        // reset our badge
+        UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+    }
     ```
 
 1. 我們需要處理由於本機通知而啟動通知的情況。 `FinishedLaunching` 編輯`AppDelegate`中的方法, 以包含下列程式碼片段:
@@ -111,7 +110,6 @@ _在本節中, 我們將逐步解說如何在 Xamarin iOS 應用程式中使用�
             }
         }
     }
-
     ```
 
 1. 最後, 執行應用程式。 在 iOS 8 上, 系統會提示您允許通知。 按一下 **[確定]** , 然後按一下 [**新增通知**] 按鈕。 短暫暫停之後, 您應該會看到 [警示] 對話方塊, 如下列螢幕擷取畫面所示:

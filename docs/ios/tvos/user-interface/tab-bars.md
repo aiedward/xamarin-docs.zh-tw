@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 236a64736bc5f92537c858b9cdf938410cf4b0f4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 64b114cad16095a2afd80b690a4654b91b2aa203
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649654"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199934"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>使用 Xamarin 中的 [tvOS] 索引標籤列控制器
 
@@ -59,7 +59,7 @@ Apple 具有下列使用索引標籤列的建議:
 在 tvOS 應用程式中使用索引標籤列的最簡單方式, 就是使用 iOS 設計工具將它們新增至應用程式的 UI。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. 啟動新的 tvOS 應用程式, 然後選取 [ **tvOS**  > **應用程式** > ] 索引標籤**式應用程式**: 
 
     [![](tab-bars-images/tab02.png "選取索引標籤式應用程式")](tab-bars-images/tab02.png#lightbox)
@@ -84,7 +84,7 @@ Apple 具有下列使用索引標籤列的建議:
 1. 儲存您的變更。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
+
 1. 啟動新的 tvOS 應用程式, 然後選取 [ **tvOS**  > **應用程式** > ] 索引標籤**式應用程式**: 
 
     [![](tab-bars-images/tab02vs.png "選取索引標籤式應用程式")](tab-bars-images/tab02vs.png#lightbox)
@@ -107,7 +107,7 @@ Apple 具有下列使用索引標籤列的建議:
 1. 公開任何必要的事件, 以便在程式碼中C#使用您的 UI 控制項。
 1. 為您想要在程式碼中C#公開的任何 UI 控制項命名。
 1. 儲存您的變更。
-    
+
 -----
 
 > [!IMPORTANT]

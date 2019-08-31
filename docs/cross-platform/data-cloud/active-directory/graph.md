@@ -1,37 +1,37 @@
 ---
 title: 存取圖形 API
-description: 本文件說明如何將 Azure Active Directory 驗證新增至使用 Xamarin 建置行動應用程式。
+description: 本檔說明如何將 Azure Active Directory 驗證新增至以 Xamarin 建立的行動應用程式。
 ms.prod: xamarin
 ms.assetid: F94A9FF4-068E-4B71-81FE-46920745380D
 author: asb3993
 ms.author: amburns
 ms.date: 03/23/2017
-ms.openlocfilehash: c43dfa79831f22e55490b27c3c360602ae717627
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 74072a48e190478af79ec06ca8e5048d2cb61e36
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61189935"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198578"
 ---
 # <a name="accessing-the-graph-api"></a>存取圖形 API
 
-請遵循下列步驟來使用 Graph API 從 Xamarin 應用程式內：
+請遵循下列步驟, 從 Xamarin 應用程式中使用圖形 API:
 
-1. [使用 Azure Active Directory 註冊](~/cross-platform/data-cloud/active-directory/get-started/register.md)上*windowsazure.com*入口網站，然後
+1. 在*windowsazure.com*入口網站上[向 Azure Active Directory 註冊](~/cross-platform/data-cloud/active-directory/get-started/register.md), 然後
 2. [設定服務](~/cross-platform/data-cloud/active-directory/get-started/configure.md)。
 
 ## <a name="step-3-adding-active-directory-authentication-to-an-app"></a>步驟 3： 將 Active Directory 驗證新增至應用程式
 
-在您的應用程式中，加入參考**Azure Active Directory Authentication Library (Azure ADAL)** 使用 NuGet 套件管理員，在 Visual Studio 或 Visual Studio for mac。
-請確定您選取**顯示發行前版本套件**包含這個封裝，它仍處於預覽狀態。
+在您的應用程式中, 使用 Visual Studio 或 Visual Studio for Mac 中的 NuGet 套件管理員, 將參考新增至**Azure Active Directory Authentication Library (AZURE ADAL)** 。
+請務必選取 [**顯示發行前版本套件**以包含此套件], 因為它仍處於預覽狀態。
 
 > [!IMPORTANT]
-> 注意:Azure ADAL 3.0 目前為預覽版，可能有重大變更的最終版本發行之前。 
+> 注意:Azure ADAL 3.0 目前為預覽狀態, 而且在發行最終版本之前可能會有重大變更。 
 
 
-![](graph-images/06.-adal-nuget-package.jpg "加入 Azure Active Directory Authentication Library (Azure ADAL) 的參考")
+![](graph-images/06.-adal-nuget-package.jpg "將參考新增至 Azure Active Directory Authentication Library (Azure ADAL)")
 
-在您的應用程式中，您現在必須新增下列類別層級變數所需的驗證流程。
+在您的應用程式中, 您現在需要新增驗證流程所需的下列類別層級變數。
 
 ```csharp
 //Client ID
@@ -46,11 +46,11 @@ public static string graphApiVersion = "2013-11-08";
 AuthenticationResult authResult = null;
 ```
 
-請注意下面是`commonAuthority`。 驗證端點時`common`，您的應用程式變成**多租用戶**，這表示任何使用者可以使用登入使用其 Active Directory 認證。 在驗證之後，該使用者在他們自己的 Active Directory 的內容上運作，– 也就是他們會看到他的 Active Directory 相關的詳細資料。
+這裡有一點要注意的`commonAuthority`是。 當驗證端點為`common`時, 您的應用程式會變成**多租**使用者, 這表示任何使用者都可以使用其 Active Directory 認證來登入。 驗證之後, 該使用者將會在自己的 Active Directory 內容上工作, 也就是他們會看到與 Active Directory 相關的詳細資料。
 
-### <a name="write-method-to-acquire-access-token"></a>撰寫方法來取得存取權杖
+### <a name="write-method-to-acquire-access-token"></a>撰寫方法以取得存取權杖
 
-下列程式碼 （適用於 Android) 會開始驗證，並在完成時指派中的結果`authResult`。 IOS 和 Windows Phone 實作稍有不同： 第二個參數 (`Activity`) 不同，在 iOS 上，且不在 Windows Phone 上。
+下列程式碼 (適用于 Android) 會啟動驗證, 並在完成時指派中`authResult`的結果。 Ios 和 Windows Phone 的執行方式稍有不同: 第二`Activity`個參數 () 在 iOS 上不同, 且在 Windows Phone 上不存在。
 
 ```csharp
 public static async Task<AuthenticationResult> GetAccessToken
@@ -64,13 +64,13 @@ public static async Task<AuthenticationResult> GetAccessToken
 }  
 ```
 
-在上述程式碼中，`AuthenticationContext`負責 commonAuthority 的驗證。 它有`AcquireTokenAsync`方法，為資源需要存取，在此情況下會採用參數`graphResourceUri`， `clientId`，和`returnUri`。 應用程式將會回到`returnUri`驗證完成時。 此程式碼仍適用於所有平台，不過，最後一個參數， `AuthorizationParameters`，將會在不同的平台上不同，而且會負責控管的驗證流程。
+在上述`AuthenticationContext`程式碼中, 會負責使用 commonAuthority 進行驗證。 它有一個`AcquireTokenAsync`方法, 它會採用參數作為需要存取的資源, 在此案例`graphResourceUri`中為、 `clientId`和`returnUri`。 `returnUri`當驗證完成時, 應用程式會回到。 所有平臺的此程式碼都會保持相同, 不過, 最後一個參數`AuthorizationParameters`在不同的平臺上將會不同, 並且負責管理驗證流程。
 
-如果是 Android 或 iOS，我們將傳遞`this`參數來`AuthorizationParameters(this)`共用內容，而在 Windows 中不含任何參數當做傳遞新`AuthorizationParameters()`。
+在 Android 或 iOS 的案例中, 我們會`this`將`AuthorizationParameters(this)`參數傳遞至以共用內容, 而在 Windows 中, 則會在沒有任何`AuthorizationParameters()`參數的情況下傳遞至新的。
 
-### <a name="handle-continuation-for-android"></a>處理適用於 Android 的接續
+### <a name="handle-continuation-for-android"></a>處理 Android 的接續
 
-完成驗證之後，流程應該傳回至應用程式。 在 Android 它由下列程式碼的情況下這應新增至**MainActivity.cs**:
+驗證完成之後, 流程應該會回到應用程式。 在 Android 案例中, 它是由下列程式碼所處理, 這應該新增至**MainActivity.cs**:
 
 
 ```csharp
@@ -78,14 +78,12 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 {
   base.OnActivityResult(requestCode, resultCode, data);
   AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(requestCode, resultCode, data);
-
-    
 }
 ```
 
-### <a name="handle-continuation-for-windows-phone"></a>處理適用於 Windows Phone 的接續
+### <a name="handle-continuation-for-windows-phone"></a>處理 Windows Phone 的接續
 
-適用於 Windows Phone 修改`OnActivated`方法中的**App.xaml.cs**檔案中使用下列程式碼：
+針對 Windows Phone 使用下列`OnActivated`程式碼修改**App.xaml.cs**檔案中的方法:
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs args)
@@ -100,16 +98,16 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-現在如果您執行應用程式時，您應該會看到 [驗證] 對話方塊。
-驗證成功後，它會要求您的權限，才能存取資源 （在我們的案例 Graph API）：
+現在, 如果您執行應用程式, 應該會看到 [驗證] 對話方塊。
+成功驗證之後, 它會要求您的許可權以存取資源 (在我們的案例中為圖形 API):
 
-![](graph-images/08.-authentication-flow.jpg "驗證成功後，它會要求您的權限存取我們的案例 Graph API 中的資源")
+![](graph-images/08.-authentication-flow.jpg "成功驗證之後, 它會要求您的許可權, 以在我們的案例中存取資源圖形 API")
 
-如果驗證會成功，而且您已獲授權可存取資源應用程式，您應該會看到`AccessToken`並`RefreshToken`中的下拉式`authResult`。 這些 token 包括才能進一步 API 呼叫以及與 Azure Active Directory 的授權在幕後進行。
+如果驗證成功, 且您已授權應用程式存取資源, 您應該會在中`AccessToken` `authResult`取得和`RefreshToken`組合。 需要這些權杖才能進行進一步的 API 呼叫, 並在幕後使用 Azure Active Directory 進行授權。
 
-![](graph-images/07.-access-token-for-authentication.jpg "這些 token 包括才能進一步 API 呼叫，以及在幕後與 Azure Active Directory 授權")
+![](graph-images/07.-access-token-for-authentication.jpg "需要這些權杖才能進行進一步的 API 呼叫, 並在幕後使用 Azure Active Directory 進行授權")
 
-例如，下列程式碼可讓您從 Active Directory 取得使用者清單。 您可以取代您的 Web API 是由 Azure AD 保護 Web API URL。
+例如, 下列程式碼可讓您從 Active Directory 取得使用者清單。 您可以使用 Azure AD 所保護的 Web API 來取代 Web API URL。
 
 ```csharp
 var client = new HttpClient();

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2018
-ms.openlocfilehash: 76e9d91b735f2ae5041330d8e290347ae9314487
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 43c9ee599fe96c107bf10996834d9bcf60847603
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654811"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70200114"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>適用于 Xamarin iOS 應用程式的啟動畫面
 
@@ -113,7 +113,7 @@ _本文說明如何使用單一的整合分鏡腳本, 針對所有 iOS 裝置建
 
 4. 將專案設定為使用**LaunchScreen**作為其啟動畫面分鏡腳本:
 
-    - 在 [方案總管]  中，按兩下 [Info.plist]  檔案以開啟它進行編輯。 
+    - 在 [方案總管] 中，按兩下 [Info.plist] 檔案以開啟它進行編輯。 
     - 在 [**視覺資產**] 索引標籤上, 將 [**啟動畫面**] 設定為**LaunchScreen**。
 
     ![[Info. plist] 中的啟動畫面選取器](launch-screens-images/launch04-vs.png)
@@ -214,7 +214,7 @@ _本文說明如何使用單一的整合分鏡腳本, 針對所有 iOS 裝置建
 
     ![](launch-screens-images/image013.png "輸入啟動畫面的名稱")
 3. 在 **方案總管**中, 按兩下新建立的分鏡腳本檔案, 將其開啟進行編輯。
-4. 確定 [**大小] 類別**設定為 [**任何: any** ] 和  [**一般**]: 
+4. 確定 [**大小] 類別**設定為 [**任何: any** ] 和 [**一般**]: 
 
     ![](launch-screens-images/image016.png "確定 [大小] 類別設定為 [任何: 任何] 和 [一般]")
 5. 從大小類別、簡單 UI 專案 (例如`UIImageView`), 以及您已包含在應用程式套件組合中的影像, 組裝啟動畫面: 

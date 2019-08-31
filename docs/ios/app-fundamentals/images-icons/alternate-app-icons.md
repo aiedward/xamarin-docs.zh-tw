@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/29/2017
-ms.openlocfilehash: 43ef420f569f7dbca6140798f798f3a128d9c706
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e194edcea75df9dc18d89bba00c0b97e5bd71c34
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653427"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197867"
 ---
 # <a name="alternate-app-icons-in-xamarinios"></a>Xamarin 中的替代應用程式圖示
 
@@ -55,12 +55,12 @@ Apple 已將數個增強功能新增至 iOS 10.3, 讓應用程式可以管理其
 
 請執行下列動作：
 
-1. 在 [方案總管]  中，按兩下 [Info.plist]  檔案以開啟它進行編輯。
+1. 在 [方案總管]中，按兩下 [Info.plist] 檔案以開啟它進行編輯。
 2. 切換至 [**來源**] 視圖。
 3. 新增配套**圖示**金鑰, 並將**類型**設定為 [**字典**]。
 4. 新增金鑰, 並將**類型**設定為 [字典]。 `CFBundleAlternateIcons`
 5. 新增金鑰, 並將**類型**設定為 [字典]。 `AppIcon2` 這會是新的替代應用程式圖示集的名稱。
-6. 加入索引  鍵, 並將類型設定為**陣列** `CFBundleIconFiles`
+6. 加入索引鍵, 並將類型設定為**陣列** `CFBundleIconFiles`
 7. 針對每個圖示檔, `CFBundleIconFiles`將新字串新增至陣列, 以省略副檔名`@2x`以及、 `@3x`等等尾碼 (範例`100_icon`)。 針對組成替代圖示集的每個檔案重複此步驟。
 8. `AppIcon2`將索引鍵加入字典中,將類型設定為布林值,並將值設為[否]。`UIPrerenderedIcon`
 9. 將變更儲存到檔案。
