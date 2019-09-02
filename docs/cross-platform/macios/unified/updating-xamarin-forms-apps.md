@@ -6,12 +6,12 @@ ms.assetid: C2F0D1D1-256D-44A4-AAC9-B06A0CB41E70
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: d119d96a3ce8389a71726e1359e064efe1fbb1ae
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: dee3b04630ae9fc94548becdcc294427f9deb433
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509442"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199217"
 ---
 # <a name="updating-existing-xamarinforms-apps"></a>更新現有的 Xamarin 應用程式
 
@@ -48,7 +48,7 @@ _請遵循下列步驟來更新現有的 Xamarin. Forms 應用程式, 以使用 
 
 按一下 iOS 專案, 使其已選取, 然後選擇 [**專案] > 遷移至 [Xamarin] [Unified API ...** ], 並同意出現的警告訊息。
 
-![](updating-xamarin-forms-apps-images/beta-tool1.png "選擇 [專案] > 遷移至 Xamarin. iOS Unified API 。並同意出現的警告訊息")
+![](updating-xamarin-forms-apps-images/beta-tool1.png "選擇 [專案] > 遷移至 Xamarin. iOS Unified API ...並同意出現的警告訊息")
 
 這會自動:
 

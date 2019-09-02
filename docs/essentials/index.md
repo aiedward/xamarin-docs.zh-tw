@@ -4,13 +4,13 @@ description: 此文件連結到描述 Xamarin.Essentials 的各種指南，提�
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 08f97263ccb5b4c91a541d06534e82aaaebbae1e
-ms.sourcegitcommit: 64d6da88bb6ba222ab2decd2fdc8e95d377438a6
+ms.date: 08/27/2019
+ms.openlocfilehash: 2101d2e3948cb917e62725731c4895cc57282b3b
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58175391"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065137"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -63,6 +63,10 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 ## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[疑難排解](troubleshooting.md?context=xamarin/xamarin-forms)
 
 在您遇到問題時可尋找說明。
+
+## <a name="release-noteshttpsdocsmicrosoftcomxamarinessentialsrelease-notes"></a>[版本資訊](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+
+尋找每一版的 Xamarin.Essentials 完整版本資訊。
 
 ## <a name="api-documentationxrefxamarinessentials"></a>[API 文件](xref:Xamarin.Essentials)
 

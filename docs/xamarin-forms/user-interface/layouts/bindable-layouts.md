@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms 中可繫結的版面配置
-description: 可繫結的版面配置可讓配置類別繫結至專案集合，以產生其內容，並選擇使用 DataTemplate 來設定每個專案的外觀。
+description: 可繫結的版面配置可讓配置類別繫結項目的集合，以產生其內容。而且您可以使用 DataTemplate 來設定每個項目的外觀。
 ms.prod: xamarin
 ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
 ms.technology: xamarin-forms

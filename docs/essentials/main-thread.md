@@ -1,24 +1,24 @@
 ---
-title: 'Xamarin.Essentials: MainThread'
+title: Xamarin.Essentials:MainThread
 description: MainThread 類別可讓應用程式在主執行緒上執行程式碼。
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 7ec1420d87c898f63614eb6d980c28834e980afd
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.date: 08/20/2019
+ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
+ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52899001"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060112"
 ---
-# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials: MainThread
+# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
 
 **MainThread** 類別可讓應用程式在主執行緒上執行程式碼，並判斷特定程式碼區塊目前是否在主執行緒上執行。
 
 ## <a name="background"></a>背景
 
-大部分的作業系統 (包括 iOS、Android 與通用 Windows 平台) 都為牽涉到使用者介面的程式碼使用單一執行緒處理模型。 需要此此模型才能適當地序列化使用者介面事件，包括按鍵點擊與觸控輸入。 此執行緒通常稱為「主執行緒」或「使用者介面執行緒」或「UI 執行緒」。 此模型的缺點是存取使用者介面元素的所有程式碼都必須在應用程式的主執行緒上執行。 
+大部分的作業系統 (包括 iOS、Android 與通用 Windows 平台) 都為牽涉到使用者介面的程式碼使用單一執行緒處理模型。 需要此此模型才能適當地序列化使用者介面事件，包括按鍵點擊與觸控輸入。 此執行緒通常稱為「主執行緒」  或「使用者介面執行緒」  或「UI 執行緒」  。 此模型的缺點是存取使用者介面元素的所有程式碼都必須在應用程式的主執行緒上執行。 
 
 應用程式有時候需要使用呼叫次要執行緒上之事件處理常式的事件。 (Xamarin.Essentials 類別 [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md) 與 [`OrientationSensor`](orientation-sensor.md) 全都可能傳回次要執行緒的資訊 (當以較快的速度使用時)。)若事件處理常式需要存取使用者介面元素，它必須在主執行緒上執行該程式碼。 **MainThread** 類別可讓應用程式在主執行緒上執行此程式碼。
 
@@ -92,7 +92,19 @@ else
 
 您可能會懷疑若程式碼區塊已在主執行緒上執行，此檢查是否會改善效能。
 
-不過，此檢查並非必要。 `BeginInvokeOnMainThread` 本身的平台實作會檢查呼叫是否針對主執行緒發出。 若在並非必要的情況下呼叫 `BeginInvokeOnMainThread`，會對效能造成極小的影響。
+不過，此檢查並非必要。  `BeginInvokeOnMainThread` 本身的平台實作會檢查呼叫是否針對主執行緒發出。 若在並非必要的情況下呼叫 `BeginInvokeOnMainThread`，會對效能造成極小的影響。
+
+## <a name="additional-methods"></a>其他方法
+
+`static` 類別包含下列其他 `MainThread`方法，可用來與背景執行緒中的使用者介面元素互動：
+
+| 方法 | 引數 | Returns | 用途 |
+|---|---|---|---|
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主要執行緒上叫用 `Func<T>`，並等候其完成。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | 在主要執行緒上叫用 `Action`，並等候其完成。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 在主要執行緒上叫用 `Func<Task<T>>`，並等候其完成。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 在主要執行緒上叫用 `Func<Task>`，並等候其完成。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 傳回主要執行緒的 `SynchronizationContext`。 |
 
 ## <a name="api"></a>API
 

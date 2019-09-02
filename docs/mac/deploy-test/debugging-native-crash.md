@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 10/19/2016
-ms.openlocfilehash: 777e8d2880313b5a793d6257cc0fd9d8299cb94d
-ms.sourcegitcommit: 849bf6d1c67df943482ebf3c80c456a48eda1e21
+ms.openlocfilehash: 4a80b14aeb1517bac1e0d994a606ac4e74b2a94a
+ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51528477"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70065644"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>在 Xamarin.Mac 應用程式中偵錯原生損毀
 
@@ -22,7 +22,7 @@ ms.locfileid: "51528477"
 
 我們將逐步解說幾個真實的原生損毀範例來探究一下。
 
-## <a name="example-1-assertion-failure"></a>範例 1：判斷提示失敗
+## <a name="example-1-assertion-failure"></a>範例 1：宣告失敗
 
 以下是一個簡單測試應用程式中的前幾行損毀程式碼 (此資訊將會在**應用程式輸出**面板中)：
 
@@ -32,17 +32,17 @@ ms.locfileid: "51528477"
 2014-10-15 16:18:02.378 NSOutlineViewHottness[79111:1304993] *** Assertion failure in -[NSTableView _uncachedRectHeightOfRow:], /SourceCache/AppKit/AppKit-1343.13/TableView.subproj/NSTableView.m:1855
 2014-10-15 16:18:02.378 NSOutlineViewHottness[79111:1304993] NSTableView variable rowHeight error: The value must be > 0 for row 0, but the delegate <NSOutlineViewHottness_HotnessViewDelegate: 0xaa01860> gave -1.000.
 2014-10-15 16:18:02.381 NSOutlineViewHottness[79111:1304993] (
-    0   CoreFoundation                      0x91888343 __raiseError + 195
-    1   libobjc.A.dylib                     0x9a5e6a2a objc_exception_throw + 276
-    2   CoreFoundation                      0x918881ca +[NSException raise:format:arguments:] + 138
-    3   Foundation                          0x950742b1 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 118
-    4   AppKit                              0x975db476 -[NSTableView _uncachedRectHeightOfRow:] + 373
-    5   AppKit                              0x975db2f8 -[_NSTableRowHeightStorage _uncachedRectHeightOfRow:] + 143
-    6   AppKit                              0x975db206 -[_NSTableRowHeightStorage _cacheRowHeights] + 167
-    7   AppKit                              0x975db130 -[_NSTableRowHeightStorage _createRowHeightsArray] + 226
-    8   AppKit                              0x975b5851 -[_NSTableRowHeightStorage _ensureRowHeights] + 73
-    9   AppKit                              0x975b5790 -[_NSTableRowHeightStorage computeTableHeightForNumberOfRows:] + 89
-    10  AppKit                              0x975b4c38 -[NSTableView _totalHeightOfTableView] + 220
+  0   CoreFoundation                      0x91888343 __raiseError + 195
+  1   libobjc.A.dylib                     0x9a5e6a2a objc_exception_throw + 276
+  2   CoreFoundation                      0x918881ca +[NSException raise:format:arguments:] + 138
+  3   Foundation                          0x950742b1 -[NSAssertionHandler handleFailureInMethod:object:file:lineNumber:description:] + 118
+  4   AppKit                              0x975db476 -[NSTableView _uncachedRectHeightOfRow:] + 373
+  5   AppKit                              0x975db2f8 -[_NSTableRowHeightStorage _uncachedRectHeightOfRow:] + 143
+  6   AppKit                              0x975db206 -[_NSTableRowHeightStorage _cacheRowHeights] + 167
+  7   AppKit                              0x975db130 -[_NSTableRowHeightStorage _createRowHeightsArray] + 226
+  8   AppKit                              0x975b5851 -[_NSTableRowHeightStorage _ensureRowHeights] + 73
+  9   AppKit                              0x975b5790 -[_NSTableRowHeightStorage computeTableHeightForNumberOfRows:] + 89
+  10  AppKit                              0x975b4c38 -[NSTableView _totalHeightOfTableView] + 220
 ```
 
 前面加上數字的行是原生堆疊追蹤。 您可以從中看出損毀發生在處理資料列高度的 `NSTableView` 內。 接著 `NSAssertionHandler` 引發 `NSException (objc_exception_throw)`，然後我們就看到判斷提示失敗：
@@ -61,7 +61,7 @@ public override nfloat GetRowHeight (NSTableView tableView, nint row)
 }
 ```
 
-## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>範例 2：回呼不知跳到哪裡去
+## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>範例 2：回呼跳到不知名的位置
 
 ```csharp
 Stacktrace:
@@ -202,7 +202,7 @@ GitHub 問題全都是公開的。 無法隱藏意見或附件。
 
 ### <a name="working-around"></a>解決問題
 
-追蹤到問題之後，採用因應措施來修補問題，直到修正繫結為止，可以是一個相當簡單的過程。 目標是要藉由保留一個開啟的參考，防止將遭到以錯誤方式處理的物件 (**View****Delegate****DataSource**) 自記憶體中移除。
+追蹤到問題之後，採用因應措施來修補問題，直到修正繫結為止，可以是一個相當簡單的過程。 目標是要藉由保留一個開啟的參考，防止將遭到以錯誤方式處理的物件 (**View** **Delegate** **DataSource**) 自記憶體中移除。
 
 針對只有單一物件執行個體的簡單案例，請將程式碼從這樣：
 
@@ -248,7 +248,7 @@ void AddObject ()
 
 您應該一律不允許 C# 例外狀況將受控碼「逸出」至呼叫端 Objective-C 方法。 如果您這麼做，結果並不明確，但通常會涉及損毀。 一般而言，我們會竭盡所能提供實用的原生和受控損毀資訊，來協助您快速解決問題。
 
-如果不過於深究技術原因，設定基礎結構以在每個受控/原生界限攔截受控例外狀況，不僅成本非常高昂，而且還會有「許多」發生在眾多常見作業中的轉換。 許多作業 (特別是涉及 UI 執行緒的作業) 必須快速完成，否則您的應用程式執行將會斷斷續續，或是效能讓人難以接受。 這些回呼中有許多都是執行不太可能擲回例外狀況的非常簡單工作，所以在這些案例中，這個額外負荷不僅成本太高，也沒有必要性。
+如果不過於深究技術原因，設定基礎結構以在每個受控/原生界限攔截受控例外狀況，不僅成本非常高昂，而且還會有「許多」  發生在眾多常見作業中的轉換。 許多作業 (特別是涉及 UI 執行緒的作業) 必須快速完成，否則您的應用程式執行將會斷斷續續，或是效能讓人難以接受。 這些回呼中有許多都是執行不太可能擲回例外狀況的非常簡單工作，所以在這些案例中，這個額外負荷不僅成本太高，也沒有必要性。
 
 因此，我們不會為您設定這些 try/catch。 針對程式碼執行非瑣碎工作 (例如不僅僅只是傳回布林值或執行簡單比對) 的情況，您可以自行嘗試 try catch。 
 
