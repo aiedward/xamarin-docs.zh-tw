@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: bb53c11612cf492cda39067db861c1d67e0d3e16
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: decbbdab09b514bd49784f6ba45575ae845c547f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648986"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226484"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 頁面控制項
 
@@ -35,37 +35,37 @@ ms.locfileid: "68648986"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    
+
 1. 在  **Solution Pad**中, 按兩下`Main.storyboard`檔案, 然後開啟檔案進行編輯。
-1. 從 [**工具箱**] 拖曳**頁面控制項**, 並將它放在視圖上: 
+1. 從 [**工具箱**] 拖曳**頁面控制項**, 並將它放在視圖上:
 
     [![](page-controls-images/page02.png "頁面控制項")](page-controls-images/page02.png#lightbox)
-1. 在**Properties Pad**的 [ **Widget]** 索引標籤中, 您可以調整頁面控制項的數個屬性, 例如其**目前頁面**和**頁數**: 
+1. 在**Properties Pad**的 [ **Widget]** 索引標籤中, 您可以調整頁面控制項的數個屬性, 例如其**目前頁面**和**頁數**:
 
     [![](page-controls-images/page03.png "[Widget] 索引標籤")](page-controls-images/page03.png#lightbox)
 1. 接下來, 將控制項或手勢加入至視圖, 以在頁面集合中向後和向前移動。
-1. 最後, 將**名稱**指派給控制項, 以便您可以在程式碼中C#對其進行回應。 例如： 
+1. 最後, 將**名稱**指派給控制項, 以便您可以在程式碼中C#對其進行回應。 例如：
 
     [![](page-controls-images/page04.png "將控制項命名為")](page-controls-images/page04.png#lightbox)
 1. 儲存您的變更。
-    
+
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
+
 1. 在 **方案總管**中, 按兩下`Main.storyboard`檔案, 然後開啟檔案進行編輯。
-1. 從 [**工具箱**] 拖曳**頁面控制項**, 並將它放在視圖上: 
+1. 從 [**工具箱**] 拖曳**頁面控制項**, 並將它放在視圖上:
 
     [![](page-controls-images/page02-vs.png "頁面控制項")](page-controls-images/page02-vs.png#lightbox)
-1. 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中, 您可以調整頁面控制項的數個屬性, 例如其**目前頁面**和**頁數**: 
+1. 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中, 您可以調整頁面控制項的數個屬性, 例如其**目前頁面**和**頁數**:
 
     [![](page-controls-images/page03-vs.png "[Widget] 索引標籤")](page-controls-images/page03-vs.png#lightbox)
 1. 接下來, 將控制項或手勢加入至視圖, 以在頁面集合中向後和向前移動。
-1. 最後, 將**名稱**指派給控制項, 以便您可以在程式碼中C#對其進行回應。 例如： 
+1. 最後, 將**名稱**指派給控制項, 以便您可以在程式碼中C#對其進行回應。 例如：
 
     [![](page-controls-images/page04-vs.png "將控制項命名為")](page-controls-images/page04-vs.png#lightbox)
 1. 儲存您的變更。
-    
+
 
 -----
 
@@ -160,7 +160,7 @@ PageView.CurrentPage = PageNumber;
 
 `CurrentPage`屬性為零 (0), 因此第一個頁面會是零, 而最後一個則是最大頁數的減。
 
-如需使用分鏡腳本的詳細資訊, 請參閱我們的[Hello, tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。 
+如需使用分鏡腳本的詳細資訊, 請參閱我們的[Hello, tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 
 <a name="Summary" />
 

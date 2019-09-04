@@ -1,50 +1,50 @@
 ---
-title: 在 Xamarin.iOS 中的搜尋列
-description: 本文件說明如何在 Xamarin.iOS 中使用搜尋列。 它討論如何以程式設計方式和分鏡腳本建立搜尋列。
+title: Xamarin 中的搜尋列
+description: 本檔說明如何在 Xamarin 中使用搜尋列。 它討論如何以程式設計方式和分鏡腳本建立搜尋列。
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 07/11/2017
-ms.openlocfilehash: 75abb943dbc56d7b4213e0c36c19ff338182ae8a
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 78776b669b9f389398c54d72a9080a90f8664429
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67674864"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226327"
 ---
-# <a name="search-bars-in-xamarinios"></a>在 Xamarin.iOS 中的搜尋列
+# <a name="search-bars-in-xamarinios"></a>Xamarin 中的搜尋列
 
-UISearchBar 用來搜尋值的清單。 
+UISearchBar 是用來搜尋值清單。
 
-它包含三個主要元件： 
+其中包含三個主要元件:
 
-- 用來輸入文字的欄位。 使用者可以利用此方式來輸入他們的搜尋字詞。
-- 清除按鈕，以移除 [搜尋] 欄位中的任何文字。
-- [取消] 按鈕，以結束 [搜尋] 功能。
+- 用來輸入文字的欄位。 使用者可以利用此來輸入其搜尋字詞。
+- [清除] 按鈕, 可移除搜尋欄位中的任何文字。
+- [取消] 按鈕, 用來結束搜尋功能。
 
 ![搜尋列](searchbar-images/image1.png)
 
-## <a name="implementing-the-search-bar"></a>實作搜尋列
+## <a name="implementing-the-search-bar"></a>執行搜尋列
 
-若要實作藉由執行個體化一個新的搜尋列開始：
+若要開始執行搜尋列, 請先具現化新的:
 
 ```csharp
 searchBar = new UISearchBar();
 ```
 
-並將其放置。 下列範例示範如何將它放在導覽列或資料表的 HeaderView:
+然後將它放入。 下列範例顯示如何將它放在流覽列或資料表的 HeaderView 中:
 
 ```csharp
 NavigationItem.TitleView = searchBar;
 
-\\or
+// or
 
 TableView.TableHeaderView = searchBar;
 ```
 
-在 [搜尋] 列上設定屬性：
+在搜尋列上設定屬性:
 
 ```csharp
  searchBar = new UISearchBar(){
@@ -57,7 +57,7 @@ TableView.TableHeaderView = searchBar;
 
 ![搜尋列屬性](searchbar-images/image6.png)
 
-引發`SearchButtonClicked`事件時按下搜尋按鈕。 這會呼叫您的搜尋邏輯：
+當按下 [搜尋] 按鈕時, 引發事件。`SearchButtonClicked` 這會呼叫您的搜尋邏輯:
 
 ```csharp
 searchBar.SearchButtonClicked += (sender, e) => {
@@ -65,37 +65,37 @@ searchBar.SearchButtonClicked += (sender, e) => {
             };
 ```
 
-如需管理的搜尋列和搜尋結果的呈現方式的資訊，請參閱[搜尋控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)配方。
+如需管理搜尋列和搜尋結果之呈現的相關資訊, 請參閱[搜尋控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)配方。
 
-## <a name="using-the-search-bar-in-the-designer"></a>在設計工具中使用搜尋列
+## <a name="using-the-search-bar-in-the-designer"></a>使用設計工具中的搜尋列
 
-設計工具提供兩個選項可在設計工具中實作搜尋列
+設計工具提供兩個選項, 可在設計工具中執行搜尋列
 
 - 搜尋列
-- 搜尋列搜尋顯示控制站 （已過時）
+- 具有搜尋顯示控制器的搜尋列 (已淘汰)
 
-![在設計工具中的搜尋列控制項](searchbar-images/image2.png)
+![設計師中的搜尋列控制項](searchbar-images/image2.png)
 
-在 [搜尋] 列上設定屬性使用 [屬性] 面板
+使用 [屬性] 面板來設定搜尋列上的屬性
 
 ![搜尋列屬性設計工具](searchbar-images/image3.png)
 
-這些屬性的說明如下：
+以下說明這些屬性:
 
-- **文字，預留位置，提示**– 這些屬性用來提供建議，並指示使用者如何使用 [搜尋] 列。 比方說，如果您的應用程式會顯示一份存放區可以使用 prompt 屬性，使用者可以 「 輸入縣 （市）、 故事名稱或郵遞區號 」 的建議
-- **搜尋樣式**– 您可以設定讓 [搜尋] 列**Prominent**或是**最低**。 使用顯著，會設定一切在畫面上，除了列，導致將焦點轉給繪製到搜尋列搜尋的濃淡。 最小的樣式的 [搜尋] 列會融合其周圍環境而定。
-- **功能**– 讓這些屬性只會顯示 UI 項目。 必須實作的功能，藉由引發正確的事件中所述的這些[搜尋列 API 文件](xref:UIKit.UISearchBar)
-    - 顯示搜尋結果 / 書籤按鈕-在 [搜尋] 列上顯示搜尋結果] 或 [書籤圖示
-    - 顯示 [取消] 按鈕-允許使用者結束搜尋函式。 建議，選取此項目。
-    - 顯示範圍列 – 這可讓使用者以限制其搜尋範圍。 比方說，在音樂應用程式中搜尋時的使用者可以選取是否想要搜尋 Apple Music 或其程式庫的特定歌曲或演出者。 若要顯示的各種選項，新增的項目陣列**ScopeBarTitles**屬性。
-    ![搜尋列範圍標題](searchbar-images/image4.png)
+- **文字、預留位置、提示**–這些屬性是用來建議並指示使用者應該如何使用搜尋列。 例如, 如果您的應用程式顯示商店清單, 您可以使用 prompt 屬性來通知使用者可以「輸入城市、故事名稱或郵遞區號」
+- **搜尋樣式**–您可以將搜尋列設定為 [**明顯**] 或 [**最小**]。 使用 [明顯] 會在畫面上顯示其他所有專案, 但不包括搜尋列, 因而導致焦點繪製到搜尋列。 最小樣式搜尋列會與其周圍的混合使用。
+- **功能**–啟用這些屬性只會顯示 UI 元素。 您必須藉由引發正確的事件 (如[搜尋列 API](xref:UIKit.UISearchBar)檔中所述), 來實作為這些功能
+  - 顯示搜尋結果/書簽按鈕–在搜尋列上顯示搜尋結果或書簽圖示
+  - 顯示 [取消] 按鈕–允許使用者離開搜尋功能。 建議選取此選項。
+  - 顯示範圍列–這可讓使用者限制其搜尋範圍。 例如, 在 [音樂] 應用程式中搜尋時, 使用者可以選取要搜尋特定歌曲或演出者 Apple Music 或其媒體櫃。 若要顯示各種選項, 請將標題陣列加入至**ScopeBarTitles**屬性。
+  ![搜尋列範圍標題](searchbar-images/image4.png)
 
-- **文字行為**– 這些選項用來解決這些輸入時，如何格式化使用者輸入。 大小寫會設定每個字或句子的開頭或為大寫的每個字元。 更正和拼字檢查對使用者提示的文字的拼字建議依照其輸入。
-- **鍵盤**– 控制項的鍵盤樣式顯示，針對輸入，並因此何種都是可用鍵盤上。 這包括數字鍵台、 Phone 填補、 電子郵件、 URL 及其他選項。
-- **外觀**– 控制項的鍵盤外觀樣式和的任一深或亮色調佈景主題。
-- **傳回索引鍵**– 變更傳回的索引鍵，以更精確反映所要採取的動作標籤。 支援的值包括 Go、 聯結、 下一步，路由，完成之後和搜尋。
-- **安全**– 識別是否已遮罩輸入 （例如密碼輸入）。
+- **文字行為**–這些選項可用來解決使用者輸入在輸入時的格式。 大寫會設定每個單字或句子的開頭, 或每個字元的大小寫。 更正和拼寫檢查, 會提示使用者輸入文字時的建議拼寫。
+- **鍵盤**–控制針對輸入顯示的鍵盤樣式, 因此鍵盤上可用的按鍵。 這包括數位板、手機 Pad、電子郵件、URL 和其他選項。
+- **外觀**–控制鍵盤的外觀樣式, 而且會有深色或淺色的主題。
+- 傳回**金鑰**–變更傳回金鑰上的標籤, 以更清楚地反映將採取的動作。 支援的值包括 Go、Join、Next、Route、Done 和 Search。
+- **Secure** –識別輸入是否已遮罩 (例如輸入密碼)。
 
 ## <a name="related-links"></a>相關連結
 
-- [搜尋控制站](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
+- [搜尋控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)

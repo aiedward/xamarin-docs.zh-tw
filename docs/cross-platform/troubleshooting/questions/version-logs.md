@@ -7,38 +7,38 @@ ms.assetid: CF386485-EAB0-4B9E-AA17-CB1B6462E505
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: b421378f8aa99728fa13f104e284b9c410abe2b3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: cd7a2026a4d1d1458455733a6f2710364cc7fec7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119971"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226779"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>可以在哪裡找到我的版本資訊和記錄？
 
 ## <a name="outline"></a>外框
 
 - [版本資訊](#version-information)
-    - Windows 版本資訊
-    - Mac 版本資訊
-    - Android SDK Tools, 平臺工具, 組建工具
+  - Windows 版本資訊
+  - Mac 版本資訊
+  - Android SDK Tools, 平臺工具, 組建工具
 - [IDE 和安裝程式記錄檔](#ide-and-installer-logs)
-    - [Windows 記錄檔](#windows-logs)
-        - Xamarin Studio
-        - Xamarin for Visual Studio
-        - Xamarin 通用安裝程式
-        - 個別`.msi`安裝程式, 詳細資訊記錄檔
-        - Visual Studio 啟動, 詳細資訊記錄
-    - [Mac 記錄檔](#mac-logs)
-        - 組建主機
-    - Visual Studio for Mac
-        - Xamarin Studio
-        - Xamarin 安裝程式
+  - [Windows 記錄檔](#windows-logs)
+    - Xamarin Studio
+    - Xamarin for Visual Studio
+    - Xamarin 通用安裝程式
+    - 個別`.msi`安裝程式, 詳細資訊記錄檔
+    - Visual Studio 啟動, 詳細資訊記錄
+  - [Mac 記錄檔](#mac-logs)
+    - 組建主機
+  - Visual Studio for Mac
+    - Xamarin Studio
+    - Xamarin 安裝程式
 - [詳細資訊組建輸出](#verbose-build-output-logs)
 - [適用于 Xamarin 和 Xamarin iOS 應用程式的 Debug 記錄檔](#debug-logs-for-xamarin-apps)
-    - Android `adb` logcat 記錄檔
-    - iOS 模擬器記錄檔 (在 Mac 上)
-    - iOS 裝置記錄 (在 Mac 上)
+  - Android `adb` logcat 記錄檔
+  - iOS 模擬器記錄檔 (在 Mac 上)
+  - iOS 裝置記錄 (在 Mac 上)
 
 ## <a name="a-idversion-information-nameversion-information-version-information"></a><a id="version-information" name="version-information" />版本資訊
 

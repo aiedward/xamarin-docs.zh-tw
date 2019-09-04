@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: e0af5188dd34e76b419b4cd5bf8d604fb059b7d3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f43c4dac1811a54ee0ceeb70e2b2b1835a5ca030
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642751"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228251"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 路徑效果
 
@@ -22,7 +22,7 @@ _探索各種路徑效果可讓用於繪製，並填入的路徑_
 
 A*路徑效果*的執行個體[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)會透過其中一種類別所定義的八個靜態建立方法的類別。 `SKPathEffect`物件會設為[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)屬性[ `SKPaint` ](xref:SkiaSharp.SKPaint)有趣的效果，例如，有許多物件繪製含有小型的複寫路徑的線條:
 
-![](effects-images/patheffectsample.png "連結的鏈結範例")
+![連結的連鎖範例](effects-images/patheffectsample.png)
 
 路徑效果可讓您：
 
@@ -51,7 +51,7 @@ public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 
 **動畫點線文字**頁面大致**外框文字**一文所述的頁面[**整合文字與圖形**](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md)中它會顯示藉由設定說明文字字元`Style`的屬性`SKPaint`物件到`SKPaintStyle.Stroke`。 颾魤 ㄛ**動畫點線文字**會使用`SKPathEffect.CreateDash`提供給這外框虛線的外觀，並計劃也以動畫顯示`phase`引數`SKPathEffect.CreateDash`方法，讓似乎到處移動文字的點字元。 以下是在橫向模式中的頁面：
 
-[![](effects-images/animateddottedtext-small.png "以動畫顯示點線的文字頁面的三個螢幕擷取畫面")](effects-images/animateddottedtext-large.png#lightbox "動畫點線的文字頁面的三個螢幕擷取畫面")
+[![動畫虛線文字頁面的三重螢幕擷取畫面](effects-images/animateddottedtext-small.png)](effects-images/animateddottedtext-large.png#lightbox)
 
 [ `AnimatedDottedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)類別一開始會定義一些常數，且也會覆寫`OnAppearing`和`OnDisappearing`動畫的方法：
 
@@ -159,7 +159,7 @@ public class AnimatedDottedTextPage : ContentPage
 
 **點 / Dash Morph**程式繪製虛線圖樣本身，以便連字號似乎分成數個點，再結合表單連字號：
 
-[![](effects-images/dotdashmorph-small.png "三個點虛線 Morph 頁面螢幕擷取畫面")](effects-images/dotdashmorph-large.png#lightbox "點虛線 Morph 頁面的三個螢幕擷取畫面")
+[![點劃線變形頁面的三重螢幕擷取畫面](effects-images/dotdashmorph-small.png)](effects-images/dotdashmorph-large.png#lightbox)
 
 [ `DotDashMorphPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/DotDashMorphPage.cs)類別會覆寫`OnAppearing`並`OnDisappearing`方法就像前一個程式，但此類別會定義`SKPaint`做為欄位的物件：
 
@@ -398,7 +398,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `PaintSurface`處理常式會建立迴圈循環，並存取來判斷哪一個選擇器的貝茲曲線`PathEffect`應該用來繪製它。 三個選項 — `Translate`， `Rotate`，和`Morph`— 從左到右顯示：
 
-[![](effects-images/1dpatheffect-small.png "1d 路徑效果頁面的三個螢幕擷取畫面")](effects-images/1dpatheffect-large.png#lightbox "1d 路徑效果頁面的三個螢幕擷取畫面")
+[![1D 路徑效果頁面的三重螢幕擷取畫面](effects-images/1dpatheffect-small.png)](effects-images/1dpatheffect-large.png#lightbox)
 
 中指定的路徑`SKPathEffect.Create1DPath`方法一律會填滿。 中指定的路徑`DrawPath`如果方法一律會將描邊`SKPaint`物件都有其`PathEffect`屬性設定為 1d 路徑效果。 請注意，`pathPaint`物件沒有`Style`設定，而這通常會預設為`Fill`，但不論描邊的路徑。
 
@@ -410,7 +410,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 如果`advance`引數是否小於一個大小的路徑，則複寫的路徑可以重疊。 這會導致一些有趣效果。 **連結的鏈結**頁面會顯示一系列的重疊的圓似乎類似於連結的鏈結，在特殊的圖案 catenary 的停止回應：
 
-[![](effects-images/linkedchain-small.png "連結的鏈結頁面的三個螢幕擷取畫面")](effects-images/linkedchain-large.png#lightbox "連結的鏈結頁面的三個螢幕擷取畫面")
+[![連結鏈頁面的三重螢幕擷取畫面](effects-images/linkedchain-small.png)](effects-images/linkedchain-large.png#lightbox)
 
 看起來非常接近，您會看到這些並不是實際的圓形。 鏈結中的每個連結是大小和位置，讓它們似乎具有相鄰的連結所連接的兩個弧形。
 
@@ -418,13 +418,13 @@ public partial class OneDimensionalPathEffectPage : ContentPage
 
 `y = a · cosh(x / a)`
 
-*Cosh*是雙曲線餘弦函數。 針對*x*等於 0， *cosh*為零並*y*等於  。 這是 catenary 的中心。 像是*餘弦函數*函式*cosh*要*甚至*，這表示*cosh(–x)* 等於*cosh(x)* ，並增加正數或負數的引數的值增加。 這些值描述構成 catenary 側邊的曲線。
+*Cosh*是雙曲線餘弦函數。 針對*x*等於 0， *cosh*為零並*y*等於。 這是 catenary 的中心。 像是*餘弦函數*函式*cosh*要*甚至*，這表示*cosh(–x)* 等於*cosh(x)* ，並增加正數或負數的引數的值增加。 這些值描述構成 catenary 側邊的曲線。
 
-尋找適當的值  成維度的手機上的頁面 catenary 不是直接的計算。 如果*w*並*h*是最佳的值是矩形的高度與寬度  滿足下列方程式：
+尋找適當的值成維度的手機上的頁面 catenary 不是直接的計算。 如果*w*並*h*是最佳的值是矩形的高度與寬度滿足下列方程式：
 
 `cosh(w / 2 / a) = 1 + h / a`
 
-中的下列方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)類別會併入該等號比較，藉由參考兩個運算式的左側和右側為等號`left`和`right`。 值較小  ，`left`大於`right`; 對於大型值  ，`left`是小於`right`。 `while`迴圈中的最佳值縮減  :
+中的下列方法[ `LinkedChainPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/LinkedChainPage.cs)類別會併入該等號比較，藉由參考兩個運算式的左側和右側為等號`left`和`right`。 值較小，`left`大於`right`; 對於大型值，`left`是小於`right`。 `while`迴圈中的最佳值縮減:
 
 ```csharp
 float FindOptimumA(float width, float height)
@@ -501,7 +501,7 @@ public class LinkedChainPage : ContentPage
 }
 ```
 
-主要工作`PaintSurface`處理常式是建立 catenary 本身的路徑。 如果之後決定最佳  並將它儲存在`optA`變數時，它也需要計算從視窗頂端的位移。 然後，它可以累積一堆`SKPoint`catenary，值為一個路徑，此功能，以及繪製的路徑，以先前建立`SKPaint`物件：
+主要工作`PaintSurface`處理常式是建立 catenary 本身的路徑。 如果之後決定最佳並將它儲存在`optA`變數時，它也需要計算從視窗頂端的位移。 然後，它可以累積一堆`SKPoint`catenary，值為一個路徑，此功能，以及繪製的路徑，以先前建立`SKPaint`物件：
 
 ```csharp
 public class LinkedChainPage : ContentPage
@@ -549,7 +549,7 @@ public class LinkedChainPage : ContentPage
 
 **輸送帶**頁面會建立類似尾巴輸送帶，使用曲線的頂端和底部，會調整成視窗大小的路徑。 該路徑繪製簡單`SKPaint`物件 20 像素寬和彩色的灰色顯示，並接著圖案與另一個`SKPaint`物件`SKPathEffect`參考路徑，類似於小小的值區的物件：
 
-[![](effects-images/conveyorbelt-small.png "輸送帶頁面的三個螢幕擷取畫面")](effects-images/conveyorbelt-large.png#lightbox "輸送帶頁面的三個螢幕擷取畫面")
+[![[輸送機皮帶] 頁面的三重螢幕擷取畫面](effects-images/conveyorbelt-small.png)](effects-images/conveyorbelt-large.png#lightbox)
 
 （0，0） 的貯體路徑的點是控制代碼，因此當`phase`引數以動畫顯示，不外乎的輸送帶，或許 scooping 向上底部的上限和傾印出頂端似乎貯體。
 
@@ -798,7 +798,7 @@ public class HatchFillPage : ContentPage
 
 `PaintSurface`處理常式的呼叫，以便您可以看到紅色和藍色的規劃線條與差異，只是繪製圓角的矩形，結束：
 
-[![](effects-images/hatchfill-small.png "規劃圖樣填滿頁面的三個螢幕擷取畫面")](effects-images/hatchfill-large.png#lightbox "規劃圖樣填滿頁面的三個螢幕擷取畫面")
+[![影線填滿頁的三向螢幕擷取畫面](effects-images/hatchfill-small.png)](effects-images/hatchfill-large.png#lightbox)
 
 Android 畫面看起來不像這樣:螢幕擷取畫面的縮放會導致精簡的紅線和精簡空間合併成看似較寬的紅線和更寬的空間。
 
@@ -852,7 +852,7 @@ public class PathTileFillPage : ContentPage
 
 在 `PaintSurface`處理常式，`SKPathEffect.Create2DPath`呼叫設定的水平和垂直間距設為 64，讓 80 個像素正方形圖格會重疊。 幸運的是，路徑類似拼圖片段，網格妥善使用圖格相鄰 （adjoining）：
 
-[![](effects-images/pathtilefill-small.png "路徑並排顯示填滿頁面的三個螢幕擷取畫面")](effects-images/pathtilefill-large.png#lightbox "路徑並排顯示填滿頁面的三個螢幕擷取畫面")
+[![路徑磚填滿頁面的三向螢幕擷取畫面](effects-images/pathtilefill-small.png)](effects-images/pathtilefill-large.png#lightbox)
 
 從原始的螢幕擷取畫面縮放比例會導致某些扭曲，特別是 Android 的畫面。
 
@@ -927,7 +927,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 您可以使用這種效果繪製或根據填滿`Style`屬性`SKPaint`物件。 以下執行：
 
-[![](effects-images/anotherroundedheptagon-small.png "另一個的捨入 Heptagon 頁面的三個螢幕擷取畫面")](effects-images/anotherroundedheptagon-large.png#lightbox "的另一個的捨入 Heptagon 頁面的三個螢幕擷取畫面")
+[![另一個圓角 Heptagon 頁面的三向螢幕擷取畫面](effects-images/anotherroundedheptagon-small.png)](effects-images/anotherroundedheptagon-large.png#lightbox)
 
 您會看到這個圓角的 heptagon 等同於先前的程式。 如果您需要更多說服圓角半徑可說是 100 而非指定 50`SKPathEffect.CreateCorner`呼叫時，您可以取消註解最終的陳述式中的程式並查看 100 radius 圓形重疊，邊角。
 
@@ -946,7 +946,7 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 
 **抖動實驗**頁面可讓您試驗不同的值，在繪製矩形：
 
-[![](effects-images/jitterexperiment-small.png "三倍抖動實驗 頁面上的螢幕擷取畫面")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
+[![[JitterExperiment] 頁面的三重螢幕擷取畫面](effects-images/jitterexperiment-small.png)](effects-images/jitterexperiment-large.png#lightbox)
 
 程式很簡單。 [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml)檔案具現化兩個`Slider`項目和`SKCanvasView`:
 
@@ -1072,7 +1072,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 這裡執行以橫向模式：
 
-[![](effects-images/jittertext-small.png "三倍抖動文字頁面的螢幕擷取畫面")](effects-images/jittertext-large.png#lightbox "Triple screenshot of the JitterText page")
+[![[JitterText] 頁面的三重螢幕擷取畫面](effects-images/jittertext-small.png)](effects-images/jittertext-large.png#lightbox)
 
 ## <a name="path-outlining"></a>路徑大綱
 
@@ -1173,11 +1173,11 @@ public partial class TapToOutlineThePathPage : ContentPage
 
 圓形是填滿，而且如您所預期的圖案：
 
-[![](effects-images/taptooutlinethepathnormal-small.png "一般點選至外框路徑 頁面的三個螢幕擷取畫面")](effects-images/taptooutlinethepathnormal-large.png#lightbox "正常的點選來外框路徑頁面三個螢幕擷取畫面")
+[![以一般點框顯示路徑頁面的三個螢幕擷取畫面](effects-images/taptooutlinethepathnormal-small.png)](effects-images/taptooutlinethepathnormal-large.png#lightbox)
 
 當您點選 螢幕`outlineThePath`設為`true`，而`PaintSurface`處理常式會建立全新`SKPath`物件，並會使用該值作為呼叫中的目的地路徑`GetFillPath`上`redThickStroke`繪製物件。 然後填入並圖案與該目的地路徑`redThinStroke`，產生下列：
 
-[![](effects-images/taptooutlinethepathoutlined-small.png "外框的 [點選以外框路徑] 頁面的三個螢幕擷取畫面")](effects-images/taptooutlinethepathoutlined-large.png#lightbox "的外框的 [點選以外框路徑] 頁面的三個螢幕擷取畫面")
+[![概述 [路徑] 頁面的三向外框的螢幕擷取畫面](effects-images/taptooutlinethepathoutlined-small.png)](effects-images/taptooutlinethepathoutlined-large.png#lightbox)
 
 兩個紅色圓形清楚指出，原始的循環路徑轉換成兩個循環的輪廓。
 
@@ -1241,7 +1241,7 @@ public static SKPathEffect CreateCompose (SKPathEffect outer, SKPathEffect inner
 
 明顯的用途之一`CreateSum`是定義`SKPaint`物件，一個路徑的效果，以填滿的路徑和 strokes 另一個路徑效果的路徑。 這示範於**貓 」、 「 在框架中的**範例，它會顯示與扇形邊緣的貓 」、 「 在範圍內的陣列：
 
-[![](effects-images/catsinframe-small.png "三重的螢幕擷取畫面的畫面格的貓 」、 「 頁面")](effects-images/catsinframe-large.png#lightbox "的畫面格的貓 」、 「 頁面的三個螢幕擷取畫面")
+[![框架頁面中貓的三向螢幕擷取畫面](effects-images/catsinframe-small.png)](effects-images/catsinframe-large.png#lightbox)
 
 [ `CatsInFramePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/CatsInFramePage.cs)類別一開始會定義數個欄位。 您可能會發現從第一個欄位[ `PathDataCatPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)類別[ **SVG 路徑資料**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)文章。 第二個路徑根據一條線和弧形的框架 scallop 模式而定：
 
@@ -1409,7 +1409,7 @@ public class DashedHatchLinesPage : ContentPage
 
 因為您已經發現，規劃線條不精確地限制為內部的區域中，並在此範例中，它們一定會開始於整個虛線左側：
 
-[![](effects-images/dashedhatchlines-small.png "虛線規劃頁面的三個螢幕擷取畫面")](effects-images/dashedhatchlines-large.png#lightbox "虛線規劃頁面的三個螢幕擷取畫面")
+[![虛線影線線頁的三向螢幕擷取畫面](effects-images/dashedhatchlines-small.png)](effects-images/dashedhatchlines-large.png#lightbox)
 
 既然您已了解範圍從簡單的路徑效果點和虛線奇怪的組合，以使用您的想像力，並看看您可以建立。
 

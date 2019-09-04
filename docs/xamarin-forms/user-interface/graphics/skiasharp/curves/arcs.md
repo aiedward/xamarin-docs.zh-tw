@@ -7,12 +7,12 @@ ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: 97c168460b091b9ada954cacd895a670c31805b2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ada7ce8fc9365ab4133ddf439353e97e640f39d6
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655187"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228119"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>繪製弧形的三種方式
 
@@ -22,7 +22,7 @@ _了解如何使用 SkiaSharp 三種不同的方式定義弧形_
 
 弧形，是一條曲線上的省略符號，例如捨入的組件，此無限大符號的圓周：
 
-![](arcs-images/arcsample.png "無限大符號")
+![無限大符號](arcs-images/arcsample.png)
 
 定義的簡單起見，儘管沒有定義符合所有需求，反正繪圖函式方法，因此，在最佳的方式，來繪製弧形的圖形系統之間沒有共識。基於這個理由，`SKPath`類別不會限制本身只是一種方法。
 
@@ -42,21 +42,21 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 這兩種方法的開頭`SKRect`定義位置和大小的橢圓形的值：
 
-![](arcs-images/anglearcoval.png "開始角度弧形之橢圓形")
+![開始角度弧線的橢圓形](arcs-images/anglearcoval.png)
 
 弧線屬於這個橢圓的圓周。
 
 `startAngle`引數是順時針旋轉的角度以度數為單位，相對於繪製橢圓形的中心從右邊的水平線。 `sweepAngle`引數是相對於`startAngle`。 以下是`startAngle`和`sweepAngle`值分別為 60 度和 100 度：
 
-![](arcs-images/anglearcangles.png "定義角度弧線角度")
+![定義角度弧線的角度](arcs-images/anglearcangles.png)
 
 弧形開始的開始角度。 其長度受到掃掠角度。 弧線如下所示以紅色：
 
-![](arcs-images/anglearchighlight.png "反白顯示的角度弧形")
+![反白顯示的角度弧線](arcs-images/anglearchighlight.png)
 
 加入具有路徑的曲線`AddArc`或`ArcTo`方法是只要該橢圓形的圓周的一部分：
 
-![](arcs-images/anglearc.png "單獨角度弧形")
+![角度弧本身](arcs-images/anglearc.png)
 
 `startAngle` 或`sweepAngle`引數可以是負數:負值的`sweepAngle`圓弧會順時針旋轉, 而以順時針方向表示負數值。
 
@@ -103,7 +103,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如您所見，開始角度和掃掠角度，可能需要在負值上：
 
-[![](arcs-images/anglearc-small.png "角度的反正頁面的三個螢幕擷取畫面")](arcs-images/anglearc-large.png#lightbox "角度弧線頁面的三個螢幕擷取畫面")
+[![[角度弧線] 頁面的三重螢幕擷取畫面](arcs-images/anglearc-small.png)](arcs-images/anglearc-large.png#lightbox)
 
 這個方法，來產生弧線是以最簡單，就可以輕鬆地衍生參數化的方程式描述弧形。了解的大小和位置的橢圓形，] 和 [開始] 及 [掃掠角度，開始和結束點弧線的計算使用簡單的三角函數：
 
@@ -208,11 +208,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 新`SKPath`物件建立每個圓形圖配量。 路徑包含一行，以從管理中心，則`ArcTo`繪製弧線和另一行回 center 結果`Close`呼叫。 這個程式會顯示 「 分裂 」 的圓形圖配量的移動它們所有影片中心 x 50 像素。 這項工作需要每個配量中的中間點掃掠角度的方向的向量：
 
-[![](arcs-images/explodedpiechart-small.png "分裂式圓形圖頁面的三個螢幕擷取畫面")](arcs-images/explodedpiechart-large.png#lightbox "的分裂式圓形圖頁面的三個螢幕擷取畫面")
+[![分裂式圓形圖頁面的三重螢幕擷取畫面](arcs-images/explodedpiechart-small.png)](arcs-images/explodedpiechart-large.png#lightbox)
 
 若要查看是什麼樣子沒有 「 暴增 」，只是標記為註解`Translate`呼叫：
 
-[![](arcs-images/explodedpiechartunexploded-small.png "分裂式圓形圖頁面，而不需要擴張的三個螢幕擷取畫面")](arcs-images/explodedpiechartunexploded-large.png#lightbox "的分裂式圓形圖頁面，而不需要擴張的三個螢幕擷取畫面")
+[![不含激增的分裂式圓形圖頁面的三向螢幕擷取畫面](arcs-images/explodedpiechartunexploded-small.png)](arcs-images/explodedpiechartunexploded-large.png#lightbox)
 
 ## <a name="the-tangent-arc"></a>弧形正切函數
 
@@ -234,31 +234,31 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 - 第一個點引數`ArcTo`方法，稱為*角點*
 - 第二個點引數`ArcTo`，稱為*目的地點*:
 
-![](arcs-images/tangentarcthreepoints.png "開始正切函數的弧形的三個點")
+![開始正切弧線的三個點](arcs-images/tangentarcthreepoints.png)
 
 下列三個點定義兩個連接的線條：
 
-![](arcs-images/tangentarcconnectinglines.png "連接的正切函數的弧線的三個點的線條")
+![連接正切弧線之三個點的線條](arcs-images/tangentarcconnectinglines.png)
 
 如果三個點 colinear&mdash;也就是如果它們也都必須位於相同的直線&mdash;會繪製任何弧形。
 
 `ArcTo`方法也包含`radius`參數。 這會定義於圓形的半徑：
 
-![](arcs-images/tangentarccircle.png "正切函數的弧形的圓形")
+![反正切圓弧的圓形](arcs-images/tangentarccircle.png)
 
 正切函數的弧形的橢圓形從未一般化。
 
 如果任何角度，符合的兩行，該圓形可以插入這幾行之間，使其正切為兩行：
 
-![](arcs-images/tangentarctangentcircle.png "兩行之間的正切函數的弧形圓形")
+![兩條線之間的正切弧線圓](arcs-images/tangentarctangentcircle.png)
 
 新增至分佈曲線並未接觸中指定的點任一`ArcTo`方法。 它包含一條直線從目前點的第一個的正切函數點，並結束於第二個的正切函數點，如下所示，以紅色弧線：
 
-![](arcs-images/tangentarchighlight.png "這兩行之間的反白顯示正切函數弧度")
+![兩行之間反白顯示的反正切弧線](arcs-images/tangentarchighlight.png)
 
 以下是最終的直線和新增至分佈的弧形：
 
-![](arcs-images/tangentarc.png "這兩行之間的反白顯示正切函數弧度")
+![兩行之間反白顯示的反正切弧線](arcs-images/tangentarc.png)
 
 Contour 可以從第二個的正切函數點繼續。
 
@@ -416,7 +416,7 @@ public partial class TangentArcPage : InteractivePage
 
 以下是**正切函數弧線**執行頁面：
 
-[![](arcs-images/tangentarc-small.png "反正切函數頁面的三個螢幕擷取畫面")](arcs-images/tangentarc-large.png#lightbox "的弧形正切函數頁面的三個螢幕擷取畫面")
+[![正切弧線頁面的三重螢幕擷取畫面](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
 
 弧形正切函數是適合用來建立圓的角，例如一個圓角矩形。 因為`SKPath`已經包含`AddRoundedRect`方法，**四捨五入 Heptagon**頁面會示範如何使用`ArcTo`捨入七個邊的多邊形的邊角。 （程式碼被一般化的任何規則的多邊形）。
 
@@ -489,9 +489,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-以下是執行的程式：
+以下是程式執行情況：
 
-[![](arcs-images/roundedheptagon-small.png "捨入 Heptagon 頁面的三個螢幕擷取畫面")](arcs-images/roundedheptagon-large.png#lightbox "捨入 Heptagon 頁面的三個螢幕擷取畫面")
+[![[圓角 Heptagon] 頁面的三重螢幕擷取畫面](arcs-images/roundedheptagon-small.png)](arcs-images/roundedheptagon-large.png#lightbox)
 
 ## <a name="the-elliptical-arc"></a>橢圓形弧線
 
@@ -507,31 +507,31 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 這些`ArcTo`方法的目前點的分佈，兩個點之間繪製弧形和最後一個參數`ArcTo`方法 (`xy`參數或個別`x`和`y`參數):
 
-![](arcs-images/ellipticalarcpoints.png "兩個點定義橢圓形弧線")
+![定義橢圓形弧線的兩個點](arcs-images/ellipticalarcpoints.png)
 
 第一個點參數`ArcTo`方法 (`r`，或`rx`和`ry`) 根本不是點，但改為指定的橢圓形; 水平及垂直半徑
 
-![](arcs-images/ellipticalarcellipse.png "定義橢圓弧形的橢圓形")
+![定義橢圓形弧線的橢圓形](arcs-images/ellipticalarcellipse.png)
 
 `xAxisRotate`參數是順時針旋轉這個橢圓形的度數的數目：
 
-![](arcs-images/ellipticalarctiltedellipse.png "傾斜定義橢圓弧形的橢圓形")
+![定義橢圓形弧線的傾斜橢圓形](arcs-images/ellipticalarctiltedellipse.png)
 
 如果這個傾斜的橢圓形然後定位，讓它碰觸的兩個點，由兩個不同的弧線連接點：
 
-![](arcs-images/ellipticalarcellipse1.png "第一組橢圓弧形")
+![第一組橢圓形弧形](arcs-images/ellipticalarcellipse1.png)
 
 這兩個弧線可以透過兩種方式來區別:上弧形會大於下弧線, 而當弧線由左至右繪製時, 會以順時針方向繪製上弧形, 而下弧線則以逆時針方向繪製。
 
 此外，也可以符合另一種方法的兩個點之間的橢圓形：
 
-![](arcs-images/ellipticalarcellipse2.png "第二組橢圓弧形")
+![第二組橢圓形弧形](arcs-images/ellipticalarcellipse2.png)
 
 現在沒有較小的弧形順時針旋轉，繪製的頂端和底部繪製的較大弧線以逆時針方向。
 
 因此共有四種方法的傾斜的橢圓形所定義的弧形可以連線這些兩個點：
 
-![](arcs-images/ellipticalarccolors.png "所有的四個橢圓弧形")
+![全部四個橢圓形弧](arcs-images/ellipticalarccolors.png)
 
 四種組合來區別這些四個弧形[ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize)並[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)列舉型別引數`ArcTo`方法：
 
@@ -586,21 +586,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下執行：
 
-[![](arcs-images/ellipticalarc-small.png "橢圓形弧線頁面的三個螢幕擷取畫面")](arcs-images/ellipticalarc-large.png#lightbox "橢圓形弧線頁面的三個螢幕擷取畫面")
+[![橢圓形弧線頁面的三重螢幕擷取畫面](arcs-images/ellipticalarc-small.png)](arcs-images/ellipticalarc-large.png#lightbox)
 
 **弧線無限大**頁面使用橢圓形弧線来繪製的無限值正負號。 無限大登根據兩個圓形隔開 100 個單位的 100 個單位的半徑：
 
-![](arcs-images/infinitycircles.png "兩個圓形")
+![兩個圓形](arcs-images/infinitycircles.png)
 
 跨越彼此的兩行是以這兩個圓形的正切函數：
 
-![](arcs-images/infinitycircleslines.png "兩個圓形正切函數的行")
+![具有正切線條的兩個圓形](arcs-images/infinitycircleslines.png)
 
 無限大符號是組件，這些圓形，以及兩行的組合。 若要使用橢圓形弧線要繪製的無限值正負號，就必須判斷兩條線的圓形的正切所在的座標。
 
 建構在一個圓形的正確矩形：
 
-![](arcs-images/infinitytriangle.png "兩個圓形正切函數的行和內嵌的圓形")
+![具有正切線條和內嵌圓形的兩個圓形](arcs-images/infinitytriangle.png)
 
 圓形的半徑 100 單位，而三角形斜邊 150 單位，所以角度 α 是 100，150，或 41.8 度分割的反正弦值 （數值的反正弦值）。 150 次的餘弦函數 41.8 度或 112，由畢氏三元理論，也可以計算三角形的另一端的長度。
 
@@ -612,7 +612,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 四個的正切函數點都只需要點 （0，0） 上繪製置中對齊的無限大號，具有為 100 的圓形半徑：
 
-![](arcs-images/infinitycoordinates.png "正切函數的行與座標的兩個圓形")
+![具有正切線條和座標的兩個圓形](arcs-images/infinitycoordinates.png)
 
 `PaintSurface`中的處理常式[ `ArcInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ArcInfinityPage.cs)類別放置無限大登以便 （0，0） 點位於中央的頁面上，並調整成螢幕大小的路徑：
 
@@ -654,7 +654,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 程式碼會使用`Bounds`屬性`SKPath`來決定維度的無限大的正弦值，調整其規模大小的畫布：
 
-[![](arcs-images/arcinfinity-small.png "弧線的無限值 頁面的三個螢幕擷取畫面")](arcs-images/arcinfinity-large.png#lightbox "弧線無限大頁面的三個螢幕擷取畫面")
+[![[Arc 無限大] 頁面的三重螢幕擷取畫面](arcs-images/arcinfinity-small.png)](arcs-images/arcinfinity-large.png#lightbox)
 
 結果看起來有點小，這暗示著`Bounds`屬性`SKPath`報告大於路徑的大小。
 
@@ -662,7 +662,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 若要取得更緊密的調整，請使用`TightBounds`屬性，它會排除的控點。 以下是程式在橫向模式中執行，並使用`TightBounds`屬性取得路徑界限：
 
-[![](arcs-images/arcinfinitytightbounds-small.png "弧線無限大頁面緊密繫結的三個螢幕擷取畫面")](arcs-images/arcinfinitytightbounds-large.png#lightbox "緊密繫結弧線無限大頁面的三個螢幕擷取畫面")
+[![具有緊密界限之 Arc 無限大頁面的三向螢幕擷取畫面](arcs-images/arcinfinitytightbounds-small.png)](arcs-images/arcinfinitytightbounds-large.png#lightbox)
 
 雖然以數學方式 smooth 弧線和直線，線條之間的連線，從弧線變更為直線似乎有點突然。 更好的無限大登上時，會在下一篇文章[**三種類型的貝茲曲線**](beziers.md)。
 

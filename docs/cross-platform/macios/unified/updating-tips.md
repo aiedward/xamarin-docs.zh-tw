@@ -6,12 +6,12 @@ ms.assetid: 8DD34D21-342C-48E9-97AA-1B649DD8B61F
 ms.date: 03/29/2017
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: 2b82de58b9d2f9e8acb8996f484845f9a71b6e80
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 844730d2ace717b951df2d80b2add6d1094fe997
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120304"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226105"
 ---
 # <a name="tips-for-updating-code-to-the-unified-api"></a>將程式碼更新至 Unified API 的祕訣
 
@@ -59,7 +59,7 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - `NSDictionary.IntValue`現在會傳回`Int32Value`,而可以改用。 `nint`
 
-- `nfloat`無法`nint` 標記`const`和類型;  `static readonly nint`是合理的替代方法。
+- `nfloat`無法`nint` 標記`const`和類型;`static readonly nint`是合理的替代方法。
 
 - 直接在`MonoTouch.`命名空間中使用的專案, 現在通常是`ObjCRuntime.`在命名空間中 (例如: `MonoTouch.Constants.Version`現在`ObjCRuntime.Constants.Version`是)。
 
@@ -69,10 +69,10 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - 使用`[Export]`手動匯出的方法可能不會由遷移工具自動修正, 例如, 在此程式碼 snippert 中, 您必須手動將傳回`nfloat`類型更新為:
 
-    ```csharp
-    [Export("tableView:heightForRowAtIndexPath:")]
-    public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
-    ```
+  ```csharp
+  [Export("tableView:heightForRowAtIndexPath:")]
+  public nfloat HeightForRow(UITableView tableView, NSIndexPath indexPath)
+  ```
 
 - Unified API 不會提供 NSDate 與 .NET DateTime 之間的隱含轉換, 因為它不是不失真的轉換。 若要避免在轉換`DateTimeKind.Unspecified`成`NSDate`之前, `DateTime`將 .net 轉換成本機或 UTC 的相關錯誤。
 
@@ -80,9 +80,9 @@ Objective-C exception thrown. Name: NSInvalidArgumentException Reason: Could not
 
 - 使用 AVFoundation 類別`VideoSettings`搭配的程式碼應該會變更`WeakVideoSettings`為使用屬性。 這需要`Dictionary`, 其可做為設定類別上的屬性, 例如:
 
-    ```csharp
-    vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
-    ```
+  ```csharp
+  vidrec.WeakVideoSettings = new AVVideoSettings() { ... }.Dictionary;
+  ```
 
 - NSObject `.ctor(IntPtr)`的函式已從公用變更為受保護 ([以防止不當使用](~/cross-platform/macios/unified/overview.md#NSObject_ctor))。
 

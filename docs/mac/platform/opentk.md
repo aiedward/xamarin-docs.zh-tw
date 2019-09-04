@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: eb6eff59ccb44d9954139c294592fafcba1f08e0
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 806f58ae6a79f935916008e93deed0136920951a
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889531"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227811"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin. Mac 中的 Opentk 簡介簡介
 
@@ -237,7 +237,7 @@ Game.Resize += (sender, e) =>
 
 ### <a name="the-updateframe-event"></a>UpdateFrame 事件
 
-`UpdateFrame`事件是用來處理使用者輸入、更新物件位置、執行物理或 AI 計算。 針對我們的簡單測試應用程式, 我們不會使用`UpdateFrame`事件, 但已包含它以供參考: 
+`UpdateFrame`事件是用來處理使用者輸入、更新物件位置、執行物理或 AI 計算。 針對我們的簡單測試應用程式, 我們不會使用`UpdateFrame`事件, 但已包含它以供參考:
 
 ```csharp
 Game.UpdateFrame += (sender, e) =>
@@ -253,7 +253,7 @@ Game.UpdateFrame += (sender, e) =>
 
 ### <a name="the-renderframe-event"></a>RenderFrame 事件
 
-`RenderFrame`事件包含用來呈現 (繪製) 圖形的程式碼。 針對我們的範例應用程式, 我們使用簡單的三角形來填滿遊戲視圖: 
+`RenderFrame`事件包含用來呈現 (繪製) 圖形的程式碼。 針對我們的範例應用程式, 我們使用簡單的三角形來填滿遊戲視圖:
 
 ```csharp
 Game.RenderFrame += (sender, e) =>

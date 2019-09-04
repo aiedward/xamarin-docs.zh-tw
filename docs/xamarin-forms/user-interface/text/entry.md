@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: decdcc451927d5e9e1889558bfc9150c98fecf91
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e712f0b69f87659499f7eab4955a9f943716f5b5
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650268"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227988"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
 
@@ -105,7 +105,7 @@ A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength)屬性值為 0 表示�
 var MyEntry = new Entry { IsPassword = true };
 ```
 
-![](entry-images/password.png "項目 IsPassword 範例")
+![專案 IsPassword 範例](entry-images/password.png)
 
 預留位置可能使用的執行個體`Entry`做為密碼欄位設定：
 
@@ -121,7 +121,7 @@ var MyEntry = new Entry { IsPassword = true };
 var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 ```
 
-![](entry-images/passwordplaceholder.png "項目 IsPassword 和版面配置區範例")
+![專案 IsPassword 和預留位置範例](entry-images/passwordplaceholder.png)
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>設定資料指標位置和文字選取範圍長度
 
@@ -238,7 +238,7 @@ var entry = new Entry { ReturnType = ReturnType.Send };
 
 ### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼字檢查
 
-          [
+[
           `IsSpellCheckEnabled`
           ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查 已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
 
@@ -296,7 +296,7 @@ var entry = new Entry();
 entry.TextColor = Color.Green;
 ```
 
-![](entry-images/textcolor.png "項目 TextColor 範例")
+![專案 TextColor 範例](entry-images/textcolor.png)
 
 請注意，不是預留位置受到指定`TextColor`。
 
@@ -313,7 +313,7 @@ var entry = new Entry();
 entry.BackgroundColor = Color.FromHex("#2c3e50");
 ```
 
-![](entry-images/textbackgroundcolor.png "項目的 BackgroundColor 範例")
+![專案 BackgroundColor 範例](entry-images/textbackgroundcolor.png)
 
 務必確定您選擇的背景和文字色彩在每個平台上使用，而且不會遮住任何預留位置文字。
 

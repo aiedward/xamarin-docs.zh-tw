@@ -7,21 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2015
-ms.openlocfilehash: 4aae2a206f07ea6caa7fc0d7530fb9fec05ce5f0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f05703babd3f6e67713dfccdb1a1fc6a4ea6966e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648420"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228031"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
 [`ListView`](xref:Xamarin.Forms.ListView)是用來呈現資料清單的視圖, 特別是需要滾動的長清單。
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)這是使用不同的版面配置規格來呈現資料清單的視圖。 它的目的是要提供更具彈性且更高效[`ListView`](xref:Xamarin.Forms.ListView)能的替代方案。 如需詳細資訊, 請參閱[CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 是使用不同版面配置規格呈現資料清單的檢視。 它的目的是要提供更具彈性且更高效[`ListView`](xref:Xamarin.Forms.ListView)能的替代方案。 如需詳細資訊，請參閱 [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
 
 ## <a name="use-cases"></a>使用案例
 
@@ -41,8 +41,8 @@ ListView 的可執行每個平台的原生功能的元件數目。 每個元件�
 
 - **[資料格](customizing-cell-appearance.md)** &ndash; ListView 中的資料會顯示在資料格中。 每個資料格會對應至一個資料列。 有內建的儲存格可供選擇，或您可以定義您自己自訂的儲存格。 內建和自訂的資料格可以是在 XAML 或程式碼中使用/定義。
   - **[內建](customizing-cell-appearance.md#Built_in_Cells)** &ndash;內建的儲存格，特別是 TextCell 和 ImageCell，可以是絕佳的效能，因為它們對應至每個平台上的原生控制項。
-       - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;顯示的文字，並選擇性地使用詳細資料的文字字串。 詳細資料的文字會轉譯為較小的字型，並且強調色彩中的第二個資料行。
-       - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;顯示文字的映像。 會顯示為 TextCell 左側的映像。
+    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;顯示的文字，並選擇性地使用詳細資料的文字字串。 詳細資料的文字會轉譯為較小的字型，並且強調色彩中的第二個資料行。
+    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;顯示文字的映像。 會顯示為 TextCell 左側的映像。
   - **[自訂資料格](customizing-cell-appearance.md#customcells)** &ndash;自訂儲存格很棒，當您要呈現複雜的資料。 例如，自訂檢視可用來呈現一份歌曲、 專輯和藝術工作者包括：
 
 ![](images/image-cell-default.png "使用 ImageCells ListView")

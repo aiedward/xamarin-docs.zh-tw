@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: a57363ef0fec4668fe35e1d7198372a543d672e7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3b045d18d66463a1464e446847cb5dbfd531bbf3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655342"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227880"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Xamarin 中的大綱視圖
 
@@ -87,10 +87,10 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 - **方格色彩**-設定儲存格框線色彩。
 - **背景**-設定儲存格背景色彩。
 - **選取專案**-可讓您控制使用者如何在資料表中選取儲存格, 如下所示:
-    - **多個**- `true`如果, 使用者可以選取多個資料列和資料行。
-    - 資料**行**- `true`如果是, 使用者可以選取資料行。
-    - **輸入 select** -如果`true`, 使用者可以輸入字元來選取資料列。
-    - **空白**-如果`true`不需要使用者選取資料列或資料行, 則資料表完全不允許選取。
+  - **多個**- `true`如果, 使用者可以選取多個資料列和資料行。
+  - 資料**行**- `true`如果是, 使用者可以選取資料行。
+  - **輸入 select** -如果`true`, 使用者可以輸入字元來選取資料列。
+  - **空白**-如果`true`不需要使用者選取資料列或資料行, 則資料表完全不允許選取。
 - 自動儲存-資料表格式的名稱會自動儲存在底下。
 - 資料**行資訊**- `true`若為, 則會自動儲存資料行的順序和寬度。
 - **分行符號**-選取儲存格處理分行符號的方式。
@@ -115,9 +115,9 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 您也可以將資料行的控點 (垂直置中在資料行右側) 拖曳到左邊或右方, 以調整其大小。
 
-讓我們選取資料表視圖中的每個資料行, 並提供第一個  資料行`Product`的標題`Details`和第二個數據行。
+讓我們選取資料表視圖中的每個資料行, 並提供第一個資料行`Product`的標題`Details`和第二個數據行。
 
-在介面階層中選取資料表`NSTableViewCell`資料格視圖  (),**屬性偵測器**中可使用下列屬性:
+在介面階層中選取資料表`NSTableViewCell`資料格視圖 (),**屬性偵測器**中可使用下列屬性:
 
 [![](outline-view-images/edit07.png "屬性偵測器")](outline-view-images/edit07.png#lightbox)
 
@@ -129,7 +129,7 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 您將會在這裡設定標準文字欄位的所有屬性。 根據預設, 標準文字欄位是用來顯示資料行中儲存格的資料。
 
-在介面階層中選取資料表`NSTableFieldCell`資料格視圖  (),**屬性偵測器**中可使用下列屬性:
+在介面階層中選取資料表`NSTableFieldCell`資料格視圖 (),**屬性偵測器**中可使用下列屬性:
 
 [![](outline-view-images/edit09.png "屬性偵測器")](outline-view-images/edit09.png#lightbox)
 
@@ -157,14 +157,14 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用大綱視圖。其中�
 
 對於我們想要公開的任何大綱視圖專案, 程式都是相同的:
 
-1. 切換至 [**助理編輯器**], 並確定`ViewController.h`已選取檔案: 
+1. 切換至 [**助理編輯器**], 並確定`ViewController.h`已選取檔案:
 
     [![](outline-view-images/edit11.png "選取正確的 .h 檔案")](outline-view-images/edit11.png#lightbox)
 2. 從**介面**階層中選取 [大綱] 視圖, 並按一下 [ `ViewController.h`控制項], 並將其拖曳至檔案。
-3. 建立名  `ProductOutline`為的大綱視圖的輸出: 
+3. 建立名 `ProductOutline`為的大綱視圖的輸出:
 
     [![](outline-view-images/edit13.png "設定插座")](outline-view-images/edit13.png#lightbox)
-4. 建立 [資料表] 資料行的**輸出**, `ProductColumn` `DetailsColumn`也稱為: 
+4. 建立 [資料表] 資料行的**輸出**, `ProductColumn` `DetailsColumn`也稱為:
 
     [![](outline-view-images/edit14.png "設定插座")](outline-view-images/edit14.png#lightbox)
 5. 儲存您所做的變更, 並返回 Visual Studio for Mac 以與 Xcode 同步。
@@ -263,7 +263,7 @@ namespace MacOutlines
             } else {
                 return ((Product)item).Products [childIndex];
             }
-                
+
         }
 
         public override bool ItemExpandable (NSOutlineView outlineView, NSObject item)
@@ -273,7 +273,7 @@ namespace MacOutlines
             } else {
                 return ((Product)item).IsProductGroup;
             }
-        
+
         }
         #endregion
     }
@@ -298,7 +298,7 @@ namespace MacOutlines
 {
     public class ProductOutlineDelegate : NSOutlineViewDelegate
     {
-        #region Constants 
+        #region Constants
         private const string CellIdentifier = "ProdCell";
         #endregion
 
@@ -578,7 +578,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
             break;
         case "Details":
             prod.Description = view.StringValue;
-            break; 
+            break;
         }
     };
 
@@ -649,7 +649,7 @@ public override NSView GetView (NSOutlineView outlineView, NSTableColumn tableCo
             break;
         case "Details":
             prod.Description = view.TextField.StringValue;
-            break; 
+            break;
         }
     };
 

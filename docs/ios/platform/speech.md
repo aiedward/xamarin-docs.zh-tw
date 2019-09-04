@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: 65644673bde426fff92530a7a36812d1c95b5995
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 40aa36fa8a89eacd8be7914020c06f3fec75baff
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121279"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227335"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin 中的語音辨識
 
@@ -89,8 +89,8 @@ Apple 已包含可用性 API, 以判斷目前是否有指定的語言可供翻�
 - 使用金鑰, 在應用程式的`Info.plist`檔案中提供使用方式描述。 `NSSpeechRecognitionUsageDescription` 例如, 相機應用程式可能會包含下列描述: 「_這可讓您只需說出「乳酪」這個字, 就能拍攝相片。_ 」
 - 藉由呼叫`SFSpeechRecognizer.RequestAuthorization`方法來要求授權, 以提供應用程式想要`NSSpeechRecognitionUsageDescription`在對話方塊中存取使用者的語音辨識, 並允許他們接受或拒絕的說明 (在上述金鑰中提供)。
 - 建立語音辨識要求:
-    - 針對磁片上預先錄製的音訊, 請使用`SFSpeechURLRecognitionRequest`類別。
-    - 若為即時音訊 (或記憶體中的音訊), `SFSPeechAudioBufferRecognitionRequest`請使用類別。
+  - 針對磁片上預先錄製的音訊, 請使用`SFSpeechURLRecognitionRequest`類別。
+  - 若為即時音訊 (或記憶體中的音訊), `SFSPeechAudioBufferRecognitionRequest`請使用類別。
 - 將語音辨識要求傳遞給語音辨識器 (`SFSpeechRecognizer`), 以開始辨識。 應用程式可以選擇性地按住傳回`SFSpeechRecognitionTask`的來監視和追蹤辨識結果。
 
 下面將詳細說明這些步驟。
@@ -380,8 +380,8 @@ RecognitionTask.Cancel ();
 在 iOS 應用程式中使用語音辨識時, Apple 會強加下列限制:
 
 - 所有應用程式都可以免費使用「語音辨識」, 但其使用量不受限制:
-    - 個別的 iOS 裝置每日可執行檔辨識數目有限。
-    - 應用程式將會以每日要求為基礎進行全域節流。
+  - 個別的 iOS 裝置每日可執行檔辨識數目有限。
+  - 應用程式將會以每日要求為基礎進行全域節流。
 - 應用程式必須準備好處理語音辨識網路連線和使用速率限制失敗。
 - 語音辨識在使用者的 iOS 裝置上, 電池耗盡和高網路流量的成本可能會很高, 因此 Apple 會將嚴格的音訊持續時間限制 (大約一分鐘的語音上限) 強加。
 

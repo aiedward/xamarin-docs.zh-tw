@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 438d3462c123cc9c9a8730405bb64a5e9492bfdf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4a353d64f0e7e29da6c64f93b8554c3661f4d389
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645547"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228135"
 ---
 # <a name="xamarinforms-style-classes"></a>Xamarin. 表單樣式類別
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _[Xamarin] 樣式類別可以讓多個樣式套用至控制項, 而不需要採用樣式繼承。_
 
@@ -203,7 +203,7 @@ Resources = new ResourceDictionary
 
 在此範例中, 第[`BoxView`](xref:Xamarin.Forms.BoxView)一個會將樣式設為行分隔符號, 而第`BoxView`三個則是迴圈。 第二`BoxView`個會套用兩個樣式類別, 讓它的圓角和旋轉45度:
 
-![](style-class-images/boxviews.png "使用樣式類別樣式的 BoxViews")
+![使用樣式類別樣式的 BoxViews](style-class-images/boxviews.png)
 
 > [!IMPORTANT]
 > 因為[`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)屬性的類型`IList<string>`為, 所以可以將多個樣式類別套用至控制項。 發生這種情況時, 樣式類別會以遞增的清單順序套用。 因此, 當多個樣式類別設定相同的屬性時, 位於最高清單位置的樣式類別中的屬性將會優先。

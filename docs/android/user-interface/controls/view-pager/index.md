@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: f2272b90f664331959cfc8f60c6e59adc9550a98
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: eca0f82fd967c28bffc8f20bcc9e2ec6bb3ba737
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522775"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227698"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -34,7 +34,7 @@ _ViewPager 是可讓您實作手勢導覽的佈局管理員。手勢導覽允許
 - 在[具有 Views 的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-views.md)中, 會開發[TreePager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)應用程式, 以示範`ViewPager`如何使用來顯示樹狀目錄的視圖 (落葉和長時間樹狀結構的影像資源庫)。 
     `PagerTabStrip`和`PagerTitleStrip`可用來顯示可協助進行頁面導覽的標題。
 
-- 在[含有片段的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)中, 會開發稍微複雜的[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)應用程式, 以示範`ViewPager`如何`Fragment`使用搭配來建立應用程式, 以將數學問題呈現為快閃卡並回應使用者輸入。 
+- 在[含有片段的 Viewpager](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)中, 會開發稍微複雜的[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)應用程式, 以示範`ViewPager`如何`Fragment`使用搭配來建立應用程式, 以將數學問題呈現為快閃卡並回應使用者輸入。 
 
 
 ## <a name="requirements"></a>需求

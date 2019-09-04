@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 7526349c1b4b61495af95dfc200a5055cea5650e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b55c9d8a65dbb4e44605295043d1b302295030ce
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529292"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228070"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 
@@ -255,7 +255,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 
 看起來如下：
 
-[![](essential-xaml-syntax-images/griddemo.png "格線版面配置")](essential-xaml-syntax-images/griddemo-large.png#lightbox "格線版面配置")
+[![方格版面配置](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
 
 僅從語法中，這些`Grid.Row`， `Grid.Column`， `Grid.RowSpan`，和`Grid.ColumnSpan`靜態欄位或屬性的屬性會出現`Grid`，但有趣的是，`Grid`不會定義名為的任何項目`Row`， `Column`， `RowSpan`，或`ColumnSpan`。
 
@@ -312,7 +312,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 
 而以下是：
 
-[![](essential-xaml-syntax-images/absolutedemo-large.png "絕對版面配置")](essential-xaml-syntax-images/absolutedemo-large.png#lightbox "絕對版面配置")
+[![絕對版面配置](essential-xaml-syntax-images/absolutedemo-large.png)](essential-xaml-syntax-images/absolutedemo-large.png#lightbox)
 
 什麼像這樣的項目，您可能問題的常識使用 XAML。 當然，重複和的規律`LayoutBounds`矩形所示，可能會在程式碼中進一步實現。
 

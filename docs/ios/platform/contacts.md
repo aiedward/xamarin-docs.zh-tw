@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: fe69e596193aab306a3701ea1ae0792362270557
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8b551a17fc54ec1557cd385b4c91b33720316879
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644687"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225971"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Xamarin 中的連絡人和 ContactsUI
 
@@ -23,7 +23,7 @@ _本文涵蓋在 Xamarin iOS 應用程式中使用新的「連絡人」和「連
 這兩個新的架構包含下列功能:
 
 - [**連絡人**](#contacts)-提供使用者連絡人清單資料的存取權。
-    因為大部分的應用程式只需要唯讀存取, 所以此架構已針對安全線程的唯讀存取進行優化。
+  因為大部分的應用程式只需要唯讀存取, 所以此架構已針對安全線程的唯讀存取進行優化。
 
 - [**ContactsUI**](#contactsui) -提供 XAMARIN ios UI 元素, 以顯示、編輯、選取及建立 ios 裝置上的連絡人。
 
@@ -190,7 +190,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> 類別的`GetUnifiedContact`和`GetUnifiedContacts`方法  只會傳回部分連絡人, 限制為從提供的提取金鑰要求的屬性。 `CNContactStore`
+> 類別的`GetUnifiedContact`和`GetUnifiedContacts`方法只會傳回部分連絡人, 限制為從提供的提取金鑰要求的屬性。 `CNContactStore`
 
 ### <a name="unified-contacts"></a>整合連絡人
 

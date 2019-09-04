@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2018
-ms.openlocfilehash: 3e30e3d4ea3bf0ec58aff842ffee68885a47d44a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7b7cd9445ec9f28211037608ab04ffc45bec705c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656183"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227967"
 ---
 # <a name="text-in-xamarinforms"></a>在 Xamarin.Forms 中的文字
 
@@ -34,7 +34,7 @@ Xamarin.Forms 會具有三個主要的檢視，可搭配文字使用：
 
 `Label`檢視用來顯示文字。 它可以顯示多行文字 」 或 「 單行文字。 `Label` 可以有多個用於內嵌的格式化選項呈現文字。 標籤檢視可以換行，或截斷時它不能放在一行的文字。
 
-![](images/label.png "標籤範例")
+![標籤範例](images/label.png)
 
 請參閱[標籤](label.md)一文中的詳細資訊。
 
@@ -46,7 +46,7 @@ Xamarin.Forms 會具有三個主要的檢視，可搭配文字使用：
 
 `Entry` 用來接受單行文字輸入。 `Entry` 色彩和字型的供應項目控制。 `Entry` 具有密碼的模式，可以顯示預留位置文字，直到在輸入文字。
 
-![](images/entry.png "項目範例")
+![專案範例](images/entry.png)
 
 請參閱[項目](entry.md)文件，如需詳細資訊。
 
@@ -58,7 +58,7 @@ Xamarin.Forms 會具有三個主要的檢視，可搭配文字使用：
 
 `Editor` 用來接受多行文字輸入。 `Editor` 色彩和字型的供應項目控制。
 
-![](images/editor.png "編輯器範例")
+![編輯器範例](images/editor.png)
 
 請參閱[編輯器](editor.md)文件，如需詳細資訊。
 

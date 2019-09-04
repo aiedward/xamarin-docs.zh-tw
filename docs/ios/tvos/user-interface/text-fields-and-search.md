@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: cb8520a223a2bc10706c7e5bcebf8fc412d4e64e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b1f4712e87762acb81a366700174db33e0c557bf
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652296"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226683"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>在 Xamarin 中使用 tvOS 文字和搜尋欄位
 
@@ -30,7 +30,7 @@ ms.locfileid: "68652296"
 
 ## <a name="about-text-and-search-fields"></a>關於文字和搜尋欄位
 
-如上所述, 必要時, 您的 tvOS 可以顯示一或多個文字欄位, 以使用螢幕 (或選用的藍牙鍵盤, 視使用者已安裝的 tvOS 版本而定, 從使用者收集少量文字。 
+如上所述, 必要時, 您的 tvOS 可以顯示一或多個文字欄位, 以使用螢幕 (或選用的藍牙鍵盤, 視使用者已安裝的 tvOS 版本而定, 從使用者收集少量文字。
 
 此外, 如果您的應用程式向使用者呈現大量的內容 (例如音樂、電影或圖片集合), 您可能會想要包含搜尋欄位, 讓使用者輸入少量的文字來篩選可用專案的清單。
 
@@ -59,7 +59,7 @@ Apple 具有下列使用文字欄位的建議:
 
 [![](text-fields-and-search-images/keyboard01.png "Siri 遠端鍵盤")](text-fields-and-search-images/keyboard01.png#lightbox)
 
-如果目前的視圖上有一個以上的文字欄位, 將會自動顯示 **[下一步]** 按鈕, 讓使用者進入下一個文字欄位。 最後一個文字欄位將會顯示 [**完成**] 按鈕, 它會結束文字輸入, 並將使用者返回上一個畫面。 
+如果目前的視圖上有一個以上的文字欄位, 將會自動顯示 **[下一步]** 按鈕, 讓使用者進入下一個文字欄位。 最後一個文字欄位將會顯示 [**完成**] 按鈕, 它會結束文字輸入, 並將使用者返回上一個畫面。
 
 在任何時間，使用者也可以按 **功能表** Siri 遠端結束文字項目，並再次回到前一個畫面上的按鈕。
 
@@ -99,37 +99,37 @@ Apple 針對使用搜尋欄位提供下列建議:
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在  **Solution Pad**中, 按兩下`Main.storyboard`檔案以開啟它進行編輯。
-1. 將一個或多個**文字欄位**拖曳至設計介面, 並放在一個視圖上: 
+1. 將一個或多個**文字欄位**拖曳至設計介面, 並放在一個視圖上:
 
     [![](text-fields-and-search-images/text02.png "文字欄位")](text-fields-and-search-images/text02.png#lightbox)
-1. 選取**文字欄位**, 並在  **Properties Pad**的  **Widget**  索引標籤中指定每個唯一的**名稱**: 
+1. 選取**文字欄位**, 並在  **Properties Pad**的  **Widget**  索引標籤中指定每個唯一的**名稱**:
 
     [![](text-fields-and-search-images/text03.png "小工具索引標籤的 [屬性] 面板")](text-fields-and-search-images/text03.png#lightbox)
-1. 在 [**文字欄位**] 區段中, 您可以定義元素, 例如**預留位置**提示和預設**值**: 
+1. 在 [**文字欄位**] 區段中, 您可以定義元素, 例如**預留位置**提示和預設**值**:
 
     [![](text-fields-and-search-images/text04.png "文字欄位區段")](text-fields-and-search-images/text04.png#lightbox)
-1. 向下滾動以定義屬性, 例如**拼寫檢查**、**大小寫**和預設**鍵盤類型**: 
+1. 向下滾動以定義屬性, 例如**拼寫檢查**、**大小寫**和預設**鍵盤類型**:
 
-    [![](text-fields-and-search-images/text05.png "拼寫檢查、大小寫和預設鍵盤類型")](text-fields-and-search-images/text05.png#lightbox) 
+    [![](text-fields-and-search-images/text05.png "拼寫檢查、大小寫和預設鍵盤類型")](text-fields-and-search-images/text05.png#lightbox)
 1. 將變更儲存至您的分鏡腳本。
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
-1. 在方案總管  中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
-1. 將一個或多個**文字欄位**拖曳至設計介面, 並放在一個視圖上: 
+
+1. 在方案總管中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
+1. 將一個或多個**文字欄位**拖曳至設計介面, 並放在一個視圖上:
 
     [![](text-fields-and-search-images/text02-vs.png "文字欄位")](text-fields-and-search-images/text02-vs.png#lightbox)
-1. 選取**文字欄位**, 並在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中提供每個唯一的**名稱**: 
+1. 選取**文字欄位**, 並在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中提供每個唯一的**名稱**:
 
     [![](text-fields-and-search-images/text03-vs.png "[Widget] 索引標籤")](text-fields-and-search-images/text03-vs.png#lightbox)
-1. 在 [**文字欄位**] 區段中, 您可以定義元素, 例如**預留位置**提示和預設**值**: 
+1. 在 [**文字欄位**] 區段中, 您可以定義元素, 例如**預留位置**提示和預設**值**:
 
     [![](text-fields-and-search-images/text04-vs.png "文字欄位區段")](text-fields-and-search-images/text04-vs.png#lightbox)
-1. 向下滾動以定義屬性, 例如**拼寫檢查**、**大小寫**和預設**鍵盤類型**: 
+1. 向下滾動以定義屬性, 例如**拼寫檢查**、**大小寫**和預設**鍵盤類型**:
 
-    [![](text-fields-and-search-images/text05-vs.png "拼寫檢查、大小寫和預設鍵盤類型")](text-fields-and-search-images/text05-vs.png#lightbox) 
+    [![](text-fields-and-search-images/text05-vs.png "拼寫檢查、大小寫和預設鍵盤類型")](text-fields-and-search-images/text05-vs.png#lightbox)
 1. 將變更儲存至您的分鏡腳本。
-    
+
 -----
 
 在程式碼中, 您可以使用其`Text`屬性來取得或設定文字欄位的值:
@@ -149,41 +149,41 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 請執行下列動作：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-    
+
 1. 在  **Solution Pad**中, 按兩下`Main.storyboard`檔案以開啟它進行編輯。
-1. 將新的 [集合視圖控制器] 拖曳至分鏡腳本, 以呈現使用者搜尋的結果: 
+1. 將新的 [集合視圖控制器] 拖曳至分鏡腳本, 以呈現使用者搜尋的結果:
 
     [![](text-fields-and-search-images/search02.png "集合視圖控制器")](text-fields-and-search-images/search02.png#lightbox)
-1. 在**Properties Pad**的 [ **Widget** ] 索引標籤`SearchResultsViewController`中, 針對**類別**和`SearchResults`分鏡腳本**識別碼**使用: 
+1. 在**Properties Pad**的 [ **Widget** ] 索引標籤`SearchResultsViewController`中, 針對**類別**和`SearchResults`分鏡腳本**識別碼**使用:
 
     [![](text-fields-and-search-images/search03.png "[Widget] 索引標籤")](text-fields-and-search-images/search03.png#lightbox)
 1. 選取設計介面上的 [資料**格原型**]。
-1. 在 [**屬性] 瀏覽器**的 [ **Widget** ] `SearchResultCell`索引標籤中, 針對**類別**和`ImageCell` **識別碼**使用: 
+1. 在 [**屬性] 瀏覽器**的 [ **Widget** ] `SearchResultCell`索引標籤中, 針對**類別**和`ImageCell` **識別碼**使用:
 
     [![](text-fields-and-search-images/search04.png "[Widget] 索引標籤")](text-fields-and-search-images/search04.png#lightbox)
-1. 配置資料**格原型**的設計, 並在**屬性瀏覽器**的 [ **Widget** ] 索引標籤中使用唯一的**名稱**來公開每個元素: 
+1. 配置資料**格原型**的設計, 並在**屬性瀏覽器**的 [ **Widget** ] 索引標籤中使用唯一的**名稱**來公開每個元素:
 
     [![](text-fields-and-search-images/search05.png "版面配置資料格原型的設計")](text-fields-and-search-images/search05.png#lightbox)
 1. 將變更儲存至您的分鏡腳本。
-    
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-    
-1. 在方案總管  中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
-1. 將新的 [集合視圖控制器] 拖曳至分鏡腳本, 以呈現使用者搜尋的結果: 
+
+1. 在方案總管中按兩下 `Main.storyboard` 檔案將其開啟以進行編輯。
+1. 將新的 [集合視圖控制器] 拖曳至分鏡腳本, 以呈現使用者搜尋的結果:
 
     [![](text-fields-and-search-images/seach02-vs.png "集合視圖控制器")](text-fields-and-search-images/seach02-vs.png#lightbox)
-1. 在 [**屬性] 瀏覽器**的 [ **Widget** ] `SearchResultsViewController`索引標籤中, 針對**類別**和`SearchResults`分鏡腳本**識別碼**使用: 
+1. 在 [**屬性] 瀏覽器**的 [ **Widget** ] `SearchResultsViewController`索引標籤中, 針對**類別**和`SearchResults`分鏡腳本**識別碼**使用:
 
     [![](text-fields-and-search-images/search03-vs.png "[Widget] 索引標籤")](text-fields-and-search-images/search03-vs.png#lightbox)
 1. 選取設計介面上的 [資料**格原型**]。
-1. 在 [**屬性] 瀏覽器**的 [ **Widget** ] `SearchResultCell`索引標籤中, 針對**類別**和`ImageCell` **識別碼**使用: 
+1. 在 [**屬性] 瀏覽器**的 [ **Widget** ] `SearchResultCell`索引標籤中, 針對**類別**和`ImageCell` **識別碼**使用:
 
     [![](text-fields-and-search-images/search04-vs.png "[Widget] 索引標籤")](text-fields-and-search-images/search04-vs.png#lightbox)
-1. 配置資料**格原型**的設計, 並在**屬性瀏覽器**的 [ **Widget** ] 索引標籤中使用唯一的**名稱**來公開每個元素: 
+1. 配置資料**格原型**的設計, 並在**屬性瀏覽器**的 [ **Widget** ] 索引標籤中使用唯一的**名稱**來公開每個元素:
 
     [![](text-fields-and-search-images/search05-vs.png "版面配置資料格原型的設計")](text-fields-and-search-images/search05-vs.png#lightbox)
 1. 將變更儲存至您的分鏡腳本。
-    
+
 -----
 
 <a name="Provide-a-Data-Model" />
@@ -192,13 +192,13 @@ Console.WriteLine ("User ID {0} and Password {1}", UserId.Text, Password.Text);
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-接下來, 您必須提供一個類別, 做為使用者將搜尋之結果的資料模型。 在 **方案總管**中, 以滑鼠右鍵按一下專案名稱,  > 然後選取 **新增檔案 ...** 。  一般空白類別,並提供名稱 > :  >  
+接下來, 您必須提供一個類別, 做為使用者將搜尋之結果的資料模型。 在 **方案總管**中, 以滑鼠右鍵按一下專案名稱,  > 然後選取 **新增檔案 ...** 。一般空白類別,並提供名稱 > :  > 
 
 [![](text-fields-and-search-images/search06.png "選取 [空白類別] 並提供名稱")](text-fields-and-search-images/search06.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-接下來, 您必須提供一個類別, 做為使用者將搜尋之結果的資料模型。 在 **方案總管**中, 以滑鼠右鍵按一下專案名稱, 然後選取 **加入** > **新專案**。  Apple其他 > 類別並 > 提供名稱:  >  
+接下來, 您必須提供一個類別, 做為使用者將搜尋之結果的資料模型。 在 **方案總管**中, 以滑鼠右鍵按一下專案名稱, 然後選取 **加入** > **新專案**。Apple其他 > 類別並 > 提供名稱:  > 
 
 [![](text-fields-and-search-images/search06-vs.png "選取類別並提供名稱")](text-fields-and-search-images/search06-vs.png#lightbox)
 
@@ -613,7 +613,7 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 
 ### <a name="presenting-the-search-field"></a>呈現搜尋欄位
 
-有兩個主要的方式可以在 tvOS 中向使用者呈現搜尋欄位 (以及其相關聯的螢幕小鍵盤和搜尋結果): 
+有兩個主要的方式可以在 tvOS 中向使用者呈現搜尋欄位 (以及其相關聯的螢幕小鍵盤和搜尋結果):
 
 - **強制回應對話方塊視圖**-[搜尋] 欄位可以透過 [全螢幕模式] 對話方塊視圖, 在目前的 View 和 View 控制器上呈現。 這通常是為了回應使用者按一下按鈕或其他 UI 元素而完成。 當使用者從搜尋結果中選取專案時, 就會關閉對話方塊。
 - **視圖內容**-[搜尋] 欄位是指定之視圖的直接部分。 例如, 做為索引標籤視圖控制器中 [搜尋] 索引標籤的內容。

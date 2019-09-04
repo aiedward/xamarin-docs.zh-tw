@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 0ce718bf0380c47033129755d6ca9d40c1136e2c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 620a986ea9c5a6792d321b0c89dae936ffa256da
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529263"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227919"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -297,7 +297,7 @@ _XAML 標記延伸模組組成允許屬性設為物件或間接參考來自其�
 
 一致的樣式，以及平台相依的樣式，請確認螢幕擷取畫面：
 
-[![](xaml-markup-extensions-images/sharedresources.png "樣式的控制項")](xaml-markup-extensions-images/sharedresources-large.png#lightbox "樣式的控制項")
+[![樣式控制項](xaml-markup-extensions-images/sharedresources.png)](xaml-markup-extensions-images/sharedresources-large.png#lightbox)
 
 雖然它是最常用來定義`Resources`集合，頂端的頁面上，請記住，`Resources`屬性由定義`VisualElement`，而且可以有`Resources`在頁面上的其他元素的集合。 例如，再次嘗試新增一個`StackLayout`在此範例中：
 
@@ -435,7 +435,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 結果大小`BoxView`相對於畫面是 平台相關：
 
- [![](xaml-markup-extensions-images/staticconstants.png "控制項使用 X:static 標記延伸")](xaml-markup-extensions-images/staticconstants-large.png#lightbox "控制項使用 X:static 標記延伸")
+[![使用 x:Static 標記延伸的控制項](xaml-markup-extensions-images/staticconstants.png)](xaml-markup-extensions-images/staticconstants-large.png#lightbox)
 
 ## <a name="other-standard-markup-extensions"></a>其他標準標記延伸模組
 
@@ -551,7 +551,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 以下是執行的程式：
 
-[![](xaml-markup-extensions-images/relativelayout.png "使用條件約束的相對版面配置")](xaml-markup-extensions-images/relativelayout-large.png#lightbox "相對的版面配置使用條件約束")
+[![使用條件約束的相對版面配置](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
 
 ## <a name="summary"></a>總結
 

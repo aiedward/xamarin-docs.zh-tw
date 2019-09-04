@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 1f49f3c24bc4c89edb005206b953176639214481
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d51e1b20e1409d228db2f38e6c31ad1165897654
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647182"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226888"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>。 xib-Xamarin. Mac 中的使用者介面設計較少
 
@@ -35,16 +35,16 @@ _本文說明如何直接從C#程式碼建立 Xamarin. Mac 應用程式的使用
 若要切換至應用程式的 Xibless 視窗, 請執行下列動作:
 
 1. 開啟您想要停止使用`.storyboard`的應用程式, 或 xib 檔案以在 Visual Studio for Mac 中定義使用者介面。
-2. 在  **Solution Pad**中, 以滑鼠右鍵按一下  **mainwindow.xaml xib**檔案, 然後選取 **移除**: 
+2. 在  **Solution Pad**中, 以滑鼠右鍵按一下 **mainwindow.xaml xib**檔案, 然後選取 **移除**:
 
     ![移除 [主要腳本] 或視窗](xibless-ui-images/switch01.png "移除主要腳本或視窗")
-3. 從 [**移除] 對話方塊**中, 按一下 [**刪除**] 按鈕, 即可從專案中完全移除腳本或. xib: 
+3. 從 [**移除] 對話方塊**中, 按一下 [**刪除**] 按鈕, 即可從專案中完全移除腳本或. xib:
 
     ![確認刪除](xibless-ui-images/switch02.png "確認刪除")
 
 現在, 我們必須修改**MainWindow.cs**檔案以定義視窗的版面配置, 並修改**ViewController.cs**或**MainWindowController.cs**檔案, 以`MainWindow`建立類別的實例, 因為我們不再使用。分鏡腳本或 xib 檔案。
 
-針對其使用者介面使用分鏡腳本的現代化 Xamarin 應用程式, 可能不會自動包含**MainWindow.cs**、 **ViewController.cs**或**MainWindowController.cs**檔案。 視需要, 只要將新的空白C#類別加入至專案 (**加入** > 新的檔案 **...**  > 一般空白 > **類別**), 並將其命名為與遺漏檔案相同。 
+針對其使用者介面使用分鏡腳本的現代化 Xamarin 應用程式, 可能不會自動包含**MainWindow.cs**、 **ViewController.cs**或**MainWindowController.cs**檔案。 視需要, 只要將新的空白C#類別加入至專案 (**加入** > 新的檔案 **...**  > 一般空白 > **類別**), 並將其命名為與遺漏檔案相同。
 
 
 ### <a name="defining-the-window-in-code"></a>以程式碼定義視窗
@@ -160,7 +160,7 @@ ContentView.AddSubview (ClickMeButton);
 
 最後, `ContentView.AddSubview (ClickMeButton)`方法會`NSButton`將新增至內容視圖, 使其在應用程式執行時顯示在螢幕上, 並顯示視窗。
 
-接下來, 會將標籤新增至視窗, 以顯示已按`NSButton`下的次數: 
+接下來, 會將標籤新增至視窗, 以顯示已按`NSButton`下的次數:
 
 ```csharp
 ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width - 130, 20)) {
@@ -172,7 +172,7 @@ ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width 
     StringValue = "Button has not been clicked yet."
 };
 ContentView.AddSubview (ClickMeLabel);
-``` 
+```
 
 由於 macOS 沒有特定的_標籤_UI 元素, 因此我們新增了特殊樣式、不可編輯`NSTextField`的作為標籤。 就像之前的按鈕一樣, 大小和位置會考慮 (0, 0) 位於視窗的左下方。 屬性會使用**or**運算子來結合兩個`NSViewResizingMask`功能。 `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` 這會讓標籤保持在視窗頂端的相同位置, 而視窗會垂直調整大小, 並在視窗重設成水準大小時縮小並擴大寬度。
 
@@ -239,7 +239,7 @@ base.Window = new MainWindow(contentRect, (NSWindowStyle.Titled | NSWindowStyle.
 
 ```csharp
 ... (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable) ...
-``` 
+```
 
 可用的`NSWindowStyle`功能如下:
 
@@ -249,7 +249,7 @@ base.Window = new MainWindow(contentRect, (NSWindowStyle.Titled | NSWindowStyle.
 - **Miniaturizable** -此視窗具有 [Miniaturize] 按鈕, 而且可以最小化。
 - 可重設**大小**-視窗會有調整按鈕的大小, 而且可以調整大小。
 - **公用程式**-視窗是公用程式樣式視窗 (面板)。
-- **DocModal** -如果視窗是面板, 它會是檔強制回應, 而不是系統模式。 
+- **DocModal** -如果視窗是面板, 它會是檔強制回應, 而不是系統模式。
 - **NonactivatingPanel** -如果視窗是面板, 則不會成為主視窗。
 - **TexturedBackground** -視窗會有紋理的背景。
 - 未**縮放**-不會縮放視窗。
@@ -290,9 +290,9 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ## <a name="adding-a-code-only-window"></a>加入僅限程式碼視窗
 
-如果我們只想新增程式碼, 請將 xibless 視窗加入現有的 Xamarin. Mac 應用程式, 以滑鼠右鍵按一下**Solution Pad**中的專案,  > 然後選取 [**新增檔案 ...** ]在 [**新增**檔案] 對話方塊   > 中, 選擇 [**包含控制器的 Xamarin Cocoa 視窗]** , 如下所示:
+如果我們只想新增程式碼, 請將 xibless 視窗加入現有的 Xamarin. Mac 應用程式, 以滑鼠右鍵按一下**Solution Pad**中的專案,  > 然後選取 [**新增檔案 ...** ]在 [**新增**檔案] 對話方塊  > 中, 選擇 [**包含控制器的 Xamarin Cocoa 視窗]** , 如下所示:
 
-![加入新的視窗控制器](xibless-ui-images/add01.png "加入新的視窗控制器") 
+![加入新的視窗控制器](xibless-ui-images/add01.png "加入新的視窗控制器")
 
 就像之前一樣, 我們將會從專案中刪除 xib 檔案 (在此例中為**SecondWindow. xib**), 並遵循上方的[切換視窗以使用程式碼](#Switching_a_Window_to_use_Code)一節中的步驟, 來涵蓋視窗的程式碼定義。
 
@@ -313,7 +313,7 @@ MyWindow.ContentView.AddSubview (ClickMeButton);
 
 ## <a name="defining-the-menu-bar-in-code"></a>在程式碼中定義功能表列
 
-由於 Xamarin 目前的限制, 因此不建議您在程式碼中建立 Xamarin. Mac 應用程式的功能表列–`NSMenuBar`-但繼續使用**xib**檔案來定義它  。 話雖如此, 您可以在程式碼中C#加入和移除功能表和功能表項目。
+由於 Xamarin 目前的限制, 因此不建議您在程式碼中建立 Xamarin. Mac 應用程式的功能表列–`NSMenuBar`-但繼續使用**xib**檔案來定義它 。 話雖如此, 您可以在程式碼中C#加入和移除功能表和功能表項目。
 
 例如, 編輯**AppDelegate.cs**檔案, 讓`DidFinishLaunching`方法看起來如下所示:
 

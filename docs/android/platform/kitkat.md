@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: b61924c78f85c8a1a835cef87f357ec262926935
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 1aa4e6dcf5137d12647fb2a5531218839b6db9a1
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197735"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225807"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -80,12 +80,12 @@ KitKat 不再讓您設定完全重複的警示。 使用的應用程式[`SetRepe
 外部儲存體現在分成兩種類型: 您的應用程式特有的儲存體, 以及多個應用程式所共用的資料。 讀取和寫入您的應用程式在外部儲存體上的特定位置不需要任何特殊許可權。 與共享儲存體上的資料互動現在需要`READ_EXTERNAL_STORAGE`或`WRITE_EXTERNAL_STORAGE`許可權。 這兩種類型可以分類為:
 
 - 如果您是藉由呼叫上`Context`的方法取得檔案或目錄路徑-例如,[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
-   或[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
-   - 您的應用程式不需要額外的許可權。
+  或[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
+  - 您的應用程式不需要額外的許可權。
 
 - 如果您是藉由存取屬性或在上`Environment`呼叫方法來取得檔案或目錄路徑, 例如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
-   或[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
-   , 您的`READ_EXTERNAL_STORAGE`應用程式需要`WRITE_EXTERNAL_STORAGE`或許可權。
+  或[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
+  , 您的`READ_EXTERNAL_STORAGE`應用程式需要`WRITE_EXTERNAL_STORAGE`或許可權。
 
 > [!NOTE]
 > `WRITE_EXTERNAL_STORAGE``READ_EXTERNAL_STORAGE`意指許可權, 因此您應該只需要設定一個許可權。
@@ -681,27 +681,27 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 - *使用全螢幕*KitKat 導入了新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))來流覽內容、播放遊戲, 以及執行其他可從全螢幕體驗獲益的應用程式。
 
 - *自訂通知*-使用來取得系統通知的其他詳細資料[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
-   . 這可讓您以不同的方式呈現應用程式內的資訊。
+  . 這可讓您以不同的方式呈現應用程式內的資訊。
 
 - *鏡像的可以繪製資源*-繪製資源有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
-   屬性, 告訴系統針對需要從左至右配置翻轉的影像建立鏡像版本。
+  屬性, 告訴系統針對需要從左至右配置翻轉的影像建立鏡像版本。
 
 - *暫停動畫*-暫停和繼續使用建立的動畫[`Animator`](xref:Android.Animation.Animator)
-   類別的新執行個體。
+  類別的新執行個體。
 
 - *閱讀動態變更文字*-代表 UI 的部分, 以新的文字動態更新為「即時區域」, 新的[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
-   屬性, 以便在協助工具模式中自動讀取新的文字。
+  屬性, 以便在協助工具模式中自動讀取新的文字。
 
 - *增強音訊體驗*-讓追蹤更大[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
-   , 使用, 尋找音訊串流的尖峰和 RMS[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
-   類別, 並從[音訊時間戳記](xref:Android.Media.AudioTimestamp)取得資訊, 以協助進行音訊影片同步處理。
+  , 使用, 尋找音訊串流的尖峰和 RMS[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
+  類別, 並從[音訊時間戳記](xref:Android.Media.AudioTimestamp)取得資訊, 以協助進行音訊影片同步處理。
 
 - *在自訂間隔同步處理 ContentResolver* -KitKat 會在執行同步處理要求的時間內新增一些變動性。 藉由呼叫`ContentResolver.RequestSync`並傳入, 在`SyncRequest`自訂時間或間隔同步。 `ContentResolver`
 
 - *區分控制器*-在 KitKat 中, 控制器會被指派可透過裝置的`ControllerNumber`屬性存取的唯一整數識別碼。 這可讓您更輕鬆地分辨遊戲中的玩家。
 
 - *遠端控制*-只有硬體和軟體端的一些變更, KitKat 可讓您使用紅外線發送器將裝置科系轉換成遠端控制`ConsumerIrService`, 並透過新的來與週邊裝置互動[`RemoteController`](xref:Android.Media.RemoteController)
-   Api.
+  Api.
 
 如需上述 API 變更的詳細資訊, 請參閱 Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)總覽。
 

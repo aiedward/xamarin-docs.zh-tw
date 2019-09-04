@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
-ms.openlocfilehash: 1b4732e87fb09a4846bfe12b7a476dfef2d6f4f9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9a26532d13b843b812da94739be071c7accac212
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647235"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228188"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的動態樣式
 
@@ -82,10 +82,10 @@ public partial class DynamicStylesPage : ContentPage
 }
 ```
 
-當`OnButtonClicked`事件處理常式執行時，`searchBarStyle`將會切換`blueSearchBarStyle`和`greenSearchBarStyle`。 這會導致下列的螢幕擷取畫面所示的外觀：
+當`OnButtonClicked`事件處理常式執行時，`searchBarStyle`將會切換`blueSearchBarStyle`和`greenSearchBarStyle`。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-[![](dynamic-images/dynamic-style-blue.png "藍色動態樣式範例")](dynamic-images/dynamic-style-blue-large.png#lightbox "藍色動態樣式範例")
-[![](dynamic-images/dynamic-style-green.png "綠色動態樣式範例")](dynamic-images/dynamic-style-green-large.png#lightbox "綠色動態樣式範例")
+[![藍色動態樣式範例](dynamic-images/dynamic-style-blue.png)](dynamic-images/dynamic-style-blue-large.png#lightbox)
+ [ ![綠色動態樣式範例](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
 
 下列程式碼範例示範如何在 C# 中的對等頁面：
 
@@ -161,10 +161,10 @@ public class DynamicStylesPageCS : ContentPage
 
 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體會使用`StaticResource`標記延伸參考[ `Style` ](xref:Xamarin.Forms.Style)名為`tealSearchBarStyle`。 這`Style`會設定一些額外的屬性，並使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)屬性來參考`searchBarStyle`。 `DynamicResource`標記延伸模組不需要，因為`tealSearchBarStyle`不會變更，除了`Style`它衍生自。 因此，`tealSearchBarStyle`會維護連結`searchBarStyle`和更改基底的樣式變更時。
 
-在程式碼後置檔案中，建構函式會建立[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)具有索引鍵的項目`searchBarStyle`、 每個先前的範例，示範動態樣式。 當`OnButtonClicked`事件處理常式執行時，`searchBarStyle`將會切換`blueSearchBarStyle`和`greenSearchBarStyle`。 這會導致下列的螢幕擷取畫面所示的外觀：
+在程式碼後置檔案中，建構函式會建立[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)具有索引鍵的項目`searchBarStyle`、 每個先前的範例，示範動態樣式。 當`OnButtonClicked`事件處理常式執行時，`searchBarStyle`將會切換`blueSearchBarStyle`和`greenSearchBarStyle`。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-[![](dynamic-images/dynamic-style-inheritance-blue.png "藍色動態樣式繼承範例")](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox "藍色動態樣式繼承範例")
-[![](dynamic-images/dynamic-style-inheritance-green.png "綠色動態樣式繼承範例")](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox "綠色動態樣式繼承範例")
+[![藍色動態樣式繼承範例](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
+ [ ![綠色動態樣式繼承範例](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
 
 下列程式碼範例示範如何在 C# 中的對等頁面：
 

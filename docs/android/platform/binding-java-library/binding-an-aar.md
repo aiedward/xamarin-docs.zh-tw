@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/11/2018
-ms.openlocfilehash: 4c612faca90d4b2b4e44cfbb53ff65ec07fcdfd1
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: ee29f54ac68f370cb9499d315116a030247f6044
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524834"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225728"
 ---
 # <a name="binding-an-aar"></a>繫結 .AAR
 
@@ -83,7 +83,7 @@ public class TextCounter
 
 1. 從 Android 系結程式庫範本開始, 建立新的系結程式庫專案。 您可以使用 Visual Studio for Mac 或 Visual Studio (下列螢幕擷取畫面顯示 Visual Studio, 但 Visual Studio for Mac 很類似)。 將方案命名為**AarBinding**:
 
-    [![建立 AarBindings 專案](binding-an-aar-images/01-new-bindings-library-vs-sml.w157.png)](binding-an-aar-images/01-new-bindings-library-vs.w157.png#lightbox)
+    [![建立 AarBindings 專案](binding-an-aar-images/01-new-bindings-library-vs-sml.w160.png)](binding-an-aar-images/01-new-bindings-library-vs.w160.png#lightbox)
 
 2. 此範本包含一個**jar**資料夾, 您可以在其中新增您的。AAR 至系結程式庫專案。 以滑鼠右鍵按一下 [ **jar** ] 資料夾, 然後選取 [**新增 > 現有專案**]:
 

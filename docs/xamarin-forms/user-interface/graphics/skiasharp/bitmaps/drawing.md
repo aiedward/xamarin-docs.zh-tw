@@ -7,12 +7,12 @@ ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 68d6cb1df8557b6055feb81b21ed5513592c71c4
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 1e2b50a260ed5f5bbbbfc3c4ba55a33075262f25
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198139"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228097"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>建立和上 SkiaSharp 點陣圖繪製
 
@@ -24,7 +24,7 @@ ms.locfileid: "70198139"
 SKBitmap bitmap = new SKBitmap(width, height);
 ```
 
-`width`和`height`參數都是整數，並指定點陣圖的像素尺寸。 這個建構函式會建立全彩點陣圖使用每像素的四個位元組： 一個位元組每個的紅色、 綠色、 藍色和 alpha (opacity) 元件。 
+`width`和`height`參數都是整數，並指定點陣圖的像素尺寸。 這個建構函式會建立全彩點陣圖使用每像素的四個位元組： 一個位元組每個的紅色、 綠色、 藍色和 alpha (opacity) 元件。
 
 建立新的點陣圖之後，您需要取得點陣圖的介面上的項目。 您經常進行這兩種方式之一：
 
@@ -56,7 +56,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 然後可以顯示點陣圖。 稍後，程式可以建立新`SKCanvas`上相同的點陣圖，，和在其上繪製多型的物件。
 
-**Hello 點陣圖**頁面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式寫入的文字"Hello，點陣圖"！ 在點陣圖，則將顯示的點陣圖多次。  
+**Hello 點陣圖**頁面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式寫入的文字"Hello，點陣圖"！ 在點陣圖，則將顯示的點陣圖多次。
 
 建構函式`HelloBitmapPage`一開始先建立`SKPaint`顯示文字的物件。 它會判斷文字字串的維度，並會使用這些維度建立的點陣圖。 然後它會建立`SKCanvas`物件會根據該點陣圖，呼叫`Clear`，然後呼叫`DrawText`。 它一律是個不錯的主意，呼叫`Clear`與新的點陣圖因為新建立的點陣圖可能包含隨機資料。
 
@@ -88,7 +88,7 @@ public partial class HelloBitmapPage : ContentPage
             }
         }
 
-        // Create SKCanvasView to view result 
+        // Create SKCanvasView to view result
         SKCanvasView canvasView = new SKCanvasView();
         canvasView.PaintSurface += OnCanvasViewPaintSurface;
         Content = canvasView;
@@ -123,7 +123,7 @@ public partial class HelloBitmapPage : ContentPage
 
 `Clear` 的`SKCanvas`方法檔會使用語句來描述它們:「取代畫布「目前剪輯」中的所有圖元。 使用「取代」這個字會顯示這些方法的重要特性:的所有繪圖方法`SKCanvas`都會將專案新增至現有的顯示介面。 `Clear`方法_取代_項目已經存在。
 
-`Clear` 有兩種不同的版本： 
+`Clear` 有兩種不同的版本：
 
 - [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))方法`SKColor`參數會取代該顏色的像素中的顯示表面的像素為單位。
 
@@ -167,7 +167,7 @@ Color = new SKColor(0, 0, 0, 0)
 - `Gray8` &mdash; 每個像素都是從黑色的灰色陰影代表白色的 8 位元
 - `RgbaF16` &mdash; 每個像素都是 64 位元，具有紅色、 綠色、 藍色和 alpha 以 16 位元浮點數格式
 
-其中每個像素是 32 像素 （4 個位元組） 的兩種格式通常稱為_全彩_格式。 許多時間，當視訊顯示本身的其他格式日期不是色彩的能夠完整。 有限的色彩的點陣圖已足夠用於這些顯示，並允許以佔用較少的空間，在記憶體中的點陣圖。 
+其中每個像素是 32 像素 （4 個位元組） 的兩種格式通常稱為_全彩_格式。 許多時間，當視訊顯示本身的其他格式日期不是色彩的能夠完整。 有限的色彩的點陣圖已足夠用於這些顯示，並允許以佔用較少的空間，在記憶體中的點陣圖。
 
 如今，程式設計人員幾乎一律使用全彩點陣圖並不必擔心會有其他格式。 例外狀況是`RgbaF16`允許更高的色彩解析度比甚至是全彩格式的格式。 不過，這種格式使用於特製化的用途，例如醫學造影，而且沒什麼特別意義與標準的全彩顯示搭配使用時。
 
@@ -197,7 +197,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 ## <a name="drawing-on-existing-bitmaps"></a>在現有的點陣圖上的繪圖
 
-您不需要建立新的點陣圖，以在其上繪製。 您也可以將現有點陣圖上繪製。 
+您不需要建立新的點陣圖，以在其上繪製。 您也可以將現有點陣圖上繪製。
 
 **Monkey 鬍髭**頁面會使用其建構函式來載入**MonkeyFace.png**映像。 然後它會建立`SKCanvas`物件會根據該點陣圖，並且使用`SKPaint`和`SKPath`物件在其上繪製鬍髭：
 
@@ -236,7 +236,7 @@ public partial class MonkeyMoustachePage : ContentPage
             }
         }
 
-        // Create SKCanvasView to view result 
+        // Create SKCanvasView to view result
         SKCanvasView canvasView = new SKCanvasView();
         canvasView.PaintSurface += OnCanvasViewPaintSurface;
         Content = canvasView;
@@ -268,7 +268,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 ![Mountain Climbers](drawing-images/MountainClimbers.jpg "Mountain Climbers")
 
-假設您還沒有收到左側 monkey，若要發佈此相片的權限。 其中一個解決方案是遮蔽 monkey 臉部使用稱為的技巧_pixelization_。 所面臨的像素會將數字取代色彩區塊，因此您不能進行的功能。 方法是平均化對應至這些區塊的像素的色彩，色彩區塊通常被衍生自原始的映像。 但您不需要執行此平均計算自己。 它會自動進行時您將點陣圖複製到較小的像素尺寸。 
+假設您還沒有收到左側 monkey，若要發佈此相片的權限。 其中一個解決方案是遮蔽 monkey 臉部使用稱為的技巧_pixelization_。 所面臨的像素會將數字取代色彩區塊，因此您不能進行的功能。 方法是平均化對應至這些區塊的像素的色彩，色彩區塊通常被衍生自原始的映像。 但您不需要執行此平均計算自己。 它會自動進行時您將點陣圖複製到較小的像素尺寸。
 
 左側的 monkey 臉部會佔用大約 72 個像素正方形區域的左上角的位置 （112、 238）。 讓我們來取代每一個都是 8-8 像素的正方形彩色磚塊，9-9 陣列該 72 個像素的方形區域。
 
@@ -312,7 +312,7 @@ public class PixelizedImagePage : ContentPage
             canvas.DrawBitmap(originalBitmap, new SKPoint());
 
             // Draw tiny bitmap to cover face
-            canvas.DrawBitmap(faceBitmap, 
+            canvas.DrawBitmap(faceBitmap,
                               new SKRect(112, 238, 184, 310));  // destination
         }
 
@@ -369,7 +369,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
     canvas.RotateDegrees(90);
     canvas.DrawBitmap(bitmap, new SKPoint());
 }
-```                        
+```
 
 而以下是用於輪替逆時針旋轉 90 度的類似函式：
 
@@ -402,7 +402,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-不過，在一般的情況下，此邏輯會裁剪關閉旋轉點陣圖的邊角。 更好的方法是計算使用三角函數包含這些邊角旋轉點陣圖的大小。 
+不過，在一般的情況下，此邏輯會裁剪關閉旋轉點陣圖的邊角。 更好的方法是計算使用三角函數包含這些邊角旋轉點陣圖的大小。
 
 顯示此三角函數**點陣圖輪值表**頁面。 XAML 檔案會具現化`SKCanvasView`並`Slider`的範圍則可從 0 到 360 度與`Label`顯示目前的值：
 
@@ -436,7 +436,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 ```csharp
 public partial class BitmapRotatorPage : ContentPage
 {
-    static readonly SKBitmap originalBitmap = 
+    static readonly SKBitmap originalBitmap =
         BitmapExtensions.LoadBitmapResource(typeof(BitmapRotatorPage),
             "SkiaSharpFormsDemos.Media.Banana.jpg");
 
@@ -514,7 +514,7 @@ public partial class BitmapRotatorPage : ContentPage
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <skia:SKCanvasView x:Name="canvasView"
                            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                            PaintSurface="OnCanvasViewPaintSurface" />
@@ -532,7 +532,7 @@ public partial class BitmapRotatorPage : ContentPage
 </ContentPage>
 ```
 
-程式碼後置檔案會實作這兩項作業中的`Clicked`按鈕處理常式： 
+程式碼後置檔案會實作這兩項作業中的`Clicked`按鈕處理常式：
 
 ```csharp
 public partial class BitmapFlipperPage : ContentPage
@@ -588,7 +588,7 @@ public partial class BitmapFlipperPage : ContentPage
 }
 ```
 
-垂直翻轉，即可使用的水平縮放比例的縮放轉換&ndash;1。 縮放的中心是點陣圖的垂直中心。 水平翻轉為使用垂直的縮放比例的縮放轉換&ndash;1。 
+垂直翻轉，即可使用的水平縮放比例的縮放轉換&ndash;1。 縮放的中心是點陣圖的垂直中心。 水平翻轉為使用垂直的縮放比例的縮放轉換&ndash;1。
 
 您可以看到從 monkey 襯衫上反轉的傳送失敗，翻轉不旋轉相同。 但如右邊 UWP 螢幕擷取畫面所示，水平及垂直翻轉兩者都是相同旋轉 180 度：
 

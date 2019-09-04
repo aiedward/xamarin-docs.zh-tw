@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: 328063fd6924902738722813cfb961e56af5385e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cdbfaafdac8f965adaf4b840b568154e40ef7e10
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644467"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228179"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的隱含樣式
 
@@ -51,9 +51,9 @@ _隱含樣式是由所有控制項都使用的相同 TargetType，而不需要�
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義單一*隱含*套用至網頁的樣式[ `Entry` ](xref:Xamarin.Forms.Entry)執行個體。 `Style`用來在背景為黃色，顯示的藍色文字，同時也設定其他選項的外觀。 `Style`新增至頁面的[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)而不指定`x:Key`屬性。 因此，`Style`套用至所有`Entry`因為它們符合隱含執行個體[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)屬性`Style`完全。 不過，`Style`不會套用至`CustomEntry`執行個體，也就是子類別化之`Entry`。 這會導致下列的螢幕擷取畫面所示的外觀：
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義單一*隱含*套用至網頁的樣式[ `Entry` ](xref:Xamarin.Forms.Entry)執行個體。 `Style`用來在背景為黃色，顯示的藍色文字，同時也設定其他選項的外觀。 `Style`新增至頁面的[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)而不指定`x:Key`屬性。 因此，`Style`套用至所有`Entry`因為它們符合隱含執行個體[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)屬性`Style`完全。 不過，`Style`不會套用至`CustomEntry`執行個體，也就是子類別化之`Entry`。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-[![](implicit-images/implicit-styles.png "隱含樣式範例")](implicit-images/implicit-styles-large.png#lightbox "隱含樣式範例")
+[![隱含樣式範例](implicit-images/implicit-styles.png)](implicit-images/implicit-styles-large.png#lightbox)
 
 此外，第四個[ `Entry` ](xref:Xamarin.Forms.Entry)覆寫[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)並[ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)屬性的不同的隱含樣式`Color`值。
 

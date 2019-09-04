@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: 5fccc07d35eda1ba420f48a8058d8d2a00b18fd9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6a5c06d64a06d8b1a7bcbf32e99905494cd06180
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523192"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225489"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
@@ -95,24 +95,24 @@ Xamarin 支援下列系統屬性:
 
 - *debug. env*:在初始化 mono*之前*, 要 *|* 在應用程式啟動期間匯出之環境變數的管線分隔 (' ') 清單。 這可讓您設定控制 mono 記錄的環境變數。
 
-    - *注意*：因為值是以 ' *|* ' 分隔, 所以此值必須有額外的引號, \`因為*adb shell* \`命令會移除一組引號。
+  - *注意*：因為值是以 ' *|* ' 分隔, 所以此值必須有額外的引號, \`因為*adb shell* \`命令會移除一組引號。
 
-    - *注意*：Android 系統屬性值的長度不能超過92個字元。
+  - *注意*：Android 系統屬性值的長度不能超過92個字元。
 
-    - 範例：
+  - 範例：
 
-      ```
-      adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
-      ```
+    ```
+    adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+    ```
 
 - *debug .log*:應該將其他訊息列印到Android 偵錯工具記錄檔的元件清單 (以逗號分隔)。 根據預設, 不會設定任何內容。 元件包括:
 
-    - *全部*:列印所有訊息
-    - *gc*:列印與 GC 相關的訊息。
-    - *grf*:Print (弱式、全域) 參考配置和解除配置訊息。
-    - *lref*:列印本機參考配置和解除配置訊息。
+  - *全部*:列印所有訊息
+  - *gc*:列印與 GC 相關的訊息。
+  - *grf*:Print (弱式、全域) 參考配置和解除配置訊息。
+  - *lref*:列印本機參考配置和解除配置訊息。
 
-    *注意*: 這些是*非常*詳細的資訊。 除非您真的需要, 否則請勿啟用。
+  *注意*: 這些是*非常*詳細的資訊。 除非您真的需要, 否則請勿啟用。
 
 - *debug. trace*:允許設定[mono--追蹤](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定。
 
@@ -348,14 +348,14 @@ emulator -partition-size 512 -avd MonoDroid
 Android 套件名稱*必須*包含句點 (' *.* ')。 編輯您的套件名稱, 使其包含句點。
 
 - 在 Visual Studio 內:
-    - 以滑鼠右鍵按一下您的專案 > 屬性
-    - 按一下左側的 [Android 資訊清單] 索引標籤。
-    - 更新 [封裝名稱] 欄位。
-        - 如果您看到 [找&ldquo;不到 androidmanifest.xml] 訊息。 按一下以加入一個。&rdquo;, 按一下連結, 然後更新 [套件名稱] 欄位。
+  - 以滑鼠右鍵按一下您的專案 > 屬性
+  - 按一下左側的 [Android 資訊清單] 索引標籤。
+  - 更新 [封裝名稱] 欄位。
+    - 如果您看到 [找&ldquo;不到 androidmanifest.xml] 訊息。 按一下以加入一個。&rdquo;, 按一下連結, 然後更新 [套件名稱] 欄位。
 - 在 Visual Studio for Mac 內:
-    - 以滑鼠右鍵按一下您的專案, > 選項。
-    - 流覽至 [Build/Android 應用程式] 區段。
-    - 將 [封裝名稱] 欄位變更為包含 '. '。
+  - 以滑鼠右鍵按一下您的專案, > 選項。
+  - 流覽至 [Build/Android 應用程式] 區段。
+  - 將 [封裝名稱] 欄位變更為包含 '. '。
 
 
 
@@ -690,7 +690,7 @@ E/dalvikvm( 123): VM aborting
 
 - 您的應用程式專案很可能不會參考到 System.object、Microsoft CSharp .dll 或 Mono. CSharp .dll。 請確定已參考這些元件。
 
-    - 請記住, 動態程式碼一律會花費成本。 如果您需要有效率的程式碼, 請考慮不要使用動態程式碼。
+  - 請記住, 動態程式碼一律會花費成本。 如果您需要有效率的程式碼, 請考慮不要使用動態程式碼。
 
 - 在第一個預覽版本中, 除非應用程式代碼明確使用每個元件中的類型, 否則會排除這些元件。 如需因應措施, 請參閱下列各項:[http://lists.ximian.com/pipermail/mo...il/009798.html](http://lists.ximian.com/pipermail/monodroid/2012-April/009798.html)
 

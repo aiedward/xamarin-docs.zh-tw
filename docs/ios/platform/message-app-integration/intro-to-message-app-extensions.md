@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/02/2017
-ms.openlocfilehash: 7004c4692158be2e51eca93dece349da2a735bab
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 92b16e4a802411c70bef7d5810a161dbdfedfa09
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654398"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227490"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的訊息應用程式延伸模組基本概念
 
@@ -118,14 +118,14 @@ Apple 建議您針對各種不同的彩色背景 (例如白色、黑色、紅色
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 啟動 Visual Studio for Mac。
-2. 開啟解決方案, 將訊息應用程式延伸模組新增至。 
-3. 選取 [ **iOS**  > **擴充** > 功能**iMessage 擴充**功能], 然後按 [**下一步]** 按鈕: 
+2. 開啟解決方案, 將訊息應用程式延伸模組新增至。
+3. 選取 [ **iOS**  > **擴充** > 功能**iMessage 擴充**功能], 然後按 [**下一步]** 按鈕:
 
     [![](intro-to-message-app-extensions-images/message01.png "選取 iMessage 擴充功能")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. 輸入**擴充功能名稱**, 然後按 [**下一步]** 按鈕: 
+4. 輸入**擴充功能名稱**, 然後按 [**下一步]** 按鈕:
 
     [![](intro-to-message-app-extensions-images/message02.png "輸入延伸模組名稱")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. 按一下 [**建立**] 按鈕以建立擴充功能: 
+5. 按一下 [**建立**] 按鈕以建立擴充功能:
 
     [![](intro-to-message-app-extensions-images/message03.png "按一下 [建立] 按鈕")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
@@ -158,7 +158,7 @@ Messages framework 提供的類別可向使用者呈現可用的貼紙:
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在  **Solution Pad**中, 以滑鼠右鍵按一下擴充功能的專案名稱,  > 然後選取 **新增檔案 ...**  >  **iOS |** AppleWatch > **介面控制器**。
-2. 輸入`StickerBrowserViewController`作為**名稱**, 然後按一下 [**新增**] 按鈕: 
+2. 輸入`StickerBrowserViewController`作為**名稱**, 然後按一下 [**新增**] 按鈕:
 
     [![](intro-to-message-app-extensions-images/browser01.png "在 [名稱] 中輸入 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. `StickerBrowserViewController.cs`開啟檔案進行編輯。
@@ -166,7 +166,7 @@ Messages framework 提供的類別可向使用者呈現可用的貼紙:
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在 **方案總管**中, 以滑鼠右鍵按一下擴充功能的專案名稱,  > 然後選取 **新增檔案 ...**  >  **iOS |** AppleWatch > **介面控制器**。
-2. 輸入`StickerBrowserViewController`作為**名稱**, 然後按一下 [**新增**] 按鈕: 
+2. 輸入`StickerBrowserViewController`作為**名稱**, 然後按一下 [**新增**] 按鈕:
 
     [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "在 [名稱] 中輸入 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. `StickerBrowserViewController.cs`開啟檔案進行編輯。
@@ -537,7 +537,7 @@ namespace MessageExtension
                 MessagesAppViewController.AddStickerToCollection (NewSticker);
             };
             View.AddSubview (doneButton);
-            
+
             ...
         }
         #endregion
@@ -702,7 +702,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
         break;
     }
 }
-``` 
+```
 
 ## <a name="summary"></a>總結
 

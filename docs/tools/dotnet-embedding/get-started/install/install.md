@@ -6,12 +6,12 @@ ms.assetid: 47106AF3-AC6E-4A0E-B30B-9F73C116DDB3
 author: chamons
 ms.author: chhamo
 ms.date: 04/18/2018
-ms.openlocfilehash: 7da163e85b04791c276f9cb14f5b21615b7909fb
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 47efbaa12475f627b5963cb6613c3441a1d96aac
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200164"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227849"
 ---
 # <a name="installing-net-embedding"></a>安裝 .NET 嵌入
 
@@ -32,12 +32,12 @@ ms.locfileid: "70200164"
 - 開啟終端機 (macOS) 或命令提示字元 (Windows)
 - 將目錄變更為您的方案根目錄
 - 工具會安裝在:
-    - **./packages/Embeddinator-4000。[VERSION]/tools/objcgen** (目標-C)
-    - **./packages/Embeddinator-4000。[VERSION]/tools/Embeddinator-4000.exe** (JAVA/C)
+  - **./packages/Embeddinator-4000。[VERSION]/tools/objcgen** (目標-C)
+  - **./packages/Embeddinator-4000。[VERSION]/tools/Embeddinator-4000.exe** (JAVA/C)
 - 在 macOS 上, **objcgen**可以直接執行。
 - 在 Windows 上, 可以直接執行**Embeddinator-4000** 。
 - 在 macOS 上, **Embeddinator-4000**必須使用**mono**來執行:
-    - `mono ./packages/Embeddinator-4000.[VERSION]/tools/Embeddinator-4000.exe`
+  - `mono ./packages/Embeddinator-4000.[VERSION]/tools/Embeddinator-4000.exe`
 
 每個命令調用都需要特定平臺檔中所列的幾個參數。
 

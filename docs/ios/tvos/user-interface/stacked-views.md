@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 9dbcecf40c742de6e9f3a5c8458dcae3f347501d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: be4d10eceb4ddf7da44409815f3e9c08117a06f7
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120733"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227223"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆疊視圖
 
@@ -24,7 +24,7 @@ Stack 視圖控制項 (`UIStackView`) 會利用自動設定和大小類別的功
 
 `UIStackView`在 tvOS 應用程式中使用時, 開發人員可以在 iOS 設計工具中的分鏡腳本內定義子檢視, 或藉由在程式C#代碼中新增和移除子檢視。
 
-## <a name="about-stacked-view-controls"></a>關於堆疊視圖控制項 
+## <a name="about-stacked-view-controls"></a>關於堆疊視圖控制項
 
 是設計為非轉譯容器視圖, 因此不會繪製到畫布上, 如的`UIView`其他子類別。 `UIStackView` 設定屬性 (例如`BackgroundColor`或覆`DrawRect`寫) 不會有任何視覺效果。
 
@@ -98,21 +98,21 @@ Stack 視圖控制項 (`UIStackView`) 會利用自動設定和大小類別的功
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在  **Solution Pad**中, 按兩下`Main.storyboard`檔案, 然後開啟檔案進行編輯。
-1. 設計您要加入至堆疊視圖之個別元素的版面配置: 
+1. 設計您要加入至堆疊視圖之個別元素的版面配置:
 
     [![](stacked-views-images/layout01.png "元素版面配置範例")](stacked-views-images/layout01.png#lightbox)
 1. 將任何必要的條件約束新增至專案, 以確保它們能夠正確地進行調整。 將元素加入至堆疊視圖之後, 這個步驟很重要。
-1. 建立所需的複本數目 (在此案例中為四個): 
+1. 建立所需的複本數目 (在此案例中為四個):
 
     [![](stacked-views-images/layout02.png "所需的複本數目")](stacked-views-images/layout02.png#lightbox)
-1. 從 [**工具箱**] 拖曳 [**堆疊視圖**], 並將它放在視圖上: 
+1. 從 [**工具箱**] 拖曳 [**堆疊視圖**], 並將它放在視圖上:
 
     [![](stacked-views-images/layout03.png "堆疊視圖")](stacked-views-images/layout03.png#lightbox)
-1. 選取 [堆疊] 視圖, 在**Properties Pad**的 [ **Widget]** 索引標籤中, 選取 [**填滿** **對齊**], 並`25`針對 [**分佈**] 按 [**填滿**], 並輸入**間距**: 
+1. 選取 [堆疊] 視圖, 在**Properties Pad**的 [ **Widget]** 索引標籤中, 選取 [**填滿** **對齊**], 並`25`針對 [**分佈**] 按 [**填滿**], 並輸入**間距**:
 
     [![](stacked-views-images/layout04.png "[Widget] 索引標籤")](stacked-views-images/layout04.png#lightbox)
 1. 將堆疊視圖放在您想要的畫面上, 並加入條件約束以將其保留在所需的位置。
-1. 選取個別的專案, 並將其拖曳至 [堆疊] 視圖: 
+1. 選取個別的專案, 並將其拖曳至 [堆疊] 視圖:
 
     [![](stacked-views-images/layout05.png "堆疊視圖中的個別元素")](stacked-views-images/layout05.png#lightbox)
 1. 系統會調整配置, 並根據您在上面設定的屬性, 將元素排列在堆疊視圖中。
@@ -122,21 +122,21 @@ Stack 視圖控制項 (`UIStackView`) 會利用自動設定和大小類別的功
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在 **方案總管**中, 按兩下`Main.storyboard`檔案, 然後開啟檔案進行編輯。
-1. 設計您要加入至堆疊視圖之個別元素的版面配置: 
+1. 設計您要加入至堆疊視圖之個別元素的版面配置:
 
     [![](stacked-views-images/layout01.png "範例元素版面配置")](stacked-views-images/layout01.png#lightbox)
 1. 將任何必要的條件約束新增至專案, 以確保它們能夠正確地進行調整。 將元素加入至堆疊視圖之後, 這個步驟很重要。
-1. 建立所需的複本數目 (在此案例中為四個): 
+1. 建立所需的複本數目 (在此案例中為四個):
 
     [![](stacked-views-images/layout02.png "所需的複本數目")](stacked-views-images/layout02.png#lightbox)
-1. 從 [**工具箱**] 拖曳 [**堆疊視圖**], 並將它放在視圖上: 
+1. 從 [**工具箱**] 拖曳 [**堆疊視圖**], 並將它放在視圖上:
 
     [![](stacked-views-images/layout03-vs.png "堆疊視圖")](stacked-views-images/layout03-vs.png#lightbox)
-1. 選取 [堆疊] 視圖, 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中選取 [**填入** **對齊方式**]、 `25` [針對**分佈** **平均填滿**], 然後輸入作為**間距**: 
+1. 選取 [堆疊] 視圖, 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中選取 [**填入** **對齊方式**]、 `25` [針對**分佈** **平均填滿**], 然後輸入作為**間距**:
 
     [![](stacked-views-images/layout04-vs.png "[Widget] 索引標籤")](stacked-views-images/layout04-vs.png#lightbox)
 1. 將堆疊視圖放在您想要的畫面上, 並加入條件約束以將其保留在所需的位置。
-1. 選取個別的專案, 並將其拖曳至 [堆疊] 視圖: 
+1. 選取個別的專案, 並將其拖曳至 [堆疊] 視圖:
 
     [![](stacked-views-images/layout05-vs.png "堆疊視圖中的個別元素")](stacked-views-images/layout05-vs.png#lightbox)
 1. 系統會調整配置, 並根據您在上面設定的屬性, 將元素排列在堆疊視圖中。

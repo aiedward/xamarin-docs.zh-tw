@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/24/2018
-ms.openlocfilehash: 41f1b96a39bde7b94f67f972bfd4ace7e454e2c0
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 8082fc6ab2625e68d64ee9d42a9b630f885d9002
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120590"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227756"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin 中顯示影像
 
@@ -41,7 +41,7 @@ _本文說明如何在 Xamarin iOS 應用程式中包含影像資產, 並使用C
 3. 選取新的映射集, 就會顯示編輯器:
 
     ![](displaying-an-image-images/imageset03.png "影像集編輯器")
-4. 從這裡, 為每個不同的裝置和所需的解析度拖曳影像。 
+4. 從這裡, 為每個不同的裝置和所需的解析度拖曳影像。
 5. 按兩下 [**資產] 清單**中的新映射集**名稱**以進行編輯:![](displaying-an-image-images/imageset04.png "編輯新影像集的名稱")
 
 在 iOS 設計工具中使用**映射集**時, 只要從屬性編輯器的下拉式清單中選取集合的名稱即可:
@@ -54,7 +54,7 @@ _本文說明如何在 Xamarin iOS 應用程式中包含影像資產, 並使用C
 
     ![](displaying-an-image-images/asset5.png "按一下加號按鈕")
 
-2. 選取 [新增**映射集**], 就會顯示新影像集的 [影像集編輯器]。 從這裡, 為每個不同的裝置和所需的解析度拖曳影像。 
+2. 選取 [新增**映射集**], 就會顯示新影像集的 [影像集編輯器]。 從這裡, 為每個不同的裝置和所需的解析度拖曳影像。
 
     ![](displaying-an-image-images/asset7.png "影像集編輯器")
 
@@ -193,7 +193,7 @@ if (MyIcon.Image != null) {
 
 ### <a name="frombundle"></a>FromBundle
 
-`FromBundle`方法呼叫是一種同步 (封鎖) 呼叫, 其中包含數個內建的影像載入和管理功能, 例如快取支援和自動處理各種解析度的影像檔案。  
+`FromBundle`方法呼叫是一種同步 (封鎖) 呼叫, 其中包含數個內建的影像載入和管理功能, 例如快取支援和自動處理各種解析度的影像檔案。
 
 下列範例顯示如何`UITabBarItem` `UITabBar`在上設定的影像:
 

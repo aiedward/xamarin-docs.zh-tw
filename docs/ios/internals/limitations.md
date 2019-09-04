@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 04/09/2018
-ms.openlocfilehash: f3baa6756b4e72b750ff1b128b72802f8f1ce6d9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7d5c9ebec2a1d79df7a9a16da91c79772746f6fc
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527346"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227537"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin 的限制
 
@@ -57,11 +57,11 @@ class Foo<T> : UIView {
 
 - 無法使用 [System.object]。
 - 不支援 System.web. Remoting。
-- 不支援動態建立類型 (沒有類型. GetType ("MyType ' 1")), 不過, 雖然查閱現有的類型 (例如, 類型. GetType ("System.string")) 也沒問題。 
+- 不支援動態建立類型 (沒有類型. GetType ("MyType ' 1")), 不過, 雖然查閱現有的類型 (例如, 類型. GetType ("System.string")) 也沒問題。
 - 反向回呼必須在編譯時期向執行時間註冊。
 
 
- 
+
  <a name="System.Reflection.Emit" />
 
 
@@ -71,7 +71,7 @@ class Foo<T> : UIView {
 
 - 動態語言執行時間。
 - 以動態語言執行時間為基礎的任何語言。
-- 遠端處理的 TransparentProxy 或任何其他動作都會造成執行時間動態產生程式碼。 
+- 遠端處理的 TransparentProxy 或任何其他動作都會造成執行時間動態產生程式碼。
 
 
   > [!IMPORTANT]
@@ -91,7 +91,7 @@ class Foo<T> : UIView {
 ```
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
 ```
- 
+
  <a name="Reverse_Callbacks" />
 
 
@@ -103,7 +103,7 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 - 您必須使用[MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)來標示所有的回呼方法。
 - 這些方法必須是靜態方法, 不支援實例方法。
- 
+
 <a name="No_Remoting" />
 
 ## <a name="no-remoting"></a>無遠端處理

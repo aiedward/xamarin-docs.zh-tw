@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 4fa15e73575e20541df7ee8f606b01ec6e3d875a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: f0927a6d6d5e3b9db6f203f779fbd50a026ce7e8
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656724"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226575"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin 中 Siri 快捷方式
 
@@ -264,19 +264,19 @@ void HandleUserActivity()
 
 - 將您的系統設定為使用 Xcode 10 命令列工具:
 
-    > [!WARNING]
-    > 更新選取的命令列工具會影響系統上所有已安裝的 Xcode 版本。 當您使用湯品 Chef 範例應用程式完成時, 請務必將此設定還原為其原始設定。
+  > [!WARNING]
+  > 更新選取的命令列工具會影響系統上所有已安裝的 Xcode 版本。 當您使用湯品 Chef 範例應用程式完成時, 請務必將此設定還原為其原始設定。
 
-    - 在 Xcode 中, 選擇  **Xcode > 喜好設定 > 位置**, 並將**命令列工具**設為您系統上可用的最新 Xcode 10 安裝。
+  - 在 Xcode 中, 選擇  **Xcode > 喜好設定 > 位置**, 並將**命令列工具**設為您系統上可用的最新 Xcode 10 安裝。
 
 - 在終端機中`cd` , 到**OrderSoupIntentStaticLib**目錄。
 
 - 型`make`別, 它會建立:
 
-    - 靜態程式庫 ( **libOrderSoupIntentStaticLib)。**
-    - 在**bo**輸出目錄中, C#系結定義:
-        - **ApiDefinitions.cs**
-        - **StructsAndEnums.cs**
+  - 靜態程式庫 ( **libOrderSoupIntentStaticLib)。**
+  - 在**bo**輸出目錄中, C#系結定義:
+    - **ApiDefinitions.cs**
+    - **StructsAndEnums.cs**
 
 依賴此靜態程式庫及其相關系結定義的**OrderSoupIntentBindings**專案會自動建立這些專案。
 不過, 透過上述程式手動執行會確保它會如預期般建立。
@@ -647,14 +647,14 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - 建立三個應用程式識別碼: 一個用於應用程式本身、一個用於意圖延伸, 另一個用於意圖 UI 延伸模組。 例如：
 
-    - 應用程式: **com. 取代 com.lookout.enterprise.yourcompanyname. SoupChef**
-        - 針對此應用程式識別碼, 指派 SiriKit 和**應用程式群組**功能。
+  - 應用程式: **com. 取代 com.lookout.enterprise.yourcompanyname. SoupChef**
+    - 針對此應用程式識別碼, 指派 SiriKit 和**應用程式群組**功能。
 
-    - 意圖延伸模組:**取代 com.lookout.enterprise.yourcompanyname. SoupChef. 意圖**
-        - 針對此應用程式識別碼, 指派 [**應用程式群組**] 功能。
+  - 意圖延伸模組:**取代 com.lookout.enterprise.yourcompanyname. SoupChef. 意圖**
+    - 針對此應用程式識別碼, 指派 [**應用程式群組**] 功能。
 
-    - 意圖 UI 延伸模組:**取代 com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
-        - 此應用程式識別碼不需要任何特殊功能。
+  - 意圖 UI 延伸模組:**取代 com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
+    - 此應用程式識別碼不需要任何特殊功能。
 
 - 建立上述應用程式識別碼之後, 請編輯指派給應用程式的**應用程式群組**功能和意圖延伸模組, 並指定先前建立的特定應用程式群組。
 
@@ -668,16 +668,16 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - 更新解決方案中的各種**plist**檔案。 將應用程式、意圖延伸和意圖 UI 延伸模組套件組合**識別碼**設定為上述定義的應用程式識別碼:
 
-    - 應用程式: **com. 取代 com.lookout.enterprise.yourcompanyname. SoupChef**
-    - 意圖延伸模組:**取代 com.lookout.enterprise.yourcompanyname. SoupChef. 意圖**
-    - 意圖 UI 延伸模組:**取代 com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
+  - 應用程式: **com. 取代 com.lookout.enterprise.yourcompanyname. SoupChef**
+  - 意圖延伸模組:**取代 com.lookout.enterprise.yourcompanyname. SoupChef. 意圖**
+  - 意圖 UI 延伸模組:**取代 com.lookout.enterprise.yourcompanyname. SoupChef. Intentsui**
 
 - 更新**SoupChef**專案的**plist**檔案:
-    - 針對 [**應用程式群組**] 功能, 將群組設定為上方建立的新應用程式群組 (在上述範例中, 它是**取代 com.lookout.enterprise.yourcompanyname. SoupChef**)。
-    - 請確定已啟用**SiriKit** 。
+  - 針對 [**應用程式群組**] 功能, 將群組設定為上方建立的新應用程式群組 (在上述範例中, 它是**取代 com.lookout.enterprise.yourcompanyname. SoupChef**)。
+  - 請確定已啟用**SiriKit** 。
 
 - 更新**SoupChefIntents**專案的**plist**檔案:
-    - 針對 [**應用程式群組**] 功能, 將群組設定為上方建立的新應用程式群組 (在上述範例中, 它是**取代 com.lookout.enterprise.yourcompanyname. SoupChef**)。
+  - 針對 [**應用程式群組**] 功能, 將群組設定為上方建立的新應用程式群組 (在上述範例中, 它是**取代 com.lookout.enterprise.yourcompanyname. SoupChef**)。
 
 - 最後, 開啟**NSUserDefaultsHelper.cs**。 將變數設定為新應用程式群組的值 (例如, 將其設定為`group.com.yourcompanyname.SoupChef`)。 `AppGroup`
 

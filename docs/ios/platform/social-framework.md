@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/20/2017
-ms.openlocfilehash: b95c68b43e4c7fda4d60f6976ab626968800d3dc
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: c6e0005207a7c6fc444d029c9577684370b4cbf0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889803"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226619"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin 中的社交架構
 
@@ -55,7 +55,7 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 
  `SLComposeViewController`永遠不會直接傳送推文, 而不需要使用者介入。 不過, 它可以使用下列方法進行初始化:
 
-- `SetInitialText`–新增要在推文中顯示的初始文字。 
+- `SetInitialText`–新增要在推文中顯示的初始文字。
 - `AddUrl`–新增推文的 Url。
 - `AddImage`–將影像新增至推文。
 
@@ -101,7 +101,7 @@ namespace SocialFrameworkDemo
         #region Constructors
         protected ViewController (IntPtr handle) : base (handle)
         {
-            
+
         }
         #endregion
 
@@ -165,7 +165,7 @@ public override void ViewWillAppear (bool animated)
     SendTweet.Enabled = isTwitterAvailable;
     RequestTwitterTimeline.Enabled = false;
 
-    // Initialize Twitter Account access 
+    // Initialize Twitter Account access
     var accountStore = new ACAccountStore ();
     var accountType = accountStore.FindAccountType (ACAccountType.Twitter);
 
@@ -331,7 +331,7 @@ namespace SocialFrameworkDemo
         #region Constructors
         protected ViewController (IntPtr handle) : base (handle)
         {
-            
+
         }
         #endregion
 
@@ -397,7 +397,7 @@ public override void ViewWillAppear (bool animated)
     PostToFacebook.Enabled = isFacebookAvailable;
     RequestFacebookTimeline.Enabled = false;
 
-    // Initialize Facebook Account access 
+    // Initialize Facebook Account access
     var accountStore = new ACAccountStore ();
     var options = new AccountStoreOptions ();
     var options.FacebookAppId = ""; // Enter your specific Facebook App ID here

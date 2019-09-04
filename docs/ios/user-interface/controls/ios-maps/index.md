@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: c989481c1235429091c2a196a66e4abd2c12fb52
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 157f797ebb19de1ae00a00328a9c63b051c7224f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887480"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226456"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin 中的對應
 
@@ -36,7 +36,7 @@ View = map;
 
 `MKMapView`支援3種不同的對應樣式。 若要套用地圖樣式, 只要將`MapType`屬性設定為`MKMapType`列舉中的值即可:
 
-```
+```csharp
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
@@ -87,7 +87,7 @@ map.ShowsUserLocation = true;
 ```
 
  ![](images/02-location-alert.png "允許位置存取警示")
- 
+
 ## <a name="annotations"></a>標註
 
  `MKMapView`也支援在地圖上顯示影像, 稱為「批註」。 這些可以是自訂影像或系統定義的各種色彩 pin。 例如, 下列螢幕擷取畫面顯示具有 pin 和自訂影像的地圖:
@@ -250,7 +250,7 @@ var searchResultsController = new SearchResultsViewController (map);
 //Creates a search controller updater
 var searchUpdater = new SearchResultsUpdator ();
 searchUpdater.UpdateSearchResults += searchResultsController.Search;
-            
+
 //add the search controller
 searchController = new UISearchController (searchResultsController) {
                 SearchResultsUpdater = searchUpdater
@@ -264,7 +264,7 @@ searchController.SearchBar.Placeholder = "Enter a search query";
 //the search bar is contained in the navigation bar, so it should be visible
 searchController.HidesNavigationBarDuringPresentation = false;
 
-//Ensure the searchResultsController is presented in the current View Controller 
+//Ensure the searchResultsController is presented in the current View Controller
 DefinesPresentationContext = true;
 
 //Set the search bar in the navigation bar
@@ -279,7 +279,7 @@ NavigationItem.TitleView = searchController.SearchBar;
 這會導致在地圖上顯示搜尋列, 如下所示:
 
  ![](images/07-searchbar.png "在地圖上顯示的搜尋列")
- 
+
 
 
 ### <a name="displaying-the-search-results"></a>顯示搜尋結果
@@ -358,7 +358,7 @@ public class SearchResultsViewController : UITableViewController
 
 ### <a name="updating-the-search-results"></a>更新搜尋結果
 
-會作為的搜尋列和搜尋`searchController`結果之間的中繼程式。 `SearchResultsUpdater` 
+會作為的搜尋列和搜尋`searchController`結果之間的中繼程式。 `SearchResultsUpdater`
 
 在此範例中, 我們必須先在中`SearchResultsViewController`建立搜尋方法。 `MKLocalSearch`若要這麼做`MKLocalSearchRequest`, 我們必須建立物件, 並使用它來發出的搜尋, 並在傳遞`MKLocalSearch`給`Start`物件方法的回呼中抓取結果。 然後, 結果會在包含物件`MKLocalSearchResponse`陣列的`MKMapItem`物件中傳回:
 
@@ -403,7 +403,7 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 上述的執行方式會在從結果中選取專案時, 將批註新增至地圖, 如下所示:
 
  ![](images/08-search-results.png "從結果中選取專案時, 新增至地圖的注釋")
- 
+
 > [!IMPORTANT]
 > `UISearchController`已在 iOS 8 中執行。 如果您想要支援早于此的裝置, 則必須使用`UISearchDisplayController`。
 

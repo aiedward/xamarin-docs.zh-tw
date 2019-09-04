@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: b639a7fdefb8fca67d833b07ef9aa1a85da67ef6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642893"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228017"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms 文字樣式
 
@@ -48,7 +48,7 @@ Xamarin.Forms 包含數個[內建](xref:Xamarin.Forms.Device.Styles)樣式的常
 label.Style = Device.Styles.TitleStyle;
 ```
 
-![](styles-images/builtinstyles.png "裝置樣式範例")
+![裝置樣式範例](styles-images/builtinstyles.png)
 
 <a name="Custom_Styles" />
 
@@ -90,7 +90,7 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 
 請注意，資源 （包括所有樣式） 會定義內`ContentPage.Resources`，這是較熟悉的同層級`ContentPage.Content`項目。
 
-![](styles-images/customstyle.png "自訂樣式範例")
+![自訂樣式範例](styles-images/customstyle.png)
 
 <a name="Applying_Styles" />
 
@@ -137,11 +137,11 @@ label.Style = Device.Styles.TitleStyle;
 
 已停用：
 
-![](styles-images/pre-access.png "使用協助工具已停用裝置樣式")
+![已停用協助工具的裝置樣式](styles-images/pre-access.png)
 
 已啟用：
 
-![](styles-images/post-access.png "裝置啟用的存取範圍的樣式")
+![啟用協助工具的裝置樣式](styles-images/post-access.png)
 
 若要確保協助工具，請確定內建樣式做為應用程式內的任何文字相關樣式為基礎，而且您正在使用的樣式以一致的方式。 請參閱[樣式](~/xamarin-forms/user-interface/styles/index.md)如需詳細資訊，擴充和一般使用的樣式。
 

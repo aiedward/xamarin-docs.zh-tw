@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/17/2017
-ms.openlocfilehash: f2ac37676dbdfc96c853c9bc679e79c2aae1adb1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 71c58baee5e98efcfb38b75ffed2b85c90f8a131
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656240"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227360"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 中的搜尋和主畫面 Widget 增強功能
 
@@ -71,7 +71,7 @@ var vibrancy2 = UIVibrancyEffect.CreateSecondaryVibrancyEffectForNotificationCen
 
 IOS 10 的新功能: widget 現在包含[NCWidgetDisplayMode](https://developer.apple.com/reference/notificationcenter/ncwidgetdisplaymode)屬性, 可讓開發人員描述有多少內容可供使用, 並可讓使用者展開和折迭內容。
 
-一開始顯示 Widget 時, 會處於折迭狀態。 折迭的 Widget 具有大約2個和一半標準 iOS 資料表資料列的高度。 開發人員可以要求擴充小工具的大小, 但最好小於螢幕的高度。 
+一開始顯示 Widget 時, 會處於折迭狀態。 折迭的 Widget 具有大約2個和一半標準 iOS 資料表資料列的高度。 開發人員可以要求擴充小工具的大小, 但最好小於螢幕的高度。
 
 在折迭狀態中, Widget 應該只顯示必要的獨立資訊。 展開時, Widget 應該會顯示補充資訊, 以增強折迭狀態所顯示的主要內容。 例如, 氣象應用程式會在折迭時顯示目前的天氣狀況, 並在展開時新增每小時預測。
 

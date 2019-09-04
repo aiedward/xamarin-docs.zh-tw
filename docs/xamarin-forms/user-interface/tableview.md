@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: fc3837cd0d69d49b9939b04da667010aac919fe2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 195ed82325ed681f31f9963d5ff0ca0a7fef48ab
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657127"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228147"
 ---
 # <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
 
 [`TableView`](xref:Xamarin.Forms.TableView)這是一個視圖, 用於顯示不共用相同範本之資料列的可滾動清單。 `TableView`不同[于 ListView](~/xamarin-forms/user-interface/listview/index.md), 沒有的概念,因此必須以手動方式將專案新增為子系。`ItemsSource`
 
-![](tableview-images/tableview-all-sml.png "TableView 範例")
+![TableView 範例](tableview-images/tableview-all-sml.png)
 
 <a name="Use_Cases" />
 
@@ -106,7 +106,7 @@ Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[`
 
 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)也會公開`OnChanged`事件, 讓您能夠回應儲存格狀態的變更。
 
-![](tableview-images/switch-cell.png "SwitchCell 範例")
+![SwitchCell 範例](tableview-images/switch-cell.png)
 
 <a name="entrycell" />
 
@@ -123,7 +123,7 @@ Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[`
 
 [`EntryCell`](xref:Xamarin.Forms.EntryCell)也會公開`Completed`事件, 當使用者在編輯文字時按下鍵盤上的 [完成] 按鈕時, 就會引發此事件。
 
-![](tableview-images/entry-cell.png "EntryCell 範例")
+![EntryCell 範例](tableview-images/entry-cell.png)
 
 <a name="Custom_Cells" />
 
@@ -135,7 +135,7 @@ Xamarin.Forms 會隨附內建的儲存格，來收集和顯示資訊。 雖然[`
 
 這是自訂的資料格的範例：
 
-![](tableview-images/custom-cell.png "自訂儲存格範例")
+![自訂資料格範例](tableview-images/custom-cell.png)
 
 下列範例顯示用來建立上述螢幕擷取畫面中[`TableView`](xref:Xamarin.Forms.TableView)的 XAML:
 
@@ -252,11 +252,11 @@ void OnViewCellTapped(object sender, EventArgs e)
 
 下列螢幕擷取畫面顯示儲存格之前被點選時：
 
-![](tableview-images/cell-beforeresize.png "調整大小之前的 ViewCell")
+![調整大小之前的 ViewCell](tableview-images/cell-beforeresize.png)
 
 下列螢幕擷取畫面會顯示儲存格後被點選時：
 
-![](tableview-images/cell-afterresize.png "調整大小之後的 ViewCell")
+![調整大小之後的 ViewCell](tableview-images/cell-afterresize.png)
 
 > [!IMPORTANT]
 > 如果這項功能過度使用而使，沒有強式可能的效能降低。

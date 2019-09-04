@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d32b96cd489f84ea93e7ada9b6458272d0dea1c0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3ae18a2009ee3c34498a2e7586b561c525e76d45
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524868"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225536"
 ---
 # <a name="xamarinandroid-api-design-principles"></a>Xamarin. Android API 設計原則
 
@@ -42,21 +42,21 @@ ms.locfileid: "69524868"
 
 - 公開強型別 API:
 
-    - 增加型別安全。
+  - 增加型別安全。
 
-    - 將執行階段錯誤降至最低。
+  - 將執行階段錯誤降至最低。
 
-    - 取得傳回類型的 IDE intellisense。
+  - 取得傳回類型的 IDE intellisense。
 
-    - 允許 IDE 快顯視窗檔。
+  - 允許 IDE 快顯視窗檔。
 
 - 鼓勵在 IDE 中探索 Api:
 
-    - 利用架構替代專案, 將 JAVA Classlib 的風險降到最低。
+  - 利用架構替代專案, 將 JAVA Classlib 的風險降到最低。
 
-    - 適當C#和適用時, 公開委派 (lambda、匿名方法和 system.string), 而不是單一方法介面。
+  - 適當C#和適用時, 公開委派 (lambda、匿名方法和 system.string), 而不是單一方法介面。
 
-    - 提供呼叫任意 JAVA 程式庫 ( [JNIEnv](xref:Android.Runtime.JNIEnv)) 的機制。
+  - 提供呼叫任意 JAVA 程式庫 ( [JNIEnv](xref:Android.Runtime.JNIEnv)) 的機制。
 
 
 ## <a name="assemblies"></a>組件
@@ -198,17 +198,17 @@ JAVA 靜態嵌套類別與C#巢狀型別相同。
 
 ```csharp
 class CubeWallpaper : WallpaperService {
-        public override WallpaperService.Engine OnCreateEngine ()
-        {
-                return new CubeEngine (this);
-        }
+    public override WallpaperService.Engine OnCreateEngine ()
+    {
+        return new CubeEngine (this);
+    }
 
-        class CubeEngine : WallpaperService.Engine {
-                public CubeEngine (CubeWallpaper s)
-                        : base (s)
-                {
-                }
+    class CubeEngine : WallpaperService.Engine {
+        public CubeEngine (CubeWallpaper s)
+                : base (s)
+        {
         }
+    }
 }
 ```
 

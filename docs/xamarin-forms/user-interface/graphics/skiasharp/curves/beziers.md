@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 7802360c95d31f237cf69c69728cffe02ad47e5a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646233"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228266"
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
@@ -24,7 +24,7 @@ _探索如何使用 SkiaSharp 呈現三次方、 二次方，以及 conic 貝茲
 
 貝茲曲線已知適合用於互動式設計:它們的行為也&mdash;不太 singularities, 因此不會造成曲線變得無限或難以&mdash;執行, 而且通常內賞心悅目令人滿意:
 
-![](beziers-images/beziersample.png "範例貝茲曲線")
+![樣本貝茲曲線](beziers-images/beziersample.png)
 
 使用貝茲曲線，通常被定義字元外框輪廓的電腦為基礎的字型。
 
@@ -93,7 +93,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下執行：
 
-[![](beziers-images/beziercurve-small.png "貝茲曲線頁面的三個螢幕擷取畫面")](beziers-images/beziercurve-large.png#lightbox "的貝茲曲線頁面的三個螢幕擷取畫面")
+[![[貝茲曲線] 頁面的三重螢幕擷取畫面](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
 
 以數學方式，曲線是三次方多項式次方。 曲線最相交於三個點的直線。 起始點，在曲線一律為，然後在方向相同的正切函數，一條直線開始點的第一個控制點。 結束點曲線一律為，然後在方向相同的正切函數，從第二個控制項一條直線指向結束點。
 
@@ -125,7 +125,7 @@ y(t) = (1 – t) ³y₀ + 3t (1 – t) ²y₁ + 3t² (1 – t) y₂ + t³y₃
 
 下圖顯示四個點標示`pto`， `pt1`， `pt2`，和`pt3`定義近似圓弧線段的貝茲曲線 （以紅色顯示）：
 
-![](beziers-images/bezierarc45.png "貝茲曲線的圓弧線段的近似值")
+![以貝茲曲線繪製圓弧的近似值](beziers-images/bezierarc45.png)
 
 中開始和結束點的程式行，以控點會圓形，貝茲曲線的正切函數，而且必須一段*L*。上述第一篇文章指出最佳的貝茲曲線接近圓弧線段時，長度*L*計算如下：
 
@@ -211,13 +211,13 @@ float Magnitude(SKPoint v)
 
 以下是執行不同的角度的程式：
 
-[![](beziers-images/beziercirculararc-small.png "貝茲圓弧頁面的三個螢幕擷取畫面")](beziers-images/beziercirculararc-large.png#lightbox "的貝茲圓弧頁面的三個螢幕擷取畫面")
+[![[貝塞爾圓弧] 頁面的三重螢幕擷取畫面](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
 
 仔細看看第三個螢幕擷取畫面，您會看到，貝茲曲線值得注意的是衍生自半圓形的角度為 180 度，但 iOS 畫面會顯示它似乎符合四分之一圓形正常，角度為 90 度時。
 
 計算兩個控制點座標是相當簡單，導向這類四分之一圓形時：
 
-![](beziers-images/bezierarc90.png "貝茲曲線的四分之一圓形的近似值")
+![具有貝茲曲線的季圓近似值](beziers-images/bezierarc90.png)
 
 如果圓形的半徑為 100，則*L* 55，而且是簡單的數字，要記住。
 
@@ -293,7 +293,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 根據 sinusoidally 不穩定的值插補點`t`。 插補的點接著會用於建構一系列的四個連接的貝茲曲線。 以下是執行動畫：
 
-[![](beziers-images/squaringthecircle-small.png "三重的螢幕擷取畫面的 Squaring 圓形頁面")](beziers-images/squaringthecircle-large.png#lightbox "Squaring 的三個螢幕擷取畫面 [圓形] 頁面")
+[![將 [圓形] 頁面重數的三向螢幕擷取畫面](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
 
 這類動畫是不可能沒有又靈活地轉譯為圓弧及直線，線條的曲線。
 
@@ -342,7 +342,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是無限大符號：
 
-[![](beziers-images/bezierinfinity-small.png "貝茲無限大頁面的三個螢幕擷取畫面")](beziers-images/bezierinfinity-large.png#lightbox "的貝茲無限大頁面的三個螢幕擷取畫面")
+[![貝塞爾無限大頁面的三重螢幕擷取畫面](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
 它是有點順暢朝中央所呈現的無限大符號**弧線無限大**頁面上，從[**繪製弧形的三種方式**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)文章。
 
@@ -405,7 +405,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 並執行以下：
 
-[![](beziers-images/quadraticcurve-small.png "二次方曲線頁面的三個螢幕擷取畫面")](beziers-images/quadraticcurve-large.png#lightbox "二次方曲線頁面的三個螢幕擷取畫面")
+[![二次方曲線頁面的三重螢幕擷取畫面](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
 
 點線是起點和終點曲線的正切函數，並符合在控制項控點。
 
@@ -483,7 +483,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下執行：
 
-[![](beziers-images/coniccurve-small.png "Conic 曲線頁面的三個螢幕擷取畫面")](beziers-images/coniccurve-large.png#lightbox "Conic 曲線頁面的三個螢幕擷取畫面")
+[![[圓錐曲線] 頁面的三重螢幕擷取畫面](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
 
 如您所見，控制項控點會似乎較高權數時提取朝向它更多曲線。 當加權為零時，曲線就會變成一條直線開始點至結束點。
 
@@ -491,7 +491,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 它是很容易就能衍生的控制項控點和要使用的權數`ConicTo`方法，最多可繪製圓弧線段 （但不是包括） 半圓形。 在下列圖表中，從開始和結束點的切線符合在控制項控點。
 
-![](beziers-images/conicarc.png "Conic 弧線的呈現圓弧線段")
+![圓弧的圓錐弧線呈現](beziers-images/conicarc.png)
 
 您可以使用三角函數來判斷控制點與圓形中心的距離:這是圓形的半徑除以α角度的余弦。 若要開始和結束點之間繪製圓弧線段，設定權數為該相同的一半的角度的餘弦值。 請注意，如果角度為 180 度，然後永遠無法符合的切線加權為零。 但如角度小於 180 度、 數學可正常運作。
 
@@ -547,7 +547,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如您所見，沒有任何視覺化差異`ConicTo`以紅色顯示的路徑，且顯示供參考的基礎圓圈：
 
-[![](beziers-images/coniccirculararc-small.png "Conic 圓弧頁面的三個螢幕擷取畫面")](beziers-images/coniccirculararc-large.png#lightbox "Conic 圓弧頁面的三個螢幕擷取畫面")
+[![圓錐圓弧頁的三向螢幕擷取畫面](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
 
 但是，角度設 180 度，以及數學失敗。
 

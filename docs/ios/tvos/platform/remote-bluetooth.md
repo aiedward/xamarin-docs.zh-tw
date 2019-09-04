@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 1e1e86c6301214c7117b8f3b21b19554499d7fbd
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 99fafe0ae0186ac68609ebe22dabe64e588ee5e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121436"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226667"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>在 Xamarin 中 Siri 遠端和藍牙控制器以進行 tvOS
 
@@ -67,7 +67,7 @@ Apple 提供下列使用觸控介面手勢的建議:
 
 ## <a name="siri-remote-buttons"></a>Siri 遠端按鈕
 
-除了觸控介面上的手勢外, 您的應用程式也可以回應使用者按一下觸控介面或按下 [播放/暫停] 按鈕。 如果您使用遊戲控制器架構來存取 Siri 遠端, 您也可以偵測到按下的功能表按鈕。 
+除了觸控介面上的手勢外, 您的應用程式也可以回應使用者按一下觸控介面或按下 [播放/暫停] 按鈕。 如果您使用遊戲控制器架構來存取 Siri 遠端, 您也可以偵測到按下的功能表按鈕。
 
 此外, 您可以使用筆勢辨識器搭配標準`UIKit`元素來偵測按下的功能表按鈕。 如果您攔截到按下的功能表按鈕, 將會負責關閉目前的 View 和 View Controller, 並返回上一個控制器。
 
@@ -83,14 +83,14 @@ Apple 提供下列使用觸控介面手勢的建議:
 若要新增手勢辨識器, 請執行下列動作:
 
 1. 在 **方案總管**中, 按兩下`Main.storyboard`檔案, 然後開啟檔案以編輯介面設計工具。
-2. 從連結**庫**拖曳點一下**手勢辨識器**, 並將它放置在 View 上: 
+2. 從連結**庫**拖曳點一下**手勢辨識器**, 並將它放置在 View 上:
 
     [![](remote-bluetooth-images/storyboard01.png "攻點手勢辨識器")](remote-bluetooth-images/storyboard01.png#lightbox)
-3. 勾選 [**屬性偵測器**] 的 [**按鈕**] 區段中的 [**選取**]: 
+3. 勾選 [**屬性偵測器**] 的 [**按鈕**] 區段中的 [**選取**]:
 
     [![](remote-bluetooth-images/storyboard02.png "核取 [選取]")](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **選取**表示手勢會回應使用者按一下 Siri 遙控器上的**觸控介面**。 您也可以選擇回應 **功能表**， **矔菛/縸** ， **向上** ， **向下** ， **左** 和 **右** 按鈕。
-5. 接下來, 從點按手勢辨識**器**連線到**動作**, 並`TouchSurfaceClicked`加以呼叫: 
+5. 接下來, 從點按手勢辨識**器**連線到**動作**, 並`TouchSurfaceClicked`加以呼叫:
 
     [![](remote-bluetooth-images/storyboard03.png "來自點手勢辨識器的動作")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. 儲存您的變更, 並返回 Visual Studio for Mac。
@@ -142,7 +142,7 @@ namespace tvRemote
         #region Override Methods
         public override void ViewDidLoad ()
         {
-            base.ViewDidLoad ();    
+            base.ViewDidLoad ();
 
             // Wire-up gestures
             var upGesture = new UISwipeGestureRecognizer (() => {
@@ -186,9 +186,9 @@ namespace tvRemote
 
 ## <a name="low-level-event-handling"></a>低層級事件處理
 
-如果您要在 tvOS 應用程式`UIKit`中建立以為基礎的自訂類型 (例如`UIView`), 您也可以透過`UIPress`事件提供低層級的按鈕處理功能。 
+如果您要在 tvOS 應用程式`UIKit`中建立以為基礎的自訂類型 (例如`UIView`), 您也可以透過`UIPress`事件提供低層級的按鈕處理功能。
 
-事件是 tvOS iOS 的`UITouch`事件, 但`UIPress`會傳回 Siri 遠端或其他連接的藍牙裝置 (例如遊戲控制器) 上按下按鈕的相關資訊。 `UIPress` `UIPress`事件會描述所按下的按鈕及其狀態 (開始、取消、變更或結束)。 
+事件是 tvOS iOS 的`UITouch`事件, 但`UIPress`會傳回 Siri 遠端或其他連接的藍牙裝置 (例如遊戲控制器) 上按下按鈕的相關資訊。 `UIPress` `UIPress`事件會描述所按下的按鈕及其狀態 (開始、取消、變更或結束)。
 
 針對藍牙遊戲控制器等裝置上的類比按鈕`UIPress` , 也會傳回套用至按鈕的強制數量。 `UIPress`事件的屬性會定義哪些實體按鈕已變更狀態, 而其餘屬性則描述所發生的變更。 `Type`
 
@@ -211,7 +211,7 @@ namespace tvRemote
         }
         #endregion
 
-        #region 
+        #region
         public EventView (IntPtr handle) : base (handle)
         {
         }

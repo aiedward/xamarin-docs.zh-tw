@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 05/11/2016
-ms.openlocfilehash: 29e737e5a6cb6abdae099c0224a2da058c2ea025
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: af0765adb7e059bdc80c0b851b4bdcad8be0e3e4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527742"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227835"
 ---
 # <a name="cloudkit-in-xamarinios"></a>在 Xamarin 中 CloudKit
 
@@ -55,7 +55,7 @@ CloudKit 同時支援結構化和大量資料。 它可以順暢地處理大型�
 
 1. 在 Visual Studio for Mac 或 Visual Studio 中開啟專案。
 2. 在**方案總管**中, 開啟**plist**檔案, 並確定套件組合**識別碼**與在布建設定中建立的 [**應用程式**識別碼] 中所定義的套件相符:
- 
+
     [![](intro-to-cloudkit-images/image26a.png "輸入套件組合識別碼")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
 
 3. 向下**plist**檔案的底部, 並選取 [**啟用背景模式**]、[**位置更新**] 和 [**遠端通知**]:
@@ -471,42 +471,42 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 
 
 1. 符合名稱等於儲存在變數中之值的記錄:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("name = '{0}'", recordName))
     ```
-   
+
 2. 允許依據動態索引鍵值進行比對, 讓索引鍵不一定要在編譯時期知道:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("{0} = '{1}'", key, value))
     ```
-    
+
 3. 記錄值大於指定值的相符記錄:
-   
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0}", (NSDate)date))
     ```
 
 4. 記錄位置在指定位置的100計量內的相符記錄:
-    
-    ```
+
+    ```csharp
     var location = new CLLocation(37.783,-122.404);
     var predicate = NSPredicate.FromFormat(string.Format("distanceToLocation:fromLocation(Location,{0}) < 100", location));
     ```
 
 5. CloudKit 支援標記化的搜尋。 此呼叫會建立兩個權杖, 一個`after`用於, 另`session`一個用於。 它會傳回包含這兩個權杖的記錄:
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
-    
+
 6. CloudKit 支援使用運算子聯結的`AND`複合述詞。
-    
-    ```
+
+    ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
     ```
-    
+
 
 
 #### <a name="creating-queries"></a>建立查詢
@@ -820,40 +820,40 @@ CloudKit 為應用程式的記錄類型和資料提供個別的開發和生產�
 
 請執行下列動作：
 
-1. 在 Ma 的 Visual Studio 中, 為**Release**  >  **iOS 裝置**編譯應用程式: 
+1. 在 Ma 的 Visual Studio 中, 為**Release**  >  **iOS 裝置**編譯應用程式:
 
     [![](intro-to-cloudkit-images/shipping01.png "編譯用於發行的應用程式")](intro-to-cloudkit-images/shipping01.png#lightbox)
 
-2. 從 [**建立**] 功能表中, 選取 [封存]: 
+2. 從 [**建立**] 功能表中, 選取 [封存]:
 
     [![](intro-to-cloudkit-images/shipping02.png "選取封存")](intro-to-cloudkit-images/shipping02.png#lightbox)
 
-3. 封存將會建立並顯示在 Visual Studio for Mac 中: 
+3. 封存將會建立並顯示在 Visual Studio for Mac 中:
 
     [![](intro-to-cloudkit-images/shipping03.png "將會建立並顯示封存")](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. 啟動 **Xcode**。
-5. 從 **視窗** 功能表上，選取 **召集人**: 
+5. 從 **視窗** 功能表上，選取 **召集人**:
 
     [![](intro-to-cloudkit-images/shipping04.png "選取召集人")](intro-to-cloudkit-images/shipping04.png#lightbox)
 
-6. 選取應用程式的封存, 然後按一下 [**匯出 ...** ] 按鈕: 
+6. 選取應用程式的封存, 然後按一下 [**匯出 ...** ] 按鈕:
 
     [![](intro-to-cloudkit-images/shipping05.png "應用程式的封存")](intro-to-cloudkit-images/shipping05.png#lightbox)
-    
-7. 選取匯出的方法, 然後按 [**下一步]** 按鈕: 
+
+7. 選取匯出的方法, 然後按 [**下一步]** 按鈕:
 
     [![](intro-to-cloudkit-images/shipping06.png "選取匯出的方法")](intro-to-cloudkit-images/shipping06.png#lightbox)
 
-8. 從下拉式清單中選取 [**開發小組**], 然後按一下 [**選擇**] 按鈕: 
+8. 從下拉式清單中選取 [**開發小組**], 然後按一下 [**選擇**] 按鈕:
 
     [![](intro-to-cloudkit-images/shipping07.png "從下拉式清單中選取開發小組")](intro-to-cloudkit-images/shipping07.png#lightbox)
 
-9. 從下拉式清單中選取 [**生產**], 然後按 [**下一步]** 按鈕: 
+9. 從下拉式清單中選取 [**生產**], 然後按 [**下一步]** 按鈕:
 
     [![](intro-to-cloudkit-images/shipping08.png "從下拉式清單中選取 [生產]")](intro-to-cloudkit-images/shipping08.png#lightbox)
 
-10. 檢查設定, 然後按一下 [**匯出**] 按鈕: 
+10. 檢查設定, 然後按一下 [**匯出**] 按鈕:
 
     [![](intro-to-cloudkit-images/shipping09.png "檢查設定")](intro-to-cloudkit-images/shipping09.png#lightbox)
 

@@ -6,12 +6,12 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: asb3993
 ms.author: amburns
 ms.date: 03/29/2017
-ms.openlocfilehash: 61562eed8867b7a2e12b3d2e96feed28d957696b
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 021139c817d2b0eb430a6c8fe09dbd07b7c17813
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511208"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226147"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>將現有的應用程式更新至 Unified API
 
@@ -40,7 +40,7 @@ ms.locfileid: "68511208"
 
 您可以使用內建 Visual Studio for Mac 的自動化遷移工具, 將現有的 Xamarin 應用程式更新為 Unified API。 接著, 可能需要一些額外的修正, 如[這些指示](~/cross-platform/macios/unified/updating-mac-apps.md)和[秘訣](~/cross-platform/macios/unified/updating-tips.md)中所述。
 
-### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin. Forms 應用程式](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
+### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms 應用程式](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
 請遵循這些指示, 使用 iOS 專案來更新現有的 Xamarin Forms 解決方案, 以使用 Unified API。 Unified API 支援僅適用于 Xamarin. Forms 1.3 和更新版本, 因此[指示](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)也會說明如何將您的 Xamarin. forms 應用程式更新至1.3 版。 這些[提示](~/cross-platform/macios/unified/updating-tips.md)可協助更新自訂轉譯器或相依性服務中的任何原生 iOS 程式碼。
 

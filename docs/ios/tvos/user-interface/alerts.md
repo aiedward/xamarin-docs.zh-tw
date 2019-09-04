@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 3f1761df5c2b638c5777e6384f4c0c06e9b3071f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: de7c8918ff500cb2353214fd84eaa4c97713493e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657293"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227273"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>在 Xamarin 中使用 tvOS 警示
 
@@ -34,7 +34,7 @@ _本文涵蓋如何使用 UIAlertController, 在 tvOS 中向使用者顯示警�
 
 Apple 具有下列使用警示的建議:
 
-- **謹慎使用警示**-警示會中斷使用者與應用程式的流程, 並中斷使用者體驗, 因此, 應該只用于重要的情況, 例如錯誤通知、應用程式內購買和破壞性動作。 
+- **謹慎使用警示**-警示會中斷使用者與應用程式的流程, 並中斷使用者體驗, 因此, 應該只用于重要的情況, 例如錯誤通知、應用程式內購買和破壞性動作。
 - **提供有用的選擇**-如果警示向使用者顯示選項, 您應該確保每個選項都提供重要的資訊, 並提供實用的動作供使用者採取。
 
 <a name="Alert-Titles-and-Messages" />
@@ -44,7 +44,7 @@ Apple 具有下列使用警示的建議:
 Apple 提供下列建議來呈現警示的標題和選擇性的訊息:
 
 - **使用 Multiword phrases 標題**-警示的標題應該可以清楚地取得情況的點, 同時仍然保持在最簡單的狀態。 單一字組標題很少會提供足夠的資訊。
-- **使用不需要訊息的描述性標題**-任何可能的情況下, 請考慮讓警示的標題具有足夠的描述, 而不需要選擇性的郵件內文。 
+- **使用不需要訊息的描述性標題**-任何可能的情況下, 請考慮讓警示的標題具有足夠的描述, 而不需要選擇性的郵件內文。
 - 將**訊息設為簡短、完整的句子**-如果需要選擇性的訊息以取得整個警示點, 請盡可能保持簡單, 並以適當的大小寫和標點符號做為完整的句子。
 
 <a name="Alert-Buttons" />
@@ -70,15 +70,15 @@ const string acceptButtonTitle = "OK";
 const string cancelButtonTitle = "Cancel";
 const string deleteButtonTitle = "Delete";
 ...
-        
+
 var alertController = UIAlertController.Create (title, message, UIAlertControllerStyle.Alert);
 
 // Create the action.
-var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ => 
+var acceptAction = UIAlertAction.Create (acceptButtonTitle, UIAlertActionStyle.Default, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
-var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ => 
+var cancelAction = UIAlertAction.Create (cancelButtonTitle, UIAlertActionStyle.Cancel, _ =>
     Console.WriteLine ("The \"OK/Cancel\" alert's other action occurred.")
 );
 
@@ -97,7 +97,7 @@ UIAlertController.Create (title, message, UIAlertControllerStyle.Alert)
 接下來, 針對要顯示在警示中的每個按鈕, 我們會建立一個動作來定義按鈕的標題、其樣式, 以及當按下按鈕時要採取的動作:
 
 ```csharp
-UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ => 
+UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
     // Do something when the button is pressed
     ...
 );

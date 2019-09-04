@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 09/25/2017
-ms.openlocfilehash: 41aabb5e8b6d3eb46a92ee194c6b6b5e3ca51943
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e90e108e6b02055a585129b6412641a726afaab4
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655623"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226290"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用資料列動作
 
@@ -22,7 +22,7 @@ _本指南示範如何使用 UISwipeActionsConfiguration 或 UITableViewRowActio
 
 iOS 提供兩種在資料表上執行動作的方式`UISwipeActionsConfiguration` : `UITableViewRowAction`和。
 
-`UISwipeActionsConfiguration`是在 iOS 11 中引進, 而且可用來定義一組動作, 當使用者在資料表視圖中的資料列上撥動_任一方向_時, 就會發生此情況。 此行為類似于原生郵件應用程式。 
+`UISwipeActionsConfiguration`是在 iOS 11 中引進, 而且可用來定義一組動作, 當使用者在資料表視圖中的資料列上撥動_任一方向_時, 就會發生此情況。 此行為類似于原生郵件應用程式。
 
 `UITableViewRowAction`類別是用來定義當使用者在資料表視圖中的資料列上水準撥動時, 將會發生的動作。
 例如, 編輯資料表時, 根據預設, 資料列上的向左輕刷會顯示 [**刪除**] 按鈕。 藉由將`UITableViewRowAction`類別的多個實例附加`UITableView`至, 可以定義多個自訂動作, 每個都有自己的文字、格式和行為。
@@ -32,7 +32,7 @@ iOS 提供兩種在資料表上執行動作的方式`UISwipeActionsConfiguration
 
 使用`UISwipeActionsConfiguration`執行輕刷動作需要三個步驟:
 
-1. 覆`GetLeadingSwipeActionsConfiguration`寫和/ `GetTrailingSwipeActionsConfiguration`或方法。 這些方法`UISwipeActionsConfiguration`會傳回。 
+1. 覆`GetLeadingSwipeActionsConfiguration`寫和/ `GetTrailingSwipeActionsConfiguration`或方法。 這些方法`UISwipeActionsConfiguration`會傳回。
 2. 具現`UISwipeActionsConfiguration`化要傳回的。 這個類別會接受的陣列`UIContextualAction`。
 3. 建立 `UIContextualAction`。
 
@@ -40,7 +40,7 @@ iOS 提供兩種在資料表上執行動作的方式`UISwipeActionsConfiguration
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1.執行 SwipeActionsConfigurations 方法
 
-`UITableViewController`(和`UITableViewSource`和`UITableViewDelegate`) 包含兩個方法: `GetLeadingSwipeActionsConfiguration`和`GetTrailingSwipeActionsConfiguration`, 用來在資料表視圖資料列上執行一組滑動動作。 前置的「滑動」動作指的是從畫面左側以左至右的語言, 以及從右至左的語言中, 從畫面的右手邊滑動。 
+`UITableViewController`(和`UITableViewSource`和`UITableViewDelegate`) 包含兩個方法: `GetLeadingSwipeActionsConfiguration`和`GetTrailingSwipeActionsConfiguration`, 用來在資料表視圖資料列上執行一組滑動動作。 前置的「滑動」動作指的是從畫面左側以左至右的語言, 以及從右至左的語言中, 從畫面的右手邊滑動。
 
 下列範例 (來自[TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)範例) 示範如何執行領先的滑動設定。 從內容相關的動作中會建立兩個動作,[如下](#create-uicontextualaction)所述。 這些動作接著會傳遞至新初始化[`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)的, 做為傳回值使用。
 
@@ -54,11 +54,11 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
     //UISwipeActionsConfiguration
     var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { flagAction, definitionAction });
-    
+
     leadingSwipe.PerformsFirstActionWithFullSwipe = false;
-    
+
     return leadingSwipe;
-}  
+}
 ```
 
 <a name="create-uiswipeactionsconfigurations" />
@@ -99,10 +99,10 @@ public UIContextualAction ContextualFlagAction(int row)
                         "Flag",
                         (FlagAction, view, success) => {
                             var alertController = UIAlertController.Create($"Report {words[row]}?", "", UIAlertControllerStyle.Alert);
-                            alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null)); 
+                            alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
                             alertController.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Destructive, null));
                             PresentViewController(alertController, true, null);
-                            
+
                             success(true);
                         });
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: a1fae280f42f91fce4b4fe28c3f728cf14c7a21c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: dabbd21a2ad2ef3c77017ea92704ccdf69f7b36c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528911"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228209"
 ---
 # <a name="listview-performance"></a>ListView 效能
 
@@ -173,9 +173,9 @@ public class CustomListView : ListView
 - 應避免階層深度巢狀版面配置。 使用`AbsoluteLayout`或`Grid`以減少巢狀結構。
 - 避免特定`LayoutOptions`以外的其他`Fill`（填滿是成本來計算）。
 - 避免在放置`ListView`內`ScrollView`，原因如下：
-    - `ListView`實作自己的捲動。
-    - `ListView` ，將會由父代，則不會收到任何筆勢， `ScrollView`。
-    - `ListView`可以呈現的自訂標頭和頁尾捲動清單中，可能會提供功能的項目`ScrollView`有人使用了。 如需詳細資訊，請參閱[頁首和頁尾](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)。
+  - `ListView`實作自己的捲動。
+  - `ListView` ，將會由父代，則不會收到任何筆勢， `ScrollView`。
+  - `ListView`可以呈現的自訂標頭和頁尾捲動清單中，可能會提供功能的項目`ScrollView`有人使用了。 如需詳細資訊，請參閱[頁首和頁尾](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)。
 - 如果您需要非常特定且複雜的設計，儲存格所述，請考慮自訂轉譯器。
 
 `AbsoluteLayout` 若要執行而沒有單一量值呼叫的配置可能會發生。 這可讓您非常強大的效能。 如果`AbsoluteLayout`無法使用，請考慮[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)。 如果使用`RelativeLayout`，直接傳遞條件約束相當大的速度會比使用 API 的運算式。 這是因為運算式 API 會使用 JIT，並在 iOS 上的樹狀目錄中對解譯，以較慢。 API 運算式是適合的版面配置，它只需要在初始的版面配置與輪替，但在`ListView`，其中執行持續期間向下捲動，它都會損及效能。

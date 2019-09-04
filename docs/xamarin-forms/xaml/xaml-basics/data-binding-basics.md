@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: f5c5f0449962dec45a521112b2de92cddefe453f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655244"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227939"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
@@ -102,7 +102,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 以下是執行中的程式：
 
-[![](data-binding-basics-images/sliderbinding.png "檢視來檢視繫結")](data-binding-basics-images/sliderbinding-large.png#lightbox "檢視來檢視繫結 ")
+[![視圖對視圖系結](data-binding-basics-images/sliderbinding.png)](data-binding-basics-images/sliderbinding-large.png#lightbox)
 
 ## <a name="the-binding-mode"></a>繫結模式
 
@@ -201,7 +201,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 不過，繫結`Scale`屬性是`TwoWay`。 這是因為`Scale`屬性具有預設值是 1，並使用`TwoWay`繫結原因`Slider`初始設定在 1，而不是 0 的值。 如果該繫結`OneWayToSource`，則`Scale`屬性一開始會設定為從 0`Slider`預設值。 `Label`就不會顯示，和，可能會對使用者造成混淆。
 
- [![](data-binding-basics-images/slidertransforms.png "回溯繫結")](data-binding-basics-images/slidertransforms-large.png#lightbox "回溯繫結")
+ [![反向系結](data-binding-basics-images/slidertransforms.png)](data-binding-basics-images/slidertransforms-large.png#lightbox)
 
  > [!NOTE]
  > [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別也有[ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX)並[ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY)屬性，調整`VisualElement`x 軸和 y 軸上分別。
@@ -234,7 +234,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 結果顯示可讓您建立的項目是真正的型別`XamlSamples.NamedColor`:
 
-[![](data-binding-basics-images/listview1.png "繫結至集合")](data-binding-basics-images/listview1-large.png#lightbox "繫結至集合")
+[![系結至集合](data-binding-basics-images/listview1.png)](data-binding-basics-images/listview1-large.png#lightbox)
 
 它不是太多的資訊，但`ListView`是可捲動和選取。
 
@@ -259,7 +259,7 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 `Label`元素設定為`View`屬性`ViewCell`。 (`ViewCell.View`因為不需要標記`View`屬性是內容屬性`ViewCell`。)此標記會顯示`FriendlyName`每個屬性`NamedColor`物件：
 
-[![](data-binding-basics-images/listview2.png "繫結至集合，以使用 DataTemplate")](data-binding-basics-images/listview2-large.png#lightbox "繫結至集合，以使用 DataTemplate")
+[![使用 DataTemplate 系結至集合](data-binding-basics-images/listview2.png)](data-binding-basics-images/listview2-large.png#lightbox)
 
 好多了。 現在就只需要為裝飾項目範本的詳細資訊和實際的色彩。 若要支援此範本，某些值和物件中已定義頁面的資源字典：
 
@@ -396,7 +396,7 @@ namespace XamlSamples
 
 結果如下：
 
-[![](data-binding-basics-images/listview3.png "繫結至含 DataTemplate 和轉換器的集合")](data-binding-basics-images/listview3-large.png#lightbox "繫結至含 DataTemplate 和轉換器的集合")
+[![使用 DataTemplate 和轉換器系結至集合](data-binding-basics-images/listview3.png)](data-binding-basics-images/listview3-large.png#lightbox)
 
 `ListView`已經相當成熟中處理動態如果可能會發生在基礎資料中，但僅限於您採取特定步驟的變更。 如果項目集合指派給`ItemsSource`屬性`ListView`在執行階段期間的變更 — 是，如果項目可以加入或移除集合中，使用`ObservableCollection`這些項目的類別。 `ObservableCollection` 會實作`INotifyCollectionChanged`介面，並`ListView`將會安裝的處理常式`CollectionChanged`事件。
 

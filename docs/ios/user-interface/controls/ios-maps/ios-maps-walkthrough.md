@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/21/2017
-ms.openlocfilehash: 64b666e8e8621019da4f2acb71ab5b3bf22fad3a
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: c768003e2737fef191a1afb24b7ac50b28ace9b0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889766"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226273"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注釋和重迭
 
 我們將在本逐步解說中建立的應用程式如下所示:
 
  [![](ios-maps-walkthrough-images/00-map-overlay.png "範例 MapKit 應用程式")](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
- 
+
 您可以在[Maps 逐步解說範例](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)中找到完整的程式碼。
 
 首先, 我們要建立新的**IOS 空白專案**, 並為它提供相關的名稱。 我們一開始會先將程式碼新增至我們的視圖控制器以顯示 MapView, 然後再為我們的 MapDelegate 建立新的類別, 以及自訂注釋。 請遵循下列步驟來進行這項作業：
@@ -66,7 +66,7 @@ ms.locfileid: "69889766"
     map.ShowsUserLocation = true;
     map.ZoomEnabled = true;
     map.ScrollEnabled = true;
-    
+
     ```
 
 1. 接下來, 新增程式碼以置中地圖, 並將其設定為區域:
@@ -78,14 +78,14 @@ ms.locfileid: "69889766"
     MKCoordinateRegion mapRegion = MKCoordinateRegion.FromDistance (mapCenter, 100, 100);
     map.CenterCoordinate = mapCenter;
     map.Region = mapRegion;
-    
+
     ```
 
 1. 建立的新實例`MapDelegate` , 並將它指派`Delegate`給`MKMapView`的。 同樣地, 我們會`MapDelegate`很快地 implcodeent:
 
     ```csharp
     mapDelegate = new MapDelegate ();
-    map.Delegate = mapDelegate;     
+    map.Delegate = mapDelegate;
     ```
 
 1. 從 iOS 8 開始, 您應該向使用者要求授權以使用其位置, 因此讓我們將其新增至我們的範例。 首先, 定義`CLLocationManager`類別層級的變數:
@@ -98,15 +98,15 @@ ms.locfileid: "69889766"
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion(8,0)){
-                    locationManager.RequestWhenInUseAuthorization ();
-                }
+        locationManager.RequestWhenInUseAuthorization ();
+    }
     ```
 
 1. 最後, 我們需要編輯**plist**檔案, 以通知使用者要求其位置的原因。 在**plist**的 [**來源**] 功能表中, 新增下列機碼:
-    
-    `NSLocationWhenInUseUsageDescription` 
-    
-    和字串: 
+
+    `NSLocationWhenInUseUsageDescription`
+
+    和字串:
 
     `Maps Walkthrough Docs Sample`.
 
@@ -120,34 +120,34 @@ ms.locfileid: "69889766"
     using System;
     using CoreLocation;
     using MapKit;
-    
+
     namespace MapsWalkthrough
     {
         public class ConferenceAnnotation : MKAnnotation
         {
             string title;
             CLLocationCoordinate2D coord;
-    
+
             public ConferenceAnnotation (string title,
             CLLocationCoordinate2D coord)
             {
                 this.title = title;
                 this.coord = coord;
             }
-    
+
             public override string Title {
                 get {
                     return title;
                 }
             }
-    
+
             public override CLLocationCoordinate2D Coordinate {
                 get {
                     return coord;
                 }
             }
         }
-    }   
+    }
     ```
 
 ## <a name="viewcontroller---adding-the-annotation-and-overlay"></a>ViewController-新增注釋和重迭
@@ -155,7 +155,7 @@ ms.locfileid: "69889766"
 1. `ConferenceAnnotation`備妥之後, 我們可以將它新增至地圖。 回到的`ViewController`方法, 在地圖的中心座標處新增注釋: `ViewDidLoad`
 
     ```csharp
-    map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter)); 
+    map.AddAnnotations (new ConferenceAnnotation ("Evolve Conference", mapCenter));
     ```
 
 1. 我們也想要有一個飯店的重迭。 新增下列程式碼, 以`MKPolygon`使用所提供之飯店的座標來建立, 並藉由呼叫`AddOverlay`將其新增至地圖:
@@ -175,8 +175,8 @@ ms.locfileid: "69889766"
         new CLLocationCoordinate2D(30.2650364981811, -97.7385709662122),
         new CLLocationCoordinate2D(30.2650470749025, -97.7386199493406)
     });
-    
-    map.AddOverlay (hotelOverlay);  
+
+    map.AddOverlay (hotelOverlay);
     ```
 
 這會完成中`ViewDidLoad`的程式碼。 現在, 我們需要`MapDelegate`實作為類別來分別處理批註和重迭視圖的建立。
@@ -202,22 +202,22 @@ ms.locfileid: "69889766"
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
     {
         MKAnnotationView annotationView = null;
-    
+
         if (annotation is MKUserLocation)
-            return null; 
-    
+            return null;
+
         if (annotation is ConferenceAnnotation) {
-    
+
             // show conference annotation
             annotationView = mapView.DequeueReusableAnnotation (annotationId);
-    
+
             if (annotationView == null)
                 annotationView = new MKAnnotationView (annotation, annotationId);
-        
+
             annotationView.Image = UIImage.FromFile ("images/conference.png");
             annotationView.CanShowCallout = true;
-        } 
-    
+        }
+
         return annotationView;
     }
     ```
@@ -236,13 +236,13 @@ ms.locfileid: "69889766"
     {
         // show an image view when the conference annotation view is selected
         if (view.Annotation is ConferenceAnnotation) {
-    
+
             venueView = new UIImageView ();
             venueView.ContentMode = UIViewContentMode.ScaleAspectFit;
             venueImage = UIImage.FromFile ("image/venue.png");
             venueView.Image = venueImage;
             view.AddSubview (venueView);
-    
+
             UIView.Animate (0.4, () => {
             venueView.Frame = new CGRect (-75, -75, 200, 200); });
         }
@@ -256,7 +256,7 @@ ms.locfileid: "69889766"
     {
         // remove the image view when the conference annotation is deselected
         if (view.Annotation is ConferenceAnnotation) {
-    
+
             venueView.RemoveFromSuperview ();
             venueView.Dispose ();
             venueView = null;

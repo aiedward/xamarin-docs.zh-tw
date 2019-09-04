@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2019
 ms.custom: video
-ms.openlocfilehash: a9b9b2d12193161e0cb4514600381c3a7a38495a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 7c0fffbe626a740c15d85b1277c5158a5e564a15
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529327"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228081"
 ---
 # <a name="resource-dictionaries"></a>資源字典
 
@@ -105,9 +105,9 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </StackLayout>
 ```
 
-第一個[ `Label` ](xref:Xamarin.Forms.Label)執行個體擷取並取用`LabelPageHeadingStyle`中的應用程式層級定義的資源`ResourceDictionary`，第二個`Label`執行個體擷取及使用`LabelNormalStyle`控制層級中定義的資源`ResourceDictionary`。 同樣地， [ `Button` ](xref:Xamarin.Forms.Button)擷取執行個體，並取用`NormalTextColor`中的應用程式層級定義的資源`ResourceDictionary`，而`MediumBoldText`控制層級中定義的資源`ResourceDictionary`。 這會導致下列的螢幕擷取畫面所示的外觀：
+第一個[ `Label` ](xref:Xamarin.Forms.Label)執行個體擷取並取用`LabelPageHeadingStyle`中的應用程式層級定義的資源`ResourceDictionary`，第二個`Label`執行個體擷取及使用`LabelNormalStyle`控制層級中定義的資源`ResourceDictionary`。 同樣地， [ `Button` ](xref:Xamarin.Forms.Button)擷取執行個體，並取用`NormalTextColor`中的應用程式層級定義的資源`ResourceDictionary`，而`MediumBoldText`控制層級中定義的資源`ResourceDictionary`。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-[![](resource-dictionaries-images/screenshots-sml.png "使用 ResourceDictionary 資源")](resource-dictionaries-images/screenshots.png#lightbox "耗用 ResourceDictionary 資源")
+[![使用 ResourceDictionary 資源](resource-dictionaries-images/screenshots-sml.png)](resource-dictionaries-images/screenshots.png#lightbox)
 
 > [!NOTE]
 > 在應用程式層級資源字典中，這類資源將然後在應用程式啟動，而不是剖析，需要一個頁面時，不應包含專屬於單一頁面的資源。 如需詳細資訊，請參閱 <<c0> [ 減少應用程式資源字典大小](~/xamarin-forms/deploy-test/performance.md)。
@@ -142,7 +142,7 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 
 原始`PageBackgroundColor`並`NormalTextColor`執行個體，在應用程式層級中，定義會覆寫`PageBackgroundColor`和`NormalTextColor`頁面層級定義的執行個體。 因此，網頁的背景色彩會變成藍色，並如下列螢幕擷取畫面所示的頁面上的文字會變成黃色:
 
-[![](resource-dictionaries-images/overridding-screenshots-sml.png "覆寫資源 ResourceDictionary")](resource-dictionaries-images/overridding-screenshots.png#lightbox "覆寫 ResourceDictionary 資源")
+[![覆寫 ResourceDictionary 資源](resource-dictionaries-images/overridding-screenshots-sml.png)](resource-dictionaries-images/overridding-screenshots.png#lightbox)
 
 但請注意，背景列[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)仍然是黃色，因為[ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)屬性設定的值為`PageBackgroundColor`應用程式中定義的資源層級`ResourceDictionary`。
 

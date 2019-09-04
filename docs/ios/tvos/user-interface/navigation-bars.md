@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bde37c907d2cad327dd2a72f26ee357a4391c43
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 14fbbd72d3ec80d15d2dcae5938f8df28923ca4c
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649051"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226613"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>在 Xamarin 中使用 tvOS 導覽列
 
@@ -34,16 +34,16 @@ ms.locfileid: "68649051"
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在  **Solution Pad**中, 按兩下`Main.storyboard` 檔案, 然後開啟以進行編輯。
-1. 從 [**工具箱**] 將**導覽**列拖放到畫面頂端的視圖上: 
+1. 從 [**工具箱**] 將**導覽**列拖放到畫面頂端的視圖上:
 
     [![](navigation-bars-images/navbar02.png "巡覽列")](navigation-bars-images/navbar02.png#lightbox)
-1. 按兩下**導覽**列以選取 [**流覽] 專案**。 在  **Properties Pad**的  **Widget**  索引標籤中, 您可以設定**標題**: 
+1. 按兩下**導覽**列以選取 [**流覽] 專案**。 在  **Properties Pad**的  **Widget**  索引標籤中, 您可以設定**標題**:
 
     [![](navigation-bars-images/navbar03.png "設定標題")](navigation-bars-images/navbar03.png#lightbox)
-1. 接下來, 您可以將一個或多個**橫條按鈕專案**新增至橫條的任一個結尾: 
+1. 接下來, 您可以將一個或多個**橫條按鈕專案**新增至橫條的任一個結尾:
 
     [![](navigation-bars-images/navbar04.png "橫條按鈕專案")](navigation-bars-images/navbar04.png#lightbox)
-1. 最後, 在 [**屬性] Explorer**的 [**事件**] 索引標籤中, 將 [**橫條] 按鈕專案**連接至 [動作]: 
+1. 最後, 在 [**屬性] Explorer**的 [**事件**] 索引標籤中, 將 [**橫條] 按鈕專案**連接至 [動作]:
 
     [![](navigation-bars-images/navbar05.png "橫條按鈕專案動作")](navigation-bars-images/navbar05.png#lightbox)
 1. 儲存您的變更。
@@ -53,16 +53,16 @@ ms.locfileid: "68649051"
 
 
 1. 在 **方案總管**中, 按兩下`Main.storyboard` 檔案, 然後開啟以進行編輯。
-1. 從 [**工具箱**] 將**導覽**列拖放到畫面頂端的視圖上: 
+1. 從 [**工具箱**] 將**導覽**列拖放到畫面頂端的視圖上:
 
     [![](navigation-bars-images/navbar02-vs.png "巡覽列")](navigation-bars-images/navbar02-vs.png#lightbox)
-1. 按兩下**導覽**列以選取 [**流覽] 專案**。 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中, 您可以設定**標題**: 
+1. 按兩下**導覽**列以選取 [**流覽] 專案**。 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中, 您可以設定**標題**:
 
     [![](navigation-bars-images/navbar03-vs.png "設定標題")](navigation-bars-images/navbar03-vs.png#lightbox)
-1. 接下來, 您可以將一個或多個**橫條按鈕專案**新增至橫條的任一個結尾: 
+1. 接下來, 您可以將一個或多個**橫條按鈕專案**新增至橫條的任一個結尾:
 
     [![](navigation-bars-images/navbar04-vs.png "橫條按鈕專案")](navigation-bars-images/navbar04-vs.png#lightbox)
-1. 最後, 在 [**屬性] Explorer**的 [**事件**] 索引標籤中, 將 [**橫條] 按鈕專案**連接至 [動作]: 
+1. 最後, 在 [**屬性] Explorer**的 [**事件**] 索引標籤中, 將 [**橫條] 按鈕專案**連接至 [動作]:
 
     [![](navigation-bars-images/navbar05-vs.png "橫條按鈕專案動作")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 儲存您的變更。
@@ -126,7 +126,7 @@ namespace MySingleView
 
 只要按鈕的`Enabled`屬性為`true` , 而且它不是由另一個控制項或視圖所涵蓋, 就可以使用 Siri 遠端, 將它設為焦點專案。
 
-如需使用分鏡腳本的詳細資訊, 請參閱我們的[Hello, tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。 
+如需使用分鏡腳本的詳細資訊, 請參閱我們的[Hello, tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 
 <a name="Summary" />
 

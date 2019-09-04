@@ -6,12 +6,12 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: asb3993
 ms.author: amburns
 ms.date: 04/07/2016
-ms.openlocfilehash: e400191b40775cef5d1ab1cba0bd6c4544f8c5fe
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 9018c3e3c976ef7623835055ee989dfd86dc25e1
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680212"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226230"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>在跨平台應用程式中使用原生類型
 
@@ -207,7 +207,7 @@ namespace NativeShared
 }
 ```
 
-請注意, 我們已將`CalculateArea`方法變更為`nfloat`傳回, 而不是標準`float`。 這麼做的原因是, 我們不會在嘗試將計算的  `nfloat`結果隱含轉換 (因為這兩個值都是`float`類型`nfloat`) 為傳回值時, 就不會收到編譯錯誤。
+請注意, 我們已將`CalculateArea`方法變更為`nfloat`傳回, 而不是標準`float`。 這麼做的原因是, 我們不會在嘗試將計算的 `nfloat`結果隱含轉換 (因為這兩個值都是`float`類型`nfloat`) 為傳回值時, 就不會收到編譯錯誤。
 
 如果程式碼是在非 Unified API 裝置上編譯並執行, 則`using nfloat = global::System.Single;`會將`nfloat`對應至`Single` , 以隱含`CalculateArea`方式轉換為`float` , 讓取用的前端應用程式可以呼叫方法, 而不需要他人.
 

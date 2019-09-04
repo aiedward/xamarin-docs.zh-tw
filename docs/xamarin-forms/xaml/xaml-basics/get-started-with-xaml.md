@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: f4acadc1153c93ebade7453cfd7a79f5b052e513
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14f7692c88f5047f1250707940e3871371aecc8b
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528364"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227962"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
@@ -30,15 +30,15 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 
 在 Windows，使用 以選取 Visual Studio**檔案 > 新增 > 專案**從功能表。 中**新的專案**對話方塊中，選取**Visual C# > 跨平台**左邊，然後**行動應用程式 (Xamarin.Forms)** 從中央清單中。
 
-![](get-started-with-xaml-images/win/newprojectdialog.w157.png "新增專案 對話方塊")
+![[新增專案] 對話方塊](get-started-with-xaml-images/win/newprojectdialog.w157.png)
 
 選取方案的位置，並提供它的名稱**XamlSamples** （或您偏好的任何內容），然後按**確定**。
 
 在下一個畫面上，選取**空白應用程式**範本並 **.NET Standard**程式碼共用策略：
 
-![](get-started-with-xaml-images/win/newcrossplatformapp.png "新的應用程式 對話方塊")
+![[新增應用程式] 對話方塊](get-started-with-xaml-images/win/newcrossplatformapp.png)
 
-按下**確定**。
+按 [確定]。
 
 在方案中建立四個專案： **XamlSamples** .NET 標準程式庫**XamlSamples.Android**， **XamlSamples.iOS**，與通用 Windows 平台解決方案中， **XamlSamples.UWP**。
 
@@ -46,19 +46,19 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 
 在 Visual Studio for Mac 中，選取**檔案 > 新的方案**從功能表。 在 **新的專案**對話方塊中，選取**多平台 > 應用程式**左邊，和**空白的 Forms App** (*不* **Forms 應用程式**) 從範本清單：
 
-![](get-started-with-xaml-images/mac/newprojectdialog1.png "新增專案 對話方塊 1")
+![[新增專案] 對話方塊1](get-started-with-xaml-images/mac/newprojectdialog1.png)
 
 按下**下一步**。
 
 在下一步 對話方塊中，提供專案名稱**XamlSamples** （或您偏好的任何內容）。 請確定**使用.NET Standard**選取選項按鈕：
 
-![](get-started-with-xaml-images/mac/newprojectdialog2.png "新增專案 對話方塊 2")
+![[新增專案] 對話方塊2](get-started-with-xaml-images/mac/newprojectdialog2.png)
 
 按下**下一步**。
 
 在下列對話方塊中，您可以選取專案的位置：
 
-![](get-started-with-xaml-images/mac/newprojectdialog3.png "新增專案 對話方塊 3")
+![[新增專案] 對話方塊3](get-started-with-xaml-images/mac/newprojectdialog3.png)
 
 按下**建立**
 
@@ -141,7 +141,7 @@ namespace XamlSamples
 
 當您編譯和執行此程式，`Label`元素會出現在頁面中央，XAML 所示：
 
-[![](get-started-with-xaml-images/xamlsamples.png "預設 Xamarin.Forms 顯示器")](get-started-with-xaml-images/xamlsamples-large.png#lightbox "預設 Xamarin.Forms 顯示")
+[![預設的 Xamarin。表單顯示](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
 
 針對更有趣的視覺效果，您只需要更多有趣的 XAML。
 
@@ -151,13 +151,13 @@ namespace XamlSamples
 
 若要新增其他 XAML 為基礎`ContentPage`類別，以您的專案中，選取**XamlSamples** .NET Standard 程式庫專案，然後叫用**專案 > 加入新項目**功能表項目。 在左邊**加入新項目**對話方塊中，選取**視覺化C#** 並**Xamarin.Forms**。 從清單中選取**內容頁面**(不**內容頁面 (C#)** ，這會建立僅限程式碼的頁面上，或**內容檢視**，這不是頁面)。 指定頁面名稱，例如**HelloXamlPage.xaml**:
 
-![](get-started-with-xaml-images/win/addnewitemdialog.w157.png "加入新項目 對話方塊")
+![[加入新專案] 對話方塊](get-started-with-xaml-images/win/addnewitemdialog.w157.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 若要新增其他 XAML 為基礎`ContentPage`類別，以您的專案中，選取**XamlSamples** .NET Standard 程式庫專案，然後叫用**檔案 > 新的檔案**功能表項目。 左邊的**新的檔案**對話方塊中，選取**Form**左邊，並**Forms ContentPage Xaml** (不**Forms ContentPage**，建立僅限程式碼的頁面上，或是**內容檢視**，這不是頁面)。 指定頁面名稱，例如**HelloXamlPage**:
 
-![](get-started-with-xaml-images/mac/newfiledialog.png "新增檔案 對話方塊")
+![[新增檔案] 對話方塊](get-started-with-xaml-images/mac/newfiledialog.png)
 
 -----
 
@@ -278,7 +278,7 @@ public MainPage()
 
 設定`Content`頁的屬性會取代設定`Content`XAML 檔案中的屬性。 當您編譯和部署新的版本，此程式時，按鈕會出現在螢幕上。 按下它瀏覽至`HelloXamlPage`。 以下是 iPhone、 Android 及 UWP 上的 [結果] 頁面：
 
-[![](get-started-with-xaml-images/helloxaml1.png "旋轉標籤文字")](get-started-with-xaml-images/helloxaml1-large.png#lightbox "旋轉標籤文字")
+[![旋轉的標籤文字](get-started-with-xaml-images/helloxaml1.png)](get-started-with-xaml-images/helloxaml1-large.png#lightbox)
 
 您可以瀏覽回到`MainPage`使用 **< 上一步**在 iOS 上，使用向左箭號，在頁面頂端或底部的 行動電話在 Android 上，或使用向左箭號，在 Windows 10 上的頁面頂端的按鈕。
 
@@ -288,7 +288,7 @@ public MainPage()
 
 看起來如下：
 
-[![](get-started-with-xaml-images/helloxaml2.png "使用 Unicode 字元的標籤文字的旋轉")](get-started-with-xaml-images/helloxaml2-large.png#lightbox "旋轉使用 Unicode 字元的標籤文字")
+[![具有 Unicode 字元的旋轉標籤文字](get-started-with-xaml-images/helloxaml2.png)](get-started-with-xaml-images/helloxaml2-large.png#lightbox)
 
 ## <a name="xaml-and-code-interactions"></a>XAML 和程式碼互動
 
@@ -316,7 +316,7 @@ public MainPage()
 
 此 XAML 檔案語法完成，且它如下：
 
-[![](get-started-with-xaml-images/xamlpluscode1.png "在頁面上的多個控制項")](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox "頁面上的多個控制項")
+[![頁面上的多個控制項](get-started-with-xaml-images/xamlpluscode1.png)](get-started-with-xaml-images/xamlpluscode1-large.png#lightbox)
 
 不過，您可能會考慮此程式是功能不足。 或許`Slider`應該會導致`Label`來顯示目前的值，而`Button`可能預期的作業在程式內的項目。
 
@@ -407,7 +407,7 @@ void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
 
 當您第一次執行程式時，`Label`不會顯示`Slider`值，因為`ValueChanged`還尚未引發事件。 但操作`Slider`會導致要顯示的值：
 
-[![](get-started-with-xaml-images/xamlpluscode2.png "顯示的滑桿值")](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox "顯示滑桿值")
+[![顯示的滑杆值](get-started-with-xaml-images/xamlpluscode2.png)](get-started-with-xaml-images/xamlpluscode2-large.png#lightbox)
 
 現在`Button`。 讓我們模擬的回應`Clicked`所顯示的警示事件`Text`的按鈕。 可以安全地將事件處理常式`sender`引數`Button`，然後存取其屬性：
 

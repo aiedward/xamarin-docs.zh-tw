@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: c752f4acf4bf43c138a7b359b94620dae5e8d46e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 2137ff95e65c6841b3e525f0c9755e013310c7e0
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524528"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225589"
 ---
 # <a name="troubleshooting-bindings"></a>對繫結進行疑難排解
 
@@ -51,8 +51,8 @@ _本文摘要說明產生系結時可能會發生的多種常見錯誤, 以及�
 
 - **具有混淆特性的類別**&ndash;模糊類別的特性包括:
 
-    - 類別名稱會包含 **$** ，也就是 **$.class**
-    - 類別名稱完全洩露小寫字元, 亦即**類別**      
+  - 類別名稱會包含 **$** ，也就是 **$.class**
+  - 類別名稱完全洩露小寫字元, 亦即**類別**      
 
 - 未參考連結&ndash; **庫的語句會識別未參考的程式庫, 並將這些相依性新增至 ReferenceJar 的組建動作或的 Xamarin 繫結項目`import`**  **EmbedddedReferenceJar**。
 
@@ -114,19 +114,19 @@ _本文摘要說明產生系結時可能會發生的多種常見錯誤, 以及�
 
 - JAVA 允許從非公用類別衍生公用類別, 但 .NET 不支援這種方式。 由於系結產生器不會針對非公用類別產生系結, 因此無法正確產生衍生類別 (例如)。 若要修正此問題, 請使用**metadata**中的 remove 節點移除這些衍生類別的中繼資料專案, 或修正使非公用類別成為公用的中繼資料。 雖然後者的解決方案將會建立系結, 以便C#建立來源, 但不應使用非公用類別。
 
-    例如：
+  例如：
 
-    ```xml
-    <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
-        name="visibility">public</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
+      name="visibility">public</attr>
+  ```
 
 - 模糊 JAVA 程式庫的工具可能會干擾 Xamarin 的系結產生器, 以及它產生C#包裝函式類別的能力。 下列程式碼片段顯示如何更新**Metadata** , 以 unobfuscate 類別名稱:
 
-    ```xml
-    <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
-        name="obfuscated">false</attr>
-    ```
+  ```xml
+  <attr path="/api/package[@name='{package_name}']/class[@name='{name}']"
+      name="obfuscated">false</attr>
+  ```
 
 ### <a name="problem-generated-c-source-does-not-build-due-to-parameter-type-mismatch"></a>問題：產生C#的來源因參數類型不符而無法建立
 
@@ -134,7 +134,7 @@ _本文摘要說明產生系結時可能會發生的多種常見錯誤, 以及�
 
 #### <a name="possible-causes"></a>可能的原因:
 
-Xamarin 包含各種對應至系結中C#列舉的 JAVA 欄位。 這些可能會導致產生的系結中出現型別不相容的情況。 若要解決此問題, 必須修改從系結產生器建立的方法簽章, 以使用列舉。 如需詳細 imformation, 請參閱[更正](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)列舉。
+Xamarin 包含各種對應至系結中C#列舉的 JAVA 欄位。 這些可能會導致產生的系結中出現型別不相容的情況。 若要解決此問題, 必須修改從系結產生器建立的方法簽章, 以使用列舉。 如需詳細資訊, 請參閱[更正](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)列舉。
 
 ### <a name="problem-noclassdeffounderror-in-packaging"></a>問題：封裝中的 JAVA.lang.noclassdeffounderror
 
@@ -203,24 +203,24 @@ return type of 'Java.Lang.Object'
 
 - 新增的部分類別`HttpURLConnectionRequestAdapter`宣告, 並明確地執行: `IHttpRequest.Unwrap()`
 
-    ```csharp
-    namespace Oauth.Signpost.Basic {
-        partial class HttpURLConnectionRequestAdapter {
-            Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
-                return Unwrap();
-            }
-        }
-    }
-    ```
+  ```csharp
+  namespace Oauth.Signpost.Basic {
+      partial class HttpURLConnectionRequestAdapter {
+          Java.Lang.Object OauthSignpost.Http.IHttpRequest.Unwrap() {
+              return Unwrap();
+          }
+      }
+  }
+  ```
 
 - 從產生C#的程式碼中移除共變數。 這牽涉到將下列轉換新增至**Transforms\Metadata.xml** , 這會導致C#產生的程式碼具有的`Java.Lang.Object`傳回類型:
 
-    ```xml
-    <attr
-        path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
-        name="managedReturn">Java.Lang.Object
-    </attr>
-    ```
+  ```xml
+  <attr
+      path="/api/package[@name='oauth.signpost.basic']/class[@name='HttpURLConnectionRequestAdapter']/method[@name='unwrap']"
+      name="managedReturn">Java.Lang.Object
+  </attr>
+  ```
 
 ### <a name="problem-name-collisions-on-inner-classes--properties"></a>問題：內部類別/屬性的名稱衝突
 

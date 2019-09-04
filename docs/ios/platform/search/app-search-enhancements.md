@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/15/2017
-ms.openlocfilehash: 27eff717fd1390f54a177cc7636e7d107b69cd24
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ec7523ac2adc3a6b4ba18a7b8a0fe21749bd7856
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656274"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227416"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Xamarin 中的應用程式搜尋增強功能
 
@@ -44,13 +44,13 @@ iOS 10 提供了一種機制, 可計算熱門的應用程式連結到使用者�
 
 藉由執行新的[CSSearchQuery](https://developer.apple.com/reference/corespotlight/cssearchquery)類別, 應用程式可以提供焦點的搜尋和比對規則技術, 以尋找本身內的內容, 而不需要使用者離開應用程式 (類似于郵件、郵件和便箋應用程式的工作方式)。
 
-一般而言, 支援`CSSearchQuery`的應用程式將不需要維護自己的個別搜尋索引。 
+一般而言, 支援`CSSearchQuery`的應用程式將不需要維護自己的個別搜尋索引。
 
 ## <a name="search-continuation"></a>搜尋接續
 
 在 iOS 9 中, Apple 引進了搜尋 api (例如核心焦點`NSUserActivity`和 web 標記), 以在應用程式內提供內容的深度, 讓使用者能夠使用焦點和 Safari 搜尋介面來搜尋該內容。 如需詳細資訊, 請參閱我們的[新搜尋 api](~/ios/platform/search/index.md)檔。
 
-在 iOS 10 中, Apple 建基於這項功能, 可讓使用者在焦點或 Safari 中開始搜尋, 然後在開啟應用程式時繼續搜尋。 
+在 iOS 10 中, Apple 建基於這項功能, 可讓使用者在焦點或 Safari 中開始搜尋, 然後在開啟應用程式時繼續搜尋。
 
 若要執行這項功能, 請編輯`Info.plist`應用程式的檔案`CoreSpotlightContinuation` 、新增**布林**類型的索引鍵, 並`YES`將其值設定為:
 

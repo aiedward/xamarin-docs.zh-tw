@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 03/22/2017
-ms.openlocfilehash: 889bc13cfd0cbea51c34e8b3bcb6393293f4c2ae
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 6f60b52d4fd29aacf319f9de94051e28c9876e33
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528755"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226694"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin 中手動相機控制項
 
@@ -172,8 +172,8 @@ AV 捕捉會話是用來控制從 iOS 裝置相機播放即時影片的記錄, �
 
 1. 按兩下 方案總管中`AppDelegate.cs`的檔案以開啟它進行編輯。
 1. 將下列 using 語句新增至檔案頂端:
-    
-    ```
+
+    ```csharp
     using System;
     using Foundation;
     using UIKit;
@@ -188,12 +188,12 @@ AV 捕捉會話是用來控制從 iOS 裝置相機播放即時影片的記錄, �
     ```
 
 1. 將下列私用變數和計算屬性加入至`AppDelegate`類別:
-    
-    ```
+
+    ```csharp
     #region Private Variables
     private NSError Error;
     #endregion
-    
+
     #region Computed Properties
     public override UIWindow Window {get;set;}
     public bool CameraAvailable { get; set; }
@@ -204,16 +204,16 @@ AV 捕捉會話是用來控制從 iOS 裝置相機播放即時影片的記錄, �
     public AVCaptureDeviceInput Input { get; set; }
     #endregion
     ```
-  
+
 1. 覆寫已完成的方法, 並將它變更為:
-    
-    ```
+
+    ```csharp
     public override void FinishedLaunching (UIApplication application)
     {
         // Create a new capture session
         Session = new AVCaptureSession ();
         Session.SessionPreset = AVCaptureSession.PresetMedium;
-    
+
         // Create a device input
         CaptureDevice = AVCaptureDevice.DefaultDeviceWithMediaType (AVMediaType.Video);
         if (CaptureDevice == null) {
@@ -222,7 +222,7 @@ AV 捕捉會話是用來控制從 iOS 裝置相機播放即時影片的記錄, �
             CameraAvailable = false;
             return;
         }
-    
+
         // Prepare device for configuration
         CaptureDevice.LockForConfiguration (out Error);
         if (Error != null) {
@@ -231,13 +231,13 @@ AV 捕捉會話是用來控制從 iOS 裝置相機播放即時影片的記錄, �
             CaptureDevice.UnlockForConfiguration ();
             return;
         }
-    
+
         // Configure stream for 15 frames per second (fps)
         CaptureDevice.ActiveVideoMinFrameDuration = new CMTime (1, 15);
-    
+
         // Unlock configuration
         CaptureDevice.UnlockForConfiguration ();
-    
+
         // Get input from capture device
         Input = AVCaptureDeviceInput.FromDevice (CaptureDevice);
         if (Input == null) {
@@ -246,27 +246,27 @@ AV 捕捉會話是用來控制從 iOS 裝置相機播放即時影片的記錄, �
             CameraAvailable = false;
             return;
         }
-    
+
         // Attach input to session
         Session.AddInput (Input);
-    
+
         // Create a new output
         var output = new AVCaptureVideoDataOutput ();
         var settings = new AVVideoSettingsUncompressed ();
         settings.PixelFormatType = CVPixelFormatType.CV32BGRA;
         output.WeakVideoSettings = settings.Dictionary;
-    
+
         // Configure and attach to the output to the session
         Queue = new DispatchQueue ("ManCamQueue");
         Recorder = new OutputRecorder ();
         output.SetSampleBufferDelegate (Recorder, Queue);
         Session.AddOutput (output);
-    
+
         // Let tabs know that a camera is available
         CameraAvailable = true;
     }
-    ```  
-  
+    ```
+
 1. 將變更儲存到檔案。
 
 
@@ -300,10 +300,10 @@ Light 進入 iOS 裝置上的相機鏡頭, 並著重于影像感應器。 與感
 
 處理焦點時, 開發人員應該熟悉幾個詞彙:
 
-- [**欄位深度**] –最接近和最左邊焦點物件之間的距離。 
+- [**欄位深度**] –最接近和最左邊焦點物件之間的距離。
 - **宏**-這是焦點範圍的近部, 而且是最靠近鏡頭焦點的距離。
 - **無限大**–這是焦點範圍的最長, 也是最遠的距離。
-- **Hyperfocal 距離**–這是在焦點範圍中, 畫面中最左邊的物件只是焦點的最下方。 換句話說, 這是最大化欄位深度的焦點位置。 
+- **Hyperfocal 距離**–這是在焦點範圍中, 畫面中最左邊的物件只是焦點的最下方。 換句話說, 這是最大化欄位深度的焦點位置。
 - **透鏡位置**–這就是控制上述所有其他詞彙的內容。 這是從感應器到鏡頭的距離, 因而成為焦點的控制器。
 
 
@@ -383,8 +383,8 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. 新增下列私用變數:
 
     ```csharp
@@ -392,8 +392,8 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     private NSError Error;
     private bool Automatic = true;
     #endregion
-    ```  
-  
+    ```
+
 1. 新增下列計算屬性:
 
     ```csharp
@@ -403,21 +403,21 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. 覆寫`ViewDidLoad`方法, 並新增下列程式碼:
 
     ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Create a timer to monitor and update the UI
         SampleTimer = new Timer (5000);
         SampleTimer.Elapsed += (sender, e) => {
@@ -426,13 +426,13 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
                 Position.Value = ThisApp.Input.Device.LensPosition;
             });
         };
-    
+
         // Watch for value changes
         Segments.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // Lock device for change
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
-    
+
             // Take action based on the segment selected
             switch(Segments.SelectedSegment) {
             case 0:
@@ -450,43 +450,43 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
                 Position.Enabled = true;
                 break;
             }
-    
+
             // Unlock device
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         // Monitor position changes
         Position.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.SetFocusModeLocked(Position.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
     }
-    ```  
-  
+    ```
+
 1. 覆寫`ViewDidAppear`方法, 並新增下列內容, 以便在視圖載入時開始錄製:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. 當相機處於自動模式時, 滑杆會在相機調整焦點時自動移動:
 
     [![](intro-to-manual-camera-controls-images/image6.png "當相機調整此範例應用程式中的焦點時, 滑杆會自動移動")](intro-to-manual-camera-controls-images/image6.png#lightbox)
@@ -517,7 +517,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 組成控制公開的三個基本元素如下:
 
 - **快門速度**–這是打開快門以讓光線進入相機感應器的時間長度。 快門開啟的時間愈短, 越少越好, 影像就愈好 (較小的動作模糊)。 快門開啟的時間愈久, 就越少越好, 出現的動作模糊就越多。
-- **ISO 對應**–這是從電影攝影借用的詞彙, 並指的是電影中的化學物的敏感度。 電影中的低 ISO 值具有較少的細微性和更細微的色彩複製;數位感應器的低 ISO 值的感應器噪音較少, 但亮度較少。 ISO 值越高, 影像愈亮, 但感應器雜訊愈多。 數位感應器上的「ISO」是一種[電子增益](https://en.wikipedia.org/wiki/Gain)量, 而不是實體功能。 
+- **ISO 對應**–這是從電影攝影借用的詞彙, 並指的是電影中的化學物的敏感度。 電影中的低 ISO 值具有較少的細微性和更細微的色彩複製;數位感應器的低 ISO 值的感應器噪音較少, 但亮度較少。 ISO 值越高, 影像愈亮, 但感應器雜訊愈多。 數位感應器上的「ISO」是一種[電子增益](https://en.wikipedia.org/wiki/Gain)量, 而不是實體功能。
 - **透鏡光圈**–這是開啟的「鏡頭」大小。 在所有 iOS 裝置上, 會修正 [透鏡] 光圈, 因此唯一可用來調整曝光的兩個值為 [快門速度] 和 [ISO]。
 
 
@@ -573,12 +573,12 @@ CaptureDevice.UnlockForConfiguration();
 
 最小和最大設定範圍取決於應用程式執行所在的裝置, 因此絕對不應該硬式編碼。 請改用下列屬性來取得最小和最大值範圍:
 
-- `CaptureDevice.MinExposureTargetBias` 
-- `CaptureDevice.MaxExposureTargetBias` 
-- `CaptureDevice.ActiveFormat.MinISO` 
-- `CaptureDevice.ActiveFormat.MaxISO` 
-- `CaptureDevice.ActiveFormat.MinExposureDuration` 
-- `CaptureDevice.ActiveFormat.MaxExposureDuration` 
+- `CaptureDevice.MinExposureTargetBias`
+- `CaptureDevice.MaxExposureTargetBias`
+- `CaptureDevice.ActiveFormat.MinISO`
+- `CaptureDevice.ActiveFormat.MaxISO`
+- `CaptureDevice.ActiveFormat.MinExposureDuration`
+- `CaptureDevice.ActiveFormat.MaxExposureDuration`
 
 
 如上述程式碼所示, 必須鎖定 Capture 裝置進行設定, 才能進行曝光變更。
@@ -600,8 +600,8 @@ CaptureDevice.UnlockForConfiguration();
 
 
 1. 新增下列 using 語句:
-    
-    ```
+
+    ```csharp
     using System;
     using Foundation;
     using UIKit;
@@ -614,19 +614,19 @@ CaptureDevice.UnlockForConfiguration();
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. 新增下列私用變數:
 
     ```csharp
     #region Private Variables
-    private NSError Error; 
+    private NSError Error;
     private bool Automatic = true;
     private nfloat ExposureDurationPower = 5;
     private nfloat ExposureMinimumDuration = 1.0f/1000.0f;
     #endregion
-    ```  
-  
+    ```
+
 1. 新增下列計算屬性:
 
     ```csharp
@@ -636,34 +636,34 @@ CaptureDevice.UnlockForConfiguration();
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. 覆寫`ViewDidLoad`方法, 並新增下列程式碼:
 
     ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Set min and max values
         Offset.MinValue = ThisApp.CaptureDevice.MinExposureTargetBias;
         Offset.MaxValue = ThisApp.CaptureDevice.MaxExposureTargetBias;
-    
+
         Duration.MinValue = 0.0f;
         Duration.MaxValue = 1.0f;
-    
+
         ISO.MinValue = ThisApp.CaptureDevice.ActiveFormat.MinISO;
         ISO.MaxValue = ThisApp.CaptureDevice.ActiveFormat.MaxISO;
-    
+
         Bias.MinValue = ThisApp.CaptureDevice.MinExposureTargetBias;
         Bias.MaxValue = ThisApp.CaptureDevice.MaxExposureTargetBias;
-    
+
         // Create a timer to monitor and update the UI
         SampleTimer = new Timer (5000);
         SampleTimer.Elapsed += (sender, e) => {
@@ -671,7 +671,7 @@ CaptureDevice.UnlockForConfiguration();
             Offset.BeginInvokeOnMainThread(() =>{
                 Offset.Value = ThisApp.Input.Device.ExposureTargetOffset;
             });
-    
+
             Duration.BeginInvokeOnMainThread(() =>{
                 var newDurationSeconds = CMTimeGetSeconds(ThisApp.Input.Device.ExposureDuration);
                 var minDurationSeconds = Math.Max(CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MinExposureDuration), ExposureMinimumDuration);
@@ -679,22 +679,22 @@ CaptureDevice.UnlockForConfiguration();
                 var p = (newDurationSeconds - minDurationSeconds) / (maxDurationSeconds - minDurationSeconds);
                 Duration.Value = (float)Math.Pow(p, 1.0f/ExposureDurationPower);
             });
-    
+
             ISO.BeginInvokeOnMainThread(() => {
                 ISO.Value = ThisApp.Input.Device.ISO;
             });
-    
+
             Bias.BeginInvokeOnMainThread(() => {
                 Bias.Value = ThisApp.Input.Device.ExposureTargetBias;
             });
         };
-    
+
         // Watch for value changes
         Segments.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // Lock device for change
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
-    
+
             // Take action based on the segment selected
             switch(Segments.SelectedSegment) {
             case 0:
@@ -722,71 +722,71 @@ CaptureDevice.UnlockForConfiguration();
                 ISO.Enabled = true;
                 break;
             }
-    
+
             // Unlock device
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         // Monitor position changes
         Duration.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Calculate value
             var p = Math.Pow(Duration.Value,ExposureDurationPower);
             var minDurationSeconds = Math.Max(CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MinExposureDuration),ExposureMinimumDuration);
             var maxDurationSeconds = CMTimeGetSeconds(ThisApp.CaptureDevice.ActiveFormat.MaxExposureDuration);
             var newDurationSeconds = p * (maxDurationSeconds - minDurationSeconds) +minDurationSeconds;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.LockExposure(CMTime.FromSeconds(p,1000*1000*1000),ThisApp.CaptureDevice.ISO,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         ISO.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.LockExposure(ThisApp.CaptureDevice.ExposureDuration,ISO.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
-    
+
         Bias.ValueChanged += (object sender, EventArgs e) => {
-    
+
             // If we are in the automatic mode, ignore changes
             // if (Automatic) return;
-    
+
             // Update Focus position
             ThisApp.CaptureDevice.LockForConfiguration(out Error);
             ThisApp.CaptureDevice.SetExposureTargetBias(Bias.Value,null);
             ThisApp.CaptureDevice.UnlockForConfiguration();
         };
     }
-    ```  
-  
+    ```
+
 1. 覆寫`ViewDidAppear`方法, 並新增下列內容, 以便在視圖載入時開始錄製:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. 當相機處於自動模式時, 滑杆會在相機調整曝光時自動移動:
 
     [![](intro-to-manual-camera-controls-images/image13.png "當相機調整曝光時, 滑杆會自動移動")](intro-to-manual-camera-controls-images/image13.png#lightbox)
@@ -853,9 +853,9 @@ iOS 7 和更新版本透過`WhiteBalanceMode`屬性提供下列現有的白色�
 
 若要執行上述功能, `AVCaptureWhiteBalanceGain`已加入具有下列成員的結構:
 
-- `RedGain` 
-- `GreenGain` 
-- `BlueGain` 
+- `RedGain`
+- `GreenGain`
+- `BlueGain`
 
 
 最大的白色餘額增益目前是四 (4), 而且可以從`MaxWhiteBalanceGain`屬性進行準備。 因此合法範圍是從一 (1) 到`MaxWhiteBalanceGain` (4) 目前。
@@ -926,17 +926,17 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
     using CoreGraphics;
     using CoreFoundation;
     using System.Timers;
-    ```  
-  
+    ```
+
 1. 新增下列私用變數:
 
     ```csharp
     #region Private Variables
-    private NSError Error; 
+    private NSError Error;
     private bool Automatic = true;
     #endregion
     ```
-  
+
 1. 新增下列計算屬性:
 
     ```csharp
@@ -946,8 +946,8 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
     }
     public Timer SampleTimer { get; set; }
     #endregion
-    ```  
-  
+    ```
+
 1. 新增下列私用方法以設定新的白色平衡溫度和色調:
 
     ```csharp
@@ -966,7 +966,7 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
             ThisApp.CaptureDevice.UnlockForConfiguration ();
         }
     }
-    
+
     AVCaptureWhiteBalanceGains NomralizeGains (AVCaptureWhiteBalanceGains gains)
     {
         gains.RedGain = Math.Max (1, gains.RedGain);
@@ -981,8 +981,8 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
         return gains;
     }
     #endregion
-    ```   
-  
+    ```
+
 1. 覆寫`ViewDidLoad`方法, 並新增下列程式碼:
 
     ```csharp
@@ -1086,26 +1086,26 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
             }
         };
     }
-    ``` 
-  
+    ```
+
 1. 覆寫`ViewDidAppear`方法, 並新增下列內容, 以便在視圖載入時開始錄製:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
             SampleTimer.Start ();
         }
     }
-    ```  
-  
+    ```
+
 1. 將變更儲存至程式碼, 並執行應用程式。
 1. 當相機處於自動模式時, 滑杆會在相機調整白平衡時自動移動:
 
@@ -1145,8 +1145,8 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
 
 已執行兩個新類別來處理設定:
 
-- `AVCaptureAutoExposureBracketedStillImageSettings`–它有一個屬性, `ExposureTargetBias`可用來設定自動曝光括弧的偏差。 
-- `AVCaptureManual`  `ExposureBracketedStillImageSettings`–它有兩個屬性`ExposureDuration` ( `ISO`和), 可用來設定手動曝光括弧的快門速度和 ISO。 
+- `AVCaptureAutoExposureBracketedStillImageSettings`–它有一個屬性, `ExposureTargetBias`可用來設定自動曝光括弧的偏差。
+- `AVCaptureManual`  `ExposureBracketedStillImageSettings`–它有兩個屬性`ExposureDuration` ( `ISO`和), 可用來設定手動曝光括弧的快門速度和 ISO。
 
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>以括弧括住的 Capture 控制項確實不會
@@ -1214,8 +1214,8 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
     using CoreGraphics;
     using CoreFoundation;
     using CoreImage;
-    ```  
-  
+    ```
+
 1. 新增下列私用變數:
 
     ```csharp
@@ -1224,8 +1224,8 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
     private List<UIImageView> Output = new List<UIImageView>();
     private nint OutputIndex = 0;
     #endregion
-    ```    
-  
+    ```
+
 1. 新增下列計算屬性:
 
     ```csharp
@@ -1234,68 +1234,68 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
         get { return (AppDelegate)UIApplication.SharedApplication.Delegate; }
     }
     #endregion
-    ```  
-  
+    ```
+
 1. 新增下列私用方法, 以建立必要的輸出影像視圖:
 
     ```csharp
     #region Private Methods
     private UIImageView BuildOutputView(nint n) {
-    
+
         // Create a new image view controller
         var imageView = new UIImageView (new CGRect (CameraView.Frame.Width * n, 0, CameraView.Frame.Width, CameraView.Frame.Height));
-    
+
         // Load a temp image
         imageView.Image = UIImage.FromFile ("Default-568h@2x.png");
-    
+
         // Add a label
         UILabel label = new UILabel (new CGRect (0, 20, CameraView.Frame.Width, 24));
         label.TextColor = UIColor.White;
         label.Text = string.Format ("Bracketed Image {0}", n);
         imageView.AddSubview (label);
-    
+
         // Add to scrolling view
         ScrollView.AddSubview (imageView);
-    
+
         // Return new image view
         return imageView;
     }
     #endregion
-    ```  
-  
-1. 覆寫`ViewDidLoad`方法, 並新增下列程式碼:
-    
     ```
+
+1. 覆寫`ViewDidLoad`方法, 並新增下列程式碼:
+
+    ```csharp
     public override void ViewDidLoad ()
     {
         base.ViewDidLoad ();
-    
+
         // Hide no camera label
         NoCamera.Hidden = ThisApp.CameraAvailable;
-    
+
         // Attach to camera view
         ThisApp.Recorder.DisplayView = CameraView;
-    
+
         // Setup scrolling area
         ScrollView.ContentSize = new SizeF (CameraView.Frame.Width * 4, CameraView.Frame.Height);
-    
+
         // Add output views
         Output.Add (BuildOutputView (1));
         Output.Add (BuildOutputView (2));
         Output.Add (BuildOutputView (3));
-    
+
         // Create preset settings
         var Settings = new AVCaptureBracketedStillImageSettings[] {
             AVCaptureAutoExposureBracketedStillImageSettings.Create(-2.0f),
             AVCaptureAutoExposureBracketedStillImageSettings.Create(0.0f),
             AVCaptureAutoExposureBracketedStillImageSettings.Create(2.0f)
         };
-    
+
         // Wireup capture button
         CaptureButton.TouchUpInside += (sender, e) => {
             // Reset output index
             OutputIndex = 0;
-    
+
             // Tell the camera that we are getting ready to do a bracketed capture
             ThisApp.StillImageOutput.PrepareToCaptureStillImageBracket(ThisApp.StillImageOutput.Connections[0],Settings,async (bool ready, NSError err) => {
                 // Was there an error, if so report it
@@ -1303,16 +1303,16 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
                     Console.WriteLine("Error: {0}",err.LocalizedDescription);
                 }
             });
-    
+
             // Ask the camera to snap a bracketed capture
             ThisApp.StillImageOutput.CaptureStillImageBracket(ThisApp.StillImageOutput.Connections[0],Settings, (sampleBuffer, settings, err) =>{
                 // Convert raw image stream into a Core Image Image
                 var imageData = AVCaptureStillImageOutput.JpegStillToNSData(sampleBuffer);
                 var image = CIImage.FromData(imageData);
-    
+
                 // Display the resulting image
                 Output[OutputIndex++].Image = UIImage.FromImage(image);
-    
+
                 // IMPORTANT: You must release the buffer because AVFoundation has a fixed number
                 // of buffers and will stop delivering frames if it runs out.
                 sampleBuffer.Dispose();
@@ -1320,26 +1320,26 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
         };
     }
     ```
-    
-  
+
+
 1. 覆寫`ViewDidAppear`方法, 並新增下列程式碼:
 
     ```csharp
     public override void ViewDidAppear (bool animated)
     {
         base.ViewDidAppear (animated);
-    
+
         // Start udating the display
         if (ThisApp.CameraAvailable) {
             // Remap to this camera view
             ThisApp.Recorder.DisplayView = CameraView;
-    
+
             ThisApp.Session.StartRunning ();
         }
     }
-    
-    ```  
-    
+
+    ```
+
 1. 將變更儲存至程式碼, 並執行應用程式。
 1. 將場景框住, 然後按 [捕捉括弧] 按鈕:
 

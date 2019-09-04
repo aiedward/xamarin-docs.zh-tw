@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: 8379b9c9575c5a4f24f6c35c37cf8682e53b78ec
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 5c697ebc4621fa8287bd001bcc4b44bb23fc163e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121131"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227248"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱化 Xamarin. Mac 應用程式
 
@@ -68,24 +68,24 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 讓我們執行下列步驟來建立範例專案:
 
 1. 啟動 Visual Studio for Mac, 然後按一下 [**新增方案]。** 連結，將該帳戶加入 [檔案] > [帳戶設定] 對話方塊左側的 [所有帳戶] 清單中。
-2. 從 [**新增專案**] 對話方塊中, 選取 [ **Mac**  >  **app**  >  **Cocoa 應用程式**]: 
+2. 從 [**新增專案**] 對話方塊中, 選取 [ **Mac**  >  **app**  >  **Cocoa 應用程式**]:
 
     [![建立新的 Cocoa 應用程式](sandboxing-images/sample01.png "建立新的 Cocoa 應用程式")](sandboxing-images/sample01-large.png#lightbox)
-3. 按 [**下一步]** 按鈕, 輸入`MacSandbox`做為專案名稱, 然後按一下 [**建立**] 按鈕: 
+3. 按 [**下一步]** 按鈕, 輸入`MacSandbox`做為專案名稱, 然後按一下 [**建立**] 按鈕:
 
     [![輸入應用程式名稱](sandboxing-images/sample02.png "輸入應用程式名稱")](sandboxing-images/sample02-large.png#lightbox)
-4. 在  **Solution Pad**中, 按兩下**主要**的分鏡腳本檔案, 在 Xcode 中開啟它進行編輯: 
+4. 在  **Solution Pad**中, 按兩下**主要**的分鏡腳本檔案, 在 Xcode 中開啟它進行編輯:
 
     [![編輯主要]分鏡腳本(sandboxing-images/sample03.png "編輯主要")分鏡腳本](sandboxing-images/sample03-large.png#lightbox)
-5. 將 [ **Web 視圖**] 拖曳至視窗, 並調整其大小以填滿內容區域, 並將它設定為使用視窗放大和縮小: 
+5. 將 [ **Web 視圖**] 拖曳至視窗, 並調整其大小以填滿內容區域, 並將它設定為使用視窗放大和縮小:
 
     [![新增 web view](sandboxing-images/sample04.png "新增 web view")](sandboxing-images/sample04-large.png#lightbox)
-6. 建立 web view 的插座, 其名稱`webView`為: 
+6. 建立 web view 的插座, 其名稱`webView`為:
 
     [![建立新的插座](sandboxing-images/sample05.png "建立新的插座")](sandboxing-images/sample05-large.png#lightbox)
 7. 返回 Visual Studio for Mac, 然後按兩下**Solution Pad**中的**ViewController.cs**檔案, 將它開啟以供編輯。
 8. 新增下列 using 語句:`using WebKit;`
-9. `ViewDidLoad`讓方法看起來如下所示: 
+9. `ViewDidLoad`讓方法看起來如下所示:
 
     ```csharp
     public override void AwakeFromNib ()
@@ -109,34 +109,34 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 
 讓我們執行下列動作:
 
-1. 登入 Apple 開發人員入口網站: 
+1. 登入 Apple 開發人員入口網站:
 
     [![登入 Apple Developer 入口網站](sandboxing-images/sign01.png "登入 Apple Developer 入口網站")](sandboxing-images/sign01-large.png#lightbox)
-2. 選取**憑證、識別碼 & 設定檔**: 
+2. 選取**憑證、識別碼 & 設定檔**:
 
     [![選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔](sandboxing-images/sign02.png "選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔")](sandboxing-images/sign02-large.png#lightbox)
-3. 在 [ **Mac 應用程式**] 下, 選取 [**識別碼**]: 
+3. 在 [ **Mac 應用程式**] 下, 選取 [**識別碼**]:
 
     [![選取識別碼](sandboxing-images/sign03.png "選取識別碼")](sandboxing-images/sign03-large.png#lightbox)
-4. 為應用程式建立新的識別碼: 
+4. 為應用程式建立新的識別碼:
 
     [![建立新的應用程式識別碼](sandboxing-images/sign04.png "建立新的應用程式識別碼")](sandboxing-images/sign04-large.png#lightbox)
-5. 在 [布建**設定檔**] 底下, 選取 [**開發**]: 
+5. 在 [布建**設定檔**] 底下, 選取 [**開發**]:
 
     [![選取開發](sandboxing-images/sign05.png "選取開發")](sandboxing-images/sign05-large.png#lightbox)
-6. 建立新的設定檔, 然後選取 [ **Mac 應用程式開發**]: 
+6. 建立新的設定檔, 然後選取 [ **Mac 應用程式開發**]:
 
     [![建立新的設定檔](sandboxing-images/sign06.png "建立新的設定檔")](sandboxing-images/sign06-large.png#lightbox)
-7. 選取我們在上面建立的應用程式識別碼: 
+7. 選取我們在上面建立的應用程式識別碼:
 
     [![選取應用程式識別碼](sandboxing-images/sign07.png "選取應用程式識別碼")](sandboxing-images/sign07-large.png#lightbox)
-8. 選取此設定檔的開發人員: 
+8. 選取此設定檔的開發人員:
 
     [![加入開發人員](sandboxing-images/sign08.png "加入開發人員")](sandboxing-images/sign08-large.png#lightbox)
-9. 選取此設定檔的電腦: 
+9. 選取此設定檔的電腦:
 
     [![選取允許的電腦](sandboxing-images/sign09.png "選取允許的電腦")](sandboxing-images/sign09-large.png#lightbox)
-10. 提供設定檔的名稱: 
+10. 提供設定檔的名稱:
 
     [![提供設定檔的名稱](sandboxing-images/sign10.png "提供設定檔的名稱")](sandboxing-images/sign10-large.png#lightbox)
 11. 按一下 [**完成**] 按鈕。
@@ -146,10 +146,10 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 
 接下來, 我們需要在開發電腦上載入新的應用程式識別碼和設定檔。 讓我們執行下列動作:
 
-1. 啟動 Xcode, 並從 [ **Xcode** ] 功能表選取 [**喜好**設定]: 
+1. 啟動 Xcode, 並從 [ **Xcode** ] 功能表選取 [**喜好**設定]:
 
     ![在 Xcode 中編輯帳戶](sandboxing-images/sign11.png "在 Xcode 中編輯帳戶")
-2. 按一下 [ **View Details ...** ] 按鈕: 
+2. 按一下 [ **View Details ...** ] 按鈕:
 
     ![按一下 [View Details] 按鈕](sandboxing-images/sign12.png "按一下 [View Details] 按鈕")
 3. 按一下 [重新整理] 按鈕 (位於左下角)。
@@ -158,17 +158,17 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 接下來, 我們需要在 Xamarin. Mac 專案中選取新的應用程式識別碼和布建設定檔。 讓我們執行下列動作:
 
 1. 在  **Solution Pad**中, 按兩下**plist**檔案以開啟它進行編輯。
-2. 請確定套件組合**識別碼**符合我們在上面建立的應用程式 ID ( `com.appracatappra.MacSandbox`範例:): 
+2. 請確定套件組合**識別碼**符合我們在上面建立的應用程式 ID ( `com.appracatappra.MacSandbox`範例:):
 
     [![編輯]套件組合識別碼(sandboxing-images/sign13.png "編輯")套件組合識別碼](sandboxing-images/sign13-large.png#lightbox)
-3. 接下來, 按兩下**plist**檔案, 並確定**Icloud 金鑰值存放區**和**icloud 容器**全都符合我們在上面建立的應用程式識別碼 (範例: `com.appracatappra.MacSandbox`): 
+3. 接下來, 按兩下**plist**檔案, 並確定**Icloud 金鑰值存放區**和**icloud 容器**全都符合我們在上面建立的應用程式識別碼 (範例: `com.appracatappra.MacSandbox`):
 
     [![編輯 plist]檔案(sandboxing-images/sign17.png "編輯 plist")檔案](sandboxing-images/sign17-large.png#lightbox)
 4. 儲存您的變更。
-5. 在  **Solution Pad**中, 按兩下專案檔以開啟其編輯選項:  
+5. 在  **Solution Pad**中, 按兩下專案檔以開啟其編輯選項:
 
     ![Editign 解決方案的選項](sandboxing-images/sign14.png "Editign 解決方案的選項")
-6. 選取 [ **Mac 簽署**], 然後核取 **[簽署應用程式**套件組合] 並**簽署安裝程式封裝**。 在 [布建**設定檔**] 底下, 選取我們在上面建立的檔案: 
+6. 選取 [ **Mac 簽署**], 然後核取 **[簽署應用程式**套件組合] 並**簽署安裝程式封裝**。 在 [布建**設定檔**] 底下, 選取我們在上面建立的檔案:
 
     ![設定布建設定檔](sandboxing-images/sign15.png "設定布建設定檔")
 7. 按一下 [**完成**] 按鈕。
@@ -195,7 +195,7 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 您可以選取 [專案] 選項中的核取方塊來啟用應用程式沙箱。 請執行下列動作：
 
 1. 在  **Solution Pad**中, 按兩下**plist**檔案以開啟它進行編輯。
-2. 勾選 [**啟用權利**] 和 [**啟用應用程式沙箱**]: 
+2. 勾選 [**啟用權利**] 和 [**啟用應用程式沙箱**]:
 
     [![編輯權利及啟用沙箱](sandboxing-images/sign17.png "編輯權利及啟用沙箱")](sandboxing-images/sign17-large.png#lightbox)
 3. 儲存您的變更。
@@ -208,25 +208,25 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 
 除了資源封鎖行為之外, 還有三個主要的方式可分辨 Xamarin. Mac 應用程式是否已成功進行沙箱化:
 
-1. 在搜尋工具中, 檢查`~/Library/Containers/`資料夾的內容-如果應用程式已沙箱化, 將會有一個名為的資料夾, 如同您應用程式的套件組合識別碼 (例如: `com.appracatappra.MacSandbox`): 
+1. 在搜尋工具中, 檢查`~/Library/Containers/`資料夾的內容-如果應用程式已沙箱化, 將會有一個名為的資料夾, 如同您應用程式的套件組合識別碼 (例如: `com.appracatappra.MacSandbox`):
 
     [![開啟應用程式的]配套(sandboxing-images/sample09.png "開啟應用程式的")配套](sandboxing-images/sample09-large.png#lightbox)
 2. 系統會在活動監視器中將應用程式視為沙箱:
-    - 啟動活動監視器 (在`/Applications/Utilities`底下)。 
+    - 啟動活動監視器 (在`/Applications/Utilities`底下)。
     - 選擇 [**視圖** > 資料**行**], 並確定已核取 [**沙箱**] 功能表項目。
-    - 確定您的應用程式會`Yes`讀取 [沙箱] 資料行: 
+    - 確定您的應用程式會`Yes`讀取 [沙箱] 資料行:
 
     [![檢查活動監視器中的應用程式](sandboxing-images/sample10.png "檢查活動監視器中的應用程式")](sandboxing-images/sample10-large.png#lightbox)
 3. 檢查應用程式二進位檔是否已沙箱化:
     - 啟動終端機應用程式。
     - 流覽至 [應用`bin`程式] 目錄。
-    - 發出此命令: `codesign -dvvv --entitlements :- executable_path` (其中`executable_path`是您的應用程式的路徑): 
+    - 發出此命令: `codesign -dvvv --entitlements :- executable_path` (其中`executable_path`是您的應用程式的路徑):
 
     [![在命令列上檢查應用程式](sandboxing-images/sample11.png "在命令列上檢查應用程式")](sandboxing-images/sample11-large.png#lightbox)
 
 ### <a name="debugging-a-sandboxed-app"></a>對沙箱應用程式進行調試
 
-偵錯工具會透過 TCP 連線到 Xamarin. Mac 應用程式, 這表示根據預設, 當您啟用沙箱時, 它無法連線到應用程式, 因此如果您嘗試在未啟用適當許可權的情況下執行應用程式, 就會收到錯誤「*無法連接到偵錯工具」* . 
+偵錯工具會透過 TCP 連線到 Xamarin. Mac 應用程式, 這表示根據預設, 當您啟用沙箱時, 它無法連線到應用程式, 因此如果您嘗試在未啟用適當許可權的情況下執行應用程式, 就會收到錯誤「*無法連接到偵錯工具」* .
 
 [![設定必要的選項](sandboxing-images/debug01.png "設定必要的選項")](sandboxing-images/debug01-large.png#lightbox)
 
@@ -246,7 +246,7 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 
 1. 編譯有問題的應用程式, 並從 Visual Studio for Mac 加以執行。
 2. 開啟**主控台**應用程式 (來自`/Applications/Utilties/`)。
-3. 選取提要欄位中的 [**所有訊息**], 然後在搜尋中輸入`sandbox` : 
+3. 選取提要欄位中的 [**所有訊息**], 然後在搜尋中輸入`sandbox` :
 
     [![主控台中沙箱問題的範例](sandboxing-images/resolve01.png "主控台中沙箱問題的範例")](sandboxing-images/resolve01-large.png#lightbox)
 
@@ -259,7 +259,7 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 請執行下列動作：
 
 1. 在  **Solution Pad**中, 按兩下**plist**檔案以開啟它進行編輯。
-2. 在 [**權利**] 區段底下, 勾選 [**允許外寄網路連線 (用戶端)** ] 核取方塊: 
+2. 在 [**權利**] 區段底下, 勾選 [**允許外寄網路連線 (用戶端)** ] 核取方塊:
 
     [![編輯權利](sandboxing-images/sign17.png "編輯權利")](sandboxing-images/sign17-large.png#lightbox)
 3. 將變更儲存至應用程式。
@@ -280,7 +280,7 @@ _本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程
 
 如先前所見, 尚未進行沙箱化的 Xamarin. Mac 應用程式會被授與執行應用程式之使用者的完整許可權和存取權。 如果遭到惡意程式碼入侵, 未受保護的應用程式就可以做為惡意行為的代理程式, 而且可能會造成損害的範圍。
 
-藉由啟用應用程式沙箱, 您可以移除所有的最低許可權集合, 然後使用您的 Xamarin. Mac 應用程式的權利, 在僅限需要的基礎上重新啟用。 
+藉由啟用應用程式沙箱, 您可以移除所有的最低許可權集合, 然後使用您的 Xamarin. Mac 應用程式的權利, 在僅限需要的基礎上重新啟用。
 
 您可以編輯應用程式的**plist**檔案, 並從 [編輯器] 下拉式方塊中檢查或選取所需的許可權, 藉此修改應用程式的沙箱資源:
 
@@ -356,13 +356,13 @@ _Powerbox_是 macOS 的安全性技術, 會與使用者互動以擴充您的沙�
 - 從 [**開啟最近使用**] 功能表中, 開啟使用者選擇的檔案。
 - 在其他應用程式之間使用複製 & 貼上。
 - 讀取下列全球可讀取位置的檔案:
-    - `/bin`
-    - `/sbin`
-    - `/usr/bin`
-    - `/usr/lib`
-    - `/usr/sbin`
-    - `/usr/share`
-    - `/System`
+  - `/bin`
+  - `/sbin`
+  - `/usr/bin`
+  - `/usr/lib`
+  - `/usr/sbin`
+  - `/usr/share`
+  - `/System`
 - 在所建立`NSTemporaryDirectory`的目錄中讀取和寫入檔案。
 
 根據預設, 沙箱化 Xamarin 所開啟或儲存的檔案會保持可存取狀態, 直到應用程式終止為止 (除非應用程式結束時檔案仍為開啟)。 開啟的檔案會在下一次啟動應用程式時, 透過 macOS Resume 功能自動還原至應用程式的沙箱。
@@ -401,10 +401,10 @@ _Powerbox_是 macOS 的安全性技術, 會與使用者互動以擴充您的沙�
 
 使用安全性範圍的書簽和持續性資源存取時, 有兩個 sistine 使用案例:
 
-- **應用程式範圍的書簽可提供使用者指定檔案或資料夾的持續存取權。** 
+- **應用程式範圍的書簽可提供使用者指定檔案或資料夾的持續存取權。**
 
     例如, 如果沙箱化的 Xamarin 應用程式允許使用開啟外部檔進行編輯 (使用`NSOpenPanel`), 應用程式可以建立以應用程式為範圍的書簽, 讓它可以在未來再次存取相同的檔案。
-- **檔範圍的書簽會提供對子檔案的持續存取權的特定檔。** 
+- **檔範圍的書簽會提供對子檔案的持續存取權的特定檔。**
 
 例如, 影片編輯應用程式會建立可存取個別影像、影片剪輯和音效檔的專案檔, 稍後將會合並成單一電影。
 
@@ -432,7 +432,7 @@ _Powerbox_是 macOS 的安全性技術, 會與使用者互動以擴充您的沙�
 
 ### <a name="the-app-sandbox-and-code-signing"></a>應用程式沙箱和程式碼簽署
 
-啟用應用程式沙箱並啟用 Xamarin 應用程式的特定需求之後 (透過權利), 您必須將專案編碼, 才能讓沙箱生效。 因為應用程式沙箱所需的權利已連結至應用程式的簽章, 所以您必須執行程式碼簽署。 
+啟用應用程式沙箱並啟用 Xamarin 應用程式的特定需求之後 (透過權利), 您必須將專案編碼, 才能讓沙箱生效。 因為應用程式沙箱所需的權利已連結至應用程式的簽章, 所以您必須執行程式碼簽署。
 
 macOS 會強制執行應用程式的容器與其程式碼簽章之間的連結, 如此一來, 即使它正在詐騙應用程式套件組合識別碼, 其他應用程式也不能存取該容器。 此機制的運作方式如下:
 
@@ -529,7 +529,7 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 - **保留對檔案系統資源的存取**-如果 Xamarin 應用程式相依于其容器外的資源持續存取, 請使用安全性範圍的書簽來維持存取權。
 - **建立應用程式的登入專案**-使用應用程式沙箱, 您無法使用`LSSharedFileList`建立登入專案, 也無法使用`LSRegisterURL`來操作啟動服務的狀態。 如`SMLoginItemSetEnabled` [使用服務管理架構](https://developer.apple.com/library/prerelease/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLoginItems.html#//apple_ref/doc/uid/10000172i-SW5-SW1)檔中的蘋果加入登入專案所述, 使用函數。
 - **存取使用者資料**-如果您使用 POSIX 函式 (例如`getpwuid` ) 從目錄服務取得使用者的主目錄, 請考慮使用 Cocoa 或核心的符號, 例如`NSHomeDirectory`。
-- **存取其他應用程式的喜好**設定-因為應用程式沙箱會將路徑尋找 api 導向應用程式的容器, 所以修改喜好設定會在該容器內進行, 並在不允許的情況下存取其他應用程式喜好設定。 
+- **存取其他應用程式的喜好**設定-因為應用程式沙箱會將路徑尋找 api 導向應用程式的容器, 所以修改喜好設定會在該容器內進行, 並在不允許的情況下存取其他應用程式喜好設定。
 - **在 Web Views 中使用 HTML5 Embedded 影片**-如果 Xamarin 應用程式使用 WebKit 來播放內嵌的 HTML5 影片, 您也必須將應用程式與 AV 基礎架構連結。 應用程式沙箱會防止 CoreMedia 播放這些影片。
 
 ### <a name="applying-required-app-sandbox-entitlements"></a>套用必要的應用程式沙箱權利
@@ -555,7 +555,7 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 
 ### <a name="implement-a-migration-strategy"></a>實行遷移策略
 
-如果您發行的是新的、沙箱化版本的 Xamarin. Mac 應用程式, 但先前尚未進行沙箱處理, 您必須確保目前的使用者具有順暢的升級路徑。 
+如果您發行的是新的、沙箱化版本的 Xamarin. Mac 應用程式, 但先前尚未進行沙箱處理, 您必須確保目前的使用者具有順暢的升級路徑。
 
  如需如何執行容器遷移資訊清單的詳細資訊, 請參閱 Apple 將[應用程式遷移至沙箱](https://developer.apple.com/library/prerelease/mac/documentation/Security/Conceptual/AppSandboxDesignGuide/MigratingALegacyApp/MigratingAnAppToASandbox.html#//apple_ref/doc/uid/TP40011183-CH6-SW1)檔。
 

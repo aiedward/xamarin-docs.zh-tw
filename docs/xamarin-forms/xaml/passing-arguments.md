@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 7a6ea06d77b8eb170f4165bfc8cf2fd643d56406
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651658"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228085"
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中傳遞引數
 
@@ -91,7 +91,7 @@ _這篇文章示範如何使用可用來將引數傳遞至非預設建構函式�
 
 下列螢幕擷取畫面顯示每個呼叫的結果[ `Color` ](xref:Xamarin.Forms.Color)建構函式使用指定的引數的值：
 
-![](passing-arguments-images/passing-arguments.png "使用 x： 引數所指定的 BoxView.Color")
+![BoxView 使用 x:Arguments 指定的色彩](passing-arguments-images/passing-arguments.png)
 
 <a name="factory_methods" />
 
@@ -141,7 +141,7 @@ _這篇文章示範如何使用可用來將引數傳遞至非預設建構函式�
 
 下列螢幕擷取畫面顯示每個呼叫的結果[ `Color` ](xref:Xamarin.Forms.Color) factory 方法，使用指定的引數的值：
 
-![](passing-arguments-images/factory-methods.png "BoxView.Color 指定 X:factorymethod，且 x： 引數")
+![BoxView 使用 x:FactoryMethod 和 x:Arguments 指定的色彩](passing-arguments-images/factory-methods.png)
 
 <a name="generic_type_arguments" />
 

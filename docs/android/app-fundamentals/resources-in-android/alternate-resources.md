@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 7c48244e316854b04234ec8dee4eebeb55a4f119
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 05c3816d0cc01beb3ed99994788b58e5f187171a
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526387"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70225772"
 ---
 # <a name="alternate-resources"></a>替代資源
 
@@ -73,52 +73,52 @@ ms.locfileid: "69526387"
 
 - **螢幕圖元密度 (DPI)** &ndash;實體畫面上指定區域中的圖元數。 通常以每英寸的點 (DPI) 表示。 可能的值為：
 
-    - `ldpi`&ndash;低密度畫面。
+  - `ldpi`&ndash;低密度畫面。
 
-    - `mdpi`&ndash;中密度畫面
+  - `mdpi`&ndash;中密度畫面
 
-    - `hdpi`&ndash;高密度畫面
+  - `hdpi`&ndash;高密度畫面
 
-    - `xhdpi`&ndash;額外的高密度畫面
+  - `xhdpi`&ndash;額外的高密度畫面
 
-    - `nodpi`&ndash;不會調整的資源
+  - `nodpi`&ndash;不會調整的資源
 
-    - `tvdpi`&ndash;在 API 層級 13 (Android 3.2) 中引進, 適用于 mDPI 與 hDPI 之間的畫面。
+  - `tvdpi`&ndash;在 API 層級 13 (Android 3.2) 中引進, 適用于 mDPI 與 hDPI 之間的畫面。
 
 - **觸控式螢幕類型**&ndash;指定裝置可能具有的觸控式螢幕類型。 可能的值`notouch`為 (沒有觸控式螢幕) `stylus` 、(適用于手寫筆的電阻式觸控式螢幕) `finger`和 (觸控觸控)。
 
 - **鍵盤可用性**&ndash;指定可用的鍵盤類型。 這可能會在應用程式&ndash;的存留期內變更, 例如當使用者開啟硬體鍵盤時。 可能的值為：
 
-    - `keysexposed`&ndash;裝置有可用的鍵盤。 如果未啟用任何軟體鍵盤, 則只有在開啟硬體鍵盤時才會使用此功能。
+  - `keysexposed`&ndash;裝置有可用的鍵盤。 如果未啟用任何軟體鍵盤, 則只有在開啟硬體鍵盤時才會使用此功能。
 
-    - `keyshidden`&ndash;裝置具有硬體鍵盤, 但已隱藏, 且未啟用任何軟體鍵盤。
+  - `keyshidden`&ndash;裝置具有硬體鍵盤, 但已隱藏, 且未啟用任何軟體鍵盤。
 
-    - `keyssoft`&ndash;裝置已啟用軟體鍵盤。
+  - `keyssoft`&ndash;裝置已啟用軟體鍵盤。
 
 - **主要文字輸入法**&ndash;使用來指定哪些類型的硬體金鑰可用於輸入。 可能的值為：
 
-    - `nokeys`&ndash;輸入沒有硬體金鑰。
+  - `nokeys`&ndash;輸入沒有硬體金鑰。
 
-    - `qwerty`&ndash;有一個可供使用的鍵盤。
+  - `qwerty`&ndash;有一個可供使用的鍵盤。
 
-    - `12key`&ndash;有12個關鍵的硬體鍵盤
+  - `12key`&ndash;有12個關鍵的硬體鍵盤
 
 
 - **導覽金鑰可用性**&ndash;適用于 [5 向] 或 [d-pad] (方向面板) 導覽。 這可能會在應用程式的存留期間變更。 可能的值為：
 
-    - `navexposed`&ndash;使用者可以使用導覽金鑰
+  - `navexposed`&ndash;使用者可以使用導覽金鑰
 
-    - `navhidden`&ndash;導覽金鑰無法使用。
+  - `navhidden`&ndash;導覽金鑰無法使用。
 
 - **主要的非觸控式流覽方法**&ndash;裝置上可用的導覽種類。 可能的值為：
 
-    - `nonav`&ndash;唯一可用的導覽功能是觸控式螢幕
+  - `nonav`&ndash;唯一可用的導覽功能是觸控式螢幕
 
-    - `dpad`&ndash;您可以使用 d-pad (方向面板) 進行導覽
+  - `dpad`&ndash;您可以使用 d-pad (方向面板) 進行導覽
 
-    - `trackball`&ndash;裝置有導覽的軌跡
+  - `trackball`&ndash;裝置有導覽的軌跡
 
-    - `wheel`&ndash;有一或多個方向輪可用的罕見案例
+  - `wheel`&ndash;有一或多個方向輪可用的罕見案例
 
 - **平臺版本 (API 層級)** 裝置支援的 api 層級, 其格式為 v*n*, 其中 N 是目標的 api 層級。 &ndash; 例如, v11 會以 API 層級 11 (Android 3.0) 裝置為目標。
 

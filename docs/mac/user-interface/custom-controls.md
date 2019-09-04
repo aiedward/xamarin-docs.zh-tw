@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: aee3d81375ab619fa2016a87951cce3e72cdbe47
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 537816213208ed6e71f0986558c9a94a327759e2
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650188"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227914"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>在 Xamarin. Mac 中建立自訂控制項
 
@@ -285,7 +285,7 @@ private void Initialize() {
 
 ### <a name="responding-to-state-change-events"></a>回應狀態變更事件
 
-當使用者變更自訂控制項的狀態時, 我們需要一種方法來回應程式碼中的狀態變更 (例如, 在按一下自訂按鈕時執行某些動作)。 
+當使用者變更自訂控制項的狀態時, 我們需要一種方法來回應程式碼中的狀態變更 (例如, 在按一下自訂按鈕時執行某些動作)。
 
 若要提供這項功能, `NSFlipSwitch`請編輯類別並新增下列程式碼:
 
@@ -299,7 +299,7 @@ internal void RaiseValueChanged() {
 
     // Perform any action bound to the control from Interface Builder
     // via an Action.
-    if (this.Action !=null) 
+    if (this.Action !=null)
         NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 }
 ## endregion
@@ -320,7 +320,7 @@ private void FlipSwitchState() {
 第二, 由於我們的`NSControl`自訂控制項繼承自, 因此它會自動具有可在 Xcode 的 Interface Builder 中指派的**動作**。 若要在狀態變更時呼叫此**動作**, 我們會使用下列程式碼:
 
 ```csharp
-if (this.Action !=null) 
+if (this.Action !=null)
     NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 ```
 
@@ -361,7 +361,7 @@ public override void ViewDidLoad ()
         Console.WriteLine("Option Two: {0}", OptionTwo.Value);
     };
 }
-``` 
+```
 
 在這裡, 我們會回應`ValueChanged`在`NSFlipSwitch`類別上定義的事件, 並在使用者按一下控制項時寫出目前的**值**。
 

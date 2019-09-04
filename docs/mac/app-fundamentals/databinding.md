@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: lobrien
 ms.author: laobri
 ms.date: 03/14/2017
-ms.openlocfilehash: beb063d423c860958948751d162af661040004b7
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0816afe7831338348f7612576041623abe8ba283
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529006"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227263"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac 中的資料系結和索引鍵-值編碼
 
@@ -36,7 +36,7 @@ _本文涵蓋使用索引鍵/值編碼和索引鍵-值觀察, 以允許資料系
 
 索引鍵/值編碼 (KVC) 是一種機制, 可讓您間接存取物件的屬性, 使用索引鍵 (特殊格式的字串) 來識別屬性, 而不是透過`get/set`執行個體變數或存取子方法 () 來存取它們。 藉由在您的 Xamarin 應用程式中執行符合索引鍵/值的存取子, 您可以存取其他 macOS (先前稱為 OS X) 功能, 例如索引鍵/值觀察 (KVO)、資料系結、核心資料、Cocoa 系結和 scriptability。
 
-藉由在 Xamarin. Mac 應用程式中使用索引鍵/值編碼和資料系結技術, 您可以大幅減少必須撰寫和維護的程式碼數量, 以填入和使用 UI 元素。 您也可以進一步將您的支援資料 (_資料模型_) 與您的前端使用者介面 (_模型視圖控制器_) 分離, 讓您更容易維護、更有彈性的應用程式設計。 
+藉由在 Xamarin. Mac 應用程式中使用索引鍵/值編碼和資料系結技術, 您可以大幅減少必須撰寫和維護的程式碼數量, 以填入和使用 UI 元素。 您也可以進一步將您的支援資料 (_資料模型_) 與您的前端使用者介面 (_模型視圖控制器_) 分離, 讓您更容易維護、更有彈性的應用程式設計。
 
 例如, 讓我們看看下列 KVC 相容物件的類別定義:
 
@@ -50,7 +50,7 @@ namespace MacDatabinding
     public class PersonModel : NSObject
     {
         private string _name = "";
-        
+
         [Export("Name")]
         public string Name {
             get { return _name; }
@@ -60,7 +60,7 @@ namespace MacDatabinding
                 DidChangeValue ("Name");
             }
         }
-        
+
         public PersonModel ()
         {
         }
@@ -68,7 +68,7 @@ namespace MacDatabinding
 }
 ```
 
-首先, `[Register("PersonModel")]`屬性會註冊類別, 並將它公開至目標-C。 然後, 類別必須繼承自`NSObject` (或`NSObject`繼承自的子類別), 這會新增數個可讓類別符合 KVC 規範的基底方法。 接下來, `[Export("Name")]`屬性會`Name`公開屬性, 並定義稍後用來透過 KVC 和 KVO 技術來存取屬性的金鑰值。 
+首先, `[Register("PersonModel")]`屬性會註冊類別, 並將它公開至目標-C。 然後, 類別必須繼承自`NSObject` (或`NSObject`繼承自的子類別), 這會新增數個可讓類別符合 KVC 規範的基底方法。 接下來, `[Export("Name")]`屬性會`Name`公開屬性, 並定義稍後用來透過 KVC 和 KVO 技術來存取屬性的金鑰值。
 
 最後, 若要能夠以索引鍵/值觀察屬性值的變更, 存取子必須在和`WillChangeValue` `DidChangeValue`方法呼叫中包裝其值的變更 (指定與`Export`屬性相同的索引鍵)。  例如：
 
@@ -103,7 +103,7 @@ namespace MacDatabinding
     {
         private string _name = "";
         private PersonModel _child = new PersonModel();
-        
+
         [Export("Name")]
         public string Name {
             get { return _name; }
@@ -113,7 +113,7 @@ namespace MacDatabinding
                 DidChangeValue ("Name");
             }
         }
-        
+
         [Export("Child")]
         public PersonModel Child {
             get { return _child; }
@@ -123,7 +123,7 @@ namespace MacDatabinding
                 DidChangeValue ("Child");
             }
         }
-        
+
         public PersonModel ()
         {
         }
@@ -138,11 +138,11 @@ namespace MacDatabinding
 方法會傳回指定索引鍵 ( `NSString`如) 的值, 相對於接收要求之 KVC 類別的實例。 `ValueForKey` 例如, 如果`Person`是上面定義`PersonModel`之類別的實例:
 
 ```csharp
-// Read value 
+// Read value
 var name = Person.ValueForKey (new NSString("Name"));
 ```
 
-這會傳回該`Name` `PersonModel`實例的屬性值。 
+這會傳回該`Name` `PersonModel`實例的屬性值。
 
 ### <a name="setting-values-using-key-value-coding"></a>使用索引鍵-值編碼來設定值
 
@@ -169,7 +169,7 @@ Person.AddObserver ("Name", NSKeyValueObservingOptions.New, (sender) => {
 });
 ```
 
-現在, `Name`每當修改`PersonModel`類別`Person`實例的屬性時, 新的值就會寫出到主控台中。 
+現在, `Name`每當修改`PersonModel`類別`Person`實例的屬性時, 新的值就會寫出到主控台中。
 
 如需詳細資訊, 請參閱 Apple[簡介的索引鍵-值觀察程式設計指南](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i)。
 
@@ -391,7 +391,7 @@ public NSImage Icon {
         }
     }
 }
-``` 
+```
 
 為了更正此錯誤, 我們使用下列程式碼:
 
@@ -419,7 +419,7 @@ public bool isManager {
 
 定義資料模型之後, 讓我們看一下 Xcode 的 Interface Builder 中的簡單資料系結範例。 例如, 讓我們將表單新增至我們的 Xamarin. Mac 應用程式, 以用來編輯`PersonModel`我們在上面定義的。 我們會加入幾個文字欄位和一個核取方塊, 以顯示和編輯模型的屬性。
 
-首先, 讓我們將新的**View Controller**新增至 Interface Builder 中的**主要**分鏡腳本檔案, 並`SimpleViewController`將其命名為類別: 
+首先, 讓我們將新的**View Controller**新增至 Interface Builder 中的**主要**分鏡腳本檔案, 並`SimpleViewController`將其命名為類別:
 
 [![加入新的視圖控制器](databinding-images/simple01.png "加入新的視圖控制器")](databinding-images/simple01-large.png#lightbox)
 
@@ -466,23 +466,23 @@ public override void ViewDidLoad ()
 若要將表單的資料`PersonModel`系結至我們透過`Person`金鑰公開的, 請執行下列動作:
 
 1. 選取 [**員工名稱**] 文字欄位, 並切換至 [系結] 偵測**器**。
-2. 勾選 [系結**至**] 方塊, 然後從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.Name` , 針對**金鑰路徑**輸入: 
+2. 勾選 [系結**至**] 方塊, 然後從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.Name` , 針對**金鑰路徑**輸入:
 
     [![輸入金鑰路徑](databinding-images/simple03.png "輸入金鑰路徑")](databinding-images/simple03-large.png#lightbox)
-3. 選取 [**職業**] 文字欄位並核取 [系結**至**] 方塊, 然後從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.Occupation` , 針對**金鑰路徑**輸入:  
+3. 選取 [**職業**] 文字欄位並核取 [系結**至**] 方塊, 然後從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.Occupation` , 針對**金鑰路徑**輸入:
 
     [![輸入金鑰路徑](databinding-images/simple04.png "輸入金鑰路徑")](databinding-images/simple04-large.png#lightbox)
-4. 選取 [**員工是經理**] 核取方塊, 然後勾選 [系結**至**] 方塊, 並從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.isManager` , 針對**金鑰路徑**輸入:  
+4. 選取 [**員工是經理**] 核取方塊, 然後勾選 [系結**至**] 方塊, 並從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.isManager` , 針對**金鑰路徑**輸入:
 
     [![輸入金鑰路徑](databinding-images/simple05.png "輸入金鑰路徑")](databinding-images/simple05-large.png#lightbox)
-5. 選取 [**受管理的員工數目**] 文字欄位, 然後勾選 [系結**至**] 方塊, 並從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.NumberOfEmployees` , 針對**金鑰路徑**輸入:  
+5. 選取 [**受管理的員工數目**] 文字欄位, 然後勾選 [系結**至**] 方塊, 並從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.NumberOfEmployees` , 針對**金鑰路徑**輸入:
 
     [![輸入金鑰路徑](databinding-images/simple06.png "輸入金鑰路徑")](databinding-images/simple06-large.png#lightbox)
 6. 如果員工不是經理, 我們想要隱藏 [員工管理的標籤] 和 [文字] 欄位的數目。
-7. 選取 [**員工管理**的標籤數目], 展開**隱藏**的 turndown, 然後勾選 [系結**至**] 方塊, 並從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.isManager` , 針對**金鑰路徑**輸入:  
+7. 選取 [**員工管理**的標籤數目], 展開**隱藏**的 turndown, 然後勾選 [系結**至**] 方塊, 並從下拉式清單中選取 [**簡單視圖控制器**]。 接下來`self.Person.isManager` , 針對**金鑰路徑**輸入:
 
     [![輸入金鑰路徑](databinding-images/simple07.png "輸入金鑰路徑")](databinding-images/simple07-large.png#lightbox)
-8. 從`NSNegateBoolean` [**值] 轉換器**下拉式清單中選取:  
+8. 從`NSNegateBoolean` [**值] 轉換器**下拉式清單中選取:
 
     ![選取 NSNegateBoolean 索引鍵轉換](databinding-images/simple08.png "選取 NSNegateBoolean 索引鍵轉換")
 9. 這會告訴資料系結, 如果`isManager`屬性的值為`false`, 則會隱藏標籤。
@@ -576,34 +576,34 @@ public override void AwakeFromNib ()
 
 我們需要新增**陣列控制器**來提供系結資料給我們的資料表, 請執行下列動作:
 
-1. 將**陣列控制器**從連結**庫偵測器**拖曳至**介面編輯器**:  
+1. 將**陣列控制器**從連結**庫偵測器**拖曳至**介面編輯器**:
 
     ![從程式庫選取陣列控制器](databinding-images/table03.png "從程式庫選取陣列控制器")
-2. 在**介面**階層中選取 [**陣列控制器**], 並切換至**屬性偵測器**:  
+2. 在**介面**階層中選取 [**陣列控制器**], 並切換至**屬性偵測器**:
 
     [![選取屬性偵測器](databinding-images/table04.png "選取屬性偵測器")](databinding-images/table04-large.png#lightbox)
-3. 針對`PersonModel` [**類別名稱**] 輸入, 按一下**加號**按鈕並新增三個索引鍵。 將其`Name`命名`Occupation`為`isManager`, 並:  
+3. 針對`PersonModel` [**類別名稱**] 輸入, 按一下**加號**按鈕並新增三個索引鍵。 將其`Name`命名`Occupation`為`isManager`, 並:
 
     ![新增必要的機碼路徑](databinding-images/table05.png "新增必要的機碼路徑")
 4. 這會告訴陣列控制器它管理的陣列, 以及應該公開的屬性 (透過金鑰)。
-5. 切換至 系結 偵測**器**, 然後在 **內容陣列** 底下選取 系結 和 **資料表視圖控制器** 輸入**模型索引鍵路徑** `self.personModelArray`:  
+5. 切換至 系結 偵測**器**, 然後在 **內容陣列** 底下選取 系結 和 **資料表視圖控制器** 輸入**模型索引鍵路徑** `self.personModelArray`:
 
     ![輸入金鑰路徑](databinding-images/table06.png "輸入金鑰路徑")
 6. 這`PersonModels`會將陣列控制器與我們在視圖控制器上公開的陣列結合。
 
 現在, 我們需要將我們的資料表視圖系結到陣列控制器, 請執行下列動作:
 
-1. 選取 [資料表] 視圖和 [系結偵測**器**]:  
+1. 選取 [資料表] 視圖和 [系結偵測**器**]:
 
     [![選取]系結偵測器(databinding-images/table07.png "選取")系結偵測器](databinding-images/table07-large.png#lightbox)
-2. 在 [**資料表內容**] turndown 下, 選取 [系結**至**] 和 [**陣列控制器**]。 針對`arrangedObjects` [**控制器金鑰**] 欄位輸入:  
+2. 在 [**資料表內容**] turndown 下, 選取 [系結**至**] 和 [**陣列控制器**]。 針對`arrangedObjects` [**控制器金鑰**] 欄位輸入:
 
     ![定義控制器金鑰](databinding-images/table08.png "定義控制器金鑰")
-3. 選取 [ **Employee** ] 資料行底下的 [**資料表視圖**] 資料格。 在 turndown**值**的 [系結] 偵測**器**中, 選取 [系結**至**] 和 [**資料表資料格視圖**]。 針對`objectValue.Name`模型索引**鍵路徑**輸入:  
+3. 選取 [ **Employee** ] 資料行底下的 [**資料表視圖**] 資料格。 在 turndown**值**的 [系結] 偵測**器**中, 選取 [系結**至**] 和 [**資料表資料格視圖**]。 針對`objectValue.Name`模型索引**鍵路徑**輸入:
 
     [![設定模型索引鍵路徑](databinding-images/table09.png "設定模型索引鍵路徑")](databinding-images/table09-large.png#lightbox)
 4. `objectValue`這是陣列`PersonModel`控制器所管理之陣列中的目前。
-5. 選取 [**職業**] 資料行底下的 [**資料表視圖**] 資料格。 在 turndown**值**的 [系結] 偵測**器**中, 選取 [系結**至**] 和 [**資料表資料格視圖**]。 針對`objectValue.Occupation`模型索引**鍵路徑**輸入:  
+5. 選取 [**職業**] 資料行底下的 [**資料表視圖**] 資料格。 在 turndown**值**的 [系結] 偵測**器**中, 選取 [系結**至**] 和 [**資料表資料格視圖**]。 針對`objectValue.Occupation`模型索引**鍵路徑**輸入:
 
     [![設定模型索引鍵路徑](databinding-images/table10.png "設定模型索引鍵路徑")](databinding-images/table10-large.png#lightbox)
 6. 儲存您的變更, 並返回 Visual Studio for Mac 以與 Xcode 同步。
@@ -618,7 +618,7 @@ public override void AwakeFromNib ()
 
 針對大綱視圖的資料系結非常類似于針對資料表視圖進行系結。 主要的差別在於, 我們將使用**樹狀控制器**(而不是**陣列控制器**), 將系結的資料提供給大綱視圖。 如需使用大綱視圖的詳細資訊, 請參閱我們的[大綱視圖](~/mac/user-interface/outline-view.md)檔。
 
-首先, 讓我們將新的**View Controller**新增至 Interface Builder 中的**主要**分鏡腳本檔案, 並`OutlineViewController`將其命名為類別: 
+首先, 讓我們將新的**View Controller**新增至 Interface Builder 中的**主要**分鏡腳本檔案, 並`OutlineViewController`將其命名為類別:
 
 [![加入新的視圖控制器](databinding-images/outline01.png "加入新的視圖控制器")](databinding-images/outline01-large.png#lightbox)
 
@@ -694,38 +694,38 @@ public override void AwakeFromNib ()
 
 我們需要新增**樹狀控制器**來提供系結資料給我們的大綱, 請執行下列動作:
 
-1. 將**樹狀控制器**從連結**庫偵測器**拖曳至**介面編輯器**:  
+1. 將**樹狀控制器**從連結**庫偵測器**拖曳至**介面編輯器**:
 
     ![從程式庫選取樹狀結構控制器](databinding-images/outline03.png "從程式庫選取樹狀結構控制器")
-2. 選取**介面**階層中的 [**樹狀結構控制器**], 並切換至 [屬性偵測**器**]:  
+2. 選取**介面**階層中的 [**樹狀結構控制器**], 並切換至 [屬性偵測**器**]:
 
     [![選取屬性偵測器](databinding-images/outline04.png "選取屬性偵測器")](databinding-images/outline04-large.png#lightbox)
-3. 針對`PersonModel` [**類別名稱**] 輸入, 按一下**加號**按鈕並新增三個索引鍵。 將其`Name`命名`Occupation`為`isManager`, 並:  
+3. 針對`PersonModel` [**類別名稱**] 輸入, 按一下**加號**按鈕並新增三個索引鍵。 將其`Name`命名`Occupation`為`isManager`, 並:
 
     ![新增必要的機碼路徑](databinding-images/outline05.png "新增必要的機碼路徑")
 4. 這會告訴樹狀結構控制器它管理的陣列, 以及應該公開的屬性 (透過金鑰)。
-5. 在 [**樹狀結構控制器**] 區段`personModelArray`下, `NumberOfEmployees`針對 [**子**系 ] 輸入, `isEmployee`然後在 [分**葉**] 底下輸入  
+5. 在 [**樹狀結構控制器**] 區段`personModelArray`下, `NumberOfEmployees`針對 [**子**系 ] 輸入, `isEmployee`然後在 [分**葉**] 底下輸入
 
     ![設定樹狀控制器金鑰路徑](databinding-images/outline05.png "設定樹狀控制器金鑰路徑")
 6. 這會告訴樹狀結構控制器要在何處尋找任何子節點、有多少個子節點, 以及目前節點是否有子節點。
-7. 切換至 系結 偵測**器**, 然後在 **內容陣列** 下選取 系結**至** 和 檔案**擁有** 輸入**模型索引鍵路徑** `self.personModelArray`:  
+7. 切換至 系結 偵測**器**, 然後在 **內容陣列** 下選取 系結**至** 和 檔案**擁有** 輸入**模型索引鍵路徑** `self.personModelArray`:
 
     ![編輯索引鍵路徑](databinding-images/outline06.png "編輯索引鍵路徑")
 8. 這`PersonModels`會將樹狀控制器系結至我們在視圖控制器上公開的陣列。
 
 現在, 我們需要將大綱視圖系結到樹狀結構控制器, 請執行下列動作:
 
-1. 選取 [大綱] 視圖, 然後在系結偵測**器**中選取:  
+1. 選取 [大綱] 視圖, 然後在系結偵測**器**中選取:
 
     [![選取]系結偵測器(databinding-images/outline07.png "選取")系結偵測器](databinding-images/outline07-large.png#lightbox)
-2. 在 [**大綱視圖內容**] turndown 下, 選取 [系結**至**] 和 [**樹狀結構控制器**]。 針對`arrangedObjects` [**控制器金鑰**] 欄位輸入:  
+2. 在 [**大綱視圖內容**] turndown 下, 選取 [系結**至**] 和 [**樹狀結構控制器**]。 針對`arrangedObjects` [**控制器金鑰**] 欄位輸入:
 
     ![設定控制器金鑰](databinding-images/outline08.png "設定控制器金鑰")
-3. 選取 [ **Employee** ] 資料行底下的 [**資料表視圖**] 資料格。 在 turndown**值**的 [系結] 偵測**器**中, 選取 [系結**至**] 和 [**資料表資料格視圖**]。 針對`objectValue.Name`模型索引**鍵路徑**輸入:  
+3. 選取 [ **Employee** ] 資料行底下的 [**資料表視圖**] 資料格。 在 turndown**值**的 [系結] 偵測**器**中, 選取 [系結**至**] 和 [**資料表資料格視圖**]。 針對`objectValue.Name`模型索引**鍵路徑**輸入:
 
     [![輸入模型索引鍵路徑](databinding-images/outline09.png "輸入模型索引鍵路徑")](databinding-images/outline09-large.png#lightbox)
 4. `objectValue`這是由`PersonModel`樹系控制器所管理之陣列中的目前。
-5. 選取 [**職業**] 資料行底下的 [**資料表視圖**] 資料格。 在 turndown**值**的 [系結] 偵測**器**中, 選取 [系結**至**] 和 [**資料表資料格視圖**]。 針對`objectValue.Occupation`模型索引**鍵路徑**輸入:  
+5. 選取 [**職業**] 資料行底下的 [**資料表視圖**] 資料格。 在 turndown**值**的 [系結] 偵測**器**中, 選取 [系結**至**] 和 [**資料表資料格視圖**]。 針對`objectValue.Occupation`模型索引**鍵路徑**輸入:
 
     [![輸入模型索引鍵路徑](databinding-images/outline10.png "輸入模型索引鍵路徑")](databinding-images/outline10-large.png#lightbox)
 6. 儲存您的變更, 並返回 Visual Studio for Mac 以與 Xcode 同步。
@@ -743,7 +743,7 @@ public override void AwakeFromNib ()
 
 <!--KKM 012/16/2015 - Once Apple fixes the issue with Xcode and Collection Views in Storyboards, we can uncomment this section.
 
-First, let's add a new **View Controller** to our **Main.storyboard** file in Interface Builder and name its class `CollectionViewController`: 
+First, let's add a new **View Controller** to our **Main.storyboard** file in Interface Builder and name its class `CollectionViewController`:
 
 ![](databinding-images/collection01.png)
 

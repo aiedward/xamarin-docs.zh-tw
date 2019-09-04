@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: b13ee05f6d0e17287254b7c30c07b5a4a3c70638
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9113ff728c382a26d0f0b5c0a6e40575cb8e776f
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198282"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227945"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms web 檢視
 
@@ -20,7 +20,7 @@ ms.locfileid: "70198282"
 
 [`WebView`](xref:Xamarin.Forms.WebView) 會顯示在您的應用程式中的 web 和 HTML 內容的檢視。 不同於`OpenUri`，其採用使用者裝置上的網頁瀏覽器`WebView`會顯示在您的應用程式內的 HTML 內容。
 
-![](webview-images/in-app-browser.png "在應用程式的瀏覽器中")
+![在應用程式瀏覽器中](webview-images/in-app-browser.png)
 
 ## <a name="content"></a>內容
 
@@ -105,7 +105,7 @@ htmlSource.Html = @"<html><body>
 browser.Source = htmlSource;
 ```
 
-![](webview-images/html-string.png "Web 檢視顯示的 HTML 字串")
+![顯示 HTML 字串的 Web 型](webview-images/html-string.png)
 
 在上述程式碼中，`@`用來將 HTML 標記做為字串常值，這表示所有一般的逸出字元會被忽略。
 
@@ -147,7 +147,7 @@ body,p,h1 {
 
 下列螢幕擷取畫面顯示每個平台上顯示本機內容的結果：
 
-![](webview-images/local-content.png "WebView 顯示本機內容")
+![顯示本機內容的 Web 視圖](webview-images/local-content.png)
 
 雖然已載入的第一頁，`WebView`一無所知的 HTML 來自何處。 處理參考本機資源的頁面時，這會是問題。 本機的頁面連結至每個其他，頁面會使用個別的 JavaScript 檔案，或頁面會連結到 CSS 樣式表時，就會加入範例時，可能會發生。  
 
@@ -176,11 +176,11 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](webview-images/ios-vs.png "在 iOS 上的本機檔案")
+![IOS 上的本機檔案](webview-images/ios-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](webview-images/ios-xs.png "在 iOS 上的本機檔案")
+![IOS 上的本機檔案](webview-images/ios-xs.png)
 
 -----
 
@@ -206,11 +206,11 @@ namespace WorkingWithWebview.iOS
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-![](webview-images/android-vs.png "在 Android 上的本機檔案")
+![Android 上的本機檔案](webview-images/android-vs.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![](webview-images/android-xs.png "在 Android 上的本機檔案")
+![Android 上的本機檔案](webview-images/android-xs.png)
 
 -----
 
@@ -328,7 +328,7 @@ public partial class InAppBrowserXaml : ContentPage
 
 就這麼容易！
 
-![](webview-images/in-app-browser.png "WebView 瀏覽按鈕")
+![Web 流覽導覽按鈕](webview-images/in-app-browser.png)
 
 ## <a name="events"></a>事件
 
@@ -383,11 +383,11 @@ void webviewNavigated(object sender, WebNavigatedEventArgs e)
 
 這會導致下列輸出 （正在載入）：
 
-![](webview-images/loading-start.png "WebView 瀏覽事件範例")
+![Web 流覽事件範例](webview-images/loading-start.png)
 
 完成的載入：
 
-![](webview-images/loading-end.png "WebView 巡覽事件範例")
+![Web 流覽事件範例](webview-images/loading-end.png)
 
 ## <a name="reloading-content"></a>重新載入內容
 

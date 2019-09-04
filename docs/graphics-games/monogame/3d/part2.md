@@ -6,12 +6,12 @@ ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: f125f8f20d22da4e988440cbaa936771d86a7673
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 8bdef9bff975365172a4c215b21cbb07a37e8492
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680976"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227732"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>在 MonoGame 中使用頂點繪製3D 圖形
 
@@ -85,7 +85,7 @@ protected override void Draw(GameTime gameTime)
 首先, 我們會將成員新增至我們的 Game1 類別:
 
 ```csharp
-VertexPositionTexture[] floorVerts; 
+VertexPositionTexture[] floorVerts;
 ```
 
 接下來, 在中定義`Game1.Initialize`我們的頂點。 請注意, 本文稍早所參考的提供的範本不包含`Game1.Initialize`方法, 因此我們需要將整個方法新增至: `Game1`
@@ -179,7 +179,7 @@ void DrawGround()
             PrimitiveType.TriangleList,
             // The array of verts that we want to render
             floorVerts,
-            // The offset, which is 0 since we want to start 
+            // The offset, which is 0 since we want to start
             // at the beginning of the floorVerts array
             0,
             // The number of triangles to draw
@@ -213,7 +213,7 @@ protected override void Draw (GameTime gameTime)
 
 ### <a name="techniques-and-passes"></a>技術和階段
 
-一旦將屬性指派給我們的效果, 我們就可以執行實際的呈現。 
+一旦將屬性指派給我們的效果, 我們就可以執行實際的呈現。
 
 我們不會變更此`CurrentTechnique`逐步解說中的屬性, 但較高階的遊戲可能會有單一效果, 可以透過不同的方式執行繪製 (例如, 色彩值的套用方式)。 這些轉譯模式中的每一個都可以表示為可在轉譯之前指派的技術。 此外, 每種技術都可能需要多次轉譯, 才能正確呈現。 如果轉譯複雜的視覺效果 (例如發光表面或毛), 可能會需要多個階段。
 
@@ -231,9 +231,9 @@ protected override void Draw (GameTime gameTime)
 
 ## <a name="rendering-with-a-texture"></a>使用材質呈現
 
-此時, 我們的應用程式會呈現白色平面 (以角度為觀點)。 接下來, 我們會將材質新增至我們的專案, 以便在轉譯我們的平面時使用。 
+此時, 我們的應用程式會呈現白色平面 (以角度為觀點)。 接下來, 我們會將材質新增至我們的專案, 以便在轉譯我們的平面時使用。
 
-為了簡單起見, 我們會將 .png 直接新增至專案, 而不是使用 MonoGame 管線工具。 若要這麼做, 請將[這個 .png](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)檔案下載到您的電腦。 下載之後, 以滑鼠右鍵按一下 Solution pad 中的  **Content**  資料夾, 然後選取 **新增 > 新增檔案 ...** 。 如果在 Android 上運作, 此資料夾將位於 Android 特定專案的 [**資產**] 資料夾底下。 如果在 iOS 上, 此資料夾將會在 iOS 專案的根目錄中。 流覽至儲存檔案  的位置, 然後選取此檔案。 選取此檔案可將檔案複製到目錄。
+為了簡單起見, 我們會將 .png 直接新增至專案, 而不是使用 MonoGame 管線工具。 若要這麼做, 請將[這個 .png](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)檔案下載到您的電腦。 下載之後, 以滑鼠右鍵按一下 Solution pad 中的  **Content**  資料夾, 然後選取 **新增 > 新增檔案 ...** 。 如果在 Android 上運作, 此資料夾將位於 Android 特定專案的 [**資產**] 資料夾底下。 如果在 iOS 上, 此資料夾將會在 iOS 專案的根目錄中。 流覽至儲存檔案的位置, 然後選取此檔案。 選取此檔案可將檔案複製到目錄。
 
 接下來, 我們將新增程式碼來建立`Texture2D`實例。 首先, 將新增`Texture2D`為`BasicEffect`實例底下的`Game1`成員:
 
@@ -332,7 +332,7 @@ protected override void Initialize ()
     effect = new BasicEffect (graphics.GraphicsDevice);
 
     base.Initialize ();
-} 
+}
 ```
 
 如果我們執行程式碼, 我們可以看到我們的平面現在顯示棋盤圖樣:
@@ -404,7 +404,7 @@ protected override void Draw(GameTime gameTime)
     DrawModel (new Vector3 ( 4, 4, 3));
 
     base.Draw(gameTime);
-} 
+}
 ```
 
 我們也會`Vector3`在中`Game1`建立, 以代表我們的相機位置。 我們會在宣告下`checkerboardTexture`新增欄位:
@@ -413,7 +413,7 @@ protected override void Draw(GameTime gameTime)
 ...
 Texture2D checkerboardTexture;
 // new code:
-Vector3 cameraPosition = new Vector3(0, 10, 10); 
+Vector3 cameraPosition = new Vector3(0, 10, 10);
 ```
 
 接下來, `DrawModel`從方法`cameraPosition`中移除本機變數:
@@ -434,7 +434,7 @@ void DrawModel(Vector3 modelPosition)
             var cameraUpVector = Vector3.UnitZ;
 
             effect.View = Matrix.CreateLookAt (
-                cameraPosition, cameraLookAtVector, cameraUpVector); 
+                cameraPosition, cameraLookAtVector, cameraUpVector);
             ...
 ```
 
@@ -450,7 +450,7 @@ void DrawGround()
 
     effect.View = Matrix.CreateLookAt (
         cameraPosition, cameraLookAtVector, cameraUpVector);
-    ... 
+    ...
 ```
 
 現在, 如果我們執行程式碼, 就可以同時看到模型和地面:

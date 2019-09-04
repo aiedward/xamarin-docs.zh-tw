@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 567985b1d6c6aff87e0a6879f05ab711a0095d6f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b7888ea29dd02733059346bca21fec0a4c510c2e
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647209"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70228005"
 ---
 # <a name="explicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的明確樣式
 
@@ -64,9 +64,9 @@ _明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義三個*明確*套用至頁面的樣式[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 每個`Style`用來以不同的色彩顯示文字，也可以將字型的大小和水平及垂直版面配置選項。 每個`Style`套用至不同`Label`藉由設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性使用`StaticResource`標記延伸。 這會導致下列的螢幕擷取畫面所示的外觀：
+[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義三個*明確*套用至頁面的樣式[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 每個`Style`用來以不同的色彩顯示文字，也可以將字型的大小和水平及垂直版面配置選項。 每個`Style`套用至不同`Label`藉由設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性使用`StaticResource`標記延伸。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
-[![](explicit-images/explicit-styles.png "明確樣式範例")](explicit-images/explicit-styles-large.png#lightbox "明確樣式範例")
+[![明確樣式範例](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
 此外，最終[ `Label` ](xref:Xamarin.Forms.Label)具有[ `Style` ](xref:Xamarin.Forms.Style)套用至其中，但也會覆寫[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)屬性，以不同`Color`值。
 

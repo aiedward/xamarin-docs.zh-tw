@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 08/29/2018
-ms.openlocfilehash: 9817ac2df7a60b5358316599ce02702448b0c307
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: c761290f43d780b2eafcf416fb9edf1e069f65c3
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199715"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70226042"
 ---
 # <a name="type-registrar-for-xamarinios"></a>為 Xamarin 輸入註冊機構
 
@@ -129,10 +129,10 @@ class MyClass : IMyProtocol
 這個新的註冊系統提供下列新功能:
 
 - 程式設計人員錯誤的編譯時間偵測:
-    - 使用相同名稱註冊兩個類別。
-    - 匯出了一個以上的方法來回應相同的選取器
+  - 使用相同名稱註冊兩個類別。
+  - 匯出了一個以上的方法來回應相同的選取器
 - 移除未使用的機器碼:
-    - 新的註冊系統將會對靜態程式庫中使用的程式碼加入強式參考, 讓原生連結器可以從產生的二進位檔中去除未使用的機器碼。 在 Xamarin 的範例系結上, 大部分的應用程式會變成至少300k.wvx 的小。
+  - 新的註冊系統將會對靜態程式庫中使用的程式碼加入強式參考, 讓原生連結器可以從產生的二進位檔中去除未使用的機器碼。 在 Xamarin 的範例系結上, 大部分的應用程式會變成至少300k.wvx 的小。
 
 - 支援的泛型子類別`NSObject`; 如需詳細資訊, 請參閱[NSObject 泛型](~/ios/internals/api-design/nsobject-generics.md)。 此外, 新的註冊系統將會攔截不受支援的泛型結構, 這在執行時間會造成隨機行為。
 
@@ -142,37 +142,37 @@ class MyClass : IMyProtocol
 
 - 在同一個類別中多次匯出相同的選取器:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo:")]
-        void Foo (NSString str);
-        [Export ("foo:")]
-        void Foo (string str)
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo:")]
+      void Foo (NSString str);
+      [Export ("foo:")]
+      void Foo (string str)
+  }
+  ```
 
 - 匯出多個具有相同目標-C 名稱的 managed 類別:
 
-    ```csharp
-    [Register ("Class")]
-    class MyClass : NSObject {}
+  ```csharp
+  [Register ("Class")]
+  class MyClass : NSObject {}
 
-    [Register ("Class")]
-    class YourClass : NSObject {}
-    ```
+  [Register ("Class")]
+  class YourClass : NSObject {}
+  ```
 
 - 匯出泛型方法:
 
-    ```csharp
-    [Register]
-    class MyDemo : NSObject
-    {
-        [Export ("foo")]
-        void Foo<T> () {}
-    }
-    ```
+  ```csharp
+  [Register]
+  class MyDemo : NSObject
+  {
+      [Export ("foo")]
+      void Foo<T> () {}
+  }
+  ```
 
 ### <a name="limitations-of-the-new-registrar"></a>新註冊機構的限制
 

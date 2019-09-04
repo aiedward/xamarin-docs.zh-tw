@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: lobrien
 ms.author: laobri
 ms.date: 06/03/2018
-ms.openlocfilehash: ac77977f3832b0ab7ba440a2c795037e8fcf5f2e
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: b62c8453049a1e014cd75cbee562c8f1a2c16c31
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621000"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227892"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -100,13 +100,13 @@ Xamarin Profiler 的支援可在下列平臺上取得:
 
   **組建 > iOS Debug > 啟用分析**
 
-  ![](images/ios-options-mac.png "Visual Studio for Mac 中的 [iOS 選項] 對話方塊")
+  ![Visual Studio for Mac 中的 [iOS 選項] 對話方塊](images/ios-options-mac.png)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
   **> IOS 組建的屬性 > 啟用分析**
 
-  ![](images/ios-project-options-vs.png "Visual Studio 中的 [iOS 選項] 對話方塊")
+  ![Visual Studio 中的 [iOS 選項] 對話方塊](images/ios-project-options-vs.png)
 
 -----
 
@@ -137,7 +137,7 @@ Xamarin Profiler 的支援可在下列平臺上取得:
 1. 首先, 請確定您已在 Visual Studio for Mac 中載入應用程式, 並選取 [(預設)] [Debug] 設定。
 2. 流覽以在 Visual Studio for Mac 中**執行 > 開始分析**, 或分析 Visual Studio 中的 **> Xamarin Profiler** , 以開啟 Profiler, 如下圖所示:
 
-  ![](images/start-profiling-xs.png "從 Visual Studio for Mac 啟動 Profiler")
+  ![從 Visual Studio for Mac 啟動 Profiler](images/start-profiling-xs.png)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -164,13 +164,13 @@ Xamarin Profiler 的支援可在下列平臺上取得:
 
 安裝之後, 您可以在 [應用程式] 資料夾中找到 Xamarin Profiler, 如下列螢幕擷取畫面所示:
 
-![](images/applications.png "從 Mac 開啟獨立 Profiler")
+![從 Mac 開啟獨立 Profiler](images/applications.png)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 安裝之後, 您可以在應用程式目錄中找到 Xamarin Profiler 應用程式:
 
-![](images/applications-vs.png "從 Windows 開啟獨立 Profiler")
+![從 Windows 開啟獨立 Profiler](images/applications-vs.png)
 
 -----
 
@@ -184,11 +184,11 @@ Xamarin Profiler 是由五個區段組成, 如下所示:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](images/profiler-mac-sml.png "Visual Studio for Mac 中的 Profiler 區段")](images/profiler-mac.png#lightbox) 
+[![Visual Studio for Mac 中的 Profiler 區段](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](images/profiler-vs.png "Visual Studio 中的 Profiler 區段")](images/profiler-vs.png#lightbox)
+[![Visual Studio 中的 Profiler 區段](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -206,11 +206,11 @@ Xamarin Profiler 是由五個區段組成, 如下所示:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](images/allocations1.png "配置檢測")](images/allocations1.png#lightbox) 
+[![配置檢測](images/allocations1.png)](images/allocations1.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](images/allocations1-vs.png "配置檢測")](images/allocations1-vs.png#lightbox)
+[![配置檢測](images/allocations1-vs.png)](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -220,11 +220,11 @@ Xamarin Profiler 是由五個區段組成, 如下所示:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![](images/allocations3.png "[配置] 索引標籤")](images/allocations3.png#lightbox) 
+  [![[配置] 索引標籤](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations2-vs.png "[配置] 索引標籤")](images/allocations2-vs.png#lightbox)
+  [![[配置] 索引標籤](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -236,11 +236,11 @@ Xamarin Profiler 是由五個區段組成, 如下所示:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![](images/allocations2.png "[呼叫樹] 索引標籤")](images/allocations2.png#lightbox) 
+  [![[呼叫樹] 索引標籤](images/allocations2.png)](images/allocations2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations3-vs.png "[呼叫樹] 索引標籤")](images/allocations3-vs.png#lightbox)
+  [![[呼叫樹] 索引標籤](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -248,11 +248,11 @@ Xamarin Profiler 是由五個區段組成, 如下所示:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![](images/allocations4.png "快照集索引標籤")](images/allocations4.png#lightbox) 
+  [![快照集索引標籤](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/allocations4-vs.png "快照集索引標籤")](images/allocations4-vs.png#lightbox)
+  [![快照集索引標籤](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -280,11 +280,11 @@ Xamarin Profiler 是由五個區段組成, 如下所示:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![](images/time2.png "時間分析工具檢測-呼叫樹狀結構")](images/time2.png#lightbox) 
+  [![時間分析工具檢測-呼叫樹狀結構](images/time2.png)](images/time2.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-  [![](images/time2-vs.png "時間分析工具檢測-呼叫樹狀結構")](images/time2-vs.png#lightbox) 
+  [![時間分析工具檢測-呼叫樹狀結構](images/time2-vs.png)](images/time2-vs.png#lightbox) 
 
 -----
 
@@ -315,7 +315,7 @@ Xamarin Profiler 是由五個區段組成, 如下所示:
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](images/image1vs.png "分析錯誤對話方塊")](images/image1vs.png#lightbox) 
+[![分析錯誤對話方塊](images/image1vs.png)](images/image1vs.png#lightbox) 
 
 -----
 

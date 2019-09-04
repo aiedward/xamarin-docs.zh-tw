@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: lobrien
 ms.author: laobri
 ms.date: 06/13/2017
-ms.openlocfilehash: 6890846a1cb5cd44429c9157b3aeb75c7a1f2f4b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 67fbd3fb7fb9c7bf1e326404d0d63bc42a3fd8ed
+ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521424"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70227677"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的應用程式傳輸安全性
 
@@ -41,7 +41,7 @@ ATS 會針對所有網際網路連線強制執行下列需求:
 - 傳輸層安全性 (TLS) 通訊協定必須是1.2 或更高版本。
 - 至少有一個 SHA256 指紋具有2048位或更高的 RSA 金鑰, 或是256位或更大的橢圓曲線 (ECC) 金鑰必須用於所有憑證。
 
-同樣地, 由於 iOS 9 中預設已啟用 ATS, 因此任何嘗試建立不符合這些需求的連線都會導致擲回例外狀況。 
+同樣地, 由於 iOS 9 中預設已啟用 ATS, 因此任何嘗試建立不符合這些需求的連線都會導致擲回例外狀況。
 
 <a name="ATS-Compatible-Ciphers" />
 
@@ -132,7 +132,7 @@ Managed 處理常式是由舊版的 Xamarin 隨附的完全受控 HttpClient 處
 各有利弊
 
 - 需要 iOS 7 或更新版本。
-- 有些 HttpClient 功能和選項無法使用。 
+- 有些 HttpClient 功能和選項無法使用。
 
 ## <a name="diagnosing-ats-issues"></a>診斷 ATS 問題
 
@@ -153,7 +153,7 @@ Apple 也提供可編譯 (或選擇性地轉碼至 Xamarin 和C#) 的[TLSTool �
 
 您可以設定應用程式**資訊 plist**檔案中特定索引鍵的值, 以設定 ATS 的數個功能。 下列機碼可用於控制 ATS (_縮排以顯示它們的嵌套方式_):
 
-```csharp
+```
 NSAppTransportSecurity
     NSAllowsArbitraryLoads
     NSAllowsArbitraryLoadsInWebContent
