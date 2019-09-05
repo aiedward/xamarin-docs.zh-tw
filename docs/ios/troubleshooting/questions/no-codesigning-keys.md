@@ -4,46 +4,46 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9DF24C46-D521-4112-9B21-52EA4E8D90D0
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: fe267db1f83695b3d0e8f3d828f91e01b56ba8ee
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 9d589af6249063add3dc9b085463fde9edd8e449
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61419661"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278440"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>為什麼我的 iOS 組建因為「Keychain 中找不到任何有效的 iPhone 程式碼簽署金鑰」而失敗？
 
 ## <a name="cause-of-the-error"></a>錯誤的原因
-此錯誤訊息時發生問題專案需要有效的程式碼簽署憑證，但找不到它們。 程式碼簽署，才能測試和實體 iOS 裝置上的部署以及臨機操作及應用程式儲存組建。 
+當有問題的專案正在尋找有效的程式碼簽署認證，但找不到它們時，就會出現這個錯誤訊息。 在實體 iOS 裝置上進行測試和部署時，需要進行程式碼簽署;和臨機操作 & App store 組建。 
 
 
-### <a name="provisioning-devices"></a>裝置佈建
-如果您尚未佈建 iOS 裝置之前，下列指南將引導您完成完整的逐步程序：[裝置佈建指南](~/ios/get-started/installation/device-provisioning/index.md)
+### <a name="provisioning-devices"></a>布建裝置
+如果您之前尚未布建 iOS 裝置，下列指南會引導您完成完整的逐步程式：[裝置布建指南](~/ios/get-started/installation/device-provisioning/index.md)
 
 
-## <a name="bug-when-using-ios-simulator"></a>使用 iOS 模擬器時的 bug
+## <a name="bug-when-using-ios-simulator"></a>使用 iOS 模擬器時的錯誤
 
 > [!NOTE]
-> 適用於 Visual Studio，已在最新版本的 Xamarin 中解決此問題。 不過，如果最新版本的軟體，就會發生問題，請指導，申請[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)您完整的版本控制資訊和完整建置記錄檔輸出。
+> 此問題已在最新版本的 Xamarin for Visual Studio 中解決。 不過，如果軟體的最新版本發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出來提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
 
 
-而造成的 iOS 專案的 Xamarin.Forms 範本，以新增 codesign Entitlements.plist 模擬器來建置; Xamarin.Visual Studio 3.11 版時發生錯誤有效地封鎖使用模擬器進行測試。
+在 Xamarin 中發生錯誤。 Visual Studio 3.11，導致 Xamarin Forms 範本中的 iOS 專案新增 codesign 權利 plist 至模擬器組建;使用模擬器有效率地封鎖測試。
 
-### <a name="how-to-fix"></a>如何修正問題
-您可以解決此問題，藉由移除`<CodesignEntitlements>`.csproj 檔案中的旗標，從 偵錯組建。 您可以依照下列方式來執行這項操作：
+### <a name="how-to-fix"></a>如何修正
+若要解決此問題，您可以`<CodesignEntitlements>`從 .csproj 檔案中的 debug build 移除旗標。 您可以依照下列方式來執行這項操作：
 
-*警告：.Csproj 檔案中的錯誤可能會中斷您的專案，讓最好備份您的檔案，然後再嘗試這個。*
+*警告：.Csproj 檔案中的錯誤可能會中斷您的專案，因此最好先備份您的檔案，然後再嘗試此動作。*
 
-1. 以滑鼠右鍵按一下 [解決方案] 窗格中的 iOS 專案，然後選取**卸載專案**
-2. 以滑鼠右鍵按一下專案，然後選取**編輯 [ProjectName].csproj**
-3. 找出之偵錯 PropertyGroups，他們應該開始看起來像這樣的旗標：
-   - 偵錯： `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
-   - 版本： `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
-4. 在每個使用模擬器的組建中，刪除或註解化下列屬性： `<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
-5. 重新載入專案，而且您應該能夠部署至模擬器。
+1. 在解決方案窗格中，以滑鼠右鍵按一下 iOS 專案，然後選取 **[卸載專案**]
+2. 再次以滑鼠右鍵按一下專案，然後選取 **[編輯] [專案名稱] .csproj**
+3. 找出 Debug PropertyGroups，它們的開頭應該是如下所示的旗標：
+   - Debug.exe`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
+   - 版本`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
+4. 在使用模擬器的每個組建中，刪除或批註掉下列屬性：`<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
+5. 重載專案，您應該能夠部署至模擬器。
 
 ### <a name="next-steps"></a>後續步驟
-如需進一步協助，請連絡我們，或如果此問題持續，即使利用上述的資訊，請參閱[適用於 Xamarin 有哪些支援選項？](~/cross-platform/troubleshooting/support-options.md)如需連絡選項，建議，以及如何如有需要請提出新錯誤報告。 
+如需進一步的協助，請洽詢我們，或即使在使用上述資訊之後仍然會發生此問題，請參閱[什麼是適用于 Xamarin 的支援選項？](~/cross-platform/troubleshooting/support-options.md)以取得連絡人選項、建議，以及如何在需要時提出新 bug 的相關資訊. 
