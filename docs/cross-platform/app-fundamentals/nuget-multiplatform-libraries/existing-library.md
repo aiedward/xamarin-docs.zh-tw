@@ -1,48 +1,48 @@
 ---
-title: 建立從現有的程式庫專案的 NuGet
-description: 本文件說明如何從現有的程式庫專案，讓其他開發人員與共用程式碼建立 NuGet 套件。
+title: 從現有的程式庫專案建立 NuGet
+description: 本檔說明如何從現有的程式庫專案建立 NuGet 封裝，讓程式碼可與其他開發人員共用。
 ms.prod: xamarin
 ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 04/20/2017
-ms.openlocfilehash: 6e043334d3ca45a573423ebdfdf1ec9149167b55
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: f9d49fc4bff91939c9924dc42a11ef31ffd87362
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864699"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289229"
 ---
-# <a name="creating-a-nuget-from-existing-library-projects"></a>建立從現有的程式庫專案的 NuGet
+# <a name="creating-a-nuget-from-existing-library-projects"></a>從現有的程式庫專案建立 NuGet
 
-現有的 PCL 或.NET Standard 程式庫可以轉換成透過 Nuget**專案選項**視窗：
+您可以透過 [**專案選項**] 視窗，將現有的 PCL 或 .NET Standard 程式庫轉換成 nuget：
 
-1. 中的程式庫專案上按一下滑鼠右鍵**Solution Pad** ，然後選擇**選項**。
+1. 以滑鼠右鍵按一下  **Solution Pad**中的 程式庫 專案，然後選擇 **選項**。
 
-2. 移至**NuGet 封裝 > 中繼資料**區段，然後輸入所有[必要資訊](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)中**一般** 索引標籤：
+2. 移至 [ **NuGet 套件 > 中繼資料**] 區段，並在 [**一般**] 索引標籤中輸入所有[必要的資訊](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)：
 
    [![](existing-library-images/existing-metadata-sml.png "輸入必要的中繼資料")](existing-library-images/existing-metadata.png#lightbox)
 
-3. （選擇性）[新增額外的中繼資料](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)中**詳細資料** 索引標籤。
+3. （選擇性）在 [**詳細**資料] 索引標籤中[新增其他中繼資料](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata.md)。
 
-4. 一旦設定中繼資料，您可以以滑鼠右鍵按一下專案，並選擇**建立 NuGet 套件**並 **.nupkg** NuGet 套件檔案會儲存在 **/bin/** 資料夾 （偵錯或發行，取決於組態）。
+4. 設定中繼資料之後，您可以在專案上按一下滑鼠右鍵，然後選擇 [**建立 Nuget 套件**]， **nupkg** NuGet 套件檔案將會儲存在 **/bin/** 資料夾中（視設定而定）（Debug 或 Release）。
 
-   ![](existing-library-images/create-nuget-package.png "從快顯功能表中選擇 建立 NuGet 套件")
+   ![](existing-library-images/create-nuget-package.png "從右鍵功能表選擇 [建立 NuGet 套件]")
 
-5. 上建立 NuGet 套件_每隔_建置或部署，請前往**NuGet 套件 > 建置**一節和刻度**建置專案時建立 NuGet 套件**:
+5. 若要在_每個_組建或部署上建立 nuget 套件，請移至**Nuget 套件 > 組建** 區段，並**在建立專案時**勾選 建立 NuGet 套件：
 
-    [![](existing-library-images/existing-tickbox-sml.png "若要建立 NuGet 套件的刻度")](existing-library-images/existing-tickbox.png#lightbox)
+    [![](existing-library-images/existing-tickbox-sml.png "建立 NuGet 套件的滴答")](existing-library-images/existing-tickbox.png#lightbox)
 
 > [!NOTE]
-> 建立 NuGet 封裝變慢建置程序。 如果不勾選此方塊，您可以仍然產生 NuGet 套件以手動方式隨時從專案操作功能表 （如上述步驟 4 所示）。
+> 建立 NuGet 套件可能會使組建程式變慢。 如果未核取此方塊，您仍然可以隨時從專案內容功能表（如上述步驟4所示）手動產生 NuGet 套件。
 
 ## <a name="verifying-the-output"></a>驗證輸出
 
-NuGet 套件也是套件的 ZIP 檔案，因此可以檢查產生的內部結構。
+NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構。
 
-這個螢幕擷取畫面顯示的 PCL 型 NuGet – 內容只是單一 PCL 的組件就會包含：
+這個螢幕擷取畫面顯示 PCL 型 NuGet 的內容–只包含單一 PCL 元件：
 
-![](existing-library-images/nuget-output.png "NuGet 封裝中包含的檔案")
+![](existing-library-images/nuget-output.png "NuGet 套件中包含的檔案")
 
 
 ## <a name="related-links"></a>相關連結

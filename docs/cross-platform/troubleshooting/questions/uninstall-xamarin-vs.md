@@ -3,20 +3,20 @@ title: 如何徹底將 Xamarin for Visual Studio 解除安裝？
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: c1742239-05ea-449d-9c99-611e5e5a90e4
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: e387e398f3a79ea2063457f0c5c6e7469c07ac23
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 4d8396574f02cde4c75fd96c98f79d5ed4080293
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69521539"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291066"
 ---
 # <a name="how-do-i-perform-a-thorough-uninstall-for-xamarin-for-visual-studio"></a>如何徹底將 Xamarin for Visual Studio 解除安裝？
 
 
-1. 從 Windows [控制台] 中, 卸載下列任何一項:
+1. 從 Windows [控制台] 中，卸載下列任何一項：
 
     - Xamarin
     - Xamarin for Windows
@@ -24,15 +24,15 @@ ms.locfileid: "69521539"
     - Xamarin.iOS
     - Xamarin for Visual Studio
 
-2. 在 Explorer 中, 從 Xamarin Visual Studio 延伸模組資料夾中刪除任何剩餘的檔案 (所有版本, 包括_Program files_和_program files (x86)_ ):
+2. 在 Explorer 中，從 Xamarin Visual Studio 延伸模組資料夾中刪除任何剩餘的檔案（所有版本，包括_Program files_和_program files （x86）_ ）：
 
-    _C:\\Program Files\* MicrosoftVisualStudio1\*.0Common7\\ IDE\\ExtensionsXamarin\\ \\ \\_
+    _C：\\Program Files\* MicrosoftVisualStudio1\*.0Common7\\ IDE\\ExtensionsXamarin\\ \\ \\_
 
-3. 同時刪除 Visual Studio 的 MEF 元件快取目錄:
+3. 同時刪除 Visual Studio 的 MEF 元件快取目錄：
 
     _%LOCALAPPDATA%\\Microsoft\\VisualStudio\\1\*.0\\ComponentModelCache_
 
-    事實上, 這個步驟本身通常就足以解決下列錯誤:
+    事實上，這個步驟本身通常就足以解決下列錯誤：
 
     - 「' XamarinShellPackage ' 封裝未正確載入」
 
@@ -40,35 +40,35 @@ ms.locfileid: "69521539"
 
     - 「物件參考未設定為物件的實例。  at Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"
 
-    - 「封裝的 SetSite 失敗」 (在 Visual Studio 的_ActivityLog_中)
+    - 「封裝的 SetSite 失敗」（在 Visual Studio 的_ActivityLog_中）
 
-    - 「封裝的 LegacySitePackage 失敗」 (在 Visual Studio 的_ActivityLog_中)
+    - 「封裝的 LegacySitePackage 失敗」（在 Visual Studio 的_ActivityLog_中）
 
-    (另請參閱[CLEAR MEF 元件](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)快取 Visual Studio 延伸模組。  另請參閱[Bug 40781, 批註 19,](https://bugzilla.xamarin.com/show_bug.cgi?id=40781#c19)以進一步瞭解造成這些錯誤之 Visual Studio 中的上游問題。)
+    （另請參閱[CLEAR MEF 元件](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)快取 Visual Studio 延伸模組。  另請參閱[Bug 40781，批註19，](https://bugzilla.xamarin.com/show_bug.cgi?id=40781#c19)以進一步瞭解造成這些錯誤之 Visual Studio 中的上游問題。）
 
-4. 此外, 請簽入_VirtualStore_目錄, 以查看 Windows 是否可能已在其中儲存_延伸\\模組 Xamarin_或_ComponentModelCache_目錄的任何重迭檔案:
+4. 此外，請簽入_VirtualStore_目錄，以查看 Windows 是否可能已在其中儲存_延伸\\模組 Xamarin_或_ComponentModelCache_目錄的任何重迭檔案：
 
     _%LOCALAPPDATA%\\VirtualStore_
 
-5. 開啟 [登錄編輯程式]`regedit`()。
+5. 開啟 [登錄編輯程式]`regedit`（）。
 
-6. 尋找下列機碼:
+6. 尋找下列機碼：
 
     _HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\SharedDlls_
 
 7. 尋找並刪除所有符合此模式的項目：
 
-    _C:\\Program Files\* MicrosoftVisualStudio1\*.0Common7\\ IDE\\ExtensionsXamarin\\ \\ \\_
+    _C：\\Program Files\* MicrosoftVisualStudio1\*.0Common7\\ IDE\\ExtensionsXamarin\\ \\ \\_
 
 8. 尋找此機碼：
 
     _HKEY\_CURRENT\_USER\\Software\\Microsoft\\VisualStudio\\1\*.0\\ExtensionManager\\PendingDeletions_
 
-9. 刪除所有看起來可能與 Xamarin 相關的項目。  例如, 以下是用來在舊版 Xamarin 中造成問題的一項:
+9. 刪除所有看起來可能與 Xamarin 相關的項目。  例如，以下是用來在舊版 Xamarin 中造成問題的一項：
 
     _Mono.VisualStudio.Shell,1.0_
 
-10. 開啟系統管理員`cmd.exe`命令提示字元, 然後針對每`devenv /setup`個`devenv /updateconfiguration`已安裝的 Visual Studio 版本執行和命令。  例如，若為 Visual Studio 2015：
+10. 開啟系統管理員`cmd.exe`命令提示字元，然後針對每`devenv /setup`個`devenv /updateconfiguration`已安裝的 Visual Studio 版本執行和命令。  例如，若為 Visual Studio 2015：
 
     ```
     "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe" /setup
@@ -81,16 +81,16 @@ ms.locfileid: "69521539"
 
 ## <a name="additional-troubleshooting-steps-for-package-did-not-load-correctly"></a>「封裝未正確載入」的其他疑難排解步驟
 
-在上述步驟無法解決「封裝未正確載入」錯誤的情況下, 這裡還有幾個步驟可供您嘗試。
+在上述步驟無法解決「封裝未正確載入」錯誤的情況下，這裡還有幾個步驟可供您嘗試。
 
 1. 建立新的 Windows 使用者帳戶。
 
-2. 檢查 Xamarin Visual Studio 擴充功能是否載入, 而不會對新使用者產生錯誤。
+2. 檢查 Xamarin Visual Studio 擴充功能是否載入，而不會對新使用者產生錯誤。
 
-3. 如果擴充功能的載入正確, 則問題最有可能是原始使用者的部分儲存設定所造成:
+3. 如果擴充功能的載入正確，則問題最有可能是原始使用者的部分儲存設定所造成：
 
     - **在 Explorer 中**– _% LOCALAPPDATA\\%\\Microsoft\\VisualStudio\*1. 0_
     - **在 regedit** – _HKEY\_目前\_的\\使用者軟體\\ Microsoft\\ VisualStudio\*1. 0\\_
     - **在 regedit** – _HKEY\_目前\_的\\使用者軟體\\ Microsoft\\VisualStudio1\*.0Config\\ \__
 
-4. 如果這些儲存的設定確實似乎是問題, 您可以嘗試將它們備份, 然後將它們刪除。
+4. 如果這些儲存的設定確實似乎是問題，您可以嘗試將它們備份，然後將它們刪除。

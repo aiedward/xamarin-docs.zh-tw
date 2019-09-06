@@ -1,35 +1,35 @@
 ---
-title: 在 Xamarin.iOS 中的重大警示
-description: 本文件說明如何使用 Xamarin.iOS 中的重大警示。 使用 iOS 12，導入的重大警示播放聲音不論 「 請勿打擾 」 是否在干擾性通知或響鈴開關已關閉。
+title: 在 Xamarin 中的重大警示
+description: 本檔說明如何搭配使用重大警示與 Xamarin。 IOS 12 引進的重大警示是干擾性通知，不論是否開啟或響鈴開關皆會播放音效。
 ms.prod: xamarin
 ms.assetid: 75742257-081D-44F4-B49E-FB807DF85262
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 09/04/2018
-ms.openlocfilehash: 264b1935aefe6f5ddf4bfcd17c491f6858bd4ffb
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 54a214215f77b66f6a4b134dcb8d27b26c44fb6c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60876101"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291284"
 ---
-# <a name="critical-alerts-in-xamarinios"></a>在 Xamarin.iOS 中的重大警示
+# <a name="critical-alerts-in-xamarinios"></a>在 Xamarin 中的重大警示
 
-Ios 12、 應用程式可以傳送重大警示。 重大警示播放的音效，不論啟用 「 請勿打擾 」 或響鈴開關已關閉。 這些通知是干擾性，且應該只在使用者必須立即採取行動時才使用。
+使用 iOS 12，應用程式可以傳送重大警示。 重要警示會播放音效，而不論是否已啟用 [不要打擾] 或響鈴開關是否已關閉。 這些通知是干擾性的，只有在使用者必須採取立即動作時才會使用。
 
-## <a name="custom-critical-alert-entitlement"></a>自訂的重大警示權限
+## <a name="custom-critical-alert-entitlement"></a>自訂重大警示權利
 
-在您的應用程式，先顯示重大警示[要求自訂重要的警示通知的權利](https://developer.apple.com/contact/request/notifications-critical-alerts-entitlement/)從 Apple。
+若要在您的應用程式中顯示重大警示，請先向 Apple[要求自訂的重大警示通知權利](https://developer.apple.com/contact/request/notifications-critical-alerts-entitlement/)。
 
-從 Apple 接收此權利及如何設定您的應用程式來使用它時，任何相關聯指示新增自訂後[權利](~/ios/deploy-test/provisioning/entitlements.md)至您的應用程式**Entitlements.plist**檔案。 然後，設定您**iOS 套件組合簽署**選項，以使用**Entitlements.plist**簽署模擬器和裝置上的應用程式時。
+從 Apple 收到此權利，並遵循有關如何設定應用程式來使用它的任何相關指示之後，請將自訂權利新增至您應用程式的**plist** [檔案](~/ios/deploy-test/provisioning/entitlements.md)。 然後，將您的**iOS 配套簽署**選項設定為在模擬器和裝置上簽署應用程式時使用**plist** 。
 
 ## <a name="request-authorization"></a>要求授權
 
-應用程式的通知授權要求會提示使用者允許或禁止應用程式的通知。 如果通知授權要求會傳送重大警示的權限要求，應用程式也給予使用者機會參加重大警示。
+應用程式的通知授權要求會提示使用者允許或禁止應用程式的通知。 如果通知授權要求要求傳送重大警示的許可權，應用程式也會讓使用者有機會加入重大警示。
 
-下列程式碼要求傳送重大警示和標準通知及聲音，藉由傳遞適當的權限 [`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
-到數值[ `RequestAuthorization` ](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*):
+下列程式碼會要求許可權，藉由傳遞適當的來傳送重要警示和標準通知和音效[`UNAuthorizationOptions`](xref:UserNotifications.UNAuthorizationOptions)
+值為[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -43,15 +43,15 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-## <a name="local-critical-alerts"></a>本機的重大警示
+## <a name="local-critical-alerts"></a>本機重大警示
 
-若要傳送本機的重大警示，建立 [`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
-並設定其`Sound`屬性設為：
+若要傳送本機重大警示，請建立[`UNMutableNotificationContent`](xref:UserNotifications.UNMutableNotificationContent)
+並將其`Sound`屬性設定為下列其中一項：
 
-- `UNNotificationSound.DefaultCriticalSound`它會使用預設重大通知音效。
-- `UNNotificationSound.GetCriticalSound`可讓您指定自訂聽起來，以搭配您的應用程式和磁碟區。
+- `UNNotificationSound.DefaultCriticalSound`，其使用預設的重要通知音效。
+- `UNNotificationSound.GetCriticalSound`，可讓您指定與您的應用程式和磁片區配套的自訂音效。
 
-接著，建立`UNNotificationRequest`從通知內容，並將它新增至通知中心：
+然後， `UNNotificationRequest`從通知內容建立，並將它新增至通知中心：
 
 ```csharp
 var content = new UNMutableNotificationContent()
@@ -74,16 +74,16 @@ center.AddNotificationRequest(request, null);
 ```
 
 > [!IMPORTANT]
-> 如果無法進行您的應用程式，將不會傳遞重大警示。 以及出現提示時第一次傳送重大警示的應用程式要求權限，因此使用者也可以啟用或停用您的應用程式中的重大警示**通知**一節的 ios**設定**應用程式。
+> 如果未針對您的應用程式啟用重要警示，將不會傳遞它們。 除了應用程式第一次要求傳送重大警示的許可權之外，使用者也可以在 iOS [**設定**] 應用程式的 [**通知**] 區段中啟用或停用重大警示。
 
-## <a name="remote-critical-alerts"></a>遠端的重大警示
+## <a name="remote-critical-alerts"></a>遠端重大警示
 
-如需遠端的重大警示的資訊，請參閱[什麼是新的使用者通知](https://developer.apple.com/videos/play/wwdc2018/710/)WWDC 2018，從工作階段並[產生遠端通知](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)文件。
+如需有關遠端重大警示的詳細資訊，請參閱 WWDC 2018 的[使用者通知會話的新功能](https://developer.apple.com/videos/play/wwdc2018/710/)和[產生遠端通知](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)檔。
 
 ## <a name="related-links"></a>相關連結
 
-- [在 Xamarin.iOS 中的使用者通知架構](~/ios/platform/user-notifications/index.md)
-- [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [在 使用者通知 (WWDC 2018) 最新消息](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [最佳做法和使用者通知 (WWDC 2017) 在最新消息](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [產生遠端通知 (Apple)](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [Xamarin 中的使用者通知架構](~/ios/platform/user-notifications/index.md)
+- [UserNotifications （Apple）](https://developer.apple.com/documentation/usernotifications?language=objc)
+- [使用者通知的新功能（WWDC 2018）](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [最佳做法和使用者通知的新功能（WWDC 2017）](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [產生遠端通知（Apple）](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

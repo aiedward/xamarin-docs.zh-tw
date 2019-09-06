@@ -1,63 +1,63 @@
 ---
-title: Xamarin.mac 的目標 Framework
-description: 本文章涵蓋的目標 framework （基底類別程式庫） 可用於 Xamarin.Mac 和 Xamarin.Mac 專案中使用它們的含意。
+title: Xamarin 的目標 Framework
+description: 本文涵蓋 Xamarin. Mac 適用的目標 framework （基類庫），以及在您的 Xamarin 專案中使用它們的含意。
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: e9e20b4966e9e6cb8a4ce3ad6724cf0ba2565c33
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 4ae8834427580c387de7a38a69d711207b04821e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865868"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290892"
 ---
-# <a name="target-framework-for-xamarinmac"></a>Xamarin.mac 的目標 Framework
+# <a name="target-framework-for-xamarinmac"></a>Xamarin 的目標 Framework
 
-_本文章涵蓋的目標 framework （基底類別程式庫） 可用於 Xamarin.Mac 和 Xamarin.Mac 專案中使用它們的含意。_
+_本文涵蓋 Xamarin. Mac 適用的目標 framework （基類庫），以及在您的 Xamarin 專案中使用它們的含意。_
 
-![目標 framework 選項 xamarin.mac](target-framework-images/select-target.png "Target xamarin.mac framework 選項")
+![Xamarin 的目標 framework 選項](target-framework-images/select-target.png "Xamarin 的目標 framework 選項")
 
 ## <a name="background"></a>背景
 
-每個.NET 程式庫而定提供基底類別庫 (BCL) 功能。 此 BCL 中包含提供所有.NET 語言內都建的一般功能，例如 mscorlib、 System、 System.Net.Http 和 System.Xml 組件。
+每個 .NET 程式或程式庫都取決於基類程式庫（BCL）所提供的功能。 此 BCL 包括 mscorlib、System、System .Net 和 system.string 等元件，提供內建于所有 .NET 語言的通用功能。
 
-多年來，已開發這個 BCL，適用於不同使用案例的多個不同的版本。 「 桌面 」 的 BCL 中包含的一組豐富的程式庫，這可能是太其他使用案例中，重量級，雖然 mobile 著重確保 Api 安全的連結，以移除未使用的程式碼，可減少應用程式使用量。
+多年來，已開發出多個不同版本的 BCL，並針對不同的使用案例進行優化。 「桌面」 BCL 包含一組更豐富的程式庫，對其他使用案例而言可能是太重，而 mobile 則著重于確保 Api 可安全地進行連結，這會移除未使用的程式碼以減少應用程式的使用量。
 
-其中一種不同的目標架構，更重要的影響是在指定的程式中的組件的所有*必須*目標相容的 BCL 組件。 如果這不是如此，您可以讓兩個連結的不同版本的組件**System.dll** disagreeing 指定型別的簽章的相關。 共用程式庫來選擇其中一個目標[.NET 標準 2](https://blog.xamarin.com/share-code-net-standard-2-0/)，這是常見的目標 Framework 中或特定的目標 framework 子集。
+這些不同的目標架構有一個比較重要的影響，就是指定程式中的所有元件都*必須*以相容的 BCL 元件為目標。 如果不是這種情況，您可以將兩個元件連結至不同版本的**disagreeing，** 以瞭解特定類型的簽章。 共用程式庫可以目標為[.NET Standard 2](https://blog.xamarin.com/share-code-net-standard-2-0/)，也就是目標 framework 的一般子集，或特定的目標架構。
 
-有三個目標 Framework 選項適用於 Xamarin.Mac，各有不同的優點和權衡取捨：
+有三個適用于 Xamarin 的目標 Framework 選項，各有不同的優點和取捨：
 
-- **現代**（較舊的文件中稱為行動裝置） – 要進行最佳化的效能和大小哪些支援 Xamarin.iOS、 非常類似的子集。 此目標 Framework 是安全的連結器，因此這些專案可以藉由移除未使用的程式碼可大幅減少其最終使用量。
+- **現代化**（在舊版檔中稱為 Mobile）–與 Xamarin 的功能非常相似的子集，針對效能和規模進行高度調整。 此目標架構是連結器安全的，因此，這些專案可以藉由移除未使用的程式碼，大幅減少其最終使用量。
 
-- **完整**（較舊的文件中稱為 XM 4.5 –） 非常類似的子集來 「 桌面 」 的 BCL，有幾個小型的移除。 由於目標 Framework 是幾乎完全相同，net45 （及更新版本），它可以輕鬆地使用許多的 nuget，不會提供任一 netstandard2，或特定 Xamarin.Mac 組建。 不過，由於 System.Configuration 使用量是與連結不相容。
+- **完整**（在舊版檔中稱為 XM 4.5）–與「桌面」 BCL 非常相似的子集，只有幾個小部分的移除。 當目標 Framework 與 net45 （及更新版本）幾乎完全相同時，它可以輕鬆地取用許多未提供 netstandard2 或特定 Xamarin 組建的 nuget。 不過，由於系統的設定使用方式，與連結不相容。
 
-- **不支援**（稱為系統較舊的文件中）-而是將連結至提供 Xamarin.Mac BCL，使用目前的系統安裝 mono。 這提供最完整的組件，包括一些已知會造成問題 (例如 System.Drawing)。 此選項只存在具有 「 最後的手段 」，並強烈建議使用它之前耗盡其他選項。 如同名稱所暗示，使用量被支援官方的支援管道。
+- **不支援**（在舊版檔中稱為系統）–您可以使用目前安裝的 mono，而不是連結至 Xamarin 所提供的 BCL。 這會提供一組最完整的元件，包括某些已知的問題（例如，System.object）。 此選項只會有「最後的手段」，強烈建議您在使用其他選項之前，先加以耗盡。 顧名思義，官方支援通道不支援使用方式。
 
 ## <a name="setting-the-target-framework"></a>設定目標 framework
 
-若要變更 Xamarin.Mac 專案的目標 Framework 類型，執行下列作業：
+若要變更為 Xamarin 專案的目標 Framework 類型，請執行下列動作：
 
 1. 在 Visual Studio for Mac 中開啟 Xamarin.Mac 專案。
-2. 在 [方案總管]  中，按兩下專案檔以開啟 [專案選項]  對話方塊。
-3. 從**一般**索引標籤上，選取的型別**目標 Framework** ，符合您的應用程式需求：
+2. 在 [方案總管] 中，按兩下專案檔以開啟 [專案選項] 對話方塊。
+3. 從 [**一般**] 索引標籤中，選取符合您應用程式需求的**目標架構**類型：
 
-    [![使用 [專案選項] 視窗來選擇目標 framework](target-framework-images/select-target-full.png "選擇目標 framework 中使用 [專案選項] 視窗")](target-framework-images/select-target-full-large.png#lightbox)
+    [![使用 [專案選項] 視窗選擇目標 framework](target-framework-images/select-target-full.png "使用 [專案選項] 視窗選擇目標 framework")](target-framework-images/select-target-full-large.png#lightbox)
 
-4. 按一下 [確定]  按鈕以儲存您的變更。
+4. 按一下 [確定] 按鈕以儲存您的變更。
 
-您應該**Clean** ，然後**重建**切換的目標 Framework 型別之後 Xamarin.Mac 專案。
+在切換目標 Framework 類型之後，您應該**清除**並**重建**您的 Xamarin. Mac 專案。
 
 ## <a name="summary"></a>總結
 
-本文簡要探討不同類型的目標架構 （基底類別程式庫） 供 Xamarin.Mac 應用程式，以及應該使用每一種架構的時候。
+本文簡要說明了 Xamarin. Mac 應用程式可使用的不同類型的目標 framework （基類庫），以及每一種類型的架構。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [iOS 和 Mac 共用的程式碼](~/cross-platform/macios/index.md)
+- [iOS 和 Mac 程式碼共用](~/cross-platform/macios/index.md)
 - [Unified API](~/cross-platform/macios/unified/index.md)
 - [可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)
 - [組件](~/cross-platform/internals/available-assemblies.md)

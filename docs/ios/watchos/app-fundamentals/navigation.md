@@ -4,15 +4,15 @@ description: 本文件說明如何使用 watchOS 應用程式中的導覽。 它
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: e0c70418849bdf394a00cd5f53744b0c01bc5794
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 7502998e8e8da5e011ef1ec0ab7dcc6e3d892d3d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889615"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70286045"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>使用 watchOS 在 Xamarin 中瀏覽
 

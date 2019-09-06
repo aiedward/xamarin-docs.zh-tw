@@ -1,122 +1,122 @@
 ---
-title: 偵測器安裝與需求
-description: 本文件說明如何安裝 Xamarin Inspector，並討論支援的作業系統、 Ide 及應用程式平台。
+title: Inspector 安裝和需求
+description: 本檔說明如何安裝 Xamarin Inspector，並討論支援的作業系統、Ide 和應用程式平臺。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 2bbf0bda42b7bce483d9d036ebf39314dcb73072
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1273a51d29d7abcbecb9b19ae42e111db8ccc06c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61373465"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292307"
 ---
-# <a name="inspector-installation-and-requirements"></a>偵測器安裝與需求
+# <a name="inspector-installation-and-requirements"></a>Inspector 安裝和需求
 
-## <a name="download-and-installation"></a>下載和安裝
+## <a name="download-and-installation"></a>下載並安裝
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-1. 下載並安裝[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) ，然後選取**使用.NET 進行行動開發**工作負載。
-1. [登入](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)以啟用您 Enterprise 訂用帳戶。
-1. [檢查](~/tools/inspector/inspect.md)自己的應用程式 ！
+1. 下載並安裝[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)並選取 [**使用 .net 進行行動開發**] 工作負載。
+1. 登入以啟用您的企業訂[用](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)帳戶。
+1. [檢查](~/tools/inspector/inspect.md)您自己的應用程式！
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
 1. 下載並安裝[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。
-1. [登入](https://docs.microsoft.com/visualstudio/mac/activation)以啟用您 Enterprise 訂用帳戶。
-1. [檢查](~/tools/inspector/inspect.md)自己的應用程式 ！
+1. 登入以啟用您的企業訂[用](https://docs.microsoft.com/visualstudio/mac/activation)帳戶。
+1. [檢查](~/tools/inspector/inspect.md)您自己的應用程式！
 
 -----
 
 ## <a name="requirements"></a>需求
 
-### <a name="supported-operating-systems"></a>Supported Operating Systems
+### <a name="supported-operating-systems"></a>支援的作業系統
 
 - **Mac** -OS X 10.11 或更新版本
-- **Windows** -Windows 7 或更新版本 (使用 Internet Explorer 11 或更新版本和.NET 4.6.1 或更新版本)
+- **Windows** -windows 7 或更新版本（包含 Internet Explorer 11 或更新版本，以及 .net 4.6.1 或更高版本）
 
 ### <a name="supported-ides"></a>支援的 Ide
 
 - Visual Studio for Mac
-- Visual Studio 2017**使用.NET 進行行動開發**工作負載
+- 使用 .NET 工作負載進行行動裝置**開發**Visual Studio 2017
 
-使用適用於企業客戶的即時應用程式檢查。
+即時應用程式檢查適用于企業客戶。
 
 <a name="supported-platforms" />
 
-### <a name="supported-app-platforms"></a>支援的應用程式平台
+### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
-|應用程式平台|IDE 支援|注意|
+|應用程式平臺|IDE 支援|注意|
 |--- |--- |--- |
-|Mac|只有在 Visual Studio for Mac 支援|
-|iOS|在 Visual Studio 2017 和 Visual Studio for Mac 支援| 連結器行為必須設為**不要連結**(底下**iOS 組建**專案選項) |
-|Android|在 Visual Studio 2017 和 Visual Studio for Mac 支援|Android 的目標必須 > = 4.0.3，with **fastdev**啟用。<br />必須使用 Google、 Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器可能不允許在此階段的檢查。|
-|WPF|只有在 Visual Studio 2017 中，|
+|Mac|僅 Visual Studio for Mac 中支援|
+|iOS|支援 Visual Studio 2017 和 Visual Studio for Mac| 連結器行為必須設定為 [**不要連結**] （在 [ **iOS 組建**專案] 選項底下） |
+|Android|支援 Visual Studio 2017 和 Visual Studio for Mac|必須以 Android > = 4.0.3 為目標，且已啟用**fastdev** 。<br />必須使用 Google、Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器目前可能不允許檢查。|
+|WPF|僅 Visual Studio 2017 中支援|
 
 <a name="reporting-bugs" />
 
-## <a name="reporting-bugs"></a>回報 Bug
+## <a name="reporting-bugs"></a>報告錯誤
 
-直接透過 Visual Studio，就應該報告錯誤：
+Bug 應該透過 Visual Studio 直接回報：
 
 - **協助 > 傳送意見反應 > 回報問題**
 
-請包含所有的下列資訊：
+請包含下列所有資訊：
 
-### <a name="platform-version-information"></a>平台的版本資訊
+### <a name="platform-version-information"></a>平臺版本資訊
 
-這項資訊非常重要。
+這是很重要的資訊。
 
-Visual Studio For Mac
+Mac 的 Visual Studio
 
 - **Visual Studio > 關於 Visual Studio > 顯示詳細資料 > 複製資訊**
-- 貼上錯誤報告
+- 貼入 bug 報告
 
 Visual Studio
 
-- **說明 > 關於 Visual Studio > 複製資訊**
-- 讓我們知道您的作業系統版本和您執行的 32 位元或 64 位元的 Windows。
+- **協助 > Visual Studio > 複製資訊**
+- 請讓我們知道您的作業系統版本，以及您是否執行32位或64位的 Windows。
 
 ### <a name="log-files"></a>記錄檔
 
-請務必附加 IDE 和偵測器的用戶端記錄檔。
+一律附加 IDE 和偵測器用戶端記錄檔。
 
-檢查用戶端
+偵測器用戶端
 
-- Mac: `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 1.4.x 也提供功能的能力，從主功能表中選取記錄檔中搜尋 (macOS) 或檔案總管 (Windows) 直接：
 
-- **協助 > 顯示記錄檔**
+- **說明 > 顯示記錄檔**
 
-Visual Studio For Mac
+Mac 的 Visual Studio
 
 - `~/Library/Logs/VisualStudio/7.0/Ide.log`
 
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Visual Studio 的內容**輸出**窗格也可能會有幫助。
+- [Visual Studio**輸出**] 窗格的內容可能也會有資訊。
 
 ### <a name="project-settings"></a>專案設定
 
-如果您可以將附加 **.csproj**對於想要檢查的專案，它會非常有幫助。 這是容易詢問有關個別設定。
+如果您可以為嘗試檢查的專案附加 **.csproj** ，這會非常有説明。 這比詢問個別設定更容易。
 
-也請確認您是在偵錯組態。
+此外，請確認您正在進行 [偵錯工具設定]。
 
 ### <a name="selected-devices"></a>選取的裝置
 
-適用於 Android 和 iOS，很重要，我們知道您正在偵錯在當您想要檢查哪些裝置。 我們需要知道：
+針對 Android 和 iOS，我們一定要知道您要在何時進行檢查的裝置。 我們需要知道：
 
 - 您的 IDE 中所示的裝置名稱
-- 您的裝置的 OS 版本
-- Android:請確認您使用的 x86 模擬器
-- Android:您是否使用模擬器平台為何？ Google 模擬器嗎？ Visual Studio Android 模擬器？ Xamarin Android Player？
-- 顯示與裝置在運作正常進行偵錯的應用程式？
-- 裝置是否有網路連線 （透過 web 瀏覽器的核取）？
+- 裝置的 OS 版本
+- 面向確認您使用的是 x86 模擬器
+- 面向您所使用的模擬器平臺為何？ Google 模擬器？ Visual Studio Android Emulator 嗎？ Xamarin Android Player？
+- 您正在偵測的應用程式是否會在裝置中正確顯示和運作？
+- 裝置是否具有網路連線能力（透過網頁瀏覽器檢查）？
 
 [client-bugs]: https://github.com/Microsoft/workbooks/issues/new

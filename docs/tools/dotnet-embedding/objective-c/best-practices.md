@@ -1,35 +1,35 @@
 ---
-title: .NET 內嵌適用於 OBJECTIVE-C 的最佳作法
-description: 這份文件描述使用.NET 內嵌 OBJECTIVE-C 的各種最佳做法 它討論公開 managed 程式碼的子集、 公開 chunkier API、 命名和更多功能。
+title: 適用于目標的 .NET 內嵌最佳做法-C
+description: 本檔說明使用 .NET 內嵌與目標-C 的各種最佳作法。 其中討論公開 managed 程式碼的子集、公開 chunkier API、命名等等。
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 33138b7858b8bc04a5be30f9fad1709e916f5575
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61364081"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285109"
 ---
-# <a name="net-embedding-best-practices-for-objective-c"></a>.NET 內嵌適用於 OBJECTIVE-C 的最佳作法
+# <a name="net-embedding-best-practices-for-objective-c"></a>適用于目標的 .NET 內嵌最佳做法-C
 
-這是草稿，可能不在同步功能目前支援工具。 我們希望這份文件會個別發展並最後比對的最後一個工具，也就是我們會建議在長期最佳方法不直接的因應措施。
+這是草稿，而且可能不會與此工具目前支援的功能同步。 我們希望這份檔會分開發展，最後才符合最終的工具，也就是我們建議長期的最佳方法，不是立即的因應措施。
 
-本文件的大型部分也適用於其他支援的語言。 不過所有提供的範例是在C#和 OBJECTIVE-C
+本檔的一大部分也適用于其他支援的語言。 不過，所有提供的範例C#都位於和目標-C 中。
 
 ## <a name="exposing-a-subset-of-the-managed-code"></a>公開 managed 程式碼的子集
 
-產生原生程式庫/架構包含呼叫每個受管理的 Api 所公開的 OBJECTIVE-C 程式碼。 您呈現多個 API （公開） 然後大原生_黏附_將成為程式庫。
+產生的原生程式庫/架構包含用來呼叫每個公開之 managed Api 的目標 C 程式碼。 您所呈現的 API 越多（設為公用），則原生的_膠水_程式庫會變大。
 
-它可能是個不錯的主意，若要建立不同且較小組件，以公開 （expose） 的必要的 Api 的原生程式開發人員。 該外觀也可讓您更充分掌控的可見度、 命名、 錯誤...檢查產生的程式碼。
+建立不同、較小的元件，只向原生開發人員公開必要的 Api，可能是個不錯的主意。 該外觀也能讓您更充分掌控可見度、命名、錯誤檢查 .。。產生的程式碼。
 
 ## <a name="exposing-a-chunkier-api"></a>公開 chunkier API
 
-沒有從機器碼轉換支付的價格為 managed （與上一步）。 因此，最好是公開_區塊，而不是多對話_Api 來原生開發人員，例如
+從原生轉換為受控（及備份）有一種費用。 因此，最好將_大量而非_多對話 api 公開給原生開發人員，例如
 
-**多對話**
+**聊天**
 
 ```csharp
 public class Person {
@@ -45,7 +45,7 @@ p.firstName = @"Sebastien";
 p.lastName = @"Pouliot";
 ```
 
-**區塊**
+**大量**
 
 ```csharp
 public class Person {
@@ -58,17 +58,17 @@ public class Person {
 Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 ```
 
-因為轉換數目較小的效能會更好。 它也需要較少的程式碼產生，因此這會產生較小原生程式庫也。
+由於轉換的數目較小，效能會比較好。 這也需要產生較少的程式碼，因此也會產生較小的原生程式庫。
 
 ## <a name="naming"></a>命名
 
-命名是兩個最困難的問題之一在電腦科學中，其他的快取無效判定 」 和 「 關閉 x 1 的錯誤。 希望.NET 內嵌可以免除您以外的所有命名。
+命名專案是電腦科學中兩個最困難的問題之一，另一個則是快取失效，而不是1個錯誤。 希望 .NET 內嵌可以保護您的所有，但不會命名。
 
 ### <a name="types"></a>型別
 
-Objective C 不支援命名空間。 一般情況下，其型別前面會加上 2 （適用於 Apple) 或 3 （適用於第 3 個合作對象） 字元的前置詞，例如`UIView`UIKit 的檢視，其代表此架構。
+目標-C 不支援命名空間。 一般來說，其類型前面會加上2（適用于 Apple）或3（適用于協力廠商）字元前置`UIView`詞，例如 UIKit 的 View （代表架構）。
 
-.NET 類型略過命名空間不可能因為它可能會重複，或令人混淆，名稱。 這可讓現有的.NET 類型很長例如
+若為 .NET 類型，則無法略過命名空間，因為它可能會引進重複或混亂的名稱。 這會讓現有的 .NET 類型非常長，例如
 
 ```csharp
 namespace Xamarin.Xml.Configuration {
@@ -76,19 +76,19 @@ namespace Xamarin.Xml.Configuration {
 }
 ```
 
-會使用類似：
+其使用方式如下：
 
 ```objc
 id reader = [[Xamarin_Xml_Configuration_Reader alloc] init];
 ```
 
-不過您可以重新公開的類型為：
+不過，您可以將類型重新公開為：
 
 ```csharp
 public class XAMXmlConfigReader : Xamarin.Xml.Configuration.Reader {}
 ```
 
-讓更多的 Objective C 方便使用，例如：
+讓它更容易使用，例如：
 
 ```objc
 id reader = [[XAMXmlConfigReader alloc] init];
@@ -96,20 +96,20 @@ id reader = [[XAMXmlConfigReader alloc] init];
 
 ### <a name="methods"></a>方法
 
-更好的.NET 名稱可能不適合 Objective C API。
+即使是良好的 .NET 名稱也可能不適合用于目標-C API。
 
-在 OBJECTIVE-C 中的命名慣例的不同.NET （而不是依照 pascal 命名法大小寫，更詳細的駝峰式大小寫）。
-請閱讀[程式碼撰寫方針的 Cocoa](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)。
+目標-C 中的命名慣例與 .NET （camel 大小寫，而不是 pascal 大小寫，更詳細）不同。
+請閱讀[Cocoa 的程式碼撰寫方針](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)。
 
-從 OBJECTIVE-C 開發人員的觀點來看，使用的方法`Get`前置詞表示您並未擁有此執行個體，亦即[取得規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)。
+從目標-C 開發人員的觀點來看，具有`Get`前置詞的方法表示您沒有擁有實例，也就是[取得規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)。
 
-此命名的規則在.NET GC 世界裡，有沒有相符項目使用的.NET 方法`Create`前置詞在.NET 中的行為相同。 然而，適用於 OBJECTIVE-C 開發人員，這通常表示您擁有傳回的執行個體，亦即[建立規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
+此命名規則在 .NET GC 世界中沒有相符的結果;具有`Create`前置詞的 .net 方法在 .net 中的行為會相同。 不過，對於目標-C 開發人員而言，這通常表示您擁有傳回的實例，也就是[建立規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
 
 ## <a name="exceptions"></a>例外狀況
 
-是相當常見，在.NET 中使用廣泛用來報告錯誤的例外狀況。 不過，它們是速度慢且不在 OBJECTIVE-C 中完全相同 可能的話您應該將它們隱藏 OBJECTIVE-C 開發人員。
+這在 .NET 中相當常見，可廣泛使用例外狀況來報告錯誤。 不過，它們的速度很慢，而且在目標-C 中並不完全相同。 可能的話，您應該從目標-C 開發人員隱藏它們。
 
-例如，.NET`Try`模式則很容易從 OBJECTIVE-C 程式碼使用：
+例如，.net `Try`模式會比從目標 C 程式碼更容易使用：
 
 ```csharp
 public int Parse (string number)
@@ -118,7 +118,7 @@ public int Parse (string number)
 }
 ```
 
-與
+何時
 
 ```csharp
 public bool TryParse (string number, out int value)
@@ -127,18 +127,18 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>內部的例外狀況 `init*`
+### <a name="exceptions-inside-init"></a>內的例外狀況`init*`
 
-在.NET 中的建構函式必須成功並傳回 (_希望_) 有效的執行個體或擲回例外狀況。
+在 .NET 中，函式必須成功並傳回（_希望_）有效的實例，或擲回例外狀況。
 
-相較之下，可讓 OBJECTIVE-C`init*`傳回`nil`時無法建立執行個體。 這是常見的但不是針對一般，模式，用於許多 Apple 的架構。 在某些情況下`assert`可以發生 （和終止目前的處理序）。
+`init*` 相反`nil`地，在無法建立實例時，目標-C 允許傳回。 這是許多 Apple 架構中使用的常見（但不是一般）模式。 在某些其他情況下`assert` ，可能會發生（並終止目前的進程）。
 
-產生器，請遵循相同`return nil`模式產生`init*`方法。 如果擲回 managed 例外狀況，則會列印 (使用`NSLog`) 和`nil`將傳回給呼叫者。
+產生器會針對所`return nil`產生`init*`的方法遵循相同的模式。 如果擲回 managed 例外狀況，則會將它列印（使用`NSLog`）， `nil`並將傳回給呼叫者。
 
 ## <a name="operators"></a>運算子
 
-Objective C 不允許運算子多載做為C#可行，因此這些會轉換成類別選取器。
+目標-C 不允許將運算子多載，因為C#它們會轉換成類別選取器。
 
-[「 易記 」](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)具名的方法產生而非運算子多載時找不到，而且可以產生以更容易取用的 API。
+「[易記](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)」命名的方法會在找到時以喜好設定的方式產生，並可產生更容易取用的 API。
 
-覆寫這些運算子的類別`==`和/或`!=`應該覆寫標準 Equals (Object) 方法。
+覆寫運算子`==`和/或`!=`的類別也應該覆寫標準 Equals （Object）方法。

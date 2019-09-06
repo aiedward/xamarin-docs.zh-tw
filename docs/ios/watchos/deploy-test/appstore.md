@@ -1,65 +1,65 @@
 ---
-title: WatchOS 應用程式部署至 App Store
-description: 本文件說明如何部署至 App Store 的 xamarin 建置的 watchOS 應用程式。 它探討發佈佈建設定檔和 iTunes Connect，並也提供疑難排解秘訣。
+title: 將 watchOS 應用程式部署至 App Store
+description: 本檔說明如何將以 Xamarin 建立的 watchOS 應用程式部署至 App Store。 它會探討發佈布建設定檔和 iTunes Connect，同時也提供一些疑難排解秘訣。
 ms.prod: xamarin
 ms.assetid: DBE16040-70D2-4F61-B5F3-C8D213DBC754
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 58e3593dc09c76439a3e128e51f354c169d7e72e
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 92ad0353268c414a1394e98a7b2d23d23dc4df07
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865971"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285369"
 ---
-# <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS 應用程式部署至 App Store
+# <a name="deploying-watchos-apps-to-the-app-store"></a>將 watchOS 應用程式部署至 App Store
 
 > [!IMPORTANT]
-> 請務必檢閱[Apple Watch 套件提交指南](https://developer.apple.com/app-store/watch/)，並查看[疑難排解](#troubleshooting)區段，您可能會有任何問題。
+> 請務必參閱[Apple 的監看式套件提交指南](https://developer.apple.com/app-store/watch/)，並查看[疑難排解](#troubleshooting)一節中您可能會遇到的任何問題。
 
-- 請確定您已：
-  - [**發佈佈建設定檔**](#provisioning)為您的專案建立的。
-  - **部署目標**(`MinimumOSVersion`) 的 iOS 父應用程式設定為**8.2**或更早版本 （不支援 8.3）。
+- 請確定您有：
+  - 為您的專案建立的發佈布建[**設定檔**](#provisioning)。
+  - IOS 父系應用程式`MinimumOSVersion`的**部署目標**（）已設定為**8.2**或更早版本（不支援8.3）。
 
-- 在  [ **iTunes Connect**](#iTunes_Connect):
+- 在[**ITunes Connect**](#iTunes_Connect)中：
 
-  - 建立您的 iOS 應用程式項目 (或新增**新版**現有的應用程式)。
-  - 新增監看式 圖示和螢幕擷取畫面。
+  - 建立您的 iOS 應用程式專案（或將**新版本新增**至現有的應用程式）。
+  - 新增監看式圖示和螢幕擷取畫面。
 
-- 然後在[Visual Studio for Mac](#xamarin_studio) （Visual Studio 目前不支援）：
+- 然後在[Visual Studio for Mac](#xamarin_studio) （Visual Studio 目前不受支援）：
 
-  - 以滑鼠右鍵按一下 iOS 應用程式，然後選擇 **設定為啟始專案**。
-  - 若要變更**App Store**組態。
-  - 使用**封存**功能建立應用程式封存檔。
+  - 以滑鼠右鍵按一下 iOS 應用程式，然後選擇 [**設定為啟始專案**]。
+  - 變更為**App Store**設定。
+  - 使用封存**功能建立**應用程式封存。
 
 - 最後，切換至[Xcode 6.2 +](#xcode)
 
-  - 移至**視窗中 > 組合管理**，然後選擇**封存**。
-  - 從清單中選取的應用程式和封存。
-  - （選擇性）**驗證...** 封存。
-  - **提交...** 封存和後續的步驟，將上傳至 iTunes Connect 進行審查與核准。
+  - 移至 [ **> 召集人] 視窗**，**然後選擇 [** 封存]。
+  - 從清單中選取應用程式和封存。
+  - 也**驗證 ...** 封存。
+  - **提交 ...** 封存並遵循上傳至 iTunes Connect 的步驟進行審查和核准。
 
-請閱讀以下這些項目與相關的特定提示。 請參閱[疑難排解](#troubleshooting)區段如果您有問題。
+閱讀下列與下列專案相關的特定提示。 如果您有任何問題，請參閱[疑難排解](#troubleshooting)一節。
 
 <a name="provisioning" />
 
-## <a name="distribution-provisioning-profiles"></a>發佈佈建設定檔
+## <a name="distribution-provisioning-profiles"></a>發佈布建設定檔
 
-若要建置應用程式市集部署，您必須建立**發佈佈建設定檔**方案中每個應用程式識別碼。
+若要建立 App Store 部署，您需要為解決方案中的每個應用程式識別碼建立發佈布建**設定檔**。
 
-如果您有萬用字元應用程式識別碼*只有一個的佈建設定檔必須*; 但如果您有個別的應用程式識別碼，針對每個專案，則您必須針對每個應用程式識別碼佈建設定檔：
+如果您有萬用字元應用程式識別碼，則*只需要一個布建設定檔*;但如果您的每個專案都有個別的應用程式識別碼，則您需要每個應用程式識別碼的布建設定檔：
 
 ![](appstore-images/provisioningprofile-distribution-sml.png "App Store 散發設定檔")
 
-一旦您已建立所有的三個設定檔，即會顯示在清單中。 請務必下載並安裝每個 （藉由按兩下）：
+一旦您建立了這三個設定檔，它們就會出現在清單中。 請記得下載並安裝每一個檔案（藉由在上面按兩下）：
 
-![](appstore-images/provisioningprofiles-sml.png "可用的設定檔清單")
+![](appstore-images/provisioningprofiles-sml.png "可用的配置檔案清單")
 
-您可以在佈建設定檔，確認**專案選項**藉由選取**建置 > iOS 套件組合簽署**畫面，然後選取**AppStore | iPhone**組態設定。
+您可以選取 **組建 > iOS**套件組合簽署 畫面，然後選取  **AppStore | iPhone**設定，以確認**專案選項**中的布建設定檔。
 
-**佈建設定檔**清單會顯示所有相符的設定檔-您應該會看到您已在此下拉式清單中的比對設定檔。
+[布建**設定檔**] 清單會顯示所有相符的設定檔，您應該會看到您在此下拉式清單中建立的相符設定檔。
 
 ![](appstore-images/options-selectprofile-sml.png "[IOS 套件組合簽署] 對話方塊")
 
@@ -67,76 +67,76 @@ ms.locfileid: "67865971"
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
-請遵循[應用程式散發概觀](~/ios/deploy-test/app-distribution/index.md)，特別是：
+請遵循[應用程式散發總覽](~/ios/deploy-test/app-distribution/index.md)，特別是：
 
 - [在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [發行至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
-當在 iTunes Connect 中設定應用程式，別忘了將監看式 圖示和螢幕擷取畫面：
+在 iTunes Connect 中設定應用程式時，別忘了新增監看式圖示和螢幕擷取畫面：
 
-![](appstore-images/itunesconnect-watch-sml.png "監看式 圖示，在 iTunes Connect 中的螢幕擷取畫面")
+![](appstore-images/itunesconnect-watch-sml.png "ITunes Connect 中的監看式圖示和螢幕擷取畫面")
 
-圖示檔應該是 1024 x 1024 像素，並將會有循環的遮罩出現時套用。 圖示不應該有 alpha 色頻。
+圖示檔案應該是1024x1024 圖元，而且會在顯示時套用迴圈遮罩。 圖示不應該有 Alpha 色板。
 
-至少一個螢幕擷取畫面是必要的可能會提交最多五個。
-它們應該是 312 x 390 像素，並示範 Watch 應用程式中的動作。
-您可以使用 42 mm 監看式模擬器，以便在這種大小的螢幕擷取畫面。
+至少需要一個螢幕擷取畫面，最多可以提交五個。
+它們應該是312x390 圖元，並示範監看式應用程式的實際運作。
+您可以使用 42mm watch 模擬器，以這種大小來拍螢幕擷取畫面。
 
 
 <a name="xamarin_studio" />
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-1. 請確定啟動專案為 iOS 應用程式。 如果沒有，以滑鼠右鍵按一下 設定它：
+1. 確認 iOS 應用程式是啟始專案。 如果沒有，請按一下滑鼠右鍵加以設定：
 
    ![](appstore-images/xs-startup.png "設定啟始專案")
 
-2. 選擇**AppStore**建置組態：
+2. 選擇 [ **AppStore**組建設定]：
 
-   ![](appstore-images/xs-appstore.png "AppStore 組建組態")
+   ![](appstore-images/xs-appstore.png "AppStore 組建設定")
 
-3. 選擇**建置 > 封存**功能表項目，以啟動 封存處理序：
+3. 選擇 [**組建 >** 封存] 功能表項目，以啟動封存程式：
 
-   ![](appstore-images/xs-archive.png "[建置] 功能表")
+   ![](appstore-images/xs-archive.png "[組建] 功能表")
 
-您也可以選擇**檢視 > 封存...** 功能表項目，請參閱先前建立的封存。
+您也可以選擇 [ **View > 封存 ...** ] 功能表項目，以查看先前建立的封存。
 
-  ![](appstore-images/xs-archives-sml.png "[封存] 檢視")
+  ![](appstore-images/xs-archives-sml.png "封存視圖")
 
 <a name="xcode" />
 
 ## <a name="xcode"></a>Xcode
 
-Xcode 會自動顯示在 Visual Studio for mac 中建立的封存
+Xcode 會自動顯示 Visual Studio for Mac 中建立的封存。
 
-1. 啟動 Xcode，然後選擇**視窗中 > 組合管理**:
+1. 啟動 Xcode，然後選擇 [ **Window > 召集人]** ：
 
    ![](appstore-images/xc-organizer.png "[視窗] 功能表")
 
-2. 若要切換**封存**索引標籤，然後選取 使用 Visual Studio for Mac 中建立的封存：
+2. 切換至 [**保存] 索引標籤，然後**選取使用 Visual Studio for Mac 建立的封存：
 
    ![](appstore-images/xc-archives.png "[封存] 索引標籤")
 
-3. 選擇性地**驗證...** 封存，然後選擇 **提交...** 來上傳至 iTunes Connect 的應用程式。
+3. 選擇性地**驗證 ...** 封存，然後選擇 [**提交**]，將應用程式上傳至 iTunes Connect。
 
-4. （如果您隸屬於多個），請選擇開發小組，然後確認 送出作業：
+4. 選擇 [開發小組] （如果您屬於一個以上），然後確認提交：
 
-   ![](appstore-images/xc-submit1.png "開發小組區段")
+   ![](appstore-images/xc-submit1.png "開發小組一節")
 
-5. 請瀏覽 iTunes Connect，以查看已上傳二進位檔。 移至您的應用程式設定 頁面，然後選擇**發行前版本**從上方的功能表，以查看**建置**清單：
+5. 再次流覽 iTunes Connect 以查看已上傳的二進位檔。 移至您應用程式的 [設定] 頁面，然後從頂端功能表中選擇 [**發行**前版本]，以查看**組建**清單：
 
-   [![](appstore-images/itc-prerelease-sml.png "在 iTunes Connect 中的 [應用程式組態] 頁面")](appstore-images/itc-prerelease.png#lightbox)
+   [![](appstore-images/itc-prerelease-sml.png "ITunes Connect 中的應用程式設定頁面")](appstore-images/itc-prerelease.png#lightbox)
 
-然後，您可以將核准的應用程式提交上**版本**頁面。 請參閱[iOS 應用程式散發概觀](~/ios/deploy-test/app-distribution/index.md)如需詳細資訊。
+然後，您可以在 [**版本**] 頁面上提交要核准的應用程式。 如需詳細資訊，請參閱[iOS 應用程式散發總覽](~/ios/deploy-test/app-distribution/index.md)。
 
 
 ## <a name="troubleshooting"></a>疑難排解
 
-以下是一些在提交至 App Store，並加以修正，您可以採取的步驟時可能會遇到的錯誤。
+以下是您在提交至 App Store 時可能會遇到的一些錯誤，以及您可以採取的步驟來修正它們。
 
-### <a name="archive-menu-option-is-not-visible-in-visual-studio-for-mac"></a>Visual Studio for Mac 中看不到 [封存] 功能表選項
+### <a name="archive-menu-option-is-not-visible-in-visual-studio-for-mac"></a>[封存] 功能表選項不會顯示在 Visual Studio for Mac
 
-請遵循[上述步驟](#xamarin_studio)若要設定之解決方案的封存。 如果您不能正確地設定啟始專案，請確定組建組態先設為偵錯或發行之前嘗試變更啟始專案。 然後將設定組建組態回**AppStore**。
+請遵循[上述步驟](#xamarin_studio)來設定封存的解決方案。 如果您無法正確設定啟始專案，請確定組建設定在嘗試變更啟始專案之前，先設為 [Debug] 或 [Release]。 然後將組建設定設回**AppStore**。
 
 ### <a name="invalid-icon"></a>無效圖示
 
@@ -146,9 +146,9 @@ contains an icon file '...watchkitextension.appex/WatchApp.app/AppIcon27.5x27.5@
 with an alpha channel. Icons should not have an alpha channel.
 ```
 
-請遵循[指示移除 alpha 色頻](~/ios/watchos/troubleshooting.md)從您的圖示。
+請依照[指示，](~/ios/watchos/troubleshooting.md)從您的圖示中移除 Alpha 色板。
 
-### <a name="cfbundleversion-mismatch"></a>CFBundleVersion 不相符
+### <a name="cfbundleversion-mismatch"></a>CFBundleVersion 不符
 
 ```csharp
 CFBundleVersion Mismatch. The CFBundleVersion value '1' of watch application
@@ -156,54 +156,54 @@ CFBundleVersion Mismatch. The CFBundleVersion value '1' of watch application
 value '1.0' of its containing iOS application `YouriOS.app`.
 ```
 
--IOS 應用程式、 監看式延伸模組，以及監看式應用程式-您方案中的所有專案都應該都使用相同的版本號碼。 編輯每個**Info.plist**檔案，以便完全符合的版本號碼。
+解決方案中的所有專案（iOS 應用程式、監看式擴充功能和監看式應用程式）都應使用相同的版本號碼。 編輯每個**plist**檔案，讓版本號碼完全相符。
 
-### <a name="missing-icons"></a>缺少圖示
+### <a name="missing-icons"></a>遺漏圖示
 
 ```csharp
 Missing Icons. No icons found for watch application '...watchkitextension.appex/WatchApp.app'.
 Please make sure that its Info.plist file includes entries for CFBundleIconFiles.
 ```
 
-請依照下列中的指示[使用圖示](~/ios/watchos/app-fundamentals/icons.md)Watch 應用程式專案中加入所需的影像。
+遵循[使用圖示](~/ios/watchos/app-fundamentals/icons.md)中的指示，將所有必要的影像新增至 Watch 應用程式專案。
 
-### <a name="missing-icon"></a>缺少圖示
+### <a name="missing-icon"></a>遺失圖示
 
 ```csharp
 Missing Icon. The watch application '...watchkitextension.appex/WatchApp.app'
 is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 ```
 
-請確定您有最新版本的 Visual Studio for Mac，且您**AppIcon.appiconset**包含一組完整的映像。 如果您仍然看到此錯誤，檢視的來源**Contents.json**以確認它包含所有必要的映像的項目。 或者，確定您使用最新版的 Xamarin，一旦刪除並重新建立**AppIcon.appiconset**。
+請確定您有最新版本的 Visual Studio for Mac，而且您的**appicons.appiconset**包含一組完整的影像。 如果您仍然看到此錯誤，請查看**內容**的來源，以確認它包含所有必要映射的專案。 或者，一旦確定您使用的是最新版本的 Xamarin，請刪除並重新建立**appicons.appiconset**。
 
 > [!IMPORTANT]
-> 沒有已知的 bug 在 Visual Studio for Mac 的監看式 圖示支援： 預期應為 88 x 88 像素映像 **29x29@3x** 映像 （這應該是 87 x 87 像素為單位）。
+> Visual Studio for Mac 的監看式圖示支援有已知的錯誤：它預期 **29x29@3x** 影像的88x88 圖元影像（應該是87x87 圖元）。
 
 
-您無法修正此問題在 Visual Studio for Mac-影像資產在 Xcode 中編輯，或以手動方式編輯**Contents.json**檔案 (比對[本例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132))。
+您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯映射資產，或手動編輯**內容 json**檔案（以符合[此範例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)）。
 
 
 
-### <a name="invalid-watchkit-support"></a>無效的 WatchKit 支援
+### <a name="invalid-watchkit-support"></a>不正確 WatchKit 支援
 
 ```csharp
 Invalid WatchKit Support - The bundle contains an invalid implementation of WatchKit.
 The app may have been built or signed with non-compliant or pre-release tools.
 ```
 
-此訊息可能出現顯然成功上傳之後，從 iTunes Connect 期間驗證和提交，或在自動化的電子郵件。
+這則訊息可能會在驗證和提交期間出現，或在顯然成功上傳之後，從 iTunes Connect 的自動化電子郵件中顯示。
 <!--
 Ensure you are using the latest version of Xcode and Xamarin's tools.
 -->
 > [!IMPORTANT]
-> 您必須**封存**Visual Studio for Mac 然後再切換到 Xcode 6.2 + 來驗證和上傳至 iTunes Connect 中的應用程式。
+> 您必須在 Visual Studio for Mac 中封存**您的應用**程式，然後切換至 Xcode 6.2 + 以驗證並上傳至 iTunes Connect。
 
 
-使用 Xamarin 穩定通道和 Xcode 6.2 +。
+使用穩定的 Xamarin 通道和 Xcode 6.2 +。
 
 
 
-### <a name="invalid-provisioning-profile"></a>無效的佈建設定檔
+### <a name="invalid-provisioning-profile"></a>布建設定檔無效
 
 ```csharp
 Invalid Provisioning Profile. The provisioning profile included in the bundle
@@ -211,9 +211,9 @@ Invalid Provisioning Profile. The provisioning profile included in the bundle
 is invalid. [Missing code-signing certificate.]
 ```
 
-**發佈佈建設定檔**必須提供可以在監看式應用程式方案中的所有三個專案： iOS 應用程式、 監看式延伸模組，以及監看式應用程式-可能是明確 （三個設定檔） 或透過單一萬用字元設定檔。 請檢查佈建設定檔是否存在於 iOS 開發人員中心和您已下載，並將資料新增到您的 mac。
+在監看式應用程式解決方案中，所有三個專案都必須提供發佈布建**設定檔**： IOS 應用程式、監看式擴充功能和監看式應用程式-明確（三個設定檔）或透過單一萬用字元設定檔。 檢查布建設定檔是否存在於 iOS 開發人員中心，並已下載並新增至您的 Mac。
 
-### <a name="invalid-code-signing-entitlements"></a>無效的程式碼簽署權利
+### <a name="invalid-code-signing-entitlements"></a>不正確程式碼簽署權利
 
 ```csharp
 ITMS-90046: Invalid Code Signing Entitlements. Your application bundle's signature contains
@@ -223,26 +223,26 @@ is not supported. The value should be a string startign with your TEAMID, follow
 by a dot '.' followed by the bundle identifier.
 ```
 
-請確定您的佈建設定檔會在 Apple 開發人員中心上正確設定，且您已下載並安裝它們。 也請檢查 Visual Studio 中設定的每個專案的 Mac 的 [屬性] 視窗。
+請確定您已在 Apple 開發人員中心正確設定您的布建設定檔，並已下載並安裝它們。 此外，也請檢查它們是否已在 Visual Studio for Mac 的 [屬性] 視窗中針對每個專案設定。
 
-### <a name="invalid-architecture"></a>無效的架構
+### <a name="invalid-architecture"></a>不正確架構
 
 ```csharp
 Invalid architecture: Apps that include an app extension
 and framework must support arm64.
 ```
 
-您只能新增監看式應用程式[統一的 API （64 位元）](~/cross-platform/macios/unified/index.md) Xamarin.iOS 應用程式。
-以滑鼠右鍵按一下 iOS 應用程式專案，然後移至**選項 > 建置 > iOS 組建 > 進階 索引標籤**，並確定**支援的架構**AppStore iphone 組態包括**ARM64** （例如。 **ARMv7 + ARM64**)。
+您只能新增監看式應用程式[Unified API （64位）](~/cross-platform/macios/unified/index.md) Xamarin iOS 應用程式。
+以滑鼠右鍵按一下 iOS 應用程式專案，然後移至 [**選項] > 組建 > IOS 組建 > [Advanced]** 索引標籤，並確定 AppStore-IPhone 設定**支援的架構**包含**ARM64** （例如 **ARMv7 + ARM64**）。
 
-### <a name="this-bundle-is-invalid"></a>此搭售方案無效。
+### <a name="this-bundle-is-invalid"></a>此組合無效。
 
 ```csharp
 ITMS-90068: This bundle is invalid. The value provided for the key
 MinimumOSVersion '8.3' is not acceptable.
 ```
 
-父代的 iOS 應用程式必須設定 '8.2' 或更早 MinimumOSVersion。
+您的父系 iOS 應用程式必須將 MinimumOSVersion 設為 ' 8.2 ' 或更早的版本。
 
 ### <a name="non-public-api-usage"></a>非公用 API 使用方式
 
@@ -251,16 +251,16 @@ Your app contains non-public API usage.
 Please review the errors, and resubmit your application.
 ```
 
-請確定您使用最新版的 Xcode 及 Xamarin 的工具。
-您的程式碼不應該存取的任何非公用 Api。
+請確定您使用的是最新版本的 Xcode 和 Xamarin 工具。
+您的程式碼不應存取任何非公用 Api。
 
-### <a name="build-error-mt5309"></a>建置錯誤 MT5309
+### <a name="build-error-mt5309"></a>組建錯誤 MT5309
 
 ```csharp
 Error MT5309: Native linking error: clang: error: no such file or directory:
 ```
 
-此錯誤可能是因為您需要重新命名您的 Xcode 安裝從**Xcode.app**。 比方說，如果您重新命名您的安裝以將會發生此錯誤**XCode 6.2.app**。
+此錯誤可能是因為您已從**Xcode**重新命名 Xcode 安裝所導致。 比方說，如果您將安裝重新命名為**XCode 6.2. 應用程式**，就會發生此錯誤。
 
 
 

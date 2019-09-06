@@ -1,36 +1,36 @@
 ---
 title: Xamarin 中的國際化編碼
-description: 本檔說明在 Xamarin 中的國際化編碼, 討論可用的編碼方式, 以及如何將它們新增至應用程式。
+description: 本檔說明在 Xamarin 中的國際化編碼，討論可用的編碼方式，以及如何將它們新增至應用程式。
 ms.prod: xamarin
 ms.assetid: F5117294-28BB-4583-B6A0-A339B050FDE1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/28/2017
-ms.openlocfilehash: fee3e4d409302204a218a18b52cf51fc46249e95
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: a5430407798dd556532b2cacf592439acc7c02be
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527047"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290131"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin 中的國際化編碼
 
-根據預設, 所有編碼都不會包含在 Xamarin. iOS 類別庫中。
+根據預設，所有編碼都不會包含在 Xamarin. iOS 類別庫中。
 
-為了減少應用程式的大小, Xamarin 不會包含任何特定的編碼, 而且您必須指示 mtouch 包含包含所需編碼支援的元件。
+為了減少應用程式的大小，Xamarin 不會包含任何特定的編碼，而且您必須指示 mtouch 包含包含所需編碼支援的元件。
 
-做法是在 Visual Studio for Mac 或 Visual Studio 的 [iOS 組建]/[高級] 窗格中選取額外的編碼方式:
+做法是在 Visual Studio for Mac 或 Visual Studio 的 [iOS 組建]/[高級] 窗格中選取額外的編碼方式：
 
  [![](encodings-images/00.png "選取額外的編碼方式")](encodings-images/00.png#lightbox)
 
  [![](encodings-images/00a.png "選取額外的編碼方式")](encodings-images/00a.png#lightbox)
 
-您可以選取下列其中一項:
+您可以選取下列其中一項：
 
-- cjk: 適用于 Chineese、日文和韓文
+- cjk：適用于 Chineese、日文和韓文
 - 務必阿拉伯文、希伯來文、土耳其文和 Latin5。
-- 另一方面斯拉夫文, 波羅語, 越南文, 烏克蘭和泰文
+- 另一方面斯拉夫文，波羅語，越南文，烏克蘭和泰文
 - 比較EBCDIC 編碼和其他罕見字碼頁
 - west拉丁語言、復活節和西歐
 - all

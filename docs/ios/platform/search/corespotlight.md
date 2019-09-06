@@ -1,28 +1,28 @@
 ---
 title: 在 Xamarin 中使用核心焦點進行搜尋
-description: 本檔說明如何在 Xamarin iOS 應用程式中使用核心焦點, 以提供應用程式內內容的連結。 它討論如何建立、還原、更新和刪除可搜尋的專案。
+description: 本檔說明如何在 Xamarin iOS 應用程式中使用核心焦點，以提供應用程式內內容的連結。 它討論如何建立、還原、更新和刪除可搜尋的專案。
 ms.prod: xamarin
 ms.assetid: 1374914C-0F63-41BF-BD97-EBCEE86E57B1
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 6b89b8e681cf0bd3715e2fb80ca794e594875d8c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 845257bc11d24865a01a992e99d39ad6c578b42c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227378"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291465"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>在 Xamarin 中使用核心焦點進行搜尋
 
-核心焦點是適用于 iOS 9 的新架構, 呈現類似資料庫的 API, 可新增、編輯或刪除應用程式內內容的連結。 使用核心焦點新增的專案, 將會在 iOS 裝置上的焦點搜尋中提供。
+核心焦點是適用于 iOS 9 的新架構，呈現類似資料庫的 API，可新增、編輯或刪除應用程式內內容的連結。 使用核心焦點新增的專案，將會在 iOS 裝置上的焦點搜尋中提供。
 
-如需可使用核心焦點編制索引之內容類型的範例, 請參閱 Apple 的訊息、郵件、行事曆和便箋應用程式。 他們目前使用核心焦點來提供搜尋結果。
+如需可使用核心焦點編制索引之內容類型的範例，請參閱 Apple 的訊息、郵件、行事曆和便箋應用程式。 他們目前使用核心焦點來提供搜尋結果。
 
 ## <a name="creating-an-item"></a>建立專案
 
-以下範例會建立專案, 並使用核心焦點將其編制索引:
+以下範例會建立專案，並使用核心焦點將其編制索引：
 
 ```csharp
 using CoreSpotlight;
@@ -45,13 +45,13 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 });
 ```
 
-這項資訊會在搜尋結果中顯示如下:
+這項資訊會在搜尋結果中顯示如下：
 
 [![](corespotlight-images/corespotlight01.png "核心焦點搜尋結果總覽")](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>還原專案
 
-當使用者透過應用程式的核心焦點來點擊新增至搜尋結果的專案時, `AppDelegate`會呼叫方法`ContinueUserActivity` (此`NSUserActivity`方法也會用於)。 例如：
+當使用者透過應用程式的核心焦點來點擊新增至搜尋結果的專案時， `AppDelegate`會呼叫方法`ContinueUserActivity` （此`NSUserActivity`方法也會用於）。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -74,22 +74,22 @@ public override bool ContinueUserActivity (UIApplication application,
 }
 ```
 
-請注意, 這次我們要檢查的活動是否具有`ActivityType`的`CSSearchableItem.ActionType`。
+請注意，這次我們要檢查的活動是否具有`ActivityType`的`CSSearchableItem.ActionType`。
 
 ## <a name="updating-an-item"></a>更新專案
 
-在某些情況下, 必須修改以核心焦點建立的索引項目, 例如, 需要變更標題或縮圖影像。 若要進行這種變更, 我們使用與最初建立索引時所使用的相同方法。
-我們會使用與`CSSearchableItem`建立專案時所用的相同識別碼來建立新的, 並附加`CSSearchableItemAttributeSet`包含修改屬性的新:
+在某些情況下，必須修改以核心焦點建立的索引項目，例如，需要變更標題或縮圖影像。 若要進行這種變更，我們使用與最初建立索引時所使用的相同方法。
+我們會使用與`CSSearchableItem`建立專案時所用的相同識別碼來建立新的，並附加`CSSearchableItemAttributeSet`包含修改屬性的新：
 
 [![](corespotlight-images/corespotlight02.png "更新專案總覽")](corespotlight-images/corespotlight02.png#lightbox)
 
-當此專案寫入至可搜尋的索引時, 會以新的資訊更新現有的專案。
+當此專案寫入至可搜尋的索引時，會以新的資訊更新現有的專案。
 
 ## <a name="deleting-an-item"></a>刪除專案
 
-當不再需要索引項目目時, 核心焦點會提供多種方法來加以刪除。
+當不再需要索引項目目時，核心焦點會提供多種方法來加以刪除。
 
-首先, 您可以依識別碼刪除專案, 例如:
+首先，您可以依識別碼刪除專案，例如：
 
 ```csharp
 // Delete Items by ID
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-接下來, 您可以依功能變數名稱刪除索引項目的群組。 例如：
+接下來，您可以依功能變數名稱刪除索引項目的群組。 例如：
 
 ```csharp
 // Delete by Domain Name
@@ -113,7 +113,7 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteWithDomain(new string[]{"domain-n
 });
 ```
 
-最後, 您可以使用下列程式碼刪除所有索引項目:
+最後，您可以使用下列程式碼刪除所有索引項目：
 
 ```csharp
 // Delete all index items
@@ -127,11 +127,11 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 
 ## <a name="additional-core-spotlight-features"></a>其他核心焦點功能
 
-核心焦點具有下列功能, 可協助您保持索引的精確度和最新狀態:
+核心焦點具有下列功能，可協助您保持索引的精確度和最新狀態：
 
-- **批次更新支援**-如果您的應用程式需要同時建立或修改大型索引群組, 則可以在單一呼叫中, 將整個批次`Index`傳送至`CSSearchableIndex`類別的方法。
+- **批次更新支援**-如果您的應用程式需要同時建立或修改大型索引群組，則可以在單一呼叫中，將整個批次`Index`傳送至`CSSearchableIndex`類別的方法。
 - **回應索引變更**–使用您的`CSSearchableIndexDelegate`應用程式可以回應可搜尋索引中的變更和通知。
-- 套用**資料保護**–使用資料保護類別, 您可以在使用核心焦點新增至可搜尋索引的專案上, 執行安全性。
+- 套用**資料保護**–使用資料保護類別，您可以在使用核心焦點新增至可搜尋索引的專案上，執行安全性。
 
 
 

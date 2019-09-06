@@ -1,30 +1,30 @@
 ---
 title: 使用 Xamarin 建立 tvOS 使用者介面
-description: 一般使用者體驗 (UX) 涵蓋範圍包含使用者介面 (UI) 控制項, 在使用 tvOS 時, 請使用 Xcode 的 Interface Builder 和 UX 設計原則。
+description: 一般使用者體驗（UX）涵蓋範圍包含使用者介面（UI）控制項，在使用 tvOS 時，請使用 Xcode 的 Interface Builder 和 UX 設計原則。
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 1029f1b99e37899bf1ab33a25fc070c565223954
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 9d83be4eec793f571fe3d308c80ca9c023828f56
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649021"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288913"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>使用 Xamarin 建立 tvOS 使用者介面
 
-_一般使用者體驗 (UX) 涵蓋範圍包含使用者介面 (UI) 控制項, 在使用 tvOS 時, 請使用 Xcode 的 Interface Builder 和 UX 設計原則。_
+_一般使用者體驗（UX）涵蓋範圍包含使用者介面（UI）控制項，在使用 tvOS 時，請使用 Xcode 的 Interface Builder 和 UX 設計原則。_
 
-在以 Xamarin C#為基礎的 tvOS 中使用和 .net 時, 您可以存取開發人員在目標-C 或 Swift 和 Xcode 中工作的相同使用者介面控制項。 Xcode 的 Interface Builder 可以用來建立和維護您的使用者介面 (或選擇直接在程式碼C#中建立)。
+在以 Xamarin C#為基礎的 tvOS 中使用和 .net 時，您可以存取開發人員在目標-C 或 Swift 和 Xcode 中工作的相同使用者介面控制項。 Xcode 的 Interface Builder 可以用來建立和維護您的使用者介面（或選擇直接在程式碼C#中建立）。
 
-下列指南提供有關在 tvOS 應用程式中使用 tvOS UI 元素的詳細資訊。 強烈建議您先完成[Hello, tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md), 因為它涵蓋了我們將在每篇文章中使用的重要概念和技巧。
+下列指南提供有關在 tvOS 應用程式中使用 tvOS UI 元素的詳細資訊。 強烈建議您先完成[Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)，因為它涵蓋了我們將在每篇文章中使用的重要概念和技巧。
 
 ## <a name="working-with-alertsiostvosuser-interfacealertsmd"></a>[使用警示](~/ios/tvos/user-interface/alerts.md)
 
-本文涵蓋`UIAlertController`如何使用, 在 tvOS 中向使用者顯示警示訊息。
+本文涵蓋`UIAlertController`如何使用，在 tvOS 中向使用者顯示警示訊息。
 
 ## <a name="working-with-buttonsiostvosuser-interfacebuttonsmd"></a>[使用按鈕](~/ios/tvos/user-interface/buttons.md)
 
@@ -78,4 +78,4 @@ _一般使用者體驗 (UX) 涵蓋範圍包含使用者介面 (UI) 控制項, �
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS 人力介面指南](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS 應用程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
-- [使用 Xamarin 建立適用于 tvOS 的應用程式 (影片)](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)
+- [使用 Xamarin 建立適用于 tvOS 的應用程式（影片）](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)
