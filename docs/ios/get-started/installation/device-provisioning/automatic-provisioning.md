@@ -4,16 +4,16 @@ description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就�
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 4f5c28c4ad9b673ac50b404e7d34f718366bd11d
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.openlocfilehash: bb8a969a930f2e169d19738ddaafab04a4e8a057
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121456"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287350"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自動佈建
 
@@ -39,7 +39,7 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 ## <a name="enabling-automatic-signing"></a>啟用自動簽署
 
-在您啟動自動簽署程序之前，應該先確定已在 Visual Studio 中新增應用程式識別碼，如 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述。 新增「應用程式識別碼」之後，您可以使用任何關聯的「小組」  。 這可讓您針對小組建立憑證、設定檔及其他識別碼。 小組識別碼也會用來建立將包含在佈建設定檔中之「應用程式識別碼」的前置詞。 有了這項資訊，便可讓 Apple 驗證您與所宣稱的身分識別相符。
+在您啟動自動簽署程序之前，應該先確定已在 Visual Studio 中新增應用程式識別碼，如 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述。 新增「應用程式識別碼」之後，您可以使用任何關聯的「小組」。 這可讓您針對小組建立憑證、設定檔及其他識別碼。 小組識別碼也會用來建立將包含在佈建設定檔中之「應用程式識別碼」的前置詞。 有了這項資訊，便可讓 Apple 驗證您與所宣稱的身分識別相符。
 
 > [!IMPORTANT]
 > 開始之前，請務必登入 [iTunes Connect](https://itunesconnect.apple.com/) 或 [appleid.apple.com](https://appleid.apple.com)，以檢查您是否已經接受最新的 Apple 帳戶原則。 如果出現提示，請完成步驟，以接受來自 Apple 的任何新帳戶合約。 如果您不接受自 2018 年 5 月起的隱私權合約，即會在嘗試佈建裝置時看到下列其中一個警示：
@@ -64,11 +64,11 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 2. 開啟 **Info.plist** 檔案。
 
-3. 在 [簽署]  區段，選取 [自動佈建]  ：
+3. 在 [簽署] 區段，選取 [自動佈建]：
 
     ![[小組] 選取器下拉式清單](automatic-provisioning-images/image2.png)
 
-4. 從 [小組]  下拉式清單中選取您的小組。
+4. 從 [小組] 下拉式清單中選取您的小組。
 
 5. 幾秒鐘之後，就會建立「簽署憑證」和「佈建設定檔」：
 
@@ -80,13 +80,13 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 1. 依[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述配對 Visual Studio 2019 和 Mac。
 
-2. 在**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [屬性]  。 接著瀏覽到 [iOS 套件組合簽署]  索引標籤。
+2. 在**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [屬性]。 接著瀏覽到 [iOS 套件組合簽署] 索引標籤。
 
-3. 選取 [自動佈建]  配置：
+3. 選取 [自動佈建] 配置：
 
     ![選取自動配置](automatic-provisioning-images/prov4.png)
 
-4. 從 [小組]  下拉式方塊選取您的小組，啟動自動簽署程序。
+4. 從 [小組] 下拉式方塊選取您的小組，啟動自動簽署程序。
 
     ![選取小組](automatic-provisioning-images/prov3.png)
 
@@ -101,12 +101,12 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 啟用自動簽署之後，Visual Studio for Mac 將會在發生下列任何情況時，視需要更新這些成品：
 
 - 您的 Mac 上插入了 iOS 裝置
-    - 這會自動檢查以了解該裝置是否已在 Apple Developer Portal (Apple 開發人員入口網站) 上註冊。 如果未註冊，就會新增它並產生一個包含它的新佈建設定檔。
+  - 這會自動檢查以了解該裝置是否已在 Apple Developer Portal (Apple 開發人員入口網站) 上註冊。 如果未註冊，就會新增它並產生一個包含它的新佈建設定檔。
 - 您應用程式的「套件組合識別碼」已變更
-    - 這會更新應用程式識別碼。 系統會建立包含此應用程式識別碼的新佈建設定檔。
+  - 這會更新應用程式識別碼。 系統會建立包含此應用程式識別碼的新佈建設定檔。
 - 在 Entitlements.plist 檔案中啟用了支援的功能。
-    - 系統會將此功能新增至應用程式識別碼，並產生一個含有此更新過之應用程式識別碼的新佈建設定檔。
-    - 目前並非所有功能都受到支援。 如需有關所支援功能的詳細資訊，請參閱[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
+  - 系統會將此功能新增至應用程式識別碼，並產生一個含有此更新過之應用程式識別碼的新佈建設定檔。
+  - 目前並非所有功能都受到支援。 如需有關所支援功能的詳細資訊，請參閱[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
 
 ## <a name="wildcard-app-ids"></a>萬用字元應用程式識別碼
 

@@ -4,15 +4,15 @@ description: 本檔所連結的文章會說明各種 tvOS 版本所包含的功�
 ms.prod: xamarin
 ms.assetid: FB705CAD-B43C-4374-B139-92AB81185429
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 7bc85c4aba0bf1c217a1cb45c1ac605dc43695cc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 187e761948a560a96257ffa0ac84415d862a629d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651617"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283519"
 ---
 # <a name="tvos-platform-features"></a>tvOS 平臺功能
 
@@ -36,12 +36,12 @@ ms.locfileid: "68651617"
 
 ## <a name="siri-remote-and-bluetooth-controllersiostvosplatformremote-bluetoothmd"></a>[Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md)
 
-本文涵蓋在以 Xamarin 建立的 tvOS 應用程式中, 支援新的 Siri 遠端和藍牙遊戲控制器。
+本文涵蓋在以 Xamarin 建立的 tvOS 應用程式中，支援新的 Siri 遠端和藍牙遊戲控制器。
 
 ## <a name="related-links"></a>相關連結
 
 - [tvOS 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
 - [tvOS (Apple)](https://developer.apple.com/tvos/)
-- [tvOS 人力介面指南 (Apple)](https://developer.apple.com/tvos/human-interface-guidelines/)
-- [適用于 tvOS 的應用程式設計指南 (Apple)](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
-- [使用 Xamarin 建立適用于 tvOS 的應用程式 (影片)](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)
+- [tvOS 人力介面指南（Apple）](https://developer.apple.com/tvos/human-interface-guidelines/)
+- [適用于 tvOS 的應用程式設計指南（Apple）](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
+- [使用 Xamarin 建立適用于 tvOS 的應用程式（影片）](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

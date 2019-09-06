@@ -4,15 +4,15 @@ description: 本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 25a0a6f5f16b3035307b6b42f1c509401beb3553
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 6a4ea3950b9657e4e04c6465cc0a64ac3c1d266c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647119"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291565"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的應用程式圖示
 
@@ -42,7 +42,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 - 使用人們容易辨識的通用圖像。
 - 儘量簡潔。
 - 謹慎使用色彩和陰影，協助圖示述說應用程式用途。
-- 避免混合實際文字與「難懂的」  文字或線條來表達文字。
+- 避免混合實際文字與「難懂的」文字或線條來表達文字。
 - 建立圖示主題的理想化版本，而不要使用實際的相片。
 - 避免在圖示中使用 macOS UI 元素。
 - 不要在圖示中使用 Apple 圖示的複本。
@@ -81,9 +81,9 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 設計圖示並儲存為必要的檔案大小和名稱後，Visual Studio for Mac 能輕鬆將它們指派為可用於 Xamarin.Mac 中的影像資產。
 
-執行下列動作：
+請執行下列動作：
 
-1. 在 [Solution Pad]  中，開啟 [Assets.xcassets]   > [AppIcons.appiconset]  ： 
+1. 在 [Solution Pad] 中，開啟 [Assets.xcassets] > [AppIcons.appiconset]： 
 
     ![編輯 AppIcon.appiconset](app-icon-images/intro01.png "編輯 AppIcon.appiconset")
 2. 對於必要的各種圖示大小，按一下該圖示，然後選取依上述建立的對應影像檔案： 
@@ -96,10 +96,10 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 建置 `AppIcon.appiconset` 檔案之後，您必須在 Visual Studio for Mac 中將它指派給 Xamarin.Mac 專案。
 
-執行下列動作：
+請執行下列動作：
 
-1. 在 [Solution Pad]  中，按兩下 [Info.plist]  以開啟 [專案選項]  。
-2. 在 [Mac OS X 應用程式目標]  區段中，按一下 [應用程式圖示]  以選取 `AppIcon.appiconset` 檔案： 
+1. 在 [Solution Pad] 中，按兩下 [Info.plist] 以開啟 [專案選項]。
+2. 在 [Mac OS X 應用程式目標] 區段中，按一下 [應用程式圖示] 以選取 `AppIcon.appiconset` 檔案： 
 
     [![設定圖示集](app-icon-images/icon01.png "設定圖示集")](app-icon-images/icon01-large.png#lightbox)
 3. 儲存變更。

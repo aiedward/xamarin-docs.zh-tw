@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 61bf1c99b90d21d701dd923dcca4a203c96b69a3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: d58a18a1957fa7515e6ad260eff95f5a33e64c1e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657049"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291153"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS 多重畫面 – 快速入門
 
@@ -40,24 +40,24 @@ ms.locfileid: "68657049"
 
     ![](hello-ios-multiscreen-quickstart-images/02new.png "iOS 設計工具中的 Main.storyboard")
 
-3. 將 [瀏覽控制器]  從 [工具箱]  拖曳至設計介面 (您可能需要縮小，才能在設計介面上容納這些所有項目！)：
+3. 將 [瀏覽控制器] 從 [工具箱] 拖曳至設計介面 (您可能需要縮小，才能在設計介面上容納這些所有項目！)：
 
     ![](hello-ios-multiscreen-quickstart-images/03new.png "將 [瀏覽控制器] 從 [工具箱] 拖曳至設計介面")
 
-4. 將**無來源的 Segue** (單一檢視控制器左邊的灰色箭頭) 拖曳到 [瀏覽控制器]  ，以變更應用程式的起點：
+4. 將**無來源的 Segue** (單一檢視控制器左邊的灰色箭頭) 拖曳到 [瀏覽控制器]，以變更應用程式的起點：
 
     ![](hello-ios-multiscreen-quickstart-images/04new.png "將無來源的 Segue 拖曳至 [瀏覽控制器]，以變更應用程式的起點")
 
-5. 按底部列來選取現有的 [根檢視控制器]  ，然後按 **Delete** 鍵，從設計介面移除它。
-接著，移至 [瀏覽控制器]  旁的 **Phoneword** 場景：
+5. 按底部列來選取現有的 [根檢視控制器]，然後按 **Delete** 鍵，從設計介面移除它。
+接著，移至 [瀏覽控制器] 旁的 **Phoneword** 場景：
 
     ![](hello-ios-multiscreen-quickstart-images/05new.png "移至 [瀏覽控制器] 旁的 Phoneword 場景")
 
-6. 設定 **ViewController** 作為瀏覽控制器的**根檢視控制器**。 按住 **Ctrl** 鍵，並在 [瀏覽控制器]  內部按一下。 應該會出現藍色線條。 接著，持續按住 **Ctrl** 鍵，從 [瀏覽控制器]  拖曳至 **Phoneword** 場景，然後放開。 這稱為「Ctrl 拖曳」  ：
+6. 設定 **ViewController** 作為瀏覽控制器的**根檢視控制器**。 按住 **Ctrl** 鍵，並在 [瀏覽控制器] 內部按一下。 應該會出現藍色線條。 接著，持續按住 **Ctrl** 鍵，從 [瀏覽控制器] 拖曳至 **Phoneword** 場景，然後放開。 這稱為「Ctrl 拖曳」：
 
     ![](hello-ios-multiscreen-quickstart-images/06.png "從 [瀏覽控制器] 拖曳至 Phoneword 場景，然後放開")
 
-7. 從 popover，將關聯性設為 [根]  ：
+7. 從 popover，將關聯性設為 [根]：
 
     ![](hello-ios-multiscreen-quickstart-images/07new.png "將關聯性設為 [根]")
 
@@ -65,23 +65,23 @@ ms.locfileid: "68657049"
 
     ![](hello-ios-multiscreen-quickstart-images/08.png "ViewController 現在是瀏覽控制器的根檢視控制器")
 
-8. 按兩下 **Phoneword** 畫面的 [標題]  列，然後將**標題**變更為 **Phoneword**：
+8. 按兩下 **Phoneword** 畫面的 [標題] 列，然後將**標題**變更為 **Phoneword**：
 
     ![](hello-ios-multiscreen-quickstart-images/09.png "將標題變更為 'Phoneword'")
 
-9. 從 [工具箱]  拖曳 [按鈕]  ，並放置於 [通話按鈕]  下方。 拖曳控點，讓新的 [按鈕]  與 [通話按鈕]  等寬：
+9. 從 [工具箱] 拖曳 [按鈕]，並放置於 [通話按鈕] 下方。 拖曳控點，讓新的 [按鈕] 與 [通話按鈕] 等寬：
 
     ![](hello-ios-multiscreen-quickstart-images/10new.png "讓新的 [按鈕] 與 [通話按鈕] 等寬")
 
-10. 在 **Properties Pad** 中，將按鈕的 [名稱]  變更為 **CallHistoryButton**，並將 [標題]  變更為**通話記錄**：
+10. 在 **Properties Pad** 中，將按鈕的 [名稱] 變更為 **CallHistoryButton**，並將 [標題] 變更為**通話記錄**：
 
     ![](hello-ios-multiscreen-quickstart-images/11new.png "將按鈕的名稱變更為 CallHistoryButton，並將標題變更為通話記錄")
 
-11. 建立 [通話記錄]  畫面。 從 [工具箱]  中，將 [資料表檢視控制器]  拖曳至設計介面：
+11. 建立 [通話記錄] 畫面。 從 [工具箱] 中，將 [資料表檢視控制器] 拖曳至設計介面：
 
     ![](hello-ios-multiscreen-quickstart-images/12new.png "將 [資料表檢視控制器] 拖曳至設計介面")
 
-12. 接下來，按一下場景底部的黑色列來選取 [資料表檢視控制器]  。 在 **Properties Pad** 中，將 [資料表檢視控制器]  的類別變更為 `CallHistoryController`，然後按 **Enter** 鍵：
+12. 接下來，按一下場景底部的黑色列來選取 [資料表檢視控制器]。 在 **Properties Pad** 中，將 [資料表檢視控制器] 的類別變更為 `CallHistoryController`，然後按 **Enter** 鍵：
 
     ![](hello-ios-multiscreen-quickstart-images/13new.png "將 [資料表檢視控制器] 類別變更為 CallHistoryController")
 
@@ -146,17 +146,17 @@ ms.locfileid: "68657049"
 
     ![](hello-ios-multiscreen-quickstart-images/15.png "從按鈕 Ctrl 拖曳至通話記錄場景")
 
-    從 [動作 Segue]  popover，選取 [顯示] 
+    從 [動作 Segue] popover，選取 [顯示]
 
     iOS 設計工具將在兩個場景之間新增一個 Segue：
 
     ![](hello-ios-multiscreen-quickstart-images/17new.png "介於兩個場景之間的 Segue")
 
-15. 選取場景底部的黑色列，然後在 **Properties Pad** 中，將**檢視控制器標題**變更為**通話記錄**，以便將**標題**新增至 [資料表檢視控制器]  ：
+15. 選取場景底部的黑色列，然後在 **Properties Pad** 中，將**檢視控制器標題**變更為**通話記錄**，以便將**標題**新增至 [資料表檢視控制器]：
 
     ![](hello-ios-multiscreen-quickstart-images/18new.png "在 Properties Pad 中，將檢視控制器標題變更為通話記錄")
 
-16. 執行應用程式時，**通話記錄按鈕**將會開啟 [通話記錄]  畫面，但資料表檢視會是空白，這是因為沒有可追蹤和顯示電話號碼的程式碼。
+16. 執行應用程式時，**通話記錄按鈕**將會開啟 [通話記錄] 畫面，但資料表檢視會是空白，這是因為沒有可追蹤和顯示電話號碼的程式碼。
 
     此應用程式會將電話號碼儲存為字串清單。
 
@@ -256,13 +256,13 @@ ms.locfileid: "68657049"
 
     這裡有幾件事會發生：
 
-    - 變數 `translatedNumber` 已從 `ViewDidLoad` 方法移到「類別層級變數」  。
+    - 變數 `translatedNumber` 已從 `ViewDidLoad` 方法移到「類別層級變數」。
     - 已修改 **CallButton** 程式碼，透過呼叫 `PhoneNumbers.Add(translatedNumber)` 來將撥打的號碼新增至電話號碼清單。
     - 已新增 `PrepareForSegue` 方法。
 
     儲存並建置應用程式，以確定沒有任何錯誤。
 
-18. 按 [啟動]  按鈕，在 **iOS 模擬器**內啟動應用程式：
+18. 按 [啟動] 按鈕，在 **iOS 模擬器**內啟動應用程式：
 
     ![](hello-ios-multiscreen-quickstart-images/19.png "按 [啟動] 按鈕，在 iOS 模擬器內啟動應用程式")
 
@@ -277,38 +277,38 @@ ms.locfileid: "68657049"
 
 1. 在 Visual Studio 中開啟 **Phoneword** 應用程式。 如有必要，可從 [Hello, iOS 逐步解說](~/ios/get-started/hello-ios/index.md)指南下載[完整的 Phoneword 應用程式](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)。 請記住，需要連線到 [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)，才能使用 iOS 設計工具和 iOS 模擬器。
 
-2. 從編輯使用者介面開始。 從 [方案總管]  中開啟 **Main.storyboard** 檔案，確定已將 [檢視方式]  設為 [iPhone 6]  ：
+2. 從編輯使用者介面開始。 從 [方案總管] 中開啟 **Main.storyboard** 檔案，確定已將 [檢視方式] 設為 [iPhone 6]：
 
     ![](hello-ios-multiscreen-quickstart-images/image1.png "iOS 設計工具中的 Main.storyboard")
 
-3. 將 [瀏覽控制器]  從 [工具箱]  拖曳至設計介面：
+3. 將 [瀏覽控制器] 從 [工具箱] 拖曳至設計介面：
 
     ![](hello-ios-multiscreen-quickstart-images/image2.png "將 [瀏覽控制器] 從 [工具箱] 拖曳至設計介面")
 
-4. 將**無來源的 Segue** (亦即 **Phoneword** 場景左邊的灰色箭頭) 從 **Phoneword** 場景拖曳至 [瀏覽控制器]  ，以變更應用程式的起點：
+4. 將**無來源的 Segue** (亦即 **Phoneword** 場景左邊的灰色箭頭) 從 **Phoneword** 場景拖曳至 [瀏覽控制器]，以變更應用程式的起點：
 
     ![](hello-ios-multiscreen-quickstart-images/image3.png "將無來源的 Segue 拖曳至 [瀏覽控制器]，以變更應用程式的起點")
 
-5. 按一下黑色列來選取 [根檢視控制器]  ，然後按 **Delete** 鍵，從設計介面移除它。
-  接著，移至 [瀏覽控制器]  旁的 **Phoneword** 場景：
+5. 按一下黑色列來選取 [根檢視控制器]，然後按 **Delete** 鍵，從設計介面移除它。
+  接著，移至 [瀏覽控制器] 旁的 **Phoneword** 場景：
 
     ![](hello-ios-multiscreen-quickstart-images/image4.png "移至 [瀏覽控制器] 旁的 Phoneword 場景")
 
-6. 設定 **ViewController** 作為瀏覽控制器的根檢視控制器。 按下 **Ctrl** 鍵，並在 [瀏覽控制器]  內部按一下。 應該會出現藍色線條。 接著，持續按住 **Ctrl** 鍵，從 [瀏覽控制器]  拖曳至 **Phoneword** 場景，然後放開。 這稱為「Ctrl 拖曳」  ：
+6. 設定 **ViewController** 作為瀏覽控制器的根檢視控制器。 按下 **Ctrl** 鍵，並在 [瀏覽控制器] 內部按一下。 應該會出現藍色線條。 接著，持續按住 **Ctrl** 鍵，從 [瀏覽控制器] 拖曳至 **Phoneword** 場景，然後放開。 這稱為「Ctrl 拖曳」：
 
     ![](hello-ios-multiscreen-quickstart-images/image5.png "從 [瀏覽控制器] 拖曳至 Phoneword 場景，然後放開")
 
-7. 從 popover，將關聯性設為 [根]  ：
+7. 從 popover，將關聯性設為 [根]：
 
     ![](hello-ios-multiscreen-quickstart-images/image6.png "將關聯性設為 [根]")
 
     **ViewController** 現在是**瀏覽控制器的根檢視控制器。**
 
-8. 按兩下 **Phoneword** 畫面的 [標題]  列，然後將**標題**變更為 **Phoneword**：
+8. 按兩下 **Phoneword** 畫面的 [標題] 列，然後將**標題**變更為 **Phoneword**：
 
     ![](hello-ios-multiscreen-quickstart-images/image7.png "將標題變更為 Phoneword")
 
-9. 從 [工具箱]  拖曳 [按鈕]  ，並放置於 [通話按鈕]  下方。 拖曳控點，讓新的 [按鈕]  與 [通話按鈕]  等寬：
+9. 從 [工具箱] 拖曳 [按鈕]，並放置於 [通話按鈕] 下方。 拖曳控點，讓新的 [按鈕] 與 [通話按鈕] 等寬：
 
     ![](hello-ios-multiscreen-quickstart-images/image8.png "讓新的 [按鈕] 與 [通話按鈕] 等寬")
 
@@ -316,11 +316,11 @@ ms.locfileid: "68657049"
 
     ![](hello-ios-multiscreen-quickstart-images/image9.png "將按鈕的名稱變更為 'CallHistoryButton'，並將標題變更為「通話記錄」")
 
-11. 建立 [通話記錄]  畫面。 從 [工具箱]  中，將 [資料表檢視控制器]  拖曳至設計介面：
+11. 建立 [通話記錄] 畫面。 從 [工具箱] 中，將 [資料表檢視控制器] 拖曳至設計介面：
 
     ![](hello-ios-multiscreen-quickstart-images/image10.png "將 [資料表檢視控制器] 拖曳至設計介面")
 
-12. 按一下場景底部的黑色列來選取 [資料表檢視控制器]  。 在**屬性總管**中，將 [資料表檢視控制器]  的類別變更為 `CallHistoryController`，然後按 **Enter** 鍵：
+12. 按一下場景底部的黑色列來選取 [資料表檢視控制器]。 在**屬性總管**中，將 [資料表檢視控制器] 的類別變更為 `CallHistoryController`，然後按 **Enter** 鍵：
 
     ![](hello-ios-multiscreen-quickstart-images/image11.png "將 [資料表檢視控制器] 類別變更為 CallHistoryController")
 
@@ -386,7 +386,7 @@ ms.locfileid: "68657049"
 
     ![](hello-ios-multiscreen-quickstart-images/image13.png "從按鈕 Ctrl 拖曳至通話記錄場景")
 
-    從 [動作 Segue]  popover，選取 [顯示]  ：
+    從 [動作 Segue] popover，選取 [顯示]：
 
     ![](hello-ios-multiscreen-quickstart-images/image14.png "選取 [顯示] 作為 Segue 類型")
 
@@ -394,11 +394,11 @@ ms.locfileid: "68657049"
 
     ![](hello-ios-multiscreen-quickstart-images/image15.png "介於兩個場景之間的 Segue")
 
-15. 選取場景底部的黑色列，然後在**屬性總管**中，將 [檢視控制器] > [標題]  變更為**通話記錄**，以便將**標題**新增至 [資料表檢視控制器]  ：
+15. 選取場景底部的黑色列，然後在**屬性總管**中，將 [檢視控制器] > [標題] 變更為**通話記錄**，以便將**標題**新增至 [資料表檢視控制器]：
 
     ![](hello-ios-multiscreen-quickstart-images/image16.png "將 [檢視控制器] 標題變更為通話記錄")
 
-16. 執行應用程式時，**通話記錄按鈕**將會開啟 [通話記錄]  畫面，但資料表檢視會是空白，這是因為沒有可追蹤和顯示電話號碼的程式碼。
+16. 執行應用程式時，**通話記錄按鈕**將會開啟 [通話記錄] 畫面，但資料表檢視會是空白，這是因為沒有可追蹤和顯示電話號碼的程式碼。
 
     此應用程式會將電話號碼儲存為字串清單。
 
@@ -497,7 +497,7 @@ ms.locfileid: "68657049"
     ```
 
     這裡有幾件事會發生
-    - 已將變數 `translatedNumber` 從 `ViewDidLoad` 方法移至「類別層級變數」  。
+    - 已將變數 `translatedNumber` 從 `ViewDidLoad` 方法移至「類別層級變數」。
     - 已修改 **CallButton** 程式碼，透過呼叫 `PhoneNumbers.Add(translatedNumber)` 來將撥打的號碼新增至電話號碼清單
     - 已新增 `PrepareForSegue` 方法
 
@@ -505,7 +505,7 @@ ms.locfileid: "68657049"
 
     儲存並建置應用程式，以確定沒有任何錯誤。
 
-18. 按 [啟動]  按鈕，在 **iOS 模擬器**內啟動應用程式：
+18. 按 [啟動] 按鈕，在 **iOS 模擬器**內啟動應用程式：
 
     ![](hello-ios-multiscreen-quickstart-images/19.png "範例應用程式的第一個畫面")
 

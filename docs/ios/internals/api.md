@@ -1,25 +1,25 @@
 ---
-title: Xamarin.iOS API 概觀
-description: 本文件所連結的 Xamarin API 參考文件，說明 Xamarin.iOS API 設計，以及一份可供使用 Xamarin 開發的組件的指南。
+title: Xamarin iOS API 總覽
+description: 本檔連結至 Xamarin API 參考檔、描述 Xamarin iOS API 設計的指南，以及可用於 Xamarin 開發的元件清單。
 ms.prod: xamarin
 ms.assetid: 4C1669A4-C12B-9C49-4A39-9046576D10DC
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: a4637099907dd75a3ab58222dbb4ef42b42e19c3
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3b95710f7e847cd8b6dd8357512cb253e5582884
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61036494"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291943"
 ---
-# <a name="xamarinios-api-overview"></a>Xamarin.iOS API 概觀
+# <a name="xamarinios-api-overview"></a>Xamarin iOS API 總覽
 
-Xamarin.iOS 會公開 C# / CIL 繫結至 CocoaTouch API，以及也提供 ECMA CIL Api 和各種其他的.NET Api 的存取。
+Xamarin 會公開 CocoaTouch API C#的/CIL 系結，也會提供 ECMA CIL api 和其他各種 .net api 的存取權。
 
- **API 參考**:API 參考位於[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)，開始[Xamarin.iOS 參考](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)API 繫結原生 iPhone Api 或移至 [基底類別庫節點](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)如需.NET API 文件。
+ **API 參考**：您可以從[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)取得 api 參考，從原生 iPhone API 的 api 系結的[Xamarin. iOS 參考](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)開始，或移至[基礎類別庫節點](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)，以取得 .net API 的相關檔。
 
- **API 設計**:涵蓋的 CIL/OBJECTIVE-C 繫結的 API 設計[Xamarin.iOS API 設計](~/ios/internals/api-design/index.md)文件，並說明如何從產品 CocoaTouch 繫結 OBJECTIVE-C 與 C Api 並公開到C#/CIL 世界。
+ **API 設計**：如需瞭解適用于 CIL/目標-C 系[結的 API](~/ios/internals/api-design/index.md)設計，請說明如何從 CocoaTouch 系結目標 C 和 C api，並將其公開至C#/CIL 世界。
 
- **組件**:檢查我們[繫結的組件的清單](~/cross-platform/internals/available-assemblies.md)如需詳細的參考，哪一個 api，從C#/CIL/ECMA 是可用於 Xamarin.iOS。
+ **元件**：請檢查我們的系結[元件清單](~/cross-platform/internals/available-assemblies.md)，以取得/CIL/ECMA 中C#可供在 Xamarin 上使用之 api 的詳細參考。

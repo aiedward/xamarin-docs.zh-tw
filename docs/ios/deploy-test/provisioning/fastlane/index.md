@@ -4,15 +4,15 @@ description: 本指南介紹可用來對 iOS 應用程式進行程式碼簽署�
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: becf9696a13dbd1ae96693729618d70b043d1c3a
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 290c90820bad2d213f8f3a978437a55f7ca6069e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69527426"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285788"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>適用於 iOS 的 fastline 簡介
 
@@ -107,7 +107,7 @@ cert 和 sigh 可用來在本機電腦上建立和管理簽署憑證與部署設
 
 使用 fastlane 來建立簽署身分識別和佈建設定檔之後，在 Visual Studio for Mac 中設定套件組合簽署選項應該相當簡單，前提是憑證和私密金鑰在 macOS 鑰匙圈中，且佈建設定檔位於 `~/Library/MobileDevice/Provisioning Profiles` 資料夾中。
 
-若要為 Xamarin.iOS 應用程式設定程式碼簽署選項，請在專案名稱上按一下滑鼠右鍵，選取 [專案選項] > [建置] > [iOS 套件組合簽署]  ，然後明確設定 [簽署身分識別] 和 [佈建設定檔]，如下所示：
+若要為 Xamarin.iOS 應用程式設定程式碼簽署選項，請在專案名稱上按一下滑鼠右鍵，選取 [專案選項] > [建置] > [iOS 套件組合簽署]，然後明確設定 [簽署身分識別] 和 [佈建設定檔]，如下所示：
 
 [![](images/fastlane-image11.png "明確設定 [簽署身分識別] 和 [佈建設定檔]")](images/fastlane-image11.png#lightbox)
 

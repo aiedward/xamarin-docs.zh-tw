@@ -4,15 +4,15 @@ description: 本文件說明如何使用 Xamarin 在 watchOS 父系應用程式�
 ms.prod: xamarin
 ms.assetid: 9AD29833-E9CC-41A3-95D2-8A655FF0B511
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 05dfb419834c2eee94f98d023df3a3fe8d6eee90
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 0049d69caabce545b2813dbd2b3905fe96f28fed
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198125"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292731"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>運用 watchOS 父系應用程式，在 Xamarin 中使用
 
@@ -26,7 +26,7 @@ ms.locfileid: "70198125"
 
 - 監看式延伸模組可以[共用儲存體位置](#storage)與父代的 iPhone 應用程式。
 
-- 使用遞交將資料從概覽或通知傳遞至監看式應用程式, 並將使用者傳送至應用程式中的特定介面控制器。
+- 使用遞交將資料從概覽或通知傳遞至監看式應用程式，並將使用者傳送至應用程式中的特定介面控制器。
 
 父應用程式有時也稱為容器應用程式。
 

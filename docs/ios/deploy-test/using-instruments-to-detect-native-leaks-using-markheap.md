@@ -4,15 +4,15 @@ description: 本文件描述如何使用 Apple 的 Instruments 應用程式分�
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: cef817c30dd20840c440cdbbdc8145047ad1fc0e
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 9492c90274e28f14dee0e8cbcb2aaa1a55de2420
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50110787"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282739"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>使用 Instruments 分析 Xamarin.iOS 應用程式
 

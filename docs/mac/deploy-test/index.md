@@ -4,15 +4,15 @@ description: 本文件連結的各種指南，會描述如何部署和測試 Xam
 ms.prod: xamarin
 ms.assetid: 2FF314C7-D926-9FEC-57A6-F421A0ED3A46
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 02/17/2018
-ms.openlocfilehash: d5dc7095812b974944471c84a6240c70257e8140
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 13a6d46a1c9193a91030f2d90c167fb14d7cae7c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50121252"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291504"
 ---
 # <a name="deploying-and-testing-xamarinmac-apps"></a>部署和測試 Xamarin.Mac 應用程式
 

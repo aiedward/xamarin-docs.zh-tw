@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 0a3238d614ee655bdf883f30adbc7969346fdfa7
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: d7d6bf128d3814917633bdd69e3c9c54c8d6a20c
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68508907"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197514"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 效能
 
@@ -22,7 +22,7 @@ _有許多技巧可增加利用 Xamarin.Android 來建置應用程式的效能�
 
 不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。
 
-有一些技巧可以用來增加利用 Xamarin.Android 建置之應用程式的效能與認知效能。 這些包括：
+有一些技巧可以用來增加利用 Xamarin.Android 建置之應用程式的效能與認知效能。 包括：
 
 - [最佳化配置階層](#optimizelayout)
 - [最佳化清單檢視](#optimizelistviews)
@@ -201,9 +201,9 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 在應用程式生命週期期間，[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回呼會在裝置記憶體偏低時提供通知。 此回呼應該實作為接聽下列記憶體等級通知：
 
-- [`TrimMemoryRunningModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningModerate) - 應用程式「可能」  想要釋放部分不需要的資源。
-- [`TrimMemoryRunningLow`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningLow) - 應用程式「應該」  釋放不需要的資源。
-- [`TrimMemoryRunningCritical`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningCritical) - 應用程式「應該」  盡可能釋放許多非關鍵的處理序。
+- [`TrimMemoryRunningModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningModerate) - 應用程式「可能」想要釋放部分不需要的資源。
+- [`TrimMemoryRunningLow`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningLow) - 應用程式「應該」釋放不需要的資源。
+- [`TrimMemoryRunningCritical`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningCritical) - 應用程式「應該」盡可能釋放許多非關鍵的處理序。
 
 此外，快取應用程式處理序時，[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回呼可能會收到下列記憶體等級通知：
 
@@ -219,7 +219,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 當使用者巡覽至其他應用程式時，請釋放應用程式使用者介面所使用的任何資源，這樣做可大幅增加 Android 用於快取處理序的容量，進而影響使用者體驗品質。
 
-若要在使用者結束 UI 時收到通知，請在 `Activity` 類別實作 [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回呼，並接聽 [`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden) 層級 (此層級表示已隱藏 UI)。 只有在使用者看不到應用程式的「所有」  UI 元件時，才會收到此通知。 收到此通知即釋放 UI 資源可確保當使用者從應用程式的另一個活動往回巡覽時，這些 UI 資源仍然可供使用，以便快速地繼續活動。
+若要在使用者結束 UI 時收到通知，請在 `Activity` 類別實作 [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回呼，並接聽 [`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden) 層級 (此層級表示已隱藏 UI)。 只有在使用者看不到應用程式的「所有」UI 元件時，才會收到此通知。 收到此通知即釋放 UI 資源可確保當使用者從應用程式的另一個活動往回巡覽時，這些 UI 資源仍然可供使用，以便快速地繼續活動。
 
 <a name="optimizeimages" />
 

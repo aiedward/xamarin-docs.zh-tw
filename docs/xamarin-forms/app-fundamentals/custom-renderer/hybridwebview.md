@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: cd4bb8cae59e5d9cdcc36a58fb37e71e56d580b3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 0277a5abd4e34d092b231cd42746f9e05c91b8df
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650871"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199957"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 View 類別。本文示範如何建立 HybridWebView 自訂控制項的自訂轉譯器，該自訂控制項會示範如何強化平台特定的 Web 控制項，允許從 JavaScript 叫用 C# 程式碼。_
 
@@ -161,7 +161,7 @@ public partial class HybridWebViewPage : ContentPage
 
 ![](hybridwebview-images/screenshots.png "每個平台上的 HybridWebView")
 
-`ViewRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂控制項以轉譯對應的原生 Web 控制項時，便會呼叫此方法。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」  所附加的 Xamarin.Forms 項目，以及「現在」  所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `HybridWebView` 執行個體的參考。
+`ViewRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂控制項以轉譯對應的原生 Web 控制項時，便會呼叫此方法。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `HybridWebView` 執行個體的參考。
 
 在每個平台特定的轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生 Web 控制項具現化和自訂的位置。 您應該使用 `SetNativeControl` 方法來具現化原生 Web 控制項，而且此方法也會將控制項參考指派給 `Control` 屬性。 此外，您可透過 `Element` 屬性取得要轉譯的 Xamarin.Forms 控制項參考。
 
@@ -324,7 +324,7 @@ namespace CustomRenderer.iOS
 
 此外，必須更新 **Info.plist** 以包含下列值：
 
-```
+```xml
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsArbitraryLoads</key>

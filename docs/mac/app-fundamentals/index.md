@@ -1,65 +1,65 @@
 ---
-title: Xamarin.Mac 應用程式基本概念
-description: 本文件所連結描述各種概念需要了解開發 Xamarin.Mac 應用程式時的指南。
+title: Xamarin. Mac 應用程式基本概念
+description: 本檔連結的指南會說明開發 Xamarin. Mac 應用程式時所需瞭解的各種概念。
 ms.prod: xamarin
 ms.assetid: 5A36B3A7-F197-4AC3-A40D-B2C49362FF06
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/17/2015
-ms.openlocfilehash: 376286b73c92cba40de183043b86cb4ffb5e699d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 73ec847b697c2d588d0c217bcbf12d4f0b6aa817
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61085301"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291339"
 ---
-# <a name="xamarinmac-application-fundamentals"></a>Xamarin.Mac 應用程式基本概念
+# <a name="xamarinmac-application-fundamentals"></a>Xamarin. Mac 應用程式基本概念
 
-## <a name="common-patterns-and-idiomsmacapp-fundamentalspatternsmd"></a>[常見的模式和慣用語](~/mac/app-fundamentals/patterns.md)
+## <a name="common-patterns-and-idiomsmacapp-fundamentalspatternsmd"></a>[常見模式和慣用語](~/mac/app-fundamentals/patterns.md)
 
-透過 C# 公開的 Apple Api，在某些慣用語和模式出現一再重複。 如果您已利用 Xamarin.iOS 的程式設計體驗，這些可能看起來很熟悉。 文件會經常參考這些模式和慣用語重複，因此需要充分了解它們，將可協助您了解您所尋找的文件。
+在透過公開的所有 Apple C#api 中，特定的慣用語和模式會重複出現。 如果您有使用 Xamarin 進行程式設計的經驗，這些功能看起來可能很熟悉。 檔通常會參考這些模式並重複慣用語，因此充分瞭解它們將有助於您瞭解所找到的檔。
 
-## <a name="understanding-mac-apismacapp-fundamentalsmac-apismd"></a>[了解 Mac Api](~/mac/app-fundamentals/mac-apis.md)
+## <a name="understanding-mac-apismacapp-fundamentalsmac-apismd"></a>[瞭解 Mac Api](~/mac/app-fundamentals/mac-apis.md)
 
-針對大部分的時間使用 Xamarin.Mac 開發，您可以考慮、 讀取及撰寫 C# 中，而不需要太擔心與基礎的 Objective C Api。 但是有時候會需要讀取的 API 文件，向 Apple 將方案從堆疊溢位的答案轉譯為您的問題，或比較現有的範例。
+在大部分的C#情況下，使用 Xamarin 進行開發時，您可以考慮、閱讀和撰寫，而不需要擔心基礎的目標-C api。 不過，有時候您必須閱讀 Apple 的 API 檔，將答案從 Stack Overflow 轉譯為問題的解決方案，或與現有的範例進行比較。
 
 ## <a name="console-appsmacapp-fundamentalsconsolemd"></a>[主控台應用程式](~/mac/app-fundamentals/console.md)
 
-您也可以建置 「 無周邊 」 的主控台應用程式存取原生 macOS Api 使用 Xamarin.Mac。
+您也可以建立「無周邊」主控台應用程式，以使用 Xamarin 來存取原生 macOS Api。
 
-## <a name="working-with-xib-filesmacapp-fundamentalsxibmd"></a>[使用.xib 檔案](~/mac/app-fundamentals/xib.md)
+## <a name="working-with-xib-filesmacapp-fundamentalsxibmd"></a>[使用 xib 檔案](~/mac/app-fundamentals/xib.md)
 
-本文涵蓋在 Xcode 的 Interface Builder 來建立和維護的 Xamarin.Mac 應用程式的使用者介面中建立的.xib 檔案。
+本文涵蓋如何使用在 Xcode 的 Interface Builder 中建立的 xib 檔案，來建立和維護 Xamarin. Mac 應用程式的使用者介面。
 
-## <a name="storyboardxib-less-user-interface-designmacapp-fundamentalsxibless-uimd"></a>[.storyboard/.xib 以下使用者介面設計](~/mac/app-fundamentals/xibless-ui.md)
+## <a name="storyboardxib-less-user-interface-designmacapp-fundamentalsxibless-uimd"></a>[. 分鏡腳本/. xib less 使用者介面設計](~/mac/app-fundamentals/xibless-ui.md)
 
-本文涵蓋建立 Xamarin.Mac 應用程式的使用者介面直接從 C# 程式碼，而不使用.storyboard 或.xib 檔案使用 Xcode 的 Interface Builder。
+本文說明如何直接從C#程式碼建立 Xamarin. Mac 應用程式的使用者介面，而不需使用 Xcode 的 Interface Builder 搭配. 腳本或 xib 檔案。
 
-## <a name="working-with-imagesmacapp-fundamentalsimagemd"></a>[使用映像](~/mac/app-fundamentals/image.md)
+## <a name="working-with-imagesmacapp-fundamentalsimagemd"></a>[使用影像](~/mac/app-fundamentals/image.md)
 
-這篇文章涵蓋使用 「 映像和在 Xamarin.Mac 應用程式中的圖示。 說明如何建立和維護的映像建立您的應用程式圖示和使用 C# 程式碼和 Xcode 的 Interface Builder 中的映像所需。
+本文說明如何在 Xamarin. Mac 應用程式中使用影像和圖示。 其中包括建立和維護建立應用程式圖示所需的影像，以及在程式C#代碼和 Xcode 的 Interface Builder 中使用影像。
 
-## <a name="data-binding-and-key-value-codingmacapp-fundamentalsdatabindingmd"></a>[資料繫結和鍵值編碼](~/mac/app-fundamentals/databinding.md)
+## <a name="data-binding-and-key-value-codingmacapp-fundamentalsdatabindingmd"></a>[資料系結和索引鍵-值編碼](~/mac/app-fundamentals/databinding.md)
 
-這篇文章說明如何使用索引鍵-值撰寫程式碼，以便進行資料繫結至 UI 項目在 Xcode 的 Interface Builder 中所觀察的索引鍵 / 值。 您使用這項技術，大幅減少 C# 程式碼寫入 Xamarin.Mac 應用程式所需的工作量。 
+本文涵蓋使用索引鍵/值編碼和索引鍵-值觀察，以允許資料系結至 Xcode 的 Interface Builder 中的 UI 元素。 使用這項技術，您可以大幅減少需要C#為 Xamarin. Mac 應用程式撰寫的程式碼數量。 
 
 ## <a name="working-with-databasesmacapp-fundamentalsdatabasesmd"></a>[使用資料庫](~/mac/app-fundamentals/databases.md)
 
-這篇文章說明如何使用索引鍵-值程式碼撰寫和觀察以便進行資料繫結至 UI 項目在 Xcode 的 Interface Builder 的 SQLite 資料庫的直接存取的索引鍵 / 值。 它也涵蓋了使用 SQLite.NET ORM 提供 SQLite 資料的存取權。
+本文說明如何使用索引鍵/值編碼和索引鍵-值觀察，以允許資料系結至 Xcode 的 Interface Builder 中的 UI 元素直接存取 SQLite 資料庫。 它也涵蓋如何使用 SQLite.NET ORM 來提供 SQLite 資料的存取權。
 
 ## <a name="working-with-copy-and-pastemacapp-fundamentalscopy-pastemd"></a>[使用複製和貼上](~/mac/app-fundamentals/copy-paste.md)
 
-這篇文章涵蓋剪貼板提供複製並貼上在 Xamarin.Mac 應用程式中使用。 它示範如何使用標準的資料類型，可以在多個應用程式，以及如何支援讓應用程式內的自訂資料之間共用。
+本文說明如何使用貼夾，以在 Xamarin. Mac 應用程式中提供複製和貼上。 它會示範如何使用可在多個應用程式之間共用的標準資料類型，以及如何支援「提供應用程式」中的自訂資料。
 
-## <a name="sandboxing-a-xamarinmac-appmacapp-fundamentalssandboxingmd"></a>[沙箱 Xamarin.Mac 應用程式](~/mac/app-fundamentals/sandboxing.md)
+## <a name="sandboxing-a-xamarinmac-appmacapp-fundamentalssandboxingmd"></a>[沙箱化 Xamarin. Mac 應用程式](~/mac/app-fundamentals/sandboxing.md)
 
-本文章涵蓋沙箱 Xamarin.Mac 應用程式在 App Store 上發行。 它涵蓋了所有項目移入沙箱： 容器目錄、 權利、 使用者決定的權限、 權限的分隔和核心強制執行。
+本文說明如何在 App Store 上進行用於發行的 Xamarin. Mac 應用程式沙箱。 其中涵蓋所有進入沙箱的元素：容器目錄、權利、使用者決定的許可權、許可權區隔，以及核心強制。
 
-## <a name="playing-sound-with-avaudioplayermacapp-fundamentalssoundsmd"></a>[使用 avaudioplayer 播放音效的播放](~/mac/app-fundamentals/sounds.md)
+## <a name="playing-sound-with-avaudioplayermacapp-fundamentalssoundsmd"></a>[使用 Avaudioplayer 播放音效播放音效](~/mac/app-fundamentals/sounds.md)
 
-這篇文章會示範如何使用協助程式類別，以控制播放音效使用 avaudioplayer 播放。
+本文說明如何使用協助程式類別，以使用 Avaudioplayer 播放音效來控制音效的播放。
 
-## <a name="reporting-bugsmacapp-fundamentalstroubleshootingmd"></a>[回報 bug](~/mac/app-fundamentals/troubleshooting.md)
+## <a name="reporting-bugsmacapp-fundamentalstroubleshootingmd"></a>[報告錯誤](~/mac/app-fundamentals/troubleshooting.md)
 
-有時，我們都停滯時從事的專案，無法取得 API，以便使用我們想要的方式或在嘗試解決的 bug。 我們在 Xamarin 的目標是讓您在撰寫您的行動和桌面應用程式，成功，我們提供了一些資源，幫助。
+有時候，在處理專案時，我們全都會停滯，因為無法取得 API 以我們想要的方式運作，或嘗試解決 bug。 我們在 Xamarin 的目標是要讓您成功撰寫行動和桌面應用程式，並提供一些資源來協助您。

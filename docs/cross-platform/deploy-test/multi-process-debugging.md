@@ -3,15 +3,15 @@ title: 多處理序偵錯
 description: 本文件描述如何使用 Visual Studio for Mac 偵錯同時執行的多重處理序。 例如，此功能可用來同時偵錯行動應用程式和 Web 服務專案。
 ms.prod: xamarin
 ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: d20e6e0fd567d0aa0febe21bfe12a5237049b22a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: HT
+ms.openlocfilehash: db5d2dfcf96cdc1a89c0ecb2192b86f564e584ed
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34781848"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290447"
 ---
 # <a name="multi-process-debugging"></a>多處理序偵錯
 
@@ -56,7 +56,7 @@ ms.locfileid: "34781848"
 
 ![](multi-process-debugging-images/mpd05-xs.png "解決方案組態的輸出面板")
 
-### <a name="multiple-processes-and-the-active-thread"></a>多處理序和使用中執行緒
+### <a name="multiple-processes-and-the-_active-thread_"></a>多處理序和使用中執行緒
 
 在一個處理序中遇到中斷點時，該處理序會暫停執行，而其他處理序則繼續執行。 在只有一個處理序的情況下，Visual Studio for Mac 能以一組面板輕鬆顯示執行緒、區域變數、應用程式輸出等的資訊。 然而，當多個處理序有多個中斷點並可能有多個執行緒時，偵錯工作階段嘗試一次顯示所有執行緒 (與處理序) 的所有資訊，肯定會讓開發人員應接不暇。
 

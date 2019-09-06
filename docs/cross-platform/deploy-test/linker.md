@@ -3,15 +3,15 @@ title: 自訂連結器組態
 description: 本文件描述用來設定連結器的 XML 檔案，以明確方式確定不會從連結的應用程式中刪除所需的程式碼。
 ms.prod: xamarin
 ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: bf934d50c90efaba266cbfac00aa5140ea92009b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: f0d51d9aa5cde17498124b74cc35011a6d942fae
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526682"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284836"
 ---
 # <a name="custom-linker-configuration"></a>自訂連結器組態
 
@@ -24,8 +24,8 @@ ms.locfileid: "69526682"
 
 有了這個連結器描述檔之後，請將它新增到您的專案中，然後：
 
-- **針對 Android**將 [建置動作]  設定為 [LinkDescription] 
-- **針對 iOS**將 [建置動作]  設定為 [LinkDescription] 
+- **針對 Android**將 [建置動作] 設定為 [LinkDescription]
+- **針對 iOS**將 [建置動作] 設定為 [LinkDescription]
 
 
 下列範例示範 XML 檔案看起來的樣子：

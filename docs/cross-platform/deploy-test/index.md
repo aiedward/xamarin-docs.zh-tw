@@ -1,17 +1,17 @@
 ---
 title: 部署和偵錯
-description: 此文件連結的指南，會提供如何使用多處理序偵錯和自訂連結器組態的詳細資訊。
+description: 本文件連結的指南，會提供如何使用多處理序偵錯和自訂連結器組態的詳細資訊。
 ms.prod: xamarin
 ms.assetid: D02C62C9-47D1-4E72-8A83-602C3E7929BE
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/22/2018
-ms.openlocfilehash: 366a761b872a98f13d27e07953e77a8f7624f499
-ms.sourcegitcommit: 086edd9c44dfc0e77412e1ed5eda7318bbd1ce7c
-ms.translationtype: HT
+ms.openlocfilehash: e38a83e280f362eed9bde67901f7731658c6e57b
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58477365"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280488"
 ---
 # <a name="deployment--debugging"></a>部署和偵錯
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 17e6f4a935924b9c7e282747443bb579d08a5ab9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 92e2ceeea901e2acea70118e75d936f3b3ac94db
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651112"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199989"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>在 Xamarin.Forms 中的自動化屬性
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 _Xamarin.Forms 可讓協助在使用者介面項目上，使用來自 AutomationProperties 類別的附加屬性設定協助工具值，然後附加屬性會設定原生的協助工具值。本文說明如何使用 AutomationProperties 類別，讓螢幕助讀程式可以讀出頁面上的項目。_
 
@@ -155,9 +155,9 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 ```xml
 <resources>
-        <string name="app_name">Xamarin Forms Control Gallery</string>
-        <string name="btnMDPAutomationID_open">Open Side Menu message</string>
-        <string name="btnMDPAutomationID_close">Close Side Menu message</string>
+    <string name="app_name">Xamarin Forms Control Gallery</string>
+    <string name="btnMDPAutomationID_open">Open Side Menu message</string>
+    <string name="btnMDPAutomationID_close">Close Side Menu message</string>
 </resources>
 ```
 

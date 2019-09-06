@@ -1,21 +1,21 @@
 ---
 title: 建置跨平台應用程式
-description: 本節將討論如何使用 Xamarin 開發平臺來建立應用程式, 包括瞭解 Xamarin 如何運作以設計行動應用程式, 然後測試和部署至各種應用程式存放區。
+description: 本節將討論如何使用 Xamarin 開發平臺來建立應用程式，包括瞭解 Xamarin 如何運作以設計行動應用程式，然後測試和部署至各種應用程式存放區。
 ms.prod: xamarin
 ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/28/2016
-ms.openlocfilehash: 4485f25ac2f81747132ccd92d73c52118f70e545
-ms.sourcegitcommit: f255aa286bd52e8a80ffa620c2e93c97f069f8ec
+ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68680932"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70288048"
 ---
 # <a name="building-cross-platform-applications"></a>建置跨平台應用程式
 
-有兩個選項可在跨平臺行動應用程式之間共用程式碼:共用的資產專案和可移植的類別庫。 [這裡會討論](~/cross-platform/app-fundamentals/code-sharing.md)這些選項;也提供[可移植類別庫](~/cross-platform/app-fundamentals/pcl.md)和[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)的詳細資訊。
+有兩個選項可在跨平臺行動應用程式之間共用程式碼：共用的資產專案和可移植的類別庫。 [這裡會討論](~/cross-platform/app-fundamentals/code-sharing.md)這些選項;也提供[可移植類別庫](~/cross-platform/app-fundamentals/pcl.md)和[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)的詳細資訊。
 
 <a name="Sections" />
 
@@ -44,7 +44,7 @@ ms.locfileid: "68680932"
 ### <a name="tasky"></a>Tasky
 
 Tasky 是適用于 iOS、Android 和 Windows Phone 的簡單待辦事項清單應用程式。
-其中示範使用 Xamarin 建立跨平臺應用程式的基本概念, 並使用本機 SQLite 資料庫。
+其中示範使用 Xamarin 建立跨平臺應用程式的基本概念，並使用本機 SQLite 資料庫。
 
  [ tasky![ ](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [清單tasky![清單](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
@@ -52,19 +52,19 @@ Tasky 是適用于 iOS、Android 和 Windows Phone 的簡單待辦事項清單�
 
 ## <a name="summary"></a>總結
 
-本節介紹 Xamarin 的應用程式開發工具, 並討論如何建立以多個行動平臺為目標的應用程式。
+本節介紹 Xamarin 的應用程式開發工具，並討論如何建立以多個行動平臺為目標的應用程式。
 
-它涵蓋了一種分層架構, 可跨多個平臺重複使用程式碼, 並說明可在該架構內使用的不同軟體模式。
+它涵蓋了一種分層架構，可跨多個平臺重複使用程式碼，並說明可在該架構內使用的不同軟體模式。
 
-範例會提供一般應用程式函式 (如檔案和網路作業), 以及如何以跨平臺方式建立它們。
+範例會提供一般應用程式函式（如檔案和網路作業），以及如何以跨平臺方式建立它們。
 
-最後, 它會簡短討論測試, 並提供案例研究的參考, 將這些準則納入動作中。
+最後，它會簡短討論測試，並提供案例研究的參考，將這些準則納入動作中。
 
 ## <a name="related-links"></a>相關連結
 
 - [共用程式碼選項](~/cross-platform/app-fundamentals/code-sharing.md)
-- [案例研究:Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
-- [Tasky 範例應用程式 (github)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin 行動應用程式開發:跨平臺C#和 Xamarin. 表單基本概念 (Amazon)](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
-- [以 Greg Shackles C# (O'Reilly) 的行動裝置開發](http://shop.oreilly.com/product/0636920024002.do)
-- [Scott Olson、John Hunter、Ben C# Horgen、Kenny Goers (Wrox) 中的專業跨平臺行動裝置開發](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)
+- [案例研究：Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
+- [Tasky 範例應用程式（github）](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
+- [Xamarin 行動應用程式開發：跨平臺C#和 Xamarin. 表單基本概念（Amazon）](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [以 Greg Shackles C# （O'Reilly）的行動裝置開發](http://shop.oreilly.com/product/0636920024002.do)
+- [Scott Olson、John Hunter、Ben C# Horgen、Kenny Goers （Wrox）中的專業跨平臺行動裝置開發](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

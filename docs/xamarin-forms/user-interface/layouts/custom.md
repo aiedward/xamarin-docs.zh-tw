@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: d6bcecd27e0380221febc34f787f71d20e0fcaf9
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526961"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292578"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在 Xamarin 中建立自訂版面配置
 
@@ -74,8 +74,8 @@ _Xamarin.Forms 可定義四種版面配置類別 – StackLayout、 AbsoluteLayo
 1. 覆寫[ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))方法來叫用[ `Measure` ](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags))方法配置的配置的所有子系，並傳回要求的大小。 如需詳細資訊，請參閱 <<c0> [ 覆寫 OnMeasure 方法](#onmeasure)。
 1. 覆寫[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))方法來叫用[ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))版面配置的所有子系的方法。 叫用失敗[ `Layout` ](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))上每個子系的版面配置中的方法將會導致永遠不會收到正確的大小或位置的子系，並因此子系將不會顯示在頁面上。 如需詳細資訊，請參閱 <<c0> [ 覆寫 LayoutChildren 方法](#layoutchildren)。
 
-  > [!NOTE]
->  列舉中的子系時[ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))並[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))覆寫，請略過任何子系其[ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible)屬性設定為 `false`. 這可確保自訂的版面配置不會保留空間，不可見的子系。
+    > [!NOTE]
+    > 列舉中的子系時[ `OnMeasure` ](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))並[ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))覆寫，請略過任何子系其[ `IsVisible` ](xref:Xamarin.Forms.VisualElement.IsVisible)屬性設定為 `false`. 這可確保自訂的版面配置不會保留空間，不可見的子系。
 
 1. [*選擇性*] 覆寫[ `InvalidateLayout` ](xref:Xamarin.Forms.Layout.InvalidateLayout)子系加入或從配置中移除時收到通知的方法。 如需詳細資訊，請參閱 <<c0> [ 覆寫 InvalidateLayout 方法](#invalidatelayout)。
 1. [*選擇性*] 覆寫[ `OnChildMeasureInvalidated` ](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated)其中一個版面配置的子系的大小變更時接獲通知的方法。 如需詳細資訊，請參閱 <<c0> [ 覆寫 OnChildMeasureInvalidated 方法](#onchildmeasureinvalidated)。

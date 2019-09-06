@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: d13246ddae3f505d04db2a866f785a9f60ce3979
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2ae78d535edd17d3968d0784194bb7295bb7e889
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652035"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292683"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>使用 Azure 搜尋服務和 Xamarin 來搜尋資料
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Azure 搜尋服務是雲端服務可編製索引和查詢上傳資料的功能。這會移除傳統上相關聯的應用程式中實作搜尋功能的搜尋演算法複雜度與基礎結構需求。這篇文章會示範如何使用 Microsoft Azure 搜尋服務程式庫，將 Azure 搜尋服務整合至 Xamarin.Forms 應用程式。_
 
@@ -60,7 +60,7 @@ var searchClient =
 `SearchServiceClient`建構函式多載會採用搜尋服務名稱和`SearchCredentials`物件做為引數，`SearchCredentials`物件包裝*管理金鑰*Azure 搜尋服務。 *系統管理金鑰*，才可建立索引。
 
 > [!NOTE]
->  單一`SearchServiceClient`應該盡量避免開啟太多連線到 Azure 搜尋服務應用程式中使用執行個體。
+> 單一`SearchServiceClient`應該盡量避免開啟太多連線到 Azure 搜尋服務應用程式中使用執行個體。
 
 索引由定義`Index`物件，如下列程式碼範例所示：
 

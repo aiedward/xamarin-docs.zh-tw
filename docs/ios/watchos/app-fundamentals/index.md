@@ -1,28 +1,28 @@
 ---
 title: watchOS 應用程式基本概念
-description: 本文件提供各種說明使用 Xamarin 的 watchOS 應用程式開發的基本概念的文件的連結。
+description: 本檔提供各種檔的連結，說明使用 Xamarin watchOS 應用程式開發的基本概念。
 ms.prod: xamarin
 ms.assetid: 156D6D1C-83CA-4088-BA08-40B22312269C
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 3933c18c27f727b833a624f0d59b5ed36b0a0b76
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 682e1d8e8146472c65dc4d8009bd4d93162049fb
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865627"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70285966"
 ---
 # <a name="watchos-application-fundamentals"></a>watchOS 應用程式基本概念
 
 ## <a name="parent-applicationioswatchosapp-fundamentalsparent-appmd"></a>[父應用程式](~/ios/watchos/app-fundamentals/parent-app.md)
 
-Watch 應用程式可以在 iOS 上執行其父代應用程式通訊。
+監看應用程式可以與其在 iOS 上執行的父應用程式通訊。
 
 ## <a name="app-groupsioswatchosapp-fundamentalsapp-groupsmd"></a>[應用程式群組](~/ios/watchos/app-fundamentals/app-groups.md)
 
-共用的設定和 iOS 與監看式應用程式之間的資料。
+在 iOS 與 Watch 應用程式之間共用設定和資料。
 
 ## <a name="iconsioswatchosapp-fundamentalsiconsmd"></a>[圖示](~/ios/watchos/app-fundamentals/icons.md)
 
@@ -30,19 +30,19 @@ Watch 應用程式可以在 iOS 上執行其父代應用程式通訊。
 
 ## <a name="layoutioswatchosapp-fundamentalslayoutmd"></a>[版面配置](~/ios/watchos/app-fundamentals/layout.md)
 
-建置 Apple Watch 的使用者介面的設計秘訣。
+建立 Apple Watch 使用者介面的設計秘訣。
 
 ## <a name="localizationioswatchosapp-fundamentalslocalizationmd"></a>[當地語系化](~/ios/watchos/app-fundamentals/localization.md)
 
-您的 Apple Watch 應用程式內容，轉譯指南來支援多種語言。
+翻譯您的 Apple Watch 應用程式內容以支援多種語言的指南。
 
 ## <a name="navigationioswatchosapp-fundamentalsnavigationmd"></a>[巡覽](~/ios/watchos/app-fundamentals/navigation.md)
 
-深入了解兩個可用的監看式應用程式的導覽選項： 階層式，或按一下 頁面為基礎的導覽。
+瞭解適用于監看式應用程式的兩個流覽選項：階層式或以頁面為基礎的導覽。
 
 ## <a name="screen-sizesioswatchosapp-fundamentalsscreen-sizesmd"></a>[螢幕大小](~/ios/watchos/app-fundamentals/screen-sizes.md)
 
-預覽，並最佳化您的使用者介面，這兩個可用的監看式大小。
+針對可用的監看式大小，預覽和優化您的使用者介面。
 
 ## <a name="settingsioswatchosapp-fundamentalssettingsmd"></a>[設定](~/ios/watchos/app-fundamentals/settings.md)
 

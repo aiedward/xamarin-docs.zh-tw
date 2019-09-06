@@ -4,19 +4,19 @@ description: 本文件提供散發技巧的概觀，其適用於 Xamarin iOS 應
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: d533996a9c4e86efa360bf2ed71165571c7ca260
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
-ms.translationtype: HT
+ms.openlocfilehash: c7b31e05a5b9d75559fae14f467312f5abc8fe94
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865824"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289803"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 應用程式散發概觀
 
-本文件提供散發技術的概觀，其適用於 Xamarin iOS 應用程式，並作為本主題中更詳細文件的指標。 
+本文件提供散發技術的概觀，其適用於 Xamarin iOS 應用程式，並作為本主題中更詳細文件的指標。
 
 完成 Xamarin.iOS 應用程式開發之後，軟體開發生命週期的下一步就是將應用程式散發給使用者，如下圖中醒目標示的部分所示：
 
@@ -52,7 +52,7 @@ Apple 提供以下方式散發 iOS 應用程式，這些方式都受到 Xamarin.
 
 ## <a name="in-house-distribution"></a>內部散發
 
-內部散發 (有時稱為「企業散發」  ) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
+內部散發 (有時稱為「企業散發」) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
 
 對於著手設定與如何使用內部方式來散發應用程式的詳細資訊，請參閱[內部散發指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。
 

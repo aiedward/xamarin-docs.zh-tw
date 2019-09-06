@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/05/2019
-ms.openlocfilehash: 0bbe4310a32c11da35e41b01693f8cb1a66fc39b
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.openlocfilehash: 6e666c16c9b1afc3478f524cae2f84d6704319c2
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739330"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70199218"
 ---
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms DependencyService 登錄與解析
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 使用 Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) 來叫用原生平台功能時，平台實作必須向 `DependencyService` 登錄，然後從共用程式碼解析以叫用它們。
 
@@ -68,13 +68,13 @@ namespace DependencyServiceDemos.iOS
 [Register("AppDelegate")]
 public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 {
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-        {
-                global::Xamarin.Forms.Forms.Init();
-                LoadApplication(new App());
-                DependencyService.Register<IDeviceOrientationService, DeviceOrientationService>();
-                return base.FinishedLaunching(app, options);
-        }
+    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+    {
+        global::Xamarin.Forms.Forms.Init();
+        LoadApplication(new App());
+        DependencyService.Register<IDeviceOrientationService, DeviceOrientationService>();
+        return base.FinishedLaunching(app, options);
+    }
 }
 ```
 
@@ -165,7 +165,7 @@ ITextToSpeechService service = DependencyService.Get<ITextToSpeechService>(Depen
 ITextToSpeechService service = DependencyService.Get<ITextToSpeechService>(DependencyFetchTarget.NewInstance);
 using (service as IDisposable)
 {
-        await service.SpeakAsync("Hello world");
+    await service.SpeakAsync("Hello world");
 }
 ```
 

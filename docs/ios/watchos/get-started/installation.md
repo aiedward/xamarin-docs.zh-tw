@@ -4,15 +4,15 @@ description: 本文件說明如何安裝和搭配 Xamarin 使用 watchOS。 它�
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 12/05/2017
-ms.openlocfilehash: b4d827715870d54de3116067a3e24e229ecda530
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 1bc7ba07676c66c411357b5ad043258fea611d71
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065628"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293129"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>安裝並在 Xamarin 中使用 watchOS
 
@@ -29,7 +29,7 @@ Watch 應用程式是由三個專案所組成：
 
 - **IPhone 應用程式的 Xamarin.iOS 專案**-這是正常的 iPhone 專案，它可以是任何 Xamarin.iOS 範本。 Watch 應用程式和其擴充功能將會配套在此主要專案內。
 
-- **監看延伸專案**-這包含監看式應用程式的程式碼 (例如控制器類別)。
+- **監看延伸專案**-這包含監看式應用程式的程式碼（例如控制器類別）。
 
 - **監看應用程式專案**-這包含具有 Watch 應用程式所有 UI 資源的使用者介面分鏡腳本檔案。
 
@@ -179,7 +179,7 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 使用 Xcode 6 時僅 iphone 5 以上、 iPhone 5 秒、 iPhone 6 及 iPhone 6 Plus 可以啟用適用於外部顯示器**Apple Watch-38 公釐**或是**Apple Watch-42 公釐**會監看式應用程式顯示此項目。
 
 > [!NOTE]
-> 請記住, 使用 Xcode 6 時, [監看式] 畫面不會自動出現在 iOS 模擬器中。
+> 請記住，使用 Xcode 6 時，[監看式] 畫面不會自動出現在 iOS 模擬器中。
 > 使用**硬體 > 外接式顯示器之間**功能表顯示 [監看式] 畫面。
 
 <a name="custommodes" />

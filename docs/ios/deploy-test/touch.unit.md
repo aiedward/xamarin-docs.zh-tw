@@ -4,15 +4,15 @@ description: 本文件提供如何對 Xamarin.iOS 應用程式進行單元測試
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 6757f25cb54adc464f7e41a1cd59db8cf6c7d22a
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: 44ced93605ff595fe2fd7f09f88948e5b0e1914c
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511691"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282462"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>單元測試 Xamarin.iOS 應用程式
 
@@ -21,7 +21,7 @@ ms.locfileid: "68511691"
 
 ## <a name="setting-up-a-test-project-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中設定測試專案
 
-若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案]  類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案]  即可完成此動作。 從清單中選取 [iOS] > [測試] > [Unified API] > [iOS 單元測試專案]  (您可以選擇 C# 或 F#)。
+若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案] 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案] 即可完成此動作。 從清單中選取 [iOS] > [測試] > [Unified API] > [iOS 單元測試專案] (您可以選擇 C# 或 F#)。
 
 ![](touch.unit-images/00.png "選擇 C# 或 F#")
 
@@ -66,7 +66,7 @@ public partial class AppDelegate : UIApplicationDelegate
 
 若要編寫測試，請建立已套用 `[TestFixture]` 屬性的類別。 您應該在每個 TestFixture 類別內，將 `[Test]` 屬性套用至您希望測試執行器叫用的每個方法。 實際的測試固件可以存在於測試專案中的任何檔案。
 
-若要快速開始，請選取 [加入]/[加入新檔案]  ，然後在 Xamarin.iOS 群組中選取 [UnitTests]  。 這將會新增包含一個通過測試、一個失敗測試，以及一個忽略測試的基本架構檔案，它看起來像這樣：
+若要快速開始，請選取 [加入]/[加入新檔案]，然後在 Xamarin.iOS 群組中選取 [UnitTests]。 這將會新增包含一個通過測試、一個失敗測試，以及一個忽略測試的基本架構檔案，它看起來像這樣：
 
 ```csharp
 using System;
@@ -101,7 +101,7 @@ namespace Fixtures {
 
 ## <a name="running-your-tests"></a>執行您的測試
 
-若要執行此專案，請在方案內以滑鼠右鍵按一下該專案，然後選取 [Debug Item]  \(針對項目進行偵錯\)或 [Run Item]  \(執行項目\)。
+若要執行此專案，請在方案內以滑鼠右鍵按一下該專案，然後選取 [Debug Item] \(針對項目進行偵錯\)或 [Run Item] \(執行項目\)。
 
 測試執行器可讓您查看已登錄的測試，並個別選取可以執行的測試。
 

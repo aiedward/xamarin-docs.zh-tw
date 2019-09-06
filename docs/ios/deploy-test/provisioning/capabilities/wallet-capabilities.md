@@ -4,21 +4,21 @@ description: 為應用程式新增功能通常需要額外的佈建設定。 本
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 8cb5d1cb29f5668194d15102c0b2fb4118388e94
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.openlocfilehash: 8afe9e703d357c246ec46756a87a7337859d5888
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065465"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287022"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 的電子錢包功能
 
 _為應用程式新增功能通常需要額外的佈建設定。本指南說明「電子錢包」功能所需的設定。_
 
-「電子錢包」是一個應用程式，可儲存和顯示條碼及其他可讓使用者從其裝置顯示票證、登機證和優待券的內容。 此資訊儲存在「票卡」  上。 例如，登機證或單一票證會是單一票卡。 
+「電子錢包」是一個應用程式，可儲存和顯示條碼及其他可讓使用者從其裝置顯示票證、登機證和優待券的內容。 此資訊儲存在「票卡」上。 例如，登機證或單一票證會是單一票卡。 
 
 開發人員可以透過各種方式使用「電子錢包」：
 
@@ -33,20 +33,20 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 若要建立與「電子錢包」搭配使用的新佈建設定檔，請執行下列動作：
 
 1. 瀏覽至 Apple Developer Portal (Apple 開發人員入口網站) 的 [Certificates, Identifiers, and Profiles](https://developer.apple.com/account/ios/certificate/) \(憑證、識別碼及設定檔\) 區段。
-2. 在 [Identifiers] \(識別碼\)  底下，瀏覽至 [App IDs] \(應用程式識別碼\)  ： 
+2. 在 [Identifiers] \(識別碼\) 底下，瀏覽至 [App IDs] \(應用程式識別碼\)： 
     
     ![選取 App ID (應用程式識別碼)](wallet-capabilities-images/image17.png)
 
-3. 按一下頁面右上角的 [+]  圖示。
-4. 為新 App ID (應用程式識別碼) 提供 [Name] \(名稱\)  和 [Bundle ID] \(套件組合識別碼\) 來註冊它。 (請注意，這個套件組合識別碼必須與您專案中的套件組合識別碼相符)：
+3. 按一下頁面右上角的 [+] 圖示。
+4. 為新 App ID (應用程式識別碼) 提供 [Name] \(名稱\) 和 [Bundle ID] \(套件組合識別碼\) 來註冊它。 (請注意，這個套件組合識別碼必須與您專案中的套件組合識別碼相符)：
    
     ![新增 App ID (應用程式識別碼) 詳細資料](wallet-capabilities-images/image18.png)
 
-5. 從服務清單中選取 [Wallet] \(電子錢包\)  應用程式服務：
+5. 從服務清單中選取 [Wallet] \(電子錢包\) 應用程式服務：
     
     ![選取服務畫面](wallet-capabilities-images/image19.png)
 
-6. 按 [Continue] \(繼續\)  ，然後按 [Register] \(註冊\)  來建立 App ID (應用程式識別碼)。
+6. 按 [Continue] \(繼續\)，然後按 [Register] \(註冊\) 來建立 App ID (應用程式識別碼)。
 
 如有需要，可以編輯現有的 App ID (應用程式識別碼) 來新增「電子錢包」功能。
 
@@ -65,6 +65,6 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 * 在您的應用程式中使用架構命名空間。
 * 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在應用程式的 [iOS 套件組合簽署]  中，確定 [自訂權利]  已設定為 **Entitlements.plist**。 這「不是」  「偵錯」和「iOS 模擬器」組建的預設設定。
+* 在應用程式的 [iOS 套件組合簽署] 中，確定 [自訂權利] 已設定為 **Entitlements.plist**。 這「不是」「偵錯」和「iOS 模擬器」組建的預設設定。
 
 如果您在應用程式服務方面遇到問題，請參閱主要指南的[疑難排解](~/ios/deploy-test/provisioning/capabilities/index.md)一節。

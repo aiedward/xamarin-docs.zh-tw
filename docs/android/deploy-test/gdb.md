@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: aa72daae1727e0d100592873a7895a7d8942b4f2
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: bc2c1c26bcb3dcf99a5598b6dccb6aad02513a28
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525497"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70197565"
 ---
 # <a name="gdb"></a>GDB
 
@@ -173,7 +173,7 @@ $ adb pull /data/data/Mono.Android.DebugRuntime/lib/libmonosgen-2.0.so Project/g
 
 然後重新啟動您的偵錯工作階段。
 
-### <a name="bus-error-10-when-running-the-gdb-command"></a>執行 `gdb` 命令時發生匯流排錯誤：10
+### <a name="bus-error-10-when-running-the-gdb-command"></a>執行  命令時發生匯流排錯誤：10
 
 當 `gdb` 命令發生 `"Bus error: 10"` 命令錯誤時，請重新啟動 Android 裝置。
 

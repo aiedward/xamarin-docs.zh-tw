@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: d49a12e38b9bfe1014583ce7f0d7c7770270af7b
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.openlocfilehash: 3521d3fb632261c880e67f7a8c889881485e313d
+ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739377"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70198156"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 類別是服務定位器，讓 Xamarin.Forms 應用程式能夠從共用程式碼叫用原生平台功能。
 
@@ -40,7 +40,7 @@ ms.locfileid: "68739377"
 ```csharp
 public interface IDeviceOrientationService
 {
-        DeviceOrientation GetOrientation();
+    DeviceOrientation GetOrientation();
 }
 ```
 

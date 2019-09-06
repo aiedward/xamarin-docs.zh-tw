@@ -1,44 +1,44 @@
 ---
 title: Azure Active Directory
-description: 本文件說明以允許使用 Azure Active Directory 進行驗證的行動裝置應用程式必須遵循的步驟。
+description: 本檔說明允許行動應用程式使用 Azure Active Directory 進行驗證所必須遵循的步驟。
 ms.prod: xamarin
 ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: ca33422817f19dbb0a04e8870800d3f5efa8af2a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f51c6af9ed38910f44db2c0886c474deafa096d7
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61318294"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289984"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 
-_註冊以使用 Azure Active Directory 應用程式_
+_註冊要使用 Azure Active Directory 的應用程式_
 
-Azure Active Directory 可讓開發人員安全的資源，例如檔案、 連結及使用相同的組織帳戶登入他們的系統，或檢查其電子郵件的員工使用的 Web Api。
+Azure Active Directory 可讓開發人員使用與員工用來登入系統或檢查其電子郵件的相同組織帳戶，來保護資源（例如檔案、連結和 Web Api）。
 
-開發行動應用程式可以使用 Azure Active Directory 進行驗證，牽涉到三個步驟。
-前兩個步驟大致相同，不論您打算使用哪些服務。 第三個步驟是不同的每個服務類型：
+開發可使用 Azure Active Directory 進行驗證的行動應用程式包含三個步驟。
+前兩個步驟通常都相同，不論您打算使用哪些服務。 每個服務類型的第三個步驟不同：
 
-  1. [使用 Azure Active Directory 註冊](~/cross-platform/data-cloud/active-directory/get-started/register.md)上*windowsazure.com*入口網站，然後
+  1. 在*windowsazure.com*入口網站上[向 Azure Active Directory 註冊](~/cross-platform/data-cloud/active-directory/get-started/register.md)，然後
   2. [設定服務](~/cross-platform/data-cloud/active-directory/get-started/configure.md)。
-  3. 開發行動應用程式服務。
+  3. 使用服務開發行動應用程式。
 
-您可以存取的不同服務的範例包括：
+您可以存取的不同服務範例包括：
 
-- [Graph API](~/cross-platform/data-cloud/active-directory/graph.md)
+- [圖形 API](~/cross-platform/data-cloud/active-directory/graph.md)
 - Web API
 - Office365
 
 
 ## <a name="conclusion"></a>結論
 
-使用您上面的步驟就可以驗證您對 Azure Active Directory 的行動應用程式。 Active Directory Authentication Library (ADAL) 可以更容易以短短幾行程式碼，同時保留大多數的程式碼相同，因而讓它共用跨平台。
+使用上述步驟，您可以根據 Azure Active Directory 來驗證您的行動應用程式。 Active Directory 驗證程式庫（ADAL）可讓程式碼更少，同時讓大部分的程式碼保持相同，使其可以跨平臺共用。
 
 
 
 ## <a name="related-links"></a>相關連結
 
-- [Microsoft Nativeclient-windowsstore 範例](https://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet)
+- [Microsoft Nativeclient-android 範例](https://github.com/AzureADSamples/NativeClient-MultiTarget-DotNet)

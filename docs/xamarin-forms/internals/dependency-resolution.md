@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/27/2018
-ms.openlocfilehash: e2cab7191bb4877deacb3f3f3235a3a4d5c65612
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6df393d59207cea9c316189059f8d0e08a5e5137
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656371"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70290073"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>在 Xamarin.Forms 中的相依性解析
 
@@ -29,9 +29,9 @@ _這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使�
 
 ## <a name="injecting-a-dependency-resolution-method"></a>插入相依性解析方法
 
-[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver)類別提供的功能，將相依性解析方法插入 Xamarin.Forms，使用[ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)方法。 然後，當 Xamarin.Forms 需要特定類型的執行個體時，相依性解析方法有機會提供執行個體。 如果相依性解析方法傳回`null`要求的型別，如 Xamarin.Forms 改回嘗試建立類型執行個體本身使用`Activator.CreateInstance`方法。
+[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver)類別提供的功能，將相依性解析方法插入 Xamarin.Forms，使用[ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)方法。 然後，當 Xamarin.Forms 需要特定類型的執行個體時，相依性解析方法有機會提供執行個體。 如果相依性解析方法傳回`null`要求的型別，如 Xamarin.Forms 改回嘗試建立類型執行個體本身使用`Activator.CreateInstance`方法。
 
-下列範例示範如何設定具有的相依性解析方法[ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)方法：
+下列範例示範如何設定具有的相依性解析方法[ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)方法：
 
 ```csharp
 using Autofac;

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: 8c55fecc8605b8bb7312e658e5edf46008f6b6ce
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: cdf89b55c30b0a4e7ab247c396a870e0bad24886
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651356"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287720"
 ---
 # <a name="xamarinforms-button"></a>Xamarin.Forms 按鈕
 
@@ -138,7 +138,7 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>停用按鈕
 
-有時候應用程式處於特定狀態在特定`Button`按一下不是有效的作業。 在這些情況下，`Button`應該設定停用其`IsEnabled`屬性設`false`。 傳統範例是`Entry`附有檔案開啟`Button`之檔案名的控制項:只有在某些文字已輸入`Entry`時, 才應該啟用。`Button`
+有時候應用程式處於特定狀態在特定`Button`按一下不是有效的作業。 在這些情況下，`Button`應該設定停用其`IsEnabled`屬性設`false`。 傳統範例是`Entry`附有檔案開啟`Button`之檔案名的控制項：只有在某些文字已輸入`Entry`時，才應該啟用。`Button`
 您可以使用`DataTrigger`這項工作，如中所示[**資料觸發程序**](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)文章。
 
 ## <a name="using-the-command-interface"></a>使用命令介面
@@ -150,7 +150,7 @@ button.Clicked += OnButtonClicked;
 
 特別是當實作 Model View ViewModel (MVVM) 架構時，這個方法會與資料繫結，並特別適合。 在文章中討論這些主題[資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)，[從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)，並[MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md)。
 
-MVVM 應用程式中的 ViewModel 定義類型的屬性`ICommand`，然後連線到 XAML`Button`具有資料繫結項目。 Xamarin.Forms 也會定義[ `Command` ]((xref:Xamarin.Forms.Command))並[ `Command<T>` ](xref:Xamarin.Forms.Command`1)類別實作`ICommand`介面，並協助 ViewModel 定義屬性的型別`ICommand`.
+MVVM 應用程式中的 ViewModel 定義類型的屬性`ICommand`，然後連線到 XAML`Button`具有資料繫結項目。 Xamarin.Forms 也會定義[ `Command` ](xref:Xamarin.Forms.Command)並[ `Command<T>` ](xref:Xamarin.Forms.Command`1)類別實作`ICommand`介面，並協助 ViewModel 定義屬性的型別`ICommand`.
 
 命令文件中的更詳細地說明[**的命令介面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)但**基本按鈕命令**頁面[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例示範基本的方法。
 
@@ -409,7 +409,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 [![按下再放開按鈕](button-images/PressAndReleaseButton.png "按下再放開按鈕")](button-images/PressAndReleaseButton-Large.png)
 
-這種行為有適用于遊戲的應用程式:保留在上`Button`的手指, 可能會讓 on screen 物件以特定方向移動。
+這種行為有適用于遊戲的應用程式：保留在上`Button`的手指，可能會讓 on screen 物件以特定方向移動。
 
 <a name="button-appearance" />
 
@@ -582,7 +582,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 ## <a name="creating-a-toggle-button"></a>建立切換按鈕
 
-您可以將子類別`Button`化, 使其運作方式類似于關閉參數:按一次按鈕即可切換 [開啟] 按鈕, 然後再次將它切換成關閉。
+您可以將子類別`Button`化，使其運作方式類似于關閉參數：按一次按鈕即可切換 [開啟] 按鈕，然後再次將它切換成關閉。
 
 下列`ToggleButton`類別衍生自`Button`，並定義新的事件，名為`Toggled`和布林值屬性，名為`IsToggled`。 這些是相同的兩個屬性，定義由 Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch):
 
@@ -750,7 +750,7 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 `Button`類別會定義[ `ImageSource` ](xref:Xamarin.Forms.Button.Image)屬性，可讓您在上顯示點陣圖影像`Button`，單獨或搭配文字。 您也可以指定的文字和影像的排列方式。
 
-屬性的類型[`ImageSource`](xref:Xamarin.Forms.ImageSource)為, 這表示可以從檔案、內嵌資源、URI 或資料流程載入點陣圖。 `ImageSource`
+屬性的類型[`ImageSource`](xref:Xamarin.Forms.ImageSource)為，這表示可以從檔案、內嵌資源、URI 或資料流程載入點陣圖。 `ImageSource`
 
 Xamarin.Forms 所支援的每個平台可讓儲存在不同的像素解析度的各種裝置上可能執行的應用程式的多個大小的影像。 這些是名為多個點陣圖，或將其儲存在一種作業系統可以挑選最符合項目，該裝置的視訊顯示器解析度。
 

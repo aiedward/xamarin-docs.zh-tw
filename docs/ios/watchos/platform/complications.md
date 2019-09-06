@@ -1,33 +1,33 @@
 ---
 title: Xamarin 中的 watchOS 複雜性
-description: 本檔說明如何在 Xamarin 中使用 watchOS 複雜程度。 它討論如何新增複雜的、撰寫複雜的範本, 並提供範例程式碼。
+description: 本檔說明如何在 Xamarin 中使用 watchOS 複雜程度。 它討論如何新增複雜的、撰寫複雜的範本，並提供範例程式碼。
 ms.prod: xamarin
 ms.assetid: 7ACD9A2B-CF69-46EA-B0C8-10E7D81216E8
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 07/03/2017
-ms.openlocfilehash: 7e2b3e93baaeac85267c9db2f414793610521f2e
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 6831fa9a660a55eccd8584dccb1f81ae9953aee5
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200034"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282340"
 ---
 # <a name="watchos-complications-in-xamarin"></a>Xamarin 中的 watchOS 複雜性
 
 _watchOS 可讓開發人員針對監看臉部撰寫自訂的複雜功能_
 
-此頁面說明各種可用的複雜類型, 以及如何將複雜的新增至您的 watchOS 3 應用程式。
+此頁面說明各種可用的複雜類型，以及如何將複雜的新增至您的 watchOS 3 應用程式。
 
-請注意, 每個 watchOS 應用程式只能有一個複雜的。
+請注意，每個 watchOS 應用程式只能有一個複雜的。
 
-一開始請先閱讀[Apple 的](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)檔, 以判斷您的應用程式是否適用于複雜的情況。 有 5 `CLKComplicationFamily`種顯示類型可供選擇:
+一開始請先閱讀[Apple 的](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)檔，以判斷您的應用程式是否適用于複雜的情況。 有 5 `CLKComplicationFamily`種顯示類型可供選擇：
 
-[![](complications-images/all-complications-sml.png "可用的5種 CLKComplicationFamily 類型:圓形小型, 模組化小型, 模組化大型, 強調實際 Small, 強調實際大型")](complications-images/all-complications.png#lightbox)
+[![](complications-images/all-complications-sml.png "可用的5種 CLKComplicationFamily 類型：圓形小型，模組化小型，模組化大型，強調實際 Small，強調實際大型")](complications-images/all-complications.png#lightbox)
 
-應用程式只能執行一種樣式, 或全部都是五, 視所顯示的資料而定。
-您也可以支援時間旅遊, 在使用者輪流 Digital Crown 時, 提供過去和/或未來時間的值。
+應用程式只能執行一種樣式，或全部都是五，視所顯示的資料而定。
+您也可以支援時間旅遊，在使用者輪流 Digital Crown 時，提供過去和/或未來時間的值。
 
 <a name="adding" />
 
@@ -35,20 +35,20 @@ _watchOS 可讓開發人員針對監看臉部撰寫自訂的複雜功能_
 
 ### <a name="configuration"></a>組態
 
-複雜性可以在建立期間新增至監看式應用程式, 或手動新增至現有的解決方案。
+複雜性可以在建立期間新增至監看式應用程式，或手動新增至現有的解決方案。
 
 ### <a name="add-new-project"></a>加入新專案 。
 
-[**新增專案 ...** ] wizard 包含一個核取方塊, 會自動建立複雜的控制器類別, 並設定**plist**檔案:
+[**新增專案 ...** ] wizard 包含一個核取方塊，會自動建立複雜的控制器類別，並設定**plist**檔案：
 
 ![](complications-images/file-new-project-sml.png "[包含複雜的] 核取方塊")
 
 ### <a name="existing-projects"></a>現有的專案
 
-若要將複雜的加入至現有的專案:
+若要將複雜的加入至現有的專案：
 
 1. 建立新的**ComplicationController.cs**類別檔案並執行`CLKComplicationDataSource`。
-2. 設定應用程式的**Info. plist**以公開複雜的, 並識別支援的複雜系列。
+2. 設定應用程式的**Info. plist**以公開複雜的，並識別支援的複雜系列。
 
 下面將更詳細說明這些步驟。
 
@@ -77,27 +77,27 @@ public class ComplicationController : CLKComplicationDataSource
 }
 ```
 
-請遵循[撰寫複雜](#writing)的指示, 將程式碼新增至這個類別。
+請遵循[撰寫複雜](#writing)的指示，將程式碼新增至這個類別。
 
 ### <a name="infoplist"></a>Info.plist
 
-Watch 延伸模組的**plist**檔案應該指定的名稱`CLKComplicationDataSource`以及您想要支援的複雜系列:
+Watch 延伸模組的**plist**檔案應該指定的名稱`CLKComplicationDataSource`以及您想要支援的複雜系列：
 
 [![](complications-images/complications-config-sml.png "複雜的系列類型")](complications-images/complications-config.png#lightbox)
 
-[**資料來源類別**] 專案清單會顯示類別名稱, `CLKComplicationDataSource`其中包含您的複雜邏輯的子類別化。
+[**資料來源類別**] 專案清單會顯示類別名稱， `CLKComplicationDataSource`其中包含您的複雜邏輯的子類別化。
 
 ## <a name="clkcomplicationdatasource"></a>CLKComplicationDataSource
 
-所有複雜的功能都實作為單一類別, 並覆寫抽象`CLKComplicationDataSource`類的方法 (這會`ICLKComplicationDataSource`實作為介面)。
+所有複雜的功能都實作為單一類別，並覆寫抽象`CLKComplicationDataSource`類的方法（這會`ICLKComplicationDataSource`實作為介面）。
 
 ### <a name="required-methods"></a>必要方法
 
-您必須執行下列方法, 才能執行複雜的:
+您必須執行下列方法，才能執行複雜的：
 
 - `GetPlaceholderTemplate`-傳回設定期間或當應用程式無法提供值時所使用的靜態顯示。
-- `GetCurrentTimelineEntry`-當複雜的正在執行時, 計算正確的顯示。
-- `GetSupportedTimeTravelDirections`- `CLKComplicationTimeTravelDirections`傳回的`Forward | Backward`選項`None`, 例如、 `Forward`、 `Backward`或。
+- `GetCurrentTimelineEntry`-當複雜的正在執行時，計算正確的顯示。
+- `GetSupportedTimeTravelDirections`- `CLKComplicationTimeTravelDirections`傳回的`Forward | Backward`選項`None`，例如、 `Forward`、 `Backward`或。
 
 ### <a name="privacy"></a>隱私權聲明
 
@@ -105,7 +105,7 @@ Watch 延伸模組的**plist**檔案應該指定的名稱`CLKComplicationDataSou
 
 - `GetPrivacyBehavior` - `CLKComplicationPrivacyBehavior.ShowOnLockScreen` 或 `HideOnLockScreen`
 
-如果這個方法`HideOnLockScreen`傳回, 則當監看式鎖定時, 複雜的會顯示圖示或應用程式名稱 (而不是任何資料)。
+如果這個方法`HideOnLockScreen`傳回，則當監看式鎖定時，複雜的會顯示圖示或應用程式名稱（而不是任何資料）。
 
 ### <a name="updates"></a>更新
 
@@ -115,7 +115,7 @@ Watch 延伸模組的**plist**檔案應該指定的名稱`CLKComplicationDataSou
 
 ### <a name="supporting-time-travel"></a>支援時間移動
 
-時間移動支援是選擇性的, 而且是由`GetSupportedTimeTravelDirections`方法所控制。 如果它`Forward`傳回、 `Backward`或`Forward | Backward` , 則您必須執行下列方法
+時間移動支援是選擇性的，而且是由`GetSupportedTimeTravelDirections`方法所控制。 如果它`Forward`傳回、 `Backward`或`Forward | Backward` ，則您必須執行下列方法
 
 - `GetTimelineStartDate`
 - `GetTimelineEndDate`
@@ -126,7 +126,7 @@ Watch 延伸模組的**plist**檔案應該指定的名稱`CLKComplicationDataSou
 
 ## <a name="writing-a-complication"></a>撰寫複雜的
 
-從簡單的資料顯示到複雜的影像, 以及具有時間旅遊支援的資料轉譯, 都能提供複雜性的範圍。 下列程式碼顯示如何建立簡單、單一範本的複雜情況。
+從簡單的資料顯示到複雜的影像，以及具有時間旅遊支援的資料轉譯，都能提供複雜性的範圍。 下列程式碼顯示如何建立簡單、單一範本的複雜情況。
 
 <!--
 The [sample]() for this article supports more template styles.
@@ -134,7 +134,7 @@ The [sample]() for this article supports more template styles.
 
 ## <a name="sample-code"></a>程式碼範例
 
-這個範例只支援`UtilitarianLarge`範本, 因此只能在支援該類型複雜的特定監看式臉部上選取。 *選取*監看式的複雜畫面時, 它會顯示我的**複雜**內容, 而執行時, 它會顯示**分鐘_小時_** (含時間部分)。
+這個範例只支援`UtilitarianLarge`範本，因此只能在支援該類型複雜的特定監看式臉部上選取。 *選取*監看式的複雜畫面時，它會顯示**我的複雜**內容，而*執行時，* 它會顯示**分鐘_小時_** （含時間部分）。
 
 ```csharp
 [Register ("ComplicationController")]
@@ -185,55 +185,55 @@ public class ComplicationController : CLKComplicationDataSource
 ## <a name="complication-templates"></a>複雜的範本
 
 有許多不同的範本適用于每個複雜的樣式。
-**環形**範本可讓您在複雜的周圍顯示進度樣式環, 這可以用來以圖形方式顯示進度或其他值。
+**環形**範本可讓您在複雜的周圍顯示進度樣式環，這可以用來以圖形方式顯示進度或其他值。
 
 [Apple 的 CLKComplicationTemplate 檔](https://developer.apple.com/reference/clockkit/clkcomplicationtemplate)
 
 ### <a name="circular-small"></a>圓形小
 
-這些範本類別名稱的前面都會加`CLKComplicationTemplateCircularSmall`上:
+這些範本類別名稱的前面都會加`CLKComplicationTemplateCircularSmall`上：
 
-- **RingImage** -顯示單一影像, 並在其周圍加上一個進度環。
-- **RingText** -顯示一行文字, 並在其周圍加上一個進度環。
+- **RingImage** -顯示單一影像，並在其周圍加上一個進度環。
+- **RingText** -顯示一行文字，並在其周圍加上一個進度環。
 - **SimpleImage** -只顯示小型的單一影像。
 - **SimpleText** -只顯示一個小片段的文字。
-- **StackImage** -顯示影像和一行文字, 另一個
+- **StackImage** -顯示影像和一行文字，另一個
 - **StackText** -顯示兩行文字。
 
 ### <a name="modular-small"></a>模組化小型
 
-這些範本類別名稱的前面都會加`CLKComplicationTemplateModularSmall`上:
+這些範本類別名稱的前面都會加`CLKComplicationTemplateModularSmall`上：
 
-- **ColumnsText** -顯示文字值的小方格 (2 個數據列和2個數據行)。
-- **RingImage** -顯示單一影像, 並在其周圍加上一個進度環。
-- **RingText** -顯示一行文字, 並在其周圍加上一個進度環。
+- **ColumnsText** -顯示文字值的小方格（2個數據列和2個數據行）。
+- **RingImage** -顯示單一影像，並在其周圍加上一個進度環。
+- **RingText** -顯示一行文字，並在其周圍加上一個進度環。
 - **SimpleImage** -只顯示小型的單一影像。
 - **SimpleText** -只顯示一個小片段的文字。
-- **StackImage** -顯示影像和一行文字, 另一個
+- **StackImage** -顯示影像和一行文字，另一個
 - **StackText** -顯示兩行文字。
 
 ### <a name="modular-large"></a>模組化大型
 
-這些範本類別名稱的前面都會加`CLKComplicationTemplateModularLarge`上:
+這些範本類別名稱的前面都會加`CLKComplicationTemplateModularLarge`上：
 
-- 資料行-顯示具有2個數據行的3個數據列方格, 並選擇性地在每個資料列的左邊包含一個影像。
-- **StandardBody** -顯示粗體標頭字串, 其中包含兩個數據列的純文字。 標頭可以選擇性地在左側顯示影像。
-- **資料表**-顯示粗體標頭字串, 其底下有一個2x2 的文字格線。 標頭可以選擇性地在左側顯示影像。
-- **TallBody** -顯示粗體標頭字串, 下方有較大的字型單行文字。
+- 資料行-顯示具有2個數據行的3個**資料列方格**，並選擇性地在每個資料列的左邊包含一個影像。
+- **StandardBody** -顯示粗體標頭字串，其中包含兩個數據列的純文字。 標頭可以選擇性地在左側顯示影像。
+- **資料表**-顯示粗體標頭字串，其底下有一個2x2 的文字格線。 標頭可以選擇性地在左側顯示影像。
+- **TallBody** -顯示粗體標頭字串，下方有較大的字型單行文字。
 
 ### <a name="utilitarian-small"></a>小型強調實際
 
-這些範本類別名稱的前面都會加`CLKComplicationTemplateUtilitarianSmall`上:
+這些範本類別名稱的前面都會加`CLKComplicationTemplateUtilitarianSmall`上：
 
-- 一般-在一行上顯示影像和一些文字 (文字應該很短)。
-- **RingImage** -顯示單一影像, 並在其周圍加上一個進度環。
-- **RingText** -顯示一行文字, 並在其周圍加上一個進度環。
-- **方形**-顯示方形影像 (分別為38mm 或 42mm Apple Watch 的40px 或44px 正方形)。
+- 一般 **-在**一行上顯示影像和一些文字（文字應該很短）。
+- **RingImage** -顯示單一影像，並在其周圍加上一個進度環。
+- **RingText** -顯示一行文字，並在其周圍加上一個進度環。
+- **方形**-顯示方形影像（分別為38mm 或 42mm Apple Watch 的40px 或44px 正方形）。
 
 ### <a name="utilitarian-large"></a>強調實際大型
 
-這個複雜的樣式只有一個範本: `CLKComplicationTemplateUtilitarianLargeFlat`。
-它會顯示單一影像和一些文字, 全都放在同一行上。
+這個複雜的樣式只有一個範本： `CLKComplicationTemplateUtilitarianLargeFlat`。
+它會顯示單一影像和一些文字，全都放在同一行上。
 
 
 

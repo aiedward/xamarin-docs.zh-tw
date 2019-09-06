@@ -1,47 +1,47 @@
 ---
 title: watchOS 5 簡介
-description: 本文件提供一些 watchOS 5 的高層級描述適用於 Xamarin 的 Api。
+description: 本檔提供一些適用于 Xamarin 的 watchOS 5 Api 的高階說明。
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 5df751f683c530ee9f7ec58d9d6393d9f089314d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e873d476e38c91bad0db805d53e2c396f4ffb9dd
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61222854"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70282046"
 ---
 # <a name="introduction-to-watchos-5"></a>watchOS 5 簡介
 
-本文件提供一些 watchOS 5 的高層級描述 Api。
+本檔提供一些 watchOS 5 Api 的高階說明。
 
-若要開始建置使用 Xamarin 的 watchOS 5 應用程式，請參閱[入門指南](~/ios/platform/introduction-to-ios12/get-started.md)
+若要開始使用 Xamarin 建立 watchOS 5 應用程式，請參閱[快速入門手冊](~/ios/platform/introduction-to-ios12/get-started.md)
 
-## <a name="workout-improvements"></a>健身增強功能
+## <a name="workout-improvements"></a>健身改進
 
-健身 Api 在 watchOS 5 健身資料收集、 儲存健身 HealthKit，自動繼續健身之後應用程式當機，, 以及使用一系列相關的 quantity 資料來提供新功能。
+WatchOS 5 中的健身 Api 提供新的健身資料收集功能、將 workouts 儲存至 HealthKit、在應用程式損毀之後自動繼續健身，以及使用一系列相關的數量資料。
 
-## <a name="siri-shortcuts"></a>Siri 快速鍵
+## <a name="siri-shortcuts"></a>Siri 快捷方式
 
-在 watchOS 5 Siri watch 錶面會顯示快速鍵該介面的應用程式內容和使用者的功能在方便的時間。 Siri 學習以最可能使用時，顯示相關的快速鍵。
+在 watchOS 5 中，Siri watch 臉部會顯示快捷方式，可在方便的時間呈現應用程式內容和功能給使用者。 Siri 會在一段時間後學習，以顯示最有可能使用的相關快捷方式。
 
 ## <a name="background-audio-mode"></a>背景音訊模式
 
-watchOS 5 就可以播放音訊在背景透過 AV Foundation 架構中的第三方應用程式。
+watchOS 5 讓協力廠商應用程式可以透過 AV 基礎架構在背景播放音訊。
 
-## <a name="movement-disorder-api"></a>移動的失序則 API
+## <a name="movement-disorder-api"></a>移動目前充滿混亂 API
 
-移動的失序則 API，在 watchOS 5 CoreMotion framework 的一部分可讓 watchOS 應用程式監視、 記錄和查詢 tremor 和 dyskinesia 相關帕金森氏症的疾病的徵兆。
+移動目前充滿混亂 API 是 watchOS 5 中 CoreMotion 架構的一部分，可讓 watchOS 應用程式監視、記錄和查詢 tremor 與 dyskinesia 疾病相關的帕金森氏徵兆。
 
 ## <a name="natural-language-framework"></a>自然語言架構
 
-自然語言架構可讓應用程式，以執行各種類型的語言分析。 比方說，它可以用來識別組件的語音，並判斷由文字區塊的語言。
+自然語言架構可讓應用程式執行各種類型的語言分析。 例如，它可以用來識別語音的各個部分，並判斷以文字塊表示的語言。
 
 ## <a name="related-links"></a>相關連結
 
-- [watchOS – Apple 開發人員 (Apple)](https://developer.apple.com/watchOS/)
-- [WatchOS (Apple) （影片） 中最新消息](https://developer.apple.com/videos/play/wwdc2018/206/)
-- [監看式 (Apple)](https://www.apple.com/watch/)
+- [watchOS – Apple Developer （Apple）](https://developer.apple.com/watchOS/)
+- [WatchOS （Apple）的新功能（影片）](https://developer.apple.com/videos/play/wwdc2018/206/)
+- [監看（Apple）](https://www.apple.com/watch/)

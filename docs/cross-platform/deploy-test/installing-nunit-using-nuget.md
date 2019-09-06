@@ -3,15 +3,15 @@ title: 使用 NuGet 安裝 NUnit 2.6.4
 description: 本文件描述如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。 這在使用 Xamarin.UITest 時是必要的，因為它不支援 NUnit 3.x。
 ms.prod: xamarin
 ms.assetid: 7683F2B8-7FDF-48C4-8E7D-649D4D4E79F0
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: bc983fb43e0c649e3b7e231f42fce9d6af40e047
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 8fc4ca3063e88f17fc1e22ad35667b2086e63e89
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526741"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70280468"
 ---
 # <a name="installing-nunit-264-using-nuget"></a>使用 NuGet 安裝 NUnit 2.6.4
 
@@ -40,11 +40,11 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 下列步驟描述如何安裝 NUnit 2.6.4。
 
 
-1. **開啟套件管理員** - 以滑鼠右鍵按一下 [套件]  ，然後從快顯功能表中選取 [新增套件]  ：
+1. **開啟套件管理員** - 以滑鼠右鍵按一下 [套件]，然後從快顯功能表中選取 [新增套件]：
 
     [![](installing-nunit-using-nuget-images/add-packages-xs.png "以滑鼠右鍵按一下 [套件]，然後從快顯功能表中選取 [新增套件]")](installing-nunit-using-nuget-images/add-packages-xs.png#lightbox)
     
-1. **搜尋`NUnit version:2.6.4`** - Visual Studio for Mac 會將 NUnit 3.0 解除安裝 (如有必要)，然後下載並安裝 NUnit 2.6.4。 在 [新增套件]  對話方塊右上角的 [搜尋]  欄位中，輸入文字 `nunit version:2.6.4`。 從搜尋結果中選取 [NUnit]  ，然後按一下 [新增套件]  按鈕：
+1. **搜尋`NUnit version:2.6.4`** - Visual Studio for Mac 會將 NUnit 3.0 解除安裝 (如有必要)，然後下載並安裝 NUnit 2.6.4。 在 [新增套件] 對話方塊右上角的 [搜尋] 欄位中，輸入文字 `nunit version:2.6.4`。 從搜尋結果中選取 [NUnit]，然後按一下 [新增套件] 按鈕：
 
     [![](installing-nunit-using-nuget-images/nunit-search-xs.png "從搜尋結果中選取 [NUnit]，然後按一下 [新增套件] 按鈕")](installing-nunit-using-nuget-images/nunit-search-xs.png#lightbox)
 
@@ -62,10 +62,10 @@ _本指南涵蓋如何使用 NuGet 將 NUnit 3.0 降級至 NUnit 2.6.4。_
 
 ## <a name="installing-nunit-264-in-visual-studio"></a>在 Visual Studio 中安裝 NUnit 2.6.4
 
-本節著重在 Visual Studio 2015 或更新版本中使用「NuGet 套件管理員主控台」  ，將 NUnit 3.0 解除安裝，然後安裝 NUnit 2.6.4。
+本節著重在 Visual Studio 2015 或更新版本中使用「NuGet 套件管理員主控台」，將 NUnit 3.0 解除安裝，然後安裝 NUnit 2.6.4。
 
 
-1. **啟動 NuGet 套件管理員主控台** - 選取 [工具] > [NuGet 套件管理員] > [套件管理員主控台]  ：
+1. **啟動 NuGet 套件管理員主控台** - 選取 [工具] > [NuGet 套件管理員] > [套件管理員主控台]：
 
     [![](installing-nunit-using-nuget-images/package-manager-console.png "啟動 NuGet 套件管理員主控台 - 選取 [工具]  [NuGet 套件管理員]  [套件管理員主控台]")](installing-nunit-using-nuget-images/package-manager-console.png#lightbox)
     

@@ -1,30 +1,30 @@
 ---
 title: Xamarin.Mac 的運作方式
-description: 本文件說明 Xamarin.Mac 的內部運作。 特別是，它會尋找在建構函式、 記憶體管理、 預先編譯，並在註冊機構。
+description: 本檔說明 Xamarin 的內部運作。 特別是，它會查看在編譯時間和註冊機構之前的「構造器」、「記憶體管理」。
 ms.prod: xamarin
 ms.assetid: C2053ABB-6DBF-4233-AEEA-B72FC6A81FE1
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 05/25/2017
-ms.openlocfilehash: 0635e110cb2aa7bc00234d3d06df57e0fd6f966e
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 3a2ba8f56604dcf42604c2cb653931d0397a0d82
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61033832"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70287722"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的運作方式
 
-大部分的情況，開發人員將永遠不必擔心內部"magic"的 Xamarin.Mac，不過，有項目在幕後的運作方式如何協助與這兩種解譯現有文件中的粗略了解C#功能濾鏡和偵錯在發生時的問題。
+在大部分的情況下，開發人員永遠都不需要擔心 Xamarin 的內部「魔術」，不過，若要深入瞭解專案的運作方式，可以使用C#鏡頭和調試功能來解讀現有的檔發生問題。
 
-在 Xamarin.Mac 應用程式橋接兩個世界：沒有包含原生類別的執行個體的 Objective C 執行階段 (`NSString`，`NSApplication`等等)，而且沒有C#包含的執行個體的執行階段 managed 類別 (`System.String`，`HttpClient`等等)。 這兩個世界，之間 Xamarin.Mac 建立的雙向橋接器讓應用程式可以呼叫方法 （選取器） 在 OBJECTIVE-C 中 (例如`NSApplication.Init`) 和 OBJECTIVE-C 可以呼叫應用程式的C#方法後 （例如上的應用程式委派的方法）。 一般情況下，OBJECTIVE-C 呼叫都會透明處理透過**P/Invokes**和 Xamarin 提供一些執行階段程式碼。
+在 Xamarin. Mac 中，應用程式會橋接兩個領域：以目標 C 為基礎的執行時間包含原生類別（`NSString`、 `NSApplication`等）的實例，而且有C#執行時間包含 managed 類別（`System.String`、 `HttpClient`等）的實例。 在這兩個領域之間，Xamarin 會建立雙向橋接器，讓應用程式可以呼叫目標 c 中的方法（選取器）（例如`NSApplication.Init`），而目標-c 可以呼叫應用程式的C#方法（例如應用程式委派上的方法）。 一般來說，對目標-C 的呼叫會透過**P/invoke**和 Xamarin 提供的一些執行時間程式碼，以透明的方式處理。
 
 <a name="exposing-classes" />
 
-## <a name="exposing-c-classes--methods-to-objective-c"></a>公開C#類別 / objective-c 方法
+## <a name="exposing-c-classes--methods-to-objective-c"></a>將C#類別/方法公開至目標-C
 
-不過，對於 OBJECTIVE-C 呼叫的應用程式C#物件，他們需要某種程度的了解 OBJECTIVE-C 中公開。 這透過完成`Register`和`Export`屬性。 請使用以下範例：
+不過，若要讓客觀呼叫應用程式的C#物件，必須以目標-c 能夠瞭解的方式來公開。 這會透過`Register`和`Export`屬性來完成。 請使用以下範例：
 
 ```csharp
 [Register ("MyClass")]
@@ -42,13 +42,13 @@ public class MyClass : NSObject
 }
 ```
 
-在此範例中，OBJECTIVE-C 執行階段現在知道呼叫類別的相關`MyClass`與選取器呼叫`init`和`run`。
+在此範例中，目標-C 執行時間現在會知道名`MyClass`為的類別，以及名`run` `init`為和的選取器。
 
-在大部分情況下，這是實作詳細資料，開發人員可以忽略，因為大部分的應用程式收到的回呼會透過覆寫方法`base`類別 (例如`AppDelegate`， `Delegates`， `DataSources`)，或在**動作**傳遞至 Api。 在所有這些情況下，`Export`屬性不是必要的C#程式碼。
+在大部分情況下，這是開發人員可以忽略的執行詳細資料，因為應用程式接收到的大部分回呼，都是透過`base`類別上的覆`AppDelegate`寫方法`DataSources`（例如、 `Delegates`、）或**動作**來進行傳入 Api。 在所有這些情況下， `Export`程式C#代碼中都不需要屬性。
 
-## <a name="constructor-runthrough"></a>建構函式 runthrough
+## <a name="constructor-runthrough"></a>流程示範的構造函式
 
-在許多情況下，開發人員必須公開 （expose） 應用程式的C#Objective C 執行階段，因此它可以具現化的位置，例如當類別建構 API 的呼叫將分鏡腳本或 XIB 檔案。 以下是五個最常見的建構函式用於 Xamarin.Mac 應用程式：
+在許多情況下，開發人員必須將應用程式的C#類別結構 API 公開給目標-C 執行時間，以便從像是在分鏡腳本或 XIB 檔中呼叫時的位置來具現化。 以下是 Xamarin. Mac 應用程式中使用的五個最常見的函式：
 
 ```csharp
 // Called when created from unmanaged code
@@ -81,83 +81,83 @@ public CustomView () : base (NSObjectFlag.Empty)
 }
 ```
 
-一般情況下，開發人員應該將保留`IntPtr`並`NSCoder`建構函式時建立某些類型，例如自訂所產生`NSViews`單獨。 如果 Xamarin.Mac 需要呼叫這些建構函式的其中一個以 OBJECTIVE-C 執行階段要求的回應，而且您已將它移除，原生程式碼內的應用程式會當機，並可能會難以找出確切的問題。
+一般而言，開發人員應該保留建立一些`IntPtr`類型`NSCoder`時所產生的和函式，例如「自`NSViews`定義」。 如果 Xamarin 需要呼叫其中一個函式來回應目標-C 執行時間要求，而且您已將它移除，應用程式將會在機器碼內部損毀，而且可能很難以找出問題的確切原因。
 
-## <a name="memory-management-and-cycles"></a>記憶體管理和循環
+## <a name="memory-management-and-cycles"></a>記憶體管理和週期
 
-Xamarin.mac 的記憶體管理是在許多方面非常類似於 Xamarin.iOS。 它也是一個複雜的主題，其中一個超出本文的範圍。 請閱讀[記憶體和效能最佳做法](~/cross-platform/deploy-test/memory-perf-best-practices.md)。
+Xamarin 中的記憶體管理的方式與 Xamarin 非常類似。 這也是一個複雜的主題，但不在本檔的討論範圍內。 請閱讀[記憶體和效能最佳做法](~/cross-platform/deploy-test/memory-perf-best-practices.md)。
 
-## <a name="ahead-of-time-compilation"></a>直接的編譯
+## <a name="ahead-of-time-compilation"></a>先行編譯
 
-一般而言，.NET 應用程式不會編譯至機器碼會在建置時，而它們會編譯為中繼層呼叫取得的 IL 程式碼_Just In Time_ (JIT) 編譯成機器碼，應用程式啟動時。
+一般而言，.NET 應用程式在建立時不會向下編譯至機器碼，而是會編譯成稱為 IL 程式碼的中繼層，以在應用程式啟動時，_即時_（JIT）編譯至機器碼。
 
-JIT 編譯 mono 執行階段所花費的時間，因為需要必要的機器碼，以產生的時間，此機器的程式碼就會達 20%，降低 Xamarin.Mac 應用程式的啟動作業。
+當需要產生必要的機器程式碼時，mono 執行時間使用 JIT 編譯此機器碼的時間可能會使 Xamarin. Mac 應用程式的啟動速度變慢最多 20%。
 
-由於在 iOS 上，Apple 所加諸的限制，JIT 編譯的 IL 程式碼不適用於 Xamarin.iOS。 如此一來，所有的 Xamarin.iOS 應用程式都填滿_Just-in-time 預先_組建循環期間 (AOT) 編譯成機器碼。
+由於 Apple on iOS 所加諸的限制，所以在 Xamarin 中無法使用 IL 程式碼的 JIT 編譯。 如此一來，所有的 Xamarin iOS 應用程式都會在組建週期期間，將完整_的預先_（AOT）編譯成機器碼。
 
-Xamarin.Mac 是新 AOT 的能力的 IL 程式碼在應用程式組建循環，就像 Xamarin.iOS 可以。 使用 Xamarin.Mac_混合式_AOT 編譯所需的機器碼中，大部分的方法，但可讓執行階段編譯所需的 trampolines 和彈性地繼續支援這些事件處理常式 （及其他使用案例，目前作用於 Xamarin.Mac）。
+Xamarin 的新功能是能夠在應用程式組建週期中進行 IL 程式碼的 AOT，就像像是 Xamarin 一樣。 Xamarin 會使用_混合_式 AOT 方法來編譯大部分需要的機器程式碼，但允許執行時間編譯所需的 trampolines，以及可繼續支援反映的彈性。發出（以及其他目前處理的使用案例Xamarin. Mac）。
 
-有兩個 AOT 可以幫助 Xamarin.Mac 應用程式的主要區域：
+有兩個主要區域，AOT 可以協助 Xamarin. Mac 應用程式：
 
-- **更好的 「 原生 」 的當機記錄檔**-如果 Xamarin.Mac 應用程式損毀時進行無效的 Cocoa Api 的呼叫，經常發生的原生程式碼 (例如傳送`null`不接受它的方法) 的原生損毀 JIT 的記錄檔畫面格很難進行分析。 因為 JIT 框架沒有偵錯資訊，將會有多行與十六進位的位移和在沒有頭緒。 AOT 會產生"real"具名的框架，而且更容易讀取追蹤。 這也表示 Xamarin.Mac 應用程式的互動就更好的原生工具這類**lldb**並**Instruments**。
-- **更好的啟動時間效能**-針對大型的 Xamarin.Mac 應用程式，具有多個第二個啟動時間，JIT 編譯所有的程式碼可能需要很長的時間。 AOT 執行此工作。
+- **更好的「原生」損毀記錄**-如果 Xamarin. Mac 應用程式在機器碼中當機，這是對 Cocoa api 進行無效呼叫（例如`null` ，將傳送至不接受它的方法）時常見的情況，這是使用 JIT 框架的原生損毀記錄很容易分析。 由於 JIT 畫面格沒有偵錯工具資訊，因此會有多行具有十六進位位移，而且不會有任何線索。 AOT 會產生名為「real」的框架，而追蹤則更容易閱讀。 這也表示 Xamarin 應用程式可與原生工具（例如**lldb**和**儀器**）更好地互動。
+- **更好的啟動時間效能**-對於大型 Xamarin. Mac 應用程式，如果有多秒的啟動時間，JIT 編譯所有程式碼可能需要相當長的時間。 AOT 會提前運作。
 
 ### <a name="enabling-aot-compilation"></a>啟用 AOT 編譯
 
-按兩下 Xamarin.Mac 中啟用 AOT**專案名稱**中**方案總管**，請巡覽至**Mac 組建**並新增`--aot:[options]`到**其他 mmp 引數：** 欄位 (其中`[options]`是一或多個選項來控制 AOT 型別，如下所示)。 例如：
+在 Xamarin 中啟用 AOT，方法是按兩下 [**方案總管**中的**專案名稱**，流覽至 [Mac] [**組建**] `--aot:[options]` ，然後新增至 **其他 mmp 引數：** ] 欄位（其中`[options]`是一或多個控制 AOT 類型的選項，請參閱下文）。 例如：
 
-![加入其他 mmp 引數的 AOT](how-it-works-images/aot01.png "新增至 其他 mmp 引數的 AOT")
+![將 AOT 加入至其他 mmp 引數](how-it-works-images/aot01.png "將 AOT 加入至其他 mmp 引數")
 
 > [!IMPORTANT]
-> 啟用 AOT 編譯會大幅增加建置時間，有時候幾分鐘的時間，但它可以改善應用程式啟動時間 20%的平均值。 如此一來，AOT 編譯應該只啟用**發行**Xamarin.Mac 應用程式的組建。
+> 啟用 AOT 編譯會大幅增加組建時間（有時最多幾分鐘），但它可以改善應用程式啟動時間，平均為 20%。 因此，應該只在 Xamarin. Mac 應用程式的**發行**組建上啟用 AOT 編譯。
 
 ### <a name="aot-compilation-options"></a>Aot 編譯選項
 
-有數個不同的選項時啟用 AOT 編譯的 Xamarin.Mac 應用程式上可調整：
+在 Xamarin. Mac 應用程式上啟用 AOT 編譯時，有幾個不同的選項可以調整：
 
-- `none` -無 AOT 編譯。 這是預設設定。
-- `all` -AOT 編譯 MonoBundle 中的每個組件。
-- `core` -AOT 編譯`Xamarin.Mac`，`System`和`mscorlib`組件。
-- `sdk` -AOT 編譯`Xamarin.Mac`和基底類別程式庫 (BCL) 組件。
-- `|hybrid` -新增這其中一個以上的選項可讓混合式 AOT 可允許 IL 移除，但會導致再編譯時間。
-- `+` -包含單一檔案，以 AOT 編譯。
-- `-` -將單一檔案移除 AOT 編譯。
+- `none`-沒有 AOT 編譯。 這是預設設定。
+- `all`-AOT 會編譯 MonoBundle 中的每個元件。
+- `core`-AOT 會編譯`Xamarin.Mac`、 `System`和`mscorlib`元件。
+- `sdk`-AOT 會編譯`Xamarin.Mac`和基類程式庫（BCL）元件。
+- `|hybrid`-將此加入至上述其中一個選項會啟用混合式 AOT，允許 IL 去除，但會導致編譯時間較長。
+- `+`-包含適用于 AOT 編譯的單一檔案。
+- `-`-從 AOT 編譯中移除單一檔案。
 
-比方說，`--aot:all,-MyAssembly.dll`會啟用所有 MonoBundle 中的組件的 AOT 編譯_除了_`MyAssembly.dll`並`--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll`會啟用混合式、 程式碼 AOT 包含`MyOtherAssembly.dll`和排除`mscorlib.dll`.
+例如`--aot:all,-MyAssembly.dll` ，會在 MonoBundle 中的所有元件上啟用 AOT 編譯，_但_ `MyAssembly.dll` `--aot:core|hybrid,+MyOtherAssembly.dll,-mscorlib.dll`會`mscorlib.dll`啟用混合式，程式碼 AOT 會包含`MyOtherAssembly.dll`和（不包括）。
 
-## <a name="partial-static-registrar"></a>部分的靜態註冊機構
+## <a name="partial-static-registrar"></a>部分靜態註冊機構
 
-當開發完成變更，並加以測試之間的時間降至最低的 Xamarin.Mac 應用程式可能會變得重要擅開發。 策略模組化的程式碼基底，單元測試有助於縮短編譯時間，因為它們會減少應用程式將會需要耗費資源的完整重建的次數。
+開發 Xamarin. Mac 應用程式時，將完成變更和測試之間的時間降到最低，可能會變得很重要，以符合開發期限。 模組化程式碼基底和單元測試等策略有助於減少編譯時間，因為它們會減少應用程式需要昂貴的完整重建的次數。
 
-此外，新增至 Xamarin.Mac_部分的靜態註冊機構_（如首創的 Xamarin.iOS） 可大幅減少在 Xamarin.Mac 應用程式的啟動時間**偵錯**組態。 了解如何使用部分的靜態註冊機構可以夾出幾乎 5 倍的改善偵錯啟動將會需要進行的背景上註冊機構是什麼、 的差異在於靜態和動態、 之間和此 「 部分靜態 」 版本的功能。
+此外，除了 xamarin 的新功能之外，_部分靜態註冊機構_（如 xamarin 的推出）可以大幅減少在**Debug**設定中的 xamarin 應用程式的啟動時間。 瞭解使用部分靜態註冊機構如何在 debug 啟動中排除幾乎5倍的改進，會對註冊機構的功能有一點的背景、靜態與動態之間的差異，以及此「部分靜態」版本的作用。
 
-### <a name="about-the-registrar"></a>關於在註冊機構
+### <a name="about-the-registrar"></a>關於註冊機構
 
-任何 Xamarin.Mac 應用程式會位於 Apple 和 OBJECTIVE-C 執行階段的 Cocoa 架構。 建置此 「 原生 world 」 與 「 受控 」 的世界之間的橋樑C#是 Xamarin.Mac 的主要責任。 此工作的一部分由內執行的註冊機構`NSApplication.Init ()`方法。 這是任何使用中 Xamarin.Mac 的 Cocoa Api 需要的其中一個原因`NSApplication.Init`第一次呼叫。
+在任何 Xamarin 應用程式的幕後，都是來自 Apple 和目標-C 執行時間的 Cocoa 架構。 在此「原生世界」和「受管理的世界」之間建立C#橋樑是 Xamarin 的主要責任。 這項工作的一部分是由註冊機構（在方法內`NSApplication.Init ()`執行）所處理。 這是在 Xamarin. Mac `NSApplication.Init`中使用 Cocoa api 的其中一個原因，必須先呼叫。
 
-註冊機構的工作就是要通知的應用程式是否存在的 Objective C 執行階段C#類別，例如衍生自類別`NSApplicationDelegate`， `NSView`， `NSWindow`，和`NSObject`。 這需要應用程式中的所有類型，以判斷哪些項目註冊和報表的每個型別上的哪些元素的掃描。
+註冊機構的工作是要通知目標-C 執行時間是否存在應用C#程式的類別（衍生自`NSApplicationDelegate`、、 `NSWindow`和`NSObject`等類別） `NSView`。 這需要掃描應用程式中的所有類型，以判斷需要註冊的專案，以及要報告之每個類型上的元素。
 
-這項掃描可**動態**，在啟動應用程式使用反映，或**靜態**，做為建置時間步驟。 當挑選註冊型別，開發人員應該注意下列幾點：
+這項掃描可以在使用反映的應用程式啟動時**動態**完成，或以**靜態**方式在組建階段步驟中執行。 在挑選註冊類型時，開發人員應該注意下列事項：
 
-- 靜態註冊可大幅減少啟動時間，但可以明顯變慢的組建時間 （通常超過兩倍的偵錯組建時間）。 這是預設值**發行**組態則會建置。
-- 動態註冊延遲，這項工作直到應用程式啟動，並略過程式碼產生，但此額外工作造成明顯的暫停 （至少兩秒） 中啟動應用程式。 這是特別明顯，在偵錯組態的組建，而其預設值來動態登錄其反映較慢。
+- 靜態註冊可以大幅縮短啟動時間，但可能會大幅降低組建的時間（通常是超過兩次的 debug 組建時間）。 這會是**發行**設定組建的預設值。
+- 動態登錄會延遲這項工作，直到應用程式啟動和略過程式碼產生為止，但這項額外的工作可能會在應用程式啟動時產生明顯的暫停（至少兩秒鐘）。 這在 debug 設定組建中特別明顯，預設為動態登錄，而且其反映速度較慢。
 
-部分的靜態註冊，在 Xamarin.iOS 8.13 首次引進，讓開發人員兩者之優點。 藉由預先計算的每個項目中的註冊資訊`Xamarin.Mac.dll`和傳送這項資訊搭配 Xamarin.Mac 的靜態程式庫 （也就只需要在建置時連結到），Microsoft 已移除大部分動態反映情況同時也不會影響建置時間的註冊機構。
+部分靜態註冊，第一次在 Xamarin. iOS 8.13 中引進，為開發人員提供這兩個選項的最佳選擇。 藉由在靜態程式庫中預先計算每個`Xamarin.Mac.dll`專案的註冊資訊，並將這項資訊傳送至 Xamarin. Mac （這只需要在組建階段連結到），Microsoft 已移除大部分動態的反映時間註冊機構不會影響組建時間。
 
-### <a name="enabling-the-partial-static-registrar"></a>啟用部分的靜態註冊機構
+### <a name="enabling-the-partial-static-registrar"></a>啟用部分靜態註冊機構
 
-部分的靜態註冊機構會啟用 Xamarin.Mac 中按兩下**專案名稱**中**方案總管**，請巡覽至**Mac 組建**並加入`--registrar:static`要**其他 mmp 引數：** 欄位。 例如: 
+在 Xamarin 中啟用部分靜態註冊機構，方法是按兩下 **方案總管**中的**專案名稱**，流覽至 Mac **組建** `--registrar:static` ，然後新增至 **其他 mmp 引數：**  欄位。 例如：
 
-![將部分的靜態註冊機構新增至 其他 mmp 引數](how-it-works-images/psr01.png "將部分的靜態註冊機構新增至 其他 mmp 引數")
+![將部分靜態註冊機構新增至其他 mmp 引數](how-it-works-images/psr01.png "將部分靜態註冊機構新增至其他 mmp 引數")
 
 ## <a name="additional-resources"></a>其他資源
 
-以下是一些更詳細的說明的項目在內部運作的方式：
+以下是一些如何在內部運作的詳細說明：
 
-- [OBJECTIVE-C 選取器](~/ios/internals/objective-c-selectors.md)
+- [目標-C 選取器](~/ios/internals/objective-c-selectors.md)
 - [登錄器](~/ios/internals/registrar.md)
-- [適用於 iOS 和 OS X 的 Xamarin 統一 API](~/cross-platform/macios/unified/index.md)
+- [適用于 iOS 和 OS X 的 Xamarin Unified API](~/cross-platform/macios/unified/index.md)
 - [Theading 基本概念](~/ios/app-fundamentals/threading.md)
-- [委派、 通訊協定，以及事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)
-- [關於 `newrefcount`](~/ios/internals/newrefcount.md)
+- [委派、通訊協定和事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)
+- [有關`newrefcount`](~/ios/internals/newrefcount.md)
 

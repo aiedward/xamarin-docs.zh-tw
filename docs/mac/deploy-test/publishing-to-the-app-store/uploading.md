@@ -4,15 +4,15 @@ description: 本文件描述如何使用 iTunes Connect 將 Xamarin.Mac 應用�
 ms.prod: xamarin
 ms.assetid: 30cd0e47-1b2e-47ef-93f6-4bed20b15c03
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: fa5c8a72a469f1a798cbdcfc63c07860363f6608
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: b0bb58fee1c9eaeee391b3a838b3fa2921e97a57
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109844"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70284261"
 ---
 # <a name="upload-to-mac-app-store"></a>上傳至 Mac App Store
 
@@ -102,5 +102,5 @@ _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac A
 - [安裝](~//mac/get-started/installation.md)
 - [Hello, Mac 範例](~//mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
-- [工具指南：對應用程式進行程式碼簽署](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) \(英文\)
+- [工具指南：簽署應用程式的程式碼](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [開發人員識別碼和 GateKeeper](https://developer.apple.com/resources/developer-id/) \(英文\)
