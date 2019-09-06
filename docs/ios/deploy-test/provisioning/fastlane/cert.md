@@ -4,15 +4,15 @@ description: 本文件描述 fastlane，它是一種可自動化許多 iOS 應�
 ms.prod: xamarin
 ms.assetid: 900FA6FF-F3C9-4D35-993E-B0D88E6B1883
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 8236dc01f31141544bef88011d87a457f18072e8
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 8e98a8e0314d8cb5ace4d17fdc62eb2ec75ca336
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526559"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292455"
 ---
 # <a name="fastlane-for-ios--cert"></a>適用於 iOS 的 fastlane - cert
 
@@ -45,7 +45,7 @@ ms.locfileid: "69526559"
 
 ## <a name="what-is-cert"></a>什麼是 cert？
 
-cert 提供一個終端機介面，可針對開發和散發環境建立新的程式碼簽署身分識別 (通常稱為開發人員「憑證」  )。
+cert 提供一個終端機介面，可針對開發和散發環境建立新的程式碼簽署身分識別 (通常稱為開發人員「憑證」)。
 
 <a name="using" />
 

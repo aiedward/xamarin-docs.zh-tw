@@ -1,41 +1,41 @@
 ---
 title: 目標 Sharpie 驗證屬性
-description: 本文件說明目標 Sharpie 所產生的 [驗證] 屬性。 開發人員，他們應該以手動方式驗證目標 Sharpie 輸出，反白顯示 [確認] 屬性。
+description: 本檔說明目標 Sharpie 所產生的 [Verify] 屬性。 [Verify] 屬性會對開發人員特別強調，他們應該在此手動驗證目標 Sharpie 的輸出。
 ms.prod: xamarin
 ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 01/15/2016
-ms.openlocfilehash: 96e5bafc14c2d3aba03ccc137151a83ee8afeef9
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.openlocfilehash: b13164b7125e04b3e92a4ae0c0c0afd428f325af
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64977855"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278928"
 ---
 # <a name="objective-sharpie-verify-attributes"></a>目標 Sharpie 驗證屬性
 
-您通常會發現目標 Sharpie 所產生的繫結會以註解`[Verify]`屬性。 這些屬性會指出您應該_確認_目標 Sharpie 未正確的動作，藉由比較原始的 C/Objective C 宣告 （這會在繫結宣告上方的註解中提供） 的繫結。
+您通常會發現，目標 Sharpie 所產生的系結會以`[Verify]`屬性標注。 這些屬性工作表示您應該藉由比較系結與原始的 C/目標-C 宣告（將會在系結宣告上方的批註中提供），來_驗證_目標 Sharpie 是否執行正確的動作。
 
-驗證建議_所有_繫結宣告，但很可能_必要_宣告標註的`[Verify]`屬性。 這是因為在許多情況下，沒有足夠的中繼資料推斷如何最能產生繫結原生來源原始程式碼。 您可能需要參考文件或要做出最佳的繫結決策的標頭檔內的程式碼註解。
+建議對_所有_系結宣告進行驗證，但最有可能_需要_針對以`[Verify]`屬性標注的宣告。 這是因為在許多情況下，原始原生原始程式碼中沒有足夠的中繼資料來推斷如何最佳產生系結。 您可能需要參考標頭檔中的檔或程式碼批註，以做出最佳的系結決策。
 
-一旦確認繫結是修正或已修正它才能正確，_移除_`[Verify]`從繫結的屬性。
+一旦您確認系結正確或已修正其正確，請從系結中_移除_該`[Verify]`屬性。
 
 > [!IMPORTANT]
-> `[Verify]` 屬性刻意造成C#編譯錯誤，讓您不得不確認繫結。 您應該移除`[Verify]`屬性時檢閱 （並可能已更正） 程式碼。
+> `[Verify]`屬性刻意造成C#編譯錯誤，因此您必須強制驗證系結。 當您已檢查`[Verify]` （而且可能已更正）程式碼時，您應該移除屬性。
 
 ## <a name="verify-hints-reference"></a>驗證提示參考
 
-提供給屬性的提示引數可以是跨參考下列文件。 針對任何產生的文件`[Verify]`繫結完成後，將主控台也提供屬性。
+提供給屬性的提示引數可以與下列檔交叉參考。 在完成系結`[Verify]`之後，主控台上也會提供任何所產生屬性的檔。
 
-|`[Verify]` 提示|描述|
+|`[Verify]`提示|描述|
 |---|---|
-|InferredFromPreceedingTypedef|此宣告的名稱由從常見的慣例推斷立即先前`typedef`原始原生的原始程式碼中。 請確認推斷的名稱正確，因為此慣例模稜兩可。|
-|ConstantsInterfaceAssociation|沒有任何笨蛋證明方法來判斷哪些 Objective C 介面外部變數宣告可能會產生關聯。 這些執行個體繫結為`[Field]`成接近-的具象介面以產生更具直覺性的 API，並可能消除 'Constants' 部分介面中的屬性完全介面。|
-|MethodToProperty|OBJECTIVE-C 方法繫結為C#屬性，因為不採用任何參數和傳回值 （非 void 傳回） 等的慣例。 通常這類的方法應該繫結為屬性來呈現到目前的 API，但有時可能會發生誤判，應實際繫結的方法。|
-|StronglyTypedNSArray|原生`NSArray*`繫結為`NSObject[]`。 可能會更強的期望透過 API 文件 （例如註解標頭檔） 設定為基礎的繫結中的類型陣列或藉由檢查透過測試陣列的內容。 比方說，NSArray * 包含只 NSNumber * 做為繫結 instancescan`NSNumber[]`而不是`NSObject[]`。|
+|InferredFromPreceedingTypedef|這個宣告的名稱是由通用慣例從原始機器碼的正上方`typedef`推斷而來。 請確認推斷的名稱是正確的，因為此慣例不明確。|
+|ConstantsInterfaceAssociation|沒有任何欺騙的方法可以判斷外部變數宣告可能會產生關聯的目標 C 介面。 這些實例會`[Field]`當做部分介面中的屬性系結到近接的具體介面，以產生更直覺化的 API，可能會完全排除 ' 常數 ' 介面。|
+|MethodToProperty|因為慣例（例如不接受任何參數並C#傳回值）（非 void 傳回），所以會將目標 C 方法系結為屬性。 通常這類方法應該系結為屬性以呈現更好 API，但有時可能會發生誤報，而且系結實際上應該是方法。|
+|StronglyTypedNSArray|原生`NSArray*`已系結`NSObject[]`為。 您可能可以根據 API 檔中的預期設定（例如標頭檔中的批註）或透過測試檢查陣列內容，更強地在系結中輸入陣列。 例如，僅包含 NSNumber * instancescan 的`NSNumber[]` `NSObject[]`NSArray * 會系結為，而不是。|
 
-您可以快速收到提示，使用說明文件`sharpie verify-docs`工具，例如：
+您也可以使用`sharpie verify-docs`工具快速接收提示的檔，例如：
 
 ```csharp
 sharpie verify-docs InferredFromPreceedingTypedef

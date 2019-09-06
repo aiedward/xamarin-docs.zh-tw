@@ -1,81 +1,81 @@
 ---
-title: 開始使用 Java
-description: 本文件說明如何開始使用 Java 中使用 .NET 內嵌。 它討論系統需求、 安裝和支援的平台。
+title: 開始使用 JAVA
+description: 本檔說明如何開始搭配使用 .NET 內嵌與 JAVA。 其中討論系統需求、安裝和支援的平臺。
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2018
-ms.openlocfilehash: 79a483743946c4f7509833867f2afe4b1e055183
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8d6bc284d07ce1be11ad273f875b75a70ae14a0f
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61198938"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70278399"
 ---
-# <a name="getting-started-with-java"></a>開始使用 Java
+# <a name="getting-started-with-java"></a>開始使用 JAVA
 
-這是適用於 Java，其中涵蓋了所有支援平台的基本概念開始使用 頁面。
+這是適用于 JAVA 的快速入門頁面，其中涵蓋所有支援平臺的基本概念。
 
 ## <a name="requirements"></a>需求
 
-若要搭配使用內嵌.NET 與 Java 中，您將需要：
+若要搭配 JAVA 使用 .NET 內嵌，您將需要：
 
-* Java 1.8 或更新版本
-* [Mono 5.0](https://www.mono-project.com/download/)
+* JAVA 1.8 或更新版本
+* [Mono 5。0](https://www.mono-project.com/download/)
 
-For Mac:
+針對 Mac：
 
 * Xcode 8.3.2 或更新版本
 
-針對 Windows:
+若為 Windows：
 
-* Visual Studio 2017C++支援
+* Visual Studio 2017 與C++支援
 * Windows 10 SDK
 
-針對 Android:
+針對 Android：
 
-* [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本
-* [Android Studio 3.x](https://developer.android.com/studio/index.html)使用 Java 1.8
+* [Xamarin. Android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本
+* 使用 JAVA 1.8 [Android Studio](https://developer.android.com/studio/index.html) 3。x
 
-您可以使用[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)編輯並編譯您C#程式碼。
+您可以使用[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)來編輯和編譯器C#代碼。
 
 > [!NOTE]
-> 較早版本的 Xcode，Visual Studio、 Xamarin.Android，Android Studio 中和 Mono_可能_運作，但是未經測試，並且不受支援。
+> 舊版的 Xcode、Visual Studio、Xamarin、Android Studio 和 Mono_可能可以_使用，但尚未經過測試且不受支援。
 
 ## <a name="installation"></a>安裝
 
-.NET 內嵌位於目前[NuGet](https://www.nuget.org/packages/Embeddinator-4000/):
+.NET 內嵌目前可在[NuGet](https://www.nuget.org/packages/Embeddinator-4000/)上取得：
 
 ```shell
 nuget install Embeddinator-4000
 ```
 
-這會將**Embeddinator 4000.exe**成**封裝/Embeddinator 4000/工具**目錄。
+這會將**Embeddinator-4000**放入**封裝/Embeddinator-4000/tools**目錄中。
 
-此外，您可以在其中建置.NET 內嵌來源，請參閱我們[git 儲存機制](https://github.com/mono/Embeddinator-4000/)並[參與](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)文件，如需相關指示。
+此外，您可以從來源建立 .NET 內嵌，請參閱我們的[git 存放庫](https://github.com/mono/Embeddinator-4000/)和[參與](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)檔以取得相關指示。
 
 ## <a name="platforms"></a>平台
 
-Java 目前為預覽狀態適用於 macOS、 Windows、 和 Android。
+JAVA 目前處於適用于 macOS、Windows 和 Android 的預覽狀態。
 
-選取平台傳遞`--platform=<platform>`.NET 內嵌工具的命令列引數。 目前`macOS`， `Windows`，和`Android`支援。
+藉由將`--platform=<platform>`命令列引數傳遞至 .net 內嵌工具，即可選取此平臺。 目前`macOS`支援`Windows`、和`Android` 。
 
-### <a name="macos-and-windows"></a>macOS 及 Windows
+### <a name="macos-and-windows"></a>macOS 和 Windows
 
-程式開發中，您應該能夠使用任何支援 Java 1.8 的 Java IDE。 您甚至可以使用 Android Studio 這個視[在這裡看到](https://stackoverflow.com/questions/16626810/can-android-studio-be-used-to-run-standard-java-projects)。 如同任何標準的 Java jar 檔案，您可以使用輸出 JAR 檔案。
+若要進行開發，您應該能夠使用支援 JAVA 1.8 的任何 JAVA IDE。 您甚至可以視需要使用此 Android Studio，[請參閱這裡](https://stackoverflow.com/questions/16626810/can-android-studio-be-used-to-run-standard-java-projects)。 您可以使用 JAR 檔案輸出，就像處理任何標準的 JAVA JAR 檔案一樣。
 
 ### <a name="android"></a>Android
 
-請確定您已經設定好開發 Android 應用程式，然後再嘗試建立一個使用.NET 內嵌。 [指示](~/tools/dotnet-embedding/get-started/java/android.md)假設您有已經成功建置和部署 Android 應用程式從您的電腦。
+請先確定您已設定好開發 Android 應用程式，再嘗試使用 .NET 內嵌來建立它。 [下列指示](~/tools/dotnet-embedding/get-started/java/android.md)假設您已成功從電腦建立並部署 Android 應用程式。
 
-Android Studio 建議進行開發，但其他 Ide 應該運作，只要支援[AAR 檔案格式](https://developer.android.com/studio/projects/android-library.html)。
+建議使用 Android Studio 進行開發，但只要有[AAR 檔案格式](https://developer.android.com/studio/projects/android-library.html)的支援，其他 ide 應可正常執行。
 
 ## <a name="further-reading"></a>進一步閱讀
 
-* [在 Android 上開始使用](~/tools/dotnet-embedding/get-started/java/android.md)
-* [在 Android 上的回撥](~/tools/dotnet-embedding/android/callbacks.md)
-* [Android 的初步研究](~/tools/dotnet-embedding/android/index.md)
-* [.NET 內嵌限制](~/tools/dotnet-embedding/limitations.md)
+* [Android 上的消費者入門](~/tools/dotnet-embedding/get-started/java/android.md)
+* [Android 上的回呼](~/tools/dotnet-embedding/android/callbacks.md)
+* [初稿 Android Research](~/tools/dotnet-embedding/android/index.md)
+* [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
 * [參與開放原始碼專案](https://github.com/mono/Embeddinator-4000/blob/master/Contributing.md)
 * [錯誤碼和描述](~/tools/dotnet-embedding/errors.md)

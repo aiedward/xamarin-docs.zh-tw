@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 6b7a6c6d9c9c541e1d5e821fc2dac202e98bec62
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: HT
+ms.openlocfilehash: 676523e461737d7820278ca8c319794d3347088d
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994421"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70289797"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms 控制項範本簡介
 
@@ -38,7 +38,7 @@ _Xamarin.Forms 控制項範本可以在執行階段輕鬆地設定和重新設�
 建立 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 並將它指派給這些類型時，會以 `ControlTemplate` 中定義的外觀取代任何現有外觀。 此外，除了使用 `ControlTemplate` 屬性來設定外觀，還可以使用樣式套用控制項範本來進一步擴充佈景主題功能。
 
 > [!NOTE]
->  `TemplatedPage` 和 `TemplatedView` 類型為何？ `TemplatedPage` 是 `ContentPage` 的基底類別，也是 Xamarin.Forms 所提供的最基本頁面類型。 不同於 `ContentPage`，`TemplatedPage` 沒有 `Content` 屬性。 因此，您無法將內容直接新增至 `TemplatedPage` 執行個體。 相反地，請設定 `TemplatedPage` 執行個體的控制項範本來新增內容。 同樣地，`TemplatedView` 是 `ContentView` 的基底類別。 不同於 `ContentView`，`TemplatedView` 沒有 `Content` 屬性。 因此，您無法將內容直接新增至 `TemplatedView` 執行個體。 相反地，請設定 `TemplatedView` 執行個體的控制項範本來新增內容。
+> `TemplatedPage` 和 `TemplatedView` 類型為何？ `TemplatedPage` 是 `ContentPage` 的基底類別，也是 Xamarin.Forms 所提供的最基本頁面類型。 不同於 `ContentPage`，`TemplatedPage` 沒有 `Content` 屬性。 因此，您無法將內容直接新增至 `TemplatedPage` 執行個體。 相反地，請設定 `TemplatedPage` 執行個體的控制項範本來新增內容。 同樣地，`TemplatedView` 是 `ContentView` 的基底類別。 不同於 `ContentView`，`TemplatedView` 沒有 `Content` 屬性。 因此，您無法將內容直接新增至 `TemplatedView` 執行個體。 相反地，請設定 `TemplatedView` 執行個體的控制項範本來新增內容。
 
 您可以在 XAML 和 C# 中建立控制項範本：
 

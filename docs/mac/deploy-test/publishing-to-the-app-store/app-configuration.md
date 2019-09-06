@@ -4,15 +4,15 @@ description: 本文件描述如何設定 Xamarin.Mac 應用程式以供發行。
 ms.prod: xamarin
 ms.assetid: fea66a34-1581-4cd6-b714-3fbff215a542
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: 1f88a429d58a09b54bb2383dbb77a3768ce64152
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 6134cbfabb342750ec68b676dd06388f4fb8f035
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50115090"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70283023"
 ---
 # <a name="mac-app-configuration"></a>Mac 應用程式組態
 

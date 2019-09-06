@@ -4,15 +4,15 @@ description: 本文件描述如何使用開發人員識別碼簽署 Xamarin.Mac 
 ms.prod: xamarin
 ms.assetid: cf7b733b-e08f-4f56-a233-264b29ee4c97
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9294080f361d280bcb61ea162320da57f44a2a95
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 9272c522383251a54aff5093c20e4b6b6131e2b2
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50117664"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70293051"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>使用開發人員識別碼簽署 Xamarin.Mac 應用程式
 
@@ -48,5 +48,5 @@ ms.locfileid: "50117664"
 - [安裝](~//mac/get-started/installation.md)
 - [Hello, Mac 範例](~//mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
-- [工具指南：對應用程式進行程式碼簽署](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) \(英文\)
+- [工具指南：簽署應用程式的程式碼](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [開發人員識別碼和 GateKeeper](https://developer.apple.com/resources/developer-id/) \(英文\)

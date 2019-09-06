@@ -4,15 +4,15 @@ description: 本文件描述如何搭售供發行之用的 Xamarin.Mac 應用程
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 3394c0ccaa25ff438bd4435321f05c55990fc674
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 283a057723ae399ead65c0c3e40347dbbd1e189e
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122032"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70281188"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>針對 Mac App Store 進行統合
 

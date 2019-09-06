@@ -1,51 +1,51 @@
 ---
 title: Xamarin 中的社交架構
-description: 社交架構提供統一的 API 來與社交網路互動, 包括 Twitter 和 Facebook, 以及適用于中國使用者的 SinaWeibo。
+description: 社交架構提供統一的 API 來與社交網路互動，包括 Twitter 和 Facebook，以及適用于中國使用者的 SinaWeibo。
 ms.prod: xamarin
 ms.assetid: A1C28E66-AA20-1C13-23AF-5A8712E6C752
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: c6e0005207a7c6fc444d029c9577684370b4cbf0
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fd94cd7a6d37e7fa00489e788f232842b319e5d3
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226619"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292674"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin 中的社交架構
 
-_社交架構提供統一的 API 來與社交網路互動, 包括 Twitter 和 Facebook, 以及適用于中國使用者的 SinaWeibo。_
+_社交架構提供統一的 API 來與社交網路互動，包括 Twitter 和 Facebook，以及適用于中國使用者的 SinaWeibo。_
 
-使用社交架構可讓應用程式從單一 API 與社交網路互動, 而不需要管理驗證。 其中包含系統提供的 view controller, 用於撰寫貼文, 以及可讓您透過 HTTP 使用每個社交網路 API 的抽象概念。
+使用社交架構可讓應用程式從單一 API 與社交網路互動，而不需要管理驗證。 其中包含系統提供的 view controller，用於撰寫貼文，以及可讓您透過 HTTP 使用每個社交網路 API 的抽象概念。
 
 > [!IMPORTANT]
-> 若要讓跨平臺 API 連線到各種社交網路, 請參閱 Xamarin 元件存放區中的[xamarin。](http://components.xamarin.com/view/xamarin.social/)
+> 若要讓跨平臺 API 連線到各種社交網路，請參閱 Xamarin 元件存放區中的[xamarin。](http://components.xamarin.com/view/xamarin.social/)
 
 ## <a name="connecting-to-twitter"></a>連接到 Twitter
 
 ### <a name="twitter-account-settings"></a>Twitter 帳戶設定
 
-若要使用社交架構連接到 Twitter, 必須在裝置設定中設定帳戶, 如下所示:
+若要使用社交架構連接到 Twitter，必須在裝置設定中設定帳戶，如下所示：
 
  [![](social-framework-images/twitter01.png "Twitter 帳戶設定")](social-framework-images/twitter01.png#lightbox)
 
-一旦使用 Twitter 來輸入並驗證帳戶之後, 裝置上任何使用社交架構類別來存取 Twitter 的應用程式都會使用此帳戶。
+一旦使用 Twitter 來輸入並驗證帳戶之後，裝置上任何使用社交架構類別來存取 Twitter 的應用程式都會使用此帳戶。
 
 ### <a name="sending-tweets"></a>傳送推文
 
-社交架構包含名`SLComposeViewController`為的控制器, 它會顯示系統提供的視圖, 供您編輯和傳送推文。 下列螢幕擷取畫面顯示此視圖的範例:
+社交架構包含名`SLComposeViewController`為的控制器，它會顯示系統提供的視圖，供您編輯和傳送推文。 下列螢幕擷取畫面顯示此視圖的範例：
 
  [![](social-framework-images/twitter02.png "此螢幕擷取畫面顯示 SLComposeViewController 的範例")](social-framework-images/twitter02.png#lightbox)
 
-若要搭配`SLComposeViewController` Twitter 使用, 必須使用`FromService` `SLServiceType.Twitter`呼叫方法來建立控制器的實例, 如下所示:
+若要搭配`SLComposeViewController` Twitter 使用，必須使用`FromService` `SLServiceType.Twitter`呼叫方法來建立控制器的實例，如下所示：
 
 ```csharp
 var slComposer = SLComposeViewController.FromService (SLServiceType.Twitter);
 ```
 
-`SLComposeViewController`傳回實例之後, 就可以使用它來呈現要張貼到 Twitter 的 UI。 不過, 首先要做的第一件事, 就是藉由呼叫`IsAvailable`來檢查社交網路的可用性 (在此案例中為 Twitter):
+`SLComposeViewController`傳回實例之後，就可以使用它來呈現要張貼到 Twitter 的 UI。 不過，首先要做的第一件事，就是藉由呼叫`IsAvailable`來檢查社交網路的可用性（在此案例中為 Twitter）：
 
 ```csharp
 if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
@@ -53,14 +53,14 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 }
 ```
 
- `SLComposeViewController`永遠不會直接傳送推文, 而不需要使用者介入。 不過, 它可以使用下列方法進行初始化:
+ `SLComposeViewController`永遠不會直接傳送推文，而不需要使用者介入。 不過，它可以使用下列方法進行初始化：
 
 - `SetInitialText`–新增要在推文中顯示的初始文字。
 - `AddUrl`–新增推文的 Url。
 - `AddImage`–將影像新增至推文。
 
 
-一旦初始化之後, `PresentVIewController`呼叫就會顯示所`SLComposeViewController`建立的視圖。 然後, 使用者可以選擇性地編輯和傳送推文, 或取消傳送它。 不論是哪一種情況, 都應該在中`CompletionHandler`關閉控制器, 其中也可以檢查結果, 以查看推文是否已傳送或取消, 如下所示:
+一旦初始化之後， `PresentVIewController`呼叫就會顯示所`SLComposeViewController`建立的視圖。 然後，使用者可以選擇性地編輯和傳送推文，或取消傳送它。 不論是哪一種情況，都應該在中`CompletionHandler`關閉控制器，其中也可以檢查結果，以查看推文是否已傳送或取消，如下所示：
 
 ```csharp
 slComposer.CompletionHandler += (result) => {
@@ -73,7 +73,7 @@ slComposer.CompletionHandler += (result) => {
 
 #### <a name="tweet-example"></a>推文範例
 
-下列程式碼示範`SLComposeViewController`如何使用來呈現用來傳送推文的 view:
+下列程式碼示範`SLComposeViewController`如何使用來呈現用來傳送推文的 view：
 
 ```csharp
 using System;
@@ -140,7 +140,7 @@ namespace SocialFrameworkDemo
 
 社交架構也包含對社交網路提出 HTTP 要求的支援。 它會將要求封裝在`SLRequest`用來以特定社交網路 API 為目標的類別中。
 
-例如, 下列程式碼會向 Twitter 提出要求, 以取得公用時間軸 (藉由展開以上所提供的程式碼):
+例如，下列程式碼會向 Twitter 提出要求，以取得公用時間軸（藉由展開以上所提供的程式碼）：
 
 ```csharp
 using Accounts;
@@ -220,14 +220,14 @@ partial void RequestTwitterTimeline_TouchUpInside (UIButton sender)
 #endregion
 ```
 
-讓我們詳細查看這段程式碼。 首先, 它會取得帳戶存放區的存取權, 並取得 Twitter 帳戶的類型:
+讓我們詳細查看這段程式碼。 首先，它會取得帳戶存放區的存取權，並取得 Twitter 帳戶的類型：
 
 ```csharp
 var accountStore = new ACAccountStore ();
 var accountType = accountStore.FindAccountType (ACAccountType.Twitter);
 ```
 
-接下來, 如果您的應用程式可以存取其 Twitter 帳戶, 它會詢問使用者, 如果授與存取權, 則會將帳戶載入至記憶體並更新 UI:
+接下來，如果您的應用程式可以存取其 Twitter 帳戶，它會詢問使用者，如果授與存取權，則會將帳戶載入至記憶體並更新 UI：
 
 ```csharp
 // Request access to Twitter account
@@ -244,7 +244,7 @@ accountStore.RequestAccess (accountType, (granted, error) => {
 });
 ```
 
-當使用者要求時間軸資料 (藉由在 UI 中點擊按鈕) 時, 應用程式會先形成從 Twitter 存取資料的要求:
+當使用者要求時間軸資料（藉由在 UI 中點擊按鈕）時，應用程式會先形成從 Twitter 存取資料的要求：
 
 ```csharp
 // Initialize request
@@ -253,7 +253,7 @@ var url = new NSUrl("https://api.twitter.com/1.1/statuses/user_timeline.json?cou
 var request = SLRequest.Create (SLServiceKind.Twitter, SLRequestMethod.Get, url, parameters);
 ```
 
-這個範例會藉由在 URL 中包含`?count=10` , 將傳回的結果限制為最後十個專案。 最後, 它會將要求附加至 Twitter 帳戶 (先前已載入), 並執行對 Twitter 的呼叫來提取資料:
+這個範例會藉由在 URL 中包含`?count=10` ，將傳回的結果限制為最後十個專案。 最後，它會將要求附加至 Twitter 帳戶（先前已載入），並執行對 Twitter 的呼叫來提取資料：
 
 ```csharp
 // Request data
@@ -282,27 +282,27 @@ request.PerformRequest ((data, response, error) => {
 });
 ```
 
-如果成功載入資料, 將會顯示未經處理的 JSON 資料 (如下列範例輸出所示):
+如果成功載入資料，將會顯示未經處理的 JSON 資料（如下列範例輸出所示）：
 
 [![](social-framework-images/twitter03.png "原始 JSON 資料顯示的範例")](social-framework-images/twitter03.png#lightbox)
 
-在實際的應用程式中, 可以將 JSON 結果剖析為正常, 並將結果顯示給使用者。 如需如何剖析 JSON 的詳細資訊, 請參閱[簡介 Web 服務](~/cross-platform/data-cloud/web-services/index.md)。
+在實際的應用程式中，可以將 JSON 結果剖析為正常，並將結果顯示給使用者。 如需如何剖析 JSON 的詳細資訊，請參閱[簡介 Web 服務](~/cross-platform/data-cloud/web-services/index.md)。
 
 ## <a name="connecting-to-facebook"></a>連接到 Facebook
 
 ### <a name="facebook-account-settings"></a>Facebook 帳戶設定
 
-使用社交架構連接到 Facebook 幾乎與上述 Twitter 所使用的程式完全相同。 您必須在裝置設定中設定 Facebook 使用者帳戶, 如下所示:
+使用社交架構連接到 Facebook 幾乎與上述 Twitter 所使用的程式完全相同。 您必須在裝置設定中設定 Facebook 使用者帳戶，如下所示：
 
 [![](social-framework-images/facebook01.png "Facebook 帳戶設定")](social-framework-images/facebook01.png#lightbox)
 
-一旦設定之後, 使用社交架構的裝置上的任何應用程式都將使用此帳戶來連線至 Facebook。
+一旦設定之後，使用社交架構的裝置上的任何應用程式都將使用此帳戶來連線至 Facebook。
 
 ### <a name="posting-to-facebook"></a>張貼至 Facebook
 
-由於社交架構是設計用來存取多個社交網路的統一 API, 無論使用哪一種社交網路, 程式碼幾乎完全相同。
+由於社交架構是設計用來存取多個社交網路的統一 API，無論使用哪一種社交網路，程式碼幾乎完全相同。
 
-例如, `SLComposeViewController`可以使用與先前所示的 Twitter 範例完全相同, 唯一不同的是切換至 Facebook 專屬的設定和選項。 例如：
+例如， `SLComposeViewController`可以使用與先前所示的 Twitter 範例完全相同，唯一不同的是切換至 Facebook 專屬的設定和選項。 例如：
 
 ```csharp
 using System;
@@ -366,13 +366,13 @@ namespace SocialFrameworkDemo
 }
 ```
 
-與 facebook `SLComposeViewController`搭配使用時, 會顯示看起來幾乎與 Twitter 範例完全相同的視圖, 在此案例中會顯示**Facebook**做為標題:
+與 facebook `SLComposeViewController`搭配使用時，會顯示看起來幾乎與 Twitter 範例完全相同的視圖，在此案例中會顯示**Facebook**做為標題：
 
 [![](social-framework-images/facebook02.png "SLComposeViewController 顯示")](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>呼叫 Facebook 圖形 API
 
-類似于 Twitter 範例, 社交架構的`SLRequest`物件可以與 Facebook 的圖形 API 搭配使用。 例如, 下列程式碼會從圖形 API 傳回關於 Xamarin 帳戶的資訊 (藉由展開以上提供的程式碼):
+類似于 Twitter 範例，社交架構的`SLRequest`物件可以與 Facebook 的圖形 API 搭配使用。 例如，下列程式碼會從圖形 API 傳回關於 Xamarin 帳戶的資訊（藉由展開以上提供的程式碼）：
 
 ```csharp
 using Accounts;
@@ -455,7 +455,7 @@ partial void RequestFacebookTimeline_TouchUpInside (UIButton sender)
 #endregion
 ```
 
-這段程式碼與上述 Twitter 版本之間唯一的差異是 Facebook 的需求, 是取得開發人員/應用程式專屬識別碼 (您可以從 Facebook 的開發人員入口網站產生), 這必須在提出要求時設定為選項:
+這段程式碼與上述 Twitter 版本之間唯一的差異是 Facebook 的需求，是取得開發人員/應用程式專屬識別碼（您可以從 Facebook 的開發人員入口網站產生），這必須在提出要求時設定為選項：
 
 ```csharp
 var options = new AccountStoreOptions ();
@@ -468,14 +468,14 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 });
 ```
 
-如果無法設定此選項 (或使用不正確索引鍵), 將會導致錯誤或未傳回任何資料。
+如果無法設定此選項（或使用不正確索引鍵），將會導致錯誤或未傳回任何資料。
 
 ## <a name="summary"></a>總結
 
-本文說明如何使用社交架構與 Twitter 和 Facebook 互動。 其中示範了在裝置設定中設定每個社交網路帳戶的位置。 同時也會討論如何使用`SLComposeViewController`來呈現要張貼到社交網路的統一觀點。 此外, 它也檢查`SLRequest`了用來呼叫每個社交網路 API 的類別。
+本文說明如何使用社交架構與 Twitter 和 Facebook 互動。 其中示範了在裝置設定中設定每個社交網路帳戶的位置。 同時也會討論如何使用`SLComposeViewController`來呈現要張貼到社交網路的統一觀點。 此外，它也檢查`SLRequest`了用來呼叫每個社交網路 API 的類別。
 
 
 ## <a name="related-links"></a>相關連結
 
-- [SocialFrameworkDemo (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/socialframeworkdemo)
+- [SocialFrameworkDemo （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/socialframeworkdemo)
 - [Web 服務簡介](~/cross-platform/data-cloud/web-services/index.md)
