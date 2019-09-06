@@ -3,21 +3,21 @@ title: Xamarin 防火牆組態指示
 description: 本檔提供的主機清單必須允許在您的防火牆中允許 Xamarin 在公司環境中工作。
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
-author: asb3993
-ms.author: amburns
+author: conceptdev
+ms.author: crdun
 ms.date: 07/17/2019
-ms.openlocfilehash: b2509bb99a5caf5b508d34aafc0f0c4862a7e563
-ms.sourcegitcommit: 9a2a21974d35353c3765eb683ef2fd7161c1d94a
+ms.openlocfilehash: 2b52dfd55194ec076f28f8c33e758a39d14f5943
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329950"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70291323"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆設定指示
 
-_您需要在防火牆中允許的主機清單, 以便讓 Xamarin 平臺能為您的公司工作。_
+_您需要在防火牆中允許的主機清單，以便讓 Xamarin 平臺能為您的公司工作。_
 
-為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本檔概述一些需要在防火牆中允許的已知端點, 以讓 Xamarin 能夠正常操作。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
+為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本檔概述一些需要在防火牆中允許的已知端點，以讓 Xamarin 能夠正常操作。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
 
 ## <a name="endpoints-to-allow"></a>要允許的端點
 

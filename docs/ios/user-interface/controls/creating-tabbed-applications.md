@@ -4,15 +4,15 @@ description: 本文件說明 iOS 索引標籤列控制器，以及如何使用�
 ms.prod: xamarin
 ms.assetid: 7C772899-2900-F139-D642-F3C4F3F14DDC
 ms.technology: xamarin-ios
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 617c1a15dd316ebd4a107d420841a83d4ca1fd6d
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 005f858408ec4d10563e3d945cadb0f1af65a407
+ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200010"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70292975"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>索引標籤列和在 Xamarin.iOS 中的索引標籤列控制器
 
@@ -61,7 +61,7 @@ ms.locfileid: "70200010"
 
 ### <a name="adding-the-uitabbarcontroller"></a>新增 UITabBarController
 
-接下來, 選取 [檔案] **> [新增**檔案], 然後選擇 **[一般], 以新增空的類別:空白類別**範本。 將檔案命名為`TabController`，如下所示：
+接下來，選取 [檔案] **> [新增**檔案]，然後選擇 **[一般]，以新增空的類別：空白類別**範本。 將檔案命名為`TabController`，如下所示：
 
 [![](creating-tabbed-applications-images/02-newclass.png "加入 TabController 類別")](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
@@ -283,8 +283,8 @@ Visual Studio for Mac 會自動產生的類別和設計工具所需的檔案，�
 
 我們想要拖曳`Label`並`Button`到從 ViewController1**工具箱**在右手邊。 接下來我們將使用 Properties Pad 編輯名稱與文字的控制項如下：
 
-- **標籤**:`Text` = **同一**
-- **按鈕**:`Title` = **使用者採取一些初始動作**
+- **標籤**：`Text` = **同一**
+- **按鈕**：`Title` = **使用者採取一些初始動作**
 
 
 我們會控制在按鈕的可見性`TouchUpInside`事件，我們需要在程式碼後置中參考它。 讓我們找出與其**名稱**`aButton`中 [屬性] 面板，如下列螢幕擷取畫面所示：
