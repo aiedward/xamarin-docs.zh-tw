@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 14d4f5de500c8e8ced6cbeb67019f9152ed63df3
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: dffa9c202d42cfb12ed67e219b4e3155e4e554d0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70118917"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751927"
 ---
 # <a name="contributing"></a>貢獻
 
@@ -32,10 +32,8 @@ ms.locfileid: "70118917"
 
 6. 套用意見反應而且您的變更也適切之後，維護人員即會合併 PR。 它之後很快就會出現在 docs.microsoft.com 上。
 
-
 > [!NOTE]
 > 若您的 PR 可解決現有的問題，請對認可訊息或 PR 描述新增 `Fixes #Issue_Number` 關鍵字，該問題即可於合併 PR 時，自動解決。 如需詳細資訊，請參閱[經由認可訊息結束問題](https://help.github.com/articles/closing-issues-via-commit-messages/)。
-
 
 ### <a name="big-changes-or-new-content"></a>大量變更或新內容
 
@@ -80,5 +78,3 @@ Xamarin 小組會檢閱您的 PR，並會讓您知道變更是否適合 (透過 
 
 > [!NOTE]
 > 您可能注意到有部份的主題未完全遵循此處所指定的指導方針，以及[樣式指南](contributing-guidelines/template.md)。 我們目前正在努力達到整個網站的一致性。 
-
-
