@@ -6,14 +6,14 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: 3f9e5a7a1e20b8e7d708ff80712e6262bae4baa7
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
-ms.translationtype: HT
+ms.openlocfilehash: fe8730ba6bc664269d79c550fb4e0abef7767fe0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58869583"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765005"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials:瀏覽器
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials:Browser
 
 **Browser** 類別可讓應用程式在最佳化系統偏好瀏覽器或外部瀏覽器中開啟網頁連結。
 
@@ -102,4 +102,3 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Open-Browser-XamarinEssentials-API-of-the-Week/player]
 
 [!include[](~/essentials/includes/xamarin-show-essentials.md)]
-

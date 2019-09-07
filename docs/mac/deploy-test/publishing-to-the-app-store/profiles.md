@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 04/12/2017
-ms.openlocfilehash: c0a4766abf8ded591bf348f2c2a7ba2283cdde00
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b2d9d49e37b195dadf3aa89fefb0911e4215d14
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290238"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769919"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的佈建設定檔
 
@@ -90,7 +90,6 @@ ms.locfileid: "70290238"
 7. 佈建設定檔也會顯示在清單中： 
 
     [![](profiles-images/certif26.png "顯示安裝的設定檔")](profiles-images/certif26.png#lightbox)
-
 
 如果開發人員變更應用程式識別碼使用的功能 (例如， 啟用 iCloud 或推播通知)，他們應該為該應用程式識別碼重新建立佈建設定檔。
 

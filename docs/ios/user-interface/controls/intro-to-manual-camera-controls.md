@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 6b7868475426b7e8536030ce9e35812db828b175
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a96bfedfbffc02bc7df48f4cb116925bc6c5b2f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288697"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768511"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin 中手動相機控制項
 
@@ -36,7 +36,6 @@ Ios 8 `AVFoundation Framework`中提供的手動相機控制項可讓行動應�
 - **手動曝光**–藉由提供對公開的手動控制，應用程式可以為使用者提供更多自由，並讓他們能夠達到風格的外觀。
 - **手動白平衡**–使用白色餘額來調整影像中的色彩，通常是為了讓它看起來很逼真。 不同光源的色彩溫度不同，用來捕捉影像的相機設定會經過調整，以彌補這些差異。 同樣地，藉由允許使用者控制白平衡，使用者可以進行無法自動進行的調整。
 
-
 iOS 8 提供現有 iOS Api 的延伸和增強功能，可讓您更精細地控制映射捕捉程式。
 
 ## <a name="bracketed-capture"></a>括住的 Capture
@@ -52,7 +51,6 @@ iOS 8 提供現有 iOS Api 的延伸和增強功能，可讓您更精細地控�
 - **Xcode 7 + 和 ios 8 或更新版本**– Apple 的 Xcode 7 和 ios 8 或更新版本的 api 必須在開發人員的電腦上安裝及設定。
 - **Visual Studio for Mac** –應該在使用者裝置上安裝和設定最新版本的 Visual Studio for Mac。
 - **ios 8 裝置**–執行最新版 ios 8 的 ios 裝置。 無法在 iOS 模擬器中測試相機功能。
-
 
 ## <a name="general-av-capture-setup"></a>一般 AV 捕捉設定
 
@@ -169,7 +167,6 @@ AV 捕捉會話是用來控制從 iOS 裝置相機播放即時影片的記錄，
 
 請執行下列動作來修改應用程式`AppDelegate`的，並新增必要的程式碼：
 
-
 1. 按兩下 方案總管中`AppDelegate.cs`的檔案以開啟它進行編輯。
 1. 將下列 using 語句新增至檔案頂端：
 
@@ -269,7 +266,6 @@ AV 捕捉會話是用來控制從 iOS 裝置相機播放即時影片的記錄，
 
 1. 將變更儲存到檔案。
 
-
 有了這段程式碼，您就可以輕鬆地執行手動相機控制項來進行實驗和測試。
 
 ## <a name="manual-focus"></a>手動焦點
@@ -306,7 +302,6 @@ Light 進入 iOS 裝置上的相機鏡頭，並著重于影像感應器。 與�
 - **Hyperfocal 距離**–這是在焦點範圍中，畫面中最左邊的物件只是焦點的最下方。 換句話說，這是最大化欄位深度的焦點位置。
 - **透鏡位置**–這就是控制上述所有其他詞彙的內容。 這是從感應器到鏡頭的距離，因而成為焦點的控制器。
 
-
 有了這些詞彙和知識後，新的手動焦點控制項就可以成功地在 iOS 8 應用程式中執行。
 
 ### <a name="existing-focus-controls"></a>現有的焦點控制項
@@ -317,14 +312,12 @@ iOS 7 和更早版本，透過`FocusMode`屬性提供現有的焦點控制項，
 - `AVCaptureFocusModeAutoFocus`–相機會透過所有焦點來掃描鏡頭，直到找到明顯的焦點，然後再繼續。
 - `AVCaptureFocusModeContinuousAutoFocus`–攝影機會在每次偵測到聚焦外的情況時 refocuses。
 
-
 現有的控制項也會透過`FocusPointOfInterest`屬性提供可設定的相關點，讓使用者可以利用焦點放在特定區域。 應用程式也可以藉由監視`IsAdjustingFocus`屬性來追蹤鏡頭移動。
 
 此外，屬性會提供範圍限制，如下`AutoFocusRangeRestriction`所示：
 
 - `AVCaptureAutoFocusRangeRestrictionNear`–將自動對焦限制為附近的深度。 在掃描 QR 代碼或條碼之類的情況下很有用。
 - `AVCaptureAutoFocusRangeRestrictionFar`–將自動對焦限制為較遠的深度。 適用于已知不相關的物件位於視圖的欄位（例如，視窗框架）的情況。
-
 
 最後， `SmoothAutoFocus`屬性會減緩自動焦點演算法的速度，並以較小的增量步驟進行，以避免在錄製影片時移動構件。
 
@@ -334,7 +327,6 @@ iOS 7 和更早版本，透過`FocusMode`屬性提供現有的焦點控制項，
 
 - 鎖定焦點時，完全手動控制鏡頭位置。
 - 任何焦點模式中的透鏡位置索引鍵/值觀察。
-
 
 若要執行上述功能， `AVCaptureDevice`類別已經過修改，以包含用來取得相機鏡頭目前位置的唯讀`LensPosition`屬性。
 
@@ -364,9 +356,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 - `UISegmentedControl` ，會將焦點模式從自動變更為鎖定。
 - `UISlider` ，會顯示並更新目前的鏡頭位置。
 
-
 執行下列動作以連線到 view controller 以進行手動焦點控制：
-
 
 1. 新增下列 using 語句：
 
@@ -495,7 +485,6 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
     [![](intro-to-manual-camera-controls-images/image7.png "手動調整鏡頭位置")](intro-to-manual-camera-controls-images/image7.png#lightbox)
 1. 停止應用程式。
 
-
 上述程式碼已示範如何在相機處於自動模式時監視鏡頭位置，或在其處於鎖定模式時使用滑杆來控制鏡頭位置。
 
 ## <a name="manual-exposure"></a>手動曝光
@@ -520,7 +509,6 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 - **ISO 對應**–這是從電影攝影借用的詞彙，並指的是電影中的化學物的敏感度。 電影中的低 ISO 值具有較少的細微性和更細微的色彩複製;數位感應器的低 ISO 值的感應器噪音較少，但亮度較少。 ISO 值越高，影像愈亮，但感應器雜訊愈多。 數位感應器上的「ISO」是一種[電子增益](https://en.wikipedia.org/wiki/Gain)量，而不是實體功能。
 - **透鏡光圈**–這是開啟的「鏡頭」大小。 在所有 iOS 裝置上，會修正 [透鏡] 光圈，因此唯一可用來調整曝光的兩個值為 [快門速度] 和 [ISO]。
 
-
 ### <a name="how-continuous-auto-exposure-works"></a>連續自動曝光的運作方式
 
 在瞭解手動曝光如何運作之前，最好先瞭解如何在 iOS 裝置中進行連續自動曝光。
@@ -544,7 +532,6 @@ iOS 7 和更新版本，透過`ExposureMode`屬性提供下列現有的公開控
 - `AVCaptureExposureModeLocked`-範例場景一次，並在整個場景中使用這些值。
 - `AVCaptureExposureModeContinuousAutoExposure`–會持續取樣場景，以確保它的光線良好。
 
-
 可以用來透過選取要公開的目標物件來公開場景，而應用程式可以`AdjustingExposure`監視屬性，以便在調整曝光時查看。 `ExposurePointOfInterest`
 
 ### <a name="new-exposure-controls-in-ios-8"></a>IOS 8 中的新公開控制
@@ -553,7 +540,6 @@ iOS 7 和更新版本，透過`ExposureMode`屬性提供下列現有的公開控
 
 - 完全手動的自訂曝光。
 - 取得、設定和索引鍵-值會觀察 IOS 和快門速度（持續時間）。
-
 
 若要執行上述功能，已新增`AVCaptureExposureModeCustom`新的模式。 當中的相機是自訂模式時，可以使用下列程式碼來調整曝光持續時間和 ISO：
 
@@ -580,7 +566,6 @@ CaptureDevice.UnlockForConfiguration();
 - `CaptureDevice.ActiveFormat.MinExposureDuration`
 - `CaptureDevice.ActiveFormat.MaxExposureDuration`
 
-
 如上述程式碼所示，必須鎖定 Capture 裝置進行設定，才能進行曝光變更。
 
 ### <a name="manual-exposure-example"></a>手動公開範例
@@ -595,9 +580,7 @@ CaptureDevice.UnlockForConfiguration();
 - `UISegmentedControl` ，會將焦點模式從自動變更為鎖定。
 - 四`UISlider`個會顯示並更新位移、持續時間、ISO 和偏差的控制項。
 
-
 請執行下列動作，以連接視圖控制器以進行手動公開控制：
-
 
 1. 新增下列 using 語句：
 
@@ -798,7 +781,6 @@ CaptureDevice.UnlockForConfiguration();
     [![](intro-to-manual-camera-controls-images/image15.png "拖曳 [持續時間] 和 [ISO] 滑杆以手動控制曝光")](intro-to-manual-camera-controls-images/image15.png#lightbox)
 1. 停止應用程式。
 
-
 上述程式碼已示範如何在相機處於自動模式時監視曝光設定，以及如何使用滑杆來控制其處於鎖定或自訂模式時的曝光。
 
 ## <a name="manual-white-balance"></a>手動白餘額
@@ -838,7 +820,6 @@ iOS 7 和更新版本透過`WhiteBalanceMode`屬性提供下列現有的白色�
 - `AVCapture WhiteBalance ModeLocked`-範例場景一次，並在整個場景中使用這些值。
 - `AVCapture WhiteBalance ModeContinuousAutoExposure`-持續取樣場景，以確保其平衡。
 
-
 而且應用程式可以監視`AdjustingWhiteBalance`屬性，以查看何時調整曝光。
 
 ### <a name="new-white-balance-controls-in-ios-8"></a>IOS 8 中的新白餘額控制項
@@ -850,13 +831,11 @@ iOS 7 和更新版本透過`WhiteBalanceMode`屬性提供下列現有的白色�
 - 支援使用灰色卡片進行白平衡。
 - 與裝置無關的色彩空間之間的轉換常式。
 
-
 若要執行上述功能， `AVCaptureWhiteBalanceGain`已加入具有下列成員的結構：
 
 - `RedGain`
 - `GreenGain`
 - `BlueGain`
-
 
 最大的白色餘額增益目前是四（4），而且可以從`MaxWhiteBalanceGain`屬性進行準備。 因此合法範圍是從一（1）到`MaxWhiteBalanceGain` （4）目前。
 
@@ -869,20 +848,15 @@ iOS 7 和更新版本透過`WhiteBalanceMode`屬性提供下列現有的白色�
 - `X`-是介於0到1之間的值。
 - `Y`-是介於0到1之間的值。
 
-
 `AVCaptureWhiteBalanceTemperatureAndTintValues`結構也已加入下列成員：
 
 - `Temperature`-是以度數為單位的浮點值。
 - `Tint`-這是從0到150的綠色或洋紅的位移，其中正值是以綠色方向表示，而向洋紅色則是負值。
 
-
 `CaptureDevice.GetTemperatureAndTintValues`使用`CaptureDevice.GetDeviceWhiteBalanceGains`和方法，在溫度和色調、色度和 RGB 增益色彩空間之間進行轉換。
 
 > [!NOTE]
 > 轉換常式更精確地，要轉換的值愈接近 Planckian Locus。
-
-
-
 
 #### <a name="gray-card-support"></a>灰色卡片支援
 
@@ -907,9 +881,7 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
 - 兩`UISlider`個會顯示並更新溫度和色調的控制項。
 - ， `UIButton`用來取樣灰色卡片（灰色世界）空間，並使用這些值來設定白色餘額。
 
-
 執行下列動作以連線到 view controller 以進行手動白餘額控制：
-
 
 1. 新增下列 using 語句：
 
@@ -1138,7 +1110,6 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
 - **手動曝光括弧**–所有影像的快門速度（持續時間）和 ISO 數量都不同。
 - **簡單**的高載括弧–一系列快速連續取得的靜止影像。
 
-
 ### <a name="new-bracketed-capture-controls-in-ios-8"></a>IOS 8 中的新加上括弧的 Capture 控制項
 
 所有括住的`AVCaptureStillImageOutput` Capture 命令都會實作為類別。 `CaptureStillImageBracket`使用方法，即可取得具有指定之設定陣列的一系列影像。
@@ -1147,7 +1118,6 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
 
 - `AVCaptureAutoExposureBracketedStillImageSettings`–它有一個屬性， `ExposureTargetBias`可用來設定自動曝光括弧的偏差。
 - `AVCaptureManual`  `ExposureBracketedStillImageSettings`–它有兩個屬性`ExposureDuration` （ `ISO`和），可用來設定手動曝光括弧的快門速度和 ISO。
-
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>以括弧括住的 Capture 控制項確實不會
 
@@ -1159,14 +1129,12 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
 - 假設範例緩衝區即將來自相同的共用集區。
 - 若要釋放先前的準備呼叫所配置的記憶體，請再次`PrepareToCaptureStillImageBracket`呼叫，並將一個物件的陣列傳送給它。
 
-
 #### <a name="donts"></a>注意事項
 
 以下是在 iOS 8 中使用括住的 Capture 控制項時不應完成的事項清單：
 
 - 請不要在單一捕獲中混用加上括弧的 Capture 設定類型。
 - 不要在單一捕獲`MaxBracketedCaptureStillImageCount`中要求超過個影像。
-
 
 ### <a name="bracketed-capture-details"></a>括住的捕捉詳細資料
 
@@ -1177,7 +1145,6 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
 - 所有影像都必須使用相同的輸出格式（jpeg、png 等等）
 - 影片預覽可能會捨棄畫面格。
 - 所有與 iOS 8 相容的裝置都支援括住的 Capture。
-
 
 記住這項資訊之後，讓我們來看一個在 iOS 8 中使用有括弧的 Capture 的範例。
 
@@ -1194,9 +1161,7 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
 - ， `UIScrollView`用來存放影片摘要和結果檢視。
 - ， `UIButton`用來以一些預設設定來拍攝加上括弧的 Capture。
 
-
 請執行下列動作，以將 view controller 連接到有括弧的 Capture：
-
 
 1. 新增下列 using 語句：
 
@@ -1321,7 +1286,6 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
     }
     ```
 
-
 1. 覆寫`ViewDidAppear`方法，並新增下列程式碼：
 
     ```csharp
@@ -1348,7 +1312,6 @@ Apple 使用「灰色世界」一詞來參考 iOS 8 內建的灰色卡片支援�
 
     [![](intro-to-manual-camera-controls-images/image25.png "向右滑動以查看加上括弧的 Capture 所拍攝的三個影像")](intro-to-manual-camera-controls-images/image25.png#lightbox)
 1. 停止應用程式。
-
 
 上述程式碼已示範如何在 iOS 8 中設定和接受自動曝光括住的 Capture。
 

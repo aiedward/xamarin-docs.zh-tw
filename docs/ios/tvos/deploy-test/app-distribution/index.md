@@ -7,23 +7,20 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 0ea96eb3808daeb9f8764695d1b4b3d432727ff2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f47d4228fc1d3ec1b3b428b917f3c774103577d7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292488"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769191"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS 應用程式散發總覽
 
 _本檔概述 tvOS 應用程式可用的散發技術，並作為主題中更詳細檔的指標。_
 
-
 開發好 tvOS 應用程式之後，軟體發展生命週期的下一步就是將您的應用程式散發給使用者，如下圖中反白顯示的部分所示：
 
-
 [![軟體發展生命週期總覽](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
-
 
 Apple 提供下列方法來散發 tvOS 應用程式，其支援 tvOS：
 
@@ -83,8 +80,6 @@ TvOS 應用程式可透過臨機操作散發來進行使用者測試，這可在
 ## <a name="summary"></a>總結
 
 這篇文章提供 tvOS apps 的散發機制簡要概述。 它引進了 Apple TV App Store、臨機操作和內部部署，並提供更多詳細資訊的連結。
-
-
 
 ## <a name="related-links"></a>相關連結
 

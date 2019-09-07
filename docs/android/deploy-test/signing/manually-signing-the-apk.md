@@ -6,15 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d20ec990253ff86e7b426baad8da5a919a91ef6c
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 3be55c2149aa58bf6d8462e5c1ff24166078355f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525017"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755892"
 ---
 # <a name="manually-signing-the-apk"></a>手動簽署 APK
-
 
 建置要發行的應用程式之後，必須先簽署 APK 後再進行散發，這樣它才能在 Android 裝置上執行。 此程序通常會使用 IDE 來處理，不過，在某些情況下，需要在命令列手動簽署 APK。 以下是簽署 APK 的相關步驟：
 
@@ -27,19 +26,15 @@ ms.locfileid: "69525017"
 
 步驟的順序很重要，而且取決於用來簽署 APK 的工具。 使用 **apksigner** 時，務必先針對應用程式進行 **zipalign**，然後使用 **apksigner** 來簽署它。  如果需要使用 **jarsigner** 簽署 APK，則務必先簽署 APK，然後執行 **zipalign**。 
 
-
-
 ## <a name="prerequisites"></a>必要條件
 
 本指南將著重於從 Android SDK 建置工具 (v24.0.3 或更高版本) 使用 **apksigner**。 它假設 APK 已經建置。
 
 使用舊版 Android SDK 建置工具所建置的應用程式必須使用 **jarsigner**，如以下的[使用 jarsigner 簽署 APK](#Sign_the_APK_with_jarsigner) 所述。
 
-
-
 ## <a name="create-a-private-keystore"></a>建立私密金鑰儲存區
 
-「金鑰儲存區」  是一個安全性憑證的資料庫，此資料庫是使用 Java SDK 的 [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) \(英文\) 程式所建立。 金鑰儲存區對於發行 Xamarin.Android 應用程式而言是不可或缺的，因為 Android 將不會執行未經過數位簽署的應用程式。
+「金鑰儲存區」是一個安全性憑證的資料庫，此資料庫是使用 Java SDK 的 [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) \(英文\) 程式所建立。 金鑰儲存區對於發行 Xamarin.Android 應用程式而言是不可或缺的，因為 Android 將不會執行未經過數位簽署的應用程式。
 
 在開發期間，Xamarin.Android 會使用偵錯金鑰儲存區來簽署應用程式，讓應用程式能夠直接部署至模擬器，或部署至設定來使用可偵錯應用程式的裝置。
 不過，無法將此金鑰儲存區辨識為用於散發應用程式目的的有效金鑰儲存區。
@@ -48,8 +43,6 @@ ms.locfileid: "69525017"
 
 請務必保護這個金鑰儲存區。 如果遺失，則它就無法使用 Google Play 來將更新發行至應用程式。
 遺失金鑰儲存區所造成問題的唯一解決方式是建立新的金鑰儲存區、使用新的金鑰重新簽署 APK，然後提交新的應用程式。 接著，必須從 Google Play 移除舊的應用程式。 同樣地，如果這個新的金鑰儲存區遭到洩漏或公開散發，則可能會散發應用程式的非官方或惡意版本。
-
-
 
 ### <a name="create-a-new-keystore"></a>建立新的金鑰儲存區
 
@@ -95,7 +88,6 @@ Re-enter new password:
 $ keytool -list -keystore xample.keystore
 ```
 
-
 ## <a name="zipalign-the-apk"></a>針對 APK 進行 Zipalign
 
 使用 **apksigner** 簽署 APK 之前，務必先使用 Android SDK 的 **zipalign** 工具來將檔案最佳化。 **zipalign** 將沿著 4 位元組界限，在APK 中重建資源。 這種對齊方式可讓 Android 快速從 APK 載入資源，進而提高應用程效能，並且可能會減少記憶體使用量。 Xamarin.Android 將進行執行階段檢查，以判斷是否已針對 APK 進行 zipalign。 如果尚未針對 APK 進行 zipalign，將不會執行應用程式。
@@ -105,7 +97,6 @@ $ keytool -list -keystore xample.keystore
 ```shell
 $ zipalign -f -v 4 mono.samples.helloworld-unsigned.apk helloworld.apk
 ```
-
 
 ## <a name="sign-the-apk"></a>簽署 APK
 
@@ -129,7 +120,6 @@ $ apksigner sign --ks xample.keystore --ks-key-alias publishingdoc mono.samples.
 > [!NOTE]
 > 根據 [(Google 問題 62696222)](https://issuetracker.google.com/issues/62696222)，Android SDK 中「找不到」**apksigner**。 對此問題的因應措施是安裝 Android SDK 建置工具 v25.0.3，並使用該版本的 **apksigner**。  
 
-
 <a name="Sign_the_APK_with_jarsigner" />
 
 ### <a name="sign-the-apk-with-jarsigner"></a>使用 jarsigner 簽署 APK
@@ -147,8 +137,6 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 
 > [!NOTE]
 > 使用 **jarsigner** 時，務必 _「先」_ 簽署 APK，然後再使用 **zipalign**。  
-
-
 
 ## <a name="related-links"></a>相關連結
 

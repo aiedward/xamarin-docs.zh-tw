@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 959729fc21ba59133e2a92c1121fdb93d608f635
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 95f25dbce55e2b960f604b6e304ffb6e8ed775e0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653815"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771343"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>新增點選手勢辨識器
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 
 _點選手勢可用於點選偵測，並使用 TapGestureRecognizer 類別實作。_
 
@@ -42,7 +42,7 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 
 ## <a name="using-xaml"></a>使用 XAML
 
-您可以在 XAML 中使用附加屬性將手勢辨識器新增至控制項。 以下顯示將 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 新增至影像的語法 (在本案例中定義「點兩下」  事件)：
+您可以在 XAML 中使用附加屬性將手勢辨識器新增至控制項。 以下顯示將 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 新增至影像的語法 (在本案例中定義「點兩下」事件)：
 
 ```xaml
 <Image Source="tapped.jpg">
@@ -113,7 +113,6 @@ public class TapViewModel : INotifyPropertyChanged
     //region INotifyPropertyChanged code omitted
 }
 ```
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -6,30 +6,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 93e6797f2b00df32b8d3ae361f40fd487b7adac3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 4673bc6898da06f07a624b4aa585e62009a575e1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647720"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758321"
 ---
 # <a name="working-with-screen-sizes"></a>使用螢幕大小
 
-Android 磨損裝置可以有矩形或圓形顯示, 這也可以是不同的大小。
+Android 磨損裝置可以有矩形或圓形顯示，這也可以是不同的大小。
 
 ![矩形和圓角磨損顯示的螢幕擷取畫面](screen-sizes-images/moyeu-wear.png)
 
 ## <a name="identifying-screen-type"></a>識別螢幕類型
 
-「磨損支援」程式庫提供一些控制項, 可協助您偵測和適應不同的螢幕圖形`WatchViewStub` , `BoxInsetLayout`例如和。
+「磨損支援」程式庫提供一些控制項，可協助您偵測和適應不同的螢幕圖形`WatchViewStub` ， `BoxInsetLayout`例如和。
 
-請注意, 有些其他支援程式庫控制項 (例如`GridViewPager`)*會自動*偵測畫面圖形本身, 而不應新增為下面所述控制項的子系。
+請注意，有些其他支援程式庫控制項（例如`GridViewPager`）*會自動*偵測畫面圖形本身，而不應新增為下面所述控制項的子系。
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-請參閱[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)範例, 以瞭解如何偵測螢幕類型, 並針對每種類型顯示不同的版面配置。
+請參閱[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)範例，以瞭解如何偵測螢幕類型，並針對每種類型顯示不同的版面配置。
 
-主要版面配置檔案包含`android.support.wearable.view.WatchViewStub` , 它會`app:rectLayout`使用和`app:roundLayout`屬性來參考矩形和圓角螢幕的不同版面配置:
+主要版面配置檔案包含`android.support.wearable.view.WatchViewStub` ，它會`app:rectLayout`使用和`app:roundLayout`屬性來參考矩形和圓角螢幕的不同版面配置：
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -41,32 +41,29 @@ Android 磨損裝置可以有矩形或圓形顯示, 這也可以是不同的大�
   app:roundLayout="@layout/round_layout" />
 ```
 
-解決方案包含各種不同的版面配置, 適用于在執行時間選取的每種樣式:
+解決方案包含各種不同的版面配置，適用于在執行時間選取的每種樣式：
 
 ![[資源]/[配置] 底下顯示的檔案](screen-sizes-images/solution.png)
 
-
 ### <a name="boxinsetlayout"></a>BoxInsetLayout
 
-您也可以建立適應矩形或圓形畫面的單一視圖, 而不是為每個螢幕類型建立不同的版面配置。
+您也可以建立適應矩形或圓形畫面的單一視圖，而不是為每個螢幕類型建立不同的版面配置。
 
-此[Google 範例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)示範如何使用`BoxInsetLayout` , 在矩形和圓角畫面上使用相同的版面配置。
-
+此[Google 範例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)示範如何使用`BoxInsetLayout` ，在矩形和圓角畫面上使用相同的版面配置。
 
 ## <a name="wear-ui-designer"></a>磨損 UI 設計工具
 
-Xamarin Android Designer 同時支援矩形和圓角畫面:
+Xamarin Android Designer 同時支援矩形和圓角畫面：
 
 ![在 Xamarin Android Designer 中選取 Android 磨損正方形畫面](screen-sizes-images/design-screen-type.png)
 
-矩形樣式的設計介面如下所示:
+矩形樣式的設計介面如下所示：
 
 ![矩形樣式的設計介面](screen-sizes-images/design-rect.png) 
 
-Round 樣式中的設計介面如下所示:
+Round 樣式中的設計介面如下所示：
 
 ![以圓角樣式呈現的設計介面](screen-sizes-images/design-round.png)
-
 
 ## <a name="wear-simulator"></a>磨損模擬器
 
@@ -74,15 +71,14 @@ Round 樣式中的設計介面如下所示:
 
 ![Google 模擬器管理員中顯示的磨損裝置定義](screen-sizes-images/emulator-devices.png)
 
-模擬器會針對矩形畫面呈現如下:
+模擬器會針對矩形畫面呈現如下：
 
 ![矩形螢幕的模擬器呈現](screen-sizes-images/recipe-2.png) 
 
-它會針對圓角畫面呈現如下:
+它會針對圓角畫面呈現如下：
 
 ![圓角畫面的模擬器呈現](screen-sizes-images/recipe-2-round.png)
 
 ## <a name="video"></a>視訊
 
 [適用于 Android 的全螢幕應用程式](https://www.youtube.com/watch?v=naf_WbtFAlY)會從[developers.google.com](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw)磨損。
-

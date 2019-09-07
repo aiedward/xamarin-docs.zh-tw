@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: 8366796af47e8915bf0bd9ba680e6144e1cfaebc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61532eb1e31db6a862275180394b2b5ba9b05f8e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280600"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761720"
 ---
 # <a name="location-services-on-android"></a>Android 上的位置服務
 
@@ -75,11 +75,10 @@ else
 
 應用程式必須能夠容忍使用者不會授與許可權（或已撤銷許可權）的情況，並且能夠以適當的方式處理這種情況。 如需在 Xamarin. Android 中執行執行時間許可權檢查的詳細資訊，請參閱[許可權指南](~/android/app-fundamentals/permissions.md)。
 
-
 ## <a name="using-the-fused-location-provider"></a>使用融合的位置提供者
 
 「融合位置提供者」是 Android 應用程式從裝置接收位置更新的慣用方式，因為它會在執行時間有效率地選取位置提供者，以符合電池效率的方式提供最佳的位置資訊。 例如，使用者在戶外流覽時，會取得使用 GPS 閱讀的最佳位置。 如果使用者接著走到室內，其中 GPS 的運作效果不佳（如果有的話），則已融合的位置提供者可能會自動切換至 WiFi，其運作效果較佳。
- 
+
 「融合的位置提供者 API」提供各種其他工具來強化位置感知應用程式，包括地理柵欄和活動監視。 在本節中，我們將著重于設定`LocationClient`、建立提供者，以及取得使用者位置的基本概念。
 
 「融合位置提供者」是[Google Play Services](https://developer.android.com/google/play-services/index.html)的一部分。

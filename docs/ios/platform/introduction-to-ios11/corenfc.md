@@ -7,12 +7,12 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: 6da32e22fbdb3b5b7d96d7ee93c2f25bba84cd78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7a9d359842dde916fc14ffea5ec6e3f453dfee0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286617"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752422"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Xamarin 中的核心 NFC
 
@@ -141,7 +141,6 @@ Session?.BeginSession();
 - `queue`–回呼處理所在的佇列。 它可以是`null`，在這種情況下，請務必`DispatchQueue.MainQueue`在更新使用者介面控制項時使用（如範例所示）。
 - `invalidateAfterFirstRead`-若為`false` ，掃描會在第一次成功掃描後停止;當掃描會繼續，並傳回多個結果，直到掃描取消或達到60秒的`true`超時值為止。
 
-
 ### <a name="3-cancel-the-scanning-session"></a>3.取消掃描會話
 
 使用者可以透過使用者介面中系統提供的按鈕來取消掃描會話：
@@ -159,7 +158,6 @@ Session.InvalidateSession();
 ## <a name="summary"></a>總結
 
 CoreNFC 可讓您的應用程式從 NFC 標記讀取資料。 它支援讀取各種標記格式（NDEF 類型1到5），但不支援寫入或格式化。
-
 
 ## <a name="related-links"></a>相關連結
 

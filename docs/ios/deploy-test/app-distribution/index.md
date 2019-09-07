@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: c7b31e05a5b9d75559fae14f467312f5abc8fe94
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a261d1fc86fac16cf48575616359b083daebf47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289803"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756548"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 應用程式散發概觀
 
@@ -20,9 +20,7 @@ ms.locfileid: "70289803"
 
 完成 Xamarin.iOS 應用程式開發之後，軟體開發生命週期的下一步就是將應用程式散發給使用者，如下圖中醒目標示的部分所示：
 
-
 [![](images/publishingdiagram.png "Xamarin.iOS 應用程式開發完成後，下一步就是散發給使用者，如本圖中醒目標示的部分所示")](images/publishingdiagram.png#lightbox)
-
 
 Apple 提供以下方式散發 iOS 應用程式，這些方式都受到 Xamarin.iOS 支援：
 

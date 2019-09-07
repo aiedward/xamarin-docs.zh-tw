@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: 72a1fe3541eb4ece67dd137ebcd33f8e81ae9553
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dcadb5146df39aa4887e28b65078acc9454f3d34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292271"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767979"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>Xamarin 中的 watchOS 專案參考
 
@@ -32,12 +32,9 @@ WatchOS 解決方案中的三個專案會*自動設定*為以特定方式參考�
 
   ![](project-references-images/catalog-reference2.png "iPhone 應用程式參考監看式應用程式")
 
-
 - **Watch 應用程式延伸**模組未參考任何其他專案
 
   ![](project-references-images/catalog-reference3.png "監看應用程式延伸模組不會參考其他專案")
-
-
 
 ## <a name="bundle-identifiers"></a>套件組合識別碼
 
@@ -76,4 +73,3 @@ WatchOS 解決方案中的三個專案會*自動設定*為以特定方式參考�
 ![](project-references-images/infoplist-watchapp.png "Watch plist 檔案")
 
 Watch 應用程式的部署目標可能與監看延伸模組和 iOS 應用程式不同。
-

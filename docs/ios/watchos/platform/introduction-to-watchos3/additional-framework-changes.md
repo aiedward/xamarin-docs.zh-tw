@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 34f192938ac583e39232312377142015aa6d3811
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd4bc8dbc02a44807ec197d39349971d8f9cd6f9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287556"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768587"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>其他 watchOS 3 架構變更
 
 _本文涵蓋 watchOS 3 的其他、次要變更或現有架構的增強功能。_
 
 除了 iOS 的主要變更之外，Apple 也已對 watchOS 3 中的數個現有架構進行修改和改進。
-
 
 ## <a name="core-data"></a>核心資料
 
@@ -33,14 +32,12 @@ _本文涵蓋 watchOS 3 的其他、次要變更或現有架構的增強功能�
 
 如需詳細資訊，請參閱 Apple 的[核心資料架構參考](https://developer.apple.com/reference/coredata)。
 
-
 ## <a name="core-motion"></a>核心動作
 
 觀看 OS 3 的核心動作架構已進行下列增強功能：
 
 - 新的裝置動作事件會使用加速計和陀螺儀來提供動作和方向更新。 應用程式可以註冊這項更新（以最多100Hz 的速率）。
 - 當使用者暫停並繼續執行時，新的計步器事件會啟用快速的即時通知。 使用[CMPedometer](https://developer.apple.com/reference/coremotion/cmpedometer)來註冊前景或背景計步器事件。
-
 
 ## <a name="foundation"></a>打下
 
@@ -52,7 +49,6 @@ _本文涵蓋 watchOS 3 的其他、次要變更或現有架構的增強功能�
 - 使用新的[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)類別來格式化當地語系化的量測測量，以顯示給終端使用者。
 - 使用新的[NSUnit](https://developer.apple.com/reference/foundation/nsunit)和[NSDimension](https://developer.apple.com/reference/foundation/nsdimension)類別來代表特定 UOMs。
 
-
 ## <a name="healthkit"></a>HealthKit
 
 Watch OS 3 的 HealthKit 架構有下列增強功能：
@@ -60,7 +56,6 @@ Watch OS 3 的 HealthKit 架構有下列增強功能：
 - 使用新的[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)類別來指定健身`ActivityType`的`LocationType`和。
 - 已新增[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)類別的`WheelchairUse`新[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)和方法，以使用輪椅相關的健全狀況資料。
 - 已新增新的中繼資料`HKWeatherConditionClear`索引鍵（例如和`HKWeatherConditionCloudy`），以及已新增的`HKWorkoutActivityTypeFlexibility`健身類型（例如`HKWorkoutActivityTypeWheelchairRunPace`和）。
-
 
 ## <a name="homekit"></a>HomeKit
 
@@ -70,7 +65,6 @@ Watch OS 3 的 HomeKit 架構有下列增強功能：
 - 已新增數個新的服務和特性。
 - 新增更多主要服務和連結服務的附屬應用程式內容與設定。
 
-
 ## <a name="passkit"></a>PassKit
 
 Watch OS 3 的 PassKit 架構有下列增強功能：
@@ -78,14 +72,12 @@ Watch OS 3 的 PassKit 架構有下列增強功能：
 - 擴充架構，以支援實體貨物和服務之 Apple Watch 的安全應用程式內付款。
 - 現在可以使用下列類別：[PKPayment](https://developer.apple.com/reference/passkit/pkpayment)、 [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)、 [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
-
 ## <a name="uikit"></a>UIKit
 
 Watch OS 3 的 UIKit 架構有下列增強功能：
 
 - 若要在標籤中支援動態類型，文字欄位和文字方塊會`PreferredFontForTextStyle`使用`UIFont`類別的新方法。
 - 已`ColorWithDisplayP3`新增方法以支援寬色彩。
-
 
 ## <a name="related-links"></a>相關連結
 

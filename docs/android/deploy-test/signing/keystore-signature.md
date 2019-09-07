@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d32b2a20fee6b2bb007ee620e0ae4203e950bb98
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 6cada2c7426cc50723321d77e21852a92fe64d63
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50112446"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755788"
 ---
 # <a name="finding-your-keystores-signature"></a>尋找您的金鑰存放區簽章
 
@@ -59,13 +59,11 @@ Certificate fingerprints:
          Version: 3
 ```
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 尋找用來簽署應用程式的 Xamarin **debug.keystore** 檔案。 根據預設，可在下列位置找到用來簽署 Xamarin.Android 應用程式偵錯版本的金鑰儲存區：
 
 **~/.local/share/Xamarin/Mono for Android/debug.keystore**
-
 
 您可以從 JDK 執行 **keytool** 命令來取得金鑰儲存區的相關資訊。 通常可在下列位置找到此工具：
 
@@ -126,7 +124,6 @@ KeyIdentifier [
 
 如需簽署 Xamarin.Android 應用程式的詳細資訊，請參閱[簽署 Android 應用程式套件](~/android/deploy-test/signing/index.md)。
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 當 Visual Studio for Mac [簽署並散發] 精靈簽署您的應用程式時，產生的金鑰儲存區會位於下列位置：
@@ -138,6 +135,5 @@ KeyIdentifier [
 **~/Library/Developer/Xamarin/Keystore/chimp/chimp.keystore**
 
 如需簽署 Xamarin.Android 應用程式的詳細資訊，請參閱[簽署 Android 應用程式套件](~/android/deploy-test/signing/index.md)。
-
 
 -----

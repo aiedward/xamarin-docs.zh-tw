@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 4197dfb38ac6118d20da2b87d0c686558d77b0f6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6dc0838bf63492dd06d5452cedbaf1d7fb8313c9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281566"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752305"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中對 StoreKit 所做的變更
 
@@ -246,7 +246,6 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 - 文字檔，以及
 - 用來表示章節的影像。
-
 
 首先從功能表中選取 [檔案] **> [新增專案**]，然後選擇 [**應用程式內購買內容**]：
 
@@ -484,7 +483,6 @@ public void SaveDownload (SKDownload download)
 ```
 
 當`FinishTransaction`呼叫時，下載的檔案將不再保證會`Cache`在目錄中。 在呼叫`FinishTransaction`之前，應該先複製所有檔案。
-
 
 ## <a name="other-considerations"></a>其他考量
 

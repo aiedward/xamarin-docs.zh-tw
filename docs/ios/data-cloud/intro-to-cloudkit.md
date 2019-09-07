@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/11/2016
-ms.openlocfilehash: 09275517a1d081073ab471d1e8c993dc232a4385
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 240b3c1547231ebbea568f4d5d10407ec560390b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292449"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763404"
 ---
 # <a name="cloudkit-in-xamarinios"></a>在 Xamarin 中 CloudKit
 
@@ -48,7 +48,6 @@ CloudKit 同時支援結構化和大量資料。 它可以順暢地處理大型�
 
 在撰寫本文時，Apple 一開始會提供免費的 CloudKit，並具有高限制的頻寬和儲存容量。 對於具有大型使用者群的較大型專案或應用程式，Apple 已提示您將提供價格實惠的定價比例。
 
-
 ## <a name="enabling-cloudkit-in-a-xamarin-application"></a>在 Xamarin 應用程式中啟用 CloudKit
 
 在 Xamarin 應用程式可以利用 CloudKit 架構之前，必須正確地布建應用程式，如[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)和[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南中所述
@@ -67,7 +66,6 @@ CloudKit 同時支援結構化和大量資料。 它可以順暢地處理大型�
 7. 請確定應用程式有**無所不在容器**（如上面所建立）。 範例：`iCloud.com.your-company.CloudKitAtlas`
 8. 將變更儲存到檔案。
 
-
 這些設定都備妥之後，應用程式就可以開始存取 CloudKit Framework Api。
 
 ## <a name="cloudkit-api-overview"></a>CloudKit API 總覽
@@ -82,7 +80,6 @@ CloudKit 同時支援結構化和大量資料。 它可以順暢地處理大型�
 6. **參考**–提供給定資料庫內相關記錄間的父子關聯性。
 7. **資產**–允許將大型非結構化資料的檔案上傳至 iCloud，並與指定的記錄相關聯。
 
-
 ### <a name="containers"></a>容器
 
 在 iOS 裝置上執行的特定應用程式，一律會在該裝置上的其他應用程式和服務上執行。 在用戶端裝置上，應用程式會以某種方式進行孤立或沙箱處理。 在某些情況下，這是常值沙箱，而在其他情況中，應用程式只會在它自己的記憶體空間中執行。
@@ -92,7 +89,6 @@ CloudKit 同時支援結構化和大量資料。 它可以順暢地處理大型�
 1. **安全性**–一個應用程式不能幹擾其他用戶端應用程式或作業系統本身。
 1. **穩定性**-如果用戶端應用程式當機，則無法取出 OS 的其他應用程式。
 1. **隱私權**–每個用戶端應用程式對於儲存在裝置內的個人資訊具有有限的存取權。
-
 
 CloudKit 的設計目的是要提供與上述所列相同的優點，並將其套用至使用雲端式資訊：
 
@@ -179,7 +175,6 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 1. `CKReferences`
 1. `CKAssets`
 
-
 除了單一數值型別以外，記錄可以包含上述任何一種類型的同質陣列。
 
 下列程式碼可以用來建立新的記錄，並將它儲存在資料庫中：
@@ -215,7 +210,6 @@ await CloudManager.SaveAsync (newRecord);
 - 它們是由用戶端應用程式所建立。
 - 它們會完全正規化，並代表記錄的特定位置。
 - 藉由將外部資料庫中記錄的唯一識別碼指派給記錄名稱，它們可以用來橋接未儲存在 CloudKit 中的本機資料庫。
-
 
 當開發人員建立新記錄時，他們可以選擇傳入記錄識別碼。 如果未指定記錄識別碼，則會自動建立 UUID，並將其指派給記錄。
 
@@ -285,13 +279,11 @@ Apple 提供兩個不同的 API 集合來使用 CloudKit：
 - **操作 API** -提供 CloudKit 的每一項功能。 針對更複雜的應用程式，此 API 可提供對 CloudKit 的精細控制。
 - **便利性 API** -提供通用、預先設定的 CloudKit 功能子集。 它提供便利、輕鬆的存取解決方案，在 iOS 應用程式中包含 CloudKit 功能。
 
-
 方便使用的 API 通常是大部分 iOS 應用程式和 Apple 建議的最佳選擇。 本節的其餘部分將涵蓋下列便利 API 主題：
 
 - 儲存記錄。
 - 正在提取記錄。
 - 正在更新記錄。
-
 
 ### <a name="common-setup-code"></a>一般設定程式碼
 
@@ -394,7 +386,6 @@ ThisApp.PublicDatabase.SaveRecord(newRecord, (record, err) => {
 1. 呼叫是非同步，而且會在呼叫完成時（不論成功或失敗）提供回呼常式。 如果呼叫失敗，則會提供錯誤訊息。
 1. CloudKit 不提供本機儲存/持續性;這只是一個傳輸媒體。 因此當提出要求來儲存記錄時，它會立即傳送到 iCloud 伺服器。
 
-
 > [!NOTE]
 > 因為行動網路通訊的「損及」本質，其中的連線經常遭到捨棄或中斷，所以開發人員在使用 CloudKit 時必須進行的第一個考慮就是錯誤處理。
 
@@ -458,7 +449,6 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 - **用戶端視圖可以變更**–因為每個使用者都有不同的喜好設定，顯示的資料配量可以從使用者變更為使用者，而使用者的任何指定配量的個別觀點也可能不同。
 - **用戶端會使用查詢來專注于觀點**–查詢可讓使用者查看存在於雲端中較大資料集的小型子集。
 
-
 ### <a name="queries"></a>查詢
 
 如上所述，查詢可讓開發人員選取存在於雲端中較大資料集的一小部分。 查詢會透過`CKQuery`類別在 CloudKit 架構中公開。
@@ -468,7 +458,6 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 #### <a name="supported-predicates"></a>支援的述詞
 
 使用查詢時，CloudKit 支援`NSPredicates`下列類型的：
-
 
 1. 符合名稱等於儲存在變數中之值的記錄：
 
@@ -506,8 +495,6 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
     ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
     ```
-
-
 
 #### <a name="creating-queries"></a>建立查詢
 
@@ -551,7 +538,6 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 - 它們對網路流量而言是壞的。
 - 因為他們所看到的資訊受限於應用程式輪詢資料庫的頻率，所以不是使用者經驗的錯誤。 當使用者變更時，現在會預期推播通知。
 
-
 ### <a name="subscriptions"></a>Subscriptions
 
 處理大型且大部分的靜態資料集時，不應在用戶端裝置上執行查詢，它應該代表用戶端在伺服器上執行。 查詢應該在背景中執行，而且應該在每一筆記錄儲存之後執行，不論是由目前裝置或其他裝置觸及相同的資料庫。
@@ -576,7 +562,6 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 3. 第二個裝置會建立新的記錄，並將該記錄儲存至資料庫。
 4. 資料庫會搜尋其訂閱清單，以查看新記錄是否符合其任何條件。
 5. 如果找到相符的結果，推播通知會傳送至註冊訂用帳戶的裝置，並包含導致其觸發之記錄的相關資訊。
-
 
 有了這項知識之後，讓我們來看一下如何在 Xamarin iOS 8 應用程式中建立訂閱。
 
@@ -662,7 +647,6 @@ CloudKit 提供下列使用者資訊給開發人員：
 - **Metadata** –儲存和抓取使用者相關資訊的能力。
 - **隱私權**–所有資訊都是以隱私權 manor 的方式處理。 除非使用者同意，否則不會公開任何內容。
 - **探索**–讓使用者能夠探索使用相同應用程式的朋友。
-
 
 接下來，我們將詳細探討這些主題。
 
@@ -755,12 +739,10 @@ CloudKit 也提供一種方式，可讓您藉由查詢整個通訊錄，探索�
 - **使用者電子郵件地址**–使用者可以提供電子郵件地址，並可用於探索。
 - **Contact book** –使用者的通訊錄可以用來探索應用程式的使用者，其電子郵件地址與連絡人中列出的相同。
 
-
 使用者探索會傳回下列資訊：
 
 - **使用者記錄識別碼**-公用資料庫中使用者的唯一識別碼。
 - **名字和姓氏**-儲存在公用資料庫中。
-
 
 只有加入宣告探索的使用者才會傳回這則資訊。
 
@@ -812,7 +794,6 @@ CloudKit 為應用程式的記錄類型和資料提供個別的開發和生產�
 
 > [!NOTE]
 > IOS 模擬器僅適用于**開發環境**。 當開發人員準備好在**生產環境**中測試應用程式時，就需要實體 iOS 裝置。
-
 
 ## <a name="shipping-a-cloudkit-enabled-app"></a>寄送已啟用 CloudKit 的應用程式
 
@@ -873,7 +854,6 @@ CloudKit 為應用程式的記錄類型和資料提供個別的開發和生產�
 - **ICloud 磁片磁碟機**–建置於現有的 ICloud 檔 api 之上，並提供簡單的 API 來同步處理檔案系統中的非結構化資料。 它會在 Mac OS X 上提供完整的離線快取，適用于以檔為主的應用程式。
 - **ICloud 核心資料**-允許在所有使用者裝置之間複寫資料。 資料是單一使用者，非常適合用來保持私用的結構化資料同步。
 - **CloudKit** –提供結構和大量的公用資料，而且能夠處理大型資料集和大型非結構化檔案。 其系結至使用者的 iCloud 帳戶，並提供用戶端導向的資料傳輸。
-
 
 請記住這些使用案例，開發人員應挑選正確的 iCloud 技術，以提供目前所需的應用程式功能，並針對未來成長提供良好的擴充性。
 

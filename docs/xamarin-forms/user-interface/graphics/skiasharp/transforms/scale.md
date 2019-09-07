@@ -7,12 +7,12 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 2e9259bed6ad0ae5a926cb75ea74c1f379897220
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 1adade4e66a6df504ba7c8ac3ff1f668c014fe93
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649280"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770455"
 ---
 # <a name="the-scale-transform"></a>縮放轉換
 
@@ -102,7 +102,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-您可能會想:縮放因素如何影響的`MeasureText` `SKPaint`方法所傳回的值？ 答案如下:完全不用。 `Scale` 是一種方法的`SKCanvas`。 它不會影響您做的任何項目`SKPaint`物件，直到您使用該物件來轉譯在畫布上的項目。
+您可能會想：縮放因素如何影響的`MeasureText` `SKPaint`方法所傳回的值？ 答案如下：完全不用。 `Scale` 是一種方法的`SKCanvas`。 它不會影響您做的任何項目`SKPaint`物件，直到您使用該物件來轉譯在畫布上的項目。
 
 如您所見，所有項目後繪製`Scale`按比例呼叫增加：
 
@@ -251,7 +251,7 @@ using (SKPaint strokePaint = new SKPaint
 
 [![](scale-images/anisotropicscaling-small.png "非等向性調整頁面的三個螢幕擷取畫面")](scale-images/anisotropicscaling-large.png#lightbox "非等向性調整頁面的三個螢幕擷取畫面")
 
-另一種您可以思考`Scale`和`Translate`呼叫的方法, 是以反向順序來判斷效果:此`Translate`呼叫會移動路徑, 使其變成完全可見, 但會在畫布的左上角導向。 `Scale`方法接著會該星號左上角相對較大。
+另一種您可以思考`Scale`和`Translate`呼叫的方法，是以反向順序來判斷效果：此`Translate`呼叫會移動路徑，使其變成完全可見，但會在畫布的左上角導向。 `Scale`方法接著會該星號左上角相對較大。
 
 事實上，它會出現星號是稍微大於畫布。 問題在於筆觸粗細。 `Bounds`屬性`SKPath`表示維度的座標編碼在路徑中，而這就是程式會使用調整其規模。 轉譯路徑時使用特定的筆劃的寬度，呈現的路徑。 大於畫布。
 
@@ -294,7 +294,7 @@ using (SKPaint textPaint = new SKPaint
 
 [![](scale-images/anisotropictext-small.png "非等向性測試頁的三個螢幕擷取畫面")](scale-images/anisotropictext-large.png#lightbox "的非等向性測試頁的三個螢幕擷取畫面")
 
-如果您需要保留的圖形物件的外觀比例，您會想要使用 dbi100 縮放。           **Dbi100 調整**頁面所示範的是此為 11 星形。 就概念而言，具有 dbi100 調整頁面的中央顯示圖形物件的步驟如下：
+如果您需要保留的圖形物件的外觀比例，您會想要使用 dbi100 縮放。 **Dbi100 調整**頁面所示範的是此為 11 星形。 就概念而言，具有 dbi100 調整頁面的中央顯示圖形物件的步驟如下：
 
 - 轉譯圖形物件左上角的中心。
 - 縮放的水平和垂直頁面尺寸除以 圖形物件維度的最小值為基礎的物件。
@@ -342,7 +342,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 程式碼也會顯示星號 10 次以上，每次減少縮放因素 10%，然後逐漸從紅色變成藍色中變更 色彩：
 
 [![](scale-images/isotropicscaling-small.png "Dbi100 調整頁面的三個螢幕擷取畫面")](scale-images/isotropicscaling-large.png#lightbox "Dbi100 調整頁面的三個螢幕擷取畫面")
-
 
 ## <a name="related-links"></a>相關連結
 

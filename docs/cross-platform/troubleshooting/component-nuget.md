@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 7feec9f2fa136b96d81a54e4b2650918c53b5832
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6d40555c70072a4c057739b39cc24a4f885f2dc9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281598"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765290"
 ---
 # <a name="updating-component-references-to-nuget"></a>正在更新 NuGet 的元件參考
 
@@ -141,7 +141,6 @@ NuGet 套件會繼續列在 [**套件**] 節點中，且您的應用程式會如
 
 ![更新 NuGet 套件](component-nuget-images/nuget-update-sml.png)
 
-
 <a name="replace" />
 
 ## <a name="components-with-nuget-replacements"></a>包含 NuGet 更換的元件
@@ -201,7 +200,6 @@ NuGet 套件會連同任何相依性新增至您的專案。
 - 調查替代的 NuGet 套件，或在元件為開放原始碼的情況下搜尋原始程式碼。
 
 許多元件廠商仍在致力於遷移至 NuGet，而其他專案（包括商用產品）可能會調查替代的傳遞選項。
-
 
 ## <a name="related-links"></a>相關連結
 - [熱門 Xamarin 外掛程式和程式庫的清單](https://github.com/xamarin/XamarinComponents/blob/master/README.md)

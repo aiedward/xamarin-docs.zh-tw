@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: e712f0b69f87659499f7eab4955a9f943716f5b5
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 040d01dceaa6c5dd785d2423c72247ee602b98db
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227988"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767708"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms 的項目
 
@@ -61,7 +61,7 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 
 ### <a name="preventing-text-entry"></a>防止文字輸入
 
-藉[`Entry`](xref:Xamarin.Forms.Entry)由`false`將屬性 (具有的預設值) 設定為`true`, 可防止使用者修改中的文字: `IsReadOnly`
+藉[`Entry`](xref:Xamarin.Forms.Entry)由`false`將屬性（具有的預設值）設定為`true`，可防止使用者修改中的文字： `IsReadOnly`
 
 ```xaml
 <Entry Text="This is a read-only Entry"
@@ -73,7 +73,7 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 ```
 
 > [!NOTE]
-> 屬性不會改變的視覺外觀[`Entry`](xref:Xamarin.Forms.Entry), 不同`IsEnabled`于也會將的視覺外觀`Entry`變更為灰色的屬性。 `IsReadonly`
+> 屬性不會改變的視覺外觀[`Entry`](xref:Xamarin.Forms.Entry)，不同`IsEnabled`于也會將的視覺外觀`Entry`變更為灰色的屬性。 `IsReadonly`
 
 ### <a name="limiting-input-length"></a>限制的輸入的長度
 
@@ -329,7 +329,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用來回應完成的項目互動。 `Completed`當使用者在鍵盤上按下 enter 鍵 (或按 UWP 上的 Tab 鍵) 來結束具有欄位的輸入時, 會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
+`Completed`事件用來回應完成的項目互動。 `Completed`當使用者在鍵盤上按下 enter 鍵（或按 UWP 上的 Tab 鍵）來結束具有欄位的輸入時，會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -379,7 +379,6 @@ void Entry_TextChanged (object sender, TextChangedEventArgs e)
 var entry = new Entry ();
 entry.TextChanged += Entry_TextChanged;
 ```
-
 
 ## <a name="related-links"></a>相關連結
 

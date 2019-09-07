@@ -7,12 +7,12 @@ ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 9c1ee2e036fc903c7fe8422a32fba44cc93d43f9
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1cf061f2ff27720ad78567bc26f00d99c5456f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228266"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759423"
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
@@ -22,7 +22,7 @@ _探索如何使用 SkiaSharp 呈現三次方、 二次方，以及 conic 貝茲
 
 貝茲曲線被命名匹貝茲 (1910年 – 1999)，法文的工程師在汽車公司 Renault，使用電腦輔助設計的車內文的曲線。
 
-貝茲曲線已知適合用於互動式設計:它們的行為也&mdash;不太 singularities, 因此不會造成曲線變得無限或難以&mdash;執行, 而且通常內賞心悅目令人滿意:
+貝茲曲線已知適合用於互動式設計：它們的行為也&mdash;不太 singularities，因此不會造成曲線變得無限或難以&mdash;執行，而且通常內賞心悅目令人滿意：
 
 ![樣本貝茲曲線](beziers-images/beziersample.png)
 
@@ -493,7 +493,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ![圓弧的圓錐弧線呈現](beziers-images/conicarc.png)
 
-您可以使用三角函數來判斷控制點與圓形中心的距離:這是圓形的半徑除以α角度的余弦。 若要開始和結束點之間繪製圓弧線段，設定權數為該相同的一半的角度的餘弦值。 請注意，如果角度為 180 度，然後永遠無法符合的切線加權為零。 但如角度小於 180 度、 數學可正常運作。
+您可以使用三角函數來判斷控制點與圓形中心的距離：這是圓形的半徑除以α角度的余弦。 若要開始和結束點之間繪製圓弧線段，設定權數為該相同的一半的角度的餘弦值。 請注意，如果角度為 180 度，然後永遠無法符合的切線加權為零。 但如角度小於 180 度、 數學可正常運作。
 
 **Conic 圓弧**示範這項 頁面。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)檔案會具現化`Slider`可供選取的角度。 `PaintSurface`中的處理常式[ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)的控制點和重量，計算程式碼後置檔案：
 
@@ -552,7 +552,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 但是，角度設 180 度，以及數學失敗。
 
 可惜的是在此情況下，`ConicTo`不支援負加權，因為可以使用另一個呼叫完成 （根據參數化的方程式） 的理論上來說，圓形`ConicTo`擁有相同的點，但負值的加權。 這可讓使用正是其中兩個建立完整的圓形`ConicTo`曲線根據任何角度之間 （但不是包括） 零度和 180 度。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
-ms.openlocfilehash: 6cb828f59505159c972d40905f22995055f207df
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 5d130a6644af4e5831263c6de137513c021e0b6a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646849"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760793"
 ---
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms 資料範本
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _DataTemplate 用於在支援的控制項中指定資料外觀，通常會繫結至要顯示的資料。_
 
@@ -31,7 +31,6 @@ Xamarin.Forms 資料範本可以在支援的控制項上定義資料呈現方式
 ## <a name="creating-a-datatemplateselectorselectormd"></a>[建立 DataTemplateSelector](selector.md)
 
 在執行階段，您可以根據資料繫結屬性值，使用 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 來選擇 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。 這可將多個 `DataTemplate` 執行個體套用至相同類型的物件，以自訂特定物件的外觀。 本文示範如何建立和使用 `DataTemplateSelector`。
-
 
 ## <a name="related-links"></a>相關連結
 

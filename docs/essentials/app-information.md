@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/29/2019
 ms.custom: video
-ms.openlocfilehash: fa6910c380545527f930f340536f47b548b74b12
-ms.sourcegitcommit: a1a58afea68912c79d16a3f64de9a0c1feb2aeb4
-ms.translationtype: HT
+ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55233207"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756984"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials:應用程式資訊
 
@@ -86,7 +86,6 @@ AppInfo.ShowSettingsUI();
 - **名稱** - `Properties` 節點上的 `DisplayName`
 - **PackageName**：`Identity` 節點上的 `Name`
 - **VersionString** - `Identity` 節點上的 `Version`
-
 
 --------------
 

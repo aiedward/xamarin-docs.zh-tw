@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 06/17/2016
-ms.openlocfilehash: 188bc8a04b62c97e9d6f80669fe50da1bf4d9340
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b4934fa82d862ad2e8ab53579137873ed9e4bcca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289542"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770171"
 ---
 # <a name="common-patterns-and-idioms-in-xamarinmac"></a>Xamarin 中的常見模式和慣用語
 
@@ -54,8 +54,6 @@ Cocoa 中另一個非常常見的模式，就是處理如何將資料提供給 U
 目標-C 中的通訊協定可以與中C#的介面比較，而且在許多情況下，也會在類似的情況下使用。 例如上述範例，委派和資料來源實際上都是通訊協定。 `NSTableView` Xamarin 會以您可以覆寫的虛擬方法，將這些類別公開為基類。 C#介面與目標-C 通訊協定的主要差異在於，通訊協定中的某些方法可能是選擇性的。 您必須查看 API 的檔和/或定義，以判斷什麼是選擇性的。
 
 如需詳細資訊，請參閱我們的[委派、通訊協定和事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)檔。
-
-
 
 ## <a name="related-links"></a>相關連結
 

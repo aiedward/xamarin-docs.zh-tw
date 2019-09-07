@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: c81cc7ff176ab4863498a03169a2c6a3711a0ded
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: b505f4a4f7a8f50a6044d01a327eef76a7b1ce3b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525079"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758035"
 ---
-|屬性|說明|選項|
+|屬性|描述|選項|
 |--- |--- |--- |
 |`abi.type`|**ABI 類型** &ndash; 指定模擬裝置的 ABI (應用程式二進位介面) 類型。 **x86** 選項是用於指令集，通常稱為 "x86" 或 "IA-32"。 **x86_64** 選項是用於 64 位元 x86 指令集。 **armeabi-v7a** 選項是用於具有 v7-a ARM 擴充功能的 ARM 指令集。 **arm64-v8a** 選項是用於支援 AArch64 的 ARM 指令集。|x86、x86_64、armeabi-v7a、arm64-v8a|
 |`disk.cachePartition`|**快取磁碟分割** &ndash; 決定模擬裝置是否將使用裝置上的 **/cache** 磁碟分割。 **/cache** 磁碟分割 (一開始是空的) 是 Android 儲存經常存取之資料與應用程式元件的位置。 如果設定為 **no**，模擬器將不會使用 **/cache** 磁碟分割，而且會忽略其他 `disk.cache` 設定。|yes、no|
@@ -65,4 +65,3 @@ ms.locfileid: "69525079"
 |`skin.name`|**面板名稱** &ndash; Android 模擬器面板的名稱。 面板是一個檔案集合，定義了模擬器顯示畫面的視覺和控制元素；它會描述 AVD 視窗在您開發電腦上看起來的樣子。 面板會描述螢幕大小、按鈕及整體設計，但不會影響您應用程式的操作。||
 |`skin.path`|**面板路徑** &ndash; 包含 skin.name 中所指定模擬器面板檔案的目錄路徑。此目錄包含 hardware.ini 版面配置檔案，以及面板顯示元素的影像檔。||
 |`skin.dynamic`|**面板動態** &ndash; 面板是否為動態面板。 如果模擬器要根據指定的寬度和高度來建構指定大小的面板，則模擬器面板為動態面板。|否|
-

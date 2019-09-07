@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 32deee1ea1e47438f4f671ac3ccaa09f4218a88b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 71a74d8f9046cd978a40b03da1921cd1fac9405f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290747"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769185"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>在 Xamarin 中 Siri 遠端和藍牙控制器以進行 tvOS
 
@@ -364,8 +364,6 @@ Apple TV 隨附的 Siri 遠端可用來做為有限的遊戲控制器。 就像�
 ## <a name="summary"></a>總結
 
 本文涵蓋了 Apple TV、觸控表面手勢和 Siri 遠端按鈕隨附的新 Siri 遠端。 接下來，它涵蓋了使用筆勢和分鏡腳本、手勢和程式碼，以及低層級事件。 最後，如果討論的是使用遊戲控制器。
-
-
 
 ## <a name="related-links"></a>相關連結
 

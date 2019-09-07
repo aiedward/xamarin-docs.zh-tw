@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 676523e461737d7820278ca8c319794d3347088d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289797"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771259"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms 控制項範本簡介
 
@@ -51,7 +51,6 @@ _Xamarin.Forms 控制項範本可以在執行階段輕鬆地設定和重新設�
 - 在應用程式層級定義的 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 執行個體則可套用至整個應用程式的所有頁面。
 
 檢視階層架構中較低控制項範本會優先於定義於較高位置的控制項範本。 例如，定義於頁面層級且名名為 `DarkTheme` 之 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 會優先於定義於應用程式層級且名稱完全相同的範本。 因此，如有控制項範本定義要套用至應用程式中每一頁的佈景主題，則應該在應用程式層級定義該範本。
-
 
 ## <a name="related-links"></a>相關連結
 

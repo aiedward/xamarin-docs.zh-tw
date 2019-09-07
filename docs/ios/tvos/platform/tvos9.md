@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 2da3e919ec792297f26670c43275bb0c54040835
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ecf5a7cabb03cea92075127d4d5e87350f45619e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290712"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769112"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 簡介
 
@@ -175,11 +175,6 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 它可以包含動態資料列或可設定焦點的專案，或動態的一組滾動橫幅，而不是顯示靜態的最大貨位影像。 這兩種動態樣式都可讓您醒目提示應用程式所提供的內容，或跳到其最常使用的功能。
 
 如需詳細資訊，請參閱我們[的使用圖示和影像](~/ios/tvos/app-fundamentals/icons-images.md)檔和 Apple 的[TVServices 架構參考](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412)，以取得將最上層延伸模組新增至您的應用程式以提供動態主要貨位內容的詳細資訊。
-
-
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

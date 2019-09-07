@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 00c2284a12d17e0dcd5a89cb0c39c1064665c6d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 03d79c93821737afb1f8e1946ebb3b6380d7a527
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288449"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768441"
 ---
 # <a name="auto-sizing-row-height-in-xamarinios"></a>在 Xamarin 中自動調整資料列高度大小
 
@@ -108,7 +108,6 @@ public override void ViewWillAppear (bool animated)
 當此程式碼準備好時，當應用程式執行時，每個資料列都會根據資料格原型中最後一個標籤的高度來縮小和成長。 例如：
 
 [![](autosizing-row-height-images/table07.png "範例資料表執行")](autosizing-row-height-images/table07.png#lightbox)
-
 
 ## <a name="related-links"></a>相關連結
 

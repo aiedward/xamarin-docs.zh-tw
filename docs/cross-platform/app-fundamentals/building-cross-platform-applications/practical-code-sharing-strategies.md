@@ -6,24 +6,21 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 9f0a4d0367142be500aeae67041feb8cd3bbca76
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3ce2530c6f9c81c287ff6c51c96fde12f3902cb8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288795"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762080"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 實用的程式碼共用策略
 
 本節提供如何共用常見的應用程式案例的程式碼的範例。
 
-
-
 ## <a name="data-layer"></a>資料層
 
 資料層是由儲存引擎和方法來讀取和寫入資訊所組成。 效能、 彈性和跨平台的相容性的 SQLite 資料庫引擎被建議 Xamarin 跨平台應用程式。
 它會在各種平台包括 Windows、 Android、 iOS 和 mac 上執行
-
 
 ### <a name="sqlite"></a>SQLite
 
@@ -33,10 +30,7 @@ SQLite 是開放原始碼資料庫實作。 來源和文件，請參閱[SQLite.o
 - **Android** – 內建於作業系統自 Android 2.2 (API 層級 10)。
 - **Windows** – 請參閱 <<c2> [ 適用於通用 Windows 平台延伸模組的 SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936)。
 
-
 即使有了適用於所有平台的資料庫引擎，來存取資料庫的原生方法會不同。 這兩種 iOS 和 Android 提供內建的 Api，來存取可用的 SQLite 從 Xamarin.iOS 或 Xamarin.Android，不過使用原生 SDK 方法可提供無法共用程式碼 （也許是 SQL 查詢以外，假設它們儲存為字串）. 如需原生資料庫功能搜尋詳細資料`CoreData`在 iOS 或 Android 的`SQLiteOpenHelper`類別，因為這些選項不是跨平台已超過本文的範圍。
-
-
 
 ### <a name="adonet"></a>ADO.NET
 
@@ -87,8 +81,6 @@ connection.Close ();
 
 ADO.NET 的真實世界實作會很明顯地會分成不同的方法和類別 （此範例是僅針對示範目的）。
 
-
-
 ### <a name="sqlite-net--cross-platform-orm"></a>SQLite-NET-跨平台 ORM
 
 ORM （或物件關聯式對應程式） 會嘗試簡化資料模型類別中的儲存體。 而非手動撰寫 SQL 查詢，該建立資料表或選取，再插入和刪除以手動方式從擷取的資料類別的欄位，並在屬性、 ORM 新增會為您的程式碼層。 您可以使用反映來檢查您的類別結構，ORM 可以自動建立資料表和資料行，以符合類別並產生查詢，來讀取和寫入資料。 這可讓應用程式程式碼，只需傳送和擷取的 ORM，會處理幕後的所有 SQL 作業的物件執行個體。
@@ -101,7 +93,6 @@ SQLite NET 的功能：
 - 資料庫執行個體表示的子類別`SQLiteConnection`，SQLite Net 程式庫中的主要類別。
 - 可插入的資料，查詢和刪除使用的物件。 （雖然您可以撰寫 SQL 陳述式，如有必要），不則需要任何 SQL 陳述式。
 - 基本 Linq 查詢可以對 SQLite NET 所傳回的集合。
-
 
 原始程式碼和 SQLite NET 的文件將會位於[github 上的 SQLite Net](https://github.com/praeclarum/sqlite-net) ，並已在這兩個案例研究中實作。 SQLite NET 程式碼的簡單範例 (來自*Tasky Pro*案例研究) 如下所示。
 
@@ -135,8 +126,6 @@ Table<TodoItem>.ToList(); // returns all rows in a collection
 
 請參閱案例研究原始程式碼，如需完整範例。
 
-
-
 ## <a name="file-access"></a>檔案存取
 
 檔案存取是一定是任何應用程式的重要部分。 常見範例可能是一部分的應用程式包含的檔案：
@@ -144,9 +133,6 @@ Table<TodoItem>.ToList(); // returns all rows in a collection
 - SQLite 資料庫檔案。
 - 使用者產生的資料 （文字、 影像、 聲音、 視訊）。
 - 下載快取 （影像、 html 或 PDF 檔案） 的詳細資料。
-
-
-
 
 ### <a name="systemio-direct-access"></a>System.IO 直接存取
 
@@ -174,8 +160,6 @@ Console.WriteLine (System.IO.ReadAllText (filePath));
 
 參考 Xamarin.iOS[使用檔案系統](~/ios/app-fundamentals/file-system.md)如需有關 iOS 專用的 filesystem 功能的文件。 在撰寫跨平台檔案存取程式碼，請記住，有些檔案系統區分大小寫有不同的目錄分隔符號。 最好一律將相同的大小寫用於檔案名稱和`Path.Combine()`方法建構的檔案或目錄的路徑時。
 
-
-
 ### <a name="windowsstorage-for-windows-8-and-windows-10"></a>適用於 Windows 8 和 Windows 10 的 Windows.Storage
 
 *使用 Xamarin.Forms 建立行動應用程式*[活頁簿](https://developer.xamarin.com/r/xamarin-forms/book/)
@@ -192,7 +176,6 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 請參閱[書籍章節](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)如需詳細資訊。
 
-
 <a name="Isolated_Storage" />
 
 ### <a name="isolated-storage-on-windows-phone-7--8-silverlight"></a>在 Windows Phone 7 和 8 (Silverlight) 上的隔離儲存區
@@ -205,12 +188,9 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 隔離的儲存體 Api 不適用於[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)。 PCL 的一個替代選項是[PCLStorage NuGet](https://pclstorage.codeplex.com/)
 
-
-
 ### <a name="cross-platform-file-access-in-pcls"></a>Pcl 中的跨平台檔案存取
 
 另外還有 PCL 相容 Nuget – [PCLStorage](https://www.nuget.org/packages/PCLStorage/) – 該設備的跨平台檔案存取 Xamarin 支援的平台和最新的 Windows Api。
-
 
 ## <a name="network-operations"></a>網路作業
 
@@ -220,7 +200,6 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 - 下載文件 （例如。 HTML、 PDF)。
 - 正在上傳 （例如相片或文字） 的使用者資料。
 - 存取 web 服務或第 3 方 （包括 SOAP、 XML 或 JSON） 的 Api。
-
 
 .NET Framework 來存取網路資源提供了幾個不同的類別： `HttpClient`， `WebClient`，和`HttpWebRequest`。
 
@@ -283,7 +262,6 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 
  <a name="Reachability" />
 
-
 ### <a name="reachability"></a>連線能力
 
 行動裝置操作以各種不同的網路狀況，從快速的 Wi-fi 或 4g 連線不佳的接待區都有和緩慢的邊緣資料連結。 基於這個原因，是很好的做法，來偵測網路是否可用，因此，何種網路是否可用，然後再嘗試連接到遠端伺服器。
@@ -294,9 +272,7 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 - 如果連線是 3g，應用程式可能會有不同的行為 （例如，Apple 不允許應用程式超過 20 Mb 下載超過 3g）。 應用程式可以使用這項資訊來警告使用者過多的下載逾時擷取大型檔案。
 - 即使在網路為可用，最好要確認與目標伺服器的連線，然後再起始其他要求。 這會防止應用程式的網路作業逾時重複，並也允許更具參考性的錯誤訊息，以顯示給使用者。
 
-
 沒有[Xamarin.iOS 範例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)可用 (根據 Apple[連線能力的範例程式碼](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) 來協助偵測網路可用性。
-
 
 ## <a name="webservices"></a>WebServices
 
@@ -319,7 +295,6 @@ RestSharp 是可以包含在提供可簡化存取 web 服務的 REST 用戶端�
 
  <a name="ServiceStack" />
 
-
 ### <a name="servicestack"></a>ServiceStack
 
 不同於 RestSharp，ServiceStack 是裝載 web 服務，以及用戶端程式庫可以存取這些服務的行動應用程式中實作這兩個伺服器端解決方案。
@@ -327,7 +302,6 @@ RestSharp 是可以包含在提供可簡化存取 web 服務的 REST 用戶端�
 [ServiceStack 網站](http://servicestack.net/)文件和程式碼範例來說明專案和連結的用途。 範例包括完整的伺服器端實作的 web 服務，以及各種用戶端應用程式可存取它。
 
 沒有[Xamarin.iOS 範例](http://www.servicestack.net/monotouch/remote-info/)ServiceStack 網站上，程式碼片段中的我們[Web 服務文件](~/cross-platform/data-cloud/web-services/index.md)。
-
 
 ### <a name="wcf"></a>WCF
 
@@ -337,7 +311,6 @@ Xamarin 工具可協助您使用一些 Windows Communication Foundation (WCF) �
 
  <a name="Threading" />
 
-
 ## <a name="threading"></a>執行緒
 
 應用程式回應速度很重要的行動應用程式 – 使用者預期負載，並快速執行的應用程式。 '凍結' 螢幕，就會停止接受使用者輸入會出現，表示應用程式當機，因此很重要，不會佔用與長時間執行的封鎖呼叫，例如網路要求或緩慢的本機作業 （例如解壓縮檔案） 的 UI 執行緒。 特別是在啟動程序不應包含長時間執行工作 – 所有行動平台會終止耗費太多時間載入的應用程式。
@@ -345,7 +318,6 @@ Xamarin 工具可協助您使用一些 Windows Communication Foundation (WCF) �
 這表示您的使用者介面應該實作 '進度列指示器' 或快速顯示，否則為 '使用的' UI 和非同步工作來執行背景作業。 執行背景工作所的使用的執行緒，這表示用來在通訊回到主執行緒以表明進度背景工作的需求，或何時完成。
 
  <a name="Parallel_Task_Library" />
-
 
 ### <a name="parallel-task-library"></a>工作平行程式庫
 
@@ -373,7 +345,6 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
  <a name="Invoking_on_the_UI_Thread" />
 
-
 ### <a name="invoking-on-the-ui-thread"></a>在 UI 執行緒上叫用
 
 不會利用平行的工作程式庫的程式碼，每個平台會有自己的語法，封送處理回 UI 執行緒的作業：
@@ -382,8 +353,6 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 - **Android** – `owner.RunOnUiThread(action)`
 - **Xamarin.Forms** – `Device.BeginInvokeOnMainThread(action)`
 - **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
-
-
 
 IOS 和 Android 的語法需要的 'context' 類別可表示的程式碼需要將這個物件傳遞至任何需要在 UI 執行緒上的回呼的方法。
 
@@ -425,7 +394,6 @@ public class DispatchAdapter : IDispatchOnUIThread {
 使用 Xamarin.Forms 開發人員應該[ `Device.BeginInvokeOnMainThread` ](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads)中常見的程式碼 （共用專案或 PCL）。
 
  <a name="Platform_and_Device_Capabilities_and_Degradation" />
-
 
 ## <a name="platform-and-device-capabilities-and-degradation"></a>平台和裝置功能與效能降低
 

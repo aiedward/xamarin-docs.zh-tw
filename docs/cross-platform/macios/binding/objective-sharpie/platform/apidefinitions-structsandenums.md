@@ -6,12 +6,12 @@ ms.assetid: AC2087C0-BA54-46D8-B70C-6972941C8F73
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 950f9149744cb8aa2abaed60ccefb416405ab110
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 35ae1ba49ae774b21a8f629beb9144ccf3a5f170
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290784"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765698"
 ---
 # <a name="apidefinitions--structsandenums-files"></a>ApiDefinitions & 與 structsandenums 檔案
 
@@ -33,4 +33,3 @@ ms.locfileid: "70290784"
 ![](apidefinitions-structsandenums-images/binding-flowchart.png "此圖顯示系結程式")
 
 如需這些檔案內容的詳細資訊，請參閱系結[類型參考](~/cross-platform/macios/binding/binding-types-reference.md)。
-

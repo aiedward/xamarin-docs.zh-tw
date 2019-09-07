@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 0d001c39b2111785911d678bdeb2e83d761fba11
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7596f79119f28997cbcda6e7057e682edfd760b8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287005"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756351"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>iOS 背景處理與工作
 
@@ -23,7 +23,6 @@ ms.locfileid: "70287005"
 1. **背景安全**的工作-在應用程式中的任何位置呼叫您不想要中斷的工作，應用程式應進入背景。
 1. **DidEnterBackground**工作`DidEnterBackground` -在應用程式生命週期方法期間呼叫，以協助清除和儲存狀態。
 1. **背景傳輸（ios 7 +）** -一種特殊類型的背景工作，用來在 iOS 7 上執行網路傳輸。 不同于一般工作，背景傳輸沒有預先決定的時間限制。
-
 
 在 ios 6 和`DidEnterBackground` ios 7 上都可以安全地使用背景安全和工作，但有一些些許差異。 讓我們更詳細地調查這兩種類型的工作。
 
@@ -47,7 +46,6 @@ UIApplication.SharedApplication.EndBackgroundTask(taskID);
 > [!IMPORTANT]
 > 背景安全的工作可以在主執行緒或背景執行緒上執行，視應用程式的需求而定。
 
-
 ## <a name="performing-tasks-during-didenterbackground"></a>在 DidEnterBackground 期間執行工作
 
 除了讓長時間執行的工作成為背景安全，註冊也可以在應用程式進入背景時用來啟動工作。 iOS 提供名`DidEnterBackground`為的*AppDelegate*類別中的事件方法，可在應用程式進入背景之前，用來儲存應用程式狀態、儲存使用者資料，以及將機密內容加密。 應用程式大約有五秒的時間可從這個方法傳回，否則將會終止。 因此，可能需要超過五秒才能完成的清除工作`DidEnterBackground` ，可以從方法內呼叫。 這些工作必須在不同的執行緒上叫用。
@@ -68,7 +66,6 @@ public override void DidEnterBackground (UIApplication application) {
 
 > [!IMPORTANT]
 > iOS 使用[看門狗機制](https://developer.apple.com/library/ios/qa/qa1693/_index.html)來確保應用程式的 UI 保持回應。 在中`DidEnterBackground`花費太多時間的應用程式，在 UI 中會變得沒有回應。 開始 off 在背景執行的工作允許`DidEnterBackground`及時傳回，讓 UI 保持回應，並防止看門狗終止應用程式。
-
 
 ## <a name="handling-background-task-time-limits"></a>處理背景工作時間限制
 
@@ -133,7 +130,6 @@ IOS 7 中的背景傳輸骨幹是新`NSURLSession`的 API。 `NSURLSession`可�
 1. 透過網路和裝置中斷來傳輸內容。
 1. 上傳和下載大型檔案（*背景傳輸服務*）。
 
-
 讓我們進一步瞭解其運作方式。
 
 ### <a name="nsurlsession-api"></a>NSURLSession API
@@ -157,7 +153,6 @@ else {
 > [!IMPORTANT]
 > 避免在 iOS 6 相容程式碼的背景進行呼叫以更新 UI，因為 iOS 6 不支援背景 UI 更新，並會終止應用程式。
 
-
 此`NSURLSession` API 包含一組豐富的功能，可處理驗證、管理失敗的傳輸，以及報告用戶端但不是伺服器端錯誤。 它有助於橋接 iOS 7 中引進的工作執行時間中斷，同時也提供快速且可靠地傳輸大型檔案的支援。 下一節將探討第二個功能。
 
 ### <a name="background-transfer-service"></a>背景傳送服務
@@ -167,4 +162,3 @@ else {
 使用背景傳輸服務起始的傳輸是由作業系統所管理，並提供 Api 來處理驗證和錯誤。 因為傳輸不是以任意時間限制來系結，所以可以用來上傳或下載大型檔案、在背景中自動更新內容等等。 如需如何執行服務的詳細資訊，請參閱[背景傳輸逐步](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md)解說。
 
 背景傳送服務通常會與背景提取或遠端通知配對，以協助應用程式在背景中重新整理內容。 在接下來的兩節中，我們引進了註冊整個應用程式以在 iOS 6 和 iOS 7 的背景中執行的概念。
-

@@ -7,12 +7,12 @@ ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 47fd6323e309353446c707730679a191cb8e923c
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
+ms.openlocfilehash: 80f2b686e9802a93b0cf32420ccaef3e8877727c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68738885"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759557"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 點陣圖基本概念
 
@@ -69,7 +69,6 @@ HttpClient httpClient = new HttpClient();
 
 因為它是最方便的方式使用`await`運算子搭配`HttpClient`，不能在執行的程式碼`BasicBitmapsPage`建構函式。 相反地，它屬於`OnAppearing`覆寫。 URL 會指向使用一些範例點陣圖 Xamarin 網站上的區域。 在網站上的套件可讓附加調整大小的點陣圖為特定寬度的規格：
 
-
 ```csharp
 protected override async void OnAppearing()
 {
@@ -104,7 +103,7 @@ protected override async void OnAppearing()
 
 程式碼，以載入點陣圖的最簡單方法直接在您的應用程式中包括點陣圖資源。 **SkiaSharpFormsDemos**計畫包含名為的資料夾**媒體**包含數個點陣圖檔案，包括一個名為**monkey.png**。 點陣圖儲存為程式資源，您必須使用**屬性**對話方塊，請將檔案**建置動作**的**內嵌資源**！
 
-每個內嵌資源都有一個*資源識別碼*, 其中包含專案名稱、資料夾和檔案名, 所有都是依期間連接:**SkiaSharpFormsDemos. Media. .png**。 您可以指定該資源，以取得存取此資源識別碼做為引數[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)類別：
+每個內嵌資源都有一個*資源識別碼*，其中包含專案名稱、資料夾和檔案名，所有都是依期間連接：**SkiaSharpFormsDemos. Media. .png**。 您可以指定該資源，以取得存取此資源識別碼做為引數[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)類別：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

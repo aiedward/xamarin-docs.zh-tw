@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2018
-ms.openlocfilehash: 9f66764fef5c54563ffd03274b1f86a8c0bcc637
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 3b74acee34c367814fbd2a948fe490f4225aee00
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522150"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755385"
 ---
 # <a name="httpclient-stack-and-ssltls-implementation-selector-for-android"></a>適用于 Android 的 HttpClient 堆疊和 SSL/TLS 執行選取器
 
@@ -21,24 +21,23 @@ HttpClient 堆疊和 SSL/TLS 實作為選取器會決定您的 Xamarin Android �
 專案必須參考**系統 .net. Http**元件。
 
 > [!WARNING]
-> **2018 年4月,** 由於增加的安全性需求 (包括 PCI 合規性), 主要雲端提供者和網頁伺服器預期會停止支援超過1.2 的 TLS 版本。 在舊版中建立的 Xamarin 專案 Visual Studio 預設為使用舊版的 TLS。
+> **2018 年4月，** 由於增加的安全性需求（包括 PCI 合規性），主要雲端提供者和網頁伺服器預期會停止支援超過1.2 的 TLS 版本。 在舊版中建立的 Xamarin 專案 Visual Studio 預設為使用舊版的 TLS。
 >
-> 為了確保您的應用程式能夠繼續使用這些伺服器和服務,**您應該使用如下`Android HttpClient`所示的和`Native TLS 1.2`設定來更新 Xamarin 專案, 然後重新建立應用程式, 並將其重新部署**至使用者。
+> 為了確保您的應用程式能夠繼續使用這些伺服器和服務，**您應該使用如下`Android HttpClient`所示的和`Native TLS 1.2`設定來更新 Xamarin 專案，然後重新建立應用程式，並將其重新部署**至使用者。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[HttpClient] 設定位於 [**專案選項] > [Android 選項**], 然後按一下 [ **Advanced Options** ] 按鈕。
+[HttpClient] 設定位於 [**專案選項] > [Android 選項**]，然後按一下 [ **Advanced Options** ] 按鈕。
 
-以下是 TLS 1.2 支援的建議設定:
+以下是 TLS 1.2 支援的建議設定：
 
 [![Visual Studio Android 選項](http-stack-images/android-win-sml.png)](http-stack-images/android-win.png#lightbox)
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-HttpClient 設定 位於 專案選項 中, **> 組建 > Android 組建**設定, 然後按一下 **一般** 索引標籤。
+HttpClient 設定 位於 專案選項 中， **> 組建 > Android 組建**設定，然後按一下 **一般** 索引標籤。
 
-以下是 TLS 1.2 支援的建議設定:
+以下是 TLS 1.2 支援的建議設定：
 
 [![Visual Studio for Mac Android 選項](http-stack-images/android-mac-sml.png)](http-stack-images/android-mac.png#lightbox)
 
@@ -48,63 +47,60 @@ HttpClient 設定 位於 專案選項 中, **> 組建 > Android 組建**設定, 
 
 ### <a name="androidclienthandler"></a>AndroidClientHandler
 
-AndroidClientHandler 是新的處理常式, 會委派至原生 JAVA/OS 程式碼, 而不是在 managed 程式碼中執行所有專案。
+AndroidClientHandler 是新的處理常式，會委派至原生 JAVA/OS 程式碼，而不是在 managed 程式碼中執行所有專案。
 **這是建議的選項。**
 
 #### <a name="pros"></a>展開
 
 - 使用原生 API 以獲得更佳的效能和較小的可執行檔案大小。
-- 支援最新的標準, 例如 TLS 1.2。
+- 支援最新的標準，例如 TLS 1.2。
 
 #### <a name="cons"></a>各有利弊
 
 - 需要 Android 4.1 或更新版本。
 - 有些 HttpClient 功能/選項無法使用。
 
-### <a name="managed-httpclienthandler"></a>受控 (HttpClientHandler)
+### <a name="managed-httpclienthandler"></a>受控（HttpClientHandler）
 
-Managed 處理常式是完全受控的 HttpClient 處理常式, 已隨附于先前的 Xamarin. Android 版本。
+Managed 處理常式是完全受控的 HttpClient 處理常式，已隨附于先前的 Xamarin. Android 版本。
 
 #### <a name="pros"></a>展開
 
-- 它是與 MS .NET 和舊版 Xamarin 最相容的 (功能)。
+- 它是與 MS .NET 和舊版 Xamarin 最相容的（功能）。
 
 #### <a name="cons"></a>各有利弊
 
-- 它不會與 OS 完全整合 (例如, 僅限於 TLS 1.0)。
-- 速度通常會很慢 (例如 加密), 而不是原生 API。
-- 這需要更多受控碼, 以建立更大的應用程式。
-
-
+- 它不會與 OS 完全整合（例如， 僅限於 TLS 1.0）。
+- 速度通常會很慢（例如 加密），而不是原生 API。
+- 這需要更多受控碼，以建立更大的應用程式。
 
 ### <a name="choosing-a-handler"></a>選擇處理常式
 
-`AndroidClientHandler` 和`HttpClientHandler`之間的選擇取決於您的應用程式需求。 `AndroidClientHandler`建議使用最新的安全性支援, 例如
+`AndroidClientHandler` 和`HttpClientHandler`之間的選擇取決於您的應用程式需求。 `AndroidClientHandler`建議使用最新的安全性支援，例如
 
 - 您需要 TLS 1.2 + 支援。
-- 您的應用程式以 Android 4.1 (API 16) 或更新版本為目標。
+- 您的應用程式以 Android 4.1 （API 16）或更新版本為目標。
 - 您需要的`HttpClient`TLS 1.2 + 支援。
 - 您不需要 TLS 1.2 + 的`WebClient`支援。
 
-`HttpClientHandler`如果您需要 TLS 1.2 + 支援, 但必須支援早于 Android 4.1 的 Android 版本, 這是個不錯的選擇。 如果您需要的`WebClient`TLS 1.2 + 支援, 這也是不錯的選擇。
+`HttpClientHandler`如果您需要 TLS 1.2 + 支援，但必須支援早于 Android 4.1 的 Android 版本，這是個不錯的選擇。 如果您需要的`WebClient`TLS 1.2 + 支援，這也是不錯的選擇。
 
-從 Xamarin 8.3 開始, `HttpClientHandler`預設為具有乏味的 SSL (`btls`) 做為基礎 TLS 提供者。 乏味的 SSL TLS 提供者提供下列優點:
+從 Xamarin 8.3 開始， `HttpClientHandler`預設為具有乏味的 SSL （`btls`）做為基礎 TLS 提供者。 乏味的 SSL TLS 提供者提供下列優點：
 
 - 它支援 TLS 1.2 +。
 - 它支援所有 Android 版本。
 - 它提供`HttpClient`和`WebClient`的 TLS 1.2 + 支援。
 
-使用乏味 SSL 作為基礎 TLS 提供者的缺點是, 它可以增加所產生之 APK 的大小 (每個支援的 ABI 增加大約1MB 的額外 APK 大小)。
+使用乏味 SSL 作為基礎 TLS 提供者的缺點是，它可以增加所產生之 APK 的大小（每個支援的 ABI 增加大約1MB 的額外 APK 大小）。
 
-從 Xamarin. Android 8.3 開始, 預設 TLS 提供者為「鏜孔`btls`SSL」 ()。 如果您不想要使用乏味的 ssl, 可以將`$(AndroidTlsProvider)`屬性設定為`legacy` (如需設定組建屬性的詳細資訊, 請參閱[建立](~/android/deploy-test/building-apps/build-process.md)程式), 以還原為歷程記錄受控 ssl 執行。
-
+從 Xamarin. Android 8.3 開始，預設 TLS 提供者為「鏜孔`btls`SSL」（）。 如果您不想要使用乏味的 ssl，可以將`$(AndroidTlsProvider)`屬性設定為`legacy` （如需設定組建屬性的詳細資訊，請參閱[建立](~/android/deploy-test/building-apps/build-process.md)程式），以還原為歷程記錄受控 ssl 執行。
 
 ### <a name="programatically-using-androidclienthandler"></a>以程式設計方式使用`AndroidClientHandler`
 
 是專門用於Xamarin的實作為。`Xamarin.Android.Net.AndroidClientHandler` `HttpMessageHandler`
-這個類別的實例將會針對所有`java.net.URLConnection` HTTP 連接使用原生的執行。 理論上, 這會增加 HTTP 效能和較小的 APK 大小。
+這個類別的實例將會針對所有`java.net.URLConnection` HTTP 連接使用原生的執行。 理論上，這會增加 HTTP 效能和較小的 APK 大小。
 
-此程式碼片段是如何為`HttpClient`類別的單一實例明確地進行的範例:
+此程式碼片段是如何為`HttpClient`類別的單一實例明確地進行的範例：
 
 ```csharp
 // Android 4.1 or higher, Xamarin.Android 6.1 or higher
@@ -112,12 +108,11 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 ```
 
 > [!NOTE]
-> 基礎 Android 裝置必須支援 TLS 1.2 (ie)。Android 4.1 和更新版本)。 請注意, TLS 1.2 的正式支援是在 Android 5.0 + 中。 不過, 有些裝置支援 Android 4.1 + 中的 TLS 1.2。
-
+> 基礎 Android 裝置必須支援 TLS 1.2 （ie）。Android 4.1 和更新版本）。 請注意，TLS 1.2 的正式支援是在 Android 5.0 + 中。 不過，有些裝置支援 Android 4.1 + 中的 TLS 1.2。
 
 ## <a name="ssltls-implementation-build-option"></a>SSL/TLS 執行組建選項
 
-此專案選項可控制所有 web 要求 ( `HttpClient`和`WebRequest`) 會使用哪些基礎 TLS 程式庫。 根據預設, 會選取 TLS 1.2:
+此專案選項可控制所有 web 要求（ `HttpClient`和`WebRequest`）會使用哪些基礎 TLS 程式庫。 根據預設，會選取 TLS 1.2：
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -135,25 +130,25 @@ HttpClient client = new HttpClient(new Xamarin.Android.Net.AndroidClientHandler 
 var client = new HttpClient();
 ```
 
-如果 HttpClient 的執行設定為 [ **Managed** ], 而 TLS 實作為設定為 [**原生 TLS 1.2 +** ] `client` , 則物件會自動`HttpClientHandler`使用受控和 tls 1.2 (由 BoringSSL 程式庫提供) 作為其HTTP 要求。
+如果 HttpClient 的執行設定為 [ **Managed** ]，而 TLS 實作為設定為 [**原生 TLS 1.2 +** ] `client` ，則物件會自動`HttpClientHandler`使用受控和 tls 1.2 （由 BoringSSL 程式庫提供）作為其HTTP 要求。
 
-不過, 如果**HttpClient 實** `AndroidHttpClient`設定為, 則所有`HttpClient`物件都會使用基礎 JAVA 類別`java.net.URLConnection` , 且不會受到**TLS/SSL 實**值的影響。 `WebRequest`物件會使用 BoringSSL 程式庫。
+不過，如果**HttpClient 實** `AndroidHttpClient`設定為，則所有`HttpClient`物件都會使用基礎 JAVA 類別`java.net.URLConnection` ，且不會受到**TLS/SSL 實**值的影響。 `WebRequest`物件會使用 BoringSSL 程式庫。
 
 ## <a name="other-ways-to-control-ssltls-configuration"></a>控制 SSL/TLS 設定的其他方式
 
-有三種方式可讓 Xamarin Android 應用程式控制 TLS 設定:
+有三種方式可讓 Xamarin Android 應用程式控制 TLS 設定：
 
-1. 在 [專案選項] 中, 選取 [HttpClient] 和 [預設 TLS 程式庫]。
+1. 在 [專案選項] 中，選取 [HttpClient] 和 [預設 TLS 程式庫]。
 2. 以程式設計`Xamarin.Android.Net.AndroidClientHandler`方式使用。
-3. 宣告環境變數 (選擇性)。
+3. 宣告環境變數（選擇性）。
 
-在三個選擇中, 建議的方法是使用 [Xamarin] 專案選項來宣告整個應用程式`HttpMessageHandler`的預設和 TLS。 然後, 如有必要, 以`Xamarin.Android.Net.AndroidClientHandler`程式設計方式具現化物件。 上述選項會加以說明。
+在三個選擇中，建議的方法是使用 [Xamarin] 專案選項來宣告整個應用程式`HttpMessageHandler`的預設和 TLS。 然後，如有必要，以`Xamarin.Android.Net.AndroidClientHandler`程式設計方式具現化物件。 上述選項會加以說明。
 
 使用環境變數&ndash; &ndash;的第三個選項如下所述。
 
 ### <a name="declare-environment-variables"></a>宣告環境變數
 
-有兩個與在 Xamarin 中使用 TLS 相關的環境變數:
+有兩個與在 Xamarin 中使用 TLS 相關的環境變數：
 
 - `XA_HTTP_CLIENT_HANDLER_TYPE`此環境變數會宣告應用程式將使用的預設值`HttpMessageHandler`。 &ndash; 例如：
 
@@ -161,13 +156,13 @@ var client = new HttpClient();
     XA_HTTP_CLIENT_HANDLER_TYPE=Xamarin.Android.Net.AndroidClientHandler
     ```
 
-- `XA_TLS_PROVIDER`此環境變數會宣告將使用的 TLS 程式庫, 可能`btls`是`legacy`、或`default` (與省略此變數相同): &ndash;
+- `XA_TLS_PROVIDER`此環境變數會宣告將使用的 TLS 程式庫，可能`btls`是`legacy`、或`default` （與省略此變數相同）： &ndash;
 
     ```csharp
     XA_TLS_PROVIDER=btls
     ```
 
-此環境變數是藉由將_環境_檔案加入至專案來設定。 環境檔案是 Unix 格式的純文字檔案, 其組建動作為**AndroidEnvironment**:
+此環境變數是藉由將_環境_檔案加入至專案來設定。 環境檔案是 Unix 格式的純文字檔案，其組建動作為**AndroidEnvironment**：
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -179,8 +174,7 @@ var client = new HttpClient();
 
 -----
 
-如需有關環境變數和 Xamarin 的詳細資訊, 請參閱 < [Xamarin 環境](~/android/deploy-test/environment.md)指南。
-
+如需有關環境變數和 Xamarin 的詳細資訊，請參閱 < [Xamarin 環境](~/android/deploy-test/environment.md)指南。
 
 ## <a name="related-links"></a>相關連結
 

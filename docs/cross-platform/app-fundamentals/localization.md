@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 8ecc0cf0ed1fe77f55044d44ecdfc43d6cb6b448
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b7dfeee92020be2fb40cfdfc5eb1b97d065b97e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289106"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758169"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -44,7 +44,6 @@ ms.locfileid: "70289106"
 - 資料排序。
 
 無論您的應用程式以何種行動平臺為目標，這些秘訣都會協助您建立高品質的當地語系化應用程式。
-
 
 ## <a name="design-considerations"></a>設計考量
 
@@ -85,7 +84,6 @@ ms.locfileid: "70289106"
 - 圖示–某些圖示可以是特定文化特性，而您可以藉由將影像當地語系化以反映當地的理解，讓您的應用程式更容易使用。
 - 色彩–某些文化特性會以不同的方式來瞭解色彩，紅色可能代表一個地區的警告，但在另一個區域中很幸運。 在設計您的應用程式時使用原生喇叭進行檢查，以判斷是否應該建立當地語系化色彩的機制。
 
-
 ### <a name="videos-and-sound"></a>影片和音效
 
 影片和音效呈現當地語系化應用程式時的特殊挑戰，因為雖然翻譯字串的方式相當簡單，但錄製多個 voiceover 軌或影片剪輯可能既昂貴又困難。
@@ -93,7 +91,6 @@ ms.locfileid: "70289106"
 影片和音效檔的多個複本可能也會大幅增加應用程式的大小（尤其是當您要當地語系化成大量語言或有許多媒體檔案）時。 在使用者安裝您的應用程式之後，您可能會考慮只下載所需的語言資產，但這也可能導致網路速度不佳的使用者體驗。
 
 解決當地語系化問題的方法通常有好幾種，最重要的就是將它們預先考慮，並確保您的應用程式設計成負責處理。
-
 
 ### <a name="dates-times-numbers-and-currency"></a>日期、時間、數位和貨幣
 
@@ -144,7 +141,6 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 - 詞幹分析–如果您的搜尋是為了搜尋類似的單字、單字根目錄和其他搜尋優化而建立的，則是針對所有支援的語言所建立的優化嗎？
 - 排序–請確定已正確排序結果（請參閱以上）。
 
-
 ### <a name="data-from-external-sources"></a>來自外部來源的資料
 
 許多應用程式會從外部來源下載資料，從 Twitter 和 RSS 摘要到天氣、新聞或股票價格。 向使用者顯示此專案時，您必須考慮可能會顯示不相關或無法讀取的資訊畫面。
@@ -157,7 +153,6 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 
 這也可能會影響音訊播放軌或影片的外部連結–設計應用程式時，請務必事先規劃已翻譯的內容，或確保使用者介面在內容不會出現在其語言.
 
-
 ### <a name="dont-over-translate"></a>不要過度轉譯
 
 您應用程式中的某些字串可能不需要翻譯，或至少需要特別注意的翻譯工具。 範例可能包括：
@@ -169,20 +164,15 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 
 最後，如果特定字串需要特殊處理，請務必包含翻譯工具的詳細指示。
 
-
 ### <a name="formatted-text"></a>格式化文字
 
 行動應用程式通常不會有問題，因為字串通常不會有豐富的格式。 不過，如果您的應用程式中需要豐富的文字（例如粗體或斜體格式），請確定翻譯工具知道如何輸入格式，而您的字串檔案則會正確地儲存它，而且在向使用者顯示之前，會正確格式化（ie）。不小心讓格式代碼本身會呈現給使用者）。
-
-
 
 ## <a name="translation-tips"></a>翻譯秘訣
 
 翻譯應用程式所使用的字串會被視為當地語系化流程的一部分。 這項工作通常會外包至翻譯服務，並由可能不知道您的應用程式或您業務的多語系人員執行。
 
 下列秘訣可協助您產生更容易正確轉譯的字串，因而改善當地語系化應用程式的品質。
-
-
 
 ### <a name="localize-complete-strings-not-words"></a>當地語系化完整的字串，而不是單字
 
@@ -208,7 +198,6 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 
 **這不是**建議的做法，因為它不一定適用于所有語言，而且翻譯工具將難以瞭解每個簡短區段的內容。 此外，它也會導致重複使用已轉譯的字串，如果在不同的內容中使用，則可能會在稍後發生問題（然後進行更新）。
 
-
 ### <a name="allow-for-parameter-re-ordering"></a>允許參數重新排序
 
 某些程式設計語言需要額外的語法來指定字串中的參數順序，不過 .NET 已經支援編號預留位置的概念，因此
@@ -227,7 +216,6 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 
 而權杖會依照翻譯的預定順序排序。 將字串傳送至翻譯工具時，請務必包含每個預留位置所包含內容的說明。
 
-
 ### <a name="use-multiple-strings-for-cardinality"></a>針對基數使用多個字串
 
 避免針對每`"You have {0} message/s."`個狀態使用特定字串之類的字串，以提供更好的使用者體驗：
@@ -242,7 +230,6 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 ```
 
 您必須在應用程式中撰寫程式碼，以評估所顯示的數位，並選擇適當的字串。 某些平臺（包括 iOS 和 Android）具有內建功能，可根據目前語言/地區設定的喜好設定自動選擇最佳的複數字串。
-
 
 ### <a name="allowing-for-gender"></a>允許性別
 
@@ -294,7 +281,6 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 
 其中一個最知名的服務就是[LionBridge](http://www.lionbridge.com/)。 大部分的專業服務都支援所有常見的檔案類型，包括字串、XML、RESX 和 .POT/PO。
 
-
 ## <a name="summary"></a>總結
 
 本文引進了一些您在國際化應用程式及當地語系化資源之前應該先熟悉的概念，同時也涵蓋如何變更每個平臺的語言喜好設定。
@@ -306,8 +292,6 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 - 使用 RESX 檔案進行[Xamarin](~/xamarin-forms/app-fundamentals/localization/index.md)的跨平臺當地語系化。
 - [Xamarin iOS](~/ios/app-fundamentals/localization/index.md)原生平臺當地語系化。
 - [Xamarin Android](~/android/app-fundamentals/localization.md)原生平臺當地語系化。
-
-
 
 ## <a name="related-links"></a>相關連結
 

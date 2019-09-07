@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/10/2017
-ms.openlocfilehash: 2e4fa5f1fb96077b0237dbeac9074006e761bc09
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 63c8cb285c51d7c10e2109c9d0b7cffbd0fb0898
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655296"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770336"
 ---
 # <a name="layout-options-in-xamarinforms"></a>在 Xamarin.Forms 中的版面配置選項
 
@@ -155,8 +155,6 @@ Content = new StackLayout
 ## <a name="summary"></a>總結
 
 這篇文章所述的效果，每個[ `LayoutOptions` ](xref:Xamarin.Forms.LayoutOptions)結構值的對齊方式和展開的檢視，相對於其父代。 `Start`， `Center`， `End`，和`Fill`欄位用來定義檢視的對齊方式為父系版面配置，而`StartAndExpand`， `CenterAndExpand`， `EndAndExpand`，和`FillAndExpand`欄位用來定義對齊喜好設定，並判斷檢視是否會佔用更多空間，是否有的話，內[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

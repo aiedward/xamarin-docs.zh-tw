@@ -1,30 +1,29 @@
 ---
 title: Xamarin. Android Designer
-description: 本文說明 Xamarin. Android Designer 的功能。 它會說明設計工具的基本概念, 並示範如何使用設計工具, 以視覺化方式配置 widget 並編輯屬性。 它也會說明如何使用設計工具來處理各種設定 (例如主題、語言和裝置設定) 的使用者介面和資源, 以及如何針對橫向和縱向等替代視圖進行設計。
+description: 本文說明 Xamarin. Android Designer 的功能。 它會說明設計工具的基本概念，並示範如何使用設計工具，以視覺化方式配置 widget 並編輯屬性。 它也會說明如何使用設計工具來處理各種設定（例如主題、語言和裝置設定）的使用者介面和資源，以及如何針對橫向和縱向等替代視圖進行設計。
 ms.prod: xamarin
 ms.assetid: E38C9AD9-56AA-B983-8B21-E1F466C4DB36
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: 94f5dd206fb4794d1cdd71792418a2b4a2278c80
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 176037db501c2577775bdfb817fea01f16a02242
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523152"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761647"
 ---
 # <a name="xamarinandroid-designer"></a>Xamarin. Android Designer
 
-_本文說明 Xamarin. Android Designer 的功能。它會說明設計工具的基本概念, 並示範如何使用設計工具, 以視覺化方式配置 widget 並編輯屬性。它也會說明如何使用設計工具來處理各種設定 (例如主題、語言和裝置設定) 的使用者介面和資源, 以及如何針對橫向和縱向等替代視圖進行設計。_
-
+_本文說明 Xamarin. Android Designer 的功能。它會說明設計工具的基本概念，並示範如何使用設計工具，以視覺化方式配置 widget 並編輯屬性。它也會說明如何使用設計工具來處理各種設定（例如主題、語言和裝置設定）的使用者介面和資源，以及如何針對橫向和縱向等替代視圖進行設計。_
 
 ## <a name="overview"></a>總覽
 
-Xamarin 支援以 XML 檔案為基礎之使用者介面設計的宣告式樣式, 以及在程式碼中建立程式設計使用者介面。
-使用宣告式方法時, 可以使用 Xamarin. Android Designer, 以視覺方式手動編輯或修改 XML 檔案。 使用設計工具可在 UI 建立期間立即提供意見反應、加速開發, 以及讓 UI 建立的程式變得更費力。
+Xamarin 支援以 XML 檔案為基礎之使用者介面設計的宣告式樣式，以及在程式碼中建立程式設計使用者介面。
+使用宣告式方法時，可以使用 Xamarin. Android Designer，以視覺方式手動編輯或修改 XML 檔案。 使用設計工具可在 UI 建立期間立即提供意見反應、加速開發，以及讓 UI 建立的程式變得更費力。
 
-本文會調查 Xamarin. Android Designer 的許多功能。 其說明如下:
+本文會調查 Xamarin. Android Designer 的許多功能。 其說明如下：
 
 1. 使用設計工具的基本概念。
 2. 組成設計工具的各個部分。
@@ -32,11 +31,9 @@ Xamarin 支援以 XML 檔案為基礎之使用者介面設計的宣告式樣式,
 4. 如何新增小工具。
 5. 如何編輯屬性。
 6. 如何使用各種資源和裝置設定。
-7. 如何修改替代視圖的使用者介面, 例如橫向和縱向。 
+7. 如何修改替代視圖的使用者介面，例如橫向和縱向。 
 8. 如何處理使用替代視圖時可能會發生的衝突。 
 9. 如何使用材質設計工具來建立與材質相容的應用程式。
-
-
 
 ## <a name="sections"></a>章節
 
@@ -50,14 +47,10 @@ Xamarin 支援以 XML 檔案為基礎之使用者介面設計的宣告式樣式,
 
  [材料設計功能](~/android/user-interface/android-designer/material-design-features.md)
 
-
-
 ## <a name="summary"></a>總結
 
 本文討論了 Xamarin. Android Designer 的功能集。
-其中示範了如何開始使用設計工具, 並說明其各種不同的部分。 其中描述如何使用**設計工具介面**以及**來源**視圖來載入配置, 以及如何加入和修改 widget。 文中也說明了如何使用各種資源和裝置設定。 最後, 它會檢查如何使用設計工具來開發專為替代視圖 (例如橫向和直向) 建立的使用者介面, 以及如何解決這類視圖之間可能發生的衝突。
-
-
+其中示範了如何開始使用設計工具，並說明其各種不同的部分。 其中描述如何使用**設計工具介面**以及**來源**視圖來載入配置，以及如何加入和修改 widget。 文中也說明了如何使用各種資源和裝置設定。 最後，它會檢查如何使用設計工具來開發專為替代視圖（例如橫向和直向）建立的使用者介面，以及如何解決這類視圖之間可能發生的衝突。
 
 ## <a name="related-links"></a>相關連結
 

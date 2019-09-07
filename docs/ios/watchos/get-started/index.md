@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: d7de124dd032bd63a10d6a273bc86489df007832
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a82bba575031fa7b7c0011ee639e66aec4862179
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293070"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767939"
 ---
 # <a name="getting-started-with-watchos-in-xamarin"></a>在 Xamarin 中使用 watchOS 的消費者入門
 
@@ -30,4 +30,3 @@ WatchOS、應用程式生命週期、使用者介面和限制的總覽。
 ## <a name="hello-watchioswatchosget-startedhello-watchmd"></a>[您好，監看](~/ios/watchos/get-started/hello-watch.md)
 
 使用C#和 Xamarin 建立您的第一個 watchOS 應用程式。
-

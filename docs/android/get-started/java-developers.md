@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: 5edde7cff0867161394270250a8fe622e8e03ee3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: dfd6c9d6419f663b1ef474066f7918859d42b3c5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69524896"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757290"
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
 _如果您是 Java 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的程式碼，並享受 C# 的程式碼重複使用優勢。您將會發現 C# 語法與 Java 語法非常類似，而且這兩種語言提供非常類似的功能。此外，您將探索可讓開發工作更容易的 C# 特有功能。_
-
 
 ## <a name="overview"></a>總覽
 
@@ -61,7 +60,6 @@ Java 和 C# 都會編譯為要在受控執行環境中執行的中繼語言。 C
 
 - C# 支援 Language-Integrated Query (LINQ)，讓您能夠使用保留字 `from`、`select` 和 `where`，以類似於資料庫查詢的方式撰寫對集合的查詢。
 
-
 當然，在 C# 和 Java 之間還有更多本文未提及的差異。 此外，Java 和 C# 都會持續進行改良 (例如，Java 8 (尚未存在於 Android 工具鏈中) 支援 C# 樣式的 Lambda 運算式)，讓這些差異會隨著時間而改變。 此處僅概述不熟悉 Xamarin.Android 之 Java 開發人員目前所遇到的最重要差異。
 
 - [從 Java 轉為 C# 開發](#fundamentals)會介紹 C# 和 Java 之間的基本差異。
@@ -76,13 +74,12 @@ C# 會將許多重要功能帶入 Xamarin.Android，Android 上的 Java 開發�
 
 - [Lambda 運算式](#lambdas) &ndash; 在 C# 中，您可以使用匿名方法 (也稱為 *Lambda*)，以更簡潔也更有效率的方式表達您的功能。 您可以避免必須撰寫一次性使用之物件的額外負荷，並且可在不加入參數的情況下將本機狀態傳遞至方法。
 
-- [事件處理](#events) &ndash; C# 會針對「事件導向程式設計」  提供語言層級的支援，讓物件可以註冊要在發生感興趣的事件時收到通知。 `event` 關鍵字會定義多點傳送廣播機制，讓發行者類別可用來通知事件訂閱者。
+- [事件處理](#events) &ndash; C# 會針對「事件導向程式設計」提供語言層級的支援，讓物件可以註冊要在發生感興趣的事件時收到通知。 `event` 關鍵字會定義多點傳送廣播機制，讓發行者類別可用來通知事件訂閱者。
 
 - [非同步程式設計](#async) &ndash; C# 的非同步程式設計功能 (`async`/`await`) 使應用程式能夠持續回應。
     此功能的語言層級支援，可讓非同步程式設計容易實作且較不容易發生錯誤。
 
-
-最後，Xamarin 可讓您透過名為「繫結」  的技術，[運用現有的 Java 資產](#interop)。 您可以使用 Xamarin 的自動繫結產生器，從 C# 呼叫現有的 Java 程式碼、架構和程式庫。 若要這樣做，您只需在 Java 中建立靜態程式庫，並透過繫結公開至 C#。
+最後，Xamarin 可讓您透過名為「繫結」的技術，[運用現有的 Java 資產](#interop)。 您可以使用 Xamarin 的自動繫結產生器，從 C# 呼叫現有的 Java 程式碼、架構和程式庫。 若要這樣做，您只需在 Java 中建立靜態程式庫，並透過繫結公開至 C#。
 
 <a name="fundamentals" />
 
@@ -90,14 +87,11 @@ C# 會將許多重要功能帶入 Xamarin.Android，Android 上的 Java 開發�
 
 下列各節將概述 C# 和 Java 之間的基本「入門」差異；更後面的小節則會描述這些語言之間的物件導向差異。
 
-
-
 ### <a name="libraries-vs-assemblies"></a>程式庫與組件
 
-Java 通常會在 **.jar** 檔案中封裝相關的類別。 不過，在 C# 和 .NET 中，會將先行編譯程式碼的可重複使用位元封裝為「組件」  ，通常會封裝為 *.dll* 檔案。 組件是 C#/.NET 程式碼的一個部署單位，而每個組件通常會與一個 C# 專案相關聯。 組件包含在執行階段進行 Just-In-Time 編譯的中繼程式碼 (IL)。
+Java 通常會在 **.jar** 檔案中封裝相關的類別。 不過，在 C# 和 .NET 中，會將先行編譯程式碼的可重複使用位元封裝為「組件」，通常會封裝為 *.dll* 檔案。 組件是 C#/.NET 程式碼的一個部署單位，而每個組件通常會與一個 C# 專案相關聯。 組件包含在執行階段進行 Just-In-Time 編譯的中繼程式碼 (IL)。
 
 如需組件的詳細資訊，請參閱[組件與全域組件快取](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/assemblies-gac/)主題。
-
 
 ### <a name="packages-vs-namespaces"></a>封裝與命名空間
 
@@ -108,7 +102,6 @@ namespace WeatherApp
 {
     ...
 ```
-
 
 ### <a name="importing-types"></a>匯入類型
 
@@ -142,11 +135,9 @@ using System.Threading.Tasks;
 
 這些陳述式會從 `System`、`Android.App`、`Android.Content` 等命名空間匯入功能。
 
-
-
 ### <a name="generics"></a>泛型
 
-Java 和 C# 都支援「泛型」  ，其為可讓您在編譯時期插入不同類型的預留位置。 不過，泛型在 C# 中的運作方式稍有不同。 在 Java 中，[類型清除](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) \(英文\) 讓類型資訊只能於編譯時期使用，而無法在執行階段使用。 相反地，.NET Common Language Runtime (CLR) 提供泛型類型的明確支援，這表示 C# 可在執行階段存取類型資訊。 在日常的 Xamarin.Android 開發中，此區別的重要性通常並不明顯，但如果您使用[反映](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection)，將會依賴此功能，在執行階段存取類型資訊。
+Java 和 C# 都支援「泛型」，其為可讓您在編譯時期插入不同類型的預留位置。 不過，泛型在 C# 中的運作方式稍有不同。 在 Java 中，[類型清除](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) \(英文\) 讓類型資訊只能於編譯時期使用，而無法在執行階段使用。 相反地，.NET Common Language Runtime (CLR) 提供泛型類型的明確支援，這表示 C# 可在執行階段存取類型資訊。 在日常的 Xamarin.Android 開發中，此區別的重要性通常並不明顯，但如果您使用[反映](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection)，將會依賴此功能，在執行階段存取類型資訊。
 
 在 Xamarin.Android 中，您通常會看到用來取得版面配置控制項參考的泛型方法 `FindViewById`。 這個方法可接受泛型類型參數來指定要查閱的控制項類型。 例如：
 
@@ -158,7 +149,6 @@ TextView label = FindViewById<TextView> (Resource.Id.Label);
 
 如需泛型的詳細資訊，請參閱[泛型](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index)主題。
 請注意，在對於泛型 C# 類別的 Xamarin.Android 支援中有一些限制；如需詳細資訊，請參閱[限制](~/android/internals/limitations.md)。
-
 
 <a name="oopfeatures" />
 
@@ -192,8 +182,6 @@ Java 和 C# 所使用的物件導向程式設計慣用語非常類似：
 
 - C# 使用 C++ 樣式的解構函式語法來表達完成項。 此語法與 Java 的 `finalize` 方法不同，但語意幾乎完全相同 (請注意，在 C# 中，解構函式會自動呼叫基底類別解構函式 &ndash; 與明確呼叫 `super.finalize` 的 Java 相反)。
 
-
-
 ### <a name="class-inheritance"></a>類別繼承
 
 若要在 Java 中擴充類別，您可以使用 `extends` 關鍵字。 若要在 C# 中擴充類別，您可以使用冒號 (`:`) 來表示衍生。 例如，在 Xamarin.Android 應用程式中，您通常會看到類似下列程式碼片段的類別衍生：
@@ -220,12 +208,11 @@ public class SensorsActivity : Activity, ISensorEventListener
 
 如需 C# 類別定義的詳細資訊，請參閱[類別](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/classes)與[繼承](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/inheritance)主題。
 
-
 <a name="properties" />
 
 ### <a name="properties"></a>屬性
 
-在 Java 中，更動子方法 (setter) 和檢查方法 (getter) 通常可用來控制如何對類別成員進行變更，同時隱藏並保護這些成員，以免受到外部程式碼干擾。 例如，Android `TextView` 類別提供 `getText` 和 `setText` 方法。 C# 提供類似但更直接的機制，也就是「屬性」  。
+在 Java 中，更動子方法 (setter) 和檢查方法 (getter) 通常可用來控制如何對類別成員進行變更，同時隱藏並保護這些成員，以免受到外部程式碼干擾。 例如，Android `TextView` 類別提供 `getText` 和 `setText` 方法。 C# 提供類似但更直接的機制，也就是「屬性」。
 C# 類別的使用者可使用他們存取欄位相同的方式來存取屬性，但每次存取實際上會產生對呼叫端而言是透明的方法呼叫。 這個「隱藏」方法可以實作設定其他值、執行轉換或變更物件狀態之類的副作用。
 
 屬性通常用於存取和修改 UI (使用者介面) 物件成員。 例如：
@@ -244,8 +231,6 @@ rulerView.DrawingCacheEnabled = true;
 屬性的存取權可以是讀取/寫入、唯讀或唯寫的權限。 此外，您還能使用不同的存取修飾詞進行讀取和寫入。 例如，您可以定義具有公用讀取權限但具有私用寫入權限的屬性。
 
 如需 C# 屬性的詳細資訊，請參閱[屬性](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/properties)主題。
-
-
 
 ### <a name="calling-base-class-methods"></a>呼叫基底類別方法
 
@@ -280,8 +265,6 @@ public class MainActivity : Activity
 
 在此情況下，衍生類別 (`MainActivity`) 所定義的 `OnCreate` 方法會呼叫基底類別 (`Activity`) 的 `OnCreate` 方法。
 
-
-
 ### <a name="access-modifiers"></a>存取修飾詞
 
 Java 和 C# 均支援 `public`、`private` 和 `protected` 存取修飾詞。 不過，C# 支援兩個額外的存取修飾詞：
@@ -292,11 +275,9 @@ Java 和 C# 均支援 `public`、`private` 和 `protected` 存取修飾詞。 �
 
 如需 C# 存取修飾詞的詳細資訊，請參閱[存取修飾詞](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)主題。
 
-
-
 ### <a name="virtual-and-override-methods"></a>虛擬和覆寫方法
 
-Java 和 C# 均支援「多型」  ，這是以相同方式處理相關物件的能力。 在這兩種語言中，您可以使用基底類別參考來參考衍生類別的物件，而衍生類別的方法可以覆寫其基底類別的方法。 這兩種語言均具備「虛擬」  方法的概念，此為設計來由衍生類別中的方法所取代之基底類別中的方法。
+Java 和 C# 均支援「多型」，這是以相同方式處理相關物件的能力。 在這兩種語言中，您可以使用基底類別參考來參考衍生類別的物件，而衍生類別的方法可以覆寫其基底類別的方法。 這兩種語言均具備「虛擬」方法的概念，此為設計來由衍生類別中的方法所取代之基底類別中的方法。
 就像 Java，C# 支援 `abstract` 類別和方法。
 
 不過，在 Java 和 C# 之間有一些如何宣告虛擬方法和覆寫它們的差異：
@@ -309,12 +290,11 @@ Java 和 C# 均支援「多型」  ，這是以相同方式處理相關物件的
 
 如需對於多型的 C# 支援詳細資訊，請參閱[多型](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)主題。
 
-
 <a name="lambdas" />
 
 ## <a name="lambda-expressions"></a>Lambda 運算式
 
-C# 讓您能夠建立「關閉」  ：內嵌的匿名方法，可存取要將它們封閉在其中的方法狀態。
+C# 讓您能夠建立「關閉」：內嵌的匿名方法，可存取要將它們封閉在其中的方法狀態。
 使用 Lambda 運算式，您可以撰寫較少的程式碼，來實作可能已在 Java 中使用更多行程式碼實作的相同功能。
 
 Lambda 運算式可讓您略過建立一次性使用的類別或匿名類別 (就像您在 Java 中所做的) 時所涉及的額外儀式 &ndash; 相反地，您只需撰寫內嵌方法程式碼的商務邏輯。 此外，由於 Lambda 具備周圍方法中變數的存取權，因此，您不需建立一份很長的參數清單來將狀態傳遞至方法程式碼。
@@ -340,17 +320,16 @@ button.Click += (sender, args) => {
 
 如需 C# 和 Lambda 運算式的詳細資訊，請參閱 [Lambda 運算式](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)主題。
 
-
 <a name="events" />
 
 ## <a name="event-handling"></a>事件處理
 
-「事件」  是在該物件發生感興趣的事情時，用來通知已註冊訂閱者的方式。 不同於在 Java 中，訂閱者通常會實作包含回呼方法的 `Listener` 介面，C# 會透過「委派」  提供事件處理的語言層級支援。 「委派」  類似物件導向的類型安全函式指標 &ndash; 它會封裝物件參考和方法語彙基元。 如果用戶端物件想要訂閱事件，它會建立委派，並將委派傳遞至通知物件。
+「事件」是在該物件發生感興趣的事情時，用來通知已註冊訂閱者的方式。 不同於在 Java 中，訂閱者通常會實作包含回呼方法的 `Listener` 介面，C# 會透過「委派」提供事件處理的語言層級支援。 「委派」類似物件導向的類型安全函式指標 &ndash; 它會封裝物件參考和方法語彙基元。 如果用戶端物件想要訂閱事件，它會建立委派，並將委派傳遞至通知物件。
 發生事件時，通知物件會叫用委派物件所表示的方法，通知事件的訂閱用戶端物件。 在 C# 中，事件處理常式基本上就是透過委派叫用的方法。
 
 如需委派的詳細資訊，請參閱[委派](https://docs.microsoft.com/dotnet/csharp/programming-guide/delegates/index)主題。
 
-在 C# 中，事件是「多點傳送」  ；也就是，在事件發生時，可以通知多個接聽程式。 當您考慮 Java 和 C# 事件註冊之間的語法差異時，可觀察到此差異。 在 Java 中，您會呼叫 `SetXXXListener` 來註冊事件通知；在 C# 中，您會使用 `+=` 運算子，藉由將委派「加入」至事件接聽程式清單來註冊事件通知。
+在 C# 中，事件是「多點傳送」；也就是，在事件發生時，可以通知多個接聽程式。 當您考慮 Java 和 C# 事件註冊之間的語法差異時，可觀察到此差異。 在 Java 中，您會呼叫 `SetXXXListener` 來註冊事件通知；在 C# 中，您會使用 `+=` 運算子，藉由將委派「加入」至事件接聽程式清單來註冊事件通知。
 在 Java 中，您會呼叫 `SetXXXListener` 來取消註冊，而在 C# 中，您會使用 `-=`，從接聽程式清單中「減去」您的委派。
 
 在 Xamarin.Android 中，當使用者對 UI 控制項執行某個動作時，通常會使用事件來通知物件。 一般來說，UI 控制項必須具備使用 `event` 關鍵字定義的成員；您會將委派連結至這些成員，以訂閱來自該 UI 控制項的事件。
@@ -389,20 +368,18 @@ startActivityButton.Click += (sender, e) => {
 
 一般而言，Lambda 運算式可用來宣告 Xamarin.Android 程式碼中的事件處理常式。 這個宣告事件處理常式的簡略方式一開始可能看似神秘，不過，它可以在您寫入和讀取程式碼時節省大量時間。 隨著熟悉度的增加，您會變得習慣辨識此模式 (Xamarin.Android 程式碼中經常發生)，而您會花費更多時間來思考應用程式的商務邏輯，並減少費力完成語法額外負荷的時間。
 
-
 <a name="async" />
 
 ## <a name="asynchronous-programming"></a>非同步程式設計
 
-「非同步程式設計」  可增進應用程式的整體回應能力。 當應用程式的某個部分遭到漫長作業封鎖時，非同步程式設計功能可讓應用程式程式碼的剩餘部分繼續執行。
+「非同步程式設計」可增進應用程式的整體回應能力。 當應用程式的某個部分遭到漫長作業封鎖時，非同步程式設計功能可讓應用程式程式碼的剩餘部分繼續執行。
 存取 Web、處理影像，以及讀取/寫入檔案，都是會導致整個應用程式看起來像凍結般 (如果它不會以非同步方式寫入) 的作業範例。
 
 C# 包含透過 `async` 和 `await` 關鍵字進行非同步程式設計的語言層級支援。 這些語言功能讓您能夠非常容易地撰寫程式碼來執行長時間執行的工作，而不會封鎖應用程式的主執行緒。 簡單來說，您可以在方法上使用 `async` 關鍵字，來指出方法中的程式碼會以非同步方式執行，而且不會封鎖呼叫端的執行緒。 您可以在呼叫使用 `async` 標記的方法時，使用 `await` 關鍵字。 編譯器會將 `await` 解譯為要將您的方法執行移至背景執行緒 (會將工作傳回給呼叫端) 所在的點。 完成此工作時，程式碼的執行會在程式碼中 `await` 點的呼叫端執行緒上繼續執行，並傳回 `async` 呼叫的結果。 依照慣例，以非同步方式執行的方法會在其名稱結尾加上 `Async` 後置字元。
 
-在 Xamarin.Android 應用程式中，當長時間執行的作業在背景工作中執行時，通常會使用 `async` 和 `await` 來釋放 UI 執行緒，讓它可以回應使用者輸入 (例如，點選 [取消]  按鈕)。
+在 Xamarin.Android 應用程式中，當長時間執行的作業在背景工作中執行時，通常會使用 `async` 和 `await` 來釋放 UI 執行緒，讓它可以回應使用者輸入 (例如，點選 [取消] 按鈕)。
 
 在下列範例中，按鈕 Click 事件處理常式會導致非同步作業從 Web 下載影像：
-
 
 ```csharp
 downloadButton.Click += downloadAsync;
@@ -426,14 +403,13 @@ async void downloadAsync(object sender, System.EventArgs e)
 如需 C# 中 `async`/`await` 的簡介，請參閱[使用 Async 和 Await 進行非同步程式設計](https://docs.microsoft.com/dotnet/csharp/async)主題。
 如需非同步程式設計功能的 Xamarin 支援詳細資訊，請參閱[非同步支援概觀](~/cross-platform/platform/async.md)。
 
-
 <a name="keywords" />
 
 ## <a name="keyword-differences"></a>關鍵字差異
 
 Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Java 關鍵字在 C# 中具有相等但以不同方式命名的對等項目，如下表所示：
 
-|Java|C#|說明|
+|Java|C#|描述|
 |---|---|---|
 |`boolean`|[bool](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/bool)|用來宣告布林值的真偽。|
 |`extends`|`:`|優先要從中繼承的類別和介面。|
@@ -447,10 +423,9 @@ Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Jav
 |`super`|[base](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/base)|用來存取衍生類別中父類別的成員。|
 |`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|包裝含有鎖定取得和釋放的重要程式碼區段。|
 
-
 此外，還有許多 C# 中特有的關鍵字，它們在在 Java 中沒有對應項目。 Xamarin.Android 程式碼通常會使用下列 C# 關鍵字 (當您透過[範例程式碼](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android) \(英文\) 讀取時非常適合參考此表格)：
 
-|C#|說明|
+|C#|描述|
 |---|---|
 |[as](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/as)|在可相容的參考類型或可為 Null 的類型之間執行轉換。|
 |[async](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)|指定方法或 Lambda 運算式為非同步。|
@@ -476,20 +451,17 @@ Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Jav
 |[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|參考用戶端程式碼想要指派給屬性的值。|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|允許在衍生類別中覆寫方法。|
 
-
 <a name="interop" />
 
 ## <a name="interoperating-with-existing-java-code"></a>與現有 Java 程式碼交互操作
 
 如果您目前具有不想轉換為 C# 的 Java 功能，您可以透過下列兩種技術，在 Xamarin.Android 應用程式中重複使用現有的 Java 程式庫：
 
-- **建立 Java 繫結庫** &ndash; 使用這種方法，您可以使用 Xamarin 工具來產生圍繞 Java 類型的 C# 包裝函式。 這些包裝函式稱為「繫結」  。 如此一來，Xamarin.Android 應用程式就可藉由呼叫這些包裝函式來使用 *.jar* 檔案。
+- **建立 Java 繫結庫** &ndash; 使用這種方法，您可以使用 Xamarin 工具來產生圍繞 Java 類型的 C# 包裝函式。 這些包裝函式稱為「繫結」。 如此一來，Xamarin.Android 應用程式就可藉由呼叫這些包裝函式來使用 *.jar* 檔案。
 
 - **Java 原生介面** &ndash; *Java 原生介面* (JNI) 是一種可讓 C# 應用程式呼叫 Java 程式碼或讓 Java 程式碼呼叫 C# 應用程式的架構。
 
 如需這些技術的詳細資訊，請參閱 [Java 整合概觀](~/android/platform/java-integration/index.md)。
-
-
 
 ## <a name="for-further-reading"></a>進一步閱讀
 
@@ -499,12 +471,9 @@ MSDN [C# 程式設計手冊](https://docs.microsoft.com/dotnet/csharp/programmin
 
 當您準備好要在 C# 中處理第一個 Xamarin.Android 專案時，我們的 [Hello, Android](~/android/get-started/hello-android/index.md) 系列可協助您建置第一個 Xamarin.Android 應用程式，並進一步了解使用 Xamarin 進行 Android 應用程式開發的基本知識。
 
-
-
 ## <a name="summary"></a>總結
 
 本文從 Java 開發人員的觀點介紹了 Xamarin.Android C# 程式設計環境。 它指出 C# 和 Java 之間的相似性，同時說明它們的實際差異。 它介紹了組件和命名空間、說明如何匯入外部類型，並提供存取修飾詞、泛型、類別衍生、呼叫基底類別方法、方法覆寫，以及事件處理中差異的概觀。 它介紹了無法在 Java 中使用的 C# 功能，例如，屬性、`async`/`await` 非同步程式設計、Lambda、C# 委派，以及 C# 事件處理系統。 其中包含重要 C# 關鍵字的表格、說明如何與現有的 Java 程式庫相互操作，並提供相關文件的連結以取得進一步研究。
-
 
 ## <a name="related-links"></a>相關連結
 

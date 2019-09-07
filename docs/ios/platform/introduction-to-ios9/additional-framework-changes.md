@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 706efdd9cb39db63ab0c7b9cd4404b7b84f4c14b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cb16ad3889453f866f3dc9e66f5bcc8860bd094a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292410"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751989"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -55,9 +55,6 @@ CloudKit 架構可簡化存取 iCloud 之應用程式的開發。 這包括抓�
 
 > [!IMPORTANT]
 > 您必須先定義該資料庫的架構，才能存取、使用 CloudKit JS 來呈現或更新 CloudKit 資料庫的內容。
-
-
-
 
 如需詳細資訊，請參閱下列檔：
 
@@ -261,8 +258,6 @@ Apple 在 iOS 9 中的 UIKit Dynamics 包含下列變更：
 ### <a name="new-uitextinputassistantitem-class"></a>新增 UITextInputAssistantItem 類別
 
 在`UITextInputAssistantItem` _快捷方式_列中使用 [新增類別來配置橫條圖] 按鈕群組。 快捷方式列是可在螢幕鍵盤上提供輸入快速鍵的新區域。
-
-
 
 ## <a name="related-links"></a>相關連結
 

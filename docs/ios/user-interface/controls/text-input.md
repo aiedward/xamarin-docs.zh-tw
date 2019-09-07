@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: ef9067f3a0694c66d21d6614277e8543aebbc299
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f47ebdd8c1ba220229c6e652af99e8fa3ae2960
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279348"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768822"
 ---
 # <a name="text-input-in-xamarinios"></a>在 Xamarin 中輸入文字
 
@@ -27,7 +27,6 @@ ms.locfileid: "70279348"
 一旦您命名了「輸出口」並儲存分鏡腳本檔案之後，Visual Studio for Mac `.designer.cs`將會更新部分類別， C#而且您可以將參考該控制項的程式碼加入至您的類別檔案。 每個控制項都有自己的唯一屬性和事件，可以在您C#的程式碼中存取。
 
  <a name="UITextField" />
-
 
 ## <a name="uitextfield"></a>UITextField
 
@@ -46,7 +45,6 @@ ms.locfileid: "70279348"
 - **外觀**–控制鍵盤的外觀樣式，而且會有深色或淺色的主題。
 - 傳回**金鑰**–變更傳回金鑰上的標籤，以更清楚地反映將採取的動作。 支援的值包括 Go、Join、Next、Route、Done 和 Search。
 - **Secure** –識別輸入是否已遮罩（例如輸入密碼）。
-
 
 如果使用設計工具`textfield1`將名為的 UITextField 加入至螢幕，您可以在中C#設定或變更其屬性，如下所示：
 
@@ -72,7 +70,6 @@ View.Add(textfield1);
 
  <a name="UITextView" />
 
-
 ## <a name="uitextview"></a>UITextView
 
 `UITextView`控制項可以用來顯示唯讀文字，或接受多行文字輸入。 它有許多與相同的選項`UITextField` （例如大小寫、更正等等）。
@@ -84,7 +81,6 @@ View.Add(textfield1);
 - **行為**–文字是否可編輯或為唯讀。
 - **偵測**–偵測並將輸入的資料轉換成可按的元素，例如可以觸發電話的電話號碼、會變成地圖連結的位址、在 Safari 中開啟的 url，或是在行事曆中變成事件的日期和時間。
 
-
 如果已使用設計工具將 UITextView 加入至螢幕，您可以設定或變更其屬性，如下所示：
 
 ```csharp
@@ -92,8 +88,6 @@ textview1.Text = "Lorem ipsum..."; // lots of text can go here
 textview1.Editable = true;
 textview1.DataDetectorTypes = UIDataDetectorType.PhoneNumber | UIDataDetectorType.Link;
 ```
-
-
 
 ## <a name="related-links"></a>相關連結
 

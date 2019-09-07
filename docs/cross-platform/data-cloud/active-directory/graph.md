@@ -6,12 +6,12 @@ ms.assetid: F94A9FF4-068E-4B71-81FE-46920745380D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 96e0991bb0805e61dfbf91e8479cbf1c9943f212
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fd3d94731f1a2a083be5f0e2f8ab541bc702a521
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287752"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766309"
 ---
 # <a name="accessing-the-graph-api"></a>存取圖形 API
 
@@ -27,7 +27,6 @@ ms.locfileid: "70287752"
 
 > [!IMPORTANT]
 > 注意:Azure ADAL 3.0 目前為預覽狀態，而且在發行最終版本之前可能會有重大變更。 
-
 
 ![](graph-images/06.-adal-nuget-package.jpg "將參考新增至 Azure Active Directory Authentication Library （Azure ADAL）")
 
@@ -71,7 +70,6 @@ public static async Task<AuthenticationResult> GetAccessToken
 ### <a name="handle-continuation-for-android"></a>處理 Android 的接續
 
 驗證完成之後，流程應該會回到應用程式。 在 Android 案例中，它是由下列程式碼所處理，這應該新增至**MainActivity.cs**：
-
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -118,4 +116,3 @@ request.Headers.Authorization =
 var response = await client.SendAsync(request);
 var content = await response.Content.ReadAsStringAsync();
 ```
-

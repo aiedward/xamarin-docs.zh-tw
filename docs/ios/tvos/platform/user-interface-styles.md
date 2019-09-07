@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4df67221c367386cddd485fcd1853523d77158e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 89756d5b897b39dd0cf45074474189a4a0a8ada8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290673"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769992"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>在 Xamarin 中 tvOS 使用者介面樣式
 
@@ -101,9 +101,6 @@ Light UI 主題是預設主題，而且任何現有的 tvOS 應用程式仍會�
 
 > [!IMPORTANT]
 > TvOS 10 的 tvOS 早期預覽版本`UIUserInterfaceStyle` `UITraitCollection`尚不完整支援。 在未來的版本中將會新增完整支援。
-
-
-
 
 <a name="Customizing-Appearance-Based-on-Theme" />
 
@@ -209,8 +206,6 @@ SetOverrideTraitCollection (trait, this);
 ## <a name="summary"></a>總結
 
 本文涵蓋 Apple 已新增至 tvOS 10 的 Light 和深色 UI 主題，以及如何在 tvOS 應用程式中加以執行。
-
-
 
 ## <a name="related-links"></a>相關連結
 

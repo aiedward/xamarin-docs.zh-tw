@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 145c616cc0af8156f10b9db1d3fa36264cecd18b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf181cf6c27476b7073073467ef186c352645e39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284321"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768883"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的分鏡腳本簡介
 
@@ -21,7 +21,6 @@ ms.locfileid: "70284321"
 在由 Apple 引進分鏡腳本檔案格式做為 iOS 應用程式 UI 的視覺標記法之前，開發人員會為每個 view controller 建立 XIB 檔案，並以手動方式設計每個視圖之間的導覽。  使用分鏡腳本可讓開發人員在設計介面上同時定義視圖控制器和導覽，並提供應用程式使用者介面的 WYSIWYG 編輯。
 
 您可以使用 Xamarin iOS 設計工具來建立、開啟和編輯腳本。 本指南也將逐步解說如何使用設計工具來建立您的分鏡C#腳本，同時使用來編寫導覽。
-
 
 ## <a name="requirements"></a>需求
 
@@ -77,12 +76,12 @@ ms.locfileid: "70284321"
 ### <a name="adaptive-segue-types"></a>適應性 Segue 類型
 
  iOS 8 引進了[大小類別](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)，讓 iOS 分鏡腳本檔案能夠使用所有可用的螢幕大小，讓開發人員可以為所有 iOS 裝置建立一個 UI。 根據預設，所有新的 Xamarin iOS 應用程式都會使用大小類別。 若要使用較舊專案的大小類別，請參閱[整合](~/ios/user-interface/storyboards/unified-storyboards.md)的分鏡腳本簡介指南。 
- 
+
 任何使用大小類別的應用程式也會使用新的調適型[*segue*](~/ios/user-interface/storyboards/unified-storyboards.md)。 使用大小類別時，請記住，我們不會直接指定是否，我們使用的是 iPhone 或 iPad。 換句話說，我們要建立一個總是看起來相同的 UI，而不論它必須使用多少實際資產。 調適型 Segue 的工作方式，是藉由判斷環境，以及判斷呈現內容的最佳方式。 調適型 Segue 如下所示： 
 
 [![](images/adaptivesegue.png "[適應性 Segue] 下拉式清單")](images/adaptivesegue.png#lightbox)
 
-|Segue|說明|
+|Segue|描述|
 |--- |--- |
 |顯示|這非常類似于推播 segue，但會將畫面的內容納入考慮。|
 |顯示詳細資料|如果應用程式顯示主版和詳細資料檢視（例如，在 iPad 的分割視圖控制器中），內容將會取代詳細資料檢視。 如果應用程式只顯示主要或詳細資料，內容將會取代視圖控制器堆疊的頂端。|
@@ -92,7 +91,6 @@ ms.locfileid: "70284321"
 ### <a name="transferring-data-with-segues"></a>使用 Segue 傳輸資料
 
 Segue 的優點不會以轉換結束。 它們也可以用來管理檢視控制器之間的資料傳輸。 這是藉由覆寫`PrepareForSegue`初始視圖控制器上的方法，並自行處理資料來達成。 觸發 segue 時（例如，按下按鈕），應用程式將會呼叫這個方法，讓您有機會在進行任何導覽*之前*準備新的視圖控制器。 下面的程式碼從[Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)範例中示範： 
-
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, 
@@ -252,7 +250,6 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-
 使用設計工具建立分鏡腳本時，IDE 會自動將[[Register]](xref:Foundation.RegisterAttribute)屬性加入至`designer.cs`類別的頂端，並傳入字串識別碼，這與上一個步驟中指定的分鏡腳本 ID 相同。 這會將連結C#至分鏡腳本中的相關場景。
 
 在某些時候，您可能會想要加入**不**是在設計工具中建立的現有類別。 在此情況下，您會將此類別註冊為一般：
@@ -340,7 +337,6 @@ public partial class MainViewController : UIViewController
 3. 按一下 Segue，並指定其*識別碼* `SegueToPink`：
 
     [![](images/namesegue.png "按一下 Segue，並指定識別碼 SegueToPink")](images/namesegue.png#lightbox)  
-    
 
 4. 最後，將下列 ShouldPerformSegue 方法新增至`MainViewController`類別：
 
@@ -489,8 +485,6 @@ public partial class MainViewController : UIViewController
 ## <a name="summary"></a>總結
 
 本文介紹分鏡腳本的概念，以及它們在 iOS 應用程式開發方面的好處。 其中討論場景、視圖控制器、視圖和視圖階層，以及場景如何與不同類型的 Segue 連結在一起。  此外，它也會從分鏡腳本手動探索具現化視圖控制器，並建立條件式 Segue。
-
-
 
 ## <a name="related-links"></a>相關連結
 

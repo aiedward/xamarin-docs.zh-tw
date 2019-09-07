@@ -6,12 +6,12 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: e129a8c37e6b8780a57636730c072b230354b8b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288376"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758114"
 ---
 # <a name="building-cross-platform-applications-overview"></a>建立跨平臺應用程式總覽
 
@@ -45,11 +45,9 @@ Xamarin 不只是「寫入一次，隨處執行」平臺，因為其中一個優
 1. 與 Xamarin 專案相容的[NuGet 套件](https://nuget.org)，例如[Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/)。
 1. 使用 .NET framework 功能進行網路、web 服務、IO 等等。
 
-
 其中一些元件會在*Tasky*案例研究中執行。
 
  <a name="Separate_Reusable_Code_into_a_Core_Library" />
-
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>將可重複使用的程式碼分隔成核心程式庫
 
@@ -58,7 +56,6 @@ Xamarin 不只是「寫入一次，隨處執行」平臺，因為其中一個優
  ![](overview-images/layers2.png "藉由將您的應用程式架構分層，然後將平臺中立的核心功能移至可重複使用的核心程式庫，將責任分離的原則納入考慮，您可以將跨平臺的程式碼共用最大化")
 
  <a name="Case_Studies" />
-
 
 ## <a name="case-studies"></a>個案研究
 

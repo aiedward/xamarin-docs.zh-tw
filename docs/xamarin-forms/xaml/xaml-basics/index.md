@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: a7e98f64672788f13b247aa6cbba8adca84bb319
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 0b30a0167b72ebeb4c53481c6d2d9d9344296894
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121540"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767354"
 ---
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML 基本知識
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.Forms 應用程式中使用標記定義使用者介面，而不是使用程式碼。 XAML 永遠不需要在 Xamarin.Forms 程式中，但它通常會較簡潔和呈現更一致的比對等的程式碼，而且可能靈活。 XAML 特別適合搭配熱門的 MVVM (模型-View-ViewModel) 應用程式架構使用:XAML 會定義透過以 XAML 為基礎的資料系結連結至 ViewModel 程式碼的視圖。
+XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.Forms 應用程式中使用標記定義使用者介面，而不是使用程式碼。 XAML 永遠不需要在 Xamarin.Forms 程式中，但它通常會較簡潔和呈現更一致的比對等的程式碼，而且可能靈活。 XAML 特別適合搭配熱門的 MVVM （模型-View-ViewModel）應用程式架構使用：XAML 會定義透過以 XAML 為基礎的資料系結連結至 ViewModel 程式碼的視圖。
 
 ## <a name="xaml-basics-contents"></a>XAML 基本內容
 
@@ -34,7 +34,6 @@ XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.F
 [![](images/cover-sml.png "書封面")](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
 
 中的活頁簿，許多章節深入涵蓋 XAML 主題包括：
-
 
 | 章節 | 下載 | 總結 |
 |---------|---------|---------|

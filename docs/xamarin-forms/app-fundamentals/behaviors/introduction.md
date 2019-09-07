@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 176f41d4b7349af2cf7cc49de8ba0789ad2f8c11
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
-ms.translationtype: HT
+ms.openlocfilehash: d62ba6b025b2fe9865df8279a5e98eba254bb5a2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995810"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772053"
 ---
 # <a name="introduction-to-behaviors"></a>行為簡介
 
@@ -33,8 +33,6 @@ Xamarin.Forms 支援兩種不同的行為樣式：
 - **附加的行為** – 具有一或多個附加屬性的 `static` 類別。 如需附加行為的詳細資訊，請參閱[附加的行為](~/xamarin-forms/app-fundamentals/behaviors/attached.md)。
 
 此指南著重於 Xamarin.Forms 行為，因為這是行為建構的慣用方法。
-
-
 
 ## <a name="related-links"></a>相關連結
 

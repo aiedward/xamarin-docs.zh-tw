@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 5bdff0aee39375d8de296849056660f69a7d907f
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: ff054b1bd9607dd0dade874453a6ddf99ea4fd77
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198532"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758214"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
@@ -19,9 +19,9 @@ ms.locfileid: "70198532"
 
 ![正方形顯示上 GridViewPager 的範例螢幕擷取畫面](gridviewpager-images/gridviewpager.png)
 
-首先, 將[Xamarin Android 磨損支援](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet 封裝新增至您的專案。
+首先，將[Xamarin Android 磨損支援](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet 封裝新增至您的專案。
 
-版面配置 XML 看起來像這樣:
+版面配置 XML 看起來像這樣：
 
 ```xml
 <android.support.wearable.view.GridViewPager xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,21 +32,19 @@ ms.locfileid: "70198532"
 ```
 
 建立[`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
-(或子類別, 例如[`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
+（或子類別，例如[`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
 提供要在使用者流覽時顯示的視圖。
 
-[範例介面卡](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)顯示如何執行必要的方法, 包括、 `RowCount` `GetColumnCount`、 `GetBackground`和的覆寫`GetFragment`
+[範例介面卡](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)顯示如何執行必要的方法，包括、 `RowCount` `GetColumnCount`、 `GetBackground`和的覆寫`GetFragment`
 
-連接介面卡, 如下所示:
+連接介面卡，如下所示：
 
 ```csharp
 pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
 ```
 
-
-
 ## <a name="related-links"></a>相關連結
 
 - [Google 的2D 選擇器檔](https://developer.android.com/training/wearables/ui/2d-picker.html)
 - [穿戴式檔](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-- [GridViewPager (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)
+- [GridViewPager （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)

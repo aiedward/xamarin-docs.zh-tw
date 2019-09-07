@@ -7,18 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 8ae465c98dee25cd0f1fe635da45f4d399b42ee3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b6d2931168132630233112b9515071ac7fd07843
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284473"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769741"
 ---
 # <a name="systemexception-amdevicenotificationsubscribe-returned-"></a>傳回了 System.Exception AMDeviceNotificationSubscribe ...
 
 > [!IMPORTANT]
 > 此問題已在最新版本的 Xamarin 中解決。 不過，如果軟體的最新版本發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出來提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
-
 
 ## <a name="fix"></a>修正
 

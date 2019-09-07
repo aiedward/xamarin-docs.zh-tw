@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 005f858408ec4d10563e3d945cadb0f1af65a407
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd9d93572ac10622345b1dff4145b737baf8aaae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292975"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769017"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>索引標籤列和在 Xamarin.iOS 中的索引標籤列控制器
 
@@ -28,7 +28,6 @@ ms.locfileid: "70292975"
 
 - 允許多個控制站新增至它。
 - 提供索引標籤式的使用者介面，透過`UITabBar`類別，以允許使用者控制站和及其檢視之間切換。 
-
 
 控制站新增至`UITabBarController`透過其`ViewControllers`屬性，這是`UIViewController`陣列。 `UITabBarController`本身會處理載入適當的控制站，並呈現其根據選取的索引標籤的檢視。
 
@@ -46,7 +45,6 @@ ms.locfileid: "70292975"
 
  <a name="Creating_the_Application" />
 
-
 ### <a name="creating-the-application"></a>建立應用程式
 
 現在就開始建立新的應用程式。
@@ -56,8 +54,6 @@ ms.locfileid: "70292975"
 [![](creating-tabbed-applications-images/newsolution1.png "選取 空專案範本")](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
 [![](creating-tabbed-applications-images/newsolution2.png "將專案命名為 TabbedApplication")](creating-tabbed-applications-images/newsolution2.png#lightbox)
-
-
 
 ### <a name="adding-the-uitabbarcontroller"></a>新增 UITabBarController
 
@@ -72,7 +68,6 @@ ms.locfileid: "70292975"
 1. 設定的基底類別`TabController`至`UITabBarController`。 
 1. 建立`UIViewController`執行個體加入至`TabController`。 
 1. 新增`UIViewController`指派給陣列的執行個體`ViewControllers`屬性`TabController`。 
-
 
 將下列程式碼加入`TabController`類別，以達到下列步驟：
 
@@ -146,13 +141,11 @@ public partial class AppDelegate : UIApplicationDelegate
 
  <a name="Modifying_TabBarItems" />
 
-
 ### <a name="modifying-tabbaritems"></a>修改 TabBarItems
 
 現在，我們會執行的應用程式索引標籤上，讓我們修改`TabBarItem`變更影像和文字顯示，以及其中一個索引標籤新增徽章。
 
  <a name="Setting_a_System_Item" />
-
 
 #### <a name="setting-a-system-item"></a>設定系統 項目
 
@@ -167,7 +160,6 @@ tab1.TabBarItem = new UITabBarItem (UITabBarSystemItem.Favorites, 0);
  ![](creating-tabbed-applications-images/04a-tabimage.png "具有星號圖示的第一個索引標籤")
 
  <a name="Setting_the_Title_and_Image" />
-
 
 #### <a name="setting-the-title-and-image"></a>設定 標題 和 映像
 
@@ -201,7 +193,6 @@ tab2.View.BackgroundColor = UIColor.Orange;
 
  <a name="Setting_the_Badge_Value" />
 
-
 #### <a name="setting-the-badge-value"></a>將徽章值
 
 索引標籤也會顯示徽章。 例如，加入下列程式碼來設定第三個索引標籤上的徽章：
@@ -222,13 +213,11 @@ tab3.TabBarItem.BadgeValue = null;
 
  <a name="Tabs_in_Non-RootViewController_Scenarios" />
 
-
 ## <a name="tabs-in-non-rootviewcontroller-scenarios"></a>在非 RootViewController 案例中的索引標籤
 
 在上述範例中，我們示範了如何運用`UITabBarController`時`RootViewController`的視窗。 在此範例中，我們會檢驗如何使用`UITabBarController`不是`RootViewController`並顯示此項目建立使用分鏡腳本。
 
  <a name="Initial_Screen_Example" />
-
 
 ### <a name="initial-screen-example"></a>初始畫面範例
 
@@ -237,7 +226,6 @@ tab3.TabBarItem.BadgeValue = null;
 [![](creating-tabbed-applications-images/inital-screen-application.png "此螢幕擷取畫面顯示應用程式流程")](creating-tabbed-applications-images/inital-screen-application.png#lightbox)
 
 讓我們開始新的應用程式，此範例中。 同樣地，我們將使用**iPhone > 應用程式 > 空白專案 (C#)** 範本，此時命名專案`InitialScreenDemo`。
-
 
 在此範例中，我們必須保留我們的檢視控制器分鏡腳本。 若要新增分鏡腳本：
 
@@ -251,7 +239,6 @@ tab3.TabBarItem.BadgeValue = null;
 
 有幾個重要的步驟，請注意，當加入分鏡腳本先前非腳本檔案，其中涵蓋[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。 這些是：
 
- 
 1. 新增名稱至分鏡腳本**主要介面**一節`Info.plist`:
 
     [![](creating-tabbed-applications-images/project-options.png "主要介面設 MainStoryboard")](creating-tabbed-applications-images/project-options.png#lightbox)
@@ -276,7 +263,6 @@ Visual Studio for Mac 會自動產生的類別和設計工具所需的檔案，�
 
  <a name="Creating_the_UI" />
 
-
 #### <a name="creating-the-ui"></a>建立 UI
 
 接下來，我們將建立簡單的使用者介面的 ViewController 檢視每個使用 Xamarin iOS 設計工具。
@@ -285,7 +271,6 @@ Visual Studio for Mac 會自動產生的類別和設計工具所需的檔案，�
 
 - **標籤**：`Text` = **同一**
 - **按鈕**：`Title` = **使用者採取一些初始動作**
-
 
 我們會控制在按鈕的可見性`TouchUpInside`事件，我們需要在程式碼後置中參考它。 讓我們找出與其**名稱**`aButton`中 [屬性] 面板，如下列螢幕擷取畫面所示：
 
@@ -329,7 +314,7 @@ partial void InitialActionCompleted (UIButton sender)
 在我們的分鏡腳本中，我們可以使用 Segue 處理 TabBarController 與我們的檢視控制器之間的轉換。 之後的初始檢視與互動時，我們想要將其載入至 TabBarController 呈現給使用者。 讓我們設定此功能在設計工具中。
 
 **按一下 Ctrl 以** 和 **拖曳** 從 [TabBarController] 按鈕。 在滑鼠向上上會出現內容功能表。 我們想要使用強制回應的 segue。 
- 
+
 若要設定每個索引標籤中， **Ctrl + 按一下** 從我們的檢視控制器在順序中的每個從一到三個，然後選取關聯性 TabBarController **索引標籤** 從內容功能表中，如下所示：
 
 [![](creating-tabbed-applications-images/context-menu.png "選取索引標籤關聯性")](creating-tabbed-applications-images/context-menu.png#lightbox)
@@ -366,7 +351,6 @@ public override void ViewDidLoad ()
 ## <a name="summary"></a>總結
 
 本文涵蓋如何使用`UITabBarController`應用程式中。 我們逐步解說如何載入每個索引標籤中的控制站，以及如何設定屬性索引標籤上，這類的標題、 影像和標誌。 我們再檢查，使用分鏡腳本，如何載入`UITabBarController`在執行階段時`RootViewController`的視窗。
-
 
 ## <a name="related-links"></a>相關連結
 

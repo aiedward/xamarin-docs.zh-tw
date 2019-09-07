@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: b6b370ebbcad04dfe829379685a3a9c5a6b5662b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df623efcc1da617ac6b700b42d3ac058dea817ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291540"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772645"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin 中的 Windows
 
@@ -747,7 +747,6 @@ void OpenDialog (NSObject sender)
 - **樣式**-可讓您調整面板的樣式，其方式如下：一般面板（看起來像標準視窗）、公用程式面板（具有較小的標題列）、抬頭顯示器面板（是半透明的，而且標題列是背景的一部分）。
 - [**非啟用**]-在面板中決定成為金鑰視窗。
 - **檔**強制回應-如果檔案模式，面板只會浮動在應用程式的視窗上方，否則會浮動在全部上方。
-
 
 若要新增新的面板，請執行下列動作：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: dfda8b1ec3e7cfbdec3fe313d305d78422487f08
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d2466de4891c289f4686c37bc9fe73c24a5a48ca
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289320"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753055"
 ---
 # <a name="spritekit-in-xamarinios"></a>在 Xamarin 中 SpriteKit
 
@@ -26,7 +26,7 @@ SpriteKit 包括2D 的固定主體物理 API。 每個 sprite 都有相關聯的
 SpriteKit 現在支援從其材質衍生 sprite 的物理主體。 這可讓您輕鬆地執行看起來更自然的衝突。
 
 例如，在下列衝突中，請注意，香蕉和猴子在每個影像的表面上幾乎會互相衝突：
- 
+
 ![](spritekit-images/image13.png "香蕉和猴子幾乎會在每個影像的表面上衝突")
 
 SpriteKit 可讓您使用一行程式碼來建立這種物理主體。 只要使用`SKPhysicsBody.Create`材質和大小來呼叫： sprite。PhysicsBody = SKPhysicsBody。 Create （sprite。材質、sprite。大小）;
@@ -44,7 +44,7 @@ sprite.PhysicsBody = SKPhysicsBody.Create (sprite.Texture, 0.7f, sprite.Size);
 調整 Alpha 臨界值的效果，就像這樣會微調先前的衝突，如此一來，當與香蕉發生衝突時，猴子就會落在一起：
 
 ![](spritekit-images/image14.png "當與香蕉發生衝突時，猴子會落在一起")
- 
+
 ## <a name="physics-fields"></a>物理欄位
 
 SpriteKit 的另一個絕佳的新增物理欄位支援。 這些功能可讓您將 vortex 欄位、星形引力欄位和彈簧欄位等專案加入至簡單的名稱。
@@ -86,7 +86,7 @@ public override void TouchesBegan (NSSet touches, UIEvent evt)
 這會導致香蕉 oscillate，如同欄位節點的彈簧：
 
 ![](spritekit-images/image15.png "香蕉 oscillate 類似于欄位節點的彈簧")
- 
+
 ## <a name="radial-gravity-field"></a>星形引力欄位
 
 新增不同的欄位很類似。 例如，下列程式碼會建立星形引力欄位：

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 430f4fedc8e988c89826e3ae023fc25b7b798727
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 818b6afef395b081768f8bdd6538d5a8ecbad178
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525346"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753745"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>發行至 Amazon App Store
 
@@ -20,7 +20,6 @@ Amazon Mobile App Distribution Program (Amazon 行動應用程式散發計劃) �
 [![Amazon App Store 畫面](publishing-to-amazon-images/amazon-app-store.png)](publishing-to-amazon-images/amazon-app-store.png#lightbox)
 
 Amazon 並無限制 APK 大小。 不過，如果 APK 大於 30 MB，就會使用 FTP 來散發，而不會使用「Amazon 行動應用程式散發入口網站」。
-
 
 ## <a name="submitting-apps-binary-info"></a>提交應用程式：二進位資訊
 
@@ -31,8 +30,6 @@ Amazon 並無限制 APK 大小。 不過，如果 APK 大於 30 MB，就會使�
 - **螢幕擷取畫面** &ndash;   Amazon 會要求最少 3 個、最多 10 個螢幕擷取畫面。 螢幕擷取畫面必須是 1024 (寬) x 600 (高) 像素或 800 (寬) x 480 (高) 像素。 可接受 .png 和 .jpg 格式。
 - **宣傳影像** &ndash;   為了讓應用程式成為宣傳位置 (例如首頁) 上的精選項目，您可以視需要提交宣傳影像。 此影像應該是 1024 (寬) x 500 (高) 像素的橫向 .png 或 .jpg 檔案。 其中不可包含任何動畫。
 - 可以提供五個影片的更新。
-
-
 
 ## <a name="approval-process"></a>核准流程
 

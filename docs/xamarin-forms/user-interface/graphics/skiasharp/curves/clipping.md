@@ -7,12 +7,12 @@ ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 133d7ffdeafdced3f909c21cf08f2241666015fa
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 1daf4822dd7debe98aabd58d42cb6ed29f95b90d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228265"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759350"
 ---
 # <a name="clipping-with-paths-and-regions"></a>使用路徑和區域裁剪
 
@@ -24,7 +24,7 @@ _使用路徑來剪輯圖形，以特定的區域，並建立區域_
 
 ![透過鑰匙孔的猴子](clipping-images/clippingsample.png)
 
-*裁剪區域*是在其中呈現圖形在螢幕的區域。 顯示裁剪區域之外的任何項目不會呈現。 的裁剪區域通常會定義由矩形或[ `SKPath` ](xref:SkiaSharp.SKPath)物件，但您可以另外定義裁剪區域，使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)物件。 這兩種類型的物件在第一次會看似相關，因為您可以建立區域路徑中。 不過, 您無法從區域建立路徑, 而且它們在內部非常不同:路徑是由一連串的線條和曲線組成, 而區域則是由一系列的水準掃描線條所定義。
+*裁剪區域*是在其中呈現圖形在螢幕的區域。 顯示裁剪區域之外的任何項目不會呈現。 的裁剪區域通常會定義由矩形或[ `SKPath` ](xref:SkiaSharp.SKPath)物件，但您可以另外定義裁剪區域，使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)物件。 這兩種類型的物件在第一次會看似相關，因為您可以建立區域路徑中。 不過，您無法從區域建立路徑，而且它們在內部非常不同：路徑是由一連串的線條和曲線組成，而區域則是由一系列的水準掃描線條所定義。
 
 藉由建立上圖**Monkey 透過 Keyhole**頁面。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)類別會定義使用 SVG 資料的路徑，並使用建構函式，從程式資源載入點陣圖：
 
@@ -56,7 +56,6 @@ public class MonkeyThroughKeyholePage : ContentPage
 ```
 
 雖然`keyholePath`物件描述 keyhole 的外框、 完全是任意的座標，以及反映路徑資料已設計時，項目很方便。 基於這個理由，`PaintSurface`處理常式會取得此路徑和呼叫界限`Translate`和`Scale`將路徑移至螢幕的中央，且能夠幾乎一樣高的畫面：
-
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -366,7 +365,7 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 
 如果每個路徑會縮減為一系列的水平的掃描線，例如舊式真空 tube Tv 中，已大幅簡化此作業。 每一條掃描線是只要一條水平線起始點與結束點。 比方說，圓形半徑為 10 個像素能分解成 20 的水平的掃描行，其中每一個位於圓形的左側部分在開始和結束的右側部分。 結合兩個圓形區域中的任何作業變成非常簡單，因為它是簡單的檢查對應的掃描線的每個組的開始和結束座標。
 
-這是區域的意義:定義區域的一系列水準掃描線條。
+這是區域的意義：定義區域的一系列水準掃描線條。
 
 不過，當區域會縮減為一系列的掃描程式行，這些線條根據特定的像素尺寸的掃描。 嚴格來說，區域不是向量圖形物件。 很接近在本質上比路徑壓縮單色點陣圖。 因此，區域無法縮放或旋轉而不會遺失精確度，並因此不會轉換時用來裁剪區域。
 
@@ -510,7 +509,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 它真的看起來不像四個-很，但可能難以呈現而不裁剪的影像：
 
 [![四個分葉四葉草頁面的三向螢幕擷取畫面](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
-
 
 ## <a name="related-links"></a>相關連結
 

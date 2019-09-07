@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 230c72539388028aaf8f05d200d8779105102644
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: add9c602f4c04f1d95db4cee578fdadf0b41cf33
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225629"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758009"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 
@@ -86,7 +86,6 @@ systeminfo
 
 [![systeminfo 輸出範例](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
-
 ### <a name="enabling-hyper-v-acceleration"></a>啟用 Hyper-V 加速
 
 如果您的電腦符合上述準則，請使用下列步驟，使用 Hyper-V 來加速 Android Emulator：
@@ -103,9 +102,7 @@ systeminfo
 
     [![Android SDK 及工具對話方塊](hardware-acceleration-images/win/04-sdk-manager-w158-sml.png)](hardware-acceleration-images/win/04-sdk-manager-w158.png#lightbox)
 
-
 當您建立虛擬裝置時 (請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md))，請務必選取 **x86** 型系統映像。 如果您使用 ARM 型系統映像，則虛擬裝置不會加速，且執行速度會變慢。
-
 
 ## <a name="accelerating-with-haxm"></a>使用 HAXM 加速
 
@@ -141,7 +138,6 @@ systeminfo
 2. 執行 **intelhaxm android.exe** 來啟動 HAXM 安裝程式。 接受安裝程式對話方塊中的預設值：
 
    ![Intel Hardware Accelerated Execution Manager 安裝視窗](hardware-acceleration-images/win/06-haxm-installer.png)
-
 
 當您建立虛擬裝置時 (請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md))，請務必選取 **x86** 型系統映像。 如果您使用 ARM 型系統映像，則虛擬裝置不會加速，且執行速度會變慢。
 
@@ -227,7 +223,6 @@ systeminfo
 ### <a name="installing-haxm"></a>安裝 HAXM
 
 適用於 macOS 的 HAXM 安裝套件可從 [Intel Hardware Accelerated Execution Manager](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager) 頁面取得。 使用下列步驟來下載並安裝 HAXM：
-
 
 1. 從 Intel 網站，下載適用於 macOS 的最新 [HAXM 虛擬化引擎](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager/) \(英文\) 安裝程式。
 

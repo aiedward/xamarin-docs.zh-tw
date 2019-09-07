@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: f931397f50b6b7aece099efb775a6dda560bf0eb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280007"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768407"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin Designer for iOS 的自動版面配置
 
@@ -47,7 +47,6 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
     ![](designer-auto-layout-images/image01.png "屬性面板中的 [使用自動版式] 核取方塊")
 
-
 根據預設，介面上不會建立或顯示任何條件約束。 相反地，它們會在編譯時期自動從框架資訊推斷出來。 若要加入條件約束，我們需要選取設計介面上的專案，並在其中加入條件約束。 我們可以使用**條件約束工具列**來執行此動作。
 
 ## <a name="constraints-toolbar"></a>條件約束工具列
@@ -63,7 +62,6 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 - **[更新條件約束] 按鈕：** 請務必注意，視您是否處於條件約束編輯模式而定，會進行變更。
   - 在 [條件約束編輯模式] 中，此按鈕會調整條件約束以符合元素框架。
   - 在 [框架編輯模式] 中，此按鈕會調整元素框架，使其符合條件約束的定義位置。
-
 
 ## <a name="surface-based-constraint-editing"></a>以介面為基礎的條件約束編輯
 
@@ -87,8 +85,6 @@ IOS 設計工具提供兩種類型的控制項，用於操作設計介面上的�
 
 > [!IMPORTANT]
 > 版面配置指南是特殊類型的條件約束目標，可讓我們建立最上層和底部的條件約束，以考慮系統橫條的存在，例如狀態列或工具列。 其中一個主要用途是讓應用程式在 iOS 6 和 iOS 7 之間相容，因為最新版本的容器視圖會延伸到狀態列底下。 如需有關最上層版面配置指南的詳細資訊，請參閱[Apple 檔](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)。
-
-
 
 接下來的三個章節會介紹如何使用不同類型的條件約束。
 
@@ -129,7 +125,6 @@ IOS 設計工具提供兩種類型的控制項，用於操作設計介面上的�
 - **衝突的條件約束**：當多個條件約束強制元素具有衝突的屬性值，且條件約束引擎無法協調它們時，就會發生這種情況。
 - **Underconstrained 專案**：元素的屬性（位置 + 大小）必須完全涵蓋于其條件約束集和內建大小，條件約束才會是有效的。 如果這些值不明確，則專案會被視為 underconstrained。
 - **Frame misplacement** —當元素的框架及其條件約束集合定義兩個不同的結果矩形時，就會發生這個問題。
-
 
 本節介紹上述三個問題，並提供如何處理它們的詳細資料。
 

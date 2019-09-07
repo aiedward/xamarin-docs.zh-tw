@@ -7,12 +7,12 @@ ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: e9af5a78900fce714b214dfd3b3e0e83e17bbce2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ceeacaed510005cec7a4017ce45706e492d7e146
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648739"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759752"
 ---
 # <a name="basic-animation-in-skiasharp"></a>SkiaSharp 中的基本動畫
 
@@ -245,7 +245,6 @@ public class ExpandingCirclesPage : ContentPage
 結果就是影像看起來相同 when`t`等於 0 時一樣，因此`t`等於 1，而圓形似乎持續不斷擴展：
 
 [![](animation-images/expandingcircles-small.png "展開的圓形頁面的三個螢幕擷取畫面")](animation-images/expandingcircles-large.png#lightbox "展開圓形頁面的三個螢幕擷取畫面")
-
 
 ## <a name="related-links"></a>相關連結
 

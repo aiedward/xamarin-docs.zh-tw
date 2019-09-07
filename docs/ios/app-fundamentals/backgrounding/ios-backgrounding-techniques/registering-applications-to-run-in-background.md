@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 044ae7e4a77abb77e766df58b9cda5938ce8fe7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6466d4c7edf6fde38fd3e9e8a6aaa48c2e5f9b4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290620"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757697"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>註冊要在背景中執行的 Xamarin iOS 應用程式
 
@@ -31,7 +31,6 @@ ms.locfileid: "70290620"
 - **位置**-利用 GPS 或網路位置資料的應用程式，可以在背景中傳送和接收位置更新。
 - **Fetch （iOS 7 +）** -針對背景提取許可權註冊的應用程式可以定期檢查提供者是否有新的內容，並在使用者返回應用程式時向其呈現更新內容。
 - **遠端通知（iOS 7 +）** -應用程式可以註冊以接收來自提供者的通知，並在使用者開啟應用程式之前，使用通知來啟動更新。 通知可以是推播通知的形式，或選擇以無訊息方式喚醒應用程式。
-
 
 您可以在應用程式的*plist*中設定必要的 [**背景模式**] 屬性來註冊應用程式。 應用程式可以視需要在多個類別中註冊：
 

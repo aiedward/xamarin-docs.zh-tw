@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 845257bc11d24865a01a992e99d39ad6c578b42c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 00a973e670ff5100a44ba158fe50f134781a97e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291465"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769499"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>在 Xamarin 中使用核心焦點進行搜尋
 
@@ -132,8 +132,6 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 - **批次更新支援**-如果您的應用程式需要同時建立或修改大型索引群組，則可以在單一呼叫中，將整個批次`Index`傳送至`CSSearchableIndex`類別的方法。
 - **回應索引變更**–使用您的`CSSearchableIndexDelegate`應用程式可以回應可搜尋索引中的變更和通知。
 - 套用**資料保護**–使用資料保護類別，您可以在使用核心焦點新增至可搜尋索引的專案上，執行安全性。
-
-
 
 ## <a name="related-links"></a>相關連結
 

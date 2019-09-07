@@ -6,12 +6,12 @@ ms.assetid: D8BC4906-805F-4AFB-8D1A-88B7BF87E17F
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: d3f756b1a551c7b6bcbe48129235d537312edff6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 73f44acad3e30e4301a69e5f2422cd4dd1a3dbf5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282141"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766567"
 ---
 # <a name="creating-new-platform-specific-library-projects-for-nuget"></a>為 NuGet 建立新的平臺特定程式庫專案
 
@@ -55,7 +55,6 @@ NuGet 可以包含 iOS 和 Android 特有的程式碼，以及兩者通用的 .N
 
     ![](platform-specific-images/create-nuget-package.png "NuGet 套件檔案會儲存在 bin 資料夾中，視設定而定（Debug 或 Release）")
 
-
 ## <a name="verifying-the-output"></a>驗證輸出
 
 NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構。
@@ -63,7 +62,6 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 此螢幕擷取畫面顯示支援 iOS 和 Android 的平臺特定 NuGet 內容，並已選取兩個參考元件：
 
 ![](platform-specific-images/nuget-output.png "NuGet 套件中包含的檔案")
-
 
 ## <a name="related-links"></a>相關連結
 

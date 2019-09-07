@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 8b1b82a1707a4aa58ef1e3dadbaeb79ada1ad6a1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291878"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753349"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Xamarin 中的新參考計數系統
 
@@ -46,10 +46,8 @@ ms.locfileid: "70291878"
 
  Unified API 需要新的參考計數延伸模組，而且應該預設為啟用。 較舊版本的 IDE 可能不會自動檢查此值，您可能必須自行進行檢查。
 
-
 > [!IMPORTANT]
 > 這項功能的較早版本已存在於 MonoTouch 5.2，但僅供**sgen**作為實驗性預覽之用。 這個新的增強版本現在也適用于**Boehm**垃圾收集行程。
-
 
 在過去，Xamarin 會管理兩種類型的物件：只是原生物件（對等物件）的包裝函式，以及擴充或併入新功能（衍生物件）的物件，通常是藉由保留額外的記憶體內部狀態。 之前，我們可以使用狀態（例如，藉由新增C#事件處理常式）來擴大對等物件，但我們會讓物件成為未參考，然後再進行收集。 這可能會導致稍後損毀（例如，如果目標-C 執行時間被回呼到 managed 物件）。
 

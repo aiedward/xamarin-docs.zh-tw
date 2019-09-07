@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e14008341e531844851452daeee4c730565a2843
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650497"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771780"
 ---
 # <a name="creating-the-platform-video-players"></a>建立平台視訊播放程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解決方案包含所有實作 Xamarin.Forms 視訊播放程式的程式碼。 它也包含一系列頁面，示範如何在應用程式中使用視訊播放程式。 所有 `VideoPlayer` 及其平台轉譯器都位於名為 `FormsVideoLibrary` 的專案資料夾內，且使用 `FormsVideoLibrary` 命名空間。 這應該可讓您輕鬆地將檔案複製到您的應用程式並參考類別。
 
@@ -45,7 +45,7 @@ namespace FormsVideoLibrary
 
 在 iOS 中實作視訊播放程式會涉及數個類別。 應用程式會先建立 [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController)，然後將 [`Player`](xref:AVKit.AVPlayerViewController.Player*) 屬性設為類型 [`AVPlayer`](xref:AVFoundation.AVPlayer) 的物件。 將視訊來源指派給播放程式時，還需要其他類別。
 
-與所有轉譯器相似，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs) 包含 `ExportRenderer` 屬性，可識別 `VideoPlayer` 檢視及轉譯器：
+像所有轉譯器而言，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs)包含`ExportRenderer`屬性，可識別`VideoPlayer`產生器檢視：
 
 ```csharp
 using System;
@@ -154,7 +154,6 @@ namespace FormsVideoLibrary.Droid
 從 Xamarin.Forms 2.5 開始，Android 轉譯器應包含具備 `Context` 引數的建構函式。
 
 `OnElementChanged` 覆寫會建立 `VideoView` 和 `RelativeLayout`，並設定 `VideoView` 的配置參數來將其置於 `RelativeLayout` 內的中央。
-
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -284,7 +283,6 @@ namespace FormsVideoLibrary.UWP
 所有包含在平台內的視訊播放程式都支援一組預設傳輸控制項，其中包含用於播放與暫停的按鈕、指出視訊中目前位置及移動到新位置的橫條。
 
 `VideoPlayer` 類別會定義名為 `AreTransportControlsEnabled` 的屬性，並將預設值設為 `true`：
-
 
 ```csharp
 namespace FormsVideoLibrary
@@ -463,7 +461,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 開始播放影片還需要一個屬性：這是參考影片檔案的關鍵 `Source` 屬性。 實作 `Source` 屬性的過程會在下一篇文章中描述：[播放 Web 視訊](web-videos.md)。
-
 
 ## <a name="related-links"></a>相關連結
 

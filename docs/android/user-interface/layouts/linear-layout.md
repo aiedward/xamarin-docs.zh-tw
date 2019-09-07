@@ -6,26 +6,26 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2018
-ms.openlocfilehash: 3171a89678e88a924198c3921d197c0f0378d29b
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 14e9b352a309de94a374b52141e3fd61715d8f75
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69522620"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764386"
 ---
 # <a name="xamarinandroid-linearlayout"></a>Xamarin. Android LinearLayout
 
 [`LinearLayout`](xref:Android.Widget.LinearLayout)是[`ViewGroup`](xref:Android.Views.ViewGroup)
 顯示子項的[`View`](xref:Android.Views.View)
-線性方向的元素 (垂直或水準)。
+線性方向的元素（垂直或水準）。
 
 您應該謹慎使用[`LinearLayout`](xref:Android.Widget.LinearLayout)。
-如果您開始嵌套多[`LinearLayout`](xref:Android.Widget.LinearLayout)個, 您可能會想要考慮使用[`RelativeLayout`](xref:Android.Widget.RelativeLayout)
+如果您開始嵌套多[`LinearLayout`](xref:Android.Widget.LinearLayout)個，您可能會想要考慮使用[`RelativeLayout`](xref:Android.Widget.RelativeLayout)
 只.
 
 啟動名為**HelloLinearLayout**的新專案。
 
-開啟**Resources/Layout/axml** , 並插入下列內容:
+開啟**Resources/Layout/axml** ，並插入下列內容：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -104,12 +104,12 @@ ms.locfileid: "69522620"
 ```
 
 請仔細檢查此 XML。 有根[`LinearLayout`](xref:Android.Widget.LinearLayout)
-將其方向定義為垂直&ndash;的所有子[`View`](xref:Android.Views.View)系 (其具有兩個) 會垂直堆疊。 第一個子系是另一個[`LinearLayout`](xref:Android.Widget.LinearLayout)
-這會使用水準方向, 而第二個子系為[`LinearLayout`](xref:Android.Widget.LinearLayout)
-, 其使用垂直方向。 這些嵌套[`LinearLayout`](xref:Android.Widget.LinearLayout)的每一個都包含數個[`TextView`](xref:Android.Widget.TextView)
-元素, 以其父系[`LinearLayout`](xref:Android.Widget.LinearLayout)所定義的方式彼此導向。
+將其方向定義為垂直&ndash;的所有子[`View`](xref:Android.Views.View)系（其具有兩個）會垂直堆疊。 第一個子系是另一個[`LinearLayout`](xref:Android.Widget.LinearLayout)
+這會使用水準方向，而第二個子系為[`LinearLayout`](xref:Android.Widget.LinearLayout)
+，其使用垂直方向。 這些嵌套[`LinearLayout`](xref:Android.Widget.LinearLayout)的每一個都包含數個[`TextView`](xref:Android.Widget.TextView)
+元素，以其父系[`LinearLayout`](xref:Android.Widget.LinearLayout)所定義的方式彼此導向。
 
-現在開啟**HelloLinearLayout.cs** , 並確定它會在中載入**Resources/Layout/axml**版面配置。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+現在開啟**HelloLinearLayout.cs** ，並確定它會在中載入**Resources/Layout/axml**版面配置。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 方法
 
 ```csharp
@@ -120,19 +120,18 @@ protected override void OnCreate (Bundle savedInstanceState)
 }
 ```
 
-[`Activity`](xref:Android.App.Activity) &ndash;)方法會載入資源識別碼`Resources.Layout.Main`所指定之的配置檔案, 這是指**Resources/layout/axml**設定檔案。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
+[`Activity`](xref:Android.App.Activity) &ndash;）方法會載入資源識別碼`Resources.Layout.Main`所指定之的配置檔案，這是指**Resources/layout/axml**設定檔案。 [`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)
 
-執行應用程式。 您應該會看到下列內容:
+執行應用程式。 您應該會看到下列內容：
 
-[![應用程式第一個 LinearLayout 的螢幕擷取畫面, 以水準方式排列, 第二垂直](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
+[![應用程式第一個 LinearLayout 的螢幕擷取畫面，以水準方式排列，第二垂直](linear-layout-images/helloviews1.png)](linear-layout-images/helloviews1.png#lightbox)
 
-請注意 XML 屬性如何定義每個視圖的行為。 嘗試使用不同的值進行`android:layout_weight`實驗, 以查看如何根據每個元素的權數來散發螢幕房地產。 如需如何進行的詳細資訊, 請參閱[常見的版面設定物件](https://developer.android.com/guide/topics/ui/declaring-layout.html)檔[`LinearLayout`](xref:Android.Widget.LinearLayout)
+請注意 XML 屬性如何定義每個視圖的行為。 嘗試使用不同的值進行`android:layout_weight`實驗，以查看如何根據每個元素的權數來散發螢幕房地產。 如需如何進行的詳細資訊，請參閱[常見的版面設定物件](https://developer.android.com/guide/topics/ui/declaring-layout.html)檔[`LinearLayout`](xref:Android.Widget.LinearLayout)
 `android:layout_weight`處理屬性。
-
 
 ## <a name="references"></a>參考
 
 - [`LinearLayout`](xref:Android.Widget.LinearLayout)
 - [`TextView`](xref:Android.Widget.TextView)
 
-_此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改, 並根據[創意 Commons 2.5 屬性授權](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。_
+_此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改，並根據[創意 Commons 2.5 屬性授權](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。_

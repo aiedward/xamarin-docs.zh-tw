@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: 9fe508d5b0f8d15a26f02b110763cc8e3f4a2e25
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9ae1860d127ea87e4db830d8a9d299a66fdd0f67
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292137"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766599"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>iOS 中的背景處理簡介
 
@@ -21,7 +21,6 @@ iOS 會非常緊密地控制背景處理，並提供三種方法來執行它：
 - **註冊背景工作**-如果應用程式需要完成重要的工作，它可以在應用程式移至背景時，要求 iOS 不要中斷工作。 例如，應用程式可能需要完成使用者的記錄，或完成下載大型檔案。
 - **註冊為需要背景的應用程式**-應用程式可以註冊為特定類型的應用程式，其中具有已知的特定背景處理需求，例如*音訊*、 *VoIP* 、*外部附件*、 *Newsstand* 、和*位置*。 這些應用程式允許連續的背景處理許可權，只要它們正在執行已註冊應用程式類型的參數內的工作即可。
 - **啟用背景更新**-應用程式可以透過*區域監視*或接聽*重大位置變更*來觸發背景更新。 從 iOS 7，應用程式也可以註冊，以使用*背景提取*或*遠端通知*來更新背景中的內容。
-
 
 ## <a name="application-states-and-application-delegate-methods"></a>應用程式狀態和應用程式委派方法
 
@@ -38,7 +37,6 @@ IOS 應用程式生命週期是應用程式狀態和方法之間的集合，可�
 - 已**暫**止-如果應用程式沒有任何可在背景中執行的程式碼，或所有程式碼都已完成，則 OS 將會*暫停*應用程式。 暫止應用程式的進程會保持運作狀態，但應用程式無法在此狀態下執行任何程式碼。
 - **返回未執行/終止（罕見）** -偶爾會終結應用程式的進程，而應用程式會回到 [*未*執行] 狀態。 這會發生在記憶體不足的情況下，或使用者手動終止應用程式時。
 
-
 因為多工支援的引進，iOS 很少會終止閒置的應用程式，而是會在記憶體中保持*擱置*的進程。 讓應用程式的進程保持運作，可確保應用程式會在使用者下一次開啟時快速啟動。 這也表示應用程式可以從*暫停*狀態自由地移回*背景執行*狀態，而不需要在系統資源上進行繪製。 iOS 7 利用新的 Api 來運用這項功能，讓應用程式在裝置進入睡眠狀態時暫停背景工作、直接從背景更新內容，而不需要使用者互動等等。 我們將在[IOS 背景處理技術](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/index.md)中討論新的 api。
 
 ## <a name="application-lifecycle-methods"></a>應用程式生命週期方法
@@ -50,7 +48,6 @@ IOS 應用程式生命週期是應用程式狀態和方法之間的集合，可�
 - `DidEnterBackground`-當應用程式進入背景執行狀態時呼叫，這個方法會提供大約5秒的應用程式來準備可能的終止。 使用此時間儲存使用者資料和工作，並從畫面中移除機密資訊。
 - `WillEnterForeground`-當使用者返回背景執行或暫止的應用程式，並將它啟動至前景時`WillEnterForeground` ，會呼叫。 這是讓應用程式解除凍結在期間`DidEnterBackground`儲存的任何狀態來準備前景的時間。  `OnActivated`將在這個方法完成之後立即呼叫。
 - `WillTerminate`-應用程式已關閉，而且其進程已終結。 只有在裝置上無法使用多工或作業系統版本、記憶體不足，或使用者手動終止背景執行應用程式時，才會呼叫此方法。 請注意，已終止的已暫止應用`WillTerminate`程式將不會呼叫。
-
 
 下圖說明應用程式狀態和生命週期方法如何彼此配合：
 
@@ -71,8 +68,6 @@ iOS 7 引進了數種功能，讓使用者能夠更充分掌控應用程式的�
 > [!IMPORTANT]
 > 應用程式切換器不會顯示背景執行與已擱置應用程式之間的差異。
 
-
-
 ### <a name="background-app-refresh-settings"></a>背景應用程式重新整理設定
 
 iOS 7 藉由允許使用者選擇不背景處理為[已註冊背景處理](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/registering-applications-to-run-in-background.md)的應用程式，來提高使用者對應用程式生命週期的控制權。 *這無法防止應用程式執行背景*工作。
@@ -84,4 +79,3 @@ iOS 7 藉由允許使用者選擇不背景處理為[已註冊背景處理](~/ios
 開發人員可以使用`BackgroundRefreshStatus` API 檢查背景重新整理應用程式狀態。 如需範例，請參閱[檢查背景重新整理設定配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/check_background_refresh_setting)。
 
 我們已涵蓋 iOS 應用程式生命週期的基本概念，以及用來控制應用程式生命週期的功能。 接下來，讓我們來瞭解 iOS 應用程式生命週期的實際運作。
-

@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: dcee5c6d5324be11f424739a20ba673817553e36
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: da877cc10829c4067596263b2a3676413103282d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287372"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765417"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>將繫結移轉至 Unified API
 
@@ -134,7 +134,6 @@ IntPtr Constructor (CGRect frame);
 
 在更新系結專案以使用整合 api 的最後一個步驟中，我們需要修改用來建立`MakeFile`專案或 Xamarin 專案類型的（如果我們是從 Visual Studio for Mac 內進行系結），並指示_btouch_系結針對統一的 Api，而不是傳統的 Api。
 
-
 ### <a name="updating-a-makefile"></a>更新 MakeFile
 
 如果我們使用 makefile 將系結專案建立成 Xamarin。DLL，我們必須包含`--new-style`命令列選項並呼叫`btouch-native` ，而不是`btouch`。
@@ -149,7 +148,6 @@ PROJECT_ROOT=XMBindingLibrarySample
 PROJECT=$(PROJECT_ROOT)/XMBindingLibrarySample.xcodeproj
 TARGET=XMBindingLibrarySample
 BTOUCH=/Developer/MonoTouch/usr/bin/btouch
-
 
 all: XMBindingLibrary.dll
 
@@ -214,8 +212,6 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 ## <a name="summary"></a>總結
 
 在本文中，我們示範了需要對現有的 Xamarin 系結專案所做的變更，以支援新的統一 Api 和64位裝置，以及建立新的64位相容版本的 API 所需的步驟。
-
-
 
 ## <a name="related-links"></a>相關連結
 

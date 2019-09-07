@@ -6,12 +6,12 @@ ms.assetid: F8A99E3F-2197-4399-AC81-F1DBAB5729C9
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: f0d51d9aa5cde17498124b74cc35011a6d942fae
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 230fe0f168b5718c2bc91cff6dbdc078b0e6834d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284836"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765935"
 ---
 # <a name="custom-linker-configuration"></a>自訂連結器組態
 
@@ -26,7 +26,6 @@ ms.locfileid: "70284836"
 
 - **針對 Android**將 [建置動作] 設定為 [LinkDescription]
 - **針對 iOS**將 [建置動作] 設定為 [LinkDescription]
-
 
 下列範例示範 XML 檔案看起來的樣子：
 
@@ -60,8 +59,6 @@ ms.locfileid: "70284836"
 第二個區段 (適用於 `My.Own.Assembly.dll`) 將可確保 `Foo` 類型會保留其所有欄位 (亦即 `preserve="fields"` 屬性) 及其所有建構函式 (亦即 IL 中所有名為 `.ctor` 的方法)。 `Bar` 類型會針對一個建構函式 (此建構函式會接受單一字串參數) 和針對特定字串欄位 `_blah` 保留特定的簽章 (不是名稱)。
 `My.Own.Namespace` 命名空間會保留其包含的所有類型。
 最後，任何全名 (包括命名空間) 與萬用字元模式 "My.Other\*" 相符的類型將會保留其所有欄位和方法。 萬用字元 `*` 可以多次包含在 "type fullname" 模式中。
-
-
 
 ## <a name="related-links"></a>相關連結
 

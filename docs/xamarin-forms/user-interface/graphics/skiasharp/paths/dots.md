@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9e12e901a4224580f72a4b92a4319e02a60efe46
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 2d02e79ff51468572250d1a7ce7c6d3da103c03a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68643015"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770520"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>點和虛線 SkiaSharp
 
@@ -26,7 +26,7 @@ SkiaSharp 可讓您繪製線條，不是純色，而是句點和連字號所組�
 
 即可達到這個*路徑效果*，這是執行個體[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)類別，您將設定為[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)屬性`SKPaint`。 您可以建立路徑的效果 （或合併路徑效果） 使用靜態建立方法所定義的其中一個`SKPathEffect`。 (`SKPathEffect`是其中一種六個效果支援 SkiaSharp; 有些則是一節中所述[ **SkiaSharp 效果**](../effects/index.md)。)
 
-若要繪製虛線的線條，您使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))靜態方法。 有兩個引數:第一個是`float`值的陣列, 表示點和虛線的長度, 以及它們之間的空格長度。 此陣列必須有偶數數目的項目，並應該有至少兩個項目。 （可以有零個元素陣列中的，但該導致一條實線。）如果有兩個項目，第一個點或虛線的長度而第二個間距的長度之前的下一個點或虛線。 如果有兩個以上的項目，則它們會依此順序： 虛線長度、 間距長度、 虛線長度、 間距長度等等。
+若要繪製虛線的線條，您使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))靜態方法。 有兩個引數：第一個是`float`值的陣列，表示點和虛線的長度，以及它們之間的空格長度。 此陣列必須有偶數數目的項目，並應該有至少兩個項目。 （可以有零個元素陣列中的，但該導致一條實線。）如果有兩個項目，第一個點或虛線的長度而第二個間距的長度之前的下一個點或虛線。 如果有兩個以上的項目，則它們會依此順序： 虛線長度、 間距長度、 虛線長度、 間距長度等等。
 
 一般而言，您會想要的虛線和間距長度筆觸寬度的倍數。 如果筆觸粗細是 10 個像素，比方說，然後 {10，10} 的陣列將會繪製一條虛線的點和間距是筆劃粗細長度相同。
 
@@ -165,7 +165,6 @@ UWP 螢幕顯示點和虛線筆劃列上限的`Round`。 `Round`筆觸端點通�
 本文至今尚未提到到目前為止進行的第二個參數`SKPathEffect.CreateDash`方法。 此參數之所以名為`phase`它是指在一行的開頭的點和虛線模式內的位移。 比方說，如果 dash 陣列為 {10，10} 和`phase`為 10，則一行的開頭有間距，而不是一個點。
 
 一個有趣的應用程式的`phase`參數處於動畫。 **動畫螺旋**頁面大致**Archimedean 螺旋**頁面上，不同之處在於[ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs)類別建立動畫`phase`參數使用Xamarin.Forms`Device.Timer`方法：
-
 
 ```csharp
 public class AnimatedSpiralPage : ContentPage

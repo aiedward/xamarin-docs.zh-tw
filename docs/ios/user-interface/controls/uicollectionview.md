@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: ae909827df5cc8f4ed5192d88ad067a5e69ce5d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 29483ca184786f8f0d2a7d0d9345608542d30e61
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282853"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768861"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin 中的集合視圖
 
@@ -43,7 +43,6 @@ iOS 提供名`UICollectionViewFlowLayout`為的配置類別，可讓您建立以
 - `ContentView`–此視圖包含儲存格所呈現的內容。 它會在螢幕上以最上層的迭置順序呈現。
 - `SelectedBackgroundView`–儲存格已內建支援選取專案。 這個視圖用來以視覺方式表示已選取儲存格。 當選取資料格時， `ContentView`它就會呈現在正下方。
 - `BackgroundView`–資料格也可以顯示背景，這是由`BackgroundView`呈現。 這個視圖會呈現在`SelectedBackgroundView`下方。
-
 
 藉由設定`ContentView` ，使其`BackgroundView`小於和`SelectedBackgroundView`， `BackgroundView` `SelectedBackgroundView`可以用來以視覺化方式呈現內容，而當選取資料格時，將會顯示，如下所示：
 
@@ -85,7 +84,6 @@ public class AnimalCell : UICollectionViewCell
 
  <a name="Supplementary_Views" />
 
-
 ## <a name="supplementary-views"></a>補充視圖
 
 [補充] 視圖是顯示與每個區段`UICollectionView`相關聯之資訊的視圖。 就像資料格一樣，補充視圖也是資料驅動的。 從資料來源呈現專案資料的地方，補充視圖會顯示區段資料，例如出版品介紹中的書籍分類，或音樂媒體櫃中的音樂類型。
@@ -117,7 +115,6 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
  <a name="Decoration_Views" />
 
-
 ## <a name="decoration-views"></a>裝飾視圖
 
 裝飾視圖是單純的視覺化視圖，可以在中`UICollectionView`顯示。 不同于儲存格和輔助視圖，它們不是資料驅動的。 它們一律會建立在版面配置的子類別中，之後可以變更為內容的版面配置。 例如，裝飾視圖可用來呈現以中`UICollectionView`的內容進行滾動的背景視圖，如下所示：
@@ -136,7 +133,6 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
     }
   }
  ```
-
 
 ## <a name="data-source"></a>資料來源
 
@@ -188,7 +184,6 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
  <a name="Delegate" />
 
-
 ### <a name="delegate"></a>Delegate - 委派
 
 類別會使用類型`UICollectionViewDelegate`的委派，以支援與中的內容`UICollectionView`互動。 `UICollectionView` 這可讓您控制：
@@ -197,11 +192,9 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 - 資料**格**醒目提示–判斷是否正在觸及儲存格。
 - 資料**格功能表**-針對儲存格顯示的功能表，以回應長按下手勢。
 
-
 如同資料來源， `UICollectionViewController`預設會將設定為的委派。 `UICollectionView`
 
  <a name="Cell_HighLighting" />
-
 
 #### <a name="cell-highlighting"></a>儲存格反白顯示
 
@@ -227,7 +220,6 @@ public override void ItemUnhighlighted (UICollectionView collectionView, NSIndex
 
  <a name="Disabling_Selection" />
 
-
 #### <a name="disabling-selection"></a>停用選取範圍
 
 預設會在中`UICollectionView`啟用選取專案。 若要停用選取`ShouldHighlightItem`專案，請覆寫並傳回 false，如下所示：
@@ -245,7 +237,6 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
  <a name="Cell_Menus" />
 
-
 #### <a name="cell-menus"></a>資料格功能表
 
 中的每個`UICollectionView`資料格都能夠顯示功能表，讓您可以選擇性地支援剪下、複製和貼上。 若要在資料格上建立 [編輯] 功能表：
@@ -254,13 +245,11 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 1. 針對`CanPerformAction`專案可執行檔每個動作覆寫並傳回 true，這將會是剪下、複製或貼上。
 1. 覆`PerformAction`寫以執行 [編輯]、[貼上] 操作。
 
-
 下列螢幕擷取畫面顯示長時間按下資料格時的功能表：
 
  [![](uicollectionview-images/04a-menu.png "這個螢幕擷取畫面顯示長時間按下儲存格時的功能表")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
-
 
 ## <a name="layout"></a>配置
 
@@ -269,7 +258,6 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
  <a name="Layout_Basics" />
 
-
 ### <a name="layout-basics"></a>版面配置基本概念
 
 中`UICollectionView`的版面配置定義于繼承自`UICollectionViewLayout`的類別中。 版面配置的執行負責為中的`UICollectionView`每個專案建立版面配置屬性。 有兩種方式可建立版面配置：
@@ -277,9 +265,7 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 - 使用內`UICollectionViewFlowLayout`建的。
 - 從`UICollectionViewLayout`繼承，以提供自訂的版面配置。
 
-
  <a name="Flow_Layout" />
-
 
 ### <a name="flow-layout"></a>流程配置
 
@@ -289,13 +275,11 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 - 建立的`UICollectionViewFlowLayout`實例：
 
-
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
 - 將實例傳遞至`UICollectionView`的函式：
-
 
 ```csharp
 simpleCollectionViewController = new SimpleCollectionViewController (layout);
@@ -306,7 +290,6 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
  [![](uicollectionview-images/05-layout-orientation.png "方向變更的範例")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
-
 
 #### <a name="section-inset"></a>區段內凹
 
@@ -323,7 +306,6 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
-
 #### <a name="subclassing-uicollectionviewflowlayout"></a>子類別化 UICollectionViewFlowLayout
 
 在 [版本] `UICollectionViewFlowLayout`中，您也可以將它設為子類別，以進一步自訂沿著一行的內容配置。 例如，這可以用來建立不會將資料格換成方格的配置，而是建立具有水準滾動效果的單一資料列，如下所示：
@@ -336,7 +318,6 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 - 覆`ShouldInvalidateLayoutForBoundsChange`寫，傳回 true，如此`UICollectionView`一來，當變更的界限時，就會重新計算資料格的版面配置。 在此情況下，這是為了確保套用到 centermost 儲存格的轉換程式碼將會在滾動期間套用。
 - 覆`TargetContentOffset`寫，讓 [centermost] 儲存格貼齊至`UICollectionView`的中央，做為「滾動」停止。
 - 覆`LayoutAttributesForElementsInRect`寫以傳回的`UICollectionViewLayoutAttributes`陣列。 每`UICollectionViewLayoutAttribute`個都包含如何配置特定專案的資訊，包括如其`Center` 、 `Size` `ZIndex`和`Transform3D`的屬性。
-
 
 下列程式碼顯示這類的實作為：
 
@@ -409,7 +390,6 @@ namespace SimpleCollectionView
 
  <a name="Custom_Layout" />
 
-
 ### <a name="custom-layout"></a>自訂版面配置
 
 除了使用`UICollectionViewFlowLayout`之外，您也可以直接從`UICollectionViewLayout`繼承，以完全自訂版面配置。
@@ -420,16 +400,13 @@ namespace SimpleCollectionView
 - `CollectionViewContentSize`–傳回用來顯示內容的區域大小。
 - `LayoutAttributesForElementsInRect`–如同稍早所示的 UICollectionViewFlowLayout 範例，這個方法是用來提供有關如何`UICollectionView`配置每個專案的資訊。 不過，與不同`UICollectionViewFlowLayout`的是，在建立自訂版面配置時，您可以選擇放置專案。
 
-
 例如，相同的內容可能會以迴圈配置呈現，如下所示：
 
  [![](uicollectionview-images/08-circle-layout.png "如下所示的迴圈自訂版面配置")](uicollectionview-images/08-circle-layout.png#lightbox)
 
 有關版面配置的強大功能，就是從類似方格的版面配置變更為水準滾動配置，然後再到這個迴圈版面配置，只需要提供給的`UICollectionView`版面配置類別才會變更。 中沒有任何`UICollectionView`內容，其委派或資料來源程式碼完全不會變更。
 
-
 ## <a name="changes-in-ios-9"></a>IOS 9 中的變更
-
 
 在 iOS 9 中，集合視圖（`UICollectionView`）現在可新增新的預設手勢辨識器和數個新的支援方法，以支援將專案的重新排列。
 
@@ -1045,7 +1022,6 @@ namespace CollectionView
       var end = unionRects.Count;
       List<UICollectionViewLayoutAttributes> attrs = new List<UICollectionViewLayoutAttributes> ();
 
-
       for (int i = 0; i < end; i++) {
         if (rect.IntersectsWith(unionRects[i])) {
           begin = i * (int)unionSize;
@@ -1235,7 +1211,6 @@ IOS 9 中的`UICollectionViewController`類別已進行下列變更或新增：
 - `GetTargetContentOffset`–用來取得指定集合視圖專案的位移。
 - `GetTargetIndexPathForMove`–取得`indexPath`拖曳作業之指定專案的。
 - `MoveItem`–移動清單中指定專案的順序。
-
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 

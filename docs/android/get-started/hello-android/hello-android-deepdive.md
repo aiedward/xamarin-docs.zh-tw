@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 2595ff23dcc0688c141f943d4ea61e13c970b7aa
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
-ms.translationtype: HT
+ms.openlocfilehash: c02e8e3c30508951df071810aff8db429a2f04ea
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68509582"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756711"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
 
@@ -63,7 +63,7 @@ _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.A
 
 Visual Studio 是 Microsoft 所提供之功能強大的 IDE。 其中包含完全整合的視覺化設計工具、含有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何搭配 Xamarin 外掛程式使用一些基本的 Visual Studio 功能。
 
-Visual Studio 會將程式碼組織成「方案」  和「專案」  。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
+Visual Studio 會將程式碼組織成「方案」和「專案」。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -72,7 +72,7 @@ Visual Studio 會將程式碼組織成「方案」  和「專案」  。 方案�
 
 Visual Studio for Mac 是免費的開放原始碼 IDE，類似 Visual Studio。 其中包含完全整合的視覺化設計工具、具有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何使用一些基本的 Visual Studio for Mac 功能。 如果您還不熟悉 Visual Studio for Mac，您可能想要參閱更深入的 [Visual Studio for Mac 簡介](https://docs.microsoft.com/visualstudio/mac/)。
 
-Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「方案」  和「專案」  。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
+Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「方案」和「專案」。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
 
 ::: zone-end
 
@@ -117,7 +117,6 @@ Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「�
 
 - **mipmap** &ndash; mipmap 目錄包含不同啟動程式圖示密度的可繪製檔案。 在預設範本中，drawable 目錄包含應用程式圖示檔 **Icon.png**。
 
-
 ::: zone pivot="windows"
 
 - **layout** &ndash; layout 目錄包含 _Android Designer 檔案_ (.axml)，其中定義每個畫面或活動的使用者介面。 此範本會建立一個預設配置，稱為 **activity_main.axml**。
@@ -141,7 +140,7 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 ### <a name="phoneword-scenario---starting-with-an-activity"></a>Phoneword 案例 - 開始使用活動
 
-當您第一次在模擬器或裝置中開啟 **Phoneword** 應用程式時，作業系統會建立第一個「活動」  。 活動是對應至單一應用程式畫面的特殊 Android 類別，負責繪製及提供使用者介面。 當 Android 應用程式的第一個活動時，它會載入整個應用程式：
+當您第一次在模擬器或裝置中開啟 **Phoneword** 應用程式時，作業系統會建立第一個「活動」。 活動是對應至單一應用程式畫面的特殊 Android 類別，負責繪製及提供使用者介面。 當 Android 應用程式的第一個活動時，它會載入整個應用程式：
 
 [![活動載入](hello-android-deepdive-images/01-activity-load-sml.png)](hello-android-deepdive-images/01-activity-load.png#lightbox)
 
@@ -181,11 +180,11 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 ::: zone-end
 
-當您設定 **TranslateButton** 的 `id` 屬性時，Android Designer 會將 **TranslateButton** 控制項對應至 `Resource` 類別，並為其指派 `TranslateButton` 的「資源識別碼」  。 此視覺控制項與類別的對應可讓您尋找並使用 **TranslateButton** 及應用程式程式碼中的其他控制項。 這在您分析提供控制項的程式碼時將會更詳細地說明。 您目前只需要知道控制項的程式碼表示已透過 `id` 屬性連結至設計工具中控制項的視覺表示。
+當您設定 **TranslateButton** 的 `id` 屬性時，Android Designer 會將 **TranslateButton** 控制項對應至 `Resource` 類別，並為其指派 `TranslateButton` 的「資源識別碼」。 此視覺控制項與類別的對應可讓您尋找並使用 **TranslateButton** 及應用程式程式碼中的其他控制項。 這在您分析提供控制項的程式碼時將會更詳細地說明。 您目前只需要知道控制項的程式碼表示已透過 `id` 屬性連結至設計工具中控制項的視覺表示。
 
 ### <a name="source-view"></a>原始碼檢視
 
-設計介面上定義的所有內容都會轉譯為 XML 以供 Xamarin.Android 使用。 Android Designer 提供原始碼檢視，其中包含從視覺化設計工具所產生的 XML。 您可以切換至設計工具檢視左下方的 [原始碼]  面板來檢視此 XML，如以下螢幕擷取畫面所示：
+設計介面上定義的所有內容都會轉譯為 XML 以供 Xamarin.Android 使用。 Android Designer 提供原始碼檢視，其中包含從視覺化設計工具所產生的 XML。 您可以切換至設計工具檢視左下方的 [原始碼] 面板來檢視此 XML，如以下螢幕擷取畫面所示：
 
 ::: zone pivot="windows"
 
@@ -212,7 +211,7 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 **Phoneword** 應用程式只有一個畫面 (活動)。 提供畫面的類別稱為 `MainActivity`，並位於 **MainActivity.cs** 檔案中。 名稱 `MainActivity` 在 Android 中沒有特殊意義 &ndash; 雖然慣例是將應用程式中的第一個活動命名為 `MainActivity`，但 Android 並不在乎是否將它命名為其他名稱。
 
-當您開啟 **MainActivity.cs** 時，您會看到 `MainActivity` 類別為 `Activity` 類別的「子類別」  ，而且活動會以 [Activity](xref:Android.App.ActivityAttribute) 屬性裝飾：
+當您開啟 **MainActivity.cs** 時，您會看到 `MainActivity` 類別為 `Activity` 類別的「子類別」，而且活動會以 [Activity](xref:Android.App.ActivityAttribute) 屬性裝飾：
 
 ```csharp
 [Activity (Label = "Phone Word", MainLauncher = true)]
@@ -226,7 +225,7 @@ public class MainActivity : Activity
 
 `MainLauncher` 屬性會告知 Android 在應用程式啟動時顯示此活動。 當您將更多活動 (畫面) 新增至應用程式時，此屬性會變得很重要，如 [Hello, Android 多重畫面](~/android/get-started/hello-android-multiscreen/index.md)指南所述。
 
-現在您已了解 `MainActivity` 的基本概念，接下來可以閱讀「活動開發週期」  簡介來深入探索活動程式碼。
+現在您已了解 `MainActivity` 的基本概念，接下來可以閱讀「活動開發週期」簡介來深入探索活動程式碼。
 
 ### <a name="activity-lifecycle"></a>活動開發週期
 
@@ -242,7 +241,7 @@ public class MainActivity : Activity
 
 - **OnPause** &ndash; 執行必須在每次活動離開裝置螢幕時進行的任何工作。
 
-當您將自訂程式碼新增至 `Activity` 中的開發週期方法時，您會「覆寫」  開發週期方法的「基底實作」  。 您可以進入現有的開發週期方法 (其中已有一些附加的程式碼)，然後以自己的程式碼擴充該方法。 您可以從方法內部呼叫基底實作，以確保原始程式碼在您的新程式碼之前執行。 下一節將說明此範例。
+當您將自訂程式碼新增至 `Activity` 中的開發週期方法時，您會「覆寫」開發週期方法的「基底實作」。 您可以進入現有的開發週期方法 (其中已有一些附加的程式碼)，然後以自己的程式碼擴充該方法。 您可以從方法內部呼叫基底實作，以確保原始程式碼在您的新程式碼之前執行。 下一節將說明此範例。
 
 活動開發週期是 Android 中很重要且複雜的一部分。 如果您想要在完成_使用者入門_系列之後深入了解活動，請閱讀[活動開發週期](~/android/app-fundamentals/activity-lifecycle/index.md)指南。 在本指南中，下一個重點會放在活動開發週期的第一個階段 `OnCreate`。
 
@@ -263,7 +262,7 @@ protected override void OnCreate (Bundle bundle)
 
 ::: zone pivot="windows"
 
-在 **Phoneword** 應用程式中，`OnCreate` 的第一項工作是載入在 Android Designer 中建立的使用者介面。 若要載入 UI，請呼叫 `SetContentView` 並傳遞配置檔案的「資源配置名稱」  ：**activity_main.axml**。 此配置位於 `Resource.Layout.activity_main` 中：
+在 **Phoneword** 應用程式中，`OnCreate` 的第一項工作是載入在 Android Designer 中建立的使用者介面。 若要載入 UI，請呼叫 `SetContentView` 並傳遞配置檔案的「資源配置名稱」：**activity_main.axml**。 此配置位於 `Resource.Layout.activity_main` 中：
 
 ```csharp
 SetContentView (Resource.Layout.activity_main);
@@ -274,13 +273,13 @@ SetContentView (Resource.Layout.activity_main);
 ::: zone-end
 ::: zone pivot="macos"
 
-在 **Phoneword** 應用程式中，`OnCreate` 的第一項工作是載入在 Android Designer 中建立的使用者介面。 若要載入 UI，請呼叫 `SetContentView` 並傳遞配置檔案的「資源配置名稱」  給它：**Main.axml**。 此配置位於 `Resource.Layout.Main` 中：
+在 **Phoneword** 應用程式中，`OnCreate` 的第一項工作是載入在 Android Designer 中建立的使用者介面。 若要載入 UI，請呼叫 `SetContentView` 並傳遞配置檔案的「資源配置名稱」給它：**Main.axml**。 此配置位於 `Resource.Layout.Main` 中：
 
 ```csharp
 SetContentView (Resource.Layout.Main);
 ```
 
-當 `MainActivity` 啟動時，它會根據 **Main.axml** 檔案的內容來建立檢視。 請注意，配置檔案名稱會對應到活動名稱 &ndash; *Main*.axml 是「主要」  活動的配置。 從 Android 的觀點來看這並不必要，但當您開始將更多畫面新增至應用程式時，您會發現此命名慣例可更輕鬆地配對程式碼檔案和配置檔案。
+當 `MainActivity` 啟動時，它會根據 **Main.axml** 檔案的內容來建立檢視。 請注意，配置檔案名稱會對應到活動名稱 &ndash; *Main*.axml 是「主要」活動的配置。 從 Android 的觀點來看這並不必要，但當您開始將更多畫面新增至應用程式時，您會發現此命名慣例可更輕鬆地配對程式碼檔案和配置檔案。
 
 ::: zone-end
 
@@ -331,14 +330,14 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 
 ::: zone pivot="windows"
 
-設定裝置之後，您可以部署到該裝置，方法是將它插入、從 [選取裝置]  對話方塊中選取它，然後啟動應用程式：
+設定裝置之後，您可以部署到該裝置，方法是將它插入、從 [選取裝置] 對話方塊中選取它，然後啟動應用程式：
 
 ![選取偵錯裝置](hello-android-deepdive-images/vs/06-select-device.png "選取偵錯裝置")
 
 ::: zone-end
 ::: zone pivot="macos"
 
-設定裝置之後，您可以部署到該裝置，方法是將它插入、按下 [Start (Play)] (啟動 (播放))  、從 [選取裝置]  對話方塊中選取它，然後按下 [確定]  ：
+設定裝置之後，您可以部署到該裝置，方法是將它插入、按下 [Start (Play)] (啟動 (播放))、從 [選取裝置] 對話方塊中選取它，然後按下 [確定]：
 
 [![選取偵錯裝置](hello-android-deepdive-images/xs/06-select-device-sml.png)](hello-android-deepdive-images/xs/06-select-device.png#lightbox)
 
@@ -409,15 +408,15 @@ Android 會選擇具有適當密度的圖示：
 _Google Play 服務_是一組附加元件程式庫，可讓 Android 開發人員利用來自 Google 的最新功能，例如 Google 地圖、Google 雲端通訊和應用程式內結帳。
 先前，所有 Google Play 服務程式庫的繫結都是由 Xamarin 以單一套件形式提供 &ndash; 從 Visual Studio for Mac 開始，您可以使用新的 [專案] 對話方塊，來選取要加入應用程式的 Google Play 服務套件。
 
-若要新增一或多個 Google Play 服務程式庫，請以滑鼠右鍵按一下您專案樹狀目錄中的 [套件]  節點，然後按一下 [Add Google Play Service...] (新增 Google Play 服務...)  ：
+若要新增一或多個 Google Play 服務程式庫，請以滑鼠右鍵按一下您專案樹狀目錄中的 [套件] 節點，然後按一下 [Add Google Play Service...] (新增 Google Play 服務...)：
 
 [![新增 Google Play 服務](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
-當 [Add Google Play Services] (新增 Google Play 服務)  對話方塊出現時，選取您想要新增至專案的套件 (Nuget)：
+當 [Add Google Play Services] (新增 Google Play 服務) 對話方塊出現時，選取您想要新增至專案的套件 (Nuget)：
 
 [![選取套件](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
-當您選取服務並按一下 [新增套件]  時，Visual Studio for Mac 會下載並安裝您選取的套件及其所需的任何相依 Google Play 服務套件。 在某些情況下，您可能會看到 [接受授權]  對話方塊，您必須按一下 [接受]  才能安裝套件：
+當您選取服務並按一下 [新增套件] 時，Visual Studio for Mac 會下載並安裝您選取的套件及其所需的任何相依 Google Play 服務套件。 在某些情況下，您可能會看到 [接受授權] 對話方塊，您必須按一下 [接受] 才能安裝套件：
 
 [![接受授權](hello-android-deepdive-images/xs/10-license-acceptance-sml.png)](hello-android-deepdive-images/xs/10-license-acceptance.png#lightbox)
 

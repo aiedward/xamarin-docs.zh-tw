@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 63530595d9892ed99b7eace3d248e1bc0d0b37d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f0cc04896b5c6e9b620b24c84d5c9d2a09b9cf4a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288409"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752630"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin 中的應用程式內購買
 
@@ -55,7 +55,6 @@ iOS 應用程式可以使用 StoreKit 來銷售數位產品或服務– iOS 所�
 - **商店套件**–用來建立應用程式內購買功能之類別的說明。
 - **編碼您的應用程式以進行購買**–範例說明如何將應用程式內建購買至 Xamarin iOS 應用程式。
 - **報告**–概述透過 iTunes Connect 提供的統計資料。
-
 
 ## <a name="related-links"></a>相關連結
 

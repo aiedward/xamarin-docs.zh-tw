@@ -1,18 +1,18 @@
 ---
 title: 第 16 章的摘要。 資料繫結
-description: 使用 Xamarin.Forms 建立行動應用程式：第 16 章的摘要。 資料繫結
+description: 使用 Xamarin 建立 Mobile Apps：第 16 章的摘要。 資料繫結
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: df3cee3fe71553b63bf4b050cad141b66ad98a06
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334171"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771096"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章的摘要。 資料繫結
 
@@ -138,8 +138,6 @@ ms.locfileid: "61334171"
 相反地[ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml)檔案包含透過資料繫結控制項的視覺效果的所有標記，在`Label`項目為基礎的程式碼後置檔案中定義的屬性。
 
 [ **NewCheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo)範例會示範`NewCheckBox`自訂控制項。
-
-
 
 ## <a name="related-links"></a>相關連結
 

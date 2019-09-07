@@ -5,12 +5,12 @@ description: 本檔會比較 Xamarin. Forms 和 WPF 應用程式的應用程式�
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: 8c009c079842a6a110212693a56489ca2ad5d263
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d1c207672baf37c91d39fca1d9f628d85971577
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290380"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765910"
 ---
 # <a name="wpf-vs-xamarinforms-app-lifecycle"></a>WPF 與Xamarin.Forms App 生命週期
 
@@ -87,7 +87,6 @@ Xamarin 主要面向行動案例。 如此一來，當使用者與其互動時�
 |暫停/遺失焦點|Window.OnDeactivated|Page.OnSleep|
 |已啟用/獲得焦點|Window.OnActivated|Page. OnResume|
 |Closed|OnClosing + Window. OnClosed|N/A|
-
 
 同時也支援隱藏/顯示子控制項，在 WPF 中，它是三個狀態的`IsVisible`屬性（可見、隱藏和折迭）。 在 [ `IsVisible` Xamarin] 中，它只會透過屬性顯示或隱藏。
 

@@ -6,30 +6,26 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: f8b8f13f323f404554ca73c3e75c23713e0fbe35
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288852"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758149"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第3部分-設定 Xamarin 跨平臺解決方案
 
 不論使用的平臺為何，Xamarin 專案都使用相同的方案檔格式（Visual Studio **.sln**檔案格式）。 解決方案可以在開發環境之間共用，即使無法載入個別專案（例如 Visual Studio for Mac 中的 Windows 專案）。
 
-
-
 建立新的跨平臺應用程式時，第一個步驟是建立空白的解決方案。 本節說明接下來會發生的情況：設定專案以建立跨平臺行動應用程式。
 
  <a name="Sharing_Code" />
-
 
 ## <a name="sharing-code"></a>共用程式碼
 
 如需如何跨平臺執行程式碼共用的詳細說明，請參閱程式[代碼共用選項](~/cross-platform/app-fundamentals/code-sharing.md)檔。
 
  <a name="Shared_Asset_Projects" />
-
 
 ### <a name="shared-projects"></a>共用的專案
 
@@ -39,7 +35,6 @@ ms.locfileid: "70288852"
 
  <a name="Portable_Class_Libraries" />
 
-
 ### <a name="portable-class-libraries-pcl"></a>可攜式類別庫 (PCL)
 
 在過去，.NET 專案檔（和產生的元件）都是以特定的 framework 版本為目標。 這會防止專案或元件由不同的架構所共用。
@@ -48,17 +43,13 @@ ms.locfileid: "70288852"
 
 您可以閱讀更多有關 Xamarin 的[可攜性類別庫支援](~/cross-platform/app-fundamentals/pcl.md)的資訊，並遵循其中的指示來查看[TaskyPortable 範例](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)的運作方式。
 
-
 ### <a name="net-standard"></a>.NET Standard
 
 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)專案在2016中引進，可讓您輕鬆地跨平臺共用程式碼，產生可跨 Windows、Xamarin 平臺（IOS、Android、Mac）和 Linux 使用的元件。
 
 .NET Standard 程式庫可建立及使用，就像 Pcl 一樣，不同的是，每個版本（1.0 到1.6）中可用的 Api 更容易探索，而且每個版本都與較低版本號碼回溯相容。
 
-
-
  <a name="Populating_the_Solution" />
-
 
 ## <a name="populating-the-solution"></a>填入解決方案
 
@@ -68,9 +59,7 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 - **核心專案**–在一個位置撰寫可重複使用的程式碼，以在不同的平臺之間共用。 使用封裝的原則，盡可能隱藏執行詳細資料。
 - **平臺專屬的應用程式專案**-使用可重複使用的程式碼，盡可能不結合。 平臺特定功能會在此層級新增，並以核心專案中公開的元件為基礎。
 
-
  <a name="Core_Project" />
-
 
 ### <a name="core-project"></a>核心專案
 
@@ -83,9 +72,7 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 - **服務存取層**–提供雲端服務給應用程式的選擇性層。 包含的程式碼可存取遠端網路資源（web 服務、影像下載等），以及可能的結果快取。
 - **商務層**–模型類別的定義，以及對平臺特定應用程式公開功能的外觀或管理員類別。
 
-
  <a name="Platform-Specific_Application_Projects" />
-
 
 ### <a name="platform-specific-application-projects"></a>平臺特定應用程式專案
 
@@ -96,9 +83,7 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 - **應用層**-商務層物件與使用者介面之間的平臺特定功能和系結/轉換。
 - **使用者介面層**–螢幕、自訂使用者介面控制項、驗證邏輯的呈現方式。
 
-
 <a name="Example" />
-
 
 ### <a name="example"></a>範例
 
@@ -110,9 +95,7 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 
  ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "共用專案包含與每個架構層（商務、服務、資料和資料存取程式碼）相關的程式碼")
 
-
  <a name="Project_References" />
-
 
 ## <a name="project-references"></a>專案參考
 
@@ -123,16 +106,13 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 
 ![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "應用程式專案中 Shared 專案的每個參考") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "應用程式專案中每個參考共用專案")
 
-
 案例研究中提供如何結構化專案的特定範例。
 
  <a name="Adding_Files" />
 
-
 ## <a name="adding-files"></a>新增檔案
 
  <a name="Build_Action" />
-
 
 ### <a name="build-action"></a>建置動作
 
@@ -145,11 +125,9 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 - **Windows 專案中的 XAML**檔案–組建動作：頁面
 - **XAMARIN XAML**檔案–組建動作：內嵌資源
 
-
 通常，IDE 會偵測檔案類型，並建議正確的組建動作。
 
  <a name="Case_Sensitivity" />
-
 
 ### <a name="case-sensitivity"></a>區分大小寫
 

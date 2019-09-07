@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 5a6f950ec7c9af0422beeb2d1af2be602fcaf947
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 9ef13816dc1bc11eab0105ec223c2ef98366e4e5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50113803"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753994"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>將 Xamarin.Android 安裝為系統應用程式
 
@@ -50,16 +50,13 @@ _本指南會討論系統應用程式與使用者應用程式的差異，以及�
 
    在先前的螢幕擷取畫面中，只有一個受支援的 ABI (**armeabi-v7a**) 保有兩個應用程式需要的 **.so** 檔案。 請注意，只需要擷取適用於裝置或裝置 ROM 目標架構的 ABI 檔案，也就是請不要將 **x86** 資料夾中的 **.so** 檔案複製到 **armeabi-v7a** 裝置或 ROM。
 
-3. **將 .so 檔案複製到 /system/lib** &ndash; 將在先前步驟中從 APK 擷取的 **.so** 檔案複製到自訂 ROM 上的 **/system/lib/**。
+3. **將 .so 檔案複製到 /system/lib** &ndash; 將在先前步驟中從 APK 擷取的 **.so** 檔案複製到自訂 ROM 上的 **/system/lib/** 。
 
 4. **將 APK 檔案複製到 /system/app** &ndash; 最後一個步驟便是將 APK 檔案複製到 ROM 上的 **/system/app** 資料夾。
-
 
 ## <a name="summary"></a>總結
 
 本指南討論_系統應用程式_與_使用者應用程式_的差異，並說明如何將 Xamarin.Android 應用程式安裝為系統應用程式。
-
-
 
 ## <a name="related-links"></a>相關連結
 

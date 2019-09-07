@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: c5271aab5342f065694e598bd5c2892ef1f18aeb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 04d96dad455cbcf8360f12ee97a0540e7e746d62
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656666"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771466"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>將效果參數當作 Common Language Runtime 屬性傳遞
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 _Common Language Runtime (CLR) 屬性可用來定義不會回應執行階段屬性變更的效果參數。本文示範如何使用 CLR 屬性將參數傳遞至效果。_
 
@@ -237,7 +237,6 @@ namespace EffectsDemo.UWP
 ## <a name="summary"></a>總結
 
 本文示範了如何使用 CLR 屬性將參數傳遞至效果。 CLR 屬性可用來定義不會回應執行階段屬性變更的效果參數。
-
 
 ## <a name="related-links"></a>相關連結
 

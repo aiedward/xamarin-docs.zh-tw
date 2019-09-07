@@ -1,18 +1,18 @@
 ---
 title: 第 23 章的摘要。 觸發程序和行為
-description: 使用 Xamarin.Forms 建立行動應用程式：第 23 章的摘要。 觸發程序和行為
+description: 使用 Xamarin 建立 Mobile Apps：第 23 章的摘要。 觸發程序和行為
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: ddbb96836fa1aa9611701bd7d645d9e85ad28027
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 8a1274a8447f49ce39f9c92703bbaec9e875b9e9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61332088"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760586"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第 23 章的摘要。 觸發程序和行為
 
@@ -183,8 +183,6 @@ A [ `RotateAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/
 最後一個範例中， [ **MultiColorSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/MultiColorSliders)可讓您使用選項按鈕的三個不同的色彩選取範圍檢視之間切換。 三個檢視淡入和登出使用[ `FadeEnableAction` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/FadeEnableAction.cs)中[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)程式庫。
 
 程式也會以直向和橫向方向變更回應[ `GridOrientationBehavior` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/GridOrientationBehavior.cs)中**Xamarin.FormsBook.Toolkit**程式庫。
-
-
 
 ## <a name="related-links"></a>相關連結
 

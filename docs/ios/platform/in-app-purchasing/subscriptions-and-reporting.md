@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 7f455d2164573d68db0a9c764f2b2cef5cc6d739
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284045"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752681"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin 中的訂閱和報告
 
@@ -28,7 +28,6 @@ ms.locfileid: "70284045"
 - 執行總覽
 - 通常應該使用伺服器提供的工作流程和受控的取用產品來執行非續訂訂閱。 
 
-
 ## <a name="about-free-subscriptions"></a>關於免費訂閱
 
 免費訂用帳戶可讓開發人員將免費內容放在 Newsstand apps 中（不能用於非 Newsstand 應用程式）。 免費訂用帳戶啟動後，即可在所有使用者的裝置上使用。 免費訂閱永不過期;它們只會在應用程式卸載時結束。
@@ -36,7 +35,6 @@ ms.locfileid: "70284045"
 ### <a name="implementation-overview"></a>執行總覽
 
 免費訂閱的運作方式很像自動可續訂訂閱。 應用程式必須擁有免費的訂用帳戶產品，才能在 iTunes Connect 中進行「購買」。 當使用者購買時，免費的訂用帳戶購買應驗證為自動可續訂的訂用帳戶產品。 可以還原免費的訂用帳戶交易。
-
 
 ## <a name="about-auto-renewable-subscriptions"></a>關於自動可續訂訂閱
 
@@ -53,7 +51,7 @@ ms.locfileid: "70284045"
 從 iTunes Connect 首頁選取 **我的應用程式**：   
    
  [![](subscriptions-and-reporting-images/image2.png "選取 [我的應用程式]")](subscriptions-and-reporting-images/image2.png#lightbox)  
- 
+
 選取應用程式，然後按一下 [**在應用程式內購買**] 索引標籤：
 
 [![](subscriptions-and-reporting-images/image6.png "按一下 [應用程式內購買] 索引標籤")](subscriptions-and-reporting-images/image6.png#lightbox)
@@ -63,10 +61,8 @@ ms.locfileid: "70284045"
  [![](subscriptions-and-reporting-images/image40.png "選取 [查看] 或 [產生共用密碼]")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "產生共用密碼")](subscriptions-and-reporting-images/image41.png#lightbox)   
-   
-   
-   
- 若要使用共用密碼，請在驗證自動可續訂訂用帳戶的應用程式內購買回條時，將它包含在傳送至 Apple 伺服器的 JSON 承載中，如下所示：
+
+若要使用共用密碼，請在驗證自動可續訂訂用帳戶的應用程式內購買回條時，將它包含在傳送至 Apple 伺服器的 JSON 承載中，如下所示：
 
 ```csharp
 {
@@ -95,10 +91,8 @@ ms.locfileid: "70284045"
 #### <a name="restoring-auto-renewable-subscriptions"></a>還原自動可續訂訂閱
 
 您將會得到多個交易，也就是原始的購買交易，再加上訂閱更新的每一段時間的個別交易。 您需要追蹤開始日期和詞彙，以瞭解有效期間。   
-   
-   
-   
- SKPaymentTransaction 物件不包含訂用帳戶期限–您應該針對每個詞彙使用不同的產品識別碼，並撰寫可從交易的購買日期推斷訂閱期間的程式碼。
+
+SKPaymentTransaction 物件不包含訂用帳戶期限–您應該針對每個詞彙使用不同的產品識別碼，並撰寫可從交易的購買日期推斷訂閱期間的程式碼。
 
 #### <a name="testing-auto-renewal"></a>測試自動續約
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 2d62651f85aab49c8e28b54053aba4882961c35b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6dbd0b3e7d14307a3b9e7de552e2d59e0fbbcaa4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292504"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768551"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>在 Xamarin 中使用 tvOS 文字和搜尋欄位
 
@@ -781,8 +781,6 @@ public override void ViewDidAppear (bool animated)
 ## <a name="summary"></a>總結
 
 本文涵蓋在 tvOS 應用程式內設計和使用文字和搜尋欄位。 它示範如何在介面設計工具中建立文字和搜尋集合內容，並示範了兩種不同的方式，可讓您在 tvOS 中向使用者呈現搜尋欄位。
-
-
 
 ## <a name="related-links"></a>相關連結
 

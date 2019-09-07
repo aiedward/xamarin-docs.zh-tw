@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/19/2016
-ms.openlocfilehash: cebacf6d845affe017e289fe4522a3b7c76d2942
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7ac96bce706d42d4334004e62762ff21231f0162
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291786"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766871"
 ---
 # <a name="watchos-user-interface-controls-in-xamarin"></a>在 Xamarin 中 watchOS 使用者介面控制項
 
@@ -22,7 +22,7 @@ ms.locfileid: "70291786"
 
 所有控制項的程式設計名稱前面會加`WKInterface`上（例如 `WKInterfaceLabel`, `WKInterfaceButton`).
 
-|控制項|描述|螢幕擷取畫面|
+|控制項|說明|螢幕擷取畫面|
 |---|---|---|
 |ThisAddIn|使用`SetText`和其他屬性來控制標籤控制項中文字的外觀。 `NSAttributedString`也支援。<br />[目錄程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/LabelDetailController.cs)|![](Images/label.png)|
 |按鈕|在分鏡腳本中建立並設定屬性。 Ctrl + 拖曳以加入`Action` ，以在按下時執行處理常式。<br />[目錄程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/ButtonDetailController.cs)|![](Images/button.png)|
@@ -39,7 +39,6 @@ ms.locfileid: "70291786"
 |文字輸入|`PresentTextInputController` 使用`WKTextInputMode`和列舉。<br />[文字輸入檔](~/ios/watchos/user-interface/text-input.md)<br />[目錄程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/TextInputController.cs)|![](Images/textinput.png)|
 |Digital Crown|Digital Crown 可用來驅動選擇器，也可以在程式碼中追蹤它的旋轉。<br />[目錄程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/CrownDetailController.cs)|![](Images/digital-crown.png)|
 |軌跡|有四種類型的手勢辨識可以加入場景中：點一下、滑動、Pan 和 LongPress。<br />[目錄程式碼](https://github.com/xamarin/ios-samples/blob/master/watchOS/WatchKitCatalog/WatchKit3Extension/GestureDetailController.cs)|![](Images/gestures.png)|
-
 
 ## <a name="related-links"></a>相關連結
 

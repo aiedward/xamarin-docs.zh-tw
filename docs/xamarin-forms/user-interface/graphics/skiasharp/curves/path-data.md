@@ -7,12 +7,12 @@ ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/24/2017
-ms.openlocfilehash: a645ef4ed55c8b4c78bad94865777088f62f1175
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 467863dba2f5757e0590ccf64927ae2af292f285
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647397"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770564"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp SVG 路徑資料
 
@@ -20,7 +20,7 @@ ms.locfileid: "68647397"
 
 _定義使用可擴充的向量圖形格式的文字字串的路徑_
 
-          [
+[
           `SKPath`
           ](xref:SkiaSharp.SKPath)類別支援可縮放向量圖形 (SVG) 規格所建立的格式中的從文字字串的完整路徑物件的定義。 您會在本文稍後看到可以代表文字字串中的這類的整個路徑的方式：
 
@@ -363,7 +363,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[**點和虛線**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)篇文章討論如何使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)方法用來建立一條虛線。 第一個引數是`float`陣列, 通常有兩個元素:第一個元素是虛線的長度, 而第二個元素是虛線之間的間距。 當`StrokeCap`屬性設定為`SKStrokeCap.Round`，接著虛線的兩端筆劃寬度，由條虛線的圓角的端點有效延長的虛線長度。 因此，將第一個陣列元素設定為 0，會建立一條虛線。
+[**點和虛線**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)篇文章討論如何使用[ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash*)方法用來建立一條虛線。 第一個引數是`float`陣列，通常有兩個元素：第一個元素是虛線的長度，而第二個元素是虛線之間的間距。 當`StrokeCap`屬性設定為`SKStrokeCap.Round`，接著虛線的兩端筆劃寬度，由條虛線的圓角的端點有效延長的虛線長度。 因此，將第一個陣列元素設定為 0，會建立一條虛線。
 
 這些點之間的距離係由第二個陣列項目。 如您所見，這些兩個`SKPaint`物件用來繪製圓形半徑為 90 的單位。 此圓形的圓周是因此 180π，這表示 60 分鐘標記必須出現每 3 π 單位，這是中的第二個值`float`陣列中`minuteMarkPaint`。 12 小時標記必須顯示每個 15π 單位，它在第二個是值`float`陣列。
 
@@ -430,7 +430,6 @@ public class PrettyAnalogClockPage : ContentPage
 特殊項目是第二個手中，不過。 因為在更新時鐘每隔 16 毫秒，`Millisecond`屬性`DateTime`值可能可以使用第二個手動動畫而不是一個移動不連續跳動的掃掠到第二個的第二個。 但這段程式碼不允許的移動更為順暢。 相反地，它會使用 Xamarin.Forms [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn)並[ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut)動畫的 easing 函式，針對不同種類的移動。 這些 easing 函式會導致 jerkier 方式移動秒針&mdash;提取回稍微移動，並再稍微過度著眼於其目的地，效果，不幸的無法重現這些靜態的螢幕擷取畫面中：
 
 [![](path-data-images/prettyanalogclock-small.png "很類比時鐘頁面的三個螢幕擷取畫面")](path-data-images/prettyanalogclock-large.png#lightbox "很類比時鐘頁面的三個螢幕擷取畫面")
-
 
 ## <a name="related-links"></a>相關連結
 

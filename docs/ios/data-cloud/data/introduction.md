@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 71a1b4df1d57d489efd7f3171a8c36aac1017cca
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281709"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767023"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin iOS 應用程式中的資料儲存簡介
 
@@ -25,7 +25,6 @@ ms.locfileid: "70281709"
 - **序列化資料檔案**–物件可以在檔案系統上保存為 XML 或 JSON。 .NET framework 包含的程式庫可讓您輕鬆地序列化和還原序列化物件。 使用適當的名稱來組織資料檔案。
 - **資料庫**-SQLite 資料庫引擎是可用的 iOS，適用于儲存您需要查詢、排序或以其他方式操作的結構化資料。 資料庫儲存體適用于具有許多屬性的資料清單。
 - **影像檔**案–雖然可以將二進位資料儲存在行動裝置上的資料庫中，但建議您直接將它們儲存在檔案系統中。 如有需要，您可以將檔案名儲存在資料庫中，以將影像與其他資料產生關聯。 處理大型影像或許多影像時，最好是規劃快取策略來刪除您不再需要的檔案，以避免耗用所有使用者的儲存空間。
-
 
 如果資料庫是您應用程式的正確儲存機制，則本檔的其餘部分將討論如何在 Xamarin 平臺上使用 SQLite。
 
@@ -40,7 +39,6 @@ ms.locfileid: "70281709"
 - 具有現有資料庫技能的開發人員可以利用其知識來設計資料庫和資料存取程式碼。
 - 來自已連線應用程式之伺服器元件的資料模型，可能會在行動應用程式中重複使用（全部或部分）。
 
-
 ## <a name="sqlite-database-engine"></a>SQLite 資料庫引擎
 
 SQLite 是 Apple 針對其行動平臺採用的開放原始碼資料庫引擎。 SQLite 資料庫引擎內建于 iOS 中，因此開發人員不需要額外的工作就能利用它。 SQLite 適用于跨平臺行動裝置開發，因為：
@@ -50,13 +48,11 @@ SQLite 是 Apple 針對其行動平臺採用的開放原始碼資料庫引擎。
 - 跨平臺使用檔案格式很容易：不論是32或64位，以及大型或小到小的系統。
 - 它會實行大部分的 SQL92 標準。
 
-
 因為 SQLite 的設計是小型且快速的，所以它的用法有一些注意事項：
 
 - 不支援某些外部聯結語法。
 - 僅支援資料表重新命名和 ADDCOLUMN。 您無法對您的架構執行其他修改。
 - Views 是唯讀的。
-
 
 您可以在網站上深入瞭解 SQLite- [SQLite.org](http://SQLite.org) -不過，使用 Sqlite 搭配 Xamarin 所需的所有資訊都包含在本檔和相關聯的範例中。 SQLite 資料庫引擎內建于所有版本的 iOS。
 雖然本章未涵蓋，但 SQLite 也可以在 Windows Phone 和 Windows 應用程式上使用。
@@ -65,8 +61,6 @@ SQLite 是 Apple 針對其行動平臺採用的開放原始碼資料庫引擎。
 
 SQLite 也可以在 Windows 平臺上使用，雖然本檔未涵蓋這些平臺。
 閱讀更多[Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)和[Tasky Pro](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/case_study%3A_tasky)案例研究，並回顧[Tim Heuer 的 blog](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

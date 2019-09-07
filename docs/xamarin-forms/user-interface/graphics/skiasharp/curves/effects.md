@@ -7,12 +7,12 @@ ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: f43c4dac1811a54ee0ceeb70e2b2b1835a5ca030
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 82755a6a87ec0a47c10aac7078beeab6e14c218d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228251"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759387"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 路徑效果
 
@@ -794,13 +794,13 @@ public class HatchFillPage : ContentPage
 }
 ```
 
-如果您仔細看一下結果，您會看到紅色和藍色的規劃線條不精確地限制圓角矩形。 （這是很顯然是基礎 Skia 程式碼的特性）。如果不滿意, 則會以綠色顯示對角影線線的替代方法:圓角矩形會當做裁剪路徑使用, 而影線線條則會在整個頁面上繪製。
+如果您仔細看一下結果，您會看到紅色和藍色的規劃線條不精確地限制圓角矩形。 （這是很顯然是基礎 Skia 程式碼的特性）。如果不滿意，則會以綠色顯示對角影線線的替代方法：圓角矩形會當做裁剪路徑使用，而影線線條則會在整個頁面上繪製。
 
 `PaintSurface`處理常式的呼叫，以便您可以看到紅色和藍色的規劃線條與差異，只是繪製圓角的矩形，結束：
 
 [![影線填滿頁的三向螢幕擷取畫面](effects-images/hatchfill-small.png)](effects-images/hatchfill-large.png#lightbox)
 
-Android 畫面看起來不像這樣:螢幕擷取畫面的縮放會導致精簡的紅線和精簡空間合併成看似較寬的紅線和更寬的空間。
+Android 畫面看起來不像這樣：螢幕擷取畫面的縮放會導致精簡的紅線和精簡空間合併成看似較寬的紅線和更寬的空間。
 
 ## <a name="filling-with-a-path"></a>路徑填滿
 
@@ -942,7 +942,6 @@ public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, U
 您可以使用此路徑效果繪製或填滿。 行分成連接區段-其中的約略長度由`segLength`— 和擴充在不同的方向。 從原始的列差的範圍由`deviation`。
 
 最後一個引數是用來產生用於影響的虛擬隨機序列的種子。 抖動效果看起來稍有不同的不同的種子。 引數的預設值是零，表示結果是相同每當您執行程式。 如果您想不同抖動，畫面會重新繪製時，您可以設定種子`Millisecond`屬性`DataTime.Now`（舉例來說） 值。
-
 
 **抖動實驗**頁面可讓您試驗不同的值，在繪製矩形：
 
@@ -1086,7 +1085,7 @@ public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resS
 
 只需要前兩個引數。 方法會存取所參考的路徑`src`引數，修改路徑資料中的筆劃屬性為基礎`SKPaint`物件 (包括`PathEffect`屬性)，然後將結果載入`dst`路徑。 `resScale`參數可讓您可建立較小的目的地路徑的有效位數減少和`cullRect`引數可以排除外部矩形的輪廓。
 
-此方法的其中一個基本用法並不包含路徑效果:`Style` `SKPaintStyle.Stroke` `PathEffect` `GetFillPath`如果物件將其屬性設定為, 而且沒有其設定, 則會建立代表來源路徑*外框*的路徑, 如同已由`SKPaint`繪製屬性。
+此方法的其中一個基本用法並不包含路徑效果：`Style` `SKPaintStyle.Stroke` `GetFillPath` `PathEffect`如果物件將其屬性設定為，而且沒有其設定，則會建立代表來源路徑外框的路徑，如同已由`SKPaint`繪製屬性。
 
 例如，如果`src`路徑是簡單的圓形的半徑 500，而`SKPaint`物件會指定筆劃寬度為 100，則`dst`路徑會變成兩個的同心圓，其中一個半徑為 450，而另一個半徑為 550。 方法會呼叫`GetFillPath`因為填入此`dst`路徑等同於繪製`src`路徑。 但您也可以繪製`dst`查看路徑外框輪廓的路徑。
 
@@ -1412,8 +1411,6 @@ public class DashedHatchLinesPage : ContentPage
 [![虛線影線線頁的三向螢幕擷取畫面](effects-images/dashedhatchlines-small.png)](effects-images/dashedhatchlines-large.png#lightbox)
 
 既然您已了解範圍從簡單的路徑效果點和虛線奇怪的組合，以使用您的想像力，並看看您可以建立。
-
-
 
 ## <a name="related-links"></a>相關連結
 

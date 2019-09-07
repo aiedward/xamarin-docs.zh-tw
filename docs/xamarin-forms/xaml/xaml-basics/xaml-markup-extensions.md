@@ -7,12 +7,12 @@ ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
-ms.openlocfilehash: 620a986ea9c5a6792d321b0c89dae936ffa256da
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 3eb02dbc4e77fcd8b237b85e21e577d0c4566794
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227919"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772733"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -403,7 +403,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 請注意，關鍵字`clr-namespace`後面接著冒號及.NET 命名空間名稱，後面接著一個分號，關鍵字`assembly`，等號，以及組件名稱。
 
-是的之後要加冒號`clr-namespace`等號後面，但`assembly`。 語法是故意以這種方式定義的:大部分的 XML 命名空間宣告都會參考開始 uri 配置名稱的 uri `http`, 例如, 其後面一律會接著冒號。 `clr-namespace`這個字串的一部分要模擬這個慣例。
+是的之後要加冒號`clr-namespace`等號後面，但`assembly`。 語法是故意以這種方式定義的：大部分的 XML 命名空間宣告都會參考開始 uri 配置名稱的 uri `http`，例如，其後面一律會接著冒號。 `clr-namespace`這個字串的一部分要模擬這個慣例。
 
 中包含下列命名空間宣告**StaticConstantsPage**範例。 請注意，`BoxView`維度會設為`Math.PI`和`Math.E`，但縮放為 100 倍：
 
@@ -547,7 +547,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-這可能是您從這個範例中最重要的課程, 就是標記延伸的語法:標記延伸的大括弧內不能出現引號。 鍵入時標記延伸在 XAML 檔案中，很自然地想要以引號括住屬性的值。 抵禦常見的錯誤 ！
+這可能是您從這個範例中最重要的課程，就是標記延伸的語法：標記延伸的大括弧內不能出現引號。 鍵入時標記延伸在 XAML 檔案中，很自然地想要以引號括住屬性的值。 抵禦常見的錯誤 ！
 
 以下是執行的程式：
 
@@ -556,8 +556,6 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ## <a name="summary"></a>總結
 
 如下所示的 XAML 標記延伸提供 XAML 檔案的重要的支援。 但或許是最有價值的 XAML 標記延伸`Binding`，其中涵蓋在本系列的下一個部分[第 4 部分。資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

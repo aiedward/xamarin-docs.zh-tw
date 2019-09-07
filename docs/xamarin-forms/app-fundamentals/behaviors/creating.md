@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 37403b9e33ccd54baac4fd36afbe50504e0380f0
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: a3b9653651e3000b954cb6d16154cddc8d5d363a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69528962"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772093"
 ---
 # <a name="create-xamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
 _Xamarin.Forms 行為由衍生自 Behavior 或 Behavior&lt;T&gt; 的類別建立。本文示範如何建立與使用 Xamarin.Forms 行為。_
 
@@ -164,7 +164,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 `NumericValidationBehavior` 類別包含名為 `AttachBehavior` 並具有 `static` getter 和 setter 的附加屬性，其控制所要附加之控制項的行為新增與移除。 此附加屬性會註冊 `OnAttachBehaviorChanged` 方法；當屬性的值變更時，就會執行此方法。 此方法會根據 `AttachBehavior` 附加屬性的值，新增或移除控制項的行為。
 
-下列程式碼範例示範使用 `AttachBehavior` 附加屬性之 `NumericValidationBehavior` 的「明確」  樣式，且可套用至 [`Entry`](xref:Xamarin.Forms.Entry) 控制項：
+下列程式碼範例示範使用 `AttachBehavior` 附加屬性之 `NumericValidationBehavior` 的「明確」樣式，且可套用至 [`Entry`](xref:Xamarin.Forms.Entry) 控制項：
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">
@@ -207,7 +207,6 @@ entry.Behaviors.Clear();
 ## <a name="summary"></a>總結
 
 本文已示範如何建立和使用 Xamarin.Forms 行為。 Xamarin.Forms 行為是由衍生自 [`Behavior`](xref:Xamarin.Forms.Behavior) 或 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 類別所建立。
-
 
 ## <a name="related-links"></a>相關連結
 

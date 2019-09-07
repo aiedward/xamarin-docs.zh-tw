@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 10f240a8e245f24d4b8f646eb972cbe21d28b75c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 008858f987a5a3f83b518b98a0647ac5a68b0672
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289943"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768733"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>使用 watchOS 在 Xamarin 中的當地語系化
 
@@ -200,8 +200,6 @@ displayText.SetText (localizedDisplay);
 當以監看式測試，變更 監看式的語言**Apple Watch**配對的 iPhone 上的應用程式。
 
   ![](localization-images/phone-settings-sml.png "變更在配對的 iPhone 上的 Apple Watch 應用程式中的監看式的語言")
-
-
 
 ## <a name="related-links"></a>相關連結
 

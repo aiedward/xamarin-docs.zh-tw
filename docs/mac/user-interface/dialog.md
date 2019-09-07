@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 723f751b93af304c7d70fb1250dbda2f0220e77e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 555ee8131c4d18988a7f208154d358a61a9773c5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292219"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770600"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin 中的對話方塊
 
@@ -63,7 +63,6 @@ _工作表_是附加至指定文件視窗的強制回應對話方塊，可防止
 [開啟] 對話方塊提供使用者一致的方式來尋找和開啟應用程式中的專案：
 
 [![](dialog-images/dialog03.png "開啟的對話方塊")](dialog-images/dialog03.png#lightbox)
-
 
 ### <a name="print-and-page-setup-dialogs"></a>列印和版面設定對話方塊
 

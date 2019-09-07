@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 9beff615c39fc34b5a58a93d309bb20543cad77f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 107b2a970041c70bb021b03dd98f8c91eaea8d34
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650409"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771752"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 視訊
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 `VideoPlayer` 類別會定義 `Source` 屬性，用於指定視訊檔案的來源，以及 `AutoPlay` 屬性。 `AutoPlay` 的預設設定為 `true`，表示視訊會在設定 `Source` 之後自動開始播放：
 
@@ -449,7 +449,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>設定 URL 來源
 
-使用在三個轉譯器中這些屬性的實作，便可以播放來自 URL 來源的視訊。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程式中的 [Play Web Video] \(播放 Web 視訊\)  頁面會由下列 XAML 檔案定義：
+使用在三個轉譯器中這些屬性的實作，便可以播放來自 URL 來源的視訊。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程式中的 [Play Web Video] \(播放 Web 視訊\) 頁面會由下列 XAML 檔案定義：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -463,7 +463,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-`VideoSourceConverter` 類別會將字串轉換成 `UriVideoSource`。 當您巡覽到 [Play Web Video] \(播放 Web 視訊\)  頁面時，便會開始載入視訊，並在下載及緩衝的資料數量足夠時開始播放。 視訊的長度約 10 分鐘：
+`VideoSourceConverter` 類別會將字串轉換成 `UriVideoSource`。 當您巡覽到 [Play Web Video] \(播放 Web 視訊\) 頁面時，便會開始載入視訊，並在下載及緩衝的資料數量足夠時開始播放。 視訊的長度約 10 分鐘：
 
 [![播放 Web 視訊](web-videos-images/playwebvideo-small.png "播放 Web 視訊")](web-videos-images/playwebvideo-large.png#lightbox "播放 Web 視訊")
 
@@ -476,7 +476,7 @@ namespace FormsVideoLibrary.UWP
                    AutoPlay="false" />
 ```
 
-您將需要按下 [播放]  按鈕來開始播放視訊。
+您將需要按下 [播放] 按鈕來開始播放視訊。
 
 同樣地，您可以透過將 `AreTransportControlsEnabled` 屬性設為 `false`，來隱藏顯示傳輸控制項：
 
@@ -518,10 +518,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 或者，您可以在 `ListView` 中設定視訊檔案的 `Source` 屬性，如下一篇文章中所述：[將視訊來源繫結到播放程式](source-bindings.md)。
-
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

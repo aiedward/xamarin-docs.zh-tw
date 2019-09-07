@@ -6,12 +6,12 @@ ms.assetid: EDAC3E5E-DB7D-40A9-AE28-45C52ADA854E
 author: conceptdev
 ms.author: crdun
 ms.date: 04/20/2017
-ms.openlocfilehash: f9d49fc4bff91939c9924dc42a11ef31ffd87362
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e70cf426b2357570585c1c8f1cf21715858cb6f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289229"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758162"
 ---
 # <a name="creating-a-nuget-from-existing-library-projects"></a>從現有的程式庫專案建立 NuGet
 
@@ -43,7 +43,6 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 這個螢幕擷取畫面顯示 PCL 型 NuGet 的內容–只包含單一 PCL 元件：
 
 ![](existing-library-images/nuget-output.png "NuGet 套件中包含的檔案")
-
 
 ## <a name="related-links"></a>相關連結
 

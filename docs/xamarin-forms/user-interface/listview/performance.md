@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: dabbd21a2ad2ef3c77017ea92704ccdf69f7b36c
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f92a338b58dfb82ff5d442ed856e246f4a8a5a8f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228209"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761849"
 ---
 # <a name="listview-performance"></a>ListView 效能
 
@@ -133,7 +133,7 @@ var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 
 #### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>在 子類別化之 ListView 中設定快取策略
 
-設定`CachingStrategy`屬性從 XAML 子類別化之[ `ListView` ](xref:Xamarin.Forms.ListView)不會想要的行為，因為沒有任何`CachingStrategy`屬性`ListView`。 此外, 如果啟用[XAMLC](~/xamarin-forms/xaml/xamlc.md) , 將會產生下列錯誤訊息:**找不到 ' CachingStrategy ' 的屬性、可系結屬性或事件**
+設定`CachingStrategy`屬性從 XAML 子類別化之[ `ListView` ](xref:Xamarin.Forms.ListView)不會想要的行為，因為沒有任何`CachingStrategy`屬性`ListView`。 此外，如果啟用[XAMLC](~/xamarin-forms/xaml/xamlc.md) ，將會產生下列錯誤訊息：**找不到 ' CachingStrategy ' 的屬性、可系結屬性或事件**
 
 此問題的解決方案是指定子類別化之建構函式[ `ListView` ](xref:Xamarin.Forms.ListView)它會接受[ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy)參數並將它傳遞到基底類別：
 
@@ -181,7 +181,6 @@ public class CustomListView : ListView
 `AbsoluteLayout` 若要執行而沒有單一量值呼叫的配置可能會發生。 這可讓您非常強大的效能。 如果`AbsoluteLayout`無法使用，請考慮[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)。 如果使用`RelativeLayout`，直接傳遞條件約束相當大的速度會比使用 API 的運算式。 這是因為運算式 API 會使用 JIT，並在 iOS 上的樹狀目錄中對解譯，以較慢。 API 運算式是適合的版面配置，它只需要在初始的版面配置與輪替，但在`ListView`，其中執行持續期間向下捲動，它都會損及效能。
 
 建置自訂轉譯器[ `ListView` ](xref:Xamarin.Forms.ListView)或它的儲存格是一個方法，來減少版面配置計算上捲動效能的影響。 如需詳細資訊，請參閱 <<c0> [ 自訂 ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)並[自訂 ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)。
-
 
 ## <a name="related-links"></a>相關連結
 

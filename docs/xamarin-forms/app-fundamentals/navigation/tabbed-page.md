@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 6979b4d3e0d750ee962346a94dd832c86c92d995
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: f8f2fc489c10d404b5864ea13c438e3e5508eabe
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652945"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771365"
 ---
 # <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms 索引標籤式頁面
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
 _Xamarin.Forms TabbedPage 由索引標籤清單和較大的詳細資料區域所組成，每個索引標籤會將內容載入至詳細資料區域中。本文示範如何使用 TabbedPage 來巡覽頁面集合。_
 
@@ -32,7 +32,7 @@ _Xamarin.Forms TabbedPage 由索引標籤清單和較大的詳細資料區域所
 
 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 的配置，以及其索引標籤都取決於平台：
 
-- 在 iOS 上，索引標籤清單會出現在畫面的底部，詳細資料區域則出現在上方。 每個索引標籤都具有一個圖示影像，該影像為具有透明度的 PNG，其一般解析度應為 30x30，高解析度應為 60x60，iPhone 6 Plus 解析度則應為 90x90。 若有超過五個索引標籤，則會出現 [更多]  索引標籤，可用於存取其他索引標籤。 如需在 Xamarin.Forms 應用程式中載入影像的詳細資訊，請參閱[使用影像](~/xamarin-forms/user-interface/images.md)。 如需圖示需求的詳細資訊，請參閱[建立索引標籤式應用程式](~/ios/user-interface/controls/creating-tabbed-applications.md)。
+- 在 iOS 上，索引標籤清單會出現在畫面的底部，詳細資料區域則出現在上方。 每個索引標籤都具有一個圖示影像，該影像為具有透明度的 PNG，其一般解析度應為 30x30，高解析度應為 60x60，iPhone 6 Plus 解析度則應為 90x90。 若有超過五個索引標籤，則會出現 [更多] 索引標籤，可用於存取其他索引標籤。 如需在 Xamarin.Forms 應用程式中載入影像的詳細資訊，請參閱[使用影像](~/xamarin-forms/user-interface/images.md)。 如需圖示需求的詳細資訊，請參閱[建立索引標籤式應用程式](~/ios/user-interface/controls/creating-tabbed-applications.md)。
 
   > [!NOTE]
   > 請注意，iOS 的 `TabbedRenderer` 具有可覆寫的 `GetIcon` 方法，可用於從指定來源載入索引標籤圖示。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示。 此外，也可以提供圖示的選取及未選取版本。
@@ -109,11 +109,11 @@ public class MainPageCS : TabbedPage
 > [!NOTE]
 > [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 不支援 UI 虛擬化。 因此，如果 `TabbedPage` 包含太多子項目，效能可能會受影響。
 
-下列螢幕擷取畫面會顯示 `TodayPage`[`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體，該執行個體會顯示在 [Today] \(今日\)  索引標籤上：
+下列螢幕擷取畫面會顯示 `TodayPage`[`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體，該執行個體會顯示在 [Today] \(今日\) 索引標籤上：
 
 ![](tabbed-page-images/today-page.png "TabbedPage 中的 ContentPage")
 
-選取 [Schedule] \(排程\)  索引標籤會顯示 `SchedulePage` [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體，該執行個體會包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體中，如下列螢幕擷取畫面所示：
+選取 [Schedule] \(排程\) 索引標籤會顯示 `SchedulePage` [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體，該執行個體會包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體中，如下列螢幕擷取畫面所示：
 
 ![](tabbed-page-images/schedule-page.png "TabbedPage 中的 NavigationPage")
 
@@ -243,7 +243,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-每個索引標籤都會顯示一個 [`ContentPage`](xref:Xamarin.Forms.ContentPage)，其使用一系列的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 和 [`Label`](xref:Xamarin.Forms.Label) 執行個體來顯示該索引標籤的資料。下列螢幕擷取畫面會顯示 [Tamarin]  索引標籤的內容：
+每個索引標籤都會顯示一個 [`ContentPage`](xref:Xamarin.Forms.ContentPage)，其使用一系列的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 和 [`Label`](xref:Xamarin.Forms.Label) 執行個體來顯示該索引標籤的資料。下列螢幕擷取畫面會顯示 [Tamarin] 索引標籤的內容：
 
 ![](tabbed-page-images/tab3.png "使用範本填入 TabbedPage")
 
@@ -257,7 +257,6 @@ public class TabbedPageDemoPageCS : TabbedPage
 ## <a name="summary"></a>總結
 
 本文示範如何使用 TabbedPage 來巡覽頁面集合。 Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 由索引標籤清單和較大的詳細資料區域所組成，每個索引標籤會將內容載入至詳細資料區域中。
-
 
 ## <a name="related-links"></a>相關連結
 

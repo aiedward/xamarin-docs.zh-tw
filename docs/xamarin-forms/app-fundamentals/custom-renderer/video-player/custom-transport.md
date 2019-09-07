@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: ab3ed8895a4f7c6b44c978e52e0b00fc32850f75
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: e0694598fe5637f6e63ebf64dce4a7d9768eba5f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650630"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771821"
 ---
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-影片播放程式的傳輸控制項包括執行 [播放]  、[暫停]  和 [停止]  功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放]  及 [暫停]  功能常會合併為一個按鈕。
+影片播放程式的傳輸控制項包括執行 [播放]、[暫停] 和 [停止] 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放] 及 [暫停] 功能常會合併為一個按鈕。
 
 根據預設，`VideoPlayer` 會顯示由各平台支援的傳輸控制項。 當您將 `AreTransportControlsEnabled` 屬性設定為 `false` 時，就會隱藏這些控制項。 接著可以用程式設計的方式來控制 `VideoPlayer` 或支援您本身的傳輸控制項。
 
@@ -522,25 +522,25 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>[播放]、[停止] 和 [暫停] 按鈕
 
-使用 Unicode 字元來代表 [播放]  、[暫停]  和 [停止]  的影像可能會有問題。 但 Unicode 標準的 [Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/) (其他專門符號) 一節判定這三個符號字元應該適合此用途。 它們是：
+使用 Unicode 字元來代表 [播放]、[暫停] 和 [停止] 的影像可能會有問題。 但 Unicode 標準的 [Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/) (其他專門符號) 一節判定這三個符號字元應該適合此用途。 這些是：
 
-- 0x23F5 (指向右方的黑色中型三角形) 或 &#x23F5;，代表 [播放] 
-- 0x23F8 (雙垂直長條) 或 &#x23F8;，代表 [暫停] 
-- 0x23F9 (黑色正方形) 或 &#x23F9;，代表 [停止] 
+- 0x23F5 (指向右方的黑色中型三角形) 或 &#x23F5;，代表 [播放]
+- 0x23F8 (雙垂直長條) 或 &#x23F8;，代表 [暫停]
+- 0x23F9 (黑色正方形) 或 &#x23F9;，代表 [停止]
 
-無論這些符號是如何出現在您的瀏覽器中 (不同的瀏覽器會以不同方式處理它們)，它們都不會在 Xamarin.Forms 支援的平台上持續地顯示。 在 iOS 及 UWP 裝置上，[暫停]  及 [停止]  字元擁有圖形化的外觀，且帶有藍色 3D 的背景以及白色的前景。 但這在 Android 上就不一樣了，其符號為單純的藍色。 不過，[播放]  的 0x23F5 字碼指標在 UWP 上沒有相同的外觀，且甚至在 iOS 和 Android 上都不支援。
+無論這些符號是如何出現在您的瀏覽器中 (不同的瀏覽器會以不同方式處理它們)，它們都不會在 Xamarin.Forms 支援的平台上持續地顯示。 在 iOS 及 UWP 裝置上，[暫停] 及 [停止] 字元擁有圖形化的外觀，且帶有藍色 3D 的背景以及白色的前景。 但這在 Android 上就不一樣了，其符號為單純的藍色。 不過，[播放] 的 0x23F5 字碼指標在 UWP 上沒有相同的外觀，且甚至在 iOS 和 Android 上都不支援。
 
-基於此原因，0x23F5 字碼指標無法作為 [播放]  使用。 適合的替代字碼指標為：
+基於此原因，0x23F5 字碼指標無法作為 [播放] 使用。 適合的替代字碼指標為：
 
-- 0x25B6 (指向右方的黑色三角形) 或 &#x25B6;，代表 [播放] 
+- 0x25B6 (指向右方的黑色三角形) 或 &#x25B6;，代表 [播放]
 
-除了其為全黑的三角形，且不像 3D 外觀的 [暫停]  及 [停止]  之外，各平台皆對其支援。 其中一種可能性為使用變體程式碼來追隨 0x25B6 字碼指標：
+除了其為全黑的三角形，且不像 3D 外觀的 [暫停] 及 [停止] 之外，各平台皆對其支援。 其中一種可能性為使用變體程式碼來追隨 0x25B6 字碼指標：
 
-- 後面接著 0xFE0F (變體 16) 的 0x25B6 或 &#x25B6;&#xFE0F;，代表 [播放] 
+- 後面接著 0xFE0F (變體 16) 的 0x25B6 或 &#x25B6;&#xFE0F;，代表 [播放]
 
-這是下方所示標記使用的項目。 在 iOS 上，它提供 [播放]  符號與 [暫停]  及 [停止]  按鈕相同的 3D 外觀，但變體在 Android 和 UWP 上無效。
+這是下方所示標記使用的項目。 在 iOS 上，它提供 [播放] 符號與 [暫停] 及 [停止] 按鈕相同的 3D 外觀，但變體在 Android 和 UWP 上無效。
 
-**自訂傳輸**頁面會將 **AreTransportControlsEnabled** 屬性設定為 **false**，以及包含載入影片時顯示的 `ActivityIndicator` 和兩個按鈕。 `DataTrigger` 物件可用來啟用、停用 `ActivityIndicator` 和按鈕，以及切換在 [播放]  和 [暫停]  之間的第一個按鈕：
+**自訂傳輸**頁面會將 **AreTransportControlsEnabled** 屬性設定為 **false**，以及包含載入影片時顯示的 `ActivityIndicator` 和兩個按鈕。 `DataTrigger` 物件可用來啟用、停用 `ActivityIndicator` 和按鈕，以及切換在 [播放] 和 [暫停] 之間的第一個按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -647,16 +647,15 @@ namespace VideoPlayerDemos
 }
 ```
 
-因為在 **CustomTransport.xaml** 檔案中 `AutoPlay` 設定為 `false`，所以您必須在其啟用時按 [播放]  按鈕以開始影片。 因為定義了這些按鈕，所以上面討論的 Unicode 字元都會附有其相對應文字。 當影片播放時，按鈕在各平台上都有一致的外觀：
+因為在 **CustomTransport.xaml** 檔案中 `AutoPlay` 設定為 `false`，所以您必須在其啟用時按 [播放] 按鈕以開始影片。 因為定義了這些按鈕，所以上面討論的 Unicode 字元都會附有其相對應文字。 當影片播放時，按鈕在各平台上都有一致的外觀：
 
 [![自訂傳輸播放](custom-transport-images/customtransportplaying-small.png "自訂傳輸播放")](custom-transport-images/customtransportplaying-large.png#lightbox "自訂傳輸播放")
 
-但在影片暫停時，Android 及 UWP 上的 [播放]  看起來大不相同：
+但在影片暫停時，Android 及 UWP 上的 [播放] 看起來大不相同：
 
 [![自訂傳輸暫停](custom-transport-images/customtransportpaused-small.png "自訂傳輸暫停")](custom-transport-images/customtransportpaused-large.png#lightbox "自訂傳輸暫停")
 
 在生產應用程式中，您可能會想要使用自己的點陣圖影像讓按鈕達成視覺上的一致性。
-
 
 ## <a name="related-links"></a>相關連結
 

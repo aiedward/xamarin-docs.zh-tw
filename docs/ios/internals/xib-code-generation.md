@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 367f0b6a44482762f8609eb959e154c942ff14f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 474e8ba772773f437bc30a07a34f6bfbb286cd82
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291825"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768494"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>。在 Xamarin 中產生 xib 程式碼
 
@@ -72,7 +72,6 @@ Visual Studio for Mac 會使用設計工具檔案位置的專案預設命名空�
 
 1. 如果您輸入`partial`非設計工具類別部分的類別主體，Visual Studio for Mac 將會提供自動完成所有未實作為部分方法的簽章。
 2. 部分方法簽章具有套用的屬性，可將其公開至目標-C 世界，以便將其視為對應的動作來處理。
-
 
 如果您想要的話，可以忽略部分方法，並將屬性套用至不同的方法來執行動作，或讓它通過基類。
 

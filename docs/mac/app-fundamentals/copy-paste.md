@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 42ac6c9c729498ad4b70e1e209d63c1ec2e11f8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291227"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769930"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>在 Xamarin. Mac 中複製並貼上
 
@@ -603,7 +603,7 @@ namespace MacCopyPaste
 同樣地，我們會取得最新的最上層視窗`ImageDocument` ，並使用其類別實例來查看所需的影像資料是否存在。 然後，我們會`MenuWillHighlightItem`使用方法，根據此狀態來啟用或停用每個專案。
 
 編輯**AppDelegate.cs**檔案，讓`DidFinishLaunching`方法看起來如下所示：
- 
+
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
 {
@@ -1275,8 +1275,6 @@ if (ok) {
 ## <a name="summary"></a>總結
 
 本文已詳細探討如何在 Xamarin. Mac 應用程式中使用貼文，以支援複製和貼上作業。 首先，它引進了一個簡單的範例，讓您熟悉標準的 pasteboards 作業。 接下來，它會深入探討「流覽夾」，以及如何讀取和寫入資料。 最後，它探討了如何使用自訂資料類型，以支援在應用程式中複製和貼上複雜資料類型。
-
-
 
 ## <a name="related-links"></a>相關連結
 

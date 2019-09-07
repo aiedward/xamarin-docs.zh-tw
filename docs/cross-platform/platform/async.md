@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 90c391f79d7aa0ffdee0072c84cbdba0c504d551
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b88d6c33671f36d2d4106f45a267322320639c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280624"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765330"
 ---
 # <a name="async-support-overview"></a>非同步支援概觀
 
@@ -124,7 +124,6 @@ public async Task<int> DownloadHomepage()
 - 傳回型別是`Task<int>` ，因此呼叫程式碼可以`int`存取在這個方法中計算的值。
 - Return 語句是`return exampleInt;`一個整數物件– `Task<int>`方法傳回的事實是語言改善的一部分。
 
-
 ### <a name="calling-an-async-method-1"></a>呼叫非同步方法1
 
 您可以在 Android 範例應用程式中找到此按鈕 click 事件處理常式，以呼叫上面討論的方法：
@@ -153,7 +152,6 @@ GetButton.Click += async (sender, e) => {
 - 程式碼會等候 sizeTask 變數。  *這*是方法暫止的位置，控制權會傳回給呼叫程式碼，直到非同步工作在自己的執行緒上完成為止。
 - 當工作在方法的第一行建立時，*執行不會暫停，* 而是在其中建立工作。 Await 關鍵字表示暫停執行的位置。
 - 當非同步工作完成時，會從 await 行設定 intResult 並繼續執行原始執行緒。
-
 
 ### <a name="calling-an-async-method-2"></a>呼叫非同步方法2
 
@@ -185,14 +183,11 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 - 方法上的程式碼`await`會直接在變數的指派上（ `intResult` ），與先前的範例不同，我們使用了`Task<int>`中繼變數來參考工作。 `DownloadHomepage`  *這*是在非同步方法于另一個執行緒上完成之前，將控制權傳回給呼叫者的位置。
 - 當非同步方法完成並傳回時，會繼續`await`執行，這表示會傳回整數結果，然後在 UI widget 中呈現。
 
-
 ## <a name="summary"></a>總結
 
 使用 async 和 await 可大幅簡化在背景執行緒上產生長時間執行作業所需的程式碼，而不會封鎖主執行緒。 當工作完成時，它們也可讓您輕鬆地存取結果。
 
 本檔概述了適用于 Xamarin 和 Xamarin 的新語言關鍵字和範例。
-
-
 
 ## <a name="related-links"></a>相關連結
 

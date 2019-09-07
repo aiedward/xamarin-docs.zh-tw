@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 13b19d60569884f244f2ea9c79aaa6989838d0d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290699"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770032"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 延伸模組支援
 
@@ -45,7 +45,6 @@ ms.locfileid: "70290699"
     [![](extensions-images/extension02.png "系統記錄檔")](extensions-images/extension02.png#lightbox)
 - 如上所述，執行延伸模組主機應用程式會向系統註冊該擴充功能。 刪除已取消註冊的應用程式套件組合。 
 - 如果已註冊應用程式延伸模組的「偏離」版本，請使用下列命令來尋找它們（以予以刪除）：`plugin kit -mv`
-
 
 <a name="Walkthrough-and-Sample-App" />
 

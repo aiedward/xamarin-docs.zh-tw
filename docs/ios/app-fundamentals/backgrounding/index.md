@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 161fda52002e8bb757db23c9b2a20a6befd132f5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5afb87eb3f84e00427072ef6c4e2c19b46de0186
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289345"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766574"
 ---
 # <a name="backgrounding-in-xamarinios"></a>在 Xamarin 中背景處理
 
@@ -35,8 +35,6 @@ _背景處理或背景處理是在另一個應用程式于前景執行時，讓�
 ## <a name="summary"></a>總結
 
 在本指南中，我們介紹了在 iOS 中執行背景處理的不同方式。 我們涵蓋了 iOS 應用程式狀態，並已檢查在 iOS 應用程式生命週期中背景處理扮演的角色。 此外，我們也已瞭解如何在 iOS 中註冊個別工作或整個應用程式，以在背景中作業。 最後，我們藉由建立在背景執行更新的應用程式，加強我們對 iOS 背景處理的瞭解。
-
-
 
 ## <a name="related-links"></a>相關連結
 

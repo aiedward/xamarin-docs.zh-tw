@@ -6,12 +6,12 @@ ms.assetid: 8A14A457-F72E-4B08-B4B6-801F7619F893
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f0cdec005dc210600977d5c8f5606cff6570989
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ec5dd15ffb838d7062c8c769375289e7b07b24d2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290018"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766377"
 ---
 # <a name="step-2-configure-service-access-for-mobile-application"></a>步驟 2： 設定行動應用程式的服務存取
 
@@ -30,8 +30,6 @@ ms.locfileid: "70290018"
    ![](configure-images/2.3-permissions.png "選取應用程式之後，再次選取 [其他應用程式的許可權] 區段中新增的應用程式，並授與適當的許可權")
 
 4. 最後，**儲存**設定。 這些服務現在應該可以在行動應用程式中使用！
-
-
 
 ## <a name="related-links"></a>相關連結
 

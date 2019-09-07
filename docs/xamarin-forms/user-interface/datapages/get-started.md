@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: e6f26fb96c0a538543c8e0b0574461ea99709631
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: c6534067388b59c1e191426011fd0e6b8560348f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119481"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759727"
 ---
 # <a name="getting-started-with-datapages"></a>Getting Started with DataPages
 
@@ -51,8 +51,7 @@ ms.locfileid: "70119481"
 ```
 
 > [!IMPORTANT]
-> 您也應該遵循步驟來[載入主題元件 (如下)](#loadtheme) , 方法是將一些未定案的程式`AppDelegate`代碼新增`MainActivity`至 iOS 和 Android。 這會改善未來的預覽版。
-
+> 您也應該遵循步驟來[載入主題元件（如下）](#loadtheme) ，方法是將一些未定案的程式`AppDelegate`代碼新增`MainActivity`至 iOS 和 Android。 這會改善未來的預覽版。
 
 ## <a name="3-add-a-xaml-page"></a>3.新增 XAML 頁面
 
@@ -175,9 +174,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
 ```
 
-
-從頭開始建立主題還有更多工作, 但未來的預覽版本可讓您更輕鬆地完成這件事。
-
+從頭開始建立主題還有更多工作，但未來的預覽版本可讓您更輕鬆地完成這件事。
 
 ## <a name="troubleshooting"></a>疑難排解
 
@@ -206,8 +203,6 @@ var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
 x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
 ```
-
-
 
 ## <a name="related-links"></a>相關連結
 

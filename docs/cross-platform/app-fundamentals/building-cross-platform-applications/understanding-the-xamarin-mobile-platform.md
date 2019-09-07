@@ -6,12 +6,12 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 5398d99a64e7f6b75c8b9e418da252852aff1322
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: af2b8cd39d5fb1b0ce6c12f7d6ad87e245b9a594
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288683"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761963"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第1部分–瞭解 Xamarin Mobile 平臺
 
@@ -36,7 +36,6 @@ C#來源會在每個平臺上以非常不同的方式進入原生應用程式：
 - **Android** – C#會編譯為 IL，並使用 MonoVM + JIT'ing 進行封裝。 在連結期間，會去除架構中未使用的類別。 應用程式會與 JAVA/美工（Android 執行時間）並存執行，並透過 JNI 與原生類型互動（請參閱「 [Xamarin Android 限制](~/android/internals/limitations.md)」）。
 - **Windows** – C#會編譯為 IL 並由內建執行時間執行，而且不需要 Xamarin 工具。 依照 Xamarin 的指導方針設計 Windows 應用程式，可讓您更輕鬆地在 iOS 和 Android 上重複使用程式碼。
   請注意，通用 Windows 平臺也有一個 [ **.NET Native** ] 選項，其行為類似于 [Xamarin] 的 [AOT 編譯]。
-
 
 適用于[xamarin](~/ios/deploy-test/linker.md)和[xamarin](~/android/deploy-test/linker.md)的連結器檔集提供此部分編譯器的詳細資訊。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 5272921cade2b9dadd24a4c917e6251ac591e178
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292314"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768757"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>使用 watchOS 在 Xamarin 中的版面配置
 
@@ -34,7 +34,6 @@ ms.locfileid: "70292314"
 
 - 使用[`Menu`控制](~/ios/watchos/user-interface/menu.md)保留您的應用程式設計清楚且簡潔的較少使用的公開功能。
 
-
 ## <a name="implementation"></a>實作
 
 監看式套件包含下列控制項來協助您建置吸引人的監看式應用程式版面配置：
@@ -55,7 +54,6 @@ ms.locfileid: "70292314"
 
 ![](layout-images/button-attributes.png "提供比例的值及位移的調整")
 
-
 ### <a name="group"></a>群組
 
 `WKInterfaceGroup` 是可設定為堆疊的簡單版面配置容器控制水平或垂直。 它包含根據預設，每個控制項之間的間距，但您可以修改的間距 （和內凹） 中**屬性**偵測器。
@@ -65,7 +63,6 @@ ms.locfileid: "70292314"
 群組可以自行調整大小並相對於控制項，並可以巢狀群組，以建立複雜的版面配置。
 
 ![](layout-images/group-scene.png "群組可以是巢狀來建立複雜的版面配置")
-
 
 ### <a name="separator"></a>Separator
 
@@ -79,8 +76,6 @@ ms.locfileid: "70292314"
 
 任何配置就不算完整`Label`， `Image`， `Button`， `Switch`， `Slider`， `Map`，以及[其他控制項](~/ios/watchos/user-interface/index.md)。
 這些可以放置在您使用的版面配置**群組**或每個控制項上的位置和大小 設定。
-
-
 
 ## <a name="related-links"></a>相關連結
 

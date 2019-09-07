@@ -6,19 +6,19 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: de34dcdd194bd3777214d23fded7e5f42ec5141c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad7a98b92c34cf956e50ebc7a6cec73580f8f04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287547"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765496"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac 和系結專案中的原生參考
 
 _原生參考可讓您將原生架構內嵌至 Xamarin 或 Xamarin 專案或系結專案。_
 
 從 iOS 8.0 開始，您可以建立內嵌架構，在應用程式擴充功能與 Xcode 中的主要應用程式之間共用程式碼。 使用原生參考功能，就可以在 Xamarin 中使用這些內嵌架構（以 Xcode 建立）。
- 
+
 > [!IMPORTANT]
 > 您無法從任何類型的 Xamarin 或 Xamarin 專案建立內嵌架構，而原生參考只允許使用現有的原生（目標-C）架構。
 
@@ -98,4 +98,3 @@ _原生參考可讓您將原生架構內嵌至 Xamarin 或 Xamarin 專案或系�
 ## <a name="summary"></a>總結
 
 本文深入探討如何將原生架構內嵌至 Xamarin 或 Xamarin. Mac 應用程式。
-

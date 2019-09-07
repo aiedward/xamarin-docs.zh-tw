@@ -6,12 +6,12 @@ ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: conceptdev
 ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 9629d775b45951279178dffa3600e7cd5073dd38
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290622"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766128"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
@@ -55,7 +55,7 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
     ![fastlane 對話方塊。](apple-account-management-images/image2.png)
 
 3. 輸入您的 Apple ID 和密碼，然後按一下 [登**入**] 按鈕。 這會將您的認證儲存在這部電腦的安全 Keychain 中。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)是用來安全地處理您的認證，並將其傳遞給 Apple 的開發人員入口網站。
- 
+
 4. 選取 [警示] 對話方塊上的 [**永遠允許**]，以允許 Visual Studio 使用您的認證：
 
     ![[永遠允許警示] 對話方塊](apple-account-management-images/image4.png)
@@ -81,13 +81,12 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
     ![使用者名稱和密碼對話方塊](apple-account-management-images/prov1a.png)
 
 1. 一旦成功新增您的帳戶，您就會看到您的 Apple ID 和您的 Apple ID 所屬的任何小組。
- 
+
 1. 選取任何小組，然後按 [ **View Details （詳細資料**）]。 按鈕。 這會顯示一份所有「簽署身分識別和安裝在您的電腦的佈建設定檔」：
 
     ![使用者名稱和密碼對話方塊](apple-account-management-images/prov2.png)
 
 -----
-
 
 ## <a name="managing-signing-identities-and-provisioning-profiles"></a>管理「簽署身分識別和佈建設定檔」
 

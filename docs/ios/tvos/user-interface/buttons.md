@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/07/2017
-ms.openlocfilehash: aa1dd0b503dd59a89f526fef53d7d7756a3883de
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 869e2e5c3b074c928f3c49ca87c1c1801154df91
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291114"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769970"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>使用 Xamarin 中的 tvOS 按鈕
 
@@ -63,7 +63,6 @@ Apple 建議您針對按鈕圖示使用簡單、可高度辨識的影像。 過�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 1. 在 **方案總管**中，按兩下`Main.storyboard`檔案，然後開啟檔案進行編輯。
 1. 拖曳 **按鈕** 從 **程式庫** 並將它放在檢視上： 
 
@@ -82,7 +81,6 @@ Apple 建議您針對按鈕圖示使用簡單、可高度辨識的影像。 過�
     [![](buttons-images/storyboard05.png "程式碼編輯器")](buttons-images/storyboard05.png#lightbox)
 1. 將變更儲存至所有檔案。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. 在 **方案總管**中，按兩下`Main.storyboard`檔案，然後開啟檔案進行編輯。
@@ -97,10 +95,7 @@ Apple 建議您針對按鈕圖示使用簡單、可高度辨識的影像。 過�
     [![](buttons-images/storyboard03vs.png "[事件] 索引標籤")](buttons-images/storyboard03vs.png#lightbox)
 1. 將變更儲存至所有檔案。
 
-
-
 編輯您的 View Controller （ `ViewController.cs`範例）檔案，並新增下列程式碼來處理所選取的按鈕：
-
 
 ```
 
@@ -128,9 +123,6 @@ namespace tvRemote
 
 > [!IMPORTANT]
 > 雖然`UIButton`在建立**事件處理常式**時，可以`TouchUpInside`在 iOS 設計工具中將動作（例如）指派給，但絕不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素的**動作**時，您應該一律使用預設**動作類型**。
-
-
-
 
 如需使用分鏡腳本的詳細資訊，請參閱我們的[Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 
@@ -189,9 +181,6 @@ View.AddSubview (button);
 
 > [!IMPORTANT]
 > 雖然可以將動作（例如`TouchUpInside` `UIButton`）指派給，但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 您應該一律使用**AllEvents**或**PrimaryActionTriggered**之類的事件。
-
-
-
 
 <a name="Styling-a-Button" />
 
@@ -262,8 +251,6 @@ button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 ## <a name="summary"></a>總結
 
 本文涵蓋設計和使用 tvOS 應用程式內的按鈕。 它示範如何使用 iOS 設計工具中的按鈕，以及如何在程式碼中C#建立按鈕。 最後，它會示範如何修改按鈕的標題，以及變更其樣式和外觀。
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2018
-ms.openlocfilehash: bbb423b01a477b0589903f96d0f4313c25733b91
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ce0c4579f13311811106a00390f95a20a0abf979
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284344"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768455"
 ---
 # <a name="buttons-in-xamarinios"></a>在 Xamarin 中的按鈕
 
@@ -127,4 +127,3 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlStat
 ![UIControlState.Selected](buttons-images/image24.png "UIControlState.Selected")
 
 如需使用自訂按鈕的詳細資訊，請參閱[使用影像](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button)做為按鈕配方。
-

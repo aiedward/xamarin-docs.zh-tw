@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: fc316a9e6ab4261eaa956a987b47aeaf546344a2
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.openlocfilehash: 7045bd4d3343d0c11c6cd52fa02cdc005175b8a7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67675277"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772927"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 UrhoSharp
 
@@ -43,7 +43,7 @@ UrhoSharp.Forms NuGet 封裝會新增至專案：
 
 （例如 iOS 和 Android） 平台專屬專案重複上述步驟。
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>逐步解說：將 UrhoSharp 新增至 Xamarin.Forms 應用程式
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>逐步解說：將 UrhoSharp 新增至 Xamarin. Forms 應用程式
 
 下列步驟說明 Xamarin.Forms UrhoSharp 範例中的程式碼：
 
@@ -223,7 +223,6 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 ## <a name="summary"></a>總結
 
 此頁面會顯示如何將 3D 資料視覺效果新增至 Xamarin.Forms 使用 UrhoSharp。 讀取[UrhoSharp 文件](~/graphics-games/urhosharp/index.md)如需有關如何建置 Urho 場景，可以包含在 Xamarin.Forms 應用程式使用如上所示的方法。
-
 
 ## <a name="related-links"></a>相關連結
 

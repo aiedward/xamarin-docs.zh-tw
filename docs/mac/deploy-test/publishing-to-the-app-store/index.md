@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9454d1b7144bc41c0a4510314a59dd90971fbbc6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 84a35389276fed031f6bea116c1e4f37a63469a7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285528"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769875"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>將 Xamarin.Mac 應用程式發佈到 Mac App Store
 
@@ -25,7 +25,6 @@ Xamarin.Mac 應用程式可以兩種方式散發：
 
 本文說明如何使用 Visual Studio for Mac 和 Xcode 來設定 Apple 開發人員帳戶，以及為每個部署類型設定 Xamarin.Mac 專案。
 
-
 ## <a name="mac-developer-program"></a>Mac 開發人員計劃
 
 當您加入 [Mac 開發人員計劃](https://developer.apple.com/devcenter/mac/) \(英文\) 時，開發人員可選擇要以 [Individual] \(個人\) 或 [Company] \(公司\) 的身分加入，如下列螢幕擷取畫面所示：
@@ -37,36 +36,29 @@ Xamarin.Mac 應用程式可以兩種方式散發：
 > [!NOTE]
 > 此處所做的選擇會影響設定開發人員帳戶時一些畫面的顯示方式。 本文中的說明與螢幕擷取畫面都是從 [Individual] \(個人\) 開發人員帳戶的觀點完成。 以 [Company] \(公司\) 的身分進行時，有些選項僅供**小組系統管理員**使用。
 
-
 ### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[憑證和識別碼](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)
 
 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要憑證與識別碼。
-
 
 ### <a name="create-provisioning-profilemacdeploy-testpublishing-to-the-app-storeprofilesmd"></a>[建立佈建設定檔](~/mac/deploy-test/publishing-to-the-app-store/profiles.md)
 
 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要佈建設定檔。
 
-
 ### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac 應用程式組態](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
 
 本指南逐步說明設定 Xamarin.Mac 應用程式以供發行。
-
 
 ### <a name="sign-with-developer-idmacdeploy-testpublishing-to-the-app-storesigningmd"></a>[使用開發人員識別碼簽署](~/mac/deploy-test/publishing-to-the-app-store/signing.md)
 
 本指南逐步說明使用開發人員識別碼簽署 Xamarin.Mac 應用程式以供發行。
 
-
 ### <a name="bundle-for-mac-app-storemacdeploy-testpublishing-to-the-app-storebundlingmd"></a>[Mac App Store 的套件組合](~/mac/deploy-test/publishing-to-the-app-store/bundling.md)
 
 本指南逐步說明統合 Xamarin.Mac 應用程式以發行至 Mac App Store。
 
-
 ### <a name="upload-to-mac-app-storemacdeploy-testpublishing-to-the-app-storeuploadingmd"></a>[上傳至 Mac App Store](~/mac/deploy-test/publishing-to-the-app-store/uploading.md)
 
 本指南逐步說明上傳 Xamarin.Mac 應用程式以發行至 Mac App Store。
-
 
 ## <a name="related-links"></a>相關連結
 

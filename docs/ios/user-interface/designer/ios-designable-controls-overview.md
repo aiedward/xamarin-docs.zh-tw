@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: e934059f5428780ea19917068503b58961ac5673
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 51afbdf79248af6f76426dd0e0c862e506a0a22f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284187"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768774"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 中的自訂控制項
 
@@ -41,7 +41,6 @@ Xamarin Designer for iOS 是一種功能強大的工具，可讓您視覺化應�
 1. 屬性的[ExportAttribute](xref:Foundation.ExportAttribute)和[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)設定為 True。
 1. 屬性類型為數數值型別、列舉類型、字串、bool、 [SizeF](xref:System.Drawing.SizeF)、 [UIColor](xref:UIKit.UIColor)或[UIImage](xref:UIKit.UIImage)。 這份支援的類型清單可能會在未來擴充。
 
-
 屬性也可以使用[DisplayNameAttribute](xref:System.ComponentModel.DisplayNameAttribute)裝飾，以指定在 [屬性] 面板中顯示的標籤。
 
 ## <a name="initialization"></a>初始化
@@ -49,7 +48,6 @@ Xamarin Designer for iOS 是一種功能強大的工具，可讓您視覺化應�
 針對`UIViewController`子類別，您應該使用[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)方法來執行與您在設計工具中建立之瀏覽器相依的程式碼。
 
 對於`UIView`和其他`NSObject`子類別， [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)方法是在從配置檔案載入自訂控制項之後，為其執行初始化的建議位置。 這是因為在執行控制項的函式時，將不會設定在屬性面板中設定的任何自訂屬性，但會在`AwakeFromNib`呼叫之前設定它們：
-
 
 ```csharp
 [Register ("CustomView"), DesignTimeVisible (true)]
@@ -131,7 +129,6 @@ public class CustomView : UIView {
 - 會執行`Initialize`方法，並對元件的方法進行呼叫。 `AwakeFromNib`
 - 在`Initialize` `Counter`屬性值中，將會重設為零（0）。
 
-
 若要修正上述情況，請在其他`Counter`地方初始化屬性（例如在元件的函式中），或不要`AwakeFromNib`覆寫方法`Initialize` ，並在元件不需要進一步初始化的範圍之外，呼叫目前正由其函式處理。
 
 ## <a name="design-mode"></a>設計模式
@@ -140,7 +137,6 @@ public class CustomView : UIView {
 
 - 應用程式套件組合資源無法在設計模式中使用。 透過[UIImage 方法](xref:UIKit.UIImage)載入時，可以使用影像。
 - 非同步作業（例如 web 要求）不應該在設計模式中執行。 設計介面不支援動畫或任何其他非同步更新至控制項的 UI。
-
 
 自訂控制項可以執行[IComponent](xref:System.ComponentModel.IComponent) ，並使用[DesignMode](xref:System.ComponentModel.ISite.DesignMode)屬性來檢查它是否位於設計介面上。 在此範例中，標籤會在設計介面上顯示「設計模式」，並在執行時間顯示「執行時間」：
 

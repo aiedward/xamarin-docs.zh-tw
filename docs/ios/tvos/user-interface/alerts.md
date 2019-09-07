@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 8ab832028d4474bbb3c34805b245638695eae75e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2578272dcd38399f23f2aac67503ea4e1b09a027
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291118"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769082"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>在 Xamarin 中使用 tvOS 警示
 
@@ -361,14 +361,11 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 #endregion
 ```
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>總結
 
 本文涵蓋`UIAlertController`了如何使用，在 tvOS 中向使用者顯示警示訊息。 首先，它會示範如何顯示簡單的警示並新增按鈕。 接下來，它會示範如何將文字欄位新增至警示。 最後，它會示範如何使用 helper 類別來減少顯示警示所需的重複程式碼數量。
-
-
 
 ## <a name="related-links"></a>相關連結
 

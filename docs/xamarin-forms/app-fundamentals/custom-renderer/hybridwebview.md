@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/07/2019
-ms.openlocfilehash: 0277a5abd4e34d092b231cd42746f9e05c91b8df
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 66e26704f22a73559eef04608726ab3b4a935385
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199957"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771912"
 ---
 # <a name="implementing-a-hybridwebview"></a>實作 HybridWebView
 
@@ -507,7 +507,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>總結
 
 本文示範如何建立 `HybridWebView` 自訂控制項的自訂轉譯器，該自訂控制項會示範如何強化平台特定的 Web 控制項，以允許從 JavaScript 叫用 C# 程式碼。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: a153c6115605ca2a58df233186fa45d200d8b99f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c1e7d6cbb2598f64a331257c9b14ecfa119193f6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287301"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768786"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中建立使用者介面物件
 
@@ -43,11 +43,11 @@ using UIKit;
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  [![](creating-ui-objects-images/image2b.png "工具箱面板")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
  [![](creating-ui-objects-images/image2b-vs.png "工具箱 Pad-視覺效果 Studio")](creating-ui-objects-images/image2b.png#lightbox)
- 
+
 -----
 
 在設計介面上選取控制項時， **Properties Pad**會顯示該控制項的屬性。 [**識別 > 名稱**] 欄位 > 的 Widget，會在下方的螢幕擷取畫面中填入，做為*輸出*的名稱。 這就是您可以在中C#參考控制項的方式：
@@ -65,7 +65,7 @@ using UIKit;
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
  [![](creating-ui-objects-images/imagexcode.png "分鏡腳本內容功能表-Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 [![](creating-ui-objects-images/imagexcode-vs.png "分鏡腳本內容功能表-Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
@@ -168,8 +168,6 @@ public override void ViewDidLoad () {
 `designer.cs`檔案不應手動編輯– IDE （Visual Studio for Mac 或 Visual Studio）會負責讓它與腳本同步處理。
 
 當以程式設計方式將使用者介面物件`View`新增`ViewController`至或時，您會自行具現化和管理物件參考，因此不需要任何設計工具檔案。
-
-
 
 ## <a name="related-links"></a>相關連結
 

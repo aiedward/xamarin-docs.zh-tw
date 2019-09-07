@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 9fa0d51e02382458535b065377af55542d87913a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 52ee92eca5fa0b3108b2ef96ef81bfb939e61a6c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290762"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752913"
 ---
 # <a name="handoff-in-xamarinios"></a>在 Xamarin 中進行遞交
 
@@ -626,8 +626,6 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 ## <a name="summary"></a>總結
 
 本文已介紹用來在多個使用者的 Apple 裝置之間繼續使用者活動的遞交架構簡介。 接下來，它會示範如何在 Xamarin iOS 應用程式中啟用和執行遞交。 最後，它討論了各種不同類型的交付接續和交付的最佳作法。
-
-
 
 ## <a name="related-links"></a>相關連結
 

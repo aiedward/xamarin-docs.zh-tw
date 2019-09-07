@@ -1,18 +1,18 @@
 ---
 title: 第 17 章的摘要。 掌控格線
-description: 使用 Xamarin.Forms 建立行動應用程式：第 17 章的摘要。 掌控格線
+description: 使用 Xamarin 建立 Mobile Apps：第 17 章的摘要。 掌控格線
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 3aaf8e9d1eb8e0d98ad32a6b5a1286f14c7bb906
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 37b5e2bbafa816de27390771ae6daa33c74f7651
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333706"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760633"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章的摘要。 掌控格線
 
@@ -59,7 +59,7 @@ ms.locfileid: "61333706"
 
 [ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo)範例示範如何建立和初始化`Grid`在 XAML 中。
 
-`Grid`繼承[ `Padding` ](xref:Xamarin.Forms.Layout.Padding) 屬性從`Layout`並定義兩個提供的資料列和資料行之間間距的額外屬性：
+`Grid`繼承[`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性從`Layout`並定義兩個提供的資料列和資料行之間間距的額外屬性：
 
 - [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 預設值為 6
 - [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 預設值為 6
@@ -101,8 +101,6 @@ ms.locfileid: "61333706"
 `Grid`有助於建構回應方向變更程式。 [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders)範例會示範一種技術，第二個資料列是直向導向電話與橫向手機的第二個資料行之間移動項目。
 
 程式初始化`Slider`一系列的 0 到 255 及十六進位顯示滑桿的值會使用資料繫結項目。 因為`Slider`點，以及.NET 格式字串的十六進位僅適用於具有整數，值則浮動[ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs)類別[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)程式庫可協助。
-
-
 
 ## <a name="related-links"></a>相關連結
 

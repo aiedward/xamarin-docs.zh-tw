@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: e8070894bab89ab2e38772518c94482409e4d17f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: c93feb9527892b7b4c60c9d213361d19d3bc4b93
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650429"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771722"
 ---
 # <a name="implementing-a-view"></a>實作檢視
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
 
 _Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 View 類別。本文示範如何建立 Xamarin.Forms 自訂控制項的自訂轉譯器，以用來從裝置相機顯示預覽視訊資料流。_
 
@@ -127,7 +127,7 @@ public class MainPageCS : ContentPage
 
 ![](view-images/screenshots.png "每個平台上的 CameraPreview")
 
-`ViewRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂控制項以轉譯對應的原生控制項時，便會呼叫此方法。 這個方法採用 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」  所附加的 Xamarin.Forms 項目，以及「現在」  所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPreview` 執行個體的參考。
+`ViewRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂控制項以轉譯對應的原生控制項時，便會呼叫此方法。 這個方法採用 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPreview` 執行個體的參考。
 
 在每個平台特定的轉譯器類別中，`OnElementChanged` 方法之覆寫版本是執行原生控制項具現化和自訂的位置。 您應該使用 `SetNativeControl` 方法來具現化原生控制項，而且此方法也會將控制項參考指派給 `Control` 屬性。 此外，所要轉譯 Xamarin.Forms 控制項的參考可透過 `Element` 屬性取得。
 
@@ -331,7 +331,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>總結
 
 本文示範了如何建立 Xamarin.Forms 自訂控制項的自訂轉譯器，以用來從裝置相機顯示預覽視訊資料流。 Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 [`View`](xref:Xamarin.Forms.View) 類別。
-
 
 ## <a name="related-links"></a>相關連結
 

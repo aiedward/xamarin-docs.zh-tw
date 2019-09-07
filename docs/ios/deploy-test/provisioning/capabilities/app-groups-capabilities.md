@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: cf79f586e5b0ff71c109ea9664d3cb7a6aa91a02
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72e0c27502c10fe3522d80c6345a847ca424d49f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292367"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762794"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS 的應用程式群組功能
 
@@ -73,7 +73,7 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 12. 針對任何將使用「應用程式群組」的應用程式 (或擴充功能) 重複上述步驟。
 
 ## <a name="next-steps"></a>後續步驟
- 
+
 以下清單說明可能需要進行的額外步驟：
 
 * 在您的應用程式中使用架構命名空間。

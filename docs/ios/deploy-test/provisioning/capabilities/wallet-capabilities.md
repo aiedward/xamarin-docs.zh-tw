@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 8afe9e703d357c246ec46756a87a7337859d5888
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1844136bb62930341cf00ec871fdd2ff8ff8fe1f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287022"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762733"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 的電子錢包功能
 
@@ -54,13 +54,12 @@ _為應用程式新增功能通常需要額外的佈建設定。本指南說明�
 
 ![使用新建立的 App ID (應用程式識別碼) 來建立佈建設定檔](wallet-capabilities-images/image20.png)
 
-
 如需有關使用「電子錢包」的詳細資訊，請參閱下列指南：
 
 * [PassKit 簡介](~/ios/platform/passkit.md)
- 
+
 ## <a name="next-steps"></a>後續步驟
- 
+
 以下清單說明可能需要進行的額外步驟：
 
 * 在您的應用程式中使用架構命名空間。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: f81a9d232e1702d112e837a80d35403162e3adca
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 116225165b8ee27b896d3de8598f8fbf39400f52
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529337"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767535"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結至 MVVM
 
@@ -35,7 +35,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext`是非常特殊的屬性:當您在專案`BindingContext`上設定時, 該專案的所有子系都會繼承此專案。 這表示所有子系`StackLayout`具有此相同`BindingContext`，而且可以包含簡單的繫結，該物件的屬性。
+`BindingContext`是非常特殊的屬性：當您在專案`BindingContext`上設定時，該專案的所有子系都會繼承此專案。 這表示所有子系`StackLayout`具有此相同`BindingContext`，而且可以包含簡單的繫結，該物件的屬性。
 
 在  **One-Shot DateTime**程式中，子系的兩個包含該屬性的繫結`DateTime`值，但兩個其他子系包含繫結似乎遺漏繫結路徑。 這表示`DateTime`本身的值會用於`StringFormat`:
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 ## <a name="commanding-with-viewmodels"></a>Viewmodel 的命令執行
 
-在許多情況下, MVVM 模式僅限於運算元據項:ViewModel 中 View parallel data 物件的使用者介面物件。
+在許多情況下，MVVM 模式僅限於運算元據項：ViewModel 中 View parallel data 物件的使用者介面物件。
 
 不過，有時候必須檢視包含觸發程序中的 ViewModel 的各種動作的按鈕。 但不是能包含 ViewModel`Clicked`按鈕處理常式因為，會將繫結至特定的使用者介面典範 ViewModel。
 
@@ -702,12 +702,11 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin 演進 2016:MVVM 透過 Xamarin 和 Prism 變得簡單**
+**Xamarin 演進2016：MVVM 透過 Xamarin 和 Prism 變得簡單**
 
 ## <a name="summary"></a>總結
 
 XAML 是功能強大的工具，來定義使用者介面，在 Xamarin.Forms 應用程式，特別是當資料繫結以及 MVVM 的使用。 結果是具有程式碼中的所有背景支援的使用者介面的全新、 優雅且可能可表示法。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/23/2017
-ms.openlocfilehash: 5cf57a42092535363071acffe993cd38a91b9805
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 05034989c60868f8bff8164da7da90a7ff8788a3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290985"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763223"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -70,7 +70,6 @@ ms.locfileid: "70290985"
 
 3. 如下所示，將根據您小組的權限產生簽署識別；您也可能需要等待小組專員或管理員批准：[![](images/generated.png "將產生簽署識別和顯示對話方塊")](images/generated.png#lightbox)
 
-
 <a name="creatingprofile" />
 
 ## <a name="creating-a-distribution-profile"></a>建立散發設定檔
@@ -81,7 +80,6 @@ ms.locfileid: "70290985"
 
 如同您所建立的其他任何佈建設定檔，此處也需要應用程式識別碼才能識別您要散發給使用者裝置的應用程式。 如果您尚未建立應用程式識別碼，請遵循下列步驟來建立：
 
-
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [識別碼] 下的 [應用程式識別碼]。
 2. 按一下 [+] 按鈕，並提供可在入口網站中識別應用程式的**名稱**。
 3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取「明確」或「萬用字元」應用程式識別碼，並以反向 DNS 格式輸入套件組合識別碼，例如：
@@ -89,7 +87,6 @@ ms.locfileid: "70290985"
     - **萬用字元**com.[網域名稱].*
 4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)。
 5. 按一下 [繼續] 按鈕，然後依照畫面上的指示來建立新的 App ID (應用程式識別碼)。
-
 
 ### <a name="creating-a-provisioning-profile"></a>建立佈建設定檔
 
@@ -120,7 +117,6 @@ ms.locfileid: "70290985"
     [![](images/distribute06.png "針對新的散發設定檔輸入名稱")](images/distribute06.png#lightbox)
 
 7. 按一下 [產生] 按鈕，以建立新的設定檔，並完成流程。
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

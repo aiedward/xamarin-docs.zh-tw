@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 6287dca8660c1147455beb22304b7f8637ac7fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba3be4fea9999698c5a81faf5b07bec99fb1aa46
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292777"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753246"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Xamarin 中的 Embedded framework
 
@@ -74,4 +74,3 @@ Xamarin. iOS 9.0 新增了在 Xamarin iOS 應用程式中使用這些內嵌架�
 - `--mono:framework`：以 Mono 執行時間做為架構的連結。
 
 將 Mono 執行時間連結為架構的其中一個案例，即使是沒有擴充功能的應用程式，也可以減少可執行檔的大小，以克服 Apple 強制執行檔的任何大小限制。 就參考而言，Mono 執行時間會為每個架構增加大約 1.7 MB （從 Xamarin. iOS 8.12，但在不同版本之間，甚至是在應用程式之間）。 Mono 架構在每個架構中大約增加了 2.3 MB，這表示針對不含任何延伸模組的單一架構應用程式，讓應用程式連結以 Mono 執行時間做為架構，會將可執行檔縮小 ~ 1.7 MB，但會增加 ~ 2.3 mb 的架構，產生的結果在 ~ 0.6 MB 的應用程式 alltogether 中。
-

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/12/2017
-ms.openlocfilehash: b90673559d0b8a3728898b7d8dbc3207bb22520b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6068dd148bfc3c2a778ca34753374bcecccb55d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280085"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752222"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 中的 WebKit 和 Safari 變更
 
@@ -43,7 +43,6 @@ sfViewController.DismissButtonStyle = SFSafariViewControllerDismissButtonStyle.C
 
 當呈現時`SFSafariViewController` ，可以變更這個值。
 
-
 視 Safari 視圖控制器內顯示的內容而定，可能需要確保功能表列不會在使用者滾動時折迭。 這是藉由將新`BarCollapsedEnabled`的屬性設定為來`false`啟用：
 
 ```csharp
@@ -58,7 +57,6 @@ var sfViewController = new SFSafariViewController(url, config);
 Apple 也已在 iOS 11 的 Safari 視圖控制器中，對隱私權進行了更新。 現在，流覽 cookie 和本機儲存體之類的資料只會以個別應用程式為基礎，而不是在 Safari view controller 的所有實例上。 這會讓使用者流覽活動在您的應用程式中保持私用。
 
 其他功能（例如）的 url 和支援`window.open()`的拖放支援也已新增至`SFSafariViewController` iOS 11 中的。 您可以在[Apple 的 SFSafariViewController 檔](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller?changes=latest_minor)中找到這些新功能的詳細資訊。
-
 
 ## <a name="webkit"></a>WebKit
 
@@ -106,4 +104,3 @@ config.SetUrlSchemeHandler(new MyHandler(), "xamarin-asset");
 webView = new WKWebView (View.Frame, config);
 webView.LoadRequest (new NSUrlRequest("xamarin-asset://xamarin.com"));
 ```
-

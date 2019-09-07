@@ -1,18 +1,18 @@
 ---
 title: 第 24 章的摘要。 頁面巡覽
-description: 使用 Xamarin.Forms 建立行動應用程式：第 24 章的摘要。 頁面巡覽
+description: 使用 Xamarin 建立 Mobile Apps：第 24 章的摘要。 頁面巡覽
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: ce56c30cd631e87d39c9c5bda101b67252a0762a
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+ms.openlocfilehash: 340aa8c7327ba75986b960d5e0f6bda66c116fc5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926903"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770919"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章的摘要。 頁面巡覽
 
@@ -139,7 +139,8 @@ Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)類別提
 
 訂閱這些事件的程式，想要接收特定類型的訊息必須使用[ `MessagingCenter.Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*)和指定的回呼函式。 稍後可以藉由呼叫中取消[ `MessagingCenter.Unsubscribe` ](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)。 回呼函式會接收從指定的型別傳送具有指定的名稱，透過傳送任何訊息[ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*)方法。
 
-[ **DateTransfer2** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer2)程式會示範如何使用訊息中心，資料傳輸，但需要再次*資訊*頁面知道類型*家用*頁面。
+[
+          **DateTransfer2**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer2)程式會示範如何使用訊息中心，資料傳輸，但需要再次*資訊*頁面知道類型*家用*頁面。
 
 ### <a name="events"></a>事件
 
@@ -170,8 +171,6 @@ Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)類別提
 ### <a name="something-like-a-real-life-app"></a>類似的實際應用程式
 
 [**便箋**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/NoteTaker)範例也會利用`MultiPageRestorableApp`，並允許輸入和編輯儲存在備忘稿`Properties`字典。
-
-
 
 ## <a name="related-links"></a>相關連結
 

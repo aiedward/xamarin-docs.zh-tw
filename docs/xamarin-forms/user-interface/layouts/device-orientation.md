@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: dccae3b3da4ab84c8ba14f204263e4230f31e833
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d988be9163c0a6e12735425a139c03d9641fa95c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656778"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772755"
 ---
 # <a name="device-orientation"></a>裝置方向
 
@@ -225,7 +225,6 @@ protected override void OnSizeAllocated (double width, double height){
 
 - `outerStack` 調整，以作為根據方向，以充分利用可用空間的水平或垂直堆疊顯示的映像和控制項。
 
-
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
 請考慮下列的應用程式，以直向顯示：
@@ -277,7 +276,6 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 
 - 頁面配置的方式，因為沒有必要程序性程式碼造成回應性。
 - `ScrollView`用來允許標籤會顯示即使螢幕的高度是固定的按鈕和影像的高度的總和小於。
-
 
 ### <a name="relativelayout"></a>RelativeLayout
 
@@ -471,7 +469,6 @@ protected override void OnSizeAllocated (double width, double height){
 請注意下列事項：
 
 - 頁面配置的方式，因為沒有方法來變更控制項的格線位置。
-
 
 ## <a name="related-links"></a>相關連結
 

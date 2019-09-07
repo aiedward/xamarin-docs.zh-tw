@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f46b60a0567a5486a5c22a6ff36561e976d07b47
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246653cee7917141ddd0f911a7c4d1b21f945360
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292908"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70751968"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 相容性
 
@@ -32,13 +32,10 @@ _即使您不打算將 iOS 9 功能直接新增至您的應用程式，您還是
 
 _即使您不打算立即使用 iOS 9 功能更新您的應用程式，我們仍建議您使用最新版本的 Xamarin 重新建立，並重新提交至 App Store_。
 
-
-
 這可確保您的應用程式會在您的客戶升級後於 iOS 9 上執行。
 您可以繼續支援 iOS 8-使用最新版本重建並不會影響應用程式的目標版本。
 
 如果您在 iOS 9 上測試現有的應用程式時有進一步的問題，請閱讀下面的[改善相容性](#compat)一節。
-
 
 ### <a name="updating-with-visual-studio"></a>使用 Visual Studio 更新
 
@@ -50,7 +47,6 @@ _即使您不打算立即使用 iOS 9 功能更新您的應用程式，我們仍
 只要使用最新穩定版本的 Xamarin 來重新建立應用程式，就可以解決這些問題。
 
 同樣地，元件廠商和 Nuget 作者**不**需要提交新組建，就能修正上述兩個問題。 不過，如果有任何元件或 Nuget 使用`UICollectionView`或從**Xib**檔案載入 views，則*可能*需要進行更新，才能解決下列所述的 iOS 9 相容性問題。
-
 
 <a name="compat" />
 
@@ -74,8 +70,6 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 相關範例：[MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
-
-
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>從 Xib/筆尖載入視圖時，UIView 無法從當中初始化
 
 **原因**從`initWithCoder:` Interface Builder Xib 檔載入視圖時，會呼叫此函式。 如果此函式不是匯出的，非受控碼就無法呼叫其受管理的版本。 先前（例如 在 iOS 8 中） `IntPtr`已叫用此函式來初始化 view。
@@ -92,7 +86,6 @@ public YourClassName (NSCoder coder) : base (coder)
 
 相關範例：[Chat](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-
 ### <a name="dyld-message-no-cache-image-with-name"></a>Dyld 訊息：沒有名稱為的快取映射 。
 
 在記錄檔中，您可能會遇到下列資訊的損毀：
@@ -105,8 +98,6 @@ Dyld Message: no cache image with name (/System/Library/PrivateFrameworks/JavaSc
 **原因**這是 Apple 原生連結器中的錯誤（bug），這會在公開公用架構（在 iOS 7 中設為公用的 JavaScriptCore，在其為私用架構之前），而且應用程式的部署目標是在架構為私用時，用於 iOS 版本。 在此情況下，Apple 的連結器會與架構的私用版本（而不是公用版本）連結。
 
 **補丁**這適用于 iOS 9，但有一個簡單的因應措施，您可以在此同時套用：僅以您專案中較新的 iOS 版本為目標（在此案例中，您可以試用 iOS 7）。 其他架構可能會展示類似的問題，例如，WebKit 架構在 iOS 8 中是公開的，因此以 iOS 7 為目標會導致此錯誤; 您應該以 iOS 8 為目標，以在您的應用程式中使用 WebKit）。
-
-
 
 ## <a name="related-links"></a>相關連結
 

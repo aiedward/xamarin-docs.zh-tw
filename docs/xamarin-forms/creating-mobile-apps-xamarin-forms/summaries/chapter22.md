@@ -1,18 +1,18 @@
 ---
 title: 第 22 章摘要。 動畫
-description: 使用 Xamarin.Forms 建立行動應用程式：第 22 章摘要。 動畫
+description: 使用 Xamarin 建立 Mobile Apps：第 22 章摘要。 動畫
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 7b3695ce145c2ca58238e2c9a601923cbcefa182
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 935be5bd6696600644463eb4ec26410b546f42a0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333097"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771001"
 ---
 # <a name="summary-of-chapter-22-animation"></a>第 22 章摘要。 動畫
 
@@ -98,7 +98,8 @@ ms.locfileid: "61333097"
 
 [ **FadingEntrance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingEntrance)範例會使用[ `FadeTo` ](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))淡入頁面的內容中的擴充方法。
 
-[ **SlidingEntrance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SlidingEntrance)範例會使用[ `TranslateTo` ](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))投影片 頁面的內容中從側邊的擴充方法。
+[
+          **SlidingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SlidingEntrance)範例會使用[`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))投影片 頁面的內容中從側邊的擴充方法。
 
 [ **SwingingEntrance** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingingEntrance)範例會使用[ `RotateYTo` ](xref:Xamarin.Forms.ViewExtensions.RotateYTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))擴充方法，以動畫顯示`RotationY`屬性。 A [ `RotateXTo` ](xref:Xamarin.Forms.ViewExtensions.RotateXTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法也會提供。
 
@@ -197,8 +198,6 @@ Xamarin.Forms 動畫系統可以是稍嫌複雜。 除了`Easing`類別，動畫
 ## <a name="structuring-your-animations"></a>建構您的動畫
 
 有時候，它是 express 在 XAML 中的動畫，並使用它們搭配 MVVM 很有用。 在下一章中，說明這一點[**第 23 章。觸發程序和行為**](chapter23.md)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

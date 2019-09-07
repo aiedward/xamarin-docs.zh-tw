@@ -1,18 +1,18 @@
 ---
 title: 第 20 章的摘要。 非同步與檔案 I/O
-description: 使用 Xamarin.Forms 建立行動應用程式：第 20 章的摘要。 非同步與檔案 I/O
+description: 使用 Xamarin 建立 Mobile Apps：第 20 章的摘要。 非同步與檔案 I/O
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: cf870cebfdd29e679b767728d1bea723f9310b17
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 283273e6ee28cc5cd1a61169f38bfcd1dd1726d8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67650457"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771044"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章的摘要。 非同步與檔案 I/O
 
@@ -166,8 +166,6 @@ Windows 執行階段下執行的程式使用中的類別[ `Windows.Storage` ](/u
 ## <a name="back-to-the-web"></a>回到 web
 
 [ `WebRequest` ](xref:System.Net.WebRequest)一些範例中所使用的類別會使用稱為 「 非同步程式設計模型 」 或 「 APM 的舊式非同步通訊協定。 您可以將這類類別轉換成使用其中一種新式的點選通訊協定`FromAsync`中的方法[ `TaskFactory` ](xref:System.Threading.Tasks.TaskFactory`1)類別。 [ **ApmToTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/ApmToTap)為範例。
-
-
 
 ## <a name="related-links"></a>相關連結
 

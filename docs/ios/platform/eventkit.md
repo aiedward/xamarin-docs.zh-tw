@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 638840bafd43961cdce6ebe0fa2fb6cbe8b33e16
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 960be485f6997ed8c861d47181fa89397cff9c0a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291526"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753154"
 ---
 # <a name="eventkit-in-xamarinios"></a>在 Xamarin 中 EventKit
 
@@ -24,7 +24,6 @@ EventKit 架構可讓您存取*行事曆資料庫*儲存的行事曆、行事*�
 
 - **EventKit 基本概念**–這會透過主要類別介紹 EventKit 的基本部分，並提供其使用方式的瞭解。 在處理檔的下一個部分之前，必須先閱讀這一節。 
 - **一般**工作–一般工作一節是關於如何執行一般事項的快速參考，例如：列舉行事曆、建立、儲存和抓取行事曆事件和提醒，以及使用內建的控制器來建立和修改行事曆事件。 這一節不需要由 front 重新讀取，因為它是特定工作的參考。 
-
 
 本指南中的所有工作都可在隨附範例應用程式中取得：
 
@@ -376,7 +375,6 @@ App.Current.EventStore.FetchReminders (
 ## <a name="summary"></a>總結
 
 本檔概述 EventKit 架構的重要部分，以及一些最常見的工作。 不過，EventKit 架構非常大且功能強大，而且包含未在此處引進的功能，例如：批次更新、設定警示、設定事件的週期、註冊及接聽行事曆資料庫上的變更。設定地理柵欄及其他。  如需詳細資訊，請參閱 Apple 的行事[曆與提醒程式設計指南](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)。
-
 
 ## <a name="related-links"></a>相關連結
 

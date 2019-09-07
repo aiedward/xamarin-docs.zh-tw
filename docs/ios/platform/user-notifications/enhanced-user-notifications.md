@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: adabf66e008dc2f49d7787d62ebad8aadf263ac7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ec63162a21333d0ff831ded1ab17a3d8bb0efaa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290578"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769381"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>在 Xamarin 中增強的使用者通知
 
@@ -360,7 +360,6 @@ UNUserNotificationCenter.Current.RemoveDeliveredNotifications (requests);
 
 若要更新現有的通知，只要建立新的通知，並將所需的參數修改（例如新的觸發程式時間），並將它新增至具有與需要修改之通知相同的要求識別碼的系統中。 範例：
 
-
 ```csharp
 using UserNotifications;
 ...
@@ -664,8 +663,6 @@ namespace myApp {
 ## <a name="summary"></a>總結
 
 本文涵蓋了 iOS 10 已增強使用者通知的所有方式。 它呈現新的使用者通知架構，以及如何在 Xamarin iOS 應用程式或應用程式延伸模組中使用它。
-
-
 
 ## <a name="related-links"></a>相關連結
 

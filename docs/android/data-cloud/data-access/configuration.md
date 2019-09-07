@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: f12efdbc0d5bf43a7515603a67fedd180cd87587
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.openlocfilehash: 5ebafa70239305210da631c3e9c34278f83b272b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67649643"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754657"
 ---
 # <a name="configuration"></a>組態
 
-若要在您的 Xamarin.Android 應用程式中使用 SQLite，您必須判斷您的資料庫檔案的正確檔案位置。
+若要在您的 Xamarin Android 應用程式中使用 SQLite，您必須為資料庫檔案判斷正確的檔案位置。
 
-## <a name="database-file-path"></a>資料庫檔案路徑。
+## <a name="database-file-path"></a>資料庫檔案路徑
 
-不論使用何種資料存取方法，您必須建立資料庫檔案之前的資料可以儲存使用 SQLite。 根據您的目標何種平台的檔案位置將會不同。 適用於 Android 您可以建構有效的路徑，使用環境類別，如下列程式碼片段所示：
+不論您使用哪一種資料存取方法，您都必須先建立資料庫檔案，才能使用 SQLite 來儲存資料。 根據您的目標平臺而定，檔案位置將會不同。 針對 Android，您可以使用環境類別來建立有效的路徑，如下列程式碼片段所示：
 
 ```csharp
 string dbPath = Path.Combine (
@@ -28,9 +28,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-有其他項目納入考量，當決定儲存資料庫檔案的位置。 例如，在 Android 上您可以選擇是否要使用內部或外部儲存體。
+在決定要儲存資料庫檔案的位置時，還有其他事項需要考慮。 例如，在 Android 上，您可以選擇是否要使用內部或外部儲存體。
 
-如果您想要在跨平台應用程式中的每個平台上使用不同的位置。 您可以使用的編譯器指示詞所示來產生不同的路徑，每個平台：
+如果您想要在跨平臺應用程式的每個平臺上使用不同的位置，您可以使用如下所示的編譯器指示詞，為每個平臺產生不同的路徑：
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -46,13 +46,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-在 Android 中使用檔案系統上的提示，請參閱[瀏覽檔案](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files)配方。 請參閱[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)如需有關使用編譯器指示詞寫入每個平台特定程式碼的文件。
+如需在 Android 中使用檔案系統的提示，請參閱[流覽](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files)檔案配方。 如需使用編譯器指示詞來撰寫每個平臺特定程式碼的詳細資訊，請參閱[建立跨平臺應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)檔。
 
 ## <a name="threading"></a>執行緒
 
-您不應該使用相同的 SQLite 資料庫連接，跨多個執行緒。 請小心開啟、 使用，再關閉您在相同的執行緒建立任何連線。
+您不應該在多個執行緒之間使用相同的 SQLite 資料庫連接。 請小心開啟，使用，然後關閉您在同一個執行緒上建立的任何連接。
 
-若要確保您的程式碼，不嘗試從多個執行緒存取 SQLite 資料庫，在此同時，手動將採用鎖定時要存取資料庫時，就像這樣：
+若要確保您的程式碼不會同時嘗試從多個執行緒存取 SQLite 資料庫，請在每次存取資料庫時手動採取鎖定，如下所示：
 
 ```csharp
 object locker = new object(); // class level private field
@@ -62,12 +62,11 @@ lock (locker){
 }
 ```
 
-所有資料庫存取權 （讀取、 寫入、 更新等） 應該都包裝與相同的鎖定。 必須小心確保鎖定子句內的工作會保持簡單，而不會呼叫可能也需要鎖定的其他方法來避免死結狀況 ！
-
+所有資料庫存取（讀取、寫入、更新等等）都應該以相同的鎖定來包裝。 請務必小心避免鎖死的情況，方法是確保鎖定子句內的工作保持簡單，而且不會呼叫其他可能也會鎖定的方法！
 
 ## <a name="related-links"></a>相關連結
 
-- [DataAccess Basic （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess 進階 （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [DataAccess 基本（範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess Advanced （範例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android 資料配方](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms 資料存取](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin. 表單資料存取](~/xamarin-forms/data-cloud/data/databases.md)

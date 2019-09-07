@@ -6,12 +6,12 @@ ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2017
-ms.openlocfilehash: 7657985ce14633140adb0e63a9817ddd0e48841d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e1b1a98bf06bbd03b382f0b7263e6965d4efad15
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284574"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762110"
 ---
 # <a name="part-2---architecture"></a>第 2 部分 - 架構
 
@@ -21,11 +21,9 @@ ms.locfileid: "70284574"
 - **責任分隔**–確保每個元件（在架構和類別層級）都具有清楚且妥善定義的目的。 每個元件都應該只執行其定義的工作，並透過可供其他需要使用它的類別存取的 API 來公開該功能。
 - **多**型-對支援多個執行的介面（或抽象類別）進行程式設計，表示可以在平臺上撰寫和共用核心程式代碼，同時仍然與平臺特定功能互動。
 
-
 自然結果是在真實世界或具有個別邏輯層的抽象實體之後模型化的應用程式。 將程式碼分成各層，可讓應用程式更容易瞭解、測試和維護。 建議每個圖層中的程式碼實際分開（在目錄中，或甚至是針對非常大型應用程式的個別專案中），並以邏輯方式分隔（使用命名空間）。
 
  <a name="Typical_Application_Layers" />
-
 
 ## <a name="typical-application-layers"></a>一般應用層
 
@@ -38,11 +36,9 @@ ms.locfileid: "70284574"
 - **應用層**–通常是平臺特定的程式碼（通常不會跨平臺共用），或應用程式特定的程式碼（通常不可重複使用）。 是否要將程式碼放在應用層和 UI 層中的良好測試是（a），用來判斷類別是否有任何實際的顯示控制項，或（b）是否可在多個螢幕或裝置之間共用（例如 iPhone 和 iPad）。
 - **使用者介面（UI）層**–使用者面向圖層，包含螢幕、widget 和管理它們的控制器。
 
-
 應用程式可能不一定包含所有層級–例如，服務存取層不會存在於不會存取網路資源的應用程式中。 非常簡單的應用程式可能會合並資料層和資料存取層，因為作業非常基本。
 
  <a name="Common_Mobile_Software_Patterns" />
-
 
 ## <a name="common-mobile-software-patterns"></a>常見的行動軟體模式
 
@@ -54,6 +50,5 @@ ms.locfileid: "70284574"
 - **Singleton** –單一模式提供一種方式，讓特定物件的單一實例只能存在。 例如，在行動應用程式中使用 SQLite 時，您只需要一個資料庫實例。 使用單一模式是確保這種情況的簡單方式。
 - **提供者**– Microsoft 所 alistair 創造的模式（可與策略或基本相依性插入類似），鼓勵跨 SILVERLIGHT、WPF 和 WinForms 應用程式重複使用程式碼。 共用程式碼可以針對介面或抽象類別來撰寫，並在使用程式碼時，撰寫和傳入平臺特定的實作為。
 - **非同步**–不會與 async 關鍵字混淆，非同步模式是在需要執行長時間執行的工作，而不需按住 UI 或目前的處理時使用。 在最簡單的形式中，非同步模式只會描述長時間執行的工作應該在另一個執行緒中啟動（或類似的執行緒抽象，例如工作），而目前的執行緒會繼續處理並接聽來自背景進程的回應，然後在傳回資料和或狀態時，更新 UI。
-
 
 我們會更詳細地檢查每個模式，因為案例研究中說明了其實際用法。 維琪百科具有[MVVM](https://en.wikipedia.org/wiki/Model–view–viewmodel)、 [MVC](https://en.wikipedia.org/wiki/Model–view–controller)、[外觀](https://en.wikipedia.org/wiki/Facade_pattern)、 [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern)、[策略](https://en.wikipedia.org/wiki/Strategy_pattern)和[提供者](https://en.wikipedia.org/wiki/Provider_model)模式（以及[設計模式](https://en.wikipedia.org/wiki/Design_Patterns)的一般）的詳細描述。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: edc5ec51499116fc2fabeb03327b32a689dc0c49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 158b3575589df5854a32e95ec80c6ef02d21e661
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279332"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768347"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的資料表元件和功能
 
@@ -67,7 +67,6 @@ UITableView 可以有「群組」或「純文字」樣式，並由下列部分�
 - 插入新的儲存格（含動畫）。
 
 本檔的其餘部分將說明如何使用 Xamarin 來執行所有這些 UITableView 功能。
-
 
 ## <a name="classes-overview"></a>類別總覽
 

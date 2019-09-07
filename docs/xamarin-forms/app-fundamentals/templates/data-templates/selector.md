@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 684820a646527b382b1dbb936b9256fd4457803e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: e9a17bff9bd0a23d59faf7602544b25c7ec05a86
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651902"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771248"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>建立 Xamarin.Forms DataTemplateSelector
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
 
 _您可以在執行階段使用 DataTemplateSelector 根據資料繫結屬性值來選擇 DataTemplate。這可將多個 DataTemplate 套用至相同類型的物件，以自訂特定物件的外觀。本文示範如何建立和使用 DataTemplateSelector。_
 
@@ -133,7 +133,6 @@ public class HomePageCS : ContentPage
 ## <a name="summary"></a>總結
 
 本文示範了如何建立和使用 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)。 您可以在執行階段使用 `DataTemplateSelector` 根據資料繫結屬性值來選擇 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。 這可將多個 `DataTemplate` 執行個體套用至相同類型的物件，以自訂特定物件的外觀。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: f526be2156c4d74cf695b6b11706e3bbb7f355bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eb7057d40e6ff0c48c6dc1b5dc38af2eb92de2e0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642985"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772772"
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
 
@@ -468,7 +468,6 @@ W 和 H 表示點陣圖的高度與寬度。 第一個轉換`S`只會調整的�
 `a`和`b`值的計算方式，以便第三個轉換為仿射。 程式碼取得仿射轉換的反向，並接著使用該值來對應右下角。 這就是重點 (a、 b)。
 
 非仿射轉換的另一個用法是模擬 3d 圖形。 在下一步 文章中， [ **3D 旋轉**](3d-rotation.md)您了解如何旋轉 3D 空間中的二維圖形。
-
 
 ## <a name="related-links"></a>相關連結
 

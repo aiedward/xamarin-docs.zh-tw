@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: 2deee2bd7fa07f562bee02409d1a7a19cdac0be9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650854"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772009"
 ---
 # <a name="customizing-an-entry"></a>自訂 Entry
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
 
 _Xamarin.Forms Entry 控制項允許單行文字的編輯。本文示範如何建立 Entry 控制項的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。_
 
@@ -117,7 +117,7 @@ public class MainPage : ContentPage
 
 ![](entry-images/screenshots.png "每個平台上的 MyEntry 控制項")
 
-`EntryRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 控制項來轉譯對應原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」  所附加的 Xamarin.Forms 項目，以及「現在」  所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `MyEntry` 控制項的參考。
+`EntryRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 控制項來轉譯對應原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `MyEntry` 控制項的參考。
 
 在 `MyEntryRenderer` 類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，所要轉譯 Xamarin.Forms 控制項的參考可透過 `Element` 屬性取得，雖然在此應用程式範例中並未使用該屬性。
 
@@ -212,7 +212,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>總結
 
 本文示範了如何建立 [`Entry`](xref:Xamarin.Forms.Entry) 控制項的自訂控制項轉譯器，讓開發人員以自己的平台特定轉譯來覆寫預設原生轉譯。 自訂轉譯器提供自訂 Xamarin.Forms 控制項外觀的有效方法。 它們可用於小型樣式變更或複雜的平台特定配置及行為自訂。
-
 
 ## <a name="related-links"></a>相關連結
 

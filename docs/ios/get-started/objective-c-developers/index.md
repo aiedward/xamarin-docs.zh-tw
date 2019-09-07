@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 96a7e6b9587d696479afd084613c79e2b03f956c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2970253ec15ca207b9f69e2b764e0a69f8037938
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292007"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753507"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 Xamarin
 
@@ -30,7 +30,6 @@ Xamarin 能提供以 iOS 為目標的開發人員將其非使用者介面程式�
 
 - [適用於 Objective-C 開發人員的 C# 入門](primer.md)：適用於想要移至 Xamarin 和 C# 語言之 Objective-C 開發人員的入門。 
 - [逐步解說：對 Objective-C 程式庫進行繫結](~/ios/platform/binding-objective-c/walkthrough.md)：在 Xamarin.iOS 應用程式中重複使用現有 Objective-C 程式碼的逐步解說。 
-
 
 ## <a name="binding-objective-c"></a>繫結 Objective C
 

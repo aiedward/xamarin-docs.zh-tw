@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: d3046479282ef1535677f6712e487ab80bbf9d1b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 71972f13f991bc5ad3ddf3c1c631fa7413290204
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656796"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759896"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的簡單動畫
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _ViewExtensions 類別提供可用來建構簡單的動畫的擴充方法。本文示範如何建立和取消使用 ViewExtensions 類別的動畫。_
-
 
 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)類別提供可用來建立簡單的動畫的下列擴充方法：
 
@@ -229,7 +228,6 @@ ViewExtensions.CancelAnimations (image);
 ## <a name="summary"></a>總結
 
 這篇文章示範建立，並取消使用的動畫[ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)類別。 這個類別提供擴充方法，可用來建構簡單的動畫的旋轉和調整其規模，翻譯，淡[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)執行個體。
-
 
 ## <a name="related-links"></a>相關連結
 

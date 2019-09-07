@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: d78363bf7d38f19a14f689c2825ea9c9934653e4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 022602c50386017b178672e20e3e352345feec0b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280257"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767198"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>逐步解說：在 Xamarin 中使用觸控
 
@@ -35,11 +35,9 @@ ms.locfileid: "70280257"
 
 在此範例中，我們將示範一些觸控 Api。 請遵循下列步驟來新增執行觸控事件所需的程式碼：
 
-
 1. 開啟 [專案**Touch_Start**]。 首先執行專案，確定一切都沒問題，並觸及**觸控範例**按鈕。 您應該會看到類似下面的畫面（雖然沒有任何按鈕可以使用）：
 
     [![](ios-touch-walkthrough-images/image4.png "使用非作用中按鈕執行的範例應用程式")](ios-touch-walkthrough-images/image4.png#lightbox)
-
 
 1. 編輯檔案**TouchViewController.cs** ，並將下列兩個執行個體變數新增至類別`TouchViewController`：
 
@@ -49,7 +47,6 @@ ms.locfileid: "70280257"
     private bool touchStartedInside;
     #endregion
     ```
-
 
 1. `TouchesBegan`執行方法，如下列程式碼所示：
 
@@ -172,7 +169,6 @@ ms.locfileid: "70280257"
     [![](ios-touch-walkthrough-images/image4.png "啟動應用程式畫面")](ios-touch-walkthrough-images/image4.png#lightbox)
     
     [![](ios-touch-walkthrough-images/image5.png "使用者拖曳按鈕之後的畫面")](ios-touch-walkthrough-images/image5.png#lightbox)
- 
 
 <a name="Gesture_Recognizer_Samples" />
 
@@ -189,7 +185,6 @@ ms.locfileid: "70280257"
  [![](ios-touch-walkthrough-images/image6.png "按一下 [手勢辨識器範例] 按鈕會顯示此畫面")](ios-touch-walkthrough-images/image6.png#lightbox)
 
 請遵循下列步驟來執行手勢辨識器：
-
 
 1. 編輯檔案**GestureViewController.cs** ，並新增下列執行個體變數：
 
@@ -248,7 +243,6 @@ ms.locfileid: "70280257"
 
     上述程式碼會先檢查手勢辨識器的狀態，然後在螢幕周圍移動影像。 當此程式碼準備好時，控制器現在可以支援在螢幕上拖曳一個影像。
 
-
 1. `UITapGestureRecognizer`新增，它會變更顯示在 DoubleTouchImage 中的影像。 將下列方法新增至`GestureViewController`控制器：
 
     ```csharp
@@ -304,13 +298,10 @@ ms.locfileid: "70280257"
 
     也請注意，我們會初始化的值`originalImageFrame`。
 
-
 1. 執行應用程式，並與這兩個影像互動。
 下列螢幕擷取畫面是這些互動的其中一個範例：
     
     [![](ios-touch-walkthrough-images/image7.png "這個螢幕擷取畫面顯示拖曳互動")](ios-touch-walkthrough-images/image7.png#lightbox)
-
-
 
 <a name="Custom_Gesture_Recognizer"/>
 
@@ -321,7 +312,6 @@ ms.locfileid: "70280257"
  [![](ios-touch-walkthrough-images/image8.png "當使用者在螢幕上繪製 ' V ' 時，應用程式會辨識")](ios-touch-walkthrough-images/image8.png#lightbox)
 
 請遵循下列步驟來建立自訂手勢辨識器：
-
 
 1. 將新類別新增至名為`CheckmarkGestureRecognizer`的專案，使其看起來類似下列程式碼：
 
@@ -441,8 +431,6 @@ ms.locfileid: "70280257"
     當`State`屬性變更`Recognized`為或`Ended`時，會呼叫 Reset 方法。 這是重設自訂手勢辨識器中所設定之任何內部狀態的時間。
 現在，類別可以在使用者下一次與應用程式互動時開始，並且準備好重新嘗試識別手勢。
 
-
-
 1. 既然我們已定義自訂手勢辨識器（`CheckmarkGestureRecognizer`），請編輯**CustomGestureViewController.cs**檔案，並新增下列兩個執行個體變數：
 
     ```csharp
@@ -499,11 +487,7 @@ ms.locfileid: "70280257"
     
     [![](ios-touch-walkthrough-images/image10.png "未核取此按鈕")](ios-touch-walkthrough-images/image10.png#lightbox)
 
-
-
 上述三節示範了在 iOS 中回應觸控事件的不同方式：使用觸控事件、內建手勢辨識器，或使用自訂手勢辨識器。
-
-
 
 ## <a name="related-links"></a>相關連結
 

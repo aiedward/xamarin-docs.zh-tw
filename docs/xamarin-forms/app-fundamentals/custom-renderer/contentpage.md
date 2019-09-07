@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 73d57c632cfcd36bd7f38865c39acb7fecb55e3e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650923"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772018"
 ---
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
 _ContentPage 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。本文示範如何建立 ContentPage 頁面的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。_
 
@@ -111,7 +111,7 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 ![](contentpage-images/screenshots.png "每個平台上的 CameraPage")
 
-`PageRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 頁面以轉譯對應的原生控制項時，便會呼叫此方法。 這個方法採用 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」  所附加的 Xamarin.Forms 項目，以及「現在」  所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPage` 執行個體的參考。
+`PageRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 頁面以轉譯對應的原生控制項時，便會呼叫此方法。 這個方法採用 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPage` 執行個體的參考。
 
 在 `CameraPageRenderer` 類別中，`OnElementChanged` 方法的覆寫版本是執行原生頁面自訂的位置。 所要轉譯 Xamarin.Forms 頁面執行個體的參考可透過 `Element` 屬性取得。
 
@@ -253,7 +253,6 @@ namespace CustomRenderer.UWP
 ## <a name="summary"></a>總結
 
 本文示範了如何建立 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 頁面的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。 `ContentPage` 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。
-
 
 ## <a name="related-links"></a>相關連結
 

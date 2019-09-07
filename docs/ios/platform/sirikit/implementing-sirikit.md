@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 5c891943d0d23c24169a6d226a10f83964c9257a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290642"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769791"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin 中執行 SiriKit
 
@@ -50,7 +50,6 @@ MonkeyChat 會保留自己的使用者朋友的連絡人書籍，每個都與一
 3. **應用**程式-為應用程式提供使用者特定詞彙，以協助 Siri 使用它。 
 
 下列各節將詳細說明所有這些元素以及將它們包含在應用程式中的步驟。
-
 
 ## <a name="preparing-the-app"></a>準備應用程式
 
@@ -156,7 +155,6 @@ namespace MonkeyChat
 若要協助在兩個選項之間進行選擇，請查看是否有任何意圖自然屬於同一個。 例如，進行音訊和影片呼叫的應用程式可能會想要將這兩個意圖包含在單一意圖延伸中，因為它們會處理類似的工作，並可提供最多的程式碼重複使用。
 
 針對不符合現有群組的任何意圖或意圖群組，請在應用程式的解決方案中建立新的意圖延伸模組以包含這些專案。
-
 
 ### <a name="setting-the-required-entitlements"></a>設定必要權利
 
@@ -266,7 +264,6 @@ namespace MonkeyChat
 
 第一次啟動應用`INPreferences`程式時，呼叫類別的方法。`RequestSiriAuthorization` 編輯類別， `FinishedLaunching`讓方法看起來如下所示： `AppDelegate.cs`
 
-
 ```csharp
 using Intents;
 ...
@@ -288,7 +285,6 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
             break;
         }
     });
-
 
     return true;
 }
@@ -684,7 +680,6 @@ namespace MonkeyChat
 
 -----
 
-
 如需可用意圖網域的完整清單，請參閱 Apple 的[意圖定義域參考](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/SiriDomains.html#//apple_ref/doc/uid/TP40016875-CH9-SW2)。
 
 ### <a name="configuring-the-main-class"></a>設定主要類別
@@ -743,7 +738,6 @@ namespace MonkeyChatIntents
 此外，MonkeyChat 需要訊息主體的內容。 如果使用者未提供此內容，Siri 就必須提示使用者輸入內容。
 
 意圖延伸模組必須適當地處理每一種情況。
-
 
 ```csharp
 [Export ("resolveRecipientsForSearchForMessages:withCompletion:")]
@@ -810,7 +804,6 @@ public void ConfirmSendMessage (INSendMessageIntent intent, Action<INSendMessage
 ### <a name="processing-the-intent"></a>處理意圖
 
 這就是意圖延伸模組實際執行工作來完成使用者要求，並將結果傳回到 Siri，讓使用者可以收到通知的重點。
-
 
 ```csharp
 public void HandleSendMessage (INSendMessageIntent intent, Action<INSendMessageIntentResponse> completion)
@@ -1064,9 +1057,6 @@ Apple 建議開發人員在設計和實施意圖 UI 延伸模組時，考慮下�
 ## <a name="summary"></a>總結
 
 本文涵蓋 SiriKit，並示範如何將其新增至 Xamarin iOS 應用程式，以提供使用者可使用 Siri 和 iOS 裝置上的 Maps 應用程式來存取的服務。
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

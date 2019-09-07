@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/06/2018
-ms.openlocfilehash: 6014bb0889c84c35edc991011bae46065d4ff8d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d7a2f14b55d9f8de2ea01bdfa5c68c5c9f8f2555
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287106"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756142"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
@@ -113,7 +113,6 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
 
 -----
 
-
 <a name="devcenter" />
 
 ## <a name="using-the-developer-center"></a>使用開發人員中心
@@ -146,7 +145,6 @@ Apple 為開發人員提供「功能」(通常稱為「應用程式服務」) �
     ![App ID (應用程式識別碼) 確認](images/image9.png)
 
 9. 按一下 [Register] \(註冊\)，然後按一下 [Done] \(完成\)。 新建立的 App ID (應用程式識別碼) 應該會顯示在 [iOS App IDs] \(iOS 應用程式識別碼\) 清單中。
-
 
 <a name="provisioningprofile" />
 

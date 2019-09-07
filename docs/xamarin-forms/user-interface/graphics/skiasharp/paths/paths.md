@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 370fec5b9323187f6345d3e6bf9d3e38145cedff
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eee338461593ad131f679d32cadf63fe3b1a4c40
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652775"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759337"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中路徑的基本概念
 
@@ -194,7 +194,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 [![](paths-images/strokejoins-small.png "筆劃加入頁面的三個螢幕擷取畫面")](paths-images/strokejoins-large.png#lightbox "筆劃加入頁面的三個螢幕擷取畫面")
 
 斜接角聯結是由井字點，其中線條的連接所組成。 當兩行進入小角時，斜接角聯結可能會變得很長。 若要防止過長斜接角聯結時，斜接角聯結的長度會受到的值[ `StrokeMiter` ](xref:SkiaSharp.SKPaint.StrokeMiter)屬性`SKPaint`。 超過此長度斜接角聯結砍成為斜面聯結。
-
 
 ## <a name="related-links"></a>相關連結
 

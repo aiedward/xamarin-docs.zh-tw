@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: fa44ba260a62a6e0bd036c08c62371734b38d82d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286578"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752319"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 中的 App Store 變更
 
@@ -33,7 +33,6 @@ IOS App Store 已經完成重新設計，不僅允許使用者有效率地導覽
 不會再于 iTunes Connect 中管理儲存圖示（或行銷圖示），而是必須在應用程式二進位檔中包含為[資產目錄](~/ios/app-fundamentals/images-icons/app-icons.md)，類似于應用程式圖示。 具有 PNG 格式的 1024 x 1024 存放區圖示必須包含在資產目錄中，才能成功提交 iOS 11 應用程式。
 
 應用程式 thinning 可確保此額外的資產目錄不會增加應用程式大小。
-
 
 ## <a name="in-app-purchases-promoted-in-the-app-store"></a>在 App Store 中升級的應用程式內購買
 
@@ -96,7 +95,6 @@ Apple 已在 App Store 中更容易找到應用程式內購買專案。 您現�
 ![顯示自動更新之階段式發行的選項](app-store-changes-images/image6.png)
 
 您的更新可以立即在 App Store 的 [更新] 索引標籤中下載。 階段式發行僅適用于已選取自動下載的使用者。
-
 
 ## <a name="related-links"></a>相關連結
 

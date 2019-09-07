@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 27eb5679bbc4825ab2bf0e1990b00d97ab207619
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7a19b2e70ff18ae43cb65804c6c125890fa1851b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292429"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770979"
 ---
 # <a name="menus-in-xamarinmac"></a>Xamarin 中的功能表
 
@@ -1071,7 +1071,6 @@ public override void DidFinishLaunching (NSNotification notification)
 ## <a name="summary"></a>總結
 
 本文已詳細探討如何在 Xamarin. Mac 應用程式中使用功能表和功能表項目。 首先，我們檢查過應用程式的功能表列，然後看一下建立關聯式功能表，接著我們檢查了狀態列功能表和自訂的停駐功能表。 最後，我們涵蓋了快顯功能表和下拉式清單。
-
 
 ## <a name="related-links"></a>相關連結
 

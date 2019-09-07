@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 049f01d47d303f07edd57c659361d9a123993ede
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288648"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70761987"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 測試和 App Store 核准
 
@@ -39,7 +39,6 @@ ms.locfileid: "70288648"
 
 - **散發**–管理布建程式（特別是針對 iOS 裝置），並將軟體的更新版本提供給測試人員。
 - **意見**反應–收集有關應用程式使用方式的資訊，以及可能發生之任何錯誤的詳細資訊。
-
 
 有一些服務可協助解決這些問題，方法是提供內建于應用程式的基礎結構，以收集和報告使用方式和錯誤，同時也簡化了提供流程以協助註冊和管理測試人員及其裝置.
 

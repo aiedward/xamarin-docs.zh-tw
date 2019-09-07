@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
-ms.openlocfilehash: 0447bd643f359b21ec58bb8bdd79f8482fdb8955
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 275acd02e6cece0842344d8e5833c23af1014a0f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286305"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768940"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin 中的標籤
 
@@ -101,8 +101,3 @@ label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 ![在文字上反白顯示並設定陰影](labels-images/image4.png)
 
 如需變更 UILabel 字型的詳細資訊，請參閱[變更字型](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font)配方。
-
-
-
-
-

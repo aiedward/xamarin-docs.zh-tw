@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 3bcf52d33ebfaba6117a2089419673e0152cbe88
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289113"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769902"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin. Mac 中的資料庫
 
@@ -2221,8 +2221,6 @@ public override void AwakeFromNib ()
 ## <a name="summary"></a>總結
 
 本文深入探討在 Xamarin. Mac 應用程式中使用 SQLite 資料庫的資料系結和索引鍵-值編碼。 首先，它探討了C#如何使用索引鍵/值編碼（KVC）和索引鍵-值觀察（KVO），將類別公開至目標-C。 接下來，它會示範如何使用 KVO 相容的類別，並將資料系結至 Xcode 的 Interface Builder 中的 UI 元素。 本文也涵蓋了如何透過 SQLite.NET ORM 使用 SQLite 資料，並在資料表視圖中顯示該資料。
-
-
 
 ## <a name="related-links"></a>相關連結
 

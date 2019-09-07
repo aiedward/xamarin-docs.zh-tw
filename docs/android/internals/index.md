@@ -1,39 +1,33 @@
 ---
 title: 進階概念與內部項目
-description: Xamarin.Android 和它的 API 設計背後的基礎架構。
+description: Xamarin. Android 和其 API 設計背後的基礎架構。
 ms.prod: xamarin
 ms.assetid: CC6A0D52-E9FA-4270-B3FA-84660621D6D5
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/21/2018
-ms.openlocfilehash: ba804e9757fb1354c39177e6f7cb9c97ea1b8188
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 4f860d493c5709e2f6c7f89e6f3a50981cf62dc3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864143"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757817"
 ---
 # <a name="advanced-concepts-and-internals"></a>進階概念與內部項目
 
-_本節中的主題，說明架構、 API 設計，以及 Xamarin.Android 的限制。此外，它包含記憶體回收集合實作，可在 Xamarin.Android 中的組件的說明主題。因為 Xamarin.Android[開放原始碼](https://github.com/xamarin/xamarin-android)，您也可了解 Xamarin.Android 的內部運作方式，藉由檢查其原始程式碼。_
-
+_本章節包含的主題說明了 Xamarin 的架構、API 設計和限制。此外，它還包含說明其垃圾收集執行以及在 Xamarin 中提供之元件的主題。因為 Xamarin 是[開放原始](https://github.com/xamarin/xamarin-android)碼，所以也可以藉由檢查其原始程式碼來瞭解 xamarin 的內部運作方式。_
 
 ## <a name="architectureandroidinternalsarchitecturemd"></a>[架構](~/android/internals/architecture.md)
 
-這篇文章說明 Xamarin.Android 應用程式背後的基礎架構。 它說明如何將 Xamarin.Android 應用程式執行與 Android 執行階段的虛擬機器與 Mono 的執行環境內，並說明這類重要的概念，為 Android 可呼叫包裝函式和受管理的可呼叫包裝函式。 
-
-
+本文說明 Xamarin Android 應用程式背後的基礎架構。 其中說明 Xamarin Android 應用程式如何在 Mono 執行環境中和 Android 執行時間虛擬機器一起執行，並說明做為 Android 可呼叫包裝函式和受控可呼叫包裝函式的重要概念。 
 
 ## <a name="api-designandroidinternalsapi-designmd"></a>[API 設計](~/android/internals/api-design.md)
 
-除了核心屬於 Mono 的基底類別庫，Xamarin.Android 會隨附針對各種 Android Api，可讓開發人員建立與 Mono 的原生 Android 應用程式的繫結。
+除了屬於 Mono 的核心基類庫，Xamarin 也隨附各種 Android Api 的系結，可讓開發人員使用 Mono 建立原生 Android 應用程式。
 
-Xamarin.Android 的核心有是 interop 引擎與 Java 全世界該橋接器的 C# 世界，從 C# 或其他.NET 語言撰寫 Java api 提供開發人員存取。
-
-
+就 Xamarin 的核心而言，有一個 interop 引擎可將C#世界與 java 世界橋接，讓開發人員可以從C#或其他 .Net 語言存取 java api。
 
 ## <a name="assembliescross-platforminternalsavailable-assembliesmd"></a>[組件](~/cross-platform/internals/available-assemblies.md)
 
-Xamarin.Android 隨附數個組件。 就像 Silverlight 是桌面的.NET 組件中擴充的子集，Xamarin.Android 也是數個 Silverlight 和桌面的.NET 組件延伸的子集。 
-
+Xamarin 隨附數個元件。 就像 Silverlight 是桌面 .NET 元件的擴充子集，Xamarin 也是數個 Silverlight 和桌面 .NET 元件的擴充子集。 

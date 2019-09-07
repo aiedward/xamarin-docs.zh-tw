@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: de0db40fb678bf88a18c6be42d89644d41583b99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd2490bfad880d128f5eaeebd4aac58ad3a4d8fa
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280110"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772715"
 ---
 # <a name="toolbars-in-xamarinmac"></a>Xamarin 中的工具列
 
@@ -357,7 +357,6 @@ public override void AwakeFromNib ()
 ## <a name="summary"></a>總結
 
 本文已詳細探討如何在 Xamarin. Mac 應用程式中使用工具列和工具列專案。 其中說明如何在 Xcode 的 Interface Builder 中建立和維護工具列、某些 UI 控制項如何自動使用工具列專案、如何在程式碼中C#使用工具列，以及如何啟用和停用工具列專案。
-
 
 ## <a name="related-links"></a>相關連結
 

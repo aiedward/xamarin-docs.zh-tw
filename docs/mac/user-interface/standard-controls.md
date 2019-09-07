@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 2701b1f8bf343c653da33fd587c9da3302f52335
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18ce7eb4dcd68596027f739579fd5a4b70497829
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292240"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772711"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin 中的標準控制項
 
@@ -215,7 +215,6 @@ namespace AppKit
 
 [![](standard-controls-images/edit13.png "設定輸出或動作")](standard-controls-images/edit13.png#lightbox)
 
-
 如需使用**輸出**和**動作**的詳細資訊，請參閱[Xcode 和 Interface Builder 檔簡介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)的[輸出和動作](~/mac/get-started/hello-mac.md#outlets-and-actions)一節。
 
 <a name="Synchronizing_Changes_with_Xcode" />
@@ -324,7 +323,6 @@ DisclosureButton.Activated += (sender, e) => {
 AppKit 提供數種類型的核取方塊和選項按鈕群組，可用於您的使用者介面設計。 如需詳細資訊，請參閱 Apple [OS X 人體介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[按鈕](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsButtons.html#//apple_ref/doc/uid/20000957-CH48-SW1)一節。 
 
 [![](standard-controls-images/buttons02.png "可用核取方塊類型的範例")](standard-controls-images/buttons02.png#lightbox)
-
 
 核取方塊和選項按鈕（透過**輸出**公開）具有狀態（例如**On**和**Off**），可以`State` `NSCellStateValue`使用屬性對列舉進行檢查或設定狀態。 例如：
 
@@ -637,7 +635,6 @@ Popover 是暫時性的 UI 元素，可提供與特定控制項或螢幕區域�
 索引鍵/值編碼（KVC）是一種機制，可讓您間接存取物件的屬性，使用索引鍵（特殊格式的字串）來識別屬性，而不是透過`get/set`執行個體變數或存取子方法（）來存取它們。 藉由在您的 Xamarin. Mac 應用程式中執行符合索引鍵/值的存取子，您可以存取其他 macOS 功能，例如索引鍵/值觀察（KVO）、資料系結、核心資料、Cocoa 系結和 scriptability。
 
 如需詳細資訊，請參閱資料系結[和索引鍵-值編碼](~/mac/app-fundamentals/databinding.md)檔的[簡單資料](~/mac/app-fundamentals/databinding.md#Simple_Data_Binding)系結一節。
-
 
 <a name="Summary" />
 

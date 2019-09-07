@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 350cd7e2d0dd79b876a6c1277d40a9c96d97c102
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4dface536504b0a79d376ab0979443a5ed19e901
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282710"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769239"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>發行至 Apple TV App Store
 
@@ -24,7 +24,6 @@ ms.locfileid: "70282710"
 2. 建立散發佈建設定檔。
 3. 使用此設定檔來建立您的應用程式。
 4. 透過*ITunes Connect*提交您的應用程式。
-
 
 在本文中，我們將討論為 Apple 電視 App Store 散發布建、建立和提交應用程式所需的所有步驟。
 
@@ -39,7 +38,6 @@ ms.locfileid: "70282710"
 
 1. 請確定應用程式的描述項合應用程式中包含的功能。
 2. 測試應用程式不會在正常使用情況下損毀。 這包括您所支援之每個 Apple TV 裝置的使用量。
-
 
 Apple 也會維護一份 Apple 電視 App Store 提交秘訣的清單。 您可於此處閱讀這些提示：[Distributing on the App Store](https://developer.apple.com/appstore/resources/submission/tips.html) (在 App Store 上散發)。
 
@@ -121,7 +119,6 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 
 如需詳細指示，請參閱[建立散發設定檔](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#creatingprofile)與[在 Xamarin.iOS 專案中選取散發設定檔](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#selectprofile)。 同樣地，這兩份檔都是 iOS 特有的，但 tvOS 應用程式會使用相同的技術。
 
-
 <a name="Setting_the_Build_Configuration_for_your_Application" />
 
 ### <a name="setting-the-build-configuration-for-your-application"></a>為應用程式設定組建組態
@@ -137,7 +134,6 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 5. Apple 也需要 tvOS apps 使用 bitcode。 同樣地，在 [**發行**] `--bitcode=asmonly`設定下，將新增至 [**其他 mtouch 引數**] 方塊中。
 6. [**優化 iOS 的 PNG 影像檔**] 核取方塊應會核取，因為這有助於進一步減少應用程式的交付成果大小。
 7. 不應啟用調試，因為它會使組建*不*必要地變大。
-
 
 <a name="Building_and_Submitting_the_Distributable" />
 
@@ -189,7 +185,6 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 
 散發組建完成後，您即可準備將 iOS 應用程式提交至 Apple 以供審查，並在 App Store 上發行。
 
-
 當您儲存`.ipa`之後，Visual Studio for Mac 中的封存工作流程會自動開啟應用程式載入器：
 
 1. 選取 [Deliver Your App] (傳遞您的應用程式)，並按一下 [選擇] 按鈕：
@@ -225,7 +220,6 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 ## <a name="summary"></a>總結
 
 本文提供設定、建立和提交 Apple TV App Store 發行集之應用程式的逐步指南。 首先說明建立並安裝散發佈建設定檔所需的步驟。 接下來，它會逐步解說如何使用 Visual Studio for Mac 來建立散發組建。 最後，它會示範如何使用 iTunes Connect 和 Xcode 封存工具，將應用程式提交至 Apple 電視 App Store。
-
 
 ## <a name="related-links"></a>相關連結
 

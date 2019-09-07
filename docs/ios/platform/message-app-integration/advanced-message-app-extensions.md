@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 4e488f43f966ca8efd58de4d2bb8f16997d1322e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bf6853ef94ff0be5382bab02192070a20884c31e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290949"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769688"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin 中的 Advanced Message 應用程式延伸模組
 
 _本文說明在與訊息應用程式整合的 Xamarin iOS 解決方案中，使用訊息應用程式延伸模組的先進技術，並為使用者提供新功能。_
-
 
 IOS 10 的新功能，訊息應用程式延伸模組會與「**訊息**」應用程式整合，並為使用者提供新功能。 延伸模組可以傳送文字、貼紙、媒體檔案和互動式訊息。
 
@@ -55,7 +54,6 @@ Apple 也已新增 iOS 10 中的新功能，可讓使用者輕鬆探索應用程
 接收使用者可以藉由在訊息歷程記錄中的訊息反升來載入建立它的訊息應用程式延伸模組，來回複互動式訊息。 延伸模組將會以全螢幕的方式啟動，並可讓使用者撰寫回復，並將其傳回給原始使用者。
 
 [![](advanced-message-app-extensions-images/interactive02.png "延伸模組已啟動全螢幕")](advanced-message-app-extensions-images/interactive02.png#lightbox)
-
 
 下列主題將詳細說明如下：
 
@@ -427,7 +425,6 @@ using Foundation;
 using Messages;
 using UIKit;
 
-
 namespace MessageExtension
 {
     public partial class MessagesViewController : MSMessagesAppViewController
@@ -605,7 +602,6 @@ public override void DidStartSendingMessage (MSMessage message, MSConversation c
 ## <a name="summary"></a>總結
 
 本文提供的先進技術，可讓您在與**訊息**應用程式整合的 Xamarin iOS 解決方案中使用訊息應用程式延伸模組，並向使用者呈現新功能。
-
 
 ## <a name="related-links"></a>相關連結
 

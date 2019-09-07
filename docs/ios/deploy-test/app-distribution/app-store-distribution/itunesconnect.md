@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 910f91478eeb6894e11748c929cc94bc2c0dbe64
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 01e6ae4362c902c0982f7b93cc1f65b003db1020
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283584"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763224"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中設定應用程式
 
@@ -304,7 +304,6 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 
     [![](itunesconnect-images/review02.png "在 iTunes Connect 中編輯應用程式檢閱資訊")](itunesconnect-images/review02.png#lightbox)
 7. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
-
 
 ## <a name="maintaining-pricing-information"></a>維護應用程式定價資訊
 

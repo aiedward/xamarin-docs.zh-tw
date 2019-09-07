@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/22/2018
-ms.openlocfilehash: 17995f61d92856a88769e2cd7ac8ed7445cf9782
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 36779446a132dc696f28903c3f0b27329bcd4aaf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281132"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752122"
 ---
 # <a name="arkit-2-in-xamarinios"></a>Xamarin 中的 ARKit 2
 
@@ -319,7 +319,6 @@ var configuration = new ARWorldTrackingConfiguration
 ```
 
 雖然上述程式碼片段中所顯示的完美反射材質在範例中很有趣，但環境紋理可能更適合用於以免，它會觸發「uncanny 谷」的回應（紋理只是根據相機的估計值已記錄）。
-
 
 ### <a name="shared-and-persistent-ar-experiences"></a>共用和持續性 AR 體驗
 

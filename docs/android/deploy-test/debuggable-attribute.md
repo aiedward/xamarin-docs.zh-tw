@@ -6,16 +6,14 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: e0fb6c1ced4953fd03939f56eb4011d956dfcca6
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 10c66e0972c51bba04638706586793a848949980
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525609"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754189"
 ---
 # <a name="debuggable-attribute"></a>可偵錯的屬性
-
-
 
 為了進行偵錯，Android 支援 Java 偵錯連線通訊協定 (Java Debug Wire Protocol, JDWP, JDWP)。 這是一項允許如 ADB 的工具與 JVM 進行通訊的技術。 雖然 JDWP 在開發過程中很重要，但在發佈應用程式之前應停用它。
 
@@ -24,13 +22,11 @@ JDWP 的值可為 Android 應用程式中的 `android:debuggable` 屬性。 Xama
 1. 建立 `AndroidManifext.xml` 檔案，並在其中設定 `android:debuggable` 屬性。
 2. 在 `.CS` 檔案中包含 `ApplicationAttribute`，如：`[assembly: Application(Debuggable=false)]`。
 
-
 若同時具有 `AndroidManifest.xml` 及 `ApplicationAttribute`，則 `AndroidManifest.xml` 的內容會優先於 `ApplicationAttribute` 所指定的內容。
 
 若 `AndroidManifest.xml` 和 `ApplicationAttribute` 都不存在，則 `android:debuggable` 的預設值便會取決於是否有產生偵錯符號。 若有偵錯符號，則 Xamarin.Android 便會將 `android:debuggable` 屬性設為 `true`。
 
 請注意，`android:debuggable` 屬性的值不一定會相依於組建組態。 發行組建的 `android:debuggable` 屬性也可設為 true。
-
 
 ## <a name="related-links"></a>相關連結
 

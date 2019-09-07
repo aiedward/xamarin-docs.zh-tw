@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/13/2016
-ms.openlocfilehash: aa99d50295e214b7926d0655ea434c851b3ba099
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bd3adf5d01be0cdb709c752e1ace131b8b3e8d83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286314"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752261"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>IOS 11 中的視覺化設計更新
 
@@ -113,11 +113,9 @@ iOS 11 已擴充資料列動作的功能。 `UISwipeActionsConfiguration`引進�
 
 資料表視圖支援 iOS 11 中的拖放功能。 如需詳細資訊，請參閱[拖放](~/ios/platform/introduction-to-ios11/drag-and-drop.md#uitableview)指南。
 
-
 ## <a name="related-links"></a>相關連結
 
 - [IOS 11 （Apple）的新功能](https://developer.apple.com/ios/)
 - [已更新 App Store 產品頁面（Apple）](https://developer.apple.com/app-store/product-page/)
 - [針對 iPhone X （Apple）設計（影片）](https://developer.apple.com/videos/play/fall2017/801/)
 - [更新 iOS 11 應用程式（WWDC）（影片）](https://developer.apple.com/videos/play/wwdc2017/204/)
-

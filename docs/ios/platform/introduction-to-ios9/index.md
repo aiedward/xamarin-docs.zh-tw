@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c162912d6762ac1ee9d2896f96bbb35e9fef06f4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285212"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752001"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 簡介
 
@@ -67,7 +67,6 @@ IOS 9 和 iPhone 6s 和 iPhone 6s Plus 的新手，3D Touch 將壓力機密手�
 
 如需詳細資訊，請參閱我們的[連絡人和連絡人 UI](~/ios/platform/contacts.md)檔。
 
-
 ## <a name="new-search-apis"></a>新的搜尋 Api
 
 IOS 9 中的搜尋功能已擴充，可提供絕佳的新方式來存取您的 Xamarin iOS 應用程式內的資訊。 使用新的搜尋 Api，您可以透過焦點和 Safari 搜尋結果、遞交和 Siri 提醒和建議，讓應用程式的內容可供搜尋。 這可讓使用者快速存取應用程式內的活動和資訊。
@@ -83,7 +82,6 @@ Stack 視圖控制項（[UIStackView](xref:UIKit.UIStackView)會利用自動設�
 藉由使用 Stack 視圖控制項，配置使用者介面所需的工作量會大幅降低。 附加至堆疊視圖的所有子檢視的配置都會根據開發人員定義的屬性（例如軸、分佈、對齊和間距）自動進行管理。
 
 如需詳細資訊，請參閱我們的[Stack 視圖簡介](~/ios/user-interface/controls/uistackview.md)檔。
-
 
 ## <a name="collection-view-changes"></a>集合視圖變更
 
@@ -145,7 +143,6 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 
 如需詳細資訊，請參閱我們的[觸控識別碼簡介](~/ios/platform/touchid.md)檔。
 
-
 ## <a name="right-to-left-language-support"></a>由右至左語言支援
 
 在 iOS 9 中，Apple 藉由提供從右至左語言的完整支援，讓您更輕鬆地呈現翻轉的使用者介面。 其中包括下列項目：
@@ -155,8 +152,6 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 - 使用[UIImage](xref:UIKit.UIImage)類別的[FlipsForRightToLeftLayoutDirection](xref:UIKit.UIImage.FlipsForRightToLeftLayoutDirection)屬性，以程式設計方式翻轉影像的能力。
 
 如需詳細資訊，請參閱 Apple 的[支援從右至左的語言](https://developer.apple.com/library/prerelease/ios/documentation/MacOSX/Conceptual/BPInternational/SupportingRight-To-LeftLanguages/SupportingRight-To-LeftLanguages.html#//apple_ref/doc/uid/10000171i-CH17)檔。
-
-
 
 ## <a name="additional-framework-changes"></a>其他架構變更
 
@@ -205,8 +200,6 @@ Apple 已淘汰 iOS 9 中的下列 Api 和功能：
 
 - [AgentsCatalog](https://github.com/xamarin/mac-ios-samples/tree/master/AgentsCatalog)
 - [MetalKitEssentials](https://github.com/xamarin/mac-ios-samples/tree/master/MetalKitEssentials)
-
-
 
 ## <a name="related-links"></a>相關連結
 

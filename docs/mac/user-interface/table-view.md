@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 758134b0c5171e46c47ff6fd8071b13a44d5789b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b341ee5ee72c3a89ab14161862896585ed498fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291614"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772694"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin 中的資料表視圖
 
@@ -407,7 +407,6 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
-
 接著，編輯`ProductTableDelegate.cs`檔案並新增下列方法：
 
 ```csharp
@@ -435,7 +434,6 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 [![](table-view-images/select02.png "屬性偵測器")](table-view-images/select02.png#lightbox)
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
-
 
 接著，編輯`ProductTableDelegate.cs`檔案並新增下列方法：
 

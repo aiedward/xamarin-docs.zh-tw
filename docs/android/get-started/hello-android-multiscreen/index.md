@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 12/02/2016
-ms.openlocfilehash: 170bd30d65b9f5947bdb9d23d3100a8048f73ac7
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
-ms.translationtype: HT
+ms.openlocfilehash: 4bbfbaf2b7efc7e1d2f75a7462d6a2559ed7a9c0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864061"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755705"
 ---
 # <a name="hello-android-multiscreen"></a>Hello, Android 多重畫面
 
-在這份含有兩部分的指南中，您會擴充在 Hello, Android 指南中所建立的 Phoneword 應用程式來處理第二個畫面。  在過程中，本指南將會介紹基本 Android 應用程式建置組塊，您也將深入探索 Android 架構，以進一步了解 Android 應用程式結構和功能。
+在這份含有兩部分的指南中，您會擴充在 Hello, Android 指南中所建立的 Phoneword 應用程式來處理第二個畫面。在過程中，本指南將會介紹基本 Android 應用程式建置組塊，您也將深入探索 Android 架構，以進一步了解 Android 應用程式結構和功能。
 
 ## <a name="part-1-quickstartandroidget-startedhello-android-multiscreenhello-android-multiscreen-quickstartmd"></a>[第 1 部分：快速入門](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)
 
@@ -26,7 +26,6 @@ ms.locfileid: "67864061"
 ## <a name="part-2-deep-diveandroidget-startedhello-android-multiscreenhello-android-multiscreen-deepdivemd"></a>[第 2 部分：深入了解](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md)
 
 在本文件的第二部分中，您將檢閱已建置的內容並討論架構、導覽，以及過程中遇到的其他 Android 新概念。
-
 
 ## <a name="related-links"></a>相關連結
 

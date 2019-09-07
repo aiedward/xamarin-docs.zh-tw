@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 492682b1f7647201f15678a5162281e0a7a916d6
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 577bc7af34c463aec65148bd97dc5dd49262d699
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280088"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767089"
 ---
 # <a name="touch-events-and-gestures-in-xamarinios"></a>Xamarin 中的觸控事件和手勢
 
@@ -41,7 +41,6 @@ imgTouchMe.UserInteractionEnabled = true;
 - `TouchesBegan`–這是在第一次接觸畫面時呼叫。
 - `TouchesMoved`–當觸控的位置隨著使用者在螢幕上旋轉手指而變更時，就會呼叫此方法。
 - `TouchesEnded`或`TouchesCancelled` –`TouchesEnded`在使用者的手指從螢幕中提起時呼叫。  `TouchesCancelled`如果 iOS 取消觸控，則會呼叫，例如，如果使用者將其手指滑掉按鈕以取消按下。
-
 
 觸控事件會以遞迴方式在 UIViews 的堆疊中往下移動，以檢查觸控事件是否在 view 物件的界限內。 這通常稱為_點擊測試_。 首先會在最`UIView`上層或`UIViewController`上呼叫，然後在視圖階層中的`UIView`下方和`UIViewControllers`其底下呼叫。
 
@@ -126,7 +125,6 @@ if (this.imgTouchMe.Frame.Contains (touch.LocationInView (this.View)))
 - *UIRotationGestureRecognizer* –以順時針或逆時針的運動旋轉兩個手指。
 - *UILongPressGestureRecognizer* –按住，有時稱為長按或按一下。
 
-
 使用筆勢辨識器的基本模式如下所示：
 
 1. 具現**化手勢辨識器**–先將`UIGestureRecognizer`子類別具現化。 已具現化的物件將會由視圖建立關聯，並會在處置此視圖時進行垃圾收集。 您不需要將此視圖建立為類別層級變數。
@@ -152,7 +150,6 @@ _tapGesture.Recognizer.CancelsTouchesInView = false;
 1. *離散*–這些手勢只會在第一次被辨識時引發。
 1. *連續*–這些手勢會繼續引發，只要它們被辨識即可。
 
-
 筆勢辨識器存在下列其中一種狀態：
 
 - *可能*–這是所有手勢辨識器的初始狀態。 這是 State 屬性的預設值。
@@ -162,7 +159,6 @@ _tapGesture.Recognizer.CancelsTouchesInView = false;
 - 已*辨識–當*手勢辨識器符合一組觸控時，將會設定狀態，並通知訂閱者筆勢已完成。
 - 已*結束*–這是可辨識狀態的別名。
 - *Failed* –當手勢辨識器無法再符合它正在接聽的觸控時，狀態會變更為 [失敗]。
-
 
 [Xamarin] 代表列舉中的`UIGestureRecognizerState`這些值。
 
@@ -178,7 +174,6 @@ gesture.ShouldRecognizeSimultaneously += (UIGestureRecognizer r) => { return tru
 
 1. *ShouldReceiveTouch* –在將觸控事件傳遞至手勢辨識器之前，會呼叫此委派，並讓您有機會檢查觸控，並決定手勢辨識器會處理哪些觸控。
 1. *ShouldBegin* –當辨識器嘗試將狀態從可能變更為其他狀態時呼叫。 傳回 false 會強制手勢辨識器的狀態變更為 Failed。
-
 
 您可以透過強型別、弱式`UIGestureRecognizerDelegate`委派或透過事件處理常式語法系結來覆寫這些方法，如下列程式碼片段所示：
 
@@ -199,6 +194,5 @@ singleTapGesture.RequireGestureRecognizerToFail(doubleTapGesture);
 1. 子`UIGestureRecognizer`類別。
 1. 覆寫適當的觸控事件方法。
 1. 透過基類的 State 屬性，將辨識狀態反升。
-
 
 在[iOS 中使用觸控](ios-touch-walkthrough.md)逐步解說會涵蓋這種情況的實際範例。

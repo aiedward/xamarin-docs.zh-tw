@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: cae0196fc29944ba8ae87fe43d256da090942f3a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 919eff45e11f60db51109904269addeec1038558
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286110"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752881"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>在 Xamarin 中使用核心圖形和核心動畫
 
@@ -25,7 +25,6 @@ ms.locfileid: "70286110"
 在我們開始之前，請先下載本指南隨附的*GraphicsDemo*範例。 您可以在[這裡](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)下載它，並在**GraphicsWalkthrough**目錄中，按兩下名為**GraphicsDemo_starter**的專案，然後開啟`DemoView`類別。
 
 ## <a name="drawing-a-path"></a>繪製路徑
-
 
 1. 在`DemoView`中， `CGPath`將變數新增至類別，並在此函式中將它具現化。 同時宣告兩`CGPoint`個變數`initialPoint` （ `latestPoint`和），我們將使用它來捕捉我們用來建立路徑的觸控點：
 
@@ -179,7 +178,6 @@ ms.locfileid: "70286110"
 ## <a name="summary"></a>總結
 
 在本文中，我們會逐步解說將圖形和動畫概念系結在一起的範例。 首先，我們示範了如何使用核心圖形在中繪製路徑`UIView` ，以回應使用者觸控。 然後，我們示範了如何使用核心動畫來沿著該路徑進行影像行進。
-
 
 ## <a name="related-links"></a>相關連結
 

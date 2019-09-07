@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2017
-ms.openlocfilehash: dc435f486d0020ab339ebd8f537f749f44493fe0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 039a73b45f93525631635a9a73bf153c7938bc92
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289502"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766668"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的應用程式傳輸安全性
 
 _應用程式傳輸安全性（ATS）會在網際網路資源（例如應用程式的後端伺服器）和您的應用程式之間，強制執行安全的連接。_
 
 本文將介紹應用程式傳輸安全性在 iOS 9 應用程式上強制執行的安全性變更，以及[這對您的 Xamarin ios 專案所代表的意義。](#xamarinsupport)它會涵蓋[ATS 設定選項](#config)，並涵蓋如何選擇不使用[ATS](#optout)ATS （如有必要）。 因為預設會啟用 ATS，所以任何不安全的網際網路連線都會在 iOS 9 應用程式中引發例外狀況（除非您已明確允許）。
-
 
 ## <a name="about-app-transport-security"></a>關於應用程式傳輸安全性
 
@@ -90,7 +89,6 @@ TLS 層級是由您使用的 web 服務所控制，因此在應用程式的控�
 
 ![](ats-images/client01.png "設定 iOS 組建選項")
 
-
 #### <a name="managed-handler"></a>受控處理常式
 
 Managed 處理常式是由舊版的 Xamarin 隨附的完全受控 HttpClient 處理常式，而且是預設的處理常式。
@@ -145,7 +143,6 @@ Managed 處理常式是由舊版的 Xamarin 隨附的完全受控 HttpClient 處
 由於預設會在針對 iOS 9 和 OS X 10.11 （El Capitan）建立的應用程式中啟用 ATS，因此`NSURLConnection`使用`CFURL`或`NSURLSession`的所有連線都會受到 ATS 的安全性需求。 如果您的連線不符合這些需求，則會失敗並產生例外狀況。
 
 Apple 也提供可編譯（或選擇性地轉碼至 Xamarin 和C#）的[TLSTool 範例應用程式](https://developer.apple.com/library/mac/samplecode/sc1236/Introduction/Intro.html#//apple_ref/doc/uid/DTS40014927-Intro-DontLinkElementID_2)，並可用來診斷 ATS/TLS 問題。 如需如何解決此問題的相關資訊，請參閱下面的選擇不[ATS](#optout)一節。
-
 
 <a name="config" />
 
@@ -217,7 +214,6 @@ NSAppTransportSecurity
 
 [![](ats-images/ats01.png "Plist 檔案的來源視圖")](ats-images/ats01.png#lightbox)
 
-
 如果您的應用程式需要從不安全的網站載入及顯示 web 內容，請將下列程式新增至您應用程式的**plist**檔案，讓網頁能夠正確載入，同時仍會為其餘的應用程式啟用 Apple Transport SECURITY （ATS）保護功能：
 
 ```xml
@@ -245,9 +241,6 @@ NSAppTransportSecurity
 > [!IMPORTANT]
 > 如果您的應用程式需要連線到不安全的網站，您應該**一律**使用`NSExceptionDomains`來輸入網域做為例外狀況，而不要使用`NSAllowsArbitraryLoads`來完全關閉 ATS。 `NSAllowsArbitraryLoads` 應該只用在極端的緊急情況下。
 
-
-
-
 同樣地，停用 ATS_只能_做為最後的手段，如果切換到安全連線是無法使用或不切實際的。
 
 <a name="Summary" />
@@ -255,8 +248,6 @@ NSAppTransportSecurity
 ## <a name="summary"></a>總結
 
 本文引進了應用程式傳輸安全性（ATS），並說明它如何強制執行與網際網路的安全通訊。 首先，我們涵蓋了在 iOS 9 上執行的 Xamarin iOS 應用程式所需的變更 ATS。 接著，我們討論了如何控制 ATS 的功能和選項。 最後，我們在您的 Xamarin iOS 應用程式仲介紹了退出 ATS。
-
-
 
 ## <a name="related-links"></a>相關連結
 

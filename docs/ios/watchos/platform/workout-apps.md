@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 57aab95e29911722fc3ad4a56c5486218e07242d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f5a2b17491b026e08abf2262a998576cbb4356c5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292856"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767822"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>在 Xamarin 中 watchOS 健身應用程式
 
 _本文涵蓋 Apple 對 watchOS 3 中的健身應用程式所做的增強，以及如何在 Xamarin 中執行。_
-
 
 WatchOS 3 的新功能：健身相關應用程式可在 Apple Watch 的背景中執行，並取得 HealthKit 資料的存取權。 其父系 iOS 10 型應用程式也能夠啟動 watchOS 3 型應用程式，而不需要使用者介入。
 
@@ -188,7 +187,6 @@ namespace MonkeyWorkout.MWWatchExtension
     {
       if (this.Failed != null) this.Failed ();
     }
-
 
     public event OutdoorRunEventDelegate Paused;
     internal void RaisePaused ()
@@ -614,7 +612,6 @@ public HKHealthStore HealthStore { get; private set; }
 public List<HKSample> WorkoutSamples { get; set; } = new List<HKSample> ();
 ...
 
-
 private void SaveWorkoutSamples (HKWorkout workout)
 {
   // Add samples to saved workout
@@ -715,7 +712,6 @@ public OutdoorRunDelegate RunDelegate { get; set; }
 #endregion
 ...
 
-
 public override void HandleWorkoutConfiguration (HKWorkoutConfiguration workoutConfiguration)
 {
   // Create workout session
@@ -765,8 +761,6 @@ public override void HandleWorkoutConfiguration (HKWorkoutConfiguration workoutC
 
 > [!IMPORTANT]
 > 下列各節所顯示的程式碼只包含在 watchOS 3 中執行提供給健身應用程式的新增強功能所需的元件。 不包含所有支援的程式碼和呈現和更新 UI 的程式碼，但可以遵循我們的其他 watchOS 檔來輕鬆建立。<p/>
-
-
 
 ### <a name="viewcontrollercs"></a>ViewController.cs
 
@@ -1209,7 +1203,6 @@ namespace MonkeyWorkout.MWWatchExtension
       if (this.Failed != null) this.Failed ();
     }
 
-
     public event OutdoorRunEventDelegate Paused;
     internal void RaisePaused ()
     {
@@ -1257,8 +1250,6 @@ namespace MonkeyWorkout.MWWatchExtension
 ## <a name="summary"></a>總結
 
 本文涵蓋了 Apple 對 watchOS 3 中的健身應用程式所做的增強，以及如何在 Xamarin 中執行。
-
-
 
 ## <a name="related-links"></a>相關連結
 

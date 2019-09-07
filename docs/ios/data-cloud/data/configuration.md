@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: c0a8f57e3f4f351cf5b874ded2639b975ea71cad
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b60c8f306ad815cd3292cc94bd80f87b49df547
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281916"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767002"
 ---
 # <a name="configuring-sqlite-in-xamarinios"></a>在 Xamarin 中設定 SQLite
 
@@ -64,7 +64,6 @@ lock (locker){
 ```
 
 所有資料庫存取（讀取、寫入、更新等等）都應該以相同的鎖定來包裝。 請務必小心避免鎖死的情況，方法是確保鎖定子句內的工作保持簡單，而且不會呼叫其他可能也會鎖定的方法！
-
 
 ## <a name="related-links"></a>相關連結
 

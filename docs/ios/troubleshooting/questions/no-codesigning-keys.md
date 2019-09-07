@@ -7,28 +7,25 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 9d589af6249063add3dc9b085463fde9edd8e449
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: aa2f52be4e485fb55a949a0327161bd1c301334c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278440"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769708"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>為什麼我的 iOS 組建因為「Keychain 中找不到任何有效的 iPhone 程式碼簽署金鑰」而失敗？
 
 ## <a name="cause-of-the-error"></a>錯誤的原因
 當有問題的專案正在尋找有效的程式碼簽署認證，但找不到它們時，就會出現這個錯誤訊息。 在實體 iOS 裝置上進行測試和部署時，需要進行程式碼簽署;和臨機操作 & App store 組建。 
 
-
 ### <a name="provisioning-devices"></a>布建裝置
 如果您之前尚未布建 iOS 裝置，下列指南會引導您完成完整的逐步程式：[裝置布建指南](~/ios/get-started/installation/device-provisioning/index.md)
-
 
 ## <a name="bug-when-using-ios-simulator"></a>使用 iOS 模擬器時的錯誤
 
 > [!NOTE]
 > 此問題已在最新版本的 Xamarin for Visual Studio 中解決。 不過，如果軟體的最新版本發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出來提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
-
 
 在 Xamarin 中發生錯誤。 Visual Studio 3.11，導致 Xamarin Forms 範本中的 iOS 專案新增 codesign 權利 plist 至模擬器組建;使用模擬器有效率地封鎖測試。
 

@@ -1,64 +1,80 @@
 ---
 title: Xamarin.Forms ListView
-description: 本指南介紹 Xamarin.Forms ListView，可用來呈現精美的互動式的清單中的資料。
+description: 本指南介紹 Xamarin. Forms ListView，可以用來在互動式清單中呈現資料。
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/14/2015
-ms.openlocfilehash: f05703babd3f6e67713dfccdb1a1fc6a4ea6966e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.date: 09/04/2019
+ms.openlocfilehash: 5d09d76a44a6322285a143230173d244848ba4a6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228031"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770191"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
-[`ListView`](xref:Xamarin.Forms.ListView)是用來呈現資料清單的視圖, 特別是需要滾動的長清單。
+[`ListView`](xref:Xamarin.Forms.ListView)是用來呈現資料清單的視圖，特別是需要滾動的長清單。
 
 > [!IMPORTANT]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) 是使用不同版面配置規格呈現資料清單的檢視。 它的目的是要提供更具彈性且更高效[`ListView`](xref:Xamarin.Forms.ListView)能的替代方案。 如需詳細資訊，請參閱 [Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)。
 
 ## <a name="use-cases"></a>使用案例
 
-請確定 ListView 右邊的控制項，為您的需求。 ListView 可用在任何情況下，您要在其中顯示資料的可捲動清單。 Listview 支援內容動作和資料繫結。
+在您要顯示可滾動資料清單的任何情況下，都可以使用控制項。`ListView` `ListView`類別支援內容動作和資料系結。
 
-ListView 不應該與混淆[TableView](~/xamarin-forms/user-interface/tableview.md)。 TableView 控制項是更好的選項，只要有一份選項或資料之間的繫結。 例如，iOS 設定應用程式，有一組主要的預先定義的選項，比較適合使用 TableView 比 ListView。
+控制項不應該[`TableView`](~/xamarin-forms/user-interface/tableview.md)與控制項混淆。 `ListView` 每當`TableView`您有選項或資料的非系結清單時，控制項就是較好的選項，因為它允許在 XAML 中指定預先定義的選項。 例如，iOS 設定應用程式（大部分預先定義的選項組）較適合使用`TableView` `ListView`而不是。
 
-請注意，ListView 是最佳也適合同質資料&ndash;也就是所有的資料應該是相同類型。 這是因為只有一個資料格類型可用來在清單中的每個資料列。 TableViews 可以支援多個資料格類型，因此當您需要混用檢視時，它們會是較好的選擇。
+類別不支援在 XAML 中定義清單專案，您必須搭配`ItemsSource`使用屬性`ItemTemplate`或資料系結，以定義清單中的專案。 `ListView`
+
+`ListView`最適合用於由單一資料類型組成的集合。 這項需求是因為清單中的每個資料列都只能使用一種資料格類型。 `TableView`控制項可以支援多個資料格類型，因此當您需要顯示多個資料類型時，這是較好的選項。
+
+如需將資料系結至`ListView`實例的詳細資訊，請參閱[ListView 資料來源](~/xamarin-forms/user-interface/listview/data-and-databinding.md)。
 
 ## <a name="components"></a>元件
-ListView 的可執行每個平台的原生功能的元件數目。 每個元件如下所述。
+`ListView`控制項有許多元件可用來執行每個平臺的原生功能。 這些元件會在下列各節中定義。
 
-- **[頁首和頁尾](customizing-list-appearance.md#Headers_and_Footers)** &ndash;文字或檢視表顯示的開頭和結尾的清單中，分隔從清單中的資料。 頁首和頁尾可以繫結至資料來源分開 ListView 的資料來源。
-- **[群組](customizing-list-appearance.md#Grouping)** &ndash;可以群組在 ListView 中的資料，以方便瀏覽。 群組通常是資料繫結：
+### <a name="headers-and-footerscustomizing-list-appearancemdheaders-and-footers"></a>[頁首和頁尾](customizing-list-appearance.md#headers-and-footers)
 
-![](images/grouping-depth.png "與群組資料的 ListView")
+頁首和頁尾元件會顯示在清單的開頭和結尾，與清單的資料分開。 頁首和頁尾可以系結至 ListView 資料來源中的個別資料來源。
 
-- **[資料格](customizing-cell-appearance.md)** &ndash; ListView 中的資料會顯示在資料格中。 每個資料格會對應至一個資料列。 有內建的儲存格可供選擇，或您可以定義您自己自訂的儲存格。 內建和自訂的資料格可以是在 XAML 或程式碼中使用/定義。
-  - **[內建](customizing-cell-appearance.md#Built_in_Cells)** &ndash;內建的儲存格，特別是 TextCell 和 ImageCell，可以是絕佳的效能，因為它們對應至每個平台上的原生控制項。
-    - **[TextCell](customizing-cell-appearance.md#TextCell)**  &ndash;顯示的文字，並選擇性地使用詳細資料的文字字串。 詳細資料的文字會轉譯為較小的字型，並且強調色彩中的第二個資料行。
-    - **[ImageCell](customizing-cell-appearance.md#ImageCell)**  &ndash;顯示文字的映像。 會顯示為 TextCell 左側的映像。
-  - **[自訂資料格](customizing-cell-appearance.md#customcells)** &ndash;自訂儲存格很棒，當您要呈現複雜的資料。 例如，自訂檢視可用來呈現一份歌曲、 專輯和藝術工作者包括：
+### <a name="groupscustomizing-list-appearancemdgrouping"></a>[部門](customizing-list-appearance.md#grouping)
 
-![](images/image-cell-default.png "使用 ImageCells ListView")
+中的資料`ListView`可以分組以方便流覽。 群組通常是資料系結的。 下列螢幕擷取畫面顯示具有`ListView`群組資料的：
 
-若要深入了解自訂的 ListView 中的資料格，請參閱[自訂 ListView 儲存格的外觀](customizing-cell-appearance.md)。
+(images/grouping-depth-cropped.png)](images/grouping-depth.png#lightbox "Listview 中")的「[群組資料」群組中![]的資料
+
+### <a name="cellscustomizing-cell-appearancemd"></a>[儲存格](customizing-cell-appearance.md)
+
+中的`ListView`資料項目稱為資料格。 每個資料格會對應至一個資料列。 有內建的儲存格可供選擇，或您可以定義您自己自訂的儲存格。 內建和自訂的資料格可以是在 XAML 或程式碼中使用/定義。
+
+- [內建資料格](customizing-cell-appearance.md#built-in-cells)（例如`TextCell`和`ImageCell`）會對應至原生控制項，而且效能特別高。
+  - 會[`TextCell`](customizing-cell-appearance.md#textcell)顯示文字字串，選擇性地包含詳細資料文字。 詳細資料的文字會轉譯為較小的字型，並且強調色彩中的第二個資料行。
+  - 會[`ImageCell`](customizing-cell-appearance.md#imagecell)顯示含有文字的影像。 `TextCell`以影像顯示在左側。
+- [自訂資料格](customizing-cell-appearance.md#customcells)可用來呈現複雜的資料。 例如，您可以使用自訂資料格來呈現包含專輯和演出者的歌曲清單。
+
+下列螢幕擷取畫面顯示`ListView`具有 ImageCell 專案的：
+
+「Listview 中的 ImageCell 專案」(images/image-cell-default-cropped.png)](images/image-cell-default.png#lightbox "ImageCell listview 中的專案") [ ![ ]
+
+若要深入瞭解自訂中的`ListView`資料格，請參閱[自訂 ListView 儲存格外觀](customizing-cell-appearance.md)。
 
 ## <a name="functionality"></a>功能
-ListView 可支援多種互動樣式，包括：
+`ListView`類別支援多種互動樣式。
 
-- **[若要重新整理提取](interactivity.md#Pull_to_Refresh)** &ndash; ListView 在每個平台上支援提取以重新整理。
-- **[內容動作](interactivity.md#Context_Actions)** &ndash; ListView 在清單中的個別項目上支援採取行動。 例如，您可以在 iOS 上，實作撥動-動作或按住在 Android 上的動作。
-- **[選取項目](interactivity.md#selectiontaps)** &ndash;選取項目和 deselections 採取動作，當點選的資料列時，您可以接聽。
+- [[提取至](interactivity.md#pull-to-refresh)重新整理] 可讓使用者向`ListView`下提取以重新整理內容。
+- [內容動作](interactivity.md#context-actions)可讓開發人員指定個別清單專案的自訂動作。 例如，您可以在 iOS 上，實作撥動-動作或按住在 Android 上的動作。
+- [選取](interactivity.md#selectiontaps)可讓開發人員將功能附加至清單專案上的選取範圍和 deselection 事件。
 
-![](images/context-default.png "ListView 內容動作")
+下列螢幕擷取畫面顯示`ListView`具有內容動作的：
 
-若要深入了解 ListView 的互動性功能，請參閱[動作 & ListView 互動](interactivity.md)。
+(images/context-default-cropped.png)](images/context-default.png#lightbox "Listview 中")的「[在 listview 中的內容動作」內容動作![ ]
+
+若要深入瞭解的互動性功能`ListView`，請參閱[使用 ListView & 互動的動作](interactivity.md)。
 
 ## <a name="related-links"></a>相關連結
 

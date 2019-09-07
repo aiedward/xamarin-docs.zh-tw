@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 18e7873eede87e9bb81c1c0b304bfc87c317c27a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f9367eda7651ca61a8a3cb0928ad11cb320faab6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291505"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769965"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin 中的 watchOS 影像控制項
 
@@ -32,7 +32,6 @@ ms.locfileid: "70291505"
 
 ![](image-images/asset-watch-sml.png "您可以使用資產目錄影像中的監看套件大小38mm 和42mm，為每個顯示大小指定不同的影像")
 
-
 ## <a name="images-on-the-watch"></a>監看式上的影像
 
 顯示影像最有效率的方式是將*它們包含在 watch 應用程式專案中*，並使用`SetImage(string imageName)`方法來顯示它們。
@@ -51,7 +50,6 @@ myOtherImageControl.SetImage("Worry");
 ### <a name="background-images"></a>背景影像
 
 相同`SetBackgroundImage (string imageName)`的邏輯適用于`Button`、 `Group`和`InterfaceController`類別上的。 藉由將影像儲存在監看式應用程式本身來達到最佳效能。
-
 
 ## <a name="images-in-the-watch-extension"></a>監看式擴充功能中的影像
 
@@ -74,7 +72,6 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-
 ## <a name="animations"></a>Animations
 
 若要建立一組影像的動畫，它們的開頭都應該是相同的前置詞，並具有數值尾碼。
@@ -95,7 +92,6 @@ animatedImage.StartAnimating ();
 ```csharp
 animatedImage.StopAnimating ();
 ```
-
 
 <a name="cache" />
 
@@ -122,12 +118,9 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 您可以使用`WKInterfaceDevice.CurrentDevice.WeakCachedImages`，在程式碼中查詢影像快取的內容。
 
-
 ### <a name="managing-the-cache"></a>管理快取
 
 快取的大小約為 20 MB。 它會在應用程式重新開機時保持不變，而當它填滿時，您必須`RemoveCachedImage`負責`RemoveAllCachedImages`在`WKInterfaceDevice.CurrentDevice`物件上使用或方法清除檔案。
-
-
 
 ## <a name="related-links"></a>相關連結
 

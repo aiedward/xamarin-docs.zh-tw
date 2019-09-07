@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 10/19/2016
-ms.openlocfilehash: bb33d9f85dfc1215e91caa20fab3800645e13111
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7340df1d65768363f39c6f080a5d50e2ac250400
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282180"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769877"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>在 Xamarin.Mac 應用程式中偵錯原生損毀
 
@@ -251,4 +251,3 @@ void AddObject ()
 如果不過於深究技術原因，設定基礎結構以在每個受控/原生界限攔截受控例外狀況，不僅成本非常高昂，而且還會有「許多」發生在眾多常見作業中的轉換。 許多作業 (特別是涉及 UI 執行緒的作業) 必須快速完成，否則您的應用程式執行將會斷斷續續，或是效能讓人難以接受。 這些回呼中有許多都是執行不太可能擲回例外狀況的非常簡單工作，所以在這些案例中，這個額外負荷不僅成本太高，也沒有必要性。
 
 因此，我們不會為您設定這些 try/catch。 針對程式碼執行非瑣碎工作 (例如不僅僅只是傳回布林值或執行簡單比對) 的情況，您可以自行嘗試 try catch。 
-

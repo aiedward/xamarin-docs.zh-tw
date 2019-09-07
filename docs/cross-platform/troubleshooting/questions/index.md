@@ -6,12 +6,12 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 3b940199a1384540bcc9f7134dabf8b69ac3767e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de70eda2898f29a1e7afed9440d5f5fae496e069
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285006"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765117"
 ---
 # <a name="general-frequently-asked-questions"></a>一般常見問題
 
@@ -42,7 +42,6 @@ Visual Studio for Mac & Visual Studio 都具有選取舊版套件並自動安裝
 ### <a name="where-are-the-components-stored-on-my-machinecomponent-storagemd"></a>[元件儲存在我電腦上的何處？](component-storage.md)
 每當您將 Xamarin 元件安裝到應用程式專案時，它會放在本指南所列的兩個位置中。
 
-
 ## <a name="troubleshooting"></a>疑難排解
 ### <a name="where-can-i-find-my-version-information-and-logsversion-logsmd"></a>[可以在哪裡找到我的版本資訊和記錄檔？](version-logs.md)
 本指南詳細說明哪裡可以找到可用於針對 Xamarin 問題進行疑難排解的大部分診斷資訊。
@@ -55,4 +54,3 @@ Jenkins 是開放原始碼 CI 套件;因為這許多由 Jenkins*本身*直接造
 
 ### <a name="what-project-settings-are-required-for-the-debuggerdebugger-settingsmd"></a>[偵錯工具需要哪些專案設定？](debugger-settings.md)
 為了讓偵錯工具如預期般運作（命中中斷點、顯示偵錯工具記錄等），必須同時啟用開發人員檢測和偵錯工具資訊顯示。 本指南將詳細說明如何尋找和啟動這些設定。
-

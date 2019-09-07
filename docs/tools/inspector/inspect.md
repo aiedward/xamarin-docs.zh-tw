@@ -6,12 +6,12 @@ ms.assetid: 91B3206E-B2A5-4660-A6E5-B924B8FE69A7
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 2ce4b0366e85580b6d9d816bd91f9ced93997b63
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2ccf6966e85eddaa10b5651e1b0b48dec9203b28
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291480"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772207"
 ---
 # <a name="inspecting-live-applications"></a>檢查即時應用程式
 
@@ -52,4 +52,3 @@ del.Database.AddCustomer (...)
 - Mac 無法使用屬性方格編輯，而在 Windows 上，則限制為少數資料類型。 使用複寫功能進行更強大的編輯。
 - 只要您的 IDE 中已安裝並啟用偵測器增益集/擴充功能，我們就會在每次以「偵測模式」啟動時，將程式碼插入您的應用程式中。 如果您注意到您的應用程式中有任何奇怪的行為，請嘗試停用或卸載偵測器的增益集/擴充功能、重新開機 IDE，然後重新檢查。 請提出[bug](~/tools/inspector/install.md#reporting-bugs) ，讓我們知道！
 - 如果檢查 UI 元素會使其在中變更，請[讓我們知道](~/tools/inspector/install.md#reporting-bugs)，因為這可能表示有錯誤。
-

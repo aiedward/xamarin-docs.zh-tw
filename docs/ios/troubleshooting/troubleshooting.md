@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2018
-ms.openlocfilehash: a888c29a6409fc803b8a0d06bcc6f8a668e64f5e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e6a1b6f4d35a6b8774901ed5a505b5333511c848
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292059"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769700"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>適用于 Xamarin 的疑難排解秘訣 
 
@@ -26,7 +26,6 @@ ms.locfileid: "70292059"
 - **Visual Studio 2017 Update 2**（15.2 版或更新版本）只與**System.valuetuple NuGet 4.3.1**或更新版本相容。
 
 請選擇與您的 Visual Studio 2017 安裝對應的正確 System.valuetuple NuGet。
-
 
 ## <a name="receiving-error-retrieving-update-information-error-message"></a>收到「抓取更新資訊時發生錯誤」錯誤訊息
 
@@ -143,7 +142,6 @@ public Bar (IntPtr handle) : base (handle) { }
 1. 使用 Mac OS X Leopard （10.5）
 1. 在模擬器中執行您的應用程式。
 
-
 問題在於 Mono 會挑選 OS X `libsqlite3.dylib`，而不是 iphonesimulator; 的`libsqlite3.dylib`檔案。 您的應用程式*會*在裝置上工作，而不是您的模擬器。
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>部署至裝置失敗，發生系統。例外狀況：AMDeviceInstallApplication 傳回3892346901
@@ -209,8 +207,6 @@ int count = ((ICollection<Foo>) array).Count;
 1. 使用「Quartz Debug」開發人員工具（您可以使用焦點來尋找）來停用「橫樑同步」，並檢查來源編輯器效能是否還原為正常。
 1. 嘗試重複步驟（1），並將 [橫樑同步] 保持為停用。
 1. 如果編輯器停止回應超過幾秒鐘，請嘗試在終端機中執行 "killall-QUIT [Visual Studio for Mac]"。 當編輯器停止回應時，可能會很難以結束 kill 命令，但這是必要的動作，因為命令會強制 Mono 將所有線程的堆疊追蹤寫入 MD 記錄檔中，我們可以使用這些內容來探索當 XS 停止回應時執行緒所在的狀態。
-
-
 
 請附加 XS 記錄、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **ANDROIDTOOLS-{timestamp} .log**和**元件-{timestamp} .log** （在較舊版本的 XS/MonoDevelop 中，只傳送 **~/Library/Logs/MonoDevelop-（3.0 | 2.8 | 2.6）/MonoDevelop.log**）。
 
@@ -293,7 +289,6 @@ Visual Studio for Mac 2.2 有一個 bug，導致它不會偵測到包含逗號�
 當儲存方案或專案的專案名稱或目錄包含空格時，目前的 Xamarin. iOS 和 Visual Studio for Mac 版本會失敗。
 修正方法：
 
-
 - 請確定您的專案或其儲存所在的目錄都不包含空格。
 - 在您的專案「主要設定」中，請確定專案名稱不包含任何空格。
 
@@ -324,11 +319,9 @@ Visual Studio for Mac 2.2 有一個 bug，導致它不會偵測到包含逗號�
 
 這個例外狀況是由下列三個專案的其中一項所造成：
 
-
 1. 您已為目標-C 執行時間提供選取器，但未將對應的 [Export] 屬性套用至方法
 1. 您已啟用完整連結，但未將 [Preserve] 屬性套用至 [Export] ed 方法。
 1. 您已將 [Export] 屬性套用至繼承類型中的私用方法。
-
 
 ## <a name="mainwindowxibdesignercs-file-is-not-updated"></a>未更新 MainWindow.xib.designer.cs 檔案
 
@@ -414,7 +407,6 @@ SDK 版本不應與「最低 OS 版本」設定混淆。
 此問題可能會以數種形式出現，而且不一定會產生一致的錯誤。 如果應用程式包含 xib，請檢查並確定 xib 上的 [**建立] 動作**已設定為 [ **InterfaceDefinition**]。 這是 xib 的預設組建動作。
 
 若要檢查組建動作，請以滑鼠右鍵按一下 xib 檔案，然後選擇 [**建立動作**]。
-
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException：編碼437沒有可用的資料
 

@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 34b449aa358874f06a495ec52578dcca2dd13767
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654731"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771614"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms 繫結值轉換器
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 資料繫結通常會將資料從來源屬性傳輸至目標屬性，並在某些情況下從目標屬性傳輸至來源屬性。 當來源和目標屬性都屬於相同類型，或其中一種類型可以透過隱含轉換來轉換成其他類型時，傳輸即會簡單明瞭。 若非此情況，則必須採取類型轉換。
 
-在[**字串格式化**](string-formatting.md)一文中，您已看到可如何使用資料繫結的 `StringFormat` 屬性，將任何類型轉換為字串。 對於其他類型的轉換，您需要在實作 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 介面的類別中撰寫一些特殊程式碼。 (通用 Windows 平台包含 `Windows.UI.Xaml.Data` 命名空間中名為 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) 的類似類別，但 `IValueConverter` 位於 `Xamarin.Forms` 命名空間中。)實作 `IValueConverter` 的類別稱為「值轉換器」  ，但也經常稱為「繫結轉換器」  或「繫結值轉換器」  。
+在[**字串格式化**](string-formatting.md)一文中，您已看到可如何使用資料繫結的 `StringFormat` 屬性，將任何類型轉換為字串。 對於其他類型的轉換，您需要在實作 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 介面的類別中撰寫一些特殊程式碼。 (通用 Windows 平台包含 `Windows.UI.Xaml.Data` 命名空間中名為 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) 的類似類別，但 `IValueConverter` 位於 `Xamarin.Forms` 命名空間中。)實作 `IValueConverter` 的類別稱為「值轉換器」，但也經常稱為「繫結轉換器」或「繫結值轉換器」。
 
 ## <a name="the-ivalueconverter-interface"></a>IValueConverter 介面
 
@@ -95,7 +95,7 @@ public class IntToBoolConverter : IValueConverter
 
 如果值轉換器用於您應用程式的多個頁面中，您可以在 **App.XAML** 檔案的資源字典中將其具現化。
 
-[啟用按鈕]  頁面示範當 `Button` 根據使用者鍵入 `Entry` 檢視的文字而執行作業時，會出現的常見需求。 如果 `Entry` 中未鍵入任何內容，則應該停用 `Button`。 每個 `Button` 都會在其 `IsEnabled` 屬性中包含資料繫結。 資料繫結來源是對應 `Entry` 之 `Text` 屬性的 `Length` 屬性。 如果該 `Length` 屬性不為 0，則值轉換器會傳回 `true` 並啟用 `Button`：
+[啟用按鈕] 頁面示範當 `Button` 根據使用者鍵入 `Entry` 檢視的文字而執行作業時，會出現的常見需求。 如果 `Entry` 中未鍵入任何內容，則應該停用 `Button`。 每個 `Button` 都會在其 `IsEnabled` 屬性中包含資料繫結。 資料繫結來源是對應 `Entry` 之 `Text` 屬性的 `Length` 屬性。 如果該 `Length` 屬性不為 0，則值轉換器會傳回 `true` 並啟用 `Button`：
 
 [![啟用按鈕](converters-images/enablebuttons-small.png "啟用按鈕")](converters-images/enablebuttons-large.png#lightbox "啟用按鈕")
 
@@ -132,7 +132,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 }
 ```
 
-[交換器指標]  頁面會示範其可如何用於顯示 `Switch` 檢視的值。 雖然將轉換器具現化為資源字典中的資源很常見，但是此頁面會示範另一個方法：每個值轉換器都在 `Binding.Converter` 屬性元素標籤之間具現化。 `x:TypeArguments` 指出泛型引數，且 `TrueObject` 和 `FalseObject` 都設為該類型的物件：
+[交換器指標] 頁面會示範其可如何用於顯示 `Switch` 檢視的值。 雖然將轉換器具現化為資源字典中的資源很常見，但是此頁面會示範另一個方法：每個值轉換器都在 `Binding.Converter` 屬性元素標籤之間具現化。 `x:TypeArguments` 指出泛型引數，且 `TrueObject` 和 `FalseObject` 都設為該類型的物件：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -396,7 +396,7 @@ binding.ConverterParameter = 255;
 
 基於這個理由，上述值轉換器會包含個別的 `GetParameter` 方法，來處理 `parameter` 為 `double`、`int` 或 `string` 類型的案例。  
 
-[RGB 色彩選取器]  頁面會遵循兩個隱含樣式的定義，在資源字典中將 `DoubleToIntConverter` 具現化：
+[RGB 色彩選取器] 頁面會遵循兩個隱含樣式的定義，在資源字典中將 `DoubleToIntConverter` 具現化：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -463,7 +463,6 @@ binding.ConverterParameter = 255;
 結果如下：
 
 [![RGB 色彩選取器](converters-images/rgbcolorselector-small.png "RGB 色彩選取器")](converters-images/rgbcolorselector-large.png#lightbox "RGB 色彩選取器")
-
 
 ## <a name="related-links"></a>相關連結
 

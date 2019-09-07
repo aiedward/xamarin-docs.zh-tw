@@ -7,23 +7,22 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: 9b3e4177d6be5854e80952d091aa78787d9645bb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8a808e6ea49338de5b6bd1618fc2227e6cf5f0b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644929"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764890"
 ---
 # <a name="xamarinandroid-popup-menu"></a>[Xamarin] 快顯功能表
 
-[PopupMenu](xref:Android.Widget.PopupMenu) (也稱為_快捷方式功能表_) 是錨定至特定視圖的功能表。 在下列範例中, 單一活動包含一個按鈕。 當使用者按下按鈕時, 會顯示三個專案的快顯功能表:
+[PopupMenu](xref:Android.Widget.PopupMenu) （也稱為_快捷方式功能表_）是錨定至特定視圖的功能表。 在下列範例中，單一活動包含一個按鈕。 當使用者按下按鈕時，會顯示三個專案的快顯功能表：
 
 [![具有按鈕和三個專案快顯功能表的應用程式範例](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
-
 ## <a name="creating-a-popup-menu"></a>建立快顯功能表
 
-第一個步驟是建立功能表的功能表資源檔, 並將它放在 [**資源]/[功能表**] 中。 例如, 下列 XML 是在上一個螢幕擷取畫面 ( **Resources/menu/popup_menu**) 中顯示的三個專案功能表的程式碼:
+第一個步驟是建立功能表的功能表資源檔，並將它放在 [**資源]/[功能表**] 中。 例如，下列 XML 是在上一個螢幕擷取畫面（ **Resources/menu/popup_menu**）中顯示的三個專案功能表的程式碼：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -37,9 +36,9 @@ ms.locfileid: "68644929"
 </menu>
 ```
 
-接下來, 建立的`PopupMenu`實例, 並將它錨定到其 view。 當您建立的實例`PopupMenu`時, 會將的`Context`參考傳遞給其函式, 以及要附加功能表的視圖。 因此, 快顯視窗會在其結構中錨定到此視圖。
+接下來，建立的`PopupMenu`實例，並將它錨定到其 view。 當您建立的實例`PopupMenu`時，會將的`Context`參考傳遞給其函式，以及要附加功能表的視圖。 因此，快顯視窗會在其結構中錨定到此視圖。
 
-在下列範例中, `PopupMenu`會在按鈕的 click 事件處理常式中建立 (名為`showPopupMenu`)。 此按鈕也是錨定的視圖`PopupMenu` , 如下列程式碼範例所示:
+在下列範例中， `PopupMenu`會在按鈕的 click 事件處理常式中建立（名為`showPopupMenu`）。 此按鈕也是錨定的視圖`PopupMenu` ，如下列程式碼範例所示：
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -47,7 +46,7 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-最後, 快顯功能表必須使用稍早建立的功能表資源來*放大*。 在下列範例中, 會加入對功能表的[擴充](xref:Android.Views.LayoutInflater.Inflate*)方法的呼叫, 並呼叫它的[Show](xref:Android.Widget.PopupMenu.Show)方法來顯示它:
+最後，快顯功能表必須使用稍早建立的功能表資源來*放大*。 在下列範例中, 會加入對功能表的[擴充](xref:Android.Views.LayoutInflater.Inflate*)方法的呼叫, 並呼叫它的[Show](xref:Android.Widget.PopupMenu.Show)方法來顯示它:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -57,10 +56,9 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-
 ## <a name="handling-menu-events"></a>處理功能表事件
 
-當使用者選取功能表項目時, 將會引發[MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) click 事件, 並會關閉功能表。 點擊功能表外部的任何位置, 只要將它關閉即可。 不論是哪一種情況, 當功能表關閉時, 將會引發其[DismissEvent](xref:Android.Widget.PopupMenu.Dismiss) 。 下列程式`MenuItemClick`代碼會加入和`DismissEvent`事件的事件處理常式:
+當使用者選取功能表項目時，將會引發[MenuItemClick](xref:Android.Widget.PopupMenu.MenuItemClick) click 事件，並會關閉功能表。 點擊功能表外部的任何位置，只要將它關閉即可。 不論是哪一種情況，當功能表關閉時，將會引發其[DismissEvent](xref:Android.Widget.PopupMenu.Dismiss) 。 下列程式`MenuItemClick`代碼會加入和`DismissEvent`事件的事件處理常式：
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -78,8 +76,6 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-
-
 ## <a name="related-links"></a>相關連結
 
-- [PopupMenuDemo (範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)
+- [PopupMenuDemo （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/popupmenudemo)

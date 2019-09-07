@@ -7,18 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d8c0c958a6aaad2603f6571a3531b7338d8cdab0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1e359d510b1ff92299dc4b9792a2911d5583e66a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291010"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769720"
 ---
 # <a name="mdocarchivetomsxdocconverterexe-not-found-rverbasecommandonrequest"></a>找不到 MDocArchiveToMsxDocConverter.exe rver.BaseCommand.OnRequest
 
 > [!IMPORTANT]
 > 此問題已在最新版本的 Xamarin 中解決。 不過，如果軟體的最新版本發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出來提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
-
 
 ## <a name="error-message"></a>錯誤訊息
 

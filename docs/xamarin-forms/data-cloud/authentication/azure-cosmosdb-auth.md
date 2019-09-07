@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/16/2017
-ms.openlocfilehash: 0067a9e576e695a308e4326955b540be2ff46f61
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7b073e0233fb9c5511593ed80313f402c888c811
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657221"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771005"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 檔資料庫和 Xamarin 來驗證使用者
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
 _Azure Cosmos DB 文件資料庫支援資料分割的集合，可跨越多部伺服器和資料分割，同時支援無限制的儲存體和輸送量。這篇文章說明如何結合資料分割的集合，存取控制，讓使用者只能存取自己的文件中的 Xamarin.Forms 應用程式。_
 
@@ -267,7 +267,6 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 ## <a name="summary"></a>總結
 
 這篇文章會說明如何使用資料分割的集合，結合存取控制，讓使用者只能存取自己的文件資料庫文件中的 Xamarin.Forms 應用程式。 指定使用者的身分識別做為資料分割索引鍵，可確保資料分割的集合可以只儲存該使用者的文件。
-
 
 ## <a name="related-links"></a>相關連結
 

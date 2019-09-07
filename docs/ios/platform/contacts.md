@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 96dbb60b8754223203394745bc86af2297cb5ff3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa2e287775e6669bd8bdf2728d9c676c451af69b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278543"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753289"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>Xamarin 中的連絡人和 ContactsUI
 
@@ -31,9 +31,6 @@ _本文涵蓋在 Xamarin iOS 應用程式中使用新的「連絡人」和「連
 
 > [!IMPORTANT]
 > Ios 8 `AddressBook` （ `AddressBookUI`和更早版本）所使用的現有和架構已于 ios 9 中淘汰，而且應該儘快以`Contacts`新`ContactsUI`的和架構取代現有的任何 Xamarin ios 應用程式。 新的應用程式應針對新的架構撰寫。
-
-
-
 
 在下列各節中，我們將探討這些新的架構，以及如何在 Xamarin iOS 應用程式中加以執行。
 
@@ -359,7 +356,6 @@ PresentViewController(view, true, null);
 ## <a name="summary"></a>總結
 
 本文已詳細探討如何在 Xamarin iOS 應用程式中使用 Contact 和 Contact UI 架構。 首先，它涵蓋了 Contact framework 提供的不同物件類型，以及您如何使用它們來建立新的或存取現有的連絡人。 它也會檢查連絡人 UI 架構，以選取現有的連絡人並顯示連絡人資訊。
-
 
 ## <a name="related-links"></a>相關連結
 

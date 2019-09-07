@@ -7,12 +7,12 @@ ms.assetid: E9BE322E-ECB3-4395-AFE4-4474A0F25551
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 39de35c8e43ebf2b3db25724ad761e3576ba5057
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d9c153f8da44c525b8851afb48682bd7a14a8c47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644949"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770497"
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp 轉換
 
@@ -49,7 +49,7 @@ Xamarin.Forms 也支援類似於在 SkiaSharp 的轉換。 Xamarin.Forms [ `Visu
 
 SkiaSharp 轉換是相對於左上角`SKCanvas`左上角相對 Xamarin.Forms 轉換時`VisualElement`會套用。 套用調整規模時，此差異很重要，因為這些轉換永遠是相對於特定的點旋轉會轉換。
 
-真的很大的差異是 SKiaSharp 轉換*方法*Xamarin.Forms 轉換時*屬性*。 這是除了語法差異之外的語義差異:SkiaSharp 轉換會在 Xamarin. Forms 轉換設定狀態時執行操作。 SkiaSharp 轉換套用至後續繪製的圖形物件，但不是會繪製前套用轉換的圖形物件。 相反地，Xamarin.Forms 轉換適用於先前呈現的項目，此屬性設定。 SkiaSharp 轉換是累計的因為方法會呼叫;當此屬性設定與另一個值，會取代 Xamarin.Forms 轉換。
+真的很大的差異是 SKiaSharp 轉換*方法*Xamarin.Forms 轉換時*屬性*。 這是除了語法差異之外的語義差異：SkiaSharp 轉換會在 Xamarin. Forms 轉換設定狀態時執行操作。 SkiaSharp 轉換套用至後續繪製的圖形物件，但不是會繪製前套用轉換的圖形物件。 相反地，Xamarin.Forms 轉換適用於先前呈現的項目，此屬性設定。 SkiaSharp 轉換是累計的因為方法會呼叫;當此屬性設定與另一個值，會取代 Xamarin.Forms 轉換。
 
 在本節中的所有範例程式會都出現在**SkiaSharp 轉換**一節[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式。 中可以找到原始程式碼[**轉換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms)方案的資料夾。
 
@@ -84,7 +84,6 @@ SkiaSharp 轉換是相對於左上角`SKCanvas`左上角相對 Xamarin.Forms 轉
 ## <a name="3d-rotation3d-rotationmd"></a>[3D 旋轉](3d-rotation.md)
 
 您可以使用非仿射轉換，旋轉 3D 空間中的 2D 物件。
-
 
 ## <a name="related-links"></a>相關連結
 

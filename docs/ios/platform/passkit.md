@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 8039482175465a67867f3c70f17518dee8b9500b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277861"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769584"
 ---
 # <a name="passkit-in-xamarinios"></a>在 Xamarin 中 PassKit
 
@@ -74,7 +74,6 @@ Pass 是代表票證、贈券或卡片的資料集合。 它可供個人使用�
 - **商店卡片**–進位，例如信用卡或轉帳卡。
 - **優惠券**–沿著頂端 perforated。
 - [**一般**] –與 [儲存卡]、[進位]。
-
 
 這五個傳遞類型會顯示在此螢幕擷取畫面中（依序為：贈券、generic、商店卡片、「服務台通過」和「事件票證」）：
 
@@ -204,10 +203,8 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 1. 使用憑證簽署`manifest.json`檔案，並將結果寫入名`signature`為的檔案。
 1. 將所有專案壓縮，並為產生`.pkpass`的檔案提供副檔名。
 
-
 由於您的私密金鑰必須簽署 pass，因此只能在您控制的安全伺服器上執行此程式。 請勿散發您的金鑰，以嘗試在應用程式中產生傳遞。
 
- 
 ## <a name="configuration-and-setup"></a>設定和安裝
 
 本節包含的指示可協助您設定布建詳細資料，並建立您的第一次傳遞。
@@ -229,7 +226,6 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 
 2. 提供 Pass 的**描述**（名稱）和**識別碼**（唯一字串）。 請注意，在此範例中，所有傳遞類型`pass.`識別碼的開頭都必須`pass.com.xamarin.coupon.banana`是字串，我們使用：[![](passkit-images/register.png "提供描述和識別碼")](passkit-images/register.png#lightbox)
 
-
 3. 按下 [**註冊**] 按鈕以確認傳遞識別碼。
 
 #### <a name="generate-a-certificate"></a>產生憑證
@@ -242,13 +238,11 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 
     [![](passkit-images/cert-dist.png "選取 [建立憑證]")](passkit-images/cert-dist.png#lightbox)
 
-
 2. 遵循步驟來建立憑證簽署要求（CSR）。
   
 3. 在開發人員入口網站上按下 [**繼續**] 按鈕，並上傳 CSR 以產生您的憑證。
 
 4. 下載憑證並在其上按兩下以將它安裝在您的 keychain 中。
-
 
 既然我們已建立此傳遞類型識別碼的憑證，下一節會說明如何手動建立傳遞。
 
@@ -264,7 +258,6 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 - 計算資料夾中每個檔案的 SHA1 雜湊，並寫入至資訊清單. json。
 - 以下載的憑證 p12 檔案簽署資訊清單。
 - 壓縮目錄的內容，並使用 pkpass 副檔名重新命名。
-
 
 本文的[範例程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)中有一些來源檔案，可以用來產生 pass。 使用 CreateAPassManually 目錄`CouponBanana.raw`目錄中的檔案。 有下列檔案：
 
@@ -338,7 +331,6 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 - **Safari** –在按下 [傳遞 URL] 連結時，可辨識 [傳遞內容類型]。
 - **其他自訂應用程式**–接收附件或開啟連結的任何應用程式（社交媒體用戶端、郵件讀取者等）。
 
-
 此螢幕擷取畫面顯示 iOS 6 中的**郵件**如何辨識傳遞附件，以及（在接觸時）**將其新增**至錢包的方式。
 
  [![](passkit-images/image22.png "此螢幕擷取畫面顯示 iOS 6 中的郵件如何辨識傳遞附件")](passkit-images/image22.png#lightbox)
@@ -350,7 +342,6 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 - **副檔名**-. pkpass
 - **MIME 類型**-application/application. apple. pkpass
 - **UTI** – pkpass
-
 
 管道應用程式的基本作業是抓取傳遞檔案並呼叫 PassKit `PKAddPassesViewController` ，讓使用者可以選擇是否要將傳遞至其錢包。 下一節的**附屬應用程式**涵蓋此視圖控制器的執行。
 
@@ -383,7 +374,6 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 在 [錢包] 區段下，選取 [**啟用錢包**] 選項
 
 ![](passkit-images/image32.png "啟用錢包的權利")
-
 
 預設選項是讓您的應用程式允許所有的傳遞類型。 不過，您可以限制您的應用程式，而且只允許一部分的小組傳遞類型。 若要啟用此專案，請選取 [**允許小組傳遞類型的子集]** ，然後輸入您想要允許之子集的傳遞類型識別碼。
 

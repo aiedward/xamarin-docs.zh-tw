@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: b014c84a7bb23e723fbfbb7ead5e8dc9d9fdc549
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281697"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770329"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin. Mac 中的影像
 
@@ -36,7 +36,6 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用影像和圖示。其�
 [![應用程式的範例執行](image-images/intro01.png "應用程式的範例執行")](image-images/intro01-large.png#lightbox)
 
 在本文中，我們將討論在 Xamarin. Mac 應用程式中使用影像和圖示的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。本文。
-
 
 ## <a name="adding-images-to-a-xamarinmac-project"></a>將影像新增至 Xamarin. Mac 專案
 
@@ -101,7 +100,6 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用影像和圖示。其�
 
 從這裡，您可以使用與預設**assets.xcassets**集合自動包含在專案中相同的方式來處理集合。
 
-
 ### <a name="adding-images-to-resources"></a>將影像新增至資源
 
 > [!IMPORTANT]
@@ -132,7 +130,6 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用影像和圖示。其�
 
 除了其標準解析版本外，您新增至 Xamarin Mac 應用程式的任何圖形資產（圖示、自訂控制項、自訂游標、自訂插圖等等）都必須具有高解析度版本。 這是必要的，讓您的應用程式在 Retina 顯示配備的 Mac 電腦上執行時，能發揮最佳效果。
 
-
 ### <a name="adopt-the-2x-naming-convention"></a>@2x採用命名慣例
 
 > [!IMPORTANT]
@@ -150,7 +147,6 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用影像和圖示。其�
 將影像指派給中的 UI 專案時 Interface Builder 您只需在_ImageName_中挑選檔案 **。** _檔案名-延伸_格式（範例：**標記 .png**）。 在程式碼中C#使用影像的方式相同，您會在_ImageName_中挑選檔案 **。** _檔案名-延伸_模組格式。
 
 當您在 Mac 上執行 Xamarin. Mac 應用程式時， _ImageName_ **。** _檔案名-延伸_格式影像將會用於標準解析度顯示， **ImageName@2x.filename-extension** 並會自動在 Retina 顯示基底 mac 上選取影像。
-
 
 ## <a name="using-images-in-interface-builder"></a>在 Interface Builder 中使用影像
 
@@ -444,12 +440,9 @@ view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 
 如需使用大綱視圖的詳細資訊，請參閱我們的[大綱視圖](~/mac/user-interface/outline-view.md)檔。
 
-
 ## <a name="summary"></a>總結
 
 本文已詳細探討如何在 Xamarin. Mac 應用程式中使用影像和圖示。 我們看到影像的不同類型和用途，如何在 Xcode 的 Interface Builder 中使用影像和圖示，以及如何在程式碼中C#處理影像和圖示。
-
-
 
 ## <a name="related-links"></a>相關連結
 

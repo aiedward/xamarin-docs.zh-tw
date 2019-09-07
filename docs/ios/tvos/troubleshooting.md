@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 3fb479321686e4b956fc6ffee90dd5b0b2c16d9c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f54edead87459282ccd6a44225269542fad9d0e4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291186"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769096"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>針對以 Xamarin 建立的 tvOS 應用程式進行疑難排解
 
@@ -146,7 +146,6 @@ _「只有包含 arm64 配量的應用程式，在 UIRequiredDeviceCapabilities 
 
 如果您要向 Apple 電視 App store 提交具有遊戲控制器支援的 tvOS 應用程式，而且您收到的錯誤訊息格式為：
 
-
 _我們發現您最近一次傳遞「應用程式名稱」有一或多個問題。您的傳遞已成功，但您可能想要在下一次傳遞時更正下列問題：_
 
 _不正確配套–支援遊戲控制器的應用程式也必須支援 Apple TV 遠端。_
@@ -200,8 +199,6 @@ _不相容的目標 framework：。NetPortable，Version = v 4.5，Profile = Pro
 請注意，路徑中的設定檔編號必須符合 PCL 的設定檔編號。
 
 備妥此檔案之後，您應該能夠成功地將 PCL 檔案新增至 tvOS 專案。
-
-
 
 ## <a name="related-links"></a>相關連結
 

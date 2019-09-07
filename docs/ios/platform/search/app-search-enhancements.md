@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 2a2475bcc5eea48584c4aa128aafeeb326e41f8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8c3ea0e190bc75d771adf587f5b1bcf27d906f02
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280363"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769537"
 ---
 # <a name="app-search-enhancements-in-xamarinios"></a>Xamarin 中的應用程式搜尋增強功能
 
@@ -115,8 +115,6 @@ Apple 的[應用程式搜尋 API 驗證工具](https://search.developer.apple.co
 ## <a name="summary"></a>總結
 
 本文涵蓋了 Apple 在 iOS 10 中對應用程式搜尋的增強功能，以及如何在 Xamarin 中執行。
-
-
 
 ## <a name="related-links"></a>相關連結
 

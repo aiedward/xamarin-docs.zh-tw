@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/27/2016
-ms.openlocfilehash: e2d3a3590e8006c745d28026f3a359350f7ce940
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.openlocfilehash: a759569f9faf7c8e13768a68b203a8221d3b31cb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621069"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770720"
 ---
 # <a name="native-views-in-c"></a>C 中的原生視圖\#
 
@@ -319,7 +319,6 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 ## <a name="summary"></a>總結
 
 這篇文章說明如何將原生檢視新增至 Xamarin.Forms 版面配置建立使用 C# 中，以及如何覆寫的自訂檢視，以更正其度量 API 使用方式配置。
-
 
 ## <a name="related-links"></a>相關連結
 

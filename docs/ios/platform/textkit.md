@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: c153e653cc57d35f125ef58ebc8df0013f77e7c1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dba65eb11b6ae22a51610804e3a6a73549f4565b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283017"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769771"
 ---
 # <a name="textkit-in-xamarinios"></a>在 Xamarin 中 TextKit
 
@@ -31,7 +31,6 @@ TextKit 提供了多層式架構，可將文字儲存與版面配置和顯示區
 - `NSTextContainer`-提供用於配置文字的座標系統和 geometry。
 - `NSLayoutManager`–藉由將文字轉換成字元來配置文字。
 - `NSTextStorage`–保存文字資料，以及處理批次文字屬性更新。 所有批次更新都會交給建構管理員進行實際的變更處理，例如重新計算版面配置和重繪文字。
-
 
 這三個類別會套用至呈現文字的視圖。 內建的文字處理視圖（ `UITextView`例如、 `UITextField`和`UILabel` ）已設定，但您也可以建立它們並將它們套用至任何`UIView`實例。
 
@@ -144,8 +143,6 @@ public class ExclusionPathView : UITextView
 > [!IMPORTANT]
 > 這個範例子`UITextView`類別會新增觸控繪圖支援。 子類別化不是取得 TextKit 功能的必要條件。 `UITextView`
 
-
-
 使用者在文字視圖上繪製之後，會藉由`CGPath`設定`UIBezierPath.CGPath`屬性`UIBezierPath`來將所繪製的套用至實例：
 
 ```csharp
@@ -164,7 +161,6 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 ![](textkit-images/exclusionpath2.png "此螢幕擷取畫面解說文字佈局如何變更為繪製路徑周圍的流程")
 
 請注意，在此情況`AllowsNonContiguousLayout`下，版面建構管理員的屬性會設定為 false。 這會導致在文字變更的所有情況下重新計算版面配置。 若將此設定為 true，可以避免進行完整版面配置重新整理（尤其是在大型檔的情況下），因而受益于效能。 不過，在`AllowsNonContiguousLayout`某些情況下，將設為 true 會防止排除路徑更新配置-例如，如果在執行時間輸入文字，但在設定的路徑之前沒有尾端的回車。
-
 
 ## <a name="related-links"></a>相關連結
 

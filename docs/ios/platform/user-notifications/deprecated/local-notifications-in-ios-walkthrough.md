@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: a012d8f166a287dfde4247a2df6d1e82091d9d70
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1ad0200d083f7b190184f631de51483f4f651d17
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290464"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769758"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>逐步解說-在 Xamarin 中使用本機通知
 
@@ -24,7 +24,6 @@ _在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用
 ## <a name="walkthrough"></a>逐步解說
 
 讓我們建立一個簡單的應用程式，以顯示本機通知的實際運作方式。 此應用程式將會有單一按鈕。 當我們按一下按鈕時，它會建立本機通知。 經過指定的時間週期之後，我們會看到通知出現。
-
 
 1. 在 Visual Studio for Mac 中，建立新的單一視圖 iOS 解決方案並呼叫`Notifications`它。
 1. `Main.storyboard`開啟檔案，然後將按鈕拖曳到視圖上。 將按鈕 **按鈕** ，並為它提供標題 **新增通知**。 此時，您可能也會想要在按鈕上設定一些[條件約束](~/ios/user-interface/designer/designer-auto-layout.md)： 
@@ -88,7 +87,6 @@ _在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用
 
 1. 我們需要處理由於本機通知而啟動通知的情況。 `FinishedLaunching` 編輯`AppDelegate`中的方法，以包含下列程式碼片段：
 
-
     ```csharp
     // check for a notification
 
@@ -119,7 +117,6 @@ _在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用
 ## <a name="summary"></a>總結
 
 本逐步解說示範如何使用各種 API，在 iOS 中建立和發佈通知。 同時也示範如何以徽章更新應用程式圖示，以提供一些應用程式特定的意見反應給使用者。
-
 
 ## <a name="related-links"></a>相關連結
 

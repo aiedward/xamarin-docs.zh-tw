@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: 8fae741f308a8269facef5ca84d34adb48868aec
-ms.sourcegitcommit: c75c1d2132a4f46a7b38e454d5f24705165026bd
-ms.translationtype: HT
+ms.openlocfilehash: e9325c34c645b75f28c7e2070f6bb095780ddb02
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68486016"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771454"
 ---
 # <a name="introduction-to-effects"></a>效果簡介
 
@@ -38,7 +38,7 @@ Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/contr
 
 下表列出每個平台上 `PlatformEffect` 類別的命名空間，以及其屬性的類型：
 
-|平台|命名空間|容器|控制|
+|平台|命名空間|容器|控制項|
 |--- |--- |--- |--- |
 |iOS|Xamarin.Forms.Platform.iOS|UIView|UIView|
 |Android|Xamarin.Forms.Platform.Android|ViewGroup|檢視|
@@ -58,7 +58,6 @@ Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/contr
 - [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached) – 當效果從 Xamarin.Forms 控制項中斷連結時呼叫。 在每個平台特定的效果類別中，此方法的覆寫版本是執行任何效果清除 (例如取消註冊事件處理常式) 的位置。
 
 此外，`PlatformEffect` 會公開 [`OnElementPropertyChanged`](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)) 方法，該方法也可能會遭到覆寫。 當項目的屬性變更時，就會呼叫此方法。 在每個平台特定的效果類別中，此方法的覆寫版本是回應 Xamarin.Forms 控制項上可繫結屬性變更的位置。 因為此覆寫會呼叫多次，所以請一律檢查變更的屬性。
-
 
 ## <a name="related-links"></a>相關連結
 

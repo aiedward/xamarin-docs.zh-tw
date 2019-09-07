@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/22/2017
-ms.openlocfilehash: a44f0921b959c6b8fd6f076fd119ea52345f821f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a0c5821b91c6394b8bae4a090899fa81eb4756e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282646"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763755"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的應用程式圖示
 
@@ -98,7 +98,7 @@ ms.locfileid: "70282646"
  4. 使用與焦點圖示相同的影像和大小。
  5. 使用與 iPhone 相同的大小圖示。
  6. 僅支援資產目錄映射集。
- 
+
  如需圖示的詳細資訊，請參閱 Apple 的[圖示和影像大小](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)檔。
 
 <a name="managing" />

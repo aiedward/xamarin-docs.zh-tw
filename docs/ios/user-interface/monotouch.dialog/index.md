@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: cfa82ccec8149acfc7ddd69bff2f68e0e11894d1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cbe1b374b97f64e0c28b2f89ca9f6d510511b74d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282436"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768848"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>適用于 Xamarin 的 MonoTouch 簡介。
 
@@ -57,7 +57,6 @@ MT.D 藉由將所有程式碼封裝成用於建立資料表的一般 API，來�
 - **低層級元素 api** -*元素 api*是以建立元素的階層式樹狀結構為基礎，這些專案代表螢幕及其元件。 元素 API 可讓開發人員在建立 Ui 時擁有最大的彈性和控制能力。 此外，元素 API 具有透過 JSON 的宣告式定義的先進支援，這可讓您進行非常快速的宣告，以及從伺服器產生動態 UI。 
 - **高層級的反映 API** – 也稱為 *繫結* *API* 中的類別已標註 UI 提示，然後 MTD 會自動建立以物件為基礎的畫面，並提供功能之間的繫結是顯示 （和選擇性地編輯） 在畫面上，以及基礎物件支援。 上述範例說明了如何使用反映 API。 此 API 不會提供元素 API 所執行的細微控制，但它會根據類別屬性自動建立元素階層，以更進一步降低複雜度。 
 
-
 MT.D 封裝了一組大量的內建 UI 元素，用於建立螢幕，但它也能辨識自訂專案和高級螢幕佈局的需求。 因此，擴充性是 API 的第一類精選內建。 開發人員可以擴充現有的專案，或建立新的專案，然後順暢地進行整合。
 
 此外，MT。D 有一些內建的常見 iOS UX 功能，例如「提取至重新整理」支援、非同步映射載入和搜尋支援。
@@ -82,7 +81,6 @@ MT.D 組建畫面使用下列四個部分：
 - **RootElement**
 - **區段**
 - **目**
-
 
 ### <a name="dialogviewcontroller"></a>DialogViewController
 
@@ -249,7 +247,6 @@ new StringElement ("Click me", () => {
 - 預留位置文字（這是提供提示給使用者的灰色文字）。 
 - 文字的值。
 
-
 預留位置和值可以是 null。 不過，標題是必要的。
 
 在任何時候，存取其 Value 屬性可以抓取的值`EntryElement`。
@@ -260,7 +257,6 @@ new StringElement ("Click me", () => {
 - Phone
 - URL
 - Email
-
 
 ### <a name="boolean-element"></a>布林值元素
 
@@ -427,7 +423,6 @@ dvc.ReloadComplete ();
 - `FinishSearch`
 - `PerformFilter`
 
-
 系統是可擴充的，因此您可以視需要改變此行為。
 
 ### <a name="background-image-loading"></a>背景影像載入
@@ -575,7 +570,6 @@ public override Source CreateSizingSource (bool unevenRows)
 ## <a name="summary"></a>總結
 
 本文涵蓋了許多 MonoTouch 的相關資訊。 其中討論了 MT 的基本概念。D 可以運作並涵蓋組成 MT 的各種元件。D. 它也顯示了 MT 支援的各種元素和資料表自訂。D. 和討論 MT 如何。D 可以使用自訂元素來擴充。 此外，它也說明了 MT 中的 JSON 支援。D，允許從 JSON 動態建立元素。
-
 
 ## <a name="related-links"></a>相關連結
 

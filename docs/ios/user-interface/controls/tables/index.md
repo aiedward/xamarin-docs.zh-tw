@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/06/2016
-ms.openlocfilehash: 7d4ad4ca7f15e20bed3cd9bb4050c5a0a9cba63a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d888cbc779cbb4fcaf8312b87627f1bd18fe719
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284171"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768396"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>在 Xamarin 中使用資料表和資料格
 
@@ -36,11 +36,11 @@ ms.locfileid: "70284171"
  [自訂資料表的外觀](~/ios/user-interface/controls/tables/customizing-table-appearance.md)
 
  [編輯](~/ios/user-interface/controls/tables/editing.md)
- 
+
  [資料列動作](~/ios/user-interface/controls/tables/row-action.md)
 
  [在分鏡腳本中建立資料表](~/ios/user-interface/controls/tables/creating-tables-in-a-storyboard.md)
- 
+
  [自動調整資料列高度](~/ios/user-interface/controls/tables/autosizing-row-height.md)
 
 ## <a name="related-links"></a>相關連結

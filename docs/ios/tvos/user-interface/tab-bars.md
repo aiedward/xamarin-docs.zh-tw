@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 799dd40caae0323b71cae2c6715bf8cd16f78356
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df19dcf542bd3a62a696c0d7d533b4e14390336e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283971"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769000"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>使用 Xamarin 中的 [tvOS] 索引標籤列控制器
 
@@ -121,7 +121,6 @@ Apple 具有下列使用索引標籤列的建議：
 
 使用的`Items`屬性`UITabBar` ，`UITabBarItems`即可將其包含的集合存取為零（0）索引陣列。 屬性會傳回目前選取的索引標籤（類別） `UITabBarItem`做為。 `SelectedItem`
 
-
 <a name="Working-with-Tab-Bar-Items" />
 
 ## <a name="working-with-tab-bar-items"></a>使用索引標籤欄專案
@@ -144,9 +143,6 @@ TabBar.Items [2].BadgeValue = "10";
 ## <a name="summary"></a>總結
 
 本文涵蓋設計和使用 tvOS 應用程式內的索引標籤列控制器。
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 5776855039120b0c856a76a31334420ded2a2d65
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283322"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770149"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>。 xib-Xamarin. Mac 中的使用者介面設計較少
 
@@ -45,7 +45,6 @@ _本文說明如何直接從C#程式碼建立 Xamarin. Mac 應用程式的使用
 現在，我們必須修改**MainWindow.cs**檔案以定義視窗的版面配置，並修改**ViewController.cs**或**MainWindowController.cs**檔案，以`MainWindow`建立類別的實例，因為我們不再使用。分鏡腳本或 xib 檔案。
 
 針對其使用者介面使用分鏡腳本的現代化 Xamarin 應用程式，可能不會自動包含**MainWindow.cs**、 **ViewController.cs**或**MainWindowController.cs**檔案。 視需要，只要將新的空白C#類別加入至專案（**加入** > 新的檔案 **...**  > 一般空白 > **類別**），並將其命名為與遺漏檔案相同。
-
 
 ### <a name="defining-the-window-in-code"></a>以程式碼定義視窗
 
@@ -178,7 +177,6 @@ ContentView.AddSubview (ClickMeLabel);
 
 同樣`NSTextField`地， `ContentView.AddSubview (ClickMeLabel)`方法會將新增至內容視圖，使其在應用程式執行時顯示在螢幕上，並開啟視窗。
 
-
 ### <a name="adjusting-the-window-controller"></a>調整視窗控制器
 
 由於不`MainWindow`會再從 xib 檔案載入的設計，因此我們需要對視窗控制器進行一些調整。 編輯**MainWindowController.cs**檔案，使其看起來如下所示：
@@ -268,7 +266,6 @@ Window.AwakeFromNib ();
 
 這可讓您針對視窗撰寫程式碼，就像是從分鏡腳本或 xib 檔案載入的標準視窗一樣。
 
-
 ### <a name="displaying-the-window"></a>顯示視窗
 
 移除 xib 檔案，並修改**MainWindow.cs**和**MainWindowController.cs**檔案後，您就會使用視窗，就像您在 Xcode 的 Interface Builder 中使用 xib 檔案所建立的一般視窗一樣。
@@ -287,7 +284,6 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ![範例應用程式執行](xibless-ui-images/run01.png "範例應用程式執行")
 
-
 ## <a name="adding-a-code-only-window"></a>加入僅限程式碼視窗
 
 如果我們只想新增程式碼，請將 xibless 視窗加入現有的 Xamarin. Mac 應用程式，以滑鼠右鍵按一下**Solution Pad**中的專案，**然後選取** > [**新增檔案 ...** ]在 [**新增**檔案] 對話方塊  > 中，選擇 [**包含控制器的 Xamarin Cocoa 視窗]** ，如下所示：
@@ -295,7 +291,6 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 ![加入新的視窗控制器](xibless-ui-images/add01.png "加入新的視窗控制器")
 
 就像之前一樣，我們將會從專案中刪除 xib 檔案（在此例中為**SecondWindow. xib**），並遵循上方的[切換視窗以使用程式碼](#Switching_a_Window_to_use_Code)一節中的步驟，來涵蓋視窗的程式碼定義。
-
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>在程式碼中將 UI 元素加入至視窗
 
@@ -309,7 +304,6 @@ MyWindow.ContentView.AddSubview (ClickMeButton);
 ```
 
 上述程式碼會建立新`NSButton`的，並將它`MyWindow`新增至視窗實例以供顯示。 基本上，您可以在程式碼中建立可在 Xcode 的 Interface Builder 中定義的任何 UI 元素，並在視窗中顯示。
-
 
 ## <a name="defining-the-menu-bar-in-code"></a>在程式碼中定義功能表列
 
@@ -359,12 +353,9 @@ public override void DidFinishLaunching (NSNotification notification)
 
 上述會從程式碼建立狀態列功能表，並在應用程式啟動時加以顯示。 如需有關使用功能表的詳細資訊，請參閱我們的[功能表](~/mac/user-interface/menu.md)檔。
 
-
 ## <a name="summary"></a>總結
 
 本文深入探討如何在程式碼中C#建立 Xamarin. Mac 應用程式的使用者介面，而不是使用 Xcode 的 Interface Builder 搭配. 腳本或 xib 檔案。
-
-
 
 ## <a name="related-links"></a>相關連結
 

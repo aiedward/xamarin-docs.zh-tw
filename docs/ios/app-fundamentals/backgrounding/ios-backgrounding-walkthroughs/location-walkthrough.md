@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: b95f60676a1c58463fc6e384ea3738122a1c76fe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f4708b56b8cf8a243785816440c63b743059cf5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286817"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756270"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>逐步解說-Xamarin 中的背景位置
 
@@ -21,7 +21,6 @@ ms.locfileid: "70286817"
 本逐步解說說明一些重要的背景處理概念，包括將應用程式註冊為背景必要的應用程式、在背景執行應用程式時暫停 UI 更新，以及`WillEnterBackground`使用`WillEnterForeground`和`AppDelegate`方法.
 
 ## <a name="application-set-up"></a>應用程式設定
-
 
 1. 首先，建立新的**iOS > 應用程式 > 單一視圖應用C#程式（）** 。 呼叫 [_位置_]，並確定已選取 [iPad] 和 [iPhone]。
 
@@ -84,7 +83,6 @@ ms.locfileid: "70286817"
 1. 加入索引鍵`NSLocationAlwaysUsageDescription` ， `NSLocationWhenInUseUsageDescription`或包含會向使用者顯示的字串，該警示會要求位置資料存取。
 
 1. iOS `AllowsBackgroundLocationUpdates` 9 會在使用資訊時要求 **。 plist**包含具有值`UIBackgroundModes` `location`的索引鍵。 如果您已完成本逐步解說的步驟2，這應該已經在您的 plist 檔案中。
-
 
 1. 在類別內，使用下列程式碼`StartLocationUpdates`建立名為的方法。 `LocationManager` 這段程式碼示範如何從`CLLocationManager`開始接收位置更新：
 
@@ -202,7 +200,6 @@ public override void ViewDidLoad ()
 }
 ```
 
-
 現在，當應用程式執行時，它看起來應該像這樣：
 
 [![](location-walkthrough-images/image5.png "範例應用程式執行")](location-walkthrough-images/image5.png#lightbox)
@@ -278,7 +275,6 @@ UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
 現在 UI 會在第一次啟動應用程式時開始更新，並在應用程式回到前景時繼續更新。
 
 在本逐步解說中，我們建立了一個運作正常的背景感知 iOS 應用程式，可將位置資料列印至螢幕和應用程式輸出視窗。
-
 
 ## <a name="related-links"></a>相關連結
 

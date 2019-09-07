@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 45d9580899ac42dba300086b5d5694c07d177871
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bbba1cbb907e3744677ff6bbe39b97fb62616e33
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287827"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768160"
 ---
 # <a name="view-controller-transitions-in-xamarinios"></a>在 Xamarin 中查看控制器轉換
 
@@ -28,7 +28,6 @@ IOS 7 中的視圖控制器之間的動畫轉換可完全自訂。 `UIViewContro
 2. 執行`UIViewControllerTransitioningDelegate`以建立 animator 類別，這是的`UIViewControllerAnimatedTransitioning`實例。
 3. 將屬性設定為的`UIViewControllerTransitioningDelegate`實例，也會在要呈現的控制器上。 `TransitioningDelegate`
 4. 呈現視圖控制器。
-
 
 例如，下列程式碼會顯示型`ControllerTwo`別為的視圖控制器-a 子`UIViewController`類別：
 
@@ -83,7 +82,6 @@ public class TransitioningDelegate : UIViewControllerTransitioningDelegate
 1. `TransitionDuration`–傳回動畫的持續時間（以秒為單位）。
 1. `AnimateTransition`–執行實際的動畫。
 
-
 例如，下列類別會實行`UIViewControllerAnimatedTransitioning`以動畫顯示控制器視圖的框架：
 
 ```csharp
@@ -129,7 +127,6 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
 - **導覽控制器**–兩個`UICollectionViewController`實例之間的動畫轉換可以在`UINavigationController`管理它們時，選擇性地自動處理。
 - **轉換**配置–新`UICollectionViewTransitionLayout`的類別允許在版面配置之間進行互動式轉換。
 
-
 ### <a name="navigation-controller-transitions"></a>流覽控制器轉換
 
 在流覽控制器中使用時， `UICollectionViewController`包含在控制器之間進行動畫轉換的支援。 這項支援是內建的功能，而且只需要幾個簡單的步驟就能執行：
@@ -138,7 +135,6 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
 1. 將的實例`UICollectionViewController`加入至流覽控制器堆疊的根目錄。
 1. 建立第二`UICollectionViewController`個，並`UseLayoutToLayoutNavigtionTransitions`將其`true`屬性設定為。
 1. 將第二`UICollectionViewController`個推送至流覽控制器的堆疊。
-
 
 下列程式碼會將`UICollectionViewController`名`ImagesCollectionViewController`為的子類別新增至流覽控制器`UseLayoutToLayoutNavigationTransitions`的堆疊的根目錄，並將屬性`false`設定為：
 
@@ -216,7 +212,6 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 1. 在`StartInteractiveTransition`方法的完成處理常式中處理轉換完成。
 1. 將手勢辨識器新增至集合視圖。
 
-
 下列程式碼會在縮小手勢辨識器內實行互動式版面配置轉換：
 
 ```csharp
@@ -260,9 +255,6 @@ imagesController.CollectionView.AddGestureRecognizer (pinch);
 ```
 
 當使用者 pinches [集合] 視圖`TransitionProgress`時，會相對於縮小的小數值來設定。 在此實行中，如果使用者在轉換 50% 完成之前結束縮小，轉換就會取消。 否則，轉換就會完成。
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

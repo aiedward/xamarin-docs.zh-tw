@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/07/2017
-ms.openlocfilehash: 50278eaa6d3518b8de85685c1faf64eabac4531d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b167ddca86148818c534b7a9b0e338f8a4406b15
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292194"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767760"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 簡介
 
@@ -187,7 +187,6 @@ WatchOS 3 的新功能：健身相關應用程式可在 Apple Watch 的背景中
 - UIKit `UILocalNotification`的類別已被取代，應取代為使用者通知架構。
 
 如需棄用功能和變更的完整清單，請參閱 Apple 的[watchOS 2.2 To watchOS 3.0 API 差異](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html)檔。
-
 
 ## <a name="related-links"></a>相關連結
 

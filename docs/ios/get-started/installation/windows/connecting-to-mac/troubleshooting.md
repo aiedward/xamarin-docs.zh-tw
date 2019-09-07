@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 8a6cdd5ccec0d2c60eba18418327fd786201f11b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 41a5a30cdd5017046415f1d678abf1d44e83e678
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285637"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753677"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 組建主機的連線疑難排解
 
@@ -25,11 +25,9 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 您可以在 Visual Studio 中瀏覽至 [說明] &gt; [Xamarin] &gt; [Zip 記錄檔] 來找出記錄檔。
 
-
 ## <a name="wheres-the-xamarin-build-host-app"></a>Xamarin 組建主機應用程式在哪裡？
 
 目前已不再需要來自舊版 Xamarin.iOS 的「Xamarin 組建主機」。 Visual Studio 現在會自動透過「遠端登入」部署代理程式，並在背景中執行它。 沒有任何額外的應用程式將在 Mac 或 Windows 電腦上執行。
-
 
 ## <a name="troubleshooting-remote-login"></a>針對遠端登入進行疑難排解
 
@@ -64,7 +62,6 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
     例如，從下面的螢幕擷取畫面中，帳戶名稱將會是 **amyb**，而不是 **Amy Burns**：
 
     [![](troubleshooting-images/troubleshooting-image5a.png "從 [終端機] 應用程式取得帳戶名稱")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
-
 
 6. 確認您用於 Mac 的 IP 位址正確。 您可以在 Mac 上的 [系統偏好設定] > [共享] > [遠端登入] 底下找到 IP 位址。
 
@@ -373,7 +370,6 @@ killall mono
 2. 按住 Control 同時按一下 [mtbs] 資料夾，然後選取 [丟到垃圾桶]：
 
     [![](troubleshooting-images/troubleshooting-image9.png "將 [mtbs] 資料夾移至垃圾桶")](troubleshooting-images/troubleshooting-image9.png#lightbox)
-
 
 ## <a name="related-links"></a>相關連結
 

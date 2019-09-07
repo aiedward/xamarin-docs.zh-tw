@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 6d35827b00a4ccc9bbe3e71444536425e4e1c3b1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1b078b8cb4d1129127997e9fabdd0b128e09c90f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288115"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769359"
 ---
 # <a name="is-it-possible-to-create-a-xcarchive-archive-from-visual-studio"></a>可以從 Visual Studio 建立建立 .xcarchive 封存嗎？
 
@@ -39,4 +39,3 @@ Xamarin 3.x Visual Studio 延伸模組並未提供產生`.xcarchive`封存的機
 事實上，您甚至可以只壓縮`.app`配套（這是以 App store 散發設定檔簽署），然後將該`.zip`檔案提交至 app store。
 
 不論是哪一種情況，您都可以使用應用程式載入器應用程式來提交應用程式（而不是 Xcode）。
-

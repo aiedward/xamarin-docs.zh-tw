@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: e593a594bbf0fd6398c277d531258f6fded515f1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bc97f14066456a07ee7ce62131985194bbe83811
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282552"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768379"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web Views
 
@@ -27,9 +27,9 @@ iOS 11 引進了`WKWebView`和`SFSafariViewController`的新變更。 如需這�
 `UIWebView`是 Apple 在您的應用程式中提供 web 內容的舊版方式。 它是在 iOS 2.0 中發行，並已淘汰8.0。
 
 如果您打算支援早于8.0 的 iOS 版本，就必須使用`UIWebView`。 `UIWebView`由於效能比其他替代方案的優化程度較低，建議您檢查使用者的 iOS 版本。 如果是8.0 或更高版本，使用下列其中一個選項，將會建立更佳的使用者體驗。
- 
+
 若要將 UIWebView 新增至您的 Xamarin iOS 應用程式，請使用下列程式碼：
- 
+
 ```
 webView = new UIWebView (View.Bounds);
 View.AddSubview(webView);
@@ -43,7 +43,6 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 [![](uiwebview-images/webview.png "ScalesPagesToFit 的效果")](uiwebview-images/webview.png#lightbox)
 
 如需有關使用`UIWebView`的詳細資訊，請參閱下列配方：
-
 
 - [載入網頁](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_a_web_page)
 - [載入本機內容](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/load_local_content)
@@ -79,11 +78,11 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 <a name="safariviewcontroller" />
 
 ## <a name="sfsafariviewcontroller"></a>SFSafariViewController
- 
+
  `SFSafariViewController`是從您的應用程式提供 web 內容，並可在 iOS 9 和更新版本中取得的最新方式。 不同`UIWebView`于`WKWebView`或，`SFSafariViewController`是視圖控制器，因此無法與其他視圖搭配使用。 您應該以`SFSafariViewController`新的視圖控制器的形式呈現，就像顯示任何視圖控制器一樣。
- 
+
  `SFSafariViewController`基本上是「迷你 safari」，可以內嵌到您的應用程式中。 如同 WKWebView，它會使用相同的 Nitro JAVAscript 引擎，但也會提供一系列額外的 Safari 功能，例如自動填滿、讀者，以及與 mobile Safari 共用 cookie 和資料的能力。 您的應用程式無法存取`SFSafariViewController`使用者與之間的互動。 您的應用程式將無法存取任何預設的 Safari 功能。
- 
+
 根據預設，它也會執行 [**完成**] 按鈕，讓使用者可以輕鬆地返回您的應用程式，以及向前和向後瀏覽按鈕，讓您的使用者可以流覽一堆網頁。 此外，它也會為使用者提供一個網址列，讓他們知道他們是在預期的網頁上。 網址列不允許使用者變更 url。 
 
 這些執行無法變更，因此`SFSafariViewController`如果您的應用程式想要呈現不含任何自訂的網頁，則最好使用做為預設瀏覽器。

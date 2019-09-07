@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 314b341b7cfb40c62a5d6469ca22d2889f5a8057
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9714d78419754413ae5f1d0e5015a418fa8ab884
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291760"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769563"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>在 Xamarin 中使用 NSUserActivity 進行搜尋
 
@@ -165,8 +165,6 @@ activity.BecomeCurrent();
 - **遞交**-由於應用程式搜尋會使用與遞交相同的機制（`NSUserActivity`）公開內容、流覽及/或功能，因此您可以輕鬆地讓應用程式的使用者在一個裝置上啟動活動，並在另一個裝置上繼續執行。
 - **Siri 建議**-以及 Siri 建議正常執行的標準建議，可以自動建議您的應用程式在職員工。
 - **Siri 智慧型提醒**-使用者可以要求 Siri 提醒他們來自您應用程式的活動。
-
-
 
 ## <a name="related-links"></a>相關連結
 

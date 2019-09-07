@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/24/2016
-ms.openlocfilehash: bf9b630613dcc5c25dac96cad71e54022ead1812
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3c4fa085c9fdf17cdc256d9710c23911bb60d584
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649589"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770637"
 ---
 # <a name="native-views-in-xaml"></a>在 XAML 中的原生檢視
 
@@ -38,7 +38,7 @@ _從 iOS、 Android 和通用 Windows 平台的原生檢視可以直接參考從
 1. 在 XAML 檔案中建立原生檢視的執行個體。
 
 > [!IMPORTANT]
-> 針對任何使用原生視圖的 XAML 頁面, 必須停用編譯的 XAML。 這可以藉由使用`[XamlCompilation(XamlCompilationOptions.Skip)]`屬性來裝飾 XAML 頁面的程式碼後置類別來完成。 如需 XAML 編譯的詳細資訊, 請參閱[Xamarin 中的 Xaml 編譯](~/xamarin-forms/xaml/xamlc.md)。
+> 針對任何使用原生視圖的 XAML 頁面，必須停用編譯的 XAML。 這可以藉由使用`[XamlCompilation(XamlCompilationOptions.Skip)]`屬性來裝飾 XAML 頁面的程式碼後置類別來完成。 如需 XAML 編譯的詳細資訊，請參閱[Xamarin 中的 Xaml 編譯](~/xamarin-forms/xaml/xamlc.md)。
 
 若要從程式碼後置檔案參考原生的檢視，您必須使用共用資產專案 (SAP)，並將條件式編譯指示詞與平台特定程式碼包裝。 如需詳細資訊，請參閱[從程式碼參考原生檢視](#native_view_code)。
 
@@ -486,7 +486,6 @@ class MySpinner : Spinner
 ## <a name="summary"></a>總結
 
 這篇文章會示範如何使用 Xamarin.Forms XAML 檔案中的原生檢視。 原生的檢視，可以設定屬性和事件處理常式，它們可以與 Xamarin.Forms 檢視互動。
-
 
 ## <a name="related-links"></a>相關連結
 

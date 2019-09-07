@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: ac1ded56137cf85ec5852358f75240176dbc7671
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 35c35e702b7f992e0661630783edd4f00abce5c7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286796"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767379"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>使用 Xamarin 中的屬性清單
 
@@ -32,7 +32,6 @@ Visual Studio for Mac 的特色是 plist 編輯器，可讓您更輕鬆地編輯
 - [**高級] 面板**-[advanced] 面板是用來指定支援的檔案類型、UTI 和 URL 類型的位置。
 - **來源面板**-[來源] 面板會控制較不常用的屬性，以及應用程式的自訂屬性。
 
-
 接下來的三節會更詳細地探討每個面板的功能。
 
 ## <a name="application-panel"></a>應用程式面板
@@ -46,11 +45,9 @@ Visual Studio for Mac 具有圖形化介面，可用於`Info.plist`編輯應用�
 1. 圖示和啟動畫面
 1. 地圖和背景模式
 
-
 下一節將詳細說明這些功能。
 
  <a name="iOS_Application_Target" />
-
 
 ### <a name="ios-application-target"></a>iOS 應用程式目標
 
@@ -77,13 +74,9 @@ Visual Studio for Mac 具有圖形化介面，可用於`Info.plist`編輯應用�
 
  <a name="Icons" />
 
-
 ### <a name="icons-launch-images-and-itunes-artwork"></a>圖示、啟動影像和 iTunes 插圖
 
 您可以在使用[影像](~/ios/app-fundamentals/images-icons/index.md)指南中找到在 plist 檔案中使用圖示、影像和插圖的資訊。
-
-
-
 
 ### <a name="maps-integration-and-background-modes"></a>地圖整合和背景模式
 
@@ -104,7 +97,6 @@ Visual Studio for Mac 具有圖形化介面，可用於`Info.plist`編輯應用�
  [![](property-lists-images/image34.png "[Advanced] 面板")](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types" />
-
 
 ## <a name="document-types"></a>檔案類型
 
@@ -127,8 +119,6 @@ Visual Studio for Mac 具有圖形化介面，可用於`Info.plist`編輯應用�
 URL 配置名稱（也稱為通訊協定）是 URL 的第一個部分。 例如， `http://`和`https://`都是常見的 URL 配置。 您可以選擇為您的應用程式建立自訂 URL 配置。 自訂 URL 配置是用來與其他應用程式來回通訊和傳送資料。 下列螢幕擷取畫面說明如何建立名`monkeys://`為的新自訂 URL 配置：
 
  [![](property-lists-images/url.png "自訂 Url")](property-lists-images/url.png#lightbox)
-
-
 
 如需有關如何執行自訂 URL 配置的詳細資訊，請參閱[本指南的 Apple 的執行自訂 url 配置一節](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)。
 
@@ -153,7 +143,6 @@ Visual Studio for Mac 也會偵測屬性類型，如下所示：
 ## <a name="summary"></a>總結
 
 本文示範了如何使用圖形化和先進的 plist 編輯器來編輯一般應用程式設定，以及指定圖示和啟動影像。 此外，也引進`Entitlements.plist`了新增和管理應用程式功能的。
-
 
 ## <a name="related-links"></a>相關連結
 

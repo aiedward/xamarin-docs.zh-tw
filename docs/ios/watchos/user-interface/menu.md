@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 497ac23ae6fe094b8049ac1b3460d327716e4ece
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291683"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766795"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin 中的 watchOS 功能表控制項（Force Touch）
 
@@ -28,7 +28,6 @@ Watch 套件提供在監看式應用程式畫面上執行時，觸發功能表�
 強制觸控不會與螢幕上的任何特定元素相關聯;只有一個功能表可以連接到介面控制器，而不論畫面上 Force Touch 按的位置為何，都會出現。
 
 可以在其中顯示一個和四個功能表選項。
-
 
 ## <a name="adding-a-menu"></a>新增功能表
 
@@ -56,7 +55,6 @@ partial void MenuItemTapped ()
 類似于 iOS 中的索引標籤影像，功能表項目影像需要具有 Alpha 色板的不透明模式，以允許背景顯示。
 
 您應該將用於功能表的影像新增至 watch 應用程式專案（而非 watch 應用程式擴充功能專案），以獲得最佳效能。
-
 
 ## <a name="changing-the-menu-items"></a>變更功能表項目
 
@@ -90,8 +88,6 @@ void MenuItemTapped ()
 您可以呼叫 方法，以移除所有以程式設計方式加入的功能表`ClearAllMenuItems`項。
 
 無法清除在分鏡腳本中設定的功能表項目。
-
-
 
 ## <a name="related-links"></a>相關連結
 

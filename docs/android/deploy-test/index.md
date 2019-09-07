@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
-ms.openlocfilehash: 86447c2338b8dd43e37170fa547883e47cbf6b4c
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
-ms.translationtype: HT
+ms.openlocfilehash: ff2b481fda34bc7a75c88c72a5e30f00c4b70d9d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864218"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754019"
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 
 本節所包含的指南說明如何測試應用程式、最佳化其效能、準備發行、使用憑證進行簽署，以及將它發佈至應用程式市集。
-
 
 ## <a name="application-package-sizesapp-package-sizemd"></a>[應用程式的套件大小](app-package-size.md)
 
@@ -63,14 +62,13 @@ ms.locfileid: "67864218"
 
 本指南說明如何使用分析工具來檢查 Android 應用程式的效能和記憶體使用量。
 
-
 ## <a name="preparing-an-application-for-releaseandroiddeploy-testrelease-prepindexmd"></a>[準備可供發行的應用程式](~/android/deploy-test/release-prep/index.md)
 
 應用程式完成編碼和測試之後，必須準備可供散發的套件。 準備此套件的第一項工作是建置可供發行的應用程式，主要是設定一些應用程式屬性。
 
 ## <a name="signing-the-android-application-packageandroiddeploy-testsigningindexmd"></a>[簽署 Android 應用程式套件](~/android/deploy-test/signing/index.md)
 
-了解如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並使用此簽署憑證來簽署應用程式。 此外，本主題還說明如何將應用程式匯出至磁碟，以進行「臨機操作」  散發。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。
+了解如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並使用此簽署憑證來簽署應用程式。 此外，本主題還說明如何將應用程式匯出至磁碟，以進行「臨機操作」散發。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。
 
 ## <a name="publishing-an-applicationandroiddeploy-testpublishingindexmd"></a>[發行應用程式](~/android/deploy-test/publishing/index.md)
 

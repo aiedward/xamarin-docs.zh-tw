@@ -1,18 +1,18 @@
 ---
 title: 第 27 章的摘要。 自訂轉譯器
-description: 使用 Xamarin 建立 Mobile Apps:第 27 章的摘要。 自訂轉譯器
+description: 使用 Xamarin 建立 Mobile Apps：第 27 章的摘要。 自訂轉譯器
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 985510caa78733d1a53aceb41371839f544daa73
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: fd4014fa4db4e90596c100d454cf0467512240a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511642"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760496"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>第 27 章的摘要。 自訂轉譯器
 
@@ -113,8 +113,6 @@ UWP [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xama
 轉譯器偵測到原生控制項，變更，然後呼叫`SetValueFromRenderer`，會參考中定義的可繫結屬性`StepSlider`，變更會造成`StepSlider`引發`ValueChanged`事件。
 
 [ **StepSliderDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/StepSliderDemo)範例會示範這個新的滑桿。
-
-
 
 ## <a name="related-links"></a>相關連結
 

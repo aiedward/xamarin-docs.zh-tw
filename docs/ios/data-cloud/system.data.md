@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 36eeb517fee69742f900a0cf18e1d19d093dfc52
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 44d2e468efeacea919af2d243588d0da6d72945d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290122"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766543"
 ---
 # <a name="systemdata-in-xamarinios"></a>System.servicemodel 中的 system.object 資料
 
@@ -110,7 +110,6 @@ class Demo {
 > [!IMPORTANT]
 > 如上述程式碼範例中所述，在 SQL 命令中內嵌字串是不好的作法，因為它可讓您的程式碼容易受到[sql 插入](https://en.wikipedia.org/wiki/SQL_injection)式攻擊。
 
-
 ### <a name="using-command-parameters"></a>使用命令參數
 
 下列程式碼示範如何使用命令參數，將使用者輸入的文字安全地插入資料庫中（即使文字包含特殊的 SQL 字元，例如單引號）：
@@ -149,7 +148,6 @@ using (var addCmd = conn.CreateCommand ()) {
 - [System.Data.Odbc](xref:System.Data.Odbc)
 - 相依性已 `System.Data.dll`從中移除，因此會移除[SqlConnection. EnlistDistributedTransaction （ITransaction）](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。 `System.EnterpriseServices.dll`
 
-
 <a name="Mono.Data.Sqlite" />
 
 ### <a name="monodatasqlite"></a>Mono.Data.Sqlite
@@ -170,4 +168,3 @@ using (var addCmd = conn.CreateCommand ()) {
 ## <a name="data-binding"></a>資料繫結
 
 目前不支援資料系結。
-

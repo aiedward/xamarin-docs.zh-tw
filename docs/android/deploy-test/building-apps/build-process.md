@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: 84910bd499aa6894d86778a9bc4eb1467f063134
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: c331747677ee56f87458f51ef36a9bb2034beab1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70225731"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754254"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -44,7 +44,6 @@ Xamarin.Android 建置程序負責將所有作業結合在一起：[產生 `Reso
 我們已經知道如果裝置會封鎖 `adb`，不讓其同步至 `/data/data/@PACKAGE_NAME@/files/.__override__` 目錄的話，就無法在裝置上進行快速部署。
 
 快速部署預設為啟用狀態，藉由將 `$(EmbedAssembliesIntoApk)` 屬性設定為 `True` 即可在偵錯組建中加以停用。
-
 
 ## <a name="msbuild-projects"></a>MSBuild 專案
 
@@ -128,7 +127,6 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   # Use `/Library/Frameworks/Mono.framework/Commands/msbuild` on OS X
   MSBuild /t:Install ProjectName.csproj /p:AdbTarget=-e
   ```
-
 
 ### <a name="packaging-properties"></a>封裝屬性
 
@@ -530,7 +528,6 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   - **West**：包含西方編碼，例如西歐語系 (Mac) \[macintosh, CP10000\]、冰島文 (Mac) \[x-mac-icelandic, CP10079\]、中歐語系 (Windows) \[iso-8859-2, CP1250\]、西歐語系 (Windows) \[iso-8859-1, CP1252\]、希臘文 (Windows) \[iso-8859-7, CP1253\]、中歐語系 (ISO) \[iso-8859-2, CP28592\]、拉丁文 3 (ISO) \[iso-8859-3, CP28593\]、希臘文 (ISO) \[iso-8859-7, CP28597\]、拉丁文 9 (ISO) \[iso-8859-15, CP28605\]、OEM 美國 \[CP437\]、西歐語系 (DOS) \[CP850\]、葡萄牙文 (DOS) \[CP860\]、冰島文 (DOS) \[CP861\]、加拿大法文 (DOS) \[CP863\] 和北歐語言 (DOS) \[CP865\]。
 
-
   ```xml
   <MandroidI18n>West</MandroidI18n>
   ```
@@ -548,7 +545,6 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 - **AndroidClassParser** &ndash; 可控制 `.jar` 檔案剖析方式的字串屬性。 可能的值包括：
 
   - **class-parse**：使用 `class-parse.exe` 來直接剖析 Java 位元組程式碼，且不需要 JVM 的協助。 這是實驗值。
-
 
   - **jar2xml**:使用 `jar2xml.jar` 以使用 Java 反映來從 `.jar` 檔案擷取類型和成員。
 
@@ -579,7 +575,6 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
     - 以 `jmethodID` 快取受控子類別的 Java 可呼叫包裝函式建構函式。
 
     預設值為 `XAJavaInterop1`。
-
 
 ### <a name="resource-properties"></a>資源屬性
 
@@ -680,13 +675,11 @@ Enter key password for keystore.alias
 
 建置動作會[套用至專案內的檔案](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)並控制檔案的處理方式。
 
-
 ### <a name="androidaarlibrary"></a>AndroidAarLibrary
 
 `AndroidAarLibrary` 的建置動作應用來直接參考 .aar 檔案。 Xamarin 元件最常使用此建置動作。 也就是要包含 .aar 檔案的參考，這些檔案是讓 Google Play 和其他服務運作的必要項目。
 
 針對使用此建置動作的檔案，其處理方式類似於在程式庫專案中找到的內嵌資源。 .aar 將擷取到中繼目錄中。 然後，所有資產、資源和 .jar 檔案將會包含在適當的項目群組中。
-
 
 ### <a name="androidboundlayout"></a>AndroidBoundLayout
 
@@ -696,7 +689,6 @@ Enter key password for keystore.alias
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
 ```
 
-
 <a name="AndroidEnvironment" />
 
 ### <a name="androidenvironment"></a>AndroidEnvironment
@@ -704,28 +696,23 @@ Enter key password for keystore.alias
 建置動作為 `AndroidEnvironment` 的檔案可用來[在程序啟動期間初始化環境變數和系統屬性](~/android/deploy-test/environment.md)。
 `AndroidEnvironment` 建置動作可套用到多個檔案，這些檔案並不會依特定順序來進行評估 (因此，請勿在多個檔案中指定相同的環境變數或系統屬性)。
 
-
 ### <a name="androidfragmenttype"></a>AndroidFragmentType
 
 指定在產生配置繫結程式碼時，要用於所有 `<fragment>`配置元素的預設完整類型。 此屬性預設為標準 Android `Android.App.Fragment` 類型。
-
 
 ### <a name="androidjavalibrary"></a>AndroidJavaLibrary
 
 建置動作為 `AndroidJavaLibrary` 的檔案是會納入到最終版 Android 套件的 Java 封存 (`.jar` 檔案)。
 
-
 ### <a name="androidjavasource"></a>AndroidJavaSource
 
 建置動作為 `AndroidJavaSource` 的檔案是會納入到最終版 Android 套件的 Java 原始程式碼。
-
 
 ### <a name="androidlintconfig"></a>AndroidLintConfig
 
 建置動作 'AndroidLintConfig' 應該與 `AndroidLintEnabled` 建置屬性一起使用。 具有此建置動作的檔案會合併在一起，並傳遞給 Android `lint` 工具。 它們應該是 XML 檔案，其中包含要啟用及停用哪些測試的相關資訊。
 
 如需詳細資訊，請參閱 [Lint 文件](https://developer.android.com/studio/write/lint)。
-
 
 ### <a name="androidnativelibrary"></a>AndroidNativeLibrary
 
@@ -738,7 +725,6 @@ Enter key password for keystore.alias
 
 路徑探查會使用原生程式庫的父目錄名稱來指定程式庫的目標 ABI。 因此，如果您將 `lib/armeabi-v7a/libfoo.so` 新增至組建，則會以 `armeabi-v7a` 的形式來「探查」ABI。
 
-
 #### <a name="item-attribute-name"></a>項目屬性名稱
 
 **Abi** &ndash; 指定原生程式庫的 ABI。
@@ -750,7 +736,6 @@ Enter key password for keystore.alias
   </AndroidNativeLibrary>
 </ItemGroup>
 ```
-
 
 ### <a name="androidresource"></a>AndroidResource
 
@@ -789,18 +774,15 @@ Enter key password for keystore.alias
 </ItemGroup>
 ```
 
-
 ### <a name="content"></a>內容
 
 不支援一般的 `Content` 建置動作 (因為我們還沒想出該如何提供支援，而又不會讓首次執行步驟的成本太高)。
 
 從 Xamarin.Android 5.1 開始，嘗試使用 `@(Content)` 建置動作將會導致 `XA0101` 警告。
 
-
 ### <a name="linkdescription"></a>LinkDescription
 
 具有 LinkDescription 建置動作的檔案可用來[控制連結器行為](~/cross-platform/deploy-test/linker.md)。
-
 
 <a name="ProguardConfiguration" />
 
@@ -809,7 +791,6 @@ Enter key password for keystore.alias
 具有 ProguardConfiguration 建置動作的檔案包含可用來控制 `proguard` 行為的選項。 如需此建置動作的詳細資訊，請參閱 [ProGuard](~/android/deploy-test/release-prep/proguard.md)。
 
 除非 `$(EnableProguard)` MSBuild 屬性為 `True`，否則會忽略這些檔案。
-
 
 ## <a name="target-definitions"></a>目標定義
 

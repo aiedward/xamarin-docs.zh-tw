@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: 094f980922762ff33c19af6c9210e2e533bf5196
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: ab39c79c59855c9f78184614176b1658ee0e29b2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651021"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772105"
 ---
 # <a name="attached-behaviors"></a>附加的行為
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
 _附加的行為是具有一或多個附加屬性的靜態類別。本文示範如何建立和使用附加的行為。_
 
@@ -128,7 +128,6 @@ NumericValidationBehavior.SetAttachBehavior (entry, false);
 ## <a name="summary"></a>總結
 
 本文示範了如何建立和使用附加的行為。 附加行為是具有一或多個附加屬性的 `static` 類別。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/02/2018
-ms.openlocfilehash: 5bdd95409e71955b4f1549eece42b15cee38131a
-ms.sourcegitcommit: a7170494e1975f0f1be547a45444752fd8e57819
-ms.translationtype: HT
+ms.openlocfilehash: 0a60031481f16a3a600cca090d39ec47cbb8ca9a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58506989"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756050"
 ---
 # <a name="signing-the-android-application-package"></a>簽署 Android 應用程式套件
 
@@ -85,7 +85,6 @@ ms.locfileid: "58506989"
 
 **~/Library/Developer/Xamarin/Keystore/chimp/chimp.keystore**
 
-
 > [!NOTE]
 > 請務必將所產生的金鑰儲存區檔案和密碼備份到安全的位置 &ndash; 解決方案不包含此檔案。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 macOS)，您將無法使用與舊版相同的憑證來簽署應用程式。
 
@@ -121,7 +120,6 @@ ms.locfileid: "58506989"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 如此處所示，已將新的憑證新增至金鑰儲存區。 若要在 Google Play 上發行應用程式，按一下[取消]，然後移至[發行至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)。
 否則，按一下 [下一步]，透過「臨機操作」發行應用程式 (適用於獨立散發)，如此範例所示：
 
@@ -131,7 +129,7 @@ ms.locfileid: "58506989"
 
 [![[發行為臨機操作] 對話方塊](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
 
-[輸出 APK 檔案] 對話方塊會將 APK 儲存至指定的路徑。 按一下 [儲存] 。
+[輸出 APK 檔案] 對話方塊會將 APK 儲存至指定的路徑。 按一下 [儲存]。
 
 ![[輸出 APK 檔案] 對話方塊](images/xs/06-output-apk-file.png)
 
@@ -150,8 +148,6 @@ ms.locfileid: "58506989"
 APK 已準備好從 Finder 複製並傳送到其最終目的地。 理想的作法是在 Android 裝置上安裝 APK，並在散發前加以試用。 如需發行「臨機操作」APK 的詳細資訊，請參閱[獨立發行](~/android/deploy-test/publishing/publishing-independently.md)。
 
 -----
-
-
 
 ## <a name="next-steps"></a>後續步驟
 

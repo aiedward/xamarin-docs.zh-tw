@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 45eda150b0cff9462cfe5f09be4b04ea64ec391d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 5508636905acbb513aec4c6e065e9296293310d3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284553"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768667"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – 快速入門
 
@@ -329,7 +329,6 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     ![](hello-ios-quickstart-images/vs-image14.png "調整寬度，使按鈕與文字欄位和標籤等寬")
 
-
 1. 利用設計介面上選取的**按鈕**，在**屬性**的 [身分識別] 區段中，將**名稱**屬性變更為 `TranslateButton`。 將**標題**屬性變更為 "Translate"：
 
     ![](hello-ios-quickstart-images/vs-image15.png "將標題屬性變更為 Translate")
@@ -424,7 +423,6 @@ Xamarin.iOS 可與下列設定搭配運作：
 1. 在 [方案總管] 中按兩下 **ViewController.cs** 加以開啟，如此就能新增該邏輯來處理與按鈕的互動：
 
     ![](hello-ios-quickstart-images/vs-image20.png "新增來處理與按鈕互動的邏輯")
-
 
 1. 從連接 `TranslateButton` 開始。 在 **ViewController** 類別中，尋找 `ViewDidLoad` 方法。 將下列按鈕程式碼新增至 `ViewDidLoad` 內 (位於 `base.ViewDidLoad()` 呼叫下方)：
 

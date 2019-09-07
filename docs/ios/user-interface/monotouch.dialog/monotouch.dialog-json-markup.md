@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 5fc5e6c1df911963ab765f5d49016eace8e2733f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d9174e9b2d6c056c94b405033a25eeb787c92f9f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284137"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768758"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json 標記
 
@@ -91,7 +91,6 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="Root_Element_Syntax" />
 
-
 ## <a name="root-element-syntax"></a>根項目語法
 
 根項目包含下列值：
@@ -99,11 +98,9 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 - `title`
 - `sections` (選擇性)
 
-
 根項目可以出現在區段內，做為建立嵌套控制器的元素。 在此情況下，必須將`"type"`額外的屬性設定為`"root"`
 
  <a name="url" />
-
 
 ### <a name="url"></a>URL
 
@@ -111,13 +108,11 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="group" />
 
-
 ### <a name="group"></a>群組
 
 如果設定，這會設定根項目的組名。 組名是用來挑選摘要，其會顯示為元素中其中一個嵌套元素的根項目值。 這可能是核取方塊的值或選項按鈕的值。
 
  <a name="radioselected" />
-
 
 ### <a name="radioselected"></a>radioselected
 
@@ -125,13 +120,11 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="title" />
 
-
 ### <a name="title"></a>標題
 
 如果存在，則會是用於 RootElement 的標題
 
  <a name="type" />
-
 
 ### <a name="type"></a>型別
 
@@ -139,13 +132,11 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="sections" />
 
-
 ### <a name="sections"></a>區段
 
 這是具有個別區段的 Json 陣列
 
  <a name="Section_Syntax" />
-
 
 ## <a name="section-syntax"></a>區段語法
 
@@ -155,9 +146,7 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 - `footer` (選擇性)
 - `elements` 陣列
 
-
  <a name="header" />
-
 
 ### <a name="header"></a>頁首
 
@@ -165,13 +154,11 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="footer" />
 
-
 ### <a name="footer"></a>尾
 
 如果有的話，頁尾會顯示在區段底部。
 
  <a name="elements" />
-
 
 ### <a name="elements"></a>項目
 
@@ -182,11 +169,9 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 - `entry`行（一般或密碼）
 - `boolean`值（使用參數或影像）
 
-
 字串元素可以做為按鈕使用，方法是提供在使用者點擊儲存格或附件時叫用的方法。
 
  <a name="Rendering_Elements" />
-
 
 ## <a name="rendering-elements"></a>轉譯元素
 
@@ -230,7 +215,6 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 
  <a name="accessory" />
 
-
 ### <a name="accessory"></a>棒
 
 決定要在轉譯專案中顯示的附件類型，可能的值如下：
@@ -239,11 +223,9 @@ var theBoolean = jsonElement ["the-boolean"] as BooleanElement;
 - `detail-disclosure`
 - `disclosure-indicator`
 
-
 如果值不存在，則不會顯示任何附件
 
  <a name="background" />
-
 
 ### <a name="background"></a>背景
 
@@ -251,20 +233,17 @@ Background 屬性會設定儲存格的背景色彩。 值是影像的 URL （在
 
  <a name="caption" />
 
-
 ### <a name="caption"></a>字幕
 
 要在轉譯元素上顯示的主要字串。 您可以藉由設定`"textcolor"`和`"font"`屬性來自訂字型和色彩。 轉譯樣式是由`"style"`屬性所決定。
 
  <a name="color_and_detailcolor" />
 
-
 ### <a name="color-and-detailcolor"></a>色彩和 detailcolor
 
 要用於主要文字或詳細文字的色彩。
 
  <a name="detailfont_and_font" />
-
 
 ### <a name="detailfont-and-font"></a>detailfont 和字型
 
@@ -274,9 +253,7 @@ Background 屬性會設定儲存格的背景色彩。 值是影像的 URL （在
 - Helvetica
 - "Helvetica-14"
 
-
  <a name="linebreak" />
-
 
 ### <a name="linebreak"></a>linebreak
 
@@ -289,11 +266,9 @@ Background 屬性會設定儲存格的背景色彩。 值是影像的 URL （在
 - `tail-truncation`
 - `word-wrap`
 
-
 和`character-wrap` `"lines"`都可以與設定為零的屬性一起使用，以將轉譯專案轉換成多行元素。 `word-wrap`
 
  <a name="ontap_and_onaccessorytap" />
-
 
 ### <a name="ontap-and-onaccessorytap"></a>ontap 和 onaccessorytap
 
@@ -316,13 +291,11 @@ class Foo {
 
  <a name="lines" />
 
-
 ### <a name="lines"></a>線條
 
 如果此值設定為零，則會根據包含的字串內容，使元素變成自動大小。 若要讓此作業正常，您也必須`"linebreak"`將屬性`"character-wrap"`設定`"word-wrap"`為或。
 
  <a name="style" />
-
 
 ### <a name="style"></a>樣式
 
@@ -334,9 +307,7 @@ class Foo {
 - `"value2"`
 - `"subtitle"`：具有子標題的文字。
 
-
  <a name="subtitle" />
-
 
 ### <a name="subtitle"></a>子標題
 
@@ -345,20 +316,17 @@ class Foo {
 
  <a name="textcolor" />
 
-
 ### <a name="textcolor"></a>textcolor
 
 要用於文字的色彩。
 
  <a name="value" />
 
-
 ### <a name="value"></a>value
 
 要顯示在轉譯元素上的次要值。 此`"style"`設定會影響此配置。 您可以藉由設定`"detailfont"`和`"detailcolor"`自訂字型和色彩。
 
  <a name="Boolean_Elements" />
-
 
 ## <a name="boolean-elements"></a>布林值元素
 
@@ -382,13 +350,11 @@ class Foo {
 
  <a name="type" />
 
-
 ### <a name="type"></a>型別
 
 類型可以設定為`"boolean"`或。 `"checkbox"` 如果設定為布林值，則會使用 UISlider 或影像（如果`"on"`同時`"off"`設定和）。 如果設定為 checkbox，則會使用 checkbox。 `"group"`屬性可以用來標記屬於特定群組的布林專案。 如果包含的根也具有`"group"`屬性做為根，將會以屬於相同群組的所有布林值（或核取方塊）的計數來匯總結果，這會很有用。
 
  <a name="Entry_Elements" />
-
 
 ## <a name="entry-elements"></a>Entry 元素
 
@@ -423,13 +389,11 @@ class Foo {
 
  <a name="autocorrect" />
 
-
 ### <a name="autocorrect"></a>校正
 
 決定要用於專案的自動校正樣式。 可能的值為 true 或 false （或字串`"yes"`和`"no"`）。
 
  <a name="capitalization" />
-
 
 ### <a name="capitalization"></a>大小寫
 
@@ -440,16 +404,13 @@ class Foo {
 - `sentences`
 - `words`
 
-
  <a name="caption" />
-
 
 ### <a name="caption"></a>字幕
 
 要用於專案的標題
 
  <a name="keyboard" />
-
 
 ### <a name="keyboard"></a>鍵盤
 
@@ -465,16 +426,13 @@ class Foo {
 - `twitter`
 - `url`
 
-
  <a name="placeholder" />
-
 
 ### <a name="placeholder"></a>占
 
 當專案具有空白值時所顯示的提示文字。
 
  <a name="return-key" />
-
 
 ### <a name="return-key"></a>return 鍵
 
@@ -492,9 +450,7 @@ class Foo {
 - `send`
 - `yahoo`
 
-
  <a name="value" />
-
 
 ### <a name="value"></a>value
 
@@ -502,14 +458,12 @@ class Foo {
 
  <a name="Radio_Elements" />
 
-
 ## <a name="radio-elements"></a>單選元素
 
 單選元素的類型`"radio"`為。 所選取的專案是由其包含根`radioselected`元素的屬性所選取。
 此外，如果設定`"group"`了屬性的值，這個選項按鈕就屬於該群組。
 
  <a name="Date_and_Time_Elements" />
-
 
 ## <a name="date-and-time-elements"></a>日期和時間元素
 
@@ -535,7 +489,6 @@ class Foo {
 ```
 
  <a name="Html/Web_Element" />
-
 
 ## <a name="htmlweb-element"></a>Html/Web 元素
 

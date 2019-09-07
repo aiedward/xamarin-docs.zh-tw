@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: d1464ca3accf53a9362d00e279ff9e158d7e34d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b829cf3f440b1c94c5232d258c86b6ea4b0f181
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281639"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767517"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>在 Xamarin.iOS 中的程式碼建立 iOS 使用者介面
 
@@ -59,16 +59,13 @@ IOS 應用程式的使用者介面就像一個店面： 應用程式通常會取
 1. **Info.plist** -包含應用程式的組態資訊的屬性清單檔案。
 1. **Entitlements.plist** – 包含的功能和應用程式的權限的相關資訊的屬性清單檔案。
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="ios-templates"></a>iOS 範本
 
-
 Visual Studio for Mac 不提供空白的範本。 所有範本都隨附支援分鏡腳本，Apple 建議做為建立 UI 的主要方式。 不過，就可以完全在程式碼中建立您的 UI。
 
 下列步驟會引導您完成應用程式中移除分鏡腳本：
-
 
 1. 您可以使用單一檢視應用程式範本來建立新的 iOS 專案：
 

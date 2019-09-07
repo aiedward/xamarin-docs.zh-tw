@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 92ad0353268c414a1394e98a7b2d23d23dc4df07
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7b80573a728e1868254b5a89254ebc385b3baa12
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285369"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768081"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>將 watchOS 應用程式部署至 App Store
 
@@ -82,7 +82,6 @@ ms.locfileid: "70285369"
 它們應該是312x390 圖元，並示範監看式應用程式的實際運作。
 您可以使用 42mm watch 模擬器，以這種大小來拍螢幕擷取畫面。
 
-
 <a name="xamarin_studio" />
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
@@ -128,7 +127,6 @@ Xcode 會自動顯示 Visual Studio for Mac 中建立的封存。
    [![](appstore-images/itc-prerelease-sml.png "ITunes Connect 中的應用程式設定頁面")](appstore-images/itc-prerelease.png#lightbox)
 
 然後，您可以在 [**版本**] 頁面上提交要核准的應用程式。 如需詳細資訊，請參閱[iOS 應用程式散發總覽](~/ios/deploy-test/app-distribution/index.md)。
-
 
 ## <a name="troubleshooting"></a>疑難排解
 
@@ -179,10 +177,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 > [!IMPORTANT]
 > Visual Studio for Mac 的監看式圖示支援有已知的錯誤：它預期 **29x29@3x** 影像的88x88 圖元影像（應該是87x87 圖元）。
 
-
 您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯映射資產，或手動編輯**內容 json**檔案（以符合[此範例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)）。
-
-
 
 ### <a name="invalid-watchkit-support"></a>不正確 WatchKit 支援
 
@@ -198,10 +193,7 @@ Ensure you are using the latest version of Xcode and Xamarin's tools.
 > [!IMPORTANT]
 > 您必須在 Visual Studio for Mac 中封存**您的應用**程式，然後切換至 Xcode 6.2 + 以驗證並上傳至 iTunes Connect。
 
-
 使用穩定的 Xamarin 通道和 Xcode 6.2 +。
-
-
 
 ### <a name="invalid-provisioning-profile"></a>布建設定檔無效
 
@@ -261,8 +253,6 @@ Error MT5309: Native linking error: clang: error: no such file or directory:
 ```
 
 此錯誤可能是因為您已從**Xcode**重新命名 Xcode 安裝所導致。 比方說，如果您將安裝重新命名為**XCode 6.2. 應用程式**，就會發生此錯誤。
-
-
 
 ## <a name="related-links"></a>相關連結
 

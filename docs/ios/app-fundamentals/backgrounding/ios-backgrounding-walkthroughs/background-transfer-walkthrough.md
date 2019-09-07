@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 3e27cffa9e2605c3697536f226fe87fbbf1bfbbd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 47a07959bcfabc0980ccb90f2ae7a489e5e71223
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286886"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756238"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>在 Xamarin 中的背景傳輸和 NSURLSession
 
@@ -56,12 +56,10 @@ public partial class SimpleBackgroundTransferViewController : UIViewController
 - *DidReceiveChallenge* -在需要授權時呼叫以要求認證。
 - *DidBecomeInvalidWithError* -如果變成無效`NSURLSession` ，則呼叫。
 
-
 背景會話需要更多特製化的委派，視執行中的工作類型而定。 背景會話限制為兩種類型的工作：
 
 - *上傳*工作-類型`NSUrlSessionUploadTask`的工作`NSUrlSessionTaskDelegate`會使用繼承自`NSUrlSessionDelegate`的。 此委派提供其他方法來追蹤上傳進度、處理 HTTP 重新導向等等。
 - *下載*工作-類型`NSUrlSessionDownloadTask`的工作`NSUrlSessionDownloadDelegate`會使用繼承自`NSUrlSessionTaskDelegate`的。 此委派會提供上傳工作的所有方法，以及下載特定方法來追蹤下載進度，並判斷下載工作已繼續或完成的時間。
-
 
 下列程式碼會定義可用於從 URL 下載影像的工作。 我們會在我們的背景會話`CreateDownloadTask`上呼叫，並傳入 URL 要求，以開始工作：
 
@@ -96,7 +94,6 @@ public class MySessionDelegate : NSUrlSessionDownloadDelegate
 
 > [!IMPORTANT]
 > 背景會話會在背景執行緒上啟動，因此任何更新 ui 的呼叫都必須在 ui 執行緒上明確地執行，方法`InvokeOnMainThread`是呼叫以避免 iOS 終止應用程式。 
-
 
 ## <a name="handling-transfer-completion"></a>處理傳輸完成
 
@@ -141,8 +138,6 @@ public override void DidFinishEventsForBackgroundSession (NSUrlSession session) 
 ```
 
 在本逐步解說中，我們涵蓋了在 iOS 7 中執行背景傳輸服務的基本步驟。
-
-
 
 ## <a name="related-links"></a>相關連結
 

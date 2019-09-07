@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 46442e2377400cb3488f1a9e2fc8d47f27bbacfc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 924b66b3bdb66c2197b708d87e20eeb6f3ed9f46
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655798"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770515"
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
@@ -224,7 +224,6 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 它會建立最少的程式碼的有趣映像：
 
 [![](fill-types-images/overlappingcircles-small.png "三個重疊圓形頁面螢幕擷取畫面")](fill-types-images/overlappingcircles-large.png#lightbox "重疊圓形頁面的三個螢幕擷取畫面")
-
 
 ## <a name="related-links"></a>相關連結
 

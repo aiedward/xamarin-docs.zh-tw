@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 9ca50171e43ef98e5b4e5fbd7bd236f74d35da8f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ae6a4fb45eb53c514c888d671780a5ceaeba6624
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286769"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768604"
 ---
 # <a name="watchos-notifications-in-xamarin"></a>watchOS 在 Xamarin 中的通知
 
@@ -34,7 +34,6 @@ Watch 應用程式可以接收通知，如果包含的 iOS 應用程式支援它
 
 ![](notifications-images/notifications-segue.png "通知屬性")
 
-
 有兩種類型的通知：
 
 - 系統所定義的「**短期**不受滾動」靜態視圖。
@@ -46,7 +45,6 @@ Watch 應用程式可以接收通知，如果包含的 iOS 應用程式支援它
 短外觀 UI 是由應用程式圖示、 應用程式名稱和通知的標題字串所組成。
 
 如果使用者不會忽略通知，系統會自動切換到長時間查詢通知，以提供更多的資訊。
-
 
 ### <a name="long-look-notification-controller"></a>長時間查詢通知控制器
 
@@ -63,7 +61,6 @@ Watch 應用程式可以接收通知，如果包含的 iOS 應用程式支援它
 動態檢視可以顯示更多資料，並提供更多的互動性。
 
 ![](notifications-images/notification-dynamic.png "動態檢視")
-
 
 ## <a name="generating-notifications"></a>產生的通知
 
@@ -146,8 +143,6 @@ Visual Studio for Mac 會顯示其他選項，監控擴充功能會設定為當*
         "customKey": "Use this file to define a testing payload for your notifications. The aps dictionary specifies the category, alert text and title. The WatchKit Simulator Actions array can provide info for one or more action buttons in addition to the standard Dismiss button. Any other top level keys are custom payload. If you have multiple such JSON files in your project, you'll be able to choose between them in when selecting to debug the notification interface of your Watch App."
     }
 ```
-
-
 
 ## <a name="related-links"></a>相關連結
 

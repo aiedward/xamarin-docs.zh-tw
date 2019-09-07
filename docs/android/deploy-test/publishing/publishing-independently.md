@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d324d1faa045dcfbb2b3e6dcc3000a67b5f9e10
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: bd505e97ce4fcca2197f6c7da2de8411931900ab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525388"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753781"
 ---
 # <a name="publishing-independently"></a>獨立發行
 
@@ -29,32 +29,26 @@ ms.locfileid: "69525388"
 
 請瀏覽 [visualstudio.com](https://visualstudio.microsoft.com/xamarin/) 來下載 Community 版，或深入了解如何購買 Professional 和 Enterprise 版。
 
-
 ## <a name="allow-installation-from-unknown-sources"></a>允許從未知來源進行安裝
 
-Android 會防止使用者下載及安裝來自 Google Play.以外位置的應用程式。 若要允許從非市集來源進行安裝，使用者必須先在裝置上啟用 [不明的來源]  設定，才能嘗試安裝應用程式。 這項設定可能位於 [設定] > [系統安全]  底下，如下圖所示：
+Android 會防止使用者下載及安裝來自 Google Play.以外位置的應用程式。 若要允許從非市集來源進行安裝，使用者必須先在裝置上啟用 [不明的來源] 設定，才能嘗試安裝應用程式。 這項設定可能位於 [設定] > [系統安全] 底下，如下圖所示：
 
 [![](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
-
 
 > [!IMPORTANT]
 > 有些網路提供者可能會防止安裝來自不明來源的應用程式，不論此設定為何。
 
-
-
 ## <a name="publishing-by-e-mail"></a>透過電子郵件發行
 
-將發行 APK 附加在電子郵件中，是一個將應用程式散發給使用者的快速便利方式。 當使用者在 Android 架構裝置上開啟該電子郵件時，Android 會辨識出該 APK 附件並顯示 [安裝]  按鈕，如下圖所示：
+將發行 APK 附加在電子郵件中，是一個將應用程式散發給使用者的快速便利方式。 當使用者在 Android 架構裝置上開啟該電子郵件時，Android 會辨識出該 APK 附件並顯示 [安裝] 按鈕，如下圖所示：
 
 [![附件的 [安裝] 按鈕](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 雖然透過電子郵件散發相當簡單，但在防範盜版或未經授權散發方面所能提供的防護相當少。 在應用程式的接收者很少，且受信任不會散發該應用程式的情況下，最適合使用此散發方式。
 
-
 ## <a name="publishing-by-web"></a>透過 Web 發行
 
 您可以透過 Web 伺服器散發應用程式。 做法是將應用程式上傳到 Web 伺服器，然後將下載連結提供給使用者。 當 Android 架構裝置瀏覽至連結，然後下載應用程式時，該應用程式會在下載完成時自動安裝。
-
 
 ## <a name="manually-installing-an-apk"></a>手動安裝 APK
 

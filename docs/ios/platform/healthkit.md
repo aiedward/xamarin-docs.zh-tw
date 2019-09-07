@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 7e8230af1e9d4eef43b4142834afc0e90973c768
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eb944b062f75ceec8ca8dbe22cde64b0fdd15625
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288661"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752960"
 ---
 # <a name="healthkit-in-xamarinios"></a>在 Xamarin 中 HealthKit
 
@@ -43,9 +43,6 @@ ms.locfileid: "70288661"
 > [!IMPORTANT]
 > 健康情況套件是在 iOS 8 中引進。 目前，健康情況套件無法在 iOS 模擬器上使用，而且需要與實體 iOS 裝置的連線進行調試。
 
-
-
-
 ## <a name="creating-and-provisioning-a-health-kit-app"></a>建立和布建健康情況套件應用程式
 在 Xamarin iOS 8 應用程式可以使用 HealthKit API 之前，必須妥善設定和布建。 本節將涵蓋正確設定 Xamarin 應用程式所需的步驟。
 
@@ -66,16 +63,14 @@ ms.locfileid: "70288661"
 建立明確的**應用程式識別碼**和適當的布建**設定檔**，會在 Apple 的[iOS 開發人員中心](https://developer.apple.com/devcenter/ios/index.action)內完成。 
 
 您目前的**應用程式**識別碼會列在開發人員中心的 [[憑證]、[識別碼 & 設定檔](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action)] 區段內。 通常，此清單會顯示的`*`識別碼值，表示**應用程式識別碼** - **名稱**可以與任意數目的尾碼搭配使用。 這類*萬用字元應用程式識別碼*無法與健康情況套件搭配使用。
- 
-若要建立明確 **應用程式識別碼**，按一下 **+** 帶您到右上方中的按鈕 **註冊 iOS 應用程式識別碼** 頁面：
 
+若要建立明確 **應用程式識別碼**，按一下 **+** 帶您到右上方中的按鈕 **註冊 iOS 應用程式識別碼** 頁面：
 
 [![](healthkit-images/image02.png "在 Apple 開發人員入口網站上註冊應用程式")](healthkit-images/image02.png#lightbox)
 
 如上圖所示，在建立應用程式描述之後，請使用 [**明確應用程式識別碼**] 區段來建立應用程式的識別碼。 在 [**應用程式服務**] 區段中，勾選 [**啟用服務**] 區段中的 [**健康情況套件**]。
 
 當您完成時，請按 [**繼續**] 按鈕，在您的帳戶中註冊**應用程式識別碼**。 您將會回到 [憑證] **、[識別碼] 和 [設定檔**] 頁面。 按一下 **佈建設定檔** 帶您前往您目前的佈建設定檔的清單，然後按一下 **+** 帶您前往右上角的按鈕 **Add iOS佈建設定檔** 頁面。 選取 [ **IOS 應用程式開發**] 選項，然後按一下 [**繼續**] 以進入 [**選取應用程式識別碼**] 頁面。 在這裡，選取您先前指定的明確**應用程式識別碼**：
-
 
 [![](healthkit-images/image03.png "選取明確的應用程式識別碼")](healthkit-images/image03.png#lightbox)
 
@@ -171,7 +166,6 @@ ms.locfileid: "70288661"
 ### <a name="permissions-walkthrough"></a>許可權逐步解說
 
 在您的健康情況套件-已布建`AppDelegate.cs`專案中，開啟檔案。 請注意，使用`HealthKit`的語句，位於檔案的頂端。
-
 
 下列程式碼與健康情況套件許可權相關：
 
@@ -410,11 +404,9 @@ IOS 模擬器不支援健康情況套件。 必須在執行 iOS 8 的實體裝�
 
 假設布建已正確設定，您的應用程式就會啟動。 當它到達其`OnActivated`方法時，它會要求健康情況套件授權。 第一次在作業系統遇到這種情況時，您的使用者將會看到下列對話方塊：
 
-
 [![](healthkit-images/image12.png "使用者將會看到此對話方塊")](healthkit-images/image12.png#lightbox)
 
 讓您的應用程式可以更新核心速率資料，您的應用程式將會重新出現。 `ReactToHealthCarePermissions`回呼會以非同步方式啟動。 `HeartRateModel’s`這會導致`StoreData` `HKPermissionsViewController.OnEnabledChanged()` `EnabledChanged`屬性變更，這會引發事件，這會導致事件處理常式執行，以啟用按鈕。 `Enabled` 下圖顯示順序：
-
 
 [![](healthkit-images/image13.png "此圖表顯示事件的順序")](healthkit-images/image13.png#lightbox)
 

@@ -7,12 +7,12 @@ ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 3fdc251d3ed24c96d7d3fa9620e483ad47a8491e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 7b34e7658ad38f80cffa22d99eea42901a905a38
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227939"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767622"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 資料繫結的基本概念
 
@@ -22,7 +22,7 @@ _資料繫結可讓連結，以便變更一個變更造成另兩個物件的屬�
 
 ## <a name="data-bindings"></a>資料繫結
 
-資料繫結連接屬性的兩個物件，稱為*來源*並*目標*。 在程式碼中, 需要兩個步驟:目標`BindingContext`物件的屬性必須設定為來源物件, `SetBinding`而且必須在目標物件上呼叫方法 (通常與`Binding`類別一起使用), 才能將該物件的屬性系結至來源的屬性。目標.
+資料繫結連接屬性的兩個物件，稱為*來源*並*目標*。 在程式碼中，需要兩個步驟：目標`BindingContext`物件的屬性必須設定為來源物件， `SetBinding`而且必須在目標物件上呼叫方法（通常與`Binding`類別一起使用），才能將該物件的屬性系結至來源的屬性。目標.
 
 目標屬性必須是可繫結的屬性，表示目標物件必須衍生自`BindableObject`。 線上 Xamarin.Forms 文件會指出哪一個屬性是可繫結的屬性。 屬性`Label`這類`Text`可繫結的屬性相關聯`TextProperty`。
 
@@ -114,11 +114,11 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 - `OneWay` — 值都會從來源傳送到目標
 - `OneWayToSource` — 值會從目標傳送到來源
 - `TwoWay` — 值會傳送來源與目標之間的這兩種方式
-- `OneTime`: 資料會從來源移至目標, 但只有在`BindingContext`變更時
+- `OneTime`：資料會從來源移至目標，但只有在`BindingContext`變更時
 
 下列程式會示範常見用法之一`OneWayToSource`和`TwoWay`繫結模式。 四個`Slider`檢視要控制`Scale`， `Rotate`， `RotateX`，並`RotateY`屬性`Label`。 首先，它看起來好像這四個屬性的`Label`應該是資料繫結目標，因為每個正在設定`Slider`。 不過，`BindingContext`的`Label`可以只有一個物件，而且有四個不同的滑桿。
 
-基於這個理由, 所有的系結都會以看似回溯的方式設定:四個滑杆中每一個的會設定`Label`為, 而系結則設定于滑杆的`Value`屬性上。 `BindingContext` 藉由使用`OneWayToSource`並`TwoWay`模式，這些`Value`屬性可以設定來源屬性，也就是`Scale`， `Rotate`， `RotateX`，和`RotateY`屬性`Label`:
+基於這個理由，所有的系結都會以看似回溯的方式設定：四個滑杆中每一個的會設定`Label`為，而系結則設定于滑杆的`Value`屬性上。 `BindingContext` 藉由使用`OneWayToSource`並`TwoWay`模式，這些`Value`屬性可以設定來源屬性，也就是`Scale`， `Rotate`， `RotateX`，和`RotateY`屬性`Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -405,8 +405,6 @@ namespace XamlSamples
 ## <a name="summary"></a>總結
 
 資料繫結會提供連結頁面內的兩個物件之間，或視覺物件之間的屬性和基礎資料的強大機制。 但當應用程式開始使用資料來源，逐漸成形的有用的範例為熱門的應用程式的架構模式。 這會涵蓋在[第 5 部分。從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

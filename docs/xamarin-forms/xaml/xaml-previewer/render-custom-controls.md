@@ -1,5 +1,5 @@
 ---
-title: 呈現 XAML 預覽程式中的自訂控制項
+title: 在 XAML 預覽器中轉譯自訂控制項
 description: 本文說明如何在 XAML 預覽程式中顯示您的自訂控制項。
 ms.prod: xamarin
 ms.assetid: 4D795372-CB8F-48F4-B63D-845E44B261F7
@@ -7,24 +7,24 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 977c29312e0be8b92f216c224414f9bd03f8562d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5b87c631574f159230e1dc23285b9087bcc94255
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60875973"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767323"
 ---
-# <a name="render-custom-controls-in-the-xaml-previewer"></a>呈現 XAML 預覽程式中的自訂控制項
+# <a name="render-custom-controls-in-the-xaml-previewer"></a>在 XAML 預覽器中轉譯自訂控制項
 
-_自訂控制項有時不正常運作中 XAML 預覽程式。這篇文章中使用的指南，以了解預覽您的自訂控制項的限制。_
+_自訂控制項有時不會如預期般在 XAML 預覽器中運作。請使用本文中的指導方針來瞭解預覽自訂控制項的限制。_
 
-## <a name="basic-preview-mode"></a>基本的 [預覽] 模式
+## <a name="basic-preview-mode"></a>基本預覽模式
 
-即使您還沒有建立您的專案，XAML 預覽程式會呈現您的頁面。 直到您建置時，程式碼後置所依賴的任何控制項就會顯示其基底的 Xamarin.Forms 型別。 建置您的專案時，XAML 預覽程式會嘗試使用已啟用的設計階段呈現中顯示自訂控制項。 如果呈現失敗，它會顯示基底的 Xamarin.Forms 型別。
+即使您尚未建立專案，XAML 預覽程式也會轉譯您的頁面。 在您建立之前，任何依賴程式碼後置的控制項都會顯示其基底 Xamarin. 表單類型。 當您建立專案時，XAML 預覽程式會嘗試顯示已啟用設計階段轉譯的自訂控制項。 如果轉譯失敗，則會顯示基底 Xamarin. 表單類型。
 
-## <a name="enable-design-time-rendering-for-custom-controls"></a>啟用自訂控制項的設計階段呈現
+## <a name="enable-design-time-rendering-for-custom-controls"></a>啟用自訂控制項的設計階段轉譯
 
-如果您讓自己的自訂控制項，或從協力廠商程式庫中使用控制項時，預覽程式可能無法正確顯示。 設計階段轉譯為是否您撰寫控制項，或從程式庫將它匯入，會出現在預覽程式，必須選擇自訂控制項。 您已建立的控制項，加上[ `[DesignTimeVisible(true)]` ](xref:System.ComponentModel.DesignTimeVisibleAttribute)至您的控制項類別，以顯示在預覽程式中：
+如果您自行建立自訂控制項，或使用協力廠商程式庫中的控制項，預覽程式可能會不正確地顯示它們。 不論您是從程式庫撰寫控制項或將它匯入，自訂控制項都必須選擇將時間轉譯設計成出現在預覽器中。 使用您已建立的控制項，將[`[DesignTimeVisible(true)]`](xref:System.ComponentModel.DesignTimeVisibleAttribute)新增至控制項的類別，以在預覽程式中顯示它：
 
 ```csharp
 namespace MyProject
@@ -38,22 +38,21 @@ namespace MyProject
 }
 ```
 
-使用[James Montemagno ImageCirclePlugin 基底類別](https://github.com/jamesmontemagno/ImageCirclePlugin/blob/master/src/ImageCircle/CircleImage.shared.cs)做為範例。
-
+使用[James Montemagno 的 ImageCirclePlugin's 基類](https://github.com/jamesmontemagno/ImageCirclePlugin/blob/master/src/ImageCircle/CircleImage.shared.cs)做為範例。
 
 ## <a name="skiasharp-controls"></a>SkiaSharp 控制項
 
-目前，SkiaSharp 控制項時，才支援您目前在 iOS 上預覽。 它們不會呈現在 Android 的預覽。
+目前，只有當您在 iOS 上預覽時，才支援 SkiaSharp 控制項。 它們不會在 Android preview 上呈現。
 
 ## <a name="troubleshooting"></a>疑難排解
 
-### <a name="check-your-xamarinforms-version"></a>檢查您的 Xamarin.Forms 版本
-請確定您至少已安裝的 Xamarin.Forms 3.6。 您可以更新 Xamarin.Forms 版本在 NuGet 上。
+### <a name="check-your-xamarinforms-version"></a>檢查您的 Xamarin. 表單版本
+請確定您至少已安裝 Xamarin. Forms 3.6。 您可以在 NuGet 上更新您的 Xamarin. Forms 版本。
 
-### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>即使`[DesignTimeVisible(true)]`，我自訂的控制項不會正確呈現。
-依賴程式碼後置或後端資料的自訂控制項一律沒有作用中 XAML 預覽程式。 您可以嘗試：
-* 移動控制項，因此它不會初始化如果[設計模式已啟用](index.md#detect-design-mode)
-* 設定好[設計階段資料](design-time-data.md)顯示假的資料，從後端
+### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>即使是`[DesignTimeVisible(true)]`，我的自訂控制項也不會正確轉譯。
+嚴格依賴程式碼後置或後端資料的自訂控制項，不一定會在 XAML 預覽程式中運作。 您可以嘗試：
+* 移動控制項，使其在[設計模式已啟用](index.md#detect-design-mode)時不會初始化
+* 設定[設計階段資料](design-time-data.md)，以顯示後端的假資料
 
-### <a name="the-xaml-previewer-shows-the-error-custom-controls-arent-rendering-properly"></a>XAML 預覽程式會顯示錯誤 「 自訂控制項不正確地轉譯 」
-請嘗試清除並重建您的專案，或關閉並重新開啟 XAML 檔案。
+### <a name="the-xaml-previewer-shows-the-error-custom-controls-arent-rendering-properly"></a>XAML 預覽器會顯示錯誤「自訂控制項無法正確轉譯」
+嘗試清理和重建您的專案，或關閉並重新開啟 XAML 檔案。

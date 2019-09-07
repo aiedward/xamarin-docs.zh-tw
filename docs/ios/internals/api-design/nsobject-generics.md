@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 531d0b2b6141cc0e1f4014f1d3422af3c6f8643a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 136efbd936bc39563c419a87ed48f6fc5436efa9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291984"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768549"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>在 Xamarin 中 NSObject 的一般子類別
 
@@ -220,4 +220,3 @@ class Generic<T> : NSObject where T : NSObject
 ## <a name="performance"></a>效能
 
 靜態註冊機構無法在建立時解析泛型型別中的匯出成員，因為它通常是在執行時間進行查閱。 這表示從目標-C 叫用這類方法，會比叫用非泛型類別的成員稍微慢一點。
-

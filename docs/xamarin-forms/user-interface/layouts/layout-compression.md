@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2017
-ms.openlocfilehash: 97aa8c321362ebccc954a79f99b7bc69b5a0ad63
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 453da8c1b943591c331950ecb433bf0055faf85d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657068"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770368"
 ---
 # <a name="layout-compression"></a>版面配置壓縮
 
@@ -117,7 +117,6 @@ CompressedLayout.SetIsHeadless(stackLayout, true);
 ## <a name="summary"></a>總結
 
 版面配置壓縮從視覺化樹狀結構移除指定的版面配置，以試圖改善頁面轉譯效能。 這所提供的效能優勢，會根據頁面的複雜性、所使用的作業系統版本，以及執行應用程式的裝置而有所不同。 然而，較舊裝置將能獲得較大的效能提升。
-
 
 ## <a name="related-links"></a>相關連結
 

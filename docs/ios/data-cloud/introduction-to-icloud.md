@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/09/2016
-ms.openlocfilehash: 364775ae8e8874d87022b5e45bd23ea29e82382d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: df91699e0880bfae780b69f4b30be6667e8d64d9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292427"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763115"
 ---
 # <a name="using-icloud-with-xamarinios"></a>使用 iCloud 搭配 Xamarin. iOS
 
@@ -63,7 +63,6 @@ IOS 5 中的 iCloud 儲存體 API 可讓應用程式將使用者檔和應用程�
 - **您必須使用裝置來測試 iCloud** ，而不會在模擬器上作用。
 事實上，您真的需要使用相同的 Apple ID 登入兩個或多個裝置，才能看到 iCloud 的作用。
 
-
 ## <a name="key-value-storage"></a>索引鍵/值儲存
 
 索引鍵/值儲存體適用于少量的資料，使用者可能會喜歡在不同裝置之間保存，例如他們在書籍或雜誌中觀看的最後一頁。 索引鍵/值儲存體不應用於備份資料。
@@ -81,8 +80,6 @@ IOS 5 中的 iCloud 儲存體 API 可讓應用程式將使用者檔和應用程�
 **ICloudKeyValue**範例會示範其運作方式。 範例程式碼會為每個裝置建立名為的金鑰：您可以在一個裝置上設定此金鑰，並監看此值是否會傳播給其他裝置。 它也會建立名為 "Shared" 的金鑰，可在任何裝置上編輯-如果您同時在多個裝置上進行編輯，iCloud 會決定哪個值為「wins」（使用變更上的時間戳記）並傳播。
 
 此螢幕擷取畫面顯示使用中的範例。 從 iCloud 收到變更通知時，會將其列印在畫面底部的滾動文字視圖中，並在輸入欄位中更新。
-
-
 
  [![](introduction-to-icloud-images/icloud-kv-arrows.png "裝置之間的訊息流程")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
@@ -406,8 +403,6 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
  [![](introduction-to-icloud-images/icloudstorage.png "管理 iCloud 檔工作流程")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
-
-
 當使用者嘗試從其裝置移除已啟用 iCloud 的應用程式時，也會收到不同的警告，以通知他們與該應用程式相關的 iCloud 檔狀態。
 
  [![](introduction-to-icloud-images/icloud-delete1.png "當使用者嘗試從其裝置移除已啟用 iCloud 的應用程式時的範例對話方塊")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
@@ -430,8 +425,6 @@ Apple 提供[Ios 資料儲存指導方針](https://developer.apple.com/icloud/do
 索引鍵/值儲存範例示範如何使用 iCloud 來儲存少量資料，類似儲存 NSUserPreferences 的方式。 UIDocument 範例示範如何透過 iCloud 來儲存及同步處理多個裝置上的複雜資料。
 
 最後，它包含了有關新增 iCloud 備份如何影響應用程式設計的簡短討論。
-
-
 
 ## <a name="related-links"></a>相關連結
 

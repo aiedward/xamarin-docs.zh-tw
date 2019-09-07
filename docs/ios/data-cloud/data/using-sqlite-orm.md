@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 6711a16ba0035190d10687ef821831559c07b797
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 45205859a55974414ee865b2141d2bb127e85bcc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289831"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763136"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>使用 SQLite.NET 搭配 Xamarin. iOS
 
@@ -136,7 +136,6 @@ public static void DoSomeDataAccess () {
 - **[忽略]** –讓 SQLite.NET 忽略此屬性。 這對於類型不能儲存在資料庫中的屬性而言特別有用，或是無法自動解析為 SQLite 的模型集合的屬性。
 - **[Unique]** –確保基礎資料庫資料行中的值是唯一的。
 
-
 這些屬性大部分都是選擇性的，SQLite 會使用資料表和資料行名稱的預設值。 您應該一律指定整數主鍵，以便在您的資料上有效率地執行選取和刪除查詢。
 
 ## <a name="more-complex-queries"></a>更複雜的查詢
@@ -149,7 +148,6 @@ public static void DoSomeDataAccess () {
 - **Delete** –使用其主要索引鍵刪除物件。
 - **查詢\<T >** -執行會傳回多個資料列的 SQL 查詢（做為物件）。
 - **執行**–當您不想要從`Query` SQL 傳回的資料列（例如 INSERT、UPDATE 和 DELETE 指示）時，請使用這個方法（而非）。
-
 
 ### <a name="getting-an-object-by-the-primary-key"></a>依主要金鑰取得物件
 

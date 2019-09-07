@@ -7,17 +7,16 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 6a4ea3950b9657e4e04c6465cc0a64ac3c1d266c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2a5f8f6f2feda1ab27c874d8281483e9e26f0855
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291565"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770144"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的應用程式圖示
 
 _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統合至 .icns 檔案，以及將圖示納入 Xamarin.Mac 專案中。_
-
 
 ## <a name="overview"></a>總覽
 
@@ -27,11 +26,9 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 ![AppIcon.appiconset 編輯器](app-icon-images/intro01.png "AppIcon.appiconset 編輯器")
 
-
 ## <a name="application-icon"></a>應用程式圖示
 
 優良的圖示應會傳達 Xamarin.Mac 應用程式的用途，且提示使用者在使用應用程式時預期會有的體驗。 每個 macOS 應用程式都必須要有數個不同大小的圖示以供顯示在 Finder、Dock、Launchpad，以及電腦的各個其他位置。
-
 
 ## <a name="designing-the-icon"></a>設計圖示
 
@@ -48,7 +45,6 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 - 不要在圖示中使用 Apple 圖示的複本。
 
 設計 Xamarin.Mac 應用程式的圖示之前，請先閱讀 Apple [OS X 人性化介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) \(英文\) 的[應用程式圖示資源庫](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/Gallery.html#//apple_ref/doc/uid/20000957-CH88-SW1) \(英文\) 和[設計應用程式圖示](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/Designing.html#//apple_ref/doc/uid/20000957-CH87-SW1) \(英文\) 小節。
-
 
 ## <a name="required-image-sizes-and-filenames"></a>所需的影像大小和檔案名稱
 
@@ -76,7 +72,6 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 如需詳細資訊，請參閱 Apple 的[提供所有應用程式圖形資源的高解析度版本](https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Optimizing/Optimizing.html#//apple_ref/doc/uid/TP40012302-CH7-SW3) \(英文\) 文件。
 
-
 ## <a name="packaging-the-icon-resources"></a>封裝圖示資源
 
 設計圖示並儲存為必要的檔案大小和名稱後，Visual Studio for Mac 能輕鬆將它們指派為可用於 Xamarin.Mac 中的影像資產。
@@ -90,7 +85,6 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
     [![選取圖示影像](app-icon-images/intro02.png "選取圖示影像")](app-icon-images/intro02-large.png#lightbox)
 3. 儲存您的變更。
-
 
 ## <a name="using-the-icon"></a>使用圖示
 
@@ -108,11 +102,9 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 ![macOS Dock 中的應用程式圖示範例](app-icon-images/icon04.png "macOS Dock 中的應用程式圖示範例")
 
-
 ## <a name="summary"></a>總結
 
 本文詳細說明了使用所需影像來建立 macOS 應用程式圖示、封裝圖示，以及將圖示納入 Xamarin.Mac 專案中。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,19 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 10fc13124a1c97cc7534d8cf14b7717b2ddc4fa1
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba86567213fe76847459df3df9b4450881e0651e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291045"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769237"
 ---
 # <a name="ipa-file-is-0-bytes"></a>IPA 檔案為 0 個位元組
 
 > [!IMPORTANT]
 > 此問題已在最新版本的 Xamarin 中解決。 不過，如果軟體的最新版本發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出來提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
-
-
 
 舊版 Xamarin 中有一些已知問題，可能導致 Windows 上的 .IPA 檔案為0個位元組。 
 

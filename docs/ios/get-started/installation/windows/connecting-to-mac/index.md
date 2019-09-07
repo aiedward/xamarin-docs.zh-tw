@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 5889859543deaecccb72740fccbc2b3343a8297f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292119"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753772"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 
@@ -30,7 +30,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 - Visual Studio 2019 會開啟與 Mac 組建主機的網路連線，並在該電腦上使用組建工具編譯和簽署 iOS 應用程式。
 
-- 不需要在 Mac 上執行個別應用程式；Visual Studio 2017 會透過 SSH 安全地叫用 Mac 組建。
+- 不需要在 Mac 上執行個別的應用程式– Visual Studio 2019 會透過 SSH 安全地叫用 Mac 組建。
 
 - 一旦有變更發生，就會立即通知 Visual Studio 2019。 例如，將 iOS 裝置插入至 Mac 或在網路上變成可用時，會立即更新 iOS 工具列。
 

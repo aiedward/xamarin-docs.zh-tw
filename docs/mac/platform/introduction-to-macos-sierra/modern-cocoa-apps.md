@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 04bcf1012800ef2883fef80580bcec869bd8e5a3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4be5670829b2b8c1a5a73f564b4c031b6a26bd54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291474"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769851"
 ---
 # <a name="building-modern-macos-apps"></a>建置現代化的 macOS 應用程式
 
@@ -951,8 +951,6 @@ Apple 在 macOS Sierra 中加入了數種面向使用者的功能，可讓開發
 ## <a name="summary"></a>總結
 
 本文涵蓋了開發人員可用來在 Xamarin 中建立新式 macOS 應用程式的數個秘訣、功能和技術。
-
-
 
 ## <a name="related-links"></a>相關連結
 

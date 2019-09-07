@@ -6,12 +6,12 @@ ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: f51c6af9ed38910f44db2c0886c474deafa096d7
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b28fcea37d991879df0231609d09eeb2eca49505
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289984"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766343"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 
@@ -32,12 +32,9 @@ Azure Active Directory 可讓開發人員使用與員工用來登入系統或檢
 - Web API
 - Office365
 
-
 ## <a name="conclusion"></a>結論
 
 使用上述步驟，您可以根據 Azure Active Directory 來驗證您的行動應用程式。 Active Directory 驗證程式庫（ADAL）可讓程式碼更少，同時讓大部分的程式碼保持相同，使其可以跨平臺共用。
-
-
 
 ## <a name="related-links"></a>相關連結
 

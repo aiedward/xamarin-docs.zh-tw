@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: a48e7bd780783a7b33008a5d86011f5497b042d5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 194f1a260adc49083a8d4365a310447acbcc96f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287980"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769026"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆疊視圖
 
@@ -74,9 +74,6 @@ Stack 視圖控制項（`UIStackView`）會利用自動設定和大小類別的�
 
 > [!IMPORTANT]
 > 基準對齊不適用於延伸或壓縮的子視圖大小，因為基準會計算到錯誤的位置。 針對 [基準對齊]，請確定子視圖的**高度**符合內建內容視圖的**高度**。
-
-
-
 
 <a name="Common-Stack-View-Uses" />
 
@@ -309,8 +306,6 @@ UIView.Animate(0.25, ()=>{
 ## <a name="summary"></a>總結
 
 本文涵蓋在 tvOS 應用程式中設計和使用堆疊視圖。
-
-
 
 ## <a name="related-links"></a>相關連結
 

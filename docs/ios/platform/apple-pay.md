@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 1cf28f83302d5035652df05aee26a6646df29fc0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f264f210a9228fd213f0c041abb5b26023c796f4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291805"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753260"
 ---
 # <a name="apple-pay-in-xamarinios"></a>在 Xamarin 中 Apple Pay
 
@@ -81,7 +81,6 @@ IOS 10 的新手，開發人員可以使用**APPLEPAY JS**直接將 Apple Pay �
 ### <a name="passkit-framework-enhancements"></a>PassKit Framework 增強功能
 
 在 iOS 10 中，PassKit 架構已擴充為支援以外的`UIKit` Apple Pay，讓卡片簽發者能夠在其應用程式內出示自己的卡片。
-
 
 #### <a name="supporting-apple-pay-outside-of-uikit"></a>支援 UIKit 以外的 Apple Pay
 

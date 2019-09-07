@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 88039da5faf911386232d2b189b27a2921f8144c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 99ee654b260a3a89b58578d352dd066a41753295
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289569"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769143"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>其他 tvOS 10 架構變更
 
@@ -194,8 +194,6 @@ TvOS 10 中的 UIKit 架構已進行下列增強功能：
 - 此類別`UIApplication`的方法會以非同步方式呼叫，現在支援在開啟完成後呼叫的`OpenURL`完成處理常式。
 - 使用新`UICloudSharingController`的和`UICloudSharingControllerDelegate`類別，起始 CloudKit 共用並修改其屬性。
 - 利用預先提取的資料格來改善`UICollectionViews`使用新`UICollectionViewDataSourcePrefetching`委派的的滾動體驗。
-
-
 
 ## <a name="related-links"></a>相關連結
 

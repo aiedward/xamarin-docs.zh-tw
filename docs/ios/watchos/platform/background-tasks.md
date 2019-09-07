@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2017
-ms.openlocfilehash: b01fbbe813b778d3c2e1cabeba620ed48a46ecac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0e0336e65532c4487e3ec8c1984b132544b5b547
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287161"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768654"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>在 Xamarin 中 watchOS 背景工作
 
@@ -109,7 +109,6 @@ watchOS 3 引進數個背景工作，可讓應用程式用來更新其資訊，�
 
 在工作的執行時間中，應用程式可以執行任何一種本機處理，例如更新複雜的時程表，或使用`NSUrlSession`來提取一些必要的資料。
 
-
 <a name="WKURLSessionRefreshBackgroundTask" />
 
 ### <a name="wkurlsessionrefreshbackgroundtask"></a>WKURLSessionRefreshBackgroundTask
@@ -142,9 +141,6 @@ watchOS 3 引進數個背景工作，可讓應用程式用來更新其資訊，�
 
 > [!IMPORTANT]
 > 請務必在應用程式收到新`WKSnapshotRefreshBackgroundTask`資料並更新其使用者介面之後，一律排程，否則使用者將不會看到修改過的資訊。
-
-
-
 
 此外，當使用者從應用程式收到通知，並將應用程式帶到前景時，快照集必須是最新狀態，因為它也會作為啟動畫面：
 
@@ -700,8 +696,6 @@ Apple 提供下列建議：
 ## <a name="summary"></a>總結
 
 本文涵蓋 Apple 對 watchOS 的增強功能，以及如何使用它們來保持監看應用程式的最新狀態。 首先，它涵蓋了 Apple 在 watchOS 3 中新增的所有新背景工作。 然後，它涵蓋背景 API 生命週期，以及如何在 Xamarin watchOS 應用程式中執行背景工作。 最後，它涵蓋了排程的運作方式，並提供一些最佳作法。
-
-
 
 ## <a name="related-links"></a>相關連結
 

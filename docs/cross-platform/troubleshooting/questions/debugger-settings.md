@@ -6,12 +6,12 @@ ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 1abf166e35688790bb0b059793c8929495eeea02
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 343f8d37d77726d2cdc06a74c44e476af00dde27
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285039"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765150"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>偵錯工具需要哪些專案設定？
 
@@ -32,4 +32,3 @@ ms.locfileid: "70285039"
 3. 每個平臺的設定：
     - 移至**組建 > Android build > 調試選項**。 勾選 [**啟用開發人員檢測**] 方塊。
     - 移至**組建 > IOS Debug**。 勾選 [**啟用調試**] 方塊。
-

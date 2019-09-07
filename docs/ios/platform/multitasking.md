@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: 87de42504081374f830a4fe286476ad822eeed99
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8f38200e8274a36783ac7bd1aec4b695036f83e2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280152"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769640"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin 中 iPad 的多工作業
 
@@ -40,7 +40,6 @@ iOS 9 增加了多工支援，可在特定 iPad 硬體上同時執行兩個應�
 > [!VIDEO https://youtube.com/embed/GctYAozoLr8]
 
 **IPad 影片的多工作業**
-
 
 <a name="Multitasking-QuickStart" />
 
@@ -251,8 +250,6 @@ public void NewEntry() {
 ## <a name="summary"></a>總結
 
 本文涵蓋了確保 Xamarin iOS 應用程式在 iOS 9 的 Ipad 的新多工功能中執行和正常運作所需的步驟。 此外，它還涵蓋了針對應用程式退出宣告多工的功能，而這不是很適合的選擇。
-
-
 
 ## <a name="related-links"></a>相關連結
 

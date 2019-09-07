@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 3fe189c0ef524a44dcbb71c883b57063748a06e3
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 66d7ae722281d9034cb4cdf1501662a7de396c2d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228017"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770244"
 ---
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms 文字樣式
 
@@ -144,7 +144,6 @@ label.Style = Device.Styles.TitleStyle;
 ![啟用協助工具的裝置樣式](styles-images/post-access.png)
 
 若要確保協助工具，請確定內建樣式做為應用程式內的任何文字相關樣式為基礎，而且您正在使用的樣式以一致的方式。 請參閱[樣式](~/xamarin-forms/user-interface/styles/index.md)如需詳細資訊，擴充和一般使用的樣式。
-
 
 ## <a name="related-links"></a>相關連結
 

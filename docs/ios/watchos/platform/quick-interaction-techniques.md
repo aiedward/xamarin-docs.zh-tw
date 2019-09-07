@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: a0719dce3b7f5484168dc5679237b01286f5de78
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6aa5eede658f13a36220398f92192eefa2473bab
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286750"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768597"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin 中 watchOS 3 的快速互動技術
 
@@ -98,7 +98,7 @@ watchOS 3 將支援四個下列的手勢辨識器：
 - 有些手勢的優先順序高於其他手勢類型，例如：
   - 捲動
   - Force Touch
- 
+
 ### <a name="digital-crown-rotation"></a>Digital Crown 旋轉
 
 藉由在 watchOS 3 應用程式中執行 Digital Crown 支援，開發人員可以為其使用者提供更高的流覽速度和精確度互動。
@@ -169,7 +169,6 @@ Apple 已將其留給開發人員，決定如何將旋轉計數對應至所要�
 旋轉差異的`+/-`正負號（）表示使用者正在開啟 Digital Crown 的方向：
 
 [![](quick-interaction-techniques-images/quick03.png "旋轉差異的正負號表示使用者正在開啟的方向 Digital Crown")](quick-interaction-techniques-images/quick03.png#lightbox)
-
 
 如果使用者正在向上滾動，則 WatchKit 會傳回正面差異，而且如果向下滾動，則不論使用者在監看哪一個方向，都將傳回負面差異。
 

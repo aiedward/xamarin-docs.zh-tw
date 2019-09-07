@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: 2166cbbb3d15cde1af83b3071a0d83a1e8f51071
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
-ms.translationtype: HT
+ms.openlocfilehash: e5c8e02397e778cf3e71a0c8b4aa544074521cac
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560275"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70755943"
 ---
 # <a name="proguard"></a>ProGuard
 
 _Xamarin.Android ProGuard 是 Java 類別檔案壓縮工具、最佳化工具和預先驗證器。它可以偵測和移除未使用的程式碼，分析位元組程式碼並予以最佳化。本指南說明 ProGuard 的運作方式、如何在專案中予以啟用，以及如何加以設定。文中也提供數個 ProGuard 組態範例。_
-
 
 ## <a name="overview"></a>總覽
 
@@ -34,9 +33,7 @@ ProGuard 會使用下列步驟來處理 APK 的輸入：
 
 4. **預先驗證步驟** &ndash; 在執行階段之前對 Java 位元組程式碼執行檢查，並標註類別檔案，方便 Java VM 使用。 這是唯一不需要知道進入點的步驟。 
 
-這些全都是「選擇性」  步驟。 如下一節中所說明，Xamarin.Android ProGuard 只會使用這些步驟的某些步驟。 
-
-
+這些全都是「選擇性」步驟。 如下一節中所說明，Xamarin.Android ProGuard 只會使用這些步驟的某些步驟。 
 
 ## <a name="proguard-in-xamarinandroid"></a>Xamarin.Android 中的 ProGuard
 
@@ -52,8 +49,6 @@ Xamarin.Android ProGuard 組態不會混淆 APK。 事實上，您無法透過 P
 
 所有這些步驟都會描述如下。
 
-
-
 ### <a name="linker-step"></a>連結器步驟
 
 Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷下列各項： 
@@ -66,29 +61,23 @@ Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷�
 
 連結器一律會在 ProGuard 步驟之前執行。 因此，連結器能移除您可能預期 ProGuard 要在其上執行的組件/類型/成員 (如需 Xamarin.Android 中之連結的詳細資訊，請參閱 [Android 上的連結](~/android/deploy-test/linker.md))。
 
-
-
 ### <a name="proguard-step"></a>ProGuard 步驟
 
 成功完成連結器步驟之後，ProGuard 會執行以移除未使用的 Java 位元組程式碼。 這是將 APK 最佳化的步驟。 
-
-
 
 ## <a name="using-proguard"></a>使用 ProGuard
 
 若要在應用程式專案中使用 ProGuard，您必須先啟用 ProGuard。 接下來，您可以讓 Xamarin.Android 建置處理序使用預設 ProGuard 組態檔，或您可以建立自己的組態檔以供 ProGuard 使用。 
 
-
-
 ### <a name="enabling-proguard"></a>啟用 ProGuard
 
 使用下列步驟以在您的應用程式專案中啟用 ProGuard：
 
-1. 請務必將專案設定為 [發行]  組態 (這相當重要，因為連結器必須執行，ProGuard 才能執行)： 
+1. 請務必將專案設定為 [發行] 組態 (這相當重要，因為連結器必須執行，ProGuard 才能執行)： 
 
     [![選取發行組態](proguard-images/02-set-release-sml.png)](proguard-images/02-set-release.png#lightbox)
    
-2. 在 [屬性] > [Android 選項]  的 [封裝]  索引標籤下，選取 [啟用 ProGuard]  選項以啟用 ProGuard： 
+2. 在 [屬性] > [Android 選項] 的 [封裝] 索引標籤下，選取 [啟用 ProGuard] 選項以啟用 ProGuard： 
 
     [![選取了 [啟用 Proguard] 選項](proguard-images/03-enable-proguard-sml.png)](proguard-images/03-enable-proguard.png#lightbox)
 
@@ -134,7 +123,7 @@ Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷�
 
 ### <a name="customizing-proguard"></a>自訂 ProGuard
 
-您可以選擇新增自訂的 ProGuard 組態檔以對 ProGuard 工具施加更多控制。 例如，您可能想要明確告訴 ProGuard 要保留哪些類別。 若要執行此動作，請建立新的 **.cfg** 檔案，並在 [方案總管]  的 [屬性]  窗格中套用 `ProGuardConfiguration` 建置動作： 
+您可以選擇新增自訂的 ProGuard 組態檔以對 ProGuard 工具施加更多控制。 例如，您可能想要明確告訴 ProGuard 要保留哪些類別。 若要執行此動作，請建立新的 **.cfg** 檔案，並在 [方案總管] 的 [屬性] 窗格中套用 `ProGuardConfiguration` 建置動作： 
 
 [![選取了 ProguardConfiguration 建置動作](proguard-images/04-build-action-sml.png)](proguard-images/04-build-action.png#lightbox)
 
@@ -150,13 +139,11 @@ Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷�
 
 您也可以使用 `[Register]` 註釋來登錄自己的名稱並使用這些名稱來自訂 ProGuard 規則。 您可以登錄 Adapters、Views、BroadcastReceivers、Services、ContentProviders、Activities 及 Fragments 的名稱。 如需使用 `[Register]` 自訂屬性的詳細資訊，請參閱[使用 JNI](~/android/platform/java-integration/working-with-jni.md)。
 
-
 ### <a name="proguard-options"></a>ProGuard 選項
 
 ProGuard 提供一些您可以設定的選項，以對其作業進行更細微的控制。 [ProGuard 手冊](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html) \(英文\) 提供使用 ProGuard 的完整參考文件。 
 
 Xamarin.Android 支援下列 ProGuard 選項： 
-
 
 - [輸入/輸出選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#iooptions)
 
@@ -180,15 +167,13 @@ Xamarin.Android 支援下列 ProGuard 選項：
 
 - [類別規格](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#classspecification)
 
-Xamarin.Android 會乎略  下列選項：
+Xamarin.Android 會乎略下列選項：
 
 - [最佳化選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#optimizationoptions)
 
 - [混淆選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#obfuscationoptions) 
 
 - [預先驗證選項](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/manual/usage.html#preverificationoptions)
-
-
 
 ## <a name="proguard-and-android-nougat"></a>ProGuard 和 Android Nougat
 
@@ -197,8 +182,6 @@ Xamarin.Android 會乎略  下列選項：
 您可以使用此 [NuGet 套件](https://www.nuget.org/packages/name.atsushieno.proguard.facebook/5.3.0)來安裝較新版的 `proguard.jar`。 如需更新預設 Android SDK `proguard.jar` 的詳細資訊，請參閱此 [Stack Overflow](https://stackoverflow.com/questions/39514518/xamarin-android-proguard-unsupported-class-version-number-52-0/39514706#39514706) 討論。
 
 您可以在 [SourceForge 頁面](https://sourceforge.net/projects/proguard/files/)找到所有 ProGuard 版本。 
-
-
 
 ## <a name="example-proguard-configurations"></a>範例 ProGuard 組態
 
@@ -271,7 +254,6 @@ public static <fields>;
 
 下列各節會說明 ProGuard 在 Xamarin.Android **發行**建置期間的執行方式。
 
-
 ### <a name="what-command-is-proguard-running"></a>ProGuard 會執行什麼命令？
 
 ProGuard 只是隨 Android SDK 提供的 `.jar`。 因此它是以命令叫用： 
@@ -284,7 +266,7 @@ java -jar proguard.jar options ...
 
 ProGuard 工作可在 **Xamarin.Android.Build.Tasks.dll** 組件內找到。 它是 `_CompileToDalvikWithDx` 目標的一部分，也是 `_CompileDex` 目標的一部分。 
 
-下列清單提供的範例是您使用 [檔案] > [新增專案]  建立新專案之後產生的預設參數： 
+下列清單提供的範例是您使用 [檔案] > [新增專案] 建立新專案之後產生的預設參數： 
 
 ```
 ProGuardJarPath = C:\Android\android-sdk\tools\proguard\lib\proguard.jar
@@ -330,11 +312,11 @@ C:\Program Files (x86)\Java\jdk1.8.0_92\\bin\java.exe -jar C:\Android\android-sd
 Unknown option '-keep' in line 1 of file 'proguard.cfg'
 ```
 
-此問題通常是在 Windows 上發生，原因是 `.cfg` 檔案的編碼錯誤。 ProGuard 無法處理可能會以文字檔呈現的「位元組順序標記」  (BOM)。 如果有 BOM 存在，ProGuard 會隨即結束並出現上述錯誤。 
+此問題通常是在 Windows 上發生，原因是 `.cfg` 檔案的編碼錯誤。 ProGuard 無法處理可能會以文字檔呈現的「位元組順序標記」(BOM)。 如果有 BOM 存在，ProGuard 會隨即結束並出現上述錯誤。 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要避免這個問題，請從儲存檔案時允許不含 BOM 的文字編輯器中編輯自訂組態檔。 若要解決此問題，請確定文字編輯器將其編碼設定為 `UTF-8`。 例如，在儲存檔案時，在文字編輯器 [Notepad++](https://notepad-plus-plus.org/) 選取 [編碼] &gt; [編譯成 UTF-8 碼〈檔首無 BOM〉]  ，即可儲存不含 BOM 的檔案。 
+若要避免這個問題，請從儲存檔案時允許不含 BOM 的文字編輯器中編輯自訂組態檔。 若要解決此問題，請確定文字編輯器將其編碼設定為 `UTF-8`。 例如，在儲存檔案時，在文字編輯器 [Notepad++](https://notepad-plus-plus.org/) 選取 [編碼] &gt; [編譯成 UTF-8 碼〈檔首無 BOM〉]，即可儲存不含 BOM 的檔案。 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -342,16 +324,13 @@ Unknown option '-keep' in line 1 of file 'proguard.cfg'
 
 -----
 
-
 ### <a name="other-issues"></a>其他問題
 
 ProGuard [疑難排解](https://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/troubleshooting.html) \(英文\) 頁面討論使 ProGuard 時會遇到的常見問題 (和解決方案)。
 
-
 ## <a name="summary"></a>總結
 
 本指南說明 ProGuard 如何在 Xamarin.Android 中運作、如何在應用程式專案中予以啟用，以及如何加以設定。 文中提供範例 ProGuard 組態，並描述常見問題的解決方式。 如需 ProGuard 工具與 Android 的詳細資訊，請參閱[壓縮程式碼和資源](https://developer.android.com/tools/help/proguard.html) \(英文\)。 
-
 
 ## <a name="related-links"></a>相關連結
 

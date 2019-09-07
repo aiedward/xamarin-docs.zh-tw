@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/26/2017
-ms.openlocfilehash: 38206812fbd746a63c5bff18111779c25deedc66
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 7a6c737bff6c504fea10fd2e34e4b26249f73aff
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648527"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770389"
 ---
 # <a name="xamarinforms-grid"></a>Xamarin.Forms 方格
 
@@ -54,7 +54,7 @@ ms.locfileid: "68648527"
 - **絕對**&ndash;大小資料行和資料列以特定的固定高度和寬度的值。 指定為值和`GridUnitType.Absolute`C# 中，以及`#`XAML，在使用`#`所需的值。
 
 > [!NOTE]
-> 在 Xamarin 中, 資料行的寬度`*`值預設會設定為, 這樣可確保資料行會填滿可用的空間。 資料列的高度值預設也會設定`*`為。
+> 在 Xamarin 中，資料行的寬度`*`值預設會設定為，這樣可確保資料行會填滿可用的空間。 資料列的高度值預設也會設定`*`為。
 
 請考慮需要三個資料列和兩個資料行的應用程式。 下方的資料列必須是完全 200px 高，第一列必須是兩次中間的資料列一樣高。 左邊的資料行必須是寬度不足以容納內容，並正確的資料行必須以填滿剩餘的空間。
 
@@ -378,7 +378,6 @@ public CalculatorGridCode ()
   Content = controlGrid;
 }
 ```
-
 
 ## <a name="related-links"></a>相關連結
 

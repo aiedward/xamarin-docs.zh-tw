@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 35596d5231f7e485cf8217e35a5641277dcab11d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ca524e9ff3c1d3c938905093f55a6482ea085963
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285590"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763198"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的臨機操作散發
 
@@ -44,7 +44,6 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 <a name="createcertificate" />
 
 ## <a name="create-a-distribution-certificate"></a>建立散發憑證
-
 
 1. 瀏覽至 Apple Developer Member Center 的「憑證、識別碼與設定檔」區段。
 2. 在 [憑證] 下，選取 [生產環境]。
@@ -79,7 +78,6 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 
 ### <a name="create-an-app-id"></a>建立應用程式識別碼
 如同您所建立的任何其他佈建設定檔，此處也需要應用程式識別碼才能識別要散發給使用者裝置的應用程式。 如果您尚未建立應用程式識別碼，請遵循下列步驟來建立：
-
 
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [識別碼] 下的 [應用程式識別碼]。
 2. 按一下 [+] 按鈕，並提供可在入口網站中識別應用程式的**名稱**。
@@ -179,7 +177,6 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 ## <a name="summary"></a>總結
 
 本文介紹測試 Xamarin.iOS 應用程式所必須的 臨機操作散發機制。
-
 
 ## <a name="related-links"></a>相關連結
 

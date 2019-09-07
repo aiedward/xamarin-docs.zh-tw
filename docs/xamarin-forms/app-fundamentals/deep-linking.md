@@ -8,23 +8,22 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: 36069bc20a5341b87d55b60f83466e89f263b2ec
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: ff5c7cb36305780d12b5fd69b7cbadec0eaef551
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646121"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771551"
 ---
 # <a name="application-indexing-and-deep-linking"></a>應用程式索引和深層連結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _應用程式索引讓經過少數幾次使用就遺忘的應用程式能出現在搜尋結果中，藉此保有關聯性。深層連結可讓應用程式回應包含應用程式資料的搜尋結果，方式通常是瀏覽到參考自深層連結的頁面。本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。_
 
 > [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
 
 **Xamarin.Forms 和 Azure 的深層連結影片**
-
 
 Xamarin.Forms 應用程式索引和深層連結提供 API，用來在使用者瀏覽應用程式的同時，為應用程式索引發佈中繼資料。 編製了索引的內容，即可在 Spotlight 搜尋、Google 搜尋或 Web 搜尋中搜尋。 點選包含深層連結的搜尋結果，會引發應用程式能夠處理的事件，而通常會用來瀏覽到參考自深層連結的頁面。
 
@@ -39,7 +38,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，用來在使用者�
 > [!NOTE]
 > Xamarin.Forms 應用程式索引和深層連結功能僅可在 iOS 和 Android 平台使用，且最低版本分別為 iOS 9 與 API 23。
 
-## <a name="setup"></a>設定
+## <a name="setup"></a>安裝程式
 
 以下章節提供在 iOS 和 Android 平台使用此功能的任何額外設定指示。
 
@@ -71,7 +70,7 @@ Xamarin.Forms 應用程式索引和深層連結提供 API，用來在使用者�
 1. 在網頁瀏覽器中，透過 [Firebase 控制台](https://console.firebase.google.com/)建立新專案。
 1. 在 Firebase 控制台中，將 Firebase 新增到您的 Android 應用程式，然後輸入必填資料。
 1. 下載產生的 **google-services.json** 檔案。
-1. 將 **google-services.json** 檔案新增到 Android 專案的根目錄，並將其 [建置動作]  設為 **GoogleServicesJson**。
+1. 將 **google-services.json** 檔案新增到 Android 專案的根目錄，並將其 [建置動作] 設為 **GoogleServicesJson**。
 1. 在 `MainActivity.OnCreate` 覆寫中，在 `Forms.Init(this, bundle)` 下方新增下列程式碼：
 
 ```csharp

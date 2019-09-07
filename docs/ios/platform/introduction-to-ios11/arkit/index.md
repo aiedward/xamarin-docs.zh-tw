@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/30/2017
-ms.openlocfilehash: 9e6b5c763d620bf5ef17e4fdb613d4bed9c00279
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b05991be60e34cad6b7bfc5af15fe521e1ff6dd1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290907"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752591"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin 中的 ARKit 簡介
 
@@ -36,7 +36,6 @@ ARKit 可提供各種增強的現實應用程式和遊戲。 本章節涵蓋下�
 資產應該使用 [ **SceneKitAsset** ] [建立] 動作新增至專案。
 
 ![SceneKit 專案中的資產](images/scene-assets.png)
-
 
 ### <a name="2-configure-the-view"></a>2.設定視圖
 
@@ -109,7 +108,6 @@ SceneView.Session.Pause();
 上述程式碼會產生簡單的 ARKit 應用程式。 更複雜的範例會預期裝載增強型現實會話的 view controller 會`IARSCNViewDelegate`執行，並執行其他方法。
 
 ARKit 提供許多更複雜的功能，例如 surface 追蹤和使用者互動。 如需結合 ARKit 追蹤與 UrhoSharp 的範例，請參閱[UrhoSharp 示範](urhosharp.md)。
-
 
 ## <a name="related-links"></a>相關連結
 

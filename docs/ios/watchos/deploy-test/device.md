@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 4b1e232259d7b1816e64298b5c0b8853d8385c20
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6d3756f4215174e17ec45518f430dc38270e3289
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283861"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768693"
 ---
 # <a name="testing-on-apple-watch-devices"></a>在 Apple Watch 裝置上進行測試
 
@@ -64,7 +64,6 @@ ms.locfileid: "70283861"
 
 ![](device-images/options-selectprofile.png "布建配置檔案清單")
 
-
 <a name="testing" />
 
 ## <a name="testing-on-a-watch-device"></a>在監看式裝置上測試
@@ -88,7 +87,6 @@ ms.locfileid: "70283861"
 
 8. 如果順利安裝 watch 應用程式，圖示將會保留在 [監看式] 畫面上，並將其觸控以開始測試您的應用程式！
 
-
 ## <a name="troubleshooting"></a>疑難排解
 
 如果部署期間發生錯誤，請使用**View > pad > 裝置記錄**檔，以查看錯誤的詳細資訊。 某些錯誤及其原因如下所列：
@@ -103,11 +101,9 @@ ms.locfileid: "70283861"
 
 這會在未來的版本中修正，之後可以重新啟用累加式組建，以利用更快速的組建時間。
 
-
 ### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>在裝置上進行偵錯工具時，監看式應用程式無法啟動
 
 嘗試在實體裝置上進行監看式應用程式的偵測時，只會顯示 & 載入 微調按鈕的圖示（最後是超時）。 這會在未來的版本中解決;因應措施是執行發行組建（這不允許進行調試）。
-
 
 ### <a name="invalid-application-executable-or-application-verification-failed"></a>不正確應用程式可執行檔或應用程式驗證失敗
 
@@ -131,8 +127,6 @@ Invalid executable/Application Verification Failed
 
 - Watch 應用程式的**應用程式識別碼**不正確地在開發人員中心中啟用了權利（例如應用程式群組）。
 
-
-
 ### <a name="install-never-finished"></a>安裝從未完成
 
 ```csharp
@@ -142,7 +136,6 @@ SPErrorGizmoInstallNeverFinishedErrorMessage
 此錯誤可能表示監看式應用程式的**plist**檔案中不必要（也無效）金鑰。 您不應該在監看式應用程式中包含適用于 iOS 應用程式或監看式擴充功能的金鑰。
 
 <!--eg. NSLocationAlwaysUsageDescription -->
-
 
 ### <a name="waiting-for-debugger-to-connect"></a>「正在等候偵錯工具連接」
 
@@ -156,4 +149,3 @@ waiting for debugger to connect
 
 新增至 **.csproj**的 **.targets**檔案可能會在部署期間干擾 iOS 延伸模組的封裝。 您可以追蹤[bug](https://bugzilla.xamarin.com/show_bug.cgi?id=29912)。
 可能的因應措施是編輯 .csproj 檔案，並以手動方式將 **.targets**移動為最後一個元素。
-

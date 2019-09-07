@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8a83fd7fca15214711dd90dcbf80eb0d56a3df34
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 3dfdb83f99e7b15866abcc4980473ddf075dff69
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650447"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771773"
 ---
 # <a name="binding-video-sources-to-the-player"></a>將影片來源繫結至播放程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-當 `VideoPlayer` 檢視的 `Source` 屬性設定為新影片檔案時，會停止播放現有的影片並開始播放新影片。 如 [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 範例的 [Select Web Video] \(選取網路影片\)  頁面所示。 此頁面包含 `ListView`，以及從 **App.XAML** 檔案參考的三部影片標題：
+當 `VideoPlayer` 檢視的 `Source` 屬性設定為新影片檔案時，會停止播放現有的影片並開始播放新影片。 如 [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 範例的 [Select Web Video] \(選取網路影片\) 頁面所示。 此頁面包含 `ListView`，以及從 **App.XAML** 檔案參考的三部影片標題：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -77,7 +77,7 @@ namespace VideoPlayerDemos
 
 [![選取網路影片](source-bindings-images/selectwebvideo-small.png "選取網路影片")](source-bindings-images/selectwebvideo-large.png#lightbox "選取網路影片")
 
-`VideoPlayer` 的 `Source` 屬性受到可繫結屬性的支援，這表示它可以是資料繫結的目標。 如 [Bind to VideoPlayer] \(繫結至 VideoPlayer\)  頁面所示。 **BindToVideoPlayer.XAML** 檔案中的標記支援下列類別，其中封裝影片標題和對應的 `VideoSource` 物件：
+`VideoPlayer` 的 `Source` 屬性受到可繫結屬性的支援，這表示它可以是資料繫結的目標。 如 [Bind to VideoPlayer] \(繫結至 VideoPlayer\) 頁面所示。 **BindToVideoPlayer.XAML** 檔案中的標記支援下列類別，其中封裝影片標題和對應的 `VideoSource` 物件：
 
 ```csharp
 namespace VideoPlayerDemos
@@ -137,8 +137,7 @@ namespace VideoPlayerDemos
 
 `VideoPlayer` 的 `Source` 屬性會繫結至 `ListView`。 繫結的 `Path` 會指定為 `SelectedItem.VideoSource`，這是由兩個屬性組成的複合路徑：`SelectedItem` 是 `ListView` 的屬性。 選取的項目類型為 `VideoInfo`，其中包含 `VideoSource` 屬性。
 
-如同第一頁 [Select Web Video] \(選取網路影片\)  ，一開始不會從 `ListView` 選取任何項目，因此您必須選取其中一個影片才能開始播放。
-
+如同第一頁 [Select Web Video] \(選取網路影片\)，一開始不會從 `ListView` 選取任何項目，因此您必須選取其中一個影片才能開始播放。
 
 ## <a name="related-links"></a>相關連結
 

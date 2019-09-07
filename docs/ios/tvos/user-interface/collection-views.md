@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: c9980dff866a176d4a4a1f1f6bc1bd8c92bd7097
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8fcedd4f7dca4527b37c6b83fbd205014cffcaaf
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280212"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769125"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 收集視圖
 
@@ -96,7 +96,6 @@ public CityCollectionView (IntPtr handle) : base (handle)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    
 1. 在 Visual Studio for Mac 中啟動新的**單一 View TvOS 應用程式**。
 1. 在 **方案總管**中，按兩下該`Main.storyboard`檔案，然後在 iOS 設計工具中開啟它。
 1. 將 [影像視圖]、[標籤] 和 [按鈕] 新增至現有的視圖，並將其設定為如下所示： 
@@ -132,11 +131,9 @@ public CityCollectionView (IntPtr handle) : base (handle)
 
     [![](collection-views-images/collection11.png "將身分識別設定為 CityCell")](collection-views-images/collection11.png#lightbox)
 1. 儲存您的變更。
-    
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    
 1. 在 Visual Studio 中啟動新的**單一 View TvOS 應用程式**。
 1. 在 **方案總管**中，按兩下該`Main.storyboard`檔案，然後在 iOS 設計工具中開啟它。
 1. 將 [影像視圖]、[標籤] 和 [按鈕] 新增至現有的視圖，並將其設定為如下所示： 
@@ -170,7 +167,6 @@ public CityCollectionView (IntPtr handle) : base (handle)
 
     [![](collection-views-images/collection11vs.png "將身分識別設定為 CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. 儲存您的變更。
-    
 
 -----
 
@@ -286,7 +282,6 @@ CityView.AdjustsImageWhenAncestorFocused = true;
 ```
 
 如需導覽和焦點的詳細資訊，請參閱我們[的使用導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)和[Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md)檔。
-
 
 <a name="The-Collection-View-Data-Provider" />
 
@@ -469,7 +464,6 @@ public CityInfo SelectedCity { get; set;} = new CityInfo("City02.jpg", "Turning 
 ### <a name="the-collection-view-delegate"></a>集合視圖委派
 
 接下來，將新`CityViewDelegate`的類別新增至專案，使其看起來如下所示：
-
 
 ```csharp
 using System;
@@ -684,7 +678,6 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 我們將前一個專案的 transparence 設定為零（0），而下一個專案的 transparence 會獲得焦點到 100%。 這些轉換也會以動畫顯示。
 
-
 ## <a name="configuring-the-collection-view-controller"></a>設定集合視圖控制器
 
 現在，我們需要在集合視圖上執行最後的設定，並允許控制器設定我們定義的屬性，如此一來，在使用者進行選取之後，集合視圖就可以關閉。
@@ -824,14 +817,11 @@ public override void ViewWillAppear (bool animated)
 
 最近新增至 iOS 9 的集合視圖，能夠輕鬆地允許重新排序集合中的專案。 同樣地，因為 tvOS 9 是 iOS 9 的子集，所以這是以同樣的方式完成。 如需詳細資訊，請參閱[集合視圖變更](~/ios/user-interface/controls/uicollectionview.md)檔。
 
-
 <a name="Summary" />
 
 ## <a name="summary"></a>總結
 
 本文涵蓋在 tvOS 應用程式內設計和使用集合視圖。 首先，它會討論群組成集合視圖的所有元素。 接下來，它會示範如何使用分鏡腳本來設計和執行集合視圖。 最後，會提供有關建立自訂版面配置和重新排列專案之資訊的連結。
-
-
 
 ## <a name="related-links"></a>相關連結
 

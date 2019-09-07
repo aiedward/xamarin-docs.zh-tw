@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f3a0525a42a59edfe08e5b478bf6af801008ef05
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7eca637e546324f9282aedcac48dacffa72bf246
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70277859"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769267"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>在 Xamarin 中使用 tvOS 圖示和影像
 
@@ -79,9 +79,6 @@ Apple TV 的新功能，分層影像會與視差效果搭配使用，以產生3D
 > [!IMPORTANT]
 > 您的應用程式圖示需要分層影像，而且對於其他可[設定焦點的專案](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)（例如最上層的影像）而言是選擇性的。 不過，Apple 建議針對可在應用程式中取得焦點的任何影像使用分層影像。
 
-
-
-
 Apple 會針對設計您的分層影像提供下列建議：
 
 - **讓背景圖層不透明**-您的背景層（圖層1）**必須**是不透明的，否則當您嘗試在 Apple 電視上使用多層式映射時，您會收到錯誤。 所有其他圖層都可以包含多個透明度層級，以增強3D 效果。
@@ -145,9 +142,6 @@ Apple 已建立[視差](http://itunespartner.apple.com/assets/downloads/Parallax
 
 > [!IMPORTANT]
 > 您的應用程式圖示必須以**分層影像**的形式提供。 如需詳細資訊，請參閱上面的「[分層影像](#Layered-Images)」一節。
-
-
-
 
 Apple 提供下列建議來建立您的應用程式圖示：
 

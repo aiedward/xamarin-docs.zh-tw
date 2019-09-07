@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: 3b0e5d12f47ffb46ad009530bcc9c0b373496f63
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: db37a6a912cae3c2d53d8838ba2d2bd0224e8df7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279784"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765589"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目標-C 系結的總覽
 
@@ -37,7 +37,6 @@ _系結程式運作方式的詳細資料_
 
 您可以使用`btouch-native` for Xamarin. iOS （或`bmac-native`如果您使用的是 xamarin）直接建立系結。 其運作方式是將C#您手動建立的 API 定義（或使用目標 Sharpie）傳遞至命令列工具（`btouch-native`適用于 iOS 或`bmac-native` Mac）。
 
-
 叫用這些工具的一般語法如下：
 
 ```csharp
@@ -51,7 +50,6 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
 上述命令會`cocos2d.dll`在目前的目錄中產生檔案，而且它會包含您可在專案中使用的完整系結程式庫。 如果您使用系結專案，這就是 Visual Studio for Mac 用來建立系結的工具（[如下](#bindingproject)所述）。
-
 
 <a name="bindingproject" />
 

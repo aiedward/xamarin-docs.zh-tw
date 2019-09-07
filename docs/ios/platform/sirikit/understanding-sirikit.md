@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 797bc4199b79944c7b2b6e9c939e2584bb21246a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3b99e4485bfb621b32fa001a49d75038b2072775
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292560"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769472"
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
 _本文涵蓋在 Xamarin iOS 應用程式中使用 SiriKit 時所需的重要概念。_
-
 
 SiriKit 是 iOS 10 的新手，可讓 Xamarin iOS 應用程式提供使用者可使用 Siri 和 iOS 裝置上的 Maps 應用程式來存取的服務。 這項功能是使用新的**意圖**和**意圖 UI**架構，在一或多個應用程式延伸模組中提供。
 
@@ -461,9 +460,6 @@ Apple 建議的幾個步驟會將對話介面的設計波蘭文。 第一，是�
 ## <a name="summary"></a>總結
 
 本文涵蓋使用 SiriKit 所需的重要概念，並顯示它可以與 Xamarin iOS 應用程式互動，以提供使用者可使用 Siri 和 iOS 裝置上的 Maps 應用程式來存取的服務。
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

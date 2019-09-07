@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/15/2017
-ms.openlocfilehash: 5f56a99e341f58bc06e8bf49305b5527a92f0413
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c190e92c8366644c00e0f03c314d535f43f8046b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289719"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768631"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手動佈建
 
@@ -265,7 +265,6 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 
 4. 確定將組建組態設定為 [iPhone] 或 [iPad]，而不是模擬器。
 5. 在 Visual Studio 中按一下 [執行]，即可檢視在裝置上執行的應用程式。
-
 
 -----
 

@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: f31fd699aad95ff785ff887b2a2a8b6f2601ad7b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290180"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765937"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -173,7 +173,6 @@ public class Subscriber : IDisposable
 
 延遲初始化可用來延遲物件的建立，直到第一次使用物件時。 這項技術主要用於改善效能、避免計算，以及減少記憶體需求。
 
-
 建議您在下列兩種案例下，考慮針對建立過程相當耗費資源的物件使用延遲初始化：
 
 - 應用程式可能不會使用到物件。
@@ -246,8 +245,6 @@ public class FaceDetection
 
 > [!IMPORTANT]
 > `CancellationTokenSource` 類別實作 `IDisposable` 介面，因此當 `CancellationTokenSource` 執行個體完成工作時，應叫用 `CancellationTokenSource.Dispose` 方法。
-
-
 
 如需詳細資訊，請參閱[非同步支援概觀](~/cross-platform/platform/async.md)。
 

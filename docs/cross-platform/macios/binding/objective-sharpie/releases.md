@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2017
-ms.openlocfilehash: b5362c0a809423e2782ee60faa96658cf132d752
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa50ae16b69436936f0a7a8a5cf0aeaa54dfedfb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290863"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765665"
 ---
 # <a name="objective-sharpie-release-history"></a>目標 Sharpie 發行歷程記錄
 
@@ -142,4 +142,3 @@ _建議_對所有系結宣告進行驗證，但最有可能_需要_針對以`[Ve
 [下載1.1.1 版](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.1.pkg)
 
 1.1.1 是 2005 2013 年4月的目標 Sharpie 首次預覽1.5 之後，在 Xamarin 內部使用和開發的第一個主要版本。 這一版的第一個是一般被視為穩定的版本，可用於各式各樣的原生程式庫，以新的 Clang 後端為特色。
-

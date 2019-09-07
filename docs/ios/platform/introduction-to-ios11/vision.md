@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2017
-ms.openlocfilehash: b0f6647ff92c8d8d0b8d2769c85aa24572d1464e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: efe3f2d4c79dc6e5e2a7f13408de52e05006e10a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285734"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752266"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin 中的視覺架構
 
@@ -102,7 +102,6 @@ VisionRectangles `OverlayRectangles`範例中的方法有三個功能：
 
 矩形偵測通常只是一連串作業的第一個步驟，例如使用[此 CoreMLVision 範例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)，其中矩形會傳遞至 CoreML 模型以剖析手寫數位。
 
-
 <a name="faces" />
 
 ## <a name="face-detection"></a>臉部偵測
@@ -175,7 +174,6 @@ VisionFaces `OverlayRectangles`範例中的方法有三個功能：
 ### <a name="5-further-processing"></a>5.進一步處理
 
 視覺架構包含偵測臉部功能的額外功能，例如眼睛和嘴。 使用類型，這`VNFaceObservation`會傳回上述步驟3中的結果，但包含其他`VNFaceLandmark`資料。 `VNDetectFaceLandmarksRequest`
-
 
 ## <a name="related-links"></a>相關連結
 

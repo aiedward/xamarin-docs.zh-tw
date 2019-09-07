@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 58621701d832660b125d7589762cc033811eb69b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9982f9102166aa6892be0819615f329a65fffbb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281847"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756434"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支援
 
@@ -66,7 +66,6 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 若要建置 IPA，必須建立應用程式發行組建的「封存」。 此封存包含應用程式和相關的識別資訊。
 
-
 1. 在 Visual Studio for Mac 中選取 [發行] | [裝置] 組態：  !
 
     ![](ipa-support-images/buildxs01new.png "選取 [發行] | [裝置] 組態")
@@ -79,7 +78,6 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
     ![](ipa-support-images/buildxs03new.png "隨即顯示 [封存] 檢視")
 
-
 ### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
 每次建置應用程式進行封存，都會自動開啟**封存檢視**，顯示依解決方案分組的所有已封存專案。 根據預設，此檢視只會顯示目前開啟的解決方案。 若要查看有封存的所有解決方案，請按一下 [顯示所有封存] 按鈕。
@@ -89,7 +87,6 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 請注意，對於非 App Store 組建，如果在封存中找到 **iTunesMetadata.plist** 檔案與 iTunes 插圖，就會自動納入 IPA 中。
 
 若要簽署應用程式並準備散發：
-
 
 1. 選取 [簽署並散發] 按鈕，如下所示：
 
@@ -111,11 +108,9 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
     ![](ipa-support-images/distribute04.png "將 IPA 儲存到電腦")
 
-
 ### <a name="building-via-the-command-line-on-mac"></a>透過命令列建置 (在 Mac 上)
 
 在某些特定案例中 (例如在 CI 環境中)，您可能需要透過命令列來建置 IPA。 請遵循下列步驟來進行這項作業：
-
 
 1. 確定已選取 [專案選項] > [iOS IPA 選項] > [包含 iTunesArtwork 影像] 和已選取 [建置臨機操作/企業版套件 (IPA)]：
 
@@ -251,7 +246,6 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 ## <a name="summary"></a>總結
 
 本文涵蓋準備非 App Store 組建的 Xamarin.iOS 應用程式所需的設定步驟。 文中說明如何建立 IPA 套件和如何在使用者的 iOS 裝置上安裝產生的 iOS 應用程式，以進行測試或內部作業散發。
-
 
 ## <a name="related-links"></a>相關連結
 

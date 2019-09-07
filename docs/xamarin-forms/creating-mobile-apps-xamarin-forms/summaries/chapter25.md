@@ -1,18 +1,18 @@
 ---
 title: 第 25 章的摘要。 頁面變化
-description: 使用 Xamarin.Forms 建立行動應用程式：第 25 章的摘要。 頁面變化
+description: 使用 Xamarin 建立 Mobile Apps：第 25 章的摘要。 頁面變化
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: db6c329c029f52180fe508f277a1cf4834ab493a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: b86f2d7216a6344b14fc4d8c538ea68871eda5ae
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61331807"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760540"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章的摘要。 頁面變化
 
@@ -111,8 +111,6 @@ Xamarin.Forms 提供使用者介面 master] 和 [詳細資料檢視之間切換�
 [ **MultiTabbedColor** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors)範例會使用[ `NamedColor` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs)類別[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)程式庫。 [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml)檔中設定`DataTemplate`屬性`TabbedPage`要以視覺化樹狀結構開頭`ContentPage`，其中包含屬性的繫結`NamedColor`（包括繫結至`Title`屬性)。
 
 不過，這是在 iOS 上有問題。 可以顯示只有幾個項目，而且沒有任何好的方法，以提供圖示。
-
-
 
 ## <a name="related-links"></a>相關連結
 

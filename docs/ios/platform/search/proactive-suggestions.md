@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ecc31fa6aab9e2be1c33f16d2f424b397f4a9a73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b79f64f154dbd7dde623d13385f111d3d5a5d3f2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291730"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769542"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin 中的主動式建議簡介
 
@@ -534,7 +534,6 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 
 以 MapKit `MKDirectionsRequest`物件啟動應用程式時，應該會自動開始將使用者指示提供給要求的位置，或呈現可讓使用者輕鬆開始取得指示的 UI。 例如：
 
-
 ```csharp
 using System;
 using Foundation;
@@ -607,7 +606,6 @@ geocoder.GeocodeAddress(address, (place, err)=> {
   - 抵達家裡或工作之後。 
 
 藉由在 iOS 10 中包含簡單的 API 呼叫，開發人員可以為媒體應用程式的使用者建立更吸引人的鎖定畫面體驗。 藉由使用`MPPlayableContentManager`類別來管理媒體播放，系統會在應用程式的鎖定畫面上顯示完整的媒體控制項（例如音樂應用程式所呈現的控制項）。
-
 
 ```csharp
 using System;
@@ -682,8 +680,6 @@ namespace MonkeyPlayer
 ## <a name="summary"></a>總結
 
 本文涵蓋主動式建議，並示範開發人員如何使用它們來驅動 Xamarin iOS 應用程式的流量。 其中涵蓋了實施主動式建議和呈現使用指導方針的步驟。
-
-
 
 ## <a name="related-links"></a>相關連結
 

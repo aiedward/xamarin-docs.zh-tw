@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/18/2016
-ms.openlocfilehash: 4a04f0ed4cbb336e331528c3d8265efb31388328
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289524"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766755"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的協助工具
 
@@ -74,7 +74,6 @@ UIAccessibility.PostNotification (
     someControl);  // someControl gets focus
 ```
 
-
 ## <a name="accessibility-and-localization"></a>協助工具和當地語系化
 
 像是標籤和提示之類的協助工具屬性可以當地語系化，就像使用者介面中的其他文字。
@@ -122,7 +121,6 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 請遵循這些[VoiceOver 指示](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)來測試 iOS 裝置上的協助工具。
 
-
 ## <a name="simulator-testing"></a>模擬器測試
 
 在模擬器中測試時，**協助工具偵測器**可供使用，以協助驗證協助工具屬性和事件已正確設定。 流覽至 **[一般] > [協助工具] [> 輔助**功能偵測器]，在 [**設定**] 應用程式中開啟檢查
@@ -135,8 +133,6 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 ![](accessibility-images/tableview-a11y-sml.png "使用協助工具偵測器")
 
 當偵測器可見時，請使用左上角的 "X" 圖示來暫時顯示和隱藏重迭，並啟用/停用協助工具設定。
-
-
 
 ## <a name="related-links"></a>相關連結
 

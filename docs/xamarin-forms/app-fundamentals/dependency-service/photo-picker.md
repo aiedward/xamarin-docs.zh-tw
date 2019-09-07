@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: dac059576b8821d218cca44ae1c049010e364cfc
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.openlocfilehash: 71e509d87dc2a2947821084aea5668055f6f4678
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739354"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771498"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>從圖片媒體櫃挑選相片
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 本文會逐步說明如何建立可讓使用者從手機圖片媒體櫃挑選相片的應用程式。 由於 Xamarin.Forms 不包含這項功能，因此您必須使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 存取每個平台的原生 API。
 
@@ -214,7 +214,6 @@ namespace DependencyServiceDemos.Droid
 ## <a name="uwp-implementation"></a>UWP 實作
 
 不同於 iOS 和 Android 實作，通用 Windows 平台的相片選擇器實作不需要 `TaskCompletionSource` 類別。 [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.UWP/Services/PhotoPickerService.cs) 類別會使用 [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) 類別，以取得相片媒體櫃的存取權。 因為 `FileOpenPicker` 的 `PickSingleFileAsync` 方法本身為非同步，所以 `GetImageStreamAsync` 方法可以直接使用 `await` 搭配該方法 (和其他非同步方法)，並傳回 `Stream` 物件：
-
 
 ```csharp
 [assembly: Dependency(typeof(PhotoPickerService))]

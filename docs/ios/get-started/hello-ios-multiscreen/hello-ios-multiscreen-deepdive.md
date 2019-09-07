@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/05/2018
-ms.openlocfilehash: 8ab7f24d69e4f20cb1a732f32d220c85b178deef
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 72e421e088a582e4d2de1cf830a0978cca9f45c8
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288711"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762647"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 
@@ -76,11 +76,9 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 
     [![](hello-ios-multiscreen-deepdive-images/02.png "此圖以一疊卡片來說明導覽")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
-
 - **選擇性地提供 [上一頁] 按鈕**：當我們將新的項目推送至瀏覽堆疊時，標題列可以自動顯示「[上一頁] 按鈕」，讓使用者能夠向後瀏覽。 按 [上一頁] 按鈕即會從瀏覽堆疊中「快顯」目前的檢視控制器，並將上一個內容檢視階層載入到視窗：  
 
     [![](hello-ios-multiscreen-deepdive-images/03.png "此圖說明如何從堆疊中取出卡片")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
-
 
 - **提供標題列**：瀏覽控制器的上半部稱為「標題列」。 它負責顯示檢視控制器標題，如下圖所示：  
 

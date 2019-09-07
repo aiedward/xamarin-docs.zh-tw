@@ -7,12 +7,12 @@ ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: e2bf493a5d8a4197fbc59044edf126761b41cf8d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d6011175a735eb81f83a023f7d32fccd6feadd47
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649731"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759477"
 ---
 # <a name="pixels-and-device-independent-units"></a>像素與裝置獨立單位
 
@@ -55,7 +55,7 @@ public SurfaceSizePage()
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-您指定的文字字串，其中的文字是若要開始，X 和 Y 座標和`SKPaint`物件。 X 座標會指定文字左邊的位置, 但請注意:Y 座標會指定文字*基準*的位置。 如果您曾經撰寫以手動方式在劃線的紙上，基準都是一行的字元站台，而且以下的伸尾部分 （例如字母 g、 p、 q 和 y 上的那些） 下降。
+您指定的文字字串，其中的文字是若要開始，X 和 Y 座標和`SKPaint`物件。 X 座標會指定文字左邊的位置，但請注意：Y 座標會指定文字*基準*的位置。 如果您曾經撰寫以手動方式在劃線的紙上，基準都是一行的字元站台，而且以下的伸尾部分 （例如字母 g、 p、 q 和 y 上的那些） 下降。
 
 `SKPaint`物件可讓您指定的文字、 字型家族和文字大小的色彩。 根據預設， [ `TextSize` ](xref:SkiaSharp.SKPaint.TextSize)屬性具有值為 12，會導致高解析度手機等裝置。 在任何東西的最簡單的應用程式，但您也需要大小一些資訊，您可以在顯示的文字。 `SKPaint`類別會定義[ `FontMetrics` ](xref:SkiaSharp.SKPaint.FontMetrics)屬性和數個[ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String))方法，但較少花俏的需求，如[ `FontSpacing` ](xref:SkiaSharp.SKPaint.FontSpacing)屬性間距連續文字行提供建議的值。
 
@@ -162,7 +162,6 @@ SKRect rect = new SKRect(strokeWidth / 2,
                          info.Height - strokeWidth / 2);
 canvas.DrawOval(rect, paint);
 ```
-
 
 ## <a name="related-links"></a>相關連結
 

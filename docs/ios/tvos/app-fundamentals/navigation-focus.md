@@ -7,17 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: fdf675e37bec07ef03576313befbaa9309ab9349
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b84150c8fdca04a9b21c28d126d221d2a9bc5a3f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291578"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769259"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>使用 Xamarin 中的 tvOS 導覽和焦點
 
 _本文涵蓋焦點的概念，以及如何使用它來呈現和處理 tvOS 應用程式內的導覽。_
-
 
 本文涵蓋[焦點](#Focus-and-Selection)的概念，以及如何使用它來處理 tvOS 應用程式使用者介面中的[導覽](#Navigation)。 我們將探討內建的 tvOS 導覽控制項如何使用焦點、反白顯示和選取，以提供您的 tvOS 應用程式的使用者介面流覽。
 
@@ -125,9 +124,6 @@ playButton.PreferredFocusedView = true;
 > [!IMPORTANT]
 > 只有`SetNeedsUpdateFocus`當呼叫的視圖控制器包含目前具有焦點的視圖時，才會發出呼叫的效果。
 
-
-
-
 <a name="Working-with-Focus-Guides" />
 
 ### <a name="working-with-focus-guides"></a>使用焦點指南
@@ -139,7 +135,7 @@ playButton.PreferredFocusedView = true;
 如需範例，請採取下列 UI 版面配置：
 
  [![](navigation-focus-images/guide01.png "使用焦點指南範例")](navigation-focus-images/guide01.png#lightbox)
- 
+
 因為 [**更多資訊**] 按鈕不會落在具有 [**購買**] 按鈕的水準和垂直格線上，所以使用者無法存取。 不過，您可以使用_焦點指南_輕鬆地修正這種情況，將移動提示提供給焦點引擎。 
 
 焦點指南（`UIFocusGuide`）會將視圖的非可見區域公開為焦點引擎的可設定焦點，因而允許將焦點重新導向至另一個視圖。
@@ -277,9 +273,6 @@ myImageView.AdjustsImageWhenAncestorFocused = true;
 ## <a name="summary"></a>總結
 
 本文涵蓋了焦點的概念，以及如何使用它來處理 tvOS 應用程式使用者介面中的導覽。 它會檢查內建的 tvOS 導覽控制項如何使用焦點、反白顯示和選取來提供導覽。 接下來，它探討了如何搭配視差和分層影像使用焦點，將目前導覽狀態的視覺線索提供給終端使用者。 最後，它會檢查使用焦點、焦點更新、將焦點放在集合中，以及啟用視差。
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

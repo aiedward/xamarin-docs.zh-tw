@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 16a37c7544f7ea364c13789fdc7bb42d89a74f5c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e4f1f1333c35a72e7243e892e7aac8d98603c973
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287246"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772594"
 ---
 # <a name="outline-views-in-xamarinmac"></a>Xamarin 中的大綱視圖
 
@@ -447,7 +447,6 @@ public override void SortDescriptorsChanged (NSOutlineView outlineView, NSSortDe
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
-
 接著，編輯`ProductOutlineDelegate.cs`檔案並新增下列方法：
 
 ```csharp
@@ -469,7 +468,6 @@ public override bool ShouldSelectItem (NSOutlineView outlineView, NSObject item)
 [![](outline-view-images/select02.png "屬性偵測器")](outline-view-images/select02.png#lightbox)
 
 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
-
 
 接著，編輯`ProductOutlineDelegate.cs`檔案並新增下列方法：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 12/14/2016
-ms.openlocfilehash: c5527db543a0b0d5218c37f0d75e22afcd59297a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 292734c0622ab35d5e48eec47593c3ffe4dc27e6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293152"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768682"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello，watchOS –逐步解說
 
@@ -42,7 +42,6 @@ ms.locfileid: "70293152"
 
 按兩下監看式應用程式中的介面，以啟動 Xamarin iOS 設計工具（如果您是在 Mac 上，您也可以用滑鼠右鍵按一下並**開啟，> Xcode Interface Builder**）
 
-
 1. 確定 [**工具箱**] 和 [**屬性**] 板可見，
 1. 按一下以選取介面控制器，
 1. 將介面控制器的識別碼和標題設定為**interfaceController**和**Hi Watch**，
@@ -62,7 +61,6 @@ ms.locfileid: "70293152"
     ![](hello-watch-images/vs-interfacecontrollerattributes.png "將介面控制器的識別碼和標題設定為 interfaceController 和 Hi Watch")
 
 -----
-
 
 建立您的 UI：
 
@@ -154,7 +152,6 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 恭喜您，您已經擁有一個監看式應用程式！
 
 ![](hello-watch-images/running.png "在模擬器中執行的應用程式")
-
 
 ## <a name="related-links"></a>相關連結
 

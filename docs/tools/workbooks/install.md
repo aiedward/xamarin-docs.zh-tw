@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2018
-ms.openlocfilehash: 5292a052d4f93af9b21cc7cbc51891c99d6f9403
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4638d599d72ea2a6375aa2afff5974ef8c09308d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285239"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772126"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝和需求
 
@@ -50,7 +50,6 @@ ms.locfileid: "70285239"
 |WPF|只有在 Windows 上才支援|
 |主控台（.NET Framework）|在 Mac 和 Windows 上支援|
 |主控台（.NET Core）|在 Mac 和 Windows 上支援|
-
 
 ## <a name="reporting-bugs"></a>報告錯誤
 

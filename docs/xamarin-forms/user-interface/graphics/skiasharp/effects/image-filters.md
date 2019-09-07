@@ -7,12 +7,12 @@ ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: 10b61a7279964e8e1fb76a88be4f253e96b59908
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: f93f0462d476daaaa551833391b1be1865795476
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199193"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770543"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp 映像篩選器
 
@@ -28,7 +28,7 @@ ms.locfileid: "70199193"
 
 ## <a name="blurring-vector-graphics-and-bitmaps"></a>向量圖形和點陣圖模糊處理
 
-[`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*)靜態方法所建立的模糊效果, 在[`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter)類別中的模糊方法上有很大的好處:影像篩選可能會模糊整個點陣圖。 方法具有下列語法：
+[`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*)靜態方法所建立的模糊效果，在[`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter)類別中的模糊方法上有很大的好處：影像篩選可能會模糊整個點陣圖。 方法具有下列語法：
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -76,7 +76,6 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 ```
 
 程式碼後置檔案會使用兩個`Slider`值來呼叫`SKImageFilter.CreateBlur`如`SKPaint`物件，用來顯示文字和點陣圖：
-
 
 ```csharp
 public partial class ImageBlurExperimentPage : ContentPage
@@ -427,7 +426,7 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-第一個引數`SKImageFilter.CreateDistantLitDiffuse`是燈光的方向。 正 X 和 Y 座標表示，光是向右再向下箭。 在畫面的正 Z 座標點。 XAML 檔案可讓您選取負的 Z 值, 但這只是您可以查看發生什麼情況:在概念上, 負 Z 座標會導致光線指向螢幕。 任何其他再小型的負值，光源效果會停止運作。
+第一個引數`SKImageFilter.CreateDistantLitDiffuse`是燈光的方向。 正 X 和 Y 座標表示，光是向右再向下箭。 在畫面的正 Z 座標點。 XAML 檔案可讓您選取負的 Z 值，但這只是您可以查看發生什麼情況：在概念上，負 Z 座標會導致光線指向螢幕。 任何其他再小型的負值，光源效果會停止運作。
 
 `surfaceScale`引數的範圍可以從-1 到 1。 （高或較低的值有任何進一步的作用）。這些是相對 Z 軸中的值，指出從畫布介面圖形物件 （在此案例中的文字字串） 的替代。 使用負數值，來引發的畫布，介面上方的文字字串和要按住至畫布的正數值。
 
@@ -439,7 +438,7 @@ public partial class DistantLightExperimentPage : ContentPage
 
 Android 的螢幕擷取畫面都有 Z 值為 0，這表示到右邊，僅指光線。 不以醒目顯示背景和發亮的文字字串的介面不是其中一個。 燈光只會影響文字的邊緣十分難以察覺的效果。
 
-「[轉譯」轉換](../transforms/translate.md)一文中示範了浮凸和陰文文字的替代方法:文字字串會以不同的色彩顯示兩次, 彼此之間有互相的時差。
+「[轉譯」轉換](../transforms/translate.md)一文中示範了浮凸和陰文文字的替代方法：文字字串會以不同的色彩顯示兩次，彼此之間有互相的時差。
 
 ## <a name="related-links"></a>相關連結
 

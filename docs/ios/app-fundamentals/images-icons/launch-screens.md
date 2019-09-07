@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2018
-ms.openlocfilehash: d0d5452c2b79fb674e473efd50aaf587d64c4544
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18d33dfcef109fd29f32969b9bdd15b8a2dc475a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290256"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70764045"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>適用于 Xamarin iOS 應用程式的啟動畫面
 
@@ -131,7 +131,7 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
     - 若要編輯分鏡腳本檔案，Visual Studio 需要 Mac 組建主機的作用中連接。 如需詳細資訊，請參閱連線[到 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南。
 
 7. 在 iOS 設計工具中，選擇要在其上預覽啟動畫面分鏡腳本的裝置和方向。 開啟底部工具列上的 [裝置選取] 面板，然後選取 [ **IPhone 4S** ] 和 [**縱向**]： 
- 
+
     ![裝置選擇工具列](launch-screens-images/launch07-vs.png)
 
     - 請注意，選取裝置和方向只會變更 iOS 設計工具預覽設計的方式。 無論在此處進行的選擇為何，除非已使用 [**編輯特性**] 按鈕來指定，否則新加入的條件約束會套用到所有裝置和方向。 
@@ -196,7 +196,6 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 接下來，按兩下**方案總管**中`Info.plist`的檔案以開啟它進行編輯。 在 [**啟動畫面**] 底下，選取上方建立的新分鏡腳本檔案。
 
 ![](launch-screens-images/storyboard09.png "選取上方建立的新分鏡腳本檔案")
-
 
 若要使用新的腳本做為啟動畫面，請執行下列動作：
 

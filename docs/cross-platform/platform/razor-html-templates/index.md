@@ -6,12 +6,12 @@ ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
 author: conceptdev
 ms.author: crdun
 ms.date: 07/24/2018
-ms.openlocfilehash: ccad60f749732ae2d0bf8e9852859b13af3a629e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f9f45976d0d7db42be18fede2f21825a385bea4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284926"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765339"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 範本建立 HTML 視圖
 
@@ -198,7 +198,6 @@ webView.EvaluateJavascript (js);
 - 能夠攔截程式碼中C#的導覽要求，
 - 從C#程式碼呼叫 JavaScript 的能力。
 
-
 下一節介紹 Razor，這可讓您輕鬆地建立要在混合式應用程式中使用的 HTML。
 
 ## <a name="what-is-razor"></a>Razor 是什麼？
@@ -235,7 +234,6 @@ Razor 範本檔案的副檔名為 **.** #。 您可以從 [**新增**檔案] 對
 - IDE 會自動產生範本的部分類別（副檔名為**cshtml**的檔案）。 您可以查看此程式碼，但不能進行編輯。
  ![RazorView 部分類別的名稱為 RazorView，以符合. cshtml 範本檔案名。](images/image6_125x34.png) 這是用來在程式碼中C#參考範本的名稱。
 - `@using`語句也可以包含在 Razor 範本的頂端，以包含其他命名空間。
-
 
 接著，您可以使用下列C#程式碼來產生最終的 HTML 輸出。 請注意，我們將模型指定為字串 "Hello World"，這會併入轉譯的範本輸出中。
 
@@ -379,8 +377,6 @@ var page = template.GenerateString ();
 - **iOS > App > Web 應用程式**
 - **ASP.NET MVC 專案**
 
-
-
 [**新增解決方案**] 視窗在 IPhone 和 Android 專案中看起來像這樣：在右側的解決方案描述會強調 Razor 範本化引擎的支援。
 
  ![建立 iPhone 和 Android 解決方案](images/image13_1139x959.png)
@@ -399,7 +395,6 @@ IPhone 和 Android 專案的預設範本解決方案內容如下所示：
 - Razor. cshtml 範本檔案，例如**RazorView。**
 - Razor 範本中參考的模型類別，例如**ExampleModel.cs** 。
 - 建立 web view 並轉譯範本的平臺特定類別，例如 Android 上的`MainActivity` `iPhoneHybridViewController`和 iOS 上的。
-
 
 下一節將說明專案的工作方式。
 
@@ -494,7 +489,6 @@ HTML 非常適合用來建立原型，並顯示 web 最適合的專案類型，�
 - **RazorTodo** -使用 Razor 範本的完全 HTML 驅動應用程式。
 - **RazorNativeTodo** -使用適用于 IOS 和 Android 的原生清單視圖控制項，但以 HTML 和 Razor 顯示編輯畫面。
 
-
 這些 Xamarin 應用程式會在 iOS 和 Android 上執行，利用可移植的類別庫（Pcl）來共用一般程式碼，例如資料庫和模型類別。 您也可以在 PCL 中**包含 Razor 樣板**範本，以便輕鬆地跨平臺共用它們。
 
 這兩個範例應用程式都是從原生平臺納入 Twitter 共用和文字轉換語音 Api，示範使用 Xamarin 的混合式應用程式仍可從 HTML Razor 範本驅動的視圖存取所有基礎功能。
@@ -507,7 +501,6 @@ HTML 非常適合用來建立原型，並顯示 web 最適合的專案類型，�
 
 - 效能-原生的滾動控制項使用虛擬化來確保快速、順暢地滾動，即使有非常長的資料清單也一樣。
 - 原生體驗-可以輕鬆地啟用平臺特定的 UI 元素，例如 iOS 和 Android 中的快速滾動索引支援。
-
 
 使用 Xamarin 建立混合式應用程式的主要優點是，您可以從完全以 HTML 為導向的使用者介面（例如第一個範例）開始，然後在必要時新增平臺特定的功能（如第二個範例所示）。 IOS 和 Android 上的原生清單畫面和 HTML Razor 編輯畫面如下所示。
 

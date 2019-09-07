@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 3b135f916225f896680cfb73175ba0568928be06
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 40a50ecf93c8b77577e8e74df2e134b0ce3f80b6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655752"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767544"
 ---
 # <a name="xaml-markup-extensions"></a>XAML 標記延伸
 
@@ -36,7 +36,7 @@ XAML 標記延伸模組可協助藉由使用元素屬性來設定從常值文字
 
 您可能會改為想要設定`Color`屬性值儲存在資源字典中，或您已建立，類別的靜態屬性的值或型別的屬性`Color`的另一個項目在頁面上，或從建構分隔色調、 飽和度和亮度值。
 
-所有這些選項都可以使用 XAML 標記延伸的。 但不要讓片語「標記延伸」怪嚇人您:XAML 標記延伸*不*是 XML 的延伸。 即使使用 XAML 標記延伸，XAML 永遠是合法的 XML。
+所有這些選項都可以使用 XAML 標記延伸的。 但不要讓片語「標記延伸」怪嚇人您：XAML 標記延伸*不*是 XML 的延伸。 即使使用 XAML 標記延伸，XAML 永遠是合法的 XML。
 
 使用標記延伸的其實只是以不同方式來表示項目的屬性。 XAML 標記延伸是通常是可辨識的大括號括住的屬性設定：
 
@@ -55,8 +55,6 @@ XAML 標記延伸模組可協助藉由使用元素屬性來設定從常值文字
 ## <a name="creating-xaml-markup-extensionscreatingmd"></a>[建立 XAML 標記延伸](creating.md)
 
 撰寫您自己自訂的 XAML 標記延伸模組。
-
-
 
 ## <a name="related-links"></a>相關連結
 

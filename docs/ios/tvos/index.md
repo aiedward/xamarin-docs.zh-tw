@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
 ms.date: 02/02/2018
-ms.openlocfilehash: 688b2b431ca385e8e5bc4ae721e3eaf4049a193d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e95d7a01b2743db119f7982db1f9ed34bc4d02a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283646"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769627"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Xamarin 中的 tvOS 簡介
 
@@ -71,7 +71,6 @@ Apple TV 平臺開放給開發人員使用，讓他們能夠建立豐富的沉�
 如果您在使用 Xamarin 建立 tvOS 時遇到任何問題，請查看[版本](https://docs.microsoft.com/xamarin/ios/release-notes/)資訊、 [xamarin iOS 論壇](https://forums.xamarin.com/categories/ios)、 [Xamarin Bugzilla 追蹤](https://bugzilla.xamarin.com/query.cgi?product=iOS)器和[GitHub](https://github.com/xamarin/xamarin-macios/issues)以瞭解現有的問題。
 
 [在 GitHub 上](https://github.com/xamarin/xamarin-macios/issues)報告新的問題和建議。
-
 
 ## <a name="related-links"></a>相關連結
 

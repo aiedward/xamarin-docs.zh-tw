@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 78270ee181f56f4b82637ed74a10a916d8fa4a77
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9d0ffbd0da99134dfae3e42fe8baf4111c80935f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285455"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762996"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS 的 Apple Pay 功能
 
@@ -35,7 +35,7 @@ Apple Pay 可讓使用者透過其 iOS 裝置支付實體產品的費用。 本�
 Merchant ID (商家識別碼) 可用來讓 Apple Pay 知道您可以接受付款，而且此識別碼會傳遞給 PassKit 的 `PaymentRequest` 方法並在 Apple Pay 權利中使用：
 
 1. 瀏覽至 [Apple Developer Center](https://developer.apple.com/account/) \(Apple 開發人員中心\)，然後移至 [Certificates, Identifier, and Profiles] \(憑證、識別碼及設定檔\) 區段： 
- 
+
     ![在 Developer Center (開發人員中心) 選取 [Merchant ID] \(商家識別碼\)](apple-pay-capabilities-images/image57.png)
 
 2. 在 [Identifiers] \(識別碼\) 底下，選取 [Merchant IDs] \(商家識別碼\)，然後選取 [+] 來建立新的商家識別碼：  
@@ -149,7 +149,7 @@ Apple 需要使用憑證來加密與交易關聯的敏感性資料。 每個建�
 * [Apple Pay 簡介](~/ios/platform/apple-pay.md)
 
 ## <a name="next-steps"></a>後續步驟
- 
+
 以下清單說明可能需要進行的額外步驟：
 
 * 在您的應用程式中使用架構命名空間。

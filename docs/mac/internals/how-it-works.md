@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 05/25/2017
-ms.openlocfilehash: 3a2ba8f56604dcf42604c2cb653931d0397a0d82
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 24ddd71fe1468edc70ec4d487dc2cb2dbd4da1b6
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287722"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769816"
 ---
 # <a name="how-xamarinmac-works"></a>Xamarin.Mac 的運作方式
 
@@ -160,4 +160,3 @@ Xamarin 的新功能是能夠在應用程式組建週期中進行 IL 程式碼�
 - [Theading 基本概念](~/ios/app-fundamentals/threading.md)
 - [委派、通訊協定和事件](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 - [有關`newrefcount`](~/ios/internals/newrefcount.md)
-

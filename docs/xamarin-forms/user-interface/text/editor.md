@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2018
-ms.openlocfilehash: 1f9cd0acd201f124f4a4577fec23dce52aee627d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 684bdb21309028e02362dcc6bfd8c91c539430bd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657513"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770187"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
@@ -61,7 +61,7 @@ var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Co
 
 ### <a name="preventing-text-entry"></a>防止文字輸入
 
-藉[`Editor`](xref:Xamarin.Forms.Editor)由`false`將屬性 (具有的預設值) 設定為`true`, 可防止使用者修改中的文字: `IsReadOnly`
+藉[`Editor`](xref:Xamarin.Forms.Editor)由`false`將屬性（具有的預設值）設定為`true`，可防止使用者修改中的文字： `IsReadOnly`
 
 ```xaml
 <Editor Text="This is a read-only Editor"
@@ -73,7 +73,7 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 ```
 
 > [!NOTE]
-> 屬性不會改變的視覺外觀[`Editor`](xref:Xamarin.Forms.Editor), 不同`IsEnabled`于也會將的視覺外觀`Editor`變更為灰色的屬性。 `IsReadonly`
+> 屬性不會改變的視覺外觀[`Editor`](xref:Xamarin.Forms.Editor)，不同`IsEnabled`于也會將的視覺外觀`Editor`變更為灰色的屬性。 `IsReadonly`
 
 ### <a name="limiting-input-length"></a>限制的輸入的長度
 
@@ -172,7 +172,7 @@ editor.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.Capi
 
 ### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼字檢查
 
-          [
+[
           `IsSpellCheckEnabled`
           ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性會控制是否拼字檢查 已啟用。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會指出拼字錯誤。
 
@@ -193,7 +193,7 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 
 `IsTextPredictionEnabled`屬性控制是否啟用文字預測和自動文字更正。 根據預設，此屬性設為`true`。 當使用者輸入文字，則會看到文字預測。
 
-不過, 對於某些文字輸入案例, 例如輸入使用者名稱、文字預測和自動文字更正會提供負面的體驗, 而且應該藉由將`IsTextPredictionEnabled`屬性設定為來`false`停用:
+不過，對於某些文字輸入案例，例如輸入使用者名稱、文字預測和自動文字更正會提供負面的體驗，而且應該藉由將`IsTextPredictionEnabled`屬性設定為來`false`停用：
 
 ```xaml
 <Editor ... IsTextPredictionEnabled="false" />
@@ -204,7 +204,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 ```
 
 > [!NOTE]
-> 當屬性設定為`false`, 且未使用自訂鍵盤時, 會停用文字預測和自動文字更正。 `IsTextPredictionEnabled` 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已設定該停用文字預測`IsTextPredictionEnabled`屬性會被忽略。 因此，無法使用屬性來啟用文字預測`Keyboard`，明確地停用。
+> 當屬性設定為`false`，且未使用自訂鍵盤時，會停用文字預測和自動文字更正。 `IsTextPredictionEnabled` 不過，如果[ `Keyboard` ](xref:Xamarin.Forms.Keyboard)已設定該停用文字預測`IsTextPredictionEnabled`屬性會被忽略。 因此，無法使用屬性來啟用文字預測`Keyboard`，明確地停用。
 
 ### <a name="colors"></a>色彩
 
@@ -266,7 +266,7 @@ public partial class EditorPage : ContentPage
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用來做出回應的互動完成`Editor`。 `Completed`當使用者在鍵盤上輸入 return 鍵 (或按 UWP 上的 Tab 鍵) 來結束具有欄位的輸入時, 會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
+`Completed`事件用來做出回應的互動完成`Editor`。 `Completed`當使用者在鍵盤上輸入 return 鍵（或按 UWP 上的 Tab 鍵）來結束具有欄位的輸入時，會引發。 事件處理常式是泛用事件處理常式，採取寄件者和`EventArgs`:
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -358,7 +358,6 @@ Title="Editor Demo">
     </ContentPage.Content>
 </ContentPage>
 ```
-
 
 ## <a name="related-links"></a>相關連結
 

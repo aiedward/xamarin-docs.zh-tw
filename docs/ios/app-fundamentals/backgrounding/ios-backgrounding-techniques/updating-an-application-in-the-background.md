@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 2e0bb4fc0468f938e7a4403513fe101db2282561
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1d5a227f4acdba319eefc91b4991dead5a036eb9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286993"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756323"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>在背景中更新 Xamarin iOS 應用程式
 
@@ -22,7 +22,6 @@ ms.locfileid: "70286993"
 1. *背景提取（iOS 7 +）* -重新整理*經常*更新之*非關鍵性*內容的時態性方法。
 1. *遠端通知（iOS 7 +）* -接收推播通知的應用程式可以使用通知來觸發背景內容重新整理。 這個方法可以用來更新具有*重要、時間*緊迫的內容（*偶爾*會更新）。
 
-
 下列各節涵蓋這些選項的基本概念。
 
 ## <a name="region-monitoring-and-significant-location-changes"></a>區域監視和重要位置變更
@@ -31,7 +30,6 @@ iOS 提供兩個具有背景處理功能的位置感知 Api：
 
 1. *區域監視*是設定具有界限的區域，以及在使用者進入或離開區域時喚醒裝置的程式。 區域是迴圈的，而且可以有不同的大小。 當使用者跨越區域界限時，裝置將會喚醒以處理事件，通常是藉由引發通知或開始工作。 區域監視需要 GPS，並增加電池和資料使用量。
 1. *重要的位置變更服務*是一種更簡單、省電的選項，可用於具有行動電話通訊無線電的裝置。 當裝置切換資料格塔時，會通知接聽大量位置變更的應用程式。 這項服務可用來喚醒已暫停或已終止的應用程式，並提供在背景檢查新內容的機會。 除非與[背景](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md)工作配對，否則背景活動限制為大約10秒。
-
 
 應用程式不需要使用這些位置`UIBackgroundMode`感知 api 的位置。 由於 iOS 不會追蹤使用者位置中的變更喚醒裝置時可執行檔工作類型，因此，這些 Api 會提供在 iOS 6 背景中更新內容的解決方法。 請*記住，使用以位置為基礎的 api 觸發背景更新將會在裝置資源上繪製，而且可能會混淆不了解為什麼應用程式需要存取其位置的使用者*。 在尚未使用位置 Api 的應用程式中，針對背景處理執列區域監視或重大位置變更時，請謹慎使用。
 
@@ -76,12 +74,10 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 1. `UIBackgroundFetchResult.NoData`-在提取新內容時呼叫，但沒有可用的內容。
 1. `UIBackgroundFetchResult.Failed`-適用于錯誤處理，當提取無法通過時，就會呼叫此方法。
 
-
 使用背景提取的應用程式可以進行呼叫，以從背景更新 UI。 當使用者開啟應用程式時，UI 將會是最新狀態並顯示新內容。 這也會更新應用程式的應用程式切換器快照，讓使用者可以看到應用程式有新內容的時間。
 
 > [!IMPORTANT]
 > 呼叫`PerformFetch`之後，應用程式大約需要30秒的時間來開始下載新的內容，並呼叫完成處理常式區塊。 如果這段時間過長，應用程式將會終止。 下載媒體或其他大型檔案時，請考慮使用背景提取與_背景傳送服務_。
-
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
 
@@ -91,13 +87,11 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 1. `BackgroundFetchIntervalMinimum`-讓系統根據使用者模式、電池壽命、資料使用方式，以及其他應用程式的需求，決定要提取的頻率。
 1. `BackgroundFetchIntervalCustom`-如果您知道應用程式內容的更新頻率，您可以在每次提取之後指定「睡眠」間隔，在這段期間，應用程式將無法取得新的內容。 一旦該間隔完成，系統就會決定何時提取內容。
 
-
 `BackgroundFetchIntervalMinimum` 和`BackgroundFetchIntervalCustom`都依賴系統來排程提取。 此間隔是動態的，可適應裝置的需求以及個別使用者的習慣。 例如，如果某個使用者每天早上檢查應用程式，而另一個檢查每小時，則 iOS 會確保每個使用者在每次開啟應用程式時都是最新的內容。
 
 背景提取應用於經常更新為非重大內容的應用程式。 對於具有重大更新的應用程式，則應使用遠端通知。 遠端通知是以背景提取為基礎，並共用相同的完成處理常式。 接下來我們將深入探討遠端通知。
 
  <a name="remote_notifications" />
-
 
 ## <a name="remote-notifications-ios-7-and-greater"></a>遠端通知（iOS 7 及更新版本）
 
@@ -135,7 +129,6 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 > [!IMPORTANT]
 > 由於遠端通知中的更新機制是以背景提取為基礎，因此應用程式必須開始下載新的內容，並在接收通知的30秒內呼叫完成處理常式區塊，否則 iOS 會終止應用程式。 在背景下載媒體或其他大型檔案時，請考慮將遠端通知與_背景傳送服務_配對。
 
-
 ### <a name="silent-remote-notifications"></a>無訊息遠端通知
 
 遠端通知是通知應用程式更新並開始提取新內容的簡單方法，但在某些情況下，我們不需要通知使用者已變更某個專案。 例如，如果使用者將檔案標示為要進行同步，我們就不需要在每次檔案更新時通知他們。 檔案同步不是令人驚訝的事件，也不需要使用者立即注意。 當使用者開啟檔案時，就會預期該檔案是最新的。
@@ -158,7 +151,6 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 > [!IMPORTANT]
 > Apple 鼓勵開發人員在應用程式需要時傳送無訊息推播通知，並讓 APNs 排程其傳遞。
-
 
 在本節中，我們已討論在背景中重新整理內容的各種選項，以執行不符合背景必要類別的工作。 現在，讓我們來看看其中一些 Api 的實際運作。
 

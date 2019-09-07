@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 8e6f37fb607f4b0bc0ddfd41ad86dfe7ecbc03df
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 28e424f4946d05798b9ba309891845d9eab998b1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650533"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771814"
 ---
 # <a name="implementing-a-video-player"></a>實作影片播放程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 在 Xamarin.Forms 應用程式中播放影片檔案，有時會較為適當。 這一系列的文章討論如何編寫自訂轉譯器，用於 iOS、Android，以及 Xamarin.Forms 類別名為 `VideoPlayer` 的通用 Windows 平台 (UWP)。
 
@@ -60,15 +60,11 @@ ms.locfileid: "68650533"
 
 ## <a name="custom-video-transport-controlscustom-transportmd"></a>[自訂影片傳輸控制項](custom-transport.md)
 
-雖然每個平台上的影片播放程式會各自提供按鈕形式的 [播放]  和 [暫停]  傳輸控制項，您也可以隱藏這些按鈕並改用您自己的。 本文會說明如何操作。
+雖然每個平台上的影片播放程式會各自提供按鈕形式的 [播放] 和 [暫停] 傳輸控制項，您也可以隱藏這些按鈕並改用您自己的。 本文會說明如何操作。
 
 ## <a name="custom-video-positioningcustom-positioningmd"></a>[自訂影片定位](custom-positioning.md)
 
 每個平台的影片播放程式都有定位列，會顯示影片的進度，並可讓您快轉或倒轉至特定位置。 本文會示範如何使用自訂控制項取代該定位列。
-
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

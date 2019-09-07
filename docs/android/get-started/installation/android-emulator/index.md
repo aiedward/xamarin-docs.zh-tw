@@ -7,17 +7,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 6ce8f633cdc0fd4616673eb047d640a8703b3a30
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: cb8dc64a8c40496aaf2ea23a834effb58436618a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50102525"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759080"
 ---
 # <a name="android-emulator-setup"></a>Android Emulator 安裝
 
 本指南說明如何準備 Android Emulator 來測試您的應用程式。
-
 
 ## <a name="overview"></a>總覽
 
@@ -45,7 +44,5 @@ Android Emulator 可在各種不同組態中執行，以模擬不同裝置。 �
 
 在您設定好 Android Emulator 之後，請參閱 [Debugging on the Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) (在 Android Emulator 上偵錯)，以了解如何啟動模擬器，並用其測試和偵錯應用程式的相關資訊。
 
-
 > [!NOTE]
 > 自 Android SDK Tools **26.0.1** 版起，Google 移除了對現有 AVD/SDK 管理員的支援，改而提供其新推出的 CLI (命令列介面) 工具。 由於此項取代變更；因此，現在會針對 Android Tools 26.0.1 和更新版本改用 Xamarin SDK/Device Manager，而非 Google SDK/Device Manager。 如需 Xamarin SDK Manager 的詳細資訊，請參閱[設定 Xamarin.Android 的 Android SDK](~/android/get-started/installation/android-sdk.md)。
-

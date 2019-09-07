@@ -6,17 +6,16 @@ ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: conceptdev
 ms.author: crdun
 ms.date: 04/07/2016
-ms.openlocfilehash: dde5b2429622c967fa4419700ce8fe9860afbb10
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 273b7f2eb40f1fa8495e0a0e8e18fa947241f389
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290843"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765407"
 ---
 # <a name="working-with-native-types-in-cross-platform-apps"></a>在跨平台應用程式中使用原生類型
 
 _本文說明如何在跨平臺應用程式中使用新的 iOS Unified API 原生類型（nint、nuint、nfloat），其中程式碼與非 iOS 裝置（例如 Android 或 Windows Phone Os）共用。_
-
 
 64類型的原生類型適用于 iOS 和 Mac Api。 如果您要撰寫在 Android 或 Windows 上執行的共用程式碼，您必須管理將整合類型轉換成可共用的一般 .NET 類型。
 
@@ -211,7 +210,6 @@ namespace NativeShared
 
 如果程式碼是在非 Unified API 裝置上編譯並執行，則`using nfloat = global::System.Single;`會將`nfloat`對應至`Single` ，以隱含`CalculateArea`方式轉換為`float` ，讓取用的前端應用程式可以呼叫方法，而不需要他人.
 
-
 #### <a name="using-type-conversions-in-the-front-end-app"></a>在前端應用程式中使用類型轉換
 
 如果您的前端應用程式只會對共用程式碼程式庫進行少數呼叫，另一個方案可能是讓程式庫保持不變，並在呼叫現有的常式時，于 Xamarin 或 Xamarin 應用程式中進行類型轉換。 例如：
@@ -228,7 +226,6 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 
 根據我們的應用程式架構，我們最後可能會使用一或多個上述解決方案來支援跨平臺程式碼中的原生資料類型（如有需要）。
 
-
 ## <a name="xamarinforms-applications"></a>Xamarin. Forms 應用程式
 
 以下是針對跨平臺 Ui （也會與 Unified API 應用程式共用）使用 Xamarin 的必要項：
@@ -243,8 +240,6 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 ## <a name="summary"></a>總結
 
 在本文中，我們已瞭解如何在 Unified API 應用程式中使用原生資料類型，以及其跨平臺的影響。 我們已提供數個解決方案，可用於必須在跨平臺程式庫中使用新原生資料類型的情況。 此外，我們也看到了在 Xamarin 中支援統一 Api 的快速指南。表單跨平臺應用程式。
-
-
 
 ## <a name="related-links"></a>相關連結
 

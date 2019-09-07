@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: 1d6edb9107c3d6ae04c91ebcf874fb92a7f911b3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ca782e57964adadd85412030db2247f0de690a6b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280046"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769658"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的訊息應用程式延伸模組基本概念
 
@@ -337,7 +337,6 @@ namespace MonkeyStickers
         public override void ViewDidLoad ()
         {
             base.ViewDidLoad ();
-
 
             // Create new browser and configure it
             BrowserViewController = new StickerBrowserViewController (MSStickerSize.Regular);
@@ -707,8 +706,6 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 ## <a name="summary"></a>總結
 
 本文涵蓋了在與**訊息**應用程式整合的 Xamarin iOS 解決方案中包含訊息應用程式延伸模組，並為使用者提供新功能。 它涵蓋了使用延伸模組來傳送文字、貼紙、媒體檔案和互動式訊息。
-
-
 
 ## <a name="related-links"></a>相關連結
 

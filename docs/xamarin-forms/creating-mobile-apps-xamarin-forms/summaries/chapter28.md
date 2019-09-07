@@ -1,18 +1,18 @@
 ---
 title: 第 28 章摘要。 位置與地圖
-description: 使用 Xamarin 建立 Mobile Apps:第 28 章摘要。 位置與地圖
+description: 使用 Xamarin 建立 Mobile Apps：第 28 章摘要。 位置與地圖
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 846b7fa3c905b208771a110a013283bd77214b72
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8c0b60a5064bbcf605f66a7b9dcce5da1f84a015
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511692"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770889"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章摘要。 位置與地圖
 
@@ -58,7 +58,7 @@ Xamarin.Forms`Map`類別不包含的程式，以取得使用者的地理位置�
 
 ### <a name="the-location-tracker-api"></a>位置追蹤程式 API
 
-          [
+[
           **Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)方案包含位置追蹤器應用程式開發介面的程式碼。 [ `GeographicLocation` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構封裝緯度和經度。 [ `ILocationTracker` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種方法可以啟動並暫停位置追蹤程式及使用新的位置時的事件。
 
 #### <a name="the-ios-location-manager"></a>IOS 位置管理員
@@ -235,8 +235,6 @@ IOS 應用程式使用`Map`需要在 info.plist 檔案中的兩行。
 [ **Xamarin.Forms.Maps** ](xref:Xamarin.Forms.Maps)組件也包含[ `Geocoder` ](xref:Xamarin.Forms.Maps.Geocoder)類別[ `GetPositionsForAddressAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))將轉換的方法零或更多可能的地理位置，和另一種方法的文字位址[ `GetAddressesForPositionAsync` ](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position))以將轉換成另一個方向。
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml)檔案並[GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs)程式碼後置檔案會示範這項功能。
-
-
 
 ## <a name="related-links"></a>相關連結
 

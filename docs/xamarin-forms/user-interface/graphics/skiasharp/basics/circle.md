@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 876379a1d515517054d9e0fa2657e8bc10dc749f
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 110b2646fb7e1bda00c628749489c14a540e2b54
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888523"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759535"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp 繪圖簡單的圓形
 
@@ -154,10 +154,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 > [!NOTE]
 > `SKPaint`類別會定義[ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)啟用消除鋸齒呈現圖形。 消除鋸齒通常會產生以視覺化方式較平滑的邊緣，因此您可能會想要將此屬性設定為`true`中的大部分您`SKPaint`物件。 為了簡單起見，這個屬性就_不_中大部分的範例頁面的設定。
 
-雖然圓形外框的寬度是指定為25個圖元&mdash;或圓形&mdash;半徑的四分之一, 但其外觀較輕, 而且有很好的理由:線條寬度的一半會被藍色圓圈遮蔽。 引數`DrawCircle`方法定義抽象圓形的幾何座標。 藍色的內部會調整成最接近像素，該維度，但 25 像素寬大綱 information officer 幾何圓形&mdash;一半內部和外部的下半部。
+雖然圓形外框的寬度是指定為25個圖元&mdash;或圓形&mdash;半徑的四分之一，但其外觀較輕，而且有很好的理由：線條寬度的一半會被藍色圓圈遮蔽。 引數`DrawCircle`方法定義抽象圓形的幾何座標。 藍色的內部會調整成最接近像素，該維度，但 25 像素寬大綱 information officer 幾何圓形&mdash;一半內部和外部的下半部。
 
 中的下一個範例[整合 Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文件會以視覺化方式示範。
-
 
 ## <a name="related-links"></a>相關連結
 

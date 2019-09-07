@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 722e09cc292bad682a49ee0cba4ff0ca0f39a844
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ff29ac58db618d4a644bbaa5a95ac8624726827f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291635"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770053"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin 中的分鏡腳本簡介
 
@@ -111,7 +111,6 @@ SourceWriter 程式碼有完整註解，在適當的情況下會提供從關鍵�
 ## <a name="summary"></a>總結
 
 本文已快速探討如何在 Xamarin. Mac 應用程式中使用分鏡腳本。 我們已瞭解如何使用分鏡腳本建立新的應用程式，以及如何定義使用者介面。 我們也看到了如何使用 segue 在不同的視窗和檢視狀態之間流覽。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: 114d00b0d79b497201b3185a1443b8c8f9699c31
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8c338f8a5b2f1d41b1ea0f61778a1c14eb84ce08
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283550"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769148"
 ---
 # <a name="introduction-to-tvos-10"></a>tvOS 10 簡介
 
@@ -83,8 +83,6 @@ IOS （而非 tvOS）上提供的數個架構已提供給 tvOS 10，例如：
 ## <a name="deprecated-apis"></a>已被取代的 API
 
 TvOS 10 不會取代任何 Api 或架構。 如需 API 修改的完整清單，請參閱 Apple 的[tvOS 10 Api 差異](https://developer.apple.com/library/prerelease/content/releasenotes/General/tvOS10APIDiffs/index.html)檔。
-
-
 
 ## <a name="related-links"></a>相關連結
 

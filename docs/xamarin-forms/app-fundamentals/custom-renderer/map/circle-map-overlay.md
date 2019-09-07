@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: db666fc6a547e3fa089475ba5912774c1af3be0d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 551dea5455ffd060d808aa11e8996c5984745fda
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650752"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771902"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>醒目提示地圖上的循環區域
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
 
 _本文說明如何將循環重疊新增至地圖中，以醒目提示地圖的循環區域。_
 
@@ -305,7 +305,6 @@ namespace MapOverlay.UWP
 - 圓形可透過具現化 `MapPolygon` 物件來建立。 將其 `Path` 屬性設為包含圖形座標的 `Geopath` 物件，使用 `MapPolygon` 類別顯示地圖上的多點圖形。
 - 將多邊形新增至 `MapControl.MapElements` 集合以將其轉譯在地圖上。
 
-
 ```
 List<Position> GenerateCircleCoordinates(Position position, double radius)
 {
@@ -331,7 +330,6 @@ List<Position> GenerateCircleCoordinates(Position position, double radius)
 ## <a name="summary"></a>總結
 
 本文說明了如何將循環重疊新增至地圖中，以醒目提示地圖的循環區域。
-
 
 ## <a name="related-links"></a>相關連結
 

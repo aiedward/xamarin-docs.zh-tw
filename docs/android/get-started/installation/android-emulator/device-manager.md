@@ -9,12 +9,12 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 200ee3fdee3274063becec19fbc6d1504e132a88
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 60dcbd6f59e622fe5a1272bd2d61540b03e510e4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70226650"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70758435"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虛擬裝置
 
@@ -56,7 +56,6 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 
   [![安裝 Android SDK Tools](device-manager-images/win/02-sdk-tools-sml.png)](device-manager-images/win/02-sdk-tools.png#lightbox)
 
-
 ## <a name="launching-the-device-manager"></a>啟動裝置管理員
 
 按一下 [工具] > [Android] > [Android Device Manager]，從 [工具] 功能表啟動 Android Device Manager：
@@ -66,7 +65,6 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 如果啟動時出現下列錯誤對話方塊，請參閱[疑難排解](#troubleshooting)一節來取得因應措施的指示：
 
 ![Android SDK 執行個體錯誤對話方塊](device-manager-images/win/04-sdk-error.png)
-
 
 ## <a name="main-screen"></a>主畫面
 
@@ -145,7 +143,6 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 
     [![準備好可供啟動的新建裝置](device-manager-images/win/20-created-device-sml.png)](device-manager-images/win/20-created-device.png#lightbox)
 
-
 ### <a name="edit-device"></a>編輯裝置
 
 若要編輯現有的虛擬裝置，選取裝置，然後按一下 [編輯] 按鈕 (位於畫面右上角)：
@@ -165,7 +162,6 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 
 當您進行了必要的組態變更之後，按一下 [儲存] 按鈕。
 如需變更虛擬裝置內容的詳細資訊，請參閱[編輯 Android 虛擬裝置內容](~/android/get-started/installation/android-emulator/device-properties.md)。
-
 
 ### <a name="additional-options"></a>其他選項
 
@@ -190,7 +186,6 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 - **刪除** &ndash; 永久刪除所選取的虛擬裝置。 隨即會出現一個對話方塊，提醒您刪除裝置是無法復原的。 如果您確定要刪除裝置，按一下 [刪除]。
 
   ![刪除裝置對話方塊](device-manager-images/win/28-delete-device-w158.png)
-
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -225,7 +220,6 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
   [![安裝 Android SDK Tools](device-manager-images/mac/02-sdk-tools-sml.png)](device-manager-images/mac/02-sdk-tools.png#lightbox)
 
-
 ## <a name="launching-the-device-manager"></a>啟動裝置管理員
 
 按一下 [工具] > [Device Manager] 啟動 Android Device Manager：
@@ -235,7 +229,6 @@ Xamarin Studio 與 Android Device Manager 不相容。
 如果啟動時出現下列錯誤對話方塊，請參閱[疑難排解](#troubleshooting)一節來取得因應措施的指示：
 
 ![Android SDK 執行個體錯誤對話方塊](device-manager-images/mac/04-sdk-instance-error.png)
-
 
 ## <a name="main-screen"></a>主畫面
 
@@ -316,7 +309,6 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
     [![準備好可供啟動的新建裝置](device-manager-images/mac/20-created-device-m76-sml.png)](device-manager-images/mac/20-created-device-m76.png#lightbox)
 
-
 ### <a name="edit-device"></a>編輯裝置
 
 若要編輯現有的虛擬裝置，選取 [其他選項] 下拉式功能表 (齒輪圖示)，然後選取 [編輯]：
@@ -336,7 +328,6 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 當您進行了必要的組態變更之後，按一下 [儲存] 按鈕。
 如需變更虛擬裝置內容的詳細資訊，請參閱[編輯 Android 虛擬裝置內容](~/android/get-started/installation/android-emulator/device-properties.md)。
-
 
 ### <a name="additional-options"></a>其他選項
 
@@ -365,7 +356,6 @@ Xamarin Studio 與 Android Device Manager 不相容。
   ![刪除裝置對話方塊](device-manager-images/mac/28-delete-device-m76.png)
 
 -----
-
 
 <a name="troubleshooting" />
 
@@ -405,7 +395,6 @@ Android SDK 通常會安裝於下列位置：
 
 完成對 **user.config** 的變更後，您應該就能啟動 Android Device Manager。
 
-
 ### <a name="wrong-version-of-android-sdk-tools"></a>Android SDK Tools 的版本錯誤
 
 如果未安裝 Android SDK 工具 26.1.1 或更新版本，您會在啟動時看到此錯誤對話方塊：
@@ -417,7 +406,6 @@ Android SDK 通常會安裝於下列位置：
 - **Android SDK Tools 26.1.1** 或更新版本
 - **Android SDK 平台工具 27.0.1** 或更新版本
 - **Android SDK 建置工具 27.0.3** 或更新版本
-
 
 ### <a name="snapshot-disables-wifi-on-android-oreo"></a>Android Oreo 上的快照功能會停用 WiFi
 
@@ -438,7 +426,6 @@ Android SDK 通常會安裝於下列位置：
 5. 重新啟動 AVD。
 
 做出這些變更之後，AVD 將會重新啟動為允許 Wi-Fi 再次運作的狀態。
-
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -484,7 +471,6 @@ Android SDK 通常會安裝於下列位置：
 
 [![建檔 Bug 報告的功能表項目位置](device-manager-images/win/34-bug-report-sml.png)](device-manager-images/win/34-bug-report.png#lightbox)
 
-
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 如果您發現 Android Device Manager 的問題且無法使用上述疑難排解祕訣來解決，請按一下 [說明] > [回報問題] 來提出問題報告：
@@ -496,7 +482,6 @@ Android SDK 通常會安裝於下列位置：
 ## <a name="summary"></a>總結
 
 此指南介紹適用於 Xamarin 的 Visual Studio Tools 以及適用於 Mac 的 Visual Studio 所提供的 Android Device Manager。 其中說明了必要的功能，例如，啟動和停止 Android 模擬器、選取要執行的 Android 虛擬裝置 (AVD)、建立新的虛擬裝置，以及如何編輯虛擬裝置。 它說明如何編輯設定檔硬體內容，以進一步自訂，並提供常見問題的疑難排解的秘訣。
-
 
 ## <a name="related-links"></a>相關連結
 

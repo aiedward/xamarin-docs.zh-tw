@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 00fa1a65d2a73220675d8142e70ac904a93e3042
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eca8a1bdc3c60ae4dbaabf022a9dbe91f7e30402
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281975"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767029"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>在 Xamarin 中的多點觸控手指追蹤
 
@@ -41,7 +41,6 @@ class FingerPaintPolyline
 ```
 
 每個折線都有色彩、筆劃寬度和 iOS 圖形[`CGPath`](xref:CoreGraphics.CGPath)物件，可在繪製時累積和轉譯線條的多個點。
-
 
 下面顯示的所有程式碼都包含在名為`UIView` `FingerPaintCanvasView`的衍生中。 該類別會在一或多個手指`FingerPaintPolyline`積極繪製時，維護類型物件的字典：
 
@@ -187,8 +186,6 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 [![](touch-tracking-images/image01.png "追蹤個別手指並在螢幕上繪製結果")](touch-tracking-images/image01.png#lightbox)
 
 您現在已瞭解如何在畫面上追蹤個別手指，並加以區別。
-
-
 
 ## <a name="related-links"></a>相關連結
 

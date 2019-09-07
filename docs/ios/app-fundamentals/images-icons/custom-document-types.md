@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2017
-ms.openlocfilehash: 683587e4857ede20096be731b3cfa3b88b3a668d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 25b4e5a564c8dabf4cb44881c25e0a10ade47350
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282523"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767731"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Xamarin 中的自訂檔圖示
 
@@ -30,7 +30,7 @@ _本文涵蓋的內容包括和管理 Xamarin iOS 應用程式中的影像資產
 若要在 Visual Studio for Mac 中指派這些值，請使用`Info.plist`編輯器上 [ **Advanced** ] 索引標籤底下的 [**檔案類型**] 區段，以加入檔案類型，並將影像圖示指派給它。 例如，以下是顯示 PDF 支援註冊的螢幕擷取畫面：
 
  [![](custom-document-types-images/18.png "[Plist] 編輯器上 [Advanced] 索引標籤下的 [檔案類型] 區段")](custom-document-types-images/18.png#lightbox)
- 
+
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中指派這些值，請使用上 [ **Advanced** `Info.plist`] 索引標籤底下的 [**檔案類型**] 區段：
@@ -43,9 +43,7 @@ _本文涵蓋的內容包括和管理 Xamarin iOS 應用程式中的影像資產
 
 -----
 
-
 如需檔案類型的詳細資訊，請參閱 Apple 的[統一類型識別碼參考](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)和[IOS 的檔互動程式設計主題](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)。
-
 
 ## <a name="related-links"></a>相關連結
 

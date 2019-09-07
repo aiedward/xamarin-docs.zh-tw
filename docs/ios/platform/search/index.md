@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: eb88f7c1de12eee59ea4c2a271079e6b96c29b09
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286592"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769493"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin 中搜尋 Api
 
@@ -89,8 +89,6 @@ iOS 10 提供新的方式來驅動應用程式，方法是允許系統在適當�
 ## <a name="summary"></a>總結
 
 本文涵蓋 iOS 9 為 Xamarin iOS 應用程式提供的新搜尋 API 功能。 它涵蓋了[NSUserActivity](nsuseractivity.md)、[核心焦點](corespotlight.md)和[Web 標記](web-markup.md)方法，可為內容編制索引。 完成後，請簡短討論何時應使用指定的搜尋方法，以及應該編制索引的內容類型。
-
-
 
 ## <a name="related-links"></a>相關連結
 

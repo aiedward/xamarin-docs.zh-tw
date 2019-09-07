@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: b195e63bcc88c4d1c659216f99ab698773f73e9e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 86fac9dd0c2f9281a0c828ace68fbf77679dce5b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656816"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759831"
 ---
 # <a name="custom-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的自訂動畫
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _動畫類別是所有的 Xamarin.Forms 動畫，以建立一或多個動畫物件 ViewExtensions 類別的擴充方法的建置組塊。這篇文章會示範如何使用動畫類別來建立及取消動畫，並同步處理多個動畫，並建立自訂動畫顯示屬性不是由現有的動畫方法建立動畫的動畫。_
-
 
 必須在建立時，指定的參數數目`Animation`物件，包含正在繪製之屬性的開始和結束值和回呼，以變更屬性的值。 `Animation`物件也可以維護其子動畫可以執行並同步處理的集合。 如需詳細資訊，請參閱 <<c0> [ 其子動畫](#child)。
 
@@ -180,7 +179,6 @@ await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ## <a name="summary"></a>總結
 
 這篇文章示範如何使用[ `Animation` ](xref:Xamarin.Forms.Animation)類別來建立和取消動畫、 同步處理多個動畫，並建立自訂動畫顯示屬性不是由現有動畫建立動畫的動畫方法。 `Animation`類別是所有的 Xamarin.Forms 動畫的建置組塊。
-
 
 ## <a name="related-links"></a>相關連結
 

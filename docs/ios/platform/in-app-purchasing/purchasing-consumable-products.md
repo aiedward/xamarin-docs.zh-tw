@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: c23515c7fc7a3fef836cba76ec30279c94150da2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f48f84c704fa8ce20ce24dfbfaca2df23a8494eb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281528"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752711"
 ---
 # <a name="purchasing-consumable-products-in-xamarinios"></a>在 Xamarin 中購買可耗用的產品
 
@@ -41,24 +41,14 @@ ms.locfileid: "70281528"
 ## <a name="consumable-products-example"></a>可耗用產品範例
 
 [InAppPurchaseSample 程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)包含一個名為*耗材*的專案，它會實作為基本「遊戲中貨幣」（稱為「猴子點數」）。 此範例示範如何執行兩個應用程式內購買產品，讓使用者能夠依自己的意願購買「猴子點數」，而在實際的應用程式中，也有一些方式可以耗費他們！   
-   
-   
-   
- 應用程式會顯示在這些螢幕擷取畫面中-每次購買時，會將更多「猴子點數」新增至使用者的餘額：   
-   
-   
-   
- [![每次購買都會為使用者餘額增加更多的猴子點數](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
-   
-   
-   
- 自訂類別、StoreKit 和 App Store 之間的互動如下所示：   
-   
-   
-   
- [![自訂類別、StoreKit 和 App Store 之間的互動](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
-&nbsp;
+應用程式會顯示在這些螢幕擷取畫面中-每次購買時，會將更多「猴子點數」新增至使用者的餘額：   
+
+ [![每次購買都會為使用者餘額增加更多的猴子點數](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
+
+自訂類別、StoreKit 和 App Store 之間的互動如下所示：   
+
+ [![自訂類別、StoreKit 和 App Store 之間的互動](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 ### <a name="viewcontroller-methods"></a>ViewController 方法
 
@@ -69,10 +59,8 @@ NSObject succeededObserver, failedObserver;
 ```
 
 此函式也會建立`SKProductsRequestDelegate`子類別`InAppPurchaseManager`（）， `SKPaymentTransactionObserver`接著建立並註冊（ `CustomPaymentObserver`）。   
-   
-   
-   
- 處理應用程式內購買交易的第一個部分，是在使用者想要購買某個專案時，處理按下按鈕的動作，如下列範例應用程式中的程式碼所示：
+
+處理應用程式內購買交易的第一個部分，是在使用者想要購買某個專案時，處理按下按鈕的動作，如下列範例應用程式中的程式碼所示：
 
 ```csharp
 buy5Button.TouchUpInside += (sender, e) => {
@@ -83,9 +71,7 @@ buy10Button.TouchUpInside += (sender, e) => {
 };
 ```
 
-   
-   
- 使用者介面的第二個部分是處理交易成功的通知，在此情況下是藉由更新顯示的餘額：
+使用者介面的第二個部分是處理交易成功的通知，在此情況下是藉由更新顯示的餘額：
 
 ```csharp
 priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
@@ -118,10 +104,8 @@ public void PurchaseProduct(string appStoreProductId)
 ```
 
 將付款新增至佇列是非同步作業。 應用程式會在 StoreKit 處理交易並將其傳送至 Apple 的伺服器時，重新獲得控制權。 此時，iOS 會驗證使用者是否已登入 App Store，並在必要時提示她輸入 Apple ID 和密碼。   
-   
-   
-   
- 假設使用者已成功向 App Store 驗證，並同意交易， `SKPaymentTransactionObserver`將會收到 StoreKit 的回應，並呼叫下列方法來完成交易並加以完成。
+
+假設使用者已成功向 App Store 驗證，並同意交易， `SKPaymentTransactionObserver`將會收到 StoreKit 的回應，並呼叫下列方法來完成交易並加以完成。
 
 ```csharp
 public void CompleteTransaction (SKPaymentTransaction transaction)
@@ -250,10 +234,8 @@ requestObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseM
 ### <a name="purchase-transactions"></a>購買交易
 
 StoreKit 付款佇列會在可能的情況下儲存和轉送購買要求，因此，網路中斷的影響會根據在購買程式期間網路失敗的時間而有所不同。   
-   
-   
-   
- 如果在交易`SKPaymentTransactionObserver`期間發生錯誤，子類別（ `CustomPaymentObserver`）會有稱為`SKPaymentTransaction`的`UpdatedTransactions`方法，而類別將會處於失敗狀態。
+
+如果在交易`SKPaymentTransactionObserver`期間發生錯誤，子類別（ `CustomPaymentObserver`）會有稱為`SKPaymentTransaction`的`UpdatedTransactions`方法，而類別將會處於失敗狀態。
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -307,14 +289,10 @@ Applications may detect and respond to specific error codes, or handle them in t
 ## <a name="handling-restrictions"></a>處理限制
 
 IOS 的 [**設定] > [一般 > 限制**] 功能，可讓使用者鎖定其裝置的某些功能。   
-   
-   
-   
- 您可以查詢使用者是否允許透過`SKPaymentQueue.CanMakePayments`方法進行應用程式內購買。 如果這會傳回 false，則使用者將無法存取應用程式內購買。 如果嘗試購買，StoreKit 會自動向使用者顯示錯誤訊息。 藉由檢查此值，您的應用程式可以改為隱藏 [購買] 按鈕，或採取其他動作來協助使用者。   
-   
-   
-   
- 在檔案中， `CanMakePayments`方法會包裝 StoreKit 函數，如下所示： `InAppPurchaseManager.cs`
+
+您可以查詢使用者是否允許透過`SKPaymentQueue.CanMakePayments`方法進行應用程式內購買。 如果這會傳回 false，則使用者將無法存取應用程式內購買。 如果嘗試購買，StoreKit 會自動向使用者顯示錯誤訊息。 藉由檢查此值，您的應用程式可以改為隱藏 [購買] 按鈕，或採取其他動作來協助使用者。   
+
+在檔案中， `CanMakePayments`方法會包裝 StoreKit 函數，如下所示： `InAppPurchaseManager.cs`
 
 ```csharp
 public bool CanMakePayments()
@@ -324,14 +302,10 @@ public bool CanMakePayments()
 ```
 
 若要測試此方法，請使用 iOS 的**限制**功能來停**用應用程式內購買**：   
-   
-   
-   
+
  [![使用 iOS 的限制功能來停用應用程式內購買](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
-   
-   
-   
- 此範例程式碼`ConsumableViewController`會在`CanMakePayments`停用的按鈕上顯示**AppStore 停用**的文字，以回應傳回 false。
+
+此範例程式碼`ConsumableViewController`會在`CanMakePayments`停用的按鈕上顯示**AppStore 停用**的文字，以回應傳回 false。
 
 ```csharp
 // only if we can make payments, request the prices
@@ -348,21 +322,11 @@ if (iap.CanMakePayments()) {
 ```
 
 當應用程式**內購買**功能受到限制時，應用程式看起來會像這樣– [購買] 按鈕已停用。   
-   
-   
-   
+
  [![當應用程式內購買功能受到限制時，應用程式看起來會像是停用 [購買] 按鈕](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
-   
-   
-   
 
 當為 false 時`CanMakePayments`仍會要求產品資訊，因此應用程式仍可取得並顯示價格。 這表示，如果我們從`CanMakePayments`程式碼中移除核取按鈕仍在作用中的檢查，但在嘗試購買時，使用者會看到**不允許應用程式內購買**的訊息（當付款佇列為時，StoreKit 會產生已存取）：   
-   
-   
-   
- [![不允許應用程式內購買](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
-   
-   
-   
- 實際的應用程式可能會採用不同的方法來處理限制，例如完全隱藏按鈕，而且可能會提供比 StoreKit 自動顯示的警示更詳細的訊息。
 
+ [![不允許應用程式內購買](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+
+實際的應用程式可能會採用不同的方法來處理限制，例如完全隱藏按鈕，而且可能會提供比 StoreKit 自動顯示的警示更詳細的訊息。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 67ee8f1ef7f254eb77cfb186a478993b6fd3847c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 11c022298cbac60b86f4ef549e30cef3aa4d4660
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280029"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753411"
 ---
 # <a name="document-picker-in-xamarinios"></a>Xamarin 中的檔選擇器
 
@@ -202,7 +202,6 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 1. 應用程式會在應用程式容器中建立新的檔案。
 1. 在看到應用程式容器`NSMetadataQuery`的修改並建立必要`NSMetadata`的記錄之前，會有延遲。
 
-
 由於建立`NSMetadata`記錄的延遲，應用程式必須開啟兩個數據源：一個用於本機檔案變更，另一個用於雲端式變更。
 
 ### <a name="stitching"></a>縫合
@@ -218,14 +217,10 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 1. 應用程式容器中的勾點會看到修改， `NSMetadataQuery`並呼叫來建立`NSMetadata`必要的記錄。
 1. `NSMetadata`記錄是直接在檔案之後建立，並可供應用程式使用。
 
-
 藉由使用裝訂應用程式，不再需要開啟資料來源來監視本機和以雲端為基礎的檔案變更。 現在，應用程式可以`NSMetadataQuery`直接依賴。
 
 > [!IMPORTANT]
 > 只有在應用程式使用如上一節所示的檔案協調時，才會進行裝訂。 如果未使用檔案協調，Api 會預設為現有的 iOS 8 行為。
-
-
-
 
 ### <a name="new-ios-8-metadata-features"></a>新的 iOS 8 中繼資料功能
 
@@ -236,12 +231,10 @@ IOS 8 中的下列新功能已`NSMetadataQuery`新增至：
 - 有一個新`NSUrl_PromisedItems`的 API，可存取檔案的檔案屬性，這些檔案可能或可能沒有其內容可在本機上使用。
 - 使用方法來取得指定檔案的相關資訊，或`GetPromisedItemResourceValues`使用方法一次取得一個以上的檔案資訊。 `GetPromisedItemResourceValue`
 
-
 已新增兩個新的檔案協調旗標來處理中繼資料：
 
 - `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
 - `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
-
 
 使用上述旗標，檔檔案的內容不需要在本機提供，即可供使用。
 
@@ -256,7 +249,6 @@ using Foundation;
 using UIKit;
 using ObjCRuntime;
 using System.IO;
-
 
 #region Static Properties
 public const string TestFilename = "test.txt"; 
@@ -439,7 +431,6 @@ Apple 認為列出應用程式檔的最佳使用者體驗是使用預覽。 這�
 
 有了使用 iCloud 檔的基本概念，以及對現有 API 的修改，我們已準備好在 Xamarin iOS 8 行動裝置應用程式中執行檔選擇器視圖控制器。
 
-
 ## <a name="enabling-icloud-in-xamarin"></a>在 Xamarin 中啟用 iCloud
 
 您必須在應用程式中和透過 Apple 啟用 iCloud 支援，才能在 Xamarin iOS 應用程式中使用檔選擇器。 
@@ -451,8 +442,6 @@ Apple 認為列出應用程式檔的最佳使用者體驗是使用預覽。 這�
 3. 建立包含此應用程式識別碼的布建設定檔。
 
 [使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南會逐步解說前兩個步驟。 若要建立布建設定檔，請遵循布建[設定檔](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device)指南中的步驟。
-
-
 
 下列步驟會逐步解說為 iCloud 設定應用程式的過程：
 
@@ -539,7 +528,6 @@ namespace DocPicker
             Query.StartQuery ();
             Console.WriteLine ("Querying: {0}", Query.IsGathering);
         }
-
 
         [Export("queryDidFinishGathering:")]
         public void DidFinishGathering (NSNotification notification) {
@@ -833,7 +821,6 @@ public AppDelegate ThisApp {
 1. 檔會被選取，而且`UIDocumentInteractionController`會用來將檔傳送至新的應用程式。
 1. 最後，原始檔案的複本會放在新應用程式的容器中。
 
-
 檔可供第二個應用程式開啟和編輯。
 
 ### <a name="discovering-documents-outside-of-an-apps-container"></a>探索應用程式容器外的檔
@@ -910,20 +897,19 @@ if (presentationPopover!=null) {
 以下是在 iPhone 裝置上執行時，上述程式碼如何顯示檔選擇器的範例：
 
 1. 使用者啟動應用程式，並顯示主要介面：   
- 
+
     [![](document-picker-images/image33.png "會顯示主要介面")](document-picker-images/image33.png#lightbox)
 1. 使用者會在畫面頂端按 [**動作**] 按鈕，並要求您從可用的提供者清單中選取**檔提供者**：   
- 
+
     [![](document-picker-images/image34.png "從可用的提供者清單中選取檔提供者")](document-picker-images/image34.png#lightbox)
 1. 針對選取的**檔提供者**，會顯示 [**檔選擇器視圖控制器**]：   
- 
+
     [![](document-picker-images/image35.png "隨即顯示 [檔選擇器] 視圖控制器")](document-picker-images/image35.png#lightbox)
 1. 使用者可以在**檔資料夾**上點擊以顯示其內容：   
- 
+
     [![](document-picker-images/image36.png "檔資料夾內容")](document-picker-images/image36.png#lightbox)
 1. 使用者選取**檔**，並關閉**檔選擇器**。
 1. 主要介面會重新顯示，從外部容器載入**檔**及其內容。
-
 
 檔選擇器視圖控制器的實際顯示取決於使用者在裝置上安裝的檔提供者，以及已執行的檔選擇器模式。 上述範例使用 [開啟] 模式，以下將詳細討論其他模式類型。
 
@@ -1021,13 +1007,12 @@ if (Bookmark != null) {
 檔選擇器視圖控制器具有兩種不同的作業模式：
 
 1. **開啟模式**–在此模式中，當使用者選取和外部檔時，檔選擇器會在應用程式容器中建立安全性範圍的書簽。   
- 
+
     [![](document-picker-images/image37.png "應用程式容器中的安全性範圍書簽")](document-picker-images/image37.png#lightbox)
 1. 匯**入模式**–在此模式中，當使用者選取和外部檔時，檔選擇器將不會建立書簽，而是會將檔案複製到暫存位置，並在此位置提供應用程式存取權：   
- 
+
     [![](document-picker-images/image38.png "檔選擇器會將檔案複製到暫存位置，並提供應用程式存取此位置的檔")](document-picker-images/image38.png#lightbox)   
  一旦應用程式因任何原因而終止，暫存位置就會清空，並移除該檔案。 如果應用程式需要維護檔案的存取權，則應該建立複本，並將它放在其應用程式容器中。
-
 
 當應用程式想要與另一個應用程式共同作業，並與該應用程式共用對檔所做的任何變更時，[開啟] 模式非常有用。 當應用程式不想要與其他應用程式共用檔的修改時，會使用匯入模式。
 
@@ -1042,7 +1027,6 @@ if (Bookmark != null) {
 1. 開啟新的檔選擇器視圖控制器，並使用`NSUrl`的`MoveToService`模式將它傳遞給它。 
 1. 一旦使用者選擇新的位置，檔就會從其目前的位置移至新的位置。
 1. 參考檔將會寫入應用程式的應用程式容器，讓建立應用程式仍可存取該檔案。
-
 
 下列程式碼可以用來將檔移到外部位置：`var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
@@ -1067,7 +1051,6 @@ if (Bookmark != null) {
 - **檔選擇器延伸**模組– `UIViewController`提供一個子類別，可提供圖形化介面讓使用者從替代儲存位置選擇檔。 這個子類別會顯示為檔選擇器視圖控制器的一部分。
 - 檔案**提供延伸**模組–這是非 UI 延伸模組，可處理實際提供檔案內容。 這些延伸模組是透過檔案協調（ `NSFileCoordinator` ）提供。 這是需要檔案協調的另一個重要案例。
 
-
 下圖顯示使用檔提供者延伸模組時的一般資料流程：
 
  [![](document-picker-images/image39.png "下圖顯示使用檔提供者延伸模組時的一般資料流程")](document-picker-images/image39.png#lightbox)
@@ -1082,7 +1065,6 @@ if (Bookmark != null) {
 1. 檔案協調器會呼叫自訂檔案提供者延伸模組來取出檔案。
 1. 檔案的內容會傳回給檔案協調器。
 1. 檔案的內容會傳回給應用程式。
-
 
 ### <a name="security-and-bookmarks"></a>安全性和書簽
 
@@ -1108,7 +1090,6 @@ if (Bookmark != null) {
 1. `NSUrl`以檔案的 URL 呼叫檔案提供者延伸模組。
 1. 副檔名提供者會存取檔案，並將檔案的位置傳回到`NSUrl` 。
 1. 檔案位置會與安全性資訊配套，並傳回給應用程式。
-
 
 從這裡開始，應用程式可以存取該檔案，並正常使用它。
 

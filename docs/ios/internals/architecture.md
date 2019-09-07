@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 7d59a295961c25ecfcc99bb54fdc188c957cf3ee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b0cece7f553d0169c311e6614428ed37c5c77813
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291948"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768527"
 ---
 # <a name="ios-app-architecture"></a>iOS 應用程式架構
 
@@ -93,7 +93,6 @@ Managed 程式碼可以包含屬性， `[Register]`以及`[Export]`註冊機構�
 
 有兩種類型的註冊機構用於 Xamarin. iOS –動態和靜態：
 
-
 - **動態**登錄庫–動態註冊機構會在執行時間註冊元件中的所有類型。 它會使用由[目標 C 的執行時間 API](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)所提供的函式來執行這項工作。 因此，動態註冊機構的啟動速度較慢，但組建時間較快。 這是 iOS 模擬器的預設值。 使用動態註冊機構時，原生函式（通常在 C 中）稱為 trampolines，可做為方法的執行。 它們在不同的架構之間有所不同。
 
 - **靜態註冊機構**–靜態註冊機構會在組建期間產生目標 C 程式碼，然後將其編譯成靜態程式庫並連結至可執行檔。 這可加快啟動速度，但會在組建期間耗費較長的時間。 預設會針對裝置組建使用此方法。 靜態註冊機構也可以搭配 iOS 模擬器使用，方法是在`--registrar:static`專案的`mtouch`組建選項中傳遞做為屬性，如下所示：
@@ -114,7 +113,6 @@ Managed 程式碼可以包含屬性， `[Register]`以及`[Export]`註冊機構�
 所有此啟動順序都會編譯成靜態程式庫，然後連結至您的最終可執行檔，讓您的應用程式知道如何開始使用。
 
 此時，我們的應用程式已啟動，Mono 正在執行，我們在受控碼中，而且我們知道如何呼叫機器碼並回呼。 接下來我們要實際開始加入控制項，讓應用程式成為互動。
-
 
 ## <a name="generator"></a>Generator
 
@@ -165,7 +163,6 @@ public interface UIToolbar : UIBarPositioning {
 - 如果已啟用連結，請執行 managed 連結器，藉由將未使用的部分翻錄出來來優化您的元件。
 - AOT 編譯。
 - 建立原生可執行檔，它會輸出一系列連結至原生可執行檔的靜態程式庫（每個元件各一個），使原生可執行檔包含啟動器程式碼、註冊機構程式碼（如果是靜態）和所有來自 AOT 的輸出編譯器
-
 
 如需連結器和其使用方式的詳細資訊，請參閱[連結器](~/ios/deploy-test/linker.md)指南。
 

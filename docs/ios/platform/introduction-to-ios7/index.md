@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 69f43df64ccf7de75b00e1a0b3f6e2ececc5bbb3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292018"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752066"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 簡介
 
@@ -30,7 +30,6 @@ iOS 7 增強了 UIKit 中的動畫支援，讓應用程式能夠執行先前需�
 
 - `springWithDampingRatio`–介於0和1之間的值，其中的震盪會增加較小的值。
 - `initialSpringVelocity`–初始彈簧速度，以每秒動畫距離總計的百分比表示。
-
 
 當影像視圖的中心變更時，下列程式碼會產生彈簧效果：
 
@@ -104,13 +103,11 @@ API 本質上是宣告式。 您可以藉由建立稱為「*行為*」的物件�
 - `UIPushBehavior`–將 force 套用至動態專案。
 - `UISnapBehavior`–允許動態專案貼齊至具有彈簧效果的位置。
 
-
 雖然有許多基本類型，但使用 UIKit Dynamics 將以物理為基礎的互動新增至視圖的一般程式，在行為上是一致的：
 
 1. 建立動態 animator。
 1. 建立行為。
 1. 將行為新增到動態 animator。
-
 
 ### <a name="dynamics-example"></a>Dynamics 範例
 
@@ -233,7 +230,6 @@ iOS 7 會變更背景工作的執行時間和方式。 當工作在背景中執�
 - 背景提取–可讓應用程式定期更新背景中的內容。
 - 遠端通知-允許應用程式在收到推播通知時更新內容。 通知可以是「無訊息」，或可以在鎖定畫面上顯示橫幅。
 - 背景傳送服務–允許上傳和下載資料（例如大型檔案），而不會有固定時間限制。
-
 
 如需新多工功能的詳細資訊，請參閱 Xamarin[背景處理指南](~/ios/app-fundamentals/backgrounding/index.md)的 iOS 小節。
 

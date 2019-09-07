@@ -6,12 +6,12 @@ ms.assetid: 40DDE713-DE80-422F-BE34-A732E40C3F81
 author: conceptdev
 ms.author: crdun
 ms.date: 11/25/2015
-ms.openlocfilehash: bb44dc042f60d4d9de87bcb92222689b80a42527
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f487fe0f8db9fa71e8571e150e0e8afe1630cde2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288178"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765079"
 ---
 # <a name="how-can-i-update-nuget"></a>如何更新 NuGet？
 
@@ -27,4 +27,3 @@ ms.locfileid: "70288178"
 
 1. 開啟**Visual Studio for Mac > 延伸模組 > 更新 > IDE 擴充**功能
 2. 選取**NuGet 套件管理**
-

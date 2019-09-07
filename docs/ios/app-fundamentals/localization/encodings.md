@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/28/2017
-ms.openlocfilehash: a5430407798dd556532b2cacf592439acc7c02be
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c8e82f9261601db48ec48092a5f3f81394a86eec
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290131"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763414"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin 中的國際化編碼
 
@@ -35,9 +35,7 @@ ms.locfileid: "70290131"
 - west拉丁語言、復活節和西歐
 - all
 
-
  <a name="cjk" />
-
 
 ## <a name="cjk"></a>cjk
 
@@ -48,9 +46,7 @@ ms.locfileid: "70290131"
 - CP950
 - CP54936
 
-
  <a name="mideast" />
-
 
 ## <a name="mideast"></a>務必
 
@@ -62,9 +58,7 @@ ms.locfileid: "70290131"
 - CP28599
 - CP38598
 
-
  <a name="other" />
-
 
 ## <a name="other"></a>另一個
 
@@ -78,9 +72,7 @@ ms.locfileid: "70290131"
 - CP57002
 - CP874
 
-
  <a name="rare" />
-
 
 ## <a name="rare"></a>比較
 
@@ -122,9 +114,7 @@ ms.locfileid: "70290131"
 - CP870
 - CP875
 
-
  <a name="west" />
-
 
 ## <a name="west"></a>west
 
@@ -143,4 +133,3 @@ ms.locfileid: "70290131"
 - CP861
 - CP863
 - CP865
-

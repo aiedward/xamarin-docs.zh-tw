@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: b9658aa0a4222fb9d257299ea3c6fd69016abdb4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: ca27b0ba0f9e434809250a78047f3bd503f80b50
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68646742"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771649"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 繫結路徑
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-在所有先前的資料繫結範例中，`Binding` 類別的 [`Path`](xref:Xamarin.Forms.Binding.Path) 屬性 (或 `Binding` 標記延伸模組的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 屬性) 已設成單一屬性。 將 `Path` 設成「子屬性」  (屬性的屬性) 或集合成員實際上是可行的。
+在所有先前的資料繫結範例中，`Binding` 類別的 [`Path`](xref:Xamarin.Forms.Binding.Path) 屬性 (或 `Binding` 標記延伸模組的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 屬性) 已設成單一屬性。 將 `Path` 設成「子屬性」(屬性的屬性) 或集合成員實際上是可行的。
 
 例如，假設您的頁面包含 `TimePicker`：
 
@@ -35,7 +35,7 @@ ms.locfileid: "68646742"
 
 `Time` 屬性的類型為 `TimeSpan`，其具有 `TotalSeconds` 屬性。 `Time` 和 `TotalSeconds` 屬性只簡單使用句號連接。 `Path` 字串中的項目一律表示屬性，且不是這些屬性的類型。
 
-[Path Variations] \(路徑變化\)  頁面會顯示該範例及其他許多範例：
+[Path Variations] \(路徑變化\) 頁面會顯示該範例及其他許多範例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -95,7 +95,7 @@ ms.locfileid: "68646742"
 
 ## <a name="paths-with-indexers"></a>具有索引子的路徑
 
-[Path Variations] \(路徑變化\)  頁面中第三個 `Label` 的繫結會參考 `System.Globalization` 命名空間中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 類別：
+[Path Variations] \(路徑變化\) 頁面中第三個 `Label` 的繫結會參考 `System.Globalization` 命名空間中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 類別：
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -162,8 +162,6 @@ ms.locfileid: "68646742"
 當 Xamarin.Forms 處理繫結路徑時，它會在實作 `INotifyPropertyChanged` 介面之路徑中的任何物件上安裝 `PropertyChanged` 處理常式。 例如，因為 `Text` 屬性變更，所以最後一個繫結回應第一個 `Label` 中的變更。
 
 如果繫結路徑中的屬性不實作 `INotifyPropertyChanged`，則忽略該屬性的所有變更。 某些變更可能會讓繫結路徑完全失效，所以您只有在屬性和子屬性的字串還未失效前，才使用這項技術。
-
-
 
 ## <a name="related-links"></a>相關連結
 

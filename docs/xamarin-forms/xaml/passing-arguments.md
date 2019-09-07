@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2016
-ms.openlocfilehash: 065c7284970ececacbdb298d773b19f654280513
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 80f332e45d6c46ad49543923e85cbb2eceadb378
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228085"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767588"
 ---
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中傳遞引數
 
@@ -168,7 +168,6 @@ _這篇文章示範如何使用可用來將引數傳遞至非預設建構函式�
 ## <a name="summary"></a>總結
 
 這篇文章示範如何使用 XAML 屬性，可用來將引數傳遞至非預設建構函式，呼叫 factory 方法，並指定之泛型引數的類型。
-
 
 ## <a name="related-links"></a>相關連結
 

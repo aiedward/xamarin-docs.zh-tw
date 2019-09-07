@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 9347a801c939fd715101253c6953eeec840af47d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fc76a642c27b7a2c7f3483911be596f8d6cdd1ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288580"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752866"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin 中的應用程式內購買基本概念和設定
 
@@ -26,7 +26,6 @@ ms.locfileid: "70288580"
 - **iOS 布建入口網站**–建立套件組合識別碼，並啟用應用程式的 app Store 存取。
 - **商店套件**–將程式碼新增至您的應用程式，以顯示產品、購買產品和還原交易。
 - **自訂程式碼**–用來追蹤客戶所進行的購買，並提供他們所購買的產品或服務。 如果您的產品是由從伺服器下載的內容（例如書籍和雜誌問題）所組成，您也可能需要執行伺服器端程式來驗證收據。
-
 
 有兩個存放套件「伺服器環境」：
 
@@ -54,7 +53,6 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 - **iOS 布建入口網站**–確保您的應用程式具有有效的應用程式識別碼（不是具有星號 * 的萬用字元），而且已啟用應用程式購買。
 - **ITunes Connect 應用程式管理**–將產品新增至您的應用程式。
 
-
 ### <a name="apple-developer-account"></a>Apple 開發人員帳戶
 
 建立和散發免費的應用程式需要在[ITunes Connect](https://itunesconnect.apple.com)中設定非常少，不過若要銷售付費應用程式或應用程式內購買，您必須為 Apple 提供銀行和稅務資訊。 按一下主功能表中的 [**協定]、[稅務和銀行]，** 如下所示：
@@ -70,7 +68,6 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 ### <a name="ios-provisioning-portal"></a>iOS 佈建入口網站
 
 新的應用程式會在 IOS 布建**入口網站**的 [**應用程式識別碼**] 區段中設定。 若要建立新的應用程式識別碼，請移至 iOS 布建[入口網站的成員中心](https://developer.apple.com/membercenter/index.action)，流覽至入口網站的 [**憑證、識別碼及設定檔**] 區段，然後按一下 [ *iOS 應用程式*] 底下的 [**識別碼**]。 然後按一下右上方的 "+"，以產生新的應用程式識別碼。
-
 
 用來建立新**應用程式識別碼**的表單
 
@@ -114,7 +111,6 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 
 以下說明每個應用程式內購買產品所需的欄位：
 
-
 ### <a name="reference-name"></a>參考名稱
 
 參考名稱不會對您的使用者顯示;僅供內部使用，而且只會出現在 iTunes Connect 中。
@@ -148,7 +144,6 @@ com.xamarin.storekit.testing.greyscale
 1. **免費訂**用帳戶–只能在啟用 Newsstand 的應用程式中提供，並可讓客戶存取其所有裝置上的訂用帳戶內容。 免費訂閱永遠不會過期。
 1. **非續約訂**用帳戶–應該用來銷售對靜態內容的限時存取，例如一個月的相片封存存取權。
 
-
  *本檔目前僅涵蓋前兩個產品類型（可耗用和非可耗用）。*
 
  <a name="Price_Tiers" />
@@ -176,10 +171,8 @@ Apple 提供價格對照表，協助您針對所需的貨幣/價格選取正確�
 在 iTunes Connect 中，您可以為任何數目的支援語言輸入不同的名稱和描述文字。 在中，您可以透過快顯來新增/編輯每種語言：
 
  [![](in-app-purchase-basics-and-configuration-images/image12.png "在中，您可以透過快顯來新增/編輯每種語言")](in-app-purchase-basics-and-configuration-images/image12.png#lightbox)   
-   
-   
-   
- 當您在應用程式中顯示產品資訊時，可透過 StoreKit 顯示當地語系化的文字。 您也必須當地語系化貨幣顯示，以顯示正確的符號和十進位格式–此格式會在本檔稍後討論。
+
+當您在應用程式中顯示產品資訊時，可透過 StoreKit 顯示當地語系化的文字。 您也必須當地語系化貨幣顯示，以顯示正確的符號和十進位格式–此格式會在本檔稍後討論。
 
 ### <a name="app-store-review"></a>App Store 審查
 
@@ -188,10 +181,8 @@ Apple 提供價格對照表，協助您針對所需的貨幣/價格選取正確�
 第一次提交應用程式時，若已啟用應用程式內購買（無論是新的應用程式，或是已新增功能），您也必須選擇要與它一起提交的產品。 ITunes Connect 入口網站會提示您執行這項操作，如下列螢幕擷取畫面所示：
 
  [![](in-app-purchase-basics-and-configuration-images/image13.png "ITunes Connect 入口網站也會提示您提交一些產品")](in-app-purchase-basics-and-configuration-images/image13.png#lightbox)   
-   
-   
-   
- 應用程式和應用程式內購買將會一起審核，讓他們一次獲得核准（如此一來，應用程式就不會進入存放區，而不會有任何核准的產品！）。
+
+應用程式和應用程式內購買將會一起審核，讓他們一次獲得核准（如此一來，應用程式就不會進入存放區，而不會有任何核准的產品！）。
 
 當您的第一個版本具有應用程式內購買功能之後，您可以隨時新增並提交進一步的產品，以供日後審查。 您也可以選擇隨特定的應用程式內購買產品一起提交新版本，並使用 [**版本詳細資料**] 頁面做為提示的建議。
 

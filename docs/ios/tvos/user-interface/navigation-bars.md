@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: f33e3f4f27afe7e0b98c4a1f71d77c4a1c7195ac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 73474aaeb138d52536dd8ad5a7dca9be566475af
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289076"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769094"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>在 Xamarin 中使用 tvOS 導覽列
 
@@ -48,9 +48,7 @@ ms.locfileid: "70289076"
     [![](navigation-bars-images/navbar05.png "橫條按鈕專案動作")](navigation-bars-images/navbar05.png#lightbox)
 1. 儲存您的變更。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. 在 **方案總管**中，按兩下`Main.storyboard` 檔案，然後開啟以進行編輯。
 1. 從 [**工具箱**] 將**導覽**列拖放到畫面頂端的視圖上：
@@ -66,7 +64,6 @@ ms.locfileid: "70289076"
 
     [![](navigation-bars-images/navbar05-vs.png "橫條按鈕專案動作")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 儲存您的變更。
-
 
 -----
 
@@ -133,8 +130,6 @@ namespace MySingleView
 ## <a name="summary"></a>總結
 
 本文涵蓋在 tvOS 應用程式內設計和使用導覽列。
-
-
 
 ## <a name="related-links"></a>相關連結
 

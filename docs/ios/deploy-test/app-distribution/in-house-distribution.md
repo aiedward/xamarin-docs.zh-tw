@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f81e5a24957d4af1cd2ce27b39d1f398797cce73
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a27536585cbd320a5595d71b156459e25a1fa7a9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289892"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70763057"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的內部作業散發
 
@@ -94,7 +94,6 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 如同您所建立的其他任何佈建設定檔，此處也需要應用程式識別碼才能識別您要散發給使用者裝置的應用程式。 如果您尚未建立應用程式識別碼，請遵循下列步驟來建立：
 
-
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [識別碼] 下的 [應用程式識別碼]。
 2. 按一下 [+] 按鈕，並提供可在入口網站中識別應用程式的**名稱**。
 3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取「明確」或「萬用字元」應用程式識別碼，並以反向 DNS 格式輸入套件組合識別碼，例如：**明確**：com.[DomainName].[AppName] **Wildcard**:com.[DomainName]。*
@@ -150,13 +149,11 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 若要以其中任何一種方式來散發您的應用程式，您必須先建立一個 IPA 檔案，如下一節中所述。
 
-
 ### <a name="creating-an-ipa-for-in-house-deployment"></a>建立內部作業部署的 IPA
 
 應用程式在佈建之後，可以封裝為稱為 *IPA* 的檔案。 這是包含應用程式與其他中繼資料和圖示的 ZIP 檔案。 IPA 可以用來在本機中將應用程式加入 iTunes，以便應用程式能直接同步處理到佈建設定檔中所包含的裝置。
 
 如需建立 IPA 的詳細資訊，請參閱 [IPA 支援](~/ios/deploy-test/app-distribution/ipa-support.md)指南。
-
 
 ## <a name="summary"></a>總結
 

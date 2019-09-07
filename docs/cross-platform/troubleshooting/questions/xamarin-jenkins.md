@@ -7,12 +7,12 @@ ms.assetid: 9951F980-2C6C-47C0-8A35-A78F06C20BEB
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2018
-ms.openlocfilehash: 4f09f4ca97dcf50891aa0a0415e47d474297c411
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a8dc27574dc9959cc375a98fc0d7a18aac8bd6b7
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282770"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756961"
 ---
 # <a name="why-isnt-jenkins-supported-by-microsoft"></a>為什麼 Microsoft 不支援 Jenkins？
 
@@ -36,13 +36,10 @@ Jenkins 是開放原始碼 CI 套件;因為這許多由 Jenkins*本身*直接造
 
 您用來設定 SDK 位置的選項可能會根據您所使用的確切 Jenkins Android 外掛程式而有所不同;您可以在外掛程式指南中找到如何設定此項的最佳位置。 例如，[Android Emulator 外掛程式](https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin#AndroidEmulatorPlugin-Systemconfiguration)會自動尋找 SDK，但如果找不到，則為;您也可以透過該外掛程式的 [Jenkins 系統組態] 頁面來設定位置。 
 
-
 ## <a name="deprecated-errors"></a>已淘汰的錯誤
 
 > [!IMPORTANT]
 > 此問題已在最新版本的 Xamarin 中解決。 不過，如果軟體的最新版本發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出來提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
-
-
 
 ### <a name="jenkins-reports-an-invalid-xamarin-license"></a>Jenkins 報告不正確 Xamarin 授權
 此問題的錯誤訊息通常類似于

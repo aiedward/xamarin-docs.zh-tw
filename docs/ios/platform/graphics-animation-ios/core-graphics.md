@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: 72c233dc492fe1c93546121bc9103e666c2127ac
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 65ccbe397093833e3af58d1165bc1dad8287ba5d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286254"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70752936"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心圖形
 
@@ -28,7 +28,6 @@ iOS 包含[*核心圖形*](https://developer.apple.com/library/prerelease/ios/do
 - [在記憶體或螢幕上繪製影像](#Drawing_Images_and_Text)。
 - 建立和繪製 PDF。
 - 讀取和繪製現有的 PDF。
-
 
 ## <a name="geometric-space"></a>幾何空間
 
@@ -276,7 +275,6 @@ public override void Draw (RectangleF rect)
 - 從內容取得影像
 - 移除內容
 
-
 不同于`Draw`方法，其中的內容是由視圖提供，在此情況下，您可以使用下列兩種方式之一來建立內容：
 
 1. 藉由`UIGraphics.BeginImageContext`呼叫（ `BeginImageContextWithOptions`或）
@@ -422,7 +420,6 @@ UIGraphics.EndPDFContent ();
 ```
 
 產生的文字會繪製到 PDF，然後包含在`NSData`可以儲存、上傳、以電子郵件傳送等的。
-
 
 ## <a name="summary"></a>總結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/14/2017
-ms.openlocfilehash: 106cadc6fef43c06597cf1e3b846bd48cecb6fa5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 954e3b8f612fd710dd178cfc296889c9da372183
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287057"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768311"
 ---
 # <a name="user-interfaces-in-ios"></a>iOS 中的使用者介面
 
@@ -35,7 +35,3 @@ Apple 將相關的功能片段分組為「架構」，這會等同于 Xamarin. i
 ## <a name="working-with-the-ui-threadiosuser-interfaceios-uiui-threadmd"></a>[使用 UI 執行緒](~/ios/user-interface/ios-ui/ui-thread.md)
 
 您的程式碼應該只會對主要（或 UI）執行緒變更使用者介面控制項。 在不同的執行緒上發生的任何 UI 更新（例如回呼或背景執行緒）可能不會轉譯至螢幕，或甚至會造成當機。
-
-
-
-
