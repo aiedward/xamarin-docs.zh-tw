@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: f90ce8dcb8c3ab9d4fee9f684c0e53218b8440a9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c9b6f6c29b86ee40c2d7b04dbe6fa4ce24a745ea
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285719"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762637"
 ---
 # <a name="fastlane-for-ios-sigh"></a>適用於 iOS 的 fastlane - sigh
 
@@ -154,7 +154,6 @@ fastlane sigh -o "~/Library/MobileDevice/Provisioning Profiles"
     ```
     
     其中 `Amy cert` 為程式碼簽署身分識別名稱。
-
 
 ## <a name="related-links"></a>相關連結
 

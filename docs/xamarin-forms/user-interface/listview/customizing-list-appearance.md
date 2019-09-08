@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 1355f65a192cf8f7f119a2ee77f334c115650578
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: fc0664ff32e63af5d0c80f69ff69f4992ad0c708
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121641"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770313"
 ---
 # <a name="customizing-listview-appearance"></a>自訂 ListView 的外觀
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
-[`ListView`](xref:Xamarin.Forms.ListView)除了清單中每個資料列的[`ViewCell`](xref:Xamarin.Forms.ViewCell)實例之外, 還能夠控制清單的呈現方式。
+[`ListView`](xref:Xamarin.Forms.ListView)除了清單中每個資料列的[`ViewCell`](xref:Xamarin.Forms.ViewCell)實例之外，還能夠控制清單的呈現方式。
 
 <a name="Grouping" />
 
@@ -78,7 +78,7 @@ static PageTypeGroup()
 }
 ```
 
-在上述程式碼中, 我們也可以`Add`呼叫的`groups`元素, 這是類型`PageTypeGroup`的實例。 這可能是因為`PageTypeGroup`繼承自`List<PageModel>`。 這是清單的先前所述的清單模式的範例。
+在上述程式碼中，我們也可以`Add`呼叫的`groups`元素，這是類型`PageTypeGroup`的實例。 這可能是因為`PageTypeGroup`繼承自`List<PageModel>`。 這是清單的先前所述的清單模式的範例。
 
 以下是 XAML 來顯示群組的清單：
 
@@ -203,11 +203,11 @@ ListView HeaderList = new ListView() {
 
 ## <a name="scrollbar-visibility"></a>捲軸可見度
 
-[`ListView`](xref:Xamarin.Forms.ListView)具有`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性[,`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)可取得或設定表示水準或垂直捲動條何時可見的值。 這兩個屬性都可以設定為下列值:
+[`ListView`](xref:Xamarin.Forms.ListView)具有`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性[，`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)可取得或設定表示水準或垂直捲動條何時可見的值。 這兩個屬性都可以設定為下列值：
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)表示平臺的預設捲軸行為, 而是`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性的預設值。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)表示捲軸會顯示出來, 即使內容適合在視圖中也一樣。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)表示即使內容無法放在視圖中, 也不會顯示捲軸。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)表示平臺的預設捲軸行為，而是`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性的預設值。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)表示捲軸會顯示出來，即使內容適合在視圖中也一樣。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)表示即使內容無法放在視圖中，也不會顯示捲軸。
 
 <a name="Row_Separators" />
 
@@ -294,12 +294,10 @@ XAML:
 
 ![](customizing-list-appearance-images/height-custom.png "具有固定的資料列高度的 ListView")
 
-
 ### <a name="uneven-rows"></a>不平均的資料列
 
 如果您想要個別資料列都具有不同的高度，您可以設定`HasUnevenRows`屬性設`true`。
 請注意，資料列高度也不需要手動設定一次`HasUnevenRows`已設為`true`，因為由 Xamarin.Forms 會自動計算高度。
-
 
 C#:
 
@@ -337,8 +335,6 @@ void OnImageTapped (object sender, EventArgs args)
 ![](customizing-list-appearance-images/dynamic-row-resizing.png "使用調整大小的執行階段資料列的 ListView")
 
 請注意，有強式的效能降低可能如果這項功能過度使用而使。
-
-
 
 ## <a name="related-links"></a>相關連結
 

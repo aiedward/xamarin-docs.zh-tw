@@ -7,12 +7,12 @@ ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 5235f00a28a047260a91cb708e26e262cafbad07
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 9955b68346c74435a3a141c69d02e1bec5856bd3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200242"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759518"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>顯示 SkiaSharp 點陣圖
 
@@ -73,7 +73,7 @@ catch
 
 請注意，`Stream`物件將會取自`GetStreamAsync`複製到`MemoryStream`。 Android 不允許`Stream`從`HttpClient`處理由主執行緒中非同步的方法除外。 
 
-[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))會執行許多工作:傳遞給它的物件會參考其中一個通用點陣圖檔案格式(通常是JPEG、PNG或GIF)中包含整個點陣圖的記憶體區塊。`Stream` `Decode`方法必須決定的格式，並再將點陣圖檔解碼 SkiaSharp 自己內部的點陣圖格式。
+[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))會執行許多工作：傳遞給它的物件會參考其中一個通用點陣圖檔案格式（通常是JPEG、PNG或GIF）中包含整個點陣圖的記憶體區塊。`Stream` `Decode`方法必須決定的格式，並再將點陣圖檔解碼 SkiaSharp 自己內部的點陣圖格式。
 
 在您程式碼會呼叫後`SKBitmap.Decode`，它可能會失效`CanvasView`以便`PaintSurface`處理常式可以顯示新載入的點陣圖。
 
@@ -667,4 +667,3 @@ public partial class ScalingModesPage : ContentPage
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-

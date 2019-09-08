@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 0e8e8a119d619faee25a44b0462df4ac08e909b2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ebdbbfd0e8195f35755cb849129452fe40f82950
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291607"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769162"
 ---
 # <a name="getting-started-with-tvos-in-xamarin"></a>在 Xamarin 中使用 tvOS 的消費者入門
 
@@ -25,7 +25,6 @@ ms.locfileid: "70291607"
 ## <a name="hello-tvos-quick-start-guideiostvosget-startedhello-tvosmd"></a>[Hello, tvOS 快速入門指南](~/ios/tvos/get-started/hello-tvos.md)
 
 本文提供簡單的 "Hello，tvOS" 應用程式，以快速開始開發 tvOS 應用程式。 其中涵蓋 tvOS 裝置布建、介面建立、tvOS 的程式碼，以及在 tvOS 模擬器和實際 tvOS 硬體上進行測試的基本概念。
-
 
 ## <a name="related-links"></a>相關連結
 

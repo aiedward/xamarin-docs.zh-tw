@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: e0bc4b988905f03edbc66a252cc47a05c441f2c9
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
-ms.translationtype: HT
+ms.openlocfilehash: 1e4cb52772a60489f887116cbcfd4e6a8930fa3a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65925826"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756790"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存放裝置
 
@@ -126,7 +126,6 @@ SecureStorage.Remove("oauth_token");
 ```csharp
 SecureStorage.RemoveAll();
 ```
-
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 

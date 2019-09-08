@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: cf3a3f6638547acf8d22854b6d8a32622c304932
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 07a61eb9d0c16f82d6c367cefc9e3050ca8dfc25
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280855"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768824"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的整合分鏡腳本
 
@@ -31,7 +31,6 @@ iOS 8 包含新的、更簡單易用的機制，可建立使用者介面，也�
 - **一般**–這適用于大型螢幕大小（例如 iPad）或小工具，可提供大大小的印象（例如`UIScrollView`
 - **Compact** –這適用于較小的裝置（例如 iPhone）。 此大小會考慮裝置的方向。
 
-
 如果同時使用這兩個概念，結果會是 2 x 2 方格，定義可用於不同方向的各種可能大小，如下圖所示：
 
  [![](unified-storyboards-images/sizeclassgrid.png "2 x 2 方格，定義可用於一般和精簡方向的各種可能大小")](unified-storyboards-images/sizeclassgrid.png#lightbox)
@@ -43,7 +42,6 @@ iOS 8 包含新的、更簡單易用的機制，可建立使用者介面，也�
 由於大小的緣故，iPad 具有這兩個方向的**一般**類別大小。
 
  [![](unified-storyboards-images/image1.png "iPad 大小類別")](unified-storyboards-images/image1.png#lightbox)
-
 
 ### <a name="iphone-size-classes"></a>iPhone 大小類別
 
@@ -97,7 +95,6 @@ IOS 8 的新手，開發人員可以在 Xcode 中建立單一`.xib` 、不可部
 - 視圖控制器（ `UIViewController` ）。
 - Views （ `UIView` ）。
 - 展示控制器（ `UIPresentationController` ）。
-
 
 開發人員使用特性環境所傳回的特性集合，以決定應該如何配置使用者介面。
 
@@ -217,7 +214,7 @@ Apple 已將新的類別新增至 iOS 8 `UIImageAsset` ，稱為，讓開發人�
 
 iOS 8 提供幾個回呼，讓開發人員可以用來參與特性變更，如下表所示：
 
-|Phase|回呼|描述|
+|Phase|回呼|說明|
 |--- |--- |--- |
 |安裝程式|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>在特徵集合設定為新值之前，會在特性變更的開頭呼叫這個方法。</li><li>當特性集合的值已變更，但在任何動畫發生之前，會呼叫方法。</li></ul>|
 |動畫|`WillTransitionToTraitCollection`|傳遞至這個方法的轉換協調器具有`AnimateAlongside`屬性，可讓開發人員加入將與預設動畫一起執行的動畫。|
@@ -234,14 +231,12 @@ iOS 8 提供幾個回呼，讓開發人員可以用來參與特性變更，如�
 - 根據預設，分割視圖控制器會在折迭發生後，使用主要視圖控制器做為視圖。 開發人員可以覆寫這個行為`GetPrimaryViewControllerForCollapsingSplitViewController` `UISplitViewControllerDelegate` ，其方式是覆寫的方法，並提供他們想要在折迭狀態中顯示的任何視圖控制器。
 - 次要視圖控制器必須合併到主要視圖控制器。 開發人員通常不需要針對此步驟採取任何動作;分割視圖控制器包含以硬體裝置為基礎的此階段自動處理。 不過，在某些特殊情況下，開發人員可能會想要與這種變更進行互動。 呼叫的`UISplitViewControllerDelegate`方法，可在折迭發生時顯示主要視圖控制器，而不是詳細資料檢視。 `CollapseSecondViewController`
 
-
 ### <a name="expanding-the-split-view-controller"></a>展開分割視圖控制器
 
 現在讓我們進一步瞭解當分割視圖控制器從折迭狀態展開時，會發生什麼事。 同樣地，需要進行兩個階段：
 
 - 首先，定義新的主要視圖控制器。 根據預設，分割視圖控制器會自動從折迭的視圖使用主要視圖控制器。 同樣地，開發人員可以使用`GetPrimaryViewControllerForExpandingSplitViewController`的方法`UISplitViewControllerDelegate`來覆寫此行為。
 - 選擇主要視圖控制器後，就必須重新建立次要視圖控制器。 同樣地，分割視圖控制器包含以硬體裝置為基礎的此階段自動處理。 開發人員可以藉由呼叫`SeparateSecondaryViewController`的方法`UISplitViewControllerDelegate`來覆寫此行為。
-
 
 在分割視圖控制器中，主要視圖控制器會藉由執行`CollapseSecondViewController`的和`SeparateSecondaryViewController`方法`UISplitViewControllerDelegate`，在展開和折迭的瀏覽器中播放部分。 `UINavigationController`會執行這些方法，以自動推送和彈出次要視圖控制器。
 
@@ -253,7 +248,6 @@ Apple 對 iOS 8 所做的另一項變更，就是開發人員顯示視圖控制�
 
 - `ShowViewController`–調整以根據其環境顯示新的視圖控制器。 例如，在中`UINavigationController` ，它只會將新的視圖推送至堆疊上。 在分割視圖控制器中，新的視圖控制器會顯示在左側，做為新的主要視圖控制器。 如果沒有容器視圖控制器存在，新的視圖會顯示為強制回應視圖控制器。
 - `ShowDetailViewController`-的運作方式與類似`ShowViewController`，但會在分割視圖控制器上執行，以將詳細資料檢視取代為傳入的新視圖控制器。 如果分割視圖控制器已折迭（如 iPhone 應用程式中所示），則會將呼叫重新導向至`ShowViewController`方法，而新的視圖會顯示為主要視圖控制器。 同樣地，如果沒有容器視圖控制器存在，新的視圖就會顯示為強制回應視圖控制器。
-
 
 這些方法的運作方式是從分葉視圖控制器開始，並向上切入視圖階層，直到找到正確的容器視圖控制器來處理新視圖的顯示為止。
 
@@ -269,7 +263,6 @@ Apple 對 iOS 8 所做的另一項變更，就是開發人員顯示視圖控制�
 
 1. 如果呼叫`ShowViewController`方法，則執行此方法之鏈中的第一個 View 控制器是「流覽控制器」，因此它會當做新視圖的父系使用。
 1. 如果改為呼叫方法，分割視圖控制器就是第一個要執行它的viewcontroller，因此它會當做父系使用。`ShowDetailViewController`
-
 
 `GetTargetForAction`方法的運作方式是尋找可執行指定動作的視圖控制器，然後在它想要接收該動作時，詢問該視圖控制器。 因為此方法是公用的，所以開發人員可以建立自己的自訂方法，其運作`ShowViewController`方式`ShowDetailViewController`就像內建和方法一樣。
 
@@ -690,7 +683,6 @@ IOS 設計工具會確認開發人員想要將分鏡腳本的格式轉換成使�
 在新的 iphone 6 和 iPhone 6 Plus 裝置（以及即將推出的 Apple Watch）中，使用所有現有的 iphone 和 iPad 裝置來進行分解，這代表的是一大組大小`Default.png` 、方向以及啟動畫面影像資產的解析度，必須建立和維護。 此外，這些檔案可能相當大，而且會「膨脹」交付物應用程式套件組合，以增加從 iTunes App Store 下載應用程式所需的時間（可能會讓它無法透過行動電話通訊網路傳遞）並增加使用者裝置上所需的儲存體數量。
 
 IOS 8 的新手，開發人員可以在 Xcode 中建立單一`.xib` 、不可部分完成的檔案，該檔案使用自動設定和大小類別來建立*動態啟動畫面*，適用于每個裝置、解析度和方向。 這不僅能減少開發人員建立和維護所有必要映射資產所需的工作量，還能大幅減少應用程式已安裝的配套大小。
-
 
 動態啟動畫面具有下列限制和考慮：
 

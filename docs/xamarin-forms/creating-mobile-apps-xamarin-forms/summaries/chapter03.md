@@ -1,18 +1,18 @@
 ---
 title: 第 3 章的摘要。 更深入成文字
-description: 使用 Xamarin.Forms 建立行動應用程式：第 3 章的摘要。 更深入成文字
+description: 使用 Xamarin 建立 Mobile Apps：第 3 章的摘要。 更深入成文字
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 11b0a9c5b165df2b0d02bb09fb282cc18290e6ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e37175240825c0fed350589649469c99f1bbf69a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334544"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771230"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章的摘要。 更深入成文字
 
@@ -28,7 +28,7 @@ ms.locfileid: "61334544"
 
 當`HorizontalOptions`和`VerticalOptions`以外的其他屬性設定為值`LayoutOptions.Fill`，則大小`Label`受到所呈現的文字，但不超過其容器提供的大小所需的空間`Label`。 `Label`要*無限制*，它會決定其本身的大小。
 
-(注意：條款*受限*並*無限制*可能違反直覺，因為未受限制的檢視是通常小於條件約束的檢視。 此外，這些條款不會使用一致的方式 》 一書中。）
+(注意：*限制*和無*限制*的詞彙可能會以直覺方式呈現，因為無限制的視圖通常會小於限制的視圖。 此外，這些條款不會使用一致的方式 》 一書中。）
 
 這類檢視`Label`可以限制在一個維度中，並在其他未受限制。 A`Label`會僅將文字換行多行如果水平的條件約束。
 
@@ -99,9 +99,9 @@ ms.locfileid: "61334544"
 
 `Color.Default` 為了強制執行平台的色彩配置，並因此在不同平台上的不同內容中有不同的意義。 根據預設平台色彩配置如下：
 
-- iOS:深色的文字，在淺色背景
-- Android:亮色調 （以書籍） 的深色背景上的文字或深色的文字，在淺色背景 (材料設計，透過在 AppCompat**主要**的範例程式碼存放庫的分支)
-- UWP:深色的文字，在淺色背景
+- IOS淺背景的深色文字
+- 面向深色背景上的淺文字（書籍中）或淺背景的深色文字（在範例程式碼存放庫的**主要**分支中透過 AppCompat 的材質設計）
+- UWP淺背景的深色文字
 
 `Color.Accent`值在特定平台 （和有時候使用者可選取） 的色彩，其顯示暗色或亮色背景的結果。
 
@@ -134,8 +134,6 @@ ms.locfileid: "61334544"
 [![變數的三個螢幕擷取畫面會格式化段落](images/ch03fg06-small.png "格式化標籤文字的變數")](images/ch03fg06-large.png#lightbox "變數格式的標籤文字")
 
 [ **NamedFontSizes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)程式會使用單一`Label`和`FormattedString`顯示具名的字型的大小，每個平台的所有物件。
-
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2017
-ms.openlocfilehash: fd94cd7a6d37e7fa00489e788f232842b319e5d3
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6008663276151ef9512e4a370252da6861fa1b19
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292674"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769434"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin 中的社交架構
 
@@ -58,7 +58,6 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 - `SetInitialText`–新增要在推文中顯示的初始文字。
 - `AddUrl`–新增推文的 Url。
 - `AddImage`–將影像新增至推文。
-
 
 一旦初始化之後， `PresentVIewController`呼叫就會顯示所`SLComposeViewController`建立的視圖。 然後，使用者可以選擇性地編輯和傳送推文，或取消傳送它。 不論是哪一種情況，都應該在中`CompletionHandler`關閉控制器，其中也可以檢查結果，以查看推文是否已傳送或取消，如下所示：
 
@@ -473,7 +472,6 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 ## <a name="summary"></a>總結
 
 本文說明如何使用社交架構與 Twitter 和 Facebook 互動。 其中示範了在裝置設定中設定每個社交網路帳戶的位置。 同時也會討論如何使用`SLComposeViewController`來呈現要張貼到社交網路的統一觀點。 此外，它也檢查`SLRequest`了用來呼叫每個社交網路 API 的類別。
-
 
 ## <a name="related-links"></a>相關連結
 

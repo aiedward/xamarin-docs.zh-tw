@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/28/2016
-ms.openlocfilehash: 75180152c3ed7056102038b9019f8017183c17ee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 16e6d66cd41ead7a4d234cf45bb73e53e41aa5eb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279940"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769564"
 ---
 # <a name="referencing-native-libraries-in-xamarinios"></a>在 Xamarin 中參考原生程式庫
 
@@ -56,7 +56,6 @@ lipo -create -output libMyLibrary.a libMyLibrary-i386.a libMyLibrary-arm64.a lib
 
 這會`libMyLibrary.a`建立，這將會是適用于所有 iOS 開發目標的通用（fat）程式庫。
 
-
 ### <a name="missing-required-architecture-i386"></a>缺少必要的架構 i386
 
 當您嘗試在 iOS `does not implement methodSignatureForSelector`模擬器`does not implement doesNotRecognizeSelector`中使用目標 C 程式庫時，如果您在執行時間輸出中收到或訊息，表示您的程式庫可能未針對 i386 架構進行編譯（請參閱[建立通用原生程式庫](#building_native)一節）。
@@ -80,7 +79,6 @@ lipo -info /full/path/to/libraryname.a
 - 將程式庫帶入您的專案
 - 設定 Xamarin 以程式庫
 - 從程式庫存取方法。
-
 
 若要將連結**庫帶入您的專案**，請從 [方案瀏覽器] 中選取專案，然後按**命令 + Option + a**。 流覽至 libMyLibrary，並將它加入至專案。 出現提示時，請告訴 Visual Studio for Mac 或 Visual Studio 將它複製到專案中。 新增之後，在專案中尋找 libFoo，並以滑鼠右鍵按一下它，並將 [組建]**動作**設定為 [**無**]。
 
@@ -113,7 +111,6 @@ IOS 上有兩種可用的原生程式庫：
 - 屬於作業系統一部分的共用程式庫。
 
 - 您的應用程式隨附的靜態程式庫。
-
 
 若要存取其中任一項所定義的方法，您可以使用[Mono 的 P/Invoke 功能](https://www.mono-project.com/docs/advanced/pinvoke/)，這是您在 .net 中使用的相同技術，大致如下：
 
@@ -174,4 +171,3 @@ public static extern double AnimalLibraryVersion();
 因為您只能在 iOS 上使用靜態程式庫，所以沒有可連結的外部共用程式庫，因此 DllImport 屬性中的 path 參數必須使用特殊名稱`__Internal` （請注意名稱開頭的雙底線字元），而不是路徑名稱。
 
 這會強制 DllImport 查詢您在目前程式中參考之方法的符號，而不是嘗試從共用程式庫載入。
-

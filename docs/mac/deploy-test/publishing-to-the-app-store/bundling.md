@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 283a057723ae399ead65c0c3e40347dbbd1e189e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 129ba01a41f9e5f58802c4d4da65d1662a103adc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281188"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770113"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>針對 Mac App Store 進行統合
 
@@ -42,7 +42,6 @@ ms.locfileid: "70281188"
 建置應用程式之後，開發人員可在專案上按一下滑鼠右鍵，然後選擇 [開啟包含的資料夾] 即可找到套件檔案 (在下列範例所示的 `bin/x86/AppStore` 目錄中)。  此套件檔案包含應用程式的安裝程式，可提交給 Apple 以納入 Mac App Store。
 
  ![在 Finder 中選取組建套件](bundling-images/image64.png "在 Finder 中選取組建套件")
-
 
 ## <a name="related-links"></a>相關連結
 

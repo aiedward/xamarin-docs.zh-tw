@@ -7,19 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/18/2017
-ms.openlocfilehash: e24f450c16e144b313d5f8e3da0221fccdaa145b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dd6fac2434c5205acfec10e4830dc72ea42aa340
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285420"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756153"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS 不同裝置的編譯
 
 可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建]\(在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
 
 [![](compiling-for-different-devices-images/image1.png "專案的 iOS 組建屬性頁面")](compiling-for-different-devices-images/image1.png#lightbox) 
 
@@ -35,7 +34,6 @@ ms.locfileid: "70285420"
 
  <a name="SDK_Options" />
 
-
 ## <a name="sdk-options"></a>SDK 選項
 
 Visual Studio for Mac 可讓您設定兩個與 SDK 相關的重要屬性：iOS SDK 版本 (用來建置軟體) 和部署目標 (或最小的必要 iOS 版本)。
@@ -48,13 +46,11 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 
  <a name="Linking" />
 
-
 ## <a name="linking"></a>連結
 
 請參閱我們的[連結器](~/ios/deploy-test/linker.md)專屬頁面，以深入了解連結器如何協助您減少可執行檔的大小，以及了解如何有效地使用連結器。
 
  <a name="Code_Generation_Engine" />
-
 
 ## <a name="code-generation-engine"></a>程式碼產生引擎
 
@@ -71,7 +67,6 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 [![](compiling-for-different-devices-images/image2a.png "啟用 LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
  <a name="ARMV7_and_ARMV7s_support" />
-
 
 ## <a name="architecture-support"></a>架構支援
 
@@ -114,13 +109,11 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 
  <a name="ARM_Thumb_Support" />
 
-
 ### <a name="arm-thumb-2-support"></a>ARM Thumb-2 支援
 
 Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thumb 支援，您可以減少可執行檔的大小，但代價是執行時間較久。 ARMv7 和 ARMv7s 可支援 Thumb。
 
  <a name="Conditional_framwork_useage" />
-
 
 ## <a name="conditional-framework-usage"></a>條件式架構使用方式
 
@@ -131,13 +124,9 @@ Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thum
 - 開啟 [專案選項]，然後瀏覽至 [iOS 組建] 窗格。
 - 針對您想要進行弱式連結的每個組態，在 [其他選項] 中新增 `'-gcc_flags "-weak_framework iAd"'`：
 
-
 [![](compiling-for-different-devices-images/image3.png "其他選項")](compiling-for-different-devices-images/image3.png#lightbox)
 
-
 除此之外，您還必須確保您使用的類型不會在沒有這些類型的舊版 iOS 上執行。 有數種方法可達成此目的，但其中一個方式是剖析 `UIDevice.CurrentDevice.SystemVersion`。
-
-
 
 ## <a name="related-links"></a>相關連結
 

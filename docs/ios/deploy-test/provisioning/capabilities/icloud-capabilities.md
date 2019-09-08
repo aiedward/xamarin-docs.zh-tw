@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
-ms.openlocfilehash: 0972b7c6fa686f40ca548f8267f8e514e9244f05
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3fd3ec0207ac3ae1e5fcaa7d11d91247cd73666d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286145"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762911"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Xamarin.iOS 的 iCloud 功能
 
@@ -92,7 +92,7 @@ iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在�
     ![選取容器畫面](icloud-capabilities-images/image34.png)
 
 10. 確認 Container (容器) 指派項目，然後按 [Assign] \(指派\)。
- 
+
 此 App ID (應用程式識別碼) 現在已可用來產生 (或重新產生) 新的佈建設定檔，如[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南所述。 
 
 如需有關使用 iCloud 的詳細資訊，請參閱下列指南：
@@ -102,7 +102,7 @@ iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在�
 * [文件選擇器簡介](~/ios/platform/document-picker.md)
 
 ## <a name="next-steps"></a>後續步驟
- 
+
 以下清單說明可能需要進行的額外步驟：
 
 * 在您的應用程式中使用架構命名空間。

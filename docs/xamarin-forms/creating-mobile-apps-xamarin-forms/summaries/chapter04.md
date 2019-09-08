@@ -1,18 +1,18 @@
 ---
 title: 第 4 章的摘要。 捲動堆疊
-description: 使用 Xamarin.Forms 建立行動應用程式：第 4 章的摘要。 捲動堆疊
+description: 使用 Xamarin 建立 Mobile Apps：第 4 章的摘要。 捲動堆疊
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 87846eba71278295ae6f266f6e786c0992aebd34
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 66e4f52e87a4398dd2e09d2d128f43de9a71a665
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334511"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760833"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章的摘要。 捲動堆疊
 
@@ -83,7 +83,9 @@ ms.locfileid: "61334511"
 
 這兩個矩形檢視通常用於顯示用途。
 
-[ `Frame` ](xref:Xamarin.Forms.Frame) 檢視會顯示另一個檢視，例如可以是版面配置周圍的矩形框架`StackLayout`。 `Frame` 繼承[ `Content` ](xref:Xamarin.Forms.ContentView.Content)屬性從[ `ContentView` ](xref:Xamarin.Forms.ContentView) ，來檢視內顯示`Frame`。 `Frame`預設是透明的。 設定下列三個屬性，並自訂畫面格的外觀：
+[
+          `Frame`
+          ](xref:Xamarin.Forms.Frame) 檢視會顯示另一個檢視，例如可以是版面配置周圍的矩形框架`StackLayout`。 `Frame` 繼承[ `Content` ](xref:Xamarin.Forms.ContentView.Content)屬性從[ `ContentView` ](xref:Xamarin.Forms.ContentView) ，來檢視內顯示`Frame`。 `Frame`預設是透明的。 設定下列三個屬性，並自訂畫面格的外觀：
 
 - [ `OutlineColor` ](xref:Xamarin.Forms.Frame.OutlineColor)屬性，以讓它立即可見。 通常會設定`OutlineColor`至`Color.Accent`時您不知道基礎的色彩配置。
 - [ `HasShadow` ](xref:Xamarin.Forms.Frame.HasShadow)屬性可以設定為`true`iOS 裝置上顯示一個黑色的陰影。
@@ -110,8 +112,6 @@ ms.locfileid: "61334511"
 訣竅是給予`ScrollView`的子系`StackLayout``VerticalOptions`設定`FillAndExpand`。 這示範於[ **BlackCat** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat)範例。
 
 **BlackCat**範例也會示範如何定義及存取內嵌於共用的程式庫中的程式。 這也可透過共用資產專案 (SAPs)，但程序比較困難，作為[ **BlackCatSap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap)範例會示範。
-
-
 
 ## <a name="related-links"></a>相關連結
 

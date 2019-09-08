@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/19/2017
-ms.openlocfilehash: 12f34e7bc77fd3978ccfdfb57cc95747123c5603
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 3bc001c048129851a3604752fdfbd45d72d4c3d3
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657236"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760489"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>使用身分識別提供者驗證使用者
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-oauthnativeflow)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-oauthnativeflow)
 
 _Xamarin.Auth 是跨平台 SDK，以驗證使用者，並儲存他們的帳戶。它包含可支援使用身分識別提供者，例如 Google、 Microsoft、 Facebook 和 Twitter OAuth 驗證器。這篇文章說明如何使用 Xamarin.Auth 管理驗證程序，在 Xamarin.Forms 應用程式。_
 
@@ -263,7 +263,6 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 ## <a name="summary"></a>總結
 
 這篇文章說明如何使用 Xamarin.Auth 管理驗證程序，在 Xamarin.Forms 應用程式。 提供 Xamarin.Auth`OAuth2Authenticator`和`OAuth2Request`使用身分識別提供者，例如 Google、 Microsoft、 Facebook 和 Twitter Xamarin.Forms 應用程式所使用的類別。
-
 
 ## <a name="related-links"></a>相關連結
 

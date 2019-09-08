@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 94ab5ca9fa34487457b93758dfac0ab514e702c8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2091e710352b25167b740e409955787ffec99e1c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286279"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768953"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注釋和重迭
 
@@ -25,7 +25,6 @@ ms.locfileid: "70286279"
 首先，我們要建立新的**IOS 空白專案**，並為它提供相關的名稱。 我們一開始會先將程式碼新增至我們的視圖控制器以顯示 MapView，然後再為我們的 MapDelegate 建立新的類別，以及自訂注釋。 請遵循下列步驟來進行這項作業：
 
 ## <a name="viewcontroller"></a>ViewController
-
 
 1. 將下列命名空間新增至`ViewController`：
 
@@ -110,9 +109,7 @@ ms.locfileid: "70286279"
 
     `Maps Walkthrough Docs Sample`.
 
-
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs –自訂批註的類別
-
 
 1. 我們會將自訂類別用於名`ConferenceAnnotation`為的注釋。 將下列類別新增至專案：
 
@@ -180,7 +177,6 @@ ms.locfileid: "70286279"
     ```
 
 這會完成中`ViewDidLoad`的程式碼。 現在，我們需要`MapDelegate`實作為類別來分別處理批註和重迭視圖的建立。
-
 
 ## <a name="mapdelegate"></a>MapDelegate
 
@@ -287,7 +283,6 @@ ms.locfileid: "70286279"
 ## <a name="summary"></a>總結
 
 在本文中，我們探討了如何將批註新增至地圖，以及如何為指定的多邊形加入重迭。 我們也示範了如何將觸控支援新增至注釋，以在地圖上建立影像的動畫。
-
 
 ## <a name="related-links"></a>相關連結
 

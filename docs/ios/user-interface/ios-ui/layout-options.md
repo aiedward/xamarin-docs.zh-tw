@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: eb20c73ab66af5ca07bf2efb31d631d9fa9776dc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 335c385b5be77736f0e19852eb71f2a2329eb9a2
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287033"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768252"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin 中的版面配置選項
 
@@ -40,7 +40,6 @@ textfield1.Frame = new RectangleF(15, 277, 79, 27);
 textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
 ```
 
-
 若要測試自動調整大小設定，請在專案的選項中啟用不同的**支援裝置方向**：
 
  [![](layout-options-images/image43a.png "自動調整大小設定")](layout-options-images/image43a.png#lightbox)
@@ -53,7 +52,6 @@ textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
 imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleLeftMargin;
 ```
 
-
 我們也可以使用設計工具來調整控制項。 選取如下所示的 struts，將會使影像保持靠右對齊，而不會被裁剪到視圖的底部：
 
  [![](layout-options-images/autoresize.png "Autorotation")](layout-options-images/autoresize.png#lightbox)
@@ -63,10 +61,6 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
  [![](layout-options-images/image44a.png "Autorotation")](layout-options-images/image44a.png#lightbox)
 
 請注意，由於`FlexibleWidth`設定，[文字] 視圖和 [文字] 欄位都會延展以保留相同的左邊和右邊界。 影像具有上邊界和左邊界彈性，這表示它會保留右下邊界，並在旋轉螢幕時讓影像保持在視野中。 複雜版面配置通常需要在每個可見控制項上組合這些設定，讓使用者介面保持一致，並防止控制項在視圖的界限變更時（由於旋轉或其他調整大小事件）而重迭。
-
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

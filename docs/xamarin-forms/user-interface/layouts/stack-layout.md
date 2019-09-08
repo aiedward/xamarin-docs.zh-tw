@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: b2660ec18d075279f9cb84be4521429c05974e59
-ms.sourcegitcommit: 9912e57ff6124c583600f9460ebfa3f7f7525960
+ms.openlocfilehash: 28a4fc6527a8c6990c47cdbbdc3163fc9350db83
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560288"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770269"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[StackLayout](xref:Xamarin.Forms.StackLayout)會以一維線 (「堆疊」) 將視圖以水準或垂直方式組織。 檢視`StackLayout`可以根據使用的版面配置選項版面配置中的空間大小。 位置是由檢視加入至版面配置和檢視表的版面配置選項順序來決定。
+[StackLayout](xref:Xamarin.Forms.StackLayout)會以一維線（「堆疊」）將視圖以水準或垂直方式組織。 檢視`StackLayout`可以根據使用的版面配置選項版面配置中的空間大小。 位置是由檢視加入至版面配置和檢視表的版面配置選項順序來決定。
 
 [![](stack-layout-images/layouts-sml.png "Xamarin.Forms 版面配置")](stack-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
 
@@ -219,9 +219,7 @@ Title="StackLayouts">
 
 ![](stack-layout-images/stack.png "複雜 StackLayout")
 
-請注意, 會進行嵌套, 因為在某些情況下, 相較于在相同的版面配置中呈現所有元素, 嵌套配置可能會比較容易。 `StackLayouts` 另外也請注意，因為`StackLayout`不支援重疊的項目頁面不部分配置發揮發現其他配置的頁面中。
-
-
+請注意，會進行嵌套，因為在某些情況下，相較于在相同的版面配置中呈現所有元素，嵌套配置可能會比較容易。 `StackLayouts` 另外也請注意，因為`StackLayout`不支援重疊的項目頁面不部分配置發揮發現其他配置的頁面中。
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,18 +7,17 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 0049d69caabce545b2813dbd2b3905fe96f28fed
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0f3e56ab90d5205318539994bae7f4db153bb163
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292731"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768082"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>運用 watchOS 父系應用程式，在 Xamarin 中使用
 
 > [!IMPORTANT]
 > 存取父應用程式只會使用下列範例適用於 watchOS 1 監看式應用程式。
-
 
 有不同的方式，watch 應用程式和其隨附的 iOS 應用程式之間進行通訊：
 
@@ -30,7 +29,6 @@ ms.locfileid: "70292731"
 
 父應用程式有時也稱為容器應用程式。
 
-
 <a name="code" />
 
 ## <a name="run-code"></a>執行程式碼
@@ -39,8 +37,6 @@ ms.locfileid: "70292731"
 您的監看式延伸模組可以要求父 iOS 應用程式進行一些處理，其代表使用`OpenParentApplication`方法。
 
 針對長時間執行工作 （包括網路要求）-只有父代的 iOS 應用程式可以利用背景處理完成這些工作，並將擷取的資料儲存在監看式延伸模組可存取的位置，這會特別有用。
-
-
 
 ### <a name="watch-kit-app-extension"></a>監看式套件應用程式擴充功能
 
@@ -57,12 +53,10 @@ WKInterfaceController.OpenParentApplication (new NSDictionary (), (replyInfo, er
 });
 ```
 
-
 ### <a name="ios-app"></a>iOS 應用程式
 
 從監看式應用程式擴充功能的所有呼叫皆都導向的 iPhone 應用程式透過`HandleWatchKitExtensionRequest`方法。
 如果您正在監看式應用程式中不同的要求，則這個方法將會需要查詢`userInfo`字典，以便判斷如何處理要求。
-
 
 ```csharp
 [Register ("AppDelegate")]
@@ -81,7 +75,6 @@ public partial class AppDelegate : UIApplicationDelegate
     }
 }
 ```
-
 
 <a name="storage" />
 
@@ -142,8 +135,6 @@ wormHole = new Wormhole ("group.com.your-company.watchstuff", "messageDir");
 ```
 
 下載C#版本[WormHoleSharp](https://github.com/Clancey/WormHoleSharp)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

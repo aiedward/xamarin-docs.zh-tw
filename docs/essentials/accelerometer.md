@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f22563aeaeb7bec2f87ca7892005f2cfb1c4e84b
-ms.sourcegitcommit: 495680e74c72e7c570e68cde95d3d3643b1fcc8a
-ms.translationtype: HT
+ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2019
-ms.locfileid: "58870374"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765051"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials:加速計
 
@@ -98,4 +98,3 @@ X 軸是指向右方的水平軸，Y 軸是指向上方的垂直軸，Z 軸則�
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Accelerometer-XamarinEssentials-API-of-the-Week/player]
 
 [!include[](~/essentials/includes/xamarin-show-essentials.md)]
-

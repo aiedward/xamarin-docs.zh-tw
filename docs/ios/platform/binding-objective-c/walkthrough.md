@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: b53799f4b1c8d9299ab23191f6a702c2ec0983fb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1cf22f070864492e14e1865c1cbbf8cf32e0df29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285770"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753906"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：繫結 iOS Objective-C 程式庫
 
@@ -56,15 +56,11 @@ _本文提供的實際操作逐步解說，是為現有的 InfColorPicker 的目
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 如上所述，我們將在本逐步解說中使用 Xcode 命令列工具`make` （ `lipo`特別是和）。 命令是一個非常常見的 Unix 公用程式，它會使用指定如何建立程式的 makefile，將可執行程式和程式庫的編譯作業自動化。 `make` 命令是用來建立多架構檔案的 OS X 命令列公用程式，它會將多`.a`個檔案結合成一個可供所有硬體架構使用的檔案。 `lipo`
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 如上所述，我們將在此逐步解說中使用**Mac 組建主機**上的 Xcode 命令列工具`make` （ `lipo`特別是和）。 命令是一個非常常見的 Unix 公用程式，它會使用 makefile 指定建立程式的方式，將可執行程式和程式庫的編譯自動化。 `make` 命令是用來建立多架構檔案的 OS X 命令列公用程式，它會將多`.a`個檔案結合成一個可供所有硬體架構使用的檔案。 `lipo`
-
 
 -----
 
@@ -272,9 +268,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 ![](walkthrough-images/bind03.png "方案總管中的方案結構")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. 啟動 Visual Studio。
 
@@ -336,7 +330,6 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 當檔案新增至專案時，Xamarin. iOS 會自動將檔案的**組建動作**設定為**ObjcBindingNativeLibrary**，並建立名`libInfColorPickerSDK.linkwith.cs`為的特殊檔案。
 
-
 此檔案包含的`LinkWith`屬性會告知 Xamarin。 iOS 如何處理剛才新增的靜態程式庫。 此檔案的內容會顯示在下列程式碼片段中：
 
 ```csharp
@@ -347,7 +340,6 @@ using ObjCRuntime;
 
 `LinkWith`屬性會識別專案的靜態程式庫和一些重要的連結器旗標。
 
-
 接下來我們必須建立 InfColorPicker 專案的 API 定義。 基於本逐步解說的目的，我們將使用目標 Sharpie 來產生檔案**ApiDefinition.cs**。
 
 <a name="Using_Objective_Sharpie"/>
@@ -356,15 +348,11 @@ using ObjCRuntime;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 目標 Sharpie 是一種命令列工具（由 Xamarin 提供），可協助建立將協力廠商目標 C 程式庫系結至C#所需的定義。 在本節中，我們將使用目標 Sharpie 來建立 InfColorPicker 專案的初始**ApiDefinition.cs** 。
-
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 目標 Sharpie 是一種命令列工具（由 Xamarin 提供），可協助建立將協力廠商目標 C 程式庫系結至C#所需的定義。 在本節中，我們將在**Mac 組建主機**上使用目標 Sharpie 來建立 InfColorPicker 專案的初始**ApiDefinition.cs** 。
-
 
 -----
 
@@ -466,17 +454,13 @@ Europa:Resources kmullins$
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 在上述所建立的系結專案中開啟這兩個檔案。 複製**InfColorPicker.cs**檔案的內容，並將它貼到**ApiDefinition.cs**檔案中，將現有`namespace ...` `using`的程式碼區塊取代為**InfColorPicker.cs**檔案的內容（離開語句不變）：
 
 ![](walkthrough-images/os07.png "InfColorPickerControllerDelegate 檔案")
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 在上述所建立的系結專案中開啟這兩個檔案。 複製**InfColorPicker.cs**檔案（從**Mac 組建主機**）的內容，並將它貼入**ApiDefinition.cs**檔案，以**InfColorPicker.cs**檔案的內容取代`namespace ...`現有的程式碼區塊（將`using`語句保持不變）。
-
 
 -----
 
@@ -503,17 +487,13 @@ Europa:Resources kmullins$
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 此時，我們的系結專案應該已經完成，而且可以開始建立。 讓我們建立系結專案，並確定我們最後沒有發生錯誤：
 
 [建立系結專案，並確定沒有任何錯誤](walkthrough-images/os12.png)
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-
 此時，我們的系結專案應該已經完成，而且可以開始建立。 讓我們來建立系結專案，並確定我們最後沒有發生錯誤。
-
 
 -----
 
@@ -702,7 +682,6 @@ private void HandleTouchUpInsideWithWeakDelegate (object sender, EventArgs e)
 ```
 
 **更新 ViewDidLoad** -我們必須變更`ViewDidLoad` ，讓它使用我們剛才建立的事件處理常式。 [ `ViewController`編輯] `ViewDidLoad`和 [變更為] 類似下列程式碼片段：
-
 
 ```csharp
 public override void ViewDidLoad ()

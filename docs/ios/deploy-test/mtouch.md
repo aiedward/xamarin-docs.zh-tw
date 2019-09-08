@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: 437db399d1a8cafb19dbc57d7f2ea4141900d8db
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9b2cb44dff7712953454a9add71f092956e3c759
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292352"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762777"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 搭售 Xamarin.iOS 應用程式
 
@@ -49,7 +49,6 @@ export PATH=$PATH:/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin
 - 編譯來部署裝置。
 - 將可執行檔部署至裝置。
 
-
 ### <a name="building-for-the-simulator"></a>模擬器的建置
 
 當您開始使用時，最常見的案例是在模擬器中試驗應用程式，因此您會使用 `mtouch -sim` 將程式碼編譯為模擬器套件。 其作法如下：
@@ -70,9 +69,7 @@ $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 
  <a name="Running_your_Application" />
 
-
 ## <a name="running-your-application"></a>執行應用程式
-
 
 ### <a name="launching-on-the-simulator"></a>在模擬器上啟動
 
@@ -95,8 +92,6 @@ PID: 98460
 Press enter to terminate the application
 ```
 
-
-
 強烈建議您也要保存標準輸出和標準錯誤檔案的記錄，以便協助您進行偵錯。 `Console.WriteLine` 的輸出會傳送至 `stdout`，而 `Console.Error.WriteLine` 和任何其他執行階段錯誤訊息的輸出則會傳送至 `stderr`。
 
 若要這樣做，請使用 `--stdout` 和 `--stderr` 旗標：
@@ -106,7 +101,6 @@ Press enter to terminate the application
 ```
 
 如果您的應用程式失敗，您可以查看輸出和錯誤來診斷問題。
-
 
 ### <a name="deploying-to-a-device"></a>部署至裝置
 
@@ -125,8 +119,6 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 ## <a name="reference"></a>參考資料
 
 請參閱 [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) 手冊頁面，以取得其他命令列選項的詳細資料。
-
-
 
 ## <a name="related-links"></a>相關連結
 

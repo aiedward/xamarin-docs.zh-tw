@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: conceptdev
 ms.author: crdun
-ms.openlocfilehash: 27f025d80b3259da32581811ae6c900358a07e4e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7acd43597d033b4c6daac59016a9bdf41ade6f68
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278507"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768146"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>使用反映 API 建立 Xamarin iOS 應用程式
 
@@ -29,7 +29,6 @@ MT.D 與 Xamarin 一起散發。 若要使用它，請以滑鼠右鍵按一下 V
 1. 建立以 MT 裝飾的類別。D 屬性。
 1. `BindingContext`建立實例，並將上述類別的實例傳遞給它。 
 1. 建立，並`BindingContext’s` 將`RootElement`它傳遞給它。 `DialogViewController` 
-
 
 讓我們來看一個範例，以說明如何使用反映 API。 在此範例中，我們將建立簡單的資料輸入畫面，如下所示：
 
@@ -138,11 +137,9 @@ public class Expense
 
  <a name="Summary" />
 
-
 ## <a name="summary"></a>總結
 
 本文提供反映 API 的逐步解說。 我們示範了如何將屬性加入至類別，以控制要顯示的內容。 我們也討論了如何使用`BindingContext` ，將來自類別的資料系結至所建立的元素階層，以及如何使用 MT。具有的`UINavigationController`D。
-
 
 ## <a name="related-links"></a>相關連結
 

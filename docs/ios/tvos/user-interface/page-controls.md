@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: ec4b99fd1c8ec28f6b4bbb30695613da6c40d60c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8bb517eaa549567ae92695fbad300d055f42771f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288955"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769052"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 頁面控制項
 
@@ -35,7 +35,6 @@ ms.locfileid: "70288955"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-
 1. 在  **Solution Pad**中，按兩下`Main.storyboard`檔案，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳**頁面控制項**，並將它放在視圖上：
 
@@ -49,9 +48,7 @@ ms.locfileid: "70288955"
     [![](page-controls-images/page04.png "將控制項命名為")](page-controls-images/page04.png#lightbox)
 1. 儲存您的變更。
 
-
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
 
 1. 在 **方案總管**中，按兩下`Main.storyboard`檔案，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳**頁面控制項**，並將它放在視圖上：
@@ -65,7 +62,6 @@ ms.locfileid: "70288955"
 
     [![](page-controls-images/page04-vs.png "將控制項命名為")](page-controls-images/page04-vs.png#lightbox)
 1. 儲存您的變更。
-
 
 -----
 
@@ -167,8 +163,6 @@ PageView.CurrentPage = PageNumber;
 ## <a name="summary"></a>總結
 
 本文涵蓋設計和使用 tvOS 應用程式內的頁面控制項。
-
-
 
 ## <a name="related-links"></a>相關連結
 

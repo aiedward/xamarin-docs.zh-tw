@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 269d9d1ff658217a49ff56057c01c011f920b5df
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 4573d58f80b9c168f5d0a8a3f72beb64c29b1703
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650520"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771842"
 ---
 # <a name="loading-application-resource-videos"></a>載入應用程式資源影片
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 用於 `VideoPlayer` 檢視的自訂轉譯器，可以播放內嵌在個別平台專案中作為應用程式資源的視訊檔案。 不過，目前的 `VideoPlayer` 版本無法存取內嵌在 .NET Standard 程式庫中的資源。
 
@@ -149,7 +149,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="playing-the-resource-file"></a>播放資源檔
 
-**VideoPlayerDemos** 解決方案中的 [Play Video Resource] \(播放視訊資源\)  頁面會使用 `OnPlatform` 類別指定每個平台的視訊檔案：
+**VideoPlayerDemos** 解決方案中的 [Play Video Resource] \(播放視訊資源\) 頁面會使用 `OnPlatform` 類別指定每個平台的視訊檔案：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -180,7 +180,6 @@ namespace FormsVideoLibrary.UWP
 [![播放視訊資源](loading-resources-images/playvideoresource-small.png "播放視訊資源")](loading-resources-images/playvideoresource-large.png#lightbox "播放視訊資源")
 
 您現在已了解如何[從 Web URI 載入影片](web-videos.md)，以及如何播放內嵌的資源。 此外，您可以[從裝置的影片櫃載入影片](accessing-library.md)。
-
 
 ## <a name="related-links"></a>相關連結
 

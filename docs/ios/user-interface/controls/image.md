@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: 191d037d12d27e2c6ab475467853023f440c71d4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291370"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768982"
 ---
 # <a name="displaying-images-with-xamarinios"></a>使用 Xamarin 來顯示影像
 
@@ -50,7 +50,6 @@ Visual Studio for Mac 通常會自動選擇正確的**組建動作**，但您應
 
 - 儲存在應用程式屬性中設定的映射，例如預設啟動映射和應用程式圖示。
 - 將其他映射和檔案與程式碼分開儲存，使其更容易管理（當複製資原始目錄內容時，會保留子目錄）。
-
 
 **Resources**目錄在程式庫專案中特別有用，因為程式碼可以假設這些影像會複製到取用應用程式的根目錄，讓您更輕鬆地撰寫需要影像、音效、影片、XML 或的共用程式碼程式庫。其他檔案。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
-ms.openlocfilehash: 9cd93a94361c11ecaa454a804e58180a33ec08fe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290934"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766851"
 ---
 # <a name="using-data-in-an-ios-app"></a>在 iOS 應用程式中使用資料
 
@@ -37,7 +37,6 @@ IOS 中 ViewControllers 的原生 UI 程式碼超出本檔的範圍。
 
 - 讀取清單
 - 讀取個別記錄
-
 
 `StockDatabase`類別中的兩個方法是：
 
@@ -77,8 +76,6 @@ public int SaveStock (Stock item)
 }
 ```
 
-
-
 真實世界的應用程式通常需要進行一些驗證（例如必要欄位、最小長度或其他商務規則）。
 良好的跨平臺應用程式可在共用程式碼中盡可能地實作為驗證邏輯，將驗證錯誤傳回給 UI，以根據平臺的功能來顯示。
 
@@ -104,7 +101,6 @@ public int DeleteStock(Stock stock)
 - **SQLite Manager Firefox 延伸**模組–適用于 Mac 和 Windows，並產生與 IOS 和 Android 相容的檔案。
 - **命令列**–請參閱[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 。
 
-
 建立與您的應用程式一起散發的資料庫檔案時，請留意資料表和資料行的命名，以確保它們符合您的程式碼所預期的內容，特別是當您使用的是會C#預期名稱符合您的類別和屬性的 SQLite.NET 時（或相關聯的自訂屬性）。
 
 若是 iOS，請在您的應用程式中包含 sqlite 檔案，並確定**它已標記為 [組建動作]：內容**。 將程式碼`FinishedLaunching`放入，將檔案複製到可寫入的目錄，*然後再*呼叫任何資料方法。 下列程式碼會複製名為**data. sqlite**的現有資料庫（只有在它尚未存在的情況下）。
@@ -120,7 +116,6 @@ if (!File.Exists (Database.DatabaseFilePath))
 ```
 
 在此完成後執行的任何資料存取程式碼（不論是 ADO.NET 或使用 SQLite.NET）都可以存取預先填入的資料。
-
 
 ## <a name="related-links"></a>相關連結
 

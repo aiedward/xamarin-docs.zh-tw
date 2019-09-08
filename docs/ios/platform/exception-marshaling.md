@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/05/2017
-ms.openlocfilehash: a5dea7358e48ebb1961c1fa3253ad096d041c0cf
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 936c5b91a27fed1c00f3cf0c61d0184d5532c25a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279687"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753078"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>在 Xamarin 中的例外狀況封送處理
 
@@ -330,7 +330,6 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 我們只會在嘗試攔截目標 C `objc_msgSend`例外狀況時，攔截 P/invoke 至函式系列。 這表示對另一個 C 函式的 P/Invoke，接著會擲回任何目標-C 例外狀況，仍然會遇到舊的和未定義的行為（未來可能會改善此功能）。
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: d409787661491a6922434a12157c494851644412
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d180345c36531b58c13eebbd97dc4f7555b8f13c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291622"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768863"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>以 Xamarin 中的資料填入資料表
 
@@ -25,7 +25,6 @@ ms.locfileid: "70291622"
 - 加入索引
 - 加入頁首和頁尾
 
-
 <a name="Subclassing_UITableViewSource" />
 
 ## <a name="subclassing-uitableviewsource"></a>子類別化 UITableViewSource
@@ -36,7 +35,6 @@ ms.locfileid: "70291622"
 
 - **RowsInSection** – [`nint`](~/cross-platform/macios/nativetypes.md)傳回資料表應該顯示之資料列總數的計數。
 - **GetCell** – `UITableCellView`針對傳遞至方法的對應資料列索引，傳回已填入資料的。
-
 
 BasicTable 範例檔案**TableSource.cs**具有最簡單的`UITableViewSource`可能執行。 您可以在下面的程式碼片段中看到，它接受要顯示在資料表中的字串陣列，並傳回包含每個字串的預設儲存格樣式：
 
@@ -139,13 +137,9 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-
 現在使用者可以觸碰一列，隨即會出現警示：
 
-
-
  [![](populating-a-table-with-data-images/image4.png "選取的資料列警示")](populating-a-table-with-data-images/image4.png#lightbox)
-
 
 ## <a name="cell-reuse"></a>資料格重複使用
 
@@ -246,7 +240,6 @@ keys = indexedTableItems.Keys.ToArray ();
 - **RowsInSection** –傳回給定區段中的資料列數目。
 - **SectionIndexTitles** –傳回將用來顯示索引的字串陣列。 範例程式碼會傳回字母陣列。
 
-
 範例檔案**BasicTableIndex/TableSource**中的更新方法如下所示：
 
 ```csharp
@@ -266,7 +259,6 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 索引通常僅適用于純資料表樣式。
 
-
 <a name="Adding_Headers_and_Footers" />
 
 ## <a name="adding-headers-and-footers"></a>加入頁首和頁尾
@@ -280,7 +272,6 @@ public override string[] SectionIndexTitles (UITableView tableView)
 
 - **TitleForHeader** –傳回要當做標頭使用的文字
 - **TitleForFooter** –傳回要當做頁尾使用的文字。
-
 
 範例檔案**BasicTableHeaderFooter/Code/TableSource**中的更新方法如下所示：
 
@@ -296,7 +287,6 @@ public override string TitleForFooter (UITableView tableView, nint section)
 ```
 
 您可以在上`GetViewForHeader` `UITableViewSource`使用和`GetViewForFooter`方法覆寫，以進一步自訂頁首和頁尾的外觀與 View 物件。
-
 
 ## <a name="related-links"></a>相關連結
 

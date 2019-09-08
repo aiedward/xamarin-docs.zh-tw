@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: b34c769eaa3aef5bf47a9bfa891859289b195f03
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 57892689eeb5eef9747e19fa167b8598569f3cd1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283777"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769212"
 ---
 # <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>在 Xamarin 中使用 Avaudioplayer 播放音效在 tvOS 中播放音效
 
@@ -33,8 +33,6 @@ ms.locfileid: "70283777"
 ## <a name="playing-sounds-in-tvos"></a>在 tvOS 中播放聲音
 
 因為 tvOS 支援與 iOS 相同的音訊工具箱類別，請參閱我們的 iOS[播放音效與 avaudioplayer 播放音效](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/sound/avaudioplayer)檔，以取得在 tvOS 應用程式中播放音訊的完整詳細資料。
-
-
 
 ## <a name="related-links"></a>相關連結
 

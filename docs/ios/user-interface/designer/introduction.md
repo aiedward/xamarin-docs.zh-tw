@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: f37905f483ad31d05276383718a3295d4a288f28
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fa772add96eb17b0a80470210f42b4d9df220a9c
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285871"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768930"
 ---
 # <a name="ios-designer-basics"></a>iOS 設計工具基本概念
 
@@ -194,7 +194,7 @@ IOS 設計工具有六個主要區段：
 若要將控制項加入至介面，請將它從 [**工具箱**] 拖曳到設計介面上。 當加入或定位控制項時，垂直和水準方針會反白顯示常用的版面配置位置，例如垂直中心、水準置中和邊界：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
- 
+
 ![在設計介面上，方針會反白顯示常用的版面配置位置](introduction-images/9-layoutguides-vsmac.png "在設計介面上，方針會反白顯示常用的版面配置位置")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -220,7 +220,7 @@ IOS 設計工具有六個主要區段：
 ### <a name="constraints-toolbar"></a>條件約束工具列
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
- 
+
 [![條件約束工具列](introduction-images/11-constraintstoolbar-vsmac.png "條件約束工具列")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
@@ -316,7 +316,7 @@ IOS 設計工具有六個主要區段：
 設計介面支援透過數個控制項進行縮放：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
- 
+
 ![底部工具列中的縮放控制項](introduction-images/16-zoomcontrols-vsmac.png "底部工具列中的縮放控制項")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)

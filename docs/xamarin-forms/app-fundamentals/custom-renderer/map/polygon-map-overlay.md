@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 45a85c8ac2f40e92078d46f5765aaf2af1518b77
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 103d4f40a1c368f576276c4cdcbdc585d2a1536a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650734"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771894"
 ---
 # <a name="highlighting-a-region-on-a-map"></a>醒目提示地圖上的區域
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polygon)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-polygon)
 
 _本文說明了如何將多邊形重疊新增至地圖，以醒目提示地圖上的區域。多邊形是封閉圖形，且其內部已填滿。_
 
@@ -304,7 +304,6 @@ namespace MapOverlay.UWP
 ## <a name="summary"></a>總結
 
 本文說明了如何將多邊形重疊新增至地圖，以醒目提示地圖的區域。 多邊形是封閉圖形，且其內部已填滿。
-
 
 ## <a name="related-links"></a>相關連結
 

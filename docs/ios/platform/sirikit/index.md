@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
-ms.openlocfilehash: e3ef6dd857760d722fe84f98250b8db9e398ea2e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 802cf60f88f80ce7d67cd9fd8ec85ca343fd2916
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287176"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769394"
 ---
 # <a name="sirikit-in-xamarinios"></a>在 Xamarin 中 SiriKit
 
@@ -38,10 +38,6 @@ Siri 適用于**網域**的概念、相關工作的已知動作群組。 應用�
 ## <a name="implementing-sirikitiosplatformsirikitimplementing-sirikitmd"></a>[實作 SiriKit](~/ios/platform/sirikit/implementing-sirikit.md)
 
 本文涵蓋在 Xamarin iOS 應用程式中執行 SiriKit 支援所需的步驟。 開發人員在嘗試將 SiriKit 支援新增至應用程式之前，應該先閱讀瞭解 SiriKit 概念指南，因為已涵蓋成功執行所需的重要概念。
-
-
-
-
 
 ## <a name="related-links"></a>相關連結
 

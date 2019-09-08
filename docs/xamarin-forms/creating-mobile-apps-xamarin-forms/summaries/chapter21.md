@@ -1,18 +1,18 @@
 ---
 title: 第 21 章的摘要。 轉換
-description: 使用 Xamarin.Forms 建立行動應用程式：第 21 章的摘要。 轉換
+description: 使用 Xamarin 建立 Mobile Apps：第 21 章的摘要。 轉換
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 313348952b87d94db63d1682f8e1b9413d56714d
-ms.sourcegitcommit: 0fd04ea3af7d6a6d6086525306523a5296eec0df
+ms.openlocfilehash: 40c091d0c5042d172108709f89774e41e9339d4b
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67513011"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760572"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章的摘要。 轉換
 
@@ -122,8 +122,6 @@ Xamarin.Forms 可支援三種基本類型的轉換：
 慣用左手 Xamarin.Forms 所隱含 3D 座標系統。 如果您指向遞增的 X 方向的左側的食指協調 （至右邊），並將中指的方向遞增的 Y 座標 （下），然後增加 （不是螢幕） 的 Z 座標方向的捲動方塊點。
 
 此外，任何三個軸，如果您指向左側的 thumb 的遞增值，方向則手指的曲線表示正旋轉的角度旋轉的方向。
-
-
 
 ## <a name="related-links"></a>相關連結
 

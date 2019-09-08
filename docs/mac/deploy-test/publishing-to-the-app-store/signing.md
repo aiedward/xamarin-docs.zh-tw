@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 9272c522383251a54aff5093c20e4b6b6131e2b2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 925a110025092ce6efa4e4d5f8e80b640b7f3dd1
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293051"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770092"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>使用開發人員識別碼簽署 Xamarin.Mac 應用程式
 
@@ -25,7 +25,6 @@ ms.locfileid: "70293051"
 若要建置可對使用者直接部署的應用程式 (不透過 Mac App Store)，請將**簽署設定**設為使用 [開發人員識別碼]。 務必要編輯 [發行] 組態。
 
  [![](signing-images/config02.png "Mac 簽署選項")](signing-images/config02.png#lightbox)
-
 
 ## <a name="build"></a>組建
 

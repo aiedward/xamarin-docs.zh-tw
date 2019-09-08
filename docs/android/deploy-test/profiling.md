@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: d2999a21debefb05e5aa3cdaace56cb4f3ac2d81
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: 44bed11e4d2ccf7baa39734a1b20e49b9ecf5f10
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525575"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753985"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 應用程式
 
@@ -24,14 +24,13 @@ ms.locfileid: "69525575"
 
 本指南介紹 Xamarin Profiler，並提供開始使用 Android Profiler 的詳細資訊。
 
- 
 ## <a name="xamarin-profiler"></a>Xamarin Profiler
 
 Xamarin Profiler 是獨立的應用程式，與 Visual Studio 和 Visual Studio for Mac 整合以從 IDE 中分析 Xamarin 應用程式。 如需使用 Xamarin Profiler 的詳細資訊，請參閱 [Xamarin Profiler](~/tools/profiler/index.md)。
 
 > [!NOTE]
 > 您必須是 [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/compare/) 的訂閱者才能解除鎖定 Visual Studio Enterprise on Windows 或 Visual Studio for Mac 中的 Xamarin Profiler 功能。
- 
+
 ## <a name="android-studio-profiler"></a>Android Studio Profiler
 
 Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使用 Android Profiler 測量使用 Visual Studio 建置的 Xamarin Android 應用程式效能 &ndash; 不需要 Visual Studio Enterprise 授權。 不過，與 Xamarin Profiler 不同之處在於 Android Profiler 未與 Visual Studio 整合，而且只能用來分析事先建置且已匯入 Android Profiler 的 Android 應用程式套件 (APK)。
@@ -40,7 +39,7 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 
 下列步驟說明如何在 Android Studio 的 Android Profiler 工具中啟動 Xamarin Android 應用程式。 在下面的範例螢幕擷取畫面中，Xamarin Forms [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) 應用程式已建立，且使用 Android Profiler 分析：
 
-1. 在 Android 專案建置選項中，停用 [使用共用執行階段]  。 這可確保在不依賴共用的開發階段 Mono 執行階段的情況下，建置 Android 應用程式套件 (APK)。
+1. 在 Android 專案建置選項中，停用 [使用共用執行階段]。 這可確保在不依賴共用的開發階段 Mono 執行階段的情況下，建置 Android 應用程式套件 (APK)。
 
     ![停用 [使用共用執行階段]](profiling-images/vswin/01-turn-off-shared-runtime.png)
 
@@ -55,7 +54,7 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 
     ![從 Android Studio 啟動畫面啓動分析工具](profiling-images/vswin/03-android-studio.png)
 
-5. 在 選取 APK 檔案  對話方塊中，巡覽至您之前建立並複製的 APK。 選取 APK 然後按一下 [確定]  ： 
+5. 在 選取 APK 檔案 對話方塊中，巡覽至您之前建立並複製的 APK。 選取 APK 然後按一下 [確定]： 
     
     ![在 [選取 APK 檔案] 對話方塊中選取 APK](profiling-images/vswin/04-select-apk-dialog.png)
 
@@ -63,25 +62,25 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 
     ![設定 APK](profiling-images/vswin/05-setting-up-the-apk.png)
 
-7. 載入 APK 後，Android Studio 會顯示以下 APK 專案畫面。 以滑鼠右鍵按一下左側樹狀檢視中的應用程式名稱，然後選取 [Open Module Settings] \(開啟模組設定\)  ：
+7. 載入 APK 後，Android Studio 會顯示以下 APK 專案畫面。 以滑鼠右鍵按一下左側樹狀檢視中的應用程式名稱，然後選取 [Open Module Settings] \(開啟模組設定\)：
 
     [![[Open Module Settings] \(開啟模組設定\) 功能表項目的位置](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
 
-8. 巡覽至 [專案設定] > [模組]  ，選取應用程式的 **-Signed** 節點，然後按一下 [&lt;無 SDK&gt;]  ：
+8. 巡覽至 [專案設定] > [模組]，選取應用程式的 **-Signed** 節點，然後按一下 [&lt;無 SDK&gt;]：
 
     [![巡覽至 SDK 設定](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
 
-9. 在 [Module SDK] \(模組 SDK\)  下拉式功能表中，選取用來建置應用程式的 Android SDK 層級 (本範例使用 API 層級 26 建置 **XamagonXuzzle**)：
+9. 在 [Module SDK] \(模組 SDK\) 下拉式功能表中，選取用來建置應用程式的 Android SDK 層級 (本範例使用 API 層級 26 建置 **XamagonXuzzle**)：
 
     [![設定專案 SDK 層級](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
 
-    按一下 [套用]  和 [確定]  儲存這個設定。
+    按一下 [套用] 和 [確定] 儲存這個設定。
 
 10. 從工具列圖示啟動分析工具：
 
     [![分析工具工具列圖示的位置](profiling-images/vswin/09-launch-profiler-sml.png)](profiling-images/vswin/09-launch-profiler.png#lightbox)
 
-11. 選取執行/分析應用程式的部署目標，然後按一下 [確定]  。 部署目標可以是在模擬器中執行的實體裝置或虛擬裝置。 本範例中使用 Nexus 5X 裝置：
+11. 選取執行/分析應用程式的部署目標，然後按一下 [確定]。 部署目標可以是在模擬器中執行的實體裝置或虛擬裝置。 本範例中使用 Nexus 5X 裝置：
 
     ![選取部署目標](profiling-images/vswin/10-select-deployment-target.png)
 
@@ -97,10 +96,9 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 
     [![正在執行的應用程式分析工具顯示畫面](profiling-images/vswin/13-profiler-running-sml.png)](profiling-images/vswin/13-profiler-running.png#lightbox)
 
-15. 如果您點選 **XamagonXuzzle** 上的 [RANDOMIZE]  按鈕 (這會造成它移位並隨機化磚)，就會看到 CPU 使用量在應用程式隨機間隔期間增加：
+15. 如果您點選 **XamagonXuzzle** 上的 [RANDOMIZE] 按鈕 (這會造成它移位並隨機化磚)，就會看到 CPU 使用量在應用程式隨機間隔期間增加：
 
     [![點選 [RANDOMIZE] 按鈕後的 CPU 使用量](profiling-images/vswin/14-tap-randomize-sml.png)](profiling-images/vswin/14-tap-randomize.png#lightbox)
-
 
 ### <a name="using-the-android-profiler"></a>使用 Android Profiler
 

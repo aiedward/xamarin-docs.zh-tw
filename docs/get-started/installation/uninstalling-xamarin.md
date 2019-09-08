@@ -6,12 +6,12 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: conceptdev
 ms.author: crdun
 ms.date: 04/08/2017
-ms.openlocfilehash: ff40ed55c06df41c418b694d02f7d6e9c1c5316c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a5a9ddfe92bd8f5b743da2c535a93c282542c860
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291441"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756776"
 ---
 # <a name="uninstalling-xamarin"></a>解除安裝 Xamarin
 
@@ -266,7 +266,6 @@ Xamarin 會使用安裝程式應用程式從 Visual Studio 2019 和 Visual Studi
 >
 >您可以透過在 Visual Studio 安裝程式中執行 [修復] 選項來解決這個問題。該選項會重新安裝遺失的元件。
 
-
 ## <a name="uninstalling-older-and-unsupported-products"></a>將較舊及不支援的產品解除安裝
 
 <a name="uninstallvs2015"></a>
@@ -361,7 +360,6 @@ rm -rf ~/Library/XamarinStudio-*
 ## <a name="summary"></a>總結
 
 本文提供的指示，可讓您透過使用終端機命令，將 Mac 上的 Xamarin 完全解除安裝。 此外也提供從 Windows 電腦將 Xamarin 解除安裝的指示，方法是透過 [程式和功能] 選項 (適用於 Visual Studio 2015 及更舊版本)，以及使用適用於 Visual Studio 2017 的 **Visual Studio 安裝程式**。
-
 
 ## <a name="related-links"></a>相關連結
 

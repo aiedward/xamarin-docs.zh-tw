@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: d1e5602643ba5578c4bc2a26e6db2d9f49033469
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2bed40c3ac2853a5f99c2b487e909164e12e676d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291698"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766960"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin 中的 watchOS Table 控制項
 
@@ -39,9 +39,6 @@ WatchOS `WKInterfaceTable`控制項比它的 iOS 對應更簡單，但會執行�
 
 一旦設定了資料列控制器的類別，IDE 就會在專案中建立對應C#的檔案。 將控制項（例如標籤）拖曳到資料列上，並為其命名，讓它們可以在程式碼中參考。
 
-
-
-
 ## <a name="create-and-populate-rows"></a>建立和填入資料列
 
 `SetNumberOfRows`建立每個資料列的資料列控制器類別， `Identifier`並使用來選取正確的。 如果您為數據列控制器提供自`Identifier`定義，請將下列程式碼片段中的**預設值**變更為您所使用的識別碼。 當`RowController`呼叫並顯示資料表時`SetNumberOfRows` ，就會建立*每個資料列*的。
@@ -65,7 +62,6 @@ for (var i = 0; i < rows.Count; i++) {
 
 > [!IMPORTANT]
 > 使用`SetNumberOfRows` ，然後透過使用`GetRowController`迴圈，就會將整個資料表傳送到 watch。 在資料表的後續視圖中，如果您需要加入或移除特定資料列， `InsertRowsAt`請`RemoveRowsAt`使用，以獲得更好的效能。
-
 
 ## <a name="respond-to-taps"></a>回應點擊
 
@@ -142,7 +138,6 @@ for (var i = 0; i < rows.Count; i++) {
 }
 ```
 
-
 ## <a name="vertical-detail-paging"></a>垂直詳細資料分頁
 
 watchOS 3 為數據表引進了一項新功能：能夠逐一查看與每個資料列相關的詳細頁面，而不需要回到資料表並選擇另一個資料列。 詳細資料畫面可以透過向上和向下或使用 Digital Crown 來滾動。
@@ -210,8 +205,6 @@ namespace WatchTables.OnWatchExtension
 ```
 
 接著可以在程式碼中參考此處所宣告的輸出和動作-不過，不應直接編輯**designer.cs**檔案。
-
-
 
 ## <a name="related-links"></a>相關連結
 

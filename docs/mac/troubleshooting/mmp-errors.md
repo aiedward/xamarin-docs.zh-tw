@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/27/2018
-ms.openlocfilehash: 35de496d0684473fe3f6bc4ebadddc471b6b0cfe
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ac50c665955f9bf234c46b3d4082fb628b61a33d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292885"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770019"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin. Mac 錯誤訊息（mmp）
 
@@ -616,7 +616,7 @@ App Store 現在會拒絕包含程式庫和包含32位變數之架構的應用�
 <a name="MM8026" />
 
 #### <a name="mm8026--is-not-supported-when-the-dynamic-registrar-has-been-linked-away"></a>當動態註冊機構已連結出去時，不支援 MM8026： *。
- 
+
 這通常表示 Xamarin 中的錯誤（bug），因為如果需要，動態註冊機構不應連結。 請將 bug 歸檔在 [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS) 。
- 
+
 藉由將`--optimize=-remove-dynamic-registrar`新增至專案 Mac 組建選項中的其他 mmp 引數，可以強制連結器保留動態註冊機構。

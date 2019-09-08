@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2017
-ms.openlocfilehash: 290c90820bad2d213f8f3a978437a55f7ca6069e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c26d912a4684f6ddbee46ae953ce5cf1a3db67bd
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285788"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762726"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>適用於 iOS 的 fastline 簡介
 
@@ -80,18 +80,15 @@ fastlane 有各種不同使用方式：透過終端機命令、透過檔案型�
 
 8. 再次執行 `which fastlane`，以確認路徑看起來像 `/Users/[user]/.fastlane/bin`
 
-
 ## <a name="updating-fastlane"></a>更新 fastlane
 
 fastlane 是一個定期推出新版本、非常活躍的開放原始碼專案。 如果有新版 fastlane 可供使用，在您執行任何 fastlane 命令時，就會收到通知：
 
 [![](images/fastlane-image0.png "fastlane 更新提示")](images/fastlane-image0.png#lightbox)
 
-
 若要更新至新版 fastlane，請從[這裡](https://download.fastlane.tools)下載最新的套件，然後按兩下安裝套件來執行它：
 
 [![](images/fastlane-image0a.png "執行安裝套件")](images/fastlane-image0a.png#lightbox)
-
 
 ## <a name="contents"></a>內容
 

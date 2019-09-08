@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: 3c30beadf7c2de618952bdf0cd5c03e7ceee2845
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: e2542a95ce7b62a017161da4fe206b83202c9085
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50109701"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754149"
 ---
 # <a name="debug-on-device"></a>在裝置上進行偵錯
 
@@ -21,7 +21,6 @@ _本文說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程�
 ## <a name="debug-on-device-overview"></a>在裝置上進行偵錯概觀
 
 您可以使用 Visual Studio for Mac 或 Visual Studio，為 Android 裝置上的 Xamarin.Android App 進行偵錯。 在於裝置上進行偵錯之前，必須[設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)，並連接至 PC 或 Mac。
-
 
 ## <a name="debug-application"></a>進行應用程式偵錯
 
@@ -53,14 +52,11 @@ _本文說明如何在實體 Android 裝置上進行 Xamarin.Android 應用程�
 
 -----
 
-
-
 ## <a name="summary"></a>總結
 
 本文件探討了如何藉由設定中斷點和選取目標裝置，進行 Xamarin.Android 應用程式偵錯。
 
-
 ## <a name="related-links"></a>相關連結
 
-- [設定您的裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md) \(英文\)
+- [設定您的裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)
 - [設定可偵錯的屬性](~/android/deploy-test/debuggable-attribute.md)

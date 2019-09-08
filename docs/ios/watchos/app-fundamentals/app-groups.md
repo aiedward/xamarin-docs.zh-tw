@@ -7,15 +7,14 @@ ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: c75db8bd29b7a57c46610abdd5e4024938fc9e1b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fec6cef22ddbc47aca0027aa026e0524b38bec4e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280335"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768067"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>在 Xamarin 中使用 watchOS 應用程式群組
-
 
 「應用程式群組」可讓不同的應用程式 (或應用程式及其擴充功能) 存取共用檔案儲存體位置。 「應用程式群組」可用於資料下列資料：
 
@@ -39,14 +38,11 @@ ms.locfileid: "70280335"
 
 [![](app-groups-images/entitlements-sml.png "設定 plist 並輸入識別碼")](app-groups-images/entitlements.png#lightbox)
 
-
 ### <a name="deployment"></a>部署
 
 請確定您已在[部署](~/ios/watchos/deploy-test/index.md#App_Groups)布建中正確設定應用程式群組。
 
-
 如需詳細資訊，請參閱[應用程式群組功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)文件。
-
 
 ## <a name="related-links"></a>相關連結
 

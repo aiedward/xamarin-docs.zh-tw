@@ -1,27 +1,26 @@
 ---
 title: 服務通知
-description: 本指南會討論如何 Android 服務可能會使用本機通知分派給使用者的資訊。
+description: 本指南討論 Android 服務如何使用本機通知來將資訊分派給使用者。
 ms.prod: xamarin
 ms.assetid: 6C06FDE7-6385-40EF-AC7C-8EFB54E29F45
 ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: d56f67254a9eae334fa8ac3f08d3ef270800c309
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5d25604db1f88702f4c24df21b3ebba6c9c2fc95
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61012313"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70754821"
 ---
 # <a name="service-notifications"></a>服務通知
 
-_本指南會討論如何 Android 服務可能會使用本機通知分派給使用者的資訊。_
+_本指南討論 Android 服務如何使用本機通知來將資訊分派給使用者。_
 
+## <a name="service-notifications-overview"></a>服務通知總覽
 
-## <a name="service-notifications-overview"></a>服務通知概觀
-
-服務通知，向使用者顯示資訊的應用程式，即使 Android 應用程式不在前景中。 您可提供針對使用者，例如顯示從應用程式的活動動作的通知。 下列程式碼範例示範如何服務可能會分派給使用者的通知：
+服務通知可讓應用程式向使用者顯示資訊，即使 Android 應用程式不在前景中也一樣。 通知可能會提供使用者的動作，例如顯示應用程式中的活動。 下列程式碼範例會示範服務如何將通知分派給使用者：
 
 ```csharp
 [Service]
@@ -46,18 +45,17 @@ public class MyService: Service
 }
 ```
 
-此螢幕擷取畫面會顯示通知的範例：
+這個螢幕擷取畫面是顯示通知的範例：
 
-[![在狀態列中顯示的通知圖示](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
+[![狀態列中顯示的通知圖示](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
 
-當使用者滑向下從頂端的 [通知] 畫面時，會顯示完整的通知：
+當使用者從頂端滑下通知畫面時，會顯示完整的通知：
 
-![通知系統匣中顯示的 notication](service-notifications-images/02-fullnotification.png)
+![Notication 顯示在通知紙匣中](service-notifications-images/02-fullnotification.png)
 
+## <a name="updating-a-notification"></a>更新通知
 
-## <a name="updating-a-notification"></a>正在更新通知
-
-若要更新的通知，服務將會重新發佈通知使用相同通知識別碼。 Android 將會顯示，或更新 [狀態] 列中的通知，視。
+若要更新通知，服務會使用相同的通知識別碼來重新發佈通知。 Android 會視需要在狀態列中顯示或更新通知。
 
 ```csharp 
 void UpdateNotification(string content)
@@ -79,9 +77,8 @@ Notification GetNotification(string content, PendingIntent intent)
 }
 ```
 
-通知的詳細資訊位於[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)一節[Android 通知](~/android/app-fundamentals/notifications/index.md)指南。
-
+關於通知的詳細資訊可在[Android 通知](~/android/app-fundamentals/notifications/index.md)指南的[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)一節中取得。
 
 ## <a name="related-links"></a>相關連結
 
-- [在 Android 中的本機通知](~/android/app-fundamentals/notifications/local-notifications.md)
+- [Android 中的本機通知](~/android/app-fundamentals/notifications/local-notifications.md)

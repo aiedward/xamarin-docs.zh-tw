@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 11/10/2017
-ms.openlocfilehash: 00d5d5cf9cda38fbfc09fcfe8b4dcb56d00dee5b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4b538df5e8e615f8594bd38cb13d9b45b0961dac
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291417"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770131"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac 連結器選項
 
@@ -53,7 +53,6 @@ _連結是一項功能強大的最佳化工具，可藉由移除不使用的程�
 
 4. 「完整目標架構」的平台連結必須要等到未來更新後，才會出現在 IDE 中。 在那之前，請改為將 `--linkplatform` 新增至 [其他 mmp 引數]。
 5. 按一下 [確定] 按鈕以儲存您的變更。
-
 
 ## <a name="related-links"></a>相關連結
 

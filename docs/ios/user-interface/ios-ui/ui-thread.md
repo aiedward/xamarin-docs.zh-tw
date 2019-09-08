@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: 76733d4efd4ce292da2781c97aef963fb68e3974
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ab72034d7b565a31c59d997f03844b6c8c959785
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287866"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768184"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>在 Xamarin 中使用 UI 執行緒
 
@@ -40,7 +40,6 @@ InvokeOnMainThread ( () => {
 
  <a name="Background_Thread_Example" />
 
-
 ## <a name="background-thread-example"></a>背景執行緒範例
 
 以下範例會嘗試使用簡單的執行緒，從背景執行緒存取使用者`UILabel`介面控制項（a）：
@@ -64,7 +63,6 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 本檔中的其餘範例都不需要使用此資訊，但在您的應用程式提出網路要求時請記住，這是一個重要的概念，它會使用通知中心或其他需要完成處理常式（將在另一個上執行）的方法執行緒.
 
  <a name="Async_Await_Example" />
-
 
 ## <a name="asyncawait-example"></a>Async/Await 範例
 
@@ -92,7 +90,6 @@ async partial void button2_TouchUpInside (UIButton sender)
 ```
 
 如果從背景執行緒（而非主要 UI 執行緒）呼叫非同步方法，則`InvokeOnMainThread`仍然需要。
-
 
 ## <a name="related-links"></a>相關連結
 

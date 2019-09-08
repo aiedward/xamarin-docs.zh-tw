@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: f0caa2dd2c2b675fe85000a73e5d58ce7e277488
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e9c87b76dc6845962450b8cb6fab921ea1748832
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281473"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768319"
 ---
 # <a name="working-with-watchos-screen-sizes-in-xamarin"></a>在 Xamarin 中使用 watchOS 螢幕大小
 
@@ -39,7 +39,6 @@ Apple Watch 有兩種螢幕大小：
 較大的螢幕大小有時候會轉譯在較小螢幕上截斷/隱藏的內容。
 請務必測試這兩種大小。
 
-
 ### <a name="interface-design"></a>介面設計
 
 無論大小為何，您的應用程式都應該在畫面上顯示相同的內容，而且應該適當地展開或合約元素。 在 [Visual Studio for Mac 設計工具] 的 [屬性偵測器] 中，您應該使用 [**相對於容器**或大小]，將喜好設定中的**內容調整**為固定大小。
@@ -48,13 +47,11 @@ Apple Watch 有兩種螢幕大小：
 
 由於監看式畫面是以黑色擋板括住，因此不建議在您的介面周圍提供填補。 讓元素與畫面邊緣 rest，並讓擋板在應用程式周圍形成自然框線。
 
-
 ## <a name="watchos-simulator"></a>watchOS 模擬器
 
 在模擬器上測試時，您可以使用 [**硬體 > 裝置**] 功能表，輕鬆地在兩個螢幕大小之間切換。
 
 ![](screen-sizes-images/simulator.png "模擬器可以使用硬體裝置功能表在兩個螢幕大小之間切換")
-
 
 ## <a name="image-resources"></a>影像資源
 
@@ -80,8 +77,6 @@ using (var image = UIImage.FromBundle (large ? "42mm-Walkway" : "38mm-Walkway"))
 ```
 
 閱讀更多有關使用[影像控制項](~/ios/watchos/user-interface/image.md)的資訊。
-
-
 
 ## <a name="related-links"></a>相關連結
 

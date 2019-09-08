@@ -6,12 +6,12 @@ ms.assetid: 67246203-D78E-4DCC-9E55-7D3D93968E54
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: b6ac960770320ed100e8b082cabf8240efed070b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10ab9b379344ab6c514eba84f1ef3fd9c7400b73
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290840"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765540"
 ---
 # <a name="apple-platform-ios-and-mac"></a>Apple 平臺（iOS 和 Mac）
 
@@ -31,7 +31,6 @@ IOS 和 Mac 專案的 Unified API 針對架構使用相同的命名空間，因�
 > **傳統設定檔淘汰：** 當 Xamarin 中新增了新的平臺時，我們就開始從傳統設定檔（monotouch）逐漸取代功能。 例如，已移除 [非 NRC （新的-參考計數）] 選項。 所有整合的應用程式（也就是非 NRC 的選項）都已啟用 NRC，而且沒有任何已知問題。 未來的版本將會移除使用 Boehm 做為垃圾收集行程的選項。 這也是不適用於整合應用程式的選項。 傳統支援的完整移除已排程于2016版與 Xamarin. iOS 10.0。
 
 原始的（非統一） Xamarin iOS 和 Xamarin api 使程式碼共用變得更棘手，因為原生架構具有`MonoTouch.`或`MonoMac.`命名空間前置詞。  我們提供了一些空的命名空間，可讓開發人員`using`藉由在相同檔案上加入參考 MonoMac 和 MonoTouch 命名空間的語句來共用程式碼，但這有點不太容易。 Classic API 應該只會繼續用於內部散發的繼承應用程式（建議升級至 Unified API）。
-
 
 ### <a name="updating-from-classic-to-the-unified-api"></a>從傳統更新到 Unified API
 

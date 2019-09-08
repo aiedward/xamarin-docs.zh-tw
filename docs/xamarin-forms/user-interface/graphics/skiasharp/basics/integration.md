@@ -7,12 +7,12 @@ ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/09/2017
-ms.openlocfilehash: 586cf0eaa7b0f38af61c9f7d619b30a39023a19e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 33ed7f3477f44662f3392d2125b61818b3ed885f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652965"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759441"
 ---
 # <a name="integrating-with-xamarinforms"></a>與 Xamarin.Forms 整合
 
@@ -238,7 +238,6 @@ HSL 和 HSV 色彩模型中的色調值範圍從 0 到 360，並指出主控項�
 但是，概略了兩個模型的最佳方式是自行實驗用它們：
 
 [![](integration-images/colorexplore-large.png "色彩 [探索] 頁面的三個螢幕擷取畫面")](integration-images/colorexplore-small.png#lightbox "色彩探索 頁面的三個螢幕擷取畫面")
-
 
 ## <a name="related-links"></a>相關連結
 

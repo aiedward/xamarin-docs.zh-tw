@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: b846d034c31069c02e3c97fba0ac0d68e6df2e23
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 66bea7d2a9660018c7cec9b7bafeadafd5029ed9
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292527"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769429"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin 中的語音辨識
 
@@ -128,9 +128,6 @@ Apple 已包含可用性 API，以判斷目前是否有指定的語言可供翻�
 
 > [!IMPORTANT]
 > 無法提供上述`Info.plist`任一金鑰（`NSSpeechRecognitionUsageDescription`或`NSMicrophoneUsageDescription`），會在嘗試存取語音辨識或即時音訊的麥克風時，導致應用程式失敗，而不發出警告。
-
-
-
 
 ### <a name="requesting-authorization"></a>要求授權
 
@@ -398,8 +395,6 @@ Apple 提供下列建議，以在 iOS 應用程式中包含語音辨識時，透
 ## <a name="summary"></a>總結
 
 本文介紹了新的語音 API，並示範如何在 Xamarin iOS 應用程式中執行它，以支援連續語音辨識和轉譯語音（從即時或錄製的音訊串流）到文字。 
-
-
 
 ## <a name="related-links"></a>相關連結
 

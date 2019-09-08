@@ -7,20 +7,18 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 68ba09ce74f161c728f0a58276a0b0d98fec7d8c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 42284ded0bbb5dab36470b7d2f291df64c6df264
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281282"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70767781"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>在 Xamarin 中 watchOS 主動式建議
 
 _本文說明如何在 watchOS 3 應用程式中使用主動式建議，藉由允許系統以主動方式自動向使用者呈現有用的資訊，以促進參與。_
 
-
 WatchOS 3 的新手，主動式建議提供新聞方式，讓使用者能夠在適當時間自動向使用者顯示有用的資訊，以便與 Xamarin iOS 應用程式互動。
-
 
 ## <a name="about-proactive-suggestions"></a>關於主動式建議
 
@@ -300,7 +298,6 @@ attributes.SupportsNavigation = true;
 
 以 MapKit `MKDirectionsRequest`物件啟動應用程式時，應該會自動開始將使用者指示提供給要求的位置，或呈現可讓使用者輕鬆開始取得指示的 UI。 例如：
 
-
 ```csharp
 using System;
 using Foundation;
@@ -362,7 +359,6 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 ## <a name="summary"></a>總結
 
 本文涵蓋主動式建議，並示範開發人員如何使用它們來驅動 watchOS 的 Xamarin iOS 應用程式流量。 其中涵蓋了實施主動式建議和呈現使用指導方針的步驟。
-
 
 ## <a name="related-links"></a>相關連結
 

@@ -6,17 +6,16 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: b5f09413379de13aaf12e8113e8deb0f3c2bf0c3
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
-ms.translationtype: HT
+ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69525454"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70753799"
 ---
 # <a name="publishing-an-application"></a>發行應用程式
 
 建立絕佳的應用程式之後，使用者將會想要使用它。 本節涵蓋透過電子郵件、私人 Web 伺服器、Google Play 或 Amazon App Store for Android 等管道公開散發使用 Xamarin.Android 所建立應用程式的步驟。
-
 
 ## <a name="overview"></a>總覽
 
@@ -36,7 +35,6 @@ Xamarin.Android 應用程式開發的最後一個步驟就是發行應用程式�
 - **透過電子郵件** &ndash; 使用者可以從其電子郵件安裝 Xamarin.Android 應用程式。 使用 Android 架構裝置來開啟附件時，將會安裝應用程式。
 - **透過市集** &ndash; 有數個可供散發的市集存在，例如 [Google Play](http://play.google.com/) 或 [Amazon App Store for Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
 
-
 使用已建立的市集是發行應用程式的最常見方式，因為它既提供最大的市場範圍，也提供最好的散發控制。 不過，透過市集發行應用程式需要額外的工作。
 
 多個通道可同時散發 Xamarin.Android 應用程式。 例如，既可以在 Google Play 上、Amazon App Store for Android 上發行應用程式，也可以從 Web 伺服器下載該應用程式。
@@ -51,7 +49,6 @@ Google Play 可說是最全方位且最受歡迎的 Android 應用程式市集�
 [![Google Play 螢幕擷取畫面](images/google-play-app.png)](images/google-play-app.png#lightbox)
 
 本節說明如何將應用程式連同適當的宣傳資料上傳到商店 (例如 Google Play)。 其中說明 APK 擴充檔，提供有關擴充檔是什麼及其運作方式的概念性概觀。 此外，也說明「Google 授權」服務。 最後則是介紹替代的散發方式，包括使用 HTTP Web 伺服器、簡單電子郵件散發，以及 Amazon App Store for Android。
-
 
 ## <a name="related-links"></a>相關連結
 

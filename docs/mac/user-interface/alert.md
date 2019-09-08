@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 1e2ad12e7dc52b44bda079340638298b87ac5f65
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6fa442926fc2a54325713caf9764b37b530a345d
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291207"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769848"
 ---
 # <a name="alerts-in-xamarinmac"></a>Xamarin 中的警示
 
@@ -109,7 +109,6 @@ alert.BeginSheet (this);
 如果執行此程式碼，將會顯示下列內容：
 
 [![](alert-images/alert03.png "顯示為工作表的警示")](alert-images/alert03.png#lightbox)
-
 
 <a name="Working_with_Alert_Buttons" />
 

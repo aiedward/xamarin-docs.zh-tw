@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 0d4e32b7bf98758f12dc038e0b61ffa0132f234d
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 8d30cdd4a50e912208d29e2171ef4c3db174718a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529234"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70760570"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的檔案處理
 
@@ -118,7 +118,6 @@ listView.ItemsSource = monkeys;
 - **同步專案** - 編輯每個平台的專案屬性，使用**相同的**組件名稱和預設命名空間。 然後，這個值就會「硬式編碼」為共用專案的內嵌資源識別碼前置詞。
 - **#if 編譯器指示詞** - 使用編譯器指示詞設定正確的資源識別碼前置詞，並使用該值以動態方式建構正確的資源識別碼。
 
-
 以下為示範第二個選項的程式碼。 編譯器指示詞用以選取硬式編碼的資源前置詞 (一般和參考專案的預設命名空間相同)。 然後串連資源前置詞與內嵌的資源檔案名稱，使用 `resourcePrefix` 變數建立有效的資源識別碼。
 
 ```csharp
@@ -169,4 +168,3 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 - [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)
 - [使用 Xamarin.iOS 的檔案系統](~/ios/app-fundamentals/file-system.md)
-

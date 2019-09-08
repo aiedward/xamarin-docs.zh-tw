@@ -6,26 +6,26 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/31/2018
-ms.openlocfilehash: 186dab1d48d928426d223c8961ce21846c351107
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 575235569351d0856c7fbffbf38a981ede1a35ce
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523087"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70762431"
 ---
 # <a name="auto-complete-for-xamarinandroid"></a>自動完成 Xamarin. Android
 
-`AutoCompleteTextView`是可編輯的文字 view 元素, 會在使用者輸入時自動顯示完成建議。 建議清單會顯示在下拉式功能表中, 使用者可以從中選擇專案, 以取代編輯方塊的內容。
+`AutoCompleteTextView`是可編輯的文字 view 元素，會在使用者輸入時自動顯示完成建議。 建議清單會顯示在下拉式功能表中，使用者可以從中選擇專案，以取代編輯方塊的內容。
 
 ![自動完成的範例](images/auto-complete.png)
 
 ## <a name="overview"></a>總覽
 
-若要建立可提供自動完成建議的文字輸入 widget, 請使用[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-機械. 系統會透過[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter), 從與 widget 相關聯的字串集合接收建議。
+若要建立可提供自動完成建議的文字輸入 widget，請使用[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+機械. 系統會透過[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)，從與 widget 相關聯的字串集合接收建議。
 
-在本教學課程中, 您將建立[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-提供國家 (地區) 名稱建議的 widget。
+在本教學課程中，您將建立[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+提供國家（地區）名稱建議的 widget。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -45,15 +45,14 @@ ms.locfileid: "69523087"
 </LinearLayout>
 ```
 
-[`TextView`](xref:Android.Widget.TextView)是一個標籤, 會引進[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+[`TextView`](xref:Android.Widget.TextView)是一個標籤，會引進[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 機械.
-
 
 ## <a name="tutorial"></a>教學課程
 
 啟動名為*HelloAutoComplete*的新專案。
 
-建立名為`list_item.xml`的 XML 檔案, 並將它儲存在**Resources/Layout**資料夾內。 將此檔案的 [建立] 動作`AndroidResource`設定為。 編輯檔案, 如下所示:
+建立名為`list_item.xml`的 XML 檔案，並將它儲存在**Resources/Layout**資料夾內。 將此檔案的 [建立] 動作`AndroidResource`設定為。 編輯檔案，如下所示：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -67,9 +66,9 @@ ms.locfileid: "69523087"
 </TextView> 
 ```
 
-這個檔案會定義一個[`TextView`](xref:Android.Widget.TextView)簡單的, 以用於每個出現在建議清單中的專案。
+這個檔案會定義一個[`TextView`](xref:Android.Widget.TextView)簡單的，以用於每個出現在建議清單中的專案。
 
-開啟**Resources/Layout/axml** , 並插入下列內容:
+開啟**Resources/Layout/axml** ，並插入下列內容：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -89,7 +88,7 @@ ms.locfileid: "69523087"
 </LinearLayout>
 ```
 
-開啟**MainActivity.cs** , 並插入下列程式碼[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+開啟**MainActivity.cs** ，並插入下列程式碼[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 方法
 
 ```csharp
@@ -107,11 +106,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-內容視圖設定為`main.xml`版面配置之後,[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-widget 會從配置中使用[`FindViewById`](xref:Android.App.Activity.FindViewById*)來捕捉。 然後會[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)初始化新的, 以`list_item.xml`將配置系結至`COUNTRIES`字串陣列中的每個清單專案 (在下一個步驟中定義)。 最後, `SetAdapter()`會呼叫, 以[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)將與[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-widget, 讓字串陣列填入建議清單。
+內容視圖設定為`main.xml`版面配置之後，[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+widget 會從配置中使用[`FindViewById`](xref:Android.App.Activity.FindViewById*)來捕捉。 然後會[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)初始化新的，以`list_item.xml`將配置系結至`COUNTRIES`字串陣列中的每個清單專案（在下一個步驟中定義）。 最後， `SetAdapter()`會呼叫，以[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)將與[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+widget，讓字串陣列填入建議清單。
 
-`MainActivity`在類別內, 新增字串陣列:
+`MainActivity`在類別內，新增字串陣列：
 
 ```csharp
 static string[] COUNTRIES = new string[] {
@@ -159,19 +158,17 @@ static string[] COUNTRIES = new string[] {
 };
 ```
 
-這是使用者輸入時, 下拉式清單中會提供的建議清單。[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+這是使用者輸入時，下拉式清單中會提供的建議清單。[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 機械.
 
-執行應用程式。 當您輸入時, 您應該會看到類似下面的內容:
+執行應用程式。 當您輸入時，您應該會看到類似下面的內容：
 
-[![範例自動完成的螢幕擷取畫面, 列出包含 "ca" 的名稱](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
-
-
+[![範例自動完成的螢幕擷取畫面，列出包含 "ca" 的名稱](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 ## <a name="more-information"></a>更多資訊
 
-請注意, 使用硬式編碼的字串陣列並不是建議的設計做法, 因為您的應用程式程式碼應專注于行為, 而不是內容。 應用程式內容 (例如字串) 應從程式碼外部化, 以更輕鬆地修改內容, 並加速內容的當地語系化。 本教學課程中使用硬式編碼的字串, 只是為了讓它簡單, 並專注于[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-機械. 相反地, 您的應用程式應該在 XML 檔案中宣告這類字串陣列。 您可以使用專案`<string-array>` `res/values/strings.xml`檔中的資源來完成這項作業。 例如：
+請注意，使用硬式編碼的字串陣列並不是建議的設計做法，因為您的應用程式程式碼應專注于行為，而不是內容。 應用程式內容（例如字串）應從程式碼外部化，以更輕鬆地修改內容，並加速內容的當地語系化。 本教學課程中使用硬式編碼的字串，只是為了讓它簡單，並專注于[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
+機械. 相反地，您的應用程式應該在 XML 檔案中宣告這類字串陣列。 您可以使用專案`<string-array>` `res/values/strings.xml`檔中的資源來完成這項作業。 例如：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -188,14 +185,13 @@ static string[] COUNTRIES = new string[] {
 </resources>
 ```
 
-若要將這些資源字串[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)用於, 請取代原始的[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
-具有下列各項的函式程式程式碼:
+若要將這些資源字串[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)用於，請取代原始的[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
+具有下列各項的函式程式程式碼：
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.array.countries_array);
 var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countries);
 ```
-
 
 ### <a name="references"></a>參考
 
@@ -203,4 +199,4 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 - [`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)
 - [`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
 
-_此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改, 並根據[創意 Commons 2.5 屬性授權](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。本教學課程是以[Android 自動完成教學課程 *](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)為基礎。_
+_此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改，並根據[創意 Commons 2.5 屬性授權](http://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。本教學課程是以[Android 自動完成教學課程 *](https://developer.android.com/resources/tutorials/views/hello-autocomplete.html)為基礎。_

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
-ms.openlocfilehash: 9104d1c7c92ac9de9cb6ae44197b4f16851563bb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 651df247e3b5616a3baa38e85159c6a6d5247807
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287315"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768799"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>搭配 iOS 設計工具使用自訂控制項
 
@@ -26,7 +26,6 @@ Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual 
 
 > [!IMPORTANT]
 > 從 Xamarin. Studio 5.5 開始，建立自訂控制項的方式與先前的版本稍有不同。 若要建立自訂控制項，介面`IComponent`是必要的（使用相關聯的實方法），或者可以使用`[DesignTimeVisible(true)]`批註類別。 在下列逐步解說範例中，會使用後面的方法。
-
 
 1. 從 iOS > 應用程式建立新的解決方案 **> 單一視圖應用程式C# >** 範本，將`ScratchTicket`它命名為，然後繼續進行 [新增專案] wizard：
 
@@ -157,23 +156,19 @@ Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual 
     }
     ```
 
-
 1. `FillTexture.png`將、 `FillTexture2.png` 和`Monkey.png`檔案（可[從 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)取得）新增至**Resources**資料夾。
 
 1. `Main.storyboard`按兩下檔案，在設計工具中開啟檔案：
 
     [![](ios-designable-controls-walkthrough-images/03new.png "IOS 設計工具")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
-
 1. 將**影像視圖**從 [**工具箱**] 拖放至分鏡腳本中的 view。
 
     [![](ios-designable-controls-walkthrough-images/04new.png "已新增至配置的影像視圖")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
-
 1. 選取**影像視圖**，並將其 [**影像**] `Monkey.png`屬性變更為。
 
     [![](ios-designable-controls-walkthrough-images/05new.png "將影像視圖影像屬性設定為猴子 .png")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
-
 
 1. 當我們使用大小類別時，我們必須限制此影像視圖。 按一下影像兩次，使其進入條件約束模式。 讓我們將它限制在中心，方法是按一下中央釘選控點，並以垂直和水準方式對齊：
 
@@ -183,16 +178,13 @@ Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual 
 
     [![](ios-designable-controls-walkthrough-images/07new.png "加入條件約束")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
-
 1. 按一下工具列中的 [更新] 按鈕，根據條件約束更新框架：
 
     [![](ios-designable-controls-walkthrough-images/08new.png "條件約束工具列")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
-
 1. 接下來，建立專案，讓 [**草稿票證] 視圖**出現在 [工具箱] 的 [**自訂群組件**] 底下：
 
     [![](ios-designable-controls-walkthrough-images/09new.png "自訂群組件工具箱")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
-
 
 1. 拖放 [**草稿票證] 視圖**，使其出現在猴子影像上。 調整拖曳控點，讓「草稿票證」視圖完全涵蓋猴子，如下所示：
 
@@ -201,7 +193,6 @@ Xamarin Designer for iOS 可在 Windows 上的 Visual Studio for Mac 和 Visual 
 1. 藉由繪製周框矩形來選取這兩個視圖，將「臨時票證」視圖限制為影像視圖。 選取選項，將其限制為寬度、高度、置中和中間，並根據條件約束更新框架，如下所示：
 
     [![](ios-designable-controls-walkthrough-images/11new.png "居中和加入條件約束")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
-
 
 1. 執行應用程式並「暫關閉」影像以顯示猴子。
 
@@ -272,8 +263,6 @@ public override void Draw(CGRect rect)
 ## <a name="summary"></a>總結
 
 在本文中，我們逐步解說如何建立自訂控制項，以及如何使用 iOS 設計工具在 iOS 應用程式中取用。 我們已瞭解如何建立和建立控制項，讓它可供設計**工具的工具箱**中的應用程式使用。 此外，我們也探討了如何執行控制項，使其在設計階段和執行時間都能正確轉譯，以及如何在設計工具中公開自訂控制項屬性。
-
-
 
 ## <a name="related-links"></a>相關連結
 

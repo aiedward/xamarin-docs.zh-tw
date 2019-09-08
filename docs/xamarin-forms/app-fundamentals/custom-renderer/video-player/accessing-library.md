@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 219f6498dc1349d32c8f0b247a187df75f2a523a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 2f9de881621b6634b95bdca56a0aa9e7b9f2bb98
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650706"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70771858"
 ---
 # <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 現今多數行動裝置和桌上型電腦都能使用裝置的相機錄影。 然後使用者建立的影片會以檔案的形式儲存在裝置上。 這些檔案可以從影像庫中擷取，並透過 `VideoPlayer` 類別進行播放，與其他影片無異。
 
@@ -385,8 +385,6 @@ namespace FormsVideoLibrary.UWP
 ```
 
 對於每個平台而言，因為檔案位於裝置上，而且不需下載，所以當設定好影片來源之後，就會幾乎立即開始播放影片。
-
-
 
 ## <a name="related-links"></a>相關連結
 

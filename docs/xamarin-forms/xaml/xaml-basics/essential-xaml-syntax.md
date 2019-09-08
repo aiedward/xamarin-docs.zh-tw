@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: b55c9d8a65dbb4e44605295043d1b302295030ce
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: f79a07a04eddeea1441f7938fdef210a37fb920a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228070"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772880"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 
@@ -85,7 +85,6 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 - `Label` 已*物件項目*。 它是以 XML 項目表示 Xamarin.Forms 物件。
 - `Text``VerticalOptions`，`FontAttributes`並`FontSize`會*property 屬性*。 它們都是以 XML 屬性的 Xamarin.Forms 屬性。
 - 在該最終程式碼片段`TextColor`日益*property 項目*。 它是 Xamarin.Forms 屬性，但它現在是 XML 項目。
-
 
 定義的屬性項目可能會在第一次似乎是 XML 語法的違規情形，但它不是。 期限在 XML 中沒有任何特殊意義。 以 XML 的解碼器，`Label.TextColor`是只是一般的子元素。
 
@@ -351,7 +350,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </ContentPage>
 ```
 
-真正的問題是:為什麼 XAML 檔案中*不*需要這些屬性元素？
+真正的問題是：為什麼 XAML 檔案中*不*需要這些屬性元素？
 
 用於 XAML 中定義在 Xamarin.Forms 中的項目可以有一個屬性中加上旗標`ContentProperty`類別上的屬性。 如果您查閱`ContentPage`類別在線上的 Xamarin.Forms 文件，您會看到這個屬性：
 
@@ -384,7 +383,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-您也可以使用[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和[`On`](xref:Xamarin.Forms.On)類別, 在 XAML 中執行類似的動作。 第一個包含屬性項目`Padding`屬性頁面的頂端附近：
+您也可以使用[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和[`On`](xref:Xamarin.Forms.On)類別，在 XAML 中執行類似的動作。 第一個包含屬性項目`Padding`屬性頁面的頂端附近：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -524,7 +523,7 @@ if (Device.RuntimePlatform == Device.iOS)
 ```
 
 > [!NOTE]
-> `OnPlatform`標記延伸也可以在 XAML 中用來自訂以每個平臺為基礎的 UI 外觀。 它提供與`OnPlatform`和`On`類別相同的功能, 但具有更精確的標記法。 如需詳細資訊，請參閱 < [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+> `OnPlatform`標記延伸也可以在 XAML 中用來自訂以每個平臺為基礎的 UI 外觀。 它提供與`OnPlatform`和`On`類別相同的功能，但具有更精確的標記法。 如需詳細資訊，請參閱 < [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
 
 ## <a name="summary"></a>總結
 

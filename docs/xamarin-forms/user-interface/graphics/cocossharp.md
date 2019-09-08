@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: d6440518149a4fab8e9667a2a41d3df818e2a879
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 7b465391958a6e862bfed9fde8d9da1fdd52bee5
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120532"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759761"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin.Forms 中使用 CocosSharp
 
@@ -42,7 +42,7 @@ CocosSharp 是執行階段有效的程式庫包括下列功能：
 - 使用`CCSprite`類別呈現影像
 - 使用`CCDrawNode`類別呈現圖形
 - 使用類別的`CCNode.Schedule`每個畫面格邏輯
-- 內容管理 (使用, 載入和卸載資源, 例如 .png 檔案)`CCTextureCache`
+- 內容管理（使用，載入和卸載資源，例如 .png 檔案）`CCTextureCache`
 - 使用類別的`CCAction`動畫
 
 CocosSharp 的主要焦點在於簡化跨平台的 2D 遊戲; 建立不過，它也可以是 Xamarin 表單應用程式增添絕佳的工具。 遊戲通常需要有效的轉譯和精確地控制視覺效果，因為 CocosSharp 可用來將強大的視覺效果和效果新增至非遊戲應用程式。
@@ -93,7 +93,6 @@ CocosSharp.Forms nuget 套件包含`CocosSharpView`類別，用來主控 CocosSh
 CocosSharp 可以裝載在 Xamarin.Forms 中的任何容器。 此頁面的這個範例使用一個稱為`HomePage`。 `HomePage` 分割成兩半的`Grid`顯示如何 Xamarin.Forms 以及 CocosSharp 可以呈現同時在相同頁面上。
 
 首先，設定頁面，使其包含`Grid`並將兩個`Button`執行個體：
-
 
 ```csharp
 public class HomePage : ContentPage
@@ -147,7 +146,6 @@ public HomePage ()
 
 `CocosSharpView`類別用來將 CocosSharp 內嵌至 Xamarin.Forms 應用程式。 由於`CocosSharpView`繼承自[Xamarin.Forms.View](xref:Xamarin.Forms.View)類別，它提供熟悉的介面進行配置，而且它可用版面配置容器內這類[Xamarin.Forms.Grid](xref:Xamarin.Forms.Grid)。 加入新`CocosSharpView`藉由完成專案`CreateTopHalf`方法：
 
-
 ```csharp
 void CreateTopHalf(Grid grid)
 {
@@ -165,7 +163,6 @@ void CreateTopHalf(Grid grid)
 ```
 
 CocosSharp 初始化不會立即，因此當登錄一則事件`CocosSharpView`已完成建立。 這樣在`HandleViewCreated`方法：
-
 
 ```csharp
 void HandleViewCreated (object sender, EventArgs e)
@@ -203,7 +200,6 @@ void HandleViewCreated (object sender, EventArgs e)
 
 最初`GameScene`類別會幾乎是空白 – 我們只是要建立它以滿足中的參考`HomePage`。 名為.NET Standard 程式庫專案中加入新的類別`GameScene`。 它應該繼承自`CCScene`類別，如下所示：
 
-
 ```csharp
 public class GameScene : CCScene
 {
@@ -215,7 +211,6 @@ public class GameScene : CCScene
 ```
 
 既然`GameScene`是定義，我們可以返回`HomePage`和加入欄位：
-
 
 ```csharp
 // Keep the GameScene at class scope
@@ -234,7 +229,6 @@ GameScene gameScene;
 應用程式目前有顯示空的 CocosSharp 引擎的執行個體`CCScene`。 接下來，我們要在其中加入視覺物件： 一個圓形。 `CCDrawNode`類別可以用來繪製各種不同的幾何圖形中, 所述[繪製 Geometry ccdrawnode 建立指南](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/ccdrawnode.md)。
 
 新增一個圓形來我們`GameScene`類別，並加以具現化建構函式中的下列程式碼所示：
-
 
 ```csharp
 public class GameScene : CCScene
@@ -262,7 +256,6 @@ public class GameScene : CCScene
 
 ![](cocossharp-images/image6.png "GameScene 的圓形")
 
-
 #### <a name="understanding-designresolution"></a>了解 DesignResolution
 
 現在，顯示視覺的 CocosSharp 物件時，我們可以調查`DesignResolution`屬性。
@@ -287,7 +280,6 @@ public class GameScene : CCScene
 
 CocosSharp 視覺項目 (例如`CCDrawNode`) 會繼承`CCNode`類別。 `CCNode` 提供可用來放置相對於其父物件的兩個屬性：`PositionX`和`PositionY`。 此程式碼片段所示，我們的程式碼會將這兩個屬性目前使用的圓圈，中心：
 
-
 ```csharp
 circle.PositionX = 20;
 circle.PositionY = 50;
@@ -296,7 +288,6 @@ circle.PositionY = 50;
 請務必注意 CocosSharp 物件位於所明確的位置值，而不是大部分的 Xamarin.Forms 檢視，會自動放置依據其父系版面配置控制項的行為。
 
 我們將新增程式碼，讓使用者可以按一下向左或向右移動圓形的 10 個單位 （不像素為單位，因為圓形繪製 CocosSharp 全局單位空間中） 的兩個按鈕的其中一個。 我們將建立兩個公用方法的第一次`GameScene`類別：
-
 
 ```csharp
 public void MoveCircleLeft()
@@ -311,7 +302,6 @@ public void MoveCircleRight()
 ```
 
 接下來，我們會在這裡將處理常式中的兩個按鈕加入`HomePage`回應按下。 完成時，我們`CreateBottomHalf`方法包含下列程式碼：
-
 
 ```csharp
 void CreateBottomHalf(Grid grid)
@@ -346,7 +336,7 @@ CocosSharp 圓形現在移動中的按選動作的回應。 我們也清楚 Coco
 
 本指南說明如何將 CocosSharp 新增至現有的 Xamarin.Forms 專案、 如何建立 Xamarin.Forms 與 CocosSharp，之間的互動，並建立 CocosSharp 中的版面配置時，討論的各種考量。
 
-CocosSharp 的遊戲引擎會提供許多功能和深度，因此本指南只觸及了 CocosSharp 可以做什麼。 有興趣閱讀更多 CocosSharp 的開發人員, 可以在[CocosSharp](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/)封存中找到許多文章。
+CocosSharp 的遊戲引擎會提供許多功能和深度，因此本指南只觸及了 CocosSharp 可以做什麼。 有興趣閱讀更多 CocosSharp 的開發人員，可以在[CocosSharp](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/)封存中找到許多文章。
 
 ## <a name="related-links"></a>相關連結
 

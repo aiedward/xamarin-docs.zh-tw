@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/25/2015
-ms.openlocfilehash: c5032bfa49fb1cee63c48ea8fa3e98bcd5748c31
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: d8c2cc4f31b148ee3181629e5b3b5faf01016617
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657183"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772530"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
 
@@ -226,7 +226,6 @@ Title="RelativeLayout">
 ![](relative-layout-images/relative.png "複雜 RelativeLayout")
 
 請注意， `RelativeLayouts`s 為巢狀，因為在某些情況下建立巢狀版面配置可能很容易呈現在相同的版面配置內的所有項目。 也請注意，某些元素`RelativeToView`，因為，可讓您更輕鬆且更直覺的版面配置時檢視之間的關聯性可讓您引導定位。
-
 
 ## <a name="related-links"></a>相關連結
 

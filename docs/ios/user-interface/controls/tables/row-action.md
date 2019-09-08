@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/25/2017
-ms.openlocfilehash: aabbbb706d4b6fcd022e30f726696b5d4f46167f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9f15d586a0ca209fec088fc48ca975efae4ab8fc
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279509"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70768356"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用資料列動作
 
@@ -26,7 +26,6 @@ iOS 提供兩種在資料表上執行動作的方式`UISwipeActionsConfiguration
 
 `UITableViewRowAction`類別是用來定義當使用者在資料表視圖中的資料列上水準撥動時，將會發生的動作。
 例如，編輯資料表時，根據預設，資料列上的向左輕刷會顯示 [**刪除**] 按鈕。 藉由將`UITableViewRowAction`類別的多個實例附加`UITableView`至，可以定義多個自訂動作，每個都有自己的文字、格式和行為。
-
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
@@ -43,7 +42,6 @@ iOS 提供兩種在資料表上執行動作的方式`UISwipeActionsConfiguration
 `UITableViewController`（和`UITableViewSource`和`UITableViewDelegate`）包含兩個方法： `GetLeadingSwipeActionsConfiguration`和`GetTrailingSwipeActionsConfiguration`，用來在資料表視圖資料列上執行一組滑動動作。 前置的「滑動」動作指的是從畫面左側以左至右的語言，以及從右至左的語言中，從畫面的右手邊滑動。
 
 下列範例（來自[TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)範例）示範如何執行領先的滑動設定。 從內容相關的動作中會建立兩個動作，[如下](#create-uicontextualaction)所述。 這些動作接著會傳遞至新初始化[`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations)的，做為傳回值使用。
-
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -180,8 +178,6 @@ table.Delegate = tableDelegate;
 [![](row-action-images/action01.png "顯示的是 [Hi] 按鈕，而不是 [刪除] 按鈕")](row-action-images/action01.png#lightbox)
 
 如果使用者按下 [ **Hi** ] 按鈕`Hello World!` ，則會在應用程式于 [debug] 模式中執行時，在 Visual Studio for Mac 或 Visual Studio 中寫出至主控台。
-
-
 
 ## <a name="related-links"></a>相關連結
 

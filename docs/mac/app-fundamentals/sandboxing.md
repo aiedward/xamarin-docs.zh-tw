@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
-ms.openlocfilehash: 052d81ccaefe123eb375ddcd92bee0b1f2a395e2
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290309"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70770292"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱化 Xamarin. Mac 應用程式
 
@@ -562,8 +562,6 @@ find -H [Your-App-Bundle].app -print0 | xargs -0 file | grep "Mach-O .*executabl
 ## <a name="summary"></a>總結
 
 本文已詳細探討如何將 Xamarin. Mac 應用程式進行沙箱處理。 首先，我們建立了單純的 Xamarin Mac 應用程式，以顯示應用程式沙箱的基本概念。 接下來，我們示範了如何解決沙箱違規。 然後，我們會深入探討應用程式沙箱，最後，我們探討了如何設計應用程式沙箱的 Xamarin. Mac 應用程式。
-
-
 
 ## <a name="related-links"></a>相關連結
 

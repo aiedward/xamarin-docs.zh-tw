@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/03/2018
-ms.openlocfilehash: 4a8e3827deadd5c5d183c61c53cbe8346949759b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a1c6c5357c62d0421376930ea04c4755fae59d04
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290494"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769346"
 ---
 # <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loaded"></a>執行階段錯誤：找不到或無法載入組件 mscorlib.dll
 
@@ -23,4 +23,3 @@ ms.locfileid: "70290494"
 ```
 
 當`.xcarchive`用於簽署/.ipa 建立的`.monotouch-64` *隱藏* `.monotouch-32`和資料夾遺失，觸發執行階段錯誤時，就會發生此問題。
-

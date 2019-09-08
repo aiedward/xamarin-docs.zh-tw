@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/07/2016
-ms.openlocfilehash: 9d83be4eec793f571fe3d308c80ca9c023828f56
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f0633b0f91bf39d10ad42e1ee41997213ca3047e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288913"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769035"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>使用 Xamarin 建立 tvOS 使用者介面
 
@@ -69,8 +69,6 @@ _一般使用者體驗（UX）涵蓋範圍包含使用者介面（UI）控制項
 ## <a name="working-with-text-and-search-fieldsiostvosuser-interfacetext-fields-and-searchmd"></a>[使用文字和搜尋欄位](~/ios/tvos/user-interface/text-fields-and-search.md)
 
 本文涵蓋在 tvOS 應用程式內設計和使用文字和搜尋欄位。
-
-
 
 ## <a name="related-links"></a>相關連結
 

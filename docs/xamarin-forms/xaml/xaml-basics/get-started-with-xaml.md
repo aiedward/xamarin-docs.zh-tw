@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 14f7692c88f5047f1250707940e3871371aecc8b
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: fde0a5145f82e75fd6d75280c1cd2230f35a4c29
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227962"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772806"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部分。 開始使用 XAML
 
@@ -102,7 +102,7 @@ _在 Xamarin.Forms 應用程式中，XAML 大多用來定義頁面的視覺內�
 </ContentPage>
 ```
 
-這兩個 XML 命名`xmlns`空間 () 宣告參考 uri, 第一個看似在 Xamarin 的網站上, 第二個則是 Microsoft 的。 不需要檢查哪些這些 Uri 指向。 裡面沒有東西。 他們只是由 Xamarin 與 Microsoft 所擁有的 Uri，它們基本上函式做為版本識別碼。
+這兩個 XML 命名`xmlns`空間（）宣告參考 uri，第一個看似在 Xamarin 的網站上，第二個則是 Microsoft 的。 不需要檢查哪些這些 Uri 指向。 裡面沒有東西。 他們只是由 Xamarin 與 Microsoft 所擁有的 Uri，它們基本上函式做為版本識別碼。
 
 第一個 XML 命名空間宣告表示，沒有前置詞在 XAML 檔中定義的標記是指類別在 Xamarin.Forms 中，例如`ContentPage`。 第二個命名空間宣告中定義的前置詞`x`。 這用數個項目和屬性的 XAML 內建函式本身的支援和 XAML 的其他實作。 不過，這些項目和屬性會內嵌在 URI 中的年份而略有不同。 Xamarin.Forms 可支援在 2009 XAML 規格中，但不是它全部。
 
@@ -203,9 +203,9 @@ namespace XamlSamples
 
 也請注意，`Title`屬性已設定根標記上。
 
-此時, 類別、屬性和 XML 之間的關聯性應該很明顯:在 XAML 檔案中, 會以 XML `ContentPage`元素`Label`的形式顯示 Xamarin 類別 (例如或)。 該類別的屬性，包括`Title`上`ContentPage`和七個屬性`Label`— 通常會顯示為 XML 屬性。
+此時，類別、屬性和 XML 之間的關聯性應該很明顯：在 XAML 檔案中，會以 XML `ContentPage`元素`Label`的形式顯示 Xamarin 類別（例如或）。 該類別的屬性，包括`Title`上`ContentPage`和七個屬性`Label`— 通常會顯示為 XML 屬性。
 
-若要設定這些屬性的值存在許多捷徑。 某些屬性為基本資料類型:例如`Title` , 和`IsVisible` `Double` `true`屬性的`String`類型為,且的類型為,而(根據預設,只有在此處設定)為類型`Rotation` `Text` `Boolean`.
+若要設定這些屬性的值存在許多捷徑。 某些屬性為基本資料類型：例如`Title` ，和`IsVisible` `Double` `true`屬性的`String`類型為，且的類型為，而（根據預設，只有在此處設定）為類型`Rotation` `Text` `Boolean`.
 
 `HorizontalTextAlignment`屬性的類型是`TextAlignment`，這是列舉型別。 對於任何列舉類型的屬性，您只需要提供是成員名稱。
 
@@ -448,8 +448,6 @@ public partial class XamlPlusCodePage : ContentPage {
 ## <a name="summary"></a>總結
 
 與此簡介中，您已了解如何 XAML 檔案和程式碼檔案構成類別定義，以及的 XAML 和程式碼檔案互動的方式。 但是 XAML 也有自己獨特的語法功能，以便用於極具彈性的方式。 您可以開始探索這些功能[第 2 部分。基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
-
-
 
 ## <a name="related-links"></a>相關連結
 

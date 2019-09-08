@@ -5,18 +5,18 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 6175e6ca6c09f1e85302df309fd58b8278aaf90c
-ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
-ms.translationtype: HT
+ms.openlocfilehash: de6540249f957c7173fa7a3ef3acecbe5a3ad93f
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70060082"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70756771"
 ---
 # <a name="platform-support"></a>平台支援
 
 Xamarin.Essentials 支援下列平台與作業系統：
 
-| Platform | 版本 |
+| 平台 | Version |
 | --- | --- |
 | Android | 4.4 (API 19) 或更高版本 |
 | iOS |10.0 或更高版本 |
@@ -74,4 +74,3 @@ Xamarin.Essentials 一律會嘗試將功能帶到每個平台，不過，有時�
 | [單位轉換器](unit-converters.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [版本追蹤](version-tracking.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [震動](vibrate.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
-

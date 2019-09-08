@@ -7,12 +7,12 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: b4fae33f7de8c6022b2298c462ea510ec8ed623f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6e108852b2978903fb74686ad60cf419bbe4e3c0
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657198"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772956"
 ---
 # <a name="the-translate-transform"></a>平移轉換
 
@@ -136,7 +136,7 @@ using (SKPaint textPaint = new SKPaint())
 
 第二個範例會呼叫[ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix)。 這會導致所有轉換回到其預設狀態。
 
-第三個範例會將儲存的狀態`SKCanvas`藉由呼叫物件[ `Save` ](xref:SkiaSharp.SKCanvas.Save) ，然後再還原的狀態，藉由呼叫[ `Restore` ](xref:SkiaSharp.SKCanvas.Restore)。 這是最具彈性的方式來操作的繪圖作業的一系列轉換。 這些`Save`和`Restore`會呼叫函式, 就像堆疊:您可以呼叫`Save`多次, 然後以反向順序`Restore`呼叫來回到先前的狀態。 `Save`方法會傳回一個整數，而您可以傳遞至該整數[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)有效地呼叫`Restore`多次。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)屬性會傳回目前儲存在堆疊上的狀態數目。
+第三個範例會將儲存的狀態`SKCanvas`藉由呼叫物件[ `Save` ](xref:SkiaSharp.SKCanvas.Save) ，然後再還原的狀態，藉由呼叫[ `Restore` ](xref:SkiaSharp.SKCanvas.Restore)。 這是最具彈性的方式來操作的繪圖作業的一系列轉換。 這些`Save`和`Restore`會呼叫函式，就像堆疊：您可以呼叫`Save`多次，然後以反向順序`Restore`呼叫來回到先前的狀態。 `Save`方法會傳回一個整數，而您可以傳遞至該整數[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)有效地呼叫`Restore`多次。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)屬性會傳回目前儲存在堆疊上的狀態數目。
 
 您也可以使用[ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore)還原畫布狀態的類別。 這個類別的建構函式要呼叫`using`陳述式; 畫布狀態就會自動還原結尾`using`區塊。 
 
@@ -302,7 +302,6 @@ public class HendecagramAnimationPage : ContentPage
 [![](translate-images/hendecagramanimation-small.png "Hendecagram 動畫頁面的三個螢幕擷取畫面")](translate-images/hendecagramanimation-large.png#lightbox "Hendecagram 動畫頁面的三個螢幕擷取畫面")
 
 請注意它圍繞在頁面中央，星號會維護相同的方向。 它完全不會旋轉。 這是作業的旋轉轉換。
-
 
 ## <a name="related-links"></a>相關連結
 

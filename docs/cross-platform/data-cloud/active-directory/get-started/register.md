@@ -6,12 +6,12 @@ ms.assetid: 0B17991A-4573-4F6C-9E86-D4B9D1A47E4D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 2811297e24aac726ae3c91e5354675499d4b9ddb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f93b741f5f091410a7f045a8e2a8538b3340208e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290083"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766338"
 ---
 # <a name="step-1-register-an-app-to-use-azure-active-directory"></a>步驟 1： 註冊要使用 Azure Active Directory 的應用程式
 
@@ -37,8 +37,6 @@ ms.locfileid: "70290083"
 6. 建立應用程式之後，流覽至 [**設定**] 索引標籤。記下**用戶端識別碼**，我們將在稍後於應用程式中使用。 此外，在此畫面上，您可以將行動應用程式的存取權授與 Active Directory 或新增另一個應用程式（例如 Web API 或 Office365），以供行動應用程式在驗證完成後使用。
 
    ![](register-images/05.-configure.jpg "此外，在此畫面上，您可以將行動應用程式的存取權授與 Active Directory 或新增另一個應用程式（例如 Web API 或 Office365）")
-
-
 
 ## <a name="related-links"></a>相關連結
 

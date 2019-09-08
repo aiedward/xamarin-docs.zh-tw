@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: 0be72e29ebfed9a3f43d96fd66b7f4597459a834
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ad22bfb4370dceb25fd229c7d5cfb38c386fbd84
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656774"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70759814"
 ---
 # <a name="easing-functions-in-xamarinforms"></a>在 Xamarin.Forms 中的 easing 函式
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 
 _Xamarin.Forms 包含加/減速類別，可讓您指定的傳送函式，以控制動畫加速或減慢它們執行的方式。這篇文章會示範如何使用預先定義的 easing 函式，以及如何建立自訂的 easing 函式。_
-
 
 [ `Easing` ](xref:Xamarin.Forms.Easing)類別定義數個可供動畫的 easing 函式：
 
@@ -106,8 +105,6 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 ## <a name="summary"></a>總結
 
 這篇文章會示範如何使用預先定義的 easing 函式，以及如何建立自訂的 easing 函式。 包含 Xamarin.Forms [ `Easing` ](xref:Xamarin.Forms.Easing)可讓您指定傳輸函式可控制如何動畫加速或減慢它們執行的類別。
-
-
 
 ## <a name="related-links"></a>相關連結
 

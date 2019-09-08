@@ -7,31 +7,30 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/19/2017
-ms.openlocfilehash: 65f7c6d8a573501ffec4aa1b8eaf28ff1e6479e8
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: c175c533e437736849eac6be1f4a90a783123812
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67864227"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70757140"
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>我的 Android Resource.designer.cs 檔案不會更新
 
 > [!NOTE]
-> 在 Xamarin Studio 5.1.4 和更新版本中，已解決此問題。 不過，如果問題發生在 Visual Studio for Mac，請指導，申請[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md)您完整的版本控制資訊和完整建置記錄檔輸出。
+> 此問題已在 Xamarin Studio 5.1.4 和更新版本中解決。 不過，如果 Visual Studio for Mac 發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出，提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
 
-在 Xamarin.Studio 5.1 的 bug 之前損毀部分或完全刪除.csproj 檔案中的 xml 程式碼的.csproj 檔案。 這會導致重要組件的 Android 建置系統 （例如更新 Android Resource.designer.cs） 失敗。 截至 5.1.4 穩定的版本在 7 月 15 日，已修正此錯誤;但在許多情況下的專案檔必須以手動方式，如下所述修復。
+5\.1 Xamarin 中的 bug 先前已損毀 .csproj 檔案中的 xml 程式碼，或在 .csproj 檔案中完全刪除該檔案。 這會導致 Android 組建系統的重要部分（例如，更新 Android Resource.designer.cs）失敗。 從5.1.4 穩定版本于7月15日起，已修正此 bug;但在許多情況下，專案檔必須手動修復，如下所述。
 
+## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>有兩種可能的方法可以修正專案檔案
 
-## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>兩個可能的解決方法修正專案檔案
+**任意**
 
-**其中一個：**
-
-1. 建立新的 Xamarin.Android 應用程式專案，設定符合舊的專案，並新增所有您的資源、 原始程式檔等回專案的所有專案屬性。
+1. 建立全新的 Xamarin Android 應用程式專案，設定所有專案屬性以符合舊專案，並將您的所有資源、原始程式檔等等加入專案。
 
    **或**
 
-2. 請您原始專案的.csproj 檔案的備份副本，然後在文字編輯器中開啟它，並再次新增遺漏的元素從完全產生的.csproj 檔案。
+2. 建立原始專案 .csproj 檔案的備份複本，然後在文字編輯器中開啟它，然後從完全產生的 .csproj 檔案中，加回遺漏的元素。
 
-### <a name="if-this-does-not-solve-the-problem"></a>如果這樣做無法解決問題
+### <a name="if-this-does-not-solve-the-problem"></a>如果這樣無法解決問題
 
-這些項目之後，您可能會注意到，之後，將傳回的項目時，加入並重建專案，Resource.designer.cs 檔案會更新，但，您可能仍必須關閉再重新開啟方案，以取得可辨識的程式碼完成功能Resource.designer.cs 中包含新的類型。 
+在試驗這些元素之後，您可能會注意到，在您將專案加回之後，Resource.designer.cs 檔案就會更新，但您可能還是必須關閉並重新開啟方案，才能讓程式碼完成辨識包含在 Resource.designer.cs 中的新類型。 

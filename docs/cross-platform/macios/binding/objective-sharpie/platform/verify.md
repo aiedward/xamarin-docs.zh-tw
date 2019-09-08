@@ -6,12 +6,12 @@ ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: conceptdev
 ms.author: crdun
 ms.date: 01/15/2016
-ms.openlocfilehash: b13164b7125e04b3e92a4ae0c0c0afd428f325af
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eb4a992255fa26be1e83f27f93755e0fd8bda0a4
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278928"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70765680"
 ---
 # <a name="objective-sharpie-verify-attributes"></a>目標 Sharpie 驗證屬性
 
@@ -28,7 +28,7 @@ ms.locfileid: "70278928"
 
 提供給屬性的提示引數可以與下列檔交叉參考。 在完成系結`[Verify]`之後，主控台上也會提供任何所產生屬性的檔。
 
-|`[Verify]`提示|描述|
+|`[Verify]`提示|說明|
 |---|---|
 |InferredFromPreceedingTypedef|這個宣告的名稱是由通用慣例從原始機器碼的正上方`typedef`推斷而來。 請確認推斷的名稱是正確的，因為此慣例不明確。|
 |ConstantsInterfaceAssociation|沒有任何欺騙的方法可以判斷外部變數宣告可能會產生關聯的目標 C 介面。 這些實例會`[Field]`當做部分介面中的屬性系結到近接的具體介面，以產生更直覺化的 API，可能會完全排除 ' 常數 ' 介面。|
@@ -40,4 +40,3 @@ ms.locfileid: "70278928"
 ```csharp
 sharpie verify-docs InferredFromPreceedingTypedef
 ```
-
