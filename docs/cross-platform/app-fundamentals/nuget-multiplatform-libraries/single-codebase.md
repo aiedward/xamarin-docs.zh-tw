@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 966d7a21da0112383c08e862a357c3c1d4fb9c22
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fb30b07e958bddfcf0e0545ae17b925d7163c38a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289728"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70766469"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>建立適用于 NuGet 的新多平臺程式庫
 
@@ -50,7 +50,6 @@ ms.locfileid: "70289728"
 
    ![](single-codebase-images/create-nuget-package.png "NuGet 套件檔案會儲存在 bin 資料夾中，視設定而定（Debug 或 Release）")
 
-
 ## <a name="verifying-the-output"></a>驗證輸出
 
 NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構。
@@ -75,7 +74,6 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 
 轉換為共用專案之後，請造訪 **> NuGet 套件 > 參考元件**
 [區段](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)中的專案選項，並確定已選取所有必要的設定檔（讓 NuGet 繼續與專案相容）先前已在中使用此功能）。
-
 
 ## <a name="related-links"></a>相關連結
 

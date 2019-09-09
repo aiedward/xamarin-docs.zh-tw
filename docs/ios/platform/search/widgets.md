@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
-ms.openlocfilehash: 47055ca61e0be9b5b54e8f5ff23719b64f1101cd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 969d7fc78af9dd10f7ad57f58a6f4f619d0a201a
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291702"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70769447"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 中的搜尋和主畫面 Widget 增強功能
 
@@ -191,8 +191,6 @@ public void WidgetActiveDisplayModeDidChange (NCWidgetDisplayMode activeDisplayM
 ## <a name="summary"></a>總結
 
 本文涵蓋了 Apple 在 iOS 10 中對 Widget 系統進行的增強功能，並示範如何在 Xamarin 中執行它們。
-
-
 
 ## <a name="related-links"></a>相關連結
 
