@@ -5,12 +5,12 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: de6540249f957c7173fa7a3ef3acecbe5a3ad93f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b12606317fd6cbc9a6a0f59364270595f1250abf
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756771"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887337"
 ---
 # <a name="platform-support"></a>平台支援
 
@@ -31,7 +31,7 @@ Xamarin.Essentials 支援下列平台與作業系統：
 
 ## <a name="feature-support"></a>功能支援
 
-Xamarin.Essentials 一律會嘗試將功能帶到每個平台，不過，有時候因為裝置而可能會有限制。 以下是每個平台支援之功能的指南。
+Xamarin.Essentials 一律會嘗試將功能帶到每個平台，不過，有時候因為裝置而可能會有限制。 以下是每個平臺上支援哪些功能的指南。
 
 圖示指南：
 

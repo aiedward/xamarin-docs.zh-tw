@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: eb1358f039cc5d5a200f929fcc7dfa71ca863d2a
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 77cc414cd9b15f99f95d4a54f7af5ce6f028c41a
+ms.sourcegitcommit: ab51d32f4ea0e0d4701f0bf2f1465c9323cd070b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70121308"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70887453"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms 裝置類別
 
@@ -20,7 +20,7 @@ ms.locfileid: "70121308"
 
 [ `Device` ](xref:Xamarin.Forms.Device)類別包含多種屬性和方法，以協助開發人員自訂版面配置和每個平台為基礎的功能。
 
-除了在特定硬體類型和大小以程式碼為目標的`Device`方法和屬性之外, 類別還包含可用來從背景執行緒與 UI 控制項互動的方法。 如需詳細資訊, 請參閱[從背景執行緒與 UI 互動](#interact-with-the-ui-from-background-threads)。
+除了在特定硬體類型和大小以程式碼為目標的`Device`方法和屬性之外，類別還包含可用來從背景執行緒與 UI 控制項互動的方法。 如需詳細資訊，請參閱[從背景執行緒與 UI 互動](#interact-with-the-ui-from-background-threads)。
 
 ## <a name="providing-platform-specific-values"></a>提供平臺特定的值
 
@@ -114,7 +114,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)值擷取[ `FlowDirection` ](xref:Xamarin.Forms.FlowDirection)列舉值，表示目前正由裝置的文字方向。 資料流程方向是所在頁面的 UI 項目會掃描出的方向。 這些列舉值為：
 
 - [`LeftToRight`](xref:Xamarin.Forms.FlowDirection.LeftToRight)
-- [`RightToRight`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
+- [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)
 - [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)
 
 在 XAML 中， [ `Device.FlowDirection` ](xref:Xamarin.Forms.VisualElement.FlowDirection)可以擷取值，使用`x:Static`標記延伸模組：
@@ -182,22 +182,22 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () => {
 
 ## <a name="interact-with-the-ui-from-background-threads"></a>從背景執行緒與 UI 互動
 
-大部分的作業系統 (包括 iOS、Android 和通用 Windows 平臺) 都會針對涉及使用者介面的程式碼使用單一執行緒模型。 這個執行緒通常稱為*主要執行緒*或*UI 執行緒*。 此模型的結果是, 存取使用者介面專案的所有程式碼都必須在應用程式的主執行緒上執行。
+大部分的作業系統（包括 iOS、Android 和通用 Windows 平臺）都會針對涉及使用者介面的程式碼使用單一執行緒模型。 這個執行緒通常稱為*主要執行緒*或*UI 執行緒*。 此模型的結果是，存取使用者介面專案的所有程式碼都必須在應用程式的主執行緒上執行。
 
-應用程式有時會使用背景執行緒來執行可能長時間執行的作業, 例如從 web 服務抓取資料。 如果在背景執行緒上執行的程式碼需要存取使用者介面元素, 則必須在主執行緒上執行該程式碼。
+應用程式有時會使用背景執行緒來執行可能長時間執行的作業，例如從 web 服務抓取資料。 如果在背景執行緒上執行的程式碼需要存取使用者介面元素，則必須在主執行緒上執行該程式碼。
 
-類別包含下列`static`方法, 可以用來與背景執行緒中的使用者介面專案互動: `Device`
+類別包含下列`static`方法，可以用來與背景執行緒中的使用者介面專案互動： `Device`
 
 | 方法 | 引數 | 傳回值 | 用途 |
 |---|---|---|---|
-| `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主執行緒上叫用, 並不等待它完成。 |
-| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主`Func<T>`執行緒上叫用, 並等候它完成。 |
-| `InvokeOnMainThreadAsync` | `Action` | `Task` | `Action`在主執行緒上叫用, 並等候它完成。 |
-| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 在主`Func<Task<T>>`執行緒上叫用, 並等候它完成。 |
-| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 在主`Func<Task>`執行緒上叫用, 並等候它完成。 |
-| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | `SynchronizationContext`傳回主執行緒的。 |
+| `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主執行緒上叫用，並不等待它完成。 |
+| `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主要執行緒上叫用 `Func<T>`，並等候其完成。 |
+| `InvokeOnMainThreadAsync` | `Action` | `Task` | 在主要執行緒上叫用 `Action`，並等候其完成。 |
+| `InvokeOnMainThreadAsync<T>`| `Func<Task<T>>` | `Task<T>` | 在主要執行緒上叫用 `Func<Task<T>>`，並等候其完成。 |
+| `InvokeOnMainThreadAsync` | `Func<Task>` | `Task` | 在主要執行緒上叫用 `Func<Task>`，並等候其完成。 |
+| `GetMainThreadSynchronizationContextAsync` | | `Task<SynchronizationContext>` | 傳回主要執行緒的 `SynchronizationContext`。 |
 
-下列程式碼顯示使用`BeginInvokeOnMainThread`方法的範例:
+下列程式碼顯示使用`BeginInvokeOnMainThread`方法的範例：
 
 ```csharp
 Device.BeginInvokeOnMainThread (() =>
