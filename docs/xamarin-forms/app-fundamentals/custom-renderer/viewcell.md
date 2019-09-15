@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 406d65145017e4c82743bc920ff19696a90afc33
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5cd0a1ec43f0e56ec1ec72ebd614a7e0a5fa2225
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771699"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998049"
 ---
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
@@ -146,7 +146,7 @@ public class NativeCellPageCS : ContentPage
 }
 ```
 
-Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控制項用以顯示透過 [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性填入的資料清單。 [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) 快取策略嘗試透過回收清單資料格，將 `ListView` 磁碟使用量和執行速度降至最低。 如需詳細資訊，請參閱[快取資料](~/xamarin-forms/user-interface/listview/performance.md#cachingstrategy)。
+Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控制項用以顯示透過 [`ItemSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性填入的資料清單。 [`RecycleElement`](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement) 快取策略嘗試透過回收清單資料格，將 `ListView` 磁碟使用量和執行速度降至最低。 如需詳細資訊，請參閱[快取資料](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)。
 
 清單中的每個資料列都包含三個資料項目 – 名稱、類別和影像檔案名稱。 清單中每個資料列的配置都是由 `DataTemplate` 所定義，它是透過 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 可繫結屬性所參考。 `DataTemplate` 將清單中的每個資料列定義為 `NativeCell`，透過資料繫結顯示其 `Name`、`Category` 和 `ImageFilename` 屬性。 如需 `ListView` 控制項的詳細資訊，請參閱 [ListView](~/xamarin-forms/user-interface/listview/index.md)。
 

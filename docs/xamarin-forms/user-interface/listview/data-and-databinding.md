@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/30/2018
-ms.openlocfilehash: 9855255464b32b99d78d7a1cdb24acce22d01648
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: aa968562470a1e3405bf68be7eb0294273970386
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68654751"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998018"
 ---
 # <a name="listview-data-sources"></a>ListView 的資料來源
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
-A [ `ListView` ](xref:Xamarin.Forms.ListView)用於顯示資料的清單。 我們將了解填入 ListView 與資料，以及我們如何可以將繫結至選取的項目。
+[Xamarin [`ListView`](xref:Xamarin.Forms.ListView) ] 用於顯示資料的清單。 本文說明如何在中填入`ListView`資料，以及如何將資料系結至選取的專案。
 
 ## <a name="itemssource"></a>ItemsSource
 
@@ -62,7 +62,7 @@ listView.ItemsSource = new string[]
 
 ![](data-and-databinding-images/itemssource-simple.png "ListView 顯示的字串清單，")
 
-上述的方法將會填入`ListView`字串的清單。 根據預設，`ListView`稱之為`ToString`，並顯示在結果`TextCell`每個資料列。 若要自訂 顯示資料的方式，請參閱[儲存格的外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
+這個方法會將字串`ListView`清單填入。 根據預設，`ListView`稱之為`ToString`，並顯示在結果`TextCell`每個資料列。 若要自訂 顯示資料的方式，請參閱[儲存格的外觀](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
 
 因為`ItemsSource`已傳送到陣列中，內容將不會更新為基礎的清單或陣列變更。 如果您想要自動更新，如新增、 移除和變更的基礎清單中的項目 ListView 時，您必須使用`ObservableCollection`。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) 定義於`System.Collections.ObjectModel`一樣，而且`List`，只不過它就會通知`ListView`的任何變更：
 
@@ -74,17 +74,17 @@ listView.ItemsSource = employees;
 employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 ```
 
-<a name="Data_Binding" />
-
 ## <a name="data-binding"></a>資料繫結
-資料繫結是 「 黏附 」 使用者介面物件的屬性所繫結的某些 CLR 物件，例如在您的 ViewModel 類別的屬性。 資料繫結是很有用，因為它藉由取代許多無聊的未定案程式碼簡化使用者介面的開發。
 
-資料繫結的運作方式是讓物件保持同步，因為其繫結的值變更。 而不需要撰寫事件處理常式，每當控制項的值變更時，您可以建立繫結，並啟用繫結，在您的 ViewModel。
+資料系結是將使用者介面物件的屬性系結至某個 CLR 物件屬性的「粘連」，例如 viewmodel 中的類別。 資料繫結是很有用，因為它藉由取代許多無聊的未定案程式碼簡化使用者介面的開發。
+
+資料繫結的運作方式是讓物件保持同步，因為其繫結的值變更。 您不需要在每次控制項的值變更時撰寫事件處理常式，而是在 viewmodel 中建立系結並啟用系結。
 
 如需有關資料繫結的詳細資訊，請參閱 <<c0> [ 資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)這是部分的四[Xamarin.Forms XAML 基本知識文章系列](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
 ### <a name="binding-cells"></a>儲存格繫結
-資料格 （和資料格的子系） 的屬性可以繫結中物件的屬性至`ItemsSource`。 例如, `ListView`可以用來呈現員工清單。
+
+資料格 （和資料格的子系） 的屬性可以繫結中物件的屬性至`ItemsSource`。 例如， `ListView`可以用來呈現員工清單。
 
 「 員工 」 類別：
 
@@ -95,7 +95,7 @@ public class Employee
 }
 ```
 
-會建立, 並將設定`ListView`為的`ItemsSource`: `ObservableCollection<Employee>`
+會建立、設定`ListView` `ItemsSource`為，而且清單會填入資料： `ObservableCollection<Employee>`
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -103,26 +103,21 @@ public ObservableCollection<Employee> Employees { get { return employees; }}
 
 public EmployeeListPage()
 {
-  //defined in XAML to follow
-  EmployeeView.ItemsSource = employees;
-  ...
+    EmployeeView.ItemsSource = employees;
+
+    // ObservableCollection allows items to be added after ItemsSource
+    // is set and the UI will react to changes
+    employees.Add(new Employee{ DisplayName="Rob Finnerty"});
+    employees.Add(new Employee{ DisplayName="Bill Wrestler"});
+    employees.Add(new Employee{ DisplayName="Dr. Geri-Beth Hooper"});
+    employees.Add(new Employee{ DisplayName="Dr. Keith Joyce-Purdy"});
+    employees.Add(new Employee{ DisplayName="Sheri Spruce"});
+    employees.Add(new Employee{ DisplayName="Burt Indybrick"});
 }
 ```
 
-清單會填入資料：
-
-```csharp
-public EmployeeListPage()
-{
-  ...
-  employees.Add(new Employee{ DisplayName="Rob Finnerty"});
-  employees.Add(new Employee{ DisplayName="Bill Wrestler"});
-  employees.Add(new Employee{ DisplayName="Dr. Geri-Beth Hooper"});
-  employees.Add(new Employee{ DisplayName="Dr. Keith Joyce-Purdy"});
-  employees.Add(new Employee{ DisplayName="Sheri Spruce"});
-  employees.Add(new Employee{ DisplayName="Burt Indybrick"});
-}
-```
+> [!WARNING]
+> `ObservableCollection`不是安全線程。 `ObservableCollection`修改會導致 UI 更新在執行修改的相同執行緒上發生。 如果執行緒不是主要的 UI 執行緒，則會造成例外狀況。
 
 下列程式碼片段示範`ListView`繫結至的員工清單：
 
@@ -144,7 +139,7 @@ public EmployeeListPage()
 </ContentPage>
 ```
 
-此 XAML 範例`ContentPage`會定義`ListView`包含的。 資料來源`ListView`透過設定`ItemsSource`屬性。 中`ItemsSource`每個資料列的配置都是在`ListView.ItemTemplate`元素內定義。 這會導致下列螢幕擷取畫面:
+此 XAML 範例`ContentPage`會定義`ListView`包含的。 資料來源`ListView`透過設定`ItemsSource`屬性。 中`ItemsSource`每個資料列的配置都是在`ListView.ItemTemplate`元素內定義。 這會導致下列螢幕擷取畫面：
 
 ![](data-and-databinding-images/bound-data.png "使用資料繫結的 ListView")
 
@@ -154,13 +149,13 @@ public EmployeeListPage()
 
 ```xaml
 <ListView x:Name="listView"
- SelectedItem="{Binding Source={x:Reference SomeLabel},
- Path=Text}">
+          SelectedItem="{Binding Source={x:Reference SomeLabel},
+          Path=Text}">
  …
 </ListView>
 ```
 
-假設`listView`的`ItemsSource`是一份字串`SomeLabel`會有繫結至其 text 屬性`SelectedItem`。
+`listView` `SomeLabel` `Text`假設是字串清單，則會將其屬性系結至`SelectedItem`。 `ItemsSource`
 
 ## <a name="related-links"></a>相關連結
 

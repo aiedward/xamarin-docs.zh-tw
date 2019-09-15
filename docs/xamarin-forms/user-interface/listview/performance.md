@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2017
-ms.openlocfilehash: f92a338b58dfb82ff5d442ed856e246f4a8a5a8f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ed920db129d2af203046a648c0069580f99a295e
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761849"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998185"
 ---
 # <a name="listview-performance"></a>ListView 效能
 
@@ -20,24 +20,22 @@ ms.locfileid: "70761849"
 
 在撰寫行動應用程式時，效能很重要。 使用者都是順暢的捲動和快速的載入時間。 無法符合使用者的期望，將會花費您的應用程式存放區中的評等，或在特定業務應用程式的情況下的成本您組織時間和金錢。
 
-雖然[ `ListView` ](xref:Xamarin.Forms.ListView)是功能強大的檢視來顯示資料，有一些限制。 捲動效能可能會受到影響時使用自訂的資料格，尤其是當它們包含深層巢狀的檢視階層，或使用需要大量的測量特定版面配置。 幸好，有一些的技巧可以用來避免發生效能不佳。
-
-<a name="cachingstrategy" />
+[Xamarin [`ListView`](xref:Xamarin.Forms.ListView) ] 是一個可顯示資料的強大視圖，但有一些限制。 使用自訂資料格時，滾動效能可能會受到影響，特別是當它們包含深度嵌套的視圖階層，或使用需要複雜測量的特定版面配置時。 幸好，有一些的技巧可以用來避免發生效能不佳。
 
 ## <a name="caching-strategy"></a>快取策略
 
-Listview 通常用來顯示更多的資料，比可以調整螢幕上。 音樂應用程式為例。 歌曲的媒體櫃可能有數千個項目。 最簡單的方式，是建立的所有歌曲的資料列，會有不佳的效能。 該方法會浪費寶貴的記憶體，而且可能會降低向下捲動到搜耙。 另一種方法是建立和終結的資料列，因為資料會捲動到檢視。 這需要常數的具現化和清除檢視物件，可能會很慢。
+Listview 通常用來顯示比螢幕上更多的資料。 例如，音樂應用程式可能會有一份具有數千個專案的歌曲庫。 為每個專案建立專案會浪費寶貴的記憶體，並執行得不佳。 經常建立和終結資料列需要應用程式不斷地具現化和清除物件，這也會執行得不佳。
 
-若要節省記憶體，原生[ `ListView` ](xref:Xamarin.Forms.ListView)每個平台的對等項目已重複使用的資料列的內建功能。 只有儲存格畫面上看到載入記憶體中，**內容**載入現有的儲存格。 這可防止具現化數千個物件，進而節省時間和記憶體不需要應用程式。
+為節省記憶體，每個[`ListView`](xref:Xamarin.Forms.ListView)平臺的原生對等專案都有內建功能可重複使用資料列。 只有儲存格畫面上看到載入記憶體中，**內容**載入現有的儲存格。 此模式可防止應用程式將上千個物件具現化，以節省時間和記憶體。
 
-Xamarin.Forms 允許[ `ListView` ](xref:Xamarin.Forms.ListView)重新使用中的資料格，透過[ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy)列舉型別，其具有下列值：
+Xamarin 會允許[`ListView`](xref:Xamarin.Forms.ListView) [`ListViewCachingStrategy`](xref:Xamarin.Forms.ListViewCachingStrategy)透過列舉來重複使用資料格，其具有下列值：
 
 ```csharp
 public enum ListViewCachingStrategy
 {
-  RetainElement,   // the default value
-  RecycleElement,
-  RecycleElementAndDataTemplate
+    RetainElement,   // the default value
+    RecycleElement,
+    RecycleElementAndDataTemplate
 }
 ```
 
@@ -46,46 +44,44 @@ public enum ListViewCachingStrategy
 
 ### <a name="retainelement"></a>RetainElement
 
-[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)快取策略指定[ `ListView` ](xref:Xamarin.Forms.ListView)將會產生一個儲存格為每個項目在清單中，而且是預設`ListView`行為。 通常應在下列情況：
+[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)快取策略指定[ `ListView` ](xref:Xamarin.Forms.ListView)將會產生一個儲存格為每個項目在清單中，而且是預設`ListView`行為。 應用於下列情況：
 
-- 當每個儲存格有大量的繫結 (20-30 個以上)。
-- 當儲存格樣板可以經常變更了。
-- 當測試顯示，`RecycleElement`快取策略導致降低的執行速度。
+- 每個資料格都有大量的系結（20-30 +）。
+- 資料格範本經常變更。
+- 測試顯示快取`RecycleElement`策略會導致執行速度降低。
 
-請務必辨識的後果[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)使用自訂的資料格時，快取策略。 任何儲存格初始化程式碼必須執行的每個資料格建立時，可能會多次每秒。 在此情況下，已在頁面上，沒問題的版面配置技巧會喜歡使用多個巢狀[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)執行個體，在安裝時成為效能瓶頸和終結即時捲動。
-
-<a name="recycleelement" />
+請務必辨識的後果[ `RetainElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RetainElement)使用自訂的資料格時，快取策略。 任何儲存格初始化程式碼必須執行的每個資料格建立時，可能會多次每秒。 在這種情況下，頁面上的版面配置技巧（例如使用多個[`StackLayout`](xref:Xamarin.Forms.StackLayout)嵌套實例）會在使用者進行滾動時即時設定和終結時變成效能瓶頸。
 
 ### <a name="recycleelement"></a>RecycleElement
 
-[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略指定[ `ListView` ](xref:Xamarin.Forms.ListView)會嘗試回收清單資料格，以減少其記憶體使用量和執行速度。 此模式中永遠也不會提供效能改進，以及應該執行測試，以判斷任何改善。 不過，它通常是偏好的選擇，並應在下列情況：
+[ `RecycleElement` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElement)快取策略指定[ `ListView` ](xref:Xamarin.Forms.ListView)會嘗試回收清單資料格，以減少其記憶體使用量和執行速度。 此模式不一定會提供效能改善，而且應該執行測試來判斷是否有任何改善。 不過，這是慣用的選擇，而且應該在下列情況下使用：
 
-- 當每個資料格具有小型至適量的繫結。
-- 當每個資料格[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)定義所有的資料格資料。
-- 每個資料格時大致相似，與儲存格範本不變。
+- 每個資料格都有一個小型到適中的系結數目。
+- 每個單元[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)格都定義了所有資料格資料。
+- 每個資料格主要類似，資料格範本不變。
 
-在虛擬化的資料格會有更新，其繫結內容，所以如果應用程式使用此模式中它必須確保繫結內容更新適當地處理。 有關儲存格的所有資料都必須都來自繫結內容，或可能會發生一致性錯誤。 這可透過使用資料繫結以顯示資料格資料。 或者，應該將資料格資料`OnBindingContextChanged`覆寫，而不是在自訂儲存格的建構函式，如下列程式碼範例所示：
+在虛擬化的資料格會有更新，其繫結內容，所以如果應用程式使用此模式中它必須確保繫結內容更新適當地處理。 有關儲存格的所有資料都必須都來自繫結內容，或可能會發生一致性錯誤。 您可以使用資料系結來顯示儲存格資料，來避免這個問題。 或者，應該將資料格資料`OnBindingContextChanged`覆寫，而不是在自訂儲存格的建構函式，如下列程式碼範例所示：
 
 ```csharp
 public class CustomCell : ViewCell
 {
-  Image image = null;
-
-  public CustomCell ()
-  {
-    image = new Image();
-    View = image;
-  }
-
-  protected override void OnBindingContextChanged ()
-  {
-    base.OnBindingContextChanged ();
-
-    var item = BindingContext as ImageItem;
-    if (item != null) {
-      image.Source = item.ImageUrl;
+    Image image = null;
+    
+    public CustomCell ()
+    {
+        image = new Image();
+        View = image;
     }
-  }
+    
+    protected override void OnBindingContextChanged ()
+    {
+        base.OnBindingContextChanged ();
+        
+        var item = BindingContext as ImageItem;
+        if (item != null) {
+            image.Source = item.ImageUrl;
+        }
+    }
 }
 ```
 
@@ -107,7 +103,7 @@ public class CustomCell : ViewCell
 > [!NOTE]
 > [ `RecycleElementAndDataTemplate` ](xref:Xamarin.Forms.ListViewCachingStrategy.RecycleElementAndDataTemplate)快取策略有必要，`DataTemplate`所傳回的 s [ `DataTemplateSelector` ](xref:Xamarin.Forms.DataTemplateSelector)必須使用[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Type))使用建構函式`Type`。
 
-### <a name="setting-the-caching-strategy"></a>設定快取策略
+### <a name="set-the-caching-strategy"></a>設定快取策略
 
 [ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy)列舉值指定[ `ListView` ](xref:Xamarin.Forms.ListView)建構函式多載，如下列程式碼範例所示：
 
@@ -115,7 +111,7 @@ public class CustomCell : ViewCell
 var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 ```
 
-在 XAML 中，設定`CachingStrategy`屬性，如下列程式碼所示：
+在 xaml 中，設定`CachingStrategy`屬性，如下列 xaml 所示：
 
 ```xaml
 <ListView CachingStrategy="RecycleElement">
@@ -129,21 +125,21 @@ var listView = new ListView(ListViewCachingStrategy.RecycleElement);
 </ListView>
 ```
 
-這已設定的快取策略引數的建構函式中相同的效果C#;請注意，沒有任何`CachingStrategy`屬性上的`ListView`。
+這個方法與在的函式中C#設定快取策略引數的效果相同。
 
-#### <a name="setting-the-caching-strategy-in-a-subclassed-listview"></a>在 子類別化之 ListView 中設定快取策略
+#### <a name="set-the-caching-strategy-in-a-subclassed-listview"></a>在子類別化的 ListView 中設定快取策略
 
-設定`CachingStrategy`屬性從 XAML 子類別化之[ `ListView` ](xref:Xamarin.Forms.ListView)不會想要的行為，因為沒有任何`CachingStrategy`屬性`ListView`。 此外，如果啟用[XAMLC](~/xamarin-forms/xaml/xamlc.md) ，將會產生下列錯誤訊息：**找不到 ' CachingStrategy ' 的屬性、可系結屬性或事件**
+在子類別化的 XAML 上設定`CachingStrategy` `ListView`屬性不 `CachingStrategy` [會產生所需`ListView`](xref:Xamarin.Forms.ListView)的行為，因為上沒有屬性。 此外，如果啟用[XAMLC](~/xamarin-forms/xaml/xamlc.md) ，將會產生下列錯誤訊息：**找不到 ' CachingStrategy ' 的屬性、可系結屬性或事件**
 
 此問題的解決方案是指定子類別化之建構函式[ `ListView` ](xref:Xamarin.Forms.ListView)它會接受[ `ListViewCachingStrategy` ](xref:Xamarin.Forms.ListViewCachingStrategy)參數並將它傳遞到基底類別：
 
 ```csharp
 public class CustomListView : ListView
 {
-  public CustomListView (ListViewCachingStrategy strategy) : base (strategy)
-  {
-  }
-  ...
+    public CustomListView (ListViewCachingStrategy strategy) : base (strategy)
+    {
+    }
+    ...
 }
 ```
 
@@ -151,34 +147,32 @@ public class CustomListView : ListView
 
 ```xaml
 <local:CustomListView>
-  <x:Arguments>
-    <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
-  </x:Arguments>
+    <x:Arguments>
+        <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+    </x:Arguments>
 </local:CustomListView>
 ```
 
-<a name="improving-performance" />
+## <a name="listview-performance-suggestions"></a>ListView 效能建議
 
-## <a name="improving-listview-performance"></a>改善 ListView 效能
-
-有許多技巧可提升效能的`ListView`:
+有許多技巧可改善的效能`ListView`。 下列建議可改善 ListView 的效能
 
 - 繫結`ItemsSource`屬性，以`IList<T>`而不是集合`IEnumerable<T>`集合，因為`IEnumerable<T>`集合不支援隨機存取。
-- 使用內建的儲存格 (例如`TextCell`  /  `SwitchCell` ) 而不是`ViewCell`每當即可。
-- 使用較少的項目。 例如，請考慮使用單一`FormattedString`而不是多個標籤的標籤。
+- 使用內建`TextCell`資料格（例如 /  `SwitchCell` ），而不`ViewCell`是每次都可以。
+- 使用較少的項目。 例如，請考慮使用單一`FormattedString`標籤，而不是多個標籤。
 - 取代`ListView`與`TableView`顯示非同質性的資料-也就是不同類型的資料。
 - 使用限制[ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize)方法。 如果過度使用而使，它會降低效能。
 - 在 Android 上，請避免設定`ListView`的資料列分隔符號的可見性或色彩之後執行個體化，因為它會造成大量的效能負面影響。
-- 避免變更為基礎的儲存格配置[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)。 這會產生大型的版面配置和初始化成本。
+- 避免變更為基礎的儲存格配置[ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)。 變更版面配置會產生大量的測量和初始化成本。
 - 應避免階層深度巢狀版面配置。 使用`AbsoluteLayout`或`Grid`以減少巢狀結構。
-- 避免特定`LayoutOptions`以外的其他`Fill`（填滿是成本來計算）。
+- 避免以外`LayoutOptions` `Fill`的特定（`Fill`這是計算的最便宜）。
 - 避免在放置`ListView`內`ScrollView`，原因如下：
   - `ListView`實作自己的捲動。
   - `ListView` ，將會由父代，則不會收到任何筆勢， `ScrollView`。
-  - `ListView`可以呈現的自訂標頭和頁尾捲動清單中，可能會提供功能的項目`ScrollView`有人使用了。 如需詳細資訊，請參閱[頁首和頁尾](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#Headers_and_Footers)。
-- 如果您需要非常特定且複雜的設計，儲存格所述，請考慮自訂轉譯器。
+  - `ListView`可以呈現的自訂標頭和頁尾捲動清單中，可能會提供功能的項目`ScrollView`有人使用了。 如需詳細資訊，請參閱頁首[和](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#headers-and-footers)頁尾。
+- 如果您需要在儲存格中呈現特定的複雜設計，請考慮使用自訂轉譯器。
 
-`AbsoluteLayout` 若要執行而沒有單一量值呼叫的配置可能會發生。 這可讓您非常強大的效能。 如果`AbsoluteLayout`無法使用，請考慮[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)。 如果使用`RelativeLayout`，直接傳遞條件約束相當大的速度會比使用 API 的運算式。 這是因為運算式 API 會使用 JIT，並在 iOS 上的樹狀目錄中對解譯，以較慢。 API 運算式是適合的版面配置，它只需要在初始的版面配置與輪替，但在`ListView`，其中執行持續期間向下捲動，它都會損及效能。
+`AbsoluteLayout`有可能在沒有單一量值呼叫的情況下執行版面配置，使其具有高效能。 如果`AbsoluteLayout`無法使用，請考慮[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)。 如果使用`RelativeLayout`，直接傳遞條件約束相當大的速度會比使用 API 的運算式。 此方法的速度較快，因為運算式 API 使用 JIT，而在 iOS 上必須解讀樹狀結構，這會較慢。 API 運算式是適合的版面配置，它只需要在初始的版面配置與輪替，但在`ListView`，其中執行持續期間向下捲動，它都會損及效能。
 
 建置自訂轉譯器[ `ListView` ](xref:Xamarin.Forms.ListView)或它的儲存格是一個方法，來減少版面配置計算上捲動效能的影響。 如需詳細資訊，請參閱 <<c0> [ 自訂 ListView](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)並[自訂 ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)。
 

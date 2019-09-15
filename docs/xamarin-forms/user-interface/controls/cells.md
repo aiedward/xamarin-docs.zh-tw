@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/12/2016
-ms.openlocfilehash: 769ff7efedca453734b6db2dd2dcb2ad503ba272
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 289d47a700762caa8e41baef23818be6c684c61a
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759804"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70998057"
 ---
 # <a name="xamarinforms-cells"></a>Xamarin.Forms 資料格
 
@@ -34,14 +34,14 @@ Xamarin.Forms 可支援下列資料格類型：
 
 |     |     |
 | --- | --- |
-| A [ `TextCell` ](xref:Xamarin.Forms.TextCell)會顯示一或兩個文字字串。 設定[ `Text` ](xref:Xamarin.Forms.TextCell.Text)屬性，並選擇性地[ `Detail` ](xref:Xamarin.Forms.TextCell.Detail)這些文字字串的屬性。<br /><br />[API 文件](xref:Xamarin.Forms.TextCell) / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#TextCell) | [![TextCell 範例](cells-images/TextCell.png "TextCell 範例")](cells-images/TextCell-Large.png#lightbox "TextCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TextCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TextCellDemoPage.xaml) |
+| A [ `TextCell` ](xref:Xamarin.Forms.TextCell)會顯示一或兩個文字字串。 設定[ `Text` ](xref:Xamarin.Forms.TextCell.Text)屬性，並選擇性地[ `Detail` ](xref:Xamarin.Forms.TextCell.Detail)這些文字字串的屬性。<br /><br />[API 文件](xref:Xamarin.Forms.TextCell) / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell) | [![TextCell 範例](cells-images/TextCell.png "TextCell 範例")](cells-images/TextCell-Large.png#lightbox "TextCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TextCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TextCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="imagecell"></a>ImageCell
 
 |     |     |
 | --- | --- |
-| [ `ImageCell` ](xref:Xamarin.Forms.ImageCell)會顯示相同的資訊[ `TextCell` ](#textCell)但包含了您設有一個點陣圖[ `Source` ](xref:Xamarin.Forms.Image.Source)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.ImageCell) / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#ImageCell) | [![ImageCell 範例](cells-images/ImageCell.png "ImageCell 範例")](cells-images/ImageCell-Large.png#lightbox "ImageCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
+| [ `ImageCell` ](xref:Xamarin.Forms.ImageCell)會顯示相同的資訊[ `TextCell` ](#textCell)但包含了您設有一個點陣圖[ `Source` ](xref:Xamarin.Forms.Image.Source)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.ImageCell) / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell 範例](cells-images/ImageCell.png "ImageCell 範例")](cells-images/ImageCell-Large.png#lightbox "ImageCell 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="switchcell"></a>SwitchCell

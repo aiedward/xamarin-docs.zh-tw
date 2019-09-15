@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/04/2019
-ms.openlocfilehash: 5d09d76a44a6322285a143230173d244848ba4a6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9d7dd98b98c7722d6fcdcb49c10e326732fa9f0b
+ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770191"
+ms.lasthandoff: 09/15/2019
+ms.locfileid: "70997987"
 ---
 # <a name="xamarinforms-listview"></a>Xamarin.Forms ListView
 
@@ -36,6 +36,7 @@ ms.locfileid: "70770191"
 如需將資料系結至`ListView`實例的詳細資訊，請參閱[ListView 資料來源](~/xamarin-forms/user-interface/listview/data-and-databinding.md)。
 
 ## <a name="components"></a>元件
+
 `ListView`控制項有許多元件可用來執行每個平臺的原生功能。 這些元件會在下列各節中定義。
 
 ### <a name="headers-and-footerscustomizing-list-appearancemdheaders-and-footers"></a>[頁首和頁尾](customizing-list-appearance.md#headers-and-footers)
@@ -55,7 +56,7 @@ ms.locfileid: "70770191"
 - [內建資料格](customizing-cell-appearance.md#built-in-cells)（例如`TextCell`和`ImageCell`）會對應至原生控制項，而且效能特別高。
   - 會[`TextCell`](customizing-cell-appearance.md#textcell)顯示文字字串，選擇性地包含詳細資料文字。 詳細資料的文字會轉譯為較小的字型，並且強調色彩中的第二個資料行。
   - 會[`ImageCell`](customizing-cell-appearance.md#imagecell)顯示含有文字的影像。 `TextCell`以影像顯示在左側。
-- [自訂資料格](customizing-cell-appearance.md#customcells)可用來呈現複雜的資料。 例如，您可以使用自訂資料格來呈現包含專輯和演出者的歌曲清單。
+- [自訂資料格](customizing-cell-appearance.md#custom-cells)可用來呈現複雜的資料。 例如，您可以使用自訂資料格來呈現包含專輯和演出者的歌曲清單。
 
 下列螢幕擷取畫面顯示`ListView`具有 ImageCell 專案的：
 
@@ -64,11 +65,12 @@ ms.locfileid: "70770191"
 若要深入瞭解自訂中的`ListView`資料格，請參閱[自訂 ListView 儲存格外觀](customizing-cell-appearance.md)。
 
 ## <a name="functionality"></a>功能
+
 `ListView`類別支援多種互動樣式。
 
 - [[提取至](interactivity.md#pull-to-refresh)重新整理] 可讓使用者向`ListView`下提取以重新整理內容。
 - [內容動作](interactivity.md#context-actions)可讓開發人員指定個別清單專案的自訂動作。 例如，您可以在 iOS 上，實作撥動-動作或按住在 Android 上的動作。
-- [選取](interactivity.md#selectiontaps)可讓開發人員將功能附加至清單專案上的選取範圍和 deselection 事件。
+- [選取](interactivity.md#selection-and-taps)可讓開發人員將功能附加至清單專案上的選取範圍和 deselection 事件。
 
 下列螢幕擷取畫面顯示`ListView`具有內容動作的：
 
