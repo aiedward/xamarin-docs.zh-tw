@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: b8a7353ee67ee0686ad97428222c69dd095ee83a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290433"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985953"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 錯誤
 
@@ -854,7 +854,7 @@ class Program {
 
 若要修正此錯誤，建議的方法是升級 Xcode 以取得所需的 SDK。 如果您已安裝多個版本的 Xcode，或想要在非預設位置中使用 Xcode，請務必在 IDE 的喜好設定中設定正確的 Xcode 位置。
 
-或者，啟用 managed[連結器](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/linker)以移除未使用的 api，包括（在大多數情況下）需要指定程式庫的新資源。 不過，如果您的專案所需的 Api 與您的 Xcode 所提供的版本不同，則這將無法正常執行。
+或者，啟用 managed[連結器](https://docs.microsoft.com/xamarin/ios/deploy-test/linker)以移除未使用的 api，包括（在大多數情況下）需要指定程式庫的新資源。 不過，如果您的專案所需的 Api 與您的 Xcode 所提供的版本不同，則這將無法正常執行。
 
 作為最後 straw 的解決方案，請使用不需要這些新 Sdk 的舊版 Xamarin 就能在建立程式期間出現。
 
@@ -2780,7 +2780,7 @@ Xamarin iOS 專案通常會動態參考原生符號，這表示原生連結器�
 - bool
 - 實數
 - integer
-- 日期
+- date
 - 資料
 
 <a name="MT7046" />

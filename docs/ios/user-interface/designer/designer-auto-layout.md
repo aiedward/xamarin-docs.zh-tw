@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: d1047ae8cae6a8e86b72690fe5d80d0ba9e752a4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a2f637677620f9bfb2bd26a5af55fb9fb56a7af9
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768407"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985687"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin Designer for iOS 的自動版面配置
 
@@ -63,9 +63,23 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
   - 在 [條件約束編輯模式] 中，此按鈕會調整條件約束以符合元素框架。
   - 在 [框架編輯模式] 中，此按鈕會調整元素框架，使其符合條件約束的定義位置。
 
+## <a name="constraints-editing-popover"></a>條件約束編輯 popover
+
+[條件約束編輯器] 快顯視窗可讓我們針對選取視圖，一次加入和更新多個條件約束。 我們可以建立多個間距、外觀比例和對齊條件約束，例如將視圖對齊兩個視圖的左邊緣。
+
+針對選取之視圖上的編輯條件約束，按一下省略號以顯示 [popover ![：條件約束編輯] popover](designer-auto-layout-images/constraints-popup.png)
+
+開啟 [條件約束] popover 時，它會在此視圖上顯示任何預設的條件約束。 我們**可以從右上**角的下拉式方塊中選取所有的間距條件約束，然後選取 [**全部清除**] 將它們移除。 
+
+**W**會設定 width，而**H**會設定 height 條件約束。 當您檢查**外觀比例**時，會以不同的螢幕大小來控制 views 的高度和寬度，視圖的寬度會當做比例的分子，而高度則做為分母。
+
+![條件約束間距](designer-auto-layout-images/constraints-spacing.png)
+
+四個間距條件約束的下拉式方塊列出要錨定條件約束的相鄰視圖
+
 ## <a name="surface-based-constraint-editing"></a>以介面為基礎的條件約束編輯
 
-在上一節中，我們已瞭解如何使用條件約束工具列來新增預設條件約束和移除條件約束。 針對更微調的條件約束編輯，我們可以直接在設計介面上與條件約束互動。 本節介紹以介面為基礎之條件約束編輯的基本概念，包括固定間距控制項、放置區域，以及使用不同類型的條件約束。
+針對更微調的條件約束編輯，我們可以直接在設計介面上與條件約束互動。 本節介紹以介面為基礎之條件約束編輯的基本概念，包括固定間距控制項、放置區域，以及使用不同類型的條件約束。
 
 ### <a name="creating-constraints"></a>建立條件約束
 

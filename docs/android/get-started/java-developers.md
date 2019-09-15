@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/13/2018
-ms.openlocfilehash: dfd6c9d6419f663b1ef474066f7918859d42b3c5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f4c8c8b19d7738478cdc2c8f83c6fc8d1f361466
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757290"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985664"
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
@@ -240,7 +240,7 @@ rulerView.DrawingCacheEnabled = true;
 public class PictureLayout : ViewGroup
 {
     ...
-    public class PictureLayout (Context context)
+    public PictureLayout (Context context)
            : base (context)
     {
         ...
@@ -448,7 +448,7 @@ Java 中使用的許多語言關鍵字也會在 C# 中使用。 另外有些 Jav
 |[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|封裝相關變數群組的實值類型。|
 |[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|取得物件類型。|
 |[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|宣告隱含類型的區域變數。|
-|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|參考用戶端程式碼想要指派給屬性的值。|
+|[值](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|參考用戶端程式碼想要指派給屬性的值。|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|允許在衍生類別中覆寫方法。|
 
 <a name="interop" />

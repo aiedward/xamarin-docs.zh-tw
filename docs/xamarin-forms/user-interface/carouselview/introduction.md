@@ -7,19 +7,18 @@ ms.technology: xamarin-forms
 author: pauldipietro
 ms.author: padipi
 ms.date: 09/09/2019
-ms.openlocfilehash: 244582d579780a962dfcb25c1a081d768b42acd3
-ms.sourcegitcommit: e83035c746f165ee6d03f2e9fd0066ee4f20a9fb
+ms.openlocfilehash: 7979f6ed362c580d9cf80f19b3bc0ea7550ca70c
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70908286"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985965"
 ---
 # <a name="xamarinforms-carouselview-introduction"></a>Xamarin. Forms CarouselView 簡介
 
 ![](~/media/shared/preview.png "此 API 目前是發行前版本")
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)是以類似浮動的方式呈現資訊的視圖。
-
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)適用于 Xamarin. 表單4.3。 不過，它目前是實驗性的，而且只能透過將下列程式程式碼新增至您`AppDelegate`的 iOS 或`MainActivity` Android 上的類別，然後再呼叫`Forms.Init`：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: ea7ebdf5e589f3c24f8c607d1464e86678012f23
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: 48e7f97bf37ec5204ec1798ec1fdd7dfe5954cc5
+ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120624"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70985986"
 ---
 # <a name="introduction-to-ios-13"></a>iOS 13 簡介
 
@@ -22,29 +22,29 @@ ms.locfileid: "70120624"
 
 ## <a name="dark-modedark-modemd"></a>[深色模式](dark-mode.md)
 
-iOS 13 引進新的深色模式, 讓開發人員能夠輕鬆地將應用程式納入考慮。 新的工具可讓您同時使用淺色和深色的主題來設計應用程式。
+iOS 13 引進新的深色模式，讓開發人員能夠輕鬆地將應用程式納入考慮。 新的工具可讓您同時使用淺色和深色的主題來設計應用程式。
+
+## <a name="sign-in-with-applesign-inmd"></a>[使用 Apple 登入](sign-in.md)
+
+iOS 13 提供新的功能，可讓您登入使用 Apple 裝置登入的應用程式，讓您更有信心地利用2FA 和所提供的有限集合，以任何方式竊取或收集自己的個人資訊。更多資訊.
 
 ## <a name="augmented-reality"></a>增強的現實
 
-IOS 13 中的增強式現實現在有更多的功能, 包括新的「人員遮蔽」功能, 可讓應用程式的 AR 內容遵守人類的狀態, 並據以四處移動。
+IOS 13 中的增強式現實現在有更多的功能，包括新的「人員遮蔽」功能，可讓應用程式的 AR 內容遵守人類的狀態，並據以四處移動。
 
 ## <a name="siri"></a>Siri
 
-Siri 已經過擴充, 可讓您處理音訊內容, 以及透過快捷方式應用程式更有效率地處理快捷方式。
+Siri 已經過擴充，可讓您處理音訊內容，以及透過快捷方式應用程式更有效率地處理快捷方式。
 
 ## <a name="machine-learning"></a>Machine Learning
 
-核心 ML 3 可讓您使用裝置的硬體功能, 輕鬆地將 ML 模型定型。
+核心 ML 3 可讓您使用裝置的硬體功能，輕鬆地將 ML 模型定型。
 
 ## <a name="ipados"></a>iPadOS
 
 iPadOS 是一種專為 iPad 而建立的 iOS 擴充功能。
 
-透過 iPadOS, 您可以使用 PencilKit 搭配新的手勢來更充分利用 Apple 鉛筆、允許使用多個視窗, 以及在應用程式之間拖放各種內容。 iPadOS 也可以讓應用程式提供全系統的字型。
-
-## <a name="privacy-and-security"></a>隱私權和安全性
-
-iOS 13 提供新的功能, 可讓您登入使用 Apple 裝置登入的應用程式, 讓您更有信心地利用2FA 和所提供的有限集合, 以任何方式竊取或收集自己的個人資訊。更多資訊.
+透過 iPadOS，您可以使用 PencilKit 搭配新的手勢來更充分利用 Apple 鉛筆、允許使用多個視窗，以及在應用程式之間拖放各種內容。 iPadOS 也可以讓應用程式提供全系統的字型。
 
 ## <a name="related-links"></a>相關連結
 
