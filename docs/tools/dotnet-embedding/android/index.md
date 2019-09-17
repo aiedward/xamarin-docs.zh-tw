@@ -1,104 +1,100 @@
 ---
-title: 內嵌在 Android 上的.NET
+title: Android 上的 .NET 內嵌
 ms.prod: xamarin
 ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
-author: lobrien
-ms.author: laobri
+author: conceptdev
+ms.author: crdun
 ms.date: 06/15/2018
-ms.openlocfilehash: 6917267896cff796af4e5cff095720eaeccc7652
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 1369d5cd901207618128da8b0111e488eae7b83e
+ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61215530"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70772225"
 ---
-# <a name="net-embedding-on-android"></a>內嵌在 Android 上的.NET
+# <a name="net-embedding-on-android"></a>Android 上的 .NET 內嵌
 
-在某些情況下，您可能想要將 Xamarin.NET 程式庫新增至現有的原生 Android 專案。 若要這樣做，您可以使用[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)工具，以將您的.NET 程式庫轉換成可整合到原生的 Java 型 Android 應用程式的原生程式庫。
+在某些情況下，您可能會想要將 Xamarin .NET 程式庫新增至現有的原生 Android 專案。 若要這樣做，您可以使用[Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/)工具將您的 .net 程式庫轉換成原生程式庫，以併入原生的 JAVA 型 Android 應用程式。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-## <a name="xamarinandroid-requirements"></a>Xamarin.Android 需求
+## <a name="xamarinandroid-requirements"></a>Xamarin. Android 需求
 
-使用.NET 內嵌 xamarin.android，您需要下列項目：
+若要讓 Xamarin 使用 .NET 內嵌，您需要下列各項：
 
--   **Xamarin.Android** &ndash; [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本必須安裝。
+- 必須安裝 Xamarin. android [7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本。 &ndash;
 
--   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/)或更新版本必須安裝。
+- **Android Studio** 必須安裝 [Android Studio 3.x](https://developer.android.com/studio/) 或更新版本。&ndash;
 
--   **Java Developer Kit** &ndash; [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本必須安裝。
+- **JAVA 開發人員套件**必須安裝 [JAVA 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 或更新版本。&ndash;
 
+## <a name="using-embeddinator-4000"></a>使用 Embeddinator-4000
 
-## <a name="using-embeddinator-4000"></a>使用 Embeddinator 4000
+若要使用原生 Android 專案中的 .NET 程式庫，請執行下列步驟：
 
-若要使用原生的 Android 專案中的.NET 程式庫，請使用下列步驟：
+1. 建立C# Android 程式庫專案。
 
-1.  建立C#Android 程式庫專案。
+2. 安裝[Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/)。
 
-2.  安裝[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)。
-
-3.  找出**Embeddinator 4000.exe**並將它加入您**路徑**。 例如: 
+3. 找出**Embeddinator-4000** ，並將它新增至您的**路徑**。 例如：
 
     ```cmd
     set PATH=%PATH%;C:\Users\USERNAME\.nuget\packages\embeddinator-4000\0.4.0\tools
     ```
 
-4.  在 程式庫組件上執行的 Embeddinator 4000。 例如: 
+4. 在程式庫元件上執行 Embeddinator-4000。 例如：
 
     ```cmd
     Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
     ```
 
-5.  使用產生的 AAR 檔案，在 Android Studio 中的 Java 專案中。
-
+5. 在 Android Studio 的 JAVA 專案中使用產生的 AAR 檔案。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-## <a name="xamarinandroid-requirements"></a>Xamarin.Android 需求
+## <a name="xamarinandroid-requirements"></a>Xamarin. Android 需求
 
-使用.NET 內嵌 xamarin.android，您需要下列項目：
+若要讓 Xamarin 使用 .NET 內嵌，您需要下列各項：
 
--   **Xamarin.Android** &ndash; [Xamarin.Android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本必須安裝。
+- 必須安裝 Xamarin. android [7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本。 &ndash;
 
--   **Android Studio** &ndash; [Android Studio 3.x](https://developer.android.com/studio/)或更新版本必須安裝。
+- **Android Studio** 必須安裝 [Android Studio 3.x](https://developer.android.com/studio/) 或更新版本。&ndash;
 
--   **Java Developer Kit** &ndash; [Java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本必須安裝。
+- **JAVA 開發人員套件**必須安裝 [JAVA 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 或更新版本。&ndash;
 
--   **單聲道** &ndash; [Mono 5.0](https://www.mono-project.com/download/)或更新版本必須安裝 （單聲道會隨 Visual Studio for Mac）。
+- **Mono**必須安裝 [Mono 5.0](https://www.mono-project.com/download/) 或更新版本（mono 會隨 Visual Studio for Mac 安裝）。&ndash;
 
+## <a name="using-embeddinator-4000"></a>使用 Embeddinator-4000
 
-## <a name="using-embeddinator-4000"></a>使用 Embeddinator 4000
+若要使用原生 Android 專案中的 .NET 程式庫，請執行下列步驟：
 
-若要使用原生的 Android 專案中的.NET 程式庫，請使用下列步驟：
+1. 建立C# Android 程式庫專案。
 
-1.  建立C#Android 程式庫專案。
+2. 安裝[Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/)。
 
-2.  安裝[Embeddinator 4000](https://www.nuget.org/packages/Embeddinator-4000/)。
-
-3.  找出**Embeddinator 4000.exe**並加入**mono**至您的路徑。 例如：
+3. 找出**Embeddinator-4000** ，並在您的路徑中新增**mono** 。 例如：
 
     ```bash
     export TOOLS=~/.nuget/packages/embeddinator-4000/0.4.0/tools
     export PATH=$PATH:/Library/Frameworks/Mono.framework/Commands
     ```
 
-4.  在 程式庫組件上執行的 Embeddinator 4000。 例如: 
+4. 在程式庫元件上執行 Embeddinator-4000。 例如：
 
     ```bash
     mono $TOOLS/Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
     ```
 
-5.  使用產生的 AAR 檔案，在 Android Studio 中的 Java 專案中。
+5. 在 Android Studio 的 JAVA 專案中使用產生的 AAR 檔案。
 
 -----
 
-使用方式和命令列選項如下所述[Embeddinator 4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c)文件。
+[使用方式] 和 [命令列] 選項會在[Embeddinator-4000](https://github.com/mono/Embeddinator-4000/blob/master/Usage.md#java--c)檔中說明。
 
+## <a name="callbacks"></a>叫
 
-## <a name="callbacks"></a>回呼
-
-深入了解[之間的呼叫C#和 Java](callbacks.md)。
+瞭解如何[在和 JAVA C#之間進行呼叫](callbacks.md)。
 
 ## <a name="samples"></a>範例
 
-* [天氣範例應用程式](https://github.com/jamesmontemagno/embeddinator-weather)
+- [天氣範例應用程式](https://github.com/jamesmontemagno/embeddinator-weather)
