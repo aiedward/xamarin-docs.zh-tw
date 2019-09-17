@@ -67,3 +67,9 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_form.svg'
               href: native-views/index.md
             title: 原生檢視
+          - href: sign-in-with-apple/index.md
+            html: '了解如何在 Android 和 iOS 上使用 [透過 Apple 登入]，來提供加強的使用者隱私權。'
+            image:
+              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
+              href: sign-in-with-apple/index.md
+            title: 透過 Apple 登入

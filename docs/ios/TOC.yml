@@ -252,6 +252,8 @@
               href: platform/ios13/get-started.md
             - name: 深色模式
               href: platform/ios13/dark-mode.md
+            - name: 透過 Apple 登入
+              href: platform/ios13/sign-in.md
             - name: 疑難排解
               href: platform/ios13/troubleshooting/index.md
         - name: iOS 12
