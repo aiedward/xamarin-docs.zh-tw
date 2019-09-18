@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 5155752f9bcf87eab8a9d48552071c51ffd10b15
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 36454d9fe2903bc5e9b05c7809bd09a1f305f46b
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669563"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059596"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中建立 Xamarin.Forms [`Grid`](xref:Xamarin.Forms.Grid)。
 > - 指定 `Grid` 的資料行和資料列。
 > - 橫跨 `Grid` 中多個資料行或多個資料列的內容。

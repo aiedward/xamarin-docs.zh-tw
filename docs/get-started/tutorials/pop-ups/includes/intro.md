@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 98eb75948ec2b53919b8de7cdc80d39d7c3ebf4c
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 19276826e1996e68fd27107d23e0def76a1025a5
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277157"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059601"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
 
@@ -12,9 +12,10 @@ ms.locfileid: "67277157"
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml) 教學課程。
 - [按鈕](~/get-started/tutorials/button/index.yml)教學課程。
 
-在此教學課程中，您將了解如何：
+在本教學課程中，您將了解如何：
 
 > [!div class="checklist"]
+>
 > - 顯示警示，以要求使用者做出選擇。
 > - 顯示動作表，以引導使用者完成工作。
 

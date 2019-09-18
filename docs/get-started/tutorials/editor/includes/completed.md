@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: bb3f24b921302d84e7f06144ee5313a79f4a7e26
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 5c3d829038692635284c447e11ab08ad2afe6885
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669567"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059598"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中建立 Xamarin.Forms [`Editor`](xref:Xamarin.Forms.Editor)。
 > - 回應 `Editor` 變更中的文字。
 > - 自訂 `Editor` 的行為。

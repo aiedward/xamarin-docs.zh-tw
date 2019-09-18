@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9143b65b2e7cb9b85195e3c20695e3034295b2d2
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: cae1ec70880fe694584e14b732608725bcbb1d91
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277144"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71059599"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
 
@@ -12,9 +12,10 @@ ms.locfileid: "67277144"
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml) 教學課程。
 - [項目](~/get-started/tutorials/entry/index.yml)教學課程。
 
-在此教學課程中，您將了解如何：
+在本教學課程中，您將了解如何：
 
 > [!div class="checklist"]
+>
 > - 回應應用程式的啟動、睡眠或恢復。
 > - 在生命週期狀態變更期間保留資料。
 
