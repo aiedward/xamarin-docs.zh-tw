@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: b8006b1ffe253ac57c1ab435690c5b378cc709fb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 030f1ba87dde958aef156731de926427676163dc
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278661"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033488"
 ---
 # <a name="can-i-change-the-output-path-of-the-ipa-file"></a>我可以變更 .IPA 檔案的輸出路徑嗎？
 
@@ -45,6 +45,7 @@ ms.locfileid: "70278661"
 2. 將 DestinationFolder 設定為所需的輸出檔案夾。 如往常一般，您可以視需要在此引數中使用 MSBuild 屬性（例如 $ （OutputPath））。
 
 ## <a name="notes"></a>注意
+
 - 屬性是在檔案中定義，該檔案屬於 Xamarin. iOS 的一部分。 `Xamarin.iOS.Common.targets` `CreateIpaDependsOn` 其行為如下列文章[中的覆[寫預先定義的目標](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)一節中所述：如何：擴充 Visual Studio 的組建](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)程式。
 
 - 如果您慣用，可以使用**移動**工作，而不是**複製**工作。 如果您選擇該選項，而且您是在 Windows 上建立，則必須使用完整的工作名稱`<Microsoft.Build.Tasks.Move>` ，以避免 XamarinVS 組建工作發生不明確的情況。
@@ -79,6 +80,7 @@ ms.locfileid: "70278661"
 2. 將設定`DestinationFolder`為所要的輸出檔案夾。 如往常一般，您可以視需要在`$(OutputPath)`此引數中使用 MSBuild 屬性（例如）。
 
 ## <a name="notes"></a>注意
+
 - 屬性是在檔案中定義，該檔案屬於 Xamarin. iOS 的一部分。 `Xamarin.iOS.Common.targets` `CreateIpaDependsOn` t 的行為方式如下列文章[中的覆[寫預先定義的目標](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process#overriding-predefined-targets)一節中所述：如何：擴充 Visual Studio 的組建](https://docs.microsoft.com/visualstudio/msbuild/how-to-extend-the-visual-studio-build-process)程式。
 
 - 如果您慣用，可以使用**移動**工作，而不是**複製**工作。 如果您選擇該選項，而且您是在 Windows 上建立，則必須使用完整的工作名稱`<Microsoft.Build.Tasks.Move>` ，以避免 XamarinVS 組建工作發生不明確的情況。

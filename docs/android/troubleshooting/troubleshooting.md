@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2018
-ms.openlocfilehash: b750dd4eebb4e181e3a1d3a33c6505bb58b3848b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a80410ecc3557f00755ebb60ab48781740fa928d
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757077"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021155"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
@@ -83,15 +83,17 @@ Xamarin 支援下列系統屬性：
 
 - *debug. env*：在初始化 mono*之前*，要 *|* 在應用程式啟動期間匯出之環境變數的管線分隔（' '）清單。 這可讓您設定控制 mono 記錄的環境變數。
 
-  - *注意*：因為值是以 ' *|* ' 分隔，所以此值必須有額外的引號， \`因為*adb shell* \`命令會移除一組引號。
+  > [!NOTE]
+  > 因為值是以 ' *|* ' 分隔，所以此值必須有額外的引號， \`因為*adb shell* \`命令會移除一組引號。
 
-  - *注意*：Android 系統屬性值的長度不能超過92個字元。
+  > [!NOTE]
+  > Android 系統屬性值的長度不能超過92個字元。
 
-  - 範例：
+  範例：
 
-    ```
-    adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
-    ```
+  ```
+  adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
+  ```
 
 - *debug .log*：應該將其他訊息列印到Android 偵錯工具記錄檔的元件清單（以逗號分隔）。 根據預設，不會設定任何內容。 元件包括：
 
@@ -100,7 +102,8 @@ Xamarin 支援下列系統屬性：
   - *grf*：Print （弱式、全域）參考配置和解除配置訊息。
   - *lref*：列印本機參考配置和解除配置訊息。
 
-  *注意*：這些是*非常*詳細的資訊。 除非您真的需要，否則請勿啟用。
+  > [!NOTE]
+  > 這些是*非常*詳細的資訊。 除非您真的需要，否則請勿啟用。
 
 - *debug. trace*：允許設定[mono--追蹤](http://docs.go-mono.com/?link=man%3amono(1))`=PROPERTY_VALUE`設定。
 
@@ -176,7 +179,8 @@ Xamarin 會使用 Android 全域參考來提供 JAVA 實例和相關聯的受控
 
 可惜的是，Android 模擬器一次只允許2000個全域參考存在。 硬體具有更高的52000全域參照限制。 在模擬器上執行應用程式時，較低的限制可能會造成問題，*因此知道實例的來源*可能非常有用。
 
- *注意*：全域參考計數是 Xamarin 的內部，而且不會（也不能）包含載入至進程的其他原生程式庫所採取的全域參考。 使用全域參考計數做為估計值。
+> [!NOTE]
+> 全域參考計數是 Xamarin 的內部，而且不會（也不能）包含載入至進程的其他原生程式庫所採取的全域參考。 使用全域參考計數做為估計值。
 
 ```shell
 I/monodroid-gref(12405): +g+ grefc 108 gwrefc 0 obj-handle 0x40517468/L -> new-handle 0x40517468/L from    at Java.Lang.Object.RegisterInstance(IJavaObject instance, IntPtr value, JniHandleOwnership transfer)

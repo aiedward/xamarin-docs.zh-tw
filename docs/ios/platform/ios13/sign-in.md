@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: ae4cccc900396c7ebd6e737160e38c5e9dcdc74e
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: a8ea06d81fcc79a24f155a1562818daea3ba982a
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70986055"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021391"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>在 Xamarin 中使用 Apple 登入
 
@@ -25,10 +25,11 @@ ms.locfileid: "70986055"
 ## <a name="requirements"></a>需求
 
 這項功能需要：
+
 * iOS 13
 * Xamarin. iOS 12.99
-* 具有 Xcode 11 支援的 Mac Visual Studio 2019 或 Visual Studio 2019。 
- 
+* 具有 Xcode 11 支援的 Mac Visual Studio 2019 或 Visual Studio 2019。
+
 如需詳細資訊，請參閱[開始](get-started.md)使用。
 
 ## <a name="apple-developer-setup"></a>Apple 開發人員設定
@@ -218,7 +219,7 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 ## <a name="summary"></a>總結
 
-本文引進了使用 Apple for iOS 進行登入。 
+本文引進了使用 Apple for iOS 進行登入。
 
 ## <a name="related-links"></a>相關連結
 

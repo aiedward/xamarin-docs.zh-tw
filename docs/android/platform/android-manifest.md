@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/05/2018
-ms.openlocfilehash: f1cc2f4685354687390866c0922a802591c7c054
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2d65f0c8e717e8e8c995209f7dda1e8a44ee621c
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757711"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021116"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
 
@@ -72,7 +72,8 @@ public class MyActivity : Activity
 <activity android:name="awesome.demo.activity" />
 ```
 
-*注意*：您應該只針對`Name`回溯相容性的原因使用屬性，因為這類重新命名可能會在執行時間減緩類型查詢的速度。 如果您的舊版程式碼預期活動的預設型別名稱是根據小寫命名空間和類別名稱，請參閱 Android 可呼叫[包裝](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)函式命名，以取得維護相容性的秘訣。 
+> [!NOTE]
+> 您應該只針對`Name`回溯相容性的原因使用屬性，因為這類重新命名可能會在執行時間減緩類型查詢的速度。 如果您的舊版程式碼預期活動的預設型別名稱是根據小寫命名空間和類別名稱，請參閱 Android 可呼叫[包裝](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)函式命名，以取得維護相容性的秘訣。 
 
 ### <a name="activity-title-bar"></a>活動標題列
 

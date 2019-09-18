@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/15/2018
-ms.openlocfilehash: 80e338319e4eeddcb3df287f86bcf89397d423f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 076e6bfd1155c0eba4045af59a599a34b0fca1d5
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754033"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021171"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 環境
 
@@ -93,10 +93,11 @@ Xamarin.Android 支援下列系統屬性，可透過 `adb shell setprop` 或 `$(
 - `assembly`：列印出 `.apk` 和組件剖析訊息。
 - `gc`：列印出與 GC 相關的訊息。
 - `gref`：列印出 JNI 全域參考訊息。
-- `lref`：列印出 JNI 區域參考訊息。  
-    *注意*：這「真的」會讓 `adb logcat` 充斥許多垃圾訊息。  
-    在 Xamarin.Android 5.1 中，這也會建立一個 `.__override__/lrefs.txt` 檔案，該檔案可能會變得「非常大」。  
-    請避免。
+- `lref`：列印出 JNI 區域參考訊息。
+  > [!NOTE]
+  > 這「真的」`adb logcat`* 會讓  充斥許多垃圾訊息。
+  > 在 Xamarin.Android 5.1 中，這也會建立一個 `.__override__/lrefs.txt` 檔案，該檔案可能會變得「非常大」。
+  > 請避免。
 - `timing`：列印出某些方法計時資訊。 這也會建立 `.__override__/methods.txt` 及 `.__override__/counters.txt` 檔案。
 
 ### `debug.mono.max_grefc`
@@ -130,7 +131,7 @@ debug.mono.max_grefc` 使用，因為該值在搭配 **environment.txt** 檔案�
 `debug.mono.wref` 系統屬性會允許覆寫預設偵測到的 JNI 弱式參考機制。 有兩個支援的值：
 
 - `jni`：使用 JNI 弱式參考，由 `JNIEnv::NewWeakGlobalRef()` 建立並由 `JNIEnv::DeleteWeakGlobalREf()` 終結。
-- `java`：使用 JNI 全域參考，其參考 `java.lang.WeakReference` 執行個體。
+- `java`：使用參考`java.lang.WeakReference`實例的 JNI 全域參考。
 
 直到 API-7 及啟用 ART 的 API-19 (Kit Kat) 都會預設使用 `java`。 (API-8 新增 `jni` 參考，ART 會*破壞* `jni` 參考。)
 

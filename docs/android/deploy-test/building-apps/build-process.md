@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2019
-ms.openlocfilehash: c331747677ee56f87458f51ef36a9bb2034beab1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 45d57f818fc6d90cb712b9f43ef815d44059ea68
+ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754254"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021377"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -294,10 +294,12 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     這對應到 Visual Studio屬性頁中的 [受控] 選項。
 
-  *注意*：若舊於 5.0 版的 Android 需要 TLS 1.2 支援，或者 `System.Net.WebClient` 和相關 API 需要 TLS 1.2 支援，則應使用 `$(AndroidTlsProvider)`。
+  > [!NOTE]
+  > 若舊於 5.0 版的 Android 需要 TLS 1.2 支援，或者`System.Net.WebClient``$(AndroidTlsProvider)`  和相關 API 需要 TLS 1.2 支援，則應使用 。
 
-  *注意*：透過設定 [`XA_HTTP_CLIENT_HANDLER_TYPE` 環境變數](~/android/deploy-test/environment.md)以支援此屬性。
-  在使用 `@(AndroidEnvironment)` 建置動作的檔案中找到的 `$XA_HTTP_CLIENT_HANDLER_TYPE` 值會有更高的優先順序。
+  > [!NOTE]
+  > 透過設定 ](~/android/deploy-test/environment.md)`XA_HTTP_CLIENT_HANDLER_TYPE` 環境變數以支援此屬性。
+  > 在使用 `@(AndroidEnvironment)` 建置動作的檔案中找到的 `$XA_HTTP_CLIENT_HANDLER_TYPE` 值會有更高的優先順序。
 
   已在 Xamarin.Android 6.1 中新增。
 

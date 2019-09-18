@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 09/07/2017
-ms.openlocfilehash: 8983ac0c860dafb3a3a0e4c90bd82bdf87c4c4f8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27adc8aa2ed0fec09fe38b9ea31834ea6e75f845
+ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752387"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71033092"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 中的 SiriKit 更新
 
@@ -147,6 +147,7 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 類別必須繼承自`INExtension`，而且因為此範例將會處理清單和附注意圖，所以它也會實行。 `IINNotebookDomainHandling`
 
 > [!NOTE]
+>
 > - 在 .net 中，介面的慣例是以大寫`I`開頭，而 Xamarin 會在從 iOS SDK 系結通訊協定時遵守。
 > - Xamarin 也會保留 iOS 的類型名稱，而 Apple 會使用類型名稱中的前兩個字元來反映類型所屬的架構。
 > - 針對架構，類型前面會加上`IN*` （例如`Intents` `INExtension`），但這些_不_是介面。
