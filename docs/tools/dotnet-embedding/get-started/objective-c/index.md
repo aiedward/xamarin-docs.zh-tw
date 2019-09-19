@@ -6,12 +6,12 @@ ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
 author: conceptdev
 ms.author: crdun
 ms.date: 11/14/2017
-ms.openlocfilehash: 66b99e0da574c50df32afedb1dd6dc9de315b347
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9c97e871791b633c65e9d374edfe446874567e9
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278457"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106093"
 ---
 # <a name="getting-started-with-objective-c"></a>開始使用目標-C
 
@@ -28,6 +28,7 @@ ms.locfileid: "70278457"
 您可以安裝[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)來編輯和編譯器C#代碼。
 
 > [!NOTE]
+>
 > - 較早版本的 macOS、Xcode 和 Mono_可能可以_使用，但尚未經過測試且不受支援
 > - 程式碼產生可以在 Windows 上完成，但只能在已安裝 Xcode 的 Mac 電腦上進行編譯。
 

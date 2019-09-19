@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 40fa2d93b7fd756c284727566e8043f5084bd483
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: def8bf236ec25d3b75e435ff525a683343d9b861
+ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757482"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71119225"
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -41,6 +41,10 @@ Android 3.0 引進了片段，示範如何針對在手機和平板電腦上找�
 ## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
 
 本指南將討論 Android 6.0 如何支援_應用程式連結_，這項技術可讓行動應用程式回應網站上的 url。 它將討論如何在 Android 6.0 應用程式中執行應用連結，以及如何設定網站來授與許可權給行動應用程式，以處理網域的應用程式連結。
+
+## <a name="android-10androidplatformandroid-10md"></a>[Android 10](~/android/platform/android-10.md)
+
+本文概述 Android 10 的新功能，說明如何準備 Xamarin 以進行 Android 10 開發，並提供範例應用程式的連結，說明如何在 Xamarin Android 應用程式中使用 Android Oreo 功能。
 
 ## <a name="android-9-pieandroidplatformpiemd"></a>[Android 9 圓形圖](~/android/platform/pie.md)
 

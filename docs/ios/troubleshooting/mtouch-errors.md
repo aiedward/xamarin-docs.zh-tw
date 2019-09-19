@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/06/2018
-ms.openlocfilehash: 870765a7a32874dfa17a9b0cf7176e4a721abf47
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: e001f22759ac70bbf81a10bf5e56790497dab767
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985953"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105980"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 錯誤
 
@@ -1598,6 +1598,7 @@ Parameter name: instruction
 嘗試優化產生的系結程式碼時，發生非預期的狀況。 造成此問題的元素會在錯誤訊息中命名。 若要修正此問題，必須在[github](https://github.com/xamarin/xamarin-macios/issues/new)的新問題中提供名為的元件（或包含名為的類型或方法），以及已啟用詳細資訊的完整組建記錄檔`-v -v -v -v` （也就是在**其他 mtouch 引數**中）。
 
 最後一個數位`x`會是：
+
 - `0`若為元件名稱，則為
 - `1`針對類型名稱;
 - `3`若為方法名稱，則為

@@ -7,18 +7,19 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/05/2017
-ms.openlocfilehash: d8267d4def0f7c24c660dfb4d301c111a92bb0b9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d3f00f3abd13d2edf8b827a881768fbd54d6379
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767146"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106015"
 ---
 # <a name="threading-in-xamarinios"></a>Xamarin 中的執行緒
 
 當使用執行緒（`System.Threading.Thread, System.Threading.ThreadPool`）時，並在使用非同步委派模式或 BeginXXX 方法，以及支援的完整應用程式開發介面範圍時，會隱含地存取 .net 執行緒 api，而 Xamarin iOS 執行時間提供工作平行程式庫。
 
 Xamarin 強烈建議您使用工作[平行程式庫](https://msdn.microsoft.com/library/dd460717.aspx)（TPL）來建立應用程式，原因如下：
+
 - 預設的 TPL 排程器會將工作執行委派給執行緒集區，接著會動態地增加處理常式所需的執行緒數目，同時避免太多執行緒最後會爭用 CPU 時間的情況。 
 - 以 TPL 工作的角度來思考作業比較容易。 您可以輕鬆地進行操作、排程、序列化其執行，或以一組豐富的 Api 平行啟動許多。 
 - 這是使用新C#的非同步語言擴充功能進行程式設計的基礎。 

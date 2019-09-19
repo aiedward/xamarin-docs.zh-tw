@@ -5,12 +5,12 @@ description: 本檔會比較 WPF 與 Xamarin 的格式，並將其對照。 其�
 author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
-ms.openlocfilehash: d23b449382183b0385eac38c0b9205e48dbe0a34
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290400"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106036"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 與Xamarin. 表單：相似 & 差異
 
@@ -65,6 +65,7 @@ Xamarin 也支援自訂標記延伸模組，但執行方式稍有不同。 在 W
 ### <a name="defining-bindable-properties"></a>定義可繫結屬性
 
 在 Xamarin 中，可系結屬性的定義與 WPF 相同：
+
 1. 物件必須衍生自`BindableObject`。
 2. 必須宣告類型`BindableProperty`的公用靜態欄位，才能定義屬性的支援儲存體金鑰。
 3. 應該有一個公用實例屬性包裝函式使用`GetValue`和`SetValue`來抓取和變更屬性值。

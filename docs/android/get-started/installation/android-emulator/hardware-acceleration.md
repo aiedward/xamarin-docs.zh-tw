@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: add9c602f4c04f1d95db4cee578fdadf0b41cf33
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5c6eb6e49c7c8a4071591e46a5afc02a6ff6b4e6
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758009"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105900"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 
@@ -22,19 +22,27 @@ _本文說明如何使用您電腦的硬體加速功能將 Android Emulator 提�
 Visual Studio 讓開發人員使用 Android Emulator，在 Android 裝置無法使用或不實用的情況下，更容易測試和偵錯其 Xamarin.Android 應用程式。
 不過，如果執行 Android 模擬器的電腦上無法使用硬體加速，Android 模擬器的執行速度會很慢。 使用特殊的 x86 虛擬裝置映像，結合電腦的虛擬化功能，可大幅提升 Android Emulator 的效能。
 
+| 狀況    | HAXM        | WHPX       | 管理程式架構 |
+| ----------- | ----------- | -----------| ----------- |
+| 您有 Intel 處理器 | X | X | X |
+| 您有 AMD 處理器   |   | X |   |
+| 您想要支援 Hyper-v |   | X |   |
+| 您想要支援嵌套虛擬化 |   | 有限制 |   |
+| 您想要使用 Docker 之類的技術  |   | X | X |
+
 ::: zone pivot="windows"
 
 ## <a name="accelerating-android-emulators-on-windows"></a>在 Windows 上加速 Android Emulator
 
 下列虛擬化技術可用於加速 Android Emulator：
 
-1. **Microsoft 的 Hyper-V 和 Hypervisor 平台**.
+1. **Microsoft 的 hyper-v 和 Windows 虛擬機器平臺（WHPX）** 。
    [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) 是 Windows 的虛擬化功能，可讓您在實體主機電腦上執行虛擬化的電腦系統。
 
 2. **Intel Hardware Accelerated Execution Manager (HAXM)** .
    HAXM 是執行 Intel Cpu 之電腦的虛擬化引擎。
 
-為了取得最佳效能，建議您使用 Hyper-V 來加速 Android Emulator。 如果您的電腦上沒有 Hyper-V，則可以使用 HAXM。 如果符合下列準則，Android Emulator 會自動使用硬體加速：
+如需 Windows 的最佳體驗，建議您使用 HAXM 來加速 Android 模擬器。 如果您的電腦上無法使用 HAXM，則可以使用 Windows 虛擬機器平臺（WHPX）。 如果符合下列準則，Android Emulator 會自動使用硬體加速：
 
 - 您的開發電腦上可以使用並啟用硬體加速。
 
@@ -158,7 +166,7 @@ systeminfo
 2. **Intel Hardware Accelerated Execution Manager (HAXM)** .
    [HAXM](https://software.intel.com/articles/intel-hardware-accelerated-execution-manager-intel-haxm) 是執行 Intel CPU 所在電腦的虛擬化引擎。
 
-為了取得最佳效能，建議您使用 Hypervisor 架構來加速 Android Emulator。 如果 Hypervisor 架構不適用於您的 Mac，則可以使用 HAXM。 如果符合下列準則，Android Emulator 會自動使用硬體加速：
+建議您使用虛擬機器架構來加速 Android 模擬器。 如果 Hypervisor 架構不適用於您的 Mac，則可以使用 HAXM。 如果符合下列準則，Android Emulator 會自動使用硬體加速：
 
 - 開發電腦上有硬體加速可用，並已啓用。
 
@@ -180,7 +188,7 @@ systeminfo
 
 - 您的 Mac CPU 必須能夠支援 Hypervisor 架構。
 
-如果您的 Mac 符合這些準則，則 Android Emulator 會自動使用 Hypervisor 架構進行加速 (即使安裝了 HAXM 也一樣)。 如果您不確定 Mac 是否支援 Hypervisor 架構，請參閱[疑難排解](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#hypervisor-issues)指南，以取得確認您的 Mac 是否支援 Hypervisor 的方法。
+如果您的 Mac 符合這些準則，Android 模擬器會自動使用虛擬機器架構來加速。 如果您不確定 Mac 是否支援 Hypervisor 架構，請參閱[疑難排解](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vsmac#hypervisor-issues)指南，以取得確認您的 Mac 是否支援 Hypervisor 的方法。
 
 如果您的 Mac 不支援 Hypervisor 架構，您可以使用 HAXM 來加速 Android Emulator (如下所述)。
 

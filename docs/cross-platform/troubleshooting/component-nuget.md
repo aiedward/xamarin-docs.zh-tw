@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: conceptdev
 ms.author: crdun
 ms.date: 04/18/2018
-ms.openlocfilehash: 6d40555c70072a4c057739b39cc24a4f885f2dc9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e9bd54523fa46625e9a9e6e46247b92987f3d427
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765290"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106068"
 ---
 # <a name="updating-component-references-to-nuget"></a>正在更新 NuGet 的元件參考
 
@@ -202,6 +202,7 @@ NuGet 套件會連同任何相依性新增至您的專案。
 許多元件廠商仍在致力於遷移至 NuGet，而其他專案（包括商用產品）可能會調查替代的傳遞選項。
 
 ## <a name="related-links"></a>相關連結
+
 - [熱門 Xamarin 外掛程式和程式庫的清單](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
 - [安裝和使用 NuGet 套件（Windows）](https://docs.microsoft.com/nuget/quickstart/use-a-package)
 - [包含 NuGet 套件（Mac）](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

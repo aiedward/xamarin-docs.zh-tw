@@ -6,17 +6,18 @@ ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 3379b9672b344e8e424f95e273683f4c5e241b71
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7742622bae16e874411fad1374c3ee522dba183
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70280804"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106066"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>將現有的應用程式更新至 Unified API
 
 > [!IMPORTANT]
 > 在 Unified API 之前的 Xamarin Classic API 已被取代。
+>
 > - 支援 Classic API （monotouch）的最新版本是 Xamarin. iOS 9.10。
 > - Xamarin 仍然支援 Classic API，但不會再更新。 由於它已被取代，因此開發人員應該將他們的應用程式移至 Unified API。
 

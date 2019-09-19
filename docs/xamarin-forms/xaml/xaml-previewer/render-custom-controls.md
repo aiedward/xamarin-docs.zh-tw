@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 5b87c631574f159230e1dc23285b9087bcc94255
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 57c0fd540ef42c18462b4f989b21bac5ed05dc04
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767323"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105991"
 ---
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>在 XAML 預覽器中轉譯自訂控制項
 
@@ -51,6 +51,7 @@ namespace MyProject
 
 ### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>即使是`[DesignTimeVisible(true)]`，我的自訂控制項也不會正確轉譯。
 嚴格依賴程式碼後置或後端資料的自訂控制項，不一定會在 XAML 預覽程式中運作。 您可以嘗試：
+
 * 移動控制項，使其在[設計模式已啟用](index.md#detect-design-mode)時不會初始化
 * 設定[設計階段資料](design-time-data.md)，以顯示後端的假資料
 

@@ -1,17 +1,17 @@
 ---
 title: 在 Visual Studio 2019 中安裝 Xamarin
-description: 本文件說明如何在 Visual Studio 2019 安裝 Xamarin。 討論需求、安裝程序以及驗證安裝。
+description: 本檔說明如何在 Visual Studio 2019 中安裝 Xamarin。 討論需求、安裝程序以及驗證安裝。
 ms.prod: xamarin
 ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 92ddbfb48131bdaf8ba12cef86e09e4c575200e9
-ms.sourcegitcommit: 7ccc7a9223cd1d3c42cd03ddfc28050a8ea776c2
+ms.openlocfilehash: 970985e419c5710699b6bdda49da8b59ef3c6cb6
+ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67865621"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71119251"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安裝 Xamarin
 
@@ -21,21 +21,21 @@ ms.locfileid: "67865621"
 
 ## <a name="installation"></a>安裝
 
-[!include[](~/cross-platform/includes/install-xamarin-windows.md)]
+[!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
-在 Visual Studio 2019，確認 已安裝 Xamarin，依序按一下**協助**功能表。 如果已安裝 Xamarin，您應會看見 [Xamarin]  功能表項目，如此螢幕擷取畫面所示：
+在 Visual Studio 2019 中，**按一下 [說明] 功能表，確認**是否已安裝 Xamarin。 如果已安裝 Xamarin，您應會看見 [Xamarin] 功能表項目，如此螢幕擷取畫面所示：
 
 ![[說明] 功能表上的 [Xamarin] 功能表項目](windows-images/12-xamarin-menu-item.png "[說明] 功能表上的 [Xamarin] 功能表項目")
 
-您也可以按一下 [說明] > [關於 Microsoft Visual Studio]  ，然後捲動已安裝產品清單，查看是否已安裝 Xamarin：
+您也可以按一下 [說明] > [關於 Microsoft Visual Studio]，然後捲動已安裝產品清單，查看是否已安裝 Xamarin：
 
-![Visual Studio 2019 已安裝產品畫面](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 安裝產品的畫面")
+![Visual Studio 2019 已安裝產品畫面](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 已安裝產品畫面")
 
 如需尋找版本資訊的詳細資訊，請參閱[哪裡可以找到版本資訊和記錄？](~/cross-platform/troubleshooting/questions/version-logs.md)
 
 ## <a name="next-steps"></a>後續步驟
 
-在 Visual Studio 2019 中安裝 Xamarin 可讓您開始撰寫您的應用程式的程式碼，但不需要額外的設定，來建置和部署應用程式到模擬器，模擬器和裝置。 請前往下列指南以完成安裝並開始建置跨平台應用程式。
+在 Visual Studio 2019 中安裝 Xamarin 可讓您開始撰寫應用程式的程式碼，但需要額外的設定，才能建立應用程式並將其部署至模擬器、模擬器和裝置。 請前往下列指南以完成安裝並開始建置跨平台應用程式。
 
 ### <a name="ios"></a>iOS
 

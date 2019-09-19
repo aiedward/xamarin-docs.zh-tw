@@ -6,12 +6,12 @@ ms.assetid: 3A024E4E-ACA3-4C7A-ADEF-541665D15779
 author: conceptdev
 ms.author: crdun
 ms.date: 05/08/2018
-ms.openlocfilehash: 343f8d37d77726d2cdc06a74c44e476af00dde27
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a3677117e30538c4df8c9b797acce0be602c3b59
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765150"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71106080"
 ---
 # <a name="what-project-settings-are-required-for-the-debugger"></a>偵錯工具需要哪些專案設定？
 
@@ -20,6 +20,7 @@ ms.locfileid: "70765150"
 請遵循下列步驟來檢查您的環境設定：
 
 ## <a name="visual-studio"></a>Visual Studio
+
 1. 開啟專案選項
 2. 移至**組建 > Advanced** .。。將 [調試資訊] 設定為 [**完整**]
 3. 每個平臺的設定：
@@ -27,6 +28,7 @@ ms.locfileid: "70765150"
    - 移至**IOS Debug > 調試 & 檢測**。 勾選 [**啟用調試**] 方塊。
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
+
 1. 開啟專案選項
 2. 移至**組建 > 編譯器 > 一般選項**。 將 [調試資訊] 設定為 [**完整**]
 3. 每個平臺的設定：

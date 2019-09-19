@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2019
-ms.openlocfilehash: 24ab8f4b988277cbbf1162a08e5641332a58bd81
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 19cc24c3937921f4f4d95584e1cd656c37b4155f
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228157"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105970"
 ---
 # <a name="xamarinforms-label"></a>Xamarin.Forms 標籤
 
@@ -146,7 +146,7 @@ var label =
 
 ## <a name="formatted-text"></a>格式化文字
 
-標籤會[`FormattedText`](xref:Xamarin.Forms.Label.FormattedText)公開屬性, 以允許在相同的視圖中呈現具有多個字型和色彩的文字。
+標籤會[`FormattedText`](xref:Xamarin.Forms.Label.FormattedText)公開屬性，以允許在相同的視圖中呈現具有多個字型和色彩的文字。
 
 `FormattedText`屬性的類型是[ `FormattedString` ](xref:Xamarin.Forms.FormattedString)，其中包括一或多個[ `Span` ](xref:Xamarin.Forms.Span)情況下，透過設定[ `Spans` ](xref:Xamarin.Forms.FormattedString.Spans)屬性. 下列`Span`屬性可以用來設定視覺外觀：
 
@@ -163,7 +163,7 @@ var label =
 - `TextDecorations` -要套用至範圍中文字的裝飾。 如需詳細資訊，請參閱 <<c0> [ 文字裝飾](#text-decorations)。
 
 > [!NOTE]
-> [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) [`OneWay`](xref:Xamarin.Forms.BindingMode)、[和可系結屬性的預設系結模式為。`Text`](xref:Xamarin.Forms.Span.Text) [`Text`](xref:Xamarin.Forms.Span.Text) 如需此系結模式的詳細資訊, 請參閱系結[模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)指南中[的預設](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)系結模式。
+> [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) [`OneWay`](xref:Xamarin.Forms.BindingMode)、[和可系結屬性的預設系結模式為。`Text`](xref:Xamarin.Forms.Span.Text) [`Text`](xref:Xamarin.Forms.Span.Text) 如需此系結模式的詳細資訊，請參閱系結[模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)指南中[的預設](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)系結模式。
 
 颾魤 ㄛ [ `GestureRecognizers` ](xref:Xamarin.Forms.GestureElement.GestureRecognizers)屬性可以用來定義的筆勢辨識器所將回應筆勢在集合[ `Span` ](xref:Xamarin.Forms.Span)。
 
@@ -230,6 +230,7 @@ public class LabelPageCode : ContentPage
 垂直高度[ `Label` ](xref:Xamarin.Forms.Label)並[ `Span` ](xref:Xamarin.Forms.Span)可以藉由設定自訂[ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight)屬性或[ `Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)至`double`值。 IOS 和 Android 上這些值會是原始的列高度，以及在通用 Windows 平台 (UWP) 中的乘數`Label.LineHeight`屬性值是標籤字型大小的乘數。
 
 > [!NOTE]
+>
 > - 在 iOS 上， [ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight)並[ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)屬性變更線條的高度所容納的單一行中的文字和換行至多行的文字。
 > - 在 Android 上， [ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight)並[ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)屬性只變更線條的高度換行至多行的文字。
 > - 在 UWP [ `Label.LineHeight` ](xref:Xamarin.Forms.Label.LineHeight)屬性變更一行的高度的文字換行至多行，而[ `Span.LineHeight` ](xref:Xamarin.Forms.Span.LineHeight)屬性沒有任何作用。
@@ -298,14 +299,14 @@ var label = new Label
 
 ## <a name="hyperlinks"></a>指向
 
-[`Label`](xref:Xamarin.Forms.Label) [和`Span`](xref:Xamarin.Forms.Span)實例所顯示的文字, 可以使用下列方法轉換成超連結:
+[`Label`](xref:Xamarin.Forms.Label) [和`Span`](xref:Xamarin.Forms.Span)實例所顯示的文字，可以使用下列方法轉換成超連結：
 
 1. [`Label`](xref:Xamarin.Forms.Label)設定或`TextColor` `TextDecoration`的和屬性。 [`Span`](xref:Xamarin.Forms.Span)
-1. [`Label`](xref:Xamarin.Forms.Label) [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)將加入[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) `ICommand`至或[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers) [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)的集合, 其屬性系結至, 而其屬性包含要開啟的 URL。 [`Span`](xref:Xamarin.Forms.Span)
+1. [`Label`](xref:Xamarin.Forms.Label) [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)將加入[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) `ICommand`至或[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers) [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)的集合，其屬性系結至，而其屬性包含要開啟的 URL。 [`Span`](xref:Xamarin.Forms.Span)
 1. 定義將由執行的[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) `ICommand` 。
 1. 撰寫將由`ICommand`執行的程式碼。
 
-下列取自[超連結](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)示範範例的程式碼範例會顯示[`Label`](xref:Xamarin.Forms.Label) , 其內容是從多個[`Span`](xref:Xamarin.Forms.Span)實例所設定:
+下列取自[超連結](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)示範範例的程式碼範例會顯示[`Label`](xref:Xamarin.Forms.Label) ，其內容是從多個[`Span`](xref:Xamarin.Forms.Span)實例所設定：
 
 ```xaml
 <Label>
@@ -326,13 +327,13 @@ var label = new Label
 </Label>
 ```
 
-在此範例中, 第一個和[`Span`](xref:Xamarin.Forms.Span)第三個實例會包含文字`Span` , 第二個則代表 tappable 超連結。 其文字色彩設為藍色, 且具有底線文字裝飾。 這會建立超連結的外觀, 如下列螢幕擷取畫面所示:
+在此範例中，第一個和[`Span`](xref:Xamarin.Forms.Span)第三個實例會包含文字`Span` ，第二個則代表 tappable 超連結。 其文字色彩設為藍色，且具有底線文字裝飾。 這會建立超連結的外觀，如下列螢幕擷取畫面所示：
 
 [![超連結](label-images/hyperlinks-small.png "超連結")](label-images/hyperlinks-large.png#lightbox)
 
-當您按下超連結時[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) , 會執行其[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)屬性`ICommand`所定義的來回應。 此外, [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性所指定的 URL 將會傳遞`ICommand`至做為參數。
+當您按下超連結時[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) ，會執行其[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)屬性`ICommand`所定義的來回應。 此外， [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性所指定的 URL 將會傳遞`ICommand`至做為參數。
 
-XAML 頁面的程式碼後置包含`TapCommand`執行:
+XAML 頁面的程式碼後置包含`TapCommand`執行：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -352,13 +353,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-會`TapCommand` [`TapGestureRecognizer.CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)執行方法, 並傳遞屬性值做為參數。 `OpenBrowser` 接著, 這個方法會呼叫[`Device.OpenUri`](xref:Xamarin.Forms.Device.OpenUri*)方法, 以在網頁瀏覽器中開啟 URL。 因此, 整體效果是在頁面上按下超連結時, 網頁瀏覽器會出現, 且會導覽與超連結相關聯的 URL。
+會`TapCommand` [`TapGestureRecognizer.CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)執行方法，並傳遞屬性值做為參數。 `OpenBrowser` 接著，這個方法會呼叫[`Device.OpenUri`](xref:Xamarin.Forms.Device.OpenUri*)方法，以在網頁瀏覽器中開啟 URL。 因此，整體效果是在頁面上按下超連結時，網頁瀏覽器會出現，且會導覽與超連結相關聯的 URL。
 
 ### <a name="creating-a-reusable-hyperlink-class"></a>建立可重複使用的超連結類別
 
-先前建立超連結的方法需要在您的應用程式中要求超連結時, 撰寫重複的程式碼。 不過, [`Label`](xref:Xamarin.Forms.Label)和[`Span`](xref:Xamarin.Forms.Span)類別都可以子類別化, 以`HyperlinkLabel`建立`HyperlinkSpan`和類別, 並在該處加入手勢辨識器和文字格式設定程式碼。
+先前建立超連結的方法需要在您的應用程式中要求超連結時，撰寫重複的程式碼。 不過， [`Label`](xref:Xamarin.Forms.Label)和[`Span`](xref:Xamarin.Forms.Span)類別都可以子類別化，以`HyperlinkLabel`建立`HyperlinkSpan`和類別，並在該處加入手勢辨識器和文字格式設定程式碼。
 
-下列程式碼範例取自「[超連結示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)」範例, 其中顯示`HyperlinkSpan`一個類別:
+下列程式碼範例取自「[超連結示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)」範例，其中顯示`HyperlinkSpan`一個類別：
 
 ```csharp
 public class HyperlinkSpan : Span
@@ -384,9 +385,9 @@ public class HyperlinkSpan : Span
 }
 ```
 
-類別會[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)定義屬性和相關聯的, 而[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)此函式會設定超連結的外觀, 以及在按下超連結時回應的。 `Url` `HyperlinkSpan` 當按[`Device.OpenUri`](xref:Xamarin.Forms.Device.OpenUri*) `Url`下時, 會執行方法以在網頁瀏覽器中開啟由屬性所指定的 URL 來回應。 `TapGestureRecognizer` `HyperlinkSpan`
+類別會[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)定義屬性和相關聯的，而[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)此函式會設定超連結的外觀，以及在按下超連結時回應的。 `Url` `HyperlinkSpan` 當按[`Device.OpenUri`](xref:Xamarin.Forms.Device.OpenUri*) `Url`下時，會執行方法以在網頁瀏覽器中開啟由屬性所指定的 URL 來回應。 `TapGestureRecognizer` `HyperlinkSpan`
 
-藉由將類別的實例加入至 XAML, 即可取用類別:`HyperlinkSpan`
+藉由將類別的實例加入至 XAML，即可取用類別：`HyperlinkSpan`
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -416,7 +417,7 @@ public class HyperlinkSpan : Span
 ## <a name="related-links"></a>相關連結
 
 - [文字 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [超連結 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
+- [超連結（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [使用 Xamarin.Forms 時，第 3 章中建立行動應用程式](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [標籤 API](xref:Xamarin.Forms.Label)
 - [API 範圍](xref:Xamarin.Forms.Span)

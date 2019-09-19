@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/19/2018
-ms.openlocfilehash: 7123d7d491bb32a8a506b308cac5ecb6458a1add
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 042878fa8d30acb55de68f63e3491aacb5dbdfb5
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754877"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105881"
 ---
 # <a name="creating-android-services"></a>建立 Android 服務
 
@@ -66,6 +66,7 @@ Android 服務有四種不同的類型：
 * 另一個應用程式會在前景中，並使用應用程式中的元件（在背景中則為）。 例如，如果應用程式 A 位於前景，則系結至應用程式 B 所提供的服務。應用程式 B 也會被視為前景，而 Android 不會在背景中終止。
 
 在某些情況下，即使應用程式在背景中，Android 還是會喚醒應用程式，並將這些限制放寬幾分鐘，讓應用程式能夠執行一些工作：
+
 * 應用程式會收到高優先順序的 Firebase 雲端訊息。
 * 應用程式會收到廣播。 
 * 應用程式會接收並執行`PendingIntent` ，以回應通知。
