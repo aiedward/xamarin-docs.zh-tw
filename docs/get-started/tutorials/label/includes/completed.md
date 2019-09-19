@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: b2a15ab67cdf6498a2ca92b29bebda2998349314
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: b1c6e031d30dc4c30007e04cd8e883c8ddf2e6a0
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669568"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107187"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中建立 Xamarin.Forms [`Label`](xref:Xamarin.Forms.Label)。
 > - 變更 `Label` 的外觀。
 > - 在單一 `Label` 中呈現具有多種格式的文字。

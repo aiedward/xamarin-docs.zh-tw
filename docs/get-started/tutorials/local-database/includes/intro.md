@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 004d7df72103ef332f802bd0019d2a99c6cc11a2
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: 8f379e8639846d9a6424c4aaadf83ff89d7a8684
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277153"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107195"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
 
@@ -14,9 +14,10 @@ ms.locfileid: "67277153"
 - [項目](~/get-started/tutorials/entry/index.yml)教學課程。
 - [ListView](~/get-started/tutorials/listview/index.yml) 教學課程。
 
-在此教學課程中，您將了解如何：
+在本教學課程中，您將了解如何：
 
 > [!div class="checklist"]
+>
 > - 使用 NuGet 套件管理員將 SQLite.NET 新增至 Xamarin.Forms 專案。
 > - 建立資料存取類別。
 > - 取用資料存取類別。

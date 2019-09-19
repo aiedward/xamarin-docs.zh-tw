@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: b01edc9807b63613a66f5c24706eb694fef6dfbc
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e9c20f8ca0656f6bad72e1e09fbe873a9208be2b
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669573"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107193"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中建立 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry)。
 > - 回應 `Entry` 變更中的文字。
 > - 自訂 `Entry` 的行為。

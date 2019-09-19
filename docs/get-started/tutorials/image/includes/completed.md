@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 3097ac63df36fffdbaf9d254aa0ef3bdf6c0577a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 83baf0982da49b5568a43a1695f78150119d4d88
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669566"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107189"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中建立 Xamarin.Forms [`Image`](xref:Xamarin.Forms.Image)。
 > - 自訂 `Image` 外觀。
 > - 顯示每個平台專案中的本機影像檔。

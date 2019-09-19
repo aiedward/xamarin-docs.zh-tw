@@ -1,19 +1,20 @@
 ---
-ms.openlocfilehash: 666632ce879440fd05269e86ed05c2813a2d96af
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: ff3a0477c6b8a2bf30693ff05a4a992ad053d2b9
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277142"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107194"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
 
 - [建置您的第一個 Xamarin.Forms 應用程式](~/get-started/first-app/index.md)快速入門。
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml) 教學課程。
 
-在此教學課程中，您將了解如何：
+在本教學課程中，您將了解如何：
 
 > [!div class="checklist"]
+>
 > - 在 XAML 中建立 Xamarin.Forms [`Label`](xref:Xamarin.Forms.Label)。
 > - 變更 `Label` 的外觀。
 > - 在單一 `Label` 中呈現具有多種格式的文字。

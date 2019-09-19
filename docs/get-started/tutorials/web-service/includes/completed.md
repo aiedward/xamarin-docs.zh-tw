@@ -1,14 +1,15 @@
 ---
-ms.openlocfilehash: 2c9895f36faccb0d0c82b0e7884cc04b8c4273bf
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: e0f7e89be5de282daf10f941d0f0b8d0175df81a
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68669571"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71107200"
 ---
 恭喜您完成此教學課程，您已學會如何：
 
 > [!div class="checklist"]
+>
 > - 使用 NuGet 套件管理員將 Newtonsoft.Json 新增至 Xamarin.Forms 專案。
 > - 建立 Web 服務類別。
 > - 取用 Web 服務類別。
