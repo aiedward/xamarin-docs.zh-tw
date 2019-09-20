@@ -37,7 +37,7 @@ IOS App Store 已經完成重新設計，不僅允許使用者有效率地導覽
 > [!NOTE]
 > 應用程式圖示現在應由_資產目錄_傳遞。 
 
-如需使用資產目錄的詳細資訊，請參閱[App Store 圖示](~/ios/app-fundamentals/images-icons/app-store-icon.md)指南。 如需將 plist 的圖示從資訊遷移至資產目錄的說明，請參閱 <<c0>從 Plist 遷移至資產目錄指南。
+如需使用資產目錄的詳細資訊，請參閱[App Store 圖示](~/ios/app-fundamentals/images-icons/app-store-icon.md)指南。 如需將 plist 的圖示從資訊遷移至資產目錄的說明，請參閱 [從 Plist 遷移至資產目錄](~/ios/app-fundamentals/images-icons/app-icons.md)指南。
 
 資產目錄中的必要圖示命名為**App Store** ，且大小應為 1024 x 1024。 Apple 表明資產目錄中的應用程式市集圖示不得透明或含有 Alpha 色板。
 

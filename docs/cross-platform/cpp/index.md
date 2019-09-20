@@ -49,7 +49,7 @@ C/C++被視為跨平臺語言，但必須特別小心，以確保原始程式碼
 
 逐步解說中的程式庫是使用 Visual Studio Code 搭配隨附的 shell 腳本所建立。 此逐步解說的擴充版本可在行動[CAT GitHub 存放庫](https://github.com/xamarin/mobcat/blob/dev/samples/cpp_with_xamarin/)中找到，其深入探討此部分的範例。 在此情況下，原生程式庫被視為協力廠商相依性，不過這個階段會針對內容進行說明。
 
-為了簡單起見，本逐步解說僅以架構的子集為目標。 針對 iOS，它會使用 lipo 公用程式，從個別架構特定的二進位檔建立單一的 fat 二進位檔。 Android 會搭配使用動態二進位檔。因此，延伸模組和 iOS 會使用靜態的 fat 二進位檔，副檔名為.。 
+為了簡單起見，本逐步解說僅以架構的子集為目標。 針對 iOS，它會使用 lipo 公用程式，從個別架構特定的二進位檔建立單一的 fat 二進位檔。 Android 會搭配使用動態二進位檔。因此，延伸模組和 iOS 會使用靜態的 fat 二進位檔，副檔名為。 
 
 ### <a name="stage-2-wrapping-the-native-libraries-with-a-visual-studio-solution"></a>第2階段：使用 Visual Studio 方案包裝原生程式庫
 

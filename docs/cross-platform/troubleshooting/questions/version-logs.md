@@ -70,7 +70,7 @@ ms.locfileid: "70291168"
 
 #### <a name="visual-studio"></a>Visual Studio
 
-**> Android > 的工具開啟 Android SDK 管理員 .。。**
+**> Android > 的工具開啟 Android SDK 管理員...**
 
 ## <a name="a-idide-and-installer-logs-nameide-and-installer-logs-ide-and-installer-logs"></a><a id="ide-and-installer-logs" name="ide-and-installer-logs" />IDE 和安裝程式記錄檔
 
