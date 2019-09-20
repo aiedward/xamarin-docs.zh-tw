@@ -172,7 +172,7 @@ Mono 2.4.2.3 _6 會修正一些導致 Visual Studio for Mac 無法可靠執行�
 
 當您安裝新的 Mono 之後，Visual Studio for Mac 會如預期般啟動。
 
-## <a name="assertion-at-monometadatageneric-sharingc704-condition-oti-not-met"></a>判斷提示位於.。/../../../mono/metadata/generic-sharing.c：704，條件 ' oti ' 不符合
+## <a name="assertion-at-monometadatageneric-sharingc704-condition-oti-not-met"></a>判斷提示位於。/../../../mono/metadata/generic-sharing.c：704，條件 ' oti ' 不符合
 
 如果您收到下列堆疊追蹤：
 
