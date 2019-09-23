@@ -211,7 +211,7 @@ CollectionView collectionView = new CollectionView
 
 根據預設, [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)屬性會設定為`SnapPointsType.None`, 以確保滾動不會貼齊專案, 如下列螢幕擷取畫面所示:
 
-[![不含貼齊點之 CollectionView 垂直清單的螢幕擷取畫面, 在 IOS 和 Android](scrolling-images/snappoints-none.png "CollectionView 垂直清單 (不含貼齊點"))](scrolling-images/snappoints-none-large.png#lightbox "不含貼齊點的 CollectionView 垂直清單")
+[![不含貼齊點之 CollectionView 垂直清單的螢幕擷取畫面, 在 IOS 和 Android](scrolling-images/snappoints-none.png "CollectionView 垂直清單 (不含貼齊點") ] (scrolling-images/snappoints-none-large.png#lightbox "不含貼齊點的 CollectionView 垂直清單")
 
 ### <a name="snap-points-alignment"></a>貼齊點對齊
 

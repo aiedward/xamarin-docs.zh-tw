@@ -33,8 +33,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout)是 Xamarin.Forms 3
 
 ## <a name="common-usage-scenarios"></a>常見使用案例
 
-          **
-          [FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 程式範例包含數個頁面會示範一些常見的用法`FlexLayout`，並可讓您嘗試使用其屬性。
+**[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 程式範例包含數個頁面會示範一些常見的用法`FlexLayout`，並可讓您嘗試使用其屬性。
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>使用簡單的堆疊 FlexLayout
 
@@ -93,7 +92,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout)是 Xamarin.Forms 3
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>使用 FlexLayout 包裝項目
 
-          **相片包裝** 頁 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例會示範如何`FlexLayout`可以換行到額外的資料列或資料行及其子系。 XAML 檔案會具現化`FlexLayout`並指派它的兩個屬性：
+**相片包裝** 頁 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例會示範如何`FlexLayout`可以換行到額外的資料列或資料行及其子系。 XAML 檔案會具現化`FlexLayout`並指派它的兩個屬性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -193,7 +192,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 在呼叫的 web 設計沒有標準的版面配置[_所見所聞_](https://en.wikipedia.org/wiki/Holy_grail_(web_design))因為它是非常理想，但通常很難了解與完美的配置格式。 版面配置是由在頁面頂端的標頭和頁尾，以在底部，這兩個延伸至完整頁面的寬度所組成。 佔用頁面的中心是主要的內容，但通常與左側的內容和增補資訊的單欄式功能表 (有時稱為_擱置在一旁_區域) 右邊。 [CSS 彈性方塊版面配置規格 5.4.1 節](http://www.w3.org/TR/css-flexbox-1/#order-accessibility)將告訴您如何實現所見所聞版面配置，以彈性方塊。
 
-          **所見所聞版面配置** 頁 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例會示範一個簡單的實作，使用其中一個此版面配置的`FlexLayout`巢狀方式置於另一個。 因為此頁面專為手機在直向模式中，左側和右側的內容區域的區域只能有 50 像素：
+**所見所聞版面配置** 頁 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例會示範一個簡單的實作，使用其中一個此版面配置的`FlexLayout`巢狀方式置於另一個。 因為此頁面專為手機在直向模式中，左側和右側的內容區域的區域只能有 50 像素：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -262,7 +261,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="catalog-items-with-flexlayout"></a>FlexLayout 類別目錄項目
 
-          **類別目錄項目** 頁面 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例是類似於[CSS Flex 版面配置 方塊規格區段1.1版中的範例1](http://www.w3.org/TR/css-flexbox-1/#overview)不同之處在於它會顯示可水平捲動的一連串的圖片和三個猴仔的描述：
+**類別目錄項目** 頁面 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例是類似於[CSS Flex 版面配置 方塊規格區段1.1版中的範例1](http://www.w3.org/TR/css-flexbox-1/#overview)不同之處在於它會顯示可水平捲動的一連串的圖片和三個猴仔的描述：
 
 [![目錄項目頁面](flex-layout-images/CatalogItems.png "目錄項目頁面")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
@@ -572,7 +571,7 @@ XAML，在中，您可以使用數字以裝置獨立單位大小：
 <Label ... FlexLayout.Basis="25%" ... />
 ```
 
-          **為基礎的實驗** 頁 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例可讓您試驗`Basis`屬性。 此頁面會顯示已包裝的資料行，五個`Label`交替的背景和前景色彩的項目。 兩個`Slider`項目可讓您指定`Basis`的第二個和第四個值`Label`:
+**為基礎的實驗** 頁 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例可讓您試驗`Basis`屬性。 此頁面會顯示已包裝的資料行，五個`Label`交替的背景和前景色彩的項目。 兩個`Slider`項目可讓您指定`Basis`的第二個和第四個值`Label`:
 
 [![基礎實驗頁面](flex-layout-images/BasisExperiment.png "基礎實驗頁面")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
@@ -610,7 +609,7 @@ XAML，在中，您可以使用數字以裝置獨立單位大小：
 
 ## <a name="css-styling-with-flexlayout"></a>FlexLayout CSS 樣式
 
-您可以使用[CSS 樣式](~/xamarin-forms/user-interface/styles/css/index.md)引進與 Xamarin.Forms 3.0 功能`FlexLayout`。           **CSS 類別目錄項目** 頁面 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例重複的版面配置 **類別目錄項目** 頁面上，但與 CSS許多樣式的樣式表：
+您可以使用[CSS 樣式](~/xamarin-forms/user-interface/styles/css/index.md)引進與 Xamarin.Forms 3.0 功能`FlexLayout`。 **CSS 類別目錄項目** 頁面 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例重複的版面配置 **類別目錄項目** 頁面上，但與 CSS許多樣式的樣式表：
 
 [![CSS 目錄項目頁面](flex-layout-images/CssCatalogItems.png "CSS 目錄項目 頁面")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
