@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/29/2018
-ms.openlocfilehash: 00245b7b4b0db73f66d88474be2052f311499e7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9296fa60a454fe83f9ec9b383067576b67e5f037
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753772"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198539"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 
@@ -86,7 +86,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
       ![[與 Mac 配對] 對話方塊](images/pairtomac.png "[與 Mac 配對] 對話方塊")
 
-3. 在清單中，選取 Mac。 按一下 **[連接]** 。
+3. 在清單中，選取 Mac。 按一下 **[Connect]** (連線)。
 
 4. 輸入使用者名稱和密碼。
 
@@ -163,6 +163,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 從 [Visual Studio 2019 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，[與 Mac 配對] 會自動佈建含建置 Xamarin.iOS 應用程式必備軟體的 Mac：Mono、Xamarin.iOS (軟體架構，並非 Visual Studio for Mac 整合式開發環境 (IDE))，及各種與 Xcode 相關的工具 (並非 Xcode 本身)。
 
 > [!IMPORTANT]
+>
 > - [與 Mac 配對] 無法安裝 Xcode；您必須在 Mac 組建主機上手動安裝它。 它是進行 Xamarin.iOS 開發的必要項目。
 > - 自動 Mac 佈建需要在 Mac 上啟用遠端登入，而且 Mac 必須可透過網路存取 Windows 電腦。 如需詳細資訊，請參閱[在 Mac 上啟用遠端登入](#enable-remote-login-on-the-mac)。
 > - 自動化的 Mac 佈建需要 Mac 有 3 GB 的可用空間，才能安裝 Xamarin.iOS。
@@ -185,6 +186,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 > [!IMPORTANT]
 > [與 Mac 配對] 不會將 Mac 上的 Xamarin.iOS 從 alpha/beta 降級至穩定。 如果您已安裝 Visual Studio for Mac，則請設定[發行通道](https://docs.microsoft.com/visualstudio/mac/update)，如下所示：
+>
 > - 如果您使用 Visual Studio 2019，請選取 Visual Studio for Mac 中的 [穩定] 更新通道。
 > - 如果您使用 Visual Studio 2019 Preview，請選取 Visual Studio for Mac 中的 [Alpha] 更新通道。
 

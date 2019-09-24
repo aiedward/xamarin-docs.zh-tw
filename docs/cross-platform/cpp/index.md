@@ -5,12 +5,12 @@ description: Visual Studio for Mac 可用來使用 Xamarin 和C++ C#，將跨平
 author: mikeparker104
 ms.author: miparker
 ms.date: 12/17/2018
-ms.openlocfilehash: 685d4f5de197c6b3664d63306fa206bea17409e1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a10d63e8ed152fae3c9e87cbae7bacb25a0d019c
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766355"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206383"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>搭配 Xamarin 使用C++ C/程式庫
 
@@ -132,7 +132,7 @@ extern "C" {
 
 ## <a name="wrapping-the-native-library-stage-2"></a>包裝原生程式庫（第2階段）
 
-此階段需要[上一節](##creating-the-native-libraries-stage-1)中所述的先行[編譯程式庫](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)。
+此階段需要[上一節](#creating-the-native-libraries-stage-1)中所述的先行[編譯程式庫](https://github.com/xamarin/mobcat/tree/master/samples/cpp_with_xamarin/Sample/Artefacts)。
 
 ### <a name="creating-the-visual-studio-solution"></a>建立 Visual Studio 解決方案
 
@@ -648,7 +648,7 @@ NuGet 摘要最簡單的形式是本機目錄：
     > [!NOTE]
     > 在此情況下，不需要指定使用者**名稱**和**密碼**。 
 
-4. 按一下 [確定 **Deploying Office Solutions**]。
+4. 按一下 [確定]。
 
 ### <a name="referencing-the-package"></a>參考套件
 

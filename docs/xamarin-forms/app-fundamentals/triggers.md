@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 31dfcc26121b0683db476b0c4be9a420efe5b66f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771240"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198573"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。
 
@@ -144,7 +144,7 @@ ms.locfileid: "70771240"
 
 - 覆寫 `Invoke` 方法 - 每當符合觸發程序準則時便會呼叫它。
 
-- 選擇性地公開可在觸發程序宣告時在 XAML 中設定的屬性 (例如，在此範例中的 `Anchor`、`Scale` 和 `Length`)。
+- 在宣告觸發程式時，選擇性地公開可在 XAML 中設定的屬性。 如需這種情況的範例， `VisualElementPopTriggerAction`請參閱隨附範例應用程式中的類別。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -158,7 +158,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 }
 ```
 
-觸發程序動作所公開的屬性，可以設定在 XAML 宣告中，如下所示：
+然後，可以從 XAML 取用事件觸發程式：
 
 ```xaml
 <EventTrigger Event="TextChanged">

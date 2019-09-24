@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 0e513ecb67f5b902afd91546b1de6720cb0369c1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761987"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198429"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 測試和 App Store 核准
 
@@ -100,7 +100,7 @@ Apple 和 Microsoft 會在其平臺上操作唯一的存放區：分別是 App S
 
 ### <a name="guidelines-are-more-than-just-a-guide"></a>方針不僅僅是「指南」
 
-Apple 非常著名于遵循其人類介面指導方針，因為其平臺的其中一個關鍵優勢在於一致性（以及認知的可用性增加）。 Microsoft 採用了類似的方法來執行 Metro 樣式 UI 的 Windows 應用程式。 這兩種平臺的核准程式將牽涉到您的應用程式在遵循相關的設計原理時進行評估。
+Apple 非常著名于遵循其人類介面指導方針，因為其平臺的其中一個關鍵優勢在於一致性（以及認知的可用性增加）。 Microsoft 採用了類似的方法，與執行[流暢設計系統](https://microsoft.com/design/fluent)的 Windows 應用程式搭配使用。 這兩種平臺的核准程式將牽涉到您的應用程式在遵循相關的設計原理時進行評估。
 
 這不表示不支援或鼓勵使用者介面創新，但您只需要執行某些動作，否則您的應用程式將會遭到拒絕。
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: 3521d3fb632261c880e67f7a8c889881485e313d
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198156"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198512"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 類別是服務定位器，讓 Xamarin.Forms 應用程式能夠從共用程式碼叫用原生平台功能。
 
@@ -118,7 +118,7 @@ namespace DependencyServiceDemos.UWP
 ```csharp
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(DeviceOrientationService))]
+[assembly: Dependency(typeof(DependencyServiceDemos.iOS.DeviceOrientationService))]
 namespace DependencyServiceDemos.iOS
 {
     public class DeviceOrientationService : IDeviceOrientationService

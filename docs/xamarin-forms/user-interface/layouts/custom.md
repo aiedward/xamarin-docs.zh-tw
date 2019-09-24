@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/29/2017
-ms.openlocfilehash: 0828d780ed075a6e3b18ba5020f5908fb8c06189
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9442116bf053768fe22d123d1c7e3d146f9b2834
+ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292578"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71198503"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在 Xamarin 中建立自訂版面配置
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin.Forms 可定義四種版面配置類別 – StackLayout、 AbsoluteLayout、 RelativeLayout 和方格中，和每個以不同方式來排列其子系。不過，有時候就必須以組織使用不提供 Xamarin.Forms 版面配置的頁面內容。本文說明如何撰寫自訂的版面配置的類別，並示範如何在頁面上，水平排列其子系，然後將包裝至其他資料列的後續子系的顯示方向區分 WrapLayout 類別。_
+_Xamarin 會定義五個版面配置類別，分別是 StackLayout、AbsoluteLayout、RelativeLayout、Grid 和 FlexLayout，而且每個都以不同的方式排列其子系。不過，有時候就必須以組織使用不提供 Xamarin.Forms 版面配置的頁面內容。本文說明如何撰寫自訂的版面配置的類別，並示範如何在頁面上，水平排列其子系，然後將包裝至其他資料列的後續子系的顯示方向區分 WrapLayout 類別。_
 
 在 Xamarin.Forms 中，所有的版面配置類別衍生自[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)類別，並將泛型類型，以限制[ `View` ](xref:Xamarin.Forms.View)和其衍生的類型。 依次`Layout<T>`類別衍生自[ `Layout` ](xref:Xamarin.Forms.Layout)類別，可提供機制，用來定位和調整大小的子元素。
 
@@ -427,7 +427,7 @@ async Task<ImageList> GetImageListAsync()
 
 - [WrapLayout （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [自訂版面配置](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
-- [建立在 Xamarin.Forms 中的自訂配置 （影片）](https://evolve.xamarin.com/session/56e20f83bad314273ca4d81c)
+- [建立在 Xamarin.Forms 中的自訂配置 （影片）](https://www.youtube.com/watch?v=sxjOqNZFhKU)
 - [版面\<配置 T >](xref:Xamarin.Forms.Layout`1)
 - [版面配置](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

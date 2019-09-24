@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: c852a80136c8aae3a4da0fd3d8a8fa259e08aa4d
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 105088b612ffc35d18bdf800b48cc700ce6f4a48
+ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021157"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206519"
 ---
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>在 Xamarin 中使用以 Apple 登入
 
-![此 API 目前為預覽狀態](~/media/shared/preview.png)
-
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/Redth/Xamarin.AppleSignIn.Sample)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/Redth/Xamarin.AppleSignIn.Sample)
 
 使用 Apple 登入適用于 iOS 13 上所有使用協力廠商驗證服務的新應用程式。 IOS 和 Android 之間的執行詳細資料非常不同。 本指南會逐步解說如何在 Xamarin 中執行此操作。
 
@@ -54,7 +52,7 @@ ms.locfileid: "71021157"
 
 這個範例會使用 Azure Functions。 或者，ASP.NET Core 控制器或類似的 web 伺服器解決方案可以提供相同的功能。
 
-### <a name="configuration"></a>組態
+### <a name="configuration"></a>設定
 
 使用 Azure Functions 時，需要設定數個應用程式設定：
 
