@@ -35,7 +35,7 @@ ms.locfileid: "70764940"
 
     - 「' XamarinShellPackage ' 封裝未正確載入」
 
-    - 「專案檔 .。。無法開啟。 遺漏專案子類型」
+    - 「專案檔 ...無法開啟。 遺漏專案子類型」
 
     - 「物件參考未設定為物件的實例。  at Xamarin.VisualStudio.IOS.XamarinIOSPackage.Initialize()"
 

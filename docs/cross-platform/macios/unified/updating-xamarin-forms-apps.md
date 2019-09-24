@@ -48,7 +48,7 @@ _請遵循下列步驟來更新現有的 Xamarin. Forms 應用程式，以使用
 
 按一下 iOS 專案，使其已選取，然後選擇 [**專案] > 遷移至 [Xamarin] [Unified API ...** ]，並同意出現的警告訊息。
 
-![](updating-xamarin-forms-apps-images/beta-tool1.png "選擇 [專案] > 遷移至 Xamarin. iOS Unified API .並同意出現的警告訊息")
+![](updating-xamarin-forms-apps-images/beta-tool1.png "選擇 [專案] > 遷移至 Xamarin. iOS Unified API...並同意出現的警告訊息")
 
 這會自動：
 
