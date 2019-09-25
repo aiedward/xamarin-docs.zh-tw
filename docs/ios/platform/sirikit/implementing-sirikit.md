@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 40bea05c86e83a0b96ad35b49b25bdada89f4201
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 27bf22403c9411d300e67bfdaef4aa4dfe74f6e0
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769791"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250187"
 ---
 # <a name="implementing-sirikit-in-xamarinios"></a>在 Xamarin 中執行 SiriKit
 
@@ -66,6 +66,8 @@ SiriKit 是以擴充功能為基礎，不過，在將任何延伸模組新增至
 在範例應用程式 MonkeyChat 的情況下，資料模型和處理常式代碼（例如網路和資料庫存取）將會移至原生程式庫。
 
 請執行下列動作：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

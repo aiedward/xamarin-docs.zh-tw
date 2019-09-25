@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "69887915"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
@@ -86,7 +86,7 @@ XAML 剖析器也可讓`StaticExtension`類別，以縮寫成`x:Static`:
 </Label>
 ```
 
-這可以更進一步簡化, 但變更會引進一些新的語法:其中包含將`StaticExtension`類別和成員設定放在大括弧中。 產生的運算式設定為直接`FontSize`屬性：
+這可以更進一步簡化，但變更會引進一些新的語法：其中包含將`StaticExtension`類別和成員設定放在大括弧中。 產生的運算式設定為直接`FontSize`屬性：
 
 ```xaml
 <Label Text="Label No. 3"
@@ -143,7 +143,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 以下是執行範例：
 
-[![X:static 示範](consuming-images/staticdemo-small.png "X:static 示範")](consuming-images/staticdemo-large.png#lightbox "X:static 示範")
+[![X:Static 示範](consuming-images/staticdemo-small.png "X:Static 示範")](consuming-images/staticdemo-large.png#lightbox "x:Static 示範")
 
 <a name="reference" />
 
@@ -185,9 +185,9 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-兩者`x:Reference`運算式使用的縮寫的版本`ReferenceExtension`類別名稱，並消除`Name=`運算式的一部分。 在第一個範例中，`x:Reference`標記延伸模組會內嵌在`Binding`標記延伸。 請注意，`Source`和`StringFormat`設定會以逗號分隔。 以下是執行的程式：
+兩者`x:Reference`運算式使用的縮寫的版本`ReferenceExtension`類別名稱，並消除`Name=`運算式的一部分。 在第一個範例中，`x:Reference`標記延伸模組會內嵌在`Binding`標記延伸。 請注意，`Source`和`StringFormat`設定會以逗號分隔。 以下是程式執行情況：
 
-[![X:reference 示範](consuming-images/referencedemo-small.png "X:reference 示範")](consuming-images/referencedemo-large.png#lightbox "X:reference 示範")
+[![X:Reference 示範](consuming-images/referencedemo-small.png "X:Reference 示範")](consuming-images/referencedemo-large.png#lightbox "x:Reference 示範")
 
 <a name="type" />
 
@@ -242,7 +242,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 
 以下是中的 開啟主頁面**標記延伸**:
 
-[![主頁面](consuming-images/mainpage-small.png "主要頁面")](consuming-images/mainpage-large.png#lightbox "主頁面")
+[![主頁面](consuming-images/mainpage-small.png "主頁面")](consuming-images/mainpage-large.png#lightbox "主頁面")
 
 每個`CommandParameter`屬性設定為`x:Type`參考其中一個其他頁面的標記延伸。 `Command`屬性繫結至屬性，名為`NavigateCommand`。 這個屬性定義在`MainPage`程式碼後置檔案：
 
@@ -325,7 +325,7 @@ public partial class TypeDemoPage : ContentPage
 
 方法時執行`Button`按下之引數的新執行個體、 設定其`VerticalOptions`屬性，並將它加入`StackLayout`。 三個`Button`然後動態建立的檢視與共用 頁面的項目：
 
-[![X:type 示範](consuming-images/typedemo-small.png "X:type 示範")](consuming-images/typedemo-large.png#lightbox "X:type 示範")
+[![X:Type 示範](consuming-images/typedemo-small.png "X:Type 示範")](consuming-images/typedemo-large.png#lightbox "x:Type 示範")
 
 <a name="array" />
 
@@ -382,7 +382,7 @@ public partial class TypeDemoPage : ContentPage
 
 `ViewCell`建立一個簡單`BoxView`每個色彩項目：
 
-[![X:array 示範](consuming-images/arraydemo-small.png "X:array 示範")](consuming-images/arraydemo-large.png#lightbox "X:array 示範")
+[![X:Array 示範](consuming-images/arraydemo-small.png "X:Array 示範")](consuming-images/arraydemo-large.png#lightbox "x:Array 示範")
 
 有數種方式來指定個別`Color`此陣列中的項目。 您可以使用`x:Static`標記延伸模組：
 
@@ -453,9 +453,9 @@ public partial class TypeDemoPage : ContentPage
 
 然後您會發現其中一個`Label`項目，您想要在隱含的所有屬性設定`Style`除了`FontFamily`，您想要的預設值。 您可以定義另一個`Style`針對該目的，但更簡單的方法是直接設定`FontFamily`屬性的特定`Label`要`x:Null`中心 」 所示， `Label`。
 
-以下是執行的程式：
+以下是程式執行情況：
 
-[![X:null 示範](consuming-images/nulldemo-small.png "X:null 示範")](consuming-images/nulldemo-large.png#lightbox "X:null 示範")
+[![X:Null 示範](consuming-images/nulldemo-small.png "X:Null 示範")](consuming-images/nulldemo-large.png#lightbox "x:Null 示範")
 
 通知該四`Label`項目有襯線字型，但中心`Label`具有預設 sans serif 字型。
 
@@ -497,7 +497,7 @@ public partial class TypeDemoPage : ContentPage
 
 在此範例中，這三`OnPlatform`運算式使用的縮寫的版本`OnPlatformExtension`類別名稱。 三個`OnPlatform`標記延伸模組組[ `Color` ](xref:Xamarin.Forms.BoxView.Color)， [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)，並[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性[`BoxView` ](xref:Xamarin.Forms.BoxView) iOS、 Android 及 UWP 上的不同值。 標記延伸也提供預設值為未指定，同時不在平台上的這些屬性`Default=`運算式的一部分。 請注意，在以逗號分隔的標記延伸模組屬性所設定。
 
-以下是執行的程式：
+以下是程式執行情況：
 
 [![OnPlatform 示範](consuming-images/onplatformdemo-small.png "OnPlatform 示範")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform 示範")
 
@@ -535,18 +535,18 @@ public partial class TypeDemoPage : ContentPage
 
 在此範例中，這三`OnIdiom`運算式使用的縮寫的版本`OnIdiomExtension`類別名稱。 三個`OnIdiom`標記延伸模組組[ `Color` ](xref:Xamarin.Forms.BoxView.Color)， [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)，並[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性[`BoxView` ](xref:Xamarin.Forms.BoxView)電話、 平板電腦和桌上型電腦的習慣用語上的不同值。 標記延伸也提供預設值，這些屬性中未指定，同時避免慣用語`Default=`運算式的一部分。 請注意，在以逗號分隔的標記延伸模組屬性所設定。
 
-以下是執行的程式：
+以下是程式執行情況：
 
 [![OnIdiom 示範](consuming-images/onidiomdemo-small.png "OnIdiom 示範")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom 示範")
 
 ## <a name="datatemplate-markup-extension"></a>DataTemplate 標記延伸
 
-標記延伸可讓您將類型轉換[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)成。 `DataTemplate` `DataTemplateExtension`類別會支援, 其`TypeName`定義類型`string`為的屬性, 其會設定為要轉換成`DataTemplate`的類型名稱。 `TypeName`屬性是內容屬性`DataTemplateExtension`。 因此, 對於以大括弧表示的 XAML 標記運算式, 您可以消除`TypeName=`運算式的部分。
+標記延伸可讓您將類型轉換[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)成。 `DataTemplate` `DataTemplateExtension`類別會支援，其`TypeName`定義類型`string`為的屬性，其會設定為要轉換成`DataTemplate`的類型名稱。 `TypeName`屬性是內容屬性`DataTemplateExtension`。 因此，對於以大括弧表示的 XAML 標記運算式，您可以消除`TypeName=`運算式的部分。
 
 > [!NOTE]
 > XAML 剖析器允許`DataTemplateExtension`將類別縮寫為。 `DataTemplate`
 
-此標記延伸的一般用法是在 Shell 應用程式中, 如下列範例所示:
+此標記延伸的一般用法是在 Shell 應用程式中，如下列範例所示：
 
 ```xaml
 <ShellContent Title="Monkeys"
@@ -554,40 +554,40 @@ public partial class TypeDemoPage : ContentPage
               ContentTemplate="{DataTemplate views:MonkeysPage}" />
 ```
 
-在此範例中`MonkeysPage` , 會[`ContentPage`](xref:Xamarin.Forms.ContentPage)從[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)轉換成, `ShellContent.ContentTemplate`這會設定為屬性的值。 這可確保`MonkeysPage`只會在流覽至頁面時發生, 而不是在應用程式啟動時建立。
+在此範例中`MonkeysPage` ，會[`ContentPage`](xref:Xamarin.Forms.ContentPage)從[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)轉換成， `ShellContent.ContentTemplate`這會設定為屬性的值。 這可確保`MonkeysPage`只會在流覽至頁面時發生，而不是在應用程式啟動時建立。
 
-如需 Shell 應用程式的詳細資訊, 請參閱[Xamarin. Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
+如需 Shell 應用程式的詳細資訊，請參閱[Xamarin. Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
 
 ## <a name="fontimage-markup-extension"></a>FontImage 標記延伸
 
-標記延伸可讓您在任何可`ImageSource`顯示的視圖中顯示字型圖示。 `FontImage` 它會提供與`FontImageSource`類別相同的功能, 但具有更精確的標記法。
+標記延伸可讓您在任何可`ImageSource`顯示的視圖中顯示字型圖示。 `FontImage` 它會提供與`FontImageSource`類別相同的功能，但具有更精確的標記法。
 
-類別支援`FontImageExtension`標記延伸, 其定義下列屬性: `FontImage`
+類別支援`FontImageExtension`標記延伸，其定義下列屬性： `FontImage`
 
-- `FontFamily`類型`string`的, 字型圖示所屬的字型系列。
-- `Glyph`屬於類型`string`的 unicode 字元值 (字型圖示)。
-- `Color`類型`Color`的, 顯示字型圖示時要使用的色彩。
-- `Size`類型`double`的, 呈現的字型圖示的大小 (以與裝置無關的單位)。
+- `FontFamily`類型`string`的，字型圖示所屬的字型系列。
+- `Glyph`屬於類型`string`的 unicode 字元值（字型圖示）。
+- `Color`類型`Color`的，顯示字型圖示時要使用的色彩。
+- `Size`類型`double`的，呈現的字型圖示的大小（以與裝置無關的單位）。
 
 > [!NOTE]
 > XAML 剖析器允許`FontImageExtension`將類別縮寫為。 `FontImage`
 
 `Glyph`屬性是內容屬性`FontImageExtension`。 因此，對於 XAML 標記運算式以大括號表示，您可以排除`Glyph=`一部分的運算式，只要是第一個引數。
 
-[ **FontImage 示範**] 頁面會顯示如何使用`FontImage`標記延伸:
+[ **FontImage 示範**] 頁面會顯示如何使用`FontImage`標記延伸：
 
 ```xaml
 <Image BackgroundColor="#D1D1D1"
        Source="{FontImage &#xf30c;, FontFamily={OnPlatform iOS=Ionicons, Android=ionicons.ttf#}, Size=44}" />
 ```
 
-在此範例中, `FontImageExtension`類別名稱的縮寫版本是用來從[`Image`](xref:Xamarin.Forms.Image)中的 Ionicons 字型系列顯示 XBox 圖示。 運算式也會使用`OnPlatform`標記延伸, 在 iOS 和 Android 上指定不同`FontFamily`的屬性值。 此外, 運算式的`Glyph=`部分會被排除, 而設定的標記延伸屬性會以逗號分隔。 請注意, 當圖示的 unicode 字元是`\uf30c`時, 它必須在 XAML 中以轉義, 因此會變成。 `&#xf30c;`
+在此範例中， `FontImageExtension`類別名稱的縮寫版本是用來從[`Image`](xref:Xamarin.Forms.Image)中的 Ionicons 字型系列顯示 XBox 圖示。 運算式也會使用`OnPlatform`標記延伸，在 iOS 和 Android 上指定不同`FontFamily`的屬性值。 此外，運算式的`Glyph=`部分會被排除，而設定的標記延伸屬性會以逗號分隔。 請注意，當圖示的 unicode 字元是`\uf30c`時，它必須在 XAML 中以轉義，因此會變成。 `&#xf30c;`
 
 以下是程式執行情況：
 
-[ ![FontImage 標記延伸](consuming-images/fontimagedemo.png "FontImage 示範")的螢幕擷取畫面](consuming-images/fontimagedemo-large.png#lightbox "FontImage 示範")
+[![FontImage 標記延伸的螢幕擷取畫面](consuming-images/fontimagedemo.png "FontImage 示範")](consuming-images/fontimagedemo-large.png#lightbox "FontImage 示範")
 
-如需在`FontImageSource`物件中指定字型圖示資料來顯示字型圖示的詳細資訊, 請參閱[顯示字型圖示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
+如需在`FontImageSource`物件中指定字型圖示資料來顯示字型圖示的詳細資訊，請參閱[顯示字型圖示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
 ## <a name="define-your-own-markup-extensions"></a>定義您自己的標記延伸
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: a56405aaed84be5015e5d58ef9a13ba8e270ea58
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3868b2a35894cdcd7a11c626268307338744ecb4
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757542"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250056"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>取得 Google Maps API 金鑰
 
@@ -28,6 +28,8 @@ ms.locfileid: "70757542"
 
 若要向 Google 要求 Maps API 金鑰，您必須知道用來簽署應用程式之金鑰儲存區的 SHA-1 指紋。
 一般來說，這表示您必須判斷 debug 金鑰存放區的 SHA-1 指紋，然後才是用來簽署應用程式以供發行之金鑰儲存區的 SHA-1 指紋。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

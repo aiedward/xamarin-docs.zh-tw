@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/28/2017
 ms.openlocfilehash: bbeab6a6ab0d4a9d0e3a962240317fc0d54f9e25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68656647"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin. Forms Web 服務簡介
@@ -38,7 +38,7 @@ _本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin
 
 ## <a name="understand-the-application-anatomy"></a>瞭解應用程式的剖析
 
-每個範例應用程式的共用程式碼專案都包含三個主要資料夾:
+每個範例應用程式的共用程式碼專案都包含三個主要資料夾：
 
 |資料夾|用途|
 |--- |--- |
@@ -46,7 +46,7 @@ _本主題提供逐步解說示範如何與不同的 web 服務通訊的 Xamarin
 |模型|包含資料模型類別，應用程式。 這包括最少`TodoItem`類別，建立模型資料的應用程式所使用的單一項目。 資料夾也可以包含任何其他的類別，用於模型的使用者資料。|
 |檢視|包含應用程式的網頁。 這通常是組成`TodoListPage`和`TodoItemPage`類別，以及任何其他類別，用來進行驗證。|
 
-每個應用程式的共用程式碼專案也包含一些重要的檔案:
+每個應用程式的共用程式碼專案也包含一些重要的檔案：
 
 |檔案|用途|
 |--- |--- |
@@ -93,6 +93,6 @@ public class TodoItem
 
 ## <a name="related-links"></a>相關連結
 
-- [.ASMX (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
-- [WCF (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
-- [REST (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+- [.ASMX （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+- [WCF （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [REST （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

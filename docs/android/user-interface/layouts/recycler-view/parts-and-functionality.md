@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
-ms.openlocfilehash: bea058a1f275d6f02fe4cbdf70f8e47a11d1cf8e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7aa2cae4c8ca1ef9bb0412a4a62dc619af97b57f
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764114"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249766"
 ---
 # <a name="recyclerview-parts-and-functionality"></a>RecyclerView 元件和功能
 
@@ -52,7 +52,7 @@ ms.locfileid: "70764114"
 
 <a name="recycling" />
 
-### <a name="how-view-recycling-works"></a>視圖回收的運作方式
+## <a name="how-view-recycling-works"></a>視圖回收的運作方式
 
 `RecyclerView`不會為數據源中的每個專案設定項目視圖。 相反地，它只會配置適合螢幕的專案數，並在使用者滾動時重複使用這些專案版面配置。 當此視圖首次向外滾動時，會經歷下圖所示的回收程式：
 
@@ -73,7 +73,7 @@ ms.locfileid: "70764114"
 
 除了專案視圖的重複使用之外， `RecyclerView`也會使用另一個效率優化： view 持有者。 *視圖預留位置*是快取視圖參考的簡單類別。 每次介面卡擴大專案配置檔案時，它也會建立對應的視圖持有者。 視圖持有者會`FindViewById`使用來取得放大專案配置檔案內的視圖參考。 這些參考是用來在每次回收配置以顯示新資料時，將新資料載入至 views。
 
-### <a name="the-layout-manager"></a>版面建構管理員
+## <a name="the-layout-manager"></a>版面建構管理員
 
 版面建構管理員會負責定位`RecyclerView`顯示中的專案; 它會決定呈現類型（清單或方格）、方向（專案是否以垂直或水準方式顯示），以及應該顯示的方向專案（以一般順序或反向順序）。 版面建構管理員也會負責計算**RecycleView**顯示中每個專案的大小和位置。
 
@@ -92,7 +92,7 @@ ms.locfileid: "70764114"
 
 如需版面建構管理員的詳細資訊，請參閱[RecyclerView. LayoutManager 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.LayoutManager.html)。
 
-### <a name="the-view-holder"></a>視圖持有者
+## <a name="the-view-holder"></a>視圖持有者
 
 視圖預留位置是您針對快取視圖參考所定義的類別。 介面卡會使用這些視圖參考，將每個視圖系結至其內容。 中的`RecyclerView`每個專案都有相關聯的「視圖預留位置」實例，可快取該專案的視圖參考。 若要建立視圖持有者，請使用下列步驟來定義類別，以保存每個專案的確切視圖集：
 
@@ -103,7 +103,7 @@ ms.locfileid: "70764114"
 [基本 RecyclerView 範例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)中會`ViewHolder`顯示執行的詳細範例。
 如需的詳細`RecyclerView.ViewHolder`資訊，請參閱[RecyclerView. ViewHolder 類別參考](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)。
 
-### <a name="the-adapter"></a>介面卡
+## <a name="the-adapter"></a>介面卡
 
 大部分的`RecyclerView`整合程式碼「繁重」都是在介面卡中進行。 `RecyclerView`要求您提供衍生自`RecyclerView.Adapter`的介面卡來存取資料來源，並在每個專案中填入資料來源的內容。
 因為資料來源是應用程式特定的，所以您必須執行瞭解如何存取資料的介面卡功能。 介面卡會從資料來源中提取資訊，並將其載入集合中`RecyclerView`的每個專案。
@@ -123,9 +123,9 @@ ms.locfileid: "70764114"
 
 - **`ItemCount`** &ndash;傳回資料來源中的專案數。
 
-當版面建構管理員在中`RecyclerView`定位專案時，會呼叫這些方法。 
+當版面建構管理員在中`RecyclerView`定位專案時，會呼叫這些方法。
 
-### <a name="notifying-recyclerview-of-data-changes"></a>通知 RecyclerView 資料變更
+## <a name="notifying-recyclerview-of-data-changes"></a>通知 RecyclerView 資料變更
 
 `RecyclerView`當其資料來源的內容變更時，不會自動更新其顯示;當資料集發生`RecyclerView`變更時，介面卡必須通知。 資料集可以透過許多方式變更;例如，專案內的內容可能會變更，或資料的整體結構可能會改變。
 `RecyclerView.Adapter`提供一些您可以呼叫的方法，以便`RecyclerView`以最有效率的方式回應資料變更：

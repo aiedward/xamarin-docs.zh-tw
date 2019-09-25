@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 01/31/2018
-ms.openlocfilehash: fa772add96eb17b0a80470210f42b4d9df220a9c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768930"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250145"
 ---
 # <a name="ios-designer-basics"></a>iOS 設計工具基本概念
 
@@ -35,6 +35,8 @@ IOS 設計工具可在 Windows 上的 Visual Studio for Mac 和 Visual Studio 20
 IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用者介面。 如分鏡腳本[簡介](~/ios/user-interface/storyboards/index.md)指南中所述，分鏡腳本說明組成應用程式的畫面（視圖控制器）、放置在這些視圖控制器上的介面專案（views），以及應用程式的整體導覽流程。 
 
 View 控制器有兩個部分： iOS 設計工具中的視覺標記法和相關C#聯的類別：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -296,7 +298,7 @@ IOS 設計工具有六個主要區段：
 
 請注意，選取裝置和方向只會變更 iOS 設計工具預覽設計的方式。 不論目前的選取範圍為何，新加入的條件約束都會套用到所有裝置和方向，除非已使用 [**編輯特性**] 按鈕來指定其他專案。
 
-[啟用](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)[[大小] 類別](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)時，[**編輯特性**] 按鈕會出現在展開的底部工具列中。  按一下 [**編輯特性**] 按鈕會顯示根據所選裝置和方向所代表的大小類別來建立介面變化的選項。 請考量下列範例：
+[啟用](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)[[大小] 類別](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)時，[**編輯特性**] 按鈕會出現在展開的底部工具列中。  按一下 [**編輯特性**] 按鈕會顯示根據所選裝置和方向所代表的大小類別來建立介面變化的選項。 請參考下列範例：
 
 - 如果選取 [ **iPhone SE**  / 直向 **]，則**popover 會提供選項來為精簡寬度、一般高度大小類別建立介面變化。 
 - 若已選取**iPad Pro 9.7**  / 「**橫向** / **全螢幕**」，則 popover 會提供選項來建立一般寬度、一般高度大小類別的介面變化。

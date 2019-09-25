@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/15/2017
 ms.openlocfilehash: 99604b59e5557ba5a7aa3d5ba61bc1bff414f000
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70770329"
 ---
 # <a name="images-in-xamarinmac"></a>Xamarin. Mac 中的影像
@@ -331,7 +331,7 @@ view.AddSubview (view.TextField);
 view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 ```
 
-範例輸出︰
+範例輸出：
 
 [![在應用程式中顯示影像的範例](image-images/tables01.png "在應用程式中顯示影像的範例")](image-images/tables01-large.png#lightbox)
 
@@ -434,7 +434,7 @@ view.AddSubview (view.TextField);
 view.TextField.AutoresizingMask = NSViewResizingMask.WidthSizable;
 ```
 
-範例輸出︰
+範例輸出：
 
 [![在大綱視圖中顯示的影像範例](image-images/outline01.png "在大綱視圖中顯示的影像範例")](image-images/outline01-large.png#lightbox)
 

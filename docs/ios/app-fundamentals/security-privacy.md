@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/16/2017
 ms.openlocfilehash: 7847148551c20dbcf49bcc263bdc50716a6ef14e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70283177"
 ---
 # <a name="ios-security-and-privacy-features"></a>iOS 安全性和隱私權功能
@@ -26,10 +26,10 @@ Apple 在 iOS 10 （及更新版本）中提供了許多安全性和隱私權方
 
 IOS 10 中的安全性和隱私權已進行下列一般變更：
 
-- Common Data Security 架構（CDSA） API 已被取代，應取代為 SecKey API 以產生非對稱金鑰。
+- Common Data Security 架構 (CDSA) API 已被取代, 應取代為 SecKey API 以產生非對稱金鑰。
 - 新`NSAllowsArbitraryLoadsInWebContent`的金鑰可以新增至應用程式的**plist**檔案，並允許在其他應用程式的 Apple Transport Security （ATS）保護仍然啟用時，正確載入網頁。 如需詳細資訊，請參閱我們的[應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)檔。
-- 由於 iOS 10 和 macOS Sierra 中的新剪貼簿可讓使用者在裝置之間進行複製和貼上，因此 API 已擴充為允許將剪貼簿限制為特定裝置，並在指定的時間點自動將其加上時間戳記。 此外，命名為 pasteboards 不再保存，且應取代為共用的存放夾容器。
-- 針對所有 SSL/TLS 連線，現在預設會停用 RC4 對稱式加密。 此外，安全傳輸 API 已不再支援 SSLv3，建議開發人員儘快停止使用 SHA-1 和3DES 密碼編譯。
+- 由於 iOS 10 和 macOS Sierra 中的新剪貼簿可讓使用者在裝置之間進行複製和貼上, 因此 API 已擴充為允許將剪貼簿限制為特定裝置, 並在指定的時間點自動將其加上時間戳記。 此外, 命名為 pasteboards 不再保存, 且應取代為共用的存放夾容器。
+- 針對所有 SSL/TLS 連線, 現在預設會停用 RC4 對稱式加密。 此外，安全傳輸 API 已不再支援 SSLv3，建議開發人員儘快停止使用 SHA-1 和3DES 密碼編譯。
 
 <a name="Accessing-Private-User-Data" />
 

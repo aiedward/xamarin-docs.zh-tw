@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/03/2018
-ms.openlocfilehash: 8bca2b47212b9effe637dcd2e116630579609b39
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cd6458b7d27a50744839fff57b4031943193d7f7
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769408"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250107"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin 中的 Advanced user 通知
 
@@ -162,6 +162,8 @@ IOS 10 中的通知支援影像的媒體附件（靜態和 Gif）、音訊或影
 ### <a name="adding-a-notification-content-extension"></a>新增通知內容延伸模組
 
 若要在 Xamarin iOS 應用程式中執行自訂使用者通知 UI，請執行下列動作：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

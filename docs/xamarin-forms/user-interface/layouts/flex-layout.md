@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
 ms.openlocfilehash: 187befd88c115133a92aa90a711438e7754518d5
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68648809"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.Forms FlexLayout
@@ -92,7 +92,7 @@ Xamarin.Forms [ `FlexLayout` ](xref:Xamarin.Forms.FlexLayout)是 Xamarin.Forms 3
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>使用 FlexLayout 包裝項目
 
-**相片包裝** 頁 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例會示範如何`FlexLayout`可以換行到額外的資料列或資料行及其子系。 XAML 檔案會具現化`FlexLayout`並指派它的兩個屬性：
+**相片包裝** 頁 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)**  範例會示範如何`FlexLayout`可以換行到額外的資料列或資料行及其子系。 XAML 檔案會具現化`FlexLayout`並指派它的兩個屬性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -388,7 +388,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 當程式啟動時，五`Picker`檢視會顯示這些五的預設值`FlexLayout`屬性。 `FlexLayout`螢幕底部包含三個子系：
 
-[![實驗頁面:預設](flex-layout-images/ExperimentDefault.png "實驗頁面-預設值")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
+[![實驗頁面：預設](flex-layout-images/ExperimentDefault.png "實驗頁面-預設值")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
 每個`Label`檢視有所配置的空間會顯示灰色背景`Label`內`FlexLayout`。 背景的`FlexLayout`本身是艾莉斯藍。 在左邊和右邊的小邊界除外，它就會佔用整個下方頁面的區域。
 
@@ -407,7 +407,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 以下是**實驗**（從左到右） 顯示頁面`Row`方向`Column`方向和`ColumnReverse`方向：
 
-[![實驗頁面:](flex-layout-images/ExperimentDirection.png "實驗頁面方向的")方向](flex-layout-images/ExperimentDirection-Large.png#lightbox)
+[![實驗頁面：](flex-layout-images/ExperimentDirection.png "實驗頁面方向的")方向](flex-layout-images/ExperimentDirection-Large.png#lightbox)
 
 請注意，`Reverse`選項，啟動在右方或下方的項目。
 
@@ -423,7 +423,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 從左到右，顯示這些畫面`NoWrap`，`Wrap`和`Reverse`12 的子系的選項：
 
-[![實驗頁面:包裝](flex-layout-images/ExperimentWrap.png "實驗頁面環繞")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
+[![實驗頁面：包裝](flex-layout-images/ExperimentWrap.png "實驗頁面環繞")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
 當`Wrap`屬性設定為`NoWrap`主座標軸會受到限制 （如同這個程式中），以及主座標軸不是寬度或高度不足以容納所有的子系，`FlexLayout`嘗試縮小項目，為 iOS 螢幕擷取畫面示範。 您可以控制將項目的 shrinkness [ `Shrink` ](#shrink)附加可繫結的屬性。
 
@@ -442,7 +442,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 這個屬性會指定如何將項目間距主軸，也就是在此範例中的水平軸上：
 
-[![實驗頁面:將實驗]頁面的內容對齊(flex-layout-images/ExperimentJustifyContent.png "-論證內容的合理性")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
+[![實驗頁面：將實驗]頁面的內容對齊(flex-layout-images/ExperimentJustifyContent.png "-論證內容的合理性")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
 在所有三個螢幕擷取畫面`Wrap`屬性設定為`Wrap`。 `Start`預設會顯示在 Android 上的螢幕擷取畫面。 IOS 螢幕擷取畫面這裡顯示`Center`選項： 所有項目會移至中央。 三個其他選項以文字為開頭`Space`配置額外的項目所未佔用的空間。 `SpaceBetween` 配置的空間項目; 之間的平均`SpaceAround` puts 等於每個項目，周圍的空間時`SpaceEvenly`puts 等於之間每個項目，第一個項目之前和最後一個資料列上的項目之後的空間。
 
@@ -459,7 +459,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 這是兩個屬性其中之一 (其他正在[ `AlignContent` ](#align-content))，表示子系上的交叉軸對齊的方式。 在每一列中，子系是 （如先前的螢幕擷取畫面所示），便會自動縮放，或對齊開始、 中心或結尾的每個項目，如下列的三個螢幕擷取畫面所示：
 
-[![實驗頁面:將專案]對齊(flex-layout-images/ExperimentAlignItems.png "實驗頁面-對齊專案")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
+[![實驗頁面：將專案]對齊(flex-layout-images/ExperimentAlignItems.png "實驗頁面-對齊專案")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 在 iOS 螢幕擷取畫面中，所有子系的頂端對齊。 在 Android 螢幕擷取畫面中，項目是垂直置中對齊的最高的子系為基礎。 在 UWP 螢幕擷取畫面中，會對齊所有項目的下的對齊。
 
@@ -481,11 +481,11 @@ public partial class PhotoWrappingPage : ContentPage
 
 像是`AlignItems`，則`AlignContent`屬性也會對齊交叉軸上的子系，但會影響整個資料列或資料行：
 
-[![實驗頁面:將內容]對齊(flex-layout-images/ExperimentAlignContent.png "實驗頁面-對齊內容")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
+[![實驗頁面：將內容]對齊(flex-layout-images/ExperimentAlignContent.png "實驗頁面-對齊內容")](flex-layout-images/ExperimentAlignContent-Large.png#lightbox)
 
 IOS 螢幕擷取畫面，這兩個資料列會在頂端;它們在 center，在 Android 的螢幕擷取畫面也在 UWP 螢幕擷取畫面底部。 資料列也以各種方式設定間距：
 
-[![實驗頁面:對齊內容 2](flex-layout-images/ExperimentAlignContent2.png "實驗頁面-對齊內容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
+[![實驗頁面：對齊內容 2](flex-layout-images/ExperimentAlignContent2.png "實驗頁面-對齊內容 2")](flex-layout-images/ExperimentAlignContent2-Large.png#lightbox)
 
 `AlignContent`只有一個資料列或資料行時，沒有任何作用。
 
@@ -575,7 +575,7 @@ XAML，在中，您可以使用數字以裝置獨立單位大小：
 
 [![基礎實驗頁面](flex-layout-images/BasisExperiment.png "基礎實驗頁面")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-在左側的 iOS 螢幕擷取畫面顯示兩個`Label`以裝置獨立單位提供高度的項目。 Android 的畫面會顯示它們提供高度的一小部分的總高度`FlexLayout`。 如果設定`FlexLayout`為 100%, 則子系是的高度, 而會換行至下一個資料行, 並佔用該資料行的整個高度, 如同 UWP 螢幕擷取畫面所示: `Basis`它看起來就像是在資料列中排列五個子系, 但實際上是以五個數據行排列。
+在左側的 iOS 螢幕擷取畫面顯示兩個`Label`以裝置獨立單位提供高度的項目。 Android 的畫面會顯示它們提供高度的一小部分的總高度`FlexLayout`。 如果設定`FlexLayout`為 100%，則子系是的高度，而會換行至下一個資料行，並佔用該資料行的整個高度，如同 UWP 螢幕擷取畫面所示： `Basis`它看起來就像是在資料列中排列五個子系，但實際上是以五個數據行排列。
 
 ### <a name="the-grow-property"></a>成長屬性
 

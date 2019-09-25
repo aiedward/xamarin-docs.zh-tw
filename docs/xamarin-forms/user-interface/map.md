@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 242673efb38931eb678432a28f24db0ad9b8cb7d
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70228225"
 ---
 # <a name="xamarinforms-map"></a>Xamarin.Forms 對應
@@ -25,7 +25,7 @@ Xamarin.Forms.Maps 會使用原生的對應 Api，每個平台。 這可為使�
 
 地圖控制項用於[MapsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)範例，如下所示。
 
- [![MobileCRM 範例中的地圖](map-images/maps-zoom-sml.png "地圖控制項範例")](map-images/maps-zoom.png#lightbox "地圖控制項範例")
+ [![MobileCRM 範例中的對應](map-images/maps-zoom-sml.png "地圖控制項範例")](map-images/maps-zoom.png#lightbox "地圖控制項範例")
 
 地圖功能可以藉由建立進一步強化[對應自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)。
 
@@ -189,7 +189,7 @@ map.MapType = MapType.Street;
 - **MapSpan.FromCenterAndRadius()** -靜態方法，以建立來自`Position`並指定`Distance`。
 - **新的 MapSpan （)** -使用的建構函式`Position`和程度的緯度和經度來顯示。
 
-`MoveToRegion` Map 類別上的方法可以再用來變更對應的位置或縮放層級。 若要變更地圖的縮放層級但是不會改變位置，建立新`MapSpan`使用目前的位置，從`VisibleRegion.Center`地圖控制項的屬性。 `Slider`可以用來控制地圖縮放比例, 如下所示 (不過, 直接在地圖控制項中縮放, 目前無法更新滑杆的值):
+`MoveToRegion` Map 類別上的方法可以再用來變更對應的位置或縮放層級。 若要變更地圖的縮放層級但是不會改變位置，建立新`MapSpan`使用目前的位置，從`VisibleRegion.Center`地圖控制項的屬性。 `Slider`可以用來控制地圖縮放比例，如下所示（不過，直接在地圖控制項中縮放，目前無法更新滑杆的值）：
 
 ```csharp
 Slider slider = new Slider (1, 18, 1);
@@ -201,9 +201,9 @@ slider.ValueChanged += (sender, e) =>
 };
 ```
 
-[![包含縮放地圖](map-images/maps-zoom-sml.png "地圖控制項縮放")](map-images/maps-zoom.png#lightbox "地圖控制項縮放")
+[![具有 zoom 的地圖](map-images/maps-zoom-sml.png "地圖控制項縮放")](map-images/maps-zoom.png#lightbox "地圖控制項縮放")
 
-此外, [`Map`](xref:Xamarin.Forms.Maps.Map)類別`MoveToLastRegionOnLayoutChange`具有類型`bool`的屬性, 它是由可系結的屬性所支援。 根據預設, 此屬性`true`為, 這表示顯示的對應區域會在配置變更發生時, 從其目前的區域移至其先前設定的區域, 例如裝置旋轉。 當這個屬性設定為`false`時, 顯示的對應區域將會在版面配置變更時保留在中央。 下列範例會示範如何設定此屬性:
+此外， [`Map`](xref:Xamarin.Forms.Maps.Map)類別`MoveToLastRegionOnLayoutChange`具有類型`bool`的屬性，它是由可系結的屬性所支援。 根據預設，此屬性`true`為，這表示顯示的對應區域會在配置變更發生時，從其目前的區域移至其先前設定的區域，例如裝置旋轉。 當這個屬性設定為`false`時，顯示的對應區域將會在版面配置變更時保留在中央。 下列範例會示範如何設定此屬性：
 
 ```csharp
 map.MoveToLastRegionOnLayoutChange = false;
@@ -324,7 +324,7 @@ MyMap.MoveToRegion(
 
 下列螢幕擷取畫面顯示[`Map`](xref:Xamarin.Forms.Maps.Map)使用資料系結[`Pin`](xref:Xamarin.Forms.Maps.Pin)顯示集合:
 
-[ ![IOS 和 Android 上具有資料系結圖釘的對應螢幕擷取畫面](map-images/pins-itemssource.png "與資料")]系結的釘選圖(map-images/pins-itemssource-large.png#lightbox "具有資料系結圖釘的對應")
+[![IOS 和 Android 上具有資料系結圖釘的對應螢幕擷取畫面](map-images/pins-itemssource.png "具有資料系結圖釘的對應")](map-images/pins-itemssource-large.png#lightbox "具有資料系結圖釘的對應")
 
 ### <a name="choose-item-appearance-at-runtime"></a>在執行時間選擇專案外觀
 

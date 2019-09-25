@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 09/05/2018
 ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70761412"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Xamarin. Android Designer 的基本概念
@@ -222,7 +222,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 Android Designer 支援對**Design Surface**上的特定屬性進行直接編輯（因此，您不需要在屬性清單中搜尋這些屬性）。 可以直接編輯的屬性包括文字、邊界和大小。
 
-### <a name="text"></a>文字
+### <a name="text"></a>Text
 
 某些 widget （例如`Button`和`TextView`）的文字屬性可以直接在**Design Surface**上編輯。 按兩下 widget 會使其進入編輯模式，如下所示：
 
@@ -446,7 +446,7 @@ Design Surface 支援透過數個控制項縮放，如下所示：
 
 Android Designer 支援對 Design Surface 上的特定屬性進行直接編輯（因此，您不需要在屬性清單中搜尋這些屬性）。 可以直接編輯的屬性包括文字、邊界和大小。
 
-### <a name="text"></a>文字
+### <a name="text"></a>Text
 
 某些 widget （例如`Button`和`TextView`）的文字屬性可以直接在 Design Surface 上編輯。 按兩下 widget 會使其進入編輯模式，如下所示：
 

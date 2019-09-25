@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "68652317"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin. Forms 和 Azure 認知服務簡介
@@ -52,7 +52,7 @@ _Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由
 
 ## <a name="understand-the-application-anatomy"></a>瞭解應用程式的剖析
 
-範例應用程式的共用程式碼專案包含五個主要資料夾:
+範例應用程式的共用程式碼專案包含五個主要資料夾：
 
 |資料夾|用途|
 |--- |--- |
@@ -62,7 +62,7 @@ _Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由
 |公用程式|包含`Timer`類別，這將由`AuthenticationService`每隔 9 分鐘更新的 JWT 存取權杖的類別。|
 |檢視|包含應用程式的網頁。|
 
-共用程式碼專案也包含一些重要的檔案:
+共用程式碼專案也包含一些重要的檔案：
 
 |檔案|用途|
 |--- |--- |
@@ -107,7 +107,7 @@ public class TodoItem
 
 ### <a name="platform-project-implementations"></a>平臺專案的實現
 
-共用`Services`程式碼專案中的資料夾`IFileHelper`包含和`IAudioRecorderService`介面, `DependencyService`類別會使用這些介面來尋找在平臺專案中執行介面的類別。
+共用`Services`程式碼專案中的資料夾`IFileHelper`包含和`IAudioRecorderService`介面， `DependencyService`類別會使用這些介面來尋找在平臺專案中執行介面的類別。
 
 `IFileHelper`介面由實作`FileHelper`每個平台專案中的類別。 此類別包含單一方法`GetLocalFilePath`，它會傳回本機檔案路徑來儲存 SQLite 資料庫。
 

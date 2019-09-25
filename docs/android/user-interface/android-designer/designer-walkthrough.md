@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/25/2018
-ms.openlocfilehash: a4867ef779e55d16ef49b2f8ad0dc5bd0ec7024f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f696e8159d929bf41596c4dc9498e682e361f412
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761446"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249992"
 ---
 # <a name="using-the-xamarinandroid-designer"></a>使用 Xamarin. Android Designer
 
@@ -31,6 +31,8 @@ Android 使用者介面可以使用 XML 檔案以宣告方式建立，或藉由�
 ## <a name="walkthrough"></a>逐步解說
 
 本逐步解說的目的是要使用 Android Designer 來建立範例色彩瀏覽器應用程式的使用者介面。 [色彩瀏覽器] 應用程式會顯示色彩、其名稱和 RGB 值的清單。 您將瞭解如何將 widget 新增至**Design Surface** ，以及如何以視覺化方式配置這些小工具。 之後，您將瞭解如何在**Design Surface**上以互動方式修改 widget，或使用設計工具的 [**屬性**] 窗格。 最後，您會看到在裝置或模擬器上執行應用程式時，設計的外觀。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

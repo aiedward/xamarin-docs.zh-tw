@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2017
-ms.openlocfilehash: ca782e57964adadd85412030db2247f0de690a6b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 37f2942c97f7604fbd72a6dd38de518d3668ee9e
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769658"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250127"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的訊息應用程式延伸模組基本概念
 
@@ -114,6 +114,8 @@ Apple 建議您針對各種不同的彩色背景（例如白色、黑色、紅�
 5. 允許應用程式內購買，讓使用者可以從應用程式內購買更多貼紙。
 
 若要建立自訂的不乾膠功能體驗，請執行下列動作：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 

@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 798dd1b5df2ea05eb428c9465e996d606c22009b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281202"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249780"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平臺應用程式案例研究：Tasky
 
@@ -103,11 +103,11 @@ Tasky 可攜性會使用可移植的類別庫策略來共用通用程式碼。 �
 
  <a name="References" />
 
-### <a name="references"></a>參考
+### <a name="references"></a>reference
 
 可移植的類別庫必須可在多個平臺上使用，而且各有不同的平臺和架構功能支援層級。 因此，可以使用的套件和架構程式庫有一些限制。 例如，Xamarin 不支援 c # `dynamic`關鍵字，因此可移植的類別庫不能使用相依于動態程式碼的任何套件，即使這類程式碼可以在 Android 上運作也一樣。 Visual Studio for Mac 將會讓您無法新增不相容的套件和參考，但您會想要保留限制以避免日後發生意外。
 
-注意:您會看到您的專案參考您尚未使用的架構程式庫。 這些參考會納入為 Xamarin 專案範本的一部分。 當應用程式進行編譯時，連結進程將會移除未參考的程式`System.Xml`代碼，因此即使已被參考，也不會包含在最終的應用程式中，因為我們不會使用任何 Xml 函數。
+注意：您會看到您的專案參考您尚未使用的架構程式庫。 這些參考會納入為 Xamarin 專案範本的一部分。 當應用程式進行編譯時，連結進程將會移除未參考的程式`System.Xml`代碼，因此即使已被參考，也不會包含在最終的應用程式中，因為我們不會使用任何 Xml 函數。
 
  <a name="Data_Layer_(DL)" />
 
@@ -263,7 +263,7 @@ path>）、"/Documents/TaskDB.db3" （適用于 Android），或僅針對 Window
 
  <a name="References" />
 
-### <a name="references"></a>參考
+### <a name="references"></a>reference
 
 IOS 應用程式參考平臺特定的 SDK 程式庫–例如 [Xamarin] 和 [MonoTouch]。對話方塊-1。
 
@@ -367,7 +367,7 @@ Tasky 會`MonoTouch.Dialog`使用的反映 API 來顯示畫面，因此不會執
 
  <a name="References" />
 
-### <a name="references"></a>參考
+### <a name="references"></a>reference
 
 Android 應用程式專案必須參考平臺特定的 Xamarin. Android 元件，才能從 Android SDK 存取類別。
 
@@ -426,7 +426,7 @@ PCL 程式庫的所有參考都是透過`TaskItemManager`類別。
 
  <a name="References" />
 
-### <a name="references"></a>參考
+### <a name="references"></a>reference
 
 平臺特定專案必須參考所需的平臺特定程式庫（例如`Microsoft.Phone`和`System.Windows`），才能建立有效的 Windows Phone 應用程式。
 
@@ -475,7 +475,7 @@ MainPage 類別會使用`TaskListViewModel` ，以使用 XAML 的資料系結功
 
  <a name="iOS" />
 
-#### <a name="ios"></a>iOS
+### <a name="ios"></a>iOS
 
 應用程式會使用 iOS 標準使用者介面設計，例如定位在導覽列中的 [新增] 按鈕，並使用內建的**加號（+）** 圖示。 它也會使用預設`UINavigationController`的 [返回] 按鈕行為，並支援資料表中的「滑動到刪除」。
 
@@ -483,7 +483,7 @@ MainPage 類別會使用`TaskListViewModel` ，以使用 XAML 的資料系結功
 
  <a name="Android" />
 
-#### <a name="android"></a>Android
+### <a name="android"></a>Android
 
 Android 應用程式會使用內建控制項，包括需要顯示「滴答」的資料列內建版面配置。 除了螢幕上的 [上一頁] 按鈕，也支援硬體/系統返回行為。
 
@@ -491,7 +491,7 @@ Android 應用程式會使用內建控制項，包括需要顯示「滴答」的
 
  <a name="Windows_Phone" />
 
-#### <a name="windows-phone"></a>Windows Phone
+### <a name="windows-phone"></a>Windows Phone
 
 Windows Phone 應用程式會使用標準版面配置，在畫面底部填入應用程式行，而不是頂端的導覽列。
 

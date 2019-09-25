@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/21/2018
-ms.openlocfilehash: 6e2e4cd854e60f6147104b6b1361d0ab7b234370
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fba49e21ac75ec1ebb00614f3891bebaa57a3ed5
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755811"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249755"
 ---
 # <a name="understanding-android-api-levels"></a>了解 Android API 層級
 
@@ -33,6 +33,8 @@ Xamarin 會公開三個 Android API 層級專案設定：
 > [!NOTE]
 > 從2018年8月開始，Google Play 主控台將會要求新的應用程式以 API 層級26（Android 8.0）或更高版本為目標。
 自2018年11月起，現有的應用程式將需要以 API 層級26或更新版本為目標。 如需詳細資訊，請參閱 [ 改善應用程式安全性和效能，多年來解決的 Google Play 上](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html)。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

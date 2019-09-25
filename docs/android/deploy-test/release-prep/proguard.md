@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: e5c8e02397e778cf3e71a0c8b4aa544074521cac
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b85289d9dbd60d5ee0238540e67773ed9085b672
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755943"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249961"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -313,6 +313,8 @@ Unknown option '-keep' in line 1 of file 'proguard.cfg'
 ```
 
 此問題通常是在 Windows 上發生，原因是 `.cfg` 檔案的編碼錯誤。 ProGuard 無法處理可能會以文字檔呈現的「位元組順序標記」(BOM)。 如果有 BOM 存在，ProGuard 會隨即結束並出現上述錯誤。 
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

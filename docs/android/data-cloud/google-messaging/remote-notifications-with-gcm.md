@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 05/02/2019
-ms.openlocfilehash: 813bb59cf11f35f69620c30e8ba12281df08df75
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a59f824e1d97966d8d0af92bc9bbcc8d80fcfa4d
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754509"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249920"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google 雲端通訊的遠端通知
 
@@ -116,7 +116,7 @@ Android 應用程式必須先設定下列許可權，才能接收來自 Google �
 </manifest>
 ```
 
-在上述 XML 中，將*YOUR_PACKAGE_NAME*變更為用戶端應用程式專案的套件名稱。 例如： `com.xamarin.gcmexample` 。 
+在上述 XML 中，將*YOUR_PACKAGE_NAME*變更為用戶端應用程式專案的套件名稱。 例如，`com.xamarin.gcmexample`。 
 
 ### <a name="check-for-google-play-services"></a>檢查是否有 Google Play Services
 
@@ -312,7 +312,7 @@ public RegistrationIntentService() : base ("RegistrationIntentService") { }
 
 的核心功能`RegistrationIntentService`位於`OnHandleIntent`方法中。 讓我們逐步解說這段程式碼，以瞭解它如何向 GCM 註冊應用程式。
 
-##### <a name="request-a-registration-token"></a>要求註冊權杖
+#### <a name="request-a-registration-token"></a>要求註冊權杖
 
 `OnHandleIntent`會先呼叫 Google 的[InstanceID. GetToken](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;)方法，以向 GCM 要求註冊權杖。 我們會將此程式碼`lock`包裝在中，以防止多個註冊意圖同時&ndash;發生`lock`的可能性，確保這些意圖會依序處理。 如果我們無法取得註冊權杖，則會擲回例外狀況，並記錄錯誤。 如果註冊成功， `token`會設定為我們從 GCM 傳回的註冊權杖： 
 
@@ -334,7 +334,7 @@ catch (Exception e)
     Log.Debug ...
 ```
 
-##### <a name="forward-the-registration-token-to-the-app-server"></a>將註冊權杖轉送至應用程式伺服器
+#### <a name="forward-the-registration-token-to-the-app-server"></a>將註冊權杖轉送至應用程式伺服器
 
 如果我們取得註冊權杖（也就是未擲回任何例外狀況），我們`SendRegistrationToAppServer`會呼叫，將使用者的註冊權杖與應用程式所維護的伺服器端帳戶（如果有的話）產生關聯。 由於此實施取決於應用程式伺服器的設計，因此在此提供空的方法： 
 
@@ -347,7 +347,7 @@ void SendRegistrationToAppServer (string token)
 
 在某些情況下，應用程式伺服器不需要使用者的註冊權杖;在此情況下，可以省略這個方法。 當註冊權杖傳送至應用程式伺服器時， `SendRegistrationToAppServer`應該維護布林值，以指出是否已將權杖傳送至伺服器。 如果此布林值為 false `SendRegistrationToAppServer` ，則會將權杖傳送至&ndash;應用程式伺服器，否則會在先前的呼叫中將權杖傳送至應用程式伺服器。 
 
-##### <a name="subscribe-to-the-notification-topic"></a>訂閱通知主題
+#### <a name="subscribe-to-the-notification-topic"></a>訂閱通知主題
 
 接下來，我們會`Subscribe`呼叫方法，向 GCM 指出我們想要訂閱通知主題。 在`Subscribe`中，我們會呼叫[GcmPubSub](https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmPubSub.html#subscribe&#40;java.lang.String,%20java.lang.String,%20android.os.Bundle&#41;) ，以將我們的用戶端應用程式訂閱至`/topics/global`下的所有訊息：
 

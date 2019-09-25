@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/31/2018
-ms.openlocfilehash: c76b22c84851c8952dc4e9181966632cf6e38041
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ece503ee305fc1319e766ee5ad52ad86cee122bc
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754671"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249944"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Firebase 雲端通訊的遠端通知
 
@@ -51,6 +51,8 @@ _本逐步解說提供如何在 Xamarin Android 應用程式中使用 Firebase �
 ### <a name="set-the-package-name"></a>設定封裝名稱
 
 在[Firebase 雲端通訊](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)中，您為已啟用 FCM 的應用程式指定了套件名稱。 此套件名稱也可作為與[API 金鑰](firebase-cloud-messaging.md#fcm-in-action-api-key)相關聯的[*應用程式識別碼*](./firebase-cloud-messaging.md#fcm-in-action-app-id)。 將應用程式設定為使用此套件名稱：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

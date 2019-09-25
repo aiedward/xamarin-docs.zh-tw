@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
 ms.openlocfilehash: f9367eda7651ca61a8a3cb0928ad11cb320faab6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70769965"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin 中的 watchOS 影像控制項

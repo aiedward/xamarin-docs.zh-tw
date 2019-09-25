@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
 ms.openlocfilehash: 5429f260399602b7ef15e8263bc74cb8ae940f4f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70754878"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在遠端進程中執行 Android 服務
@@ -478,7 +478,7 @@ Android 提供四種不同的許可權等級：
 ## <a name="related-links"></a>相關連結
 
 - [處理器](xref:Android.OS.Handler)
-- [Message](xref:Android.OS.Message)
+- [訊息](xref:Android.OS.Message)
 - [Messenger](xref:Android.OS.Messenger)
 - [ServiceAttribute](xref:Android.App.ServiceAttribute)
 - [匯出的屬性](https://developer.android.com/guide/topics/manifest/service-element.html#exported)

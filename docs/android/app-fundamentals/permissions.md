@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 03/09/2018
-ms.openlocfilehash: 550883de571951bb05f0634632fd6b7688e1ab8c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d3513dc086998306ae79855a2c4d8c1a3060ac47
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755290"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249700"
 ---
 # <a name="permissions-in-xamarinandroid"></a>Xamarin 中的許可權
 
@@ -72,6 +72,8 @@ Android 支援程式庫反向移植一些新的 Api，以取得舊版 Android �
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

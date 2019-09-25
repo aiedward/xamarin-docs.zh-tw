@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: 8e347d5d0c80f7aaac121ca1e68eec618ff2ff88
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b17a1177abafe4e605263664038842863302ac3b
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760988"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249693"
 ---
 # <a name="localization"></a>當地語系化
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
 _您可以使用 .NET 資源檔將 Xamarin.Forms 應用程式當地語系化。_
 
@@ -60,7 +60,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 選擇有意義的名稱 (例如 **AppResources**)，然後按 [確定]。
 
-[![新增資源檔](text-images/resx-new-file-sml.png "[新增檔案] 對話方塊")](text-images/resx-new-file.png#lightbox "[新增檔案] 對話方塊")
+[![新增資源檔][(text-images/resx-new-file-sml.png "新增檔案] 對話方塊")](text-images/resx-new-file.png#lightbox "[新增檔案] 對話方塊")
 
 會有兩個檔案新增至專案：
 
@@ -76,6 +76,8 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 根據預設，產生字串的強型別參考時，這些參考對組件是 `internal`。 這是因為 RESX 檔案的預設建置工具會產生具有 `internal` 屬性的 **.designer.cs** 檔案。
 
 選取 **AppResources.resx** 檔案並顯示 **Properties** Pad，以查看此建置工具的設定位置。 下列螢幕擷取畫面顯示 [自訂工具：ResXFileCodeGenerator]。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

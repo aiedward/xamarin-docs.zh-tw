@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: e9325c34c645b75f28c7e2070f6bb095780ddb02
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70771454"
 ---
 # <a name="introduction-to-effects"></a>效果簡介
@@ -38,7 +38,7 @@ Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/contr
 
 下表列出每個平台上 `PlatformEffect` 類別的命名空間，以及其屬性的類型：
 
-|平台|命名空間|容器|控制項|
+|Platform|命名空間|容器|控制項|
 |--- |--- |--- |--- |
 |iOS|Xamarin.Forms.Platform.iOS|UIView|UIView|
 |Android|Xamarin.Forms.Platform.Android|ViewGroup|檢視|

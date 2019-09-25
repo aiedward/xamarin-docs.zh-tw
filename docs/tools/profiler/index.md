@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: conceptdev
 ms.author: crdun
 ms.date: 06/03/2018
-ms.openlocfilehash: 745c59ad50f0e8ad50a8ec56549d99b7b5e72228
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b567985fcfd9e133587c5c285e17d21465fda659
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772468"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250083"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -50,6 +50,8 @@ Xamarin Profiler 是獨立應用程式，並已與 Visual Studio for Mac 和 Vis
 ## <a name="xamarin-profiler"></a>Xamarin Profiler
 
 Xamarin Profiler 為開發人員提供一種方法，讓您能夠從 Visual Studio for Mac 或 Visual Studio 內部分析應用程式。 分析工具會收集並顯示應用程式的相關資訊，供開發人員用來分析應用程式的行為。 有幾種不同的方式可以使用 Xamarin Profiler （也就是記憶體分析和統計取樣）來分析應用程式。 這些會分別透過配置和時間分析工具檢測來執行。
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
