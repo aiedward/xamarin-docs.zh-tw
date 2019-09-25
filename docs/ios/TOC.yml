@@ -244,7 +244,7 @@
       items:
         - name: 總覽
           href: platform/index.md
-        - name: iOS 13 預覽
+        - name: iOS 13
           items:
             - name: iOS 13 簡介
               href: platform/ios13/index.md
@@ -254,6 +254,8 @@
               href: platform/ios13/dark-mode.md
             - name: 透過 Apple 登入
               href: platform/ios13/sign-in.md
+            - name: 適用於 iPad 的多視窗
+              href: platform/ios13/multi-window-ipad.md
             - name: 疑難排解
               href: platform/ios13/troubleshooting/index.md
         - name: iOS 12
@@ -590,7 +592,7 @@
           items:
             - name: 簡介
               href: data-cloud/data/introduction.md
-            - name: Configuration
+            - name: 設定
               href: data-cloud/data/configuration.md
             - name: 使用 SQLite.NET ORM
               href: data-cloud/data/using-sqlite-orm.md
