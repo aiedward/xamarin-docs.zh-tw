@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70760228"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>企業應用程式開發簡介
@@ -89,7 +89,7 @@ ms.locfileid: "70760228"
 
 本指南著重于使用 Xamarin 建立跨平臺的企業應用程式，並使用 eShopOnContainers 行動應用程式做為範例。 圖1-2 顯示 eShopOnContainers 行動應用程式中的頁面，其中提供稍早所述的功能。
 
-EShopOnContainers 行動應用程式[ ![(introduction-images/screenshots.png "")] ](introduction-images/screenshots-large.png#lightbox "EShopOnContainers 行動應用程式")
+[![](introduction-images/screenshots.png "EShopOnContainers 行動應用程式")](introduction-images/screenshots-large.png#lightbox "EShopOnContainers 行動應用程式")
 
 **圖 1-2**：EShopOnContainers 行動應用程式
 
@@ -119,7 +119,7 @@ EShopOnContainers 行動應用程式會練習下列的 Xamarin 功能：
 
 EShopOnContainers 行動應用程式解決方案會將原始程式碼和其他資源組織成專案。 所有專案都會使用資料夾，將原始程式碼和其他資源組織成類別目錄。 下表概述組成 eShopOnContainers 行動應用程式的專案：
 
-|專案|說明|
+|專案|描述|
 |--- |--- |
 |eShopOnContainers.Core|此專案是可移植的類別庫（PCL）專案，其中包含共用程式碼和共用 UI。|
 |eShopOnContainers.Droid|此專案包含 Android 特定程式碼，而且是 Android 應用程式的進入點。|
@@ -136,7 +136,7 @@ EShopOnContainers 行動應用程式中的類別可重複用於任何 Xamarin �
 
 EShopOnContainers PCL 專案包含下列資料夾：
 
-|資料夾|說明|
+|資料夾|描述|
 |--- |--- |
 |Animations|包含可讓動畫在 XAML 中使用的類別。|
 |「行為」|包含對 view 類別公開的行為。|

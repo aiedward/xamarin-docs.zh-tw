@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
 ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "71198512"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介

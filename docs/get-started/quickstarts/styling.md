@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/02/2019
 ms.openlocfilehash: 688b0e87bb6281923d3099c0d269b1c2554b6c7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70756762"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>建立跨平臺 Xamarin 應用程式的樣式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
 在本快速入門中，您將瞭解如何：
 
@@ -26,8 +26,8 @@ ms.locfileid: "70756762"
 
 本快速入門將逐步解說如何使用 XAML 樣式來為跨平臺的 Xamarin. Forms 應用程式建立樣式。 最終的應用程式如下所示：
 
-[附注] 頁面[ ![(styling-images/screenshots1-sml.png "")] ][(styling-images/screenshots1.png#lightbox "附注] 頁面")附注輸入頁面(styling-images/screenshots2.png#lightbox "便箋輸入頁面") [ ![(styling-images/screenshots2-sml.png "")] ] 
-
+[![](styling-images/screenshots1-sml.png "附注")](styling-images/screenshots1.png#lightbox "[附注] 頁面")頁面
+ [(styling-images/screenshots2-sml.png "筆記輸入")頁面![]](styling-images/screenshots2.png#lightbox "便箋輸入頁面")
 
 ### <a name="prerequisites"></a>必要條件
 
@@ -318,14 +318,14 @@ ms.locfileid: "70756762"
 
 ## <a name="next-steps"></a>後續步驟
 
-在本快速入門中，您已瞭解如何：
+在本快速入門中, 您已瞭解如何:
 
 - 使用 XAML 樣式，將 Xamarin. Forms 應用程式樣式。
 
 若要深入瞭解使用 Xamarin 進行應用程式開發的基本概念，請繼續進行深入瞭解的快速入門。
 
 > [!div class="nextstepaction"]
-> [下一個](deepdive.md)
+> [下一步](deepdive.md)
 
 ## <a name="related-links"></a>相關連結
 

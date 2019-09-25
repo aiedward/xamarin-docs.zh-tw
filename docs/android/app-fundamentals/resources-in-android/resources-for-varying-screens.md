@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
-ms.openlocfilehash: 0a82c84b334cbfcf3ab978b5ebd0e256bcd64815
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6db927409e07b97ef5b7b1e7f54b6bcbdc60e115
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755049"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71249668"
 ---
 # <a name="creating-resources-for-varying-screens"></a>建立不同畫面的資源
 
@@ -50,6 +50,8 @@ Android 會在執行時間將可繪製資源調整為適當的大小。
 宣告螢幕大小可確保只有支援的裝置可以下載應用程式。 這是藉由在**androidmanifest.xml**中設定[支援-螢幕](https://developer.android.com/guide/topics/manifest/supports-screens-element.html)元素來完成。 這個元素是用來指定應用程式支援的螢幕大小。 如果應用程式可以正確地將其版面配置放在 [填滿] 畫面，則會將指定的畫面視為受支援。 藉由使用此資訊清單元素，應用程式不會顯示在不符合螢幕規格之裝置的[*Google Play*](https://play.google.com/)中。 不過，應用程式仍會在具有不支援螢幕的裝置上執行，但配置可能會呈現模糊和像素化。
 
 支援的螢幕 sixes 會在解決方案的**屬性/androidmanifest.xml**檔案中宣告：
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

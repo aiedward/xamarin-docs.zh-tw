@@ -6,10 +6,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2017
 ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "71106036"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 與Xamarin. 表單：相似 & 差異
