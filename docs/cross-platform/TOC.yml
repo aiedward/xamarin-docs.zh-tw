@@ -9,8 +9,6 @@
         - name: 需求
           displayName: System requirements
           href: get-started/requirements.md
-        - name: 什麼是 Xamarin？
-          href: get-started/introduction-to-mobile-development.md
         - name: 行動裝置軟體開發生命週期
           href: get-started/introduction-to-mobile-sdlc.md
         - name: 建置跨平台應用程式的逐步解說
