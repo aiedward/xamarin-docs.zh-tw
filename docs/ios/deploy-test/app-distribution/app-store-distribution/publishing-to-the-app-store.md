@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 5d299112da87207f7486247e0ed6f00c35a35fe5
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 9f9504890b12f6a3d8046e98ce537cc0d742f2ed
+ms.sourcegitcommit: 159f250ae7535fca7ab3bc4dc7395dc4cc2af93f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106049"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71278142"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -180,50 +180,27 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
     ![組建組態與平台選擇](publishing-to-the-app-store-images/chooseConfig-m157.png "組建組態與平台選擇")
 
 2. 從 [建置] 功能表中選取 [封存以供發佈]。
-3. 建立封存後，[封存] 檢視會隨即顯示：
+3. 建立封存之後，將會顯示 [封存 **] 視圖。** 按一下 [簽署並散發...]，以開啟 [發佈精靈]。
 
-    ![封存檢視](publishing-to-the-app-store-images/archives-m157.png "封存檢視")
+
+    ![[封存] 視圖中 [簽署並散發] 按鈕位置的螢幕擷取畫面。](publishing-to-the-app-store-images/archives-mac.png "[封存] 視圖中 [簽署並散發] 按鈕位置的螢幕擷取畫面。")
 
     > [!NOTE]
     > 根據預設，[封存] 檢視只會顯示已開啟方案的封存。 若要查看所有具有封存的方案，請按一下 [顯示所有封存] 核取方塊。 最好是保留舊的封存，以便在必要時，可以使用它們包含的偵錯資訊將當機報告符號化。
 
-4. 按一下 [簽署並散發...]，以開啟 [發佈精靈]。
-5. 選取 [App Store] 散發通道。 按一下 [下一步]。
+4. 選取 [App Store] 散發通道。 按一下 [下一步]。
 
-    ![散發通道選擇](publishing-to-the-app-store-images/distChannel-m157.png "散發通道選擇")
+5. 選取 [**上傳**] 做為目的地。 按一下 [下一步]。
 
 6. 在 [佈建設定檔] 視窗中，選取您的簽署身分識別、應用程式和佈建設定檔。 按一下 [下一步]。
 
-    ![佈建設定檔選擇](publishing-to-the-app-store-images/provProfileSelect-m157.png "佈建設定檔選擇")
+    ![[布建設定檔] 頁面的螢幕擷取畫面，其中顯示有效的簽署身分識別、應用程式和布建設定檔選取專案。](publishing-to-the-app-store-images/provProfileSelect-mac.png "[布建設定檔嚮導] 頁面的螢幕擷取畫面，其中已選取有效的簽署身分識別、應用程式和布建設定檔。")
 
-7. 驗證套件的詳細資料，然後按一下 [發佈] 以儲存應用程式的 .ipa 檔案：
+7. 在 [ **App Store Connect 資訊**] 視窗中，從功能表中選取 [Apple ID username]，然後輸入[應用程式特定的密碼](https://support.apple.com/ht204397)。 按一下 [下一步]。
 
-    ![應用程式詳細資料驗證](publishing-to-the-app-store-images/publish-m157.png "應用程式詳細資料驗證")
+    ![[App Store] [連線資訊] [wizard] 頁面的螢幕擷取畫面，其中顯示已選取的 APPLE ID 使用者名稱。](publishing-to-the-app-store-images/connectInfo-mac.png "[App Store] [連線資訊] [wizard] 頁面的螢幕擷取畫面，其中顯示已選取的 APPLE ID 使用者名稱。")
 
-8. 儲存 .ipa 後，即可準備將應用程式上傳至 iTunes Connect。
-
-    ![準備開始提交](publishing-to-the-app-store-images/readyToGo-m157.png "準備開始提交")
-
-9. 按一下 [開啟應用程式載入器] 並登入 (請注意，您必須為您的 Apple ID [建立應用程式專用密碼](https://support.apple.com/ht204397))。
-
-    > [!NOTE]
-    > 如需此工具的詳細資訊，請查看[有關應用程式載入器的 Apple 文件](https://help.apple.com/itc/apploader/#/apdS673accdb)。
-
-10. 選取 [Deliver Your App] (傳遞您的應用程式)，並按一下 [選擇] 按鈕：
-
-    ![選取 [傳遞您的應用程式]](publishing-to-the-app-store-images/publishvs01.png "選取 [傳遞您的應用程式]")
-
-11. 選取您在上方建立的 .ipa 檔案，然後按一下 [確定] 按鈕。
-12. 應用程式載入器將會驗證檔案：
-
-    ![驗證畫面](publishing-to-the-app-store-images/publishvs02.png "驗證畫面")
-
-13. 按一下 [下一步] 按鈕後，就會對 App Store 驗證應用程式：
-
-    ![對 App Store 進行驗證](publishing-to-the-app-store-images/publishvs03.png "對 App Store 進行驗證")
-
-14. 按一下 [傳送] 按鈕將應用程式傳送至 Apple 進行審查。
-15. 當檔案已成功上傳時，應用程式載入器會通知您。
+8. 確認套件的詳細資料，然後按一下 [**發佈**]。 選取要儲存 .ipa 檔案的位置之後，嚮導會將您的應用程式上傳至 App Store Connect。
 
     > [!NOTE]
     > Apple 會拒絕 .ipa 檔案中包含 **iTunesMetadata.plist** 的應用程式，因而導致發生如下錯誤：
