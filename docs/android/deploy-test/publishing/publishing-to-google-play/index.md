@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 02/16/2018
-ms.openlocfilehash: c6559db8cc2e3e18ec48dd85ea2d68455336bdd8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 656b74bce10d30ddd463486c5103d65c6ba5eb97
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755958"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250015"
 ---
 # <a name="publishing-to-google-play"></a>發行至 Google Play
 
@@ -108,6 +108,8 @@ Google Play 精選區段所使用的圖形。 此圖形可以不搭配應用程�
 這是展示應用程式的 YouTube 影片 URL。 影片長度應該為 30 秒到 2 分鐘，並展示應用程式最精彩的部分。
 
 ### <a name="publishing-to-google-play"></a>發行至 Google Play
+
+<!-- markdownlint-disable MD001 -->
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
