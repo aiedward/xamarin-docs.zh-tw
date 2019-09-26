@@ -9,10 +9,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
 ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 09/25/2019
 ms.locfileid: "70290595"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin 中的 iOS 擴充功能
@@ -27,7 +27,7 @@ Ios 8 中引進的延伸模組是由 ios `UIViewControllers`在標準內容（�
 
 ## <a name="extension-points"></a>擴充點
 
-|類型|說明|擴充點|主機應用程式|
+|類型|描述|擴充點|主機應用程式|
 |--- |--- |--- |--- |
 |動作|特定媒體類型的特殊編輯器或檢視器|`com.apple.ui-services`|Any|
 |檔提供者|允許應用程式使用遠端檔存放區|`com.apple.fileprovider-ui`|使用[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)的應用程式|
@@ -123,9 +123,9 @@ IOS 10 中新增了[額外的擴充點](~/ios/platform/introduction-to-ios10/ind
 3. 確認**專案名稱**和解決**解決方案，然後按一下**[**建立**] 按鈕以建立方案： 
 
     [![](extensions-images/today03.png "確認專案名稱和解決解決方案，然後按一下 [建立] 按鈕以建立方案")](extensions-images/today03.png#lightbox)
-4. 接下來，在 **方案總管**中，以滑鼠右鍵按一下方案，然後從 [**今日擴充**功能] 範本新增**iOS 擴充**功能專案： 
+4. 接下來，在 **方案總管**中，以滑鼠右鍵按一下方案，然後從 **今日擴充**功能 範本新增**iOS 擴充**功能專案： 
 
-    [![](extensions-images/today04.png "接下來，在 方案總管中，以滑鼠右鍵按一下方案，然後從 [今日擴充功能] 範本新增 iOS 擴充功能專案")](extensions-images/today04.png#lightbox)
+    [![](extensions-images/today04.png "接下來，在 [方案總管中，以滑鼠右鍵按一下方案，然後從 今日擴充功能] 範本新增 iOS 擴充功能專案")](extensions-images/today04.png#lightbox)
 5. 呼叫專案`DaysRemaining` ，然後按 [**下一步]** 按鈕： 
 
     [![](extensions-images/today05.png "呼叫專案 DaysRemaining，然後按 [下一步] 按鈕")](extensions-images/today05.png#lightbox)
@@ -432,7 +432,7 @@ public override void ViewDidLoad ()
 - `kUTTypeXPCService` - `XPCService`
 - `kUTTypeZipArchive` - `ZipArchive`
 
-請參閱下列範例：
+請參閱下列範例:
 
 ```csharp
 using MobileCoreServices;

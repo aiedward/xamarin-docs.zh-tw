@@ -1,5 +1,6 @@
 # [Xamarin.Forms](index.yml)
 ## [開始使用](~/get-started/index.yml)
+### [什麼是 Xamarin.Forms](~/get-started/what-is-xamarin-forms.md)
 ### [需求](~/get-started/requirements.md)
 ### [安裝](~/get-started/installation/index.md)
 ### [建置您的第一個應用程式](~/get-started/first-app/index.md)

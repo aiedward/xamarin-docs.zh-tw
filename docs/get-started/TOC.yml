@@ -2,6 +2,8 @@
   href: index.yml
   expanded: true
   items:
+    - name: 什麼是 Xamarin
+      href: what-is-xamarin.md
     - name: 需求
       href: requirements.md
     - name: 安裝
