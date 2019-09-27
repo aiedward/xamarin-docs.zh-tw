@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: 105088b612ffc35d18bdf800b48cc700ce6f4a48
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: df011a6eb72b6eb30af0a197d4be48b0f2494384
+ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206519"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319513"
 ---
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>在 Xamarin 中使用以 Apple 登入
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/Redth/Xamarin.AppleSignIn.Sample)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)
 
 使用 Apple 登入適用于 iOS 13 上所有使用協力廠商驗證服務的新應用程式。 IOS 和 Android 之間的執行詳細資料非常不同。 本指南會逐步解說如何在 Xamarin 中執行此操作。
 
@@ -52,13 +52,13 @@ ms.locfileid: "71206519"
 
 這個範例會使用 Azure Functions。 或者，ASP.NET Core 控制器或類似的 web 伺服器解決方案可以提供相同的功能。
 
-### <a name="configuration"></a>設定
+### <a name="configuration"></a>組態
 
 使用 Azure Functions 時，需要設定數個應用程式設定：
 
 - `APPLE_SIGNIN_KEY_ID`-這是您`KeyId`稍早的。
 - `APPLE_SIGNIN_TEAM_ID`-這通常是您在[成員資格設定檔](https://developer.apple.com/account/#/membership)中找到的_小組識別碼_
-- `APPLE_SIGNIN_SERVER_ID`：這是先前`ServerId`的。  這*不*是您的_應用程式套件組合識別碼，_ 而是您所建立之*服務 ID*的*識別碼*。
+- `APPLE_SIGNIN_SERVER_ID`:這是先前`ServerId`的。  這*不*是您的_應用程式套件組合識別碼，_ 而是您所建立之*服務 ID*的*識別碼*。
 - `APPLE_SIGNIN_APP_CALLBACK_URI`-這是您想要使用重新導向至應用程式的自訂 URI 配置。  在此範例`xamarinformsapplesignin://`中，會使用。
 - `APPLE_SIGNIN_REDIRECT_URI`-您在*Apple 登入*設定一節中建立*服務識別碼*時，所安裝的重新*導向 URL* 。  若要進行測試，它可能看起來像這樣：`http://local.test:7071/api/applesignin_callback`
 - `APPLE_SIGNIN_P8_KEY`-檔案的文字內容`.p8` ，其中所有的`\n`分行符號都已移除，因此它是一個長字串

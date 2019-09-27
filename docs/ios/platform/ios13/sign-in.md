@@ -7,14 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: 5c5191a6a7490ec0301bdea7b7f5aa2217b80c96
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: d8c458ad30d7e281427dad0e29092c55fede7347
+ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206359"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319531"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>在 Xamarin 中使用 Apple 登入
+
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios13-addingthesigninwithappleflowtoyourapp/)
 
 使用 Apple 登入是一項新服務，可為協力廠商驗證服務的使用者提供身分識別保護。 從 iOS 13 開始，Apple 要求使用協力廠商驗證服務的任何新應用程式也應該提供使用 Apple 登入的功能。 目前正在更新的應用程式不需要使用 Apple 新增登入，直到2020年4月為止。
 
@@ -204,10 +206,6 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 #endregion
 ```
-
-## <a name="summary"></a>總結
-
-本文引進了使用 Apple for iOS 進行登入。
 
 ## <a name="related-links"></a>相關連結
 
