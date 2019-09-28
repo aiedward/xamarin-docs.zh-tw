@@ -28,7 +28,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 設定
+            text: 安裝程式
             href: ~/get-started/requirements.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
@@ -50,35 +50,35 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
             text: 樣式快速入門
             href: ~/get-started/quickstarts/styling.md
-  - title: 手冊
+  - title: 輔助線
     items:
       - type: list
         style: cards
         className: cardsB
         items:
-          - href: ~/xamarin-forms/app-fundamentals/
+          - href: ~/xamarin-forms/app-fundamentals/index.yml
             html: 您要開發 Xamarin.Forms 應用程式所需知道的一切，例如導覽、手勢、資料繫結等等。
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/xamarin-forms/app-fundamentals/
+              href: ~/xamarin-forms/app-fundamentals/index.yml
             title: 應用程式基本概念
-          - href: ~/xamarin-forms/user-interface
+          - href: ~/xamarin-forms/user-interface/index.yml
             html: 了解 Xamarin.Forms XAML 中的一組完整使用者介面控制項。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: ~/xamarin-forms/user-interface/
+              href: ~/xamarin-forms/user-interface/index.yml
             title: 使用者介面
-          - href: ~/xamarin-forms/xaml/
+          - href: ~/xamarin-forms/xaml/index.yml
             html: 以宣告方式建置使用者介面，並在行動裝置和桌面平台之間共用。
             image:
               src: ~/media/icons/i_xaml-forms.svg
-              href: ~/xamarin-forms/xaml/
+              href: ~/xamarin-forms/xaml/index.yml
             title: XAML
-          - href: ~/xamarin-forms/platform/
+          - href: ~/xamarin-forms/platform/index.yml
             html: 使用 Xamarin.Forms 平台功能，例如自訂轉譯器，以及各版本的其他重要功能。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/xamarin-forms/platform/
+              href: ~/xamarin-forms/platform/index.yml
             title: 平台功能
           - href: ~/essentials/index.md?context=xamarin/xamarin-forms
             html: 像是檔案存取、裝置資訊、硬體功能等等一般工作的跨平台 API。
@@ -86,23 +86,23 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
               href: ~/essentials/index.md?context=xamarin/xamarin-forms
             title: Xamarin.Essentials
-          - href: ~/xamarin-forms/data-cloud/
+          - href: ~/xamarin-forms/data-cloud/index.yml
             html: 本機和遠端資料儲存體及擷取，以及其他 Azure 雲端式服務。
             image:
               src: ~/media/icons/i_data-cloud.svg
-              href: ~/xamarin-forms/data-cloud/
+              href: ~/xamarin-forms/data-cloud/index.yml
             title: 資料與 Azure 雲端服務
-          - href: ~/xamarin-forms/deploy-test/
+          - href: ~/xamarin-forms/deploy-test/index.yml
             html: 建置及部署應用程式的指示，以及事先測試它們的祕訣！
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/xamarin-forms/deploy-test/
+              href: ~/xamarin-forms/deploy-test/index.yml
             title: 部署及測試
-          - href: ~/xamarin-forms/internals/
+          - href: ~/xamarin-forms/internals/index.yml
             html: 關於 Xamarin.Forms 內部的詳細資訊，以及透過如當地語系化和協助工具之類的功能協助。
             image:
               src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
-              href: ~/xamarin-forms/internals/
+              href: ~/xamarin-forms/internals/index.yml
             title: 進階概念與內部項目
   - title: 參考資料
     items:
