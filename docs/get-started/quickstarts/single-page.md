@@ -9,16 +9,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
-ms.openlocfilehash: 48af81856ebe92a712b5d41d8d856bb00a526982
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
+ms.sourcegitcommit: bb6a103de620386187a08151a4cdc29a4dc53a10
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "68655001"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71679990"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin. Forms 應用程式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 在本快速入門中，您將瞭解如何：
 
@@ -46,7 +46,7 @@ ms.locfileid: "68655001"
 
     ![](single-page-images/vs/new-solution-2019.png "新增專案")
 
-2. 在 [**建立新專案**] 視窗的 [**專案類型**]**下拉式選單中，選取 [** 行動**應用程式（Xamarin** ] 範本），然後按 [**下一步]** 按鈕：
+2. 在 [**建立新專案**] 視窗的 [**專案類型**]**下拉式選單中，** 選取 [行動**應用程式（Xamarin）** ] 範本，然後按 [**下一步]** 按鈕：
 
     ![](single-page-images/vs/new-project-2019.png "跨平台專案範本")
 
@@ -499,7 +499,7 @@ ms.locfileid: "68655001"
 若要將此單一頁面應用程式轉換成多頁應用程式，請繼續進行下一個快速入門。
 
 > [!div class="nextstepaction"]
-> [下一步](multi-page.md)
+> [下一個](multi-page.md)
 
 ## <a name="related-links"></a>相關連結
 
