@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: c65a1aed79199106d2a754329dd38d87feda66a2
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
-ms.translationtype: HT
+ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
+ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888961"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71674573"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms Shell 包含 URI 式導覽體驗，可使用路由導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。 此外，它還提供向後巡覽的能力，而不需瀏覽導覽堆疊上的所有頁面。
 
@@ -156,7 +156,7 @@ await Shell.Current.GoToAsync("monkeydetails");
 
 此外，支援下列相對路徑格式：
 
-| 格式 | 說明 |
+| 格式 | 描述 |
 | --- | --- |
 | //*route* | 將會從目前顯示的路由向上搜尋路由階層中指定的路由。 |
 | ///*route* | 將會從目前顯示的路由向下搜尋路由階層中指定的路由。 |
@@ -211,7 +211,7 @@ bears
 
 `Shell` 類別會定義 `Navigating` 事件，當導覽即將執行時，可能會因為程式設計導覽或使用者互動而引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatingEventArgs` 物件會提供下列屬性：
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
 | `Source` | `ShellNavigationSource` | 發生導覽的類型。 |
@@ -226,7 +226,7 @@ bears
 
 `Shell` 類別也會定義 `Navigated` 事件，導覽完成時會引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatedEventArgs` 物件會提供下列屬性：
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
 | `Previous`| `ShellNavigationState` | 上一頁的 URI。 |
@@ -302,7 +302,7 @@ public partial class ElephantDetailPage : ContentPage
 
 - `Command`，屬於 `ICommand` 類型，會在按 [上一頁] 按鈕時執行。
 - `CommandParameter`，屬於 `object` 類型，這是傳遞至 `Command` 的參數。
-- `IconOveride`，屬於 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 類型，這是用於上一頁按鈕的圖示。
+- `IconOverride`，屬於 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 類型，這是用於上一頁按鈕的圖示。
 - `IsEnabled`，屬於 `boolean` 類型，可指出是否啟用上一頁按鈕。 預設值為 `true`。
 - `TextOverride`，屬於 `string` 類型，這是用於上一頁按鈕的文字。
 
@@ -335,7 +335,7 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 `Command` 屬性會設定要按 [上一頁] 按鈕時執行的 `ICommand`，而 `IconOverride` 屬性則會設定為用於 [上一頁] 按鈕的圖示：
 
-[![Shell 上一頁按鈕圖示覆寫在 iOS 和 Android 上的螢幕擷取畫面](navigation-images/back-button.png "Shell 上一頁按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "Shell 上一頁按鈕圖示覆寫")
+[![Shell 上一頁按鈕圖示覆寫在 iOS 和 Android 上的螢幕擷取畫面](navigation-images/back-button.png "shell 上一頁按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "Shell 上一頁按鈕圖示覆寫")
 
 ## <a name="related-links"></a>相關連結
 
