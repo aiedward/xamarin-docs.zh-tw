@@ -1,5 +1,5 @@
 ---
-title: 硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
+title: 硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)\
 description: 本文說明如何使用您電腦的硬體加速功能將 Android Emulator 提升到最大效能。
 zone_pivot_groups: platform
 ms.prod: xamarin
