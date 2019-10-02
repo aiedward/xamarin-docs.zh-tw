@@ -30,7 +30,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 安裝程式
+            text: 設定
             href: ~/android/get-started/installation/index.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
@@ -44,7 +44,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
             text: Android 10
             href: ~/android/platform/android-10.md
-  - title: 輔助線
+  - title: 手冊
     items:
       - type: list
         style: cards
@@ -55,24 +55,24 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/android/get-started/index.md
-            title: 快速入門
-          - href: ~/android/app-fundamentals/
+            title: 開始使用
+          - href: ~/android/app-fundamentals/index.md
             html: 您要建置 Android 應用程式所需知道的一切，例如使用檔案、影像、資料庫等等。
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/android/app-fundamentals/
+              href: ~/android/app-fundamentals/index.md
             title: 應用程式基本概念
-          - href: ~/android/user-interface
+          - href: ~/android/user-interface/index.md
             html: 深入了解供 Android 使用的一組完整之使用者介面控制項小工具。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: ~/android/user-interface/
+              href: ~/android/user-interface/index.md
             title: 使用者介面
-          - href: ~/android/platform/
+          - href: ~/android/platform/index.md
             html: 使用 Android 平台功能，例如指紋驗證和 Android 8.0 Oreo 中的最新功能。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/android/platform/
+              href: ~/android/platform/index.md
             title: 平台功能
           - href: ~/essentials/index.md?context=xamarin/android
             html: 行動應用程式的跨平台 API。
@@ -80,29 +80,29 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
               href: ~/essentials/index.md?context=xamarin/android
             title: Xamarin.Essentials
-          - href: ~/android/data-cloud/
+          - href: ~/android/data-cloud/index.md
             html: 本機和遠端資料儲存體及擷取，以及其他雲端式服務。
             image:
               src: ~/media/icons/i_data-cloud.svg
-              href: ~/android/data-cloud/
+              href: ~/android/data-cloud/index.md
             title: 資料與雲端服務
-          - href: ~/android/deploy-test/
+          - href: ~/android/deploy-test/index.md
             html: 建置及部署應用程式到 Google Play 的指示，以及事先測試它們的祕訣！
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/android/deploy-test/
+              href: ~/android/deploy-test/index.md
             title: 部署及測試
-          - href: ~/android/internals/
+          - href: ~/android/internals/index.md
             html: 關於 Xamarin.Android 內部的詳細資訊，以及透過如當地語系化和協助工具之類的協助功能。
             image:
               src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
-              href: ~/android/internals/
+              href: ~/android/internals/index.md
             title: 進階概念與內部項目
-          - href: ~/android/wear/
+          - href: ~/android/wear/index.md
             html: 建置 Android Wear 應用程式。
             image:
               src: ~/media/icons/i_android-wear.svg
-              href: ~/android/wear/
+              href: ~/android/wear/index.md
             title: Android Wear
   - title: 參考資料
     items:

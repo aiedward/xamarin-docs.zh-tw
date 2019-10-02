@@ -32,7 +32,7 @@ sections:
           - image:
               src: ~/media/icons/i_desktop-phone.svg
             text: Xamarin.Forms
-            href: ~/get-started/quickstarts/index.md
+            href: ~/get-started/quickstarts/index.yml
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
             text: Android
@@ -57,17 +57,17 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/cross-platform/get-started/index.md
             title: 建置行動應用程式
-          - href: ~/cross-platform/platform
+          - href: ~/cross-platform/platform/index.md
             html: 'Xamarin 支援 C#、F# 和 Razor 樣板化引擎。'
             image:
               src: ~/media/icons/i_app-build.svg
-              href: ~/cross-platform/platform
+              href: ~/cross-platform/platform/index.md
             title: 語言支援
-          - href: ~/cross-platform/app-fundamentals/
+          - href: ~/cross-platform/app-fundamentals/index.md
             html: 建置應用程式所需知道的一切。
             image:
               src: ~/media/icons/i_platform.svg
-              href: ~/cross-platform/app-fundamentals/
+              href: ~/cross-platform/app-fundamentals/index.md
             title: 共用程式碼
           - href: ~/cross-platform/deploy-test/performance.md
             html: 應用程式效能和安全性指導方針。
@@ -75,15 +75,15 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_code-performance.svg'
               href: ~/cross-platform/deploy-test/performance.md
             title: 效能與安全性
-          - href: ~/cross-platform/deploy-test/
+          - href: ~/cross-platform/deploy-test/index.md
             html: 偵錯和部署的秘訣。
             image:
               src: ~/media/icons/i_deploy-test.svg
-              href: ~/cross-platform/deploy-test/
+              href: ~/cross-platform/deploy-test/index.md
             title: 部署和偵錯
-          - href: ~/cross-platform/desktop/
+          - href: ~/cross-platform/desktop/index.md
             html: 適用於有意建置行動應用程式之 .NET 桌面開發人員的指引。
             image:
               src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-              href: ~/cross-platform/desktop/
+              href: ~/cross-platform/desktop/index.md
             title: 桌面開發人員

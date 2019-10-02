@@ -28,7 +28,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 安裝程式
+            text: 設定
             href: ~/get-started/requirements.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
@@ -50,7 +50,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
             text: 樣式快速入門
             href: ~/get-started/quickstarts/styling.md
-  - title: 輔助線
+  - title: 手冊
     items:
       - type: list
         style: cards
@@ -115,4 +115,4 @@ sections:
           - title: 範例
             html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms">Xamarin.Forms 範例</a></p>'
           - title: 書籍
-            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms">建立行動裝置應用程式的電子書</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns">企業應用程式模式電子書</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/">Xamarin.Forms 電子書中的 SkiaSharp Graphics</a></p>
+            html: <p><a href="~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md">建立行動裝置應用程式的電子書</a></p><p><a href="~/xamarin-forms/enterprise-application-patterns/index.md">企業應用程式模式電子書</a></p><p><a href="~/xamarin-forms/user-interface/graphics/skiasharp/index.md">Xamarin.Forms 電子書中的 SkiaSharp Graphics</a></p>
