@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/25/2018
-ms.openlocfilehash: 8b0b74a1db314f5241f965207ac898316a8276e0
-ms.sourcegitcommit: f9cbec7a1a0553da1e60ff371fda2b3c717f941b
+ms.openlocfilehash: b6fb02697d3df59181750bf6fd7c840129554ac3
+ms.sourcegitcommit: 84d788f7dbabc1c83ac795ed3952d589074fa8e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71312342"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71811174"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -211,7 +211,6 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 2. 從 [建置] 功能表中選取 [封存以供發佈]。
 3. 建立封存之後，將會顯示 [封存 **] 視圖。** 按一下 [簽署並散發...]，以開啟 [發佈精靈]。
 
-
     ![[封存] 視圖中 [簽署並散發] 按鈕位置的螢幕擷取畫面。](publishing-to-the-app-store-images/archives-mac.png "[封存] 視圖中 [簽署並散發] 按鈕位置的螢幕擷取畫面。")
 
     > [!NOTE]
@@ -288,7 +287,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
     > [!TIP]
     >
-    > 只有在您使用 Xcode 10 並建立 iOS 12 和更早版本時，下列步驟才有效。 
+    > 只有在您使用 Xcode 10 並建立 iOS 12 和更早版本時，下列步驟才有效。
     >
     > 若要使用 Xcode 11 （適用于 iOS 13）部署至 App Store，您應該[使用 Visual Studio for Mac](?tabs=macos#build-and-submit-your-app)來建立並上傳您的應用程式。 **應用程式載入**器將無法供 Xcode 11 使用。
 
