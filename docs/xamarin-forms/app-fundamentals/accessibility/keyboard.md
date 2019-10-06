@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: ba29e57008bfea420562d88ab1612c09f4460e85
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 4bca8de32ec0dfa6a273b784333e99c5bbfe968d
+ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651066"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71975859"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的鍵盤協助工具
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 如果應用程式未提供適當的鍵盤存取，可能會讓需使用螢幕閱讀程式或行動不便的使用者遇到使用上的困難。 Xamarin.Forms 應用程式可以指定預期的定位順序，以改善其可用性和協助工具。 指定控制項的定位順序時，可啟用鍵盤導覽、讓應用程式頁面做好以特定順序接收輸入的準備，以及允許螢幕閱讀程式向使用者朗讀可設定焦點的元素。
 
@@ -121,7 +121,7 @@ ms.locfileid: "68651066"
 
 除了設定控制項的定位順序，您可能也需要從定位順序中排除控制項。 其中一種完成上述作業的方式，是將控制項的 [`IsEnabled`](xref:Xamarin.Forms.VisualElement) 屬性設為 `false`，因為已停用的控制項會從定位順序中排除。
 
-不過，有時候即使未停用控制項，可能也需要將其從定位順序中排除。 上述作業可透過 `VisualElement.IsTapStop` 屬性來完成，其可指出定位導覽中是否包含 [`VisualElement`](xref:Xamarin.Forms.VisualElement)。 其預設值為 `true`；當其值為 `false` 時，不論是否設定 `TabIndex`，定位導覽基礎結構均會略過控制項。
+不過，有時候即使未停用控制項，可能也需要將其從定位順序中排除。 上述作業可透過 `VisualElement.IsTabStop` 屬性來完成，其可指出定位導覽中是否包含 [`VisualElement`](xref:Xamarin.Forms.VisualElement)。 其預設值為 `true`；當其值為 `false` 時，不論是否設定 `TabIndex`，定位導覽基礎結構均會略過控制項。
 
 ## <a name="supported-controls"></a>支援的控制項
 

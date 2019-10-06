@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 04/24/2018
-ms.openlocfilehash: 8e06b03e0acb129f1eb0c3c793d0b4a05c11ce2b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: eaef454de77387ea2a6732fa00797a6a4f0e3cd1
+ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282380"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71975873"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>在 Xamarin 中顯示影像
 
@@ -32,7 +32,7 @@ _本文說明如何在 Xamarin iOS 應用程式中包含影像資產，並使用
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在 **方案總管**中，按兩下`Assets.xcassets`檔案以開啟它進行編輯：
+1. 在 **方案總管**中，按兩下 `Assets.xcassets` 檔案以開啟它進行編輯：
 
     ![](displaying-an-image-images/imageset01.png "方案總管中的資產. assets.xcassets")
 2. 以滑鼠右鍵按一下 [**資產] 清單**，然後選取 [**新增映射集**]：
@@ -75,18 +75,18 @@ _本文說明如何在 Xamarin iOS 應用程式中包含影像資產，並使用
 
 -----
 
-在程式碼中使用**影像集**時，藉由呼叫`FromBundle` `UIImage`類別的方法，依名稱參考它。 例如：
+在程式碼中使用**影像集**時，請呼叫 `UIImage` 類別的 @no__t 1 方法，依名稱參考它。 例如：
 
 ```csharp
 MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 ```
 
 > [!IMPORTANT]
-> 如果指派給映射集的映射未正確顯示，請確定使用`FromBundle`方法（**映射集**，而不是父**資產目錄**名稱）搭配正確的檔案名。 若是 PNG 影像， `.png`可以省略副檔名。 若是其他影像格式，則需要擴充功能（例如 `PurpleMonkey.jpg`)。
+> 如果指派給映射集的映射未正確顯示，請確定已將正確的檔案名與 `FromBundle` 方法（**映射集**，而不是父**資產目錄**名稱）搭配使用。 若為 PNG 影像，可以省略 `.png` 延伸模組。 若是其他影像格式，則需要擴充功能（例如 `PurpleMonkey.jpg`).
 
 ### <a name="using-vector-images-in-asset-catalogs"></a>在資產目錄中使用向量影像
 
-從 iOS 8 開始，已新增至**映射集**的特殊**向量**類別，可讓開發人員在卡帶中包含**PDF**格式的向量影像，而不會在不同的解析度上包括個別的點陣圖檔案。 使用此方法時，請提供單一向量檔案以`@1x`供解析（格式化為向量 PDF 檔案），而且`@2x`檔案`@3x`的和版本將會在編譯時期產生，並包含在應用程式的組合中。
+從 iOS 8 開始，特殊的**向量**類別已新增至**映射集**，可讓開發人員在卡帶中包含**PDF**格式的向量影像，而不會在不同的解析度上包括個別的點陣圖檔案。 使用此方法時，請為 `@1x` 解析度提供單一向量檔案（格式化為向量 PDF 檔案），並在編譯時期產生檔案的 @no__t 1 和 @no__t 2 版本，並包含在應用程式套件組合中。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -98,7 +98,7 @@ MonkeyImage.Image = UIImage.FromBundle ("PurpleMonkey");
 
 -----
 
-例如，如果開發人員將檔案包含`MonkeyIcon.pdf`為資產目錄的向量，而其解析為 150px x 150px，則下列點陣圖資產會在編譯時包含在最終的應用程式套件組合中：
+例如，如果開發人員包含 `MonkeyIcon.pdf` 檔案作為資產目錄的向量，並具有 150px x 150px 的解析度，則下列點陣圖資產會在編譯時包含在最終的應用程式套件組合中：
 
 - `MonkeyIcon@1x.png`-150px x 150px 解析。
 - `MonkeyIcon@2x.png`-300px x 300px 解析。
@@ -155,24 +155,24 @@ if (MyIcon.Image != null) {
 }
 ```
 
-因為的`RenderMode`屬性`UIImage` 是`ImageWithRenderingMode`唯讀的，所以請使用方法，以所需的呈現模式設定來建立影像的新實例。
+因為 `UIImage` 的 `RenderMode` 屬性是唯讀的，所以請使用 @no__t 2 方法，以所需的呈現模式設定來建立影像的新實例。
 
-透過`UIImageRenderingMode`列舉有三個可能`UIImage.RenderMode`的設定：
+有三個可能的設定可透過 `UIImageRenderingMode` 列舉來 `UIImage.RenderMode`：
 
 - `AlwaysOriginal`-強制影像轉譯為原始來源影像檔案，而不進行任何變更。
-- `AlwaysTemplate`-藉由使用指定`Tint`的色彩上色圖元，強制將影像轉譯為範本映射。
-- `Automatic`-會將影像轉譯為範本，或根據所用的環境，以原始形式呈現。 `UIToolBar`例如，如果在`UINavigationBar` `UITabBar` 、或`UISegmentControl`中使用影像，則會將它視為範本。
+- `AlwaysTemplate`-藉由使用指定的 `Tint` 色彩來上色圖元，強制將影像轉譯為範本映射。
+- `Automatic`-將影像轉譯為範本，或根據其使用所在的環境以原始形式呈現。 例如，如果影像用於 `UIToolBar`，`UINavigationBar`，`UITabBar` 或 `UISegmentControl` 會視為範本。
 
 ## <a name="adding-new-assets-collections"></a>加入新的資產集合
 
-使用資產目錄中的影像時，有時可能需要新的集合，而不是將所有應用程式的映射新增至`Assets.xcassets`集合。 例如，在設計隨選資源時。
+使用資產目錄中的映射時，可能需要新的集合，而不是將所有應用程式的映射新增至 `Assets.xcassets` 集合。 例如，在設計隨選資源時。
 
 若要將新的資產目錄新增至專案：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 以滑鼠右鍵按一下**方案總管**中的**專案名稱**，然後選取 **[加入** > **新檔案 ...** ]。
-2. 選取 [ **iOS**  > **資產目錄**]，輸入集合的**名稱**，然後按一下 [**新增**] 按鈕：
+1. 在 **方案總管**中的**專案名稱**上按一下滑鼠右鍵，**然後選取** 新增  >  個**新檔案 ...**
+2. 選取 [ **iOS** > **資產目錄**]，輸入集合的**名稱**，然後按一下 [**新增**] 按鈕：
 
     ![](displaying-an-image-images/asset01.png "建立新的資產目錄")
 
@@ -185,29 +185,29 @@ if (MyIcon.Image != null) {
 
 -----
 
-從這裡開始，可以使用與專案中自動包含的預設`Assets.xcassets`集合相同的方式來處理集合。
+從這裡開始，可以使用與自動包含在專案中的預設 `Assets.xcassets` 集合相同的方式來處理集合。
 
 ## <a name="using-images-with-controls"></a>使用影像搭配控制項
 
-除了使用影像來支援應用程式，iOS 也會使用影像與應用程式控制類型，例如索引標籤列、工具列、導覽列、表格和按鈕。 讓影像出現在控制項上的簡單方式，就是將`UIImage`實例指派給控制項的`Image`屬性。
+除了使用影像來支援應用程式，iOS 也會使用影像與應用程式控制類型，例如索引標籤列、工具列、導覽列、表格和按鈕。 讓影像出現在控制項上的簡單方式，就是將 @no__t 0 實例指派給控制項的 @no__t 1 屬性。
 
 ### <a name="frombundle"></a>FromBundle
 
-`FromBundle`方法呼叫是一種同步（封鎖）呼叫，其中包含數個內建的影像載入和管理功能，例如快取支援和自動處理各種解析度的影像檔案。
+@No__t-0 方法呼叫是一種同步（封鎖）呼叫，其中包含許多內建的影像載入和管理功能，例如快取支援和自動處理各種解析度的影像檔案。
 
-下列範例顯示如何`UITabBarItem` `UITabBar`在上設定的影像：
-
-```csharp
-TabBarItem.Image = UIImage.FromBundle ("MyImage");
-```
-
-`MyImage`假設是已新增至上述資產目錄的影像資產名稱。 當工作資產目錄映射時，只需在適用于**PNG**格式影像的`FromBundle`方法中指定映射集的名稱：
+下列範例顯示如何在 `UITabBar` 上設定 `UITabBarItem` 的影像：
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage");
 ```
 
-針對任何其他影像格式，請包含名稱為的延伸模組。 例如：
+假設 `MyImage` 是新增至上述資產目錄的影像資產名稱。 當工作資產目錄映射時，只要針對**PNG**格式的影像，在 `FromBundle` 方法中指定映射集的名稱即可：
+
+```csharp
+TabBarItem.Image = UIImage.FromBundle ("MyImage");
+```
+
+針對任何其他影像格式，請包含名稱為的延伸模組。 例如:
 
 ```csharp
 TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
@@ -217,7 +217,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 ## <a name="displaying-an-image-in-a-storyboards"></a>在分鏡腳本中顯示影像
 
-一旦使用資產目錄將映射新增至 Xamarin iOS 專案，就可以`UIImageView`在 ios 設計工具中使用，輕鬆地在分鏡腳本上顯示。 例如，如果已新增下列影像資產：
+一旦使用資產目錄將映射新增至 Xamarin iOS 專案，就可以使用 iOS Designer 中的 `UIImageView`，輕鬆地在分鏡腳本上顯示。 例如，如果已新增下列影像資產：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -225,7 +225,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 執行下列動作，以將它顯示在分鏡腳本上：
 
-1. 按兩下 **方案總管**中`Main.storyboard`的檔案，在 iOS 設計工具中開啟檔案進行編輯。
+1. 按兩下**方案總管**中的 `Main.storyboard` 檔案，在 iOS 設計工具中開啟它進行編輯。
 2. 從 [**工具箱**] 中選取**影像視圖**：
 
      ![](displaying-an-image-images/display02.png "從 [工具箱] 選取影像視圖")
@@ -248,7 +248,7 @@ TabBarItem.Image = UIImage.FromBundle ("MyImage.jpg");
 
 執行下列動作，以將它顯示在分鏡腳本上：
 
-1. 按兩下 **方案總管**中`Main.storyboard`的檔案，在 iOS 設計工具中開啟檔案進行編輯。
+1. 按兩下**方案總管**中的 `Main.storyboard` 檔案，在 iOS 設計工具中開啟它進行編輯。
 2. 從 [**工具箱**] 中選取**影像視圖**：
 
      ![](displaying-an-image-images/display02vs.png "從 [工具箱] 選取影像視圖")
@@ -285,7 +285,7 @@ imageView.Image = UIImage.FromBundle ("Kemah");
 View.AddSubview (imageView);
 ```
 
-這段程式碼會`UIImageView`建立新的，並為它提供初始大小和位置。 然後，它會從新增至專案的影像資產載入影像，並將`UIImageView`其新增至`UIView`父代以顯示它。
+這段程式碼會建立新的 `UIImageView`，並為它提供初始大小和位置。 然後，它會從新增至專案的影像資產載入影像，並將 `UIImageView` 新增至父代 `UIView` 以顯示它。
 
 ## <a name="related-links"></a>相關連結
 

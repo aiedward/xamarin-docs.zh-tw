@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 07/01/2019
-ms.openlocfilehash: 1f190ef2f99e71c8cf21680f9902caccf3454450
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: ed9eb5dc80935c8401f5bd8c9be1c301af3480f5
+ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206332"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71975767"
 ---
 # <a name="get-started-with-ios-13"></a>IOS 13 入門
 
@@ -22,9 +22,9 @@ ms.locfileid: "71206332"
 
 1. **安裝 Xcode 11** –註冊的 Apple 開發人員可以從[Apple 開發人員入口網站](https://developer.apple.com/download/)或**App Store**下載並安裝最新版的 Xcode 11。
 
-2. **執行 Xcode 11** –執行 Xcode 11，再更新和執行 Visual Studio for Mac，因為它會安裝 Xamarin 所需的一些工具。
+2. **執行 Xcode 11** –執行 Xcode 11，再更新和執行 Visual Studio for Mac 或 Visual Studio 2019，因為它會安裝 Xamarin 所需的一些工具。
 
-3. 在 Visual Studio for Mac 中，選取  **Visual Studio > 檢查更新 ...** ，選取**穩定**的通道，然後安裝可用的更新。
+3. **更新 Visual Studio for Mac 和 Visual Studio 2019** –確保您擁有最新穩定版本的 Xamarin。
 
 4. 選擇性**在您的 ios 裝置上安裝 ios 13** –針對使用 Xcode 11 引進之 api 的應用程式進行裝置測試，已註冊的 Apple 開發人員可以在其裝置上[下載](https://developer.apple.com/download)並安裝作業系統。 
 

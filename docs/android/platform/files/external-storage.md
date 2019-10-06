@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: e30f726cfb783fc47bc09f7590a523eb0e487105
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5992be5963c315c4f93fc4e03c24e3776087d418
+ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756522"
+ms.lasthandoff: 10/06/2019
+ms.locfileid: "71975803"
 ---
 # <a name="external-storage"></a>外部儲存體
 
@@ -30,9 +30,9 @@ ms.locfileid: "70756522"
 
 應用程式可能會在外部存放裝置上保留兩種不同類型的檔案：
 
-* **私用**檔案私用檔案是您的應用程式特有的檔案（但仍然是世界可讀取且可供全球寫入的檔案）。&ndash; Android 預期私人檔案會儲存在外部存放裝置上的特定目錄中。 雖然檔案稱為「私用」，但裝置上的其他應用程式仍會看到這些檔案並可供存取，因此不會受到 Android 的任何特殊保護。
+* **私**用檔案 &ndash; 私用檔案是您的應用程式特有的檔案（但仍然是世界可讀取且可供全球寫入的檔案）。 Android 預期私人檔案會儲存在外部存放裝置上的特定目錄中。 雖然檔案稱為「私用」，但裝置上的其他應用程式仍會看到這些檔案並可供存取，因此不會受到 Android 的任何特殊保護。
 
-* **公用檔案**：這些檔案不會被視為應用程式特有的檔案，而是要自由共用。&ndash;
+* **公用**檔案 &ndash;：這些檔案不會被視為應用程式特有的檔案，而且也可以自由共用。
 
 這些檔案之間的差異主要是概念。 私用檔案是私用的，因為它們被視為應用程式的一部分，而公用檔案則是存在於外部儲存區上的任何其他檔案。 Android 提供兩個不同的 Api 來解析私人和公用檔案的路徑，否則會使用相同的 .NET Api 來讀取和寫入這些檔案。 這些是與[讀取和寫入](~/android/platform/files/index.md#reading-or-writing-to-files-on-internal-storage)一節中所討論的相同 api。
 
@@ -40,67 +40,67 @@ ms.locfileid: "70756522"
 
 私用外部檔案被視為應用程式的特定（類似于內部檔案），但因為任何原因而保留在外部存放區（例如對內部儲存體而言太大）。 與內部檔案類似，當使用者卸載應用程式時，將會刪除這些檔案。
 
-藉由呼叫方法`Android.Content.Context.GetExternalFilesDir(string type)`，即可找到私用外部檔案的主要位置。 這個方法會`Java.IO.File`傳回代表應用程式之私用外部儲存體目錄的物件。 傳遞`null`至這個方法將會傳回使用者的應用程式儲存目錄路徑。 例如，針對具有封裝名稱`com.companyname.app`的應用程式，私用外部檔案的 "root" 目錄會是：
+藉由呼叫方法 `Android.Content.Context.GetExternalFilesDir(string type)`，即可找到私用外部檔案的主要位置。 這個方法會傳回代表應用程式之私用外部儲存體目錄的 @no__t 0 物件。 將 `null` 傳遞至這個方法，將會傳回使用者的應用程式儲存目錄路徑。 例如，針對套件名稱為 `com.companyname.app` 的應用程式，私用外部檔案的 "root" 目錄會是：
 
 ```bash
 /storage/emulated/0/Android/data/com.companyname.app/files/
 ```
 
-本檔會參考外部儲存體上私人檔案的儲存體目錄作為 _\_私人外部\_儲存體_。
+本檔將在外部儲存體上，將私人檔案的儲存目錄參考為_私用 @ no__t-1EXTERNAL @ no__t-2STORAGE_。
 
-的參數`GetExternalFilesDir()`是指定_應用程式目錄_的字串。 這是一個目錄，目的是要為檔案的邏輯組織提供標準位置。 字串值可透過`Android.OS.Environment`類別上的常數取得：
+@No__t-0 的參數是指定_應用程式目錄_的字串。 這是一個目錄，目的是要為檔案的邏輯組織提供標準位置。 字串值可透過 @no__t 0 類別上的常數來取得：
 
 | `Android.OS.Environment` | 目錄 |
 |-|-|
-| DirectoryAlarms | **_私\_用外部\_儲存體_/Alarms** |
+| DirectoryAlarms | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Alarms** |
 | DirectoryDcim | **_PRIVATE\_EXTERNAL\_STORAGE_/DCIM** |
-| DirectoryDownloads | **_私\_用外部\_儲存體_/Download** |
-| DirectoryDocuments | **_私\_用外部\_儲存體_/Documents** |
-| DirectoryMovies | **_私\_用外部\_儲存體_/Movies** |
-| DirectoryMusic | **_私\_用外部\_儲存體_/Music** |
-| DirectoryNotifications | **_私\_用外部\_儲存體_/Notifications** |
-| DirectoryPodcasts | **_私\_用外部\_儲存體_/Podcasts** |
-| DirectoryRingtones | **_私\_用外部\_儲存體_/Ringtones** |
-| DirectoryPictures | **_私\_用外部\_儲存體_/Pictures** |
+| DirectoryDownloads | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Download** |
+| DirectoryDocuments | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Documents** |
+| DirectoryMovies | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Movies** |
+| DirectoryMusic | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Music** |
+| DirectoryNotifications | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Notifications** |
+| DirectoryPodcasts | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Podcasts** |
+| DirectoryRingtones | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Ringtones** |
+| DirectoryPictures | **_PRI加值稅E @ no__t-2EXTERNAL @ no__t-3STORAGE_/Pictures** |
 
-對於具有多個外部儲存體磁碟分割的裝置，每個分割區都有一個適用于私人檔案的目錄。 方法`Android.Content.Context.GetExternalFilesDirs(string type)`會傳回的`Java.IO.Files`陣列。 每個物件都將代表所有共用/外部存放裝置上的私用應用程式特定目錄，應用程式可以在其中放置所擁有的檔案。
+對於具有多個外部儲存體磁碟分割的裝置，每個分割區都有一個適用于私人檔案的目錄。 方法 `Android.Content.Context.GetExternalFilesDirs(string type)` 會傳回 `Java.IO.Files` 的陣列。 每個物件都將代表所有共用/外部存放裝置上的私用應用程式特定目錄，應用程式可以在其中放置所擁有的檔案。
 
 > [!IMPORTANT]
-> 私人 exteral 儲存體目錄的確切路徑可能會因裝置而異，以及 Android 版本之間的差異。 因此，應用程式不一定要將路徑硬編碼到此目錄，而是改為使用 Xamarin Api，例如`Android.Content.Context.GetExternalFilesDir()`。
+> 私人外部儲存體目錄的確切路徑可能會因裝置而異，以及 Android 版本之間的差異。 因此，應用程式不一定要將路徑硬式編碼到這個目錄，而改為使用如 `Android.Content.Context.GetExternalFilesDir()` 的 Xamarin Api。
 
 ### <a name="public-external-files"></a>公用外部檔案
 
-公用檔案是存在於外部存放裝置上的檔案，這些檔案不會儲存在 Android 配置給私人檔案的目錄中。 卸載應用程式時，不會刪除公用檔案。 Android 應用程式必須被授與許可權，才能讀取或寫入任何公用檔案。 公用檔案可以存在於外部儲存位置上，但依照慣例，Android 預期公用檔案存在於屬性`Android.OS.Environment.ExternalStorageDirectory`所識別的目錄中。 這個屬性會`Java.IO.File`傳回代表主要外部儲存體目錄的物件。 例如， `Android.OS.Environment.ExternalStorageDirectory`可能會參考下列目錄：
+公用檔案是存在於外部存放裝置上的檔案，這些檔案不會儲存在 Android 配置給私人檔案的目錄中。 卸載應用程式時，不會刪除公用檔案。 Android 應用程式必須被授與許可權，才能讀取或寫入任何公用檔案。 公用檔案可能會存在於外部儲存體的任何位置，但依照慣例，Android 預期公用檔案會存在於屬性所識別的目錄中 `Android.OS.Environment.ExternalStorageDirectory`。 這個屬性會傳回代表主要外部儲存體目錄的 @no__t 0 物件。 例如，`Android.OS.Environment.ExternalStorageDirectory` 可能會參考下列目錄：
 
 ```bash
 /storage/emulated/0/
 ```
 
-本檔會將外部儲存體上的公用檔案儲存目錄視為 _\_公用外部\_儲存體_。
+本檔會將外部儲存體上的公用檔案儲存目錄稱為_public @ no__t-1EXTERNAL @ no__t-2STORAGE_。
 
-Android 也支援 _\_公用外部\_儲存體_上的應用程式目錄概念。 這些目錄與`_PRIVATE\_EXTERNAL\_STORAGE_`和的應用程式目錄完全相同，如前一節的表格中所述。 方法`Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` 會`Java.IO.File`傳回對應至公用應用程式目錄的物件。 參數是必要參數，而且不能是`null`。 `directoryType`
+Android 也支援_PUBLIC @ no__t-1EXTERNAL @ no__t-2STORAGE_上的應用程式目錄概念。 這些目錄與 `_PRIVATE\_EXTERNAL\_STORAGE_` 的應用程式目錄完全相同，並會在上一節的表格中加以說明。 方法 `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` 會傳回對應至公用應用程式目錄的 `Java.IO.File` 物件。 @No__t-0 參數是必要參數，不能 `null`。
 
-例如，呼叫`Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath`將會傳回類似下列內容的字串：
+例如，呼叫 `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` 將會傳回類似下列內容的字串：
 
 ```bash
 /storage/emulated/0/Documents
 ```
 
 > [!IMPORTANT]
-> 公用外部儲存體目錄的確切路徑，可能會因裝置與裝置，以及 Android 版本之間的不同而有所不同。 因此，應用程式不一定要將路徑硬編碼到此目錄，而是改為使用 Xamarin Api，例如`Android.OS.Environment.ExternalStorageDirectory`。
+> 公用外部儲存體目錄的確切路徑，可能會因裝置與裝置，以及 Android 版本之間的不同而有所不同。 因此，應用程式不一定要將路徑硬式編碼到這個目錄，而改為使用如 `Android.OS.Environment.ExternalStorageDirectory` 的 Xamarin Api。
 
 ## <a name="working-with-external-storage"></a>使用外部儲存體
 
 在 Xamarin Android 應用程式取得檔案的完整路徑之後，它應該利用任何標準 .NET Api 來建立、讀取、寫入或刪除檔案。 這可將應用程式的跨平臺相容程式碼數量最大化。 不過，在嘗試存取檔案之前，您必須先確定是否能夠存取該檔案。
 
-1. **確認外部儲存體**&ndash;視外部儲存體的本質而定，它可能不是由應用程式裝載並可供使用。 所有應用程式都應該先檢查外部存放裝置的狀態，然後再嘗試使用它。
+1. 根據外部儲存體的本質，**確認外部儲存體**&ndash;，可能是因為它可能未裝載，且無法供應用程式使用。 所有應用程式都應該先檢查外部存放裝置的狀態，然後再嘗試使用它。
 2. **執行執行時間許可權檢查**&ndash; Android 應用程式必須向使用者要求許可權，才能存取外部儲存體。 這表示在存取任何檔案之前，應該先執行執行時間許可權要求。 [Xamarin 中](~/android/app-fundamentals/permissions.md)的指南許可權包含 android 許可權的更多詳細資料。
 
 以下將討論這兩項工作。
 
 ### <a name="verifying-that-external-storage-is-available"></a>正在驗證外部存放裝置是否可用
 
-寫入外部儲存體之前的第一個步驟是檢查它是否可讀取或寫入。 `Android.OS.Environment.ExternalStorageState`屬性會保存識別外部儲存體狀態的字串。 這個屬性會傳回代表狀態的字串。 此資料表是可能`ExternalStorageState` `Environment.ExternalStorageState`傳回的值清單：
+寫入外部儲存體之前的第一個步驟是檢查它是否可讀取或寫入。 @No__t-0 屬性會保存識別外部儲存體狀態的字串。 這個屬性會傳回代表狀態的字串。 此資料表是 `Environment.ExternalStorageState` 可能傳回的 @no__t 0 值清單：
 
 | ExternalStorageState | 描述  |
 |----------------------|---|
@@ -127,7 +127,7 @@ bool isWriteable = Environment.MediaMounted.Equals(Environment.ExternalStorageSt
 
 Android 會將外部存放裝置視為_危險許可權_，通常會要求使用者授與其存取資源的許可權。 使用者可以隨時撤銷此許可權。  這表示在存取任何檔案之前，應該先執行執行時間許可權要求。 應用程式會自動被授與讀取和寫入自己的私用檔案的許可權。 應用程式可能會在授與使用者的[許可權](~/android/app-fundamentals/permissions.md)之後，讀取及寫入屬於其他應用程式的私用檔案。
 
-所有 Android 應用程式都必須在**androidmanifest.xml**中宣告外部儲存區的兩個許可權其中之一。 若要識別許可權，必須將下列兩個`uses-permission`元素的其中一個新增至**androidmanifest.xml**：
+所有 Android 應用程式都必須在**androidmanifest.xml**中宣告外部儲存區的兩個許可權其中之一。 若要識別許可權，下列兩個 @no__t 0 元素的其中一個必須新增至**androidmanifest.xml**：
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -135,7 +135,7 @@ Android 會將外部存放裝置視為_危險許可權_，通常會要求使用�
 ```
 
 > [!NOTE]
-> 如果使用者`WRITE_EXTERNAL_STORAGE`授與`READ_EXTERNAL_STORAGE` ，則也會以隱含方式授與。 不需要在**androidmanifest.xml**中要求這兩個許可權。
+> 如果使用者授與 `WRITE_EXTERNAL_STORAGE`，則 `READ_EXTERNAL_STORAGE` 也會以隱含方式授與。 不需要在**androidmanifest.xml**中要求這兩個許可權。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -169,7 +169,7 @@ $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STOR
 
 ## <a name="deleting-files"></a>刪除檔案
 
-任何標準C# api 都可以用來刪除外部儲存體的檔案，例如[`System.IO.File.Delete`](xref:System.IO.File.Delete*)。 您也可以使用 JAVA Api，而犧牲程式碼可攜性。 例如：
+任何標準C# api 都可以用來從外部存放裝置刪除檔案，例如[`System.IO.File.Delete`](xref:System.IO.File.Delete*)。 您也可以使用 JAVA Api，而犧牲程式碼可攜性。 例如:
 
 ```csharp
 System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/files/count.txt");
