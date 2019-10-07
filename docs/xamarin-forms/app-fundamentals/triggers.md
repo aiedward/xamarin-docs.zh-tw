@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 9e49dfa99ccb6aae49a72ce044bb8071c210336e
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 66323974fa44f5397e21541595a187ce0ba4d061
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198573"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997148"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。
 
@@ -144,7 +144,7 @@ ms.locfileid: "71198573"
 
 - 覆寫 `Invoke` 方法 - 每當符合觸發程序準則時便會呼叫它。
 
-- 在宣告觸發程式時，選擇性地公開可在 XAML 中設定的屬性。 如需這種情況的範例， `VisualElementPopTriggerAction`請參閱隨附範例應用程式中的類別。
+- 在宣告觸發程式時，選擇性地公開可在 XAML 中設定的屬性。 如需這種情況的範例，請參閱隨附範例應用程式中的 `VisualElementPopTriggerAction` 類別。
 
 ```csharp
 public class NumericValidationTriggerAction : TriggerAction<Entry>
@@ -278,7 +278,12 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 
 另一種在觸發程序發生時實作變更的方法，是藉由新增 `EnterActions` 和 `ExitActions` 集合，並指定 `TriggerAction<T>` 實作。
 
-您可以「同時」在觸發程序中提供 `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，`Setter` 會立即呼叫 (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
+[@No__t 1](xref:Xamarin.Forms.TriggerBase.EnterActions)集合是用來定義在符合觸發條件時，將會叫用的[`TriggerAction`](xref:Xamarin.Forms.TriggerAction)物件的 `IList`。 [@No__t 1](xref:Xamarin.Forms.TriggerBase.ExitActions)集合是用來定義 `TriggerAction` 物件的 `IList`，在不再符合觸發程式條件之後就會叫用。
+
+> [!NOTE]
+> [@No__t-5](xref:Xamarin.Forms.EventTrigger)類別會忽略在 `EnterActions` 和 `ExitActions` 集合中定義的[`TriggerAction`](xref:Xamarin.Forms.TriggerAction)物件。    
+
+您可以在觸發程式中*同時*提供 `EnterActions` 和 `ExitActions` 以及 @no__t 3 s，但請注意，@no__t 4s 會立即呼叫（它們不會等待 `EnterAction` 或 `ExitAction` 完成）。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -292,7 +297,7 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
             <Trigger.ExitActions>
                 <local:FadeTriggerAction StartsFrom="1" />
             </Trigger.ExitActions>
-                        <!-- You can use both Enter/Exit and Setter together if required -->
+            <!-- You can use both Enter/Exit and Setter together if required -->
         </Trigger>
     </Entry.Triggers>
 </Entry>
@@ -327,8 +332,6 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 ```
-
-注意︰會在**事件觸發程序**上忽略`EnterActions` 和 `ExitActions`。
 
 ## <a name="related-links"></a>相關連結
 

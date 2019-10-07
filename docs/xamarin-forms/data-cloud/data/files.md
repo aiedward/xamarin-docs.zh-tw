@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: 8d30cdd4a50e912208d29e2171ef4c3db174718a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fb3bbda3caee9fdbd490aaea7e119baf470eedd1
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760570"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997164"
 ---
 # <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的檔案處理
 
@@ -58,7 +58,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 這些作業會在範例應用程式中示範，包括儲存及載入文字的頁面：
 
-[![儲存及載入文字](files-images/saveandload-sml.png "在應用程式中儲存及載入檔案")](files-images/saveandload.png#lightbox "在應用程式中儲存及載入檔案")
+[![儲存和載入文字](files-images/saveandload-sml.png "儲存和載入應用程式中的")檔案](files-images/saveandload.png#lightbox "在應用程式中儲存及載入檔案")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
@@ -68,34 +68,35 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![設定內嵌資源建置動作](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "設定 EmbeddedResource BuildAction")
+[![正在設定內嵌資源組建動作](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "設定 EmbeddedResource BuildAction")
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![內嵌在 PCL 的文字檔，設定內嵌資源建置動作](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "設定 EmbeddedResource BuildAction")
+[![內嵌在 .net standard 程式庫中的文字檔，設定內嵌資源組建動作](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "設定 EmbeddedResource BuildAction")
 
 -----
 
-`GetManifestResourceStream` 用以存取使用其**資源識別碼**的內嵌檔案。 根據預設，資源識別碼是檔案名稱前置詞加內嵌所在之專案的預設命名空間；在此情況下，組件是 **WorkingWithFiles** 而檔案名稱是 **PCLTextResource.txt**，所以資源識別碼是 `WorkingWithFiles.PCLTextResource.txt`。
+`GetManifestResourceStream` 用以存取使用其**資源識別碼**的內嵌檔案。 根據預設，資源識別碼是以內嵌之專案的預設命名空間做為前置詞的前置詞，在此情況下，元件是**WorkingWithFiles** ，而 Filename 是**LibTextResource**，因此資源識別碼 `WorkingWithFiles.LibTextResource.txt`。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLTextResource.txt");
+Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.LibTextResource.txt");
 string text = "";
-using (var reader = new System.IO.StreamReader (stream)) {
+using (var reader = new System.IO.StreamReader (stream))
+{  
     text = reader.ReadToEnd ();
 }
 ```
 
 然後就可以使用 `text` 變數顯示文字，或在程式碼中使用它。 [範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)的這個螢幕擷取畫面顯示使用 `Label` 控制項轉譯的文字。
 
- [![內嵌在 PCL 的文字檔](files-images/pcltext-sml.png "顯示在應用程式中之內嵌在 PCL 的文字檔")](files-images/pcltext.png#lightbox "顯示在應用程式中之內嵌在 PCL 的文字檔")
+ [![內嵌在 .net standard 程式庫中的文字檔內嵌于](files-images/pcltext-sml.png "應用程式中 .NET Standard 程式庫中的文字檔")](files-images/pcltext.png#lightbox "應用程式中顯示 .NET Standard 程式庫中的內嵌文字檔")
 
 載入和還原序列化 XML 一樣簡單。 下列程式碼示範從資源載入並還原序列化 XML 檔案，然後繫結至 `ListView` 以顯示。 XML 檔案包含 `Monkey` 物件的陣列 (已使用範例程式碼定義類別)。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.PCLXmlResource.xml");
+Stream stream = assembly.GetManifestResourceStream("WorkingWithFiles.LibXmlResource.xml");
 List<Monkey> monkeys;
 using (var reader = new System.IO.StreamReader (stream)) {
     var serializer = new XmlSerializer(typeof(List<Monkey>));
@@ -105,7 +106,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [![內嵌在 PCL 中的 XML 檔，以 ListView 顯示](files-images/pclxml-sml.png "將 XML 檔案內嵌在 PCL 中，以 ListView 顯示")](files-images/pclxml.png#lightbox "將 XML 檔案內嵌在 PCL 中，以 ListView 顯示")
+ [![內嵌在 .net standard 程式庫中的 Xml 檔案，會顯示在]listview 中所(files-images/pclxml-sml.png "顯示的 .net standard 程式庫")中的 listview 內嵌 Xml 檔案中](files-images/pclxml.png#lightbox "ListView 中顯示的 .NET standard 程式庫中的內嵌 XML 檔案")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -139,9 +140,9 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="organizing-resources"></a>組織資源
 
-上述範例假設該檔案內嵌在 .NET Standard 程式庫專案的根目錄中；在這種情況下，資源識別碼就是表單 **Namespace.Filename.Extension** 的資源識別碼，例如 `WorkingWithFiles.PCLTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`。
+上述範例假設該檔案內嵌在 .NET Standard 程式庫專案的根目錄中；在這種情況下，資源識別碼就是表單 **Namespace.Filename.Extension** 的資源識別碼，例如 `WorkingWithFiles.LibTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`。
 
-您可以使用資料夾組織內嵌的資源。 當內嵌的資源放置在某個資料夾中時，資料夾名稱會成為資源識別碼的一部分 (以句點分隔)，以致資源識別碼格式變成 **Namespace.Folder.Filename.Extension**。 將範例應用程式所用的檔案放到資料夾 **MyFolder** 中，對應的資源識別碼就會變成 `WorkingWithFiles.MyFolder.PCLTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`。
+您可以使用資料夾組織內嵌的資源。 當內嵌的資源放置在某個資料夾中時，資料夾名稱會成為資源識別碼的一部分 (以句點分隔)，以致資源識別碼格式變成 **Namespace.Folder.Filename.Extension**。 將範例應用程式所用的檔案放到資料夾 **MyFolder** 中，對應的資源識別碼就會變成 `WorkingWithFiles.MyFolder.LibTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`。
 
 <a name="Debugging_Embedded_Resources" />
 

@@ -1,18 +1,18 @@
 ---
 title: 鍵盤協助工具
-description: 與其使用預設的定位順序，有時候您必須使用 TabIndex 和 IsTapStop 屬性的組合來指定定位順序以微調 UI 的協助工具。
+description: 有時必須藉由使用 TabIndex 和 IsTabStop 屬性的組合來指定索引標籤序列，以微調 UI 的存取範圍，而不是使用預設的定位順序。
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 4bca8de32ec0dfa6a273b784333e99c5bbfe968d
-ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
+ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71975859"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997117"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的鍵盤協助工具
 
@@ -125,7 +125,7 @@ ms.locfileid: "71975859"
 
 ## <a name="supported-controls"></a>支援的控制項
 
-下列控制項支援 `TabIndex` 和 `IsTapStop` 屬性，其可接受一或多個平台上的鍵盤輸入：
+下列控制項支援 `TabIndex` 和 `IsTabStop` 屬性，其可接受一或多個平台上的鍵盤輸入：
 
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`DatePicker`](xref:Xamarin.Forms.DatePicker)

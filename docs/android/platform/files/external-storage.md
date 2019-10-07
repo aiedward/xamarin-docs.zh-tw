@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 07/23/2018
-ms.openlocfilehash: 5992be5963c315c4f93fc4e03c24e3776087d418
-ms.sourcegitcommit: 621649fb4a119981290fed7a1061cbae30b982a6
+ms.openlocfilehash: c67f58a4b1886d3f89f7bd1639e1cd687d329869
+ms.sourcegitcommit: 4ff181101d76f048b949c9613b2c72cf02618f8b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2019
-ms.locfileid: "71975803"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71994812"
 ---
 # <a name="external-storage"></a>外部儲存體
 
@@ -78,7 +78,7 @@ ms.locfileid: "71975803"
 
 本檔會將外部儲存體上的公用檔案儲存目錄稱為_public @ no__t-1EXTERNAL @ no__t-2STORAGE_。
 
-Android 也支援_PUBLIC @ no__t-1EXTERNAL @ no__t-2STORAGE_上的應用程式目錄概念。 這些目錄與 `_PRIVATE\_EXTERNAL\_STORAGE_` 的應用程式目錄完全相同，並會在上一節的表格中加以說明。 方法 `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` 會傳回對應至公用應用程式目錄的 `Java.IO.File` 物件。 @No__t-0 參數是必要參數，不能 `null`。
+Android 也支援_PUBLIC @ no__t-1EXTERNAL @ no__t-2STORAGE_上的應用程式目錄概念。 這些目錄與 `PRIVATE_EXTERNAL_STORAGE` 的應用程式目錄完全相同，並會在上一節的表格中加以說明。 方法 `Android.OS.Environment.GetExternalStoragePublicDirectory(string directoryType)` 會傳回對應至公用應用程式目錄的 `Java.IO.File` 物件。 @No__t-0 參數是必要參數，不能 `null`。
 
 例如，呼叫 `Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDocuments).AbsolutePath` 將會傳回類似下列內容的字串：
 

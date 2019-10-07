@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: 294b538b0e73344ffe9109a1e1091bc9b7591f63
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
+ms.openlocfilehash: 59c6f9e7ec6c40c938fda2665bbae5685e7de830
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69976479"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997210"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 版面配置
 
@@ -22,7 +22,7 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 [ `Layout` ](xref:Xamarin.Forms.Layout)並[ `Layout<T>` ](xref:Xamarin.Forms.Layout`1)在 Xamarin.Forms 中的類別是特製化的檢視，做為檢視和其他版面配置容器的子類型。 `Layout`類別本身衍生自[ `View` ](views.md)。 A`Layout`衍生項目通常包含邏輯，可在 Xamarin.Forms 應用程式中設定的位置和大小的子項目。
 
-[![Xamarin.Forms 版面配置類型](layouts-images/layouts-sml.png "Xamarin.Forms 版面配置類型")](layouts-images/layouts.png#lightbox "Xamarin.Forms 版面配置類型")
+[![Xamarin：表單版面配置類型](layouts-images/layouts-sml.png "Xamarin. 表單版面配置類型")](layouts-images/layouts.png#lightbox "Xamarin. 表單版面配置類型")
 
 衍生自類別`Layout`可以分為兩類：
 
@@ -36,7 +36,7 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 |     |     |
 | --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView) 包含使用所設定的單一子系[ `Content` ](xref:Xamarin.Forms.ContentView.Content)屬性。 `Content`屬性可以設定為任何`View`衍生項目，包括其他`Layout`衍生項目。 `ContentView` 通常用來結構化的項目，並做為基底類別[ `Frame` ](#frame)。<br /><br />[API 檔](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md)/[範例] (https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-cardview/ | [![ContentView 範例](layouts-images/ContentView.png "ContentView 範例")](layouts-images/ContentView-Large.png#lightbox "ContentView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView) 包含使用所設定的單一子系[ `Content` ](xref:Xamarin.Forms.ContentView.Content)屬性。 `Content`屬性可以設定為任何`View`衍生項目，包括其他`Layout`衍生項目。 `ContentView` 通常用來結構化的項目，並做為基底類別[ `Frame` ](#frame)。<br /><br />[API 文件](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-cardview/) | [![ContentView 範例](layouts-images/ContentView.png "ContentView 範例")](layouts-images/ContentView-Large.png#lightbox "ContentView 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />
@@ -45,7 +45,7 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 |     |     |
 | --- | --- |
-| 類別衍生自[`ContentView`](#contentView) , 並在其子系周圍顯示框線或框架。 [`Frame`](xref:Xamarin.Forms.Frame) [`Padding`](xref:Xamarin.Forms.Layout.Padding) [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)類別的預設值為 20, 而且也會定義、和[`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)屬性。 `Frame`<br /><br />[API 文件](xref:Xamarin.Forms.Frame) / [指南](~/xamarin-forms/user-interface/layouts/frame.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![畫面格範例](layouts-images/Frame.png "畫面格範例")](layouts-images/Frame-Large.png#lightbox "框架範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| [@No__t 1](xref:Xamarin.Forms.Frame)類別衍生自[`ContentView`](#contentView) ，並在其子系周圍顯示框線或框架。 @No__t 0 類別具有預設的[`Padding`](xref:Xamarin.Forms.Layout.Padding)值20，同時定義了[`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)、 [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)和[@no__t 8 的](xref:Xamarin.Forms.Frame.HasShadow)屬性。<br /><br />[API 文件](xref:Xamarin.Forms.Frame) / [指南](~/xamarin-forms/user-interface/layouts/frame.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![框架範例](layouts-images/Frame.png "框架範例")](layouts-images/Frame-Large.png#lightbox "框架範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
 
 <a name="scrollView" />
@@ -90,7 +90,7 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 |     |     |
 | --- | --- |
-| [`Grid`](xref:Xamarin.Forms.Grid) 放置其子項目格線中的資料列和資料行。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md) [ `Row` ](xref:Xamarin.Forms.Grid.RowProperty)， [ `Column` ](xref:Xamarin.Forms.Grid.ColumnProperty)， [ `RowSpan` ](xref:Xamarin.Forms.Grid.RowSpanProperty)，並[ `ColumnSpan` ](xref:Xamarin.Forms.Grid.ColumnSpanProperty)。<br /><br />[API 文件](xref:Xamarin.Forms.Grid) / [指南](~/xamarin-forms/user-interface/layouts/grid.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![格線範例](layouts-images/Grid.png "格線範例")](layouts-images/Grid-Large.png#lightbox "格線範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
+| [`Grid`](xref:Xamarin.Forms.Grid) 放置其子項目格線中的資料列和資料行。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md) [ `Row` ](xref:Xamarin.Forms.Grid.RowProperty)， [ `Column` ](xref:Xamarin.Forms.Grid.ColumnProperty)， [ `RowSpan` ](xref:Xamarin.Forms.Grid.RowSpanProperty)，並[ `ColumnSpan` ](xref:Xamarin.Forms.Grid.ColumnSpanProperty)。<br /><br />[API 文件](xref:Xamarin.Forms.Grid) / [指南](~/xamarin-forms/user-interface/layouts/grid.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![方格範例](layouts-images/Grid.png "方格範例")](layouts-images/Grid-Large.png#lightbox "方格範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/GridDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/GridDemoPage.xaml) |
 |     |     |
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
@@ -104,7 +104,7 @@ _Xamarin.Forms 版面配置用來撰寫使用者介面控制項至視覺化結�
 
 |     |     |
 | --- | --- |
-| [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 放置相對於的子項目`RelativeLayout`本身或其同層級項目。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md)並設為類型的物件[ `Constraint` ](xref:Xamarin.Forms.Constraint)並[ `BoundsConstraint` ](xref:Xamarin.Forms.Constraint)。<br /><br />[API 文件](xref:Xamarin.Forms.RelativeLayout) / [指南](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![範例 RelativeLayout](layouts-images/RelativeLayout.png "RelativeLayout 範例")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
+| [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 放置相對於的子項目`RelativeLayout`本身或其同層級項目。 使用表示子系的位置[附加屬性](~/xamarin-forms/xaml/attached-properties.md)並設為類型的物件[ `Constraint` ](xref:Xamarin.Forms.Constraint)並[ `BoundsConstraint` ](xref:Xamarin.Forms.Constraint)。<br /><br />[API 文件](xref:Xamarin.Forms.RelativeLayout) / [指南](~/xamarin-forms/user-interface/layouts/relative-layout.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![RelativeLayout 範例](layouts-images/RelativeLayout.png "RelativeLayout 範例")](layouts-images/RelativeLayout-Large.png#lightbox "RelativeLayout 範例")<br />[此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RelativeLayoutDemoPage.cs) / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RelativeLayoutDemoPage.xaml) |
 |     |     |
 
 ### <a name="flexlayout"></a>FlexLayout

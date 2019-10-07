@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 71972f13f991bc5ad3ddf3c1c631fa7413290204
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 26068973fd91d5229b7e2108f5df46ae4476ef74
+ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759896"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "71997208"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的簡單動畫
 
@@ -23,7 +23,7 @@ _ViewExtensions 類別提供可用來建構簡單的動畫的擴充方法。本�
 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)類別提供可用來建立簡單的動畫的下列擴充方法：
 
 - [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing)) 建立動畫[ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX)並[ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY)屬性[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。
-- [`ScaleTo`](xref:Xamarin.Forms.VisualElement.Scale) 建立動畫[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。
+- [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) 建立動畫[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。
 - [`RelScaleTo`](xref:Xamarin.Forms.ViewExtensions.RelScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) 適用於動畫的累加增加或減少以[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。
 - [`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) 建立動畫[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)屬性[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。
 - [`RelRotateTo`](xref:Xamarin.Forms.ViewExtensions.RelRotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) 適用於動畫的累加增加或減少以[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)屬性[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。
@@ -79,13 +79,13 @@ await image.RelRotateTo (360, 2000);
 
 ### <a name="scaling"></a>縮放
 
-下列程式碼範例示範如何使用[ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)方法來建立動畫[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性[ `Image` ](xref:Xamarin.Forms.Image):
+下列程式碼範例示範如何使用[ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)方法來建立動畫[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性[ `Image` ](xref:Xamarin.Forms.Image):
 
 ```csharp
 await image.ScaleTo (2, 2000);
 ```
 
-此程式碼建立動畫[ `Image` ](xref:Xamarin.Forms.Image)向上調整其大小的兩倍至超過 2 秒 （2000年毫秒為單位） 的執行個體。 [ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)方法會取得目前[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)開始的動畫，並從該值然後會調整為其第一個引數 (2) 的屬性值 （預設值為 1）。 這有其大小的兩倍來延伸影像的大小影響。
+此程式碼建立動畫[ `Image` ](xref:Xamarin.Forms.Image)向上調整其大小的兩倍至超過 2 秒 （2000年毫秒為單位） 的執行個體。 [ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)方法會取得目前[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)開始的動畫，並從該值然後會調整為其第一個引數 (2) 的屬性值 （預設值為 1）。 這有其大小的兩倍來延伸影像的大小影響。
 
 下列螢幕擷取畫面顯示在每個平台上進行調整：
 
@@ -106,7 +106,7 @@ await image.RelScaleTo (2, 2000);
 
 ### <a name="scaling-and-rotation-with-anchors"></a>縮放和旋轉起點
 
-[ `AnchorX` ](xref:Xamarin.Forms.VisualElement.AnchorX)並[ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY)屬性設定的縮放或旋轉的中心[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)和[ `Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性。 因此，其值也會影響[ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))並[ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)方法。
+[ `AnchorX` ](xref:Xamarin.Forms.VisualElement.AnchorX)並[ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY)屬性設定的縮放或旋轉的中心[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)和[ `Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性。 因此，其值也會影響[ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))並[ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)方法。
 
 給定[ `Image` ](xref:Xamarin.Forms.Image) ，已放在版面配置的中心，下列程式碼範例將示範輪替影像的版面配置的中心，藉由設定其[ `AnchorY` ](xref:Xamarin.Forms.VisualElement.AnchorY)屬性：
 
@@ -179,7 +179,7 @@ await image.ScaleTo (2, 2000);
 await image.ScaleTo (1, 2000);
 ```
 
-在此範例中， [ `Image` ](xref:Xamarin.Forms.Image)調整，而且同時旋轉超過 4 秒 （4000 毫秒為單位）。 縮放比例`Image`會使用兩個循序的動畫旋轉與同時發生。 [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法執行不含`await`運算子，並立即傳回的第一個[ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)然後開始的動畫。 `await`運算子，在第一`ScaleTo`方法呼叫會延遲，第二個`ScaleTo`方法呼叫，直到第一個`ScaleTo`方法呼叫已完成。 此時`RotateTo`動畫是一半方式完成，`Image`會旋轉 180 度。 最後 2 秒 （2000年毫秒），在第二個`ScaleTo`動畫和`RotateTo`同時完成動畫。
+在此範例中， [ `Image` ](xref:Xamarin.Forms.Image)調整，而且同時旋轉超過 4 秒 （4000 毫秒為單位）。 縮放比例`Image`會使用兩個循序的動畫旋轉與同時發生。 [ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法執行不含`await`運算子，並立即傳回的第一個[ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)然後開始的動畫。 `await`運算子，在第一`ScaleTo`方法呼叫會延遲，第二個`ScaleTo`方法呼叫，直到第一個`ScaleTo`方法呼叫已完成。 此時`RotateTo`動畫是一半方式完成，`Image`會旋轉 180 度。 最後 2 秒 （2000年毫秒），在第二個`ScaleTo`動畫和`RotateTo`同時完成動畫。
 
 ### <a name="running-multiple-asynchronous-methods-concurrently"></a>同時執行多個非同步方法
 
@@ -194,7 +194,7 @@ await Task.WhenAny<bool>
 await image.ScaleTo (1, 2000);
 ```
 
-在此範例中，`Task.WhenAny`方法呼叫包含兩個工作。 第一項工作將影像旋轉超過 4 秒 （4000 毫秒為單位），和第二項工作會縮放影像超過 2 秒 （2000年毫秒為單位）。 第二個工作完成時，`Task.WhenAny`方法呼叫完成。 不過，即使[ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法仍在執行中，第二個[ `ScaleTo` ](xref:Xamarin.Forms.VisualElement.Scale)方法可以開始。
+在此範例中，`Task.WhenAny`方法呼叫包含兩個工作。 第一項工作將影像旋轉超過 4 秒 （4000 毫秒為單位），和第二項工作會縮放影像超過 2 秒 （2000年毫秒為單位）。 第二個工作完成時，`Task.WhenAny`方法呼叫完成。 不過，即使[ `RotateTo` ](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法仍在執行中，第二個[ `ScaleTo` ](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)方法可以開始。
 
 `Task.WhenAll`方法完成時完成其集合中的所有方法，如下列程式碼範例所示：
 
