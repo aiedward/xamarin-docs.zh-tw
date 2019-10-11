@@ -6,19 +6,21 @@ ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2019
-ms.openlocfilehash: a4d246419c7449c2395759cf5a8b04469e7a2309
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
-ms.translationtype: HT
+ms.date: 10/08/2019
+ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
+ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68821002"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72170969"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 發行-訂閱模式是一種訊息模式，發行者可以在不知道任何接收者 (稱為訂閱者) 的情況下傳送訊息。 同樣地，訂閱者可以在不知道任何發行者的情況下接聽特定訊息。
+
+.NET 中的事件會執行發佈-訂閱模式，如果不需要鬆散結合（例如控制項和包含它的頁面），則是在元件之間的通訊層最簡單且直接的方法。 不過，「發行者」和「訂閱者」存留期會結合彼此的物件參考，而「訂閱者」型別必須具有「發行者」型別的參考。 這可能會造成記憶體管理問題，特別是當有短期的物件訂閱靜態或長時間物件的事件時。 如果未移除事件處理常式，訂閱者將會在發行者中的參考保持運作狀態，這會防止或延遲訂閱者的垃圾收集。
 
 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別會實作發行-訂閱模式，允許在不方便透過物件和類型參考連結的元件之間進行以訊息為基礎的通訊。 此機制讓發行者和訂閱者不需彼此參考就能進行通訊，有助於減少兩者之間的相依性。
 

@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
-ms.openlocfilehash: 6ffd1c3e42dbaf0a82b07cd9e0a00228c5fa0604
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "70293130"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273123"
 ---
 # <a name="using-team-city-with-xamarin"></a>搭配 Xamarin 使用小組城市
 
@@ -61,7 +61,7 @@ TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
 3. **Xcode** –編譯和簽署 iOS 應用程式時需要 Xcode。
 4. **Xcode 命令列工具**–在[更新 Ruby 與 Rbenv ruby-build](https://github.com/calabash/calabash-ios/wiki)指南的安裝一節的步驟1中會說明這一點。
 5. **簽署身分識別 & 布建設定檔**–透過 XCode 匯入憑證和布建設定檔。 如需詳細資訊，請參閱 Apple 的匯出簽署身分識別和布建[設定檔](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)指南。
-6. **Android 金鑰庫**–將所需的 Android 金鑰庫複製到 TeamCity 使用者可存取的目錄，亦`~/Documents/keystores/MyAndroidApp1`即。
+6. **Android 金鑰庫**–將所需的 Android 金鑰庫複製到 TeamCity 使用者可存取的目錄，亦即 `~/Documents/keystores/MyAndroidApp1`。
 7. **Calabash** –如果您的應用程式具有使用 Calabash 撰寫的測試，這是選擇性步驟。 如需詳細資訊，請參閱在[OS X Mavericks 上安裝 Calabash](https://github.com/calabash/calabash-ios/wiki)指南和[使用 rbenv ruby-build 更新 Ruby](https://github.com/calabash/calabash-ios/wiki)指南。
 
 下圖說明所有這些元件：
@@ -134,7 +134,7 @@ TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
 
 #### <a name="submitting-xamarinuitests-to-test-cloud"></a>將 Uitest 提交至測試雲端
 
-Uitest 是使用`test-cloud.exe`應用程式提交，如下列程式碼片段所示：
+Uitest 是使用 `test-cloud.exe` 應用程式提交的，如下列程式碼片段所示：
 
 ```bash
 test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
@@ -142,11 +142,11 @@ test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <de
 
 執行測試時，會**以名為**NUNIT 的 xml 檔案格式傳回測試結果。 TeamCity 將會在組建記錄檔中顯示資訊。
 
-如需如何將 Uitest 提交至測試雲端的詳細資訊，請參閱此指南中有關[準備上傳的 uitest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest/)。
+如需如何將 Uitest 提交至測試雲端的詳細資訊，請參閱[準備 Xamarin Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)或[準備 xamarin 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
 #### <a name="submitting-calabash-tests-to-test-cloud"></a>將 Calabash 測試提交至測試雲端
 
-Calabash 測試會使用`test-cloud` gem 提交，如下列程式碼片段所示：
+Calabash 測試會使用 `test-cloud` gem 來提交，如下列程式碼片段所示：
 
 ```bash
 test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
@@ -167,35 +167,35 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 1. 透過網頁瀏覽器登入 TeamCity 來啟動。 流覽至根專案：
 
-    ![流覽至根專案](teamcity-images/image2.png "流覽至根專案")在根專案底下，建立新的子專案：
+    ![流覽至]根專案流覽至根專案底下(teamcity-images/image2.png "的根專案")，建立新的子專案：
 
     ![流覽至根專案底下的根專案，建立新的子專案](teamcity-images/image3.png "流覽至根專案底下的根專案，建立新的子專案")
 2. 建立子專案之後，請加入新的組建設定：
 
-    ![建立子專案之後，新增組建]設定(teamcity-images/image5.png "建立子專案之後，新增組建")設定
+    ![建立子專案之後，]在建立子專案之後加入新的組建設定，並新增(teamcity-images/image5.png "組建")設定
 3. 將 VCS 專案附加至組建設定。 這是透過 [版本控制設定] 畫面來完成：
 
-    ![這是透過 [版本控制設定] 畫面來完成](teamcity-images/image6.png "這是透過 [版本控制設定] 畫面來完成")
+    ![這是透過 [版本控制設定] 畫面完成]，(teamcity-images/image6.png "這是透過 [版本控制設定] 畫面來完成")
 
     如果沒有建立任何 VCS 專案，您可以選擇從新的 VCS 根頁面建立一個，如下所示：
 
-    ![如果沒有建立任何 VCS 專案，您可以選擇從新的 [Vcs 根] 頁面建立一個](teamcity-images/image7.png "如果沒有建立任何 VCS 專案，您可以選擇從新的 [Vcs 根] 頁面建立一個")
+    ![如果沒有建立任何 vcs 專案，您可以選擇從新的 Vcs 根頁面建立一個]，(teamcity-images/image7.png "如果沒有建立任何 vcs 專案，您可以選擇從新的 [vc 根] 頁面建立一個")。
 
     附加了 VCS 根之後，TeamCity 將會簽出項目，並嘗試自動偵測組建步驟。 如果您熟悉 TeamCity，則可以選取其中一個偵測到的組建步驟。 現在您可以放心地忽略偵測到的組建步驟。
 
 4. 接下來，設定組建觸發程式。 這會在符合特定條件時將組建排入佇列，例如當使用者將程式碼認可至存放庫時。 下列螢幕擷取畫面顯示如何新增組建觸發程式：
 
-    ![此螢幕擷取畫面顯示如何新增組建觸發]程式(teamcity-images/image8.png "此螢幕擷取畫面顯示如何新增組建觸發")程式您可以在下列螢幕擷取畫面中，看到設定組建觸發程式的範例：
+    ![這個螢幕擷取畫面顯示如何新增組建觸發]程式：(teamcity-images/image8.png "這個螢幕擷取畫面顯示如何新增組建")觸發程式的範例，如下列螢幕擷取畫面所示。
 
-    ![在此螢幕擷取畫面中，可以看到設定組建觸發程式的範例](teamcity-images/image9.png "在此螢幕擷取畫面中，可以看到設定組建觸發程式的範例")
+    設定![組建觸發程式的範例可在此螢幕擷取畫面中看到]設定(teamcity-images/image9.png "組建觸發程式的範例，可在此螢幕擷取畫面中看到")
 
 5. 上一節會將組建腳本參數化，建議您將一些值儲存為環境變數。 這些變數可以透過 [參數] 畫面新增至組建設定。 新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數，如下列螢幕擷取畫面所示：
 
-    ![新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數](teamcity-images/image11.png "新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數")
+    ![新增測試雲端 Api 金鑰的變數、ios 裝置識別碼和 Android 裝置識別碼](teamcity-images/image11.png "新增測試雲端 Api 金鑰、ios 裝置識別碼和 android 裝置識別碼的變數")
 
 6. 最後一個步驟是新增一個會叫用組建腳本的組建步驟，以編譯應用程式，並將應用程式加入至測試雲端。 下列螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例：
 
-    ![這個螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例](teamcity-images/image12.png "這個螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例")
+    ![這個螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例。](teamcity-images/image12.png "此螢幕擷取畫面是使用 Rakefile 來建立應用程式的組建步驟範例")
 
 7. 此時，組建設定已完成。 建議您觸發組建，以確認專案已正確設定。 執行此動作的好方法是，對存放庫認可少量且不重要的變更。 TeamCity 應該會偵測到認可並啟動組建。
 
@@ -209,5 +209,6 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 ## <a name="related-links"></a>相關連結
 
-- [正在準備 Xamarin. Uitest fpr 上傳](/appcenter/test-cloud/preparing-for-upload/uitest/)
+- [準備 Xamarin Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
+- [準備 Xamarin iOS 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
 - [安裝和設定 TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

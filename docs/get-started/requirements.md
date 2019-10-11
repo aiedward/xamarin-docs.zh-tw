@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2019
-ms.openlocfilehash: a79f22fa96c4c34d2a9704e9aa3be3825895a15b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e4584867e457661b2dfaa43fcbde7b1adcabeb85
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291587"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273100"
 ---
 # <a name="xamarinforms-requirements"></a>Xamarin.Forms 需求
 
@@ -24,9 +24,11 @@ _Xamarin.Forms 的平台和開發系統需求。_
 
 您可以針對下列作業系統撰寫 Xamarin.Forms 應用程式：
 
-- iOS 8 或更高版本
-- Android 5.0 （API 21）或更高版本（[更多詳細資料](#android)）
+- iOS 9 或更新版本
+- Android 4.4 (API 19) 或更高版本 ([更多詳細資料](#android))
 - Windows 10 通用 Windows 平台 ([更多詳細資料](#windows10))
+
+不過，建議使用 Android 5.0 （API 21）作為最低 API。 這可確保與所有 Android 支援程式庫完全相容，同時仍以大部分的 Android 裝置為目標。
 
 假設開發人員已熟悉[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)。
 

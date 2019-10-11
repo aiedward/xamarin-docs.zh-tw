@@ -145,6 +145,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: slider.md
             title: 滑桿
+          - href: splashscreen.md
+            html: 了解如何建立 Xamarin.Forms 應用程式的啟動顯示畫面。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: splashscreen.md
+            title: 啟動顯示畫面
           - href: stepper.md
             html: 了解如何透過 Stepper 控制項，允許使用者從值的範圍中選取數值。
             image:

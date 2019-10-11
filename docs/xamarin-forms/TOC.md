@@ -200,6 +200,7 @@
 ### [ProgressBar](user-interface/progressbar.md)
 ### [SearchBar](user-interface/searchbar.md)
 ### [Slider](user-interface/slider.md)
+### [啟動顯示畫面](user-interface/splashscreen.md)
 ### [Stepper](user-interface/stepper.md)
 ### [樣式](user-interface/styles/index.md)
 #### [使用 XAML 樣式設定 Xamarin.Forms 應用程式的樣式](user-interface/styles/xaml/index.md)

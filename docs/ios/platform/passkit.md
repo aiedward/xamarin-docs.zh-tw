@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 06/13/2018
-ms.openlocfilehash: 150a4e3c1deafbabea892d5adb786374c3d97d12
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec44e32c3eb0d0d436a497ddb14c86af1de8d703
+ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769584"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72273170"
 ---
 # <a name="passkit-in-xamarinios"></a>在 Xamarin 中 PassKit
 
@@ -56,7 +56,7 @@ PassKit 不只是 CocoaTouch 內的 API，而是較大型的應用程式、資�
 - **錢包**– Apple 的內建 iOS 應用程式，可儲存並顯示通過。 這是轉譯以用於真實世界的唯一位置（即會顯示條碼，以及通過中的所有當地語系化資料）。
 - **隨附應用**程式–由傳遞提供者所建立的 iOS 6 應用程式，以擴充他們所發出的傳遞功能，例如將價值新增至商店卡片、變更座位通過或其他商務特定功能的基座。 傳遞應用程式不需要通過，就能發揮作用。
 - **您的伺服器**–一種安全的伺服器，可在其中產生和簽署要散發的傳遞。 您的隨附應用程式可能會連線到您的伺服器，以產生新的 pass 或要求更新現有的通過。 您可以選擇性地執行錢包會呼叫更新階段的 web 服務 API。
-- **APNS 伺服器**-您的伺服器能夠使用 APNS 通知特定裝置上的更新包。 將通知推送至錢包，這會接著連線到您的伺服器，以取得變更的詳細資料。 隨附應用程式不需要為這項功能執行 APNS （可以接聽`PKPassLibraryDidChangeNotification` ）。
+- **APNS 伺服器**-您的伺服器能夠使用 APNS 通知特定裝置上的更新包。 將通知推送至錢包，這會接著連線到您的伺服器，以取得變更的詳細資料。 隨附應用程式不需要為這項功能執行 APNS （可以接聽 `PKPassLibraryDidChangeNotification`）。
 - **管道應用**程式–不直接操作通過的應用程式（例如「附屬應用程式」），但可以藉由辨識通過並允許將其新增至錢包來改善其公用程式。 郵件用戶端、社交網路瀏覽器和其他資料匯總應用程式可能會遇到附件或通過的連結。
 
 整個生態系統看起來很複雜，因此值得注意的是，有些元件是選擇性的，而且可能會有更簡單的 PassKit 實施。
@@ -85,7 +85,7 @@ Pass 是代表票證、贈券或卡片的資料集合。 它可供個人使用�
 
 - **pass. json** –必要。 包含通過的所有資訊。
 - **manifest. json** –必要。 包含傳遞中每個檔案的 SHA1 雜湊，但簽章檔案和此檔案（manifest. json）除外。
-- **signature** –必要。 藉由使用 iOS `manifest.json`布建入口網站中產生的憑證來簽署檔案來建立。
+- **signature** –必要。 藉由使用 iOS 布建入口網站中產生的憑證簽署 @no__t 0 檔案來建立。
 - **標誌 .png** –選擇性。
 - **背景 .png** –選擇性。
 - **圖示 .png** –選擇性。
@@ -101,11 +101,11 @@ JSON 是格式，因為通常會在伺服器上建立傳遞，這表示世代程
 
 - **teamIdentifier** –這會連結您產生的所有傳遞至 App Store 帳戶。 此值會顯示在 iOS 布建入口網站中。
 - **passTypeIdentifier** –在布建入口網站中註冊，以群組方式一起傳遞（如果您產生一個以上的類型）。 例如，咖啡廳可能會建立商店卡片通過類型，以允許其客戶獲得忠誠度信用額度，同時也會使用個別的優惠券 pass 類型來建立和散發折扣優惠券。 相同的咖啡廳甚至可能會保存即時的音樂事件，並為這些活動發出事件票證傳遞。
-- **serialNumber** –這個`passTypeidentifier`中的唯一字串。 此值對錢包而言是不透明的，但在與您的伺服器通訊時，追蹤特定的傳遞非常重要。
+- **serialNumber** –此 @no__t 中的唯一字串-1。 此值對錢包而言是不透明的，但在與您的伺服器通訊時，追蹤特定的傳遞非常重要。
 
 每個階段中有大量的其他 JSON 金鑰，範例如下所示：
 
-``` 
+```
 {
    "passTypeIdentifier":"com.xamarin.passkitdoc.banana",  //Type Identifier (iOS Provisioning Portal)
    "formatVersion":1,                                     //Always 1 (for now)
@@ -192,16 +192,16 @@ ISO-8859-1 編碼是最常見的，檢查將讀取您通過的掃描系統所使
 
 ### <a name="localization"></a>當地語系化
 
-將傳遞轉譯成多種語言類似于當地語系化 iOS 應用程式–使用`.lproj`副檔名建立語言特定目錄，並將當地語系化的元素放在內。 文字翻譯應該輸入到`pass.strings`檔案中，而當地語系化影像的名稱應該與它們在「傳遞」根中取代的影像相同。
+將傳遞轉譯成多種語言類似于當地語系化 iOS 應用程式-使用 `.lproj` 延伸模組建立語言特定目錄，並將當地語系化的元素放在內。 文字翻譯應該輸入到 @no__t 0 的檔案中，而當地語系化影像的名稱應該與它們在「傳遞」根中取代的影像相同。
 
 ## <a name="security"></a>安全性
 
 Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署。 簽署 pass 的步驟如下：
 
-1. 計算 pass 目錄中每個檔案的 SHA1 雜湊（請勿包含`manifest.json`或`signature`檔案，無論如何都不應該存在於這個階段）。
-1. 以`manifest.json`每個檔案名的 JSON 索引鍵/值清單寫入，其雜湊。
-1. 使用憑證簽署`manifest.json`檔案，並將結果寫入名`signature`為的檔案。
-1. 將所有專案壓縮，並為產生`.pkpass`的檔案提供副檔名。
+1. 計算 pass 目錄中每個檔案的 SHA1 雜湊（請勿包含 `manifest.json` 或 `signature` 檔案，這兩者都不應該存在於這個階段）。
+1. 以每個檔案名的 JSON 索引鍵/值清單寫入 `manifest.json`，其雜湊。
+1. 使用憑證簽署 @no__t 0 檔案，並將結果寫入名為 `signature` 的檔案。
+1. 將所有專案壓縮，並為產生的檔案提供 @no__t 0 的副檔名。
 
 由於您的私密金鑰必須簽署 pass，因此只能在您控制的安全伺服器上執行此程式。 請勿散發您的金鑰，以嘗試在應用程式中產生傳遞。
 
@@ -224,7 +224,7 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 
 1. 在 iOS 布建[入口網站的 [憑證、識別碼及設定檔] 區段](https://developer.apple.com/account/overview.action)中，流覽至 [**識別碼**]，然後選取 [**傳遞類型 id** ]。 然後選取 **+** 按鈕，以建立新的傳遞類型：[![](passkit-images/passid.png "建立新的 pass 類型")](passkit-images/passid.png#lightbox)
 
-2. 提供 Pass 的**描述**（名稱）和**識別碼**（唯一字串）。 請注意，在此範例中，所有傳遞類型`pass.`識別碼的開頭都必須`pass.com.xamarin.coupon.banana`是字串，我們使用：[![](passkit-images/register.png "提供描述和識別碼")](passkit-images/register.png#lightbox)
+2. 提供 Pass 的**描述**（名稱）和**識別碼**（唯一字串）。 請注意，在此範例中，所有傳遞類型識別碼都必須以字串 `pass.` 開頭，我們使用 `pass.com.xamarin.coupon.banana`：[![](passkit-images/register.png "提供描述和識別碼")](passkit-images/register.png#lightbox)
 
 3. 按下 [**註冊**] 按鈕以確認傳遞識別碼。
 
@@ -259,20 +259,20 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 - 以下載的憑證 p12 檔案簽署資訊清單。
 - 壓縮目錄的內容，並使用 pkpass 副檔名重新命名。
 
-本文的[範例程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)中有一些來源檔案，可以用來產生 pass。 使用 CreateAPassManually 目錄`CouponBanana.raw`目錄中的檔案。 有下列檔案：
+本文的[範例程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/passkit)中有一些來源檔案，可以用來產生 pass。 使用 CreateAPassManually 目錄的 `CouponBanana.raw` 目錄中的檔案。 有下列檔案：
 
  [![](passkit-images/image18.png "這些檔案存在")](passkit-images/image18.png#lightbox)
 
-開啟 [傳遞 json] 並編輯 JSON。 您必須至少更新`passTypeIdentifier`和`teamIdentifer` ，以符合您的 Apple 開發人員帳戶。
+開啟 [傳遞 json] 並編輯 JSON。 您必須至少更新 `passTypeIdentifier`，並 `teamIdentifer`，以符合您的 Apple 開發人員帳戶。
 
-```csharp
+```json
 "passTypeIdentifier" : "pass.com.xamarin.coupon.banana",
 "teamIdentifier" : "?????????",
 ```
 
-接著，您必須計算每個檔案的雜湊， `manifest.json`並建立檔案。 當您完成時，它看起來會像這樣：
+接著，您必須計算每個檔案的雜湊，並建立 @no__t 0 檔案。 當您完成時，它看起來會像這樣：
 
-```csharp
+```json
 {
   "icon@2x.png" : "30806547dcc6ee084a90210e2dc042d5d7d92a41",
   "icon.png" : "87e9ffb203beb2cce5de76113f8e9503aeab6ecc",
@@ -286,15 +286,15 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 
 #### <a name="signing-on-a-mac"></a>在 Mac 上進行簽署
 
-從[Apple 下載](https://developer.apple.com/downloads/index.action?name=Passbook)網站下載**錢包種子支援材料**。 使用此`signpass`工具將您的資料夾轉換為 pass （這也會計算 SHA1 雜湊，並將輸出壓縮成 pkpass 檔案）。
+從[Apple 下載](https://developer.apple.com/downloads/index.action?name=Passbook)網站下載**錢包種子支援材料**。 使用 [`signpass`] 工具將您的資料夾轉換為 pass （這也會計算 SHA1 雜湊，並將輸出壓縮成 pkpass 檔案）。
 
 #### <a name="testing"></a>測試
 
-如果您要檢查這些工具的輸出（藉由將 filename 設定為 .zip，然後再開啟），您會看到下列檔案（請注意，新增`manifest.json`和`signature`檔案）：
+如果您要檢查這些工具的輸出（藉由將 filename 設定為 .zip，然後再開啟），您會看到下列檔案（請注意，加上 `manifest.json` 和 @no__t 1 檔案）：
 
  [![](passkit-images/image19.png "檢查這些工具的輸出")](passkit-images/image19.png#lightbox)
 
-簽署之後，請壓縮並重新命名檔案（例如 若`BananaCoupon.pkpass`要），您可以將它拖曳到模擬器以進行測試，或以電子郵件傳送給自己以在實際裝置上取得。 您應該會看到一個畫面來**新增**pass，如下所示：
+簽署之後，請壓縮並重新命名檔案（例如 若要 `BananaCoupon.pkpass`），您可以將它拖曳到模擬器以進行測試，或以電子郵件傳送給您自己，以在實際裝置上取得。 您應該會看到一個畫面來**新增**pass，如下所示：
 
  [![](passkit-images/image20.png "新增 [通過] 畫面")](passkit-images/image20.png#lightbox)
 
@@ -321,7 +321,7 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 
 - **管道應用程式**–這些不會直接操作傳遞，而是只會載入傳遞檔案，並提供使用者將其新增至錢包的選項。 
 
-- **附屬應用程式**–這些是由提供者所撰寫，以散發階段，並提供額外的功能來流覽或編輯它們。 Xamarin iOS 應用程式可完整存取 PassKit API，以建立及操作階段。 然後，可以使用`PKAddPassesViewController`將傳遞新增至錢包。 本檔的**隨附應用程式**一節會更詳細地說明此流程。
+- **附屬應用程式**–這些是由提供者所撰寫，以散發階段，並提供額外的功能來流覽或編輯它們。 Xamarin iOS 應用程式可完整存取 PassKit API，以建立及操作階段。 然後，可以使用 `PKAddPassesViewController` 將傳遞新增至錢包。 本檔的**隨附應用程式**一節會更詳細地說明此流程。
 
 ### <a name="conduit-applications"></a>管道應用程式
 
@@ -343,7 +343,7 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 - **MIME 類型**-application/application. apple. pkpass
 - **UTI** – pkpass
 
-管道應用程式的基本作業是抓取傳遞檔案並呼叫 PassKit `PKAddPassesViewController` ，讓使用者可以選擇是否要將傳遞至其錢包。 下一節的**附屬應用程式**涵蓋此視圖控制器的執行。
+管道應用程式的基本作業是抓取傳遞檔案，並呼叫 PassKit 的 `PKAddPassesViewController`，讓使用者可以選擇是否要將傳遞至其錢包。 下一節的**附屬應用程式**涵蓋此視圖控制器的執行。
 
 管道應用程式不需要針對特定的「傳遞類型識別碼」進行布建，就像應用程式一樣。
 
@@ -381,7 +381,7 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 
 按兩下**plist**檔案以開啟 XML 原始檔。
 
-若要新增錢包權利，請在下拉式清單`Passbook Identifiers`中將屬性設定為，這會自動設定**型** `Array`別。 然後，將字串**值**設定為`$(TeamIdentifierPrefix)*`：
+若要新增錢包權利，請在下拉式清單中將**屬性**設定為 `Passbook Identifiers`，這會自動將**類型**設定為 `Array`。 然後，將字串**值**設定為 `$(TeamIdentifierPrefix)*`：
 
 ![](passkit-images/image33.png "啟用錢包的權利")
 
@@ -395,15 +395,15 @@ Pass 會使用您在 iOS 布建入口網站中產生的私用憑證進行簽署�
 
 ### <a name="debugging"></a>偵錯
 
-如果您在部署應用程式時遇到問題，請檢查您使用的是正確的布建`Entitlements.plist` **設定檔**，並且已在**iPhone 配套簽署**選項中選取做為**自訂權利**檔案。
+如果您在部署應用程式時遇到問題，請檢查您使用的是正確的布建**設定檔**，並在**iPhone 配套簽署**選項中選取 [`Entitlements.plist`] 做為**自訂權利**檔案。
 
 如果您在部署時遇到此錯誤：
 
-```csharp
+```
 Installation failed: Your code signing/provisioning profiles are not correctly configured (error: 0xe8008016)
 ```
 
-而權利陣列則不正確（或不符合布建**設定檔）。** `pass-type-identifiers` 請確認傳遞類型識別碼和您的小組識別碼正確。
+@no__t 0 的權利陣列不正確（或不符合布建**設定檔**）。 請確認傳遞類型識別碼和您的小組識別碼正確。
 
 ## <a name="classes"></a>類別
 
@@ -472,7 +472,7 @@ string passInfo =
 
  [![](passkit-images/image30.png "範例中選取的優惠券警示")](passkit-images/image30.png#lightbox)
 
-您也可以使用`LocalizedValueForFieldKey()`方法，從您所設計之「傳遞」中的欄位抓取資料（因為您會知道應該存在哪些欄位）。 範例程式碼不會顯示這種情況。
+您也可以使用 `LocalizedValueForFieldKey()` 方法，從您所設計之行程中的欄位取出資料（因為您會知道應該存在哪些欄位）。 範例程式碼不會顯示這種情況。
 
 ### <a name="loading-a-pass-from-a-file"></a>從檔案載入傳遞
 
@@ -509,17 +509,17 @@ PKPass 不是可變的，因此您無法在程式碼中更新傳遞物件。 若
 
 必須在伺服器上進行傳遞檔案建立，因為必須使用必須保持私用和安全的憑證來簽署傳遞。
 
-產生更新的傳遞檔案之後，請使用`Replace`方法來覆寫裝置上的舊資料。
+產生更新的傳遞檔案之後，請使用 `Replace` 方法來覆寫裝置上的舊資料。
 
 ### <a name="display-a-pass-for-scanning"></a>顯示掃描的階段
 
-如先前所述，只有錢包可以顯示掃描的通過。 您可以使用`OpenUrl`方法來顯示 Pass，如下所示：
+如先前所述，只有錢包可以顯示掃描的通過。 您可以使用 `OpenUrl` 方法來顯示 Pass，如下所示：
 
  `UIApplication.SharedApplication.OpenUrl (p.PassUrl);`
 
 ### <a name="receiving-notifications-of-changes"></a>接收變更的通知
 
-應用程式可以使用`PKPassLibraryDidChangeNotification`來接聽對傳遞程式庫所做的變更。 變更可能是在背景觸發更新的通知所造成，因此在您的應用程式中接聽它們是很好的作法。
+應用程式可以使用 `PKPassLibraryDidChangeNotification` 來接聽對傳遞程式庫所做的變更。 變更可能是在背景觸發更新的通知所造成，因此在您的應用程式中接聽它們是很好的作法。
 
 ```csharp
 noteCenter = NSNotificationCenter.DefaultCenter.AddObserver (PKPassLibrary.DidChangeNotification, (not) => {
