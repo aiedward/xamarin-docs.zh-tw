@@ -253,7 +253,7 @@
 #### [Entry 游標色彩](platform/ios/entry-cursor-color.md)
 #### [Entry 字型大小](platform/ios/entry-font-size.md)
 #### [格式設定](platform/ios/formatting.md)
-#### [iPad 強制回應頁面呈現樣式](platform/ios/ipad-page-presentation-style.md)
+#### [強制回應頁面呈現樣式](platform/ios/page-presentation-style.md)
 #### [大型頁面標題](platform/ios/page-large-title.md)
 #### [ListView 群組標題樣式](platform/ios/listview-group-header-style.md)
 #### [ListView 資料列動畫](platform/ios/listview-row-animations.md)
