@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: a6a34615adc9cf290ff6bf9dd344487e5f29cfa2
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
+ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "69887846"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303251"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>將設計階段資料與 XAML 預覽器搭配使用
 
-_有些版面配置難以視覺化而不會有資料。使用這些秘訣，讓您充分利用 XAML 預覽程式中的資料繁重頁面。_
+@no__t 0Some 配置很難視覺化而不會有資料。使用這些秘訣，讓您充分利用 XAML 預覽程式中的資料繁重頁面。 _
 
 ## <a name="design-time-data-basics"></a>設計階段資料基本概念
 
@@ -28,7 +28,7 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-加入命名空間之後，您可以將`d:`它放在任何屬性或控制項的前方，以在 XAML 預覽中顯示它。 具有的`d:`專案不會在執行時間顯示。
+加入命名空間之後，您可以將 `d:` 放在任何屬性或控制項的前方，以在 XAML 預覽中顯示它。 具有 `d:` 的元素不會顯示在執行時間。
 
 例如，您可以將文字新增至通常已系結資料的標籤。
 
@@ -36,17 +36,17 @@ mc:Ignorable="d"
 <Label Text="{Binding Name}" d:Text="Name!" />
 ```
 
-[![以標籤中的文字設計階段資料](xaml-previewer-images/designtimedata-label-sm.png "以文字加上標籤的設計階段資料")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
+[![使用標籤中的文字設計階段資料](xaml-previewer-images/designtimedata-label-sm.png "將文字設為標籤")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-在此範例中， `d:Text`如果沒有，XAML 預覽程式將不會對標籤顯示任何內容。 相反地，它會顯示「Name！」 其中的標籤在執行時間會有實際資料。
+在此範例中，如果沒有 `d:Text`，XAML 預覽程式將不會對標籤顯示任何內容。 相反地，它會顯示「Name！」 其中的標籤在執行時間會有實際資料。
 
-您可以將`d:`與任何屬性用於 Xamarin. form 控制項，例如色彩、字型大小和間距。 您甚至可以將它新增至控制項本身：
+您可以使用 `d:` 搭配 Xamarin. Forms 控制項的任何屬性，例如色彩、字型大小和間距。 您甚至可以將它新增至控制項本身：
 
 ```xaml
 <d:Button Text="Design Time Button" />
 ```
 
-[![使用 Button 控制項設計階段資料](xaml-previewer-images/designtimedata-controls-sm.png "使用 Button 控制項設計階段資料")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
+[使用按鈕![控制項設計階段]資料使用按鈕控制項(xaml-previewer-images/designtimedata-controls-sm.png "設計階段資料")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
 在此範例中，按鈕只會在設計階段出現。 您可以使用這個方法，針對[XAML 預覽程式不支援的自訂控制項](render-custom-controls.md)放入中的預留位置。
 
@@ -58,7 +58,7 @@ mc:Ignorable="d"
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
 ```
 
-[![以影像設計階段資料](xaml-previewer-images/designtimedata-image-sm.png "使用 Iamges 設計階段資料")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
+[![以影像設計階段資料]使用(xaml-previewer-images/designtimedata-image-sm.png "iamges 設計階段資料")](xaml-previewer-images/designtimedata-image-lg.png#lightbox)
 
 ## <a name="design-time-data-for-listviews"></a>Listview 的設計階段資料
 
@@ -84,15 +84,54 @@ Listview 是在行動裝置應用程式中顯示資料的熱門方式。 不過�
 </StackLayout>
 ```
 
-[![使用 ListView 設計階段資料](xaml-previewer-images/designtimedata-itemssource-sm.png "使用 ListView 設計階段資料")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
+[以 listview(xaml-previewer-images/designtimedata-itemssource-sm.png "設計")時間資料與 listview![設計階段資料]](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-這個範例會在 XAML 預覽器中顯示 ListView 的三個 TextCells。 您可以變更`x:String`為專案中現有的資料模型。
+這個範例會在 XAML 預覽器中顯示 ListView 的三個 TextCells。 您可以將 `x:String` 變更為專案中現有的資料模型。
 
-如需更複雜的範例，請參閱[James Montemagno 的 Hanselman 應用程式](https://github.com/jamesmontemagno/Hanselman.Forms/blob/vnext/src/Hanselman/Views/Podcasts/PodcastDetailsPage.xaml#L26-L47)。
+您也可以建立資料物件的陣列。 例如，@no__t 0 資料物件的公用屬性可以結構化為設計階段資料：
+
+```csharp
+namespace Monkeys.Models
+{
+    public class Monkey
+    {
+        public string Name { get; set; }
+        public string Location { get; set; }
+    }
+}
+```
+
+若要在 XAML 中使用類別，您必須在根節點中匯入命名空間：
+
+```xaml
+xmlns:models="clr-namespace:Monkeys.Models"
+```
+
+```xaml
+<StackLayout>
+    <ListView ItemsSource="{Binding Items}">
+        <d:ListView.ItemsSource>
+            <x:Array Type="{x:Type models:Monkey}">
+                <models:Monkey Name="Baboon" Location="Africa and Asia"/>
+                <models:Monkey Name="Capuchin Monkey" Location="Central and South America"/>
+                <models:Monkey Name="Blue Monkey" Location="Central and East Africa"/>
+            </x:Array>
+        </d:ListView.ItemsSource>
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Monkey">
+                <TextCell Text="{Binding Name}"
+                          Detail="{Binding Location}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>
+```
+
+這裡的好處是，您可以系結至您打算使用的實際模型。
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>判斷硬式編碼靜態 ViewModel
 
-如果您不想要將設計階段資料新增至個別控制項，您可以設定模擬資料存放區來系結至您的頁面。 請參閱 James Montemagno 的[關於新增設計階段資料的 blog 文章](http://motzcod.es/post/143702671962/xamarinforms-xaml-previewer-design-time-data)，以瞭解如何在 XAML 中系結至靜態 ViewModel。
+如果您不想要將設計階段資料新增至個別控制項，您可以設定模擬資料存放區來系結至您的頁面。 請參閱 James Montemagno 的[關於新增設計階段資料的 blog 文章](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/)，以瞭解如何在 XAML 中系結至靜態 ViewModel。
 
 ## <a name="troubleshooting"></a>疑難排解
 

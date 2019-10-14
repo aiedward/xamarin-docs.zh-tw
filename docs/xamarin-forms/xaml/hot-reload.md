@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 2a47876b7b53cf557014c772333e651146afe53f
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 020b8208dfbfd7594d152a7b6e32f7e41f974c2f
+ms.sourcegitcommit: 43423d4018cc0d4b0b8c98a4b3da0704495eb0cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106005"
+ms.lasthandoff: 10/14/2019
+ms.locfileid: "72303256"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>適用于 Xamarin 的 XAML 熱重載（預覽）
 
@@ -35,9 +35,9 @@ Xamarin.Forms | 4.1 或更高版本
 
 不需要進行其他安裝或設定，就能使用 XAML 熱重載。 它內建在 Visual Studio 中，而且可以在 IDE 設定中啟用。 啟用之後，您就可以在模擬器、模擬器或實體裝置上對應用程式進行偵測，以開始使用 XAML 熱重載。 目前，XAML 熱重載僅適用于在 iOS 或 Android 上進行調試時。
 
-在 Windows 上，您可以在 [**工具** > ] [**選項** > ] [**xamarin**  > **熱重載**] 中勾選 [**啟用 Xamarin 熱**重載] 核取方塊，以啟用 XAML 熱重載。
+在 Windows 上，您可以勾選 [@no__t**工具**] 的 [**啟用 Xamarin 熱重載**] 核取方塊，以啟用 XAML 熱**重載 @no__t-** 4**Xamarin** > **熱重載**。
 
-在 Mac 上，您可以勾選 [在**Visual Studio**  > **喜好** > 設定**專案** > ] [**xamarin 熱重載**] 中的 [**啟用 Xamarin 熱**重載] 核取方塊，以啟用 XAML 熱重載。
+在 Mac 上，可以藉由核取 **啟用 Xamarin 熱重載** 核取方塊，在**Visual Studio** > **喜好**設定 **@no__t @no__t-** 6**Xamarin 熱重載** 中，啟用 XAML 熱重載。
 
 ## <a name="resilient-reloading"></a>復原重載
 
@@ -46,9 +46,9 @@ Xamarin.Forms | 4.1 或更高版本
 ## <a name="known-limitations"></a>已知限制
 
 - 您無法在 XAML 熱重載會話期間加入、移除或重新命名檔案或 NuGet 套件。 如果您新增或移除檔案或 NuGet 套件，請重建並重新部署您的應用程式，以繼續使用 XAML 熱重載。
-- 將連結器設定為 [**無] 連結**，以獲得最佳體驗。 「**僅限連結 SDK** 」設定會在大部分的時間內運作，但在某些情況下可能會失敗。
+- 將 [連結器] 設定為 [**不要連結**] 以獲得最佳體驗。 「**僅限連結 SDK** 」設定會在大部分的時間內運作，但在某些情況下可能會失敗。
 - 在實體 iPhone 上進行偵錯工具時，解譯器必須使用 XAML 熱重載。 將 **--解釋**器新增至 iOS 組建設定中的 [**其他 mtouch 引數**] 欄位，以使用 XAML 熱重載。
-- 使用其`x:Name`值將控制項指派給另一個欄位或屬性所建立的任何參考都不會重載。
+- 藉由將控制項指派給另一個欄位或屬性所建立的參考（使用其 `x:Name` 值）將不會重載。
 - 在**AppShell**中更新 Shell 應用程式的視覺階層，可能會導致維護應用程式狀態的問題。 重建應用程式以繼續重載。
 - XAML 熱重載無法重載C#程式碼，包括事件處理常式、自訂控制項、分頁程式碼後置和其他類別。
 
@@ -65,4 +65,4 @@ Xamarin.Forms | 4.1 或更高版本
 - 如果儲存 XAML 檔案時沒有發生任何事，請確定已在 IDE 中啟用熱重載。
 - 如果您要在實體 iPhone 上進行偵錯工具，而您的應用程式變得沒有回應，請檢查解譯器是否已啟用。 若要將它開啟，請將 **--解釋**器新增至 iOS 組建設定中的 [**其他 mtouch 引數**] 欄位。
 
-若要回報錯誤，請使用 Windows 上**的 [說明] [**  > **傳送意見** > 反應 **] [回報** > **問題**] 功能表上的 [意見反應] 工具，以及 Mac 上的 [說明] [回報**問題**] 功能表。
+若要回報錯誤，請使用 [說明 **]  >  [** **傳送意見**反應] 的 [意見反應] 工具  >  Windows 上**的 [回報** **問題**] 功能表，以及 [說明]  >  [回報 Mac 上的**問題**] 功能表。
