@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 8df5b373fccdef93a8ffbc66fd53a94378f47a6e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: 94a537c88f28971bf7f2778f33a35e4c251afd38
+ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68650824"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72424856"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
@@ -20,13 +20,13 @@ ms.locfileid: "68650824"
 
 _本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在每個平台上以釘選資料的自訂釘選和自訂檢視來顯示原生地圖。_
 
-每個 Xamarin.Forms 檢視都隨附每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 時，會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 檢視都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。 當 iOS 中的 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 時，會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生的 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 如需 Xamarin.Forms 控制項對應之轉譯器和原生控制項類別的詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
-下圖說明 [`Map`](xref:Xamarin.Forms.Maps.Map) 和實作它對應原生控制項間的關聯性：
+下圖說明 [`Map`](xref:Xamarin.Forms.Maps.Map) 和實作它之對應原生控制項間的關聯性：
 
-![](customized-pin-images/map-classes.png "Map 控制項與實作原生控制項之間的關聯性")
+![](customized-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
 
-您可在每個平台上建立 [`Map`](xref:Xamarin.Forms.Maps.Map) 的自訂轉譯器，使用轉譯處理序實作平台特定的自訂。 執行這項作業的流程如下：
+您可在每個平台上建立 [`Map`](xref:Xamarin.Forms.Maps.Map) 的自訂轉譯器，使用轉譯程序實作平台特定自訂。 執行這項作業的流程如下：
 
 1. [建立](#Creating_the_Custom_Map) Xamarin.Forms 自訂地圖。
 1. [使用](#Consuming_the_Custom_Map) Xamarin.Forms 的自訂地圖。
@@ -78,7 +78,7 @@ public class CustomPin : Pin
 </ContentPage>
 ```
 
-`local` 命名空間前置詞可以任意命名。 不過，`clr-namespace` 和 `assembly` 值必須符合自訂地圖的詳細資料。 一旦宣告命名空間，即會使用前置詞來參考自訂地圖。
+`local` 命名空間前置詞沒有命名限制。 不過，`clr-namespace` 和 `assembly` 值必須符合自訂地圖的詳細資料。 一旦宣告命名空間，即會使用前置詞來參考自訂地圖。
 
 下列程式碼範例示範 C# 頁面如何使用 `CustomMap` 控制項：
 
@@ -131,24 +131,24 @@ public MapPage ()
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每個平台上建立自訂轉譯器
 
-建立自訂轉譯器類別的流程如下：
+建立自訂轉譯器類別的程序如下：
 
 1. 建立轉譯自訂地圖 `MapRenderer` 類別的子類別。
 1. 覆寫轉譯自訂地圖的 `OnElementChanged` 方法，並撰寫自訂它的邏輯。 此方法會在建立對應 Xamarin.Forms 自訂地圖時呼叫。
-1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，指定用它轉譯 Xamarin.Forms 自訂地圖。 這個屬性用來向 Xamarin.Forms 註冊自訂轉譯器。
+1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，指定用它轉譯 Xamarin.Forms 自訂地圖。 這個屬性會用來向 Xamarin.Forms 註冊自訂轉譯器。
 
 > [!NOTE]
 > 您可以選擇在每個平台專案中提供自訂轉譯器。 如果自訂轉譯器尚未註冊，則會使用控制項基底類別的預設轉譯器。
 
-下圖說明應用程式範例中每個專案的責任，以及它們之間的關聯性：
+下圖說明應用程式範例中每個專案的責任，以及這些專案之間的關聯性：
 
-![](customized-pin-images/solution-structure.png "CustomMap 自訂轉譯器專案責任")
+![](customized-pin-images/solution-structure.png "CustomMap Custom Renderer Project Responsibilities")
 
 `CustomMap` 控制項是由平台特定轉譯器類別轉譯，其全部衍生自各平台的 `MapRenderer` 類別。 這會導致每個 `CustomMap` 控制項都使用平台特定控制項轉譯，如下列螢幕擷取畫面所示：
 
-![](customized-pin-images/screenshots.png "每個平台上的 CustomMap")
+![](customized-pin-images/screenshots.png "CustomMap on each Platform")
 
-`MapRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂地圖以轉譯對應原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」  所附加的 Xamarin.Forms 項目，以及「現在」  所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
+`MapRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂地圖以轉譯對應原生控制項時呼叫。 這個方法採用 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
 
 在每個平台特定轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，所要轉譯 Xamarin.Forms 控制項的參考可透過 `Element` 屬性取得。
 
@@ -179,9 +179,9 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![](customized-pin-images/map-layout-ios.png "自訂前和自訂後的 Map 控制項")
+![](customized-pin-images/map-layout-ios.png "Map Control Before and After Customization")
 
-在 iOS 上，釘選稱為「註釋」  ，且可以是自訂影像或系統定義的各種顏色圖釘。 釘選可以選擇性地顯示「圖說文字」  ，該文字會在回應選取註釋的使用者時顯示。 圖說文字會顯示 `Pin` 執行個體的 `Label` 和 `Address` 屬性，且可以選擇性的附帶左側或右側裝飾檢視。 在上方的螢幕擷取畫面中，左側裝飾檢視是一隻猴子的影像，右側裝飾檢視則是「資訊」  按鈕。
+在 iOS 上，釘選稱為「註釋」，且可以是自訂影像或系統定義的各種顏色圖釘。 釘選可以選擇性地顯示「圖說文字」，該文字會在回應選取註釋的使用者時顯示。 圖說文字會顯示 `Pin` 執行個體的 `Label` 和 `Address` 屬性，且可以選擇性的附帶左側或右側裝飾檢視。 在上方的螢幕擷取畫面中，左側裝飾檢視是一隻猴子的影像，右側裝飾檢視則是「資訊」按鈕。
 
 下列程式碼範例示範適用於 iOS 平台的自訂轉譯器：
 
@@ -278,7 +278,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.Image` 屬性會設為表示地圖上註釋的影像。
     - `CustomMKAnnotationView.CalloutOffset` 屬性會設為 `CGPoint`，其指定圖說文字置中並位於註釋上方。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` 屬性會設為猴子影像，顯示在註釋標題和地址的左側。
-    - `CustomMKAnnotationView.RightCalloutAccessoryView` 屬性會設為「資訊」  按鈕，顯示在註釋標題和地址的右側。
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` 屬性會設為「資訊」按鈕，顯示在註釋標題和地址的右側。
     - `CustomMKAnnotationView.MarkerId` 屬性會設為 `GetCustomPin` 方法傳回的 `CustomPin.MarkerId` 屬性。 這可以用來識別註釋，使其圖說文字[能供進一步自訂](#Selecting_the_Annotation) (若需要的話)。
     - `CustomMKAnnotationView.Url` 屬性會設為 `GetCustomPin` 方法傳回的 `CustomPin.Url` 屬性。 當使用者[點選顯示在右側圖說文字裝飾檢視中的按鈕](#Tapping_on_the_Right_Callout_Accessory_View)時，便會巡覽至該 URL。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) 屬性會設為 `true`，使圖說文字在註釋受到點選時顯示。
@@ -313,7 +313,7 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 
 #### <a name="tapping-on-the-right-callout-accessory-view"></a>點選右側圖說文字裝飾檢視
 
-當使用者點選位於右側圖說文字裝飾檢視中的「資訊」  按鈕時，便會引發 `CalloutAccessoryControlTapped` 事件，該事件接著便會執行 `OnCalloutAccessoryControlTapped` 方法：
+當使用者點選位於右側圖說文字裝飾檢視中的「資訊」按鈕時，便會引發 `CalloutAccessoryControlTapped` 事件，該事件接著便會執行 `OnCalloutAccessoryControlTapped` 方法：
 
 ```csharp
 void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEventArgs e)
@@ -352,9 +352,9 @@ void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![](customized-pin-images/map-layout-android.png "自訂前和自訂後的 Map 控制項")
+![](customized-pin-images/map-layout-android.png "Map Control Before and After Customization")
 
-在 Android 上，釘選稱為「標記」  ，且可以是自訂影像或系統定義的各種顏色圖釘。 標記可以顯示「資訊視窗」  ，該視窗會在回應點選標記的使用者時顯示。 資訊視窗會顯示 `Pin` 執行個體的 `Label` 及 `Address` 屬性，且可以進行自訂以包含其它內容。 但是，一次只能顯示一個資訊視窗。
+在 Android 上，釘選稱為「標記」，且可以是自訂影像或系統定義的各種顏色圖釘。 標記可以顯示「資訊視窗」，該視窗會在回應點選標記的使用者時顯示。 資訊視窗會顯示 `Pin` 執行個體的 `Label` 及 `Address` 屬性，且可以進行自訂以包含其它內容。 但是，一次只能顯示一個資訊視窗。
 
 下列程式碼範例示範適用於 Android 平台的自訂轉譯器：
 
@@ -383,7 +383,6 @@ namespace CustomRenderer.Droid
             {
                 var formsMap = (CustomMap)e.NewElement;
                 customPins = formsMap.CustomPins;
-                Control.GetMapAsync(this);
             }
         }
 
@@ -399,7 +398,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-若自訂轉譯器已附加到新的 Xamarin.Forms 項目，`OnElementChanged` 方法便會呼叫 `MapView.GetMapAsync` 方法，取得與檢視繫結的基礎 `GoogleMap`。 一旦 `GoogleMap` 可供使用，便會叫用 `OnMapReady` 覆寫。 此方法會註冊 `InfoWindowClick` 事件的事件處理常式，該事件會在使用者[按一下資訊視窗](#Clicking_on_the_Info_Window)時引發，且只會在轉譯器附加到的項目變更時取消訂閱。 `OnMapReady` 覆寫也會呼叫 `SetInfoWindowAdapter` 方法來指定 `CustomMapRenderer` 類別執行個體提供自訂資訊視窗的方法。
+假設自訂轉譯器已附加至新的 Xamarin. form 元素，則 `OnElementChanged` 方法會從控制項中抓取自訂釘選清單。 一旦 `GoogleMap` 可供使用，便會叫用 `OnMapReady` 覆寫。 此方法會註冊 `InfoWindowClick` 事件的事件處理常式，該事件會在使用者[按一下資訊視窗](#Clicking_on_the_Info_Window)時引發，且只會在轉譯器附加到的項目變更時取消訂閱。 `OnMapReady` 覆寫也會呼叫 `SetInfoWindowAdapter` 方法來指定 `CustomMapRenderer` 類別執行個體提供自訂資訊視窗的方法。
 
 `CustomMapRenderer` 類別會實作 `GoogleMap.IInfoWindowAdapter` 介面，來[自訂資訊視窗](#Customizing_the_Info_Window)。 此介面會指定必須實作下列方法：
 
@@ -511,9 +510,9 @@ void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 下列螢幕擷取畫面會顯示自訂前和自訂後的地圖：
 
-![](customized-pin-images/map-layout-uwp.png "自訂前和自訂後的 Map 控制項")
+![](customized-pin-images/map-layout-uwp.png "Map Control Before and After Customization")
 
-在 UWP 上，釘選稱為「地圖圖示」  ，且可以是自訂影像或系統定義的預設影像。 地圖圖示可以顯示 `UserControl`，該控制項會在回應點選地圖圖示的使用者時顯示。 `UserControl` 可以顯示任何內容，包括 `Pin` 執行個體的 `Label` 及 `Address` 屬性。
+在 UWP 上，釘選稱為「地圖圖示」，且可以是自訂影像或系統定義的預設影像。 地圖圖示可以顯示 `UserControl`，該控制項會在回應點選地圖圖示的使用者時顯示。 `UserControl` 可以顯示任何內容，包括 `Pin` 執行個體的 `Label` 及 `Address` 屬性。
 
 下列程式碼範例示範 UWP 自訂轉譯器：
 
@@ -640,7 +639,7 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
 
 #### <a name="tapping-on-the-information-button"></a>點選資訊按鈕
 
-當使用者點選 `XamarinMapOverlay` 使用者控制項中的「資訊」  按鈕時，便會引發 `Tapped` 事件，該事件接著便會執行 `OnInfoButtonTapped` 方法：
+當使用者點選 `XamarinMapOverlay` 使用者控制項中的「資訊」按鈕時，便會引發 `Tapped` 事件，該事件接著便會執行 `OnInfoButtonTapped` 方法：
 
 ```csharp
 private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
