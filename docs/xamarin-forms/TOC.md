@@ -101,6 +101,7 @@
 #### [縮小](app-fundamentals/gestures/pinch.md)
 #### [移動瀏覽](app-fundamentals/gestures/pan.md)
 #### [撥動](app-fundamentals/gestures/swipe.md)
+### [本機通知](app-fundamentals/local-notifications.md)
 ### [當地語系化](app-fundamentals/localization/index.md)
 #### [字串及影像當地語系化](app-fundamentals/localization/text.md)
 #### [由右至左當地語系化](app-fundamentals/localization/right-to-left.md)
