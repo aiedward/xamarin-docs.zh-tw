@@ -24,7 +24,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_accessibility.svg'
               href: accessibility/index.md
-            title: 協助工具
+            title: 協助工具選項
           - href: application-class.md
             html: 了解由子類別應用程式類別公開的功能。
             image:
@@ -79,6 +79,12 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_form.svg'
               href: gestures/index.md
             title: 軌跡
+          - href: local-notifications.md
+            html: 了解如何在 Xamarin.Forms 中傳送及接收本機通知。
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_push-notification.svg'
+              href: local-notifications.md
+            title: 本機通知
           - href: localization/index.md
             html: 了解如何使用 Xamarin 開發多語系應用程式。
             image:
@@ -96,13 +102,13 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_class.svg'
               href: navigation/index.md
-            title: 導覽
+            title: 巡覽
           - href: shell/index.md
             html: 了解如何使用 Xamarin.Forms 殼層來減少行動應用程式開發的複雜度。
             image:
               src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
               href: shell/index.md
-            title: 殼層
+            title: Shell
           - href: templates/index.md
             html: 了解如何使用 Xamarin.Forms 提供的範本化功能。
             image:
