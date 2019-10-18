@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: conceptdev
 ms.author: crdun
 ms.date: 03/21/2017
-ms.openlocfilehash: c1e7d6cbb2598f64a331257c9b14ecfa119193f6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 204bf087a51132fdd204990c3b92453ecce96a53
+ms.sourcegitcommit: 20c645f41620d5124da75943de1b690261d00660
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768786"
+ms.lasthandoff: 10/16/2019
+ms.locfileid: "72426573"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中建立使用者介面物件
 
-Apple 將相關的功能片段分組為「架構」，這會等同于 Xamarin. iOS 命名空間。 `UIKit`是包含所有 iOS 使用者介面控制項的命名空間。
+Apple 將相關的功能片段分組為「架構」，這會等同于 Xamarin. iOS 命名空間。 `UIKit` 是包含所有 iOS 使用者介面控制項的命名空間。
 
 每當您的程式碼需要參考使用者介面控制項（例如標籤或按鈕）時，請記得包含下列 using 語句：
 
@@ -24,7 +24,7 @@ Apple 將相關的功能片段分組為「架構」，這會等同于 Xamarin. i
 using UIKit;
 ```
 
-本章所討論的所有控制項都是在 UIKit 命名空間中，而且每個使用者控制項類別名稱`UI`都有前置詞。
+本章所討論的所有控制項都是在 UIKit 命名空間中，而且每個使用者控制項類別名稱都有 `UI` 前置詞。
 
 您可以透過三種方式來編輯 UI 控制項和版面配置：
 
@@ -42,17 +42,17 @@ using UIKit;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "工具箱面板")](creating-ui-objects-images/image2b.png#lightbox)
+ [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
- [![](creating-ui-objects-images/image2b-vs.png "工具箱 Pad-視覺效果 Studio")](creating-ui-objects-images/image2b.png#lightbox)
+ [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
 
 -----
 
 在設計介面上選取控制項時， **Properties Pad**會顯示該控制項的屬性。 [**識別 > 名稱**] 欄位 > 的 Widget，會在下方的螢幕擷取畫面中填入，做為*輸出*的名稱。 這就是您可以在中C#參考控制項的方式：
 
- [![](creating-ui-objects-images/image3b.png "屬性 Widget 面板")](creating-ui-objects-images/image3b.png#lightbox)
+ [![](creating-ui-objects-images/image3b.png "Properties Widget Pad")](creating-ui-objects-images/image3b.png#lightbox)
 
 如需使用 iOS 設計工具的深入探討，請參閱[Ios 設計工具簡介](~/ios/user-interface/designer/introduction.md)指南。
 
@@ -64,42 +64,42 @@ using UIKit;
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/imagexcode.png "分鏡腳本內容功能表-Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
+ [![](creating-ui-objects-images/imagexcode.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](creating-ui-objects-images/imagexcode-vs.png "分鏡腳本內容功能表-Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
+[![](creating-ui-objects-images/imagexcode-vs.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 控制項可以從**物件程式庫**拖曳至 Design Surface，如下所示：
 
- [![](creating-ui-objects-images/image5a.png "Xcode 物件程式庫")](creating-ui-objects-images/image5a.png#lightbox)
+ [![](creating-ui-objects-images/image5a.png "Xcode Object Library")](creating-ui-objects-images/image5a.png#lightbox)
 
 當您使用 Interface Builder 設計 UI 時，您必須為想要在C#其中參考的每個控制項建立一個插座。 這是藉由使用 [Xcode] 工具列按鈕上的 [center**編輯器**] 按鈕開啟 [**助理編輯器**] 來完成：
 
- [![](creating-ui-objects-images/image6a.png "[助理編輯器] 按鈕")](creating-ui-objects-images/image6a.png#lightbox)
+ [![](creating-ui-objects-images/image6a.png "Assistant Editor button")](creating-ui-objects-images/image6a.png#lightbox)
 
-按一下使用者介面物件;然後，**將控制項拖曳**到 .h 檔案中。 若要**控制拖曳**，請按住 control 鍵，然後按一下並按住您要為其建立輸出（或動作）的使用者介面物件。 當您拖曳至標頭檔時，請按住 Control 鍵。 完成在`@interface`定義下拖曳。 藍色線應該會出現，並顯示 [插入插座] 或 [插座] 集合，如下列螢幕擷取畫面所示。
+按一下使用者介面物件;然後，**將控制項拖曳**到 .h 檔案中。 若要**控制拖曳**，請按住 control 鍵，然後按一下並按住您要為其建立輸出（或動作）的使用者介面物件。 當您拖曳至標頭檔時，請按住 Control 鍵。 完成 `@interface` 定義的拖曳。 藍色線應該會出現，並顯示 [插入插座] 或 [插座] 集合，如下列螢幕擷取畫面所示。
 
 當您放開時，系統會提示您提供輸出的名稱，這將用來建立可在程式碼中C#參考的屬性：
 
- [![](creating-ui-objects-images/image8a.png "建立插座")](creating-ui-objects-images/image8a.png#lightbox)
+ [![](creating-ui-objects-images/image8a.png "Creating an outlet")](creating-ui-objects-images/image8a.png#lightbox)
 
 如需有關 Xcode 的 Interface Builder 如何與 Visual Studio for Mac 整合的詳細資訊，請參閱[Xib 程式碼產生](~/ios/internals/xib-code-generation.md#generated)檔。
 
-## <a name="using-c"></a>使用 C\#
+## <a name="using-c"></a>使用 C \#
 
 如果您決定使用C#以程式設計方式建立使用者介面物件（例如，在 View 或 view 控制器中），請遵循下列步驟：
 
-- 宣告使用者介面物件的類別層級欄位。 在中`ViewDidLoad`建立控制項本身一次，例如。 然後可以在視圖控制器的整個生命週期方法中參考物件（例如，
+- 宣告使用者介面物件的類別層級欄位。 在 `ViewDidLoad` 中建立控制項本身一次，例如。 然後可以在視圖控制器的整個生命週期方法中參考物件（例如，
 `ViewWillAppear`)。
-- `CGRect`建立，以定義控制項的框架（其在畫面上的 X 和 Y 座標，以及其寬度和高度）。 您需要確定您有`using CoreGraphics`此的指示詞。
+- 建立 `CGRect`，以定義控制項的框架（其在畫面上的 X 和 Y 座標，以及其寬度和高度）。 您必須確定您有此的 `using CoreGraphics` 指示詞。
 - 呼叫此函式，以建立並指派控制項。
 - 設定任何屬性或事件處理常式。
-- 呼叫`Add()` ，將控制項加入至視圖階層。
+- 呼叫 `Add()` 將控制項加入至視圖階層。
 
-以下是使用C#在視圖控制器中建立`UILabel`的簡單範例：
+以下是使用C#在視圖控制器中建立 `UILabel` 的簡單範例：
 
 ```csharp
 UILabel label1;
@@ -116,13 +116,13 @@ public override void ViewDidLoad () {
 
 ## <a name="using-c-and-storyboards"></a>使用C#和分鏡腳本
 
-當 View controller 新增至 Design Surface 時，會在專案C#中建立兩個對應的檔案。 在此範例中`ControlsViewController.cs` ， `ControlsViewController.designer.cs`已自動建立和：
+當 View controller 新增至 Design Surface 時，會在專案C#中建立兩個對應的檔案。 在此範例中，`ControlsViewController.cs` 和 `ControlsViewController.designer.cs` 已自動建立：
 
- [![](creating-ui-objects-images/image9b.png "ViewController 部分類別")](creating-ui-objects-images/image9b.png#lightbox)
+ [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
 
-檔案適用于您的*程式碼。* `MainViewController.cs` 這就是開發`View`週期方法`ViewDidLoad` （例如和`ViewWillAppear` ）的位置，您可以在其中新增自己的屬性、欄位和方法。
+@No__t_0 檔案適用于您的*程式碼*。 這是執行 `View` 生命週期方法（例如 `ViewDidLoad` 和 `ViewWillAppear`）的位置，以及您可以加入自己的屬性、欄位和方法的位置。
 
-是`ControlsViewController.designer.cs`產生的程式碼，內含部分類別。 當您在 Visual Studio for Mac 中的設計介面上命名控制項，或在 Xcode 中建立輸出或動作時，會將對應的屬性（或部分方法）新增至設計工具（designer.cs）檔案。 下列程式碼顯示針對兩個按鈕和一個文字視圖產生的程式碼範例，其中一個按鈕也有`TouchUpInside`事件。
+@No__t_0 是產生的程式碼，內含部分類別。 當您在 Visual Studio for Mac 中的設計介面上命名控制項，或在 Xcode 中建立輸出或動作時，會將對應的屬性（或部分方法）新增至設計工具（designer.cs）檔案。 下列程式碼顯示針對兩個按鈕和一個文字視圖產生的程式碼範例，其中一個按鈕也有 `TouchUpInside` 事件。
 
 部分類別的這些元素可讓您的程式碼參考控制項，並回應設計介面上所宣告的動作：
 
@@ -165,9 +165,9 @@ public override void ViewDidLoad () {
 }
 ```
 
-`designer.cs`檔案不應手動編輯– IDE （Visual Studio for Mac 或 Visual Studio）會負責讓它與腳本同步處理。
+不應該手動編輯 `designer.cs` 檔案– IDE （Visual Studio for Mac 或 Visual Studio）會負責讓它與腳本同步處理。
 
-當以程式設計方式將使用者介面物件`View`新增`ViewController`至或時，您會自行具現化和管理物件參考，因此不需要任何設計工具檔案。
+當以程式設計方式將使用者介面物件新增至 `View` 或 `ViewController` 時，您會自行具現化和管理物件參考，因此不需要任何設計工具檔案。
 
 ## <a name="related-links"></a>相關連結
 

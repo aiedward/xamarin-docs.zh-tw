@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/22/2019
-ms.openlocfilehash: 1318d8e1563239d5215d8cfc03c971be8b2cff35
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.date: 10/16/2019
+ms.openlocfilehash: 0a2bd469477ce6e2aca03e1d4cf279bb5a7a16f9
+ms.sourcegitcommit: 94fa3bf464a2ee5ac4b6056691d264b8210b1192
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647647"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72526813"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>從 iOS 模擬器和 Android 模擬器連線到本機 Web 服務
 
@@ -27,7 +27,7 @@ ms.locfileid: "68647647"
 但是，必須進行一些額外的工作，在 iOS 模擬器或 Android 模擬器中執行的應用程式才能取用透過 HTTPS 公開的本機 Web 服務。 針對此案例，流程如下：
 
 1. 在您的電腦上建立自我簽署開發憑證。 如需詳細資訊，請參閱[建立開發憑證](#create-a-development-certificate)。
-1. 將專案設定為使用偵錯組建的受控 `HttpClient` 網路堆疊。 如需詳細資訊，請參閱[設定專案](#configure-your-project)。
+1. 將您的專案設定為針對您的 debug 組建使用適當的 `HttpClient` 網路堆疊。 如需詳細資訊，請參閱[設定專案](#configure-your-project)。
 1. 指定本機電腦的位址。 如需詳細資訊，請參閱[指定本機電腦位址](#specify-the-local-machine-address)。
 1. 繞過本機開發憑證安全性檢查。 如需詳細資訊，請參閱[繞過憑證安全性檢查](#bypass-the-certificate-security-check)。
 
@@ -54,7 +54,7 @@ dotnet dev-certs https --help
 
 如需在電腦上啟用本機 HTTPS 的詳細資訊，請參閱[啟用本機 HTTPS](/aspnet/core/getting-started#enable-local-https)。
 
-## <a name="configure-your-project"></a>設定您的專案
+## <a name="configure-your-project"></a>設定專案
 
 在 iOS 和 Android 上執行的 Xamarin 應用程式可以指定 `HttpClient` 類別使用哪些網路堆疊，並提供使用受控網路堆疊，或使用原生網路堆疊的選項。 受控堆疊提供高層級相容性，具備現有 .NET 程式碼，但僅限於 TLS 1.0 且執行速度可能會比較慢，並產生較大的可執行檔大小。 原生堆疊速度可以更快並提供更高的安全性，但可能不會提供 `HttpClient` 類別的所有功能。
 
@@ -66,9 +66,7 @@ dotnet dev-certs https --help
 
 ### <a name="android"></a>Android
 
-在 Android 上執行的 Xamarin 應用程式可以使用受控 `HttpClientHandler` 網路堆疊，或原生 `AndroidClientHandler` 網路堆疊。 根據預設，新的 Android 平台專案使用 `AndroidClientHandler` 網路堆疊，以支援 TLS 1.2，並使用原生 API 以獲得更好的效能與較小的可執行檔大小。
-
-但是，當應用程式需要連線在本機執行的安全 Web 服務時，使用受控網路堆疊可讓開發人員更容易進行測試。 因此，建議您設定偵錯模擬器組建設定檔，以使用受控網路堆疊，以及設定發行組建設定檔，以使用原生網路堆疊。 每個網路堆疊都可以用程式設計方式，或透過專案選項中的選取器進行設定。 如需詳細資訊，請參閱[適用於 Android 的 HttpClient 堆疊和 SSL/TLS 實作選擇器](~/android/app-fundamentals/http-stack.md)。
+在 Android 上執行的 Xamarin 應用程式可以使用受控 `HttpClient` 網路堆疊，或原生 `AndroidClientHandler` 網路堆疊。 根據預設，新的 Android 平台專案使用 `AndroidClientHandler` 網路堆疊，以支援 TLS 1.2，並使用原生 API 以獲得更好的效能與較小的可執行檔大小。 如需 Android 網路堆疊的詳細資訊，請參閱[適用于 android 的 HttpClient 堆疊和 SSL/TLS 實施選取器](~/android/app-fundamentals/http-stack.md)。
 
 ## <a name="specify-the-local-machine-address"></a>指定本機電腦位址
 
@@ -101,7 +99,11 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 嘗試從在 iOS 模擬器或 Android 模擬器中執行的應用程式叫用本機安全 Web 服務時，將會擲回 `HttpRequestException`，即使是在每個平台上使用受控網路堆疊也一樣。 這是因為本機 HTTPS 開發憑證是自我簽署的，而自我簽署憑證不受 iOS 或 Android 信任。
 
-因此，應用程式在使用本機安全 Web 服務時，必須忽略 SSL 錯誤。 只要在使用受控網路時，為回呼設定 `ServicePointManager.ServerCertificateValidationCallback` 屬性，以忽略本機 HTTPS 開發憑證的憑證安全性檢查結果，就可以達到這個目的：
+因此，應用程式在使用本機安全 Web 服務時，必須忽略 SSL 錯誤。 在 iOS 和 Android 上，完成此操作的機制目前並不相同。
+
+### <a name="ios"></a>iOS
+
+使用受控網路堆疊時，可以在 iOS 上忽略本機安全 web 服務的 SSL 錯誤，方法是將 `ServicePointManager.ServerCertificateValidationCallback` 屬性設定為回呼，以忽略本機 HTTPS 開發憑證的憑證安全性檢查結果：
 
 ```csharp
 #if DEBUG
@@ -114,10 +116,30 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 #endif
 ```
 
-在此程式碼範例中，當進行驗證的憑證不是 `localhost` 時，就會傳回伺服器憑證驗證結果。 對於此憑證來說，系統會忽略驗證結果並傳回 `true`，指示憑證是否有效。 此程式碼應先在 iOS 上新增至 `AppDelegate.FinishedLaunching` 方法，在 Android 上新增至 `MainActivity.OnCreate` 方法，然後再新增至 `LoadApplication(new App())` 方法呼叫。
+在此程式碼範例中，當進行驗證的憑證不是 `localhost` 時，就會傳回伺服器憑證驗證結果。 對於此憑證來說，系統會忽略驗證結果並傳回 `true`，指示憑證是否有效。 在 `LoadApplication(new App())` 方法呼叫之前，應該先將此程式碼新增至 iOS 上的 `AppDelegate.FinishedLaunching` 方法。
 
 > [!NOTE]
-> iOS 和 Android 上的原生網路堆疊不會連結到 `ServerCertificateValidationCallback`。
+> IOS 上的原生網路堆疊不會連結到 `ServerCertificateValidationCallback`。
+
+### <a name="android"></a>Android
+
+當使用 managed 和 native `AndroidClientHandler` 網路堆疊時，在 Android 上會忽略 SSL 錯誤，方法是將 `HttpClientHandler` 物件上的 `ServerCertificateCustomValidationCallback` 屬性設定為回呼，以忽略的憑證安全性檢查結果本機 HTTPS 開發憑證：
+
+```csharp
+public HttpClientHandler GetInsecureHandler()
+{
+    var handler = new HttpClientHandler();
+    handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
+    {
+        if (cert.Issuer.Equals("CN=localhost"))
+            return true;
+        return errors == System.Net.Security.SslPolicyErrors.None;
+    };
+    return handler;
+}
+```
+
+在此程式碼範例中，當進行驗證的憑證不是 `localhost` 時，就會傳回伺服器憑證驗證結果。 對於此憑證來說，系統會忽略驗證結果並傳回 `true`，指示憑證是否有效。 產生的 `HttpClientHandler` 物件應當做引數傳遞至 `HttpClient` 的函式。
 
 ## <a name="related-links"></a>相關連結
 
