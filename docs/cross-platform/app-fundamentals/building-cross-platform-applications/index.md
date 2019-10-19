@@ -7,15 +7,15 @@ author: conceptdev
 ms.author: crdun
 ms.date: 01/28/2016
 ms.openlocfilehash: 2c630e58ff5a1221ec9e95099df4781041ecf2b4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "70288048"
 ---
 # <a name="building-cross-platform-applications"></a>建置跨平台應用程式
 
-有兩個選項可在跨平臺行動應用程式之間共用程式碼：共用的資產專案和可移植的類別庫。 [這裡會討論](~/cross-platform/app-fundamentals/code-sharing.md)這些選項;也提供[可移植類別庫](~/cross-platform/app-fundamentals/pcl.md)和[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)的詳細資訊。
+有兩個選項可在跨平臺行動應用程式之間共用程式碼：共用資產專案和可移植的類別庫。 [這裡會討論](~/cross-platform/app-fundamentals/code-sharing.md)這些選項;也提供[可移植類別庫](~/cross-platform/app-fundamentals/pcl.md)和[共用專案](~/cross-platform/app-fundamentals/shared-projects.md)的詳細資訊。
 
 <a name="Sections" />
 
@@ -46,7 +46,7 @@ ms.locfileid: "70288048"
 Tasky 是適用于 iOS、Android 和 Windows Phone 的簡單待辦事項清單應用程式。
 其中示範使用 Xamarin 建立跨平臺應用程式的基本概念，並使用本機 SQLite 資料庫。
 
- [ tasky![ ](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [清單tasky![清單](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
+ [![tasky 清單](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [![tasky 清單](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
 閱讀[Tasky 案例研究](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)。
 
@@ -65,6 +65,6 @@ Tasky 是適用于 iOS、Android 和 Windows Phone 的簡單待辦事項清單�
 - [共用程式碼選項](~/cross-platform/app-fundamentals/code-sharing.md)
 - [案例研究：Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
 - [Tasky 範例應用程式（github）](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin 行動應用程式開發：跨平臺C#和 Xamarin. 表單基本概念（Amazon）](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [Xamarin 行動應用程式開發：跨平臺C#和 Xamarin。表單基本概念（Amazon）](http://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [以 Greg Shackles C# （O'Reilly）的行動裝置開發](http://shop.oreilly.com/product/0636920024002.do)
 - [Scott Olson、John Hunter、Ben C# Horgen、Kenny Goers （Wrox）中的專業跨平臺行動裝置開發](http://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

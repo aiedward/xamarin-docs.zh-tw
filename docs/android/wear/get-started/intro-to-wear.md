@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/01/2018
 ms.openlocfilehash: 80c24765022a916fa36e97aaf47b36435b3f7a7b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "70758504"
 ---
 # <a name="introduction-to-android-wear"></a>Android Wear 簡介
@@ -36,7 +36,7 @@ Android 磨損具有與 Android 掌上應用程式不同的使用者介面模式
 
 #### <a name="wearable-notifications"></a>穿戴式通知
 
-支援 Android 磨損最簡單的方式，就是利用掌上型和穿戴式裝置之間通知的共用性質。 藉由使用支援 v4 通知 API 和`WearableExtender`類別（可在[Xamarin Android 支援程式庫](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)中取得），您可以利用平臺的原生功能，例如收件匣樣式卡片或語音輸入。 [RecipeAssistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant)範例提供範例程式碼，示範如何將通知清單傳送至 Android 磨損裝置。 
+支援 Android 磨損最簡單的方式，就是利用掌上型和穿戴式裝置之間通知的共用性質。 藉由使用支援 v4 通知 API 和 `WearableExtender` 類別（可在[Xamarin Android 支援程式庫](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)中取得），您可以利用平臺的原生功能，例如收件匣樣式卡片或語音輸入。 [RecipeAssistant](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-recipeassistant)範例提供範例程式碼，示範如何將通知清單傳送至 Android 磨損裝置。 
 
 #### <a name="companion-applications"></a>隨附應用程式
 
@@ -44,11 +44,11 @@ Android 磨損具有與 Android 掌上應用程式不同的使用者介面模式
 
 ### <a name="user-interface"></a>使用者介面
 
-「磨損」的主要瀏覽模式是垂直排列的一系列卡片。 這些卡片每個都可以有相關聯的動作，並在相同的資料列上分層。 類別會提供這種功能; 它會遵守與相同的適配`ListView`卡概念。 `GridViewPager` 您通常會將`GridViewPager` `FragmentGridPagerAdaptor`與（或`GridPagerAdaptor`）建立關聯，讓您將每個資料列和資料`Fragment`行儲存格表示為： 
+「磨損」的主要瀏覽模式是垂直排列的一系列卡片。 這些卡片每個都可以有相關聯的動作，並在相同的資料列上分層。 @No__t_0 類別提供這種功能;它遵守與 `ListView` 相同的介面卡概念。 您通常會將 `GridViewPager` 與 `FragmentGridPagerAdaptor` （或 `GridPagerAdaptor`）相關聯，讓您將每個資料列和資料行儲存格表示為 `Fragment`： 
 
 [![磨損導覽](intro-to-wear-images/2d-picker-sml.png "磨損導覽")](intro-to-wear-images/2d-picker.png#lightbox)
 
-磨損也會使用動作按鈕，其中包含具有小型描述文字（如上所示）的大彩色圓形。  [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)範例示範如何在磨損應用`GridViewPager`程式`GridPagerAdapter`中使用和。
+磨損也會使用動作按鈕，其中包含具有小型描述文字（如上所示）的大彩色圓形。  [GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)範例會示範如何在磨損應用程式中使用 `GridViewPager` 和 `GridPagerAdapter`。
 
 Android 磨損2.0 會將導覽選單、動作選單和內嵌動作按鈕新增至磨損使用者介面。 如需 Android 磨損2.0 使用者介面元素的詳細資訊，請參閱 Android[剖析](https://www.google.com/design/spec-wear/system-overview/anatomy.html)主題。 
 
@@ -56,15 +56,15 @@ Android 磨損2.0 會將導覽選單、動作選單和內嵌動作按鈕新增�
 
 Android 磨損提供兩個不同的通訊 Api，以促進穿戴式應用程式與隨附掌上型應用程式之間的通訊： 
 
-**資料 API**&ndash;此 API 類似于穿戴式裝置與掌上型裝置之間已同步處理的資料存放區。 Android 會負責在穿戴式和掌上傳播變更，這是最佳做法。 當穿戴式超出範圍時，它會在稍後將同步處理排入佇列。 這個 API 的主要進入點是`WearableClass.DataApi`。 如需此 API 的詳細資訊，請參閱 Android[同步處理資料項目](https://developer.android.com/training/wearables/data-layer/data-items.html)主題。 
+此 API &ndash; 的**資料 api**類似于穿戴式裝置與掌上型裝置之間的同步處理資料存放區。 Android 會負責在穿戴式和掌上傳播變更，這是最佳做法。 當穿戴式超出範圍時，它會在稍後將同步處理排入佇列。 此 API 的主要進入點是 `WearableClass.DataApi`。 如需此 API 的詳細資訊，請參閱 Android[同步處理資料項目](https://developer.android.com/training/wearables/data-layer/data-items.html)主題。 
 
-**訊息 API**&ndash;此 API 可讓您使用較低層級的通訊路徑：小型承載會以單向方式傳送，而不會同步處理掌上型和穿戴式應用程式。
-這個 API 的主要進入點是`WearableClass.MessageApi`。
+**訊息 api** &ndash; 此 api 可讓您使用較低層級的通訊路徑：小型承載會以單向方式傳送，而不會在掌上型和穿戴式應用程式之間進行同步處理。
+此 API 的主要進入點是 `WearableClass.MessageApi`。
 如需此 API 的詳細資訊，請參閱 Android 傳送[和接收訊息](https://developer.android.com/training/wearables/data-layer/messages.html)主題。
 
-您可以選擇註冊回呼，以透過每個 API 接聽程式介面來接收這些訊息，或是在您的應用程式中執行衍生自`WearableListenerService`的服務。
+您可以選擇註冊回呼，以透過每個 API 接聽程式介面來接收這些訊息，或者在您的應用程式中，執行衍生自 `WearableListenerService` 的服務。
 Android 磨損會自動將此服務具現化。
-[FindMyPhone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample)範例說明如何執行`WearableListenerService`。
+[FindMyPhone](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-findmyphonesample)範例說明如何執行 `WearableListenerService`。
 
 ### <a name="deployment"></a>部署
 
@@ -96,7 +96,7 @@ Android 磨損2.0 引進了各種新特性和功能，例如*複雜性*、彎曲
 
 若要使用 Xamarin 建立磨損2.0 應用程式，您必須在專案中新增 Xamarin. a **v 2.0**套件（按一下 [**流覽]** 索引標籤）：
 
-[![Xamarin。](intro-to-wear-images/wear-nuget-2.0-sml.png "安裝 Xamarin V2.0 NuGet")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
+[![Xamarin。](intro-to-wear-images/wear-nuget-2.0-sml.png "安裝 Xamarin v2.0 NuGet")](intro-to-wear-images/wear-nuget-2.0.png#lightbox)
 
 此 NuGet 套件包含 Android 支援穿戴式和磨損相容性程式庫的系結。
 
@@ -126,11 +126,11 @@ Android 磨損2.0 是 Android 磨損的最大更新，因為它最初是在2014�
 
 #### <a name="curved-layouts"></a>曲線版面配置 
 
-磨損2.0 引進了新的功能，可在圓形磨損裝置上顯示彎曲的版面配置。 具體而言，新`WearableRecyclerView`的類別已優化，可在圓形顯示上顯示垂直專案的清單： 
+磨損2.0 引進了新的功能，可在圓形磨損裝置上顯示彎曲的版面配置。 具體來說，新的 `WearableRecyclerView` 類別已經過優化，可在圓形顯示上顯示垂直專案清單： 
 
 ![曲線版面配置範例](intro-to-wear-images/curved-layout.png "曲線版面配置範例")
 
-`WearableRecyclerView``RecyclerView`擴充類別，以支援曲線版面配置和迴圈滾動手勢。 如需詳細資訊，請參閱 Android [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) API 檔。 
+`WearableRecyclerView` 擴充 `RecyclerView` 類別，以支援曲線版面配置和迴圈滾動手勢。 如需詳細資訊，請參閱 Android [WearableRecyclerView](https://developer.android.com/reference/android/support/wearable/view/WearableRecyclerView.html) API 檔。 
 
 #### <a name="standalone-apps"></a>獨立應用程式 
 
@@ -138,7 +138,7 @@ Android 磨損2.0 應用程式可以獨立于掌上型應用程式使用。 這�
 
 #### <a name="wrist-gestures"></a>手腕手勢 
 
-手腕手勢可讓使用者與您的應用程式互動，而不需要使用觸摸&ndash;屏使用者可以一次回應應用程式。 支援兩種手腕手勢： 
+手腕手勢可以讓使用者與您的應用程式互動，而不需要使用觸控式螢幕 &ndash; 使用者可以使用單一手指來回應應用程式。 支援兩種手腕手勢： 
 
 - 筆鋒手腕
 - 筆鋒中的手腕
@@ -174,4 +174,4 @@ Android 磨損2.0 應用程式可以獨立于掌上型應用程式使用。 這�
 ## <a name="related-links"></a>相關連結
 
 - [安裝和設定](~/android/wear/get-started/installation.md)
-- [快速入門](~/android/wear/get-started/index.md)
+- [使用者入門](~/android/wear/get-started/index.md)

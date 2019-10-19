@@ -1,6 +1,6 @@
 ---
-title: 在 Xamarin 原生專案中的 Xamarin.Forms
-description: 這篇文章說明如何使用 ContentPage 衍生頁面直接新增到 Xamarin 原生專案，以及如何之間瀏覽。
+title: Xamarin 原生專案中的 xamarin
+description: 本文說明如何取用直接新增至 Xamarin 原生專案的 ContentPage 衍生頁面，以及如何在兩者之間流覽。
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
@@ -8,36 +8,36 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/19/2019
 ms.openlocfilehash: 0c84b844455b8a792b8cbe2f4dac97097e5ebd97
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "69621065"
 ---
-# <a name="xamarinforms-in-xamarin-native-projects"></a>在 Xamarin 原生專案中的 Xamarin.Forms
+# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin 原生專案中的 xamarin
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
 
-Xamarin.Forms 應用程式通常包含一或多個頁面衍生自[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)，，而這些頁面時，可共用所有平台上，.NET Standard 程式庫專案或共用專案中。 不過，原生格式可讓`ContentPage`-衍生直接加入原生的 Xamarin.iOS、 Xamarin.Android 和 UWP 應用程式的頁面。 相較於具有原生專案取用`ContentPage`-衍生的頁面，從.NET Standard 程式庫專案或共用專案中，直接將頁面加入原生專案中的優點是頁面可以使用原生檢視來延伸。 可以再使用 XAML 中名為原生檢視`x:Name`和參考從程式碼後置。 如需有關原生檢視的詳細資訊，請參閱[原生檢視](~/xamarin-forms/platform/native-views/index.md)。
+一般而言，Xamarin. Forms 應用程式包含一或多個衍生自[`ContentPage`](xref:Xamarin.Forms.ContentPage)的頁面，而這些頁面會由 .NET Standard 程式庫專案或共用專案中的所有平臺共用。 不過，原生表單可讓 `ContentPage` 衍生的頁面直接新增至原生的 Xamarin. iOS、Xamarin 和 UWP 應用程式。 相較于讓原生專案取用來自 .NET Standard 程式庫專案或共用專案的 `ContentPage` 衍生頁面，將頁面直接加入至原生專案的優點是可以使用原生視圖來擴充頁面。 然後可以在 XAML 中以 `x:Name` 命名原生視圖，並從程式碼後置參考。 如需原生視圖的詳細資訊，請參閱[原生視圖](~/xamarin-forms/platform/native-views/index.md)。
 
-使用 Xamarin.Forms 的程序[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生原生專案中的頁面如下所示：
+在原生專案中使用 Xamarin. Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面的程式如下所示：
 
-1. 加入原生專案中的 Xamarin.Forms NuGet 套件。
-1. 新增[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面上，以及任何相依，原生專案。
+1. 將 [Xamarin] NuGet 封裝新增至原生專案。
+1. 將 [ [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生的頁面] 和 [任何相依性] 加入至原生專案。
 1. 呼叫 `Forms.Init` 方法。
-1. 建構的執行個體[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，並將它轉換成適當的原生類型，使用下列的擴充方法的其中一個：`CreateViewController`適用於 iOS、`CreateSupportFragment`適用於 Android、 或`CreateFrameworkElement`的UWP。
-1. 瀏覽至的原生類型表示法[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生使用原生的瀏覽 API 的頁面。
+1. 使用下列其中一個擴充方法來建立[`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面的實例，並將它轉換成適當的原生類型： iOS 的 `CreateViewController`、適用于 Android 的 `CreateSupportFragment`，或適用于 UWP 的 `CreateFrameworkElement`。
+1. 使用原生導覽 API，流覽至[`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面的原生類型標記法。
 
-必須由呼叫初始化 Xamarin.Forms`Forms.Init`方法之前原生專案可以建構[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面。 當它是最方便的方式在您的應用程式流程中，選擇時若要這樣做主要是取決於 – 它可以在應用程式啟動時，或執行之前`ContentPage`-建構衍生的頁面。 在本文中，並隨附的範例應用程式，`Forms.Init`應用程式啟動時呼叫方法。
+在原生專案可以建立[`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生的頁面之前，您必須先呼叫 `Forms.Init` 方法來初始化表單。 選擇何時執行此動作主要取決於應用程式流程中最方便的時機–它可以在應用程式啟動時執行，或是在建立 `ContentPage` 衍生的頁面之前進行。 在本文中，和隨附的範例應用程式中，會在應用程式啟動時呼叫 `Forms.Init` 方法。
 
 > [!NOTE]
-> **NativeForms**範例應用程式方案不包含所有的 Xamarin.Forms 專案。 相反地，它包含在 Xamarin.iOS 專案、 的 Xamarin.Android 專案和 UWP 專案。 每個專案是原生專案使用原生格式來取用[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生的頁面。 不過，沒有的理由為何要使用原生專案無法`ContentPage`-來自.NET Standard 程式庫專案或共用專案中的頁面。
+> **NativeForms**範例應用程式方案不包含任何 Xamarin 專案。 相反地，它是由一個 Xamarin 專案、一個 Xamarin Android 專案和一個 UWP 專案所組成。 每個專案都是原生專案，會使用原生表單取用[`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生的頁面。 不過，原生專案無法從 .NET Standard 程式庫專案或共用專案取用 `ContentPage` 衍生頁面的原因。
 
-當使用原生格式，Xamarin.Forms 這類功能[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)， [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)，和資料繫結引擎，所有工作。 不過，您必須使用原生的瀏覽 API 會執行頁面導覽。
+使用原生表單時，像是[`DependencyService`](xref:Xamarin.Forms.DependencyService)、 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)和資料系結引擎等表單功能，都仍然有效。 不過，頁面導覽必須使用原生導覽 API 來執行。
 
 ## <a name="ios"></a>iOS
 
-在 iOS 上，`FinishedLaunching`覆寫中`AppDelegate`類別通常是執行應用程式的位置啟動相關的工作。 它會呼叫後的應用程式已啟動，通常會覆寫來設定主視窗和檢視控制器。 下列程式碼範例示範`AppDelegate`範例應用程式中的類別：
+在 iOS 上，`AppDelegate` 類別中的 `FinishedLaunching` 覆寫通常是執行應用程式啟動相關工作的位置。 它會在應用程式啟動後呼叫，而且通常會覆寫以設定主視窗和視圖控制器。 下列程式碼範例顯示範例應用程式中的 `AppDelegate` 類別：
 
 ```csharp
 [Register("AppDelegate")]
@@ -75,22 +75,22 @@ public class AppDelegate : UIApplicationDelegate
 }
 ```
 
-`FinishedLaunching`方法會執行下列工作：
+@No__t_0 方法會執行下列工作：
 
-- Xamarin.Forms 會藉由呼叫初始化`Forms.Init`方法。
-- 參考`AppDelegate`類別會儲存在`static``Instance`欄位。 這是為了提供機制來呼叫方法中定義其他類別`AppDelegate`類別。
-- `UIWindow`，這原生的 iOS 應用程式中檢視的主要容器建立。
-- `FolderPath`屬性會初始化為裝置上儲存附注資料的路徑。
-- `NotesPage`類別，這是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面中 XAML 所定義、 建構及轉換成`UIViewController`使用`CreateViewController`擴充方法。
-- `Title`的屬性`UIViewController`設定，這將會顯示在`UINavigationBar`。
-- A`AppNavigationController`建立來管理階層式導覽。 這是自訂的流覽控制器類別, 其衍生`UINavigationController`自。 物件會管理一堆視圖控制器, `UIViewController`而傳遞至此函式的會在載入時`AppNavigationController`一開始呈現。 `AppNavigationController`
-- 物件會設定為的最上層`UIViewController` `UIWindow`, 而`UIWindow`會設定為應用程式的索引鍵視窗, 並顯示為可見。 `AppNavigationController`
+- [Xamarin] 是藉由呼叫 `Forms.Init` 方法來初始化。
+- @No__t_0 類別的參考會儲存在 [`static` `Instance`] 欄位中。 這是為了讓其他類別能夠呼叫 `AppDelegate` 類別中定義的方法。
+- @No__t_0，這是在原生 iOS 應用程式中建立視圖的主要容器。
+- @No__t_0 屬性會初始化為裝置上儲存附注資料的路徑。
+- @No__t_0 類別，這是在 XAML 中定義的 Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面，會使用 `CreateViewController` 擴充方法來進行結構化並轉換成 `UIViewController`。
+- 已設定 `UIViewController` 的 `Title` 屬性，這會顯示在 `UINavigationBar` 上。
+- 建立 `AppNavigationController` 以管理階層式導覽。 這是自訂的流覽控制器類別，其衍生自 `UINavigationController`。 @No__t_0 物件會管理一堆視圖控制器，而傳遞至此函式的 `UIViewController` 會在載入 `AppNavigationController` 時一開始呈現。
+- @No__t_0 物件會設定為 `UIWindow` 的頂層 `UIViewController`，而 `UIWindow` 會設定為應用程式的索引鍵視窗，而且會顯示為可見。
 
-一次`FinishedLaunching`已經執行方法，在 Xamarin.Forms 中的 UI 定義`NotesPage`，也將會顯示類別，如下列螢幕擷取畫面所示：
+一旦執行 `FinishedLaunching` 方法，就會顯示在 Xamarin. Forms `NotesPage` 類別中定義的 UI，如下列螢幕擷取畫面所示：
 
-[ ![Xamarin ios 應用程式的螢幕擷取畫面, 其使用 Xaml](native-forms-images/ios-notespage.png "Xamarin ios 應用程式")中定義的 ui 與 xaml ui](native-forms-images/ios-notespage-large.png#lightbox "包含 XAML UI 的 Xamarin iOS 應用程式")
+[![使用 XAML 中定義的 UI 之 Xamarin iOS 應用程式的螢幕擷取畫面](native-forms-images/ios-notespage.png "包含 XAML UI 的 Xamarin iOS 應用程式")](native-forms-images/ios-notespage-large.png#lightbox "包含 XAML UI 的 Xamarin iOS 應用程式")
 
-例如, 藉由在上 **+** [`Button`](xref:Xamarin.Forms.Button)使用來與 UI 互動, 會導致程式`NotesPage`代碼後置中的下列事件處理常式執行:
+例如，藉由在 **+** [`Button`](xref:Xamarin.Forms.Button)上進行互動，就會在執行的 `NotesPage` 程式碼後置中產生下列事件處理常式：
 
 ```csharp
 void OnNoteAddedClicked(object sender, EventArgs e)
@@ -99,7 +99,7 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 }
 ```
 
-`static` `AppDelegate.Instance`欄位可讓`AppDelegate.NavigateToNoteEntryPage`要叫用方法，下列程式碼範例所示：
+[@No__t_0 `AppDelegate.Instance`] 欄位可讓您叫用 `AppDelegate.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
 
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
@@ -113,11 +113,11 @@ public void NavigateToNoteEntryPage(Note note)
 }
 ```
 
-`NavigateToNoteEntryPage`方法會將轉換的 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，即可`UIViewController`具有`CreateViewController`擴充方法，並將`Title`屬性`UIViewController`。 `UIViewController`再推入至`AppNavigationController`由`PushViewController`方法。 因此，UI 定義在 Xamarin.Forms 中`NoteEntryPage`，也將會顯示類別，如下列螢幕擷取畫面所示：
+@No__t_0 方法會將 Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生的頁面，轉換為具有 `CreateViewController` 擴充方法的 `UIViewController`，並設定 `Title` 的 `UIViewController` 屬性。 然後，`UIViewController` 會透過 `PushViewController` 方法推送至 `AppNavigationController`。 因此，將會顯示在 Xamarin. Forms `NoteEntryPage` 類別中定義的 UI，如下列螢幕擷取畫面所示：
 
-[ ![Xamarin ios 應用程式的螢幕擷取畫面, 其使用 Xaml](native-forms-images/ios-noteentrypage.png "Xamarin ios 應用程式")中定義的 ui 與 xaml ui](native-forms-images/ios-noteentrypage-large.png#lightbox "包含 XAML UI 的 Xamarin iOS 應用程式")
+[![使用 XAML 中定義的 UI 之 Xamarin iOS 應用程式的螢幕擷取畫面](native-forms-images/ios-noteentrypage.png "包含 XAML UI 的 Xamarin iOS 應用程式")](native-forms-images/ios-noteentrypage-large.png#lightbox "包含 XAML UI 的 Xamarin iOS 應用程式")
 
-`AppNavigationController` `NoteEntryPage` `UIViewController` `NotesPage` `UIViewController`當顯示時, [上一頁流覽] 會從彈出類別的, 並將使用者傳回給類別的。 `NoteEntryPage` 不過, `UIViewController`從 iOS 原生導覽堆疊彈出, 並不會自動處置`UIViewController`和附加`Page`的物件。 因此, `AppNavigationController`類別會`PopViewController`覆寫方法, 以便在回溯導覽上處置視圖控制器:
+顯示 `NoteEntryPage` 時，[上一頁流覽] 將會從 `AppNavigationController` 中快顯 `NoteEntryPage` 類別的 `UIViewController`，並將使用者傳回 `UIViewController` 類別的 `NotesPage`。 不過，從 iOS 原生導覽堆疊彈出 `UIViewController` 並不會自動處置 `UIViewController` 並附加 `Page` 物件。 因此，`AppNavigationController` 類別會覆寫 `PopViewController` 方法，以在回溯導覽時處置視圖控制器：
 
 ```csharp
 public class AppNavigationController : UINavigationController
@@ -136,14 +136,14 @@ public class AppNavigationController : UINavigationController
 }
 ```
 
-覆寫會`Dispose` 針對`UIViewController`從 iOS 原生導覽堆疊推出的物件呼叫方法。 `PopViewController` 若未這麼做, 將會導致`UIViewController`和附加`Page`的物件被孤立。
+@No__t_0 覆寫會針對從 iOS 原生導覽堆疊彈出的 `UIViewController` 物件，呼叫 `Dispose` 方法。 如果無法這麼做，將會導致 `UIViewController` 和附加的 `Page` 物件被孤立。
 
 > [!IMPORTANT]
-> 孤立物件無法進行垃圾收集, 因而導致記憶體流失。
+> 孤立物件無法進行垃圾收集，因而導致記憶體流失。
 
 ## <a name="android"></a>Android
 
-在 Android 上，`OnCreate`覆寫中`MainActivity`類別通常是執行應用程式的位置啟動相關的工作。 下列程式碼範例示範`MainActivity`範例應用程式中的類別：
+在 Android 上，`MainActivity` 類別中的 `OnCreate` 覆寫通常是執行應用程式啟動相關工作的位置。 下列程式碼範例顯示範例應用程式中的 `MainActivity` 類別：
 
 ```csharp
 public class MainActivity : AppCompatActivity
@@ -176,23 +176,23 @@ public class MainActivity : AppCompatActivity
 }
 ```
 
-`OnCreate`方法會執行下列工作：
+@No__t_0 方法會執行下列工作：
 
-- Xamarin.Forms 會藉由呼叫初始化`Forms.Init`方法。
-- 參考`MainActivity`類別會儲存在`static``Instance`欄位。 這是為了提供機制來呼叫方法中定義其他類別`MainActivity`類別。
-- `Activity`內容由版面配置資源設定。 在範例應用程式版面配置包含`LinearLayout`，其中包含`Toolbar`，和`FrameLayout`做為片段的容器。
-- `Toolbar`擷取和設定的動作列為`Activity`，而且會設定動作列標題。
-- `FolderPath`屬性會初始化為裝置上儲存附注資料的路徑。
-- `NotesPage`類別，這是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面中 XAML 所定義、 建構及轉換成`Fragment`使用`CreateSupportFragment`擴充方法。
-- `SupportFragmentManager`類別會建立並認可交易，它會取代`FrameLayout`執行個體`Fragment`如`NotesPage`類別。
+- [Xamarin] 是藉由呼叫 `Forms.Init` 方法來初始化。
+- @No__t_0 類別的參考會儲存在 [`static` `Instance`] 欄位中。 這是為了讓其他類別能夠呼叫 `MainActivity` 類別中定義的方法。
+- @No__t_0 內容是從配置資源進行設定。 在範例應用程式中，配置是由包含 `Toolbar` 的 `LinearLayout`，以及做為片段容器的 `FrameLayout` 所組成。
+- 會抓取 `Toolbar`，並將其設定為 `Activity` 的動作列，並設定動作列標題。
+- @No__t_0 屬性會初始化為裝置上儲存附注資料的路徑。
+- @No__t_0 類別，這是在 XAML 中定義的 Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面，會使用 `CreateSupportFragment` 擴充方法來進行結構化並轉換成 `Fragment`。
+- @No__t_0 類別會建立並認可交易，以 `NotesPage` 類別的 `Fragment` 取代 `FrameLayout` 實例。
 
 如需有關片段的詳細資訊，請參閱[片段](~/android/platform/fragments/index.md)。
 
-一次`OnCreate`已經執行方法，在 Xamarin.Forms 中的 UI 定義`NotesPage`，也將會顯示類別，如下列螢幕擷取畫面所示：
+一旦執行 `OnCreate` 方法，就會顯示在 Xamarin. Forms `NotesPage` 類別中定義的 UI，如下列螢幕擷取畫面所示：
 
-[ ![Xamarin. android 應用程式的螢幕擷取畫面, 其使用 xaml](native-forms-images/android-notespage.png "Xamarin. android 應用程式")中定義的 ui 與 xaml UI](native-forms-images/android-notespage-large.png#lightbox "包含 XAML UI 的 Xamarin Android 應用程式")
+[![使用 XAML 中定義之 UI 的 Xamarin Android 應用程式螢幕擷取畫面](native-forms-images/android-notespage.png "包含 XAML UI 的 Xamarin Android 應用程式")](native-forms-images/android-notespage-large.png#lightbox "包含 XAML UI 的 Xamarin Android 應用程式")
 
-例如, 藉由在上 **+** [`Button`](xref:Xamarin.Forms.Button)使用來與 UI 互動, 會導致程式`NotesPage`代碼後置中的下列事件處理常式執行:
+例如，藉由在 **+** [`Button`](xref:Xamarin.Forms.Button)上進行互動，就會在執行的 `NotesPage` 程式碼後置中產生下列事件處理常式：
 
 ```csharp
 void OnNoteAddedClicked(object sender, EventArgs e)
@@ -201,7 +201,7 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 }
 ```
 
-`static` `MainActivity.Instance`欄位可讓`MainActivity.NavigateToNoteEntryPage`要叫用方法，下列程式碼範例所示：
+[@No__t_0 `MainActivity.Instance`] 欄位可讓您叫用 `MainActivity.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
 
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
@@ -218,15 +218,15 @@ public void NavigateToNoteEntryPage(Note note)
 }
 ```
 
-`NavigateToNoteEntryPage`方法會將轉換的 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面，即可`Fragment`具有`CreateSupportFragment`擴充方法，並將`Fragment`片段回堆疊。 因此，UI 定義在 Xamarin.Forms 中`NoteEntryPage`將會顯示，如下列螢幕擷取畫面所示：
+@No__t_0 方法會將 Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生的頁面，轉換為具有 `CreateSupportFragment` 擴充方法的 `Fragment`，並將 `Fragment` 加入至片段後端堆疊。 因此，會顯示在 [Xamarin. 表單] `NoteEntryPage` 中定義的 UI，如下列螢幕擷取畫面所示：
 
-[ ![Xamarin. android 應用程式的螢幕擷取畫面, 其使用 xaml](native-forms-images/android-noteentrypage.png "Xamarin. android 應用程式")中定義的 ui 與 xaml UI](native-forms-images/android-noteentrypage-large.png#lightbox "包含 XAML UI 的 Xamarin Android 應用程式")
+[![使用 XAML 中定義之 UI 的 Xamarin Android 應用程式螢幕擷取畫面](native-forms-images/android-noteentrypage.png "包含 XAML UI 的 Xamarin Android 應用程式")](native-forms-images/android-noteentrypage-large.png#lightbox "包含 XAML UI 的 Xamarin Android 應用程式")
 
-時`NoteEntryPage`出現時，點選 [上一步] 箭號會出現`Fragment`for`NoteEntryPage`片段上一頁堆疊中，從傳回使用者`Fragment`的`NotesPage`類別。
+顯示 `NoteEntryPage` 時，按 [上一步] 箭號將會從片段後堆疊中快顯 `NoteEntryPage` 的 `Fragment`，並將使用者傳回 `NotesPage` 類別的 `Fragment`。
 
 ### <a name="enable-back-navigation-support"></a>啟用回溯導覽支援
 
-`SupportFragmentManager`類別具有`BackStackChanged`片段上一頁堆疊的內容變更時，就會引發的事件。 `OnCreate`方法中的`MainActivity`類別包含此事件的匿名事件處理常式：
+@No__t_0 類別具有 `BackStackChanged` 事件，會在每次片段傳回堆疊的內容變更時引發。 @No__t_1 類別中的 `OnCreate` 方法包含此事件的匿名事件處理常式：
 
 ```csharp
 SupportFragmentManager.BackStackChanged += (sender, e) =>
@@ -238,7 +238,7 @@ SupportFragmentManager.BackStackChanged += (sender, e) =>
 };
 ```
 
-這個事件處理常式會顯示動作列上一步按鈕假設有一或多個`Fragment`片段上的執行個體傳回堆疊。 點選 [上一頁] 按鈕的回應由`OnOptionsItemSelected`覆寫：
+這個事件處理常式會在動作列上顯示 [上一頁] 按鈕，前提是該片段上有一個或多個 `Fragment` 實例。 點擊 [上一頁] 按鈕的回應是由 `OnOptionsItemSelected` 覆寫來處理：
 
 ```csharp
 public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
@@ -252,18 +252,18 @@ public override bool OnOptionsItemSelected(Android.Views.IMenuItem item)
 }
 ```
 
-`OnOptionsItemSelected`選取 [選項] 功能表中的項目時，會呼叫覆寫。 此實作中取出片段上一頁堆疊中，從目前的片段，前提是已選取 [上一頁] 按鈕，而且有一或多個`Fragment`片段上的執行個體傳回堆疊。
+每當選取 [選項] 功能表中的專案時，就會呼叫 `OnOptionsItemSelected` 覆寫。 這個程式會從片段的傳回堆疊中取出目前的片段，但前提是已選取 [上一頁] 按鈕，而在片段上有一個或多個 `Fragment` 實例。
 
 ### <a name="multiple-activities"></a>多個活動
 
-當應用程式由多個活動，組成[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生的頁面可以內嵌在每個活動。 在此案例中，`Forms.Init`需要呼叫方法，只有`OnCreate`的第一個覆寫`Activity`，內嵌 Xamarin.Forms `ContentPage`。 不過，這有下列影響：
+當應用程式由多個活動組成時， [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生的頁面就可以內嵌到每個活動中。 在此案例中，只有在內嵌 Xamarin. 表單 `ContentPage` 的第一個 `Activity` 的 `OnCreate` 覆寫中，才需要呼叫 `Forms.Init` 方法。 不過，這會造成下列影響：
 
-- 值`Xamarin.Forms.Color.Accent`將會取自`Activity`呼叫`Forms.Init`方法。
-- 值`Xamarin.Forms.Application.Current`相關聯`Activity`呼叫`Forms.Init`方法。
+- @No__t_0 的值將取自呼叫 `Forms.Init` 方法的 `Activity`。
+- @No__t_0 的值將會與呼叫 `Forms.Init` 方法的 `Activity` 相關聯。
 
 ### <a name="choose-a-file"></a>選擇檔案
 
-內嵌時[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生使用的頁面[ `WebView` ](xref:Xamarin.Forms.WebView) ，需要支援 HTML [選擇檔案] 按鈕，則`Activity`需要覆寫`OnActivityResult`方法：
+當內嵌的[`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面使用需要支援 HTML [選擇檔案] 按鈕的[`WebView`](xref:Xamarin.Forms.WebView)時，`Activity` 將需要覆寫 `OnActivityResult` 方法：
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -275,9 +275,9 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ## <a name="uwp"></a>UWP
 
-在 UWP、 原生`App`類別通常是執行應用程式的位置啟動相關的工作。 Xamarin.Forms 通常，在 Xamarin.Forms UWP 應用程式中初始化`OnLaunched`覆寫在原生`App`類別，以傳遞`LaunchActivatedEventArgs`引數`Forms.Init`方法。 基於這個理由，原生 UWP 應用程式使用 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生的頁面可以最容易呼叫`Forms.Init`方法，從`App.OnLaunched`方法。
+在 UWP 上，原生 `App` 類別通常是執行應用程式啟動相關工作的位置。 Xamarin 通常會在 Xamarin. Forms UWP 應用程式中，于原生 `App` 類別的 `OnLaunched` 覆寫中初始化，以便將 `LaunchActivatedEventArgs` 引數傳遞至 `Forms.Init` 方法。 基於這個理由，使用 Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面的原生 UWP 應用程式，最容易就能從 `App.OnLaunched` 方法呼叫 `Forms.Init` 方法。
 
-根據預設，原生`App`類別會啟動`MainPage`應用程式的第一頁為類別。 下列程式碼範例示範`MainPage`範例應用程式中的類別：
+根據預設，native `App` 類別會啟動 `MainPage` 類別，做為應用程式的第一頁。 下列程式碼範例顯示範例應用程式中的 `MainPage` 類別：
 
 ```csharp
 public sealed partial class MainPage : Page
@@ -298,18 +298,18 @@ public sealed partial class MainPage : Page
 }
 ```
 
-`MainPage`建構函式會執行下列工作：
+@No__t_0 的構造函式會執行下列工作：
 
-- 啟用快取 頁面上，以便新`MainPage`當使用者瀏覽回頁面時不會建構。
-- 參考`MainPage`類別會儲存在`static``Instance`欄位。 這是為了提供機制來呼叫方法中定義其他類別`MainPage`類別。
-- `FolderPath`屬性會初始化為裝置上儲存附注資料的路徑。
-- `NotesPage`類別，這是 Xamarin.Forms [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生頁面中 XAML 所定義、 建構及轉換成`FrameworkElement`使用`CreateFrameworkElement`擴充方法，並再將設定的內容`MainPage`類別。
+- 已啟用頁面的快取，因此當使用者流覽回到頁面時，不會建立新的 `MainPage`。
+- @No__t_0 類別的參考會儲存在 [`static` `Instance`] 欄位中。 這是為了讓其他類別能夠呼叫 `MainPage` 類別中定義的方法。
+- @No__t_0 屬性會初始化為裝置上儲存附注資料的路徑。
+- @No__t_0 類別是 XAML 中定義的 Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面，會使用 `CreateFrameworkElement` 擴充方法來進行結構化並轉換成 `FrameworkElement`，然後將設定為 `MainPage` 類別的內容。
 
-一次`MainPage`建構函式已執行，在 Xamarin.Forms 中的 UI 定義`NotesPage`，也將會顯示類別，如下列螢幕擷取畫面所示：
+執行 `MainPage` 的函式之後，將會顯示在 [Xamarin] `NotesPage` 類別中定義的 UI，如下列螢幕擷取畫面所示：
 
-[ ![UWP 應用程式的螢幕擷取畫面, 其使用以 xamarin. 表單 xaml](native-forms-images/uwp-notespage.png "UWP 應用程式定義的 UI 與 xamarin xaml UI") ](native-forms-images/uwp-notespage-large.png#lightbox "具有 Xamarin 的 UWP 應用程式 XAML UI")
+[![UWP 應用程式的螢幕擷取畫面，其使用以 Xamarin 定義的 UI。表單 XAML](native-forms-images/uwp-notespage.png "具有 Xamarin 的 UWP 應用程式 XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "具有 Xamarin 的 UWP 應用程式 XAML UI")
 
-例如, 藉由在上 **+** [`Button`](xref:Xamarin.Forms.Button)使用來與 UI 互動, 會導致程式`NotesPage`代碼後置中的下列事件處理常式執行:
+例如，藉由在 **+** [`Button`](xref:Xamarin.Forms.Button)上進行互動，就會在執行的 `NotesPage` 程式碼後置中產生下列事件處理常式：
 
 ```csharp
 void OnNoteAddedClicked(object sender, EventArgs e)
@@ -318,7 +318,7 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 }
 ```
 
-`static` `MainPage.Instance`欄位可讓`MainPage.NavigateToNoteEntryPage`要叫用方法，下列程式碼範例所示：
+[@No__t_0 `MainPage.Instance`] 欄位可讓您叫用 `MainPage.NavigateToNoteEntryPage` 方法，如下列程式碼範例所示：
 
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
@@ -330,15 +330,15 @@ public void NavigateToNoteEntryPage(Note note)
 }
 ```
 
-瀏覽 UWP 中的通常會使用`Frame.Navigate`方法，後者會採用`Page`引數。 Xamarin.Forms 可定義`Frame.Navigate`擴充方法採用[ `ContentPage` ](xref:Xamarin.Forms.ContentPage)-衍生 page 執行個體。 因此，當`NavigateToNoteEntryPage`執行的方法時，在 Xamarin.Forms 中定義的 UI`NoteEntryPage`將會顯示，如下列螢幕擷取畫面所示：
+UWP 中的導覽通常會使用 `Frame.Navigate` 方法來執行，而此方法會採用 `Page` 引數。 Xamarin 會定義採用[`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面實例的 `Frame.Navigate` 擴充方法。 因此，當 `NavigateToNoteEntryPage` 方法執行時，會顯示在 [Xamarin] 表單 `NoteEntryPage` 中定義的 UI，如下列螢幕擷取畫面所示：
 
-[ ![UWP 應用程式的螢幕擷取畫面, 其使用以 xamarin. 表單 xaml](native-forms-images/uwp-noteentrypage.png "UWP 應用程式定義的 UI 與 xamarin xaml UI") ](native-forms-images/uwp-noteentrypage-large.png#lightbox "具有 Xamarin 的 UWP 應用程式 XAML UI")
+[![UWP 應用程式的螢幕擷取畫面，其使用以 Xamarin 定義的 UI。表單 XAML](native-forms-images/uwp-noteentrypage.png "具有 Xamarin 的 UWP 應用程式 XAML UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "具有 Xamarin 的 UWP 應用程式 XAML UI")
 
-時`NoteEntryPage`出現時，點選 [上一步] 箭號將會快顯`FrameworkElement`for`NoteEntryPage`從應用程式內上一頁堆疊，傳回使用者`FrameworkElement`的`NotesPage`類別。
+顯示 `NoteEntryPage` 時，按 [上一步] 箭號將會從應用程式內的後置堆疊中快顯 `NoteEntryPage` 的 `FrameworkElement`，並將使用者傳回 `NotesPage` 類別的 `FrameworkElement`。
 
 ### <a name="enable-back-navigation-support"></a>啟用回溯導覽支援
 
-在 UWP 應用程式必須啟用所有硬體和軟體上一頁按鈕，向後的巡覽，跨不同裝置外型規格。 這可藉由註冊的事件處理常式`BackRequested`事件，就可以執行`OnLaunched`方法，在原生`App`類別：
+在 UWP 上，應用程式必須針對不同的裝置外型規格，啟用所有硬體和軟體上一頁按鈕的回溯導覽。 註冊 `BackRequested` 事件的事件處理常式即可完成這項作業，其可在原生 `App` 類別的 `OnLaunched` 方法中執行：
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -357,7 +357,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-啟動應用程式時，`GetForCurrentView`方法擷取`SystemNavigationManager`物件與目前檢視中，相關聯，則註冊事件處理常式`BackRequested`事件。 應用程式只會收到這個事件，如果它是前景應用程式，並在回應中，呼叫`OnBackRequested`事件處理常式：
+當應用程式啟動時，`GetForCurrentView` 方法會抓取與目前 view 關聯的 `SystemNavigationManager` 物件，然後註冊 `BackRequested` 事件的事件處理常式。 應用程式只會收到此事件（如果它是前景應用程式），而在回應中，會呼叫 `OnBackRequested` 事件處理常式：
 
 ```csharp
 void OnBackRequested(object sender, BackRequestedEventArgs e)
@@ -371,9 +371,9 @@ void OnBackRequested(object sender, BackRequestedEventArgs e)
 }
 ```
 
-`OnBackRequested`事件處理常式會呼叫`GoBack`方法上的應用程式和集合的根框架`BackRequestedEventArgs.Handled`屬性設`true`來標示為已處理的事件。 如果無法將事件標示為已處理, 可能會導致事件被忽略。
+@No__t_0 事件處理常式會在應用程式的根框架上呼叫 `GoBack` 方法，並將 `BackRequestedEventArgs.Handled` 屬性設定為 `true`，以將事件標示為已處理。 如果無法將事件標示為已處理，可能會導致事件被忽略。
 
-應用程式會選擇是否要在標題列上顯示 [上一頁] 按鈕。 這藉由設定來達成`AppViewBackButtonVisibility`屬性設為其中的`AppViewBackButtonVisibility`列舉值：
+應用程式會選擇是否要在標題列上顯示 [上一頁] 按鈕。 將 `AppViewBackButtonVisibility` 屬性設定為其中一個 `AppViewBackButtonVisibility` 列舉值，即可達成此目的：
 
 ```csharp
 void OnNavigated(object sender, NavigationEventArgs e)
@@ -383,9 +383,9 @@ void OnNavigated(object sender, NavigationEventArgs e)
 }
 ```
 
-`OnNavigated`事件處理常式，會在回應中執行`Navigated`事件的引發，更新上一頁按鈕列標題的可見性，當發生頁面巡覽。 這可確保標題列的 [上一頁] 按鈕時，會顯示應用程式內上一頁堆疊不是空的或移除的標題列中，如果應用程式內上一頁堆疊是空的。
+@No__t_0 事件處理常式（為了回應 `Navigated` 事件引發而執行），會在進行頁面導覽時，更新標題列 [上一頁] 按鈕的可見度。 這可確保在應用程式內的後端堆疊不是空的時，可以看到 [標題列] [上一頁] 按鈕，如果應用程式內的後端堆疊是空的，則會從標題列中移除。
 
-如需 UWP 向後巡覽支援的相關詳細資訊，請參閱[瀏覽歷程記錄及向後的 UWP 應用程式瀏覽](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/)。
+如需有關 UWP 的回溯導覽支援的詳細資訊，請參閱[uwp 應用程式的導覽歷程記錄和向後導覽](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/)。
 
 ## <a name="related-links"></a>相關連結
 

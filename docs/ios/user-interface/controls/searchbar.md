@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/11/2017
 ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "70283351"
 ---
 # <a name="search-bars-in-xamarinios"></a>Xamarin 中的搜尋列
@@ -57,7 +57,7 @@ TableView.TableHeaderView = searchBar;
 
 ![搜尋列屬性](searchbar-images/image6.png)
 
-當按下 [搜尋] 按鈕時，引發事件。`SearchButtonClicked` 這會呼叫您的搜尋邏輯：
+當按下 [搜尋] 按鈕時，引發 `SearchButtonClicked` 事件。 這會呼叫您的搜尋邏輯：
 
 ```csharp
 searchBar.SearchButtonClicked += (sender, e) => {
@@ -88,7 +88,7 @@ searchBar.SearchButtonClicked += (sender, e) => {
   - 顯示搜尋結果/書簽按鈕–在搜尋列上顯示搜尋結果或書簽圖示
   - 顯示 [取消] 按鈕–允許使用者離開搜尋功能。 建議選取此選項。
   - 顯示範圍列–這可讓使用者限制其搜尋範圍。 例如，在 [音樂] 應用程式中搜尋時，使用者可以選取要搜尋特定歌曲或演出者 Apple Music 或其媒體櫃。 若要顯示各種選項，請將標題陣列加入至**ScopeBarTitles**屬性。
-  ![搜尋列範圍標題](searchbar-images/image4.png)
+  ![Search 橫條圖範圍標題 ](searchbar-images/image4.png)
 
 - **文字行為**–這些選項可用來解決使用者輸入在輸入時的格式。 大寫會設定每個單字或句子的開頭，或每個字元的大小寫。 更正和拼寫檢查，會提示使用者輸入文字時的建議拼寫。
 - **鍵盤**–控制針對輸入顯示的鍵盤樣式，因此鍵盤上可用的按鍵。 這包括數位板、手機 Pad、電子郵件、URL 和其他選項。

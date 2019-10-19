@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms 材質視覺效果
-description: Xamarin.Forms 材質視覺效果可用來建立在 iOS 和 Android 上看起來相同或絕大部分都相同的 Xamarin.Forms 應用程式。
+title: Xamarin. 表單材質視覺效果
+description: '[Xamarin]：表單材質視覺效果可用來建立在 iOS 和 Android 上看起來完全相同（或大致相同）的 Xamarin. Forms 應用程式。'
 ms.prod: xamarin
 ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
 ms.technology: xamarin-forms
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/12/2019
 ms.openlocfilehash: b735541d51321231775b025745e68c54552697d3
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "71198489"
 ---
-# <a name="xamarinforms-material-visual"></a>Xamarin.Forms 材質視覺效果
+# <a name="xamarinforms-material-visual"></a>Xamarin. 表單材質視覺效果
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
@@ -26,11 +26,11 @@ ms.locfileid: "71198489"
 
 1. 將 [ [Xamarin](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) ] NuGet 套件新增至您的 IOS 和 Android 平臺專案。 此 NuGet 套件會在 iOS 和 Android 上提供優化的材質設計轉譯器。 在 iOS 上，套件會提供[MaterialComponents](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents)的可轉移相依性，這是C# Google 的[ios 材質元件](https://material.io/develop/ios/)系結。 在 Android 上，套件會提供組建目標，以確保您的 TargetFramework 已正確設定。
 1. 初始化每個平臺專案中的材質轉譯器。 如需詳細資訊，請參閱[初始化材質](#initialize-material-renderers)轉譯器。
-1. 在應該採用材質設計規則的[`Visual`](xref:Xamarin.Forms.VisualElement.Visual)任何頁面`Material`上，將屬性設定為，以取用材質轉譯器。 如需詳細資訊，請參閱[使用材質](#consume-material-renderers)轉譯器。
+1. 將[`Visual`](xref:Xamarin.Forms.VisualElement.Visual)屬性設定為任何應採用材質設計規則之頁面上的 `Material`，以取用材質轉譯器。 如需詳細資訊，請參閱[使用材質](#consume-material-renderers)轉譯器。
 1. 選擇性自訂材質轉譯器。 如需詳細資訊，請參閱[自訂材質](#customize-material-renderers)轉譯器。
 
 > [!IMPORTANT]
-> 在 Android 上，材質轉譯器需要的最低版本為5.0 （API 21）或更高版本，以及9.0 版（API 28）的 TargetFramework。 此外，您的平臺專案需要28.0.0 或更高版本的 Android 支援程式庫，而且其主題必須繼承自材質元件主題，或繼續繼承自 AppCompat 主題。 如需詳細資訊，請參閱 <<c0> [ 開始使用資料元件適用於 Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)。
+> 在 Android 上，材質轉譯器需要的最低版本為5.0 （API 21）或更高版本，以及9.0 版（API 28）的 TargetFramework。 此外，您的平臺專案需要28.0.0 或更高版本的 Android 支援程式庫，而且其主題必須繼承自材質元件主題，或繼續繼承自 AppCompat 主題。 如需詳細資訊，請參閱[開始使用適用于 Android 的材質元件](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)。
 
 材質轉譯器目前包含在下列視圖的[Xamarin](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet 套件中：
 
@@ -47,20 +47,20 @@ ms.locfileid: "71198489"
 - [`Slider`](xref:Xamarin.Forms.Slider)
 - [`Stepper`](xref:Xamarin.Forms.Stepper)
 
-在功能上，材質轉譯器與預設轉譯器沒有不同。
+就功能而言，材質轉譯器與預設轉譯器並無不同。
 
 ## <a name="initialize-material-renderers"></a>初始化材質轉譯器
 
 安裝[Xamarin](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet 套件之後，必須在每個平臺專案中初始化材質轉譯器。
 
-在 iOS 上，這應該會**在 AppDelegate.cs**中， `Xamarin.Forms.FormsMaterial.Init`藉由在`Xamarin.Forms.Forms.Init`方法*之後*叫用方法來進行：
+在 iOS 上，這應該會在**AppDelegate.cs**中發生，方法是在 `Xamarin.Forms.Forms.Init` 方法*之後*叫用 `Xamarin.Forms.FormsMaterial.Init` 方法：
 
 ```csharp
 global::Xamarin.Forms.Forms.Init();
 global::Xamarin.Forms.FormsMaterial.Init();
 ```
 
-在 Android 上，這應該會**在 MainActivity.cs**中， `Xamarin.Forms.FormsMaterial.Init`藉由在`Xamarin.Forms.Forms.Init`方法*之後*叫用方法來進行：
+在 Android 上，這應該會在**MainActivity.cs**中發生，方法是在 `Xamarin.Forms.Forms.Init` 方法*之後*叫用 `Xamarin.Forms.FormsMaterial.Init` 方法：
 
 ```csharp
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -69,7 +69,7 @@ global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 
 ## <a name="consume-material-renderers"></a>使用材質轉譯器
 
-應用程式可以藉由將頁面、版面配置或[`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual)視圖上的屬性設定為，選擇使用材質轉譯`Material`器來執行下列動作：
+應用程式可以在頁面、版面配置或視圖上設定[`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual)屬性，以選擇使用材質轉譯器來 `Material`：
 
 ```xaml
 <ContentPage Visual="Material"
@@ -85,24 +85,24 @@ ContentPage contentPage = new ContentPage();
 contentPage.Visual = VisualMarker.Material;
 ```
 
-屬性可以設定為任何執行的類型`IVisual`，並[`VisualMarker`](xref:Xamarin.Forms.VisualMarker)提供下列`IVisual`屬性的類別： [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)
+[@No__t_1](xref:Xamarin.Forms.VisualElement.Visual)屬性可以設定為任何可執行 `IVisual` 的型別，且[`VisualMarker`](xref:Xamarin.Forms.VisualMarker)類別提供下列 `IVisual` 屬性：
 
-- `Default`–表示此視圖應該使用預設轉譯器來呈現。
-- `MatchParent`–表示此視圖應該使用與其直接父系相同的轉譯器。
-- `Material`–表示此視圖應該使用材質轉譯器來呈現。
+- `Default` –表示此視圖應該使用預設轉譯器來呈現。
+- `MatchParent` –表示此視圖應該使用與其直接父系相同的轉譯器。
+- `Material` –表示此視圖應該使用材質轉譯器來呈現。
 
 > [!IMPORTANT]
-> 屬性會定義[`VisualElement`](xref:Xamarin.Forms.VisualElement)在類別中`Visual` ，而 views 會從其父代繼承屬性值。 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) 因此， `Visual` [`ContentPage`](xref:Xamarin.Forms.ContentPage)在上設定屬性可確保頁面中任何支援的視圖都會使用該視覺效果。 颾魤 ㄛ`Visual`可以覆寫檢視上的屬性。
+> [@No__t_1](xref:Xamarin.Forms.VisualElement.Visual)屬性是在[`VisualElement`](xref:Xamarin.Forms.VisualElement)類別中定義，而且 views 會從其父代繼承 `Visual` 屬性值。 因此，在[`ContentPage`](xref:Xamarin.Forms.ContentPage)上設定 `Visual` 屬性，可確保頁面中任何支援的視圖都會使用該視覺效果。 此外，您可以在視圖上覆寫 `Visual` 屬性。
 
 下列螢幕擷取畫面顯示使用預設轉譯器呈現的使用者介面：
 
-[![IOS 和 Android 上預設轉譯器的螢幕擷取畫面](material-visual-images/default-renderers.png "使用預設")轉譯器的視圖](material-visual-images/default-renderers-large.png#lightbox)
+[![IOS 和 Android 上預設轉譯器的螢幕擷取畫面](material-visual-images/default-renderers.png "使用預設轉譯器的視圖")](material-visual-images/default-renderers-large.png#lightbox)
 
-下列螢幕擷取畫面顯示與使用材質轉譯器轉譯後之使用者介面相同的使用者介面：
+下列螢幕擷取畫面顯示使用材質轉譯器呈現的相同使用者介面：
 
-[![IOS 和 Android 上的材質轉譯器螢幕擷取畫面](material-visual-images/material-renderers.png "使用材質")轉譯器的視圖](material-visual-images/material-renderers-large.png#lightbox)
+[![IOS 和 Android 上的材質轉譯器螢幕擷取畫面](material-visual-images/material-renderers.png "使用材質轉譯器的視圖")](material-visual-images/material-renderers-large.png#lightbox)
 
-預設轉譯器和材質轉譯器之間的主要可見差異（如下所示），是材質轉譯[`Button`](xref:Xamarin.Forms.Button)器會以大寫顯示文字， [`Frame`](xref:Xamarin.Forms.Frame)並將框線的角落四捨五入。 不過，材質轉譯器會使用原生控制項，因此，字型、陰影、色彩和提高許可權等區域的平臺可能還是會有使用者介面的差異。
+預設轉譯器和材質轉譯器之間的主要可見差異（如下所示），是材質轉譯器會[`Button`](xref:Xamarin.Forms.Button)文字，並將[`Frame`](xref:Xamarin.Forms.Frame)框線的角落四捨五入。 不過，材質轉譯器會使用原生控制項，因此，字型、陰影、色彩和提高許可權等區域的平臺可能還是會有使用者介面的差異。
 
 > [!NOTE]
 > 材質設計元件會嚴格遵守 Google 的指導方針。 因此，材質設計轉譯器會偏向大小和行為。 當您需要對樣式或行為有更大的控制權時，您仍然可以建立自己的[效果](~/xamarin-forms/app-fundamentals/effects/index.md)、[行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)或[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器，以達到所需的詳細資料。
@@ -124,7 +124,7 @@ contentPage.Visual = VisualMarker.Material;
 - `MaterialSliderRenderer`
 - `MaterialStepperRenderer`
 
-下列程式碼顯示自訂`MaterialProgressBarRenderer`類別的範例：
+下列程式碼顯示自訂 `MaterialProgressBarRenderer` 類別的範例：
 
 ```csharp
 using Xamarin.Forms.Material.Android;
@@ -139,10 +139,10 @@ namespace MyApp.Android
 }
 ```
 
-在此範例中， `ExportRendererAttribute`會指定`CustomMaterialProgressBarRenderer`將用來呈現[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)視圖的類別，並`IVisual`將類型註冊為第三個引數。
+在此範例中，`ExportRendererAttribute` 指定將使用 `CustomMaterialProgressBarRenderer` 類別來呈現[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)視圖，並將 `IVisual` 類型註冊為第三個引數。
 
 > [!NOTE]
-> 指定`IVisual`類型做為其`ExportRendererAttribute`一部分的轉譯器將用來轉譯加入宣告的視圖，而不是預設轉譯器。 在轉譯器選取項目時，`Visual`屬性檢視的檢查，且包含在轉譯器選取項目程序。
+> 指定 `IVisual` 類型做為其 `ExportRendererAttribute` 之一部分的轉譯器，將用來轉譯選擇的視圖，而不是預設轉譯器。 在轉譯器選取時間，會檢查視圖的 `Visual` 屬性，並將其包含在轉譯器選取進程中。
 
 如需自訂轉譯器的詳細資訊，請參閱[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器。
 

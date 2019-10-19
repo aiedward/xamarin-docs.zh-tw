@@ -1,6 +1,6 @@
 ---
 title: 使用 XAML 標記延伸
-description: 這篇文章說明如何使用 Xamarin.Forms XAML 標記延伸來增強的威力與彈性的 XAML，藉由將從各種來源的項目屬性。
+description: 本文說明如何使用 Xamarin XAML 標記延伸，藉由允許從各種來源設定元素屬性，來增強 XAML 的能力和彈性。
 ms.prod: xamarin
 ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
@@ -8,44 +8,44 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2019
 ms.openlocfilehash: 03aaf471479a5113aade6bd3f34034afadfb538c
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/18/2019
 ms.locfileid: "69887915"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
-XAML 標記延伸模組可協助增強的威力與彈性的 XAML，藉由將從各種來源的項目屬性。 數個 XAML 標記延伸是 XAML 2009 規格的一部分。 這些會出現在具有自訂的 XAML 檔案`x`命名空間前置詞，而且通常參照此前置詞。 這篇文章討論下列標記延伸模組：
+XAML 標記延伸可讓您從各種來源設定元素屬性，以增強 XAML 的強大功能和彈性。 數個 XAML 標記延伸是 XAML 2009 規格的一部分。 這些會以慣用的 `x` 命名空間前置詞出現在 XAML 檔案中，而且通常會使用此前置詞來參考。 本文討論下列標記延伸：
 
-- [`x:Static`](#static) – 參考靜態屬性、 欄位或列舉型別成員。
-- [`x:Reference`](#reference) – 名為頁面元素的參考。
-- [`x:Type`](#type) -將屬性設定為`System.Type`物件。
-- [`x:Array`](#array) – 建構特定類型之物件的陣列。
-- [`x:Null`](#null) -將屬性設定為`null`值。
-- [`OnPlatform`](#onplatform) – 自訂每個平台為基礎的 UI 外觀。
-- [`OnIdiom`](#onidiom) – 自訂的裝置執行應用程式的慣用句為基礎的 UI 外觀。
-- [`DataTemplate`](#datatemplate-markup-extension)-將類型轉換成[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。
-- [`FontImage`](#fontimage-markup-extension)-在任何可顯示`ImageSource`的視圖中顯示字型圖示。
+- [`x:Static`](#static) –參考靜態屬性、欄位或列舉成員。
+- [`x:Reference`](#reference) –在頁面上參考指名的元素。
+- [`x:Type`](#type) –將屬性設定為 `System.Type` 物件。
+- [`x:Array`](#array) –構造特定類型之物件的陣列。
+- [`x:Null`](#null) –將屬性設定為 `null` 值。
+- [`OnPlatform`](#onplatform) –自訂以每個平臺為基礎的 UI 外觀。
+- [`OnIdiom`](#onidiom) –根據應用程式執行所在裝置的用法來自訂 UI 外觀。
+- [`DataTemplate`](#datatemplate-markup-extension) -將類型轉換成[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。
+- [`FontImage`](#fontimage-markup-extension) -在可以顯示 `ImageSource` 的任何視圖中顯示字型圖示。
 
-其他的 XAML 標記延伸在過去已經支援其他 XAML 實作中，和 Xamarin.Forms 也支援。 這些是其他文章中更完整說明：
+其他的 XAML 標記延伸在過去已經受到其他 XAML 的支援，而且 Xamarin 也支援。 其他文章中有更完整的說明：
 
-- `StaticResource` &ndash; 從資源字典，參考物件，如本文所述[**的資源字典**](~/xamarin-forms/xaml/resource-dictionaries.md)。
-- `DynamicResource` &ndash; 回應物件中的資源字典中，變更文件中所述[**動態樣式**](~/xamarin-forms/user-interface/styles/dynamic.md)。
-- `Binding` &ndash; 之間建立連結屬性的兩個物件，如本文所述[**資料繫結**](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
-- `TemplateBinding` &ndash; 從 [控制項] 範本中，執行資料繫結，如本文所述[**控制項範本中的繫結**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md)。
+- `StaticResource` &ndash; 從資源字典參考物件，如[**資源字典**](~/xamarin-forms/xaml/resource-dictionaries.md)一文所述。
+- `DynamicResource` &ndash; 回應資源字典中物件的變更，如[**動態樣式**](~/xamarin-forms/user-interface/styles/dynamic.md)一文所述。
+- `Binding` &ndash; 在兩個物件的屬性之間建立連結，如[**資料**](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結一文所述。
+- `TemplateBinding` &ndash; 會從控制項範本執行資料系結，如[**從控制項範本**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md)系結文章中所述。
 
-[ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)版面配置會使用自訂標記延伸[ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression)。 這個標記延伸文件中所述[ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)。
+[@No__t_1](xref:Xamarin.Forms.RelativeLayout)版面配置會使用自訂標記延伸[`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)。 此標記延伸會在[**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)一文中說明。
 
 <a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Static 標記延伸
 
-`x:Static`支援標記延伸[ `StaticExtension` ](xref:Xamarin.Forms.Xaml.StaticExtension)類別。 類別具有一個名為的單一屬性[ `Member` ](xref:Xamarin.Forms.Xaml.StaticExtension.Member)型別的`string`您將設定為公用的常數、 靜態屬性、 靜態欄位或列舉成員的名稱。
+[@No__t_2](xref:Xamarin.Forms.Xaml.StaticExtension)類別支援 `x:Static` 標記延伸。 類別具有名為[`Member`](xref:Xamarin.Forms.Xaml.StaticExtension.Member)類型 `string` 的單一屬性，您可以將其設定為公用常數、靜態屬性、靜態欄位或列舉成員的名稱。
 
-若要使用的一個常見方式`x:Static`是第一次定義類別有一些常數或靜態變數，例如此小`AppConstants`類別中[ **Markupextension** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)程式：
+使用 `x:Static` 的一種常見方式是先定義具有一些常數或靜態變數的類別，例如[**MarkupExtensions**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)程式中的這個小型 `AppConstants` 類別：
 
 ```csharp
 static class AppConstants
@@ -54,7 +54,7 @@ static class AppConstants
 }
 ```
 
-**X:static Demo**頁面會示範數種使用方式`x:Static`標記延伸。 最詳細的方法具現化`StaticExtension`類別之間`Label.FontSize`屬性項目標記：
+[ **X:Static 示範**] 頁面會示範使用 `x:Static` 標記延伸的數種方式。 最詳細的方法會具現化 `Label.FontSize` 屬性-元素標記之間的 `StaticExtension` 類別：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -76,7 +76,7 @@ static class AppConstants
 </ContentPage>
 ```
 
-XAML 剖析器也可讓`StaticExtension`類別，以縮寫成`x:Static`:
+XAML 剖析器也可讓 `StaticExtension` 類別縮寫為 `x:Static`：
 
 ```xaml
 <Label Text="Label No. 2">
@@ -86,38 +86,38 @@ XAML 剖析器也可讓`StaticExtension`類別，以縮寫成`x:Static`:
 </Label>
 ```
 
-這可以更進一步簡化，但變更會引進一些新的語法：其中包含將`StaticExtension`類別和成員設定放在大括弧中。 產生的運算式設定為直接`FontSize`屬性：
+這可以更進一步簡化，但變更會引進一些新的語法：其中包含將 `StaticExtension` 類別和成員設定放在大括弧中。 產生的運算式會直接設定為 `FontSize` 屬性：
 
 ```xaml
 <Label Text="Label No. 3"
        FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
 ```
 
-請注意，有*沒有*括號內的引號。 `Member`屬性`StaticExtension`不再 XML 屬性。 而是標記延伸之運算式的一部分。
+請注意，大括弧內*沒有*引號。 @No__t_1 的 `Member` 屬性不再是 XML 屬性。 它會改為標記延伸之運算式的一部分。
 
-就像您可以將縮寫`x:StaticExtension`至`x:Static`時您可以使用它做為物件元素，您可以也將它縮簡大括號內運算式中：
+就像您可以在使用它做為物件專案時 `x:StaticExtension` `x:Static` 縮寫，也可以在大括弧內的運算式中將它縮寫：
 
 ```xaml
 <Label Text="Label No. 4"
        FontSize="{x:Static Member=local:AppConstants.NormalFontSize}" />
 ```
 
-`StaticExtension`類別具有`ContentProperty`參考屬性的屬性`Member`，將會標示為類別的預設內容屬性的這個屬性。 XAML 標記延伸模組以大括號表示，您就可以排除`Member=`運算式的一部分：
+@No__t_0 類別具有參考屬性 `Member` 的 `ContentProperty` 屬性，這會將此屬性標記為類別的預設內容屬性。 對於以大括弧表示的 XAML 標記延伸，您可以消除運算式的 `Member=` 部分：
 
 ```xaml
 <Label Text="Label No. 5"
        FontSize="{x:Static local:AppConstants.NormalFontSize}" />
 ```
 
-這是最常見的形式`x:Static`標記延伸。
+這是最常見的 `x:Static` 標記延伸格式。
 
-**靜態示範**頁面包含兩個其他範例。 XAML 檔案根標記包含適用於.NET 的 XML 命名空間宣告`System`命名空間：
+**靜態示範**頁面包含其他兩個範例。 XAML 檔案的根標記包含 .NET `System` 命名空間的 XML 命名空間宣告：
 
 ```xaml
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-這可讓`Label`設為靜態欄位的字型大小`Math.PI`。 這會導致較小的文字，因此`Scale`屬性設定為`Math.E`:
+這可讓 `Label` 字型大小設定為靜態欄位 `Math.PI`。 這會產生相當小的文字，因此 `Scale` 屬性會設定為 `Math.E`：
 
 ```xaml
 <Label Text="&#x03C0; &#x00D7; E sized text"
@@ -126,7 +126,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
        HorizontalOptions="Center" />
 ```
 
-最後一個範例顯示`Device.RuntimePlatform`值。 `Environment.NewLine`靜態屬性用來插入新行字元，兩者之間`Span`物件：
+最後一個範例會顯示 `Device.RuntimePlatform` 值。 @No__t_0 靜態屬性是用來在兩個 `Span` 物件之間插入新行字元：
 
 ```xaml
 <Label HorizontalTextAlignment="Center"
@@ -141,19 +141,19 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </Label>
 ```
 
-以下是執行範例：
+以下是執行的範例：
 
-[![X:Static 示範](consuming-images/staticdemo-small.png "X:Static 示範")](consuming-images/staticdemo-large.png#lightbox "x:Static 示範")
+[![x:Static 示範](consuming-images/staticdemo-small.png "x:Static 示範")](consuming-images/staticdemo-large.png#lightbox "x:Static 示範")
 
 <a name="reference" />
 
 ## <a name="xreference-markup-extension"></a>x:Reference 標記延伸
 
-`x:Reference`支援標記延伸[ `ReferenceExtension` ](xref:Xamarin.Forms.Xaml.ReferenceExtension)類別。 類別具有一個名為的單一屬性[ `Name` ](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name)型別的`string`您設定的頁面上所提供的名稱的項目名稱`x:Name`。 這`Name`屬性是內容的屬性`ReferenceExtension`，因此`Name=`時，不需要`x:Reference`會出現在大括號。
+[@No__t_2](xref:Xamarin.Forms.Xaml.ReferenceExtension)類別支援 `x:Reference` 標記延伸。 類別具有名為[`Name`](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name)類型 `string` 的單一屬性，您可以將其設定為頁面上的專案名稱，該專案已提供 `x:Name` 的名稱。 這個 `Name` 屬性是 `ReferenceExtension` 的 content 屬性，因此當 `x:Reference` 出現在大括弧中時，不需要 `Name=`。
 
-`x:Reference`標記延伸模組只搭配資料繫結，會更詳細文件中所述[**的資料繫結**](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+@No__t_0 標記延伸僅適用于資料系結，這會在[**資料**](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結一文中更詳細地說明。
 
-**X:reference Demo**頁面會顯示兩種用法`x:Reference`以資料繫結，它用來設定第一個`Source`屬性`Binding`物件，而它用來設定第二個`BindingContext`兩個資料繫結的屬性：
+[ **X:Reference 示範**] 頁面會顯示兩個 `x:Reference` 與資料系結的用法，第一個是用來設定 `Binding` 物件的 `Source` 屬性，第二個則是用來設定兩個數據系結的 `BindingContext` 屬性。:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -185,23 +185,23 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-兩者`x:Reference`運算式使用的縮寫的版本`ReferenceExtension`類別名稱，並消除`Name=`運算式的一部分。 在第一個範例中，`x:Reference`標記延伸模組會內嵌在`Binding`標記延伸。 請注意，`Source`和`StringFormat`設定會以逗號分隔。 以下是程式執行情況：
+這兩個 `x:Reference` 運算式都會使用 `ReferenceExtension` 類別名稱的縮寫版本，並消除運算式的 `Name=` 部分。 在第一個範例中，`x:Reference` 標記延伸模組內嵌在 `Binding` 標記延伸中。 請注意，`Source` 和 `StringFormat` 設定會以逗號分隔。 以下是程式執行情況：
 
-[![X:Reference 示範](consuming-images/referencedemo-small.png "X:Reference 示範")](consuming-images/referencedemo-large.png#lightbox "x:Reference 示範")
+[![x:Reference 示範](consuming-images/referencedemo-small.png "x:Reference 示範")](consuming-images/referencedemo-large.png#lightbox "x:Reference 示範")
 
 <a name="type" />
 
 ## <a name="xtype-markup-extension"></a>x:Type 標記延伸
 
-`x:Type`標記延伸是 XAML 相當於 C# [ `typeof` ](/dotnet/csharp/language-reference/keywords/typeof/)關鍵字。 它受到[ `TypeExtension` ](xref:Xamarin.Forms.Xaml.TypeExtension)類別，定義一個名為的屬性[ `TypeName` ](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName)型別的`string`設定類別或結構的名稱。 `x:Type`標記延伸模組會傳回[ `System.Type` ](xref:System.Type)該類別或結構的物件。 `TypeName` 內容屬性的`TypeExtension`，因此`TypeName=`時，不需要`x:Type`使用大括號會出現。
+@No__t_0 標記延伸是C# [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/)關鍵字的 XAML 對應項。 它受到[`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension)類別的支援，它會定義一個名為[`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName)的屬性，其類型 `string` 設定為類別或結構名稱。 @No__t_0 標記延伸會傳回該類別或結構的[`System.Type`](xref:System.Type)物件。 `TypeName` 是 `TypeExtension` 的 content 屬性，因此當 `x:Type` 出現大括弧時，不需要 `TypeName=`。
 
-在 Xamarin.Forms 中，有有類型引數的數個屬性`Type`。 範例包括[ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)屬性`Style`，而[X:typearguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments)屬性會用來在泛型類別中指定的引數。 不過，XAML 剖析器會執行`typeof`作業自動執行，而`x:Type`標記延伸模組不會在這些情況下。
+在 Xamarin 中，有數個屬性具有 `Type` 類型的引數。 範例包括 `Style` 的[`TargetType`](xref:Xamarin.Forms.Style.TargetType)屬性，以及用來在泛型類別中指定引數的[x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments)屬性。 不過，XAML 剖析器會自動執行 `typeof` 作業，而且在這些情況下不會使用 `x:Type` 標記延伸。
 
-同一個地方所在`x:Type`*是*必須是`x:Array`中所述的標記延伸[下一節](#array)。
+*需要 `x:Type`* 的一個位置是具有 `x:Array` 標記延伸，如下一[節](#array)所述。
 
-`x:Type`標記延伸模組時也很有用建構的功能表，其中每個功能表項目對應至特定類型的物件。 您可以建立關聯`Type`物件與每個功能表項目，並選取功能表項目時，再執行個體化物件。
+當您在建立功能表，其中每個功能表項目都對應至特定類型的物件時，`x:Type` 標記延伸也很有用。 您可以將 `Type` 物件與每個功能表項目建立關聯，然後在選取功能表項目時，具現化物件。
 
-這是如何在導覽功能表`MainPage`中**標記延伸**程式運作。 **MainPage.xaml**檔案包含`TableView`與每個`TextCell`對應程式中的特定頁面：
+這是 [**標記延伸**] 程式中 `MainPage` 中的導覽功能表運作方式。 **MainPage**包含一個 `TableView`，其中每個 `TextCell` 對應至程式中的特定頁面：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -240,11 +240,11 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-以下是中的 開啟主頁面**標記延伸**:
+以下是**標記延伸**中的開啟主頁面：
 
 [![主頁面](consuming-images/mainpage-small.png "主頁面")](consuming-images/mainpage-large.png#lightbox "主頁面")
 
-每個`CommandParameter`屬性設定為`x:Type`參考其中一個其他頁面的標記延伸。 `Command`屬性繫結至屬性，名為`NavigateCommand`。 這個屬性定義在`MainPage`程式碼後置檔案：
+每個 `CommandParameter` 屬性都會設定為參考其中一個其他頁面的 `x:Type` 標記延伸。 @No__t_0 屬性系結至名為 `NavigateCommand` 的屬性。 此屬性定義于 `MainPage` 程式碼後置檔案中：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -266,9 +266,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`NavigateCommand`屬性是`Command`可實作 execute 命令的引數類型的物件`Type`&mdash;的值`CommandParameter`。 此方法會使用`Activator.CreateInstance`來具現化的頁面，然後巡覽至它。 建構函式結束時，會設定`BindingContext`本身的頁面，讓`Binding`上`Command`運作。 請參閱[**資料繫結**](~/xamarin-forms/app-fundamentals/data-binding/index.md)文章和特別[ **Commanding** ](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)這種類型的程式碼的更多詳細的文件。
+@No__t_0 屬性是一個 `Command` 物件，它會使用類型的引數 `Type` &mdash; `CommandParameter` 的值，來實執行命令。 方法會使用 `Activator.CreateInstance` 來具現化頁面，然後流覽至該網頁。 此函式會先將頁面的 `BindingContext` 設定為其本身，讓 `Command` 上的 `Binding` 能夠正常執行。 如需此類型程式碼的詳細資訊，請參閱[**資料**](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結一文，特別是[**命令**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)文章。
 
-**X:type Demo**頁面會使用類似的技巧，來具現化 Xamarin.Forms 項目，並將其新增至`StackLayout`。 XAML 檔案一開始包含三個`Button`項目及其`Command`屬性設為`Binding`和`CommandParameter`設為三個 Xamarin.Forms 檢視類型的屬性：
+**X:Type 示範**頁面會使用類似的技術來具現化 Xamarin. form 專案，並將其新增至 `StackLayout`。 XAML 檔案一開始是由三個 `Button` 元素組成，其 `Command` 屬性會設定為 `Binding`，而 `CommandParameter` 屬性會設定為三個 Xamarin 的類型。表單檢視：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -300,7 +300,7 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-定義程式碼後置檔案，並初始化`CreateCommand`屬性：
+程式碼後置檔案會定義並初始化 `CreateCommand` 屬性：
 
 ```csharp
 public partial class TypeDemoPage : ContentPage
@@ -323,22 +323,22 @@ public partial class TypeDemoPage : ContentPage
 }
 ```
 
-方法時執行`Button`按下之引數的新執行個體、 設定其`VerticalOptions`屬性，並將它加入`StackLayout`。 三個`Button`然後動態建立的檢視與共用 頁面的項目：
+當按下 `Button` 時所執行的方法會建立引數的新實例、設定其 `VerticalOptions` 屬性，並將它加入至 `StackLayout`。 然後，這三個 `Button` 元素會與動態建立的視圖共用頁面：
 
-[![X:Type 示範](consuming-images/typedemo-small.png "X:Type 示範")](consuming-images/typedemo-large.png#lightbox "x:Type 示範")
+[![x:Type 示範](consuming-images/typedemo-small.png "x:Type 示範")](consuming-images/typedemo-large.png#lightbox "x:Type 示範")
 
 <a name="array" />
 
 ## <a name="xarray-markup-extension"></a>x:Array 標記延伸
 
-`x:Array`標記延伸可讓您在標記中定義陣列。 它受到[ `ArrayExtension` ](xref:Xamarin.Forms.Xaml.ArrayExtension)類別，定義兩個屬性：
+@No__t_0 標記延伸可讓您在標記中定義陣列。 它受到[`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension)類別的支援，它會定義兩個屬性：
 
-- `Type` 型別的`Type`，表示陣列中元素的型別。
-- `Items` 型別的`IList`，這是集合的項目本身。 這是內容屬性`ArrayExtension`。
+- `Type` 類型的 `Type`，表示陣列中元素的類型。
+- `IList` 類型的 `Items`，也就是專案本身的集合。 這是 `ArrayExtension` 的 content 屬性。
 
-`x:Array`標記延伸模組本身不會出現在大括號。 相反地，`x:Array`開始與結束標記分隔的項目清單。 設定`Type`屬性設`x:Type`標記延伸。
+@No__t_0 標記延伸本身永遠不會以大括弧括住。 相反地，`x:Array` 開始 和 結束 標記來分隔專案清單。 將 `Type` 屬性設定為 `x:Type` 標記延伸。
 
-**X:array Demo**頁面會顯示如何使用`x:Array`將項目加入`ListView`藉由設定`ItemsSource`陣列的屬性：
+[ **X:Array 示範**] 頁面會顯示如何使用 `x:Array`，藉由將 `ItemsSource` 屬性設定為數組，將專案加入至 `ListView`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -380,39 +380,39 @@ public partial class TypeDemoPage : ContentPage
 </ContentPage>        
 ```
 
-`ViewCell`建立一個簡單`BoxView`每個色彩項目：
+@No__t_0 會針對每個色彩專案建立簡單的 `BoxView`：
 
-[![X:Array 示範](consuming-images/arraydemo-small.png "X:Array 示範")](consuming-images/arraydemo-large.png#lightbox "x:Array 示範")
+[![x:Array 示範](consuming-images/arraydemo-small.png "x:Array 示範")](consuming-images/arraydemo-large.png#lightbox "x:Array 示範")
 
-有數種方式來指定個別`Color`此陣列中的項目。 您可以使用`x:Static`標記延伸模組：
+有數種方式可指定此陣列中的個別 `Color` 專案。 您可以使用 `x:Static` 標記延伸：
 
 ```xaml
 <x:Static Member="Color.Blue" />
 ```
 
-或者，您可以使用`StaticResource`來擷取資源字典中的一種色彩：
+或者，您可以使用 `StaticResource` 從資源字典中取出色彩：
 
 ```xaml
 <StaticResource Key="myColor" />
 ```
 
-這篇文章的結尾，您會看到自訂的 XAML 標記延伸模組，也會建立新的色彩值：
+在本文結尾處，您會看到一個也會建立新色彩值的自訂 XAML 標記延伸：
 
 ```xaml
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-定義時常見的類型，例如字串或數字的陣列，使用中列出的標記[**傳遞建構函式引數**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)文章，以分隔的值。
+定義一般類型的陣列（例如字串或數位）時，請使用傳遞的函式[**引數**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)一文中所列的標記來分隔值。
 
 <a name="null" />
 
 ## <a name="xnull-markup-extension"></a>x:Null 標記延伸
 
-`x:Null`支援標記延伸[ `NullExtension` ](xref:Xamarin.Forms.Xaml.NullExtension)類別。 它有沒有屬性，而且相當於只是 XAML 的 C# [ `null` ](/dotnet/csharp/language-reference/keywords/null/)關鍵字。
+[@No__t_2](xref:Xamarin.Forms.Xaml.NullExtension)類別支援 `x:Null` 標記延伸。 它沒有屬性，而只是C# [`null`](/dotnet/csharp/language-reference/keywords/null/)關鍵字的 XAML 對等用法。
 
-`x:Null`標記延伸是很少會需要且很少使用，但如果您發現需要它，您會很高興它存在。
+@No__t_0 的標記延伸很少，而且很少使用，但是如果您覺得有需要，您會很高興它存在。
 
-**X:null Demo**頁面上說明一種情況時`x:Null`可能都很方便。 假設您定義隱含`Style`for`Label`包含`Setter`，設定`FontFamily`屬性設為平台相依的系列名稱：
+**X:Null 示範**頁面說明 `x:Null` 可能很方便的一個案例。 假設您為 `Label` 定義了隱含的 `Style`，其中包含 `Setter` 將 `FontFamily` 屬性設定為平臺相依的系列名稱：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -451,42 +451,42 @@ public partial class TypeDemoPage : ContentPage
 </ContentPage>   
 ```
 
-然後您會發現其中一個`Label`項目，您想要在隱含的所有屬性設定`Style`除了`FontFamily`，您想要的預設值。 您可以定義另一個`Style`針對該目的，但更簡單的方法是直接設定`FontFamily`屬性的特定`Label`要`x:Null`中心 」 所示， `Label`。
+然後您會發現，針對其中一個 `Label` 專案，您想要隱含 `Style` 中的所有屬性設定，但不包括 `FontFamily`，而您想要將它設為預設值。 您可以針對該目的定義另一個 `Style`，但較簡單的方法只是將特定 `Label` 的 `FontFamily` 屬性設定為 `x:Null`，如中央 `Label` 中所示。
 
 以下是程式執行情況：
 
-[![X:Null 示範](consuming-images/nulldemo-small.png "X:Null 示範")](consuming-images/nulldemo-large.png#lightbox "x:Null 示範")
+[![x:Null 示範](consuming-images/nulldemo-small.png "x:Null 示範")](consuming-images/nulldemo-large.png#lightbox "x:Null 示範")
 
-通知該四`Label`項目有襯線字型，但中心`Label`具有預設 sans serif 字型。
+請注意，有四個 `Label` 元素具有 serif 字型，但中央 `Label` 具有預設的 sans-serif 字型。
 
 <a name="onplatform" />
 
 ## <a name="onplatform-markup-extension"></a>OnPlatform 標記延伸
 
-`OnPlatform`標記延伸可讓您自訂每個平台為基礎的 UI 外觀。 它提供與相同的功能[ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1)並[ `On` ](xref:Xamarin.Forms.On)類別，但更簡潔的表示法。
+@No__t_0 標記延伸可讓您自訂每個平臺的 UI 外觀。 它提供與[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和[`On`](xref:Xamarin.Forms.On)類別相同的功能，但具有更精確的標記法。
 
-`OnPlatform`支援標記延伸[ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension)類別，定義下列屬性：
+[@No__t_2](xref:Xamarin.Forms.Xaml.OnPlatformExtension)類別支援 `OnPlatform` 標記延伸，其定義下列屬性：
 
-- `Default` 型別的`object`，您要套用至代表平台的屬性設定為預設值。
-- `Android` 型別的`object`，您在 Android 上套用設定的值。
-- `GTK` 型別的`object`，要套用 GTK 平台上設定的值。
-- `iOS` 型別的`object`，您要在 iOS 上套用設定值。
-- `macOS` 型別的`object`，您要套用在 macOS 上設定的值。
-- `Tizen` 型別的`object`，要套用 Tizen 平台上設定的值。
-- `UWP` 型別的`object`，通用 Windows 平台上套用設定的值。
-- `WPF` 型別的`object`，您要在 Windows Presentation Foundation 平台上套用設定值。
-- `Converter` 型別的`IValueConverter`，，您將設定為`IValueConverter`實作。
-- `ConverterParameter` 型別的`object`，您設定的值傳遞至`IValueConverter`實作。
+- `object` 類型的 `Default`，您會將其設定為要套用至代表平臺之屬性的預設值。
+- `object` 類型的 `Android`，您會將其設定為要在 Android 上套用的值。
+- `object` 類型的 `GTK`，您會將其設定為要在 GTK 平臺上套用的值。
+- `object` 類型的 `iOS`，您會將其設定為要在 iOS 上套用的值。
+- `object` 類型的 `macOS`，您會將其設定為要在 macOS 上套用的值。
+- `object` 類型的 `Tizen`，您會將其設定為要套用至 Tizen 平臺的值。
+- `object` 類型的 `UWP`，您會將其設定為要套用至通用 Windows 平臺的值。
+- `object` 類型的 `WPF`，您會將其設定為要在 Windows Presentation Foundation 平臺上套用的值。
+- 您設定為 `IValueConverter` 實作為 `IValueConverter` 類型的 `Converter`。
+- `object` 類型的 `ConverterParameter`，您會將其設定為要傳遞至 `IValueConverter` 執行的值。
 
 > [!NOTE]
-> XAML 剖析器允許[ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension)類別，以縮寫成`OnPlatform`。
+> XAML 剖析器允許[`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension)類別縮寫為 `OnPlatform`。
 
-`Default`屬性是內容屬性`OnPlatformExtension`。 因此，對於 XAML 標記運算式以大括號表示，您可以排除`Default=`一部分的運算式，只要是第一個引數。
+@No__t_0 屬性是 `OnPlatformExtension` 的 content 屬性。 因此，對於以大括弧表示的 XAML 標記運算式，您可以去除運算式的 `Default=` 部分，前提是它是第一個引數。
 
 > [!IMPORTANT]
-> XAML 剖析器會預期正確類型的值，將提供給內容取用`OnPlatform`標記延伸。 如果型別轉換為有需要，`OnPlatform`標記延伸模組會嘗試執行使用 Xamarin.Forms 所提供的預設轉換子。 不過，有預設轉換子，在這些情況下，無法執行一些類型轉換`Converter`屬性應設為`IValueConverter`實作。
+> XAML 剖析器預期會將正確類型的值提供給使用 `OnPlatform` 標記延伸的屬性。 如果需要型別轉換，`OnPlatform` 標記延伸會嘗試使用由 Xamarin 提供的預設轉換器來執行。 不過，預設的轉換器無法執行某些類型轉換，而在這些情況下，`Converter` 屬性應該設定為 `IValueConverter` 的執行。
 
-**OnPlatform Demo**頁面會顯示如何使用`OnPlatform`標記延伸模組：
+[ **OnPlatform 示範**] 頁面會顯示如何使用 `OnPlatform` 標記延伸：
 
 ```xaml
 <BoxView Color="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}"
@@ -495,7 +495,7 @@ public partial class TypeDemoPage : ContentPage
          HorizontalOptions="Center" />
 ```
 
-在此範例中，這三`OnPlatform`運算式使用的縮寫的版本`OnPlatformExtension`類別名稱。 三個`OnPlatform`標記延伸模組組[ `Color` ](xref:Xamarin.Forms.BoxView.Color)， [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)，並[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性[`BoxView` ](xref:Xamarin.Forms.BoxView) iOS、 Android 及 UWP 上的不同值。 標記延伸也提供預設值為未指定，同時不在平台上的這些屬性`Default=`運算式的一部分。 請注意，在以逗號分隔的標記延伸模組屬性所設定。
+在此範例中，所有三個 `OnPlatform` 運算式都會使用 `OnPlatformExtension` 類別名稱的縮寫版本。 這三個 `OnPlatform` 標記延伸會將[`BoxView`](xref:Xamarin.Forms.BoxView)的[`Color`](xref:Xamarin.Forms.BoxView.Color)、 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)和[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性，設定為 iOS、Android 和 UWP 上的不同值。 標記延伸也會在未指定的平臺上提供這些屬性的預設值，同時消除運算式的 `Default=` 部分。 請注意，設定的標記延伸模組屬性是以逗號分隔。
 
 以下是程式執行情況：
 
@@ -505,26 +505,26 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="onidiom-markup-extension"></a>OnIdiom 標記延伸
 
-`OnIdiom`標記延伸可讓您根據應用程式執行所在裝置的用法來自訂 UI 外觀。 它受到[ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)類別，定義下列屬性：
+@No__t_0 標記延伸可讓您根據應用程式執行所在裝置的用法來自訂 UI 外觀。 它受到[`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension)類別的支援，它會定義下列屬性：
 
-- `Default` 型別的`object`，您要套用至代表裝置慣用語的屬性設定為預設值。
-- `Phone` 型別的`object`，您在手機上套用設定的值。
-- `Tablet` 型別的`object`，您要在平板電腦上套用設定值。
-- `Desktop` 型別的`object`，您在桌面平台上套用設定的值。
-- `TV` 型別的`object`，要套用在電視平台上設定的值。
-- `Watch` 型別的`object`，您要監看式平台上套用設定的值。
-- `Converter` 型別的`IValueConverter`，，您將設定為`IValueConverter`實作。
-- `ConverterParameter` 型別的`object`，您設定的值傳遞至`IValueConverter`實作。
+- `object` 類型的 `Default`，您會將其設定為要套用至代表裝置慣用語之屬性的預設值。
+- `object` 類型的 `Phone`，您會將其設定為要套用至手機的值。
+- `object` 類型的 `Tablet`，您會將其設定為要在平板電腦上套用的值。
+- `object` 類型的 `Desktop`，您會將其設定為要套用至桌面平臺的值。
+- `object` 類型的 `TV`，您會將其設定為要套用至電視平臺的值。
+- `object` 類型的 `Watch`，您會將其設定為要在監看式平臺上套用的值。
+- 您設定為 `IValueConverter` 實作為 `IValueConverter` 類型的 `Converter`。
+- `object` 類型的 `ConverterParameter`，您會將其設定為要傳遞至 `IValueConverter` 執行的值。
 
 > [!NOTE]
-> XAML 剖析器允許[ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension)類別，以縮寫成`OnIdiom`。
+> XAML 剖析器允許[`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension)類別縮寫為 `OnIdiom`。
 
-`Default`屬性是內容屬性`OnIdiomExtension`。 因此，對於 XAML 標記運算式以大括號表示，您可以排除`Default=`一部分的運算式，只要是第一個引數。
+@No__t_0 屬性是 `OnIdiomExtension` 的 content 屬性。 因此，對於以大括弧表示的 XAML 標記運算式，您可以去除運算式的 `Default=` 部分，前提是它是第一個引數。
 
 > [!IMPORTANT]
-> XAML 剖析器會預期正確類型的值，將提供給內容取用`OnIdiom`標記延伸。 如果型別轉換為有需要，`OnIdiom`標記延伸模組會嘗試執行使用 Xamarin.Forms 所提供的預設轉換子。 不過，有預設轉換子，在這些情況下，無法執行一些類型轉換`Converter`屬性應設為`IValueConverter`實作。
+> XAML 剖析器預期會將正確類型的值提供給使用 `OnIdiom` 標記延伸的屬性。 如果需要型別轉換，`OnIdiom` 標記延伸會嘗試使用由 Xamarin 提供的預設轉換器來執行。 不過，預設的轉換器無法執行某些類型轉換，而在這些情況下，`Converter` 屬性應該設定為 `IValueConverter` 的執行。
 
-**OnIdiom Demo**頁面會顯示如何使用`OnIdiom`標記延伸模組：
+[ **OnIdiom 示範**] 頁面會顯示如何使用 `OnIdiom` 標記延伸：
 
 ```xaml
 <BoxView Color="{OnIdiom Yellow, Phone=Red, Tablet=Green, Desktop=Blue}"
@@ -533,7 +533,7 @@ public partial class TypeDemoPage : ContentPage
          HorizontalOptions="Center" />
 ```
 
-在此範例中，這三`OnIdiom`運算式使用的縮寫的版本`OnIdiomExtension`類別名稱。 三個`OnIdiom`標記延伸模組組[ `Color` ](xref:Xamarin.Forms.BoxView.Color)， [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest)，並[ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性[`BoxView` ](xref:Xamarin.Forms.BoxView)電話、 平板電腦和桌上型電腦的習慣用語上的不同值。 標記延伸也提供預設值，這些屬性中未指定，同時避免慣用語`Default=`運算式的一部分。 請注意，在以逗號分隔的標記延伸模組屬性所設定。
+在此範例中，所有三個 `OnIdiom` 運算式都會使用 `OnIdiomExtension` 類別名稱的縮寫版本。 這三個 `OnIdiom` 標記延伸模組會將[`BoxView`](xref:Xamarin.Forms.BoxView)的[`Color`](xref:Xamarin.Forms.BoxView.Color)、 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)和[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性，設定為電話、平板電腦和桌面慣用語上的不同值。 標記延伸也會針對未指定的慣用語上的這些屬性提供預設值，同時消除運算式的 `Default=` 部分。 請注意，設定的標記延伸模組屬性是以逗號分隔。
 
 以下是程式執行情況：
 
@@ -541,10 +541,10 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="datatemplate-markup-extension"></a>DataTemplate 標記延伸
 
-標記延伸可讓您將類型轉換[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)成。 `DataTemplate` `DataTemplateExtension`類別會支援，其`TypeName`定義類型`string`為的屬性，其會設定為要轉換成`DataTemplate`的類型名稱。 `TypeName`屬性是內容屬性`DataTemplateExtension`。 因此，對於以大括弧表示的 XAML 標記運算式，您可以消除`TypeName=`運算式的部分。
+@No__t_0 標記延伸可讓您將類型轉換成[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。 @No__t_0 類別（其定義類型 `string` 的 `TypeName` 屬性）支援，其設定為要轉換成 `DataTemplate` 的類型名稱。 @No__t_0 屬性是 `DataTemplateExtension` 的 content 屬性。 因此，對於以大括弧表示的 XAML 標記運算式，您可以消除運算式的 `TypeName=` 部分。
 
 > [!NOTE]
-> XAML 剖析器允許`DataTemplateExtension`將類別縮寫為。 `DataTemplate`
+> XAML 剖析器允許 `DataTemplateExtension` 類別縮寫為 `DataTemplate`。
 
 此標記延伸的一般用法是在 Shell 應用程式中，如下列範例所示：
 
@@ -554,49 +554,49 @@ public partial class TypeDemoPage : ContentPage
               ContentTemplate="{DataTemplate views:MonkeysPage}" />
 ```
 
-在此範例中`MonkeysPage` ，會[`ContentPage`](xref:Xamarin.Forms.ContentPage)從[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)轉換成， `ShellContent.ContentTemplate`這會設定為屬性的值。 這可確保`MonkeysPage`只會在流覽至頁面時發生，而不是在應用程式啟動時建立。
+在此範例中，`MonkeysPage` 會從[`ContentPage`](xref:Xamarin.Forms.ContentPage)轉換成[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，這會設定為 `ShellContent.ContentTemplate` 屬性的值。 這可確保只會在流覽至頁面時（而不是在應用程式啟動時）建立 `MonkeysPage`。
 
 如需 Shell 應用程式的詳細資訊，請參閱[Xamarin. Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
 
 ## <a name="fontimage-markup-extension"></a>FontImage 標記延伸
 
-標記延伸可讓您在任何可`ImageSource`顯示的視圖中顯示字型圖示。 `FontImage` 它會提供與`FontImageSource`類別相同的功能，但具有更精確的標記法。
+@No__t_0 標記延伸可讓您在任何可以顯示 `ImageSource` 的視圖中顯示字型圖示。 它提供與 `FontImageSource` 類別相同的功能，但具有更精確的標記法。
 
-類別支援`FontImageExtension`標記延伸，其定義下列屬性： `FontImage`
+@No__t_1 類別支援 `FontImage` 標記延伸，其定義下列屬性：
 
-- `FontFamily`類型`string`的，字型圖示所屬的字型系列。
-- `Glyph`屬於類型`string`的 unicode 字元值（字型圖示）。
-- `Color`類型`Color`的，顯示字型圖示時要使用的色彩。
-- `Size`類型`double`的，呈現的字型圖示的大小（以與裝置無關的單位）。
+- `string` 類型的 `FontFamily`，字型圖示所屬的字型系列。
+- `string` 類型的 `Glyph`，字型圖示的 unicode 字元值。
+- `Color` 類型的 `Color`，顯示字型圖示時要使用的色彩。
+- 類型 `double` 的 `Size`，這是轉譯字型圖示的大小（以與裝置無關的單位）。
 
 > [!NOTE]
-> XAML 剖析器允許`FontImageExtension`將類別縮寫為。 `FontImage`
+> XAML 剖析器允許 `FontImageExtension` 類別縮寫為 `FontImage`。
 
-`Glyph`屬性是內容屬性`FontImageExtension`。 因此，對於 XAML 標記運算式以大括號表示，您可以排除`Glyph=`一部分的運算式，只要是第一個引數。
+@No__t_0 屬性是 `FontImageExtension` 的 content 屬性。 因此，對於以大括弧表示的 XAML 標記運算式，您可以去除運算式的 `Glyph=` 部分，前提是它是第一個引數。
 
-[ **FontImage 示範**] 頁面會顯示如何使用`FontImage`標記延伸：
+[ **FontImage 示範**] 頁面會顯示如何使用 `FontImage` 標記延伸：
 
 ```xaml
 <Image BackgroundColor="#D1D1D1"
        Source="{FontImage &#xf30c;, FontFamily={OnPlatform iOS=Ionicons, Android=ionicons.ttf#}, Size=44}" />
 ```
 
-在此範例中， `FontImageExtension`類別名稱的縮寫版本是用來從[`Image`](xref:Xamarin.Forms.Image)中的 Ionicons 字型系列顯示 XBox 圖示。 運算式也會使用`OnPlatform`標記延伸，在 iOS 和 Android 上指定不同`FontFamily`的屬性值。 此外，運算式的`Glyph=`部分會被排除，而設定的標記延伸屬性會以逗號分隔。 請注意，當圖示的 unicode 字元是`\uf30c`時，它必須在 XAML 中以轉義，因此會變成。 `&#xf30c;`
+在此範例中，會使用 `FontImageExtension` 類別名稱的縮寫版本，在[`Image`](xref:Xamarin.Forms.Image)中顯示 XBox 圖示（來自 Ionicons 字型系列）。 運算式也會使用 `OnPlatform` 標記延伸，在 iOS 和 Android 上指定不同的 `FontFamily` 屬性值。 此外，運算式的 `Glyph=` 部分會被排除，而所設定的標記延伸屬性則會以逗號分隔。 請注意，雖然圖示的 unicode 字元是 `\uf30c`，但它必須在 XAML 中以轉義，因此會變成 `&#xf30c;`。
 
 以下是程式執行情況：
 
 [![FontImage 標記延伸的螢幕擷取畫面](consuming-images/fontimagedemo.png "FontImage 示範")](consuming-images/fontimagedemo-large.png#lightbox "FontImage 示範")
 
-如需在`FontImageSource`物件中指定字型圖示資料來顯示字型圖示的詳細資訊，請參閱[顯示字型圖示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
+如需在 `FontImageSource` 物件中指定字型圖示資料來顯示字型圖示的詳細資訊，請參閱[顯示字型圖示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
 ## <a name="define-your-own-markup-extensions"></a>定義您自己的標記延伸
 
-如果您遇到無法使用 Xamarin.Forms 中的 XAML 標記延伸模組的需求，您可以[建立您自己](creating.md)。
+如果您遇到了無法在 Xamarin 中使用的 XAML 標記延伸模組，則可以[自行建立](creating.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [標記延伸模組 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
-- [Xamarin.Forms 通訊錄中的 XAML 標記延伸模組的章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [標記延伸（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [Xamarin 的 XAML 標記延伸章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動態樣式](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
