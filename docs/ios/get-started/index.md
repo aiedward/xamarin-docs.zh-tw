@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 ms.custom: xamu-video
 author: conceptdev
 ms.author: crdun
-ms.date: 10/05/2018
-ms.openlocfilehash: 1b43598cc8df31d8a113adbfe90e368aab233334
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.date: 10/16/2019
+ms.openlocfilehash: f8193dfbb68634702fdb12e330970d4a83d8e601
+ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287369"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72584319"
 ---
 # <a name="get-started-with-xamarinios"></a>Xamarin.iOS 使用者入門
 
@@ -23,13 +23,16 @@ ms.locfileid: "70287369"
 
 若要針對 Xamarin.iOS 進行組建，必須具備下列項目：
 
+- 最新版的 Visual Studio
 - 最新的 iOS SDK
 - 最新版的 Xcode
-- macOS High Sierra (10.13) 和更新版本
+- Xcode 所需的最小 macOS 版本
+
+如需特定版本需求，請參閱[最新的《 iOS 版本資訊》](/xamarin/ios/release-notes/)。
 
 您可以從 [iOS Developer Center](https://developer.apple.com/devcenter/ios/index.action#downloads) \(iOS 開發人員中心\) (需要登入) 或透過 Mac App Store 下載最新版的 Xcode：
 
-![Mac App Store 中 Xcode 清單頁面螢幕擷取畫面](installation/images/xcode.png "Mac App Store 中的 Xcode")
+![Mac App Store 中 Xcode 清單頁面的螢幕擷取畫面](installation/images/xcode.png "Mac App Store 中的 Xcode")
 
 ## <a name="getting-started-series"></a>使用者入門系列
 
