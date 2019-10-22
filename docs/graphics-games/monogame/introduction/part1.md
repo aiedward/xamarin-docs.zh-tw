@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
 ms.openlocfilehash: d72c428bb4b8c88365180c5c3c50b107eed2b21d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68978449"
 ---
 # <a name="part-1--creating-a-cross-platform-monogame"></a>第1部分–建立跨平臺 MonoGame
@@ -28,11 +28,11 @@ MonoGame 可讓您在大量程式碼重複使用的情況中，開發跨平臺�
 > [!IMPORTANT]
 > MonoGame 預設不會安裝在 Visual Studio 2019 或 Visual Studio for Mac 中。
 >
-> 您應該手動下載並安裝最新版本 http://www.monogame.net/downloads/ ，然後執行安裝程式。 您可能需要重新開機 Visual Studio，範本才會出現。
+> 您應該從 http://www.monogame.net/downloads/ 手動下載並安裝最新版本，然後執行安裝程式。 您可能需要重新開機 Visual Studio，範本才會出現。
 >
 > [**遊戲開發**] 區段應該會出現在 [**增益集管理員**] 中。
 
-若要啟用 Visual Studio for Mac 的 MonoGame 增益集，請選取 [ **Visual Studio for Mac**  > **增益集管理員**]。 針對 Windows 上的 Visual Studio 2019，請選取 [**工具** > ] [**增益集管理員**]。選取 [主機**庫**] 索引標籤，展開 [**遊戲開發**] 類別並選取 [ **MonoGame 載入**宏]，然後按一下 [**安裝**]：
+若要啟用 Visual Studio for Mac 的 MonoGame 增益集，請選取 [ **Visual Studio for Mac**  > **增益集管理員**]。 針對 Windows 上的 Visual Studio 2019，請選取 [**工具**]  >  [**增益集管理員**]。選取 [主機**庫**] 索引標籤，展開 [**遊戲開發**] 類別並選取 [ **MonoGame 載入**宏]，然後按一下 [**安裝**]：
 
 ![Visual Studio for Mac 延伸模組資源庫選取 MonoGame](part1-images/image2.png)
 
@@ -54,7 +54,7 @@ MonoGame 可讓您在大量程式碼重複使用的情況中，開發跨平臺�
 
 ## <a name="fixing-android-compile-errors"></a>修正 Android 編譯錯誤
 
-目前版本的 MonoGame 範本在 Android 的`Activity1.cs`檔案中包含幾個語法錯誤。 若要修正這些問題，請`OnCreate`將函式取代為下列內容：
+目前版本的 MonoGame 範本在 Android 的 `Activity1.cs` 檔案中包含幾個語法錯誤。 若要修正這些問題，請將 `OnCreate` 函式取代為下列內容：
 
 ```csharp
 protected override void OnCreate (Bundle bundle)

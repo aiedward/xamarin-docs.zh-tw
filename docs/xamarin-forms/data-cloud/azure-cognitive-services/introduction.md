@@ -1,6 +1,6 @@
 ---
 title: Xamarin. Forms 和 Azure 認知服務簡介
-description: 本文將示範如何叫用一些 Microsoft 認知服務 Api 的範例應用程式的簡介。
+description: 本文提供範例應用程式的簡介，示範如何叫用一些 Microsoft 認知服務 Api。
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
 ms.technology: xamarin-forms
@@ -8,47 +8,47 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
 ms.openlocfilehash: 52774b387644b14e3d4612dffa6d3c3b28a37f25
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "68652317"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin. Forms 和 Azure 認知服務簡介
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由新增功能，例如臉部辨識、 語音辨識和語言理解，讓他們的應用程式更有智慧服務。本文將示範如何叫用一些 Microsoft 認知服務 Api 的範例應用程式的簡介。_
+_Microsoft 認知服務是一組可供開發人員使用的 Api、Sdk 和服務，藉由新增臉部辨識、語音辨識和語言理解等功能，讓其應用程式更聰明。本文提供範例應用程式的簡介，示範如何叫用一些 Microsoft 認知服務 Api。_
 
 ## <a name="overview"></a>總覽
 
-隨附的範例是待辦事項清單應用程式所提供的功能：
+隨附的範例是待辦事項清單應用程式，可提供下列功能：
 
-- 檢視工作清單。
-- 新增和編輯透過螢幕小鍵盤，或藉由執行 Microsoft Speech API 的語音辨識的工作。 如需有關如何執行語音辨識的詳細資訊，請參閱[使用 Microsoft Speech API 的語音辨識](speech-recognition.md)。
-- 拼字檢查工作使用 Bing 拼字檢查 API。 如需詳細資訊，請參閱 <<c0> [ 拼字檢查使用 Bing 拼字檢查 API](spell-check.md)。
-- 轉譯為德文使用 Translator API 從英文工作。 如需詳細資訊，請參閱 <<c0> [ 使用 Translator API 的文字翻譯](text-translation.md)。
+- 查看工作清單。
+- 透過螢幕小鍵盤新增和編輯工作，或使用 Microsoft Speech API 來執行語音辨識。 如需有關執行「語音辨識」的詳細資訊，請參閱[使用 Microsoft SPEECH API 的語音辨識](speech-recognition.md)。
+- 使用 Bing 拼寫檢查 API 檢查工作的拼寫。 如需詳細資訊，請參閱[使用 Bing 拼寫檢查 API 的拼寫檢查](spell-check.md)。
+- 使用翻譯工具 API，將工作從英文轉譯為德文。 如需詳細資訊，請參閱[使用翻譯工具 API 的文字翻譯](text-translation.md)。
 - 刪除工作。
-- 將工作的狀態，設為 [完成]。
-- 透過表情辨識，使用臉部 API 應用程式的評分。 如需詳細資訊，請參閱 <<c0> [ 表情辨識使用人臉識別 API](emotion-recognition.md)。
+- 將工作的狀態設定為「完成」。
+- 使用臉部 API 為應用程式評分表情辨識。 如需詳細資訊，請參閱[使用臉部 API 的表情](emotion-recognition.md)辨識。
 
-工作會儲存在本機 SQLite 資料庫。 如需使用本機 SQLite 資料庫的詳細資訊，請參閱 <<c0> [ 使用本機資料庫](~/xamarin-forms/data-cloud/data/databases.md)。
+工作會儲存在本機 SQLite 資料庫中。 如需使用本機 SQLite 資料庫的詳細資訊，請參閱使用[本機資料庫](~/xamarin-forms/data-cloud/data/databases.md)。
 
-`TodoListPage`應用程式啟動時顯示。 此頁面會顯示一份儲存在本機資料庫中，任何工作，並允許使用者建立新的工作，或應用程式評分：
+當應用程式啟動時，就會顯示 `TodoListPage`。 此頁面會顯示儲存在本機資料庫中的任何工作清單，並可讓使用者建立新的工作或為應用程式評分：
 
 ![](introduction-images/sample-application-1.png "TodoListPage")
 
-先建立新的項目，請按一下 *+* 按鈕，巡覽至`TodoItemPage`。 此頁面也可以巡覽至選取的工作：
+您可以按一下 [ *+* ] 按鈕來建立新專案，這會流覽至 `TodoItemPage`。 藉由選取工作，也可以流覽至此頁面：
 
 ![](introduction-images/sample-application-2.png "TodoItemPage")
 
-`TodoItemPage`轉譯、 儲存，並刪除，可讓工作建立、 編輯、 拼字檢查。 語音辨識可用來建立或編輯工作。 做法是藉由按下 [麥克風] 按鈕，開始錄製，並按下按鈕相同，第二次，若要停止錄製，其會將記錄傳送至 Bing 語音辨識 API。
+此 `TodoItemPage` 可讓您建立、編輯、拼寫檢查、轉譯、儲存和刪除工作。 語音辨識可以用來建立或編輯工作。 這可以藉由按下 [麥克風] 按鈕開始錄製，然後按第二次按下相同的按鈕停止錄製（這會將記錄傳送至 Bing 語音辨識 API）來達成此目的。
 
-按一下 [smilies] 按鈕`TodoListPage`瀏覽至`RateAppPage`，用以執行表情辨識臉部運算式映像上：
+按一下 `TodoListPage` 上的 smilies 按鈕會導覽至 `RateAppPage`，用來在臉部運算式的影像上執行表情辨識：
 
 ![](introduction-images/sample-application-3.png "RateAppPage")
 
-`RateAppPage`可讓使用者拍照他們的臉部，並顯示傳回表情與提交給人臉識別 API。
+此 `RateAppPage` 可讓使用者拍攝臉部的相片，並將其提交至臉部 API，並顯示所傳回的表情。
 
 ## <a name="understand-the-application-anatomy"></a>瞭解應用程式的剖析
 
@@ -56,33 +56,33 @@ _Microsoft 認知服務是一組 Api、 Sdk 和適用於開發人員可以藉由
 
 |資料夾|用途|
 |--- |--- |
-|模型|包含資料模型類別，應用程式。 這包括`TodoItem`類別，建立模型資料的應用程式所使用的單一項目。 此資料夾也包含用來從不同的 Microsoft 認知服務 Api 所傳回的模型 JSON 回應的類別。|
-|存放庫|包含`ITodoItemRepository`介面和`TodoItemRepository`類別，用來執行資料庫作業。|
-|服務|包含介面和類別，用來存取不同 Microsoft 認知服務 Api，以及所使用的介面`DependencyService`類別，以找出在平台專案中實作之介面的類別。|
-|公用程式|包含`Timer`類別，這將由`AuthenticationService`每隔 9 分鐘更新的 JWT 存取權杖的類別。|
-|檢視|包含應用程式的網頁。|
+|模型|包含應用程式的資料模型類別。 這包括 `TodoItem` 類別，它會建立應用程式所使用的單一資料項目目模型。 此資料夾也包含用來建立不同 Microsoft 認知服務 Api 所傳回之 JSON 回應模型的類別。|
+|存放庫|包含用來執行資料庫作業的 `ITodoItemRepository` 介面和 `TodoItemRepository` 類別。|
+|服務|包含用來存取不同 Microsoft 認知服務 Api 的介面和類別，以及 `DependencyService` 類別用來尋找在平臺專案中執行介面之類別的介面。|
+|utils|包含 `Timer` 類別，由 `AuthenticationService` 類別用來每隔9分鐘更新 JWT 存取權杖。|
+|檢視|包含應用程式的頁面。|
 
 共用程式碼專案也包含一些重要的檔案：
 
 |檔案|用途|
 |--- |--- |
-|Constants.cs|`Constants`類別，適用於 Microsoft 認知服務 Api 叫用指定的 API 金鑰和端點。 API 金鑰常數需要更新存取不同的認知服務 Api。|
-|App.xaml.cs|`App`類別負責具現化兩個的第一頁會顯示每個平台上的應用程式和`TodoManager`用來叫用的資料庫作業的類別。|
+|Constants.cs|@No__t_0 類別，指定所叫用的 Microsoft 認知服務 Api 的 API 金鑰和端點。 API 金鑰常數需要進行更新，才能存取不同的認知服務 Api。|
+|App.xaml.cs|@No__t_0 類別負責具現化每個平臺上的應用程式將顯示的第一頁，以及用來叫用資料庫作業的 `TodoManager` 類別。|
 
 ### <a name="nuget-packages"></a>NuGet 套件
 
-範例應用程式會使用下列的 NuGet 套件：
+範例應用程式會使用下列 NuGet 套件：
 
-- `Newtonsoft.Json` – 提供適用於.NET 的 JSON 架構。
-- `PCLStorage` -提供一組的跨平台本機檔案 IO Api。
-- `sqlite-net-pcl` – 提供 SQLite 資料庫儲存體。
-- `Xam.Plugin.Media` – 提供跨平台相片採用，並挑選 Api。
+- `Newtonsoft.Json` –提供適用于 .NET 的 JSON 架構。
+- `PCLStorage` –提供一組跨平臺本機檔案 IO Api。
+- `sqlite-net-pcl` –提供 SQLite 資料庫儲存體。
+- `Xam.Plugin.Media` –提供跨平臺相片拍攝和挑選 Api。
 
-此外，這些 NuGet 套件也會安裝它們自己的相依性。
+此外，這些 NuGet 套件也會安裝自己的相依性。
 
 ### <a name="model-the-data"></a>建立資料模型
 
-範例應用程式使用`TodoItem`類別來建立模型的資料，會顯示並儲存在本機 SQLite 資料庫。 下列程式碼範例顯示 `TodoItem` 類別：
+範例應用程式會使用 `TodoItem` 類別，將顯示並儲存在本機 SQLite 資料庫中的資料建立模型。 下列程式碼範例顯示 `TodoItem` 類別：
 
 ```csharp
 public class TodoItem
@@ -94,35 +94,35 @@ public class TodoItem
 }
 ```
 
-`ID`屬性用來唯一識別每個`TodoItem`執行個體，並將屬性設為自動遞增的主索引鍵在資料庫中的 SQLite 屬性裝飾。
+@No__t_0 屬性是用來唯一識別每個 `TodoItem` 實例，並以 SQLite 屬性裝飾，讓屬性成為資料庫中的自動遞增主鍵。
 
 ### <a name="invoke-database-operations"></a>叫用資料庫作業
 
-`TodoItemRepository`類別會實作資料庫作業，而您可以透過類別的執行個體`App.TodoManager`屬性。 `TodoItemRepository`類別提供下列方法來叫用的資料庫作業：
+@No__t_0 類別會執行資料庫作業，而且可以透過 `App.TodoManager` 屬性來存取類別的實例。 @No__t_0 類別提供下列方法來叫用資料庫作業：
 
-- **GetAllItemsAsync** – 從本機 SQLite 資料庫中擷取所有項目。
-- **GetItemAsync** – 從本機 SQLite 資料庫中擷取指定的項目。
-- **SaveItemAsync** – 建立或更新本機 SQLite 資料庫中的項目。
-- **DeleteItemAsync** – 從本機 SQLite 資料庫中刪除指定的項目。
+- **GetAllItemsAsync** –從本機 SQLite 資料庫中取出所有專案。
+- **GetItemAsync** –從本機 SQLite 資料庫中抓取指定的專案。
+- **SaveItemAsync** –建立或更新本機 SQLite 資料庫中的專案。
+- **DeleteItemAsync** –從本機 SQLite 資料庫中刪除指定的專案。
 
 ### <a name="platform-project-implementations"></a>平臺專案的實現
 
-共用`Services`程式碼專案中的資料夾`IFileHelper`包含和`IAudioRecorderService`介面， `DependencyService`類別會使用這些介面來尋找在平臺專案中執行介面的類別。
+共用程式碼專案中的 `Services` 資料夾包含 `DependencyService` 類別用來尋找在平臺專案中執行介面之類別的 `IFileHelper` 和 `IAudioRecorderService` 介面。
 
-`IFileHelper`介面由實作`FileHelper`每個平台專案中的類別。 此類別包含單一方法`GetLocalFilePath`，它會傳回本機檔案路徑來儲存 SQLite 資料庫。
+@No__t_0 介面是由每個平臺專案中的 `FileHelper` 類別所執行。 這個類別是由 `GetLocalFilePath` 的單一方法所組成，它會傳回用來儲存 SQLite 資料庫的本機檔案路徑。
 
-`IAudioRecorderService`介面由實作`AudioRecorderService`每個平台專案中的類別。 此類別包含`StartRecording`， `StopRecording`，和支援的方法，可以使用平台 Api 從裝置的麥克風錄製音訊，並將它儲存為 wav 檔案。 在 iOS 上，`AudioRecorderService`使用`AVFoundation`錄製音訊的 API。 在 Android 上，`AudioRecordService`使用`AudioRecord`錄製音訊的 API。 在通用 Windows 平台 (UWP)，`AudioRecorderService`使用`AudioGraph`錄製音訊的 API。
+@No__t_0 介面是由每個平臺專案中的 `AudioRecorderService` 類別所執行。 此類別包含 `StartRecording`、`StopRecording` 和支援的方法，其使用平臺 Api 從裝置的麥克風錄製音訊，並將其儲存為 wav 檔案。 在 iOS 上，`AudioRecorderService` 會使用 `AVFoundation` API 來錄製音訊。 在 Android 上，`AudioRecordService` 會使用 `AudioRecord` API 來錄製音訊。 在通用 Windows 平臺（UWP）上，`AudioRecorderService` 使用 `AudioGraph` API 來錄製音訊。
 
 ### <a name="invoke-cognitive-services"></a>叫用認知服務
 
-範例應用程式會叫用下列的 Microsoft 認知服務：
+範例應用程式會叫用下列 Microsoft 認知服務：
 
-- Microsoft Speech API。 如需詳細資訊，請參閱 <<c0> [ 使用 Microsoft Speech API 的語音辨識](speech-recognition.md)。
-- Bing 拼字檢查 API。 如需詳細資訊，請參閱 <<c0> [ 拼字檢查使用 Bing 拼字檢查 API](spell-check.md)。
-- 轉換 API。 如需詳細資訊，請參閱 <<c0> [ 使用 Translator API 的文字翻譯](text-translation.md)。
-- 人臉識別 API。 如需詳細資訊，請參閱 <<c0> [ 表情辨識使用人臉識別 API](emotion-recognition.md)。
+- Microsoft Speech API。 如需詳細資訊，請參閱[使用 Microsoft SPEECH API 的語音辨識](speech-recognition.md)。
+- Bing 拼寫檢查 API。 如需詳細資訊，請參閱[使用 Bing 拼寫檢查 API 的拼寫檢查](spell-check.md)。
+- 轉譯 API。 如需詳細資訊，請參閱[使用翻譯工具 API 的文字翻譯](text-translation.md)。
+- 臉部 API。 如需詳細資訊，請參閱[使用臉部 API 的表情](emotion-recognition.md)辨識。
 
 ## <a name="related-links"></a>相關連結
 
-- [Microsoft 認知服務文件](https://www.microsoft.com/cognitive-services/documentation)
-- [待辦事項 Cognitive Services （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Microsoft 認知服務檔](https://www.microsoft.com/cognitive-services/documentation)
+- [Todo 認知服務（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

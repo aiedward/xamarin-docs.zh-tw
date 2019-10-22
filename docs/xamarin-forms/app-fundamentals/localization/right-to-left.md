@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 78288680a1a522b2c6c413e1f8a2cec2a07835d6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.openlocfilehash: a6eb3167fd0880984a74245c4653642ea3979354
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656973"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72678834"
 ---
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
@@ -32,7 +32,7 @@ _從右至左的當地語系化，會將由右至左文字方向的支援新增�
 
 將項目上的 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性設為 [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) 時，一般會設定為靠右對齊、由右至左的讀取順序，以及從右至左文字方向的控制項配置：
 
-[![從右至左文字方向的阿拉伯文 TodoItemPage](rtl-images/TodoItemPage-Arabic.png "從右至左文字方向的阿拉伯文 TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "從右至左文字方向的阿拉伯文 TodoItemPage")
+[![以由右至左流動方向的阿拉伯文 TodoItemPage](rtl-images/TodoItemPage-Arabic.png "以由右至左流動方向的阿拉伯文 TodoItemPage")](rtl-images/TodoItemPage-Arabic-Large.png#lightbox "以由右至左流動方向的阿拉伯文 TodoItemPage")
 
 > [!TIP]
 > 您應該只在初始配置上設定 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。 在執行階段變更此值時，會導致佔用大量資源的配置程序，而影響效能。
@@ -72,14 +72,14 @@ this.FlowDirection = Device.FlowDirection;
 </array>
 ```
 
-![Info.plist 支援的語言](rtl-images/ios-locales.png "Info.plist 支援的語言")
+![Plist 支援的語言](rtl-images/ios-locales.png "Plist 支援的語言")
 
 如需詳細資訊，請參閱[在 iOS 中的當地語系化基本概念](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)。
 
 您可以將 **Info.plist** 中所指定的裝置/模擬器語言和地區變更為由右至左地區設定，以測試由右至左當地語系化。
 
 > [!WARNING]
-> 請注意，在 iOS 上將語言和地區變更為由右至左地區設定時，如果您未包含地區設定所需的資源，則任何 [`DatePicker`](xref:Xamarin.Forms.DatePicker) 檢視都會擲回例外狀況。 例如，當測試具有 `DatePicker` 的阿拉伯文應用程式時，請務必選取 [iOS 組建]  窗格 [國際化]  區段中的 [中東]  。
+> 請注意，在 iOS 上將語言和地區變更為由右至左地區設定時，如果您未包含地區設定所需的資源，則任何 [`DatePicker`](xref:Xamarin.Forms.DatePicker) 檢視都會擲回例外狀況。 例如，當測試具有 `DatePicker` 的阿拉伯文應用程式時，請務必選取 [iOS 組建] 窗格 [國際化] 區段中的 [中東]。
 
 ### <a name="android"></a>Android
 
@@ -94,7 +94,7 @@ this.FlowDirection = Device.FlowDirection;
 </manifest>
 ```
 
-您可以啟用 [設定] > [開發人員選項]  中的 [Force RTL layout direction] \(強制 RTL 配置方向\)  ，將裝置/模擬器語言和地區變更為使用由右至左語言，以測試由右至左當地語系化。
+您可以啟用 [設定] > [開發人員選項] 中的 [Force RTL layout direction] \(強制 RTL 配置方向\)，將裝置/模擬器語言和地區變更為使用由右至左語言，以測試由右至左當地語系化。
 
 ### <a name="universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP)
 
@@ -145,6 +145,46 @@ Xamarin.Forms 由右至左當地語系化目前有一些限制：
 - [`Editor`](xref:Xamarin.Forms.Editor) 文字對齊方式由裝置的地區設定控制，而非由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性控制。
 - [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 子系不會繼承 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性。
 - [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) 文字對齊方式由裝置的地區設定控制，而非由 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 屬性控制。
+
+## <a name="force-right-to-left-layout"></a>強制由右至左的版面配置
+
+無論裝置設定為何，您都可以藉由修改個別的平臺專案，強制將 Android 應用程式一律使用由右至左的版面配置。
+
+### <a name="ios"></a>iOS
+
+您可以藉由修改**AppDelegate**類別，強制一律使用由右至左的版面配置，如下所示：
+
+1. 將 `IntPtr_objc_msgSend` 函式宣告為 `AppDelegate` 類別中的第一行：
+
+   ```csharp
+   [System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.ObjectiveCLibrary, EntryPoint = "objc_msgSend")]
+   internal extern static IntPtr IntPtr_objc_msgSend(IntPtr receiver, IntPtr selector, UISemanticContentAttribute arg1);
+   ```
+
+1. 從 `FinishedLaunching` 方法呼叫 `IntPtr_objc_msgSend` 函式，然後再從 `FinshedLaunching` 方法傳回：
+
+   ```csharp
+   bool result = base.FinishedLaunching(app, options);
+
+   ObjCRuntime.Selector selector = new ObjCRuntime.Selector("setSemanticContentAttribute:");
+   IntPtr_objc_msgSend(UIView.Appearance.Handle, selector.Handle, UISemanticContentAttribute.ForceRightToLeft);
+
+   return result;
+   ```
+
+這個方法適用于一律需要由右至左配置的應用程式，並移除設定[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)屬性的需求。
+
+如需 `IntrPtr_objc_msgSend` 方法的詳細資訊，請參閱[在 Xamarin 中的目標 C 選取器](~/ios/internals/objective-c-selectors.md)。
+
+### <a name="android"></a>Android
+
+Xamarin Android 應用程式可以藉由修改**MainActivity**類別，強制一律使用由右至左的版面配置，以包含下列程式程式碼：
+
+```csharp
+Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
+```
+
+這個方法適用于一律需要由右至左配置的應用程式，並移除設定[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)屬性的需求。
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Xamarin.University 的由右至左語言支援
 

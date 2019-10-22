@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
 ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "64749926"
 ---
 # <a name="skiasharp-platform-independent-examples"></a>SkiaSharp 平臺獨立範例
@@ -22,7 +22,7 @@ SkiaSharp 提供豐富且功能強大的2D 圖形 API，可用來轉譯成2D 緩
 
 此程式庫目前以跨平臺[NuGet 套件](https://www.nuget.org/packages/SkiaSharp)的形式提供，您可以新增 NuGet 參考，將其新增至您的專案。
 
-若要進行繪製，您的程式`SkCanvas`代碼會建立，其中描述繪製作業將會發生的表面。
+若要進行繪製，您的程式碼會建立 `SkCanvas`，其中描述繪製作業的執行位置。
 
 ## <a name="obtaining-an-skcanvas"></a>取得 SKCanvas
 
@@ -36,9 +36,9 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>在 SKCanvas 上繪製
 
-會針對您可能熟悉的其他繪圖模型，使用類似于精神的繪圖模型，它會使用色彩搭配選擇性的透明度通道，並且可以繪製線條、弧形、文字和影像。`SKCanvas`
+@No__t_0 會使用類似于您可能熟悉的其他繪圖模型的繪圖模型，它會使用色彩搭配選擇性的透明度通道，並且可以繪製線條、弧形、文字和影像。
 
-以下只是幾個可使用 SkiaSharp 完成的各種不同專案。  在下列範例中，變數`canvas`的類型是 SKCanvas。
+以下只是幾個可使用 SkiaSharp 完成的各種不同專案。  在下列範例中，`canvas` 變數的類型是 SKCanvas。
 
 ### <a name="drawing-xamagon"></a>繪製 Xamagon
 
