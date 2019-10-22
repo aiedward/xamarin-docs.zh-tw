@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
 ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771873"
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 
-_自訂轉譯器提供自訂 Xamarin.Forms 控制項外觀和行為的有效方法。它們可用於小型樣式變更或複雜的平台特定配置及行為自訂。本文簡介自訂轉譯器，並概述建立自訂轉譯器的程序。_
+_自訂轉譯器提供了一種強大的方法，可自訂 Xamarin 控制項的外觀和行為。它們可用於小型樣式變更或複雜的平臺特定版面配置和行為自訂。本文提供自訂轉譯器的簡介，並概述建立自訂轉譯器的程式。_
 
 Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/controls/index.md)提供通用 API，描述跨平台行動裝置的使用者介面。 系統會在每個平台上使用 `Renderer` 類別，以不同的方式轉譯每個頁面、配置和控制項，進而建立原生控制項 (對應至 Xamarin.Forms 表示方式)、將其排列在畫面上，然後新增在共用程式碼中指定的行為。
 
@@ -56,7 +56,7 @@ public class MyEntry : Entry
 
 然後，使用灰色背景在每個平台中轉譯 `MyEntry` 自訂控制項，如下列螢幕擷取畫面所示：
 
-![](introduction-images/screenshots.png "每個平台上的 MyEntry 自訂控制項")
+![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
 
 只要透過子類別化控制項，就能變更每個平台上的控制項背景色彩。 不過，這項技術僅限於其所能達到的程度，因為無法充分利用平台特定的增強功能和自訂。 有必要時，必須實作自訂轉譯器。
 
@@ -66,10 +66,10 @@ public class MyEntry : Entry
 
 1. 建立轉譯原生控制項之轉譯器類別的子類別。
 1. 覆寫轉譯原生控制項的方法，並撰寫自訂控制項的邏輯。 `OnElementChanged` 方法常用於轉譯原生控制項，會在建立對應的 Xamarin.Forms 控制項時呼叫。
-1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，指定用它轉譯 Xamarin.Forms 控制項。 這個屬性用來向 Xamarin.Forms 註冊自訂轉譯器。
+1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，指定用它轉譯 Xamarin.Forms 控制項。 這個屬性會用來向 Xamarin.Forms 註冊自訂轉譯器。
 
 > [!NOTE]
-> 對大部分的 Xamarin.Forms 項目而言，可以選擇是否在每個平台專案中提供自訂轉譯器。 如果自訂轉譯器未註冊，則會使用控制項基底類別的預設轉譯器。 不過，轉譯 [View](xref:Xamarin.Forms.View) 或 [ViewCell](xref:Xamarin.Forms.ViewCell) 項目時，每個平台專案都必須要有自訂轉譯器。
+> 對大部分的 Xamarin.Forms 項目而言，可以選擇是否在每個平台專案中提供自訂轉譯器。 如果自訂轉譯器尚未註冊，則會使用控制項基底類別的預設轉譯器。 不過，轉譯 [View](xref:Xamarin.Forms.View) 或 [ViewCell](xref:Xamarin.Forms.ViewCell) 項目時，每個平台專案都必須要有自訂轉譯器。
 
 本系列的主題都會提供不同 Xamarin.Forms 項目的此程序示範和說明。
 

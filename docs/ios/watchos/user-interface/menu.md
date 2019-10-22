@@ -8,22 +8,22 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/17/2017
 ms.openlocfilehash: c37d8592b7aadc2c88c31826bc954abfa3c0836d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70766795"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin 中的 watchOS 功能表控制項（Force Touch）
 
 Watch 套件提供在監看式應用程式畫面上執行時，觸發功能表的 Force Touch 手勢。
 
-![](menu-images/menu.png "顯示功能表的 Apple Watch")
+![](menu-images/menu.png "Apple Watch showing a menu")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 ## <a name="responding-to-force-touch"></a>回應 Force Touch
 
-`Menu`如果已針對介面控制器執行，則當使用者執行時，將會顯示功能表 Force Touch。 如果未執行任何功能表，畫面會短暫地產生動畫，而不會發生其他動作。
+如果已針對介面控制器執行 `Menu`，當使用者 Force Touch 執行時，將會顯示功能表。 如果未執行任何功能表，畫面會短暫地產生動畫，而不會發生其他動作。
 
 強制觸控不會與螢幕上的任何特定元素相關聯;只有一個功能表可以連接到介面控制器，而不論畫面上 Force Touch 按的位置為何，都會出現。
 
@@ -31,17 +31,17 @@ Watch 套件提供在監看式應用程式畫面上執行時，觸發功能表�
 
 ## <a name="adding-a-menu"></a>新增功能表
 
-在`Menu`設計階段，必須將`InterfaceController`加入至分鏡腳本。 功能表控制項拖曳至介面控制器時不在分鏡腳本預覽視覺指示，但 **功能表** 會出現在 **文件大綱** 板：
+在設計階段，必須將 `Menu` 加入至分鏡腳本的 `InterfaceController`。 當 menu 控制項拖曳至介面控制器上時，在分鏡腳本預覽中並沒有視覺指示，但**功能表**會出現在 [**檔大綱**] 面板中：
 
-![](menu-images/menu-action.png "在設計階段編輯功能表")
+![](menu-images/menu-action.png "Editing a menu at design time")
 
 最多可以將四個功能表項目加入至功能表控制項。 可以在**Properties** pad 中設定。 可以設定下列屬性：
 
 - 標題，以及
 - 自訂映射，或
-- 系統映射：[接受]、[新增]、[封鎖]、[資訊]、[可能]、[更多]、[靜音]、[播放]、[重複]、[繼續]、[共用]、
+- 系統映射： 接受、新增、封鎖、資訊、可能、更多、暫停、播放、重複、繼續、共用、
 
-選取 Properties pad 的 [**事件**] 區段，然後輸入動作方法的名稱，以建立。 `Action` 系統會在程式碼中建立部分方法，這可以在介面控制器類別中執行，如下所示：
+選取**Properties** pad 的 [**事件**] 區段，然後輸入動作方法的名稱，以建立 `Action`。 系統會在程式碼中建立部分方法，這可以在介面控制器類別中執行，如下所示：
 
 ```csharp
 partial void MenuItemTapped ()
@@ -66,14 +66,14 @@ Menu items added the storyboard can be shown and hidden programmatically.
 
 ### <a name="adding-at-runtime"></a>在執行時間加入
 
-您無法`Menu`在執行時間將加入至介面控制器，但*可*透過程式設計方式變更的`MenuItem`集合。
-`AddMenuItem`使用方法，如下所示：
+您無法在執行時間將 `Menu` 新增至介面控制器，雖然*可以*透過程式設計方式更改 `MenuItem`s 的集合。
+使用 `AddMenuItem` 的方法，如下所示：
 
 ```csharp
 AddMenuItem (WKMenuItemIcon.Accept, "Yes", new ObjCRuntime.Selector ("tapped"));
 ```
 
-在`AdMenuItem`方法中，目前的 Xamarin Watch 套件 API `selector`需要，其應宣告如下：
+在 `AdMenuItem` 方法中，您目前需要有一個 `selector`，即「Xamarin Watch 套件 API」，其應宣告如下：
 
 ```csharp
 [Export("tapped")]
@@ -85,7 +85,7 @@ void MenuItemTapped ()
 
 ### <a name="removing-at-runtime"></a>在執行時間移除
 
-您可以呼叫 方法，以移除所有以程式設計方式加入的功能表`ClearAllMenuItems`項。
+您可以呼叫 `ClearAllMenuItems` 方法，以移除所有*以程式設計方式新增*的功能表項目。
 
 無法清除在分鏡腳本中設定的功能表項目。
 

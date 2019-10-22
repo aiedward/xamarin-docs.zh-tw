@@ -8,17 +8,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 10/11/2016
 ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70767023"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin iOS 應用程式中的資料儲存簡介
 
 ## <a name="when-to-use-a-database"></a>使用資料庫的時機
 
-雖然行動裝置的儲存和處理功能日益增加，但手機和平板電腦仍然會落後桌面&amp;電腦的對應專案。 基於這個理由，建議您花一些時間為您的應用程式規劃資料儲存架構，而不只是假設資料庫隨時都是正確的答案。 有數個不同的選項可符合不同的需求，例如：
+雖然行動裝置的儲存和處理功能日益增加，但手機和平板電腦仍然會落後桌面 &amp; 筆記本電腦的對應專案。 基於這個理由，建議您花一些時間為您的應用程式規劃資料儲存架構，而不只是假設資料庫隨時都是正確的答案。 有數個不同的選項可符合不同的需求，例如：
 
 - **喜好**設定– iOS 提供內建的機制，可儲存簡單的索引鍵/值組。 如果您要儲存簡單的使用者設定或小部分的資料（例如個人化資訊），則請使用平臺的原生功能來儲存這類資訊。 針對 iOS，您也可以利用此資料的 iCloud 同步處理，這兩者都是針對具有多個裝置的使用者進行備份和同步處理。
 - **文字檔**–已下載內容的使用者輸入或快取（例如 HTML）可以直接儲存在檔案系統上。 使用適當的檔案命名慣例，協助您組織檔案和尋找資料。

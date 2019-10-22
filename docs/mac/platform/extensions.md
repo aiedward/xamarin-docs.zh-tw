@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70770032"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 延伸模組支援
@@ -34,17 +34,17 @@ ms.locfileid: "70770032"
 
 <a name="Tips" />
 
-## <a name="tips"></a>秘訣
+## <a name="tips"></a>祕訣
 
 在 Xamarin. Mac 中使用擴充功能時，下列秘訣會很有説明：
 
-- 因為 Xamarin 目前不支援調試延伸模組，所以調試經驗主要取決於執行和`printf`類似語句。 不過，延伸模組會在沙箱進程中執行`Console.WriteLine` ，因此不會像在其他 Xamarin. Mac 應用程式中一樣。 直接叫用會將調試訊息輸出至系統記錄檔。 [ `NSLog` ](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)
-- 任何未攔截的例外狀況都會損毀延伸模組進程，在**系統記錄**檔中只提供少量有用的資訊。 在重新擲回之前`try/catch` ，在（例外狀況`NSLog`）區塊中包裝麻煩的程式碼可能會很有用。
-- **系統記錄**可以從**應用程式** > **公用**程式底下的**主控台**應用程式存取：
+- 因為 Xamarin 目前不支援調試延伸模組，所以調試經驗主要取決於執行和 `printf` like 語句。 不過，延伸模組會在沙箱進程中執行，因此 `Console.WriteLine` 不會像在其他 Xamarin. Mac 應用程式中一樣。 直接叫用[`NSLog`](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)會將調試訊息輸出至系統記錄檔。
+- 任何未攔截的例外狀況都會損毀延伸模組進程，在**系統記錄**檔中只提供少量有用的資訊。 在重新擲回之前 `NSLog` 的 `try/catch` （例外狀況）區塊中，將麻煩的程式碼包裝起來可能會很有用。
+- 您可以從 [**應用程式**] 底下的**主控台**應用程式存取 [**系統記錄**檔]  > **公用**程式：
 
-    [![](extensions-images/extension02.png "系統記錄檔")](extensions-images/extension02.png#lightbox)
+    [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
 - 如上所述，執行延伸模組主機應用程式會向系統註冊該擴充功能。 刪除已取消註冊的應用程式套件組合。 
-- 如果已註冊應用程式延伸模組的「偏離」版本，請使用下列命令來尋找它們（以予以刪除）：`plugin kit -mv`
+- 如果已註冊應用程式延伸模組的「偏離」版本，請使用下列命令來尋找它們（以予以刪除）： `plugin kit -mv`
 
 <a name="Walkthrough-and-Sample-App" />
 

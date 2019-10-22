@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 10bba38de1dc8908ad853d5e4ca2bb845b4ac8c6
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771271"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms 資料範本簡介
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_Xamarin.Forms 資料範本可以在支援的控制項上定義資料呈現方式。本文提供資料範本的簡介，探討為何資料範本是必要的。_
+_Xamarin：表單資料範本提供了在支援的控制項上定義資料呈現方式的能力。本文提供資料範本的簡介，檢查為何需要它們。_
 
 假設有一個顯示 `Person` 物件集合的 [`ListView`](xref:Xamarin.Forms.ListView)。 下列程式碼範例顯示 `Person` 類別的定義：
 
@@ -90,7 +90,7 @@ public WithoutDataTemplatePageCS()
 
 當顯示集合中的物件時，[`ListView`](xref:Xamarin.Forms.ListView) 會呼叫 `ToString`。 由於沒有 `Person.ToString` 覆寫，因此 `ToString` 會傳回每個物件的類型名稱，如下列螢幕擷取畫面所示：
 
-![](introduction-images/no-data-template.png "沒有資料範本的 ListView")
+![](introduction-images/no-data-template.png "ListView without a Data Template")
 
 `Person` 物件可以覆寫 `ToString` 方法來顯示有意義的資料，如下列程式碼範例所示：
 
@@ -107,7 +107,7 @@ public class Person
 
 這會導致 [`ListView`](xref:Xamarin.Forms.ListView) 顯示集合中每個物件的 `Person.Name` 屬性值，如下列螢幕擷取畫面所示：
 
-![](introduction-images/override-tostring.png "具有資料範本的 ListView")
+![](introduction-images/override-tostring.png "ListView with a Data Template")
 
 `Person.ToString` 覆寫可能會傳回由 `Name`、`Age` 和 `Location` 屬性組成的格式化字串。 不過，此方法只會提供對每個資料項目外觀有限的控制。 若要提高彈性，可建立定義資料外觀的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。
 

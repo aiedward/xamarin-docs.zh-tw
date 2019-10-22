@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 9bde1140f6590daa4b1d40a8b56edec314bfc66d
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70760228"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>企業應用程式開發簡介
@@ -62,7 +62,7 @@ ms.locfileid: "70760228"
 
 圖1-1 提供範例應用程式架構的高層級總覽。
 
-![](introduction-images/architecture.png "eShopOnContainers 高層級架構")
+![](introduction-images/architecture.png "eShopOnContainers high-level architecture")
 
 **圖 1-1**： eShopOnContainers 高層級架構
 
@@ -83,15 +83,15 @@ ms.locfileid: "70760228"
 
 這些後端服務會使用 ASP.NET Core MVC 實作為微服務，並部署為單一 Docker 主機內的唯一容器。 這些後端服務統稱為 eShopOnContainers 參考應用程式。 用戶端應用程式會透過具像狀態傳輸（REST） web 介面與後端服務通訊。 如需微服務和 Docker 的詳細資訊，請參閱[容器化微服務](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md)。
 
-如需後端服務的執行資訊，請參閱[.net 微服務：容器化 .NET 應用程式的架構](https://aka.ms/microservicesebook)。
+如需後端服務的執行資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
 ### <a name="mobile-app"></a>行動應用程式
 
 本指南著重于使用 Xamarin 建立跨平臺的企業應用程式，並使用 eShopOnContainers 行動應用程式做為範例。 圖1-2 顯示 eShopOnContainers 行動應用程式中的頁面，其中提供稍早所述的功能。
 
-[![](introduction-images/screenshots.png "EShopOnContainers 行動應用程式")](introduction-images/screenshots-large.png#lightbox "EShopOnContainers 行動應用程式")
+[![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
 
-**圖 1-2**：EShopOnContainers 行動應用程式
+**圖 1-2**： eShopOnContainers 行動應用程式
 
 行動應用程式會使用 eShopOnContainers reference 應用程式所提供的後端服務。 不過，您可以將它設定為針對想要避免部署後端服務的使用者，使用 mock 服務的資料。
 
@@ -105,7 +105,7 @@ EShopOnContainers 行動應用程式會練習下列的 Xamarin 功能：
 - Animations
 - 命令
 - 「行為」
-- 觸發程序
+- 「觸發程序」
 - 效果
 - 自訂轉譯器
 - MessagingCenter
@@ -121,14 +121,14 @@ EShopOnContainers 行動應用程式解決方案會將原始程式碼和其他�
 
 |專案|描述|
 |--- |--- |
-|eShopOnContainers.Core|此專案是可移植的類別庫（PCL）專案，其中包含共用程式碼和共用 UI。|
-|eShopOnContainers.Droid|此專案包含 Android 特定程式碼，而且是 Android 應用程式的進入點。|
-|eShopOnContainers.iOS|此專案包含 iOS 特定的程式碼，而且是 iOS 應用程式的進入點。|
-|eShopOnContainers.UWP|此專案包含通用 Windows 平臺（UWP）的特定程式碼，而且是 Windows 應用程式的進入點。|
-|eShopOnContainers.TestRunner.Droid|此專案是 eShopOnContainers Run-unittests 專案的 Android 測試執行器。|
-|eShopOnContainers.TestRunner.iOS|此專案是 eShopOnContainers Run-unittests 專案的 iOS 測試執行器。|
-|eShopOnContainers.TestRunner.Windows|此專案是 eShopOnContainers Run-unittests 專案的通用 Windows 平臺測試執行器。|
-|eShopOnContainers.UnitTests|此專案包含 eShopOnContainers 專案的單元測試。|
+|eShopOnContainers 核心|此專案是可移植的類別庫（PCL）專案，其中包含共用程式碼和共用 UI。|
+|eShopOnContainers. Droid|此專案包含 Android 特定程式碼，而且是 Android 應用程式的進入點。|
+|eShopOnContainers iOS|此專案包含 iOS 特定的程式碼，而且是 iOS 應用程式的進入點。|
+|eShopOnContainers. UWP|此專案包含通用 Windows 平臺（UWP）的特定程式碼，而且是 Windows 應用程式的進入點。|
+|eShopOnContainers. TestRunner. Droid|此專案是 eShopOnContainers Run-unittests 專案的 Android 測試執行器。|
+|eShopOnContainers. TestRunner. iOS|此專案是 eShopOnContainers Run-unittests 專案的 iOS 測試執行器。|
+|eShopOnContainers. TestRunner. Windows|此專案是 eShopOnContainers Run-unittests 專案的通用 Windows 平臺測試執行器。|
+|eShopOnContainers. Run-unittests|此專案包含 eShopOnContainers 專案的單元測試。|
 
 EShopOnContainers 行動應用程式中的類別可重複用於任何 Xamarin 應用程式中，幾乎不需要修改。
 
@@ -142,14 +142,14 @@ EShopOnContainers PCL 專案包含下列資料夾：
 |「行為」|包含對 view 類別公開的行為。|
 |控制項|包含應用程式所使用的自訂控制項。|
 |而言|包含將自訂邏輯套用至系結的值轉換器。|
-|效果|包含類別，用來變更特定`Entry`控制項的框線色彩。 `EntryLineColorEffect`|
-|例外狀況|包含自訂`ServiceAuthenticationException`。|
-|延伸模組|包含`VisualElement` 和`IEnumerable`類別的擴充方法。|
+|效果|包含 `EntryLineColorEffect` 類別，用來變更特定 `Entry` 控制項的框線色彩。|
+|例外狀況|包含自訂 `ServiceAuthenticationException`。|
+|延伸模組|包含 `VisualElement` 和 `IEnumerable` 類別的擴充方法。|
 |助手|包含應用程式的 helper 類別。|
 |模型|包含應用程式的模型類別。|
-|屬性|包含`AssemblyInfo.cs`，也就是 .net 元件中繼資料檔。|
+|內容|包含 `AssemblyInfo.cs`，也就是 .NET 元件中繼資料檔。|
 |服務|包含介面和類別，可執行提供給應用程式的服務。|
-|觸發程序|`BeginAnimation`包含觸發程式，用來叫用 XAML 中的動畫。|
+|「觸發程序」|包含 `BeginAnimation` 觸發程式，用來叫用 XAML 中的動畫。|
 |驗證|包含與驗證資料輸入相關的類別。|
 |ViewModels|包含公開給頁面的應用程式邏輯。|
 |檢視|包含應用程式的頁面。|

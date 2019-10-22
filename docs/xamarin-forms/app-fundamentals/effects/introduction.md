@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: e9325c34c645b75f28c7e2070f6bb095780ddb02
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771454"
 ---
 # <a name="introduction-to-effects"></a>效果簡介
 
-_效果可讓您自訂每個平台上的原生控制項，通常用於小型的樣式變更。本文提供效果簡介、概述效果與自訂轉譯器之間的界限，並描述 PlatformEffect 類別。_
+_效果可讓您自訂每個平臺上的原生控制項，通常用於小型的樣式變更。本文提供效果簡介、概述效果與自訂轉譯器之間的界限，並描述 PlatformEffect 類別。_
 
 Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/controls/index.md)提供一個通用 API 來描述跨平台行動裝置使用者介面。 系統會在每個平台上使用 `Renderer` 類別，以不同的方式轉譯每個頁面、配置和控制項，進而建立原生控制項 (對應至 Xamarin.Forms 表示方式)、將其排列在畫面上，然後新增在共用程式碼中指定的行為。
 

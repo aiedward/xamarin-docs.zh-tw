@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70769902"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin. Mac 中的資料庫
@@ -33,7 +33,7 @@ _本文說明如何使用索引鍵/值編碼和索引鍵-值觀察，以允許 S
 
 由於我們將使用索引鍵/值編碼和資料系結，因此請先進行資料系結[和索引鍵-值編碼](~/mac/app-fundamentals/databinding.md)，因為將會涵蓋將在本檔及其範例應用程式中使用的核心技術和概念。
 
-您可能想要查看[Xamarin. Mac 內部](~/mac/internals/how-it-works.md)檔的「將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將`Register` C#類別`Export`連線到的和屬性。目標-C 物件和 UI 元素。
+您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的「 C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將類別連線到目標-c 的 `Register` 和 `Export` 屬性物件和 UI 元素。
 
 ## <a name="direct-sqlite-access"></a>直接 SQLite 存取
 
@@ -476,7 +476,7 @@ public bool isManager {
 }
 ```
 
-如果先前已在其中儲存資料，則會將**名稱**、**職業**或**ismanager.exe**屬性所做的任何變更傳送至資料庫（例如， `_conn`如果變數不`null`是）。 接下來，我們來看一下我們新增的方法，以**建立**、**更新**、**載入**和**刪除**資料庫中的人員。
+如果先前已在其中儲存資料，則會將**名稱**、**職業**或**ismanager.exe**屬性所做的任何變更傳送至資料庫（例如，如果 `_conn` 變數不 `null`）。 接下來，我們來看一下我們新增的方法，以**建立**、**更新**、**載入**和**刪除**資料庫中的人員。
 
 #### <a name="create-a-new-record"></a>建立新記錄
 
@@ -526,19 +526,19 @@ public void Create(SqliteConnection conn) {
 }
 ```
 
-我們會使用`SQLiteCommand` ，在資料庫中建立新記錄。 我們會從（conn）取得`SQLiteConnection`新的命令，並藉由呼叫`CreateCommand`將其傳入方法。 接下來，我們將 SQL 指令設定為實際寫入新的記錄，並提供實際值的參數：
+我們會使用 `SQLiteCommand` 在資料庫中建立新記錄。 我們會從 `SQLiteConnection` （conn）取得新的命令，並藉由呼叫 `CreateCommand` 傳遞至方法。 接下來，我們將 SQL 指令設定為實際寫入新的記錄，並提供實際值的參數：
 
 ```csharp
 command.CommandText = "INSERT INTO [People] (ID, Name, Occupation, isManager, ManagerID) VALUES (@COL1, @COL2, @COL3, @COL4, @COL5)";
 ```
 
-之後，我們會使用`Parameters.AddWithValue` `SQLiteCommand`上的方法來設定參數的值。 藉由使用參數，我們可以確保在傳送至 SQLite 之前，會適當地編碼值（例如單一引號）。 範例：
+之後，我們會在 `SQLiteCommand` 上使用 `Parameters.AddWithValue` 方法來設定參數的值。 藉由使用參數，我們可以確保在傳送至 SQLite 之前，會適當地編碼值（例如單一引號）。 範例：
 
 ```csharp
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-最後，由於人員可以是經理，而且有員工的集合，所以我們會以遞迴方式在這些人`Create`上呼叫方法，將它們儲存到資料庫中：
+最後，由於人員可以是經理，而且有員工的集合，所以我們會以遞迴方式在這些人上呼叫 `Create` 方法，將它們儲存到資料庫中：
 
 ```csharp
 // Save children to database as well
@@ -594,7 +594,7 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-如同上述的**Create** ，我們`SQLiteCommand` `SQLiteConnection`從傳入的取得，並設定我們的 SQL 來更新我們的記錄（提供參數）：
+如同上述的**Create** ，我們從傳入的 `SQLiteConnection` 取得 `SQLiteCommand`，並設定我們的 SQL 來更新我們的記錄（提供參數）：
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";
@@ -711,7 +711,7 @@ command.CommandText = "SELECT ID FROM [People] WHERE ManagerID = @COL1";
 command.Parameters.AddWithValue ("@COL1", id);
 ```
 
-最後，我們會使用資料讀取器來執行查詢，並傳回記錄欄位（我們會將其複製到`PersonModel`類別的實例）：
+最後，我們會使用資料讀取器來執行查詢，並傳回記錄欄位（我們會將其複製到 `PersonModel` 類別的實例）：
 
 ```csharp
 using (var reader = command.ExecuteReader ()) {
@@ -726,7 +726,7 @@ using (var reader = command.ExecuteReader ()) {
 }
 ```
 
-如果此人員是經理，我們也需要載入所有員工（同樣地，以遞迴方式呼叫其`Load`方法）：
+如果此人員是經理，我們也必須一併載入所有員工（同樣地，以遞迴方式呼叫其 `Load` 方法）：
 
 ```csharp
 // Is this a manager?
@@ -798,7 +798,7 @@ command.CommandText = "DELETE FROM [People] WHERE (ID = @COL1 OR ManagerID = @CO
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-移除記錄之後，我們會清除`PersonModel`類別目前的實例：
+移除記錄之後，我們會清除 `PersonModel` 類別的目前實例：
 
 ```csharp
 // Empty class
@@ -969,13 +969,13 @@ _conn.Close ();
 
 ```
 
-在這裡，我們會針對`PersonModel`類別使用多載的函式，將人員載入記憶體中：
+在這裡，我們會使用 `PersonModel` 類別的函式多載，將人員載入記憶體中：
 
 ```csharp
 var person = new PersonModel (_conn, childID);
 ```
 
-我們也會呼叫資料系結類別，將人員加入我們的人員`AddPerson (person)`集合中，這可確保 UI 能夠辨識變更並加以顯示：
+我們也會呼叫資料系結類別，將人員加入 `AddPerson (person)` 的集合中，這可確保 UI 能夠辨識變更並加以顯示：
 
 ```csharp
 [Export("addObject:")]
@@ -1010,7 +1010,7 @@ using (var command = _conn.CreateCommand ()) {
 _conn.Close ();
 ```
 
-在 SQL 語句中唯一的真正差異（只會載入管理員`command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`），但其運作方式與上述區段相同。
+在 SQL 語句中唯一的實際差異（只會載入 `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"` 的管理員），但其運作方式與上述區段相同。
 
 <a name="Databases-and-ComboBoxes" />
 
@@ -1018,19 +1018,19 @@ _conn.Close ();
 
 可供 macOS 使用的功能表控制項（例如下拉式方塊）可以設定為從內部清單（可以在 Interface Builder 中預先定義或透過程式碼填入）填入下拉式清單，或提供您自己的自訂外部資料源。 如需詳細資訊，請參閱[提供功能表控制項資料](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data)。
 
-例如，在 Interface Builder 中編輯上方的簡單系結範例，新增下拉式方塊，並使用名為`EmployeeSelector`的插座加以公開：
+例如，在 Interface Builder 中編輯上方的簡單系結範例，新增下拉式方塊，並使用名為 `EmployeeSelector` 的插座加以公開：
 
 [![公開下拉式方塊插座](databases-images/combo01.png "公開下拉式方塊插座")](databases-images/combo01-large.png#lightbox)
 
 在 [**屬性偵測器**] 中，檢查**自動完成**並**使用資料來源**屬性：
 
-設定![下拉式列示方塊屬性]設定(databases-images/combo02.png "下拉式列示方塊屬性")
+![設定下拉式列示方塊屬性](databases-images/combo02.png "設定下拉式列示方塊屬性")
 
 儲存您的變更，並返回 Visual Studio for Mac 以進行同步處理。
 
 #### <a name="providing-combobox-data"></a>提供 combobox 資料
 
-接下來，將新類別新增至名`ComboBoxDataSource`為的專案，使其看起來如下所示：
+接下來，將新類別新增至名為 `ComboBoxDataSource` 的專案，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -1399,11 +1399,11 @@ namespace MacDatabase
 }
 ```
 
-在此範例中，我們會建立新`NSComboBoxDataSource`的，它可以呈現來自任何 SQLite 資料來源的下拉式方塊專案。 首先，我們會定義下列屬性：
+在此範例中，我們會建立新的 `NSComboBoxDataSource`，以顯示來自任何 SQLite 資料來源的下拉式方塊專案。 首先，我們會定義下列屬性：
 
 - `Conn`-取得或設定 SQLite 資料庫的連接。
 - `TableName`-取得或設定資料表名稱。
-- `IDField`-取得或設定提供給定資料表之唯一識別碼的欄位。 預設值為 `ID`。
+- `IDField`-取得或設定提供給定資料表之唯一識別碼的欄位。 預設值是 `ID`。
 - `DisplayField`-取得或設定下拉式清單中顯示的欄位。
 - `RecordCount`-取得給定資料表中的記錄數目。
 
@@ -1419,7 +1419,7 @@ public ComboBoxDataSource (SqliteConnection conn, string tableName, string displ
 }
 ```
 
-`GetRecordCount`方法會傳回給定資料表中的記錄數目：
+@No__t_0 方法會傳回給定資料表中的記錄數目：
 
 ```csharp
 private nint GetRecordCount ()
@@ -1461,9 +1461,9 @@ private nint GetRecordCount ()
 }
 ```
 
-每當或`TableName` `IDField` 屬性`DisplayField`值變更時，就會呼叫它。
+每當 `TableName`、`IDField` 或 `DisplayField` 屬性值變更時，就會呼叫它。
 
-方法會針對指定的下拉式清單`IDField`專案索引，傳回記錄的唯一識別碼（）： `IDForIndex` 
+@No__t_0 方法會傳回指定的下拉式清單專案索引之記錄的唯一識別碼（`IDField`）： 
 
 ```csharp
 public string IDForIndex (nint index)
@@ -1504,7 +1504,7 @@ public string IDForIndex (nint index)
 }
 ```
 
-方法會傳回指定下拉式清單`DisplayField`索引之專案的值（）： `ValueForIndex`
+@No__t_0 方法會傳回指定下拉式清單索引之專案的值（`DisplayField`）：
 
 ```csharp
 public string ValueForIndex (nint index)
@@ -1545,7 +1545,7 @@ public string ValueForIndex (nint index)
 }
 ```
 
-方法會傳回指定值（`DisplayField`）`IDField`的唯一識別碼（）： `IDForValue`
+@No__t_0 方法會傳回指定值（`DisplayField`）的唯一識別碼（`IDField`）：
 
 ```csharp
 public string IDForValue (string value)
@@ -1589,7 +1589,7 @@ public string IDForValue (string value)
 }
 ```
 
-當、或屬性`DisplayField`變更時，會傳回清單中專案的預先計算數目`IDField` ，以進行計算： `TableName` `ItemCount`
+@No__t_0 會在 `TableName`、`IDField` 或 `DisplayField` 屬性變更時，傳回清單中的專案數預先計算。
 
 ```csharp
 public override nint ItemCount (NSComboBox comboBox)
@@ -1598,7 +1598,7 @@ public override nint ItemCount (NSComboBox comboBox)
 }
 ```
 
-方法會為指定的下拉式`DisplayField`清單專案索引提供值（）： `ObjectValueForItem`
+@No__t_0 方法會為指定的下拉式清單專案索引提供值（`DisplayField`）：
 
 ```csharp
 public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
@@ -1639,9 +1639,9 @@ public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 }
 ```
 
-請注意，我們會在`LIMIT` SQLite `OFFSET`命令中使用和語句，以限制我們所需的一筆記錄。
+請注意，我們會使用 SQLite 命令中的 `LIMIT` 和 `OFFSET` 語句，限制為所需的一筆記錄。
 
-方法會傳回指定值（`DisplayField`）的下拉式專案索引： `IndexOfItem`
+@No__t_0 方法會傳回指定值（`DisplayField`）的下拉式專案索引：
 
 ```csharp
 public override nint IndexOfItem (NSComboBox comboBox, string value)
@@ -1691,9 +1691,9 @@ public override nint IndexOfItem (NSComboBox comboBox, string value)
 }
 ```
 
-如果找不到值， `NSRange.NotFound`則會傳回值，而且會在下拉式清單中取消選取所有專案。
+如果找不到值，則會傳回 `NSRange.NotFound` 值，並在下拉式清單中取消選取所有專案。
 
-方法會針對部分具類型的專案`DisplayField`傳回第一個相符的值（）： `CompletedString`
+@No__t_0 方法會針對部分具類型的專案傳回第一個相符的值（`DisplayField`）：
 
 ```csharp
 public override string CompletedString (NSComboBox comboBox, string uncompletedString)
@@ -1743,7 +1743,7 @@ public override string CompletedString (NSComboBox comboBox, string uncompletedS
 
 #### <a name="displaying-data-and-responding-to-events"></a>顯示資料和回應事件
 
-若要將所有元件結合在一起，請`SubviewSimpleBindingController`編輯，使其看起來如下所示：
+若要將所有部分結合在一起，請編輯 `SubviewSimpleBindingController`，讓它看起來如下所示：
 
 ```csharp
 using System;
@@ -1858,9 +1858,9 @@ namespace MacDatabase
 }
 ```
 
-屬性會提供附加至下拉式方塊`ComboBoxDataSource`之（如上所建立）的快捷方式。 `DataSource`
+[@No__t_0] 屬性會提供附加至下拉式方塊之 `ComboBoxDataSource` （如上所建立）的快捷方式。
 
-`LoadSelectedPerson`方法會針對指定的唯一識別碼，從資料庫載入人員：
+@No__t_0 方法會針對指定的唯一識別碼，從資料庫載入人員：
 
 ```csharp
 private void LoadSelectedPerson (string id)
@@ -1874,13 +1874,13 @@ private void LoadSelectedPerson (string id)
 }
 ```
 
-`AwakeFromNib`在方法覆寫中，我們會先附加自訂下拉式方塊資料來源的實例：
+在 `AwakeFromNib` 方法覆寫中，我們會先附加自訂下拉式方塊資料來源的實例：
 
 ```csharp
 EmployeeSelector.DataSource = new ComboBoxDataSource (Conn, "People", "Name");
 ```
 
-接下來，我們會藉由尋找所提供之資料的相關唯一識別碼（），來回應使用者`IDField`編輯下拉式方塊的文字值（如果找到的話），並載入指定的人員：
+接下來，我們會藉由尋找所提供的資料相關聯的唯一識別碼（`IDField`）來回應使用者編輯下拉式方塊的文字值（如果找到的話），並載入指定的人員：
 
 ```csharp
 EmployeeSelector.Changed += (sender, e) => {
@@ -1912,7 +1912,7 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 如上所述，藉由使用開放原始碼[SQLite.NET](http://www.sqlite.org)物件關聯性管理員（ORM），我們可以大幅減少從 SQLite 資料庫讀取和寫入資料所需的程式碼數量。 當系結資料時，這可能不是最理想的路由，因為索引鍵/值編碼和資料系結會在物件上放置一些需求。
 
-根據 SQLite.Net 網站， _「SQLite 是一種軟體程式庫，它會實作為獨立的無伺服器、零設定、交易式 SQL database 引擎。SQLite 是世界上最廣泛部署的資料庫引擎。SQLite 的原始程式碼位於公用網域中。」_
+根據 SQLite.Net 網站，「 _SQLite 是一種軟體程式庫，它會實作為獨立的無伺服器、零設定、交易式 SQL database 引擎。SQLite 是世界上最廣泛部署的資料庫引擎。SQLite 的原始程式碼位於公用網域中。_ 」
 
 在下列各節中，我們將示範如何使用 SQLite.Net 來提供資料表視圖的資料。
 
@@ -1923,14 +1923,14 @@ SQLite.NET 會顯示為您在應用程式中包含的 NuGet 套件。 我們必�
 執行下列動作以新增套件：
 
 1. 在  **Solution Pad**中，以滑鼠右鍵按一下 **套件** 資料夾，然後選取 **新增套件 ...**
-2. 在`SQLite.net` **搜尋**方塊中輸入，然後選取 [ **sqlite-net** ] 專案：
+2. 在 [**搜尋**] 方塊中輸入 `SQLite.net`，然後選取 [ **sqlite-net** ] 專案：
 
     [![新增 SQLite NuGet 套件](databases-images/nuget01.png "新增 SQLite NuGet 套件")](databases-images/nuget01-large.png#lightbox)
 3. 按一下 [**新增套件**] 按鈕以完成。
 
 ### <a name="creating-the-data-model"></a>建立資料模型
 
-讓我們將新的類別新增至專案，並在`OccupationModel`中呼叫。 接下來，我們要編輯**OccupationModel.cs**檔案，讓它看起來如下所示：
+讓我們將新的類別新增至專案，並在 `OccupationModel` 中呼叫。 接下來，我們要編輯**OccupationModel.cs**檔案，讓它看起來如下所示：
 
 ```csharp
 using System;
@@ -1966,7 +1966,7 @@ namespace MacDatabase
 }
 ```
 
-首先，我們會包含 SQLite.NET`using Sqlite`（），然後公開數個屬性，其中每個都將在儲存此記錄時寫入至資料庫。 我們做為主要金鑰的第一個屬性，並將它設定為 [自動遞增]，如下所示：
+首先，我們會包含 SQLite.NET （`using Sqlite`），然後公開數個屬性，其中每個都將在儲存此記錄時寫入至資料庫。 我們做為主要金鑰的第一個屬性，並將它設定為 [自動遞增]，如下所示：
 
 ```csharp
 [PrimaryKey, AutoIncrement]
@@ -2071,7 +2071,7 @@ conn.Insert (Occupation);
 
 ### <a name="creating-the-table-data-source"></a>建立資料表資料來源
 
-讓我們建立一個自訂資料來源，為我們的資料表提供資料。 首先，新增名`TableORMDatasource`為的新類別，使其看起來如下所示：
+讓我們建立一個自訂資料來源，為我們的資料表提供資料。 首先，新增名為 `TableORMDatasource` 的新類別，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -2125,11 +2125,11 @@ namespace MacDatabase
 }
 ```
 
-稍後當我們建立此類別的實例時，我們會傳入 open SQLite.NET 資料庫連接。 方法會查詢資料庫，並將找到的記錄複製到記憶體中（ `OccupationModel`使用我們的資料模型）。 `LoadOccupations`
+稍後當我們建立此類別的實例時，我們會傳入 open SQLite.NET 資料庫連接。 @No__t_0 方法會查詢資料庫，並將找到的記錄複製到記憶體中（使用我們的 `OccupationModel` 資料模型）。
 
 ### <a name="creating-the-table-delegate"></a>建立資料表委派
 
-我們需要的最後一個類別是自訂資料表委派，用來顯示我們從 SQLite.NET 資料庫載入的資訊。 讓我們在專案中`TableORMDelegate`新增新的，使其看起來如下所示：
+我們需要的最後一個類別是自訂資料表委派，用來顯示我們從 SQLite.NET 資料庫載入的資訊。 讓我們在專案中加入新的 `TableORMDelegate`，讓它看起來如下所示：
 
 ```csharp
 using System;
@@ -2193,11 +2193,11 @@ namespace MacDatabase
 }
 ```
 
-在這裡，我們會使用資料`Occupations`源的集合（我們從 SQLite.NET 資料庫載入），透過`GetViewForItem`方法覆寫填入資料表的資料行。
+在這裡，我們會使用資料來源的 `Occupations` 集合（我們從 SQLite.NET 資料庫載入），透過 `GetViewForItem` 方法覆寫填入資料表的資料行。
 
 ### <a name="populating-the-table"></a>填入資料表
 
-當所有的部分都備妥之後，讓我們藉由覆寫`AwakeFromNib`方法並使其看起來像下面這樣，在資料表中填入 xib 檔案來擴展它：
+當所有的部分都備妥之後，讓我們藉由覆寫 `AwakeFromNib` 方法並使其看起來如下所示，從 xib 檔案擴展我們的資料表：
 
 ```csharp
 public override void AwakeFromNib ()

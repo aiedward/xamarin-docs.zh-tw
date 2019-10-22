@@ -7,17 +7,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 02/22/2018
 ms.openlocfilehash: 5539bab417c5efc0064cd1753cb74c7524463ee5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70765915"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>將 Xamarin 統一應用程式更新為64位
 
 自2018年1月起，Apple 要求新的[Mac App Store 提交目標為64位](https://developer.apple.com/news/?id=06282017a)。 已在 Mac App Store 上使用的應用程式，在6月2018日必須更新為目標64位。
 
-[檔案] [**新增**] [Xamarin] 專案範本預設會建立64位應用程式，因此任何最近建立的應用程式都已與64位相容，而且不需要任何變更。  > 
+[ **File**  > **New** Xamarin] 專案範本預設會建立64位應用程式，因此任何最近建立的應用程式都已與64位相容，而且不需要任何變更。
 
 ## <a name="targeting-64-bit"></a>以64位為目標
 
@@ -25,9 +25,9 @@ ms.locfileid: "70765915"
 
    ![專案的內容功能表](mac-64-bit-images/1-contextual_menu-vsmac.png "專案的內容功能表")
 
-2. 選取 [ **Mac 組建**]，並將**支援的架構**設定為**x86\_64**：
+2. 選取 [ **Mac 組建**]，並將**支援的架構**設定為**x86 \_64**：
 
-   [將![支援的架構設定為 x86_64]將(mac-64-bit-images/2-project_options-vsmac.png "支援的架構設定為 x86_64")](mac-64-bit-images/2-project_options-vsmac-large.png#lightbox)
+   [![將支援的架構設定為 x86_64](mac-64-bit-images/2-project_options-vsmac.png "將支援的架構設定為 x86_64")](mac-64-bit-images/2-project_options-vsmac-large.png#lightbox)
 
 3. 如果您的應用程式具有任何外部相依性（例如原生參考或系結專案），請將它們更新為目標64位。
 
@@ -46,7 +46,7 @@ file was built for i386 which is not the architecture being linked (x86_64):
 PATH/ThirdPartyLibrary.framework/ThirdPartyLibrary 
 ```
 
-藉由`dlopen` `IntPtr.Zero`傳回而不是預期的控制碼，您可以在執行時間中遵循此錯誤。
+這個錯誤可能會在執行時間之後，`dlopen` 傳回 `IntPtr.Zero` 而不是預期的控制碼。
 
 #### <a name="example-error-resulting-from-a-statically-linked-third-party-dependency-that-does-not-target-64-bit"></a>因靜態連結的協力廠商相依性未以64位為目標而產生的範例錯誤：
 

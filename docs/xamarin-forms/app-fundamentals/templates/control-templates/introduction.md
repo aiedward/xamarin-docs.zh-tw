@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: 70646999154297592137c6966626b318fb73897c
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70771259"
 ---
 # <a name="introduction-to-xamarinforms-control-templates"></a>Xamarin.Forms 控制項範本簡介
 
-_Xamarin.Forms 控制項範本可以在執行階段輕鬆地設定和重新設定應用程式頁面的佈景主題。本文提供控制項範本的簡介。_
+_[Xamarin] 控制項範本可讓您在執行時間輕鬆地主題和重新主題應用程式頁面。本文提供控制項範本的簡介。_
 
 控制項具有不同的屬性 (例如 `BackgroundColor` 和 `TextColor`)，可定義控制項外觀的各層面。 這些屬性可使用[樣式](~/xamarin-forms/user-interface/styles/index.md)來設定，並可在執行階段變更以實作基本佈景主題。 不過，樣式無法確保清楚區隔頁面及其內容的外觀，而且設定這類屬性可做的變更有限。
 
@@ -26,7 +26,7 @@ _Xamarin.Forms 控制項範本可以在執行階段輕鬆地設定和重新設�
 
 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 可指定頁面或檢視的外觀，並包含根配置及配置中用來實作範本的控制項。 一般而言，`ControlTemplate` 會利用 [`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter) 來標示頁面或檢視所要顯示內容的出現位置。 使用 `ControlTemplate` 的頁面或檢視會接著定義由 `ContentPresenter` 顯示內容。 下圖說明內含一些控制項的頁面 `ControlTemplate`，包括以藍色方框標示的 `ContentPresenter`：
 
-![](introduction-images/control-template.png "頁面的控制項範本")
+![](introduction-images/control-template.png "Control Template for a Page")
 
 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 可透過設定其 `ControlTemplate` 屬性來套用至下列類型：
 

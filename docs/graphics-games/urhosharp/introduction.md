@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
 ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "67832536"
 ---
 # <a name="introduction-to-urhosharp"></a>UrhoSharp 簡介
@@ -68,7 +68,7 @@ UrhoSharp 可輕鬆地散佈為[NuGet 套件](https://www.nuget.org/)，而且�
 
 ## <a name="basic-structure"></a>基本結構
 
-您的`Application`遊戲應該將類別子類別化，這是您要在其中設定遊戲`Setup` （在方法上）並啟動遊戲（ `Start`在方法中）的地方。  然後您會建立主要的使用者介面。  我們將逐步解說一個小範例，其中顯示設定3D 場景的 Api、一些 UI 專案，以及附加簡單的行為。
+您的遊戲應將 `Application` 類別子類別化，這是您在其中設定遊戲（在 `Setup` 方法上）並啟動遊戲（在 `Start` 方法中）的地方。  然後您會建立主要的使用者介面。  我們將逐步解說一個小範例，其中顯示設定3D 場景的 Api、一些 UI 專案，以及附加簡單的行為。
 
 ```csharp
 class MySample : Application {
@@ -135,9 +135,9 @@ class MySample : Application {
 new MySample().Run();
 ```
 
-執行時間將會`Setup`為您叫用和`Start`方法。  如果您覆`Setup`寫，您可以設定引擎參數（在此範例中不會顯示）。
+執行時間將會為您叫用 `Setup` 和 `Start` 方法。  如果您覆寫 `Setup` 則可以設定引擎參數（在此範例中不會顯示）。
 
-您必須覆`Start`寫，因為這將會啟動您的遊戲。  在此方法中，您將會載入您的資產、連接事件處理常式、設定您的場景，並啟動任何您想要的動作。  在我們的範例中，我們會建立一些 UI 來向使用者顯示，以及設定3D 場景。
+您必須覆寫 `Start`，因為這將會啟動您的遊戲。  在此方法中，您將會載入您的資產、連接事件處理常式、設定您的場景，並啟動任何您想要的動作。  在我們的範例中，我們會建立一些 UI 來向使用者顯示，以及設定3D 場景。
 
 下列程式碼片段會使用 UI 架構來建立文字專案，並將其新增至您的應用程式：
 
@@ -156,11 +156,11 @@ helloText.SetFont(
 UI.Root.AddChild(helloText);
 ```
 
-UI 架構是提供非常簡單的遊戲內使用者介面，其運作方式是將新的`UI.Root`節點加入至節點。
+UI 架構是提供非常簡單的遊戲內使用者介面，其運作方式是將新的節點加入至 `UI.Root` 節點。
 
 範例的第二個部分會將主要場景進行設置。  這牽涉到幾個步驟：建立3D 場景、在螢幕中建立3D 方塊、新增光源、攝影機和一個視口。  在[場景、節點、元件和相機](~/graphics-games/urhosharp/using.md#scenenodescomponentsandcameras)一節中，將會更詳細地探索這些功能。
 
-範例的第三個部分會觸發幾個動作。  動作是描述特定效果的配方，一旦建立之後，就可以藉由在上呼叫`RunActionAsync`方法`Node`，依需求節點來執行。
+範例的第三個部分會觸發幾個動作。  動作是描述特定效果的配方，一旦建立之後，就可以在 `Node` 上呼叫 `RunActionAsync` 方法，依需求節點來執行。
 
 第一個動作會調整具有跳動效果的方塊，而第二個動作則會永久旋轉方塊：
 
@@ -169,7 +169,7 @@ await boxNode.RunActionsAsync(
     new EaseBounceOut(new ScaleTo(duration: 1f, scale: 1)));
 ```
 
-上圖顯示我們所建立的第一個動作是一個`ScaleTo`動作，這只是一個配方，表示您想要將第二個值調整為一個節點的 [小數值] 屬性。  此動作接著會圍繞緩動動作（ `EaseBounceOut`動作）加以包裝。  「緩動」動作會扭曲動作的線性執行並套用效果，在此情況下，它會提供跳動的效果。
+上圖顯示我們所建立的第一個動作是 `ScaleTo` 動作，這只是一個配方，表示您想要將第二個值調整為一個節點的小數值屬性。  此動作接著會圍繞緩動動作（`EaseBounceOut` 動作）加以包裝。  「緩動」動作會扭曲動作的線性執行並套用效果，在此情況下，它會提供跳動的效果。
 因此，我們的配方可以撰寫為：
 
 ```csharp

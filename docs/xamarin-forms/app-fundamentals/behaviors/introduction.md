@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: d62ba6b025b2fe9865df8279a5e98eba254bb5a2
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70772053"
 ---
 # <a name="introduction-to-behaviors"></a>行為簡介
 
-_行為可讓您將功能新增至使用者介面控制項，而不需將其歸類為子類別。相反地，功能會在行為類別中實作並附加至控制項，如同控制項本身的一部分。本文提供行為簡介。_
+_行為可讓您將功能新增至使用者介面控制項，而不需要將其設為子類別。相反地，此功能會在行為類別中實作為，並附加至控制項，如同控制項本身的一部分。本文提供行為簡介。_
 
 行為可讓您實作您通常必須撰寫為程式碼後置的程式碼，因為此程式碼直接與控制項的 API 互動，所以透過此方式可以精確附加至控制項並封裝，以供多個應用程式重複使用。 可用來提供各種功能給控制項，例如：
 

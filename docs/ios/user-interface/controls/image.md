@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/13/2018
 ms.openlocfilehash: 255f308078c892605b9ce20b17fd737c5582eaed
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70768982"
 ---
 # <a name="displaying-images-with-xamarinios"></a>使用 Xamarin 來顯示影像
@@ -26,7 +26,7 @@ Visual Studio for Mac 也支援稱為**資源**的特殊目錄，也可以包含
 
 這個螢幕擷取畫面顯示以滑鼠右鍵按一下檔案時所顯示的**組建動作**選項：
 
- [![](image-images/image30a.png "組建動作功能表")](image-images/image30a.png#lightbox)
+ [![](image-images/image30a.png "Build Action menu")](image-images/image30a.png#lightbox)
 
 Visual Studio for Mac 通常會自動選擇正確的**組建動作**，但您應該留意這些設定，特別是當您在專案中移動檔案時。
 
@@ -34,15 +34,15 @@ Visual Studio for Mac 通常會自動選擇正確的**組建動作**，但您應
 
 若要將影像檔案新增至專案，請先以滑鼠右鍵按一下專案，然後選擇 [**加入**檔案]。
 
- [![](image-images/image31a.png "新增檔案 .。。下拉式功能表")](image-images/image31a.png#lightbox)
+ [![](image-images/image31a.png "Add Files... menu")](image-images/image31a.png#lightbox)
 
 選取您想要包含在 [標準檔案] 對話方塊中的影像（或影像）。 影像的預設組建動作將會是**BundleResource** –除非您有特定原因，否則請勿覆寫此值。
 
- [![](image-images/image32a.png "[新增檔案] 對話方塊")](image-images/image32a.png#lightbox)
+ [![](image-images/image32a.png "Add Files dialog")](image-images/image32a.png#lightbox)
 
 映射將會新增至您的專案，並可在程式碼中載入和顯示。 這個螢幕擷取畫面顯示新增至 iOS 應用程式專案的映射：
 
- [![](image-images/image33a.png "專案中的影像")](image-images/image33a.png#lightbox)
+ [![](image-images/image33a.png "Image in project")](image-images/image33a.png#lightbox)
 
 ### <a name="what-is-the-resources-directory"></a>什麼是資原始目錄？
 
@@ -59,11 +59,11 @@ Visual Studio for Mac 通常會自動選擇正確的**組建動作**，但您應
 
 在 iOS 設計工具中，使用**影像視圖**來顯示影像或動畫系列的影像。 [工具箱] 中的**影像視圖**圖示如下所示：
 
- [![](image-images/image35a.png "工具箱中的 ImageView")](image-images/image35.png#lightbox)
+ [![](image-images/image35a.png "ImageView in Toolbox")](image-images/image35.png#lightbox)
 
 將 [**影像] 視圖**從 [**工具箱**] 拖曳至 View 控制器。 然後，在 [**影像視圖] > [影像**] 下，下拉式清單會提供專案中所有可用的影像檔案清單。 選取其中任何一項，將其新增至您的影像視圖。
 
- [![](image-images/image36a.png "工具箱中的 ImageView")](image-images/image36.png#lightbox)
+ [![](image-images/image36a.png "ImageView in Toolbox")](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>以程式設計方式顯示影像
 

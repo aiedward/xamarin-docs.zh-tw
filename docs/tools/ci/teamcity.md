@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/23/2017
 ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "72273123"
 ---
 # <a name="using-team-city-with-xamarin"></a>搭配 Xamarin 使用小組城市
@@ -66,7 +66,7 @@ TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
 
 下圖說明所有這些元件：
 
-![](teamcity-images/image1.png "下圖說明所有這些元件")
+![](teamcity-images/image1.png "This diagram illustrates all of these components")
 
 安裝完所有軟體之後，請登入使用者帳戶，並確認所有軟體都已正確安裝且正常運作。 這應該包括編譯解決方案，並將應用程式提交至測試雲端。 執行組建腳本可大幅簡化這項工作，如下一節所述。
 
@@ -85,7 +85,7 @@ TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
 
 - [**psake**](https://github.com/psake/psake) –這是用來建立軟體的 Windows Powershell 程式庫
 
-- [假](http://fsharp.github.io/FAKE/)–這是以 DSL 為基礎F#的，可讓您在必要時利用現有的 .net 程式庫。
+- [**假**](http://fsharp.github.io/FAKE/)–這是以 DSL 為基礎F#的，可讓您在必要時利用現有的 .net 程式庫。
 
 所使用的指令碼語言取決於您的喜好設定和需求。 [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)範例包含使用 Rake 做為[組建腳本](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)的範例。
 
@@ -167,35 +167,35 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 1. 透過網頁瀏覽器登入 TeamCity 來啟動。 流覽至根專案：
 
-    ![流覽至]根專案流覽至根專案底下(teamcity-images/image2.png "的根專案")，建立新的子專案：
+    ![流覽至根專案](teamcity-images/image2.png "流覽至根專案")在根專案底下，建立新的子專案：
 
     ![流覽至根專案底下的根專案，建立新的子專案](teamcity-images/image3.png "流覽至根專案底下的根專案，建立新的子專案")
 2. 建立子專案之後，請加入新的組建設定：
 
-    ![建立子專案之後，]在建立子專案之後加入新的組建設定，並新增(teamcity-images/image5.png "組建")設定
+    ![建立子專案之後，新增組建設定](teamcity-images/image5.png "建立子專案之後，新增組建設定")
 3. 將 VCS 專案附加至組建設定。 這是透過 [版本控制設定] 畫面來完成：
 
-    ![這是透過 [版本控制設定] 畫面完成]，(teamcity-images/image6.png "這是透過 [版本控制設定] 畫面來完成")
+    ![這是透過 [版本控制設定] 畫面來完成](teamcity-images/image6.png "這是透過 [版本控制設定] 畫面來完成")
 
     如果沒有建立任何 VCS 專案，您可以選擇從新的 VCS 根頁面建立一個，如下所示：
 
-    ![如果沒有建立任何 vcs 專案，您可以選擇從新的 Vcs 根頁面建立一個]，(teamcity-images/image7.png "如果沒有建立任何 vcs 專案，您可以選擇從新的 [vc 根] 頁面建立一個")。
+    ![如果沒有建立任何 VCS 專案，您可以選擇從新的 [VCS 根] 頁面建立一個](teamcity-images/image7.png "如果沒有建立任何 VCS 專案，您可以選擇從新的 [VCS 根] 頁面建立一個")
 
     附加了 VCS 根之後，TeamCity 將會簽出項目，並嘗試自動偵測組建步驟。 如果您熟悉 TeamCity，則可以選取其中一個偵測到的組建步驟。 現在您可以放心地忽略偵測到的組建步驟。
 
 4. 接下來，設定組建觸發程式。 這會在符合特定條件時將組建排入佇列，例如當使用者將程式碼認可至存放庫時。 下列螢幕擷取畫面顯示如何新增組建觸發程式：
 
-    ![這個螢幕擷取畫面顯示如何新增組建觸發]程式：(teamcity-images/image8.png "這個螢幕擷取畫面顯示如何新增組建")觸發程式的範例，如下列螢幕擷取畫面所示。
+    ![此螢幕擷取畫面顯示如何新增組建觸發](teamcity-images/image8.png "此螢幕擷取畫面顯示如何新增組建觸發程式")程式您可以在下列螢幕擷取畫面中，看到設定組建觸發程式的範例：
 
-    設定![組建觸發程式的範例可在此螢幕擷取畫面中看到]設定(teamcity-images/image9.png "組建觸發程式的範例，可在此螢幕擷取畫面中看到")
+    ![在此螢幕擷取畫面中，可以看到設定組建觸發程式的範例](teamcity-images/image9.png "在此螢幕擷取畫面中，可以看到設定組建觸發程式的範例")
 
 5. 上一節會將組建腳本參數化，建議您將一些值儲存為環境變數。 這些變數可以透過 [參數] 畫面新增至組建設定。 新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數，如下列螢幕擷取畫面所示：
 
-    ![新增測試雲端 Api 金鑰的變數、ios 裝置識別碼和 Android 裝置識別碼](teamcity-images/image11.png "新增測試雲端 Api 金鑰、ios 裝置識別碼和 android 裝置識別碼的變數")
+    ![新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數](teamcity-images/image11.png "新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數")
 
 6. 最後一個步驟是新增一個會叫用組建腳本的組建步驟，以編譯應用程式，並將應用程式加入至測試雲端。 下列螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例：
 
-    ![這個螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例。](teamcity-images/image12.png "此螢幕擷取畫面是使用 Rakefile 來建立應用程式的組建步驟範例")
+    ![這個螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例](teamcity-images/image12.png "這個螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例")
 
 7. 此時，組建設定已完成。 建議您觸發組建，以確認專案已正確設定。 執行此動作的好方法是，對存放庫認可少量且不重要的變更。 TeamCity 應該會偵測到認可並啟動組建。
 

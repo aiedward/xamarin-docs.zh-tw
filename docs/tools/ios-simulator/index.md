@@ -7,17 +7,17 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/26/2019
 ms.openlocfilehash: 3067493315c62c46f44fb94aa61a919e1449080b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70289701"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>適用於 Windows 的遠端 iOS 模擬器
 
 適用于 Windows 的遠端 iOS 模擬器可讓您在 Windows 中顯示的 iOS 模擬器上測試您的應用程式，以及 Visual Studio 2019 和 Visual Studio 2017。
 
-[![在 Windows 上執行的 iOS]模擬器(images/hero-sml.png "在 Windows 上執行的 iOS")模擬器](images/hero.png#lightbox)
+[![在 Windows 上執行的 iOS 模擬器](images/hero-sml.png "在 Windows 上執行的 iOS 模擬器")](images/hero.png#lightbox)
 
 ## <a name="getting-started"></a>使用者入門
 
@@ -34,9 +34,9 @@ ms.locfileid: "70289701"
 
 - **首頁**–模擬 iOS 裝置上的 [首頁] 按鈕。
 - **Lock** –鎖定模擬器（滑動以解除鎖定）。
-- **螢幕擷取畫面**–儲存模擬器（存放在 **\\Pictures\Xamarin\iOS**模擬器中）的螢幕擷取畫面。
+- **螢幕擷取畫面**–儲存模擬器的螢幕擷取畫面（存放在**Pictures\Xamarin\iOS 模擬器 \\** ）。
 - [[**設定**](#settings)] –顯示鍵盤、位置及其他設定。
-- [**其他選項**](#other-options) -會顯示各種模擬器選項，例如旋轉、 搖晃手勢和 [Touch id]。
+- [**其他選項**](#other-options)–啟動各種模擬器選項，例如旋轉、晃動手勢和觸控識別碼。
 
     [![iOS 模擬器對應範例](images/maps-app-sml.png "iOS 模擬器對應範例")](images/maps-app.png#lightbox)
 

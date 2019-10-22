@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/14/2017
 ms.openlocfilehash: 087dcdc7024026e6a3ed3a05baca3b2648053cc8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70769941"
 ---
 # <a name="accessibility-on-macos"></a>MacOS 上的協助工具
@@ -23,7 +23,7 @@ ms.locfileid: "70769941"
 
 ## <a name="describing-ui-elements"></a>描述 UI 元素
 
-AppKit 會使用`NSAccessibility`通訊協定來公開 api，讓使用者介面可供存取。 這包括預設行為，會嘗試為輔助功能屬性設定有意義的值，例如設定按鈕的`AccessibilityLabel`。 標籤通常是描述控制項或視圖的單一單字或簡短片語。
+AppKit 會使用 `NSAccessibility` 通訊協定來公開 Api，讓使用者介面可供存取。 這包括預設行為，會嘗試為輔助功能屬性設定有意義的值，例如設定按鈕的 `AccessibilityLabel`。 標籤通常是描述控制項或視圖的單一單字或簡短片語。
 
 ### <a name="storyboard-files"></a>分鏡腳本檔案
 
@@ -34,7 +34,7 @@ Xamarin 會使用 Xcode Interface Builder 來編輯分鏡腳本檔案。
 
 ### <a name="code"></a>程式碼
 
-Xamarin 目前不會以 setter 的形式`AccessibilityLabel`公開。  新增下列 helper 方法以設定 [協助工具] 標籤：
+Xamarin 目前不會公開為 `AccessibilityLabel` setter。  新增下列 helper 方法以設定 [協助工具] 標籤：
 
 ```csharp
 public static class AccessibilityHelper
@@ -55,10 +55,10 @@ public static class AccessibilityHelper
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-`AccessibilityHelp`屬性是用來說明控制項或視圖的用途，而且只有在標籤可能無法提供足夠的資訊時才會加入。 解說文字仍然應該盡可能地保持簡短，例如「刪除檔」。
+@No__t_0 屬性是用來說明控制項或視圖的用途，而且只有在標籤可能無法提供足夠的資訊時才會加入。 解說文字仍然應該盡可能地保持簡短，例如「刪除檔」。
 
 某些使用者介面專案與可存取的存取無關（例如，具有自己的 [協助工具] 標籤和說明之輸入旁的標籤）。
-在這些情況下， `AccessibilityElement = false`請設定，讓螢幕閱讀程式或其他協助工具工具略過這些控制項或瀏覽器。
+在這些情況下，請設定 `AccessibilityElement = false`，讓螢幕閱讀程式或其他協助工具工具略過這些控制項或瀏覽器。
 
 Apple 提供[協助工具指導方針](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/EnhancingtheAccessibilityofStandardAppKitControls.html)，說明協助工具標籤和解說文字的最佳作法。
 
@@ -80,7 +80,7 @@ macOS 提供協助工具偵測**器**，可協助測試協助工具功能。 此
 
 啟用之後，偵測器會顯示為可在螢幕周圍移動的浮動視窗。 下列螢幕擷取畫面顯示在範例 Mac 應用程式旁執行的偵測器。 當游標移到視窗上方時，偵測器會顯示每個控制項的所有可存取屬性：
 
-[執行![協助工具偵測器的範例]執行(accessibility-images/accessibility-example.png "協助工具偵測器的範例")](accessibility-images/accessibility-example-large.png#lightbox)
+[![執行協助工具偵測器的範例](accessibility-images/accessibility-example.png "執行協助工具偵測器的範例")](accessibility-images/accessibility-example-large.png#lightbox)
 
 如需詳細資訊，請參閱[OS X 的測試協助工具指南](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html)。
 

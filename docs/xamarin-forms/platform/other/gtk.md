@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
 ms.openlocfilehash: d20e27fdbb1f62c2aebb7122d7f0c042b3ac9085
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71997184"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平臺設定
@@ -42,19 +42,19 @@ Xamarin 現在具有 GTK # 應用程式的預覽支援。 GTK # 是一種圖形�
 
 3. 輸入具有**GTK**延伸模組之專案的名稱，例如**GameOfLife。** 按一下 [**流覽]** 按鈕，選取包含其他平臺專案的資料夾，然後按 [**選取資料夾**]。 這會將 GTK 專案放在與方案中的其他專案相同的目錄中。
 
-    ![加入新的 gtk 專案](gtk-images/win/add-new-project.png "加入新的 gtk 專案")
+    ![加入新的 GTK 專案](gtk-images/win/add-new-project.png "加入新的 GTK 專案")
 
     按下 [**確定]** 按鈕以建立專案。
 
 4. 在 **方案總管**中，以滑鼠右鍵按一下新的 GTK 專案，然後選取 **管理 NuGet 套件**。 選取 [**流覽**] 索引標籤，然後搜尋 [ **Xamarin. 表單**3.0] 或更新版本。
 
-    ![選取 [xamarin] nuget 套件](gtk-images/win/select-forms-nuget-package.png "選取 [xamarin] nuget 套件")
+    ![選取 [Xamarin] NuGet 套件](gtk-images/win/select-forms-nuget-package.png "選取 [Xamarin] NuGet 套件")
 
     選取套件，然後按一下 [**安裝**] 按鈕。
 
 5. 現在**搜尋 [node.js** 3.0 套件] 或更新版本。
 
-    ![選取 [Node.js nuget 套件]]，(gtk-images/win/select-forms-platform-nuget-package.png "選取 [node.js] nuget 套件")
+    ![選取 [node.js] NuGet 套件](gtk-images/win/select-forms-platform-nuget-package.png "選取 [node.js] NuGet 套件")
 
     選取套件，然後按一下 [**安裝**] 按鈕。
 
@@ -62,11 +62,11 @@ Xamarin 現在具有 GTK # 應用程式的預覽支援。 GTK # 是一種圖形�
 
 7. 在 **方案總管**中，以滑鼠右鍵按一下 GTK 專案中的 **參考**。 在 [**參考管理員**] 對話方塊中，選取左側的 [**專案**]，然後核取 [.NET Standard] 或 [共用] 專案旁的核取方塊：
 
-    ![參考]共用專案(gtk-images/win/reference-shared-project.png "參考共用專案")
+    ![參考共用專案](gtk-images/win/reference-shared-project.png "參考共用專案")
 
 8. 在 [**參考管理員**] 對話方塊中，按下 [**流覽]** 按鈕並流覽至 [ **C:\Program Files （x86） \GtkSharp\2.12\lib** ] 資料夾，然後選取 [ **atk-sharp**]、[ **gdk-sharp**]、[ **glade-sharp .dll**]、 **glib-sharp .dll**、 **gtk-dotnet**、 **gtk-sharp .dll**檔案。
 
-    ![引用]gtk # 程式庫(gtk-images/win/reference-gtk-libraries.png "參考 gtk #")程式庫
+    ![參考 GTK # 程式庫](gtk-images/win/reference-gtk-libraries.png "參考 GTK # 程式庫")
 
     按下 [**確定]** 按鈕以新增參考。
 
@@ -111,7 +111,7 @@ Xamarin 現在具有 GTK # 應用程式的預覽支援。 GTK # 是一種圖形�
 
 13. 在 **方案總管**中，以滑鼠右鍵按一下 GTK 專案，然後選取 **設定為啟始專案**。 按 F5 鍵，以在 Windows 桌面上使用 Visual Studio 偵錯工具來執行程式：
 
-    ![Gtk # 遊戲-生命](gtk-images/win/gtk-gameoflife.png "gtk #")遊戲
+    ![GTK # 生活遊戲](gtk-images/win/gtk-gameoflife.png "GTK # 生活遊戲")
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -125,17 +125,17 @@ Xamarin 現在具有 GTK # 應用程式的預覽支援。 GTK # 是一種圖形�
 
 4. 在 [ **Solution Pad**中，以滑鼠右鍵按一下 [封裝] > 為 GTK 專案**新增套件 ...** ]，然後新增 [Xamarin 3.0 發行前版本 NuGet 套件] 或更新版本。
 
-    ![選取 [xamarin] nuget 套件](gtk-images/mac/select-forms-nuget-package.png "選取 [xamarin] nuget 套件")
+    ![選取 [Xamarin] NuGet 套件](gtk-images/mac/select-forms-nuget-package.png "選取 [Xamarin] NuGet 套件")
 
 5. 在 [ **Solution Pad**中，以滑鼠右鍵按一下 [封裝] > 為 GTK 專案**新增封裝 ...** ]，然後新增 [node.js 3.0 發行前版本的 NuGet 套件] 或更新版本。
 
-    ![選取 [Node.js nuget 套件]]，(gtk-images/mac/select-forms-platform-nuget-package.png "選取 [node.js] nuget 套件")
+    ![選取 [node.js] NuGet 套件](gtk-images/mac/select-forms-platform-nuget-package.png "選取 [node.js] NuGet 套件")
 
 6. 更新其他平臺專案，以使用 GTK 專案所使用的相同 Xamarin. Forms 版本。
 
 7. 在 [ **Solution Pad**中，以滑鼠右鍵按一下 GTK 專案 **> 編輯參考 ...** ] 的 [參考]，然後加入 [Xamarin] 專案的參考（[.NET Standard] 或 [共用專案]）。
 
-    ![參考]共用專案(gtk-images/mac/reference-shared-project.png "參考共用專案")
+    ![參考共用專案](gtk-images/mac/reference-shared-project.png "參考共用專案")
 
 8. 編輯 GTK 專案的**Program.cs**檔，使它類似下列程式碼：
 
@@ -172,7 +172,7 @@ Xamarin 現在具有 GTK # 應用程式的預覽支援。 GTK # 是一種圖形�
 
 10. 在 [Visual Studio for Mac] 工具列中，按下 [**啟動**] 按鈕（類似于 [播放] 按鈕的三角形按鈕），以啟動應用程式。
 
-    ![Gtk # 遊戲-生命](gtk-images/mac/gtk-gameoflife.png "gtk #")遊戲
+    ![GTK # 生活遊戲](gtk-images/mac/gtk-gameoflife.png "GTK # 生活遊戲")
 
 -----
 
@@ -214,7 +214,7 @@ GtkThemes.LoadCustomTheme ("Themes/gtkrc");
 
 ### <a name="native-forms"></a>原生表單
 
-原生表單可讓 Xamarin [@no__t 1](xref:Xamarin.Forms.ContentPage)-衍生的頁面由原生專案使用，包括 GTK # 專案。 這可以藉由使用 `CreateContainer` 擴充方法來建立[@no__t 1](xref:Xamarin.Forms.ContentPage)衍生頁面的實例，並將它轉換成原生 GTK # 類型來完成：
+原生表單可讓 Xamarin [`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生的頁面由原生專案使用，包括 GTK # 專案。 這可以藉由建立[`ContentPage`](xref:Xamarin.Forms.ContentPage)衍生頁面的實例，然後使用 `CreateContainer` 擴充方法將它轉換成原生 GTK # 型別來完成：
 
 ```csharp
 var settingsView = new SettingsView().CreateContainer();

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
 ms.openlocfilehash: b27b4b0c3c5662c6cc1c2c151dd9ebe1523da3a4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "71198512"
 ---
 # <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 簡介
@@ -29,7 +29,7 @@ ms.locfileid: "71198512"
 
 下列圖表顯示在 Xamarin.Forms 中叫用平台功能的方式：
 
-![使用 Xamarin.Forms DependencyService 類別之服務位置的概觀](introduction-images/dependency-service.png "DependencyService 服務位置")
+![使用 DependencyService 類別的服務位置總覽](introduction-images/dependency-service.png "DependencyService 服務位置")
 
 ## <a name="create-an-interface"></a>建立介面
 

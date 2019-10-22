@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 03/22/2017
 ms.openlocfilehash: 55d531036336cdd6c3ac7efa1c5ba21b09a7be9e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70758128"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin 應用程式中的協助工具
@@ -28,7 +28,7 @@ IOS、Android 和 Windows 等桌面和行動平臺提供內建的 Api，可協�
 - [**Android 協助工具**](~/android/app-fundamentals/accessibility.md)
 - [**iOS 協助工具**](~/ios/app-fundamentals/accessibility.md)
 - [**OS X 協助工具**](~/mac/app-fundamentals/accessibility.md)
-- [**Xamarin.Forms**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
+- [**Xamarin. 表單**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
 
 <a name="checklist" />
 
