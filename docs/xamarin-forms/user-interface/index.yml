@@ -43,6 +43,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: button.md
             title: 按鈕
+          - href: carouselview/index.md
+            html: 了解如何使用 CarouselView 以線性浮動切換版面配置呈現資料。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: collectionview/index.md
+            title: CarouselView
           - href: checkbox.md
             html: 了解如何使用 CheckBox 設定布林值。
             image:
@@ -74,7 +80,7 @@ sections:
               href: datepicker.md
             title: DatePicker
           - href: pop-ups.md
-            html: 了解如何顯示對話方塊，詢問使用者簡單的問題及引導使用者完成工作。
+            html: 了解如何顯示詢問使用者簡單問題、引導使用者完成工作及顯示提示的對話方塊。
             image:
               src: ~/media/icons/i_user-interface.svg
               href: pop-ups.md
@@ -109,11 +115,11 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: listview/index.md
             title: ListView
-          - href: map.md
+          - href: map/index.md
             html: 了解如何使用 Map 控制項，包括必要的平台設定，以及如何在地圖中填入圖釘。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: map.md
+              href: map/index.md
             title: 地圖
           - href: menuitem.md
             html: 了解如何使用 MenuItem 類別，將項目新增到 ListView 資料格的操作功能表。
@@ -133,6 +139,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: progressbar.md
             title: 進度列
+          - href: refreshview.md
+            html: 了解如何使用 RefreshView，以提供可捲動內容的拖動以重新整理功能。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: refreshview.md
+            title: RefreshView
           - href: searchbar.md
             html: 了解如何使用 SearchBar 控制項起始搜尋。
             image:
