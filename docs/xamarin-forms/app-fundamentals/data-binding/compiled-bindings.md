@@ -6,13 +6,13 @@ ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/25/2018
-ms.openlocfilehash: 8effabc66b51b1cf32e3be455428c44eeea3f26d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.date: 09/18/2019
+ms.openlocfilehash: 531d9719eb4bf5c23001ebe4260254e13f9989eb
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656231"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697149"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms 編譯的繫結
 
@@ -30,19 +30,19 @@ _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms �
 編譯繫結的使用流程包括：
 
 1. 啟用 XAML 編譯。 如需 XAML 編譯的詳細資訊，請參閱 [XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
-1. 將 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 上的 `x:DataType` 屬性設定為 `VisualElement` 及其子系將要繫結的物件類型。 請注意，您可以在檢視階層架構中的任何位置重新定義此屬性。
+1. 將 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 上的 `x:DataType` 屬性設定為 `VisualElement` 及其子系將要繫結的物件類型。
 
 > [!NOTE]
-> 建議在檢視階層架構中與設定 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 相同的層級設定 `x:DataType` 屬性。
+> 建議在檢視階層架構中與設定 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 相同的層級設定 `x:DataType` 屬性。 不過，您可以在視圖階層中的任何位置重新定義這個屬性。
 
-在 XAML 編譯期間，任何無效的繫結運算式都會回報為建置錯誤。 不過，XAML 編譯器只會在第一次遇到無效的繫結運算式時回報建置錯誤。 定義於 `VisualElement` 或其子系的任何有效繫結運算式都會經過編譯，無論 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 是在 XAML 或程式碼中設定。 編譯繫結運算式會產生經過編譯的程式碼，該程式碼會從「來源」  屬性取得一個值，並在標記中指定的「目標」  屬性上進行設定。 此外，視繫結運算式而定，產生的程式碼可以在「來源」  屬性值中觀察變更並重新整理「目標」  屬性，也可以將變更從「目標」  推送回到「來源」  。
+若要使用編譯的系結，`x:DataType` 屬性必須設定為字串常值，或使用 `x:Type` 標記延伸的型別。 在 XAML 編譯期間，任何無效的繫結運算式都會回報為建置錯誤。 不過，XAML 編譯器只會在第一次遇到無效的繫結運算式時回報建置錯誤。 定義於 `VisualElement` 或其子系的任何有效繫結運算式都會經過編譯，無論 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 是在 XAML 或程式碼中設定。 編譯繫結運算式會產生經過編譯的程式碼，該程式碼會從「來源」屬性取得一個值，並在標記中指定的「目標」屬性上進行設定。 此外，視繫結運算式而定，產生的程式碼可以在「來源」屬性值中觀察變更並重新整理「目標」屬性，也可以將變更從「目標」推送回到「來源」。
 
 > [!IMPORTANT]
 > 定義 [`Source`](xref:Xamarin.Forms.Binding.Source) 屬性的任何繫結運算式目前已停用編譯的繫結。 這是因為 `Source` 屬性一律使用 `x:Reference` 標記延伸設定，因此無法在編譯時間進行解析。
 
-## <a name="using-compiled-bindings"></a>使用編譯的繫結
+## <a name="use-compiled-bindings"></a>使用編譯的繫結
 
-[Compiled Color Selector] \(編譯的色彩選取器\)  頁面示範如何在 Xamarin.Forms 檢視與 ViewModel 屬性之間使用編譯的繫結：
+[**已編譯的色彩選取器**] 頁面會示範如何在 Xamarin 和 viewmodel 屬性之間使用編譯的系結：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -70,14 +70,14 @@ _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms �
 </ContentPage>
 ```
 
-根 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 會在 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性的屬性項目標記中具現化 `HslColorViewModel` 並初始化 `Color` 屬性。 這個根 `StackLayout` 也會將 `x:DataType` 屬性定義為 ViewModel 類型，表示根 `StackLayout` 檢視階層架構中的任何繫結運算式都會經過編譯。 若要進行驗證，請將任何繫結運算式變更為繫結至不存在的 ViewModel 屬性，這會導致建置錯誤。
+根 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 會在 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性的屬性項目標記中具現化 `HslColorViewModel` 並初始化 `Color` 屬性。 這個根 `StackLayout` 也會將 `x:DataType` 屬性定義為 viewmodel 類型，表示將會編譯根 `StackLayout` 視圖階層架構中的任何系結運算式。 這可以藉由將任何系結運算式變更為系結至不存在的 viewmodel 屬性來進行驗證，這會導致建立錯誤。 雖然這個範例會將 `x:DataType` 屬性設定為字串常值，但也可以設定為具有 `x:Type` 標記延伸的類型。 如需 `x:Type` 標記延伸的詳細資訊，請參閱[X:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
 
 > [!IMPORTANT]
 > 您可以在檢視階層架構中的任何位置重新定義 `x:DataType` 屬性。
 
-[`BoxView`](xref:Xamarin.Forms.BoxView)、[`Label`](xref:Xamarin.Forms.Label) 項目和 [`Slider`](xref:Xamarin.Forms.Slider) 檢視會繼承 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的繫結內容。 這些檢視都是參考 ViewModel 中來源屬性的繫結目標。 針對 [`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) 屬性和 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 屬性，資料繫結為 `OneWay` (檢視中的屬性會從 ViewModel 屬性來設定)。 不過，[`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 屬性使用 `TwoWay` 繫結。 您可以從 ViewModel 設定每個 `Slider`，也可以從每個 `Slider` 設定 ViewModel。
+[`BoxView`](xref:Xamarin.Forms.BoxView)、[`Label`](xref:Xamarin.Forms.Label) 項目和 [`Slider`](xref:Xamarin.Forms.Slider) 檢視會繼承 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的繫結內容。 這些 views 全都是參考 viewmodel 中來源屬性的系結目標。 針對 [ [`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) ] 屬性和 [ [`Label.Text`](xref:Xamarin.Forms.Label.Text) ] 屬性，資料系結會 `OneWay` –此視圖中的屬性會從 viewmodel 中的屬性進行設定。 不過，[`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 屬性使用 `TwoWay` 繫結。 這可讓您從 viewmodel 設定每個 `Slider`，也可以讓 viewmodel 從每個 `Slider` 設定。
 
-第一次執行應用程式時，[`BoxView`](xref:Xamarin.Forms.BoxView)、[`Label`](xref:Xamarin.Forms.Label) 項目和 [`Slider`](xref:Xamarin.Forms.Slider) 項目都會從 ViewModel 來設定，並以 ViewModel 具現化時設定的初始 `Color` 屬性為依據。 如下列螢幕擷取畫面所示：
+第一次執行應用程式時，會根據 viewmodel 具現化時所設定的初始 `Color` 屬性，從 viewmodel 設定[`BoxView`](xref:Xamarin.Forms.BoxView)、 [`Label`](xref:Xamarin.Forms.Label)元素和[`Slider`](xref:Xamarin.Forms.Slider)元素。 如下列螢幕擷取畫面所示：
 
 [![編譯的色彩選取器](compiled-bindings-images/compiledcolorselector-small.png "編譯的色彩選取器")](compiled-bindings-images/compiledcolorselector-large.png#lightbox "編譯的色彩選取器")
 
@@ -85,11 +85,11 @@ _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms �
 
 如需此色彩選取器的詳細資訊，請參閱 [ViewModel 和屬性變更通知](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#viewmodels-and-property-change-notifications)。
 
-## <a name="using-compiled-bindings-in-a-datatemplate"></a>在 DataTemplate 中使用編譯的繫結
+## <a name="use-compiled-bindings-in-a-datatemplate"></a>在 DataTemplate 中使用編譯的系結
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中的繫結是在所要樣板化的物件內容中進行解譯。 因此，在 `DataTemplate` 中使用編譯的繫結時，`DataTemplate` 必須使用 `x:DataType` 屬性來宣告其資料物件類型。
 
-[Compiled Color List] \(編譯的色彩清單\)  頁面示範如何在 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中使用編譯的繫結：
+[Compiled Color List] \(編譯的色彩清單\) 頁面示範如何在 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中使用編譯的繫結：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -124,19 +124,19 @@ _編譯繫結的解析速度比傳統繫結更快，因此提升 Xamarin.Forms �
 
 [`ListView.ItemsSource`](xref:Xamarin.Forms.ListView) 屬性設定為靜態 `NamedColor.All` 屬性。 `NamedColor` 類別使用 .NET 反射來列舉 [`Color`](xref:Xamarin.Forms.Color) 結構中所有的靜態公用欄位，並使用其名稱將它們儲存在可供靜態 `All` 屬性存取的集合中。 因此，`ListView` 會填入所有的 `NamedColor` 執行個體。 針對 `ListView` 中的每個項目，項目的繫結內容會設定為 `NamedColor` 物件。 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 中的 [`BoxView`](xref:Xamarin.Forms.BoxView) 和 [`Label`](xref:Xamarin.Forms.Label) 項目會繫結至 `NamedColor` 屬性。
 
-請注意，[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 會將 `x:DataType` 屬性定義為 `NamedColor` 類型，表示 `DataTemplate` 檢視階層架構中的任何繫結運算式都會經過編譯。 若要進行驗證，請將任何繫結運算式變更為繫結至不存在的 `NamedColor` 屬性，這會導致建置錯誤。
+請注意，[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 會將 `x:DataType` 屬性定義為 `NamedColor` 類型，表示 `DataTemplate` 檢視階層架構中的任何繫結運算式都會經過編譯。 若要進行驗證，請將任何繫結運算式變更為繫結至不存在的 `NamedColor` 屬性，這會導致建置錯誤。  雖然這個範例會將 `x:DataType` 屬性設定為字串常值，但也可以設定為具有 `x:Type` 標記延伸的類型。 如需 `x:Type` 標記延伸的詳細資訊，請參閱[X:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
 
 第一次執行應用程式時，[`ListView`](xref:Xamarin.Forms.ListView) 會填入 `NamedColor` 執行個體。 當選取 `ListView` 中的項目時，[`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) 屬性會設定為 `ListView` 中所選項目的色彩：
 
-[![編譯的色彩清單](compiled-bindings-images/compiledcolorlist-small.png "編譯的色彩清單]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "Compiled Color List")
+[![已編譯的色彩清單](compiled-bindings-images/compiledcolorlist-small.png "已編譯的色彩清單]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "Compiled Color List")
 
 選取 [`ListView`](xref:Xamarin.Forms.BoxView) 中其他項目會更新 [`BoxView`](xref:Xamarin.Forms.BoxView) 的色彩。
 
-## <a name="combining-compiled-bindings-with-classic-bindings"></a>合併編譯的繫結與傳統繫結
+## <a name="combine-compiled-bindings-with-classic-bindings"></a>結合編譯的系結與傳統系結
 
 只有在已定義 `x:DataType` 屬性的檢視階層架構中才能編譯繫結運算式。 相反地，未定義 `x:DataType` 屬性之階層架構中的任何檢視則會使用傳統繫結。 因此，您可以將編譯的繫結與傳統繫結合併成一頁。 例如，在上一節中，[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 中的檢視使用所編譯繫結，而設定為 [`ListView`](xref:Xamarin.Forms.ListView) 中所選色彩的 [`BoxView`](xref:Xamarin.Forms.BoxView) 則否。
 
-因此，您可以謹慎建構 `x:DataType` 屬性，來產生同時使用編譯繫結和傳統繫結的頁面。 或者，您可以在檢視階層架構中的任何位置，使用 `x:Null` 標記延伸將 `x:DataType` 屬性重新定義為 `null`。 這樣做表示檢視階層架構中的任何繫結運算式都會使用傳統繫結。 [Mixed Bindings] \(混合繫結\)  頁面會示範此方法：
+因此，您可以謹慎建構 `x:DataType` 屬性，來產生同時使用編譯繫結和傳統繫結的頁面。 或者，您可以在檢視階層架構中的任何位置，使用 `x:Null` 標記延伸將 `x:DataType` 屬性重新定義為 `null`。 這樣做表示檢視階層架構中的任何繫結運算式都會使用傳統繫結。 [Mixed Bindings] \(混合繫結\) 頁面會示範此方法：
 
 ```xaml
 <StackLayout x:DataType="local:HslColorViewModel">

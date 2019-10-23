@@ -1,36 +1,34 @@
 ---
 title: 顯示快顯視窗
-description: Xamarin.Forms 提供兩個類似使用者介面元素的快顯視窗：警示和動作表。 本文示範如何使用警示和動作表 Api 來顯示對話方塊, 以詢問使用者簡單的問題, 並引導使用者完成工作。
+description: Xamarin 提供三種快顯視窗的使用者介面元素：警示、動作表和提示。 本文示範如何使用警示、動作表和提示 Api 來顯示對話方塊，以詢問使用者簡單的問題、引導使用者完成工作，以及顯示提示。
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 3b6b2ea2d497c9fdce2c323c7f7a793a4186aa4f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 09/25/2019
+ms.openlocfilehash: ddf0b96295f7153803db65a1fd741cc5df473730
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656103"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697110"
 ---
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-_Xamarin.Forms 提供兩個類似使用者介面元素的快顯視窗：警示和動作表。本文示範如何使用警示和動作表 Api 來顯示對話方塊, 以詢問使用者簡單的問題, 並引導使用者完成工作。_
-
-顯示警示或要求使用者選擇是常見 UI 的工作。 Xamarin.Forms 在 [`Page`](xref:Xamarin.Forms.Page) 類別上有兩種方法，可用來透過快顯視窗與使用者互動：[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 和 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)。 兩者會以適當的原生控制項轉譯在每個平台上。
+顯示警示、要求使用者進行選擇，或顯示提示是常見的 UI 工作。 Xamarin 在[`Page`](xref:Xamarin.Forms.Page)類別上有三種方法，可透過快顯視窗與使用者互動： [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)和 `DisplayPromptAsync`。 兩者會以適當的原生控制項轉譯在每個平台上。
 
 ## <a name="display-an-alert"></a>顯示警示
 
 所有 Xamarin.Forms 支援的平台都有強制回應快顯視窗，可警示使用者或是詢問簡易問題。 若要在 Xamarin.Forms 中顯示警示，請在任何 [`Page`](xref:Xamarin.Forms.Page) 上使用 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法。 下列程式碼會顯示簡易訊息給使用者：
 
 ```csharp
-DisplayAlert ("Alert", "You have been alerted", "OK");
+await DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![](pop-ups-images/alert.png "具有一個按鈕的警示對話方塊")
+![](pop-ups-images/alert.png "Alert Dialog with One Button")
 
 此範例不會向使用者收集資訊。 警示會以強制回應的方式顯示，關閉後，使用者就可繼續與應用程式互動。
 
@@ -44,7 +42,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayAlert](pop-ups-images/alert2-sml.png "具有兩個按鈕的警示對話方塊")](pop-ups-images/alert2.png#lightbox "具有兩個按鈕的警示對話方塊")
+[![DisplayAlert](pop-ups-images/alert2-sml.png "有兩個按鈕的警示對話方塊")](pop-ups-images/alert2.png#lightbox "有兩個按鈕的警示對話方塊")
 
 ## <a name="guide-users-through-tasks"></a>引導使用者完成工作
 
@@ -60,7 +58,7 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![](pop-ups-images/action.png "ActionSheet 對話方塊")
+![](pop-ups-images/action.png "ActionSheet Dialog")
 
 `destroy` 按鈕的轉譯方式不同於其他按鈕，可以保留 `null`，也可以指定為第三個字串參數。 下列範例使用 `destroy` 按鈕︰
 
@@ -72,7 +70,45 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "具有終結按鈕的動作表對話方塊")](pop-ups-images/action2.png#lightbox "具有終結按鈕的動作表對話方塊")
+[![DisplayActionSheet](pop-ups-images/action2-sml.png "具有損毀按鈕的動作表對話方塊")](pop-ups-images/action2.png#lightbox "具有損毀按鈕的動作表對話方塊")
+
+## <a name="display-a-prompt"></a>顯示提示
+
+若要顯示提示，請在任何[`Page`](xref:Xamarin.Forms.Page)中呼叫 `DisplayPromptAsync`，以 `string` 引數的形式傳遞標題和訊息：
+
+```csharp
+string result = await DisplayPromptAsync("Question 1", "What's your name?");
+```
+
+系統會以強制回應方式顯示提示：
+
+[![在 iOS 和 Android 上強制回應提示的螢幕擷取畫面](pop-ups-images/simple-prompt.png "強制回應提示")](pop-ups-images/simple-prompt-large.png#lightbox "強制回應提示")
+
+如果您按下 [確定] 按鈕，則會以 `string` 傳回輸入的回應。 如果點擊 [取消] 按鈕，則會傳回 `null`。
+
+@No__t_0 方法的完整引數清單是：
+
+- `title`，屬於 `string` 類型，這是要顯示在提示字元中的標題。
+- `message`，屬於 `string` 類型，這是要在提示字元中顯示的訊息。
+- `string` 類型的 `accept` 是 [接受] 按鈕的文字。 這是選擇性引數，其預設值為 OK。
+- `cancel`，屬於 `string` 類型，是 [取消] 按鈕的文字。 這是選擇性引數，其預設值為 Cancel。
+- `placeholder`，屬於 `string` 類型，這是要在提示中顯示的預留位置文字。 這是選擇性引數，其預設值為 `null`。
+- `maxLength`，屬於 `int` 類型，是使用者回應的最大長度。 這是選擇性引數，其預設值為-1。
+- `keyboard`，屬於 `Keyboard` 類型，這是用於使用者回應的鍵盤類型。 這是選擇性引數，其預設值為 `Keyboard.Default`。
+
+下列範例會示範如何設定一些選擇性引數：
+
+```csharp
+string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLength: 2, keyboard: Keyboard.Numeric);
+}
+```
+
+這段程式碼會將可輸入的字元數限制為2，並顯示數字鍵台以進行使用者輸入：
+
+[![在 iOS 和 Android 上強制回應提示的螢幕擷取畫面](pop-ups-images/keyboard-prompt.png "強制回應提示")](pop-ups-images/keyboard-prompt-large.png#lightbox "強制回應提示")
+
+> [!NOTE]
+> @No__t_0 方法目前只會在 iOS 和 Android 上執行。
 
 ## <a name="related-links"></a>相關連結
 

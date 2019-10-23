@@ -1,45 +1,37 @@
 ---
-title: Xamarin.Forms ScrollView
-description: 這篇文章說明如何使用 Xamarin.Forms ScrollView 類別呈現，無法容納在一個畫面上，而且具有內容挪出空間的鍵盤配置。
+title: Xamarin. Forms ScrollView
+description: 本文說明如何使用 ScrollView 類別來呈現無法僅放在一個畫面上的配置，以及有內容可讓鍵盤使用的版面配置。
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 131b9dc64db1ea0dba3982bd71459c2a281743bc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 09/17/2019
+ms.openlocfilehash: 8d523c6da6ca7feaf6894123822f789f37455865
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770291"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696858"
 ---
-# <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
+# <a name="xamarinforms-scrollview"></a>Xamarin. Forms ScrollView
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) 包含版面配置，並讓使用者能夠在幕後的捲軸。 `ScrollView` 也用來允許檢視，以顯示鍵盤時，會自動移至螢幕的可見部分。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)包含版面配置，並可讓它們在外滾動。 `ScrollView` 也可以在顯示鍵盤時，用來允許視圖自動移至螢幕的可見部分。
 
-[![](scroll-view-images/layouts-sml.png "Xamarin.Forms 版面配置")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
-
-本文涵蓋：
-
-- **[用途](#purpose)** &ndash;的目的`ScrollView`和搭配使用時。
-- **[使用方式](#usage)** &ndash;如何使用`ScrollView`實務。
-- **[屬性](#properties)** &ndash;可以讀取和修改的公用屬性。
-- **[方法](#methods)** &ndash;可以捲動檢視呼叫的公用方法。
-- **[事件](#events)** &ndash;可以用來接聽檢視狀態變更的事件。
+[![](scroll-view-images/layouts-sml.png "Xamarin.Forms Layouts")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
 ## <a name="purpose"></a>用途
 
-`ScrollView` 可用來確保也在較小的手機上，顯示較大的檢視。 比方說，在 iPhone 6s 的運作方式的版面配置可能會裁剪 iphone 4 秒。 使用`ScrollView`可讓版面配置，以較小螢幕上所顯示的裁剪的部分。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)可以用來確保較大的視圖在較小的手機上顯示良好。 例如，可以在 iPhone 4s 上裁剪適用于 iPhone 6s 的版面配置。 使用 `ScrollView` 可以讓版面配置的裁剪部分顯示在較小的螢幕上。
 
 ## <a name="usage"></a>使用量
 
 > [!NOTE]
-> `ScrollView`s 不是巢狀。 颾魤 ㄛ `ScrollView`s 應該與其他控制項，例如提供向下捲動，巢狀`ListView`和`WebView`。
+> 不應將[`ScrollView`](xref:Xamarin.Forms.ScrollView)物件加以嵌套。 此外，`ScrollView`s 不應該與提供滾動的其他控制項（例如 `ListView` 和 `WebView`）加以嵌套。
 
-`ScrollView` 會公開`Content`屬性可以設定的單一檢視或配置。 這個非常大型的 boxView，後面接著版面配置的範例，請考慮`Entry`:
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)會公開 `Content` 屬性，可以設定為單一視圖或版面配置。 請以非常大的 boxView （後面接著 `Entry`）做為版面配置的範例：
 
 ```xaml
 <ContentPage.Content>
@@ -62,30 +54,33 @@ stack.Children.Add(new BoxView { BackgroundColor = Color.Red,    HeightRequest =
 stack.Children.Add(new Entry());
 ```
 
-使用者向下捲動，只有之前`BoxView`會顯示：
+在使用者向下滾動之前，只會顯示 `BoxView`：
 
-![](scroll-view-images/scroll-start.png "在 ScrollView BoxView")
+![](scroll-view-images/scroll-start.png "BoxView in ScrollView")
 
-請注意，當使用者開始輸入文字中的`Entry`，捲動以讓它在螢幕顯示的檢視：
+請注意，當使用者開始在 `Entry` 中輸入文字時，視圖會滾動，讓它在畫面上顯示：
 
-![](scroll-view-images/scroll-end.png "ScrollView 中的項目")
+![](scroll-view-images/scroll-end.png "Entry in ScrollView")
 
-## <a name="properties"></a>屬性
+## <a name="properties"></a>內容
 
-`ScrollView` 定義下列屬性：
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) 會定義下列屬性：
 
-- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty) 取得[ `Size` ](xref:Xamarin.Forms.Size)值，表示內容的大小。
-- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) 取得或設定[ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation)列舉值，表示捲動的方向`ScrollView`。
-- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty) 取得`double`，表示目前捲動位置的 X。
-- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty) 取得`double`，代表目前的 Y 捲軸位置。
-- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty) 取得或設定[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)值，表示水平捲軸為可見時。
-- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty) 取得或設定[ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)值，表示顯示垂直捲軸時。
+- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty)取得代表內容大小的[`Size`](xref:Xamarin.Forms.Size)值。
+- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)取得或設定[`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation)列舉值，表示 `ScrollView` 的滾動方向。
+- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty)取得代表目前 X 捲軸位置的 `double`。
+- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty)取得代表目前 Y 捲軸位置的 `double`。
+- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty)取得或設定代表水準捲軸可見時間的[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)值。
+- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty)取得或設定代表垂直捲動條可見時間的[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)值。
+
+> [!NOTE]
+> 將 [ [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) ] 屬性設定為 [`Neither`]，即可停用滾動。
 
 ## <a name="methods"></a>方法
 
-`ScrollView` 提供`ScrollToAsync`方法，可用來捲動檢視使用的座標，或指定特定的檢視應顯示出來。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)提供 `ScrollToAsync` 方法，可以用來使用座標或指定應該顯示的特定視圖來滾動視圖。
 
-當使用座標，指定`x`和`y`座標，以及指出是否捲動應該顯示動畫的布林值：
+使用座標時，請指定 `x` 和 `y` 座標，以及布林值，指出是否應將滾動動畫：
 
 ```csharp
 scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from the top is visible
@@ -93,18 +88,21 @@ scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from
 scroll.ScrollToAsync(label, ScrollToPosition.Start, true); //scrolls so that the label is at the start of the list
 ```
 
-向下捲動到特定的項目中，當`ScrollToPosition`列舉型別指定檢視中的項目出現的位置：
+> [!IMPORTANT]
+> 當[`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)屬性設定為 `Neither` 時，`ScrollToAsync` 方法不會產生捲軸。
 
-- **Center** &ndash;捲動至檢視的可見部分的中心元素。
-- **結束**&ndash;捲動至檢視的可見部分結尾的項目。
-- **MakeVisible** &ndash;捲動項目，讓您可在檢視內為可見。
-- **開始**&ndash;捲動至檢視的可見部分開頭的項目。
+當滾動到特定專案時，`ScrollToPosition` 列舉會指定要在視圖中顯示元素的位置：
 
-`IsAnimated`屬性會指定如何將捲動檢視。 時設定為 true，動畫更為順暢，將使用，而不是立即將內容移到檢視。
+- **置**中 &ndash; 將元素滾動到視圖可見部分的中央。
+- **結束**&ndash; 將元素滾動到視圖可見部分的結尾。
+- **MakeVisible** &ndash; 會滾動專案，使其可在視圖中顯示。
+- **開始**&ndash; 將元素滾動到視圖可見部分的開頭。
 
-## <a name="events"></a>事件
+[@No__t_0] 屬性會指定如何滾動視圖。 設定為 [`true`] 時，將會使用平滑動畫，而不是立即將內容移至 [視圖]。
 
-`ScrollView` 定義一個事件， `Scrolled`。 `Scrolled` 檢視已完成捲動時引發。 事件處理常式`Scrolled`會採用`ScrolledEventArgs`，其中包含`ScrollX`和`ScrollY`屬性。 以下示範如何更新目前捲動位置的標籤`ScrollView`:
+## <a name="events"></a>「事件」
+
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)只會定義一個事件，`Scrolled`。 當視圖完成滾動時，就會引發 `Scrolled`。 @No__t_0 的事件處理常式會接受 `ScrolledEventArgs`，其具有 `ScrollX` 和 `ScrollY` 屬性。 以下示範如何以 `ScrollView` 的目前滾動位置來更新標籤：
 
 ```csharp
 Label label = new Label { Text = "Position: " };
@@ -114,9 +112,9 @@ scroll.Scrolled += (object sender, ScrolledEventArgs e) => {
 };
 ```
 
-請注意，捲動位置可能是負數的因為時捲動清單結尾處的彈跳效果。
+請注意，捲軸位置可能是負面的，因為在清單的結尾處滾動時，會產生跳動效果。
 
 ## <a name="related-links"></a>相關連結
 
-- [版面配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble 範例 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [版面配置（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 範例（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

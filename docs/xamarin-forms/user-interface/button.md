@@ -1,34 +1,34 @@
 ---
-title: Xamarin.Forms 按鈕
-description: 按鈕會回應點選或按一下，以指示應用程式執行特定工作。
+title: '[Xamarin] 按鈕'
+description: 按鈕會回應點按或按一下，以指示應用程式執行特定工作。
 ms.prod: xamarin
 ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/19/2018
-ms.openlocfilehash: cdf89b55c30b0a4e7ab247c396a870e0bad24886
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0dde561b3b494415986e0cddf99f8ad145e34687
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287720"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696576"
 ---
-# <a name="xamarinforms-button"></a>Xamarin.Forms 按鈕
+# <a name="xamarinforms-button"></a>[Xamarin] 按鈕
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
-_按鈕會回應點選或按一下，以指示應用程式執行特定工作。_
+_按鈕會回應點按或按一下，以指示應用程式執行特定工作。_
 
-[ `Button` ](xref:Xamarin.Forms.Button)是最基本的互動式控制，在所有的 Xamarin.Forms。 `Button`通常會顯示簡短文字字串，表示為命令，但它也可以顯示點陣圖影像，或組合的文字和影像。 使用者按下`Button`食指或按一下滑鼠來起始該命令。
+[@No__t_1](xref:Xamarin.Forms.Button)是所有 Xamarin. Forms 中最基本的互動式控制項。 @No__t_0 通常會顯示表示命令的簡短文字字串，但它也可以顯示點陣圖影像或文字與影像的組合。 使用者使用手指按下 `Button`，或使用滑鼠按一下以起始該命令。
 
-大部分的下面討論的主題對應中的頁面[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例。
+以下所討論的大部分主題都會對應至[**system.windows.forms.datagridview.buttondemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例中的頁面。
 
-## <a name="handling-button-clicks"></a>處理按鈕按一下
+## <a name="handling-button-clicks"></a>處理按鈕點按動作
 
-`Button` 定義[ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)在使用者點選時引發的事件`Button`用手指或滑鼠指標。 從介面發行手指或滑鼠按鈕時引發事件`Button`。 `Button`必須有其[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)屬性設定為`true`讓它的點選回應。
+`Button` 定義當使用者利用手指或滑鼠指標來點按 `Button` 時，所引發的[`Clicked`](xref:Xamarin.Forms.Button.Clicked)事件。 從 `Button` 介面放開手指或滑鼠按鍵時，就會引發事件。 @No__t_0 必須將其[`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled)屬性設定為 [`true`]，才能回應點擊。
 
-**基本按鈕 Click**頁面[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例示範如何具現化`Button`中 XAML 並處理其`Clicked`事件。 **BasicButtonClickPage.xaml**檔案包含`StackLayout`兼具`Label`和`Button`:
+[**System.windows.forms.datagridview.buttondemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例中的**基本按鈕按一下**頁面示範如何在 XAML 中具現化 `Button`，並處理其 `Clicked` 事件。 **BasicButtonClickPage**包含具有 `Label` 和 `Button` 的 `StackLayout`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -52,11 +52,11 @@ _按鈕會回應點選或按一下，以指示應用程式執行特定工作。_
 </ContentPage>
 ```
 
-`Button`傾向於佔用它所允許的所有空間。 比方說，如果您不需要設定`HorizontalOptions`屬性`Button`為以外`Fill`，則`Button`會佔用其父代的整個寬度。
+@No__t_0 傾向于佔用它所允許的所有空間。 例如，如果您未將 `Button` 的 `HorizontalOptions` 屬性設定為 `Fill` 以外的專案，`Button` 將會佔用其父系的完整寬度。
 
-根據預設，`Button`是矩形，但您可以使用來提供 it 圓角邊角[ `CornerRadius` ](xref:Xamarin.Forms.Button.CornerRadius)屬性，如以下一節所述[**按鈕外觀**](#button-appearance).
+根據預設，`Button` 為 [矩形]，但您可以使用 [ [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) ] 屬性為其圓角，如下面的「[**按鈕外觀**](#button-appearance)」一節所述。
 
-[ `Text` ](xref:Xamarin.Forms.Button.Text)屬性會指定出現在文字`Button`。 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)事件設定為事件處理常式命名為`OnButtonClicked`。 在程式碼後置檔案中，位於這個處理常式**BasicButtonClickPage.xaml.cs**:
+[`Text`](xref:Xamarin.Forms.Button.Text) 屬性可指定出現在 `Button` 中的文字。 [@No__t_1](xref:Xamarin.Forms.Button.Clicked)事件會設定為名為 `OnButtonClicked` 的事件處理常式。 這個處理常式位於程式碼後置檔案**BasicButtonClickPage.xaml.cs**中：
 
 ```csharp
 public partial class BasicButtonClickPage : ContentPage
@@ -73,21 +73,21 @@ public partial class BasicButtonClickPage : ContentPage
 }
 ```
 
-當`Button`點選時，`OnButtonClicked`方法執行。 `sender`引數是`Button`負責此事件的物件。 您可以使用來存取`Button`物件，或若要區別多個`Button`共用相同的物件`Clicked`事件。
+當您按下 `Button` 時，就會執行 `OnButtonClicked` 方法。 @No__t_0 引數是負責此事件的 `Button` 物件。 您可以使用這個來存取 `Button` 物件，或區別共用相同 `Clicked` 事件的多個 `Button` 物件。
 
-這個特定`Clicked`處理常式會呼叫旋轉的動畫函式`Label`在 1000年毫秒的 360 度。 以下是程式執行的通用 Windows 平台 (UWP) 應用程式在 iOS 和 Android 裝置，以及在 Windows 10 desktop:
+這個特定的 `Clicked` 處理常式會呼叫動畫函式，以1000毫秒為單位旋轉 `Label` 360 度。 以下是在 iOS 和 Android 裝置上執行的程式，以及做為 Windows 10 桌面上的通用 Windows 平臺（UWP）應用程式：
 
-[![基本按鈕 Click](button-images/BasicButtonClick.png "基本按鈕 Click")](button-images/BasicButtonClick-Large.png#lightbox "按一下基本按鈕")
+[![基本按鈕按一下](button-images/BasicButtonClick.png "基本按鈕按一下")](button-images/BasicButtonClick-Large.png#lightbox "基本按鈕按一下")
 
-請注意，`OnButtonClicked`方法包含`async`修飾詞因為`await`用於事件處理常式。 A`Clicked`事件處理常式需要`async`修飾詞，只有當處理常式的主體使用`await`。
+請注意，`OnButtonClicked` 方法包含 `async` 修飾詞，因為 `await` 是在事件處理常式內使用。 只有當處理常式的主體使用 `await` 時，`Clicked` 事件處理常式才需要 `async` 修飾詞。
 
-每個平台呈現`Button`自己特定的方式。 在[**按鈕外觀**](#button-appearance)區段中，您將了解如何設定色彩，並讓`Button`框線可見，更客製化的外觀。 `Button` 會實作[ `IFontElement` ](xref:Xamarin.Forms.Internals.IFontElement)介面，使其包含[ `FontFamily` ](xref:Xamarin.Forms.Button.FontFamily)， [ `FontSize` ](xref:Xamarin.Forms.Button.FontSize)，以及[ `FontAttributes` ](xref:Xamarin.Forms.Button.FontAttributes)屬性。
+每個平臺都會以自己的特定方式呈現 `Button`。 在 [[**按鈕外觀**](#button-appearance)] 區段中，您將瞭解如何設定色彩，並讓 `Button` 框線顯示，以取得更多自訂的外觀。 `Button` 會執行[`IFontElement`](xref:Xamarin.Forms.Internals.IFontElement)介面，因此它包含[`FontFamily`](xref:Xamarin.Forms.Button.FontFamily)、 [`FontSize`](xref:Xamarin.Forms.Button.FontSize)和[`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)屬性。
 
 ## <a name="creating-a-button-in-code"></a>在程式碼中建立按鈕
 
-通常會具現化`Button`在 XAML 中，但您也可以建立`Button`在程式碼中。 這可能是方便您的應用程式需要建立多個按鈕是以可列舉的資料為基礎時`foreach`迴圈。
+通常會在 XAML 中具現化 `Button`，但您也可以在程式碼中建立 `Button`。 當您的應用程式需要根據以 `foreach` 迴圈可列舉的資料來建立多個按鈕時，這可能會很方便。
 
-**程式碼按鈕 Click**頁面會示範如何建立一個網頁，其作用相當於**基本按鈕 Click**頁面，但完全在C#:
+[程式**代碼] 按鈕按一下**[頁面]，示範如何建立功能相當於**基本按鈕按一下**頁面，但完全在C#中的頁面：
 
 ```csharp
 public class CodeButtonClickPage : ContentPage
@@ -124,13 +124,13 @@ public class CodeButtonClickPage : ContentPage
 }
 ```
 
-所有項目是在類別的建構函式。 因為`Clicked`處理常式只有一個陳述式，可以將它附加至事件非常簡單：
+所有專案都是在類別的函式中完成。 因為 `Clicked` 處理常式只是一個語句長，所以可以將它附加至事件，非常簡單：
 
 ```csharp
 button.Clicked += async (sender, args) => await label.RelRotateTo(360, 1000);
 ```
 
-當然，您也可以定義事件處理常式為不同的方法 (如同`OnButtonClick`方法中的**基本按鈕 Click**)，並將該方法附加到事件：
+當然，您也可以將事件處理常式定義為不同的方法（就像 [**基本] 按鈕按一下**中的 `OnButtonClick` 方法），然後將該方法附加至事件：
 
 ```csharp
 button.Clicked += OnButtonClicked;
@@ -138,23 +138,23 @@ button.Clicked += OnButtonClicked;
 
 ## <a name="disabling-the-button"></a>停用按鈕
 
-有時候應用程式處於特定狀態在特定`Button`按一下不是有效的作業。 在這些情況下，`Button`應該設定停用其`IsEnabled`屬性設`false`。 傳統範例是`Entry`附有檔案開啟`Button`之檔案名的控制項：只有在某些文字已輸入`Entry`時，才應該啟用。`Button`
-您可以使用`DataTrigger`這項工作，如中所示[**資料觸發程序**](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)文章。
+有時候應用程式處於特定狀態，特定的 `Button` 按一下則不是有效的作業。 在這些情況下，應該藉由將其 `IsEnabled` 屬性設定為 `false` 來停用 `Button`。 傳統範例是附有檔案開啟 `Button` 之檔案名的 `Entry` 控制項：只有在某些文字已輸入 `Entry` 時，才應該啟用 `Button`。
+您可以使用此工作的 `DataTrigger`，如[**資料觸發**](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)程式一文所示。
 
 ## <a name="using-the-command-interface"></a>使用命令介面
 
-可以讓應用程式以回應`Button`不需要處理的點選`Clicked`事件。 `Button`實作替代的通知機制，稱為_命令_或是_命令_介面。 這包含兩個屬性：
+應用程式可以在不處理 `Clicked` 事件的情況下，回應 `Button` 的點擊。 @No__t_0 會執行稱為_命令或命令_介面的替代通知機制。 這包含兩個屬性：
 
-- [`Command`](xref:Xamarin.Forms.Button.Command) 型別的[ `ICommand` ](xref:System.Windows.Input.ICommand)，在定義的介面[ `System.Windows.Input` ](xref:System.Windows.Input)命名空間。
-- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) 屬性型別的[ `Object` ](xref:System.Object)。
+- [`ICommand`](xref:System.Windows.Input.ICommand)類型的[`Command`](xref:Xamarin.Forms.Button.Command) ，也就是[`System.Windows.Input`](xref:System.Windows.Input)命名空間中定義的介面。
+- [`Object`](xref:System.Object)類型的[`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter)屬性。
 
-特別是當實作 Model View ViewModel (MVVM) 架構時，這個方法會與資料繫結，並特別適合。 在文章中討論這些主題[資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)，[從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)，並[MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md)。
+這種方法特別適用于與資料系結的連接，特別是在執行模型 ViewModel （MVVM）架構時。 這些主題會在[資料](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結、資料系結[至 mvvm](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)和[mvvm](~/xamarin-forms/enterprise-application-patterns/mvvm.md)等文章中討論。
 
-MVVM 應用程式中的 ViewModel 定義類型的屬性`ICommand`，然後連線到 XAML`Button`具有資料繫結項目。 Xamarin.Forms 也會定義[ `Command` ](xref:Xamarin.Forms.Command)並[ `Command<T>` ](xref:Xamarin.Forms.Command`1)類別實作`ICommand`介面，並協助 ViewModel 定義屬性的型別`ICommand`.
+在 MVVM 應用程式中，viewmodel 會定義 `ICommand` 類型的屬性，然後連接到具有資料系結的 XAML `Button` 元素。 [Xamarin] 也會定義執行 `ICommand` 介面的[`Command`](xref:Xamarin.Forms.Command)和[`Command<T>`](xref:Xamarin.Forms.Command`1)類別，並協助 viewmodel 定義 `ICommand` 類型的屬性。
 
-命令文件中的更詳細地說明[**的命令介面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)但**基本按鈕命令**頁面[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例示範基本的方法。
+[**命令介面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)一文中有更詳細的說明，但[**system.windows.forms.datagridview.buttondemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例中的 [**基本] 按鈕命令**頁面會顯示基本的方法。
 
-`CommandDemoViewModel`類別是非常簡單的 ViewModel 定義型別的屬性`double`名為`Number`，和兩個屬性的型別`ICommand`名為`MultiplyBy2Command`和`DivideBy2Command`:
+@No__t_0 類別是非常簡單的 viewmodel，會定義名為 `Number` `double` 類型的屬性，以及名為 `MultiplyBy2Command` 和 `DivideBy2Command` 之類型 `ICommand` 的兩個屬性：
 
 ```csharp
 class CommandDemoViewModel : INotifyPropertyChanged
@@ -192,9 +192,9 @@ class CommandDemoViewModel : INotifyPropertyChanged
 }
 ```
 
-這兩個`ICommand`屬性會初始化該類別的建構函式具有兩個物件的型別中`Command`。 `Command`建構函式包括一些函式 (稱為`execute`建構函式引數)，將增加一倍，或部份就`Number`屬性。
+這兩個 `ICommand` 屬性會在類別的函式中以 `Command` 類型的兩個物件進行初始化。 @No__t_0 的函式包含一個小函式（稱為 `execute` 的「函式」引數），其會加倍或一半 `Number` 的屬性。
 
-**BasicButtonCommand.xaml**檔中設定其`BindingContext`的執行個體`CommandDemoViewModel`。 `Label`元素和兩個`Button`項目包含在三個屬性的繫結`CommandDemoViewModel`:
+**BasicButtonCommand**會將其 `BindingContext` 設定為 `CommandDemoViewModel` 的實例。 @No__t_0 專案和兩個 `Button` 元素都包含 `CommandDemoViewModel` 中三個屬性的系結：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -226,13 +226,13 @@ class CommandDemoViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-與兩個`Button`所點選的項目，會執行的命令，並變更值的數目：
+當兩個 `Button` 的元素被按下時，就會執行命令，而數位會變更值：
 
 [![基本按鈕命令](button-images/BasicButtonCommand.png "基本按鈕命令")](button-images/BasicButtonCommand-Large.png#lightbox)
 
-透過這種方法的優點`Clicked`處理常式會確認牽涉到的功能，此頁面的所有邏輯都位於 ViewModel，而不是程式碼後置檔案，達到更佳隔離的使用者介面與商務邏輯。
+這種方法在 `Clicked` 處理常式上的優點是，所有牽涉到此頁面功能的邏輯都位於 viewmodel 中，而不是程式碼後置檔案中，以更好的方式區隔使用者介面與商務邏輯。
 
-此外，也可以針對`Command`物件來控制啟用及停用`Button`項目。 例如，假設您想要限制 2 之間的數字值的範圍<sup>10</sup>和 2 個<sup>&ndash;10</sup>。 您可以加入建構函式中的另一個函式 (稱為`canExecute`引數)，會傳回`true`如果`Button`應該啟用。 以下是修改`CommandDemoViewModel`建構函式：
+@No__t_0 物件也可以控制 `Button` 元素的啟用和停用。 例如，假設您想要限制介於 2<sup>10</sup>到 2<sup> &ndash;10</sup>之間數值的範圍。 如果應該啟用 `Button`，您可以將另一個函式新增至會傳回 `true` 的函式（稱為 `canExecute` 引數）。 以下是 `CommandDemoViewModel` 的程式的修改：
 
 ```csharp
 class CommandDemoViewModel : INotifyPropertyChanged
@@ -262,13 +262,13 @@ class CommandDemoViewModel : INotifyPropertyChanged
 }
 ```
 
-呼叫`ChangeCanExecute`方法`Command`所需以便`Command`方法可以呼叫`canExecute`方法，並判斷是否`Button`或不應該停用。 透過此程式碼變更，數目達到限制，`Button`已停用：
+呼叫 `Command` 的 `ChangeCanExecute` 方法是必要的，因此 `Command` 方法可以呼叫 `canExecute` 方法，並判斷是否應該停用 `Button`。 隨著這段程式碼的變更，當數位達到限制時，就會停用 `Button`：
 
-[![基本按鈕命令-修改](button-images/BasicButtonCommandModified.png "基本按鈕命令-修改")](button-images/BasicButtonCommandModified-Large.png#lightbox)
+[![基本按鈕命令-已修改](button-images/BasicButtonCommandModified.png "基本按鈕命令-已修改")](button-images/BasicButtonCommandModified-Large.png#lightbox)
 
-您有兩個或多個`Button`繫結至相同的項目`ICommand`屬性。 `Button`項目可以使用辨別[ `CommandParameter` ](xref:Xamarin.Forms.Button.CommandParameter)屬性`Button`。 在此情況下，您會想要使用此泛[ `Command<T>` ](xref:Xamarin.Forms.Command`1)類別。 `CommandParameter`然後物件會傳遞做為引數`execute`和`canExecute`方法。 這項技術會顯示詳細[**基本命令**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)一節[**命令介面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)文章。
+兩個或多個 `Button` 元素可以系結至相同的 `ICommand` 屬性。 @No__t_0 元素可以使用 `Button` 的[`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter)屬性加以區別。 在此情況下，您會想要使用泛型[`Command<T>`](xref:Xamarin.Forms.Command`1)類別。 然後，`CommandParameter` 物件會當做引數傳遞至 `execute` 和 `canExecute` 方法。 這項技術會在[**命令介面**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)一文的[**基本**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)命令區段中詳細顯示。
 
-[ **ButtonDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例也會使用這項技術，在其`MainPage`類別。 **MainPage.xaml**檔案包含`Button`每一頁的範例：
+[**System.windows.forms.datagridview.buttondemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)範例也會在其 `MainPage` 類別中使用這項技術。 **MainPage**包含範例中每個頁面的 `Button`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -314,9 +314,9 @@ class CommandDemoViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-每個`Button`有其`Command`屬性繫結至屬性，名為`NavigateCommand`，而`CommandParameter`設定為[ `Type` ](xref:System.Type)對應到其中一個專案中的頁面類別的物件。
+每個 `Button` 都有其 `Command` 屬性系結至名為 `NavigateCommand` 的屬性，而且 `CommandParameter` 會設定為對應至專案中其中一個頁面類別的[`Type`](xref:System.Type)物件。
 
-該`NavigateCommand`屬性的類型是`ICommand`和程式碼後置檔案中定義：
+該 `NavigateCommand` 屬性的類型為 `ICommand`，並定義于程式碼後置檔案中：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -338,15 +338,15 @@ public partial class MainPage : ContentPage
 }
 ```
 
-建構函式初始化`NavigateCommand`屬性，以`Command<Type>`物件，因為`Type`種`CommandParameter`XAML 檔案中設定的物件。 這表示`execute`方法具有類型的引數`Type`，對應至這個`CommandParameter`物件。 函式具現化頁面上，，然後巡覽至它。
+此函式會將 `NavigateCommand` 屬性初始化為 `Command<Type>` 物件，因為 `Type` 是 XAML 檔案中設定之 `CommandParameter` 物件的型別。 這表示 `execute` 方法具有對應于這個 `CommandParameter` 物件之類型 `Type` 的引數。 函式會具現化頁面，然後流覽至該網頁。
 
-請注意，建構函式結束時，會設定其`BindingContext`本身。 這是必要的繫結至 XAML 檔案中的屬性`NavigateCommand`屬性。
+請注意，此函式會將其 `BindingContext` 設定為其本身來結束。 若要將 XAML 檔案中的屬性系結至 `NavigateCommand` 屬性，這是必要的。
 
-## <a name="pressing-and-releasing-the-button"></a>按下再放開按鈕
+## <a name="pressing-and-releasing-the-button"></a>按下並放開按鈕
 
-除了`Clicked`事件，`Button`也會定義[ `Pressed` ](xref:Xamarin.Forms.Button.Pressed)並[ `Released` ](xref:Xamarin.Forms.Button.Released)事件。 `Pressed`按手指時，就會發生事件`Button`，或按下滑鼠指標位在`Button`。 `Released`發行手指或滑鼠按鈕時，就會發生事件。 一般而言，`Clicked`事件也會引發與同時`Released`事件，但如果手指或滑鼠指標的投影片的表面遠離`Button`之前所發行，`Clicked`事件可能不會發生。
+除了 `Clicked` 事件，`Button` 也會定義 [`Pressed`](xref:Xamarin.Forms.Button.Pressed) 和 [`Released`](xref:Xamarin.Forms.Button.Released) 事件。 當手指按下 `Button` 時，或是按下滑鼠按鍵，並將游標置於 `Button` 上方時，就會發生 `Pressed` 事件。 釋放手指或滑鼠按鍵時，就會發生 `Released` 事件。 一般來說，`Clicked` 事件也會與 `Released` 事件同時引發，但如果手指或滑鼠指標滑出 `Button` 的表面，則在釋放之前，`Clicked` 事件可能不會發生。
 
-`Pressed`並`Released`事件不常用，但它們可以用於特殊用途，如所示**按下並放開按鈕**頁面。 XAML 檔案中包含`Label`並`Button`使用附加的處理常式`Pressed`和`Released`事件：
+@No__t_0 和 `Released` 事件通常不會使用，但可用於特殊用途，如 [**按下] 和 [發行] 按鈕**頁面中所示。 XAML 檔案包含 `Label` 和 `Button`，其中含有針對 `Pressed` 和 `Released` 事件附加的處理常式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -371,7 +371,7 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-以動畫顯示的程式碼後置檔案`Label`時`Pressed`事件就會發生，但暫停旋轉時`Released`就會發生事件：
+當發生 `Pressed` 事件時，程式碼後置檔案會以動畫呈現 `Label`，但會在發生 `Released` 事件時暫停旋轉：
 
 ```csharp
 public partial class PressAndReleaseButtonPage : ContentPage
@@ -405,33 +405,34 @@ public partial class PressAndReleaseButtonPage : ContentPage
 }
 ```
 
-結果是`Label`只會旋轉手指接觸時`Button`，並停止手指放開時：
+結果是 `Label` 只會在手指與 `Button` 接觸時旋轉，並在手指放開時停止：
 
-[![按下再放開按鈕](button-images/PressAndReleaseButton.png "按下再放開按鈕")](button-images/PressAndReleaseButton-Large.png)
+[![按下並放開按鈕](button-images/PressAndReleaseButton.png "按下並放開按鈕")](button-images/PressAndReleaseButton-Large.png)
 
-這種行為有適用于遊戲的應用程式：保留在上`Button`的手指，可能會讓 on screen 物件以特定方向移動。
+這種行為有適用于遊戲的應用程式：在 `Button` 上保留的手指可能會使螢幕上物件以特定方向移動。
 
 <a name="button-appearance" />
 
-## <a name="button-appearance"></a>按鈕的外觀
+## <a name="button-appearance"></a>按鈕外觀
 
-`Button`繼承，或是定義數個會影響其外觀的屬性：
+@No__t_0 會繼承或定義數個會影響其外觀的屬性：
 
-- [`TextColor`](xref:Xamarin.Forms.Button.TextColor) 色彩`Button`文字
-- [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) 該文字的背景色彩
-- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) 區域周圍的色彩 `Button`
-- [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) 使用文字的字型系列
-- [`FontSize`](xref:Xamarin.Forms.Button.FontSize) 文字的大小
-- [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) 指出文字是否為斜體或粗體
-- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) 框線的寬度
-- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) 是的圓角半徑 `Button`
+- [`TextColor`](xref:Xamarin.Forms.Button.TextColor)是 `Button` 文字的色彩
+- [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)是該文字的背景色彩
+- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor)是圍繞著 `Button` 的區域色彩
+- [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily)是用於文字的字型系列
+- [`FontSize`](xref:Xamarin.Forms.Button.FontSize)是文字的大小
+- [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)指出文字是斜體或粗體
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth)是框線的寬度
+- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius)是 `Button` 的圓角半徑
+- `CharacterSpacing` 是 `Button` 文字字元之間的間距
 
 > [!NOTE]
-> `Button`類別也有[ `Margin` ](xref:Xamarin.Forms.View.Margin)並[ `Padding` ](xref:Xamarin.Forms.Button.Padding)控制版面配置行為的屬性`Button`。 如需詳細資訊，請參閱 <<c0> [ 邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
+> @No__t_0 類別也具有[`Margin`](xref:Xamarin.Forms.View.Margin)和[`Padding`](xref:Xamarin.Forms.Button.Padding)屬性，可控制 `Button` 的版面配置行為。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
-六個這些屬性的效果 (不包括`FontFamily`並`FontAttributes`) 中會示範**按鈕外觀**頁面。 另一個屬性[ `Image` ](xref:Xamarin.Forms.Button.ImageSource)，一節所述[**點陣圖使用按鈕**](#image-button)。
+這六個屬性的效果（不包括 `FontFamily` 和 `FontAttributes`）會在 [**按鈕外觀**] 頁面中示範。 另一個屬性（ [`Image`](xref:Xamarin.Forms.Button.ImageSource)）將在[**使用點陣圖搭配按鈕**](#image-button)一節中討論。
 
-中的檢視和資料繫結的所有 **按鈕外觀** XAML 檔案中所定義的頁面：
+[**按鈕外觀**] 頁面中的所有視圖和資料系結都會定義于 XAML 檔案中：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -534,23 +535,23 @@ public partial class PressAndReleaseButtonPage : ContentPage
 </ContentPage>
 ```
 
-`Button`頁面的頂端具有三`Color`屬性繫結至`Picker`在頁面底部的項目。 中的項目`Picker`項目是從色彩`NamedColor`專案中包含的類別。 三個`Slider`項目包含雙向繫結`FontSize`， `BorderWidth`，以及`CornerRadius`的屬性`Button`。
+頁面頂端的 `Button` 有其三個 `Color` 屬性系結至頁面底部的 `Picker` 元素。 @No__t_0 元素中的專案是專案中所包含 `NamedColor` 類別的色彩。 三個 `Slider` 元素包含 `Button` 的 `FontSize`、`BorderWidth` 和 `CornerRadius` 屬性的雙向系結。
 
 此程式可讓您試驗所有這些屬性的組合：
 
 [![按鈕外觀](button-images/ButtonAppearance.png "按鈕外觀")](button-images/ButtonAppearance-Large.png)
 
-若要查看`Button`框線，您必須設定`BorderColor`成以外`Default`，和`BorderWidth`設為正值。
+若要查看 `Button` 框線，您必須將 `BorderColor` 設定為 `Default` 以外的值，並將 `BorderWidth` 設為正值。
 
-在 iOS 上，您會注意到大型的框線寬度會打擾到的內部`Button`，且會影響顯示的文字。 如果您選擇要使用 ios 的框線`Button`，您可能需要的開頭與結尾`Text`空間以保留其可見性屬性。
+在 iOS 上，您會發現大型框線寬度 intrude 在 `Button` 的內部，並干擾文字的顯示。 如果您選擇使用具有 iOS `Button` 的框線，您可能會想要開始和結束具有空格的 `Text` 屬性，以保留其可見度。
 
-在 UWP 上選取`CornerRadius`超過高度的一半`Button`引發例外狀況。
+在 UWP 上，選取超過一半 `Button` 的 `CornerRadius` 會引發例外狀況。
 
 ## <a name="button-visual-states"></a>按鈕視覺狀態
 
-[`Button`](xref:Xamarin.Forms.Button) 已`Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)可用來起始 visual 變更`Button`假設它已啟用，使用者按下時。
+[`Button`](xref:Xamarin.Forms.Button)具有 `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) ，可以在使用者按下時，用來起始對 `Button` 的視覺變更，前提是已啟用。
 
-下列 XAML 範例示範如何定義視覺狀態的`Pressed`狀態：
+下列 XAML 範例顯示如何定義 `Pressed` 狀態的視覺狀態：
 
 ```xaml
 <Button Text="Click me!"
@@ -576,15 +577,15 @@ public partial class PressAndReleaseButtonPage : ContentPage
 </Button>
 ```
 
-`Pressed` [ `VisualState` ](xref:Xamarin.Forms.VisualState)指定[ `Button` ](xref:Xamarin.Forms.Button)按下時，其[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性會變更其預設值為 1 到 0.8。 `Normal` `VisualState`指定`Button`處於正常狀態，其`Scale`屬性會設定為 1。 因此，整體的影響是，當`Button`是按下，它會重新調整為稍微較小，且當`Button`是發行時，它會重新調整為其預設大小。
+@No__t_0 [`VisualState`](xref:Xamarin.Forms.VisualState)指定按下[`Button`](xref:Xamarin.Forms.Button)時，其[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性會從其預設值1變更為0.8。 @No__t_0 `VisualState` 指定當 `Button` 處於正常狀態時，其 `Scale` 屬性會設定為1。 因此，整體的效果是當按下 `Button` 時，它的重新調整會稍微小一點，而釋放 `Button` 時，就會重新調整為其預設大小。
 
-如需有關視覺狀態的詳細資訊，請參閱[Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)。
+如需視覺狀態的詳細資訊，請參閱「 [Xamarin 視覺狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)」。
 
 ## <a name="creating-a-toggle-button"></a>建立切換按鈕
 
-您可以將子類別`Button`化，使其運作方式類似于關閉參數：按一次按鈕即可切換 [開啟] 按鈕，然後再次將它切換成關閉。
+您可以將 `Button` 子類別化，使其運作方式類似于關閉參數：按住按鈕一次，即可切換按鈕，並再次將其關閉。
 
-下列`ToggleButton`類別衍生自`Button`，並定義新的事件，名為`Toggled`和布林值屬性，名為`IsToggled`。 這些是相同的兩個屬性，定義由 Xamarin.Forms [ `Switch` ](xref:Xamarin.Forms.Switch):
+下列 `ToggleButton` 類別衍生自 `Button`，並定義名為 `Toggled` 的新事件和名為 `IsToggled` 的布林屬性。 這些是由 Xamarin [`Switch`](xref:Xamarin.Forms.Switch)所定義的兩個相同屬性：
 
 ```csharp
 class ToggleButton : Button
@@ -626,13 +627,13 @@ class ToggleButton : Button
 }
 ```
 
-`ToggleButton`建構函式會將附加的處理常式`Clicked`事件，讓它可以變更的值`IsToggled`屬性。 `OnIsToggledChanged`方法會引發`Toggled`事件。
+@No__t_0 的函式會將處理常式附加至 `Clicked` 事件，讓它可以變更 `IsToggled` 屬性的值。 @No__t_0 方法會引發 `Toggled` 事件。
 
-最後一行`OnIsToggledChanged`方法會呼叫靜態`VisualStateManager.GoToState`方法有兩個文字字串"ToggledOn 」 和 「 ToggledOff"。 您可以閱讀這個方法和您的應用程式將如何回應文件中的視覺狀態的相關[ **Xamarin.Forms Visual State Manager**](~/xamarin-forms/user-interface/visual-state-manager.md)。
+@No__t_0 方法的最後一行會呼叫具有兩個文字字串 "ToggledOn" 和 "ToggledOff" 的靜態 `VisualStateManager.GoToState` 方法。 您可以閱讀有關此方法的資訊，以及您的應用程式如何回應 [ [**Xamarin] 視覺狀態管理員**](~/xamarin-forms/user-interface/visual-state-manager.md)一文中的視覺狀態。
 
-因為`ToggleButton`對進行呼叫`VisualStateManager.GoToState`，此類別本身不需要包含任何其他的機制，來變更按鈕的外觀，根據其`IsToggled`狀態。 也就是裝載 XAML 的責任`ToggleButton`。
+因為 `ToggleButton` 會呼叫 `VisualStateManager.GoToState`，所以類別本身不需要包含任何額外的設備，就可以根據其 `IsToggled` 狀態來變更按鈕的外觀。 這是主控 `ToggleButton` 之 XAML 的責任。
 
-**切換按鈕示範**頁面包含兩個執行個體`ToggleButton`，包括設定的 Visual State Manager 標記`Text`， `BackgroundColor`，和`TextColor`根據視覺狀態的按鈕：
+[**切換按鈕示範**] 頁面包含 `ToggleButton` 的兩個實例，包括根據視覺狀態設定按鈕 `Text`、`BackgroundColor` 和 `TextColor` 的視覺狀態管理員標記：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -704,7 +705,7 @@ class ToggleButton : Button
 </ContentPage>
 ```
 
-`Toggled`事件處理常式是在程式碼後置檔案中。 他們會負責設定`FontAttributes`屬性`Label`根據按鈕的狀態：
+@No__t_0 的事件處理常式位於程式碼後置檔案中。 它們會負責根據按鈕的狀態來設定 `Label` 的 `FontAttributes` 屬性：
 
 ```csharp
 public partial class ToggleButtonDemoPage : ContentPage
@@ -740,55 +741,55 @@ public partial class ToggleButtonDemoPage : ContentPage
 }
 ```
 
-以下是在 iOS、 Android 及 UWP 上執行的程式：
+以下是在 iOS、Android 和 UWP 上執行的程式：
 
 [![切換按鈕示範](button-images/ToggleButtonDemo.png "切換按鈕示範")](button-images/ToggleButtonDemo-Large.png#lightbox)
 
 <a name="image-button" />
 
-## <a name="using-bitmaps-with-buttons"></a>使用的點陣圖按鈕
+## <a name="using-bitmaps-with-buttons"></a>使用具有按鈕的點陣圖
 
-`Button`類別會定義[ `ImageSource` ](xref:Xamarin.Forms.Button.Image)屬性，可讓您在上顯示點陣圖影像`Button`，單獨或搭配文字。 您也可以指定的文字和影像的排列方式。
+@No__t_0 類別定義一個[`ImageSource`](xref:Xamarin.Forms.Button.Image)屬性，可讓您在 `Button` 上顯示點陣圖影像，不論是單獨或結合文字。 您也可以指定文字和影像的相片順序。
 
-屬性的類型[`ImageSource`](xref:Xamarin.Forms.ImageSource)為，這表示可以從檔案、內嵌資源、URI 或資料流程載入點陣圖。 `ImageSource`
+@No__t_0 屬性是[`ImageSource`](xref:Xamarin.Forms.ImageSource)類型，這表示可以從檔案、內嵌資源、URI 或資料流程載入點陣圖。
 
-Xamarin.Forms 所支援的每個平台可讓儲存在不同的像素解析度的各種裝置上可能執行的應用程式的多個大小的影像。 這些是名為多個點陣圖，或將其儲存在一種作業系統可以挑選最符合項目，該裝置的視訊顯示器解析度。
+Xamarin 支援的每個平臺都可以針對應用程式執行所在之各種裝置的不同圖元解析度，以多種大小來儲存影像。 這些點陣圖會以一種方式命名或儲存，讓作業系統能夠挑選最符合裝置的影片顯示解析度。
 
-在點陣圖`Button`、 32 和 64 裝置獨立單位之間通常是最佳的大小、 您想要視大小而定。 此範例中使用的映像為基礎的 48 裝置獨立單位的大小。
+若為 `Button` 上的點陣圖，最佳大小通常介於32和64裝置獨立單位之間，視您想要的大小時而定。 此範例中使用的影像是以48裝置獨立單位的大小為基礎。
 
-在 iOS 專案中，**資源**資料夾包含三種大小的這個映像：
+在 iOS 專案中， **Resources**資料夾包含此影像的三種大小：
 
-- 48 像素的正方形點陣圖，儲存為 **/Resources/MonkeyFace.png**
-- 96 像素的正方形點陣圖，儲存為 **/Resource/MonkeyFace@2x.png**
-- 144 像素的正方形點陣圖，儲存為 **/Resource/MonkeyFace@3x.png**
+- 儲存為 **/Resources/MonkeyFace.png**的48圖元正方形點陣圖
+- 儲存為 **/Resource/MonkeyFace@2x.png** 的96圖元正方形點陣圖
+- 儲存為 **/Resource/MonkeyFace@3x.png** 的144圖元正方形點陣圖
 
-提供給所有的三個點陣圖**建置動作**的**BundleResource**。
+這三個位圖都有**BundleResource**的**組建動作**。
 
-針對 Android 專案中，所有的點陣圖有相同的名稱，但不同的子資料夾中儲存**資源**資料夾：
+針對 Android 專案，點陣圖全部具有相同的名稱，但儲存在**Resources**資料夾的不同子資料夾中：
 
-- 72 像素的正方形點陣圖，儲存為 **/Resources/drawable-hdpi/MonkeyFace.png**
-- 96 像素的正方形點陣圖，儲存為 **/Resources/drawable-xhdpi/MonkeyFace.png**
-- 144 像素的正方形點陣圖，儲存為 **/Resources/drawable-xxhdpi/MonkeyFace.png**
-- 192 個像素正方形點陣圖儲存為 **/Resources/drawable-xxxhdpi/MonkeyFace.png**
+- 儲存為 **/Resources/drawable-hDPI/MonkeyFace.png**的72圖元正方形點陣圖
+- 儲存為 **/Resources/drawable-xhDPI/MonkeyFace.png**的96圖元正方形點陣圖
+- 儲存為 **/Resources/drawable-xxhDPI/MonkeyFace.png**的144圖元正方形點陣圖
+- 儲存為 **/Resources/drawable-xxxhDPI/MonkeyFace.png**的192圖元正方形點陣圖
 
-這些已給予**建置動作**的**AndroidResource**。
+這些是針對**AndroidResource**的**組建動作**而提供的。
 
-在 UWP 專案中，點陣圖可以儲存在專案中，但它們通常會儲存在自訂的資料夾或**資產**現有的資料夾。 UWP 專案中包含這些點陣圖：
+在 UWP 專案中，點陣圖可以儲存在專案中的任何位置，但通常會儲存在自訂資料夾或**資產**現有資料夾中。 UWP 專案包含下列點陣圖：
 
-- 48 像素的正方形點陣圖，儲存為 **/Assets/MonkeyFace.scale-100.png**
-- 96 像素的正方形點陣圖，儲存為 **/Assets/MonkeyFace.scale-200.png**
-- 192 個像素正方形點陣圖儲存為 **/Assets/MonkeyFace.scale-400.png**
+- 儲存為 **/Assets/MonkeyFace.scale-100.png**的48圖元正方形點陣圖
+- 儲存為 **/Assets/MonkeyFace.scale-200.png**的96圖元正方形點陣圖
+- 儲存為 **/Assets/MonkeyFace.scale-400.png**的192圖元正方形點陣圖
 
-所有已給予他們**建置動作**的**內容**。
+它們都有提供**內容**的**組建動作**。
 
-您可以指定如何`Text`並`ImageSource`屬性上排列`Button`使用[ `ContentLayout` ](xref:Xamarin.Forms.Button.ContentLayout)屬性`Button`。 此屬性的類型是[ `ButtonContentLayout` ](xref:Xamarin.Forms.Button.ButtonContentLayout)，這是中的內嵌的類別`Button`。 [建構函式](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double))有兩個引數：
+您可以使用 `Button` 的[`ContentLayout`](xref:Xamarin.Forms.Button.ContentLayout)屬性，指定 `Text` 和 `ImageSource` 屬性在 `Button` 上的相片順序。 這個屬性的類型是[`ButtonContentLayout`](xref:Xamarin.Forms.Button.ButtonContentLayout)，這是 `Button` 中的內嵌類別。 此[函](xref:Xamarin.Forms.Button.ButtonContentLayout.%23ctor(Xamarin.Forms.Button.ButtonContentLayout.ImagePosition,System.Double))式有兩個引數：
 
-- 成員[ `ImagePosition` ](xref:Xamarin.Forms.Button.ButtonContentLayout.ImagePosition)列舉型別： `Left`， `Top`， `Right`，或`Bottom`指出點陣圖相對於文字的顯示方式。
-- A`double`點陣圖與文字之間的間距值。
+- [@No__t_1](xref:Xamarin.Forms.Button.ButtonContentLayout.ImagePosition)列舉的成員： `Left`、`Top`、`Right` 或 `Bottom`，表示點陣圖相對於文字的顯示方式。
+- 點陣圖和文字之間間距的 `double` 值。
 
-預設值為`Left`和 10 個單位。 兩個唯讀屬性的`ButtonContentLayout`名為[ `Position` ](xref:Xamarin.Forms.Button.ButtonContentLayout.Position)並[ `Spacing` ](xref:Xamarin.Forms.Button.ButtonContentLayout.Spacing)提供這些屬性的值。
+預設值為 `Left` 和10個單位。 名為[`Position`](xref:Xamarin.Forms.Button.ButtonContentLayout.Position)和[`Spacing`](xref:Xamarin.Forms.Button.ButtonContentLayout.Spacing) `ButtonContentLayout` 的兩個唯讀屬性會提供這些屬性的值。
 
-在程式碼中，您可以建立`Button`並設定`ContentLayout`屬性如下：
+在程式碼中，您可以建立 `Button` 並設定 `ContentLayout` 屬性，如下所示：
 
 ```csharp
 Button button = new Button
@@ -802,7 +803,7 @@ Button button = new Button
 };
 ```
 
-在 XAML，您需要指定只列舉成員或間距，或同時依任何順序並以逗號分隔：
+在 XAML 中，您只需要指定列舉成員或間距，或以逗號分隔的任何順序：
 
 ```xaml
 <Button Text="button text"
@@ -810,9 +811,9 @@ Button button = new Button
         ContentLayout="Right, 20" />
 ```
 
-**映像按鈕示範**頁面上使用`OnPlatform`iOS、 Android 和 UWP 點陣圖檔指定不同的檔案名稱。 如果您想要每個平台使用相同的檔案名稱，並避免使用`OnPlatform`，您必須將 UWP 點陣圖儲存在專案的根目錄。
+[**影像按鈕示範**] 頁面會使用 `OnPlatform`，為 IOS、ANDROID 和 UWP 點陣圖檔案指定不同的檔案名。 如果您想要針對每個平臺使用相同的檔案名，並避免使用 `OnPlatform`，則必須將 UWP 點陣圖儲存在專案的根目錄中。
 
-第一個`Button`上**映像按鈕示範**頁面上設定`Image`屬性而非`Text`屬性：
+[**影像按鈕示範**] 頁面上的第一個 `Button` 會設定 `Image` 屬性，而不是 `Text` 屬性：
 
 ```xaml
 <Button>
@@ -825,13 +826,13 @@ Button button = new Button
 </Button>
 ```
 
-如果 UWP 點陣圖會儲存在專案的根目錄，可大幅簡化此標記：
+如果 UWP 點陣圖儲存在專案的根目錄中，可以大幅簡化此標記：
 
 ```xaml
 <Button ImageSource="MonkeyFace.png" />
 ```
 
-若要避免重複的標記，在大量**ImageButtonDemo.xaml**檔案，隱含`Style`也會定義設定`ImageSource`屬性。 這`Style`會自動套用至五個其他`Button`項目。 以下是完整的 XAML 檔案：
+為了避免**ImageButtonDemo xaml**檔案中有許多重複的標記，也會定義隱含的 `Style` 來設定 `ImageSource` 屬性。 此 `Style` 會自動套用至五個其他 `Button` 元素。 以下是完整的 XAML 檔案：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -879,13 +880,13 @@ Button button = new Button
 </ContentPage>
 ```
 
-最後四個`Button`元素的使用`ContentLayout`屬性來指定位置和間距的文字和點陣圖：
+最後四個 `Button` 元素會利用 `ContentLayout` 屬性來指定文字和點陣圖的位置和間距：
 
 [![影像按鈕示範](button-images/ImageButtonDemo.png "影像按鈕示範")](button-images/ImageButtonDemo-Large.png#lightbox)
 
-您現在已了解您可以處理的各種方式`Button`事件和變更`Button`外觀。
+您現在已經看過各種可以處理 `Button` 事件和變更 `Button` 外觀的方式。
 
 ## <a name="related-links"></a>相關連結
 
-- [ButtonDemos 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
-- [按鈕 API](xref:Xamarin.Forms.Button)
+- [System.windows.forms.datagridview.buttondemos 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
+- [Button API](xref:Xamarin.Forms.Button)

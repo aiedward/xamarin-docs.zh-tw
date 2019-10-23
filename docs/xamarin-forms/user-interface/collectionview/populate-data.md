@@ -6,21 +6,19 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/13/2019
-ms.openlocfilehash: 6942baed6af2a2e9b2c713a8fe08cf4c8ed4416b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
-ms.translationtype: HT
+ms.date: 09/20/2019
+ms.openlocfilehash: 5afdaa9afa4c5ced39498a1cb45de07fe4bf4195
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/21/2019
-ms.locfileid: "69888539"
+ms.locfileid: "72696718"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin. 表單 CollectionView 資料
 
-![](~/media/shared/preview.png "This API is currently pre-release")
-
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義下列定義要顯示之資料的屬性，以及其外觀：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)包含下列定義要顯示之資料的屬性，以及其外觀：
 
 - [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)，屬於 `IEnumerable` 類型，會指定要顯示的專案集合，且預設值為 [`null`]。
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)，屬於[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)類型，會指定要套用至要顯示的專案集合中每個專案的範本。
@@ -78,7 +76,7 @@ collectionView.ItemsSource = new string[]
 
 [![IOS 和 Android 上包含文字專案之 CollectionView 的螢幕擷取畫面](populate-data-images/text.png "CollectionView 中的文字專案")](populate-data-images/text-large.png#lightbox "CollectionView 中的文字專案")
 
-如需如何變更[`CollectionView`](xref:Xamarin.Forms.CollectionView)配置的詳細資訊，請參閱[指定版面](layout.md)配置。 如需如何在 `CollectionView` 中定義每個專案外觀的詳細資訊，請參閱[定義專案外觀](#define-item-appearance)。
+如需如何變更[`CollectionView`](xref:Xamarin.Forms.CollectionView)版面配置的相關資訊，請參閱[CollectionView 版面](layout.md)配置。 如需如何在 `CollectionView` 中定義每個專案外觀的詳細資訊，請參閱[定義專案外觀](#define-item-appearance)。
 
 ### <a name="data-binding"></a>資料繫結
 
@@ -250,6 +248,45 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 > [!IMPORTANT]
 > 使用[`CollectionView`](xref:Xamarin.Forms.CollectionView)時，絕對不要將[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)物件的根項目設定為 `ViewCell`。 這會導致擲回例外狀況，因為 `CollectionView` 沒有資料格的概念。
 
+## <a name="pull-to-refresh"></a>提取至重新整理
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)支援透過 `RefreshView` 的提取至重新整理功能，可讓您藉由在專案清單上向下拉出來重新整理顯示的資料。 @No__t_0 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CollectionView` 設定為 `RefreshView` 的子系，就會為其執行 pull 的「重新整理」：
+
+```xaml
+<RefreshView IsRefreshing="{Binding IsRefreshing}"
+             Command="{Binding RefreshCommand}">
+    <CollectionView ItemsSource="{Binding Animals}">
+        ...
+    </CollectionView>
+</RefreshView>
+```
+
+對等的 C# 程式碼為：
+
+```csharp
+RefreshView refreshView = new RefreshView();
+ICommand refreshCommand = new Command(() =>
+{
+    // IsRefreshing is true
+    // Refresh data here
+    refreshView.IsRefreshing = false;
+});
+refreshView.Command = refreshCommand;
+
+CollectionView collectionView = new CollectionView();
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
+refreshView.Content = collectionView;
+// ...
+```
+
+當使用者起始重新整理時，會執行 `Command` 屬性所定義的 `ICommand`，這應該會重新整理所顯示的專案。 重新整理視覺效果會在進行重新整理時顯示，這是由動畫的進度圓形所組成：
+
+[![IOS 和 Android 上的 CollectionView 提取重新整理的螢幕擷取畫面](populate-data-images/pull-to-refresh.png "CollectionView 的提取更新")](populate-data-images/pull-to-refresh-large.png#lightbox "CollectionView 的提取更新")
+
+@No__t_0 屬性的值表示 `RefreshView` 的目前狀態。 當使用者觸發重新整理時，這個屬性會自動轉換成 `true`。 重新整理完成後，您應該將屬性重設為 `false`。
+
+如需 `RefreshView` 的詳細資訊，請參閱[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
+
 ## <a name="load-data-incrementally"></a>以累加方式載入資料
 
 當使用者透過專案滾動時， [`CollectionView`](xref:Xamarin.Forms.CollectionView)支援以累加方式載入資料。 這可讓您在使用者滾動時，從 web 服務以非同步方式載入資料頁等案例。 此外，您可以設定載入更多資料的時間點，讓使用者看不到空白空間，或停止滾動。
@@ -303,6 +340,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 ## <a name="related-links"></a>相關連結
 
 - [CollectionView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin. 表單資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

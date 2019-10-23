@@ -8,10 +8,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 04/25/2018
 ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 10/21/2019
 ms.locfileid: "70291408"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>在 Xamarin 中使用 tvOS 進度指示器
@@ -55,7 +55,7 @@ Apple 具有下列使用進度列的建議：
 
 3. 在  **Properties Pad**的  **Widget**  索引標籤中，您可以調整活動指標的數個屬性，例如其**樣式**、**行為**和**名稱**： 
 
-    ![活動指標的 [Widget]]索引標籤(progress-indicators-images/activity02.png "活動指標的 [Widget]")索引標籤
+    ![活動指標的 [Widget] 索引標籤](progress-indicators-images/activity02.png "活動指標的 [Widget] 索引標籤")
     
     **名稱**會決定以C#程式碼表示活動指標的屬性名稱。
 
@@ -65,7 +65,7 @@ Apple 具有下列使用進度列的建議：
 
 5. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中，您可以調整進度視圖的數個屬性，例如其**樣式**、**進度**（完成百分比）和**名稱**： 
 
-    ![進度視圖的 [Widget]]索引標籤(progress-indicators-images/activity04.png "進度視圖的 [Widget]")索引標籤
+    ![進度視圖的 [Widget] 索引標籤](progress-indicators-images/activity04.png "進度視圖的 [Widget] 索引標籤")
     
     **名稱**會決定以C#程式碼表示進度視圖的屬性名稱。
 
@@ -77,12 +77,12 @@ Apple 具有下列使用進度列的建議：
 
 2. 從 [**工具箱**] 將**活動指標**拖曳至 [view]： 
 
-    ![活動指標活動指標](progress-indicators-images/activity01-vs.png
-    "")
+    ![活動指標](progress-indicators-images/activity01-vs.png
+    "活動指標")
 
 3. 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，您可以調整活動指標的數個屬性，例如其**樣式**、**行為**和**名稱**： 
 
-    ![活動指標的 [Widget]]索引標籤(progress-indicators-images/activity02-vs.png "活動指標的 [Widget]")索引標籤
+    ![活動指標的 [Widget] 索引標籤](progress-indicators-images/activity02-vs.png "活動指標的 [Widget] 索引標籤")
 
     **名稱**會決定以C#程式碼表示活動指標的屬性名稱。
 
@@ -92,7 +92,7 @@ Apple 具有下列使用進度列的建議：
 
 5. 在 [**屬性瀏覽器**] 的 [ **Widget** ] 索引標籤中，您可以調整進度視圖的數個屬性，例如其**樣式**、**進度**（完成百分比）和**名稱**： 
 
-    ![進度視圖的 [Widget]]索引標籤(progress-indicators-images/activity04-vs.png "進度視圖的 [Widget]")索引標籤
+    ![進度視圖的 [Widget] 索引標籤](progress-indicators-images/activity04-vs.png "進度視圖的 [Widget] 索引標籤")
     
     **名稱**會決定以C#程式碼表示進度視圖的屬性名稱。
 
@@ -106,7 +106,7 @@ Apple 具有下列使用進度列的建議：
 
 如上所述，當您的應用程式執行長時間不定的進程時，應該會顯示活動指示器。
 
-在任何時間點，您都可以藉由檢查活動指標的屬性來`IsAnimating`查看其是否為動畫。 如果屬性為`true`，則活動指標會在其動畫停止時自動隱藏。 `HidesWhenStopped`
+在任何時間點，您都可以藉由檢查其 `IsAnimating` 屬性來查看活動指標是否為動畫。 如果 `HidesWhenStopped` 屬性為 `true`，則活動指標會在其動畫停止時自動隱藏。
 
 您可以使用下列程式碼來啟動動畫： 
 
@@ -127,7 +127,7 @@ ActivityIndicator.StopAnimating();
 
 同樣地，每當您的應用程式執行已知持續時間的長時間執行工作時，都應該使用進度列。 
 
-`Progress`屬性是用來將已完成的工作量從 0% 設定為 100% （0.0 到1.0）。 您可以使用`TrackTintColor` 屬性來設定[已完成的數量]列和屬性的色彩，以設定背景色彩（未完成`ProgressTintColor`的金額）。
+@No__t_0 屬性是用來設定已完成的工作量（從0% 到100% （0.0 至1.0））。 使用 [`ProgressTintColor`] 屬性來設定 [已完成的數量] 列和 [`TrackTintColor`] 屬性的色彩，以設定背景色彩（未完成的金額）。
 
 ## <a name="summary"></a>總結
 

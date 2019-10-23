@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/12/2019
-ms.openlocfilehash: e77dc003e3786767f873e71514ebb3b7aef8c8d6
-ms.sourcegitcommit: 8f78139333aa54d9247710008bcfae15f7fd5392
+ms.openlocfilehash: 25ddbea75d0fd6858f848499281da5d5f0b68171
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583540"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697191"
 ---
 # <a name="xamarinforms-device-class"></a>Xamarin. Forms 裝置類別
 
@@ -154,18 +154,6 @@ someLabel.FontSize = Device.OnPlatform (
       Device.GetNamedSize (NamedSize.Large, someLabel)
 );
 ```
-
-## <a name="deviceopenuri"></a>Device. OpenUri
-
-@No__t_0 方法可以用來在基礎平臺上觸發作業，例如在原生 web 瀏覽器中開啟 URL （在 iOS 上的**Safari**或 Android 上的**網際網路**上）。
-
-```csharp
-Device.OpenUri(new Uri("https://evolve.xamarin.com/"));
-```
-
-[ [Web](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithWebview/WorkingWithWebview/WebAppPage.cs)工作] 範例包含使用 `OpenUri` 來開啟 url，也會觸發電話通話的範例。
-
-[Maps 範例](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/MapAppPage.cs)也會使用 `Device.OpenUri`，以使用 IOS 和 Android 上的原生**地圖**應用程式來顯示地圖和路線。
 
 ## <a name="devicestarttimer"></a>Device. StartTimer
 

@@ -7,13 +7,13 @@ ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2019
-ms.openlocfilehash: f146fc25af5b5c62acece5c736522773e6dc455d
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
-ms.translationtype: HT
+ms.date: 10/11/2019
+ms.openlocfilehash: f73de44cbae0281d56cc6fd7ab21f8aa60264ed4
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/21/2019
-ms.locfileid: "69976526"
+ms.locfileid: "72696145"
 ---
 # <a name="xaml-controls"></a>XAML 控制項
 
@@ -30,7 +30,7 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 | <h3>BoxView</h3>顯示特定色彩的矩形。<p align="center">![BoxView 的螢幕擷取畫面](xaml-controls-images/BoxView.png "BoxView")</p>[API](xref:Xamarin.Forms.BoxView)  / [指南](~/xamarin-forms/user-interface/boxview.md) | <pre valign="center">&lt;BoxView Color="Accent"<br />         WidthRequest="150"<br />         HeightRequest="150"<br />         HorizontalOptions="Center"&gt;</pre></p> |
 | <h3>Image</h3>顯示點陣圖。<p align="center">![影像的螢幕擷取畫面](xaml-controls-images/Image.png "Image")</p>[API](xref:Xamarin.Forms.Image)  / [指南](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
 | <h3>ThisAddIn</h3>顯示一或多行文字。<p align="center">![標籤的螢幕擷取畫面](xaml-controls-images/Label.png "ThisAddIn")</p>[API](xref:Xamarin.Forms.Label)  / [指南](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
-| <h3>對應</h3>顯示地圖。<p align="center">![地圖的螢幕擷取畫面](xaml-controls-images/Map.png "對應")</p>[API](xref:Xamarin.Forms.Maps.Map)  / [指南](~/xamarin-forms/user-interface/map.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
+| <h3>對應</h3>顯示地圖。<p align="center">![地圖的螢幕擷取畫面](xaml-controls-images/Map.png "對應")</p>[API](xref:Xamarin.Forms.Maps.Map)  / [指南](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
 | <h3>WebView</h3>顯示網頁或 HTML 內容。<p align="center">![Web 工作的螢幕擷取畫面](xaml-controls-images/WebView.png "WebView")</p>[API](xref:Xamarin.Forms.WebView)  / [指南](~/xamarin-forms/user-interface/webview.md) | <p valign="center"><pre>&lt;WebView Source="https://docs.microsoft.com/xamarin/"<br/>         VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |
 
@@ -40,8 +40,7 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 | --- | --- |
 | <h3>按鈕</h3>顯示矩形物件中的文字。<p align="center">![按鈕的螢幕擷取畫面](xaml-controls-images/Button.png "按鈕")</p>[API](xref:Xamarin.Forms.Button)  / [指南](~/xamarin-forms/user-interface/button.md) | <p valign="center"><pre>&lt;Button Text="Click Me!"<br />        Font="Large"<br />        BorderWidth="1"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand"<br />        Clicked="OnButtonClicked" /&gt;</pre></p> |
 | <h3>ImageButton</h3>顯示矩形物件中的影像。<p align="center">![ImageButton 的螢幕擷取畫面](xaml-controls-images/ImageButton.png "ImageButton")</p>[API](xref:Xamarin.Forms.ImageButton)  / [指南](~/xamarin-forms/user-interface/imagebutton.md) | <p valign="center"><pre>&lt;ImageButton Source="XamarinLogo.png"<br />             HorizontalOptions="Center"<br />             VerticalOptions="CenterAndExpand"<br />             Clicked="OnImageButtonClicked" /&gt;</pre></p> |
-| <h3>搜尋列</h3>顯示搜尋列以執行搜尋。<p align="center">![搜尋列的螢幕擷取畫面](xaml-controls-images/SearchBar.png "搜尋列")</p>[API](xref:Xamarin.Forms.SearchBar)  / [指南](~/xamarin-forms/user-interface/searchbar.md) | <p valign="center"><pre>&lt;SearchBar Placeholder="Xamarin.Forms Property"<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
-|     |     |
+| <h3>RefreshView</h3>提供可滾動內容的提取重新整理功能。<p align="center">![RefreshView 的螢幕擷取畫面](xaml-controls-images/RefreshView.png "RefreshView")</p>[輥](~/xamarin-forms/user-interface/refreshview.md) | <p valign="center"><pre>&lt;RefreshView IsRefreshing="{Binding IsRefreshing}"<br />             Command="{Binding RefreshCommand}" &gt;<br />    &lt;!-- Scrollable control goes here --&gt;<br />&lt;/RefreshView&gt;</pre></p> |
 
 ## <a name="views-for-setting-values"></a>設定值的視圖
 
@@ -75,6 +74,7 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 
 |     |     |
 | --- | --- |
+| <h3>CarouselView</h3>顯示資料項目目的可滾動清單。<p align="center">![CarouselView 的螢幕擷取畫面](xaml-controls-images/CarouselView.png "CarouselView")</p>[輥](~/xamarin-forms/user-interface/carouselview/index.md) | <p valign="center"><pre>&lt;CarouselView ItemsSource="{Binding Monkeys}"&gt;<br/>              ItemTemplate="{StaticResource MonkeyTemplate}" /&gt;</pre></p>|
 | <h3>CollectionView</h3>使用不同的版面配置規格，顯示可選取資料項目的可滾動清單。<p align="center">![CollectionView 的螢幕擷取畫面](xaml-controls-images/CollectionView.png "CollectionView")</p>[輥](~/xamarin-forms/user-interface/collectionview/index.md) | <p valign="center"><pre>&lt;CollectionView ItemsSource="{Binding Monkeys}"&gt;<br/>                ItemTemplate="{StaticResource MonkeyTemplate}"<br />    &lt;CollectionView.ItemsLayout&gt;<br />       &lt;GridItemsLayout Orientation="Vertical"<br />                        Span="2" /&gt;<br />    &lt;/CollectionView.ItemsLayout&gt;<br />&lt;/CollectionView/&gt;</pre></p> |
 | <h3>ListView</h3>顯示可選取資料項目的可滾動清單。<p align="center">![ListView 的螢幕擷取畫面](xaml-controls-images/ListView.png "ListView")</p>[API](xref:Xamarin.Forms.ListView)  / [指南](~/xamarin-forms/user-interface/listview/index.md) | <p valign="center"><pre>&lt;ListView ItemsSource="{Binding Monkeys}"&gt;<br />          ItemTemplate="{StaticResource MonkeyTemplate}" /&gt;</pre></p> |
 | <h3>Picker</h3>顯示文字字串清單中的選取專案。<p align="center">![選擇器的螢幕擷取畫面](xaml-controls-images/Picker.png "Picker")</p>[API](xref:Xamarin.Forms.Picker)  / [指南](~/xamarin-forms/user-interface/picker/index.md) | <p valign="center"><pre>&lt;Picker Title="Select a monkey"<br />        TitleColor="Red"&gt;<br />  &lt;Picker.ItemsSource&lt;<br />    &lt;x:Array Type="{x:Type x:String}"&gt;<br />      &lt;x:String&gt;Baboon&lt;/x:String&gt;<br />      &lt;x:String&gt;Capuchin Monkey&lt;/x:String&gt;<br />      &lt;x:String&gt;Blue Monkey&lt;/x:String&gt;<br />      &lt;x:String&gt;Squirrel Monkey&lt;/x:String&gt;<br />      &lt;x:String&gt;Golden Lion Tamarin&lt;/x:String&gt;<br />      &lt;x:String&gt;Howler Monkey&lt;/x:String&gt;<br />      &lt;x:String&gt;Japanese Macaque&lt;/x:String&gt;<br />    &lt;/x:Array&gt;<br />  &lt;/Picker.ItemsSource&gt;<br />&lt;/Picker&gt;</pre></p> |
