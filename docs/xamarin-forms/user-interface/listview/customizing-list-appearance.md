@@ -1,40 +1,40 @@
 ---
 title: ListView 外觀
-description: 這篇文章說明如何在 Xamarin.Forms 應用程式自訂的 Listview，使用標頭、 頁尾、 群組和變數的高度資料格。
+description: 本文說明如何使用標頭、頁尾、群組和變數高度資料格，自訂 Xamarin 中的 Listview 應用程式。
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 62073f624c37a48baa49453d7bdd1e0b849013cd
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.openlocfilehash: f6576f1e7a0ed4aa27a40c7610b42e942c7923b4
+ms.sourcegitcommit: fbccdade677a805d842ec054e44bed3d01356e93
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "70998163"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72798626"
 ---
 # <a name="listview-appearance"></a>ListView 外觀
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
-除了清單中每[`ListView`](xref:Xamarin.Forms.ListView)個數據列的[`ViewCell`](xref:Xamarin.Forms.ViewCell)實例以外，您還可利用 Xamarin 來自訂清單的呈現方式。
+除了清單中每個資料列的[`ViewCell`](xref:Xamarin.Forms.ViewCell)實例以外，[Xamarin] [`ListView`](xref:Xamarin.Forms.ListView)還可讓您自訂清單的呈現方式。
 
 ## <a name="grouping"></a>群組
 
-大型資料集在持續滾動清單中呈現時可能會變得很困難。 啟用群組可以改善使用者體驗，在這些情況下，進一步組織內容，並啟用輕鬆巡覽資料的平台專屬控制項。
+大型資料集在持續滾動清單中呈現時可能會變得很困難。 啟用分組可以改善使用者在這些情況下的使用體驗，方法是更有效地組織內容，並啟用平臺特定控制項，讓流覽資料更容易。
 
-當群組啟用`ListView`，標頭資料列會加入每個群組。
+啟用 `ListView` 的群組時，會為每個群組新增標頭資料列。
 
 若要啟用群組：
 
-- 建立一份清單 （群組的清單，每個群組所需項目的清單）。
-- 設定`ListView`的`ItemsSource`該清單。
-- 設定`IsGroupingEnabled`設為 true。
-- 設定[ `GroupDisplayBinding` ](xref:Xamarin.Forms.ListView.GroupDisplayBinding)繫結至屬性群組，做為群組的標題。
-- [選用]設定[ `GroupShortNameBinding` ](xref:Xamarin.Forms.ListView.GroupShortNameBinding)繫結至群組的屬性，顯示正做為群組的簡短名稱。 捷徑清單 （如在 iOS 上的資料行右邊） 使用簡短的名稱。
+- 建立清單清單（群組清單，每個群組都是元素的清單）。
+- 將 `ListView` 的 `ItemsSource` 設定為該清單。
+- 將 `IsGroupingEnabled` 設定為 true。
+- 將[`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding)設定為系結至做為群組標題使用之群組的屬性。
+- 選擇性將[`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding)設定為系結至用來做為群組簡短名稱之群組的屬性。 簡短名稱用於跳躍清單（iOS 上的右側資料行）。
 
-啟動建立群組的類別：
+從建立群組的類別開始：
 
 ```csharp
 public class PageTypeGroup : List<PageModel>
@@ -52,9 +52,9 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-在上述程式碼中，`All`是要提供給我們的 ListView，做為繫結來源的清單。 `Title` 和`ShortName`是將用於群組標題的屬性。
+在上述程式碼中，`All` 是要提供給 ListView 做為系結來源的清單。 `Title` 和 `ShortName` 是將用於群組標題的屬性。
 
-在這個階段，`All`是空的清單。 新增靜態建構函式，以便將填入的清單，在程式啟動：
+在這個階段，`All` 是空的清單。 新增靜態的函式，以便在程式啟動時填入清單：
 
 ```csharp
 static PageTypeGroup()
@@ -72,14 +72,14 @@ static PageTypeGroup()
                 new PageModel("Bella", "Desire", new switchCellPage(), "grapefruit.jpg"),
                 new PageModel("Ben", "Chocolate", new switchCellPage(), "grapefruit.jpg")
             }
-        }
+        };
         All = Groups; //set the publicly accessible list
 }
 ```
 
-在上述程式碼中，我們也可以`Add`呼叫的`Groups`元素，這是類型`PageTypeGroup`的實例。 這個方法是可能的`PageTypeGroup` ，因為`List<PageModel>`繼承自。
+在上述程式碼中，我們也可以在 `Groups` 的元素上呼叫 `Add`，這些專案是 `PageTypeGroup` 類型的實例。 這個方法是可能的，因為 `PageTypeGroup` 繼承自 `List<PageModel>`。
 
-以下是 XAML 來顯示群組的清單：
+以下是用來顯示已群組清單的 XAML：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -104,22 +104,22 @@ static PageTypeGroup()
 
 此 XAML 會執行下列動作：
 
-- 設定`GroupShortNameBinding`至`ShortName`我們群組類別中定義的屬性
-- 設定`GroupDisplayBinding`至`Title`我們群組類別中定義的屬性
-- 設定`IsGroupingEnabled`設為 true
-- 變更`ListView`的`ItemsSource`至群組的清單
+- 將 `GroupShortNameBinding` 設定為群組類別中定義的 `ShortName` 屬性
+- 將 `GroupDisplayBinding` 設定為群組類別中定義的 `Title` 屬性
+- 將 `IsGroupingEnabled` 設定為 true
+- 已將 `ListView` 的 `ItemsSource` 變更為群組清單
 
 下列螢幕擷取畫面顯示產生的 UI：
 
-![](customizing-list-appearance-images/grouping-depth.png "ListView 群組範例")
+![](customizing-list-appearance-images/grouping-depth.png "ListView Grouping Example")
 
 ### <a name="customizing-grouping"></a>自訂群組
 
-如果已啟用群組清單中，您也可以自訂群組標頭。
+如果已在清單中啟用群組，則也可以自訂群組標頭。
 
-類似於如何`ListView`已經`ItemTemplate`定義的資料列的顯示方式，`ListView`具有`GroupHeaderTemplate`。
+類似于 `ListView` 如何定義資料列的顯示方式 `ItemTemplate`，`ListView` 具有 `GroupHeaderTemplate`。
 
-在 XAML 中的群組標頭的範例如下所示：
+在 XAML 中自訂群組標頭的範例如下所示：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -156,9 +156,9 @@ static PageTypeGroup()
 
 ## <a name="headers-and-footers"></a>頁首和頁尾
 
-您有 ListView 來呈現清單項目捲動的頁首和頁尾。 頁首和頁尾可以是文字字串或更複雜的版面配置。 這個行為與[區段群組](#grouping)不同。
+ListView 可以呈現使用清單元素來滾動的頁首和頁尾。 頁首和頁尾可以是文字字串或較複雜的版面配置。 這個行為與[區段群組](#grouping)不同。
 
-您可以將`Header`和/或`Footer`設定為`string`值，也可以將它們設定為較複雜的版面配置。 另外還有`HeaderTemplate`和`FooterTemplate`屬性，可讓您建立更複雜的頁首和頁尾的版面配置支援資料繫結。
+您可以將 `Header` 和/或 `Footer` 設定為 `string` 值，也可以將它們設定為較複雜的版面配置。 另外還有 `HeaderTemplate` 和 `FooterTemplate` 屬性，可讓您針對支援資料系結的頁首和頁尾，建立更複雜的版面配置。
 
 若要建立基本的頁首/頁尾，只要將頁首或頁尾屬性設為您想要顯示的文字即可。 程式碼：
 
@@ -180,9 +180,9 @@ ListView HeaderList = new ListView()
 </ListView>
 ```
 
-![](customizing-list-appearance-images/header-default.png "使用頁首和頁尾的 ListView")
+![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
 
-若要建立自訂的頁首和頁尾，定義的頁首和頁尾的檢視：
+若要建立自訂的頁首和頁尾，請定義頁首和頁尾的視圖：
 
 ```xaml
 <ListView.Header>
@@ -201,24 +201,24 @@ ListView HeaderList = new ListView()
 </ListView.Footer>
 ```
 
-![](customizing-list-appearance-images/header-custom.png "使用自訂的頁首和頁尾的 ListView")
+![](customizing-list-appearance-images/header-custom.png "ListView with Customized Header and Footer")
 
 ## <a name="scrollbar-visibility"></a>捲軸可見度
 
-[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)類別具有`HorizontalScrollBarVisibility` 和`VerticalScrollBarVisibility`屬性，可取得或設定表示水準或垂直捲動條何時可見的值。 [`ListView`](xref:Xamarin.Forms.ListView) 這兩個屬性都可以設定為下列值：
+[@No__t_1](xref:Xamarin.Forms.ListView)類別具有 `HorizontalScrollBarVisibility` 和 `VerticalScrollBarVisibility` 屬性，可取得或設定[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)值，以表示水準或垂直捲動條何時可見。 這兩個屬性都可以設定為下列值：
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)表示平臺的預設捲軸行為，而是`HorizontalScrollBarVisibility`和`VerticalScrollBarVisibility`屬性的預設值。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)表示平臺的預設捲軸行為，而是 `HorizontalScrollBarVisibility` 和 `VerticalScrollBarVisibility` 屬性的預設值。
 - [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)表示捲軸會顯示出來，即使內容適合在視圖中也一樣。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)表示即使內容無法放在視圖中，也不會顯示捲軸。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)表示不會顯示捲軸，即使該內容無法放入視圖中也一樣。
 
 ## <a name="row-separators"></a>資料列分隔符號
 
-之間顯示分隔符號行`ListView`預設會在 iOS 和 Android 上的項目。 如果您不希望隱藏在 iOS 和 Android 上的分隔線，請設定`SeparatorVisibility`您 ListView 上的屬性。 選項`SeparatorVisibility`是：
+預設會在 iOS 和 Android 上 `ListView` 元素之間顯示分隔線。 如果您想要隱藏 iOS 和 Android 上的分隔線，請在您的 ListView 上設定 [`SeparatorVisibility`] 屬性。 @No__t_0 的選項包括：
 
-- **預設**-iOS 和 Android 上顯示的分隔線。
-- **無**-隱藏所有平台上的分隔符號。
+- **預設值**-顯示 IOS 和 Android 上的分隔線。
+- **無**-隱藏所有平臺上的分隔符號。
 
-預設的可見性：
+預設可見度：
 
 C#:
 
@@ -226,15 +226,15 @@ C#:
 SeparatorDemoListView.SeparatorVisibility = SeparatorVisibility.Default;
 ```
 
-XAML:
+XML
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "使用預設資料列分隔符號的 ListView")
+![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
 
-None:
+無
 
 C#:
 
@@ -242,15 +242,15 @@ C#:
 SeparatorDemoListView.SeparatorVisibility = SeparatorVisibility.None;
 ```
 
-XAML:
+XML
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
 ```
 
-![](customizing-list-appearance-images/separator-none.png "不含資料列分隔符號的 ListView")
+![](customizing-list-appearance-images/separator-none.png "ListView without Row Separators")
 
-您也可以設定透過分隔線的色彩`SeparatorColor`屬性：
+您也可以透過 [`SeparatorColor`] 屬性來設定分隔線的色彩：
 
 C#:
 
@@ -258,25 +258,25 @@ C#:
 SeparatorDemoListView.SeparatorColor = Color.Green;
 ```
 
-XAML:
+XML
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
 ```
 
-![](customizing-list-appearance-images/separator-custom.png "具有綠色資料列分隔符號的 ListView")
+![](customizing-list-appearance-images/separator-custom.png "ListView with Green Row Separators")
 
 > [!NOTE]
-> 設定這些屬性在 Android 上載入之後`ListView`帶來大量的效能。
+> 在載入 `ListView` 之後，在 Android 上設定其中一個屬性會導致效能大幅下降。
 
 ## <a name="row-height"></a>資料列高度
 
-根據預設，在 ListView 中的所有資料列具有相同的高度。 ListView 包含可用來變更該行為的兩個屬性：
+根據預設，ListView 中的所有資料列都有相同的高度。 ListView 有兩個可以用來變更該行為的屬性：
 
-- `HasUnevenRows` &ndash; `true`/`false` 值，資料列有不同的高度設為`true`。 預設值為 `false`。
-- `RowHeight` &ndash; 設定高度的每個資料列`HasUnevenRows`是`false`。
+- `HasUnevenRows` &ndash; `true` / `false` 值，如果設定為 [`true`]，則資料列會有不同的高度。 預設值為 `false`。
+- `RowHeight` &ndash; 會在 `false` `HasUnevenRows` 時，設定每個資料列的高度。
 
-您可以藉由設定中設定的所有資料列高度`RowHeight`屬性上的`ListView`。
+您可以藉由設定 `ListView` 上的 [`RowHeight`] 屬性，來設定所有資料列的高度。
 
 ### <a name="custom-fixed-row-height"></a>自訂固定資料列高度
 
@@ -286,17 +286,17 @@ C#:
 RowHeightDemoListView.RowHeight = 100;
 ```
 
-XAML:
+XML
 
 ```xaml
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
 ```
 
-![](customizing-list-appearance-images/height-custom.png "具有固定的資料列高度的 ListView")
+![](customizing-list-appearance-images/height-custom.png "ListView with Fixed Row Height")
 
 ### <a name="uneven-rows"></a>不平均的資料列
 
-如果您想要個別資料列都具有不同的高度，您可以設定`HasUnevenRows`屬性設`true`。 資料列高度不需要手動設定一次`HasUnevenRows` `true`，因為會自動以 Xamarin 來計算高度。
+如果您想要讓個別資料列具有不同的高度，可以將 `HasUnevenRows` 屬性設定為 [`true`]。 一旦 `HasUnevenRows` 設定為 `true`，資料列高度就不需要手動設定一次，因為 Xamarin 會自動計算高度。
 
 C#:
 
@@ -304,17 +304,17 @@ C#:
 RowHeightDemoListView.HasUnevenRows = true;
 ```
 
-XAML:
+XML
 
 ```xaml
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />
 ```
 
-![](customizing-list-appearance-images/height-uneven.png "以不平均的資料列的 ListView")
+![](customizing-list-appearance-images/height-uneven.png "ListView with Uneven Rows")
 
 ### <a name="resize-rows-at-runtime"></a>在執行時間調整資料列的大小
 
-個別`ListView`資料列可以以程式設計方式調整大小在執行階段，但前提`HasUnevenRows`屬性設定為`true`。 [ `Cell.ForceUpdateSize` ](xref:Xamarin.Forms.Cell.ForceUpdateSize)方法會更新資料格的大小，即使它沒有目前可見的如下列程式碼範例所示：
+個別 `ListView` 的資料列可以在執行時間以程式設計方式調整大小，前提是 `HasUnevenRows` 屬性已設定為 [`true`]。 [@No__t_1](xref:Xamarin.Forms.Cell.ForceUpdateSize)的方法會更新儲存格的大小，即使目前看不到也一樣，如下列程式碼範例所示：
 
 ```csharp
 void OnImageTapped (object sender, EventArgs args)
@@ -329,17 +329,17 @@ void OnImageTapped (object sender, EventArgs args)
 }
 ```
 
-`OnImageTapped`事件處理常式會執行以回應[ `Image` ](xref:Xamarin.Forms.Image)點選的資料格中所，並增加的大小`Image`顯示在資料格中，以便輕鬆地檢視它。
+系統會執行 `OnImageTapped` 事件處理常式，以回應所選儲存格中的[`Image`](xref:Xamarin.Forms.Image) ，並增加儲存格中顯示的 `Image` 大小，以方便您查看。
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "使用調整大小的執行階段資料列的 ListView")
+![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView with Runtime Row Resizing")
 
 > [!WARNING]
 > 過度執行執行時間資料列調整大小可能會導致效能降低。
 
 ## <a name="related-links"></a>相關連結
 
-- [群組 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
-- [自訂轉譯器檢視 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
-- [動態調整大小的資料列 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
-- [1.4 的版本資訊](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 的版本資訊](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)
+- [群組（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [自訂轉譯器視圖（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [動態調整資料列大小（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
+- [1.4 版本資訊](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
+- [1.3 版本資訊](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)
