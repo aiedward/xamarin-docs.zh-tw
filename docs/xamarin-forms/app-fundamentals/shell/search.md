@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: 9e3acf1c5b101f021b0071947e91f0c9fc3dafcb
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.date: 09/25/2019
+ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68739257"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72695928"
 ---
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms Shell 搜尋
 
@@ -20,7 +20,7 @@ ms.locfileid: "68739257"
 
 Xamarin.Forms Shell 包含 `SearchHandler` 類別所提供的整合式搜尋功能。 將 `Shell.SearchHandler` 附加屬性設定為子類別化的 `SearchHandler` 物件，就可以將搜尋功能新增至網頁。 這會使搜尋方塊新增至頁面頂端：
 
-[![Shell SearchHandler 在 iOS 和 Android 上的螢幕擷取畫面](search-images/searchhandler.png "Shell SearchHandler")](search-images/searchhandler-large.png#lightbox "Shell SearchHandler")
+[![在 iOS 和 Android 上的 Shell SearchHandler 螢幕擷取畫面](search-images/searchhandler.png "Shell SearchHandler")](search-images/searchhandler-large.png#lightbox "Shell SearchHandler")
 
 當在搜尋方塊中輸入查詢時，便會更新 `Query` 屬性，並在每次更新時執行 `OnQueryChanged` 方法。 可以覆寫此方法，以使用資料填入搜尋建議區域：
 
@@ -107,7 +107,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 選取搜尋結果時，便會導覽至 `MonkeyDetailPage`，並顯示所選猴子的相關資料：
 
-[![猴子詳細資料在 iOS 和 Android 上的螢幕擷取畫面](search-images/detailpage.png "猴子詳細資料")](search-images/detailpage-large.png#lightbox "猴子詳細資料")
+[![在 iOS 和 Android 上的猴子詳細資料螢幕擷取畫面](search-images/detailpage.png "猴子詳細資料")](search-images/detailpage-large.png#lightbox "猴子詳細資料")
 
 ## <a name="define-search-results-item-appearance"></a>定義搜尋結果項目外觀
 
@@ -172,7 +172,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 下列螢幕擷取畫面顯示建議區域中，每個項目的範本結果：
 
-[![Shell SearchHandler 中的範本搜尋結果在 iOS 和 Android 上的螢幕擷取畫面](search-images/search-results-template.png "Shell SearchHandler 範本搜尋結果")](search-images/search-results-template-large.png#lightbox "Shell SearchHandler 範本搜尋結果")
+[![Shell SearchHandler （在 iOS 和 Android 上）中樣板化搜尋結果的螢幕擷取畫面](search-images/search-results-template.png "Shell SearchHandler 樣板化搜尋結果")](search-images/search-results-template-large.png#lightbox "Shell SearchHandler 樣板化搜尋結果")
 
 如需資料範本的詳細資訊，請參閱 [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
@@ -211,12 +211,14 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 - 型別為 `Color` 的 `BackgroundColor` 是搜尋方塊文字的背景色彩。
 - 型別為 `Color` 的 `CancelButtonColor` 是 [取消] 按鈕的色彩。
+- `CharacterSpacing`，屬於 `double` 類型，這是 `SearchHandler` 文字字元之間的間距。
 - 型別為 `FontAttributes` 的 `FontAttributes` 表示搜尋方塊文字是斜體或粗體。
 - 型別為 `string` 的 `FontFamily` 是用於搜尋方塊文字的字型家族。
 - 型別為 `double` 的 `FontSize` 是搜尋方塊文字的大小。
 - 型別為 `TextAlignment` 的 `HorizontalTextAlignment` 是搜尋方塊文字的水平對齊。
 - 型別為 `Color` 的 `PlaceholderColor` 是預留位置搜尋方塊文字的色彩。
 - 型別為 `Color` 的 `TextColor` 是搜尋方塊文字的色彩。
+- `VerticalTextAlignment`，屬於 `TextAlignment` 類型，是搜尋方塊文字的垂直對齊方式。
 
 ## <a name="searchhandler-keyboard"></a>SearchHandler 鍵盤
 
@@ -286,7 +288,7 @@ searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFla
 - `ClearIconName`，屬於 `string` 類型，清除圖示的名稱，可搭配螢幕助讀程式使用。
 - `ClearPlaceholderCommand`，屬於 `ICommand` 類型，將在點選 `ClearPlaceholderIcon` 時執行。
 - `ClearPlaceholderCommandParameter`，屬於 `object` 類型，這是傳遞至 `ClearPlaceholderCommand` 的參數。
-- `ClearPlaceholderEnabled`，屬於 `bool` 類型，用於決定是否可以執行 `ClearPlaceholderCommand`。 預設值為 `true`。
+- `ClearPlaceholderEnabled`，屬於 `bool` 類型，用於決定是否可以執行 `ClearPlaceholderCommand`。 預設值是 `true`。
 - `ClearPlaceholderHelpText`，屬於 `string` 類型，用於預留位置圖示的可存取說明文字。
 - `ClearPlaceholderIcon`，屬於 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 類型，搜尋方塊空白時顯示的清除預留位置圖示。
 - `ClearPlaceholderName`，屬於 `string` 類型，清除預留位置圖示的名稱，可搭配螢幕助讀程式使用。
@@ -298,7 +300,7 @@ searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFla
 - 型別為 `double` 的 `FontSize` 是搜尋方塊文字的大小。
 - 型別為 `TextAlignment` 的 `HorizontalTextAlignment` 是搜尋方塊文字的水平對齊。
 - 型別為 `bool` 的 `IsFocused`，表示 `SearchHandler` 目前是否具有輸入焦點。
-- `IsSearchEnabled`，屬於 `bool` 類型，表示搜尋方塊已啟用的狀態。 預設值為 `true`。
+- `IsSearchEnabled`，屬於 `bool` 類型，表示搜尋方塊已啟用的狀態。 預設值是 `true`。
 - `ItemsSource`，屬於 `IEnumerable` 類型，可指定要在建議區域中顯示之項目的集合，且預設值為 `null`。
 - `ItemTemplate`，屬於 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 類型，可在建議區域中要顯示之項目的集合中，指定要套用至每個項目的範本。
 - 型別為 `Keyboard` 的 `Keyboard` 是 `SearchHandler` 的鍵盤。
@@ -310,7 +312,7 @@ searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFla
 - `QueryIconName`，屬於 `string` 類型，查詢圖示的名稱，可搭配螢幕助讀程式使用。
 - `SearchBoxVisibility`，屬於 `SearchBoxVisibility` 類型，表示是否顯示搜尋方塊。 根據預設，搜尋方塊呈顯示狀態且完全展開。
 - `SelectedItem`，屬於 `object` 類型，搜尋結果中選取的項目。 這是唯讀屬性，而且預設值為 `null`。
-- `ShowsResults`，屬於 `bool` 類型，表示文字輸入時，搜尋結果是否應該出現在建議區域中。 預設值為 `false`。
+- `ShowsResults`，屬於 `bool` 類型，表示文字輸入時，搜尋結果是否應該出現在建議區域中。 預設值是 `false`。
 - 型別為 `Color` 的 `TextColor` 是搜尋方塊文字的色彩。
 
 所有這些屬性都以 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 物件為後盾，也就是說，這些屬性可以是資料繫結的目標。

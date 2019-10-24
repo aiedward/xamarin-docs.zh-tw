@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: 94a537c88f28971bf7f2778f33a35e4c251afd38
-ms.sourcegitcommit: 403e3ec789d075cf1ca23473190aeb6b87220d52
+ms.openlocfilehash: 98def647c38f69ec4f942a06e2187841c4e04459
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72424856"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72697174"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
@@ -35,7 +35,7 @@ _本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在�
 每個項目現在會依序進行討論，以實作在每個平台上顯示自訂釘選及釘選資料自定檢視的 `CustomMap` 轉譯器。
 
 > [!NOTE]
-> 您必須先初始化及設定 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)，才能使用。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map.md)。
+> 您必須先初始化及設定 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)，才能使用。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map/index.md)。
 
 <a name="Creating_the_Custom_Map" />
 
@@ -654,7 +654,7 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 
 ## <a name="related-links"></a>相關連結
 
-- [地圖控制項](~/xamarin-forms/user-interface/map.md)
+- [地圖控制項](~/xamarin-forms/user-interface/map/index.md)
 - [iOS Maps](~/ios/user-interface/controls/ios-maps/index.md)
 - [Maps API](~/android/platform/maps-and-location/maps/maps-api.md)
 - [Customized Pin (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin) (自訂釘選 (範例))
