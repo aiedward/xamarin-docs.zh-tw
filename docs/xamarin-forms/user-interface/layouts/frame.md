@@ -22,7 +22,7 @@ ms.locfileid: "69976492"
 
 下列螢幕擷取畫面顯示 iOS 和 Android 上的 `Frame` 控制項：
 
-[![ 「iOS 和 Android 上的框架範例」](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "IOS 和 Android 上的框架範例")
+[![iOS 和 Android 上的框架範例](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "IOS 和 Android 上的框架範例")
 
 @No__t_0 類別會定義下列屬性：
 
@@ -84,7 +84,7 @@ Frame frame = new Frame
 
 將 `Frame` 物件與 `Layout` 物件（例如 `StackLayout` 物件）結合，可讓您建立更複雜的 UI。 下列螢幕擷取畫面顯示使用 `Frame` 物件建立的範例卡片：
 
-[![ 「使用框架建立的卡片螢幕擷取畫面」](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "使用框架建立的卡片螢幕擷取畫面")
+[![使用框架建立的卡片螢幕擷取畫面](frame-images/frame-card-cropped.png)](frame-images/frame-full.png#lightbox "使用框架建立的卡片螢幕擷取畫面")
 
 下列 XAML 示範如何使用 `Frame` 類別來建立卡片：
 
