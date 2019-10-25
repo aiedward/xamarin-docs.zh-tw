@@ -1,5 +1,5 @@
 ---
-title: 硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)\
+title: 硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 description: 本文說明如何使用您電腦的硬體加速功能將 Android Emulator 提升到最大效能。
 zone_pivot_groups: platform
 ms.prod: xamarin
@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: conceptdev
 ms.author: crdun
 ms.date: 08/27/2018
-ms.openlocfilehash: 5c6eb6e49c7c8a4071591e46a5afc02a6ff6b4e6
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 6060f7c7e31c52a122c5ccb7a7e7be8dfe58051a
+ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105900"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72810547"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 
@@ -22,13 +22,13 @@ _本文說明如何使用您電腦的硬體加速功能將 Android Emulator 提�
 Visual Studio 讓開發人員使用 Android Emulator，在 Android 裝置無法使用或不實用的情況下，更容易測試和偵錯其 Xamarin.Android 應用程式。
 不過，如果執行 Android 模擬器的電腦上無法使用硬體加速，Android 模擬器的執行速度會很慢。 使用特殊的 x86 虛擬裝置映像，結合電腦的虛擬化功能，可大幅提升 Android Emulator 的效能。
 
-| 狀況    | HAXM        | WHPX       | 管理程式架構 |
+| 情節    | HAXM        | WHPX       | 管理程式架構 |
 | ----------- | ----------- | -----------| ----------- |
-| 您有 Intel 處理器 | X | X | X |
-| 您有 AMD 處理器   |   | X |   |
-| 您想要支援 Hyper-v |   | X |   |
-| 您想要支援嵌套虛擬化 |   | 有限制 |   |
-| 您想要使用 Docker 之類的技術  |   | X | X |
+| 您有 Intel 處理器 | x | x | x |
+| 您有 AMD 處理器   |   | x |   |
+| 您想要支援 Hyper-v |   | x |   |
+| 您想要支援嵌套虛擬化 |   | 有限 |   |
+| 您想要使用 Docker 之類的技術  |   | x | x |
 
 ::: zone pivot="windows"
 
@@ -57,7 +57,6 @@ Visual Studio 讓開發人員使用 Android Emulator，在 Android 裝置無法�
 
 ## <a name="accelerating-with-hyper-v"></a>使用 Hyper-V 加速
 
-Hyper-V 是用於加速 Android Emulator 的建議選擇。
 在啟用 Hyper-V 之前，請先閱讀下列章節，確認您的電腦支援 Hyper-V。
 
 ### <a name="verifying-support-for-hyper-v"></a>確認 Hyper-V 支援
@@ -90,7 +89,7 @@ Hyper-V 是在 Windows Hypervisor 平台上執行。 若 Hyper-V 要與 Android 
 systeminfo
 ```
 
-如果所有列出的 Hyper-V 需求值皆為 **Yes**，則表示您的電腦可支援 Hyper-V。 例如：
+如果所有列出的 Hyper-V 需求值皆為 **Yes**，則表示您的電腦可支援 Hyper-V。 例如:
 
 [![systeminfo 輸出範例](hardware-acceleration-images/win/02-systeminfo-w158-sml.png)](hardware-acceleration-images/win/02-systeminfo-w158.png#lightbox)
 
@@ -127,7 +126,7 @@ systeminfo
     sc query intelhaxm
     ```
 
-2. 檢查輸出，查看 HAXM 處理序是否正在執行中。 如果是，您應該會看到將 `intelhaxm` 狀態列為 `RUNNING` 的輸出。 例如：
+2. 檢查輸出，查看 HAXM 處理序是否正在執行中。 如果是，您應該會看到將 `intelhaxm` 狀態列為 `RUNNING` 的輸出。 例如:
 
     ![HAXM 可用時的 sc 查詢命令輸出](hardware-acceleration-images/win/05-sc_query-w158.png)
 
