@@ -1,62 +1,50 @@
 ---
-title: 在 Xamarin iOS 和 Android 的 visual Basic.NET
-description: 本逐步解說示範如何建置原生 Xamarin.iOS 和 Xamarin.Android 應用程式使用 Visual Basic.NET 中撰寫商務邏輯。
+title: 在 Xamarin. Android 和 Xamarin 中的 Visual Basic
+description: 本逐步解說示範如何建立原生的 Xamarin. iOS 和 Xamarin 應用程式，以使用以 Visual Basic.NET 撰寫的商務邏輯。
 ms.prod: xamarin
 ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
-author: asb3993
-ms.author: amburns
-ms.date: 03/23/2017
-ms.openlocfilehash: f62d3cb076019ba49303f2c82f009975d9fbdc50
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: HT
+author: conceptdev
+ms.author: crdun
+ms.date: 04/24/2019
+ms.openlocfilehash: ea4dc91b262c2ae153088f6e1a8416cc01cb0fa9
+ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61163225"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72959117"
 ---
-# <a name="visual-basicnet-in-xamarin-ios-and-android"></a>在 Xamarin iOS 和 Android 的 visual Basic.NET
+# <a name="visual-basic-in-xamarin-android-and-ios"></a>Xamarin Android 和 iOS 中的 Visual Basic
 
-[TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)範例應用程式示範如何搭配 Xamarin 使用 Visual Basic 程式碼編譯成可攜式類別庫。 以下是產生在 iOS、 Android 和 Windows Phone 上執行的應用程式的一些螢幕擷取畫面：
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
 
- [![](native-apps-images/image5.png "iOS、 Android 及 Windows 手機執行使用 Visual Basic 所建置的應用程式")](native-apps-images/image5.png#lightbox)
+[TaskyVB](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)範例應用程式會示範如何將編譯成 .NET Standard 程式庫的 Visual Basic 程式碼與 Xamarin 搭配使用。 以下是在 Android 和 iOS 上執行之應用程式的一些螢幕擷取畫面：
 
-IOS、 Android 和 Windows Phone 專案，在範例中會寫入在C#。 每個應用程式的使用者介面以原生技術建置 (分鏡腳本、 Xml 和 Xaml 分別)，雖然`TodoItem`管理由 Visual Basic 的可攜式類別庫提供使用`IXmlStorage`所提供的實作原生專案中。
+ [![Android 和 iOS 執行以 Visual Basic 建立的應用程式](native-apps-images/simulators-sml.png)](native-apps-images/simulators.png#lightbox)
+
+範例中的 Android 和 iOS 專案都是以C#撰寫。 每個應用程式的使用者介面都是以原生技術為基礎，而 `TodoItem` 管理是由 Visual Basic .NET Standard 程式庫使用 XML 檔案（用於示範，而不是完整資料庫）提供。
 
 ## <a name="sample-walkthrough"></a>範例逐步解說
 
-本指南將討論 Visual Basic 中已實作如何[TaskyPortableVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)適用於 iOS 和 Android 的 Xamarin 範例。
+本指南討論如何在適用于 iOS 和 Android 的[TaskyVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyVB) Xamarin 範例中執行 Visual Basic。
 
 > [!NOTE]
-> 檢閱上的指示[可攜式 Visual Basic.NET](index.md)再繼續進行本指南。
+> 繼續閱讀本指南之前，請先參閱[Visual Basic 和 .NET Standard](index.md)上的指示。
+>
+> 請參閱[使用 Visual Basic](xamarin-forms.md)指示的 Xamarin，以瞭解如何使用共用的使用者介面 Visual Basic 程式碼來建立應用程式。
 
-## <a name="visualbasicportablelibrary"></a>VisualBasicPortableLibrary
+## <a name="visualbasicnetstandard"></a>VisualBasicNetStandard
 
-只能在 Visual Studio 中建立 Visual Basic 的可攜式類別庫。
-範例程式庫包含我們在四個 Visual Basic 檔案中的應用程式的基本概念：
+Visual Basic .NET Standard 程式庫只能在 Windows 上的 Visual Studio 中建立。
+範例程式庫包含我們在這些 Visual Basic 檔案中的應用程式基本概念：
 
--  IXmlStorage.vb
--  TodoItem.vb
--  TodoItemManager.vb
--  TodoItemRepositoryXML.vb
+- TodoItem .vb
+- TodoItemManager .vb
+- TodoItemRepositoryXML .vb
+- XmlStorage .vb
 
+### <a name="todoitemvb"></a>TodoItem .vb
 
-### <a name="ixmlstoragevb"></a>IXmlStorage.vb
-
-可攜式類別庫檔案的存取行為能夠大幅不同的平台，因為未提供`System.IO`檔案中的任何設定檔的儲存體 Api。 這表示如果我們想要直接與我們的可攜式程式碼中的檔案系統互動，我們需要在每個平台上回撥原生專案。  藉由撰寫我們的 Visual Basic 程式碼，針對簡單的介面，可實作於C#每個平台上，我們仍然可以存取檔案系統的可共用 Visual Basic 程式碼。
-
-範例程式碼會使用這個非常簡單的介面，其中包含兩個方法： 讀取和寫入序列化的 Xml 檔案。
-
-```vb
-Public Interface IXmlStorage
-    Function ReadXml(filename As String) As List(Of TodoItem)
-    Sub WriteXml(tasks As List(Of TodoItem), filename As String)
-End Interface
-```
-
-iOS、 Android 和 Windows Phone 實作這個介面會顯示此指南中之後。
-
-### <a name="todoitemvb"></a>TodoItem.vb
-
-這個類別包含用於整個應用程式的商務物件。 它將會在 Visual Basic 中的方式來定義和共用的 ios、 Android 和 Windows Phone 專案所撰寫的C#。
+這個類別包含要在整個應用程式中使用的商務物件。 它會在 Visual Basic 中定義，並與以C#撰寫的 Android 和 iOS 專案共用。
 
 類別定義如下所示：
 
@@ -69,16 +57,16 @@ Public Class TodoItem
 End Class
 ```
 
-此範例會使用 XML 序列化和還原序列化，以載入和儲存的 TodoItem 物件。
+此範例會使用 XML 序列化和還原序列化來載入和儲存 TodoItem 物件。
 
-### <a name="todoitemmanagervb"></a>TodoItemManager.vb
+### <a name="todoitemmanagervb"></a>TodoItemManager .vb
 
-管理員類別提供 'API' 可攜式的程式碼。 它提供基本的 CRUD 作業，以`TodoItem`類別，但沒有實作這些作業。
+Manager 類別會呈現可移植程式碼的「API」。 它提供 `TodoItem` 類別的基本 CRUD 作業，但不會執行這些作業。
 
 ```vb
 Public Class TodoItemManager
     Private _repository As TodoItemRepositoryXML
-    Public Sub New(filename As String, storage As IXmlStorage)
+    Public Sub New(filename As String)
         _repository = New TodoItemRepositoryXML(filename, storage)
     End Sub
     Public Function GetTask(id As Integer) As TodoItem
@@ -96,11 +84,11 @@ Public Class TodoItemManager
 End Class
 ```
 
-建構函式會接受 IXmlStorage 的執行個體，做為參數。 這可讓每個平台提供它自己的工作實作，同時仍可讓可攜式的程式碼，描述可以共用其他功能。
+此函式會採用 IXmlStorage 的實例做為參數。 這可讓每個平臺提供自己的工作執行，同時仍然讓可攜的程式碼描述可共用的其他功能。
 
-### <a name="todoitemrepositoryvb"></a>TodoItemRepository.vb
+### <a name="todoitemrepositoryvb"></a>TodoItemRepository .vb
 
-儲存機制類別包含的邏輯管理的 TodoItem 物件清單。 完整的程式碼如下所示-邏輯存在主要是為了跨 TodoItems 管理是唯一的識別碼值，加入並移除集合中。
+存放庫類別包含用來管理 TodoItem 物件清單的邏輯。 完整的程式碼如下所示–邏輯主要是用來在 TodoItems 中管理唯一的識別碼值，並在集合中新增和移除它們。
 
 ```vb
 Public Class TodoItemRepositoryXML
@@ -109,9 +97,9 @@ Public Class TodoItemRepositoryXML
     Private _tasks As List(Of TodoItem)
 
     ''' <summary>Constructor</summary>
-    Public Sub New(filename As String, storage As IXmlStorage)
+    Public Sub New(filename As String)
         _filename = filename
-        _storage = storage
+        _storage = New XmlStorage
         _tasks = _storage.ReadXml(filename)
     End Sub
     ''' <summary>Inefficient search for a Task by ID</summary>
@@ -159,168 +147,52 @@ End Class
 ```
 
 > [!NOTE]
-> 此程式碼是非常基本的資料儲存機制的範例。
-> 它可示範如何可攜式類別庫可對撰寫程式碼來存取 （在此情況下，在載入和儲存的 Xml 檔案） 的平台專屬功能的介面。 它就不適合是實際執行品質資料庫的替代方案。
+> 這段程式碼是非常基本的資料儲存機制的範例。
+> 它是用來示範 .NET Standard 程式庫如何針對介面撰寫程式碼，以存取平臺特定功能（在此案例中，載入和儲存 XML 檔案）。 其目的不是生產品質的資料庫替代方案。
 
-## <a name="ios-android-and-windows-phone-application-projects"></a>iOS、 Android 和 Windows Phone 應用程式專案
+## <a name="android-and-ios-application-projects"></a>Android 和 iOS 應用程式專案
 
-本章節包含 IXmlStorage 介面的平台特定實作，並示範如何使用每個應用程式。 應用程式專案會寫入C#。
+### <a name="ios"></a>iOS
 
-### <a name="ios-and-android-ixmlstorage"></a>iOS 和 Android 的 IXmlStorage
-
-Xamarin.iOS 和 Xamarin.Android 提供完整`System.IO`功能，可讓您可以輕鬆地載入並儲存 Xml 檔案中，使用下列類別：
-
-```csharp
-public class XmlStorageImplementation : IXmlStorage
-{
-    public XmlStorageImplementation(){}
-    public List<TodoItem> ReadXml(string filename)
-    {
-        if (File.Exists(filename))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItem>));
-            using (var stream = new FileStream(filename, FileMode.Open))
-            {
-                return (List<TodoItem>)serializer.Deserialize(stream);
-            }
-        }
-        return new List<TodoItem>();
-    }
-    public void WriteXml(List<TodoItem> tasks, string filename)
-    {
-        var serializer = new XmlSerializer(typeof(List<TodoItem>));
-        using (var writer = new StreamWriter(filename))
-        {
-            serializer.Serialize(writer, tasks);
-        }
-    }
-}
-```
-
-在 iOS 應用程式中`TodoItemManager`而`XmlStorageImplementation`中建立**AppDelegate.cs**檔案中此程式碼片段所示。 前四行只會建置資料的儲存位置; 檔案的路徑最後兩行顯示要具現化的兩個類別。
+在 iOS 應用程式中，會在**AppDelegate.cs**檔案中建立 `TodoItemManager` 和 `XmlStorageImplementation`，如下列程式碼片段所示。 前四行只是建立將儲存資料的檔案路徑;最後兩行顯示要具現化的兩個類別。
 
 ```csharp
 var xmlFilename = "TodoList.xml";
 string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
 string libraryPath = Path.Combine(documentsPath, "..", "Library"); // Library folder
 var path = Path.Combine(libraryPath, xmlFilename);
-var xmlStorage = new XmlStorageImplementation();
-TaskMgr = new TodoItemManager(path, xmlStorage);
+
+TaskMgr = new TodoItemManager(path);
 ```
 
-在 Android 應用程式中`TodoItemManager`而`XmlStorageImplementation`中建立**Application.cs**檔案中此程式碼片段所示。 前三行只要建置資料的儲存位置; 檔案的路徑最後兩行顯示要具現化的兩個類別。
+### <a name="android"></a>Android
+
+在 Android 應用程式中，會在**Application.cs**檔案中建立 `TodoItemManager` 和 `XmlStorageImplementation`，如下列程式碼片段所示。 前三行只是建立將儲存資料的檔案路徑;最後兩行顯示要具現化的兩個類別。
 
 ```csharp
 var xmlFilename = "TodoList.xml";
 string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 var path = Path.Combine(libraryPath, xmlFilename);
-var xmlStorage = new AndroidTodo.XmlStorageImplementation();
-TaskMgr = new TodoItemManager(path, xmlStorage);
+
+TaskMgr = new TodoItemManager(path);
 ```
 
-關心的使用者介面及使用應用程式程式碼的其餘部分是主要`TaskMgr`類別來載入及儲存`TodoItem`類別。
+應用程式程式碼的其餘部分主要是與使用者介面有關，並使用 `TaskMgr` 類別來載入和儲存 `TodoItem` 類別。
 
-### <a name="windows-phone-ixmlstorage"></a>Windows Phone IXmlStorage
+## <a name="visual-studio-2019-for-mac"></a>Visual Studio 2019 for Mac
 
-Windows Phone 不提供完整存取裝置的檔案系統，而公開 IsolatedStorage API。 `IXmlStorage`實作適用於 Windows Phone 看起來像這樣：
+> [!WARNING]
+> Visual Studio for Mac 不支援編輯 Visual Basic 語言–沒有任何功能表項目可用於建立 Visual Basic 專案或檔案。 如果您開啟 **.vb** ，則不會有語言語法反白顯示、自動完成或 IntelliSense。
 
-```csharp
-public class XmlStorageImplementation : IXmlStorage
-{
-    public XmlStorageImplementation(){}
-    public List<TodoItem> ReadXml(string filename)
-    {
-        IsolatedStorageFile fileStorage = IsolatedStorageFile.GetUserStoreForApplication();
-        if (fileStorage.FileExists(filename))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItem>));
-            using (var stream = new StreamReader(new IsolatedStorageFileStream(filename, FileMode.Open, fileStorage)))
-            {
-                return (List<TodoItem>)serializer.Deserialize(stream);
-            }
-        }
-        return new List<TodoItem>();
-    }
-    public void WriteXml(List<TodoItem> tasks, string filename)
-    {
-        IsolatedStorageFile fileStorage = IsolatedStorageFile.GetUserStoreForApplication();
-        var serializer = new XmlSerializer(typeof(List<TodoItem>));
-        using (var writer = new StreamWriter(new IsolatedStorageFileStream(filename, FileMode.OpenOrCreate, fileStorage)))
-        {
-            serializer.Serialize(writer, tasks);
-        }
-    }
-}
-```
+適用于 Mac 的 Visual Studio 2019_可以_編譯在 Windows 上建立 Visual Studio .NET Standard 專案，因此 iOS 應用程式可以參考這些專案。
 
-`TodoItemManager`而`XmlStorageImplementation`中建立**App.xaml.cs**檔案中此程式碼片段所示。
-
-```csharp
-var filename = "TodoList.xml";
-var xmlStorage = new XmlStorageImplementation();
-TodoMgr = new TodoItemManager(filename, xmlStorage);
-```
-
-Windows Phone 應用程式的其餘部分包含 Xaml 和C#建立的使用者介面，並使用`TodoMgr`類別來載入及儲存`TodoItem`物件。
-
-## <a name="visual-basic-pcl-in-visual-studio-for-mac"></a>Visual Basic 在 Visual Studio for Mac 的 PCL
-
-Visual Studio for Mac 不支援 Visual Basic 語言-您無法建立或編譯 Visual Basic 專案中的使用 Visual Studio for mac。
-
-Visual Studio for Mac 的支援可攜式類別庫的表示它可以參考 PCL 從 Visual Basic 所建置的組件。
-
-本節說明如何編譯 Visual Studio 中的 PCL 組件，然後確定 它，將會儲存在版本控制系統及其他專案所參考。
-
-### <a name="keeping-the-pcl-output-from-visual-studio"></a>Visual Studio 中的保留 PCL 輸出
-
-根據預設 （包括 TFS 和 Git） 的大部分版本控制系統會設定為忽略 **/bin/** 將不會儲存這表示已編譯的 PCL 組件的目錄。 這表示您必須手動將它複製到執行 Visual Studio for Mac 將會新增其參考的任何電腦。
-
-若要確保您的版本控制系統可以儲存 PCL 組件輸出，您可以建立建置後指令碼，以將它複製到專案根目錄。 此建置後步驟可協助確保組件，可以輕鬆地加入原始檔控制和與其他專案共用。
-
-#### <a name="visual-studio-2017"></a>Visual Studio 2017
-
-1. 以滑鼠右鍵按一下專案，然後選擇 **屬性 > 建置事件**一節。
-
-2. 新增_post-build_將從這個專案的輸出 DLL 複製到專案根目錄的指令碼 (這是外部 **/bin/**)。 根據您的版本控制的設定，DLL 現在應該能夠加入至原始檔控制。
-
-  [![](native-apps-images/image6-vs-sml.png "建置後組建指令碼複製 VB DLL 的事件")](native-apps-images/image6-vs.png#lightbox)
-
-下一次建置專案，可攜式類別庫組件會複製的專案根目錄，以及當您核取-在/認可/推送變更 DLL 將會儲存 （以便它可以下載到 Mac 以使用 Visual Studio for Mac）。
-
-  [![](native-apps-images/image8-sml.png "檔案的輸出視覺化的基本組件的位置")](native-apps-images/image8.png#lightbox)
-
-
-這個組件可以再加入 Visual Studio 中的 Xamarin 專案 for Mac，即使在 Xamarin iOS 或 Android 專案中不支援 Visual Basic 語言本身。
-
-### <a name="referencing-the-pcl-in-visual-studio-for-mac"></a>參考 PCL 中的，在 Visual Studio for Mac
-
-因為 Xamarin 不支援 Visual Basic 而無法載入的 PCL 專案 （或 Windows Phone 應用程式），如以下螢幕擷取畫面所示：
-
- [![](native-apps-images/image9.png "Visual Studio for Mac 解決方案")](native-apps-images/image9.png#lightbox)
-
-Xamarin.iOS 和 Xamarin.Android 專案中，我們仍然可以包含 Visual Basic PCL 組件 DLL:
-
-1.  以滑鼠右鍵按一下**參考**節點，然後選取**編輯參考...**
-
-    [![](native-apps-images/image10.png "專案編輯參考 功能表")](native-apps-images/image10.png#lightbox)
-
-1.  選取  **.Net 組件**索引標籤，然後瀏覽至 Visual Basic 專案目錄中的輸出 DLL。 即使 Visual Studio for Mac 無法開啟專案時，所有檔案都應該有從原始檔控制。 按一下 **新增**再**確定**將這個組件新增至 iOS 和 Android 應用程式。
-
-    [![](native-apps-images/image11-sml.png "按一下 [新增] 和 [確定] 即可將這個組件新增至 iOS 和 Android 應用程式")](native-apps-images/image11.png#lightbox)
-
-1.  IOS 和 Android 應用程式現在可以包含 Visual Basic 的可攜式類別庫所提供的應用程式邏輯。 此螢幕擷取畫面顯示參考 Visual Basic PCL，並已使用的功能，從該程式庫的程式碼的 iOS 應用程式。
-
-    [![](native-apps-images/image12-sml.png "編輯參考加入.NET 組件視窗")](native-apps-images/image12.png#lightbox)
-
-
-如果變更 Visual Basic 專案，Visual Studio 中請記得以建置專案、 原始檔控制中儲存產生的組件 DLL，然後再取出該新的 DLL，從您的 Mac 上的原始檔控制，使 Visual Studio for Mac 建置包含最新版本功能。
-
+Visual Studio 2017_無法_完全建立 Visual Basic 專案。
 
 ## <a name="summary"></a>總結
 
-這篇文章已示範如何使用 Visual Basic 程式碼中使用 Visual Studio 和可攜式類別庫的 Xamarin 應用程式。 雖然 Xamarin 不直接支援 Visual Basic，編譯成 PCL 的 Visual Basic 可讓使用要包含在 iOS 和 Android 的應用程式中的 Visual Basic 撰寫的程式碼。
+本文已示範如何使用 Visual Studio 和 .NET Standard 程式庫，在 Xamarin 應用程式中使用 Visual Basic 程式碼。 雖然 Xamarin 不支援直接 Visual Basic，但將 Visual Basic 編譯成 .NET Standard 程式庫可讓以 Visual Basic 撰寫的程式碼包含在 iOS 和 Android 應用程式中。
 
 ## <a name="related-links"></a>相關連結
 
-- [TaskyPortableVB （範例）](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyPortableVB)
-- [使用.NET Framework (Microsoft) 的跨平台開發](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)
+- [TaskyVB （.NET Standard 範例）](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyVB)
+- [.NET Standard 的新功能](https://docs.microsoft.com/dotnet/standard/whats-new/whats-new-in-dotnet-standard?tabs=csharp)
