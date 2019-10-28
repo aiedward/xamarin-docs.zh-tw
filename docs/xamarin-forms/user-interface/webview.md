@@ -1,24 +1,24 @@
 ---
-title: Xamarin.Forms web 檢視
-description: 這篇文章會說明如何使用 Xamarin.Forms WebView 類別來提供本機或網路 web 內容和文件給使用者。
+title: Xamarin. Forms Web 視圖
+description: 本文說明如何使用 Xamarin Forms 類別，向使用者呈現本機或網路 web 內容和檔。
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: 9113ff728c382a26d0f0b5c0a6e40575cb8e776f
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: cdb2a9f1a37dc7bca458a4291ce6fe5ac9c120aa
+ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70227945"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72696047"
 ---
-# <a name="xamarinforms-webview"></a>Xamarin.Forms web 檢視
+# <a name="xamarinforms-webview"></a>Xamarin. Forms Web 視圖
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
-[`WebView`](xref:Xamarin.Forms.WebView) 會顯示在您的應用程式中的 web 和 HTML 內容的檢視。 不同於`OpenUri`，其採用使用者裝置上的網頁瀏覽器`WebView`會顯示在您的應用程式內的 HTML 內容。
+[`WebView`](xref:Xamarin.Forms.WebView)是在您的應用程式中顯示 WEB 和 HTML 內容的視圖：
 
 ![在應用程式瀏覽器中](webview-images/in-app-browser.png)
 
@@ -26,17 +26,17 @@ ms.locfileid: "70227945"
 
 `WebView` 支援下列類型的內容：
 
-- HTML 和 CSS 網站&ndash;WebView 具有完整支援使用 HTML 和 CSS，包括支援 JavaScript 撰寫的網站。
-- 文件&ndash;WebView 實作在每個平台上使用原生元件，因為 web 檢視可以顯示每個平台可檢視的文件。 也就是說，PDF 檔案是在 iOS 和 Android 上運作。
-- HTML 字串&ndash;WebView 可以顯示從記憶體的 HTML 字串。
-- 本機檔案&ndash;WebView 可以呈現內嵌於應用程式中任何上述內容的類型。
+- HTML & CSS 網站 &ndash; Web 服務對於使用 HTML & CSS 撰寫的網站有完整的支援，包括 JavaScript 支援。
+- 檔 &ndash; 因為使用每個平臺上的原生元件來執行 Web 流覽，所以 Web 程式可顯示每個平臺上可查看的檔。 這表示 PDF 檔案適用于 iOS 和 Android。
+- HTML 字串 &ndash; Web 視圖可以顯示記憶體中的 HTML 字串。
+- 本機檔案 &ndash; 的 Web 工作，可以呈現應用程式中內嵌的任何內容類型。
 
 > [!NOTE]
-> `WebView` 在 Windows 上不支援 Silverlight、 Flash 或任何 ActiveX 控制項，即使該平台所支援的 Internet explorer。
+> Windows 上的 `WebView` 不支援 Silverlight、Flash 或任何 ActiveX 控制項，即使該平臺上的 Internet Explorer 支援也一樣。
 
 ### <a name="websites"></a>網站
 
-若要顯示來自網際網路的網站，請設定`WebView`的[ `Source` ](xref:Xamarin.Forms.WebViewSource)屬性至字串的 URL:
+若要從網際網路顯示網站，請將 `WebView`的[`Source`](xref:Xamarin.Forms.WebViewSource)屬性設定為字串 URL：
 
 ```csharp
 var browser = new WebView
@@ -46,16 +46,16 @@ var browser = new WebView
 ```
 
 > [!NOTE]
-> Url 必須使用完整格式與指定的通訊協定 （也就是它必須有"http://"或"https://"附加到它）。
+> Url 必須以指定的通訊協定完整格式（也就是它前面必須加上 "HTTP://" 或 "HTTPs://"）。
 
 #### <a name="ios-and-ats"></a>iOS 和 ATS
 
-第 9 版，因為 iOS 只允許您的應用程式的預設實作的安全性最佳做法的伺服器通訊。 值必須設定`Info.plist`能夠與不安全的伺服器通訊。
+自第9版起，iOS 只會允許您的應用程式與預設執行最佳做法安全性的伺服器進行通訊。 您必須在 `Info.plist` 中設定值，以啟用與不安全伺服器的通訊。
 
 > [!NOTE]
-> 如果您的應用程式必須連線至不安全的網站，您應該一律使用例外狀況的形式輸入網域`NSExceptionDomains`而不是完全使用時，關閉 ATS `NSAllowsArbitraryLoads`。 `NSAllowsArbitraryLoads` 應該只用在極端的緊急情況下。
+> 如果您的應用程式需要連接到不安全的網站，您應該一律使用 `NSExceptionDomains` 將該網域輸入為例外狀況，而不是使用 `NSAllowsArbitraryLoads`完全關閉 ATS。 `NSAllowsArbitraryLoads` 應該僅用於極緊急的情況。
 
-以下示範如何啟用特定網域中 （在此案例的 xamarin.com)，以略過 ATS 需求：
+以下示範如何啟用特定網域（在此案例中為 xamarin.com）以略過 ATS 需求：
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -77,7 +77,7 @@ var browser = new WebView
 </key>
 ```
 
-它是只讓某些網域略過 ATS，讓您可以使用信任的網站，同時享有不受信任網域上的其他安全性的最佳作法。 以下示範對應用程式停用 ATS 較不安全的方式：
+最佳做法是只讓某些網域略過 ATS，讓您可以使用信任的網站，同時從不受信任的網域上的額外安全性進行受益。 以下示範針對應用程式停用 ATS 的較不安全方法：
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -89,11 +89,11 @@ var browser = new WebView
 </key>
 ```
 
-請參閱[應用程式的傳輸安全性](~/ios/app-fundamentals/ats.md)如需 iOS 9 中這項新功能詳細資訊。
+如需 iOS 9 中這項新功能的詳細資訊，請參閱[應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)。
 
 ### <a name="html-strings"></a>HTML 字串
 
-如果您想要呈現的 HTML 程式碼中以動態方式定義的字串，您必須建立的執行個體[ `HtmlWebViewSource` ](xref:Xamarin.Forms.HtmlWebViewSource):
+如果您想要呈現在程式碼中動態定義的 HTML 字串，您必須建立[`HtmlWebViewSource`](xref:Xamarin.Forms.HtmlWebViewSource)的實例：
 
 ```csharp
 var browser = new WebView();
@@ -107,14 +107,14 @@ browser.Source = htmlSource;
 
 ![顯示 HTML 字串的 Web 型](webview-images/html-string.png)
 
-在上述程式碼中，`@`用來將 HTML 標記做為字串常值，這表示所有一般的逸出字元會被忽略。
+在上述程式碼中，`@` 是用來將 HTML 標籤為字串常值，這表示會忽略所有一般的逸出字元。
 
 > [!NOTE]
-> 您`WidthRequest`可能需要設定的和`HeightRequest`屬性[`WebView`](xref:Xamarin.Forms.WebView) , 以查看`WebView` HTML 內容, 視配置是的子系而定。 例如, 在中[`StackLayout`](xref:Xamarin.Forms.StackLayout), 這是必要的。
+> 您可能必須設定[`WebView`](xref:Xamarin.Forms.WebView)的 `WidthRequest` 和 `HeightRequest` 屬性，才能看到 HTML 內容，視 `WebView` 是的子配置而定。 例如，在[`StackLayout`](xref:Xamarin.Forms.StackLayout)中，這是必要的。
 
-### <a name="local-html-content"></a>本機的 HTML 內容
+### <a name="local-html-content"></a>本機 HTML 內容
 
-Web 檢視可顯示內容從 HTML、 CSS 和 Javascript 內嵌在應用程式。 例如:
+Web 工作可從應用程式內的 HTML、CSS 和 JAVAscript 中顯示內容。 例如：
 
 ```html
 <html>
@@ -129,7 +129,7 @@ Web 檢視可顯示內容從 HTML、 CSS 和 Javascript 內嵌在應用程式。
 </html>
 ```
 
-CSS:
+</C3>
 
 ```css
 html,body {
@@ -141,38 +141,38 @@ body,p,h1 {
 }
 ```
 
-請注意，上述的 CSS 中指定的字型必須是可自訂的每個平台，因為並非所有平台都有相同的字型。
+請注意，在上述 CSS 中指定的字型必須針對每個平臺自訂，因為並非每個平臺都有相同的字型。
 
-若要顯示本機內容使用`WebView`，您必須開啟 HTML 檔案，如同任何其他的然後將內容載入到字串形式`Html`屬性`HtmlWebViewSource`。 如需有關開啟檔案的詳細資訊，請參閱[使用檔案](~/xamarin-forms/data-cloud/data/files.md)。
+若要使用 `WebView`顯示本機內容，您需要開啟 HTML 檔案，就像任何其他檔案一樣，然後將內容當做字串載入至 `HtmlWebViewSource`的 `Html` 屬性。 如需開啟檔案的詳細資訊，請參閱[使用](~/xamarin-forms/data-cloud/data/files.md)檔案。
 
-下列螢幕擷取畫面顯示每個平台上顯示本機內容的結果：
+下列螢幕擷取畫面顯示在每個平臺上顯示本機內容的結果：
 
 ![顯示本機內容的 Web 視圖](webview-images/local-content.png)
 
-雖然已載入的第一頁，`WebView`一無所知的 HTML 來自何處。 處理參考本機資源的頁面時，這會是問題。 本機的頁面連結至每個其他，頁面會使用個別的 JavaScript 檔案，或頁面會連結到 CSS 樣式表時，就會加入範例時，可能會發生。  
+雖然已載入第一頁，但 `WebView` 並不知道 HTML 來自何處。 這是處理參考本機資源的頁面時的問題。 當本機頁面彼此連結時，網頁會使用個別的 JavaScript 檔案，或網頁連結至 CSS 樣式表單，這可能會發生的情況。  
 
-若要解決這個問題，您需要告訴`WebView`何處可找到檔案系統上的檔案。 達成`BaseUrl`上的屬性`HtmlWebViewSource`供`WebView`。
+若要解決此問題，您必須告訴 `WebView` 在檔案系統上尋找檔案的位置。 若要這麼做，請在 `WebView`所使用的 `HtmlWebViewSource` 上設定 [`BaseUrl`] 屬性。
 
-因為檔案系統上每個作業系統都不同，您必須判斷每個平台上的該 URL。 Xamarin.Forms 會公開`DependencyService`解決在各平台上的執行階段的相依性。
+由於每個作業系統上的檔案系統不同，因此您必須在每個平臺上判斷該 URL。 Xamarin 會公開 `DependencyService`，以便在每個平臺上的執行時間解析相依性。
 
-若要使用`DependencyService`，首先會定義每個平台實作的介面：
+若要使用 `DependencyService`，請先定義可在每個平臺上執行的介面：
 
 ```csharp
 public interface IBaseUrl { string Get(); }
 ```
 
-請注意，直到每個平台上實作的介面時，應用程式將不會執行。 在一般專案中，請確定您記得設`BaseUrl`使用`DependencyService`:
+請注意，在每個平臺上執行介面之前，應用程式都不會執行。 在一般專案中，請務必記得使用 `DependencyService`來設定 `BaseUrl`：
 
 ```csharp
 var source = new HtmlWebViewSource();
 source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 ```
 
-然後必須提供每個平台介面的實作。
+接著，您必須提供每個平臺的介面的實現。
 
 #### <a name="ios"></a>iOS
 
-在 iOS 上，web 內容應該位於專案的根目錄或**資源**建置動作目錄*BundleResource*，如下所示：
+在 iOS 上，web 內容應該位於專案的根目錄或**Resources**目錄中，並具有組建動作*BundleResource*，如下所示：
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -184,7 +184,7 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 -----
 
-`BaseUrl`應該設定為主要的套件組合的路徑：
+`BaseUrl` 應設定為主要配套的路徑：
 
 ```csharp
 [assembly: Dependency (typeof (BaseUrl_iOS))]
@@ -202,7 +202,7 @@ namespace WorkingWithWebview.iOS
 
 #### <a name="android"></a>Android
 
-在 Android 上，放在建置動作的 [Assets] 資料夾中的 HTML、 CSS 和映像*AndroidAsset*如下所示：
+在 Android 上，使用 [組建動作*AndroidAsset* ] 將 HTML、CSS 和影像放在 [資產] 資料夾中，如下所示：
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -214,7 +214,7 @@ namespace WorkingWithWebview.iOS
 
 -----
 
-在 Android 上，`BaseUrl`應該設定為`"file:///android_asset/"`:
+在 Android 上，`BaseUrl` 應該設定為 `"file:///android_asset/"`：
 
 ```csharp
 [assembly: Dependency (typeof(BaseUrl_Android))]
@@ -230,7 +230,7 @@ namespace WorkingWithWebview.Android
 }
 ```
 
-在 Android 上，檔案中**資產**也可以透過目前的 Android 內容，由存取資料夾`MainActivity.Instance`屬性：
+在 Android 上，[**資產**] 資料夾中的檔案也可以透過 `MainActivity.Instance` 屬性公開的目前 Android 內容來存取：
 
 ```csharp
 var assetManager = MainActivity.Instance.Assets;
@@ -242,9 +242,9 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html")))
 
 #### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-用於通用 Windows 平台 (UWP) 專案，將 HTML、 CSS 和映像的專案根目錄中建置動作設為*內容*。
+在通用 Windows 平臺（UWP）專案上，將 HTML、CSS 和影像放在專案根目錄中，並將 [組建] 動作設定為 [*內容*]。
 
-`BaseUrl`應該設定為`"ms-appx-web:///"`:
+`BaseUrl` 應設定為 `"ms-appx-web:///"`：
 
 ```csharp
 [assembly: Dependency(typeof(BaseUrl))]
@@ -262,20 +262,20 @@ namespace WorkingWithWebview.UWP
 
 ## <a name="navigation"></a>巡覽
 
-WebView 支援瀏覽一些方法和屬性，可讓：
+Web 程式支援透過數個可用的方法和屬性進行流覽：
 
-- **GoForward()** &ndash;如果`CanGoForward`為 true，呼叫`GoForward`向前巡覽至下一步 瀏覽的網頁。
-- **GoBack()** &ndash;如果`CanGoBack`為 true，呼叫`GoBack`會瀏覽至最後一個瀏覽的網頁。
-- **CanGoBack** &ndash; `true`如果有頁面瀏覽至，`false`如果瀏覽器起始 url。
-- **CanGoForward** &ndash; `true`如果使用者已向後巡覽，並可以移至已經瀏覽過的頁面。
+- **GoForward （）** &ndash; 如果 `CanGoForward` 為 true，則呼叫 `GoForward` 會向前流覽至下一個造訪的頁面。
+- **GoBack （）** &ndash; 如果 `CanGoBack` 為 true，則呼叫 `GoBack` 將會流覽至最後造訪的頁面。
+- **CanGoBack** &ndash; `true` 如果有頁面可流覽回，`false` 如果瀏覽器位於起始 URL。
+- **CanGoForward** &ndash; `true` 使用者是否已回溯流覽，並可繼續前往已造訪的頁面。
 
-中的頁面，`WebView`不支援多點觸控筆勢。 請務必要確定該內容是行動裝置最佳化並隨即出現，而不需要縮放。
+在頁面中，`WebView` 不支援多點觸控手勢。 請務必確定內容已進行行動裝置優化，並出現而不需要縮放。
 
-它是很常見的應用程式顯示中的連結`WebView`，而不是裝置的瀏覽器。 在這些情況下，有助於讓一般的瀏覽，但當使用者叫用備份開始的連結時，應用程式應該傳回至一般應用程式檢視。
+應用程式通常會在 `WebView`（而不是裝置的瀏覽器）中顯示連結。 在這些情況下，允許正常導覽是很有用的，但是當使用者在開始連結上叫用時，應用程式應該會回到一般的應用程式視圖。
 
-若要啟用此案例中使用的內建導覽功能的方法和屬性。
+使用內建的導覽方法和屬性來啟用此案例。
 
-開始建立瀏覽器檢視的頁面：
+首先，建立瀏覽器視圖的頁面：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,7 +293,7 @@ WebView 支援瀏覽一些方法和屬性，可讓：
 </ContentPage>
 ```
 
-在 程式碼後置：
+在程式碼後置中：
 
 ```csharp
 public partial class InAppBrowserXaml : ContentPage
@@ -330,29 +330,29 @@ public partial class InAppBrowserXaml : ContentPage
 
 ![Web 流覽導覽按鈕](webview-images/in-app-browser.png)
 
-## <a name="events"></a>事件
+## <a name="events"></a>Events
 
-WebView 中，會引發下列事件，以協助您回應狀態的變更：
+Web 工作會引發下列事件，以協助您回應狀態的變更：
 
-- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)–當 Web 工作開始載入新頁面時引發的事件。
-- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)–載入頁面並停止導覽時引發的事件。
-- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested)–提出要求以重載目前內容時引發的事件。
+- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) –當 web 工作開始載入新頁面時，所引發的事件。
+- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) –載入頁面並停止導覽時引發的事件。
+- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested) –要求重載目前內容時所引發的事件。
 
-事件隨附的物件有四個屬性: [`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs) [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)
+伴隨[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)事件的[`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs)物件有四個屬性：
 
-- `Cancel`–指出是否要取消導覽。
-- `NavigationEvent`–引發的導覽事件。
-- `Source`–執行導覽的元素。
-- `Url`–導覽目的地。
+- `Cancel` –指出是否要取消導覽。
+- `NavigationEvent` –引發的導覽事件。
+- `Source` –執行導覽的元素。
+- `Url` –導覽目的地。
 
-事件隨附的物件有四個屬性: [`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs) [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)
+伴隨[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件的[`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs)物件有四個屬性：
 
-- `NavigationEvent`–引發的導覽事件。
-- `Result`–使用[`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)列舉成員來描述導覽的結果。 有效值為 `Cancel`、`Failure`、`Success` 和 `Timeout`。
-- `Source`–執行導覽的元素。
-- `Url`–導覽目的地。
+- `NavigationEvent` –引發的導覽事件。
+- `Result` –使用[`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)列舉成員來描述導覽的結果。 有效值為 `Cancel`、`Failure`、`Success` 和 `Timeout`。
+- `Source` –執行導覽的元素。
+- `Url` –導覽目的地。
 
-如果您預期使用需要較長時間載入的網頁, 請考慮使用[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)和[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件來執行狀態指示器。 例如：
+如果您預期使用需要較長時間載入的網頁，請考慮使用[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)和[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件來執行狀態指示器。 例如：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -367,7 +367,7 @@ WebView 中，會引發下列事件，以協助您回應狀態的變更：
 </ContentPage>
 ```
 
-兩個事件處理常式中：
+這兩個事件處理常式：
 
 ```csharp
 void webviewNavigating(object sender, WebNavigatingEventArgs e)
@@ -381,17 +381,17 @@ void webviewNavigated(object sender, WebNavigatedEventArgs e)
 }
 ```
 
-這會導致下列輸出 （正在載入）：
+這會導致下列輸出（載入）：
 
 ![Web 流覽事件範例](webview-images/loading-start.png)
 
-完成的載入：
+完成載入：
 
 ![Web 流覽事件範例](webview-images/loading-end.png)
 
-## <a name="reloading-content"></a>重新載入內容
+## <a name="reloading-content"></a>重載內容
 
-[`WebView`](xref:Xamarin.Forms.WebView) 具有`Reload`方法，可用來重新載入目前的內容：
+[`WebView`](xref:Xamarin.Forms.WebView)具有 `Reload` 方法，可用於重載目前的內容：
 
 ```csharp
 var webView = new WebView();
@@ -399,11 +399,11 @@ var webView = new WebView();
 webView.Reload();
 ```
 
-當`Reload`方法會叫用`ReloadRequested`引發事件時，表示要求，已重新載入目前的內容。
+叫用 `Reload` 方法時，`ReloadRequested` 事件會引發，表示已提出要求來重載目前的內容。
 
 ## <a name="performance"></a>效能
 
-熱門的 web 瀏覽器現在採用技術，例如硬體加速呈現和 JavaScript 編譯。 在 iOS 上，依預設，Xamarin.Forms`WebView`藉由`UIWebView`類別，而許多這些技術會在此實作中，您無法使用。 不過，應用程式可以選擇加入，以在使用 iOS`WkWebView`類別來實作 Xamarin.Forms `WebView`，可支援更快速瀏覽。 這可以藉由新增下列程式碼，來達成**AssemblyInfo.cs**應用程式在 iOS 平台專案檔：
+熱門的 web 瀏覽器現在採用硬體加速轉譯和 JavaScript 編譯等技術。 根據預設，在 iOS 上，`WebView` 的 Xamarin 會由 `UIWebView` 類別來執行，而這其中許多技術在此實作為中無法使用。 不過，應用程式可以選擇使用 iOS `WkWebView` 類別來執行 Xamarin. Forms `WebView`，以支援更快速的流覽。 將下列程式碼新增至應用程式的 iOS 平臺專案中的**AssemblyInfo.cs**檔案，即可達成此目的：
 
 ```csharp
 // Opt-in to using WkWebView instead of UIWebView.
@@ -411,27 +411,27 @@ webView.Reload();
 ```
 
 > [!NOTE]
-> 在 iOS 上, `WkWebViewRenderer`具有`WkWebViewConfiguration`接受引數的函數多載。 這可讓轉譯器在建立時設定。
+> 在 iOS 上，`WkWebViewRenderer` 具有接受 `WkWebViewConfiguration` 引數的函數多載。 這可讓轉譯器在建立時設定。
 
-`WebView` 依預設在 Android 上是做為內建的瀏覽器差不多一樣快。
+根據預設，Android 上的 `WebView` 與內建瀏覽器的速度一樣快。
 
-[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)使用 Microsoft Edge 轉譯引擎。 桌上型電腦和平板電腦裝置應該會看到相同的效能與使用 Edge 瀏覽器本身。
+[UWP web](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)工作會使用 Microsoft Edge 轉譯引擎。 桌面和平板電腦裝置應該會看到與使用 Edge 瀏覽器本身相同的效能。
 
 ## <a name="permissions"></a>權限
 
-為了讓`WebView`運作，您必須確定每個平台已設定權限。 請注意，在某些平台，`WebView`在偵錯模式中，但只有在建置要發行時，不會運作。 這是因為某些權限，例如，適用於網際網路存取，在 Android 上，依預設是由 Visual Studio for Mac 中偵錯模式時設定。
+為了讓 `WebView` 能夠正常執行，您必須確定已針對每個平臺設定許可權。 請注意，在某些平臺上，`WebView` 會在「偵錯工具」模式下工作，但在建立發行時不會使用。 這是因為某些許可權（例如 Android 上的網際網路存取）預設會在處於「偵錯工具」模式時 Visual Studio for Mac 來設定。
 
-- **UWP** &ndash;顯示網路內容時，需要網際網路 （用戶端和伺服器） 功能。
-- **Androi** &ndash;只有需要顯示來自網路的內容時，才需要`INTERNET`。 本機內容需要任何特殊權限。
-- **iOS** &ndash;需要任何特殊權限。
+- **UWP** &ndash; 在顯示網路內容時需要網際網路（用戶端 & 伺服器）功能。
+- 只有在從網路顯示內容時， **Android** &ndash; 才需要 `INTERNET`。 本機內容不需要任何特殊許可權。
+- **iOS** &ndash; 不需要任何特殊許可權。
 
 ## <a name="layout"></a>配置
 
-不同於大部分其他 Xamarin.Forms 檢視`WebView`要求`HeightRequest`和`WidthRequest`時 StackLayout 或 RelativeLayout 中包含所指定。 如果您無法指定這些屬性，`WebView`不會呈現。
+不同于大部分其他的 Xamarin. 表單檢視，`WebView` 需要在 StackLayout 或 RelativeLayout 中包含時，指定 `HeightRequest` 和 `WidthRequest`。 如果您無法指定這些屬性，則不會呈現 `WebView`。
 
-下列範例示範工作，會導致的版面配置轉譯`WebView`s:
+下列範例示範會導致運作的版面配置、轉譯 `WebView`s：
 
-WidthRequest 與 HeightRequest StackLayout:
+StackLayout with WidthRequest & HeightRequest：
 
 ```xaml
 <StackLayout>
@@ -442,7 +442,7 @@ WidthRequest 與 HeightRequest StackLayout:
 </StackLayout>
 ```
 
-WidthRequest 與 HeightRequest RelativeLayout:
+RelativeLayout with WidthRequest & HeightRequest：
 
 ```xaml
 <RelativeLayout>
@@ -460,7 +460,7 @@ WidthRequest 與 HeightRequest RelativeLayout:
 </RelativeLayout>
 ```
 
-AbsoluteLayout*而不需要*WidthRequest & HeightRequest:
+AbsoluteLayout*不含*WidthRequest & HeightRequest：
 
 ```xaml
 <AbsoluteLayout>
@@ -470,7 +470,7 @@ AbsoluteLayout*而不需要*WidthRequest & HeightRequest:
 </AbsoluteLayout>
 ```
 
-方格*而不需要*WidthRequest & HeightRequest。 格線是其中一個不需要指定所要求的高度和寬度的幾個配置。:
+*沒有*WidthRequest 的方格 & HeightRequest。 方格是其中一種不需要指定要求的高度和寬度的版面配置。：
 
 ```xaml
 <Grid>
@@ -483,9 +483,9 @@ AbsoluteLayout*而不需要*WidthRequest & HeightRequest:
 </Grid>
 ```
 
-## <a name="invoking-javascript"></a>叫用的 JavaScript
+## <a name="invoking-javascript"></a>叫用 JavaScript
 
-[`WebView`](xref:Xamarin.Forms.WebView) 包括能夠叫用的 JavaScript 函式，從C#，並傳回任何結果呼叫C#程式碼。 這可完成[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法，從下列範例所示[WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)範例：
+[`WebView`](xref:Xamarin.Forms.WebView)包括從C#叫用 JavaScript 函式，並將任何結果傳回給呼叫C#程式碼的功能。 這項作業是使用[`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法來完成，如來自[web](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)工作範例的下列範例所示：
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };
@@ -498,7 +498,7 @@ string result = await webView.EvaluateJavaScriptAsync($"factorial({number})");
 resultLabel.Text = $"Factorial of {number} is {result}.";
 ```
 
-[ `WebView.EvaluateJavaScriptAsync` ](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法會評估指定為引數，並傳回任何結果為 JavaScript `string`。 在此範例中， `factorial` JavaScript 函式會叫用，它會傳回的階乘`number`結果。 此 JavaScript 函式定義於本機 HTML 檔案[ `WebView` ](xref:Xamarin.Forms.WebView)載入時，與下列範例所示：
+[`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)方法會評估指定為引數的 JavaScript，並以 `string`的形式傳回任何結果。 在此範例中，會叫用 `factorial` JavaScript 函數，以傳回 `number` 的階乘。 這個 JavaScript 函式定義于[`WebView`](xref:Xamarin.Forms.WebView)載入的本機 HTML 檔案中，如下列範例所示：
 
 ```html
 <html>
@@ -519,5 +519,5 @@ function factorial(num) {
 
 ## <a name="related-links"></a>相關連結
 
-- [使用 WebView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
-- [Web 檢視 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+- [使用 Web 工作（sample）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+- [Web 視圖（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
