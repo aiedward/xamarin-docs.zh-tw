@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2019
-ms.openlocfilehash: ddf0b96295f7153803db65a1fd741cc5df473730
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 83aca8c9e64ffb01eb9773c17b42333f73c1aab5
+ms.sourcegitcommit: 9fa7cf9fae44ed092bc9cab17c843a443001734e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697110"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72971256"
 ---
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
@@ -86,7 +86,7 @@ string result = await DisplayPromptAsync("Question 1", "What's your name?");
 
 如果您按下 [確定] 按鈕，則會以 `string` 傳回輸入的回應。 如果點擊 [取消] 按鈕，則會傳回 `null`。
 
-@No__t_0 方法的完整引數清單是：
+`DisplayPromptAsync` 方法的完整引數清單是：
 
 - `title`，屬於 `string` 類型，這是要顯示在提示字元中的標題。
 - `message`，屬於 `string` 類型，這是要在提示字元中顯示的訊息。
@@ -100,7 +100,6 @@ string result = await DisplayPromptAsync("Question 1", "What's your name?");
 
 ```csharp
 string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLength: 2, keyboard: Keyboard.Numeric);
-}
 ```
 
 這段程式碼會將可輸入的字元數限制為2，並顯示數字鍵台以進行使用者輸入：
@@ -108,7 +107,7 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLengt
 [![在 iOS 和 Android 上強制回應提示的螢幕擷取畫面](pop-ups-images/keyboard-prompt.png "強制回應提示")](pop-ups-images/keyboard-prompt-large.png#lightbox "強制回應提示")
 
 > [!NOTE]
-> @No__t_0 方法目前只會在 iOS 和 Android 上執行。
+> `DisplayPromptAsync` 方法目前只會在 iOS 和 Android 上執行。
 
 ## <a name="related-links"></a>相關連結
 
