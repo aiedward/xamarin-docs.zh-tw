@@ -3,8 +3,8 @@ documentType: LandingData
 title: Xamarin.Mac 範例
 metadata:
   description: 跨平台的 Xamarin.Mac 範例應用程式可供行動裝置開發人員使用。
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 07/30/2019
   ms.topic: sample
 abstract:

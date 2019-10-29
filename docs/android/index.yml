@@ -3,8 +3,8 @@ documentType: LandingData
 title: Xamarin.Android
 metadata:
   description: Xamarin.Android 公開了適用於 .NET 開發人員的完整 Android SDK。
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 07/27/2018
   ms.topic: landing-page
   ms.technology: xamarin-android
@@ -30,7 +30,7 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 設定
+            text: 安裝程式
             href: ~/android/get-started/installation/index.md
           - image:
               src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
@@ -44,7 +44,7 @@ sections:
               src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
             text: Android 10
             href: ~/android/platform/android-10.md
-  - title: 手冊
+  - title: 輔助線
     items:
       - type: list
         style: cards
@@ -55,7 +55,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
               href: ~/android/get-started/index.md
-            title: 開始使用
+            title: 快速入門
           - href: ~/android/app-fundamentals/index.md
             html: 您要建置 Android 應用程式所需知道的一切，例如使用檔案、影像、資料庫等等。
             image:

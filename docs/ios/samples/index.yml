@@ -3,8 +3,8 @@ documentType: LandingData
 title: Xamarin.iOS 範例
 metadata:
   description: 適用於行動裝置開發人員的跨平台 Xamarin.iOS 範例應用程式。
-  author: conceptdev
-  ms.author: crdun
+  author: davidortinau
+  ms.author: daortin
   ms.date: 07/30/2019
   ms.topic: sample
 abstract:
