@@ -4,21 +4,21 @@ description: 本文介紹 iOS 9 中適用于 Xamarin iOS 開發人員的所有�
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752001"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031788"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 簡介
 
 _本文介紹 iOS 9 中適用于 Xamarin iOS 開發人員的所有新的和修改過的 Api 和功能。_
 
-![](images/ios9-sml.png "IOS 9 標誌")
+![](images/ios9-sml.png "The iOS 9 logo")
 
 Apple 在 iOS 9 中新增了數個新的 Api 和服務，以及現有功能的許多增強功能。
 
@@ -50,7 +50,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s Plus 的新手，3D Touch 將壓力機密手�
 
 透過下列功能可支援 iPad 的多工作業：
 
-- **滑過**-允許使用者在 [滑出面板] 中暫時執行第二個 iOS 應用程式（根據語言方向，在畫面的右側或左側），其中涵蓋約為目前正在執行之主要應用程式的 25%。 滑過僅適用于 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4。
+- **滑過**-允許使用者在 [滑出面板] 中暫時執行第二個 iOS 應用程式（根據語言方向，在畫面的右側或左側），其中涵蓋約為目前正在執行之主要應用程式的25%。 滑過僅適用于 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4。
 - **分割視圖**-在支援的 ipad 硬體上（僅限 ipad Air 2、ipad 迷你4和 ipad Pro），使用者可以挑選第二個應用程式，並在分割螢幕模式中與目前執行中的應用程式並存執行。 使用者可以控制每個應用程式所佔用主畫面的百分比。
 - **圖片**-針對播放影片內容的應用程式，現在可以在可移動且可調整大小的視窗中播放影片，並將其浮動到目前正在 iOS 裝置上執行的其他應用程式。 使用者可以完全掌控這個視窗的大小和位置。 圖片中的圖片僅適用于 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4。
 
@@ -121,7 +121,7 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 
 - **新的音訊單元擴充點**–使用此延伸模組點來提供音訊效果、音樂儀器、音效產生器等等，以便在其他音訊單元主機應用程式中使用（例如 GarageBand）。 這個擴充點也可讓您在 App Store 上銷售_音訊單元_（音訊外掛程式）。
 - **新的索引維護擴充點**-使用此延伸模組可支援重新編制應用程式資料的索引，而不需要重新開機應用程式。
-- **新增網路擴充點**（這些需要 Apple 的特殊許可權）：
+- **新的網路擴充點**（需要 Apple 的特殊許可權）：
   - **應用程式 Proxy 提供者延伸**模組—使用此延伸模組點來執行自訂透明用戶端網路 Proxy。
   - **篩選 Data Provider/篩選控制提供者延伸**模組-使用這些擴充點，在裝置上執行動態網路內容篩選。
   - 封**包通道提供者延伸**模組—使用此延伸模組點來執行自訂 VPN 通道通訊協定用戶端。
@@ -137,9 +137,9 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 
 - 當修改指紋資料庫時，會使 Keychain 專案失效的新 Touch ID 條件約束。
 - 新的條件約束，允許只使用 Touch ID 或密碼建立存取控制清單專案。
-- 新的驗證內容，可讓您叫用與呼叫`SecItem`不同的驗證。
+- 新的驗證內容，可讓您叫用獨立于 `SecItem` 呼叫的驗證。
 - 存取控制列出應用程式提供之 keychain 專案加密的熵（使用 [應用程式密碼] 選項）。
-- 支援在安全記憶體保護區（ `kSecAttrTokenIDSecureEnclave`透過屬性）內產生和使用金鑰。
+- 支援在安全記憶體保護區（透過 `kSecAttrTokenIDSecureEnclave` 屬性）內產生和使用金鑰。
 
 如需詳細資訊，請參閱我們的[觸控識別碼簡介](~/ios/platform/touchid.md)檔。
 
@@ -177,8 +177,8 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 Apple 已淘汰 iOS 9 中的下列 Api 和功能：
 
 - **通訊錄 & 通訊錄 ui** -這些 api 已由 Contact 和 contact ui 架構取代。 如需詳細資訊，請參閱我們的[連絡人和連絡人 UI](~/ios/platform/contacts.md)檔。
-- **CBCentralManager** - `RetrievePeripherals` iOS 9 `RetrieveConnectedPeripherals`中已移除`CBCentralManager`類別的和方法。 呼叫這些方法會導致應用程式在配對附件或應用程式啟動時損毀。
-- **FetchAllChanges** `FetchAllChanges` -`CKFetchRecordChangesOperation`類別的已折舊，將在 iOS 9 中移除。
+- **CBCentralManager** -iOS 9 中已移除 `CBCentralManager` 類別的 `RetrievePeripherals` 和 `RetrieveConnectedPeripherals` 方法。 呼叫這些方法會導致應用程式在配對附件或應用程式啟動時損毀。
+- **FetchAllChanges** -`CKFetchRecordChangesOperation` 類別的 `FetchAllChanges` 已進行過折舊，將在 iOS 9 中移除。
 - **媒體播放機**-iOS 9 中的媒體播放機架構已被取代。 請改用 AVKit 或 AV Foundation Api。
 
 如需特定 API 棄用功能的完整清單，請參閱 Apple 的[iOS 9.0 API 差異](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222)檔。
@@ -193,7 +193,7 @@ Apple 已淘汰 iOS 9 中的下列 Api 和功能：
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
 - [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
-- [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
+- [System.windows.forms.toolstrip.stackview](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 另請參閱這些範例的 iOS 部分（隨附 Mac OS X 版本！）：

@@ -4,15 +4,15 @@ description: 本主題說明如何定義只有在符合某些限定詞值時才�
 ms.prod: xamarin
 ms.assetid: 2111C18A-3EDA-3787-25E1-3869FF4BE441
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 6ae10e73c3f41226560beb8cf8c50608fc6adf3f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: ccac795333dff52d35a66e8cd205c7b5bbd1bb2c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70762615"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029406"
 ---
 # <a name="resource-qualifiers-and-visualization-options"></a>資源限定詞和視覺效果選項
 
@@ -24,7 +24,7 @@ _本主題說明如何定義只有在符合某些限定詞值時才會使用的�
 
 按一下 [**橫向**模式] 按鈕右邊的省略號圖示，即可存取**資源辨識符號選項**：
 
-[![Resource 限定詞選項](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
+[![資源辨識符號選項](resource-qualifiers-images/vs/08-resource-qual-opt-sml.png)](resource-qualifiers-images/vs/08-resource-qual-opt.png#lightbox)
 
 此對話方塊會呈現下列資源限定詞的下拉式功能表：
 
@@ -38,7 +38,7 @@ _本主題說明如何定義只有在符合某些限定詞值時才會使用的�
 
 [**語言**] 下拉式功能表只會列出已定義資源的語言（或 [**所有語言**]，這是預設值）。 不過，也有 [**新增語言/區域 ...** ] 選項，可讓您將新語言新增至清單：
 
-[![Add 語言/區域](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
+[![新增語言/區域](resource-qualifiers-images/vs/09-add-language-region-sml.png)](resource-qualifiers-images/vs/09-add-language-region.png#lightbox)
 
 當您按一下 [**新增語言/區域 ...** ] 時，會開啟 [**選取語言**] 對話方塊，以顯示可用語言和區域的下拉式清單：
 
@@ -103,7 +103,7 @@ Android**版本**選取器會設定用來在設計工具中呈現配置的 andro
 
 按一下 [**橫向**模式] 按鈕右邊的省略號圖示，即可存取**資源辨識符號選項**：
 
-[![Resource 限定詞選項](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
+[![資源辨識符號選項](resource-qualifiers-images/xs/08-resource-qual-opt-m75-sml.png)](resource-qualifiers-images/xs/08-resource-qual-opt-m75.png#lightbox)
 
 此對話方塊會呈現下列資源限定詞的下拉式功能表：
 
@@ -117,15 +117,15 @@ Android**版本**選取器會設定用來在設計工具中呈現配置的 andro
 
 [**語言**] 下拉式功能表只會列出已定義資源的語言（或 [**所有語言**]，這是預設值）。 不過，也有 [**新增語言/區域 ...** ] 選項，可讓您將新語言新增至清單：
 
-[![Add 語言/區域](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
+[![新增語言/區域](resource-qualifiers-images/xs/09-add-language-region-m75-sml.png)](resource-qualifiers-images/xs/09-add-language-region-m75.png#lightbox)
 
 當您按一下 [**新增語言/區域 ...** ] 時，會開啟 [**選取語言**] 對話方塊，以顯示可用語言和區域的下拉式清單：
 
-[語言的 ![List](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
+[![語言清單](resource-qualifiers-images/xs/10-languages-m75-sml.png)](resource-qualifiers-images/xs/10-languages-m75.png#lightbox)
 
 在此範例中，我們選擇了 [ **fr （法文）** ] 語言 **，並為 [法文**] 地區方言的（比利時）。 請注意，[**區域**] 欄位是選擇性的，因為您可以指定許多語言，而不考慮特定區域。 再次開啟 [**語言**] 下拉式功能表時，會顯示新加入的語言/區域資源：
 
-[選擇 ![Language 和區域](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
+[選擇![的語言和區域](resource-qualifiers-images/xs/11-language-region-added-m75-sml.png)](resource-qualifiers-images/xs/11-language-region-added-m75.png#lightbox)
 
 請注意，如果您加入新的語言，但沒有為它建立新的資源，則下次開啟專案時，將不再顯示新增的語言。
 
@@ -144,7 +144,7 @@ Android**版本**選取器會設定用來在設計工具中呈現配置的 andro
 
 [**動作列設定**] 圖示可用於畫刷（主題編輯器）圖示的左邊：
 
-[![Action Bar 設定](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
+[![動作列設定](resource-qualifiers-images/xs/13-action-bar-m75-sml.png)](resource-qualifiers-images/xs/13-action-bar-m75.png#lightbox)
 
 這個圖示會開啟一個對話方塊 popover，可讓您從三種動作列模式之一進行選取：
 
@@ -158,17 +158,17 @@ Android**版本**選取器會設定用來在設計工具中呈現配置的 andro
 
 [**主題**] 下拉式功能表會顯示專案中定義的所有主題。 選取 [**更多主題**] 會開啟一個對話方塊，其中包含已安裝之 Android SDK 提供的所有主題清單，如下所示：
 
-[![More 主題清單](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
+[![其他主題清單](resource-qualifiers-images/xs/14-theme-menu-m75-sml.png)](resource-qualifiers-images/xs/14-theme-menu-m75.png#lightbox)
 
 選取主題時，Design Surface 會更新，以顯示新主題的效果。 請注意，只有在 [**主題**] 對話方塊中按一下 [**確定]** 按鈕時，才會將這項變更設為永久。 選取主題後，它就會包含在 [**主題**] 下拉式功能表中，如下所示：
 
-[現在已可使用 ![Light 主題](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
+[現在已可使用![淺色主題](resource-qualifiers-images/xs/15-light-theme-m75-sml.png)](resource-qualifiers-images/xs/15-light-theme-m75.png#lightbox)
 
 ## <a name="android-version"></a>Android 版本
 
 Android**版本**選取器會設定用來在設計工具中呈現配置的 android 版本。 選取器會顯示與專案的目標 framework 版本相容的所有版本：
 
-[Android 版本 ![List](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
+[![Android 版本清單](resource-qualifiers-images/xs/16-android-version-m75-sml.png)](resource-qualifiers-images/xs/16-android-version-m75.png#lightbox)
 
 您可以在專案的 設定 底下的 專案選項 底下設定目標 framework 版本， **> 組建 > 一般** 區段。 如需有關目標 framework 版本的詳細資訊，請參閱[瞭解 ANDROID API 層級](~/android/app-fundamentals/android-api-levels.md)。
 

@@ -4,15 +4,15 @@ description: 在 iOS 8 中，Apple 提供了新架構和 Api 的眾多，可供�
 ms.prod: xamarin
 ms.assetid: 33AD66C0-3743-49FE-9DCE-88ED3A16BA63
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 713e433f852f3bafc13b3ac32074c574d12ef7f1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752006"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031811"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 簡介
 
@@ -44,13 +44,13 @@ iOS 8 已透過使用 HomeKit 和 HealthKit，協助您將 Apple 和 iOS 裝置�
 
 有了 HomeKit，協力廠商應用程式和 Siri 就可以探索附屬元件，並將其新增至其個人的家庭設定資料庫，編輯並處理此資料，以及與配件和其服務進行通訊，以執行動作。
 
-### <a name="configuration"></a>組態
+### <a name="configuration"></a>Configuration
 
 下圖顯示 HomeKit 配件設定的基本階層：
 
-![](introduction-to-ios8-images/image1.png "下圖顯示 HomeKit 配件設定的基本階層")
+![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-若要開始使用 HomeKit，開發人員必須確認其布建設定檔已選取 HomeKit 服務。 Apple 也為開發人員提供了適用于 Xcode 的 HomeKit 模擬器增益集。 這可以在[Apple 開發人員中心](https://developer.apple.com/downloads/index.action) `Hardware IO Tools for Xcode`的底下找到。 
+若要開始使用 HomeKit，開發人員必須確認其布建設定檔已選取 HomeKit 服務。 Apple 也為開發人員提供了適用于 Xcode 的 HomeKit 模擬器增益集。 這可以在[Apple 開發人員中心](https://developer.apple.com/downloads/index.action)的 [`Hardware IO Tools for Xcode`] 底下找到。 
 
 如需詳細資訊，請參閱我們的[HomeKit](~/ios/platform/homekit.md)指南。
 
@@ -68,9 +68,9 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 
 建立應用程式延伸模組的第一個步驟是定義正確的擴充點，這對於確保正確 Api 的行為和可用性很重要。 若要在 Visual Studio for Mac 中建立應用程式延伸模組，請將新專案新增至您的方案，以將它加入至現有的應用程式。
 
-在 [**新增專案**] 對話方塊中**C#**  > ，流覽至 [ **iOS**  >  **Unified API**  > **延伸**模組]，如下列螢幕擷取畫面所示：
+在 [**新增專案**] 對話方塊中**C#** ，流覽至 > **iOS** > **Unified API** > **延伸**模組，如下列螢幕擷取畫面所示：
 
-![](introduction-to-ios8-images/image2.png "建立新的擴充功能")
+![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
 [新增專案] 對話方塊提供了七個新的專案範本，可用來建立應用程式延伸模組，如下所述。 請注意，許多延伸模組與 iOS 中的其他新 Api 有關，例如檔選擇器：
 
@@ -91,7 +91,7 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 
 首先，它會透過使用新的 Keychain 存取控制清單（Acl）來協助現有的 Keychain 服務。 Keychain 資料可透過使用者指紋的成功驗證來解除鎖定。
 
-其次，LocalAuthentication 提供兩種方法，在本機驗證您的應用程式。 開發人員應該`CanEvaluatePolicy`使用來判斷裝置是否能夠接受 Touch ID，然後再`EvaluatePolicy`啟動驗證作業。
+其次，LocalAuthentication 提供兩種方法，在本機驗證您的應用程式。 開發人員應該使用 `CanEvaluatePolicy` 來判斷裝置是否能夠接受 Touch ID，然後 `EvaluatePolicy` 啟動驗證作業。
 
 如需 Touch ID 的詳細資訊，以及瞭解如何將它整合到 Xamarin iOS 應用程式，請參閱[TouchID 指南簡介](~/ios/platform/touchid.md)。
 
@@ -112,7 +112,7 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 ## <a name="unified-storyboards"></a>整合的 Storyboard
 iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合的分鏡腳本。 透過單一分鏡腳本來涵蓋各種不同的硬體螢幕大小，您可以在真正的「設計一次，使用許多」樣式中建立快速且回應迅速的觀點。
 
-在 iOS8 之前，開發人員`UIInterfaceOrientation`用來區別直向和橫向模式， `UIInterfaceIdiom`以及區別 iOS 裝置。 在 iOS8 中，您不再需要為 iPhone 和 iPad 裝置建立個別的分鏡腳本—方向和裝置是使用*大小類別*來決定。
+在 iOS8 之前，開發人員使用 `UIInterfaceOrientation` 來區分直向和橫向模式，並 `UIInterfaceIdiom` 來區別 iOS 裝置。 在 iOS8 中，您不再需要為 iPhone 和 iPad 裝置建立個別的分鏡腳本—方向和裝置是使用*大小類別*來決定。
 
 每個裝置都是由大小類別在垂直和水準軸中定義，而 iOS 8 中有兩種大小類別：
 
@@ -121,7 +121,7 @@ iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合�
 
 如果同時使用這兩個概念，結果會是 2 x 2 方格，定義可用於不同方向的各種可能大小，如下圖所示：
 
-![](introduction-to-ios8-images/image3.png "代表 2 x 2 方格的圖表，定義可用於不同方向的各種可能大小")
+![](introduction-to-ios8-images/image3.png "A diagram representing the 2 x 2 grid that defines the different possible sizes that can be used in both the differing orientations")
 
 如需有關大小類別的詳細資訊，請參閱整合分鏡腳本[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)。
 

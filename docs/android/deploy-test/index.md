@@ -4,15 +4,15 @@ description: 本節所包含的指南說明如何測試應用程式、將其效�
 ms.prod: xamarin
 ms.assetid: 568C0B85-EFF3-AF6F-5605-95055193D367
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: ff2b481fda34bc7a75c88c72a5e30f00c4b70d9d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 70d03e2ed35970835e0343bc416041845e0edb29
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754019"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028050"
 ---
 # <a name="deployment-and-testing"></a>部署及測試
 
@@ -20,7 +20,7 @@ ms.locfileid: "70754019"
 
 ## <a name="application-package-sizesapp-package-sizemd"></a>[應用程式的套件大小](app-package-size.md)
 
-這篇文章將探討 Xamarin.Android 應用程式套件的組成組件，以及在開發過程的偵錯和發行階段所能進行有效率套件部署的相關策略。
+本文將探討 Xamarin.Android 應用程式套件的組成組件，以及在開發過程的偵錯和發行階段所能進行有效率套件部署的相關策略。
 
 ## <a name="building-appsbuilding-appsindexmd"></a>[建置應用程式](building-apps/index.md)
 

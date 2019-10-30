@@ -4,15 +4,15 @@ description: 說明以 Xamarin 為基礎之 Xamarin 上 tvOS 內部運作的檔�
 ms.prod: xamarin
 ms.assetid: 8C076FED-9C03-44DE-9723-0E20272DD16B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ffcf4d3a491cb6ad865da35d387782b7bd1fca01
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4712b7b75e735da047d7f44f7c6c47f42b9ad7a8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283580"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030651"
 ---
 # <a name="tvos-in-xamarin-internals"></a>Xamarin 中的 tvOS –內部 
 
@@ -54,7 +54,7 @@ Xamarin 針對您的 tvOS 應用程式所支援的元件清單。
 
 ### <a name="linking-native-librariesiosplatformnative-interopmd"></a>[連結原生程式庫](~/ios/platform/native-interop.md)
 
-Xamarin 支援使用原生 C 程式庫和目標 C 程式庫來進行連結。 本檔討論如何連結您的原生 C 程式庫與您的 Xamarin. iOS 專案。 如需針對目標 C 程式庫執行相同作業的詳細資訊，&nbsp;請參閱系結[目標-c 類型](~/ios/platform/binding-objective-c/index.md)&nbsp;檔。
+Xamarin 支援使用原生 C 程式庫和目標 C 程式庫來進行連結。 本檔討論如何連結您的原生 C 程式庫與您的 Xamarin. iOS 專案。 如需針對目標 C 程式庫執行相同作業的詳細資訊，請參閱&nbsp; 系結[目標-C 類型](~/ios/platform/binding-objective-c/index.md)&nbsp;檔。
 
 ## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[目標-C 選取器](~/ios/internals/objective-c-selectors.md)
 

@@ -4,15 +4,15 @@ description: 本檔說明在 Xamarin. Mac 中的時間編譯。 它會比較 AOT
 ms.prod: xamarin
 ms.assetid: 38B8A017-5A58-429C-A6E9-9860A1DCEF63
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: 6797428596fddb0361fb307240bf8237a1e8554d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: dac98ba74f389bec9016e52fa7a3f2f34ec71f0a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769824"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029974"
 ---
 # <a name="xamarinmac-ahead-of-time-compilation"></a>Xamarin 的時間先行編譯
 
@@ -29,7 +29,7 @@ ms.locfileid: "70769824"
 
 每個選項都有一些優點和取捨：
 
-- **JIT**
+- **即時**
   - **啟動時間**– JIT 編譯必須在啟動時完成。 對於大部分的應用程式而言，這是100毫秒的順序，但對於大型應用程式，這次可能會大幅增加。
   - **執行**–因為 JIT 程式碼可以針對所使用的特定處理器進行優化，所以可以產生稍微好一點的程式碼。 在大部分的應用程式中，這是最快速的幾個百分比點。
 - **AOT**

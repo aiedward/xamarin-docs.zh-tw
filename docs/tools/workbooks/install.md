@@ -3,15 +3,15 @@ title: 活頁簿安裝和需求
 description: 本檔說明如何下載和安裝 Xamarin Workbooks，並討論支援的平臺和系統需求。
 ms.prod: xamarin
 ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 6fc204e8524d53820407b2efd3ab0de6af28c669
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249914"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029624"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝和需求
 
@@ -44,7 +44,7 @@ ms.locfileid: "71249914"
 
 #### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
-|應用程式平臺|OS 支援|注意|
+|應用程式平臺|OS 支援|備註|
 |--- |--- |--- |
 |Mac|僅在 Mac 上支援|
 |iOS|在 Mac 和 Windows 上支援|您必須在 Mac 上安裝 Xamarin. iOS 11.0 和 Xcode 9.0 或更新版本。 在 Windows 上執行 iOS 活頁簿需要 Mac 組建主機，並在 Windows 上安裝上述所有和[遠端 iOS](~/tools/ios-simulator/index.md)模擬器。|
@@ -61,16 +61,16 @@ ms.locfileid: "71249914"
 
 一律附加活頁簿用戶端記錄檔：
 
-- Mac`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Mac： `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-1.4.x 也提供功能的能力，從主功能表中選取記錄檔中搜尋 (macOS) 或檔案總管 (Windows) 直接：
+1.4. x 也能夠直接從主功能表選取搜尋工具（macOS）或 Explorer （Windows）中的記錄檔：
 
 - **說明 > 顯示記錄檔**
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>活頁簿1.3 和更早版本的記錄檔路徑：
 
-- Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac： `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 ### <a name="platform-version-information"></a>平臺版本資訊
@@ -103,11 +103,11 @@ Visual Studio
 
 - 您嘗試連接的裝置名稱
 - 裝置的 OS 版本
-- 面向確認您使用的是 x86 模擬器
-- 面向您所使用的模擬器平臺為何？ Google 模擬器？
+- Android：確認您使用的是 x86 模擬器
+- Android：您所使用的模擬器平臺為何？ Google 模擬器？
   Visual Studio Android Emulator 嗎？ Xamarin Android Player？
-- Windows 上的 iOS：您已安裝哪一個版本的 Xamarin 遠端 iOS 模擬器（請選取 [**控制台**] 中的 [**新增/移除程式**]）？
-- Windows 上的 iOS：也請提供 Mac 組建主機的平臺版本資訊
+- Windows 上的 iOS：您已安裝的 Xamarin 遠端 iOS 模擬器版本（請選取 [**控制台**] 中的 [**新增/移除程式**]）？
+- Windows 上的 iOS：請同時提供 Mac 組建主機的平臺版本資訊
 - 裝置是否具有網路連線能力（透過網頁瀏覽器檢查）？
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
@@ -128,7 +128,7 @@ Visual Studio
 
 > **開始 > 設定 > 系統 > 應用程式 & 功能**
 
-![](install-images/windows-remove.png "如應用程式&amp;功能&quot;中所列 Xamarin Workbooks&quot;")
+![](install-images/windows-remove.png "Xamarin Workbooks as listed in &quot;Apps &amp; features&quot;")
 
 **您仍應遵循 Visual Studio 安裝程式的程式，以確保活頁簿不會在您不知情的情況下重新安裝。**
 
@@ -144,7 +144,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 卸載程式會詳細說明將移除的檔案和目錄，並在繼續進行之前要求確認。
 
-將引數傳遞至腳本，以進行更先進的案例。 `uninstall` `-help`
+將 `-help` 引數傳遞至 `uninstall` 腳本，以進行更先進的案例。
 
 對於較舊版本，您必須手動移除下列項目：
 
@@ -155,11 +155,11 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>降級
 
-/Applications/Xamarin 活頁簿的套件組合識別碼 **。應用程式**在`com.xamarin.Workbooks` 1.4 版本中已從`com.xamarin.Inspector`變更為，因為活頁簿和偵測器現在已完全分割。
+/Applications/Xamarin 活頁簿的套件組合識別碼 **。應用程式**已從 `com.xamarin.Inspector` 變更為1.4 版本中的 `com.xamarin.Workbooks`，因為活頁簿和偵測器現在已完全分割。
 
 由於舊版安裝程式中有錯誤，因此無法使用1.3.2 或舊版安裝程式降級1.4 或更新版本。
 
 若要從1.4 或更新版本降級為1.3.2 或更舊版本：
 
 1. [手動將活頁簿卸載 & Inspector](#uninstall-macos)
-2. 執行1.3.2 或舊版`.pkg`安裝程式
+2. 執行1.3.2 或舊版 `.pkg` 安裝程式

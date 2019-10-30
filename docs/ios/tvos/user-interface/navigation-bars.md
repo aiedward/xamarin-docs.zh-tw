@@ -4,23 +4,23 @@ description: 本檔說明如何在以 Xamarin 建立的 tvOS 應用程式中使�
 ms.prod: xamarin
 ms.assetid: 74E396B7-87F0-46F7-BC6C-827DB8884C97
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 73474aaeb138d52536dd8ad5a7dca9be566475af
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aa376385b000b83a41fdcdc7a4d3c8bf1553f0a7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769094"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030469"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>在 Xamarin 中使用 tvOS 導覽列
 
 導覽列可以加入至 [視圖] 頂端，以顯示標題和選擇性的導覽列按鈕。 當使用者從主頁面（例如資料表視圖、集合或功能表）導覽至顯示所選取專案之詳細資料的子視圖時，通常會使用它們。
 
-[![](navigation-bars-images/navbar01.png "導覽列範例")](navigation-bars-images/navbar01.png#lightbox)
+[![](navigation-bars-images/navbar01.png "Sample Navigation Bar")](navigation-bars-images/navbar01.png#lightbox)
 
-除了標題（顯示在中央）之外，導覽列也可以包含列左右兩側的一個或多個導覽列按鈕`UIBarButtonItem`（）。
+除了標題（顯示在中央）之外，導覽列也可以包含列左右兩側的一個或多個導覽列按鈕（`UIBarButtonItem`）。
 
 > [!IMPORTANT]
 > 導覽列預設是完全透明的。 請特別小心，以確保導覽列的內容可以透過其底下的內容保持可讀取狀態。 例如，當資料表視圖或集合中的內容在其下滾動時。
@@ -33,44 +33,44 @@ ms.locfileid: "70769094"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在  **Solution Pad**中，按兩下`Main.storyboard` 檔案，然後開啟以進行編輯。
+1. 在  **Solution Pad**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
 1. 從 [**工具箱**] 將**導覽**列拖放到畫面頂端的視圖上：
 
-    [![](navigation-bars-images/navbar02.png "巡覽列")](navigation-bars-images/navbar02.png#lightbox)
+    [![](navigation-bars-images/navbar02.png "A Navigation Bar")](navigation-bars-images/navbar02.png#lightbox)
 1. 按兩下**導覽**列以選取 [**流覽] 專案**。 在  **Properties Pad**的  **Widget**  索引標籤中，您可以設定**標題**：
 
-    [![](navigation-bars-images/navbar03.png "設定標題")](navigation-bars-images/navbar03.png#lightbox)
+    [![](navigation-bars-images/navbar03.png "Set the Title")](navigation-bars-images/navbar03.png#lightbox)
 1. 接下來，您可以將一個或多個**橫條按鈕專案**新增至橫條的任一個結尾：
 
-    [![](navigation-bars-images/navbar04.png "橫條按鈕專案")](navigation-bars-images/navbar04.png#lightbox)
+    [![](navigation-bars-images/navbar04.png "A Bar Button Item")](navigation-bars-images/navbar04.png#lightbox)
 1. 最後，在 [**屬性] Explorer**的 [**事件**] 索引標籤中，將 [**橫條] 按鈕專案**連接至 [動作]：
 
-    [![](navigation-bars-images/navbar05.png "橫條按鈕專案動作")](navigation-bars-images/navbar05.png#lightbox)
+    [![](navigation-bars-images/navbar05.png "A Bar Button Item Action")](navigation-bars-images/navbar05.png#lightbox)
 1. 儲存您的變更。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 在 **方案總管**中，按兩下`Main.storyboard` 檔案，然後開啟以進行編輯。
+1. 在 **方案總管**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
 1. 從 [**工具箱**] 將**導覽**列拖放到畫面頂端的視圖上：
 
-    [![](navigation-bars-images/navbar02-vs.png "巡覽列")](navigation-bars-images/navbar02-vs.png#lightbox)
+    [![](navigation-bars-images/navbar02-vs.png "A Navigation Bar")](navigation-bars-images/navbar02-vs.png#lightbox)
 1. 按兩下**導覽**列以選取 [**流覽] 專案**。 在 [**屬性] Explorer**的 [ **Widget** ] 索引標籤中，您可以設定**標題**：
 
-    [![](navigation-bars-images/navbar03-vs.png "設定標題")](navigation-bars-images/navbar03-vs.png#lightbox)
+    [![](navigation-bars-images/navbar03-vs.png "Set the Title")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. 接下來，您可以將一個或多個**橫條按鈕專案**新增至橫條的任一個結尾：
 
-    [![](navigation-bars-images/navbar04-vs.png "橫條按鈕專案")](navigation-bars-images/navbar04-vs.png#lightbox)
+    [![](navigation-bars-images/navbar04-vs.png "A Bar Button Items")](navigation-bars-images/navbar04-vs.png#lightbox)
 1. 最後，在 [**屬性] Explorer**的 [**事件**] 索引標籤中，將 [**橫條] 按鈕專案**連接至 [動作]：
 
-    [![](navigation-bars-images/navbar05-vs.png "橫條按鈕專案動作")](navigation-bars-images/navbar05-vs.png#lightbox)
+    [![](navigation-bars-images/navbar05-vs.png "A Bar Button Item Actions")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 儲存您的變更。
 
 -----
 
 > [!IMPORTANT]
-> 雖然您可以在 iOS 設計工具中將`TouchUpInside`事件（例如）指派給 UI 專案（例如 UIButton），但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素`Primary Action`的事件處理常式時，您應該一律使用事件。
+> 雖然您可以在 iOS 設計工具中將 `TouchUpInside` 之類的事件指派給 UI 專案（例如 UIButton），但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素的事件處理常式時，您應該一律使用 `Primary Action` 事件。
 
-下列程式碼提供三種不同 BarButtonItems 上的事件處理常式範例`ShowFirstHotel`： `ShowSecondHotel`、和`ShowThirdHotel`。 按一下每個專案時，就會變更`HotelImage`背景影像。 這會在 View Controller （範例`ViewController.cs`）檔案中進行編輯：
+下列程式碼提供三種不同 BarButtonItems 上的事件處理常式範例： `ShowFirstHotel`、`ShowSecondHotel`和 `ShowThirdHotel`。 按一下每個專案時，背景影像 `HotelImage` 會變更。 這會在 View Controller （範例 `ViewController.cs`）檔案中進行編輯：
 
 ```csharp
 using System;
@@ -121,7 +121,7 @@ namespace MySingleView
 }
 ```
 
-只要按鈕的`Enabled`屬性為`true` ，而且它不是由另一個控制項或視圖所涵蓋，就可以使用 Siri 遠端，將它設為焦點專案。
+只要按鈕的 `Enabled` 屬性 `true`，而且它不是由另一個控制項或視圖所涵蓋，就可以使用 Siri 遠端來成為焦點專案。
 
 如需使用分鏡腳本的詳細資訊，請參閱我們的[Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 

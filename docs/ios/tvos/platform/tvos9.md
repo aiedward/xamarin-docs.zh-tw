@@ -4,15 +4,15 @@ description: 本文介紹 tvOS 9 for Xamarin. tvOS 開發人員所提供的所�
 ms.prod: xamarin
 ms.assetid: A7E738E1-9F94-489B-918F-7DF8F0810987
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ecf5a7cabb03cea92075127d4d5e87350f45619e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 34f332eb712f479f9f9565a3894212e3cdd5aaf6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769112"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030538"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 簡介
 
@@ -75,12 +75,12 @@ Apple 已發行第4代的 Apple TV 硬體，其中包含重新設計的觸控式
 
 ### <a name="siri-remote"></a>Siri 遠端
 
-根據區域，提供的 Apple TV 遠端會有下列其中一項設定：Siri 遠端或 Apple TV 遠端。
+根據區域，提供的 Apple TV 遠端會有下列其中一項設定： Siri 遠端或 Apple TV 遠端。
 
 Siri 遠端目前適用于下列國家/地區：
 
 - 澳大利亞
-- 加拿大
+- Canada
 - 法國
 - 德國
 - 日本
@@ -90,7 +90,7 @@ Siri 遠端目前適用于下列國家/地區：
 
 所有其他國家/地區都會收到 Apple TV 遙控器，其會將 [Siri] 按鈕取代為 [搜尋] 按鈕，以顯示包含搜尋文字輸入的預設搜尋畫面：
 
-[![](tvos9-images/remote02.png "Siri 遠端")](tvos9-images/remote02.png#lightbox)
+[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
 
 如需詳細資訊，請參閱我們的[Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md)檔。
 
@@ -154,7 +154,7 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 [Apple TV 首頁] 畫面會顯示已安裝的所有應用程式，並提供存取使用者喜好設定的方式：
 
-[![](tvos9-images/home01.png "主畫面")](tvos9-images/home01.png#lightbox)
+[![](tvos9-images/home01.png "The Home Screen")](tvos9-images/home01.png#lightbox)
 
 使用者使用焦點在 Siri 遠端流覽應用程式圖示的方格，以選取並啟動應用程式。 應用程式圖示是您對潛在使用者有絕佳印象的第一次機會，而且應該一目了然地傳達應用程式的用途。
 
@@ -168,9 +168,9 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 如果使用者已將您的 tvOS 應用程式放在 Apple 電視首頁螢幕上的頂端列，當使用者選取您的應用程式時，將會顯示較大的頂尖影像。 此影像應會反白顯示您應用程式的功能，或提供其內容的直接連結。
 
-[![](tvos9-images/topshelf01.png "頂尖貨位")](tvos9-images/topshelf01.png#lightbox)
+[![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
 
-最上層的貨位映射可以當做單一靜態`.png`或`.lsr`檔案提供，也可以在執行時間動態建立，做為可設定焦點專案的單一資料列。
+最上層的貨位映射可以當做單一靜態 `.png` 或 `.lsr` 檔案提供，也可以在執行時間動態建立，做為可設定焦點專案的單一資料列。
 
 它可以包含動態資料列或可設定焦點的專案，或動態的一組滾動橫幅，而不是顯示靜態的最大貨位影像。 這兩種動態樣式都可讓您醒目提示應用程式所提供的內容，或跳到其最常使用的功能。
 

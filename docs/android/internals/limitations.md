@@ -1,17 +1,17 @@
 ---
-title: Xamarin. Android 與Mono 執行時間中的桌面差異
+title: '[Xamarin] 與 [桌面]-Mono 執行時間中的差異'
 ms.prod: xamarin
 ms.assetid: F953F9B4-3596-8B3A-A8E4-8219B5B9F7CA
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 7f98f2f75a106ad3a9f62256a7145ac746c4b1c8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8fe0e3a9adedb161c527ccdf6d6c3a7cd06a1d86
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757777"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027843"
 ---
 # <a name="limitations"></a>限制
 
@@ -25,16 +25,16 @@ ms.locfileid: "70757777"
 
 ## <a name="limited-java-generation-support"></a>有限的 JAVA 產生支援
 
-您必須產生 Android 可呼叫[包裝](~/android/platform/java-integration/android-callable-wrappers.md)函式，JAVA 程式碼才能呼叫 managed 程式碼。 *根據預設*，Android 可呼叫包裝函式只會包含（特定）宣告的函式和方法，以覆寫虛擬 JAVA [`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)方法（也就是它具有）或實作為`Attribute`JAVA 介面方法（介面同樣具有）。
+您必須產生 Android 可呼叫[包裝](~/android/platform/java-integration/android-callable-wrappers.md)函式，JAVA 程式碼才能呼叫 managed 程式碼。 *根據預設*，Android 可呼叫包裝函式只會包含（特定）宣告的函式和方法，以覆寫虛擬 JAVA 方法（也就是它有[`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)）或執行 JAVA 介面方法（介面同樣具有 `Attribute`）。
   
-在4.1 版之前，不會宣告任何其他方法。 使用4.1 版本時， [ `Export` `ExportField`和自訂屬性可以用來宣告 Android 可呼叫包裝函式中的 JAVA 方法和欄位](~/android/platform/java-integration/working-with-jni.md)。
+在4.1 版之前，不會宣告任何其他方法。 在4.1 版本中， [`Export` 和 `ExportField` 自訂屬性可以用來宣告 Android 可呼叫包裝函式中的 JAVA 方法和欄位](~/android/platform/java-integration/working-with-jni.md)。
 
 ### <a name="missing-constructors"></a>遺漏的析構函式
 
-除非使用，否則[`ExportAttribute`](xref:Java.Interop.ExportAttribute) ，處理函式會保持不變。 產生 Android 可呼叫包裝函式的演算法，是在下列情況發出 JAVA 的程式：
+除非使用[`ExportAttribute`](xref:Java.Interop.ExportAttribute) ，否則，處理函式會變得很複雜。 產生 Android 可呼叫包裝函式的演算法，是在下列情況發出 JAVA 的程式：
 
 1. 所有參數類型都有 JAVA 對應
-2. 基類宣告相同&ndash;的函式，這是必要的，因為 Android 可呼叫包裝函式*必須*叫用對應的基類檢查程式; 不能使用任何預設引數（因為沒有簡單的方法可以判斷哪些值應該在 JAVA 中使用）。
+2. 基類會宣告相同的函式 &ndash; 這是必要的，因為 Android 可呼叫包裝函式*必須*叫用對應的基類（class）。不能使用任何預設引數（因為沒有簡單的方法可以判斷哪些值應該在 JAVA 中使用）。
 
 例如，請參考下列類別：
 
@@ -47,7 +47,7 @@ class MyIntentService : IntentService {
 }
 ```
 
-雖然這看起來完全合乎邏輯，在*發行組建中*產生的 Android 可呼叫包裝函式將不會包含預設的函式。 因此，如果您嘗試啟動此服務（例如[`Context.StartService`](xref:Android.Content.Context.StartService*)，它將會失敗：
+雖然這看起來完全合乎邏輯，在*發行組建中*產生的 Android 可呼叫包裝函式將不會包含預設的函式。 因此，如果您嘗試啟動此服務（例如[`Context.StartService`](xref:Android.Content.Context.StartService*)，將會失敗：
 
 ```shell
 E/AndroidRuntime(31766): FATAL EXCEPTION: main
@@ -70,7 +70,7 @@ E/AndroidRuntime(31766):        at android.app.ActivityThread.handleCreateServic
 E/AndroidRuntime(31766):        ... 10 more
 ```
 
-因應措施是宣告預設的處理函式，並使用`ExportAttribute`來裝飾它， [`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)然後設定： 
+因應措施是宣告預設的處理函式，並使用 `ExportAttribute`裝飾，然後設定[`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)： 
 
 ```csharp
 [Service]
@@ -88,7 +88,7 @@ class MyIntentService : IntentService {
 
 只有C#部分支援泛型類別。 有下列限制：
 
-- 泛型型別可能不會`[Export]`使用`[ExportField`或]。 嘗試這麼做會產生`XA4207`錯誤。
+- 泛型型別可能不會使用 `[Export]` 或 `[ExportField`]。 嘗試這麼做會產生 `XA4207` 錯誤。
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -101,7 +101,7 @@ class MyIntentService : IntentService {
     }
     ```
 
-- 泛型方法可能不會`[Export]`使用`[ExportField]`或：
+- 泛型方法可能不會使用 `[Export]` 或 `[ExportField]`：
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -116,7 +116,7 @@ class MyIntentService : IntentService {
     }
     ```
 
-- `[ExportField]`不能用於傳回的`void`方法：
+- `[ExportField]` 可能無法用於傳回 `void`的方法：
 
     ```csharp
     public class Example : Java.Lang.Object

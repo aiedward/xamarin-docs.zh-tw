@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9DF24C46-D521-4112-9B21-52EA4E8D90D0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: e10a04627b903c02140a6a2ead5c379c1e8bdcf6
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 0c777b8d5326963e959d8bb13d81d7058caa6bde
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021381"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030940"
 ---
 # <a name="why-does-my-ios-build-fail-with-no-valid-iphone-code-signing-keys-found-in-keychain"></a>為什麼我的 iOS 組建因為「Keychain 中找不到任何有效的 iPhone 程式碼簽署金鑰」而失敗？
 
@@ -22,7 +22,7 @@ ms.locfileid: "71021381"
 
 ### <a name="provisioning-devices"></a>布建裝置
 
-如果您之前尚未布建 iOS 裝置，下列指南會引導您完成完整的逐步程式：[裝置布建指南](~/ios/get-started/installation/device-provisioning/index.md)
+如果您之前尚未布建 iOS 裝置，下列指南會引導您完成完整的逐步程式：裝置布建[指南](~/ios/get-started/installation/device-provisioning/index.md)
 
 ## <a name="bug-when-using-ios-simulator"></a>使用 iOS 模擬器時的錯誤
 
@@ -33,7 +33,7 @@ ms.locfileid: "71021381"
 
 ### <a name="how-to-fix"></a>如何修正
 
-若要解決此問題，您可以`<CodesignEntitlements>`從 .csproj 檔案中的 debug build 移除旗標。 您可以依照下列方式來執行這項操作：
+若要解決這個問題，您可以從 .csproj 檔案中的 debug build 移除 `<CodesignEntitlements>` 旗標。 您可以依照下列方式來執行這項操作：
 
 > [!WARNING]
 > .Csproj 檔案中的錯誤可能會中斷您的專案，因此最好先備份您的檔案，然後再嘗試此動作。
@@ -41,9 +41,9 @@ ms.locfileid: "71021381"
 1. 在解決方案窗格中，以滑鼠右鍵按一下 iOS 專案，然後選取 **[卸載專案**]
 2. 再次以滑鼠右鍵按一下專案，然後選取 **[編輯] [專案名稱] .csproj**
 3. 找出 Debug PropertyGroups，它們的開頭應該是如下所示的旗標：
-   - Debug.exe`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
-   - 版本`<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
-4. 在使用模擬器的每個組建中，刪除或批註掉下列屬性：`<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
+   - Debug： `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">`
+   - 版本： `<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">`
+4. 在使用模擬器的每個組建中，刪除或批註下列屬性： `<CodesignEntitlements>Entitlements.plist</CodesignEntitlements>`
 5. 重載專案，您應該能夠部署至模擬器。
 
 ### <a name="next-steps"></a>後續步驟

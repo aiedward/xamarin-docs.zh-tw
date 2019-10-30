@@ -4,15 +4,15 @@ description: 本檔說明在 iOS 12 中提供的核心 ML 更新。 特別是，
 ms.prod: xamarin
 ms.assetid: 408E752C-2C78-4B20-8B43-A6B89B7E6D1B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/15/2018
-ms.openlocfilehash: 7e22a095a51c2dca749cb1b17807a061d066d0c4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 6245873385caa23e37d5499daa822fa0b699ac1e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290296"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032027"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>Xamarin 中的核心 ML 2
 
@@ -20,7 +20,7 @@ ms.locfileid: "70290296"
 
 在 iOS 12 中，核心 ML 包含批次處理 API。 此 API 可讓核心 ML 更有效率，並在使用模型來做出一系列預測的案例中提供效能改進。
 
-## <a name="sample-app-marshabitatcoremltimer"></a>範例應用程式：MarsHabitatCoreMLTimer
+## <a name="sample-app-marshabitatcoremltimer"></a>範例應用程式： MarsHabitatCoreMLTimer
 
 若要示範使用 Core ML 的批次預測，請參閱[MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)範例應用程式。 這個範例會使用已定型的核心 ML 模型來預測根據各種輸入，在 Mars 上建立 habitat 的成本：日光面板數目、greenhouses 數目和英畝數目。
 
@@ -28,7 +28,7 @@ ms.locfileid: "70290296"
 
 ## <a name="generate-sample-data"></a>產生範例資料
 
-在`ViewController`中，範例應用程式`ViewDidLoad`的方法`LoadMLModel`會呼叫，它會載入包含的核心 ML 模型：
+在 `ViewController`中，範例應用程式的 `ViewDidLoad` 方法會呼叫 `LoadMLModel`，以載入包含的核心 ML 模型：
 
 ```csharp
 void LoadMLModel()
@@ -38,7 +38,7 @@ void LoadMLModel()
 }
 ```
 
-然後，範例應用程式會建立`MarsHabitatPricerInput` 100000 物件，以作為連續核心 ML 預測的輸入。 每個產生的範例都會針對日光面板數目、greenhouses 數目和英畝數設定隨機值：
+然後，範例應用程式會建立 100000 `MarsHabitatPricerInput` 物件，以作為連續核心 ML 預測的輸入。 每個產生的範例都會針對日光面板數目、greenhouses 數目和英畝數設定隨機值：
 
 ```csharp
 async void CreateInputs(int num)
@@ -59,7 +59,7 @@ async void CreateInputs(int num)
 }
 ```
 
-點擊任一應用程式的三個按鈕，會執行兩個預測序列：一個`for`使用迴圈，另一個使用 iOS 12 `GetPredictions`中引進的新批次方法：
+點擊任一應用程式的三個按鈕，會執行兩個預測序列：一個使用 `for` 迴圈，另一個使用 iOS 12 中引進的新批次 `GetPredictions` 方法：
 
 ```csharp
 async void RunTest(int num)
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for 迴圈
 
-測試`for`輕鬆自在管理的迴圈版本會逐一查看指定的輸入數目，並針對每[`GetPrediction`](xref:CoreML.MLModel.GetPrediction*)一個呼叫，並捨棄結果。 方法會花太多時間來進行預測：
+[測試輕鬆自在管理] 的 [`for` 迴圈] 版本會逐一查看指定的輸入數目，並針對每個呼叫[`GetPrediction`](xref:CoreML.MLModel.GetPrediction*) ，並捨棄結果。 方法會花太多時間來進行預測：
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -94,8 +94,8 @@ async Task FetchNonBatchResults(int num)
 
 ## <a name="getpredictions-new-batch-api"></a>GetPredictions （新的 batch API）
 
-測試的批次版本會從輸入`MLArrayBatchProvider`陣列建立物件（因為這是`GetPredictions`方法的必要輸入參數），會建立[`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
-防止預測計算限制為 CPU 的物件，並使用`GetPredictions` API 來提取預測，然後再次捨棄結果：
+測試的批次版本會從輸入陣列建立 `MLArrayBatchProvider` 物件（因為這是 `GetPredictions` 方法所需的輸入參數），會建立[`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
+防止預測計算限制為 CPU 的物件，並使用 `GetPredictions` API 來提取預測，然後再次捨棄結果：
 
 ```csharp
 async Task FetchBatchResults(int num)
@@ -118,7 +118,7 @@ async Task FetchBatchResults(int num)
 
 ## <a name="results"></a>結果
 
-在模擬器和裝置上， `GetPredictions`完成的速度會比迴圈式核心 ML 預測更快。
+在模擬器和裝置上，`GetPredictions` 完成的速度比迴圈式核心 ML 預測更快。
 
 ## <a name="related-links"></a>相關連結
 

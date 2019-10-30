@@ -3,15 +3,15 @@ title: 與 Xamarin 的持續整合簡介
 description: 本檔描述與 Xamarin 的持續整合。 其中討論版本控制和各種持續整合環境。
 ms.prod: xamarin
 ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/19/2017
-ms.openlocfilehash: d335a107d1520db3c76ee602d38adcb129f122b0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2862f05f2d183c9345d2b92268ddf2101cc2492e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293099"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029809"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>與 Xamarin 的持續整合簡介
 
@@ -32,13 +32,13 @@ _持續整合是一種軟體工程實務，在專案的版本控制存放庫中�
 
 下圖說明此程式：
 
-[![](intro-to-ci-images/intro01-small.png "此圖說明此程式")](intro-to-ci-images/intro01.png#lightbox)
+[![](intro-to-ci-images/intro01-small.png "This diagram illustrates this process")](intro-to-ci-images/intro01.png#lightbox)
 
 行動應用程式引進持續整合的獨特挑戰。 應用程式可能需要僅適用于實體裝置的感應器，例如 GPS 或攝影機。 此外，模擬器或模擬器只是硬體的近似值，而且可能隱藏或隱匿問題。 最後，您必須在實際硬體上測試行動應用程式，以確信它確實是由客戶準備的。
 
 [App Center 測試](https://docs.microsoft.com/appcenter/test-cloud)會藉由直接在數百個實體裝置上測試應用程式，來解決這個特定的問題。 開發人員會撰寫自動化驗收測試，以提供功能強大的 UI 測試。 將這些測試上傳至 App Center 之後，CI 伺服器就可以在 CI 程式中自動執行它們，如下圖所示：
 
-[![](intro-to-ci-images/intro02-small.png "將這些測試上傳至 App Center 之後，CI 伺服器就可以在 CI 程式中自動執行它們，如下列圖表所示")](intro-to-ci-images/intro02.png#lightbox)
+[![](intro-to-ci-images/intro02-small.png "Once these tests are uploaded to App Center, the CI server can run them automatically as part of a CI process as shown in this diagram")](intro-to-ci-images/intro02.png#lightbox)
 
 ## <a name="components-of-continuous-integration"></a>連續整合的元件
 
@@ -65,15 +65,15 @@ Visual Studio、Azure DevOps 和 Team Foundation Server 的所有應用程式生
 
 #### <a name="git"></a>Git
 
-[Git](http://git-scm.com)是一種熱門的開放原始碼版本控制解決方案，最初是為了管理 Linux 核心的原始程式碼而開發。 這是一個非常快速、有彈性的系統，可提供各種大小的軟體專案。 它可以輕鬆地從單一開發人員進行調整，而不會對全球各地的大型小組進行不當的網際網路存取。 Git 也可以讓分支變得非常簡單，進而鼓勵平行開發串流，而不會產生最小的風險。
+[Git](https://git-scm.com)是一種熱門的開放原始碼版本控制解決方案，最初是為了管理 Linux 核心的原始程式碼而開發。 這是一個非常快速、有彈性的系統，可提供各種大小的軟體專案。 它可以輕鬆地從單一開發人員進行調整，而不會對全球各地的大型小組進行不當的網際網路存取。 Git 也可以讓分支變得非常簡單，進而鼓勵平行開發串流，而不會產生最小的風險。
 
-Git 可以透過網頁瀏覽器，或在 Linux、Mac OSX 和 Windows 上執行的[GUI 用戶端](http://git-scm.com/downloads/guis)來完全運作。 公用存放庫是免費的;私人存放庫需要[付費方案](https://github.com/pricing)。
+Git 可以透過網頁瀏覽器，或在 Linux、Mac OSX 和 Windows 上執行的[GUI 用戶端](https://git-scm.com/downloads/guis)來完全運作。 公用存放庫是免費的;私人存放庫需要[付費方案](https://github.com/pricing)。
 
-Windows 和 Mac 目前的 Visual Studio 版本提供 Git 的原生支援。 Microsoft 為舊版的 Visual Studio 提供[適用于 Git 的可下載延伸](http://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)模組。 如先前所述，Azure DevOps 和 TFS 可以使用 Git 進行版本控制，而不是 TFVC。
+Windows 和 Mac 目前的 Visual Studio 版本提供 Git 的原生支援。 Microsoft 為舊版的 Visual Studio 提供[適用于 Git 的可下載延伸](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)模組。 如先前所述，Azure DevOps 和 TFS 可以使用 Git 進行版本控制，而不是 TFVC。
 
 #### <a name="subversion"></a>Subversion
 
-[Subversion](http://subversion.apache.org)（SVN）是受歡迎的開放原始碼版本控制系統，已在2000後使用。 SVN 會在所有新式的 OS X、Windows、FreeBSD、Linux 和 Unix 版本上執行。 Visual Studio for Mac 具有 SVN 的原生支援。 有協力廠商延伸模組，可讓 SVN 支援 Visual Studio。
+[Subversion](https://subversion.apache.org) （SVN）是受歡迎的開放原始碼版本控制系統，自2000起就已在使用中。 SVN 會在所有新式的 OS X、Windows、FreeBSD、Linux 和 Unix 版本上執行。 Visual Studio for Mac 具有 SVN 的原生支援。 有協力廠商延伸模組，可讓 SVN 支援 Visual Studio。
 
 ### <a name="continuous-integration-environments"></a>持續整合環境
 
@@ -97,7 +97,7 @@ Windows 和 Mac 目前的 Visual Studio 版本提供 Git 的原生支援。 Micr
 
 下圖說明這種拓撲：
 
-[![](intro-to-ci-images/intro03-small.png "此圖說明這種拓撲")](intro-to-ci-images/intro03.png#lightbox)
+[![](intro-to-ci-images/intro03-small.png "This diagram illustrates this topography")](intro-to-ci-images/intro03.png#lightbox)
 
 您也可以將本機 TFS 伺服器連結至 Azure DevOps 專案，以便將 Azure DevOps 組建委派給本機伺服器。 如需詳細資訊，請參閱[組建和發行代理](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)程式。
 
@@ -105,13 +105,13 @@ Windows 和 Mac 目前的 Visual Studio 版本提供 Git 的原生支援。 Micr
 
 如果您使用 Jenkins 來建立您的應用程式，您可以將程式碼儲存在 Azure DevOps 或 Team Foundation Server，並繼續針對 CI 組建使用 Jenkins。 當您將程式碼推送至 team 專案的 Git 存放庫時，或當您將程式碼簽入 TFVC 時，可以觸發 Jenkins 組建。 如需詳細資訊，請參閱[Jenkins with Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)。
 
-[![](intro-to-ci-images/intro04-small.png "如果您使用 Jenkins 來建立您的應用程式，您可以將程式碼儲存在 Azure DevOps 或 Team Foundation Server，並繼續針對 CI 組建使用 Jenkins")](intro-to-ci-images/intro04.png#lightbox)
+[![](intro-to-ci-images/intro04-small.png "If you use Jenkins to build your apps, you can store your code in Azure DevOps or Team Foundation Server and continue to use Jenkins for your CI builds")](intro-to-ci-images/intro04.png#lightbox)
 
 #### <a name="git-and-jenkins"></a>Git 和 Jenkins
 
 另一個常見的 CI 環境可以完全以 OS X 為基礎。 此案例牽涉到針對組建伺服器使用 Git 進行原始程式碼控制和 Jenkins。 這兩個都是在已安裝 Visual Studio for Mac 的單一 Mac OS X 電腦上執行。 這非常類似上一節中所討論的 Azure DevOps + Jenkins 環境：
 
-[![](intro-to-ci-images/intro05-small.png "這非常類似上一節所討論的 Azure DevOps + Jenkins 環境")](intro-to-ci-images/intro05.png#lightbox)
+[![](intro-to-ci-images/intro05-small.png "This is very similar to the Azure DevOps + Jenkins environment discussed in the previous section")](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **[Microsoft 不支援](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)Jenkins。**

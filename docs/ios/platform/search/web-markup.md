@@ -4,15 +4,15 @@ description: 本檔說明如何建立連結回到 Xamarin iOS 應用程式的 we
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 52da0cfcab56c0acd339f4f0a0f2456a66d002a8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3d5db2f060b59fc689bea99141342b0447ac8933
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769484"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031519"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>在 Xamarin 中使用 Web 標記進行搜尋
 
@@ -20,12 +20,12 @@ ms.locfileid: "70769484"
 
 如果您的 iOS 應用程式已支援 mobile 深層連結，而您的網站呈現您應用程式中內容的深層連結，Apple 的_Applebot_ web 編目程式會為此內容編制索引，並自動將其新增至其雲端索引：
 
-[![](web-markup-images/webmarkup01.png "雲端索引總覽")](web-markup-images/webmarkup01.png#lightbox)
+[![](web-markup-images/webmarkup01.png "Cloud Index overview")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
 如果使用者按其中一個結果（並已安裝您的應用程式），則會將其移至應用程式中的內容：
 
-[![](web-markup-images/webmarkup02.png "在搜尋結果中從網站深層連結")](web-markup-images/webmarkup02.png#lightbox)
+[![](web-markup-images/webmarkup02.png "Deep linking from a website in search results")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>啟用 Web 內容編制索引
 
@@ -63,7 +63,7 @@ Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
 
 ## <a name="using-twitter-cards"></a>使用 Twitter 卡
 
-您可以使用 Twitter 卡來提供應用程式內容的深層連結。 例如：
+您可以使用 Twitter 卡來提供應用程式內容的深層連結。 例如:
 
 ```html
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -71,11 +71,11 @@ Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
 <meta name="twitter:app:url:iphone" content="AppNameURL">
 ```
 
-如需詳細資訊，請參閱 Twitter 的[Twitter 卡通訊協定](http://dev.twitter.com/cards/mobile)檔。
+如需詳細資訊，請參閱 Twitter 的[Twitter 卡通訊協定](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)檔。
 
 ## <a name="using-facebook-app-links"></a>使用 Facebook 應用程式連結
 
-您可以使用 Facebook 應用程式連結，提供應用程式內容的深層連結。 例如：
+您可以使用 Facebook 應用程式連結，提供應用程式內容的深層連結。 例如:
 
 ```html
 <meta property="al:ios:app_name" content="AppName">
@@ -83,11 +83,11 @@ Apple 會在焦點搜尋和 Safari 搜尋結果中呈現這些結果。
 <meta property="al:ios:url" content="AppNameURL">
 ```
 
-如需詳細資訊，請參閱 Facebook 的[應用程式連結](http://applinks.org)檔。
+如需詳細資訊，請參閱 Facebook 的[應用程式連結](https://developers.facebook.com/docs/applinks)檔。
 
 ## <a name="opening-deep-links"></a>開啟深層連結
 
-您需要新增在您的 Xamarin iOS 應用程式中開啟和顯示深層連結的支援。 編輯**AppDelegate.cs**檔案，並覆寫`OpenURL`方法以處理自訂 URL 格式。 例如：
+您需要新增在您的 Xamarin iOS 應用程式中開啟和顯示深層連結的支援。 編輯**AppDelegate.cs**檔案，並覆寫 `OpenURL` 方法以處理自訂 URL 格式。 例如:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,7 +113,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-在上述程式碼中，我們要尋找包含`/appname`的 URL，並將的`query`值（`123`在此範例中為）傳遞給應用程式中的自訂視圖控制器，以向使用者顯示要求的內容。
+在上述程式碼中，我們要尋找包含 `/appname` 的 URL，並將 `query` （在此範例中為`123`）的值傳遞至應用程式中的自訂視圖控制器，以向使用者顯示要求的內容。
 
 ## <a name="providing-rich-results-with-structured-data"></a>以結構化資料提供豐富的結果
 
@@ -121,7 +121,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 豐富的結果會更具吸引力，並藉由吸引更多使用者與他們互動，協助改善您在雲端式搜尋索引中的排名。
 
-提供結構化資料標記的其中一個選項是使用 [開啟圖形]。 例如：
+提供結構化資料標記的其中一個選項是使用 [開啟圖形]。 例如:
 
 ```html
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -129,9 +129,9 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
 ```
 
-如需詳細資訊，請參閱[Open Graph](http://ogp.me)網站。
+如需詳細資訊，請參閱[Open Graph](https://ogp.me)網站。
 
-結構化資料標記的另一個常見格式是架構. 組織的微資料格式。 例如：
+結構化資料標記的另一個常見格式是架構. 組織的微資料格式。 例如:
 
 ```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -152,7 +152,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 以下顯示網站的中繼資料範例，提供豐富的搜尋結果給使用者：
 
-[![](web-markup-images/deeplink01.png "透過結構化資料標記的豐富搜尋結果")](web-markup-images/deeplink01.png#lightbox)
+[![](web-markup-images/deeplink01.png "Rich search results via Structured Data Markup")](web-markup-images/deeplink01.png#lightbox)
 
 Apple 目前支援 schema.org 中的下列架構類型：
 
@@ -165,7 +165,7 @@ Apple 目前支援 schema.org 中的下列架構類型：
 - 配方
 - SearchAction
 
-如需這些配置類型的詳細資訊，請參閱[schema.org](http://schema.org)。
+如需這些配置類型的詳細資訊，請參閱[schema.org](https://schema.org)。
 
 ## <a name="providing-actions-with-structured-data"></a>以結構化資料提供動作
 
@@ -207,5 +207,5 @@ Apple 目前支援 schema.org 中的下列架構類型：
 
 - [iOS 9 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 開發人員](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [應用程式搜尋程式設計指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

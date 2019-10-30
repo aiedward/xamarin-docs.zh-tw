@@ -4,21 +4,21 @@ description: 本檔說明如何在以 Xamarin 建立的應用程式中使用 tvO
 ms.prod: xamarin
 ms.assetid: 19198D46-7BBE-4D04-9BFA-7D1C5C9F9FC6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8bb517eaa549567ae92695fbad300d055f42771f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 12fe9645ab832db1db37e36b0342664bbd2fe9f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769052"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030408"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 頁面控制項
 
 有時候您可能需要在 tvOS 應用程式中顯示一系列的頁面或影像。 網頁控制項的設計，是為了清楚地顯示使用者已超出最大頁面數目的頁面。 頁面控制項會針對深色、橢圓形狀背景顯示一系列的點。 目前的頁面會顯示已填滿的點，而所有其他頁面則會顯示為空心點。 如果在其背景區域中有太多無法容納，頁面控制項將會裁剪外部最多點。
 
-[![](page-controls-images/page01.png "範例頁面控制項")](page-controls-images/page01.png#lightbox)
+[![](page-controls-images/page01.png "Sample Page control")](page-controls-images/page01.png#lightbox)
 
 非互動式元素中的頁面控制項，其設計目的是只為使用者提供意見反應。 您將需要新增其他控制項，以變更目前的頁碼（例如手勢或按鈕）。
 
@@ -35,40 +35,40 @@ ms.locfileid: "70769052"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在  **Solution Pad**中，按兩下`Main.storyboard`檔案，然後開啟檔案進行編輯。
+1. 在  **Solution Pad**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
 1. 從 [**工具箱**] 拖曳**頁面控制項**，並將它放在視圖上：
 
-    [![](page-controls-images/page02.png "頁面控制項")](page-controls-images/page02.png#lightbox)
+    [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
 1. 在**Properties Pad**的 [ **Widget]** 索引標籤中，您可以調整頁面控制項的數個屬性，例如其**目前頁面**和**頁數**：
 
-    [![](page-controls-images/page03.png "[Widget] 索引標籤")](page-controls-images/page03.png#lightbox)
+    [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
 1. 接下來，將控制項或手勢加入至視圖，以在頁面集合中向後和向前移動。
-1. 最後，將**名稱**指派給控制項，以便您可以在程式碼中C#對其進行回應。 例如：
+1. 最後，將**名稱**指派給控制項，以便您可以在程式碼中C#對其進行回應。 例如:
 
-    [![](page-controls-images/page04.png "將控制項命名為")](page-controls-images/page04.png#lightbox)
+    [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
 1. 儲存您的變更。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 在 **方案總管**中，按兩下`Main.storyboard`檔案，然後開啟檔案進行編輯。
+1. 在 **方案總管**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
 1. 從 [**工具箱**] 拖曳**頁面控制項**，並將它放在視圖上：
 
-    [![](page-controls-images/page02-vs.png "頁面控制項")](page-controls-images/page02-vs.png#lightbox)
+    [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
 1. 在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中，您可以調整頁面控制項的數個屬性，例如其**目前頁面**和**頁數**：
 
-    [![](page-controls-images/page03-vs.png "[Widget] 索引標籤")](page-controls-images/page03-vs.png#lightbox)
+    [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
 1. 接下來，將控制項或手勢加入至視圖，以在頁面集合中向後和向前移動。
-1. 最後，將**名稱**指派給控制項，以便您可以在程式碼中C#對其進行回應。 例如：
+1. 最後，將**名稱**指派給控制項，以便您可以在程式碼中C#對其進行回應。 例如:
 
-    [![](page-controls-images/page04-vs.png "將控制項命名為")](page-controls-images/page04-vs.png#lightbox)
+    [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
 1. 儲存您的變更。
 
 -----
 
 > [!IMPORTANT]
-> 雖然您可以在 iOS 設計工具中將`TouchUpInside`事件（例如）指派給 UI 專案（例如 UIButton），但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素`Primary Action`的事件處理常式時，您應該一律使用事件。
+> 雖然您可以在 iOS 設計工具中將 `TouchUpInside` 之類的事件指派給 UI 專案（例如 UIButton），但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素的事件處理常式時，您應該一律使用 `Primary Action` 事件。
 
-編輯您的 View Controller （ `ViewController.cs`範例）檔案，並新增程式碼來處理所變更的頁面。 例如：
+編輯您的 View Controller （範例 `ViewController.cs`）檔案，並新增程式碼來處理所變更的頁面。 例如:
 
 ```csharp
 using System;
@@ -154,7 +154,7 @@ PageView.Pages = 6;
 PageView.CurrentPage = PageNumber;
 ```
 
-`CurrentPage`屬性為零（0），因此第一個頁面會是零，而最後一個則是最大頁數的減。
+`CurrentPage` 屬性是以零（0）為基礎，因此第一個頁面會是零，而最後一個則是最大頁數的減。
 
 如需使用分鏡腳本的詳細資訊，請參閱我們的[Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 

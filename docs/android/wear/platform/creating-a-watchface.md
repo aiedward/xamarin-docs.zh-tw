@@ -4,15 +4,15 @@ description: 本指南說明如何針對 Android 磨損1.0 執行自訂監看式
 ms.prod: xamarin
 ms.assetid: 4D3F9A40-A820-458D-A12A-D784BB11F643
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/23/2018
-ms.openlocfilehash: a6dfab949eb19708f69d838a7c792f2e7bbd76b3
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 38123e2b1ef20144606bcc77ad33af572aa3707a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70758508"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030389"
 ---
 # <a name="creating-a-watch-face"></a>建立錶面
 
@@ -186,7 +186,7 @@ namespace WatchFace
 
 ### <a name="implement-the-engine-oncreate-method"></a>執行引擎 OnCreate 方法
 
-@No__t_0 方法會初始化監看式臉部。 將下欄欄位新增至 `MyWatchFaceEngine`：
+`OnCreate` 方法會初始化監看式臉部。 將下欄欄位新增至 `MyWatchFaceEngine`：
 
 ```csharp
 Paint hoursPaint;
@@ -213,7 +213,7 @@ public override void OnCreate(ISurfaceHolder holder)
 
 `MyWatchFaceEngine` 啟動之後，很快就會呼叫 `OnCreate`。 它會設定 `WatchFaceStyle` （控制磨損裝置與使用者互動的方式），並具現化將用來顯示時間的 `Paint` 物件。
 
-@No__t_0 的呼叫會執行下列動作：
+`SetWatchFaceStyle` 的呼叫會執行下列動作：
 
 1. 將 *查看模式*設定為 `PeekModeShort`，這會使通知在顯示器上顯示為小型的「查看」卡片。
 
@@ -223,11 +223,11 @@ public override void OnCreate(ISurfaceHolder holder)
 
 如需這些和其他 [監看式] 字型選項的詳細資訊，請參閱 Android [WatchFaceStyle. Builder](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) API 檔。
 
-@No__t_0 完成之後，`OnCreate` 會將 `Paint` 物件（`hoursPaint`）具現化，並將其色彩設定為白色，而其文字大小設為48圖元（[TextSize](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29)必須以圖元為單位指定）。
+`SetWatchFaceStyle` 完成之後，`OnCreate` 會將 `Paint` 物件（`hoursPaint`）具現化，並將其色彩設定為白色，而其文字大小設為48圖元（[TextSize](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29)必須以圖元為單位指定）。
 
 ### <a name="implement-the-engine-ondraw-method"></a>執行引擎 OnDraw 方法
 
-@No__t_0 的方法可能是最重要的 `CanvasWatchFaceService.Engine` 方法 &ndash; 它是實際繪製監看式臉部元素的方法，例如數位和時鐘臉部手。
+`OnDraw` 的方法可能是最重要的 `CanvasWatchFaceService.Engine` 方法 &ndash; 它是實際繪製監看式臉部元素的方法，例如數位和時鐘臉部手。
 在下列範例中，它會在監看表面上繪製時間字串。
 將下列方法新增至 `MyWatchFaceEngine`：
 
@@ -256,7 +256,7 @@ public override void OnTimeTick()
 }
 ```
 
-這項 `OnTimeTick` 的執行只會呼叫 `Invalidate`。 @No__t_0 方法會排定 `OnDraw` 以重新繪製監看式臉部。
+這項 `OnTimeTick` 的執行只會呼叫 `Invalidate`。 `Invalidate` 方法會排定 `OnDraw` 以重新繪製監看式臉部。
 
 如需 `OnTimeTick` 方法的詳細資訊，請參閱 Android [onTimeTick](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceService.Engine.html#onTimeTick()) API 檔。
 
@@ -433,7 +433,7 @@ public class TimeZoneReceiver: BroadcastReceiver
 }
 ```
 
-@No__t_0 和 `UnregisterTimezoneReceiver` 方法是由 `OnVisibilityChanged` 方法所呼叫。
+`RegisterTimezoneReceiver` 和 `UnregisterTimezoneReceiver` 方法是由 `OnVisibilityChanged` 方法所呼叫。
 當監看臉部的可見度狀態變更為 [隱藏] 時，會呼叫 `UnregisterTimezoneReceiver`。 當監看式臉部再次顯示時，會呼叫 `RegisterTimezoneReceiver` （請參閱 `OnVisibilityChanged` 方法）。
 
 引擎 `RegisterTimezoneReceiver` 方法會宣告這個時區接收者的 `Receive` 事件的處理常式;這個處理常式會在每次跨越時區時，以新的時間更新 `time` 物件：
@@ -453,7 +453,7 @@ IntentFilter filter = new IntentFilter(Intent.ActionTimezoneChanged);
 Application.Context.RegisterReceiver (timeZoneReceiver, filter);
 ```
 
-@No__t_0 方法會取消註冊時區接收者：
+`UnregisterTimezoneReceiver` 方法會取消註冊時區接收者：
 
 ```csharp
 Application.Context.UnregisterReceiver (timeZoneReceiver);

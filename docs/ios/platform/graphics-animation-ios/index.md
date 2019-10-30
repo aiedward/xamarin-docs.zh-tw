@@ -4,15 +4,15 @@ description: 本檔所連結的各種指南，會討論如何在 Xamarin 中使�
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 84e59c81e08bc354199565cb0a91b0aec0797feb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 523ecb8d579ca084941a987468ff243595b8c4af
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286074"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032435"
 ---
 # <a name="graphics-and-animation-in-ios"></a>iOS 中的圖形和動畫
 

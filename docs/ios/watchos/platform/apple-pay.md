@@ -4,15 +4,15 @@ description: 本文涵蓋 Apple 在 watchOS 3 中 Apple Pay 的增強功能，�
 ms.prod: xamarin
 ms.assetid: 32FF5D21-C252-485D-83AC-A7E592237962
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 579f2afd8e52251973900f35ef91ac086adf7603
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 372b034b7e14f3cfaadde8fe5a5370e368f161db
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768641"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030129"
 ---
 # <a name="apple-pay-on-watchos-in-xamarin"></a>在 Xamarin 的 watchOS 上 Apple Pay
 
@@ -26,7 +26,7 @@ Apple 已對 watchOS 3 中的 Apple Pay 進行了幾項增強，以增加應用�
 
 ## <a name="passkit-framework-enhancements"></a>PassKit Framework 增強功能
 
-在 iOS 10 中，PassKit 架構已擴充為支援以外的`UIKit` Apple Pay，讓卡片簽發者可以從其應用程式中呈現其卡片。 
+在 iOS 10 中，PassKit 架構已擴充為支援 `UIKit` 以外的 Apple Pay，並可讓卡片簽發者從其應用程式中呈現其卡片。 
 
 ### <a name="supporting-apple-pay-outside-of-uikit"></a>支援 UIKit 以外的 Apple Pay
 
@@ -34,15 +34,15 @@ Apple 已對 watchOS 3 中的 Apple Pay 進行了幾項增強，以增加應用�
 
 ### <a name="presenting-issuer-cards-from-within-apps"></a>從應用程式中呈現簽發者卡片
 
-在 iOS 10 和 watchOS 3 中，新功能已新增至 PassKit 架構，讓卡片簽發者可以從自己的應用程式中呈現其付款卡。 開發人員可以將`PKPaymentButtonTypeInStore` UIButton 新增至應用程式的使用者介面，以顯示卡片的 Apple Pay 按鈕。
+在 iOS 10 和 watchOS 3 中，新功能已新增至 PassKit 架構，讓卡片簽發者可以從自己的應用程式中呈現其付款卡。 開發人員可以將 `PKPaymentButtonTypeInStore` UIButton 新增至應用程式的使用者介面，以顯示卡片的 [Apple Pay] 按鈕。
 
-[PKPassLibrary 類別](https://developer.apple.com/reference/passkit/pkpasslibrary)的方法也可以用來以程式設計方式顯示`PresentPaymentPass`卡片。
+[PKPassLibrary](https://developer.apple.com/reference/passkit/pkpasslibrary)類別的 `PresentPaymentPass` 方法也可以用來以程式設計方式顯示卡片。
 
 ## <a name="new-payment-network-support"></a>新的付款網路支援
 
 IOS 10 和 watchOS 3 的新手，應用程式可以在沒有開發人員需要修改、重新編譯應用程式並重新提交至 App Store 時，自動支援新的付款網路。
 
-`PKPaymentNetwork`類別的新[AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)方法可讓應用程式在執行時間探索使用者裝置上可用的網路。 此外， [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)屬性已擴充為接受付款提供者的名稱做為引數。 使用這些方法，應用程式可以自動支援付款提供者支援的任何網路。
+`PKPaymentNetwork` 類別的新[AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)方法，可讓應用程式在執行時間探索使用者裝置上可用的網路。 此外， [SupportedNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)屬性已擴充為接受付款提供者的名稱做為引數。 使用這些方法，應用程式可以自動支援付款提供者支援的任何網路。
 
 如需詳細資訊，請參閱我們的[Apple Pay](~/ios/platform/apple-pay.md)設定和 Apple 的[Apple Pay 指南](https://developer.apple.com/apple-pay/)。
 

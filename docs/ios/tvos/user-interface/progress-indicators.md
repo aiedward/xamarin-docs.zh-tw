@@ -4,15 +4,15 @@ description: 本檔說明如何在以 Xamarin 建立的 tvOS 應用程式中使�
 ms.prod: xamarin
 ms.assetid: 582B6D0C-1F16-4299-A9A6-5651E76009FE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 202ce8d674a39b06fd1b07460dff4bf573062592
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 9d346dc52437b5c079d499e142036e94cfaef65d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70291408"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030433"
 ---
 # <a name="working-with-tvos-progress-indicators-in-xamarin"></a>在 Xamarin 中使用 tvOS 進度指示器
 
@@ -127,7 +127,7 @@ ActivityIndicator.StopAnimating();
 
 同樣地，每當您的應用程式執行已知持續時間的長時間執行工作時，都應該使用進度列。 
 
-@No__t_0 屬性是用來設定已完成的工作量（從0% 到100% （0.0 至1.0））。 使用 [`ProgressTintColor`] 屬性來設定 [已完成的數量] 列和 [`TrackTintColor`] 屬性的色彩，以設定背景色彩（未完成的金額）。
+`Progress` 屬性是用來設定已完成的工作量（從0% 到100% （0.0 至1.0））。 使用 [`ProgressTintColor`] 屬性來設定 [已完成的數量] 列和 [`TrackTintColor`] 屬性的色彩，以設定背景色彩（未完成的金額）。
 
 ## <a name="summary"></a>總結
 

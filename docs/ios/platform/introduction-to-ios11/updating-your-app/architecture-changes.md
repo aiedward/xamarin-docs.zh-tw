@@ -4,15 +4,15 @@ description: 本檔說明如何在 iOS 11 中取代32位應用程式。 它討�
 ms.prod: xamarin
 ms.assetid: 55F62F3F-8570-402B-B7D9-2875F76CB946
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 15cd6139cc83639146e6044d2b791d94ee30f2d9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 421e228a0021b4e4cdaf5da4c5776f9477477c28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286355"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032100"
 ---
 # <a name="architecture-changes-in-ios-11"></a>IOS 11 中的架構變更
 

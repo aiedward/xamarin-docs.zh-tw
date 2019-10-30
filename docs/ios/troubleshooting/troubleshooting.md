@@ -5,15 +5,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: e6a1b6f4d35a6b8774901ed5a505b5333511c848
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 21b1f0c29962b7aeb45a836c976ec2635a39622e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769700"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030873"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>適用于 Xamarin 的疑難排解秘訣 
 
@@ -21,9 +21,9 @@ ms.locfileid: "70769700"
 
 此錯誤是因為與 Visual Studio 不相容所造成。
 
-- **Visual Studio 2017 Update 1**（15.1 版或更舊版本）只與**System.valuetuple NuGet 4.3.0** （或更舊版本）相容。
+- **Visual Studio 2017 Update 1** （15.1 版或更舊版本）只與**system.valuetuple NuGet 4.3.0** （或更舊版本）相容。
 
-- **Visual Studio 2017 Update 2**（15.2 版或更新版本）只與**System.valuetuple NuGet 4.3.1**或更新版本相容。
+- **Visual Studio 2017 Update 2** （15.2 版或更新版本）僅與**system.valuetuple NuGet 4.3.1**或更新版本相容。
 
 請選擇與您的 Visual Studio 2017 安裝對應的正確 System.valuetuple NuGet。
 
@@ -45,7 +45,7 @@ ms.locfileid: "70769700"
 
 連結器可能已移除該成員，因此在執行時間並不存在於元件中。  有幾個解決辦法：
 
-- [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)將屬性加入至成員。  這會讓連結器無法移除它。
+- 將[`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)屬性加入至成員。  這會讓連結器無法移除它。
 - 叫用[**mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)時，請使用 **-nolink**或 **-linksdkonly**選項：
   - **-nolink**會停用所有連結。
   - **-linksdkonly**只會連結 xamarin ios 提供的元件（例如**xamarin**），同時保留使用者建立元件（即您的應用程式專案）中的所有類型。
@@ -72,7 +72,7 @@ TypeName XXXX {
 }
 ```
 
-針對您新增至檔案中`NAME_OF_YOUR_XIB_FILE.designer.xib.cs` Visual Studio for Mac 的任何 XIB 檔案，Visual Studio for Mac 會自動產生上述定義。
+上述定義會針對您新增至 `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` 檔案中 Visual Studio for Mac 的任何 XIB 檔案 Visual Studio for Mac 自動產生。
 
 此外，包含上述程式碼的類型必須是[NSObject](xref:Foundation.NSObject)的子類別。  如果包含類型是在命名空間內，它也應該有一個[[Register]](xref:Foundation.RegisterAttribute)屬性，它會提供不含命名空間的類型名稱（因為 Interface Builder 不支援類型中的命名空間）：
 
@@ -110,13 +110,13 @@ public partial class MyImageView : UIView {
 public Bar (IntPtr handle) : base (handle) { }
 ```
 
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>類型 {foo} 不包含的定義`GetNativeField` ，而且找不到類型 {Foo} 的擴充方法`GetNativeField`
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>類型 {Foo} 不包含 `GetNativeField` 的定義，而且找不到任何類型 {Foo} 的擴充方法 `GetNativeField`
 
 如果您在設計工具產生的檔案（*. xib.designer.cs）中收到此錯誤，則表示這兩個專案的其中一項：
 
  **1）遺漏部分類別或基類**
 
-設計工具所產生的部分類別必須有使用者程式碼中的對應部分類別，而這些`NSObject`類別會`UIViewController`繼承自的某些子類別，通常是。 請確定您有提供錯誤之類型的類別。
+設計工具產生的部分類別必須在使用者程式碼中有對應的部分類別，而這些類別是繼承自 `NSObject`的某個子類別，通常是 `UIViewController`。 請確定您有提供錯誤之類型的類別。
 
  **2）已變更預設命名空間**
 
@@ -124,7 +124,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 命名空間設定可以在 [專案選項] 對話方塊中找到。 預設的命名空間位於**一般 > 的 [主要設定**] 區段中。 如果它是空白的，您的專案名稱會當做預設值使用。 您可以在**原始程式碼-> .Net 命名原則**一節中找到更多的 advanced namespace 設定。
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>動作的警告：絕對不會使用私用方法 ' Foo '。 (CS0169)
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>動作的警告：絕對不會使用私用方法 ' Foo '。 CS0169
 
 介面產生器檔案的動作會在執行時間依反映連接到 widget，因此應該會出現這項警告。
 
@@ -142,9 +142,9 @@ public Bar (IntPtr handle) : base (handle) { }
 1. 使用 Mac OS X Leopard （10.5）
 1. 在模擬器中執行您的應用程式。
 
-問題在於 Mono 會挑選 OS X `libsqlite3.dylib`，而不是 iphonesimulator; 的`libsqlite3.dylib`檔案。 您的應用程式*會*在裝置上工作，而不是您的模擬器。
+問題在於 Mono 會挑選 OS X `libsqlite3.dylib`，而不是 Iphonesimulator; 的 `libsqlite3.dylib` 檔案。 您的應用程式*會*在裝置上工作，而不是您的模擬器。
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>部署至裝置失敗，發生系統。例外狀況：AMDeviceInstallApplication 傳回3892346901
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>使用系統部署至裝置失敗。例外狀況： AMDeviceInstallApplication 傳回3892346901
 
 此錯誤表示憑證/套件組合識別碼的程式碼簽署設定與裝置上安裝的布建設定檔不相符。  確認您已在 [專案選項-> iPhone 配套簽署] 中選取適當的憑證，並在 [專案選項-> iPhone 應用程式] 中指定正確的配套識別碼
 
@@ -152,7 +152,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 請確定您使用的是最新版本的 Visual Studio for Mac 和 Xamarin. iOS
 
-如果問題仍然存在，請提出[錯誤](http://monodevelop.com/Developers#Reporting_Bugs)、附加 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **AndroidTools-{timestamp} .LOG**和**元件-{timestamp} .log**記錄檔。
+如果問題仍然存在，請提出[錯誤](https://monodevelop.com/Developers#Reporting_Bugs)、附加 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **AndroidTools-{timestamp} .LOG**和**元件-{timestamp} .log**記錄檔。
 
 如果其他所有動作都失敗，您可以嘗試移除程式碼完成快取，使其重新產生：
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 這表示您要將以 thumb 程式碼編譯的靜態程式庫連結至您的專案。 自 iPhone SDK 3.1 版（或在撰寫本文時更高版本）開始，Apple 在連結非 Thumb 程式碼（Xamarin. iOS）與 Thumb 程式碼（您的靜態程式庫）時，在連結器中引進了 bug。您必須使用靜態程式庫的非 Thumb 版本來進行連結，以減輕這個問題。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.ExecutionEngineException:嘗試 JIT 編譯方法（包裝函式 managed） Foo []： ICollection'1. get_Count （）
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>ExecutionEngineException：正在嘗試 JIT 編譯方法（由包裝函式管理） Foo []： ICollection'1. get_Count （）
 
 [] 尾碼表示您或類別庫正透過泛型集合在陣列上呼叫方法，例如 IEnumerable < >、ICollection < > 或 IList < >。 因應措施是，您可以明確地強制 AOT 編譯器藉由呼叫方法來包含這類方法，並確保在觸發例外狀況的呼叫之前執行此程式碼。 在此情況下，您可以撰寫：
 
@@ -280,9 +280,9 @@ int count = ((ICollection<Foo>) array).Count;
 
 Visual Studio for Mac 2.2 有一個 bug，導致它不會偵測到包含逗號的散發憑證。 請更新為 Visual Studio for Mac 2.2.1。
 
-## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>錯誤「AFCFileRefWrite 傳回：1 "在上傳期間
+## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>上傳期間發生錯誤「AFCFileRefWrite 傳回：1」
 
-將應用程式上傳至您的裝置時，您可能會收到錯誤「AFCFileRefWrite 傳回：1". 如果您有長度為零的檔案，就會發生這種情況。
+將應用程式上傳至您的裝置時，您可能會收到「AFCFileRefWrite 傳回：1」錯誤。 如果您有長度為零的檔案，就會發生這種情況。
 
 ## <a name="error-mtouch-failed-with-no-output"></a>「Mtouch 失敗，沒有輸出」錯誤
 
@@ -309,13 +309,13 @@ Visual Studio for Mac 2.2 有一個 bug，導致它不會偵測到包含逗號�
 
 （由 Ed Anuff 貢獻）
 
-請遵循下列步驟：
+請依照下列步驟：
 
 - 將 iPhone Build 中的 SDK 版本變更為3.2 或 iTunes connect 會在上傳時拒絕它，因為它會看到使用低於3.2 的 SDK 版本所建立的 iPad 相容應用程式
 - 建立專案的自訂 plist，並在其中將 MinimumOSVersion 明確設定為3.0。   這會覆寫 Xamarin 所設定的 MinimumOSVersion 3.2 值。   如果您未這麼做，應用程式將無法在 iPhone 上執行。
 - 重建、壓縮並上傳至 iTunes connect。
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未處理的例外狀況：System.Exception:找不到選取器 someSelector：在 {type} 上
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未處理的例外狀況： System.object：找不到選取器 someSelector：在 {type} 上
 
 這個例外狀況是由下列三個專案的其中一項所造成：
 
@@ -368,7 +368,7 @@ SDK 版本不應與「最低 OS 版本」設定混淆。
 
 這表示您已安裝 XCode 4。   在 XCode 4 中，已移除工具 ibtool，因此無法再使用獨立工具來編輯您的 XIB 檔案。
 
-如果您想要使用 Interface Builder，請安裝可從 Apple 網站取得的[XCode 系列 3](http://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)。
+如果您想要使用 Interface Builder，請安裝可從 Apple 網站取得的[XCode 系列 3](https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)。
 
 ## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>「無法建立 mime 類型的顯示系結： application/application. apple-interface-builder」
 
@@ -394,9 +394,9 @@ SDK 版本不應與「最低 OS 版本」設定混淆。
 當應用程式名稱包含 '. ' 時，就可能發生這種情況。其名稱中的（點）。
 這會被禁止為 CFBundleExecutable 中的可執行檔名稱，即使它可以在許多其他情況下運作（例如裝置）也一樣。
 
- \* 「此值不應包含名稱上的任何延伸模組」。-[https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+ \* 「此值不應包含名稱上的任何延伸模組」。- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
 
-## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>錯誤：按兩下 xib 檔案時，「不支援自訂屬性類型0x43」
+## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>錯誤：按兩下 xib 檔案時，不支援自訂屬性類型0x43
 
 這是因為當環境變數設定不正確時，嘗試開啟 xib 檔案所造成的。 這應該不會在 Visual Studio for Mac/Xamarin 的正常使用方式下發生，而且從/Applications 重新開啟 Visual Studio for Mac 應該會修正問題。
 
@@ -408,8 +408,8 @@ SDK 版本不應與「最低 OS 版本」設定混淆。
 
 若要檢查組建動作，請以滑鼠右鍵按一下 xib 檔案，然後選擇 [**建立動作**]。
 
-## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException：編碼437沒有可用的資料
+## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException：沒有可供編碼437使用的資料
 
-在您的 Xamarin iOS 應用程式中包含協力廠商程式庫時，可能會收到下列格式的錯誤： "NotSupportedException：嘗試編譯和執行應用程式時，沒有任何資料可供編碼437使用。 例如，程式庫（例如`Ionic.Zip.ZipFile`）可能會在操作期間擲回此例外狀況。
+在您的 Xamarin iOS 應用程式中包含協力廠商程式庫時，在嘗試編譯和執行應用程式時，您可能會收到「NotSupportedException：沒有資料可供編碼437」形式的錯誤。 例如，程式庫（例如 `Ionic.Zip.ZipFile`）可能會在操作期間擲回此例外狀況。
 
-這可以藉由開啟 Xamarin 專案的選項，前往**ios 組建** > **國際化**並檢查**West**國際化來解決。
+這可以藉由開啟 Xamarin 專案的選項來解決，前往**Ios Build** > **國際化**並檢查**West**國際化。

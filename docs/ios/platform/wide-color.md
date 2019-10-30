@@ -4,15 +4,15 @@ description: 本檔討論寬色彩，以及如何在 Xamarin 或 Xamarin. Mac �
 ms.prod: xamarin
 ms.assetid: 576E978A-F182-489A-83E4-D8CDC6890B24
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: a1f5301d0c5c0674e162b3d7689c83bbb4f6ae90
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e7240a271de1f0199c2c9fc045f5c95745eb98c5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290537"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031251"
 ---
 # <a name="wide-color-in-xamarinios"></a>Xamarin. iOS 中的寬色彩
 
@@ -50,7 +50,7 @@ Apple 已對資產目錄進行下列增強功能，以提供寬色彩支援：
 
 - 將應用程式部署至使用者時，應用程式配量會確保只有適當的內容 variant 會傳遞給使用者的裝置。
 - 在不支援寬色彩的裝置上，沒有包含寬色內容的承載成本，因為它永遠不會寄送到裝置。
-- `NSImage`在 macOS Sierra （及更新版本）會自動選取硬體顯示的最佳內容表示。
+- macOS Sierra （及更新版本）上的 `NSImage` 將會自動選取硬體顯示的最佳內容表示。
 - 當或裝置硬體顯示特性變更時，會自動重新整理顯示的內容。
 
 ### <a name="asset-catalog-storage"></a>資產目錄存放器
@@ -84,7 +84,7 @@ public UIImage DrawWideColorImage ()
     }
 ```
 
-標準程式碼有問題，必須先加以解決，_才能_用來繪製寬色彩影像。 用`UIGraphics.BeginImageContext (size)`來啟動 iOS 映射繪製的方法有下列限制：
+標準程式碼有問題，必須先加以解決，_才能_用來繪製寬色彩影像。 用來啟動 iOS 映射繪製的 `UIGraphics.BeginImageContext (size)` 方法有下列限制：
 
 - 它無法建立每個彩色通道具有超過8個位的影像內容。
 - 它不能代表擴充範圍的 sRGB 色彩空間中的色彩。
@@ -118,22 +118,22 @@ public UIImage DrawWideColorImage ()
 }
 ```
 
-新`UIGraphicsImageRenderer`的類別會建立新的影像內容，它能夠處理擴充範圍的 sRGB 色彩空間，而且具有下列功能：
+新的 `UIGraphicsImageRenderer` 類別會建立新的影像內容，它能夠處理擴充範圍的 sRGB 色彩空間，而且具有下列功能：
 
 - 預設會以完全色彩管理。
 - 根據預設，它支援擴充範圍的 sRGB 色彩空間。
 - 它會根據執行應用程式的 iOS 裝置功能，以智慧方式決定是否應該在 sRGB 或擴充範圍的 sRGB 色彩空間中呈現。
 - 它會完整且自動管理影像內容（`CGContext`）存留期，讓開發人員不必擔心呼叫開始和結束內容命令。
-- 它與`UIGraphics.GetCurrentContext()`方法相容。
+- 它與 `UIGraphics.GetCurrentContext()` 方法相容。
 
-呼叫類別`UIGraphicsImageRenderer`的方法，以建立寬色彩影像，並傳遞含有影像內容的完成處理常式`CreateImage`以繪製至。 所有繪圖都是在此完成處理常式內完成，如下所示：
+呼叫 `UIGraphicsImageRenderer` 類別的 `CreateImage` 方法，以建立寬色彩影像，並傳遞含有影像內容的完成處理常式以繪製至。 所有繪圖都是在此完成處理常式內完成，如下所示：
 
-- `UIColor.FromDisplayP3`方法會在寬區中建立新的完全飽和紅色色彩，以顯示 P3 色彩空間，並用來繪製矩形的前半部。 
+- `UIColor.FromDisplayP3` 方法會在寬範圍內建立新的完全飽和紅色色彩，以顯示 P3 色彩空間，並用來繪製矩形的前半部。 
 - 矩形的後半部會以一般的 sRGB 完全飽和紅色色彩繪製，以進行比較。
 
 ### <a name="drawing-wide-color-in-macos"></a>在 macOS 中繪製寬色彩
 
-`NSImage`類別已在 macOS Sierra 中展開，以支援寬色彩影像的繪圖。 例如：
+`NSImage` 類別已在 macOS Sierra 中展開，以支援寬色彩影像的繪圖。 例如:
 
 ```csharp
 var size = CGSize(250,250);
@@ -157,7 +157,7 @@ var wideColorImage = new NSImage(size, false, (drawRect) =>{
 
 ### <a name="rendering-on-screen-in-ios"></a>在 iOS 上呈現畫面
 
-當應用程式需要在 iOS 中以寬色彩呈現影像時，請照常覆寫`Draw`中所`UIView`述的方法。 例如：
+當應用程式需要在 iOS 中以寬色彩呈現影像時，請以平常的方式覆寫 `UIView` 中的 `Draw` 方法。 例如:
 
 ```csharp
 using System;
@@ -183,15 +183,15 @@ namespace MonkeyTalk
 }
 ```
 
-當 iOS 10 與上面顯示`UIGraphicsImageRenderer`的類別搭配使用`Draw`時，它會根據呼叫方法時執行應用程式的 ios 裝置功能，以智慧方式決定是否應該在 srgb 或擴充範圍的 srgb 色彩空間中呈現。 此外， `UIImageView`從 iOS 9.3 開始也已管理色彩。
+當 iOS 10 與上面顯示的 `UIGraphicsImageRenderer` 類別搭配使用時，它會以智慧方式決定是否應該根據呼叫 `Draw` 方法時，應用程式執行所在的 iOS 裝置功能，在 sRGB 或擴充範圍的 sRGB 色彩空間中呈現。 此外，在 iOS 9.3 之後，`UIImageView` 也已經過色彩管理。
 
-如果應用程式需要知道如何`UIView`在或`UIViewController`上進行轉譯，它可以檢查`UITraitCollection`類別的新`DisplayGamut`屬性。 此值將會是`UIDisplayGamut`下列的列舉：
+如果應用程式需要知道如何在 `UIView` 或 `UIViewController`上進行轉譯，它可以檢查 `UITraitCollection` 類別的新 `DisplayGamut` 屬性。 此值將會是下列的 `UIDisplayGamut` 列舉：
 
 - P3
 - Srgb
 - 未指定
 
-如果應用程式想要控制用來繪製影像的色彩空間，它可以使用的新`ContentsFormat`屬性`CALayer`來指定所需的色彩空間。 這個值可以是`CAContentsFormat`下列的列舉：
+如果應用程式想要控制用來繪製影像的色彩空間，它可以使用 `CALayer` 的新 `ContentsFormat` 屬性來指定所需的色彩空間。 此值可以是下列的 `CAContentsFormat` 列舉：
 
 - Gray8Uint
 - Rgba16Float
@@ -199,7 +199,7 @@ namespace MonkeyTalk
 
 ### <a name="rendering-on-screen-in-macos"></a>在 macOS 中以畫面呈現
 
-當應用程式需要在 macOS 中以寬色彩呈現影像時，請以平常的方式`DrawRect`覆寫中`NSView`所述的方法。 例如：
+當應用程式需要在 macOS 中以寬色彩呈現影像時，請以平常的方式覆寫 `NSView` 中的 `DrawRect` 方法。 例如:
 
 ```csharp
 using System;
@@ -226,9 +226,9 @@ namespace MonkeyTalkMac
 }
 ```
 
-同樣地，它也會根據呼叫`DrawRect`方法時，應用程式執行所在的 Mac 硬體功能，以智慧方式決定是否應該在 srgb 或擴充範圍的 srgb 色彩空間中呈現。
+同樣地，它會根據呼叫 `DrawRect` 方法時，以應用程式執行所在的 Mac 硬體功能，以智慧方式決定是否應該在 sRGB 或擴充範圍的 sRGB 色彩空間中呈現。
 
-如果應用程式想要控制用來繪製影像的色彩空間，它可以使用`DepthLimit` `NSWindow`類別的新屬性來指定所需的色彩空間。 這個值可以是`NSWindowDepth`下列的列舉：
+如果應用程式想要控制用來繪製影像的色彩空間，它可以使用 `NSWindow` 類別的新 `DepthLimit` 屬性來指定所需的色彩空間。 此值可以是下列的 `NSWindowDepth` 列舉：
 
 - OneHundredTwentyEightBitRgb
 - SixtyfourBitRgb

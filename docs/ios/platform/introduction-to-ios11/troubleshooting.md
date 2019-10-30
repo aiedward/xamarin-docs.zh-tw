@@ -4,15 +4,15 @@ description: 本文說明在開發 Xamarin iOS 應用程式時，可以用來進
 ms.prod: xamarin
 ms.assetid: A90493BF-5298-4A5D-A5D5-8A8FCD078FF7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: 570fd554b375c4911028faf412c3c20bac1881aa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7d68687208c07ba551a4e142abb23ec97a24d20
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286528"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032104"
 ---
 # <a name="troubleshooting-tips-for-ios-11-and-xamarinios"></a>適用于 iOS 11 和 Xamarin 的疑難排解秘訣
 
@@ -26,4 +26,4 @@ ms.locfileid: "70286528"
 
 ## <a name="forums-and-stackoverflow"></a>論壇和 StackOverflow
 
-如需在 Xamarin 中使用或執行特定 iOS 11 功能的特定問題答案，Xamarin [IOS 論壇](http://forums.xamarin.com/categories/ios)提供豐富的資訊。 [StackOverflow](https://stackoverflow.com/search?tab=newest&q=xamarin)是另一個很好的使用者-協助使用者資訊來源。
+如需在 Xamarin 中使用或執行特定 iOS 11 功能的特定問題答案，Xamarin [IOS 論壇](https://forums.xamarin.com/categories/ios)提供豐富的資訊。 [StackOverflow](https://stackoverflow.com/search?tab=newest&q=xamarin)是另一個很好的使用者-協助使用者資訊來源。

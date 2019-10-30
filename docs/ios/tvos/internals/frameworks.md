@@ -4,15 +4,15 @@ description: 為了協助您清楚 tvOS 應用程式可用的功能，本檔提�
 ms.prod: xamarin
 ms.assetid: 28EF1337-3D0E-47AB-8A13-1B333A964FB6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: dddbe8cb834eed7174619926a175adb0f8f0f50a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ab89d6e05b42157ededa3bb01cf22d5cdca130ce
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769603"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030665"
 ---
 # <a name="supported-and-unsupported-frameworks-in-tvos"></a>TvOS 中支援和不支援的架構
 
@@ -43,7 +43,7 @@ ms.locfileid: "70769603"
 - 打下
 - GameController
 - GameKit
-- GamePlay
+- 遊戲
 - GLKit
 - ImageIO
 - MachO
@@ -73,7 +73,7 @@ ms.locfileid: "70769603"
 以下是 iOS 9 支援的架構清單，但已從 Apple 的 tvOS 9 支援中移除，因此無法在您的 tvOS 應用程式中使用：
 
 - 帳戶
-- AddressBook
+- 通訊錄
 - AddressBookUI
 - AssetsLibrary
 - 連絡人

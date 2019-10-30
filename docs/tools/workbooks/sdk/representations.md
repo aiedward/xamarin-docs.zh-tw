@@ -1,33 +1,33 @@
 ---
 title: Xamarin 活頁簿中的表示法
-description: 本檔描述 Xamarin Workbooks 表示管線，這可針對傳回值的任何程式碼，呈現豐富的結果。
+description: This document describes the Xamarin Workbooks representation pipeline, which enables the rendering of rich results for any code that returns a value.
 ms.prod: xamarin
 ms.assetid: 5C7A60E3-1427-47C9-A022-720F25ECB031
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: dde4e6b9c4903ccb0f23d8df82f39ff68030850e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c1afba6943faa03ee07a3ec70624f668748041cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292830"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018586"
 ---
 # <a name="representations-in-xamarin-workbooks"></a>Xamarin 活頁簿中的表示法
 
-## <a name="representations"></a>表示
+## <a name="representations"></a>Representations
 
-在活頁簿或偵測器會話中，執行並產生結果的程式碼（例如，傳回值的方法或運算式的結果），會透過代理程式中的表示管線來處理。 所有物件（除了整數之類的基本專案）都會反映出來，以產生互動式成員圖形，並會進行處理，以提供用戶端可以呈現更豐富的替代標記法。 由於延遲和互動式反映和遠端處理，會安全地支援任何大小和深度的物件（包括迴圈和無限可列舉值）。
+Within a workbook or inspector session, code that is executed and yields a result (e.g. a method returning a value or the result of an expression) is processed through the representation pipeline in the agent. All objects, with the exception of primitives such as integers, will be reflected to produce interactive member graphs and will go through a process to provide alternate representations that the client can render more richly. Objects of any size and depth are safely supported (including cycles and infinite enumerables) due to lazy and interactive reflection and remoting.
 
-Xamarin Workbooks 提供一些通用於所有代理程式和用戶端的類型，允許豐富呈現結果。 `Color`是這類類型的其中一個範例，例如，在 iOS 上，代理程式會負責將`CGColor`或`UIColor`物件轉換成`Xamarin.Interactive.Representations.Color`物件。
+Xamarin Workbooks provides a few types common to all agents and clients that allow for rich rendering of results. `Color` is one example of such a type, where for example on iOS, the agent is responsible for converting `CGColor` or `UIColor` objects into a `Xamarin.Interactive.Representations.Color` object.
 
-除了常見的標記法，整合 SDK 還提供 Api 來序列化代理程式中的自訂表格示法，以及用戶端中的呈現標記法。
+In addition to common representations, the integration SDK provides APIs for serializing custom representations in the agent and rendering representations in the client.
 
-## <a name="external-representations"></a>外部標記法
+## <a name="external-representations"></a>External Representations
 
-`Xamarin.Interactive.IAgent.RepresentationManager`提供註冊的`RepresentationProvider`能力，其整合必須執行，才能從任意物件轉換成不可知的格式來呈現。 這些不可知的`ISerializableObject`形式必須執行介面。
+`Xamarin.Interactive.IAgent.RepresentationManager` provides the ability to register a `RepresentationProvider`, which an integration must implement to convert from an arbitrary object to an agnostic form to render. These agnostic forms must implement the `ISerializableObject` interface.
 
-`ISerializableObject`執行介面會加入序列化方法，以精確控制物件的序列化方式。 `Serialize`方法預期開發人員會確切指定要序列化的屬性，以及最終的名稱。 查看 [ `Person` `KitchenSink` sample] [sample] 中的物件，我們可以看到它的運作方式：
+Implementing the `ISerializableObject` interface adds a Serialize method that precisely controls how objects are serialized. The `Serialize` method expects that a developer will exactly specify which properties are to be serialized, and what the final name will be. Looking at the `Person` object in our [`KitchenSink` sample][sample], we can see how this works:
 
 ```csharp
 public sealed class Person : ISerializableObject
@@ -41,7 +41,7 @@ public sealed class Person : ISerializableObject
 }
 ```
 
-如果我們想要從原始物件提供超集合或屬性子集，我們可以使用`Serialize`來執行此動作。 例如，我們可能會執行如下所示的內容，以在上`Age` `Person`提供預先計算的屬性：
+If we wanted to provide a superset or subset of properties from the original object, we can do that with `Serialize`. For example, we might do something like this to provide a pre-computed `Age` property on `Person`:
 
 ```csharp
 public sealed class Person : ISerializableObject
@@ -65,15 +65,15 @@ public sealed class Person : ISerializableObject
 ```
 
 > [!NOTE]
-> 直接產生`ISerializableObject`物件的 api 不需要`RepresentationProvider`由處理。 如果您想要顯示的物件**不** `ISerializableObject`是，您會想要處理將它`RepresentationProvider`包裝在中的。
+> APIs that produce `ISerializableObject` objects directly do not need to be handled by a `RepresentationProvider`. If the object you want to display is **not** an `ISerializableObject`, you will want to handle wrapping it in your `RepresentationProvider`.
 
-### <a name="rendering-a-representation"></a>呈現標記法
+### <a name="rendering-a-representation"></a>Rendering a Representation
 
-轉譯器會在 JavaScript 中執行，並可存取透過所表示`ISerializableObject`之物件的 JavaScript 版本。 JavaScript 複本也會有一個`$type`字串屬性，指出 .net 型別名稱。
+Renderers are implemented in JavaScript and will have access to a JavaScript version of the object represented via `ISerializableObject`. The JavaScript copy will also have a `$type` string property that indicates the .NET type name.
 
-我們建議您在用戶端整合程式碼中使用 TypeScript，這當然會編譯成 vanilla JavaScript。 不論是哪種方式，SDK 都會提供[typings][typings] ，可直接由 TypeScript 參考，或只是在偏好撰寫 vanilla JavaScript 時手動參考。
+We recommend using TypeScript for client integration code, which of course compiles to vanilla JavaScript. Either way, the SDK provides [typings][typings] which can be referenced directly by TypeScript or simply referred to manually if writing vanilla JavaScript is preferred.
 
-呈現的主要整合點為`xamarin.interactive.RendererRegistry`：
+The main integration point for rendering is `xamarin.interactive.RendererRegistry`:
 
 ```js
 xamarin.interactive.RendererRegistry.registerRenderer(
@@ -85,6 +85,6 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 );
 ```
 
-在這裡`PersonRenderer` ， `Renderer`會執行介面。 如需詳細資訊，請參閱[typings][typings] 。
+Here, `PersonRenderer` implements the `Renderer` interface. See the [typings][typings] for more details.
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts

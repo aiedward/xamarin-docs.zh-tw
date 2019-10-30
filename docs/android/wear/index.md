@@ -4,21 +4,21 @@ description: 建立 Android 穿戴式裝置的應用程式。
 ms.prod: xamarin
 ms.assetid: 3BE4A128-2D88-4500-9E48-20375EA99A49
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2018
-ms.openlocfilehash: 5768a8fb402304d399e619ddb111aea24d975daf
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 63fb9c3b1484026cb390a8a475c711562dfd0771
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758323"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028596"
 ---
 # <a name="android-wear"></a>Android Wear
 
 Android 磨損是針對穿戴式裝置（例如智慧型監看）所設計的 Android 版本。 本節包含有關如何安裝和設定磨損開發所需工具的指示、建立第一個磨損裝置的逐步解說，以及您可以參考以建立自己的磨損應用程式的範例清單。
 
-## <a name="getting-startedandroidwearget-startedindexmd"></a>[快速入門](~/android/wear/get-started/index.md)
+## <a name="getting-startedandroidwearget-startedindexmd"></a>[使用者入門](~/android/wear/get-started/index.md)
 
 引進了 Android 磨損，說明如何安裝和設定您的電腦以進行磨損開發，並提供可協助您在模擬器或磨損裝置上建立及執行第一個 Android 磨損應用程式的步驟。
 
@@ -61,9 +61,9 @@ Android 開發人員網站提供有關金鑰磨損 Api 的詳細資訊，例如[
 
 |描述|螢幕擷取畫面|
 |--- |--- |
-|[Android L，還有更多](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/)&ndash; Android L 開發人員預覽版引進了新的 api 眾多，可供開發人員利用，包括材質設計、通知和新的動畫等等。|![簡報的影片螢幕擷取畫面](images/video-android-l.png)|
-|[C#在我的耳和我的眼睛中：Google 玻璃和 Android 磨損](https://www.youtube.com/watch?v=80H8tXByZQc) &ndash;穿戴式運算看起來可能像是未來的東西（或偵測器小工具），但許多人現在都已經在採用未來！ C#開發人員知道這一點，而且已經有充分利用穿戴式裝置功能的工具和技能（從演進2014開始）。|![簡報的影片螢幕擷取畫面](images/video-eyes-ears.png)|
-|[Xamarin 的新功能](https://www.youtube.com/watch?v=Gpqc2XZIQfU)&ndash; Android L、android 磨損、android 電視、android 自動、材質設計和美工; 這對您身為 Xamarin 開發人員而言是什麼意思？從進化2014。|![簡報的影片螢幕擷取畫面](Images/video-whats-new.png)|
+|[Android l，還有更多](https://blog.xamarin.com/webinar-recording-android-l-and-so-much-more/)&ndash; Android l 開發人員預覽引進了新的 api 眾多，可供開發人員利用，包括材質設計、通知和新的動畫等等。|![簡報的影片螢幕擷取畫面](images/video-android-l.png)|
+|[在我的耳中，而且在我的眼睛中： Google 玻璃和 Android 磨損&ndash;穿戴式運算看起來可能像未來的東西（或偵測器小工具），但許多人現在都已經在採用未來！ C# ](https://www.youtube.com/watch?v=80H8tXByZQc) C#開發人員知道這一點，而且已經有充分利用穿戴式裝置功能的工具和技能（從演進2014開始）。|![簡報的影片螢幕擷取畫面](images/video-eyes-ears.png)|
+|[Xamarin 的新功能](https://www.youtube.com/watch?v=Gpqc2XZIQfU)&ndash; android L、android 磨損、android TV、android 自動、材質設計和美工;身為 Xamarin 開發人員，這是什麼意思？從進化2014。|![簡報的影片螢幕擷取畫面](Images/video-whats-new.png)|
 
 <!--
 

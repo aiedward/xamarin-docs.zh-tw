@@ -4,15 +4,15 @@ description: 本文說明如何在與訊息應用程式整合的 Xamarin iOS 解
 ms.prod: xamarin
 ms.assetid: 0CFB494C-376C-449D-B714-9E82644F9DA3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 37f2942c97f7604fbd72a6dd38de518d3668ee9e
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 51a89533390eb1be8c1f36e0121229fb5a942279
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250127"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031667"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的訊息應用程式延伸模組基本概念
 
@@ -37,7 +37,7 @@ IOS 10 的新功能，訊息應用程式現在包含自己專屬的內建 App St
 
 Apple 也已新增 iOS 10 中的新功能，可讓使用者輕鬆探索應用程式。 例如，如果某個使用者從第二個使用者未安裝的應用程式（例如貼紙）傳送內容至另一個，則傳送應用程式的名稱會列在訊息歷程記錄中的內容底下。 如果使用者按下應用程式的名稱，則會開啟訊息應用程式存放區，並在存放區中選取應用程式。
 
-訊息應用程式延伸模組與開發人員熟悉建立的現有 iOS 應用程式類似，而且可以存取標準 iOS 應用程式的所有標準架構和功能。 例如：
+訊息應用程式延伸模組與開發人員熟悉建立的現有 iOS 應用程式類似，而且可以存取標準 iOS 應用程式的所有標準架構和功能。 例如:
 
 - 他們可以存取應用程式內購買。
 - 他們可以存取 Apple Pay。
@@ -87,7 +87,7 @@ Apple 將貼紙作為 iMessage 使用者進行通訊的新方式，讓貼紙以�
 - 影像不能小於100x100 點，或大於 206 x 206 點。
 
 > [!IMPORTANT]
-> 應一律以 300 x 300 到 618 `@3x` x 618 圖元範圍的解析度提供貼紙影像。 系統會在執行時間自動`@2x`產生`@1x`和版本（如有需要）。
+> 貼紙影像應一律以 300 x 300 中的 `@3x` 解析度提供，以 618 x 618 圖元範圍。 系統會視需要在執行時間自動產生 `@2x` 和 `@1x` 版本。
 
 Apple 建議您針對各種不同的彩色背景（例如白色、黑色、紅色、黃色和多彩色）和相片來測試貼紙影像資產，以確保它們在所有可能的情況下都能發揮最大效果。
 
@@ -121,15 +121,15 @@ Apple 建議您針對各種不同的彩色背景（例如白色、黑色、紅�
 
 1. 啟動 Visual Studio for Mac。
 2. 開啟解決方案，將訊息應用程式延伸模組新增至。
-3. 選取 [ **iOS**  > **擴充** > 功能**iMessage 擴充**功能]，然後按 [**下一步]** 按鈕：
+3. 選取 [ **iOS** > **擴充**功能 > **iMessage 擴充**功能]，然後按 [**下一步]** 按鈕：
 
-    [![](intro-to-message-app-extensions-images/message01.png "選取 iMessage 擴充功能")](intro-to-message-app-extensions-images/message01.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message01.png "Select iMessage Extension")](intro-to-message-app-extensions-images/message01.png#lightbox)
 4. 輸入**擴充功能名稱**，然後按 [**下一步]** 按鈕：
 
-    [![](intro-to-message-app-extensions-images/message02.png "輸入延伸模組名稱")](intro-to-message-app-extensions-images/message02.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message02.png "Enter an Extension Name")](intro-to-message-app-extensions-images/message02.png#lightbox)
 5. 按一下 [**建立**] 按鈕以建立擴充功能：
 
-    [![](intro-to-message-app-extensions-images/message03.png "按一下 [建立] 按鈕")](intro-to-message-app-extensions-images/message03.png#lightbox)
+    [![](intro-to-message-app-extensions-images/message03.png "Click the Create button")](intro-to-message-app-extensions-images/message03.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -143,39 +143,39 @@ Apple 建議您針對各種不同的彩色背景（例如白色、黑色、紅�
 
 -----
 
-根據預設， `MessagesViewController.cs`檔案會加入至方案。 這是延伸模組中的主要進入點，並繼承自`MSMessageAppViewController`類別。
+根據預設，`MessagesViewController.cs` 檔案會加入至方案。 這是延伸模組中的主要進入點，它會繼承自 `MSMessageAppViewController` 類別。
 
 Messages framework 提供的類別可向使用者呈現可用的貼紙：
 
-- `MSStickerBrowserViewController`-控制要在其中呈現貼紙的視圖。 它也會符合`IMSStickerBrowserViewDataSource`介面，以傳回所指定瀏覽器索引的貼紙計數和貼紙。
-- `MSStickerBrowserView`-這是可用的貼紙會顯示在其中的視圖。
-- `MSStickerSize`-針對瀏覽器視圖中顯示的貼紙格線，決定個別的資料格大小。
+- `MSStickerBrowserViewController`-控制要呈現貼紙的視圖。 它也會符合 `IMSStickerBrowserViewDataSource` 介面，以傳回所指定瀏覽器索引的貼紙計數和貼紙。
+- `MSStickerBrowserView`-這是要在其中顯示可用貼紙的視圖。
+- `MSStickerSize`-針對瀏覽器視圖中顯示的貼紙方格，決定個別的資料格大小。
 
 ### <a name="creating-a-custom-sticker-browser"></a>建立自訂的貼紙瀏覽器
 
-開發人員可以在訊息應用程式延伸模組中提供自訂的貼紙瀏覽器`MSMessageAppBrowserViewController`（），以進一步自訂使用者的貼紙體驗。 自訂的貼紙瀏覽器會在選取要包含在訊息串流中的貼紙時，變更如何向使用者呈現貼紙。
+開發人員可以在訊息應用程式延伸模組中提供自訂的貼紙瀏覽器（`MSMessageAppBrowserViewController`），進一步自訂使用者的貼紙體驗。 自訂的貼紙瀏覽器會在選取要包含在訊息串流中的貼紙時，變更如何向使用者呈現貼紙。
 
 請執行下列動作：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在  **Solution Pad**中，以滑鼠右鍵按一下擴充功能的專案名稱，**然後選取** > **新增檔案 ...**  >  **iOS |** AppleWatch > **介面控制器**。
-2. 輸入`StickerBrowserViewController`作為**名稱**，然後按一下 [**新增**] 按鈕：
+1. 在  **Solution Pad**中，以滑鼠右鍵按一下擴充功能的專案名稱，**然後選取**  **新增 > 新**檔案 > **iOS |Apple Watch** > **介面控制器**。
+2. 輸入 `StickerBrowserViewController` 作為 [**名稱**]，然後按一下 [**新增**] 按鈕：
 
-    [![](intro-to-message-app-extensions-images/browser01.png "在 [名稱] 中輸入 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.png#lightbox)
-3. `StickerBrowserViewController.cs`開啟檔案進行編輯。
+    [![](intro-to-message-app-extensions-images/browser01.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.png#lightbox)
+3. 開啟 `StickerBrowserViewController.cs` 檔案進行編輯。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 在 **方案總管**中，以滑鼠右鍵按一下擴充功能的專案名稱，**然後選取** > **新增檔案 ...**  >  **iOS |** AppleWatch > **介面控制器**。
-2. 輸入`StickerBrowserViewController`作為**名稱**，然後按一下 [**新增**] 按鈕：
+1. 在 **方案總管**中，以滑鼠右鍵按一下擴充功能的專案名稱，**然後選取**  **新增 > 新**檔案 > **iOS |Apple Watch** > **介面控制器**。
+2. 輸入 `StickerBrowserViewController` 作為 [**名稱**]，然後按一下 [**新增**] 按鈕：
 
-    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "在 [名稱] 中輸入 StickerBrowserViewController")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
-3. `StickerBrowserViewController.cs`開啟檔案進行編輯。
+    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
+3. 開啟 `StickerBrowserViewController.cs` 檔案進行編輯。
 
 -----
 
-`StickerBrowserViewController.cs`讓看起來如下所示：
+讓 `StickerBrowserViewController.cs` 看起來如下所示：
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ namespace MonkeyStickers
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-和會覆寫`MSStickerBrowserViewController`類別的兩個方法，以提供來自此資料存放區之瀏覽器的資料：
+和會覆寫 `MSStickerBrowserViewController` 類別的兩個方法，以提供來自此資料存放區之瀏覽器的資料：
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -284,7 +284,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-方法會從延伸模組的配套取得影像資產的路徑，並使用它從這個資產建立的新實例`MSSticker` ，並將其新增至集合： `CreateSticker`
+`CreateSticker` 方法會從延伸模組的配套取得影像資產的路徑，並使用它來建立此資產中 `MSSticker` 的新實例，並將其新增至集合：
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -311,9 +311,9 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-會從`ViewDidLoad`呼叫方法，以從命名影像資產（包含在應用程式套件組合中）建立貼紙，並將其新增到貼紙的集合中。 `LoadSticker`
+系統會從 `ViewDidLoad` 呼叫 `LoadSticker` 方法，以從命名影像資產（包含在應用程式套件組合中）建立貼紙，並將其新增至貼紙的集合。
 
-若要執行自訂的不乾膠式流覽`MessagesViewController.cs`器，請編輯檔案，使其看起來如下所示：
+若要執行自訂的不乾膠式瀏覽器，請編輯 `MessagesViewController.cs` 檔案，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ namespace MonkeyStickers
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-而在`ViewDidLoad`方法中，它會具現化並設定新的瀏覽器：
+而在 `ViewDidLoad` 方法中，它會具現化並設定新的瀏覽器：
 
 ```csharp
 // Create new browser and configure it
@@ -388,12 +388,12 @@ View.AddSubview (BrowserViewController.View);
 
 使用上述方法時，延伸模組可支援不依賴標準貼紙瀏覽器方法的不乾膠卷選。 此外，您可以在兩個不同的視圖模式之間切換貼紙顯示：
 
-- **Compact** -這是預設模式，其中的貼紙視圖會佔用訊息視圖的底部 25%。
+- **Compact** -這是預設模式，其中的貼紙視圖會佔用訊息視圖的底部25%。
 - 已**展開**-[貼紙] 視圖會填滿整個訊息視圖。
 
 此貼紙視圖可以透過程式設計或手動方式在這些模式之間切換。
 
-請參閱下列在兩個不同的視圖模式之間處理切換的範例。 每個狀態都需要兩個不同的視圖控制器。 會處理 Compact 視圖，看起來如下所示： `StickerBrowserViewController`
+請參閱下列在兩個不同的視圖模式之間處理切換的範例。 每個狀態都需要兩個不同的視圖控制器。 `StickerBrowserViewController` 會處理**Compact**視圖，看起來如下所示：
 
 ```csharp
 using System;
@@ -494,7 +494,7 @@ namespace MessageExtension
 }
 ```
 
-將會處理展開的貼紙視圖，並看起來如下所示： `AddStickerViewController`
+`AddStickerViewController` 將會處理**展開**的貼紙視圖，並看起來如下所示：
 
 ```csharp
 using System;
@@ -546,7 +546,7 @@ namespace MessageExtension
 }
 ```
 
-`MessageViewController`會執行這些 View 控制器以驅動要求的狀態：
+`MessageViewController` 會執行這些視圖控制器，以驅動要求的狀態：
 
 ```csharp
 using System;
@@ -666,7 +666,7 @@ namespace MessageExtension
 }
 ```
 
-當使用者要求將新的貼紙新增至可用的集合時，會`AddStickerViewController`有一個新的 [顯示控制器]，而 [貼紙] 視圖會進入**展開**的視圖：
+當使用者要求將新的貼紙新增至可用的集合時，會將新的 `AddStickerViewController` 設為可見的控制器，而 [貼紙] 視圖則會進入**展開**的視圖：
 
 ```csharp
 // Switch to expanded view mode
@@ -686,7 +686,7 @@ public void AddStickerToCollection (MSSticker sticker)
 }
 ```
 
-覆`DidTransition`寫方法以處理兩種模式之間的切換：
+會覆寫 `DidTransition` 方法，以處理兩種模式之間的切換：
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)

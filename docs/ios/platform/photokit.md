@@ -4,15 +4,15 @@ description: 本檔描述 PhotoKit、討論其模型物件、如何查詢模型�
 ms.prod: xamarin
 ms.assetid: 7FDEE394-3787-40FA-8372-76A05BF184B3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 433e50632ce7334f7a815fb8952dda2dfc110578
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 82cff753e7569c2642c467db692c2d2d84347df0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290517"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031610"
 ---
 # <a name="photokit-in-xamarinios"></a>在 Xamarin 中 PhotoKit
 
@@ -20,18 +20,18 @@ PhotoKit 是新的架構，可讓應用程式查詢系統映射庫，並建立�
 
 ## <a name="model-objects"></a>模型物件
 
-PhotoKit 會在其呼叫模型物件時，代表這些資產。 代表相片和影片本身的模型物件屬於類型`PHAsset`。 `PHAsset`包含中繼資料，例如資產的媒體類型及其建立日期。
-同樣地， `PHAssetCollection`和`PHCollectionList`類別會分別包含資產集合和集合清單的中繼資料。 資產集合是一組資產，例如指定年份的所有相片和影片。 同樣地，集合清單是資產集合的群組，例如依年份分組的相片和影片。
+PhotoKit 會在其呼叫模型物件時，代表這些資產。 代表相片和影片本身的模型物件屬於 `PHAsset`類型。 `PHAsset` 包含資產媒體類型及其建立日期之類的中繼資料。
+同樣地，`PHAssetCollection` 和 `PHCollectionList` 類別分別包含資產集合和集合清單的相關中繼資料。 資產集合是一組資產，例如指定年份的所有相片和影片。 同樣地，集合清單是資產集合的群組，例如依年份分組的相片和影片。
 
 ## <a name="querying-model-data"></a>查詢模型資料
 
-PhotoKit 可讓您輕鬆地透過各種 fetch 方法來查詢模型資料。 例如，若要取出所有影像，您可以呼叫`PHAsset.Fetch`， `PHAssetMediaType.Image`傳遞媒體類型。
+PhotoKit 可讓您輕鬆地透過各種 fetch 方法來查詢模型資料。 例如，若要取出所有影像，您可以呼叫 `PHAsset.Fetch`，並傳遞 `PHAssetMediaType.Image` 媒體類型。
 
 ```csharp
 PHFetchResult fetchResults = PHAsset.FetchAssets (PHAssetMediaType.Image, null);
 ```
 
-然後`PHFetchResult` ，實例會包含代表影像`PHAsset`的所有實例。 若要取得映射本身，您可以使用`PHImageManager` （或快取`PHCachingImageManager`版本），藉由呼叫`RequestImageForAsset`來對影像提出要求。 例如，下列程式碼會針對中的`PHFetchResult`每個資產抓取影像，以顯示在 [集合視圖] 資料格中：
+`PHFetchResult` 實例會接著包含代表影像的所有 `PHAsset` 實例。 若要取得映射本身，您可以使用 `PHImageManager` （或快取版本，`PHCachingImageManager`）藉由呼叫 `RequestImageForAsset`來提出影像要求。 例如，下列程式碼會抓取 `PHFetchResult` 中每個資產的影像，以顯示在 [集合視圖] 儲存格中：
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -51,7 +51,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 這會產生影像方格，如下所示：
 
-![](photokit-images/image4.png "顯示影像方格的執行中應用程式")
+![](photokit-images/image4.png "The running app displaying a grid of images")
 
 ## <a name="saving-changes-to-the-photo-library"></a>儲存相片媒體櫃的變更
 
@@ -123,8 +123,8 @@ void ApplyNoirFilter (object sender, EventArgs e)
 
 當使用者選取按鈕時，就會套用篩選準則：
 
-![](photokit-images/image5.png "套用的篩選範例")
+![](photokit-images/image5.png "An example of the filter being applied")
 
 而且感謝 PHPhotoLibraryChangeObserver，當使用者導覽回來時，此變更會反映在 [集合] 視圖中：
 
-![](photokit-images/image6.png "當使用者流覽後，此變更會反映在 [集合] 視圖中")
+![](photokit-images/image6.png "The change is reflected in the collection view when the user navigates back")

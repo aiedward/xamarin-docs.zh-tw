@@ -4,15 +4,15 @@ description: 本指南介紹並說明如何使用 ActionBar Api，在 Xamarin An
 ms.prod: xamarin
 ms.assetid: B7E60AAF-BDA5-4305-9000-675F0438734D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: d37537f345a1532e38ab4d016cfbd5b26eae8b3a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 33afa963cba2e341f23326c6a7814f97f88b6870
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758539"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028778"
 ---
 # <a name="tabbed-layouts-with-the-actionbar"></a>具有 ActionBar 的索引標籤式版面配置
 
@@ -22,7 +22,7 @@ _本指南介紹並說明如何使用 ActionBar Api，在 Xamarin Android 應用
 
 動作列是 Android UI 模式，可用來為索引標籤、應用程式識別、功能表和搜尋等主要功能提供一致的使用者介面。 在 Android 3.0 （API 層級11）中，Google 引進了 Android 平臺的 ActionBar Api。 ActionBar Api 引進 UI 主題，以提供一致的外觀與風格，以及允許索引標籤式使用者介面的類別。 本指南討論如何將動作列索引標籤新增至 Xamarin Android 應用程式。 它也會討論如何使用 Android 支援程式庫 v7，將 ActionBar 索引標籤將至以 Android 2.1 至 Android 2.3 為目標的 Android 應用程式。 
 
-請注意`Toolbar` ，是您應該使用的`ActionBar`較新且更一般化的動作列元件，`Toolbar`而不是（ `ActionBar`設計用來取代）。 如需詳細資訊，請參閱[工具列](~/android/user-interface/controls/tool-bar/index.md)。 
+請注意，`Toolbar` 是較新且更一般化的動作列元件，您應該使用而不是 `ActionBar` （`Toolbar` 是設計來取代 `ActionBar`）。 如需詳細資訊，請參閱[工具列](~/android/user-interface/controls/tool-bar/index.md)。 
 
 ## <a name="requirements"></a>需求
 
@@ -48,7 +48,7 @@ _本指南介紹並說明如何使用 ActionBar Api，在 Xamarin Android 應用
 
 - **OnTabUnselected** -當使用者選取另一個索引標籤時，會呼叫這個方法。此回呼是用來在顯示的片段中儲存狀態，然後才會消失。
 
-Xamarin 會在`ActionBar.Tab`類別上`ActionBar.ITabListener`包裝含有事件的。 應用程式可以將事件處理常式指派給其中一或多個事件。 [動作列] 索引標籤會引發三`ActionBar.ITabListener`個事件（每個方法各一個）： 
+Xamarin 會以 `ActionBar.Tab` 類別上的事件包裝 `ActionBar.ITabListener`。 應用程式可以將事件處理常式指派給其中一或多個事件。 [動作列] 索引標籤會引發三個事件（`ActionBar.ITabListener`中的每個方法各一個）： 
 
 - TabSelected
 - TabReselected
@@ -60,18 +60,18 @@ ActionBar 是 Android 3.0 （API 層級11）和更高版本的原生，適用于
 
 下列步驟說明如何將 [ActionBar] 索引標籤新增至 Android 活動： 
 
-1. &ndash; `NavigationMode` `ActionBar` `ActionBar.NavigationModeTabs` *在初始化任何 UI* `OnCreate` widget之前的活動方法中，應用程式必須將上的設定為，如下列代碼&ndash;段所示：
+1. 在活動 &ndash; 的 `OnCreate` 方法中，在*初始化任何 UI widget 之前*&ndash; 應用程式必須將 `ActionBar` 上的 `NavigationMode` 設定為 `ActionBar.NavigationModeTabs`，如下列程式碼片段所示：
 
    ```csharp
    ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
    SetContentView(Resource.Layout.Main);
    ```
 
-2. 使用`ActionBar.NewTab()`建立新的索引標籤。
+2. 使用 `ActionBar.NewTab()`建立新的索引標籤。
 
-3. 指派事件處理常式，或提供`ActionBar.ITabListener`自訂的執行，以回應使用者與 [ActionBar] 索引標籤互動時所引發的事件。
+3. 指派事件處理常式，或提供自訂的 `ActionBar.ITabListener` 執行，以回應使用者與 ActionBar 索引標籤互動時所引發的事件。
 
-4. 將在上一個步驟中建立的索引標籤加入`ActionBar`至。
+4. 將在上一個步驟中建立的索引標籤加入至 `ActionBar`。
 
 下列程式碼是使用這些步驟，將索引標籤新增至使用事件處理常式來回應狀態變更之應用程式的其中一個範例： 
 
@@ -101,22 +101,22 @@ protected override void OnCreate(Bundle bundle)
 
 #### <a name="event-handlers-vs-actionbaritablistener"></a>事件處理常式與 ActionBar. ITabListener
 
-應用程式應該使用事件處理`ActionBar.ITabListener`程式和不同的案例。 事件處理常式確實提供一定程度的語法便利性;它們可讓您不必建立類別和執行`ActionBar.ITabListener`。 這項便利的功能就是&ndash;成本 Xamarin。 Android 會為您執行此轉換，為您建立`ActionBar.ITabListener`一個類別並為您進行實施。 當應用程式的索引標籤數目有限時，就會發生此問題。 
+應用程式應該使用事件處理常式，並 `ActionBar.ITabListener` 不同的案例。 事件處理常式確實提供一定程度的語法便利性;讓您不必建立類別和執行 `ActionBar.ITabListener`。 這項便利的工作 &ndash; Xamarin。 Android 會為您執行此轉換，為您建立一個類別並為您執行 `ActionBar.ITabListener`。 當應用程式的索引標籤數目有限時，就會發生此問題。 
 
-當處理許多索引標籤，或在 ActionBar 索引標籤之間共用一般功能時，可在記憶體和效能方面更有效率，以建立自訂`ActionBar.ITabListener`類別來執行和共用類別的單一實例。 這會減少 Xamarin Android 應用程式所使用的 GRF 數目。 
+當處理許多索引標籤，或在 ActionBar 索引標籤之間共用一般功能時，可在記憶體和效能方面提高效率，以建立可執行 `ActionBar.ITabListener`的自訂類別，以及共用類別的單一實例。 這會減少 Xamarin Android 應用程式所使用的 GRF 數目。 
 
 ### <a name="backwards-compatibility-for-older-devices"></a>舊版裝置的回溯相容性
 
 [Android 支援程式庫 V7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/)後端埠 ActionBar 索引標籤到 Android 2.1 （API 層級7）。 一旦將此元件新增至專案，就可以在 Xamarin. Android 應用程式中存取索引標籤。
 
-若要使用 ActionBar，活動必須子類別`ActionBarActivity`化，並使用 AppCompat 主題，如下列程式碼片段所示：
+若要使用 ActionBar，活動必須子類別化 `ActionBarActivity` 並使用 AppCompat 主題，如下列程式碼片段所示：
 
 ```csharp
 [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat", MainLauncher = true, Icon = "@drawable/ic_launcher")]
 public class MainActivity: ActionBarActivity
 ```
 
-活動可以從`ActionBarActivity.SupportingActionBar`屬性取得其 ActionBar 的參考。 下列程式碼片段說明在活動中設定 ActionBar 的範例：
+活動可以從 `ActionBarActivity.SupportingActionBar` 屬性取得其 ActionBar 的參考。 下列程式碼片段說明在活動中設定 ActionBar 的範例：
 
 ```csharp
 [Activity(Label = "@string/app_name", Theme = "@style/Theme.AppCompat", MainLauncher = true, Icon = "@drawable/ic_launcher")]
@@ -162,7 +162,7 @@ public class MainActivity : ActionBarActivity, ActionBar.ITabListener
 
 ## <a name="summary"></a>總結
 
-在本指南中，我們討論了如何使用 ActionBar 在 Xamarin 中建立索引標籤式使用者介面。 我們已討論如何將索引標籤新增至 ActionBar，以及活動如何透過`ActionBar.ITabListener`介面與索引標籤事件互動。 我們也看到 Android 支援程式庫 v7 AppCompat 套件如何將 ActionBar 索引標籤反向移植到舊版的 Android。 
+在本指南中，我們討論了如何使用 ActionBar 在 Xamarin 中建立索引標籤式使用者介面。 我們已討論如何將索引標籤新增至 ActionBar，以及活動如何透過 `ActionBar.ITabListener` 介面與索引標籤事件進行互動。 我們也看到 Android 支援程式庫 v7 AppCompat 套件如何將 ActionBar 索引標籤反向移植到舊版的 Android。 
 
 ## <a name="related-links"></a>相關連結
 

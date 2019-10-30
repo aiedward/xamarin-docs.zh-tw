@@ -4,15 +4,15 @@ description: 本檔說明非續約訂用帳戶、免費訂閱、自動可續訂�
 ms.prod: xamarin
 ms.assetid: 27EE4234-07F5-D2CD-DC1C-86E27C20141E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 81e8f5c1beafeaafcf0d5dcbcc3bf4d66ee05a66
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752681"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032297"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin 中的訂閱和報告
 
@@ -50,17 +50,17 @@ ms.locfileid: "70752681"
 
 從 iTunes Connect 首頁選取 **我的應用程式**：   
    
- [![](subscriptions-and-reporting-images/image2.png "選取 [我的應用程式]")](subscriptions-and-reporting-images/image2.png#lightbox)  
+ [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 選取應用程式，然後按一下 [**在應用程式內購買**] 索引標籤：
 
-[![](subscriptions-and-reporting-images/image6.png "按一下 [應用程式內購買] 索引標籤")](subscriptions-and-reporting-images/image6.png#lightbox)
+[![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 從頁面底部，選取 [查看]**或 [產生共用密碼**]：
    
- [![](subscriptions-and-reporting-images/image40.png "選取 [查看] 或 [產生共用密碼]")](subscriptions-and-reporting-images/image40.png#lightbox)
+ [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
- [![](subscriptions-and-reporting-images/image41.png "產生共用密碼")](subscriptions-and-reporting-images/image41.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
 
 若要使用共用密碼，請在驗證自動可續訂訂用帳戶的應用程式內購買回條時，將它包含在傳送至 Apple 伺服器的 JSON 承載中，如下所示：
 
@@ -98,9 +98,9 @@ SKPaymentTransaction 物件不包含訂用帳戶期限–您應該針對每個�
 
 為了讓您更輕鬆地測試訂閱，在沙箱中測試時，會壓縮其持續時間。 1周訂閱每3分鐘更新一次，1年訂閱每小時更新一次。 在沙箱中測試時，訂用帳戶最多會自動更新6次。
 
-## <a name="reporting"></a>報表
+## <a name="reporting"></a>報告
 
-iTunes Connect （ [itunesconnect.apple.com](http://itunesconnect.apple.com)）提供：   
+iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）提供：   
    
  **銷售和趨勢**–顯示應用程式下載、更新和應用程式內購買的詳細資料。   
    
@@ -108,9 +108,9 @@ iTunes Connect （ [itunesconnect.apple.com](http://itunesconnect.apple.com)）�
 
 範例銷售和趨勢報表如下所示：   
 
- [![](subscriptions-and-reporting-images/image42.png "範例銷售和趨勢報表")](subscriptions-and-reporting-images/image42.png#lightbox)   
+ [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
    
- 另外還有一個[ **[行楷] [連線] [** 行動 IOS 應用程式] （iTunes 連結）](http://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)。
+ 另外還有一個[ **[行楷] [連線] [** 行動 IOS 應用程式] （iTunes 連結）](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)。
 以下顯示一些可用統計資料的 iPhone 螢幕擷取畫面：   
    
- [![](subscriptions-and-reporting-images/image43.png "一些可用統計資料的 iPhone 螢幕擷取畫面")](subscriptions-and-reporting-images/image43.png#lightbox)
+ [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

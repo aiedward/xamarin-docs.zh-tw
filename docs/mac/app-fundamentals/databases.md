@@ -4,15 +4,15 @@ description: 本文說明如何使用索引鍵/值編碼和索引鍵-值觀察�
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 03886a53e4f737b1e874a756f8801e46c7de4d32
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: a22eca56dcec46e11a67633a8403b57580ed0546
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769902"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032620"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin. Mac 中的資料庫
 
@@ -25,7 +25,7 @@ _本文說明如何使用索引鍵/值編碼和索引鍵-值觀察，以允許 S
 在本文中，我們將涵蓋兩種存取 SQLite 資料的方式：
 
 1. **直接存取**-透過直接存取 SQLite 資料庫，我們可以使用資料庫中的資料來進行索引鍵/值編碼，並將資料系結至 Xcode 的 Interface Builder 中建立的 UI 元素。 藉由在 Xamarin. Mac 應用程式中使用索引鍵/值編碼和資料系結技術，您可以大幅減少必須撰寫和維護的程式碼數量，以填入和使用 UI 元素。 您也可以進一步將您的支援資料（_資料模型_）與您的前端使用者介面（_模型視圖控制器_）分離，讓您更容易維護、更有彈性的應用程式設計。
-2. **SQLITE.NET ORM** -藉由使用開放原始碼[SQLite.NET](http://www.sqlite.org)物件關聯性管理員（ORM），我們可以大幅減少從 SQLite 資料庫讀取及寫入資料所需的程式碼數量。 然後，您可以使用此資料來填入使用者介面專案（例如資料表視圖）。
+2. **SQLITE.NET ORM** -藉由使用開放原始碼[SQLite.NET](https://www.sqlite.org)物件關聯性管理員（ORM），我們可以大幅減少從 SQLite 資料庫讀取及寫入資料所需的程式碼數量。 然後，您可以使用此資料來填入使用者介面專案（例如資料表視圖）。
 
 [![執行中應用程式的範例](databases-images/intro01.png "執行中應用程式的範例")](databases-images/intro01-large.png#lightbox)
 
@@ -1010,7 +1010,7 @@ using (var command = _conn.CreateCommand ()) {
 _conn.Close ();
 ```
 
-在 SQL 語句中唯一的實際差異（只會載入 `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"` 的管理員），但其運作方式與上述區段相同。
+在 SQL 語句中唯一的實際差異（只會載入 `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`的管理員），但其運作方式與上述區段相同。
 
 <a name="Databases-and-ComboBoxes" />
 
@@ -1419,7 +1419,7 @@ public ComboBoxDataSource (SqliteConnection conn, string tableName, string displ
 }
 ```
 
-@No__t_0 方法會傳回給定資料表中的記錄數目：
+`GetRecordCount` 方法會傳回給定資料表中的記錄數目：
 
 ```csharp
 private nint GetRecordCount ()
@@ -1463,7 +1463,7 @@ private nint GetRecordCount ()
 
 每當 `TableName`、`IDField` 或 `DisplayField` 屬性值變更時，就會呼叫它。
 
-@No__t_0 方法會傳回指定的下拉式清單專案索引之記錄的唯一識別碼（`IDField`）： 
+`IDForIndex` 方法會傳回指定的下拉式清單專案索引之記錄的唯一識別碼（`IDField`）： 
 
 ```csharp
 public string IDForIndex (nint index)
@@ -1504,7 +1504,7 @@ public string IDForIndex (nint index)
 }
 ```
 
-@No__t_0 方法會傳回指定下拉式清單索引之專案的值（`DisplayField`）：
+`ValueForIndex` 方法會傳回指定下拉式清單索引之專案的值（`DisplayField`）：
 
 ```csharp
 public string ValueForIndex (nint index)
@@ -1545,7 +1545,7 @@ public string ValueForIndex (nint index)
 }
 ```
 
-@No__t_0 方法會傳回指定值（`DisplayField`）的唯一識別碼（`IDField`）：
+`IDForValue` 方法會傳回指定值（`DisplayField`）的唯一識別碼（`IDField`）：
 
 ```csharp
 public string IDForValue (string value)
@@ -1589,7 +1589,7 @@ public string IDForValue (string value)
 }
 ```
 
-@No__t_0 會在 `TableName`、`IDField` 或 `DisplayField` 屬性變更時，傳回清單中的專案數預先計算。
+`ItemCount` 會在 `TableName`、`IDField` 或 `DisplayField` 屬性變更時，傳回清單中的專案數預先計算。
 
 ```csharp
 public override nint ItemCount (NSComboBox comboBox)
@@ -1598,7 +1598,7 @@ public override nint ItemCount (NSComboBox comboBox)
 }
 ```
 
-@No__t_0 方法會為指定的下拉式清單專案索引提供值（`DisplayField`）：
+`ObjectValueForItem` 方法會為指定的下拉式清單專案索引提供值（`DisplayField`）：
 
 ```csharp
 public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
@@ -1641,7 +1641,7 @@ public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 
 請注意，我們會使用 SQLite 命令中的 `LIMIT` 和 `OFFSET` 語句，限制為所需的一筆記錄。
 
-@No__t_0 方法會傳回指定值（`DisplayField`）的下拉式專案索引：
+`IndexOfItem` 方法會傳回指定值（`DisplayField`）的下拉式專案索引：
 
 ```csharp
 public override nint IndexOfItem (NSComboBox comboBox, string value)
@@ -1693,7 +1693,7 @@ public override nint IndexOfItem (NSComboBox comboBox, string value)
 
 如果找不到值，則會傳回 `NSRange.NotFound` 值，並在下拉式清單中取消選取所有專案。
 
-@No__t_0 方法會針對部分具類型的專案傳回第一個相符的值（`DisplayField`）：
+`CompletedString` 方法會針對部分具類型的專案傳回第一個相符的值（`DisplayField`）：
 
 ```csharp
 public override string CompletedString (NSComboBox comboBox, string uncompletedString)
@@ -1858,9 +1858,9 @@ namespace MacDatabase
 }
 ```
 
-[@No__t_0] 屬性會提供附加至下拉式方塊之 `ComboBoxDataSource` （如上所建立）的快捷方式。
+[`DataSource`] 屬性會提供附加至下拉式方塊之 `ComboBoxDataSource` （如上所建立）的快捷方式。
 
-@No__t_0 方法會針對指定的唯一識別碼，從資料庫載入人員：
+`LoadSelectedPerson` 方法會針對指定的唯一識別碼，從資料庫載入人員：
 
 ```csharp
 private void LoadSelectedPerson (string id)
@@ -1910,7 +1910,7 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 ## <a name="sqlitenet-orm"></a>SQLite.NET ORM
 
-如上所述，藉由使用開放原始碼[SQLite.NET](http://www.sqlite.org)物件關聯性管理員（ORM），我們可以大幅減少從 SQLite 資料庫讀取和寫入資料所需的程式碼數量。 當系結資料時，這可能不是最理想的路由，因為索引鍵/值編碼和資料系結會在物件上放置一些需求。
+如上所述，藉由使用開放原始碼[SQLite.NET](https://www.sqlite.org)物件關聯性管理員（ORM），我們可以大幅減少從 SQLite 資料庫讀取和寫入資料所需的程式碼數量。 當系結資料時，這可能不是最理想的路由，因為索引鍵/值編碼和資料系結會在物件上放置一些需求。
 
 根據 SQLite.Net 網站，「 _SQLite 是一種軟體程式庫，它會實作為獨立的無伺服器、零設定、交易式 SQL database 引擎。SQLite 是世界上最廣泛部署的資料庫引擎。SQLite 的原始程式碼位於公用網域中。_ 」
 
@@ -2125,7 +2125,7 @@ namespace MacDatabase
 }
 ```
 
-稍後當我們建立此類別的實例時，我們會傳入 open SQLite.NET 資料庫連接。 @No__t_0 方法會查詢資料庫，並將找到的記錄複製到記憶體中（使用我們的 `OccupationModel` 資料模型）。
+稍後當我們建立此類別的實例時，我們會傳入 open SQLite.NET 資料庫連接。 `LoadOccupations` 方法會查詢資料庫，並將找到的記錄複製到記憶體中（使用我們的 `OccupationModel` 資料模型）。
 
 ### <a name="creating-the-table-delegate"></a>建立資料表委派
 

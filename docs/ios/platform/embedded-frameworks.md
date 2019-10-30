@@ -4,15 +4,15 @@ description: 本檔說明如何在 Xamarin iOS 應用程式中與內嵌架構共
 ms.prod: xamarin
 ms.assetid: F8C61020-4106-46F1-AECB-B56C909F42CB
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: ba3be4fea9999698c5a81faf5b07bec99fb1aa46
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cf74c31b149c24bc6e515c0f00803a60b10d5d1c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753246"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032542"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Xamarin 中的 Embedded framework
 
@@ -38,13 +38,13 @@ Xamarin. iOS 9.0 新增了在 Xamarin iOS 應用程式中使用這些內嵌架�
 
 以滑鼠右鍵按一下專案，然後流覽以加入原生參考
 
-![](embedded-frameworks-images/xam-native-refs.png "選取 [在 Visual Studio for Mac 中新增原生參考]")
+![](embedded-frameworks-images/xam-native-refs.png "Select Add native references in Visual Studio for Mac")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 以滑鼠右鍵按一下專案，然後流覽以加入原生參考
 
-![](embedded-frameworks-images/vs-native-refs.png "選取 [在 Visual Studio 中新增原生參考]")
+![](embedded-frameworks-images/vs-native-refs.png "Select Add native references in Visual Studio")
 
 -----
 
@@ -70,7 +70,7 @@ Xamarin. iOS 9.0 新增了在 Xamarin iOS 應用程式中使用這些內嵌架�
 
 應用程式開發人員可以覆寫此行為，方法是在專案的 iOS 組建選項中新增下列做為額外的 mtouch 引數：
 
-- `--mono:static`：以靜態方式連結 Mono 執行時間。
-- `--mono:framework`：以 Mono 執行時間做為架構的連結。
+- `--mono:static`：以靜態方式連接 Mono 執行時間的連結。
+- `--mono:framework`：使用 Mono 執行時間做為架構的連結。
 
 將 Mono 執行時間連結為架構的其中一個案例，即使是沒有擴充功能的應用程式，也可以減少可執行檔的大小，以克服 Apple 強制執行檔的任何大小限制。 就參考而言，Mono 執行時間會為每個架構增加大約 1.7 MB （從 Xamarin. iOS 8.12，但在不同版本之間，甚至是在應用程式之間）。 Mono 架構在每個架構中大約增加了 2.3 MB，這表示針對不含任何延伸模組的單一架構應用程式，讓應用程式連結以 Mono 執行時間做為架構，會將可執行檔縮小 ~ 1.7 MB，但會增加 ~ 2.3 mb 的架構，產生的結果在 ~ 0.6 MB 的應用程式 alltogether 中。

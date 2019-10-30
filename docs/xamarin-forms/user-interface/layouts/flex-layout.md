@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: 187befd88c115133a92aa90a711438e7754518d5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 75249966c6506bc33ea06c7cfa9c398bd7eb8045
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68648809"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029489"
 ---
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin FlexLayout
 
@@ -21,7 +21,7 @@ ms.locfileid: "68648809"
 
 _使用 FlexLayout 來堆疊或包裝子視圖的集合。_
 
-Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)是 Xamarin. forms 版本3.0 中的新功能。 它是以 [CSS 彈性方塊配置][模組](http://www.w3.org/TR/css-flexbox-1/)為基礎，通常稱為 [_彈性版面_配置] 或 [_彈性箱_]，因為它包含許多彈性選項，可在版面配置中排列子系。
+Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)是 Xamarin. forms 版本3.0 中的新功能。 它是以 [CSS 彈性方塊配置][模組](https://www.w3.org/TR/css-flexbox-1/)為基礎，通常稱為 [_彈性版面_配置] 或 [_彈性箱_]，因為它包含許多彈性選項，可在版面配置中排列子系。
 
 `FlexLayout` 類似于 Xamarin [`StackLayout`](~/xamarin-forms/user-interface/layouts/stack-layout.md) ，它可以在堆疊中以水準和垂直方式排列其子系。 不過，如果單一資料列或資料行中有太多要容納的子系，則 `FlexLayout` 也能夠包裝其子系，而且也有許多方向、對齊和適應各種螢幕大小的選項。
 
@@ -37,7 +37,7 @@ Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)是 Xamarin. forms �
 
 ### <a name="using-flexlayout-for-a-simple-stack"></a>針對簡單堆疊使用 FlexLayout
 
-[**簡單堆疊**] 頁面會顯示 `FlexLayout` 可以如何取代 `StackLayout` 但具有較簡單的標記。 這個範例中的所有專案都是在 XAML 頁面中定義。 @No__t_0 包含四個子系：
+[**簡單堆疊**] 頁面會顯示 `FlexLayout` 可以如何取代 `StackLayout` 但具有較簡單的標記。 這個範例中的所有專案都是在 XAML 頁面中定義。 `FlexLayout` 包含四個子系：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -68,13 +68,13 @@ Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)是 Xamarin. forms �
 
 **SimpleStackPage**中會顯示三個 `FlexLayout` 屬性：
 
-- [@No__t_1](xref:Xamarin.Forms.FlexLayout.Direction)屬性會設定為[`FlexDirection`](xref:Xamarin.Forms.FlexDirection)列舉的值。 預設為 `Row`。 將屬性設定為 `Column` 會將 `FlexLayout` 的子系排列在專案的單一資料行中。
+- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)屬性會設定為[`FlexDirection`](xref:Xamarin.Forms.FlexDirection)列舉的值。 預設為 `Row`。 將屬性設定為 `Column` 會將 `FlexLayout` 的子系排列在專案的單一資料行中。
 
     當 `FlexLayout` 中的專案在資料行中排列時，`FlexLayout` 會被視為具有垂直_主要軸_和水準_交叉軸_。
 
-- [@No__t_1](xref:Xamarin.Forms.FlexLayout.AlignItems)屬性是[`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems)類型，並指定如何在交叉軸上對齊專案。 @No__t_0 選項會使每個專案水準置中。
+- [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)屬性是[`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems)類型，並指定如何在交叉軸上對齊專案。 `Center` 選項會使每個專案水準置中。
 
-    如果您使用 `StackLayout` 而不是這項工作的 `FlexLayout`，您會將每個專案的 `HorizontalOptions` 屬性指派給 `Center`，以將所有專案置中。 @No__t_0 屬性不適用於 `FlexLayout` 的子系，但是單一 `AlignItems` 屬性會達成相同的目標。 如有需要，您可以使用 `AlignSelf` 附加可系結屬性來覆寫個別專案的 `AlignItems` 屬性：
+    如果您使用 `StackLayout` 而不是這項工作的 `FlexLayout`，您會將每個專案的 `HorizontalOptions` 屬性指派給 `Center`，以將所有專案置中。 `HorizontalOptions` 屬性不適用於 `FlexLayout`的子系，但是單一 `AlignItems` 屬性會達成相同的目標。 如有需要，您可以使用 `AlignSelf` 附加可系結屬性來覆寫個別專案的 `AlignItems` 屬性：
 
     ```xaml
     <Label Text="FlexLayout in Action"
@@ -84,7 +84,7 @@ Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)是 Xamarin. forms �
 
     有了這項變更之後，當讀取順序是由左至右時，這個 `Label` 會放在 `FlexLayout` 的左邊緣。
 
-- [@No__t_1](xref:Xamarin.Forms.FlexLayout.JustifyContent)屬性是[`FlexJustify`](xref:Xamarin.Forms.FlexJustify)類型，並指定如何在主要軸上排列專案。 @No__t_0 選項會在所有專案之間，以及在第一個專案和最後一個專案的上方，平均配置所有剩餘的垂直空間。
+- [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent)屬性是[`FlexJustify`](xref:Xamarin.Forms.FlexJustify)類型，並指定如何在主要軸上排列專案。 `SpaceEvenly` 選項會在所有專案之間，以及在第一個專案和最後一個專案的上方，平均配置所有剩餘的垂直空間。
 
     如果您使用 `StackLayout`，就必須將每個專案的 `VerticalOptions` 屬性指派給 `CenterAndExpand`，以達到類似的效果。 但是 `CenterAndExpand` 選項會在每個專案之間，配置比第一個專案和最後一個專案還多兩倍的空間。 您可以藉由將 `FlexLayout` 的 `JustifyContent` 屬性設定為 [`SpaceAround`]，模仿 `VerticalOptions` 的 `CenterAndExpand` 選項。
 
@@ -115,11 +115,11 @@ Xamarin. Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout)是 Xamarin. forms �
 
 未設定此 `FlexLayout` 的 `Direction` 屬性，因此它具有 `Row` 的預設值，這表示子系是以資料列排列，而主要軸是水準的。
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.Wrap)屬性是[`FlexWrap`](xref:Xamarin.Forms.FlexWrap)的列舉類型。 如果有太多專案要放入資料列，則此屬性設定會使專案換行至下一個資料列。
+[`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap)屬性是[`FlexWrap`](xref:Xamarin.Forms.FlexWrap)的列舉類型。 如果有太多專案要放入資料列，則此屬性設定會使專案換行至下一個資料列。
 
 請注意，`FlexLayout` 是 `ScrollView` 的子系。 如果頁面上有太多資料列，則 `ScrollView` 具有 `Vertical` 的預設 `Orientation` 屬性，並允許垂直捲動。
 
-[@No__t_0] 屬性會配置主要軸（水準軸）上的剩餘空間，讓每個專案都以相同的空白空間量括住。
+[`JustifyContent`] 屬性會配置主要軸（水準軸）上的剩餘空間，讓每個專案都以相同的空白空間量括住。
 
 程式碼後置檔案會存取範例相片的集合，並將其新增至 `FlexLayout` 的 `Children` 集合：
 
@@ -190,7 +190,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 ### <a name="page-layout-with-flexlayout"></a>使用 FlexLayout 的頁面配置
 
-Web 設計中有一種標準版面配置，稱為「[_聖聖杯_](https://en.wikipedia.org/wiki/Holy_grail_(web_design))」，因為它是非常理想的版面配置格式，但通常很難實現完美。 版面配置包含頁面頂端的標題和底端的頁尾，同時延伸至頁面的完整寬度。 佔用頁面的中心是主要內容，但通常會在右側的內容和補充資訊（有時稱為「_空白區域」_ ）左邊加上單欄式功能表。 [CSS 彈性方塊版面配置規格的章節5.4.1 版](http://www.w3.org/TR/css-flexbox-1/#order-accessibility)說明如何使用彈性方塊來實現聖聖杯配置。
+Web 設計中有一種標準版面配置，稱為「[_聖聖杯_](https://en.wikipedia.org/wiki/Holy_grail_(web_design))」，因為它是非常理想的版面配置格式，但通常很難實現完美。 版面配置包含頁面頂端的標題和底端的頁尾，同時延伸至頁面的完整寬度。 佔用頁面的中心是主要內容，但通常會在右側的內容和補充資訊（有時稱為「_空白區域」_ ）左邊加上單欄式功能表。 [CSS 彈性方塊版面配置規格的章節5.4.1 版](https://www.w3.org/TR/css-flexbox-1/#order-accessibility)說明如何使用彈性方塊來實現聖聖杯配置。
 
 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例的 [**聖聖杯版面**配置] 頁面會使用一個嵌套在另一個中的 `FlexLayout`，顯示此配置的簡單實作為。 因為此頁面是針對直向模式的電話所設計，所以內容區域左邊和右邊的區域僅限於50圖元寬：
 
@@ -249,11 +249,11 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 
 這個程式會示範三個附加的可系結屬性：
 
-- @No__t_0 附加的可系結屬性是在第一個 `BoxView` 上設定。 此屬性是預設值為0的整數。 您可以使用這個屬性來變更版面配置順序。 開發人員通常會偏好頁面的內容顯示在流覽專案之前的標記中，而不是專案。 將第一個 `BoxView` 的 `Order` 屬性設定為小於其其他兄弟的值，會使其顯示為數據列中的第一個專案。 同樣地，您可以將 `Order` 屬性設定為大於其同級的值，以確保專案最後出現。
+- `Order` 附加的可系結屬性是在第一個 `BoxView`上設定。 此屬性是預設值為0的整數。 您可以使用這個屬性來變更版面配置順序。 開發人員通常會偏好頁面的內容顯示在流覽專案之前的標記中，而不是專案。 將第一個 `BoxView` 的 `Order` 屬性設定為小於其其他兄弟的值，會使其顯示為數據列中的第一個專案。 同樣地，您可以將 `Order` 屬性設定為大於其同級的值，以確保專案最後出現。
 
-- @No__t_0 附加的可系結屬性會設定在兩個 `BoxView` 專案上，以提供50圖元的寬度。 這個屬性的類型是 `FlexBasis`，此結構會定義名為 `FlexBasis` 之類型的靜態屬性，預設值為 `Auto`。 您可以使用 `Basis` 來指定圖元大小或百分比，指出專案在主要軸上所占的空間量。 因為它指定的專案大小是所有後續版面配置的基礎，所以稱為_基礎_。
+- `Basis` 附加的可系結屬性會設定在兩個 `BoxView` 專案上，以提供50圖元的寬度。 這個屬性的類型是 `FlexBasis`，此結構會定義名為 `FlexBasis` 之類型的靜態屬性，預設值為 `Auto`。 您可以使用 `Basis` 來指定圖元大小或百分比，指出專案在主要軸上所占的空間量。 因為它指定的專案大小是所有後續版面配置的基礎，所以稱為_基礎_。
 
-- @No__t_0 屬性是在嵌套的 `Layout` 上，以及代表內容的 `Label` 子系上設定。 這個屬性的類型是 `float`，預設值是0。 當設定為正值時，沿著主要軸的所有剩餘空間都會配置給該專案，並配置給具有正值 `Grow` 的同級。 空間會依比例分配給值，與 `Grid` 中的星號規格有點相似。
+- `Grow` 屬性是在嵌套的 `Layout` 上，以及代表內容的 `Label` 子系上設定。 這個屬性的類型是 `float`，預設值是0。 當設定為正值時，沿著主要軸的所有剩餘空間都會配置給該專案，並配置給具有正值 `Grow` 的同級。 空間會依比例分配給值，與 `Grid` 中的星號規格有點相似。
 
     第一個 `Grow` 附加屬性是在 nested `FlexLayout` 上設定，表示此 `FlexLayout` 會佔用外部 `FlexLayout` 內所有未使用的垂直空間。 第二個 `Grow` 附加屬性是在代表內容的 `Label` 上設定，表示此內容會佔用內部 `FlexLayout` 內所有未使用的水準空間。
 
@@ -261,7 +261,7 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 
 ### <a name="catalog-items-with-flexlayout"></a>使用 FlexLayout 的類別目錄專案
 
-**[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例中的 [**類別目錄專案**] 頁面類似于[CSS 彈性版面配置方塊規格的第1.1 節中的範例 1](http://www.w3.org/TR/css-flexbox-1/#overview) ，不同之處在于它會顯示水準滾動系列的圖片和三個猴仔的描述。:
+**[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例中的 [**類別目錄專案**] 頁面類似于[CSS 彈性版面配置方塊規格的第1.1 節中的範例 1](https://www.w3.org//TR/css-flexbox-1/#overview) ，不同之處在于它會顯示水準滾動系列的圖片和三個猴仔的描述。:
 
 [![[類別目錄專案] 頁面](flex-layout-images/CatalogItems.png "[類別目錄專案] 頁面")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
@@ -364,7 +364,7 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 </ContentPage>
 ```
 
-@No__t_0 的隱含樣式包括 `Flexlayout` 的兩個附加可系結屬性的設定：
+`Image` 的隱含樣式包括 `Flexlayout`的兩個附加可系結屬性的設定：
 
 ```xaml
 <Style TargetType="Image">
@@ -373,7 +373,7 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 </Style>
 ```
 
-@No__t_11 的 `Order` 設定會使 `Image` 元素在每個嵌套 `FlexLayout` 視圖中先顯示，而不論其在子集合中的位置為何。 @No__t_1 的 `AlignSelf` 屬性會導致 `Image` 在 `FlexLayout` 中置中。 這會覆寫 `AlignItems` 屬性的設定，其預設值為 `Stretch`，這表示 `Label` 和 `Button` 子系會延展至 `FlexLayout` 的完整寬度。
+&ndash;1 的 `Order` 設定會導致在每個嵌套的 `FlexLayout` 視圖中，先顯示 `Image` 元素，而不論其在子集合中的位置為何。 `Center` 的 `AlignSelf` 屬性會導致 `Image` 在 `FlexLayout`中置中。 這會覆寫 `AlignItems` 屬性的設定，其預設值為 `Stretch`，這表示 `Label` 和 `Button` 子系會延展至 `FlexLayout` 的完整寬度。
 
 在三個 `FlexLayout` 視圖的每一個中，空白 `Label` 會在 `Button` 之前，但其 `Grow` 設定為1。 這表示會將所有額外的垂直空間配置給這個空白 `Label`，這樣會有效地將 `Button` 推送至底部。
 
@@ -384,19 +384,19 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 既然您已瞭解 `FlexLayout` 的一些常見應用程式，就可以更詳細地探索 `FlexLayout` 的屬性。
 `FlexLayout` 會定義六個可系結的屬性，您可以在程式碼或 XAML 中，于 `FlexLayout` 本身設定，以控制方向和對齊。 （其中一個屬性[`Position`](xref:Xamarin.Forms.FlexLayout.Position)，本文並未涵蓋）。
 
-您可以使用 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例的**實驗**頁面，試驗五個剩餘的可系結屬性。 此頁面可讓您在 `FlexLayout` 中新增或移除子系，以及設定五個可系結屬性的組合。 @No__t_0 的所有子系都是各種色彩和大小的 `Label` 視圖，而且 `Text` 屬性會設定為對應于 `Children` 集合中位置的數位。
+您可以使用 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例的**實驗**頁面，試驗五個剩餘的可系結屬性。 此頁面可讓您在 `FlexLayout` 中新增或移除子系，以及設定五個可系結屬性的組合。 `FlexLayout` 的所有子系都是各種色彩和大小的 `Label` 視圖，而且 `Text` 屬性會設定為對應于 `Children` 集合中位置的數位。
 
 當程式啟動時，五個 `Picker` views 會顯示這五個 `FlexLayout` 屬性的預設值。 靠近畫面底部的 `FlexLayout` 包含三個子系：
 
 [![實驗頁面：預設值](flex-layout-images/ExperimentDefault.png "實驗頁面-預設")](flex-layout-images/ExperimentDefault-Large.png#lightbox)
 
-每個 `Label` 視圖都有灰色背景，顯示配置給該 `Label` 在 `FlexLayout` 內的空間。 @No__t_0 本身的背景為 Alice 藍色。 它會佔用頁面的整個底部區域，但左邊和右邊的小邊界除外。
+每個 `Label` 視圖都有灰色背景，顯示配置給該 `Label` 在 `FlexLayout` 內的空間。 `FlexLayout` 本身的背景為 Alice 藍色。 它會佔用頁面的整個底部區域，但左邊和右邊的小邊界除外。
 
 <a name="direction" />
 
 ### <a name="the-direction-property"></a>Direction 屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.Direction)屬性的類型是[`FlexDirection`](xref:Xamarin.Forms.FlexDirection)，這是具有四個成員的列舉：
+[`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)屬性的類型是[`FlexDirection`](xref:Xamarin.Forms.FlexDirection)，這是具有四個成員的列舉：
 
 - `Column`
 - `ColumnReverse` （或 XAML 中的「資料行反向」）
@@ -415,7 +415,7 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 
 ### <a name="the-wrap-property"></a>Wrap 屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.Wrap)屬性的類型是[`FlexWrap`](xref:Xamarin.Forms.FlexWrap)，這是具有三個成員的列舉：
+[`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap)屬性的類型是[`FlexWrap`](xref:Xamarin.Forms.FlexWrap)，這是具有三個成員的列舉：
 
 - `NoWrap`，預設值
 - `Wrap`
@@ -431,7 +431,7 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 
 ### <a name="the-justifycontent-property"></a>JustifyContent 屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.JustifyContent)屬性的類型是[`FlexJustify`](xref:Xamarin.Forms.FlexJustify)，這是具有六個成員的列舉：
+[`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent)屬性的類型是[`FlexJustify`](xref:Xamarin.Forms.FlexJustify)，這是具有六個成員的列舉：
 
 - `Start` （或 XAML 中的「flex-開始」），預設值為
 - `Center`
@@ -444,13 +444,13 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 
 [![實驗頁面：對齊內容](flex-layout-images/ExperimentJustifyContent.png "實驗頁面-調整內容")](flex-layout-images/ExperimentJustifyContent-Large.png#lightbox)
 
-在這三個螢幕擷取畫面中，`Wrap` 屬性都設定為 [`Wrap`]。 @No__t_0 預設值會顯示在先前的 Android 螢幕擷取畫面中。 這裡的 iOS 螢幕擷取畫面顯示 `Center` 選項：所有專案都會移至中央。 以 [字組] 開頭的其他三個選項，`Space` 設定項目未佔用的額外空間。 `SpaceBetween` 會在專案之間平均配置空間; `SpaceAround` 會在每個專案周圍放置相等的空間，而 `SpaceEvenly` 會在每個專案和第一個專案之前，以及在資料列的最後一個專案之後放置相等的空間。
+在這三個螢幕擷取畫面中，`Wrap` 屬性都設定為 [`Wrap`]。 `Start` 預設值會顯示在先前的 Android 螢幕擷取畫面中。 這裡的 iOS 螢幕擷取畫面顯示 `Center` 選項：所有專案都會移至中央。 以 [字組] 開頭的其他三個選項，`Space` 設定項目未佔用的額外空間。 `SpaceBetween` 會在專案之間平均配置空間; `SpaceAround` 會在每個專案周圍放置相等的空間，而 `SpaceEvenly` 會在每個專案和第一個專案之前，以及在資料列的最後一個專案之後放置相等的空間。
 
 <a name="align-items" />
 
 ### <a name="the-alignitems-property"></a>AlignItems 屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.AlignItems)屬性的類型是[`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems)，這是具有四個成員的列舉：
+[`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)屬性的類型是[`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems)，這是具有四個成員的列舉：
 
 - `Stretch`，預設值
 - `Center`
@@ -469,7 +469,7 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 
 ### <a name="the-aligncontent-property"></a>AlignContent 屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.AlignContent)屬性的類型是[`FlexAlignContent`](xref:Xamarin.Forms.FlexAlignContent)，這是具有七個成員的列舉：
+[`AlignContent`](xref:Xamarin.Forms.FlexLayout.AlignContent)屬性的類型是[`FlexAlignContent`](xref:Xamarin.Forms.FlexAlignContent)，這是具有七個成員的列舉：
 
 - `Stretch`，預設值
 - `Center`
@@ -499,7 +499,7 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 
 ### <a name="the-alignself-property"></a>AlignSelf 屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty)附加的可系結屬性屬於類型[`FlexAlignSelf`](xref:Xamarin.Forms.FlexAlignContent)，這是具有五個成員的列舉：
+[`AlignSelf`](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty)附加的可系結屬性屬於類型[`FlexAlignSelf`](xref:Xamarin.Forms.FlexAlignContent)，這是具有五個成員的列舉：
 
 - `Auto`，預設值
 - `Stretch`
@@ -507,7 +507,7 @@ XAML 檔案中的第一個 `FlexLayout` 具有垂直主要軸，並包含三個�
 - `Start` （或 XAML 中的「flex-開始」）
 - `End` （或在 XAML 中以「flex-結束」）
 
-對於 `FlexLayout` 的任何個別子系，此屬性設定會覆寫 `FlexLayout` 本身上設定的[`AlignItems`](#align-items)屬性。 @No__t_0 的預設設定表示使用 `AlignItems` 設定。
+對於 `FlexLayout` 的任何個別子系，此屬性設定會覆寫 `FlexLayout` 本身上設定的[`AlignItems`](#align-items)屬性。 `Auto` 的預設設定表示使用 `AlignItems` 設定。
 
 針對名為 `label` （或範例）的 `Label` 元素，您可以在程式碼中設定 `AlignSelf` 屬性，如下所示：
 
@@ -523,15 +523,15 @@ FlexLayout.SetAlignSelf(label, FlexAlignSelf.Center);
 
 ### <a name="the-order-property"></a>Order 屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.OrderProperty)屬性的類型為 `int`。 預設值為 0。
+[`Order`](xref:Xamarin.Forms.FlexLayout.OrderProperty)屬性的類型為 `int`。 預設值為 0。
 
-@No__t_0 屬性可讓您變更 `FlexLayout` 子系的排列順序。 通常，`FlexLayout` 的子系排列順序，與它們出現在 `Children` 集合中的順序相同。 您可以在一或多個子系上，將 [`Order` 附加的可系結屬性] 設定為非零的整數值，以覆寫此順序。 然後，`FlexLayout` 會根據每個子系上 `Order` 屬性的設定來排列其子系，但具有相同 `Order` 設定的子系會依照出現在 `Children` 集合中的順序排列。
+`Order` 屬性可讓您變更 `FlexLayout` 子系的排列順序。 通常，`FlexLayout` 的子系排列順序，與它們出現在 `Children` 集合中的順序相同。 您可以在一或多個子系上，將 [`Order` 附加的可系結屬性] 設定為非零的整數值，以覆寫此順序。 然後，`FlexLayout` 會根據每個子系上 `Order` 屬性的設定來排列其子系，但具有相同 `Order` 設定的子系會依照出現在 `Children` 集合中的順序排列。
 
 ### <a name="the-basis-property"></a>基本屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.BasisProperty)附加的可系結屬性會指出配置給主要軸上 `FlexLayout` 子系的空間量。 [@No__t_0] 屬性所指定的大小是沿著父 `FlexLayout` 主要軸的大小。 因此，當子系排列在資料列時，`Basis` 會指出子系的寬度，或當子系在資料行中排列時的高度。
+[`Basis`](xref:Xamarin.Forms.FlexLayout.BasisProperty)附加的可系結屬性會指出配置給主要軸上 `FlexLayout` 子系的空間量。 [`Basis`] 屬性所指定的大小是沿著父 `FlexLayout`主要軸的大小。 因此，當子系排列在資料列時，`Basis` 會指出子系的寬度，或當子系在資料行中排列時的高度。
 
-@No__t_0 屬性的類型為[`FlexBasis`](xref:Xamarin.Forms.FlexBasis)的結構。 大小可以用裝置獨立單位或 `FlexLayout` 大小的百分比來指定。 @No__t_0 屬性的預設值為靜態屬性 `FlexBasis.Auto`，這表示會使用子系的要求寬度或高度。
+`Basis` 屬性的類型為[`FlexBasis`](xref:Xamarin.Forms.FlexBasis)的結構。 大小可以用裝置獨立單位或 `FlexLayout` 大小的百分比來指定。 `Basis` 屬性的預設值為靜態屬性 `FlexBasis.Auto`，這表示會使用子系的要求寬度或高度。
 
 在程式碼中，您可以將名為 `label` `Label` 的 `Basis` 屬性設定為40裝置獨立單位，如下所示：
 
@@ -539,7 +539,7 @@ FlexLayout.SetAlignSelf(label, FlexAlignSelf.Center);
 FlexLayout.SetBasis(label, new FlexBasis(40, false));
 ```
 
-@No__t_0 的函式的第二個引數名為 `isRelative`，並指出大小是否為相對（`true`）或絕對（`false`）。 引數的預設值為 `false`，因此您也可以使用下列程式碼：
+`FlexBasis` 的函式的第二個引數名為 `isRelative`，並指出大小是否為相對（`true`）或絕對（`false`）。 引數的預設值為 `false`，因此您也可以使用下列程式碼：
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(40));
@@ -551,7 +551,7 @@ FlexLayout.SetBasis(label, new FlexBasis(40));
 FlexLayout.SetBasis(label, 40);
 ```
 
-您可以將大小設為 `FlexLayout` 父系的 25%，如下所示：
+您可以將大小設為 `FlexLayout` 父系的25%，如下所示：
 
 ```csharp
 FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
@@ -565,7 +565,7 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 <Label ... FlexLayout.Basis="40" ... />
 ```
 
-或者，您可以指定範圍介於 0% 到 100% 之間的百分比：
+或者，您可以指定範圍介於0% 到100% 之間的百分比：
 
 ```xaml
 <Label ... FlexLayout.Basis="25%" ... />
@@ -575,13 +575,13 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 [![[基礎實驗] 頁面](flex-layout-images/BasisExperiment.png "[基礎實驗] 頁面")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
-左側的 iOS 螢幕擷取畫面顯示兩個 `Label` 元素在與裝置無關的單位中具有高度。 [Android] 畫面會顯示它們的高度，是 `FlexLayout` 總高度的一小部分。 如果 `Basis` 設定為 100%，則子系是 `FlexLayout` 的高度，並會換行至下一個資料行，並佔用該資料行的整個高度，如同 UWP 螢幕擷取畫面所示：它會顯示為五個子系排列在資料列中但實際上是以五個數據行排列。
+左側的 iOS 螢幕擷取畫面顯示兩個 `Label` 元素在與裝置無關的單位中具有高度。 [Android] 畫面會顯示它們的高度，是 `FlexLayout` 總高度的一小部分。 如果 `Basis` 設定為100%，則子系是 `FlexLayout`的高度，並會換行至下一個資料行，並佔用該資料行的整個高度，如同 UWP 螢幕擷取畫面所示：它會顯示為五個子系排列在資料列中但實際上是以五個數據行排列。
 
 ### <a name="the-grow-property"></a>成長屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.GrowProperty)附加可系結屬性的類型為 `int`。 預設值為0，且值必須大於或等於0。
+[`Grow`](xref:Xamarin.Forms.FlexLayout.GrowProperty)附加可系結屬性的類型為 `int`。 預設值為0，且值必須大於或等於0。
 
-當 [`Wrap`] 屬性設定為 [`NoWrap`]，而 [子系] 的資料列寬度小於 `FlexLayout` 的寬度，或子系的資料行具有比 `FlexLayout` 更短的高度時，`Grow` 屬性會扮演角色。 @No__t_0 屬性會指出如何分配子系之間的剩餘空間。
+當 [`Wrap`] 屬性設定為 [`NoWrap`]，而 [子系] 的資料列寬度小於 `FlexLayout` 的寬度，或子系的資料行具有比 `FlexLayout` 更短的高度時，`Grow` 屬性會扮演角色。 `Grow` 屬性會指出如何分配子系之間的剩餘空間。
 
 在 [**擴大實驗**] 頁面中，交替色彩的五個 `Label` 元素會排列在一個資料行中，而兩個 `Slider` 元素可讓您調整第二個和第四個 `Label` 的 `Grow` 屬性。 最左邊的 iOS 螢幕擷取畫面顯示預設 `Grow` 的屬性0：
 
@@ -595,9 +595,9 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 ### <a name="the-shrink-property"></a>Shrink 屬性
 
-[@No__t_1](xref:Xamarin.Forms.FlexLayout.ShrinkProperty)附加可系結屬性的類型為 `int`。 預設值為1，且值必須大於或等於0。
+[`Shrink`](xref:Xamarin.Forms.FlexLayout.ShrinkProperty)附加可系結屬性的類型為 `int`。 預設值為1，且值必須大於或等於0。
 
-當 [`Wrap`] 屬性設定為 [`NoWrap`]，而子系的資料列的匯總寬度大於 `FlexLayout` 的寬度，或子系的單一資料行的匯總高度大於的高度時，`Shrink` 屬性會扮演角色`FlexLayout`。 一般來說，`FlexLayout` 會藉由 constricting 其大小來顯示這些子系。 @No__t_0 屬性可以指出哪些子系在以其完整大小顯示時具有優先權。
+當 [`Wrap`] 屬性設定為 [`NoWrap`]，而子系的資料列的匯總寬度大於 `FlexLayout` 的寬度，或子系的單一資料行的匯總高度大於的高度時，`Shrink` 屬性會扮演角色`FlexLayout`。 一般來說，`FlexLayout` 會藉由 constricting 其大小來顯示這些子系。 `Shrink` 屬性可以指出哪些子系在以其完整大小顯示時具有優先權。
 
 [**縮小實驗**] 頁面會建立一個 `FlexLayout`，其中包含五個 `Label` 子系的單一資料列，而這需要的空間比 `FlexLayout` 的寬度多。 左側的 iOS 螢幕擷取畫面會顯示預設值為1的所有 `Label` 元素：
 
@@ -730,7 +730,7 @@ button {
 }
 ```
 
-這裡會參考數個 `FlexLayout` 附加的可系結屬性。 在 `label.empty` 選取器中，您會看到 `flex-grow` 屬性，其樣式為空的 `Label`，以在 `Button` 上方提供一些空格。 @No__t_0 選取器包含 `order` 屬性和 `align-self` 屬性，兩者都對應至 `FlexLayout` 附加的可系結屬性。
+這裡會參考數個 `FlexLayout` 附加的可系結屬性。 在 `label.empty` 選取器中，您會看到 `flex-grow` 屬性，其樣式為空的 `Label`，以在 `Button` 上方提供一些空格。 `image` 選取器包含 `order` 屬性和 `align-self` 屬性，兩者都對應至 `FlexLayout` 附加的可系結屬性。
 
 您已瞭解您可以直接在 `FlexLayout` 上設定屬性，而且可以在 `FlexLayout` 的子系上設定附加的可系結屬性。 或者，您可以使用傳統的 XAML 樣式或 CSS 樣式，間接設定這些屬性。 重要的是瞭解並瞭解這些屬性。 這些屬性可讓 `FlexLayout` 真正的彈性。
 

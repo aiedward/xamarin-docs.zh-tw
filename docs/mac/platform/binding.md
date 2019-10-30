@@ -4,26 +4,26 @@ description: 本檔連結的指南會說明如何在 Xamarin. Mac 應用程式�
 ms.prod: xamarin
 ms.assetid: 521707CD-79D3-488A-84CB-A37EBF93AC94
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/13/2017
-ms.openlocfilehash: 59ac5a4f9949f1e65e67b9629c43ddb4b822bf43
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c478437a9c84475e8c31484523db16336f8808e6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290053"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029925"
 ---
 # <a name="binding-mac-libraries-for-xamarinmac"></a>Xamarin. Mac 的系結 Mac 程式庫
 
 請遵循下列連結，以瞭解如何在 Xamarin 上系結目標 C 程式庫：
 
 - [**總覽**](~/cross-platform/macios/binding/overview.md)-
-  描述系結的運作方式。
-- 系結[**目標-C 程式庫**](~/cross-platform/macios/binding/objective-c-libraries.md)-
-  有關如何系結要在 Xamarin 專案中使用之目標 C 程式庫的指示。
+  說明系結的運作方式。
+- 系結[**目標-c 程式庫**](~/cross-platform/macios/binding/objective-c-libraries.md)-
+  如何系結目標 C 程式庫以在 Xamarin 專案中使用的指示。
 - [**類型定義參考指南**](~/cross-platform/macios/binding/binding-types-reference.md)-
-  描述系結作者可用來驅動系結產生進程的所有屬性。
+  描述系結作者用來驅動系結產生進程的所有屬性。
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 

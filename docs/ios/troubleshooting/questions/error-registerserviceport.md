@@ -4,29 +4,29 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 929A0080-B126-4744-BF88-A4A1EFBB6CC2
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: 815eb638b3e394dcfe4b60d716820c610b01f8a1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 07b7e47ac448fdb9a4297fe03e8f4ea16295fddd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769328"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031129"
 ---
 # <a name="ios-designer-error-with-registerserviceport"></a>含 RegisterServicePort 的 iOS 設計工具錯誤
 
 ## <a name="sample-error"></a>範例錯誤
-> System.AggregateException:---> SystemException 時發生一或多個錯誤：含 registerserviceport （MTHosting. 2a0b1，.com. PowerManagement. control）：傳回的核心：-308 （-308）：（ipc/svrmig.mig）伺服器壞掉
+> AggregateException：發生一或多個錯誤---> SystemException：含 registerserviceport （.com. MTHosting. 2a0b1，.com. PowerManagement. control）：傳回的核心：-308 （-308）：（ipc/svrmig.mig）伺服器壞掉
 
 ## <a name="explanation"></a>說明
-與`RegisterServicePort`上述錯誤訊息類似的錯誤，通常是電腦上的間諜軟體/惡意程式碼問題。 如需詳細資訊，請考慮關於[此錯誤報表的意見](https://bugzilla.xamarin.com/show_bug.cgi?id=21907#c4)，以及有關如何移除可能感染的[Apple 論壇討論](https://discussions.apple.com/thread/5596008)的連結。 
+`RegisterServicePort` 的錯誤和類似的錯誤訊息，通常是電腦上的間諜軟體/惡意程式碼所發生的問題。 如需詳細資訊，請考慮關於[此錯誤報表的意見](https://bugzilla.xamarin.com/show_bug.cgi?id=21907#c4)，以及有關如何移除可能感染的[Apple 論壇討論](https://discussions.apple.com/thread/5596008)的連結。 
 
-若要協助診斷問題，請開啟 macOS 應用程式**主控台**，並刪除 [**使用者診斷報告**] 區段[http://screencast.com/t/y9i3NKcuMy](http://screencast.com/t/y9i3NKcuMy)中的每個檔案。 然後啟動 Visual Studio for Mac，並嘗試使用設計工具。 如果在設計工具無法初始化之後，此區段中出現任何新的記錄檔，請儲存這些檔案供我們分析。  
+若要協助診斷問題，請開啟 macOS 應用程式**主控台**，並刪除 [**使用者診斷報告**] 區段中的每個檔案[https://screencast.com/t/y9i3NKcuMy](https://screencast.com/t/y9i3NKcuMy)。 然後啟動 Visual Studio for Mac，並嘗試使用設計工具。 如果在設計工具無法初始化之後，此區段中出現任何新的記錄檔，請儲存這些檔案供我們分析。  
 
 請注意，要檢查的最重要事項是此檔案： 
 > /usr/lib/libimckit.dylib
 
 無論上述結果為何，如果該檔案存在，電腦上就會出現前述的間諜軟體/惡意程式碼問題。  
 
-下列連結包含移除此間諜軟體/惡意程式碼的步驟：[http://www.thesafemac.com/arg-genieo/](http://www.thesafemac.com/arg-genieo/)  
+下列連結包含移除此間諜軟體/惡意程式碼的步驟： [https://www.thesafemac.com/arg-genieo/](https://www.thesafemac.com/arg-genieo/)  

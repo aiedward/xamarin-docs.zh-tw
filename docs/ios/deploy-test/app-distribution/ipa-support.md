@@ -4,15 +4,15 @@ description: 本文涵蓋如何使用臨機操作散發建立可用來部署應�
 ms.prod: xamarin
 ms.assetid: D253C2DB-852E-6FC6-C9FD-574730B8DB19
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b9982f9102166aa6892be0819615f329a65fffbb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756434"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030419"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支援
 
@@ -60,7 +60,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 開始建立跨平台解決方案的 IPA 之前，請確定您已將 iOS 專案選取為啟始專案：
 
-![](ipa-support-images/setasstartup.png "將 iOS 專案選取為啟始專案")
+![](ipa-support-images/setasstartup.png "Selected the iOS project as the startup project")
 
 ### <a name="build-your-archive"></a>建置封存
 
@@ -68,15 +68,15 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 1. 在 Visual Studio for Mac 中選取 [發行] | [裝置] 組態：  !
 
-    ![](ipa-support-images/buildxs01new.png "選取 [發行] | [裝置] 組態")
+    ![](ipa-support-images/buildxs01new.png "Select the Release | Device configuration")
 
 1. 從 [建置] 功能表選取 [Archive for Publishing] (封存以供發行)：
 
-    ![](ipa-support-images/buildxs02new.png "選取 [Archive for Publishing] (封存以供發行)")
+    ![](ipa-support-images/buildxs02new.png "Select Archive for Publishing")
 
 1. 建立封存後，[封存] 檢視會隨即顯示：
 
-    ![](ipa-support-images/buildxs03new.png "隨即顯示 [封存] 檢視")
+    ![](ipa-support-images/buildxs03new.png "The Archives view will be displayed")
 
 ### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
@@ -90,23 +90,23 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 1. 選取 [簽署並散發] 按鈕，如下所示：
 
-    ![](ipa-support-images/buildxs04new.png "選取 [簽署並散發]")
+    ![](ipa-support-images/buildxs04new.png "Select Sign and Distribute...")
 
-1. 如此將開啟發行精靈。 選取 [臨機操作] 或 [企業] \(內部作業\) 散發通道以建立套件：
+1. 這會開啟發佈精靈。 選取 [臨機操作] 或 [企業] \(內部作業\) 散發通道以建立套件：
 
-    ![](ipa-support-images/distribute01.png "選取臨機操作或企業內部作業散發")
+    ![](ipa-support-images/distribute01.png "Select the Ad-Hoc or Enterprise In-House distribution")
 
 1. 在 [佈建設定檔] 畫面上，選取您的簽署識別與對應的佈建設定檔，或重新簽署另一個身分識別：
 
-    ![](ipa-support-images/distribute02.png "選取簽署識別與對應的佈建設定檔")
+    ![](ipa-support-images/distribute02.png "Select the signing identity and corresponding provisioning profile")
 
 1. 請確認套件的詳細資料，然後按一下 [發行]：
 
-    ![](ipa-support-images/distribute03.png "確認套件詳細資料")
+    ![](ipa-support-images/distribute03.png "Verify the package details")
 
 1. 最後，將 IPA 儲存至您的電腦：
 
-    ![](ipa-support-images/distribute04.png "將 IPA 儲存到電腦")
+    ![](ipa-support-images/distribute04.png "Save the IPA to the computer")
 
 ### <a name="building-via-the-command-line-on-mac"></a>透過命令列建置 (在 Mac 上)
 
@@ -114,7 +114,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 1. 確定已選取 [專案選項] > [iOS IPA 選項] > [包含 iTunesArtwork 影像] 和已選取 [建置臨機操作/企業版套件 (IPA)]：
 
-    ![](ipa-support-images/imagexs04.png "已選取 [包含 iTunesArtwork 影像] 和 [建置臨機操作/企業版套件 (IPA)]")
+    ![](ipa-support-images/imagexs04.png "Include iTunesArtwork images and Build ad-hoc/enterprise package IPA is checked")
 
     您想要的話，可以改為以文字編輯器來編輯 **.csproj** 檔案，並針對要用來建置應用程式的組態，將兩個對應屬性手動加入至 `PropertyGroup`：
 
@@ -125,7 +125,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 1. 如果您要納入選擇性的 **iTunesMetadata.plist** 檔案，請按一下 [...] 按鈕，從清單中選取該檔案，然後按一下 [確定] 按鈕：
 
-     ![](ipa-support-images/imagexs03.png "從清單中選取 iTunesMetadata.plist")
+     ![](ipa-support-images/imagexs03.png "Select iTunesMetadata.plist from the list")
 
 1. 在命令列上直接呼叫 **msbuild** 並傳遞這個屬性：
 
@@ -139,29 +139,29 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 1. 在方案總管中，於 Xamarin.iOS 專案名稱上按一下滑鼠右鍵，然後選取 [屬性] 將其開啟進行編輯：
 
-    ![](ipa-support-images/imagevs01.png "選取 [屬性]")
+    ![](ipa-support-images/imagevs01.png "Select Properties")
 
 2. 選取 [iOS IPA 選項]，然後從 [組態] 下拉式清單中選取 [臨機操作]：
 
-    ![](ipa-support-images/imagevs02.png "從 [組態] 下拉式清單選取 [臨機操作]")
+    ![](ipa-support-images/imagevs02.png "Select Ad-Hoc from the Configuration dropdown list")
 
     > [!NOTE]
     > 較新的 Xamarin.iOS 專案可能無法使用臨機操作組態。 如果無法使用，請選取 [發行] 組態。
 
 3. 如果您要納入選擇性的 **iTunesMetadata.plist** 檔案，請按一下 [...] 按鈕，從清單中選取該檔案，然後按一下 [開啟] 按鈕：
 
-    ![](ipa-support-images/imagevs03.png "從清單中選取 iTunesMetadata.plist")
+    ![](ipa-support-images/imagevs03.png "Select iTunesMetadata.plist from the list")
 
 4. 您可以選擇性地指定 IPA 的 [套件名稱]，如未指定，則會使用和 Xamarin.iOS 專案相同的名稱。
 5. 將您的變更儲存至專案屬性。
 6. 如果可用的話，從 [組建組態] 下拉式清單中選取 [臨機操作]。 否則，請選取 [發行]：
 
-    ![](ipa-support-images/imagevs05.png "從 [組建組態] 下拉式清單中選取 [臨機操作]")
+    ![](ipa-support-images/imagevs05.png "Select Ad Hoc from the Build Configuration dropdown")
 
-7. 建置專案以建立 IPA 套件。
+7. 建置專案來建立 IPA 套件。
 8. IPA 會建置在 **Bin > iOS 裝置 > 臨機操作 (或發行)** 資料夾中：
 
-    ![](ipa-support-images/imagevs06.png "[檔案總管] 中的 IPA")
+    ![](ipa-support-images/imagevs06.png "The IPA in the file explorer")
 
 -----
 
@@ -231,11 +231,11 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
- ![](ipa-support-images/installxs01.png "新的 iOS 應用程式在 [我的應用程式] 區段中")
+ ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
- ![](ipa-support-images/installvs01.png "新的 iOS 應用程式在 [我的應用程式] 區段中")
+ ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
 
 -----
 

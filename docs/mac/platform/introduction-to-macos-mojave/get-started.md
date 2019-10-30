@@ -4,15 +4,15 @@ description: 本檔說明如何使用 Xamarin 建立 macOS Mojave 應用程式�
 ms.prod: xamarin
 ms.assetid: E9A7B68A-E164-4C5C-86AC-B2A3E7A30DA1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 64c1ca0bfee5b98b7842bdc44a46bc40cf2012fc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a7aba55f0470ad44dcce3de56ed15308439785e2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285470"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029845"
 ---
 # <a name="get-started-with-macos-mojave"></a>開始使用 macOS Mojave
 
@@ -26,7 +26,7 @@ ms.locfileid: "70285470"
 
 3. **更新 Visual Studio for Mac** –使用最新穩定版本的 Visual Studio for Mac，以及[Xamarin. Mac 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md)或更新版本。
 
-4. _（選擇性）_ **在您的 Mac 上安裝 MacOS Mojave** –
+4. _（選擇性）_ **在 Mac 上安裝 macOS Mojave** –
 
    > [!TIP]
    > 即使您的應用程式未使用任何新的 macOS Mojave Api，仍請務必使用 macOS Mojave SDK 來建立它，並加以測試，以確保所有專案都能如預期般運作。 如果應用程式未呼叫任何新的 Api，您可以使用 macOS Mojave SDK 進行重新編譯，並測試它，而不需要升級 Mac 的作業系統。

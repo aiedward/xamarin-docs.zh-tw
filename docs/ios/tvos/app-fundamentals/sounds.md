@@ -4,23 +4,23 @@ description: 本文說明如何使用 helper 類別來控制使用 Avaudioplayer
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 57892689eeb5eef9747e19fa167b8598569f3cd1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4dddde8d4408df6a9b9d73c0a3efff62f563591a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769212"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030769"
 ---
 # <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>在 Xamarin 中使用 Avaudioplayer 播放音效在 tvOS 中播放音效
 
 ## <a name="about-the-avaudioplayer"></a>關於 Avaudioplayer 播放音效
 
-`AVAudioPlayer`是用來播放記憶體或檔案中的音訊資料。 Apple 建議在您的應用程式中使用此類別來播放音訊，除非您正在進行網路串流處理，或需要低延遲音訊 i/o。
+`AVAudioPlayer` 可用來播放記憶體或檔案中的音訊資料。 Apple 建議在您的應用程式中使用此類別來播放音訊，除非您正在進行網路串流處理，或需要低延遲音訊 i/o。
 
-您可以使用`AVAudioPlayer`來執行下列動作：
+您可以使用 `AVAudioPlayer` 來執行下列動作：
 
 - 使用選擇性的迴圈播放任何持續時間的聲音。
 - 使用選擇性的同步處理，同時播放多個聲音。
@@ -28,7 +28,7 @@ ms.locfileid: "70769212"
 - 支援的功能，例如向前快轉或倒轉。
 - 取得播放層級計量資料。
 
-`AVAudioPlayer`支援 iOS、tvOS 和 OS X 所提供的任何音訊格式音效，例如`.aif`、 `.wav`或`.mp3`。
+`AVAudioPlayer` 支援 iOS、tvOS 和 OS X 所提供的任何音訊格式音效，例如 `.aif`、`.wav` 或 `.mp3`。
 
 ## <a name="playing-sounds-in-tvos"></a>在 tvOS 中播放聲音
 

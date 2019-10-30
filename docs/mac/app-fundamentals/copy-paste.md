@@ -4,15 +4,15 @@ description: 本文說明如何使用貼夾，以在 Xamarin. Mac 應用程式�
 ms.prod: xamarin
 ms.assetid: 7E9C99FB-B7B4-4C48-B20F-84CB48543083
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: cf6835b99ea70c3922dd68bc21af3e44815cc92e
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 446006b89b82a1f5070a45d7e296e0563d74dbe4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769930"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032629"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>在 Xamarin. Mac 中複製並貼上
 
@@ -643,7 +643,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ### <a name="what-is-a-pasteboard"></a>什麼是粘貼板？
 
-@No__t_0 類別提供標準化的機制，可在應用程式之間或在指定的應用程式中交換資訊。 剪貼夾的主要功能是用來處理複製和貼上作業：
+`NSPasteboard` 類別提供標準化的機制，可在應用程式之間或在指定的應用程式中交換資訊。 剪貼夾的主要功能是用來處理複製和貼上作業：
 
 1. 當使用者選取應用程式中的專案，並使用 [**剪**下] 或 [**複製**] 功能表項目時，會將所選項目的一個或多個表示放在剪貼簿上。
 2. 當使用者使用 [貼上] 功能表項目（在同一個應用程式內或不同的專案）時，它可以處理的資料版本會從**剪貼**板複製並新增至應用程式。
@@ -1133,7 +1133,7 @@ if (ok) {
 
 有時候，您可能需要將自訂專案寫入不一定要建立自訂類別的檔，或者您想要以通用格式提供資料，只需視需要。 在這些情況下，您可以使用 `NSPasteboardItem`。
 
-@No__t_0 可讓您更精細地控制寫入到「夾」的資料，並專為暫時存取而設計-在將其寫入至「夾」之後，應該將其處置。
+`NSPasteboardItem` 可讓您更精細地控制寫入到「夾」的資料，並專為暫時存取而設計-在將其寫入至「夾」之後，應該將其處置。
 
 #### <a name="writing-data"></a>寫入資料
 

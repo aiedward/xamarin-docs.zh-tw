@@ -4,15 +4,15 @@ description: 本逐步解說說明如何使用 Xamarin Android 專案範本來�
 ms.prod: xamarin
 ms.assetid: CEE90F8A-164B-4155-813A-7537A665A7E7
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 78b70ce70292e589aee4a1dbe56f3765552ece7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2ac402bf423c9f3fe136d1ba31622d915d2e2eef
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757723"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027731"
 ---
 # <a name="binding-an-eclipse-library-project"></a>繫結 Eclipse 程式庫專案
 
@@ -29,7 +29,7 @@ Android 程式庫專案與一般的 Android 專案不同之處是，它們不會
 
 若要在 Xamarin. Android JAVA 系結專案中使用 Android 程式庫專案，首先必須在 Eclipse 中建立 Android 程式庫專案。 下列螢幕擷取畫面顯示編譯之後一個 Android 程式庫專案的範例： 
 
-[![Eclipse 中的範例程式庫專案](binding-a-library-project-images/build-lib-in-eclipse.png)](binding-a-library-project-images/build-lib-in-eclipse.png#lightbox)
+[Eclipse 中的![範例程式庫專案](binding-a-library-project-images/build-lib-in-eclipse.png)](binding-a-library-project-images/build-lib-in-eclipse.png#lightbox)
 
 請注意，來自 Android 程式庫專案的原始程式碼已編譯為暫存。名為**android-mapviewballoons**的 jar 檔案，而且資源已經複製到**bin/res/借助電腦**資料夾。 
 
@@ -39,13 +39,13 @@ Android 程式庫專案與一般的 Android 專案不同之處是，它們不會
 
 該表.然後，ZIP 檔案會新增至 Xamarin. Android JAVA 系結專案，如下列螢幕擷取畫面所示：
 
-[![新增至 JAVA 系結專案的 Zip](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
+[已將![Zip 新增至 JAVA 系結專案](binding-a-library-project-images/zip-in-binding-project.png)](binding-a-library-project-images/zip-in-binding-project.png#lightbox)
 
 請注意，的 [建立] 動作。ZIP 檔案已自動設定為**LibraryProjectZip**。
 
 （如果有的話）。Android 程式庫專案所需的 JAR 檔案，應新增至 JAVA 系結程式庫專案的 [ **jar** ] 資料夾，並將 [**組建] 動作**設定為 [ **ReferenceJar**]。 您可以在下列螢幕擷取畫面中看到這種情況的範例： 
 
-[![將組建動作設定為 ReferenceJar](binding-a-library-project-images/set-to-referencejar.png)](binding-a-library-project-images/set-to-referencejar.png#lightbox)
+[![組建動作設定為 ReferenceJar](binding-a-library-project-images/set-to-referencejar.png)](binding-a-library-project-images/set-to-referencejar.png#lightbox)
 
 完成這些步驟之後，就可以使用如本檔稍早所述的 Xamarin JAVA 系結專案。
 

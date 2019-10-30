@@ -3,21 +3,21 @@ title: 搭配 Xamarin 使用小組城市
 description: 本指南將討論使用 TeamCity 來編譯行動應用程式，然後將其提交至 Xamarin Test Cloud 的相關步驟。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: ee1ef1ecda18ee9817fcf10b7dda0c7b4489bf9f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 5a16ec338d5929a217ee2e4a622bdce4da617e86
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72273123"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029794"
 ---
 # <a name="using-team-city-with-xamarin"></a>搭配 Xamarin 使用小組城市
 
 _本指南將討論使用 TeamCity 來編譯行動應用程式，然後將其提交至 Xamarin Test Cloud 的相關步驟。_
 
-如[持續整合簡介](~/tools/ci/intro-to-ci.md)指南中所述，持續整合（CI）是開發高品質行動應用程式時的實用做法。 持續整合伺服器軟體有許多可行的選項;本指南將著重于從 JetBrains [TeamCity](http://www.jetbrains.com/teamcity/) 。
+如[持續整合簡介](~/tools/ci/intro-to-ci.md)指南中所述，持續整合（CI）是開發高品質行動應用程式時的實用做法。 持續整合伺服器軟體有許多可行的選項;本指南將著重于從 JetBrains [TeamCity](https://www.jetbrains.com/teamcity/) 。
 
 TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
 
@@ -31,7 +31,7 @@ TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
 
 設定 TeamCity 有幾個步驟：
 
-- **安裝 TeamCity** –本指南未涵蓋 TeamCity 的安裝。 本指南假設 TeamCity 已安裝並在使用者帳戶下執行。 如需[安裝 TeamCity](http://confluence.jetbrains.com/display/TCD8/Installation)的指示，請參閱 JetBrains 的[TeamCity 8 檔](http://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation)。
+- **安裝 TeamCity** –本指南未涵蓋 TeamCity 的安裝。 本指南假設 TeamCity 已安裝並在使用者帳戶下執行。 如需[安裝 TeamCity](https://confluence.jetbrains.com/display/TCD8/Installation)的指示，請參閱 JetBrains 的[TeamCity 8 檔](https://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation)。
 
 - **準備組建伺服器**–此步驟牽涉到安裝建立行動應用程式所需的必要軟體、工具和憑證，並準備好散發。
 
@@ -85,7 +85,7 @@ TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
 
 - [**psake**](https://github.com/psake/psake) –這是用來建立軟體的 Windows Powershell 程式庫
 
-- [**假**](http://fsharp.github.io/FAKE/)–這是以 DSL 為基礎F#的，可讓您在必要時利用現有的 .net 程式庫。
+- [**假**](https://fsharp.github.io/FAKE/)–這是以 DSL 為基礎F#的，可讓您在必要時利用現有的 .net 程式庫。
 
 所使用的指令碼語言取決於您的喜好設定和需求。 [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)範例包含使用 Rake 做為[組建腳本](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)的範例。
 
@@ -211,4 +211,4 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 - [準備 Xamarin Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
 - [準備 Xamarin iOS 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
-- [安裝和設定 TeamCity](http://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)
+- [安裝和設定 TeamCity](https://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

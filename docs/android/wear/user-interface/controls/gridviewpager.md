@@ -3,15 +3,15 @@ title: GridViewPager
 ms.prod: xamarin
 ms.assetid: A1CDD5F0-049B-4DFA-A268-8A875D26A675
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: ff054b1bd9607dd0dade874453a6ddf99ea4fd77
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 77c5eb65601e5bfdac2cbaad2e196a8ae2813981
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758214"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030313"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
@@ -35,7 +35,7 @@ ms.locfileid: "70758214"
 （或子類別，例如[`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
 提供要在使用者流覽時顯示的視圖。
 
-[範例介面卡](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)顯示如何執行必要的方法，包括、 `RowCount` `GetColumnCount`、 `GetBackground`和的覆寫`GetFragment`
+[範例介面卡](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)會顯示如何執行必要的方法，包括覆寫 `RowCount`、`GetColumnCount`、`GetBackground`和 `GetFragment`
 
 連接介面卡，如下所示：
 

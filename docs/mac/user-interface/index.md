@@ -4,15 +4,15 @@ description: 本檔連結的指南會描述 Xamarin. Mac 開發人員可使用�
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: f1168378104fd40fa7de78297f1f683d0caa0afa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7f5303cd63c6ff1433b56b3f47b67d3925b1d1e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283113"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032785"
 ---
 # <a name="macos-user-interface-controls-in-xamarinmac"></a>在 Xamarin. Mac 中 macOS 使用者介面控制項
 
@@ -22,7 +22,7 @@ _本文會連結描述各種 macOS UI 控制項的指南。_
 
 下列指南提供有關在 Xamarin. Mac 應用程式中使用 macOS UI 元素的詳細資訊。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。每篇文章。
 
-您可能想要查看[Xamarin. Mac 內部](~/mac/internals/how-it-works.md)檔`Register`的將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c)一節，因為它會說明用來連接您C#的類別`Export`的和屬性。目標-C 物件和 UI 元素。
+您可能會想要查看[Xamarin. Mac 內部](~/mac/internals/how-it-works.md)檔的將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c)一節，因為它會說明用來將C#類別連線到的`Register`和`Export`屬性。目標-C 物件和 UI 元素。
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 
@@ -36,7 +36,7 @@ _本文會連結描述各種 macOS UI 控制項的指南。_
 
 本文說明如何在 Xamarin. Mac 應用程式中使用警示。 其中包含從C#程式碼建立和顯示警示，以及回應警示。
 
-## <a name="menusmacuser-interfacemenumd"></a>[功能表](~/mac/user-interface/menu.md)
+## <a name="menusmacuser-interfacemenumd"></a>[Menus](~/mac/user-interface/menu.md)
 
 功能表用於 Mac 應用程式使用者介面的各個部分;從畫面頂端的應用程式主功能表，到可顯示在視窗任何位置的快顯功能表。 功能表是 Mac 應用程式使用者體驗不可或缺的一部分。 本文說明如何在 Xamarin. Mac 應用程式中使用 Cocoa 功能表。
 
@@ -66,7 +66,7 @@ _本文會連結描述各種 macOS UI 控制項的指南。_
 
 ## <a name="creating-custom-controlsmacuser-interfacecustom-controlsmd"></a>[建立自訂控制項](~/mac/user-interface/custom-controls.md)
 
-本文說明如何建立自訂使用者介面控制項（藉由`NSControl`繼承）、繪製控制項的自訂介面，以及建立可與 Xcode 的 Interface Builder 搭配使用的自訂動作。
+本文說明如何建立自訂使用者介面控制項（藉由繼承 `NSControl`）、繪製控制項的自訂介面，以及建立可與 Xcode 的 Interface Builder 搭配使用的自訂動作。
 
 ## <a name="mac-samples-gallery"></a>Mac 範例庫
 

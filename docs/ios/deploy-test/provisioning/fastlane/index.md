@@ -4,15 +4,15 @@ description: 本指南介紹可用來對 iOS 應用程式進行程式碼簽署�
 ms.prod: xamarin
 ms.assetid: 8202C57D-22FF-4224-A5B1-AAEF12B7C106
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: c26d912a4684f6ddbee46ae953ce5cf1a3db67bd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0af85c1c27d2b329d81cc680a0fc4c075d4a86dd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762726"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028597"
 ---
 # <a name="introduction-to-fastlane-for-ios"></a>適用於 iOS 的 fastline 簡介
 
@@ -50,13 +50,13 @@ fastlane 有各種不同使用方式：透過終端機命令、透過檔案型�
 3. 將檔案解壓縮來安裝 fastlane，然後按兩下 `install` 可執行檔。 如果您收到通知您檔案「無法開啟，因為它來自無法識別的開發者」的錯誤，請按 [確定] 並執行下列動作：
     - 按住 Control 鍵再按一下 `install` 可執行檔。 這會顯示以下的對話方塊：
 
-     ![](images/fastlane-image12.png "安裝對話方塊")
+     ![](images/fastlane-image12.png "The install dialog")
 
     - 按 [確定] 以開始安裝 fastlane 工具
 
 4. 終端機將會提是您以下所示的對話方塊。 按 `y`：
 
-   ![](images/fastlane-image13.png "終端機提示")
+   ![](images/fastlane-image13.png "The Terminal prompt")
 
 5. 第一次使用 fastlane 之前，先執行 `which fastlane`。 路徑看起來應該如下所示： 
 
@@ -66,7 +66,7 @@ fastlane 有各種不同使用方式：透過終端機命令、透過檔案型�
 
 6. 如果路徑與上述相同，表示您已經做好開始的準備。
 
-     如果沒有，請執行下列動作：在 macOS 上，使用下列命令來開啟 `.bash_profile`，這是主目錄中的隱藏純文字檔：
+     如果不同，請執行下列動作：在 macOS 上，使用下列命令來開啟 `.bash_profile`，這是主目錄中的隱藏純文字檔：
 
     ```bash
     open ~/.bash_profile
@@ -84,11 +84,11 @@ fastlane 有各種不同使用方式：透過終端機命令、透過檔案型�
 
 fastlane 是一個定期推出新版本、非常活躍的開放原始碼專案。 如果有新版 fastlane 可供使用，在您執行任何 fastlane 命令時，就會收到通知：
 
-[![](images/fastlane-image0.png "fastlane 更新提示")](images/fastlane-image0.png#lightbox)
+[![](images/fastlane-image0.png "The fast lane update prompt")](images/fastlane-image0.png#lightbox)
 
 若要更新至新版 fastlane，請從[這裡](https://download.fastlane.tools)下載最新的套件，然後按兩下安裝套件來執行它：
 
-[![](images/fastlane-image0a.png "執行安裝套件")](images/fastlane-image0a.png#lightbox)
+[![](images/fastlane-image0a.png "Running the install package")](images/fastlane-image0a.png#lightbox)
 
 ## <a name="contents"></a>內容
 
@@ -106,7 +106,7 @@ cert 和 sigh 可用來在本機電腦上建立和管理簽署憑證與部署設
 
 若要為 Xamarin.iOS 應用程式設定程式碼簽署選項，請在專案名稱上按一下滑鼠右鍵，選取 [專案選項] > [建置] > [iOS 套件組合簽署]，然後明確設定 [簽署身分識別] 和 [佈建設定檔]，如下所示：
 
-[![](images/fastlane-image11.png "明確設定 [簽署身分識別] 和 [佈建設定檔]")](images/fastlane-image11.png#lightbox)
+[![](images/fastlane-image11.png "Set the Signing Identity and Provisioning Profile explicitly")](images/fastlane-image11.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

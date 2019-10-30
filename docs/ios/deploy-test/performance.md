@@ -4,15 +4,15 @@ description: 本文件說明在 Xamarin.iOS 應用程式中用來改善效能和
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/29/2016
-ms.openlocfilehash: b41916a65e091fb7d5198a6f06a5e91aa9d6bb81
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bfa8c2cdcdcd6305618c0cd8e9cb69bde59b4f0b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292345"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030196"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
 
@@ -211,11 +211,11 @@ class MyChild : UIView
 ```
 
 如需有關釋放強式參考的詳細資訊，請參閱[釋放 IDisposable 資源](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)。
-此部落格文章中也有精彩的討論：[Xamarin.iOS - 記憶體回收行程與我](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me) \(英文\)。
+此部落格文章中也有很棒的探討：[Xamarin.iOS、記憶體回收行程與我](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me) \(英文\)。
 
 ### <a name="more-information"></a>詳細資訊
 
-如需詳細資訊，請參閱 Cocoa With Love 上的[避免保留循環的規則](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) \(英文\)、StackOverflow 上的[這是 MonoTouch GC 中的錯誤嗎](https://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) \(英文\)，以及 StackOverflow 上的[為什麼 MonoTouch GC 無法終止 refcount > 1 的受控物件？](https://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) \(英文\)。
+如需詳細資訊，請參閱 Cocoa With Love 上的[避免保留循環的規則](https://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) \(英文\)、StackOverflow 上的[這是 MonoTouch GC 中的錯誤嗎](https://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) \(英文\)，以及 StackOverflow 上的[為什麼 MonoTouch GC 無法終止 refcount > 1 的受控物件？](https://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) \(英文\)。
 
 ## <a name="optimize-table-views"></a>最佳化資料表檢視
 
@@ -290,7 +290,7 @@ class MyTableSource : UITableViewSource
 
 ## <a name="summary"></a>總結
 
-本文章會說明與討論用來增加以 Xamarin.iOS 建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+本文章會說明與討論用來增加以 Xamarin.iOS 建置之應用程式效能的技巧。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
 
 ## <a name="related-links"></a>相關連結
 

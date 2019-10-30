@@ -4,15 +4,15 @@ description: 本文涵蓋 iOS 7 中引進的主要新 Api，包括視圖控制�
 ms.prod: xamarin
 ms.assetid: 2C33018F-D64A-4BAA-A34E-082EF311D162
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d3a3c28e30e38562035b4d0c7c05366865157dd5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b405643096699e1d965f485bdc590afa178881d6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70752066"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031827"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 簡介
 
@@ -53,7 +53,7 @@ void AnimateWithSpring ()
 
 ### <a name="keyframe-animations"></a>主要畫面格動畫
 
-@No__t_0 類別現在包含 `AnimateWithKeyframes` 方法，可在 `UIView` 上建立主要畫面格動畫。 這個方法類似于其他 `UIView` 動畫方法，不同之處在于會以參數的形式傳遞額外的 `NSAction` 以包含主要畫面格。 在 `NSAction` 中，會藉由呼叫 `UIView.AddKeyframeWithRelativeStartTime` 來新增主要畫面格。
+`UIView` 類別現在包含 `AnimateWithKeyframes` 方法，可在 `UIView`上建立主要畫面格動畫。 這個方法類似于其他 `UIView` 動畫方法，不同之處在于會以參數的形式傳遞額外的 `NSAction` 以包含主要畫面格。 在 `NSAction` 中，會藉由呼叫 `UIView.AddKeyframeWithRelativeStartTime` 來新增主要畫面格。
 
 例如，下列程式碼片段會建立主要畫面格動畫，以動畫顯示視圖的中心，以及旋轉視圖：
 
@@ -82,7 +82,7 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-@No__t_0 方法的前兩個參數分別指定主要畫面格的開始時間和持續時間，以整體動畫長度的百分比表示。 上述範例會導致影像視圖在第一秒以動畫方式繪製到其新中心，然後在下一秒旋轉90度。 因為動畫會將 `UIViewKeyframeAnimationOptions.Autoreverse` 指定為選項，所以這兩個主要畫面也會反向動畫。 最後，最後的值會設定為完成處理常式中的初始狀態。
+`AddKeyframeWithRelativeStartTime` 方法的前兩個參數分別指定主要畫面格的開始時間和持續時間，以整體動畫長度的百分比表示。 上述範例會導致影像視圖在第一秒以動畫方式繪製到其新中心，然後在下一秒旋轉90度。 因為動畫會將 `UIViewKeyframeAnimationOptions.Autoreverse` 指定為選項，所以這兩個主要畫面也會反向動畫。 最後，最後的值會設定為完成處理常式中的初始狀態。
 
 下列螢幕擷取畫面說明透過主要畫面格結合的動畫：
 
@@ -135,7 +135,7 @@ View.AddSubview (imageView);
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-@No__t_0 會採用參考 `UIView` 或 `UICollectionViewLayout` 的實例，其中包含將根據附加行為動畫的專案。
+`UIDynamicAnimator` 會採用參考 `UIView` 或 `UICollectionViewLayout`的實例，其中包含將根據附加行為動畫的專案。
 
 接下來，建立 `UIGravityBehavior` 實例。 您可以傳遞一個或多個執行 `IUIDynamicItem` 的物件，例如 `UIView`：
 
@@ -187,7 +187,7 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-@No__t_0 具有稱為 `TranslatesReferenceBoundsIntoBoundry` 的屬性。 將此設定為 `true` 會導致參考視圖的界限當做衝突界限使用。
+`UICollisionBehavior` 具有稱為 `TranslatesReferenceBoundsIntoBoundry`的屬性。 將此設定為 `true` 會導致參考視圖的界限當做衝突界限使用。
 
 現在，當影像以引力向下動畫時，它會稍微偏離畫面底部，然後才會進行其他工作。
 

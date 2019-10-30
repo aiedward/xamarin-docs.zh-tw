@@ -4,15 +4,15 @@ description: 本文說明如何在以 Xamarin 撰寫的 tvOS 應用程式中使�
 ms.prod: xamarin
 ms.assetid: BDB9894A-236B-424B-9032-ACD12A6C5720
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 71a74d8f9046cd978a40b03da1921cd1fac9405f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4255891174b639022a45c45c22e0022cd0403f26
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769185"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030586"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>在 Xamarin 中 Siri 遠端和藍牙控制器以進行 tvOS
 
@@ -20,7 +20,7 @@ TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在�
 
 如果您的應用程式是遊戲，您可以選擇性地建立協力廠商的支援，也就是您應用程式中的 iOS （MFI）[藍牙遊戲控制器](#Bluetooth-Game-Controllers)。
 
-[![](remote-bluetooth-images/intro01.png "Bluetooth 遠端和遊戲控制器")](remote-bluetooth-images/intro01.png#lightbox)
+[![](remote-bluetooth-images/intro01.png "The Bluetooth Remote and Game Controller")](remote-bluetooth-images/intro01.png#lightbox)
 
 本文說明[Siri 遠端](#The-Siri-Remote)、[觸控表面手勢](#Touch-Surface-Gestures)和[Siri 遠端按鈕](#Siri-Remote-Buttons)，並示範如何透過[手勢和](#Gestures-and-Storyboards)分鏡腳本、[手勢和程式碼](#Gestures-and-Code)，以及[低層級的事件處理](#Low-Level-Event-Handling)來使用它們。 最後，它會討論如何在 tvOS 應用程式中使用[遊戲控制器](#Working-with-Game-Controllers)。
 
@@ -32,11 +32,11 @@ TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在�
 
 您的 tvOS 應用程式開發人員所面臨的挑戰，就是建立快速、容易使用且視覺上吸引人的使用者介面，利用 Siri 遠端的觸控表面、加速計、陀螺儀和按鈕。
 
-[![](remote-bluetooth-images/remote01.png "Siri 遠端")](remote-bluetooth-images/remote01.png#lightbox)
+[![](remote-bluetooth-images/remote01.png "The Siri Remote")](remote-bluetooth-images/remote01.png#lightbox)
 
 在您的 tvOS 應用程式中，Siri 遠端具有下列功能和預期的使用方式：
 
-|功能|一般應用程式使用方式|遊戲應用程式使用方式|
+|特殊功能|一般應用程式使用方式|遊戲應用程式使用方式|
 |---|---|---|
 |**觸控介面**<br />滑動以導覽，並按下以選取並保存內容功能表。|**點擊/滑動**<br />可設定焦點的專案之間的 UI 導覽。<br /><br />**然後**<br />啟用選取的（聚焦）專案。|**點擊/滑動**<br />取決於遊戲設計，並可在邊緣上點擊以作為 D 板。<br /><br />**然後**<br />執行主要按鈕功能。|
 |**Menu**<br />按以返回上一個畫面或功能表。|回到上一個畫面，並從主要應用程式畫面結束至 Apple TV 首頁畫面。|暫停並繼續遊戲，返回上一個畫面，並從主要應用程式畫面結束至 Apple TV 首頁畫面。|
@@ -69,7 +69,7 @@ Apple 提供下列使用觸控介面手勢的建議：
 
 除了觸控介面上的手勢外，您的應用程式也可以回應使用者按一下觸控介面或按下 [播放/暫停] 按鈕。 如果您使用遊戲控制器架構來存取 Siri 遠端，您也可以偵測到按下的功能表按鈕。
 
-此外，您可以使用筆勢辨識器搭配標準`UIKit`元素來偵測按下的功能表按鈕。 如果您攔截到按下的功能表按鈕，將會負責關閉目前的 View 和 View Controller，並返回上一個控制器。
+此外，您還可以使用具有標準 `UIKit` 元素的手勢辨識器來偵測按下的功能表按鈕。 如果您攔截到按下的功能表按鈕，將會負責關閉目前的 View 和 View Controller，並返回上一個控制器。
 
 > [!IMPORTANT]
 > 您應該**一律**將函數指派給遠端的 [播放/暫停] 按鈕。 具有 [非功能性] 按鈕可讓您的應用程式看起來與終端使用者中斷。 如果您沒有此按鈕的有效函式，請指派與主要按鈕相同的功能（觸控介面按一下）。
@@ -82,20 +82,20 @@ Apple 提供下列使用觸控介面手勢的建議：
 
 若要新增手勢辨識器，請執行下列動作：
 
-1. 在 **方案總管**中，按兩下`Main.storyboard`檔案，然後開啟檔案以編輯介面設計工具。
+1. 在 **方案總管**中，按兩下 `Main.storyboard` 檔案，然後開啟該檔案以編輯介面設計工具。
 2. 從連結**庫**拖曳點一下**手勢辨識器**，並將它放置在 View 上：
 
-    [![](remote-bluetooth-images/storyboard01.png "攻點手勢辨識器")](remote-bluetooth-images/storyboard01.png#lightbox)
+    [![](remote-bluetooth-images/storyboard01.png "A Tap Gesture Recognizer")](remote-bluetooth-images/storyboard01.png#lightbox)
 3. 勾選 [**屬性偵測器**] 的 [**按鈕**] 區段中的 [**選取**]：
 
-    [![](remote-bluetooth-images/storyboard02.png "核取 [選取]")](remote-bluetooth-images/storyboard02.png#lightbox)
-4. **選取**表示手勢會回應使用者按一下 Siri 遙控器上的**觸控介面**。 您也可以選擇回應 **功能表**， **矔菛/縸** ， **向上** ， **向下** ， **左** 和 **右** 按鈕。
-5. 接下來，從點按手勢辨識**器**連線到**動作**，並`TouchSurfaceClicked`加以呼叫：
+    [![](remote-bluetooth-images/storyboard02.png "Check Select")](remote-bluetooth-images/storyboard02.png#lightbox)
+4. **選取**表示手勢會回應使用者按一下 Siri 遙控器上的**觸控介面**。 您也可以選擇回應**功能表**、[**播放/暫停**]、[**向上**]、[**向下**]、[**左**] 和 [**右**] 按鈕。
+5. 接下來，從點按手勢辨識**器**連線到**動作**，並將其呼叫 `TouchSurfaceClicked`：
 
-    [![](remote-bluetooth-images/storyboard03.png "來自點手勢辨識器的動作")](remote-bluetooth-images/storyboard03.png#lightbox)
+    [![](remote-bluetooth-images/storyboard03.png "An Action from the Tap Gesture Recognizer")](remote-bluetooth-images/storyboard03.png#lightbox)
 6. 儲存您的變更，並返回 Visual Studio for Mac。
 
-編輯您的 View Controller （ `FirstViewController.cs`範例）檔案，並新增下列程式碼來處理所觸發的手勢：
+編輯您的 View Controller （範例 `FirstViewController.cs`）檔案，並新增下列程式碼來處理所觸發的手勢：
 
 ```csharp
 using System;
@@ -186,13 +186,13 @@ namespace tvRemote
 
 ## <a name="low-level-event-handling"></a>低層級事件處理
 
-如果您要在 tvOS 應用程式`UIKit`中建立以為基礎的自訂類型（例如`UIView`），您也可以透過`UIPress`事件提供低層級的按鈕處理功能。
+如果您要根據 tvOS 應用程式中的 `UIKit` 來建立自訂類型（例如 `UIView`），您也可以透過 `UIPress` 事件來提供按鈕按的低層級處理。
 
-事件是 tvOS iOS 的`UITouch`事件，但`UIPress`會傳回 Siri 遠端或其他連接的藍牙裝置（例如遊戲控制器）上按下按鈕的相關資訊。 `UIPress` `UIPress`事件會描述所按下的按鈕及其狀態（開始、取消、變更或結束）。
+`UIPress` 事件是要 tvOS `UITouch` 事件與 iOS 的內容，但 `UIPress` 會傳回 Siri 遠端或其他連接的藍牙裝置（例如遊戲控制器）上按下按鈕的相關資訊。 `UIPress` 事件會描述所按下的按鈕及其狀態（開始、取消、變更或結束）。
 
-針對藍牙遊戲控制器等裝置上的類比按鈕`UIPress` ，也會傳回套用至按鈕的強制數量。 `UIPress`事件的屬性會定義哪些實體按鈕已變更狀態，而其餘屬性則描述所發生的變更。 `Type`
+針對藍牙遊戲控制器等裝置上的類比按鈕，`UIPress` 也會傳回套用至按鈕的強制數量。 `UIPress` 事件的 `Type` 屬性會定義哪些實體按鈕已變更狀態，而其餘屬性則描述發生的變更。
 
-下列程式碼顯示處理的低層級`UIPress`事件`UIView`的範例：
+下列程式碼顯示處理 `UIView`的低層級 `UIPress` 事件的範例：
 
 ```csharp
 using System;
@@ -263,7 +263,7 @@ namespace tvRemote
 }
 ```
 
-就像`UIPress`事件一樣，如果您需要執行任何事件覆寫，就應該全部執行四個。 `UITouch`
+就像 `UITouch` 事件一樣，如果您需要執行任何 `UIPress` 的事件覆寫，就應該全部執行四個。
 
 <a name="Bluetooth-Game-Controllers" />
 
@@ -271,7 +271,7 @@ namespace tvRemote
 
 除了隨附于 Apple TV、協力廠商、iOS （MFI）藍牙遊戲控制器的標準 Siri 遠端之外，也可以與 Apple TV 配對，並用來控制您的 tvOS 應用程式。
 
-[![](remote-bluetooth-images/game01.png "藍牙遊戲控制器")](remote-bluetooth-images/game01.png#lightbox)
+[![](remote-bluetooth-images/game01.png "Bluetooth Game Controllers")](remote-bluetooth-images/game01.png#lightbox)
 
 遊戲控制器可以用來增強遊戲，並在遊戲中提供深度的意義。 它們也可以用來控制標準 Apple TV 介面，因此使用時不需要在遠端和控制器之間切換。
 
@@ -280,7 +280,7 @@ namespace tvRemote
 
 遊戲控制器在您的 tvOS 應用程式中具有下列功能和預期的使用方式：
 
-|功能|一般應用程式使用方式|遊戲應用程式使用方式|
+|特殊功能|一般應用程式使用方式|遊戲應用程式使用方式|
 |---|---|---|
 |**D-Pad**|流覽 UI 元素（變更焦點）。|視遊戲而定。|
 |**A**|啟用選取的（聚焦）專案。|執行主要按鈕功能並確認對話方塊動作。|
@@ -309,8 +309,8 @@ Apple 提供下列使用遊戲控制器的建議：
 
 如果您的應用程式需要低層級的控制器輸入，您可以使用 Apple 的[遊戲控制器架構](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013276)，其具有 tvOS 的下列修改：
 
-- 已新增微遊戲控制器配置`GCMicroGamepad`檔（）以 Siri 遠端為目標。
-- 新`GCEventViewController`的類別可以用來透過應用程式路由傳送遊戲控制器事件。 如需詳細資訊，請參閱下面的[判斷遊戲控制器輸入](#determining-game-controller-input)一節。
+- 已新增微遊戲控制器設定檔（`GCMicroGamepad`）以 Siri 遠端為目標。
+- 新的 `GCEventViewController` 類別可以用來透過應用程式路由傳送遊戲控制器事件。 如需詳細資訊，請參閱下面的[判斷遊戲控制器輸入](#determining-game-controller-input)一節。
 
 <a name="Game-Controller-Support-Requirements" />
 
@@ -327,9 +327,9 @@ Apple 提供下列使用遊戲控制器的建議：
 
 ### <a name="enabling-game-controller-support"></a>啟用遊戲控制器支援
 
-若要在您的 tvOS 應用程式中啟用遊戲控制器支援，請按兩下`Info.plist` **方案總管**中的檔案以開啟它進行編輯：
+若要在您的 tvOS 應用程式中啟用遊戲控制器支援，請按兩下**方案總管**中的 `Info.plist` 檔案，將其開啟以供編輯：
 
-[![](remote-bluetooth-images/game02.png "Plist 編輯器")](remote-bluetooth-images/game02.png#lightbox)
+[![](remote-bluetooth-images/game02.png "The Info.plist editor")](remote-bluetooth-images/game02.png#lightbox)
 
 在 [**遊戲控制器**] 區段底下，勾選 [**啟用遊戲控制器**]，然後檢查應用程式將支援的所有遊戲控制器類型。
 
@@ -337,7 +337,7 @@ Apple 提供下列使用遊戲控制器的建議：
 
 ### <a name="using-the-siri-remote-as-a-game-controller"></a>使用 Siri 遠端做為遊戲控制器
 
-Apple TV 隨附的 Siri 遠端可用來做為有限的遊戲控制器。 就像其他遊戲控制器一樣，它會以`GCController`物件的形式顯示在遊戲控制器架構中，並`GCMotion`同時`GCMicroGamepad`支援和設定檔。
+Apple TV 隨附的 Siri 遠端可用來做為有限的遊戲控制器。 就像其他遊戲控制器一樣，它會以 `GCController` 物件的形式顯示在遊戲控制器架構中，並同時支援 `GCMotion` 和 `GCMicroGamepad` 設定檔。
 
 使用 Siri 遠端做為遊戲控制器時，會具有下列特性：
 
@@ -351,11 +351,11 @@ Apple TV 隨附的 Siri 遠端可用來做為有限的遊戲控制器。 就像�
 
 ### <a name="determining-game-controller-input"></a>判斷遊戲控制器輸入
 
-與使用觸控事件同時接收遊戲控制器事件的 iOS 不同，tvOS 會處理所有的低層級事件，以提供高階`UIKit`事件。 因此，如果您需要存取低層級的遊戲控制器事件，則`UIKit`必須關閉的預設行為。
+不同于 iOS，遊戲控制器事件可以與觸控事件平行接收，tvOS 會處理所有的低層級事件，以提供高階的 `UIKit` 事件。 因此，如果您需要存取低層級的遊戲控制器事件，則必須關閉 `UIKit`的預設行為。
 
-在 tvOS 上，當您想要直接處理遊戲控制器輸入時，您必須`GCEventViewController`使用（或子類別）來顯示遊戲的使用者介面。 當*第一次回應*時，遊戲控制器輸入會透過遊戲控制器架構來捕捉並傳遞至您的應用程式。`GCEventViewController`
+在 tvOS 上，當您想要直接處理遊戲控制器輸入時，您必須使用 `GCEventViewController` （或子類別）來顯示遊戲的使用者介面。 每當 `GCEventViewController` 是*第一個回應*者時，遊戲控制器輸入就會透過遊戲控制器架構來捕捉並傳遞至您的應用程式。
 
-您可以使用`UserInteractionEnabled` `GCEventViewController`類別的屬性來切換事件的處理和處理方式。
+您可以使用 `GCEventViewController` 類別的 `UserInteractionEnabled` 屬性來切換事件的處理和處理方式。
 
 如需有關實施遊戲控制器支援的詳細資訊，請參閱 tvOS 和[遊戲控制器](https://developer.apple.com/library/prerelease/tvos/documentation/ServicesDiscovery/Conceptual/GameControllerPG/Introduction/Introduction.html)程式設計[指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/index.html)中的 Apple[與遊戲控制器合作](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/WorkingwithGameControllers.html)一節。
 

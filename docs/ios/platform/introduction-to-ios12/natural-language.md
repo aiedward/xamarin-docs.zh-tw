@@ -4,15 +4,15 @@ description: 本檔描述自然語言架構。 在 iOS 12 中引進，自然語�
 ms.prod: xamarin
 ms.assetid: 126C8764-F873-4EB9-98A3-D82AB5689111
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/20/2018
-ms.openlocfilehash: 7b0d07f2153a0395146506a371631e0bcf75ebef
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1598bad7bdbea8334b7fdfa2b950400b698579b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292916"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031987"
 ---
 # <a name="using-the-natural-language-framework-with-xamarinios"></a>搭配使用自然語言架構與 Xamarin
 
@@ -22,7 +22,7 @@ ms.locfileid: "70292916"
 
 [NSLinguisticTagger](xref:Foundation.NSLinguisticTagger)類別仍然可以使用。 不過，自然語言架構是用於自然語言處理的慣用機制。
 
-## <a name="sample-app-xamarinnl"></a>範例應用程式：XamarinNL
+## <a name="sample-app-xamarinnl"></a>範例應用程式： XamarinNL
 
 若要瞭解如何搭配使用自然語言架構與 Xamarin，請參閱[XamarinNL 範例應用程式](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-xamarinnl)。
 這個範例應用程式會示範如何使用自然語言架構來執行下列動作：
@@ -43,8 +43,8 @@ ms.locfileid: "70292916"
 
 請按 [**語言**] 按鈕，以識別使用者輸入中的主要語言。
 
-的`HandleDetermineLanguageButtonTap` 方法`LanguageRecognizerViewController`會使用[`GetDominantLanguage`](xref:NaturalLanguage.NLLanguageRecognizer.GetDominantLanguage*)
-的`NLLanguageRecognizer`方法，用來提取[`NLLanguage`](xref:NaturalLanguage.NLLanguage)
+`LanguageRecognizerViewController` 的 `HandleDetermineLanguageButtonTap` 方法會使用[`GetDominantLanguage`](xref:NaturalLanguage.NLLanguageRecognizer.GetDominantLanguage*)
+提取[`NLLanguage`](xref:NaturalLanguage.NLLanguage) `NLLanguageRecognizer` 的方法
 在文字中找到的主要語言：
 
 ```csharp
@@ -63,9 +63,9 @@ partial void HandleDetermineLanguageButtonTap(UIButton sender)
 
 請按 [**語言**機率] 按鈕，以提取使用者輸入的語言假設清單。
 
-`LanguageRecognizerViewController`類別的`NLLanguageRecognizer`方法會具現化，並要求它`HandleLanguageProbabilitiesButtonTap`[`Process`](xref:NaturalLanguage.NLLanguageRecognizer.Process*)
-使用者的文字。 然後它會呼叫語言辨識器[`GetNativeLanguageHypotheses`](xref:NaturalLanguage.NLLanguageRecognizer.GetNativeLanguageHypotheses*)
-方法，它會提取語言字典和相關聯的機率。 然後`LanguageRecognizerTableViewController` ，類別會呈現這些語言和機率。
+`LanguageRecognizerViewController` 類別的 `HandleLanguageProbabilitiesButtonTap` 方法會具現化 `NLLanguageRecognizer`，並要求它[`Process`](xref:NaturalLanguage.NLLanguageRecognizer.Process*)
+使用者的文字。 然後，它會呼叫語言辨識器的[`GetNativeLanguageHypotheses`](xref:NaturalLanguage.NLLanguageRecognizer.GetNativeLanguageHypotheses*)
+方法，它會提取語言字典和相關聯的機率。 `LanguageRecognizerTableViewController` 類別接著會呈現這些語言和機率。
 
 ```csharp
 partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
@@ -81,7 +81,7 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 }
 ```
 
-可能`NLLanguage`的值包括：
+可能的 `NLLanguage` 值包括：
 
 - `Amharic`
 - `Arabic`
@@ -141,18 +141,18 @@ partial void HandleLanguageProbabilitiesButtonTap(UIButton sender)
 - `Urdu`
 - `Vietnamese`
 
-提供支援語言的完整清單，屬於[`NLLanguage`](xref:NaturalLanguage.NLLanguage)
+[`NLLanguage`](xref:NaturalLanguage.NLLanguage)提供支援語言的完整清單
 列舉 API 檔。
 
 ## <a name="tokenizing-text-into-words-sentences-and-paragraphs"></a>將文字 token 化成單字、句子和段落
 
-**Tokenizer**索引標籤的範例應用程式示範如何將其元件文字分成文字區塊，或使用句子[`NLTokenizer`](xref:NaturalLanguage.NLTokenizer)。
+範例應用程式的 [ **Tokenizer** ] 索引標籤會示範如何使用[`NLTokenizer`](xref:NaturalLanguage.NLTokenizer)將文字區塊分隔成其元件的單字或句子。
 
 請按 [**單字**] 或 [**句子**] 按鈕來提取權杖清單。 每個標記都會與原始文字中的單字或句子相關聯。
 
-`ShowTokens`藉由呼叫，將使用者的輸入分割成標記[`GetTokens`](xref:NaturalLanguage.NLTokenizer.GetTokens*)
-的`NLTokenizer`方法。 這個方法會傳回的陣列。[`NSValue`](xref:Foundation.NSValue)
-物件，每個都會`NSRange`在原始文字中包裝對應于標記的值。
+`ShowTokens` 藉由呼叫[`GetTokens`](xref:NaturalLanguage.NLTokenizer.GetTokens*) ，將使用者的輸入分割成權杖
+`NLTokenizer`的方法。 這個方法會傳回陣列，其中[`NSValue`](xref:Foundation.NSValue)
+物件，每個都會包裝與原始文字中的標記對應的 `NSRange` 值。
 
 ```csharp
 void ShowTokens(NLTokenUnit unit)
@@ -168,7 +168,7 @@ void ShowTokens(NLTokenUnit unit)
 }
 ```
 
-`LanguageTokenizerTableViewController`在每個資料表單元格中轉譯單一標記。 它會`NSRange`從權杖`NSValue`中解壓縮，並在原始文字中尋找對應的字串，然後在 [資料表視圖] 資料格上設定標籤：
+`LanguageTokenizerTableViewController` 在每個資料表單元格中轉譯單一 token。 它會從 `NSValue`的權杖中解壓縮 `NSRange`、在原始文字中尋找對應的字串，然後在 [資料表視圖] 資料格上設定標籤：
 
 ```csharp
 public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -191,13 +191,13 @@ XamarinNL 範例應用程式**的 [標記**] 索引標籤會示範如何使用[`
 
 請按 [**指名的實體**] 或 [**語音的部分**] 按鈕以提取：
 
-- 物件的`NSValue`陣列，每個都會在`NSRange`原始文字中包裝標記的。
-- 值的陣列[`NLTag`](xref:NaturalLanguage.NLTag) –位於相同陣列索引`NSValue`之標記的分類。
+- `NSValue` 物件的陣列，每個都會在原始文字中包裝標記的 `NSRange`。
+- [`NLTag`](xref:NaturalLanguage.NLTag)值的陣列-在相同的陣列索引上 `NSValue` token 的分類。
 
-在`LanguageTaggerViewController`中`HandlePartsOfSpeechButtonTap` ，和`HandleNamedEntitiesButtonTap`每`ShowTags`個呼叫[`NLTagScheme`](xref:NaturalLanguage.NLTagScheme)都會`NLTagScheme.NameType`傳遞–（適用于語音的某些部分）或（針對已命名的實體）。 `NLTagScheme.LexicalClass`
+在 `LanguageTaggerViewController`中，`HandlePartsOfSpeechButtonTap` 和 `HandleNamedEntitiesButtonTap` 每個呼叫 `ShowTags`，傳遞[`NLTagScheme`](xref:NaturalLanguage.NLTagScheme) （適用于語音的部分）或 `NLTagScheme.LexicalClass` （針對已命名的實體）。
 
-`ShowTags`建立，並使用所要查詢的`NLTagScheme`類型陣列（在此情況下， `NLTagScheme`僅限傳入的值）將它具現化。 `NLTagger` 然後，它會使用[`GetTags`](xref:NaturalLanguage.NLTagger.GetTags*)
-上的`NLTagger`方法，可決定與使用者輸入中的文字相關的標記。
+`ShowTags` 會建立 `NLTagger`，將它具現化，並以 `NLTagScheme` 類型的陣列進行查詢（在此案例中，只有傳入的 `NLTagScheme` 值）。 然後，它會使用[`GetTags`](xref:NaturalLanguage.NLTagger.GetTags*)
+在 `NLTagger` 上的方法，可決定與使用者輸入中的文字相關的標記。
 
 ```csharp
 void ShowTags(NLTagScheme tagScheme)
@@ -217,9 +217,9 @@ void ShowTags(NLTagScheme tagScheme)
 }
 ```
 
-然後，這些標記會顯示在資料表`LanguageTaggerTableViewController`中。
+然後，`LanguageTaggerTableViewController`會在資料表中顯示這些標記。
 
-可能`NLTag`的值包括：
+可能的 `NLTag` 值包括：
 
 - `Adjective`
 - `Adverb`
@@ -253,7 +253,7 @@ void ShowTags(NLTagScheme tagScheme)
 - `Word`
 - `WordJoiner`
 
-提供支援標記的完整清單，屬於[`NLTag`](xref:NaturalLanguage.NLTag)
+支援標記的完整清單可作為[`NLTag`](xref:NaturalLanguage.NLTag)的一部分。
 列舉 API 檔。
 
 ## <a name="related-links"></a>相關連結

@@ -4,15 +4,15 @@ description: 本文件描述如何使用 Apple 的 Instruments 應用程式分�
 ms.prod: xamarin
 ms.assetid: 70A8CAC8-20C2-655B-37C3-ACF9EA7874D8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 866ebd2a66557cda5372c5bc3d7a909e18c762d7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 66d832f624bdd942f53c5f6d890457958969b1b7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756095"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028427"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>使用 Instruments 分析 Xamarin.iOS 應用程式
 
@@ -35,13 +35,13 @@ Xcode Instruments 只能在 Mac 上執行。
 
 Instruments 現在將會開啟，並顯示下列對話方塊：
 
- [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "選擇分析範本")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
+ [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Choosing a profiling template")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
 按一下以選取 [配置] 範本。 其他範本也有效，但是本文僅討論 [配置] 分析範本。
 
 接下來，使用視窗頂端的功能表選取裝置和應用程式：
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "選取裝置及應用程式")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png "Select the device and application")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments2.png#lightbox)
 
 在視窗頂端的功能表中，應該選取了 iOS 裝置，而且旁邊應該選取了要分析的應用程式 (上方螢幕擷取畫面中的 **MemoryDemo**)。
 
@@ -49,13 +49,13 @@ Instruments 現在將會開啟，並顯示下列對話方塊：
 
 按一下 [選擇] 按鈕，下一個畫面應該就會出現：
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "分析介面")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "The profiling interface")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 
 按一下 [錄製] 按鈕 (左上方的紅色圓形)，即可開始分析。
 
 下列螢幕擷取畫面顯示使用 **Instruments** 進行分析的範例：
 
-[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "使用 Instruments 執行分析的範例")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
+[![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png "An example of profiling using Instruments")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments4.png#lightbox)
 
 ## <a name="summary"></a>總結
 
@@ -64,4 +64,4 @@ Instruments 現在將會開啟，並顯示下列對話方塊：
 ## <a name="related-links"></a>相關連結
 
 - [Instruments 逐步解說](~/ios/deploy-test/walkthrough-apples-instrument.md)
-- [Xamarin.iOS 記憶體回收 (部落格文章)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)
+- [Xamarin.iOS 記憶體回收 (部落格文章)](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

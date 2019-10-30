@@ -1,18 +1,18 @@
 ---
-title: MDocArchiveToMsxDocConverter.exe not found rver.BaseCommand.OnRequest
+title: 找不到 MDocArchiveToMsxDocConverter.exe rver.BaseCommand.OnRequest
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F5AC6AC4-0E7C-4746-A7CF-872F0E75AFF4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 1e359d510b1ff92299dc4b9792a2911d5583e66a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3d21dfdbf6c9be00fe6851bb288268faccd74308
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769720"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030975"
 ---
 # <a name="mdocarchivetomsxdocconverterexe-not-found-rverbasecommandonrequest"></a>找不到 MDocArchiveToMsxDocConverter.exe rver.BaseCommand.OnRequest
 
@@ -37,4 +37,4 @@ Error: /Developer/MonoTouch/usr/share/doc/MonoTouch/MDocArchiveToMsxDocConverter
 
 2. `rver.BaseCommand.OnRequest (System.Net.HttpListenerContext context …`
 
-    這個錯誤是真正的問題。 可惜的是，由於[限制](https://bugzilla.xamarin.com/show_bug.cgi?id=22080)，此例外狀況堆疊追蹤不*完整*。 如果您注意到 mac 伺服器記錄檔中出現不完整的堆疊追蹤，您可以在`~/Library/Logs/Xamarin/MonoTouchVS/mtbserver.log` mac 組建主機上檢查檔案以尋找完整的堆疊追蹤。
+    這個錯誤是真正的問題。 可惜的是，由於[限制](https://bugzilla.xamarin.com/show_bug.cgi?id=22080)，此例外狀況堆疊追蹤不*完整*。 如果您注意到 Mac 伺服器記錄檔中出現不完整的堆疊追蹤，您可以檢查 Mac 組建主機上的 `~/Library/Logs/Xamarin/MonoTouchVS/mtbserver.log` 檔案，以找出完整的堆疊追蹤。

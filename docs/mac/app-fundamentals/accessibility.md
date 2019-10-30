@@ -4,15 +4,15 @@ description: 本檔說明如何在 Xamarin. Mac 應用程式中使用 macOS 協�
 ms.prod: xamarin
 ms.assetid: D7F4892B-501A-4271-A7E0-BDD1586B63AD
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 087dcdc7024026e6a3ed3a05baca3b2648053cc8
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 3f3b9c84fad0bce8939187fcd0c91d18314ce8ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769941"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032646"
 ---
 # <a name="accessibility-on-macos"></a>MacOS 上的協助工具
 
@@ -55,7 +55,7 @@ public static class AccessibilityHelper
 AccessibilityHelper.SetAccessibilityLabel (someButton, "New Accessible Description");
 ```
 
-@No__t_0 屬性是用來說明控制項或視圖的用途，而且只有在標籤可能無法提供足夠的資訊時才會加入。 解說文字仍然應該盡可能地保持簡短，例如「刪除檔」。
+`AccessibilityHelp` 屬性是用來說明控制項或視圖的用途，而且只有在標籤可能無法提供足夠的資訊時才會加入。 解說文字仍然應該盡可能地保持簡短，例如「刪除檔」。
 
 某些使用者介面專案與可存取的存取無關（例如，具有自己的 [協助工具] 標籤和說明之輸入旁的標籤）。
 在這些情況下，請設定 `AccessibilityElement = false`，讓螢幕閱讀程式或其他協助工具工具略過這些控制項或瀏覽器。

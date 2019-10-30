@@ -4,15 +4,15 @@ description: 本文說明如何在 App Store 上進行用於發行的 Xamarin. M
 ms.prod: xamarin
 ms.assetid: 06A2CA8D-1E46-410F-8C31-00EA36F0735D
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 4558a9bd19810f8759010861d8a2e4b8cab09c56
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 02059c43d26c2e685abd685231fe5faf3d7a6bfe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770292"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030106"
 ---
 # <a name="sandboxing-a-xamarinmac-app"></a>沙箱化 Xamarin. Mac 應用程式
 
@@ -475,7 +475,7 @@ Exception Type:  EXC_BAD_INSTRUCTION (SIGILL)
 2. 輸入 `asctl container acl list -bundle <container-name>`。
 3. 按**enter**鍵以執行命令。
 
-@No__t_0 通常是 Xamarin. Mac 應用程式的套件組合識別碼。
+`<container-name>` 通常是 Xamarin. Mac 應用程式的套件組合識別碼。
 
 ## <a name="designing-a-xamarinmac-app-for-the-app-sandbox"></a>設計適用于應用程式沙箱的 Xamarin. Mac 應用程式
 

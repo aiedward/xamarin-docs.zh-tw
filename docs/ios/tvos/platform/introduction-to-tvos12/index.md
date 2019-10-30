@@ -4,15 +4,15 @@ description: 本檔提供 tvOS 12 中，Xamarin 預覽版本目前提供C#系結
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: f5028fe6ae7ee726ffd94d7908a089ce3bdcb385
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 94fea1786497d04602ea6cf06d875206cf69eb3e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287943"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030558"
 ---
 # <a name="introduction-to-tvos-12"></a>tvOS 12 簡介
 
@@ -26,11 +26,11 @@ tvOS 12 包含 TVUIKit，這是一組 Api，可讓 tvOS 開發人員使用常用
 
 ## <a name="password-autofill"></a>自動填滿密碼
 
-在 tvOS 12 中，使用者可以使用其 iOS 裝置，透過單鍵來登入 tvOS 應用程式。 這會透過使用方式的組合`UITextContentType`來指定使用者名稱和密碼欄位、相關聯的網域以建立 iOS 應用程式與 tvOS 應用程式之間的關聯性，以及慣用的焦點環境，以選取要在使用者之後接收焦點的專案提供使用者名稱和密碼。
+在 tvOS 12 中，使用者可以使用其 iOS 裝置，透過單鍵來登入 tvOS 應用程式。 這會透過 `UITextContentType` 使用方式的組合來指定使用者名稱和密碼欄位、相關聯的網域以建立 iOS 應用程式與 tvOS 應用程式之間的關聯性，以及慣用的焦點環境，以選取要在使用者之後接收焦點的專案提供使用者名稱和密碼。
 
 ## <a name="focus-engine-enhancements"></a>焦點引擎增強功能
 
-tvOS 12 允許所有應用程式與焦點引擎互動，不論其轉譯方式為何。 透過使用者與 Siri Remote 的互動，焦點引擎可以與任何應用程式搭配使用，以選取專案、可能的焦點變更提示，以及自然更新焦點。 在自訂應用程式中`IUIFocusItemContainer` `UIFocusMovementHint` ，會透過 UIKit 的介面、類別、 `IUIFocusItemScrollableContainer`介面和其他相關類別和方法來啟用此功能。
+tvOS 12 允許所有應用程式與焦點引擎互動，不論其轉譯方式為何。 透過使用者與 Siri Remote 的互動，焦點引擎可以與任何應用程式搭配使用，以選取專案、可能的焦點變更提示，以及自然更新焦點。 這會透過 UIKit 的 `IUIFocusItemContainer` 介面、`UIFocusMovementHint` 類別、`IUIFocusItemScrollableContainer` 介面，以及其他相關類別和方法，在自訂應用程式中啟用。
 
 ## <a name="vision-framework"></a>願景架構
 

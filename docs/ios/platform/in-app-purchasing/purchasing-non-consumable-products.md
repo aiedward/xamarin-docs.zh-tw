@@ -4,15 +4,15 @@ description: 本檔描述 Xamarin 中的非使用中產品，這是由使用者�
 ms.prod: xamarin
 ms.assetid: 635D9CA2-6BCA-53E1-7B10-968029AA3493
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 50b26e1b37000df3e6cd96c8a3cd2f424dd4f1f0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2341d90a297d6241c47a5f03fbe8fffa89dd34b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752667"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032317"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>在 Xamarin 中購買不可耗用的產品
 
@@ -24,13 +24,13 @@ ms.locfileid: "70752667"
 
 購買程式會顯示在這一系列的螢幕擷取畫面中– [**購買**] 按鈕會變成 [功能啟用] 按鈕：   
 
- [![](purchasing-non-consumable-products-images/image34.png "此購買程式會顯示在這一系列的螢幕擷取畫面中")](purchasing-non-consumable-products-images/image34.png#lightbox)   
+ [![](purchasing-non-consumable-products-images/image34.png "The purchase process is shown in this series of screenshots")](purchasing-non-consumable-products-images/image34.png#lightbox)   
 
 購買程式與可耗用的產品相同;主要差異在於如何在應用程式代碼中追蹤購買。 在此範例中，只有在尚未購買產品時，才可以使用 [購買] 按鈕，否則按鈕會啟用功能本身。   
 
 下圖顯示類別與 App Store 伺服器之間的互動，以執行無法使用的產品購買：   
 
- [![](purchasing-non-consumable-products-images/image35.png "類別與 App Store 伺服器之間的互動，用以執行無法取用的產品購買")](purchasing-non-consumable-products-images/image35.png#lightbox)   
+ [![](purchasing-non-consumable-products-images/image35.png "The interactions between classes and the App Store server to perform a non-consumable product purchase")](purchasing-non-consumable-products-images/image35.png#lightbox)   
 
 與可耗用範例的主要差異在於，一旦購買完成，使用者介面就會更新，以避免重新購買。 在此範例中，成功的交易通知會更新使用者介面，讓 [**購買**] 按鈕轉換成可啟動功能本身的按鈕。
 
@@ -47,5 +47,5 @@ ms.locfileid: "70752667"
 此案例中的程式碼路徑與一般購買完全相同，唯一的差別如下：
 
 - 使用者不會再次針對該產品收費。
-- 傳遞至應用程式的`OriginalTransaction` 物件將會有一個屬性，它會參考最初購買產品時所產生的交易。`SKPaymentTransaction` 
+- 傳遞至應用程式的 `SKPaymentTransaction` 物件將具有 `OriginalTransaction` 屬性，其參考最初購買產品時所產生的交易。 
 - 銷售非取用產品的應用程式也必須執行 StoreKit 的**還原**功能，以協助使用者取得現有的購買專案。 

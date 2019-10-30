@@ -3,15 +3,15 @@ title: 使用原生程式庫
 ms.prod: xamarin
 ms.assetid: 7AA6CEC8-C09E-BBDA-FDD6-E40559143548
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: fad17bdda9566eeabcbe173c19c4d951bed630a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7ef9e0415d7d1e5fe75be70e0ccf6e06a5eaf332
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761285"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027067"
 ---
 # <a name="using-native-libraries"></a>使用原生程式庫
 
@@ -25,9 +25,9 @@ Xamarin 支援透過標準 PInvoke 機制來使用原生程式庫。 您也可�
 方法有二：
 
 1. 路徑「探查」
-1. 藉由使用`AndroidNativeLibrary/Abi`專案檔中的元素
+1. 藉由使用專案檔中的 `AndroidNativeLibrary/Abi` 元素
 
-路徑探查會使用原生程式庫的父目錄名稱來指定程式庫的目標 ABI。 因此，如果您將`lib/armeabi/libfoo.so`新增至專案，則 ABI 會是 "探查"，做`armeabi`為。
+路徑探查會使用原生程式庫的父目錄名稱來指定程式庫的目標 ABI。 因此，如果您將 `lib/armeabi/libfoo.so` 新增至專案，則 ABI 會是 "探查"，`armeabi`。
 
 或者，您也可以編輯您的專案檔，以明確指定要使用的 ABI：
 

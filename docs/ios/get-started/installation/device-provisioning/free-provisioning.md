@@ -4,15 +4,15 @@ description: 本文件描述 Xamarin.iOS 開發人員如何在實體裝置上測
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/16/2018
-ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291427"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022748"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的免費佈建
 
@@ -49,7 +49,7 @@ ms.locfileid: "70291427"
 2. 開啟 Xcode，然後瀏覽至 [Xcode] > [偏好設定]。
 3. 在 [Accounts] \(帳戶\) 底下，使用 [+] 按鈕來新增您現有的 Apple ID。 看起來應該類似下面的螢幕擷取畫面：
 
-    ![Xcode 喜好設定 – 帳戶](free-provisioning-images/launchapp1.png "Xcode 喜好設定 – 帳戶")
+    ![Xcode 喜好設定–帳戶](free-provisioning-images/launchapp1.png "Xcode 喜好設定–帳戶")
 
 4. 關閉 Xcode 喜好設定。
 5. 插入您想要部署應用程式的 iOS 裝置。
@@ -78,7 +78,7 @@ ms.locfileid: "70291427"
 
     Xcode 將會自動為您產生佈建設定檔和簽署身分識別。 您可以按一下佈建設定檔旁邊的資訊圖示來檢視此資訊：
 
-    ![檢視佈建設定檔](free-provisioning-images/launchapp7.png "檢視佈建設定檔")
+    ![查看布建設定檔](free-provisioning-images/launchapp7.png "查看布建設定檔")
 
     > [!TIP]
     > 如果 Xcode 嘗試產生佈建設定檔時出現錯誤，請確認 Xcode 目前選取的組建配置以已連接的 iOS 裝置為目標，而不是模擬器。
@@ -98,7 +98,7 @@ ms.locfileid: "70291427"
 7. 選取 Xcode 所建立的**簽署身分識別**。
 8. 選取 Xcode 所建立的**佈建設定檔**。
 
-    ![設定簽署身分識別和佈建設定檔](free-provisioning-images/launchapp8.png "設定簽署身分識別和佈建設定檔")
+    ![設定簽署身分識別和布建設定檔](free-provisioning-images/launchapp8.png "設定簽署身分識別和布建設定檔")
 
     > [!TIP]
     > 如果看不到您的簽署身分識別或正確的部署設定檔，則可能需要重新啟動 Visual Studio for Mac。
@@ -118,7 +118,7 @@ ms.locfileid: "70291427"
 8. 選取 Xcode 所建立的**簽署身分識別**。
 9. 選取 Xcode 所建立的**佈建設定檔**。
     
-    ![設定簽署身分識別和佈建設定檔](free-provisioning-images/setprofile-w157.png "設定簽署身分識別和佈建設定檔")
+    ![設定簽署身分識別和布建設定檔](free-provisioning-images/setprofile-w157.png "設定簽署身分識別和布建設定檔")
 
     > [!TIP]
     > Xcode 會建立此簽署身分識別和佈建設定檔，並將其儲存在 Mac 組建主機上。 Visual Studio 2019 或 Visual Studio 2017 可存取兩者，因為已[配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)到 Mac 組建主機。 如果未列出，則您可能需要重新啟動 Visual Studio 2019 或 Visual Studio 2017。

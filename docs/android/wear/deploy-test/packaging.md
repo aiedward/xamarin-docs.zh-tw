@@ -3,15 +3,15 @@ title: 封裝磨損應用程式
 ms.prod: xamarin
 ms.assetid: E32DD855-78DD-46F8-B234-4EAC0756BDA2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: fa35f6fe2388484875180594f18041947963ef7a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aa4a4f1ab3ae3024de2d969f9325c2efa4db48af
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763972"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028637"
 ---
 # <a name="packaging-wear-apps"></a>封裝磨損應用程式
 
@@ -47,7 +47,7 @@ Android 磨損應用程式會使用完整的 Android 應用程式封裝，以在
 
 -----
 
-請注意，如果磨損應用程式的套件名稱不符合掌上型應用程式的套件名稱，您將會收到**XA5211**錯誤。 例如：
+請注意，如果磨損應用程式的套件名稱不符合掌上型應用程式的套件名稱，您將會收到**XA5211**錯誤。 例如:
 
 ```shell
 Error XA5211: Embedded wear app package name differs from handheld 
@@ -62,7 +62,7 @@ app package name (com.companyname.mywearapp != com.companyname.myapp). (XA5211)
 
 - 驗證套件名稱是否相符。 
 
-- 產生 XML，並將它新增至掌上型專案，以將它與磨損應用程式建立關聯。 例如： 
+- 產生 XML，並將它新增至掌上型專案，以將它與磨損應用程式建立關聯。 例如: 
 
     ```xml
     <!-- Handheld (Phone) Project.csproj -->
@@ -95,7 +95,7 @@ app package name (com.companyname.mywearapp != com.companyname.myapp). (XA5211)
     </wearableApp>
     ```
 
-5. 以手動方式`<meta-data />`將元素加入至掌上型專案 `<application>`的 androidmanifest.xml，該元素會參考新的 xml 資源：
+5. 手動將 `<meta-data />` 元素新增至掌上型專案的**androidmanifest.xml** `<application>` 專案，此元素會參考新的 xml 資源：
 
     ```xml
     <meta-data android:name="com.google.android.wearable.beta.app"

@@ -4,15 +4,15 @@ description: 本檔說明 Apple 在 iOS 10 中對 widget 進行的增強功能�
 ms.prod: xamarin
 ms.assetid: D66FD9E1-9E23-4BB6-825C-ED19B8F72A81
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 969d7fc78af9dd10f7ad57f58a6f4f619d0a201a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca6ccce934b32fa0d7e48cd8f295d9acefe6e121
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769447"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031505"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 中的搜尋和主畫面 Widget 增強功能
 
@@ -24,7 +24,7 @@ Widget （也稱為「今日延伸模組」）是一種特殊類型的 iOS 延�
 
 Widget 可高度自訂，而且可能包含 UI 元素，例如文字、影像、按鈕等。此外，開發人員也可以進一步自訂其 widget 的版面配置。
 
-[![](widgets-images/widgets01.png "範例 widget")](widgets-images/widgets01.png#lightbox)
+[![](widgets-images/widgets01.png "Example widgets")](widgets-images/widgets01.png#lightbox)
 
 使用者可以透過兩個主要位置來查看並與應用程式的 widget 互動：
 
@@ -50,14 +50,14 @@ Widget 可高度自訂，而且可能包含 UI 元素，例如文字、影像、
 
 ## <a name="working-with-vibrancy"></a>使用 Vibrancy
 
-Vibrancy 可確保 Widget 的文字會在 Widget 亮度、模糊背景（由系統所提供）上呈現時保持清晰。 在 iOS 10 之前，開發人員會針對 Widget 的 vibrancy 使用[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect) 。 例如：
+Vibrancy 可確保 Widget 的文字會在 Widget 亮度、模糊背景（由系統所提供）上呈現時保持清晰。 在 iOS 10 之前，開發人員會針對 Widget 的 vibrancy 使用[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect) 。 例如:
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect
 var vibrancy = UIVibrancyEffect.CreateForNotificationCenter ();
 ```
 
-這在 iOS 10 中已被取代，應取代為[WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)或[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)。 例如：
+這在 iOS 10 中已被取代，應取代為[WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)或[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)。 例如:
 
 ```csharp
 // Get Primary Widget Vibrancy Effect

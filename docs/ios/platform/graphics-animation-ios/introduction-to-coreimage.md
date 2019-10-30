@@ -4,15 +4,15 @@ description: 核心映射是 iOS 5 引進的新架構，可提供影像處理和
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ffaa6553830a64589818c991e8f729ff7232e367
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5525373d9bf904f67bdf02d7ec8df72e7bbd3f55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752838"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032361"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin 中的核心映射
 
@@ -46,7 +46,7 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-功能陣列將會填入`CIFaceFeature`物件（如果偵測到任何臉部）。 每個臉部`CIFaceFeature`都有一個。 `CIFaceFeature`具有下列屬性：
+功能陣列將會填入 `CIFaceFeature` 物件（如果偵測到任何臉部）。 每個臉部都有一個 `CIFaceFeature`。 `CIFaceFeature` 具有下列屬性：
 
 - HasMouthPosition –是否偵測到此臉部的嘴。
 - HasLeftEyePosition –是否已偵測到此臉部的向左眼睛。
@@ -55,7 +55,7 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 - LeftEyePosition –此臉部的左邊眼座標。
 - RightEyePosition –此臉部的適當眼睛座標。
 
-所有這些屬性的座標在左下方都有其原點，與使用左上角作為原點的 UIKit 不同。 使用上`CIFaceFeature`的座標時，請務必「翻轉」它們。 在 CoreImage\CoreImageViewController.cs 中，這個非常基本的自訂影像視圖會示範如何在影像上繪製「臉部指標」 `FlipForBottomOrigin`三角形（請注意方法）：
+所有這些屬性的座標在左下方都有其原點，與使用左上角作為原點的 UIKit 不同。 在 `CIFaceFeature` 上使用座標時，請務必「翻轉」它們。 在 CoreImage\CoreImageViewController.cs 中，這個非常基本的自訂影像視圖會示範如何在影像上繪製「臉部指標」三角形（請注意 `FlipForBottomOrigin` 方法）：
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -112,7 +112,7 @@ faceView.SetNeedsDisplay();
 
 因為臉部辨識的運作方式，有時會偵測到人臉以外的事物（例如，這些玩具猴仔！）。
 
-## <a name="filters"></a>篩選器
+## <a name="filters"></a>篩選條件
 
 有超過50個不同的內建篩選準則，而架構是可擴充的，因此可以實作為新的篩選準則。
 
@@ -120,7 +120,7 @@ faceView.SetNeedsDisplay();
 
 將篩選套用至影像有四個不同的步驟：載入影像、建立篩選、套用篩選，以及儲存（或顯示）結果。
 
-首先，將影像載入`CIImage`物件中。
+首先，將影像載入 `CIImage` 物件中。
 
 ```csharp
 var uiimage = UIImage.FromFile ("photo.JPG");
@@ -135,7 +135,7 @@ sepia.Image = ciimage;
 sepia.Intensity = 0.8f;
 ```
 
-第三，存取`OutputImage`屬性並`CreateCGImage`呼叫方法來呈現最終結果。
+第三，存取 `OutputImage` 屬性，並呼叫 `CreateCGImage` 方法來呈現最終結果。
 
 ```csharp
 CIImage output = sepia.OutputImage;
@@ -150,9 +150,9 @@ var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-這些螢幕擷取畫面顯示 CoreImage 範例程式`CISepia`代碼`CIHueAdjust`中所示範之和篩選準則的結果。
+這些螢幕擷取畫面顯示 CoreImage 範例程式碼中所示範的 `CISepia` 和 `CIHueAdjust` 篩選準則的結果。
 
-如需`CIColorControls`篩選準則的範例，請參閱[調整影像配方的合約和亮度](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)。
+如需 `CIColorControls` 篩選準則的範例，請參閱[調整影像配方的合約和亮度](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)。
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -212,7 +212,7 @@ foreach (var filter in filters){
 
 清單類別目錄輸出在模擬器上看起來像這樣，您可以在清單中滾動，以查看所有篩選和其參數。
 
- [![](introduction-to-coreimage-images/coreimage05.png "清單類別目錄輸出在模擬器上看起來像這樣")](introduction-to-coreimage-images/coreimage05.png#lightbox)
+ [![](introduction-to-coreimage-images/coreimage05.png "The List Categories output looks like this on the simulator")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
 列出的每個篩選器都已公開為 Xamarin 中的類別，因此您也可以在 [元件瀏覽器] 中流覽 CoreImage API，或在 Visual Studio for Mac 或 Visual Studio 中使用自動完成功能。 
 

@@ -4,21 +4,21 @@ description: 本文件連結的各種指南，會描述如何部署和測試 Xam
 ms.prod: xamarin
 ms.assetid: 2FF314C7-D926-9FEC-57A6-F421A0ED3A46
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/17/2018
-ms.openlocfilehash: 13a6d46a1c9193a91030f2d90c167fb14d7cae7c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9623e91589c6ba094dda5a7fcd081219f5d25fd2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291504"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030028"
 ---
 # <a name="deploying-and-testing-xamarinmac-apps"></a>部署和測試 Xamarin.Mac 應用程式
 
 ## <a name="application-iconapp-iconmd"></a>[應用程式圖示](app-icon.md)
 
-本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統合至 .icns 檔案，以及將圖示納入 Xamarin.Mac 專案中。
+本文涵蓋建立 Xamarin.Mac 應用程式的圖示所需的影像、將影像統合至 .icns 檔案，以及將圖示納入 Xamarin.Mac 專案中。
 
 ## <a name="performanceperformancemd"></a>[效能](performance.md)
 

@@ -4,15 +4,15 @@ description: 本文涵蓋焦點的概念，以及如何使用它來呈現和處�
 ms.prod: xamarin
 ms.assetid: DD72E95F-AE9B-47D2-B132-5FA5FBD8026E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: b84150c8fdca04a9b21c28d126d221d2a9bc5a3f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3c754acc3502d7aa2c47264e734187ffe060c029
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769259"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030842"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>使用 Xamarin 中的 tvOS 導覽和焦點
 
@@ -20,7 +20,7 @@ _本文涵蓋焦點的概念，以及如何使用它來呈現和處理 tvOS 應�
 
 本文涵蓋[焦點](#Focus-and-Selection)的概念，以及如何使用它來處理 tvOS 應用程式使用者介面中的[導覽](#Navigation)。 我們將探討內建的 tvOS 導覽控制項如何使用焦點、反白顯示和選取，以提供您的 tvOS 應用程式的使用者介面流覽。
 
-[![](navigation-focus-images/intro01.png "tvOS apps 使用者介面流覽")](navigation-focus-images/intro01.png#lightbox)
+[![](navigation-focus-images/intro01.png "tvOS apps User Interface Navigation")](navigation-focus-images/intro01.png#lightbox)
 
 接下來，我們將探討如何搭配[視差](#Focus-and-Parallax)和*分層影像*使用焦點，將目前導覽狀態的視覺線索提供給終端使用者。
 
@@ -34,21 +34,21 @@ TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在�
 
 成功的 tvOS 應用程式會以順暢地支援應用程式用途的方式來實行導覽，並在不需要留意到導覽本身的情況下提供資料結構。 設計您的導覽，使其既自然又熟悉，而不需要支配使用者介面或從內容和應用程式使用者體驗中繪製焦點。
 
-[![](navigation-focus-images/nav01.png "TvOS 設定應用程式")](navigation-focus-images/nav01.png#lightbox)
+[![](navigation-focus-images/nav01.png "The tvOS settings app")](navigation-focus-images/nav01.png#lightbox)
 
-使用 Apple TV 時，使用者通常會流覽一組堆疊的螢幕，每個畫面都會呈現一組指定的內容。 接著, 每個新的畫面可能會使用標準 UI 控制項 (例如[按鈕](~/ios/tvos/user-interface/buttons.md)、[索引標籤列](~/ios/tvos/user-interface/tab-bars.md)、表格、[集合視圖](~/ios/tvos/user-interface/collection-views.md)或[分割視圖](~/ios/tvos/user-interface/split-views.md)) 來導致一或多個內容的子畫面。
+使用 Apple TV 時，使用者通常會流覽一組堆疊的螢幕，每個畫面都會呈現一組指定的內容。 接著，每個新的畫面可能會使用標準 UI[控制項（例如](~/ios/tvos/user-interface/tab-bars.md)[按鈕](~/ios/tvos/user-interface/buttons.md)、索引標籤列、表格、[集合視圖](~/ios/tvos/user-interface/collection-views.md)或[分割視圖](~/ios/tvos/user-interface/split-views.md)）來導致一或多個內容的子畫面。
 
-有了每個新畫面，使用者就能更深入流覽到這個畫面堆疊。 藉由使用 **功能表** 按鈕上 Siri 遠端，他們可以透過瀏覽回溯堆疊，若要返回上一個畫面或主功能表。
+有了每個新畫面，使用者就能更深入流覽到這個畫面堆疊。 藉由使用 Siri 遠端上的 [**功能表**] 按鈕，他們可以回溯流覽堆疊，以返回上一個畫面或主功能表。
 
 在設計 tvOS 應用程式的導覽時，Apple 建議您牢記下列事項：
 
 - 配置**您的導覽以快速且輕鬆地尋找內容**-使用者想要以最少的分次次數存取應用程式中的內容，並盡可能按下和撥動。 簡化您的導覽，並將內容組織成最少的畫面數目。
 - **使用觸控來建立流暢的介面**-確保使用者可以使用最少的手勢來在可_設定焦點的專案_之間移動，而不會造成摩擦。
 - **具有焦點的設計**-由於使用者與房間間的內容互動，因此必須先將焦點移至使用者介面專案，然後再使用 Siri 遠端與其互動。 如果您的應用程式需要太多手勢來達到其目標，使用者將會感到挫折。
-- **提供向後巡覽透過功能表按鈕**-使，方便又熟悉的體驗，讓使用者巡覽向後使用 Siri 遠端 **功能表** 按鈕。 按下 **功能表** 按鈕應該一律傳回上一個螢幕或傳回給應用程式的主功能表。 在應用程式的最上層，按下 **功能表** 鈕應會返回 Apple TV 主畫面。
-- **通常顯示 [上一頁] 按鈕的避免**-因為按下 **功能表** Siri 遙控器上的按鈕向後巡覽透過螢幕堆疊，請避免顯示額外的控制項，重複此行為。 此規則的例外狀況適用于購買具有破壞性動作（例如刪除內容）的畫面或畫面，也應該顯示 [**取消**] 按鈕。
+- 透過 **[功能表] 按鈕提供回溯導覽**-建立簡單且熟悉的體驗，讓使用者可以使用 [Siri] 遠端的 [**功能表**] 按鈕向後導覽。 按下**功能表**按鈕時，應該一律返回上一個畫面，或返回應用程式的主功能表。 在應用程式的最上層，按下**功能表**按鈕應該會返回 Apple 電視首頁畫面。
+- **通常避免顯示 [上一頁] 按鈕**-因為按下 Siri 遙控器上的 [**功能表**] 按鈕會向後流覽螢幕堆疊，請避免顯示會複製此行為的額外控制項。 此規則的例外狀況適用于購買具有破壞性動作（例如刪除內容）的畫面或畫面，也應該顯示 [**取消**] 按鈕。
 - **在單一畫面上顯示大型集合，而不是多**個 Siri 遠端，其設計目的是要使用手勢快速輕鬆地移動大型的內容集合。 如果您的應用程式與大型可設定焦點的專案集合搭配使用，請考慮將它們保留在單一畫面，而不是將其分成多個畫面，而需要使用者的更多導覽。
-- 再次**使用標準控制項來進行導覽**，以建立簡單且熟悉的使用者體驗，盡可能使用內`UIKit`建控制項，例如頁面控制項、索引標籤欄、分段控制項、資料表視圖、集合視圖和分割區您的應用程式導覽。 由於使用者已熟悉這些元素，因此可以直覺地流覽您的應用程式。
+- 再次**使用標準控制項來進行流覽**，以建立簡單且熟悉的使用者體驗，盡可能使用內建的 `UIKit` 控制項，例如頁面控制項、索引標籤列、分段控制項、資料表視圖、集合視圖和分割區應用程式的導覽。 由於使用者已熟悉這些元素，因此可以直覺地流覽您的應用程式。
 - 偏好**水準內容導覽**-因為 Apple 電視的本質，在 Siri 遠端的向左輕量會比上下移動更自然。 設計應用程式的內容版面配置時，請考慮此選項。
 
 <a name="Focus-and-Selection" />
@@ -57,7 +57,7 @@ TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在�
 
 在 Apple 電視上，當影像、按鈕或其他 UI 元素是目前導覽的目標時，會將其視為_焦點_。
 
-[![](navigation-focus-images/focus01.png "焦點和選取範例")](navigation-focus-images/focus01.png#lightbox)
+[![](navigation-focus-images/focus01.png "Focus and Selection example")](navigation-focus-images/focus01.png#lightbox)
 
 不同于 iOS 裝置，使用者會直接與裝置的觸控螢幕上的專案互動，而使用者會使用 Siri 遠端與房間間的 tvOS 元素互動。 為了呈現及處理這種使用者互動，Apple TV 使用以_焦點_為基礎的模型。
 
@@ -67,10 +67,10 @@ TvOS 應用程式的使用者不會與它直接與 iOS 互動，因為它會在�
 
 Apple 有下列關於使用焦點和選擇的建議：
 
-- **使用內建的 UI 控制項來進行動作效果**-藉`UIKit`由在使用者介面中使用和焦點 API，焦點模型會自動將預設的動作和視覺效果套用至您的 UI 元素。 這讓您的應用程式對 Apple TV 平臺的使用者具有原生和熟悉性，並允許在可設定的專案之間進行流暢且直覺的移動。
+- **使用內建的 UI 控制項進行動作效果**-藉由在使用者介面中使用 `UIKit` 和焦點 API，焦點模型會自動將預設的動作和視覺效果套用至您的 UI 元素。 這讓您的應用程式對 Apple TV 平臺的使用者具有原生和熟悉性，並允許在可設定的專案之間進行流暢且直覺的移動。
 - **將焦點移到預期的方向**-在 Apple 電視上，幾乎每個元素都使用間接操作。 例如，使用者使用 Siri 遠端來移動焦點，而系統會自動滾動介面，讓目前的焦點專案保持可見。 如果您的應用程式會執行這種互動類型，請確定焦點會以使用者的手勢方向移動。 因此，如果使用者在 Siri 遙控器上向右滑動，則應該向右移動（這可能會導致螢幕向左滾動）。 這項規則的唯一例外是使用直接操作的全螢幕專案（向上輕掃會向上移動元素）。
-- **請確定焦點的專案是顯而易見**的，因為您的使用者會從 afar 與您的 UI 元素互動，所以目前的焦點專案就很重要。這通常會由內`UIKit`建元素自動處理。 若為自訂控制項，請使用 [專案大小] 或 [陰影] 之類的功能來顯示焦點。
-- **使用視差讓焦點專案變得快速回應**-小型、Siri 遠端的迴圈手勢會以溫和、即時的方式移動焦點專案。 這種[視差效果](#Focus-and-Parallax)內建`UIKit`在_分層影像_中，讓使用者有權連接到焦點的專案。
+- **請確定焦點的專案是顯而易見**的，因為您的使用者會從 afar 與您的 UI 元素互動，所以目前的焦點專案就很重要。這通常會由內建的 `UIKit` 元素自動處理。 若為自訂控制項，請使用 [專案大小] 或 [陰影] 之類的功能來顯示焦點。
+- **使用視差讓焦點專案變得快速回應**-小型、Siri 遠端的迴圈手勢會以溫和、即時的方式移動焦點專案。 這項[視差效果](#Focus-and-Parallax)內建在 `UIKit`_階層式影像_中，讓使用者有權連接到焦點的專案。
 - **建立適當大小的可設定焦點專案**-具有大量間距的大型專案，比較小的專案更容易選取和流覽。
 - **設計 UI 元素看起來良好（專注或未取得焦點**）-通常 Apple TV 會藉由增加其大小來代表焦點專案。 請確定您應用程式的 UI 元素看起來很適合任何展示大小，如有必要，請提供適用于較大大小元素的資產。
 - **代表焦點變更流暢地**-使用動畫，順暢地淡**出項目的焦點和** **未取得焦點**狀態，以防止 jarring 的轉換。
@@ -80,7 +80,7 @@ Apple 有下列關於使用焦點和選擇的建議：
 
 ### <a name="working-with-focus"></a>使用焦點
 
-有時候，您可能會想要建立自訂控制項，使其成為可設定焦點的專案。 如果覆寫`CanBecomeFocused`屬性`true`並傳回，則傳回， `false`否則傳回。 例如：
+有時候，您可能會想要建立自訂控制項，使其成為可設定焦點的專案。 如果是，請覆寫 `CanBecomeFocused` 屬性並傳回 `true`，否則傳回 `false`。 例如:
 
 ```csharp
 public class myView : UIView
@@ -91,7 +91,7 @@ public class myView : UIView
 }
 ```
 
-您隨時都可以使用`Focused` `UIKit`控制項的屬性，查看它是否為目前的專案。 如果`true` UI 專案目前具有焦點，則為，否則為。 例如：
+您隨時都可以使用 `UIKit` 控制項的 `Focused` 屬性來查看它是否為目前的專案。 如果 `true` UI 專案目前具有焦點，則為，否則為。 例如:
 
 ```csharp
 // Is my view in focus?
@@ -101,7 +101,7 @@ if (myView.Focused) {
 }
 ```
 
-雖然您無法透過程式碼直接將焦點移至另一個 ui 專案，但您可以在載入螢幕時，將其`PreferredFocusedView`屬性設定為`true`，以指定哪個 ui 元素會先取得焦點。 例如：
+雖然您無法透過程式碼直接將焦點移至另一個 UI 專案，但您可以在載入螢幕時，將其 `PreferredFocusedView` 屬性設為 `true`，以指定哪個 UI 元素會先取得焦點。 例如:
 
 ```csharp
 // Make the play button the starting focus item
@@ -114,15 +114,15 @@ playButton.PreferredFocusedView = true;
 
 當使用者使焦點從某個 UI 專案轉移至另一個時（例如，回應 Siri 遠端上的手勢），_焦點更新事件_將會傳送到失去焦點的專案，而且該專案會獲得焦點。
 
-針對從`UIView`或`UIViewController`繼承的自訂元素，您可以覆寫數個方法來使用焦點更新事件：
+針對從 `UIView` 或 `UIViewController`繼承的自訂元素，您可以覆寫數個方法來使用焦點更新事件：
 
 - **DidUpdateFocus** -當視圖取得或失去焦點時，就會呼叫此方法。
 - **ShouldUpdateFocus** -使用此方法來定義允許焦點移動的位置。
 
-若要要求焦點引擎將焦點移回`PreferredFocusedView` UI 元素，請`SetNeedsUpdateFocus`呼叫 View 控制器的方法。
+若要要求焦點引擎將焦點移回 `PreferredFocusedView` 的 UI 元素，請呼叫 View Controller 的 `SetNeedsUpdateFocus` 方法。
 
 > [!IMPORTANT]
-> 只有`SetNeedsUpdateFocus`當呼叫的視圖控制器包含目前具有焦點的視圖時，才會發出呼叫的效果。
+> 只有在對其呼叫的視圖控制器包含目前具有焦點的視圖時，才會呼叫 `SetNeedsUpdateFocus` 的效果。
 
 <a name="Working-with-Focus-Guides" />
 
@@ -134,11 +134,11 @@ playButton.PreferredFocusedView = true;
 
 如需範例，請採取下列 UI 版面配置：
 
- [![](navigation-focus-images/guide01.png "使用焦點指南範例")](navigation-focus-images/guide01.png#lightbox)
+ [![](navigation-focus-images/guide01.png "Working with Focus Guides example")](navigation-focus-images/guide01.png#lightbox)
 
 因為 [**更多資訊**] 按鈕不會落在具有 [**購買**] 按鈕的水準和垂直格線上，所以使用者無法存取。 不過，您可以使用_焦點指南_輕鬆地修正這種情況，將移動提示提供給焦點引擎。 
 
-焦點指南（`UIFocusGuide`）會將視圖的非可見區域公開為焦點引擎的可設定焦點，因而允許將焦點重新導向至另一個視圖。
+焦點指南（`UIFocusGuide`）會公開不可見的視圖區域，使其成為焦點引擎的可設定焦點，因此可將焦點重新導向至另一個視圖。
 
 因此，若要解決上述範例，可以將下列程式碼新增至 View Controller，以在 [**更多資訊**] 和 [**購買**] 按鈕之間建立焦點指南：
 
@@ -162,19 +162,19 @@ public override void ViewDidLoad ()
 }
 ```
 
-首先，會`AddLayoutGuide`使用`UIFocusGuide`方法建立新的，並將其加入至視圖的版面配置指南集合。
+首先，會使用 `AddLayoutGuide` 方法建立新的 `UIFocusGuide`，並將其加入至視圖的版面配置指南集合。
 
 接下來，焦點指南的頂端、左側、寬度和高度錨點會相對於 [**詳細資訊**] 和 [**購買**] 按鈕進行調整，以便在兩者之間定位。 請參閱：
 
-[![](navigation-focus-images/guide02.png "範例焦點指南")](navigation-focus-images/guide02.png#lightbox)
+[![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
 
-也請務必注意，在建立新的條件約束時，會將其`Active`屬性設定為來`true`加以啟動：
+也請務必注意，在建立新的條件約束時，會將其 `Active` 屬性設為 `true`，以將它們啟用：
 
 ```csharp
 FocusGuide.LeftAnchor.ConstraintEqualTo (...).Active = true;
 ```
 
-在建立新的焦點指南並將其加入至視圖後，可以覆`DidUpdateFocus`寫 view Controller 的方法，並新增下列程式碼，以便在 [**更多資訊**] 和 [**購買**] 按鈕之間移動：
+在建立新的焦點指南並將其加入至視圖後，可以覆寫 View Controller 的 `DidUpdateFocus` 方法，並新增下列程式碼，以便在 [**更多資訊**] 和 [**購買**] 按鈕之間移動：
 
 ```csharp
 public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimationCoordinator coordinator)
@@ -202,16 +202,16 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 }
 ```
 
-首先，此`NextFocusedView` `UIFocusUpdateContext`程式碼會從傳入的（`context`）取得。 如果此視圖為`null`，則不需要處理，且方法會結束。
+首先，此程式碼會從已傳入的 `UIFocusUpdateContext` （`context`）取得 `NextFocusedView`。 如果 `null`此視圖，則不需要處理，且方法會結束。
 
-接下來， `nextFocusableItem`會評估。 如果它符合 [**更多資訊**] 或 [**購買**] 按鈕，則會使用焦點指南的`PreferredFocusedView`屬性，將焦點傳送至相反的按鈕。 例如：
+接下來，會評估 `nextFocusableItem`。 如果它符合 [**更多資訊**] 或 [**購買**] 按鈕，則會使用焦點指南的 `PreferredFocusedView` 屬性，將焦點傳送至相反的按鈕。 例如:
 
 ```csharp
 // Move from the More Info to Buy button
 FocusGuide.PreferredFocusedView = BuyButton;
 ```
 
-如果這兩個按鈕都不是焦點移動的來源，則`PreferredFocusedView`會清除屬性：
+如果這兩個按鈕都不是焦點移動的來源，就會清除 [`PreferredFocusedView`] 屬性：
 
 ```csharp
 // No valid move
@@ -222,7 +222,7 @@ FocusGuide.PreferredFocusedView = null;
 
 ### <a name="working-with-focus-in-collections"></a>使用集合中的焦點
 
-在`UICollectionView`決定是否可以在`UITableView`或中具有可設定焦點的專案時，您`UICollectionViewDelegate`會分別覆寫或`UITableViewDelegate`的方法。 例如：
+在決定是否可以在 `UICollectionView` 或 `UITableView`中為個別專案提供可設定焦點時，您會分別覆寫 `UICollectionViewDelegate` 或 `UITableViewDelegate` 的方法。 例如:
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout
@@ -240,9 +240,9 @@ public class CardHandDelegate : UICollectionViewDelegateFlowLayout
 }
 ```
 
-如果目前的專案可以是`false`焦點， `CanFocusItem`方法會傳回，否則`true`會傳回。
+如果目前的專案可以是焦點，`CanFocusItem` 方法會傳回 `true`，否則會傳回 `false`。
 
-如果您想要`UICollectionView`在最後`UITableView`一個專案遺失並重新取得焦點時，或將焦點還原到其上，請`RemembersLastFocusedIndexPath`將屬性`true`設定為。
+如果您想要 `UICollectionView` 或 `UITableView` 在最後一個專案遺失並重新取得焦點時，將焦點還原至其中，請將 [`RemembersLastFocusedIndexPath`] 屬性設定為 [`true`]。
 
 <a name="Focus-and-Parallax" />
 
@@ -260,13 +260,13 @@ TvOS 應用程式的圖示需要分層影像，並支援動態的主要貨位內
 
 ### <a name="enabling-parallax"></a>啟用視差
 
-控制項（或繼承自`UIImageView`的任何控制項）會自動支援視差效果。 `UIImageView` 根據預設，這項支援已停用，若要加以啟用，請使用下列程式碼：
+`UIImageView` 控制項（或繼承自 `UIImageView`的任何控制項）都會自動支援視差效果。 根據預設，這項支援已停用，若要加以啟用，請使用下列程式碼：
 
 ```csharp
 myImageView.AdjustsImageWhenAncestorFocused = true;
 ```
 
-當這個屬性設定為`true`時，影像視圖會在使用者選取並聚焦時，自動取得視差效果。
+當此屬性設定為 [`true`] 時，影像視圖會在使用者選取並聚焦于視差效果時自動取得。
 
 <a name="Summary" />
 

@@ -4,15 +4,15 @@ description: 本文討論在 Xcode 9 和 Xamarin. iOS 11 中的 tvOS 支援，�
 ms.prod: xamarin
 ms.assetid: 0819DC93-A46B-49DC-A566-8E27CAE1B829
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: b814fdb05b3eaba6feb47f6969519a5b99fcdad4
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f2f0ab8079eea3762a8f37ca93a3caf70ba5ec33
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283622"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030715"
 ---
 # <a name="installing-tvos-support-in-xamarin"></a>在 Xamarin 中安裝 tvOS 支援
 

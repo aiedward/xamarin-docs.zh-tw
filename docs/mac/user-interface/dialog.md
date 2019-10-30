@@ -4,15 +4,15 @@ description: 本文涵蓋在 Xamarin. Mac 應用程式中使用對話方塊和�
 ms.prod: xamarin
 ms.assetid: 55451990-B77B-4D44-B8BB-F874EC503B0C
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 555ee8131c4d18988a7f208154d358a61a9773c5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a50445307156fc051edbab7abaea6b7bd21aa1fd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770600"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032831"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin 中的對話方塊
 
@@ -22,11 +22,11 @@ ms.locfileid: "70770600"
 
 Windows 可以用於非模式狀態（例如可以同時開啟多個檔的文字編輯器）或強制回應（例如，必須先關閉才能繼續應用程式的 [匯出] 對話方塊）。
 
-[![](dialog-images/dialog03.png "開啟的對話方塊")](dialog-images/dialog03.png#lightbox)
+[![](dialog-images/dialog03.png "An open dialog box")](dialog-images/dialog03.png#lightbox)
 
 在本文中，我們將討論在 Xamarin. Mac 應用程式中使用對話方塊和強制回應視窗的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。本文。
 
-您可能想要查看[Xamarin. Mac 內部](~/mac/internals/how-it-works.md)檔`Register`的將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md)一節，它會說明用來將C#類別連線到`Export`的和命令。目標-C 物件和 UI 元素。
+您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的「 C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將類別連線到目標-c 的`Register`和`Export`命令物件和 UI 元素。
 
 <a name="Introduction_to_Dialogs" />
 
@@ -42,27 +42,27 @@ Windows 可以用於非模式狀態（例如可以同時開啟多個檔的文字
 
 ### <a name="modal-window"></a>強制回應視窗
 
-任何標準`NSWindow`都可以藉由以強制回應方式顯示，當做自訂的對話使用：
+任何標準 `NSWindow` 都可以透過強制回應的方式顯示，做為自訂的對話：
 
-[![](dialog-images/modal01.png "強制回應視窗範例")](dialog-images/modal01.png#lightbox)
+[![](dialog-images/modal01.png "An example modal window")](dialog-images/modal01.png#lightbox)
 
 ### <a name="document-modal-dialog-sheets"></a>檔案模式對話方塊表
 
 _工作表_是附加至指定文件視窗的強制回應對話方塊，可防止使用者與視窗互動，直到他們關閉對話方塊為止。 工作表會附加到它所從的視窗中，而且每次只能開啟一個視窗的工作表。
 
-[![](dialog-images/sheet08.png "範例模式表")](dialog-images/sheet08.png#lightbox)
+[![](dialog-images/sheet08.png "An example modal sheet")](dialog-images/sheet08.png#lightbox)
 
 ### <a name="preferences-windows"></a>喜好設定視窗
 
 [喜好設定] 視窗是非強制回應對話方塊，其中包含使用者不常變更的應用程式設定。 喜好設定 Windows 通常包含一個工具列，可讓使用者在不同的設定群組之間切換：
 
-[![](dialog-images/dialog02.png "範例喜好設定視窗")](dialog-images/dialog02.png#lightbox)
+[![](dialog-images/dialog02.png "An example preference window")](dialog-images/dialog02.png#lightbox)
 
 ### <a name="open-dialog"></a>開啟對話方塊
 
 [開啟] 對話方塊提供使用者一致的方式來尋找和開啟應用程式中的專案：
 
-[![](dialog-images/dialog03.png "開啟的對話方塊")](dialog-images/dialog03.png#lightbox)
+[![](dialog-images/dialog03.png "A open dialog box")](dialog-images/dialog03.png#lightbox)
 
 ### <a name="print-and-page-setup-dialogs"></a>列印和版面設定對話方塊
 
@@ -70,37 +70,37 @@ macOS 提供您的應用程式可以顯示的標準 [列印] 和 [版面設定] 
 
 [列印] 對話方塊可以同時顯示為 [免費浮動] 對話方塊：
 
-[![](dialog-images/print01.png "[列印] 對話方塊")](dialog-images/print01.png#lightbox)
+[![](dialog-images/print01.png "A print dialog box")](dialog-images/print01.png#lightbox)
 
 或者，它可以顯示為工作表：
 
-[![](dialog-images/print02.png "列印工作表")](dialog-images/print02.png#lightbox)
+[![](dialog-images/print02.png "A print sheet")](dialog-images/print02.png#lightbox)
 
 [版面設定] 對話方塊可以同時顯示為 [免費浮動] 對話方塊：
 
-[![](dialog-images/print03.png "頁面設定對話方塊")](dialog-images/print03.png#lightbox)
+[![](dialog-images/print03.png "A page setup dialog")](dialog-images/print03.png#lightbox)
 
 或者，它可以顯示為工作表：
 
-[![](dialog-images/print04.png "頁面安裝表")](dialog-images/print04.png#lightbox)
+[![](dialog-images/print04.png "A page setup sheet")](dialog-images/print04.png#lightbox)
 
 ### <a name="save-dialogs"></a>儲存對話
 
-[儲存] 對話方塊可讓使用者以一致的方式，將專案儲存在應用程式中。 [儲存] 對話方塊有兩個狀態：**最小**（也稱為折迭）：
+[儲存] 對話方塊可讓使用者以一致的方式，將專案儲存在應用程式中。 [儲存] 對話方塊有兩個狀態： [**最小**] （也稱為折迭）：
 
-[![](dialog-images/save01.png "[儲存] 對話方塊")](dialog-images/save01.png#lightbox)
+[![](dialog-images/save01.png "A save dialog")](dialog-images/save01.png#lightbox)
 
 和**展開**的狀態：
 
-[![](dialog-images/save02.png "展開的儲存對話方塊")](dialog-images/save02.png#lightbox)
+[![](dialog-images/save02.png "An expanded save dialog")](dialog-images/save02.png#lightbox)
 
 [儲存**最少**] 對話方塊也可以顯示為工作表：
 
-[![](dialog-images/save03.png "最小的儲存工作表")](dialog-images/save03.png#lightbox)
+[![](dialog-images/save03.png "A minimal save sheet")](dialog-images/save03.png#lightbox)
 
 也可以**展開**的儲存對話方塊：
 
-[![](dialog-images/save04.png "展開的儲存工作表")](dialog-images/save04.png#lightbox)
+[![](dialog-images/save04.png "An expanded save sheet")](dialog-images/save04.png#lightbox)
 
 如需詳細資訊，請參閱 Apple [OS X 人體介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[對話方塊](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1)一節
 
@@ -112,26 +112,26 @@ macOS 提供您的應用程式可以顯示的標準 [列印] 和 [版面設定] 
 
 若要加入新的視窗，請執行下列動作：
 
-1. 在**方案總管**中，開啟`Main.storyboard`檔案，以在 Xcode 的 Interface Builder 中進行編輯。
+1. 在**方案總管**中，開啟 `Main.storyboard` 檔案，以在 Xcode 的 Interface Builder 中進行編輯。
 2. 將新的**View Controller**拖曳至 Design Surface：
 
-    [![](dialog-images/new01.png "從程式庫選取視圖控制器")](dialog-images/new01.png#lightbox)
-3. 在身分**識別偵測器**中`CustomDialogController` ，針對 [**類別名稱**] 輸入： 
+    [![](dialog-images/new01.png "Selecting a View Controller from the Library")](dialog-images/new01.png#lightbox)
+3. 在 [身分**識別偵測器**] 中，輸入**類別名稱**的 `CustomDialogController`： 
 
-    [![](dialog-images/new02.png "設定類別名稱")](dialog-images/new02.png#lightbox)
-4. 切換回 Visual Studio for Mac，讓它與 Xcode 同步並建立`CustomDialogController.h`檔案。
+    [![](dialog-images/new02.png "Setting the class name")](dialog-images/new02.png#lightbox)
+4. 切換回 Visual Studio for Mac，讓它與 Xcode 同步並建立 `CustomDialogController.h` 檔案。
 5. 返回 Xcode 並設計您的介面： 
 
-    [![](dialog-images/new03.png "在 Xcode 中設計 UI")](dialog-images/new03.png#lightbox)
-6. 從應用程式的主視窗中，建立強制回應**Segue**至新的 View Controller，方法是從會開啟對話方塊的 UI 專案拖曳到對話方塊視窗。 指派**識別碼** `ModalSegue`： 
+    [![](dialog-images/new03.png "Designing the UI in Xcode")](dialog-images/new03.png#lightbox)
+6. 從應用程式的主視窗中，建立強制回應**Segue**至新的 View Controller，方法是從會開啟對話方塊的 UI 專案拖曳到對話方塊視窗。 指派**識別碼**`ModalSegue`： 
 
-    [![](dialog-images/new06.png "強制回應 segue")](dialog-images/new06.png#lightbox)
+    [![](dialog-images/new06.png "A modal segue")](dialog-images/new06.png#lightbox)
 7. 連接任何**動作**和**輸出**： 
 
-    [![](dialog-images/new04.png "設定動作")](dialog-images/new04.png#lightbox)
+    [![](dialog-images/new04.png "Configuring an Action")](dialog-images/new04.png#lightbox)
 8. 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
-`CustomDialogController.cs`使檔案看起來如下所示：
+讓 `CustomDialogController.cs` 檔案看起來如下所示：
 
 ```csharp
 using System;
@@ -221,7 +221,7 @@ namespace MacDialog
 
 這段程式碼會公開一些屬性，以設定對話方塊的標題和描述，以及一些事件來回應取消或接受的對話方塊。
 
-接著，編輯`ViewController.cs`檔案，覆`PrepareForSegue`寫方法，使其看起來如下所示：
+接著，編輯 `ViewController.cs` 檔案，覆寫 `PrepareForSegue` 方法，使其看起來如下所示：
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -248,7 +248,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 我們可以執行應用程式並顯示自訂對話方塊：
 
-[![](dialog-images/new05.png "範例對話方塊")](dialog-images/new05.png#lightbox)
+[![](dialog-images/new05.png "An example dialog")](dialog-images/new05.png#lightbox)
 
 如需在 Xamarin. Mac 應用程式中使用 windows 的詳細資訊，請參閱我們[的使用 windows](~/mac/user-interface/window.md)檔。
 
@@ -260,25 +260,25 @@ _工作表_是附加至指定文件視窗的強制回應對話方塊，可防止
 
 若要在 Xamarin. Mac 中建立自訂工作表，讓我們執行下列動作：
 
-1. 在**方案總管**中，開啟`Main.storyboard`檔案，以在 Xcode 的 Interface Builder 中進行編輯。
+1. 在**方案總管**中，開啟 `Main.storyboard` 檔案，以在 Xcode 的 Interface Builder 中進行編輯。
 2. 將新的**View Controller**拖曳至 Design Surface：
 
-    [![](dialog-images/new01.png "從程式庫選取視圖控制器")](dialog-images/new01.png#lightbox)
+    [![](dialog-images/new01.png "Selecting a View Controller from the Library")](dialog-images/new01.png#lightbox)
 3. 設計您的使用者介面：
 
-    [![](dialog-images/sheet01.png "UI 設計")](dialog-images/sheet01.png#lightbox)
+    [![](dialog-images/sheet01.png "The UI design")](dialog-images/sheet01.png#lightbox)
 4. 從您的主視窗建立**工作表 Segue**至新的 View Controller： 
 
-    [![](dialog-images/sheet02.png "選取工作表 segue 類型")](dialog-images/sheet02.png#lightbox)
-5. 在身分**識別偵測器**中，將視圖控制器的**類別** `SheetViewController`命名為： 
+    [![](dialog-images/sheet02.png "Selecting the Sheet segue type")](dialog-images/sheet02.png#lightbox)
+5. 在身分**識別偵測器**中，將視圖控制器的**類別**命名為 `SheetViewController`： 
 
-    [![](dialog-images/sheet03.png "設定類別名稱")](dialog-images/sheet03.png#lightbox)
+    [![](dialog-images/sheet03.png "Setting the class name")](dialog-images/sheet03.png#lightbox)
 6. 定義任何所需的**輸出**和**動作**： 
 
-    [![](dialog-images/sheet04.png "定義必要的輸出和動作")](dialog-images/sheet04.png#lightbox)
+    [![](dialog-images/sheet04.png "Defining the required Outlets and Actions")](dialog-images/sheet04.png#lightbox)
 7. 儲存您的變更，並返回 Visual Studio for Mac 以進行同步處理。
 
-接著，編輯`SheetViewController.cs`檔案，使其看起來如下所示：
+接著，編輯 `SheetViewController.cs` 檔案，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -374,7 +374,7 @@ namespace MacDialog
 }
 ```
 
-接著，編輯`ViewController.cs`檔案， `PrepareForSegue`編輯方法，使其看起來如下所示：
+接著，編輯 `ViewController.cs` 檔案，編輯 `PrepareForSegue` 方法，使其看起來如下所示：
 
 ```csharp
 public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
@@ -406,13 +406,13 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 如果我們執行應用程式並開啟工作表，則會將它附加至視窗：
 
-[![](dialog-images/sheet08.png "範例工作表")](dialog-images/sheet08.png#lightbox)
+[![](dialog-images/sheet08.png "An example sheet")](dialog-images/sheet08.png#lightbox)
 
 <a name="Creating_a_Preferences_Dialog" />
 
 ## <a name="creating-a-preferences-dialog"></a>建立喜好設定對話方塊
 
-在 Interface Builder 中配置喜好設定之前，我們必須新增自訂的 segue 類型，以處理切換出喜好設定。 將新類別新增至您的專案，並`ReplaceViewSeque`呼叫它。 編輯類別，使其看起來如下所示：
+在 Interface Builder 中配置喜好設定之前，我們必須新增自訂的 segue 類型，以處理切換出喜好設定。 將新類別新增至您的專案，並將其呼叫 `ReplaceViewSeque`。 編輯類別，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -477,39 +477,39 @@ namespace MacWindows
 
 若要加入新的視窗，請執行下列動作：
 
-1. 在**方案總管**中，開啟`Main.storyboard`檔案，以在 Xcode 的 Interface Builder 中進行編輯。
+1. 在**方案總管**中，開啟 `Main.storyboard` 檔案，以在 Xcode 的 Interface Builder 中進行編輯。
 2. 將新的**視窗控制器**拖曳至 Design Surface：
 
-    [![](dialog-images/pref01.png "從程式庫選取視窗控制器")](dialog-images/pref01.png#lightbox)
+    [![](dialog-images/pref01.png "Select a Window Controller from the Library")](dialog-images/pref01.png#lightbox)
 3. 將視窗排列在**功能表列**設計工具附近：
 
-    [![](dialog-images/pref02.png "加入新視窗")](dialog-images/pref02.png#lightbox)
+    [![](dialog-images/pref02.png "Adding the new Window")](dialog-images/pref02.png#lightbox)
 4. 建立附加視圖控制器的複本，因為您的喜好設定視圖中會有索引標籤：
 
-    [![](dialog-images/pref03.png "新增必要的視圖控制器")](dialog-images/pref03.png#lightbox)
+    [![](dialog-images/pref03.png "Adding the required View Controllers")](dialog-images/pref03.png#lightbox)
 5. 從連結**庫**拖曳新的**工具列控制器**：
 
-    [![](dialog-images/pref04.png "從程式庫選取工具列控制器")](dialog-images/pref04.png#lightbox)
+    [![](dialog-images/pref04.png "Select a Toolbar Controller from the Library")](dialog-images/pref04.png#lightbox)
 6. 然後將它放在 Design Surface 的視窗上：
 
-    [![](dialog-images/pref05.png "加入新的工具列控制器")](dialog-images/pref05.png#lightbox)
+    [![](dialog-images/pref05.png "Adding a new Toolbar Controller")](dialog-images/pref05.png#lightbox)
 7. 版面組態工具欄的設計：
 
-    [![](dialog-images/pref06.png "版面組態工具欄")](dialog-images/pref06.png#lightbox)
+    [![](dialog-images/pref06.png "Layout the toolbar")](dialog-images/pref06.png#lightbox)
 8. 按住 Control 並從每個**工具列按鈕**拖曳到您在上方建立的 Views。 選取**自訂**的 segue 類型：
 
-    [![](dialog-images/pref07.png "設定 segue 類型")](dialog-images/pref07.png#lightbox)
-9. 選取新的 Segue，並將**類別**設定`ReplaceViewSegue`為：
+    [![](dialog-images/pref07.png "Setting the segue type")](dialog-images/pref07.png#lightbox)
+9. 選取新的 Segue，並將**類別**設定為 `ReplaceViewSegue`：
 
-    [![](dialog-images/pref08.png "設定 segue 類別")](dialog-images/pref08.png#lightbox)
+    [![](dialog-images/pref08.png "Setting the segue class")](dialog-images/pref08.png#lightbox)
 10. 在 Design Surface 上的**功能表列設計**工具中，從 應用程式 功能表選取 **喜好設定 ...** ，然後按一下並拖曳至 喜好設定 視窗，以建立 **顯示** segue：
 
-    [![](dialog-images/pref09.png "設定 segue 類型")](dialog-images/pref09.png#lightbox)
+    [![](dialog-images/pref09.png "Setting the segue type")](dialog-images/pref09.png#lightbox)
 11. 儲存您的變更，並返回 Visual Studio for Mac 以進行同步處理。
 
 如果我們執行程式碼，並從 [**應用程式] 功能表**中選取 [**喜好設定 ...** ]，就會顯示視窗：
 
-[![](dialog-images/pref10.png "範例喜好設定視窗")](dialog-images/pref10.png#lightbox)
+[![](dialog-images/pref10.png "An example preferences window")](dialog-images/pref10.png#lightbox)
 
 如需有關使用 Windows 和工具列的詳細資訊，請參閱我們的[windows](~/mac/user-interface/window.md)和[工具列](~/mac/user-interface/toolbar.md)檔。
 
@@ -519,9 +519,9 @@ namespace MacWindows
 
 在典型的 macOS 應用程式中，當使用者對應用程式的任何使用者喜好設定進行變更時，這些變更會自動儲存。 在 Xamarin. Mac 應用程式中處理這項工作的最簡單方式，就是建立單一類別來管理所有使用者的喜好設定，並共用整個系統。
 
-首先，將新`AppPreferences`類別加入至專案，並繼承自。 `NSObject` 喜好設定將設計成使用資料系結[和索引鍵-值編碼](~/mac/app-fundamentals/databinding.md)，這會使建立和維護喜好設定表單的程式變得更簡單。 因為喜好設定會包含少量的單一資料型別，所以請使用內`NSUserDefaults`建的來儲存和抓取值。
+首先，將新的 `AppPreferences` 類別加入至專案，並繼承自 `NSObject`。 喜好設定將設計成使用資料系結[和索引鍵-值編碼](~/mac/app-fundamentals/databinding.md)，這會使建立和維護喜好設定表單的程式變得更簡單。 由於喜好設定會包含少量的單一資料型別，因此請使用內建的 `NSUserDefaults` 來儲存和取出值。
 
-`AppPreferences.cs`編輯檔案，使其看起來如下所示：
+編輯 `AppPreferences.cs` 檔案，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -682,9 +682,9 @@ namespace SourceWriter
 }
 ```
 
-這個類別包含幾個`SaveInt`helper 常式，例如、 `LoadInt`、 `SaveColor` `NSUserDefaults` 、 `LoadColor`等，讓您更容易使用。 此外，由於`NSUserDefaults`沒有內建的處理`NSColors`方法， `NSColorToHexString`因此會使用和`NSColorFromHexString`方法，將色彩轉換成以 web 為基礎的十六進位字串（`#RRGGBBAA`其中`AA`是 Alpha 透明度），其可為輕鬆儲存和抓取。
+此類別包含幾個 helper 常式，例如 `SaveInt`、`LoadInt`、`SaveColor`、`LoadColor`等，讓您更輕鬆地使用 `NSUserDefaults`。 此外，由於 `NSUserDefaults` 並沒有內建的方法可以處理 `NSColors`，因此 `NSColorToHexString` 和 `NSColorFromHexString` 方法會用來將色彩轉換成以 web 為基礎的十六進位字串（`#RRGGBBAA`，也就是可以輕鬆儲存和抓取的 Alpha 透明度）。
 
-在檔案中，建立將用於整個應用程式的 AppPreferences 物件實例： `AppDelegate.cs`
+在 `AppDelegate.cs` 檔案中，建立將用於整個應用程式的**AppPreferences**物件實例：
 
 ```csharp
 using AppKit;
@@ -718,7 +718,7 @@ namespace SourceWriter
 
 接下來，將喜好設定類別連接至喜好設定視窗上的 UI 專案，以及上面建立的 Views。 在 Interface Builder 中，選取 [喜好設定視圖控制器]，並切換至 [身分**識別偵測器**]，建立控制器的自訂類別： 
 
-[![](dialog-images/prefs12.png "身分識別偵測器")](dialog-images/prefs12.png#lightbox)
+[![](dialog-images/prefs12.png "The Identity Inspector")](dialog-images/prefs12.png#lightbox)
 
 切換回 Visual Studio for Mac 以同步處理您的變更，並開啟新建立的類別進行編輯。 讓類別看起來如下所示：
 
@@ -753,11 +753,11 @@ namespace SourceWriter
 }
 ```
 
-請注意，這個類別已完成兩項作業：首先，有一個 helper `App`屬性可讓您更輕鬆地存取**AppDelegate** 。 第二， `Preferences`屬性會公開全域**AppPreferences**類別，以便與此視圖上的任何 UI 控制項進行資料系結。
+請注意，這個類別在此有兩個專案：首先，有一個 helper `App` 屬性，可讓您更輕鬆地存取**AppDelegate** 。 第二，`Preferences` 屬性會公開全域**AppPreferences**類別，以便與此視圖上的任何 UI 控制項進行資料系結。
 
 接下來，按兩下分鏡腳本檔案，在 Interface Builder 中重新開啟它（並查看上述所做的變更）。 將建立喜好設定介面所需的任何 UI 控制項拖曳到此視圖中。 針對每個控制項，切換至系結偵測**器**，並系結至**AppPreference**類別的個別屬性：
 
-[![](dialog-images/prefs13.png "系結偵測器")](dialog-images/prefs13.png#lightbox)
+[![](dialog-images/prefs13.png "The Binding Inspector")](dialog-images/prefs13.png#lightbox)
 
 針對所有需要的面板（View controller）和喜好設定屬性重複上述步驟。
 
@@ -805,7 +805,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-接著，編輯`AppDelegate.cs`檔案並新增下列方法，以將任何喜好設定變更套用至所有開啟的視窗：
+接著，編輯 `AppDelegate.cs` 檔案，並新增下列方法，以將任何喜好設定變更套用至所有開啟的視窗：
 
 ```csharp
 public void UpdateWindowPreferences() {
@@ -822,7 +822,7 @@ public void UpdateWindowPreferences() {
 }
 ```
 
-接下來，將`PreferenceWindowDelegate`類別新增至專案，使其看起來如下所示：
+接下來，將 `PreferenceWindowDelegate` 類別新增至專案，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -902,7 +902,7 @@ namespace SourceWriter
 
 當所有這些變更都備妥之後，如果使用者編輯應用程式的喜好設定並關閉喜好設定視窗，這些變更將會套用到所有開啟的視窗：
 
-[![](dialog-images/prefs14.png "範例喜好設定視窗")](dialog-images/prefs14.png#lightbox)
+[![](dialog-images/prefs14.png "An example preferences window")](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog" />
 
@@ -939,21 +939,21 @@ if (dlg.RunModal () == 1) {
 
 在上述程式碼中，我們會開啟新的文件視窗，以顯示檔案的內容。 您必須使用應用程式所需的功能來取代此程式碼。
 
-使用時，可以使用下列屬性`NSOpenPanel`：
+使用 `NSOpenPanel`時，可以使用下列屬性：
 
-- **CanChooseFiles** -如果`true`使用者可以選取檔案。
-- **CanChooseDirectories** -如果`true`使用者可以選取目錄。
-- **AllowsMultipleSelection** -如果`true`使用者可以一次選取一個以上的檔案。
-- **ResolveAliases** -如果`true`選取和別名，則會將它解析成原始檔案的路徑。
-- **AllowedFileTypes** -這是一種檔案類型的字串陣列，使用者可以將其選取為副檔名或_UTI_。 預設值為`null`，允許開啟任何檔案。
+- **CanChooseFiles** -如果 `true` 使用者可以選取檔案。
+- **CanChooseDirectories** -如果 `true` 使用者可以選取目錄。
+- **AllowsMultipleSelection** -如果 `true` 使用者可以一次選取一個以上的檔案。
+- **ResolveAliases** -如果 `true` 選取和別名，則會將它解析成原始檔案的路徑。
+- **AllowedFileTypes** -這是一種檔案類型的字串陣列，使用者可以將其選取為副檔名或_UTI_。 預設值為 `null`，允許開啟任何檔案。
 
-方法會顯示 [開啟] 對話方塊，並允許使用者選取檔案或目錄（如屬性所指定） `1` ，並在使用者按一下 [**開啟**] 按鈕時傳回。 `RunModal ()`
+`RunModal ()` 方法會顯示 [開啟] 對話方塊，並允許使用者選取檔案或目錄（如屬性所指定），並在使用者按一下 [**開啟**] 按鈕時傳回 `1`。
 
-[開啟] 對話方塊會傳回使用者選取的檔案或目錄，做為`URL`屬性中的 url 陣列。
+[開啟] 對話方塊會傳回使用者選取的檔案或目錄，做為 `URL` 屬性中的 Url 陣列。
 
 如果我們執行程式，並從 [檔案 **] 功能表中選取 [** **開啟 ...** ] 專案，則會顯示下列內容： 
 
-[![](dialog-images/dialog03.png "開啟的對話方塊")](dialog-images/dialog03.png#lightbox)
+[![](dialog-images/dialog03.png "An open dialog box")](dialog-images/dialog03.png#lightbox)
 
 <a name="The_Print_and_Page_Setup_Dialogs" />
 
@@ -988,13 +988,13 @@ void ShowDocument (NSObject sender) {
 
 ```
 
-如果我們將`ShowPrintAsSheet`屬性設定為`false`，執行應用程式並顯示 [列印] 對話方塊，將會顯示下列內容：
+如果我們將 [`ShowPrintAsSheet`] 屬性設定為 [`false`]，執行應用程式並顯示 [列印] 對話方塊，將會顯示下列內容：
 
-[![](dialog-images/print01.png "[列印] 對話方塊")](dialog-images/print01.png#lightbox)
+[![](dialog-images/print01.png "A print dialog box")](dialog-images/print01.png#lightbox)
 
-如果將`ShowPrintAsSheet`屬性設定為`true`，請執行應用程式並顯示 [列印] 對話方塊，將會顯示下列內容：
+如果將 [`ShowPrintAsSheet`] 屬性設定為 [`true`]，請執行應用程式並顯示 [列印] 對話方塊，將會顯示下列內容：
 
-[![](dialog-images/print02.png "列印工作表")](dialog-images/print02.png#lightbox)
+[![](dialog-images/print02.png "A print sheet")](dialog-images/print02.png#lightbox)
 
 下列程式碼會顯示 [頁面配置] 對話方塊：
 
@@ -1019,15 +1019,15 @@ void ShowLayout (NSObject sender) {
 }
 ```
 
-如果我們將`ShowPrintAsSheet`屬性設定為`false`，執行應用程式並顯示 [列印版面配置] 對話方塊，將會顯示下列內容：
+如果我們將 [`ShowPrintAsSheet`] 屬性設定為 [`false`]，執行應用程式並顯示 [列印版面配置] 對話方塊，將會顯示下列內容：
 
-[![](dialog-images/print03.png "頁面設定對話方塊")](dialog-images/print03.png#lightbox)
+[![](dialog-images/print03.png "A page setup dialog")](dialog-images/print03.png#lightbox)
 
-如果將`ShowPrintAsSheet`屬性設定為`true`，請執行應用程式並顯示 [列印版面配置] 對話方塊，將會顯示下列內容：
+如果將 [`ShowPrintAsSheet`] 屬性設定為 [`true`]，請執行應用程式並顯示 [列印配置] 對話方塊，將會顯示下列內容：
 
-[![](dialog-images/print04.png "頁面安裝表")](dialog-images/print04.png#lightbox)
+[![](dialog-images/print04.png "A page setup sheet")](dialog-images/print04.png#lightbox)
 
-如需有關使用 [列印] 和 [頁面設定] 對話方塊的詳細資訊，請參閱 Apple 的[NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092)、 [NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080)和[列印簡介](http://sdg.mesonet.org/people/brad/XCode3/Documentation/DocSets/com.apple.adc.documentation.AppleSnowLeopard.CoreReference.docset/Contents/Resources/Documents/#documentation/Cocoa/Conceptual/Printing/Printing.html#//apple_ref/doc/uid/10000083-SW1)檔。
+如需有關使用 [列印] 和 [頁面設定] 對話方塊的詳細資訊，請參閱 Apple 的[NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092)和[NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080)檔。
 
 <a name="The_Save_Dialog" />
 
@@ -1071,23 +1071,23 @@ void ShowSaveAs (NSObject sender)
 }
 ```
 
-`AllowedFileTypes`屬性是檔案類型的字串陣列，使用者可以選擇將檔案儲存為。 檔案類型可以指定為副檔名或_UTI_。 預設值為`null`，允許使用任何檔案類型。
+`AllowedFileTypes` 屬性是檔案類型的字串陣列，使用者可以選擇將檔案儲存為。 檔案類型可以指定為副檔名或_UTI_。 預設值為 `null`，可允許使用任何檔案類型。
 
-如果我們將`ShowSaveAsSheet`屬性設定為`false`，請執行應用程式，然後從 [檔案 **] 功能表中選取 [** **另存**新檔 ...]，將會顯示下列內容：
+如果我們將 [`ShowSaveAsSheet`] 屬性設定為 [`false`]，請執行應用程式，然後從 [檔案 **] 功能表中選取 [** **另存**新檔 ...]，將會顯示下列內容：
 
-[![](dialog-images/save01.png "[儲存] 對話方塊")](dialog-images/save01.png#lightbox)
-
-使用者可以展開對話方塊：
-
-[![](dialog-images/save02.png "展開的儲存對話方塊")](dialog-images/save02.png#lightbox)
-
-如果我們將`ShowSaveAsSheet`屬性設定為`true`，請執行應用程式，然後從 [檔案 **] 功能表中選取 [** **另存**新檔 ...]，將會顯示下列內容：
-
-[![](dialog-images/save03.png "儲存工作表")](dialog-images/save03.png#lightbox)
+[![](dialog-images/save01.png "A save dialog box")](dialog-images/save01.png#lightbox)
 
 使用者可以展開對話方塊：
 
-[![](dialog-images/save04.png "展開的儲存工作表")](dialog-images/save04.png#lightbox)
+[![](dialog-images/save02.png "An expanded save dialog box")](dialog-images/save02.png#lightbox)
+
+如果我們將 [`ShowSaveAsSheet`] 屬性設定為 [`true`]，請執行應用程式，然後從 [檔案 **] 功能表中選取 [** **另存**新檔 ...]，將會顯示下列內容：
+
+[![](dialog-images/save03.png "A save sheet")](dialog-images/save03.png#lightbox)
+
+使用者可以展開對話方塊：
+
+[![](dialog-images/save04.png "An expanded save sheet")](dialog-images/save04.png#lightbox)
 
 如需使用 [儲存] 對話方塊的詳細資訊，請參閱 Apple 的[NSSavePanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098)檔。
 
@@ -1101,7 +1101,7 @@ void ShowSaveAs (NSObject sender)
 
 - [MacWindows （範例）](https://docs.microsoft.com/samples/xamarin/mac-samples/macwindows)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
-- [功能表](~/mac/user-interface/menu.md)
+- [Menus](~/mac/user-interface/menu.md)
 - [Windows](~/mac/user-interface/window.md)
 - [工具列](~/mac/user-interface/toolbar.md)
 - [OS X 人性化介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) \(英文\)

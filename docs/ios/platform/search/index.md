@@ -4,15 +4,15 @@ description: 本文說明如何使用 iOS 9 提供的新應用程式搜尋 Api�
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e64ae5e04fbdd5b4c69a0b00c2bbc087b7cdf62a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ec63407189b635a9586b02e848647518aaf0170f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769493"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031555"
 ---
 # <a name="search-apis-in-xamarinios"></a>在 Xamarin 中搜尋 Api
 
@@ -22,7 +22,7 @@ IOS 9 中的搜尋功能已擴充，可提供絕佳的新方式來存取 Xamarin
 
 此外，新的搜尋 Api 可讓您更輕鬆地在應用程式中整合搜尋，而不需要預先搜尋的執行體驗。 因此，Apple 宣告通常需要幾個小時的時間，才能使用應用程式搜尋，讓 iOS 9 應用程式的內容可供通用搜尋。
 
-[![](images/intro01.png "IOS 9 應用程式內容的範例，可使用應用程式搜尋進行通用搜尋")](images/intro01.png#lightbox)
+[![](images/intro01.png "An example of iOS 9 app content universally searchable using App Search")](images/intro01.png#lightbox)
 
 應用程式搜尋是由三個不同的 Api 所組成：
 
@@ -64,7 +64,7 @@ Apple 針對要在應用程式中提供搜尋索引的內容和動作提供下�
 IOS 10 中的核心焦點為應用程式搜尋提供了數項增強功能，例如：
 
 - **集結群眾力量深層連結的熱門程度（具有差異隱私權）** -提供在搜尋結果中升級深層連結應用程式內容的方法。
-- **應用程式內搜尋**-使用新`CSSearchQuery`的類別來提供應用程式內焦點搜尋功能，類似于郵件、訊息和便箋應用程式的工作方式。
+- **應用程式內搜尋**-使用新的 `CSSearchQuery` 類別來提供應用程式內焦點搜尋功能，類似于郵件、訊息和便箋應用程式的工作方式。
 - **搜尋接續**-允許使用者在焦點或 Safari 中開始搜尋，然後開啟應用程式並繼續進行搜尋。
 - **驗證結果的視覺效果**-Apple 的[應用程式搜尋 API 驗證工具](https://search.developer.apple.com/appsearch-validation-tool)現在會顯示網站標記的視覺標記法，以及 preforming 測試時的深層連結。
 - **訊息應用程式映射共用**-允許提供常用的應用程式內映射，以在訊息中共用（透過訊息應用程式延伸模組），以顯示在焦點搜尋中。
@@ -94,5 +94,5 @@ iOS 10 提供新的方式來驅動應用程式，方法是允許系統在適當�
 
 - [iOS 9 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
 - [iOS 9 開發人員](https://developer.apple.com/ios/pre-release/)
-- [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [應用程式搜尋程式設計指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

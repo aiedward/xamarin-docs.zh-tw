@@ -4,15 +4,15 @@ description: 本檔概述 tvOS 應用程式可用的散發技術，並作為主�
 ms.prod: xamarin
 ms.assetid: D5E0F446-C083-4E21-9788-FC84D32D00C4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f47d4228fc1d3ec1b3b428b917f3c774103577d7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d8c9d6fe36b457a000e96d1ad8990debad8ac915
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769191"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030754"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS 應用程式散發總覽
 
@@ -61,7 +61,7 @@ Apple 提供下列方法來散發 tvOS 應用程式，其支援 tvOS：
 
 <a name="In-House-Distribution" />
 
-## <a name="in-house-distribution"></a>內部作業散發
+## <a name="in-house-distribution"></a>內部散發
 
 內部散發 (有時稱為「企業散發」) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
 

@@ -4,21 +4,21 @@ description: 為應用程式新增功能通常需要額外的佈建設定。 本
 ms.prod: xamarin
 ms.assetid: 3CBAC982-D8DE-48DD-97CD-32B551D9DB85
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 3fd3ec0207ac3ae1e5fcaa7d11d91247cd73666d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c8c1a5d284e5faaffae33a724c461b6fd74cf39b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762911"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028579"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Xamarin.iOS 的 iCloud 功能
 
-_為應用程式新增功能通常需要額外的佈建設定。本指南說明 iCloud 功能所需的設定。_
+_將功能新增至應用程式通常需要額外的布建設定。本指南說明 iCloud 功能所需的設定。_
 
-iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在裝置之間共用該內容。 開發人員可透過四種方式使用 iCloud 為其使用者提供儲存方式：機碼值儲存、UIDocument 儲存、CoreData 及直接使用 CloudKit 來提供個別檔案及目錄的儲存。 如需有關這些方法的詳細資訊，請參閱 [iCloud 簡介](~/ios/data-cloud/introduction-to-icloud.md)指南。
+iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在裝置之間共用該內容。 有四種方法可供開發人員使用 iCloud 來為其使用者提供儲存方式：「機碼/值」儲存體、UIDocument 儲存體、CoreData，以及直接使用 CloudKit 來為個人檔案和目錄提供儲存體。 如需有關這些方法的詳細資訊，請參閱 [iCloud 簡介](~/ios/data-cloud/introduction-to-icloud.md)指南。
 
 由於「容器」因素，因此為應用程式新增 iCloud 功能比新增其他「應用程式服務」略為困難。 在 iCloud 中會使用容器來儲存應用程式的資訊，並可隔離單一 iCloud 帳戶中包含的所有資訊 – 就像使用者 iOS 裝置上的沙箱一樣。 如需有關容器的詳細資訊，請參閱 [CloudKit 簡介](~/ios/data-cloud/intro-to-cloudkit.md)指南。
 
@@ -107,6 +107,6 @@ iCloud 提供一個簡便的方式，可供 iOS 使用者儲存其內容及在�
 
 * 在您的應用程式中使用架構命名空間。
 * 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在應用程式的 [ **iOS 套件組合簽署**] 中，確定 [ **自訂權利**] 已設定為 **Entitlements.plist**。 這「不是」 __  「偵錯」和「iOS 模擬器」組建的預設設定。
+* 在應用程式的 [ **iOS 套件組合簽署**] 中，確定 [ **自訂權利**] 已設定為 **Entitlements.plist**。 這 _不_ Debug 和 iOS 模擬器組建的預設設定。
 
 如果您在應用程式服務方面遇到問題，請參閱主要指南的[疑難排解](~/ios/deploy-test/provisioning/capabilities/index.md)一節。
