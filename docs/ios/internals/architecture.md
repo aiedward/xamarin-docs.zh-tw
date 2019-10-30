@@ -4,15 +4,15 @@ description: 本檔以較低的層級描述 Xamarin，討論原生和 managed �
 ms.prod: xamarin
 ms.assetid: F40F2275-17DA-4B4D-9678-618FF25C6803
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: b0cece7f553d0169c311e6614428ed37c5c77813
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e5dbc04e52aea4307716c343df5757d0fe012b74
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768527"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022392"
 ---
 # <a name="ios-app-architecture"></a>iOS 應用程式架構
 
@@ -20,9 +20,9 @@ Xamarin iOS 應用程式會在 Mono 執行環境中執行，並使用完整的�
 
 下圖顯示此架構的基本總覽：
 
-[![](architecture-images/ios-arch-small.png "此圖顯示時間先行（AOT）編譯架構的基本總覽")](architecture-images/ios-arch.png#lightbox)
+[![](architecture-images/ios-arch-small.png "This diagram shows a basic overview of the Ahead of Time (AOT) compilation architecture")](architecture-images/ios-arch.png#lightbox)
 
-## <a name="native-and-managed-code-an-explanation"></a>原生和受控碼：說明
+## <a name="native-and-managed-code-an-explanation"></a>原生和 Managed 程式碼：說明
 
 針對 Xamarin 進行開發時，通常會使用*原生和 managed*程式碼的詞彙。 [Managed 程式碼](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)是[.NET Framework Common Language runtime](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)所管理的程式碼，或在 Xamarin 的案例中： Mono 執行時間。 這就是我們所謂的中繼語言。
 
@@ -35,7 +35,7 @@ Xamarin iOS 應用程式會在 Mono 執行環境中執行，並使用完整的�
 不過，iOS 上有安全性限制，由 Apple 設定，不允許在裝置上執行動態產生的程式碼。
 為了確保我們遵守這些安全通訊協定，Xamarin 會改為使用前方（AOT）編譯器來編譯 managed 程式碼。 這會產生原生 iOS 二進位檔，並選擇性地使用適用于裝置的 LLVM 進行優化，可部署在 Apple 的 ARM 型處理器上。 下面將說明如何搭配使用這種方式的粗略圖表：
 
-[![](architecture-images/aot.png "如何搭配使用的粗略圖表")](architecture-images/aot-large.png#lightbox)
+[![](architecture-images/aot.png "A rough diagram of how this fits together")](architecture-images/aot-large.png#lightbox)
 
 使用 AOT 有一些限制，在[限制](~/ios/internals/limitations.md)指南中有詳細說明。 它也透過縮短啟動時間和各種效能優化，提供許多 JIT 的改良功能
 
@@ -52,7 +52,7 @@ Xamarin iOS 應用程式會在 Mono 執行環境中執行，並使用完整的�
 
 如先前所述，註冊機構是將 managed 程式碼公開至目標-C 的程式碼。 它會建立一個衍生自 NSObject 的每個 managed 類別清單來執行這項操作：
 
-- 對於未包裝現有目標 c 類別的所有類別，它會建立新的目標 c 類別，其中的目標 c 成員會鏡像具有 [`Export`] 屬性的所有 managed 成員。
+- 對於未包裝現有目標 C 類別的所有類別，它會建立新的目標 C 類別，其中的目標 C 成員會鏡像具有 [`Export`] 屬性的所有 managed 成員。
 
 - 在每個目標– C 成員的執行中，會自動加入程式碼來呼叫鏡像的 managed 成員。
 
@@ -87,28 +87,28 @@ Xamarin iOS 應用程式會在 Mono 執行環境中執行，並使用完整的�
 
 ```
 
-Managed 程式碼可以包含屬性， `[Register]`以及`[Export]`註冊機構用來知道物件需要公開至目標-C 的屬性。
-當預設產生的名稱不適用時，屬性會用來指定所產生之目標C類別的名稱。`[Register]` 所有衍生自 NSObject 的類別都會自動向目標-C 註冊。
-必要`[Export]`的屬性包含字串，這是在產生的目標-C 類別中使用的選取器。
+Managed 程式碼可以包含屬性（`[Register]` 和 `[Export]`），而註冊機構會使用這些屬性來知道物件需要公開至目標-C。
+`[Register]` 屬性是用來指定所產生之目標 C 類別的名稱，以防預設產生的名稱不適用。 所有衍生自 NSObject 的類別都會自動向目標-C 註冊。
+必要的 `[Export]` 屬性包含字串，這是在產生的目標-C 類別中使用的選取器。
 
 有兩種類型的註冊機構用於 Xamarin. iOS –動態和靜態：
 
 - **動態**登錄庫–動態註冊機構會在執行時間註冊元件中的所有類型。 它會使用由[目標 C 的執行時間 API](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)所提供的函式來執行這項工作。 因此，動態註冊機構的啟動速度較慢，但組建時間較快。 這是 iOS 模擬器的預設值。 使用動態註冊機構時，原生函式（通常在 C 中）稱為 trampolines，可做為方法的執行。 它們在不同的架構之間有所不同。
 
-- **靜態註冊機構**–靜態註冊機構會在組建期間產生目標 C 程式碼，然後將其編譯成靜態程式庫並連結至可執行檔。 這可加快啟動速度，但會在組建期間耗費較長的時間。 預設會針對裝置組建使用此方法。 靜態註冊機構也可以搭配 iOS 模擬器使用，方法是在`--registrar:static`專案的`mtouch`組建選項中傳遞做為屬性，如下所示：
+- **靜態註冊機構**–靜態註冊機構會在組建期間產生目標 C 程式碼，然後將其編譯成靜態程式庫並連結至可執行檔。 這可加快啟動速度，但會在組建期間耗費較長的時間。 預設會針對裝置組建使用此方法。 靜態註冊機構也可以搭配 iOS 模擬器使用，方法是在專案的組建選項中將 `--registrar:static` 傳遞為 `mtouch` 屬性，如下所示：
 
-    [![](architecture-images/image1.png "設定其他 mtouch 引數")](architecture-images/image1.png#lightbox)
+    [![](architecture-images/image1.png "Setting Additional mtouch arguments")](architecture-images/image1.png#lightbox)
 
 如需有關 Xamarin 所使用之 iOS 類型登錄系統細節的詳細資訊，請參閱[類型註冊機構](~/ios/internals/registrar.md)指南。
 
 ## <a name="application-launch"></a>應用程式啟動
 
-所有 Xamarin. iOS 可執行檔的進入點是由名`xamarin_main`為的函式所提供，該函式會初始化 mono。
+所有 Xamarin. iOS 可執行檔的進入點是由稱為 `xamarin_main`的函式所提供，該函數會初始化 mono。
 
 視專案類型而定，會執行下列動作：
 
-- 針對一般 iOS 和 tvOS 應用程式，會呼叫 Xamarin 應用程式所提供的 managed Main 方法。 這個 managed Main 方法接著會`UIApplication.Main`呼叫，這是目標-C 的進入點。 UIApplication 是目標 C 的`UIApplicationMain`方法的系結。
-- 針對延伸模組，會呼叫 Apple `NSExtensionMain`程式庫`NSExtensionmain`所提供的原生函式（或適用于 WatchOS 擴充功能）。 由於這些專案是類別庫，而不是可執行檔專案，因此不會執行任何 managed Main 方法。
+- 針對一般 iOS 和 tvOS 應用程式，會呼叫 Xamarin 應用程式所提供的 managed Main 方法。 這個 managed Main 方法接著會呼叫 `UIApplication.Main`，也就是目標-C 的進入點。 UIApplication 是目標 C 的 `UIApplicationMain` 方法的系結。
+- 針對延伸模組，會呼叫 Apple 程式庫所提供的原生函式 `NSExtensionMain` 或（適用于 WatchOS 擴充功能的`NSExtensionmain`）。 由於這些專案是類別庫，而不是可執行檔專案，因此不會執行任何 managed Main 方法。
 
 所有此啟動順序都會編譯成靜態程式庫，然後連結至您的最終可執行檔，讓您的應用程式知道如何開始使用。
 
@@ -151,8 +151,8 @@ public interface UIToolbar : UIBarPositioning {
 }
 ```
 
-在 Xamarin 中呼叫[`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs)的產生器會採用這些定義檔，並使用 .net 工具將[它們編譯成暫時的元件](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318)。 不過，此暫存元件無法用來呼叫目標-C 程式碼。 然後，產生器會讀取暫存元件， C#並產生可在執行時間使用的程式碼。
-例如，如果您將隨機屬性新增至定義 .cs 檔案，它就不會顯示在輸出程式碼中。 產生器並不知道它，因此`btouch`不知道要在暫存元件中尋找它來輸出它。
+在 Xamarin 中稱為[`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs)的產生器會採用這些定義檔，並使用 .net 工具將[它們編譯成暫時的元件](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318)。 不過，此暫存元件無法用來呼叫目標-C 程式碼。 然後，產生器會讀取暫存元件， C#並產生可在執行時間使用的程式碼。
+例如，如果您將隨機屬性新增至定義 .cs 檔案，它就不會顯示在輸出程式碼中。 產生器並不知道它，因此 `btouch` 不知道要在暫存元件中尋找它來輸出它。
 
 建立了 Xamarin 後，mtouch 會將所有元件組合在一起。
 

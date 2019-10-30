@@ -4,15 +4,15 @@ description: 在先前的章節中，我們探討了使用資料表進行開發�
 ms.prod: xamarin
 ms.assetid: D8416E10-481A-0B6E-4081-B146E6358004
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: a4d6144ad48b9e2f263137fb2474bc9eb278d93f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7eff434c21b5e2330d320f2eb85174dc6fe65b34
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768977"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021946"
 ---
 # <a name="working-with-tables-in-the-ios-designer"></a>在 iOS 設計工具中使用表格
 
@@ -24,13 +24,13 @@ ms.locfileid: "70768977"
 
 ## <a name="dynamic-prototype-content"></a>動態原型內容
 
-具有`UITableView`原型內容的通常是用來顯示清單中每個專案的原型資料格（如您可以定義一個以上的儲存格）。 資料格不需要具現化，而是在`GetView`方法中藉由`DequeueReusableCell`呼叫其`UITableViewSource`的方法取得。
+具有原型內容的 `UITableView` 通常是用來顯示清單中每個專案的原型資料格（您可以定義一個以上的儲存格）。 資料格不需要具現化，而是在 `GetView` 方法中，藉由呼叫其 `UITableViewSource`的 `DequeueReusableCell` 方法來取得。
 
  <a name="Static_Content" />
 
 ## <a name="static-content"></a>靜態內容
 
-`UITableView`具有靜態內容的可以在設計介面上直接設計資料表。 資料格可以拖曳到資料表中，並藉由變更屬性和加入控制項來自訂。
+具有靜態內容的 `UITableView`，可讓您在設計介面上直接設計資料表。 資料格可以拖曳到資料表中，並藉由變更屬性和加入控制項來自訂。
 
  <a name="Creating_a_Storyboard-driven_app" />
 
@@ -46,9 +46,9 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式，它�
 
 使用 **（建立）新專案，在 Visual Studio 中建立新的方案 。> 單一視圖應用程式C#（）** ，並呼叫它_StoryboardTables_。
 
- [![[建立新專案] 對話方塊](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
+ [![建立新專案 對話方塊](creating-tables-in-a-storyboard-images/npd.png)](creating-tables-in-a-storyboard-images/npd.png#lightbox)
 
-方案將會開啟，其中C#包含一些檔案`Main.storyboard`和已建立的檔案。 `Main.storyboard`按兩下檔案，在 iOS 設計工具中開啟檔案。
+解決方案會開啟，其中包含C#一些檔案和已建立的`Main.storyboard`檔案。 按兩下 `Main.storyboard` 檔案，在 iOS 設計工具中開啟它。
 
 <a name="Modifying_the_Storyboard" />
 
@@ -66,23 +66,23 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式，它�
 
 ### <a name="layout-the-view-controllers"></a>版面配置視圖控制器
 
-腳本的第一次變更是刪除現有的詳細資料檢視，並以 UITableViewController 取代它。 請遵循下列步驟：
+腳本的第一次變更是刪除現有的詳細資料檢視，並以 UITableViewController 取代它。 請依照下列步驟：
 
 1. 選取視圖控制器底部的列，然後將它刪除。
 2. 從 [工具箱] 將 [**流覽控制器**] 和 [**資料表視圖控制器**] 拖曳至分鏡腳本。 
 3. 從根視圖控制器建立 segue 到剛才新增的第二個數據表視圖控制器。 若要建立 segue，請*從 [詳細資料] 儲存格*控制 + 拖曳至新加入的 UITableViewController。 選擇 [ **Segue**選項] 底下的 [**顯示**] 選項。 
-4. 選取您建立的新 segue，並為它提供一個識別碼，以在程式碼中參考此 segue。 按一下 segue，然後`TaskSegue`在  **Properties Pad**中輸入作為**識別碼**，如下所示：    
-  [![在屬性面板中命名 segue](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
+4. 選取您建立的新 segue，並為它提供一個識別碼，以在程式碼中參考此 segue。 按一下 [segue]，然後在**Properties Pad**中輸入**識別碼**`TaskSegue`，如下所示：    
+  [在屬性面板中![命名 segue](creating-tables-in-a-storyboard-images/image16a-sml.png)](creating-tables-in-a-storyboard-images/image16a.png#lightbox) 
 
 5. 接下來，選取兩個數據表，並使用 Properties Pad 來進行設定。 請務必選取 [View，not View Controller] –您可以使用 [檔大綱] 來協助選取。
 
-6. 將根視圖控制器變更為**內容：動態原型** （Design Surface 上的視圖將會標示為**原型內容**）：
+6. 將根視圖控制器變更為**內容：動態原型**（Design Surface 上的視圖將會標示為**原型內容**）：
 
-    [![將內容屬性設定為動態原型](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
+    [![將 Content 屬性設定為動態原型](creating-tables-in-a-storyboard-images/image17a.png)](creating-tables-in-a-storyboard-images/image17a.png#lightbox)
 
-7. 將新的**UITableViewController**變更為**Content：靜態資料**格。 
+7. 將新的**UITableViewController**變更為 [**內容：靜態資料格**]。 
 
-8. 新的 UITableViewController 必須設定其類別名稱和識別碼。 選取 視圖控制器，然後在  **Properties Pad**中輸入**類別**的_TaskDetailViewController_ –這會在`TaskDetailViewController.cs` Solution Pad 中建立新的檔案。 輸入**StoryboardID**做為_詳細資料_，如下列範例所示。 稍後會用來在程式碼中C#載入此視圖：  
+8. 新的 UITableViewController 必須設定其類別名稱和識別碼。 選取 視圖控制器，然後在  **Properties Pad**中輸入**類別**的_TaskDetailViewController_ –這會在 Solution Pad 中建立新的 `TaskDetailViewController.cs` 檔案。 輸入**StoryboardID**做為_詳細資料_，如下列範例所示。 稍後會用來在程式碼中C#載入此視圖：  
 
     [![設定分鏡腳本識別碼](creating-tables-in-a-storyboard-images/image18a.png)](creating-tables-in-a-storyboard-images/image18a.png#lightbox)
 
@@ -100,16 +100,16 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式，它�
 
 首先，選取主要視圖控制器中的 [原型] 資料格，並將**識別碼**設定為_taskcell_，如下所示。 稍後在程式碼中會用來抓取此 UITableViewCell 的實例：
 
- [![設定資料格識別碼](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
+ [設定資料格識別碼![](creating-tables-in-a-storyboard-images/image22a-sml.png)](creating-tables-in-a-storyboard-images/image22a.png#lightbox)
 
 接下來，您必須建立一個會加入新工作的按鈕，如下所示：
 
-[![巡覽列中的橫條按鈕專案](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
+[導覽列中的![橫條按鈕專案](creating-tables-in-a-storyboard-images/image23-sml.png)](creating-tables-in-a-storyboard-images/image23.png#lightbox)
 
 請執行下列動作： 
 
 - 將 [**橫條] 按鈕專案**從 [工具箱] 拖曳至導覽列的_右邊_。
-- 在 **Properties Pad** 下方 **列按鈕項目** 選取 **識別碼：新增** (以便 *+* 加號按鈕)。 
+- 在 [ **Properties Pad**] 的 [**橫條] 按鈕**下選取 [**識別碼：新增**] （使其成為 *+* 加號按鈕）。 
 - 為它命名，以便在稍後的程式碼中識別。 請注意，您將需要為根視圖控制器提供類別名稱（例如**ItemViewController**），以允許您設定橫條按鈕專案的名稱。
 
 #### <a name="taskdetail-view-controller"></a>TaskDetail View 控制器
@@ -122,8 +122,8 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式，它�
 
 選取 [資料表] 視圖並開啟 [**屬性] 面板**。 更新下列屬性：
 
-- **區段**：_2_ 
-- **樣式**：_歸入_
+- **區段**： _2_ 
+- **Style**：_群組_
 - **分隔符號**：_無_
 - **選取範圍**：_沒有選取專案_
 
@@ -134,13 +134,13 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式，它�
 針對每個資料格，開啟**Properties Pad**並設定：
 
 - **樣式**：_自訂_
-- **識別碼**：為每個資料格選擇唯一的識別碼（例如 「_標題_」、「_附注_」、「_完成_」）。
+- **識別碼**：為每個資料格選擇唯一識別碼（例如 「_標題_」、「_附注_」、「_完成_」）。
 - 拖曳所需的控制項，以產生螢幕擷取畫面中顯示的配置（將**UILabel**、 **UITextField**和**UISwitch**放在正確的資料格上，並適當地設定標籤，例如。標題、附注和完成）。
 
 在第二個區段中，將資料**列**設定為_1_ ，並抓取資料格的底部調整大小控點，使其更高。
 
 - **將識別碼：設定**為唯一值（例如 [儲存]）。 
-- **設定背景**：_清除色彩_。
+- **設定 [背景**：_清除色彩_]。
 - 將兩個按鈕拖曳到資料格上，並適當地設定其標題（即 [_儲存_] 和 [_刪除_]），如下所示：
 
    [![在下一節中設定兩個按鈕](creating-tables-in-a-storyboard-images/image30-sml.png)](creating-tables-in-a-storyboard-images/image30.png#lightbox)
@@ -151,11 +151,11 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式，它�
 
 建立腳本的最後幾個步驟。 首先，我們必須為每個控制項提供一個 [身分識別] 底下的名稱 **> 名稱**，以便稍後在程式碼中使用。 將這些名稱命名如下：
 
-- **標題 UITextField** ：_TitleText_
-- **附注 UITextField** ：_NotesText_
-- **UISwitch** ：_DoneSwitch_
-- **刪除 UIButton** ：_DeleteButton_
-- **儲存 UIButton** ：_SaveButton_
+- **標題 UITextField** ： _TitleText_
+- **附注 UITextField** ： _NotesText_
+- **UISwitch** ： _DoneSwitch_
+- **Delete UIButton** ： _DeleteButton_
+- **儲存 UIButton** ： _SaveButton_
 
 <a name="Adding_Code" />
 
@@ -163,9 +163,9 @@ StoryboardTable 範例包含一個簡單的主版詳細資料應用程式，它�
 
 其餘的工作將會在 Mac 或 Windows 上的 Visual Studio 中，使用C#來完成。 請注意，程式碼中使用的屬性名稱會反映上述逐步解說中的設定。
 
-首先我們要建立一個`Chores`類別，它會提供一種方法來取得和設定識別碼、名稱、附注和完成的布林值，讓我們可以在整個應用程式中使用這些值。
+首先，我們想要建立一個 `Chores` 類別，它會提供一種方法來取得和設定 ID、Name、Notes 和 Done 布林值的值，讓我們可以在整個應用程式中使用這些值。
 
-在您`Chores`的類別中，新增下列程式碼：
+在您的 `Chores` 類別中，新增下列程式碼：
 
 ```csharp
 public class Chores {
@@ -176,11 +176,11 @@ public class Chores {
   }
 ```
 
-接下來，建立`RootTableSource`繼承自`UITableViewSource`的類別。 
+接下來，建立繼承自 `UITableViewSource`的 `RootTableSource` 類別。 
 
-這個範例和非分鏡腳本資料表的觀點`GetView` ，在於方法不需要具現化任何資料格– `theDequeueReusableCell`方法一律會傳回原型資料格的實例（具有相符的識別碼）。
+這個和非分鏡腳本資料表視圖的差異在於，`GetView` 方法不需要具現化任何資料格– `theDequeueReusableCell` 方法一律會傳回原型資料格的實例（具有相符的識別碼）。
 
-以下是來自`RootTableSource.cs`檔案的程式碼：
+下列程式碼來自 `RootTableSource.cs` 檔案：
 
 ```csharp
 public class RootTableSource : UITableViewSource
@@ -217,7 +217,7 @@ public Chores GetItem(int id)
 }
 ```
 
-若要使用`RootTableSource`類別，請`ItemViewController`在的函式中建立新集合：
+若要使用 `RootTableSource` 類別，請在 `ItemViewController`的函式中建立新集合：
 
 ```csharp
 chores = new List<Chore> {
@@ -226,7 +226,7 @@ chores = new List<Chore> {
     };
 ```
 
-在`ViewWillAppear`中，將集合傳遞至來源並指派給資料表視圖：
+在 `ViewWillAppear` 將集合傳遞至來源，並指派給資料表視圖：
 
 ```csharp
 public override void ViewWillAppear(bool animated)
@@ -239,7 +239,7 @@ public override void ViewWillAppear(bool animated)
 
 如果您現在執行應用程式，主畫面現在會載入並顯示兩個工作的清單。 觸及腳本所定義的 segue 時，將會顯示詳細資料畫面，但目前不會顯示任何資料。
 
-若要在 segue 中「傳送參數」，請覆`PrepareForSegue`寫方法並`DestinationViewController`在上設定屬性（ `TaskDetailViewController`在此範例中為）。 目的地視圖控制器類別會具現化，但尚未向使用者顯示–這表示您可以設定類別的屬性，但不能修改任何 UI 控制項：
+若要在 segue 中「傳送參數」，請覆寫 `PrepareForSegue` 方法並設定 `DestinationViewController` （在此範例中為 `TaskDetailViewController`）的屬性。 目的地視圖控制器類別會具現化，但尚未向使用者顯示–這表示您可以設定類別的屬性，但不能修改任何 UI 控制項：
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
@@ -256,7 +256,7 @@ public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
     }
 ```
 
-在`TaskDetailViewController`方法中，會將其參數指派給屬性，以便在 viewwillappear: 每當中參考它們。 `SetTask` 無法在中`SetTask`修改控制項屬性，因為當呼叫時`PrepareForSegue` ，可能不存在：
+在 `TaskDetailViewController` `SetTask` 方法會將其參數指派給屬性，以便在 Viewwillappear: 每當中參考它們。 無法在 `SetTask` 中修改控制項屬性，因為呼叫 `PrepareForSegue` 時可能不存在：
 
 ```csharp
 Chore currentTask {get;set;}
@@ -294,7 +294,7 @@ public void DeleteTask(Chores chore)
 }
 ```
 
-接下來，您必須將按鈕的`TouchUpInside`事件處理常式新增至**TaskDetailViewController.cs**的`ViewDidLoad`方法。 已明確建立的`ItemViewController` `SaveTask` `DeleteTask`屬性參考，因此我們可以呼叫和，這會在其作業中關閉此視圖： `Delegate`
+接下來，您必須將按鈕的 `TouchUpInside` 事件處理常式新增至**TaskDetailViewController.cs**的 `ViewDidLoad` 方法。 `ItemViewController` 的 `Delegate` 屬性參考是特別建立的，因此我們可以呼叫 `SaveTask` 和 `DeleteTask`，這會在其作業中關閉此視圖：
 
 ```csharp
 SaveButton.TouchUpInside += (sender, e) => {
@@ -307,7 +307,7 @@ SaveButton.TouchUpInside += (sender, e) => {
 DeleteButton.TouchUpInside += (sender, e) => Delegate.DeleteTask(currentTask);
 ```
 
-最後一項要建立的功能就是建立新的工作。 在**ItemViewController.cs**中，新增建立新工作的方法，並開啟詳細資料檢視。 若要從分鏡腳本具現化`InstantiateViewController`視圖，請`Identifier`使用方法搭配該視圖的，在此範例中會是「詳細資料」：
+最後一項要建立的功能就是建立新的工作。 在**ItemViewController.cs**中，新增建立新工作的方法，並開啟詳細資料檢視。 若要從分鏡腳本具現化視圖，請使用 `InstantiateViewController` 方法搭配該視圖的 `Identifier`-在此範例中，將會是「詳細資料」：
 
 ```csharp
 public void CreateTask () 
@@ -324,7 +324,7 @@ public void CreateTask ()
     }
 ```
 
-最後，在**ItemViewController.cs**的`ViewDidLoad`方法的導覽列中，連上按鈕來呼叫它：
+最後，在**ItemViewController.cs**的 `ViewDidLoad` 方法的導覽列中，連上按鈕以呼叫它：
 
 ```csharp
 AddButton.Clicked += (sender, e) => CreateTask ();
@@ -338,8 +338,8 @@ AddButton.Clicked += (sender, e) => CreateTask ();
 
 - 建立具有原型內容的資料表，其中的資料格會定義為重複使用來顯示資料清單。 
 - 建立具有靜態內容的資料表來建立輸入表單。 這包括變更資料表樣式，以及新增區段、儲存格和 UI 控制項。 
-- 如何建立 segue 並覆寫`PrepareForSegue`方法，以通知目標視圖其所需的任何參數。 
-- 使用`Storyboard.InstantiateViewController`方法直接載入分鏡腳本視圖。
+- 如何建立 segue 並覆寫 `PrepareForSegue` 方法，以通知目標視圖其所需的任何參數。 
+- 使用 `Storyboard.InstantiateViewController` 方法直接載入分鏡腳本的視圖。
 
 ## <a name="related-links"></a>相關連結
 

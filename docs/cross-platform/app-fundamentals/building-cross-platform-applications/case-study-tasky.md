@@ -3,15 +3,15 @@ title: 跨平臺應用程式案例研究： Tasky
 description: 本檔說明如何以跨平臺行動應用程式的方式設計和建立 Tasky 可移植的範例應用程式。 其中討論應用程式的需求、介面、資料模型、核心功能、執行等。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: e38fc0d23c65189f51f7f8f159a07894b3e1ab72
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71249780"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030326"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平臺應用程式案例研究： Tasky
 
@@ -95,7 +95,7 @@ Tasky 可攜性會使用可移植的類別庫策略來共用通用程式碼。 �
 
 ![](case-study-tasky-images/portable-project.png "When deployed, each native app will reference that library")
 
-下列類別圖顯示依圖層分組的類別。 @No__t_0 類別是 Sqlite 網路套件中的重複程式碼。 其餘的類別是 Tasky 的自訂程式碼。 @No__t_0 和 `TaskItem` 類別代表對平臺特定應用程式公開的 API。
+下列類別圖顯示依圖層分組的類別。 `SQLiteConnection` 類別是 Sqlite 網路套件中的重複程式碼。 其餘的類別是 Tasky 的自訂程式碼。 `TaskItemManager` 和 `TaskItem` 類別代表對平臺特定應用程式公開的 API。
 
  [![](case-study-tasky-images/classdiagram-core.png "The TaskItemManager and TaskItem classes represent the API that is exposed to the platform-specific applications")](case-study-tasky-images/classdiagram-core.png#lightbox)
 
@@ -115,9 +115,9 @@ Tasky 可攜性會使用可移植的類別庫策略來共用通用程式碼。 �
 
 資料層包含執行資料實體儲存的程式碼–不論是資料庫、一般檔案或其他機制。 Tasky 資料層是由兩個部分組成： SQLite 程式庫和新增的自訂程式碼，以連線到網路。
 
-Tasky 依賴 Sqlite-net nuget 套件（由 Frank Kreuger 發行）來內嵌 SQLite .NET 程式碼，以提供物件關聯式對應（ORM）資料庫介面。 @No__t_0 類別繼承自 `SQLiteConnection`，並新增必要的 Create、Read、Update、Delete （CRUD）方法來讀取和寫入資料至 SQLite。 這是可在其他專案中重複使用之一般 CRUD 方法的簡單方式。
+Tasky 依賴 Sqlite-net nuget 套件（由 Frank Kreuger 發行）來內嵌 SQLite .NET 程式碼，以提供物件關聯式對應（ORM）資料庫介面。 `TaskItemDatabase` 類別繼承自 `SQLiteConnection`，並新增必要的 Create、Read、Update、Delete （CRUD）方法來讀取和寫入資料至 SQLite。 這是可在其他專案中重複使用之一般 CRUD 方法的簡單方式。
 
-@No__t_0 是單一的，確保所有存取都是針對相同的實例進行。 鎖定是用來防止平行存取多個執行緒。
+`TaskItemDatabase` 是單一的，確保所有存取都是針對相同的實例進行。 鎖定是用來防止平行存取多個執行緒。
 
  <a name="SQLite_on_WIndows_Phone" />
 
@@ -188,7 +188,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 ### <a name="data-access-layer-dal"></a>資料存取層（DAL）
 
-@No__t_0 類別會使用強型別 API 來封裝資料儲存機制，讓您可以建立、刪除、抓取和更新 `TaskItem` 物件。
+`TaskItemRepository` 類別會使用強型別 API 來封裝資料儲存機制，讓您可以建立、刪除、抓取和更新 `TaskItem` 物件。
 
  <a name="Using_Conditional_Compilation" />
 
@@ -241,7 +241,7 @@ path>/Documents/TaskDB.db3" （適用于 Android）或只是 "TaskDB" （適用�
 
 ### <a name="api-for-platform-specific-code"></a>平臺特定程式碼的 API
 
-撰寫通用程式碼之後，必須建立使用者介面來收集並顯示其所公開的資料。 @No__t_0 類別會執行面板模式，以提供簡單的 API 讓應用程式代碼存取。
+撰寫通用程式碼之後，必須建立使用者介面來收集並顯示其所公開的資料。 `TaskItemManager` 類別會執行面板模式，以提供簡單的 API 讓應用程式代碼存取。
 
 在每個平臺特定專案中撰寫的程式碼通常會與該裝置的原生 SDK 緊密結合，而且只會使用 `TaskItemManager` 所定義的 API 來存取通用程式碼。 這包括其公開的方法和商業類別，例如 `TaskItem`。
 
@@ -283,7 +283,7 @@ IOS 應用程式參考平臺特定的 SDK 程式庫–例如 [Xamarin] 和 [Mono
 - **EditingSource** –這個類別是用來將工作清單系結至使用者介面。 因為 `MonoTouch.Dialog` 是用於工作清單，所以我們需要執行此協助程式，以在 `UITableView` 中啟用滑動刪除功能。 在 iOS （而不是 Android 或 Windows Phone）上，輕輕鬆刪除是常見的，因此 iOS 特定專案是唯一可進行的工作。
 - **TaskDialog** –這個類別是用來將單一工作系結至 UI。 它會使用 `MonoTouch.Dialog` 反映 API，以包含正確屬性的類別來「包裝」 `TaskItem` 物件，以允許正確格式化輸入畫面。
 
-@No__t_0 類別會使用 `MonoTouch.Dialog` 屬性，根據類別的屬性來建立畫面。 類別看起來像這樣：
+`TaskDialog` 類別會使用 `MonoTouch.Dialog` 屬性，根據類別的屬性來建立畫面。 類別看起來像這樣：
 
 ```csharp
 public class TaskDialog {

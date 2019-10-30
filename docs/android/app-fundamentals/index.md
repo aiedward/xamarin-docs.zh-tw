@@ -4,15 +4,15 @@ description: 核心應用程式概念
 ms.prod: xamarin
 ms.assetid: 935B8BFE-23B7-4239-5C87-F4A503B889CB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: af7ba83b9026a91028f4ffa9894d564d5ff13eb8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: eb581d68f3b7e57975b6979fe1005b1fac411ec8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755306"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019226"
 ---
 # <a name="xamarinandroid-application-fundamentals"></a>Xamarin. Android 應用程式基本概念
 
@@ -32,7 +32,7 @@ ms.locfileid: "70755306"
 
 ## <a name="activity-lifecycleandroidapp-fundamentalsactivity-lifecycleindexmd"></a>[活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
 
-活動是 Android 應用程式的基本建置組塊，而且它們能以數種不同的狀態存在。 活動生命週期始於具現化、終止於毀損，而且在期間包括許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動有即將發生的狀態變更並允許它執行程式碼以適應該變更。 此文章會檢查活動的生命週期，並說明為了成為行為良好的可靠應用程式，活動在這些狀態變更中每個狀態變更的責任。
+活動是 Android 應用程式的基本組建區塊，而且可以存在於許多不同的狀態。 活動生命週期從具現化開始，並以銷毀結束，並在之間包含許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動即將發生的狀態變更，並允許它執行程式碼以適應該變更。 本文將探討活動的生命週期，並說明活動在每個狀態變更期間的責任，使其成為運作正常且可靠的應用程式的一部分。
 
 ## <a name="localizationandroidapp-fundamentalslocalizationmd"></a>[當地語系化](~/android/app-fundamentals/localization.md)
 
@@ -46,7 +46,7 @@ ms.locfileid: "70755306"
 
 本指南涵蓋如何在 Xamarin 中建立和使用廣播接收器，這是回應全系統廣播的 Android 元件。
 
-## <a name="permissionsandroidapp-fundamentalspermissionsmd"></a>[Permissions](~/android/app-fundamentals/permissions.md)
+## <a name="permissionsandroidapp-fundamentalspermissionsmd"></a>[權限](~/android/app-fundamentals/permissions.md)
 
 您可以使用內建在 Visual Studio for Mac 或 Visual Studio 中的工具支援，來建立和新增 Android 資訊清單的許可權。 本檔說明如何在 Visual Studio 和 Xamarin Studio 中新增許可權。
 
@@ -80,4 +80,4 @@ Android OS 為多媒體提供廣泛的支援，同時包含音訊和影片。 �
 
 ## <a name="writing-responsive-applicationswriting-responsive-appsmd"></a>[撰寫回應式應用程式](writing-responsive-apps.md)
 
-此文章討論如何使用執行緒處理功能將長時間執行的工作移至背景執行緒，來維持 Xamarin.Android 應用程式的回應性。
+本文討論如何使用執行緒，將長時間執行的工作移至背景執行緒，以保持 Xamarin 應用程式的回應。

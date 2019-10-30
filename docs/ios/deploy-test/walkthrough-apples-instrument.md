@@ -4,19 +4,19 @@ description: 本文會描述如何使用 Apple 的 Instruments 工具，診斷�
 ms.prod: xamarin
 ms.assetid: 8f21db1d-7107-4158-8058-d47e417689a0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 2bdb95c73ed692b3ba7f0c3ff15cd7754a7e7b66
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 41254fb6aac176cd796fba851478b31f774553d2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278868"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023449"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>逐步解說：使用 Apple 的 Instrument 工具
 
-_本文逐步解說如何使用 Apple 的 Instruments 工具，診斷透過 Xamarin 建置的 iOS 應用程式記憶體問題。文中將示範如何啟動 Instruments、拍攝堆積快照、分析記憶體成長。也會示範如何使用 Instruments 顯示和鎖定造成記憶體問題的確切程式碼行數。_
+_本文逐步解說如何使用 Apple 的偵查工具來診斷以 Xamarin 建立的 iOS 應用程式中的記憶體問題。它會示範如何啟動檢測、採用堆積快照集，以及分析記憶體成長。它也會示範如何使用檢測來顯示及找出造成記憶體問題的確切程式程式碼。_
 
 此頁面會示範如何使用 **Xcode 的 Instruments 工具**來診斷 iOS 應用程式中的記憶體問題。
 首先，下載 [MemoryDemo 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)，並在 Visual Studio for Mac 中開啟 **before** 方案。
@@ -27,19 +27,19 @@ _本文逐步解說如何使用 Apple 的 Instruments 工具，診斷透過 Xama
 2. 選擇 [執行] > [上傳至裝置] 功能表項目，將應用程式上傳至裝置。
 3. 選擇 [Allocations] 範本 (具有白色方塊的橘色圖示)
 
-    ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "選擇 [Allocations] 範本")
+    ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "Choose the Allocations template")
 
 4. 在視窗頂端的 [Choose a profiling template for] \(針對下列項目選擇分析範本\) 清單中，選取 **Memory Demo** 應用程式。 首先在 iOS 裝置上按一下，以展開顯示已安裝應用程式的功能表。
 
-    ![](walkthrough-apples-instrument-images/01-mem-demo.png "選取 Memory Demo 應用程式")
+    ![](walkthrough-apples-instrument-images/01-mem-demo.png "Select the Memory Demo application")
 
-5. 按下 [Choose] \(選擇\) 按鈕 (視窗右下方) 來啟動 **Instruments**。 ThiJs 範本會在上方窗格中顯示兩個項目：[配置] 和 [VM Tracker] \(VM 追蹤器\)。
+5. 按下 [Choose] \(選擇\) 按鈕 (視窗右下方) 來啟動 **Instruments**。 此範本將會在上方窗格中顯示兩個項目：分別是 [Allocations] \(配置\) 和 [VM Tracker] \(VM 追蹤器\)。
 
 6. 按下 Instruments 中的 [Record] \(錄製\) 按鈕 (左上方的紅色圓圈)，這將會啟動應用程式。
 
-7. 選取上方窗格中的 [VM Tracker] \(VM 追蹤器\) 列 (由於應用程式正在執行，因此會包含兩個區段：[已變更] 和 [Resident Size] \(常駐大小\))。 在 [Inspector] \(檢查\) 窗格中，選擇 [Show Display Settings] \(顯示顯示設定\) 選項 (齒輪圖示)，然後勾選 [Automatic Snapshotting] \(自動建立快照\) 核取方塊，如此螢幕擷取畫面右下方所示：
+7. 選取上方窗格中的 [VM Tracker] \(VM 追蹤器\) 列 (既然應用程式正在執行，它將會包含兩個區段：[Dirty] \(有所變更\) 和 [Resident Size] \(駐留大小\))。 在 [Inspector] \(檢查\) 窗格中，選擇 [Show Display Settings] \(顯示顯示設定\) 選項 (齒輪圖示)，然後勾選 [Automatic Snapshotting] \(自動建立快照\) 核取方塊，如此螢幕擷取畫面右下方所示：
 
-    ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "選擇 [Show Display Settings] \(顯示顯示設定\) 選項齒輪圖示，然後勾選 [Automatic Snapshotting] \(自動建立快照\) 核取方塊")
+    ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "Choose the Show Display Settings option the gear icon then tick the Automatic Snapshotting checkbox")
 
 8. 選取上方窗格中的 [Allocations] \(配置\) 列 (既然應用程式正在執行，它將會顯示 [All Heap and Anonymous VM] \(所有堆積和匿名 VM\))
 9. 在 [Inspector] \(檢查\) 窗格中，選擇 [Show Display Settings] \(顯示顯示設定\) 選項 (齒輪圖示)，然後按一下 [Mark Generation] \(標示世代\) 按鈕來建立基準。 小型紅色旗標將會出現在視窗頂端的時間軸上
@@ -50,15 +50,15 @@ _本文逐步解說如何使用 Apple 的 Instruments 工具，診斷透過 Xama
 
 14. 請注意， **&lt;non-object>** 節點會顯示過多的記憶體成長。 按一下此節點旁邊的箭號以查看更多詳細資料：在堆疊追蹤中按一下滑鼠右鍵，將 [Source Location] \(來源位置\) 新增至窗格：
 
-    ![](walkthrough-apples-instrument-images/03-mem-growth.png "將 [Source Location] \(來源位置\) 新增至窗格")
+    ![](walkthrough-apples-instrument-images/03-mem-growth.png "Add Source Location to the pane")
 
 15. 依 [Size] \(大小\) 排序，並顯示 [Extended Detail] \(延伸的詳細資料\) 檢視：
 
-    ![](walkthrough-apples-instrument-images/04-extended-detail.png "依 [Size] \(大小\) 排序，並顯示 [Extended Detail] \(延伸的詳細資料\) 檢視")
+    ![](walkthrough-apples-instrument-images/04-extended-detail.png "Sort by Size and display the  Extended Detail view")
 
 16. 按一下呼叫堆疊中所需的項目，以查看相關的程式碼：
 
-    ![](walkthrough-apples-instrument-images/05-related-code.png "檢視相關的程式碼")
+    ![](walkthrough-apples-instrument-images/05-related-code.png "Viewing the related code")
 
 在此案例中，將會建立新的影像，並儲存在每個儲存格的集合中，但不會重複使用現有的集合檢視儲存格。
 
@@ -83,11 +83,11 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 現在，當應用程式執行時，就會大幅降低記憶體使用量，層代間的**成長**現在會以 Kib (KB) (而不是 MiB (MB)) 測量，因為這是在修正程式碼之前：
 
-![](walkthrough-apples-instrument-images/06-reduced-memory.png "顯示應用程式記憶體使用量")
+![](walkthrough-apples-instrument-images/06-reduced-memory.png "Showing the app memory usage")
 
 在 Visual Studio for Mac 的 **after** 方案中，會在 [MemoryDemo 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)內提供改良的程式碼。
 
-有關 [Xamarin.iOS 記憶體回收](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)的這個社群部落格在處理 Xamarin.iOS 記憶體問題方面，是一個實用的參考。
+有關 [Xamarin.iOS 記憶體回收](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)的這個社群部落格在處理 Xamarin.iOS 記憶體問題方面，是一個實用的參考。
 
 ## <a name="summary"></a>總結
 
@@ -98,4 +98,4 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 ## <a name="related-links"></a>相關連結
 
 - [MemoryDemo 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
-- [Xamarin.iOS 記憶體回收 (部落格文章)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)
+- [Xamarin.iOS 記憶體回收 (部落格文章)](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

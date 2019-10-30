@@ -3,15 +3,15 @@ title: 第 2 部分 - 架構
 description: 本檔說明可用於建立跨平臺應用程式的架構模式。 它討論一般的應用層（資料層、資料存取層等）和常見的行動軟體模式（MVVM、MVC 等等）
 ms.prod: xamarin
 ms.assetid: 2176DB2D-E84A-3757-CFAB-04A586068D50
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: e1b1a98bf06bbd03b382f0b7263e6965d4efad15
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 84a06e23ec7125892701762ab5bad7b86a8faf90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762110"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030270"
 ---
 # <a name="part-2---architecture"></a>第 2 部分 - 架構
 
@@ -46,7 +46,7 @@ ms.locfileid: "70762110"
 
 - **Model、View、ViewModel （MVVM）** –模型視圖-ViewModel 模式常用於支援資料系結的架構，例如 Xamarin. Forms。 它是由啟用 XAML 的 Sdk 普及化，例如 Windows Presentation Foundation （WPF）和 Silverlight;其中，ViewModel 是透過資料系結和命令，做為資料（模型）和使用者介面（View）之間的一開始。
 - **Model、View、Controller （MVC）** –常見且經常被誤解的模式，MVC 最常用於建立使用者介面，並提供 UI 螢幕（View）的實際定義、處理互動之引擎背後的分隔（控制器）和填入資料（模型）的資料。 模型實際上是完全選擇性的部分，因此瞭解此模式的核心是在 View 和 Controller 中。 MVC 是適用于 iOS 應用程式的常用方法。
-- **商務外觀**–也就是管理員模式，為複雜的工作提供簡化的進入點。 例如，在工作追蹤應用程式中，您可能會有`TaskManager`一個類別`GetAllTasks()` ，其中包含、 `GetTask(taskID)` 、 `SaveTask (task)`等方法。`TaskManager`類別提供實際儲存/抓取工作物件之內部運作的外觀。
+- **商務外觀**–也就是管理員模式，為複雜的工作提供簡化的進入點。 例如，在工作追蹤應用程式中，您可能會有 `TaskManager` 類別，其中包含 `GetAllTasks()`、`GetTask(taskID)`、`SaveTask (task)` 等方法。`TaskManager` 類別提供實際儲存/抓取工作物件之內部運作的外觀。
 - **Singleton** –單一模式提供一種方式，讓特定物件的單一實例只能存在。 例如，在行動應用程式中使用 SQLite 時，您只需要一個資料庫實例。 使用單一模式是確保這種情況的簡單方式。
 - **提供者**– Microsoft 所 alistair 創造的模式（可與策略或基本相依性插入類似），鼓勵跨 SILVERLIGHT、WPF 和 WinForms 應用程式重複使用程式碼。 共用程式碼可以針對介面或抽象類別來撰寫，並在使用程式碼時，撰寫和傳入平臺特定的實作為。
 - **非同步**–不會與 async 關鍵字混淆，非同步模式是在需要執行長時間執行的工作，而不需按住 UI 或目前的處理時使用。 在最簡單的形式中，非同步模式只會描述長時間執行的工作應該在另一個執行緒中啟動（或類似的執行緒抽象，例如工作），而目前的執行緒會繼續處理並接聽來自背景進程的回應，然後在傳回資料和或狀態時，更新 UI。

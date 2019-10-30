@@ -4,15 +4,15 @@ description: 本文件描述如何佈建裝置，使其可用於測試應用程�
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 7ee3d7d9b2ce074174b676225ec934279ceb5a86
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bb1ef1e948c796e6b0d91230be3c82c5a8c7d366
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292631"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022692"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Xamarin.iOS 的裝置佈建
 
@@ -20,7 +20,7 @@ ms.locfileid: "70292631"
 
 下圖中醒目提示的區段說明 iOS 佈建所需的設定步驟：
 
-[![](images/provisioningdiagram.png "此圖中醒目提示的區段說明 iOS 佈建所需的設定步驟")](images/provisioningdiagram.png#lightbox)
+[![](images/provisioningdiagram.png "The highlighted sections in this image show the steps required to get set up for iOS provisioning")](images/provisioningdiagram.png#lightbox)
 
 在這之後，下一步就是散發應用程式。 如需有關部署的詳細資訊，請參閱[應用程式散發](~/ios/deploy-test/app-distribution/index.md)指南。
 
@@ -51,7 +51,7 @@ ms.locfileid: "70292631"
 
 - **手動** – 可以透過 Apple Developer Portal (Apple 開發人員入口網站) 來建立和管理「簽署身分識別」、「應用程式識別碼」及「佈建設定檔」，如[手動佈建](manual-provisioning.md)指南所述。 您可以依照 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述，管理這些成品。
 
-## <a name="provisioning-for-application-services"></a>應用程式服務的佈建
+## <a name="provisioning-for-application-services"></a>佈建應用程式服務
 
 Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應用程式服務」(也稱為功能)。 不論是在 iOS Provisioning Portal (iOS 佈建入口網站) 中於建立 **App ID** \(應用程式識別碼\) 時，還是在 Xamarin.iOS 應用程式專案所含的 **Entitlements.plist** 檔案中，都必須設定這些「應用程式服務」。 如需有關將「應用程式服務」新增至您應用程式的資訊，請參閱[功能簡介](~/ios/deploy-test/provisioning/capabilities/index.md)指南和[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
@@ -64,4 +64,4 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 - [免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
-- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) \(英文\)
+- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)

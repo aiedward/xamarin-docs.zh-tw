@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: EAEF7341-7A00-4439-9FAF-43882637BEF8
 ms.technology: xamarin-android
 ms.custom: video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/06/2018
-ms.openlocfilehash: 31e4073df70ced0cc9729c6dc292500264ad7fce
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 56430f8c4988c16a31f9806b0ffb8b6355d6340b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249946"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020005"
 ---
 # <a name="oreo-features"></a>Oreo 功能
 
@@ -29,11 +29,11 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 下列為在 Xamarin 應用程式中使用 Android Oreo 功能的必要條件：
 
-- **Visual Studio**&ndash;如果您使用 Windows，則需要15.5 或更新版本的 Visual Studio。  如果您使用 Mac，則需要 Visual Studio for Mac 版本7.2.0。
+- **Visual Studio** &ndash; 如果您使用 Windows，則需要15.5 版或更新版本的 Visual Studio。  如果您使用 Mac，則需要 Visual Studio for Mac 版本7.2.0。
 
-- 您必須安裝並設定 Visual Studio 的**xamarin android** &ndash; xamarin. android 8.0 或更新版本。
+- **&ndash; xamarin. android 8.0**或更新版本必須安裝並設定 Visual Studio。
 
-- **Android SDK**&ndash; Android SDK 8.0 （API 26）或更新版本必須透過 Android SDK 管理員安裝。
+- **Android SDK** &ndash; Android SDK 8.0 （API 26）或更新版本必須透過 Android SDK 管理員進行安裝。
 
 ## <a name="getting-started"></a>快速入門
 
@@ -123,7 +123,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 -----
 
-因為 Google 不再提供支援 API 26.0 和更新版本的獨立 GUI AVD 管理員，所以會顯示此訊息。 針對 android 8.0 Oreo，您必須使用 Xamarin Android Emulator 管理員或命令列`avdmanager`工具來建立適用于 android Oreo 的虛擬裝置。
+因為 Google 不再提供支援 API 26.0 和更新版本的獨立 GUI AVD 管理員，所以會顯示此訊息。 針對 Android 8.0 Oreo，您必須使用 Xamarin Android Emulator 管理員或命令列 `avdmanager` 工具來建立適用于 Android Oreo 的虛擬裝置。
 
 若要使用 Android Device Manager 來建立和管理虛擬裝置，請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md)。
 若要建立沒有 Android Device Manager 的虛擬裝置，請遵循下一節中的步驟。
@@ -134,13 +134,13 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 開啟 [命令提示字元] 視窗`JAVA_HOME` ，並將設為 JAVA SDK 在您電腦上的位置。 針對一般的 Xamarin 安裝，您可以使用下列命令：
+1. 開啟 [命令提示字元] 視窗，並將 `JAVA_HOME` 設定為電腦上 JAVA SDK 的位置。 針對一般的 Xamarin 安裝，您可以使用下列命令：
 
     ```cmd
     setx JAVA_HOME "C:\Program Files\Java\jdk1.8.0_131"
     ```
 
-2. 將 Android SDK `bin`資料夾的位置新增至您`PATH`的。
+2. 將 Android SDK `bin` 資料夾的位置新增至您的 `PATH`。
     針對一般的 Xamarin 安裝，您可以使用下列命令：
 
     ```cmd
@@ -157,7 +157,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 在您**avdmanager**以建立虛擬裝置之後，它會包含在 [裝置] 下拉式功能表中：
 
-[![已將新的 AVD 新增至裝置下拉式功能表](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
+[![新增至裝置下拉式功能表的新 AVD](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -177,7 +177,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 使用**avdmanager**建立虛擬裝置之後，它會包含在 [裝置] 下拉式功能表中：
 
-[![已將新的 AVD 新增至裝置下拉式功能表](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
+[![新增至裝置下拉式功能表的新 AVD](oreo-images/mac/04-android-o-avd-sml.png)](oreo-images/mac/04-android-o-avd.png#lightbox)
 
 -----
 
@@ -200,9 +200,9 @@ Android Oreo 引進各種新特性和功能，例如通知通道、通知徽章�
 
 通知徽章是出現在應用程式圖示上的小點，如下列螢幕擷取畫面所示：
 
-[![應用程式圖示上的範例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
+[應用程式圖示上的![範例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
-這些點表示應用程式&ndash;中的一或多個通知通道有新的通知，這是使用者尚未關閉或採取行動的通知。 使用者可以長按圖示來概覽通知徽章的相關通知，從 appeaars 的長按下功能表中關閉通知或採取行動。
+這些點表示應用程式中有一或多個通知通道的新通知與該應用程式圖示相關聯 &ndash; 這些是使用者尚未關閉或處理的通知。 使用者可以長按圖示來概覽通知徽章的相關通知，從 appeaars 的長按下功能表中關閉通知或採取行動。
 
 如需有關通知徽章的詳細資訊，請參閱 Android 開發人員[通知徽章](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#Badges)主題。
 
@@ -214,9 +214,9 @@ Android Oreo 引進了*XML*的字型，讓您可以將自訂字型納入做為�
 
 2. 將您的字型檔案（例如， **.ttf**和**otf**檔案）複製到**資源/字型**。 
 
-3. 如有需要，請將每個字型檔案重新命名，使其符合 Android 檔案命名慣例（也就是，檔案名中只*使用小寫 a-z*、 *0-9*和底線）。 例如，字型`Pacifico-Regular.ttf`檔案可能會重新命名為類似`pacifico.ttf`的內容。
+3. 如有需要，請將每個字型檔案重新命名，使其符合 Android 檔案命名慣例（也就是，檔案名中只*使用小寫 a-z*、 *0-9*和底線）。 例如，字型檔案 `Pacifico-Regular.ttf` 可以重新命名為類似 `pacifico.ttf`的專案。
 
-4. 使用版面配置 XML 中的新`android:fontFamily`屬性來套用自訂字型。 例如，下列`TextView`宣告會使用已加入的**pacifico. .ttf**字型資源：
+4. 使用版面配置 XML 中的新 `android:fontFamily` 屬性來套用自訂字型。 例如，下列 `TextView` 宣告會使用已加入的**pacifico. .ttf**字型資源：
 
    ```xml
    <TextView
@@ -232,7 +232,7 @@ Android Oreo 引進了*XML*的字型，讓您可以將自訂字型納入做為�
 
 從 Android Oreo 開始，應用程式可以向提供者要求字型，而不是將其組合到 APK 中。 只有在需要時，才會從網路下載字型。 這項功能可減少 APK 大小、節省電話的記憶體和行動資料的使用。 您也可以藉由安裝 Android 支援程式庫26套件，在 Android API 14 版和更高版本上使用這項功能。
 
-當您的應用程式需要字型時，您`FontsRequest`可以建立物件（指定要下載的字型），然後將它`FontsContract`傳遞至方法以下載字型。 下列步驟將更詳細地說明字型下載程式：
+當您的應用程式需要字型時，您可以建立 `FontsRequest` 物件（指定要下載的字型），然後將它傳遞給 `FontsContract` 方法來下載字型。 下列步驟將更詳細地說明字型下載程式：
 
 1. 具現化[FontRequest](https://developer.android.com/reference/android/provider/FontRequest.html)物件。 
 
@@ -244,7 +244,7 @@ Android Oreo 引進了*XML*的字型，讓您可以將自訂字型納入做為�
 
 5. 呼叫[FontsContract. RequestFonts](https://developer.android.com/reference/android/provider/FontsContract.html#requestFonts(android.content.Context,%20android.provider.FontRequest,%20android.os.Handler,%20android.os.CancellationSignal,%20android.provider.FontsContract.FontRequestCallback))方法，以從字型提供者取得字型。 
 
-當您呼叫`RequestFonts`方法時，它會先檢查字型是否在本機快取（從先前的`RequestFont`呼叫）。 如果未快取，它會呼叫字型提供者，以非同步方式抓取字型，然後藉由叫用您`OnTypeFaceRetrieved`的方法，將結果傳回到您的應用程式。
+當您呼叫 `RequestFonts` 方法時，它會先檢查字型是否在本機快取（從上一個呼叫到 `RequestFont`）。 如果未快取，它會呼叫字型提供者，以非同步方式抓取字型，然後藉由叫用您的 `OnTypeFaceRetrieved` 方法，將結果傳回給您的應用程式。
 
 [可下載](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts)的字型範例示範如何使用 Android Oreo 中引進的可下載字型功能。 
 
@@ -268,11 +268,11 @@ Android Oreo 讓活動可以在圖片中啟動（PIP）模式，以覆迭另一�
 android:supportsPictureInPicture
 ```
 
-若要指定活動在 PIP 模式時的行為方式，請使用新的[PictureInPictureParams](https://developer.android.com/reference/android/app/PictureInPictureParams.html)物件。 `PictureInPictureParams`代表一組參數，您可以用來初始化和更新 PIP 模式中的活動（例如，活動的慣用外觀比例）。 在 Android Oreo 中，已將下列`Activity`新的 PIP 方法新增至：
+若要指定活動在 PIP 模式時的行為方式，請使用新的[PictureInPictureParams](https://developer.android.com/reference/android/app/PictureInPictureParams.html)物件。 `PictureInPictureParams` 代表一組參數，您可以用來初始化和更新 PIP 模式的活動（例如，活動的慣用外觀比例）。 下列新的 PIP 方法已新增至 Android Oreo 中的 `Activity`：
 
-- [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29)&ndash;將活動置於 PIP 模式。 活動會放在畫面的角落，而畫面的其餘部分則會填入畫面上先前的活動。
+- [EnterPictureInPictureMode](https://developer.android.com/reference/android/app/Activity.html#enterPictureInPictureMode%28android.app.PictureInPictureParams%29) &ndash; 會將活動放入 PIP 模式。 活動會放在畫面的角落，而畫面的其餘部分則會填入畫面上先前的活動。
 
-- [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29)&ndash;更新活動的 PIP 設定（例如，外觀比例的變更）。
+- [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; 會更新活動的 PIP 設定（例如，外觀比例的變更）。
 
 [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture)範例示範在 Oreo 中引進的掌上型裝置（PiP）模式的基本使用方式。 此範例會播放影片，而在顯示模式或其他活動之間來回切換時，會繼續不中斷。
 
@@ -288,7 +288,7 @@ Android Oreo 包含各種系統和 API 行為變更，可能會影響現有應�
 
 為了改善使用者體驗，Android Oreo 會對應用程式在背景中執行時的功能施加限制。 例如，如果使用者觀看影片或玩遊戲，則在背景中執行的應用程式可能會影響在前景中執行之影片密集型應用程式的效能。 因此，Android Oreo 會針對未直接與使用者互動的應用程式，施加下列限制：
 
-1. **背景服務限制**&ndash;當應用程式在背景中執行時，它會有數分鐘的時間範圍，仍然允許它建立及使用服務。 在該視窗結束時，Android 會停止應用程式的背景服務，並將它視為_閒置_。
+1. **背景服務限制**&ndash; 當應用程式在背景中執行時，它有數分鐘的時間範圍，仍然可以建立和使用服務。 在該視窗結束時，Android 會停止應用程式的背景服務，並將它視為_閒置_。
 
 2. **廣播限制**&ndash; Android 7.0 （API 25）在應用程式註冊要接收的廣播上放置限制。 Android Oreo 讓這些限制更嚴格。 例如，Android Oreo 應用程式無法再在其資訊清單中註冊隱含廣播的廣播接收器。
 
@@ -300,7 +300,7 @@ Android Oreo 包含各種系統和 API 行為變更，可能會影響現有應�
 
 - Android Oreo 淘汰能夠設定個別通知的優先順序。 相反地，您會在建立通知通道時設定建議的重要性層級。 您指派給通知通道的重要性層級，會套用至您張貼至其上的所有通知訊息。
 
-- 針對以 Android Oreo 為目標`PendingIntent.GetService()`的應用程式，由於在背景中啟動的服務上所放置的新限制，因此無法運作。 如果您的目標是 Android Oreo，您應該改用[PendingIntent. GetBroadcast](xref:Android.App.PendingIntent.GetBroadcast*) 。  
+- 針對以 Android Oreo 為目標的應用程式，`PendingIntent.GetService()` 因在背景中啟動的服務所放置的新限制而無法運作。 如果您的目標是 Android Oreo，您應該改用[PendingIntent. GetBroadcast](xref:Android.App.PendingIntent.GetBroadcast*) 。  
 
 ## <a name="sample-code"></a>程式碼範例
 
@@ -316,7 +316,7 @@ Android Oreo 包含各種系統和 API 行為變更，可能會影響現有應�
 
 - [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat)示範 EmojiCompat 支援程式庫的使用方式。 您可以使用此程式庫，以防止您的應用程式將遺漏的表情字元顯示為 "tofu" 字元。
 
-- [位置更新暫止意圖](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)說明使用`PendingIntent`位置 API 來取得裝置位置的相關更新。
+- [位置更新擱置意圖](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent)說明使用位置 API 來取得裝置位置的相關更新，以 `PendingIntent`。
 
 - [位置更新前景服務](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)示範如何使用位置 API，使用系結和啟動的前景服務來取得裝置位置的相關更新。
 

@@ -3,15 +3,15 @@ title: Xamarin Live Player 應用程式
 description: 本檔說明 Xamarin Live Player 應用程式，可以用來預覽裝置上即時的程式碼變更。 其中討論設定、範例、記錄、設定、管理裝置等等。
 ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: d4cf596d70be746e85f21bace3e5ddf662076e6d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1d3adfad3b9d2a64990ff11f81bf3a1a39825bb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772319"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029651"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player 應用程式
 

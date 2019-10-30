@@ -5,26 +5,26 @@ ms.prod: xamarin
 ms.assetid: EBDC50DC-B44B-4003-AB2B-1EEB868A5E01
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 24203d8a3a4356fb4de08d132c164d9f2d19a0c9
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 61d1adfc997b34302f1f89f56653af906ca90135
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291794"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022215"
 ---
 # <a name="binding-ios-libraries"></a>系結 iOS 程式庫
 
 請遵循下列連結，以瞭解如何系結 Xamarin. iOS 和 Xamarin 的目標-C 程式庫和 CocoaPods：
 
 - [**總覽**](~/cross-platform/macios/binding/overview.md)-
-  描述系結的運作方式。
-- 系結[**目標-C 程式庫**](~/cross-platform/macios/binding/objective-c-libraries.md)-
-  有關如何系結要在 Xamarin 專案中使用之目標 C 程式庫的指示。
+  說明系結的運作方式。
+- 系結[**目標-c 程式庫**](~/cross-platform/macios/binding/objective-c-libraries.md)-
+  如何系結目標 C 程式庫以在 Xamarin 專案中使用的指示。
 - [**類型定義參考指南**](~/cross-platform/macios/binding/binding-types-reference.md)-
-  描述系結作者可用來驅動系結產生進程的所有屬性。
+  描述系結作者用來驅動系結產生進程的所有屬性。
 
 ## <a name="objective-sharpiecross-platformmaciosbindingobjective-sharpieindexmd"></a>[Objective Sharpie](~/cross-platform/macios/binding/objective-sharpie/index.md)
 

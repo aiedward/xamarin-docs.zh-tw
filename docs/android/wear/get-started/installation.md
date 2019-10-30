@@ -4,15 +4,15 @@ description: 本文會逐步解說準備您的電腦和裝置以進行 Android �
 ms.prod: xamarin
 ms.assetid: 3BB395FA-0545-4024-A18F-98CF5E9CA55F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 190e38e525288dbc2b7f6bd9e785c723c80c6271
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 83ec214ae1838959355e99322ce5a809ead004fa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762230"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028735"
 ---
 # <a name="setup-and-installation"></a>設定與安裝
 
@@ -22,13 +22,13 @@ _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發�
 
 若要建立以 Xamarin 為基礎的 Android 磨損應用程式，您必須具備下列各項：
 
-- **Visual Studio 或 Visual Studio for Mac**&ndash;需要 Visual Studio 2017 的社區或更新版本。
+- 需要**Visual Studio 或 Visual Studio for Mac** &ndash; Visual Studio 2017 的社區或更新版本。
 
-- 您必須安裝並設定 Visual Studio 或 Visual Studio for Mac 的**xamarin android** &ndash; xamarin. android 4.17 或更新版本。
+- **&ndash; xamarin. android 4.17**或更新版本必須安裝，並以 Visual Studio 或 Visual Studio for Mac 設定。
 
 - **Android SDK** Android SDK 5.0.1 （API 21）或更新版本必須透過 Android SDK 管理員進行安裝。
 
-- **JAVA 開發人員套件**如果您要針對 API 層級24或更高版本進行開發，則 Xamarin Android 開發需要[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) （jdk 1.8 也支援早于24的 api 層級）。 &ndash;
+- 如果您要針對 API 層級24或更高版本進行開發，則**JAVA 開發人員套件**&ndash; Xamarin Android 開發需要[JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) （jdk 1.8 也支援早于24的 api 層級）。
 
 如果您是特別針對 API 層級23或更早的版本進行開發，您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。
 
@@ -65,7 +65,7 @@ _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發�
 - Android 4.4 W （API20），或
 - Android 5.0.1 （API21）或更高版本。
 
-如果您未安裝最新的 sdk 和工具，請下載所需的 sdk 工具*和*api 位（您可能需要逐一滾動以尋找&ndash; api 選取專案，如下所示）： 
+如果您未安裝最新的 SDK 和工具，請下載所需的 SDK 工具*和*API 位（您可能需要稍微滾動一點來尋找它們，&ndash; API 選擇如下所示）： 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -77,7 +77,7 @@ _本文會逐步解說準備您的電腦和裝置以進行 Android 磨損開發�
 
 -----
 
-## <a name="configuration"></a>組態
+## <a name="configuration"></a>Configuration
 
 在您可以使用測試應用程式之前，您必須先設定 Android 磨損模擬器或實際的 Android 磨損裝置。 
 

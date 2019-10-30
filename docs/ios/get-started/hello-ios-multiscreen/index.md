@@ -5,23 +5,23 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 79f57ac0-37d0-4593-9dcf-fca93ad0be65
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 04e91241a3d726fc48434226d2bfd4b024172c61
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 871a94d06048f893cf06b00de46d66dd59b3703e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284365"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023209"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello, iOS 多重畫面
 
-## <a name="part-1-quickstartiosget-startedhello-ios-multiscreenhello-ios-multiscreen-quickstartmd"></a>[第 1 部分：快速入門](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md)
+## <a name="part-1-quickstartiosget-startedhello-ios-multiscreenhello-ios-multiscreen-quickstartmd"></a>[第一部分：快速入門](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md)
 
 本指南的第一部分會在 Phoneword 範例應用程式中新增第二個畫面，以便持續追蹤過去輸入的號碼。
 
-## <a name="part-2-deep-diveiosget-startedhello-ios-multiscreenhello-ios-multiscreen-deepdivemd"></a>[第 2 部分：深入了解](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
+## <a name="part-2-deep-diveiosget-startedhello-ios-multiscreenhello-ios-multiscreen-deepdivemd"></a>[第二部分：深度剖析](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
 
 本文件的第二部分會說明已建置的內容並討論架構、瀏覽，以及過程中遇到的其他 iOS 新概念。
 

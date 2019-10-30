@@ -4,15 +4,15 @@ description: 本檔描述 DataAccess_Adv 範例，其中示範如何收集使用
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 9441596cd457c3cc3a881e5db319ec3bbfc5a312
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 060e4b8e7856e0024e6d236652c2b04c1da16f66
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766851"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008243"
 ---
 # <a name="using-data-in-an-ios-app"></a>在 iOS 應用程式中使用資料
 
@@ -38,7 +38,7 @@ IOS 中 ViewControllers 的原生 UI 程式碼超出本檔的範圍。
 - 讀取清單
 - 讀取個別記錄
 
-@No__t_0 類別中的兩個方法如下：
+`StockDatabase` 類別中的兩個方法如下：
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -99,7 +99,7 @@ public int DeleteStock(Stock stock)
 您可以在行動應用程式中輕鬆完成此動作，方法是在應用程式中傳送現有的 SQLite 資料庫檔案，並將它複製到可寫入的目錄，然後再存取該檔案。 因為 SQLite 是在許多平臺上使用的標準檔案格式，所以有一些工具可用來建立 SQLite 資料庫檔案：
 
 - **SQLite Manager Firefox 延伸**模組–適用于 Mac 和 Windows，並產生與 IOS 和 Android 相容的檔案。
-- **命令列**–請參閱[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 。
+- **命令列**–請參閱[www.sqlite.org/sqlite.html](https://www.sqlite.org/sqlite.html) 。
 
 建立與您的應用程式一起散發的資料庫檔案時，請留意資料表和資料行的命名，以確保它們符合您的程式碼所預期的內容，特別是當您使用的是會C#預期名稱符合您的類別和屬性的 SQLite.NET 時（或相關聯的自訂屬性）。
 

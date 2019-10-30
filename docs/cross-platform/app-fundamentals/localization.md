@@ -3,15 +3,15 @@ title: 應用程式使用者介面當地語系化
 description: 本檔說明國際化和當地語系化的跨平臺概念，並探討它們如何影響應用程式設計。
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9e0a6569710ca3ad10f57d7145a97af92574427c
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 418c0da2b8fa0e495ae7e6a605c7fde43b6515cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198434"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016801"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -59,13 +59,13 @@ ms.locfileid: "71198434"
 
 比較 iOS 主畫面上的幾個專案的字串長度（英文、德文和日文）：
 
-[![](localization-images/language-compare-sml.png "德文與日文字串長度")](localization-images/language-compare.png#lightbox)
+[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
 
 請注意，英文（8個字元）的**設定**需要13個字元的德文翻譯，但日文只能有2個字元。
 
 當標籤的長度可能有很大的差異時，顯示標籤和輸入欄位並存的版面配置將不容易使用。 標籤顯示在欄位上方的版面配置通常較容易當地語系化，因為標籤和輸入都可以使用畫面的完整寬度。
 
-一般的規則是，如果您要建立固定的配置（特別是並存元素），允許的寬度比您的英文字串所需的最多 50%，以用於標籤和文字。 這不會解決每個問題，但會提供可在許多情況下工作的緩衝區。
+一般的規則是，如果您要建立固定的配置（特別是並存元素），允許的寬度比您的英文字串所需的最多50%，以用於標籤和文字。 這不會解決每個問題，但會提供可在許多情況下工作的緩衝區。
 
 ### <a name="input-validation"></a>輸入驗證
 
@@ -218,7 +218,7 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 
 ### <a name="use-multiple-strings-for-cardinality"></a>針對基數使用多個字串
 
-避免針對每`"You have {0} message/s."`個狀態使用特定字串之類的字串，以提供更好的使用者體驗：
+避免如 `"You have {0} message/s."` 的字串使用每個狀態的特定字串，以提供更佳的使用者體驗：
 
 **好**：
 
@@ -235,7 +235,7 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 
 以拉丁語言來說，有時會根據主旨的性別，使用不同的字組。 如果您的應用程式知道性別，您應該允許翻譯的字串反映這一點。
 
-此外，也有更明顯的情況，也就是英文，其中的字串指的是您應用程式的特定人員或使用者。 例如，有些網站會顯示類似`"Bob commented on his post"`的訊息，因此您需要男性、女性和非二進位或不明性別的字串：
+此外，也有更明顯的情況，也就是英文，其中的字串指的是您應用程式的特定人員或使用者。 例如，某些網站會顯示類似 `"Bob commented on his post"` 的訊息，因此您需要男性、女性和非二進位或不明性別的字串：
 
 **好**：
 
@@ -271,7 +271,7 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 基於測試目的，您可以使用許多線上翻譯工具之一，在開發期間于應用程式中包含一些當地語系化的文字：
 
 - [Bing 翻譯](https://www.bing.com/translator/)
-- [Google 翻譯](http://translate.google.com/)
+- [Google 翻譯](https://translate.google.com/)
 
 還有許多其他功能可供使用。 機器翻譯的品質通常不會被視為足以發行應用程式，而不需要先經過專業翻譯或原生喇叭的審查和測試。
 
@@ -279,7 +279,7 @@ IOS 和 Android 皆支援由右至左的版面配置和字型轉譯，以及可�
 
 此外，也有專業的翻譯服務可取得您的字串，並將其散發給他們自己的翻譯人員，為您提供費用的完成翻譯。
 
-其中一個最知名的服務就是[LionBridge](http://www.lionbridge.com/)。 大部分的專業服務都支援所有常見的檔案類型，包括字串、XML、RESX 和 .POT/PO。
+其中一個最知名的服務就是[LionBridge](https://www.lionbridge.com/)。 大部分的專業服務都支援所有常見的檔案類型，包括字串、XML、RESX 和 .POT/PO。
 
 ## <a name="summary"></a>總結
 

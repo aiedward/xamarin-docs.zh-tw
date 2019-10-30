@@ -4,15 +4,15 @@ description: 本文件提供散發技巧的概觀，其適用於 Xamarin iOS 應
 ms.prod: xamarin
 ms.assetid: 341D36DB-BB07-FA94-BCC9-5F8C0B18C179
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a261d1fc86fac16cf48575616359b083daebf47
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8d4be4b06c051386afa0358856a6df49abb6653
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756548"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026474"
 ---
 # <a name="xamarinios-app-distribution-overview"></a>Xamarin.iOS 應用程式散發概觀
 
@@ -20,7 +20,7 @@ ms.locfileid: "70756548"
 
 完成 Xamarin.iOS 應用程式開發之後，軟體開發生命週期的下一步就是將應用程式散發給使用者，如下圖中醒目標示的部分所示：
 
-[![](images/publishingdiagram.png "Xamarin.iOS 應用程式開發完成後，下一步就是散發給使用者，如本圖中醒目標示的部分所示")](images/publishingdiagram.png#lightbox)
+[![](images/publishingdiagram.png "After the iOS app has been developed, the next step is to distribute the app to users, as shown in the highlighted section of this diagram")](images/publishingdiagram.png#lightbox)
 
 Apple 提供以下方式散發 iOS 應用程式，這些方式都受到 Xamarin.iOS 支援：
 

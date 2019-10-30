@@ -4,15 +4,15 @@ description: 本節涵蓋用來測試應用程式的主題，以及其散發方�
 ms.prod: xamarin
 ms.assetid: DA4B4BD7-DC09-4F61-BC07-36727AF52BA2
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 12a2acf3310a9df7ef7856dbf2ff8e17241b029e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 022e458fd398366a79970635c1d064cfc2981375
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279406"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030737"
 ---
 # <a name="deploying-and-testing-tvos-apps-in-xamarin"></a>在 Xamarin 中部署和測試 tvOS 應用程式
 

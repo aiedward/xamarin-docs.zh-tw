@@ -4,15 +4,15 @@ description: 本文將介紹在 iTunes Connect 中設定和維護 Xamarin.iOS �
 ms.prod: xamarin
 ms.assetid: 74587317-4b15-4904-9582-dcd914827cbc
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 01e6ae4362c902c0982f7b93cc1f65b003db1020
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aefd649fe1859306e5499addc1c08f4e42b2b424
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763224"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026688"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>在 iTunes Connect 中設定應用程式
 
@@ -40,7 +40,7 @@ iTunes Connect 可用於下列事項：
 
 iTunes Connect 的**合約、稅務、銀行業務**一節，是用來提供有關 iTunes 開發者付款和稅務所需的財務資訊，並追蹤您與 Apple 所簽訂之任何協議的狀態。 在您可以在 App Store 上發行 iOS 應用程式 (免費或付費) 之前，您必須先備妥適當的合約，並同意對現有合約所進行的任何修改。
 
-[![](itunesconnect-images/agreement01.png "管理合約、稅務和銀行業務")](itunesconnect-images/agreement01.png#lightbox)
+[![](itunesconnect-images/agreement01.png "Managing Agreements, Tax and Banking")](itunesconnect-images/agreement01.png#lightbox)
 
 從這裡開始，您可以：
 
@@ -63,13 +63,13 @@ iTunes Connect 的**合約、稅務、銀行業務**一節，是用來提供有�
 
 1. 按一下 [我的應用程式]：
 
-    [![](itunesconnect-images/add01.png "按一下 [我的應用程式]")](itunesconnect-images/add01.png#lightbox)
+    [![](itunesconnect-images/add01.png "Click on My Apps")](itunesconnect-images/add01.png#lightbox)
 2. 按一下左上角的 **+** ，然後選取 [New iOS App] (新增 iOS 應用程式)：
 
-    [![](itunesconnect-images/add02.png "新增 iOS 應用程式")](itunesconnect-images/add02.png#lightbox)
+    [![](itunesconnect-images/add02.png "Adding a New iOS App")](itunesconnect-images/add02.png#lightbox)
 3. iTunes Connect 將會顯示 [New iOS App] (新增 iOS 應用程式) 對話方塊：
 
-    [![](itunesconnect-images/add03.png "[New iOS App] \(新增 iOS 應用程式\) 對話方塊")](itunesconnect-images/add03.png#lightbox)
+    [![](itunesconnect-images/add03.png "The New iOS App dialog")](itunesconnect-images/add03.png#lightbox)
 4. 輸入應用程式在 App Store 中顯示的**名稱**和**版本號碼**。
 5. 選取 [主要語言]。
 6. 輸入 **SKU** 號碼，這是用於追踪應用程式的唯一常數識別碼。 它不會對終端使用者顯示，且應用程式建立後即「無法」更改。
@@ -78,7 +78,7 @@ iTunes Connect 的**合約、稅務、銀行業務**一節，是用來提供有�
 
 將會在 iTunes Connect 中建立新的應用程式，也將讓您填寫必要的資訊，如描述、定價、類別、分級等等：
 
-[![](itunesconnect-images/add04.png "將會在 iTunes Connect 中建立新的應用程式")](itunesconnect-images/add04.png#lightbox)
+[![](itunesconnect-images/add04.png "The new application will be created in iTunes Connect")](itunesconnect-images/add04.png#lightbox)
 
 <a name="managing" />
 
@@ -112,12 +112,12 @@ Apple 要求提供應用程式支援之各種螢幕大小和解析度的螢幕�
 4. 捲動到**螢幕擷取畫面**區段。
 5. 選取 [影像大小] 並拖曳所需的影像 (每個螢幕大小最多 5 張)：
 
-    [![](itunesconnect-images/screenshot01.png "選取 [影像大小] 並拖曳所需的影像")](itunesconnect-images/screenshot01.png#lightbox)
+    [![](itunesconnect-images/screenshot01.png "Select the Image Size and drag in the required images")](itunesconnect-images/screenshot01.png#lightbox)
 6. 為所有所需的螢幕大小重複此動作。
 7. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
 
 > [!NOTE]
-> 注意:如果螢幕擷取畫面或應用程式預覽影片不符合應用程式中目前的功能，Apple 就會拒絕您的提交。
+> 注意：如果螢幕擷取畫面或應用程式預覽影片與應用程式中目前的功能不符合，Apple 將拒絕您的提交。
 
 <a name="metadata" />
 
@@ -185,11 +185,11 @@ Apple 要求開發人員提供網站連結，當使用者遇到可能的應用�
 4. 捲動到**名稱**區段。
 5. 填寫所有必要資訊：
 
-    [![](itunesconnect-images/name01.png "在 iTunes Connect 中編輯名稱、描述、新增功能、關鍵字和 URL")](itunesconnect-images/name01.png#lightbox)
+    [![](itunesconnect-images/name01.png "Editing Name, Description, What's New, Keywords and URLs in iTunes Connect")](itunesconnect-images/name01.png#lightbox)
 6. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
 
 > [!IMPORTANT]
-> 注意:若名稱、描述、新功能、關鍵字或 URL 不符合您應用程式中目前的功能，Apple 就會拒絕您的提交。
+> 注意：若名稱、描述、新增功能、關鍵字或 URL 不符合您應用程式中的目前功能，Apple 將拒絕您的提交。
 
 <a name="general" />
 
@@ -209,7 +209,7 @@ Apple 建議在設計應用程式圖示時遵循下列指導方針：
 - 確保圖示適合應用程式。
 - 建立與應用程式設計一致的簡單圖示。
 - 圖示中避免使用文字。
-- 全球思維：所有商店區域都使用單一的應用程式圖示。
+- 全域思考：單一應用程式圖式將用於市集內的所有區域。
 
 在 App Store 中顯示的應用程式圖示必須有 1024 x 1024 影像像素。
 
@@ -234,7 +234,7 @@ Apple 建議在設計應用程式圖示時遵循下列指導方針：
 建立適用於兒童的應用程式時，App Store 有一個針對 11 歲及以下兒童的特殊類別。 即使您的應用程式並非特別針對兒童，這也有助於客戶根據所提供的適當內容分級來做出正確選擇。
 
 > [!IMPORTANT]
-> 注意:如果發現任何猥褻、色情、冒犯他人或誹謗性內容，Apple 就會拒絕應用程式提交。
+> 注意：如果發現淫穢、色情、攻擊性或誹謗性內容，Apple 將拒絕應用程式提交。
 
 ### <a name="copyright-and-company-information"></a>著作權和公司資訊
 
@@ -250,14 +250,14 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 4. 捲動到**應用程式一般資訊**區段。
 5. 填寫所有必要資訊：
 
-    [![](itunesconnect-images/general01.png "在 iTunes Connect 中編輯應用程式一般資訊")](itunesconnect-images/general01.png#lightbox)
+    [![](itunesconnect-images/general01.png "Editing General App Information in iTunes Connect")](itunesconnect-images/general01.png#lightbox)
 6. 按一下 [分級] 旁的 [編輯] 按鈕，設定分級資訊：
 
-    [![](itunesconnect-images/general02.png "編輯分級")](itunesconnect-images/general02.png#lightbox)
+    [![](itunesconnect-images/general02.png "Editing the Rating")](itunesconnect-images/general02.png#lightbox)
 7. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
 
 > [!NOTE]
-> 注意:如果分類或分級不符合應用程式中目前的功能，Apple 就會拒絕您的提交。
+> 注意：如果分類或分級與應用程式中的目前功能不符合，Apple 將拒絕您的提交。
 
 <a name="game-center" />
 
@@ -276,14 +276,14 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 5. 將 **Game Center** 區段旁的開關切換到 [開] 的位置。
 6. 填寫所有必要資訊：
 
-    [![](itunesconnect-images/gamecenter01.png "在 iTunes Connect 中編輯 Game Center 資訊")](itunesconnect-images/gamecenter01.png#lightbox)
+    [![](itunesconnect-images/gamecenter01.png "Editing Game Center Information in iTunes Connect")](itunesconnect-images/gamecenter01.png#lightbox)
 7. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
 
 使用 [Game Center] 索引標籤來啟用 Game Center，並維護此應用程式任何可用的**排名**或**成就**：
 
-[![](itunesconnect-images/gamecenter02.png "啟用 Game Center")](itunesconnect-images/gamecenter02.png#lightbox)
+[![](itunesconnect-images/gamecenter02.png "Activate Game Center")](itunesconnect-images/gamecenter02.png#lightbox)
 
-[![](itunesconnect-images/gamecenter03.png "維護此應用程式任何可用的排名或成就")](itunesconnect-images/gamecenter03.png#lightbox)
+[![](itunesconnect-images/gamecenter03.png "Maintain any available Leaderboards or Achievements for this application")](itunesconnect-images/gamecenter03.png#lightbox)
 
 ## <a name="maintaining-app-review-information"></a>維護應用程式審核資訊
 
@@ -299,17 +299,17 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 4. 捲動到 [應用程式檢閱] 區段。
 5. 填寫所有必要資訊：
 
-    [![](itunesconnect-images/review01.png "在 iTunes Connect 中編輯應用程式檢閱資訊")](itunesconnect-images/review01.png#lightbox)
+    [![](itunesconnect-images/review01.png "Editing App Review Information in iTunes Connect")](itunesconnect-images/review01.png#lightbox)
 6. 選擇希望如何將通過檢閱的應用程式發行至 App Store：
 
-    [![](itunesconnect-images/review02.png "在 iTunes Connect 中編輯應用程式檢閱資訊")](itunesconnect-images/review02.png#lightbox)
+    [![](itunesconnect-images/review02.png "Editing release information in iTunes Connect")](itunesconnect-images/review02.png#lightbox)
 7. 按一下螢幕頂端的 [儲存] 按鈕以儲存變更。
 
 ## <a name="maintaining-pricing-information"></a>維護應用程式定價資訊
 
 如果您計劃發行付費應用程式，則需要選擇一個 Apple 可用的定價層，並設定售價和給定價格的生效日期。 例如，截至編寫本文時，**第 1 層**定價如下所示：
 
-[![](itunesconnect-images/price01.png "維護定價資訊")](itunesconnect-images/price01.png#lightbox)
+[![](itunesconnect-images/price01.png "Maintaining Pricing Information")](itunesconnect-images/price01.png#lightbox)
 
 ### <a name="educational-discount"></a>教育折扣
 
@@ -317,9 +317,9 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 
 ### <a name="custom-business-to-business-application"></a>自訂企業對企業應用程式
 
-設定為**自訂企業對企業應用程式**的應用程式僅提供給 iTunes Connect 中指定的**大量採購方案**客戶，且僅在適用區域中可用 (例如，美國大量採購方案客戶必須使用美國的 App Store 企業版大量採購方案)。
+設定為**自訂企業對企業應用程式**的應用程式，只會提供給您在 iTunes Connect 中指定的**大量採購方案**客戶使用，而且只會在適用的區域中提供（例如，美國大量採購方案客戶必須使用適用于企業的美國 App Store 大量採購方案）。
 
-自訂的企業對企業應用程式將不提供給教育機構或 App Store 一般客戶。 若要深入了解「App Store 企業版大量採購方案」，請前往 [Apple 的常見問題](http://vpp.itunes.apple.com/faq)頁面。 若要深入了解客戶如何註冊**大量採購方案**，請前往 Apple 的 [Deployment Programs](http://enroll.vpp.itunes.apple.com) (部署方案) 頁面。
+自訂的企業對企業應用程式將不提供給教育機構或 App Store 一般客戶。 若要深入了解「App Store 企業版大量採購方案」，請前往 [Apple 的常見問題](https://vpp.itunes.apple.com/faq)頁面。 若要深入了解客戶如何註冊**大量採購方案**，請前往 Apple 的 [Deployment Programs](https://enroll.vpp.itunes.apple.com) (部署方案) 頁面。
 
 ### <a name="editing-pricing-information-in-itunes-connect"></a>在 iTunes Connect 中編輯應用程式定價資訊
 
@@ -329,7 +329,7 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 2. 按一下應用程式的**圖示**。
 3. 選取 [定價] 索引標籤：
 
-    [![](itunesconnect-images/price02.png "在 iTunes Connect 中編輯應用程式定價資訊")](itunesconnect-images/price02.png#lightbox)
+    [![](itunesconnect-images/price02.png "Editing Pricing Information in iTunes Connect")](itunesconnect-images/price02.png#lightbox)
 4. 選取 [Availability Date]) (可用日期。
 5. 從 [價格區間] 下拉式清單中選取所要的價格。
 6. 選擇性啟用**教育折扣**。
@@ -342,15 +342,15 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 
 如果您計劃銷售虛擬的應用程式內產品 (例如新的遊戲級別或應用程式功能)，請使用此區段來建立和維護這些購買項目。
 
-[![](itunesconnect-images/inapp01.png "維護在應用程式內購買資訊")](itunesconnect-images/inapp01.png#lightbox)
+[![](itunesconnect-images/inapp01.png "Maintaining In-App Purchase Information")](itunesconnect-images/inapp01.png#lightbox)
 
 如需如何在 Xamarin.iOS 中使用在應用程式內購買的資訊，請參閱[在應用程式內購買](~/ios/platform/in-app-purchasing/index.md)文件。
 
 ## <a name="viewing-application-reviews"></a>檢視應用程式評論
 
-一旦應用程式發行至 App Store 之後，購買或免費下載應用程式的使用者即可撰寫應用程式評論並評定星級。 請使用此區段來查看評論。 例如：
+一旦應用程式發行至 App Store 之後，購買或免費下載應用程式的使用者即可撰寫應用程式評論並評定星級。 請使用此區段來查看評論。 例如:
 
-[![](itunesconnect-images/reviews01.png "檢視應用程式評論")](itunesconnect-images/reviews01.png#lightbox)
+[![](itunesconnect-images/reviews01.png "Viewing Application Reviews")](itunesconnect-images/reviews01.png#lightbox)
 
 ## <a name="summary"></a>總結
 
@@ -359,7 +359,7 @@ Apple 允許您提供應用程式的著作權資訊，並要求提供發行應�
 ## <a name="related-links"></a>相關連結
 
 - [使用影像](~/ios/app-fundamentals/images-icons/index.md)
-- [iOS App Development Workflow Guide:Distributing Applications](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
+- [iOS 應用程式開發工作流程指南：散發應用程式](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/35-Distributing_Applications/distributing_applications.html)
 - [App Store 提交提示](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [App Store 審查指導方針](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [iTunes Connect 開發人員指南](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225-CH1-SW1)

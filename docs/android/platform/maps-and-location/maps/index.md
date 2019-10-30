@@ -4,15 +4,15 @@ description: 本文討論如何搭配使用對應和位置與 Xamarin. Android�
 ms.prod: xamarin
 ms.assetid: 425E0ED2-5380-6EBE-7059-256B6E9128B8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 194f82757b0b4cb5e148e06d4303dc0d22afb9b3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d877f415bb96024bb41edc2be9aec108ae248e88
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761715"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020038"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何搭配使用 Google 地圖和位置與 Xamarin. Android
 
@@ -31,7 +31,7 @@ _本文討論如何搭配使用對應和位置與 Xamarin. Android。其中涵�
 
 ## <a name="related-links"></a>相關連結
 
-- [MapsAndLocationDemo_v3 (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
+- [MapsAndLocationDemo_v3 （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
 - [活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
 - [意圖清單：在 Android 裝置上叫用 Google 應用程式](https://developer.android.com/guide/appendix/g-app-intents.html)

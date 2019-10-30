@@ -4,15 +4,15 @@ description: 本指南將討論 Android 6.0 如何支援應用程式連結，這
 ms.prod: xamarin
 ms.assetid: 48174E39-19FD-43BC-B54C-9AF11D4B1F91
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: d65e8fabff88489571bba9d03379ff605a6ed0fe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757737"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027752"
 ---
 # <a name="app-linking-in-android"></a>Android 中的應用程式連結
 
@@ -20,17 +20,17 @@ _本指南將討論 Android 6.0 如何支援應用程式連結，這項技術可
 
 ## <a name="app-linking-overview"></a>應用程式連結總覽
 
-行動應用程式在許多情況下都&ndash;不會存留在定址接收器中，它們是其企業的重要元件及其網站。 企業可以順暢地連接其 web 目前狀態和行動應用程式，並提供網站上的連結來啟動行動應用程式，並在行動應用程式中顯示相關的內容。 *應用程式連結*（也稱為*深層連結*）是一種技術，可讓行動裝置回應 uri 並啟動對應至該 uri 的行動應用程式。
+行動應用程式不再存在於定址接收器 &ndash; 在許多情況下，它們是其企業的重要元件及其網站。 企業可以順暢地連接其 web 目前狀態和行動應用程式，並提供網站上的連結來啟動行動應用程式，並在行動應用程式中顯示相關的內容。 *應用程式連結*（也稱為*深層連結*）是一種技術，可讓行動裝置回應 uri 並啟動與該 uri 對應的行動應用程式。
 
-Android 會在使用者按一下行動瀏覽器中的連結時，透過*意圖系統* &ndash;處理應用程式連結，行動瀏覽器會分派 Android 將委派給已註冊應用程式的意圖。 例如，按一下烹飪網站上的連結，會開啟與該網站相關聯的行動應用程式，並向使用者顯示特定配方。 如果註冊了多個應用程式來處理該意圖，則 Android 會引發所謂的去除混淆*對話方塊*，詢問使用者哪個應用程式要選取應處理意圖的應用程式，例如：
+Android 會透過*意圖系統*&ndash; 處理應用程式連結，當使用者按一下行動瀏覽器中的連結時，行動瀏覽器會分派 Android 將委派給已註冊應用程式的意圖。 例如，按一下烹飪網站上的連結，會開啟與該網站相關聯的行動應用程式，並向使用者顯示特定配方。 如果註冊了多個應用程式來處理該意圖，則 Android 會引發所謂的去除混淆*對話方塊*，詢問使用者哪個應用程式要選取應處理意圖的應用程式，例如：
 
 ![消除混淆對話方塊的範例螢幕擷取畫面](app-linking-images/01-disambiguation-dialog.png)
 
-Android 6.0 使用自動連結處理來改善這項操作。 Android 可以自動將應用程式註冊為 URI &ndash;的預設處理常式。應用程式會自動啟動，並直接流覽至相關的活動。 Android 6.0 決定如何處理 URI 按一下的方式取決於下列準則：
+Android 6.0 使用自動連結處理來改善這項操作。 Android 可以自動將應用程式註冊為 URI 的預設處理常式 &ndash; 應用程式會自動啟動，並直接流覽至相關的活動。 Android 6.0 決定如何處理 URI 按一下的方式取決於下列準則：
 
-1. **現有的應用程式已與 URI 相關聯**&ndash;使用者可能已經將現有的應用程式與 URI 相關聯。 在此情況下，Android 會繼續使用該應用程式。
-2. **沒有任何現有的應用程式與 URI 相關聯，但已安裝支援的應用程式**&ndash;在此案例中，使用者尚未指定現有應用程式，因此 Android 會使用已安裝的支援應用程式來處理要求。
-3. **沒有任何現有的應用程式與 URI 相關聯，但已安裝許多支援的應用程式**&ndash;因為有多個應用程式支援 URI，所以會顯示去除混淆對話方塊，而使用者必須選取將處理 uri 的應用程式。
+1. **現有的應用程式已與 uri 相關聯**&ndash; 使用者可能已將現有的應用程式與 uri 相關聯。 在此情況下，Android 會繼續使用該應用程式。
+2. **沒有任何現有的應用程式與 URI 相關聯，但支援的應用程式已安裝**&ndash; 在此案例中，使用者尚未指定現有的應用程式，因此 Android 會使用已安裝的支援應用程式來處理要求。
+3. **沒有任何現有的應用程式與 uri 相關聯，但有許多**支援的應用程式已安裝 &ndash; 因為有多個應用程式支援 URI，將會顯示去除混淆對話方塊，使用者必須選取哪個應用程式會處理 uri。
 
 如果使用者沒有安裝支援 URI 的應用程式，且後續安裝了該應用程式，則 Android 會在確認與與 URI 相關聯的網站關聯之後，將該應用程式設定為 URI 的預設處理常式。
 
@@ -46,8 +46,8 @@ Android 6.0 使用自動連結處理來改善這項操作。 Android 可以自�
 
 在 Android 6.0 中設定應用程式連結會包含兩個主要步驟：
 
-1. **為網站 URI 新增一或多個意圖篩選器**&ndash;在行動瀏覽器中，意圖篩選器會在如何處理 URL 中按一下。
-2. **在網站**  &ndash;上發佈數位資產連結 JSON 檔案這是上傳至網站的檔案，Android 會使用此檔案來驗證行動應用程式與網站網域之間的關聯性。 若沒有這種情況，Android 就無法將應用程式安裝為 URI 的預設控制碼;使用者必須手動執行此動作。
+1. 為**網站 URI 新增一或多個意圖篩選器**&ndash; 在行動瀏覽器中，于 [如何處理 URL] 中按一下 [意圖篩選指南 Android]。
+2. 在**網站上發佈*數位資產連結 JSON*** 檔案 &ndash; 這是上傳至網站的檔案，且由 Android 用來驗證行動應用程式與網站網域之間的關聯性。 若沒有這種情況，Android 就無法將應用程式安裝為 URI 的預設控制碼;使用者必須手動執行此動作。
 
 <a name="configure-intent-filter" />
 
@@ -55,14 +55,14 @@ Android 6.0 使用自動連結處理來改善這項操作。 Android 可以自�
 
 您必須設定意圖篩選，以將 URI （或可能的一組 Uri）從網站對應至 Android 應用程式中的活動。 在 Xamarin 中，此關聯性是藉由使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)來裝飾活動來建立。 意圖篩選準則必須宣告下列資訊：
 
-- **`Intent.ActionView`** &ndash;這會註冊意圖篩選來回應 view 資訊的要求
-- **`Categories`** &ndash;  意圖篩選應該註冊兩個 **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 並 **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** 能夠正確處理網頁的 URI。
-- **`DataScheme`** 意圖篩選必須宣告和/或`https`。 `http` &ndash; 這些是唯一的兩個有效配置。
-- **`DataHost`** &ndash;這是 uri 將源自的網域。
-- **`DataPathPrefix`** &ndash;這是網站上資源的選擇性路徑。
-- **`AutoVerify`** &ndash; 屬性會告知Android驗證應用程式與網站`autoVerify`之間的關聯性。 下面將詳細討論這一點。
+- **`Intent.ActionView`** &ndash; 這會註冊意圖篩選來回應 view 資訊的要求
+- **`Categories`** &ndash; 意圖篩選器應該註冊 **[CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** 和 **[CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** ，才能正確處理 web URI。
+- **`DataScheme`** &ndash; 意圖篩選準則必須宣告 `http` 和/或 `https`。 這些是唯一的兩個有效配置。
+- **`DataHost`** &ndash; 這是 uri 將源自的網域。
+- **`DataPathPrefix`** &ndash; 這是網站上資源的選擇性路徑。
+- **`AutoVerify`** &ndash; `autoVerify` 屬性會告知 Android 驗證應用程式與網站之間的關聯性。 下面將詳細討論這一點。
 
-下列範例示範如何使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)來處理來自`https://www.recipe-app.com/recipes`和的`http://www.recipe-app.com/recipes`連結：
+下列範例顯示如何使用[IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)來處理來自 `https://www.recipe-app.com/recipes` 和 `http://www.recipe-app.com/recipes`的連結：
 
 ```csharp
 [IntentFilter(new [] { Intent.ActionView },
@@ -84,15 +84,15 @@ Android 會在將應用程式註冊為 URI 的預設處理常式之前，驗證�
 Android 6.0 應用程式連結需要 Android 先確認應用程式與網站之間的關聯，再將應用程式設定為 URI 的預設處理常式。 第一次安裝應用程式時，將會進行此驗證。 *數位資產連結*檔案是由相關 webdomain 所裝載的 JSON 檔案。
 
 > [!NOTE]
-> 屬性必須由意圖篩選&ndash;設定，否則 Android 將不會執行驗證。 `android:autoVerify`
+> `android:autoVerify` 屬性必須由意圖篩選設定 &ndash; 否則 Android 將不會執行驗證。
 
-檔案是由網域的網站管理員（位於該位置 **https://domain/.well-known/assetlinks.json** ）所放置。
+此檔案是由網域的網站管理員（位於 **https://domain/.well-known/assetlinks.json** 位置）所放置。
 
 數位資產檔案包含 Android 用來驗證關聯所需的中繼資料。 **Assetlinks json**檔案具有下列索引鍵/值組：
 
-- `namespace`&ndash; Android 應用程式的命名空間。
-- `package_name`&ndash; Android 應用程式的套件名稱（在應用程式資訊清單中宣告）。
-- `sha256_cert_fingerprints`&ndash;已簽署應用程式的 SHA256 指紋。 如需如何取得應用程式 SHA1 指紋的詳細資訊，請參閱[尋找金鑰儲存區的 MD5 或 SHA1](~/android/deploy-test/signing/keystore-signature.md)簽章指南。
+- `namespace` &ndash; Android 應用程式的命名空間。
+- `package_name` &ndash; Android 應用程式的套件名稱（在應用程式資訊清單中宣告）。
+- `sha256_cert_fingerprints` &ndash; 已簽署應用程式的 SHA256 指紋。 如需如何取得應用程式 SHA1 指紋的詳細資訊，請參閱[尋找金鑰儲存區的 MD5 或 SHA1](~/android/deploy-test/signing/keystore-signature.md)簽章指南。
 
 下列程式碼片段是**assetlinks**的範例，其中列出單一應用程式：
 
@@ -173,11 +173,11 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     $ adb shell dumpsys package domain-preferred-apps
     ```
 
-    - **`Package`** &ndash;應用程式的封裝名稱。
-    - **`Domain`** &ndash;應用程式將會處理其 web 連結的網域（以空格分隔）
-    - **`Status`** &ndash;這是應用程式目前的連結處理狀態。 的值**一律**表示應用程式已`android:autoVerify=true`宣告並已通過系統驗證。 後面接著一個十六進位數位，代表 Android 系統的喜好設定記錄。
+    - **`Package`** &ndash; 應用程式的封裝名稱。
+    - **`Domain`** &ndash; 應用程式將會處理其 Web 連結的網域（以空格分隔）
+    - **`Status`** &ndash; 這是應用程式目前的連結處理狀態。 的值**一律**表示應用程式已宣告 `android:autoVerify=true`，且已通過系統驗證。 後面接著一個十六進位數位，代表 Android 系統的喜好設定記錄。
 
-    例如：
+    例如:
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -196,6 +196,6 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
 
 - [尋找金鑰儲存區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)
 - [活動和意圖](https://university.xamarin.com/classes#4)
-- [AppLinks](http://applinks.org/)
+- [AppLinks](https://developers.facebook.com/docs/applinks)
 - [Google 數位資產連結](https://developers.google.com/digital-asset-links/)
 - [語句清單產生器和測試器](https://developers.google.com/digital-asset-links/tools/generator)

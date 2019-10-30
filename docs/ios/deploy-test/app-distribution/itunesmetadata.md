@@ -4,15 +4,15 @@ description: 本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提�
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 47b2428ddca47f554fea675a9d2e70374679688f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cdaa0855538c35c82cb96bde58ad2258b1fb56e5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281153"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026497"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 應用程式中的 iTunesMetadata.plist 檔案
 
@@ -108,7 +108,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 ### <a name="uirequireddevicecapabilities"></a>UIRequiredDeviceCapabilities
 
-`UIRequiredDeviceCapabilities` 索引鍵可讓 iTunes 知道 iOS 應用程式所需的裝置專屬功能，以順利將該應用程式安裝於特定的 iOS 裝置上。 它會以功能 (`<key>...</key>`) 的字典 (`<dict>...</dict>`)，以及針對每個功能之布林值的形式提供。 如果某個功能的值為 `true`，則該功能必須存在。 如果是 `false`，則該功能不得存在於裝置上。 例如：
+`UIRequiredDeviceCapabilities` 索引鍵可讓 iTunes 知道 iOS 應用程式所需的裝置專屬功能，以順利將該應用程式安裝於特定的 iOS 裝置上。 它會以功能 (`<key>...</key>`) 的字典 (`<dict>...</dict>`)，以及針對每個功能之布林值的形式提供。 如果某個功能的值為 `true`，則該功能必須存在。 如果是 `false`，則該功能不得存在於裝置上。 例如:
 
 ```xml
 <key>UIRequiredDeviceCapabilities</key>
@@ -242,7 +242,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 [!include[](~/ios/includes/table-appstore.md)]
 
-如需詳細資訊，請參閱 Apple 的[內容類型識別碼附錄](http://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html) \(英文\) 文件。
+如需詳細資訊，請參閱 Apple 的[內容類型識別碼附錄](https://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html) \(英文\) 文件。
 
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 
@@ -302,26 +302,26 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 1. 在 [方案總管] 中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增] > [新增檔案]
 2. 從 [新增檔案] 對話方塊中，選取 [iOS] > [屬性清單]：
 
-    ![](itunesmetadata-images/image01.png "選取 iOS 屬性清單")
+    ![](itunesmetadata-images/image01.png "Select iOS Property List")
 3. 輸入 `iTunesMetadata` 作為 [名稱]，然後按一下 [新增] 按鈕。
 4. 在 [方案總管] 中，按兩下 `iTunesMetadata.plist` 檔案來開啟它以進行編輯：
 
-    ![](itunesmetadata-images/image02.png "iTunesMetadata.plist 編輯器")
+    ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
 5. 按一下綠色的 **+** 來建立新的項目，並輸入 `UIRequiredDeviceCapabilities` 作為索引鍵名稱：
 
-    ![](itunesmetadata-images/image03.png "建立新的項目，並輸入 UIRequiredDeviceCapabilities 作為索引鍵名稱")
+    ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
 6. 按一下 [字串] 值類型，然後從快顯清單中選取 [字典]：
 
-    ![](itunesmetadata-images/image04.png "從快顯清單中選取 [字典]")
+    ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
 7. 按一下屬性名稱左邊的向下箭頭以顯示字典的項目：
 
-    ![](itunesmetadata-images/image05.png "顯示字典項目")
+    ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
 8. 按一下 [新增項目] 文字，然後按一下綠色的 **+** 來將項目新增至字典：
 
-    ![](itunesmetadata-images/image06.png "將項目新增至字典")
+    ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
 9. 輸入 `armv7` 作為索引鍵名稱、選取一種 [布林值] 類型，然後輸入 **Yes** 作為值：
 
-    ![](itunesmetadata-images/image07.png "輸入 armv7 作為索引鍵名稱，選取一種 [布林值] 類型，然後輸入 Yes 作為值")
+    ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
 10. 重複上述步驟，直到您已在 `iTunesMetadata.plist` 檔案中填入所需的所有索引鍵/值組為止 (如需詳細資料，請參閱 [iTunesMetadata.plist 內容](#iTunesMetadata_contents)一節)。
 
 11. 儲存對 plist 檔案所做的變更。

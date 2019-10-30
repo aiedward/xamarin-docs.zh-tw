@@ -3,15 +3,15 @@ title: 目標-C 系結的總覽
 description: 本檔概述針對目標 C 程式碼建立C#系結的不同方式，包括命令列系結、系結專案和目標 Sharpie。 它也會討論系結的運作方式。
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: db37a6a912cae3c2d53d8838ba2d2bd0224e8df7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765589"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015875"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目標-C 系結的總覽
 
@@ -19,7 +19,7 @@ _系結程式運作方式的詳細資料_
 
 系結與 Xamarin 搭配使用的目標-C 程式庫需要三個步驟：
 
-1. C#撰寫「API 定義」來描述如何在 .net 中公開原生 API，以及如何將它對應至基礎目標-C。 這會使用和各種C#系結`interface` **屬性**（請參閱這個簡單的[範例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）等標準結構來完成。
+1. C#撰寫「API 定義」來描述如何在 .net 中公開原生 API，以及如何將它對應至基礎目標-C。 這是使用標準C#結構（例如 `interface`和各種系結**屬性**）來完成（請參閱這個簡單的[範例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
 
 2. 在中C#撰寫「API 定義」之後，您可以將它編譯以產生「系結」元件。 這可以在[**命令列**](#commandline)上執行，或在 Visual Studio for Mac 或 Visual Studio 中使用系結[**專案**](#bindingproject)。
 
@@ -35,7 +35,7 @@ _系結程式運作方式的詳細資料_
 
 ## <a name="command-line-bindings"></a>命令列系結
 
-您可以使用`btouch-native` for Xamarin. iOS （或`bmac-native`如果您使用的是 xamarin）直接建立系結。 其運作方式是將C#您手動建立的 API 定義（或使用目標 Sharpie）傳遞至命令列工具（`btouch-native`適用于 iOS 或`bmac-native` Mac）。
+您可以使用適用于 Xamarin 的 `btouch-native` （或者，如果您使用的是 Xamarin，則為 `bmac-native`）直接建立系結。 其運作方式是將C#您手動建立的 API 定義（或使用目標 Sharpie）傳遞至命令列工具（適用于 iOS 的`btouch-native`或 Mac 的`bmac-native`）。
 
 叫用這些工具的一般語法如下：
 
@@ -49,7 +49,7 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-上述命令會`cocos2d.dll`在目前的目錄中產生檔案，而且它會包含您可在專案中使用的完整系結程式庫。 如果您使用系結專案，這就是 Visual Studio for Mac 用來建立系結的工具（[如下](#bindingproject)所述）。
+上述命令會在目前的目錄中產生檔案 `cocos2d.dll`，而且它會包含您可在專案中使用的完整系結程式庫。 如果您使用系結專案，這就是 Visual Studio for Mac 用來建立系結的工具（[如下](#bindingproject)所述）。
 
 <a name="bindingproject" />
 
@@ -75,7 +75,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 首先，尋找您想要系結的類型。 為了進行討論（和簡化），我們會系結[NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)類型（已系結至[NSEnumerator](xref:Foundation.NSEnumerator); 以下的實作為範例）。
 
-第二，我們需要建立C#型別。 我們可能會想要將它放在命名空間中;因為目標-c 不支援命名空間，所以我們必須使用`[Register]`屬性來變更 Xamarin iOS 將向目標-C 執行時間註冊的類型名稱。 C#型別也必須繼承自[NSObject](xref:Foundation.NSObject)：
+第二，我們需要建立C#型別。 我們可能會想要將它放在命名空間中;因為目標-C 不支援命名空間，所以我們必須使用 `[Register]` 屬性來變更 Xamarin iOS 將向目標 C 執行時間註冊的類型名稱。 C#型別也必須繼承自[NSObject](xref:Foundation.NSObject)：
 
 ```csharp
 namespace Example.Binding {
@@ -95,7 +95,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-第四，您的型別必須提供函數。 您*必須*將您的函式調用鏈到基類的「函式」。 `[Export]`屬性允許目標 C 程式碼呼叫具有指定之選取器名稱的函式：
+第四，您的型別必須提供函數。 您*必須*將您的函式調用鏈到基類的「函式」。 `[Export]` 屬性允許目標 C 程式碼呼叫具有指定之選取器名稱的函式：
 
 ```csharp
 [Export("init")]
@@ -115,7 +115,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-第五，為步驟3中所宣告的每個選取器提供方法。 這些會用`objc_msgSend()`來叫用原生物件上的選取器。 請注意， [GetNSObject （）](xref:ObjCRuntime.Runtime.GetNSObject*)的用法，會將轉換`IntPtr` `NSObject`成適當的類型（子類型）。 如果您想要從目標 C 程式碼呼叫方法，成員*必須*是**虛擬**的。
+第五，為步驟3中所宣告的每個選取器提供方法。 這些會使用 `objc_msgSend()` 叫用原生物件上的選取器。 請注意， [GetNSObject （）](xref:ObjCRuntime.Runtime.GetNSObject*)的用法，會將 `IntPtr` 轉換成適當類型的 `NSObject` （子類型）。 如果您想要從目標 C 程式碼呼叫方法，成員*必須*是**虛擬**的。
 
 ```csharp
 [Export("nextObject")]

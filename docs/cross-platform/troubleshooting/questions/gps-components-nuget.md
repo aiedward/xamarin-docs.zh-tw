@@ -3,45 +3,45 @@ title: 整合 Google Play Services 元件和 NuGet
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 8a7fd77a3f6460f0edbd76f8a4ccf45b32b3ed87
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 100ef7ffd7e05db0ed8b2af6b9990fc3a0ac1fa9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284982"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014140"
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>整合 Google Play Services 元件和 NuGet
 
 ## <a name="history"></a>歷程
 
-其中有數個 Google Play Services 元件和 NuGet 套件：
+There used to be several Google Play Services Components and NuGet packages:
 
-- Google Play Services （Froyo）
+- Google Play Services (Froyo)
 - Google Play Services （Gingerbread）
-- Google Play Services （ICS）
+- Google Play Services (ICS)
 - Google Play Services （提供 jellybean）
 - Google Play Services （KitKat）
 
-Google 實際上只會寄送兩個 Google Play Services 的 .jar 檔案：
+Google actually only ships two .jar files for Google Play Services:
 
 - `google-play-services-froyo.jar`
 - `google-play-services.jar`
 
-因為我們的工具並未正確分辨`aapt.exe`要針對指定的應用程式使用的資源 API 層級上限，所以存在差異。 也就是說，如果我們嘗試在較低的 API 層級（例如 Gingerbread）上使用 Google Play Services （KitKat）系結，就會收到編譯錯誤。
+The discrepancy existed because our tooling didn't properly tell `aapt.exe` what the maximum resource API Level was to be used for a given app. This meant, we received compile errors if we tried using the Google Play Services (KitKat) binding on a lower API level like Gingerbread.
 
-## <a name="unifying-google-play-services"></a>統一 Google Play Services
+## <a name="unifying-google-play-services"></a>Unifying Google Play Services
 
-在較新版本的 Xamarin 中，我們現在會告訴`aapt.exe`您要使用的最大資源版本，因此這個問題會讓我們消失。
+在較新版本的 Xamarin 中，我們現在會告訴 `aapt.exe` 要使用的資源版本上限，因此這個問題會讓我們消失。
 
 這表示，沒有真正的理由可以針對 Gingerbread/ICS/提供 jellybean/KitKat 使用個別的套件（不過，我們仍需要個別的 Froyo 系結，因為它是一個不同的 .jar 檔案）。
 
 為了讓開發人員更容易，我們現在將元件和 NuGet 套件整合成兩個：
 
-- Google Play Services （Froyo）（ `google-play-services-froyo.jar`系結）
-- Google Play Services （ `google-play-services.jar`系結）
+- Google Play Services （Froyo）（系結 `google-play-services-froyo.jar`）
+- Google Play Services （系結 `google-play-services.jar`）
 
 ### <a name="which-one-should-be-used"></a>應該使用哪一個？
 
@@ -49,7 +49,7 @@ Google 實際上只會寄送兩個 Google Play Services 的 .jar 檔案：
 
 ### <a name="note-about-gingerbread"></a>關於 Gingerbread 的注意事項
 
-Gingerbread 預設不支援片段，因此，系結中的某些類別在 Gingerbread 裝置上的執行時間中將無法用於應用程式。 之類`MapFragment`的類別將無法在 Gingerbread 上執行，而應改用`SupportMapFragment`其支援變異。 開發人員需要知道要使用哪一個。 Google 會在其 Google Play Services 檔中注明此不相容性。
+Gingerbread 預設不支援片段，因此，系結中的某些類別在 Gingerbread 裝置上的執行時間中將無法用於應用程式。 `MapFragment` 之類的類別將無法在 Gingerbread 上執行，而且應該改用其支援變異 `SupportMapFragment`。 開發人員需要知道要使用哪一個。 Google 會在其 Google Play Services 檔中注明此不相容性。
 
 ### <a name="what-happens-to-the-old-componentsnugets"></a>舊的元件/NuGet 會發生什麼事？
 

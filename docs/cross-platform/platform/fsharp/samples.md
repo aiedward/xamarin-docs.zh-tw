@@ -3,15 +3,15 @@ title: F#Xamarin 的範例
 description: F#可以用來建立 Xamarin 應用程式。 本檔會連結至各種 iOS、Mac 和 Xamarin。表單中撰寫的F#範例 Xamarin 應用程式專案。
 ms.prod: xamarin
 ms.assetid: 8A355636-DE60-45BC-B988-1967755FDD28
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 0b4a36d1dca9c96a33398f58dcd46490218b82f6
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c330bf0a5cf8c66b765a56caaf55971ac1b4dad0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765186"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014750"
 ---
 # <a name="f-samples-for-xamarin"></a>F#Xamarin 的範例
 
@@ -21,7 +21,7 @@ ms.locfileid: "70765186"
 
 [FSSceneKit City](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-fsscenekit/)範例顯示如何使用[SceneKit](xref:SceneKit)和F#建立隨機產生的城市。 另外還有一個["Oculus go Thrift" （Google 紙箱） Edition](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-scenekitfsharp/)。
 
-[![同時也有 Oculus go Thrift Google 紙箱 Edition](samples-images/fxscenekit-sml.png)](samples-images/fxscenekit.png#lightbox)
+[![也有 Oculus go Thrift Google 紙箱 Edition](samples-images/fxscenekit-sml.png)](samples-images/fxscenekit.png#lightbox)
 
 [淺層](https://github.com/dvdsgl/shallow)示範以F# for iOS 建立的有趣輕刷使用者介面。
 
@@ -29,10 +29,10 @@ ms.locfileid: "70765186"
 
 已將一些適用于[Xamarin](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)的範例已移植到F#。 這些連結會帶您前往每個章節的 github 位置：
 
-- [第2章。應用程式剖析](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
-- [第3章。Deeper into text](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
-- [第4章。捲動堆疊](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
-- [第5章。因應大小](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FS)
-- [第6章。按鈕點擊](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
-- [第7章。XAML 與程式碼](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
-- [第8章。程式碼和 XAML 搭配](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
+- [第2章。應用程式的剖析](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/FS)
+- [第3章。更深入的文字](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
+- [第4章。滾動堆疊](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
+- [第5章。處理大小](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/FS)
+- [第6章。按一下按鈕](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [第7章。XAML 與程式碼的比較](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [第8章。程式碼和 XAML 的協調](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)

@@ -3,15 +3,15 @@ title: GDB
 ms.prod: xamarin
 ms.assetid: CD0BE462-FA38-4881-B481-82AD05B3B8FE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/05/2018
-ms.openlocfilehash: 0599b2374addf461e59948a1926de06e6e1e746a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 51ebb8932f4b1ef8f10ba699e59ce53c98a38a50
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754049"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021478"
 ---
 # <a name="gdb"></a>GDB
 
@@ -57,7 +57,7 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 `_Gdb` 目標會建立一個 `gdb-symbols` 目錄，並將您目標 `/system/lib` 及 `$APPDIR/lib` 目錄中的內容複製到該目錄。
 
 > [!NOTE]
-> `gdb-symbols` 目錄中的內容會繫結至您部署到的 Android 目標，並且不會在您變更目標時自動取代。 (請將此視為一個 Bug。)若您變更了 Android 目標裝置，您必須手動刪除此目錄。
+> `gdb-symbols` 目錄中的內容會繫結至您部署到的 Android 目標，並且不會在您變更目標時自動取代。 （請將此視為錯誤）。如果您變更 Android 目標裝置，就必須手動刪除此目錄。
 
 最後，複製產生的 `gdb` 命令並在您的殼層中執行它：
 
@@ -152,7 +152,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 您可藉由遵循[停用 Fast Deployment 的偵錯組建](#Debug_Builds_without_Fast_Deployment)一節來提供可存取的 `gdbserver`。
 
-一個缺點：`_Gdb` MSBuild 目標會終止任何先前在執行的應用程式執行個體。 這在 Android v4.0 之前的目標上無法運作。
+一個缺點：`_Gdb` MSBuild 目標會終止任何先前執行中的應用程式執行個體。 這在 Android v4.0 之前的目標上無法運作。
 
 <a name="Troubleshooting" />
 
@@ -170,7 +170,7 @@ $ adb pull /data/data/Mono.Android.DebugRuntime/lib/libmonosgen-2.0.so Project/g
 
 然後重新啟動您的偵錯工作階段。
 
-### <a name="bus-error-10-when-running-the-gdb-command"></a>執行  命令時發生匯流排錯誤：10
+### <a name="bus-error-10-when-running-the-gdb-command"></a>執行 `gdb` 命令時發生匯流排錯誤：10
 
 當 `gdb` 命令發生 `"Bus error: 10"` 命令錯誤時，請重新啟動 Android 裝置。
 

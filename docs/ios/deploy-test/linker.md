@@ -4,15 +4,15 @@ description: 本文件描述 Xamarin.iOS 連結器，它可用來消除 Xamarin.
 ms.prod: xamarin
 ms.assetid: 3A4B2178-F264-0E93-16D1-8C63C940B2F9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 2cda4d53ae3f5f5716d53fd8862ca9cf000003e0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762835"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030228"
 ---
 # <a name="linking-xamarinios-apps"></a>連結 Xamarin.iOS 應用程式
 
@@ -30,7 +30,7 @@ ms.locfileid: "70762835"
 
 您可以透過 [專案選項] 中的 [連結器行為] 下拉式清單自訂連結程序。 若要存取此清單，請對 iOS 專案按兩下，然後瀏覽至 [iOS 組建] > [連結器選項]，如下所示：
 
-[![](linker-images/image1.png "連結器選項")](linker-images/image1.png#lightbox)
+[![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -40,10 +40,10 @@ ms.locfileid: "70762835"
 
 1. 以滑鼠右鍵按一下 [方案總管] 中的**專案名稱**，然後選取 [屬性]：
 
-    ![](linker-images/linking01w.png "以滑鼠右鍵按一下 [方案總管] 中的專案名稱，然後選取 [屬性]")
+    ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
 2. 在 [專案屬性] 中，選取 [iOS 組建]：
 
-    ![](linker-images/linking02w.png "選取 IOS 組建")
+    ![](linker-images/linking02w.png "Select IOS Build")
 3. 遵循下列指示來變更連結選項。
 
 -----
@@ -167,6 +167,6 @@ class LinkerSafeAttribute : System.Attribute {}
 
 ## <a name="related-links"></a>相關連結
 
-- [自訂連結器設定](~/cross-platform/deploy-test/linker.md)
+- [自訂連結器組態](~/cross-platform/deploy-test/linker.md)
 - [在 Mac 上連結](~/mac/deploy-test/linker.md)
 - [在 Android 上連結](~/android/deploy-test/linker.md)

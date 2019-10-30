@@ -3,15 +3,15 @@ title: 編輯 NuGet 中繼資料
 description: 本檔說明如何使用專案選項來編輯多平臺程式庫的 NuGet 中繼資料。 它會討論必要和選擇性的中繼資料。
 ms.prod: xamarin
 ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 125412ec229f07c4515f42e4df7996d90f87a67b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5965b3f78bfc086b1cc6030a02f1cabafaae29d3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766549"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016746"
 ---
 # <a name="editing-nuget-metadata"></a>編輯 NuGet 中繼資料
 
@@ -25,7 +25,7 @@ _使用專案選項來編輯多平臺程式庫的 NuGet 中繼資料_
 
 [**一般**] 索引標籤包含四個必須輸入才能產生 NuGet 套件的欄位：
 
-[![](metadata-images/metadata-general-sml.png "NuGet 套件需要的中繼資料視窗")](metadata-images/metadata-general.png#lightbox)
+[![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
 
 - **識別碼–套件**識別碼，在 Nuget.org 中（或封裝的散發位置）必須是唯一的。 遵循此[指引](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)，並只使用 URL 中有效的字元（不含空格，並避免大部分的特殊字元）。
 - **版本**-選擇與[NuGet 版本控制規則](https://docs.microsoft.com/nuget/create-packages/dependency-versions)一致的版本號碼。
@@ -38,13 +38,13 @@ _使用專案選項來編輯多平臺程式庫的 NuGet 中繼資料_
 如需詳細資訊，請參閱[必要專案參考](https://docs.microsoft.com/nuget/schema/nuspec#required-metadata-elements)以取得詳細資訊，以及這些有關[選擇唯一封裝識別碼和設定版本號碼](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)和[設定套件類型](https://docs.microsoft.com/nuget/create-packages/creating-a-package#setting-a-package-type)的詳細指示。
 
 > [!IMPORTANT]
-> 必須輸入此索引標籤上的所有欄位;否則，將會出現錯誤訊息： _「專案沒有 NuGet 中繼資料，因此不會建立 NuGet 套件。您可以在 [專案選項] 的 [中繼資料] 區段中指定 NuGet 套件中繼資料。_
+> 必須輸入此索引標籤上的所有欄位;否則，將會出現錯誤訊息：「_專案沒有 nuget 中繼資料，因此將不會建立 nuget 套件。您可以在 [專案選項] 的 [中繼資料] 區段中指定 NuGet 套件中繼資料_。
 
 ## <a name="optional-metadata"></a>選擇性中繼資料
 
 [**詳細資料**] 索引標籤包含要包含在 NuGet 套件資訊清單檔案中的選擇性欄位。
 
-[![](metadata-images/metadata-detail-sml.png "NuGet 套件選擇性中繼資料視窗")](metadata-images/metadata-detail.png#lightbox)
+[![](metadata-images/metadata-detail-sml.png "NuGet package optional metadata window")](metadata-images/metadata-detail.png#lightbox)
 
 如需必要和選擇性欄位的詳細資訊，請參閱[選擇性元素參考](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements)。
 

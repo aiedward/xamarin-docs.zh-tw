@@ -4,29 +4,29 @@ description: 集合視圖可讓您使用任意版面配置來顯示內容。 它
 ms.prod: xamarin
 ms.assetid: F4B85F25-0CB5-4FEA-A3B5-D22FCDC81AE4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 078d5a2d5c05f39a9c6d8d081b08faa7b4b8ec67
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: b7f8452f0f085a8a15f188534851e8926d13f377
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106115"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021830"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin 中的集合視圖
 
 _集合視圖可讓您使用任意版面配置來顯示內容。它們可讓您輕鬆地建立現成的格線版面配置，同時也支援自訂版面配置。_
 
-類別中提供的`UICollectionView`集合 Views 是 iOS 6 中的新概念，引進使用版面配置在螢幕上呈現多個專案。 將資料`UICollectionView`提供給來建立專案並與這些專案互動的模式，會遵循常用於 iOS 開發的相同委派和資料來源模式。
+`UICollectionView` 類別中提供的集合 Views 是 iOS 6 中的新概念，引進使用版面配置在螢幕上呈現多個專案。 將資料提供給 `UICollectionView` 以建立專案並與這些專案互動的模式，會遵循 iOS 開發中常用的相同委派和資料來源模式。
 
-不過，集合視圖會使用獨立于`UICollectionView`其本身的版面配置子系統。 因此，只要提供不同的版面配置，就可以輕鬆地變更集合視圖的呈現方式。
+不過，集合視圖會使用與 `UICollectionView` 本身無關的版面配置子系統。 因此，只要提供不同的版面配置，就可以輕鬆地變更集合視圖的呈現方式。
 
-iOS 提供名`UICollectionViewFlowLayout`為的配置類別，可讓您建立以程式碼為基礎的版面配置，而不需要額外的工作。 此外，也可以建立自訂版面配置，以允許您可以想像的任何簡報。
+iOS 提供名為 `UICollectionViewFlowLayout` 的配置類別，可讓您建立以程式碼為基礎的版面配置，而不需要額外的工作。 此外，也可以建立自訂版面配置，以允許您可以想像的任何簡報。
 
 ## <a name="uicollectionview-basics"></a>UICollectionView 基本概念
 
-`UICollectionView`類別是由三個不同的專案所組成：
+`UICollectionView` 類別是由三個不同的專案所組成：
 
 - **儲存格**–每個專案的資料驅動型視圖
 - **補充視圖**–與區段相關聯的資料驅動視圖。
@@ -34,21 +34,21 @@ iOS 提供名`UICollectionViewFlowLayout`為的配置類別，可讓您建立以
 
 ## <a name="cells"></a>資料格
 
-儲存格是物件，代表集合視圖所呈現之資料集中的單一專案。 每個資料格都是`UICollectionViewCell`類別的實例，它是由三個不同的視圖所組成，如下圖所示：
+儲存格是物件，代表集合視圖所呈現之資料集中的單一專案。 每個資料格都是 `UICollectionViewCell` 類別的實例，它是由三個不同的視圖所組成，如下圖所示：
 
- [![](uicollectionview-images/01-uicollectionviewcell.png "每個資料格都是由三個不同的觀點組成，如下所示")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
+ [![](uicollectionview-images/01-uicollectionviewcell.png "Each cell is composed of three different views, as shown here")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
 
-`UICollectionViewCell`類別具有以下每個視圖的下列屬性：
+`UICollectionViewCell` 類別具有下列每個 views 的屬性：
 
-- `ContentView`–此視圖包含儲存格所呈現的內容。 它會在螢幕上以最上層的迭置順序呈現。
-- `SelectedBackgroundView`–儲存格已內建支援選取專案。 這個視圖用來以視覺方式表示已選取儲存格。 當選取資料格時， `ContentView`它就會呈現在正下方。
-- `BackgroundView`–資料格也可以顯示背景，這是由`BackgroundView`呈現。 這個視圖會呈現在`SelectedBackgroundView`下方。
+- `ContentView` –此視圖包含儲存格所呈現的內容。 它會在螢幕上以最上層的迭置順序呈現。
+- `SelectedBackgroundView` –儲存格已內建支援選取專案。 這個視圖用來以視覺方式表示已選取儲存格。 選取資料格時，它就會呈現在 `ContentView` 正下方。
+- `BackgroundView` –資料格也可以顯示背景，這是由 `BackgroundView` 所呈現。 這個視圖會呈現在 `SelectedBackgroundView` 之下。
 
-藉由設定`ContentView` ，使其`BackgroundView`小於和`SelectedBackgroundView`， `BackgroundView` `SelectedBackgroundView`可以用來以視覺化方式呈現內容，而當選取資料格時，將會顯示，如下所示：
+By setting the `ContentView` such that it is smaller than the `BackgroundView` and `SelectedBackgroundView`, the `BackgroundView` can be used to visually frame the content, while the `SelectedBackgroundView` will be displayed when a cell is selected, as shown below:
 
- [![](uicollectionview-images/02-cells.png "不同的 cell 元素")](uicollectionview-images/02-cells.png#lightbox)
+ [![](uicollectionview-images/02-cells.png "The different cell elements")](uicollectionview-images/02-cells.png#lightbox)
 
-上述螢幕擷取畫面中的資料格是藉由繼承`UICollectionViewCell`自並分別`ContentView`設定`SelectedBackgroundView` 、 `BackgroundView`和屬性所建立，如下列程式碼所示：
+The Cells in the screenshot above are created by inheriting from `UICollectionViewCell` and setting the `ContentView`, `SelectedBackgroundView` and `BackgroundView` properties, respectively, as shown in the following code:
 
 ```csharp
 public class AnimalCell : UICollectionViewCell
@@ -84,21 +84,21 @@ public class AnimalCell : UICollectionViewCell
 
  <a name="Supplementary_Views" />
 
-## <a name="supplementary-views"></a>補充視圖
+## <a name="supplementary-views"></a>Supplementary Views
 
-[補充] 視圖是顯示與每個區段`UICollectionView`相關聯之資訊的視圖。 就像資料格一樣，補充視圖也是資料驅動的。 從資料來源呈現專案資料的地方，補充視圖會顯示區段資料，例如出版品介紹中的書籍分類，或音樂媒體櫃中的音樂類型。
+Supplementary Views are views that present information associated with each section of a `UICollectionView`. Like Cells, Supplementary Views are data-driven. Where Cells present the item data from a data source, Supplementary Views present the section data, such as the categories of book in a bookshelf or the genre of music in a music library.
 
-例如，您可以使用補充視圖來呈現特定區段的標頭，如下圖所示：
+For example, a Supplementary View could be used to present a header for a particular section, as shown in the figure below:
 
- [![](uicollectionview-images/02a-supplementary-view.png "用來呈現特定區段標頭的補充視圖，如下所示")](uicollectionview-images/02a-supplementary-view.png#lightbox)
+ [![](uicollectionview-images/02a-supplementary-view.png "A Supplementary View used to present a header for a particular section, as shown here")](uicollectionview-images/02a-supplementary-view.png#lightbox)
 
-若要使用補充視圖，首先必須在`ViewDidLoad`方法中註冊：
+To use a Supplementary View, it first needs to be registered in the `ViewDidLoad` method:
 
 ```csharp
 CollectionView.RegisterClassForSupplementaryView (typeof(Header), UICollectionElementKindSection.Header, headerId);
 ```
 
-然後，您必須使用`GetViewForSupplementaryElement`來傳回此視圖，並使用建立`DequeueReusableSupplementaryView`，並繼承自`UICollectionReusableView`。 下列程式碼片段會產生上面螢幕擷取畫面中所示的 SupplementaryView：
+Then, the view needs to be returned by using `GetViewForSupplementaryElement`, created by using `DequeueReusableSupplementaryView`, and inherits from `UICollectionReusableView`. The following code snippet will produce the SupplementaryView shown in the screenshot above:
 
 ```csharp
 public override UICollectionReusableView GetViewForSupplementaryElement (UICollectionView collectionView, NSString elementKind, NSIndexPath indexPath)
@@ -110,18 +110,18 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 ```
 
-補充視圖比標頭和頁尾更為通用。
-它們可以放在集合視圖中的任何位置，而且可以由任何視圖組成，使其外觀完全可自訂。
+Supplementary Views are more generic than just headers and footers.
+They can be positioned anywhere in the collection view and can be comprised of any views, making their appearance fully customizable.
 
  <a name="Decoration_Views" />
 
-## <a name="decoration-views"></a>裝飾視圖
+## <a name="decoration-views"></a>Decoration Views
 
-裝飾視圖是單純的視覺化視圖，可以在中`UICollectionView`顯示。 不同于儲存格和輔助視圖，它們不是資料驅動的。 它們一律會建立在版面配置的子類別中，之後可以變更為內容的版面配置。 例如，裝飾視圖可用來呈現以中`UICollectionView`的內容進行滾動的背景視圖，如下所示：
+Decoration Views are purely visual views that can be displayed in a `UICollectionView`. Unlike Cells and Supplementary Views, they are not data-driven. They are always created within a layout's subclass and subsequently can change as the content’s layout. For example, a Decoration View could be used to present a background view that scrolls with the content in the `UICollectionView`, as shown below:
 
- [![](uicollectionview-images/02c-decoration-view.png "具有紅色背景的裝飾視圖")](uicollectionview-images/02c-decoration-view.png#lightbox)
+ [![](uicollectionview-images/02c-decoration-view.png "Decoration View with a red background")](uicollectionview-images/02c-decoration-view.png#lightbox)
 
- 下列程式碼片段會將 samples `CircleLayout`類別中的背景變更為紅色：
+ The code snippet below changes the background to red in the samples `CircleLayout` class:
 
  ```csharp
  public class MyDecorationView : UICollectionReusableView
@@ -136,34 +136,34 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 ## <a name="data-source"></a>資料來源
 
-如同 ios 的其他部分（例如`UITableView`和`MKMapView`）， `UICollectionView`會從*資料來源*取得其資料 **`UICollectionViewDataSource`** ，而這會透過類別在 Xamarin. iOS 中公開。 此類別會負責將內容提供給， `UICollectionView`例如：
+As with other parts of iOS, such as `UITableView` and `MKMapView`, `UICollectionView` gets its data from a *data source*, which is exposed in Xamarin.iOS via the **`UICollectionViewDataSource`** class. This class is responsible for providing content to the `UICollectionView` such as:
 
-- **儲存格**–從`GetCell`方法傳回。
-- **補充視圖**–從`GetViewForSupplementaryElement`方法傳回。
-- **區段數目**–從`NumberOfSections`方法傳回。 如果未執行，則預設為1。
-- **每個區段的專案數**–從`GetItemsCount`方法傳回。
+- **Cells** – Returned from  `GetCell` method.
+- **Supplementary Views** – Returned from  `GetViewForSupplementaryElement` method.
+- **Number of sections** – Returned from  `NumberOfSections` method. Defaults to 1 if not implemented.
+- **Number of items per section** – Returned from  `GetItemsCount` method.
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
-為了方便起見， `UICollectionViewController`可以使用類別。這會自動設定為同時是下一節所討論的委派，以及其`UICollectionView` view 的資料來源。
+For convenience, the `UICollectionViewController` class is available.This is automatically configured to be both the delegate, which is discussed in the next section, and data source for its `UICollectionView` view.
 
-`UITableView`如同`UICollectionView` ，類別只會呼叫其資料來源，以取得螢幕上專案的儲存格。
-從畫面中滾動的資料格會放入佇列中以供重複使用，如下圖所示：
+As with `UITableView`, the `UICollectionView` class will only call its data source to get Cells for items that are on the screen.
+Cells that scroll off the screen are placed in to a queue for reuse, as the following image illustrates:
 
- [![](uicollectionview-images/03-cell-reuse.png "向外滾動畫面的資料格會放入佇列中以供重複使用，如這裡所示")](uicollectionview-images/03-cell-reuse.png#lightbox)
+ [![](uicollectionview-images/03-cell-reuse.png "Cells that scroll off the screen are placed in to a queue for reuse as shown here")](uicollectionview-images/03-cell-reuse.png#lightbox)
 
-使用`UICollectionView` 和`UITableView`簡化了資料格重複使用。 您不再需要直接在資料來源中建立儲存格（如果無法在重複使用的佇列中使用的話），因為儲存格會向系統註冊。 如果在進行呼叫時無法使用資料格，則會將儲存格從重複使用的佇列中取消佇列，iOS 會根據已註冊的類型或筆尖自動建立。
+Cell reuse has been simplified with `UICollectionView` and `UITableView`. 您不再需要直接在資料來源中建立儲存格（如果無法在重複使用的佇列中使用的話），因為儲存格會向系統註冊。 如果在進行呼叫時無法使用資料格，則會將儲存格從重複使用的佇列中取消佇列，iOS 會根據已註冊的類型或筆尖自動建立。
 輔助視圖也可以使用相同的技術。
 
-例如，請考慮下列註冊`AnimalCell`類別的程式碼：
+例如，請考慮下列註冊 `AnimalCell` 類別的程式碼：
 
 ```csharp
 static NSString animalCellId = new NSString ("AnimalCell");
 CollectionView.RegisterClassForCell (typeof(AnimalCell), animalCellId);
 ```
 
-當需要儲存格`UICollectionView` ，因為它的專案是在螢幕上時，會呼叫其資料`GetCell`源的方法。 `UICollectionView` 類似于 UITableView 的運作方式，這個方法會負責從支援資料設定儲存格，這在此情況下會是`AnimalCell`類別。
+當 `UICollectionView` 需要儲存格，因為其專案位於螢幕上時，`UICollectionView` 會呼叫其資料來源的 `GetCell` 方法。 類似于 UITableView 的運作方式，這個方法會負責從支援資料設定儲存格，在此情況下，這會是 `AnimalCell` 的類別。
 
-下列程式碼顯示`GetCell`會`AnimalCell`傳回實例的執行：
+下列程式碼顯示會傳回 `AnimalCell` 實例之 `GetCell` 的執行：
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, Foundation.NSIndexPath indexPath)
@@ -178,31 +178,31 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 }
 ```
 
-的呼叫`DequeReusableCell`是，儲存格會從重複使用的佇列中取消佇列，或者，如果佇列中沒有可用的資料格，則會根據`CollectionView.RegisterClassForCell`呼叫中註冊的類型建立。
+`DequeReusableCell` 的呼叫是將資料格從重複使用佇列中取消佇列的位置，或者，如果佇列中沒有可用的資料格，則會根據 `CollectionView.RegisterClassForCell`的呼叫中註冊的類型建立。
 
-在此情況下，藉由`AnimalCell`註冊類別，iOS 會在內部`AnimalCell`建立新的，並在對資料格進行清除佇列的呼叫之後傳回它，在此情況下，它會使用動物類別中包含的影像進行設定，然後再傳回以顯示給`UICollectionView`.
+在此情況下，藉由註冊 `AnimalCell` 類別，iOS 會在內部建立新的 `AnimalCell`，並在對資料格進行清除佇列的呼叫之後傳回它，在此情況下，它會使用動物類別中包含的影像進行設定，然後再傳回以顯示給 `UICollectionView`。
 
  <a name="Delegate" />
 
 ### <a name="delegate"></a>Delegate - 委派
 
-類別會使用類型`UICollectionViewDelegate`的委派，以支援與中的內容`UICollectionView`互動。 `UICollectionView` 這可讓您控制：
+`UICollectionView` 類別會使用 `UICollectionViewDelegate` 類型的委派，以支援與 `UICollectionView`中的內容互動。 這可讓您控制：
 
 - 資料**格選取**–決定是否選取儲存格。
 - 資料**格**醒目提示–判斷是否正在觸及儲存格。
 - 資料**格功能表**-針對儲存格顯示的功能表，以回應長按下手勢。
 
-如同資料來源， `UICollectionViewController`預設會將設定為的委派。 `UICollectionView`
+如同資料來源，`UICollectionViewController` 預設會設定為 `UICollectionView`的委派。
 
  <a name="Cell_HighLighting" />
 
 #### <a name="cell-highlighting"></a>儲存格反白顯示
 
-當按下儲存格時，資料格會轉換成反白顯示的狀態，而且在使用者從儲存格中將其手指帶到前，不會選取它。 這可讓您在實際選取資料格之前，暫時變更其外觀。 選取時，會顯示單元`SelectedBackgroundView`格的。 下圖顯示選取專案發生之前的反白顯示狀態：
+當按下儲存格時，資料格會轉換成反白顯示的狀態，而且在使用者從儲存格中將其手指帶到前，不會選取它。 這可讓您在實際選取資料格之前，暫時變更其外觀。 選取時，會顯示儲存格的 `SelectedBackgroundView`。 下圖顯示選取專案發生之前的反白顯示狀態：
 
- [![](uicollectionview-images/04-cell-highlight.png "下圖顯示在選取專案發生之前的反白顯示狀態")](uicollectionview-images/04-cell-highlight.png#lightbox)
+ [![](uicollectionview-images/04-cell-highlight.png "This figure shows the highlighted state just before the selection occurs")](uicollectionview-images/04-cell-highlight.png#lightbox)
 
-若要執行反白`ItemHighlighted`顯示`ItemUnhighlighted` ， `UICollectionViewDelegate`可以使用的和方法。 例如，下列程式碼會在反白顯示資料格時`ContentView` ，套用的黃色背景，而當取消醒目提示時則會套用白色背景，如上圖所示：
+若要執行反白顯示，可以使用 `UICollectionViewDelegate` 的 `ItemHighlighted` 和 `ItemUnhighlighted` 方法。 例如，下列程式碼會在儲存格反白顯示時套用 `ContentView` 的黃色背景，而當取消醒目提示時則會套用白色背景，如上圖所示：
 
 ```csharp
 public override void ItemHighlighted (UICollectionView collectionView, NSIndexPath indexPath)
@@ -220,9 +220,9 @@ public override void ItemUnhighlighted (UICollectionView collectionView, NSIndex
 
  <a name="Disabling_Selection" />
 
-#### <a name="disabling-selection"></a>停用選取範圍
+#### <a name="disabling-selection"></a>正在停用選取範圍
 
-預設會在中`UICollectionView`啟用選取專案。 若要停用選取`ShouldHighlightItem`專案，請覆寫並傳回 false，如下所示：
+預設會在 `UICollectionView`中啟用選取專案。 若要停用選取專案，請覆寫 `ShouldHighlightItem` 並傳回 false，如下所示：
 
 ```csharp
 public override bool ShouldHighlightItem (UICollectionView collectionView, NSIndexPath indexPath)
@@ -231,95 +231,95 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 }
 ```
 
-當停用反白顯示時，也會停用選取儲存格的進程。 此外，也有一個`ShouldSelectItem`直接控制選取的方法，不過，如果`ShouldHighlightItem`已實作為並傳回 false， `ShouldSelectItem`則不會呼叫。
+當停用反白顯示時，也會停用選取儲存格的進程。 此外，也會有 `ShouldSelectItem` 的方法直接控制選取專案，但如果 `ShouldHighlightItem` 已實作為並傳回 false，則不會呼叫 `ShouldSelectItem`。
 
- `ShouldSelectItem`當未執行時`ShouldHighlightItem` ，允許依專案逐一開啟或關閉選取專案。 它也允許在沒有選取範圍的`ShouldHighlightItem`情況下進行反白顯示， `ShouldSelectItem`如果已執行並傳回 true，則會傳回 false。
+ 當未執行 `ShouldHighlightItem` 時，`ShouldSelectItem` 允許依專案逐一開啟或關閉選取專案。 如果執行 `ShouldHighlightItem` 並傳回 true，則它也允許反白顯示而不選取，而 `ShouldSelectItem` 會傳回 false。
 
  <a name="Cell_Menus" />
 
 #### <a name="cell-menus"></a>資料格功能表
 
-中的每個`UICollectionView`資料格都能夠顯示功能表，讓您可以選擇性地支援剪下、複製和貼上。 若要在資料格上建立 [編輯] 功能表：
+Each Cell in a `UICollectionView` is capable of showing a menu that allows cut, copy, and paste to optionally be supported. To create an edit menu on a cell:
 
-1. 如果`ShouldShowMenu`專案應該顯示功能表，則覆寫並傳回 true。
-1. 針對`CanPerformAction`專案可執行檔每個動作覆寫並傳回 true，這將會是剪下、複製或貼上。
-1. 覆`PerformAction`寫以執行 [編輯]、[貼上] 操作。
+1. Override  `ShouldShowMenu` and return true if the item should show a menu.
+1. Override  `CanPerformAction` and return true for every action that the item can perform, which will be any of cut, copy or paste.
+1. Override  `PerformAction` to perform the edit, copy of paste operation.
 
-下列螢幕擷取畫面顯示長時間按下資料格時的功能表：
+The following screenshot show the menu when a cell is long pressed:
 
- [![](uicollectionview-images/04a-menu.png "這個螢幕擷取畫面顯示長時間按下儲存格時的功能表")](uicollectionview-images/04a-menu.png#lightbox)
+ [![](uicollectionview-images/04a-menu.png "This screenshot show the menu when a cell is long pressed")](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout" />
 
 ## <a name="layout"></a>配置
 
-`UICollectionView`支援版面配置系統，允許將其所有專案、儲存格、補充視圖和裝飾視圖的定位，獨立于`UICollectionView`本身之外進行管理。
-使用配置系統時，應用程式可以支援像我們在本文中看到的類似方格的版面配置，並提供自訂的版面配置。
+`UICollectionView` supports a layout system that allows the positioning of all its elements, Cells, Supplementary Views and Decoration Views, to be managed independent of the `UICollectionView` itself.
+Using the layout system, an application can support layouts such as the grid-like one we’ve seen in this article, as well as provide custom layouts.
 
  <a name="Layout_Basics" />
 
-### <a name="layout-basics"></a>版面配置基本概念
+### <a name="layout-basics"></a>Layout Basics
 
-中`UICollectionView`的版面配置定義于繼承自`UICollectionViewLayout`的類別中。 版面配置的執行負責為中的`UICollectionView`每個專案建立版面配置屬性。 有兩種方式可建立版面配置：
+Layouts in a `UICollectionView` are defined in a class that inherits from `UICollectionViewLayout`. The layout implementation is responsible for creating the layout attributes for every item in the `UICollectionView`. There are two ways to create a layout:
 
-- 使用內`UICollectionViewFlowLayout`建的。
-- 從`UICollectionViewLayout`繼承，以提供自訂的版面配置。
+- Use the built-in  `UICollectionViewFlowLayout` .
+- Provide a custom layout by inheriting from  `UICollectionViewLayout` .
 
  <a name="Flow_Layout" />
 
 ### <a name="flow-layout"></a>流程配置
 
-`UICollectionViewFlowLayout`類別會提供以線條為基礎的版面配置，適合用來排列資料格方格中的內容（如我們所見）。
+The `UICollectionViewFlowLayout` class provides a line-based layout that suitable for arranging content in a grid of Cells as we’ve seen.
 
-若要使用流程版面配置：
+To use a flow layout:
 
-- 建立的`UICollectionViewFlowLayout`實例：
+- Create an instance of  `UICollectionViewFlowLayout` :
 
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
-- 將實例傳遞至`UICollectionView`的函式：
+- Pass the instance to the constructor of the  `UICollectionView` :
 
 ```csharp
 simpleCollectionViewController = new SimpleCollectionViewController (layout);
 ```
 
-這就是在方格中版面配置內容所需的一切。 此外，當方向變更`UICollectionViewFlowLayout`時，會適當地處理內容的重新排列，如下所示：
+This is all that is needed to layout content in a grid. Also, when the orientation changes, the `UICollectionViewFlowLayout` handles rearranging the content appropriately, as shown below:
 
- [![](uicollectionview-images/05-layout-orientation.png "方向變更的範例")](uicollectionview-images/05-layout-orientation.png#lightbox)
+ [![](uicollectionview-images/05-layout-orientation.png "Example of the orientation changes")](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset" />
 
-#### <a name="section-inset"></a>區段內凹
+#### <a name="section-inset"></a>Section Inset
 
-為了提供周圍的`UIContentView`一些空間，版面配置`SectionInset`具有類型`UIEdgeInsets`的屬性。 例如，下列`UIContentView` `UICollectionViewFlowLayout`程式碼會在配置時，于的每個區段周圍提供50圖元的緩衝區：
+To provide some space around the `UIContentView`, layouts have a `SectionInset` property of type `UIEdgeInsets`. For example, the following code provides a 50-pixel buffer around each section of the `UIContentView` when laid out by a `UICollectionViewFlowLayout`:
 
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 ```
 
-這會導致區段周圍出現間距，如下所示：
+This results in spacing around the section as shown below:
 
- [![](uicollectionview-images/06-sectioninset.png "區段周圍的間距，如下所示")](uicollectionview-images/06-sectioninset.png#lightbox)
+ [![](uicollectionview-images/06-sectioninset.png "Spacing around the section as shown here")](uicollectionview-images/06-sectioninset.png#lightbox)
 
  <a name="Subclassing_UICollectionViewFlowLayout" />
 
-#### <a name="subclassing-uicollectionviewflowlayout"></a>子類別化 UICollectionViewFlowLayout
+#### <a name="subclassing-uicollectionviewflowlayout"></a>Subclassing UICollectionViewFlowLayout
 
-在 [版本] `UICollectionViewFlowLayout`中，您也可以將它設為子類別，以進一步自訂沿著一行的內容配置。 例如，這可以用來建立不會將資料格換成方格的配置，而是建立具有水準滾動效果的單一資料列，如下所示：
+In edition to using `UICollectionViewFlowLayout` directly, it can also be subclassed to further customize the layout of content along a line. For example, this can be used to create a layout that does not wrap the Cells into a grid, but instead creates a single row with a horizontal scrolling effect, as shown below:
 
- [![](uicollectionview-images/07-line-layout.png "具有水準滾動效果的單一資料列")](uicollectionview-images/07-line-layout.png#lightbox)
+ [![](uicollectionview-images/07-line-layout.png "A single row with a horizontal scrolling effect")](uicollectionview-images/07-line-layout.png#lightbox)
 
-若要透過子類別`UICollectionViewFlowLayout`化來執行此動作，需要：
+To implement this by subclassing `UICollectionViewFlowLayout` requires:
 
-- 將套用至配置本身的任何版面配置屬性，或在此函式中的版面配置中的所有專案初始化。
-- 覆`ShouldInvalidateLayoutForBoundsChange`寫，傳回 true，如此`UICollectionView`一來，當變更的界限時，就會重新計算資料格的版面配置。 在此情況下，這是為了確保套用到 centermost 儲存格的轉換程式碼將會在滾動期間套用。
-- 覆`TargetContentOffset`寫，讓 [centermost] 儲存格貼齊至`UICollectionView`的中央，做為「滾動」停止。
-- 覆`LayoutAttributesForElementsInRect`寫以傳回的`UICollectionViewLayoutAttributes`陣列。 每`UICollectionViewLayoutAttribute`個都包含如何配置特定專案的資訊，包括如其`Center` 、 `Size` `ZIndex`和`Transform3D`的屬性。
+- Initializing any layout properties that apply to the layout itself or all items in the layout in the constructor.
+- Overriding  `ShouldInvalidateLayoutForBoundsChange` , returning true so that when bounds of the  `UICollectionView` changes, the layout of the cells will be recalculated. This is used in this case ensure the code for transformation applied to the centermost cell will be applied during scrolling.
+- Overriding  `TargetContentOffset` to make the centermost cell snap to the center of the  `UICollectionView` as scrolling stops.
+- Overriding  `LayoutAttributesForElementsInRect` to return an array of  `UICollectionViewLayoutAttributes` . Each  `UICollectionViewLayoutAttribute` contains information on how to layout the particular item, including properties such as its  `Center` ,  `Size` ,  `ZIndex` and  `Transform3D` .
 
-下列程式碼顯示這類的實作為：
+The following code shows such an implementation:
 
 ```csharp
 using System;
@@ -392,45 +392,45 @@ namespace SimpleCollectionView
 
 ### <a name="custom-layout"></a>自訂版面配置
 
-除了使用`UICollectionViewFlowLayout`之外，您也可以直接從`UICollectionViewLayout`繼承，以完全自訂版面配置。
+In addition to using `UICollectionViewFlowLayout`, layouts can also be fully customized by inheriting directly from `UICollectionViewLayout`.
 
-要覆寫的主要方法如下：
+The key methods to override are:
 
-- `PrepareLayout`–用來執行將在整個版面配置過程中使用的初始幾何計算。
-- `CollectionViewContentSize`–傳回用來顯示內容的區域大小。
-- `LayoutAttributesForElementsInRect`–如同稍早所示的 UICollectionViewFlowLayout 範例，這個方法是用來提供有關如何`UICollectionView`配置每個專案的資訊。 不過，與不同`UICollectionViewFlowLayout`的是，在建立自訂版面配置時，您可以選擇放置專案。
+- `PrepareLayout` – Used for performing initial geometric calculations that will be used throughout the layout process.
+- `CollectionViewContentSize` – Returns the size of the area used to display content.
+- `LayoutAttributesForElementsInRect` – As with the UICollectionViewFlowLayout example shown earlier, this method is used to provide information to the  `UICollectionView` regarding how to layout each item. However, unlike the  `UICollectionViewFlowLayout` , when creating a custom layout, you can position items however you choose.
 
-例如，相同的內容可能會以迴圈配置呈現，如下所示：
+For example, the same content could be presented in a circular layout as shown below:
 
- [![](uicollectionview-images/08-circle-layout.png "如下所示的迴圈自訂版面配置")](uicollectionview-images/08-circle-layout.png#lightbox)
+ [![](uicollectionview-images/08-circle-layout.png "A circular custom layout as shown here")](uicollectionview-images/08-circle-layout.png#lightbox)
 
-有關版面配置的強大功能，就是從類似方格的版面配置變更為水準滾動配置，然後再到這個迴圈版面配置，只需要提供給的`UICollectionView`版面配置類別才會變更。 中沒有任何`UICollectionView`內容，其委派或資料來源程式碼完全不會變更。
+The powerful thing about layouts is that to change from the grid-like layout, to a horizontal scrolling layout, and subsequently to this circular layout requires only the layout class provided to the `UICollectionView` be changed. Nothing in the `UICollectionView`, its delegate or data source code changes at all.
 
-## <a name="changes-in-ios-9"></a>IOS 9 中的變更
+## <a name="changes-in-ios-9"></a>Changes in iOS 9
 
-在 iOS 9 中，集合視圖（`UICollectionView`）現在可新增新的預設手勢辨識器和數個新的支援方法，以支援將專案的重新排列。
+In iOS 9, the collection view (`UICollectionView`) now supports drag reordering of items out of the box by adding a new default gesture recognizer and several new supporting methods.
 
-您可以使用這些新方法，輕鬆地在您的集合視圖中執行拖曳以重新排序，並且可以選擇在重新排列程式的任何階段自訂專案外觀。
+Using these new methods, you can easily implement drag to reorder in your collection view and have the option of customizing the items appearance during any stage of the reordering process.
 
-[![](uicollectionview-images/intro01.png "重新排列進程的範例")](uicollectionview-images/intro01.png#lightbox)
+[![](uicollectionview-images/intro01.png "An example of the reordering process")](uicollectionview-images/intro01.png#lightbox)
 
-在本文中，我們將探討如何在 Xamarin iOS 應用程式中執行拖放重新排序，以及 iOS 9 對集合視圖控制項進行的一些其他變更：
+In this article, we'll take a look at implementing drag-to-reorder in a Xamarin.iOS application as well as some of the other changes iOS 9 has made to the collection view control:
 
-- [輕鬆重新排列專案的順序](#Easy-Reordering-of-Items)
-  - [簡單的重新排序範例](#Simple-Reordering-Example)
-  - [使用自訂手勢辨識器](#Using-a-Custom-Gesture-Recognizer)
-  - [自訂版面配置和重新排列](#Custom-Layouts-and-Reording)
-- [集合視圖變更](#collection-view-changes)
+- [Easy Reordering of Items](#Easy-Reordering-of-Items)
+  - [Simple Reordering Example](#Simple-Reordering-Example)
+  - [Using a Custom Gesture Recognizer](#Using-a-Custom-Gesture-Recognizer)
+  - [Custom Layouts and Reordering](#Custom-Layouts-and-Reording)
+- [Collection View Changes](#collection-view-changes)
 
 <a name="Easy-Reordering-of-Items" />
 
-## <a name="reordering-of-items"></a>重新排列專案的順序
+## <a name="reordering-of-items"></a>Reordering of Items
 
-如上所述，iOS 9 中集合視圖最重大的變更之一，就是新增現成的輕鬆重新排序功能。
+As stated above, one of the most significant changes to the collection view in iOS 9 was the addition of easy drag-to-reorder functionality out of the box.
 
-在 iOS 9 中，將重新排序加入至集合視圖的最快方式是使用`UICollectionViewController`。
-集合視圖控制器現在具有`InstallsStandardGestureForInteractiveMovement`屬性，它會加入標準手勢辨識*器*，支援拖曳以重新排序集合中的專案。
-由於預設值為`true`，因此您只需要`MoveItem`執行`UICollectionViewDataSource`類別的方法，即可支援拖放重新排序。 例如：
+In iOS 9, the quickest way to add reordering to a collection view is to use a `UICollectionViewController`.
+The collection view controller now has a `InstallsStandardGestureForInteractiveMovement` property, which adds a standard *gesture recognizer* that supports dragging to reorder items in the collection.
+Since the default value is `true`, you only have to implement the `MoveItem` method of the `UICollectionViewDataSource` class to support drag-to-reorder. 例如:
 
 ```csharp
 public override void MoveItem (UICollectionView collectionView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -442,45 +442,45 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 <a name="Simple-Reordering-Example" />
 
-### <a name="simple-reordering-example"></a>簡單的重新排序範例
+### <a name="simple-reordering-example"></a>Simple Reordering Example
 
-如需快速範例，請啟動新的 Xamarin iOS 專案，並編輯**主要**的分鏡腳本檔案。 將拖曳`UICollectionViewController`至設計介面：
+As a quick example, start a new Xamarin.iOS project and edit the **Main.storyboard** file. Drag a `UICollectionViewController` onto the design surface:
 
-[![](uicollectionview-images/quick01.png "新增 UICollectionViewController")](uicollectionview-images/quick01.png#lightbox)
+[![](uicollectionview-images/quick01.png "Adding a UICollectionViewController")](uicollectionview-images/quick01.png#lightbox)
 
-選取 [集合] 視圖（從檔大綱執行此動作可能最簡單）。 在 Properties Pad 的 配置 索引標籤中，設定下列大小，如下列螢幕擷取畫面所示：
+Select the Collection View (It may be easiest to do this from the document outline). In the layout tab of the Properties Pad, set the following sizes, as illustrated in the screenshot below:
 
-- 資料**格大小**：寬度– 60 |高度–60
-- **標頭大小**：寬度– 0 |高度–0
-- 頁尾**大小**：寬度– 0 |高度–0
-- **最小間距**：針對資料格– 8 |適用于行–8
-- **區段**內凹：Top – 16 |下– 16 |左方– 16 |右方–16
+- **Cell Size**: Width – 60 | Height – 60
+- **Header Size**: Width – 0 | Height – 0
+- **Footer Size**: Width – 0 | Height – 0
+- **Min Spacing**: For Cells – 8 | For Lines – 8
+- **Section Insets**: Top – 16 | Bottom – 16 | Left – 16 | Right – 16
 
-[![](uicollectionview-images/quick04.png "設定集合視圖大小")](uicollectionview-images/quick04.png#lightbox)
+[![](uicollectionview-images/quick04.png "Set the Collection View sizes")](uicollectionview-images/quick04.png#lightbox)
 
-接下來，編輯預設資料格：
+Next, edit the default Cell:
 
-- 將其背景色彩變更為藍色
-- 新增標籤以作為資料格的標題
-- 將重新使用識別碼設定為**cell**
+- Change its background color to blue
+- Add a label to act as the title for the cell
+- Set the reuse identifier to **cell**
 
-[![](uicollectionview-images/quick02.png "編輯預設資料格")](uicollectionview-images/quick02.png#lightbox)
+[![](uicollectionview-images/quick02.png "Edit the default Cell")](uicollectionview-images/quick02.png#lightbox)
 
-加入條件約束，讓標籤在資料格的大小變更時保持置中的位置：
+Add constraints to keep the Label centered inside the cell as it changes size:
 
-在_CollectionViewCell_的**屬性 Pad**中，將**類別**設為`TextCollectionViewCell`：
+In the **Property Pad** for the _CollectionViewCell_ and set the **Class** to `TextCollectionViewCell`:
 
-[![](uicollectionview-images/quick05.png "將類別設定為 TextCollectionViewCell")](uicollectionview-images/quick05.png#lightbox)
+[![](uicollectionview-images/quick05.png "Set the Class to TextCollectionViewCell")](uicollectionview-images/quick05.png#lightbox)
 
-將 [**集合可重複使用的視圖**] 設定為`Cell`：
+Set the **Collection Reusable View** to `Cell`:
 
-[![](uicollectionview-images/quick06.png "將集合可重複使用的 View 設定為 Cell")](uicollectionview-images/quick06.png#lightbox)
+[![](uicollectionview-images/quick06.png "Set the Collection Reusable View to Cell")](uicollectionview-images/quick06.png#lightbox)
 
-最後，選取標籤，並將`TextLabel`它命名為：
+Finally, select the Label and name it `TextLabel`:
 
-[![](uicollectionview-images/quick07.png "名稱標籤 TextLabel")](uicollectionview-images/quick07.png#lightbox)
+[![](uicollectionview-images/quick07.png "name label TextLabel")](uicollectionview-images/quick07.png#lightbox)
 
-`TextCollectionViewCell`編輯類別並新增下列屬性：
+Edit the `TextCollectionViewCell` class and add the following properties.:
 
 ```csharp
 using System;
@@ -507,9 +507,9 @@ namespace CollectionView
 }
 ```
 
-此標籤的屬性會公開為數據格的標題，因此可以從程式碼設定。`Text`
+Here the `Text` property of the label is exposed as the title of the cell, so it can be set from code.
 
-將新類別C#新增至專案，並呼叫它`WaterfallCollectionSource`。 編輯檔案，使其看起來如下所示：
+Add a new C# class to the project and call it `WaterfallCollectionSource`. Edit the file and make it look like the following:
 
 ```csharp
 using System;
@@ -576,10 +576,10 @@ namespace CollectionView
 }
 ```
 
-這個類別會是我們的集合視圖的資料來源，並提供集合中每個儲存格的資訊。
-請注意，方法會實作為，讓集合中的專案可以拖曳重新排序。 `MoveItem`
+This class will be the data source for our collection view and provide the information for each cell in the collection.
+Notice that the `MoveItem` method is implemented to allow items in the collection to be drag reordered.
 
-將另一個C#新類別新增至專案，並`WaterfallCollectionDelegate`呼叫它。 編輯此檔案，使其看起來如下所示：
+Add another new C# class to the project and call it `WaterfallCollectionDelegate`. Edit this file and make it look like the following:
 
 ```csharp
 using System;
@@ -629,9 +629,9 @@ namespace CollectionView
 }
 ```
 
-這會做為我們的集合視圖的委派。 當使用者在集合視圖中與其互動時，已覆寫方法來反白顯示資料格。
+This will act as the delegate for our collection view. Methods have been overridden to highlight a cell as the user interacts with it in the collection view.
 
-將最後C#一個類別新增至專案，並呼叫`WaterfallCollectionView`它。 編輯此檔案，使其看起來如下所示：
+Add one last C# class to the project and call it `WaterfallCollectionView`. Edit this file and make it look like the following:
 
 ```csharp
 using System;
@@ -666,21 +666,21 @@ namespace CollectionView
 }
 ```
 
-請注意，我們在上方建立的會在集合視圖從其分鏡腳本（或 xib 檔案）中建立時設定。 `DataSource` `Delegate`
+Notice that `DataSource` and `Delegate` that we created above are set when the collection view is constructed from its storyboard (or **.xib** file).
 
-再次編輯**主要**的分鏡腳本檔案，然後選取 [集合] 視圖並切換至 [**屬性**]。 將**類別**設定為我們先前`WaterfallCollectionView`定義的自訂類別：
+Edit the **Main.storyboard** file again and select the collection view and switch to the **Properties**. Set the **Class** to the custom `WaterfallCollectionView` class that we defined above:
 
-儲存您對 UI 所做的變更，並執行應用程式。
-如果使用者從清單中選取專案，並將它拖曳至新位置，則其他專案會在移出項目的方式時自動建立動畫。
-當使用者將專案放在新的位置時，它會停留在該位置。 例如：
+Save the changes you made to the UI and run the app.
+If the user selects an item from the list and drags it to a new location, the other items will animate automatically as they move out of the way of the item.
+When the user drops the item in a new location, it will stick to that location. 例如:
 
-[![](uicollectionview-images/intro01.png "將專案拖曳至新位置的範例")](uicollectionview-images/intro01.png#lightbox)
+[![](uicollectionview-images/intro01.png "An example of dragging an item to a new location")](uicollectionview-images/intro01.png#lightbox)
 
 <a name="Using-a-Custom-Gesture-Recognizer" />
 
-### <a name="using-a-custom-gesture-recognizer"></a>使用自訂手勢辨識器
+### <a name="using-a-custom-gesture-recognizer"></a>Using a Custom Gesture Recognizer
 
-如果您無法使用`UICollectionViewController` ，而且必須使用一般`UIViewController`，或如果您想要更充分掌控拖放手勢，您可以建立自己的自訂手勢辨識器，並在視圖載入時將它加入至集合視圖。 例如：
+In cases where you cannot use a `UICollectionViewController` and must use a regular `UIViewController`, or if you wish to take more control over the drag-and-drop gesture, you can create your own custom Gesture Recognizer and add it to the Collection View when the View loads. 例如:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -716,22 +716,22 @@ public override void ViewDidLoad ()
 }
 ```
 
-在這裡，我們會使用數個新增至集合視圖的新方法，來執行和控制拖曳作業：
+Here we are using several new methods added to the collection view to implement and control the drag operation:
 
-- `BeginInteractiveMovementForItem`-標記移動作業的開始。
-- `UpdateInteractiveMovementTargetPosition`-會隨著專案的位置更新而傳送。
-- `EndInteractiveMovement`-標示專案移動的結尾。
-- `CancelInteractiveMovement`-標示使用者取消移動作業。
+- `BeginInteractiveMovementForItem` - Marks the start of a move operation.
+- `UpdateInteractiveMovementTargetPosition` - Is sent as the item's location is updated.
+- `EndInteractiveMovement` - Marks the end of an item move.
+- `CancelInteractiveMovement` - Marks the user canceling the move operation.
 
-當應用程式執行時，拖曳作業的運作方式會與集合視圖所附的預設拖曳手勢辨識器完全相同。
+When the application is run, the drag operation will work exactly like the default drag gesture recognizer that comes with the collection view.
 
 <a name="Custom-Layouts-and-Reording" />
 
-### <a name="custom-layouts-and-reordering"></a>自訂版面配置和重新排列
+### <a name="custom-layouts-and-reordering"></a>Custom Layouts and Reordering
 
-在 iOS 9 中，已新增數個新的方法，以便在集合視圖中使用拖放順序和自訂版面配置。 為了探索這項功能，讓我們將自訂配置新增至集合。
+In iOS 9, several new methods have been added to work with drag-to-reorder and custom layouts in a collection view. To explore this feature, let's add a custom layout to the collection.
 
-首先，將名C# `WaterfallCollectionLayout`為的新類別新增至專案。 編輯它，讓它看起來如下所示：
+First, add a new C# class called `WaterfallCollectionLayout` to the project. Edit it and make it look like the following:
 
 ```csharp
 using System;
@@ -1122,10 +1122,10 @@ namespace CollectionView
 }
 ```
 
-這個類別可以用來提供自訂的兩個數據行、瀑布型別配置給集合視圖。
-程式碼會使用索引鍵-值編碼（ `WillChangeValue`透過`DidChangeValue`和方法）來提供此類別中計算屬性的資料系結。
+This can be used class to provide a custom two column, waterfall type layout to the collection view.
+The code uses Key-Value Coding (via the `WillChangeValue` and `DidChangeValue` methods) to provide data binding for our computed properties in this class.
 
-接著，編輯`WaterfallCollectionSource` ，並進行下列變更和新增：
+Next, edit the `WaterfallCollectionSource` and make the following changes and additions:
 
 ```csharp
 private Random rnd = new Random();
@@ -1147,9 +1147,9 @@ public WaterfallCollectionSource (WaterfallCollectionView collectionView)
 }
 ```
 
-這會為將顯示在清單中的每個專案建立隨機高度。
+This will create a random height for each of the items that will be displayed in the list.
 
-接著，編輯`WaterfallCollectionView`類別並新增下列 helper 屬性：
+Next, edit the `WaterfallCollectionView` class and add the following helper property:
 
 ```csharp
 public WaterfallCollectionSource Source {
@@ -1157,9 +1157,9 @@ public WaterfallCollectionSource Source {
 }
 ```
 
-這可讓您更輕鬆地從自訂版面配置中取得資料來源（和專案高度）。
+This will make it easier to get at our data source (and the item heights) from the custom layout.
 
-最後，編輯 view controller 並新增下列程式碼：
+Finally, edit the view controller and add the following code:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -1179,103 +1179,103 @@ public override void AwakeFromNib ()
 }
 ```
 
-這會建立自訂配置的實例、設定事件以提供每個專案的大小，並將新的配置附加至我們的集合視圖。
+This creates an instance of our custom layout, sets the event to provide the size of each item and attaches the new layout to our collection view.
 
-如果我們再次執行 Xamarin 應用程式，則 [集合] 視圖現在看起來會像下面這樣：
+If we run the Xamarin.iOS app again, the collection view will now look like the following:
 
-[![](uicollectionview-images/custom01.png "[集合] 視圖現在看起來會像這樣")](uicollectionview-images/custom01.png#lightbox)
+[![](uicollectionview-images/custom01.png "The collection view will now look like this")](uicollectionview-images/custom01.png#lightbox)
 
-我們仍然可以像之前一樣拖曳專案，但這些專案現在會變更大小，以符合其在放置時的新位置。
+We can still drag-to-reorder items as before, but the items will now change size to fit their new location when they are dropped.
 
-## <a name="collection-view-changes"></a>集合視圖變更
+## <a name="collection-view-changes"></a>Collection View Changes
 
-在下列各節中，我們將詳細探討 iOS 9 對集合視圖中每個類別所做的變更。
+In the following sections, we'll take a detailed look at the changes made to each class in the collection view by iOS 9.
 
 ### <a name="uicollectionview"></a>UICollectionView
 
-IOS 9 的`UICollectionView`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionView` class for iOS 9:
 
-- `BeginInteractiveMovementForItem`–標記拖曳作業的開始。
-- `CancelInteractiveMovement`–通知集合視圖，使用者已取消拖曳作業。
-- `EndInteractiveMovement`–通知集合視圖使用者已完成拖曳作業。
-- `GetIndexPathsForVisibleSupplementaryElements``indexPath` –傳回集合視圖區段中頁首或頁尾的。
-- `GetSupplementaryView`–傳回給定的頁首或頁尾。
-- `GetVisibleSupplementaryViews`–傳回所有顯示頁首和頁尾的清單。
-- `UpdateInteractiveMovementTargetPosition`–通知集合視圖，表示使用者已在拖曳作業期間移動或移動專案。
+- `BeginInteractiveMovementForItem` – Marks the start of a drag operation.
+- `CancelInteractiveMovement` – Informs the collection view that the user has canceled a drag operation.
+- `EndInteractiveMovement` – Informs the collection view that the user has finished a drag operation.
+- `GetIndexPathsForVisibleSupplementaryElements` – Returns the `indexPath` of a header or footer in a collection view section.
+- `GetSupplementaryView` – Returns the given header or footer.
+- `GetVisibleSupplementaryViews` – Returns a list of all visible header and footers.
+- `UpdateInteractiveMovementTargetPosition` – Informs the collection view that the user has moved, or is moving, an item during a drag operation.
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 
-IOS 9 中的`UICollectionViewController`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionViewController` class in iOS 9:
 
-- `InstallsStandardGestureForInteractiveMovement`–如果`true`會使用自動支援拖曳至重新排序的新手勢辨識器。
-- `CanMoveItem`–當指定的專案可以拖曳重新排序時，通知集合視圖。
-- `GetTargetContentOffset`–用來取得指定集合視圖專案的位移。
-- `GetTargetIndexPathForMove`–取得`indexPath`拖曳作業之指定專案的。
-- `MoveItem`–移動清單中指定專案的順序。
+- `InstallsStandardGestureForInteractiveMovement` – If `true` the new Gesture Recognizer that automatically supports drag-to-reorder will be used.
+- `CanMoveItem` – Informs the collection view if a given item can be drag reordered.
+- `GetTargetContentOffset` – Used to get the offset of a given collection view item.
+- `GetTargetIndexPathForMove` – Gets the `indexPath` of a given item for a drag operation.
+- `MoveItem` – Moves the order of a given item in the list.
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 
-IOS 9 中的`UICollectionViewDataSource`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionViewDataSource` class in iOS 9:
 
-- `CanMoveItem`–當指定的專案可以拖曳重新排序時，通知集合視圖。
-- `MoveItem`–移動清單中指定專案的順序。
+- `CanMoveItem` – Informs the collection view if a given item can be drag reordered.
+- `MoveItem` – Moves the order of a given item in the list.
 
 ### <a name="uicollectionviewdelegate"></a>UICollectionViewDelegate
 
-IOS 9 中的`UICollectionViewDelegate`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionViewDelegate` class in iOS 9:
 
-- `GetTargetContentOffset`–用來取得指定集合視圖專案的位移。
-- `GetTargetIndexPathForMove`–取得`indexPath`拖曳作業之指定專案的。
+- `GetTargetContentOffset` – Used to get the offset of a given collection view item.
+- `GetTargetIndexPathForMove` – Gets the `indexPath` of a given item for a drag operation.
 
 ### <a name="uicollectionviewflowlayout"></a>UICollectionViewFlowLayout
 
-IOS 9 中的`UICollectionViewFlowLayout`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionViewFlowLayout` class in iOS 9:
 
-- `SectionFootersPinToVisibleBounds`–將區段頁尾指向可見的集合視圖範圍。
-- `SectionHeadersPinToVisibleBounds`–將區段標頭指向可見的集合視圖範圍。
+- `SectionFootersPinToVisibleBounds` – Sticks the section footers to the visible collection view bounds.
+- `SectionHeadersPinToVisibleBounds` – Sticks the section headers to the visible collection view bounds.
 
 ### <a name="uicollectionviewlayout"></a>UICollectionViewLayout
 
-IOS 9 中的`UICollectionViewLayout`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionViewLayout` class in iOS 9:
 
-- `GetInvalidationContextForEndingInteractiveMovementOfItems`–當使用者完成拖曳或取消時，會在拖曳作業結束時傳回失效內容。
-- `GetInvalidationContextForInteractivelyMovingItems`–傳回拖曳作業開始時的失效內容。
-- `GetLayoutAttributesForInteractivelyMovingItem`–在拖曳專案時，取得指定專案的版面配置屬性。
-- `GetTargetIndexPathForInteractivelyMovingItem`–在拖曳專案時，傳回位於指定點之專案的。`indexPath`
+- `GetInvalidationContextForEndingInteractiveMovementOfItems` – Returns the invalidation context at the end of a drag operation when the user either finishes the drag or cancels it.
+- `GetInvalidationContextForInteractivelyMovingItems` – Returns the invalidation context at the start of a drag operation.
+- `GetLayoutAttributesForInteractivelyMovingItem` – Gets the Layout Attributes for a given item while dragging an item.
+- `GetTargetIndexPathForInteractivelyMovingItem` – Returns the `indexPath` of the item that is at the given point when dragging an item.
 
 ### <a name="uicollectionviewlayoutattributes"></a>UICollectionViewLayoutAttributes
 
-IOS 9 中的`UICollectionViewLayoutAttributes`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionViewLayoutAttributes` class in iOS 9:
 
-- `CollisionBoundingPath`–在拖曳作業期間傳回兩個專案的衝突路徑。
-- `CollisionBoundsType`–傳回在拖曳作業期間發生的衝突`UIDynamicItemCollisionBoundsType`類型。
+- `CollisionBoundingPath` – Returns the collision path of two items during a drag operation.
+- `CollisionBoundsType` – Returns the type of collision (as a `UIDynamicItemCollisionBoundsType`) that has occurred during a drag operation.
 
 ### <a name="uicollectionviewlayoutinvalidationcontext"></a>UICollectionViewLayoutInvalidationContext
 
-IOS 9 中的`UICollectionViewLayoutInvalidationContext`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionViewLayoutInvalidationContext` class in iOS 9:
 
-- `InteractiveMovementTarget`–傳回拖曳作業的目標專案。
-- `PreviousIndexPathsForInteractivelyMovingItems`–傳回拖曳要重新排序作業的其他相關專案。`indexPaths`
-- `TargetIndexPathsForInteractivelyMovingItems``indexPaths` –傳回專案的，將會因為拖放重新排序作業而重新排序。
+- `InteractiveMovementTarget` – Returns the target item of a drag operation.
+- `PreviousIndexPathsForInteractivelyMovingItems` – Returns the `indexPaths` of other items involved in a drag to reorder operation.
+- `TargetIndexPathsForInteractivelyMovingItems` – Returns the `indexPaths` of items that will be reordered as a result of a drag-to-reorder operation.
 
 ### <a name="uicollectionviewsource"></a>UICollectionViewSource
 
-IOS 9 中的`UICollectionViewSource`類別已進行下列變更或新增：
+The following changes or additions have been made to the `UICollectionViewSource` class in iOS 9:
 
-- `CanMoveItem`–當指定的專案可以拖曳重新排序時，通知集合視圖。
-- `GetTargetContentOffset`–傳回透過拖曳至重新排序作業移動之專案的位移。
-- `GetTargetIndexPathForMove`–傳回要在拖曳重新排序作業期間移動之專案的。`indexPath`
-- `MoveItem`–移動清單中指定專案的順序。
+- `CanMoveItem` – Informs the collection view if a given item can be drag reordered.
+- `GetTargetContentOffset` – Returns the offsets of items that will be moved via a drag-to-reorder operation.
+- `GetTargetIndexPathForMove` – Returns the `indexPath` of an item that will be moved during a drag-to-reorder operation.
+- `MoveItem` – Moves the order of a given item in the list.
 
 ## <a name="summary"></a>總結
 
-本文涵蓋 iOS 9 中的集合視圖變更，並已說明如何在 Xamarin 中執行它們。
-其中涵蓋了在集合視圖中執行簡單的拖放動作，使用自訂手勢辨識器搭配拖曳以進行重新排序;而拖曳至重新排序會影響自訂集合視圖配置。
+This article has covered the changes to collection views in iOS 9 and described how to implement them in Xamarin.iOS.
+It covered implementing a simple drag-to-reorder action in a collection view; using a custom Gesture Recognizer with drag-to-reorder; and how drag-to-reorder affects a custom collection view layout.
 
 ## <a name="related-links"></a>相關連結
 
-- [iOS 9 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
-- [集合視圖範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-collectionview)
-- [SimpleCollectionView （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/simplecollectionview)
+- [iOS 9 Samples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [Collection View Sample](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-collectionview)
+- [SimpleCollectionView (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplecollectionview)
 - [事件、通訊協定與委派](~/ios/app-fundamentals/delegates-protocols-and-events.md)
-- [使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)
+- [Working with Tables and Cells](~/ios/user-interface/controls/tables/index.md)

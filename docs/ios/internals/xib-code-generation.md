@@ -4,15 +4,15 @@ description: 本檔說明 Xamarin iOS 如何產生程式碼以將 xib 檔案對�
 ms.prod: xamarin
 ms.assetid: 365991A8-E07A-0420-D28E-BC4D32065E1A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 474e8ba772773f437bc30a07a34f6bfbb286cd82
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 778b8eeb82ebfb62cfb8c16e14f341c9afb8ff7a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768494"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022246"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>。在 Xamarin 中產生 xib 程式碼
 
@@ -33,7 +33,7 @@ Visual Studio 的 Xamarin 目前不支援使用**xib**檔案。
 
 ## <a name="generating-code"></a>產生程式碼
 
-針對具有 [建立] 動作為 [*頁面*] 的任何 **{0}xib**檔案 **{0}** ，如果專案中也有 xib.designer.cs 檔案，Visual Studio for Mac 將會在設計工具檔案中，為其所有使用者類別產生部分類別可以在**xib**檔案中找到，其中包含所有動作的輸出屬性和部分方法。 只要此檔案存在，就會啟用程式碼產生。
+針對具有 [建立] 動作為 [*頁面*] 的任何 **{0}xib**檔案，如果專案中也有 **{0}xib.designer.cs**檔案，Visual Studio for Mac 將會在設計工具檔案中，為它可以在中找到的所有使用者類別產生部分類別。**xib**檔案，其中包含所有動作的輸出屬性和部分方法。 只要此檔案存在，就會啟用程式碼產生。
 
 當**xib**檔案變更時，會自動更新設計工具檔案，並 Visual Studio for Mac 重新取得焦點。 設計工具檔案不應手動修改，因為下次 Visual Studio for Mac 更新檔案時，將會覆寫變更。
 
@@ -41,7 +41,7 @@ Visual Studio 的 Xamarin 目前不支援使用**xib**檔案。
 
 Visual Studio for Mac 會使用設計工具檔案位置的專案預設命名空間來產生設計工具類別，使其與一般 .NET 專案命名空間如此一致。 設計工具檔案的命名空間是由專案的「預設命名空間」及其「.NET 命名原則」設定所驅動。 請注意，如果您專案的預設命名空間變更，MD 會重新產生新命名空間中的類別，因此您可能會發現您的部分類別已不再相符。
 
-為了讓目標-C 執行時間可以探索類別，Visual Studio for Mac 會將`[Register (name)]`屬性套用至類別。 雖然 Xamarin 會自動註冊`NSObject`衍生的類別，但它會使用完整的 .net 名稱。 Visual Studio for Mac 所套用的屬性會覆寫這個，以確保每個類別都是使用**xib**檔案中所使用的名稱來註冊。 如果您使用 IB 中的自訂類別，而不使用 Visual Studio for Mac 來產生設計工具檔案，您可能必須手動套用此功能，讓您的 managed 類別符合預期的目標-C 類別名稱。
+為了讓目標-C 執行時間能夠探索此類別，Visual Studio for Mac 將 `[Register (name)]` 屬性套用至類別。 雖然 Xamarin 會自動註冊 `NSObject`衍生的類別，但它會使用完整的 .NET 名稱。 Visual Studio for Mac 所套用的屬性會覆寫這個，以確保每個類別都是使用**xib**檔案中所使用的名稱來註冊。 如果您使用 IB 中的自訂類別，而不使用 Visual Studio for Mac 來產生設計工具檔案，您可能必須手動套用此功能，讓您的 managed 類別符合預期的目標-C 類別名稱。
 
 無法在一個以上**的 xib**中定義類別，否則將會衝突。
 
@@ -51,7 +51,7 @@ Visual Studio for Mac 會使用設計工具檔案位置的專案預設命名空�
 
 這是需要彈性的原因。 例如，多個程式碼後置類別可以子類別化通用的 managed 抽象類別，這會將類別分類為由 IB 進行子類別化。
 
-傳統的方式是將這些檔案放在 **{0}xib.designer.cs**設計工具檔案旁邊的 **{0}xib.cs**檔案中。
+傳統的方式是將這些檔案放在 xib.designer.cs 設計工具檔案 **{0}** 旁邊的 **{0}xib.cs**檔案中。
 
 <a name="generated" />
 
@@ -63,19 +63,19 @@ Visual Studio for Mac 會使用設計工具檔案位置的專案預設命名空�
 
 設計工具類別包含的屬性會對應至自訂類別上定義的所有輸出。 這些是屬性的事實，就是要啟用延遲系結的 Xamarin. iOS 到目標 C 橋接器的執行詳細資料。 您應該將它們視為與私用欄位相等，其目的只是要從程式碼後置類別使用。 如果您想要將其設為公用，請將存取子屬性加入非設計工具類別部分，如同其他任何私用欄位一樣。
 
-如果將`id` [輸出] 屬性定義為具有類型（相當於`NSObject`），則設計工具程式碼產生器目前會根據連接到該輸出的物件來決定最強的可能類型，以方便使用。
+如果將 [輸出] 屬性定義為具有一種 `id` 類型（相當於 `NSObject`），則設計工具程式碼產生器目前會根據連接到該輸出的物件判斷最強的可能類型，以方便使用。
 不過，未來的版本可能不支援此功能，因此建議您在定義自訂類別時明確地輸入輸出。
 
 ### <a name="action-properties"></a>動作屬性
 
 設計工具類別包含與自訂類別上定義的所有動作對應的部分方法。 這些是沒有執行的方法。 部分方法的目的是雙重：
 
-1. 如果您輸入`partial`非設計工具類別部分的類別主體，Visual Studio for Mac 將會提供自動完成所有未實作為部分方法的簽章。
+1. 如果您在非設計工具類別部分的類別主體中輸入 `partial`，Visual Studio for Mac 會提供自動完成所有未實作為部分方法的簽章。
 2. 部分方法簽章具有套用的屬性，可將其公開至目標-C 世界，以便將其視為對應的動作來處理。
 
 如果您想要的話，可以忽略部分方法，並將屬性套用至不同的方法來執行動作，或讓它通過基類。
 
-如果將動作定義為具有的傳送者類型`id` （相當於`NSObject`），則設計工具程式碼產生器目前會根據連接到該動作的物件，決定最強的可能類型。 不過，未來的版本可能不支援此功能，因此建議您在定義自訂類別時明確地輸入動作。
+如果動作定義為具有 `id` 的傳送者類型（相當於 `NSObject`），則設計工具程式碼產生器目前會根據連接到該動作的物件，決定最強的可能類型。 不過，未來的版本可能不支援此功能，因此建議您在定義自訂類別時明確地輸入動作。
 
 請注意，這些部分方法只會針對C#建立，因為 CodeDOM 不支援部分方法，因此不會針對其他語言產生。
 

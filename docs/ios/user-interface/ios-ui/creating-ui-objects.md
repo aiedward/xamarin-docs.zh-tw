@@ -1,44 +1,44 @@
 ---
-title: 在 Xamarin 中建立使用者介面物件
-description: 本檔提供如何在 Xamarin 中建立使用者介面的總覽。 其中討論 iOS 設計工具、Xcode Interface Builder、 C#和分鏡腳本。
+title: Creating User Interface Objects in Xamarin.iOS
+description: This document provides an overview of how to create a user interface in Xamarin.iOS. It discusses the iOS Designer, Xcode Interface Builder, C#, and storyboards.
 ms.prod: xamarin
 ms.assetid: 4D6B136C-744A-4936-8655-A77E62BA7A60
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 204bf087a51132fdd204990c3b92453ecce96a53
-ms.sourcegitcommit: 20c645f41620d5124da75943de1b690261d00660
+ms.openlocfilehash: 58a1fd68dda2216a62fe6f30cf61d6d2ec7d40d5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72426573"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003663"
 ---
-# <a name="creating-user-interface-objects-in-xamarinios"></a>在 Xamarin 中建立使用者介面物件
+# <a name="creating-user-interface-objects-in-xamarinios"></a>Creating User Interface Objects in Xamarin.iOS
 
-Apple 將相關的功能片段分組為「架構」，這會等同于 Xamarin. iOS 命名空間。 `UIKit` 是包含所有 iOS 使用者介面控制項的命名空間。
+Apple groups related pieces of functionality into “frameworks” which equate to Xamarin.iOS namespaces. `UIKit` is the namespace that contains all the user interface controls for iOS.
 
-每當您的程式碼需要參考使用者介面控制項（例如標籤或按鈕）時，請記得包含下列 using 語句：
+Whenever your code needs to reference a user interface control, such as a label or button, remember to include the following using statement:
 
 ```csharp
 using UIKit;
 ```
 
-本章所討論的所有控制項都是在 UIKit 命名空間中，而且每個使用者控制項類別名稱都有 `UI` 前置詞。
+All the controls discussed in this chapter are in the UIKit namespace, and each user control class name has the `UI` prefix.
 
-您可以透過三種方式來編輯 UI 控制項和版面配置：
+You can edit UI controls and layouts in three ways:
 
-- **[Xamarin IOS 設計](~/ios/user-interface/designer/index.md)** 工具–使用 xamarin 的內建版面配置設計工具來設計畫面。 按兩下 [分鏡腳本] 或 [XIB 檔案]，以使用內建的設計工具進行編輯。
-- **Xcode Interface Builder** -使用 Interface Builder 將控制項拖曳至您的螢幕佈局。 在  **Solution Pad**中的檔案上按一下滑鼠右鍵，然後選擇 **以 > Xcode Interface Builder 開啟**，以開啟 Xcode 中的腳本或 XIB 檔案。
-- **使用C#**  –控制項也可以透過程式碼以程式設計方式來建立，並加入至視圖階層。
+- **[Xamarin iOS Designer](~/ios/user-interface/designer/index.md)** – Use Xamarin’s built-in layout designer to design screens. Double-click storyboard or XIB files to edit with the built-in designer.
+- **Xcode Interface Builder** – Drag controls onto your screen layouts with Interface Builder. Open the storyboard or XIB file in Xcode by right-clicking the file in the **Solution Pad** and choosing **Open With > Xcode Interface Builder**.
+- **Using C#** – Controls can also be programmatically constructed with code and added to the view hierarchy.
 
-以滑鼠右鍵按一下 iOS 專案，然後選擇 [**加入 > 新增**檔案 ...]，即可新增分鏡腳本和 XIB 檔案。
+New Storyboard and XIB files can be added by right-clicking on an iOS project and choosing **Add > New File...** .
 
-無論您使用哪種方法，控制項屬性和事件仍然可以在C#應用程式邏輯中使用來操作。
+Whichever method you use, control properties and events can still be manipulated with C# in your application logic.
 
-## <a name="using-xamarin-ios-designer"></a>使用 Xamarin iOS 設計工具
+## <a name="using-xamarin-ios-designer"></a>Using Xamarin iOS Designer
 
-若要開始在 iOS 設計工具中建立使用者介面，請按兩下分鏡腳本檔案。 您可以從 [**工具箱**] 將控制項拖曳至設計介面，如下所示：
+To start creating your user interface in the iOS Designer, double-click on a storyboard file. Controls can be dragged onto the design surface from the **Toolbox** as illustrated below:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -50,7 +50,7 @@ using UIKit;
 
 -----
 
-在設計介面上選取控制項時， **Properties Pad**會顯示該控制項的屬性。 [**識別 > 名稱**] 欄位 > 的 Widget，會在下方的螢幕擷取畫面中填入，做為*輸出*的名稱。 這就是您可以在中C#參考控制項的方式：
+When a control is selected on the design surface the **Properties Pad** will show the attributes for that control. The **Widget > Identity > Name** field, which is populated in the screenshot below, is used as the *Outlet* name. This is how you can reference the control in C#:
 
  [![](creating-ui-objects-images/image3b.png "Properties Widget Pad")](creating-ui-objects-images/image3b.png#lightbox)
 
@@ -120,9 +120,9 @@ public override void ViewDidLoad () {
 
  [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
 
-@No__t_0 檔案適用于您的*程式碼*。 這是執行 `View` 生命週期方法（例如 `ViewDidLoad` 和 `ViewWillAppear`）的位置，以及您可以加入自己的屬性、欄位和方法的位置。
+`ControlsViewController.cs` 檔案適用于您的*程式碼*。 這是執行 `View` 生命週期方法（例如 `ViewDidLoad` 和 `ViewWillAppear`）的位置，以及您可以加入自己的屬性、欄位和方法的位置。
 
-@No__t_0 是產生的程式碼，內含部分類別。 當您在 Visual Studio for Mac 中的設計介面上命名控制項，或在 Xcode 中建立輸出或動作時，會將對應的屬性（或部分方法）新增至設計工具（designer.cs）檔案。 下列程式碼顯示針對兩個按鈕和一個文字視圖產生的程式碼範例，其中一個按鈕也有 `TouchUpInside` 事件。
+`ControlsViewController.designer.cs` 是產生的程式碼，內含部分類別。 當您在 Visual Studio for Mac 中的設計介面上命名控制項，或在 Xcode 中建立輸出或動作時，會將對應的屬性（或部分方法）新增至設計工具（designer.cs）檔案。 下列程式碼顯示針對兩個按鈕和一個文字視圖產生的程式碼範例，其中一個按鈕也有 `TouchUpInside` 事件。
 
 部分類別的這些元素可讓您的程式碼參考控制項，並回應設計介面上所宣告的動作：
 
@@ -171,4 +171,4 @@ public override void ViewDidLoad () {
 
 ## <a name="related-links"></a>相關連結
 
-- [控制項（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [Controls (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)

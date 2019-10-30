@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: d20e27fdbb1f62c2aebb7122d7f0c042b3ac9085
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: cbc3bceffacd9669c1e2e667faadc2939fd4aa1f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71997184"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005918"
 ---
 # <a name="gtk-platform-setup"></a>GTK # 平臺設定
 
@@ -26,7 +26,7 @@ Xamarin 現在具有 GTK # 應用程式的預覽支援。 GTK # 是一種圖形�
 開始之前，請先建立新的 Xamarin 表單方案，或使用現有的 Xamarin 表單方案，例如[**GameOfLife**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)。
 
 > [!NOTE]
-> 雖然本文著重于將 GTK # 應用程式新增至 VS2017 和 Visual Studio for Mac 中的 Xamarin 表單方案，但也可以在適用于 Linux 的[MonoDevelop](http://www.monodevelop.com/)中執行。
+> 雖然本文著重于將 GTK # 應用程式新增至 VS2017 和 Visual Studio for Mac 中的 Xamarin 表單方案，但也可以在適用于 Linux 的[MonoDevelop](https://www.monodevelop.com/)中執行。
 
 ## <a name="adding-a-gtk-app"></a>新增 GTK # 應用程式
 

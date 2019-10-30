@@ -4,15 +4,15 @@ description: SQLite.NET PCL NuGet 程式庫提供適用于 Xamarin iOS 應用程
 ms.prod: xamarin
 ms.assetid: 79813B09-42D7-47DD-AE71-A605E6B9EF24
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 45205859a55974414ee865b2141d2bb127e85bcc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e229ad37e8cd5ff940fb5abece7b782b84336d50
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763136"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008171"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>使用 SQLite.NET 搭配 Xamarin. iOS
 
@@ -26,9 +26,9 @@ ORM 代表物件關聯式對應–此 API 可讓您從資料庫儲存和抓取�
 若要在 Xamarin 應用程式中包含 SQLite.NET 程式庫，請將下列 NuGet 套件新增至您的專案：
 
 - **封裝名稱：** sqlite-net-pcl
-- **作者：** Frank A. Krueger
+- **作者：** Frank Krueger
 - **識別碼：** sqlite-net-pcl
-- **Url:** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **Url：** [nuget.org/packages/sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 [![SQLite.NET NuGet 套件](using-sqlite-orm-images/image1a-sml.png "SQLite.NET NuGet 套件")](using-sqlite-orm-images/image1a.png#lightbox)
 
@@ -85,7 +85,7 @@ ORM 代表物件關聯式對應–此 API 可讓您從資料庫儲存和抓取�
 using SQLite; // from the github SQLite.cs class
 ```
 
-這需要您將 SQLite 新增至您的專案，如[這裡](#Usage)所強調。 請注意，SQLite 資料庫資料表的定義方式是將屬性新增至類別（ `Stock`類別），而不是 CREATE TABLE 命令。
+這需要您將 SQLite 新增至您的專案，如[這裡](#Usage)所強調。 請注意，SQLite 資料庫資料表的定義方式是將屬性新增至類別（`Stock` 類別），而不是 CREATE TABLE 命令。
 
 ```csharp
 [Table("Items")]
@@ -122,7 +122,7 @@ public static void DoSomeDataAccess () {
 }
 ```
 
-`[Table]`使用屬性而不指定資料表名稱參數，會導致基礎資料庫資料表具有與類別相同的名稱（在此案例中為「庫存」）。 如果您直接針對資料庫撰寫 SQL 查詢，而不是使用 ORM 資料存取方法，則實際的資料表名稱很重要。 同樣地`[Column("_id")]` ，屬性是選擇性的，如果不存在，則會將資料行加入至與類別中的屬性同名的資料表。
+使用 `[Table]` 屬性而不指定資料表名稱參數，會導致基礎資料庫資料表具有與類別相同的名稱（在此案例中為「庫存」）。 如果您直接針對資料庫撰寫 SQL 查詢，而不是使用 ORM 資料存取方法，則實際的資料表名稱很重要。 同樣地，`[Column("_id")]` 屬性是選擇性的，而且如果不存在，就會將資料行加入至與類別中的屬性同名的資料表。
 
 ## <a name="sqlite-attributes"></a>SQLite 屬性
 
@@ -130,7 +130,7 @@ public static void DoSomeDataAccess () {
 
 - **[PrimaryKey]** –此屬性可以套用至整數屬性，以強制它成為基礎資料表的主鍵。 不支援複合主鍵。
 - **[自動遞增]** –此屬性會針對每個插入資料庫的新物件，使整數屬性的值成為自動遞增
-- **[Column （name）]** –提供選擇性`name`參數將會覆寫基礎資料庫資料行名稱的預設值（這與屬性相同）。
+- **[Column （name）]** –提供選擇性的 `name` 參數將會覆寫基礎資料庫資料行名稱的預設值（這與屬性相同）。
 - **[資料表（名稱）]** –將類別標示為能夠儲存在基礎 SQLite 資料表中。 指定選擇性的 name 參數將會覆寫基礎資料庫資料表名稱的預設值（這與類別名稱相同）。
 - **[MaxLength （值）]** –在嘗試資料庫插入時，限制 text 屬性的長度。 使用程式碼應該在插入物件之前先驗證這個屬性，因為在嘗試執行資料庫插入或更新作業時，這個屬性只會「核取」。
 - **[忽略]** –讓 SQLite.NET 忽略此屬性。 這對於類型不能儲存在資料庫中的屬性而言特別有用，或是無法自動解析為 SQLite 的模型集合的屬性。
@@ -140,14 +140,14 @@ public static void DoSomeDataAccess () {
 
 ## <a name="more-complex-queries"></a>更複雜的查詢
 
-上`SQLiteConnection`的下列方法可以用來執行其他資料作業：
+`SQLiteConnection` 上的下列方法可以用來執行其他資料作業：
 
 - **Insert** –將新的物件加入至資料庫。
-- **Get\<T >** –嘗試使用主要索引鍵抓取物件。
-- **資料表\<T >** –傳回資料表中的所有物件。
+- **取得\<t >** -嘗試使用主鍵來抓取物件。
+- **資料表\<t >** –傳回資料表中的所有物件。
 - **Delete** –使用其主要索引鍵刪除物件。
-- **查詢\<T >** -執行會傳回多個資料列的 SQL 查詢（做為物件）。
-- **執行**–當您不想要從`Query` SQL 傳回的資料列（例如 INSERT、UPDATE 和 DELETE 指示）時，請使用這個方法（而非）。
+- **查詢\<t >** -執行會傳回多個資料列的 SQL 查詢（做為物件）。
+- **執行**–當您不想要從 SQL 傳回的資料列（例如 INSERT、UPDATE 和 DELETE 指示）時，請使用這個方法（而不是 `Query`）。
 
 ### <a name="getting-an-object-by-the-primary-key"></a>依主要金鑰取得物件
 
@@ -190,13 +190,13 @@ foreach (var s in stocksStartingWithA) {
 var rowcount = db.Delete<Stock>(someStock.Id); // Id is the primary key
 ```
 
-您可以檢查`rowcount`以確認有多少資料列受到影響（在此情況下會刪除）。
+您可以檢查 `rowcount` 來確認受影響的資料列數目（在此案例中為 deleted）。
 
 ## <a name="using-sqlitenet-with-multiple-threads"></a>使用具有多個執行緒的 SQLite.NET
 
-SQLite 支援三種不同的執行緒模式：*單一執行緒*、*多執行緒*和*序列化*。 如果您想要從多個執行緒存取資料庫，而不會有任何限制，您可以設定 SQLite 使用**序列化**執行緒模式。 請務必及早在應用程式中設定這個模式（例如，在`OnCreate`方法的開頭）。
+SQLite 支援三種不同的執行緒模式：*單一執行緒*、*多執行緒*和*序列化*。 如果您想要從多個執行緒存取資料庫，而不會有任何限制，您可以設定 SQLite 使用**序列化**執行緒模式。 請務必及早在應用程式中設定這個模式（例如，在 `OnCreate` 方法的開頭）。
 
-若要變更執行緒模式，請`SqliteConnection.SetConfig`呼叫，其位於`Mono.Data.Sqlite`命名空間中。 例如，這行程式碼會針對**序列化**模式設定 SQLite：
+若要變更執行緒模式，請呼叫 `Mono.Data.Sqlite` 命名空間中的 `SqliteConnection.SetConfig`。 例如，這行程式碼會針對**序列化**模式設定 SQLite：
 
 ```csharp
 using Mono.Data.Sqlite;

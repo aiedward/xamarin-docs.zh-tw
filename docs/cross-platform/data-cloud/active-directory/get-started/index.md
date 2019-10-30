@@ -3,15 +3,15 @@ title: Azure Active Directory
 description: 本檔說明允許行動應用程式使用 Azure Active Directory 進行驗證所必須遵循的步驟。
 ms.prod: xamarin
 ms.assetid: 70B3C2AB-CB4D-420C-9CFA-20CCFA0E3C78
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: b28fcea37d991879df0231609d09eeb2eca49505
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 18604ffa4980d47149d8feed257460e782f30bee
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766343"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016639"
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 

@@ -4,19 +4,19 @@ description: 本指南會討論系統應用程式與使用者應用程式的差�
 ms.prod: xamarin
 ms.assetid: 0113143B-7D8D-4C4C-B2F5-B966A2E7CE1F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 9ef13816dc1bc11eab0105ec223c2ef98366e4e5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5eff10d58ac094f3493bd60bdb621df1bcb30477
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753994"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028063"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>將 Xamarin.Android 安裝為系統應用程式
 
-_本指南會討論系統應用程式與使用者應用程式的差異，以及如何將 Xamarin.Android 應用程式安裝為系統應用程式。本指南適用於自訂 Android ROM 映像的作者。它不會說明如何建立自訂 ROM。_
+_本指南將討論系統應用程式與使用者應用程式之間的差異，以及如何將 Xamarin Android 應用程式安裝為系統應用程式。本指南適用于自訂 Android ROM 映射的作者。它不會說明如何建立自訂 ROM。_
 
 ## <a name="system-app"></a>系統應用程式
 

@@ -3,15 +3,15 @@ title: 使用 Xamarin. Android 和磨損 OS 中的螢幕大小
 ms.prod: xamarin
 ms.assetid: 77831169-C663-4D42-B742-B8B556B1DA4B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 4673bc6898da06f07a624b4aa585e62009a575e1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 86e05dc0e9cd5df325126cc5a339b36dd27c1e45
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758321"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030364"
 ---
 # <a name="working-with-screen-sizes"></a>使用螢幕大小
 
@@ -21,15 +21,15 @@ Android 磨損裝置可以有矩形或圓形顯示，這也可以是不同的大
 
 ## <a name="identifying-screen-type"></a>識別螢幕類型
 
-「磨損支援」程式庫提供一些控制項，可協助您偵測和適應不同的螢幕圖形`WatchViewStub` ， `BoxInsetLayout`例如和。
+「磨損支援」程式庫提供一些控制項，可協助您偵測和適應不同的螢幕圖形，例如 `WatchViewStub` 和 `BoxInsetLayout`。
 
-請注意，有些其他支援程式庫控制項（例如`GridViewPager`）*會自動*偵測畫面圖形本身，而不應新增為下面所述控制項的子系。
+請注意，有些其他支援程式庫控制項（例如 `GridViewPager`）*會自動*偵測畫面圖形本身，而不應新增為下面所述控制項的子系。
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
 請參閱[WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)範例，以瞭解如何偵測螢幕類型，並針對每種類型顯示不同的版面配置。
 
-主要版面配置檔案包含`android.support.wearable.view.WatchViewStub` ，它會`app:rectLayout`使用和`app:roundLayout`屬性來參考矩形和圓角螢幕的不同版面配置：
+主要版面配置檔案包含的 `android.support.wearable.view.WatchViewStub`，會使用 `app:rectLayout` 和 `app:roundLayout` 屬性來參考矩形和圓角畫面的不同版面配置：
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -49,7 +49,7 @@ Android 磨損裝置可以有矩形或圓形顯示，這也可以是不同的大
 
 您也可以建立適應矩形或圓形畫面的單一視圖，而不是為每個螢幕類型建立不同的版面配置。
 
-此[Google 範例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)示範如何使用`BoxInsetLayout` ，在矩形和圓角畫面上使用相同的版面配置。
+此[Google 範例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)示範如何使用 `BoxInsetLayout`，在矩形和圓角畫面上使用相同的版面配置。
 
 ## <a name="wear-ui-designer"></a>磨損 UI 設計工具
 

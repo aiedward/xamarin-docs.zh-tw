@@ -4,15 +4,15 @@ description: 本文將探討 Xamarin.Android 應用程式套件的組成組件�
 ms.prod: xamarin
 ms.assetid: 8D70CDDD-3D3C-9949-8045-AB8F93D18E74
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/05/2018
-ms.openlocfilehash: 6d391bd804e1c59d06d78dd7cffe3f11f9276468
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ff1bc56ab1cf02e9e5354da94bebd0661da34bc5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754642"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028164"
 ---
 # <a name="application-package-size"></a>應用程式的套件大小
 

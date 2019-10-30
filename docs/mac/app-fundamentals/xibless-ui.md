@@ -4,15 +4,15 @@ description: 本文說明如何直接從C#程式碼建立 Xamarin. Mac 應用程
 ms.prod: xamarin
 ms.assetid: 02310F58-DCF1-4589-9F4A-065DF64FC0E1
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: bcc176f8d3eb97751e6957039c2a14ed02aad653
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b189f80e2875e1e025128fee372e732f3ef28f22
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770149"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021717"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>。 xib-Xamarin. Mac 中的使用者介面設計較少
 
@@ -155,7 +155,7 @@ ContentView.AddSubview (ClickMeButton);
 
 這裡要注意的第一件事是，與 iOS 不同的是，macOS 會使用數學標記法來定義其視窗座標系統。 因此，原點位於視窗的左下角，而值會向右和視窗的右上角增加。 當我們建立新的 `NSButton` 時，我們會將此納入考慮，因為我們會在螢幕上定義其位置和大小。
 
-[@No__t_0] 屬性會告訴按鈕，當視窗垂直調整大小時，我們想要將它留在視窗頂端的相同位置。 同樣地，這是必要的，因為（0，0）位於視窗的左下方。
+[`AutoresizingMask = NSViewResizingMask.MinYMargin`] 屬性會告訴按鈕，當視窗垂直調整大小時，我們想要將它留在視窗頂端的相同位置。 同樣地，這是必要的，因為（0，0）位於視窗的左下方。
 
 最後，`ContentView.AddSubview (ClickMeButton)` 方法會將 `NSButton` 新增至內容視圖，使其在應用程式執行時顯示在螢幕上，並顯示視窗。
 
@@ -173,7 +173,7 @@ ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width 
 ContentView.AddSubview (ClickMeLabel);
 ```
 
-由於 macOS 沒有特定的_標籤_UI 元素，因此我們新增了特殊樣式、不可編輯的 `NSTextField` 作為標籤。 就像之前的按鈕一樣，大小和位置會考慮（0，0）位於視窗的左下方。 @No__t_0 屬性使用**or**運算子結合兩個 `NSViewResizingMask` 的功能。 這會讓標籤保持在視窗頂端的相同位置，而視窗會垂直調整大小，並在視窗重設成水準大小時縮小並擴大寬度。
+由於 macOS 沒有特定的_標籤_UI 元素，因此我們新增了特殊樣式、不可編輯的 `NSTextField` 作為標籤。 就像之前的按鈕一樣，大小和位置會考慮（0，0）位於視窗的左下方。 `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` 屬性使用**or**運算子結合兩個 `NSViewResizingMask` 的功能。 這會讓標籤保持在視窗頂端的相同位置，而視窗會垂直調整大小，並在視窗重設成水準大小時縮小並擴大寬度。
 
 同樣地，`ContentView.AddSubview (ClickMeLabel)` 方法會將 `NSTextField` 新增至內容視圖，使其在應用程式執行時顯示在螢幕上，並開啟視窗。
 

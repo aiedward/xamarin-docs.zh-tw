@@ -1,34 +1,34 @@
 ---
-title: SkiaSharp 雜訊和撰寫
-description: 產生 Perlin 雜訊著色器，並結合其他著色器。
+title: SkiaSharp noise and composing
+description: Generate Perlin noise shaders and combine with other shaders.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: dea7f5e51a864922d56f7b65d19b21a889cbc650
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: c1e500936b89f2ec8dc17279a7ed878dc7f5cbb3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656162"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029432"
 ---
-# <a name="skiasharp-noise-and-composing"></a>SkiaSharp 雜訊和撰寫
+# <a name="skiasharp-noise-and-composing"></a>SkiaSharp noise and composing
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-簡單的向量圖形，通常看起來不自然。 直線，線條平滑的曲線，純色不類似真實世界物件缺陷的而。 使用的電腦產生的圖形： 1982年電影時，才能_仲恩_，電腦科學家 Ken Perlin 開始開發使用隨機的程序讓這些映像更真實的紋理的演算法。 在 1997 年 Ken Perlin 會贏得技術分別 Academy 獎。 他的工作都可稱為 Perlin 雜訊和 SkiaSharp 中支援它。 以下為範例：
+Simple vector graphics tend to look unnatural. The straight lines, smooth curves, and solid colors don't resemble the imperfections of real-world objects. While working on the computer-generated graphics for the 1982 movie _Tron_, computer scientist Ken Perlin began developing algorithms that used random processes to give these images more realistic textures. In 1997, Ken Perlin won an Academy Award for Technical Achievement. His work has come to be known as Perlin noise, and it is supported in SkiaSharp. 以下為範例：
 
-![Perlin 雜訊範例](noise-images/NoiseSample.png "Perlin 雜訊範例")
+![Perlin Noise sample](noise-images/NoiseSample.png "Perlin 雜訊範例")
 
-如您所見，每個像素不是隨機的色彩值。 從像素的持續性，以像素會產生隨機的圖形。
+As you can see, each pixel is not a random color value. The continuity from pixel to pixel results in random shapes.
 
-Skia Perlin 雜訊的支援以 W3C 規格 CSS 和 SVG。 區段 8.20 [**篩選器效果模組層級 1** ](http://www.w3.org/TR/filter-effects-1/#feTurbulenceElement) C 程式碼中包含的基礎 Perlin 雜訊演算法。
+The support of Perlin noise in Skia is based on a W3C specification for CSS and SVG. Section 8.20 of [**Filter Effects Module Level 1**](https://www.w3.org/TR/filter-effects-1/#feTurbulenceElement) includes the underlying Perlin noise algorithms in C code.
 
-## <a name="exploring-perlin-noise"></a>瀏覽 Perlin 雜訊
+## <a name="exploring-perlin-noise"></a>Exploring Perlin noise
 
-[ `SKShader` ](xref:SkiaSharp.SKShader)類別會定義兩個不同的靜態方法，來產生 Perlin 雜訊： [ `CreatePerlinNoiseFractalNoise` ](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise*)並[ `CreatePerlinNoiseTurbulence` ](xref:SkiaSharp.SKShader.CreatePerlinNoiseTurbulence*)。 參數完全相同：
+The [`SKShader`](xref:SkiaSharp.SKShader) class defines two different static methods for generating Perlin noise:  [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise*) and [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseTurbulence*). The parameters are identical:
 
 ```csharp
 public static SkiaSharp CreatePerlinNoiseFractalNoise (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed);
@@ -36,15 +36,15 @@ public static SkiaSharp CreatePerlinNoiseFractalNoise (float baseFrequencyX, flo
 public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed);
 ```
 
-這兩種方法也存在於多載版本，加上一個`SKPointI`參數。 一節[**並排顯示 Perlin 雜訊**](#tiling-perlin-noise)討論這些多載。
+Both methods also exist in overloaded versions with an additional `SKPointI` parameter. The section [**Tiling Perlin noise**](#tiling-perlin-noise) discusses these overloads.
 
-這兩個`baseFrequency`引數皆為範圍從 0 到 1，SkiaSharp 文件中定義的正數值，但它們可以設定為較高的值。 值越大，隨機的映像中的水平和垂直方向的愈大的變更。
+The two `baseFrequency` arguments are positive values defined in the SkiaSharp documentation as ranging from 0 to 1, but they can be set to higher values as well. The higher the value, the greater the change in the random image in the horizontal and vertical directions.
 
-`numOctaves`值是 1 或更高版本的整數。 它與演算法中的反覆項目的因素。 每個額外的 octave 貢獻是一半的上一個 octave，因此效果就會減少，較高的 octave 值的效果。
+The `numOctaves` value is an integer of 1 or higher. It relates to an iteration factor in the algorithms. Each additional octave contributes an effect that is half of the previous octave, so the effect decreases with higher octave values.
 
-`seed`參數是亂數產生器的起始點。 雖然指定為浮點值，這個分數會遭到截斷，才能使用它，而且 0 與 1 相同。
+The `seed` parameter is the starting point for the random-number generator. Although specified as a floating-point value, the fraction is truncated before it's used, and 0 is the same as 1.
 
-**Perlin 雜訊**頁面[ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例可讓您試驗各種值`baseFrequency`和`numOctaves`引數。 以下是 XAML 檔案：
+The **Perlin Noise** page in the [**SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) sample allows you experiment with various values of the `baseFrequency` and `numOctaves` arguments. Here's the XAML file:
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -92,7 +92,7 @@ public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequenc
 </ContentPage>
 ```
 
-它會使用兩個`Slider`兩個檢視`baseFrequency`引數。 若要展開的較低的值範圍，滑桿是對數。 程式碼後置檔案會計算的引數`SKShader`方法的次方`Slider`值。 `Label`檢視顯示計算的值：
+It uses two `Slider` views for the two `baseFrequency` arguments. To expand the range of the lower values, the sliders are logarithmic. The code-behind file calculates the arguments to the `SKShader`methods from powers of the `Slider` values. The `Label` views display the calculated values:
 
 ```csharp
 float baseFreqX = (float)Math.Pow(10, baseFrequencyXSlider.Value - 4);
@@ -102,9 +102,9 @@ float baseFreqY = (float)Math.Pow(10, baseFrequencyYSlider.Value - 4);
 baseFrequencyYText.Text = String.Format("Base Frequency Y = {0:F4}", baseFreqY);
 ```
 
-A`Slider`為 1 的值會對應到 0.001， `Slider` os 2 的值對應至 0.01， `Slider` 3 的值會對應到 0.1 之間，和`Slider`對應到 1 的值為 4。
+A `Slider` value of 1 corresponds to 0.001, a `Slider` value os 2 corresponds to 0.01, a `Slider` values of 3 corresponds to 0.1, and a `Slider` value of 4 corresponds to 1.
 
-以下是包含該程式碼的程式碼後置檔案：
+Here's the code-behind file that includes that code:
 
 ```csharp
 public partial class PerlinNoisePage : ContentPage
@@ -165,19 +165,19 @@ public partial class PerlinNoisePage : ContentPage
 }
 ```
 
-以下是裝置 iOS、 Android 和通用 Windows 平台 (UWP) 上執行的程式。 碎形雜訊會顯示在畫布的上半部。 動盪一同雜訊會在底部下半部：
+Here's the program running on iOS, Android, and Universal Windows Platform (UWP) devices. The fractal noise is shown in the upper half of the canvas. The turbulence noise is in the bottom half:
 
-[![Perlin 雜訊](noise-images/PerlinNoise.png "Perlin 雜訊")](noise-images/PerlinNoise-Large.png#lightbox)
+[![Perlin Noise](noise-images/PerlinNoise.png "Perlin 雜訊")](noise-images/PerlinNoise-Large.png#lightbox)
 
-相同的引數一定會產生相同的模式在左上角開始。 當您調整 [UWP] 視窗的高度與寬度時，這種一致性是明顯。 Windows 10 中，會重新繪製畫面，因為在畫布的上半部中的模式維持不變。
+The same arguments always produce the same pattern that begins at the upper-left corner. This consistency is obvious when you adjust the width and height of the UWP window. As Windows 10 redraws the screen, the pattern in the upper half of the canvas remains the same.
 
-雜訊模式納入不同程度的透明度。 透明度就很明顯，如果您設定色彩`canvas.Clear()`呼叫。 該色彩會成為顯著的模式。 您也會看到此區段中的效果[**結合多個著色器**](#combining-multiple-shaders)。
+The noise pattern incorporates various degrees of transparency. The transparency becomes obvious if you set a color in the `canvas.Clear()` call. That color becomes prominent in the pattern. You'll also see this effect in the section [**Combining multiple shaders**](#combining-multiple-shaders).
 
-這些 Perlin 雜訊模式很少會單獨使用。 通常，它們受制於混合模式和更新版本的文章中討論的色彩篩選。
+These Perlin noise patterns are rarely used by themselves. Often they are subjected to blend modes and color filters discussed in later articles.
 
-## <a name="tiling-perlin-noise"></a>並排顯示 Perlin 雜訊
+## <a name="tiling-perlin-noise"></a>Tiling Perlin noise
 
-兩個靜態`SKShader`建立 Perlin 雜訊的方法也存在於多載版本。 [ `CreatePerlinNoiseFractalNoise` ](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise(System.Single,System.Single,System.Int32,System.Single,SkiaSharp.SKPointI))並[ `CreatePerlinNoiseTurbulence` ](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise(System.Single,System.Single,System.Int32,System.Single,SkiaSharp.SKPointI))多載包含有額外`SKPointI`參數：
+The two static `SKShader` methods for creating Perlin noise also exist in overload versions. The [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise(System.Single,System.Single,System.Int32,System.Single,SkiaSharp.SKPointI)) and [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise(System.Single,System.Single,System.Int32,System.Single,SkiaSharp.SKPointI)) overloads have an additional `SKPointI` parameter:
 
 ```csharp
 public static SKShader CreatePerlinNoiseFractalNoise (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed, SKPointI tileSize);
@@ -185,9 +185,9 @@ public static SKShader CreatePerlinNoiseFractalNoise (float baseFrequencyX, floa
 public static SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed, SKPointI tileSize);
 ```
 
-[ `SKPointI` ](xref:SkiaSharp.SKPointI)結構是熟悉的整數版本[ `SKPoint` ](xref:SkiaSharp.SKPoint)結構。 `SKPointI` 定義`X`並`Y`型別的屬性`int`而非`float`。
+The [`SKPointI`](xref:SkiaSharp.SKPointI) structure is the integer version of the familiar [`SKPoint`](xref:SkiaSharp.SKPoint) structure. `SKPointI` defines `X` and `Y` properties of type `int` rather than `float`.
 
-這些方法會建立指定大小之重複花紋。 每個圖格中，右邊緣等同於左邊緣，且上邊緣與相同的下邊緣。 這項特性所示**並排顯示 Perlin 雜訊**頁面。 XAML 檔案類似於先前的範例中，但它只有`Stepper`變更檢視`seed`引數：
+These methods create a repeating pattern of the specified size. In each tile, the right edge is the same as the left edge, and the top edge is the same as the bottom edge. This characteristic is demonstrated in the **Tiled Perlin Noise** page. The XAML file is similar to the previous sample, but it only has a `Stepper` view for changing the `seed` argument:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -219,7 +219,7 @@ public static SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float 
 </ContentPage>
 ```
 
-程式碼後置檔案中定義的常數，並排顯示大小。 `PaintSurface`處理常式會建立該大小的點陣圖和`SKCanvas`以便繪製到那個點陣圖。 `SKShader.CreatePerlinNoiseTurbulence`方法建立著色器，該圖格大小。 這個著色器會繪製點陣圖：
+The code-behind file defines a constant for the tile size. The `PaintSurface` handler creates a bitmap of that size and an `SKCanvas` for drawing into that bitmap. The `SKShader.CreatePerlinNoiseTurbulence` method creates a shader with that tile size. This shader is drawn on the bitmap:
 
 ```csharp
 public partial class TiledPerlinNoisePage : ContentPage
@@ -289,7 +289,7 @@ public partial class TiledPerlinNoisePage : ContentPage
 }
 ```
 
-點陣圖建立之後，另一個後`SKPaint`物件用來建立並排顯示的點陣圖模式藉由呼叫`SKShader.CreateBitmap`。 請注意兩個引數的`SKShaderTileMode.Repeat`:
+After the bitmap has been created, another `SKPaint` object is used to create a tiled bitmap pattern by calling `SKShader.CreateBitmap`. Notice the two arguments of `SKShaderTileMode.Repeat`:
 
 ```csharp
 paint.Shader = SKShader.CreateBitmap(bitmap,
@@ -297,29 +297,29 @@ paint.Shader = SKShader.CreateBitmap(bitmap,
                                      SKShaderTileMode.Repeat);
 ```
 
-這個著色器用來涵蓋在畫布。 最後，另一個`SKPaint`物件用來繪製矩形，顯示原始點陣圖的大小。
+This shader is used to cover the canvas. Finally, another `SKPaint` object is used to stroke a rectangle showing the size of the original bitmap.
 
-只有`seed`參數是可選取的使用者介面中。 如果相同`seed`模式會使用每個平台上，它們會顯示相同的模式。 不同`seed`值會導致不同的模式：
+Only the `seed` parameter is selectable from the user interface. If the same `seed` pattern is used on each platform, they would show the same pattern. Different `seed` values result in different patterns:
 
-[![並排顯示 Perlin 雜訊](noise-images/TiledPerlinNoise.png "並排 Perlin 雜訊")](noise-images/TiledPerlinNoise-Large.png#lightbox)
+[![Tiled Perlin Noise](noise-images/TiledPerlinNoise.png "並排顯示 Perlin 雜訊")](noise-images/TiledPerlinNoise-Large.png#lightbox)
 
-左上角中的 200 像素正方形模式順暢地流動到其他牌。
+The 200-pixel square pattern in the upper-left corner flows seamlessly into the other tiles.
 
-## <a name="combining-multiple-shaders"></a>結合多個著色器
+## <a name="combining-multiple-shaders"></a>Combining multiple shaders
 
-`SKShader`類別包含[ `CreateColor` ](xref:SkiaSharp.SKShader.CreateColor*)方法，以建立著色器，使用指定的純色。 這個著色器不單獨使用時非常有用，因為您只可以將該色彩設定為`Color`的屬性`SKPaint`物件，並設定`Shader`屬性設為 null。
+The `SKShader` class includes a [`CreateColor`](xref:SkiaSharp.SKShader.CreateColor*) method that creates a shader with a specified solid color. This shader is not very useful by itself because you can simply set that color to the `Color` property of the `SKPaint` object and set the `Shader` property to null.
 
-這`CreateColor`方法會在另一個方法很有用，`SKShader`定義。 這個方法很[ `CreateCompose` ](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader))，其中結合了兩個著色器。 以下是語法：
+This `CreateColor` method becomes useful in another method that `SKShader` defines. This method is [`CreateCompose`](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader)), which combines two shaders. Here's the syntax:
 
 ```csharp
 public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader);
 ```
 
-`srcShader` （來源著色器） 有效地繪製頂端`dstShader`（目的地著色器）。 如果來源著色器是純色或不透明的漸層時，會被完全遮住目的地著色器。
+The `srcShader` (source shader) is effectively drawn on top of the `dstShader` (destination shader). If the source shader is a solid color or a gradient without transparency, the destination shader will be completely obscured.
 
-Perlin 雜訊著色器包含透明度。 如果該著色器是來源、 目的地著色器會顯示透過透明區域。
+A Perlin noise shader contains transparency. If that shader is the source, the destination shader will show through the transparent areas.
 
-**組成 Perlin 雜訊**頁面上有 XAML 檔案，幾乎等同於第一個**Perlin 雜訊**頁面。 程式碼後置檔案也是類似的。 而原始檔案**Perlin 雜訊**頁面上設定`Shader`屬性`SKPaint`著色器傳回的靜態`CreatePerlinNoiseFractalNoise`和`CreatePerlinNoiseTurbulence`方法。 這**組成 Perlin 雜訊**頁面上呼叫`CreateCompose`組合著色器。 目的地是純色的藍色著色器，以建立使用`CreateColor`。 來源是 Perlin 雜訊著色器：
+The **Composed Perlin Noise** page has a XAML file that is virtually identical to the first **Perlin Noise** page. The code-behind file is also similar. But the original **Perlin Noise** page sets the `Shader` property of `SKPaint` to the shader returned from the static `CreatePerlinNoiseFractalNoise` and `CreatePerlinNoiseTurbulence` methods. This **Composed Perlin Noise** page calls `CreateCompose` for a combination shader. 目的地是使用 `CreateColor`建立的立體藍色著色器。 來源是 Perlin 的雜訊著色器：
 
 ```csharp
 public partial class ComposedPerlinNoisePage : ContentPage
@@ -382,19 +382,19 @@ public partial class ComposedPerlinNoisePage : ContentPage
 }
 ```
 
-碎形雜訊著色器是在最上層;下方是動盪一同著色器：
+碎形雜訊著色器位於頂端;晃動著色器位於底部：
 
 [![組成 Perlin 雜訊](noise-images/ComposedPerlinNoise.png "組成 Perlin 雜訊")](noise-images/ComposedPerlinNoise-Large.png#lightbox)
 
-請注意，多少 bluer 這些著色器是顯示還要**Perlin 雜訊**頁面。 差異說明的雜訊著色器中的透明度。
+請注意，這些著色器的 bluer 量與**Perlin 聲**頁所顯示的不同。 差異說明雜訊著色器中的透明度程度。
 
-另外還有多載[ `CreateCompose` ](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader,SkiaSharp.SKBlendMode))方法：
+[`CreateCompose`](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader,SkiaSharp.SKBlendMode))方法也有多載：
 
 ```csharp
 public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader, SKBlendMode blendMode);
 ```
 
-最後一個參數是隸屬`SKBlendMode`列舉型別、 列舉型別會在下一系列的文章中討論的 29 成員[ **SkiaSharp 複合 （compositing） 和 blend 模式**](../blend-modes/index.md)。
+最後一個參數是 `SKBlendMode` 列舉的成員，這是包含29個成員的列舉，會在[**SkiaSharp 複合和 blend 模式**](../blend-modes/index.md)的下一系列文章中討論。
 
 ## <a name="related-links"></a>相關連結
 

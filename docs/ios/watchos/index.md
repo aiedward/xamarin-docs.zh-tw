@@ -4,15 +4,15 @@ description: 本檔會連結各種指南，說明如何使用 Xamarin 來建立 
 ms.prod: xamarin
 ms.assetid: 14EAE85E-460A-4145-8C8D-869D176D5C3F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 36e3bec3c616f9aa3efcc5bec25647d7e5ef3162
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3e572e22e6c02e5401ad0e2c2293d601660ac08f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292253"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030132"
 ---
 # <a name="building-watchos-apps-with-xamarin"></a>使用 Xamarin 建立 watchOS 應用程式
 
@@ -20,7 +20,7 @@ ms.locfileid: "70292253"
 
 <!-- watch images courtesy of http://infinitapps.com/bezel/ -->
 
-## <a name="getting-startedioswatchosget-startedindexmd"></a>[快速入門](~/ios/watchos/get-started/index.md)
+## <a name="getting-startedioswatchosget-startedindexmd"></a>[使用者入門](~/ios/watchos/get-started/index.md)
 
 * [WatchOS 簡介](~/ios/watchos/get-started/intro-to-watchos.md)。
 * [安裝資訊](~/ios/watchos/get-started/installation.md)。

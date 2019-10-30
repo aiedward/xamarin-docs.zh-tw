@@ -4,15 +4,15 @@ description: 本檔說明 watchOS 3 引進的各種架構變更，以及如何�
 ms.prod: xamarin
 ms.assetid: FE93796E-F699-4B14-B37D-D39F9D48E81E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: cd4bc8dbc02a44807ec197d39349971d8f9cd6f9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 628d2c8efe9459378c64c55d653eac14c55e0815
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768587"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028275"
 ---
 # <a name="additional-watchos-3-frameworks-changes"></a>其他 watchOS 3 架構變更
 
@@ -27,8 +27,8 @@ _本文涵蓋 watchOS 3 的其他、次要變更或現有架構的增強功能�
 - 根[NSManagedObjectCoNtext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)物件支援並行錯誤和未序列化的提取。
 - [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator)類別會維護 SQLite 資料存放區的集區。
 - WAL 記錄模式中具有 SQLite 資料存放區的[NSManagedObjectCoNtext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)物件支援新的查詢產生功能，其中 Managed 物件內容（MOC）可以釘選到特定的資料庫版本，以供未來提取和錯誤交易使用。
-- 使用高階`NSPersistenceContainer`來`NSPersistentStoreCoordinator`參考、 [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel)和其他核心資料設定資源。
-- 已新增`NSManagedObject`數個新的便利方法，讓您更輕鬆地執行提取和建立子類別。
+- 使用高階 `NSPersistenceContainer` 來參考 `NSPersistentStoreCoordinator`、 [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel)和其他核心資料設定資源。
+- 已新增數個新的便利方法，`NSManagedObject` 可讓您更輕鬆地執行提取和建立子類別。
 
 如需詳細資訊，請參閱 Apple 的[核心資料架構參考](https://developer.apple.com/reference/coredata)。
 
@@ -53,9 +53,9 @@ _本文涵蓋 watchOS 3 的其他、次要變更或現有架構的增強功能�
 
 Watch OS 3 的 HealthKit 架構有下列增強功能：
 
-- 使用新的[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)類別來指定健身`ActivityType`的`LocationType`和。
-- 已新增[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)類別的`WheelchairUse`新[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)和方法，以使用輪椅相關的健全狀況資料。
-- 已新增新的中繼資料`HKWeatherConditionClear`索引鍵（例如和`HKWeatherConditionCloudy`），以及已新增的`HKWorkoutActivityTypeFlexibility`健身類型（例如`HKWorkoutActivityTypeWheelchairRunPace`和）。
+- 使用新的[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)類別來指定健身的 `ActivityType` 和 `LocationType`。
+- 已新增[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)類別的新[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)和 `WheelchairUse` 方法，以使用輪椅相關的健全狀況資料。
+- 已新增新的中繼資料索引鍵給氣象類型（例如 `HKWeatherConditionClear` 和 `HKWeatherConditionCloudy`）和健身類型（例如 `HKWorkoutActivityTypeFlexibility` 和 `HKWorkoutActivityTypeWheelchairRunPace`）。
 
 ## <a name="homekit"></a>HomeKit
 
@@ -70,14 +70,14 @@ Watch OS 3 的 HomeKit 架構有下列增強功能：
 Watch OS 3 的 PassKit 架構有下列增強功能：
 
 - 擴充架構，以支援實體貨物和服務之 Apple Watch 的安全應用程式內付款。
-- 現在可以使用下列類別：[PKPayment](https://developer.apple.com/reference/passkit/pkpayment)、 [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)、 [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
+- 現在可以使用下列類別： [PKPayment](https://developer.apple.com/reference/passkit/pkpayment)、 [PKPaymentMethod](https://developer.apple.com/reference/passkit/pkpaymentmethod)、 [PKPaymentRequest](https://developer.apple.com/reference/passkit/pkpaymentrequest)和[PKPaymentToken](https://developer.apple.com/reference/passkit/pkpaymenttoken)
 
 ## <a name="uikit"></a>UIKit
 
 Watch OS 3 的 UIKit 架構有下列增強功能：
 
-- 若要在標籤中支援動態類型，文字欄位和文字方塊會`PreferredFontForTextStyle`使用`UIFont`類別的新方法。
-- 已`ColorWithDisplayP3`新增方法以支援寬色彩。
+- 若要在標籤中支援動態類型，文字欄位和文字方塊會使用 `UIFont` 類別的新 `PreferredFontForTextStyle` 方法。
+- 已新增 `ColorWithDisplayP3` 方法以支援寬色彩。
 
 ## <a name="related-links"></a>相關連結
 

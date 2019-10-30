@@ -4,15 +4,15 @@ description: 本檔提供數個在 Xamarin 中使用 watchOS 3 時有用的疑�
 ms.prod: xamarin
 ms.assetid: 5911D898-0E23-40CC-9F3C-5F61B4D50ADC
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: f10fb237bca92f49ac77657778ada8a47ed69c49
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 093ac4a3242866413042de0b650433d4369ad35f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292177"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028247"
 ---
 # <a name="watchos-3-troubleshooting"></a>watchOS 3 疑難排解
 
@@ -66,29 +66,29 @@ _本文提供數個在 Xamarin Apple Watch 應用程式中使用 watchOS 3 的�
 
 ## <a name="nsurlconnection"></a>NSURLConnection
 
-任何`NSURLConnection`使用舊版 TLS 通訊協定的連線都會失敗。 針對所有 SSL/TLS 連線，現在預設會停用 RC4 對稱式加密。 此外，安全傳輸 API 已不再支援 SSLv3，建議應用程式儘快停止使用 SHA-1 和3DES 密碼編譯。
+任何使用舊版 TLS 通訊協定的 `NSURLConnection` 連接都會失敗。 針對所有 SSL/TLS 連線，現在預設會停用 RC4 對稱式加密。 此外，安全傳輸 API 已不再支援 SSLv3，建議應用程式儘快停止使用 SHA-1 和3DES 密碼編譯。
 
 從 watchOS 3 起，Apple 會嚴格強制執行 SSL/TLS 連接安全性。 受影響的服務和應用程式應該會更新網頁伺服器，以使用最新的 TLS 通訊協定版本。
 
 ## <a name="nsurlsession"></a>NSURLSession
 
-從`HTTPBodyStream` watchOS 3 開始， `NSMutableURLRequest`類別的屬性必須設定為未開啟的資料流程，因為`NSURLConnection`和現在`NSURLSession`會嚴格地強制執行這項需求。
+從 watchOS 3 開始，`NSMutableURLRequest` 類別的 `HTTPBodyStream` 屬性必須設定為未開啟的資料流程，因為 `NSURLConnection` 和 `NSURLSession` 現在會嚴格地強制執行這項需求。
 
-## <a name="privacy"></a>隱私權聲明
+## <a name="privacy"></a>隱私權
 
 已知問題：
 
-在 TLS 信號`https://`交換期間`NSURLSession` ， `NSURLConnection`同時使用 url 和不再支援 RC4 加密套件時。 可能會產生下列其中一個錯誤碼：
+使用 `https://` Url 時，`NSURLSession` 和 `NSURLConnection` 在 TLS 信號交換期間不會再支援 RC4 加密套件。 可能會產生下列其中一個錯誤碼：
 
-- **-1200 或-98** -適用`NSURLErrorSecurityConnectionFailed`于和 SecureTransport 錯誤。
+- **-1200 或-98** -適用于 `NSURLErrorSecurityConnectionFailed` 和 SecureTransport 錯誤。
 - **-1200 [3:-9824]** -Http 載入失敗。
-- **-**  -  1200`NSURLConnection`已完成，但發生錯誤。
+- **-1200** - `NSURLConnection` 已完成，但發生錯誤。
 
 從 watchOS 3 起，Apple 會嚴格強制執行 SSL/TLS 連接安全性。 受影響的服務和應用程式應該會更新網頁伺服器，以使用最新的 TLS 通訊協定版本。 如需詳細資訊，請參閱上面的[NSURLConnection](#nsurlconnection) 。
 
 ## <a name="snapshots"></a>快照
 
-未採用新`HandelBackgroundTask` API 的 WatchKit 應用程式，將不會再收到 watchOS 3 中的定期更新。 
+尚未採用新 `HandelBackgroundTask` API 的 WatchKit 應用程式，將不會再收到 watchOS 3 中的定期更新。 
 
 ## <a name="watchkit"></a>WatchKit
 

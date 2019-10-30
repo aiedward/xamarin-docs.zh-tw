@@ -4,15 +4,15 @@ description: 本文件連結各種指南，描述如何開始使用 Xamarin 開�
 ms.prod: xamarin
 ms.assetid: 13FCAE14-E73D-C1A4-1D22-A433AD827C07
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/10/2017
-ms.openlocfilehash: ae4704c2b1ab97b3e0f396b2402005366e97fe92
-ms.sourcegitcommit: 32c7cf8b0d00464779e4b0ea43e2fd996632ebe0
-ms.translationtype: HT
+ms.openlocfilehash: bc7a5217f3260eb36e45a683b5520347c22641b0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68290137"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016377"
 ---
 # <a name="building-mobile-apps"></a>建置行動應用程式
 
@@ -38,7 +38,7 @@ ms.locfileid: "68290137"
 
 ### <a name="mobile-software-development-lifecyclecross-platformget-startedintroduction-to-mobile-sdlcmd"></a>[行動裝置軟體開發生命週期](~/cross-platform/get-started/introduction-to-mobile-sdlc.md)
 
-本文將討論行動應用程式相關軟體的開發生命週期，以及建置行動專案時的一些考量事項。 對於希望直接開始建置的開發人員，可先跳過此指南並稍後再閱讀，以便更完整地解行動裝置應用程式開發。
+本文將討論行動應用程式相關軟體的開發生命週期，以及建置行動專案時的一些考量事項。 對於希望直接開始建置的開發人員，可先跳過此指南並稍後再閱讀，以便更完整地了解行動應用程式開發。
 
 ## <a name="building-cross-platform-applicationscross-platformapp-fundamentalsbuilding-cross-platform-applicationsindexmd"></a>[建置跨平台應用程式](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 

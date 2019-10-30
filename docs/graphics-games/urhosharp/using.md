@@ -1,35 +1,35 @@
 ---
-title: 若要建置 3D 遊戲使用 UrhoSharp
-description: 本文件提供概略 UrhoSharp，描述場景、 元件、 圖形、 相機、 動作、 使用者輸入、 音效以及更多。
+title: 使用 UrhoSharp 建立3D 遊戲
+description: 本檔提供 UrhoSharp 的總覽，描述場景、元件、圖形、相機、動作、使用者輸入、音效等等。
 ms.prod: xamarin
 ms.assetid: D9BEAD83-1D9E-41C3-AD4B-3D87E13674A0
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 7307f7dcfcc6b5e2576ce4b425879ae05c5a6056
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.openlocfilehash: cb4e524977b53f1a17552298c509d43ccf460f08
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67832678"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011644"
 ---
-# <a name="using-urhosharp-to-build-a-3d-game"></a>若要建置 3D 遊戲使用 UrhoSharp
+# <a name="using-urhosharp-to-build-a-3d-game"></a>使用 UrhoSharp 建立3D 遊戲
 
-撰寫您的第一個遊戲之前，您想要熟悉基本概念： 如何設定場景、 如何載入的資源 （這包含您的作品） 以及如何建立簡單的互動，您的遊戲。
+在撰寫您的第一場遊戲之前，您想要先熟悉基本概念：如何設定您的場景、如何載入資源（這包含您的作品），以及如何為您的遊戲建立簡單的互動。
 
 <a name="scenenodescomponentsandcameras"/>
 
-## <a name="scenes-nodes-components-and-cameras"></a>場景、 節點、 元件和相機
+## <a name="scenes-nodes-components-and-cameras"></a>場景、節點、元件和相機
 
-場景模型可以描述為元件為基礎的場景圖形中。 場景是由從根節點，這也代表整個場景的場景節點階層所組成。 每個`Node`有 3D 轉換 （位置、 旋轉和縮放比例）、 名稱、 識別碼、 加上任意數目的元件。  元件會將節點注入生命，他們可以製作新增的視覺表示法 (`StaticModel`)，它們可發出聲音 (`SoundSource`)，它們可以提供衝突界限，依此類推。
+場景模型可以描述為以元件為基礎的場景圖形。 場景是由場景節點的階層組成，從根節點開始，這也代表整個場景。 每個 `Node` 都有3D 轉換（位置、旋轉和縮放）、名稱、識別碼，加上任意數目的元件。  元件讓節點進入現實，它們可以加入視覺標記法（`StaticModel`），它們可以發出音效（`SoundSource`），它們可以提供衝突界限等等。
 
-您可以建立您的場景和使用的安裝程式節點[Urho 編輯器](#urhoeditor)，或您可以從 C# 程式碼來執行動作。  在本文中我們將探討設定項目，您可以使用程式碼中，為這些逐步解說說明顯示在螢幕上所得到的必要項目
+您可以使用 [ [Urho 編輯器](#urhoeditor)] 來建立場景和設定節點，也可以從程式C#代碼執行作業。  在本檔中，我們將探討如何使用程式碼來設定專案，因為它們說明了讓專案顯示在螢幕上的必要元素
 
-除了設定您的場景，您必須安裝`Camera`，這是決定向使用者取得顯示的內容。
+除了設定您的場景以外，您還需要設定 `Camera`，這就是決定會向使用者顯示的內容。
 
 ### <a name="setting-up-your-scene"></a>設定場景
 
-您通常會建立此表單 Start 方法：
+您通常會建立此表單的開始方法：
 
 ```csharp
 var scene = new Scene ();
@@ -53,7 +53,7 @@ planeObject.SetMaterial(ResourceCache.GetMaterial("Materials/StoneTiled.xml"));
 
 ### <a name="components"></a>元件
 
-轉譯 3D 物件、 音效播放、 物理學與指令碼的邏輯更新為全部啟用成節點建立不同的元件，藉由呼叫`CreateComponent<T>()`。  例如，設定您的節點和淺色元件如下：
+藉由呼叫 `CreateComponent<T>()`，可將3D 物件、音效播放、物理和已編寫腳本的邏輯更新全部啟用，藉以在節點中建立不同的元件。  例如，設定您的 node 和 light 元件，如下所示：
 
 ```csharp
 // Create a directional light to the world so that we can see something. The
@@ -65,30 +65,30 @@ var lightNode = scene.CreateChild("DirectionalLight");
 lightNode.SetDirection (new Vector3(0.6f, -1.0f, 0.8f));
 ```
 
-我們已經建立具有名稱的節點上方"`DirectionalLight`」，並設定方向，但沒有其他項目。  現在，我們可以將上述節點變成淺發出 節點中，藉由附加`Light`元件，與`CreateComponent`:
+我們已在名稱為 "`DirectionalLight`" 的節點上建立，並為其設定方向，但不會有任何其他。  現在，我們可以藉由將 `Light` 元件附加至其中，將上述節點轉換成發光節點，並 `CreateComponent`：
 
 ```csharp
 var light = lightNode.CreateComponent<Light>();
 ```
 
-建立元件`Scene`本身有特殊的角色： 實作整個場景的功能。 它們應該先建立其他元件，而且包含下列功能：
+建立到 `Scene` 本身的元件具有特殊角色：可執行整個場景的功能。 它們應該在所有其他元件之前建立，並且包含下列各項：
 
- `Octree`： 實作資料分割的空間及加速可見性查詢。 沒有此 3D 物件無法轉譯。
- `PhysicsWorld`： 實作物理模擬。 例如物理元件`RigidBody`或`CollisionShape`可以無法正常運作如果沒有這麼做。
- `DebugRenderer`： 實作偵錯幾何轉譯。
+ `Octree`：實行空間分割和加速可見度查詢。 若沒有此3D 物件，就無法呈現。
+ `PhysicsWorld`：實行物理模擬。 物理元件（例如 `RigidBody` 或 `CollisionShape`）在沒有此功能的情況下無法正常運作。
+ `DebugRenderer`：執行 debug geometry 轉譯。
 
-一般元件，例如`Light`，`Camera`或 `StaticModel`
-不應直接建立`Scene`，但而成子節點。
+一般元件，例如 `Light`、`Camera` 或 `StaticModel`
+不應該直接建立在 `Scene`中，而是改為子節點。
 
-程式庫提供各種不同的元件，您可以附加至您的節點，讓它們實際運作： 使用者可見的項目 （模型）、 音效、 固定的內文，衝突的圖形、 相機、 光源、 粒子 fixit 發出器及更多。
+程式庫隨附各種不同的元件，可讓您連接到您的節點，以將其融入生活：使用者可見專案（模型）、音效、固定主體、碰撞圖形、相機、光源、物件發射器等等。
 
 ### <a name="shapes"></a>圖形
 
-為了方便起見，各種圖案都有簡單 Urho.Shapes 命名空間中的節點。  這些包括方塊、 陳列、 圓錐體、 圓柱和平面。
+為了方便起見，您可以在 Urho 中以簡單的節點形式提供各種圖形。  這些包括方塊、球體、圓錐、圓柱和飛機。
 
-### <a name="camera-and-viewport"></a>相機與檢視區
+### <a name="camera-and-viewport"></a>相機和視口
 
-就像光線，相機是元件，因此您必須將元件連結到節點，就像這樣：
+就像光線一樣，攝影機是元件，因此您需要將元件附加至節點，如下所示：
 
 ```csharp
 var CameraNode = scene.CreateChild ("camera");
@@ -96,72 +96,72 @@ camera = CameraNode.CreateComponent<Camera>();
 CameraNode.Position = new Vector3 (0, 5, 0);
 ```
 
-以此方式，您已建立相機、 觀景窗置於 3D 世界下, 一步是告知`Application`，這您想要使用之相機，做法是使用下列程式碼：
+這麼一來，您已建立一個攝影機，並將相機放在3D 世界中，下一個步驟是通知 `Application` 這是您想要使用的攝影機，這是使用下列程式碼來完成：
 
 ```csharp
 Renderer.SetViewPort (0, new Viewport (Context, scene, camera, null))
 ```
 
-而且現在您應該能夠看到您建立的結果。
+現在您應該能夠看到您建立的結果。
 
-### <a name="identification-and-scene-hierarchy"></a>識別和場景階層架構
+### <a name="identification-and-scene-hierarchy"></a>識別和場景階層
 
-不同於節點，元件不會有名稱;在相同的節點內的元件都只識別其類型和在該節點的元件清單中，在建立順序的索引，比方說，您可以擷取`Light`元件的`lightNode`物件上方，就像這樣：
+不同于節點，元件沒有名稱;相同節點內的元件只會依據其類型來識別，而節點的元件清單中的索引會填入建立順序，例如，您可以從上述的 `lightNode` 物件中取出 `Light` 元件，如下所示：
 
 ```csharp
 var myLight = lightNode.GetComponent<Light>();
 ```
 
-您也可以藉由擷取來取得一份所有元件`Components`屬性會傳回`IList<Component>`，您可以使用。
+您也可以取得所有元件的清單，方法是抓取會傳回您可以使用之 `IList<Component>` 的 `Components` 屬性。
 
-建立時，節點和元件中取得場景全域整數識別碼。 他們可以使用函式查詢從場景`GetNode(uint id)`和`GetComponent(uint id)`。 這是速度比，例如在名稱為基礎的場景節點查詢遞迴。
+建立時，節點和元件都會取得場景全域整數識別碼。 您可以使用 `GetNode(uint id)` 和 `GetComponent(uint id)`的函式，從場景中查詢這些函數。 這比執行以遞迴名稱為基礎的場景節點查詢更快。
 
-沒有內建的實體或遊戲的物件; 概念而是程式設計人員決定節點階層架構中，並在哪些節點可放置任何指令碼的邏輯。 一般而言，3D 世界中的自由移動物件，就會建立做為根節點的子系。 可以建立節點，不論有沒有名稱，使用`CreateChild`。 不會強制執行的節點名稱的唯一性。
+實體或遊戲物件沒有內建的概念;而是由程式設計師決定節點階層，以及在哪些節點放置任何已編寫腳本的邏輯。 一般而言，3D 世界中的自由移動物件會建立為根節點的子系。 您可以使用 `CreateChild`建立節點，不論是否有名稱。 不會強制執行節點名稱的唯一性。
 
-某些階層式的組合時，它會建議 （和事實上有必要，因為元件不會有自己的 3D 轉換） 來建立子節點。
+每當有階層式組合時，建議使用（事實上，因為元件沒有自己的3D 轉換）來建立子節點。
 
-比方說如果字元已保留物件，他手中，物件應該有自己的節點，會變成字元的手骨 (也`Node`)。  例外狀況是物理`CollisionShape`，它可以是 offsetted 和旋轉個別與節點相關。
+例如，如果某個字元在手中保留物件，物件應該會有自己的節點，而這會是該字元的右手骨骼（也就是 `Node`）的父代。  例外狀況是物理 `CollisionShape`，可以與節點相對地個別 offsetted 和旋轉。
 
-請注意，`Scene`的擁有計算衍生的全局轉換的子節點時，做為最佳化特意不忽略轉換，因此，變更它沒有任何作用和它應該保持原狀 （來源、 沒有循環，無縮放位置）。
+請注意，在計算子節點的世界衍生轉換時，會將 `Scene`的特意忽略為優化，因此變更它不會有任何作用，而且應該保持不變（原點位置、不旋轉、不進行調整）。
 
-`Scene` 節點可以是自由重設父代。 相較之下元件一律屬於它們附加至，並不在節點之間移動的節點。 節點和元件提供`Remove`函式來達成此目的而不需要透過父代。 移除節點後，任何有問題的元件之節點上的作業後呼叫該函式不是安全的。
+`Scene` 節點可以自由重做。 相較之下，元件一定會屬於其所連結的節點，而且無法在節點之間移動。 節點和元件都會提供 `Remove` 函式來完成這項工作，而不需要經過父系。 移除節點之後，在呼叫該函式之後，沒有問題的節點或元件上的任何作業都是安全的。
 
-您也可建立`Node`，不屬於場景。 這非常有用，例如使用相機，因為可能會載入或儲存，場景中移動觀景窗將不會儲存在實際場景，以及，然後都不會終結載入場景時。 不過請注意，建立幾何、 物理或指令碼元件未連結的節點，然後將它移到場景稍後會造成這些元件無法正常運作。
+您也可以建立不屬於場景的 `Node`。 這適用于在可能載入或儲存的場景中移動相機的範例，因為相機將不會與實際場景一起儲存，而且不會在載入場景時終結。 不過，請注意，建立幾何、物理或腳本元件至未連結的節點，然後將它移到場景中，會導致這些元件無法正常運作。
 
-### <a name="scene-updates"></a>場景的更新
+### <a name="scene-updates"></a>場景更新
 
-已啟用其更新場景上每個主迴圈反覆項目會自動更新 （預設值）。  應用程式的`SceneUpdate`在其上叫用事件處理常式。
+其更新已啟用（預設）的場景會自動在每個主要迴圈反復專案上更新。  應用程式的 `SceneUpdate` 事件處理常式會在其上叫用。
 
-節點和元件可以排除從場景的更新，停用它們，請參閱`Enabled`。  其行為取決於特定的元件，但例如停用的可繪製的元件也可以看不見，而停用聲音的來源元件靜音。 如果節點已停用，所有元件都會被視為停用，不論它們的啟用/停用狀態。
+藉由停用節點和元件，可以將其從場景更新中排除，請參閱 `Enabled`。  行為取決於特定的元件，但停用可繪製的元件也會使其不可見，同時停用音效來源元件 mutes。 如果節點已停用，不論其本身的啟用/停用狀態為何，其所有元件都會視為停用。
 
-## <a name="adding-behavior-to-your-components"></a>將行為加入至您的元件
+## <a name="adding-behavior-to-your-components"></a>將行為新增至您的元件
 
-建構您的遊戲的最佳方式是對您自己的元件之封裝的動作項目或項目，您的遊戲。  這使這項功能自封式，從用來顯示它，其行為的資產。
+建立遊戲結構的最佳方式是讓自己的元件在遊戲中封裝一個動作專案或元素。  這會使功能自我自主（從用來顯示的資產）到其行為。
 
-將行為新增至元件的最簡單的方式是使用動作，也就是您可以用來排入佇列，並結合，C# 的非同步程式設計的指示。  這可讓您的元件都非常高的層級的行為，並能更容易了解的事情。
+將行為新增至元件最簡單的方式是使用動作，這是您可以將其排入佇列，並將C#其與非同步程式設計結合的指示。  這可讓您元件的行為非常高，並可讓您更輕鬆地瞭解所發生的情況。
 
-或者，您可以控制確實會發生什麼事您的元件藉由更新您的元件屬性上每個畫面格 （框架為基礎的行為一節所述）。
+或者，您可以藉由更新每個畫面格上的元件屬性（在以框架為基礎的行為一節中所討論），來精確控制您的元件會發生什麼事。
 
 ### <a name="actions"></a>動作
 
-您可以將行為新增至節點非常輕鬆地使用動作。  動作可以改變各種不同的節點屬性和執行它們經過一段時間，或重複使用指定的動畫曲線重試次數。
+您可以使用動作輕鬆地將行為新增至節點。  動作可以改變不同的節點屬性，並在一段時間內執行，或使用指定的動畫曲線重複數次。
 
-例如，請考慮在場景的 「 雲端 」 節點，就可以讓它像這樣：
+例如，假設您的場景上有一個「雲端」節點，您可以像這樣淡入：
 
 ```csharp
 await cloud.RunActionsAsync (new FadeOut (duration: 3))
 ```
 
-動作是不可變的物件，可讓您重複使用的動作，用以執行不同的物件。
+動作是不可變的物件，可讓您重複使用驅動不同物件的動作。
 
-一般慣用句，就是建立執行反向作業的動作：
+常見的用法是建立執行反向運算的動作：
 
 ```csharp
 var gotoExit = new MoveTo (duration: 3, position: exitLocation);
 var return = gotoExit.Reverse ();
 ```
 
-下列範例會為您淡物件經過一段三秒。  您也可以執行一個動作之後，比方說，您可以先移動雲端，並加以隱藏：
+下列範例會在三秒的期間內為您淡出物件。  您也可以在另一個動作之後執行，例如，您可以先移動雲端，然後將它隱藏：
 
 ```csharp
 await cloud.RunActionsAsync (
@@ -169,7 +169,7 @@ await cloud.RunActionsAsync (
     new FadeOut (duration: 3));
 ```
 
-如果您想要在同一時間進行這兩個動作，您可以使用平行的動作，並提供所有動作您想要以平行方式完成：
+如果您想要同時執行這兩個動作，您可以使用 [平行動作]，並提供您想要平行完成的所有動作：
 
 ```csharp
   await cloud.RunActionsAsync (
@@ -178,29 +178,29 @@ await cloud.RunActionsAsync (
       new FadeOut (duration: 3)));
 ```
 
-在上述範例中雲端將會移動，並在同一時間淡出。
+在上述範例中，雲端會同時移動和淡出。
 
-您會發現這些使用C# `await`，可讓您以線性方式思考您想要達成的行為。
+您會發現這些使用C#`await`，這可讓您以線性方式思考想要達成的行為。
 
 ### <a name="basic-actions"></a>基本動作
 
-這些是 UrhoSharp 中支援的動作：
+以下是 UrhoSharp 中支援的動作：
 
-- 移動的節點： `MoveTo`， `MoveBy`， `Place`， `BezierTo`， `BezierBy`， `JumpTo`， `JumpBy`
-- 旋轉節點： `RotateTo`， `RotateBy`
-- 調整節點： `ScaleTo`， `ScaleBy`
-- 漸淡節點： `FadeIn`， `FadeTo`， `FadeOut`， `Hide`， `Blink`
-- 濃淡： `TintTo`， `TintBy`
-- 瞬間： `Hide`， `Show`， `Place`， `RemoveSelf`， `ToggleVisibility`
-- 迴圈： `Repeat`， `RepeatForever`， `ReverseTime`
+- 移動節點： `MoveTo`、`MoveBy`、`Place`、`BezierTo`、`BezierBy`、`JumpTo`、`JumpBy`
+- 旋轉節點： `RotateTo`、`RotateBy`
+- 縮放節點： `ScaleTo`、`ScaleBy`
+- 漸淡的節點： `FadeIn`、`FadeTo`、`FadeOut`、`Hide`、`Blink`
+- 色調： `TintTo`、`TintBy`
+- 時刻： `Hide`、`Show`、`Place`、`RemoveSelf`、`ToggleVisibility`
+- 迴圈： `Repeat`、`RepeatForever`、`ReverseTime`
 
-其他進階的功能包括的組合`Spawn`和`Sequence`動作。
+其他的「高級」功能包括 `Spawn` 和 `Sequence` 動作的組合。
 
-### <a name="easing---controlling-the-speed-of-your-actions"></a>加/減速-控制動作的速度
+### <a name="easing---controlling-the-speed-of-your-actions"></a>簡化-控制動作的速度
 
-加/減速是方法，以引導，動畫會展開，而且它可以讓動畫更愉快的方式。  根據預設您的動作會有線性的行為，例如`MoveTo`動作會有非常機器人的移動。  您可以將包裝的加/減速動作來變更行為，例如，其中會慢慢開始移動、 加速，而且緩時變結束您的動作 (`EasyInOut`)。
+「簡化」是一種方法，可引導動畫的展開方式，讓您的動畫更愉快。  根據預設，您的動作會有線性行為，例如 `MoveTo` 動作會有非常機器人的移動。  您可以將動作包裝成簡化動作來變更行為，例如，一個會慢慢開始移動、加速和緩慢到達結尾（`EasyInOut`）。
 
-您這麼做，例如包裝成加/減速的動作，現有的動作：
+若要這麼做，您可以將現有的動作包裝成緩動動作，例如：
 
 ```csharp
 await cloud.RunActionAsync (
@@ -208,16 +208,16 @@ await cloud.RunActionAsync (
      new MoveTo (duration: 3, position: new Vector (0,0,15)), rate:1))
 ```
 
-有許多的加/減速模式下, 圖顯示各種不同加/減速類型和其行為在經過一段時間，控制從開始到完成之物件的值：
+有許多簡化模式，下圖顯示各種緩動類型及其在一段時間內所控制物件值的行為，從開始到完成：
 
-![加/減速模式](using-images/easing.png "此圖表顯示不同加/減速類型和其行為就會控制一段時間之物件的值")
+![簡化模式](using-images/easing.png "此圖表顯示各種緩動類型及其在一段時間內控制之物件值的行為")
 
 ### <a name="using-actions-and-async-code"></a>使用動作和非同步程式碼
 
-在您`Component`子類別中，您應該引進備妥您元件的行為，它的磁碟機功能的非同步方法。
-則會叫用這個方法，使用 C#`await`關鍵字，從您的程式，另一個部分是您`Application.Start`方法，或是在您的應用程式中的使用者] 或 [劇本點回應。
+在您的 `Component` 子類別中，您應該引進非同步方法來準備您的元件行為，並為其驅動其功能。
+接著，您可以使用程式的另C#一個部分中的`await`關鍵字來叫用這個方法，不論您的 `Application.Start`方法或回應應用程式中的使用者或故事點。
 
-例如：
+例如:
 
 ```csharp
 class Robot : Component {
@@ -265,13 +265,13 @@ class Robot : Component {
 }
 ```
 
-在 `Launch`上述三個動作方法會啟動： 機器人進入場景，此動作會經過一段 0.6 秒變更節點的位置。  由於這是非同步選項時，這會同時為下一個指令，也就是呼叫到`MoveRandomly`。  這個方法會改變以平行方式到隨機位置機器人的位置。  這之後，即可執行兩個複合的動作，移動到新的位置，並返回到原始位置並重複此步驟，只要機器人保持運作。  若要讓事情更加有趣，機器人會保留著眼於同時。  疑難排解，才會啟動每個 0.1 秒。
+在上述的 `Launch` 方法中，會啟動三個動作：機器人進入場景，此動作會在0.6 秒的期間內改變節點的位置。  因為這是一個非同步選項，所以這會同時做為下一個指令呼叫 `MoveRandomly`。  這個方法會將機器人的位置平行變更為隨機位置。  這是藉由執行兩個複雜的動作，移至新位置，然後回到原始位置並重複這項操作，只要機器人維持在運作狀態即可。  為了讓事情更有趣，機器人會同時繼續進行診斷。  每隔0.1 秒就會開始進行此診斷。
 
-### <a name="frame-based-behavior-programming"></a>畫面格為基礎的行為程式設計
+### <a name="frame-based-behavior-programming"></a>以框架為基礎的行為程式設計
 
-如果您想要控制您的元件，請依框架為基礎，而不是使用動作的行為，您會執行可覆寫`OnUpdate`方法的程式`Component`子類別。  這個方法會一次叫用每個畫面，而且 ReceiveSceneUpdates 屬性為 true 時，才會叫用。
+如果您想要以框架為基礎來控制元件的行為，而不是使用動作，那麼您應該覆寫 `Component` 子類別的 `OnUpdate` 方法。  這個方法會針對每個畫面叫用一次，而且只有在您將 ReceiveSceneUpdates 屬性設定為 true 時，才會叫用。
 
-下圖顯示如何建立`Rotator`元件，然後連接到節點，這會導致要旋轉的節點：
+下圖顯示如何建立 `Rotator` 元件，然後將它附加至節點，這會導致節點旋轉：
 
 ```csharp
 class Rotator : Component {
@@ -291,7 +291,7 @@ class Rotator : Component {
 }
 ```
 
-而這是如何附加至節點的 此元件：
+這就是您將此元件附加至節點的方式：
 
 ```csharp
 Node boxNode = new Node();
@@ -301,9 +301,9 @@ boxNode.AddComponent (rotator);
 
 ### <a name="combining-styles"></a>結合樣式
 
-您可以使用 async/動作基礎模型進行程式設計的行為，也就是適合用來引發不理樣式程式設計中，大部分，但您可以也微調您的元件也在每個框架上執行一些更新程式碼的行為。
+您可以使用非同步/以動作為基礎的模型來程式設計大部分的行為，這很適合用於程式設計的暫時模式，但是您也可以微調元件的行為，以便在每個框架上執行一些更新程式碼。
 
-例如，在 SamplyGame 示範此介面用於`Enemy`類別會將編碼的基本行為會使用動作，但它也可確保，元件會指向使用者所設定的節點的方向`Node.LookAt`:
+例如，在 SamplyGame 示範中，這會在 `Enemy` 類別中用來編碼基本行為使用動作，但也可確保元件會藉由使用 `Node.LookAt`設定節點的方向來指向使用者：
 
 ```csharp
     protected override void OnUpdate(SceneUpdateEventArgs args)
@@ -318,13 +318,13 @@ boxNode.AddComponent (rotator);
 
 ## <a name="loading-and-saving-scenes"></a>載入和儲存場景
 
-可載入和儲存在 XML 格式; 場景列出函式`LoadXml`和`SaveXML`。 載入場景時，會先移除所有現有內容 （子節點和元件）。 節點和標記的暫存區元件`Temporary`將不會儲存屬性。 序列化程式處理所有的內建元件和屬性，但它不是聰明，足以處理自訂屬性以及定義您的元件子類別中的欄位。 不過它會為此提供兩種虛擬方法：
+場景可以載入並以 XML 格式儲存;請參閱函數 `LoadXml` 和 `SaveXML`。 載入場景時，會先移除其中的所有現有內容（子節點和元件）。 將不會儲存以 `Temporary` 屬性標示為暫時性的節點和元件。 序列化程式會處理所有內建元件和屬性，但它不夠聰明，無法處理元件子類別中定義的自訂屬性和欄位。 不過，它會為此提供兩個虛擬方法：
 
- `OnSerialize` 您可以註冊您自訂狀態序列化
+ `OnSerialize`，您可以在其中為序列化註冊自訂狀態
 
- `OnDeserialized` 您可以在哪裡取得您儲存的自訂狀態。
+ `OnDeserialized`，您可以在其中取得已儲存的自訂狀態。
 
-一般而言，自訂元件會如下所示：
+一般而言，自訂群組件看起來會像下面這樣：
 
 ```csharp
 class MyComponent : Component {
@@ -357,13 +357,13 @@ class MyComponent : Component {
 
 ### <a name="object-prefabs"></a>物件 prefabs
 
-只要載入或儲存整個場景不具備足夠的彈性，遊戲需要將以動態方式建立新的物件。 相反地，建立複雜的物件和程式碼中設定其屬性也會單調乏味。 基於這個理由，它也可儲存它的子節點、 元件和屬性會包含一個場景節點。 這些方便日後載入做為群組。  這類已儲存的物件通常稱為 prefab。 執行這項作業的方法有三種：
+只是載入或儲存整個場景，對於需要動態建立新物件的遊戲而言並沒有太大的彈性。 另一方面，在程式碼中建立複雜物件和設定其屬性也會很繁瑣。 基於這個理由，您也可以儲存包含其子節點、元件和屬性的場景節點。 稍後可以輕鬆地將這些載入為群組。  這類儲存的物件通常稱為 prefab。 執行這項作業的方法有三種：
 
-- 藉由呼叫的程式碼中`Node.SaveXml`節點上
-- 在編輯器中，選取 [階層] 視窗中的節點，然後選擇 [儲存節點] 從 [檔案] 功能表。
-- 使用中的 「 節點 」 命令`AssetImporter`，這會將儲存場景節點階層架構和任何模型中包含輸入資產 （例如。 Collada 檔案）
+- 在程式碼中，藉由呼叫節點上的 `Node.SaveXml`
+- 在編輯器中，選取 [階層] 視窗中的節點，然後從 [檔案] 功能表中選擇 [另存節點為]。
+- 在 `AssetImporter`中使用「節點」命令，這會儲存場景節點階層和包含在輸入資產中的任何模型（例如 Collada 檔案）
 
-若要具現化已儲存的節點到場景呼叫`InstantiateXml`。 節點將會建立做為子系的場景，但可以自由重設父代之後。 必須指定位置和放置節點的循環。 下列程式碼示範如何具現化 prefab`Ninja.xm`加入所需的位置和旋轉場景：
+若要將儲存的節點具現化至場景，請呼叫 `InstantiateXml`。 該節點將會建立為場景的子系，但是可以在這之後自由地重設父代。 需要指定放置節點的位置和旋轉。 下列程式碼示範如何將 prefab `Ninja.xm` 具現化至具有所需位置和旋轉的場景：
 
 ```csharp
 var prefabPath = Path.Combine (FileSystem.ProgramDir,"Data/Objects/Ninja.xml");
@@ -374,13 +374,13 @@ using (var file = new File(Context, prefabPath, FileMode.Read))
 }
 ```
 
-## <a name="events"></a>事件
+## <a name="events"></a>「事件」
 
-UrhoObjects 引發的事件數目，這些產生的各種類別當成 C# 事件。  除了 C#-基底的事件模型，您也可使用`SubscribeToXXX`方法，可讓您訂閱，而且將保留的訂用帳戶權杖，您稍後可以使用來取消訂閱。  差別在於，前者可讓訂閱的許多呼叫端，而第二個只允許一個，但可提供好看的 lambda 樣式方式，來使用，並且還，允許的訂用帳戶可輕鬆移除。  它們是互斥的。
+UrhoObjects 會引發一些事件，這些事件會呈現為C#產生它們之各種類別上的事件。  除了以為基礎C#的事件模型之外，也可以使用`SubscribeToXXX`的方法，讓您訂閱並保留可供稍後用來取消訂閱的訂用帳戶權杖。  其差異在於前者會允許許多呼叫端訂閱，而第二個則只允許一個，但允許使用更好的 lambda 樣式方法，並允許輕鬆移除訂用帳戶。  它們彼此互斥。
 
-當您訂閱事件時，您必須提供採用適當的事件引數的引數的方法。
+當您訂閱事件時，您必須提供可接受引數與適當事件引數的方法。
 
-比方說，這是您如何訂閱滑鼠按鈕按下事件：
+例如，這就是您訂閱滑鼠按鍵關閉事件的方式：
 
 ```csharp
 public void override Start ()
@@ -405,7 +405,7 @@ public void override Start ()
 }
 ```
 
-有時候您會想要停止接收通知的事件，在這些情況下，儲存傳回的值，呼叫`SubscribeTo`方法，並叫用它的取消訂閱方法：
+有時候您會想要停止接收事件的通知，在這些情況下，請將呼叫中的傳回值儲存 `SubscribeTo` 方法，然後在其上叫用取消訂閱方法：
 
 ```csharp
 Subscription mouseSub;
@@ -419,11 +419,11 @@ public void override Start ()
 }
 ```
 
-收到的事件處理常式的參數是專屬於每個事件，其中包含事件裝載的強型別的事件引數類別。
+事件處理常式收到的參數是強型別事件引數類別，它會針對每個事件指定，並包含事件裝載。
 
 ## <a name="responding-to-user-input"></a>回應使用者輸入
 
-您可以訂閱各種事件，例如按鍵輸入下訂閱事件，並回應所傳遞的輸入：
+您可以訂閱各種事件（例如，藉由訂閱事件來關閉按鍵），並回應傳遞的輸入：
 
 ```csharp
 Start ()
@@ -438,7 +438,7 @@ void HandleKeyDown (KeyDownEventArgs arg)
 }
 ```
 
-但在許多情況下，您想要檢查索引鍵的目前狀態，正在更新，並據以更新您的程式碼時您場景更新處理常式。  例如，下列可用來更新根據鍵盤輸入的觀景窗位置：
+但在許多情況下，您會希望場景更新處理常式在更新時檢查金鑰的目前狀態，並據此更新您的程式碼。  例如，您可以根據鍵盤輸入，使用下列內容來更新相機位置：
 
 ```csharp
 protected override void OnUpdate(float timeStep)
@@ -459,63 +459,63 @@ protected override void OnUpdate(float timeStep)
 }
 ```
 
-## <a name="resources-assets"></a>資源 （資產）
+## <a name="resources-assets"></a>資源（資產）
 
-資源包括 UrhoSharp 中大部分會從大量的儲存體載入期間初始化或執行階段的項目：
+資源包括在初始化或執行時間期間，從大量存放裝置載入 UrhoSharp 中的大部分專案：
 
-- `Animation` -用於骨架的動畫
-- `Image` -代表儲存在各種不同的圖形格式的影像
-- `Model` -3D 模型
-- `Material` -用來呈現模型的資料。
-- `ParticleEffect`- [描述](http://urho3d.github.io/documentation/1.4/_particles.html)如何粒子 fixit 發出器的運作方式，請參閱 「[粒子](#particles)」 下方。
-- `Shader` -自訂著色器
-- `Sound` -音效播放，請參閱 「[音效](#sound)」 下方。
-- `Technique` -material 轉譯技術
-- `Texture2D` -2D 材質
-- `Texture3D` -3D 材質
-- `TextureCube` -立方體紋理
+- `Animation`-用於框架動畫
+- `Image`-代表以各種圖形格式儲存的影像
+- `Model` 3D 模型
+- `Material`-用來呈現模型的材料。
+- `ParticleEffect`- [描述](https://urho3d.github.io/documentation/1.4/_particles.html)物件發射器如何運作，請參閱下方的「[粒子](#particles)」。
+- `Shader`-自訂著色器
+- `Sound`-播放聲音，請參閱下方的「[音效](#sound)」。
+- `Technique` 材質轉譯技術
+- `Texture2D`-2D 材質
+- `Texture3D`-3D 材質
+- `TextureCube`-Cube 材質
 - `XmlFile`
 
-管理和載入`ResourceCache`子系統 (當作`Application.ResourceCache`)。
+這些是由 `ResourceCache` 子系統來管理和載入（以 `Application.ResourceCache`的形式提供）。
 
-資源本身被識別其檔案路徑，相對於已註冊的資源目錄或封裝檔案。 根據預設，引擎會註冊資源目錄`Data`並`CoreData`，或封裝`Data.pak`和`CoreData.pak`如果有的話。
+資源本身的識別方式是其檔案路徑，相對於已註冊的資原始目錄或封裝檔案。 根據預設，引擎會註冊 `Data` 和 `CoreData`的資原始目錄，或是封裝 `Data.pak` 和 `CoreData.pak` （如果有的話）。
 
-如果載入資源失敗，就會記錄錯誤，並會傳回 null 參考。
+如果載入資源失敗，將會記錄錯誤，並傳回 null 參考。
 
-下列範例會示範一般資源快取擷取資源的方式。  在此情況下，UI 項目紋理，這會使用`ResourceCache`屬性從`Application`類別。
+下列範例顯示從資源快取提取資源的一般方式。  在此情況下，UI 元素的材質會使用來自 `Application` 類別的 `ResourceCache` 屬性。
 
 ```csharp
 healthBar.SetTexture(ResourceCache.GetTexture2D("Textures/HealthBarBorder.png"));
 ```
 
-資源也是以手動方式建立和儲存資源的快取，如同它們一直從磁碟載入。
+您也可以手動建立資源，並將其儲存到資源快取，如同已從磁片載入一樣。
 
-記憶體預算可以設定每個資源類型： 如果資源耗用更多的記憶體超過允許的值，最舊的資源將會移除從快取，如果不在使用了。 根據預設記憶體預算會設定為無限制。
+可以根據資源類型設定記憶體預算：如果資源耗用的記憶體超過允許的數量，則會從快取中移除最舊的資源（如果不再使用的話）。 根據預設，記憶體預算設定為 [無限制]。
 
-### <a name="bringing-3d-models-and-images"></a>將 3D 模型和映像
+### <a name="bringing-3d-models-and-images"></a>帶入3D 模型和影像
 
-Urho3D 會嘗試使用現有的檔案格式可能的話，並定義只有在這類模型 (.mdl) 和動畫 (.ani) 必要的自訂檔案格式。 這些類型的資產，如 Urho 提供轉換器- [AssetImporter](http://urho3d.github.io/documentation/1.4/_tools.html)這可能會耗用許多熱門的 3D 格式，例如 fbx、 dae、 3ds，和 obj 等等。
+Urho3D 嘗試盡可能使用現有的檔案格式，並只在必要時（例如模型（. mdl）和動畫（ani））定義自訂檔案格式。 針對這些類型的資產，Urho 提供了[AssetImporter](https://urho3d.github.io/documentation/1.4/_tools.html) ，其可以使用許多常用的3d 格式，例如 fbx、dae、3ds 和 obj 等等。
 
-另外還有好用的增益集 Blender [ https://github.com/reattiva/Urho3D-Blender ](https://github.com/reattiva/Urho3D-Blender) ，可以匯出適合 Urho3D 格式中的 「 blender 」 資產。
+此外，也有一個方便 Blender [https://github.com/reattiva/Urho3D-Blender](https://github.com/reattiva/Urho3D-Blender)的增益集，可以使用適用于 Urho3D 的格式來匯出您的 Blender 資產。
 
 ### <a name="background-loading-of-resources"></a>資源的背景載入
 
-一般來說，當要求的資源使用其中一種`ResourceCache`的`Get`方法，它們會立即在主執行緒，這可能需要幾毫秒，讓所需的步驟中載入 （從磁碟載入檔案、 剖析資料，如有必要上, 傳到 GPU)，因此可能會導致畫面播放速率會卸除。
+一般來說，使用其中一個 `ResourceCache`的 `Get` 方法來要求資源時，它們會立即載入主執行緒中，這可能需要幾毫秒的時間才能完成所有必要的步驟（從磁片載入檔案、剖析資料、視需要上傳至 GPU），而且可以因此會導致畫面播放速率下降。
 
-如果您知道您需要哪些資源事先，您可以提出要求時要載入在背景執行緒中呼叫`BackgroundLoadResource`。 您可以使用訂閱資源背景載入事件`SubscribeToResourceBackgroundLoaded`方法。 它會告訴載入實際上是否成功或失敗。 視資源，只載入程序的一部分可能會移至背景執行緒，例如分頁裝訂的 GPU 上傳步驟一律必須在主執行緒中發生。 請注意，如果您呼叫其中一個載入方法，與排入佇列的背景載入資源的資源，主執行緒將會延後其載入之前完成。
+如果您事先知道所需的資源，可以藉由呼叫 `BackgroundLoadResource`，要求將它們載入背景執行緒中。 您可以使用 `SubscribeToResourceBackgroundLoaded` 方法來訂閱資源背景載入事件。 它會判斷載入是否真的成功或失敗。 視資源而定，只有一部分的載入程式可以移至背景執行緒，例如完成的 GPU 上傳步驟一律必須在主執行緒中發生。 請注意，如果您針對已排入背景載入的資源呼叫其中一個資源載入方法，主執行緒將會停止，直到其載入完成為止。
 
-非同步載入功能的場景`LoadAsync`和`LoadAsyncXML`第一次之前繼續場景內容載入的資源有背景負載的選項。 它也可用來僅載入資源，而不需要修改場景，請指定`LoadMode.ResourcesOnly`。 這可讓準備快速具現化的場景或物件 prefab 檔案。
+`LoadAsync` 和 `LoadAsyncXML` 的非同步場景載入功能，在繼續載入場景內容之前，可以先載入資源的選項。 您也可以藉由指定 `LoadMode.ResourcesOnly`，在不修改場景的情況下，用來載入資源。 這可讓準備場景或物件 prefab 檔，以快速具現化。
 
-最後花費時間上限 （以毫秒為單位） 每個畫面上完成載入的資源可以透過設定來設定的背景`FinishBackgroundResourcesMs`屬性上的`ResourceCache`。
+最後，您可以藉由設定 `ResourceCache`上的 [`FinishBackgroundResourcesMs`] 屬性，來設定每個完成背景載入資源的每個畫面格所花費的時間上限（以毫秒為單位）。
 
 <a name="sound"/>
 
-## <a name="sound"></a>音效
+## <a name="sound"></a>發出
 
-聲音是遊戲，很重要的一部分，並 UrhoSharp framework 提供一種遊戲中播放音效。  您藉由附加播放音效 `SoundSource`
-元件至`Node`，然後播放命名的檔案，從您的資源。
+音效是遊戲播放的重要部分，而 UrhoSharp 架構提供了一種在遊戲中播放聲音的方式。  您可以藉由附加 `SoundSource` 來播放聲音
+元件到 `Node`，然後從您的資源播放已命名的檔案。
 
-這是做法：
+這就是其完成方式：
 
 ```csharp
 var explosionNode = Scene.CreateChild();
@@ -529,11 +529,11 @@ soundSource.AutoRemove = true;
 
 ## <a name="particles"></a>物件
 
-物件會提供簡單的方式，您的應用程式中加入一些簡單又實惠的效果。  您可以使用 PEX 格式儲存的物件之類的工具[ http://onebyonedesign.com/flash/particleeditor/ ](http://onebyonedesign.com/flash/particleeditor/)。
+「粒子」提供簡單的方法，將一些簡單且價格實惠的效果新增至您的應用程式。  您可以使用[http://onebyonedesign.com/flash/particleeditor/](http://onebyonedesign.com/flash/particleeditor/)之類的工具，取用以 PEX 格式儲存的微粒。
 
-物件是可以新增到節點的元件。  您必須呼叫該節點的`CreateComponent<ParticleEmitter2D>`方法來建立物件，並設定 Effect 屬性為 2D 效果，以設定該物件會從資源快取載入。
+「粒子」是可以新增至節點的元件。  您需要呼叫節點的 `CreateComponent<ParticleEmitter2D>` 方法來建立物件，然後將 [效果] 屬性設定為從資源快取載入的2D 效果，以設定物件。
 
-比方說，您可以在您的元件，以顯示一些到達時，會轉譯為遽增的物件上叫用這個方法：
+例如，您可以在您的元件上叫用這個方法，以顯示在到達時呈現為爆炸的部分粒子：
 
 ```csharp
 public async void Explode (Component target)
@@ -552,27 +552,27 @@ public async void Explode (Component target)
 }
 ```
 
-上述程式碼會建立附加至目前元件的擴張節點，這個遽增節點內方法，我們可以建立 2D 物件 fixit 發出器，並設定 Effect 屬性加以設定。  我們會執行兩個動作，會調整為較小，節點的其中一個，讓它以該大小維持 0.5 秒的另一個。  然後，我們要移除的擴張，也會從螢幕移除粒子效果。
+上述程式碼會建立一個已附加至您目前元件的分解節點，在此分解節點中，我們會建立2D 物件發射器，並藉由設定效果屬性來加以設定。  我們會執行兩個動作，其中一個會將節點調整為較小，另一個則會將其保留為0.5 秒的大小。  然後我們會移除激增，這也會從螢幕中移除 [物件] 效果。
 
-使用球面紋理時，上述的物件會轉譯如下：
+使用球體材質時，上述物件的呈現方式如下：
 
-![物件，使用圓球材質](using-images/image-1.png "上述物件時使用球面紋理會轉譯如下")
+![具有球體材質的微粒](using-images/image-1.png "使用球體材質時，上述物件的呈現方式如下所示")
 
-而這是如果您使用的區塊式紋理的呈現：
+如果您使用 blocky 材質，這就是它的外觀：
 
-![使用方塊材質粒子](using-images/image-2.png "這就是如果使用區塊式紋理的呈現")
+![具有盒材質的微粒](using-images/image-2.png "這就是使用 blocky 材質時的外觀")
 
-## <a name="multi-threading-support"></a>多執行緒處理的支援
+## <a name="multi-threading-support"></a>多執行緒支援
 
-UrhoSharp 是單一執行緒程式庫。  這表示您不應該嘗試叫用中的方法 UrhoSharp 從背景執行緒，或您可能會損毀的應用程式狀態，並可能會損毀您的應用程式。
+UrhoSharp 是單一執行緒程式庫。  這表示您不應該嘗試從背景執行緒叫用 UrhoSharp 中的方法，或者您有損毀應用程式狀態的風險，而且可能會讓應用程式當機。
 
-如果您想要在背景中執行一些程式碼，然後更新 Urho 元件上的主要 UI，您可以使用 `Application.InvokeOnMain(Action)`
-方法。  此外，您可以的使用 C# await 和.NET 工作 Api，以確保在適當的執行緒上已執行的程式碼。
+如果您想要在背景執行某些程式碼，然後更新主要 UI 上的 Urho 元件，您可以使用 `Application.InvokeOnMain(Action)`
+方法。  此外，您可以使用C# await 和 .Net 工作 api，以確保程式碼會在適當的執行緒上執行。
 
 ## <a name="urhoeditor"></a>UrhoEditor
 
-您可以下載您的平台從 Urho 編輯器[Urho 網站](http://urho3d.github.io/)，請前往 下載項目，並挑選最新版本。
+您可以從[Urho 網站](http://urho3d.github.io/)下載適用于您平臺的 [Urho 編輯器]，移至 [下載] 並挑選最新版本。
 
-## <a name="copyrights"></a>著作權
+## <a name="copyrights"></a>版權所有
 
-這份文件會包含從 Xamarin Inc.的原始內容，但廣泛繪製 Urho3D 專案的開放原始碼文件，並包含 Cocos2D 專案的螢幕擷取畫面。
+本檔包含 Xamarin Inc. 的原始內容，但會廣泛地從 Urho3D 專案的開放原始碼檔中進行繪製，並包含 Cocos2D 專案的螢幕擷取畫面。

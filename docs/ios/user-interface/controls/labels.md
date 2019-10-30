@@ -4,23 +4,23 @@ description: 本檔討論如何在 Xamarin 中使用標籤。 其中說明如何
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 275acd02e6cece0842344d8e5833c23af1014a0f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768940"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022012"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin 中的標籤
 
-`UILabel`控制項用於顯示單一和多行的唯讀文字。
+`UILabel` 控制項用於顯示單一和多行的唯讀文字。
 
 ## <a name="implementing-a-label"></a>執行標籤
 
-藉由具現化[`UILabel`](xref:UIKit.UILabel)來建立新的標籤：
+藉由具現化[`UILabel`](xref:UIKit.UILabel)建立新的標籤：
 
 ```csharp
 UILabel label = new UILabel();
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-如需使用`NSAttributedString`來設定文字樣式的詳細資訊，請參閱[樣式文字](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)配方。
+如需使用 `NSAttributedString` 來設定文字樣式的詳細資訊，請參閱[樣式文字](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)配方。
 
-根據預設，標籤`Enabled`的設定為 true，但您可以將其設定為 [停用]，以提供使用者一個已停用特定控制項的提示：
+根據預設，標籤的 `Enabled` 設定為 true，但您可以將其設定為 [停用]，讓使用者有特定控制項已停用的提示：
 
 ```csharp
 label.Enabled = false;

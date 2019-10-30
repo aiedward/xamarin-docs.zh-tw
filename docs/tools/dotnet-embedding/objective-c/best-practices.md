@@ -3,15 +3,15 @@ title: 適用于目標的 .NET 內嵌最佳做法-C
 description: 本檔說明使用 .NET 內嵌與目標-C 的各種最佳作法。 其中討論公開 managed 程式碼的子集、公開 chunkier API、命名等等。
 ms.prod: xamarin
 ms.assetid: 63C7F5D2-8933-4D4A-8348-E9CBDA45C472
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: ff04c001193eb897aac81cdc66ed535c76d81717
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2f632e3218d817aa0162a63ea81c61ca18c52b93
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285109"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73006790"
 ---
 # <a name="net-embedding-best-practices-for-objective-c"></a>適用于目標的 .NET 內嵌最佳做法-C
 
@@ -66,7 +66,7 @@ Person *p = [[Person alloc] initWithFirstName:@"Sebastien" lastName:@"Pouliot"];
 
 ### <a name="types"></a>型別
 
-目標-C 不支援命名空間。 一般來說，其類型前面會加上2（適用于 Apple）或3（適用于協力廠商）字元前置`UIView`詞，例如 UIKit 的 View （代表架構）。
+目標-C 不支援命名空間。 一般來說，其類型前面會加上2（適用于 Apple）或3（適用于協力廠商）字元前置詞，例如 UIKit 的 View 的 `UIView`，代表架構。
 
 若為 .NET 類型，則無法略過命名空間，因為它可能會引進重複或混亂的名稱。 這會讓現有的 .NET 類型非常長，例如
 
@@ -101,15 +101,15 @@ id reader = [[XAMXmlConfigReader alloc] init];
 目標-C 中的命名慣例與 .NET （camel 大小寫，而不是 pascal 大小寫，更詳細）不同。
 請閱讀[Cocoa 的程式碼撰寫方針](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingMethods.html#//apple_ref/doc/uid/20001282-BCIGIJJF)。
 
-從目標-C 開發人員的觀點來看，具有`Get`前置詞的方法表示您沒有擁有實例，也就是[取得規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)。
+從目標-C 開發人員的觀點來看，具有 `Get` 前置詞的方法表示您沒有擁有實例，也就是[取得規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-SW1)。
 
-此命名規則在 .NET GC 世界中沒有相符的結果;具有`Create`前置詞的 .net 方法在 .net 中的行為會相同。 不過，對於目標-C 開發人員而言，這通常表示您擁有傳回的實例，也就是[建立規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
+此命名規則在 .NET GC 世界中沒有相符的結果;具有 `Create` 前置詞的 .NET 方法在 .NET 中會有相同的行為。 不過，對於目標-C 開發人員而言，這通常表示您擁有傳回的實例，也就是[建立規則](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html#//apple_ref/doc/uid/20001148-103029)。
 
 ## <a name="exceptions"></a>例外狀況
 
 這在 .NET 中相當常見，可廣泛使用例外狀況來報告錯誤。 不過，它們的速度很慢，而且在目標-C 中並不完全相同。 可能的話，您應該從目標-C 開發人員隱藏它們。
 
-例如，.net `Try`模式會比從目標 C 程式碼更容易使用：
+例如，.NET `Try` 模式會比從目標 C 程式碼更輕鬆地使用：
 
 ```csharp
 public int Parse (string number)
@@ -127,13 +127,13 @@ public bool TryParse (string number, out int value)
 }
 ```
 
-### <a name="exceptions-inside-init"></a>內的例外狀況`init*`
+### <a name="exceptions-inside-init"></a>`init*` 內的例外狀況
 
 在 .NET 中，函式必須成功並傳回（_希望_）有效的實例，或擲回例外狀況。
 
-`init*` 相反`nil`地，在無法建立實例時，目標-C 允許傳回。 這是許多 Apple 架構中使用的常見（但不是一般）模式。 在某些其他情況下`assert` ，可能會發生（並終止目前的進程）。
+相反地，在無法建立實例時，目標-C 允許 `init*` 傳回 `nil`。 這是許多 Apple 架構中使用的常見（但不是一般）模式。 在某些其他情況下，可能會發生 `assert` （並終止目前的進程）。
 
-產生器會針對所`return nil`產生`init*`的方法遵循相同的模式。 如果擲回 managed 例外狀況，則會將它列印（使用`NSLog`）， `nil`並將傳回給呼叫者。
+產生器會遵循所產生 `init*` 方法的相同 `return nil` 模式。 如果擲回 managed 例外狀況，則會將它列印（使用 `NSLog`），而 `nil` 會傳回給呼叫者。
 
 ## <a name="operators"></a>運算子
 
@@ -141,4 +141,4 @@ public bool TryParse (string number, out int value)
 
 「[易記](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)」命名的方法會在找到時以喜好設定的方式產生，並可產生更容易取用的 API。
 
-覆寫運算子`==`和/或`!=`的類別也應該覆寫標準 Equals （Object）方法。
+覆寫運算子 `==` 和/或 `!=` 的類別也應該覆寫標準 Equals （Object）方法。

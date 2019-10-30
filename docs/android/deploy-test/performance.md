@@ -4,19 +4,19 @@ description: 有許多技巧可增加利用 Xamarin.Android 建置之應用程�
 ms.prod: xamarin
 ms.assetid: dc2e27f2-7f71-4d57-9cf9-165528276613
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 88e1acecdc96af596a0151bbd3f64dc4547d4cce
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 620a7edd4467a5a2bae60bbd82d0e1460c9f0040
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753813"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021407"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 效能
 
-_有許多技巧可增加利用 Xamarin.Android 來建置應用程式的效能。這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。本文將描述並討論這些技巧。_
+_有許多技巧可增加以 Xamarin 建立之應用程式的效能。這些技巧可共同大幅減少 CPU 所執行的工作量，以及應用程式所耗用的記憶體數量。本文描述並討論這些技巧。_
 
 ## <a name="performance-overview"></a>效能概觀
 
@@ -262,7 +262,7 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 ## <a name="summary"></a>總結
 
-本文已描述與討論用來增加以 Xamarin.Android 建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+本文已描述與討論用來增加以 Xamarin.Android 建置之應用程式效能的技巧。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
 
 ## <a name="related-links"></a>相關連結
 

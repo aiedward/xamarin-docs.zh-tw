@@ -4,15 +4,15 @@ description: 本檔說明 iOS 中的背景處理：應用程式狀態、應用�
 ms.prod: xamarin
 ms.assetid: E214F2C7-E74E-46C7-B5BA-080B30D61250
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/24/2018
-ms.openlocfilehash: 9ae1860d127ea87e4db830d8a9d299a66fdd0f67
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 78751f53808ffa62589fdc57fe4cf59912849e00
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766599"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010846"
 ---
 # <a name="introduction-to-backgrounding-in-ios"></a>iOS 中的背景處理簡介
 
@@ -28,7 +28,7 @@ iOS 會非常緊密地控制背景處理，並提供三種方法來執行它：
 
 IOS 應用程式生命週期是應用程式狀態和方法之間的集合，可在其間移動。 應用程式會根據使用者的行為和應用程式的背景處理需求，在狀態之間轉換。 下圖說明此動作：
 
- [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "應用程式狀態和應用程式委派方法圖表")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png "Application States and Application Delegate Methods diagram")](introduction-to-backgrounding-in-ios-images/applicationlifecycle-.png#lightbox)
 
 - **未**執行-應用程式尚未在裝置上啟動。
 - 執行中 **/** 作用中-應用程式位於畫面上，並且會在前景中執行程式碼。
@@ -41,17 +41,17 @@ IOS 應用程式生命週期是應用程式狀態和方法之間的集合，可�
 
 ## <a name="application-lifecycle-methods"></a>應用程式生命週期方法
 
-當應用程式變更狀態時，iOS 會透過`AppDelegate`類別中的事件方法通知應用程式：
+當應用程式變更狀態時，iOS 會透過 `AppDelegate` 類別中的事件方法來通知應用程式：
 
-- `OnActivated`-這是第一次啟動應用程式時，以及應用程式每次回到前景時所呼叫的。 這是在每次開啟應用程式時放置需要執行之程式碼的位置。
-- `OnResignActivation`-如果使用者收到一則中斷，例如文字或電話，則會呼叫此方法，並暫時停用應用程式。 如果使用者接受通話，應用程式將會傳送至背景。
+- `OnActivated`-這是第一次啟動應用程式時，以及每次應用程式回到前景時所呼叫。 這是在每次開啟應用程式時放置需要執行之程式碼的位置。
+- `OnResignActivation`-如果使用者收到像是文字或電話的中斷，就會呼叫這個方法，並暫時停用應用程式。 如果使用者接受通話，應用程式將會傳送至背景。
 - `DidEnterBackground`-當應用程式進入背景執行狀態時呼叫，這個方法會提供大約5秒的應用程式來準備可能的終止。 使用此時間儲存使用者資料和工作，並從畫面中移除機密資訊。
-- `WillEnterForeground`-當使用者返回背景執行或暫止的應用程式，並將它啟動至前景時`WillEnterForeground` ，會呼叫。 這是讓應用程式解除凍結在期間`DidEnterBackground`儲存的任何狀態來準備前景的時間。  `OnActivated`將在這個方法完成之後立即呼叫。
-- `WillTerminate`-應用程式已關閉，而且其進程已終結。 只有在裝置上無法使用多工或作業系統版本、記憶體不足，或使用者手動終止背景執行應用程式時，才會呼叫此方法。 請注意，已終止的已暫止應用`WillTerminate`程式將不會呼叫。
+- `WillEnterForeground`-當使用者返回背景執行或暫停的應用程式，並將它啟動至前景時，`WillEnterForeground` 會被呼叫。 這是準備應用程式以解除凍結在 `DidEnterBackground` 期間儲存的任何狀態時，所需的時間。  在此方法完成之後，將會立即呼叫 `OnActivated`。
+- `WillTerminate`-應用程式已關閉，而且其進程已終結。 只有在裝置上無法使用多工或作業系統版本、記憶體不足，或使用者手動終止背景執行應用程式時，才會呼叫此方法。 請注意，被終止的擱置應用程式不會呼叫 `WillTerminate`。
 
 下圖說明應用程式狀態和生命週期方法如何彼此配合：
 
- [![](introduction-to-backgrounding-in-ios-images/image2.png "此圖說明應用程式狀態和生命週期方法如何彼此配合")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/image2.png "This diagram illustrates how the application states and lifecycle methods fit together")](introduction-to-backgrounding-in-ios-images/image2.png#lightbox)
 
 ## <a name="user-controls-for-backgrounding-in-ios"></a>IOS 中的背景處理使用者控制項
 
@@ -61,7 +61,7 @@ iOS 7 引進了數種功能，讓使用者能夠更充分掌控應用程式的�
 
 應用程式切換器是 iOS 7 中所引進的重要控制功能。 其啟動方式是按兩下 [**首頁**] 按鈕，並顯示其進程正在運作的應用程式：
 
- [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "使用應用程式切換器在應用程式之間移動")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/app-switcher-.png "Moving between apps using the App Switcher")](introduction-to-backgrounding-in-ios-images/app-switcher-.png#lightbox)
 
 使用者可以使用應用程式切換器，逐一查看所有背景執行和已暫止應用程式的快照集。 點擊應用程式會將它啟動至前景。 「向上輕掃」會從背景移除應用程式，並終止其進程。 在下一節中，我們將深入探討[IOS 應用程式生命週期示範](~/ios/app-fundamentals/backgrounding/application-lifecycle-demo.md)中的應用程式切換器。
 
@@ -74,8 +74,8 @@ iOS 7 藉由允許使用者選擇不背景處理為[已註冊背景處理](~/ios
 
 使用者可以變更此設定，方法是流覽至**設定 > 一般 > 背景應用**程式重新整理，然後編輯所選應用程式的背景處理許可權。 如果 [背景應用程式重新整理] 設定為 [關閉]，則會在進入背景時立即擱置應用程式，並防止執行任何背景處理：
 
- [![](introduction-to-backgrounding-in-ios-images/settings-.png "背景應用程式重新整理設定")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
+ [![](introduction-to-backgrounding-in-ios-images/settings-.png "Background App Refresh Settings")](introduction-to-backgrounding-in-ios-images/settings-.png#lightbox)
 
-開發人員可以使用`BackgroundRefreshStatus` API 檢查背景重新整理應用程式狀態。 如需範例，請參閱[檢查背景重新整理設定配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/check_background_refresh_setting)。
+開發人員可以使用 `BackgroundRefreshStatus` API 檢查背景重新整理應用程式狀態。 如需範例，請參閱[檢查背景重新整理設定配方](https://github.com/xamarin/recipes/tree/master/Recipes/ios/multitasking/check_background_refresh_setting)。
 
 我們已涵蓋 iOS 應用程式生命週期的基本概念，以及用來控制應用程式生命週期的功能。 接下來，讓我們來瞭解 iOS 應用程式生命週期的實際運作。

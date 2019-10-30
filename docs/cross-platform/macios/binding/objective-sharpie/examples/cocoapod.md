@@ -3,15 +3,15 @@ title: 使用 CocoaPods 的真實世界範例
 description: 本檔示範如何使用目標 Sharpie，從 CocoaPod 自動產生C#系結定義。
 ms.prod: xamarin
 ms.assetid: 233B781D-5841-4250-9F63-0585231D2112
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 0f730b1c0a0deacdb84c198cfe4af47308a268cc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cf117880eb46b028d709a44aa453e111b007b441
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290035"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016268"
 ---
 # <a name="real-world-example-using-cocoapods"></a>使用 CocoaPods 的真實世界範例
 
@@ -22,7 +22,7 @@ ms.locfileid: "70290035"
 
 ## <a name="creating-a-binding-for-a-cocoapod"></a>建立 CocoaPod 的系結
 
-此`sharpie pod`命令有一個全域選項和兩個子命令：
+`sharpie pod` 命令有一個全域選項和兩個子命令：
 
 ```bash
 $ sharpie pod -help
@@ -37,7 +37,7 @@ Available Commands:
   bind         Bind an existing Xamarin C# CocoaPods project
 ```
 
-`init`子命令也有一些實用的協助：
+`init` 子命令也有一些實用的協助：
 
 ```bash
 $ sharpie pod init -help
@@ -48,7 +48,7 @@ Init Options:
                    it even if one already exists
 ```
 
-可以提供多個 CocoaPod 名稱和 subspec 名稱給`init`。
+可以提供多個 CocoaPod 名稱和 subspec 名稱給 `init`。
 
 ```bash
 $ sharpie pod init ios AFNetworking

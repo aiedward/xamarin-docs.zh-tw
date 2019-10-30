@@ -4,15 +4,15 @@ description: 本指南提供使用新連線管理員時可能遇到之問題 (�
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ae8095ed0ef0ba8d0bfaf8295832bbef006d1627
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 4abe0da2b75b6859c6547f0dc1c4cf8708491afb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198536"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022470"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 組建主機的連線疑難排解
 
@@ -35,7 +35,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 > 這些疑難排解步驟主要是針對在新系統初始設定時發生的問題。  若您先前曾經在特定環境中使用連線，但連線突然或間歇性停止運作，您可以 (在大部分的情況下) 跳過並直接檢查下列資訊是否有幫助： 
 >
 > - 刪除剩餘的處理序，如下面的[由於現有建置主機處理序所發生的錯誤](#errors)。 
-> - 依照[清除訊息代理程式、IDB、建置與設計代理程式](#clearing)所述清除代理程式，然後使用有線網際網路連線並根據[無法連線到 MacBuildHost.local。請重試。](#tryagain)所述透過 IP 位址直接連線。  
+> - 如清除[Broker、.idb、組建和設計工具代理](#clearing)程式底下所述清除代理程式，然後使用有線網際網路連線並直接透過 IP 位址連接，如[無法連線至 macbuildhost.local。請再試一次](#tryagain)。  
 > 如果那些選項都沒有幫助，則請依照[步驟 9](#stepnine) 中的指示，提出新的錯誤 (Bug) 報告。
 
 1. 確認您的 Mac 上已安裝相容的 Xamarin.iOS 版本。 若要使用 Visual Studio 2017 來執行此操作，請確定您位於 Visual Studio for Mac 中的**穩定**散發通道上。 在 Visual Studio 2015 和更早的版本中，請確定您在兩個 IDE 上都是位於相同的散發通道上。
@@ -44,15 +44,15 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 2. 確定 Mac 上已啟用 [遠端登入]。 為 [僅以下使用者] 設定存取權，然後確定群組清單中包含您的 Mac 使用者：
 
-    [![](troubleshooting-images/troubleshooting-image1.png "為 [僅以下使用者] 設定存取權")](troubleshooting-images/troubleshooting-image1.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image1.png "Set access for Only these users")](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. 確認您的防火牆允許透過連接埠 22 (SSH 的預設連接埠) 的連入連線：
 
-    [![](troubleshooting-images/troubleshooting-image2.png "確認防火牆允許透過連接埠 22 的連入連線")](troubleshooting-images/troubleshooting-image2.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image2.png "Check that the firewall allows incoming connections through port 22")](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     如果您已停用 [自動允許已簽名的軟體接收傳入連線]，OS X 將會在配對過程中顯示對話方塊，詢問是否要允許 `mono-sgen` 或 `mono-sgen32` 接收傳入連線。 在此對話方塊上，請務必按一下 [允許]：
 
-    [![](troubleshooting-images/troubleshooting-image4a.png "在此對話方塊上按一下 [允許]")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image4a.png "Click Allow on this dialog")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. 確認您已登入該 Mac 上的使用者帳戶，並且具有作用中的 GUI 工作階段。
 
@@ -62,11 +62,11 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
     例如，從下面的螢幕擷取畫面中，帳戶名稱將會是 **amyb**，而不是 **Amy Burns**：
 
-    [![](troubleshooting-images/troubleshooting-image5a.png "從 [終端機] 應用程式取得帳戶名稱")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image5a.png "Getting the account name from the Terminal app")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 6. 確認您用於 Mac 的 IP 位址正確。 您可以在 Mac 上的 [系統偏好設定] > [共享] > [遠端登入] 底下找到 IP 位址。
 
-    [![](troubleshooting-images/troubleshooting-image17.png "[系統喜好設定] 應用程式中的 IP 位址")](troubleshooting-images/troubleshooting-image17.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image17.png "The IP address in the System Preferences app")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. 確認 Mac 的 IP 位址之後，請嘗試在 Windows 上的 `cmd.exe` 中對該位址執行 `ping`：
 
@@ -129,11 +129,11 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 已知的原因：
 
-- **SSH 安全性限制** – 此訊息最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的終端機命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
+- **SSH 安全性限制** – 此訊息最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的 [終端機] 命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
 
 #### <a name="trying-to-connect-never-completes"></a>「正在嘗試連線...」永遠無法完成
 
-- **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – 如果在 [系統偏好設定] &gt; [使用者與群組] 中，Mac 使用者 [進階選項] 操作功能表中的 [登入 Shell] 設定為 **/bin/bash** 以外的值，在 Xamarin 4.1 上就可能發生此問題。 (從 Xamarin 4.2 開始，此情況會改為導致產生「無法連線」錯誤訊息)。**因應措施**：將 [登入 Shell] 變更回原始預設值 **/bin/bash**。
+- **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – 如果在 [系統偏好設定] &gt; [使用者與群組] 中，Mac 使用者 [進階選項] 操作功能表中的 [登入 Shell] 設定為 **/bin/bash** 以外的值，在 Xamarin 4.1 上就可能發生此問題。 （從 Xamarin 4.2 開始，此案例會改為導致「無法連線」錯誤訊息）。因應**措施：將** **登入命令**介面變更回 **/bin/bash**的原始預設值。
 
 <a name="tryagain" />
 
@@ -141,25 +141,25 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 回報的原因：
 
-- **Bug** – 一些使用者在嘗試使用 Active Directory 或其他目錄服務網域使用者帳戶來登入組建主機時，在記錄檔中看到此訊息且伴隨更詳細的錯誤「為使用者設定 SSH 時發生未預期的錯誤...工作階段作業逾時」。 **因應措施：** 改用本機使用者帳戶來登入組建主機。
+- **Bug** –少數使用者已看到此錯誤訊息，並在記錄檔中顯示更詳細的錯誤：「為使用者設定 SSH 時發生未預期的錯誤 .。。當嘗試使用 Active Directory 或其他目錄服務網域使用者帳戶登入組建主機時，會話作業已超時。 **因應措施：** 改用本機使用者帳戶來登入組建主機。
 
-- **Bug** – 一些使用者在嘗試於連線對話方塊中按兩下 Mac 名稱來連線到組建主機時看到此錯誤。 **可能的因應措施**：使用 IP 位址來[手動新增 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
+- **Bug** – 一些使用者在嘗試於連線對話方塊中按兩下 Mac 名稱來連線到組建主機時看到此錯誤。 **可能的因應措施**使用 IP 位址來[手動新增 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
 
-- **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些使用者在於 Mac 組建主機與 Windows 之間使用無線網路連線遇到此錯誤。 **可能的因應措施**：將這兩部電腦移至有線網路連線。
+- **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些使用者在於 Mac 組建主機與 Windows 之間使用無線網路連線遇到此錯誤。 **可能的因應措施**將兩部電腦都移至有線網路連線。
 
-- **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 上，只要 Mac 上的 **$HOME/.bashrc** 檔案中包含錯誤，就會出現此訊息。 (從 Xamarin 4.1 開始， **.bashrc** 檔案中的錯誤將不再影響連線程序)。**因應措施**：將 **.bashrc** 檔案移至備份位置 (或如果您知道已不需要此檔案，則可將其刪除)。
+- **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 上，只要 Mac 上的 **$HOME/.bashrc** 檔案中包含錯誤，就會出現此訊息。 （從 Xamarin 4.1 開始， **.bashrc**檔案中的錯誤將不再影響連接程式）。因應**措施：將** **.bashrc**檔案移至備份位置（或如果您知道不需要，請將其刪除）。
 
 - **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – 如果在 [系統偏好設定] > [使用者與群組] 中，Mac 使用者 [進階選項] 操作功能表中的 [登入 Shell] 設定為 **/bin/bash** 以外的值，就可能出現此錯誤。 **因應措施**：將 [登入 Shell] 變更回原始預設值 **/bin/bash**。
 
 - **限制** – 如果 Mac 組建主機連線到無法存取網際網路的路由器 (或如果 Mac 使用的 DNS 伺服器在要求 Windows 電腦的反向 DNS 查閱時逾時)，就可能出現此錯誤。 Visual Studio 會花費大約 30 秒的時間來擷取 SSH 指紋，但最終無法連線。
 
-    **可能的因應措施**：將 "UseDNS no" 新增至 **sshd\_config** 檔案。 請務必先了解此 SSH 設定，然後再進行變更。 如需範例，請參閱 [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option)(英文\)。
+    **可能的因應措施**將 "UseDNS no" 新增至 **sshd\_config** 檔案。 請務必先了解此 SSH 設定，然後再進行變更。 如需範例，請參閱 [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](https://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option)(英文\)。
 
     下列步驟說明一個變更此設定的方式。 您將需要登入 Mac 上的系統管理員帳戶，才能完成這些步驟。
 
     1. 在 [終端機] 命令提示字元中執行 `ls /etc/ssh/sshd_config` 和 `ls /etc/sshd_config`來確認 **sshd\_config** 檔案的位置。 針對所有剩餘的步驟，請務必使用「不會」傳回「無此檔案或目錄」的位置。
 
-        [![](troubleshooting-images/troubleshooting-image18.png "在 [終端機] 中執行 `ls /etc/ssh/sshd_config` 和 `ls /etc/sshd_config`")](troubleshooting-images/troubleshooting-image18.png#lightbox)
+        [![](troubleshooting-images/troubleshooting-image18.png "Running `ls /etc/ssh/sshd_config` and `ls /etc/sshd_config` in the Terminal")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     2. 在 [終端機] 中執行 `cp /etc/ssh/sshd_config "$HOME/Desktop/"` 以將檔案複製到您的桌面。
 
@@ -193,7 +193,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
     
 2. 按住 Control 同時按一下 [XMA] 資料夾，然後選取 [丟到垃圾桶]：
 
-    [![](troubleshooting-images/troubleshooting-image8.png "將 [XMA] 資料夾移至垃圾桶")](troubleshooting-images/troubleshooting-image8.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image8.png "Move the XMA folder to Trash")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. 在 Windows 上也有它可協助清除的快取。 在 Windows 上以系統管理員身分開啟命令提示字元：
 
@@ -209,7 +209,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 只要您已確認 Mac 和 Windows 都已更新成相同的散發通道，便可忽略此警告。
 
-#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>「無法執行 'ls /usr/bin/mono':ExitStatus=1」
+#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>「無法執行 'ls /usr/bin/mono': ExitStatus=1」
 
 只要 Mac 執行的是 OS X 10.11 (El Capitan) 或更新版本，便可忽略此訊息。 此訊息在 OS X 10.11 上並不成問題，因為 Xamarin 也會檢查 **/usr/local/bin/mono**，這是 OS X 10.11 上 `mono` 的正確預期位置。
 
@@ -233,7 +233,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 2. 按一下 [顯示輸出來源] 下拉式功能表。
 3. 選取 [Xamarin]。
 
-[![](troubleshooting-images/troubleshooting-image11.png "選取 [輸出] 索引標籤中的 [Xamarin]")](troubleshooting-images/troubleshooting-image11.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image11.png "Select Xamarin in the Output tab")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 #### <a name="log-files"></a>記錄檔
 
@@ -248,17 +248,17 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 3. 在 Visual Studio 遇到連線錯誤之後，請從 [說明] > [Xamarin] > [Zip 記錄檔] 收集記錄檔：
 
-    [![](troubleshooting-images/troubleshooting-image12.png "從 [說明] > [Xamarin] > [Zip 記錄檔] 收集記錄檔")](troubleshooting-images/troubleshooting-image12.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image12.png "Collect the logs from Help > Xamarin > Zip Logs")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. 當您開啟 .zip 檔案時，將會看到類似以下範例的檔案清單。 就連線錯誤而言，最重要的檔案是 **\*Ide.log** 和 **\*Ide.svclog** 檔案。 這些檔案以兩種略為不同的格式包含相同的資訊。 **.svclog** 是 XML，如果您想要瀏覽訊息，此檔案會相當有用。 **.log** 是純文字，如果您想要使用命令列工具來篩選訊息，此檔案會相當有用。
 
     若要瀏覽所有訊息，請選取並開啟 **.svclog** 檔案：
 
-    [![](troubleshooting-images/troubleshooting-image13.png "選取 svclog 檔案")](troubleshooting-images/troubleshooting-image13.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image13.png "Select the svclog file")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. **.svclog** 檔案會在 **Microsoft Service Trace Viewer** 中開啟。 您可以依執行緒瀏覽訊息，以查看相關的訊息群組。 若要依執行緒瀏覽，請先選取 [圖形] 索引標籤，然後按一下 [版面配置模式] 下拉式功能表並選取 [執行緒]：
 
-    [![](troubleshooting-images/troubleshooting-image14.png "按一下 [版面配置模式] 下拉式功能表並選取 [執行緒]")](troubleshooting-images/troubleshooting-image14.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image14.png "Click the Layout Mode drop-down menu and select Thread")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs" />
 
@@ -302,9 +302,9 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 已知的原因：
 
-- **Xamarin 4.1 安全性功能** – 如果您在使用 Xamarin 4.1 或更新版本之後降級成 Xamarin 4.0，就「會」發生此錯誤。 在此情況下，錯誤會伴隨有額外的警告「私密金鑰已加密，但複雜密碼是空的」。 這是一個因 Xamarin 4.1 中的新安全性功能而進行的「刻意」變更。 **建議的修正**：從 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中刪除 **id\_rsa** 和 **id\_rsa.pub**，然後重新連線到 Mac 組建主機。
+- **Xamarin 4.1 安全性功能** – 如果您在使用 Xamarin 4.1 或更新版本之後降級成 Xamarin 4.0，就「會」發生此錯誤。 在此情況下，錯誤會伴隨有額外的警告「私密金鑰已加密，但複雜密碼是空的」。 這是一個因 Xamarin 4.1 中的新安全性功能而進行的「刻意」變更。 **建議的修正**從 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中刪除 **id\_rsa** 和 **id\_rsa.pub**，然後重新連線到 Mac 組建主機。
 
-- **SSH 安全性限制** - 當此訊息伴隨有額外警告「無法使用現有的 SSH 金鑰驗證使用者」時，最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的終端機命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
+- **SSH 安全性限制** - 當此訊息伴隨有額外警告「無法使用現有的 SSH 金鑰驗證使用者」時，最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的 [終端機] 命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
 
 ### <a name="solutions-cannot-be-loaded-from-a-network-share"></a>無法從網路共用載入解決方案
 
@@ -324,7 +324,7 @@ error : Building from a network share path is not supported at the moment. Pleas
 
 請在 Mac 上啟動 Xcode，並確定已登入您的 Apple 開發人員帳戶且已下載您的「iOS 開發設定檔」：
 
-[![](troubleshooting-images/troubleshooting-image7.png "確定已登入 Apple 開發人員帳戶且已下載「iOS 開發設定檔」")](troubleshooting-images/troubleshooting-image7.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image7.png "Ensuring that the Apple developer account is logged in and the iOS Development Profile is downloaded")](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>「嘗試對無法連線的網路進行通訊端作業」
 
@@ -350,7 +350,7 @@ error : Building from a network share path is not supported at the moment. Pleas
 ps -A | grep mono
 ```
 
-[![](troubleshooting-images/troubleshooting-image10.png "在 Mac 上的 [終端機] 中執行命令")](troubleshooting-images/troubleshooting-image10.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image10.png "Running commands in Terminal on the Mac")](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 若要終止現有的處理序，請使用下列命令：
 
@@ -370,7 +370,7 @@ killall mono
 
 2. 按住 Control 同時按一下 [mtbs] 資料夾，然後選取 [丟到垃圾桶]：
 
-    [![](troubleshooting-images/troubleshooting-image9.png "將 [mtbs] 資料夾移至垃圾桶")](troubleshooting-images/troubleshooting-image9.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image9.png "Move the mtbs folder to Trash")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

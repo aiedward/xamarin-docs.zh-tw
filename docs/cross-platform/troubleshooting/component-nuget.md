@@ -4,15 +4,15 @@ description: 本檔說明如何將您的元件參考取代為 NuGet 套件，以
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e9bd54523fa46625e9a9e6e46247b92987f3d427
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106068"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014336"
 ---
 # <a name="updating-component-references-to-nuget"></a>正在更新 NuGet 的元件參考
 
@@ -41,7 +41,7 @@ ms.locfileid: "71106068"
 
 2. 在卸載的專案上再次以滑鼠右鍵按一下，然後選取 [**編輯 {您的專案名稱} .csproj**]。
 
-3. 尋找檔案中的`XamarinComponentReference`任何參考。 看起來應該類似下列範例：
+3. 尋找要 `XamarinComponentReference`之檔案中的任何參考。 看起來應該類似下列範例：
 
     ```xml
     <ItemGroup>
@@ -60,7 +60,7 @@ ms.locfileid: "71106068"
     </ItemGroup>
     ```
 
-4. 移除的參考`XamarinComponentReference` ，並儲存檔案。 在上述範例中，您可以放心地移除整個`ItemGroup`。
+4. 移除 `XamarinComponentReference` 的參考，並儲存檔案。 在上述範例中，移除整個 `ItemGroup`是安全的。
 
 5. 儲存檔案之後，以滑鼠右鍵按一下專案名稱，然後選取 [**重載專案**]。
 
@@ -76,7 +76,7 @@ ms.locfileid: "71106068"
 
 1. 開啟 .csproj 檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 [**工具] > [編輯**檔案]。
 
-2. 尋找檔案中的`XamarinComponentReference`任何參考。 看起來應該類似下列範例：
+2. 尋找要 `XamarinComponentReference`之檔案中的任何參考。 看起來應該類似下列範例：
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ ms.locfileid: "71106068"
     </ItemGroup>
     ```
 
-3. 移除的參考`XamarinComponentReference` ，並儲存檔案。 在上述範例中，您可以放心地移除整個`ItemGroup`
+3. 移除 `XamarinComponentReference` 的參考，並儲存檔案。 在上述範例中，您可以放心地移除整個 `ItemGroup`
 
 4. 針對方案中的每個專案重複上述步驟。
 
@@ -159,8 +159,8 @@ _它可能包含 NuGet 相依性，但可以忽略這些相依性。_
 
 例如，您可以藉由搜尋下列內容來尋找熱門的**sqlite 網路-pcl**套件：
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)–產品名稱。
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)–作者的設定檔。
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) –產品名稱。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) –作者的設定檔。
 
 ### <a name="updating-the-solution"></a>更新方案
 

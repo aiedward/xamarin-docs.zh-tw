@@ -5,20 +5,20 @@ zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: ECB327F3-FF1C-45CC-9FA6-9C11032BD5EF
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 682fc5c2241ab3177b12f46dd31d264a4f58b951
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 64e637648b03dff81468f2d7ad072c7acc50868b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250099"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021160"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虛擬裝置
 
-_本文說明如何使用 Android Device Manager 建立和設定可模擬實體 Android 裝置的 Android 虛擬裝置 (AVD)。您可以使用這些虛擬裝置來執行和測試應用程式，而不必依賴實體裝置。_
+_本文說明如何使用 Android Device Manager 來建立和設定可模擬實體 Android 裝置的 Android 虛擬裝置（Avd）。您可以使用這些虛擬裝置來執行和測試應用程式，而不需要依賴實體裝置。_
 
 當您確認已啟用硬體加速之後 (如[硬體加速以提升模擬器效能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)中所述)，下一個步驟是使用 _Android Device Manager_ (另請參閱 _Xamarin Android Device Manager_) 建立可用於測試和偵錯應用程式的虛擬裝置。
 
@@ -44,7 +44,7 @@ _本文說明如何使用 Android Device Manager 建立和設定可模擬實體 
 - Visual Studio Tools for Xamarin 4.9 版或更新版本。
 
 - 必須安裝 Android SDK (請參閱[設定 Xamarin.Android 的 Android SDK](~/android/get-started/installation/android-sdk.md))。
-  務必將 Android SDK 安裝在其預設位置 (若尚未安裝)：**C:\\Program Files (x86)\\Android\\android-sdk**。
+  確定會將 Android SDK 安裝於其預設位置 (若尚未安裝)：**C:\\Program Files (x86)\\Android\\android-sdk**。
 
 - 必須安裝下列套件 (透過 [Android SDK 管理員](~/android/get-started/installation/android-sdk.md))： 
   - **Android SDK Tools 26.1.1 版**或更新版本
@@ -383,7 +383,7 @@ Android SDK 通常會安裝於下列位置：
 
    ![Android Device Manager 記錄檔位置](device-manager-images/win/30-log-files.png)
 
-2. 按兩下以開啟其中一個記錄檔，並找出 **Config file path**。 例如：
+2. 按兩下以開啟其中一個記錄檔，並找出 **Config file path**。 例如:
 
    [![記錄檔中的 Config file path](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 

@@ -3,15 +3,15 @@ title: Xamarin.Android 環境
 ms.prod: xamarin
 ms.assetid: 67BFD4E1-276C-4B9F-9BD8-A5218D2BD529
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 076e6bfd1155c0eba4045af59a599a34b0fca1d5
-ms.sourcegitcommit: 13e43f510da37ad55f1c2f5de1913fb0aede6362
+ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71021171"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028064"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 環境
 
@@ -36,7 +36,7 @@ Android 系統屬性會針對目標裝置上所有的處理序進行設定。
 
 若 *key* 的開頭為大寫字元，則 *key* 便會作為環境變數處理，而 **setenv**(3) 則是用於在處理序啟動時將環境變數設為指定的 *value*。
 
-如果 *key* 的開頭為小寫字母，系統會將 *key* 視為 Android 系統屬性，*value* 則是「預設值」：系統會先從 Android 系統屬性存放區查詢控制 Xamarin.Android 執行行為的 Android 系統屬性，如果不存在任何值，則會使用環境檔案中指定的值。 這可允許 `adb shell setprop` 用於覆寫環境檔案中的值，作為診斷之用。
+若 *key* 的開頭為小寫字元，則 *key* 便會作為 Android 系統屬性來處理，其 *value* 為*預設值*：控制 Xamarin.Android 執行行為的 Android 系統屬性會先從 Android 系統屬性儲存區尋找，若找不到，則便會使用環境檔案中指定的值。 這可允許 `adb shell setprop` 用於覆寫環境檔案中的值，作為診斷之用。
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android 環境變數
 
@@ -89,24 +89,24 @@ Xamarin.Android 支援下列系統屬性，可透過 `adb shell setprop` 或 `$(
 控制 Xamarin.Android 記錄到 `adb logcat` 的額外資訊。
 它是一個逗號分隔的字串 (`,`)，包含下列值中的其中一個：
 
-- `all`：列印出「所有」訊息。 這通常不是一個好主意，因為其包含了 `lref` 訊息。
-- `assembly`：列印出 `.apk` 和組件剖析訊息。
-- `gc`：列印出與 GC 相關的訊息。
-- `gref`：列印出 JNI 全域參考訊息。
-- `lref`：列印出 JNI 區域參考訊息。
+- `all`：印出「所有」訊息。 這通常不是一個好主意，因為其包含了 `lref` 訊息。
+- `assembly`：印出 `.apk` 和組件剖析訊息。
+- `gc`：印出與 GC 相關的訊息。
+- `gref`：印出 JNI 全域參考訊息。
+- `lref`：印出 JNI 區域參考訊息。
   > [!NOTE]
-  > 這「真的」`adb logcat`* 會讓  充斥許多垃圾訊息。
+  > 這*真的*會 `adb logcat`垃圾郵件。
   > 在 Xamarin.Android 5.1 中，這也會建立一個 `.__override__/lrefs.txt` 檔案，該檔案可能會變得「非常大」。
   > 請避免。
-- `timing`：列印出某些方法計時資訊。 這也會建立 `.__override__/methods.txt` 及 `.__override__/counters.txt` 檔案。
+- `timing`：印出某些方法計時資訊。 這也會建立 `.__override__/methods.txt` 及 `.__override__/counters.txt` 檔案。
 
 ### `debug.mono.max_grefc`
 
 `debug.mono.max_grefc` 系統屬性的值為一個整數。
 它的值會「覆寫」針對目標裝置預設偵測到的最大 GRF 計數。
 
-*請注意：* 這只可搭配 `adb shell setprop
-debug.mono.max_grefc` 使用，因為該值在搭配 **environment.txt** 檔案時將無法及時可用。
+注意：這僅在使用 `adb shell setprop
+debug.mono.max_grefc` 時可用，因為該值在使用 **environment.txt** 檔案時將無法及時可用。
 
 ### `debug.mono.profile`
 
@@ -131,7 +131,7 @@ debug.mono.max_grefc` 使用，因為該值在搭配 **environment.txt** 檔案�
 `debug.mono.wref` 系統屬性會允許覆寫預設偵測到的 JNI 弱式參考機制。 有兩個支援的值：
 
 - `jni`：使用 JNI 弱式參考，由 `JNIEnv::NewWeakGlobalRef()` 建立並由 `JNIEnv::DeleteWeakGlobalREf()` 終結。
-- `java`：使用參考`java.lang.WeakReference`實例的 JNI 全域參考。
+- `java`：使用參考 `java.lang.WeakReference` 實例的 JNI 全域參考。
 
 直到 API-7 及啟用 ART 的 API-19 (Kit Kat) 都會預設使用 `java`。 (API-8 新增 `jni` 參考，ART 會*破壞* `jni` 參考。)
 

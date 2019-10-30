@@ -4,15 +4,15 @@ description: 本文涵蓋 Xamarin. Mac 適用的目標 framework （基類庫）
 ms.prod: xamarin
 ms.assetid: AF21BE16-3F92-4121-AB4C-D51AC863D92D
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: a612c2c23ceff13ea1d602465573514547628e55
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e07ec4fd4436d951ea4033dbceab2cef47e96218
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769799"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025924"
 ---
 # <a name="target-framework-for-xamarinmac"></a>Xamarin 的目標 Framework
 
@@ -30,11 +30,11 @@ _本文涵蓋 Xamarin. Mac 適用的目標 framework （基類庫），以及在
 
 有三個適用于 Xamarin 的目標 Framework 選項，各有不同的優點和取捨：
 
-- **現代化**（在舊版檔中稱為 Mobile）–與 Xamarin 的功能非常相似的子集，針對效能和規模進行高度調整。 此目標架構是連結器安全的，因此，這些專案可以藉由移除未使用的程式碼，大幅減少其最終使用量。
+- **新式**（在舊版檔中稱為 Mobile）–與 Xamarin 的功能非常相似的子集，其為效能和大小的高度調整。 此目標架構是連結器安全的，因此，這些專案可以藉由移除未使用的程式碼，大幅減少其最終使用量。
 
-- **完整**（在舊版檔中稱為 XM 4.5）–與「桌面」 BCL 非常相似的子集，只有幾個小部分的移除。 當目標 Framework 與 net45 （及更新版本）幾乎完全相同時，它可以輕鬆地取用許多未提供 netstandard2 或特定 Xamarin 組建的 nuget。 不過，由於系統的設定使用方式，與連結不相容。
+- **Full** （在舊版檔中稱為 XM 4.5）–與「桌面」 BCL 非常相似的子集，只有幾個小部分的移除。 當目標 Framework 與 net45 （及更新版本）幾乎完全相同時，它可以輕鬆地取用許多未提供 netstandard2 或特定 Xamarin 組建的 nuget。 不過，由於系統的設定使用方式，與連結不相容。
 
-- **不支援**（在舊版檔中稱為系統）–您可以使用目前安裝的 mono，而不是連結至 Xamarin 所提供的 BCL。 這會提供一組最完整的元件，包括某些已知的問題（例如，System.object）。 此選項只會有「最後的手段」，強烈建議您在使用其他選項之前，先加以耗盡。 顧名思義，官方支援通道不支援使用方式。
+- **不支援**（在舊版檔中稱為系統）–不會連結到 Xamarin 所提供的 BCL，而是使用目前安裝的 mono 系統。 這會提供一組最完整的元件，包括某些已知的問題（例如，System.object）。 此選項只會有「最後的手段」，強烈建議您在使用其他選項之前，先加以耗盡。 顧名思義，官方支援通道不支援使用方式。
 
 ## <a name="setting-the-target-framework"></a>設定目標 framework
 

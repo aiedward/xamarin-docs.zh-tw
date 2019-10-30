@@ -4,19 +4,19 @@ description: 本文件描述適合 Objective-C 開發人員使用的 C#。 它�
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: a55d1d9848d3f1378ccbc4a24e1748eb146a6a35
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 8b84d959ce7976fc51cbdfee99cbceec560e8e8e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291990"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022434"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>適用於 Objective-C 開發人員的 C# Primer
 
-_Xamarin.iOS 可讓您跨平台分享以 C# 撰寫的平台獨立程式碼。不過，現有的 iOS 應用程式可能想要利用已建立的 Objective-C 程式碼。此文章可做為想要移至 Xamarin 和 C# 語言之 Objective-C 開發人員的入門。_
+_Xamarin 可讓撰寫的C#平臺中立程式碼跨平臺共用。不過，現有的 iOS 應用程式可能會想要利用已建立的目標 C 程式碼。這篇文章可做為想要移至 Xamarin 和C#語言的目標-C 開發人員的簡短入門。_
 
 以 Objective-C 開發的 iOS 與 OS X 應用程式只要在不需要平台特定程式碼的情況下利用 C#，就能獲得 Xamarin 的優點，進而使得此類程式碼能用於非 Apple 裝置。 例如 Web 服務、JSON 與 XML 剖析，以及自訂演算法等接著可以用於跨平台行為。
 
@@ -36,11 +36,11 @@ _Xamarin.iOS 可讓您跨平台分享以 C# 撰寫的平台獨立程式碼。不
 
 雖然如此，Objective-C 與 C# 有數種語言特色在功能方面都是相同的。 建立從 C# 到 Objective-C 程式碼的繫結或將 Objective-C 移植到 C# 時，了解這些相似性非常實用。
 
-### <a name="protocols-vs-interfaces"></a>通訊協定與介面
+### <a name="protocols-vs-interfaces"></a>通訊協定與介面的比較
 
 Objective-C 與 C# 都是單一繼承語言。 不過，這兩種語言都支援在給定類別中實作多個介面。 在 Objective-C 中，這些邏輯介面稱為「通訊協定」在 C# 中，它們稱為「介面」。 關於在實作方面的智能，C# 介面與 Objective-C 通訊協定之間的主要差異是後者可以有選擇性方法。 如需詳細資訊，請參閱[事件、委派與通訊協定](~/ios/app-fundamentals/delegates-protocols-and-events.md)一文。
 
-### <a name="categories-vs-extension-methods"></a>分類與擴充方法
+### <a name="categories-vs-extension-methods"></a>類別與擴充方法的比較
 
 Objective-C 可讓您將方法新增到那些您未使用「類別」(Category)建立之實作程式碼的類別。 在 C# 中，可以透過「擴充方法」了解相同的概念。
 
@@ -58,15 +58,15 @@ public static class UITextViewExtensions
 
 然後，當 `UITextView` 的執行個體在程式碼中建立時，您將可以在自動完成清單中看到該方法，如下所示：
 
- ![](primer-images/01-extensionmethodintellisense.png "可以在自動完成可以在自動完成清單中看到該方法")
+ ![](primer-images/01-extensionmethodintellisense.png "The method available in the autocomplete")
 
 當擴充方法被呼叫時，該執行個體會被傳遞到引數，例如此範例中的 `textView`。
 
-### <a name="frameworks-vs-assemblies"></a>架構與組件
+### <a name="frameworks-vs-assemblies"></a>架構與元件的比較
 
 Objective-C 會將相關類別封裝在稱為架構的特殊目錄中。 不過在 C# 與 .NET 中，組件是用來提供可重複使用的預先編譯程式碼。 在 iOS 外部的環境中，組件包含中繼語言程式碼 (IL)，這在執行階段會透過 Just-In-Time (JIT) 來編譯。 不過，Apple 不允許在 iOS 應用程式中使用 JIT。 因此，使用 Xamarin 開發且以 iOS 為目標的 C# 程式碼是預先編譯 (AOT)，這會產生單一 Unix 可執行檔，以及包含在應用程式套件組合中的中繼資料檔案。
 
-### <a name="selectors-vs-named-parameters"></a>選取器與具名參數
+### <a name="selectors-vs-named-parameters"></a>選取器與具名引數的比較
 
 Objective-C 方法本質上就自然在選取器中包含參數名稱。 例如，`AddCrayon:WithColor:` 之類的選取器在程式碼中使用時會清楚傳達每個參數的意義。 C# 也選擇性支援具名引數。
 
@@ -94,7 +94,7 @@ namespace MyAppNamespace
 
 此外，上物程式碼中的命名空間關鍵字會設定用於實作檔案本身的命名空間。 若多個實作檔案共用相同的命名空間，則您不需要一併將命名空間包含在 directive 指示詞中，因為那就有這樣的意涵。
 
-### <a name="properties"></a>屬性
+### <a name="properties"></a>內容
 
 Objective-C 與 C# 都有屬性概念，屬性可提供存取子方法周圍的高階抽象。 在 Objective-C 中，@property 編譯器指示詞是用來有效地產生存取子方法。 相反地，C# 包含對語言本身內屬性的支援。 C# 屬性可使用會存取支援欄位的較長樣式來實作，或使用較短的自動屬性語法來實作，如下列範例所示：
 
@@ -123,7 +123,7 @@ public string Address {
 
 C# 也有 Satic 關鍵字。 當被套用到方法時，它會有效地執行 `+` 修飾詞在 Objective-C 中執行的相同動作。 也就是說，它會建立類別方法。 同樣地，當被套用到其他建構 (例如欄位、屬性與事件) 時，它會讓那些成為它們被定義所在之類型的一部分，而不是具有該類型的任何執行個體。 您也可以設定為靜態類別，讓在該類別中的所有方法也必須是靜態的。
 
-### <a name="nsarray-vs-list-initialization"></a>NSArray 與清單初始化
+### <a name="nsarray-vs-list-initialization"></a>NSArray 與清單初始化的比較
 
 Objective-C 現在包含可搭配 `NSArray` 使用的常值語言，以便更簡單地初始化。 不過 C# 擁有稱為 `List` (它是「泛型」) 的更豐富類型，這表示清單所持有的類型可透過建立清單的程式碼來提供 (就像 C++ 中的範本)。 此外，清單也支援自動初始化語法，如下所示：
 
@@ -133,7 +133,7 @@ MyClass object2 = new MyClass ();
 List<MyClass> myList = new List<MyClass>{ object1, object2 };
 ```
 
-### <a name="blocks-vs-lambda-expressions"></a>區塊與Lambda 運算式
+### <a name="blocks-vs-lambda-expressions"></a>區塊與 Lambda 運算式的比較
 
 Objective-C 使用「區塊」來建立終止 (Closure)，您可以在其中建立會使用其所封閉之狀態的內嵌函式。 C# 具有類似的概念，它會使用 Lambda 運算式。 在 C# 中，Lambda 運算式是使用 `=>` 運算子所建立，如下所示：
 

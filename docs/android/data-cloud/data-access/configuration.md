@@ -1,19 +1,19 @@
 ---
-title: 組態
+title: Configuration
 ms.prod: xamarin
 ms.assetid: 44526226-4E4E-4FFF-9A16-CA7B1E01BB8F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 5ebafa70239305210da631c3e9c34278f83b272b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 29bbd5c52a5af6c0ac9f9790dc182d3d806c6b5f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754657"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024021"
 ---
-# <a name="configuration"></a>組態
+# <a name="configuration"></a>Configuration
 
 若要在您的 Xamarin Android 應用程式中使用 SQLite，您必須為資料庫檔案判斷正確的檔案位置。
 

@@ -1,71 +1,71 @@
 ---
-title: 已知問題 & 因應措施
-description: 本檔說明 Xamarin Workbooks 的已知問題和因應措施。 其中討論了 CultureInfo 問題、JSON 問題等等。
+title: Known Issues & Workarounds
+description: This document describes known issues and workarounds for Xamarin Workbooks. It discusses CultureInfo issues, JSON issues, and more.
 ms.prod: xamarin
 ms.assetid: 495958BA-C9C2-4910-9BAD-F48A425208CF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: b7b73e214af6a5a45426b4e2d2d7e01a436b379e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c7b9f93c2d6339ba1fd26b27742ecfc0f438c5de
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292787"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018170"
 ---
-# <a name="known-issues--workarounds"></a>已知問題 & 因應措施
+# <a name="known-issues--workarounds"></a>Known Issues & Workarounds
 
-## <a name="persistence-of-cultureinfo-across-cells"></a>資料格之間的 CultureInfo 持續性
+## <a name="persistence-of-cultureinfo-across-cells"></a>Persistence of CultureInfo across cells
 
-設定`System.Threading.CurrentThread.CurrentCulture` 或`System.Globalization.CultureInfo.CurrentCulture`不會保存在 mono 型活頁簿（Mac、iOS 和 Android）上的活頁簿資料格，因為[mono `AppContext.SetSwitch`的執行中有錯誤][appcontext-bug]。
+Setting `System.Threading.CurrentThread.CurrentCulture` or `System.Globalization.CultureInfo.CurrentCulture` does not persist across workbook cells on Mono-based Workbooks targets (Mac, iOS, and Android) due to a [bug in Mono's `AppContext.SetSwitch`][appcontext-bug] implementation.
 
 ### <a name="workarounds"></a>替代解決辦法
 
-- 設定應用程式-網域-本機`DefaultThreadCurrentCulture`：
+- Set the application-domain-local `DefaultThreadCurrentCulture`:
 
 ```csharp
 using System.Globalization;
 CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("de-DE")
 ```
 
-- 或者，更新至活頁簿1.2.1 或更新版本，這會將`System.Threading.CurrentThread.CurrentCulture`指派`System.Globalization.CultureInfo.CurrentCulture`重寫至和，以提供所需的行為（解決 Mono 錯誤）。
+- Or, update to Workbooks 1.2.1 or newer , which will rewrite assignments to `System.Threading.CurrentThread.CurrentCulture` and `System.Globalization.CultureInfo.CurrentCulture` to provide for the desired behavior (working around the Mono bug).
 
-## <a name="unable-to-use-newtonsoftjson"></a>無法使用 Newtonsoft
+## <a name="unable-to-use-newtonsoftjson"></a>Unable to use Newtonsoft.Json
 
 ### <a name="workaround"></a>因應措施
 
-- 更新為1.2.1 版的活頁簿，將會安裝 Newtonsoft 9.0.1。
-  目前在 Alpha 通道中的活頁簿1.3 支援10和更新版本。
+- Update to Workbooks 1.2.1, which will install Newtonsoft.Json 9.0.1.
+  Workbooks 1.3, currently in the alpha channel, supports versions 10 and newer.
 
 ### <a name="details"></a>詳細資料
 
-已發行 Newtonsoft，其 i 藉相依于與支援`dynamic`的活頁簿版本相衝突的 Microsoft CSharp。 這在活頁簿 1.3 preview 版本中已解決，但現在我們已藉由將 Newtonsoft 特別釘選至9.0.1 版來解決此問題。
+Newtonsoft.Json 10 was released which bumped its dependency on Microsoft.CSharp which conflicts with the version Workbooks ships to support `dynamic`. This is addressed in the Workbooks 1.3 preview release, but for now we have worked around this by pinning Newtonsoft.Json specifically to version 9.0.1.
 
-NuGet 套件會根據 Newtonsoft 明確地進行，只有在目前位於 Alpha 色板的活頁簿1.3 中才支援。
+NuGet packages explicitly depending on Newtonsoft.Json 10 or newer are only supported in Workbooks 1.3, currently in the alpha channel.
 
-## <a name="code-tooltips-are-blank"></a>程式碼工具提示空白
+## <a name="code-tooltips-are-blank"></a>Code Tooltips are Blank
 
-Safari/WebKit 中的[摩納哥編輯器][monaco-bug]中有一個 bug，用於 Mac 活頁簿應用程式，這會導致程式碼工具提示不使用文字呈現。
+There is a [bug in the Monaco editor][monaco-bug] in Safari/WebKit, which is used in the Mac Workbooks app, that results in code tooltips rendering without text.
 
 ![](general-images/monaco-signature-help-bug.png)
 
 ### <a name="workaround"></a>因應措施
 
-- 在工具提示出現之後按一下它，將會強制文字呈現。
+- Clicking on the tooltip after it appears will force the text to render.
 
-- 或更新為1.2.1 或更新版本的活頁簿
+- Or update to Workbooks 1.2.1 or newer
 
 [appcontext-bug]: https://bugzilla.xamarin.com/show_bug.cgi?id=54448
 [monaco-bug]: https://github.com/Microsoft/monaco-editor/issues/408
 
-## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>活頁簿1.3 中遺漏 SkiaSharp 轉譯器
+## <a name="skiasharp-renderers-are-missing-in-workbooks-13"></a>SkiaSharp renderers are missing in Workbooks 1.3
 
-從活頁簿1.3 開始，我們移除了在 [活頁簿] 0.99.0 中所提供的 SkiaSharp 轉譯器，而是使用我們的[SDK](~/tools/workbooks/sdk/index.md)，以 SkiaSharp 提供轉譯器本身。
+Starting in Workbooks 1.3, we've removed the SkiaSharp renderers that we shipped in Workbooks 0.99.0, in favor of SkiaSharp providing the renderers itself, using our [SDK](~/tools/workbooks/sdk/index.md).
 
 ### <a name="workaround"></a>因應措施
 
-- 將 SkiaSharp 更新為 NuGet 中的最新版本。 在撰寫本文時，這是1.57.1。
+- Update SkiaSharp to the latest version in NuGet. At the time of writing, this is 1.57.1.
 
 ## <a name="related-links"></a>相關連結
 
-- [報告錯誤](~/tools/workbooks/install.md#reporting-bugs)
+- [Reporting Bugs](~/tools/workbooks/install.md#reporting-bugs)

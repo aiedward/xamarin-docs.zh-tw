@@ -3,15 +3,15 @@ title: 跨平台效能
 description: 本文件描述可用來改善行動應用程式效能的各種技術。 它討論分析工具、IDisposable 資源、弱式參考、SGen 記憶體回收行程、大小縮減技術，以及更多。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765937"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016519"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -331,7 +331,7 @@ SGen 的其中一個優點便是執行次要記憶體回收所需要的時間與
 - 減少應用程式受控程式碼的大小。 這可透過在每個組件上啟用連結器 (iOS 專案使用「全部連結」，Android 專案使用「連結所有組件」) 來達成。
 
 Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK。
-若要深入了解，請參閱此部落格文章：[How To Keep Your Android App Size Down](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down) (如何縮小您 Android 應用程式的大小)。
+在此部落格文章中進一步了解：[How To Keep Your Android App Size Down](https://montemagno.com/how-to-keep-your-android-app-size-down/) (如何降低您的 Android 應用程式大小)。
 
 <a name="optimizeimages" />
 
@@ -367,7 +367,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 ## <a name="summary"></a>總結
 
-本文已描述與討論用來增加以 Xamarin 平台建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+本文已描述與討論用來增加以 Xamarin 平台建置之應用程式效能的技巧。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
 
 ## <a name="related-links"></a>相關連結
 

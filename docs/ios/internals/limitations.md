@@ -4,15 +4,15 @@ description: 本檔說明 Xamarin 的限制、討論泛型、NSObjects 的一般
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/09/2018
-ms.openlocfilehash: 83c71ebf844102a7d3a16969868f187237fb0d04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 91513936a0223af0e4220154d0fe65ee0a599a4f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753331"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022315"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin 的限制
 
@@ -75,7 +75,7 @@ class Foo<T> : UIView {
 
 若要透過C#委派呼叫原生函式，委派的宣告必須以下列其中一個屬性裝飾：
 
-- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute)（偏好，因為它是跨平臺且與 .NET Standard 1.1 + 相容）
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) （偏好，因為它是跨平臺且與 .NET Standard 1.1 + 相容）
 - [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
 若無法提供其中一個屬性，將會產生執行階段錯誤，例如：
@@ -108,7 +108,7 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 Mono 的 iOS 執行時間已停用下列功能：
 
 - 程式碼剖析工具
-- Reflection.Emit
+- 反映。發出
 - 反映。發出。儲存功能
 - COM 系結
 - JIT 引擎

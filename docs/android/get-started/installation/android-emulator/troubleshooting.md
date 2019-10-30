@@ -5,19 +5,19 @@ zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 4F053CC9-9378-47CB-8002-978A6558C4D0
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: d5de743cdbef1358450a2f358acb86dce2d373c7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 675e6cebab95d2a997bf48a6c9231b5e8c661342
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758019"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020849"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator 疑難排解
 
-_本文描述設定及執行 Android Emulator 時所發生的最常見警告訊息和問題。此外，還會描述這些錯誤的解決方式，以及可協助您診斷模擬器問題的各種疑難排解祕訣。_
+_本文說明設定和執行 Android Emulator 時最常見的警告訊息和問題。此外，它也會說明解決這些錯誤的解決方案，以及各種疑難排解秘訣，以協助您診斷模擬器的問題。_
 
 ::: zone pivot="windows"
 
@@ -39,7 +39,7 @@ _本文描述設定及執行 Android Emulator 時所發生的最常見警告訊�
    adb devices
    ```
 
-4. 如果可從 Android SDK 存取模擬器，模擬器應該會顯示在連接的裝置清單中。 例如：
+4. 如果可從 Android SDK 存取模擬器，模擬器應該會顯示在連接的裝置清單中。 例如:
 
    ```shell
    List of devices attached
@@ -139,7 +139,7 @@ VT feature disabled in BIOS/UEFI
 若要修正此問題，請讓您的電腦重新開機進入 BIOS 並啟用下列選項：
 
 - 虛擬化技術 (視主機板製造商而定，可能會有不同的標籤)。
-- 硬體強制執行資料執行防止。
+- 硬體強制執行的資料執行防止。
 
 如果已啟用硬體加速並正確設定 BIOS，模擬器應該會使用硬體加速順利執行。
 不過，由於 Hyper-V 和 HAXM 的特定問題，可能仍會造成問題，如下所述。
@@ -375,7 +375,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
    adb devices
    ```
 
-4. 如果可從 Android SDK 存取模擬器，模擬器應該會顯示在連接的裝置清單中。 例如：
+4. 如果可從 Android SDK 存取模擬器，模擬器應該會顯示在連接的裝置清單中。 例如:
 
    ```shell
    List of devices attached
@@ -466,7 +466,7 @@ kern.hv_support: 1
 
 **~/.android/avd**
 
-您可以傳入 AVD 的資料夾名稱來使用此位置的 AVD 映像以啟動模擬器。 例如，此命令會啟動名為 **Pixel_2_API_28** 的 AVD：
+您可以傳入 AVD 的資料夾名稱來使用此位置的 AVD 映像啟動模擬器。 例如，此命令會啟動名為 **Pixel_2_API_28** 的 AVD：
 
 ```cmd
 ~/Library/Developer/Xamarin/android-sdk-macosx/emulator/emulator -partition-size 512 -no-boot-anim -verbose -feature WindowsHypervisorPlatform -avd Pixel_2_API_28 -prop monodroid.avdname=Pixel_2_API_28

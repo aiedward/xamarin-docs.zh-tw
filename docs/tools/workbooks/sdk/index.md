@@ -3,15 +3,15 @@ title: 使用 Xamarin Workbooks SDK 的消費者入門
 description: 本檔說明如何開始使用 Xamarin Workbooks SDK，其可用於開發 Xamarin Workbooks 的整合。
 ms.prod: xamarin
 ms.assetid: FAED4445-9F37-46D8-B408-E694060969B9
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 8e3dc65f9f615ff893f3526d53d99da25045c794
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e4a9e9113f83dd89b622de3e1f74f458efd4f07f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283958"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018691"
 ---
 # <a name="getting-started-with-the-xamarin-workbooks-sdk"></a>使用 Xamarin Workbooks SDK 的消費者入門
 
@@ -19,7 +19,7 @@ ms.locfileid: "70283958"
 
 ## <a name="general-overview"></a>一般總覽
 
-Xamarin Workbooks 整合是小型程式庫，會使用[ `Xamarin.Workbooks.Integrations` NuGet][nuget] SDK 來與 Xamarin Workbooks 和偵測器代理程式整合，以提供增強的體驗。
+Xamarin Workbooks 整合是小型程式庫，其使用[`Xamarin.Workbooks.Integrations` NuGet][nuget] SDK 來與 Xamarin Workbooks 和偵測器代理程式整合，以提供增強的體驗。
 
 開始開發整合有3個主要步驟，我們將在此概述。
 
@@ -37,11 +37,11 @@ Xamarin Workbooks 整合是小型程式庫，會使用[ `Xamarin.Workbooks.Integ
 
 在 Visual Studio 中，您會想要確定為便攜媒體櫃選取下列目標平臺：
 
-[![可移植的程式庫平臺 Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
+[![的可移植程式庫平臺 Visual Studio](images/visual-studio-pcl-platforms.png)](images/visual-studio-pcl-platforms.png#lightbox)
 
 -----
 
-建立程式庫專案之後，請透過 nuget 套件管理員， `Xamarin.Workbooks.Integration`將參考新增至我們的 nuget 程式庫。
+建立程式庫專案之後，請透過 NuGet 套件管理員，將參考新增至我們的 `Xamarin.Workbooks.Integration` NuGet 程式庫。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -57,7 +57,7 @@ Xamarin Workbooks 整合是小型程式庫，會使用[ `Xamarin.Workbooks.Integ
 
 ## <a name="building-an-integration"></a>建立整合
 
-我們將建立簡單的整合。 我們很喜歡綠色的色彩，所以我們會將綠色色彩新增為每個物件的標記法。 首先，建立名`SampleIntegration`為的新類別，並讓它`IAgentIntegration`執行介面：
+我們將建立簡單的整合。 我們很喜歡綠色的色彩，所以我們會將綠色色彩新增為每個物件的標記法。 首先，建立名為 `SampleIntegration`的新類別，並將其實作為我們的 `IAgentIntegration` 介面：
 
 ```csharp
 using Xamarin.Interactive;
@@ -70,7 +70,7 @@ public class SampleIntegration : IAgentIntegration
 }
 ```
 
-我們要做的是，為每個綠色色彩的物件加上一個[標記法](~/tools/workbooks/sdk/representations.md)。 我們會使用標記法提供者來執行此動作。 提供者繼承自`RepresentationProvider`類別-就我們而言，我們只需要覆`ProvideRepresentations`寫：
+我們要做的是，為每個綠色色彩的物件加上一個[標記法](~/tools/workbooks/sdk/representations.md)。 我們會使用標記法提供者來執行此動作。 提供者繼承自 `RepresentationProvider` 類別-就我們而言，我們只需要覆寫 `ProvideRepresentations`：
 
 ```csharp
 using Xamarin.Interactive.Representations;
@@ -85,10 +85,10 @@ class SampleRepresentationProvider : RepresentationProvider
 }
 ```
 
-我們在 SDK 中`Color`傳回一個預先建立的表示型別。
-您會注意到這裡的傳回型別是`IEnumerable<object>` &mdash;一個表示提供者可能會傳回物件的許多標記法！ 所有的表示提供者都會針對每個物件呼叫，因此請務必不要對要傳遞給您的物件做出任何假設。
+我們會在我們的 SDK 中傳回 `Color`，這是預先建立的表示型別。
+您會注意到這裡的傳回型別是一個 `IEnumerable<object>`&mdash;一個表示提供者可能會傳回物件的許多表示！ 所有的表示提供者都會針對每個物件呼叫，因此請務必不要對要傳遞給您的物件做出任何假設。
 
-最後一個步驟是實際向代理程式註冊我們的提供者，並告訴活頁簿何處尋找我們的整合類型。 若要註冊提供者，請將此程式`IntegrateWith`代碼新增至`SampleIntegration`我們稍早建立的類別中的方法：
+最後一個步驟是實際向代理程式註冊我們的提供者，並告訴活頁簿何處尋找我們的整合類型。 若要註冊提供者，請將此程式碼新增至我們稍早建立的 `SampleIntegration` 類別中的 `IntegrateWith` 方法：
 
 ```csharp
 agent.RepresentationManager.AddProvider (new SampleRepresentationProvider ());
@@ -100,7 +100,7 @@ agent.RepresentationManager.AddProvider (new SampleRepresentationProvider ());
 [assembly: AgentIntegration (typeof (SampleIntegration))]
 ````
 
-在開發期間，您可能會發現在上`AddProvider` `RepresentationManager`使用多載會比較方便，這可讓您註冊簡單的回呼來提供活頁簿內的標記法，然後`RepresentationProvider`將該程式碼移至您的執行一次您已經完成。 [`OxyPlot`][oxyplot] 呈現`PlotModel`的範例可能如下所示：
+在開發期間，您可能會發現在 `RepresentationManager` 上使用 `AddProvider` 多載會比較方便，因為這可讓您註冊簡單的回呼來提供活頁簿內的標記法，然後在完成後將該程式碼移至 `RepresentationProvider` 的執行中。 轉譯[`OxyPlot`][oxyplot] `PlotModel` 的範例可能如下所示：
 
 ```csharp
 InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
@@ -111,7 +111,7 @@ InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
 ```
 
 > [!NOTE]
-> 這些 api 可讓您快速啟動並執行，但我們不建議您只使用&mdash;它們來傳送完整的整合，而只會提供用戶端處理類型的方式非常少的控制。
+> 這些 Api 可讓您快速啟動並執行，但我們不建議您只使用它們來傳送整體整合&mdash;它們對您的型別是由用戶端處理的方式提供極小的控制。
 
 註冊標記法之後，您的整合就已準備好寄送！
 
@@ -119,7 +119,7 @@ InteractiveAgent.RepresentationManager.AddProvider<PlotModel> (
 
 若要交付您的整合，您必須將它新增至 NuGet 套件。
 您可以使用現有的程式庫 NuGet 來寄送它，或者，如果您要建立新的套件，您可以使用這個 nuspec 檔案作為起點。
-您必須填寫與整合相關的章節。 最重要的部分是，整合的所有檔案都必須位於封裝根目錄的`xamarin.interactive`目錄中。 這可讓我們輕鬆地找到整合的所有相關檔案，不論您是使用現有的套件或建立新的封裝。
+您必須填寫與整合相關的章節。 最重要的部分是，整合的所有檔案都必須位於封裝根目錄的 `xamarin.interactive` 目錄中。 這可讓我們輕鬆地找到整合的所有相關檔案，不論您是使用現有的套件或建立新的封裝。
 
 ```xml
 <?xml version="1.0"?>
@@ -147,15 +147,15 @@ nuget pack MyIntegration.nuspec
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![具有整合的活頁簿](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
+[具有整合的![活頁簿](images/mac-workbooks-integrated.png)](images/mac-workbooks-integrated.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![具有整合的活頁簿](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
+[具有整合的![活頁簿](images/windows-workbooks-integrated.png)](images/windows-workbooks-integrated.png#lightbox)
 
 -----
 
-請注意，您不會`#r`看到任何指示詞或任何專案來初始化整合-活頁簿已在幕後處理所有的動作！
+請注意，您不會看到任何 `#r` 指示詞或任何專案來初始化整合-活頁簿已在幕後處理所有的動作！
 
 ## <a name="next-steps"></a>後續步驟
 

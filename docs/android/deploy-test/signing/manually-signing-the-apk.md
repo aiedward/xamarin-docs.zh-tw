@@ -3,15 +3,15 @@ title: 手動簽署 APK
 ms.prod: xamarin
 ms.assetid: 08549E1C-7F04-4D20-9E7A-794B9D09FD12
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 3be55c2149aa58bf6d8462e5c1ff24166078355f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f43cb3ac5ff4d976c57a9d82c2003a08954ef1a4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755892"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021044"
 ---
 # <a name="manually-signing-the-apk"></a>手動簽署 APK
 
@@ -26,7 +26,7 @@ ms.locfileid: "70755892"
 
 步驟的順序很重要，而且取決於用來簽署 APK 的工具。 使用 **apksigner** 時，務必先針對應用程式進行 **zipalign**，然後使用 **apksigner** 來簽署它。  如果需要使用 **jarsigner** 簽署 APK，則務必先簽署 APK，然後執行 **zipalign**。 
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 本指南將著重於從 Android SDK 建置工具 (v24.0.3 或更高版本) 使用 **apksigner**。 它假設 APK 已經建置。
 

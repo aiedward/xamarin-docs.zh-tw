@@ -4,15 +4,15 @@ description: 本文件描述 fastlane 的 match 命令，它用來建立及維�
 ms.prod: xamarin
 ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8991ddc55069fad8c5f023f35ece0926f0f7e5b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 08fdcafe33e4b9b2aa6b5595c732718878be33f2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285720"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028518"
 ---
 # <a name="fastlane-for-ios---match"></a>適用於 iOS 的 fastlane - match
 
@@ -59,15 +59,15 @@ fastlane match init
 
 出現提示時，輸入 Git 存放庫的 URL：
 
- [![](match-images/fastlane-image7.png "輸入 Git 存放庫的 URL")](match-images/fastlane-image7.png#lightbox)
+ [![](match-images/fastlane-image7.png "Enter the URL of the git repo")](match-images/fastlane-image7.png#lightbox)
 
 若要尋找及複製此 URL，請在 github.com 上按一下 [Clone or Download] \(複製或下載\) 按鈕，如下所示：
 
-[![](match-images/fastlane-image6.png "github.com 上 [Clone or Download] \(複製或下載\) 按鈕底下的 URL")](match-images/fastlane-image6.png#lightbox)
+[![](match-images/fastlane-image6.png "The URL under the Clone or Download button on github.com")](match-images/fastlane-image6.png#lightbox)
 
 將專案初始化會建立一個 matchfile – 這是一個文字檔，您可以編輯此檔案以將環境變數傳遞給 match 工具。 matchfile 範例的說明如下：
 
-[![](match-images/fastlane-image8.png "matchfile 範例")](match-images/fastlane-image8.png#lightbox)
+[![](match-images/fastlane-image8.png "A matchfile example")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -93,7 +93,7 @@ fastlane match development
 - 含有基本指示的讀我檔案
 - match 版本
 
-[![](match-images/fastlane-image9.png "Git 存放庫中的專案結構")](match-images/fastlane-image9.png#lightbox)
+[![](match-images/fastlane-image9.png "The project structure in the git repo")](match-images/fastlane-image9.png#lightbox)
 
 佈建設定檔安裝在 `~/Library/MobileDevice/Provisioning Profiles`中。 憑證和私密金鑰會直接安裝在您的 Keychain 中。
 

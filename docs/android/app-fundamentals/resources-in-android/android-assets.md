@@ -3,47 +3,47 @@ title: 使用 Android 資產
 ms.prod: xamarin
 ms.assetid: 70ECDDC9-FA40-03B4-BF04-E7CFFFE4260D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: e3b7ccf74773e5a391b8f133ccc241ca0e18bfcb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9c8db5ad7bcb012befb2fa8dcd1ecd13fa355a55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755162"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025421"
 ---
 # <a name="using-android-assets"></a>使用 Android 資產
 
 _資產_提供一種方式，可在您的應用程式中包含文字、xml、字型、音樂和影片等任意檔案。 如果您嘗試將這些檔案包含在「資源」中，Android 會將這些檔案處理到其資源系統中，而且您將無法取得原始資料。 如果您不想要存取資料，資產就是其中一種方式。
 
 新增至專案的資產會顯示，就像是可使用[AssetManager](xref:Android.Content.Res.AssetManager)從您的應用程式讀取的檔案系統一樣。
-在這個簡單的示範中，我們將在專案中新增文字檔資產、使用`AssetManager`讀取它，並將它顯示在 TextView 中。
+在這個簡單的示範中，我們將在專案中新增文字檔資產、使用 `AssetManager`加以讀取，並將其顯示在 TextView 中。
 
 ## <a name="add-asset-to-project"></a>將資產新增至專案
 
-資產會移至`Assets`專案的資料夾中。 將新的文字檔新增至名`read_asset.txt`為的資料夾。 將一些文字放在其中，例如「我來自資產！」。
+Assets go in the `Assets` folder of your project. Add a new text file to this folder called `read_asset.txt`. Place some text in it like "I came from an asset!".
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-Visual Studio 應該將此檔案的**組建動作**設定為**AndroidAsset**：
+Visual Studio should have set the **Build Action** for this file to **AndroidAsset**:
 
-![將組建動作設定為 AndroidAsset](android-assets-images/asset-properties-vs.png) 
+![Setting the build action to AndroidAsset](android-assets-images/asset-properties-vs.png) 
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac 應該將此檔案的**組建動作**設定為**AndroidAsset**：
+Visual Studio for Mac should have set the **Build Action** for this file to **AndroidAsset**:
 
-[![將組建動作設定為 AndroidAsset](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
+[![Setting the build action to AndroidAsset](android-assets-images/asset-properties-xs-sml.png)](android-assets-images/asset-properties-xs.png#lightbox)
 
 -----
 
-選取正確的**BuildAction**可確保檔案會在編譯時期封裝到 APK 中。
+Selecting the correct **BuildAction** ensures that the file will be packaged into the APK at compile time.
 
-## <a name="reading-assets"></a>讀取資產
+## <a name="reading-assets"></a>Reading Assets
 
-資產會使用[AssetManager](xref:Android.Content.Res.AssetManager)來讀取。 的實例`AssetManager`可透過存取上`Android.Content.Context`的[資產](xref:Android.Content.Context.Assets)屬性（例如活動）來取得。
-在下列程式碼中，我們會開啟我們的**read_asset** ，閱讀內容，並使用 TextView 加以顯示。
+Assets are read using an [AssetManager](xref:Android.Content.Res.AssetManager). An instance of the `AssetManager` is available by accessing the [Assets](xref:Android.Content.Context.Assets) property on an `Android.Content.Context`, such as an Activity.
+In the following code, we open our **read_asset.txt** asset, read the contents, and display it using a TextView.
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -69,11 +69,11 @@ protected override void OnCreate (Bundle bundle)
 
 ## <a name="running-the-application"></a>執行應用程式
 
-執行應用程式，您應該會看到下列內容：
+Run the application and you should see the following:
 
-![範例螢幕擷取畫面](android-assets-images/screenshot.png)
+![Example screenshot](android-assets-images/screenshot.png)
 
 ## <a name="related-links"></a>相關連結
 
 - [AssetManager](xref:Android.Content.Res.AssetManager)
-- [內容](xref:Android.Content.Context)
+- [Context](xref:Android.Content.Context)

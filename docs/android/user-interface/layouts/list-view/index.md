@@ -4,15 +4,15 @@ description: ListView 是 Android 應用程式的重要 UI 元件;其使用方�
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 5c9a11073a7e65d90e0776d0b43c9e3bd100a10d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f6579e3b70e3788046916db12e201550e7fd5f16
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758646"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028883"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin. Android ListView
 
@@ -20,19 +20,19 @@ _ListView 是 Android 應用程式的重要 UI 元件;其使用方式是從功�
 
 ## <a name="overview"></a>總覽
 
-清單視圖和介面卡包含在 Android 應用程式的最基本組建區塊中。 `ListView`類別提供彈性的方式來呈現資料，不論是快顯功能表或長時間滾動清單。 它提供快速滾動、索引和單一或多重選取等可用性功能，可協助您為應用程式建立方便使用的使用者介面。 `ListView` 執行個體需要 *Adapter* 提供資料列檢視中所含的資料給它。
+清單視圖和介面卡包含在 Android 應用程式的最基本組建區塊中。 `ListView` 類別提供一種彈性的方式來呈現資料，不論是簡短的功能表或長的滾動清單。 它提供快速滾動、索引和單一或多重選取等可用性功能，可協助您為應用程式建立方便使用的使用者介面。 `ListView` 執行個體需要 *Adapter* 提供資料列檢視中所含的資料給它。
 
-本指南說明如何在 Xamarin `ListView`中執行和`Adapter`各種類別。 它也會示範如何自訂的外觀`ListView`，並討論資料列重複使用來減少記憶體耗用量的重要性。 此外，也會討論活動生命週期的影響`ListView`和`Adapter`使用方式。 如果您在使用 Xamarin 的跨平臺應用程式，則控制項`ListView`的結構類似于 ios `UITableView` （而`UITableViewSource`Android `Adapter`與類似）。
+本指南說明如何在 Xamarin 中執行 `ListView` 和各種 `Adapter` 類別。 它也會示範如何自訂 `ListView`的外觀，並討論資料列重複使用來減少記憶體耗用量的重要性。 此外，也會討論活動生命週期如何影響 `ListView` 和 `Adapter` 使用。 如果您在使用 Xamarin 的跨平臺應用程式，則 `ListView` 控制項的結構類似于 iOS `UITableView` （而 Android `Adapter` 與 `UITableViewSource`類似）。
 
-首先，簡短的教學課程會`ListView`介紹具有基本程式碼範例的。 接下來，提供更多的主題連結，協助您在`ListView`真實世界的應用程式中使用。
+首先，簡短的教學課程會介紹使用基本程式碼範例的 `ListView`。 接下來，提供更多的主題連結，協助您在真實世界的應用程式中使用 `ListView`。
 
 > [!NOTE]
-> Widget 是更先進且彈性的`ListView`版本。 `RecyclerView` 因為`RecyclerView`設計為`ListView` （和`GridView`）的後續版本`ListView` ，所以我們建議您使用`RecyclerView` ，而不是針對新的應用程式開發。 如需詳細資訊，請參閱[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)。
+> `RecyclerView` widget 是更先進且彈性的 `ListView`版本。 由於 `RecyclerView` 是設計成 `ListView` （和 `GridView`）的後續版本，因此建議您使用 `RecyclerView`，而不要使用 `ListView` 來進行新的應用程式開發。 如需詳細資訊，請參閱[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)。
 
 ## <a name="listview-tutorial"></a>ListView 教學課程
 
-[`ListView`](xref:Android.Widget.ListView)是[`ViewGroup`](xref:Android.Views.ViewGroup)
-這會建立可滾動專案的清單。 清單專案會使用[`IListAdapter`](xref:Android.Widget.IListAdapter)自動插入清單中。
+[`ListView`](xref:Android.Widget.ListView)是一個[`ViewGroup`](xref:Android.Views.ViewGroup)
+這會建立可滾動專案的清單。 系統會使用[`IListAdapter`](xref:Android.Widget.IListAdapter)，將清單專案自動插入清單中。
 
 在本教學課程中，您將建立從字串陣列讀取之國家/地區名稱的可滾動清單。 選取清單專案時，快顯訊息會顯示清單中專案的位置。
 
@@ -50,9 +50,9 @@ _ListView 是 Android 應用程式的重要 UI 元件;其使用方式是從功�
 </TextView>
 ```
 
-這個檔案會定義將放在中[`ListView`](xref:Android.Widget.ListView)之每個專案的版面配置。
+這個檔案會定義將放在[`ListView`](xref:Android.Widget.ListView)中的每個專案的配置。
 
-開啟`MainActivity.cs`並修改類別以擴充[`ListActivity`](xref:Android.App.ListActivity) （而不是[`Activity`](xref:Android.App.Activity)）：
+開啟 `MainActivity.cs` 並修改類別以擴充[`ListActivity`](xref:Android.App.ListActivity) （而不是[`Activity`](xref:Android.App.Activity)）：
 
 ```csharp
 public class MainActivity : ListActivity
@@ -77,34 +77,34 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-請注意，這並不會載入活動的配置檔案（通常是使用[`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)））。
+請注意，這並不會載入活動的配置檔案（您通常會使用[`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)））。
 相反地，設定[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
 屬性會自動新增[`ListView`](xref:Android.Widget.ListView)
-以填滿的整個畫面[`ListActivity`](xref:Android.App.ListActivity)。
-這個方法會採用[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)，它會管理要放[`ListView`](xref:Android.Widget.ListView)入中的清單專案陣列。
-該[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)
-「處理常式」 [`Context`](xref:Android.Content.Context)會採用應用程式、每個清單專案（在上一個步驟中建立）的`T[]`配置描述，以及或[`Java.Util.IList<T>`](xref:Java.Util.IList)
-要插入的物件陣列[`ListView`](xref:Android.Widget.ListView)
+以填滿[`ListActivity`](xref:Android.App.ListActivity)的整個畫面。
+這個方法會使用[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)，它會管理要放入[`ListView`](xref:Android.Widget.ListView)的清單專案陣列。
+[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)
+「處理常式」會將應用程式[`Context`](xref:Android.Content.Context)、每個清單專案（在上一個步驟中建立）的配置描述，以及 `T[]` 或[`Java.Util.IList<T>`](xref:Java.Util.IList)
+要插入[`ListView`](xref:Android.Widget.ListView)中的物件陣列
 （定義下一個）。
 
-該[`TextFilterEnabled`](xref:Android.Widget.AbsListView.TextFilterEnabled)
-屬性會開啟的[`ListView`](xref:Android.Widget.ListView)文字篩選，因此當使用者開始輸入時，將會篩選清單。
+[`TextFilterEnabled`](xref:Android.Widget.AbsListView.TextFilterEnabled)
+屬性會開啟[`ListView`](xref:Android.Widget.ListView)的文字篩選，因此當使用者開始輸入時，將會篩選清單。
 
-該[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
-事件可以用來訂閱處理常式以進行點擊。 當中的專案[`ListView`](xref:Android.Widget.ListView)
-按一下時，會呼叫處理常式，並使用[`Toast`](xref:Android.Widget.Toast)
+[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+事件可以用來訂閱處理常式以進行點擊。 當[`ListView`](xref:Android.Widget.ListView)中的專案
+按一下時，會呼叫處理常式和[`Toast`](xref:Android.Widget.Toast)
 訊息隨即顯示，並使用按下專案中的文字。
 
-您可以使用平臺所提供的清單專案設計，而不是定義您自己的配置[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)檔。
-例如，請嘗試使用`Android.Resource.Layout.SimpleListItem1` ， `Resource.Layout.list_item`而不是。
+您可以使用平臺所提供的清單專案設計，而不是為[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)定義您自己的設定檔。
+例如，請嘗試使用 `Android.Resource.Layout.SimpleListItem1`，而不是 `Resource.Layout.list_item`。
 
-新增下列`using`語句：
+新增下列 `using` 語句：
 
 ```csharp
 using System;
 ```
 
-接下來，將下列字串陣列新增為的成員`MainActivity`：
+接下來，將下列字串陣列新增為 `MainActivity`的成員：
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -152,14 +152,14 @@ static readonly string[] countries = new String[] {
   };
 ```
 
-這是將放入中[`ListView`](xref:Android.Widget.ListView)的字串陣列。
+這是將放入[`ListView`](xref:Android.Widget.ListView)中的字串陣列。
 
 執行應用程式。 您可以滾動清單或輸入以進行篩選，然後按一下專案以查看訊息。 您應該會看到類似下面的內容：
 
-[![ListView 的範例螢幕擷取畫面，包含國家/地區名稱](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
+[具有國家/地區名稱之 ListView 的![範例螢幕擷取畫面](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
 請注意，使用硬式編碼的字串陣列並不是最佳的設計作法。 為了簡單起見，本教學課程中會使用一個，以示範[`ListView`](xref:Android.Widget.ListView)
-機械. 較好的作法是參考外部資源所定義的字串陣列，例如`string-array`專案**資源/值/字串 .xml**檔案中的資源。 例如：
+機械. 較好的作法是參考外部資源所定義的字串陣列，例如專案**資源/值/字串 .xml**檔案中的 `string-array` 資源。 例如:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -177,7 +177,7 @@ static readonly string[] countries = new String[] {
 </resources>
 ```
 
-若要將這些資源字串[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter`1)用於，請取代原始的[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
+若要將這些資源字串用於[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter`1)，請取代原始的[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
 使用下列程式程式碼：
 
 ```csharp
@@ -187,25 +187,25 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 執行應用程式。 您應該會看到類似下面的內容：
 
-[![ListView 的範例螢幕擷取畫面，其中包含較小的名稱清單](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
+[含有較少名稱清單之 ListView 的![範例螢幕擷取畫面](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
 ## <a name="going-further-with-listview"></a>使用 ListView 進一步發展
 
-其餘主題（連結于`ListView`下方）會全面探討如何使用類別，以及您可以與它搭配使用的不同類型介面卡類型。 結構如下所示：
+其餘主題（連結于下方）會全面探討如何使用 `ListView` 類別，以及您可以用來搭配它的不同類型介面卡類型。 結構如下所示：
 
-- **視覺外觀**控制項的`ListView`各個部分，以及它們的使用方式。 &ndash;
+- **視覺外觀**&ndash; `ListView` 控制項的各個部分，以及它們的使用方式。
 
-- **類別**概述用來`ListView`顯示的類別。 &ndash;
+- [**類別**] &ndash; 用來顯示 `ListView`的類別。
 
-- **在 ListView 中顯示資料**如何顯示簡單的資料清單、如何執行`ListView's`可用性功能、如何使用不同的內建資料列配置，以及介面卡如何藉由重新使用資料列視圖來節省記憶體。 &ndash;
+- **在 ListView 中顯示資料**&ndash; 如何顯示簡單的資料清單;如何實行 `ListView's` 可用性功能;如何使用不同的內建資料列版面配置;以及介面卡如何藉由重新使用資料列視圖來節省記憶體。
 
-- **自訂外觀**使用自`ListView`定義版面配置、字型和色彩變更的樣式。 &ndash;
+- **自訂外觀**&ndash; 使用自訂版面配置、字型和色彩來變更 `ListView` 的樣式。
 
-- **使用 SQLite**如何使用顯示 SQLite 資料庫中的`CursorAdapter`資料。 &ndash;
+- **使用 SQLite** &ndash; 如何顯示具有 `CursorAdapter`之 SQLite 資料庫的資料。
 
-- **活動生命週期**&ndash;在執行`ListView`活動時的設計考慮，包括生命週期中您應填入資料的位置，以及釋放資源的時機。
+- **活動生命週期**&ndash; 在執行 `ListView` 活動時的設計考慮，包括生命週期中您應填入資料的位置，以及釋放資源的時機。
 
-討論（分為六個部分）從`ListView`類別本身的總覽開始，再引進更複雜的使用方式範例。
+討論（分成六個部分）先從 `ListView` 類別本身的總覽開始，再引進更複雜的使用方式範例。
 
 - [ListView 組件和功能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
 - [使用資料填入 ListView](~/android/user-interface/layouts/list-view/populating.md)
@@ -216,7 +216,7 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 ## <a name="summary"></a>總結
 
-這組主題會引進`ListView`並提供一些範例，說明如何使用的內建功能。 `ListActivity` 它討論了允許彩色`ListView`版面配置和使用 SQLite 資料庫的自訂實現，而且它會簡短觸及您`ListView`的實作為活動生命週期的相關性。
+這組主題 `ListView` 引進，並提供一些如何使用 `ListActivity`內建功能的範例。 它討論了 `ListView` 的自訂執行，可供彩色版面配置及使用 SQLite 資料庫，並在您的 `ListView` 的實作為活動生命週期的相關性時，很快就能接觸到。
 
 ## <a name="related-links"></a>相關連結
 

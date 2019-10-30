@@ -1,46 +1,46 @@
 ---
-title: 在多個平台上的共用程式碼
-description: 本文件所連結到各種描述技術來共用程式碼，包括可攜式類別庫、 共用的專案、.NET Standard 和 NuGet 的輔助線。
+title: 在多個平臺上共用程式碼
+description: 本檔連結到描述共用程式碼技術的各種指南，包括可移植的類別庫、共用的專案、.NET Standard 和 NuGet。
 ms.prod: xamarin
 ms.assetid: 7D179ACF-09A6-46EE-B49D-E27AB5F09CD4
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: 35c210cc75033f2ad2c83ed6f5196f71d26d000f
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: a91fba3cd1fba3bcf2317e8f9cb25631c62491cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227018"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016820"
 ---
-# <a name="sharing-code-on-multiple-platforms"></a>共用多個平台上的程式碼
+# <a name="sharing-code-on-multiple-platforms"></a>在多個平臺上共用程式碼
 
-這些文章會說明適用於跨平台，包括 Windows、 Android、 iOS 和多個共用程式碼的不同選項。
+這些文章說明可跨平臺共用程式碼的不同選項，包括 Windows、Android、iOS 等。
 
-## <a name="code-sharing-overviewcode-sharingmd"></a>[程式碼共用概觀](code-sharing.md)
+## <a name="code-sharing-overviewcode-sharingmd"></a>[程式碼共用總覽](code-sharing.md)
 
-深入了解不同的程式碼共用選項適用於 Xamarin 專案，包括.NET 標準程式庫及共用專案。 也支援可攜式類別庫，但是會將它們視為取代為.NET Standard。
+瞭解 Xamarin 專案可用的不同程式碼共用選項，包括 .NET Standard 程式庫和共用專案。 也支援可移植的類別庫，不過，它們會被視為已被取代而改用 .NET Standard。
 
 ## <a name="net-standardcross-platformapp-fundamentalsnet-standardmd"></a>[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
 
-.NET standard 是跨平台共用程式碼的慣用的選項。 程式碼建置針對特定版本 （2.0 會提供最佳的 API 相容性與現有的.NET Framework 程式碼），您可以使用其他支援的層級的專案或更高版本。 在 Visual Studio 2019 和 Visual Studio 2019 支援.NET standard 專案 for mac。
+.NET Standard 是跨平臺共用程式碼的慣用選項。 程式碼是針對特定版本所建立（2.0 提供與現有 .NET Framework 程式碼的最佳 API 相容性），並可供其他支援該層級或更高等級的專案使用。 Visual Studio 2019 和 Visual Studio 2019 for Mac 都支援 .NET Standard 專案。
 
 ## <a name="shared-projectscross-platformapp-fundamentalsshared-projectsmd"></a>[共用的專案](~/cross-platform/app-fundamentals/shared-projects.md)
 
-共用的專案可讓您撰寫數個不同的應用程式專案所參考的通用程式碼。 程式碼編譯為一部分的每個參考的專案，而且可以包含編譯器指示詞，可幫助這些共用的程式碼基底平台專屬功能。 這篇文章討論共用專案的運作方式，以及如何建立及使用 Xamarin 專案。
+共用的專案可讓您撰寫一些不同應用程式專案所參考的通用程式碼。 程式碼會編譯為每個參考專案的一部分，而且可以包含編譯器指示詞，以協助將平臺特定功能併入共用程式碼基底中。 本文討論共用專案的工作方式，以及如何建立和使用 Xamarin 專案。
 
 ## <a name="portable-class-librariescross-platformapp-fundamentalspclmd"></a>[可攜式類別庫](~/cross-platform/app-fundamentals/pcl.md)
 
-可攜式類別庫專案可讓您建置及散發包含共用程式碼，以在多個平台上執行的組件。 若要建立您第一次選取哪一個平台為目標，然後撰寫程式碼的可攜式類別庫 （或 「 PCL 」），針對.NET Framework 所提供的平台所定義的設定檔中的子集。 Pcl 會被視為在 Visual Studio; 的最新版本中被取代開發人員都要改為使用.NET Standard 2.0。
+可移植的類別庫專案可讓您建立和散發包含共用程式碼的元件，以便在多個平臺上執行。 若要建立可移植的類別庫（或「PCL」），您必須先選取要設為目標的平臺，然後針對這些平臺定義的設定檔中可用的 .NET Framework 子集合撰寫程式碼。 Pcl 在最新版本的 Visual Studio 中被視為已被取代;建議開發人員改用 .NET Standard 2.0。
 
-## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet 專案：適用於共用程式碼的多平台程式庫](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
+## <a name="nuget-projects-multiplatform-libraries-for-code-sharingcross-platformapp-fundamentalsnuget-multiplatform-librariesindexmd"></a>[NuGet 專案：程式碼共用的多平臺程式庫](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)
 
-NuGet 套件可以自動產生的 PCL 或.NET standard 專案;和共用專案可以封裝到 「 誘導轉向 」 使用個別的 NuGet 專案類型的 NuGet 套件。 本節說明如何建立 NuGet 套件，針對每個程式碼共用的案例。
+NuGet 套件可以從 PCL 或 .NET standard 專案自動產生;和共用的專案可以使用個別的 NuGet 專案類型，封裝成「bait 和切換」 NuGet 套件。 本節說明如何為每個程式碼共用案例建立 NuGet 套件。
 
-## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[以手動方式為 Xamarin 建立 NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
+## <a name="manually-creating-nuget-packages-for-xamarincross-platformapp-fundamentalsnuget-manualmd"></a>[手動建立適用于 Xamarin 的 NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
 
-建立使用 Xamarin 平台的 NuGet 套件的秘訣。
+建立可與 Xamarin 平臺搭配使用之 NuGet 套件的秘訣。
 
-## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[使用 C /C++跨平台 Xamarin 專案中的程式庫](~/cross-platform/cpp/index.md)
+## <a name="use-cc-libraries-in-cross-platform-xamarin-projectscross-platformcppindexmd"></a>[在跨平臺C++ Xamarin 專案中使用 C/程式庫](~/cross-platform/cpp/index.md)
 
-這項技術可讓您將分離的發展您的 C /C++程式庫C#中的 NuGet 和您的 Xamarin 應用程式的繫結。 功能會由平台的原生 C /C++程式庫，但所有平台特定程式碼會與最終的 Xamarin 應用程式，可讓任何程式碼重複使用的最高可能效能隔離。 
+這項技術可讓您分離 C/C++程式庫的演進、 C# NuGet 中的系結，以及 Xamarin 應用程式。 功能是由原生平臺 C/C++程式庫所提供，但所有平臺特定的程式碼都與最終的 Xamarin 應用程式隔離，允許最高的效能，而不會重複程式碼。 

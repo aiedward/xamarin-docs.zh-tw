@@ -4,15 +4,15 @@ description: 本主題介紹 Xamarin. Android Designer 功能、說明如何啟�
 ms.prod: xamarin
 ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/05/2018
-ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 2d5f20326de56bca77dd8fdd742515e003f996e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70761412"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029507"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Xamarin. Android Designer 的基本概念
 
@@ -24,11 +24,11 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 設計工具會在建立配置時自動啟動，也可以按兩下現有的版面配置檔案來啟動。 例如，按兩下 [**資源 >** 配置] 資料夾中的 [ **activity_main** ]，將會載入設計工具，如下列螢幕擷取畫面所示：
 
-[Visual Studio 中的 ![Designer 螢幕](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
+[Visual Studio 中的![設計工具畫面](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 同樣地，您也可以用滑鼠右鍵按一下 **方案總管**中**的 配置** 資料夾，然後選取 **加入 > 新專案，以加入新的版面配置。> Android 版面**配置：
 
-[![Add [新增專案] 對話方塊](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
+[![加入新專案 對話方塊](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 這會建立新的**axml**配置檔案，並將其載入設計工具中。
 
@@ -41,7 +41,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 設計工具是由數個支援其各種功能的區段所組成，如下列螢幕擷取畫面所示：
 
-[設計工具窗格 ![Diagram](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
+[設計師窗格的![圖](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 當您在設計工具中編輯版面配置時，您會使用下列功能來建立及塑造您的設計：
 
@@ -61,7 +61,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 設計工具可讓您將 widget 從 [工具箱] 拖放到**Design Surface**上。 當您在設計工具中與 widget 互動時（藉由加入新的 widget 或重新置放現有的 widget），會顯示垂直和水平線條來標示可用的插入點。 在下列範例中，會將新的 `Button` widget 拖曳至**Design Surface**：
 
-[Design Surface 上 ![Example 插入行](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
+[Design Surface 上的![範例插入行](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 此外，您可以複製小工具：您可以使用 [複製] 和 [貼上] 來複製 widget，也可以在按下<kbd>CTRL</kbd>鍵時拖放現有的 widget。
 
@@ -69,7 +69,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 **設計工具工具列**（位於**Design Surface**上方）會顯示設定選取器和工具功能表：
 
-[設計工具工具列 ![Diagram](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
+[設計師工具列的![圖](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 **設計工具工具列**提供下列功能的存取權：
 
@@ -103,7 +103,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 在**Design Surface**和**檔大綱**中都可以使用內容功能表。 此功能表會顯示所選 widget 及其容器可用的命令，讓您更輕鬆地在容器上執行作業（這在**Design Surface**上不一定容易選取）。 以下是內容功能表的範例：
 
-[以滑鼠右鍵按一下 Design Surface 時，![Example 內容功能表](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
+[以滑鼠右鍵按一下 Design Surface 時的![範例內容功能表](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
 在此範例中，以滑鼠右鍵按一下 `TextView` 會開啟內容功能表，其中提供數個選項：
 
@@ -115,7 +115,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 **Design Surface**支援透過數個控制項縮放，如下所示：
 
-[Design Surface 縮放控制項的 ![Diagram](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
+[Design Surface 縮放控制項的![圖](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 這些控制項可讓您更輕鬆地在設計工具中查看使用者介面的特定區域：
 
@@ -135,7 +135,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 在 [**設計**] 和 [**來源**] 窗格之間的中央寬頻中，有幾個按鈕可用來修改 [**設計**] 和 [**來源**] 窗格的顯示方式：
 
-[![Pane 顯示按鈕位置](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
+[![窗格顯示按鈕位置](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
 
 這些按鈕會執行下列動作：
 
@@ -158,7 +158,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 [**來源**] 窗格會顯示**Design Surface**上所顯示設計的基礎 XML 來源。 因為這兩個視圖都可以同時使用，所以您可以在設計的視覺標記法與設計的基礎 XML 來源之間來回切換，藉以建立 UI 設計：
 
-[來源窗格中的 ![Example XML 來源](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
+[來源窗格中的![XML 來源範例](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
 
 對 XML 來源所做的變更會立即呈現在**Design Surface**上;對**Design Surface**所做的變更，會據以更新 [**來源**] 窗格中顯示的 XML 來源。 當您對 [**來源**] 窗格中的 xml 進行變更時，可以使用自動完成和 IntelliSense 功能來加速以 XML 為基礎的 UI 開發，如下所述。
 
@@ -168,7 +168,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 當您開始輸入 widget 的屬性名稱時，可以按<kbd>CTRL + 空格鍵</kbd>查看可能的完成清單。 例如，在下列範例中輸入 `android:lay` 之後（後面接著輸入<kbd>CTRL + 空格鍵</kbd>），就會顯示下列清單：
 
-[版面配置屬性的 ![Autocompletion](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
+[版面配置屬性的![自動完成](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
 
 按<kbd>enter</kbd>以接受第一個列出的完成，或使用方向鍵來流覽至所需的完成，然後按<kbd>enter</kbd>鍵。 或者，您可以使用滑鼠來滾動至，然後按一下所需的完成。
 
@@ -176,7 +176,7 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 在您輸入 widget 的新屬性並開始為其指派值之後，IntelliSense 會在輸入觸發程式字元後出現，並提供有效的值清單供該屬性使用。 例如，為下列範例中的 `android:layout_width` 輸入第一個雙引號之後，自動完成的選取器會快顯以提供此寬度的有效挑選清單：
 
-[版面配置寬度的 ![IntelliSense 範例](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
+[適用于版面配置寬度的![IntelliSense 範例](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
 
 此快顯的底部有兩個按鈕（如上面螢幕擷取畫面中的紅色所示）。 按一下左側的 [**專案資源**] 按鈕，會將清單限制為屬於應用程式專案的資源，而按一下右側的 [**架構資源**] 按鈕會限制清單，以顯示架構中可用的資源。
 這些按鈕會切換為開啟或關閉：您可以再次按一下它們，以停用每個按鈕所提供的篩選動作。
@@ -200,15 +200,15 @@ _本主題介紹 Xamarin. Android Designer 功能、說明如何啟動設計工�
 
 例如，下列螢幕擷取畫面顯示當您在 [**屬性**] 視窗中，按一下 `Text` 小工具文字欄位右邊的暗角方形時可用的選項：
 
-[![Example 的文字選項清單](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
+[![文字選項的範例清單](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
 
 按一下 [**資源 ...** ] 時，會顯示 [**選取資源**] 對話方塊：
 
-[列出數個資源的 ![Example 資源螢幕擷取畫面](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
+[![範例資源螢幕擷取畫面，其中列出數個資源](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
 
 在這份清單中，您可以選取要用於該 widget 的文字資源，而不是在 [**屬性**] 窗格中對文字進行硬式編碼。 下一個範例說明 `ImageView` 的 `Src` 屬性的資源選取器：
 
-[![Resource 選取器列出 ImageView 的圖示資源](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
+[![資源選取器列出 ImageView 的圖示資源](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
 按一下 [`Src`] 屬性右邊的空白方塊，就會開啟 [**選取資源**] 對話方塊，其中包含從色彩（如上所示）到可繪製資源的資源清單。
 
@@ -256,7 +256,7 @@ Android Designer 支援對**Design Surface**上的特定屬性進行直接編輯
 
 按一下 [**換行內容**] 控點會壓縮該維度中的小工具，使其不會大於包裝所包含內容的必要項。 在此範例中，按鈕文字會水準縮小，如下一個螢幕擷取畫面所示。
 
-當 [大小] 值設定為 [**換行內容**] 時，設計工具會顯示三角形控制碼，指向將大小變更為 `match_parent` 的相反方向：
+當 [大小] 值設定為 [**換行內容**] 時，設計工具會顯示三角形控制碼，指向將大小變更為 `match_parent`的相反方向：
 
 ![符合父控制碼](designer-basics-images/vs/18-match-parent.png)
 
@@ -287,11 +287,11 @@ Android Designer 支援對**Design Surface**上的特定屬性進行直接編輯
 
 建立版面配置時，會自動啟動設計工具，也可以按兩下現有的 axml 檔案來啟動。 例如，按兩下  **Resources > Layout**  資料夾中的  **axml** ，將會載入設計工具，如下所示：
 
-[Visual Studio for Mac 中的 ![Designer 螢幕](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
+[Visual Studio for Mac 中的![設計工具畫面](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 同樣地，您也可以用滑鼠右鍵按一下  **Solution Pad**中的 **版面**配置 資料夾，然後選取 **新增 > 新檔案 > Android >** 配置 來新增版面配置：
 
-[![Add 新增檔案 對話方塊](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
+[![新增檔案 對話方塊](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 這會建立新的 axml 檔案，並將它載入至 Design Surface。
 
@@ -304,7 +304,7 @@ Android Designer 支援對**Design Surface**上的特定屬性進行直接編輯
 
 設計工具是由數個支援其各種功能的區段所組成，如下列螢幕擷取畫面所示：
 
-[設計工具窗格 ![Diagram](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
+[設計師窗格的![圖](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 當您在設計工具中編輯版面配置時，您會使用下列功能來建立及塑造您的設計：
 
@@ -322,7 +322,7 @@ Android Designer 支援對**Design Surface**上的特定屬性進行直接編輯
 
 工具列（位於 Design Surface 上方）會顯示設定選取器和工具功能表：
 
-[設計工具工具列 ![Diagram](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
+[設計師工具列的![圖](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 工具列可讓您存取下列功能：
 
@@ -356,7 +356,7 @@ Android Designer 支援對**Design Surface**上的特定屬性進行直接編輯
 
 設計工具可讓您將 widget 從 [工具箱] 拖放到 Design Surface 上。 當您在設計工具中與 widget 互動時（藉由加入新的 widget 或重新置放現有的 widget），會顯示垂直和水平線條來標示可用的插入點。 在下列範例中，會將新的 `Button` widget 拖曳至 Design Surface：
 
-[Design Surface 上 ![Example 插入行](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
+[Design Surface 上的![範例插入行](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 此外，您可以複製小工具：您可以使用 [複製] 和 [貼上] 來複製 widget，也可以在按下<kbd>Ctrl</kbd>鍵時拖放現有的 widget。
 
@@ -364,7 +364,7 @@ Android Designer 支援對**Design Surface**上的特定屬性進行直接編輯
 
 在 Design Surface 和檔大綱中都可以使用內容功能表。 此功能表會顯示所選 widget 及其容器可用的命令，讓您更輕鬆地在容器上執行作業（這在 Design Surface 上不一定容易選取）。 以下是內容功能表的範例：
 
-[以滑鼠右鍵按一下 Design Surface 時，![Example 內容功能表](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
+[以滑鼠右鍵按一下 Design Surface 時的![範例內容功能表](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
 在此範例中，以滑鼠右鍵按一下 `Button` 會開啟內容功能表，其中提供數個選項：
 
@@ -376,7 +376,7 @@ Android Designer 支援對**Design Surface**上的特定屬性進行直接編輯
 
 Design Surface 支援透過數個控制項縮放，如下所示：
 
-[Design Surface 縮放控制項的 ![Diagram](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
+[Design Surface 縮放控制項的![圖](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 這些控制項可讓您更輕鬆地在設計工具中查看使用者介面的特定區域：
 
@@ -396,7 +396,7 @@ Design Surface 支援透過數個控制項縮放，如下所示：
 
 設計工具支援透過**屬性 Pad**編輯 widget 屬性。 根據在設計工具介面中選取的 widget，屬性 Pad 中列出的屬性會變更。 選取上一個範例中的 `Button` 時，會顯示該 `Button` widget 的屬性：
 
-[屬性 pad 的 ![Screenshot](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
+[![屬性 pad 的螢幕擷取畫面](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 ## <a name="property-pad-sections"></a>屬性 Pad 區段
 
@@ -424,23 +424,23 @@ Design Surface 支援透過數個控制項縮放，如下所示：
 
 例如，下列螢幕擷取畫面顯示當您在**屬性 Pad**中按一下 `Button` widget 之文字欄位右邊的省略號時可用的資源：
 
-[列出兩個資源的 ![Example 資源螢幕擷取畫面](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
+[列出兩個資源的![範例資源螢幕擷取畫面](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
 下一個範例說明 `ImageView` 的 `Src` 屬性的資源選取器：
 
-[![Resource 選取器列出 ImageView 的圖示資源](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
+[![資源選取器列出 ImageView 的圖示資源](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 ### <a name="boolean-property-references"></a>布林值屬性參考
 
 *布林值*屬性通常會在屬性 Pad 中顯示為核取方塊。 當 `Boolean` 屬性支援資源參考時，屬性旁會出現一個小核取方塊。 核取的核取方塊表示 `true`，而空的方塊表示 `false`。 您也可以直接輸入值，例如 `true` 或 `false`。 將滑鼠停留在輸入上方會顯示一個小型文字欄位圖示。 如果您想要手動輸入值，可以按一下它。
 
-[設定布林值屬性的 ![Example](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
+[設定布林值屬性的![範例](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
 ## <a name="grouped-properties"></a>群組屬性
 
 某些 widget 具有多值屬性，會群組在一起（例如 `Padding`）。 這些屬性值會列于**屬性 Pad**的單一可擴充資料列中。 您可以直接在群組的資料列中編輯其中一些屬性，例如如下所示的 `Padding` 屬性：
 
-[填補屬性的 ![Example 設定](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
+[填補屬性的![範例設定](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 ## <a name="editing-properties-inline"></a>編輯內嵌的屬性
 
@@ -450,11 +450,11 @@ Android Designer 支援對 Design Surface 上的特定屬性進行直接編輯�
 
 某些 widget 的文字屬性（例如 `Button` 和 `TextView`）可以直接在 Design Surface 上編輯。 按兩下 widget 會使其進入編輯模式，如下所示：
 
-[hello 字串的 ![Text 資源](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
+[![hello 字串的文字資源](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
 您可以輸入新的文字值，也可以輸入新的資源字串。 在下列範例中，`@string/hello` 資源會取代為文字，`CLICK THIS BUTTON`：
 
-[![Shift + Enter 鍵自動將文字連結至新的資源](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
+[![Shift + Enter，將文字自動連結到新的資源](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 這項變更會儲存在 widget 的 `text` 屬性中;它不會修改指派給 `@string/hello` 資源的值。
 當您輸入新的文字字串時，可以按<kbd>Shift</kbd>鍵  +
@@ -466,40 +466,40 @@ Android Designer 支援對 Design Surface 上的特定屬性進行直接編輯�
 
 當您第一次按一下 widget 時，會顯示邊界控點。 如果您將滑鼠移至其中一個控點，則設計工具會顯示控制碼將變更的屬性（如下所示，適用于 `layout_marginLeft` 屬性）：
 
-[![Screenshot 在設計工具中顯示邊界控點](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
+[![螢幕擷取畫面，顯示設計工具中的邊界控點](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 如果已設定邊界，則會顯示點線，表示邊界所佔用的空間：
 
-[標示按鈕周圍空格的虛線 ![Example](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
+[標示按鈕周圍空間的虛線![範例](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 ### <a name="size"></a>大小
 
 如先前所述，您可以在選取小工具時，切換到大小編輯模式。 按一下三角形控點，將所指定維度的大小設定為 `wrap_content`：
 
-[![Wrap 內容和調整大小控點](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
+[![包裝內容和調整大小控點](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 按一下 [**換行內容**] 控點會壓縮該維度中的小工具，如此一來，就不會再將封閉的內容換行。 在此範例中，按鈕文字會水準縮小，如下一個螢幕擷取畫面所示。
 
-當 [大小] 值設定為 [**換行內容**] 時，設計工具會顯示三角形控制碼，指向將大小變更為 `match_parent` 的相反方向：
+當 [大小] 值設定為 [**換行內容**] 時，設計工具會顯示三角形控制碼，指向將大小變更為 `match_parent`的相反方向：
 
-[![Match 父控制碼](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
+[![符合父控制碼](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 按一下 [**符合] 父代**控點會還原該維度中的大小，使其與父 widget 相同。
 
 此外，您也可以拖曳迴圈調整大小控點（如上述螢幕擷取畫面所示），將 widget 的大小調整為任意的 `dp` 值。 當您這麼做時，會針對該維度顯示 [**包裝內容**] 和 [**符合] 父代**控制碼：
 
-[![Circular 調整大小控點](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
+[![迴圈調整大小控點](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
 並非所有容器都允許編輯 widget 的 `Size`。 例如，請注意，在下列螢幕擷取畫面中，已選取 [`LinearLayout`]，則不會顯示調整大小控點：
 
-[![No 調整大小控點](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
+[![沒有調整大小控點](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 ## <a name="document-outline"></a>文件大綱
 
 [**檔大綱**] 會顯示版面配置的 widget 階層。
 在下列範例中，會選取包含的 `LinearLayout` widget：
 
-[![Document 大綱](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
+[![檔大綱](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
 所選 widget 的外框（在此案例中為 `LinearLayout`）也會在 Design Surface 上反白顯示。 在 [檔大綱] 中選取的 widget 會與 Design Surface 上的對應項保持同步。 這適用于選取 [視圖群組]，這不一定能輕易地在 Design Surface 上進行選取。
 

@@ -4,15 +4,15 @@ description: 建立 Xamarin Android 應用程式的使用者介面
 ms.prod: xamarin
 ms.assetid: F67B7C33-BC53-2BB6-CDA7-16E4AB4A9EFB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 405fb0e30881ee64514d3984842ac820d5663382
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a881629c63ea2991b8ea4673811311076fcaabe9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764479"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028999"
 ---
 # <a name="user-interface"></a>使用者介面
 
@@ -37,7 +37,7 @@ Android 應用程式需要一些時間才能啟動，特別是當應用程式第
 ## <a name="layoutsandroiduser-interfacelayoutsindexmd"></a>[版面配置](~/android/user-interface/layouts/index.md)
 
 版面配置是用來定義使用者介面的視覺化結構。
-`ListView` 和`RecyclerView`之類的配置是 Android 應用程式最基本的建立區塊。 一般而言，版面配置會使用`Adapter`來做為配置中的橋樑，而這些資料是用來填入配置中的資料項目。 本節說明如何使用`LinearLayout`、 `RelativeLayout`、 `TableLayout`、 `RecyclerView`和`GridView`等版面配置。
+`ListView` 和 `RecyclerView` 的配置是 Android 應用程式的最基本組建區塊。 一般而言，版面配置會使用 `Adapter`，將配置中的橋樑當做用來填入版面配置中資料項目的基礎資料。 本節說明如何使用版面配置，例如 `LinearLayout`、`RelativeLayout`、`TableLayout`、`RecyclerView`和 `GridView`。
 
 ## <a name="controlsandroiduser-interfacecontrolsindexmd"></a>[控制項](~/android/user-interface/controls/index.md)
 

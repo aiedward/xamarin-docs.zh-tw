@@ -3,15 +3,15 @@ title: 使用 Razor 範本建立 HTML 視圖
 description: " 使用全螢幕網頁來轉譯 HTML，是以跨平臺方式轉譯複雜格式的簡單且有效的方式，特別是當您已經有網站專案的 HTML、JavaScript 和 CSS 時。"
 ms.prod: xamarin
 ms.assetid: D8B87C4F-178E-48D9-BE43-85066C46F05C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/24/2018
-ms.openlocfilehash: 7f9f45976d0d7db42be18fede2f21825a385bea4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5f1b1345f9abbf891cfbea6e45a8ed2abd7c0dac
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765339"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014595"
 ---
 # <a name="building-html-views-using-razor-templates"></a>使用 Razor 範本建立 HTML 視圖
 
@@ -41,7 +41,7 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadHtmlString(html, NSBundle.MainBundle.BundleUrl);
 ```
 
-如需使用 UIWebView 控制項的詳細資訊，請參閱[IOS UIWebView](http://docs.xamarin.com/recipes/ios/content_controls/web_view/)配方。
+如需使用 UIWebView 控制項的詳細資訊，請參閱[IOS UIWebView](https://github.com/xamarin/docs-archive/tree/master/Recipes/ios/content_controls/web_view)配方。
 
 ### <a name="android"></a>Android
 
@@ -58,7 +58,7 @@ var html = "<html><h1>Hello</h1><p>World</p></html>";
 webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 ```
 
-如需使用 Web 視圖控制項的詳細資訊，請參閱[Android web](http://docs.xamarin.com/recipes/android/controls/webview/)程式。
+如需使用 Web 視圖控制項的詳細資訊，請參閱[Android web](https://github.com/xamarin/docs-archive/tree/master/Recipes/android/controls/webview)程式。
 
 ### <a name="specifying-the-base-directory"></a>指定基底目錄
 
@@ -80,13 +80,13 @@ webView.LoadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8"
 webView.LoadHtmlString (page, NSBundle.MainBundle.BundleUrl);
 ```
 
-指定基底目錄， `NSBundle.MainBundle.BundleUrl`其參照的是應用程式安裝所在的目錄。 **Resources**資料夾中的所有檔案都會複製到這個位置，例如**style .css**檔案，如下所示：
+基底目錄指定為 `NSBundle.MainBundle.BundleUrl`，這會參考應用程式安裝所在的目錄。 **Resources**資料夾中的所有檔案都會複製到這個位置，例如**style .css**檔案，如下所示：
 
  ![iPhoneHybrid 解決方案](images/image1_240x163.png)
 
 所有靜態內容檔案的組建動作都應該是**BundleResource**：
 
- ![iOS 專案組建動作：BundleResource](images/image2_250x131.png)
+ ![iOS 專案組建動作： BundleResource](images/image2_250x131.png)
 
 #### <a name="android"></a>Android
 
@@ -102,7 +102,7 @@ webView.LoadDataWithBaseURL("file:///android_asset/", page, "text/html", "UTF-8"
 
 所有靜態內容檔案的組建動作都應該是**AndroidAsset**。
 
- ![Android 專案組建動作：AndroidAsset](images/image4_250x71.png)
+ ![Android 專案組建動作： AndroidAsset](images/image4_250x71.png)
 
 ### <a name="calling-c-from-html-and-javascript"></a>從C# HTML 和 JavaScript 呼叫
 
@@ -167,9 +167,9 @@ class HybridWebViewClient : WebViewClient {
 webView.SetWebViewClient (new HybridWebViewClient ());
 ```
 
-### <a name="calling-javascript-from-c"></a>從 C 呼叫 JavaScript\#
+### <a name="calling-javascript-from-c"></a>從 C\# 呼叫 JavaScript
 
-除了告訴 web view 載入新的 HTML 網頁， C#程式碼也可以在目前顯示的頁面內執行 JavaScript。 您可以使用C#字串來建立整個 javascript 程式碼區塊，並加以執行，或者您可以透過標籤，為頁面`script`上已提供的 javascript 製作方法呼叫。
+除了告訴 web view 載入新的 HTML 網頁， C#程式碼也可以在目前顯示的頁面內執行 JavaScript。 您可以使用C#字串來建立整個 javascript 程式碼區塊，並加以執行，或者您可以透過`script`標籤，為網頁上已提供的 javascript 製作方法呼叫。
 
 #### <a name="android"></a>Android
 
@@ -227,13 +227,13 @@ Razor 範本檔案的副檔名為 **.** #。 您可以從 [**新增**檔案] 對
 
 請注意下列與一般 HTML 檔案的差異：
 
-- 符號在 Razor 範本中具有特殊意義，這表示C#要評估下列運算式。 `@`
-- `@model`指示詞一律會顯示為 Razor 範本檔案的第一行。
-- `@model`指示詞後面應該接著型別。 在此範例中，會將簡單字串傳遞至範本，但這可能是任何自訂類別。
-- 在`@Model`整個範本中參考時，它會在產生時提供傳遞至範本之物件的參考（在此範例中，它會是字串）。
+- `@` 符號在 Razor 範本中具有特殊意義，這表示C#要評估下列運算式。
+- `@model` 指示詞一律會顯示為 Razor 範本檔案的第一行。
+- `@model` 指示詞之後應為類型。 在此範例中，會將簡單字串傳遞至範本，但這可能是任何自訂類別。
+- 在整個範本中參考 `@Model` 時，它會在產生時提供傳遞至範本之物件的參考（在此範例中，它會是字串）。
 - IDE 會自動產生範本的部分類別（副檔名為**cshtml**的檔案）。 您可以查看此程式碼，但不能進行編輯。
- ![RazorView 部分類別的名稱為 RazorView，以符合. cshtml 範本檔案名。](images/image6_125x34.png) 這是用來在程式碼中C#參考範本的名稱。
-- `@using`語句也可以包含在 Razor 範本的頂端，以包含其他命名空間。
+ ![RazorView](images/image6_125x34.png) 部分類別命名為 RazorView，以符合. cshtml 範本檔案名。 這是用來在程式碼中C#參考範本的名稱。
+- `@using` 語句也可以包含在 Razor 範本的頂端，以包含其他命名空間。
 
 接著，您可以使用下列C#程式碼來產生最終的 HTML 輸出。 請注意，我們將模型指定為字串 "Hello World"，這會併入轉譯的範本輸出中。
 
@@ -313,13 +313,13 @@ var page = template.GenerateString ();
 </html>
 ```
 
-您可以使用`@()`括住程式碼C# ，來撰寫複雜的單行運算式（例如格式化年齡）。
+您可以使用 `@()`括住程式C#代碼，來撰寫複雜的單行運算式（例如格式化年齡）。
 
-您C#可以使用`@{}`來括住多個語句來撰寫。
+您C#可以使用 `@{}`括住多個語句來撰寫。
 
 #### <a name="if-else-statements"></a>If-else 語句
 
-您可以使用來表示程式`@if`代碼分支，如此範本範例中所示。
+您可以使用 `@if` 來表示程式碼分支，如此範本範例中所示。
 
 ```html
 @model Monkey
@@ -340,7 +340,7 @@ var page = template.GenerateString ();
 
 #### <a name="loops"></a>環回
 
-也可以新增`foreach`迴圈結構，例如。 前置詞可用於迴圈變數（ `@food`在此案例中為），以便在 HTML 中呈現。 `@`
+也可以新增迴圈結構，例如 `foreach`。 `@` 前置詞可用於迴圈變數（在此案例中為 `@food`），以 HTML 格式呈現。
 
 ```html
 @model Monkey
@@ -394,7 +394,7 @@ IPhone 和 Android 專案的預設範本解決方案內容如下所示：
 - 靜態內容，例如**style .css**檔案。
 - Razor. cshtml 範本檔案，例如**RazorView。**
 - Razor 範本中參考的模型類別，例如**ExampleModel.cs** 。
-- 建立 web view 並轉譯範本的平臺特定類別，例如 Android 上的`MainActivity` `iPhoneHybridViewController`和 iOS 上的。
+- 建立 web view 並轉譯範本的平臺特定類別，例如 Android 上的 `MainActivity` 和 iOS 上的 `iPhoneHybridViewController`。
 
 下一節將說明專案的工作方式。
 
@@ -416,7 +416,7 @@ IPhone 和 Android 專案的預設範本解決方案內容如下所示：
 
 #### <a name="rendering-the-template"></a>轉譯範本
 
-在範本`GenerateString`上呼叫，可呈現 HTML 準備好在 web 視圖中顯示。 如果範本使用模型，則應該在呈現之前提供。 此圖說明轉譯的運作方式，而不是 web view 在執行時間解析靜態資源，而是使用提供的基底目錄來尋找指定的檔案。
+呼叫範本上的 `GenerateString` 可呈現 HTML，可供在 web 視圖中顯示。 如果範本使用模型，則應該在呈現之前提供。 此圖說明轉譯的運作方式，而不是 web view 在執行時間解析靜態資源，而是使用提供的基底目錄來尋找指定的檔案。
 
  ![Razor 流程圖](images/image12_700x421.png)
 
@@ -430,7 +430,7 @@ IPhone 和 Android 專案的預設範本解決方案內容如下所示：
 <input type="button" name="UpdateLabel" value="Click" onclick="InvokeCSharpWithFormValues(this)" />
 ```
 
-JavaScript 函式會讀取 HTML 表單中的所有值，並設定 web view 的`location.href`： `InvokeCSharpWithFormValues`
+`InvokeCSharpWithFormValues` JavaScript 函式會讀取 HTML 表單中的所有值，並設定 web view 的 `location.href`：
 
 ```javascript
 location.href = "hybrid:" + elm.name + "?" + qs;
@@ -456,19 +456,19 @@ var method = resources [0];
 var parameters = System.Web.HttpUtility.ParseQueryString(resources[1]);
 ```
 
-`UpdateLabel`在此範例中，會在 textbox 參數上進行最少量的字串操作（C#在字串前面加上「表示」），然後回呼至 web view。
+在此範例中 `UpdateLabel` 會在 textbox 參數上執行最少量的字串操作（在C#字串前面加上「表示」），然後回呼至 web view。
 
 處理 URL 之後，方法會中止流覽，讓 web view 不會嘗試完成流覽至自訂 URL。
 
-#### <a name="manipulating-the-template-from-c"></a>從 C 操作範本\#
+#### <a name="manipulating-the-template-from-c"></a>從 C\# 操作範本
 
-從C#到轉譯的 HTML web view 的通訊是藉由呼叫 web view 中的 JavaScript 來完成。 在 iOS 上，您可以在 UIWebView `EvaluateJavascript`上呼叫來完成這項作業：
+從C#到轉譯的 HTML web view 的通訊是藉由呼叫 web view 中的 JavaScript 來完成。 在 iOS 上，這是藉由在 UIWebView 上呼叫 `EvaluateJavascript` 來完成：
 
 ```csharp
 webView.EvaluateJavascript (js);
 ```
 
-在 Android 上，您可以在 web view 中叫用 javascript，方法是使用`"javascript:"` url 配置將 javascript 載入為 url：
+在 Android 上，您可以在 web view 中叫用 JavaScript，方法是使用 `"javascript:"` URL 配置將 JavaScript 載入為 URL：
 
 ```csharp
 webView.LoadUrl ("javascript:" + js);
@@ -486,36 +486,36 @@ HTML 非常適合用來建立原型，並顯示 web 最適合的專案類型，�
 
 [RazorTodo](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)存放庫包含兩個不同的解決方案，以顯示完全以 html 為導向的應用程式，以及結合 HTML 與原生控制項的應用程式之間的差異：
 
-- **RazorTodo** -使用 Razor 範本的完全 HTML 驅動應用程式。
-- **RazorNativeTodo** -使用適用于 IOS 和 Android 的原生清單視圖控制項，但以 HTML 和 Razor 顯示編輯畫面。
+- **RazorTodo** - Completely HTML-driven app using Razor templates.
+- **RazorNativeTodo** - Uses native list view controls for iOS and Android but displays the edit screen with HTML and Razor.
 
-這些 Xamarin 應用程式會在 iOS 和 Android 上執行，利用可移植的類別庫（Pcl）來共用一般程式碼，例如資料庫和模型類別。 您也可以在 PCL 中**包含 Razor 樣板**範本，以便輕鬆地跨平臺共用它們。
+These Xamarin apps run on both iOS and Android, utilizing Portable Class Libraries (PCLs) to share common code such as the database and model classes. Razor **.cshtml** templates can also be included in the PCL so they’re easily shared across platforms.
 
-這兩個範例應用程式都是從原生平臺納入 Twitter 共用和文字轉換語音 Api，示範使用 Xamarin 的混合式應用程式仍可從 HTML Razor 範本驅動的視圖存取所有基礎功能。
+Both sample apps incorporate Twitter sharing and text-to-speech APIs from the native platform, demonstrating that hybrid applications with Xamarin still have access to all the underlying functionality from HTML Razor template-driven views.
 
-**RazorTodo**應用程式會針對 [清單] 和 [編輯] 視圖使用 HTML Razor 範本。 這表示我們幾乎可以在共用的可攜性類別庫（包括資料庫和 **. cshtml** Razor 範本）中完全建立應用程式。 下列螢幕擷取畫面顯示 iOS 和 Android 應用程式。
+The **RazorTodo** app uses HTML Razor templates for the list and edit views. This means we can build the app almost completely in a shared Portable Class Library (including the database and **.cshtml** Razor templates). The screenshots below show the iOS and Android apps.
 
  ![RazorTodo](images/Both_700x290.png)
 
-**RazorNativeTodo**應用程式會針對 [編輯] 視圖使用 HTML Razor 範本，但會在每個平臺上執行原生滾動清單。 這可提供許多優點，包括：
+The **RazorNativeTodo** app uses an HTML Razor template for the edit view, but implements a native scrolling list on each platform. This provides a number of benefits including:
 
-- 效能-原生的滾動控制項使用虛擬化來確保快速、順暢地滾動，即使有非常長的資料清單也一樣。
-- 原生體驗-可以輕鬆地啟用平臺特定的 UI 元素，例如 iOS 和 Android 中的快速滾動索引支援。
+- Performance - the native scrolling controls use virtualization to ensure fast, smooth scrolling even with very long lists of data.
+- Native experience - platform-specific UI elements are easily enabled, such as the fast-scrolling index support in iOS and Android.
 
-使用 Xamarin 建立混合式應用程式的主要優點是，您可以從完全以 HTML 為導向的使用者介面（例如第一個範例）開始，然後在必要時新增平臺特定的功能（如第二個範例所示）。 IOS 和 Android 上的原生清單畫面和 HTML Razor 編輯畫面如下所示。
+A key benefit of building hybrid apps with Xamarin is that you can start with a completely HTML-driven user interface (like the first sample) and then add platform-specific functionality when required (as the second sample shows). The native list screens and HTML Razor edit screens on both iOS and Android are shown below.
 
  ![RazorNativeTodo](images/BothNative_700x290.png)
 
 ## <a name="summary"></a>總結
 
-本文說明可在 iOS 和 Android 上使用的 web view 控制項功能，有助於建立混合式應用程式。
+This article has explained the features of the web view controls available on iOS and Android that facilitate building hybrid applications.
 
-接著討論過 Razor 範本化引擎和語法，可使用在 Xamarin 應用程式中輕鬆地產生 HTML。**cshtml**Razor 範本檔案。 其中也說明了 Visual Studio for Mac 解決方案範本，可讓您快速開始使用 Xamarin 建立混合式應用程式。
+It then discussed the Razor templating engine and the syntax that can be used to generate HTML easily in Xamarin apps using .**cshtml** Razor template files. It also described the Visual Studio for Mac solution templates that let you quickly get started building hybrid applications with Xamarin.
 
-最後，它引進了 RazorTodo 範例，示範如何結合 web views 與原生使用者介面和 Api。
+Finally it introduced the RazorTodo samples which demonstrate how to combine web views with native user interfaces and APIs.
 
 ### <a name="related-links"></a>相關連結
 
-- [RazorTodo 範例](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
-- [MVC 3-Razor View 引擎（Microsoft）](http://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
-- [使用 Razor 語法 ASP.NET Web 程式設計的簡介（Microsoft）](http://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)
+- [RazorTodo Sample](https://github.com/xamarin/mobile-samples/tree/master/RazorTodo)
+- [MVC 3 - Razor View Engine (Microsoft)](https://www.asp.net/mvc/videos/mvc-3/mvc-3-razor-view-engine)
+- [Introduction to ASP.NET Web Programming Using the Razor Syntax (Microsoft)](https://www.asp.net/web-pages/tutorials/basics/2-introduction-to-asp-net-web-programming-using-the-razor-syntax)

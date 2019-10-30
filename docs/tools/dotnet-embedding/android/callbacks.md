@@ -2,15 +2,15 @@
 title: Android 上的回呼
 ms.prod: xamarin
 ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: bfe12d84510707ff6e81aae2b5b20be7e9cacd59
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f23f155a02422a3d04a0b14b282929ea63d60765
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293060"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007296"
 ---
 # <a name="callbacks-on-android"></a>Android 上的回呼
 
@@ -24,7 +24,7 @@ ms.locfileid: "70293060"
 
 ## <a name="abstract-classes"></a>抽象類別
 
-這是回呼的最簡單路由，因此，如果您只`abstract`是嘗試讓回呼以最簡單的形式運作，建議使用。
+這是回呼的最簡單路由，因此，如果您只想要以最簡單的形式來取得回呼，建議使用 `abstract`。
 
 讓我們從想要C#執行 JAVA 的類別開始：
 
@@ -43,11 +43,11 @@ public abstract class AbstractClass : Java.Lang.Object
 
 以下是完成此工作的詳細資料：
 
-- `[Register]`在 JAVA 中產生不錯的套件名稱--您會在沒有它的情況下取得自動產生的套件名稱。
-- 子類別化指示 .net 內嵌，以透過 Xamarin. Android 的 JAVA 產生器來執行類別。 `Java.Lang.Object`
+- `[Register]` 會在 JAVA 中產生不錯的套件名稱--您會在沒有它的情況下取得自動產生的套件名稱。
+- 子類別化 `Java.Lang.Object` 會向 .NET 內嵌發出信號，以透過 Xamarin. Android 的 JAVA 產生器來執行類別。
 - 空白的函式：這是您想要從 JAVA 程式碼使用的功能。
-- `(IntPtr, JniHandleOwnership)`函C#式：這是 Xamarin Android 將用來建立對等的 JAVA 物件。
-- `[Export]`通知 Xamarin. Android 將方法公開至 JAVA。 我們也可以變更方法名稱，因為 JAVA world 喜歡使用小寫方法。
+- `(IntPtr, JniHandleOwnership)` 的函C#式：這是 Xamarin Android 將用來建立對等的 JAVA 物件。
+- `[Export]` 會通知 Xamarin. Android 將方法公開至 JAVA。 我們也可以變更方法名稱，因為 JAVA world 喜歡使用小寫方法。
 
 接下來，我們要C#做一個方法來測試案例：
 
@@ -63,7 +63,7 @@ public class JavaCallbacks : Java.Lang.Object
 }
 ```
 
-`JavaCallbacks`可以是任何要測試的`Java.Lang.Object`類別，只要它是。
+`JavaCallbacks` 可以是任何要測試的類別，只要它是 `Java.Lang.Object`就可以了。
 
 現在，請在您的 .NET 元件上執行 .NET 內嵌，以產生 AAR。 如需詳細資訊，請參閱[消費者入門指南](~/tools/dotnet-embedding/get-started/java/android.md)。
 
@@ -86,10 +86,10 @@ public void abstractCallback() throws Throwable {
 
 所以我們：
 
-- `AbstractClass`以匿名型別在 JAVA 中執行
-- 確定我們的實例從`"Java"` JAVA 返回
-- 確定我們`"Java"`的實例會從C#
-- 已`throws Throwable`新增， C#因為目前已將函式標記為`throws`
+- 以匿名型別在 JAVA 中執行 `AbstractClass`
+- 確定我們的實例會從 JAVA 傳回 `"Java"`
+- 確定我們的實例會從傳回 `"Java"`C#
+- 已新增 `throws Throwable`， C#因為目前已將函式標示為 `throws`
 
 如果我們依原本執行此單元測試，則會失敗並出現如下的錯誤：
 
@@ -97,11 +97,11 @@ public void abstractCallback() throws Throwable {
 System.NotSupportedException: Unable to find Invoker for type 'Android.AbstractClass'. Was it linked away?
 ```
 
-此處遺漏的是一`Invoker`種類型。 這是將呼叫轉送`AbstractClass` C#至 JAVA 的子類別。 如果 JAVA C#物件進入世界，而對等C#類型是 abstract，則 Xamarin 會自動尋找具有C# `Invoker`後置字元的類型，以便在程式碼中C#使用。
+此處遺漏的是 `Invoker` 類型。 這是將呼叫轉送C#至 JAVA 的 `AbstractClass` 子類別。 如果 JAVA C#物件進入世界，而對等C#類型是 abstract，則 Xamarin 會自動尋找具有後置字元C#的類型，`Invoker`在程式碼中C#使用。
 
-Xamarin 會針對 JAVA 系`Invoker`結專案使用此模式，以及其他事項。
+Xamarin 會針對 JAVA 系結專案使用這種 `Invoker` 模式。
 
-以下是我們的`AbstractClassInvoker`執行方式：
+以下是我們的 `AbstractClassInvoker`的執行：
 
 ```csharp
 class AbstractClassInvoker : AbstractClass
@@ -146,13 +146,13 @@ class AbstractClassInvoker : AbstractClass
 
 這裡有很多的進展，我們：
 
-- 新增類別，其中包含子`Invoker`類別的尾碼`AbstractClass`
-- 已`class_ref`新增，以保存類別的子類別的 JNI 參考C#
-- 已`id_gettext`新增以保存 JAVA `getText`方法的 JNI 參考
-- 包含一個`(IntPtr, JniHandleOwnership)`函式
-- 已實`ThresholdClass`作為 Xamarin 的需求，以瞭解其相關詳細資料`ThresholdType``Invoker`
-- `GetText`需要使用適當的 JNI `getText`簽章查閱 JAVA 方法並呼叫它
-- `Dispose`只需要清除的參考`class_ref`
+- 已新增類別，其後綴 `Invoker` 子類別 `AbstractClass`
+- 已新增 `class_ref`，以保留子類別的 JAVA 類別C#的 JNI 參考
+- 已新增 `id_gettext` 以保存 JAVA `getText` 方法的 JNI 參考
+- 包含 `(IntPtr, JniHandleOwnership)` 的構造函式
+- 實作為 Xamarin 的需求，`ThresholdType` 和 `ThresholdClass` 瞭解 `Invoker` 的詳細資料
+- `GetText` 需要使用適當的 JNI 簽章查閱 JAVA `getText` 方法並加以呼叫
+- `Dispose` 只需要清除 `class_ref` 的參考
 
 加入這個類別並產生新的 AAR 之後，我們的單元測試就會通過。 如您所見，這種回呼模式並不*理想*，但雖可行。
 
@@ -160,7 +160,7 @@ class AbstractClassInvoker : AbstractClass
 
 ## <a name="interfaces"></a>介面
 
-介面與抽象類別別非常類似，但有一個詳細資料：Xamarin 不會為它們產生 JAVA。 這是因為在 .NET 內嵌之前，JAVA 會執行C#介面的情況並不多。
+介面與抽象類別別非常類似，但有一個詳細資料： Xamarin。 Android 不會為它們產生 JAVA。 這是因為在 .NET 內嵌之前，JAVA 會執行C#介面的情況並不多。
 
 假設我們有下列C#介面：
 
@@ -173,7 +173,7 @@ public interface IJavaCallback : IJavaObject
 }
 ```
 
-`IJavaObject`向 .net 內嵌發出信號，表示這是 Xamarin 的 Android 介面，否則這與`abstract`類別完全相同。
+`IJavaObject` 通知 .NET 內嵌，這是一種 Xamarin 的 Android 介面，否則這與 `abstract` 類別完全相同。
 
 因為 Xamarin 目前不會產生此介面的 JAVA 程式碼，請將下列 JAVA 新增至您C#的專案：
 
@@ -185,9 +185,9 @@ public interface IJavaCallback {
 }
 ```
 
-您可以將檔案放在任何位置，但請務必將其組建動作`AndroidJavaSource`設為。 這會指示 .NET 內嵌將它複製到適當的目錄，以編譯成您的 AAR 檔案。
+您可以將檔案放在任何位置，但請務必將其組建動作設定為 `AndroidJavaSource`。 這會指示 .NET 內嵌將它複製到適當的目錄，以編譯成您的 AAR 檔案。
 
-接下來， `Invoker`這會是完全相同的執行方式：
+接下來，`Invoker` 的執行會相當相同：
 
 ```csharp
 class IJavaCallbackInvoker : Java.Lang.Object, IJavaCallback
@@ -250,7 +250,7 @@ public void interfaceCallback() {
 
 ## <a name="virtual-methods"></a>虛擬方法
 
-`virtual`在 JAVA 中覆寫是可行的，但不是絕佳的體驗。
+在 JAVA 中覆寫 `virtual` 是可行的，但並不是絕佳的體驗。
 
 假設您有下列C#類別：
 
@@ -267,26 +267,26 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-如果您遵循上述`abstract`的類別範例，則除了一個詳細資料之外，它還可以使用：_Xamarin 不會查閱`Invoker`_ 。
+如果您遵循上述的 `abstract` 類別範例，則除了一個詳細資料之外，它仍可正常執行： _Xamarin 不會查閱 `Invoker`_ 。
 
-若要修正此問題， C#請將`abstract`類別修改為：
+若要修正此問題， C#請將類別修改為`abstract`：
 
 ```csharp
 public abstract class VirtualClass : Java.Lang.Object
 ```
 
-這不是理想的做法，但可讓此案例運作。 Xamarin 會挑選`VirtualClassInvoker` ，而 JAVA 可以在方法上使用`@Override` 。
+這不是理想的做法，但可讓此案例運作。 Xamarin 會挑選 `VirtualClassInvoker`，而 JAVA 可以在方法上使用 `@Override`。
 
 ## <a name="callbacks-in-the-future"></a>未來的回呼
 
 我們可以做幾件事來改善這些案例：
 
-1. `throws Throwable`在C#此[PR](https://github.com/xamarin/java.interop/pull/170)上已修正 on 的函式。
+1. 在此C# [PR](https://github.com/xamarin/java.interop/pull/170)上修正了對函式的 `throws Throwable`。
 1. 將 JAVA 產生器設為 Xamarin. Android 支援介面。
-    - 這不需要新增具有 build 動作的`AndroidJavaSource`JAVA 原始程式檔。
-1. 提供一個方法，讓 Xamarin Android 載入`Invoker`虛擬類別的。
-    - 這不需要在我們`virtual`的範例`abstract`中標記類別。
-1. 自動`Invoker`產生 .net 內嵌的類別
+    - 這不需要新增具有 `AndroidJavaSource`之組建動作的 JAVA 原始程式檔。
+1. 建立 Xamarin 的方法，以載入虛擬類別的 `Invoker`。
+    - 這不需要在我們的 `virtual` 範例 `abstract`中標記類別。
+1. 自動產生適用于 .NET 內嵌的 `Invoker` 類別
     - 這會變得很複雜，但雖可行。 Xamarin 已針對 JAVA 系結專案執行類似于這項操作。
 
 這裡有很多工作可以完成，但是 .NET 內嵌的增強功能也是可行的。

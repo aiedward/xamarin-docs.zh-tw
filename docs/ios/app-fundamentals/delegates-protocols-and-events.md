@@ -4,15 +4,15 @@ description: 本檔說明如何在 Xamarin 中使用事件、通訊協定和委�
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/17/2017
-ms.openlocfilehash: d42263733c7fa793713738be4b389eaa4850f38b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b63d5dcd8ac1a82c1f120cc5a690985557f7e68f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68649364"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004401"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Xamarin 中的事件、通訊協定和委派
 
@@ -52,7 +52,7 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-上述程式碼會在 UIViewController 的 `ViewDidLoad` 方法中進行佈線。 @No__t_0 變數會參考一個按鈕，您可以在 iOS 設計工具中或透過程式碼來新增。 下圖顯示已在 iOS 設計工具中新增的按鈕：
+上述程式碼會在 UIViewController 的 `ViewDidLoad` 方法中進行佈線。 `aButton` 變數會參考一個按鈕，您可以在 iOS 設計工具中或透過程式碼來新增。 下圖顯示已在 iOS 設計工具中新增的按鈕：
 
 [![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "A button added in iOS Designer")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
@@ -225,9 +225,9 @@ var sampleCoordinate =
 map.AddAnnotation (new SampleMapAnnotation (sampleCoordinate));
 ```
 
-這裡的 map 變數是 `MKMapView` 的實例，也就是代表地圖本身的類別。 @No__t_0 將使用衍生自 `SampleMapAnnotation` 實例的 `Coordinate` 資料，將注釋視圖放在地圖上。
+這裡的 map 變數是 `MKMapView` 的實例，也就是代表地圖本身的類別。 `MKMapView` 將使用衍生自 `SampleMapAnnotation` 實例的 `Coordinate` 資料，將注釋視圖放在地圖上。
 
-@No__t_0 通訊協定會在任何執行的物件之間提供一組已知的功能，而不需要取用者（在此案例中為對應）需要知道如何執行的詳細資料。 這可簡化將各種可能的注釋新增至地圖的工作。
+`MKAnnotation` 通訊協定會在任何執行的物件之間提供一組已知的功能，而不需要取用者（在此案例中為對應）需要知道如何執行的詳細資料。 這可簡化將各種可能的注釋新增至地圖的工作。
 
 ### <a name="protocols-deep-dive"></a>通訊協定深入探討
 
@@ -272,7 +272,7 @@ iOS 會使用目標-C 委派來執行委派模式，其中一個物件會將工�
 
 支援委派的類別會藉由公開委派屬性來執行此動作，其中會指派執行委派的類別。 您為委派所執行的方法將取決於特定委派所採用的通訊協定。 針對 `UITableView` 方法，您會針對 `UIAccelerometer` 方法來執行 `UITableViewDelegate` 通訊協定，然後針對您想要公開委派的 iOS 中的任何其他類別，執行 `UIAccelerometerDelegate` 等等。
 
-我們在先前的範例中看到的 `MKMapView` 類別也有一個稱為 Delegate 的屬性，它會在發生各種事件之後呼叫。 @No__t_0 的委派屬於 `MKMapViewDelegate` 類型。
+我們在先前的範例中看到的 `MKMapView` 類別也有一個稱為 Delegate 的屬性，它會在發生各種事件之後呼叫。 `MKMapView` 的委派屬於 `MKMapViewDelegate`類型。
 在範例中，您很快就會用到它來回應批註，但首先讓我們討論強式和弱式委派之間的差異。
 
 ### <a name="strong-delegates-vs-weak-delegates"></a>強式委派與弱式委派的比較
@@ -282,7 +282,7 @@ iOS 會使用目標-C 委派來執行委派模式，其中一個物件會將工�
 
 ### <a name="example-using-a-delegate-with-xamarinios"></a>搭配使用委派與 Xamarin 的範例
 
-若要執行程式碼來回應使用者在我們的範例中按下注釋，我們可以將 `MKMapViewDelegate` 子類別化，並將實例指派給 `MKMapView` 的 `Delegate` 屬性。 @No__t_0 通訊協定只包含選擇性方法。
+若要執行程式碼來回應使用者在我們的範例中按下注釋，我們可以將 `MKMapViewDelegate` 子類別化，並將實例指派給 `MKMapView` 的 `Delegate` 屬性。 `MKMapViewDelegate` 通訊協定只包含選擇性方法。
 因此，所有方法都是在 Xamarin `MKMapViewDelegate` 類別中系結至此通訊協定的虛擬。 當使用者選取注釋時，`MKMapView` 實例會將 `mapView:didSelectAnnotationView:` 訊息傳送至其委派。 若要在 Xamarin 中處理這種情況，我們需要覆寫 MKMapViewDelegate 子類別中的 `DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)` 方法，如下所示：
 
 ```csharp
@@ -361,7 +361,7 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 
 委派用於 iOS 中的回呼，類似于 .NET 使用事件的方式。 為了讓 iOS Api 和其使用目標-C 委派看起來更像 .NET，Xamarin。 iOS 會在 iOS 中使用委派的許多地方公開 .NET 事件。
 
-例如，`MKMapViewDelegate` 回應所選注釋的舊版執行，也可以使用 .NET 事件在 Xamarin. iOS 中執行。 在此情況下，會在 `MKMapView` 中定義事件，並呼叫 `DidSelectAnnotationView`。 它會有 `MKMapViewAnnotationEventsArgs` 類型的 `EventArgs` 子類別。 @No__t_1 的 `View` 屬性會提供批註視圖的參考，您可以在其中繼續進行先前所述的相同執行，如下所示：
+例如，`MKMapViewDelegate` 回應所選注釋的舊版執行，也可以使用 .NET 事件在 Xamarin. iOS 中執行。 在此情況下，會在 `MKMapView` 中定義事件，並呼叫 `DidSelectAnnotationView`。 它會有 `MKMapViewAnnotationEventsArgs` 類型的 `EventArgs` 子類別。 `MKMapViewAnnotationEventsArgs` 的 `View` 屬性會提供批註視圖的參考，您可以在其中繼續進行先前所述的相同執行，如下所示：
 
 ```csharp
 map.DidSelectAnnotationView += (s,e) => {

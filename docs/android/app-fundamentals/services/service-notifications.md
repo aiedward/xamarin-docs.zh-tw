@@ -4,15 +4,15 @@ description: 本指南討論 Android 服務如何使用本機通知來將資訊�
 ms.prod: xamarin
 ms.assetid: 6C06FDE7-6385-40EF-AC7C-8EFB54E29F45
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 5d25604db1f88702f4c24df21b3ebba6c9c2fc95
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b02785863f89ef6a273c52c09f45a99c17cb6242
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754821"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024525"
 ---
 # <a name="service-notifications"></a>服務通知
 
@@ -47,7 +47,7 @@ public class MyService: Service
 
 這個螢幕擷取畫面是顯示通知的範例：
 
-[![狀態列中顯示的通知圖示](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
+[狀態列中顯示![通知圖示](service-notifications-images/01-notification-sml.png)](service-notifications-images/01-notification.png#lightbox)
 
 當使用者從頂端滑下通知畫面時，會顯示完整的通知：
 

@@ -6,12 +6,12 @@ ms.assetid: 18041443-5093-4AF7-8B20-03E00478EF35
 author: conceptdev
 ms.author: crdun
 ms.date: 03/29/2017
-ms.openlocfilehash: 441a3cc19b4246fb2bdea54508142a894af5c051
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 37540053cee03a83582fe19ffb1dcf9e1cf4564c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "67832536"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011735"
 ---
 # <a name="introduction-to-urhosharp"></a>UrhoSharp 簡介
 
@@ -19,7 +19,7 @@ ms.locfileid: "67832536"
 
 UrhoSharp 是適用于 Xamarin 和 .NET 開發人員的強大3D 遊戲引擎。  這與 Apple 的 SceneKit 和 SpriteKit 有相似之處，並包含物理、流覽、網路功能等等，同時仍然跨平臺。
 
-它是 .NET 與[Urho3D](http://urho3d.github.io/)引擎的系結，可讓開發人員使用相同的程式碼基底，撰寫以 Android、IOS、Windows 和 Mac 為目標的跨平臺程式碼，而且可以同時轉譯為 OpenGL 和 Direct3D 系統。
+它是 .NET 與[Urho3D](https://urho3d.github.io/)引擎的系結，可讓開發人員使用相同的程式碼基底，撰寫以 Android、IOS、Windows 和 Mac 為目標的跨平臺程式碼，而且可以同時轉譯為 OpenGL 和 Direct3D 系統。
 
 UrhoSharp 是有許多現成功能的遊戲引擎：
 

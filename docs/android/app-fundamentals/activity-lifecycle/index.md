@@ -1,26 +1,26 @@
 ---
 title: 活動開發週期
-description: 活動是 Android 應用程式的基本組建區塊，而且可以存在於許多不同的狀態。 活動生命週期始於具現化、終止於毀損，而且在期間包括許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動有即將發生的狀態變更並允許它執行程式碼以適應該變更。 此文章會檢查活動的生命週期，並說明為了成為行為良好的可靠應用程式，活動在這些狀態變更中每個狀態變更的責任。
+description: 活動是 Android 應用程式的基本組建區塊，而且可以存在於許多不同的狀態。 活動生命週期從具現化開始，並以銷毀結束，並在之間包含許多狀態。 當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動即將發生的狀態變更，並允許它執行程式碼以適應該變更。 本文將探討活動的生命週期，並說明活動在每個狀態變更期間的責任，使其成為運作正常且可靠的應用程式的一部分。
 ms.prod: xamarin
 ms.assetid: 05B34788-F2D2-4347-B66B-40AFD7B1D167
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/28/2018
-ms.openlocfilehash: 8ebc52936dfdcb6b5262424eba5652de0b8908e0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6e69d21bb734f13d220c042535842538306d16c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755601"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016988"
 ---
 # <a name="activity-lifecycle"></a>活動開發週期
 
-_活動是 Android 應用程式的基本組建區塊，而且可以存在於許多不同的狀態。活動生命週期始於具現化、終止於毀損，而且在期間包括許多狀態。當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動有即將發生的狀態變更並允許它執行程式碼以適應該變更。本文將探討活動的生命週期，並說明活動在每個狀態變更期間的責任，使其成為運作正常且可靠的應用程式的一部分。_
+_活動是 Android 應用程式的基本組建區塊，而且可以存在於許多不同的狀態。活動生命週期從具現化開始，並以銷毀結束，並在之間包含許多狀態。當活動變更狀態時，會呼叫適當的生命週期事件方法，通知活動即將發生的狀態變更，並允許它執行程式碼以適應該變更。本文將探討活動的生命週期，並說明活動在每個狀態變更期間的責任，使其成為運作正常且可靠的應用程式的一部分。_
 
 ## <a name="activity-lifecycle-overview"></a>活動生命週期總覽
 
-活動是 Android 特有的異常程式設計概念。 在傳統的應用程式開發通常有靜態的 main 方法，這會執行，以啟動應用程式。 不過，使用 Android 時，會有不同的專案;Android 應用程式可以透過應用程式內任何已註冊的活動來啟動。 實際上，大部分的應用程式只會有指定為應用程式進入點的特定活動。 不過，如果應用程式當機，或作業系統終止，則 OS 可以嘗試在最後一個開啟的活動或上一個活動堆疊內的其他位置重新開機應用程式。
+活動是 Android 特有的異常程式設計概念。 在傳統應用程式開發中，通常會使用靜態 main 方法來啟動應用程式。 不過，使用 Android 時，會有不同的專案;Android 應用程式可以透過應用程式內任何已註冊的活動來啟動。 實際上，大部分的應用程式只會有指定為應用程式進入點的特定活動。 不過，如果應用程式當機，或作業系統終止，則 OS 可以嘗試在最後一個開啟的活動或上一個活動堆疊內的其他位置重新開機應用程式。
 此外，作業系統可能會在未啟用時暫停活動，如果記憶體不足，則回收它們。 必須謹慎考慮，才能讓應用程式在活動重新開機時，正確還原其狀態，特別是當該活動相依于先前活動的資料時。
 
 活動生命週期會實作為作業系統在整個活動生命週期中呼叫的方法集合。 這些方法可讓開發人員執行必要的功能，以滿足其應用程式的狀態和資源管理需求。
@@ -47,14 +47,14 @@ Android OS 會根據其狀態仲裁活動。 這可協助 Android 識別不再�
 
 這些狀態可以分成4個主要群組，如下所示：
 
-1. 使用中*或正在*執行&ndash;如果活動在前景（也稱為活動堆疊的頂端），則會將它們視為作用中或正在執行。 這在 Android 中被視為最高優先順序的活動，因此只有在極端情況下，作業系統才會終止，例如活動嘗試使用超過裝置上可用的記憶體，因為這可能會導致 UI 變得沒有回應。
+1. 作用中*或*執行中的 &ndash; 活動會視為作用中或執行中（如果它們在前景，也稱為活動堆疊的頂端）。 這在 Android 中被視為最高優先順序的活動，因此只有在極端情況下，作業系統才會終止，例如活動嘗試使用超過裝置上可用的記憶體，因為這可能會導致 UI 變得沒有回應。
 
-1. 已*暫停*&ndash;當裝置進入睡眠狀態，或某個活動仍然可見，但有一項新的非完整大小或透明活動部分隱藏時，活動會被視為已暫停。 已暫停的活動仍在運作中，亦即，它們會維護所有狀態和成員資訊，並繼續附加至視窗管理員。 這會被視為 Android 中第二個最高優先順序的活動，因此，只有在結束此活動時，作業系統才會終止這項活動，以滿足讓作用中/執行中的活動穩定且快速回應所需的資源需求。
+1. 已*暫停*&ndash; 裝置進入睡眠狀態時，或活動仍然可見，但只有新的非完整大小或透明活動會部分隱藏，活動會被視為已暫停。 已暫停的活動仍在運作中，亦即，它們會維護所有狀態和成員資訊，並繼續附加至視窗管理員。 這會被視為 Android 中第二個最高優先順序的活動，因此，只有在結束此活動時，作業系統才會終止這項活動，以滿足讓作用中/執行中的活動穩定且快速回應所需的資源需求。
 
-1. *已停止/背景執行*&ndash;另一個活動所完全遮蔽的活動會被視為已停止或在背景中。
+1. 已*停止/背景執行*&ndash; 由另一個活動遮蔽的活動會被視為已停止或在背景中。
     已停止的活動仍會盡可能地嘗試保留其狀態和成員資訊，但已停止的活動會視為三種狀態的最低優先順序，因此，OS 會先終止處於此狀態的活動，以滿足資源較高優先順序活動的需求。
 
-1. *重新開機*&ndash;在生命週期中，從暫停到停止的活動可能會被 Android 從記憶體移除。 如果使用者流覽回到活動，它必須重新開機、還原到先前儲存的狀態，然後向使用者顯示。
+1. *重新開機*&ndash; 可能會在生命週期中從暫停到停止的活動，由 Android 從記憶體移除。 如果使用者流覽回到活動，它必須重新開機、還原到先前儲存的狀態，然後向使用者顯示。
 
 ### <a name="activity-re-creation-in-response-to-configuration-changes"></a>重新建立活動以回應設定變更
 
@@ -76,13 +76,13 @@ Android SDK 和（依擴充功能），Xamarin. Android framework 提供強大�
 #### <a name="oncreate"></a>OnCreate
 
 [OnCreate](xref:Android.App.Activity.OnCreate*)是建立活動時要呼叫的第一個方法。
-`OnCreate`一律會覆寫，以執行活動可能需要的任何啟動初始化，例如：
+`OnCreate` 一律會覆寫，以執行活動可能需要的任何啟動初始化，例如：
 
 - 建立視圖
 - 初始化變數
 - 將靜態資料系結至清單
 
-`OnCreate`採用[配套](xref:Android.OS.Bundle)參數, 這是在組合不是 null 的情況下, 用來儲存和傳遞狀態資訊和物件之間的物件的字典, 這表示活動正在重新開機, 而且應該從先前的實例還原其狀態。 下列程式碼說明如何從組合中取出值：
+`OnCreate` 採用配套[參數，](xref:Android.OS.Bundle)這是在組合不是 null 的情況下，用來儲存和傳遞狀態資訊的字典，以及活動之間的物件。這表示活動正在重新開機，而且應該從先前的還原其狀態示例. 下列程式碼說明如何從組合中取出值：
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -103,11 +103,11 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-完成`OnCreate`後，Android 會呼叫`OnStart`。
+`OnCreate` 完成之後，Android 會呼叫 `OnStart`。
 
 #### <a name="onstart"></a>OnStart
 
-在完成之後`OnCreate` , 系統一律會呼叫 [OnStart](xref:Android.App.Activity.OnStart)。 活動可能會覆寫這個方法，如果它們需要在活動變成可見之前執行任何特定的工作，例如在活動內重新整理視圖的目前值。 Android 會在`OnResume`此方法之後立即呼叫。
+在 `OnCreate` 完成之後，系統一律會呼叫[OnStart](xref:Android.App.Activity.OnStart) 。 活動可能會覆寫這個方法，如果它們需要在活動變成可見之前執行任何特定的工作，例如在活動內重新整理視圖的目前值。 Android 會在此方法之後立即呼叫 `OnResume`。
 
 #### <a name="onresume"></a>OnResume
 
@@ -134,7 +134,7 @@ public void OnResume()
 }
 ```
 
-`OnResume`很重要，因為在中`OnPause`完成的任何作業都應該在`OnResume`中取消執行，因為它是唯一的生命週期方法，保證會在`OnPause`將活動帶回生命後執行。
+`OnResume` 很重要，因為在 `OnPause` 中完成的任何作業都應該在 `OnResume`中取消，因為這是唯一的生命週期方法，保證會在將活動帶回到生命週期後，`OnPause` 執行。
 
 #### <a name="onpause"></a>OnPause
 
@@ -148,7 +148,7 @@ public void OnResume()
 
 - 取消註冊外部事件處理常式或通知處理常式（也就是系結至服務的相關聯）。 這必須完成，以避免活動記憶體流失。
 
-- 同樣地，如果活動已顯示任何對話或警示，就必須使用`.Dismiss()`方法來清除它們。
+- 同樣地，如果活動已顯示任何對話或警示，就必須使用 `.Dismiss()` 方法進行清除。
 
 例如，下列程式碼片段會放開相機，因為活動無法在暫停時使用它：
 
@@ -166,12 +166,12 @@ public void OnPause()
 }
 ```
 
-有兩種可能的生命週期方法會在之後`OnPause`呼叫：
+`OnPause`之後，將會呼叫兩種可能的生命週期方法：
 
-1. `OnResume`如果活動要傳回前景，將會呼叫。
-1. `OnStop`如果活動放在背景中，將會呼叫。
+1. 如果活動要傳回前景，將會呼叫 `OnResume`。
+1. 如果活動放在背景中，將會呼叫 `OnStop`。
 
-#### <a name="onstop"></a>OnStop
+#### <a name="onstop"></a>O
 
 當使用者不再看到活動時，會呼叫[OnStop](xref:Android.App.Activity.OnStop) 。 當發生下列其中一種情況時，就會發生這種情況：
 
@@ -179,29 +179,29 @@ public void OnPause()
 - 正在將現有的活動帶入前景。
 - 活動已終結。
 
-`OnStop`不一定會在記憶體不足的情況下呼叫，例如當 Android 耗盡資源時，無法正確背景活動。 基於這個理由，最好不要依賴在`OnStop`準備要終結的活動時呼叫。 下一次可能會呼叫的生命週期方法，會是`OnDestroy`活動是否已消失，或`OnRestart`活動是否回到與使用者互動。
+`OnStop` 可能不一定會在記憶體不足的情況下呼叫，例如當 Android 耗盡資源時，無法正確背景活動。 基於這個理由，最好不要依賴在準備要終結的活動時呼叫 `OnStop`。 後續可能會在此情況下呼叫的生命週期方法，會在活動即將消失時 `OnDestroy`，或 `OnRestart` 活動是否回到與使用者互動。
 
 #### <a name="ondestroy"></a>OnDestroy
 
-[OnDestroy](xref:Android.App.Activity.OnDestroy)是在活動實例上呼叫的最後一個方法，它會在它被終結並完全從記憶體移除。 在極端情況下，Android 可能會終止裝載活動的應用程式進程，而不會`OnDestroy`叫用它。 大部分的活動都不會執行這個方法，因為大部分的`OnPause`清除和關閉都是在和`OnStop`方法中完成。 通常會覆寫方法，以清除可能會流失資源的長時間執行資源。`OnDestroy` 其中一個範例可能是在中`OnCreate`啟動的背景執行緒。
+[OnDestroy](xref:Android.App.Activity.OnDestroy)是在活動實例上呼叫的最後一個方法，它會在它被終結並完全從記憶體移除。 在極端情況下，Android 可能會終止裝載活動的應用程式進程，這會導致 `OnDestroy` 不被叫用。 大部分的活動都不會執行此方法，因為大部分的清除和關閉都是在 `OnPause` 和 `OnStop` 方法中完成。 通常會覆寫 `OnDestroy` 方法，以清除可能會流失資源的長時間執行資源。 其中一個範例可能是在 `OnCreate`中啟動的背景執行緒。
 
 在終止活動之後，將不會呼叫任何生命週期方法。
 
 #### <a name="onrestart"></a>OnRestart
 
-[OnRestart](xref:Android.App.Activity.OnRestart)會在您的活動停止後，于其再次啟動之前呼叫。 當使用者在應用程式中的活動上按下 [首頁] 按鈕時，就是一個很好的例子。 發生這種`OnPause`情況`OnStop`時，會呼叫方法，並將活動移至背景，但不會終結。 如果使用者接著使用工作管理員或類似的應用程式來還原應用程式，則 Android 會呼叫`OnRestart`活動的方法。
+[OnRestart](xref:Android.App.Activity.OnRestart)會在您的活動停止後，于其再次啟動之前呼叫。 當使用者在應用程式中的活動上按下 [首頁] 按鈕時，就是一個很好的例子。 發生這種情況時 `OnPause`，然後呼叫 `OnStop` 方法，並將活動移至背景，但不會終結。 如果使用者接著使用工作管理員或類似的應用程式來還原應用程式，Android 會呼叫活動的 `OnRestart` 方法。
 
-在中`OnRestart`，不應執行何種邏輯的一般指導方針。 這是因為`OnStart`不論活動是建立或重新開機，一律會叫用，因此活動所需的任何資源都應該在中`OnStart`初始化，而不`OnRestart`是。
+在 `OnRestart`中，不應執行哪種邏輯的一般指導方針。 這是因為不論活動是建立或重新開機，一律會叫用 `OnStart`，因此活動所需的任何資源都應該在 `OnStart`中初始化，而不是 `OnRestart`。
 
-之後`OnRestart`呼叫的下一個生命週期方法`OnStart`會是。
+`OnRestart` 之後所呼叫的下一個生命週期方法將會 `OnStart`。
 
-### <a name="back-vs-home"></a>回溯與首頁
+### <a name="back-vs-home"></a>上一頁與 Home
 
 許多 Android 裝置都有兩個不同的按鈕： [上一頁] 按鈕和 [Home （首頁）] 按鈕。 您可以在下列 Android 4.0.3 的螢幕擷取畫面中看到這種情況的範例：
 
 [![[上一頁] 和 [首頁] 按鈕](images/image4-sml.png)](images/image4.png#lightbox)
 
-這兩個按鈕之間有些許差異，即使它們的效果與將應用程式放在背景中一樣。 當使用者按一下 [上一步] 按鈕時，他們會告訴 Android 已完成活動。 Android 會摧毀活動。 相反地，當使用者按一下 [首頁] 按鈕時，只會將活動放入&ndash;背景 Android 中，而不會終止活動。
+這兩個按鈕之間有些許差異，即使它們的效果與將應用程式放在背景中一樣。 當使用者按一下 [上一步] 按鈕時，他們會告訴 Android 已完成活動。 Android 會摧毀活動。 相反地，當使用者按一下 [首頁] 按鈕時，活動只會放入背景 &ndash; Android 將不會終止活動。
 
 <a name="Managing_State_Throughout_the_Lifecycle" />
 
@@ -210,7 +210,7 @@ public void OnPause()
 當活動停止或損毀時，系統會提供機會來儲存活動的狀態，以供日後解除凍結。
 這個儲存的狀態稱為實例狀態。 Android 提供三個選項，可在活動生命週期期間儲存實例狀態：
 
-1. 將基本型別儲存在`Dictionary`稱為「[配套](xref:Android.OS.Bundle) 」中, 以供 Android 用來儲存狀態。
+1. 將基本型別儲存在 `Dictionary` 稱為「配套[」，以](xref:Android.OS.Bundle)供 Android 用來儲存狀態。
 
 1. 建立會保存複雜值（例如點陣圖）的自訂類別。 Android 會使用此自訂類別來儲存狀態。
 
@@ -220,14 +220,14 @@ public void OnPause()
 
 ### <a name="bundle-state"></a>配套狀態
 
-儲存實例狀態的主要選項是使用稱為「[組合](xref:Android.OS.Bundle)」的索引鍵/值字典物件。
-回想一下，當建立`OnCreate`了方法，並將組合當做參數傳遞時，可以使用此配套來還原實例狀態。 不建議您針對較複雜的資料使用組合，而不會快速或輕鬆地序列化成索引鍵/值組（例如點陣圖）;而是應該用於簡單的值（例如字串）。
+儲存實例狀態的主要選項是使用稱為「組合[」的索引](xref:Android.OS.Bundle)鍵/值字典物件。
+回想一下，當建立了 `OnCreate` 方法作為參數傳遞的活動時，可以使用此配套來還原實例狀態。 不建議您針對較複雜的資料使用組合，而不會快速或輕鬆地序列化成索引鍵/值組（例如點陣圖）;而是應該用於簡單的值（例如字串）。
 
 活動提供方法來協助儲存和抓取組合中的實例狀態：
 
-- [OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*)&ndash;當活動被終結時，Android 會叫用此方法。 如果活動需要保存任何索引鍵/值的狀態專案，則可以執行此方法。
+- [OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*) &ndash; 在終結活動時，Android 會叫用此方法。 如果活動需要保存任何索引鍵/值的狀態專案，則可以執行此方法。
 
-- [OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*)這會在`OnCreate`方法完成後呼叫，並提供另一個機會讓活動在初始化完成之後還原其狀態。 &ndash;
+- [OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*) &ndash; 這會在 `OnCreate` 方法完成後呼叫，並提供另一個機會讓活動在初始化完成之後還原其狀態。
 
 下圖說明如何使用這些方法：
 
@@ -235,7 +235,7 @@ public void OnPause()
 
 #### <a name="onsaveinstancestate"></a>OnSaveInstanceState
 
-當活動停止時，將會呼叫[OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*) 。 它會收到一個配套參數，活動可以在其中儲存其狀態。 當裝置發生設定變更時，活動可以使用傳入的`Bundle`物件，藉由覆寫`OnSaveInstanceState`來保留活動狀態。 例如，請參考下列程式碼：
+當活動停止時，將會呼叫[OnSaveInstanceState](xref:Android.App.Activity.OnSaveInstanceState*) 。 它會收到一個配套參數，活動可以在其中儲存其狀態。 當裝置發生設定變更時，活動可以使用傳入的 `Bundle` 物件，藉由覆寫 `OnSaveInstanceState`來保留活動狀態。 例如，請參考下列程式碼：
 
 ```csharp
 int c;
@@ -264,11 +264,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-當按一下名`incrementCounter`為的按鈕時`c` ，上述程式碼會遞增名為的整數，並將`output`結果顯示在名為的`TextView`中。 發生設定變更時-例如，當裝置旋轉時，上述程式碼將會遺失的值`c` ， `bundle`因為會是`null`，如下圖所示：
+當按一下名為 `incrementCounter` 的按鈕時，上述程式碼會遞增名為 `c` 的整數，並將結果顯示在名為 `output`的 `TextView` 中。 發生設定變更時-例如，當裝置旋轉時，上述程式碼將會遺失 `c` 的值，因為 `bundle` 會 `null`，如下圖所示：
 
-[![顯示未顯示先前的值](images/07-sml.png)](images/07.png#lightbox)
+[![顯示不會顯示先前的值](images/07-sml.png)](images/07.png#lightbox)
 
-為了保留此範例`c`中的值，活動可以覆寫`OnSaveInstanceState`，將值儲存在組合中，如下所示：
+為了保留此範例中 `c` 的值，活動可以覆寫 `OnSaveInstanceState`，將值儲存在配套中，如下所示：
 
 ```csharp
 protected override void OnSaveInstanceState (Bundle outState)
@@ -285,11 +285,11 @@ c = bundle.GetInt ("counter", -1);
 ```
 
 > [!NOTE]
-> 請務必一律呼叫的基底實`OnSaveInstanceState`作為，讓視圖階層的狀態也可以儲存。
+> 請務必一律呼叫 `OnSaveInstanceState` 的基底實作為，讓您也可以儲存視圖階層的狀態。
 
 ##### <a name="view-state"></a>檢視狀態
 
-覆`OnSaveInstanceState`寫是一種適當的機制，可在不同方向變更（例如上述範例中的計數器）儲存活動中的暫時性資料。 不過，的預設執行`OnSaveInstanceState`會負責在每個視圖的 UI 中儲存暫時性資料，只要每個 view 都有指派的識別碼即可。 例如，假設應用程式`EditText`的元素定義在 XML 中，如下所示：
+覆寫 `OnSaveInstanceState` 是一種適當的機制，可在跨方向變更（例如上述範例中的計數器）中儲存活動中的暫時性資料。 不過，`OnSaveInstanceState` 的預設執行會負責在每個視圖的 UI 中儲存暫時性資料，只要每個 view 都有指派的識別碼即可。 例如，假設應用程式在 XML 中定義了 `EditText` 元素，如下所示：
 
 ```xml
 <EditText android:id="@+id/myText"
@@ -297,15 +297,15 @@ c = bundle.GetInt ("counter", -1);
   android:layout_height="wrap_content"/>
 ```
 
-由於控制項具有指派的`id` ，因此當使用者輸入某些資料並旋轉裝置時，仍會顯示資料，如下所示： `EditText`
+由於 `EditText` 控制項已指派 `id`，因此當使用者輸入某些資料並旋轉裝置時，仍會顯示資料，如下所示：
 
-[![資料會以橫向模式保留](images/08-sml.png)](images/08.png#lightbox)
+[以橫向模式保留![資料](images/08-sml.png)](images/08.png#lightbox)
 
 #### <a name="onrestoreinstancestate"></a>OnRestoreInstanceState
 
-[OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*)將會在之後`OnStart`呼叫。 它提供了一個機會，讓您還原先前儲存到`OnSaveInstanceState`配套的任何狀態。 不過，這是提供給`OnCreate`的相同組合。
+`OnStart`之後，將會呼叫[OnRestoreInstanceState](xref:Android.App.Activity.OnRestoreInstanceState*) 。 它提供了一個機會，可以還原先前 `OnSaveInstanceState`期間儲存到配套的任何狀態。 不過，這是提供給 `OnCreate`的相同組合。
 
-下列程式碼會示範如何在中`OnRestoreInstanceState`還原狀態：
+下列程式碼會示範如何在 `OnRestoreInstanceState`中還原狀態：
 
 ```csharp
 protected override void OnRestoreInstanceState(Bundle savedState)
@@ -316,31 +316,31 @@ protected override void OnRestoreInstanceState(Bundle savedState)
 }
 ```
 
-此方法的存在是為了在應還原狀態時提供一些彈性。 有時候在還原實例狀態之前，最好先等候所有初始化完成。 此外，現有活動的子類別可能只會想要從實例狀態還原特定的值。 在許多情況下，不需要覆寫`OnRestoreInstanceState`，因為大部分的活動都可以使用提供給的組合來`OnCreate`還原狀態。
+此方法的存在是為了在應還原狀態時提供一些彈性。 有時候在還原實例狀態之前，最好先等候所有初始化完成。 此外，現有活動的子類別可能只會想要從實例狀態還原特定的值。 在許多情況下，都不需要覆寫 `OnRestoreInstanceState`，因為大部分的活動都可以使用提供給 `OnCreate`的配套來還原狀態。
 
-如需使用`Bundle`儲存狀態的範例，請參閱逐步解說[-儲存活動狀態](saving-state.md)。
+如需使用 `Bundle`儲存狀態的範例，請參閱逐步解說[-儲存活動狀態](saving-state.md)。
 
 #### <a name="bundle-limitations"></a>配套限制
 
-雖然`OnSaveInstanceState`可讓您輕鬆地儲存暫時性資料，但還是有一些限制：
+雖然 `OnSaveInstanceState` 可讓您輕鬆地儲存暫時性資料，但有一些限制：
 
-- 在所有情況下都不會呼叫它。 例如，按**Home**或**Back**鍵結束活動`OnSaveInstanceState`不會導致被呼叫。
+- 在所有情況下都不會呼叫它。 例如，按**Home**或**Back**結束活動不會導致呼叫 `OnSaveInstanceState`。
 
-- 傳入的組合`OnSaveInstanceState`不是針對大型物件（例如影像）所設計。 在大型物件的情況下，最好是從[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)儲存物件，如下所述。
+- 傳遞至 `OnSaveInstanceState` 的組合不是針對大型物件（例如影像）所設計。 在大型物件的情況下，最好是從[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)儲存物件，如下所述。
 
 - 使用配套儲存的資料會序列化，這可能會導致延遲。
 
-套件組合狀態適用于不會使用太多記憶體的簡單資料，而*非設定實例資料*適用于較複雜的資料，或是抓取耗費資源的資料，例如來自 web 服務呼叫或複雜的資料庫查詢。 非設定實例資料會視需要儲存在物件中。 下一節將`OnRetainNonConfigurationInstance`介紹如何透過設定變更來保留更複雜的資料類型。
+套件組合狀態適用于不會使用太多記憶體的簡單資料，而*非設定實例資料*適用于較複雜的資料，或是抓取耗費資源的資料，例如來自 web 服務呼叫或複雜的資料庫查詢。 非設定實例資料會視需要儲存在物件中。 下一節將介紹 `OnRetainNonConfigurationInstance`，以透過設定變更來保留更複雜的資料類型。
 
 ### <a name="persisting-complex-data"></a>保存複雜資料
 
-除了保存配套中的資料之外，Android 也支援藉由覆寫[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)並傳回包含要保存之資料`Java.Lang.Object`的實例來儲存資料。 使用`OnRetainNonConfigurationInstance`來儲存狀態有兩個主要優點：
+除了保存配套中的資料，Android 也支援藉由覆寫[OnRetainNonConfigurationInstance](xref:Android.App.Activity.OnRetainNonConfigurationInstance)來儲存資料，並傳回包含要保存之資料的 `Java.Lang.Object` 實例。 使用 `OnRetainNonConfigurationInstance` 來儲存狀態有兩個主要優點：
 
-- 從`OnRetainNonConfigurationInstance`傳回的物件會對較大且更複雜的資料類型執行良好的處理，因為記憶體會保留此物件。
+- 從 `OnRetainNonConfigurationInstance` 傳回的物件會與較大且更複雜的資料類型搭配執行良好，因為記憶體會保留此物件。
 
-- 只有在需要時，才會呼叫方法。`OnRetainNonConfigurationInstance` 這比使用手動快取更經濟實惠。
+- 只有在需要時，才會呼叫 `OnRetainNonConfigurationInstance` 方法。 這比使用手動快取更經濟實惠。
 
-使用`OnRetainNonConfigurationInstance`適合用來多次抓取資料的情況，例如在 web 服務呼叫中。 例如，請考慮下列搜尋 Twitter 的程式碼：
+使用 `OnRetainNonConfigurationInstance` 適合用來多次抓取資料的情況，例如在 web 服務呼叫中。 例如，請考慮下列搜尋 Twitter 的程式碼：
 
 ```csharp
 public class NonConfigInstanceActivity : ListActivity
@@ -389,9 +389,9 @@ public class NonConfigInstanceActivity : ListActivity
 
 此程式碼會從已格式化為 JSON 的 web 抓取結果、剖析它們，然後在清單中顯示結果，如下列螢幕擷取畫面所示：
 
-[![畫面上顯示的結果](images/06-sml.png)](images/06.png#lightbox)
+[螢幕上顯示的![結果](images/06-sml.png)](images/06.png#lightbox)
 
-發生設定變更時（例如，當裝置旋轉時），程式碼會重複處理。 為了重複使用原先抓取的結果，而不會造成不必要的重複網路呼叫`OnRetainNonconfigurationInstance` ，我們可以使用來儲存結果，如下所示：
+發生設定變更時（例如，當裝置旋轉時），程式碼會重複處理。 為了重複使用原先抓取的結果，而不會造成不必要的重複網路呼叫，我們可以使用 `OnRetainNonconfigurationInstance` 來儲存結果，如下所示：
 
 ```csharp
 public class NonConfigInstanceActivity : ListActivity
@@ -426,7 +426,7 @@ public class NonConfigInstanceActivity : ListActivity
 }
 ```
 
-現在當裝置旋轉時，原始的結果會從`LastNonConfiguartionInstance`屬性中取出。 在此範例中，結果是`string[]`由包含推文的所組成。 因為`OnRetainNonConfigurationInstance`需要`Java.Lang.Object`傳回， `Java.Lang.Object`所以會包裝在子類別的類別中，如下所示： `string[]`
+現在，當裝置旋轉時，會從 [`LastNonConfiguartionInstance`] 屬性中取出原始結果。 在此範例中，結果是由包含推文的 `string[]` 所組成。 由於 `OnRetainNonConfigurationInstance` 需要傳回 `Java.Lang.Object`，因此 `string[]` 會包裝在子類別 `Java.Lang.Object`的類別中，如下所示：
 
 ```csharp
 class TweetListWrapper : Java.Lang.Object
@@ -435,7 +435,7 @@ class TweetListWrapper : Java.Lang.Object
 }
 ```
 
-例如，嘗試使用`TextView`當做從`OnRetainNonConfigurationInstance`傳回的物件將會洩漏活動，如下列程式碼所示：
+例如，嘗試使用 `TextView` 做為從 `OnRetainNonConfigurationInstance` 傳回的物件將會流失活動，如下列程式碼所示：
 
 ```csharp
 TextView _textView;
@@ -465,7 +465,7 @@ public override Java.Lang.Object OnRetainNonConfigurationInstance ()
 }
 ```
 
-在本節中，我們已瞭解如何使用來保留簡單的`Bundle`狀態資料，並使用保存較複雜的`OnRetainNonConfigurationInstance`資料類型。
+在本節中，我們已瞭解如何使用 `Bundle`來保留簡單的狀態資料，並使用 `OnRetainNonConfigurationInstance`保存較複雜的資料類型。
 
 ## <a name="summary"></a>總結
 

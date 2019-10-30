@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 63B6E10C-098D-4C82-9253-07CA62EA85A5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: d5edb5f4e2ce1ca39ba27a1de1a51760ea167e8b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9e36189c771ed0c91a6030fd0ab615ab9af4dd52
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757135"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026708"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪些版本的 Xamarin.Android 新增了 Lollipop 支援？
 
@@ -22,7 +22,7 @@ ms.locfileid: "70757135"
 - [Xamarin. android 4.17](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.17/index.md)已新增 Android L Preview 支援。
 - [Xamarin. android 4.20](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.20/index.md)已新增 Android 棒糖支援。
 
-Xamarin 只會主動支援 Xamarin 工具目前穩定的版本。 較舊版本的工具會以「原樣」提供下列資訊。 如需 Xamarin 版本的最新資訊，請參閱[這裡](http://releases.xamarin.com/)。
+Xamarin 只會主動支援 Xamarin 工具目前穩定的版本。 較舊版本的工具會以「原樣」提供下列資訊。 如需 Xamarin 版本的最新資訊，請參閱[版本](https://docs.microsoft.com/xamarin/whats-new/#product-release-notes)資訊。
 
 ## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>Android L Preview 中的「缺少 API 層級21的 android .jar」
 
@@ -42,12 +42,12 @@ Error 1 Could not find android.jar for API Level 21.
 
 2. 將 android-21 資料夾從 android-21 重新命名為 android-L。 （最棒的是，這只能用來做為暫時的修正程式，而且可能完全無法運作）。
 
-   **%LOCALAPPDATA%\\Android\\android-sdk\\platforms\\android-21**
+   **% LOCALAPPDATA%\\Android\\android-sdk\\平臺\\android-21**
 
 3. 暫時降級回到 Android API 層級 21 "L" preview [1]：
 
-    1. 刪除 **% LOCALAPPDATA\\% android\\android-sdk\\平臺\\android-21** 
-    2. 將 [1] 解壓縮至**C\\：\\Users 使用者\\ \\ \\名稱\\ &lt; &gt;AppData本機\\android android-sdk 平臺**以建立**android-L**資料夾。
+    1. 刪除 android **\\android-sdk\\平臺的% LOCALAPPDATA%\\\\android-21** 
+    2. 將 [1] 解壓縮到**C：\\使用者\\&lt;username&gt;\\AppData\\本機\\android\\android-sdk\\平臺**來建立**android-L**資料夾。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -75,4 +75,4 @@ Error: Could not find android.jar for API Level 21.**
 
 -----
 
-[1] - [https://dl-ssl.google.com/android/repository/android-L_r04.zip](https://dl-ssl.google.com/android/repository/android-L_r04.zip)
+[1]- [https://dl-ssl.google.com/android/repository/android-L_r04.zip](https://dl-ssl.google.com/android/repository/android-L_r04.zip)

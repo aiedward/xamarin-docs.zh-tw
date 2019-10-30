@@ -4,15 +4,15 @@ description: 本指南會探索 Xamarin 和其在較低層級的目標-C 的關�
 ms.prod: xamarin
 ms.assetid: 74D1FF57-4F2A-4646-8669-003DE99671D4
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 2c9bbd663257e937e35e062f03b4aa84813edb27
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 51900adb1dd15675e584671f3b06ad6d7572f47d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287777"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017558"
 ---
 # <a name="xamarinmac-architecture"></a>Xamarin. Mac 架構
 
@@ -62,7 +62,7 @@ Xamarin 應用程式會在 Mono 執行環境中執行，並使用 Xamarin 的編
 
 如先前所述，註冊機構是將 managed 程式碼公開至目標-C 的程式碼。 它會建立一個衍生自 NSObject 的每個 managed 類別清單來執行這項操作：
 
-- 對於未包裝現有目標-c 類別的所有類別，它會建立新的目標 c 類別，其中的目標 c 成員會鏡像擁有`[Export]`屬性的所有 managed 成員。
+- 對於未包裝現有目標 C 類別的所有類別，它會建立新的目標 C 類別，其中的目標 C 成員會將具有 `[Export]` 屬性的所有 managed 成員鏡像。
 - 在每個目標– C 成員的執行中，會自動加入程式碼來呼叫鏡像的 managed 成員。
 
 下列虛擬程式碼顯示如何完成此作業的範例：
@@ -92,7 +92,7 @@ class MyViewController : UIViewController{
 @end
 ```
 
-Managed 程式碼可以包含屬性， `[Register]`以及`[Export]`註冊機構用來知道物件需要公開至目標-C 的屬性。 [Register] 屬性可用來指定所產生之目標 C 類別的名稱，以防預設產生的名稱不適用。 所有衍生自 NSObject 的類別都會自動向目標-C 註冊。 必要的 [Export] 屬性包含字串，這是在產生的目標-C 類別中使用的選取器。
+Managed 程式碼可以包含屬性（`[Register]` 和 `[Export]`），而註冊機構會使用這些屬性來知道物件需要公開至目標-C。 [Register] 屬性可用來指定所產生之目標 C 類別的名稱，以防預設產生的名稱不適用。 所有衍生自 NSObject 的類別都會自動向目標-C 註冊。 必要的 [Export] 屬性包含字串，這是在產生的目標-C 類別中使用的選取器。
 
 Xamarin 中使用兩種類型的註冊機構-動態和靜態：
 
@@ -136,9 +136,9 @@ public interface NSBox {
 }
 ```
 
-在 Xamarin 中呼叫`bmac`的產生器會接受這些定義檔，並使用 .net 工具將它們編譯成暫時的元件。 不過，此暫存元件無法用來呼叫目標-C 程式碼。 然後，產生器會讀取暫存元件， C#並產生可在執行時間使用的程式碼。 例如，如果您將隨機屬性新增至定義 .cs 檔案，它就不會顯示在輸出程式碼中。 產生器並不知道它，因此`bmac`不知道要在暫存元件中尋找它來輸出它。
+在 Xamarin 中稱為 `bmac` 的產生器會採用這些定義檔，並使用 .NET 工具將它們編譯成暫時的元件。 不過，此暫存元件無法用來呼叫目標-C 程式碼。 然後，產生器會讀取暫存元件， C#並產生可在執行時間使用的程式碼。 例如，如果您將隨機屬性新增至定義 .cs 檔案，它就不會顯示在輸出程式碼中。 產生器並不知道它，因此 `bmac` 不知道要在暫存元件中尋找它來輸出它。
 
-建立`mmp`了 Xamarin .dll 之後，封裝程式會將所有元件組合在一起。
+建立了 Xamarin .dll 之後，封裝程式 `mmp`會將所有元件組合在一起。
 
 在高階中，它會執行下列工作來達到此程度：
 
@@ -147,7 +147,7 @@ public interface NSBox {
 - 如果已啟用連結，請執行 managed 連結器，藉由移除未使用的元件來優化您的元件。
 - 建立啟動器應用程式，並在與註冊機構程式碼（如果處於靜態模式）中連結。
 
-然後，這會在使用者組建程式中執行，將使用者程式碼編譯成參考的 Xamarin. Mac 的元件，然後執行`mmp`以使其成為封裝
+然後，這會在使用者組建程式中執行，將使用者程式碼編譯成參考的 Xamarin. Mac 的元件，並執行 `mmp` 使其成為封裝
 
 如需連結器和其使用方式的詳細資訊，請參閱 iOS[連結器](~/ios/deploy-test/linker.md)指南。
 

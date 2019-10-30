@@ -4,15 +4,15 @@ description: Visual Studio 包含 Android SDK 管理員，可用來下載 Androi
 ms.prod: xamarin
 ms.assetid: 9A857F52-2EC1-414F-8010-CEE67B60A4B4
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: 9bdc7b57cee74a91cc3abf69a216ea9913482c94
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.openlocfilehash: 9d8b3e68aa626890fdce5c004928541ece263703
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72273159"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020807"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>設定 Xamarin.Android 的 Android SDK
 
@@ -119,7 +119,7 @@ Android SDK 位置可在 [Android SDKs and Tools] \(Android SDK 與工具\) 畫�
 
 [![選取 Google 的存放庫](android-sdk-images/win/11-google-repo-w157-sml.png)](android-sdk-images/win/11-google-repo-w157.png#lightbox)
 
-選取 Google 存放庫時，先前無法使用的其他套件可能會出現在 [Platforms] \(平台\) 索引標籤中。 (在上方的螢幕擷取畫面中，切換至 Google 存放庫後就新增了 **Android SDK Platform 28**。)請記得使用 Google 存放庫並不受支援，因此不建議在平日的開發中使用。
+選取 Google 存放庫時，先前無法使用的其他套件可能會出現在 [Platforms] \(平台\) 索引標籤中。 （在上面的螢幕擷取畫面中，藉由切換至 Google 存放庫來新增**Android SDK Platform 28** ）。請記住，使用 Google 存放庫並不受支援，因此不建議用於日常開發。
 
 若要切換回支援的平台與工具存放庫，請按一下 Microsoft (Recommended) \(Microsoft (建議)\)。 這會將套件與工具的清單還原至預設選取項目。
 
@@ -209,7 +209,7 @@ Xamarin Android SDK 管理員也需要 Java 開發套件 (會隨 Xamarin.Android
 
 [![選取 Google 的存放庫](android-sdk-images/mac/09-google-repo-m75-sml.png)](android-sdk-images/mac/09-google-repo-m75.png#lightbox)
 
-選取 Google 存放庫時，先前無法使用的其他套件可能會出現在 [Platforms] \(平台\) 索引標籤中。 (在上方的螢幕擷取畫面中，切換至 Google 存放庫後就新增了 **Android SDK Platform 28**。)請記得使用 Google 存放庫並不受支援，因此不建議在平日的開發中使用。
+選取 Google 存放庫時，先前無法使用的其他套件可能會出現在 [Platforms] \(平台\) 索引標籤中。 （在上面的螢幕擷取畫面中，藉由切換至 Google 存放庫來新增**Android SDK Platform 28** ）。請記住，使用 Google 存放庫並不受支援，因此不建議用於日常開發。
 
 若要切換回支援的平台與工具存放庫，請按一下 Microsoft (Recommended) \(Microsoft (建議)\)。 這會將套件與工具的清單還原至預設選取項目。
 

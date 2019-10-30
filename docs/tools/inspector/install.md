@@ -3,15 +3,15 @@ title: Inspector 安裝和需求
 description: 本檔說明如何安裝 Xamarin Inspector，並討論支援的作業系統、Ide 和應用程式平臺。
 ms.prod: xamarin
 ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 1273a51d29d7abcbecb9b19ae42e111db8ccc06c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292307"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029701"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector 安裝和需求
 
@@ -33,7 +33,7 @@ ms.locfileid: "70292307"
 
 ## <a name="requirements"></a>需求
 
-### <a name="supported-operating-systems"></a>支援的作業系統
+### <a name="supported-operating-systems"></a>Supported Operating Systems
 
 - **Mac** -OS X 10.11 或更新版本
 - **Windows** -windows 7 或更新版本（包含 Internet Explorer 11 或更新版本，以及 .net 4.6.1 或更高版本）
@@ -49,7 +49,7 @@ ms.locfileid: "70292307"
 
 ### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
-|應用程式平臺|IDE 支援|注意|
+|應用程式平臺|IDE 支援|備註|
 |--- |--- |--- |
 |Mac|僅 Visual Studio for Mac 中支援|
 |iOS|支援 Visual Studio 2017 和 Visual Studio for Mac| 連結器行為必須設定為 [**不要連結**] （在 [ **iOS 組建**專案] 選項底下） |
@@ -86,10 +86,10 @@ Visual Studio
 
 偵測器用戶端
 
-- Mac`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac： `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
-1.4.x 也提供功能的能力，從主功能表中選取記錄檔中搜尋 (macOS) 或檔案總管 (Windows) 直接：
+1.4. x 也能夠直接從主功能表選取搜尋工具（macOS）或 Explorer （Windows）中的記錄檔：
 
 - **說明 > 顯示記錄檔**
 
@@ -114,8 +114,8 @@ Visual Studio
 
 - 您的 IDE 中所示的裝置名稱
 - 裝置的 OS 版本
-- 面向確認您使用的是 x86 模擬器
-- 面向您所使用的模擬器平臺為何？ Google 模擬器？ Visual Studio Android Emulator 嗎？ Xamarin Android Player？
+- Android：確認您使用的是 x86 模擬器
+- Android：您所使用的模擬器平臺為何？ Google 模擬器？ Visual Studio Android Emulator 嗎？ Xamarin Android Player？
 - 您正在偵測的應用程式是否會在裝置中正確顯示和運作？
 - 裝置是否具有網路連線能力（透過網頁瀏覽器檢查）？
 

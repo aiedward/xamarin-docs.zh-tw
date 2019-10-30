@@ -4,20 +4,20 @@ description: 成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就�
 ms.prod: xamarin
 ms.assetid: 81FCB2ED-687C-40BC-ABF1-FB4303034D01
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: bb8a969a930f2e169d19738ddaafab04a4e8a057
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c65a8d4cf47fdec582b46370b6a8dbc1ddd55a1e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287350"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022789"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自動佈建
 
-_成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您的 iOS 裝置。本指南將探索使用自動化簽署來要求開發憑證和設定檔。_
+_成功安裝 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS 裝置。本指南會探索如何使用自動簽署來要求開發憑證和設定檔。_
 
 ## <a name="requirements"></a>需求
 
@@ -78,7 +78,7 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 依[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述配對 Visual Studio 2019 和 Mac。
+1. 依照[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南所述來配對 Visual Studio 2019 和 Mac。
 
 2. 在**方案總管**中，以滑鼠右鍵按一下專案名稱，然後選取 [屬性]。 接著瀏覽到 [iOS 套件組合簽署] 索引標籤。
 
@@ -138,7 +138,7 @@ _成功安裝 Xamarin.iOS 之後，iOS 開發作業的下一步就是佈建您�
 - [免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
-- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) \(英文\)
+- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
 
 ## <a name="related-video"></a>相關影片
 

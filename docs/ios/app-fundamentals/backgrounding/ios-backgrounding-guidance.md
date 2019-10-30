@@ -1,25 +1,25 @@
 ---
 title: iOS 背景處理指南
-description: 本檔中顯示的這份圖表提供了有關 iOS 的許多背景處理選項應針對特定需求而選擇的指導方針。
+description: This diagrams presented in this document provide guidance about which of iOS's many backgrounding options should be chosen for a specific need.
 ms.prod: xamarin
 ms.assetid: BC629536-F179-4EC2-AD72-8F45081F8EE0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: c9227026f9bbeb69961bd3b15dfde8d359ffafcc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c6beb55eed1502808c7bf91bebec32607a20f1a4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756362"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004752"
 ---
 # <a name="ios-backgrounding-guidance"></a>iOS 背景處理指南
 
-請參閱下圖以選擇 iOS 6 中的背景處理技術：
+Refer to the following diagram to choose a backgrounding technique in iOS 6:
 
- [![](ios-backgrounding-guidance-images/image10.png "在 iOS 6 中選擇背景處理技術")](ios-backgrounding-guidance-images/image10.png#lightbox)
+ [![](ios-backgrounding-guidance-images/image10.png "Choose a backgrounding technique in iOS 6")](ios-backgrounding-guidance-images/image10.png#lightbox)
 
-請參閱下圖以選擇 iOS 7 中的背景處理技術：
+Refer to the following diagram to choose a backgrounding technique in iOS 7:
 
- [![](ios-backgrounding-guidance-images/image10b.png "選擇 iOS 7 中的背景處理技術")](ios-backgrounding-guidance-images/image10b.png#lightbox)
+ [![](ios-backgrounding-guidance-images/image10b.png "Choose a backgrounding technique in iOS 7")](ios-backgrounding-guidance-images/image10b.png#lightbox)

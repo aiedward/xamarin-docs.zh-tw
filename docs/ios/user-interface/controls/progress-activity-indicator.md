@@ -4,15 +4,15 @@ description: 本檔討論如何在 Xamarin 中使用進度和活動指示器。 
 ms.prod: xamarin
 ms.assetid: 7AA887E4-51F7-4867-82C5-A8D2EA48AE07
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: a2197a1ff9c37546fd97eb5a2459764ec05d4412
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 76e1ee54a5e1b729fdcb0b0a2c1f278703b2b4d6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768920"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021963"
 ---
 # <a name="progress-and-activity-indicators-in-xamarinios"></a>Xamarin 中的進度和活動指示器
 
@@ -32,7 +32,7 @@ Apple 對於使用活動指示器有下列建議：
 
 ### <a name="implementing-an-activity-indicator"></a>執行活動指標
 
-活動指標會透過[`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView)類別來執行，以指出`UIActivity`正在進行中。
+活動指標會透過[`UIActivityIndictorView`](xref:UIKit.UIActivityIndicatorView)類別來執行，以表示 `UIActivity` 正在進行中。
 
 ### <a name="activity-indicators-and-storyboards"></a>活動指示器和分鏡腳本
 
@@ -42,19 +42,19 @@ Apple 對於使用活動指示器有下列建議：
 
 ### <a name="managing-activity-indicator-behavior"></a>管理活動指標行為
 
-`StartAnimating()`使用和`StopAnimating()`方法來啟動和停止活動指示器動畫。
+使用 `StartAnimating()` 和 `StopAnimating()` 方法來啟動和停止活動指示器動畫。
 
-將屬性設定為`true` ，讓活動指示器在呼叫之後`StopAnimating()`消失。 `HidesWhenStopped` 根據預設，這`true`會設定為。 您可以透過檢查`IsAnimating`屬性，查看活動指標是否正在執行其旋轉動畫。 
+將 [`HidesWhenStopped`] 屬性設定為 [`true`]，讓活動指示器在呼叫 `StopAnimating()` 之後消失。 根據預設，這會設定為 `true`。 您可以在任何時間點，檢查 [`IsAnimating`] 屬性，查看活動指標是否正在執行旋轉的動畫。 
 
 ### <a name="managing-activity-indicator-appearances"></a>管理活動指示器外觀
 
-具`UIActivityIndicatorViewStyle`現化活動指標時，可以將列舉當做參數傳遞。 您可以使用這個來將視覺化樣式設定為`Gray`、 `White`或`WhiteLarge`，例如：
+當具現化活動指標時，可以將 `UIActivityIndicatorViewStyle` 列舉當做參數傳遞。 您可以使用這個來將視覺化樣式設定為 `Gray`、`White`或 `WhiteLarge`，例如：
 
 ```csharp
 activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 ```
 
-您可以藉`UIActivityIndicatorViewStyle`由`Color`設定屬性來覆寫所提供的色彩。
+您可以藉由設定 `Color` 屬性來覆寫 `UIActivityIndicatorViewStyle` 所提供的色彩。
 
 ## <a name="progress-bar"></a>進度列
 
@@ -67,7 +67,7 @@ Apple 具有下列使用進度列的建議：
 
 ### <a name="implementing-an-progress-bar"></a>執行進度列
 
-進度列是藉由具現化來建立的[`UIProgressView`](xref:UIKit.UIProgressView)
+藉由具現化來建立進度列[`UIProgressView`](xref:UIKit.UIProgressView)
 
 ### <a name="progress-bars-and-storyboards"></a>進度列和分鏡腳本
 
@@ -79,13 +79,13 @@ Apple 具有下列使用進度列的建議：
 
 ### <a name="managing-progress-bar-behavior"></a>管理進度列行為
 
-您可以使用`Progress`屬性，一開始就能設定橫條的進度：
+您可以使用 [`Progress`] 屬性一開始設定橫條的進度：
 
 ```csharp
 ProgressBar.Progress = 0f;
 ```
 
-如果您想要動畫變更，可以`SetProgress`使用方法來調整進度，並傳遞布林值宣告。
+您可以使用 `SetProgress` 方法來調整進度，並傳遞布林值宣告（如果您想要動畫變更的話）。
 
 ```csharp
 ProgressBar.SetProgress(1.0f, true);
@@ -95,7 +95,7 @@ ProgressBar.SetProgress(1.0f, true);
 
 ### <a name="managing-progress-bar-appearance"></a>管理進度列的外觀
 
-類似于活動指標，在`UIProgressViewStyle`具現化進度列時，可以將列舉當做參數來傳遞。
+類似于活動指標，在具現化進度列時，可以將 `UIProgressViewStyle` 列舉當做參數傳遞。
 
 您可以使用下列屬性來調整進度和追蹤影像和色調色彩：
 

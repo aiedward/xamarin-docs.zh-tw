@@ -3,15 +3,15 @@ title: 疑難排解 Xamarin Live Player
 description: 本檔說明 Xamarin Live Player 和可能的修正程式的已知問題。 其中討論連線問題、設定問題等等。
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: 04a377bad42ff680247759036327035d61757b42
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d51241bee5f4ddc06032006071fa8296be37f2fb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290170"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005937"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>疑難排解 Xamarin Live Player
 
@@ -87,7 +87,7 @@ IOS 無法使用 Live Player。
 
 如果您無法透過 Wi-fi 連線到您的裝置，您可以透過下列步驟，嘗試透過設定檔案手動設定您的裝置：
 
-**步驟 1：開啟設定檔**
+**步驟1：開啟設定檔案**
 
 前往您的應用程式資料檔案夾：
 
@@ -96,23 +96,23 @@ IOS 無法使用 Live Player。
 
 在此資料夾中，您會發現 PlayerDeviceList 不存在，您必須建立一個 **.xml** 。
 
-**步驟 2：取得 IP 位址**
+**步驟2：取得 IP 位址**
 
 在 Xamarin Live Player 應用程式中，移至 [**關於 > 連線測試] > [啟動連線測試**]。
 
 記下 IP 位址，您將需要在設定裝置時所列出的 IP 位址。
 
-**步驟 3：取得配對程式碼**
+**步驟3：取得配對程式碼**
 
 在 Xamarin Live Player 再按**一次**[**配對**] 或 [配對]，然後**手動按 enter**鍵。 將會顯示數值代碼，您必須更新設定檔。
 
-**步驟 4：產生 GUID**
+**步驟4：產生 GUID**
 
-移至： https://www.guidgenerator.com/online-guid-generator.aspx 並產生新的 guid，並確定在大寫。
+移至： https://www.guidgenerator.com/online-guid-generator.aspx 並產生新的 guid，並確定已開啟大寫的大小寫。
 
-**步驟 5：設定裝置**
+**步驟5：設定裝置**
 
-在編輯器中開啟**PlayerDeviceList** ，例如 Visual Studio 或 Visual Studio Code。 您需要在此檔案中手動設定您的裝置。 根據預設，檔案應該包含下列空`Devices`的 XML 元素：
+在編輯器中開啟**PlayerDeviceList** ，例如 Visual Studio 或 Visual Studio Code。 您需要在此檔案中手動設定您的裝置。 根據預設，檔案應該包含下列空的 `Devices` XML 元素：
 
 ```xml
 <DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -154,7 +154,7 @@ IOS 無法使用 Live Player。
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>「MainActivity.cs：' Resource. Layout ' 不包含 ' Main ' 的定義
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs： ' 資源。版面配置 ' 不包含 ' Main ' 的定義
 
 在 AXML 檔中定義了使用者介面的 Android 專案，就會發生此錯誤。
 Xamarin Live Player 目前不支援 AXML 檔案。

@@ -4,15 +4,15 @@ description: 本文描述如何設定 Visual Studio 2019 for Xamarin.iOS 開發 
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: b3910bd096f2a8dd301a9ba6e200028d3121c8df
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279230"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022515"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>設定 Visual Studio for iOS 開發
 
@@ -24,7 +24,7 @@ Visual Studio 2019 或 Visual Studio 2017 必須使用在 Mac 組建主機上安
 
 - 如果您使用 Visual Studio 2019 或 Visual Studio 2017，請選取 Visual Studio for Mac 中的**穩定**更新通道。
 
-- 如果您使用 Visual Studio 2019 Preview，請選取 Visual Studio for Mac 中的 **Alpha** 更新通道。
+- 如果您使用 Visual Studio 2019 Preview，請選取 Visual Studio for Mac 中的 [Alpha] 更新通道。
 
 > [!NOTE]
 > 從 [Visual Studio 2017 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 開始，Visual Studio 2017 會自動偵測 Mac 組建主機是否使用與 Windows 相同的 Xamarin.iOS 版本。 如果版本不符，則 Visual Studio 2017 會提供以在 Mac 組建主機上遠端安裝正確的版本。 如需詳細資訊，請參閱[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南的[自動 Mac 佈建](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)小節。
@@ -54,8 +54,8 @@ Visual Studio 2019 或 Visual Studio 2017 必須使用在 Mac 組建主機上安
 - 選擇 [新增或移除按鈕] 
 - 確定已核取 [方案平台] 項目：
 
-![啟用 [方案平台] 下拉式功能表](config-options-images/solution-platforms-enable.png "啟用 [方案平台] 下拉式功能表")
+![啟用 [方案平臺] 下拉式功能表](config-options-images/solution-platforms-enable.png "啟用 [方案平臺] 下拉式功能表")
 
 開啟 iOS 專案時，[標準] 和 [iOS] 工具列現在應該類似下列螢幕擷取畫面：
 
-![[標準] 和 [iOS] 工具列](config-options-images/toolbars.png "[標準] 和 [iOS] 工具列")
+![標準和 iOS 工具列](config-options-images/toolbars.png "標準和 iOS 工具列")

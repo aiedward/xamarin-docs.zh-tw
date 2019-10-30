@@ -3,15 +3,15 @@ title: 目標 Sharpie 功能
 description: 本檔會連結至有助於描述目標 Sharpie 的各種指南、如何使用它，以及它所產生的輸出。
 ms.prod: xamarin
 ms.assetid: 9A17A2C6-AFFD-41E2-BE9B-9BC1AA57E1E1
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/15/2016
-ms.openlocfilehash: dfbfd443b06518bccbf3b71fcc27acac0bca7481
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40f73a3f069c762266704d710080c324aa731ecf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279089"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016180"
 ---
 # <a name="objective-sharpie-features"></a>目標 Sharpie 功能
 
@@ -24,8 +24,8 @@ ms.locfileid: "70279089"
 ## <a name="native-frameworksnative-frameworksmd"></a>[**原生架構**](native-frameworks.md)
 
 某些程式庫會以架構的形式散發，而不是做為來源。
-目標 Sharpie 可讓您搭配`-framework`選項來使用這些程式庫。
+目標 Sharpie 可讓您將這些程式庫與 `-framework` 選項搭配使用。
 
-## <a name="verifyverifymd"></a>[**Verify**](verify.md)
+## <a name="verifyverifymd"></a>[**檢驗**](verify.md)
 
-目標 Sharpie 新增`Verify`屬性，以通知您需要手動檢查並更新產生的系結。 
+目標 Sharpie 新增 `Verify` 屬性，以通知您需要手動檢查並更新產生的系結。 

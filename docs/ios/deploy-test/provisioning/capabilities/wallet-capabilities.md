@@ -4,19 +4,19 @@ description: 為應用程式新增功能通常需要額外的佈建設定。 本
 ms.prod: xamarin
 ms.assetid: BD9475E6-F586-488C-93D4-8A2A1629B99B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 1844136bb62930341cf00ec871fdd2ff8ff8fe1f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 658184203c81079af9b4946c4da18dfb98381b0f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762733"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028545"
 ---
 # <a name="wallet-capabilities-in-xamarinios"></a>Xamarin.iOS 的電子錢包功能
 
-_為應用程式新增功能通常需要額外的佈建設定。本指南說明「電子錢包」功能所需的設定。_
+_將功能新增至應用程式通常需要額外的布建設定。本指南說明「錢包」功能所需的設定。_
 
 「電子錢包」是一個應用程式，可儲存和顯示條碼及其他可讓使用者從其裝置顯示票證、登機證和優待券的內容。 此資訊儲存在「票卡」上。 例如，登機證或單一票證會是單一票卡。 
 

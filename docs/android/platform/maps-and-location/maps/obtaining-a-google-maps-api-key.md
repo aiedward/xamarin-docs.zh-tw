@@ -4,15 +4,15 @@ description: 如何取得 Google Maps API 金鑰，以將地圖功能新增至�
 ms.prod: xamarin
 ms.assetid: D5969C57-3444-465E-D6FF-249AEE62E127
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 3868b2a35894cdcd7a11c626268307338744ecb4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: bf0a099546b2d5610a639cbf9af4c7676d10bef9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250056"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020054"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>取得 Google Maps API 金鑰
 
@@ -35,11 +35,11 @@ ms.locfileid: "71250056"
 
 根據預設，您可以在下列位置找到用來簽署 Xamarin. Android 應用程式之 debug 版本的金鑰儲存區：
 
-**C：\\Users\\[USERNAME]\\AppData\\本機\\XamarinMono\\for Android\\debug. 金鑰儲存區**
+**C：\\使用者\\[USERNAME]\\AppData\\本機\\Xamarin\\Mono （適用于 Android）\\debug. 金鑰儲存區**
 
 您可以從 JDK 執行 `keytool` 命令來取得金鑰儲存區的相關資訊。 這項工具通常會在 JAVA bin 目錄中找到：
 
-**C：\\Program Files （x86）\\JAVA\\jdk [VERSION]\\bin\\keytool .exe**
+**C：\\Program Files （x86）\\JAVA\\jdk [VERSION]\\bin\\keytool**
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -49,7 +49,7 @@ ms.locfileid: "71250056"
 
 您可以從 JDK 執行 `keytool` 命令來取得金鑰儲存區的相關資訊。 這項工具通常會在 JAVA bin 目錄中找到：
 
-**/System/Library/Java/JavaVirtualMachines/[VERSION].jdk/Contents/Home/bin/keytool**
+**/System/Library/JAVA/JAVAVirtualMachines/[VERSION] jdk/內容/首頁/bin/keytool**
 
 -----
 
@@ -80,7 +80,7 @@ keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ And
 ### <a name="production-keys"></a>生產金鑰
 
 將應用程式部署到 Google Play 時，必須[使用私密金鑰進行簽署](~/android/deploy-test/signing/index.md)。
-`keytool`必須以私密金鑰詳細資料執行，並使用產生的 sha-1 指紋來建立生產的 Google Maps API 金鑰。 請記得在部署之前，使用正確的 Google Maps API 金鑰來更新**androidmanifest.xml。**
+`keytool` 必須以私密金鑰詳細資料執行，而產生的 SHA-1 指紋會用來建立生產的 Google Maps API 金鑰。 請記得在部署之前，使用正確的 Google Maps API 金鑰來更新**androidmanifest.xml。**
 
 ### <a name="keytool-output"></a>Keytool 輸出
 
@@ -119,7 +119,7 @@ Certificate fingerprints:
 
 3. 一分鐘之後，即會建立專案，並將您帶到專案的 [**儀表板**] 頁面。 從該處按一下 [**啟用 API 和服務**]：
 
-   [![在 [程式庫] 區段中按一下 [Google Maps Android API]](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
+   [在 [程式庫] 區段中![按一下 [Google Maps Android API]](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
 4. 在 [ **API 程式庫**] 頁面中，按一下 [**適用于 ANDROID 的 Maps SDK**]。 在下一個頁面上，按一下 [**啟用**] 以開啟此專案的服務：
 
@@ -133,7 +133,7 @@ Certificate fingerprints:
 
 1. 在顯示的 [ **MAPS SDK For Android** ] 頁面中（在上一個步驟中按一下 [**啟用**] 之後），移至 [**認證**] 索引標籤，然後按一下 [**建立認證**] 按鈕：
 
-   [![適用于 Android 認證的 Maps SDK 訊息](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [適用于 Android 認證的![Maps SDK 訊息](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. 按一下 [ **API 金鑰**]：
 
@@ -141,7 +141,7 @@ Certificate fingerprints:
 
 3. 按一下此按鈕之後，就會產生 API 金鑰。 接下來必須限制此金鑰，讓您的應用程式只能使用此金鑰來呼叫 Api。 按一下 [**限制金鑰**]：
 
-   [![按一下 [認證] 頁面上的限制的索引鍵](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
+   [![按一下 [認證] 頁面上的 [限制金鑰]](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs-sml.png)](obtaining-a-google-maps-api-key-images/07-generate-api-key-vs.png#lightbox)
 
 4. 將 [**名稱**] 欄位從**API 金鑰 1**變更為可協助您記住金鑰用途的名稱（在此範例中使用**XamarinMapsDemoKey** ）。 接下來，按一下 [ **Android 應用程式**] 選項按鈕：
 
@@ -149,19 +149,19 @@ Certificate fingerprints:
 
 5. 若要新增 SHA-1 指紋，請按一下 [ **+ 新增套件名稱和指紋**]：
 
-   [![按一下 [新增套件名稱和指紋]](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
+   [![按一下 [新增套件名稱] 和 [指紋]](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
-6. 輸入應用程式的套件名稱，並輸入 sha-1 憑證指紋（ `keytool`如本指南稍早所述，透過取得）。 在下列範例中， `XamarinMapsDemo`會輸入的套件名稱，後面接著從**debug. 金鑰**儲存區取得的 sha-1 憑證指紋：
+6. 輸入您的應用程式的套件名稱，並輸入 SHA-1 憑證指紋（透過 `keytool` 取得，如本指南稍早所述）。 在下列範例中，會輸入 `XamarinMapsDemo` 的套件名稱，後面接著從**debug. 金鑰**儲存區取得的 sha-1 憑證指紋：
 
-   [![輸入的套件名稱為 .com。](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
+   [輸入的![套件名稱為 .com。](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
-7. 請注意，為了讓您存取 Google 地圖的 APK，您必須包含 sha-1 指紋和封裝名稱的每個金鑰儲存區 （偵錯和發行），您用來簽署您的 APK。 比方說，如果您使用一部電腦進行偵錯和產生發行 APK 的另一部電腦時，您應該包含 sha-1 憑證指紋，從第一部電腦的偵錯金鑰儲存區和從發行金鑰儲存區的 sha-1 憑證指紋第二部電腦中。 按一下 [ **+ 新增套件名稱和指紋**]，以新增另一個指紋和套件名稱，如下列範例所示：
+7. 請注意，為了讓您的 APK 存取 Google Maps，您必須針對用來簽署 APK 的每個金鑰儲存區（debug 和 release）包含 SHA-1 指紋和套件名稱。 例如，如果您使用一部電腦進行 debug，而另一部電腦用於產生發行 APK，您應該包含第一部電腦的 debug 金鑰儲存區中的 SHA-1 憑證指紋，以及來自的版本金鑰儲存區的 SHA-1 憑證指紋第二部電腦。 按一下 [ **+ 新增套件名稱和指紋**]，以新增另一個指紋和套件名稱，如下列範例所示：
 
-   [![新增另一個指紋會建立另一個 SHA-1 憑證](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
+   [新增另一個指紋![建立另一個 SHA-1 憑證](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
 8. 按一下 [儲存] 按鈕儲存您的變更。 接下來，您會回到 API 金鑰清單。 如果您稍早建立了其他 API 金鑰，它們也會列在此處。 在此範例中，只會列出一個 API 金鑰（在先前步驟中建立的）：
 
-   [![XamarinMapsDemoKey 會顯示在 API 金鑰清單](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
+   [[API 金鑰] 清單中會顯示![XamarinMapsDemoKey](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
 ## <a name="connect-the-project-to-a-billable-account"></a>將專案連接到可計費帳戶
 
@@ -177,7 +177,7 @@ Certificate fingerprints:
 
 ## <a name="adding-the-key-to-your-project"></a>將金鑰新增至您的專案
 
-最後，將此 API 金鑰新增至您的 Xamarin Android 應用程式的**androidmanifest.xml**檔案。 在下列範例中， `YOUR_API_KEY`會取代為在先前步驟中產生的 API 金鑰：
+最後，將此 API 金鑰新增至您的 Xamarin Android 應用程式的**androidmanifest.xml**檔案。 在下列範例中，會將 `YOUR_API_KEY` 取代為在先前步驟中產生的 API 金鑰：
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -196,4 +196,4 @@ Certificate fingerprints:
 
 - [Google Api 主控台](https://code.google.com/apis/console/)
 - [Google Maps API 金鑰](https://developers.google.com/maps/documentation/android/start#the_google_maps_api_key)
-- [keytool](http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html.)
+- [keytool](https://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html.)

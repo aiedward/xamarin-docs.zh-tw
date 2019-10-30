@@ -4,15 +4,15 @@ description: 定義您的 Xamarin Android 應用程式的視覺化結構
 ms.prod: xamarin
 ms.assetid: 2BA72B0E-230D-4F98-B4D5-4EFB0D479789
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/18/2017
-ms.openlocfilehash: 60752760415bd416d339cc2a3729075b4fca0d32
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f15aeff8590cf6d82168fd3e39ba6f78d649d2ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764468"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028962"
 ---
 # <a name="xamarinandroid-layouts"></a>Xamarin. Android 版面配置
 
@@ -34,7 +34,7 @@ ms.locfileid: "70764468"
 
     ![範例 Recycler 視圖](images/recycler-view.png)
 
-- [ListView](~/android/user-interface/layouts/list-view/index.md)是建立可滾動專案清單的視圖群組。 清單專案會使用清單介面卡自動插入清單中。 `ListView`是 Android 應用程式的重要 UI 元件，因為它是從功能表選項的簡短清單中的任何位置使用，到長清單的連絡人或網際網路我的最愛。 它提供了一種簡單的方式來呈現資料列的滾動清單，您可以使用內建樣式或廣泛自訂來進行格式化。 ListView 實例需要介面卡以資料列視圖中包含的資料摘要。
+- [ListView](~/android/user-interface/layouts/list-view/index.md)是建立可滾動專案清單的視圖群組。 清單專案會使用清單介面卡自動插入清單中。 `ListView` 是 Android 應用程式的重要 UI 元件，因為它是從功能表選項的簡短清單中的任何地方使用，到長清單的連絡人或網際網路我的最愛。 它提供了一種簡單的方式來呈現資料列的滾動清單，您可以使用內建樣式或廣泛自訂來進行格式化。 ListView 實例需要介面卡以資料列視圖中包含的資料摘要。
 
     ![範例清單視圖](images/list-view.png)
 

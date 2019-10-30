@@ -4,15 +4,15 @@ description: 本檔說明 Xamarin 對搜尋工具、共用和今日延伸模組�
 ms.prod: xamarin
 ms.assetid: 4148F1BE-DFA0-46B6-9FCD-425A6541F510
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2129281f389c440d9ae746c4b9b06c4ddb32d1dc
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 9a9dbb63b78b00a9bcac9d7833530da02890afc6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770032"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017304"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 延伸模組支援
 
@@ -39,26 +39,26 @@ ms.locfileid: "70770032"
 在 Xamarin. Mac 中使用擴充功能時，下列秘訣會很有説明：
 
 - 因為 Xamarin 目前不支援調試延伸模組，所以調試經驗主要取決於執行和 `printf` like 語句。 不過，延伸模組會在沙箱進程中執行，因此 `Console.WriteLine` 不會像在其他 Xamarin. Mac 應用程式中一樣。 直接叫用[`NSLog`](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)會將調試訊息輸出至系統記錄檔。
-- 任何未攔截的例外狀況都會損毀延伸模組進程，在**系統記錄**檔中只提供少量有用的資訊。 在重新擲回之前 `NSLog` 的 `try/catch` （例外狀況）區塊中，將麻煩的程式碼包裝起來可能會很有用。
-- 您可以從 [**應用程式**] 底下的**主控台**應用程式存取 [**系統記錄**檔]  > **公用**程式：
+- 任何未攔截的例外狀況都會損毀延伸模組進程，在**系統記錄**檔中只提供少量有用的資訊。 Wrapping troublesome code in a `try/catch` (Exception) block that `NSLog`’s before re-throwing may be useful.
+- The **System Log** can be accessed from the **Console** app under **Applications** > **Utilities**:
 
     [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
-- 如上所述，執行延伸模組主機應用程式會向系統註冊該擴充功能。 刪除已取消註冊的應用程式套件組合。 
-- 如果已註冊應用程式延伸模組的「偏離」版本，請使用下列命令來尋找它們（以予以刪除）： `plugin kit -mv`
+- As noted above, running the extension host application will register it with the system. Deleting the application bundle with unregister it. 
+- If “stray” versions of an app's extensions are registered, use the following command to locate them (so they can be deleted): `plugin kit -mv`
 
 <a name="Walkthrough-and-Sample-App" />
 
-## <a name="walkthrough-and-sample-app"></a>逐步解說和範例應用程式
+## <a name="walkthrough-and-sample-app"></a>Walkthrough and Sample App
 
-由於開發人員會使用與 Xamarin 副檔名相同的方式來建立和使用 Xamarin 副檔名，請參閱我們的[擴充功能簡介](~/ios/platform/extensions.md)檔以取得詳細資料。
+Since the developer will create and work with Xamarin.Mac extensions in the same way as Xamarin.iOS extensions, please refer to our [Introduction to Extensions](~/ios/platform/extensions.md) documentation for more details.
 
-您可以在[這裡](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)找到範例 Xamarin. Mac 專案，其中包含每個擴充類型的小型、可運作範例。
+An example Xamarin.Mac project containing small, working samples of each extension type can be found [here](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples).
 
 <a name="Summary" />
 
 ## <a name="summary"></a>總結
 
-本文已快速探討如何在 Xamarin 2.10 版（及更新版本）應用程式中使用擴充功能。
+This article has taken a quick look at working with extensions in a Xamarin.Mac version 2.10 (and greater) app.
 
 ## <a name="related-links"></a>相關連結
 

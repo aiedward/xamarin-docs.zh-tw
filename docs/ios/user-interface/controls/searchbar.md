@@ -4,15 +4,15 @@ description: 本檔說明如何在 Xamarin 中使用搜尋列。 它討論如何
 ms.prod: xamarin
 ms.assetid: 22A8249A-19C6-4734-8331-E49FE3170771
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 36e339139a0a7f853a770fdb188b5f03ee93f7ee
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 8b129e0e70bf3ded787094d1b1f740e73a8cbca1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70283351"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021973"
 ---
 # <a name="search-bars-in-xamarinios"></a>Xamarin 中的搜尋列
 
@@ -88,7 +88,7 @@ searchBar.SearchButtonClicked += (sender, e) => {
   - 顯示搜尋結果/書簽按鈕–在搜尋列上顯示搜尋結果或書簽圖示
   - 顯示 [取消] 按鈕–允許使用者離開搜尋功能。 建議選取此選項。
   - 顯示範圍列–這可讓使用者限制其搜尋範圍。 例如，在 [音樂] 應用程式中搜尋時，使用者可以選取要搜尋特定歌曲或演出者 Apple Music 或其媒體櫃。 若要顯示各種選項，請將標題陣列加入至**ScopeBarTitles**屬性。
-  ![Search 橫條圖範圍標題 ](searchbar-images/image4.png)
+  ![搜尋列範圍標題](searchbar-images/image4.png)
 
 - **文字行為**–這些選項可用來解決使用者輸入在輸入時的格式。 大寫會設定每個單字或句子的開頭，或每個字元的大小寫。 更正和拼寫檢查，會提示使用者輸入文字時的建議拼寫。
 - **鍵盤**–控制針對輸入顯示的鍵盤樣式，因此鍵盤上可用的按鍵。 這包括數位板、手機 Pad、電子郵件、URL 和其他選項。

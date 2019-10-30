@@ -3,15 +3,15 @@ title: 將 Xamarin 統一應用程式更新為64位
 description: 本指南說明如何將您的 Xamarin. Mac 應用程式更新為以64位為目標。 它也提供進行這項變更時可能會遇到的錯誤類型範例。
 ms.prod: xamarin
 ms.assetid: C3810A74-539C-4FFB-B47F-68CA5F7BCDAD
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/22/2018
-ms.openlocfilehash: 5539bab417c5efc0064cd1753cb74c7524463ee5
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 1ae807869e44ad035d2681cf777af0e66ced8255
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70765915"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016312"
 ---
 # <a name="updating-xamarinmac-unified-applications-to-64-bit"></a>將 Xamarin 統一應用程式更新為64位
 
@@ -25,7 +25,7 @@ ms.locfileid: "70765915"
 
    ![專案的內容功能表](mac-64-bit-images/1-contextual_menu-vsmac.png "專案的內容功能表")
 
-2. 選取 [ **Mac 組建**]，並將**支援的架構**設定為**x86 \_64**：
+2. 選取 [ **Mac 組建**]，並將**支援的架構**設定為**x86\_64**：
 
    [![將支援的架構設定為 x86_64](mac-64-bit-images/2-project_options-vsmac.png "將支援的架構設定為 x86_64")](mac-64-bit-images/2-project_options-vsmac-large.png#lightbox)
 

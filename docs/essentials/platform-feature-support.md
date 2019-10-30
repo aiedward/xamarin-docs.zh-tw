@@ -5,18 +5,18 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 86aa439d306bb861a1d24d93629056f9d3936363
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.openlocfilehash: ec3474880660a2455c758b2660d5c43e23284c9d
+ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71033047"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980910"
 ---
 # <a name="platform-support"></a>平台支援
 
 Xamarin.Essentials 支援下列平台與作業系統：
 
-| 平台 | Version |
+| Platform | 版本 |
 | --- | --- |
 | Android | 4.4 (API 19) 或更高版本 |
 | iOS |10.0 或更高版本 |
@@ -38,9 +38,9 @@ Xamarin.Essentials 一律會嘗試將功能帶到每個平台，不過，有時�
 
 * ✔ - 完全支援
 * ⚠ - 有限支援
-* ❌ - 不支援
+* ❌-不支援
 
-| 功能 | Android | iOS | UWP | watchOS | tvOS | Tizen |
+| 特殊功能 | Android | iOS | UWP | watchOS | tvOS | Tizen |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [加速計](accelerometer.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ❌ | ✔ |
 | [應用程式資訊](app-information.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
@@ -49,7 +49,7 @@ Xamarin.Essentials 一律會嘗試將功能帶到每個平台，不過，有時�
 | [剪貼簿](clipboard.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
 | [色彩轉換器](color-converters.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [羅盤](compass.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ✔ |
-| [連線能力](connectivity.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| [連線能力](connectivity.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ✔ | ✔ |
 | [偵測搖動](detect-shake.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
 | [裝置顯示資訊](device-display.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ❌ | ❌ | ❌ |
 | [裝置資訊](device-information.md?context=xamarin/xamarin-forms) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |

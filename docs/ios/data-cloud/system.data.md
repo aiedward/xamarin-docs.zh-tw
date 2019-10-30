@@ -4,19 +4,19 @@ description: 本檔說明如何使用 system.string 和 Mono 來存取 Xamarin i
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 44d2e468efeacea919af2d243588d0da6d72945d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4f5f6adf99306754fa7b2aa49855fe228e740d7e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766543"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016938"
 ---
 # <a name="systemdata-in-xamarinios"></a>System.servicemodel 中的 system.object 資料
 
-Xamarin. iOS 8.10 新增了`Mono.Data.Sqlite.dll`對[system.string 的支援，包括](xref:System.Data)ADO.NET 提供者。 支援包括新增下列[元件](~/cross-platform/internals/available-assemblies.md)：
+Xamarin 8.10 新增了對[system.string 的支援，包括](xref:System.Data)`Mono.Data.Sqlite.dll` ADO.NET 提供者。 支援包括新增下列[元件](~/cross-platform/internals/available-assemblies.md)：
 
 - `System.Data.dll`
 - `System.Data.Service.Client.dll`
@@ -28,13 +28,13 @@ Xamarin. iOS 8.10 新增了`Mono.Data.Sqlite.dll`對[system.string 的支援，�
 
 ## <a name="example"></a>範例
 
-下列程式會在中`Documents/mydb.db3`建立資料庫，如果資料庫先前不存在，則會填入範例資料。 接著會查詢資料庫，並將輸出寫入`stderr`。
+下列程式會在 `Documents/mydb.db3`中建立資料庫，如果資料庫先前不存在，則會填入範例資料。 接著會查詢資料庫，並將輸出寫入 `stderr`。
 
 ### <a name="add-references"></a>新增參考
 
-首先，以滑鼠右鍵按一下 [**參考**] 節點，然後選擇 [**編輯參考 ...** ] `System.Data` ， `Mono.Data.Sqlite`然後選取和：
+首先，以滑鼠右鍵按一下 [**參考**] 節點，然後選擇 [**編輯參考 ...** ]，然後選取 `System.Data` 並 `Mono.Data.Sqlite`：
 
-[![](system.data-images/edit-references-sml.png "加入新的參考")](system.data-images/edit-references.png#lightbox)
+[![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>程式碼範例
 
@@ -144,15 +144,15 @@ using (var addCmd = conn.CreateCommand ()) {
 - 任何需要[system.object 的](xref:System.CodeDom)專案（例如 [TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) ）
 - XML 設定檔案支援（例如 [System.web. DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) ）
 - [DbProviderFactories](xref:System.Data.Common.DbProviderFactories) （取決於 XML 設定檔案支援）
-- [System.Data.OleDb](xref:System.Data.OleDb)
-- [System.Data.Odbc](xref:System.Data.Odbc)
-- 相依性已 `System.Data.dll`從中移除，因此會移除[SqlConnection. EnlistDistributedTransaction （ITransaction）](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。 `System.EnterpriseServices.dll`
+- [System.web. Data OleDb](xref:System.Data.OleDb)
+- [System.object](xref:System.Data.Odbc)
+- `System.EnterpriseServices.dll` 相依性已從 `System.Data.dll`*移除*，導致移除[SqlConnection. EnlistDistributedTransaction （ITransaction）](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)方法。
 
 <a name="Mono.Data.Sqlite" />
 
-### <a name="monodatasqlite"></a>Mono.Data.Sqlite
+### <a name="monodatasqlite"></a>Mono. Data. Sqlite
 
-同時， **Mono. Data. Sqlite**不會變更任何原始程式碼，而是會因為`Mono.Data.Sqlite.dll`系結 Sqlite 3.5，而改為裝載一些*運行*時間問題。 同時，iOS 8 隨附于 SQLite 3.8.5。 就夠了，這兩個版本之間有一些改變。
+同時， **Mono. Sqlite**不會變更任何原始程式碼，而是會因為 `Mono.Data.Sqlite.dll` 系結 Sqlite 3.5，而改為主控一些*運行*時間問題。 同時，iOS 8 隨附于 SQLite 3.8.5。 就夠了，這兩個版本之間有一些改變。
 
 較舊版本的 iOS 隨附下列版本的 SQLite：
 
@@ -161,7 +161,7 @@ using (var addCmd = conn.CreateCommand ()) {
 - **iOS 5** -版本3.7.7。
 - **iOS 4** -版本3.6.22。
 
-最常見的問題似乎與資料庫架構查詢有關，例如，在執行時間判斷給定資料表上有哪些資料行，例如`Mono.Data.Sqlite.SqliteConnection.GetSchema` （覆寫[DbConnection. GetSchema](xref:System.Data.Common.DbConnection.GetSchema)和`Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` （覆寫[）。DbDataReader. GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 簡單地說，使用[DataTable](xref:System.Data.DataTable)的任何專案都不太可能會有作用。
+最常見的問題似乎與資料庫架構查詢有關，例如，在執行時間判斷特定資料表上有哪些資料行，例如 `Mono.Data.Sqlite.SqliteConnection.GetSchema` （覆寫[DbConnection. GetSchema](xref:System.Data.Common.DbConnection.GetSchema)和 `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` （覆寫[DbDataReader. GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 簡單地說，使用[DataTable](xref:System.Data.DataTable)的任何專案都不太可能會有作用。
 
 <a name="Data_Binding" />
 

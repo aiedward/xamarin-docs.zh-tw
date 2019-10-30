@@ -3,21 +3,21 @@ title: Microsoft Azure 和 Xamarin
 description: 本檔連結到有關 Visual Studio for Mac、Azure Mobile Apps、Active Directory Authentication 和 WebAPI 中的已連線的服務檔。
 ms.prod: xamarin
 ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/09/2017
-ms.openlocfilehash: 11a98b61d958e2e0d0fb226ba4eb05c458b5bbf2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 273a1a8fec4cf40893ff94fef4b1394065a8547b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766093"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016617"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure 和 Xamarin
 
-[![](images/evolve-mikej-azure-sml.png "Azure App Services 功能很容易加入 Xamarin 應用程式，包括雲端資料儲存和跨平臺推播通知")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[![](images/evolve-mikej-azure-sml.png "Azure App Services features are easy to add to Xamarin apps, including cloud data storage and cross-platform push notifications")](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
-[Evolve 2016：使用 Azure 和 Xamarin 開發連線的應用程式](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
+[演進2016：使用 Azure 和 Xamarin 開發連線的應用程式](https://evolve.xamarin.com/session/56ec886fde91c6253c277bc6)
 
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Visual Studio for Mac 中已連線的服務
 
@@ -35,7 +35,7 @@ Xamarin 也提供適用于[iOS](https://www.nuget.org/packages/Xamarin.Azure.Not
 [Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md)可用來透過[Xamarin. Auth 元件](https://www.nuget.org/packages/Xamarin.Auth/)在 xamarin 應用程式中登入使用者。
 然後，應用程式可以存取其他服務，例如 Office 365。
 
-## <a name="webapi"></a>WebAPI
+## <a name="webapi"></a>webAPI
 
 Microsoft 的 Web API 會公開類似 REST 的介面，可供 Xamarin 應用程式輕鬆使用。
 您可以輕鬆地加速[Azure 網站](https://trywebsites.azurewebsites.net/)，並建立以 WebAPI 為基礎的應用程式來連線到 Xamarin 應用程式。
@@ -58,6 +58,6 @@ Microsoft 的 Web API 會公開類似 REST 的介面，可供 Xamarin 應用程�
 
 ## <a name="related-links"></a>相關連結
 
-- [Azure PCL 範例（依據@paulbatum）（範例）](https://github.com/paulbatum/mobile-services-xamarin-pcl)
+- [Azure PCL 範例（依 @paulbatum）（範例）](https://github.com/paulbatum/mobile-services-xamarin-pcl)
 - [Azure 入口網站](https://azure.microsoft.com/)
 - [適用于 Xamarin 的行動用戶端（NuGet）](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

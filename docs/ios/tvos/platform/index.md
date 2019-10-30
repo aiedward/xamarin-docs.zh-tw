@@ -4,15 +4,15 @@ description: 本檔所連結的文章會說明各種 tvOS 版本所包含的功�
 ms.prod: xamarin
 ms.assetid: FB705CAD-B43C-4374-B139-92AB81185429
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 187e761948a560a96257ffa0ac84415d862a629d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cd7e2b0a195cd7d5c053d175bf813b12b88b46e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283519"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030650"
 ---
 # <a name="tvos-platform-features"></a>tvOS 平臺功能
 
@@ -41,7 +41,7 @@ ms.locfileid: "70283519"
 ## <a name="related-links"></a>相關連結
 
 - [tvOS 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
-- [tvOS (Apple)](https://developer.apple.com/tvos/)
+- [tvOS （Apple）](https://developer.apple.com/tvos/)
 - [tvOS 人力介面指南（Apple）](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [適用于 tvOS 的應用程式設計指南（Apple）](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)
 - [使用 Xamarin 建立適用于 tvOS 的應用程式（影片）](https://university.xamarin.com/lightninglectures/tvos-with-xamarin)

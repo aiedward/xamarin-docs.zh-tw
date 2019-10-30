@@ -4,15 +4,15 @@ description: 第6版的C#語言會繼續進化語言，使其具有較少的重�
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 34a77f15391a0f4e10c1902046d8bd37806c14ec
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1db7ee95ec261739463fa2584f4acf493ac71217
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765286"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014825"
 ---
 # <a name="c-6-new-features-overview"></a>C#6個新功能總覽
 
@@ -30,12 +30,12 @@ _第6版的C#語言會繼續進化語言，使其具有較少的重複使用程�
 ## <a name="using-c-6"></a>使用C# 6
 
 C# 6 個編譯器會用於所有最新版本的 Visual Studio for Mac。
-使用命令列編譯器的`mcs --version`那些應用程式應該確認傳回4.0 或更高版本。
+使用命令列編譯器的那些應用程式應該確認 `mcs --version` 傳回4.0 或更高版本。
 Visual Studio for Mac 使用者可以藉由參考**About Visual Studio for Mac > Visual Studio for Mac > 顯示詳細資料**，檢查是否已安裝 Mono 4 （或更新版本）。
 
 ## <a name="less-boilerplate"></a>較少的樣板
 ### <a name="using-static"></a>使用靜態
-列舉和特定類別（例如`System.Math`）主要是靜態值和函數的持有者。 在C# 6 中，您可以使用單一`using static`語句匯入類型的所有靜態成員。 比較5和C# C# 6 中的一般三角函數函數：
+列舉和某些類別（例如 `System.Math`）主要是靜態值和函數的持有者。 在C# 6 中，您可以使用單一`using static`語句匯入類型的所有靜態成員。 比較5和C# C# 6 中的一般三角函數函數：
 
 ```csharp
 // Classic C#
@@ -61,7 +61,7 @@ class MyClass
 }
 ```
 
-`using static`不會讓公用`const`欄位（ `Math.PI`例如和`Math.E`）可直接存取：
+`using static` 不會將公用 `const` 欄位（例如 `Math.PI` 和 `Math.E`）直接存取：
 
 ```csharp
 for (var angle = 0.0; angle <= Math.PI * 2.0; angle += Math.PI / 8) ... 
@@ -70,7 +70,7 @@ for (var angle = 0.0; angle <= Math.PI * 2.0; angle += Math.PI / 8) ...
 
 ### <a name="using-static-with-extension-methods"></a>搭配使用 static 與擴充方法
 
-`using static`設備的運作方式與擴充方法稍有不同。 雖然擴充方法是使用`static`撰寫的，但沒有要在其上運作的實例並沒有意義。 因此， `using static`當搭配定義擴充方法的類型使用時，擴充方法會在其目標型別（方法的`this`類型）上變成可用。 例如，可以`using static System.Linq.Enumerable`用來擴充`IEnumerable<T>`物件的 API，而不需要帶入所有的 LINQ 類型：
+`using static` 設施的運作方式與擴充方法稍有不同。 雖然擴充方法是使用 `static`撰寫的，但沒有要操作的實例就沒有意義。 因此，當 `using static` 與定義擴充方法的類型搭配使用時，擴充方法會在其目標型別（方法的 `this` 類型）上變成可用。 比方說，`using static System.Linq.Enumerable` 可以用來擴充 `IEnumerable<T>` 物件的 API，而不需要帶入所有的 LINQ 類型：
 
 ```csharp
 using static System.Linq.Enumerable;
@@ -87,16 +87,16 @@ class Program
 }
 ```
 
-上一個範例示範行為的差異：擴充方法`Enumerable.Where`與陣列相關聯，而靜態方法`String.Join`則可以在不參考該`String`類型的情況下呼叫。
+上一個範例示範行為的差異：擴充方法 `Enumerable.Where` 與陣列相關聯，而靜態方法 `String.Join` 則可以在不參考 `String` 類型的情況下呼叫。
 
 ### <a name="nameof-expressions"></a>nameof 運算式
-有時候，您會想要參考您已提供變數或欄位的名稱。 在C# 6 中`nameof(someVariableOrFieldOrType)` ，會傳回字串`"someVariableOrFieldOrType"`。 比方說，當擲回`ArgumentException`時，您很可能想要將不正確引數命名為：
+有時候，您會想要參考您已提供變數或欄位的名稱。 在C# 6 中，`nameof(someVariableOrFieldOrType)`會傳回`"someVariableOrFieldOrType"`的字串。 比方說，當擲回 `ArgumentException` 時，您很可能會想要將哪個引數命名為無效：
 
 ```csharp
 throw new ArgumentException ("Problem with " + nameof(myInvalidArgument))
 ```
 
-`nameof`運算式的主要優點是它們的類型為已核取，而且與工具支援的重整相容。 在用來動態關聯`nameof`類型的情況下`string` ，運算式的類型檢查特別歡迎。 例如，在 iOS a `string`中，是用來指定在中`UITableView`用來`UITableViewCell`原型物件的型別。 `nameof`可以確保這個關聯不會因為拼寫錯誤或這個散漫重構而失敗：
+`nameof` 運算式的主要優點是它們的類型為已核取，而且與工具支援的重整相容。 `string` 用來動態關聯類型的情況下，`nameof` 運算式的類型檢查是特別歡迎的。 比方說，在 iOS 中，`string` 是用來指定在 `UITableView`中用來原型 `UITableViewCell` 物件的型別。 `nameof` 可以確保此關聯不會因為拼錯或這個散漫重構而失敗：
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -107,7 +107,7 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 }
 ```
 
-雖然您可以將限定名稱傳遞給`nameof`，但只會傳回最後一個專案（ `.`在最後一個後面）。 例如，您可以在 Xamarin 中加入資料系結。表單：
+雖然您可以將限定名稱傳遞給 `nameof`，但只會傳回最後一個專案（在最後一個 `.`之後）。 例如，您可以在 Xamarin 中加入資料系結。表單：
 
 ```csharp
 var myReactiveInstance = new ReactiveType ();
@@ -117,10 +117,10 @@ var myLabelOld.SetBinding (Label.TextProperty, "StringField");
 var myLabelNew.SetBinding (Label.TextProperty, nameof(ReactiveType.StringField));
 ```
 
-對`SetBinding`的兩個呼叫會傳遞相同的`nameof(ReactiveType.StringField)`值`"StringField"`：是`"ReactiveType.StringField"` ，而不是您最初預期的方式。
+`SetBinding` 的兩個呼叫會傳遞相同的值： `nameof(ReactiveType.StringField)` `"StringField"`，而不是 `"ReactiveType.StringField"` 您最初預期的情況。
 
 ## <a name="null-conditional-operator"></a>Null-條件運算子
-先前的更新C#導入了可為 null 的型別和 null 聯合`??`運算子的概念，以減少處理可為 null 值時的重複採用程式碼數量。 C#6使用「null 條件運算子`?.`」繼續此主題。 當用於運算式右邊的物件時，如果物件不`null`是， `null`則 null 條件運算子會傳回成員值，否則會傳回：
+先前的更新C#導入了可為 null 的型別和 null 聯合運算子的概念，`??`在處理可為 null 的值時減少重複的程式碼數量。 C#6使用「null 條件運算子」`?.`繼續此主題。 當用於運算式右邊的物件時，如果物件不是 `null`，則 null 條件運算子會傳回成員值，否則會 `null`：
 
 ```csharp
 var ss = new string[] { "Foo", null };
@@ -129,19 +129,19 @@ var length1 = ss [1]?.Length; // null
 var lengths = ss.Select (s => s?.Length ?? 0); //[3, 0]
 ```
 
-`length0` （和`length1`都會推斷成類型`int?`）
+（`length0` 和 `length1` 都會推斷為類型 `int?`）
 
-上一個範例中的最後一行顯示`?` null 條件運算子`??`與 null 聯合運算子的組合。 新C#的6個 null 條件運算子`null`會在陣列中的第二個元素上傳回，此時 null 聯合運算子就會開始，並提供0給`lengths`陣列（當然，問題特定）。
+上一個範例中的最後一行顯示 `?` null 條件運算子與 `??` null 聯合運算子一起使用。 新C#的6個 null 條件運算子會在陣列中的第二個元素上傳回`null`，此時 null 聯合運算子會開始在中，並將0提供給`lengths`陣列（當然，這是否適用或不是問題特定）。
 
 Null 條件運算子應該可大幅減少許多應用程式中所需的重複執行 null 檢查量。
 
-因為不明確，所以 null 條件運算子有一些限制。 您不能緊接在`?`加上括弧的引數清單之後，您可能想要使用委派來執行下列動作：
+因為不明確，所以 null 條件運算子有一些限制。 您不能以括弧括住的引數清單來立即追蹤 `?`，因為您可能希望使用委派：
 
 ```csharp
 SomeDelegate?("Some Argument") // Not allowed
 ```
 
-不過， `Invoke`可以用來分隔引數`?`清單中的，而且仍然是已標示為重複使用`null`的檢查區塊的改善：
+不過，`Invoke` 可以用來區隔 `?` 與引數清單，而且在重複使用的 `null`檢查區塊上仍然是標示的改善：
 
 ```csharp
 public event EventHandler HandoffOccurred;
@@ -153,9 +153,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 ```
 
 ## <a name="string-interpolation"></a>字串插值
-函式過去使用了索引做為格式字串中的預留位置，例如`String.Format("Expected: {0} Received: {1}.", expected, received`）。 `String.Format` 當然，在引數清單中，加入新的值時，一定會有一個令人討厭的小工作，包括計算引數、重新排序預留位置，以及將新引數插入正確的順序。
+`String.Format` 函式過去使用了索引做為格式字串中的預留位置，例如，`String.Format("Expected: {0} Received: {1}.", expected, received`）。 當然，在引數清單中，加入新的值時，一定會有一個令人討厭的小工作，包括計算引數、重新排序預留位置，以及將新引數插入正確的順序。
 
-C#6的新字串插補功能大幅改善`String.Format`了。 現在，您可以在前面`$`加上的字串中，直接命名變數。 若是執行個體：
+C#6的新字串插補功能，在 `String.Format`上大幅提升。 現在，您可以在前面加上 `$`的字串中，直接命名變數。 若是執行個體：
 
 ```csharp
 $"Expected: {expected} Received: {received}."
@@ -163,13 +163,13 @@ $"Expected: {expected} Received: {received}."
 
 當然，變數是已核取狀態，而拼錯或不可用的變數會造成編譯器錯誤。
 
-預留位置不需要是簡單變數，可以是任何運算式。 在這些預留位置中，您可以使用引號，*而不會*將這些引號轉義。 例如，請注意`"s"`下列各項：
+預留位置不需要是簡單變數，可以是任何運算式。 在這些預留位置中，您可以使用引號，*而不會*將這些引號轉義。 例如，請注意下列中的 `"s"`：
 
 ```csharp
 var s = $"Timestamp: {DateTime.Now.ToString ("s", System.Globalization.CultureInfo.InvariantCulture )}"
 ```
 
-字串插補支援的對齊和格式化語法`String.Format`。 就像您先前所`{index, alignment:format}`撰寫的C#一樣，在`{placeholder, alignment:format}`6 中您可以撰寫：
+字串插補支援 `String.Format`的對齊和格式化語法。 就像您先前撰寫 `{index, alignment:format}`，您C#可以在6中撰寫`{placeholder, alignment:format}`：
 
 ```csharp
 using static System.Linq.Enumerable;
@@ -200,13 +200,13 @@ The value is 123,456.00.
 Minimum is 1.00.
 ```
 
-字串插補是的`String.Format`語法：它不能`@""`用於字串常值`const`，而且與不相容，即使沒有使用預留位置也一樣：
+字串插補是適用于 `String.Format`的語法：它不能搭配 `@""` 字串常值使用，而且與 `const`不相容，即使沒有使用預留位置也一樣：
 
 ```csharp
 const string s = $"Foo"; //Error : const requires value
 ```
 
-在使用字串內插補點建立函式引數的常見使用案例中，您仍然需要特別注意有關轉義、編碼和文化特性的問題。 SQL 和 URL 查詢當然是要淨化的關鍵。 如同，字串插補會`CultureInfo.CurrentCulture`使用。 `String.Format` 使用`CultureInfo.InvariantCulture`稍微冗長：
+在使用字串內插補點建立函式引數的常見使用案例中，您仍然需要特別注意有關轉義、編碼和文化特性的問題。 SQL 和 URL 查詢當然是要淨化的關鍵。 如同 `String.Format`，字串插補會使用 `CultureInfo.CurrentCulture`。 使用 `CultureInfo.InvariantCulture` 還有一些冗長：
 
 ```csharp
 Thread.CurrentThread.CurrentCulture  = new CultureInfo ("de");
@@ -248,7 +248,7 @@ class ToDo
 
 ### <a name="index-initializers"></a>索引初始設定式
 
-C#6引進索引初始化運算式，這可讓您在具有索引子的類型中設定索引鍵和值。 一般來說，這是針對`Dictionary`樣式的資料結構：
+C#6引進索引初始化運算式，這可讓您在具有索引子的類型中設定索引鍵和值。 一般來說，這適用于 `Dictionary`樣式的資料結構：
 
 ```csharp
 partial void ActivateHandoffClicked (WatchKit.WKInterfaceButton sender)
@@ -273,13 +273,13 @@ Lambda 函式有數個優點，其中一個只是儲存空間。 同樣地，運
 public override string ToString () => $"{FirstName} {LastName}";
 ```
 
-請注意，lambda 箭號語法不會使用明確`return`的。 針對傳回的函式，運算式也必須是語句：`void`
+請注意，lambda 箭號語法不會使用明確的 `return`。 對於傳回 `void`的函式，運算式也必須是語句：
 
 ```csharp
 public void Log(string message) => System.Console.WriteLine($"{DateTime.Now.ToString ("s", System.Globalization.CultureInfo.InvariantCulture )}: {message}");
 ```
 
-運算式主體成員仍然受限於方法所支援的規則`async` ，而不是屬性：
+運算式主體成員仍然受限於可支援方法但不是屬性的規則 `async`：
 
 ```csharp
 //A method, so async is valid
@@ -294,7 +294,7 @@ public async Task<int> LeisureHours => await Task.FromResult<char> (DateTime.Now
 
 ### <a name="exception-filters"></a>例外狀況篩選條件
 
-根據定義，例外狀況會在不尋常的情況中發生，而且可能會很難以撰寫特定類型*例外的原因*和程式碼。 C#6引進了使用執行時間評估的篩選準則來保護執行處理常式的功能。 這是藉由在一般`when (bool)` `catch(ExceptionType)`宣告之後加入模式來完成。 在下列中，篩選器會區分與`date`參數相關的剖析錯誤，而不是其他剖析錯誤。
+根據定義，例外狀況會在不尋常的情況中發生，而且可能會很難以撰寫特定類型*例外的原因*和程式碼。 C#6引進了使用執行時間評估的篩選準則來保護執行處理常式的功能。 這是藉由在正常的 `catch(ExceptionType)` 宣告之後加入 `when (bool)` 模式來完成。 在下列中，篩選器會區分與 `date` 參數相關的剖析錯誤，而不是其他剖析錯誤。
 
 ```csharp
 public void ExceptionFilters(string aFloat, string date, string anInt)
@@ -314,7 +314,7 @@ public void ExceptionFilters(string aFloat, string date, string anInt)
 
 ### <a name="await-in-catchfinally"></a>catch 中的 await 。最後 。
 
-5 `async`中C#引進的功能是語言的遊戲變更器。 在C# 5 `await`中，在和`finally`區塊`catch`中不允許，因為`async/await`功能的值，而無干擾。 C#6移除這項限制，讓非同步結果能夠以一致的方式透過程式等候，如下列程式碼片段所示：
+C# 5 引進的 `async` 功能已成為語言的遊戲變更器。 在C# 5 中，`catch`和`finally`區塊中不允許`await`，但會提供`async/await`功能的值給干擾。 C#6移除這項限制，讓非同步結果能夠以一致的方式透過程式等候，如下列程式碼片段所示：
 
 ```csharp
 async void SomeMethod()

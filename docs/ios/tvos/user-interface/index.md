@@ -4,15 +4,15 @@ description: 一般使用者體驗（UX）涵蓋範圍包含使用者介面（UI
 ms.prod: xamarin
 ms.assetid: 8CF80705-B36A-42D6-B66B-52BC8586FA5A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: f0633b0f91bf39d10ad42e1ee41997213ca3047e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c8bf8aad6804fcbbc984b942fdafd12522299998
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769035"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030455"
 ---
 # <a name="building-tvos-user-interfaces-with-xamarin"></a>使用 Xamarin 建立 tvOS 使用者介面
 
@@ -24,7 +24,7 @@ _一般使用者體驗（UX）涵蓋範圍包含使用者介面（UI）控制項
 
 ## <a name="working-with-alertsiostvosuser-interfacealertsmd"></a>[使用警示](~/ios/tvos/user-interface/alerts.md)
 
-本文涵蓋`UIAlertController`如何使用，在 tvOS 中向使用者顯示警示訊息。
+本文說明如何使用 `UIAlertController` 在 tvOS 中向使用者顯示警示訊息。
 
 ## <a name="working-with-buttonsiostvosuser-interfacebuttonsmd"></a>[使用按鈕](~/ios/tvos/user-interface/buttons.md)
 

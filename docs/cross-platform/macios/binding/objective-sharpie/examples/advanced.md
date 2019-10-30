@@ -3,21 +3,21 @@ title: Advanced （手動）真實世界範例
 description: 本檔說明如何使用 xcodebuild 的輸出作為目標 Sharpie 的輸入，讓您深入瞭解目標 Sharpie 在幕後的作用。
 ms.prod: xamarin
 ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 6dbaf904c31d1a778a25e591ee94c4d354f5698a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 23ca9c3fe36a65aefb17f10fd3e680937c36acc0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765741"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016259"
 ---
 # <a name="advanced-manual-real-world-example"></a>Advanced （手動）真實世界範例
 
 **這個範例使用[來自 Facebook 的 POP 程式庫](https://github.com/facebook/pop)。**
 
-本節涵蓋更先進的系結方法，我們將使用 Apple 的`xcodebuild`工具先建立 POP 專案，然後手動推算目標 Sharpie 的輸入。 這基本上涵蓋了目標 Sharpie 在上一節中的作用。
+本節涵蓋更先進的系結方法，我們將使用 Apple 的 `xcodebuild` 工具先建立 POP 專案，然後手動推算目標 Sharpie 的輸入。 這基本上涵蓋了目標 Sharpie 在上一節中的作用。
 
 ```
  $ git clone https://github.com/facebook/pop.git
@@ -27,7 +27,7 @@ Cloning into 'pop'...
 $ cd pop
 ```
 
-因為 POP 程式庫有 Xcode 專案（`pop.xcodeproj`），所以我們可以只使用`xcodebuild`來建立 POP。 這個進程可能會產生目標 Sharpie 可能需要剖析的標頭檔。 這就是在系結之前建立的原因很重要。 透過來建立`xcodebuild`時，請務必傳遞您要傳遞至目標 Sharpie 的相同 SDK 識別碼和架構（而且請記住，目標 Sharpie 3.0 通常可以為您執行此動作！）：
+因為 POP 程式庫有 Xcode 專案（`pop.xcodeproj`），所以我們可以直接使用 `xcodebuild` 來建立 POP。 這個進程可能會產生目標 Sharpie 可能需要剖析的標頭檔。 這就是在系結之前建立的原因很重要。 透過 `xcodebuild` 來建立時，請務必傳遞您要傳遞至目標 Sharpie 的相同 SDK 識別碼和架構（而且請記住，目標 Sharpie 3.0 通常可以為您執行此動作！）：
 
 ```
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
@@ -50,9 +50,9 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 ** BUILD SUCCEEDED **
 ```
 
-在主控台中，將會有許多組建資訊輸出為的`xcodebuild`一部分。 如上所示，我們可以看到已執行 "CpHeader" 目標，其中標頭檔已複製到組建輸出目錄。 這通常是這種情況，讓系結變得更容易：在原生程式庫的組建中，標頭檔通常會複製到「公開」的可取用位置，讓剖析作業更容易進行系結。 在此情況下，我們知道 POP 的標頭檔是在`build/Headers`目錄中。
+主控台中將會有許多組建資訊輸出，做為 `xcodebuild`的一部分。 如上所示，我們可以看到已執行 "CpHeader" 目標，其中標頭檔已複製到組建輸出目錄。 這通常是這種情況，讓系結變得更容易：在原生程式庫的組建中，標頭檔通常會複製到「公開」的可取用位置，讓剖析作業更容易進行系結。 在此情況下，我們知道 POP 的標頭檔位於 `build/Headers` 目錄中。
 
-我們現在已準備好系結 POP。 我們知道我們想要`iphoneos8.1` `arm64`使用架構建立 SDK，而且`build/Headers`我們關心的標頭檔位於 POP git 簽出。 如果我們查看`build/Headers`目錄，我們會看到一些標頭檔：
+我們現在已準備好系結 POP。 我們知道，我們想要使用 `arm64` 架構建立 SDK `iphoneos8.1`，而且我們關心的標頭檔是在 POP git 結帳的 `build/Headers` 中。 如果我們查看 `build/Headers` 目錄，我們會看到一些標頭檔：
 
 ```
 $ ls build/Headers/POP/
@@ -64,7 +64,7 @@ POPAnimationExtras.h     POPCustomAnimation.h     POPSpringAnimation.h
 POPAnimationPrivate.h    POPDecayAnimation.h
 ```
 
-如果看一下`POP.h`，我們可以看到它是程式庫的主要最上層標頭檔， `#import`也就是其他檔案。 因此，我們只需要傳遞`POP.h`至目標 Sharpie，clang 就會在幕後執行其餘工作：
+如果我們查看 `POP.h`，我們可以看到它是程式庫的主要最上層標頭檔，`#import`其他檔案。 因此，我們只需要將 `POP.h` 傳遞至目標 Sharpie，clang 就會在幕後執行其餘工作：
 
 ```
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
@@ -122,18 +122,18 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-您會發現我們已將`-scope build/Headers`引數傳遞至目標 Sharpie。 因為 C 和目標 c 程式庫必須`#import`或`#include`其他的標頭檔，這些都是程式庫的執行詳細資料，而不是您`-scope`想要系結的 api，所以引數會指示目標 Sharpie 忽略任何未在中定義的 api將檔案放在`-scope`目錄中的某處。
+您會發現我們已將 `-scope build/Headers` 引數傳遞至目標 Sharpie。 因為 C 和目標 C 程式庫必須 `#import` 或 `#include` 其他的標頭檔，這些是程式庫的執行詳細資料，而不是您想要系結的 API，所以 `-scope` 引數會指示目標 Sharpie 忽略檔案中未定義的任何 API在 `-scope` 目錄中。
 
-您會發現完全`-scope`實作為程式庫的引數通常是選擇性的，但是明確提供它並不會有任何傷害。
+您會發現，`-scope` 引數通常是對完全實作為程式庫而言是選擇性的，但是明確提供它並不會有任何傷害。
 
-此外，我們也`-c -Ibuild/headers`指定了。 首先， `-c`引數會指示目標 Sharpie 停止解讀命令列引數，並將任何後續的引數_直接傳遞給 clang 編譯器_。 因此， `-Ibuild/Headers`是 clang 編譯器引數，它會指示 clang 搜尋`build/Headers`中的 include，這是 POP 標頭的存留處。 如果沒有這個引數，clang 就不會知道要在哪裡`POP.h`尋找`#import`所要的檔案。 _幾乎所有的「問題」，使用目標 Sharpie 包括向下找出要傳遞至 clang 的內容_。
+此外，我們也指定 `-c -Ibuild/headers`。 首先，`-c` 引數會指示目標 Sharpie 停止解讀命令列引數，並將任何後續的引數_直接傳遞給 clang 編譯器_。 因此，`-Ibuild/Headers` 是 clang 編譯器引數，會指示 clang 搜尋包含在 `build/Headers`之下的，也就是 POP 標頭的上線位置。 如果沒有這個引數，clang 就不知道要在哪裡找出 `POP.h` `#import`的位置。 _幾乎所有的「問題」，使用目標 Sharpie 包括向下找出要傳遞至 clang 的內容_。
 
 ### <a name="completing-the-binding"></a>正在完成系結
 
-目標 Sharpie 現在已產生`Binding/ApiDefinitions.cs`和`Binding/StructsAndEnums.cs`檔案。
+目標 Sharpie 現在已產生 `Binding/ApiDefinitions.cs` 和 `Binding/StructsAndEnums.cs` 檔案。
 
 這些是目標 Sharpie 在系結上的基本第一次傳遞，在少數情況下，您可能只需要這麼做。 如上所述，開發人員通常需要在目標 Sharpie 完成後手動修改產生的檔案，以修正工具無法自動處理的[任何問題](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)。
 
-更新完成之後，您現在可以將這兩個檔案新增至 Visual Studio for Mac 中的系結專案，或直接傳遞至`btouch`或`bmac`工具來產生最終的系結。
+更新完成之後，您現在可以將這兩個檔案新增至 Visual Studio for Mac 中的系結專案，或直接傳遞至 `btouch` 或 `bmac` 工具來產生最終的系結。
 
 如需系結程式的詳細說明，請參閱我們的[完整逐步解說指示](~/ios/platform/binding-objective-c/walkthrough.md)。

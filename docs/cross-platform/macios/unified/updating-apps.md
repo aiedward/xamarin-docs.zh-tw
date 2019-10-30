@@ -3,23 +3,23 @@ title: 將現有的應用程式更新至 Unified API
 description: 本檔連結的各種指南，說明如何將 Xamarin 應用程式更新為 Unified API。 其中討論了 Xamarin. iOS 應用程式、Xamarin. Mac 應用程式。 Xamarin： Forms 應用程式、跨平臺應用程式中的原生類型，以及系結專案。
 ms.prod: xamarin
 ms.assetid: 8A654C95-5DCA-4BB5-A582-F96C2BECC81C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c7742622bae16e874411fad1374c3ee522dba183
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: d4904688302ac7f17c6326249ff08315d929e23c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106066"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015018"
 ---
 # <a name="updating-existing-apps-to-the-unified-api"></a>將現有的應用程式更新至 Unified API
 
 > [!IMPORTANT]
-> 在 Unified API 之前的 Xamarin Classic API 已被取代。
+> The Xamarin Classic API, which preceded the Unified API, has been deprecated.
 >
-> - 支援 Classic API （monotouch）的最新版本是 Xamarin. iOS 9.10。
-> - Xamarin 仍然支援 Classic API，但不會再更新。 由於它已被取代，因此開發人員應該將他們的應用程式移至 Unified API。
+> - The last version of Xamarin.iOS to support the Classic API (monotouch.dll) was Xamarin.iOS 9.10.
+> - Xamarin.Mac still supports the Classic API, but it is no longer updated. Since it is deprecated, developers should move their applications to the Unified API.
 
 ## <a name="how-to-update-your-apps"></a>如何更新您的應用程式
 
@@ -61,4 +61,4 @@ ms.locfileid: "71106066"
 - [更新 Xamarin. Forms 應用程式](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [更新系結](~/cross-platform/macios/unified/update-binding.md)
 - [更新秘訣](~/cross-platform/macios/unified/updating-tips.md)
-- [傳統與 Unified API 差異](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)
+- [Classic vs Unified API differences](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

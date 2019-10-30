@@ -4,15 +4,15 @@ description: 這些文章說明如何在模擬器上進行 Xamarin. Android 磨�
 ms.prod: xamarin
 ms.assetid: 225684B2-3122-4E3B-A028-A3A400976D31
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: f085aaffbedb2965222b98a22cf6a4bb2393642b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca0a6884c05686bded25a2e515456ab192002a24
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764033"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028676"
 ---
 # <a name="debug-android-wear-on-an-emulator"></a>在模擬器上進行 Android 磨損的偵錯工具
 
@@ -32,7 +32,7 @@ _這些文章說明如何在模擬器上進行 Xamarin. Android 磨損應用程�
 
 ## <a name="launch-the-wear-virtual-device"></a>啟動磨損虛擬裝置 
 
-建立 Android 磨損虛擬裝置之後，您可以從 IDE 的 [裝置] 下拉式功能表中選擇它，然後再開始進行偵錯工具。 如果裝置上的虛擬裝置無法使用，請確認您的專案是 Android*磨損*應用程式專案（而非 android 應用程式專案），且其目標 api 層級已設定為與虛擬裝置相同的 api 層級。 例如：
+建立 Android 磨損虛擬裝置之後，您可以從 IDE 的 [裝置] 下拉式功能表中選擇它，然後再開始進行偵錯工具。 如果裝置上的虛擬裝置無法使用，請確認您的專案是 Android*磨損*應用程式專案（而非 android 應用程式專案），且其目標 api 層級已設定為與虛擬裝置相同的 api 層級。 例如:
 
 [![選擇 Visual Studio 裝置 功能表中的磨損 AVD](debug-on-emulator-images/vs/choose-wear-sim.png)](debug-on-emulator-images/vs/choose-wear-sim.png#lightbox)
 

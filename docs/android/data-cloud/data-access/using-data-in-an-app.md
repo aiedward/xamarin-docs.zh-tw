@@ -3,15 +3,15 @@ title: 在 Android 應用程式中使用資料
 ms.prod: xamarin
 ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/08/2018
-ms.openlocfilehash: 922b1fa411a176df580050384e7555120fd68137
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: c0ff15c516fa2eb85ac9748004df5a14425b510c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754450"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023742"
 ---
 # <a name="using-data-in-an-app"></a>在應用程式中使用資料
 
@@ -36,7 +36,7 @@ Android 中活動的原生 UI 程式碼超出本檔的範圍。 如需 UI 控制
 - 讀取清單
 - 讀取個別記錄
 
-@No__t_0 類別中的兩個方法如下：
+`StockDatabase` 類別中的兩個方法如下：
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -94,7 +94,7 @@ public int DeleteStock(Stock stock)
 
 - **SQLite Manager Firefox 擴充**功能 &ndash; 可在 Mac 和 Windows 上運作，並產生與 IOS 和 Android 相容的檔案。
 
-- **命令列**&ndash; 參閱[www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) 。
+- **命令列**&ndash; 參閱[www.sqlite.org/sqlite.html](https://www.sqlite.org/sqlite.html) 。
 
 建立與您的應用程式一起散發的資料庫檔案時，請留意資料表和資料行的命名，以確保它們符合您的程式碼所預期的內容，特別是當您使用的是會C#預期名稱符合您的類別和屬性的 SQLite.NET 時（或相關聯的自訂屬性）。
 

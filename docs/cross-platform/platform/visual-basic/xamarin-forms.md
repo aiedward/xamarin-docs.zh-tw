@@ -3,15 +3,15 @@ title: 使用 Visual Basic.NET 的 Xamarin
 description: 您可以修改 Xamarin 專案範本，將 Visual Basic 用於主要元件，讓您可以使用 VB.NET 來建立跨平臺行動應用程式。
 ms.prod: xamarin
 ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: ed7e1d65ed361a94ce72a724d797309b40ef8b6c
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.openlocfilehash: e1a540eef2a4d54ead68ae4a9427b0622b668182
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959151"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014555"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>使用 Visual Basic.NET 的 Xamarin
 

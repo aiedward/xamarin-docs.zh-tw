@@ -4,19 +4,19 @@ description: UIButton 類別是用來代表 iOS 畫面中各種不同的按鈕�
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/11/2018
-ms.openlocfilehash: ce0c4579f13311811106a00390f95a20a0abf979
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: a8dfd267fe9f5f838927fc216d53c2475398ed16
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768455"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022119"
 ---
 # <a name="buttons-in-xamarinios"></a>在 Xamarin 中的按鈕
 
-在 iOS 中， `UIButton`類別代表按鈕控制項。
+在 iOS 中，`UIButton` 類別代表按鈕控制項。
 
 您可以用程式設計的方式或使用 iOS 設計工具的**Properties Pad**來修改按鈕的屬性：
 
@@ -24,7 +24,7 @@ ms.locfileid: "70768455"
 
 ## <a name="creating-a-button-programmatically"></a>以程式設計方式建立按鈕
 
-只能使用幾行程式碼來建立。`UIButton`
+只能使用幾行程式碼來建立 `UIButton`。
 
 - 具現化按鈕並指定其類型：
 
@@ -32,14 +32,14 @@ ms.locfileid: "70768455"
   UIButton myButton = new UIButton(UIButtonType.System);
   ```
 
-  按鈕的類型是由`UIButtonType`所指定：
+  按鈕的類型是由 `UIButtonType`所指定：
 
   - `UIButtonType.System`-一般用途按鈕
   - `UIButtonType.DetailDisclosure`-表示詳細資訊的可用性，通常是關於資料表中的特定專案
   - `UIButtonType.InfoDark`-指出設定資訊的可用性;深色色彩
   - `UIButtonType.InfoLight`-指出設定資訊的可用性;淺彩色
   - `UIButtonType..AddContact`-表示可以新增連絡人
-  - `UIButtonType.Custom`-可自訂按鈕
+  - `UIButtonType.Custom` 可自訂按鈕
 
   如需不同按鈕類型的詳細資訊，請參閱：
   
@@ -53,7 +53,7 @@ ms.locfileid: "70768455"
   myButton.Frame = new CGRect(25, 25, 300, 150);
   ```
 
-- 設定按鈕的文字。 使用需要文字`UIControlState`和值的方法：`SetTitle`
+- 設定按鈕的文字。 使用 `SetTitle` 方法，這需要文字和 `UIControlState` 值：
 
   ```csharp
   myButton.SetTitle("Hello, World!", UIControlState.Normal);
@@ -66,7 +66,7 @@ ms.locfileid: "70768455"
 
 ## <a name="handling-a-button-tap"></a>處理按鈕點按鍵
 
-若要回應按鈕點按鍵，請提供按鈕`TouchUpInside`事件的處理常式：
+若要回應按鈕點按動作，請提供按鈕 `TouchUpInside` 事件的處理常式：
 
 ```csharp
 button.TouchUpInside += (sender, e) => {
@@ -75,7 +75,7 @@ button.TouchUpInside += (sender, e) => {
 ```
 
 > [!NOTE]
-> `TouchUpInside`不是唯一可用的按鈕事件。 `UIButton`是的子類別`UIControl`，它會定義[許多不同的事件](xref:UIKit.UIControlEvent)。
+> `TouchUpInside` 不是唯一可用的按鈕事件。 `UIButton` 是 `UIControl`的子類別，其定義了[許多不同的事件](xref:UIKit.UIControlEvent)。
 
 ### <a name="using-the-ios-designer-to-specify-button-event-handlers"></a>使用 iOS 設計工具來指定按鈕事件處理常式
 
@@ -83,24 +83,24 @@ button.TouchUpInside += (sender, e) => {
 
 針對適當的事件，請輸入新事件處理常式的名稱，或從清單中選取一個。 這麼做會在按鈕的視圖控制器的程式碼中建立事件處理常式。
 
-![事件 索引標籤的 Properties Pad](buttons-images/image1.png "事件 索引標籤的 屬性 面板")
+![Properties Pad 的 [事件] 索引標籤](buttons-images/image1.png "Properties Pad 的 [事件] 索引標籤")
 
 ## <a name="styling-a-button"></a>設定按鈕的樣式
 
-`UIButton`控制項可以存在於數個不同的狀態中，每個都`UIControlState`由值`Normal`指定`Disabled`– `Focused`、 `Highlighted`、、等。每個狀態可以提供獨特的樣式，並以程式設計方式或使用 iOS 設計工具指定。
+`UIButton` 控制項可以存在於數個不同的狀態中，每個都是由 `UIControlState` 值所指定– `Normal`、`Disabled`、`Focused`、`Highlighted`等等。每個狀態可以提供獨特的樣式，並以程式設計方式或使用 iOS 設計工具指定。
 
 > [!NOTE]
-> 如需所有`UIControlState`值的完整清單，請參閱[`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
+> 如需所有 `UIControlState` 值的完整清單，請查看[`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
 > 附帶.
 
-例如，若要設定的標題色彩和陰影色彩`UIControlState.Normal`：
+例如，若要設定 `UIControlState.Normal`的標題色彩和陰影色彩：
 
 ```csharp
 button.SetTitleColor(UIColor.White, UIControlState.Normal);
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-下列程式`UIControlState.Normal`代碼會將按鈕標題設定為和`UIControlState.Highlighted`的屬性化（樣式）字串：
+下列程式碼會將按鈕標題設定為 `UIControlState.Normal` 和 `UIControlState.Highlighted`的屬性化（樣式）字串：
 
 ```csharp
 var normalAttributedTitle = new NSAttributedString(buttonTitle, foregroundColor: UIColor.Blue, strikethroughStyle: NSUnderlineStyle.Single);
@@ -112,7 +112,7 @@ myButton.SetAttributedTitle(highlightedAttributedTitle, UIControlState.Highlight
 
 ## <a name="custom-button-types"></a>自訂按鈕類型
 
-具有`UIButtonType` 的`Custom`按鈕沒有預設樣式。 不過，您可以設定按鈕的外觀，方法是為其不同的狀態設定影像：
+具有 `Custom` `UIButtonType` 的按鈕沒有預設樣式。 不過，您可以設定按鈕的外觀，方法是為其不同的狀態設定影像：
 
 ```csharp
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
@@ -120,10 +120,10 @@ button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_Highlight.png"), UICont
 button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlState.Selected);
 ```
 
-根據使用者是否觸及按鈕而定，它會轉譯為下列其中一個影像（`UIControlState.Normal` `UIControlState.Highlighted`分別是和`UIControlState.Selected`狀態）：
+根據使用者是否觸及按鈕而定，它會轉譯為下列其中一個影像（分別是`UIControlState.Normal`、`UIControlState.Highlighted` 和 `UIControlState.Selected` 狀態）：
 
-![UIControlState.Normal](buttons-images/image22.png "UIControlState.Normal")
-![UIControlState.Highlighted](buttons-images/image23.png "UIControlState.Highlighted")
-![UIControlState.Selected](buttons-images/image24.png "UIControlState.Selected")
+![UIControlState。 Normal](buttons-images/image22.png "UIControlState. Normal")
+![UIControlState。已反白顯示](buttons-images/image23.png "UIControlState。反白顯示")
+![UIControlState。已選取](buttons-images/image24.png "UIControlState。已選取")
 
 如需使用自訂按鈕的詳細資訊，請參閱[使用影像](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button)做為按鈕配方。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: f6576f1e7a0ed4aa27a40c7610b42e942c7923b4
-ms.sourcegitcommit: fbccdade677a805d842ec054e44bed3d01356e93
+ms.openlocfilehash: 90b0e0f3802ce766decb802c9406d72b5966360e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72798626"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032807"
 ---
 # <a name="listview-appearance"></a>ListView 外觀
 
@@ -205,7 +205,7 @@ ListView HeaderList = new ListView()
 
 ## <a name="scrollbar-visibility"></a>捲軸可見度
 
-[@No__t_1](xref:Xamarin.Forms.ListView)類別具有 `HorizontalScrollBarVisibility` 和 `VerticalScrollBarVisibility` 屬性，可取得或設定[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)值，以表示水準或垂直捲動條何時可見。 這兩個屬性都可以設定為下列值：
+[`ListView`](xref:Xamarin.Forms.ListView)類別具有 `HorizontalScrollBarVisibility` 和 `VerticalScrollBarVisibility` 屬性，可取得或設定[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)值，以表示水準或垂直捲動條何時可見。 這兩個屬性都可以設定為下列值：
 
 - [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)表示平臺的預設捲軸行為，而是 `HorizontalScrollBarVisibility` 和 `VerticalScrollBarVisibility` 屬性的預設值。
 - [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)表示捲軸會顯示出來，即使內容適合在視圖中也一樣。
@@ -213,7 +213,7 @@ ListView HeaderList = new ListView()
 
 ## <a name="row-separators"></a>資料列分隔符號
 
-預設會在 iOS 和 Android 上 `ListView` 元素之間顯示分隔線。 如果您想要隱藏 iOS 和 Android 上的分隔線，請在您的 ListView 上設定 [`SeparatorVisibility`] 屬性。 @No__t_0 的選項包括：
+預設會在 iOS 和 Android 上 `ListView` 元素之間顯示分隔線。 如果您想要隱藏 iOS 和 Android 上的分隔線，請在您的 ListView 上設定 [`SeparatorVisibility`] 屬性。 `SeparatorVisibility` 的選項包括：
 
 - **預設值**-顯示 IOS 和 Android 上的分隔線。
 - **無**-隱藏所有平臺上的分隔符號。
@@ -314,7 +314,7 @@ XML
 
 ### <a name="resize-rows-at-runtime"></a>在執行時間調整資料列的大小
 
-個別 `ListView` 的資料列可以在執行時間以程式設計方式調整大小，前提是 `HasUnevenRows` 屬性已設定為 [`true`]。 [@No__t_1](xref:Xamarin.Forms.Cell.ForceUpdateSize)的方法會更新儲存格的大小，即使目前看不到也一樣，如下列程式碼範例所示：
+個別 `ListView` 的資料列可以在執行時間以程式設計方式調整大小，前提是 `HasUnevenRows` 屬性已設定為 [`true`]。 [`Cell.ForceUpdateSize`](xref:Xamarin.Forms.Cell.ForceUpdateSize)的方法會更新儲存格的大小，即使目前看不到也一樣，如下列程式碼範例所示：
 
 ```csharp
 void OnImageTapped (object sender, EventArgs args)
@@ -341,5 +341,5 @@ void OnImageTapped (object sender, EventArgs args)
 - [群組（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 - [自訂轉譯器視圖（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
 - [動態調整資料列大小（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
-- [1.4 版本資訊](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 版本資訊](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)
+- [1.4 版本資訊](https://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
+- [1.3 版本資訊](https://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

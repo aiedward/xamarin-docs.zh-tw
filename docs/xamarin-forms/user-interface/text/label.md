@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/28/2019
-ms.openlocfilehash: d51ecc728ef6d22391f1cbc682aa204a3ce44b8a
-ms.sourcegitcommit: 9fa7cf9fae44ed092bc9cab17c843a443001734e
+ms.openlocfilehash: ba23b7dee93c0c8938ee3b2b820ba081e420727c
+ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/28/2019
-ms.locfileid: "72971221"
+ms.locfileid: "72980880"
 ---
 # <a name="xamarinforms-label"></a>Xamarin. 表單標籤
 
@@ -158,7 +158,6 @@ var label =
 下列螢幕擷取畫面顯示將 [`MaxLines`] 屬性設定為 [2] 的結果（當文字長度足以佔用2行以上）時：
 
 ![標籤 MaxLines 範例](label-images/label-maxlines.png)
-
 
 ## <a name="display-html"></a>顯示 HTML
 

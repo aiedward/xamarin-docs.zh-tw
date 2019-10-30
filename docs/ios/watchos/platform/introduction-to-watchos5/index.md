@@ -1,47 +1,47 @@
 ---
 title: watchOS 5 簡介
-description: 本檔提供一些適用于 Xamarin 的 watchOS 5 Api 的高階說明。
+description: This document provides a high-level description of some watchOS 5 APIs for Xamarin.
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: e873d476e38c91bad0db805d53e2c396f4ffb9dd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4aca6a8e7e78b5e9853361eaa694fed889d7f4e9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282046"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028215"
 ---
 # <a name="introduction-to-watchos-5"></a>watchOS 5 簡介
 
-本檔提供一些 watchOS 5 Api 的高階說明。
+This document provides a high-level description of some watchOS 5 APIs.
 
-若要開始使用 Xamarin 建立 watchOS 5 應用程式，請參閱[快速入門手冊](~/ios/platform/introduction-to-ios12/get-started.md)
+To get started building watchOS 5 apps with Xamarin, refer to the [getting started guide](~/ios/platform/introduction-to-ios12/get-started.md)
 
-## <a name="workout-improvements"></a>健身改進
+## <a name="workout-improvements"></a>Workout improvements
 
-WatchOS 5 中的健身 Api 提供新的健身資料收集功能、將 workouts 儲存至 HealthKit、在應用程式損毀之後自動繼續健身，以及使用一系列相關的數量資料。
+The workout APIs in watchOS 5 provide new features for workout data collection, saving workouts to HealthKit, automatically continuing a workout after an app crashes, and working with a series of related quantity data.
 
-## <a name="siri-shortcuts"></a>Siri 快捷方式
+## <a name="siri-shortcuts"></a>Siri shortcuts
 
-在 watchOS 5 中，Siri watch 臉部會顯示快捷方式，可在方便的時間呈現應用程式內容和功能給使用者。 Siri 會在一段時間後學習，以顯示最有可能使用的相關快捷方式。
+In watchOS 5, the Siri watch face shows shortcuts that surface app content and functionality to users at convenient times. Siri learns over time to show relevant shortcuts when they are most likely to be used.
 
-## <a name="background-audio-mode"></a>背景音訊模式
+## <a name="background-audio-mode"></a>Background audio mode
 
-watchOS 5 讓協力廠商應用程式可以透過 AV 基礎架構在背景播放音訊。
+watchOS 5 makes it possible for third-party apps to play audio in the background through the AV Foundation framework.
 
-## <a name="movement-disorder-api"></a>移動目前充滿混亂 API
+## <a name="movement-disorder-api"></a>Movement Disorder API
 
-移動目前充滿混亂 API 是 watchOS 5 中 CoreMotion 架構的一部分，可讓 watchOS 應用程式監視、記錄和查詢 tremor 與 dyskinesia 疾病相關的帕金森氏徵兆。
+The Movement Disorder API, part of the CoreMotion framework in watchOS 5, allows watchOS applications to monitor, record, and query tremor and dyskinesia symptoms related to Parkinson's disease.
 
-## <a name="natural-language-framework"></a>自然語言架構
+## <a name="natural-language-framework"></a>Natural Language framework
 
-自然語言架構可讓應用程式執行各種類型的語言分析。 例如，它可以用來識別語音的各個部分，並判斷以文字塊表示的語言。
+The Natural Language framework enables applications to perform various types of language analysis. For example, it can be used to identify parts of speech and determine the language represented by a block of text.
 
 ## <a name="related-links"></a>相關連結
 
-- [watchOS – Apple Developer （Apple）](https://developer.apple.com/watchOS/)
-- [WatchOS （Apple）的新功能（影片）](https://developer.apple.com/videos/play/wwdc2018/206/)
-- [監看（Apple）](https://www.apple.com/watch/)
+- [watchOS – Apple Developer (Apple)](https://developer.apple.com/watchOS/)
+- [What's new in watchOS (Apple) (video)](https://developer.apple.com/videos/play/wwdc2018/206/)
+- [Watch (Apple)](https://www.apple.com/watch/)

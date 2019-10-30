@@ -4,15 +4,15 @@ description: 如何設定螢幕鎖定，並在 Android 裝置或模擬器上註�
 ms.prod: xamarin
 ms.assetid: 52092F63-00EE-4F8B-A49F-65C9CCBA7EF2
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f52be16a81f3c8047997e1f4a88e13f6b940db14
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c0290dfa3b4aa301a07a589f78577899e8282158
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756424"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027587"
 ---
 # <a name="enrolling-a-fingerprint"></a>註冊指紋
 
@@ -46,7 +46,7 @@ ms.locfileid: "70756424"
 
 4. 從該處，遵循順序，將指紋新增至裝置：
 
-    [![將指紋新增至裝置的螢幕擷取畫面順序](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
+    [將指紋新增至裝置的![螢幕擷取畫面順序](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
 
 5. 在最後一個畫面中，系統會提示您將手指放在指紋掃描器上： 
 
@@ -56,13 +56,13 @@ ms.locfileid: "70756424"
 
 ### <a name="simulating-a-fingerprint-scan-on-the-emulator"></a>在模擬器上模擬指紋掃描
 
-在 Android 模擬器上，您可以使用 Android Debug Bridge 來模擬指紋掃描。 在 OS X 上，于 Windows 上啟動終端機會話啟動命令提示字元或 Powershell 會話， `adb`然後執行：
+在 Android 模擬器上，您可以使用 Android Debug Bridge 來模擬指紋掃描。 在 OS X 上，于 Windows 上啟動終端機會話啟動命令提示字元或 Powershell 會話，然後執行 `adb`：
 
 ```shell
 $ adb -e emu finger touch 1
 ```
 
-**1**的值是「掃描」手指的_手指\_識別碼_。 這是您為每個虛擬指紋指派的唯一整數。 在未來執行應用程式時，您可以在每次模擬器提示您提供指紋時執行相同的 ADB 命令，您可以執行`adb`命令，並 _\__ 將指紋識別碼傳遞給它以模擬指紋掃描。
+**1**的值是「掃描」的手指 _\_識別碼_。 這是您為每個虛擬指紋指派的唯一整數。 在未來執行應用程式時，您可以在每次模擬器提示您提供指紋時執行相同的 ADB 命令，您可以執行 `adb` 命令，並將_手指\_識別碼_傳遞給它，以模擬指紋掃描。
 
 完成指紋掃描之後，Android 會通知您已新增指紋：  
 

@@ -4,15 +4,15 @@ description: 本文說明如何在 Xamarin. Mac 應用程式中使用 windows �
 ms.prod: xamarin
 ms.assetid: 4F6C67E9-BBFF-44F7-B29E-AB47D7F44287
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: df623efcc1da617ac6b700b42d3ac058dea817ca
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6c7a236995bf2aa9677deb6fadacf76cb5726398
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772645"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008134"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin 中的 Windows
 
@@ -27,13 +27,13 @@ _本文說明如何在 Xamarin. Mac 應用程式中使用 windows 和麵板。�
 
 Windows 可以用於非模式狀態（例如可以同時開啟多個檔的文字編輯器）或強制回應（例如，必須先關閉才能繼續應用程式的 [匯出] 對話方塊）。
 
-面板是一種特殊的視窗（基類`NSWindow`的子類別），通常會在應用程式中提供輔助函式，例如文字格式檢查程式和系統色彩選擇器等公用程式視窗。
+面板是一種特殊的視窗（基底 `NSWindow` 類別的子類別），通常會在應用程式中提供輔助函式，例如文字格式檢查程式和系統色彩選擇器等公用程式視窗。
 
-[![](window-images/intro01.png "在 Xcode 中編輯視窗")](window-images/intro01.png#lightbox)
+[![](window-images/intro01.png "Editing a window in Xcode")](window-images/intro01.png#lightbox)
 
 在本文中，我們將討論在 Xamarin. Mac 應用程式中使用 Windows 和麵板的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。本文。
 
-您可能想要查看[Xamarin. Mac 內部](~/mac/internals/how-it-works.md)檔`Register`的將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md)一節，它會說明用來將C#類別連線到`Export`的和命令。目標-C 物件和 UI 元素。
+您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的「 C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將類別連線到目標-c 的`Register`和`Export`命令物件和 UI 元素。
 
 <a name="Introduction_to_Windows" />
 
@@ -70,7 +70,7 @@ Xamarin. Mac 應用程式中的 Windows 可以根據使用者目前與其互動�
 Apple 建議下列指導方針：
 
 - 使用您的應用程式名稱作為主要非文件視窗的標題。 
-- 命名新的文件視窗`untitled`。 針對第一個新檔，請勿在標題後面加上數位（例如`untitled 1`）。 如果使用者在儲存前先建立另一份新檔並將其標題為`untitled 2`第`untitled 3`一個，請呼叫該視窗、等。
+- 將新文件視窗命名為 `untitled`。 針對第一個新檔，請勿在標題後面加上數位（例如 `untitled 1`）。 如果使用者在儲存前先建立另一個新檔並將其標題為第一個，請呼叫該視窗 `untitled 2`、`untitled 3`等等。
 
 如需詳細資訊，請參閱 Apple [OS X 人體介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[命名 Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowNaming.html#//apple_ref/doc/uid/20000957-CH35-SW1)一節。
 
@@ -96,7 +96,7 @@ Apple 建議下列指導方針：
 
 「面板」是一個次要視窗，其中包含影響現用檔或選取範圍的控制項和選項（例如系統色彩選擇器）：
 
-[![](window-images/panel01.png "色彩面板")](window-images/panel01.png#lightbox)
+[![](window-images/panel01.png "A color panel")](window-images/panel01.png#lightbox)
 
 面板可以是_應用程式特定_或全_系統_的。 應用程式特定的面板會浮動在應用程式文件視窗的頂端，並在應用程式處於背景時消失。 全**系統面板（例如 [字型**] 面板），不論應用程式如何，都能在所有開啟的視窗上浮動。 
 
@@ -112,7 +112,7 @@ Apple 建議下列指導方針：
 
 大部分的新式 macOS 應用程式都有輔助控制項和選項，會影響作用中的檔或選取專案 _，作為主要視窗中的偵測_器（如下面所示的**頁面**應用程式），而不是使用面板視窗：
 
-[![](window-images/panel02.png "範例偵測器")](window-images/panel02.png#lightbox)
+[![](window-images/panel02.png "An example inspector")](window-images/panel02.png#lightbox)
 
 如需詳細資訊，請參閱 Apple [OS X 人體介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[面板](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1)一節，以及我們的[MacInspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)範例應用程式，以取得 Xamarin. Mac 應用程式中的偵測**器介面**完整執行。
 
@@ -120,13 +120,13 @@ Apple 建議下列指導方針：
 
 ## <a name="creating-and-maintaining-windows-in-xcode"></a>在 Xcode 中建立和維護視窗
 
-當您建立新的 Xamarin Cocoa 應用程式時，預設會取得標準的空白視窗。 此視窗會在專案中`.storyboard`自動包含的檔案中定義。 若要編輯您的 windows 設計，請在 **方案總管**中`Main.storyboard`按兩下該檔案：
+當您建立新的 Xamarin Cocoa 應用程式時，預設會取得標準的空白視窗。 此視窗會在專案中自動包含的 `.storyboard` 檔案中定義。 若要編輯您的 windows 設計，請在 **方案總管**中，按兩下 `Main.storyboard` 檔案：
 
-[![](window-images/edit01.png "選取主要分鏡腳本")](window-images/edit01.png#lightbox)
+[![](window-images/edit01.png "Selecting the main storyboard")](window-images/edit01.png#lightbox)
 
 這會在 Xcode 的 Interface Builder 中開啟視窗設計：
 
-[![](window-images/edit02.png "在 Xcode 中編輯 UI")](window-images/edit02.png#lightbox)
+[![](window-images/edit02.png "Editing the UI in Xcode")](window-images/edit02.png#lightbox)
 
 在**屬性偵測器**中，有數個屬性可供您用來定義和控制視窗：
 
@@ -142,7 +142,7 @@ Apple 建議下列指導方針：
 - 重**設大小**-視窗具有調整大小控制項。
 - **工具列按鈕**-視窗具有 [隱藏]/[顯示] 工具列按鈕。
 - 可**還原**-是自動儲存和還原視窗的位置和設定。
-- **在啟動時顯示**-這是載入檔案時`.xib`自動顯示的視窗。
+- **在啟動時顯示**-這是載入 `.xib` 檔案時自動顯示的視窗。
 - **停用時隱藏**-這是應用程式進入背景時隱藏的視窗。
 - **關閉時釋放**-這是關閉時從記憶體中清除的視窗。
 - **一律顯示工具提示**-經常顯示工具提示。
@@ -160,7 +160,7 @@ Apple 建議下列指導方針：
 
 若要設定視窗的初始位置，並控制其大小，請切換至 [大小] 偵測**器**：
 
-[![](window-images/edit07.png "預設大小和位置")](window-images/edit07.png#lightbox)
+[![](window-images/edit07.png "The default size and location")](window-images/edit07.png#lightbox)
 
 您可以從這裡設定視窗的初始大小、提供最小和最大大小、設定畫面上的初始位置，以及控制視窗周圍的框線。
 
@@ -173,18 +173,18 @@ Apple 建議下列指導方針：
 請執行下列動作：
 
 1. 在 Xcode 的 Interface Builder 中開啟應用程式的腳本。
-2. `NSWindowController`在 Design Surface 中選取。
-3. 切換至 [身分**識別偵測器**] `WindowController`視圖，並輸入作為 [**類別名稱**]： 
+2. 選取 Design Surface 中的 [`NSWindowController`]。
+3. 切換至 [身分**識別偵測器**] 視圖，並輸入 `WindowController` 做為**類別名稱**： 
 
-    [![](window-images/windowcontroller01.png "設定類別名稱")](window-images/windowcontroller01.png#lightbox)
+    [![](window-images/windowcontroller01.png "Setting the class name")](window-images/windowcontroller01.png#lightbox)
 4. 儲存您的變更，並返回 Visual Studio for Mac 以進行同步處理。
-5. 檔案會新增至您在 方案總管中的專案 Visual Studio for Mac： `WindowController.cs` 
+5. `WindowController.cs` 檔案將會在 Visual Studio for Mac 的**方案總管**中新增至您的專案： 
 
-    [![](window-images/windowcontroller02.png "選取 windows 控制器")](window-images/windowcontroller02.png#lightbox)
+    [![](window-images/windowcontroller02.png "Selecting the windows controller")](window-images/windowcontroller02.png#lightbox)
 6. 在 Xcode 的 Interface Builder 中重新開啟分鏡腳本。
-7. `WindowController.h`檔案將可供使用： 
+7. `WindowController.h` 檔案將可供使用： 
 
-    [![](window-images/windowcontroller03.png "編輯 WindowController 檔")](window-images/windowcontroller03.png#lightbox)
+    [![](window-images/windowcontroller03.png "Editing the WindowController.h file")](window-images/windowcontroller03.png#lightbox)
 
 <a name="Adding_UI_Elements" />
 
@@ -194,21 +194,21 @@ Apple 建議下列指導方針：
 
 例如，讓我們將工具列從連結**庫偵測器**拖曳至**介面編輯器**中的視窗：
 
-[![](window-images/edit03.png "從程式庫選取工具列")](window-images/edit03.png#lightbox)
+[![](window-images/edit03.png "Selecting a Toolbar from the Library")](window-images/edit03.png#lightbox)
 
 接下來，拖曳**文本視圖**並調整其大小，以填滿工具列底下的區域：
 
-[![](window-images/edit04.png "加入文字視圖")](window-images/edit04.png#lightbox)
+[![](window-images/edit04.png "Adding a Text View")](window-images/edit04.png#lightbox)
 
 因為我們想要在視窗的大小變更時縮小並成長**文本視圖**，所以讓我們切換到 [**條件約束編輯器**]，並新增下列條件約束：
 
-[![](window-images/edit05.png "編輯條件約束")](window-images/edit05.png#lightbox)
+[![](window-images/edit05.png "Editing constraints")](window-images/edit05.png#lightbox)
 
 藉由按一下編輯器頂端的 [for **Red 字形狀**]，然後按一下 [**加入4個條件約束**]，我們會告訴文字視圖在調整視窗大小時，水準和垂直地停留在指定的 X、Y 座標和放大或縮小。
 
-最後，讓我們使用**插座**將`ViewController.h` **文本視圖**公開至程式碼（請務必選取檔案）：
+最後，讓我們使用**插座**將**文本視圖**公開至程式碼（請務必選取 `ViewController.h` 檔案）：
 
-[![](window-images/edit06.png "設定插座")](window-images/edit06.png#lightbox)
+[![](window-images/edit06.png "Configuring an Outlet")](window-images/edit06.png#lightbox)
 
 儲存您的變更，並切換回 Visual Studio for Mac 以與 Xcode 同步。
 
@@ -221,8 +221,8 @@ Apple 建議下列指導方針：
 針對您在 Xamarin. Mac 應用程式中建立及使用的任何視窗，其程式基本上與先前所做的一樣：
 
 1. 針對不是自動新增至專案的新視窗，請將新的視窗定義加入至專案。 下面將詳細討論這一點。
-1. `Main.storyboard`按兩下檔案以開啟視窗設計，以在 Xcode 的 Interface Builder 中進行編輯。
-1. 將新的視窗拖曳至使用者介面的設計, 並使用_segue_將視窗連結到主視窗 (如需詳細資訊, 請參閱[使用分鏡](~/mac/platform/storyboards/indepth.md)指令檔的[segue](~/mac/platform/storyboards/indepth.md#Segues)一節)。
+1. 按兩下 [`Main.storyboard`] 檔案以開啟視窗設計，以在 Xcode 的 Interface Builder 中進行編輯。
+1. 將新的視窗拖曳至使用者介面的設計，並使用_segue_將視窗連結到主視窗（如需詳細資訊，請[參閱使用分鏡指令檔的](~/mac/platform/storyboards/indepth.md) [segue](~/mac/platform/storyboards/indepth.md#Segues)一節）。
 1. 在 [**屬性偵測器**] 和 [**大小偵測器**] 中設定任何必要的視窗屬性。
 1. 拖曳所需的控制項，以建立您的介面，並在**屬性偵測器**中進行設定。
 1. 使用 [**大小**] 偵測器來處理 UI 元素的調整大小。
@@ -235,21 +235,21 @@ Apple 建議下列指導方針：
 
 ## <a name="displaying-the-default-window"></a>顯示預設視窗
 
-根據預設，新的 Xamarin. Mac 應用程式會在檔案啟動時，自動`MainWindow.xib`顯示在檔案中定義的視窗：
+根據預設，新的 Xamarin. Mac 應用程式會在啟動時，自動顯示 `MainWindow.xib` 檔案中所定義的視窗：
 
-[![](window-images/display01.png "執行的範例視窗")](window-images/display01.png#lightbox)
+[![](window-images/display01.png "An example window running")](window-images/display01.png#lightbox)
 
-由於我們已修改上述視窗的設計，因此現在會包含預設的工具列和**文字視圖**控制項。 檔案中`Info.plist`的下列區段會負責顯示此視窗：
+由於我們已修改上述視窗的設計，因此現在會包含預設的工具列和**文字視圖**控制項。 `Info.plist` 檔案中的下一節會負責顯示此視窗：
 
-[![](window-images/display00.png "編輯資訊。 plist")](window-images/display00.png#lightbox)
+[![](window-images/display00.png "Editing Info.plist")](window-images/display00.png#lightbox)
 
-**主要介面**下拉式清單是用來選取將用來做為主要應用程式 UI （在此案例`Main.storyboard`中為）的分鏡腳本。
+**主要介面**下拉式清單是用來選取將用來做為主要應用程式 UI 的分鏡腳本（在此案例中為 `Main.storyboard`）。
 
-視圖控制器會自動加入至專案，以控制所顯示的主視窗（連同其主要視圖）。 它會在檔案中`ViewController.cs`定義，並在身分**識別偵測器**下的 Interface Builder 中附加至檔案**的擁有**者：
+視圖控制器會自動加入至專案，以控制所顯示的主視窗（連同其主要視圖）。 它定義于 `ViewController.cs` 檔案中，並附加至身分**識別偵測器**下 Interface Builder 中的檔案**擁有**者：
 
-[![](window-images/display02.png "設定檔案的擁有者")](window-images/display02.png#lightbox)
+[![](window-images/display02.png "Setting the file's owner")](window-images/display02.png#lightbox)
 
-在我們的視窗中，我們希望它在第一次`untitled`開啟時具有標題，讓我們覆`ViewWillAppear`寫中`ViewController.cs`的方法，如下所示：
+在我們的視窗中，我們希望它在第一次開啟時具有 `untitled` 的標題，讓我們覆寫 `ViewController.cs` 中的 `ViewWillAppear` 方法，如下所示：
 
 ```csharp
 public override void ViewWillAppear ()
@@ -262,62 +262,62 @@ public override void ViewWillAppear ()
 ```    
 
 > [!NOTE]
-> 我們會`Title` `ViewWillAppear`在方法中設定視窗的屬性值，而不是`ViewDidLoad`方法，因為雖然此視圖可能會載入記憶體中，但尚未完全具現化。 如果我們嘗試存取`Title` `ViewDidLoad`方法中的屬性，我們會收到例外狀況，因為視窗尚未經過結構化，而且尚未連接至屬性。`null`
+> 我們會在 `ViewWillAppear` 方法中設定視窗的 `Title` 屬性值，而不是 `ViewDidLoad` 方法，因為雖然此視圖可能會載入記憶體中，但尚未完全具現化。 如果嘗試存取 `ViewDidLoad` 方法中的 `Title` 屬性，我們會收到 `null` 例外狀況，因為視窗尚未經過結構化，而且尚未連接至屬性。
 
 <a name="Programmatically_Closing_a_Window" />
 
 ## <a name="programmatically-closing-a-window"></a>以程式設計方式關閉視窗
 
-有時候您可能想要以程式設計方式關閉 Xamarin. Mac 應用程式中的視窗，而不是讓使用者按一下視窗的 [**關閉**] 按鈕或使用功能表項目。 macOS 提供兩種不同的方式， `NSWindow`以程式`PerformClose`設計`Close`方式關閉：和。
+有時候您可能想要以程式設計方式關閉 Xamarin. Mac 應用程式中的視窗，而不是讓使用者按一下視窗的 [**關閉**] 按鈕或使用功能表項目。 macOS 提供兩種不同的方式，以程式設計方式關閉 `NSWindow`： `PerformClose` 和 `Close`。
 
 <a name="PerformClose" />
 
 ### <a name="performclose"></a>PerformClose
 
-呼叫的`NSWindow`方法會模擬使用者按一下視窗的 [關閉] 按鈕，方法是暫時反白顯示按鈕，然後關閉視窗。 `PerformClose`
+呼叫 `NSWindow` 的 `PerformClose` 方法，可模擬使用者按一下視窗的 [**關閉**] 按鈕，方法是暫時反白顯示按鈕，然後關閉視窗。
 
-如果應用程式`NSWindow`會執行的`WillClose`事件，則會在關閉視窗之前引發。 如果事件`false`傳回，則不會關閉視窗。 如果視窗沒有 [**關閉**] 按鈕，或因為任何原因而無法關閉，作業系統就會發出警示音效。
+如果應用程式會執行 `NSWindow`的 `WillClose` 事件，則會在關閉視窗之前引發。 如果事件傳回 `false`，則不會關閉視窗。 如果視窗沒有 [**關閉**] 按鈕，或因為任何原因而無法關閉，作業系統就會發出警示音效。
 
-例如：
+例如:
 
 ```csharp
 MyWindow.PerformClose(this);
 ```
 
-會嘗試關閉`MyWindow` `NSWindow`實例。 如果成功，視窗將會關閉，否則會發出警示音效，而且會保持開啟狀態。
+會嘗試關閉 `MyWindow` `NSWindow` 實例。 如果成功，視窗將會關閉，否則會發出警示音效，而且會保持開啟狀態。
 
 <a name="Close" />
 
 ### <a name="close"></a>關閉
 
-呼叫的`NSWindow`方法並不會模擬使用者按一下視窗的 [關閉] 按鈕，只要將按鈕反白顯示，它就會關閉視窗。 `Close`
+呼叫 `NSWindow` 的 `Close` 方法並不會模擬使用者按一下視窗的 [**關閉**] 按鈕，只要將按鈕反白顯示，它就會關閉視窗。
 
-視窗不一定要關閉，而且`NSWindowWillCloseNotification`系統會將通知張貼到要關閉之視窗的預設通知中心。
+視窗不一定要關閉，而且系統會將 `NSWindowWillCloseNotification` 通知張貼到要關閉之視窗的預設通知中心。
 
-方法與`PerformClose`方法有兩個重要的方式不同： `Close`
+`Close` 方法與 `PerformClose` 方法的兩個重要方式不同：
 
-1. 它不會嘗試引發`WillClose`事件。
+1. 它不會嘗試引發 `WillClose` 事件。
 2. 它不會以反白顯示按鈕的方式，模擬使用者按一下 [**關閉**] 按鈕。
 
-例如：
+例如:
 
 ```csharp
 MyWindow.Close();
 ```
 
-會關閉`MyWindow` `NSWindow`實例。
+會關閉 `MyWindow` `NSWindow` 實例。
 
 <a name="Modified-Windows-Content" />
 
 ## <a name="modified-windows-content"></a>修改過的 Windows 內容
 
-在 macOS 中，Apple 提供了一種方式，通知使用者視窗（`NSWindow`）的內容已由使用者修改，需要儲存。 如果視窗包含修改過的內容，就會在其 [**關閉**] widget 中顯示一個小的黑點：
+在 macOS 中，Apple 提供了一種方法來通知使用者視窗（`NSWindow`）的內容已由使用者修改過，必須加以儲存。 如果視窗包含修改過的內容，就會在其 [**關閉**] widget 中顯示一個小的黑點：
 
-[![](window-images/close01.png "具有已修改標記的視窗")](window-images/close01.png#lightbox)
+[![](window-images/close01.png "A window with the modified marker")](window-images/close01.png#lightbox)
 
 如果使用者嘗試在有未儲存的視窗內容變更時關閉視窗或結束 Mac 應用程式，您應該顯示[對話方塊](~/mac/user-interface/dialog.md)或強制回應[表](~/mac/user-interface/dialog.md)，並允許使用者先儲存變更：
 
-[![](window-images/close02.png "視窗關閉時顯示的儲存工作表")](window-images/close02.png#lightbox)
+[![](window-images/close02.png "A save sheet being shown when the window is closed")](window-images/close02.png#lightbox)
 
 ### <a name="marking-a-window-as-modified"></a>將視窗標示為已修改
 
@@ -337,7 +337,7 @@ Window.DocumentEdited = false;
 
 ### <a name="saving-changes-before-closing-a-window"></a>在關閉視窗前儲存變更
 
-若要監看使用者是否關閉視窗，並讓他們事先儲存修改過的內容，您必須建立的`NSWindowDelegate`子類別，並覆寫其`WindowShouldClose`方法。 例如：
+若要監看使用者關閉視窗，並讓他們事先儲存修改過的內容，您必須建立 `NSWindowDelegate` 的子類別，並覆寫其 `WindowShouldClose` 方法。 例如:
 
 ```csharp
 using System;
@@ -432,7 +432,7 @@ Window.Delegate = new EditorWindowDelegate(Window);
 
 ### <a name="saving-changes-before-closing-the-app"></a>在關閉應用程式前儲存變更
 
-最後，您的 Xamarin 應用程式應該檢查是否有任何 Windows 包含修改過的內容，並允許使用者在結束前儲存變更。 若要這麼做，請`AppDelegate.cs`編輯您的`ApplicationShouldTerminate`檔案，覆寫方法，使其看起來如下所示：
+最後，您的 Xamarin 應用程式應該檢查是否有任何 Windows 包含修改過的內容，並允許使用者在結束前儲存變更。 若要這麼做，請編輯您的 `AppDelegate.cs` 檔案，覆寫 `ApplicationShouldTerminate` 方法，使其看起來如下所示：
 
 ```csharp
 public override NSApplicationTerminateReply ApplicationShouldTerminate (NSApplication sender)
@@ -454,11 +454,11 @@ public override NSApplicationTerminateReply ApplicationShouldTerminate (NSApplic
 
 ## <a name="working-with-multiple-windows"></a>使用多個視窗
 
-大部分以檔為基礎的 Mac 應用程式都可以同時編輯多個檔。 例如，文字編輯器可以同時開啟多個文字檔來進行編輯。 根據預設，**我們的新**Xamarin 應用程式會有一個 [檔案] 功能表，其中**新**的專案會自動`newDocument:`連接到**動作**。
+大部分以檔為基礎的 Mac 應用程式都可以同時編輯多個檔。 例如，文字編輯器可以同時開啟多個文字檔來進行編輯。 根據預設，**我們的新**Xamarin 應用程式會有一個 [檔案] 功能表，其中**新**的專案會自動連接到 [`newDocument:`]**動作**。
 
 我們即將啟動這個新專案，並允許使用者開啟主視窗的多個複本，一次編輯多份檔。
 
-讓我們編輯`AppDelegate.cs`檔案，並新增下列計算屬性：
+讓我們編輯 `AppDelegate.cs` 檔案，並新增下列計算屬性：
 
 ```csharp
 public int UntitledWindowCount { get; set;} =1;
@@ -485,11 +485,11 @@ void NewDocument (NSObject sender) {
 
 這段程式碼會建立視窗控制器的新版本、載入新視窗、使其成為主要和金鑰視窗，並設定它的標題。 現在，如果我們執行應用程式，然後從 [檔案] 功能表中選取 [**新增**]，就會開啟並顯示**新的編輯器**視窗：
 
-[![](window-images/display04.png "已新增新的未命名視窗")](window-images/display04.png#lightbox)
+[![](window-images/display04.png "A new untitled window was added")](window-images/display04.png#lightbox)
 
 如果開啟 [ **windows** ] 功能表，您可以看到應用程式會自動追蹤並處理我們開啟的視窗：
 
-[![](window-images/display05.png "Windows 功能表")](window-images/display05.png#lightbox)
+[![](window-images/display05.png "The windows menu")](window-images/display05.png#lightbox)
 
 如需在 Xamarin. Mac 應用程式中使用功能表的詳細資訊，請參閱我們[的使用功能表](~/mac/user-interface/menu.md)檔。
 
@@ -503,7 +503,7 @@ void NewDocument (NSObject sender) {
 var window = NSApplication.SharedApplication.KeyWindow;
 ```
 
-您可以在任何需要存取目前索引鍵視窗的類別或方法中呼叫它。 如果目前沒有開啟視窗，則會`null`傳回。
+您可以在任何需要存取目前索引鍵視窗的類別或方法中呼叫它。 如果目前沒有開啟視窗，則會傳回 `null`。
 
 <a name="Accessing-All-App-Windows" />
 
@@ -511,7 +511,7 @@ var window = NSApplication.SharedApplication.KeyWindow;
 
 有時候您可能需要存取目前已開啟的 Xamarin. Mac 應用程式的所有視窗。 例如，若要查看使用者想要開啟的檔案是否已在現有視窗中開啟。
 
-會維護一個`Windows`屬性，其中包含應用程式中所有已開啟視窗的陣列。 `NSApplication.SharedApplication` 您可以逐一查看此陣列，以存取所有應用程式目前的視窗。 例如：
+`NSApplication.SharedApplication` 會維護 `Windows` 屬性，其中包含應用程式中所有已開啟視窗的陣列。 您可以逐一查看此陣列，以存取所有應用程式目前的視窗。 例如:
 
 ```csharp
 // Is the file already open?
@@ -525,13 +525,13 @@ for(int n=0; n<NSApplication.SharedApplication.Windows.Length; ++n) {
 }
 ```
 
-在範例程式碼中，我們會將每個傳回的`ViewController`視窗轉換成應用程式中的自訂類別，並`Path`針對使用者想要開啟的檔案路徑，測試自訂屬性的值。 如果檔案已開啟，我們會將該視窗帶入前端。
+在範例程式碼中，我們會將每個傳回的視窗轉換成應用程式中的自訂 `ViewController` 類別，並針對使用者想要開啟的檔案路徑，測試自訂 `Path` 屬性的值。 如果檔案已開啟，我們會將該視窗帶入前端。
 
 <a name="Adjusting_the_Window_Size_in_Code" />
 
 ## <a name="adjusting-the-window-size-in-code"></a>在程式碼中調整視窗大小
 
-有時候，應用程式需要在程式碼中調整視窗大小。 若要調整視窗的大小和位置，您可以`Frame`調整它的屬性。 調整視窗的大小時，您通常也需要調整它的原點，將視窗保留在相同的位置，因為 macOS 的座標系統。
+有時候，應用程式需要在程式碼中調整視窗大小。 若要調整視窗的大小和位置，您可以調整它的 `Frame` 屬性。 調整視窗的大小時，您通常也需要調整它的原點，將視窗保留在相同的位置，因為 macOS 的座標系統。
 
 不同于 iOS 的左上角代表（0，0），macOS 使用做數學座標系統，螢幕的左下角代表（0，0）。 在 iOS 中，座標會隨著您向右移動而增加。 在 macOS 中，座標會在值向上增加到右邊。 
 
@@ -557,11 +557,11 @@ SetFrame (frame, true);
 
 有時候，您可能需要在 Xamarin Mac 應用程式內監看視窗大小的變更。 例如，重繪內容以符合新的大小。
 
-若要監視大小變更，請先確定您已在 Xcode 的 Interface Builder 中為視窗控制器指派自訂類別。 例如， `MasterWindowController`在下列內容中：
+若要監視大小變更，請先確定您已在 Xcode 的 Interface Builder 中為視窗控制器指派自訂類別。 例如，`MasterWindowController` 如下所示：
 
-[![](window-images/resize01.png "身分識別偵測器")](window-images/resize01.png#lightbox)
+[![](window-images/resize01.png "The Identity Inspector")](window-images/resize01.png#lightbox)
 
-接下來，編輯自訂視窗控制器類別，並`DidResize`監視控制器視窗上的事件，以接收即時大小變更的通知。 例如：
+接下來，編輯自訂視窗控制器類別，並監視控制器視窗上的 `DidResize` 事件，以獲得即時大小變更的通知。 例如:
 
 ```csharp
 public override void WindowDidLoad ()
@@ -574,7 +574,7 @@ public override void WindowDidLoad ()
 }
 ```
 
-（選擇性）您可以使用`DidEndLiveResize`事件，只在使用者完成變更視窗的大小後收到通知。 例如：
+（選擇性）您可以使用 [`DidEndLiveResize`] 事件，只在使用者完成變更視窗的大小後收到通知。 例如：
 
 ```csharp
 public override void WindowDidLoad ()
@@ -592,9 +592,9 @@ public override void WindowDidLoad ()
 
 ## <a name="setting-a-windows-title-and-represented-file"></a>設定視窗的標題和表示檔案
 
-當使用代表檔的視窗時， `NSWindow`有一個`DocumentEdited`屬性，如果設定為`true`在 [關閉] 按鈕中顯示一個小點，讓使用者知道檔案已經修改，應該在關閉前儲存。
+當使用代表檔的視窗時，`NSWindow` 具有 `DocumentEdited` 屬性，如果設定為 `true` 會在 [關閉] 按鈕中顯示一個小點，讓使用者知道檔案已經過修改，應該在關閉前儲存。
 
-讓我們編輯`ViewController.cs`檔案，並進行下列變更：
+讓我們編輯 `ViewController.cs` 檔案，並進行下列變更：
 
 ```csharp
 public bool DocumentEdited {
@@ -641,19 +641,19 @@ public override void AwakeFromNib ()
 }
 ```
 
-我們也會監看視窗`WillClose`上的事件，並檢查`DocumentEdited`屬性的狀態。 如果是`true` ，我們必須讓使用者能夠將變更儲存至檔案。 如果我們執行應用程式並輸入一些文字，則會顯示點：
+我們也會監看視窗上的 `WillClose` 事件，並檢查 `DocumentEdited` 屬性的狀態。 如果 `true`，我們必須讓使用者能夠將變更儲存至檔案。 如果我們執行應用程式並輸入一些文字，則會顯示點：
 
-[![](window-images/file01.png "已變更的視窗")](window-images/file01.png#lightbox)
+[![](window-images/file01.png "A changed window")](window-images/file01.png#lightbox)
 
 如果我們嘗試關閉視窗，就會收到警示：
 
-[![](window-images/file02.png "顯示儲存對話方塊")](window-images/file02.png#lightbox)
+[![](window-images/file02.png "Displaying a save dialog")](window-images/file02.png#lightbox)
 
-如果我們從檔案載入檔，我們可以使用`window.SetTitleWithRepresentedFilename (Path.GetFileName(path));`方法，將視窗的標題設定為檔案的名稱（ `path`指定的字串代表要開啟的檔案）。 此外，我們也可以使用`window.RepresentedUrl = url;`方法來設定檔案的 URL。
+如果要從檔案載入檔，可以使用 `window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` 方法，將視窗的標題設定為檔案的名稱（假設 `path` 是代表要開啟之檔案的字串）。 此外，我們也可以使用 `window.RepresentedUrl = url;` 方法來設定檔案的 URL。
 
 如果 URL 指向 OS 所知的檔案類型，則它的圖示會顯示在標題列中。 如果使用者以滑鼠右鍵按一下圖示，將會顯示檔案的路徑。
 
-讓我們編輯`AppDelegate.cs`檔案，並新增下列方法：
+讓我們編輯 `AppDelegate.cs` 檔案，並新增下列方法：
 
 ```csharp
 [Export ("openDocument:")]
@@ -690,11 +690,11 @@ void OpenDialog (NSObject sender)
 
 現在，如果我們執行應用程式，請從 [檔案 **] 功能表中選取 [** **開啟 ...** ]，從 [**開啟**] 對話方塊中選取一個文字檔，然後將它開啟：
 
-[![](window-images/file03.png "開啟的對話方塊")](window-images/file03.png#lightbox)
+[![](window-images/file03.png "An open dialog box")](window-images/file03.png#lightbox)
 
 將會顯示檔案，並使用檔案的圖示來設定標題：
 
-[![](window-images/file04.png "已載入檔案的內容")](window-images/file04.png#lightbox)
+[![](window-images/file04.png "The contents of a file loaded")](window-images/file04.png#lightbox)
 
 <a name="Adding_a_New_Window_to_a_Project" />
 
@@ -704,25 +704,25 @@ void OpenDialog (NSObject sender)
 
 若要加入新的視窗，請執行下列動作：
 
-1. 在 **方案總管**中，按兩下`Main.storyboard`檔案以開啟檔案，以在 Xcode 的 Interface Builder 中進行編輯。
+1. 在 **方案總管**中，按兩下 `Main.storyboard` 檔案，將它開啟，以在 Xcode 的 Interface Builder 中進行編輯。
 2. 從連結**庫**拖曳新的 **視窗控制器** ，並將它放在  **Design Surface**：
 
-    [![](window-images/new01.png "在程式庫中選取新的視窗控制器")](window-images/new01.png#lightbox)
-3. 在身分**識別偵測器**中`PreferencesWindow` ，為分鏡腳本**識別碼**輸入： 
+    [![](window-images/new01.png "Selecting a new Window Controller in the Library")](window-images/new01.png#lightbox)
+3. 在身分**識別偵測器**中，輸入分鏡腳本**識別碼**的 `PreferencesWindow`： 
 
-    [![](window-images/new02.png "設定分鏡腳本識別碼")](window-images/new02.png#lightbox)
+    [![](window-images/new02.png "Setting the storyboard ID")](window-images/new02.png#lightbox)
 4. 設計您的介面： 
 
-    [![](window-images/new03.png "設計 UI")](window-images/new03.png#lightbox)
-5. 開啟應用程式功能表（`MacWindows`），選取 [**喜好設定 ...** ]，然後按一下並拖曳至新視窗： 
+    [![](window-images/new03.png "Designing the UI")](window-images/new03.png#lightbox)
+5. 開啟 [應用程式] 功能表（`MacWindows`），選取 [**喜好設定 ...** ]，然後按一下並拖曳至新視窗： 
 
-    [![](window-images/new05.png "建立 segue")](window-images/new05.png#lightbox)
+    [![](window-images/new05.png "Creating a segue")](window-images/new05.png#lightbox)
 6. 從快顯功能表中選取 [**顯示**]。
 7. 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
 如果我們執行程式碼，並從 [**應用程式] 功能表**中選取 [**喜好設定 ...** ]，就會顯示視窗：
 
-[![](window-images/new04.png "範例喜好設定功能表")](window-images/new04.png#lightbox)
+[![](window-images/new04.png "A sample preferences menu")](window-images/new04.png#lightbox)
 
 <a name="Working_with_Panels" />
 
@@ -733,7 +733,7 @@ void OpenDialog (NSObject sender)
 就像您在 Xamarin. Mac 應用程式中建立及使用的任何其他類型的視窗一樣，程式基本上是相同的：
 
 1. 將新的視窗定義加入至專案。
-2. `.xib`按兩下檔案以開啟視窗設計，以在 Xcode 的 Interface Builder 中進行編輯。
+2. 按兩下 [`.xib`] 檔案以開啟視窗設計，以在 Xcode 的 Interface Builder 中進行編輯。
 3. 在 [**屬性偵測器**] 和 [**大小偵測器**] 中設定任何必要的視窗屬性。
 4. 拖曳所需的控制項，以建立您的介面，並在**屬性偵測器**中進行設定。
 5. 使用 [**大小**] 偵測器來處理 UI 元素的調整大小。
@@ -742,38 +742,38 @@ void OpenDialog (NSObject sender)
 
 在 [**屬性偵測器**] 中，您有下列面板特有的選項：
 
-[![](window-images/panel03.png "屬性偵測器")](window-images/panel03.png#lightbox)
+[![](window-images/panel03.png "The Attribute Inspector")](window-images/panel03.png#lightbox)
 
-- **樣式**-可讓您調整面板的樣式，其方式如下：一般面板（看起來像標準視窗）、公用程式面板（具有較小的標題列）、抬頭顯示器面板（是半透明的，而且標題列是背景的一部分）。
+- **樣式**-可讓您調整面板的樣式：一般面板（看起來像是標準視窗）、公用程式面板（具有較小的標題列）、抬頭顯示器面板（是半透明的，而且標題列是背景的一部分）。
 - [**非啟用**]-在面板中決定成為金鑰視窗。
 - **檔**強制回應-如果檔案模式，面板只會浮動在應用程式的視窗上方，否則會浮動在全部上方。
 
 若要新增新的面板，請執行下列動作：
 
-1. 在 **方案總管**中，以滑鼠右鍵按一下專案，然後選取 **加入** > **新檔案 ...** 。
-2. 在 [新增檔案] 對話方塊中，  > 選取**具有控制器的 [Xamarin Cocoa] 視窗**：
+1. 在 **方案總管**中，以滑鼠右鍵按一下專案，然後選取 **加入** > **新增檔案 ...**
+2. 在 [新增檔案] 對話方塊中，選取 [ **Xamarin**  > **Cocoa] 視窗，其中包含控制器**：
 
-    [![](window-images/panels00.png "加入新的視窗控制器")](window-images/panels00.png#lightbox)
+    [![](window-images/panels00.png "Adding a new window controller")](window-images/panels00.png#lightbox)
 3. 輸入 `DocumentPanel` 作為 [名稱]，然後按一下 [新增] 按鈕。
-4. `DocumentPanel.xib`按兩下檔案將其開啟，以在 Interface Builder 中進行編輯： 
+4. 按兩下 `DocumentPanel.xib` 檔案，在 Interface Builder 中開啟它進行編輯： 
 
-    [![](window-images/new02.png "編輯面板")](window-images/new02.png#lightbox)
+    [![](window-images/new02.png "Editing the panel")](window-images/new02.png#lightbox)
 5. 從 [**介面編輯器**] 中的 [程式庫] 偵測**器**刪除現有的視窗並拖曳面板： 
 
-    [![](window-images/panels01.png "刪除現有的視窗")](window-images/panels01.png#lightbox)
-6. 將面板掛上至檔案**的擁有** - 者**視窗** - **插座**： 
+    [![](window-images/panels01.png "Deleting the existing window")](window-images/panels01.png#lightbox)
+6. 將面板連結至檔案**的擁有**者 -  **視窗** - **插座**： 
 
-    [![](window-images/panels02.png "拖曳以連接面板")](window-images/panels02.png#lightbox)
-7. 切換至身分**識別偵測器**，並將面板的類別`DocumentPanel`設定為： 
+    [![](window-images/panels02.png "Dragging to wire up the panel")](window-images/panels02.png#lightbox)
+7. 切換至身分**識別偵測器**，並將面板的類別設定為 `DocumentPanel`： 
 
-    [![](window-images/panels03.png "設定面板的類別")](window-images/panels03.png#lightbox)
+    [![](window-images/panels03.png "Setting the panel's class")](window-images/panels03.png#lightbox)
 8. 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
-9. `DocumentPanel.cs`編輯檔案，並將類別定義變更為下列內容： 
+9. 編輯 `DocumentPanel.cs` 檔案，並將類別定義變更為下列內容： 
 
     `public partial class DocumentPanel : NSPanel`
 10. 將變更儲存到檔案。
 
-編輯檔案， `DidFinishLaunching`讓方法看起來如下所示： `AppDelegate.cs`
+編輯 `AppDelegate.cs` 檔案，使 `DidFinishLaunching` 方法看起來如下所示：
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -787,7 +787,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 如果我們執行應用程式，將會顯示面板：
 
-[![](window-images/panels04.png "執行中應用程式的面板")](window-images/panels04.png#lightbox)
+[![](window-images/panels04.png "The panel in a running app")](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > Apple 已淘汰面板視窗，應該以**偵測器介面**取代。 如需在 Xamarin. Mac 應用程式中建立偵測**器**的完整範例，請參閱我們的[MacInspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)範例應用程式。

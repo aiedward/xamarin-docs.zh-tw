@@ -3,15 +3,15 @@ title: 建立跨平臺應用程式總覽
 description: 本檔提供建立跨平臺應用程式的高階總覽。 它討論的值C#、設計模式（例如 MVC/MVVM）和原生 ui。
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d839e0141f14f4ba86897b128bf2a8c0a79548d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758114"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016918"
 ---
 # <a name="building-cross-platform-applications-overview"></a>建立跨平臺應用程式總覽
 
@@ -53,7 +53,7 @@ Xamarin 不只是「寫入一次，隨處執行」平臺，因為其中一個優
 
 藉由將您的應用程式架構分層，然後將平臺中立的核心功能移至可重複使用的核心程式庫，將責任分離的原則納入考慮，您可以將跨平臺的程式碼共用最大化，如下圖所示闡述
 
- ![](overview-images/layers2.png "藉由將您的應用程式架構分層，然後將平臺中立的核心功能移至可重複使用的核心程式庫，將責任分離的原則納入考慮，您可以將跨平臺的程式碼共用最大化")
+ ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
 
  <a name="Case_Studies" />
 

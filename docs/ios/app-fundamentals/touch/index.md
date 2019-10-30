@@ -4,21 +4,21 @@ description: 本檔連結的指南會說明如何在 Xamarin iOS 應用程式中
 ms.prod: xamarin
 ms.assetid: E3904713-6018-4755-A315-EB045DFB3500
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: dfd1a3c88d2c9c87c84a18736dd0f4c8c7e79005
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7aac9a3e2a86f5cdcfa2d6ab27961dd83998bb0f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282994"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009352"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>在 Xamarin iOS 應用程式中處理觸控
 
 就像其他行動平臺一樣，iOS 有數種方式可處理觸控。 它可以支援多點觸控，也就是螢幕上的許多連絡人，還有複雜的手勢。 本指南介紹一些概念，以及在 iOS 上執行觸控和手勢的 particularities。
 
-iOS 會將觸控資料封裝`UITouch`在類別中，透過一`UIResponder`系列的方法可供應用程式使用。 應用程式可以在`UIView`和`UIViewController`的子類別中覆寫這些方法，這`UIResponder`兩者都是繼承自。
+iOS 會將觸控資料封裝在 `UITouch` 類別中，這可透過一系列的 `UIResponder` 方法提供給應用程式使用。 應用程式可以在 `UIView` 和 `UIViewController`的子類別中覆寫這些方法，這兩者都是繼承自 `UIResponder`。
 
 除了捕捉觸控資料，iOS 也提供將觸控模式解讀為手勢的方法。 這些手勢辨識器可以輪流用來解讀應用程式特定的命令，例如影像的旋轉或頁面的回合。 iOS 提供了一組豐富的類別，可透過最小的加入程式碼來處理一般手勢。
 

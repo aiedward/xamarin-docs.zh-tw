@@ -4,19 +4,19 @@ description: 本指南說明如何使用 [與 Mac 配對] 將 Visual Studio 2019
 ms.prod: xamarin
 ms.assetid: 39DD7B3F-3E69-4E2A-B743-4C26AF613025
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: 9296fa60a454fe83f9ec9b383067576b67e5f037
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: b8020ae8539e12640cde0d565ccbd2eb0c01fc30
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198539"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022489"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 
-本指南描述如何使用 [與 Mac 配對] 將 Visual Studio 2019 連線至 Mac 組建主機。這些指示同樣適用於 Visual Studio 2017。
+_本指南說明如何使用 [與 Mac 配對]，將 Visual Studio 2019 連線到 Mac 組建主機。相同的指示適用于 Visual Studio 2017。_
 
 ## <a name="overview"></a>總覽
 
@@ -78,7 +78,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
     - 使用 [與 Mac 配對] 按鈕 iOS 工具列：
 
-      ![已醒目提示 [與 Mac 配對] 按鈕的 [iOS] 工具列](images/ios-toolbar.png "已醒目提示 [與 Mac 配對] 按鈕的 [iOS] 工具列")
+      ![已反白顯示 [與 Mac 配對] 按鈕的 iOS 工具列](images/ios-toolbar.png "已反白顯示 [與 Mac 配對] 按鈕的 iOS 工具列")
 
     - 或者，選取 [工具] > [iOS] > [與 Mac 配對]。
 
@@ -107,14 +107,14 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
     - Visual Studio 2019 連線至 Mac 時，[與 Mac 配對] 對話方塊中該 Mac 的項目會顯示圖示，指出目前已連線：
 
-      ![已連線的 Mac](images/connected.png "已連線的 Mac")
+      ![連線的 Mac](images/connected.png "連線的 Mac")
 
       一次只能有一個已連線的 Mac。
 
       > [!TIP]
       > 以滑鼠右鍵按一下 [與 Mac 配對] 清單中的任何 Mac 都會啟動操作功能表，讓您可以 [連線...]、[不要記住這部 Mac] 或 [中斷連線]：
       >
-      > ![[與 Mac 配對] 操作功能表](images/contextmenu.png "[與 Mac 配對] 操作功能表")
+      > ![[與 Mac 配對] 內容功能表](images/contextmenu.png "[與 Mac 配對] 內容功能表")
       >
       > 如果您選擇 [不要記住這部 Mac]，則會忘記所選取 Mac 的認證。 若要重新連線至該 Mac，您需要重新輸入使用者名稱和密碼。
 
@@ -130,7 +130,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
     - 在 Mac 上，開啟 [系統偏好設定] > [共享] > [遠端登入]：
 
-      [![[系統偏好設定] > [共享] 中 Mac 的 IP 位址](images/sharing-ipaddress.png "[系統偏好設定] > [共享] 中 Mac 的 IP 位址")](images/sharing.png#lightbox)
+      [![Mac 在系統喜好設定中的 IP 位址 > 共用](images/sharing-ipaddress.png "Mac 在系統喜好設定中的 IP 位址 > 共用")](images/sharing.png#lightbox)
 
     - 或者，使用命令列。 在 [終端機] 中，發出此命令：
 
@@ -160,7 +160,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ## <a name="automatic-mac-provisioning"></a>自動 Mac 佈建
 
-從 [Visual Studio 2019 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，[與 Mac 配對] 會自動佈建含建置 Xamarin.iOS 應用程式必備軟體的 Mac：Mono、Xamarin.iOS (軟體架構，並非 Visual Studio for Mac 整合式開發環境 (IDE))，及各種與 Xcode 相關的工具 (並非 Xcode 本身)。
+從[Visual Studio 2019 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，與 mac 配對會自動布建 mac，其中包含建立 Xamarin ios 應用程式所需的軟體： Mono、Xamarin ios （軟體架構，而非 Visual Studio for Mac IDE）和各種Xcode 相關的工具（但不會 Xcode 本身）。
 
 > [!IMPORTANT]
 >
@@ -178,7 +178,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ||安裝檢查|下載|安裝
 |---|---|---|---|
-|Mono|[![遺漏 Mono 安裝](images/mono-missing.png "遺漏 Mono 安裝")](images/mono-missing-large.png#lightbox)|[![下載 Mono](images/mono-downloading.png "下載 Mono")](images/mono-downloading-large.png#lightbox)|[![安裝 Mono](images/mono-installing.png "安裝 Mono")](images/mono-installing-large.png#lightbox)|
+|Mono|[![缺少 Mono 安裝](images/mono-missing.png "缺少 Mono 安裝")](images/mono-missing-large.png#lightbox)|[![下載 Mono](images/mono-downloading.png "下載 Mono")](images/mono-downloading-large.png#lightbox)|[![安裝 Mono](images/mono-installing.png "安裝 Mono")](images/mono-installing-large.png#lightbox)|
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
@@ -194,7 +194,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ||安裝檢查|下載|安裝
 |---|---|---|---|
-|Xamarin.iOS|[![遺漏 Xamarin.iOS 安裝](images/xamios-missing.png "遺漏 Xamarin.iOS 安裝")](images/xamios-missing-large.png#lightbox)|[![下載 Xamarin.iOS](images/xamios-downloading.png "下載 Xamarin.iOS")](images/xamios-downloading-large.png#lightbox)|[![安裝 Xamarin.iOS](images/xamios-installing.png "安裝 Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
+|Xamarin.iOS|[![缺少 Xamarin iOS 安裝](images/xamios-missing.png "缺少 Xamarin iOS 安裝")](images/xamios-missing-large.png#lightbox)|[![下載 Xamarin. iOS](images/xamios-downloading.png "下載 Xamarin. iOS")](images/xamios-downloading-large.png#lightbox)|[![安裝 Xamarin. iOS](images/xamios-installing.png "安裝 Xamarin.iOS")](images/xamios-installing-large.png#lightbox)|
 
 ### <a name="xcode-tools-and-license"></a>Xcode 工具和授權
 
@@ -202,9 +202,9 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ||安裝檢查|接受授權|
 |---|---|---|
-|Xcode|[![遺漏 Xcode 安裝](images/xcode-missing.png "遺漏 Xcode 安裝")](images/xcode-missing-large.png#lightbox)|[![Xcode 授權](images/xcode-license.png "Xcode 授權")](images/xcode-license-large.png#lightbox)|
+|Xcode|[![缺少 Xcode 安裝](images/xcode-missing.png "缺少 Xcode 安裝")](images/xcode-missing-large.png#lightbox)|[![Xcode 授權](images/xcode-license.png "Xcode 授權")](images/xcode-license-large.png#lightbox)|
 
-此外，[與 Mac 配對] 將會安裝或更新利用 Xcode 所散發的各種套件。 例如：
+此外，[與 Mac 配對] 將會安裝或更新利用 Xcode 所散發的各種套件。 例如:
 
 - **MobileDeviceDevelopment.pkg**
 - **XcodeExtensionSupport.pkg**
@@ -222,7 +222,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ## <a name="build-ios-apps-from-the-windows-command-line"></a>從 Windows 命令列建置 iOS 應用程式
 
-[與 Mac 配對] 支援從命令列建置 Xamarin.iOS 應用程式。 例如：
+[與 Mac 配對] 支援從命令列建置 Xamarin.iOS 應用程式。 例如:
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
@@ -236,7 +236,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - `ServerPassword` - 要在登入 Mac 組建主機時使用的密碼。
 
 > [!NOTE]
-> Visual Studio 2019 會將 `msbuild` 儲存在以下目錄中：**C:\Program Files (x86)\Microsoft Visual Studio\2017\\&lt;Version&gt;\MSBuild\15.0\Bin**
+> Visual Studio 2019 會將 `msbuild` 儲存在下列目錄中： **C:\Program Files （x86） \Microsoft Visual Studio\2017\\&lt;版本&gt;\MSBuild\15.0\Bin**
 
 [與 Mac 配對] 第一次從 Visual Studio 2019 或命令列登入特定 Mac 組建主機時，會設定 SSH 金鑰。 如果使用這些金鑰，則未來的登入不需要使用者名稱或密碼。 新建立的金鑰會儲存在 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中。
 

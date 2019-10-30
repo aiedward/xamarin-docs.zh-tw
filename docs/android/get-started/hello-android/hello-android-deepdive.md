@@ -1,24 +1,24 @@
 ---
-title: Hello, Android：深入了解
+title: Hello, Android：深度剖析
 description: 在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。 在過程中，將會為您介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: c02e8e3c30508951df071810aff8db429a2f04ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756711"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028000"
 ---
-# <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
+# <a name="hello-android-deep-dive"></a>Hello, Android：深度剖析
 
-_在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.Android 應用程式，以及了解使用 Xamarin 進行 Android 應用程式開發的基本知識。在此過程中，將會為您介紹建置和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。_
+_在這份含有兩部分的指南中，您將建立您的第一個 Xamarin. Android 應用程式，並瞭解使用 Xamarin 進行 Android 應用程式開發的基本概念。在過程中，您將會引進建立和部署 Xamarin Android 應用程式所需的工具、概念和步驟。_
 
 在 [Hello, Android 快速入門](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)中，您已建置並執行您的第一個 Xamarin.Android 應用程式。 現在是時候更深入了解 Android 應用程式的運作方式，讓您能夠建置更複雜的程式。 本指南會檢閱您在 Hello, Android 逐步解說中所採取的步驟，讓您可以了解所執行的作業，並開始對 Android 應用程式開發有基本了解。
 
@@ -61,7 +61,7 @@ _在這份含有兩部分的指南中，您將會建置您的第一個 Xamarin.A
 
 ## <a name="introduction-to-visual-studio"></a>Visual Studio 簡介
 
-Visual Studio 是 Microsoft 所提供之功能強大的 IDE。 其中包含完全整合的視覺化設計工具、含有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何搭配 Xamarin 外掛程式使用一些基本的 Visual Studio 功能。
+Visual Studio 是 Microsoft 功能強大的 IDE。 其中包含完全整合的視覺化設計工具、含有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何搭配 Xamarin 外掛程式使用一些基本的 Visual Studio 功能。
 
 Visual Studio 會將程式碼組織成「方案」和「專案」。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
 
@@ -70,7 +70,7 @@ Visual Studio 會將程式碼組織成「方案」和「專案」。 方案是�
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac 簡介
 
-Visual Studio for Mac 是免費的開放原始碼 IDE，類似 Visual Studio。 其中包含完全整合的視覺化設計工具、具有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何使用一些基本的 Visual Studio for Mac 功能。 如果您還不熟悉 Visual Studio for Mac，您可能想要參閱更深入的 [Visual Studio for Mac 簡介](https://docs.microsoft.com/visualstudio/mac/)。
+Visual Studio for Mac 是免費的開放原始碼 IDE，類似 Visual Studio。 其中包含完全整合的視覺化設計工具、具有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等等。 在本指南中，您將了解如何使用一些基本的 Visual Studio for Mac 功能。 如果您還不熟悉 Visual Studio for Mac，您可能想要參閱更深入的 [Visual Studio for Mac 簡介](https://docs.microsoft.com/visualstudio/mac/)。
 
 Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「方案」和「專案」。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
 
@@ -161,7 +161,7 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 **activity_main.axml** 是應用程式中第一個畫面的使用者介面配置檔案。 .axml 表示這是 Android Designer 檔案 (AXML 代表 *Android XML*)。 名稱 *Main* 從 Android 的觀點來看是任意名稱 &ndash; 配置檔案可能已有其他名稱。 當您在 IDE 中開啟 **activity_main.axml** 時，會顯示 Android 配置檔案的視覺化編輯器，稱為 *Android Designer*：
 
-[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android Designer")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
+[![Android Designer](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android 設計工具")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 在 **Phoneword** 應用程式中，**TranslateButton** 的識別碼會設定為 `@+id/TranslateButton`：
 
@@ -188,7 +188,7 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 ::: zone pivot="windows"
 
-[![設計工具的原始碼檢視](hello-android-deepdive-images/vs/05-source-view-sml.png "設計工具的原始碼檢視")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
+[![設計工具來源視圖](hello-android-deepdive-images/vs/05-source-view-sml.png "設計工具來源視圖")](hello-android-deepdive-images/vs/05-source-view.png#lightbox)
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -197,7 +197,7 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 ::: zone-end
 
-這個 XML 原始程式碼應該包含四個控制項元素：兩個 **TextView**、一個 **EditText** 和一個 **Button** 元素。 如需 Android Designer 的更深入導覽，請參閱 Xamarin Android [Designer 概觀](~/android/user-interface/android-designer/index.md)指南。
+這個 XML 原始程式碼應該包含四個控制項元素：兩個**TextView**s、一個**EditText**和一個**Button**元素。 如需 Android Designer 的更深入導覽，請參閱 Xamarin Android [Designer 概觀](~/android/user-interface/android-designer/index.md)指南。
 
 現在您已了解使用者介面之視覺部分背後的工具和概念。 接下來，您可以跳到提供使用者介面的程式碼，並探索活動與活動開發週期。
 
@@ -273,7 +273,7 @@ SetContentView (Resource.Layout.activity_main);
 ::: zone-end
 ::: zone pivot="macos"
 
-在 **Phoneword** 應用程式中，`OnCreate` 的第一項工作是載入在 Android Designer 中建立的使用者介面。 若要載入 UI，請呼叫 `SetContentView` 並傳遞配置檔案的「資源配置名稱」給它：**Main.axml**。 此配置位於 `Resource.Layout.Main` 中：
+在 **Phoneword** 應用程式中，`OnCreate` 的第一項工作是載入在 Android Designer 中建立的使用者介面。 若要載入 UI，請呼叫 `SetContentView` 並傳遞配置檔案的「資源配置名稱」：**Main.axml**。 此配置位於 `Resource.Layout.Main` 中：
 
 ```csharp
 SetContentView (Resource.Layout.Main);
@@ -332,7 +332,7 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 
 設定裝置之後，您可以部署到該裝置，方法是將它插入、從 [選取裝置] 對話方塊中選取它，然後啟動應用程式：
 
-![選取偵錯裝置](hello-android-deepdive-images/vs/06-select-device.png "選取偵錯裝置")
+![選取 [調試裝置]](hello-android-deepdive-images/vs/06-select-device.png "選取 [調試裝置]")
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -372,30 +372,30 @@ Android 會選擇具有適當密度的圖示：
 
 ### <a name="generate-custom-icons"></a>產生自訂圖示
 
-不是每個人都有設計工具可用來建立應用程式需要凸顯的自訂圖示和啟動影像。以下是數種用來產生自訂應用程式作品的替代方法：
+並非每個人都有設計工具可用來建立自訂圖示，以及啟動應用程式需要執行的影像。以下是一些產生自訂應用程式插圖的替代方法：
 
 ::: zone pivot="windows"
 
-- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 此 Web 架構的瀏覽器內產生器適用於所有類型的 Android 圖示，並連結至其他有用的社群工具。 在 Google Chrome 中的效果最佳。
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 此 Web 架構的瀏覽器內產生器適用於所有類型的 Android 圖示，並連結至其他有用的社群工具。 在 Google Chrome 中的效果最佳。
 
 - Visual Studio &ndash; 您可以使用此產品，直接在 IDE 中為您的應用程式建立簡單圖示集。
 
-- [Glyphish](http://www.glyphish.com/) &ndash; 高品質的預先建置圖示集，可供免費下載及購買。
+- [Glyphish](https://www.glyphish.com/) &ndash; 高品質的預先建置圖示集，可供免費下載及購買。
 
-- [Fiverr](http://www.fiverr.com/) &ndash; 從各種不同的設計工具進行選擇來建立您適用的圖示集，從美金 $5 元開始。 可能時好時壞，但如果您需要動態設計的圖示，這會是不錯的資源。
+- [Fiverr](https://www.fiverr.com/) &ndash; 從各種不同的設計工具進行選擇來建立您適用的圖示集，從美金 $5 元開始。 可能時好時壞，但如果您需要動態設計的圖示，這會是不錯的資源。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 此 Web 架構的瀏覽器內產生器適用於所有類型的 Android 圖示，並連結至其他有用的社群工具。 在 Google Chrome 中的效果最佳。
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; 此 Web 架構的瀏覽器內產生器適用於所有類型的 Android 圖示，並連結至其他有用的社群工具。 在 Google Chrome 中的效果最佳。
 
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch 是一個用來設計使用者介面、圖示等內容的 Mac 應用程式。 這是用來設計 Xamarin 應用程式圖示和啟動影像集的應用程式。 App Store 上目前提供 Sketch 3，成本大約美金 $80 元。 您也可以試用免費的 [SketchTool](http://bohemiancoding.com/sketch/tool/)。
+- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch 是一個用來設計使用者介面、圖示等內容的 Mac 應用程式。 這是用來設計 Xamarin 應用程式圖示和啟動影像集的應用程式。 App Store 上目前提供 Sketch 3，成本大約美金 $80 元。 您也可以試用免費的 [Sketch 工具](https://bohemiancoding.com/sketch/tool/) \(英文\)。
 
-- [Pixelmator](http://www.pixelmator.com/) &ndash; 適用於 Mac 的多用途影像編輯應用程式，成本大約美金 $30 元。
+- [Pixelmator](https://www.pixelmator.com/) &ndash; 適用於 Mac 的多用途影像編輯應用程式，成本大約美金 $30 元。
 
-- [Glyphish](http://www.glyphish.com/) &ndash; 高品質的預先建置圖示集，可供免費下載及購買。
+- [Glyphish](https://www.glyphish.com/) &ndash; 高品質的預先建置圖示集，可供免費下載及購買。
 
-- [Fiverr](http://www.fiverr.com/) &ndash; 從各種不同的設計工具進行選擇來建立您適用的圖示集，從美金 $5 元開始。 可能時好時壞，但如果您需要動態設計的圖示，這會是不錯的資源。
+- [Fiverr](https://www.fiverr.com/) &ndash; 從各種不同的設計工具進行選擇來建立您適用的圖示集，從美金 $5 元開始。 可能時好時壞，但如果您需要動態設計的圖示，這會是不錯的資源。
 
 ::: zone-end
 

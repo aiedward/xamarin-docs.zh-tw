@@ -4,15 +4,15 @@ description: Google 雲端通訊（GCM）是一種服務，可在行動應用程
 ms.prod: xamarin
 ms.assetid: DF8EF401-F63D-4BA0-B2C6-B22DF8FD60CB
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: fef12ab6dc2c42f97e5a2725f58ba4392c21762f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 742555da24120eaeadcc4b6232b24d23f41da283
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754492"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023708"
 ---
 # <a name="google-cloud-messaging"></a>Google 雲端通訊
 
@@ -43,17 +43,17 @@ Google 雲端通訊（GCM）是一項服務，可處理伺服器應用程式與�
 
 GCM 會使用下列認證來識別應用程式伺服器和您的用戶端應用程式，並使用這些認證透過 GCM 來授權訊息交易：
 
-- **API 金鑰**API 金鑰可讓您的應用程式伺服器存取 Google 服務; &ndash;GCM 會使用此金鑰來驗證您的應用程式伺服器。
+- **Api 金鑰 &ndash;** *api 金鑰*可讓您的應用程式伺服器存取 Google 服務;GCM 會使用此金鑰來驗證您的應用程式伺服器。
     在您可以使用 GCM 服務之前，您必須先從[Google 開發人員主控台](https://console.developers.google.com/)取得 API 金鑰，方法是建立*專案*。 API 金鑰應該保持安全;如需保護 API 金鑰的詳細資訊，請參閱[安全使用 api 金鑰的最佳做法](https://support.google.com/cloud/answer/6310037?hl=en)。
 
-- **寄件者識別碼**發件*人識別碼*會向您的用戶端應用&ndash;程式授與應用程式伺服器，它是唯一的編號，可識別允許將訊息傳送至用戶端應用程式的應用程式伺服器。 &ndash;
+- **寄件者識別碼 &ndash; 傳送**者*識別碼*會向您的用戶端應用程式授權應用程式伺服器，&ndash; 它是識別允許將訊息傳送至用戶端應用程式之應用程式伺服器的唯一編號。
     寄件者識別碼也是您的專案編號;當您註冊專案時，您會從 Google 開發人員主控台取得寄件者識別碼。
 
-- **註冊權杖**註冊權杖是您的用戶端應用程式在指定裝置上的 GCM 身分識別。 &ndash; 註冊權杖會在執行時間&ndash;產生，當應用程式在裝置上執行時，第一次向 GCM 註冊時，就會收到註冊權杖。 註冊權杖會授權用戶端應用程式的實例（在該特定裝置上執行），以接收來自 GCM 的訊息。
+- 登錄**權杖 &ndash; 註冊權杖是**指定裝置上用戶端應用程式的 GCM 身分識別。 註冊權杖會在執行時間產生，&ndash; 當您的應用程式在裝置上執行時，第一次向 GCM 註冊時，就會收到註冊權杖。 註冊權杖會授權用戶端應用程式的實例（在該特定裝置上執行），以接收來自 GCM 的訊息。
 
-- **應用程式識別碼**&ndash;用戶端應用程式的身分識別（獨立于任何指定的裝置），其會註冊以接收來自 GCM 的訊息。 在 Android 上，應用程式識別碼是記錄在**androidmanifest.xml**中的套件名稱，例如`com.xamarin.gcmexample`。
+- **應用程式識別碼**&ndash; 用戶端應用程式的身分識別（獨立于任何指定的裝置），其會註冊以接收來自 GCM 的訊息。 在 Android 上，應用程式識別碼是記錄在**androidmanifest.xml**中的套件名稱，例如 `com.xamarin.gcmexample`。
 
-[設定 Google 雲端通訊](#settingup)（稍後在本指南中）提供建立專案和產生這些認證的詳細指示。
+[設定 Google 雲端通訊](#settingup)（稍後在本指南中）會提供建立專案和產生這些認證的詳細指示。
 
 下列各節說明當用戶端應用程式透過 GCM 與應用程式伺服器通訊時，如何使用這些認證。
 
@@ -80,7 +80,7 @@ Google 的[註冊用戶端應用程式](https://developers.google.com/cloud-mess
 
 當應用程式伺服器將下游訊息傳送至用戶端應用程式時，它會遵循下圖所示的步驟：
 
-[![下游訊息存放區 和 正向的圖表](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png#lightbox)
+[![的下游訊息儲存和轉寄圖表](google-cloud-messaging-images/03-downstream-sml.png)](google-cloud-messaging-images/03-downstream.png#lightbox)
 
 1. 應用程式伺服器會將訊息傳送至 GCM。
 
@@ -130,7 +130,7 @@ Google 的[上游訊息](https://developers.google.com/cloud-messaging/ccs#upstr
 
 1. 使用您的 Google 帳戶（亦即您的 gmail 位址）登入[Google 開發人員主控台](https://developers.google.com/mobile/add?platform=android)，並建立新的專案。 如果您有現有的專案，請選擇您想要啟用 GCM 的專案。 在下列範例中，會建立名為**XamarinGCM**的新專案：
 
-    [![建立 XamarinGCM 專案](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png#lightbox)
+    [建立 XamarinGCM 專案![](google-cloud-messaging-images/05-create-gcm-app-sml.png)](google-cloud-messaging-images/05-create-gcm-app.png#lightbox)
 
 2. 接下來，輸入您應用程式的 [套件名稱] （在此範例中，套件名稱是**gcmexample**），然後按一下 **[繼續] 以選擇並設定服務**：
 
@@ -148,9 +148,9 @@ Google 的[上游訊息](https://developers.google.com/cloud-messaging/ccs#upstr
 
 5. 系統會為您的應用程式產生**伺服器 API 金鑰**和**寄件者識別碼**。 記錄這些值，然後按一下 [**關閉**]：
 
-    [![顯示的伺服器 API 金鑰和寄件者識別碼](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
+    [顯示![伺服器 API 金鑰和寄件者識別碼](google-cloud-messaging-images/09-get-api-key-and-id-sml.png)](google-cloud-messaging-images/09-get-api-key-and-id.png#lightbox)
 
-    保護 API 金鑰&ndash; ，而不是供公開使用。 如果 API 金鑰遭到入侵，未經授權的伺服器就可以將訊息發佈至用戶端應用程式。
+    保護 API 金鑰，&ndash; 不供公開使用。 如果 API 金鑰遭到入侵，未經授權的伺服器就可以將訊息發佈至用戶端應用程式。
     [安全地使用 api 金鑰的最佳做法](https://support.google.com/cloud/answer/6310037?hl=en)會提供實用的指導方針來保護您的 API 金鑰。
 
 ### <a name="view-your-project-settings"></a>查看您的專案設定

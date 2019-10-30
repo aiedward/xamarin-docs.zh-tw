@@ -2,15 +2,15 @@
 ms.assetid: 1BB412D1-FC3D-4E69-8B01-B976A3DB6328
 title: WPF 與 Xamarin. 表單：相似 & 差異
 description: 本檔會比較 WPF 與 Xamarin 的格式，並將其對照。 其中討論控制項範本、XAML、系結基礎結構、資料範本、ItemsControl、UserControl、導覽和 URL 流覽。
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: de8e3445679e185b488311e58221ae5f4c28f85c
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 798839457a418d457bac83e6e20397722423dbac
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71106036"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016492"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 與 Xamarin. 表單：相似 & 差異
 
@@ -52,7 +52,7 @@ Xamarin 支援透過標記延伸來擴充 XAML，與 WPF 很相似。 它具有�
 此外，它還包括 XAML 2009 規格中的 `{x:Reference}`，以及用於 Xamarin 所支援之特殊版本 `ControlTemplate` 的 `{TemplateBinding}` 標記延伸模組。
 
 > [!WARNING]
-> @No__t_0 支援不相同，即使它具有相同的名稱。
+> `ControlTemplate` 支援不相同，即使它具有相同的名稱。
 
 Xamarin 也支援自訂標記延伸模組，但執行方式稍有不同。 在 WPF 中，您必須衍生自 `MarkupExtension`-抽象基類。 在 Xamarin 中，會使用介面 `IMarkupExtension` 或 `IMarkupExtension<T>`，而這會更有彈性。
 
@@ -149,7 +149,7 @@ Xamarin. Forms 系結完全支援這兩個介面。 與許多以 XAML 為基礎�
 
 此外，它們與其 WPF 對應項的彈性並不一樣。
 
-1. @No__t_0 的根項目必須_一律_是 `ViewCell` 物件。
+1. `DataTemplate` 的根項目必須_一律_是 `ViewCell` 物件。
 2. 資料範本中完全支援資料觸發程式，但必須包含 `DataType` 屬性，以指出與觸發程式相關聯的屬性類型。
 3. 也支援 `DataTemplateSelector`，但衍生自 `DataTemplate`，因此只會直接指派給 `ItemTemplate` 屬性（vs。 WPF 中的 `ItemTemplateSelector`）。
 
@@ -174,7 +174,7 @@ WPF 包含很少使用的 `NavigationService`，可用來提供「類似瀏覽�
 |定位點|TabbedPage|
 |向左/向右滑動|CarouselView|
 
-@No__t_0 是最常見的方法，而且每個頁面都有一個 `Navigation` 屬性，可以用來在導覽堆疊上推入或彈出頁面。 這是與 WPF 中找到的 `NavigationService` 最接近的對應項。
+`NavigationPage` 是最常見的方法，而且每個頁面都有一個 `Navigation` 屬性，可以用來在導覽堆疊上推入或彈出頁面。 這是與 WPF 中找到的 `NavigationService` 最接近的對應項。
 
 ### <a name="url-navigation"></a>URL 流覽
 

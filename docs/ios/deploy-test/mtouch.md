@@ -4,15 +4,15 @@ description: 本文件描述 mtouch，此工具會驅動許多步驟，將 Xamar
 ms.prod: xamarin
 ms.assetid: BCA491DA-E4C1-8689-3EC9-E4C72495A798
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 9b2cb44dff7712953454a9add71f092956e3c759
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762777"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026289"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 搭售 Xamarin.iOS 應用程式
 
@@ -65,7 +65,7 @@ $ mtouch -sim Hello.app hello.exe
 $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 ```
 
-在此個案中，我們使用 "iPhone Developer:Miguel de Icaza" 憑證來簽署應用程式。 這個步驟很重要，否則實體裝置會拒絕載入應用程式。
+在此特殊案例中，我們會使用 "iPhone Developer: Miguel de Icaza" 憑證來簽署應用程式。 這個步驟很重要，否則實體裝置會拒絕載入應用程式。
 
  <a name="Running_your_Application" />
 
@@ -81,7 +81,7 @@ $ mtouch --sdkroot /Applications/Xcode.app -launchsim Hello.app
 
 如果未設定 `--sdkroot` 旗標，則其值會預設為 xcode-select 路徑，並導致下列警告：
 
-> 例如：警告 MT0061:如 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 所回報，未透過系統 Xcode (使用 --sdkroot) 指定任何 Xcode.app 
+> 例如：warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
 
 上述命令列會產生一些輸出，如下所示：
 
@@ -112,7 +112,7 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 
 如果未設定 `--sdkroot` 旗標，則其值會預設為 xcode-select 路徑，並導致下列警告：
 
-> 例如：警告 MT0061:如 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 所回報，未透過系統 Xcode (使用 --sdkroot) 指定任何 Xcode.app 
+> 例如：warning MT0061: No Xcode.app specified (using --sdkroot), using the system Xcode as reported by 'xcode-select --print-path': /Applications/Xcode.app/Contents/Developer 
 
 這些步驟通常會由 Visual Studio for Mac 執行。
 
@@ -120,6 +120,3 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 
 請參閱 [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) 手冊頁面，以取得其他命令列選項的詳細資料。
 
-## <a name="related-links"></a>相關連結
-
-- [mtouch(1)](http://iosapi.xamarin.com/?link=man%3amtouch(1))

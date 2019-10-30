@@ -4,19 +4,19 @@ description: Xamarin.Android ProGuard 是 Java 類別檔案壓縮工具、最佳
 ms.prod: xamarin
 ms.assetid: 29C0E850-3A49-4618-9078-D59BE0284D5A
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: b85289d9dbd60d5ee0238540e67773ed9085b672
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 854287ec22fb89ec2f0a55f8c3854dc0106fb11a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249961"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021169"
 ---
 # <a name="proguard"></a>ProGuard
 
-_Xamarin.Android ProGuard 是 Java 類別檔案壓縮工具、最佳化工具和預先驗證器。它可以偵測和移除未使用的程式碼，分析位元組程式碼並予以最佳化。本指南說明 ProGuard 的運作方式、如何在專案中予以啟用，以及如何加以設定。文中也提供數個 ProGuard 組態範例。_
+_ProGuard 是 JAVA 類別檔案壓縮工具、優化工具和預先驗證器。它會偵測並移除未使用的程式碼，並分析和優化位元組程式碼。本指南說明 ProGuard 的運作方式、如何在專案中加以啟用，以及如何進行設定。它也提供數個 ProGuard 設定的範例。_
 
 ## <a name="overview"></a>總覽
 

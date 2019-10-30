@@ -1,42 +1,42 @@
 ---
-title: 以 Xamarin 中的資料填入資料表
-description: 本檔說明如何在資料表中填入 Xamarin iOS 應用程式中的資料。 其中討論 UITableViewSource、資料格重複使用、加入索引，以及頁首和頁尾。
+title: Populating a Table with Data in Xamarin.iOS
+description: This document describes how to populate a table with data in a Xamarin.iOS application. It discusses UITableViewSource, cell reuse, adding an index, and headers and footers.
 ms.prod: xamarin
 ms.assetid: 6FE64DDF-1029-EB9B-6EEC-1C7DFDFDF3AF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: d180345c36531b58c13eebbd97dc4f7555b8f13c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d926e206e4bba04629163cfc3d63b51a5f2f840d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768863"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021878"
 ---
-# <a name="populating-a-table-with-data-in-xamarinios"></a>以 Xamarin 中的資料填入資料表
+# <a name="populating-a-table-with-data-in-xamarinios"></a>Populating a Table with Data in Xamarin.iOS
 
-若要將資料列`UITableView`加入至，您必須`UITableViewSource`執行子類別，並覆寫資料表視圖所呼叫的方法來填入本身。
+To add rows to a `UITableView` you need to implement a `UITableViewSource` subclass and override the methods that the table view calls to populate itself.
 
-本指南涵蓋：
+This guide covers:
 
-- 子類別化 UITableViewSource
-- 資料格重複使用
-- 加入索引
-- 加入頁首和頁尾
+- Subclassing a UITableViewSource
+- Cell Reuse
+- Adding an Index
+- Adding Headers and Footers
 
 <a name="Subclassing_UITableViewSource" />
 
-## <a name="subclassing-uitableviewsource"></a>子類別化 UITableViewSource
+## <a name="subclassing-uitableviewsource"></a>Subclassing UITableViewSource
 
-子`UITableViewSource`類別會指派給每`UITableView`個。 資料表視圖會查詢來源類別，以決定如何呈現本身（例如，需要多少資料列，以及每個資料列的高度（如果不同于預設值）。 最重要的是，來源會提供每個資料格視圖，並填入資料。
+A `UITableViewSource` subclass is assigned to every `UITableView`. The table view queries the source class to determine how to render itself (for example, how many rows are required and the height of each row if different from the default). Most importantly, the source supplies each cell view populated with data.
 
-若要讓資料表顯示資料，只需要兩個強制方法：
+There are only two mandatory methods required to make a table display data:
 
-- **RowsInSection** – [`nint`](~/cross-platform/macios/nativetypes.md)傳回資料表應該顯示之資料列總數的計數。
-- **GetCell** – `UITableCellView`針對傳遞至方法的對應資料列索引，傳回已填入資料的。
+- **RowsInSection** – return an  [`nint`](~/cross-platform/macios/nativetypes.md) count of the total number of rows of data the table should display.
+- **GetCell** – return a  `UITableCellView` populated with data for the corresponding row index passed to the method.
 
-BasicTable 範例檔案**TableSource.cs**具有最簡單的`UITableViewSource`可能執行。 您可以在下面的程式碼片段中看到，它接受要顯示在資料表中的字串陣列，並傳回包含每個字串的預設儲存格樣式：
+The BasicTable sample file **TableSource.cs** has the simplest possible implementation of `UITableViewSource`. You can see in code snippet below that it accepts an array of strings to display in the table and returns a default cell style containing each string:
 
 ```csharp
 public class TableSource : UITableViewSource {
@@ -70,9 +70,9 @@ public class TableSource : UITableViewSource {
 }
 ```
 
-`UITableViewSource`可以使用任何資料結構，從簡單字串陣列（如本範例所示）到清單 < > 或其他集合。 `UITableViewSource`方法的執行會隔離基礎資料結構中的資料表。
+A `UITableViewSource` can use any data structure, from a simple string array (as shown in this example) to a List <> or other collection. The implementation of `UITableViewSource` methods isolates the table from the underlying data structure.
 
-若要使用這個子類別，請建立字串陣列來建立來源，然後將它指派給`UITableView`的實例：
+To use this subclass, create a string array to construct the source then assign it to an instance of `UITableView`:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -85,11 +85,11 @@ public override void ViewDidLoad ()
 }
 ```
 
-產生的資料表看起來像這樣：
+The resulting table looks like this:
 
- [![](populating-a-table-with-data-images/image3.png "執行中的範例資料表")](populating-a-table-with-data-images/image3.png#lightbox)
+ [![](populating-a-table-with-data-images/image3.png "Sample table running")](populating-a-table-with-data-images/image3.png#lightbox)
 
-大部分的資料表都可讓使用者觸及資料列來選取它，並執行其他動作（例如播放歌曲、呼叫連絡人，或顯示另一個畫面）。 為了達成此目的，我們需要做幾件事。 首先，讓我們建立一個 AlertController，在使用者按一下資料列時顯示訊息， `RowSelected`方法是將下列內容新增至方法：
+Most tables allow the user to touch a row to select it and perform some other action (such as playing a song, or calling a contact, or showing another screen). To achieve this, there are a few things we need to do. First, let's create an AlertController to display a message when the user click on a row by adding the following to the `RowSelected` method:
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -102,13 +102,13 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-接下來，建立 View Controller 的實例：
+Next, create an instance of our View Controller:
 
 ```csharp
 HomeScreen owner;
 ```
 
-將函式新增至 UITableViewSource 類別，它會採用 view controller 做為參數，並將它儲存在欄位中：
+Add a constructor to your UITableViewSource class which takes a view controller as a parameter and saves it in a field:
 
 ```csharp
 public TableSource (string[] items, HomeScreen owner)
@@ -119,13 +119,13 @@ public TableSource (string[] items, HomeScreen owner)
 }
 ```
 
-修改建立 UITableViewSource 類別的 ViewDidLoad 方法，以傳遞`this`參考：
+Modify the ViewDidLoad method where the UITableViewSource class is created to pass the `this` reference:
 
 ```csharp
 table.Source = new TableSource(tableItems, this);
 ```
 
-最後，回到您`RowSelected`的方法，在快取的欄位上呼叫： `PresentViewController`
+Finally, back in your `RowSelected` method, call `PresentViewController` on the cached field:
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -137,17 +137,17 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-現在使用者可以觸碰一列，隨即會出現警示：
+Now the user can touch a row and an alert will appear:
 
- [![](populating-a-table-with-data-images/image4.png "選取的資料列警示")](populating-a-table-with-data-images/image4.png#lightbox)
+ [![](populating-a-table-with-data-images/image4.png "The row selected alert")](populating-a-table-with-data-images/image4.png#lightbox)
 
-## <a name="cell-reuse"></a>資料格重複使用
+## <a name="cell-reuse"></a>Cell Reuse
 
-在此範例中，只有六個專案，因此不需要重複使用資料格。 不過，當顯示數百或數千個數據列時，如果一次只有幾個畫面，就會浪費`UITableViewCell`記憶體來建立上百個或數千個物件。
+In this example there are only six items, so there is no cell reuse required. When displaying hundreds or thousands of rows, however, it would be a waste of memory to create hundreds or thousands of `UITableViewCell` objects when only a few fit on the screen at a time.
 
-若要避免這種情況，當儲存格從畫面中消失時，其 view 會放在佇列中以供重複使用。 當使用者滾動時，資料表會呼叫`GetCell`來要求要顯示的新視圖–若要重複使用現有的儲存格（目前未顯示），只要`DequeueReusableCell`呼叫方法即可。 如果資料格可以重複使用，則會傳回，否則會傳回 null，且您的程式碼必須建立新的資料格實例。
+To avoid this situation, when a cell disappears from the screen its view is placed in a queue for reuse. As the user scrolls, the table calls `GetCell` to request new views to display – to reuse an existing cell (that is not currently being displayed) simply call the `DequeueReusableCell` method. If a cell is available for reuse it will be returned, otherwise a null is returned and your code must create a new cell instance.
 
-範例中的這個程式碼片段會示範模式：
+This snippet of code from the example demonstrates the pattern:
 
 ```csharp
 // request a recycled cell to save memory
@@ -157,15 +157,15 @@ if (cell == null)
     cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 ```
 
-會`cellIdentifier`針對不同類型的資料格，有效地建立個別的佇列。 在此範例中，所有資料格的外觀都相同，因此只會使用一個硬式編碼識別碼。 如果有不同類型的資料格，則兩者都應該具有不同的識別碼字串，兩者都是具現化時，以及從重複使用佇列要求的時間。
+The `cellIdentifier` effectively creates separate queues for different types of cell. In this example all the cells look the same so only one hardcoded identifier is used. If there were different types of cell they should each have a different identifier string, both when they are instantiated and when they are requested from the reuse queue.
 
-### <a name="cell-reuse-in-ios-6"></a>IOS 6 + 中的資料格重複使用
+### <a name="cell-reuse-in-ios-6"></a>Cell Reuse in iOS 6+
 
-iOS 6 新增了一種資料格重複使用模式，類似于集合視圖簡介。 雖然先前所示的重複使用模式仍然支援回溯相容性，但這種新模式較適合，因為它不需要對儲存格進行 null 檢查。
+iOS 6 added a cell reuse pattern similar to the one introduction with Collection Views. Although the existing reuse pattern shown above is still supported for backwards compatibility, this new pattern is preferable as it removes the need for the null check on the cell.
 
-使用新模式時，應用程式會在控制器的函式中呼叫`RegisterClassForCellReuse`或`RegisterNibForCellReuse` ，以註冊要使用的資料格類別或 xib。 然後，在清除佇列`GetCell`方法中的資料格時，只需呼叫`DequeueReusableCell`傳遞您為數據格類別或 xib 所註冊的識別碼，以及索引路徑。
+With the new pattern an application registers the cell class or xib to be used by calling either `RegisterClassForCellReuse` or `RegisterNibForCellReuse` in the controller's constructor. Then, when dequeueing the cell in the `GetCell` method, simply call `DequeueReusableCell` passing the identifier you registered for the cell class or xib and the index path.
 
-例如，下列程式碼會在 UITableViewController 中註冊自訂的資料格類別：
+For example, the following code registers a custom cell class in a UITableViewController:
 
 ```csharp
 public class MyTableViewController : UITableViewController
@@ -180,7 +180,7 @@ public class MyTableViewController : UITableViewController
 }
 ```
 
-註冊 MyCell 類別之後，就可以在的`GetCell`方法`UITableViewSource`中將資料格清除佇列，而不需要額外的 null 檢查，如下所示：
+With the MyCell class registered, the cell can be dequeued in the `GetCell` method of the `UITableViewSource` without the need for the extra null check, as shown below:
 
 ```csharp
 class MyTableSource : UITableViewSource
@@ -198,7 +198,7 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-請注意，搭配自訂資料格類別使用新的重複使用模式時，您需要執行採用`IntPtr`的「處理常式」，如下列程式碼片段所示，否則目標 C 將無法建立資料格類別的實例：
+Be aware, when using the new reuse pattern with a custom cell class, you need to implement the constructor that takes an `IntPtr`, as shown in the snippet below, otherwise Objective-C won't be able to construct an instance of the cell class:
 
 ```csharp
 public class MyCell : UITableViewCell
@@ -210,17 +210,17 @@ public class MyCell : UITableViewCell
 }
 ```
 
-您可以在連結到本文的**BasicTable**範例中，看到上述主題的範例。
+You can see examples of the topics explained above in the **BasicTable** sample linked to this article.
 
 <a name="Adding_an_Index" />
 
-## <a name="adding-an-index"></a>加入索引
+## <a name="adding-an-index"></a>Adding an Index
 
-索引可協助使用者流覽長清單（通常是依字母順序排序，雖然您可以依據您想要的任何準則來編制索引）。 **BasicTableIndex**範例會從檔案載入更長的專案清單，以示範索引。 索引中的每個專案都會對應到資料表的「區段」。
+An index helps the user scroll through long lists, typically ordered alphabetically although you can index by whatever criteria you wish. The **BasicTableIndex** sample loads a much longer list of items from a file to demonstrate the index. Each item in the index corresponds to a ‘section’ of the table.
 
- [![](populating-a-table-with-data-images/image5.png "索引顯示")](populating-a-table-with-data-images/image5.png#lightbox)
+ [![](populating-a-table-with-data-images/image5.png "The Index display")](populating-a-table-with-data-images/image5.png#lightbox)
 
-若要支援「區段」，必須將資料表後方的資料分組，因此 BasicTableIndex 範例會使用每`Dictionary<>`個專案的第一個字母做為字典索引鍵，從字串陣列建立：
+To support ‘sections’ the data behind the table needs to be grouped, so the BasicTableIndex sample creates a `Dictionary<>` from the array of strings using the first letter of each item as the dictionary key:
 
 ```csharp
 indexedTableItems = new Dictionary<string, List<string>>();
@@ -234,13 +234,13 @@ foreach (var t in items) {
 keys = indexedTableItems.Keys.ToArray ();
 ```
 
-然後子`Dictionary<>`類別需要新增或修改的下列方法，才能使用： `UITableViewSource`
+The `UITableViewSource` subclass then needs the following methods added or modified to use the `Dictionary<>` :
 
-- **NumberOfSections** –此方法是選擇性的，根據預設，資料表會假設一個區段。 顯示索引時，這個方法應該會傳回索引中的專案數（例如，如果索引包含英文字母的所有字母，則為26）。
-- **RowsInSection** –傳回給定區段中的資料列數目。
-- **SectionIndexTitles** –傳回將用來顯示索引的字串陣列。 範例程式碼會傳回字母陣列。
+- **NumberOfSections** – this method is optional, by default the table assumes one section. When displaying an index this method should return the number of items in the index (for example, 26 if the index contains all the letters of the English alphabet).
+- **RowsInSection** – returns the number of rows in a given section.
+- **SectionIndexTitles** – returns the array of strings that will be used to display the index. The sample code returns an array of letters.
 
-範例檔案**BasicTableIndex/TableSource**中的更新方法如下所示：
+The updated methods in the sample file **BasicTableIndex/TableSource.cs** look like this:
 
 ```csharp
 public override nint NumberOfSections (UITableView tableView)
@@ -257,23 +257,23 @@ public override string[] SectionIndexTitles (UITableView tableView)
 }
 ```
 
-索引通常僅適用于純資料表樣式。
+Indexes are generally only used with the Plain table style.
 
 <a name="Adding_Headers_and_Footers" />
 
-## <a name="adding-headers-and-footers"></a>加入頁首和頁尾
+## <a name="adding-headers-and-footers"></a>Adding Headers and Footers
 
-頁首和頁尾可以用來以視覺化方式將資料表中的資料列分組。 所需的資料結構與加入索引`Dictionary<>`非常類似，但運作方式很良好。 這個範例會根據植物園類型來分組蔬菜，而不是使用字母將資料格分組。
+Headers and footers can be used to visually group rows in a table. The data structure required is very similar to adding an index – a `Dictionary<>` works really well. Instead of using the alphabet to group the cells, this example will group the vegetables by botanical type.
 輸出顯示如下：
 
- [![](populating-a-table-with-data-images/image6.png "範例標頭和頁尾")](populating-a-table-with-data-images/image6.png#lightbox)
+ [![](populating-a-table-with-data-images/image6.png "Sample Headers and Footers")](populating-a-table-with-data-images/image6.png#lightbox)
 
-若要顯示標頭和`UITableViewSource`頁尾，子類別需要下列額外的方法：
+To display headers and footers the `UITableViewSource` subclass requires these additional methods:
 
-- **TitleForHeader** –傳回要當做標頭使用的文字
-- **TitleForFooter** –傳回要當做頁尾使用的文字。
+- **TitleForHeader** – returns the text to use as the header
+- **TitleForFooter** – returns the text to use as the footer.
 
-範例檔案**BasicTableHeaderFooter/Code/TableSource**中的更新方法如下所示：
+The updated methods in the sample file **BasicTableHeaderFooter/Code/TableSource.cs** look like this:
 
 ```csharp
 public override string TitleForHeader (UITableView tableView, nint section)
@@ -286,8 +286,8 @@ public override string TitleForFooter (UITableView tableView, nint section)
 }
 ```
 
-您可以在上`GetViewForHeader` `UITableViewSource`使用和`GetViewForFooter`方法覆寫，以進一步自訂頁首和頁尾的外觀與 View 物件。
+You can further customize the appearance of the header and footer with a View object, using the `GetViewForHeader` and `GetViewForFooter` method overrides on `UITableViewSource`.
 
 ## <a name="related-links"></a>相關連結
 
-- [WorkingWithTables （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

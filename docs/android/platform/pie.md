@@ -4,15 +4,15 @@ description: 如何開始使用 Xamarin 開發 Android 9 的應用程式。
 ms.prod: xamarin
 ms.assetid: 6575DD32-9DC8-44E6-85EF-1F8BD07D3780
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 6475cd0f27e41321902b57dd28f59bfb250e0c8f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0105b43116df697bc6688becb77298c236dfa601
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757454"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019878"
 ---
 # <a name="android-pie-features"></a>Android 圓形圖功能
 
@@ -30,14 +30,14 @@ Xamarin. Android 9.0 提供 Android 圓形圖的支援。 如需適用于 Androi
 
 下列清單是在以 Xamarin 為基礎的應用程式中使用 Android 圓形圖功能的必要條件：
 
-- **Visual Studio**&ndash;建議使用 Visual Studio 2019。
+- 建議**Visual Studio** &ndash; Visual Studio 2019。
     如果您使用 Visual Studio 2017，請在 Windows update 上 Visual Studio 2017 15.8 或更新版本。 在 macOS 上，更新為 Visual Studio 2017 （適用于 Mac 7.6 版或更新版本）。
 
-- 9\.0.0.17 或更新版本必須與 Visual Studio 一起安裝 **（xamarin.** android 會在使用 .net 工作負載進行行動裝置開發的過程中自動安裝）。 &ndash;
+- **&ndash; xamarin. android 9.0.0.17**或更新版本必須與 Visual Studio 一起安裝（Xamarin. android 會在**使用 .net**工作負載進行行動裝置開發的過程中自動安裝）。
 
-- **JAVA 開發人員套件**Xamarin Android 9.0 開發需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (您也可以嘗試預覽 Microsoft 的 O [penJDK](~/android/get-started/installation/openjdk.md) 散發)。 &ndash; JDK8 會在**使用 .net**工作負載進行行動裝置開發的過程中自動安裝。
+- **JAVA 開發人員套件**&ndash; Xamarin Android 9.0 開發需要[JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) （您也可以嘗試預覽 Microsoft 的[OpenJDK](~/android/get-started/installation/openjdk.md)散發）。 JDK8 會在**使用 .net**工作負載進行行動裝置開發的過程中自動安裝。
 
-- **Android SDK**&ndash; Android SDK API 28 或更新版本必須透過 Android SDK 管理員安裝。
+- **Android SDK** &ndash; Android SDK API 28 或更新版本必須透過 Android SDK 管理員進行安裝。
 
 ## <a name="getting-started"></a>使用者入門
 
@@ -67,11 +67,11 @@ Xamarin. Android 9.0 提供 Android 圓形圖的支援。 如需適用于 Androi
 
 2. 在右下角，按一下齒輪圖示，然後選取 [存放庫] **> Google （不支援）** ：
 
-    [![將存放庫設定為 Google](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [將儲存機制設定為 Google 的![](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
 3. 安裝**Android 圓形圖**SDK 套件（在 [**平臺**] 索引標籤中列為**Android SDK Platform 28** ）（如需有關使用 SDK 管理員的詳細資訊，請參閱[Android SDK 安裝程式](~/android/get-started/installation/android-sdk.md)）：
 
-    [![安裝 Android 圓形圖套件](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [安裝 Android 圓形圖![](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. 如果您使用模擬器，請建立支援**API 層級 28**的虛擬裝置。 如需建立虛擬裝置的詳細資訊，請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md)。
 
@@ -92,13 +92,13 @@ Xamarin. Android 9.0 提供 Android 圓形圖的支援。 如需適用于 Androi
 
 Android 圓形圖引進了各種新功能。 其中一些新功能的目的是要利用最新的 Android 裝置所提供的新硬體功能，而有些則是設計來進一步增強 Android 使用者體驗：
 
-- **顯示切除支援**提供 api，以在較新的 Android 裝置上尋找位於畫面頂端的切除位置和形狀。 &ndash;
+- **顯示切除支援**&ndash; 提供 api，以在較新的 Android 裝置上尋找位於畫面頂端的_切除_位置和形狀。
 
-- **通知增強功能**通知訊息現在可以顯示影像，而新`Person`的類別則用來簡化交談參與者。 &ndash;
+- **通知增強**&ndash; 通知訊息現在可以顯示影像，而新的 `Person` 類別則是用來簡化交談參與者。
 
-- **室內定位**&ndash; Wifi 來回時間通訊協定的平臺支援，讓應用程式可以使用 wifi 裝置在室內設定中進行導覽。
+- **室內定位**&ndash; WiFi 來回時間通訊協定的平臺支援，讓應用程式可以使用 wifi 裝置在室內設定中進行導覽。
 
-- **多攝影機支援**&ndash;提供從多個實體相機（例如，雙前方和雙背相機）同時存取串流的功能。
+- **多攝影機支援**&ndash; 提供從多個實體相機（例如，雙前方和雙背相機）同時存取串流的功能。
 
 下列各節將強調這些功能，並提供簡短的程式碼範例，以協助您開始在應用程式中使用它們。
 
@@ -107,15 +107,15 @@ Android 圓形圖引進了各種新功能。 其中一些新功能的目的是�
 許多具有邊緣到邊緣畫面的較新 Android 裝置在相機和喇叭顯示器的頂端會有*顯示切除*（或「槽口」）。
 下列螢幕擷取畫面提供了切除的模擬器範例：
 
-[![模擬切除的 Android 模擬器](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
+[![Android 模擬器來模擬切除](pie-images/02-example-cutout-sml.png)](pie-images/02-example-cutout.png#lightbox)
 
 若要管理應用程式視窗在顯示切除的裝置上顯示其內容的方式，Android 圓形圖已加入新的[LayoutInDisplayCutoutMode](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#layoutInDisplayCutoutMode)視窗版面配置屬性。 這個屬性可以設為下列其中一個值：
 
-- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER)&ndash;視窗永遠不允許與切除區域重迭。
+- [LayoutInDisplayCutoutModeNever](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER) &ndash; 視窗永遠不允許與切除區域重迭。
 
-- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)&ndash;視窗可以擴充到裁剪區域，但只能延伸到螢幕的短邊緣。 
+- [LayoutInDisplayCutoutModeShortEdges](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES) &ndash; 視窗可以延伸到切除區域，但只能在螢幕的最短邊緣。 
 
-- [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT)&ndash;如果裁剪包含在系統列內，則可以將視窗延伸至裁剪區域。
+- 如果裁剪包含在系統列中， [LayoutInDisplayCutoutModeDefault](https://developer.android.com/reference/android/view/WindowManager.LayoutParams.html#LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT) &ndash; 視窗可以延伸到裁剪區域中。
 
 例如，若要防止應用程式視窗與切除區域重迭，請將版面配置的圖樣模式設定為*永不*： 
 
@@ -124,14 +124,14 @@ Window.Attributes.LayoutInDisplayCutoutMode =
     Android.Views.LayoutInDisplayCutoutMode.Never;
 ```
 
-下列範例提供這些圖樣模式的範例。 左側的第一個螢幕擷取畫面是處於非全螢幕模式的應用程式。 在中央螢幕擷取畫面中，應用程式會變成 [全`LayoutInDisplayCutoutMode`螢幕] `LayoutInDisplayCutoutModeShortEdges`，並將設定為。 請注意，應用程式的白色背景會延伸到 [顯示] 裁剪區域：
+下列範例提供這些圖樣模式的範例。 左側的第一個螢幕擷取畫面是處於非全螢幕模式的應用程式。 在中央螢幕擷取畫面中，應用程式會變成 [全螢幕]，`LayoutInDisplayCutoutMode` 設定為 [`LayoutInDisplayCutoutModeShortEdges`]。 請注意，應用程式的白色背景會延伸到 [顯示] 裁剪區域：
 
-[![在模擬器中顯示切除模式的範例](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
+[![範例顯示模擬器中的切除模式](pie-images/03-cutout-modes-sml.png)](pie-images/03-cutout-modes.png#lightbox)
 
-在最後一個螢幕擷取畫面（位於右邊）中， `LayoutInDisplayCutoutMode`會在進入`LayoutInDisplayCutoutModeShortNever`全螢幕之前設定為。
+在最後一個螢幕擷取畫面（位於右邊）中，`LayoutInDisplayCutoutMode` 設定為 [`LayoutInDisplayCutoutModeShortNever`]，然後才進入全螢幕。
 請注意，應用程式的白色背景不允許延伸至顯示裁剪區域。
 
-如果您需要有關裝置上之切除區域的詳細資訊，您可以使用新的[DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html)類別。 `DisplayCutout`表示無法用來顯示內容的顯示區域。 您可以使用這項資訊來抓取切除的位置和形狀，讓您的應用程式不會嘗試在這個非功能性區域中顯示內容。
+如果您需要有關裝置上之切除區域的詳細資訊，您可以使用新的[DisplayCutout](https://developer.android.com/reference/android/view/DisplayCutout.html)類別。 `DisplayCutout` 代表無法用來顯示內容的顯示區域。 您可以使用這項資訊來抓取切除的位置和形狀，讓您的應用程式不會嘗試在這個非功能性區域中顯示內容。
 
 如需 Android P 中新的切除功能的詳細資訊，請參閱[顯示切除支援](https://developer.android.com/about/versions/pie/android-9.0#cutout)。
 
@@ -149,11 +149,11 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
 
 下列範例說明如何使用新的 Api 來產生包含影像的通知。 在下列螢幕擷取畫面中，文字通知已張貼，後面接著具有內嵌影像的通知。 當通知展開（如右側所示）時，會顯示第一個通知的文字，並放大第二個通知中內嵌的影像：
 
-[![具有影像的範例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[使用影像![範例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
-下列範例說明如何在 Android 圓形圖通知中包含影像，並示範如何使用新`Person`的類別：
+下列範例說明如何在 Android 圓形圖通知中包含影像，並示範如何使用新的 `Person` 類別：
 
-1. 建立代表寄件者的物件。`Person` 例如，寄件者的名稱和圖示包含在中`fromPerson`：
+1. 建立代表寄件者的 `Person` 物件。 例如，寄件者的名稱和圖示會包含在 `fromPerson`中：
 
     ```csharp
     Icon senderIcon = Icon.CreateWithResource(this, Resource.Drawable.sender_icon);
@@ -163,8 +163,8 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
         .Build();
     ```
 
-2. 建立, 其中包含要傳送的影像, 並將影像傳遞至新的  [MessagingStyle 方法](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)。`Notification.MessagingStyle.Message`
-   例如：
+2. 建立包含要傳送之影像的 `Notification.MessagingStyle.Message`，並將該影像傳遞至新的[MessagingStyle](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)方法。
+   例如:
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");
@@ -173,14 +173,14 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
             .SetData("image/", imageUri);
     ```
 
-3. 將訊息新增至`Notification.MessagingStyle`物件。 例如：
+3. 將訊息新增至 `Notification.MessagingStyle` 物件。 例如:
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
             .AddMessage(message);
     ```
 
-4. 將此樣式插入通知產生器。 例如：
+4. 將此樣式插入通知產生器。 例如:
 
     ```csharp
     builder = new Notification.Builder(this, MY_CHANNEL)
@@ -191,7 +191,7 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
         .SetChannelId(MY_CHANNEL);
     ```
 
-5. 發佈通知。 例如：
+5. 發佈通知。 例如:
 
     ```csharp
     const int notificationId = 1000;
@@ -204,7 +204,7 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
 
 Android 圓形圖提供 IEEE 802.11 mc （也稱為_Wifi 來回時間_或_wifi RTT_）的支援，讓應用程式能夠偵測到一個或多個 wi-fi 存取點的距離。 使用這項資訊，您的應用程式可能會利用一到兩個計量的精確度，使用*室內定位*。 在提供 IEEE 801.11 mc 硬體支援的 Android 裝置上，您的應用程式可以提供流覽功能，例如以位置為基礎的方式控制智慧型設備，或透過存放區的輪流指示：
 
-[![使用 WiFi RTT 進行室內導覽的範例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[使用 WiFi RTT![室內導覽的範例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 新的[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)類別和數個 helper 類別提供測量 wi-fi 裝置距離的方法。 如需 Android P 中所引進之室內定位 Api 的詳細資訊，請參閱[android .net. Wifi](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)。
 
@@ -223,7 +223,7 @@ Android 圓形圖也包含新的[SessionConfiguration](https://developer.android
 
 - 新的[AnimatedImageDrawable](https://developer.android.com/reference/android/graphics/drawable/AnimatedImageDrawable.html)類別，可以用來繪製和顯示動畫影像。
 
-- 取代`BitmapFactory`的新[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)類別。 `ImageDecoder`可以用來`AnimatedImageDrawable`解碼。
+- 取代 `BitmapFactory`的新[ImageDecoder](https://developer.android.com/reference/android/graphics/ImageDecoder.html)類別。 `ImageDecoder` 可以用來解碼 `AnimatedImageDrawable`。
 
 - 支援 HDR （高動態範圍）影片和 HEIF （高效率的影像檔案格式）影像。
 
@@ -245,7 +245,7 @@ Android 圓形圖也包含新的[SessionConfiguration](https://developer.android
 
 ## <a name="sample-code"></a>範例程式碼
 
-[AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)是適用于 android 的 Xamarin android 範例應用程式，可示範如何設定顯示裁剪模式、如何使用新`Person`的類別，以及如何傳送包含影像的通知。
+[AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)是適用于 Android 的 Xamarin android 範例應用程式，可示範如何設定顯示切除模式、如何使用新的 `Person` 類別，以及如何傳送包含影像的通知。
 
 ## <a name="summary"></a>總結
 

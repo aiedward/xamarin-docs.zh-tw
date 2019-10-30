@@ -4,15 +4,15 @@ description: 現今許多裝置上的觸控式螢幕可讓使用者以自然且�
 ms.prod: xamarin
 ms.assetid: 61874769-978A-4562-9B2A-7FFD45F58B38
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 54f036b2a845b7d2f6603b6b9f54472ad2af8bcd
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 43637d8592631b2732e5922544f52d91947dd3bd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754711"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024288"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Xamarin 中的觸控和手勢
 
@@ -22,7 +22,7 @@ _現今許多裝置上的觸控式螢幕可讓使用者以自然且直覺的方�
 
 iOS 和 Android 在處理觸控的方式上很類似。 兩者都可以在螢幕和複雜手勢上支援多點觸控的連絡人。 本指南介紹一些概念中的相似之處，以及在兩個平臺上執行觸控和手勢的 particularities。
 
-Android 使用`MotionEvent`物件來封裝觸控資料，而 View 物件上的方法則用來接聽觸控。
+Android 使用 `MotionEvent` 物件來封裝觸控資料，而 View 物件上的方法則是用來接聽接觸。
 
 除了捕捉觸控資料，iOS 和 Android 也提供將觸控模式解讀為手勢的方法。 這些手勢辨識器可以輪流用來解讀應用程式特定的命令，例如影像的旋轉或頁面的回合。 Android 提供一些支援的手勢和資源，讓您可以輕鬆地新增複雜的自訂手勢。
 

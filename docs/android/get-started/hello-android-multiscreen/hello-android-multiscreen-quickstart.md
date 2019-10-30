@@ -6,19 +6,19 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: ED99584A-BA3B-429A-AEE5-CF3CB0116762
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: d1a4d73242e9701ff9ffcfc58791986bca89a095
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 114373b6c4b194fe6e566255eb09eb82a8208312
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755841"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020970"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello, Android 多重畫面：快速入門
 
-_這份含有兩部分的指南會擴充 Phoneword 應用程式來處理第二個畫面。在此過程中，會介紹基本 Android 應用程式建置組塊，並深入剖析 Android 架構。_
+_這份兩部分的指南會展開 Phoneword 應用程式來處理第二個畫面。在此過程中，會引進基本的 Android 應用程式建立區塊，並深入探討 Android 架構。_
 
 在本指南的逐步解說部分，您會在 [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) 應用程式中新增第二個畫面，以便持續追蹤使用應用程式翻譯之號碼的記錄。 [最終應用程式](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phonewordmultiscreen)將具有第二個畫面來顯示「已翻譯」的號碼，如右邉螢幕擷取畫面所示：
 

@@ -3,15 +3,15 @@ title: 在 Android 上連結
 ms.prod: xamarin
 ms.assetid: 3528E195-AA74-90AF-B5F3-3B65FB4F0BB8
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2018
-ms.openlocfilehash: e5f494c2f41500b660bf333e7c63f0120536f52a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 729dede97a9b153738ca72af499d4d1e9d77fae0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753846"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021449"
 ---
 # <a name="linking-on-android"></a>在 Android 上連結
 
@@ -19,7 +19,7 @@ Xamarin.Android 應用程式會使用「連結器」來縮小應用程式的大�
 
 例如，[Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) 範例：
 
-|組態|1.2.0 大小|4.0.1 大小|
+|Configuration|1.2.0 大小|4.0.1 大小|
 |---|---|---|
 |沒有連結的版本：|14.0 MB|16.0 MB|
 |有連結的版本：|4.2 MB|2.9 MB|
@@ -85,7 +85,7 @@ E/mono    (17755):   at (wrapper dynamic-method) object:95bb4fbe-bef8-4e5b-8e99-
 
 ### <a name="preserving-code"></a>保留程式碼
 
-連結器有時候會移除您想要保留的程式碼。 例如：
+連結器有時候會移除您想要保留的程式碼。 例如:
 
 - 您可能也有透過 `System.Reflection.MemberInfo.Invoke` 動態呼叫的程式碼。
 
@@ -209,5 +209,5 @@ class MyActivity {
 
 ## <a name="related-links"></a>相關連結
 
-- [自訂連結器設定](~/cross-platform/deploy-test/linker.md)
+- [自訂連結器組態](~/cross-platform/deploy-test/linker.md)
 - [在 iOS 上連結](~/ios/deploy-test/linker.md)

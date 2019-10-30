@@ -4,15 +4,15 @@ description: 本檔說明如何在 Xamarin. Mac 中建立自訂控制項。 它�
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 24e4113f0437c626ba93f12c1124407c472fef8d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 15a117ce2b0ccc84d73909eac183eeb6ea109711
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284948"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025605"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>在 Xamarin. Mac 中建立自訂控制項
 
@@ -20,11 +20,11 @@ ms.locfileid: "70284948"
 
 雖然 macOS 提供了豐富的內建使用者控制項，但有時候您可能需要建立自訂控制項，以提供不是現成提供的功能，或符合自訂 UI 主題（例如遊戲介面）。
 
-[![](custom-controls-images/intro01.png "自訂 UI 控制項的範例")](custom-controls-images/intro01.png#lightbox)
+[![](custom-controls-images/intro01.png "Example of a custom UI control")](custom-controls-images/intro01.png#lightbox)
 
 在本文中，我們將討論在 Xamarin. Mac 應用程式中建立可重複使用的自訂使用者介面控制項的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。本文。
 
-您可能想要查看[Xamarin. Mac 內部](~/mac/internals/how-it-works.md)檔`Register`的將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md)一節，它會說明用來將C#類別連線到`Export`的和命令。目標-C 物件和 UI 元素。
+您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的「 C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將類別連線到目標-c 的`Register`和`Export`命令物件和 UI 元素。
 
 <a name="Introduction-to-Outline-Views" />
 
@@ -32,9 +32,9 @@ ms.locfileid: "70284948"
 
 如上所述，有時候您可能需要建立可重複使用的自訂使用者介面控制項，為您的 Xamarin. Mac 應用程式的 UI 提供獨特的功能，或建立自訂 UI 主題（例如遊戲介面）。
 
-在這些情況下，您可以輕鬆地`NSControl`繼承自訂工具，並建立可透過程式C#代碼或 Xcode 的 Interface Builder 新增至應用程式的 UI。 藉由從`NSControl`自訂控制項繼承，將會自動擁有內建使用者介面控制項所擁有的所有標準功能（ `NSButton`例如）。
+在這些情況下，您可以輕鬆地從 `NSControl` 繼承，並建立自訂工具，透過程式C#代碼或 Xcode 的 Interface Builder，將其新增至應用程式的 UI。 藉由從 `NSControl` 繼承，您的自訂控制項就會自動擁有內建使用者介面控制項所擁有的所有標準功能（例如 `NSButton`）。
 
-如果您的自訂使用者介面控制項只顯示資訊（例如自訂圖表和圖形工具），您可能會想`NSView`要繼承`NSControl`自，而不是。
+如果您的自訂使用者介面控制項只顯示資訊（例如自訂圖表和圖形工具），您可能會想要從 `NSView` 繼承而不是 `NSControl`。
 
 無論使用哪一個基類，建立自訂控制項的基本步驟都相同。
 
@@ -44,13 +44,13 @@ ms.locfileid: "70284948"
 
 ## <a name="building-the-custom-control"></a>建立自訂控制項
 
-因為我們所建立的自訂控制項將會回應使用者輸入（按下滑鼠左鍵），所以我們將會繼承`NSControl`自。 如此一來，我們的自訂控制項就會自動擁有內建使用者介面控制項所擁有和回應的所有標準功能，就像標準的 macOS 控制項一樣。
+因為我們所建立的自訂控制項將會回應使用者輸入（按下滑鼠左鍵），所以我們將會繼承自 `NSControl`。 如此一來，我們的自訂控制項就會自動擁有內建使用者介面控制項所擁有和回應的所有標準功能，就像標準的 macOS 控制項一樣。
 
-在 Visual Studio for Mac 中，開啟您想要為其建立自訂使用者介面控制項的 Xamarin. Mac 專案（或建立新的）。 新增類別並呼叫它`NSFlipSwitch`：
+在 Visual Studio for Mac 中，開啟您想要為其建立自訂使用者介面控制項的 Xamarin. Mac 專案（或建立新的）。 新增類別，並將其呼叫 `NSFlipSwitch`：
 
-[![](custom-controls-images/custom01.png "加入新的類別")](custom-controls-images/custom01.png#lightbox)
+[![](custom-controls-images/custom01.png "Adding a new class")](custom-controls-images/custom01.png#lightbox)
 
-接著，編輯`NSFlipSwitch.cs`類別，使其看起來如下所示：
+接下來，編輯 `NSFlipSwitch.cs` 類別，使其看起來如下所示：
 
 ```csharp
 using Foundation;
@@ -126,7 +126,7 @@ namespace MacCustomControl
 }
 ```
 
-關於我們的自訂類別，首先要注意的是，我們會`NSControl`從繼承並使用**Register**命令，將此類別公開至目標-C 和 Xcode 的 Interface Builder：
+關於自訂類別的第一件事，就是從 `NSControl` 繼承，然後使用**Register**命令將此類別公開給目標-C 和 Xcode 的 Interface Builder：
 
 ```csharp
 [Register("NSFlipSwitch")]
@@ -139,7 +139,7 @@ public class NSFlipSwitch : NSControl
 
 ### <a name="tracking-the-controls-state"></a>追蹤控制項的狀態
 
-因為我們的自訂控制項是參數，所以我們需要一種方式來追蹤交換器的開啟/關閉狀態。 我們會使用中`NSFlipSwitch`的下列程式碼來處理這種情況：
+因為我們的自訂控制項是參數，所以我們需要一種方式來追蹤交換器的開啟/關閉狀態。 我們會使用 `NSFlipSwitch`中的下列程式碼來處理這種情況：
 
 ```csharp
 private bool _value = false;
@@ -155,7 +155,7 @@ public bool Value {
 }
 ```
 
-當交換器的狀態變更時，我們需要一種方法來更新 UI。 我們的作法是強制控制項使用`NeedsDisplay = true`重繪其 UI。
+當交換器的狀態變更時，我們需要一種方法來更新 UI。 這麼做的方法是強制控制項使用 `NeedsDisplay = true`重繪其 UI。
 
 如果我們的控制項需要更多的單一開啟/關閉狀態（例如具有3個位置的多重狀態切換），我們可以使用**列舉**來追蹤狀態。 在我們的範例中，簡單的**bool**會執行。
 
@@ -183,7 +183,7 @@ private void Initialize() {
 }
 ```
 
-這個方法會從每個控制項的函式呼叫，以確保控制項已正確設定。 例如：
+這個方法會從每個控制項的函式呼叫，以確保控制項已正確設定。 例如:
 
 ```csharp
 public NSFlipSwitch (IntPtr handle) : base (handle)
@@ -193,7 +193,7 @@ public NSFlipSwitch (IntPtr handle) : base (handle)
 }
 ```
 
-接下來，我們需要覆寫`DrawRect`方法，並新增核心圖形常式來繪製控制項：
+接下來，我們需要覆寫 `DrawRect` 方法，並新增核心圖形常式來繪製控制項：
 
 ```csharp
 public override void DrawRect (CGRect dirtyRect)
@@ -206,13 +206,13 @@ public override void DrawRect (CGRect dirtyRect)
 }
 ```
 
-當控制項的狀態變更時（例如從**On**到**Off**），我們將調整其視覺表示。 每當狀態變更時，我們都可以使用`NeedsDisplay = true`命令來強制控制項重新繪製新的狀態。
+當控制項的狀態變更時（例如從**On**到**Off**），我們將調整其視覺表示。 當狀態變更時，我們可以使用 `NeedsDisplay = true` 命令來強制控制項重新繪製新的狀態。
 
 <a name="Responding-to-User-Input" />
 
 ### <a name="responding-to-user-input"></a>回應使用者輸入
 
-有兩個基本的方法可以將使用者輸入新增至我們的自訂控制項：覆**寫滑鼠處理常式**或**手勢**辨識器。 我們使用的方法會以控制項所需的功能為基礎。
+有兩個基本的方法可以將使用者輸入新增至自訂控制項：覆**寫滑鼠處理常式**或**手勢**辨識器。 我們使用的方法會以控制項所需的功能為基礎。
 
 > [!IMPORTANT]
 > 對於您所建立的任何自訂控制項，您應該使用覆**寫方法**_或_**手勢**辨識器，但不能同時與彼此衝突。
@@ -221,7 +221,7 @@ public override void DrawRect (CGRect dirtyRect)
 
 #### <a name="handling-user-input-with-override-methods"></a>使用覆寫方法處理使用者輸入
 
-繼承自`NSControl` （或`NSView`）的物件有數個用來處理滑鼠或鍵盤輸入的覆寫方法。 針對我們的範例控制項，我們想要在使用者以滑鼠左鍵按一下控制項時，將切換的狀態翻轉到 [**開啟**] 和 [**關閉**]。 我們可以將下列覆寫方法新增至`NSFlipSwitch`類別，以處理這種情況：
+繼承自 `NSControl` （或 `NSView`）的物件有數個用來處理滑鼠或鍵盤輸入的覆寫方法。 針對我們的範例控制項，我們想要在使用者以滑鼠左鍵按一下控制項時，將切換的狀態翻轉到 [**開啟**] 和 [**關閉**]。 我們可以將下列覆寫方法新增至 `NSFlipSwitch` 類別，以處理這種情況：
 
 ```csharp
 #region Mouse Handling Methods
@@ -253,13 +253,13 @@ public override void MouseMoved (NSEvent theEvent)
 ## endregion
 ```
 
-在上述程式碼中，我們呼叫`FlipSwitchState`方法（定義于上方）來翻轉`MouseDown`方法中參數的開啟/關閉狀態。 這也會強制重新繪製控制項，以反映目前的狀態。
+在上述程式碼中，我們呼叫 `FlipSwitchState` 方法（定義于上方），以在 `MouseDown` 方法中翻轉參數的開啟/關閉狀態。 這也會強制重新繪製控制項，以反映目前的狀態。
 
 <a name="Handling-User-Input-with-Gesture-Recognizers" />
 
 #### <a name="handling-user-input-with-gesture-recognizers"></a>使用手勢辨識器處理使用者輸入
 
-（選擇性）您可以使用手勢辨識器來處理與控制項互動的使用者。 移除上面新增的覆寫，編輯`Initialize`方法，使其看起來如下所示：
+（選擇性）您可以使用手勢辨識器來處理與控制項互動的使用者。 移除上面新增的覆寫，編輯 `Initialize` 方法，使其看起來如下所示：
 
 ```csharp
 private void Initialize() {
@@ -277,7 +277,7 @@ private void Initialize() {
 }
 ```
 
-在這裡，我們會建立新`NSClickGestureRecognizer`的，並`FlipSwitchState`呼叫我們的方法，以在使用者按一下滑鼠左鍵時變更開關的狀態。 `AddGestureRecognizer (click)`方法會將手勢辨識器新增至控制項。
+在這裡，我們會建立新的 `NSClickGestureRecognizer`，並呼叫我們的 `FlipSwitchState` 方法，以在使用者按一下滑鼠左鍵時變更切換的狀態。 `AddGestureRecognizer (click)` 方法會將手勢辨識器新增至控制項。
 
 同樣地，我們使用的方法取決於我們嘗試使用自訂控制項來完成的動作。 如果我們需要低層級的存取權來進行使用者互動，請使用覆寫方法。 如果我們需要預先定義的功能（例如按一下滑鼠），請使用手勢辨識器。
 
@@ -287,7 +287,7 @@ private void Initialize() {
 
 當使用者變更自訂控制項的狀態時，我們需要一種方法來回應程式碼中的狀態變更（例如，在按一下自訂按鈕時執行某些動作）。
 
-若要提供這項功能， `NSFlipSwitch`請編輯類別並新增下列程式碼：
+若要提供這項功能，請編輯 `NSFlipSwitch` 類別，並新增下列程式碼：
 
 ```csharp
 #region Events
@@ -305,7 +305,7 @@ internal void RaiseValueChanged() {
 ## endregion
 ```
 
-接著，編輯`FlipSwitchState`方法，使其看起來如下所示：
+接下來，編輯 `FlipSwitchState` 方法，使其看起來如下所示：
 
 ```csharp
 private void FlipSwitchState() {
@@ -315,9 +315,9 @@ private void FlipSwitchState() {
 }
 ```
 
-首先，我們會提供`ValueChanged`一個事件，讓我們可以在程式碼C#中將處理常式新增至，以便在使用者變更交換器的狀態時執行動作。
+首先，我們會提供 `ValueChanged` 事件，讓我們可以在程式碼中C#將處理常式新增至，讓我們可以在使用者變更切換狀態時執行動作。
 
-第二，由於我們的`NSControl`自訂控制項繼承自，因此它會自動具有可在 Xcode 的 Interface Builder 中指派的**動作**。 若要在狀態變更時呼叫此**動作**，我們會使用下列程式碼：
+第二，由於我們的自訂控制項會繼承 `NSControl`，因此它會自動具有可在 Xcode 的 Interface Builder 中指派的**動作**。 若要在狀態變更時呼叫此**動作**，我們會使用下列程式碼：
 
 ```csharp
 if (this.Action !=null)
@@ -332,23 +332,23 @@ if (this.Action !=null)
 
 透過完整定義的自訂控制項，我們可以使用C#程式碼或 Xcode 的 Interface Builder，將其新增至 Xamarin 應用程式的 UI。
 
-若要使用 Interface Builder 加入控制項，請先執行 Xamarin. Mac 專案的全新組建，然後按兩下該`Main.storyboard`檔案，在 Interface Builder 進行編輯時將其開啟：
+若要使用 Interface Builder 加入控制項，請先執行 Xamarin. Mac 專案的全新組建，然後按兩下 `Main.storyboard` 檔案，在 Interface Builder 進行編輯 中開啟該檔案：
 
-[![](custom-controls-images/custom02.png "在 Xcode 中編輯分鏡腳本")](custom-controls-images/custom02.png#lightbox)
+[![](custom-controls-images/custom02.png "Editing the storyboard in Xcode")](custom-controls-images/custom02.png#lightbox)
 
-接下來，將`Custom View`拖曳至使用者介面設計中：
+接下來，將 `Custom View` 拖曳至使用者介面設計中：
 
-[![](custom-controls-images/custom03.png "從程式庫選取自訂視圖")](custom-controls-images/custom03.png#lightbox)
+[![](custom-controls-images/custom03.png "Selecting a Custom View from the Library")](custom-controls-images/custom03.png#lightbox)
 
-在仍選取 [自訂視圖] 的情況下，切換至 [身分**識別**偵測器`NSFlipSwitch`]，並將視圖的**類別**變更為：
+在仍選取 [自訂視圖] 的情況下，切換至 [身分**識別偵測器**]，並將視圖的**類別**變更為 `NSFlipSwitch`：
 
-[![](custom-controls-images/custom04.png "設定視圖的類別")](custom-controls-images/custom04.png#lightbox)
+[![](custom-controls-images/custom04.png "Setting the View's class")](custom-controls-images/custom04.png#lightbox)
 
-切換至 [**助理編輯器**]，並建立自訂控制項的 [**輸出**] （請務必將`ViewController.h`它系結到檔案中，而不`.m`是檔案）：
+切換至 [**助理編輯器**]，並建立自訂控制項的 [**輸出**] （請務必將它系結到 `ViewController.h` 檔案，而不是 `.m` 檔案）：
 
-[![](custom-controls-images/custom05.png "設定新的插座")](custom-controls-images/custom05.png#lightbox)
+[![](custom-controls-images/custom05.png "Configuring a new Outlet")](custom-controls-images/custom05.png#lightbox)
 
-儲存您的變更，返回 Visual Studio for Mac 並允許變更同步。編輯檔案， `ViewDidLoad`讓方法看起來如下所示： `ViewController.cs`
+儲存您的變更，返回 Visual Studio for Mac 並允許變更同步。編輯 `ViewController.cs` 檔案，使 `ViewDidLoad` 方法看起來如下所示：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -363,13 +363,13 @@ public override void ViewDidLoad ()
 }
 ```
 
-在這裡，我們會回應`ValueChanged`在`NSFlipSwitch`類別上定義的事件，並在使用者按一下控制項時寫出目前的**值**。
+在這裡，我們會回應我們在 `NSFlipSwitch` 類別上定義的 `ValueChanged` 事件，並在使用者按一下控制項時寫出目前的**值**。
 
 或者，我們可以返回 Interface Builder 並在控制項上定義**動作**：
 
-[![](custom-controls-images/custom06.png "設定新動作")](custom-controls-images/custom06.png#lightbox)
+[![](custom-controls-images/custom06.png "Configuring a new Action")](custom-controls-images/custom06.png#lightbox)
 
-再次編輯`ViewController.cs`檔案，並新增下列方法：
+同樣地，編輯 `ViewController.cs` 檔案，並新增下列方法：
 
 ```csharp
 partial void OptionTwoFlipped (Foundation.NSObject sender) {

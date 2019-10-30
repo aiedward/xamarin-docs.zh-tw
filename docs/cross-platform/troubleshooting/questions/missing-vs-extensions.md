@@ -3,19 +3,19 @@ title: 在安裝後遺漏 Visual Studio 延伸模組
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 180db6789ab9cc665ad815b943013b117a562709
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6cd5acb529d617c72d8c9e1bd642a831f90b2e8c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757074"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013749"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>在安裝後遺漏 Visual Studio 延伸模組
 
-## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>錯誤訊息：這個專案與目前的版本不相容 Visual Studio
+## <a name="error-message-this-project-is-incompatible-with-the-current-edition-of-visual-studio"></a>錯誤訊息：這個專案與目前的 Visual Studio 版本不相容
 
 請確定已安裝 Visual Studio 2017 （[社區]、[專業] 或 [企業]）或更新版本。
 
@@ -33,11 +33,11 @@ ms.locfileid: "70757074"
 
 4. 請確定 [ **Xamarin for Visual Studio 2013** ] 選項已設定為 [安裝]：
 
-    ![](missing-vs-extensions-images/installer.png "啟用 Xamarin for Visual Studio 2013 安裝選項")
+    ![](missing-vs-extensions-images/installer.png "Enable Xamarin for Visual Studio 2013 installation option")
 
 5. 繼續執行安裝程式的其餘部分。
 
-## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>可能的修正2：詢問 Visual Studio 重新設定擴充功能
+## <a name="possible-fix-2-ask-visual-studio-to-set-up-the-extensions-again"></a>可能的修正程式2：要求 Visual Studio 重新設定擴充功能
 
 1. 檢查 Xamarin 延伸模組是否已複製到 [Visual Studio extensions] 資料夾中：
 
@@ -45,7 +45,7 @@ ms.locfileid: "70757074"
 
     如果已正確安裝延伸模組（針對版本3.1.228），資料夾中將會有60個專案：
 
-    ![](missing-vs-extensions-images/folder.png "Explorer 中的 ' Xamarin\3.1.228.0 ' 資料夾內容清單")
+    ![](missing-vs-extensions-images/folder.png "List of 'Xamarin\3.1.228.0' folder contents in Explorer")
 
 2. 確認此資料夾看起來正確之後，請告訴 Visual Studio 再次嘗試設定擴充功能：
 
@@ -77,7 +77,7 @@ ms.locfileid: "70757074"
 
 5. 尋找此機碼：
 
-    _HKEY\_LOCAL\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
+    _HKEY\_本機\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
 
 6. 尋找並刪除所有符合此模式的項目：
 
@@ -89,7 +89,7 @@ ms.locfileid: "70757074"
 
 8. 刪除所有看起來可能與 Xamarin 相關的項目。 例如，以下是用來在舊版 Xamarin 中造成問題的一項：
 
-    _Mono.VisualStudio.Shell,1.0_
+    _VisualStudio，1。0_
 
 9. 重新開機。
 

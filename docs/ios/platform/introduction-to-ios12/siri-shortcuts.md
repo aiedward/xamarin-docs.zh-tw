@@ -4,15 +4,15 @@ description: 本檔說明如何使用 iOS 12 中的 Siri 快捷方式。 其中�
 ms.prod: xamarin
 ms.assetid: 86424F79-3A7D-436E-927D-9A3267DA333B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/08/2018
-ms.openlocfilehash: a2ae80946cb94b6c81b87a88c91cd9bf1706186f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 40b7adbed3489d449e583b22fa477287d11bdf42
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291777"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031875"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>在 Xamarin 中 Siri 快捷方式
 
@@ -39,7 +39,7 @@ iOS 12 新增了 Siri 快捷方式，可讓所有類型的應用程式將其功�
 若要使用範例應用程式：
 
 - 在 iOS 12 模擬器或[裝置](#testing-on-device)上安裝並執行湯品 Chef 範例應用程式。
-- 按一下右上 **+** 角的按鈕，以建立新的訂單。
+- 按一下右上方的 [ **+** ] 按鈕，以建立新的訂單。
 - 選取 [湯品] 類型、指定 [數量] 和 [選項]，然後按一下 [**下單**]。
 - 在 [**訂購歷程記錄**] 畫面上，按一下新建立的訂單，以查看其詳細資料。
 - 在 [訂單詳細資料] 畫面底部，按一下 [**新增至 Siri**]。
@@ -60,7 +60,7 @@ iOS 12 新增了 Siri 快捷方式，可讓所有類型的應用程式將其功�
 
 ### <a name="infoplist"></a>Info.plist
 
-**SoupChef**專案中的**plist**檔案會將套件組合**識別碼**定義為`com.xamarin.SoupChef`。 此套件組合識別碼將用來做為本檔稍後討論之意圖和意圖 UI 延伸模組的套件組合識別碼的前置詞。
+**SoupChef**專案中的**plist**檔案會將套件組合**識別碼**定義為 `com.xamarin.SoupChef`。 此套件組合識別碼將用來做為本檔稍後討論之意圖和意圖 UI 延伸模組的套件組合識別碼的前置詞。
 
 Plist 檔案也包含下列**資訊**：
 
@@ -72,9 +72,9 @@ Plist 檔案也包含下列**資訊**：
 </array>
 ```
 
-這個`NSUserActivityTypes`索引鍵/值組表示湯品 Chef 知道如何`OrderSoupIntent`處理[`ActivityType`](xref:Foundation.NSUserActivity.ActivityType) ，以及[`NSUserActivity`](xref:Foundation.NSUserActivity)具有 ".com. SoupChef. viewMenu" 的。
+這個 `NSUserActivityTypes` 的索引鍵/值組表示湯品 Chef 知道如何處理 `OrderSoupIntent`，以及具有[`ActivityType`](xref:Foundation.NSUserActivity.ActivityType) "SoupChef. viewMenu" 的[`NSUserActivity`](xref:Foundation.NSUserActivity) 。
 
-傳遞至應用程式本身的活動和自訂意圖（相對於其延伸模組）會在`AppDelegate` （ [`ContinueUserActivity`](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*)方法[`UIApplicationDelegate`](xref:UIKit.UIApplicationDelegate)是）中處理。
+傳遞至應用程式本身的活動和自訂意圖（相對於其延伸模組）會在 `AppDelegate` 中處理（ [`ContinueUserActivity`](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*)方法的[`UIApplicationDelegate`](xref:UIKit.UIApplicationDelegate) 。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -89,21 +89,21 @@ Plist 檔案也包含下列**資訊**：
 <true/>
 ```
 
-此設定表示應用程式會使用 "SoupChef" 應用程式群組。 **SoupChefIntents**應用程式延伸模組會使用這個相同的應用程式群組，這可讓這兩個專案共用[`NSUserDefaults`](xref:Foundation.NSUserDefaults)
+此設定表示應用程式會使用 "SoupChef" 應用程式群組。 **SoupChefIntents**應用程式延伸模組會使用這個相同的應用程式群組，讓這兩個專案共用[`NSUserDefaults`](xref:Foundation.NSUserDefaults)
 資料。
 
-此`com.apple.developer.siri`機碼表示應用程式會與 Siri 互動。
+`com.apple.developer.siri` 鍵指出應用程式會與 Siri 互動。
 
 > [!NOTE]
 > **SoupChef**專案的組建設定會將**自訂權利**設為**plist**。
 
 ## <a name="using-an-nsuseractivity-shortcut-to-open-an-app"></a>使用 NSUserActivity 快捷方式開啟應用程式
 
-若要建立開啟應用程式以顯示特定內容的快捷方式，請`NSUserActivity`建立，並將它附加到您想要開啟快捷方式之畫面的視圖控制器。
+若要建立開啟應用程式以顯示特定內容的快捷方式，請建立 `NSUserActivity`，並將它附加到您想要開啟快捷方式之畫面的視圖控制器。
 
 ### <a name="setting-up-an-nsuseractivity"></a>設定 NSUserActivity
 
-在功能表畫面上`SoupMenuViewController` `NSUserActivity`建立，並將它指派給 view controller 的[`UserActivity`](xref:UIKit.UIResponder.UserActivity)屬性：
+在功能表畫面上，`SoupMenuViewController` 建立 `NSUserActivity`，並將它指派給 view controller 的[`UserActivity`](xref:UIKit.UIResponder.UserActivity)屬性：
 
 ```csharp
 public override void ViewDidLoad()
@@ -113,9 +113,9 @@ public override void ViewDidLoad()
 }
 ```
 
-將_donates_活動的屬性設定為Siri。`UserActivity` 從這項捐贈中，Siri 會取得有關此活動與使用者相關的時機和位置資訊，並在未來學習更好的建議。
+設定 `UserActivity` 屬性會將活動_donates_至 Siri。 從這項捐贈中，Siri 會取得有關此活動與使用者相關的時機和位置資訊，並在未來學習更好的建議。
 
-`NSUserActivityHelper`是公用程式類別，包含在**SoupChef**方案的**SoupKit**類別庫中。 它會建立`NSUserActivity` ，並設定與 Siri 和搜尋相關的各種屬性：
+`NSUserActivityHelper` 是公用程式類別，包含在**SoupChef**方案的**SoupKit**類別庫中。 它會建立 `NSUserActivity`，並設定與 Siri 和搜尋相關的各種屬性：
 
 ```csharp
 public static string ViewMenuActivityType = "com.xamarin.SoupChef.viewMenu";
@@ -148,13 +148,13 @@ public static NSUserActivity ViewMenuActivity {
 
 請特別注意下列事項：
 
-- 將`EligibleForPrediction`設定`true`為，表示 Siri 可以預測此活動，並將其呈現為快捷方式。
-- 陣列是一種標準[`CSSearchableItemAttributeSet`](xref:CoreSpotlight.CSSearchableItemAttributeSet) ，用來`NSUserActivity`在 iOS 搜尋結果中包含。 [`ContentAttributeSet`](xref:Foundation.NSUserActivity.ContentAttributeSet)
-- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase)這是一種片語，Siri 會在將片語指派給快捷方式時，建議使用者做為可能的選擇。
+- 將 `EligibleForPrediction` 設定為 `true` 表示 Siri 可以預測此活動，並將其呈現為快捷方式。
+- [`ContentAttributeSet`](xref:Foundation.NSUserActivity.ContentAttributeSet)陣列是用來在 iOS 搜尋結果中包含 `NSUserActivity` 的標準[`CSSearchableItemAttributeSet`](xref:CoreSpotlight.CSSearchableItemAttributeSet) 。
+- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase)是一種片語，在將片語指派給快捷方式時，Siri 會建議使用者做為可能的選擇。
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>處理 NSUserActivity 快捷方式
 
-若要處理`NSUserActivity`使用者所叫用的快捷方式，iOS 應用程式必須`ContinueUserActivity`覆寫`AppDelegate`類別的方法，並根據`ActivityType`傳入`NSUserActivity`物件的欄位回應：
+若要處理使用者所叫用的 `NSUserActivity` 快捷方式，iOS 應用程式必須覆寫 `AppDelegate` 類別的 `ContinueUserActivity` 方法，並根據傳入 `NSUserActivity` 物件的 `ActivityType` 欄位回應：
 
 ```csharp
 public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -169,7 +169,7 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 }
 ```
 
-這個方法會`HandleUserActivity`呼叫，它會尋找功能表畫面的 segue 並叫用它：
+這個方法會呼叫 `HandleUserActivity`，以尋找功能表畫面的 segue 並叫用它：
 
 ```csharp
 void HandleUserActivity()
@@ -188,7 +188,7 @@ void HandleUserActivity()
 
 ### <a name="assigning-a-phrase-to-an-nsuseractivity"></a>將片語指派給 NSUserActivity
 
-若要將片語指派給`NSUserActivity`，請開啟 iOS**設定** 應用程式，然後選擇  **Siri & 搜尋 > 我的快捷方式**。 然後，選取快捷方式（在此案例中為「訂購午餐」）並記錄片語。
+若要將片語指派給 `NSUserActivity`，請開啟 [iOS**設定**] 應用程式，然後選擇 [ **Siri & 搜尋] > [我的快捷方式**]。 然後，選取快捷方式（在此案例中為「訂購午餐」）並記錄片語。
 
 叫用 Siri 並使用此片語將會開啟湯品 Chef 至功能表畫面。
 
@@ -227,18 +227,18 @@ void HandleUserActivity()
 若要查看此產生的程式碼：
 
 - 開啟**AppDelegate**。
-- 將匯入新增至自訂意圖的標頭檔：`#import "OrderSoupIntent.h"`
-- 在類別中的任何方法中，加入的參考`OrderSoupIntent`。
-- 以滑鼠右鍵按一下`OrderSoupIntent` ，然後選擇 [**跳至定義**]。
+- 將匯入新增至自訂意圖的標頭檔： `#import "OrderSoupIntent.h"`
+- 在類別中的任何方法中，加入 `OrderSoupIntent`的參考。
+- 以滑鼠右鍵按一下 `OrderSoupIntent`，然後選擇 [**跳至定義**]。
 - 在新開啟的檔案（ **OrderSoupIntent**）上按一下滑鼠右鍵，然後選取 [**在搜尋工具中顯示**]。
 - 這會開啟 [搜尋**工具**] 視窗，其中包含包含所產生之程式碼的 .h 和. m 檔案。
 
 這個產生的程式碼包括：
 
-- `OrderSoupIntent`–代表自訂意圖的類別。
-- `OrderSoupIntentHandling`–定義將用來確認應該執行意圖之方法的通訊協定，以及實際執行的方法。
-- `OrderSoupIntentResponseCode`–定義各種回應狀態的列舉。
-- `OrderSoupIntentResponse`–代表意圖執行回應的類別。
+- `OrderSoupIntent` –代表自訂意圖的類別。
+- `OrderSoupIntentHandling` –定義將用來確認應該執行意圖之方法的通訊協定，以及實際執行它的方法。
+- `OrderSoupIntentResponseCode` –定義各種回應狀態的列舉。
+- `OrderSoupIntentResponse` –代表意圖執行回應的類別。
 
 ### <a name="creating-a-binding-to-the-custom-intent"></a>建立自訂意圖的系結
 
@@ -269,9 +269,9 @@ void HandleUserActivity()
 
   - 在 Xcode 中，選擇  **Xcode > 喜好設定 > 位置**，並將**命令列工具**設為您系統上可用的最新 Xcode 10 安裝。
 
-- 在終端機中`cd` ，到**OrderSoupIntentStaticLib**目錄。
+- 在終端機中，`cd` 至**OrderSoupIntentStaticLib**目錄。
 
-- 型`make`別，它會建立：
+- 輸入 `make`，它會建立：
 
   - 靜態程式庫（ **libOrderSoupIntentStaticLib）。**
   - 在**bo**輸出目錄中， C#系結定義：
@@ -296,7 +296,7 @@ void HandleUserActivity()
 - **LibOrderSoupIntentStaticLib**的**原生參考**，也就是先前建立的靜態程式庫。
 
 > [!NOTE]
-> **ApiDefinitions.cs**和**StructsAndEnums.cs**都包含之類的`[Watch (5,0), iOS (12,0)]`屬性。 這些由目標 Sharpie 所產生的屬性已標記為批註，因為這不是此專案所需。
+> **ApiDefinitions.cs**和**StructsAndEnums.cs**都包含 `[Watch (5,0), iOS (12,0)]`之類的屬性。 這些由目標 Sharpie 所產生的屬性已標記為批註，因為這不是此專案所需。
 
 如需建立C#系結程式庫的詳細資訊，請參閱系結[IOS 目標-C 程式庫](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#create-a-xamarinios-binding-project)逐步解說。
 
@@ -317,8 +317,8 @@ C#在**SoupChef**方案中， **SoupKit**專案包含應用程式及其擴充功
 
 為了讓 Siri 瞭解這一點，湯品 Chef _donates_的目的是要在每次使用者放置 Siri 訂單時湯品。 根據這項捐贈–當其在捐贈時，其所包含的參數，Siri 會學習何時建議未來的快捷方式。
 
-**SoupChef**會使用`SoupOrderDataManager`類別來放置捐贈。
-呼叫以為使用者放置湯品順序時， `PlaceOrder`方法會接著呼叫： [`DonateInteraction`](xref:Intents.INInteraction.DonateInteraction*)
+**SoupChef**會使用 `SoupOrderDataManager` 類別來放置捐贈。
+呼叫來為使用者下湯品順序時，`PlaceOrder` 方法會接著呼叫[`DonateInteraction`](xref:Intents.INInteraction.DonateInteraction*)：
 
 ```csharp
 void DonateInteraction(Order order)
@@ -332,11 +332,11 @@ void DonateInteraction(Order order)
 }
 ```
 
-提取意圖之後，它就會包裝在中[`INInteraction`](xref:Intents.INInteraction)。
-`INInteraction`提供了[`Identifier`](xref:Intents.INInteraction.Identifier*)
+提取意圖之後，它會包裝在[`INInteraction`](xref:Intents.INInteraction)中。
+`INInteraction` 提供[`Identifier`](xref:Intents.INInteraction.Identifier*)
 ，符合訂單的唯一識別碼（稍後刪除不再有效的意圖捐贈時，這會很有説明）。 然後，互動會捐贈給 Siri。
 
-對`order.Intent` getter 的呼叫`OrderSoupIntent`會提取表示順序的，其方式是設定其`Soup`、 `Options`、和影像，以及當使用者記錄要建立關聯之`Quantity`Siri 的片語時，做為建議使用的調用片語具有下列目的：
+呼叫 `order.Intent` getter 會提取代表訂單的 `OrderSoupIntent`，方法是設定其 `Quantity`、`Soup`、`Options`和影像，以及當使用者記錄 Siri 要與意圖相關聯的片語時，要做為建議使用的調用片語:
 
 ```csharp
 public OrderSoupIntent Intent
@@ -372,7 +372,7 @@ public OrderSoupIntent Intent
 
 請務必移除不再有效的捐贈，讓 Siri 不會建立無用或令人困惑的快捷方式建議。
 
-在湯品 Chef 中，您可以使用 [**設定] 功能表**畫面，將功能表項目標示為無法使用。 Siri 應該不會再建議快捷方式來排序無法使用的功能表項目， `RemoveDonation`因此的`SoupMenuManager`方法會刪除不再可用之功能表項目的捐贈。 它的運作方式如下：
+在湯品 Chef 中，您可以使用 [**設定] 功能表**畫面，將功能表項目標示為無法使用。 Siri 應該不會再建議快捷方式來排序無法使用的功能表項目，因此 `SoupMenuManager` 的 `RemoveDonation` 方法會刪除已無法再使用之功能表項目的捐贈。 它的運作方式如下：
 
 - 尋找與 [立即可用] 功能表項目相關聯的訂單。
 - 抓取其識別碼。
@@ -417,7 +417,7 @@ void RemoveDonation(MenuItem menuItem)
 
 ##### <a name="soupchefintents-infoplist"></a>SoupChefIntents – Info. plist
 
-**SoupChefIntents**專案中的**plist**會將套件組合**識別碼**定義為`com.xamarin.SoupChef.SoupChefIntents`。
+**SoupChefIntents**專案中的**plist**會將套件組合**識別碼**定義為 `com.xamarin.SoupChef.SoupChefIntents`。
 
 Plist 檔案也包含下列**資訊**：
 
@@ -444,12 +444,12 @@ Plist 檔案也包含下列**資訊**：
 
 在上述**資訊中。 plist**：
 
-- `IntentsRestrictedWhileLocked`列出只有在裝置解除鎖定時才會處理的意圖。
-- `IntentsSupported`列出此延伸模組所處理的意圖。
-- `NSExtensionPointIdentifier`指定應用程式延伸模組的類型（如需詳細資訊，請參閱[Apple 的檔](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)）。
-- `NSExtensionPrincipalClass`指定應該用來處理此延伸模組所支援意圖的類別。
+- `IntentsRestrictedWhileLocked` 列出只有在裝置解除鎖定時才會處理的意圖。
+- `IntentsSupported` 列出此延伸模組所處理的意圖。
+- `NSExtensionPointIdentifier` 會指定應用程式延伸模組的類型（如需詳細資訊，請參閱[Apple 的檔](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)）。
+- `NSExtensionPrincipalClass` 指定應該用來處理此延伸模組所支援意圖的類別。
 
-##### <a name="soupchefintents-entitlementsplist"></a>SoupChefIntents – Entitlements.plist
+##### <a name="soupchefintents-entitlementsplist"></a>SoupChefIntents –權利. plist
 
 **SoupChefIntents**專案中的**Plist**具有**應用程式群組**功能。 這項功能設定為使用與**SoupChef**專案相同的應用程式群組：
 
@@ -460,7 +460,7 @@ Plist 檔案也包含下列**資訊**：
 </array>
 ```
 
-湯品 Chef 會使用`NSUserDefaults`保存資料。 為了在應用程式與應用程式擴充功能之間共用資料，它們會在其**plist**檔案中參考相同的應用程式群組。
+湯品 Chef 會使用 `NSUserDefaults`來保存資料。 為了在應用程式與應用程式擴充功能之間共用資料，它們會在其**plist**檔案中參考相同的應用程式群組。
 
 > [!NOTE]
 > **SoupChefIntents**專案的組建設定會將**自訂權利**設為**plist**。
@@ -469,7 +469,7 @@ Plist 檔案也包含下列**資訊**：
 
 意圖延伸會根據自訂意圖來執行快捷方式的必要背景工作。
 
-Siri 會呼叫[`GetHandler`](xref:Intents.INExtension.GetHandler*) `IntentHandler`類別的方法（定義于**Info. plist**做為`NSExtensionPrincipalClass`），以取得擴充`OrderSoupIntentHandling`之類別的實例，以用來處理`OrderSoupIntent`：
+Siri 會呼叫 `IntentHandler` 類別的[`GetHandler`](xref:Intents.INExtension.GetHandler*)方法（定義于**Info. plist**作為 `NSExtensionPrincipalClass`），以取得擴充 `OrderSoupIntentHandling`的類別實例，這可用來處理 `OrderSoupIntent`：
 
 ```csharp
 [Register("IntentHandler")]
@@ -488,15 +488,15 @@ public class IntentHandler : INExtension
 }
 ```
 
-`OrderSoupIntentHandler`（定義于共用程式碼的**SoupKit**專案中）會執行兩個重要的方法：
+`OrderSoupIntentHandler`（在共用程式碼的**SoupKit**專案中定義）會執行兩個重要的方法：
 
-- `ConfirmOrderSoup`–確認是否應該實際執行與意圖相關聯的工作。
-- `HandleOrderSoup`–藉由呼叫傳入的完成處理常式，來放置湯品訂單並回應使用者
+- `ConfirmOrderSoup` –確認是否應該實際執行與意圖相關聯的工作。
+- `HandleOrderSoup` –藉由呼叫傳入的完成處理常式，來放置湯品訂單並回應使用者
 
 #### <a name="handling-an-ordersoupintent-that-opens-the-app"></a>處理開啟應用程式的 OrderSoupIntent
 
 應用程式必須正確處理不會在背景中執行的意圖。
-這些動作的處理方式與快捷方式`NSUserActivity`相同， `ContinueUserActivity`方法`AppDelegate`如下：
+在 `AppDelegate`的 `ContinueUserActivity` 方法中，它們的處理方式與 `NSUserActivity` 快捷方式相同：
 
 ```csharp
 public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -517,9 +517,9 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 
 ### <a name="soupchefintentsui--infoplist-and-entitlementsplist"></a>SoupChefIntentsUI – Info. plist 和權利. plist
 
-#### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info.plist
+#### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info. plist
 
-**SoupChefIntentsUI**專案中的**plist**會將套件組合**識別碼**定義為`com.xamarin.SoupChef.SoupChefIntentsui`。
+**SoupChefIntentsUI**專案中的**plist**會將套件組合**識別碼**定義為 `com.xamarin.SoupChef.SoupChefIntentsui`。
 
 Plist 檔案也包含下列**資訊**：
 
@@ -543,29 +543,29 @@ Plist 檔案也包含下列**資訊**：
 
 在上述**資訊中。 plist**：
 
-- `IntentsSupported``OrderSoupIntent`表示由這個意圖 UI 延伸模組處理。
-- `NSExtensionPointIdentifier`指定應用程式延伸模組的類型（如需詳細資訊，請參閱[Apple 的檔](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)）。
-- `NSExtensionMainStoryboard`指定定義此延伸模組之主要介面的分鏡腳本
+- `IntentsSupported` 表示此 `OrderSoupIntent` 是由這個意圖 UI 延伸模組所處理。
+- `NSExtensionPointIdentifier` 會指定應用程式延伸模組的類型（如需詳細資訊，請參閱[Apple 的檔](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)）。
+- `NSExtensionMainStoryboard` 指定定義此延伸模組之主要介面的分鏡腳本
 
-#### <a name="soupchefintentsui-entitlementsplist"></a>SoupChefIntentsUI – Entitlements.plist
+#### <a name="soupchefintentsui-entitlementsplist"></a>SoupChefIntentsUI –權利. plist
 
 **SoupChefIntentsUI**專案不需要**plist**檔案。
 
 ### <a name="creating-the-user-interface"></a>建立使用者介面
 
-由於**SoupChefIntentsUI** `NSExtensionMainStoryboard`的**plist**會將金鑰設定為`MainInterface`，因此**MainInterace**的腳本檔案會定義意圖 UI 延伸模組的介面。
+由於**SoupChefIntentsUI**的**plist**會將 `NSExtensionMainStoryboard` 金鑰設定為 `MainInterface`，因此**MAININTERACE**檔案會定義意圖 UI 延伸模組的介面。
 
 在此分鏡腳本中，有一個**IntentViewController**類型的單一視圖控制器。 它會參考兩個視圖：
 
-- **invoiceView**，屬於類型`InvoiceView`
-- **confirmationView**，屬於類型`ConfirmOrderView`
+- **invoiceView**，屬於類型 `InvoiceView`
+- **confirmationView**，屬於類型 `ConfirmOrderView`
 
 > [!NOTE]
 > **InvoiceView**和**confirmationView**的介面會在**主要的**分鏡腳本中定義為次要 views。 Visual Studio for Mac 和 Visual Studio 2017 中的 iOS 設計工具不支援觀看或編輯次要視圖;若要這麼做，請在 Xcode 的 Interface Builder 中開啟**Main.** 分鏡腳本。
 
-`IntentViewController`執行[`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)
-介面，用於在使用 Siri 意圖時提供自訂介面。 該[`ConfigureView`](xref:IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView*)
-呼叫方法來自訂介面、顯示確認或發票，視互動是否已確認（[`INIntentHandlingStatus.Ready`](xref:Intents.INIntentHandlingStatus)）或已成功執行（[`INIntentHandlingStatus.Success`](xref:Intents.INIntentHandlingStatus)）而定：
+`IntentViewController` 會執行[`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)
+介面，用於在使用 Siri 意圖時提供自訂介面。 [`ConfigureView`](xref:IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView*)
+呼叫方法來自訂介面、顯示確認或發票，取決於是否已確認互動（[`INIntentHandlingStatus.Ready`](xref:Intents.INIntentHandlingStatus)），或是否已成功執行（[`INIntentHandlingStatus.Success`](xref:Intents.INIntentHandlingStatus)）：
 
 ```csharp
 [Export("configureViewForParameters:ofInteraction:interactiveBehavior:context:completion:")]
@@ -594,13 +594,13 @@ public void ConfigureView(
 ```
 
 > [!TIP]
-> 如需有關此方法`ConfigureView`的詳細資訊，請觀看 Apple 的 WWDC 2017 簡報， [SiriKit 的新功能](https://developer.apple.com/videos/play/wwdc2017/214/)。
+> 如需 `ConfigureView` 方法的詳細資訊，請觀看 Apple 的 WWDC 2017 簡報， [SiriKit 的新功能](https://developer.apple.com/videos/play/wwdc2017/214/)。
 
 ## <a name="creating-a-voice-shortcut"></a>建立語音快捷方式
 
 湯品 Chef 提供一個介面，可將語音快捷方式指派給每個訂單，讓您可以使用 Siri 訂購湯品。 事實上，用於記錄和指派語音快捷方式的介面是由 iOS 所提供，而且只需要很少的自訂程式碼。
 
-在`OrderDetailViewController`中，當使用者按下資料表的 [**新增至 Siri** ] 資料[`RowSelected`](xref:UIKit.UITableViewSource.RowSelected*)列時，此方法會顯示一個畫面來新增或編輯語音快捷方式：
+在 `OrderDetailViewController`中，當使用者按下資料表的 [**新增至 Siri** ] 資料列時， [`RowSelected`](xref:UIKit.UITableViewSource.RowSelected*)方法會顯示一個畫面來新增或編輯語音快捷方式：
 
 ```csharp
 public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -631,8 +631,8 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-根據目前顯示的順序是否有現有的語音快捷方式存在， `RowSelected`會提供類型[`INUIEditVoiceShortcutViewController`](xref:IntentsUI.INUIEditVoiceShortcutViewController)為或[`INUIAddVoiceShortcutViewController`](xref:IntentsUI.INUIAddVoiceShortcutViewController)的視圖控制器。
-在每個案例`OrderDetailViewController`中，會將本身設定為`Delegate`視圖控制器的，這就是它也會執行的原因。[`IINUIAddVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate)
+根據目前顯示的順序是否有現有的語音快捷方式存在，`RowSelected` 會呈現[`INUIEditVoiceShortcutViewController`](xref:IntentsUI.INUIEditVoiceShortcutViewController)或[`INUIAddVoiceShortcutViewController`](xref:IntentsUI.INUIAddVoiceShortcutViewController)類型的視圖控制器。
+在每個案例中，`OrderDetailViewController` 都會將本身設定為 view controller 的 `Delegate`，這也是它的執行原因[`IINUIAddVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate)
 和[`IINUIEditVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate)。
 
 ## <a name="testing-on-device"></a>在裝置上進行測試
@@ -645,7 +645,7 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 - 建立應用程式群組，以在湯品 Chef 應用程式及其擴充功能之間共用資料。 例如：**取代 com.lookout.enterprise.yourcompanyname. SoupChef**
 
-- 建立三個應用程式識別碼：一個用於應用程式本身、一個用於意圖延伸，另一個用於意圖 UI 延伸模組。 例如：
+- 建立三個應用程式識別碼：一個用於應用程式本身、一個用於意圖延伸，另一個用於意圖 UI 延伸模組。 例如:
 
   - 應用程式： **com. 取代 com.lookout.enterprise.yourcompanyname. SoupChef**
     - 針對此應用程式識別碼，指派 SiriKit 和**應用程式群組**功能。
@@ -679,7 +679,7 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 - 更新**SoupChefIntents**專案的**plist**檔案：
   - 針對 [**應用程式群組**] 功能，將群組設定為上方建立的新應用程式群組（在上述範例中，它是**取代 com.lookout.enterprise.yourcompanyname. SoupChef**）。
 
-- 最後，開啟**NSUserDefaultsHelper.cs**。 將變數設定為新應用程式群組的值（例如，將其設定為`group.com.yourcompanyname.SoupChef`）。 `AppGroup`
+- 最後，開啟**NSUserDefaultsHelper.cs**。 將 `AppGroup` 變數設定為新應用程式群組的值（例如，將其設定為 `group.com.yourcompanyname.SoupChef`）。
 
 ### <a name="configuring-the-build-settings"></a>正在進行組建設定
 

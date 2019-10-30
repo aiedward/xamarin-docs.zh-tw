@@ -4,19 +4,19 @@ description: 本檔說明如何在 Xamarin iOS 應用程式中使用系統執行
 ms.prod: xamarin
 ms.assetid: 50BCAF3B-1020-DDC1-0339-7028985AAC72
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 7d3f00f3abd13d2edf8b827a881768fbd54d6379
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: 1c9282c790aa5436667b37e1861a96afffcaa668
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106015"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73009442"
 ---
 # <a name="threading-in-xamarinios"></a>Xamarin 中的執行緒
 
-當使用執行緒（`System.Threading.Thread, System.Threading.ThreadPool`）時，並在使用非同步委派模式或 BeginXXX 方法，以及支援的完整應用程式開發介面範圍時，會隱含地存取 .net 執行緒 api，而 Xamarin iOS 執行時間提供工作平行程式庫。
+當使用執行緒（`System.Threading.Thread, System.Threading.ThreadPool`）時，並在使用非同步委派模式或 BeginXXX 方法，以及支援該工作的完整 Api 範圍時，會隱含地讓開發人員存取 .NET 執行緒 Api，這兩者都是明確的：平行程式庫。
 
 Xamarin 強烈建議您使用工作[平行程式庫](https://msdn.microsoft.com/library/dd460717.aspx)（TPL）來建立應用程式，原因如下：
 
@@ -24,7 +24,7 @@ Xamarin 強烈建議您使用工作[平行程式庫](https://msdn.microsoft.com/
 - 以 TPL 工作的角度來思考作業比較容易。 您可以輕鬆地進行操作、排程、序列化其執行，或以一組豐富的 Api 平行啟動許多。 
 - 這是使用新C#的非同步語言擴充功能進行程式設計的基礎。 
 
-執行緒集區會根據系統上可用的 CPU 核心數目、系統負載和您的應用程式需求，慢慢地增加所需的執行緒數目。 您可以使用這個執行緒集區，方法是在`System.Threading.ThreadPool`中叫用方法， `System.Threading.Tasks.TaskScheduler`或使用預設值（*平行*架構的一部分）。
+執行緒集區會根據系統上可用的 CPU 核心數目、系統負載和您的應用程式需求，慢慢地增加所需的執行緒數目。 您可以使用這個執行緒集區，方法是叫用 `System.Threading.ThreadPool` 中的方法，或使用預設 `System.Threading.Tasks.TaskScheduler` （*平行*架構的一部分）。
 
 開發人員通常會在需要建立回應式應用程式時使用執行緒，而不想封鎖主要的 UI 執行迴圈。
 
@@ -55,9 +55,9 @@ MyThreadedRoutine ()
 
 ## <a name="threading-and-garbage-collection"></a>執行緒和垃圾收集
 
-在執行過程中，目標-C 執行時間會建立和發行物件。 如果物件已標示為「自動發行」，則目標-C 執行時間會將這些物件釋放給執行緒的`NSAutoReleasePool`目前。 `NSAutoRelease` 針對`System.Threading.ThreadPool`從和主執行緒的每個執行緒，iOS 建立一個集區。 這項擴充功能涵蓋了使用 TaskScheduler 中的預設值建立的任何執行緒。
+在執行過程中，目標-C 執行時間會建立和發行物件。 如果物件已標示為「自動發行」，則目標-C 執行時間會將這些物件釋放到執行緒的目前 `NSAutoReleasePool`。 針對來自 `System.Threading.ThreadPool` 和主執行緒的每個執行緒，iOS 會建立一個 `NSAutoRelease` 集區。 這項擴充功能涵蓋了使用 TaskScheduler 中的預設值建立的任何執行緒。
 
-如果您使用`System.Threading`建立自己的執行緒，就必須提供自己`NSAutoRelease`的集區，以防止資料洩漏。 若要這樣做，只要將您的執行緒包裝在下面這段程式碼中即可：
+如果您使用 `System.Threading` 建立自己的執行緒，就必須提供自己的 `NSAutoRelease` 集區，以避免資料洩漏。 若要這樣做，只要將您的執行緒包裝在下面這段程式碼中即可：
 
 ```csharp
 void MyThreadStart (object arg)
@@ -68,7 +68,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-注意:因為 Xamarin. iOS 5.2，所以您不需要再提供自己`NSAutoReleasePool`的，因為系統會自動為您提供。
+注意：因為 Xamarin. iOS 5.2，所以您不需要再提供您自己的 `NSAutoReleasePool`，因為系統會自動為您提供。
 
 ## <a name="related-links"></a>相關連結
 

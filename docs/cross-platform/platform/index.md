@@ -3,15 +3,15 @@ title: Xamarin 中的程式設計語言支援
 description: 本檔說明 Xamarin 支援的各種程式設計語言。 它討論C#、 F#、可移植的視覺效果 Basic.NET 和 Razor 範本。
 ms.prod: xamarin
 ms.assetid: CEE8C464-67D7-45F4-9614-EAEF5217CACC
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/18/2018
-ms.openlocfilehash: 95c63d446f961738ad71242671d632620316b879
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: db963a38322e809d1aa82c02fbb9ae5cc4a650fc
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290906"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014624"
 ---
 # <a name="programming-language-support-in-xamarin"></a>Xamarin 中的程式設計語言支援
 
@@ -23,7 +23,7 @@ ms.locfileid: "70290906"
 
 ### <a name="c-6-language-featurescross-platformplatformcsharp-sixmd"></a>[C# 6 語言功能](~/cross-platform/platform/csharp-six.md)
 
-最新版的C#語言–第6版–會繼續發展語言，使其具有較少的重複使用性、改良的清晰度，以及更多的一致性。 清除程式初始化語法、區塊中`await` `catch/finally`使用的功能，以及 null 條件`?`運算子特別有用。
+最新版的C#語言–第6版–會繼續發展語言，使其具有較少的重複使用性、改良的清晰度，以及更多的一致性。 更簡潔的初始化語法、在 `catch/finally` 區塊中使用 `await`，以及 null 條件 `?` 運算子的功能特別有用。
 
 ## <a name="ffsharpindexmd"></a>[F#](fsharp/index.md)
 

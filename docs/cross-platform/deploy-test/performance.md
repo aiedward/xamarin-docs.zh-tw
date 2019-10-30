@@ -3,21 +3,21 @@ title: 效能與安全性
 description: 本文件連結到各種指南，描述改善 Xamarin.iOS、Xamarin.Android 和 Xamarin.Mac 等應用程式效能的技術。
 ms.prod: xamarin
 ms.assetid: 3E0886A7-B0ED-44CC-8DE3-5B274FBBE2E5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2017
-ms.openlocfilehash: 6c226095c43a389f491dd2af9a158ceb4420b637
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: HT
+ms.openlocfilehash: c07032d63032eb59cc67712bc2419f74319ea107
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34780580"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016507"
 ---
 # <a name="performance-and-security"></a>效能與安全性
 
 ## <a name="cross-platform-performancememory-perf-best-practicesmd"></a>[跨平台效能](memory-perf-best-practices.md)
 
-有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+有許多技巧可增加利用 Xamarin 平台建置之應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
 
 - [Android 效能](~/android/deploy-test/performance.md?context=xamarin/cross-platform)
 - [iOS 效能](~/ios/deploy-test/performance.md?context=xamarin/cross-platform)

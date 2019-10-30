@@ -3,15 +3,15 @@ title: 使用共用的專案來共用程式碼
 description: 共用的專案可讓您撰寫一些不同應用程式專案所參考的通用程式碼。 此程式碼會編譯成每個參考專案的一部分，並且可以包含編譯器指示詞，以協助將平台專用功能併入到共用程式碼基底中。
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739064"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016688"
 ---
 # <a name="shared-projects-code-sharing"></a>共用的專案程式碼共用
 
@@ -33,7 +33,7 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 共用的專案本身不會自行編譯，它純粹是當做可包含在其他專案中的原始程式碼檔群組。 當另一個專案參考時，程式碼會有效地編譯為該專案的*一部分*。 共用的專案無法參考任何其他專案類型（包括其他共用專案）。
 
-請注意，Android 應用程式專案無法參考其他 Android 應用程式專案-例如，Android 單元測試專案無法參考 Android 應用程式專案。 如需這項限制的詳細資訊，請參閱此[論壇討論](http://forums.xamarin.com/discussion/comment/98092/)。
+請注意，Android 應用程式專案無法參考其他 Android 應用程式專案-例如，Android 單元測試專案無法參考 Android 應用程式專案。 如需這項限制的詳細資訊，請參閱此[論壇討論](https://forums.xamarin.com/discussion/comment/98092/)。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -111,7 +111,7 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 ## <a name="shared-project-example"></a>共用的專案範例
 
-[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)範例會使用共用專案來包含 IOS、Android 和 Windows Phone 應用程式所使用的通用程式碼。 @No__t_0 和 `TaskRepository.cs` 的原始程式碼檔都利用編譯器指示詞（例如 `#if __ANDROID__`）為參考它們的每個應用程式產生不同的輸出。
+[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)範例會使用共用專案來包含 IOS、Android 和 Windows Phone 應用程式所使用的通用程式碼。 `SQLite.cs` 和 `TaskRepository.cs` 的原始程式碼檔都利用編譯器指示詞（例如 `#if __ANDROID__`）為參考它們的每個應用程式產生不同的輸出。
 
 完整的解決方案結構如下所示（分別在 Visual Studio for Mac 和 Visual Studio 中）：
 

@@ -1,81 +1,81 @@
 ---
-title: 使用 watchOS 在 Xamarin 中的版面配置
-description: 本文件說明如何建立使用 Xamarin watchOS 版面配置。 它討論介面控制器、 群組、 分隔符號，以及內容控制項。
+title: 在 Xamarin 中使用 watchOS 版面配置
+description: 本檔說明如何使用 Xamarin 建立 watchOS 版面配置。 其中討論介面控制器、群組、分隔符號和內容控制項。
 ms.prod: xamarin
 ms.assetid: BEDB62A1-2249-4459-986F-413A41E63DF0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0f9f8981325785d69d36ccd9d4de1cd69956a155
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 568d1e354d0ee840aeed980d6e8cc6b83068a1c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768757"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001536"
 ---
-# <a name="working-with-watchos-layout-in-xamarin"></a>使用 watchOS 在 Xamarin 中的版面配置
+# <a name="working-with-watchos-layout-in-xamarin"></a>在 Xamarin 中使用 watchOS 版面配置
 
-設計版面配置的 Apple Watch[螢幕大小](~/ios/watchos/app-fundamentals/screen-sizes.md)提供獨特的挑戰。
+設計 Apple Watch[螢幕大小](~/ios/watchos/app-fundamentals/screen-sizes.md)的版面配置帶來了獨特的挑戰。
 
 ## <a name="design-tips"></a>設計秘訣
 
-重點是： 可讀取且可用於大型手指小型監看式畫面，讓您的使用者介面。 不屬於設計相關的設陷**iOS 模擬器**（會出現很大的） 和**滑鼠指標**（這適用於小型觸控目標） ！
+重點在於：讓您的使用者介面在小型的監看式畫面上可供讀取和使用，並具有大手指。 不屬於**iOS**模擬器的設計的陷阱（看起來很大）和**滑鼠指標**（適用于小型觸控目標）！
 
-- 使用黑色背景-它會建立較大螢幕的視覺效果與手錶的黑色的邊框。
+- 使用黑色背景-它會使用監看式的黑色擋板，建立較大螢幕的夢想。
 
-- 填補住您的畫面版面配置-邊框形成自然的視覺化與邊框距離。
+- 不要填補您的螢幕版面配置-擋板會形成自然的視覺填補。
 
-- 專注於可讀性。 以確保可讀取文字請謹慎使用字型和色彩。 若要取得自動動態型別支援使用內建的文字樣式。
+- 專注于可讀性。 謹慎使用字型大小和色彩，以確保文字可供讀取。 使用內建的文字樣式來取得自動動態類型支援。
 
-![](layout-images/type.png "動態類型支援的範例")
+![](layout-images/type.png "Example of Dynamic Type support")
 
-- 焦點放在觸控目標大小。 具有文字標籤的按鈕/tappable 資料表資料列應跨越整個螢幕。 Apple 會說 「 永遠不會將放在超過三個項目-並存 」，是否您使用圖示和非文字標籤。
+- 專注于觸控目標大小。 具有文字標籤的按鈕/tappable 資料表資料列應該橫跨整個畫面。 Apple 說「不要將三個以上的專案並存」，而且如果您使用圖示而不是文字標籤。
 
-- 使用[`Menu`控制](~/ios/watchos/user-interface/menu.md)保留您的應用程式設計清楚且簡潔的較少使用的公開功能。
+- 使用[`Menu` 控制項](~/ios/watchos/user-interface/menu.md)來公開較不常使用的功能，讓您的應用程式設計更清楚且簡潔。
 
 ## <a name="implementation"></a>實作
 
-監看式套件包含下列控制項來協助您建置吸引人的監看式應用程式版面配置：
+Watch 套件包含下列控制項，可協助您建立引人注目的監看式應用程式佈建：
 
 ### <a name="interface-controller"></a>介面控制器
 
-`WKInterfaceController`是基底類別，所有您場景。
+`WKInterfaceController` 是您所有場景的基本類別。
 
-介面控制器的設計介面的行為類似垂直**群組**： 您可以將其他控制項拖曳至介面控制器以及它們將會在其他的自動配置外的：
+介面控制器的設計介面的行為就像垂直**群組**：您可以將其他控制項拖曳到介面控制器上，它們會自動設定在另一個上方：
 
-![](layout-images/controller-scene.png "控制項不會自動配置外會在彼此上方")
+![](layout-images/controller-scene.png "Controls are automatically laid-out one above the other")
 
-您可以設定**位置**並**大小**上每個控制項，來控制其外觀的屬性：
+您可以在每個控制項上設定 [**位置**] 和 [**大小**] 屬性，以控制其外觀：
 
-![](layout-images/positionsize-attributes.png "在每個控制項上設定的位置和大小屬性")
+![](layout-images/positionsize-attributes.png "Set the Position and Size properties on each control")
 
-當大小設定為**相對於容器**比例的值及位移的調整，您可以提供。 此螢幕擷取畫面顯示一個按鈕，已設定為使用 80%的監看式螢幕的寬度 (**0.8**):
+當 [大小] 設定為 [**相對於容器**] 時，您可以提供比例值和位移調整。 這個螢幕擷取畫面顯示已設定為使用 [監看式] 畫面寬度（**0.8**）80% 的按鈕：
 
-![](layout-images/button-attributes.png "提供比例的值及位移的調整")
+![](layout-images/button-attributes.png "Provide a proportional value and an offset adjustment")
 
 ### <a name="group"></a>群組
 
-`WKInterfaceGroup` 是可設定為堆疊的簡單版面配置容器控制水平或垂直。 它包含根據預設，每個控制項之間的間距，但您可以修改的間距 （和內凹） 中**屬性**偵測器。
+`WKInterfaceGroup` 是簡單的版面配置容器，可設定為垂直或水準堆疊控制項。 根據預設，它會包含每個控制項之間的間距，但是您可以在**屬性**偵測器中修改間距（和內凹）。
 
-![](layout-images/group-attributes.png "修改的間距和內凹屬性偵測器中")
+![](layout-images/group-attributes.png "Modify the spacing and insets in the Attributes inspector")
 
-群組可以自行調整大小並相對於控制項，並可以巢狀群組，以建立複雜的版面配置。
+群組本身可以相對於其周圍的控制項調整大小和位置，而且可以嵌套群組來建立複雜的配置。
 
-![](layout-images/group-scene.png "群組可以是巢狀來建立複雜的版面配置")
+![](layout-images/group-scene.png "Groups can be nested to create complex layouts")
 
 ### <a name="separator"></a>Separator
 
-分隔符號控制項被要協助提供您在配置中的視覺化導引。 使用分隔符號 （或背景色彩或影像） 來協助使用者了解在螢幕上相關的內容。
+分隔符號控制項的目的是要協助您在版面配置中提供視覺指引。 使用分隔符號（或背景色彩或影像），協助使用者瞭解哪些內容與您的螢幕相關。
 
-![](layout-images/separator-scene.png "分隔符號用法的範例")
+![](layout-images/separator-scene.png "Example of Separator usage")
 
-請注意，使用已設定不使用完整的螢幕寬度的藍色與綠色分隔符號**Fixed**或**相對於容器**大小。
+請注意，未使用畫面完整寬度的藍色和綠色分隔符號已設定為**固定**或**相對於容器**大小。
 
 ### <a name="content-controls"></a>內容控制項
 
-任何配置就不算完整`Label`， `Image`， `Button`， `Switch`， `Slider`， `Map`，以及[其他控制項](~/ios/watchos/user-interface/index.md)。
-這些可以放置在您使用的版面配置**群組**或每個控制項上的位置和大小 設定。
+沒有 `Label`、`Image`、`Button`、`Switch`、`Slider`、`Map`和[其他控制項](~/ios/watchos/user-interface/index.md)，就不會完成任何版面配置。
+您可以使用**群組**或每個控制項上的位置和大小設定，在您的版面配置中放置這些值。
 
 ## <a name="related-links"></a>相關連結
 

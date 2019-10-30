@@ -3,15 +3,15 @@ title: 可移植類別庫簡介（PCL）
 description: 本文介紹可移植的類別庫（PCL）專案，並逐步解說如何在 Visual Studio for Mac 和 Visual Studio 中建立和使用 PCL 專案。
 ms.prod: xamarin
 ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: a4ee81f7d59c9fb680dfd371a7aaba7660fb3343
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 1684bddaf5b418f63abc7ee528f646f7795396d8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68681065"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016736"
 ---
 # <a name="portable-class-libraries-pcl"></a>可攜式類別庫 (PCL)
 
@@ -54,7 +54,7 @@ Xamarin 資料行反映了 Xamarin 和 Xamarin 支援 Visual Studio 隨附的所
 - Windows Phone 8
 - UWP 應用程式
 
-您可以閱讀更多有關[Microsoft 網站](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)上不同設定檔功能的資訊，並參閱另一個社區成員的[PCL 設定檔摘要](http://embed.plnkr.co/03ck2dCtnJogBKHJ9EjY)，其中包含支援的架構資訊和其他注意事項。
+您可以閱讀更多有關[Microsoft 網站](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)上不同設定檔功能的資訊，並參閱另一個社區成員的[PCL 設定檔摘要](https://portablelibraryprofiles.stephencleary.com/)，其中包含支援的架構資訊和其他注意事項。
 
 **權益**
 
@@ -100,7 +100,7 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 若要查看和變更此專案的 PCL 設定，請以滑鼠右鍵按一下專案，然後選擇 **選項 > 組建 > 一般**，以查看如下所示的畫面：
 
-[用來設定設定檔的 ![PCL 專案選項](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
+[![PCL 專案選項來設定設定檔](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
 
 按一下 [**變更 ...** ]，以變更此可移植類別庫的目標設定檔。
 
@@ -110,11 +110,11 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 當程式碼是以 PCL 程式庫撰寫時，[Visual Studio for Mac 編輯器] 將會辨識所選設定檔的限制，並據以調整自動完成選項。 例如，此螢幕擷取畫面顯示使用 Visual Studio for Mac 中使用的預設設定檔（Profile136）進行 System.IO 的自動完成選項-請注意，會顯示大約一半可用類別的捲軸（事實上，只有14個可用的類別）。
 
-[![Intellisense PCL 的 System.IO 類別中14個類別的清單](pcl-images/image6.png)](pcl-images/image6.png#lightbox)
+[在 PCL 的 System.IO 類別中![Intellisense 清單14個類別](pcl-images/image6.png)](pcl-images/image6.png#lightbox)
 
 將其與 Xamarin 或 Xamarin 專案中的 System.IO 自動完成進行比較-有40類別可用，包括常用的類別，例如 `File` 和 `Directory`，但不在任何 PCL 設定檔中。
 
-[.NET Framework System.IO 命名空間中的 ![Intellisense 40 類別清單](pcl-images/image7.png)](pcl-images/image7.png#lightbox)
+[在 .NET Framework System.IO 命名空間中![40 類別的 Intellisense 清單](pcl-images/image7.png)](pcl-images/image7.png#lightbox)
 
 這反映了使用 PCL 的基礎取捨–能夠在許多平臺上順暢地共用程式碼，表示某些 Api 無法供您使用，因為它們在所有可能的平臺上都沒有可比較的執行。
 
@@ -122,11 +122,11 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 一旦建立了 PCL 專案，您就可以從任何相容的應用程式或程式庫專案加入其參考，就像平常加入參考一樣。 在 Visual Studio for Mac 中，以滑鼠右鍵按一下 [參考] 節點，然後選擇 [**編輯參考 ...** ]，然後切換至 [**專案**] 索引標籤，如下所示：
 
-[透過 [編輯參考] 選項 ![Add PCL 的參考](pcl-images/image8.png)](pcl-images/image8.png#lightbox)
+[![透過 [編輯參考] 選項新增 PCL 的參考](pcl-images/image8.png)](pcl-images/image8.png#lightbox)
 
 下列螢幕擷取畫面顯示 TaskyPortable 範例應用程式的 Solution pad，其中顯示底部的 PCL 程式庫，以及在 Xamarin 專案中對該 PCL 程式庫的參考。
 
-[顯示 PCL 專案的 ![TaskyPortable 範例解決方案](pcl-images/image9.png)](pcl-images/image9.png#lightbox)
+[顯示 PCL 專案的![TaskyPortable 範例解決方案](pcl-images/image9.png)](pcl-images/image9.png#lightbox)
 
 PCL （也就是產生的元件 DLL）的輸出也可以加入做為大部分專案的參考。 這讓 PCL 成為傳送跨平臺元件和程式庫的理想方式。
 
@@ -159,7 +159,7 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 以滑鼠右鍵按一下專案，然後選擇 [屬性] [ **> 程式庫**]，即可查看和變更 PCL 設定，如下列螢幕擷取畫面所示：
 
-[![Edit 平臺目標](pcl-images/image13-sml.png)](pcl-images/image13.png#lightbox)
+[![編輯平臺目標](pcl-images/image13-sml.png)](pcl-images/image13.png#lightbox)
 
 如果在程式碼已新增至 PCL 之後變更了設定檔，當程式碼參考不屬於新選取之設定檔的功能時，程式庫就可能無法再編譯。
 
@@ -170,11 +170,11 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 當程式碼是以 PCL 程式庫撰寫時，Visual Studio 將會辨識所選設定檔的限制，並據以調整 Intellisense 選項。 例如，此螢幕擷取畫面顯示使用預設設定檔（Profile136）的 System.IO 自動完成選項-請注意，會顯示大約一半可用類別的捲軸（事實上，只有14個類別可供使用）。
 
-[PCL 中可用的 IO 類別 ![Reduced 數目](pcl-images/image14.png)](pcl-images/image14.png#lightbox)
+[![減少 PCL 中可用的 IO 類別數目](pcl-images/image14.png)](pcl-images/image14.png#lightbox)
 
 將它與一般專案中的 System.IO 自動完成進行比較-有40類別可用，包括常用的類別，例如 `File` 和 `Directory`，而不在任何 PCL 設定檔中。
 
-[![Many .NET Framework 中可用的 IO 類別](pcl-images/image15.png)](pcl-images/image15.png#lightbox)
+[![.NET Framework 中提供的多個 IO 類別](pcl-images/image15.png)](pcl-images/image15.png#lightbox)
 
 這反映了使用 PCL 的基礎取捨–能夠在許多平臺上順暢地共用程式碼，表示某些 Api 無法供您使用，因為它們在所有可能的平臺上都沒有可比較的執行。
 
@@ -185,11 +185,11 @@ PCL 現在已準備就緒，可供新增程式碼。 其他專案也可以參考
 
 一旦建立了 PCL 專案，您就可以從任何相容的應用程式或程式庫專案加入其參考，就像平常加入參考一樣。 在 Visual Studio 中，以滑鼠右鍵按一下 參考 節點，然後選擇 `Add Reference...` 然後切換至 **方案 > 專案** 索引標籤，如下所示：
 
-[透過 [加入參考專案] 索引標籤 ![Add PCL 的參考](pcl-images/image16.png)](pcl-images/image16.png#lightbox)
+[![透過 [加入參考專案] 索引標籤新增 PCL 的參考](pcl-images/image16.png)](pcl-images/image16.png#lightbox)
 
 下列螢幕擷取畫面顯示 TaskyPortable 範例應用程式的 [解決方案] 窗格，並在底部顯示 PCL 程式庫，以及在 Xamarin 專案中顯示該 PCL 程式庫的參考。
 
-[顯示 PCL 程式庫的 ![TaskyPortable 範例解決方案](pcl-images/image17.png)](pcl-images/image17.png#lightbox)
+[顯示 PCL 程式庫的![TaskyPortable 範例解決方案](pcl-images/image17.png)](pcl-images/image17.png#lightbox)
 
 PCL （也就是產生的元件 DLL）的輸出也可以加入做為大部分專案的參考。
 這讓 PCL 成為傳送跨平臺元件和程式庫的理想方式。

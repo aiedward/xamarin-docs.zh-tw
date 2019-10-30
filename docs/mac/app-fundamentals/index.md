@@ -4,15 +4,15 @@ description: 本檔連結的指南會說明開發 Xamarin. Mac 應用程式時�
 ms.prod: xamarin
 ms.assetid: 5A36B3A7-F197-4AC3-A40D-B2C49362FF06
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/17/2015
-ms.openlocfilehash: 73ec847b697c2d588d0c217bcbf12d4f0b6aa817
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 2603360162ee9918e83b9f5c74b8086f71d02df8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291339"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030104"
 ---
 # <a name="xamarinmac-application-fundamentals"></a>Xamarin. Mac 應用程式基本概念
 

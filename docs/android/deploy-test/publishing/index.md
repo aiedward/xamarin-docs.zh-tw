@@ -3,15 +3,15 @@ title: 發行應用程式
 ms.prod: xamarin
 ms.assetid: 51E19000-040A-2B74-C462-EC57C617085C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: fe1422aa55e5c1518134e6d0fbbf40047b577767
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 765adf10e5bdf20191c5ee1c089d39032ea07ce0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753799"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021382"
 ---
 # <a name="publishing-an-application"></a>發行應用程式
 
@@ -33,7 +33,7 @@ Xamarin.Android 應用程式開發的最後一個步驟就是發行應用程式�
 
 - **透過網站** &ndash; 可以在網站上提供 Xamarin.Android 應用程式下載，讓使用者從網站上按一下連結來安裝應用程式。
 - **透過電子郵件** &ndash; 使用者可以從其電子郵件安裝 Xamarin.Android 應用程式。 使用 Android 架構裝置來開啟附件時，將會安裝應用程式。
-- **透過市集** &ndash; 有數個可供散發的市集存在，例如 [Google Play](http://play.google.com/) 或 [Amazon App Store for Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
+- **透過市集** &ndash; 有數個可供散發的市集存在，例如 [Google Play](https://play.google.com/) 或 [Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
 
 使用已建立的市集是發行應用程式的最常見方式，因為它既提供最大的市場範圍，也提供最好的散發控制。 不過，透過市集發行應用程式需要額外的工作。
 
@@ -56,7 +56,7 @@ Google Play 可說是最全方位且最受歡迎的 Android 應用程式市集�
 - [建置流程](~/android/deploy-test/building-apps/build-process.md)
 - [連結](~/android/deploy-test/linker.md)
 - [取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [應用程式簽署](https://source.android.com/security/apksigning/)
+- [Application Signing](https://source.android.com/security/apksigning/) (應用程式簽署)
 - [在 Google Play 上發行](https://developer.android.com/distribute/googleplay/publish/index.html)
 - [Google 應用程式授權](https://developer.android.com/guide/google/play/licensing/index.html)
 - [Android.Play.ExpansionLibrary](https://github.com/mattleibow/Android.Play.ExpansionLibrary)

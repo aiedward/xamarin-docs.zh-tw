@@ -3,15 +3,15 @@ title: .NET 嵌入限制
 description: 本檔描述 .NET 內嵌的限制，這項工具可讓您使用其他程式設計語言的 .NET 程式碼。
 ms.prod: xamarin
 ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: cf431d4e3d30ac2ec06bfebc9cebe101411faa1c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 4e2b653365a747b30016a1fbd42b8a01c4c87848
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292701"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029749"
 ---
 # <a name="net-embedding-limitations"></a>.NET 嵌入限制
 
@@ -23,7 +23,7 @@ ms.locfileid: "70292701"
 
 同一個應用程式內不可能有兩個 Mono 執行時間並存。 這表示您無法在同一個應用程式中使用兩個不同的 .NET 內嵌產生的程式庫。
 
-**因應措施：** 您可以使用產生器來建立包含數個元件的單一程式庫（來自不同的專案）。
+因應措施 **：** 您可以使用產生器來建立包含數個元件的單一程式庫（來自不同的專案）。
 
 ### <a name="subclassing"></a>種類
 
@@ -41,9 +41,9 @@ ms.locfileid: "70292701"
 
 ### <a name="nullability"></a>性
 
-.NET 中沒有中繼資料，告訴我們 API 是否可接受 null 參考。 `ArgumentNullException` 大部分`null`的 api 如果無法處理引數，就會擲回。 這會造成問題，因為例外狀況的目標 C 處理是更能避免的事。
+.NET 中沒有中繼資料，告訴我們 API 是否可接受 null 參考。 大部分的 Api 如果無法處理 `null` 引數，將會擲回 `ArgumentNullException`。 這會造成問題，因為例外狀況的目標 C 處理是更能避免的事。
 
-因為我們無法在標頭檔中產生精確的 null 屬性注釋，而且想要將 managed 例外狀況降到最低，`NS_ASSUME_NONNULL_BEGIN`所以我們預設為非 null 引數（），並加入一些特定的（如果可能有效位數，則為 null 屬性注釋
+因為我們無法在標頭檔中產生精確的 null 屬性注釋，而且想要將 managed 例外狀況降到最低，所以我們預設為非 null 引數（`NS_ASSUME_NONNULL_BEGIN`），並加入一些特定的（如果可以是有效位數，則為 null 屬性
 
 ### <a name="bitcode-ios"></a>Bitcode （iOS）
 

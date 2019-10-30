@@ -4,15 +4,15 @@ description: 本文件針對 Apple Enterprise Developer Program 的成員，提�
 ms.prod: xamarin
 ms.assetid: 9466E51E-303E-466E-85D7-D0525E16BB37
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: a27536585cbd320a5595d71b156459e25a1fa7a9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763057"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026539"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的內部作業散發
 
@@ -56,33 +56,33 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 3. 按一下 [+] 按鈕以建立新的憑證。
 4. 在 [生產環境]標題下，選取 [內部作業和臨機操作]：
 
-   [ ![](in-house-distribution-images/createcertmanually01.png "選取 [In-House and Ad Hoc] \(內部和臨機操作\)")](in-house-distribution-images/createcertmanually01.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. 按一下 [繼續]，並遵循指示以透過 Keychain 存取來建立憑證簽署要求：
 
-   [![](in-house-distribution-images/createcertmanually02.png "透過 Keychain 存取來建立憑證簽署要求")](in-house-distribution-images/createcertmanually02.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. 依指示建立 CSR 之後，請按一下 [繼續] 並將您的 CSR 上傳到 Member Center：
 
-   [![](in-house-distribution-images/createcertmanually03.png "將 CSR 上傳到 Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
+   [![](in-house-distribution-images/createcertmanually03.png "Upload the CSR to the Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. 按一下 [產生] 以建立您的憑證。
 8. 下載完成的憑證，並按兩下檔案以進行安裝。
 9. 此時，電腦上應該已安裝您的憑證，但是您可能需要重新整理設定檔，以確保會顯示在 Xcode 中。
 
-或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請依照下列步驟進行操作：
+或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請遵循下列步驟：
 
 1. 選取您的小組，然後按一下 [檢視詳細資料]：
 
-   [![](in-house-distribution-images/selectteam.png "選取您的小組")](in-house-distribution-images/selectteam.png#lightbox)
+   [![](in-house-distribution-images/selectteam.png "Select your team")](in-house-distribution-images/selectteam.png#lightbox)
 
-2. 接著，按一下 [iOS Distribution Certificate] (iOS 散發憑證) 旁邊的 [建立] 按鈕：
+2. 接著，按一下 [iOS 散發憑證] 旁邊的 [建立] 按鈕：
 
-   [![](in-house-distribution-images/selectcert.png "建立 iOS 散發憑證")](in-house-distribution-images/selectcert.png#lightbox)
+   [![](in-house-distribution-images/selectcert.png "Create the iOS Distribution Certificate")](in-house-distribution-images/selectcert.png#lightbox)
 
 3. 接著，按一下 [加號 (+)] 按鈕，然後選取 [iOS App Store]：
 
-   [![](in-house-distribution-images/selectcert.png "選取 iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
+   [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile" />
 
@@ -94,35 +94,35 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 如同您所建立的其他任何佈建設定檔，此處也需要應用程式識別碼才能識別您要散發給使用者裝置的應用程式。 如果您尚未建立應用程式識別碼，請遵循下列步驟來建立：
 
-1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [識別碼] 下的 [應用程式識別碼]。
+1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [Identifiers] \(識別碼\) 底下的 [App IDs] \(應用程式識別碼\)。
 2. 按一下 [+] 按鈕，並提供可在入口網站中識別應用程式的**名稱**。
-3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取「明確」或「萬用字元」應用程式識別碼，並以反向 DNS 格式輸入套件組合識別碼，例如：**明確**：com.[DomainName].[AppName] **Wildcard**:com.[DomainName]。*
+3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取 [明確應用程式識別碼] 或 [萬用字元應用程式識別碼]，並以反向 DNS 格式輸入套件組合識別碼，例如：**明確**：com.[DomainName].[AppName] **萬用字元**：com.[DomainName].*
 4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)。
-5. 按一下 [繼續] 按鈕，並遵循畫面指示來建立新的應用程式識別碼。
+5. 按一下 [繼續] 按鈕，然後依照畫面上的指示來建立新的 App ID (應用程式識別碼)。
 
 一旦您有建立散發設定檔所需的元件之後，請遵循下列步驟來建立散發設定檔：
 
 1. 返回 Apple Provisioning Portal 並選取 [佈建] > [散發]：
 
-   [![](in-house-distribution-images/distribute01.png "選取 [佈建] > [散發]")](in-house-distribution-images/distribute01.png#lightbox)
+   [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
 
 2. 按一下 [+] 按鈕，並選取您想要建立為**內部作業**的散發設定檔類型：
 
-   [![](in-house-distribution-images/distribute02.png "建立內部作業散發設定檔")](in-house-distribution-images/distribute02.png#lightbox)
+   [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
 
 3. 按一下 [繼續] 按鈕，並從您要建立散發設定檔的下拉式清單中選取應用程式識別碼：
 
-   [![](in-house-distribution-images/distribute03.png "從下拉式清單中選取應用程式識別碼")](in-house-distribution-images/distribute03.png#lightbox)
+   [![](in-house-distribution-images/distribute03.png "Select App ID from the dropdown list")](in-house-distribution-images/distribute03.png#lightbox)
 
 4. 按一下 [繼續] 按鈕，並選取簽署應用程式所需的散發憑證：
 
-   [![](in-house-distribution-images/distribute04.png "選取簽署應用程式所需的散發憑證")](in-house-distribution-images/distribute04.png#lightbox)
+   [![](in-house-distribution-images/distribute04.png "Select distribution certificate required to sign the application")](in-house-distribution-images/distribute04.png#lightbox)
 
 5. 按一下 [繼續] 按鈕，並針對新的散發設定檔輸入**名稱**：
 
-   [![](in-house-distribution-images/distribute06.png "針對新的散發設定檔輸入名稱")](in-house-distribution-images/distribute06.png#lightbox)
+   [![](in-house-distribution-images/distribute06.png "Enter a Name for the new Distribution Profile")](in-house-distribution-images/distribute06.png#lightbox)
 
-6. 按一下 [產生] 按鈕，以建立新的設定檔，並完成流程。
+6. 按一下 [產生] 按鈕，以建立新的設定檔，並完成程序。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -138,7 +138,7 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 ## <a name="distributing-your-app-in-house"></a>散發內部作業應用程式
 
-在 Apple Developer Enterprise Program 中，被授權人 是負責散發應用程式的人員，且必須遵循 Apple 所設定的[指導方針](http://adcdownload.apple.com/Documentation/License_Agreements__Apple_Developer_Enterprise_Program/Apple_Developer_Program_Enterprise_Agreement_20150608.pdf) \(英文\)。
+在 Apple Developer Enterprise Program 中，被授權人 是負責散發應用程式的人員，且必須遵循 Apple 所設定的[指導方針](https://developer.apple.com/programs/enterprise/) \(英文\)。
 
 您的應用程式可以使用各種不同的方法來安全地散發，例如：
 

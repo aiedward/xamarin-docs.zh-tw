@@ -4,21 +4,21 @@ description: Android 應用程式需要一些時間才能啟動，特別是當�
 ms.prod: xamarin
 ms.assetid: 26480465-CE19-71CD-FC7D-69D0990D05DE
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 4633811b2c0b001ab220f5fedaf116b1b269344a
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: 8f225df47b299ae4748c3a3fea586f277e14213d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032560"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028722"
 ---
 # <a name="splash-screen"></a>啟動顯示畫面
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
 
-@no__t 0An Android 應用程式需要一些時間才能啟動，特別是在裝置上第一次啟動應用程式時。啟動顯示畫面可能會顯示使用者的開始進度，或表示商標。 _
+_Android 應用程式需要一些時間才能啟動，特別是當應用程式第一次在裝置上啟動時。啟動顯示畫面可能會顯示使用者的開始進度，或表示商標。_
 
 ## <a name="overview"></a>總覽
 
@@ -32,7 +32,7 @@ Android 應用程式需要一些時間才會啟動，特別是在第一次在裝
 
 3. 將新活動新增至應用程式，以做為上一個步驟中所建立主題所定義的啟動顯示畫面。
 
-[![Example Xamarin 標誌啟動顯示畫面，後面接著應用程式畫面](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
+[![範例 Xamarin 標誌啟動顯示畫面，後面接著應用程式畫面](splash-screen-images/splashscreen-01-sml.png)](splash-screen-images/splashscreen-01.png#lightbox)
 
 ## <a name="requirements"></a>需求
 
@@ -67,7 +67,7 @@ Android 應用程式需要一些時間才會啟動，特別是在第一次在裝
 </layer-list>
 ```
 
-這個 `layer-list` 會將啟動顯示的影像，以 `@color/splash_background` 資源所指定的背景色彩為中心。 範例應用程式會在**Resources/values/color .xml**檔案中定義此色彩：
+此 `layer-list` 會以 `@color/splash_background` 資源指定的背景色彩為啟動顯示影像。 範例應用程式會在**Resources/values/color .xml**檔案中定義此色彩：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -81,7 +81,7 @@ Android 應用程式需要一些時間才會啟動，特別是在第一次在裝
 
 ### <a name="implementing-a-theme"></a>執行主題
 
-若要建立啟動顯示畫面活動的自訂主題，請編輯（或新增）檔案**值/樣式 .xml** ，並為啟動顯示畫面建立新的 @no__t 1 元素。 範例**值/樣式 .xml**檔案如下所示，名為**MyTheme**的 @no__t 1：
+若要建立啟動顯示畫面活動的自訂主題，請編輯（或新增）檔案**值/樣式 .xml** ，並為啟動顯示畫面建立新的 `style` 元素。 範例**值/樣式 .xml**檔案如下所示，名為**MyTheme**的 `style`：
 
 ```xml
 <resources>
@@ -101,7 +101,7 @@ Android 應用程式需要一些時間才會啟動，特別是在第一次在裝
 </resources>
 ```
 
-**MyTheme**是非常 spartan 的 &ndash; 它會宣告視窗背景、明確地移除視窗中的標題列，並宣告它是全螢幕。 如果您想要建立啟動顯示畫面，以在活動擴大第一個版面配置之前模擬應用程式的 UI，您可以在樣式定義中使用 `windowContentOverlay`，而不是 `windowBackground`。 在此情況下，您也必須修改**splash_screen**可繪製，使其顯示 UI 的模擬。
+**MyTheme**是非常 spartan 的 &ndash; 它會宣告視窗背景、明確地移除視窗中的標題列，並宣告它是全螢幕。 如果您想要建立啟動顯示畫面，以在活動擴大第一個版面配置之前模擬應用程式的 UI，您可以使用 `windowContentOverlay`，而不是在樣式定義中 `windowBackground`。 在此情況下，您也必須修改**splash_screen**可繪製，使其顯示 UI 的模擬。
 
 ### <a name="create-a-splash-activity"></a>建立啟動顯示活動
 
@@ -138,18 +138,18 @@ public class SplashActivity : AppCompatActivity
 }
 ```
 
-`SplashActivity` 明確使用上一節中所建立的主題，覆寫應用程式的預設主題。
-您不需要在 `OnCreate` 中載入配置，因為主題會宣告可繪製為背景。
+`SplashActivity` 明確地使用在上一節中建立的主題，覆寫應用程式的預設主題。
+不需要在 `OnCreate` 中載入版面配置，因為主題會宣告可繪製為背景。
 
-請務必設定 `NoHistory=true` 屬性，以便將活動從後端堆疊中移除。 若要防止 [上一頁] 按鈕取消啟動程式，您也可以覆寫 `OnBackPressed`，讓它不執行任何動作：
+請務必設定 `NoHistory=true` 屬性，以便將活動從後端堆疊中移除。 若要防止 [上一頁] 按鈕取消啟動程式，您也可以覆寫 `OnBackPressed` 並讓它不執行任何動作：
 
 ```csharp
 public override void OnBackPressed() { }
 ```
 
-啟動工作會在 `OnResume` 中以非同步方式執行。 這是必要的，讓啟動工作不會變慢或延遲啟動畫面的外觀。 當工作完成時，`SplashActivity` 會 `MainActivity` 啟動，而且使用者可能會開始與應用程式互動。
+啟動工作會在 `OnResume`中以非同步方式執行。 這是必要的，讓啟動工作不會變慢或延遲啟動畫面的外觀。 當工作完成時，`SplashActivity` 將會 `MainActivity` 啟動，而且使用者可能會開始與應用程式互動。
 
-這個新的 `SplashActivity` 會設定為應用程式的啟動器活動，方法是將 `MainLauncher` 屬性設定為 `true`。 因為 `SplashActivity` 現在是啟動器活動，所以您必須編輯 `MainActivity.cs`，並從 `MainActivity` 中移除 `MainLauncher` 屬性：
+這個新的 `SplashActivity` 會設定為應用程式的啟動器活動，方法是將 `MainLauncher` 屬性設定為 [`true`]。 因為 `SplashActivity` 現在是啟動器活動，所以您必須編輯 `MainActivity.cs`，並從 `MainActivity`移除 `MainLauncher` 屬性：
 
 ```csharp
 [Activity(Label = "@string/ApplicationName")]
@@ -167,7 +167,7 @@ public class MainActivity : AppCompatActivity
 
 1. 在 [**資源/可繪製**] 資料夾中，新增您想要使用之啟動顯示畫面影像的橫向版本。 在此範例中， **splash_logo_land**是在上述範例中使用之標誌的橫向版本（它會使用白色字母，而不是藍色）。
 
-2. 在 [**資源]/** [可繪製] 資料夾中，建立稍早定義之 @no__t 1 可繪製的橫向版本（例如， **splash_screen_land**）。 在此檔案中，將點陣圖路徑設定為啟動顯示畫面影像的橫向版本。 在下列範例中， **splash_screen_land**使用**splash_logo_land**：
+2. 在 [**資源]/** [可繪製] 資料夾中，建立稍早定義之 `layer-list` 可繪製的橫向版本（例如， **splash_screen_land**）。 在此檔案中，將點陣圖路徑設定為啟動顯示畫面影像的橫向版本。 在下列範例中， **splash_screen_land**使用**splash_logo_land**：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -188,7 +188,7 @@ public class MainActivity : AppCompatActivity
 
 4. 將檔案**colors**和**style .xml**新增至**值-land** （這些都可以從現有的**值/色彩. xml**和**值/樣式 .xml**檔案複製和修改）。
 
-5. 修改**values-land/style .xml** ，使其使用可繪製的橫向版本 `windowBackground`。 在此範例中，會使用**splash_screen_land** ：
+5. 修改**values-land/style .xml** ，使其使用可繪製的橫向版本來進行 `windowBackground`。 在此範例中，會使用**splash_screen_land** ：
 
     ```xml
     <resources>
@@ -221,9 +221,9 @@ public class MainActivity : AppCompatActivity
 
 7. 重新建立並執行應用程式。 將裝置旋轉為橫向模式，同時顯示啟動顯示畫面。 啟動顯示畫面會變更為 [橫向] 版本：
 
-    [@no__t-啟動顯示畫面到橫向模式的1Rotation](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+    [將啟動顯示畫面![旋轉為橫向模式](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 
-請注意，使用橫向模式啟動顯示畫面不一定會提供順暢的體驗。 根據預設，Android 會以直向模式啟動應用程式，並將其轉換成橫向模式，即使裝置已處於橫向模式也一樣。 因此，如果在裝置處於橫向模式時啟動應用程式，則裝置會短暫呈現直向啟動顯示畫面，然後從直向到橫向啟動顯示畫面的動畫上旋轉。 可惜的是，即使在啟動顯示活動的旗標中指定了 `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape`，還是會進行這個初始的直向橫向轉換。 解決這項限制的最佳方式，就是建立單一啟動顯示畫面影像，以便在直向和橫向模式中正確呈現。
+請注意，使用橫向模式啟動顯示畫面不一定會提供順暢的體驗。 根據預設，Android 會以直向模式啟動應用程式，並將其轉換成橫向模式，即使裝置已處於橫向模式也一樣。 因此，如果在裝置處於橫向模式時啟動應用程式，則裝置會短暫呈現直向啟動顯示畫面，然後從直向到橫向啟動顯示畫面的動畫上旋轉。 可惜的是，即使在啟動顯示活動的旗標中指定了 `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape`，還是會進行這項初始的直向橫向轉換。 解決這項限制的最佳方式，就是建立單一啟動顯示畫面影像，以便在直向和橫向模式中正確呈現。
 
 ## <a name="summary"></a>總結
 

@@ -4,15 +4,15 @@ description: 本指南介紹 Xamarin Designer for iOS。 它會示範如何使�
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: bb772d2b0cd50c1bac9b1d119adf4e9a04a341a3
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 6b02a0f8476cf47ca6df279653095fe0845b36c9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71250145"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004579"
 ---
 # <a name="ios-designer-basics"></a>iOS 設計工具基本概念
 
@@ -121,7 +121,7 @@ namespace Designer
 }
 ```
 
-@No__t_0 屬性宣告會將整個 `ViewController` 類別（而不只是**ViewController.designer.cs**檔案）連接到分鏡腳本中定義的按鈕。 由於**ViewController.cs**會定義 `ViewController` 類別的一部分，因此它可以存取 `SubmitButton`。
+`SubmitButton` 屬性宣告會將整個 `ViewController` 類別（而不只是**ViewController.designer.cs**檔案）連接到分鏡腳本中定義的按鈕。 由於**ViewController.cs**會定義 `ViewController` 類別的一部分，因此它可以存取 `SubmitButton`。
 
 下列螢幕擷取畫面說明 IntelliSense 現在會辨識**ViewController.cs**中的 `SubmitButton` 參考：
 

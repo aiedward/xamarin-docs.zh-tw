@@ -3,15 +3,15 @@ title: 開始使用 JAVA
 description: 本檔說明如何開始搭配使用 .NET 內嵌與 JAVA。 其中討論系統需求、安裝和支援的平臺。
 ms.prod: xamarin
 ms.assetid: B9A25E9B-3EC2-489A-8AD3-F78287609747
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 8d6bc284d07ce1be11ad273f875b75a70ae14a0f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 09ea33724c2b1184654ce7768ea1cb2525b62c28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278399"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007370"
 ---
 # <a name="getting-started-with-java"></a>開始使用 JAVA
 
@@ -59,7 +59,7 @@ nuget install Embeddinator-4000
 
 JAVA 目前處於適用于 macOS、Windows 和 Android 的預覽狀態。
 
-藉由將`--platform=<platform>`命令列引數傳遞至 .net 內嵌工具，即可選取此平臺。 目前`macOS`支援`Windows`、和`Android` 。
+平臺是藉由將 `--platform=<platform>` 命令列引數傳遞至 .NET 內嵌工具來選取。 目前支援 `macOS`、`Windows`和 `Android`。
 
 ### <a name="macos-and-windows"></a>macOS 和 Windows
 

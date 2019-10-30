@@ -4,15 +4,15 @@ description: 本指南說明在 Windows 上安裝 Xamarin.Android for Visual Stu
 ms.prod: xamarin
 ms.assetid: 2BE4D5AD-D468-B177-8F96-837D084E7DE1
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 315cb8e58b0b9f29c06e4d0af2b8cf9adffb06e3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758519"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020693"
 ---
 # <a name="windows-installation"></a>Windows 安裝
 
@@ -21,7 +21,7 @@ _本指南說明在 Windows 上安裝 Xamarin.Android for Visual Studio 的步�
 ## <a name="overview"></a>總覽
 
 因為所有 Visual Studio 版本現在都免費隨附 Xamarin，不需要另外授權，您可以使用 Visual Studio 安裝程式來下載和安裝 Xamarin.Android 工具。
-(較早版本的 Xamarin.Android 所需的手動安裝與授權步驟已不再需要。)本指南中，您將學會下列作業：
+（不再需要舊版 Xamarin 所需的手動安裝和授權步驟。）在本指南中，您將瞭解下列各項：
 
 - 如何設定 Java Development Kit、Android SDK 以及 Android NDK 的自訂位置。
 
@@ -37,7 +37,7 @@ _本指南說明在 Windows 上安裝 Xamarin.Android for Visual Studio 的步�
 
 如需在 Windows 上安裝 Xamarin 以便搭配 Visual Studio 使用的詳細資訊，請參閱 [Windows 安裝](~/get-started/installation/windows.md)指南。
 
-## <a name="configuration"></a>組態
+## <a name="configuration"></a>Configuration
 
 Xamarin.Android 使用 Java Development Kit (JDK) 和 Android SDK 來建置應用程式。 在安裝期間，Visual Studio 安裝程式會將這些工具放在它們的預設位置中，並以適當的路徑組態來設定開發環境。 您可以檢視和變更這些位置，方法是依序按一下 [工具] > [選項] > [Xamarin] > [Android 設定]：
 
@@ -45,7 +45,7 @@ Xamarin.Android 使用 Java Development Kit (JDK) 和 Android SDK 來建置應�
 
 對大多數使用者來說，這些預設位置不需進一步變更即可運作。 不過，您可能想要使用這些工具的自訂位置來設定 Visual Studio (例如，如果您已在不同的位置安裝 Java JDK、 Android SDK 或 NDK)。 按一下您想要變更之路徑旁的 [變更]，然後巡覽至新位置。
 
-Xamarin.Android 會使用 [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，如果您正在針對 API 層級 24 或更高層級進行開發，則需要此項 (JDK 8 也支援早於 24 的 API 層級)。 如果您是針對 API 層級 23 或更早的層級進行開發，則可繼續使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
+Xamarin.Android 會使用 [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) \(英文\)，如果您正在針對 API 層級 24 或更高層級進行開發，則需要此項 (JDK 8 也支援早於 24 的 API 層級)。 如果您是針對 API 層級 23 或更早的層級進行開發，則可繼續使用 [JDK 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)。
 
 > [!IMPORTANT]
 > Xamarin.Android 不支援 JDK 9。

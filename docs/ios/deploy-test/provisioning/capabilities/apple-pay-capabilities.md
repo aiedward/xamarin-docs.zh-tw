@@ -4,19 +4,19 @@ description: 為應用程式新增功能通常需要額外的佈建設定。 本
 ms.prod: xamarin
 ms.assetid: 735CC916-16A4-471B-87F7-0535E24288D7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 9d0ffbd0da99134dfae3e42fe8baf4111c80935f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4406ff3ce67ddf4787d155794258faa1a172eec1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762996"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016953"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS 的 Apple Pay 功能
 
-_為應用程式新增功能通常需要額外的佈建設定。本指南說明 Apple Pay 功能所需的設定。_
+_將功能新增至應用程式通常需要額外的布建設定。本指南說明 Apple Pay 功能所需的設定。_
 
 Apple Pay 可讓使用者透過其 iOS 裝置支付實體產品的費用。 本節說明如何在 Apple Developer Center (Apple 開發人員中心) 中建立 Apple Pay 所需的一切必要元件。
 
@@ -154,6 +154,6 @@ Apple 需要使用憑證來加密與交易關聯的敏感性資料。 每個建�
 
 * 在您的應用程式中使用架構命名空間。
 * 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在應用程式的 [ **iOS 套件組合簽署**] 中，確定 [ **自訂權利**] 已設定為 **Entitlements.plist**。 這「不是」 __  「偵錯」和「iOS 模擬器」組建的預設設定。
+* 在應用程式的 [ **iOS 套件組合簽署**] 中，確定 [ **自訂權利**] 已設定為 **Entitlements.plist**。 這 _不_ Debug 和 iOS 模擬器組建的預設設定。
 
 如果您在應用程式服務方面遇到問題，請參閱主要指南的[疑難排解](~/ios/deploy-test/provisioning/capabilities/index.md)一節。

@@ -4,15 +4,15 @@ description: 本文件描述如何搭售供發行之用的 Xamarin.Mac 應用程
 ms.prod: xamarin
 ms.assetid: 00a36d7c-937d-4657-bf6a-0de9684b8f94
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 129ba01a41f9e5f58802c4d4da65d1662a103adc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 04ca9c98abbd97cd9e5d1f7694264b8316a7f151
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770113"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001556"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>針對 Mac App Store 進行統合
 
@@ -41,11 +41,11 @@ ms.locfileid: "70770113"
 
 建置應用程式之後，開發人員可在專案上按一下滑鼠右鍵，然後選擇 [開啟包含的資料夾] 即可找到套件檔案 (在下列範例所示的 `bin/x86/AppStore` 目錄中)。  此套件檔案包含應用程式的安裝程式，可提交給 Apple 以納入 Mac App Store。
 
- ![在 Finder 中選取組建套件](bundling-images/image64.png "在 Finder 中選取組建套件")
+ ![在搜尋工具中選取組建套件](bundling-images/image64.png "在搜尋工具中選取組建套件")
 
 ## <a name="related-links"></a>相關連結
 
 - [安裝](/visualstudio/mac/installation/)
 - [Hello, Mac 範例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
-- [開發人員識別碼和 GateKeeper](https://developer.apple.com/resources/developer-id/) \(英文\)
+- [開發人員識別碼和閘道管理員](https://developer.apple.com/resources/developer-id/) \(英文\)

@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: f29001d00a8071c213641d0337f1e8f307ca8afa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0fa6c05b3aa90f1d1875b9169350b197d882d863
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281764"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023269"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深度剖析
 
@@ -30,18 +30,18 @@ Visual Studio for Mac 是一個免費的開放原始碼 IDE，結合了來自 Vi
 
 Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「方案」和「專案」。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android)、支援程式庫、測試應用程式等等。 在 Phoneword 應用程式中，使用了**單一檢視應用程式**範本來新增 iPhone 專案。 最初的方案看起來如下：
 
-![](hello-ios-deepdive-images/image30.png "最初方案的螢幕擷取畫面")
+![](hello-ios-deepdive-images/image30.png "A screenshot of the initial solution")
 
 ::: zone-end
 ::: zone pivot="windows"
 
 ## <a name="introduction-to-visual-studio"></a>Visual Studio 簡介
 
-Visual Studio 是 Microsoft 功能強大的 IDE。 其中包含完全整合的視覺化設計工具、具有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 本指南介紹一些基本 Visual Studio 功能，可搭配適用於 Visual Studio 的 Xamarin 工具使用。
+Visual Studio 是 Microsoft 功能強大的 IDE。 其中包含完全整合的視覺化設計工具、具有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等等。 本指南介紹一些基本 Visual Studio 功能，可搭配適用於 Visual Studio 的 Xamarin 工具使用。
 
 Visual Studio 會將程式碼組織成方案和專案。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android)、支援程式庫、測試應用程式等等。 在 Phoneword 應用程式中，使用了**單一檢視應用程式**範本來新增 iPhone 專案。 最初的方案看起來如下：
 
-![](hello-ios-deepdive-images/vs-image30.png "最初方案的螢幕擷取畫面")
+![](hello-ios-deepdive-images/vs-image30.png "A screenshot of the initial solution")
 
 ::: zone-end
 
@@ -51,14 +51,14 @@ Visual Studio 會將程式碼組織成方案和專案。 方案是可以容納�
 
 左邊為 **Solution Pad**，其中包含目錄結構以及與方案建立關聯的所有檔案：
 
-![](hello-ios-deepdive-images/image31.png "Solution Pad，其中包含目錄結構以及與方案建立關聯的所有檔案")
+![](hello-ios-deepdive-images/image31.png "The solution Pad, which contains the directory structure and all the files associated with the solution")
 
 ::: zone-end
 ::: zone pivot="windows"
 
 右邊為**方案窗格**，其中包含目錄結構以及與方案建立關聯的所有檔案：
 
-![](hello-ios-deepdive-images/vs-image31.png "方案窗格，其中包含目錄結構以及與方案建立關聯的所有檔案")
+![](hello-ios-deepdive-images/vs-image31.png "The solution Pane, which contains the directory structure and all the files associated with the solution")
 
 ::: zone-end
 
@@ -81,7 +81,7 @@ Visual Studio 會將程式碼組織成方案和專案。 方案是可以容納�
 
 本節將探究下圖中所述的關聯性：
 
-[![](hello-ios-deepdive-images/image32.png "此圖說明了架構和應用程式基本概念的關聯性")](hello-ios-deepdive-images/image32.png#lightbox)
+[![](hello-ios-deepdive-images/image32.png "The Architecture and App Fundamentals relationships are illustrated in this diagram")](hello-ios-deepdive-images/image32.png#lightbox)
 
 ### <a name="main-method"></a>Main 方法
 
@@ -146,28 +146,28 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image33.png "iOS 設計工具介面")
+![](hello-ios-deepdive-images/image33.png "iOS Designer Interface")
 
 「分鏡腳本」是一個檔案，其中包含我們應用程式畫面的視覺化設計，以及畫面之間的轉換和關聯性。 分鏡腳本中應用程式畫面的表示法稱為「場景」。 每個場景均代表一個檢視控制器，以及其所管理之檢視的堆疊 (內容檢視階層)。 從範本建立新的**單一檢視應用程式**專案時，Visual Studio for Mac 會自動產生稱為 `Main.storyboard` 的分鏡腳本檔案並填入單一場景，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac 會自動產生名為 Main.storyboard 的分鏡腳本檔案並填入單一場景")
+![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
 您可以選取分鏡腳本畫面底部的黑色列來選擇適用於場景的檢視控制器。 檢視控制器是 `UIViewController` 類別的執行個體，其中包含支援內容檢視階層的程式碼。 此檢視控制器上的屬性可在 **Properties Pad** 內進行檢視和設定，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/image35.png "[屬性] 窗格")
+![](hello-ios-deepdive-images/image35.png "The Properties Pane")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image33.png "iOS 設計工具介面")
+![](hello-ios-deepdive-images/vs-image33.png "iOS Designer Interface")
 
 「分鏡腳本」是一個檔案，其中包含我們應用程式畫面的視覺化設計，以及畫面之間的轉換和關聯性。 分鏡腳本中應用程式畫面的表示法稱為「場景」。 每個場景均代表一個檢視控制器，以及其所管理之檢視的堆疊 (內容檢視階層)。 從範本建立新的**單一檢視應用程式**專案時，Visual Studio 會自動產生稱為 `Main.storyboard` 的分鏡腳本檔案並填入單一場景，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/vs-image34.png "Visual Studio 會自動產生名為 Main.storyboard 的分鏡腳本檔案並填入單一場景")
+![](hello-ios-deepdive-images/vs-image34.png "Visual Studio automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
 您可以選取分鏡腳本畫面底部的列來選擇適用於場景的檢視控制器。 檢視控制器是 `UIViewController` 類別的執行個體，其中包含支援內容檢視階層的程式碼。 此檢視控制器上的屬性可在**屬性窗格**內進行檢視和設定，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/vs-image35.png "[屬性] 窗格")
+![](hello-ios-deepdive-images/vs-image35.png "The Properties Pane")
 
 ::: zone-end
 
@@ -175,7 +175,7 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 場景左邊是具有旗標圖示的灰色箭號，如下列螢幕擷取畫面所示：
 
- [![](hello-ios-deepdive-images/image37.png "具有旗標圖示的灰色箭號")](hello-ios-deepdive-images/image37.png#lightbox)
+ [![](hello-ios-deepdive-images/image37.png "A gray arrow with a flag icon")](hello-ios-deepdive-images/image37.png#lightbox)
 
 灰色箭號代表稱為 *Segue* (唸成 "seg way") 的分鏡腳本轉換。 由於此 Segue 不具任何來源，因此稱為「無來源的 Segue」。 無來源的 Segue 會指向第一個場景，其檢視會在應用程式啟動時載入至應用程式的視窗。 場景及其內部的檢視將是應用程式載入時，使用者看到的第一件事。
 
@@ -183,12 +183,12 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image38.png "可以將額外的檢視從工具箱拖曳至設計介面上的主要檢視")
+![](hello-ios-deepdive-images/image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image38.png "可以將額外的檢視從工具箱拖曳至設計介面上的主要檢視")
+![](hello-ios-deepdive-images/vs-image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
 
 ::: zone-end
 
@@ -196,12 +196,12 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image39.png "[文件大綱] 面板")
+![](hello-ios-deepdive-images/image39.png "The Document Outline pad")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image39.png "[文件大綱] 面板")
+![](hello-ios-deepdive-images/vs-image39.png "The Document Outline pad")
 
 ::: zone-end
 
@@ -209,12 +209,12 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image40.png "圖中會將子檢視反白顯示")
+![](hello-ios-deepdive-images/image40.png "The Subviews are highlighted in the diagram")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image40.png "圖中會將子檢視反白顯示")
+![](hello-ios-deepdive-images/vs-image40.png "The Subviews are highlighted in the diagram")
 
 ::: zone-end
 
@@ -224,24 +224,24 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 「內容檢視階層」是指由單一檢視控制器所管理之檢視和子檢視的堆疊，如下圖所示：
 
- [![](hello-ios-deepdive-images/image41.png "內容檢視階層")](hello-ios-deepdive-images/image41.png#lightbox)
+ [![](hello-ios-deepdive-images/image41.png "The Content View Hierarchy")](hello-ios-deepdive-images/image41.png#lightbox)
 
 我們可以在 **Properties Pad** 的 [檢視] 區段中，將根檢視的背景色彩暫時變更為黃色，讓 `ViewController` 的內容檢視階層變得更容易查看，如下列螢幕擷取畫面所示：
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image42.png "在 Properties Pad 的 [檢視] 區段中，將根檢視的背景色彩暫時變更為黃色")
+![](hello-ios-deepdive-images/image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image42.png "在 Properties Pad 的 [檢視] 區段中，將根檢視的背景色彩暫時變更為黃色")
+![](hello-ios-deepdive-images/vs-image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
 
 ::: zone-end
 
 下圖說明視窗、檢視、子檢視及檢視控制器之間的關聯性，以在裝置畫面中顯示使用者介面：
 
-[![](hello-ios-deepdive-images/image43.png "視窗、檢視、子檢視及檢視控制器之間的關聯性")](hello-ios-deepdive-images/image43.png#lightbox)
+[![](hello-ios-deepdive-images/image43.png "The relationships between the Window, Views, Subviews, and view controller")](hello-ios-deepdive-images/image43.png#lightbox)
 
 下一節將討論如何在程式碼中運用檢視，以及了解如何使用檢視控制器和檢視生命週期，針對使用者互動進行程式設計。
 
@@ -255,22 +255,22 @@ iOS 設計工具是用來在 Xamarin 中建置使用者介面的視覺化工具�
 
 檢視控制器會在分鏡腳本中顯示為場景底部的列。 選取檢視控制器，會在 **Properties Pad** 中顯示其屬性：
 
-![](hello-ios-deepdive-images/image44.png "選取檢視控制器，會在 [屬性] 窗格中顯示其屬性")
+![](hello-ios-deepdive-images/image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
 您可以在 **Properties Pad** 的 [身分識別] 區段中編輯 [類別] 屬性，來設定此場景所呈現內容檢視階層的自訂檢視控制器類別。 例如，我們的 **Phoneword** 應用程式會將 `ViewController` 設定為第一個畫面的檢視控制器，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/image45new.png "Phoneword 應用程式會將 ViewController 設定為檢視控制器")
+![](hello-ios-deepdive-images/image45new.png "The Phoneword application sets the ViewController as the view controller")
 
 ::: zone-end
 ::: zone pivot="windows"
 
 檢視控制器會在分鏡腳本中顯示為場景底部的列。 選取檢視控制器，會在 [屬性] 窗格中顯示其屬性：
 
-![](hello-ios-deepdive-images/vs-image44.png "選取檢視控制器，會在 [屬性] 窗格中顯示其屬性")
+![](hello-ios-deepdive-images/vs-image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
 您可以在 [屬性] 窗格的 [身分識別] 區段中編輯 [類別] 屬性，來設定此場景所呈現內容檢視階層的自訂檢視控制器類別。 例如，我們的 **Phoneword** 應用程式會將 `ViewController` 設定為第一個畫面的檢視控制器，如下列螢幕擷取畫面所示：
 
-![](hello-ios-deepdive-images/vs-image45.png "Phoneword 應用程式會將 ViewController 設定為檢視控制器")
+![](hello-ios-deepdive-images/vs-image45.png "The Phoneword application sets the ViewController as the view controller")
 
 ::: zone-end
 
@@ -313,7 +313,7 @@ public partial class ViewController : UIViewController
 讓我們來探索其運作方式。
 在 `Phoneword_iOS` 專案中，已將稱為 `TranslateButton` 的按鈕新增至內容檢視階層：
 
-[![](hello-ios-deepdive-images/image1.png "已將名為 TranslateButton 的按鈕新增至內容檢視階層")](hello-ios-deepdive-images/image1.png#lightbox)
+[![](hello-ios-deepdive-images/image1.png "A button was added called TranslateButton to the Content View Hierarchy")](hello-ios-deepdive-images/image1.png#lightbox)
 
 將**名稱**指派給 **Properties Pad** 的**按鈕**控制項時，iOS 設計工具會自動將它對應到 **ViewController.designer.cs** 中的控制項，使 `TranslateButton` 在 `ViewController` 類別內部變成可供使用。 控制項會先在檢視生命週期的 `ViewDidLoad` 階段變成可供使用，因此可使用這個生命週期方法來回應使用者的觸控：
 
@@ -420,36 +420,36 @@ iOS 模擬器是一個快速測試應用程式的方式。 此模擬器有數個
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image46new.png "按啟動/播放")
+![](hello-ios-deepdive-images/image46new.png "Pressing Start/Play")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image46.png "按啟動/播放")
+![](hello-ios-deepdive-images/vs-image46.png "Pressing Start/Play")
 
 ::: zone-end
 
 應用程式將會部署到 iOS 裝置：
 
-[![](hello-ios-deepdive-images/image1.png "應用程式將會部署到 iOS 裝置並執行")](hello-ios-deepdive-images/image1.png#lightbox)
+[![](hello-ios-deepdive-images/image1.png "The app will deploy to the iOS device and run")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>產生自訂圖示和啟動影像
 
-不是每個人都有設計工具可用來建立應用程式需要凸顯的自訂圖示和啟動映像。以下是數種用來產生自訂應用程式作品的替代方法：
+並非每個人都有設計工具可用來建立自訂圖示，以及啟動應用程式所需的映射。以下是一些產生自訂應用程式插圖的替代方法：
 
 ::: zone pivot="macos"
 
-- [**Sketch**](https://www.sketchapp.com") \(英文\)：Sketch 是一個用來設計使用者介面、圖示等內容的 Mac 應用程式。 這是用來設計 Xamarin 應用程式圖示和啟動影像集的應用程式。 App Store 上目前提供 Sketch 3。 您也可以試用免費的 [Sketch 工具](http://bohemiancoding.com/sketch/tool/) \(英文\)。
-- [**Pixelmator**](http://www.pixelmator.com/) \(英文\)：適用於 Mac 的多用途影像編輯應用程式，成本大約 $30 美元。
-- [**Glyphish**](http://www.glyphish.com/) \(英文\)：高品質的預先建置圖示集，可供免費下載及購買。
-- [**Fiverr**](http://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。 如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
+- [**Sketch**](https://www.sketchapp.com") \(英文\)：Sketch 是一個用來設計使用者介面、圖示等內容的 Mac 應用程式。 這是用來設計 Xamarin 應用程式圖示和啟動影像集的應用程式。 App Store 上目前提供 Sketch 3。 您也可以試用免費的 [Sketch 工具](https://bohemiancoding.com/sketch/tool/) \(英文\)。
+- [**Pixelmator**](https://www.pixelmator.com/) \(英文\)：適用於 Mac 的多用途影像編輯應用程式，成本大約 $30 美元。
+- [**Glyphish**](https://www.glyphish.com/) \(英文\)：高品質的預先建置圖示集，可供免費下載及購買。
+- [**Fiverr**](https://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。 如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
 
 ::: zone-end
 ::: zone pivot="windows"
 
 - Visual Studio：您可以使用此產品，直接在 IDE 中為您的應用程式建立簡單的圖示集。
-- [**Glyphish**](http://www.glyphish.com/) \(英文\)：高品質的預先建置圖示集，可供免費下載及購買。
-- [**Fiverr**](http://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。 如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
+- [**Glyphish**](https://www.glyphish.com/) \(英文\)：高品質的預先建置圖示集，可供免費下載及購買。
+- [**Fiverr**](https://www.fiverr.com/) \(英文\)：從各種不同的設計工具進行選擇來建立您適用的圖示集，從 $5 美元開始。 如果您需要動態設計的圖示，可以叫用或略過，但是個良好的資源
 
 ::: zone-end
 

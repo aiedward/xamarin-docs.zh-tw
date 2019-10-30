@@ -4,15 +4,15 @@ description: 本檔說明 Xamarin 和其動態、靜態和部分靜態（混合�
 ms.prod: xamarin
 ms.assetid: 7CAAA6B7-D654-4AD3-BAEC-9DD01210978A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: d44f445b0c3bcc6fd498372f6cdf3e20be39d5b5
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 991d9b2d911b5aa4ac07225fd1df34877451df49
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290088"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017313"
 ---
 # <a name="xamarinmac-registrar"></a>Xamarin. Mac 註冊機構
 
@@ -44,4 +44,4 @@ Xamarin 會橋接受控（.NET）世界和 Cocoa 執行時間之間的差距，�
 - 以衍生自 NSObject 的類別啟動之後載入的外掛程式
 - 以動態方式建立衍生自 NSObject 的類別實例
 
-註冊機構無法得知它必須在開始時註冊某種類型。 提供`ObjCRuntime.Runtime.RegisterAssembly`方法來通知註冊機構，其具有其他要考慮的類型。
+註冊機構無法得知它必須在開始時註冊某種類型。 系統會提供 `ObjCRuntime.Runtime.RegisterAssembly` 方法，通知註冊機構有其他要考慮的類型。

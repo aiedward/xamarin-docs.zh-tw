@@ -3,15 +3,15 @@ title: 手動上傳 APK
 ms.prod: xamarin
 ms.assetid: 1309C251-ABF0-4412-B1F5-200DC8321A9D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756061"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021257"
 ---
 # <a name="manually-uploading-the-apk"></a>手動上傳 APK
 
@@ -88,7 +88,7 @@ ms.locfileid: "70756061"
 
 [![[內容分級] 區段](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
-Google Play 上的所有應用程式都必須根據 Google Play 分級系統進行分級。 除了內容分級之外，所有應用程式也必須遵守 Google 的[開發人員內容政策](http://www.android.com/us/developer-content-policy.html)。
+Google Play 上的所有應用程式都必須根據 Google Play 分級系統進行分級。 除了內容分級之外，所有應用程式也必須遵守 Google 的[開發人員內容政策](https://www.android.com/us/developer-content-policy.html)。
 
 以下列出 Google Play 分級系統中的四個等級，並提供一些指引作為會要求或強制分級的特徵或內容： 
 
@@ -131,7 +131,7 @@ Google Play 不允許將免費應用程式變更為付費應用程式 (不過，
 ### <a name="consent"></a>同意
 
 位於 [定價與發佈] 頁面底部的是 [同意] 區段。
-這是一個強制性區段，用來宣告應用程式符合 [Android 內容指導方針](http://www.android.com/market/terms/developer-content-policy.html#hl=us)，並認可應用程式受到美國出口法律約束：
+這是一個強制性區段，用來宣告應用程式符合 [Android 內容指導方針](https://www.android.com/market/terms/developer-content-policy.html#hl=us)，並認可應用程式受到美國出口法律約束：
 
 [![[同意] 區段](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
@@ -152,17 +152,17 @@ Google Play 不允許將免費應用程式變更為付費應用程式 (不過，
 - [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play 將會使用這些屬性，根據螢幕大小來判斷應用程式是否可以部署到某個裝置。 
     Google Play 會假設 Android 可以將較小的版面配置放在較大的螢幕中，但無法將較大的版面配置放在較小的螢幕中。 因此，宣稱可以支援一般螢幕的應用程式會出現在大型螢幕的搜尋結果中，但不會出現在小型螢幕的搜尋結果中。 如果 Xamarin.Android 應用程式並未在資訊清單檔中提供 `<supports-screen>` 元素，Google Play 將會假設所有屬性值都為 true，且應用程式支援所有螢幕大小。 此元素必須以手動方式新增至 **AndroidManifest.xml**。 
 
-- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此資訊清單元素用來要求特定硬體功能，例如鍵盤類型、導航裝置、觸控式螢幕等。此元素必須以手動方式新增至 **AndroidManifest.xml**。 
+- [使用-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此資訊清單元素用來要求特定硬體功能，例如鍵盤類型、流覽裝置、觸控式螢幕等。此元素必須以手動方式加入至**androidmanifest.xml** 。 
 
 - [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此資訊清單元素會宣告應用程式運作所需的裝置必備硬體或軟體功能。 此屬性只用來提供資訊。 Google Play 不會對不符合此篩選條件的裝置顯示此應用程式。 您仍可透過其他方式 (手動或下載) 安裝此應用程式。 此元素必須以手動方式新增至 **AndroidManifest.xml**。 
 
-- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素會指定裝置上必須要有特定的共用程式庫，例如 Google Maps。 指定此元素時，也可以使用 `Android.App.UsesLibraryAttribute` 來指定。 例如： 
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素會指定裝置上必須要有特定的共用程式庫，例如 Google Maps。 指定此元素時，也可以使用 `Android.App.UsesLibraryAttribute` 來指定。 例如: 
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
-- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; 此元素可用來推斷應用程式執行必備但可能尚未以 `<uses-feature>` 元素適當宣告的特定硬體功能。 例如，如果應用程式會要求使用相機的權限，則即使沒有任何宣告相機的 `<uses-feature>` 元素存在，Google Play 也會假設該裝置必須具有相機。 設定此元素時，可以使用 `Android.App.UsesPermissionsAttribute` 來設定。 例如： 
+- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; 此元素可用來推斷應用程式執行必備但可能尚未以 `<uses-feature>` 元素適當宣告的特定硬體功能。 例如，如果應用程式會要求使用相機的權限，則即使沒有任何宣告相機的 `<uses-feature>` 元素存在，Google Play 也會假設該裝置必須具有相機。 設定此元素時，可以使用 `Android.App.UsesPermissionsAttribute` 來設定。 例如: 
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]

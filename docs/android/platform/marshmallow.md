@@ -4,15 +4,15 @@ description: 這篇文章可協助您開始在使用 Xamarin 來開發 Android 6
 ms.prod: xamarin
 ms.assetid: E4D6F183-98D2-460A-9D65-937639A899E0
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 7d5f8d2e80a6583cf49af883db8f2f33e6496e09
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fb1ba92be9527d490b3d34bd4c0e454b0a750837
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757465"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019980"
 ---
 # <a name="marshmallow-features"></a>Marshmallow 功能
 
@@ -25,31 +25,31 @@ _這篇文章可協助您開始在使用 Xamarin 來開發 Android 6.0 Marshmall
 [Android 6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)是 android 棒後的下一個主要 android 版本。
 Xamarin 支援 Android Marshmallow，其中包括：
 
-- **API 23/Android 6.0**系結&ndash; Android 6.0 為下列新功能新增了許多新的 api; 當您以 API 層級23為目標時，這些 api 可供 Xamarin Android 應用程式使用。 如需 Android 6.0 Api 的詳細資訊，請參閱[android 6.0 api](https://developer.android.com/preview/api-overview.html)。 
+- **API 23/android 6.0**系結 &ndash; android 6.0 為以下所述的新功能新增了許多新的 api;當您以 API 層級23為目標時，這些 Api 適用于 Xamarin Android 應用程式。 如需 Android 6.0 Api 的詳細資訊，請參閱[android 6.0 api](https://developer.android.com/preview/api-overview.html)。 
 
-[![執行 Marshmallow 之平板電腦和手機的主圖影像](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
+[![執行 Marshmallow 的平板電腦和手機影像](marshmallow-images/android-m-hero-sml.png)](marshmallow-images/android-m-hero.png#lightbox)
 
 雖然 Marshmallow 版本主要著重于「波蘭文和品質」，但它也為 Xamarin Android 開發人員提供許多相關的新功能。 這些功能包括： 
 
-- **執行時間許可權**&ndash;這項增強功能可讓使用者在執行時間以案例為基礎核准安全性許可權。 
+- **執行時間許可權**&ndash; 這項增強功能可讓使用者在執行時間以案例為基礎核准安全性許可權。 
 
-- **驗證改善**從 Android Marshmallow 開始，應用程式現在可以使用指紋感應器來驗證使用者，而新的*確認認證*功能會將輸入密碼的需求降到最低。 &ndash; 
+- &ndash; 從 Android Marshmallow 開始的**驗證**改良，應用程式現在可以使用指紋感應器來驗證使用者，而新的*確認認證*功能會將輸入密碼的需求降到最低。 
 
-- **應用程式連結**這項功能可透過自動將應用程式與 web 網域產生關聯，協助消除**應用程式選擇器**快顯的必要性。 &ndash; 
+- **應用程式連結**&ndash; 這項功能可讓應用程式自動與 web 網域產生關聯，藉此消除**應用程式選擇器**快顯的必要性。 
 
-- **直接共用**您可以定義*直接共用目標*，讓使用者快速且直覺地共用，這項功能可讓使用者與其他應用程式共用內容。 &ndash; 
+- **直接共用**&ndash; 您可以定義*直接共用目標*，讓使用者快速且直覺地共用;這項功能可讓使用者與其他應用程式共用內容。 
 
-- **語音互動**&ndash;這個新的 API 可讓您在應用程式中建立對話語音功能。 
+- **語音互動**&ndash; 這個新的 API 可讓您在應用程式中建立對話語音功能。 
 
-- **4K 顯示模式**&ndash;在 Android Marshmallow 中，您的應用程式可以在支援的硬體上要求4k 顯示解析度。 
+- **4K 顯示模式**&ndash; 在 Android Marshmallow 中，您的應用程式可以在支援的硬體上要求4k 顯示解析度。 
 
-- **新的音訊功能**&ndash;從 Marshmallow 開始，Android 現在支援 MIDI 通訊協定。 它也提供新的類別來建立數位音訊捕捉和播放物件，並提供新的 API 勾點來關聯音訊和輸入裝置。 
+- **新的音訊功能**&ndash; 從 Marshmallow 開始，Android 現在支援 MIDI 通訊協定。 它也提供新的類別來建立數位音訊捕捉和播放物件，並提供新的 API 勾點來關聯音訊和輸入裝置。 
 
-- **新的影片功能**&ndash; Marshmallow 提供新的類別，可協助應用程式轉譯音訊和影片串流的同步; 此類別也提供動態播放速度的支援。 
+- **新的影片功能**&ndash; Marshmallow 提供新的類別，可協助應用程式轉譯音訊和影片串流的同步;這個類別也會提供動態播放速度的支援。 
 
-- **Android For Work**&ndash; Marshmallow 包含適用于公司擁有的單一使用者裝置的增強型控制項。 它支援裝置擁有者、自動接受系統更新、改善的憑證管理、資料使用方式追蹤、版權管理和工作狀態通知，以無訊息方式安裝和卸載應用程式。 
+- **Android For Work** &ndash; Marshmallow 包含適用于公司擁有的單一使用者裝置的增強型控制項。 它支援裝置擁有者、自動接受系統更新、改善的憑證管理、資料使用方式追蹤、版權管理和工作狀態通知，以無訊息方式安裝和卸載應用程式。 
 
-- **材質設計支援程式庫**新的*設計支援程式庫*提供設計元件和模式，可讓您更輕鬆地在應用程式中建立材質設計外觀和風格。 &ndash; 
+- **材料設計支援程式庫**&ndash; 新的*設計支援程式庫*提供設計元件和模式，讓您更輕鬆地在應用程式中建立材質設計外觀與風格。 
 
 此外，許多核心 Android 程式庫更新已與 Android M 一起發行，而這些更新同時為 Android M 和舊版 Android 提供了新功能。
 
@@ -59,13 +59,13 @@ Xamarin 支援 Android Marshmallow，其中包括：
 
 若要使用以 Xamarin 為基礎的應用程式中新的 Android Marshmallow 功能，需要下列各項： 
 
-- 您必須安裝並設定 Visual Studio 或 Xamarin Studio 的**xamarin android** &ndash; 5.1.7.12 或更新版本。
+- **&ndash; xamarin. android 5.1.7.12**或更新版本必須安裝，並以 Visual Studio 或 Xamarin Studio 設定。
 
-- **Visual Studio for Mac**或**Visual Studio** &ndash;如果您使用 Visual Studio for Mac，則需要5.9.7.22 或更新版本。 如果您使用 Visual Studio，則需要適用于 Visual Studio 的 Xamarin 工具版本3.11.1537 或更新版本。 
+- **Visual Studio for Mac**或**Visual Studio** &ndash; 如果您使用 Visual Studio for Mac，則需要5.9.7.22 或更新版本。 如果您使用 Visual Studio，則需要適用于 Visual Studio 的 Xamarin 工具版本3.11.1537 或更新版本。 
 
-- **Android SDK**&ndash; Android SDK 6.0 （API 23）或更新版本必須透過 Android SDK 管理員安裝。
+- **Android SDK** &ndash; Android SDK 6.0 （API 23）或更新版本必須透過 Android SDK 管理員進行安裝。
 
-- **JAVA 開發人員套件**如果您要針對 API 層級24或更高版本進行開發，則 Xamarin 會需要[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本（jdk 1.8 也支援早于24的 api 層級，包括 Marshmallow）。 &ndash; 如果您使用自訂控制項或表單預覽器，則需要 JDK 1.8 的64位版本。
+- **JAVA 開發人員套件**&ndash; Xamarin。如果您要針對 API 層級24或更高版本進行開發，則需要[jdk 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本（JDK 1.8 也支援早于24的 api 層級，包括 Marshmallow）。 如果您使用自訂控制項或表單預覽器，則需要 JDK 1.8 的64位版本。
 
 如果您是特別針對 API 層級23或更早的版本進行開發，您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。 
 
@@ -112,13 +112,13 @@ Xamarin 支援 Android Marshmallow，其中包括：
 
 如果您使用模擬器，請啟動 Android AVD 管理員，並使用下列設定建立新的裝置：
 
-- 裝置:結點5、6或9。
-- 目標：Android 6.0-API 層級23
+- 裝置： [結點 5]、[6] 或 [9]。
+- 目標： Android 6.0-API 層級23
 - ABI： x86
 
 例如，此虛擬裝置已設定為模擬第5個結點：
 
-[![使用結點5裝置、Android 6.0 目標和 Intel Atom （x86）來設定 AVD](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
+[![使用 [結點 5] 裝置、Android 6.0 目標和 Intel Atom （x86）來設定 AVD](marshmallow-images/android-m-avd.png)](marshmallow-images/android-m-avd.png#lightbox)
 
 如果您使用的是實體裝置（例如，第5、6或9個），您可以安裝 Android Marshmallow 的預覽影像。 如需將您的裝置更新至 Android Marshmallow 的詳細資訊，請參閱[硬體系統映射](https://developer.android.com/preview/download.html#images)。
 
@@ -131,7 +131,7 @@ Android Marshmallow 中引進的許多變更著重于改善 Android 使用者體
 Android 許可權系統已大幅優化並簡化，因為 Android 棒了。 在 Android Marshmallow 中，使用者會以案例為基礎，在執行時間授與許可權，而不是在安裝期間。 若要在 Android Marshmallow 和更新版本上支援這項功能，您可以設計應用程式在執行時間提示使用者提供許可權（在需要許可權的內容中）。 這項變更可讓使用者更輕鬆地立即開始使用您的應用程式，因為它會簡化應用程式的安裝和升級流程。 
 
 如需在 Xamarin Android 應用程式中執行執行時間許可權的詳細資訊（包括程式碼範例），請參閱[在 android 中要求執行時間許可權 Marshmallow](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/) 。
-Xamarin 也提供範例應用程式，說明執行時間許可權在 Android Marshmallow （及更新版本）中的工作方式：[RuntimePermissions](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions)。
+Xamarin 也提供範例應用程式，說明執行時間許可權在 Android Marshmallow （及更新版本）中的工作方式： [RuntimePermissions](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions)。
 
 這個範例應用程式會示範下列各項：
 
@@ -149,18 +149,18 @@ Xamarin 也提供範例應用程式，說明執行時間許可權在 Android Mar
 
 Android Marshmallow 包含兩種驗證增強功能，可協助消除密碼的需求：
 
-- **指紋驗證**&ndash;使用指紋掃描來驗證使用者。
+- **指紋驗證**&ndash; 使用指紋掃描來驗證使用者。
 
-- **確認認證**&ndash;根據裝置解除鎖定的時間長度來驗證使用者。
+- **確認認證**&ndash; 根據裝置解除鎖定的時間長度來驗證使用者。
 
 接下來所述的連結和範例應用程式可協助您熟悉這些新功能。
 
 #### <a name="fingerprint-authentication"></a>指紋驗證
 
-在支援指紋掃描硬體的裝置上，您可以使用新`FingerPrintManager`的類別來驗證使用者。
+在支援指紋掃描硬體的裝置上，您可以使用新的 `FingerPrintManager` 類別來驗證使用者。
 如需 Android Marshmallow 中指紋驗證功能的詳細資訊，請參閱[指紋驗證](https://developer.android.com/preview/api-overview.html#fingerprint-authentication)。
 
-Xamarin 提供一個範例應用程式，說明如何使用已註冊的指紋來驗證您應用程式中的使用者：[FingerprintDialog](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)。
+Xamarin 提供範例應用程式，說明如何使用已註冊的指紋來驗證您應用程式中的使用者： [FingerprintDialog](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)。
 
 若要使用此範例應用程式：
 
@@ -180,9 +180,9 @@ Android Marshmallow 中引進的新語音互動功能，可讓您應用程式的
 #### <a name="confirm-credential"></a>確認認證
 
 使用 Android Marshmallow 的新 [*確認認證*] 功能，您可以讓使用者不必記住並輸入應用程式特定的密碼，其方式是根據裝置已解除鎖定的時間長度進行驗證。
-若要這麼做，請使用的`SetUserAuthenticationValidityDurationSeconds`新方法。 `KeyGenerator` `KeyGuardManager`使用的`CreateConfirmDeviceCredentialIntent`方法，從您的應用程式內重新驗證使用者。 如需 Android Marshmallow 中這項新功能的詳細資訊，請參閱[確認認證](https://developer.android.com/preview/api-overview.html#confirm-credential)。
+若要這麼做，請使用 `KeyGenerator`的新 `SetUserAuthenticationValidityDurationSeconds` 方法。 使用 `KeyGuardManager`的 `CreateConfirmDeviceCredentialIntent` 方法，從您的應用程式內重新驗證使用者。 如需 Android Marshmallow 中這項新功能的詳細資訊，請參閱[確認認證](https://developer.android.com/preview/api-overview.html#confirm-credential)。
 
-Xamarin 提供範例應用程式，說明如何在您的應用程式中使用裝置認證（例如 PIN、模式或密碼）：[ConfirmCredential](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)
+Xamarin 提供範例應用程式，說明如何在您的應用程式中使用裝置認證（例如 PIN、模式或密碼）： [ConfirmCredential](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)
 
 若要使用此範例應用程式：
 
@@ -191,9 +191,9 @@ Xamarin 提供範例應用程式，說明如何在您的應用程式中使用裝
 
 ### <a name="chrome-custom-tabs"></a>Chrome 自訂索引標籤
 
-當使用者按 URL 時，應用程式開發人員會面臨選擇：應用程式可以啟動瀏覽器，或使用以為`WebView`基礎的應用程式內瀏覽器。 在&ndash;啟動瀏覽器時，這兩個選項都是一種很繁重的`WebView`內容切換，無法自訂，而 s 則不會與瀏覽器共用狀態。 此外，使用`WebView`可能會增加額外的維護負擔。 
+當使用者按 URL 時，應用程式開發人員會面臨選擇：應用程式可以啟動瀏覽器，或使用以 `WebView`為基礎的應用程式內瀏覽器。 &ndash; 啟動瀏覽器時，這兩個選項都有很大的挑戰，就是無法自訂的繁重內容切換，而 `WebView`s 則不會與瀏覽器共用狀態。 此外，使用 `WebView`可能會增加額外的維護負擔。 
 
-*Chrome 自訂*索引標籤可讓您輕鬆且適當地顯示具有 Chrome 功能的網站，而不需讓使用者離開您的應用程式。 這項功能可讓您的應用程式更充分掌控使用者的 web 體驗;它可讓原生和 web 內容之間的轉換更順暢，而不`WebView`需要使用。 您的應用程式也可以自訂下列內容，以影響 Chrome 的外觀與感覺： 
+*Chrome 自訂*索引標籤可讓您輕鬆且適當地顯示具有 Chrome 功能的網站，而不需讓使用者離開您的應用程式。 這項功能可讓您的應用程式更充分掌控使用者的 web 體驗;它可讓原生和 web 內容之間的轉換更順暢，而不需要使用 `WebView`。 您的應用程式也可以自訂下列內容，以影響 Chrome 的外觀與感覺： 
 
 - 工具列色彩
 
@@ -208,26 +208,26 @@ Xamarin 提供範例應用程式，說明如何在您的應用程式中使用裝
 
 ### <a name="material-design-support-library"></a>材質設計支援程式庫
 
-Android 棒糖引進了一種新的設計語言來重新整理 android 體驗 (如需在 Xamarin android 應用程式中使用[材質設計](http://www.google.com/design/spec/material-design/introduction.html)的相關資訊, 請參閱[材質主題](~/android/user-interface/material-theme.md))。 透過 Android Marshmallow，Google 引進了*Android 設計支援程式庫*，讓應用程式開發人員更容易採用材質設計的外觀與風格。 此程式庫包含下列元件：
+Android 棒糖[引進了](https://www.google.com/design/spec/material-design/introduction.html)一種新的設計語言來重新整理 android 體驗（如需在 Xamarin android 應用程式中使用材質設計的相關資訊，請參閱[材質主題](~/android/user-interface/material-theme.md)）。 透過 Android Marshmallow，Google 引進了*Android 設計支援程式庫*，讓應用程式開發人員更容易採用材質設計的外觀與風格。 此程式庫包含下列元件：
 
-- **CoordinatorLayout**新的小工具類似于， `FrameLayout`但功能更強大。 `CoordinatorLayout` &ndash; 您可以使用`CoordinatorLayout`做為子視圖的容器，或做為最上層的配置，並`layout_anchor`提供可用來錨定相對於其他視圖之視圖的屬性。
+- **CoordinatorLayout** &ndash; 新的 `CoordinatorLayout` widget 類似，但比 `FrameLayout`更強大。 您可以使用 `CoordinatorLayout` 做為子視圖的容器，或做為最上層的配置，並提供可用來錨定相對於其他視圖之視圖的 `layout_anchor` 屬性。
 
-- 折迭**工具列**新的是折迭的應用程式行`Toolbar`，是的包裝函式。 `CollapsingToolbarLayout` &ndash; （請注意，*應用程式行*就是先前稱為*動作*列的內容）。
+- 折迭**工具列**&ndash; 新 `CollapsingToolbarLayout` 是折迭的應用程式行，其為 `Toolbar`的包裝函式。 （請注意，*應用程式行*就是先前稱為*動作*列的內容）。
 
-- **浮動動作按鈕**&ndash;表示應用程式介面上主要動作的圓角按鈕。
+- [**浮動動作] 按鈕**&ndash; [四捨五入] 按鈕，表示應用程式介面上的主要動作。
 
-- **用於編輯文字的浮動標籤**當使用者輸入`TextInputLayout`文字時，使用`EditText`新的小工具（包裝）來顯示浮動標籤。 &ndash;
+- **編輯文字的浮動標籤**&ndash; 使用新的 `TextInputLayout` widget （包裝 `EditText`），以在使用者輸入文字時隱藏提示時顯示浮動標籤。
 
-- **流覽視圖**&ndash; 新`NavigationView`的小工具可協助您使用流覽選單，讓使用者更容易流覽。
+- **流覽視圖**&ndash; 新的 `NavigationView` widget 可協助您使用流覽選單，讓使用者更容易流覽。
 
-- **Snackbar**&ndash; 新`SnackBar`的 widget 是輕量的意見反應機制（類似于快顯），會在畫面底部顯示簡短的訊息，並出現在螢幕上所有其他元素的上方。
+- **Snackbar** &ndash; 新的 `SnackBar` widget 是輕量的意見反應機制（類似于快顯），會在畫面底部顯示簡短的訊息，並出現在螢幕上的其他所有元素上方。
 
-- **材質**索引標籤&ndash; 新`TabLayout`的 widget 會提供水準配置，以顯示索引標籤，以在您的應用程式中執行最上層導覽。
+- &ndash; 新 `TabLayout` widget 的**材質**索引標籤會提供水準配置，以顯示索引標籤，以在您的應用程式中執行最上層導覽。
 
 若要在您的 Xamarin Android 應用程式中利用[設計支援程式庫](https://developer.android.com/tools/support-library/features.html#design)，請下載並安裝 Xamarin [Xamarin 支援程式庫設計](https://www.nuget.org/packages/Xamarin.Android.Support.Design/)NuGet 封裝。
 
 如需在 Xamarin Android 應用程式中使用材質設計支援程式庫的詳細資訊（包括程式碼範例），請參閱[Android 支援設計程式庫的美觀材質設計](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/)。
-Xamarin 提供範例應用程式，示範如何在&ndash; [Cheesesquare](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-cheesesquare)上使用新的 android 設計程式庫。
+Xamarin 提供範例應用程式，示範在 Xamarin 上的新 Android 設計程式庫 &ndash; [Cheesesquare](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-cheesesquare)。
 這個範例會示範設計程式庫的下列功能：
 
 - 折迭工具列
@@ -236,17 +236,17 @@ Xamarin 提供範例應用程式，示範如何在&ndash; [Cheesesquare](https:/
 - NavigationView
 - Snackbar
 
-如需設計程式庫的詳細資訊，請參閱 Android 開發人員的 blog 中的[Android 設計支援程式庫](http://android-developers.blogspot.co.at/2015/05/android-design-support-library.html)。
+如需設計程式庫的詳細資訊，請參閱 Android 開發人員的 blog 中的[Android 設計支援程式庫](https://android-developers.googleblog.com/2015/05/android-design-support-library.html)。
 
 ### <a name="additional-library-updates"></a>其他程式庫更新
 
 除了 Android Marshmallow，Google 也已宣佈數個核心 Android 程式庫的相關更新。 Xamarin 透過數個預覽版本的 NuGet 套件，為這些更新提供了 Xamarin 支援： 
 
-- [Google Play Services](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services)最新版本的 Google Play Services 包含新的*應用程式邀請*功能，讓使用者可以與朋友共用其應用程式。 &ndash; 如需這項功能的詳細資訊，請參閱透過[Google 的應用程式邀請擴充應用程式的接觸](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/)。 
+- [Google Play Services](https://www.nuget.org/packages?q=Xamarin+Google+Play+Services) &ndash; 最新版本的 Google Play Services 包含新的*應用程式邀請*功能，讓使用者可以與朋友共用其應用程式。 如需這項功能的詳細資訊，請參閱透過[Google 的應用程式邀請擴充應用程式的接觸](https://blog.xamarin.com/expand-your-apps-reach-with-googles-app-invites/)。 
 
-- [Android 支援程式庫](https://www.nuget.org/packages?q=xamarin+support+library)&ndash;這些 nuget 提供的功能僅適用于程式庫 api，同時提供 Android framework api 的回溯相容版本。 
+- [Android 支援程式庫](https://www.nuget.org/packages?q=xamarin+support+library)&ndash; 這些 nuget 提供的功能僅適用于程式庫 api，同時提供 Android framework api 的回溯相容版本。 
 
-- [Android 穿戴式程式庫](https://www.nuget.org/packages/Xamarin.Android.Wear)&ndash;此 NuGet 包含 Google Play Services 系結。 最新版的穿戴式程式庫會將新功能（包括自訂應用程式的更容易導覽）帶入 Android 磨損平臺。 
+- [Android 穿戴式程式庫](https://www.nuget.org/packages/Xamarin.Android.Wear)&ndash; 此 NuGet 包含 Google Play Services 系結。 最新版的穿戴式程式庫會將新功能（包括自訂應用程式的更容易導覽）帶入 Android 磨損平臺。 
 
 ## <a name="summary"></a>總結
 

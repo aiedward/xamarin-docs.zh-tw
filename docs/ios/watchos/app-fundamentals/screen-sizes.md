@@ -4,15 +4,15 @@ description: 本檔說明如何使用各種 watchOS 螢幕大小。 它討論 wa
 ms.prod: xamarin
 ms.assetid: 840DF939-2F59-4ABA-87D8-92AAC8A92BC4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: e9c87b76dc6845962450b8cb6fab921ea1748832
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: aeaa1bb1273bc062e0ac76eaa09722827f15797f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768319"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028397"
 ---
 # <a name="working-with-watchos-screen-sizes-in-xamarin"></a>在 Xamarin 中使用 watchOS 螢幕大小
 
@@ -30,11 +30,11 @@ Apple Watch 有兩種螢幕大小：
 
 根據預設，Visual Studio for Mac 設計工具會顯示**任何 Apple Watch**的監看式介面控制器。
 
-![](screen-sizes-images/screen-any-sml.png "設計工具會顯示任何 Apple Watch 的監看式介面控制器")
+![](screen-sizes-images/screen-any-sml.png "The Designer displays watch interface controllers at Any Apple Watch")
 
-使用 [大小] 功能表來編輯和預覽您的分鏡腳本，方法是在其中一個可用的螢幕大小：**38mm**或**42mm**：
+使用 [大小] 功能表來編輯和預覽您的分鏡腳本，請在其中一個可用的螢幕大小： **38mm**或**42mm**：
 
-![](screen-sizes-images/screen-menu-sml.png "選擇38mm或42mm的尺寸")
+![](screen-sizes-images/screen-menu-sml.png "Selecting the 38mm or 42mm size")
 
 較大的螢幕大小有時候會轉譯在較小螢幕上截斷/隱藏的內容。
 請務必測試這兩種大小。
@@ -43,7 +43,7 @@ Apple Watch 有兩種螢幕大小：
 
 無論大小為何，您的應用程式都應該在畫面上顯示相同的內容，而且應該適當地展開或合約元素。 在 [Visual Studio for Mac 設計工具] 的 [屬性偵測器] 中，您應該使用 [**相對於容器**或大小]，將喜好設定中的**內容調整**為固定大小。
 
-![](screen-sizes-images/sizeattributepanel-sml.png "使用相對於容器或大小，將喜好設定中的內容調整為固定大小")
+![](screen-sizes-images/sizeattributepanel-sml.png "Use Relative to Container or Size to Fit Content in preference to fixed sizes")
 
 由於監看式畫面是以黑色擋板括住，因此不建議在您的介面周圍提供填補。 讓元素與畫面邊緣 rest，並讓擋板在應用程式周圍形成自然框線。
 
@@ -51,13 +51,13 @@ Apple Watch 有兩種螢幕大小：
 
 在模擬器上測試時，您可以使用 [**硬體 > 裝置**] 功能表，輕鬆地在兩個螢幕大小之間切換。
 
-![](screen-sizes-images/simulator.png "模擬器可以使用硬體裝置功能表在兩個螢幕大小之間切換")
+![](screen-sizes-images/simulator.png "The simulator can switch between the two screen sizes using the Hardware Device menu")
 
 ## <a name="image-resources"></a>影像資源
 
 如果單一資產看起來不會有不同的大小，您應該使用多個映射資產。 映射資產目錄允許為每個大小指定個別的點陣圖：
 
-![](screen-sizes-images/images-xcassets.png "影像資產目錄編輯器")
+![](screen-sizes-images/images-xcassets.png "Image asset catalog editor")
 
 ```csharp
 // specify the asset name, the correct size will automatically be loaded

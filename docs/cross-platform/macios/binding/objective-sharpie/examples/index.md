@@ -3,15 +3,15 @@ title: 目標 Sharpie 範例
 description: 本檔會連結至描述如何使用目標 Sharpie 工具的各種指南，這是用來將建立C#系結至目標 C 程式碼的流程自動化。
 ms.prod: xamarin
 ms.assetid: 1ACB0935-6D5F-4A5F-BE28-08DA1B675F0E
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: b2b595187ec8d011f45e26ea5139c253beb5c453
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 653b2a4397ce92b5b7501149258f172dd3d69e81
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290686"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016238"
 ---
 # <a name="objective-sharpie-examples"></a>目標 Sharpie 範例
 

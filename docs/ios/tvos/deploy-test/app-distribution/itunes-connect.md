@@ -4,15 +4,15 @@ description: 本文提供 iOS 在 iTunes Connect 中設定應用程式的補充�
 ms.prod: xamarin
 ms.assetid: 86C7C5BD-C97D-4F1D-B611-A7694557BFDF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: ef3d25974f61bb1ac763831ab9a1f6b62d11abbe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 01ab48f68656dcabdf2a6cfc286dfcd8850454f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769671"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030756"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>在 iTunes Connect 中設定您的 tvOS 應用程式
 
@@ -38,11 +38,11 @@ _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以�
 
 完成上述所有步驟後，開啟應用程式的 iTunes Connect 記錄，然後選取使用左側提要欄位新增 tvOS 支援：
 
-[![](itunes-connect-images/connect01.png "使用左側提要欄位新增 tvOS 支援")](itunes-connect-images/connect01.png#lightbox)
+[![](itunes-connect-images/connect01.png "Add tvOS support using the left hand sidebar")](itunes-connect-images/connect01.png#lightbox)
 
 然後，tvOS 特定資訊畫面就會提供給指定的 iTunes Connect 記錄：
 
-[![](itunes-connect-images/connect02.png "[TvOS 特定資訊] 畫面")](itunes-connect-images/connect02.png#lightbox)
+[![](itunes-connect-images/connect02.png "The tvOS specific information screen")](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information" />
 
@@ -50,7 +50,7 @@ _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以�
 
 從左側提要欄位中，選取 [ **1.0 準備提交**tvOS 應用程式] 區段底下：
 
-[![](itunes-connect-images/connect03.png "tvOS 版本資訊")](itunes-connect-images/connect03.png#lightbox)
+[![](itunes-connect-images/connect03.png "tvOS Version Information")](itunes-connect-images/connect03.png#lightbox)
 
 在此畫面上，提供下列資訊：
 
@@ -62,7 +62,7 @@ _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以�
 
 輸入必要資訊之後，請按一下畫面右上角的 [**儲存**] 按鈕來儲存變更：
 
-[![](itunes-connect-images/connect04.png "tvOS 已準備好提交的版本資訊")](itunes-connect-images/connect04.png#lightbox)
+[![](itunes-connect-images/connect04.png "tvOS Version Information ready for submission")](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review" />
 
@@ -70,7 +70,7 @@ _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以�
 
 當您終於準備好要將 tvOS 應用程式提交至 Apple 電視 App Store 進行審查時，請回到應用程式的 iTunes Connect 記錄，然後按一下畫面右上角的 [**提交以供審查**] 按鈕：
 
-[![](itunes-connect-images/connect05.png "提交以供審查")](itunes-connect-images/connect05.png#lightbox)
+[![](itunes-connect-images/connect05.png "Submit for Review")](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary" />
 

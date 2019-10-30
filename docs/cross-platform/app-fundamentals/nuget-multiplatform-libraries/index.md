@@ -1,66 +1,66 @@
 ---
-title: NuGet 多平台程式庫專案 (也稱為 Nugetizer 3000)
-description: 本文件說明如何使用 Nugetizer 3000 工具會自動建立 NuGet 套件，以跨平台共用程式碼。
+title: NuGet 多平臺程式庫專案（也稱為 Nugetizer 3000）
+description: 本檔說明如何使用 Nugetizer 3000 工具來自動建立 NuGet 套件，以跨平臺共用程式碼。
 ms.prod: xamarin
 ms.assetid: F0A5A9BB-86CD-44C9-8EE8-74D1E5E74A30
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 6d3f7b316e397705ecb9bd404007dcd9ef5aa183
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 5744bb9947b196ee319535729338bcf64a5cd09e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61266778"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016754"
 ---
-# <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>NuGet 多平台程式庫專案 (Nugetizer 3000)
+# <a name="nuget-multiplatform-library-projects-nugetizer-3000"></a>NuGet 多平臺程式庫專案（Nugetizer 3000）
 
-_自動建立 NuGet 套件，以使用 Nugetizer 3000 的平台共用程式碼 ！_
+_使用 ' Nugetizer 3000 ' 自動建立 NuGet 套件，以跨平臺共用程式碼！_
 
-可自動建立跨平台共用程式碼的 NuGet 套件_Nugetizer 3000_。 如此一來，可建立從現有的程式庫專案，或藉由建立新的 NuGet 套件**多平台程式庫專案**。
+您可以使用_Nugetizer 3000_，自動建立 NuGet 套件以跨平臺共用程式碼。 這可讓您從現有的程式庫專案建立 NuGet 封裝，或建立新的多**平臺程式庫專案**。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-Nugetizer 3000 是隨附於 Visual Studio for Mac&ndash;尋求**文件庫 > Mulitplatform 程式庫**專案中的型別**檔案 > 新增**視窗：
+Nugetizer 3000 隨附于 Visual Studio for Mac &ndash; 在檔案 **> 新**視窗中尋找連結**庫 > Mulitplatform 程式庫**專案類型：
 
-[![](images/mulitplatform-library-sml.png "建立新的多平台程式庫視窗")](images/mulitplatform-library.png#lightbox)
+[![](images/mulitplatform-library-sml.png "Create new Multiplatform Library window")](images/mulitplatform-library.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-若要在 Visual Studio 中使用 Nugetizer 3000，請[下載並執行 VSIX 安裝程式](http://bit.ly/nugetizer-2017)。
+若要在 Visual Studio 中使用 Nugetizer 3000，請[下載並執行 VSIX 安裝程式](https://bit.ly/nugetizer-2017)。
 
 -----
 
-## <a name="building-nuget-packages"></a>建置 NuGet 套件
+## <a name="building-nuget-packages"></a>建立 NuGet 套件
 
-一旦設定之後，每次建置專案的輸出完整的 NuGet 套件，可以用來與其他應用程式內部共用程式碼，或上傳至[NuGet.org](https://www.nuget.org)。
+一旦設定之後，專案的每個組建都會輸出完整的 NuGet 套件，可用來在內部與其他應用程式共用程式碼，或上傳至[NuGet.org](https://www.nuget.org)。
 
-有三種案例，使用這項功能：
+使用這項功能的案例有三種：
 
 - [現有的程式庫專案](existing-library.md)
 
-  建立從現有的 PCL （或.NET Standard） 專案的 NuGet 套件。
+  從現有的 PCL （或 .NET Standard）專案建立 NuGet 套件。
 
-- [建立新的多平台程式庫專案](single-codebase.md)
+- [建立新的多平臺程式庫專案](single-codebase.md)
 
-  建立新的程式庫共用透過 NuGet，使用 PCL 或.NET Standard 的一般程式碼。
+  使用 PCL 或 .NET Standard 建立新的程式庫，以透過 NuGet 共用通用程式碼。
 
-- [建立新的平台專屬程式庫專案](platform-specific.md)
+- [建立新的平臺特定程式庫專案](platform-specific.md)
 
-  建立新的程式庫和包含適用於 iOS 和 Android 平台特定程式碼，並在共用的專案中包含的通用程式碼和以支援特定 iOS 或 Android 功能的平台特定專案的 NuGet。
+  建立新的程式庫和 NuGet，其中包含適用于 iOS 和 Android 的平臺專屬程式碼，並使用共用專案來包含通用程式碼和平臺特定專案，以支援 iOS 或 Android 特有的功能。
 
-請參閱[中繼資料指南](metadata.md)如必須新增至任何 NuGet 套件的必要和選擇性中繼資料的詳細資訊。
+請參閱[中繼資料指南](metadata.md)，以取得必須新增至任何 NuGet 封裝之必要和選擇性中繼資料的詳細資訊。
 
-## <a name="further-nuget-information"></a>NuGet 的進一步資訊
+## <a name="further-nuget-information"></a>進一步的 NuGet 資訊
 
-深入了解[手動建立適用於 Xamarin 的 Nuget](~/cross-platform/app-fundamentals/nuget-manual.md) ，以及如何[應用程式中包含 NuGet 套件](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
+深入瞭解如何[手動建立 Xamarin 的 nuget](~/cross-platform/app-fundamentals/nuget-manual.md) ，以及如何[在應用程式中包含 NuGet 套件](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)。
 
-Microsoft 的[NuGet 文件](https://docs.microsoft.com/nuget/)包含更詳細的資訊上 **.nupkg**格式，並在 Visual Studio 使用 NuGet 套件。
+Microsoft 的[NuGet 檔](https://docs.microsoft.com/nuget/)包含**nupkg**格式的詳細資訊，以及在 Visual Studio 中使用 NuGet 套件。
 
-NuGet 封裝專案的設計討論 （也稱為 NuGetizer 3000) 位於[NuGet GitHub 存放庫](https://github.com/NuGet/Home/wiki/NuGetizer-3000)。
+NuGet 套件專案的設計討論（也稱為 NuGetizer 3000）可在[NuGet GitHub 存放庫](https://github.com/NuGet/Home/wiki/NuGetizer-3000)中取得。
 
 ## <a name="related-links"></a>相關連結
 
-- [NuGetizer 3000 使用案例](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
-- [手動建立適用於 Xamarin 的 NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
-- [NuGet 文件](https://docs.microsoft.com/nuget/)
+- [NuGetizer-3000 使用案例](https://github.com/NuGet/Home/wiki/NuGetizer-Core-Scenarios)
+- [手動建立適用于 Xamarin 的 NuGet 套件](~/cross-platform/app-fundamentals/nuget-manual.md)
+- [NuGet 檔](https://docs.microsoft.com/nuget/)

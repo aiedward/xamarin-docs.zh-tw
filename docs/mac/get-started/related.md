@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Mac – 相關文件
-description: 此文件提供與 Xamarin.Mac 開發人員相關的文件連結：Xamarin.iOS 文件、Apple Mac 開發人員中心，以及描述如何使用 Xamarin.Mac 建置使用者介面的各種指南。
+description: 本文件為 Xamarin.Mac 開發人員提供相關文件的連結：Xamarin.iOS 文件、Apple Mac 開發人員中心，以及描述如何使用 Xamarin.Mac 建置使用者介面的各種指南。
 ms.prod: xamarin
 ms.assetid: 0a282c58-1c37-4f73-8440-85de2daf454a
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 3b0e9f87505e7537f9c8aeb6f006072feffdbd57
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 10450bbb87ed974475001102920ec6fb90cf7976
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278902"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029983"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac – 相關文件
 
@@ -33,7 +33,7 @@ ms.locfileid: "70278902"
 - [Windows](~/mac/user-interface/window.md)
 - [對話方塊](~/mac/user-interface/dialog.md)
 - [警示](~/mac/user-interface/alert.md)
-- [功能表](~/mac/user-interface/menu.md)
+- [Menus](~/mac/user-interface/menu.md)
 - [工具列](~/mac/user-interface/toolbar.md)
 - [資料表檢視](~/mac/user-interface/table-view.md)
 - [大綱檢視](~/mac/user-interface/outline-view.md)

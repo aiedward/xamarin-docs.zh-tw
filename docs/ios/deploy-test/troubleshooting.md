@@ -4,15 +4,15 @@ description: 本文件提供與程式碼簽署和佈建、TestFlight，以及將
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: b6fbe8ca975100310922240e532b9922e76e4724
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1c8eddcf16c8513852c21babf34d81c9a3290406
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290663"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028429"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS 測試及部署 - 疑難排解
 
@@ -22,13 +22,13 @@ ms.locfileid: "70290663"
 
 - 大型的團隊應該避免使用 Xcode 中的 [Fix issue] \(修正問題\) 按鈕，如下圖所示：
 
-    [![](troubleshooting-images/fixissue.png "[Fix issue] \(修正問題\) 對話方塊")](troubleshooting-images/fixissue.png#lightbox)
+    [![](troubleshooting-images/fixissue.png "The Fix Issues dialog")](troubleshooting-images/fixissue.png#lightbox)
 
     這將會建立新的佈建設定檔和憑證。 從好處想，這會在每次小組成員按一下佈建設定檔時建立一個佈建設定檔，造成設定檔混亂。 從壞處想，它將會撤銷公司內其他人的憑證，導致其應用程式停止運作。
 
 - 保持「鑰匙圈存取」井然有序，並刪除過期的憑證和設定檔。 企業憑證可持續使用三年，其他憑證則僅能持續使用一年。 您無法更新憑證，因此需要在舊的憑證到期之前建立新的憑證。 請務必撤銷並刪除舊的憑證，並使用新的憑證重新簽署應用程式。
 
-- 安裝新的佈建設定檔時，移除舊的佈建設定檔。 這表示 Visual Studio for Mac 不需要決定要使用哪個設定檔。 若要達成此目的，請先確定刪除 Apple 開發人員中心中的設定檔，然後瀏覽至 [Preferences] \(喜好設定\) > [Your Account] \(您的帳戶\) > [View Details] \(檢視詳細資料\)。選取佈建設定檔，然後按一下 [顯示於 Finder]。 這將顯示設定檔在 Mac 檔案系統中的位置，之後就可以使用 Finder 刪除該位置。
+- 安裝新的佈建設定檔時，移除舊的佈建設定檔。 這表示 Visual Studio for Mac 不需要決定要使用哪個設定檔。 若要達到此目的，請先確定刪除 Apple 開發人員中心內的設定檔，然後流覽至*您帳戶的喜好設定 > > View Details*...。選取 布建設定檔，然後按一下 **在 Finder 中顯示**。 這將顯示設定檔在 Mac 檔案系統中的位置，之後就可以使用 Finder 刪除該位置。
 
 - 請確認所有必要的憑證和對應的私密金鑰都可以使用。 因為每個小組都需要一個開發人員憑證 (以便在自己的裝置上安裝應用程式)，以及一個散發憑證 (以安裝在其他裝置上)
 

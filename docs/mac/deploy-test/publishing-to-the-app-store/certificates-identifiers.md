@@ -4,15 +4,15 @@ description: 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需
 ms.prod: xamarin
 ms.assetid: 393d0066-7f6f-4ac3-a48d-4b5db65bc4cd
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: a39c40bb6f63427f1a4aeedea10e90aef4df91e8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 59c3372350caf3939a4e40ba2999ffb490d4a1f7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770265"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030088"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Xamarin.Mac 中的憑證和識別碼
 
@@ -22,19 +22,19 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
 
 前往 [Apple Developer Member Center](https://developer.apple.com) \(英文\) 以設定 Mac 進行開發。 主功能表如下所示：
 
-[![Apple Developer Member Center (Apple 開發人員成員中心)](certificates-identifiers-images/devcenter01.png "Apple Developer Member Center (Apple 開發人員成員中心)")](certificates-identifiers-images/devcenter01-large.png#lightbox)
+[![Apple 開發人員成員中心](certificates-identifiers-images/devcenter01.png "Apple 開發人員成員中心")](certificates-identifiers-images/devcenter01-large.png#lightbox)
 
 按一下 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) 連結：
 
-[![選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔](certificates-identifiers-images/devcenter02.png "選取 Certificates, Identifiers & Profiles 憑證、識別碼及設定檔")](certificates-identifiers-images/devcenter02-large.png#lightbox)
+[![選取憑證、識別碼 & 設定檔](certificates-identifiers-images/devcenter02.png "選取憑證、識別碼 & 設定檔")](certificates-identifiers-images/devcenter02-large.png#lightbox)
 
 接著，按一下 [Mac Apps] \(Mac 應用程式\) 區段下的 [Certificates] \(憑證\) 連結：
 
-[![選取 Certificates 憑證 連結](certificates-identifiers-images/devcenter03.png "選取 Certificates 憑證 連結")](certificates-identifiers-images/devcenter03-large.png#lightbox)
+[![選取憑證連結](certificates-identifiers-images/devcenter03.png "選取憑證連結")](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
 按一下 [All] \(全部\) 連結，然後按一下 [+] 按鈕：
 
-[![全部選取並新增項目](certificates-identifiers-images/certif01.png "全部選取並新增項目")](certificates-identifiers-images/certif01-large.png#lightbox)
+[![全選並加入新專案](certificates-identifiers-images/certif01.png "全選並加入新專案")](certificates-identifiers-images/certif01-large.png#lightbox)
 
 請視需要下載此處的 [Intermediate Certificates] \(中繼憑證\) (Worldwide Developer Relations Certificate Authority 與 Developer ID Certificate Authority)。 不過，這些應會由 Xcode 為開發人員自動設定。
 
@@ -53,13 +53,13 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
 
 1. 輸入 [App ID Description] \(應用程式識別碼描述\)，然後選取應用程式需要的任何 [App Services] \(應用程式服務\)：
 
-    [![輸入描述與應用程式服務](certificates-identifiers-images/devcenter04.png "輸入描述與應用程式服務")](certificates-identifiers-images/devcenter04-large.png#lightbox)
+    [![輸入描述和應用程式服務](certificates-identifiers-images/devcenter04.png "輸入描述和應用程式服務")](certificates-identifiers-images/devcenter04-large.png#lightbox)
 2. 輸入應用程式的 [Bundle ID] \(套件組合識別碼\)，然後按一下 [Continue] \(繼續\) 按鈕：
 
     [![輸入套件組合識別碼](certificates-identifiers-images/devcenter05.png "輸入套件組合識別碼")](certificates-identifiers-images/devcenter05-large.png#lightbox)
 3. 請確認資訊，然後按一下 [Submit] \(提交\)按鈕：
 
-    [![確認資訊](certificates-identifiers-images/devcenter06.png "確認資訊")](certificates-identifiers-images/devcenter06-large.png#lightbox)
+    [![驗證資訊](certificates-identifiers-images/devcenter06.png "驗證資訊")](certificates-identifiers-images/devcenter06-large.png#lightbox)
 
 有些 [App Services] \(應用程式服務\) 可能需要進一步設定 (例如 iCloud)。 如果是這種情況，請選取剛才建立的新應用程式識別碼，然後按一下 [Edit] \(編輯\) 按鈕：
 
@@ -83,7 +83,7 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
 
 輸入要新增電腦的 [Name] \(名稱\) 與 [UUID]，然後按一下 [Continue] \(繼續\) 按鈕。 檢閱資訊，然後按一下 [Register] \(註冊\) 按鈕：
 
-[![輸入新電腦資訊](certificates-identifiers-images/devcenter11.png "輸入新電腦資訊")](certificates-identifiers-images/devcenter11-large.png#lightbox)
+[![輸入新的電腦資訊](certificates-identifiers-images/devcenter11.png "輸入新的電腦資訊")](certificates-identifiers-images/devcenter11-large.png#lightbox)
 
 ### <a name="create-certificates"></a>建立憑證
 
@@ -110,7 +110,7 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
      [![新增開發憑證](certificates-identifiers-images/certif02.png "新增開發憑證")](certificates-identifiers-images/certif02-large.png#lightbox)
 2. 下一個畫面說明如何使用 [鑰匙圈存取] 來建立要上傳的憑證簽署要求：
 
-    [![鑰匙圈存取上傳畫面](certificates-identifiers-images/certif03.png "鑰匙圈存取上傳畫面")](certificates-identifiers-images/certif03-large.png#lightbox)
+    [![Keychain 存取上傳畫面](certificates-identifiers-images/certif03.png "Keychain 存取上傳畫面")](certificates-identifiers-images/certif03-large.png#lightbox)
 3. 選擇有意義的憑證 [Common Name] \(通用名稱\)，以便稍後建立最終憑證時可輕鬆辨識。 請記住儲存檔案的位置，方便在下一個步驟找到檔案：
 
     ![匯出憑證](certificates-identifiers-images/image12.png "匯出憑證")
@@ -122,10 +122,10 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
     [![下載開發憑證](certificates-identifiers-images/image15.png "下載開發憑證")](certificates-identifiers-images/image15-large.png#lightbox)
 6. 按一下 [Download] \(下載\) 以取得憑證，然後按兩下以安裝在 [鑰匙圈] 中。 [Developer Certificate Utility] \(開發人員憑證公用程式\) 會顯示憑證如下：
 
-    [![Developer Certificate Utility (開發人員憑證公用程式)](certificates-identifiers-images/image16.png "Developer Certificate Utility (開發人員憑證公用程式)")](certificates-identifiers-images/image16-large.png#lightbox)
+    [![開發人員憑證公用程式](certificates-identifiers-images/image16.png "開發人員憑證公用程式")](certificates-identifiers-images/image16-large.png#lightbox)
 7. 它也會在 [鑰匙圈] 中顯示如下：
 
-    ![[鑰匙圈存取] 中的憑證](certificates-identifiers-images/image17.png "[鑰匙圈存取] 中的憑證")
+    ![Keychain Access 中的憑證](certificates-identifiers-images/image17.png "Keychain Access 中的憑證")
 
 如先前所述，除非開發人員實作像是 iCloud 與推播通知等 macOS 功能，否則不一定需要開發人員憑證。 建立測試 Mac App Store 應用程式所需的 [Development Provisioning Profile] \(開發佈建設定檔\) 時也需要此憑證。
 
@@ -141,19 +141,19 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
     [![選取憑證類型](certificates-identifiers-images/certif05.png "選取憑證類型")](certificates-identifiers-images/certif05-large.png#lightbox)
 3. 下一個頁面說明如何使用 [鑰匙圈存取] 產生憑證要求檔案。 請依照下列指示執行：
 
-    [![產生鑰匙圈要求](certificates-identifiers-images/certif06.png "產生鑰匙圈要求")](certificates-identifiers-images/certif06-large.png#lightbox)
+    [![正在產生 keychain 要求](certificates-identifiers-images/certif06.png "正在產生 keychain 要求")](certificates-identifiers-images/certif06-large.png#lightbox)
 4. 選擇描述性 [Common Name] \(一般名稱\)：例如在名稱中使用「App Store 應用程式」的文字：
 
     ![輸入描述性名稱](certificates-identifiers-images/image20.png "輸入描述性名稱")
 5. 憑證要求檔案 (副檔名為 `.certSigningRequest`) 會儲存在 Mac 本機上。 請記住儲存位置 (預設位置為桌面)：
 
-    [![建立憑證](certificates-identifiers-images/image21.png "建立憑證")](certificates-identifiers-images/image21-large.png#lightbox)
+    [![儲存憑證](certificates-identifiers-images/image21.png "儲存憑證")](certificates-identifiers-images/image21-large.png#lightbox)
 6. 按一下 [Download] \(下載\) 以取得憑證，然後按兩下以安裝在 [鑰匙圈] 中：
 
     [![下載 App Store 憑證](certificates-identifiers-images/image23.png "下載 App Store 憑證")](certificates-identifiers-images/image23-large.png#lightbox)
 7. 按一下 [Continue] \(繼續\)，然後依照完全相同的步驟下載另一個憑證，這次則是供「安裝程式」使用：
 
-    [![選取安裝程式](certificates-identifiers-images/image24.png "")](certificates-identifiers-images/image24-large.png#lightbox)
+    [![選取安裝程式](certificates-identifiers-images/image24.png "選取安裝程式")](certificates-identifiers-images/image24-large.png#lightbox)
 8. 選擇描述性 [Common Name] \(一般名稱\)：例如在名稱中使用「AppStore 安裝程式」的文字：
 
     ![設定憑證的名稱](certificates-identifiers-images/image25.png "設定憑證的名稱")
@@ -164,10 +164,10 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
     [![下載散發憑證](certificates-identifiers-images/image28.png "下載散發憑證")](certificates-identifiers-images/image28-large.png#lightbox)
 10. 按一下 [Download] \(下載\) 以取得憑證，然後按兩下以安裝在 [鑰匙圈] 中。 [Developer Certificate Utility] \(開發人員憑證公用程式\) 會顯示憑證如下：
 
-    [![Developer Certificate Utility (開發人員憑證公用程式)](certificates-identifiers-images/image29.png "Developer Certificate Utility (開發人員憑證公用程式)")](certificates-identifiers-images/image29-large.png#lightbox)
+    [![開發人員憑證公用程式](certificates-identifiers-images/image29.png "開發人員憑證公用程式")](certificates-identifiers-images/image29-large.png#lightbox)
 11. 現在可在 [鑰匙圈] 中看到這兩個新憑證：
 
-    [![鑰匙圈存取 中的憑證](certificates-identifiers-images/image30.png "鑰匙圈存取 中的憑證")](certificates-identifiers-images/image30-large.png#lightbox)
+    [![Keychain Access 中的憑證](certificates-identifiers-images/image30.png "Keychain Access 中的憑證")](certificates-identifiers-images/image30-large.png#lightbox)
 
 #### <a name="developer-id-certificates"></a>開發人員識別碼憑證
 
@@ -197,7 +197,7 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
 8. 按一下 [Continue] \(繼續\)，然後依照完全相同的步驟下載另一個憑證，這次則是供「安裝程式」使用。
 9. 選擇描述性的**一般名稱**–例如，在名稱中使用「開發人員識別碼安裝程式」文字：
 
-    ![輸入一般名稱](certificates-identifiers-images/image38.png "")
+    ![輸入一般名稱](certificates-identifiers-images/image38.png "輸入一般名稱")
 10. 憑證要求檔案 (副檔名為 `.certSigningRequest`) 會儲存在 Mac 本機上。 請記住儲存位置 (預設位置為桌面)：
 
     [![上傳憑證](certificates-identifiers-images/certif10.png "上傳憑證")](certificates-identifiers-images/certif10-large.png#lightbox)
@@ -206,14 +206,14 @@ _本指南將逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要
     [![下載憑證](certificates-identifiers-images/certif11.png "下載憑證")](certificates-identifiers-images/certif11-large.png#lightbox)
 12. 按一下 [Download] \(下載\) 以取得憑證，然後按兩下以安裝在 [鑰匙圈] 中。 [Developer Certificate Utility] \(開發人員憑證公用程式\) 會顯示憑證如下：
 
-    [![Developer Certificate Utility (開發人員憑證公用程式)](certificates-identifiers-images/certif12.png "Developer Certificate Utility (開發人員憑證公用程式)")](certificates-identifiers-images/certif12-large.png#lightbox)
+    [![開發人員憑證公用程式](certificates-identifiers-images/certif12.png "開發人員憑證公用程式")](certificates-identifiers-images/certif12-large.png#lightbox)
 13. 您可在 [鑰匙圈] 中看到下列項目：
 
-    [![鑰匙圈存取 中的憑證](certificates-identifiers-images/image43.png "鑰匙圈存取 中的憑證")](certificates-identifiers-images/image43-large.png#lightbox)
+    [![Keychain access 中的憑證](certificates-identifiers-images/image43.png "Keychain access 中的憑證")](certificates-identifiers-images/image43-large.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 
 - [安裝](/visualstudio/mac/installation/)
 - [Hello, Mac 範例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
-- [開發人員識別碼和 GateKeeper](https://developer.apple.com/resources/developer-id/) \(英文\)
+- [開發人員識別碼和閘道管理員](https://developer.apple.com/resources/developer-id/) \(英文\)

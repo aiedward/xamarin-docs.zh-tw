@@ -4,15 +4,15 @@ description: 本檔說明如何使用 iOS 11 中引進的 Api，在 Xamarin iOS 
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/05/2017
-ms.openlocfilehash: 8f1e9cabb78152374ee3eede80dcfc5dcba8dde1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 928936815c89dd74d0ad3775f59ea210702c8857
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752381"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032166"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>在 Xamarin 中拖放
 
@@ -35,20 +35,20 @@ iOS 11 包含拖放支援，可在 iPad 上的應用程式之間複製資料。 
 
 ## <a name="drag-and-drop-with-text-controls"></a>使用文字控制項拖放
 
-`UITextView`和`UITextField`會自動支援拖曳選取的文字，並在中放置文字內容。
+`UITextView` 和 `UITextField` 會自動支援拖曳選取的文字，並在中放置文字內容。
 
 <a name="uitableview" />
 
 ## <a name="drag-and-drop-with-uitableview"></a>使用 UITableView 拖放
 
-`UITableView`具有與資料表資料列之拖放互動的內建處理，只需要幾個方法，即可啟用預設行為。
+`UITableView` 具有與資料表資料列之拖放互動的內建處理，而且只需要幾個方法來啟用預設行為。
 
 其中包含兩個介面：
 
-- `IUITableViewDragDelegate`–在資料表視圖中起始拖曳時封裝資訊。
-- `IUITableViewDropDelegate`–在嘗試和完成 drop 時處理資訊。
+- `IUITableViewDragDelegate` –在資料表視圖中起始拖曳時的封裝資訊。
+- `IUITableViewDropDelegate` –在嘗試和完成卸載時處理資訊。
 
-在[DragAndDropTableView 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)中，這兩個介面同時在`UITableViewController`類別上執行，以及委派和資料來源。 它們是在`ViewDidLoad`方法中指派：
+在[DragAndDropTableView 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)中，這兩個介面同時在 `UITableViewController` 類別上執行，以及委派和資料來源。 它們是在 `ViewDidLoad` 方法中指派：
 
 ```csharp
 this.TableView.DragDelegate = this;
@@ -59,9 +59,9 @@ this.TableView.DropDelegate = this;
 
 ### <a name="table-view-drag-delegate"></a>資料表視圖拖曳委派
 
-支援從資料表視圖拖曳資料列的_唯一方法是_ `GetItemsForBeginningDragSession`。 如果使用者開始拖曳資料列，就會呼叫這個方法。
+支援從資料表視圖拖曳資料列的唯一_必要_方法是 `GetItemsForBeginningDragSession`。 如果使用者開始拖曳資料列，就會呼叫這個方法。
 
-執行如下所示。 它會抓取與拖曳的資料列相關聯的資料、將其編碼`NSItemProvider` ，並設定，以決定應用程式如何處理作業的「卸載」部分（例如，它們是否可以在範例中處理`PlainText`資料類型）：
+執行如下所示。 它會抓取與拖曳的資料列相關聯的資料、將其編碼，並設定 `NSItemProvider` 來決定應用程式如何處理作業的「卸載」部分（例如，它們是否可以在範例中處理資料類型，`PlainText`）：
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -91,13 +91,13 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 
 當拖曳作業在資料表視圖上發生或在其上方完成時，會呼叫 drop 委派上的方法。 必要的方法會決定是否允許卸載資料，以及當卸載完成時，會採取哪些動作：
 
-- `CanHandleDropSession`–當拖曳正在進行中，而且可能會在應用程式上卸載時，這個方法會決定是否允許卸載所拖曳的資料。
-- `DropSessionDidUpdate`–正在進行拖曳時，會呼叫這個方法來決定要執行的動作。 資料表視圖中的資訊會拖曳到拖放上、拖曳會話和可能的索引路徑，全都用來判斷提供給使用者的行為和視覺效果意見反應。
-- `PerformDrop`–當使用者完成卸載（藉由將其手指放）時，這個方法會解壓縮所拖曳的資料，並修改資料表視圖，以便在新的資料列（或列）中加入資料。
+- `CanHandleDropSession` –當拖曳正在進行中，而且可能會在應用程式上卸載時，這個方法會決定是否允許卸載所拖曳的資料。
+- `DropSessionDidUpdate` –拖曳進行中時，會呼叫這個方法來決定要執行的動作。 資料表視圖中的資訊會拖曳到拖放上、拖曳會話和可能的索引路徑，全都用來判斷提供給使用者的行為和視覺效果意見反應。
+- `PerformDrop` –當使用者完成卸載（藉由將其手指放）時，這個方法會解壓縮所拖曳的資料，並修改資料表視圖，以便在新的資料列（或列）中加入資料。
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession`指出資料表視圖是否可以接受所拖曳的資料。 在此程式碼片段中`CanLoadObjects` ，是用來確認此資料表視圖可以接受字串資料。
+`CanHandleDropSession` 指出資料表視圖是否可以接受所拖曳的資料。 在此程式碼片段中，`CanLoadObjects` 是用來確認此資料表視圖可以接受字串資料。
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,9 +108,9 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-當拖曳作業正在進行時，會重複呼叫方法，以提供視覺提示給使用者。`DropSessionDidUpdate`
+當拖曳作業正在進行時，會重複呼叫 `DropSessionDidUpdate` 方法，以提供視覺提示給使用者。
 
-在下列程式碼中`HasActiveDrag` ，是用來判斷作業是否源自于目前資料表的視圖。 若是如此，則只允許移動單一資料列。
+在下列程式碼中，`HasActiveDrag` 用來判斷作業是否源自于目前的資料表視圖。 若是如此，則只允許移動單一資料列。
 如果從另一個來源拖曳，則會顯示覆製作業：
 
 ```csharp
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-Drop 作業可以是`Cancel`、 `Move`或`Copy`其中一個。
+Drop 作業可以是 `Cancel`、`Move`或 `Copy`的其中一個。
 
 Drop 意圖可以是插入新的資料列，或將資料加入或附加至現有的資料列。
 
 #### <a name="performdrop"></a>PerformDrop
 
-當使用者完成作業時，會呼叫方法，並修改資料表視圖和資料來源以反映捨棄的資料。`PerformDrop`
+當使用者完成作業時，會呼叫 `PerformDrop` 方法，並修改資料表視圖和資料來源以反映捨棄的資料。
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)

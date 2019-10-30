@@ -3,15 +3,15 @@ title: 發行至 Amazon App Store
 ms.prod: xamarin
 ms.assetid: A3E9EAC7-2968-8891-CDF2-B73FC0013EC9
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 818b6afef395b081768f8bdd6538d5a8ecbad178
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 288ff00b35c369581e50b8e8777f85b7b6119590
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753745"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021310"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>發行至 Amazon App Store
 
@@ -21,7 +21,7 @@ Amazon Mobile App Distribution Program (Amazon 行動應用程式散發計劃) �
 
 Amazon 並無限制 APK 大小。 不過，如果 APK 大於 30 MB，就會使用 FTP 來散發，而不會使用「Amazon 行動應用程式散發入口網站」。
 
-## <a name="submitting-apps-binary-info"></a>提交應用程式：二進位資訊
+## <a name="submitting-apps-binary-info"></a>提交應用程式：二進位檔資訊
 
 將應用程式提交給 Amazon App Store 的流程與將應用程式提交給 Google Play 的流程類似。 由 Amazon 散發的應用程式需要具備下列資產： 
 

@@ -4,15 +4,15 @@ description: 本檔說明如何在 Xamarin iOS 應用程式中提供 haptic 的�
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 112ee17eab872f9265687869bec82e72f44e81da
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 156af7a5336ac091c0202e38a3a59a32846e281a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287097"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003352"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>在 Xamarin 中提供 Haptic 的意見反應
 
@@ -33,13 +33,13 @@ ms.locfileid: "70287097"
 
 ## <a name="about-haptic-feedback"></a>關於 Haptic 意見反應
 
-數個內建的 UI 元素已提供 haptic 的意見反應，例如選擇器、交換器和滑杆。 iOS 10 現在新增了使用`UIFeedbackGenerator`類別的具象子類別，以程式設計方式觸發 haptics 的功能。
+數個內建的 UI 元素已提供 haptic 的意見反應，例如選擇器、交換器和滑杆。 iOS 10 現在新增了以程式設計方式使用 `UIFeedbackGenerator` 類別的具體子類別來觸發 haptics 的功能。
 
-開發人員可以使用下列`UIFeedbackGenerator`其中一個子類別，以程式設計方式觸發 haptic 的意見反應：
+開發人員可以使用下列其中一個 `UIFeedbackGenerator` 子類別，以程式設計方式觸發 haptic 的意見反應：
 
 - `UIImpactFeedbackGenerator`-使用此意見反應產生器來補充動作或工作，例如，當視圖滑入位置或兩個螢幕物件衝突時呈現「thud」。
-- `UINotificationFeedbackGenerator`-使用此意見反應產生器來進行通知，例如動作完成、失敗或其他任何類型的警告。
-- `UISelectionFeedbackGenerator`-將此意見產生器用於一種主動變更的選取範圍，例如從清單中挑選項目。
+- `UINotificationFeedbackGenerator`-使用此意見反應產生器進行通知，例如動作完成、失敗或其他任何類型的警告。
+- `UISelectionFeedbackGenerator`-使用此意見產生器，讓選取範圍主動變更，例如從清單中挑選項目。
 
 <a name="UIImpactFeedbackGenerator" />
 
@@ -61,15 +61,15 @@ impact.Prepare ();
 impact.ImpactOccurred ();
 ```
 
-當開發人員建立類別的新實例時`UIImpactFeedbackGenerator` ，他們會`UIImpactFeedbackStyle`提供，將意見反應的強度指定為：
+當開發人員建立 `UIImpactFeedbackGenerator` 類別的新實例時，他們會提供 `UIImpactFeedbackStyle` 將意見反應的強度指定為：
 
 - `Heavy`
 - `Medium`
 - `Light`
 
-呼叫的`UIImpactFeedbackGenerator`方法，以通知系統 haptic 意見反應即將發生，使其可以將延遲降到最低。 `Prepare`
+呼叫 `UIImpactFeedbackGenerator` 的 `Prepare` 方法，以通知系統 haptic 意見反應即將發生，使其可以將延遲降到最低。
 
-然後`ImpactOccurred` ，方法會觸發 haptic 的意見反應。
+然後，`ImpactOccurred` 方法會觸發 haptic 的意見反應。
 
 <a name="UINotificationFeedbackGenerator" />
 
@@ -91,9 +91,9 @@ notification.Prepare ();
 notification.NotificationOccurred (UINotificationFeedbackType.Error);
 ```
 
-建立`UINotificationFeedbackGenerator`類別的新實例，並呼叫其`Prepare`方法來通知系統 haptic 意見反應即將發生，使其可以將延遲降到最低。
+建立 `UINotificationFeedbackGenerator` 類別的新實例，並呼叫它的 `Prepare` 方法來通知系統 haptic 意見反應即將發生，使其可以將延遲降到最低。
 
-呼叫以使用給定`UINotificationFeedbackType`的來觸發 haptic 意見反應： `NotificationOccurred`
+呼叫 `NotificationOccurred` 以觸發具有給定 `UINotificationFeedbackType` 的 haptic 意見反應：
 
 - `Success`
 - `Warning`
@@ -119,9 +119,9 @@ selection.Prepare ();
 selection.SelectionChanged ();
 ```
 
-建立`UISelectionFeedbackGenerator`類別的新實例，並呼叫其`Prepare`方法來通知系統 haptic 意見反應即將發生，使其可以將延遲降到最低。
+建立 `UISelectionFeedbackGenerator` 類別的新實例，並呼叫它的 `Prepare` 方法來通知系統 haptic 意見反應即將發生，使其可以將延遲降到最低。
 
-然後`SelectionChanged` ，方法會觸發 haptic 的意見反應。
+然後，`SelectionChanged` 方法會觸發 haptic 的意見反應。
 
 ## <a name="summary"></a>總結
 

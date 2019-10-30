@@ -4,15 +4,15 @@ description: 本文件連結的指南會描述如何在 Mac 和 Windows 上安�
 ms.prod: xamarin
 ms.assetid: E5A29963-C8BD-465B-BFC1-7FAC9CC64BD3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/16/2019
-ms.openlocfilehash: ce37fa50440f6b35536f1225d7540baea182f9f5
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+ms.openlocfilehash: 76696c094634c90fc0f9d445b932e04f53bc87c7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584297"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022516"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS 安裝
 

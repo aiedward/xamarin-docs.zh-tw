@@ -3,15 +3,15 @@ title: 32/64 位平臺考慮
 description: 本檔說明以 Xamarin 或 Xamarin 應用程式的32位和64位架構為目標時，要牢記在心的各種考慮。
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: bcee9c7e09a9470cbf80e99c047a7c52f61f888a
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71249798"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016324"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 位平臺考慮
 
@@ -40,9 +40,9 @@ Xamarin 的 Classic API （`XamMac.dll` 和 `monotouch.dll`）僅支援32位應�
 
 1. 在  **Solution Pad**中，按兩下應用程式的專案，以開啟 **專案選項** 視窗。
 2. 選取 [ **IOS 組建**]。
-3. 針對 iPhone 模擬器，請在 **支援的架構** 下拉式清單中，選取  **x86 \_64**  或  **i386 + x86 \_64**：
+3. 針對 iPhone 模擬器，請在 [**支援的架構**] 下拉式清單中，選取 [ **x86\_64** ] 或 [ **i386 + x86\_64**]：
 
-   [![將支援的架構設定為 x86 \_64 或 i386 + x86 \_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![將支援的架構設定為 x86\_64 或 i386 + x86\_64](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
 4. 針對實體裝置，請選取其中一個可用的**ARM64**組合：
 
@@ -55,9 +55,9 @@ Xamarin 的 Classic API （`XamMac.dll` 和 `monotouch.dll`）僅支援32位應�
 
 1. 在 **方案總管**中，以滑鼠右鍵按一下應用程式的專案，然後選取 **屬性**。
 2. 選取 [ **IOS 組建**]。
-3. 針對 iPhone 模擬器，請將**支援的架構**設定為**x86 \_64**或**i386 + x86 \_64**： 
+3. 針對 iPhone 模擬器，請將**支援的架構**設定為**x86\_64**或**i386 + x86\_64**： 
 
-   [![將支援的架構設定為 x86_64 或 i386 + x86 \_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![將支援的架構設定為 x86_64 或 i386 + x86\_64](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. 針對實體裝置，請選取其中一個可用的**ARM64**組合：
     

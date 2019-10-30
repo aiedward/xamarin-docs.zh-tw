@@ -3,21 +3,21 @@ title: Apple 帳戶管理
 description: 本檔說明如何使用 Visual Studio for Mac 和 Visual Studio 2019 中的 Apple 帳戶管理功能。
 ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 65945a303375863f7b92b20405aa78e6b2edacda
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 81f161442b33eee94f32c506947ed029fd40aadb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766128"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016349"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
-Apple 帳戶管理介面提供一種方式，可讓您查看與 Apple ID 相關聯的所有開發小組。 它也可讓您藉由顯示一份檢視每個小組的更多詳細_簽署身分識別_並_佈建設定檔_安裝在電腦上。
+Apple 帳戶管理介面提供一種方式，可讓您查看與 Apple ID 相關聯的所有開發小組。 此外，它也可讓您藉由顯示電腦上已安裝的_簽署_身分識別和布建_設定檔_清單，來查看每個小組的更多詳細資料。
 
-您的 Apple ID 驗證是在命令列上使用[fastlane](https://fastlane.tools/)來執行。 您的電腦上必須安裝 fastlane，才可成功進行驗證。 fastlane 並安裝方式的更多有關詳述 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md) 輔助線。
+您的 Apple ID 驗證是在命令列上使用[fastlane](https://fastlane.tools/)來執行。 您的電腦上必須安裝 fastlane，才可成功進行驗證。 如需有關 fastlane 和如何安裝的詳細資訊，請見[fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)指南。
 
 [Apple 帳戶] 對話方塊可讓您執行下列動作：
 
@@ -39,7 +39,7 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
 
 - 請確定您已連線到網際網路。 這是因為 fastlane 會直接與 Apple Developer 入口網站進行通訊。
 - 請確定您已[安裝 fastlane 工具](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)。
-- 請確定您有來自[https://download.fastlane.tools](https://download.fastlane.tools)的最新 fastlane 工具。
+- 請確定您有[https://download.fastlane.tools](https://download.fastlane.tools)的最新 fastlane 工具。
 - 開始之前，請務必接受[開發人員入口網站](https://developer.apple.com/account/)中的任何使用者授權合約。
 
 ## <a name="adding-an-apple-developer-account"></a>新增 Apple 開發人員帳戶
@@ -50,7 +50,7 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
 
     ![Apple 開發人員帳戶選項](apple-account-management-images/image1.png)
 
-2. 按下 **+** 按鈕以顯示登入 對話方塊，如下所述： 
+2. 按 [ **+** ] 按鈕以顯示 [登入] 對話方塊，如下所示： 
 
     ![fastlane 對話方塊。](apple-account-management-images/image2.png)
 
@@ -64,7 +64,7 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
 
     ![已新增帳戶的 Apple 開發人員帳戶對話方塊](apple-account-management-images/image5.png)
 
-6. 選取任何小組，然後按 [ **View Details （詳細資料**）]。 按鈕。 這會顯示一份所有「簽署身分識別和安裝在您的電腦的佈建設定檔」：
+6. 選取任何小組，然後按 [ **View Details （詳細資料**）]。 按鈕。 這會顯示安裝在您電腦上的所有簽署身分識別和布建配置檔案清單：
 
     ![顯示您電腦上的簽署身分識別和布建設定檔的 [查看詳細資料] 畫面](apple-account-management-images/image6.png)
 
@@ -82,13 +82,13 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
 
 1. 一旦成功新增您的帳戶，您就會看到您的 Apple ID 和您的 Apple ID 所屬的任何小組。
 
-1. 選取任何小組，然後按 [ **View Details （詳細資料**）]。 按鈕。 這會顯示一份所有「簽署身分識別和安裝在您的電腦的佈建設定檔」：
+1. 選取任何小組，然後按 [ **View Details （詳細資料**）]。 按鈕。 這會顯示安裝在您電腦上的所有簽署身分識別和布建配置檔案清單：
 
     ![使用者名稱和密碼對話方塊](apple-account-management-images/prov2.png)
 
 -----
 
-## <a name="managing-signing-identities-and-provisioning-profiles"></a>管理「簽署身分識別和佈建設定檔」
+## <a name="managing-signing-identities-and-provisioning-profiles"></a>管理簽署身分識別和布建設定檔
 
 [小組詳細資料] 對話方塊會顯示依類型組織的簽署身分識別清單。 [**狀態**] 欄會建議您是否有憑證： 
 
@@ -104,7 +104,7 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
 
 ## <a name="create-a-signing-identities"></a>建立簽署身分識別
 
-若要建立新的簽署身分識別，請選取 **Create Certificate** 下拉式按鈕，然後選取您所需要的類型。 如果您有正確的許可權，將會在幾秒後出現新的簽署身分識別。
+若要建立新的簽署身分識別，請選取 [**建立憑證**] 下拉按鈕，然後選取您需要的類型。 如果您有正確的許可權，將會在幾秒後出現新的簽署身分識別。
 
 如果下拉式方塊中的選項呈現灰色且未選取，則表示您沒有正確的小組許可權可以建立這種類型的憑證。
 
@@ -144,7 +144,7 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
 
 ### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>如果您在登入帳戶時遇到問題，請嘗試下列步驟：
 
-- 開啟 keychain 應用程式，然後在 [類別] 下選取 [*密碼*]。 `deliver.`搜尋並刪除所有專案。
+- 開啟 keychain 應用程式，然後在 [類別] 下選取 [*密碼*]。 搜尋 `deliver.`，並刪除所有專案。
 
 ### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>「新增帳戶時發生錯誤。 請使用應用程式特定的密碼登入」
 

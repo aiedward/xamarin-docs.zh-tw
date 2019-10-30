@@ -4,19 +4,19 @@ description: 大部分的應用程式都需要將資料儲存在本機裝置上�
 ms.prod: xamarin
 ms.assetid: 6B47E864-C6E7-4AA2-8DEF-2C8BF551D17C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 2343603199661ea39b1f0af172ce0ccf48a2cd66
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9906e617b7072ebf7b1213a7278d117dc4f560ab
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754581"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023866"
 ---
 # <a name="xamarinandroid-data-access"></a>Xamarin. Android 資料存取
 
-_大部分的應用程式都需要將資料儲存在本機裝置上。除非完整的資料量很小，否則應用程式通常需要資料庫和資料層來管理資料庫存取。Android 具有 SQLite 資料庫引擎的內建功能，而且 Xamarin 的平臺簡化了儲存和取出資料的存取。本檔說明如何以跨平臺方式存取 SQLite 資料庫。_
+_大部分的應用程式都需要將資料儲存在本機裝置上。除非完整的資料量很小，否則應用程式通常需要資料庫和資料層來管理資料庫存取。 Android 具有 SQLite 資料庫引擎的內建功能，而且 Xamarin 的平臺簡化了儲存和取出資料的存取。本檔說明如何以跨平臺方式存取 SQLite 資料庫。_
 
 ## <a name="data-access-overview"></a>資料存取總覽
 
@@ -29,9 +29,9 @@ Xamarin 支援資料庫存取 Api，例如：
 
 本節中大部分的程式碼都是跨平臺，並會在 iOS 或 Android 上執行，而不需要修改。 已討論兩個範例應用程式：
 
-- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)&ndash;簡單的資料作業會將結果寫入文字顯示控制項;
+- [**DataAccess_Basic**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic) &ndash; 簡單的資料作業會將結果寫入文字顯示控制項;
 
-- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)&ndash;將資料作業整合到小型的工作應用程式，以列出和編輯簡單的資料結構。
+- [**DataAccess_Advanced**](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced) &ndash; 將資料作業整合到小型的工作應用程式，以列出和編輯簡單的資料結構。
 
 這兩個範例解決方案都包含 iOS 和 Android 範例應用程式專案。
 

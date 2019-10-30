@@ -4,15 +4,15 @@ description: 本檔描述 iOS 中的協助工具，討論各種可用來讓您�
 ms.prod: xamarin
 ms.assetid: 88D59B36-05A3-4356-AE29-EC2B69CE7162
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 943cdfaee07bc4fd4ed3273840036055ad40b89a
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 31cae6d6770b4c8fc4ff722e67f4ddce8ffdd7c6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766755"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73011294"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的協助工具
 
@@ -44,15 +44,15 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>什麼是 AccessibilityIdentifier？
 
-@No__t_0 是用來設定唯一索引鍵，可用來透過 UIAutomation API 來參考使用者介面專案。
+`AccessibilityIdentifier` 是用來設定唯一索引鍵，可用來透過 UIAutomation API 來參考使用者介面專案。
 
-@No__t_0 的值永遠不會讀出或向使用者顯示。
+`AccessibilityIdentifier` 的值永遠不會讀出或向使用者顯示。
 
 <a name="postnotification" />
 
 ## <a name="postnotification"></a>PostNotification
 
-@No__t_0 方法允許事件在直接互動以外的地方引發（例如，當使用者與特定控制項互動時）。
+`UIAccessibility.PostNotification` 方法允許事件在直接互動以外的地方引發（例如，當使用者與特定控制項互動時）。
 
 ### <a name="announcement"></a>公告
 
@@ -138,4 +138,4 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 - [跨平台協助工具](~/cross-platform/app-fundamentals/accessibility.md)
 - [iOS 協助工具（Apple）](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Accessibility_on_iPhone/Accessibility_on_iPhone.html)
-- [iOS VoiceOver](http://www.apple.com/accessibility/ios/voiceover/)
+- [iOS VoiceOver](https://www.apple.com/accessibility/ios/voiceover/)

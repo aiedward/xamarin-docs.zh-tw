@@ -4,15 +4,15 @@ description: 本文件描述如何針對源自 Objective-C 執行階段的例外
 ms.prod: xamarin
 ms.assetid: B0C0CE31-2737-4969-8EA5-D39D3333E9C2
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: 7340df1d65768363f39c6f080a5d50e2ac250400
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bc5a151323414e867b919035b0c5705234faebf9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769877"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021662"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>在 Xamarin.Mac 應用程式中偵錯原生損毀
 
@@ -22,7 +22,7 @@ ms.locfileid: "70769877"
 
 我們將逐步解說幾個真實的原生損毀範例來探究一下。
 
-## <a name="example-1-assertion-failure"></a>範例 1：宣告失敗
+## <a name="example-1-assertion-failure"></a>範例 1：判斷提示失敗
 
 以下是一個簡單測試應用程式中的前幾行損毀程式碼 (此資訊將會在**應用程式輸出**面板中)：
 
@@ -61,7 +61,7 @@ public override nfloat GetRowHeight (NSTableView tableView, nint row)
 }
 ```
 
-## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>範例 2：回呼跳到不知名的位置
+## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>範例 2：回呼不知跳到哪裡去
 
 ```csharp
 Stacktrace:
@@ -179,11 +179,11 @@ new System.Threading.Thread (() =>
 
 這會強制您的應用程式每秒都執行記憶體回收行程。 請重新執行您的應用程式並嘗試重現 Bug。 如果立即發生損毀，或持續不斷發生而不是隨機發生，即表示您的做法正確。
 
-### <a name="reporting"></a>報表
+### <a name="reporting"></a>報告
 
 下一步是要將問題回報給 Xamarin，以便在未來的版本中修正此繫結。 如果您是商務版或企業版授權的持有者，請透過下列方式建立票證 
 
-[http://xamarin.com/support](http://xamarin.com/support)
+[visualstudio.microsoft.com/vs/support/](https://visualstudio.microsoft.com/vs/support/)
 
 否則，請搜尋現有的問題：
 

@@ -3,19 +3,19 @@ title: 第 4 部分 - 處理多個平台
 description: 本檔說明如何根據平臺或功能來處理應用程式分歧。 它討論螢幕大小、導覽比喻、觸控和手勢、推播通知和介面範例，例如清單和索引標籤。
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fb01d0ca56365fa95aa563ca99394dea39dc7d31
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 555723e689a9ba076ee34d49b93cf7141e542832
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288887"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016894"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>第 4 部分 - 處理多個平台
 
-## <a name="handling-platform-divergence-amp-features"></a>處理平臺分歧&amp;功能
+## <a name="handling-platform-divergence-amp-features"></a>處理平臺分歧 &amp; 功能
 
 分歧不只是「跨平臺」的問題;「相同」平臺上的裝置具有不同的功能（尤其是可用的各種 Android 裝置）。 最明顯的和基本是螢幕大小，但其他裝置屬性可能會有所不同，而且需要應用程式檢查特定功能，並根據其目前狀態（或缺少）以不同的方式運作。
 
@@ -108,7 +108,7 @@ ms.locfileid: "70288887"
 
 在某些情況下，您的共用程式碼仍需要在每個平臺上以不同的方式運作，可能會存取行為不同的類別或功能。 條件式編譯最適合與共享資產專案搭配使用，其中相同的原始程式檔會在已定義不同符號的多個專案中被參考。
 
-Xamarin 專案一律會`__MOBILE__`定義 iOS 和 Android 應用程式專案的 true （請注意這些符號的雙底線前置和後置修正）。
+Xamarin 專案一律會定義適用于 iOS 和 Android 應用程式專案的 `__MOBILE__` （請注意這些符號的雙底線前置和後置修正）。
 
 ```csharp
 #if __MOBILE__
@@ -118,7 +118,7 @@ Xamarin 專案一律會`__MOBILE__`定義 iOS 和 Android 應用程式專案的 
 
 #### <a name="ios"></a>iOS
 
-[Xamarin] 定義`__IOS__`可用來偵測 iOS 裝置的。
+Xamarin 會定義可用來偵測 iOS 裝置的 `__IOS__`。
 
 ```csharp
 #if __IOS__
@@ -148,7 +148,7 @@ Xamarin 專案一律會`__MOBILE__`定義 iOS 和 Android 應用程式專案的 
 #endif
 ```
 
-每個 API 版本也會定義新的編譯器指示詞，因此，這類程式碼可讓您在較新的 Api 為目標時新增功能。 每個 API 層級都包含「較低」層級的符號。 這項功能對於支援多個平臺而言並不實用;`__ANDROID__`符號通常就已足夠。
+每個 API 版本也會定義新的編譯器指示詞，因此，這類程式碼可讓您在較新的 Api 為目標時新增功能。 每個 API 層級都包含「較低」層級的符號。 這項功能對於支援多個平臺而言並不實用;`__ANDROID__` 符號通常就已足夠。
 
 ```csharp
 #if __ANDROID_11__
@@ -158,7 +158,7 @@ Xamarin 專案一律會`__MOBILE__`定義 iOS 和 Android 應用程式專案的 
 
 #### <a name="mac"></a>Mac
 
-目前不會有 Xamarin 的內建符號，但是您可以在 Mac 應用程式專案選項中新增自己的符號，> 在 [**定義符號**] 方塊中**建立 > 編譯器**，或編輯 **.csproj**檔案並在該處`__MAC__`新增（例如）
+目前不會有 Xamarin 的內建符號，但是您可以在 Mac 應用程式專案選項中新增自己的符號，> 在 [**定義符號**] 方塊中**建立 > 編譯器**，或編輯 **.csproj**檔案並在該處新增（例如 `__MAC__`）
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -179,11 +179,11 @@ Xamarin 專案一律會`__MOBILE__`定義 iOS 和 Android 應用程式專案的 
 條件式編譯的簡單案例研究範例是設定 SQLite 資料庫檔案的檔案位置。 這三個平臺在指定檔案位置方面有些許不同的需求：
 
 - **iOS** – Apple 偏好將非使用者資料放在特定位置（程式庫目錄），但此目錄沒有系統常數。 需要平臺特定的程式碼，才能建立正確的路徑。
-- **Android** –所傳回`Environment.SpecialFolder.Personal`的系統路徑是可接受的位置，可儲存資料庫檔案。
+- **Android** – `Environment.SpecialFolder.Personal` 傳回的系統路徑是可接受的位置，可儲存資料庫檔案。
 - **Windows Phone** –隔離儲存機制不允許指定完整路徑，只是相對路徑和檔案名。
-- **通用 Windows 平臺**–使用`Windows.Storage` api。
+- **通用 Windows 平臺**–使用 `Windows.Storage` api。
 
-下列程式碼會使用條件式編譯， `DatabaseFilePath`確保每個平臺的都是正確的：
+下列程式碼會使用條件式編譯，確保每個平臺的 `DatabaseFilePath` 都是正確的：
 
 ```csharp
 public static string DatabaseFilePath {

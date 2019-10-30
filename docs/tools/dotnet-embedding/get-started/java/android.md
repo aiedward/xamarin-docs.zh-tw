@@ -3,15 +3,15 @@ title: 開始使用 Android
 description: 本檔說明如何開始搭配使用 .NET 內嵌與 Android。 討論如何安裝 .NET 內嵌、建立 Android 程式庫專案、使用 Android Studio 專案中產生的輸出，以及其他考慮。
 ms.prod: xamarin
 ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: 9b0da6f5b195ecef5fd4e5e2b4585b660573a5be
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bcda03d41cb3bafcfb3ee4b92046014cc5b0c119
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278566"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029775"
 ---
 # <a name="getting-started-with-android"></a>開始使用 Android
 
@@ -33,7 +33,7 @@ ms.locfileid: "70278566"
 
 新增名為**HelloActivity.cs**的新 android 活動，後面接著 [**資源/版面配置/Axml**] 的 android 版面配置。
 
-將新的`TextView`新增至您的版面配置，並將文字變更為愉快的東西。
+將新的 `TextView` 新增至您的版面配置，並將文字變更為愉快的東西。
 
 您的版面配置來源看起來應該像這樣：
 
@@ -53,7 +53,7 @@ ms.locfileid: "70278566"
 </LinearLayout>
 ```
 
-在您的活動中，確定您是`SetContentView`以新的版面配置來呼叫：
+在您的活動中，請確定您使用新的版面配置來呼叫 `SetContentView`：
 
 ```csharp
 [Activity(Label = "HelloActivity"),
@@ -70,9 +70,9 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> 別忘了`[Register]`屬性。 如需詳細資訊，請參閱[限制](#current-limitations-on-android)。
+> 別忘了 `[Register]` 屬性。 如需詳細資訊，請參閱[限制](#current-limitations-on-android)。
 
-建置專案。 產生的元件將會儲存在`bin/Debug/hello-from-csharp.dll`中。
+建置專案。 產生的元件將會儲存在 `bin/Debug/hello-from-csharp.dll`中。
 
 ## <a name="installing-net-embedding-from-nuget"></a>從 NuGet 安裝 .NET 內嵌
 
@@ -111,7 +111,7 @@ if exist %E4K_OUTPUT% rmdir /S /Q %E4K_OUTPUT%
 
 ![Android Studio 相依性](android-images/androidstudiodependencies.png)
 
-在您的活動中，加入`onResume`新的方法，並使用下列程式碼來C#啟動活動：
+在您的活動中，加入新的 `onResume` 方法，並使用下列程式碼來C#啟動活動：
 
 ```java
 import hello_from_csharp.*;
@@ -159,7 +159,7 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 
 請注意這裡發生的情況：
 
-- 我們有一個C#類別， `HelloActivity`也就是子類別的 JAVA
+- 我們有一個C#類別，`HelloActivity`，子類別為 JAVA
 - 我們有 Android 資源檔
 - 我們在 Android Studio 中使用了這些功能
 
@@ -169,11 +169,11 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 - 包含在**資產/元件**中的 .net 元件
 - **Androidmanifest.xml**您C#的活動的 xml 修改等等。
 - .NET 程式庫中的 Android 資源和資產
-- 適用于任何`Java.Lang.Object`子類別的 [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md)
+- 適用于任何 `Java.Lang.Object` 子類別的 Android 可呼叫[包裝](~/android/platform/java-integration/android-callable-wrappers.md)函式
 
 如果您要尋找額外的逐步解說，請查看下列影片，其中示範如何在 Android Studio 專案中內嵌 Charles Petzold 的[FingerPaint 示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)：
 
-[![適用于 Android 的 Embeddinator-4000](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
+[適用于 Android 的![Embeddinator-4000](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
 
 ## <a name="using-java-18"></a>使用 JAVA 1。8
 
@@ -207,7 +207,7 @@ android {
 
 ## <a name="current-limitations-on-android"></a>Android 上目前的限制
 
-現在，如果您的子`Java.Lang.Object`類別化，則 Xamarin 會產生 JAVA stub （android 可呼叫包裝函式），而不是 .net 內嵌。 因此，您必須遵循相同的規則，將匯出C#至 JAVA 做為 Xamarin。 例如：
+現在，如果您將 `Java.Lang.Object`子類別化，則 Xamarin 會產生 JAVA stub （Android 可呼叫包裝函式），而不是 .NET 內嵌。 因此，您必須遵循相同的規則，將匯出C#至 JAVA 做為 Xamarin。 例如:
 
 ```csharp
 [Register("mono.embeddinator.android.ViewSubclass")]
@@ -223,10 +223,10 @@ public class ViewSubclass : TextView
 }
 ```
 
-- `[Register]`需要對應到所需的 JAVA 套件名稱
-- `[Export]`需要讓 JAVA 能夠看見方法
+- 需要 `[Register]` 才能對應到所需的 JAVA 套件名稱
+- 需要 `[Export]` 才能讓 JAVA 看到方法
 
-我們可以在`ViewSubclass` JAVA 中使用，如下所示：
+我們可以在 JAVA 中使用 `ViewSubclass`，如下所示：
 
 ```java
 import mono.embeddinator.android.ViewSubclass;

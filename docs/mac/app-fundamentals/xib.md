@@ -4,15 +4,15 @@ description: 本文涵蓋如何使用在 Xcode 的 Interface Builder 中建立�
 ms.prod: xamarin
 ms.assetid: 6AF3D216-448D-4B2D-9026-74E4FFF5923A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: be737dfb92cf2ce90dc64dd527f908d52cf2c580
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 6d40dd3cc994ef8ab21ffb9658f226d36cd97913
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770345"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021777"
 ---
 # <a name="xib-files-in-xamarinmac"></a>Xamarin. Mac 中的 xib 檔案
 
@@ -447,7 +447,7 @@ void ShowPreferences (NSObject sender)
 }
 ```
 
-[@No__t_0] 行會建立視窗控制器的新實例，它會從 xib 檔案載入視窗並擴大它。 [@No__t_0] 行會向使用者顯示新視窗。
+[`var preferences = new PreferencesWindowController ();`] 行會建立視窗控制器的新實例，它會從 xib 檔案載入視窗並擴大它。 [`preferences.Window.MakeKeyAndOrderFront (this);`] 行會向使用者顯示新視窗。
 
 如果您執行程式碼，並從 [**應用程式] 功能表**中選取 [**喜好設定 ...** ]，將會顯示視窗：
 

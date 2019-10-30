@@ -3,22 +3,22 @@ title: 建立具有目標 Sharpie 的系結
 description: 本節提供目標 Sharpie 的簡介，這是 Xamarin 的命令列工具，用來將建立系結至目標 C 程式庫的程式自動化
 ms.prod: xamarin
 ms.assetid: 9C0A932C-7601-4357-B3F7-62ABAC835019
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: d5b9fa1edc09b831dbc69ab092dfb5270942e67a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4d6ab6cf48c5c365a4d8d05ef108a4d3a5d16134
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765703"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016185"
 ---
 # <a name="creating-bindings-with-objective-sharpie"></a>建立具有目標 Sharpie 的系結
 
 _本節提供目標 Sharpie 的簡介，這是 Xamarin 的命令列工具，用來將建立系結至目標 C 程式庫的程式自動化_
 
 - [總覽](#overview) & 歷程[記錄](#history)
-- [快速入門](get-started.md)
+- [使用者入門](get-started.md)
 - [工具與命令](tools.md)
 - [功能](platform/index.md)
 - [範例](examples/index.md)

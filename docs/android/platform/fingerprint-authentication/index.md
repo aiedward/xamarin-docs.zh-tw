@@ -4,15 +4,15 @@ description: 本指南討論如何將 Android 6.0 中引進的指紋驗證新增
 ms.prod: xamarin
 ms.assetid: 6742D874-4988-4516-A946-D5C714B20A10
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: a58242e89033d6cd2652495f9466379f63f498f0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4a4b6ee7a123683a9d5a140c46c0b3542767ffa3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761240"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027517"
 ---
 # <a name="fingerprint-authentication"></a>指紋驗證
 
@@ -22,15 +22,15 @@ _本指南討論如何將 Android 6.0 中引進的指紋驗證新增至 Xamarin 
 
 Android 裝置上的指紋掃描器抵達會提供應用程式，替代傳統使用者名稱/密碼方法的使用者驗證。 使用指紋來驗證使用者，可以讓應用程式併入比使用者名稱和密碼更少侵入的安全性。
 
-FingerprintManager Api 會以具有指紋掃描器的裝置為目標，且執行的是 API 層級23（Android 6.0）或更高版本。 Api 會在`Android.Hardware.Fingerprints`命名空間中找到。 Android 支援程式庫 v4 提供適用于較舊版本 Android 的指紋 Api 版本。 在`Android.Support.v4.Hardware.Fingerprint`命名空間中找到相容性 api，會透過[支援 v4 NuGet 封裝](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)來散發。
+FingerprintManager Api 會以具有指紋掃描器的裝置為目標，且執行的是 API 層級23（Android 6.0）或更高版本。 Api 可在 `Android.Hardware.Fingerprints` 命名空間中找到。 Android 支援程式庫 v4 提供適用于較舊版本 Android 的指紋 Api 版本。 相容性 Api 可在 `Android.Support.v4.Hardware.Fingerprint` 命名空間中找到，並透過[支援 V4 NuGet 封裝](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)來散發。
 
 [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html) （及其支援程式庫對應的[FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)）是使用指紋掃描硬體的主要類別。 這個類別是管理與硬體本身互動之系統層級服務的 Android SDK 包裝函式。 它負責啟動指紋掃描器，以及回應掃描器的意見反應。 這個類別具有相當直接的介面，只有三個成員：
 
-- **`Authenticate`** &ndash;這個方法會初始化硬體掃描器，並在背景啟動服務，等待使用者掃描其指紋。
-- **`EnrolledFingerprints`** 如果使用者`true`已向裝置註冊一或多個指紋，則此屬性會傳回。 &ndash;
-- **`HardwareDetected`** &ndash;此屬性是用來判斷裝置是否支援指紋掃描。
+- **`Authenticate`** &ndash; 此方法將會初始化硬體掃描器，並在背景啟動服務，等待使用者掃描其指紋。
+- **`EnrolledFingerprints`** &ndash; 如果使用者已向裝置註冊一或多個指紋，此屬性將會傳回 `true`。
+- **`HardwareDetected`** &ndash; 此屬性可用來判斷裝置是否支援指紋掃描。
 
-Android 應用程式會使用方法來啟動指紋掃描器。`FingerprintManager.Authenticate` 下列程式碼片段是如何使用支援程式庫相容性 Api 叫用它的範例：
+Android 應用程式會使用 `FingerprintManager.Authenticate` 方法來啟動指紋掃描器。 下列程式碼片段是如何使用支援程式庫相容性 Api 叫用它的範例：
 
 ```csharp
 // context is any Android.Content.Context instance, typically the Activity 
@@ -43,7 +43,7 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
                                );
 ```
 
-本指南將討論如何使用`FingerprintManager` api 來增強具有指紋驗證的 Android 應用程式。 其中將說明如何具現化和建立`CryptoObject` ，以協助保護指紋掃描器的結果。 我們將檢查應用程式應該如何從`FingerprintManager.AuthenticationCallback`指紋掃描器子類別化和回應意見反應。 最後，我們將瞭解如何在 Android 裝置或模擬器上註冊指紋，以及如何使用**adb**來模擬指紋掃描。
+本指南將討論如何使用 `FingerprintManager` Api，以指紋驗證來增強 Android 應用程式。 其中將說明如何具現化和建立 `CryptoObject`，以協助保護指紋掃描器的結果。 我們將檢查應用程式應該如何將 `FingerprintManager.AuthenticationCallback` 子類別化，並回應來自指紋掃描器的意見反應。 最後，我們將瞭解如何在 Android 裝置或模擬器上註冊指紋，以及如何使用**adb**來模擬指紋掃描。
 
 ## <a name="requirements"></a>需求
 
@@ -56,7 +56,7 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
 - [指紋指南範例應用程式](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fingerprintguide)
 - [指紋對話方塊範例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
 - [在執行時間要求許可權](https://developer.android.com/training/permissions/requesting.html)
-- [android.hardware.fingerprint](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
-- [android.support.v4.hardware.fingerprint](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)
-- [Android.Content.Context](xref:Android.Content.Context)
+- [android. 硬體指紋](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
+- [android. 支援 v4。](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)
+- [Android. 內容](xref:Android.Content.Context)
 - [指紋和付款 API （影片）](https://youtu.be/VOn7VrTRlA4)

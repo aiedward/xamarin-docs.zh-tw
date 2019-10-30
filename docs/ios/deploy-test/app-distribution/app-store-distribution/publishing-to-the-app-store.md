@@ -4,15 +4,15 @@ description: 本文件描述如何設定、建置及發佈 Xamarin.iOS 應用程
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: b6fb02697d3df59181750bf6fd7c840129554ac3
-ms.sourcegitcommit: 84d788f7dbabc1c83ac795ed3952d589074fa8e8
+ms.openlocfilehash: 3803d7e14b161a7c166bcae37e3d9f46b7637984
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71811174"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026642"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -110,7 +110,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
     另請查看 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md)指南，該指南會進一步描述組建設定。
 
-11. 巡覽至 [iOS 套件組合簽署] 索引標籤。如果此處的選項不可編輯，請確定已在 **Info.plist** 檔案中選取 [手動佈建]。
+11. 流覽至 [ **iOS**套件組合簽署] 索引標籤。如果此處的選項無法編輯，請確定已在**plist**檔案中選取 [**手動**布建]。
 12. 確定 [組態] 設定為 [發行]，且 [平台] 設定為 [iPhone]。
 13. 將 [簽署身分識別] 設定為 [散發 (自動)]。
 14. 針對 [佈建設定檔]，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
@@ -140,7 +140,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
     另請查看 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md)指南，該指南會進一步描述組建設定。
 
-11. 巡覽至 [iOS 套件組合簽署] 索引標籤。確定 [組態] 已設定為 [發行]，且 [平台] 已設定為 [iPhone]，且已選取 [手動佈建]。
+11. 流覽至 [ **iOS**套件組合簽署] 索引標籤。請確定 [設定 **] 已設為 [** **發行**]、[**平臺**] 設定為 [ **iPhone**]，且已選取 [**手動**布建]。
 12. 將 [簽署身分識別] 設定為 [散發 (自動)]。
 13. 針對 [佈建設定檔]，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
 
@@ -169,7 +169,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
     另請查看 [iOS 組建機制](~/ios/deploy-test/ios-build-mechanics.md)指南，該指南會進一步描述組建設定。
 
-11. 巡覽至 [iOS 套件組合簽署] 索引標籤。確定 [組態] 已設定為 [發行]，且 [平台] 已設定為 [iPhone]，且已選取 [手動佈建]。
+11. 流覽至 [ **iOS**套件組合簽署] 索引標籤。請確定 [設定 **] 已設為 [** **發行**]、[**平臺**] 設定為 [ **iPhone**]，且已選取 [**手動**布建]。
 12. 將 [簽署身分識別] 設定為 [散發 (自動)]。
 13. 針對 [佈建設定檔]，選取[上方建立](#create-and-install-an-app-store-provisioning-profile)的 App Store 佈建設定檔。
 
@@ -206,7 +206,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 1. 在 Visual Studio for Mac 中，選取 [發行] 組建組態及要為其建置的裝置 (不是模擬器)。
 
-    ![組建組態與平台選擇](publishing-to-the-app-store-images/chooseConfig-m157.png "組建組態與平台選擇")
+    ![組建設定和平臺選擇](publishing-to-the-app-store-images/chooseConfig-m157.png "組建設定和平臺選擇")
 
 2. 從 [建置] 功能表中選取 [封存以供發佈]。
 3. 建立封存之後，將會顯示 [封存 **] 視圖。** 按一下 [簽署並散發...]，以開啟 [發佈精靈]。
@@ -216,17 +216,17 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
     > [!NOTE]
     > 根據預設，[封存] 檢視只會顯示已開啟方案的封存。 若要查看所有具有封存的方案，請按一下 [顯示所有封存] 核取方塊。 最好是保留舊的封存，以便在必要時，可以使用它們包含的偵錯資訊將當機報告符號化。
 
-4. 選取 [App Store] 散發通道。 按一下 [下一步]。
+4. 選取 [App Store] 散發通道。 按 [ **下一步**]。
 
-5. 選取 [**上傳**] 做為目的地。 按一下 [下一步]。
+5. 選取 [**上傳**] 做為目的地。 按 [ **下一步**]。
 
-6. 在 [佈建設定檔] 視窗中，選取您的簽署身分識別、應用程式和佈建設定檔。 按一下 [下一步]。
+6. 在 [佈建設定檔] 視窗中，選取您的簽署身分識別、應用程式和佈建設定檔。 按 [ **下一步**]。
 
     ![[布建設定檔] 頁面的螢幕擷取畫面，其中顯示有效的簽署身分識別、應用程式和布建設定檔選取專案。](publishing-to-the-app-store-images/provProfileSelect-mac.png "[布建設定檔嚮導] 頁面的螢幕擷取畫面，其中已選取有效的簽署身分識別、應用程式和布建設定檔。")
 
-7. 在 [ **App Store Connect 資訊**] 視窗中，從功能表中選取 [Apple ID username]，然後輸入[應用程式特定的密碼](https://support.apple.com/ht204397)。 按一下 [下一步]。
+7. 在 [ **App Store Connect 資訊**] 視窗中，從功能表中選取 [Apple ID username]，然後輸入[應用程式特定的密碼](https://support.apple.com/ht204397)。 按 [ **下一步**]。
 
-    ![[App Store] [連線資訊] [wizard] 頁面的螢幕擷取畫面，其中顯示已選取的 APPLE ID 使用者名稱。](publishing-to-the-app-store-images/connectInfo-mac.png "[App Store] [連線資訊] [wizard] 頁面的螢幕擷取畫面，其中顯示已選取的 APPLE ID 使用者名稱。")
+    ![[App Store] [連線資訊] [wizard] 頁面的螢幕擷取畫面，其中顯示已選取的 Apple ID 使用者名稱。](publishing-to-the-app-store-images/connectInfo-mac.png "[App Store] [連線資訊] [wizard] 頁面的螢幕擷取畫面，其中顯示已選取的 Apple ID 使用者名稱。")
 
 8. 確認套件的詳細資料，然後按一下 [**發佈**]。 選取要儲存 .ipa 檔案的位置之後，嚮導會將您的應用程式上傳至 App Store Connect。
 
@@ -251,7 +251,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 4. 建立封存之後，請按一下 [**散發 ...** ] 以開啟 [發佈嚮導]。
 
-    [封存]![管理員視圖中 [發佈] 按鈕位置的螢幕擷取畫面。][封存](publishing-to-the-app-store-images/archives-win.png "管理員視圖中 [發佈] 按鈕位置的螢幕擷取畫面。")
+    ![[封存] 管理員視圖中 [發佈] 按鈕位置的螢幕擷取畫面。](publishing-to-the-app-store-images/archives-win.png "[封存] 管理員視圖中 [發佈] 按鈕位置的螢幕擷取畫面。")
 
 5. 選取 [App Store] 散發通道。
 
@@ -261,7 +261,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 7. 輸入您的 Apple ID 和[應用程式特定的密碼](https://support.apple.com/ht204397)。 按一下 **[確定]** ，開始將您的應用程式上傳至 App Store Connect。
 
-    ![快顯視窗的螢幕擷取畫面，以輸入您的 APPLE ID 和應用程式特定密碼。](publishing-to-the-app-store-images/connectInfo-win.png "快顯視窗的螢幕擷取畫面，以輸入您的 APPLE ID 和應用程式特定密碼。")
+    ![快顯視窗的螢幕擷取畫面，以輸入您的 Apple ID 和應用程式特定密碼。](publishing-to-the-app-store-images/connectInfo-win.png "快顯視窗的螢幕擷取畫面，以輸入您的 Apple ID 和應用程式特定密碼。")
 
 # <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
@@ -275,7 +275,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 1. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 從 Visual Studio 2017 [方案組態] 下拉式清單中選取 [發行]，並從 [方案平台] 下拉式清單中選取 [iPhone]。
 
-    ![組建組態與平台選擇](publishing-to-the-app-store-images/chooseConfig-w157.png "組建組態與平台選擇")
+    ![組建設定和平臺選擇](publishing-to-the-app-store-images/chooseConfig-w157.png "組建設定和平臺選擇")
 
 3. 建置專案。 這會建立 .ipa 檔案。
 
@@ -308,7 +308,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 11. 按一下 [下一步] 按鈕後，就會對 App Store 驗證應用程式：
 
-    ![對 App Store 進行驗證](publishing-to-the-app-store-images/publishvs03.png "對 App Store 進行驗證")
+    ![針對 App Store 進行驗證](publishing-to-the-app-store-images/publishvs03.png "針對 App Store 進行驗證")
 
 12. 按一下 [傳送] 按鈕將應用程式傳送至 Apple 進行審查。
 13. 當檔案已成功上傳時，應用程式載入器會通知您。
@@ -326,7 +326,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 若要查看您的應用程式提交狀態，請登入 iTunes Connect，並選取您的應用程式。 初始狀態應該是**等候審查**，但在處理時可能會暫時顯示**已收到上傳**。
 
-![等候審查](publishing-to-the-app-store-images/image21.png "等候審查")
+![等待審核](publishing-to-the-app-store-images/image21.png "等待審核")
 
 ## <a name="tips-and-tricks"></a>秘訣和訣竅
 

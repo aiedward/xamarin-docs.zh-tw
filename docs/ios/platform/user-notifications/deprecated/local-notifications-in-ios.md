@@ -4,15 +4,15 @@ description: 本節說明如何在 Xamarin 中執行本機通知。 其中將說
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: eb8956e44a3148d79fff59d728cb63818b9bab60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0cd0937229e8679af46313d0bce4c62792c0f36b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292742"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031373"
 ---
 # <a name="notifications-in-xamarinios"></a>在 Xamarin 中的通知
 
@@ -43,7 +43,7 @@ application.RegisterUserNotificationSettings(notificationSettings);
 
 [![確認傳送本機通知的能力](local-notifications-in-ios-images/image0-sml.png "確認傳送本機通知的能力")](local-notifications-in-ios-images/image0.png#lightbox)
 
-若要排程本機通知，請建立`UILocalNotification`物件、 `FireDate`設定，然後透過`UIApplication.SharedApplication`物件上的`ScheduleLocalNotification`方法進行排程。 下列程式碼片段示範如何排程在未來將會引發一分鐘的通知，並顯示含有訊息的警示：
+若要排程本機通知，請建立 `UILocalNotification` 物件、設定 `FireDate`，然後透過 `UIApplication.SharedApplication` 物件上的 `ScheduleLocalNotification` 方法進行排程。 下列程式碼片段示範如何排程在未來將會引發一分鐘的通知，並顯示含有訊息的警示：
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
@@ -56,7 +56,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 下列螢幕擷取畫面顯示此警示的樣子：
 
-[![](local-notifications-in-ios-images/image2-sml.png "範例警示")](local-notifications-in-ios-images/image2.png#lightbox)
+[![](local-notifications-in-ios-images/image2-sml.png "An example alert")](local-notifications-in-ios-images/image2.png#lightbox)
 
 請注意，如果使用者選擇*不允許*通知，則不會顯示任何內容。
 
@@ -79,7 +79,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 
 ## <a name="handling-notifications"></a>處理通知
 
-iOS 應用程式以幾乎完全相同的方式處理遠端和本機通知。 當應用程式正在執行時， `ReceivedLocalNotification`會呼叫`AppDelegate`類別`ReceivedRemoteNotification`上的方法或方法，並將通知資訊當做參數傳遞。
+iOS 應用程式以幾乎完全相同的方式處理遠端和本機通知。 當應用程式正在執行時，會呼叫 `AppDelegate` 類別上的 `ReceivedLocalNotification` 方法或 `ReceivedRemoteNotification` 方法，並將通知資訊當做參數傳遞。
 
 應用程式可以用不同的方式處理通知。 例如，應用程式可能只會顯示警示，以提醒使用者某個事件的相關資訊。 或者，可能會使用通知向使用者顯示處理常式已完成的警示，例如將檔案同步至伺服器。
 
@@ -99,7 +99,7 @@ public override void ReceivedLocalNotification(UIApplication application, UILoca
 }
 ```
 
-如果應用程式未執行，iOS 將會播放音效，並（或）將圖示徽章更新為適用的狀態。 當使用者啟動與警示相關聯的應用程式時，應用程式將會啟動， `FinishedLaunching`並會呼叫 app 委派上的方法，並透過`launchOptions`參數傳入通知資訊。 如果選項字典包含索引鍵`UIApplication.LaunchOptionsLocalNotificationKey`， `AppDelegate`則會知道應用程式是從本機通知啟動。 下列程式碼片段示範此流程：
+如果應用程式未執行，iOS 將會播放音效，並（或）將圖示徽章更新為適用的狀態。 當使用者啟動與警示相關聯的應用程式時，應用程式將會啟動，並會呼叫 app 委派上的 `FinishedLaunching` 方法，並透過 `launchOptions` 參數傳入通知資訊。 如果選項字典包含 `UIApplication.LaunchOptionsLocalNotificationKey`的索引鍵，則 `AppDelegate` 知道應用程式是從本機通知啟動。 下列程式碼片段示範此流程：
 
 ```csharp
 // check for a local notification
@@ -119,7 +119,7 @@ if (launchOptions.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
 }
 ```
 
-若為遠端通知， `launchOptions`將會`LaunchOptionsRemoteNotificationKey`具有具有相關聯`NSDictionary`的，其中包含遠端通知裝載的。 您可以透過`alert`、 `badge`和`sound`金鑰來解壓縮通知承載。 下列程式碼片段顯示如何取得遠端通知：
+若為遠端通知，`launchOptions` 將會有一個 `LaunchOptionsRemoteNotificationKey`，其中包含與遠端通知承載相關聯的 `NSDictionary`。 您可以透過 `alert`、`badge`和 `sound` 金鑰來解壓縮通知承載。 下列程式碼片段顯示如何取得遠端通知：
 
 ```csharp
 NSDictionary remoteNotification = options[UIApplication.LaunchOptionsRemoteNotificationKey];
@@ -131,12 +131,12 @@ if(remoteNotification != null)
 
 ## <a name="summary"></a>總結
 
-本節說明如何在 Xamarin 中建立和發佈通知。 它會顯示應用程式如何藉由覆寫`ReceivedLocalNotification`中`AppDelegate`的方法`ReceivedRemoteNotification`或方法，來回應通知。
+本節說明如何在 Xamarin 中建立和發佈通知。 它會顯示應用程式如何藉由覆寫 `AppDelegate`中的 `ReceivedLocalNotification` 方法或 `ReceivedRemoteNotification` 方法，來回應通知。
 
 ## <a name="related-links"></a>相關連結
 
 - [本機通知（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
 - [開發人員的本機和推播通知](https://developer.apple.com/notifications/)
 - [本機和推播通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
-- [UIApplication](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UIApplication)
-- [UILocalNotification](http://iosapi.xamarin.com/?link=T%3aMonoTouch.UIKit.UILocalNotification)
+- [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
+- [UILocalNotification](https://docs.microsoft.com/dotnet/api/uikit.UILocalNotification)

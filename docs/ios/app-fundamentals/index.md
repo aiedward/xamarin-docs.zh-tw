@@ -4,15 +4,15 @@ description: 本檔連結的各種指南，描述了 Xamarin iOS 開發的基本
 ms.prod: xamarin
 ms.assetid: 608403AE-B09F-4D9C-8F59-F9DE9F0B1CF1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/21/2017
-ms.openlocfilehash: 59257dafc1d92756feb85046df43de7b9da0cc42
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0ccdde29183645b93831b7261909714f9baf3fa4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290147"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010020"
 ---
 # <a name="xamarinios-application-fundamentals"></a>Xamarin iOS 應用程式基本概念
 
@@ -72,4 +72,4 @@ Apple 在 iOS 10 （及更新版本）中提供了許多安全性和隱私權方
 
 ## <a name="working-with-user-defaultsiosapp-fundamentalsuser-defaultsmd"></a>[使用使用者預設值](~/ios/app-fundamentals/user-defaults.md)
 
-`NSUserDefaults`類別可讓 iOS 應用程式和延伸模組以程式設計方式與全系統的預設系統互動。 藉由使用預設系統，使用者可以設定應用程式的行為或樣式，以符合其喜好設定（根據應用程式的設計）。 例如，若要呈現度量與英制測量的資料，或選取特定的 UI 主題。
+`NSUserDefaults` 類別可讓 iOS 應用程式和延伸模組以程式設計方式與全系統的預設系統互動。 藉由使用預設系統，使用者可以設定應用程式的行為或樣式，以符合其喜好設定（根據應用程式的設計）。 例如，若要呈現度量與英制測量的資料，或選取特定的 UI 主題。

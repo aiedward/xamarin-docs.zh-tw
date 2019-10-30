@@ -1,18 +1,18 @@
 ---
 title: Xamarin.Mac 應用程式的應用程式圖示
-description: 本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統合至 .icns 檔案，以及將圖示納入 Xamarin.Mac 專案中。
+description: 本文涵蓋建立 Xamarin.Mac 應用程式的圖示所需的影像、將影像統合至 .icns 檔案，以及將圖示納入 Xamarin.Mac 專案中。
 ms.prod: xamarin
 ms.assetid: 675b9405-d9a7-49f0-94ad-417f10a71d11
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 2a5f8f6f2feda1ab27c874d8281483e9e26f0855
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d0acd44561b220507aafda7af05cd2862f6c9009
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770144"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021708"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的應用程式圖示
 
@@ -24,7 +24,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 優良的圖示應會傳達 Xamarin.Mac 應用程式的用途，且提示使用者在使用應用程式時預期會有的體驗。 本文涵蓋建立圖示所需的影像資產、將這些資產封裝至 `AppIcon.appiconset` 檔案，以及在 Xamarin.Mac 應用程式中取用該檔案的所有必要步驟。
 
-![AppIcon.appiconset 編輯器](app-icon-images/intro01.png "AppIcon.appiconset 編輯器")
+![Appicons.appiconset 編輯器](app-icon-images/intro01.png "Appicons.appiconset 編輯器")
 
 ## <a name="application-icon"></a>應用程式圖示
 
@@ -80,7 +80,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 1. 在 [Solution Pad] 中，開啟 [Assets.xcassets] > [AppIcons.appiconset]： 
 
-    ![編輯 AppIcon.appiconset](app-icon-images/intro01.png "編輯 AppIcon.appiconset")
+    ![編輯 AppIcon. appicons.appiconset](app-icon-images/intro01.png "編輯 AppIcon. appicons.appiconset")
 2. 對於必要的各種圖示大小，按一下該圖示，然後選取依上述建立的對應影像檔案： 
 
     [![選取圖示影像](app-icon-images/intro02.png "選取圖示影像")](app-icon-images/intro02-large.png#lightbox)
@@ -100,7 +100,7 @@ _本文涵蓋建立 Xamarin.Mac 應用程式圖示所需的影像、將影像統
 
 當應用程式執行時，即會在 Dock 中顯示新圖示：
 
-![macOS Dock 中的應用程式圖示範例](app-icon-images/icon04.png "macOS Dock 中的應用程式圖示範例")
+![MacOS dock 中的應用程式圖示範例](app-icon-images/icon04.png "MacOS dock 中的應用程式圖示範例")
 
 ## <a name="summary"></a>總結
 

@@ -4,15 +4,15 @@ description: 本檔說明如何使用資產目錄來管理 Xamarin iOS 應用程
 ms.prod: xamarin
 ms.assetid: BFB5665A-F557-46E1-B35E-870CC2026AD9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/26/2017
-ms.openlocfilehash: e0b899e69405874f381c3ab6f9a9200a856d7402
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 62253adafcd028f459e8ca0cc11a8eb3e54d52c3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767303"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004178"
 ---
 # <a name="app-store-icons-in-xamarinios"></a>Xamarin 中的 App Store 圖示
 
@@ -25,7 +25,7 @@ Apple 建議在設計應用程式圖示時遵循下列指導方針：
 - 確保圖示適合應用程式。
 - 建立與應用程式設計一致的簡單圖示。
 - 圖示中避免使用文字。
-- 全球思維：所有商店區域都使用單一的應用程式圖示。
+- 全域思考：單一應用程式圖式將用於市集內的所有區域。
 
 在 App Store 中顯示的應用程式圖示必須有 1024 x 1024 影像像素。  Apple 表明資產目錄中的應用程式市集圖示不得透明或含有 Alpha 色板。
 

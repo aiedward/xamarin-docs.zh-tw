@@ -4,15 +4,15 @@ description: 本主題說明如何處理 Xamarin. Android 中的裝置方向變�
 ms.prod: xamarin
 ms.assetid: 6D33ADF7-ED81-0256-479D-D9E3787A76B0
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 98acabec7132730304bf5e8b81e99f2727b6d50e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3277dd5eb7600500a5f60b2bbb13621aa237a235
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755575"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73019275"
 ---
 # <a name="handling-rotation"></a>處理旋轉
 
@@ -24,18 +24,18 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 
 本指南會檢查下列方向主題：
 
-- **宣告式版面配置旋轉**&ndash;如何使用 Android 資源系統來建立可感知方向的應用程式，包括如何載入特定方向的版面配置和可繪製資源。
+- **宣告式版面配置輪替**&ndash; 如何使用 Android 資源系統建立方向感知應用程式，包括如何載入特定方向的版面配置和可繪製資源。
 
-- 程式**設計版面配置旋轉**&ndash;如何以程式設計方式加入控制項，以及如何手動處理方向變更。
+- 程式**設計版面配置旋轉**&ndash; 如何以程式設計方式加入控制項，以及如何手動處理方向變更。
 
 ## <a name="handling-rotation-declaratively-with-layouts"></a>以宣告方式使用版面配置來處理旋轉
 
 藉由將檔案包含在遵循命名慣例的資料夾中，Android 會在方向變更時自動載入適當的檔案。
 這包括的支援：
 
-- *版面配置資源*&ndash;指定針對每個方向放大的配置檔案。
+- 配置*資源*&ndash; 指定要針對每個方向放大的版面配置檔案。
 
-- *繪製資源*&ndash;指定每個方向所要載入的可繪製資源。
+- 可*繪製資源*&ndash; 指定要針對每個方向載入的可繪製資源。
 
 ### <a name="layout-resources"></a>版面配置資源
 
@@ -43,7 +43,7 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 
 [![預設專案範本結構](handling-rotation-images/00.png)](handling-rotation-images/00.png#lightbox)
 
-此專案會在**Resources/layout**資料夾中建立單一**axml**檔案。 呼叫活動的`OnCreate`方法時，它會擴大 axml 中定義的視圖 **，** 這會宣告一個按鈕，如下列 XML 所示：
+此專案會在**Resources/layout**資料夾中建立單一**axml**檔案。 呼叫活動的 `OnCreate` 方法時，它會擴大 axml 中定義的視圖 **，** 這會宣告一個按鈕，如下列 XML 所示：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,13 +59,13 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 </LinearLayout>
 ```
 
-如果裝置已旋轉為橫向方向，則會再次呼叫`OnCreate`活動的方法，並擴大相同的**axml**檔案，如下列螢幕擷取畫面所示：
+如果裝置已旋轉為橫向方向，則會再次呼叫活動的 `OnCreate` 方法，並擴大相同的**axml**檔案，如下列螢幕擷取畫面所示：
 
-[![相同畫面但橫向](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
+[![相同的畫面，但橫向的方向](handling-rotation-images/01-sml.png)](handling-rotation-images/01.png#lightbox)
 
 #### <a name="orientation-specific-layouts"></a>方向特定的版面配置
 
-除了版面配置資料夾（預設為直向，而且也可以藉由包含名為`layout-land`的資料夾來明確命名配置 *-埠*），應用程式可以在不需變更任何程式碼的情況下，定義所需的視圖。
+除了 [配置] 資料夾（預設為 [縱向]，也可以藉由包含名為 [`layout-land`] 的資料夾，明確命名為 [配置 *-埠*]），應用程式可以在不變更任何程式碼的情況下，定義所需的視圖。
 
 假設**axml**檔案包含下列 XML：
 
@@ -81,7 +81,7 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 </RelativeLayout>
 ```
 
-如果將包含額外**axml**檔案的資料夾加入至專案，則在橫向時因而誇大配置，現在會導致 Android 載入新增的**Main. axml。** 請考慮包含下列程式碼的**axml**檔案的橫向版本（為了簡單起見，此 XML 類似于程式碼的預設「垂直」版本，但在中`TextView`使用不同的字串）：
+如果將包含額外**axml**檔案的資料夾加入至專案，則在橫向時因而誇大配置，現在會導致 Android 載入新增的**Main. axml。** 請考慮包含下列程式碼的**axml**檔案的橫向版本（為了簡單起見，此 XML 類似于預設的程式碼垂直版本，但在 `TextView`中使用不同的字串）：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -97,13 +97,13 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 
 執行此程式碼並將裝置從直向直向橫向，會示範新的 XML 載入，如下所示：
 
-[![縱向和橫向螢幕擷取畫面列印直向模式](handling-rotation-images/02.png)](handling-rotation-images/02.png#lightbox)
+[![直向和橫向螢幕擷取畫面列印直向模式](handling-rotation-images/02.png)](handling-rotation-images/02.png#lightbox)
 
 ### <a name="drawable-resources"></a>繪製資源
 
 在旋轉期間，Android 會將可繪製的資源視為類似于配置資源。 在此情況下，系統會分別從**資源/「繪製**」和「**資源/能繪製**」的資料夾取得可繪製資源。
 
-例如，假設專案包含**Resources/可繪製**資料夾中名為猴子的影像，其中的可繪製會從`ImageView` XML 參考，如下所示：
+例如，假設專案包含**Resources/可繪製**資料夾中名為猴子的影像，其中可從 XML 中的 `ImageView` 參考繪製，如下所示：
 
 ```xml
 <ImageView
@@ -116,7 +116,7 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 
 讓我們進一步假設不同版本的**猴子**都包含在**資源/可繪製-land**之下。 就像設定檔案一樣，當裝置旋轉時，會針對指定的方向進行可繪製的變更，如下所示：
 
-[![不同版本的猴子. 以直向和橫向模式顯示的 png](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
+[以直向和橫向模式顯示的![不同的猴子版本。](handling-rotation-images/03.png)](handling-rotation-images/03.png#lightbox)
 
 ## <a name="handling-rotation-programmatically"></a>以程式設計方式處理旋轉
 
@@ -133,7 +133,7 @@ _本主題說明如何處理 Xamarin. Android 中的裝置方向變更。其中�
 - 將控制項加入至版面配置。
 - 將版面配置設定為內容視圖。
 
-例如，假設有一個由加入`TextView` `RelativeLayout`至的單一控制群組成的使用者介面，如下列程式碼所示。
+例如，假設有一個由加入至 `RelativeLayout`的單一 `TextView` 控制群組成的使用者介面，如下列程式碼所示。
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -162,13 +162,13 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-此程式碼會建立`RelativeLayout`類別的實例，並設定其`LayoutParameters`屬性。 `LayoutParams`類別是以可重複使用的方式來封裝控制項位置的 Android 方式。 建立版面配置的實例之後，就可以建立控制項並將其加入其中。 控制項也具有`LayoutParameters`，例如此範例`TextView`中的。 建立之後，將它新增`RelativeLayout`至，並將設定`RelativeLayout`為內容視圖會導致應用程式顯示， `TextView`如下所示： `TextView`
+此程式碼會建立 `RelativeLayout` 類別的實例，並設定它的 `LayoutParameters` 屬性。 `LayoutParams` 類別是以可重複使用的方式來封裝控制項位置的 Android 方式。 建立版面配置的實例之後，就可以建立控制項並將其加入其中。 控制項也有 `LayoutParameters`，例如此範例中的 `TextView`。 建立 `TextView` 之後，將其新增至 `RelativeLayout`，並將 `RelativeLayout` 設定為內容視圖，會導致應用程式顯示 `TextView`，如下所示：
 
-[![以直向和橫向模式顯示的 [遞增計數器] 按鈕](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
+[以直向和橫向模式顯示的![遞增計數器] 按鈕](handling-rotation-images/04.png)](handling-rotation-images/04.png#lightbox)
 
 ### <a name="detecting-orientation-in-code"></a>在程式碼中偵測方向
 
-當呼叫時`OnCreate` ，如果應用程式嘗試為每個方向載入不同的使用者介面（這會在每次裝置旋轉時發生），它必須偵測方向，然後載入所需的使用者介面程式碼。 Android 有一個稱為的`WindowManager`類別，可以用來透過`WindowManager.DefaultDisplay.Rotation`屬性來判斷目前的裝置旋轉，如下所示：
+如果應用程式在呼叫 `OnCreate` 時，嘗試為每個方向載入不同的使用者介面（這會在每次裝置旋轉時發生），它必須偵測方向，然後載入所需的使用者介面程式碼。 Android 有一個稱為 `WindowManager`的類別，可用來透過 `WindowManager.DefaultDisplay.Rotation` 屬性來判斷目前的裝置旋轉，如下所示：
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -208,19 +208,19 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-這段程式碼`TextView`會將設定為從畫面左上角到100圖元的位置，當旋轉為橫向時，會自動以動畫顯示新的版面配置，如下所示：
+這段程式碼會將 `TextView` 設定為從畫面左上角到100圖元的位置，當旋轉為橫向時，會自動以動畫顯示新的版面配置，如下所示：
 
-[![跨直向和橫向模式會保留檢視狀態](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
+[跨直向和橫向模式會保留![檢視狀態](handling-rotation-images/05.png)](handling-rotation-images/05.png#lightbox)
 
 ### <a name="preventing-activity-restart"></a>防止活動重新開機
 
-除了處理中`OnCreate`的所有專案，應用程式也可以在方向變更`ConfigurationChanges` `ActivityAttribute`時，防止重新開機活動，如下所示：
+除了處理 `OnCreate`中的所有專案，應用程式也可以在方向設定 `ActivityAttribute` `ConfigurationChanges` 時，防止重新開機活動，如下所示：
 
 ```csharp
 [Activity (Label = "CodeLayoutActivity", ConfigurationChanges=Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
 ```
 
-現在當裝置旋轉時，不會重新開機活動。 為了在此情況下手動處理方向變更，活動可以覆寫`OnConfigurationChanged`方法，並`Configuration`從傳入的物件判斷方向，如同下列活動的新執行：
+現在當裝置旋轉時，不會重新開機活動。 為了在此情況下手動處理方向變更，活動可以覆寫 `OnConfigurationChanged` 方法，並從傳入的 `Configuration` 物件判斷方向，如同下列活動的新執行：
 
 ```csharp
 [Activity (Label = "CodeLayoutActivity", ConfigurationChanges=Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
@@ -271,7 +271,7 @@ public class CodeLayoutActivity : Activity
 }
 ```
 
-這裡的`TextView's`版面配置參數會針對橫向和直向進行初始化。 類別變數會連同`TextView`本身一樣保存參數，因為當方向變更時，不會重新建立活動。 程式`surfaceOrientartion` 代碼仍`OnCreate`會使用中的來設定的初始配置。 `TextView` 之後， `OnConfigurationChanged`會處理所有後續的版面配置變更。
+這裡的 `TextView's` 版面配置參數會針對橫向和直向進行初始化。 類別變數會連同 `TextView` 本身一樣保存參數，因為當方向變更時，不會重新建立活動。 程式碼仍會使用 `OnCreate` 中的 `surfaceOrientartion` 來設定 `TextView`的初始配置。 之後，`OnConfigurationChanged` 會處理所有後續的版面配置變更。
 
 當我們執行應用程式時，Android 會在裝置輪替發生時載入使用者介面變更，而不會重新開機活動。
 
@@ -279,7 +279,7 @@ public class CodeLayoutActivity : Activity
 
 如果我們在 XML 中定義版面配置，也可以防止裝置輪替所造成的活動重新開機。 例如，如果我們想要防止活動重新開機（可能是基於效能的原因），我們可以使用這種方法，而我們不需要針對不同的方向載入新的資源。
 
-若要這樣做，我們會遵循與程式設計配置搭配使用的相同程式。 簡單地`ConfigurationChanges` 在中`CodeLayoutActivity`設定，如同我們在先前所`ActivityAttribute`做的一樣。 任何需要針對方向變更執行的程式碼，都可以再次在`OnConfigurationChanged`方法中執行。
+若要這樣做，我們會遵循與程式設計配置搭配使用的相同程式。 只要在 `ActivityAttribute`中設定 `ConfigurationChanges`，就像我們稍早在 `CodeLayoutActivity` 中所做的一樣。 任何需要針對方向變更執行的程式碼，都可以再次在 `OnConfigurationChanged` 方法中執行。
 
 ## <a name="maintaining-state-during-orientation-changes"></a>在方向變更時維護狀態
 
@@ -296,4 +296,4 @@ public class CodeLayoutActivity : Activity
 - [旋轉示範（範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-rotationdemo)
 - [活動生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [處理執行時間變更](https://developer.android.com/guide/topics/resources/runtime-changes.html)
-- [快速畫面方向變更](http://android-developers.blogspot.com/2009/02/faster-screen-orientation-change.html)
+- [快速畫面方向變更](https://android-developers.blogspot.com/2009/02/faster-screen-orientation-change.html)

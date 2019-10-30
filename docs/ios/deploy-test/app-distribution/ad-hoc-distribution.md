@@ -4,15 +4,15 @@ description: 本文件提供臨機操作散發技術的概觀，此技術主要�
 ms.prod: xamarin
 ms.assetid: 3B621CAD-103C-478A-97C3-829015F48D1A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ca524e9ff3c1d3c938905093f55a6482ea085963
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 74e258eeca78260fbfe3811e1dc6d8051e68e5f2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763198"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030260"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的臨機操作散發
 
@@ -50,11 +50,11 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 3. 按一下 [+] 按鈕以建立新的憑證。
 4. 根據您的計劃成員身分，在 [生產環境] 標題下，選取 [In-House and Ad Hoc] (內部和臨機操作) 或是 [App Store and Ad HocA] (App Store 和臨機操作)：
 
-   [![選取 [內部] 和 [臨機操作]，或 [App Store] 和 [臨機操作]](ad-hoc-distribution-images/cert-first-small.png)](ad-hoc-distribution-images/cert-first-large.png#lightbox)
+   [![選取 [內部] 和 [臨機操作]，或 [應用程式存放區] 和 [特定]](ad-hoc-distribution-images/cert-first-small.png)](ad-hoc-distribution-images/cert-first-large.png#lightbox)
 
 5. 按一下 [繼續]，並遵循指示以透過 Keychain 存取來建立憑證簽署要求：
 
-   [![透過 Keychain 存取建立憑證簽署要求](ad-hoc-distribution-images/createcertmanually02.png)](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
+   [![透過 Keychain 存取來建立憑證簽署要求](ad-hoc-distribution-images/createcertmanually02.png)](ad-hoc-distribution-images/createcertmanually02.png#lightbox)
 
 6. 依指示建立 CSR 之後，請按一下 [繼續] 並將 CSR 上傳到 Member Center：
 
@@ -66,9 +66,9 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 
 或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請遵循下列步驟：
 
-1. 選取您的小組，並按一下 [管理憑證…]：[![選取小組](ad-hoc-distribution-images/selectteam.png)](ad-hoc-distribution-images/selectteam.png#lightbox)
+1. 選取您的小組，然後按一下 [**管理憑證 ...** ]： [![選取小組](ad-hoc-distribution-images/selectteam.png)](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2. 接著，按一下 [加號 (+)] 按鈕，然後選取 [iOS App Store]：[![選取 iOS App Store](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox)
+2. 接下來，按一下 [**加號（+）** ] 按鈕，然後選取 [ **ios app store**]： [![選取 [ios app store](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox) ]
 
 <a name="createprofile" />
 
@@ -79,7 +79,7 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 ### <a name="create-an-app-id"></a>建立應用程式識別碼
 如同您所建立的任何其他佈建設定檔，此處也需要應用程式識別碼才能識別要散發給使用者裝置的應用程式。 如果您尚未建立應用程式識別碼，請遵循下列步驟來建立：
 
-1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [識別碼] 下的 [應用程式識別碼]。
+1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [Identifiers] \(識別碼\) 底下的 [App IDs] \(應用程式識別碼\)。
 2. 按一下 [+] 按鈕，並提供可在入口網站中識別應用程式的**名稱**。
 3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取「明確」或「萬用字元」應用程式識別碼，並以反向 DNS 格式輸入套件組合識別碼，例如：
     - **明確**：`com.[DomainName].[AppName]`
@@ -89,11 +89,11 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 
 一旦您有建立散發設定檔所需的元件之後，請遵循下列步驟來建立散發設定檔：
 
-1. 返回 Apple Provisioning Portal 並選取 [佈建] > [散發]：[![選取布建 > 散發](ad-hoc-distribution-images/distribute01.png)](ad-hoc-distribution-images/distribute01.png#lightbox)
+1. 返回 Apple 布建入口網站，然後選取 [布建 **> 發佈**]：![選取 [布建] [ [> 散發](ad-hoc-distribution-images/distribute01.png)](ad-hoc-distribution-images/distribute01.png#lightbox)]
 
 2. 按一下 [+] 按鈕，並選取您想要建立為**臨機操作** 的散發設定檔類型：
 
-    [![建立特定散發類型](ad-hoc-distribution-images/distribute02.png)](ad-hoc-distribution-images/distribute02.png#lightbox)
+    [![建立特定的散發類型](ad-hoc-distribution-images/distribute02.png)](ad-hoc-distribution-images/distribute02.png#lightbox)
 
 3. 按一下 [繼續] 按鈕，並從您要建立散發設定檔的下拉式清單中選取應用程式識別碼：
 
@@ -107,7 +107,7 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 
     [![輸入新散發設定檔的名稱](ad-hoc-distribution-images/distribute06.png)](ad-hoc-distribution-images/distribute06.png#lightbox)
 
-6. 按一下 [產生] 按鈕，以建立新的設定檔，並完成流程。
+6. 按一下 [產生] 按鈕，以建立新的設定檔，並完成程序。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -170,7 +170,7 @@ Xamarin.iOS 應用程式可透過「臨機操作」散發進行使用者測試�
 
 ### <a name="ipa-support-for-ad-hoc-deployment"></a>IPA 對臨機操作部署的支援
 
-應用程式在佈建之後，可以封裝為稱為 *IPA* 的檔案。 這是包含應用程式與其他中繼資料和圖示的 ZIP 檔案。 IPA 可以用來在本機中將應用程式新增至 iTunes，以便應用程式能直接同步處理到佈建設定檔中所包含的裝置。
+應用程式在佈建之後，可以封裝為稱為 *IPA* 的檔案。 這是包含應用程式與其他中繼資料和圖示的 ZIP 檔案。 IPA 可以用來在本機中將應用程式加入 iTunes，以便應用程式能直接同步處理到佈建設定檔中所包含的裝置。
 
 如需建立 IPA 的詳細資訊，請參閱 [IPA 支援](~/ios/deploy-test/app-distribution/ipa-support.md)指南。
 

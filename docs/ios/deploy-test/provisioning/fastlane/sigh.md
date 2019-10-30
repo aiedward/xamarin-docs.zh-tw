@@ -4,15 +4,15 @@ description: 本文件描述 fastlane 的 sigh 命令，它用來建立、更新
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: c9b6f6c29b86ee40c2d7b04dbe6fa4ce24a745ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9506d80ab10ce70938f95371a52bf28bda33d42d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762637"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028501"
 ---
 # <a name="fastlane-for-ios-sigh"></a>適用於 iOS 的 fastlane - sigh
 
@@ -50,7 +50,7 @@ ms.locfileid: "70762637"
 
 ## <a name="what-is-sigh"></a>什麼是 sigh
 
-sigh 提供的終端機介面，可讓您建立及更新所有組態的佈建設定檔：開發、App Store 散發、臨機操作散發和企業散發。 此外，它也提供一個簡單的方式來下載和修復佈建設定檔。
+sigh 提供一個終端機介面，可讓您為下列所有組態建立和更新佈建設定檔：開發、App Store 散發、Ad Hoc 散發及企業散發。 此外，它也提供一個簡單的方式來下載和修復佈建設定檔。
 
 <a name="appid" />
 
@@ -64,7 +64,7 @@ fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
 
 其中 `com.company.appname` 是您應用程式的套件組合識別碼，您可以在 Xamarin.iOS 應用程式的 Info.plist 檔案中找到此識別碼，如下所示：
 
-[![](sigh-images/fastlane-image5.png "Xamarin.iOS 應用程式的 Info.plist 檔案")](sigh-images/fastlane-image5.png#lightbox)
+[![](sigh-images/fastlane-image5.png "The Info.plist file of the Xamarin.iOS application")](sigh-images/fastlane-image5.png#lightbox)
 
 唯一「應用程式識別碼」必須是反向 DNS 樣式字串。 建立此識別碼之後，請記下它，因為稍後在本指南中使用 sigh 時，將會需要用到它。
 
@@ -111,7 +111,7 @@ fastlane sigh --development
 
 如果您的 Apple ID 與多個小組連線，此處將會顯示這些小組。 請選取與您想要使用之小組對應的號碼：
 
-[![](sigh-images/fastlane-image2.png "選取您想要使用的小組")](sigh-images/fastlane-image2.png#lightbox)
+[![](sigh-images/fastlane-image2.png "Select the team that you wish to use")](sigh-images/fastlane-image2.png#lightbox)
 
 您也可以透過下列方式將「小組識別碼」傳遞給 CLI：
 
@@ -127,7 +127,7 @@ fastlane 將會接著為您建立、下載及安裝佈建設定檔。
 
 如果您瀏覽 Developer Center (開發人員中心)，就可以檢視新建立的佈建設定檔，如下所示：
 
-[![](sigh-images/fastlane-image10.png "檢視新建立的佈建設定檔")](sigh-images/fastlane-image10.png#lightbox)
+[![](sigh-images/fastlane-image10.png "View the newly created provisioning profile")](sigh-images/fastlane-image10.png#lightbox)
 
 sigh 預設會將佈建設定檔儲存在目前的資料夾中。 若要變更輸出目錄，請編輯 `output_path`，或是執行下列動作：
 

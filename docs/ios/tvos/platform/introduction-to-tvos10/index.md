@@ -4,15 +4,15 @@ description: 本文介紹 tvOS 10 for Xamarin. tvOS 開發人員所提供的所�
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8c338f8a5b2f1d41b1ea0f61778a1c14eb84ce08
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 02fda984d65bb89ac3dc8a4ae5e15e2c61ec7d90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769148"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030618"
 ---
 # <a name="introduction-to-tvos-10"></a>tvOS 10 簡介
 
@@ -38,7 +38,7 @@ tvOS 10 現在支援深色和淺色使用者介面主題，所有的內建 UIKit
 
 Apple 在 tvOS 10 的安全性和隱私權方面做了幾項增強，可協助開發人員改善其應用程式的安全性，並確保使用者的隱私權。
 
-因此，在 watchOS 3 （或更新版本）上執行的應用程式必須在其`Info.plist`檔案中輸入一或多個隱私權特定金鑰，以靜態方式宣告其意圖，以存取特定功能或使用者資訊，並向使用者說明應用程式想要取得存取權的原因。
+因此，在 watchOS 3 （或更新版本）上執行的應用程式必須在其 `Info.plist` 檔案中輸入一或多個隱私權特定金鑰，以靜態方式宣告其意圖，以存取特定功能或使用者資訊，並向使用者說明應用程式想要取得存取權的原因。
 
 由於 tvOS 10 與 iOS 10 共用這些變更，請參閱我們的 iOS 10[安全性和隱私權增強功能](~/ios/app-fundamentals/security-privacy.md)指南，以取得詳細資訊。
 
@@ -52,12 +52,12 @@ Video 訂閱者帳戶架構是 tvOS 10 的新功能，可讓支援已驗證串�
 
 tvOS 10 延伸了擴充範圍像素格式的支援，以及整個系統的寬範圍色彩空間，包括核心圖形、核心影像、金屬和 AVFoundation 等架構。 在整個圖形堆疊中提供這種行為，即可進一步分階段減緩具有寬色彩顯示的裝置支援。
 
-此外， `UIKit`已修改為在新的擴充的**sRGB** colorspace 中工作，讓您更輕鬆地混合寬色彩 gamuts 中的色彩，而不會大幅降低效能。
+此外，`UIKit` 已修改為在新的擴充的**sRGB** colorspace 中工作，讓您更輕鬆地混合寬色彩 gamuts 中的色彩，而不會大幅降低效能。
 
 使用寬色彩時，Apple 提供下列最佳作法：
 
-- `UIColor`現在會使用 sRGB 色彩空間，而不會再將值設`0.0`為`1.0` to 範圍。 如果應用程式依賴先前的夾具行為，就必須修改 tvOS 10。
-- 如果應用程式執行的自訂`UIImages`轉譯，請使用新的[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)類別來指定擴充範圍或標準範圍格式的使用。
+- `UIColor` 現在會使用 sRGB 色彩空間，而不會再將值設為 `0.0` 以 `1.0` 範圍。 如果應用程式依賴先前的夾具行為，就必須修改 tvOS 10。
+- 如果應用程式執行 `UIImages`的自訂轉譯，請使用新的[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)類別來指定擴充範圍或標準範圍格式的使用。
 - 當使用低層級的 API （例如核心圖形或金屬）來提供影像處理時，應用程式應該使用支援16位浮點值的擴充範圍色彩空間和像素格式。 必要時，應用程式必須手動將色彩元件值設為 [夾具]。
 - 核心圖形、核心影像和金屬效能著色器全都提供了新的方法，可在兩個色彩空間之間進行轉換。
 

@@ -4,15 +4,15 @@ description: 本檔提供 Xamarin 中的分鏡腳本簡介。 其中描述如何
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: cf181cf6c27476b7073073467ef186c352645e39
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 494ac624ac4a77c592f358b68aec4429551a49a8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70768883"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73002436"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的分鏡腳本簡介
 
@@ -266,7 +266,7 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-如需註冊類別和方法的詳細資訊，請參閱[類型註冊機構](http://docs.xamarin.com/guides/ios/advanced_topics/registrar/)檔。
+如需註冊類別和方法的詳細資訊，請參閱[類型註冊機構](https://docs.microsoft.com/xamarin/ios/internals/registrar)檔。
 
 此類別的最後一個步驟是將按鈕和轉換成粉紅色的視圖控制器。 我們會從分鏡腳本將 `PinkViewController` 具現化;然後，我們會使用 `PushViewController` 來設計推播 segue，如下列範例程式碼所示：
 

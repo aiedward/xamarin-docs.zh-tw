@@ -5,15 +5,15 @@ ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 5995ba06873b2fb5f75c593fbc7136806e50d982
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 0cf44a05f8b40a07dcc099d5789171f4a234a0c2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70290595"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032577"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>在 Xamarin 中的 iOS 擴充功能
 
@@ -117,7 +117,7 @@ IOS 10 中新增了[額外的擴充點](~/ios/platform/introduction-to-ios10/ind
 1. 首先，建立新的 iOS、**單一視圖應用程式**專案，然後按 [**下一步]** 按鈕： 
 
     [![](extensions-images/today01.png "First, create a new iOS, Single View App project and click the Next button")](extensions-images/today01.png#lightbox)
-2. @No__t_0 呼叫專案，然後按 [**下一步]** 按鈕： 
+2. `TodayContainer` 呼叫專案，然後按 [**下一步]** 按鈕： 
 
     [![](extensions-images/today02.png "Call the project TodayContainer and click the Next button")](extensions-images/today02.png#lightbox)
 3. 確認**專案名稱**和解決**解決方案，然後按一下**[**建立**] 按鈕以建立方案： 
@@ -126,7 +126,7 @@ IOS 10 中新增了[額外的擴充點](~/ios/platform/introduction-to-ios10/ind
 4. 接下來，在 **方案總管**中，以滑鼠右鍵按一下方案，然後從 **今日擴充**功能 範本新增**iOS 擴充**功能專案： 
 
     [![](extensions-images/today04.png "Next, in the Solution Explorer, right-click on the Solution and add a new iOS Extension project from the Today Extension template")](extensions-images/today04.png#lightbox)
-5. @No__t_0 呼叫專案，然後按 [**下一步]** 按鈕： 
+5. `DaysRemaining` 呼叫專案，然後按 [**下一步]** 按鈕： 
 
     [![](extensions-images/today05.png "Call the project DaysRemaining and click the Next button")](extensions-images/today05.png#lightbox)
 6. 檢查項目，然後按一下 [**建立**] 按鈕以建立它： 
@@ -286,7 +286,7 @@ public override void ViewDidLoad ()
 
 使用延伸模組時，請使用「統一類型識別碼」（UTI）來建立和操作在應用程式、其他應用程式和/或服務之間交換的資料。
 
-@No__t_0 靜態類別會定義下列與 Apple `kUTType...` 定義相關的協助程式屬性：
+`MobileCoreServices.UTType` 靜態類別會定義下列與 Apple `kUTType...` 定義相關的協助程式屬性：
 
 - `kUTTypeAlembic` - `Alembic`
 - `kUTTypeAliasFile` - `AliasFile`

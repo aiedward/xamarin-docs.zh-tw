@@ -4,15 +4,15 @@ description: 本文說明如何使用單一的整合分鏡腳本，針對所有 
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 18d33dfcef109fd29f32969b9bdd15b8a2dc475a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3adabbac3f56747093aa8a3def85869a92d33600
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70764045"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73010491"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>適用于 Xamarin iOS 應用程式的啟動畫面
 
@@ -32,12 +32,12 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 
 1. 在 Visual Studio for Mac 中，選取 [檔案] **> [新增方案**]，然後選擇 [**單一視圖應用程式**] 來建立新的專案： 
 
-    ![新增專案 視窗的 使用選取的單一檢視應用程式](launch-screens-images/launch01.png)
+    ![已選取單一 View 應用程式的 [新增專案] 視窗](launch-screens-images/launch01.png)
 
     - 根據預設，新的專案會包含定義啟動畫面介面的**LaunchScreen 檔案。** 
     - 若要改為將啟動畫面分鏡腳本新增至現有的專案，請以滑鼠右鍵按一下  **Solution Pad**中的專案名稱，然後選擇 **加入 > 新增檔案 ...** ，然後選取 **啟動畫面**：
 
-    ![新的檔案 視窗的 ios 啟動畫面選取](launch-screens-images/launch01b.png)
+    ![已選取 iOS 啟動畫面的 [新增檔案] 視窗](launch-screens-images/launch01b.png)
 
     - 將檔案命名為**LaunchScreen**或您選擇的其他名稱。
 
@@ -50,7 +50,7 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 
     - 根據預設，新的專案會設定為使用**LaunchScreen**做為啟動畫面。
 
-3. 新增映像**appicon**資產目錄，如此就可供使用，在 啟動 畫面。 如需詳細資訊，請參閱[顯示影像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)指南中的將[影像新增至資產目錄影像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)一節。
+3. 將影像新增至**Assets.xcassets**資產目錄，讓它可在啟動畫面上使用。 如需詳細資訊，請參閱[顯示影像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)指南中的將[影像新增至資產目錄影像集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)一節。
 
 4. 在  **Solution Pad**中按兩下以開啟**LaunchScreen**進行編輯。
 
@@ -189,36 +189,36 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-當更新現有應用程式以在其啟動畫面上使用分鏡腳本時，請以滑鼠右鍵按一下**方案總管**中的**專案名稱**，然後選取 [**加入** > **新**檔案 ...]。選取 [ **iOS**  > **啟動畫面**]，然後按一下 [**新增**] 按鈕：
+當更新現有的應用程式以針對其啟動畫面使用分鏡腳本時，請以滑鼠右鍵按一下 **方案總管**中的**專案名稱**，**然後選取** 新增 > **新**檔案 ...。選取  **iOS**  > **啟動畫面**，然後按一下 **新增** 按鈕：
 
-![](launch-screens-images/storyboard02.png "選取 iOS 啟動畫面")
+![](launch-screens-images/storyboard02.png "Select an iOS Launch Screen")
 
-接下來，按兩下**方案總管**中`Info.plist`的檔案以開啟它進行編輯。 在 [**啟動畫面**] 底下，選取上方建立的新分鏡腳本檔案。
+接下來，按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。 在 [**啟動畫面**] 底下，選取上方建立的新分鏡腳本檔案。
 
-![](launch-screens-images/storyboard09.png "選取上方建立的新分鏡腳本檔案")
+![](launch-screens-images/storyboard09.png "Select the new Storyboard file created above")
 
 若要使用新的腳本做為啟動畫面，請執行下列動作：
 
-1. 按兩下 **方案總管**中`Info.plist`的檔案以開啟它進行編輯。
+1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
 2. 在編輯器的 [**通用啟動映射**] 區段中，開啟 [**啟動畫面**] 下拉式清單，然後選取上方所建立之分鏡腳本的名稱： 
 
-    ![](launch-screens-images/storyboard08.png "將啟動畫面設定為分鏡腳本")
+    ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 以滑鼠右鍵按一下**方案總管**中的專案名稱，然後選取 [**加入** > **新**檔案]： 
+1. 以滑鼠右鍵按一下 **方案總管**中的專案名稱，然後**選取** **新增 > 新檔案 ...** ： 
 
-    ![](launch-screens-images/image012.png "加入新檔案")
+    ![](launch-screens-images/image012.png "Add new file")
 2. 輸入啟動畫面的名稱，然後按一下 [**新增**] 按鈕： 
 
-    ![](launch-screens-images/image013.png "輸入啟動畫面的名稱")
+    ![](launch-screens-images/image013.png "Enter a name for the launch screen")
 3. 在 **方案總管**中，按兩下新建立的分鏡腳本檔案，將其開啟進行編輯。
 4. 確定 [**大小] 類別**設定為 [**任何： any** ] 和 **[** **一般**]： 
 
-    ![](launch-screens-images/image016.png "確定 [大小] 類別設定為 [任何：任何] 和 [一般]")
-5. 從大小類別、簡單 UI 專案（例如`UIImageView`），以及您已包含在應用程式套件組合中的影像，組裝啟動畫面： 
+    ![](launch-screens-images/image016.png "Ensure that the Size Class is set to any:any and the View As is Generic")
+5. 從大小類別、簡單 UI 專案（例如 `UIImageView`）和您已包含在應用程式套件組合中的影像，組裝啟動畫面： 
 
-    ![](launch-screens-images/image017.png "元件 iOS 設計工具中的啟動畫面")
+    ![](launch-screens-images/image017.png "Assembly the launch screen in the iOS Designer")
 6. 將變更儲存至分鏡腳本。
 
 -----
@@ -230,4 +230,4 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 - [iOS 設計工具基本概念](~/ios/user-interface/designer/index.md)
 - [將影像新增至資產目錄映射集](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
 - [使用 Xamarin Designer for iOS 的自動版面配置](~/ios/user-interface/designer/designer-auto-layout.md)
-- [人類介面指導方針：啟動畫面](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)
+- [人力介面指導方針：啟動畫面](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

@@ -4,15 +4,15 @@ description: 本檔說明如何使用 iOS 8 中引進的 UIAlertController Api�
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ec2a35a33682ec7bda2840cfb4bc6b4908fc65b0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1264b28b2ee56ec5de610350a199668c67d5c33c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292376"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022095"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin 中顯示警示
 
@@ -20,7 +20,7 @@ ms.locfileid: "70292376"
 
 不同于它所取代的類別（也就是 UIView 的子類別），UIAlertController 是 UIViewController 的子類別。
 
-用`UIAlertControllerStyle`來表示要顯示的警示類型。 這些警示類型包括：
+使用 [`UIAlertControllerStyle`] 表示要顯示的警示類型。 這些警示類型包括：
 
 - **UIAlertControllerStyleActionSheet**
   - 預先 iOS 8 這會是 UIActionSheet
@@ -81,7 +81,7 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 
  ![動作表警示](alerts-images/alert3.png)
 
-使用`AddAction`方法將按鈕新增至警示：
+按鈕會使用 `AddAction` 方法新增至警示：
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {

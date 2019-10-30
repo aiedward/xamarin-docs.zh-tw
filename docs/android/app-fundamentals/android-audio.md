@@ -4,15 +4,15 @@ description: Android OS 為多媒體提供廣泛的支援，同時包含音訊�
 ms.prod: xamarin
 ms.assetid: 646ED563-C34E-256D-4B56-29EE99881C27
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/28/2018
-ms.openlocfilehash: 8719d521fe512f348aade0a3d43d2f0b0d3bf0ec
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ac59bcbb062dc9dae784d18054048f50094c2145
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755631"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018075"
 ---
 # <a name="android-audio"></a>Android 音訊
 
@@ -20,34 +20,34 @@ _Android OS 為多媒體提供廣泛的支援，同時包含音訊和影片。�
 
 ## <a name="overview"></a>總覽
 
-新式行動裝置採用的功能，先前可能會有設備&ndash;攝影機、音樂播放機和錄影機所需的專用元件。 因此，多媒體架構已成為行動 Api 中的第一類功能。
+新式行動裝置採用的功能，先前會有必要的設備，&ndash; 攝影機、音樂播放機和錄影機。 因此，多媒體架構已成為行動 Api 中的第一類功能。
 
 Android 提供多媒體的廣泛支援。 本文會探討如何使用 Android 中的音訊，並涵蓋下列主題
 
-1. **使用 MediaPlayer 播放音訊**&ndash;使用`AudioTrack`內`MediaPlayer`建類別來播放音訊，包括本機音訊檔案和使用類別的資料流程音訊檔案。
+1. 使用內建的 `MediaPlayer` 類別播放音訊，以**MediaPlayer** &ndash; 播放音訊，包括使用 `AudioTrack` 類別的本機音訊檔案和資料流程音訊檔案。
 
-2. **錄製音訊**&ndash;使用內`MediaRecorder`建類別錄製音訊。
+2. 使用內建 `MediaRecorder` 類別**錄製**音訊 &ndash; 記錄音訊。
 
-3. 使用**音訊通知**&ndash;使用音訊通知來建立運作正常的應用程式，藉由暫停或取消其音訊輸出來正確回應事件（例如來電）。
+3. 使用音訊通知 &ndash; 使用音訊通知來建立**運作**正常的應用程式，藉由暫停或取消其音訊輸出，正確回應事件（例如來電）。
 
-4. 使用**低層級的音訊**藉由直接寫入`AudioTrack`記憶體緩衝區，使用類別來播放音訊。 &ndash; 使用`AudioRecord`類別錄製音訊，並直接從記憶體緩衝區讀取。
+4. 使用**低層級的音訊**&ndash; 透過 `AudioTrack` 類別直接寫入記憶體緩衝區來播放音訊。 使用 `AudioRecord` 類別錄製音訊，並直接從記憶體緩衝區讀取。
 
 ## <a name="requirements"></a>需求
 
 本指南需要 Android 2.0 （API 層級5）或更高版本。 請注意，您必須在裝置上完成 Android 上的偵錯工具音訊。
 
-必須要求`RECORD_AUDIO` **androidmanifest.xml**中的許可權：
+必須要求**androidmanifest.xml**中的 `RECORD_AUDIO` 許可權：
 
-![已啟用錄音之 Android 資訊清單\_的必要許可權區段](android-audio-images/image01.png)
+![已啟用記錄\_音訊之 Android 資訊清單的必要許可權區段](android-audio-images/image01.png)
 
 ## <a name="playing-audio-with-the-mediaplayer-class"></a>使用 MediaPlayer 類別播放音訊
 
 在 Android 中播放音訊最簡單的方式，就是使用內建的[MediaPlayer](xref:Android.Media.MediaPlayer)類別。
-`MediaPlayer`可以藉由傳入檔案路徑來播放本機或遠端檔案。 不過， `MediaPlayer`非常區分狀態，而且以錯誤狀態呼叫其中一個方法，會導致擲回例外狀況。 請務必依照`MediaPlayer`下面所述的順序進行互動，以避免發生錯誤。
+`MediaPlayer` 可以藉由傳入檔案路徑來播放本機或遠端檔案。 不過，`MediaPlayer` 非常區分狀態，而且在錯誤狀態下呼叫其中一個方法，會導致擲回例外狀況。 請務必依照下面所述順序與 `MediaPlayer` 互動，以避免發生錯誤。
 
 ### <a name="initializing-and-playing"></a>初始化和播放
 
-播放音訊`MediaPlayer`的需要下列順序：
+使用 `MediaPlayer` 播放音訊需要下列順序：
 
 1. 具現化新的[MediaPlayer](xref:Android.Media.MediaPlayer)物件。
 
@@ -103,11 +103,11 @@ player.Release();
 
 ## <a name="using-the-mediarecorder-class-to-record-audio"></a>使用 MediaRecorder 類別錄製音訊
 
-在 Android 中`MediaPlayer`錄製音訊的必然結果是[MediaRecorder](xref:Android.Media.MediaRecorder)類別。 就像一樣，它會區分狀態，而且會透過數個狀態轉換，以到達可以開始錄製的時間點。 `MediaPlayer` 若要錄製音訊， `RECORD_AUDIO`必須設定許可權。 如需如何設定應用程式許可權的指示，請參閱[使用 androidmanifest.xml](~/android/platform/android-manifest.md)。
+在 Android 中錄製音訊 `MediaPlayer` 的必然結果是[MediaRecorder](xref:Android.Media.MediaRecorder)類別。 如同 `MediaPlayer`，它會區分狀態，並會透過數個狀態轉換，以到達可開始錄製的時間點。 若要錄製音訊，必須設定 [`RECORD_AUDIO`] 許可權。 如需如何設定應用程式許可權的指示，請參閱[使用 androidmanifest.xml](~/android/platform/android-manifest.md)。
 
 ### <a name="initializing-and-recording"></a>初始化和記錄
 
-使用錄製音訊時`MediaRecorder`需要執行下列步驟：
+使用 `MediaRecorder` 錄製音訊需要下列步驟：
 
 1. 具現化新的[MediaRecorder](xref:Android.Media.MediaRecorder)物件。
 
@@ -154,7 +154,7 @@ void RecordAudio (String filePath)
 
 ### <a name="stopping-recording"></a>停止錄製
 
-若要停止錄製，請`Stop` `MediaRecorder`在上呼叫方法：
+若要停止錄製，請在 `MediaRecorder`上呼叫 `Stop` 方法：
 
 ```csharp
 recorder.Stop();
@@ -162,13 +162,13 @@ recorder.Stop();
 
 ### <a name="cleaning-up"></a>清理
 
-一旦停止, 請呼叫 `MediaRecorder`Reset[ 方法, 讓它回到閒置狀態:
+一旦 `MediaRecorder` 停止，請呼叫[Reset](xref:Android.Media.MediaRecorder.Reset)方法，讓它回到閒置狀態：
 
 ```csharp
 recorder.Reset();
 ```
 
-當不再需要時, 其資源必須藉由呼叫 `MediaRecorder`Release[ 方法來釋放: ](xref:Android.Media.MediaRecorder.Release)
+當不再需要 `MediaRecorder` 時，其資源必須藉由呼叫[Release](xref:Android.Media.MediaRecorder.Release)方法來釋放：
 
 ```csharp
 recorder.Release();
@@ -178,7 +178,7 @@ recorder.Release();
 
 ### <a name="the-audiomanager-class"></a>AudioManager 類別
 
-[AudioManager](xref:Android.Media.AudioManager)類別提供音訊通知的存取，可讓應用程式在發生音訊事件時知道。 此服務也提供其他音訊功能的存取權，例如音量和響鈴模式控制。 `AudioManager`可讓應用程式處理音訊通知以控制音訊播放。
+[AudioManager](xref:Android.Media.AudioManager)類別提供音訊通知的存取，可讓應用程式在發生音訊事件時知道。 此服務也提供其他音訊功能的存取權，例如音量和響鈴模式控制。 此 `AudioManager` 可讓應用程式處理音訊通知以控制音訊播放。
 
 ### <a name="managing-audio-focus"></a>管理音訊焦點
 
@@ -186,7 +186,7 @@ recorder.Release();
 
 在概念上，這類似于只有一個應用程式具有鍵盤焦點的桌上型電腦上的應用程式：選取其中一個執行中的應用程式之後，鍵盤輸入才會進入該應用程式。
 
-音訊焦點是一種類似的想法，可防止多個應用程式同時播放或錄製音訊。 它比鍵盤焦點更為複雜，因為它是自願&ndash;的，應用程式可能會忽略它目前沒有音訊焦點，而且不論&ndash;是否有不同類型的音訊焦點可以要求. 例如，如果要求者只預期在很短的時間播放音訊，它可能會要求暫時性焦點。
+音訊焦點是一種類似的想法，可防止多個應用程式同時播放或錄製音訊。 它比鍵盤焦點更為複雜，因為它是自願的 &ndash; 應用程式可能會忽略目前沒有音訊焦點和播放，而不 &ndash;，而且因為有不同類型的音訊焦點可以要求。 例如，如果要求者只預期在很短的時間播放音訊，它可能會要求暫時性焦點。
 
 音訊焦點可能會立即授與或一開始拒絕，並于稍後授與。 例如，如果應用程式在撥打電話期間要求音訊焦點，則會遭到拒絕，但當通話完成後，焦點可能會被授與。 在此情況下，會註冊接聽程式，以便在將音訊焦點移開時，據以回應。 要求音訊焦點是用來判斷是否可以播放或錄製音訊。
 
@@ -194,23 +194,23 @@ recorder.Release();
 
 #### <a name="registering-the-callback-for-audio-focus"></a>為音訊焦點註冊回呼
 
-從註冊`FocusChangeListener`回呼，是取得和釋放音訊焦點`IOnAudioChangeListener`的重要部分。 這是因為授與音訊焦點的時間可能會延遲到稍後為止。 例如，應用程式可能會要求在進行通話時播放音樂。 在通話完成之前，不會授與音訊焦點。
+從 `IOnAudioChangeListener` 註冊 `FocusChangeListener` 回呼是取得和釋放音訊焦點的重要部分。 這是因為授與音訊焦點的時間可能會延遲到稍後為止。 例如，應用程式可能會要求在進行通話時播放音樂。 在通話完成之前，不會授與音訊焦點。
 
-基於這個理由，回呼物件會當做參數傳遞至`GetAudioFocus`的方法`AudioManager`中，而此呼叫會註冊回呼。 如果一開始拒絕音訊焦點，但後來被授與，則會`OnAudioFocusChange`在回呼上叫用來通知應用程式。 相同的方法會用來告訴應用程式正在取出音訊焦點。
+基於這個理由，回呼物件會當做參數傳遞至 `AudioManager`的 `GetAudioFocus` 方法中，而這就是註冊回呼的這個呼叫。 如果一開始拒絕音訊焦點，但後來被授與，則在回呼上叫用 `OnAudioFocusChange`，就會通知應用程式。 相同的方法會用來告訴應用程式正在取出音訊焦點。
 
-當應用程式完成使用音訊資源時，它會呼叫`AbandonFocus`的方法`AudioManager`，然後再次傳入回呼。 這會取消註冊回呼並釋放音訊資源，讓其他應用程式可以取得音訊焦點。
+當應用程式完成使用音訊資源時，它會呼叫 `AudioManager`的 `AbandonFocus` 方法，然後再次傳入回呼。 這會取消註冊回呼並釋放音訊資源，讓其他應用程式可以取得音訊焦點。
 
 #### <a name="requesting-audio-focus"></a>要求音訊焦點
 
 要求裝置的音訊資源所需執行的步驟如下：
 
-1. 取得`AudioManager`系統服務的控制碼。
+1. 取得 `AudioManager` 系統服務的控制碼。
 
 2. 建立回呼類別的實例。
 
-3. 藉由呼叫`RequestAudioFocus` `AudioManager`上的方法，來要求裝置的音訊資源。 這些參數是回呼物件、資料流程類型（音樂、語音通話、響鈴等）和所要求的存取權類型（例如，可以短暫要求音訊資源，或不限時間）。
+3. 藉由在 `AudioManager` 上呼叫 `RequestAudioFocus` 方法，來要求裝置的音訊資源。 這些參數是回呼物件、資料流程類型（音樂、語音通話、響鈴等）和所要求的存取權類型（例如，可以短暫要求音訊資源，或不限時間）。
 
-4. 如果已授與要求， `playMusic`則會立即叫用方法，而音訊會開始播放。
+4. 如果已授與要求，則會立即叫用 `playMusic` 方法，而音訊會開始播放。
 
 5. 如果要求遭到拒絕，則不會採取進一步的動作。 在此情況下，只有在稍後授與要求時，才會播放音訊。
 
@@ -234,7 +234,7 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 #### <a name="releasing-audio-focus"></a>釋放音訊焦點
 
-播放軌播放完成時，會叫用上`AbandonFocus` `AudioManager`的方法。 這可讓另一個應用程式取得裝置的音訊資源。 如果其他應用程式已註冊自己的接聽項，則會收到此音訊焦點變更的通知。
+播放軌播放完成時，會叫用 `AudioManager` 上的 `AbandonFocus` 方法。 這可讓另一個應用程式取得裝置的音訊資源。 如果其他應用程式已註冊自己的接聽項，則會收到此音訊焦點變更的通知。
 
 ## <a name="low-level-audio-api"></a>低層級的音訊 API
 
@@ -248,25 +248,25 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 ### <a name="audiotrack-class"></a>AudioTrack 類別
 
-[AudioTrack](xref:Android.Media.AudioTrack)類別會使用低層級的音訊 api 進行錄製，而且是`MediaPlayer`類別的低層級對等。
+[AudioTrack](xref:Android.Media.AudioTrack)類別會使用低層級的音訊 api 進行錄製，而且是 `MediaPlayer` 類別的低層級對等。
 
 #### <a name="initializing-and-playing"></a>初始化和播放
 
-若要播放音訊，必須具現`AudioTrack`化的新實例。 傳入此函式的自[constructor](xref:Android.Media.AudioTrack)變數清單會指定如何播放包含在緩衝區中的音訊範例。 引數為：
+若要播放音訊，必須具現化 `AudioTrack` 的新實例。 傳入此函式的引數清單[會指定如何](xref:Android.Media.AudioTrack)播放包含在緩衝區中的音訊範例。 引數為：
 
-1. 串流類型&ndash;語音、鈴聲、音樂、系統或警示。
+1. 串流類型 &ndash; 語音、鈴聲、音樂、系統或鬧鐘。
 
-2. 以&ndash; Hz 表示的取樣率頻率。
+2. 頻率 &ndash; 以 Hz 表示的取樣率。
 
-3. 頻道設定&ndash; Mono 或身歷聲。
+3. 頻道設定 &ndash; Mono 或身歷聲。
 
-4. 音訊格式&ndash; 8 位或16位編碼。
+4. 音訊格式 &ndash; 8 位或16位編碼。
 
-5. 緩衝區大小&ndash; （以位元組為單位）。
+5. 緩衝區大小 &ndash; 以位元組為單位。
 
-6. 緩衝區模式&ndash;串流或靜態。
+6. 緩衝區模式 &ndash; 資料流程或靜態。
 
-在結構之後, 會叫用`AudioTrack`的 [Play](xref:Android.Media.AudioTrack.Play) 方法來設定它, 以開始播放。 將音訊緩衝區寫入至`AudioTrack`會開始播放：
+在結構之後，會叫用 `AudioTrack` 的[Play](xref:Android.Media.AudioTrack.Play)方法，將其設定為開始播放。 將音訊緩衝區寫入 `AudioTrack` 會開始播放：
 
 ```csharp
 void PlayAudioTrack(byte[] audioBuffer)
@@ -306,7 +306,7 @@ audioTrack.Stop();
 
 #### <a name="cleanup"></a>清除
 
-當不再需要 `AudioTrack`時, 其資源必須藉由呼叫 [Release](xref:Android.Media.AudioTrack.Release) 來釋放:
+當不再需要 `AudioTrack` 時，其資源必須藉由呼叫[Release](xref:Android.Media.AudioTrack.Release)來釋放：
 
 ```csharp
 audioTrack.Release();
@@ -314,25 +314,25 @@ audioTrack.Release();
 
 ### <a name="the-audiorecord-class"></a>AudioRecord 類別
 
-[AudioRecord](xref:Android.Media.AudioRecord)類別等同于`AudioTrack`錄製端上的。 就`AudioTrack`像一樣，它會直接使用記憶體緩衝區來取代檔案和 uri。 它需要`RECORD_AUDIO`在資訊清單中設定許可權。
+[AudioRecord](xref:Android.Media.AudioRecord)類別等同于錄製端上的 `AudioTrack`。 如同 `AudioTrack`，它會直接使用記憶體緩衝區來取代檔案和 Uri。 它需要在資訊清單中設定 `RECORD_AUDIO` 許可權。
 
 #### <a name="initializing-and-recording"></a>初始化和記錄
 
-第一個步驟是建立新的[AudioRecord](xref:Android.Media.AudioRecord)物件。 傳入此函式的自[constructor](xref:Android.Media.AudioRecord)變數清單會提供記錄所需的所有資訊。 不同于`AudioTrack`中的引數大多是列舉，中`AudioRecord`的對等引數是整數。 它們包括：
+第一個步驟是建立新的[AudioRecord](xref:Android.Media.AudioRecord)物件。 傳入此函式的引數清單[會提供記錄](xref:Android.Media.AudioRecord)所需的所有資訊。 不同于 `AudioTrack`，其中引數主要是列舉，`AudioRecord` 中的對等引數是整數。 它們包括：
 
 1. 硬體音訊輸入來源，例如麥克風。
 
-2. 串流類型&ndash;語音、鈴聲、音樂、系統或警示。
+2. 串流類型 &ndash; 語音、鈴聲、音樂、系統或鬧鐘。
 
-3. 以&ndash; Hz 表示的取樣率頻率。
+3. 頻率 &ndash; 以 Hz 表示的取樣率。
 
-4. 頻道設定&ndash; Mono 或身歷聲。
+4. 頻道設定 &ndash; Mono 或身歷聲。
 
-5. 音訊格式&ndash; 8 位或16位編碼。
+5. 音訊格式 &ndash; 8 位或16位編碼。
 
 6. 緩衝區大小（以位元組為單位）
 
-在`AudioRecord`結構化之後，就會叫用其[StartRecording](xref:Android.Media.AudioRecord.StartRecording)方法。 現在已準備好開始錄製。 會`AudioRecord`持續讀取音訊緩衝區以進行輸入，並將此輸入寫出至音訊檔案。
+一旦建立 `AudioRecord` 之後，就會叫用其[StartRecording](xref:Android.Media.AudioRecord.StartRecording)方法。 現在已準備好開始錄製。 `AudioRecord` 會持續讀取音訊緩衝區以進行輸入，並將此輸入寫出至音訊檔案。
 
 ```csharp
 void RecordAudio()
@@ -375,7 +375,7 @@ audRecorder.Stop();
 
 #### <a name="cleanup"></a>清除
 
-當不再需要`AudioRecord` 物件時,呼叫其[Release](xref:Android.Media.AudioRecord.Release)方法會釋放與它相關聯的所有資源:
+當不再需要 `AudioRecord` 物件時，呼叫其[Release](xref:Android.Media.AudioRecord.Release)方法會釋放與它相關聯的所有資源：
 
 ```csharp
 audRecorder.Release();
@@ -383,7 +383,7 @@ audRecorder.Release();
 
 ## <a name="summary"></a>總結
 
-Android OS 提供強大的架構來播放、錄製和管理音訊。 本文涵蓋如何使用高階`MediaPlayer`和`MediaRecorder`類別來播放和錄製音訊。 接下來，它會探索如何使用音訊通知，在不同的應用程式之間共用裝置的音訊資源。 最後，它會處理如何使用低層級的 Api 來播放和錄製音訊，而這是直接與記憶體緩衝區互動的介面。
+Android OS 提供強大的架構來播放、錄製和管理音訊。 本文涵蓋如何使用高階 `MediaPlayer` 和 `MediaRecorder` 類別來播放和錄製音訊。 接下來，它會探索如何使用音訊通知，在不同的應用程式之間共用裝置的音訊資源。 最後，它會處理如何使用低層級的 Api 來播放和錄製音訊，而這是直接與記憶體緩衝區互動的介面。
 
 ## <a name="related-links"></a>相關連結
 

@@ -1,54 +1,54 @@
 ---
-title: Xamarin 中的堆疊視圖
-description: 本文涵蓋在 Xamarin iOS 應用程式中使用新的 UIStackView 控制項，以水準或垂直排列堆疊管理一組子檢視。
+title: Stack Views in Xamarin.iOS
+description: This article covers using the new UIStackView control in a Xamarin.iOS app to manage a set of subviews in either a horizontally or vertically arranged stack.
 ms.prod: xamarin
 ms.assetid: 20246E87-2A49-438A-9BD7-756A1B50A617
 ms.technology: xamarin-ios
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: bde76891b4b01800384ee0579e3fbe14987c5420
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b4a8507d4d1497964f6b60307622ca3e1dc4cd90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768392"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021799"
 ---
-# <a name="stack-views-in-xamarinios"></a>Xamarin 中的堆疊視圖
+# <a name="stack-views-in-xamarinios"></a>Stack Views in Xamarin.iOS
 
-_本文涵蓋在 Xamarin iOS 應用程式中使用新的 UIStackView 控制項，以水準或垂直排列堆疊管理一組子檢視。_
+_This article covers using the new UIStackView control in a Xamarin.iOS app to manage a set of subviews in either a horizontally or vertically arranged stack._
 
 > [!IMPORTANT]
-> 請注意，雖然 iOS 設計工具支援 System.windows.forms.toolstrip.stackview，但在使用穩定通道時，您可能會遇到可用性錯誤。 切換搶鮮版（Beta）或 Alpha 聲道應該可減輕這個問題。 我們決定使用 Xcode 來呈現此逐步解說，直到在穩定通道中執行所需的修正程式為止。
+> Please note that while StackView is supported in the iOS Designer, you may encounter usability bugs when using the Stable channel. Switching the Beta or Alpha channels should alleviate this issue. We have decided to present this walkthrough using Xcode until the fixes required are implemented in the Stable channel.
 
-Stack 視圖控制項（`UIStackView`）會利用自動設定和大小類別的功能來管理子檢視堆疊（不論是水準或垂直），這會動態回應 iOS 裝置的方向和螢幕大小。
+The Stack View control (`UIStackView`) leverages the power of Auto Layout and Size Classes to manage a stack of subviews, either horizontally or vertically, which dynamically responds to the orientation and screen size of the iOS device.
 
-附加至堆疊視圖的所有子檢視的配置，都是由它以開發人員定義的屬性（例如軸、分佈、對齊和間距）為基礎來管理：
+The layout of all subviews attached to a Stack View are managed by it based on developer defined properties such as axis, distribution, alignment and spacing:
 
-[![](uistackview-images/stacked01.png "堆疊視圖版面配置圖表")](uistackview-images/stacked01.png#lightbox)
+[![](uistackview-images/stacked01.png "Stack View layout diagram")](uistackview-images/stacked01.png#lightbox)
 
-`UIStackView`在 Xamarin ios 應用程式中使用時，開發人員可以在 ios 設計工具中的分鏡腳本內定義子檢視，或是在程式C#代碼中新增和移除子檢視。
+When using a `UIStackView` in a Xamarin.iOS app, the developer can either define the subviews either inside a Storyboard in the iOS Designer, or by adding and removing subviews in C# code.
 
-此檔包含兩個部分：快速入門可協助您執行第一個堆疊視圖，然後再提供更多有關其運作方式的技術詳細資料。
+This document consists of two parts: a quick start to help you implement your first stack view, and then some more technical details about how it works.
 
 > [!VIDEO https://youtube.com/embed/p3po6507Ip8]
 
-**UIStackView 影片**
+**UIStackView video**
 
-## <a name="uistackview-quickstart"></a>UIStackView 快速入門
+## <a name="uistackview-quickstart"></a>UIStackView Quickstart
 
-作為`UIStackView`控制項的快速簡介，我們將建立一個簡單的介面，讓使用者可以輸入1到5的評等。 我們將使用兩個堆疊視圖：一個用來在裝置的螢幕上垂直排列介面，另一個用來在螢幕上水準排列1-5 評等圖示。
+As a quick introduction to the `UIStackView` control, we are going to create a simple interface that allow the user to enter a rating from 1 to 5. We'll be using two Stack Views: one to arrange the interface vertically on the device's screen and one to arrange the 1-5 rating icons horizontally across the screen.
 
-### <a name="define-the-ui"></a>定義 UI
+### <a name="define-the-ui"></a>Define the UI
 
-啟動新的 Xamarin iOS 專案，並在 Xcode 的 Interface Builder 中編輯**主要**的分鏡腳本檔案。 首先，將單一**垂直堆疊視圖**拖曳到**View Controller**上：
+Start a new Xamarin.iOS project and edit the **Main.storyboard** file in Xcode's Interface Builder. First, drag a single **Vertical Stack View** on the **View Controller**:
 
-[![](uistackview-images/quick01.png "將單一垂直堆疊視圖拖曳至視圖控制器")](uistackview-images/quick01.png#lightbox)
+[![](uistackview-images/quick01.png "Drag a single Vertical Stack View on the View Controller")](uistackview-images/quick01.png#lightbox)
 
-在 [**屬性偵測器**] 中，設定下列選項：
+In the **Attribute Inspector**, set the following options:
 
-[![](uistackview-images/quick02.png "設定堆疊視圖選項")](uistackview-images/quick02.png#lightbox)
+[![](uistackview-images/quick02.png "Set the Stack View options")](uistackview-images/quick02.png#lightbox)
 
 其中：
 
@@ -56,31 +56,31 @@ Stack 視圖控制項（`UIStackView`）會利用自動設定和大小類別的�
 - **對齊**–控制子檢視在堆疊視圖中的對齊方式。
 - **散發**–控制如何在堆疊視圖內調整子檢視大小。
 - **間距**–控制堆疊視圖中每個子視圖之間的最小空間。
-- **基準相對**–如果核取，則每個子視圖的垂直間距將衍生自其基準。
+- **Baseline Relative** – If checked, the vertical spacing of each subview will be derived from it's baseline.
 - **相對於版面配置邊界**：將子檢視相對於標準版面配置邊界。
 
-使用堆疊視圖時，您可以將**對齊**方式視為子視圖的**X**和**Y**位置，並將**分佈**視為**高度**和**寬度**。
+When working with a Stack View, you can think of the **Alignment** as the **X** and **Y** location of the subview and the **Distribution** as the **Height** and **Width**.
 
 > [!IMPORTANT]
-> `UIStackView`是設計為非轉譯容器視圖，因此不會繪製到畫布上，如的`UIView`其他子類別。 因此，設定屬性（ `BackgroundColor`例如或`DrawRect`覆寫）將不會有任何視覺效果。
+> `UIStackView` is designed as a non-rendering container view and as such, it is not drawn to the canvas like other subclasses of `UIView`. So setting properties such as `BackgroundColor` or overriding `DrawRect` will have no visual effect.
 
-藉由新增標籤（ImageView）、兩個按鈕和水準堆疊視圖，繼續配置應用程式的介面，讓它看起來像下面這樣：
+Continue to layout the app's interface by adding a Label, ImageView, two Buttons and a Horizontal Stack View so that it resembles the following:
 
-[![](uistackview-images/quick03.png "配置堆疊視圖 UI")](uistackview-images/quick03.png#lightbox)
+[![](uistackview-images/quick03.png "Laying out the Stack View UI")](uistackview-images/quick03.png#lightbox)
 
-使用下列選項設定水準堆疊視圖：
+Configure the Horizontal Stack View with the following options:
 
-[![](uistackview-images/quick04.png "設定水準堆疊視圖選項")](uistackview-images/quick04.png#lightbox)
+[![](uistackview-images/quick04.png "Configure the Horizontal Stack View options")](uistackview-images/quick04.png#lightbox)
 
-由於我們不想要在將分級中的每個「點」新增至水準堆疊視圖時，將其顯示為伸展的圖示，因此我們已將**對齊方式**設定為 [**中央**]，而 [**分佈**] 則會**平均填滿**。
+Because we don't want the icon that represents each "point" in the rating to be stretched when it's added to the Horizontal Stack View, we've set the **Alignment** to **Center** and the **Distribution** to **Fill Equally**.
 
-最後，連接下列**輸出**和**動作**：
+Finally, wire up the following **Outlets** and **Actions**:
 
-[![](uistackview-images/quick05.png "堆疊視圖的輸出和動作")](uistackview-images/quick05.png#lightbox)
+[![](uistackview-images/quick05.png "The Stack View Outlets and Actions")](uistackview-images/quick05.png#lightbox)
 
-### <a name="populate-a-uistackview-from-code"></a>從程式碼填入 UIStackView
+### <a name="populate-a-uistackview-from-code"></a>Populate a UIStackView from Code
 
-返回 Visual Studio for Mac 並編輯**ViewController.cs**檔案，並新增下列程式碼：
+Return to Visual Studio for Mac and edit the **ViewController.cs** file and add the following code:
 
 ```csharp
 public int Rating { get; set;} = 0;
@@ -132,24 +132,24 @@ partial void DecreaseRating (Foundation.NSObject sender) {
 }
 ```
 
-讓我們詳細探討這段程式碼的幾個部分。 首先，我們使用`if`語句來檢查是否有五個以上的「星星」或小於零。
+Let's take a look at a few pieces of this code in detail. First, we use an `if` statements to check that there isn't more than five "stars" or less than zero.
 
-若要加入新的「星星」，我們會載入其影像，並將其**內容模式**設定為**適合調整外觀**：
+To add a new "star" we load its image and set its **Content Mode** to **Scale Aspect Fit**:
 
 ```csharp
 var icon = new UIImageView (new UIImage("icon.png"));
 icon.ContentMode = UIViewContentMode.ScaleAspectFit;
 ```
 
-這會讓「星星」圖示在新增至堆疊視圖時遭到扭曲。
+This keeps the "star" icon from being distorted when it is added to the Stack View.
 
-接下來，我們會將新的「星星」圖示新增至 Stack 視圖的子檢視集合：
+Next, we add the new "star" icon to the Stack View's collection of subviews:
 
 ```csharp
 RatingView.AddArrangedSubview(icon);
 ```
 
-您會注意到，我們已`UIImageView`將新增`UIStackView`至`ArrangedSubviews`的屬性，而不`SubView`是。 您想要讓堆疊視圖控制其版面配置的任何視圖，都必須加入`ArrangedSubviews`至屬性。
+您會注意到，我們已將 `UIImageView` 新增至 `UIStackView`的 `ArrangedSubviews` 屬性，而不是 `SubView`。 您想要讓堆疊視圖控制其版面配置的任何視圖，都必須加入至 `ArrangedSubviews` 屬性。
 
 若要從堆疊視圖中移除子視圖，請先取得子視圖以移除：
 
@@ -157,7 +157,7 @@ RatingView.AddArrangedSubview(icon);
 var icon = RatingView.ArrangedSubviews[RatingView.ArrangedSubviews.Length-1];
 ```
 
-然後，我們需要從`ArrangedSubviews`集合和超級視圖中移除它：
+然後，我們需要從 `ArrangedSubviews` 集合和超級視圖中移除它：
 
 ```csharp
 // Remove from stack and screen
@@ -165,7 +165,7 @@ RatingView.RemoveArrangedSubview(icon);
 icon.RemoveFromSuperview();
 ```
 
-只`ArrangedSubviews`從集合中移除子視圖，會將它移出堆疊視圖的控制項，但不會將它從畫面中移除。
+只從 `ArrangedSubviews` 集合中移除子視圖，會將它移出堆疊視圖的控制項，但不會將它從畫面中移除。
 
 ### <a name="testing-the-ui"></a>測試 UI
 
@@ -173,37 +173,37 @@ icon.RemoveFromSuperview();
 
 當使用者按下 [**增加評**等] 按鈕時，會在畫面中新增另一個「星星」（最多5個）：
 
-[![](uistackview-images/intro01.png "執行範例應用程式")](uistackview-images/intro01.png#lightbox)
+[![](uistackview-images/intro01.png "The sample app run")](uistackview-images/intro01.png#lightbox)
 
 「星星」將會自動置中，並平均分散在水準堆疊視圖中。 當使用者按下 [**降低評**等] 按鈕時，就會移除「星星」（直到不剩下任何內容）。
 
 ## <a name="stack-view-details"></a>堆疊視圖詳細資料
 
-現在，我們已大致瞭解`UIStackView`控制項的功能以及其運作方式，接下來讓我們深入探討其中一些功能和詳細資料。
+現在，我們已大致瞭解 `UIStackView` 控制項及其運作方式，接下來讓我們深入瞭解其部分功能和詳細資料。
 
 ### <a name="auto-layout-and-size-classes"></a>自動版面配置和大小類別
 
 如先前所見，當子視圖加入至堆疊視圖時，其配置完全是由該堆疊視圖使用自動版面配置和大小類別來定位和調整排列的視圖大小。
 
-堆疊視圖會將其集合中的第一個和最後一個子視圖_釘_選到垂直堆疊視圖的**上**和**下**邊緣，或水準堆疊視圖的**左邊**和**右邊**邊緣。 如果您將`LayoutMarginsRelativeArrangement`屬性設定為`true`，則此視圖會將子檢視釘選到相關的邊界，而不是邊緣。
+堆疊視圖會將其集合中的第一個和最後一個子視圖_釘_選到垂直堆疊視圖的**上**和**下**邊緣，或水準堆疊視圖的**左邊**和**右邊**邊緣。 如果您將 [`LayoutMarginsRelativeArrangement`] 屬性設定為 [`true`]，則此視圖會將子檢視釘選到相關的邊界，而不是邊緣。
 
-堆疊視圖會在計算已定義`IntrinsicContentSize` `Axis`的子檢視大小（除外`FillEqually Distribution`）時，使用子視圖的屬性。 會調整所有子檢視的大小，使其具有相同的大小，因此會`Axis`沿著來填滿堆疊視圖。 `FillEqually Distribution`
+堆疊視圖會在以定義的 `Axis` 計運算元檢視大小時，使用子視圖的 `IntrinsicContentSize` 屬性（`FillEqually Distribution`除外）。 `FillEqually Distribution` 會將所有子檢視的大小調整成相同的大小，因此沿著 `Axis`填滿堆疊視圖。
 
-除了的例外狀況之外`Fill Alignment`，堆疊視圖會使用`IntrinsicContentSize`子視圖的屬性來計算與指定`Axis`的垂直的視圖大小。 針對，所有子檢視都會調整大小，使其填滿垂直于指定`Axis`之的堆疊視圖。 `Fill Alignment`
+除了 `Fill Alignment`以外，堆疊視圖會使用子視圖的 `IntrinsicContentSize` 屬性來計算與給定 `Axis`垂直的視圖大小。 針對 `Fill Alignment`，所有子檢視都會調整大小，使其填滿垂直于指定 `Axis`的堆疊視圖。
 
 ### <a name="positioning-and-sizing-the-stack-view"></a>定位和調整堆疊視圖的大小
 
-雖然堆疊視圖對於任何子視圖的版面配置（根據`Axis`和`Distribution`之類的屬性）有完全控制權，但您仍然需要使用自動設定和大小類別`UIStackView`，在其父視圖內放置堆疊視圖（）。
+雖然堆疊視圖對於任何子視圖的版面配置（根據 `Axis` 和 `Distribution`等屬性）有完全控制權，但您仍然需要使用自動設定和大小類別，將堆疊視圖（`UIStackView`）放在其父視圖內。
 
 一般來說，這表示至少要釘選堆疊視圖的兩個邊緣，以擴充和合約，進而定義其位置。 如果沒有任何額外的條件約束，則會自動調整堆疊視圖的大小，以符合其所有的子檢視，如下所示：
 
-- 連同`Axis`所有子視圖大小的總和，以及每個子視圖之間已定義的任何空間，都是大小。
-- 如果屬性為`true`，則堆疊 Views 大小也會包含邊界的空間。 `LayoutMarginsRelativeArrangement`
-- 垂直于的`Axis`大小會設定為集合中最大的子視圖。
+- 沿著其 `Axis` 的大小會是所有子視圖大小的總和，加上每個子視圖之間已定義的任何空間。
+- 如果 `LayoutMarginsRelativeArrangement` 屬性是 `true`，則堆疊 Views 大小也會包含邊界的空間。
+- 垂直于 `Axis` 的大小會設定為集合中最大的子視圖。
 
-此外，您可以指定堆疊視圖的**高度**和**寬度**的條件約束。 在此情況下，子檢視會配置（調整大小），以填滿堆疊視圖所指定的空間（由`Distribution`和`Alignment`屬性所決定）。
+此外，您可以指定堆疊視圖的**高度**和**寬度**的條件約束。 在此情況下，子檢視會配置（調整大小），以填滿堆疊視圖所指定的空間，如 `Distribution` 和 `Alignment` 屬性所決定。
 
-`true` - 如果屬性為，則會根據第一個或最後一個子視圖的基準來配置子檢視，而不是使用頂端、底端或中央 Y 位置。 `BaselineRelativeArrangement` 這些是在堆疊視圖的內容上計算，如下所示：
+如果 `BaselineRelativeArrangement` 屬性是 `true`，將會根據第一個或最後一個子視圖的基準來配置子檢視，而不是使用**上**、**下**或**置**中- **Y**位置。 這些是在堆疊視圖的內容上計算，如下所示：
 
 - 垂直堆疊視圖會傳回第一個基準的第一個子視圖，最後一個是最後一個。 如果其中一個子檢視本身是堆疊視圖，則會使用其第一個或最後一個基準。
 - 水準堆疊視圖會針對第一個和最後一個基準使用其最高的子視圖。 如果最高的視圖也是堆疊視圖，它會使用其最高的子視圖作為基準。
@@ -215,14 +215,14 @@ icon.RemoveFromSuperview();
 
 有數種版面配置類型可搭配堆疊視圖控制項運作。 根據 Apple，以下是幾個較常見的用法：
 
-- **定義沿著軸的大小**–藉由將兩個邊緣沿著堆疊視圖`Axis`和其中一個相鄰邊緣釘選來設定位置，堆疊視圖會沿著軸成長，以符合其子檢視所定義的空間。
+- **定義沿著軸的大小**–藉由將兩個邊緣沿著堆疊視圖的 `Axis`，以及其中一個相鄰邊緣來設定位置，堆疊視圖會沿著軸成長，以符合其子檢視所定義的空間。
 - **定義子視圖的位置**–藉由釘選到堆疊視圖的相鄰邊緣與其父視圖，堆疊視圖會同時在這兩個維度中成長，以符合其包含的子檢視。
 - **定義堆疊的大小和位置**–藉由將堆疊視圖的全部四個邊緣釘選到父視圖，堆疊視圖會根據堆疊視圖內定義的空間來排列子檢視。
-- **定義垂直軸的大小**–藉由將邊緣垂直`Axis`放在堆疊視圖和軸上的其中一個邊緣來設定位置，堆疊視圖會沿著軸垂直成長，以符合其子檢視所定義的空間。
+- **定義垂直軸的大小**–藉由將兩個邊緣固定于堆疊視圖的 `Axis`，以及軸上的其中一個邊緣來設定位置，堆疊視圖會以垂直方式成長到軸，以符合其子檢視所定義的空間。
 
 ### <a name="managing-the-appearance"></a>管理外觀
 
-是設計為非轉譯容器視圖，因此不會繪製到畫布上，如的`UIView`其他子類別。 `UIStackView` 設定屬性（例如`BackgroundColor`或覆`DrawRect`寫）不會有任何視覺效果。
+`UIStackView` 是設計為非轉譯的容器視圖，因此不會繪製到畫布上，如 `UIView`的其他子類別。 設定屬性（例如 `BackgroundColor` 或覆寫 `DrawRect`）將不會有任何視覺效果。
 
 有數個屬性可以控制堆疊視圖如何排列其子檢視的集合：
 
@@ -230,7 +230,7 @@ icon.RemoveFromSuperview();
 - **對齊**–控制子檢視在堆疊視圖中的對齊方式。
 - **散發**–控制如何在堆疊視圖內調整子檢視大小。
 - **間距**–控制堆疊視圖中每個子視圖之間的最小空間。
-- **基準相對**-如果`true`為，則每個子視圖的垂直間距會從它的基準衍生。
+- **基準相對**–如果 `true`，則每個子視圖的垂直間距會衍生自其基準。
 - **相對於版面配置邊界**：將子檢視相對於標準版面配置邊界。
 
 通常您會使用堆疊視圖來排列少量的子檢視。 更複雜的使用者介面可以藉由將一或多個堆疊視圖彼此嵌套來建立（就像我們在上面的[UIStackView 快速入門](#uistackview-quickstart)中所做的一樣）。
@@ -239,22 +239,22 @@ icon.RemoveFromSuperview();
 
 ### <a name="maintaining-arranged-views-and-sub-views-consistency"></a>維護排列的視圖和子視圖的一致性
 
-堆疊視圖會使用下列規則， `ArrangedSubviews`確保其屬性一律是其`Subviews`屬性的子集：
+堆疊視圖會使用下列規則，確保其 `ArrangedSubviews` 屬性一律是其 `Subviews` 屬性的子集：
 
-- 如果子視圖已加入至`ArrangedSubviews`集合，則會自動將它加入`Subviews`至集合（除非它已經是該集合的一部分）。
-- 如果從`Subviews`集合中移除子視圖（從顯示中移除），它也會`ArrangedSubviews`從集合中移除。
-- 從`ArrangedSubviews`集合中移除子視圖並不會將它`Subviews`從集合中移除。 如此一來，堆疊視圖就不會再配置它，但在螢幕上仍會顯示。
+- 如果子視圖已加入至 `ArrangedSubviews` 集合，則會自動將它加入至 `Subviews` 集合（除非它已經是該集合的一部分）。
+- If a subview is removed from the `Subviews` collection (removed from display), it is also removed from the `ArrangedSubviews` collection.
+- Removing a subview from the `ArrangedSubviews` collection does not remove it from the `Subviews` collection. So it will no longer be laid out by the Stack View, but will still be visible on screen.
 
-集合一律是`Subview`集合的子集，但是每個集合內個別子檢視的順序是由下列各項分隔並控制： `ArrangedSubviews`
+The `ArrangedSubviews` collection is always a subset of the `Subview` collection, however the order of the individual subviews within each collection is separate and controlled by the following:
 
-- `ArrangedSubviews`集合內的子檢視順序會決定其在堆疊內的顯示順序。
-- `Subview`集合內的子檢視順序會決定其在視圖內的迭置順序（或分層）。
+- The order of the subviews within the `ArrangedSubviews` collection determine their display order within the stack.
+- The order of the subviews within the `Subview` collection determines their Z-Order (or layering) within the view back to front.
 
-### <a name="dynamically-changing-content"></a>動態變更內容
+### <a name="dynamically-changing-content"></a>Dynamically Changing Content
 
-每當加入、移除或隱藏子視圖時，堆疊視圖就會自動調整子檢視的版面配置。 如果堆疊視圖的任何屬性已調整（例如其`Axis`），則也會調整版面配置。
+A Stack View will automatically adjust the layout of the subviews whenever a subview is added, removed or hidden. The layout will also be adjusted if any property of the Stack View is adjusted (such as its `Axis`).
 
-您可以將版面配置變更放在動畫區塊內來進行動畫處理，例如：
+Layout changes can be animated by placing them within an Animation Block, for example:
 
 ```csharp
 // Animate stack
@@ -264,17 +264,17 @@ UIView.Animate(0.25, ()=>{
 });
 ```
 
-許多堆疊視圖的屬性都可以使用分鏡腳本中的大小類別來指定。 這些屬性會自動以動畫顯示大小或方向變更的回應。
+Many of the Stack View's properties can be specified using Size Classes within a Storyboard. These properties will be automatically animated is response to size or orientation changes.
 
 ## <a name="summary"></a>總結
 
-本文涵蓋了新`UIStackView`的控制項（適用于 ios 9），可管理 Xamarin iOS 應用程式中水準或垂直排列堆疊中的一組子檢視。
-它從使用堆疊視圖建立 UI 的簡單範例開始，並已完成堆疊視圖及其屬性和功能的詳細探討。
+This article has covered the new `UIStackView` control (for iOS 9) to manage a set of subviews in either a horizontally or vertically arranged stack in a Xamarin.iOS app.
+It began with a simple example of using Stack Views to create a UI, and finished with a more detailed look at Stack Views and their properties and features.
 
 ## <a name="related-links"></a>相關連結
 
-- [iOS 9 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
-- [iOS 9 開發人員](https://developer.apple.com/ios/pre-release/)
-- [IOS 9.0 中的新功能](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [UIStackView 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/)
-- [UIStackView 簡介（影片）](https://university.xamarin.com/lightninglectures/introducing-uistackview-on-ios9)
+- [iOS 9 Samples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [iOS 9 for Developers](https://developer.apple.com/ios/pre-release/)
+- [What's New in iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
+- [UIStackView Reference](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIStackView_Class_Reference/)
+- [Introducing UIStackView (video)](https://university.xamarin.com/lightninglectures/introducing-uistackview-on-ios9)

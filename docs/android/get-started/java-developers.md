@@ -4,19 +4,19 @@ description: 如果您是 Java 開發人員，您應該已經開始在 Xamarin �
 ms.prod: xamarin
 ms.assetid: A3B6C041-4052-4E7D-999C-C4FA10BE3D67
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: f4c8c8b19d7738478cdc2c8f83c6fc8d1f361466
-ms.sourcegitcommit: cf56d2bae34dc0f8e94c2d3d28d5f460d59807bf
+ms.openlocfilehash: 1d9b41af68576a67c901f8f19a57fb4738430306
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985664"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027946"
 ---
 # <a name="xamarin-for-java-developers"></a>適用於 Java 開發人員的 Xamarin
 
-_如果您是 Java 開發人員，您應該已經開始在 Xamarin 平台上運用自己的技巧和現有的程式碼，並享受 C# 的程式碼重複使用優勢。您將會發現 C# 語法與 Java 語法非常類似，而且這兩種語言提供非常類似的功能。此外，您將探索可讓開發工作更容易的 C# 特有功能。_
+_如果您是 JAVA 開發人員，您可以充分利用 Xamarin 平臺上的技能和現有程式碼，同時享受的程式碼重複使用優勢C#。您會發現C#語法與 JAVA 語法非常類似，而且這兩種語言都提供非常類似的功能。此外，您還將探索特有C#的功能，讓您的開發工作更輕鬆。_
 
 ## <a name="overview"></a>總覽
 
@@ -42,7 +42,7 @@ Java 和 C# 都會編譯為要在受控執行環境中執行的中繼語言。 C
 這兩種語言都會使用單一根目錄的類別階層。 就像 Java，C# 僅支援單一繼承，不允許全域方法。
 在這兩種語言中，會使用 `new` 關鍵字在堆積上建立物件，並於不再使用物件時進行記憶體回收。 這兩種語言都會使用 `try`/`catch` 語意，來提供正式的例外狀況處理支援。 這兩者都會提供執行緒管理和同步處理支援。
 
-不過，Java 和 C# 之間有許多差異。 例如：
+不過，Java 和 C# 之間有許多差異。 例如:
 
 - Java 不支援隱含類型的區域變數 (C# 支援 `var` 關鍵字)。
 
@@ -87,13 +87,13 @@ C# 會將許多重要功能帶入 Xamarin.Android，Android 上的 Java 開發�
 
 下列各節將概述 C# 和 Java 之間的基本「入門」差異；更後面的小節則會描述這些語言之間的物件導向差異。
 
-### <a name="libraries-vs-assemblies"></a>程式庫與組件
+### <a name="libraries-vs-assemblies"></a>程式庫與元件的比較
 
 Java 通常會在 **.jar** 檔案中封裝相關的類別。 不過，在 C# 和 .NET 中，會將先行編譯程式碼的可重複使用位元封裝為「組件」，通常會封裝為 *.dll* 檔案。 組件是 C#/.NET 程式碼的一個部署單位，而每個組件通常會與一個 C# 專案相關聯。 組件包含在執行階段進行 Just-In-Time 編譯的中繼程式碼 (IL)。
 
 如需組件的詳細資訊，請參閱[組件與全域組件快取](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/assemblies-gac/)主題。
 
-### <a name="packages-vs-namespaces"></a>封裝與命名空間
+### <a name="packages-vs-namespaces"></a>封裝與命名空間的比較
 
 C# 會使用 `namespace` 關鍵字來將相關類型群組在一起；這類似於 Java 的 `package` 關鍵字。 一般而言，Xamarin.Android 應用程式將位於針對該應用程式建立的命名空間。 例如，下列 C# 程式碼會針對氣象報告應用程式宣告 `WeatherApp` 命名空間包裝函式：
 
@@ -139,7 +139,7 @@ using System.Threading.Tasks;
 
 Java 和 C# 都支援「泛型」，其為可讓您在編譯時期插入不同類型的預留位置。 不過，泛型在 C# 中的運作方式稍有不同。 在 Java 中，[類型清除](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html) \(英文\) 讓類型資訊只能於編譯時期使用，而無法在執行階段使用。 相反地，.NET Common Language Runtime (CLR) 提供泛型類型的明確支援，這表示 C# 可在執行階段存取類型資訊。 在日常的 Xamarin.Android 開發中，此區別的重要性通常並不明顯，但如果您使用[反映](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection)，將會依賴此功能，在執行階段存取類型資訊。
 
-在 Xamarin.Android 中，您通常會看到用來取得版面配置控制項參考的泛型方法 `FindViewById`。 這個方法可接受泛型類型參數來指定要查閱的控制項類型。 例如：
+在 Xamarin.Android 中，您通常會看到用來取得版面配置控制項參考的泛型方法 `FindViewById`。 這個方法可接受泛型類型參數來指定要查閱的控制項類型。 例如:
 
 ```csharp
 TextView label = FindViewById<TextView> (Resource.Id.Label);
@@ -210,12 +210,12 @@ public class SensorsActivity : Activity, ISensorEventListener
 
 <a name="properties" />
 
-### <a name="properties"></a>屬性
+### <a name="properties"></a>內容
 
 在 Java 中，更動子方法 (setter) 和檢查方法 (getter) 通常可用來控制如何對類別成員進行變更，同時隱藏並保護這些成員，以免受到外部程式碼干擾。 例如，Android `TextView` 類別提供 `getText` 和 `setText` 方法。 C# 提供類似但更直接的機制，也就是「屬性」。
 C# 類別的使用者可使用他們存取欄位相同的方式來存取屬性，但每次存取實際上會產生對呼叫端而言是透明的方法呼叫。 這個「隱藏」方法可以實作設定其他值、執行轉換或變更物件狀態之類的副作用。
 
-屬性通常用於存取和修改 UI (使用者介面) 物件成員。 例如：
+屬性通常用於存取和修改 UI (使用者介面) 物件成員。 例如:
 
 ```csharp
 int width = rulerView.MeasuredWidth;
@@ -307,7 +307,7 @@ Lambda 運算式可讓您略過建立一次性使用的類別或匿名類別 (�
 };
 ```
 
-在 Xamarin.Android 中，Lambda 運算式通常會用來定義事件處理常式。 例如：
+在 Xamarin.Android 中，Lambda 運算式通常會用來定義事件處理常式。 例如:
 
 ```csharp
 button.Click += (sender, args) => {
@@ -316,7 +316,7 @@ button.Click += (sender, args) => {
 };
 ```
 
-在此範例中，Lambda 運算式程式碼 (大括號內的程式碼) 會遞增點按計數，並更新 `button` 文字來顯示點按計數。 這個 Lambda 運算式會使用 `button` 物件註冊，以作為每次點選按鈕時要呼叫的 Click 事件處理常式 (後續內容中將更詳細地說明事件處理常式)。在這個簡單範例中，Lambda 運算式程式碼不會使用 `sender` 和 `args` 參數，但 Lambda 運算式中必須要有它們，才能符合事件註冊的方法簽章需求。 背後的原理是，C# 編譯器會將 Lambda 運算式轉譯為匿名方法，每次發生按鈕 Click 事件時即會呼叫此方法。
+在此範例中，Lambda 運算式程式碼 (大括號內的程式碼) 會遞增點按計數，並更新 `button` 文字來顯示點按計數。 這個 Lambda 運算式會使用 `button` 物件註冊，以作為每次點選按鈕時要呼叫的 Click 事件處理常式 （以下會詳細說明事件處理常式）。在這個簡單的範例中，lambda 運算式程式碼不會使用 `sender` 和 `args` 參數，但 lambda 運算式中必須要有它們，才能符合事件註冊的方法簽章需求。 背後的原理是，C# 編譯器會將 Lambda 運算式轉譯為匿名方法，每次發生按鈕 Click 事件時即會呼叫此方法。
 
 如需 C# 和 Lambda 運算式的詳細資訊，請參閱 [Lambda 運算式](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)主題。
 
@@ -351,7 +351,7 @@ startActivityButton.Click += delegate {
 
 ```
 
-不過，您也可以使用 Lambda 運算式來註冊事件，完全略過 `delegate` 關鍵字。 例如：
+不過，您也可以使用 Lambda 運算式來註冊事件，完全略過 `delegate` 關鍵字。 例如:
 
 ```csharp
 startActivityButton.Click += (sender, e) => {

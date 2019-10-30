@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 0F0FDD2B-FFB1-476F-B674-81DB3A5E1CF3
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/29/2018
-ms.openlocfilehash: c14c03d4f618644382aa80b5e0e7fc5b7a46fa9b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 35df724850e1fc945c096aebc91b7aa84936bdc1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760882"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026970"
 ---
 # <a name="android-frequently-asked-questions"></a>Android 常見問題
 
@@ -36,7 +36,7 @@ Xamarin. Android 需要 JDK 8 或 Microsoft Mobile OpenJDK。 本文列出您在
 
 ### <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packagesinstall-android-support-librarymd"></a>[如何可以手動安裝 Xamarin.Android.Support 套件所需的 Android 支援程式庫？](install-android-support-library.md)
 
-本指南提供在 Windows & Mac 上`Xamarin.Android.Support.v4`安裝支援程式庫的範例步驟。
+本指南提供在 Windows & Mac 上安裝 `Xamarin.Android.Support.v4` 支援程式庫的範例步驟。
 
 ### <a name="what-usb-drivers-do-i-need-to-debug-android-on-windowsandroid-drivers-debug-windowsmd"></a>[在 Windows 上對 Android 進行偵錯需要哪些 USB 裝置？](android-drivers-debug-windows.md)
 
@@ -59,13 +59,13 @@ Xamarin. Android 需要 JDK 8 或 Microsoft Mobile OpenJDK。 本文列出您在
 
 ### <a name="smarter-xamarin-android-support-v4--v13-nuget-packagesandroid-support-v4v13-librariesmd"></a>[更聰明的 Xamarin Android 支援 v4 / v13 NuGet 套件](android-support-v4v13-libraries.md)
 
-`Support-v4`和`Support-v13`無法在同一個應用程式中一起使用，也就是說，它們是互斥的。 這是因為`Support-v13`實際包含的所有類型和`Support-v4`實作為。 如果您嘗試同時在相同的專案中參考，將會遇到重複的類型錯誤。
+`Support-v4` 和 `Support-v13` 不能同時在相同的應用程式中使用，也就是說，它們是互斥的。 這是因為 `Support-v13` 實際上包含 `Support-v4`的所有類型和實作為。 如果您嘗試同時在相同的專案中參考，將會遇到重複的類型錯誤。
 
 ### <a name="how-do-i-resolve-a-pathtoolongexception-errorpath-too-long-exceptionmd"></a>[如何? 解決 PathTooLongException 錯誤？](path-too-long-exception.md)
 
 本文說明如何解決建立 Xamarin Android 專案時可能發生的**PathTooLongException**錯誤。
 
-## <a name="deprecated"></a>即將淘汰
+## <a name="deprecated"></a>不再
 
 > [!NOTE]
 > 下列文章適用于最新 Xamarin 版本中已解決的問題。 不過，如果軟體的最新版本發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出來提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
@@ -80,7 +80,7 @@ Xamarin. Android 需要 JDK 8 或 Microsoft Mobile OpenJDK。 本文列出您在
 
 ### <a name="adjusting-java-memory-parameters-for-the-android-designerandroid-designer-java-memorymd"></a>[調整適用於 Android Designer 的 JAVA 記憶體參數](android-designer-java-memory.md)
 
-啟動 Android designer 的`java`進程時使用的預設記憶體參數可能與某些系統組態不相容。 從 Xamarin Studio 5.7.2.7 和 Xamarin for Visual Studio 開始，可以根據每個專案來自訂這些設定。
+啟動 Android designer 的 `java` 程式時，所使用的預設記憶體參數可能與某些系統組態不相容。 從 Xamarin Studio 5.7.2.7 和 Xamarin for Visual Studio 開始，可以根據每個專案來自訂這些設定。
 
 ### <a name="my-android-resourcedesignercs-file-will-not-updateresource-designer-wont-updatemd"></a>[我的 Android Resource.designer.cs 檔案不會更新](resource-designer-wont-update.md)
 

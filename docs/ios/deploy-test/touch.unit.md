@@ -4,30 +4,30 @@ description: 本文件提供如何對 Xamarin.iOS 應用程式進行單元測試
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 44ced93605ff595fe2fd7f09f88948e5b0e1914c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282462"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028449"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>單元測試 Xamarin.iOS 應用程式
 
-本文件說明如何為 Xamarin.iOS 專案建立單元測試。
+本文件介紹如何為 Xamarin.iOS 專案建立單元測試。
 為 Xamarin.iOS 進行單元測試時，是透過使用 Touch.Unit 架構來完成。該架構包含 iOS 測試執行器，以及修改過的 NUnit 版本 (稱為 [Touch.Unit](https://github.com/xamarin/Touch.Unit))；此版本會提供一組熟悉的 API，以供編寫單元測試之用。
 
 ## <a name="setting-up-a-test-project-in-visual-studio-for-mac"></a>在 Visual Studio for Mac 中設定測試專案
 
 若要為您的專案設定單元測試架構，只需要將 [iOS 單元測試專案] 類型的專案新增至您的方案即可。 在您的方案上按一下滑鼠右鍵，然後選取 [新增] > [新增專案] 即可完成此動作。 從清單中選取 [iOS] > [測試] > [Unified API] > [iOS 單元測試專案] (您可以選擇 C# 或 F#)。
 
-![](touch.unit-images/00.png "選擇 C# 或 F#")
+![](touch.unit-images/00.png "Choose either C# or F#")
 
 上面的動作將會建立其中包含基本執行器程式，並會參考新 MonoTouch.NUnitLite 組件的基本專案，您的專案看起來像這樣：
 
-![](touch.unit-images/01.png "[方案總管] 中的專案")
+![](touch.unit-images/01.png "The project in the Solution Explorer")
 
 `AppDelegate.cs` 類別包含測試執行器，而且它看起來像這樣：
 
@@ -105,20 +105,20 @@ namespace Fixtures {
 
 測試執行器可讓您查看已登錄的測試，並個別選取可以執行的測試。
 
-[![](touch.unit-images/02-sml.png "已註冊之測試的清單")](touch.unit-images/02.png#lightbox) 
-[![](touch.unit-images/03-sml.png "個別文字")](touch.unit-images/03.png#lightbox) 
+[![](touch.unit-images/02-sml.png "The list of registered tests")](touch.unit-images/02.png#lightbox) 
+[![](touch.unit-images/03-sml.png "An individual text")](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/04-sml.png "執行結果")](touch.unit-images/04.png#lightbox)
+[![](touch.unit-images/04-sml.png "The run results")](touch.unit-images/04.png#lightbox)
 
 您可以透過從巢狀檢視中選取測試固件來執行個別的測試固件，或者您可以使用 [Run Everything] \(全部執行\) 來執行所有測試。 如果您執行預設測試，應該包括一個通過測試、一個失敗測試以及一個忽略測試。 這是報表的外觀，而且您可以直接向下切入失敗測試，並找出有關失敗的詳細資訊：
 
-[![](touch.unit-images/05-sml.png "範例報表")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "範例報表")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "範例報表")](touch.unit-images/07.png#lightbox)
+[![](touch.unit-images/05-sml.png "範例報表")](touch.unit-images/05.png#lightbox)[![](touch.unit-images/06-sml.png "範例報表")](touch.unit-images/06.png#lightbox)[![](touch.unit-images/07-sml.png "範例報表")](touch.unit-images/07.png#lightbox)
 
 您也可以查看 IDE 中的 [應用程式輸出] 視窗，以了解正在執行哪些測試及其目前狀態。
 
 ## <a name="writing-new-tests"></a>編寫新的測試
 
-NUnitLite 是修改後的 NUnit 版本，稱為 [Touch.Unit](https://github.com/xamarin/Touch.Unit) 專案。 它是適用於 .NET 的輕量型測試架構，以 [NUnit](http://nunit.com/) 的構想為基礎，並提供其功能的子集。
+NUnitLite 是修改後的 NUnit 版本，稱為 [Touch.Unit](https://github.com/xamarin/Touch.Unit) 專案。 它是適用於 .NET 的輕量型測試架構，以 [NUnit](https://nunit.com/) 的構想為基礎，並提供其功能的子集。
 它使用最少的資源，並將在資源有限的平台上執行 (例如，用於內嵌和行動裝置開發的平台)。 您可在 Xamarin.iOS 中使用 NUnitLite API。 如果有單元測試範本所提供的基本架構，您的主要進入點就是[判斷提示類別](xref:NUnit.Framework.Assert)方法。
 
 除了「判斷提示類別」方法之外，單元測試功能會在 NUnitLite 所屬的下列命名空間上分割：

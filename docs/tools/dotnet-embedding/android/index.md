@@ -2,15 +2,15 @@
 title: Android 上的 .NET 內嵌
 ms.prod: xamarin
 ms.assetid: EB2F967A-6D95-4448-994B-6D5C7BFAC2C7
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/15/2018
-ms.openlocfilehash: 1369d5cd901207618128da8b0111e488eae7b83e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fef422b799ab5280aef205f4d5e55fd91050da39
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772225"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007331"
 ---
 # <a name="net-embedding-on-android"></a>Android 上的 .NET 內嵌
 
@@ -22,11 +22,11 @@ ms.locfileid: "70772225"
 
 若要讓 Xamarin 使用 .NET 內嵌，您需要下列各項：
 
-- 必須安裝 Xamarin. android [7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本。 &ndash;
+- 您必須安裝**xamarin** &ndash;[xamarin. android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本。
 
-- **Android Studio** 必須安裝 [Android Studio 3.x](https://developer.android.com/studio/) 或更新版本。&ndash;
+- 必須安裝**Android Studio** &ndash;[Android Studio](https://developer.android.com/studio/) 3.x 或更新版本。
 
-- **JAVA 開發人員套件**必須安裝 [JAVA 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 或更新版本。&ndash;
+- 必須安裝 java**開發工具組**&ndash;[java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本。
 
 ## <a name="using-embeddinator-4000"></a>使用 Embeddinator-4000
 
@@ -36,13 +36,13 @@ ms.locfileid: "70772225"
 
 2. 安裝[Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/)。
 
-3. 找出**Embeddinator-4000** ，並將它新增至您的**路徑**。 例如：
+3. 找出**Embeddinator-4000** ，並將它新增至您的**路徑**。 例如:
 
     ```cmd
     set PATH=%PATH%;C:\Users\USERNAME\.nuget\packages\embeddinator-4000\0.4.0\tools
     ```
 
-4. 在程式庫元件上執行 Embeddinator-4000。 例如：
+4. 在程式庫元件上執行 Embeddinator-4000。 例如:
 
     ```cmd
     Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll
@@ -56,13 +56,13 @@ ms.locfileid: "70772225"
 
 若要讓 Xamarin 使用 .NET 內嵌，您需要下列各項：
 
-- 必須安裝 Xamarin. android [7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本。 &ndash;
+- 您必須安裝**xamarin** &ndash;[xamarin. android 7.5](https://visualstudio.microsoft.com/xamarin/)或更新版本。
 
-- **Android Studio** 必須安裝 [Android Studio 3.x](https://developer.android.com/studio/) 或更新版本。&ndash;
+- 必須安裝**Android Studio** &ndash;[Android Studio](https://developer.android.com/studio/) 3.x 或更新版本。
 
-- **JAVA 開發人員套件**必須安裝 [JAVA 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) 或更新版本。&ndash;
+- 必須安裝 java**開發工具組**&ndash;[java 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)或更新版本。
 
-- **Mono**必須安裝 [Mono 5.0](https://www.mono-project.com/download/) 或更新版本（mono 會隨 Visual Studio for Mac 安裝）。&ndash;
+- 必須安裝**mono** &ndash;[mono 5.0](https://www.mono-project.com/download/)或更新版本（mono 是隨 Visual Studio for Mac 安裝）。
 
 ## <a name="using-embeddinator-4000"></a>使用 Embeddinator-4000
 
@@ -72,14 +72,14 @@ ms.locfileid: "70772225"
 
 2. 安裝[Embeddinator-4000](https://www.nuget.org/packages/Embeddinator-4000/)。
 
-3. 找出**Embeddinator-4000** ，並在您的路徑中新增**mono** 。 例如：
+3. 找出**Embeddinator-4000** ，並在您的路徑中新增**mono** 。 例如:
 
     ```bash
     export TOOLS=~/.nuget/packages/embeddinator-4000/0.4.0/tools
     export PATH=$PATH:/Library/Frameworks/Mono.framework/Commands
     ```
 
-4. 在程式庫元件上執行 Embeddinator-4000。 例如：
+4. 在程式庫元件上執行 Embeddinator-4000。 例如:
 
     ```bash
     mono $TOOLS/Embeddinator-4000.exe -gen=Java -out=foo Xamarin.Foo.dll

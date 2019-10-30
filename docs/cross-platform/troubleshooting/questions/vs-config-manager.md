@@ -3,29 +3,29 @@ title: 為什麼 Visual Studio 不在我的組建中包括參考的程式庫專�
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: b9009db8-e716-43aa-b40e-6f28a8eb1b82
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 12/02/2016
-ms.openlocfilehash: 37fa93ef7377456d61d1a5f5de56d5de6b0f3c7f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: aba2e9dacd930c6302a96a8daf929eadab485922
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282916"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73012761"
 ---
 # <a name="why-doesnt-visual-studio-include-my-referenced-library-project-in-my-build"></a>為什麼 Visual Studio 不在我的組建中包括參考的程式庫專案？
 
-Visual Studio 會使用**Configuration Manager**來判斷解決方案中的哪些專案會自動包含在指定的組建或部署設定中。
+Visual Studio uses the **Configuration Manager** to determine which projects in a solution are automatically included in a given build or deployment configuration.
 
-某些使用參考的程式庫專案所產生的範本，將已包含在設定中的參考程式庫。但否則必須手動設定。
+Some templates that are generated with a referenced library project will already have the referenced library included in the configuration; but otherwise it will need to be set manually.
 
-## <a name="how-to-use-the-configuration-manager"></a>如何使用 Configuration Manager
+## <a name="how-to-use-the-configuration-manager"></a>How to use the Configuration Manager
 
-1. 開啟**組建 > Configuration Manager**
-2. 選取要自訂的設定，例如**Debug | iPhone**
-3. 選取您想要包含之專案的核取方塊。
+1. Open **Build > Configuration Manager**
+2. Select the configuration to customize, e.g. **Debug | iPhone**
+3. Select checkboxes for the projects you wish to include.
 
 > [!NOTE]
-> 呈現灰色的方塊會自動處理，而且不需要任何變更。
+> Greyed out boxes are handled automatically, and shouldn't need any changes.
 
-這些步驟的螢幕錄製影片：[http://screencast.com/t/zLoQOpEn](http://screencast.com/t/zLoQOpEn)
+Screencast of these steps: [https://screencast.com/t/zLoQOpEn](https://screencast.com/t/zLoQOpEn)

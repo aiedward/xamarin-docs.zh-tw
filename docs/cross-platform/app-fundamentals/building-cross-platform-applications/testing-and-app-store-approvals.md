@@ -3,15 +3,15 @@ title: 第 6 部分 - 測試和 App Store 核准
 description: 本檔說明如何在裝置上測試跨平臺應用程式、管理測試案例、自動化測試、執行單元測試，以及執行應用程式提交流程。
 ms.prod: xamarin
 ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: bf6ea18c73226a620ce002797d2d2b04b48c7cc8
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198429"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016846"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 測試和 App Store 核准
 
@@ -56,9 +56,9 @@ Xamarin 包含一個稱為 Touch 的單元測試架構，其遵循 JUnit/NUnit �
 
 如需撰寫測試和執行觸控的詳細資訊，請參閱[使用 Xamarin 的單元測試](~/ios/deploy-test/touch.unit.md)檔。
 
-### <a name="andrunit"></a>Andr.Unit
+### <a name="andrunit"></a>Andr。單位
 
-有一個適用于 Android 的開放原始碼，稱為 Andr。 您可以從[github](https://github.com/spouliot/Andr.Unit)下載，並閱讀有關此工具[ @spouliot的 blog](http://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)。
+有一個適用于 Android 的開放原始碼，稱為 Andr。 您可以從[github](https://github.com/spouliot/Andr.Unit)下載，並閱讀有關[@spouliot的 blog](https://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)的工具。
 
 ## <a name="app-store-approvals"></a>App Store 核准
 
@@ -129,7 +129,7 @@ Windows 開發人員應該同樣小心;常見的錯誤是，根據 Microsoft 的
 
 將應用程式中繼資料的投入量放在開發和測試中。 應用程式會遭到拒絕以進行中繼資料中的次要 infringements，因此值得花時間取得正確的時機。
 
-### <a name="app-stores-not-for-everyone"></a>應用程式存放區：並非所有人
+### <a name="app-stores-not-for-everyone"></a>應用程式商店：並非所有人
 
 每個平臺上的商店主要重點是取用者散發-能夠盡可能觸及許多客戶。 不過，並非所有應用程式都是以取用者為目標，因此會有快速成長的內部和外部網路應用程式的基底，需要有限的散發給員工、供應商或客戶。 這些應用程式不會「銷售」，也不需要核准，因為開發人員會控制散發給已關閉的使用者群組。
 這種部署類型的支援會因平臺而異。

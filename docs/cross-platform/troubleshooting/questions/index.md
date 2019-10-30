@@ -3,15 +3,15 @@ title: 一般常見問題
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: de70eda2898f29a1e7afed9440d5f5fae496e069
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0e49ef8fa0bf00d5ed41f3411393ffaf4891c1b8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765117"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73013987"
 ---
 # <a name="general-frequently-asked-questions"></a>一般常見問題
 
@@ -23,8 +23,8 @@ ms.locfileid: "70765117"
 ### <a name="pcl-reflection-apipcl-reflectionmd"></a>[PCL 映射 API](pcl-reflection.md)
 Microsoft 開發了新的反映 API，以便在可移植的類別庫中使用。 如果您有一些您想要移至 PCL 的現有反映程式碼，可能會無法正常執行。
 
-### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL 案例研究：如何解決與診斷相關的問題。 Microsoft TPL 資料流程 NuGet 套件的追蹤功能？](pcl-case-study.md)
-Xamarin. iOS 和 Xamarin 不會將其允許的每個 PCL 設定檔的 100% 實作為參考。 為了在 Visual Studio for Mac、Visual Studio 和 NuGet 套件管理員中實用的便利性，Xamarin 專案允許使用只具有不完整之執行的數個設定檔。 例如，xamarin 或 xamarin 目前都不包含`System.Diagnostics.Tracing` PCL 命名空間中的完整類型。 若要解決此情況，您可以將應用程式專案切換為參考 TPL 資料流程程式庫的 net45 + win8 + wp8 + wpa81 版本。
+### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL 案例研究：如何解決 Microsoft TPL Dataflow NuGet 套件有關 System.Diagnostics.Tracing 的問題？](pcl-case-study.md)
+Xamarin. iOS 和 Xamarin 不會將其允許的每個 PCL 設定檔的100% 實作為參考。 為了在 Visual Studio for Mac、Visual Studio 和 NuGet 套件管理員中實用的便利性，Xamarin 專案允許使用只具有不完整之執行的數個設定檔。 例如，Xamarin 或 Xamarin 目前都不包含 `System.Diagnostics.Tracing` PCL 命名空間中的完整類型。 若要解決此情況，您可以將應用程式專案切換為參考 TPL 資料流程程式庫的 net45 + win8 + wp8 + wpa81 版本。
 
 ## <a name="nuget-packages--xamarin-components"></a>& Xamarin 元件的 NuGet 套件
 ### <a name="how-can-i-update-nugetnuget-updatemd"></a>[如何更新 NuGet？](nuget-update.md)

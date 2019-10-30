@@ -4,15 +4,15 @@ description: 本檔連結到描述 watchOS 平臺功能（例如 Apple Pay、通
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2b987992bcb3dd4d2575a46e21a2302ed78d8d70
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: e571132b5f1e30bececb8302f2dacfcd908ad42e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282293"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028286"
 ---
 # <a name="watchos-platform-features"></a>watchOS 平臺功能
 
@@ -46,7 +46,7 @@ watchOS 3 引進數個背景工作，應用程式可以使用這些工作來更�
 
 ## <a name="proactive-suggestionsioswatchosplatformproactive-suggestionsmd"></a>[主動式建議](~/ios/watchos/platform/proactive-suggestions.md)
 
-watchOS 3 允許應用程式在指定的內容中主動向使用者呈現資訊。 為了支援這項功能， [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)現在包含`MapItem`屬性，可讓應用程式提供位置資訊供其他應用程式稍後使用。
+watchOS 3 允許應用程式在指定的內容中主動向使用者呈現資訊。 為了支援這項功能， [NSUserActivity](https://developer.apple.com/reference/foundation/nsuseractivity)現在包含 [`MapItem`] 屬性，可讓應用程式提供位置資訊供其他應用程式稍後使用。
 
 ## <a name="quick-interaction-techniquesioswatchosplatformquick-interaction-techniquesmd"></a>[快速互動技術](~/ios/watchos/platform/quick-interaction-techniques.md)
 
@@ -54,4 +54,4 @@ watchOS 3 允許應用程式在指定的內容中主動向使用者呈現資訊�
 
 ## <a name="workout-app-enhancementsioswatchosplatformworkout-appsmd"></a>[健身應用程式增強功能](~/ios/watchos/platform/workout-apps.md)
 
-WatchOS 3 的新功能：健身相關應用程式可在 Apple Watch 的背景中執行。 若要啟用這項功能（並取得 HealthKit 資料的存取權），應用程式`WKBackgroundModes`必須`Info.plist`在檔案中包含具有值`workout-processing`的金鑰。
+WatchOS 3 的新功能：健身相關應用程式可在 Apple Watch 的背景中執行。 若要啟用這項功能（並取得 HealthKit 資料的存取權），應用程式必須在 `Info.plist` 檔案中包含 `WKBackgroundModes` 索引鍵，其值 `workout-processing`。
