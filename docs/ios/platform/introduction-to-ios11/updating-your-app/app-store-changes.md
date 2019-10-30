@@ -4,15 +4,15 @@ description: 本檔探討 iOS 11 中 App Store 的變更。 它討論應用程�
 ms.prod: xamarin
 ms.assetid: 4A7A03FD-B4F2-4969-8676-A17260730FD6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 0ac9b486defb74cac7ccd946d2b35b283e6aeca5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752319"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032128"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 中的 App Store 變更
 
@@ -50,7 +50,7 @@ Apple 已在 App Store 中更容易找到應用程式內購買專案。 您現�
 
 ![ITune Connect 中的 App Store 升級區段](app-store-changes-images/image4.png)
 
-您也需要將`ShouldAddStorePayment`方法新增至應用程式中的`SKPaymentTransactionObserver`通訊協定。
+您也需要在應用程式中將 `ShouldAddStorePayment` 方法新增至 `SKPaymentTransactionObserver` 通訊協定。
 
 如需有關應用程式內購買升級的詳細資訊，請參閱 Apple 的[推廣您的應用程式內購買](https://developer.apple.com/app-store/promoting-in-app-purchases/)頁面。
 

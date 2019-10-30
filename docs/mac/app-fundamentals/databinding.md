@@ -4,15 +4,15 @@ description: 本文涵蓋使用索引鍵/值編碼和索引鍵-值觀察，以�
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769996"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030213"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac 中的資料系結和索引鍵-值編碼
 
@@ -135,7 +135,7 @@ namespace MacDatabinding
 
 ### <a name="getting-values-using-key-value-coding"></a>使用索引鍵-值編碼來取得值
 
-@No__t_0 方法會傳回指定索引鍵的值（如 `NSString`），相對於接收要求之 KVC 類別的實例。 例如，如果 `Person` 是上面定義之 `PersonModel` 類別的實例：
+`ValueForKey` 方法會傳回指定索引鍵的值（如 `NSString`），相對於接收要求之 KVC 類別的實例。 例如，如果 `Person` 是上面定義之 `PersonModel` 類別的實例：
 
 ```csharp
 // Read value
@@ -334,7 +334,7 @@ public NSArray People {
 這裡有兩個要注意的事項：
 
 1. 我們使用了 `NSMutableArray`，而不是C#標準的陣列或集合，因為這是資料系結至 AppKit 控制項（例如**資料表視圖**、**大綱視圖**和**集合**）的必要條件。
-2. 我們會將員工的陣列轉換成 `NSArray` 以進行資料系結，並將其C#格式化名稱（`People`）變更為資料系結所預期的格式，`personModelArray` 格式為 **{class_name} 陣列**（請注意，已建立第一個字元小寫）。
+2. 我們會將員工的陣列轉換成 `NSArray` 以進行資料系結，並將其C#格式化名稱（`People`）變更為資料系結所預期的格式，`personModelArray`格式為 **{class_name} 陣列**（請注意，第一個字元已設為小寫）。
 
 接下來，我們需要新增一些特殊名稱的公用方法，以支援**陣列控制器**和**樹狀目錄控制器**：
 

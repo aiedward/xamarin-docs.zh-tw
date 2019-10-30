@@ -5,19 +5,19 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: E4150036-7760-4023-BD33-B7BDE7B7AF5B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 3eee66032a33e66d3a6a22ca43cb931fbd59888f
-ms.sourcegitcommit: e268fd44422d0bbc7c944a678e2cc633a0493122
-ms.translationtype: HT
+ms.openlocfilehash: 4acbfe810abefd9a25721ddf59c9f4f197afdf28
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50122981"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020971"
 ---
 # <a name="hello-android-multiscreen-deep-dive"></a>Hello, Android 多重畫面：深度剖析
 
-_在這份含有兩部分的指南中，會擴充在《Hello, Android》指南中建立的 Phoneword 應用程式來處理第二個畫面。過程中，會介紹基本 Android 應用程式建置組塊。包含 Android 架構深入剖析，以協助您進一步了解 Android 應用程式結構和功能。_
+_在這份包含兩部分的指南中，會展開基本的 Phoneword 應用程式（在 Hello，Android 指南中建立），以處理第二個畫面。在過程中，會引進基本的 Android 應用程式建立區塊。其中包含更深入的 Android 架構深入探討，以協助您進一步瞭解 Android 應用程式結構和功能。_
 
 在 [Hello, Android 多重畫面快速入門](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)中，您已建置並執行您的第一個多重畫面 Xamarin.Android 應用程式。
 

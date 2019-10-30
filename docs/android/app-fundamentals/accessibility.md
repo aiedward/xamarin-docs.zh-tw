@@ -3,15 +3,15 @@ title: Android 上的協助工具
 ms.prod: xamarin
 ms.assetid: 157F0899-4E3E-4538-90AF-B59B8A871204
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/28/2018
-ms.openlocfilehash: 982d5b81a22d6e69227081420a5947aed4d3aab1
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 6e86663be0bb06697fbfe0e8c360d733bca18da0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70755674"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73017025"
 ---
 # <a name="accessibility-on-android"></a>Android 上的協助工具
 
@@ -172,9 +172,9 @@ saveButton.ContentDescription = Resources.GetText (Resource.String.save_info);
 
 請遵循[下列步驟](https://developer.android.com/training/accessibility/testing.html#how-to)來啟用 TalkBack，並透過觸控來測試 Android 裝置上的協助工具。
 
-如果沒有出現在 [**設定] > [協助工具**] 中，您可能需要從 Google Play 安裝[TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) 。
+You may need to install [TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback) from Google Play if it does not appear in **Settings > Accessibility**.
 
 ## <a name="related-links"></a>相關連結
 
 - [跨平台協助工具](~/cross-platform/app-fundamentals/accessibility.md)
-- [Android 協助工具 Api](https://developer.android.com/guide/topics/ui/accessibility/index.html)
+- [Android Accessibility APIs](https://developer.android.com/guide/topics/ui/accessibility/index.html)

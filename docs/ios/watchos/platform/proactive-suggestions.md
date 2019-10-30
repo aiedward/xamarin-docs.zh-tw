@@ -1,87 +1,87 @@
 ---
-title: 在 Xamarin 中 watchOS 主動式建議
-description: 本文說明如何在 watchOS 3 應用程式中使用主動式建議，藉由允許系統以主動方式自動向使用者呈現有用的資訊，以促進參與。
+title: watchOS Proactive Suggestions in Xamarin
+description: This article shows how to use Proactive Suggestions in a watchOS 3 app to drive engagement by allowing the system to proactively present helpful information automatically to the user.
 ms.prod: xamarin
 ms.assetid: 10CC9F16-963C-44F1-8B98-F09FB2310DFF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 42284ded0bbb5dab36470b7d2f291df64c6df264
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8dc2150dbd07d05d037aa0e0917f49d467f6f1ae
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767781"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028195"
 ---
-# <a name="watchos-proactive-suggestions-in-xamarin"></a>在 Xamarin 中 watchOS 主動式建議
+# <a name="watchos-proactive-suggestions-in-xamarin"></a>watchOS Proactive Suggestions in Xamarin
 
-_本文說明如何在 watchOS 3 應用程式中使用主動式建議，藉由允許系統以主動方式自動向使用者呈現有用的資訊，以促進參與。_
+_This article shows how to use Proactive Suggestions in a watchOS 3 app to drive engagement by allowing the system to proactively present helpful information automatically to the user._
 
-WatchOS 3 的新手，主動式建議提供新聞方式，讓使用者能夠在適當時間自動向使用者顯示有用的資訊，以便與 Xamarin iOS 應用程式互動。
+New to watchOS 3, Proactive Suggestions present news ways for users to engage with a Xamarin.iOS app by proactively present helpful information automatically to the user at appropriate times.
 
-## <a name="about-proactive-suggestions"></a>關於主動式建議
+## <a name="about-proactive-suggestions"></a>About Proactive Suggestions
 
-WatchOS 3 `NSUserActivity`的新功能`MapItem`包含屬性，可讓應用程式提供可在其他內容中使用的位置資訊。 例如，如果顯示飯店的應用程式審查並提供`MapItem`位置，而使用者切換至地圖服務應用程式，則只會提供他們剛觀賞的旅館位置。
+New to watchOS 3, `NSUserActivity` includes a `MapItem` property that allows the app to provide location information that can be used in other contexts. For example, if the app displayed hotel reviews and provides a `MapItem` location, if the user switched to the Maps app, the location of the hotel they were just viewing would be available.
 
-應用程式會使用 MapKit、媒體播放機和 UIKit 等`NSUserActivity`技術集合，將此功能公開給系統。 此外，藉由提供應用程式的主動式建議支援，它可免費取得更深入的 Siri 整合。
+The app exposes this functionality to the system using a collection of technologies such as `NSUserActivity`, MapKit, Media Player and UIKit. Additionally, by providing Proactive Suggestion support for the app, it gets deeper Siri integration for free.
 
-## <a name="location-based-suggestions"></a>以位置為基礎的建議
+## <a name="location-based-suggestions"></a>Location Based Suggestions
 
-WatchOS 3 的`NSUserActivity`新功能：類別`MapItem`包含屬性，可讓開發人員提供可在其他內容中使用的位置資訊。 例如，如果應用程式顯示餐廳審查，則開發人員可以將`MapItem`屬性設定為使用者在應用程式中看到的餐廳位置。 如果使用者切換至地圖應用程式，餐廳的位置就會自動可用。
+New to watchOS 3, the `NSUserActivity` class includes a `MapItem` property that allows the developer to provide location information that can be used in other contexts. For example, if the app displays restaurant reviews, the developer can set the `MapItem` property to the location of the restaurant that the user is viewing in the app. If the user switches to the Maps app, the restaurant's location is automatically available.
 
-如果應用程式支援應用程式搜尋，它可以使用`CSSearchableItemAttributesSet`類別的新位址元件來指定使用者可能想要造訪的位置。 藉由設定`MapItem`屬性，其他屬性會自動填入。
+If the app supports App Search, it can use the new address components of the `CSSearchableItemAttributesSet` class to specify locations that the user may want to visit. By setting the `MapItem` property, the other properties are automatically filled-in.
 
-除了設定位址元件屬性`Latitude`的`Longitude`和之外，建議應用程式也提供`NamedLocation`和`PhoneNumbers`屬性，讓 Siri 可以起始對位置的呼叫。
+In addition to setting the `Latitude` and `Longitude` of the address component properties, it is recommended that the app supply the `NamedLocation` and `PhoneNumbers` properties too, so Siri can initiate a call to the location.
 
-## <a name="contextual-siri-reminders"></a>內容相關 Siri 提醒
+## <a name="contextual-siri-reminders"></a>Contextual Siri Reminders
 
-可讓使用者使用 Siri 快速建立提醒，以在日後查看目前在應用程式中看到的內容。 例如，如果他們在應用程式中看到餐廳審核，他們可以叫用 Siri，並說「*當我取得首頁時提醒我。* 」 Siri 會在應用程式中產生具有評論連結的提醒。
+Allows the user to use Siri to quickly make a reminder to view the content they are currently viewing in the app at a later date. For example, if they were viewing a restaurant review in the app, they could invoke Siri and say *"Remind me about this when I get home."* Siri would generate the reminder with a link to the review in the app.
 
-## <a name="implementing-proactive-suggestions"></a>執行主動式建議
+## <a name="implementing-proactive-suggestions"></a>Implementing Proactive Suggestions
 
-在 Xamarin iOS 應用程式中新增主動式建議支援，通常就像執行幾個 Api 一樣簡單，或在應用程式可能已經執行的幾個 Api 上擴充。
+Adding Proactive Suggestion support to the Xamarin.iOS app is typically as easy as implementing a few APIs or expanding on a few APIs that the app might already be implementing.
 
-主動式建議會以三種主要方式與應用程式搭配使用：
+Proactive Suggestions work with the apps in three main ways:
 
-- **`NSUserActivity`** -協助系統瞭解使用者目前在螢幕上使用的資訊。
-- **位置建議**-如果應用程式提供或使用以位置為基礎的資訊，這些 API 擴充功能會提供在應用程式之間共用此資訊的新方式。
+- **`NSUserActivity`** - Helps the system understand what information the user is currently working with on screen.
+- **Location Suggestions** - If the app offers or consumes location based information, these API extension offer new ways to share this information across apps.
 
-藉由執行下列動作，在應用程式中支援和：
+And is supported in the app by implementing the following:
 
-- 內容**Siri 提醒**-在 iOS 10 中`NSUserActivity` ，已擴充為可讓 Siri 快速提醒您在日後查看目前在應用程式中看到的內容。
-- **位置建議**-iOS 10 增強`NSUserActivity`了可在應用程式內流覽的位置，並在整個系統的許多地方進行升級。
-- **內容相關的 Siri 要求** -  `NSUserActivity`會提供應用程式內所呈現資訊的內容給 Siri，讓使用者可以從應用程式內取得指示或呼叫 Siri。
+- **Contextual Siri Reminders** - In iOS 10, `NSUserActivity` has been expanded to allow Siri to quickly make a reminder to view the content they are currently viewing in the app at a later date.
+- **Location Suggestions** - iOS 10 enhances `NSUserActivity` to capture locations viewed inside of the app and promote them in many places throughout the system.
+- **Contextual Siri Requests** - `NSUserActivity` provides context to the information presented inside of the app to Siri so that the user can get directions or place a call be invoking Siri from within the app.
 
-所有這些功能都有一個共通的東西，它們全都`NSUserActivity`用在一個表單或另一個形式，以提供其功能。 
+All of these features have one thing in common, they all use `NSUserActivity` in one form or another to provide their functionality. 
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-如上所述， `NSUserActivity`可協助系統瞭解使用者目前在螢幕上使用的資訊。 `NSUserActivity`是輕量狀態快取機制，可在使用者流覽應用程式時加以捕捉。 例如，查看餐廳應用程式：
+As stated above, `NSUserActivity` helps the system understand what information the user is currently working with on screen. `NSUserActivity` is a light-weight state caching mechanism to capture the user's activity as they navigate through the app. For example, looking at the restaurant app:
 
-[![](proactive-suggestions-images/activity02.png "餐廳應用程式")](proactive-suggestions-images/activity02.png#lightbox)
+[![](proactive-suggestions-images/activity02.png "The restaurant app")](proactive-suggestions-images/activity02.png#lightbox)
 
-具有下列互動：
+With the following interactions:
 
-1. 當使用者使用應用程式時， `NSUserActivity`會建立，稍後再重新建立應用程式的狀態。
-2. 如果使用者搜尋餐廳，則會遵循建立活動的相同模式。
-3. 同樣地，當使用者查看結果時。 在最後一個案例中，使用者正在觀看一個位置，而在 iOS 10 中，系統會更清楚特定概念（例如位置或通訊互動）。
+1. As the user works with the app, a `NSUserActivity` is created to recreate the state of the app later.
+2. If the user searches for a restaurant, the same pattern of creating activities is followed.
+3. And again, when the user views a result. In this last case, the user is viewing a location and in iOS 10, the system is more aware of certain concepts (such as location or communication interactions).
 
-請仔細查看最後一個畫面：
+Take a closer look at the last screen:
 
-[![](proactive-suggestions-images/activity03.png "NSUserActivity 裝載")](proactive-suggestions-images/activity03.png#lightbox)
+[![](proactive-suggestions-images/activity03.png "The NSUserActivity payload")](proactive-suggestions-images/activity03.png#lightbox)
 
-在這裡，應用程式會`NSUserActivity`建立，並已填入資訊，以在稍後重新建立狀態。 應用程式也包含一些中繼資料，例如位置的名稱和位址。 建立此活動之後，應用程式可讓 iOS 知道它代表使用者目前的狀態。
+Here the app is creating a `NSUserActivity` and it has been populated with information to recreate the state later. The app has also included some metadata such as the location's name and address. With this activity created, the app lets iOS know that it represents the user's current state.
 
-應用程式接著會決定是否要以無線方式針對遞交廣告公告活動、儲存為位置建議的暫時值，或新增至裝置焦點索引，以顯示在搜尋結果中。
+The app then decides if the activity will be advertised over-the-air for Handoff, saved as a temporary value for location suggestions or added to the on-device Spotlight index for displaying in search results.
 
-如需有關遞交和聚焦搜尋的詳細資訊，請參閱我們的課程[簡介](~/ios/platform/handoff.md)和[IOS 9 新搜尋 api](~/ios/platform/search/index.md)指南。
+For more information on Handoff and Spotlight search, please see our [Introduction to Handoff](~/ios/platform/handoff.md) and [iOS 9 New Search APIs](~/ios/platform/search/index.md) guides.
 
-### <a name="creating-an-activity"></a>建立活動
+### <a name="creating-an-activity"></a>Creating an Activity
 
-建立活動之前，需要先建立活動類型識別碼來識別它。 活動類型識別碼是新增至`NSUserActivityTypes` `Info.plist`應用程式檔案陣列的簡短字串，用來唯一識別指定的使用者活動類型。 在陣列中，應用程式支援的每個活動都會有一個專案，並公開至應用程式搜尋。 如需詳細資訊，請參閱我們的[建立活動類型識別碼參考](~/ios/platform/search/nsuseractivity.md)。
+Before creating an Activity, an Activity Type Identifier will needed to be created to identify it. The Activity Type Identifier is a short string added to the `NSUserActivityTypes` array of the app's `Info.plist` file used to uniquely identify a given User Activity Type. There will be one entry in the array for each activity that the app supports and exposes to App Search. See our [Creating Activity Type Identifiers Reference](~/ios/platform/search/nsuseractivity.md) for more details.
 
-查看活動的範例：
+Look at an example of an activity:
 
 ```csharp
 // Create App Activity
@@ -104,9 +104,9 @@ activity.EligibleForPublicIndexing = true;
 activity.BecomeCurrent();
 ```
 
-使用活動類型識別碼建立新的活動。 接下來，會建立一些定義活動的中繼資料，因此可以在日後還原此狀態。 然後，活動會獲得有意義的標題，並附加到使用者資訊。 最後，會啟用某些功能，並將活動傳送給系統。
+A new activity is created using an Activity Type Identifier. Next, some metadata defining the activity is created so this state can be restored at a later date. Then, the activity is given a meaningful title and attached to the user info. Finally, some capabilities are enabled and the activity is sent to the system.
 
-上述程式碼可以進一步增強，以包含中繼資料，藉由進行下列變更來提供內容給活動：
+The code above could further be enhanced to include metadata that provides context to the activity by making the following changes:
 
 ```csharp
 ...
@@ -121,16 +121,16 @@ activity.ContentAttributeSet = attributes;
 activity.BecomeCurrent();
 ```
 
-如果開發人員所擁有的網站能夠顯示與應用程式相同的資訊，應用程式可以包含 URL，而且內容可以顯示在未安裝應用程式的其他裝置上（透過遞交）：
+If the developer has a website that is capable of displaying the same information as the app, the app can include the URL and the content can be displayed on other devices that don't have the app installed (via Handoff):
 
 ```csharp
 // Restore on the web
 activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 ```
 
-### <a name="restoring-an-activity"></a>還原活動
+### <a name="restoring-an-activity"></a>Restoring an Activity
 
-若要回應使用者點擊搜尋結果（`NSUserActivity`）的應用程式，請編輯**AppDelegate.cs**檔案，並覆寫`ContinueUserActivity`方法。 例如：
+To respond to the user tapping on a search result (`NSUserActivity`) for the app, edit the **AppDelegate.cs** file and override the `ContinueUserActivity` method. 例如:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -147,39 +147,39 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-請確定這是與上面所建立活動`com.xamarin.platform`相同的活動類型識別碼（）。 應用程式會使用儲存在中`NSUserActivity`的資訊，將狀態還原回使用者停止的位置。
+Ensure this is the same Activity Type Identifier (`com.xamarin.platform`) as the activity created above. The app uses the information stored in the `NSUserActivity` to restore the state back to where the user left off.
 
-### <a name="benefits-of-creating-an-activity"></a>建立活動的優點
+### <a name="benefits-of-creating-an-activity"></a>Benefits of Creating an Activity
 
-透過上述最少量的程式碼，應用程式現在可以利用三項新的 iOS 10 功能：
+With the minimal amount of code presented above, the app is now able to take advantage of three new iOS 10 features:
 
 - **Handoff**
-- **焦點搜尋**
-- **內容相關 Siri 提醒**
+- **Spotlight Search**
+- **Contextual Siri Reminders**
 
-下一節將探討如何啟用其他兩個新的 iOS 10 功能：
+The following section will take a look at enabling two other new iOS 10 features:
 
-- **位置建議**
-- **內容相關的 Siri 要求**
+- **Location Suggestions**
+- **Contextual Siri Requests**
 
-### <a name="location-based-suggestions"></a>以位置為基礎的建議 
+### <a name="location-based-suggestions"></a>Location Based Suggestions 
 
-請使用上述餐廳搜尋應用程式的範例。 如果已`NSUserActivity`實作用並正確填入所有的中繼資料和屬性，使用者就能夠執行下列動作：
+Take the example of the restaurant search app above. If it has implemented `NSUserActivity` and correctly populated all of the metadata and attributes, the user would be able to do the following:
 
-1. 在應用程式中尋找他們想要在其中符合 friend 的餐廳。
-2. 如果使用者切換至地圖應用程式，則會自動建議餐廳的位址作為目的地。
-3. 這甚至適用于協力廠商應用程式（ `NSUserActivity`支援），因此使用者可以切換到「分享」應用程式，而餐廳的位址也會自動建議作為目的地。
-4. 它也會提供內容給 Siri，讓使用者可以在餐廳應用程式中叫用 Siri，並詢問「*取得方向 ...* 」，而 Siri 會為使用者正在觀賞的餐廳提供方向。
+1. Find a restaurant in the app that they would like to meet a friend at.
+2. If the user switches to the Maps app, the restaurant's address is automatically suggested as a destination.
+3. This even works for 3rd Party apps (that support `NSUserActivity`), so the user can switch to a ride-sharing app and the restaurant's address is automatically suggested as a destination there as well.
+4. It also provides context to Siri, so the user can invoke Siri within the restaurant app and ask *"Get directions..."* and Siri will provide directions to the restaurant the user is viewing.
 
-上述所有功能都有一個共通的東西，它們全都指出建議原本來自何處。 在上述範例中，這是虛構的餐廳審查應用程式。
+All of the above functionality has one thing in common, they all indicate where the suggestion is originally coming from. In the case of the example above, it's the fictitious restaurant review app.
 
-watchOS 3 已增強，可透過幾個對現有架構的小型修改和新增功能，為應用程式啟用這項功能：
+watchOS 3 has been enhanced to enable this functionality for an app through several small modifications and additions to existing frameworks:
 
-- `NSUserActivity`有額外的欄位，可用於捕捉在應用程式內查看的位置資訊。
-- 已對 MapKit 和 CoreSpotlight 新增數個專案來取得位置。
-- 位置感知功能已新增至系統內的 Siri、地圖、多工和其他應用程式。
+- `NSUserActivity` has additional fields for capturing location information that is viewed inside of the app.
+- Several additions have been made to MapKit and CoreSpotlight to capture location.
+- Location aware functionality has been added to Siri, Maps, Multitasking and other apps within the system.
 
-若要執行以位置為基礎的建議，請從上面顯示的相同活動程式碼開始：
+To implement location based suggestions, start with the same activity code presented above:
 
 ```csharp
 // Create App Activity
@@ -211,14 +211,14 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 activity.BecomeCurrent();
 ```
 
-如果應用程式使用 MapKit，就像是將目前的對應`MKMapItem`加入至活動一樣簡單：
+If the app is using MapKit, it is as simple as adding the current map `MKMapItem` to the activity:
 
 ```csharp
 // Save MKMapItem location
 activity.MapItem = myMapItem;
 ```
 
-如果應用程式未使用 MapKit，它可以採用應用程式搜尋，並為位置指定下列新屬性：
+If the app isn't using MapKit, it can adopt App Search and specify the following new attributes for location:
 
 ```csharp
 // Provide context
@@ -238,13 +238,13 @@ attributes.SupportsPhoneCalls = true;
 attributes.SupportsNavigation = true;
 ```
 
-如需詳細資訊，請參閱上述程式碼。 首先，每個實例都需要位置的名稱：
+Take a look at the above code in detail. First, the name of the location is required in every instance:
 
 ```csharp
 attributes.NamedLocation = "Apple Inc.";
 ```
 
-然後，文字型實例（如 QuickType 鍵盤）所需的文字型描述：
+Then, the text based description in required for text based instances (such as the QuickType keyboard):
 
 ```csharp
 attributes.SubThoroughfare = "1";
@@ -254,32 +254,32 @@ attributes.StateOrProvince = "CA";
 attributes.Country = "United States";
 ```
 
-緯度和經度是選擇性的，但請確定使用者已路由傳送至應用程式想要將其傳送到的確切位置：
+The latitude and longitude are optional, but ensure that the user is routed to the exact location the app is wanting to send them to:
 
 ```csharp
 attributes.Latitude = 37.33072;
 attributes.Longitude = 122.029674;
 ```
 
-藉由設定電話號碼，應用程式可以取得 Siri 的存取權，讓使用者可以從應用程式叫用 Siri，方法是說： * 「呼叫此位置」。
+By setting the phone numbers, the app can gain access to Siri so the user can invoke Siri from the app by saying something like, *"Call this place":
 
 ```csharp
 attributes.PhoneNumbers = new string[]{"(800) 275-2273"};
 ```
 
-最後，應用程式可以指出實例是否適合用於流覽和撥打電話：
+Finally, the app can indicate if the instance is suitable for navigation and phone calls:
 
 ```csharp
 attributes.SupportsPhoneCalls = true;
 attributes.SupportsNavigation = true;
 ```
 
-## <a name="activities-best-practices"></a>活動最佳做法
+## <a name="activities-best-practices"></a>Activities Best Practices
 
-在使用活動時，Apple 建議下列最佳作法：
+Apple suggests the following best practices when working with activities:
 
-- `NeedsSave`用於延遲承載更新。
-- 請務必保留對目前活動的強式參考。
+- Use `NeedsSave` for lazy payload updates.
+- Ensure to keep a strong reference to the current activity.
 - 只傳送包含足夠資訊的小型承載以還原狀態。
 - 使用反向 DNS 標記法加以指定，以確定活動類型識別碼是唯一的，而且是描述性的。 
 
@@ -289,14 +289,14 @@ attributes.SupportsNavigation = true;
 
 ## <a name="routing-apps-and-locations-suggestions"></a>路由應用程式和位置的建議
 
-本節將直接從路由應用程式中查看使用位置建議。 若要讓路由應用程式新增這種功能，開發人員可以利用`MKDirectionsRequest`現有的架構，如下所示：
+本節將直接從路由應用程式中查看使用位置建議。 為了讓路由應用程式新增這種功能，開發人員將利用現有的 `MKDirectionsRequest` 架構，如下所示：
 
 - 以多工方式升級應用程式。
 - 將應用程式註冊為路由應用程式。
-- 使用 MapKit `MKDirectionsRequest`物件來處理啟動應用程式。
+- 若要使用 MapKit `MKDirectionsRequest` 物件來處理啟動應用程式。
 - 讓 watchOS 能夠瞭解如何根據使用者參與來建議應用程式。
 
-以 MapKit `MKDirectionsRequest`物件啟動應用程式時，應該會自動開始將使用者指示提供給要求的位置，或呈現可讓使用者輕鬆開始取得指示的 UI。 例如：
+以 MapKit `MKDirectionsRequest` 物件啟動應用程式時，應該會自動開始將使用者的指示提供給要求的位置，或呈現可讓使用者輕鬆開始取得指示的 UI。 例如:
 
 ```csharp
 using System;
@@ -339,7 +339,7 @@ namespace MonkeyChat
 if (MKDirectionsRequest.IsDirectionsRequestUrl(url)) {
 ```
 
-如果是，則它會`MKDirectionsRequest`從 URL 建立：
+如果是，則會從 URL 建立一個 `MKDirectionsRequest`：
 
 ```csharp
 var request = new MKDirectionsRequest(url);

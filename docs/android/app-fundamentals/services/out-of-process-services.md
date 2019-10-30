@@ -4,15 +4,15 @@ description: 一般而言，Android 應用程式中的所有元件都會在相�
 ms.prod: xamarin
 ms.assetid: 27A2E972-A690-480B-B31D-5EF1F74F673C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 5429f260399602b7ef15e8263bc74cb8ae940f4f
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: fda5ed3b2a26166e23d4a796219758853d0aace7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70754878"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024541"
 ---
 # <a name="running-android-services-in-remote-processes"></a>在遠端進程中執行 Android 服務
 
@@ -34,12 +34,12 @@ _一般而言，Android 應用程式中的所有元件都會在相同的進程�
 在許多方面，系結至在另一個處理常式中執行的服務，與系結[至本機服務](~/android/app-fundamentals/services/creating-a-service/bound-services.md)相同。 用戶端會叫用 `BindService` 以系結（並視需要啟動）服務。 系統會建立一個 `Android.OS.IServiceConnection` 物件，以管理用戶端與服務之間的連接。 如果用戶端成功系結至服務，則 Android 會透過可用來在服務上叫用方法的 `IServiceConnection` 傳回物件。 接著，用戶端會使用這個物件與服務互動。 若要進行檢查，以下是系結至服務的步驟：
 
 - **建立意圖**&ndash; 必須使用明確意圖來系結至服務。
-- @No__t_2 `IServiceConnection` 物件做為用戶端與服務之間的媒介，以**執行並具現化 `IServiceConnection` 物件**。  負責監視用戶端與伺服器之間的連接。
+- &ndash; `IServiceConnection` 物件做為用戶端與服務之間的媒介，以**執行並具現化 `IServiceConnection` 物件**。  負責監視用戶端與伺服器之間的連接。
 - 叫用 **`BindService` 方法**&ndash; 呼叫 `BindService` 會將先前步驟中建立的意圖和服務連線分派至 Android，這將負責啟動服務並建立用戶端與服務之間的通訊。
 
 跨進程界限的需求會帶來額外的複雜性：通訊是單向（用戶端到伺服器），而用戶端無法直接叫用服務類別上的方法。 回想一下，當服務與用戶端執行相同的程式時，Android 會提供可允許雙向通訊的 `IBinder` 物件。 當服務在自己的進程中執行時，就不會發生這種情況。 用戶端會透過 `Android.OS.Messenger` 類別的協助，與遠端服務進行通訊。
 
-當用戶端要求與遠端服務系結時，Android 會叫用 `Service.OnBind` 生命週期方法，這會傳回 `Messenger` 所封裝的內部 `IBinder` 物件。 @No__t_0 是 Android SDK 所提供特殊 `IBinder` 實的精簡型包裝函式。 @No__t_0 會負責處理兩個不同程式之間的通訊。 開發人員會不在乎序列化訊息、跨進程界限封送處理訊息，然後在用戶端上還原序列化的詳細資料。 這項工作是由 `Messenger` 物件處理。 此圖顯示當用戶端起始系結至進程外服務時所涉及的用戶端 Android 元件：
+當用戶端要求與遠端服務系結時，Android 會叫用 `Service.OnBind` 生命週期方法，這會傳回 `Messenger` 所封裝的內部 `IBinder` 物件。 `Messenger` 是 Android SDK 所提供特殊 `IBinder` 實的精簡型包裝函式。 `Messenger` 會負責處理兩個不同程式之間的通訊。 開發人員會不在乎序列化訊息、跨進程界限封送處理訊息，然後在用戶端上還原序列化的詳細資料。 這項工作是由 `Messenger` 物件處理。 此圖顯示當用戶端起始系結至進程外服務時所涉及的用戶端 Android 元件：
 
 ![此圖顯示用戶端系結至服務的步驟和元件](out-of-process-services-images/ipc-01.png "此圖顯示用戶端系結至服務的步驟和元件。")
 
@@ -47,9 +47,9 @@ _一般而言，Android 應用程式中的所有元件都會在相同的進程�
 
 ![此圖顯示當服務由遠端用戶端系結時，所經歷的步驟和元件](out-of-process-services-images/ipc-02.png "此圖顯示服務在遠端用戶端系結時所經歷的步驟和元件。")
 
-當服務收到 `Message` 時，它會由 `Android.OS.Handler` 的實例處理。 服務將會執行自己的 `Handler` 子類別，必須覆寫 `HandleMessage` 方法。 這個方法是由 `Messenger` 叫用，並以參數的形式接收 `Message`。 @No__t_0 將會檢查 `Message` 中繼資料，並使用該資訊來叫用服務上的方法。
+當服務收到 `Message` 時，它會由 `Android.OS.Handler` 的實例處理。 服務將會執行自己的 `Handler` 子類別，必須覆寫 `HandleMessage` 方法。 這個方法是由 `Messenger` 叫用，並以參數的形式接收 `Message`。 `Handler` 將會檢查 `Message` 中繼資料，並使用該資訊來叫用服務上的方法。
 
-當用戶端建立 `Message` 物件，並使用 `Messenger.Send` 方法將它分派給服務時，就會發生單向通訊。 `Messenger.Send` 會將 `Message` 序列化，並將序列化的資料交給 Android，這會將訊息路由傳送至整個進程界限和服務。  服務所裝載的 `Messenger` 將會從傳入的資料建立 `Message` 物件。 此 `Message` 會放入佇列中，其中訊息會一次提交至 `Handler`。 @No__t_0 會檢查包含在 `Message` 中的中繼資料，並在 `Service` 上叫用適當的方法。 下圖說明各種作用中的概念：
+當用戶端建立 `Message` 物件，並使用 `Messenger.Send` 方法將它分派給服務時，就會發生單向通訊。 `Messenger.Send` 會將 `Message` 序列化，並將序列化的資料交給 Android，這會將訊息路由傳送至整個進程界限和服務。  服務所裝載的 `Messenger` 將會從傳入的資料建立 `Message` 物件。 此 `Message` 會放入佇列中，其中訊息會一次提交至 `Handler`。 `Handler` 會檢查包含在 `Message` 中的中繼資料，並在 `Service`上叫用適當的方法。 下圖說明各種作用中的概念：
 
 ![顯示如何在進程之間傳遞訊息的圖表](out-of-process-services-images/ipc-03.png "顯示如何在進程之間傳遞訊息的圖表。")
 
@@ -129,7 +129,7 @@ _一般而言，Android 應用程式中的所有元件都會在相同的進程�
 
 ### <a name="implementing-a-handler"></a>執行處理常式
 
-若要處理用戶端要求，服務必須執行 `Handler`，並覆寫 `HandleMessage` methodThis，方法會採用 `Message` 實例，它會從用戶端封裝方法呼叫，並將該呼叫轉譯為服務將會在其中執行的某個動作或工作執行. @No__t_0 物件會公開名為 `What` 的屬性，這是一個整數值，其意義是在用戶端與服務之間共用，而且與服務要針對用戶端執行的某些工作相關聯。
+若要處理用戶端要求，服務必須執行 `Handler`，並覆寫 `HandleMessage` methodThis，方法會採用 `Message` 實例，它會從用戶端封裝方法呼叫，並將該呼叫轉譯為服務將會在其中執行的某個動作或工作執行. `Message` 物件會公開名為 `What` 的屬性，這是一個整數值，其意義是在用戶端與服務之間共用，而且與服務要針對用戶端執行的某些工作相關聯。
 
 範例應用程式中的下列程式碼片段顯示 `HandleMessage` 的一個範例。 在此範例中，用戶端可以要求服務的動作有兩種：
 
@@ -168,7 +168,7 @@ public class TimestampRequestHandler : Android.OS.Handler
 
 ### <a name="instantiating-the-messenger"></a>具現化 Messenger
 
-如先前所討論，將 `Message` 物件還原序列化，以及叫用 `Handler.HandleMessage` 是 `Messenger` 物件的責任。 @No__t_0 類別也會提供用戶端將用來傳送訊息至服務的 `IBinder` 物件。  
+如先前所討論，將 `Message` 物件還原序列化，以及叫用 `Handler.HandleMessage` 是 `Messenger` 物件的責任。 `Messenger` 類別也會提供用戶端將用來傳送訊息至服務的 `IBinder` 物件。  
 
 當服務啟動時，它會具現化 `Messenger` 並插入 `Handler`。 執行此初始化的好地方是在服務的 `OnCreate` 方法上。 此程式碼片段是初始化自己的 `Handler` 和 `Messenger` 的其中一個服務範例：
 
@@ -294,9 +294,9 @@ catch (RemoteException ex)
 }
 ```
 
-@No__t_0 方法有數種不同的形式。 上一個範例使用[`Message.Obtain(Handler h, Int32 what)`](xref:Android.OS.Message.Obtain)。 因為這是跨進程服務的非同步要求，服務不會有任何回應，因此 `Handler` 設定為 `null`。 第二個參數（`Int32 what`）將儲存在 `Message` 物件的 `.What` 屬性中。 服務進程中的程式碼會使用 `.What` 屬性，以叫用服務上的方法。
+`Message.Obtain` 方法有數種不同的形式。 上一個範例使用[`Message.Obtain(Handler h, Int32 what)`](xref:Android.OS.Message.Obtain)。 因為這是跨進程服務的非同步要求，服務不會有任何回應，因此 `Handler` 設定為 `null`。 第二個參數（`Int32 what`）將儲存在 `Message` 物件的 `.What` 屬性中。 服務進程中的程式碼會使用 `.What` 屬性，以叫用服務上的方法。
 
-@No__t_0 類別也會公開可能用於收件者的兩個額外屬性： `Arg1` 和 `Arg2`。 這兩個屬性都是整數值，可能會有一些特殊的同意值，其在用戶端與服務之間有意義。 例如，`Arg1` 可能會保留客戶識別碼，而且 `Arg2` 可能會保留該客戶的訂單號碼。 [@No__t_1](xref:Android.OS.Message.Obtain)可以在建立 `Message` 時用來設定這兩個屬性。 填入這兩個值的另一種方式是在建立之後，直接在 `Message` 物件上設定 `.Arg` 和 `.Arg2` 屬性。
+`Message` 類別也會公開可能用於收件者的兩個額外屬性： `Arg1` 和 `Arg2`。 這兩個屬性都是整數值，可能會有一些特殊的同意值，其在用戶端與服務之間有意義。 例如，`Arg1` 可能會保留客戶識別碼，而且 `Arg2` 可能會保留該客戶的訂單號碼。 [`Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)`](xref:Android.OS.Message.Obtain)可以在建立 `Message` 時用來設定這兩個屬性。 填入這兩個值的另一種方式是在建立之後，直接在 `Message` 物件上設定 `.Arg` 和 `.Arg2` 屬性。
 
 ### <a name="passing-additional-values-to-the-service"></a>將其他值傳遞至服務
 
@@ -414,9 +414,9 @@ Android 提供四種不同的許可權等級：
 
 若要使用自訂許可權，則在用戶端明確要求該許可權時，服務會宣告它。
 
-若要在服務 APK 中建立許可權，`permission` 元素會加入至**androidmanifest.xml**中的 `manifest` 元素。 此許可權必須設定 [`name`]、[`protectionLevel`] 和 [`label`] 屬性。 @No__t_0 屬性必須設定為可唯一識別許可權的字串。 該名稱將會顯示在**Android 設定**的 [**應用程式資訊**] 視圖中（如下一節所示）。
+若要在服務 APK 中建立許可權，`permission` 元素會加入至**androidmanifest.xml**中的 `manifest` 元素。 此許可權必須設定 [`name`]、[`protectionLevel`] 和 [`label`] 屬性。 `name` 屬性必須設定為可唯一識別許可權的字串。 該名稱將會顯示在**Android 設定**的 [**應用程式資訊**] 視圖中（如下一節所示）。
 
-@No__t_0 屬性必須設定為上述四個字串值的其中一個。  @No__t_0 和 `description` 必須參考字串資源，並可用來為使用者提供易記的名稱和描述。
+`protectionLevel` 屬性必須設定為上述四個字串值的其中一個。  `label` 和 `description` 必須參考字串資源，並可用來為使用者提供易記的名稱和描述。
 
 此程式碼片段是在包含服務之 APK 的**androidmanifest.xml**中宣告自訂 `permission` 屬性的範例：
 
@@ -469,7 +469,7 @@ Android 提供四種不同的許可權等級：
 
 若要查看已授與應用程式的許可權，請開啟 [Android 設定] 應用程式，然後選取 [**應用**程式]。 尋找並選取清單中的應用程式。 在 [**應用程式資訊**] 畫面上，按一下 [**許可權**]，這會顯示授與應用程式擁有權限的視圖：
 
-[從 Android 裝置 ![Screenshots，其中顯示如何尋找授與應用程式的許可權](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
+[從 Android 裝置![螢幕擷取畫面，其中顯示如何尋找已授與應用程式的許可權](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
 ## <a name="summary"></a>總結
 

@@ -3,15 +3,15 @@ title: C 使用者入門
 description: 本檔說明如何使用 .NET 內嵌，在 C 應用程式中內嵌 .NET 程式碼。 它討論如何在 Visual Studio 2019 和 Visual Studio for Mac 中使用 .NET 內嵌。
 ms.prod: xamarin
 ms.assetid: 2A27BE0F-95FB-4C3A-8A43-72540179AA85
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/19/2018
-ms.openlocfilehash: 1dc68a709f8e1f864961bbe87af112b648b0dd2a
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9660eccd3e14a6c4ecad901064650fe1e25458f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278732"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029788"
 ---
 # <a name="getting-started-with-c"></a>C 使用者入門
 
@@ -71,7 +71,7 @@ Generating binding code...
     Generated: mono_embeddinator.h
 ```
 
-由於旗標已傳遞至工具，因此 .net 內嵌也應該將輸出檔案編譯成共用程式庫，您可以在產生的檔案、macOS 上的**dylib**檔案，以及 Windows 上的**managed .dll**中找到該檔案。 `--compile`
+由於 `--compile` 旗標已傳遞至工具，因此 .NET 內嵌也應該將輸出檔案編譯成共用程式庫，您可以在產生的檔案、macOS 上的**dylib**檔案，以及 Windows 上的**managed .dll**中找到該檔案。
 
 若要取用共用程式庫，您可以加入**managed .h** c 標頭檔，它會提供對應至個別 managed 程式庫 Api 的 C 宣告，並與先前所述的已編譯共用程式庫連結。
 

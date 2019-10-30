@@ -4,15 +4,15 @@ description: 本文件描述如何使用 Visual Studio 來建置和測試 Xamari
 ms.prod: xamarin
 ms.assetid: bf3c779f-959f-428d-babb-428f363f7e4e
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 45c7c3a90fa0dedfed8f5f325a96b4c7aa7a5a9e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ae32588d75ec3152a1b8b8558d40abbe2e76d1b4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292027"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022480"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
 
@@ -32,7 +32,7 @@ ms.locfileid: "70292027"
 
 有一些組態選項可供使用，因此您可以判斷哪個組態最符合您的開發需求。 以下列出這些組態：
 
-- 使用 Mac 作為您的主要開發電腦，然後執行已安裝 Visual Studio 的 Windows 虛擬機器。 建議您使用 VM 軟體，例如 [Parallels](http://www.parallels.com/products/desktop/) \(英文\) 或 [VMWare](http://www.vmware.com/products/fusion/) \(英文\)。
+- 使用 Mac 作為您的主要開發電腦，然後執行已安裝 Visual Studio 的 Windows 虛擬機器。 建議您使用 VM 軟體，例如 [Parallels](https://www.parallels.com/products/desktop/) \(英文\) 或 [VMWare](https://www.vmware.com/products/fusion/) \(英文\)。
 - 僅將 Mac 當作組建主機使用。 在此案例中，它會連線至與已安裝[必要](~/get-started/installation/windows.md#installation)工具之 Windows 電腦相同的網路。
 
 在上述任一情況中，您都應該依照下列步驟進行操作：
@@ -53,7 +53,7 @@ Xamarin iOS for Visual Studio 會在標準工具列和新的 iOS 工具列中新
 
 以紅色圈起的是與 Xamarin iOS 開發相關的控制項：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "以紅色圈起的是與 Xamarin iOS 開發相關的控制項")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "以紅色圈起的是與 Xamarin iOS 開發相關的控制項")
+[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "The controls relevant to Xamarin iOS development are circled in red")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "The controls relevant to Xamarin iOS development are circled in red")
 
 - **開始** - 開始在選取的平台上進行應用程式偵錯或執行。 必須要有已連線的 Mac (請參閱 iOS 工具列中的狀態指標)。
 - **方案組態** – 可讓您選取要使用的組態 (例如 [偵錯]、[發行])。
@@ -63,7 +63,7 @@ Xamarin iOS for Visual Studio 會在標準工具列和新的 iOS 工具列中新
 
 Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來都相似。 這些全部顯示如下：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS 工具列")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 以下說明每個項目：
 
@@ -79,31 +79,31 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 下面的螢幕擷取畫面顯示可用的輸出視窗，這些可能會依據您的專案類型而有所不同：
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "可用的輸出視窗")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
+[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "The available output windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** – 這包含僅與 Xamarin 相關的資訊，例如與 Mac 的連線和啟用狀態。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "僅與 Xamarin 相關的資訊，例如與 Mac 的連線和啟用狀態")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Information relating solely to Xamarin, such as the connection to the Mac and activation status")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin 診斷** – 這會顯示 Xamarin 專案的更多相關詳細資訊，例如與 Android 的互動。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Xamarin 專案的相關詳細資訊")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Detailed information about the Xamarin project")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 其他預設的 Visual Studio [輸出] 窗格 (例如 [偵錯] 和 [建置]) 在 [輸出] 檢視內仍有提供，可用於「偵錯輸出」和「MSBuild 輸出」：
 
 - **偵錯**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "偵錯輸出")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugging Output")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **建置**和**建置順序**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild 輸出")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
+  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild Output")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>iOS 專案屬性
 
 若要存取 Visual Studio 的「專案屬性」，請在專案名稱上按一下滑鼠右鍵，然後選取操作功能表中的 [屬性]。 這將可讓您設定 iOS 應用程式，如以下螢幕擷取畫面所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "設定 iOS 應用程式")
+![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Configuring an iOS application")
 
 - iOS 套件組合簽署 – 連線到 Mac 以填入程式碼簽署身分識別和佈建設定檔：
 
@@ -133,11 +133,11 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 若要開始建立或編輯您的「分鏡腳本」，請按兩下 `Main.storyboard` 以在「iOS 設計工具」中開啟它：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "iOS 設計工具中的 Main.storyboard")
+![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "The Main.storyboard in the iOS Designer")
 
 若要將物件新增到您的檢視中，請使用 [工具箱] 窗格將項目拖放到您的「設計介面」上。 您可以選取 [檢視] > [工具箱] 來新增 [工具箱] (如果尚未新增)。 您可以使用 [屬性] 窗格來修改物件屬性、調整其版面配置，以及建立事件，如下所示：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "[屬性] 窗格")
+![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "The Properties pane")
 
  如需有關使用 iOS 設計工具的詳細資訊，請參閱[設計工具](~/ios/user-interface/designer/index.md)指南。
 
@@ -163,7 +163,7 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 i
 
 您可以在應用程式中的任何一點設定中斷點，以向偵錯工具發出訊號來暫時停止程式執行。 若要在您的 Visual Studio 中設定中斷點，請按一下您想要中斷之程式碼行號旁邊的編輯器邊界區域：
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "設定偵錯點")
+![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "Setting a debug point")
 
 開始偵錯，然後使用模擬器或裝置將應用程式巡覽至中斷點。 達到中斷點時，將會醒目提示程式碼行並啟用 Visual Studio 的一般偵錯行為：您可以逐步執行、不進入或跳離程式碼、檢查區域變數，或是使用「即時運算視窗」。
 

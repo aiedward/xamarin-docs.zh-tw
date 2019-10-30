@@ -4,15 +4,15 @@ description: Android 社區有許多您可能想要在應用程式中使用的 J
 ms.prod: xamarin
 ms.assetid: B39FF1D5-69C3-8A76-D268-C227A23C9485
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/01/2017
-ms.openlocfilehash: e829c953278d8edeb697d27da8e3707ee1c91784
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d40a23076ec8f405e57ec40de47ec9ad2261d85d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757590"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027611"
 ---
 # <a name="binding-a-java-library"></a>繫結 Java 程式庫
 
@@ -32,7 +32,7 @@ Xamarin 會使用 Managed 可呼叫*包裝*函式（*MCW*）來實行系結。 M
 
 [![Android JNI bridge 架構](images/architecture.png)](images/architecture.png#lightbox)
 
-系結程式庫是包含適用于 JAVA 類型之受控可呼叫包裝函式的元件。 例如，以下是我們想要在系`MyClass`結程式庫中包裝的 JAVA 類型：
+系結程式庫是包含適用于 JAVA 類型之受控可呼叫包裝函式的元件。 例如，以下是我們想要在系結程式庫中包裝的 JAVA 類型 `MyClass`：
 
 ```java
 package com.xamarin.mycode;
@@ -43,7 +43,7 @@ public class MyClass
 }
 ```
 
-在為包含`MyClass`的 **.jar**產生系結程式庫之後，我們可以將它具現化，並從下列C#來源呼叫方法：
+在為包含 `MyClass`的 **.jar**產生系結程式庫之後，我們可以將它具現化，並從C#下列呼叫方法：
 
 ```csharp
 var instance = new MyClass ();
@@ -53,13 +53,13 @@ string result = instance.MyMethod (42);
 
 若要建立此系結程式庫，您可以使用 [Xamarin JAVA 系結連結*庫*] 範本。 產生的系結專案會建立 .NET 元件，其中包含內嵌在其中的 MCW 類別、 **.jar**檔案和 Android 程式庫專案資源。 您也可以建立適用于 Android Archive 的系結程式庫（。AAR）檔案和 Eclipse Android 程式庫專案。 藉由參考產生的系結程式庫 DLL 元件，您可以在您的 Xamarin Android 專案中重複使用現有 JAVA 程式庫。
 
-當您參考系結程式庫中的類型時，您必須使用系結程式庫的命名空間。 一般來說，您會在`using` C#原始程式檔的頂端新增指示詞，也就是 JAVA 封裝名稱的 .net 命名空間版本。 例如，如果系結的 **.jar**的 JAVA 封裝名稱如下：
+當您參考系結程式庫中的類型時，您必須使用系結程式庫的命名空間。 一般來說，您會在C#原始程式檔的頂端加入一個 `using` 指示詞，也就是 JAVA 封裝名稱的 .net 命名空間版本。 例如，如果系結的 **.jar**的 JAVA 封裝名稱如下：
 
 ```csharp
 com.company.package
 ```
 
-接著，您會將下列`using`語句放在原始程式C#檔的頂端，以存取系結的 **.jar**檔案中的類型：
+然後，將下列 `using` 語句放在原始程式C#檔的頂端，以存取系結的 **.jar**檔案中的類型：
 
 ```csharp
 using Com.Company.Package;
@@ -67,49 +67,49 @@ using Com.Company.Package;
 
 系結現有的 Android 程式庫時，必須記住下列幾點：
 
-- **程式庫是否有任何外部相依性？** &ndash;Android 程式庫所需的任何 JAVA 相依性都必須以**ReferenceJar**或**EmbeddedReferenceJar**的形式包含在 Xamarin android 專案中。 任何原生元件都必須加入至系結專案做為**EmbeddedNativeLibrary**。  
+- **程式庫是否有任何外部相依性？** &ndash; Android 程式庫所需的任何 JAVA 相依性，都必須以**ReferenceJar**或**EmbeddedReferenceJar**的形式包含在 Xamarin android 專案中。 任何原生元件都必須加入至系結專案做為**EmbeddedNativeLibrary**。  
 
-- **Android 程式庫的目標是哪個版本的 Android API？** &ndash;不可能「降級」 Android API 層級;確定 [Xamarin] 系結專案的目標是與 Android 程式庫相同的 API 層級（或更高版本）。
+- **Android 程式庫的目標是哪個版本的 Android API？** &ndash; 不可能「降級」 Android API 層級;確定 [Xamarin] 系結專案的目標是與 Android 程式庫相同的 API 層級（或更高版本）。
 
-- **用來編譯程式庫的 JDK 版本為何？** &ndash;如果 Android 程式庫是使用不同于 Xamarin 的 JDK 版本所建立，則可能會發生系結錯誤。 可能的話，請使用您的 Xamarin 安裝所使用的相同 JDK 版本來重新編譯 Android 程式庫。
+- **用來編譯程式庫的 JDK 版本為何？** 如果 Android 程式庫是使用不同于 Xamarin 的 JDK 版本所建立，則可能會發生 &ndash; 系結錯誤。 可能的話，請使用您的 Xamarin 安裝所使用的相同 JDK 版本來重新編譯 Android 程式庫。
 
 ## <a name="build-actions"></a>建置動作
 
-當您建立系結程式庫時，您會在 **.jar**或上設定*組建動作*。您併入系結程式庫專案&ndash;中的 AAR 檔案：每個組建動作都會決定 **.jar**或的方式。AAR 檔案將內嵌至您的系結程式庫（或由其參考）。 下列清單摘要列出這些組建動作：
+當您建立系結程式庫時，您會在 **.jar**或上設定*組建動作*。AAR 您併入系結程式庫專案中的檔案 &ndash; 每個組建動作都會決定 **.jar**或的方式。AAR 檔案將內嵌至您的系結程式庫（或由其參考）。 下列清單摘要列出這些組建動作：
 
-- `EmbeddedJar`將 .jar 內嵌至產生的系結程式庫 DLL，做為內嵌資源。 &ndash; 這是最簡單且最常使用的組建動作。 當您想要將 **.jar**自動編譯成位元組程式碼並封裝到系結程式庫時，請使用此選項。
+- `EmbeddedJar` &ndash; 會將 **.Jar**內嵌至產生的系結程式庫 DLL，做為內嵌資源。 這是最簡單且最常使用的組建動作。 當您想要將 **.jar**自動編譯成位元組程式碼並封裝到系結程式庫時，請使用此選項。
 
-- `InputJar`不會將 .jar 內嵌到產生的系結程式庫中。 &ndash;URLMON.DLL. 您的系結程式庫。DLL 在執行時間會相依于這個 **.jar** 。 當您不想要在系結程式庫（例如，基於授權原因）中包含 **.jar**時，請使用此選項。 如果您使用此選項，您必須確定在執行應用程式的裝置上可以使用輸入 **.jar** 。
+- `InputJar` &ndash; 不會將 **.jar**內嵌到產生的系結程式庫中。URLMON.DLL. 您的系結程式庫。DLL 在執行時間會相依于這個 **.jar** 。 當您不想要在系結程式庫（例如，基於授權原因）中包含 **.jar**時，請使用此選項。 如果您使用此選項，您必須確定在執行應用程式的裝置上可以使用輸入 **.jar** 。
 
-- `LibraryProjectZip`&ndash;內嵌。AAR 檔案放入產生的系結程式庫中。URLMON.DLL. 這類似于 EmbeddedJar，不同之處在于您可以在系結中存取資源（以及程式碼）。AAR 檔案。 當您想要內嵌時，請使用此選項。AAR 至您的系結程式庫。
+- `LibraryProjectZip` &ndash; 內嵌。AAR 檔案放入產生的系結程式庫中。URLMON.DLL. 這類似于 EmbeddedJar，不同之處在于您可以在系結中存取資源（以及程式碼）。AAR 檔案。 當您想要內嵌時，請使用此選項。AAR 至您的系結程式庫。
 
-- `ReferenceJar`指定一個參考 .jar：一個參考 .jar 是您所系結的 .jar 或的 .jar。 &ndash;AAR 檔案視而定。 這個參考 **.jar**僅用於滿足編譯時間相依性。 當您使用這個組建動作時C# ，不會為參考建立系**結，而且**它不會內嵌在產生的系結程式庫中。URLMON.DLL. 當您要建立參考 **.jar**的系結程式庫，但尚未完成時，請使用此選項。 這個組建動作適用于封裝多個 **.jar**（和/或）。AARs）分成多個相互相依的系結程式庫。
+- `ReferenceJar` &ndash; 指定一個參考 **.jar**：**一個參考 .jar 是您**其中一個系結 **.jar**或的 **.jar。** AAR 檔案視而定。 這個參考 **.jar**僅用於滿足編譯時間相依性。 當您使用這個組建動作時C# ，不會為參考建立系**結，而且**它不會內嵌在產生的系結程式庫中。URLMON.DLL. 當您要建立參考 **.jar**的系結程式庫，但尚未完成時，請使用此選項。 這個組建動作適用于封裝多個 **.jar**（和/或）。AARs）分成多個相互相依的系結程式庫。
 
-- `EmbeddedReferenceJar`將參考 .jar 內嵌到產生的系結程式庫中。 &ndash;URLMON.DLL. 當您想要為輸入 **.jar** （或C# ）建立系結時，請使用此組建動作。AAR）及其所有在您的系結程式庫中的參考 **。**
+- `EmbeddedReferenceJar` &ndash; 會在產生的系結程式庫中內嵌一個參考 **。** URLMON.DLL. 當您想要為輸入 **.jar** （或C# ）建立系結時，請使用此組建動作。AAR）及其所有在您的系結程式庫中的參考 **。**
 
-- `EmbeddedNativeLibrary`將原生. 內嵌到系結中。 &ndash; 這個組建動作用於 **。因此**，會系結 **.jar**檔所需的檔案。 在從 JAVA 程式庫執行程式碼之前，可能需要手動載入 **。** 如下所述。
+- `EmbeddedNativeLibrary` &ndash; 會在系結中內嵌原生 **。** 這個組建動作用於 **。因此**，會系結 **.jar**檔所需的檔案。 在從 JAVA 程式庫執行程式碼之前，可能需要手動載入 **。** 如下所述。
 
 這些組建動作會在下列指南中詳細說明。
 
 此外，下列組建動作是用來協助匯入 JAVA API 檔，並將其C#轉換成 XML 檔：
 
-- `JavaDocJar`是用來指向符合 Maven 封裝樣式之 JAVA 程式庫的 JAVAdoc 封存 Jar （通常`FOOBAR-javadoc**.jar**`是）。
-- `JavaDocIndex`是用來在 API `index.html`參考檔 HTML 中指向檔案。
-- `JavaSourceJar`是用來補充`JavaDocJar`，以便先從來源產生 JAVADoc，然後將`JavaDocIndex`結果視為，針對符合 Maven 封裝樣式的 JAVA 程式庫（通常`FOOBAR-sources**.jar**`是）。
+- `JavaDocJar` 可用來指向符合 Maven 套件樣式（通常 `FOOBAR-javadoc**.jar**`）之 JAVA 程式庫的 JAVAdoc 封存 Jar。
+- `JavaDocIndex` 是用來指向 API 參考檔 HTML 中 `index.html` 的檔案。
+- `JavaSourceJar` 可用來補充 `JavaDocJar`，以便先從來源產生 JAVADoc，然後將結果視為 `JavaDocIndex`，適用于符合 Maven 封裝樣式的 JAVA 程式庫（通常是 `FOOBAR-sources**.jar**`）。
 
 API 檔應該是來自 JAVA8、JAVA7 或 JAVA6 SDK 的預設 doclet （兩者都是不同的格式），或 DroidDoc 樣式。
 
 ## <a name="including-a-native-library-in-a-binding"></a>在系結中包含原生程式庫
 
-在系結 JAVA 程式庫的過程中，可能需要在 Xamarin. Android 系結專案中包含 **。** 當包裝的 JAVA 程式碼執行時，Xamarin 將無法進行 JNI 呼叫，並會 UnsatisfiedLinkError 錯誤訊息 _：找不到原生_方法：將會出現在應用程式的 logcat 中。
+在系結 JAVA 程式庫的過程中，可能需要在 Xamarin. Android 系結專案中包含 **。** 當包裝的 JAVA 程式碼執行時，Xamarin 將無法進行 JNI 呼叫，且錯誤訊息_UnsatisfiedLinkError：找不到原生方法：_ 將會出現在應用程式的 logcat 中。
 
-修正此問題的方法是以手動方式**載入，並**呼叫來`Java.Lang.JavaSystem.LoadLibrary`進行程式庫。 例如，假設 Xamarin 專案有共用程式庫**libpocketsphinx_jni。因此**包含在系結專案中，且組建動作為**EmbeddedNativeLibrary**，下列程式碼片段（在使用共用程式庫之前執行）會載入 **。因此，** 程式庫：
+修正此問題的方法是以手動方式載入 **。因此**，您可以呼叫 `Java.Lang.JavaSystem.LoadLibrary`的程式庫。 例如，假設 Xamarin 專案有共用程式庫**libpocketsphinx_jni。因此**包含在系結專案中，且組建動作為**EmbeddedNativeLibrary**，下列程式碼片段（在使用共用程式庫之前執行）會載入 **。因此，** 程式庫：
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="adapting-java-apis-to-ceparsl"></a>將 JAVA Api 調整成 C&eparsl;
+## <a name="adapting-java-apis-to-ceparsl"></a>將 JAVA Api 調整為 C&eparsl;
 
 Xamarin 的系結產生器會變更一些 JAVA 慣用語和模式，以對應至 .NET 模式。 下列清單說明如何將 JAVA 對應至C#/.NET：
 
@@ -117,7 +117,7 @@ Xamarin 的系結產生器會變更一些 JAVA 慣用語和模式，以對應至
 
 - JAVA 中的_欄位_是 .net 中的_屬性_。
 
-- JAVA 中的接聽程式/接聽程式_介面_是 .net 中的_事件_。 回呼介面中方法的參數會以子`EventArgs`類別表示。
+- JAVA 中的接聽程式/接聽程式_介面_是 .net 中的_事件_。 回呼介面中方法的參數會以 `EventArgs` 子類別表示。
 
 - JAVA 中的_靜態嵌套類別_是 .net 中的一個_嵌套類別_。
 

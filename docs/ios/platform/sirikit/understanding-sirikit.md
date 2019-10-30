@@ -4,15 +4,15 @@ description: 本檔說明在 Xamarin iOS 應用程式中使用 SiriKit 所需的
 ms.prod: xamarin
 ms.assetid: 99EC5C1E-484F-4371-8555-58C9F60DE37F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 3b99e4485bfb621b32fa001a49d75038b2072775
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 45dd1a47712de559ddf62ed92347619438b08f9b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769472"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031498"
 ---
 # <a name="understanding-sirikit-concepts"></a>了解 SiriKit 概念
 
@@ -56,7 +56,7 @@ Siri 和 Maps 都會使用標準系統介面來管理使用者的所有互動，
 
 本節將概述 SiriKit 如何讓使用者使用 Siri 與應用程式互動。 基於此範例的目的，我們將使用假的 MonkeyChat 應用程式：
 
-[![](understanding-sirikit-images/monkeychat01.png "MonkeyChat 圖示")](understanding-sirikit-images/monkeychat01.png#lightbox)
+[![](understanding-sirikit-images/monkeychat01.png "The MonkeyChat icon")](understanding-sirikit-images/monkeychat01.png#lightbox)
 
 MonkeyChat 會保留自己的使用者朋友的連絡人書籍，每個都與一個螢幕名稱相關聯（例如 Bobo），並允許使用者透過其螢幕名稱將文字聊天傳送給每位朋友。
 
@@ -64,33 +64,33 @@ MonkeyChat 會保留自己的使用者朋友的連絡人書籍，每個都與一
 
 例如，如果使用者想要將訊息傳送至其 friend Bobo，他們可能會與 Siri 進行下列交談：
 
-_使用者嘿，Siri，傳送 MonkeyChat 訊息。_<br />
-_Siri對誰？_<br />
-_使用者Bobo._<br />
-_Siri您要 Bobo 什麼？_<br />
-_使用者請傳送更多香蕉。_<br />
+_使用者：嘿 Siri，傳送 MonkeyChat 訊息。_<br />
+_Siri：對誰？_<br />
+_使用者： Bobo。_<br />
+_Siri：您想要 Bobo 什麼？_<br />
+_使用者：請傳送更多香蕉。_<br />
 
 另一個人可能會使用不同的交談提出相同的要求：
 
-_使用者在 MonkeyChat 上將訊息傳送至 Bobo。_<br />
-_Siri您要 Bobo 什麼？_<br />
-_使用者請傳送更多香蕉。_<br />
+_使用者：在 MonkeyChat 上將訊息傳送至 Bobo。_<br />
+_Siri：您想要 Bobo 什麼？_<br />
+_使用者：請傳送更多香蕉。_<br />
 
 而另一位使用者可能會提出更短的要求：
 
-_使用者MonkeyChat Bobo 請傳送更多香蕉。_<br />
-_Siri好，傳送訊息，請在 Monkeychat 上傳送更多香蕉給 Bobo。_<br />
+_使用者： MonkeyChat Bobo 請傳送更多香蕉。_<br />
+_Siri：確定，傳送訊息，請在 Monkeychat 上傳送更多香蕉給 Bobo。_<br />
 
 或甚至是以不同的語言提出相同的要求：
 
-_使用者MonkeyChat Bobo s'il vous plaît envoyer 加上 de bananes。_<br />
-_SiriOui、envoi message s'il vous plaît envoyer 加 de bananes à Bobo sur Monkeychat。_<br />
+_使用者： MonkeyChat Bobo s'il vous plaît envoyer 加上 de bananes。_<br />
+_Siri： Oui、envoi message s'il vous plaît envoyer 加 de bananes à Bobo sur Monkeychat。_<br />
 
 但另一位使用者在交談中可能非常詳細：
 
-_使用者嘿，您好，Siri，可以啟動 MonkeyChat 應用程式來傳送文字，其中包含「請傳送更多香蕉」訊息。_<br />
-_Siri對誰？_<br />
-_使用者我的最佳 pal Bobo。_<br />
+_使用者：嘿，您好的 Siri，您可以這麼做，並啟動 MonkeyChat 應用程式來傳送文字，其中包含訊息 [請傳送更多香蕉]。_<br />
+_Siri：對誰？_<br />
+_使用者：我的最佳 pal Bobo。_<br />
 
 此外，Siri 可能會根據要求的方式來回應要求，其中有許多方法：
 
@@ -103,7 +103,7 @@ Siri 也會進行微調，以符合使用者的協助工具需求，並且會根
 
 當使用者提出 Siri 的口頭要求時，以下是 Siri 將遵循的步驟：
 
-[![](understanding-sirikit-images/monkeychat02.png "Siri 將遵循的步驟")](understanding-sirikit-images/monkeychat02.png#lightbox)
+[![](understanding-sirikit-images/monkeychat02.png "The steps that Siri will follow")](understanding-sirikit-images/monkeychat02.png#lightbox)
 
 1. 首先，Siri 會採用使用者**語音**的音訊，並將其轉換成文字。
 2. 接下來，文字會轉換成**意圖**，也就是使用者要求的結構化標記法。
@@ -112,7 +112,7 @@ Siri 也會進行微調，以符合使用者的協助工具需求，並且會根
 
 應用程式有三種主要方式可以參與使用者與 Siri 的對話：
 
-[![](understanding-sirikit-images/monkeychat03.png "應用程式可以使用 Siri 參與使用者對話的三種主要方式")](understanding-sirikit-images/monkeychat03.png#lightbox)
+[![](understanding-sirikit-images/monkeychat03.png "The three main ways that the app can take part in the users conversation with Siri")](understanding-sirikit-images/monkeychat03.png#lightbox)
 
 1. **詞彙**-這是應用程式告訴 Siri 必須知道的字詞來與它互動的方式。
 2. **應用程式邏輯**-這些是應用程式將根據指定意圖採取的動作和回應。
@@ -122,27 +122,27 @@ Siri 也會進行微調，以符合使用者的協助工具需求，並且會根
 
 針對上述資訊，請檢查下列交談如何與 MonkeyChat 應用程式互動：
 
-_使用者嘿，Siri，將訊息傳送至 MonkeyChat 上的 Bobo。_<br />
-_Siri您要 Bobo 什麼？_<br />
-_使用者請傳送更多香蕉。_<br />
+_使用者：嘿 Siri，將訊息傳送至 MonkeyChat 上的 Bobo。_<br />
+_Siri：您想要 Bobo 什麼？_<br />
+_使用者：請傳送更多香蕉。_<br />
 
 應用程式在交談中採取的第一個角色是協助 Siri 瞭解使用者的語音：
 
-[![](understanding-sirikit-images/monkeychat04.png "協助 Siri 瞭解使用者的語音")](understanding-sirikit-images/monkeychat04.png#lightbox)
+[![](understanding-sirikit-images/monkeychat04.png "Helping Siri understand the users speech")](understanding-sirikit-images/monkeychat04.png#lightbox)
 
 Siri 在其資料庫中的名稱不是 "Bobo"，但應用程式會透過其詞彙與 Siri 共用這項資訊。 應用程式也可協助 Siri 辨識 Bobo 為收件者，因為它將其指定為 Siri 為*連絡人*。
 
-Siri 知道除了收件者以外，需要更多的訊息，因此它會快速檢查應用程式延伸，以查看訊息是否需要內容。 由於 MonkeyChat，Siri 會回應具有下列問題的使用者： *「您要 Bobo 什麼？」*
+Siri 知道除了收件者以外，需要更多的訊息，因此它會快速檢查應用程式延伸，以查看訊息是否需要內容。 由於 MonkeyChat 的關係，Siri 會以下列問題回應使用者：「*您想要 Bobo 什麼？* 」
 
 在上述範例中，使用者已回應「*請傳送更多香蕉*」，Siri 將會組合成結構化的**意圖**：
 
-[![](understanding-sirikit-images/monkeychat05.png "Siri 會將使用者的回應組合成結構化的意圖")](understanding-sirikit-images/monkeychat05.png#lightbox)
+[![](understanding-sirikit-images/monkeychat05.png "Siri will bundle the user's response into a structured Intent")](understanding-sirikit-images/monkeychat05.png#lightbox)
 
 結構化的意圖將包含下列資訊：
 
-- **Domain**訊息
+- **網域：** 訊息
 - **意圖：** sendMessage
-- **接收者**Bobo
+- **收件者：** Bobo
 - **內容：** 請傳送更多香蕉
 
 每個網域都有一組可在其中執行的已知*動作*，並根據網域和動作，傳送至應用程式的意圖中可能包含零到多個參數。
@@ -151,13 +151,13 @@ Siri 知道除了收件者以外，需要更多的訊息，因此它會快速檢
 
 每個 IntentResponse 也會包含**回應碼**，告知 Siri 應用程式是否能夠完成要求。 有些網域也有非常特定的錯誤回應碼，可以傳送。
 
-最後，IntentResponse 會包含（像`NSUserActivity`是用來支援手中的）。 如果`NSUserActivity`回應要求他們離開 Siri 環境，並輸入應用程式來完成應用程式，將會使用此專案來啟動。
+最後，IntentResponse 會包含 `NSUserActivity` （例如用來支援手的的）。 如果回應要求他們離開 Siri 環境，並輸入應用程式來完成應用程式，將會使用 `NSUserActivity` 來啟動該應用程式。
 
-Siri 會自動建立適當`NSUserActivity`的來啟動應用程式，並收取使用者在 Siri 環境中離開的位置。 不過，如果需要的話，應用程式`NSUserActivity`可以提供自己的自訂資訊。
+Siri 會自動建立適當的 `NSUserActivity` 來啟動應用程式，並收取使用者在 Siri 環境中停止的位置。 不過，如果需要的話，應用程式可以使用自訂資訊來提供自己的 `NSUserActivity`。
 
 在應用程式處理意圖並將回應傳回給 Siri 之後，它會向使用者顯示結果（verbally 和視覺效果）：
 
-[![](understanding-sirikit-images/monkeychat06.png "呈現給使用者的結果 verbally 和視覺效果")](understanding-sirikit-images/monkeychat06.png#lightbox)
+[![](understanding-sirikit-images/monkeychat06.png "The results presented to the user both verbally and visually")](understanding-sirikit-images/monkeychat06.png#lightbox)
 
 Siri 有數個內建回應使用者介面，適用于應用程式可用的每個網域。 不過，由於 MonkeyChat 已提供選擇性意圖 UI 延伸模組，因此它會用來向上述範例中的使用者呈現交談結果。
 
@@ -165,7 +165,7 @@ Siri 有數個內建回應使用者介面，適用于應用程式可用的每個
 
 處理意圖時，應用程式延伸模組需要執行三項主要工作：
 
-[![](understanding-sirikit-images/monkeychat07.png "意圖生命週期")](understanding-sirikit-images/monkeychat07.png#lightbox)
+[![](understanding-sirikit-images/monkeychat07.png "The Intent Lifecycle")](understanding-sirikit-images/monkeychat07.png#lightbox)
 
 1. 應用程式必須**解析**事件上的每個參數。 因此，應用程式會呼叫解析多次（每個參數一次），有時也會在同一個參數上多次，直到應用程式和使用者同意要求的內容為止。
 2. 應用程式必須**確認**它可以處理要求的意圖，並告訴 Siri 預期的結果。
@@ -238,7 +238,7 @@ Siri 會處理進行選取的使用者（verbally）或與 Siri UI 互動，並�
 
 意圖延伸模組負責處理應用程式與 Siri 之間的主要互動，如下所示：
 
-[![](understanding-sirikit-images/intents01.png "意圖延伸模組")](understanding-sirikit-images/intents01.png#lightbox)
+[![](understanding-sirikit-images/intents01.png "The Intents Extension")](understanding-sirikit-images/intents01.png#lightbox)
 
 意圖延伸模組可支援一或多個意圖，由開發人員決定要如何在應用程式中執行 SiriKit。 開發人員也可以為每個需要處理的意圖新增不同的意圖延伸模組。  話雖如此，Apple 要求開發人員限制意圖延伸的數目，讓 Siri 不會對應用程式開啟多個進程，這需要更多的記憶體和時間來處理。
 
@@ -248,7 +248,7 @@ Siri 會處理進行選取的使用者（verbally）或與 Siri UI 互動，並�
 
 Apple 已採取絕佳的措施，確保使用者私人資訊在使用 Siri 時是安全的，因此，有數個互動需要使用者登入 iOS 裝置。 例如，在要求您提出或付款時。
 
-此外，應用程式可能會想要限制使用者登入裝置的特定行為。 在這些情況下，應用程式可以要求**限制的鎖定**行為。 這會透過檔案中`Info.plist`的設定來完成。
+此外，應用程式可能會想要限制使用者登入裝置的特定行為。 在這些情況下，應用程式可以要求**限制的鎖定**行為。 這項作業是透過 `Info.plist` 檔案中的設定來完成。
 
 本機驗證架構適用于意圖延伸，因此應用程式可以要求使用者提供額外的驗證資訊，即使裝置已解除鎖定也一樣。
 
@@ -264,16 +264,16 @@ Apple 已設計 Siri 來與使用者進行自然、流暢的交談，因此，�
 
 意圖 UI 延伸提供機會將應用程式的 UI 和商標帶入 Siri 體驗，讓使用者感覺能夠連接到應用程式。 透過此延伸模組，應用程式可以將品牌以及視覺效果和其他資訊帶入文字記錄中。
 
-[![](understanding-sirikit-images/intents02.png "範例意圖 UI 延伸模組輸出")](understanding-sirikit-images/intents02.png#lightbox)
+[![](understanding-sirikit-images/intents02.png "Example Intents UI Extension output")](understanding-sirikit-images/intents02.png#lightbox)
 
-意圖 UI 延伸模組一律`UIViewController`會傳回，而且應用程式可以將它喜歡的任何專案新增至 view controller 內部，例如顯示超出初始回應的其他資訊。 [意圖] UI 也可以使用長時間執行事件的狀態來更新使用者，例如，要將一間分享車輛觸及其位置所需的時間。
+意圖 UI 延伸一律會傳回 `UIViewController`，而應用程式可以將它喜歡的任何專案新增至 view controller 內部，例如顯示超出初始回應的其他資訊。 [意圖] UI 也可以使用長時間執行事件的狀態來更新使用者，例如，要將一間分享車輛觸及其位置所需的時間。
 
 意圖 UI 延伸一律會與其他 Siri 內容一起顯示，例如應用程式圖示和 UI 頂端的名稱，或是根據意圖，按鈕（例如 [傳送] 或 [取消]）可能會顯示在底部。
 
 有幾個實例，應用程式預設會將 Siri 顯示的資訊取代為使用者（例如訊息或對應），應用程式可以在此將預設體驗取代為應用程式量身打造的經驗。
 
 > [!IMPORTANT]
-> 雖然您可以將互動式專案（例如`UIButtons`或`UITextFields` ）新增至意圖 ui 延伸`UIViewController`模組，但這些專案在非互動中會受到嚴格禁止，而使用者將無法與他們互動。
+> 雖然您可以將互動式專案（例如 `UIButtons` 或 `UITextFields` 新增至意圖 UI 延伸模組的 `UIViewController`，但這些專案在非互動中會受到嚴格禁止，而使用者將無法與他們互動。
 
 應用程式完全選擇性地提供意圖 UI 延伸模組，因為 Siri 包含每個意圖類型的一組預設 UI。 此外，意圖 UI 介面僅適用于 Apple 認為對使用者很有説明的特定意圖。
 
@@ -285,9 +285,9 @@ Apple 已設計 Siri 來與使用者進行自然、流暢的交談，因此，�
 
 ### <a name="app-specific-vocabulary"></a>應用程式特定詞彙
 
-應用程式特定詞彙會定義所有應用程式使用者都知道的特定單字和片語，例如車輛類型或健身名稱。 因為這些是應用程式的一部分，所以會在檔案中`AppIntentVocabulary.plist`定義為主要應用程式套件組合的一部分。 此外，應將這些單字和片語當地語系化。
+應用程式特定詞彙會定義所有應用程式使用者都知道的特定單字和片語，例如車輛類型或健身名稱。 因為這些是應用程式的一部分，所以它們會定義在 `AppIntentVocabulary.plist` 檔案中，作為主要應用程式套件組合的一部分。 此外，應將這些單字和片語當地語系化。
 
-詞彙`AppIntentVocabulary.plist`檔案有幾個部分：
+詞彙 `AppIntentVocabulary.plist` 檔案有幾個部分：
 
 - **範例應用程式使用**-這些會針對使用者可以對應用程式提出的要求提供一組常見的使用案例。 例如： *「開始使用 MonkeyFit 的健身」。*
 - **參數**-這些會提供應用程式專屬的一組非標準參數類型。 例如，MonkeyFit 應用程式的健身名稱。 其中包括：
@@ -402,7 +402,7 @@ IOS 10 中的 Maps 應用程式已新增一些功能，例如，使用者可以�
 
 當應用程式呈現有問題的單一值時，處理這種情況的慣用方法是讓 Siri 要求使用者確認。 例如，「*您的意思是 Bobo 很棒嗎？* 」，他們可以透過簡單的「是」或「無」解答來回複。
 
-當單一值有幾個可能的選擇可以正確時，就會發生混淆，這是慣用的處理方法。 在這種情況下，Siri 可以提示使用者最多十個可能的選項供您選擇。 例如：
+當單一值有幾個可能的選擇可以正確時，就會發生混淆，這是慣用的處理方法。 在這種情況下，Siri 可以提示使用者最多十個可能的選項供您選擇。 例如:
 
 ```csharp
 Who do you want to send the message to?
@@ -438,7 +438,7 @@ Siri 有數個內建的使用者介面，可用於其所知道的每個網域和
 
 Apple 建議的幾個步驟會將對話介面的設計波蘭文。 第一，是提供清楚、簡潔的詞彙和使用案例範例來 Siri。
 
-使用者探索應用程式的其中一種方式，是使用 Siri 起始交談並詢問「*您可以怎麼做？* 」 Siri 會顯示其可執行檔幾項不同專案，包括開發人員的應用程式，以及透過其`plist`檔案提供的範例主圖使用案例。
+使用者探索應用程式的其中一種方式，是使用 Siri 起始交談並詢問「*您可以怎麼做？* 」 Siri 會顯示其可執行檔幾項不同專案，包括開發人員的應用程式，以及透過其 `plist` 檔案提供的範例主圖使用案例。
 
 如何撰寫良好的範例使用案例：
 

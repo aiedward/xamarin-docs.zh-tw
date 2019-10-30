@@ -4,15 +4,15 @@ description: 本文說明如何使用 JAVA 專案所產生的 JAVAdoc 來復原 
 ms.prod: xamarin
 ms.assetid: 59E8EF16-1322-486A-BB16-353804B77356
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/20/2017
-ms.openlocfilehash: fa1fb0656384455322a2d0a3562fc0ee3ca52397
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 060c4759d39bc3b8c424ce46dc615644540fe9c2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757607"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027671"
 ---
 # <a name="naming-parameters-with-javadoc"></a>使用 JAVAdoc 具名引數
 
@@ -20,7 +20,7 @@ _本文說明如何使用 JAVA 專案所產生的 JAVAdoc 來復原 JAVA 系結�
 
 ## <a name="overview"></a>總覽
 
-系結現有的 JAVA 程式庫時，會遺失一些關於系結 API 的中繼資料。 特別是方法的參數名稱。 參數名稱將會顯示`p0`為`p1`、等。這是因為 java `.class`檔案不會保留 java 原始碼中使用的參數名稱。 
+系結現有的 JAVA 程式庫時，會遺失一些關於系結 API 的中繼資料。 特別是方法的參數名稱。 參數名稱將會顯示為 `p0`、`p1`等。這是因為 JAVA `.class` 檔案不會保留 JAVA 原始程式碼中使用的參數名稱。 
 
 如果 Xamarin 的 JAVA 系結專案可從原始程式庫存取 JAVAdoc HTML，則可以提供參數名稱。 
 
@@ -29,7 +29,7 @@ _本文說明如何使用 JAVA 專案所產生的 JAVAdoc 來復原 JAVA 系結�
 將 JAVAdoc HTML 整合到 JAVA 系結專案中，是由下列步驟組成的手動程式： 
 
 1. 下載文件庫的 JAVAdoc
-2. 編輯檔案並`<JavaDocPaths>`新增屬性： `.csproj`
+2. 編輯 `.csproj` 檔案，並新增 `<JavaDocPaths>` 屬性：
 3. 清除並重建專案
 
 完成這項作業之後，原始 JAVA 參數名稱應該會出現在 JAVA 系結專案所系結的 Api 中。 

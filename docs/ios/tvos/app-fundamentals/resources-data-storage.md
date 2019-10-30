@@ -4,15 +4,15 @@ description: 本文說明如何在以 Xamarin 建立的 tvOS 應用程式中使�
 ms.prod: xamarin
 ms.assetid: C56B5046-D2C0-4B63-9CE0-ADAA0EFD368A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 4b50ba09488f1f052f3e41302a42c691089727ff
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d84752afd5579216272895f750522a8f38ece34a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769644"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030797"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>在 Xamarin 中 tvOS 資源和資料存放區
 
@@ -22,7 +22,7 @@ _本文涵蓋在 tvOS 應用程式中使用資源和持續性資料儲存。_
 
 ## <a name="tvos-resource-limitations"></a>tvOS 資源限制
 
-不同于 iOS 裝置，新的 Apple TV 針對 tvOS 應用程式或資料提供非常有限的持續性本機儲存體。 對於非常小的專案（例如使用者喜好設定），您的 tvOS 應用程式仍`NSUserDefaults`可存取，[限制為 500 KB 的資料](https://forums.developer.apple.com/message/50696#50696)。 不過，如果您的 tvOS 應用程式需要保存較大量的資訊，它就必須從[iCloud](#iCloud-Data-Storage)儲存和取出該資料。
+不同于 iOS 裝置，新的 Apple TV 針對 tvOS 應用程式或資料提供非常有限的持續性本機儲存體。 對於非常小型的專案（例如使用者喜好設定），您的 tvOS 應用程式仍可存取[限制為 500 KB 資料](https://forums.developer.apple.com/message/50696#50696)的 `NSUserDefaults`。 不過，如果您的 tvOS 應用程式需要保存較大量的資訊，它就必須從[iCloud](#iCloud-Data-Storage)儲存和取出該資料。
 
 此外，tvOS 會將 Apple TV 應用程式的大小限制為 200 MB。 如果您的應用程式需要超過此大小的資源，則必須使用[隨選資源](#On-Demand-Resources)（最多2個）來封裝和載入它們。 基於這些限制，請務必正確地下載額外的資產，以提供最佳的應用程式使用者體驗。 如需詳細資訊，請參閱 Apple 的[隨選資源指南](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)。
 

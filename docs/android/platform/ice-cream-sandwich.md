@@ -4,15 +4,15 @@ description: 本文說明一些可供應用程式開發人員使用 Android 4 AP
 ms.prod: xamarin
 ms.assetid: 78E18A62-C12F-A699-37FA-44B9F6B44273
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 8cbb7c9c3da92b1ea5140e6f85accf53dab0bf80
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 382315f755102d7111db1a5c0f71d43bdea97a10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761468"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020178"
 ---
 # <a name="ice-cream-sandwich-features"></a>霜淇淋三明治功能
 
@@ -22,10 +22,10 @@ _本文說明一些可供應用程式開發人員使用 Android 4 API 霜淇淋�
 
 Android OS 版本4.0 （API 層級14）代表 Android 作業系統的主要修改，並包含許多重要的變更和升級，包括：
 
-- **更新的使用者介面**–有幾個新的 UI 功能可讓開發人員在建立應用程式使用者介面時擁有更強大的能力和彈性。 這些新功能包括： `GridLayout` 、 `PopupMenu` 、 `Switch` widget 和`TextureView` 。 
+- **更新的使用者介面**–有幾個新的 UI 功能可讓開發人員在建立應用程式使用者介面時擁有更強大的能力和彈性。 這些新功能包括： `GridLayout`、`PopupMenu`、`Switch` widget 和 `TextureView`。 
 - **更好的硬體加速**–在所有 Android 控制項的 GPU 上現在會進行2d 轉譯。 此外，根據預設，硬體加速在針對 Android 4.0 開發的所有應用程式中都是開啟的。 
 - **新的資料 api** -先前尚未正式存取之資料的新存取權，例如行事歷數據和裝置擁有者的使用者設定檔。 
-- **應用程式資料共用**–在應用程式和裝置之間共用資料比以往更容易透過之類的`ShareActionProvider`技術，這可讓您輕鬆地從動作列建立共用動作，並將*Android 橫樑*用於*近端欄位通訊（NFC）* ，使其在靠近彼此的鄰近裝置之間共用資料。 
+- **應用程式資料共用**–在應用程式和裝置之間共用資料比以往更容易透過 `ShareActionProvider` 之類的技術，這可讓您輕鬆地從動作列建立共用動作，以及使用*Android 橫樑*進行近距離無線*通信（NFC）* ，使其在靠近彼此的鄰近裝置之間共用資料。 
 
 在本文中，我們將探索 Android 4.0 API 的這些功能和其他變更，並說明如何搭配使用每項功能與 Xamarin。
 
@@ -38,7 +38,7 @@ Android 4 提供各種新的使用者介面技術，包括：
 - **[TextureView](~/android/user-interface/controls/texture-view.md)** –在視圖內啟用影片和 OpenGL 內容。 
 - **[導覽](~/android/user-interface/controls/navigation-bar.md)** 列–包含 [上一頁]、[首頁] 和 [多工] 等虛擬按鈕。 
 
-此外，其他 UI 專案已經過增強，例如`<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`，現在更容易使用，而索引標籤則具有更完善的外觀。
+此外，其他的 UI 專案已經過增強，例如 `<a href"/guides/android/user_interface/popup_menus">PopupMenu</a>`，現在更容易使用，而索引標籤則具有更精美的外觀。
 
 ## <a name="sharing-features"></a>共用功能
 

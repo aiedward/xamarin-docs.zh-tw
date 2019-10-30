@@ -4,15 +4,15 @@ description: 本檔說明如何使用 Xamarin Designer for iOS 來建立應用�
 ms.prod: xamarin
 ms.assetid: E35EFB69-EBBA-40E3-ADBE-CB8016F17127
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/31/2018
-ms.openlocfilehash: 577c5602c1cbc331564c3034b3f0c11a4b97bc0c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 157e16da2c524029c29e767cd6b3e5eb550a2389
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279848"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021754"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>使用 iOS 設計工具建立使用者介面
 
@@ -20,11 +20,11 @@ _Xamarin Designer for iOS 是 iOS 分鏡腳本的視覺化設計工具，以及�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Visual Studio for Mac 中的 IOS 設計]工具(images/designer-vsmac-sml.png "IOS 設計")工具](images/designer-vsmac.png#lightbox)
+[![Visual Studio for Mac 中的 iOS 設計工具](images/designer-vsmac-sml.png "IOS 設計工具")](images/designer-vsmac.png#lightbox)
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![Visual Studio 中的 IOS 設計]工具(images/designer-vs.png "IOS 設計")工具](images/designer-vs.png#lightbox)
+[![Visual Studio 中的 iOS 設計工具](images/designer-vs.png "IOS 設計工具")](images/designer-vs.png#lightbox)
 
 -----
 

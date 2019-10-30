@@ -4,21 +4,21 @@ description: 本檔說明如何使用 Xamarin 來利用 iOS 12 中引進的新�
 ms.prod: xamarin
 ms.assetid: F1D90729-F85A-425B-B633-E2FA38FB4A0C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: b6c6baad2cbd923bde4dab3766040b5df4351787
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 671b6c00a41d719a7ccb8247fd4a7bc008d91adf
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282120"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031896"
 ---
 # <a name="notification-management-in-xamarinios"></a>Xamarin 中的通知管理
 
 在 iOS 12 中，作業系統可以從 [通知中心] 和 [設定] 應用程式深入連結至應用程式的 [通知管理] 畫面。 此畫面可讓使用者加入宣告或退出應用程式所傳送的各種類型通知。
 
-## <a name="sample-app-redgreennotifications"></a>範例應用程式：RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>範例應用程式： RedGreenNotifications
 
 若要查看通知管理如何運作的範例，請查看[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)範例應用程式。
 
@@ -28,8 +28,8 @@ ms.locfileid: "70282120"
 
 ## <a name="notification-management-screen"></a>通知管理畫面
 
-在範例應用程式中`ManageNotificationsViewController` ，會定義使用者介面，讓使用者可以獨立啟用和停用紅色通知和綠色通知。 這是標準[`UIViewController`](xref:UIKit.UIViewController)
-[`UISwitch`](xref:UIKit.UISwitch)包含每個通知類型的。 切換任何一種通知類型的參數，在使用者預設的情況下，使用者對於該類型通知的喜好設定：
+在範例應用程式中，`ManageNotificationsViewController` 會定義使用者介面，讓使用者可以獨立啟用和停用紅色通知和綠色通知。 這是標準的[`UIViewController`](xref:UIKit.UIViewController)
+包含每個通知類型的[`UISwitch`](xref:UIKit.UISwitch) 。 切換任何一種通知類型的參數，在使用者預設的情況下，使用者對於該類型通知的喜好設定：
 
 ```csharp
 partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
@@ -41,11 +41,11 @@ partial void HandleRedNotificationsSwitchValueChange(UISwitch sender)
 > [!NOTE]
 > [通知管理] 畫面也會檢查使用者是否已完全停用應用程式的通知。 若是如此，它就會隱藏個別通知類型的切換。 若要這麼做，請在 [通知管理] 畫面中：
 >
-> - 呼叫[`UNUserNotificationCenter.Current.GetNotificationSettingsAsync`](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync) [並`AuthorizationStatus`](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus)檢查屬性。
+> - 呼叫[`UNUserNotificationCenter.Current.GetNotificationSettingsAsync`](xref:UserNotifications.UNUserNotificationCenter.GetNotificationSettingsAsync)並檢查[`AuthorizationStatus`](xref:UserNotifications.UNNotificationSettings.AuthorizationStatus)屬性。
 > - 如果應用程式已完全停用通知，則隱藏個別通知類型的切換。
 > - 重新檢查每次應用程式移至前景時是否已停用通知，因為使用者可以隨時在 iOS 設定中啟用/停用通知。
 
-範例應用程式的`ViewController`類別（會傳送通知）會先檢查使用者的喜好設定，然後再傳送本機通知，以確保通知是使用者實際想要接收的類型：
+範例應用程式的 `ViewController` 類別（會傳送通知）會先檢查使用者的喜好設定，然後再傳送本機通知，以確保通知是使用者實際想要接收的類型：
 
 ```csharp
 partial void HandleTapRedNotificationButton(UIButton sender)
@@ -60,14 +60,14 @@ partial void HandleTapRedNotificationButton(UIButton sender)
 
 iOS 深層連結：來自通知中心的代理程式更新管理畫面，以及 [設定] 應用程式的 [通知] 設定。 為了加速此動作，應用程式必須：
 
-- 藉由傳遞`UNAuthorizationOptions.ProvidesAppNotificationSettings`至應用程式的通知授權要求，表示有可用的通知管理畫面。
-- `OpenSettings` [從`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)執行方法。
+- 藉由將 `UNAuthorizationOptions.ProvidesAppNotificationSettings` 傳遞給應用程式的通知授權要求，表示有可用的通知管理畫面。
+- 從[`IUNUserNotificationCenterDelegate`](xref:UserNotifications.IUNUserNotificationCenterDelegate)執行 `OpenSettings` 方法。
 
 ### <a name="authorization-request"></a>授權要求
 
-若要向作業系統指出有可用的通知管理畫面，應用程式應該將`UNAuthorizationOptions.ProvidesAppNotificationSettings`選項（以及所需的任何其他通知傳遞選項）傳遞至上`UNUserNotificationCenter`的`RequestAuthorization`方法。
+若要向作業系統指出 [通知管理] 畫面可供使用，應用程式應該將 [`UNAuthorizationOptions.ProvidesAppNotificationSettings`] 選項（以及所需的任何其他通知傳遞選項）傳遞至 `UNUserNotificationCenter`上的 `RequestAuthorization` 方法。
 
-例如，在範例應用程式`AppDelegate`中：
+例如，在範例應用程式的 `AppDelegate`：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -82,9 +82,9 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 
 ### <a name="opensettings-method"></a>OpenSettings 方法
 
-系統呼叫以深入連結代理程式更新管理畫面的方法，應直接將使用者流覽至該畫面。`OpenSettings`
+系統呼叫以深入連結代理程式更新管理畫面的 `OpenSettings` 方法，應直接將使用者流覽至該畫面。
 
-在範例應用程式中， `ManageNotificationsViewController`如果需要，這個方法會執行 segue 至。
+在範例應用程式中，這個方法會在必要時，執行 `ManageNotificationsViewController` 的 segue：
 
 ```csharp
 [Export("userNotificationCenter:openSettingsForNotification:")]

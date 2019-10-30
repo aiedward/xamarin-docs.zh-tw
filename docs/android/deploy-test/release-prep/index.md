@@ -3,15 +3,15 @@ title: 準備可供發行的應用程式
 ms.prod: xamarin
 ms.assetid: 9C8145B3-FCF1-4649-8C6A-49672DDA4159
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 5113255d8776987783ad5e8f023e7b2b30924ea4
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71250008"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021199"
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 

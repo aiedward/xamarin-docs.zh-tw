@@ -4,15 +4,15 @@ description: 本逐步解說示範如何在 Xamarin Android 應用程式中使�
 ms.prod: xamarin
 ms.assetid: D8C6C9E2-3282-49D1-A2F6-78A4F3306E29
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/16/2018
-ms.openlocfilehash: caef124228ab4ec4356b10c0559d2abe33d1531f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 6d48d650b0900e71b7d3d4d5e1ff1ac919dcb948
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70755271"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73025542"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>逐步解說-在 Xamarin 中使用本機通知
 
@@ -24,7 +24,7 @@ _本逐步解說示範如何在 Xamarin Android 應用程式中使用本機通�
 
 下列螢幕擷取畫面說明此應用程式的一些範例：
 
-[![通知的範例螢幕擷取畫面](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
+[使用通知![範例螢幕擷取畫面](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 > [!NOTE]
 > 本指南著重于[Android 支援程式庫](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)的[NotificationCompat api](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.html) 。 這些 Api 會確保最大的 Android 4.0 回溯相容性（API 層級14）。
@@ -49,15 +49,15 @@ _本逐步解說示範如何在 Xamarin Android 應用程式中使用本機通�
 
 ### <a name="add-the-androidsupportv4-nuget-package"></a>新增 Android. 支援 V4 NuGet 套件
 
-在此逐步解說中，我們`NotificationCompat.Builder`會使用來建立我們的本機通知。 如[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)中所述，我們必須在專案中包含[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet， `NotificationCompat.Builder`才能使用。
+在本逐步解說中，我們會使用 `NotificationCompat.Builder` 來建立我們的本機通知。 如[本機通知](~/android/app-fundamentals/notifications/local-notifications.md)中所述，我們必須在專案中包含[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet，才能使用 `NotificationCompat.Builder`。
 
-接下來，讓我們編輯**MainActivity.cs**並新增下列`using`語句，讓程式碼可以`Android.Support.V4.App`使用中的類型：
+接下來，讓我們編輯**MainActivity.cs**並新增下列 `using` 語句，讓 `Android.Support.V4.App` 中的類型可供我們的程式碼使用：
 
 ```csharp
 using Android.Support.V4.App;
 ```
 
-此外，我們還必須讓編譯器清楚使用`Android.Support.V4.App`版本的`TaskStackBuilder` ，而不是`Android.App`版本。 新增下列`using`語句以解決任何不明確的問題：
+此外，我們還必須讓編譯器清楚地說，我們使用的是 `TaskStackBuilder` 的 `Android.Support.V4.App` 版本，而不是 `Android.App` 版本。 新增下列 `using` 語句，以解決任何不明確的情況：
 
 ```csharp
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
@@ -65,7 +65,7 @@ using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 
 ### <a name="create-the-notification-channel"></a>建立通知通道
 
-接下來，將方法新增`MainActivity`至，以建立通知通道（如有必要）：
+接下來，將方法新增至會建立通知通道的 `MainActivity` （如有必要）：
 
 ```csharp
 void CreateNotificationChannel()
@@ -90,7 +90,7 @@ void CreateNotificationChannel()
 }
 ```
 
-`OnCreate`更新方法以呼叫這個新方法：
+更新 `OnCreate` 方法以呼叫這個新方法：
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -104,7 +104,7 @@ protected override void OnCreate(Bundle bundle)
 
 ### <a name="define-the-notification-id"></a>定義通知識別碼
 
-我們需要通知和通知通道的唯一識別碼。 讓我們編輯**MainActivity.cs** ，並將下列靜態執行個體變數新增至`MainActivity`類別：
+我們需要通知和通知通道的唯一識別碼。 讓我們編輯**MainActivity.cs** ，並將下列靜態執行個體變數新增至 `MainActivity` 類別：
 
 ```csharp
 static readonly int NOTIFICATION_ID = 1000;
@@ -114,7 +114,7 @@ internal static readonly string COUNT_KEY = "count";
 
 ### <a name="add-code-to-generate-the-notification"></a>新增程式碼以產生通知
 
-接下來，我們必須為按鈕`Click`事件建立新的事件處理常式。 將下列方法新增至 `MainActivity`：
+接下來，我們需要為按鈕 `Click` 事件建立新的事件處理常式。 將下列方法新增至 `MainActivity`：
 
 ```csharp
 void ButtonOnClick(object sender, EventArgs eventArgs)
@@ -155,7 +155,7 @@ void ButtonOnClick(object sender, EventArgs eventArgs)
 }
 ```
 
-MainActivity `OnCreate`的方法必須進行呼叫以建立通知通道，並`ButtonOnClick`將方法指派給按鈕的`Click`事件（取代範本所提供的委派事件處理常式）：
+The `OnCreate` method of MainActivity must make the call to create the notification channel and assign the `ButtonOnClick` method to the `Click` event of the button (replace the delegate event handler provided by the template):
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -171,9 +171,9 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-### <a name="create-a-second-activity"></a>建立第二個活動
+### <a name="create-a-second-activity"></a>Create a second activity
 
-現在，我們需要建立另一個在使用者按一下通知時，Android 將顯示的活動。 將另一個 Android 活動新增至名為**SecondActivity**的專案。 開啟**SecondActivity.cs** ，並以下列程式碼取代其內容：
+Now we need to create another activity that Android will display when the user clicks our notification. Add another Android Activity to your project called **SecondActivity**. Open **SecondActivity.cs** and replace its contents with this code:
 
 ```csharp
 using System;
@@ -208,7 +208,7 @@ namespace LocalNotifications
 }
 ```
 
-我們也必須建立**SecondActivity**的資源配置。 將新的**Android**配置檔案新增至名為**axml**的專案。 編輯**axml** ，並貼上下列版面配置程式碼：
+We must also create a resource layout for **SecondActivity**. Add a new **Android Layout** file to your project called **Second.axml**. Edit **Second.axml** and paste in the following layout code:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -227,39 +227,39 @@ namespace LocalNotifications
 </LinearLayout>
 ```
 
-### <a name="add-a-notification-icon"></a>新增通知圖示
+### <a name="add-a-notification-icon"></a>Add a notification icon
 
-最後，新增會在通知啟動時出現在通知區域中的小型圖示。 您可以將[此圖示](local-notifications-walkthrough-images/ic-stat-button-click.png)複製到您的專案，或建立您自己的自訂圖示。 將圖示命名為 **[\_ic\_stat\_] 按鈕按一下 .png** ，然後將它複製到**Resources/可繪製**資料夾。 請記得使用 [**加入 > 現有專案**...]，在您的專案中包含此圖示檔。
+Finally, add a small icon that will appear in the notification area when the notification is launched. You can copy [this icon](local-notifications-walkthrough-images/ic-stat-button-click.png) to your project or create your own custom icon. Name the icon file **ic\_stat\_button\_click.png** and copy it to the **Resources/drawable** folder. Remember to use **Add > Existing Item ...** to include this icon file in your project.
 
 ### <a name="run-the-application"></a>執行應用程式
 
-建置並執行應用程式。 您應該會看到第一個活動，類似下列螢幕擷取畫面：
+建置並執行應用程式。 You should be presented with the first activity, similar to the following screenshot:
 
-[![第一個活動螢幕擷取畫面](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
+[![First activity screenshot](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
-當您按一下按鈕時，您應該會注意到通知的小型圖示會出現在通知區域中：
+As you click the button, you should notice that the small icon for the notification appears in the notification area:
 
-[![通知圖示隨即出現](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
+[![Notification icon appears](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
-如果您向下滑動並公開通知抽屜，您應該會看到通知：
+If you swipe down and expose the notification drawer, you should see the notification:
 
-[![通知訊息](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
+[![Notification message](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
-當您按一下通知時，應該會消失，而我們的其他活動應該會&ndash;如下列螢幕擷取畫面所示啟動：
+When you click the notification, it should disappear, and our other activity should be launched &ndash; looking somewhat like the following screenshot:
 
-[![第二個活動螢幕擷取畫面](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
+[![Second activity screenshot](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
-恭喜您！ 此時，您已完成 Android 本機通知逐步解說，而且您有一個可供參考的實用範例。 有許多通知會比我們在這裡顯示的更多，因此如果您想要取得詳細資訊，請參閱[Google 的通知檔](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)。
+恭喜您！ At this point you have completed the Android local notification walkthrough and you have a working sample that you can refer to. There is a lot more to notifications than we have shown here, so if you want more information, take a look at [Google's documentation on notifications](https://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 
 ## <a name="summary"></a>總結
 
-這個逐步解說`NotificationCompat.Builder`用來建立和顯示通知。 其中示範了如何啟動第二個活動做為回應使用者與通知互動的基本範例，並示範如何將第一個活動的資料傳輸到第二個活動。
+This walkthrough used `NotificationCompat.Builder` to create and display notifications. It showed a basic example of how to start up a second Activity as a way to respond to user interaction with the notification, and it demonstrated the transfer of data from the first Activity to the second Activity.
 
 ## <a name="related-links"></a>相關連結
 
-- [LocalNotifications （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
-- [Android Oreo 通知通道](https://blog.xamarin.com/android-oreo-notification-channels/)
-- [發出](xref:Android.App.Notification)
+- [LocalNotifications (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
+- [Android Oreo Notification Channels](https://blog.xamarin.com/android-oreo-notification-channels/)
+- [Notification](xref:Android.App.Notification)
 - [NotificationManager](xref:Android.App.NotificationManager)
 - [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)
 - [PendingIntent](xref:Android.App.PendingIntent)

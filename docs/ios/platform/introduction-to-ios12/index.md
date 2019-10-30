@@ -4,15 +4,15 @@ description: 本檔提供一些 iOS 12 Api 的高階說明，其中 Xamarin 的�
 ms.prod: xamarin
 ms.assetid: 99EA7090-315D-493C-87D3-26AB73D9E1A9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/08/2018
-ms.openlocfilehash: b3f3db32e87d83ea4e076d439df3342e5ca2ed50
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 39d954626bc9e789446e7f1deac67e2e0fca51c8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284628"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031999"
 ---
 # <a name="introduction-to-ios-12"></a>iOS 12 簡介
 
@@ -56,7 +56,7 @@ iOS 12 可讓使用者和開發人員更輕鬆地使用密碼：
 
 - 密碼自動填入和自動化強式密碼可讓您在註冊並登入應用程式時，自動產生、儲存和使用 iOS 應用程式中的強式密碼。
 - 安全性程式碼自動填入可讓您使用以 SMS 為基礎的驗證碼，而不需要手動剪切和貼上或記住需求。
-- `ASWebAuthenticationSession`類別會簡化使用同盟驗證服務的程式。
+- `ASWebAuthenticationSession` 類別會簡化使用同盟驗證服務的程式。
 - 自動填滿認證提供者擴充功能可讓協力廠商密碼應用程式提供使用者名稱和密碼給登入欄位。
 
 ## <a name="healthkit-updates"></a>HealthKit 更新
@@ -69,7 +69,7 @@ iOS 11.3 引進了[健康情況記錄](https://www.apple.com/healthcare/health-r
 
 ## <a name="network-framework"></a>網路架構
 
-網路架構是 iOS 應用程式中常用`URLSession`之 api 的基礎，現在以獨立架構的形式提供，可讓您更輕鬆地使用 TCP、UDP、TLS、IPv4/IPv6 等。
+網路架構是 iOS 應用程式中常用 `URLSession` Api 的基礎網路堆疊，現在以獨立架構的形式提供，可讓您更輕鬆地使用 TCP、UDP、TLS、IPv4/IPv6 等。
 
 ## <a name="carplay"></a>了 carplay
 
@@ -80,4 +80,4 @@ iOS 11.3 引進了[健康情況記錄](https://www.apple.com/healthcare/health-r
 在 iOS 12 中，Apple 已淘汰：
 
 - OpenGL ES，[鼓勵開發人員](https://developer.apple.com/ios/whats-new/)採用裸機。
-- [`UIWebView`](xref:UIKit.UIWebView)，[改為`WKWebView` ](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。
+- [`UIWebView`](xref:UIKit.UIWebView)，[以 `WKWebView`](https://developer.apple.com/documentation/webkit/wkwebview?language=objc)。

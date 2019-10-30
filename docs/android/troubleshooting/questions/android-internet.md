@@ -4,15 +4,15 @@ ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: A6FE770B-A19A-4BF8-95E9-2CF880D4AFC5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 162378c00f3e20574d04dc373fcc492a9407b88d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 5996cfa3c0a18fc186ea862a2b3d7910594e1281
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761035"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027014"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>為何我的 Android 發行組建無法連線到網際網路？
 
@@ -26,7 +26,7 @@ ms.locfileid: "70761035"
 
 - 在編輯器中修正：在您的 Android 專案中，移至 **屬性-> androidmanifest.xml-> 必要許可權** 和 檢查**網際網路**
 
-- 在 Sourcecode 中修正：在原始檔編輯器中開啟 androidmanifest.xml，並在`<Manifest>`標記內新增許可權標記：
+- 在 Sourcecode 中修正：在原始檔編輯器中開啟 Androidmanifest.xml，並在 `<Manifest>` 標記內新增許可權標記：
 
     ```xml
     <Manifest>

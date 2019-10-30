@@ -4,15 +4,15 @@ description: 本檔說明如何在 Xamarin iOS 應用程式中使用原生和 ma
 ms.prod: xamarin
 ms.assetid: BE4EE969-C075-4B9A-8465-E393556D8D90
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/05/2017
-ms.openlocfilehash: 936c5b91a27fed1c00f3cf0c61d0184d5532c25a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ca3d4dfcd773a4f236ffbfd715cb53b514f6e2a3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753078"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032519"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>在 Xamarin 中的例外狀況封送處理
 
@@ -32,7 +32,7 @@ Managed 程式碼和目標-C 都支援執行時間例外狀況（try/catch/final
 
 這是針對 Xamarin 或 Xamarin 的典型範例，就是當原生 API 擲回目標-C 例外狀況，然後當堆疊回溯進程到達受控框架時，必須以某種方式處理目標-C 例外狀況。
 
-預設動作是不執行任何動作。 在上述範例中，這表示讓目標 C 執行時間回溯管理的框架。 這會造成問題，因為目標-C 執行時間不知道如何回溯受控框架;例如，它不會在`catch`該`finally`框架中執行任何或子句。
+預設動作是不執行任何動作。 在上述範例中，這表示讓目標 C 執行時間回溯管理的框架。 這會造成問題，因為目標-C 執行時間不知道如何回溯受控框架;例如，它不會在該框架中執行任何 `catch` 或 `finally` 子句。
 
 ### <a name="broken-code"></a>中斷的程式碼
 
@@ -61,7 +61,7 @@ NSInvalidArgumentException *** setObjectForKey: key cannot be nil
 6   TestApp                 ExceptionMarshaling.Exceptions.ThrowObjectiveCException ()
 ```
 
-畫面格0-3 是原生框架，而目標-C 執行時間中的堆疊回溯器_可以_回溯這些框架。 特別是，它會執行任何目標-C `@catch`或`@finally`子句。
+畫面格0-3 是原生框架，而目標-C 執行時間中的堆疊回溯器_可以_回溯這些框架。 特別是，它會執行任何目標-C `@catch` 或 `@finally` 子句。
 
 不過，回溯器的目標 C 堆疊_無法_正確回溯受控框架（框架4-6），因為框架將會被展開，但不會執行 managed 例外狀況邏輯。
 
@@ -78,19 +78,19 @@ try {
 }
 ```
 
-這是因為目標-C 堆疊回溯器不知道 managed `catch`子句，而且`finally`子句都不會執行。
+這是因為目標-C 堆疊回溯器不知道 managed `catch` 子句，而且也不會執行 `finally` 子句。
 
-上述程式_代碼範例生效_時，是因為目標-c 有一種方法會收到未處理的目標-c 例外狀況的[`NSSetUncaughtExceptionHandler`][2]通知，而 xamarin. iOS 和 xamarin 會使用，而在該時間點會嘗試轉換任何目標-c 例外狀況至 managed 例外狀況。
+上述程式碼範例生效時，是因為目標-C 有一種方法，會通知有未處理的目標-C 例外狀況， [`NSSetUncaughtExceptionHandler`][2]，其中的 Xamarin. IOS 和 xamarin 會使用，而在該時間_點會嘗試_轉換任何目標-cmanaged 例外狀況的例外狀況。
 
 ## <a name="scenarios"></a>案例
 
 ### <a name="scenario-1---catching-objective-c-exceptions-with-a-managed-catch-handler"></a>案例 1-使用 managed catch 處理常式攔截目標-C 例外狀況
 
-在下列案例中，您可以使用受控`catch`處理常式來攔截目標 C 例外狀況：
+在下列案例中，您可以使用 managed `catch` 處理常式來攔截目標 C 例外狀況：
 
 1. 會擲回目標-C 例外狀況。
-2. 目標-C 執行時間會引導堆疊（但不會將它回溯），尋找可處理`@catch`例外狀況的原生處理常式。
-3. 目標-C 執行時間找不到`@catch`任何處理程式`NSGetUncaughtExceptionHandler`、呼叫，以及叫用由 Xamarin/xamarin 所安裝的處理常式。
+2. 目標-C 執行時間會引導堆疊（但不會將它回溯），尋找可處理例外狀況的原生 `@catch` 處理常式。
+3. 目標-C 執行時間找不到任何 `@catch` 處理常式、呼叫 `NSGetUncaughtExceptionHandler`，以及叫用由 Xamarin/Xamarin 所安裝的處理常式。
 4. Xamarin/Xamarin 的處理常式會將目標-C 例外狀況轉換成 managed 例外狀況，並擲回它。 因為目標-C 執行時間未回溯堆疊（只會進行逐步解說），所以目前的框架與擲回目標-C 例外狀況的架構相同。
 
 這裡發生另一個問題，因為 Mono 執行時間不知道如何正確回溯目標 C 框架。
@@ -111,7 +111,7 @@ try {
 10 TestApp                  ExceptionMarshaling.Exceptions.ThrowObjectiveCException () [0x00013]
 ```
 
-在這裡，唯一的受控框架為框架8-10，但在框架0中擲回 managed 例外狀況。 這表示 mono 執行時間必須回溯原生框架0-7，這會造成與上述問題相等的問題：雖然 Mono 執行時間會回溯原生框架，但不會執行任何目標-C `@catch`或子句`@finally`.
+在這裡，唯一的受控框架為框架8-10，但在框架0中擲回 managed 例外狀況。 這表示 Mono 執行時間必須回溯原生框架0-7，這會造成與上述問題相等的問題：雖然 Mono 執行時間會回溯原生框架，但不會執行任何目標-C `@catch` 或 `@finally` 子句。
 
 程式碼範例：
 
@@ -127,9 +127,9 @@ try {
 }
 ```
 
-`@finally`和子句不會執行，因為回溯此框架的 Mono 執行時間並不知道它的相關資訊。
+而且不會執行 `@finally` 子句，因為回溯此框架的 Mono 執行時間並不知道它的相關資訊。
 
-這種情況的變化是在 managed 程式碼中擲回 managed 例外狀況，然後在原生框架中回溯以取得`catch`第一個 managed 子句：
+這種情況的變化是在 managed 程式碼中擲回 managed 例外狀況，然後回溯至原生框架，以取得第一個 managed `catch` 子句：
 
 ```csharp
 class AppDelegate : UIApplicationDelegate {
@@ -148,7 +148,7 @@ class AppDelegate : UIApplicationDelegate {
 }
 ```
 
-Managed `UIApplication:Main`方法會呼叫原生`UIApplicationMain`方法，然後 iOS 會執行許多機器碼執行，最後才呼叫 managed `AppDelegate:FinishedLaunching`方法，而當 managed 例外狀況為時，堆疊上仍然會有許多原生框架擲回
+Managed `UIApplication:Main` 方法將會呼叫原生 `UIApplicationMain` 方法，然後 iOS 會執行許多機器碼執行，最後再呼叫 managed `AppDelegate:FinishedLaunching` 方法，而當擲回 managed 例外狀況時，堆疊上仍然會有許多原生框架:
 
 ```
  0: TestApp                 ExceptionMarshaling.IOS.AppDelegate:FinishedLaunching (UIKit.UIApplication,Foundation.NSDictionary)
@@ -184,15 +184,15 @@ Managed `UIApplication:Main`方法會呼叫原生`UIApplicationMain`方法，然
 30: TestApp                 ExceptionMarshaling.IOS.Application:Main (string[])
 ```
 
-系統會管理框架0-1 和27-30，而其間的所有都是原生。 如果 Mono 透過這些畫面格回溯，則不會`@catch`執行`@finally`任何目標-C 或子句。
+系統會管理框架0-1 和27-30，而其間的所有都是原生。 如果 Mono 透過這些畫面格回溯，則不會執行任何目標-C `@catch` 或 `@finally` 子句。
 
 ### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>案例 2-無法攔截目標-C 例外狀況
 
-在下列案例中，您_無法_使用 managed `catch`處理常式攔截目標 c 例外狀況，因為目標-c 例外狀況是以另一種方式處理：
+在下列案例中，您_無法_使用 managed `catch` 處理常式來攔截目標 c 例外狀況，因為以另一種方式處理目標-c 例外狀況：
 
 1. 會擲回目標-C 例外狀況。
-2. 目標-C 執行時間會引導堆疊（但不會將它回溯），尋找可處理`@catch`例外狀況的原生處理常式。
-3. 目標-C 執行時間會尋找`@catch`處理常式、回溯堆疊，然後開始`@catch`執行處理常式。
+2. 目標-C 執行時間會引導堆疊（但不會將它回溯），尋找可處理例外狀況的原生 `@catch` 處理常式。
+3. 目標-C 執行時間會尋找 `@catch` 處理常式、回溯堆疊，然後開始執行 `@catch` 處理常式。
 
 這種情況通常會在 Xamarin iOS 應用程式中找到，因為在主執行緒上，通常會有如下的程式碼：
 
@@ -213,7 +213,7 @@ void UIApplicationMain ()
 
 這表示在主執行緒上，絕對不會有未處理的目標-C 例外狀況，因此永遠不會呼叫將目標 C 例外狀況轉換成 managed 例外狀況的回呼。
 
-在比 Xamarin 的舊版 macOS 版本上進行 Xamarin. mac 應用程式的檢查時，這也很常見。因為在偵錯工具中檢查大部分的 UI 物件，會嘗試提取對應于執行平臺上不存在之選取器的屬性（因為 Xamarin 包含對較高 macOS 版本的支援）。 呼叫這類選取器將`NSInvalidArgumentException`會擲回（「無法辨識的選擇器傳送到 ...」），最後會導致進程損毀。
+在比 Xamarin 的舊版 macOS 版本上進行 Xamarin. mac 應用程式的檢查時，這也很常見。因為在偵錯工具中檢查大部分的 UI 物件，會嘗試提取對應于執行平臺上不存在之選取器的屬性（因為 Xamarin 包含對較高 macOS 版本的支援）。 呼叫這類選取器將會擲回 `NSInvalidArgumentException` （「無法辨識的選擇器傳送到 ...」），最後會導致進程損毀。
 
 總而言之，若要將目標 C 執行時間或 Mono 執行時間回溯框架設計成無法處理，可能會導致未定義的行為，例如當機、記憶體流失，以及其他類型的無法預測（錯誤）行為。
 
@@ -257,28 +257,28 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 
 「[組建時間旗標](#build_time_flags)」一節說明如何在預設情況下啟用攔截。
 
-## <a name="events"></a>事件
+## <a name="events"></a>「事件」
 
-一旦攔截到例外狀況，就會引發兩個新的事件`Runtime.MarshalManagedException` ： `Runtime.MarshalObjectiveCException`和。
+一旦攔截到例外狀況，就會引發兩個新事件： `Runtime.MarshalManagedException` 和 `Runtime.MarshalObjectiveCException`。
 
-這兩個事件都會`EventArgs`傳遞一個物件，其中包含所擲回的原始`Exception`例外狀況（ `ExceptionMode`屬性），以及定義如何封送處理例外狀況的屬性。
+這兩個事件都會傳遞 `EventArgs` 物件，其中包含擲回的原始例外狀況（`Exception` 屬性）和 `ExceptionMode` 屬性，以定義應如何封送處理例外狀況。
 
-`ExceptionMode`屬性可以在事件處理常式中變更，以根據處理常式中完成的任何自訂處理來變更行為。 其中一個範例是在發生特定例外狀況時中止進程。
+您可以在事件處理常式中變更 `ExceptionMode` 屬性，以根據處理常式中完成的任何自訂處理來變更行為。 其中一個範例是在發生特定例外狀況時中止進程。
 
-`ExceptionMode`變更屬性會套用至單一事件，而不會影響未來攔截的任何例外狀況。
+變更 `ExceptionMode` 屬性會套用至單一事件，而不會影響未來攔截的任何例外狀況。
 
 可用的模式如下：
 
-- `Default`：預設會因平臺而異。 如果 GC `ThrowObjectiveCException`處於合作模式（watchOS） `UnwindNativeCode` ，則為，否則為（iOS/watchOS/macOS）。 預設值可能會在未來變更。
-- `UnwindNativeCode`：這是先前（未定義）的行為。 在合作模式中使用 GC 時（這是 watchOS 上唯一的選項，因此這不是 watchOS 上的有效選項），但它是所有其他平臺的預設選項。
+- `Default`：預設會因平臺而異。 如果 GC 處於合作模式（watchOS），則會 `ThrowObjectiveCException`，否則會 `UnwindNativeCode` （iOS/watchOS/macOS）。 預設值可能會在未來變更。
+- `UnwindNativeCode`：這是先前的（未定義的）行為。 在合作模式中使用 GC 時（這是 watchOS 上唯一的選項，因此這不是 watchOS 上的有效選項），但它是所有其他平臺的預設選項。
 - `ThrowObjectiveCException`：將 managed 例外狀況轉換成目標-C 例外狀況，並擲回目標-C 例外狀況。 這是 watchOS 上的預設值。
 - `Abort`：中止進程。
-- `Disable`：會停用例外狀況攔截，因此在事件處理常式中設定此值並不合理，但是一旦引發事件之後，就無法將它停用。 在任何情況下，如果設定，則其行為`UnwindNativeCode`會是。
+- `Disable`：停用例外狀況攔截，因此在事件處理常式中設定此值沒有意義，但一旦引發事件之後，就無法將它停用。 在任何情況下，如果設定，其行為會如 `UnwindNativeCode`。
 
 若要將目標-C 例外狀況封送處理至 managed 程式碼，可使用下列模式：
 
-- `Default`：預設會因平臺而異。 如果 GC `ThrowManagedException`處於合作模式（watchOS） `UnwindManagedCode` ，則為，否則為（iOS/tvOS/macOS）。 預設值可能會在未來變更。
-- `UnwindManagedCode`：這是先前（未定義）的行為。 在合作模式中使用 GC （這是 watchOS 上唯一有效的 GC 模式）時無法使用，因此這不是 watchOS 上的有效選項，但它是所有其他平臺的預設值。
+- `Default`：預設會因平臺而異。 如果 GC 處於合作模式（watchOS），則會 `ThrowManagedException`，否則會 `UnwindManagedCode` （iOS/tvOS/macOS）。 預設值可能會在未來變更。
+- `UnwindManagedCode`：這是先前的（未定義的）行為。 在合作模式中使用 GC （這是 watchOS 上唯一有效的 GC 模式）時無法使用，因此這不是 watchOS 上的有效選項，但它是所有其他平臺的預設值。
 - `ThrowManagedException`：將目標-C 例外狀況轉換成 managed 例外狀況，並擲回 managed 例外狀況。 這是 watchOS 上的預設值。
 - `Abort`：中止進程。
 - `Disable`:D 會 isables 例外狀況攔截，因此在事件處理常式中設定此值沒有意義，但一旦引發事件之後，就會太晚停用它。 在任何情況下，如果設定，將會中止進程。
@@ -321,13 +321,13 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
   - `abort`
   - `disable`
 
-除了以外`ExceptionMode` `MarshalManagedException` `MarshalObjectiveCException` ，這些值與傳遞至和事件的值相同。 `disable`
+除了 `disable`以外，這些值與傳遞至 `MarshalManagedException` 和 `MarshalObjectiveCException` 事件的 `ExceptionMode` 值相同。
 
-選項大多會停用攔截，但我們仍會在不新增任何執行負荷時攔截例外狀況。 `disable` 這些例外狀況仍然會引發封送處理事件，而預設模式則是執行平臺的預設模式。
+`disable` 選項_大多_會停用攔截，但我們仍會在不新增任何執行負荷的情況下攔截例外狀況。 這些例外狀況仍然會引發封送處理事件，而預設模式則是執行平臺的預設模式。
 
 ## <a name="limitations"></a>限制
 
-我們只會在嘗試攔截目標 C `objc_msgSend`例外狀況時，攔截 P/invoke 至函式系列。 這表示對另一個 C 函式的 P/Invoke，接著會擲回任何目標-C 例外狀況，仍然會遇到舊的和未定義的行為（未來可能會改善此功能）。
+當嘗試攔截目標 C 例外狀況時，我們只會攔截 P/Invoke 至 `objc_msgSend` 系列的函式。 這表示對另一個 C 函式的 P/Invoke，接著會擲回任何目標-C 例外狀況，仍然會遇到舊的和未定義的行為（未來可能會改善此功能）。
 
 [2]: https://developer.apple.com/reference/foundation/1409609-nssetuncaughtexceptionhandler?language=objc
 

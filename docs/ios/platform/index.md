@@ -4,15 +4,15 @@ description: 本檔會連結各種不同的指南，說明各種 iOS 版本中�
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: c6385ff193c54fdab8f252c757cad810751b3f08
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206298"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032272"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平臺功能總覽
 
@@ -41,7 +41,7 @@ IOS 10 中新的 CallKit API 可讓 VOIP 應用程式與 iPhone UI 整合，並�
 
 ## <a name="contacts-and-contactsuiiosplatformcontactsmd"></a>[連絡人和 ContactsUI](~/ios/platform/contacts.md)
 
-隨著 ios 9 的推出，Apple 發行了兩個新的架構`Contacts` ， `ContactsUI`並取代了 iOS 8 和更早版本所使用的現有通訊錄和通訊錄 UI 架構。
+隨著 iOS 9 的推出，Apple 發行了兩個新的架構，`Contacts` 和 `ContactsUI`，取代了 iOS 8 和更早版本所使用的現有通訊錄和通訊錄 UI 架構。
 
 ## <a name="document-pickeriosplatformdocument-pickermd"></a>[文件選擇器](~/ios/platform/document-picker.md)
 
@@ -53,7 +53,7 @@ iOS 有兩個內建的行事曆相關應用程式：行事曆應用程式和提�
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS 延伸模組](~/ios/platform/extensions.md)
 
-Ios 8 中引進的延伸模組是由 ios `UIViewControllers`在標準內容（例如，在**通知中心**內）提供的特製化，如同使用者執行特定輸入或其他內容所要求的自訂鍵盤類型如同編輯可提供特殊效果篩選的相片。
+IOS 8 中引進的擴充功能是 iOS 在標準內容（例如，在**通知中心**內）所呈現的特製化 `UIViewControllers`，如同使用者用來執行特定輸入或其他內容的自訂鍵盤類型，如編輯延伸模組可提供特殊效果篩選的相片。
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[IOS 中的圖形和動畫](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -85,7 +85,7 @@ IOS 10 的新功能，訊息應用程式延伸模組會與「**訊息**」應用
 
 ## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[適用於 iPad 的多工](~/ios/platform/multitasking.md)
 
-iOS 9 增加了多工支援，可在特定 iPad 硬體上同時執行兩個應用程式。 透過下列功能可支援 iPad 的多工作業：[滑過]、[分割視圖] & 圖片中的圖片。
+iOS 9 增加了多工支援，可在特定 iPad 硬體上同時執行兩個應用程式。 透過下列功能可支援 iPad 的多工作業： [滑過]、[分割視圖] & 圖片中的圖片。
 
 ## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
 
@@ -99,7 +99,7 @@ Passbook 是適用于 Iphone 和 iPod 與 iOS 6 的應用程式。 它會儲存�
 
 ## <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[要求應用程式審查](~/ios/platform/request-app-review.md)
 
-Ios 10.3 的`RequestReview()`新功能，方法可讓 ios 應用程式要求使用者對其進行評分或檢查。 當使用者已從 App Store 安裝的出貨應用程式中呼叫此方法時，iOS 10 將會處理開發人員的整個評等和審查流程。 由於此程式是由 App Store 原則所控管，因此不一定會顯示警示。
+IOS 10.3 的新功能，`RequestReview()` 方法可讓 iOS 應用程式要求使用者對其進行評分或檢查。 當使用者已從 App Store 安裝的出貨應用程式中呼叫此方法時，iOS 10 將會處理開發人員的整個評等和審查流程。 由於此程式是由 App Store 原則所控管，因此不一定會顯示警示。
 
 ## <a name="search-apisiosplatformsearchindexmd"></a>[搜尋 API](~/ios/platform/search/index.md)
 
@@ -135,7 +135,7 @@ IOS 10 的新手，使用者通知架構允許傳遞和處理本機和遠端通�
 
 ## <a name="wide-coloriosplatformwide-colormd"></a>[寬色域](~/ios/platform/wide-color.md)
 
-iOS 10 和 macOS Sierra 增強了擴充範圍像素格式的支援，以及整個系統的寬範圍色彩空間，包括核心圖形、核心影像、金屬和 AVFoundation 等架構。 在整個圖形堆疊中提供這種行為, 即可進一步分階段減緩具有寬色彩顯示的裝置支援。
+iOS 10 和 macOS Sierra 增強了擴充範圍像素格式的支援，以及整個系統的寬範圍色彩空間，包括核心圖形、核心影像、金屬和 AVFoundation 等架構。 在整個圖形堆疊中提供這種行為，即可進一步分階段減緩具有寬色彩顯示的裝置支援。
 
 ## <a name="binding-objective-cbinding-objective-cindexmd"></a>[繫結 Objective-C](binding-objective-c/index.md)
 

@@ -4,15 +4,15 @@ description: 本文說明在開發 Xamarin iOS 應用程式時，可以用來進
 ms.prod: xamarin
 ms.assetid: 24397498-2688-4575-A572-F1B19B1B4EA5
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/05/2018
-ms.openlocfilehash: 6d4303ebcd77ad5234b4750b46bbd0c84ffc5356
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cbed65ce39e9298d397051740737aa164fadbc0b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291739"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031842"
 ---
 # <a name="troubleshooting-ios-12-development-with-xamarin"></a>使用 Xamarin 進行 iOS 12 開發疑難排解
 
@@ -23,7 +23,6 @@ ms.locfileid: "70291739"
 請查看下列資源以瞭解已知的問題：
 
 - 版本資訊
-  - [Xamarin 發行](http://releases.xamarin.com/)的 blog
   - Xamarin 的[版本](https://docs.microsoft.com/xamarin/ios/release-notes/)資訊封存
   - Visual Studio for Mac （[穩定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-relnotes)，[預覽](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-preview-relnotes)）
   - Visual Studio 2017 （[穩定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)，[預覽](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-preview-relnotes)）
@@ -40,5 +39,5 @@ ms.locfileid: "70291739"
 
 若要討論如何在 Xamarin 中執行特定 iOS 12 功能的相關問題，請參閱：
 
-- [Xamarin 論壇](http://forums.xamarin.com/categories/ios)
+- [Xamarin 論壇](https://forums.xamarin.com/categories/ios)
 - [堆疊溢位](https://stackoverflow.com/search?tab=newest&q=xamarin)
