@@ -3,15 +3,15 @@ title: 具有目標 Sharpie 的消費者入門
 description: 本檔提供目標 Sharpie 的高階總覽，這是用來自動建立C#目標 C 程式碼系結的工具。
 ms.prod: xamarin
 ms.assetid: 577512BF-1A90-41E5-89DE-9E056C478678
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: c34a6c09bf1298fd710e3e39a244294821a714ae
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b055ecadc007a07ff1946df4ac4203f36ebf88ee
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290725"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016208"
 ---
 # <a name="getting-started-with-objective-sharpie"></a>具有目標 Sharpie 的消費者入門
 
@@ -32,7 +32,7 @@ ms.locfileid: "70290725"
   - [論壇公告](https://forums.xamarin.com/discussion/104800/objective-sharpie-3-4)
 
 > [!TIP]
-> `sharpie update`使用命令更新至最新版本。
+> 使用 `sharpie update` 命令更新至最新版本。
 
 ## <a name="basic-walkthrough"></a>基本逐步解說
 
@@ -40,12 +40,12 @@ ms.locfileid: "70290725"
 即使在使用目標 Sharpie 時，開發人員*也*必須在目標 Sharpie 完成後修改產生的檔案，以解決任何無法由工具自動處理的問題。
 
 在可能的情況下，目標 Sharpie 會標注其不確定如何正確系結的 Api （許多原生程式碼中的結構都不明確）。
-這些批註會顯示為[ `[Verify]`屬性](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)。
+這些批註會顯示為[`[Verify]` 屬性](~/cross-platform/macios/binding/objective-sharpie/platform/verify.md)。
 
-目標 Sharpie 的輸出是一對[ `ApiDefinition.cs`檔案，可以`StructsAndEnums.cs` ](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md)用來建立系結專案，以編譯成可在 Xamarin 應用程式中使用的程式庫。
+目標 Sharpie 的輸出是一組檔案， [`ApiDefinition.cs` 和 `StructsAndEnums.cs`](~/cross-platform/macios/binding/objective-sharpie/platform/apidefinitions-structsandenums.md) -可用來建立系結專案，以編譯成可在 Xamarin 應用程式中使用的程式庫。
 
 > [!IMPORTANT]
-> 目標 Sharpie 會提供一個用於適當用法的**主要**規則：您必須絕對傳遞正確的 clang 編譯器命令列引數，以確保正確的剖析。 這是因為目標 Sharpie 剖析階段只是[針對 clang LIBTOOLING API 所執行](http://clang.llvm.org/docs/LibTooling.html)的工具。
+> 目標 Sharpie 會提供一個用於適當用法的**主要**規則：您必須絕對傳遞正確的 clang 編譯器命令列引數，以確保正確的剖析。 這是因為目標 Sharpie 剖析階段只是[針對 clang LIBTOOLING API 所執行](https://clang.llvm.org/docs/LibTooling.html)的工具。
 
 這表示目標 Sharpie 具有 Clang 的完整功能（實際會編譯您要系結的原C++生程式庫的 c/目標-c/編譯器），以及其所有系結的標頭檔內部知識。
 目標 Sharpie 會將 [AST](https://en.wikipedia.org/wiki/Abstract_syntax_tree) 轉譯為C#系結 "scaffold"，而不是將剖析的 ast 轉譯為物件程式碼， `bmac`而`btouch`是適用于和 Xamarin 系結工具的輸入。

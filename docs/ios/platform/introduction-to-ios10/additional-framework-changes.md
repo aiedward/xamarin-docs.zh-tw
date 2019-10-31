@@ -4,15 +4,15 @@ description: 本檔說明在 iOS 10 中對現有架構所做的微小變更和�
 ms.prod: xamarin
 ms.assetid: 0E2217F1-FC96-4D0A-ABAB-D40AD8F96502
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: db0ea7720f7b65434c5248fb16456441768e25c8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c25ea0878906b31028143ff1ad689db56b197458
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752517"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032260"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 架構變更
 
@@ -22,15 +22,15 @@ _本文涵蓋適用于 iOS 10 現有架構的其他、次要變更或增強功�
 
 AVFoundation 架構包含下列增強功能：
 
-- 在 iOS 10 中，開發人員不再需要根據內容類型來執行不同的[AVPlayerItem](xref:AVFoundation.AVPlayerItem)行為。 只要設定`Rate`屬性，AVFoundation 就會決定是否有足夠的內容可供播放，而不需要停止。
-- 新的[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)類別會取代已`AVCaptureStillImageOutput`被取代的類別，並提供統一的方法來處理所有攝影工作流程，藉由提供複雜的控制和監視來進行捕獲程式，並支援新的即時相片和原始捕捉格式等功能。
-- 新`AVPlayerLooper`的類別可讓您更輕鬆地在播放期間迴圈指定的媒體片段。
-- `AVAssetDownloadURLSession`類別可讓您下載及稍後播放 FairPlay 加密的 HLS 串流。
+- 在 iOS 10 中，開發人員不再需要根據內容類型來執行不同的[AVPlayerItem](xref:AVFoundation.AVPlayerItem)行為。 只要設定 `Rate` 屬性，AVFoundation 就會判斷有足夠的內容可供播放而不停止。
+- 新的[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)類別會取代已被取代的 `AVCaptureStillImageOutput` 類別，並提供統一的方法來處理所有攝影工作流程，藉由提供複雜的控制和監視功能，並支援新功能，例如作為即時相片和原始捕捉格式。
+- 新的 `AVPlayerLooper` 類別可讓您更輕鬆地在播放期間迴圈指定的媒體片段。
+- `AVAssetDownloadURLSession` 類別可讓您下載及稍後播放 FairPlay 加密的 HLS 串流。
 - 根據預設， [AVCaptureSession](xref:AVFoundation.AVCaptureSession)類別會在裝置硬體支援時，自動支援寬色彩的寬區捕捉。 如需詳細資訊，請參閱 Apple 的[IOS 裝置相容性參考](https://developer.apple.com/library/prerelease/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013599)。
 
 ## <a name="avkit-additions"></a>AVKit 新增專案
 
-AVKit framework 現在包含新`UpdatesNowPlayingInfoCenter`的屬性，以指出何時應更新現在播放的資訊中心。
+AVKit framework 現在包含新的 `UpdatesNowPlayingInfoCenter` 屬性，以指出何時應更新現在播放的資訊中心。
 
 ## <a name="core-data-enhancements"></a>核心資料增強功能
 
@@ -39,8 +39,8 @@ iOS 10 包含下列核心資料架構的增強功能：
 - WAL 記錄模式中具有 SQLite 資料存放區的[NSManagedObjectCoNtext](xref:CoreData.NSManagedObjectContext)物件支援新的查詢產生功能，其中 Managed 物件內容（MOC）可以釘選到特定的資料庫版本，以供未來提取和錯誤交易使用。
 - 根[NSManagedObjectCoNtext](xref:CoreData.NSManagedObjectContext)物件支援並行錯誤和未序列化的提取。
 - [NSPersistentStoreCoordinator](xref:CoreData.NSPersistentStoreCoordinator)類別會維護 SQLite 資料存放區的集區。
-- 已新增`NSManagedObject`數個新的便利方法，讓您更輕鬆地執行提取和建立子類別。
-- 使用高階`NSPersistenceContainer`來`NSPersistentStoreCoordinator`參考、 [NSManagedObjectModel](xref:CoreData.NSManagedObjectModel)和其他核心資料設定資源。
+- 已新增數個新的便利方法，`NSManagedObject` 可讓您更輕鬆地執行提取和建立子類別。
+- 使用高階 `NSPersistenceContainer` 來參考 `NSPersistentStoreCoordinator`、 [NSManagedObjectModel](xref:CoreData.NSManagedObjectModel)和其他核心資料設定資源。
 
 如需詳細資訊，請參閱 Apple 的[核心資料架構參考](https://developer.apple.com/reference/coredata)。
 
@@ -50,10 +50,10 @@ iOS 10 對核心映射架構提供下列增強功能：
 
 - 開發人員現在可以在處理之前和之後來回轉換色彩空間，以在核心影像內容的工作色彩空間之外的色彩空間中處理影像。
 - 對於使用 A8 或 A9 Cpu 的 iOS 裝置，現在支援原始影像格式。 核心映射現在支援從內建的 iSight 攝影機或從協力廠商攝影機解碼原始影像。 使用 [CIFilter](xref:CoreImage.CIFilter) 類別`FilterWithImageURL`的或方法來處理原始影像`FilterWithImageData` 。
-- 在物件中`UIImage` `UIImageView` ，已對轉譯（受核心映射映射存放區支援）進行數個轉譯效能增強功能。 
-- `UIImage`標記為寬範圍的物件會在`UIImageView`支援寬色彩的 iOS 裝置上，呈現為物件的寬範圍色彩。
+- 在 `UIImageView` 物件中，已對 `UIImage` 轉譯（以核心映射映射存放區支援）進行數個轉譯效能增強功能。 
+- 標記為寬範圍的 `UIImage` 物件將會在支援寬色彩的 iOS 裝置上，于 `UIImageView` 物件中轉譯為寬範圍色彩。
 - 核心影像核心程式代碼現在可以要求特定圖元輸出格式。
-- [CIFilter 類別](xref:CoreImage.CIFilter)的方法可以用來將自訂處理插入篩選作業`ImageWithExtent`中。 核心映射會在處理輸出或顯示的影像時，叫用篩選之間的指定回呼。
+- [CIFilter](xref:CoreImage.CIFilter)類別的 `ImageWithExtent` 方法可以用來將自訂處理插入篩選作業中。 核心映射會在處理輸出或顯示的影像時，叫用篩選之間的指定回呼。
 
 此外，已新增下列新的核心映射篩選：
 
@@ -84,7 +84,7 @@ IOS 10 中的 GameKit 架構已進行下列增強功能：
 
 - **Game Center 應用程式**已被取代，並已從 iOS 移除。 如果應用程式使用 GameKit，它_必須_提供自己的介面來顯示 GameKit 功能，例如排行榜等。 
 - [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)類別已實作為僅限 iCloud 的新帳戶類型。
-- 新的[GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession)類別提供通用的解決方案來管理 Game Center 上的持續性資料存放區。 `GKGameSession`會維護一份玩家清單，而應用程式會負責執行在玩家之間儲存、抓取或交換參與者日期的方式和時機。 在許多情況下，遊戲會話可以取代現有的回合型比對、即時符合或持續的遊戲儲存方法。
+- 新的[GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession)類別提供通用的解決方案來管理 Game Center 上的持續性資料存放區。 `GKGameSession` 會維護一份玩家清單，而應用程式會負責執行在玩家之間儲存、抓取或交換參與者日期的方式和時機。 在許多情況下，遊戲會話可以取代現有的回合型比對、即時符合或持續的遊戲儲存方法。
 
 ## <a name="gameplaykit-enhancements"></a>GameplayKit 增強功能
 
@@ -102,10 +102,10 @@ IOS 10 中的 GameplayKit 架構已進行下列增強功能：
 
 IOS 10 中的 HealthKit 架構已進行下列增強功能：
 
-- 已新增新的中繼資料`HKWeatherConditionClear`索引鍵（例如和`HKWeatherConditionCloudy`），以及已新增的`HKWorkoutActivityTypeFlexibility`健身類型（例如`HKWorkoutActivityTypeWheelchairRunPace`和）。
-- 已加入`HKCDADocument`新的類別來代表臨床檔架構（CDA）格式的檔。
-- 使用新的[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)類別來指定健身`ActivityType`的`LocationType`和。
-- 已新增[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)類別的`WheelchairUse`新[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)和方法，以使用輪椅相關的健全狀況資料。
+- 已新增新的中繼資料索引鍵給氣象類型（例如 `HKWeatherConditionClear` 和 `HKWeatherConditionCloudy`）和健身類型（例如 `HKWorkoutActivityTypeFlexibility` 和 `HKWorkoutActivityTypeWheelchairRunPace`）。
+- 已新增新的 `HKCDADocument` 類別，以代表臨床檔架構（CDA）格式的檔。
+- 使用新的[HKWorkoutConfiguration](https://developer.apple.com/reference/healthkit/hkworkoutconfiguration)類別來指定健身的 `ActivityType` 和 `LocationType`。
+- 已新增[HKHealthStore](https://developer.apple.com/reference/healthkit/hkhealthstore)類別的新[HKWheelchairUseObject](https://developer.apple.com/reference/healthkit/hkwheelchairuseobject)和 `WheelchairUse` 方法，以使用輪椅相關的健全狀況資料。
 
 ## <a name="homekit-enhancements"></a>HomeKit 增強功能
 
@@ -134,8 +134,8 @@ IOS 10 中的 ModelIO 架構已進行下列增強功能：
 
 - 現在支援 USD 檔案格式。
 - 已將已簽署的距離欄位支援新增至[MDLVoxelArray](https://developer.apple.com/reference/modelio/mdlvoxelarray)類別。
-- 使用新`MDLLightProbeIrradianceDataSource`的類別來協助進行較輕的探查位置。
-- 使用新`MDLMaterialPropertyGraph`的類別，輕鬆地支援模型的執行時間變更。
+- 使用新的 `MDLLightProbeIrradianceDataSource` 類別來協助進行較少的探查位置。
+- 使用新的 `MDLMaterialPropertyGraph` 類別，輕鬆地支援模型的執行時間變更。
 
 ## <a name="photos-enhancements"></a>相片增強功能
 
@@ -158,13 +158,13 @@ IOS 10 中的 SceneKit 架構已進行下列增強功能：
 
 - [SCNCamera](xref:SceneKit.SCNCamera)類別可使用 HDR 特性和效果來提供更高的真實性。 使用調適型曝光來建立自動效果，或使用 vignetting、色彩 fringing 和色彩評分，將 fillmatic 效果新增到遊戲中。
 - SceneKit 現在包含新的實際轉譯（.PBR）系統，可提供更簡單的資產製作，以獲得更實際的結果。
-- 使用新的[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)陰影模型來組成各式各樣的實際陰影效果，同時只需要三個基本屬性（`Diffuse`、 `Metalness`和`Roughness`）。
-- 由於 .pbr 陰影最適合使用以環境為基礎的光源， `LightingEnvironment`因此，請使用屬性將影像型光源指派給整個場景。
-- 您可以使用屬性來匯入真實世界的光線裝置，其會根據真實世界的值來定義光源，例如濃度（流明）和色溫度（以度為單位）。 `IESProfileURL`
+- 使用新的[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)陰影模型來組成各式各樣的實際陰影效果，同時只需要三個基本屬性（`Diffuse`、`Metalness` 和 `Roughness`）。
+- 由於 .PBR 陰影最適合使用以環境為基礎的光源，因此，請使用 `LightingEnvironment` 屬性將影像型光源指派給整個場景。
+- 使用 [`IESProfileURL`] 屬性來匯入真實世界的光線裝置，其會根據真實世界的值來定義光源，例如濃度（流明）和色溫度（以度為單位）。
 - 與傳統轉譯技術相比，.PBR 和 HDR 攝影機功能提供更好的結果，因此，SceneKit 現在會線上性色彩空間中執行所有色彩計算（在寬色彩裝置顯示器上使用 P3 色彩色域）。
 - [立即 SceneKit] 色彩會藉由閱讀色彩設定檔資訊來符合所有色彩。
 - SceneKit 會針對所有著色器類型，以線性 RGB 色彩空間來解讀色彩元件值。
-- 藉由在應用程式的`SCNDisableLinearSpaceRendering` `Info.plist`中指定和`SCNDisableWideGamut`鍵，可以停用線性色彩空間呈現和寬色彩。
+- 您可以藉由在應用程式的 `Info.plist`中指定 `SCNDisableLinearSpaceRendering` 和 `SCNDisableWideGamut` 金鑰，來停用線性色彩空間呈現和寬色彩。
 - 建立任意多邊形 primates （從檔案載入或以程式設計方式產生），以使用新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)類別來指定幾何。
 - 由於 SceneKit 會讀取和調整材質影像中的色彩設定檔資訊，因此請針對所有影像使用資產目錄，以確保提供這項資訊。
 
@@ -172,17 +172,17 @@ IOS 10 中的 SceneKit 架構已進行下列增強功能：
 
 IOS 10 中的 SpriteKit 架構已進行下列增強功能：
 
-- 自訂著色器可以提供`SKAttribute`屬性（），您可以藉由提供屬性值（`SKAttributeValue`），分別由使用著色器的每個節點加以設定。
-- `SKTileMapMode`Tilemaps 現在支援使用`SKTileGroup` `SKTileGroupRule` 、和`SKTileSet`類別之2d、2.5 d 和側邊滾動遊戲的正方形、六邊形和等式磚圖形。
-- 使用新`SKWarpGeometry`的類別來延展或扭曲[SKSpriteNode](xref:SpriteKit.SKSpriteNode)或[SKEffectNode](xref:SpriteKit.SKEffectNode)轉譯。 新的[SKAction](xref:SpriteKit.SKAction)類別可以用來建立變形效果之間的轉換動畫。
+- 自訂著色器可以提供屬性（`SKAttribute`），您可以藉由提供屬性值（`SKAttributeValue`），分別由使用著色器的每個節點加以設定。
+- Tilemaps 現在支援使用 `SKTileMapMode`、`SKTileGroup`、`SKTileGroupRule` 和 `SKTileSet` 類別的2D、2.5 D 和側邊滾動遊戲的正方形、六邊形和等式磚圖形。
+- 使用新的 `SKWarpGeometry` 類別來延展或扭曲[SKSpriteNode](xref:SpriteKit.SKSpriteNode)或[SKEffectNode](xref:SpriteKit.SKEffectNode)轉譯。 新的[SKAction](xref:SpriteKit.SKAction)類別可以用來建立變形效果之間的轉換動畫。
 - [SKView](xref:SpriteKit.SKView)類別提供數個新的方法，可讓您更精細地控制場景的呈現時機和方式。
 
 ## <a name="scrollview-enhancements"></a>ScrollView 增強功能
 
 IOS 10.3 中的 ScrollView 控制項已進行下列增強功能：
 
-- `UIScrollView`現在包含`IndexDisplayMode`屬性，以控制當使用者將滾動`UIScrollViewIndexDisplayMode`為的時，如何顯示索引：
-  - `Automatic`-索引顯示是由 OS 所控制。
+- `UIScrollView` 現在包含 `IndexDisplayMode` 屬性，以控制當使用者滾動為 `UIScrollViewIndexDisplayMode` 時，如何顯示索引：
+  - `Automatic`-索引顯示由作業系統控制。
   - `AlwaysHidden`-索引顯示一律會隱藏。
 
 如需使用方式，請參閱[IOSTenThree 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree)。
@@ -193,23 +193,23 @@ IOS 10 中的 UIKit 架構已進行下列增強功能：
 
 - 新的[UIPasteboard](xref:UIKit.UIPasteboard) API 會提供新的選項（例如存留期限制），並會自動為一般類別類型宣告相容的內容類型。
 - 新增完全互動式、以物件為基礎、可中斷的動畫支援，並且可以連結到筆勢。 請參閱 Apple 的[UIViewAnimating 通訊協定參考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 類別參考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 通訊協定參考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 類別參考](https://developer.apple.com/reference/uikit/uicubictimingparameters)和[UISpringTimingParameter ](https://developer.apple.com/reference/uikit/uispringtimingparameters)如需詳細資訊, 類別參考。
-- 新`UIPreviewInteraction`的和`UIPreviewInteractionDelegate`可讓開發人員應用程式提供查看和 pop 作業的自訂介面。
-- 新`UIAccessibilityCustomRotor`的類別可讓應用程式提供自訂的內容特定功能給輔助技術，例如 Voice。
-- `UIAccessibilityIsAssistiveTouchRunning`使用和`UIAccessibilityAssistiveTouchStatusDidChangeNotification`符號來判斷是否已啟用 AssistiveTouch。
-- `UIAccessibilityHearingDevicePairedEar`使用和`UIAccessibilityHearingDevicePairedEarDidChangeNotification`符號來取得任何配對的 MFi 聽覺輔助工具的狀態。
-- 若要在標籤中支援動態類型，文字欄位和文字方塊會`PreferredFontForTextStyle`使用`UIFont`類別的新方法。
-- 若要決定當裝置`UIContentSizeCategory`變更時，某個元素是否應該更新其字型，請使用`UIContentSizeCategoryAdjusting`委派的`AdjustsFontForContentSizeCategory`屬性。
-- `UIApplication`類別的方法會以非同步方式呼叫，現在支援在開啟動作完成後呼叫的完成處理常式。 `OpenURL`
-- 使用新`UICloudSharingController`的和`UICloudSharingControllerDelegate`類別，起始 CloudKit 共用並修改其屬性。
-- 利用預先提取的資料格來改善`UICollectionViews`使用新`UICollectionViewDataSourcePrefetching`委派的的滾動體驗。
+- 新的 `UIPreviewInteraction` 和 `UIPreviewInteractionDelegate` 可讓開發人員應用程式提供查看和 pop 作業的自訂介面。
+- 新的 `UIAccessibilityCustomRotor` 類別可讓應用程式提供自訂的內容特定功能給輔助技術，例如 Voice。
+- 使用 `UIAccessibilityIsAssistiveTouchRunning` 和 `UIAccessibilityAssistiveTouchStatusDidChangeNotification` 符號來判斷是否已啟用 AssistiveTouch。
+- 使用 `UIAccessibilityHearingDevicePairedEar` 和 `UIAccessibilityHearingDevicePairedEarDidChangeNotification` 符號來取得任何配對 MFi 聽覺輔助工具的狀態。
+- 若要在標籤中支援動態類型，文字欄位和文字方塊會使用 `UIFont` 類別的新 `PreferredFontForTextStyle` 方法。
+- 若要決定當裝置的 `UIContentSizeCategory` 變更時，元素是否應該更新其字型，請使用 `UIContentSizeCategoryAdjusting` 委派的 `AdjustsFontForContentSizeCategory` 屬性。
+- `UIApplication` 類別的 `OpenURL` 方法是以非同步方式呼叫，現在支援在開啟動作完成後呼叫的完成處理常式。
+- 使用新的 `UICloudSharingController` 和 `UICloudSharingControllerDelegate` 類別，起始 CloudKit 共用並修改其屬性。
+- 利用預先提取的資料格，以新的 `UICollectionViewDataSourcePrefetching` 委派來改善 `UICollectionViews` 的滾動體驗。
 - 開發人員現在可以控制索引標籤欄專案的徽章外觀（例如文字和背景色彩）。
-- 所有的捲軸和捲軸子類別（例如`UICollectionView`）現在都支援 Refresh 控制項。
+- 所有捲軸和捲軸子類別中現在都支援重新整理控制項（例如 `UICollectionView`）。
 
 ## <a name="webkit-enhancements"></a>WebKit 增強功能
 
 IOS 10 中的 WebKit 架構已進行下列增強功能：
 
-- 已將查看和 pop 支援新增至`WKWebView`類別。 `ShouldPreviewElement`使用方法來判斷指定的 web 視圖是否應該顯示預覽。
+- 已將查看和 pop 支援新增至 `WKWebView` 類別。 使用 `ShouldPreviewElement` 方法來判斷指定的 web view 是否應顯示預覽。
 
 ## <a name="related-links"></a>相關連結
 
