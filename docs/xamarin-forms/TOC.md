@@ -95,6 +95,7 @@
 ##### [參數為 CLR 屬性](app-fundamentals/effects/passing-parameters/clr-properties.md)
 ##### [參數為附加屬性](app-fundamentals/effects/passing-parameters/attached-properties.md)
 #### [叫用事件](app-fundamentals/effects/touch-tracking.md)
+#### [可重複使用的 RoundEffect](app-fundamentals/effects/reusable-roundeffect.md)
 ### [Gestures](app-fundamentals/gestures/index.md)
 #### [點選](app-fundamentals/gestures/tap.md)
 #### [縮小](app-fundamentals/gestures/pinch.md)
