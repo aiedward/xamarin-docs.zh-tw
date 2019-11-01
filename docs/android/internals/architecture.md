@@ -3,15 +3,15 @@ title: 架構
 ms.prod: xamarin
 ms.assetid: 7DC22A08-808A-DC0C-B331-2794DD1F9229
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 06817c563f12425e5c339cb8f2560f37f9ace0b5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fe0903eca5c907fc104728ca0ad7c676a45a5180
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756686"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027916"
 ---
 # <a name="architecture"></a>架構
 
@@ -20,9 +20,9 @@ ms.locfileid: "70756686"
 
 您可以使用[System](xref:System)、 [System.IO](xref:System.IO)、 [System.Net](xref:System.Net)和其他 .net 類別庫，來存取基礎 Linux 作業系統設施。
 
-在 Android 上, 大部分的系統裝置 (例如音訊、圖形、OpenGL 和電話語音) 都無法直接提供給原生應用程式使用, 只會透過位於其中一個[JAVA](xref:Java.Lang). * 命名空間或 Android 的 [android](xref:Android) 執行時間 JAVA api 來公開。* 命名空間。 架構大致如下：
+在 Android 上, 大部分的系統裝置 (例如音訊、圖形、OpenGL 和電話語音) 都無法直接提供給原生應用程式使用, 只會透過位於其中一個[JAVA](xref:Java.Lang) * 命名空間或 [Android](xref:Android) * 命名空間的 android 執行時間 JAVA api 來公開。 架構大致如下：
 
-[![核心上方和 .NET/JAVA + 系結之下的 Mono 和美工圖](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
+[核心上方和 .NET/JAVA + 系結之下的 Mono 和美工 ![圖](architecture-images/architecture1.png)](architecture-images/architecture1.png#lightbox)
 
 Xamarin。 Android 開發人員可存取作業系統中的各種功能，方法是呼叫他們知道的 .NET Api （適用于低層級存取），或使用 Android 命名空間中公開的類別，以提供橋接器給所公開的 JAVA ApiAndroid 執行時間。
 
@@ -56,7 +56,7 @@ Managed 可呼叫包裝函式會負責在 managed 和 Android 類型之間進行
 
 藉由呼叫 managed 可呼叫包裝函式上的[JAVA. lang.ini （）](xref:Java.Lang.Object.Dispose) ，即可明確釋放全域參考。 這會移除 JAVA 實例和受控實例之間的對應，並允許收集 JAVA 實例。 如果從 managed 程式碼重新存取 JAVA 實例，將會為它建立新的受控可呼叫包裝函式。
 
-處置 Managed 可呼叫包裝函式時，如果實例可以不小心線上程之間共用，則必須特別小心，因為處置實例會影響其他執行緒的參考。 為了達到最高的`Dispose()`安全性，只有透過*或*方法配置`new`的實例，而且您*知道*一律會配置新的實例，而不是快取的實例，這可能會造成非預期的實例共用。串接.
+處置 Managed 可呼叫包裝函式時，如果實例可以不小心線上程之間共用，則必須特別小心，因為處置實例會影響其他執行緒的參考。 為了達到最高的安全性，只有透過 `new` 或您知道一律配置新實例的方法，*或*從您*已知*會造成執行緒之間意外實例共用的方法所 `Dispose()` 的實例。
 
 ## <a name="managed-callable-wrapper-subclasses"></a>Managed 可呼叫包裝函式子類別
 
@@ -92,11 +92,11 @@ Managed 可呼叫包裝函式子類別是指所有「有趣」的應用程式特
 
 4. *TextView*的函式呼叫會叫用*monodroid （）* 。
 
-5. *monodroid. apidemo. getDefaultMovementMethod （* ）會叫用 LogTextBox *. n_getDefaultMovementMethod* （），它會叫用（），它會叫用 *（）* ，它會叫用[。 GetObject&lt;TextView&gt; （handle，JniHandleOwnership. DoNotTransfer）](xref:Java.Lang.Object.GetObject*) 。
+5. *monodroid. apidemo. getDefaultMovementMethod （* ）會叫用 LogTextBox *. n_getDefaultMovementMethod* （），它會叫用 *（）* ，它會叫用（），它會叫用[。 GetObject&lt;TextView&gt; （handle，JniHandleOwnership. DoNotTransfer）](xref:Java.Lang.Object.GetObject*) 。
 
-6. *TextView&gt;（）會檢查是否已經有相對應的實例來處理。&lt;*  C# 如果有，則會傳回它。 在此情況下，*物件。 GetObject&lt; &gt;t （）* 必須建立一個。
+6. *&lt;TextView&gt;（）* ，會檢查是否已經有對應C#的實例可供*處理*。 如果有，則會傳回它。 在此案例中，沒有，所以*Object。 GetObject&lt;t&gt;（）* 必須建立一個。
 
-7. *物件。 GetObject&lt;T&gt;（）* 會尋找*LogTextBox （IntPtr，JniHandleOwneship）* 的函式、叫用它、建立*控制碼*與建立的實例之間的對應，然後傳回建立的實例。
+7. *物件。 GetObject&lt;t&gt;（）* 會尋找*LogTextBox （IntPtr，JniHandleOwneship）* 的函式、叫用它、建立*控制碼*與建立的實例之間的對應，然後傳回建立的實例。
 
 8. *TextView. n_GetDefaultMovementMethod （）* 會叫用*LogTextBox. DefaultMovementMethod*屬性 getter。
 
@@ -165,8 +165,8 @@ I/mono-stdout( 2993): [Managed: Value=]
 
 ## <a name="application-startup"></a>應用程式啟動
 
-當活動、服務等啟動時，Android 會先檢查是否已有執行中的進程來裝載活動/服務/等等。如果沒有這樣的進程，則會建立新的進程、讀取[androidmanifest.xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) ，而且會載入並具現化[/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm)屬性中指定的類型。 接下來， [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm)屬性值所指定的所有類型都會具現化，並叫用其[ContentProvider. attachInfo% 28）](xref:Android.Content.ContentProvider.AttachInfo*)方法。 [Xamarin] 會藉由新增 mono 來攔截 *。* 在建立程式期間，請尋找 mono.monoruntimeprovider *ContentProvider*至 androidmanifest.xml。 *Mono。請尋找 mono.monoruntimeprovider. attachInfo （）* 方法負責將 Mono 執行時間載入進程中。
-在此點之前使用 Mono 的任何嘗試都會失敗。 （*注意*：這就是為什麼當應用[Android.App.Application](xref:Android.App.Application)程式實例在 Mono 可以初始化之前建立時, 應用程式所需提供 [(IntPtr, JniHandleOwnership) 函式](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)的類別。
+當活動、服務等啟動時，Android 會先檢查是否已有執行中的進程來裝載活動/服務/等等。如果沒有這樣的進程，則會建立新的進程、讀取[androidmanifest.xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) ，而且會載入並具現化[/manifest/application/@android:name](https://developer.android.com/guide/topics/manifest/application-element.html#nm)屬性中指定的類型。 接下來， [/manifest/application/provider/@android:name](https://developer.android.com/guide/topics/manifest/provider-element.html#nm)屬性值所指定的所有類型都會具現化，並叫用其[ContentProvider. attachInfo %28）](xref:Android.Content.ContentProvider.AttachInfo*)方法。 [Xamarin] 會藉由新增 mono 來攔截 *。* 在建立程式期間，請尋找 mono.monoruntimeprovider *ContentProvider*至 androidmanifest.xml。 *Mono。請尋找 mono.monoruntimeprovider. attachInfo （）* 方法負責將 Mono 執行時間載入進程中。
+在此點之前使用 Mono 的任何嘗試都會失敗。 （*注意*：這就是為什麼當應用程式實例在 Mono 可以初始化之前建立時, 應用程式所需提供[(IntPtr, JniHandleOwnership)函式](https://github.com/xamarin/monodroid-samples/blob/a9e8ef23/SanityTests/Hello.cs#L103)的類別[Android.App.Application](xref:Android.App.Application)。
 
-完成進程初始化之後， `AndroidManifest.xml`我們會諮詢以尋找活動/服務的類別名稱/等等，以啟動。 例如， [ /manifest/application/activity/@android:name屬性](https://developer.android.com/guide/topics/manifest/activity-element.html#nm)是用來決定要載入的活動名稱。 若為活動，此類型必須繼承[android. app. 活動](xref:Android.App.Activity)。
+完成進程初始化之後，請 `AndroidManifest.xml`，以尋找要啟動之活動/服務/等等的類別名稱。 例如， [/manifest/application/activity/@android:name 屬性](https://developer.android.com/guide/topics/manifest/activity-element.html#nm)是用來決定要載入的活動名稱。 若為活動，此類型必須繼承[android. app. 活動](xref:Android.App.Activity)。
 指定的型別是透過[class.forname （）](https://developer.android.com/reference/java/lang/Class.html#forName(java.lang.String))載入，它會要求型別必須是 JAVA 型別，也就是 Android 可呼叫包裝函式，然後再具現化。 建立 Android 可呼叫包裝函式實例，將會觸發建立對應C#類型的實例。 然後，Android 會叫用[onCreate （配套）](https://developer.android.com/reference/android/app/Activity.html#onCreate(android.os.Bundle)) ，這將會叫用對應的[onCreate （配套）](xref:Android.App.Activity.OnCreate*) ，而您也不會遇到競爭情形。
