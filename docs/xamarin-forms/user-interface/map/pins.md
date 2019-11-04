@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
-ms.openlocfilehash: a2fb0ba2036dfe34e85c7bebab6ecb55cd868ad5
-ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
+ms.openlocfilehash: 930d2dcc701f88e2a350ec1011405bb18b86de6e
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810533"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425551"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. 表單地圖釘選
 
@@ -44,10 +44,7 @@ ms.locfileid: "72810533"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
      <maps:Map x:Name="map"
                IsShowingUser="True"
-               MoveToLastRegionOnLayoutChange="False"
-               HeightRequest="100"                  
-               WidthRequest="960"
-               VerticalOptions="FillAndExpand">
+               MoveToLastRegionOnLayoutChange="False">
          <x:Arguments>
              <maps:MapSpan>
                  <x:Arguments>
@@ -80,10 +77,7 @@ ms.locfileid: "72810533"
 </ContentPage>
 ```
 
-此 XAML 會建立[`Map`](xref:Xamarin.Forms.Maps.Map)物件，以顯示[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)物件所指定的區域。 `MapSpan` 物件是以[`Position`](xref:Xamarin.Forms.Maps.Position)物件所代表的緯度和經度為中心，這會擴充0.01 緯度和經度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)物件會加入至[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合，並在 `Map` 的[`Position`](xref:Xamarin.Forms.Maps.Pin.Position)屬性所指定的位置上繪製。 如需將 XAML 中的引數傳遞給缺少預設的函式之物件的詳細資訊，請參閱[在 xaml 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)
-
-> [!NOTE]
-> [`Position`](xref:Xamarin.Forms.Maps.Position)結構會定義唯讀[`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)和[`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)屬性，這兩種類型都 `double`。 透過其「函式」建立 `Position` 物件時，會在-90.0 和90.0 之間壓制緯度值，而經度值將會壓制到-180.0 和180.0 之間。
+此 XAML 會建立[`Map`](xref:Xamarin.Forms.Maps.Map)物件，以顯示[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)物件所指定的區域。 `MapSpan` 物件是以[`Position`](xref:Xamarin.Forms.Maps.Position)物件所代表的緯度和經度為中心，這會擴充0.01 緯度和經度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)物件會加入至[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合，並在 `Map` 的[`Position`](xref:Xamarin.Forms.Maps.Pin.Position)屬性所指定的位置上繪製。 如需[`Position`](xref:Xamarin.Forms.Maps.Position)結構的詳細資訊，請參閱[地圖位置和距離](position-distance.md)。 如需將 XAML 中的引數傳遞給缺少預設的函式之物件的詳細資訊，請參閱[在 xaml 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)
 
 對等的 C# 程式碼為：
 
@@ -119,7 +113,7 @@ map.Pins.Add(pin);
 
 在地圖上的其他地方，會關閉 [資訊] 視窗。
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)類別會定義 `MarkerClicked` 事件，這會在按下 `Pin` 時引發。 不需要處理此事件，即可顯示 [資訊] 視窗。 相反地，只有在需要通知特定的 pin 已被按下時，才會處理這個事件。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)類別會定義 `MarkerClicked` 事件，這會在按下 `Pin` 時引發。 不需要處理此事件，即可顯示 [資訊] 視窗。 相反地，當需要通知特定的 pin 時，就應該處理這個事件。
 
 [`Pin`](xref:Xamarin.Forms.Maps.Pin)類別也會定義在使用資訊視窗時所引發的 `InfoWindowClicked` 事件。 當需要通知特定資訊視窗已按下時，應該處理這個事件。
 
@@ -190,7 +184,6 @@ wharfPin.InfoWindowClicked += async (s, args) =>
     <Grid>
         ...
         <maps:Map x:Name="map"
-                  MoveToLastRegionOnLayoutChange="false"
                   ItemsSource="{Binding Locations}">
             <maps:Map.ItemTemplate>
                 <DataTemplate>
@@ -211,7 +204,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 
 下列螢幕擷取畫面顯示使用資料系結顯示[`Pin`](xref:Xamarin.Forms.Maps.Pin)集合的[`Map`](xref:Xamarin.Forms.Maps.Map) ：
 
-[![IOS 和 Android 上具有資料系結圖釘的對應螢幕擷取畫面](map-images/pins-itemssource.png "具有資料系結圖釘的對應")](map-images/pins-itemssource-large.png#lightbox "具有資料系結圖釘的對應")
+[![IOS 和 Android 上具有資料系結圖釘的對應螢幕擷取畫面](pins-images/pins-itemsource.png "具有資料系結圖釘的對應")](pins-images/pins-itemsource-large.png#lightbox "具有資料系結圖釘的對應")
 
 ### <a name="choose-item-appearance-at-runtime"></a>在執行時間選擇專案外觀
 

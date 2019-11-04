@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: b17a1177abafe4e605263664038842863302ac3b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 96c775ba8e29597a8420b1c42d53e33357c7324c
+ms.sourcegitcommit: 18b446a0032f3a7a064e5a6470e9d20b1ec2fbed
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249693"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73426454"
 ---
 # <a name="localization"></a>當地語系化
 
@@ -60,7 +60,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 選擇有意義的名稱 (例如 **AppResources**)，然後按 [確定]。
 
-[![新增資源檔][(text-images/resx-new-file-sml.png "新增檔案] 對話方塊")](text-images/resx-new-file.png#lightbox "[新增檔案] 對話方塊")
+[![新增資源檔](text-images/resx-new-file-sml.png "[新增檔案] 對話方塊")](text-images/resx-new-file.png#lightbox "[新增檔案] 對話方塊")
 
 會有兩個檔案新增至專案：
 
@@ -69,7 +69,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 方案樹狀目錄會將這些檔案顯示為相關。 您「應該」編輯 RESX 檔案來新增可翻譯的字串，但「不應該」編輯 **.designer.cs** 檔案。
 
-![](text-images/appresources-tree.png "AppResources.resx 檔案")
+![](text-images/appresources-tree.png "AppResources.resx File")
 
 ##### <a name="string-visibility"></a>字串可見度
 
@@ -81,11 +81,11 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](text-images/vs-resx-internal-sml.png "AppResources.Resx 的屬性視窗")](text-images/vs-resx-internal.png#lightbox)
+[![](text-images/vs-resx-internal-sml.png "Properties Window for AppResources.Resx")](text-images/vs-resx-internal.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](text-images/xs-resx-internal-sml.png "AppResources.Resx 的 Properties Pad")](text-images/xs-resx-internal.png#lightbox)
+[![](text-images/xs-resx-internal-sml.png "Properties Pad for AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
 
 -----
 
@@ -93,13 +93,13 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](text-images/vs-resx-public-sml.png "AppResources.Resx 的屬性視窗")](text-images/vs-resx-public.png#lightbox)
+[![](text-images/vs-resx-public-sml.png "Properties Window for AppResources.Resx")](text-images/vs-resx-public.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](text-images/xs-resx-internal-sml.png "AppResources.Resx 的 Properties Pad")](text-images/xs-resx-internal.png#lightbox)
+[![](text-images/xs-resx-internal-sml.png "Properties Pad for AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
 
-[![](text-images/xs-resx-public-sml.png "AppResources.Resx 的 Properties Pad")](text-images/xs-resx-public.png#lightbox)
+[![](text-images/xs-resx-public-sml.png "Properties Pad for AppResources.Resx")](text-images/xs-resx-public.png#lightbox)
 
 -----
 
@@ -157,7 +157,7 @@ TodoLocalized 範例包含[共用專案示範](https://github.com/xamarin/xamari
 
 這些特定語言的資源檔「不」需要 **.designer.cs** 部分類別，因此可當作一般 XML 檔新增，並設定 [建置動作：EmbeddedResource]。 下列螢幕擷取畫面顯示包含特定語言資源檔的方案：
 
-![](text-images/appresources-langs.png "特定語言的資源檔")
+![](text-images/appresources-langs.png "Language-Specific Resource Files")
 
 開發應用程式並將文字新增至基底 RESX 檔案之後，您應該將它傳送給會翻譯每個 `data` 項目的翻譯人員，並傳回要包含在應用程式中的特定語言資源檔 (使用顯示的命名慣例)。 以下顯示一些「機器翻譯」的範例：
 
@@ -208,7 +208,7 @@ myButton.Text = AppResources.AddButton;
 
 iOS、Android 和通用 Windows 平台 (UWP) 上的使用者介面會如您預期般呈現，但由於文字是從資源載入而非硬式編碼，因此現在可以將應用程式翻譯成多種語言。 下列螢幕擷取畫面顯示每個平台上翻譯前的 UI：
 
-![](text-images/simple-example-english.png "不同平台上翻譯前的 UI")
+![](text-images/simple-example-english.png "Cross-Platform UIs Prior to Translation")
 
 ### <a name="troubleshooting"></a>疑難排解
 
@@ -398,7 +398,7 @@ namespace UsingResxLocalization.iOS
                 case "ms-SG":    // "Malaysian (Singapore)" not supported .NET culture
                     netLanguage = "ms"; // closest supported
                     break;
-                case "gsw-CH":  // "Schwiizertüütsch (Swiss German)" not supported .NET culture
+                case "gsw-CH":  // "Schwiizerdüütsch (Swiss German)" not supported .NET culture
                     netLanguage = "de-CH"; // closest supported
                     break;
                 // add more application-specific cases here (if required)
@@ -438,7 +438,7 @@ namespace UsingResxLocalization.iOS
 
 iOS 會自動翻譯一些系統定義的使用者介面項目，例如 `Picker` 控制項上的 [完成] 按鈕。 若要強制 iOS 翻譯這些項目，則必須在 **Info.plist** 檔案中指定支援哪些語言。 您可以透過 Info.plist > [來源] 新增這些值，如下所示：
 
-![Info.plist 中的當地語系化索引鍵](text-images/info-plist.png "Info.plist 中的當地語系化索引鍵")
+![資訊中的當地語系化金鑰 plist](text-images/info-plist.png "資訊中的當地語系化金鑰 plist")
 
 或者，在 XML 編輯器中開啟 **Info.plist** 檔案，並直接編輯下列值：
 
@@ -506,7 +506,7 @@ namespace UsingResxLocalization.Android
                 }
                 catch (CultureNotFoundException e2)
                 {
-                    // iOS language not valid .NET culture, falling back to English
+                    // Android language not valid .NET culture, falling back to English
                     ci = new System.Globalization.CultureInfo("en");
                 }
             }
@@ -526,7 +526,7 @@ namespace UsingResxLocalization.Android
                 case "in-ID":  // "Indonesian (Indonesia)" has different code in  .NET
                     netLanguage = "id-ID"; // correct code for .NET
                     break;
-                case "gsw-CH":  // "Schwiizertüütsch (Swiss German)" not supported .NET culture
+                case "gsw-CH":  // "Schwiizerdüütsch (Swiss German)" not supported .NET culture
                     netLanguage = "de-CH"; // closest supported
                     break;
                     // add more application-specific cases here (if required)
@@ -583,7 +583,7 @@ namespace UsingResxLocalization.Android
 
 更新平台特定專案 (如上所示) 並以翻譯的 RESX 檔案重新編譯應用程式之後，就可以在每個應用程式中取得更新的翻譯。 以下是翻譯成簡體中文的範例程式碼螢幕擷取畫面：
 
-![](text-images/simple-example-hans.png "不同平台上翻譯成簡體中文的 UI")
+![](text-images/simple-example-hans.png "Cross-Platform UIs Translated to Simplified Chinese")
 
 如需 UWP 當地語系化的詳細資訊，請參閱 [UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)。
 
@@ -732,7 +732,7 @@ iOS 使用稱為「當地語系化專案」的命名標準或 **.lproj** 目錄�
 
 下列螢幕擷取畫面顯示 iOS 範例應用程式及特定語言的 **.lproj** 目錄。 西班牙文目錄稱為 **es.lproj**，其中包含預設影像的當地語系化版本，以及 **flag.png**：
 
-![](text-images/ios-resources.png "iOS 當地語系化專案目錄")
+![](text-images/ios-resources.png "iOS Localization Project Directories")
 
 每個語言目錄包含一份針對該語言當地語系化的 **flag.png** 複本。 如果未提供任何影像，則作業系統會預設為預設語言目錄中的影像。 如需完整的 Retina 支援，您應該針對每個影像提供 **@2x** 和 **@3x** 個複本。
 
@@ -746,7 +746,7 @@ iOS 使用稱為「當地語系化專案」的命名標準或 **.lproj** 目錄�
 
 執行應用程式時，會同時當地語系化應用程式名稱和影像：
 
-![](text-images/ios-imageicon.png "iOS 範例應用程式文字及影像當地語系化")
+![](text-images/ios-imageicon.png "iOS Sample App Text and Image Localization")
 
 ### <a name="android-application-project"></a>Android 應用程式專案
 
@@ -756,11 +756,11 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 
 下列螢幕擷取畫面顯示 Android 範例，其中包含一些當地語系化的可繪製資源和字串：
 
-![](text-images/android-resources.png "Android 的當地語系化可繪製資源和字串目錄")
+![](text-images/android-resources.png "Android Localized Drawables and String Directories")
 
 請注意，Android 不會使用 zh-Hans 和 zh-Hant 代碼來表示簡體中文和繁體中文；相反地，它只支援特定國碼 (地區碼) zh-CN 和 zh-TW。
 
-若要支援高畫質螢幕的不同影像解析度，請建立字尾為 `-*dpi` 的其他語言資料夾，例如 **drawables-es-mdpi** **drawables-es-xdpi**、**drawables-es-xxdpi** 等。如需詳細資訊，請參閱[提供 Android 替代資源](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
+若要支援高密度螢幕的不同解析度影像，請使用 `-*dpi` 尾碼建立其他語言資料夾，例如**可繪製資源-mDPI**、**可繪製資源-es-xDPI**、**可繪製資源-es-xxDPI**等。如需詳細資訊，請參閱[提供替代的 Android 資源](https://developer.android.com/guide/topics/resources/providing-resources.html#AlternativeResources)。
 
 #### <a name="app-name"></a>應用程式名稱
 
@@ -782,7 +782,7 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 
 應用程式現在會當地語系化應用程式名稱和影像。 結果 (西班牙文) 的螢幕擷取畫面如下：
 
-![](text-images/android-imageicon.png "Android 範例應用程式文字及影像當地語系化")
+![](text-images/android-imageicon.png "Android Sample App Text and Image Localization")
 
 ### <a name="universal-windows-platform-application-projects"></a>通用 Windows 平台應用程式專案
 
@@ -792,7 +792,7 @@ Android 會遵循不同的配置，使用不同的**可繪製資源**和**字串
 
 將影像放在資源特定資料夾中即可當地語系化，如下列螢幕擷取畫面所示：
 
-![](text-images/uwp-image-folder-structure.png "UWP 影像當地語系化資料夾結構")
+![](text-images/uwp-image-folder-structure.png "UWP Image Localization Folder Structure")
 
 在執行階段，Windows 資源基礎結構會根據使用者的地區設定來選取適當的影像。
 

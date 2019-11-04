@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/22/2019
-ms.openlocfilehash: ce1f6751c0381ed41058784fbea3ebedefbdac6d
-ms.sourcegitcommit: e4c23187874488ff55794d0e81a9bba30d2c2cd6
+ms.openlocfilehash: 9a20618fea0091979c2ea862f417dccec565b218
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72778779"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425611"
 ---
 # <a name="xamarinforms-map-geocoding"></a>Xamarin. 表單地圖地理編碼
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[Xamarin] 提供[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)類別，它會在字串位址與緯度和經度座標之間轉換，並儲存在[`Position`](xref:Xamarin.Forms.Maps.Position)物件中。
+[`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)命名空間提供[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)類別，它會在字串位址與緯度和經度座標之間進行轉換，這些會儲存在[`Position`](xref:Xamarin.Forms.Maps.Position)物件中。 如需[`Position`](xref:Xamarin.Forms.Maps.Position)結構的詳細資訊，請參閱[地圖位置和距離](position-distance.md)。
 
 ## <a name="geocode-an-address"></a>地理編碼位址
 
@@ -55,4 +55,5 @@ string address = possibleAddresses.FirstOrDefault();
 ## <a name="related-links"></a>相關連結
 
 - [Maps 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Xamarin. 表單地圖位置和距離](position-distance.md)
 - [Geocoder API](xref:Xamarin.Forms.Maps.Geocoder)
