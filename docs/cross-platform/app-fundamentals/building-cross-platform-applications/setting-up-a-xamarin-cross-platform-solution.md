@@ -3,15 +3,15 @@ title: 第3部分-設定 Xamarin 跨平臺解決方案
 description: 本檔說明如何在 Xamarin 中設定跨平臺解決方案。 它討論各種程式碼共用策略，例如共用專案和 .NET Standard。
 ms.prod: xamarin
 ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: acec74585487e9f0a0a13a80c5da49a187a4042f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 843887282c9a5af671d46699ae2f601fd32902e0
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758149"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016877"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>第3部分-設定 Xamarin 跨平臺解決方案
 
@@ -63,7 +63,7 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 
 ### <a name="core-project"></a>核心專案
 
-共用的程式碼專案應該只參考所有平臺都能使用的元件– ie。通用架構命名空間， `System`例如`System.Core` 、 `System.Xml`和。
+共用的程式碼專案應該只參考所有平臺都能使用的元件– ie。通用架構命名空間，例如 `System`、`System.Core` 和 `System.Xml`。
 
 共用的專案應該盡可能地執行非 UI 功能，其中可能包含下列層級：
 
@@ -89,11 +89,11 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 
 此圖說明應用程式架構：
 
- [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "此圖說明應用程式架構")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
+ [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "The application architecture is illustrated in this diagram")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
 
 這個螢幕擷取畫面顯示了使用共用核心專案、iOS 和 Android 應用程式專案設定的解決方案。 共用專案包含與每個架構層（商務、服務、資料和資料存取程式碼）相關的程式碼：
 
- ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "共用專案包含與每個架構層（商務、服務、資料和資料存取程式碼）相關的程式碼")
+ ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "The Shared Project contains code relating to each of the architectural layers (Business, Service, Data and Data Access code)")
 
  <a name="Project_References" />
 
@@ -104,7 +104,7 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 
 應用程式會投射每個參考共用專案，並包含將功能呈現給使用者所需的使用者介面程式碼，如下列螢幕擷取畫面所示：
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "應用程式專案中 Shared 專案的每個參考") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "應用程式專案中每個參考共用專案")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "應用程式專案每個參考共用專案") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "應用程式專案每個參考共用專案")
 
 案例研究中提供如何結構化專案的特定範例。
 
@@ -120,10 +120,10 @@ Xamarin 的方法是將程式碼分組為兩種專案類型：
 
 - **所有C#** 檔案–組建動作：編譯
 - **Xamarin 中的影像 & Windows** –組建動作：內容
-- **XIB 和在 Xamarin 中的**分鏡腳本檔案–組建動作：InterfaceDefinition
-- **Android 中的影像和 AXML 版面**配置–組建動作：AndroidResource
+- **Xamarin 中的 XIB 和**分鏡腳本檔案–組建動作： InterfaceDefinition
+- **Android 中的影像和 AXML 版面**配置–組建動作： AndroidResource
 - **Windows 專案中的 XAML**檔案–組建動作：頁面
-- **XAMARIN XAML**檔案–組建動作：內嵌資源
+- **Xamarin. 表單 XAML**檔案–組建動作： EmbeddedResource
 
 通常，IDE 會偵測檔案類型，並建議正確的組建動作。
 

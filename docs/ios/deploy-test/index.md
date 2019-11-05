@@ -4,15 +4,15 @@ description: 本文件連結的各種指南，描述與部署與測試 Xamarin.i
 ms.prod: xamarin
 ms.assetid: 2DBF3BF9-79E7-4E24-AF26-E34C972B0169
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8ce601bff478cfc75d209b0d3e6ec3f6a48dbeee
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f3f5e27e97b7b62ade66ea2dc50a79ac03d51f90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288957"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026461"
 ---
 # <a name="deploying-and-testing-xamarinios-apps"></a>部署和測試 Xamarin.iOS 應用程式
 
@@ -40,7 +40,7 @@ ms.locfileid: "70288957"
 
 ## <a name="testflightiosdeploy-testtestflightmd"></a>[TestFlight](~/ios/deploy-test/testflight.md)
 
-TestFlight 現在由 Apple 所擁有，是 Xamarin.iOS 應用程式進行 Beta 測試的主要方法。 本文會引導您完成 TestFlight 流程中的所有步驟：從上傳應用程式到使用 iTunes Connect。
+TestFlight 現在由 Apple 所擁有，是對 Xamarin.iOS 應用程式進行 Beta 測試的主要方法。 本文會引導您完成 TestFlight 流程中的所有步驟：從上傳應用程式到使用 iTunes Connect。
 
 ## <a name="debugging-in-xamariniosiosdeploy-testdebugging-in-xamarin-iosmd"></a>[在 Xamarin.iOS 中偵錯](~/ios/deploy-test/debugging-in-xamarin-ios.md)
 
@@ -57,7 +57,7 @@ Visual Studio 和 Visual Studio for Mac IDE 都支援在 iOS 模擬器和 iOS �
 
 ## <a name="walkthrough---using-apples-instrument-tooliosdeploy-testwalkthrough-apples-instrumentmd"></a>[逐步解說 - 使用 Apple 的 Instrument 工具](~/ios/deploy-test/walkthrough-apples-instrument.md)
 
-本文介紹如何使用 Apple 的 Instruments 工具，來診斷透過 Xamarin 建置的 iOS 應用程式記憶體問題。 文中將示範如何啟動 Instruments、拍攝堆積快照、分析記憶體成長。 也會示範如何使用 Instruments 顯示和鎖定造成記憶體問題的確切程式碼行數。
+本文逐步解說如何使用 Apple 的 Instruments 工具，診斷透過 Xamarin 建置的 iOS 應用程式記憶體問題。 文中將示範如何啟動 Instruments、拍攝堆積快照、分析記憶體成長。 也會示範如何使用 Instruments 顯示和鎖定造成記憶體問題的確切程式碼。
 
 ## <a name="linking-on-ioslinkermd"></a>[在 iOS 上連結](linker.md)
 
@@ -65,7 +65,7 @@ Visual Studio 和 Visual Studio for Mac IDE 都支援在 iOS 模擬器和 iOS �
 
 ## <a name="xamarinios-performanceperformancemd"></a>[Xamarin.iOS 效能](performance.md)
 
-有許多技巧可增加利用 Xamarin.iOS 建置之應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+有許多技巧可增加使用 Xamarin.iOS 建置之應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 
 ## <a name="mtouchmtouchmd"></a>[mtouch](mtouch.md)
 

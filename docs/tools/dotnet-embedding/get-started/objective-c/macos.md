@@ -3,15 +3,15 @@ title: 開始使用 macOS
 description: 本檔說明如何開始使用 .NET 內嵌搭配 macOS。 它會討論需求，並提供範例應用程式，以示範如何系結 managed 元件，並在 Xcode 專案中使用產生的輸出。
 ms.prod: xamarin
 ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: e7f1bac95e9e812c0e47b55b85f72f34ba76e68e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d081795ecfcc5d0aa2559b866fcc57076fe8248b
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290260"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007016"
 ---
 # <a name="getting-started-with-macos"></a>開始使用 macOS
 

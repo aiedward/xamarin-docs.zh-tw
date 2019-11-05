@@ -4,15 +4,15 @@ description: 本檔提供各種檔的連結，說明使用 Xamarin watchOS 應�
 ms.prod: xamarin
 ms.assetid: 156D6D1C-83CA-4088-BA08-40B22312269C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 682e1d8e8146472c65dc4d8009bd4d93162049fb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: bfec79d7c4278ce1382790f5048581cf74bb89c6
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285966"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73001465"
 ---
 # <a name="watchos-application-fundamentals"></a>watchOS 應用程式基本概念
 
@@ -28,7 +28,7 @@ ms.locfileid: "70285966"
 
 如何將圖示新增至 Apple Watch 應用程式。
 
-## <a name="layoutioswatchosapp-fundamentalslayoutmd"></a>[版面配置](~/ios/watchos/app-fundamentals/layout.md)
+## <a name="layoutioswatchosapp-fundamentalslayoutmd"></a>[配置](~/ios/watchos/app-fundamentals/layout.md)
 
 建立 Apple Watch 使用者介面的設計秘訣。
 

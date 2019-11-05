@@ -3,15 +3,15 @@ title: 第1部分–瞭解 Xamarin Mobile 平臺
 description: 本檔說明 Xamarin 平臺的高層級，並探討編譯器、平臺 SDK 存取、程式碼共用、使用者介面建立、視覺化設計工具等等。
 ms.prod: xamarin
 ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: af2b8cd39d5fb1b0ce6c12f7d6ad87e245b9a594
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e10e9f5330de3226fb0f08051ab135ea58900fe7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70761963"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016869"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>第1部分–瞭解 Xamarin Mobile 平臺
 
@@ -39,7 +39,7 @@ C#來源會在每個平臺上以非常不同的方式進入原生應用程式：
 
 適用于[xamarin](~/ios/deploy-test/linker.md)和[xamarin](~/android/deploy-test/linker.md)的連結器檔集提供此部分編譯器的詳細資訊。
 
-執行時間 ' 編譯 ' –以動態方式`System.Reflection.Emit`產生程式碼–應該避免。
+執行時間 ' 編譯 ' –以 `System.Reflection.Emit` 動態產生程式碼–應該避免。
 
 Apple 的核心可防止在 iOS 裝置上產生動態程式碼，因此在 Xamarin 中即時發出程式碼將無法運作。 同樣地，動態語言執行時間的功能無法搭配 Xamarin 工具使用。
 
@@ -49,8 +49,8 @@ Apple 的核心可防止在 iOS 裝置上產生動態程式碼，因此在 Xamar
 
 Xamarin 讓平臺特定 SDK 所提供的功能可輕鬆地透過熟悉C#的語法來存取：
 
-- **ios** – Xamarin 會將 Apple 的 CocoaTouch SDK 架構公開為可供您參考的命名C#空間。 例如，包含所有使用者介面控制項的 UIKit 架構都可以包含在簡單`using UIKit;`的語句中。
-- **Android** – Xamarin 會公開 Google 的 Android SDK 做為命名空間，因此您可以使用 using 語句（例如`using Android.Views;` ）來參考支援的 SDK 的任何部分，以存取使用者介面控制項。
+- **ios** – Xamarin 會將 Apple 的 CocoaTouch SDK 架構公開為可供您參考的命名C#空間。 例如，包含所有使用者介面控制項的 UIKit 架構都可以包含在簡單的 `using UIKit;` 語句中。
+- **Android** – Xamarin 會公開 Google 的 Android SDK 做為命名空間，因此您可以使用 using 語句來參考支援的 SDK 的任何部分，例如存取使用者介面控制項的 `using Android.Views;`。
 - **Windows** – windows 應用程式是使用 Visual Studio 在 windows 上建立的。 專案類型包括 Windows Forms、WPF、WinRT 和通用 Windows 平臺（UWP）。
 
 ## <a name="seamless-integration-for-developers"></a>開發人員的順暢整合
@@ -86,7 +86,7 @@ Android 應用程式開發需要安裝 JAVA 和 Android Sdk。 這些工具提�
 
 Xamarin 提供整合的安裝程式，可使用必要的 JAVA、Android 和 Xamarin 工具（包括螢幕佈局的視覺化設計工具）來設定您的系統。 如需詳細指示，請參閱《 [Xamarin 安裝指南》](~/android/get-started/installation/index.md) 。
 
-您可以在實際裝置上建立和測試應用程式，而不需要 Google 的授權，不過若要透過商店散發您的應用程式（例如 Google Play &amp; 、Amazon 或 barnes and Noble），可以向操作員收取註冊費用。 Google Play 會立即發佈您的應用程式，而其他存放區的核准程式與 Apple 的類似。
+您可以在實際裝置上建立和測試應用程式，而不需要 Google 的授權，不過若要透過商店散發您的應用程式（例如 Google Play、Amazon 或 Barnes and &amp; Noble），可以向操作員收取註冊費用。 Google Play 會立即發佈您的應用程式，而其他存放區的核准程式與 Apple 的類似。
 
 ### <a name="windows"></a>Windows
 
@@ -115,7 +115,7 @@ Windows 應用程式（WinForms、WPF 或 UWP）是以 Visual Studio 建立。 �
 
 這些螢幕擷取畫面顯示每個平臺上可用的視覺化螢幕設計工具：
 
- [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "這些螢幕擷取畫面顯示每個平臺上可用的視覺效果螢幕設計工具")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
+ [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "These screenshots show the visual screen designers available on each platform")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
 
 在所有情況下，您可以在程式碼中參考您以視覺方式建立的元素。
 
@@ -143,13 +143,13 @@ Xamarin 平臺允許在所有平臺上重複使用C#現有的程式碼，以及�
 
 因為 Xamarin 產品使用C#和 .net framework，所以許多現有的原始程式碼（開放原始碼和內部專案）都可以在 Xamarin 或 xamarin 專案中重複使用。 來源通常可以直接新增至 Xamarin 解決方案，而且會立即生效。 如果使用了不支援的 .NET framework 功能，可能需要進行一些調整。
 
-可在C# Xamarin 或 xamarin 中使用的來源範例包括：SQLite-NET、NewtonSoft 和 SharpZipLib。
+可用於C# Xamarin 或 xamarin 的來源範例包括： SQLITE-NET、NewtonSoft 和 SharpZipLib。
 
 ### <a name="objective-c-bindings--binding-projects"></a>目標-C 系結 + 系結專案
 
 Xamarin 提供名為*btouch*的工具，可協助建立可讓您在 Xamarin iOS 專案中使用目標 C 程式庫的系結。 如需如何完成此作業的詳細資訊，請參閱[Binding 目標-C 類型檔](~/cross-platform/macios/binding/binding-types-reference.md)。
 
-可在 Xamarin 中使用的目標-C 程式庫範例包括：RedLaser 條碼掃描、Google Analytics 和 PayPal 整合。 開放原始碼的 Xamarin。 iOS 系結可在[github](https://github.com/mono/monotouch-bindings)上取得。
+可在 Xamarin 中使用的目標-C 程式庫範例包括： RedLaser 條碼掃描、Google Analytics 和 PayPal 整合。 開放原始碼的 Xamarin。 iOS 系結可在[github](https://github.com/mono/monotouch-bindings)上取得。
 
 ### <a name="jar-bindings--binding-projects"></a>.jar 系結 + 系結專案
 

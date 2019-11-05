@@ -4,15 +4,15 @@ description: 本檔說明如何在 Xamarin 中設定 ARKit 應用程式，然後
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/01/2017
-ms.openlocfilehash: 7f53108460c4e0799ab6c4078d8bb26788b0bf6e
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 67ee62fe18385f3a79f4afcb26299990f4666763
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752551"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032243"
 ---
 # <a name="using-arkit-with-urhosharp-in-xamarinios"></a>在 Xamarin 中搭配使用 ARKit 與 UrhoSharp
 
@@ -36,26 +36,26 @@ ms.locfileid: "70752551"
 
 ### <a name="ios-application-launch"></a>iOS 應用程式啟動
 
-您的 iOS 應用程式需要建立並啟動您的3d 內容，方法是建立並執行的子類別`Urho.Application` ，並藉由覆`Start`寫方法來提供您的安裝程式碼。  這就是您的場景填入資料的位置，事件處理常式已設定，依此類推。
+您的 iOS 應用程式需要建立並啟動3D 內容，方法是建立並執行 `Urho.Application` 的子類別，並藉由覆寫 `Start` 方法來提供安裝程式碼。  這就是您的場景填入資料的位置，事件處理常式已設定，依此類推。
 
-我們引進了一個`Urho.ArkitApp`類別，其中`Urho.Application`子類別和`Start`其方法會執行繁重的工作。   您需要對現有的 Urho 應用程式執行的動作，是將基類變更為類型`Urho.ArkitApp` ，而且您有一個應用程式會在世界中執行 Urho 場景。
+我們引進了一個 `Urho.ArkitApp` 類別，子類別 `Urho.Application` 並在其 `Start` 方法上執行繁重的工作。   您需要對現有的 Urho 應用程式執行的動作，是將基類變更為 `Urho.ArkitApp` 類型，而且您有一個應用程式會在世界中執行 Urho 場景。
 
 ### <a name="the-arkitapp-class"></a>ArkitApp 類別
 
 這個類別會提供一組便利的預設值，這兩個場景都有一些重要物件，以及由作業系統傳遞的 ARKit 事件處理。
 
-此設定會在`Start`虛擬方法中進行。   當您在子類別上覆寫此方法時，您必須在自己的執行中使用`base.Start()` ，以確保與您的父系連結。
+安裝程式會在 `Start` 的虛擬方法中進行。   當您在子類別上覆寫此方法時，您必須在自己的執行上使用 `base.Start()`，以確保連結至您的父系。
 
-`Start`方法會設定場景、視口、攝影機和方向光線，並將其呈現為公用屬性：
+`Start` 方法會設定場景、視口、攝影機和方向光線，並將其呈現為公用屬性：
 
-- 用`Scene`來保存物件的。
-- 具有陰影`Light`的方向，而且其位置可`LightNode`透過屬性取得
-- ， `Camera`其元件會在 ARKit 傳遞應用程式的更新時更新，並
-- 顯示`ViewPort`結果的。
+- 用來保存物件的 `Scene`，
+- 具有陰影的方向 `Light`，且其位置可透過 `LightNode` 屬性取得
+- 當 ARKit 傳遞應用程式的更新時，其元件會更新的 `Camera`
+- 顯示結果的 `ViewPort`。
 
 ### <a name="your-code"></a>您的程式碼
 
-接著，您必須將`ArkitApp`類別子類別化，並覆`Start`寫方法。   您的方法應該執行的第一件事，是藉`ArkitApp.Start`由呼叫`base.Start()`來連結至。  之後，您可以使用 ArkitApp 設定的任何屬性，將您的物件新增至場景，自訂您要處理的燈、陰影或事件。
+接著，您必須將 `ArkitApp` 類別子類別化，並覆寫 `Start` 方法。   您的方法應該執行的第一件事，是藉由呼叫 `base.Start()`來連結到 `ArkitApp.Start`。  之後，您可以使用 ArkitApp 設定的任何屬性，將您的物件新增至場景，自訂您要處理的燈、陰影或事件。
 
 ARKit/UrhoSharp 範例會載入具有材質的動畫字元並播放動畫，並具有下列實現：
 
@@ -102,19 +102,19 @@ ARKit API 相當簡單，您可以建立並設定[ARSession](https://developer.a
 
 我們將使用我們的3D 內容來撰寫相機傳遞給我們的影像，並在 UrhoSharp 中調整相機，以符合裝置位置和位置的機會。
 
-下圖顯示`ArkitApp`類別中發生的情況：
+下圖顯示 `ArkitApp` 類別中發生的情況：
 
-[![ArkitApp 中的類別和畫面圖表](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
+[ArkitApp 中類別和畫面的 ![圖](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
 ### <a name="rendering-the-frames"></a>呈現畫面格
 
 概念很簡單，請將相機中的影片與我們的3D 圖形結合，以產生合併的影像。     我們會依序取得一系列這些已捕獲的映射，而我們會將此輸入與 Urho 場景混搭。
 
-若要這麼做，最簡單的方法是`RenderPathCommand`將插入主要`RenderPath`。  這是一組用來繪製單一框架的命令。  此命令將會以我們傳遞給它的任何材質來填滿此區。    我們會在第一個要處理的框架上進行這項設定，而實際的定義會在此時載入的**ARRenderPath**檔案中完成。
+若要這麼做，最簡單的方法是將 `RenderPathCommand` 插入主要 `RenderPath`。  這是一組用來繪製單一框架的命令。  此命令將會以我們傳遞給它的任何材質來填滿此區。    我們會在第一個要處理的框架上進行這項設定，而實際的定義會在此時載入的**ARRenderPath**檔案中完成。
 
 不過，我們面臨兩個問題，可以將這兩個世界混合在一起：
 
-1. 在 iOS 上，GPU 材質的解析度必須是2的乘冪，但我們從相機取得的畫面不會有2乘冪的解析度，例如：1280x720.
+1. 在 iOS 上，GPU 材質的解析度必須是2的乘冪，但我們從相機取得的畫面不會有2乘冪的解析度，例如：1280x720。
 2. 畫面格是以[YUV](https://en.wikipedia.org/wiki/YUV)格式編碼，以兩個影像（luma 和色度）表示。
 
 YUV 框架有兩個不同的解析度。  代表亮度的1280x720 影像（基本上是灰階影像）和色度元件的640x360 更小：
@@ -151,7 +151,7 @@ cameraUVtexture.SetAddressMode(TextureCoordinate.V, TextureAddressMode.Clamp);
 
 ### <a name="adjusting-the-camera"></a>調整相機
 
-`ARFrame`物件也包含估計的裝置位置。  我們現在需要移動遊戲攝影機 ARFrame-在 ARKit 之前，不是追蹤裝置方向（變換、音調和偏擺）並在影片上轉譯釘選的全息影像，但如果您移動裝置，則會漂移。
+`ARFrame` 物件也包含估計的裝置位置。  我們現在需要移動遊戲攝影機 ARFrame-在 ARKit 之前，不是追蹤裝置方向（變換、音調和偏擺）並在影片上轉譯釘選的全息影像，但如果您移動裝置，則會漂移。
 
 發生這種情況是因為內建的感應器（例如陀螺儀）無法追蹤移動作業，因此只能加速。  ARKit 會分析每個畫面格並解壓縮功能點以進行追蹤，因此能夠為我們提供包含移動和旋轉資料的正確轉換矩陣。
 
@@ -162,7 +162,7 @@ var row = arCamera.Transform.Row3;
 CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
-我們使用`-row.Z` ，因為 ARKit 會使用右手座標系統。
+我們會使用 `-row.Z`，因為 ARKit 會使用右手座標系統。
 
 ### <a name="plane-detection"></a>平面偵測
 

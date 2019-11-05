@@ -3,15 +3,15 @@ title: 針對 Android 上的 Xamarin Workbooks 進行疑難排解
 description: 本檔提供在 Android 上使用 Xamarin Workbooks 的疑難排解秘訣。 其中討論模擬器支援、不會載入的活頁簿，以及其他主題。
 ms.prod: xamarin
 ms.assetid: F1BD293B-4EB7-4C18-A699-718AB2844DFB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 04f02e6136d9d489a36e994575519e579770ac3d
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: be19005ab1125c060ab0111e9f37568d5f4abe45
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291162"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029585"
 ---
 # <a name="troubleshooting-xamarin-workbooks-on-android"></a>針對 Android 上的 Xamarin Workbooks 進行疑難排解
 
@@ -22,7 +22,7 @@ ms.locfileid: "70291162"
 如果您的電腦支援 Google 的模擬器，我們建議您搭配 HAXM。
 如果您的系統上必須啟用 Hyper-v，請改為使用 Visual Studio Android Emulator。
 
-您必須擁有執行 Android 5.0 或更新版本的模擬器。 不支援 ARM 模擬器。 僅`x86`使用`x86_64`或裝置。
+您必須擁有執行 Android 5.0 或更新版本的模擬器。 不支援 ARM 模擬器。 僅使用 `x86` 或 `x86_64` 裝置。
 
 如果您不熟悉此程式，請參閱[設定 Android 模擬器的檔][android-emu]。
 
@@ -42,7 +42,7 @@ ms.locfileid: "70291162"
 1. **請確定任何重要的網路作業都已完成，因為這可能會暫時中斷 Windows 與網際網路的連線。**
 1. 關閉模擬器。
 1. 開啟 `Hyper-V Manager`。
-1. 在`Actions`下， `Virtual Switch Manager...`開啟。
+1. 在 [`Actions`] 下，開啟 `Virtual Switch Manager...`。
 1. 刪除所有虛擬交換器。
 1. 按一下 `OK`。
 1. 啟動 VS Android Emulator。 系統可能會提示您重新建立虛擬網路交換器。

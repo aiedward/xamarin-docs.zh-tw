@@ -4,15 +4,15 @@ description: 本檔連結的指南會描述適用于 Xamarin iOS 開發人員的
 ms.prod: xamarin
 ms.assetid: C00EA232-ADCC-42AD-BF86-B526414A21C6
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 2979b51c954ab891da5e452e579a650a013a7572
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70289541"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022050"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin 中的使用者介面控制項
 
@@ -28,7 +28,7 @@ UIButton 類別是用來代表 iOS 畫面中各種不同的按鈕樣式。 本�
 
 ## <a name="collection-viewsuicollectionviewmd"></a>[集合檢視](uicollectionview.md)
 
-類別中提供的`UICollectionView`集合 Views 是 iOS 6 中的新概念，引進使用版面配置在螢幕上呈現多個專案。 將資料`UICollectionView`提供給來建立專案並與這些專案互動的模式，會遵循常用於 iOS 開發的相同委派和資料來源模式。
+`UICollectionView` 類別中提供的集合 Views 是 iOS 6 中的新概念，引進使用版面配置在螢幕上呈現多個專案。 將資料提供給 `UICollectionView` 以建立專案並與這些專案互動的模式，會遵循 iOS 開發中常用的相同委派和資料來源模式。
 
 ## <a name="imagesimagemd"></a>[影像](image.md)
 
@@ -36,7 +36,7 @@ UIButton 類別是用來代表 iOS 畫面中各種不同的按鈕樣式。 本�
 
 ## <a name="manual-camera-controlsintro-to-manual-camera-controlsmd"></a>[手動相機控制項](intro-to-manual-camera-controls.md)
 
-Ios 8 `AVFoundation Framework`中提供的手動相機控制項可讓行動應用程式完全控制 ios 裝置的相機。 這個精細的控制層級可用來建立專業層級的相機應用程式，並在拍攝靜止影像或影片時，藉由調整相機的參數來提供演出者組合。
+IOS 8 中的 `AVFoundation Framework` 所提供的手動相機控制項，可讓行動應用程式完全控制 iOS 裝置的相機。 這個精細的控制層級可用來建立專業層級的相機應用程式，並在拍攝靜止影像或影片時，藉由調整相機的參數來提供演出者組合。
 
 ## <a name="mapsios-mapsindexmd"></a>[地圖](ios-maps/index.md)
 
@@ -44,7 +44,7 @@ Maps 是所有新式行動作業系統中的一項常見功能。 iOS 透過「�
 
 ## <a name="labelslabelsmd"></a>[標籤](labels.md)
 
-`UILabel`控制項用於顯示單一和多行的唯讀文字。
+`UILabel` 控制項用於顯示單一和多行的唯讀文字。
 
 ## <a name="pickers-and-date-pickerspickermd"></a>[選擇器和日期選擇器](picker.md)
 
@@ -62,11 +62,11 @@ UISearchBar 是用來搜尋值清單。
 
 ## <a name="sliders-switches-and-segmented-controlsslider-switch-segmented-controlsmd"></a>[滑桿、開關與分段控制項](slider-switch-segmented-controls.md)
 
-滑杆控制項可讓您簡單選擇範圍內的數值。 iOS 會使用`UISwitch`做為布林值輸入，在其他平臺上可以用選項按鈕表示。 分段的控制項是一種可讓使用者與少數選項互動的組織方式。
+滑杆控制項可讓您簡單選擇範圍內的數值。 iOS 會使用 `UISwitch` 做為布林值輸入，在其他平臺上可以用選項按鈕表示。 分段的控制項是一種可讓使用者與少數選項互動的組織方式。
 
 ## <a name="stack-viewuistackviewmd"></a>[堆疊檢視](uistackview.md)
 
-Stack 視圖控制項（`UIStackView`）會利用自動設定和大小類別的功能來管理子檢視堆疊（不論是水準或垂直），這會動態回應 iOS 裝置的方向和螢幕大小。
+Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的威力，以水準或垂直方式管理子檢視堆疊，以動態方式回應 iOS 裝置的方向和螢幕大小。
 
 ## <a name="tables-and-cellstablesindexmd"></a>[資料表和儲存格](tables/index.md)
 
@@ -74,7 +74,7 @@ Stack 視圖控制項（`UIStackView`）會利用自動設定和大小類別的�
 
 ## <a name="text-inputtext-inputmd"></a>[文字輸入](text-input.md)
 
-接受使用者文字輸入是透過`UITextField`適用于多行可編輯文字的單行輸入和 UITextView 來完成。 您可以將其中一個控制項拖曳到螢幕上，然後按兩下以設定初始文字。
+接受使用者文字輸入是透過適用于多行可編輯文字的單行輸入和 UITextView 的 `UITextField` 來完成。 您可以將其中一個控制項拖曳到螢幕上，然後按兩下以設定初始文字。
 
 ## <a name="tab-bars-and-tab-bar-controllerscreating-tabbed-applicationsmd"></a>[索引標籤列和索引標籤列控制項](creating-tabbed-applications.md)
 
@@ -82,7 +82,7 @@ Stack 視圖控制項（`UIStackView`）會利用自動設定和大小類別的�
 
 ## <a name="web-viewsuiwebviewmd"></a>[Web 檢視](uiwebview.md)
 
-在本文中，我們將探討 Apple 所提供的三個 Web 瀏覽器： `UIWebView`、 `WKWebview`和`SFSafariViewController`、其相似和差異，以及其使用方式。
+在本文中，我們將探討 Apple 提供的三個 Web 瀏覽器： `UIWebView`、`WKWebview`和 `SFSafariViewController`、其相似性和差異，以及如何使用它們。
 
 ## <a name="related-links"></a>相關連結
 

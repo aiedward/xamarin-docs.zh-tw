@@ -3,15 +3,15 @@ title: 開始使用目標-C
 description: 本檔說明如何開始搭配使用 .NET 內嵌與目標-C。 其中討論需求、從 NuGet 安裝 .NET 內嵌，以及支援的平臺。
 ms.prod: xamarin
 ms.assetid: 4ABC0247-B608-42D4-89CB-D2E598097142
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: b9c97e871791b633c65e9d374edfe446874567e9
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.openlocfilehash: bf2f832056c164e199cfb779766f298b2b3817de
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106093"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007094"
 ---
 # <a name="getting-started-with-objective-c"></a>開始使用目標-C
 
