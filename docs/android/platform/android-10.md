@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: df9fa43d2071d273104edafbe6b880a97afb3f96
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
+ms.sourcegitcommit: b11dc46a9ba23483195e923de88cbef173730087
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72273145"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73612274"
 ---
 # <a name="android-10-with-xamarin"></a>使用 Xamarin 的 Android 10
 
@@ -53,7 +53,7 @@ Xamarin. Android 10.0 提供 Android 10 的支援。 如需 Android 10 的 Xamar
 
 建議您使用 Visual Studio 2019 來建立使用 Xamarin 的 Android 10 應用程式。
 
-如果您使用 Visual Studio 2019，請更新為 Visual Studio 2019 16.3 或更新版本（如需指示，請參閱[將 Visual Studio 2019 更新為最新版本](https://docs.microsoft.com/visualstudio/install/update-visual-studio)）。 在 macOS 上，更新為 Mac 8.3 或更新版本 Visual Studio 2019 （如需指示，請參閱將[Visual Studio 2019 For Mac 更新為最新版本](https://docs.microsoft.com/en-us/visualstudio/mac/update)）。
+如果您使用 Visual Studio 2019，請更新為 Visual Studio 2019 16.3 或更新版本（如需指示，請參閱[將 Visual Studio 2019 更新為最新版本](https://docs.microsoft.com/visualstudio/install/update-visual-studio)）。 在 macOS 上，更新為 Mac 8.3 或更新版本 Visual Studio 2019 （如需指示，請參閱將[Visual Studio 2019 For Mac 更新為最新版本](https://docs.microsoft.com/visualstudio/mac/update)）。
 
 ### <a name="install-the-android-sdk"></a>安裝 Android SDK
 
@@ -64,15 +64,15 @@ Xamarin. Android 10.0 提供 Android 10 的支援。 如需 Android 10 的 Xamar
 
     ![Android SDK Manager 存放庫選取範圍](~/android/platform/android-10-images/sdkrepository.png)
 
-3. 安裝**Android 10 SDK 平臺**套件（在 [**平臺**] 索引標籤中列為**Android SDK Platform 29** ）（如需有關使用 SDK 管理員的詳細資訊，請參閱[Android SDK 設定](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-sdk)）：
+3. 安裝**Android 10 SDK 平臺**套件（在 [**平臺**] 索引標籤中列為**Android SDK Platform 29** ）（如需有關使用 SDK 管理員的詳細資訊，請參閱[Android SDK 設定](https://docs.microsoft.com/xamarin/android/get-started/installation/android-sdk)）：
 
     ![Android SDK Manager 平臺 索引標籤](~/android/platform/android-10-images/sdkplatforms.png)
 
 ### <a name="create-a-xamarinandroid-project"></a>建立 Xamarin Android 專案
 
-建立新的 Xamarin Android 專案。 如果您不熟悉使用 Xamarin 進行 Android 開發的新手，請參閱[Hello，Android](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/index)以瞭解如何建立 Xamarin. android 專案。
+建立新的 Xamarin Android 專案。 如果您不熟悉使用 Xamarin 進行 Android 開發的新手，請參閱[Hello，Android](https://docs.microsoft.com/xamarin/android/get-started/hello-android/index)以瞭解如何建立 Xamarin. android 專案。
 
-當您建立 Android 專案時，您必須將版本設定設定為以 Android 10.0 或更新版本為目標。 例如，若要以 Android 10 的專案為目標，您必須將專案的目標 Android API 層級設定為**android 10.0 （API 29）** 。 這包括您的**目標 Framework 版本**和**目標 ANDROID SDK 版本**到 API 29 或更新版本。 如需設定 Android API 層級的詳細資訊，請參閱[瞭解 ANDROID Api 層級。](https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/android-api-levels)
+當您建立 Android 專案時，您必須將版本設定設定為以 Android 10.0 或更新版本為目標。 例如，若要以 Android 10 的專案為目標，您必須將專案的目標 Android API 層級設定為**android 10.0 （API 29）** 。 這包括您的**目標 Framework 版本**和**目標 ANDROID SDK 版本**到 API 29 或更新版本。 如需設定 Android API 層級的詳細資訊，請參閱[瞭解 ANDROID Api 層級。](https://docs.microsoft.com/xamarin/android/app-fundamentals/android-api-levels)
 
 ![Xamarin. Android 目標架構](~/android/platform/android-10-images/targetframework.png)
 
@@ -80,7 +80,7 @@ Xamarin. Android 10.0 提供 Android 10 的支援。 如需 Android 10 的 Xamar
 
 如果您使用的是實體裝置（例如圖元），您可以前往電話設定中的 `System`  >  `System update`  >  `Check for update` 下載 Android 10 更新。 如果您想要將裝置閃爍，請參閱將[原廠映射](https://developers.google.com/android/images)或[OTA 影像](https://developers.google.com/android/ota)閃爍至您的裝置的指示。
 
-如果您使用模擬器，請建立 API 層級29的虛擬裝置，並選取 x86 型映射。 如需使用 Android Device Manager 來建立和管理虛擬裝置的詳細資訊，請參閱[使用 Android Device Manager 管理虛擬裝置。](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-emulator/device-manager) 如需使用 Android Emulator 進行測試和偵測的詳細資訊，請參閱[Android Emulator 上的偵錯工具。](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/debugging/debug-on-emulator)
+如果您使用模擬器，請建立 API 層級29的虛擬裝置，並選取 x86 型映射。 如需使用 Android Device Manager 來建立和管理虛擬裝置的詳細資訊，請參閱[使用 Android Device Manager 管理虛擬裝置。](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager) 如需使用 Android Emulator 進行測試和偵測的詳細資訊，請參閱[Android Emulator 上的偵錯工具。](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)
 
 ## <a name="new-features"></a>新功能
 
