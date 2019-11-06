@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: b53c58a5e859bf7752855c3954666a062261599d
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: e38987006025dad1c2ff49c3ea8916e2075d61d7
+ms.sourcegitcommit: d1d4700b3b1b417a9d7b7da85ab5d28f8e8e599d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697420"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73649302"
 ---
 # <a name="xamarinforms-refreshview"></a>Xamarin. Forms RefreshView
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
-@No__t_0 是一個容器控制項，可提供可滾動內容的提取至重新整理功能。 因此，`RefreshView` 的子系必須是可滾動的控制項，例如[`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)或[`ListView`](xref:Xamarin.Forms.ListView)。
+`RefreshView` 是一個容器控制項，可提供可滾動內容的提取至重新整理功能。 因此，`RefreshView` 的子系必須是可滾動的控制項，例如[`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)或[`ListView`](xref:Xamarin.Forms.ListView)。
 
 `RefreshView` 會定義下列屬性：
 
@@ -68,9 +68,9 @@ scrollView.Content = flexLayout;
 refreshView.Content = scrollView;
 ```
 
-在此範例中，`RefreshView` 會為子系為[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)的[`ScrollView`](xref:Xamarin.Forms.ScrollView)提供「提取」到「重新整理」功能。 @No__t_0 會使用可系結的配置，藉由系結至專案集合來產生其內容，並使用[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)設定每個專案的外觀。 如需可系結版面配置的詳細資訊，請參閱[在 Xamarin 中](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)可系結的配置。
+在此範例中，`RefreshView` 會為子系為[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)的[`ScrollView`](xref:Xamarin.Forms.ScrollView)提供「提取」到「重新整理」功能。 `FlexLayout` 會使用可系結的配置，藉由系結至專案集合來產生其內容，並使用[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)設定每個專案的外觀。 如需可系結版面配置的詳細資訊，請參閱[在 Xamarin 中](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)可系結的配置。
 
-@No__t_0 屬性的值表示 `RefreshView` 的目前狀態。 當使用者觸發重新整理時，這個屬性會自動轉換成 `true`。 重新整理完成後，您應該將屬性重設為 `false`。
+`RefreshView.IsRefreshing` 屬性的值表示 `RefreshView`的目前狀態。 當使用者觸發重新整理時，這個屬性會自動轉換成 `true`。 重新整理完成後，您應該將屬性重設為 `false`。
 
 當使用者起始重新整理時，會執行 `Command` 屬性所定義的 `ICommand`，這應該會重新整理所顯示的專案。 重新整理視覺效果會在進行重新整理時顯示，這是由動畫的進度圓形所組成：
 
@@ -105,6 +105,6 @@ refreshView.Content = scrollView;
 
 ## <a name="related-links"></a>相關連結
 
-- [RefreshView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+- [RefreshView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 - [Xamarin 中可系結的版面配置](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
 - [RefreshView 提取方向平臺特定](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

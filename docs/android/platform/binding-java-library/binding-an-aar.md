@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 516d8ebfd8e0dabbdbba9737ae8b35627c649380
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
+ms.sourcegitcommit: 5a23c66f81853884480aca666d649a56d68c01cb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027754"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618541"
 ---
 # <a name="binding-an-aar"></a>繫結 .AAR
 
@@ -31,7 +31,7 @@ _本逐步解說提供逐步指示，說明如何從 Android 建立 Xamarin. And
 在本指南中，我們將逐步解說建立單一系結程式庫的基本概念。AAR 檔案。 如需 JAVA 程式庫系結的一般總覽（包含基本程式碼範例），請參閱系結[java 程式庫](~/android/platform/binding-java-library/index.md)。
 
 > [!IMPORTANT]
-> 系結專案只能包含一個。AAR 檔案。 如果為。AAR 其他的相依性。AAR，這些相依性應該包含在自己的系結專案中，然後加以參考。 請參閱[Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)。
+> 系結專案只能包含一個。AAR 檔案。 如果為。AAR 相依于其他。AAR，這些相依性應該包含在自己的系結專案中，然後加以參考。 請參閱[Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)。
 
 ## <a name="walkthrough"></a>逐步解說
 
@@ -90,17 +90,17 @@ public class TextCounter
 
 4. 確認**textanalyzer aar**檔案已成功新增至專案：
 
-    [已新增 textanalyzer aar 檔案![](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
+    [已新增 textanalyzer aar 檔案 ![](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
 5. 將 [ **textanalyzer aar** ] 的 [組建] 動作設定為 [`LibraryProjectZip`]。 在 Visual Studio for Mac 中，以滑鼠右鍵按一下**textanalyzer aar**以設定 [建立] 動作。 在 Visual Studio 中，您可以在 [**屬性**] 窗格中設定 [建立] 動作：
 
-    [將 textanalyzer aar 組建動作設定為 LibraryProjectZip 的![](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
+    [將 textanalyzer aar 組建動作設定為 LibraryProjectZip 的 ![](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
 6. 開啟 [專案屬性] 來設定*目標 Framework*。 如果為。AAR 會使用任何 Android Api，將目標 Framework 設定為的 API 層級。AAR 預期。 （如需有關目標 Framework 設定和一般 Android API 層級的詳細資訊，請參閱[瞭解 ANDROID Api 層級](~/android/app-fundamentals/android-api-levels.md)）。
 
     設定系結程式庫的目標 API 層級。 在此範例中，我們可以免費使用最新的平臺 API 層級（API 層級23），因為我們的**textanalyzer**沒有對 Android api 的相依性：
 
-    [將目標層級設定為 API 23![](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
+    [將目標層級設定為 API 23 ![](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
 7. 建立系結程式庫。 系結程式庫專案應該成功建立並產生輸出。位於下列位置的 DLL： **AarBinding/bin/Debug/AarBinding .dll**
 
@@ -248,7 +248,7 @@ namespace BindingTest
 
 編譯並執行**bindingtest shoppingcart**專案。 應用程式將會啟動，並在左側顯示幕幕快照（`EditText` 會使用一些文字進行初始化，但您可以按一下它來加以變更）。 當您按一下 [**計數母音**] 時，快顯會顯示正確的母音數目，如下所示：
 
-[執行 Bindingtest shoppingcart 的![螢幕擷取畫面](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
+[執行 Bindingtest shoppingcart 的 ![螢幕擷取畫面](binding-an-aar-images/12-count-vowels.png)](binding-an-aar-images/12-count-vowels.png#lightbox)
 
 嘗試點擊 [**計數子音**] 按鈕。 此外，您也可以修改文字行，然後再點一下這些按鈕，以測試不同的母音和輔音計數。
 
@@ -286,7 +286,7 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 編譯並執行**bindingtest shoppingcart**專案。 當您按下 [**計數子音**] 時，應用程式將會啟動並顯示左側 &ndash; 的螢幕擷取畫面，結果會如右邊所示：
 
-[顯示輔音計數的![Bindingtest shoppingcart](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
+[顯示輔音計數的 ![Bindingtest shoppingcart](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
 恭喜您！ 您已成功地系結 JAVA 程式庫。AAR!
 
