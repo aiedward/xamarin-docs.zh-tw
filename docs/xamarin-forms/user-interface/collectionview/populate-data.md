@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 5afdaa9afa4c5ced39498a1cb45de07fe4bf4195
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: c8d01846c9b860982cee74390dab85c7473ee141
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696718"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662320"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin. 表單 CollectionView 資料
 
@@ -32,7 +32,7 @@ ms.locfileid: "72696718"
 
 ## <a name="populate-a-collectionview-with-data"></a>在 CollectionView 中填入資料
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)會藉由將其[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性設定為任何會執行 `IEnumerable` 的集合來填入資料。 藉由從字串陣列初始化 `ItemsSource` 屬性，可以在 XAML 中加入專案：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)會藉由將其[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性設定為任何會執行 `IEnumerable`的集合來填入資料。 藉由從字串陣列初始化 `ItemsSource` 屬性，可以在 XAML 中加入專案：
 
 ```xaml
 <CollectionView>
@@ -69,12 +69,15 @@ collectionView.ItemsSource = new string[]
 };
 ```
 
-> [!IMPORTANT]
-> 如果在基礎集合中加入、移除或變更專案時需要重新整理[`CollectionView`](xref:Xamarin.Forms.CollectionView) ，基礎集合應該是傳送屬性變更通知的 `IEnumerable` 集合，例如 `ObservableCollection`。
+> [!WARNING]
+> 如果從 UI 執行緒更新其[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) ， [`CollectionView`](xref:Xamarin.Forms.CollectionView)將會擲回例外狀況。
 
 根據預設， [`CollectionView`](xref:Xamarin.Forms.CollectionView)會顯示垂直清單中的專案，如下列螢幕擷取畫面所示：
 
 [![IOS 和 Android 上包含文字專案之 CollectionView 的螢幕擷取畫面](populate-data-images/text.png "CollectionView 中的文字專案")](populate-data-images/text-large.png#lightbox "CollectionView 中的文字專案")
+
+> [!IMPORTANT]
+> 如果在基礎集合中加入、移除或變更專案時需要重新整理[`CollectionView`](xref:Xamarin.Forms.CollectionView) ，基礎集合應該是傳送屬性變更通知的 `IEnumerable` 集合，例如 `ObservableCollection`。
 
 如需如何變更[`CollectionView`](xref:Xamarin.Forms.CollectionView)版面配置的相關資訊，請參閱[CollectionView 版面](layout.md)配置。 如需如何在 `CollectionView` 中定義每個專案外觀的詳細資訊，請參閱[定義專案外觀](#define-item-appearance)。
 
@@ -170,7 +173,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中指定的元素會定義清單中每個專案的外觀。 在此範例中，`DataTemplate` 內的配置是由[`Grid`](xref:Xamarin.Forms.Grid)所管理。 @No__t_0 包含[`Image`](xref:Xamarin.Forms.Image)物件，以及兩個[`Label`](xref:Xamarin.Forms.Label)物件，全都系結至 `Monkey` 類別的屬性：
+在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中指定的元素會定義清單中每個專案的外觀。 在此範例中，`DataTemplate` 內的配置是由[`Grid`](xref:Xamarin.Forms.Grid)所管理。 `Grid` 包含[`Image`](xref:Xamarin.Forms.Image)物件，以及兩個[`Label`](xref:Xamarin.Forms.Label)物件，全都系結至 `Monkey` 類別的屬性：
 
 ```csharp
 public class Monkey
@@ -224,7 +227,7 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[@No__t_1](xref:Xamarin.Forms.ItemsView.ItemTemplate)屬性會設定為 `MonkeyDataTemplateSelector` 物件。 下列範例顯示 `MonkeyDataTemplateSelector` 類別：
+[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)屬性會設定為 `MonkeyDataTemplateSelector` 物件。 下列範例顯示 `MonkeyDataTemplateSelector` 類別：
 
 ```csharp
 public class MonkeyDataTemplateSelector : DataTemplateSelector
@@ -239,7 +242,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-@No__t_0 類別會定義設定為不同資料範本的 `AmericanMonkey` 和 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 @No__t_0 覆寫會傳回 `AmericanMonkey` 範本，這會在猴子名稱包含 "北美洲" 時，以青色顯示猴子名稱和位置。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，以顯示銀級中的猴子名稱和位置：
+`MonkeyDataTemplateSelector` 類別會定義設定為不同資料範本的 `AmericanMonkey` 和 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本，這會在猴子名稱包含 "北美洲" 時，以青色顯示猴子名稱和位置。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，以顯示銀級中的猴子名稱和位置：
 
 [![在 iOS 和 Android 上 CollectionView 執行時間專案範本選擇的螢幕擷取畫面](populate-data-images/datatemplateselector.png "CollectionView 中的執行時間專案範本選擇")](populate-data-images/datatemplateselector-large.png#lightbox "CollectionView 中的執行時間專案範本選擇")
 
@@ -250,7 +253,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 ## <a name="pull-to-refresh"></a>提取至重新整理
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)支援透過 `RefreshView` 的提取至重新整理功能，可讓您藉由在專案清單上向下拉出來重新整理顯示的資料。 @No__t_0 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CollectionView` 設定為 `RefreshView` 的子系，就會為其執行 pull 的「重新整理」：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)支援透過 `RefreshView` 的提取至重新整理功能，可讓您藉由在專案清單上向下拉出來重新整理顯示的資料。 `RefreshView` 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CollectionView` 設定為 `RefreshView` 的子系，就會為其執行 pull 的「重新整理」：
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -283,7 +286,7 @@ refreshView.Content = collectionView;
 
 [![IOS 和 Android 上的 CollectionView 提取重新整理的螢幕擷取畫面](populate-data-images/pull-to-refresh.png "CollectionView 的提取更新")](populate-data-images/pull-to-refresh-large.png#lightbox "CollectionView 的提取更新")
 
-@No__t_0 屬性的值表示 `RefreshView` 的目前狀態。 當使用者觸發重新整理時，這個屬性會自動轉換成 `true`。 重新整理完成後，您應該將屬性重設為 `false`。
+`RefreshView.IsRefreshing` 屬性的值表示 `RefreshView`的目前狀態。 當使用者觸發重新整理時，這個屬性會自動轉換成 `true`。 重新整理完成後，您應該將屬性重設為 `false`。
 
 如需 `RefreshView` 的詳細資訊，請參閱[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
 
@@ -299,7 +302,7 @@ refreshView.Content = collectionView;
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)也會定義當 `CollectionView` 滾動到 `RemainingItemsThreshold` 專案尚未顯示的程度時，所引發的 `RemainingItemsThresholdReached` 事件。 您可以處理這個事件，以載入更多專案。 此外，當 `RemainingItemsThresholdReached` 事件引發時，會執行 `RemainingItemsThresholdReachedCommand`，以便在 viewmodel 中進行累加式資料載入。
 
-@No__t_0 屬性的預設值為-1，表示永遠不會引發 `RemainingItemsThresholdReached` 事件。 當屬性值為0時，當[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中的最後一個專案顯示時，就會引發 `RemainingItemsThresholdReached` 事件。 對於大於0的值，當 `ItemsSource` 包含尚未滾動到的專案數時，就會引發 `RemainingItemsThresholdReached` 事件。
+`RemainingItemsThreshold` 屬性的預設值為-1，表示永遠不會引發 `RemainingItemsThresholdReached` 事件。 當屬性值為0時，當[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中的最後一個專案顯示時，就會引發 `RemainingItemsThresholdReached` 事件。 對於大於0的值，當 `ItemsSource` 包含尚未滾動到的專案數時，就會引發 `RemainingItemsThresholdReached` 事件。
 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView)驗證 `RemainingItemsThreshold` 屬性，使其值一律大於或等於-1。

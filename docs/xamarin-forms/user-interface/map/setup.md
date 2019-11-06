@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/31/2019
-ms.openlocfilehash: dd451ae1acd233c1d3de675357bb172f25716f59
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.date: 11/06/2019
+ms.openlocfilehash: 038ff27907573c1fe15516f6f4caf26d0892ab9f
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426157"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662334"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. 表單對應初始化和設定
 
@@ -43,6 +43,8 @@ Xamarin.FormsMaps.Init(this, savedInstanceState);
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 ```
+
+如需 UWP 需要的驗證權杖的詳細資訊，請參閱[通用 Windows 平臺](#universal-windows-platform)。
 
 一旦新增 NuGet 套件，並在每個應用程式內呼叫初始化方法，`Xamarin.Forms.Maps` Api 就可以在共用程式碼專案中使用。
 
@@ -244,6 +246,20 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
       <DeviceCapability Name="location"/>
     </Capabilities>
     ```
+
+#### <a name="release-builds"></a>發行組建
+
+UWP 發行組建使用 .NET 原生編譯，將應用程式直接編譯成機器碼。 不過，結果是，UWP 上的[`Map`](xref:Xamarin.Forms.Maps.Map)控制項的轉譯器可能會從可執行檔連結出去。 您可以使用**App.xaml.cs**中的 `Forms.Init` 方法 UWP 特定的多載來修正此問題：
+
+```csharp
+var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).GetTypeInfo().Assembly };
+Xamarin.Forms.Forms.Init(e, assembliesToInclude);
+```
+
+此程式碼會將 `Xamarin.Forms.Maps.UWP.MapRenderer` 類別所在的元件傳遞至 `Forms.Init` 方法。 這可確保元件不會由 .NET 原生編譯進程從可執行檔連結出去。
+
+> [!IMPORTANT]
+> 如果無法這麼做，就會導致在執行發行組建時， [`Map`](xref:Xamarin.Forms.Maps.Map)控制項不會出現。
 
 ## <a name="related-links"></a>相關連結
 

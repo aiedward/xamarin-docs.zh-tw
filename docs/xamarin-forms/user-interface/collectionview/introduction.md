@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 274a2a99445a77a2b8c1f68e823c753bc16b673a
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 871d7cad6c57cd34757ae992ce14d5f686935584
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696676"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662319"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin. Forms CollectionView 簡介
 
@@ -35,8 +35,9 @@ ms.locfileid: "72696676"
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)支援單一和多重選取。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)沒有資料格的概念。 相反地，資料範本是用來定義清單中每個資料項目的外觀。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)會自動利用基礎原生控制項所提供的虛擬化。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView)可減少[`ListView`](xref:Xamarin.Forms.ListView)的 API 介面。 @No__t_2 中不存在來自[`ListView`](xref:Xamarin.Forms.ListView)的許多屬性和事件。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)可減少[`ListView`](xref:Xamarin.Forms.ListView)的 API 介面。 `CollectionView`中不存在來自[`ListView`](xref:Xamarin.Forms.ListView)的許多屬性和事件。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含內建的分隔符號。
+- 如果從 UI 執行緒更新其[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) ， [`CollectionView`](xref:Xamarin.Forms.CollectionView)將會擲回例外狀況。
 
 ## <a name="move-from-listview-to-collectionview"></a>從 ListView 移至 CollectionView
 
@@ -44,7 +45,7 @@ ms.locfileid: "72696676"
 
 | 概念 | ListView API | CollectionView |
 |---|---|---|
-| 資料 | `ItemsSource` | [@No__t_1](xref:Xamarin.Forms.CollectionView)會藉由設定其 `ItemsSource` 屬性來填入資料。 如需詳細資訊，請參閱[在 CollectionView 中填入資料](populate-data.md#populate-a-collectionview-with-data)。 |
+| 資料 | `ItemsSource` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)會藉由設定其 `ItemsSource` 屬性來填入資料。 如需詳細資訊，請參閱[在 CollectionView 中填入資料](populate-data.md#populate-a-collectionview-with-data)。 |
 | 專案外觀 | `ItemTemplate` | 藉由將 `ItemTemplate` 屬性設定為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，即可定義[`CollectionView`](xref:Xamarin.Forms.CollectionView)中每個專案的外觀。 如需詳細資訊，請參閱[定義專案外觀](populate-data.md#define-item-appearance)。 |
 | 資料格 | `TextCell`、`ImageCell`、`ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)沒有資料格的概念。 相反地，資料範本是用來定義清單中每個資料項目的外觀。 |
 | 資料列分隔符號 | `SeparatorColor`、 `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含內建的分隔符號。 如有需要，可以在專案範本中提供。 |
@@ -54,7 +55,7 @@ ms.locfileid: "72696676"
 | 頁首和頁尾 | `Header`、 `HeaderElement`、 `HeaderTemplate`、 `Footer`、 `FooterElement`、 `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)可以透過 [`Header`]、[`Footer`]、[`HeaderTemplate`] 和 [`FooterTemplate`] 屬性，呈現與清單中的專案一起滾動的頁首和頁尾。 如需詳細資訊，請參閱頁首[和](layout.md#headers-and-footers)頁尾。 |
 | 群組 | `GroupDisplayBinding`、`GroupHeaderTemplate`、`GroupShortNameBinding``IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)會將其 `IsGrouped` 屬性設定為 `true`，以顯示正確群組的資料。 您可以將 `GroupHeaderTemplate` 和 `GroupFooterTemplate` 屬性設定為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)物件，以自訂群組標頭和群組尾。 如需詳細資訊，請參閱 [Xamarin CollectionView 群組](grouping.md)。 |
 | 提取至重新整理 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 將[`CollectionView`](xref:Xamarin.Forms.CollectionView)設定為 `RefreshView` 的子系，即可支援提取至重新整理功能。 如需詳細資訊，請參閱[Pull to refresh](populate-data.md#pull-to-refresh)。 |
-| 內容動作 | `ContextActions` | @No__t_0 目前不支援內容動作，但會在未來的版本中加入。 |
+| 內容動作 | `ContextActions` | `CollectionView`目前不支援內容動作，但會在未來的版本中加入。 |
 | 捲動 | `ScrollTo()` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義 `ScrollTo` 方法，將專案滾動到視野中。 如需詳細資訊，請參閱[滾動](scrolling.md)。 |
 
 ## <a name="related-links"></a>相關連結
