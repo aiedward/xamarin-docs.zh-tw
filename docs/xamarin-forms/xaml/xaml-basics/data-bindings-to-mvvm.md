@@ -1,43 +1,44 @@
 ---
-title: 第 5 部分。 從資料繫結至 MVVM
-description: MVVM 模式會強制執行三個軟體層之間的區隔，XAML 使用者介面，稱為檢視;基礎資料，稱為模型;而檢視與模型之間的媒介稱為 ViewModel。
+title: 第 5 部分： 從資料繫結到 MVVM
+description: MVVM 模式會強制執行三個軟體層級的分隔，也就是 XAML 使用者介面，稱為 View;基礎資料，稱為模型;以及視圖與模型之間的媒介，稱為 ViewModel。
 ms.prod: xamarin
+ms.custom: video
 ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 116225165b8ee27b896d3de8598f8fbf39400f52
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 80386780d52f9a28d421d2a83981085956d06ea5
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767535"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842943"
 ---
-# <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結至 MVVM
+# <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分： 從資料繫結到 MVVM
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-_記住，使用 XAML 發明的 Model View ViewModel (MVVM) 架構模式。此模式會強制執行三個軟體層之間的區隔，XAML 使用者介面，稱為檢視;基礎資料，稱為模型;而檢視與模型之間的媒介稱為 ViewModel。檢視和 ViewModel 通常是透過 XAML 檔案中定義的資料繫結連接。檢視 BindingContext 通常是 ViewModel 的執行個體。_
+_Model View ViewModel （MVVM）架構模式是以 XAML 為出發點。此模式會強制執行三個軟體層級的分隔，也就是 XAML 使用者介面，稱為 View;基礎資料，稱為模型;以及視圖與模型之間的媒介，稱為 ViewModel。View 和 ViewModel 通常會透過 XAML 檔案中定義的資料系結來連接。視圖的 BindingCoNtext 通常是 ViewModel 的實例。_
 
 ## <a name="a-simple-viewmodel"></a>簡單的 ViewModel
 
-Viewmodel 的簡介，讓我們先看看其中一個情況下的程式。
-先前您已看到如何定義新的 XML 命名空間宣告來允許其他組件中的參考類別的 XAML 檔案。 以下是定義的 XML 命名空間宣告程式`System`命名空間：
+做為 Viewmodel 的簡介，讓我們先看一個不含一個的程式。
+稍早您已瞭解如何定義新的 XML 命名空間宣告，以允許 XAML 檔案參考其他元件中的類別。 以下程式會定義 `System` 命名空間的 XML 命名空間宣告：
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```
 
-該程式可以使用`x:Static`若要取得目前的日期和時間從靜態`DateTime.Now`屬性並加以設定`DateTime`值`BindingContext`上`StackLayout`:
+程式可以使用 `x:Static` 從靜態 `DateTime.Now` 屬性取得目前的日期和時間，並將該 `DateTime` 值設定為 `StackLayout`上的 `BindingContext`：
 
 ```xaml
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext`是非常特殊的屬性：當您在專案`BindingContext`上設定時，該專案的所有子系都會繼承此專案。 這表示所有子系`StackLayout`具有此相同`BindingContext`，而且可以包含簡單的繫結，該物件的屬性。
+`BindingContext` 是特殊的屬性：當您在專案上設定 `BindingContext` 時，該專案的所有子系都會繼承該元素。 這表示 `StackLayout` 的所有子系都具有相同的 `BindingContext`，而且可以包含該物件屬性的簡單系結。
 
-在  **One-Shot DateTime**程式中，子系的兩個包含該屬性的繫結`DateTime`值，但兩個其他子系包含繫結似乎遺漏繫結路徑。 這表示`DateTime`本身的值會用於`StringFormat`:
+在**一次的日期時間**程式中，有兩個子系包含該 `DateTime` 值之屬性的系結，但另兩個子系包含似乎遺漏系結路徑的系結。 這表示 `DateTime` 值本身會用於 `StringFormat`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -59,17 +60,17 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 </ContentPage>
 ```
 
-當然，有一個大問題是，日期和時間已設定時的頁面第一次建置後，而且永遠不會變更：
+問題在於，當第一次建立頁面時，會將日期和時間設定一次，而且永遠不會變更：
 
-[![](data-bindings-to-mvvm-images/oneshotdatetime.png "檢視，以顯示日期和時間")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "檢視，以顯示日期和時間")
+[![](data-bindings-to-mvvm-images/oneshotdatetime.png "View Displaying Date and Time")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "View Displaying Date and Time")
 
-XAML 檔案可以顯示時鐘，一律會顯示目前的時間，但需要一些程式碼來助一臂之力。當 MVVM、 模型和 ViewModel 等方面的想法是完全以程式碼撰寫的類別。 檢視經常是參考中的 ViewModel 定義透過資料繫結屬性的 XAML 檔案。
+XAML 檔案可以顯示一律會顯示目前時間的時鐘，但它需要一些程式碼來協助您。以 MVVM 的角度來思考時，Model 和 ViewModel 是完全以程式碼撰寫的類別。 此視圖通常是一個 XAML 檔案，它會透過資料系結來參考 ViewModel 中定義的屬性。
 
-適當的模型並不知道 ViewModel，並適當的 ViewModel 是非持續性的檢視。 不過，通常是程式設計師可打造 ViewModel 與特定的使用者介面相關聯的資料型別所公開的資料類型。 比方說，如果模型存取的資料庫包含 8 位元的字元的 ASCII 字串，ViewModel 會需要將兩個字串為 Unicode 字串，以容納獨佔使用在使用者介面中的 Unicode 之間轉換。
+適當的模型並不是 ViewModel，而且不會有適當的 ViewModel。 不過，通常程式設計人員會將 ViewModel 所公開的資料類型身分調整到與特定使用者介面相關聯的資料類型。 例如，如果模型存取包含8位字元 ASCII 字串的資料庫，則 ViewModel 必須在這些字串之間轉換成 Unicode 字串，以配合使用者介面中 Unicode 的獨佔使用。
 
-在簡單範例中的 MVVM （例如，如下所示），通常沒有模型，模式涉及只檢視和 ViewModel 連結以資料繫結。
+在 MVVM 的簡單範例中（如這裡所示），通常沒有任何模型，而模式只牽涉到與資料系結連結的 View 和 ViewModel。
 
-以下是只是名為的單一屬性使用在時鐘的 ViewModel `DateTime`，這會更新，但`DateTime`屬性每秒：
+以下是一個時鐘的 ViewModel，只有一個名為 `DateTime`的屬性，它會每秒更新 `DateTime` 屬性：
 
 ```csharp
 using System;
@@ -118,9 +119,9 @@ namespace XamlSamples
 }
 ```
 
-通常實作 Viewmodel`INotifyPropertyChanged`介面，這表示類別就會引發`PropertyChanged`其中一個屬性變更時的事件。 在 Xamarin.Forms 中的資料繫結機制會將處理常式附加至這個`PropertyChanged`事件，所以可以在屬性變更時通知並持續更新為新值的目標。
+Viewmodel 通常會執行 `INotifyPropertyChanged` 介面，這表示類別會在其其中一個屬性變更時引發 `PropertyChanged` 事件。 Xamarin 中的資料系結機制會將處理常式附加到這個 `PropertyChanged` 事件，以便在屬性變更時收到通知，並以新的值來更新目標。
 
-根據此 ViewModel 時鐘可以是這麼簡單：
+以這個 ViewModel 為基礎的時鐘可以像這樣簡單：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,13 +141,13 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-請注意如何`ClockViewModel`設定為`BindingContext`的`Label`使用屬性項目標記。 或者，您可以具現化`ClockViewModel`中`Resources`集合並將它設定為`BindingContext`透過`StaticResource`標記延伸。 或者，程式碼後置檔案可以具現化 ViewModel。
+請注意，`ClockViewModel` 如何使用屬性專案標記，設定為 `Label` 的 `BindingContext`。 或者，您可以在 `Resources` 集合中具現化 `ClockViewModel`，並透過 `StaticResource` 標記延伸將其設定為 `BindingContext`。 或者，程式碼後置檔案可以具現化 ViewModel。
 
-`Binding`上的標記延伸`Text`屬性`Label`格式`DateTime`屬性。 以下是顯示：
+`Label` 的 `Text` 屬性上的 `Binding` 標記延伸會格式化 `DateTime` 屬性。 顯示如下：
 
-[![](data-bindings-to-mvvm-images/clock.png "檢視，以顯示日期和時間透過 ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "顯示日期和時間透過 ViewModel 的檢視")
+[![](data-bindings-to-mvvm-images/clock.png "View Displaying Date and Time via ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "View Displaying Date and Time via ViewModel")
 
-您也可存取的個別屬性`DateTime`使用句號分隔屬性 ViewModel 屬性：
+您也可以使用句號分隔屬性，以存取 ViewModel 的 `DateTime` 屬性的個別屬性：
 
 ```xaml
 <Label Text="{Binding DateTime.Second, StringFormat='{0}'}" … >
@@ -154,9 +155,9 @@ namespace XamlSamples
 
 ## <a name="interactive-mvvm"></a>互動式 MVVM
 
-MVVM 經常搭配雙向資料繫結為基礎的資料模型為基礎的互動式檢視。
+MVVM 通常會搭配雙向資料系結使用，以根據基礎資料模型進行互動式流覽。
 
-以下是名為的類別`HslViewModel`可將轉換`Color`值插入`Hue`， `Saturation`，和`Luminosity`值，反之亦然：
+以下是名為 `HslViewModel` 的類別，會將 `Color` 值轉換成 `Hue`、`Saturation`和 `Luminosity` 值，反之亦然：
 
 ```csharp
 using System;
@@ -256,9 +257,9 @@ namespace XamlSamples
 }
 ```
 
-變更為`Hue`， `Saturation`，並`Luminosity`屬性的原因`Color`屬性變更和變更`Color`會導致其他三個屬性，來變更。 這看起來像是無限迴圈，不同之處在於不叫用類別`PropertyChanged`事件除非屬性實際上已變更。 這麼一來否則無法控制的意見反應迴圈。
+`Hue`、`Saturation`和 `Luminosity` 屬性的變更會導致 `Color` 屬性變更，而變更為 `Color` 會導致其他三個屬性變更。 這看起來可能像是無限迴圈，不同之處在于除非屬性已變更，否則類別不會叫用 `PropertyChanged` 事件。 這會將端點放到另一個無法控制的意見反應迴圈。
 
-下列 XAML 檔案中包含`BoxView`其`Color`屬性的繫結至`Color`ViewModel，與三個屬性`Slider`和三個`Label`檢視繫結至`Hue`， `Saturation`，以及`Luminosity`屬性：
+下列 XAML 檔案包含的 `BoxView`，其 `Color` 屬性系結至 ViewModel 的 `Color` 屬性，以及三個 `Slider` 和三個系結至 `Label`、`Hue`和 `Saturation`屬性的 `Luminosity` 視圖：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -292,46 +293,46 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-在每個繫結`Label`是預設值`OneWay`。 它只需要顯示的值。 但在每個繫結`Slider`是`TwoWay`。 這可讓`Slider`從 ViewModel 初始化。 請注意，`Color`屬性設定為`Aqua`ViewModel 具現化時。 但變更`Slider`也需要在 ViewModel，接著再計算新的色彩設定屬性的新值。
+每個 `Label` 上的系結是預設 `OneWay`。 它只需要顯示值。 但每個 `Slider` 上的系結都是 `TwoWay`。 這可讓 `Slider` 從 ViewModel 初始化。 請注意，當 ViewModel 具現化時，`Color` 屬性會設定為 `Aqua`。 但是，`Slider` 中的變更也需要為 ViewModel 中的屬性設定新的值，然後計算新的色彩。
 
-[![](data-bindings-to-mvvm-images/hslcolorscroll.png "使用雙向資料繫結的 MVVM")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM 使用雙向資料繫結")
+[![](data-bindings-to-mvvm-images/hslcolorscroll.png "MVVM using Two-Way Data Bindings")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM using Two-Way Data Bindings")
 
-## <a name="commanding-with-viewmodels"></a>Viewmodel 的命令執行
+## <a name="commanding-with-viewmodels"></a>使用 Viewmodel 命令
 
-在許多情況下，MVVM 模式僅限於運算元據項：ViewModel 中 View parallel data 物件的使用者介面物件。
+在許多情況下，MVVM 模式僅限於資料項目目的操作： ViewModel 中 View parallel data 物件的使用者介面物件。
 
-不過，有時候必須檢視包含觸發程序中的 ViewModel 的各種動作的按鈕。 但不是能包含 ViewModel`Clicked`按鈕處理常式因為，會將繫結至特定的使用者介面典範 ViewModel。
+不過，有時候視圖必須包含可在 ViewModel 中觸發各種動作的按鈕。 但是，ViewModel 不能包含按鈕 `Clicked` 處理常式，因為這會將 ViewModel 系結至特定的使用者介面範例。
 
-若要允許更獨立於特定的使用者介面物件，但仍然允許在 ViewModel，要呼叫方法的 Viewmodel*命令*介面存在。 在 Xamarin.Forms 中的下列項目支援此命令介面：
+若要讓 Viewmodel 更獨立于特定使用者介面物件，但仍然允許在 ViewModel 內呼叫方法，則會有*命令*介面。 這個命令介面受到 Xamarin 中的下列元素支援。表單：
 
 - `Button`
 - `MenuItem`
 - `ToolbarItem`
 - `SearchBar`
-- `TextCell` (因此也`ImageCell`)
+- `TextCell` （因此也 `ImageCell`）
 - `ListView`
 - `TapGestureRecognizer`
 
-除了`SearchBar`和`ListView`項目，這些項目會定義兩個屬性：
+除了 `SearchBar` 和 `ListView` 元素之外，這些元素會定義兩個屬性：
 
-- `Command` 型別  `System.Windows.Input.ICommand`
-- `CommandParameter` 型別  `Object`
+- 類型的 `Command` `System.Windows.Input.ICommand`
+- 類型的 `CommandParameter` `Object`
 
-`SearchBar`定義`SearchCommand`並`SearchCommandParameter`屬性，而`ListView`定義`RefreshCommand`型別的屬性`ICommand`。
+`SearchBar` 會定義 `SearchCommand` 和 `SearchCommandParameter` 屬性，而 `ListView` 會定義 `RefreshCommand` 類型的 `ICommand`屬性。
 
-`ICommand`介面會定義兩個方法和一個事件：
+`ICommand` 介面會定義兩個方法和一個事件：
 
 - `void Execute(object arg)`
 - `bool CanExecute(object arg)`
 - `event EventHandler CanExecuteChanged`
 
-ViewModel 可以定義類型的屬性`ICommand`。 您接著可以繫結至這些屬性`Command`每個屬性`Button`或其他項目或可能是實作這個介面的自訂檢視。 您可以選擇性地設定`CommandParameter`屬性來識別個別`Button`物件 （或其他項目） 的繫結至這個 ViewModel 屬性。 就內部而言，`Button`呼叫`Execute`方法，每當使用者點選`Button`，以傳遞`Execute`方法及其`CommandParameter`。
+ViewModel 可以定義 `ICommand`類型的屬性。 接著，您可以將這些屬性系結至每個 `Button` 或其他專案的 `Command` 屬性，或系結至可執行此介面的自訂視圖。 您可以選擇性地設定 [`CommandParameter`] 屬性，以識別系結至這個 ViewModel 屬性的個別 `Button` 物件（或其他元素）。 就內部而言，每當使用者按下 `Button`時，`Button` 都會呼叫 `Execute` 方法，傳遞至 `Execute` 方法的 `CommandParameter`。
 
-`CanExecute`方法和`CanExecuteChanged`情況下用其中`Button`點選 在此情況下可能是目前無效，`Button`應該停用。 `Button`呼叫`CanExecute`時`Command`會先設定屬性，每當`CanExecuteChanged`引發事件。 如果`CanExecute`會傳回`false`，則`Button`停用本身並不會產生`Execute`呼叫。
+`CanExecute` 方法和 `CanExecuteChanged` 事件是用於 `Button` 點按可能目前不正確情況，在此情況下，`Button` 應該自行停用。 當第一次設定 `Command` 屬性時，以及每當引發 `CanExecuteChanged` 事件時，`Button` 都會呼叫 `CanExecute`。 如果 `CanExecute` 傳回 `false`，`Button` 就會自行停用，而不會產生 `Execute` 呼叫。
 
-Xamarin.Forms 可定義實作的兩個類別新增至您的 Viewmodel 命令的說明，請`ICommand`:`Command`並`Command<T>`所在`T`是引數的型別`Execute`和`CanExecute`。 這兩個類別定義數個建構函式加上`ChangeCanExecute`ViewModel 可以呼叫來強制方法`Command`物件來引發`CanExecuteChanged`事件。
+如需在 Viewmodel 中加入命令的說明，Xamarin. form 會定義兩個實作為 `ICommand`的類別： `Command` 和 `Command<T>`，其中 `T` 是要 `Execute` 和 `CanExecute`之引數的類型。 這兩個類別會定義數個函式，再加上一個 `ChangeCanExecute` 方法，ViewModel 可以呼叫它來強制 `Command` 物件引發 `CanExecuteChanged` 事件。
 
-以下是簡單的字鍵台，以供輸入電話號碼的 ViewModel。 請注意，`Execute`和`CanExecute`方法定義為 lambda 函式的權限的建構函式：
+以下是適用于輸入電話號碼的簡單鍵盤按鍵 ViewModel。 請注意，在此函式中，`Execute` 和 `CanExecute` 方法會定義為 lambda 函式：
 
 ```csharp
 using System;
@@ -439,11 +440,11 @@ namespace XamlSamples
 }
 ```
 
-此 ViewModel 假設`AddCharCommand`屬性的繫結至`Command`屬性的數個按鈕 （或任何其他項目具有命令介面），其中每一個由`CommandParameter`。 這些按鈕加入到字元`InputString`屬性，然後格式化的電話號碼為`DisplayText`屬性。
+此 ViewModel 假設 `AddCharCommand` 屬性系結至數個按鈕的 `Command` 屬性（或具有命令介面的任何其他專案），其中每個都是由 `CommandParameter`所識別。 這些按鈕會將字元新增至 `InputString` 屬性，然後將其格式化為 `DisplayText` 屬性的電話號碼。
 
-另外還有第二個類型的屬性`ICommand`名為`DeleteCharCommand`。 這繫結到後間距 按鈕，但應該停用 按鈕，如果沒有任何要刪除的字元。
+另有類型 `ICommand` 的第二個屬性，名為 `DeleteCharCommand`。 這會系結至 [上一頁] 按鈕，但如果沒有要刪除的字元，就應該停用該按鈕。
 
-因為它可能會以下的數字鍵台不是以視覺化方式複雜。 相反地，標記已減少為最小值，以更清楚地示範的命令介面：
+以下的小鍵盤不像視覺效果複雜。 相反地，標記已縮減為最小值，以更清楚地示範使用命令介面：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -553,19 +554,19 @@ namespace XamlSamples
 </ContentPage>
 ```
 
-`Command`屬性的第一個`Button`出現在此標記會繫結至`DeleteCharCommand`; 其餘部分會繫結至`AddCharCommand`具有`CommandParameter`也就是相同的字元，會出現在`Button`臉部。 以下是作用中的程式：
+出現在此標記中之第一個 `Button` 的 `Command` 屬性會系結至 `DeleteCharCommand`;其餘的會系結至 `AddCharCommand`，其 `CommandParameter` 與 `Button` 臉部上出現的字元相同。 以下是作用中的程式：
 
-[![](data-bindings-to-mvvm-images/keypad.png "使用 MVVM 和命令的計算機")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "使用 MVVM 和命令的計算機")
+[![](data-bindings-to-mvvm-images/keypad.png "Calculator using MVVM and Commands")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Calculator using MVVM and Commands")
 
 ### <a name="invoking-asynchronous-methods"></a>叫用非同步方法
 
-命令也可以叫用非同步方法。 這利用來達成`async`及`await`關鍵字指定時`Execute`方法：
+命令也可以叫用非同步方法。 在指定 `Execute` 方法時，可以使用 `async` 和 `await` 關鍵字來達成此目的：
 
 ```csharp
 DownloadCommand = new Command (async () => await DownloadAsync ());
 ```
 
-這表示`DownloadAsync`方法是`Task`且應該等候：
+這表示 `DownloadAsync` 方法是 `Task`，應該等候：
 
 ```csharp
 async Task DownloadAsync ()
@@ -579,9 +580,9 @@ void Download ()
 }
 ```
 
-## <a name="implementing-a-navigation-menu"></a>實作導覽功能表
+## <a name="implementing-a-navigation-menu"></a>執行導覽功能表
 
-[XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)包含在這一系列的文章中的所有原始程式碼的程式會使用 ViewModel 其首頁。 此 ViewModel 是簡短的類別具有名為的三個屬性的定義`Type`， `Title`，和`Description`包含的範例網頁、 標題和簡短描述每個型別。 此外，ViewModel 定義靜態屬性，名為`All`也就是在程式中的所有分頁的集合：
+包含這一系列文章中所有原始程式碼的[XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)程式，都會使用 ViewModel 作為首頁。 這個 ViewModel 是具有三個屬性（名為 `Type`、`Title`和 `Description`）的簡短類別定義，其中包含每個範例頁面的類型、標題和簡短描述。 此外，ViewModel 會定義名為 `All` 的靜態屬性，這是程式中所有頁面的集合：
 
 ```csharp
 public class PageDataViewModel
@@ -656,7 +657,7 @@ public class PageDataViewModel
 }
 ```
 
-XAML 檔案`MainPage`定義`ListBox`其`ItemsSource`屬性設定為可`All`屬性，其中包含`TextCell`顯示`Title`並`Description`每個頁面的屬性：
+`MainPage` 的 XAML 檔案會定義一個 `ListBox`，其 `ItemsSource` 屬性會設定為該 `All` 屬性，其中包含顯示每個頁面之 `TextCell` 和 `Title` 屬性的 `Description`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -678,11 +679,11 @@ XAML 檔案`MainPage`定義`ListBox`其`ItemsSource`屬性設定為可`All`屬�
 </ContentPage>
 ```
 
-頁面會顯示可捲動的清單：
+頁面會顯示在可滾動清單中：
 
-[![](data-bindings-to-mvvm-images/mainpage.png "可捲動清單中的頁數")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "可捲動的頁面清單")
+[![](data-bindings-to-mvvm-images/mainpage.png "Scrollable list of pages")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "Scrollable list of pages")
 
-當使用者選取項目，就會觸發的程式碼後置檔案中的處理常式。 處理常式集合`SelectedItem`的屬性`ListBox`回到`null`然後具現化選取的頁面，並瀏覽至它：
+當使用者選取專案時，就會觸發程式碼後置檔案中的處理常式。 處理常式會將 `ListBox` 的 `SelectedItem` 屬性設定回 `null`，然後將選取的頁面具現化並加以導覽：
 
 ```csharp
 private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -702,16 +703,24 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
-**Xamarin 演進2016：MVVM 透過 Xamarin 和 Prism 變得簡單**
+**Xamarin 演變2016：使用 Xamarin 和 Prism 使 MVVM 變得簡單**
 
 ## <a name="summary"></a>總結
 
-XAML 是功能強大的工具，來定義使用者介面，在 Xamarin.Forms 應用程式，特別是當資料繫結以及 MVVM 的使用。 結果是具有程式碼中的所有背景支援的使用者介面的全新、 優雅且可能可表示法。
+XAML 是一種功能強大的工具，可在 Xamarin. Forms 應用程式中定義使用者介面，特別是在使用資料系結和 MVVM 時。 結果是全新、精緻且可能 toolable 的使用者介面標記法，其中包含程式碼中的所有背景支援。
 
 ## <a name="related-links"></a>相關連結
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
-- [第 1 部分：開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [第 2 部分：基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [第 3 部分：XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [第 4 部分：資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [第1部分。使用 XAML 消費者入門](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [第2部分。基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [第3部分。XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [第4部分。資料系結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+
+## <a name="related-videos"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Series/Xamarin-101/XamarinForms-MVVM-with-XAML-6-of-11/player]
+
+> [!Video https://channel9.msdn.com/Series/Xamarin-101/XamarinForms-Navigation-with-XAML-7-of-11/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 05/23/2019
-ms.openlocfilehash: c4237e9315ccc095abc72fdec24d58ffe1faebdf
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: eafa5c8af8d93138ec6e2b9e2f25549d7ed006b0
+ms.sourcegitcommit: bfe4327ef2e89dab095641860256eadb349ca62c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739234"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73849826"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中樞和 Xamarin 來傳送和接收推播通知
 
-[範例 ](~/media/shared/download.png)Download ![Download 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
 推播通知會將來自後端系統的資訊傳遞至行動應用程式。 Apple、Google 和其他平臺各有自己的推播通知服務（PNS）。 Azure 通知中樞可讓您集中跨平臺的通知，讓您的後端應用程式可以與單一中樞進行通訊，這會負責將通知散發到每個平臺特定的 PNS。
 
@@ -141,7 +141,7 @@ public static class AppConstants
 
 ### <a name="configure-android-manifest"></a>設定 Android 資訊清單
 
-@No__t_1 元素內的 `receiver` 元素可讓應用程式與 Firebase 通訊。 @No__t_0 元素可讓應用程式處理訊息，並向 Azure 通知中樞註冊。 完整的**androidmanifest.xml**看起來應該類似下列範例：
+`application` 元素內的 `receiver` 元素可讓應用程式與 Firebase 通訊。 `uses-permission` 元素可讓應用程式處理訊息，並向 Azure 通知中樞註冊。 完整的**androidmanifest.xml**看起來應該類似下列範例：
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="YOUR_PACKAGE_NAME" android:installLocation="auto">
@@ -167,7 +167,7 @@ public static class AppConstants
 
 Firebase 會發出可唯一識別 PNS 上裝置的權杖。 權杖的存留期很長，但偶爾會重新整理。 發行或重新整理權杖時，應用程式必須向 Azure 通知中樞註冊其新權杖。 註冊是由衍生自 `FirebaseInstanceIdService` 之類別的實例所處理。
 
-在範例應用程式中，`FirebaseRegistrationService` 類別繼承自 `FirebaseInstanceIdService`。 此類別具有包含 `com.google.firebase.INSTANCE_ID_EVENT` 的 `IntentFilter`，可讓 Android OS 在 Firebase 發行權杖時，自動呼叫 `OnTokenRefresh`。
+在範例應用程式中，`FirebaseRegistrationService` 類別繼承自 `FirebaseInstanceIdService`。 此類別具有包含 `com.google.firebase.INSTANCE_ID_EVENT`的 `IntentFilter`，可讓 Android OS 在 Firebase 發行權杖時，自動呼叫 `OnTokenRefresh`。
 
 下列程式碼顯示範例應用程式中的自訂 `FirebaseInstanceIdService`：
 
@@ -209,11 +209,11 @@ public class FirebaseRegistrationService : FirebaseInstanceIdService
 }
 ```
 
-@No__t_1 中的 `SendRegistrationToServer` 方法會向 Azure 通知中樞註冊裝置，並使用範本來訂閱標記。 範例應用程式會定義名為 `default` 的單一標籤，以及在**AppConstants.cs**檔案中具有稱為 `messageParam` 之單一參數的範本。 如需有關註冊、標記和範本的詳細資訊，請參閱[使用 Azure 通知中樞註冊範本和標記](#register-templates-and-tags-with-the-azure-notification-hub)
+`FirebaseRegistrationClass` 中的 `SendRegistrationToServer` 方法會向 Azure 通知中樞註冊裝置，並使用範本來訂閱標記。 範例應用程式會定義名為 `default` 的單一標籤，以及在**AppConstants.cs**檔案中具有稱為 `messageParam` 之單一參數的範本。 如需有關註冊、標記和範本的詳細資訊，請參閱[使用 Azure 通知中樞註冊範本和標記](#register-templates-and-tags-with-the-azure-notification-hub)
 
 ### <a name="process-messages-with-a-firebasemessagingservice"></a>以 FirebaseMessagingService 處理訊息
 
-內送訊息會路由傳送至 `FirebaseMessagingService` 實例，而您可以在其中將它們轉換成本機通知。 範例應用程式中的 Android 專案包含一個類別，稱為 `FirebaseService`，繼承自 `FirebaseMessagingService`。 此類別具有包含 `com.google.firebase.MESSAGING_EVENT` 的 `IntentFilter`，可讓 Android OS 在收到推播通知訊息時，自動呼叫 `OnMessageReceived`。
+內送訊息會路由傳送至 `FirebaseMessagingService` 實例，而您可以在其中將它們轉換成本機通知。 範例應用程式中的 Android 專案包含一個類別，稱為 `FirebaseService`，繼承自 `FirebaseMessagingService`。 此類別具有包含 `com.google.firebase.MESSAGING_EVENT`的 `IntentFilter`，可讓 Android OS 在收到推播通知訊息時，自動呼叫 `OnMessageReceived`。
 
 下列範例顯示範例應用程式中的 `FirebaseService`：
 
@@ -285,7 +285,7 @@ public class FirebaseService : FirebaseMessagingService
 
 ### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>將傳入通知新增至 Xamarin. Forms UI
 
-@No__t_0 類別需要取得處理通知和管理傳入訊息資料的許可權。 下列程式碼顯示完整的 `MainActivity` 執行：
+`MainActivity` 類別需要取得處理通知和管理傳入訊息資料的許可權。 下列程式碼顯示完整的 `MainActivity` 執行：
 
 ```csharp
 [Activity(Label = "NotificationHubSample", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, LaunchMode = LaunchMode.SingleTop)]
@@ -301,7 +301,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
         global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
         LoadApplication(new App());
 
-        if (IsPlayServiceAvailable() == false)
+        if (!IsPlayServiceAvailable())
         {
             throw new Exception("This device does not have Google Play Services and cannot receive push notifications.");
         }
@@ -356,9 +356,9 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 }
 ```
 
-@No__t_0 屬性會將應用程式 `LaunchMode` 設定為 `SingleTop`。 此啟動模式會告知 Android OS 只允許此活動的單一實例。 在此啟動模式中，連入的 `Intent` 資料會路由傳送至 `OnNewIntent` 方法，這會解壓縮訊息資料，並透過 `AddMessage` 方法將它傳送至 `MainPage` 實例。 如果您的應用程式使用不同的啟動模式，它必須以不同的方式處理 `Intent` 的資料。
+`Activity` 屬性會將應用程式 `LaunchMode` 設定為 `SingleTop`。 此啟動模式會告知 Android OS 只允許此活動的單一實例。 在此啟動模式中，連入的 `Intent` 資料會路由傳送至 `OnNewIntent` 方法，這會解壓縮訊息資料，並透過 `AddMessage` 方法將它傳送至 `MainPage` 實例。 如果您的應用程式使用不同的啟動模式，它必須以不同的方式處理 `Intent` 的資料。
 
-@No__t_0 方法會使用稱為 `IsPlayServiceAvailable` 的 helper 方法，以確保裝置支援 Google Play 服務。 不支援 Google Play 服務的模擬器或裝置無法從 Firebase 接收推播通知。
+`OnCreate` 方法會使用稱為 `IsPlayServiceAvailable` 的 helper 方法，以確保裝置支援 Google Play 服務。 不支援 Google Play 服務的模擬器或裝置無法從 Firebase 接收推播通知。
 
 ## <a name="configure-ios-for-notifications"></a>設定 iOS 的通知
 
@@ -538,7 +538,7 @@ public static class DispatcherConstants
 }
 ```
 
-您必須設定**DispatcherConstants.cs**以符合您的 Azure 通知中樞設定。 @No__t_0 屬性的值應該符合用戶端應用程式中所使用的值。 @No__t_0 屬性是 Azure 通知中樞實例的名稱。 @No__t_0 屬性是在您的通知中樞**存取原則**中找到的存取金鑰。 下列螢幕擷取畫面顯示 Azure 入口網站中 `NotificationHubName` 和 `FullAccessConnectionString` 屬性的位置：
+您必須設定**DispatcherConstants.cs**以符合您的 Azure 通知中樞設定。 `SubscriptionTags` 屬性的值應該符合用戶端應用程式中所使用的值。 `NotificationHubName` 屬性是 Azure 通知中樞實例的名稱。 `FullAccessConnectionString` 屬性是在您的通知中樞**存取原則**中找到的存取金鑰。 下列螢幕擷取畫面顯示 Azure 入口網站中 `NotificationHubName` 和 `FullAccessConnectionString` 屬性的位置：
 
 ![Azure 通知中樞名稱和 FullAccessConnectionString 的螢幕擷取畫面](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure 通知中樞名稱和 FullAccessConnectionString")
 

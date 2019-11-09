@@ -6,13 +6,13 @@ ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/19/2017
-ms.openlocfilehash: 3c167b025b41bd4fc7c8c93bdb2f825c9daa540c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 11/07/2019
+ms.openlocfilehash: 83fbad8a9bbb9afef5ee80705fe9e86e51284e7d
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032853"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842987"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>使用身分識別提供者驗證使用者
 
@@ -259,6 +259,16 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 ```
 
 `FindAccountsForService` 方法會傳回 `Account` 物件的 `IEnumerable` 集合，並將集合中的第一個專案設定為相符的帳戶。
+
+## <a name="troubleshooting"></a>疑難排解
+
+- 在 Android 上，如果您在驗證後關閉瀏覽器時收到快顯通知，而且想要停止快顯通知，請將下列程式碼新增至 Android 專案（在初始化 Xamarin 之後）。 Auth：
+
+```csharp
+Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
+```
+
+- 在 Android 上，如果瀏覽器未自動關閉，暫時的解決方法是將 Xamarin. Auth 封裝降級為版本1.5.0.3。 然後，將 PCL 密碼編譯[v 2.0.147](https://www.nuget.org/packages/PCLCrypto/2.0.147)新增至 Android 專案。
 
 ## <a name="summary"></a>總結
 
