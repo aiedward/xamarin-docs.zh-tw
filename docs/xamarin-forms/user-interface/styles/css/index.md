@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: 6cece2c7cad401a9dc6f14b689c5c9e5ab757df5
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: fdee070021b22f82cb69571f0fa2f396831b14e6
+ms.sourcegitcommit: 6781967baeed4fe2c58f070476e7c21d01c25c30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696887"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74052799"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表（CSS）設定 Xamarin 應用程式的樣式
 
@@ -105,7 +105,7 @@ stacklayout>image {
 </Application>
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source)屬性會將樣式表單指定為相對於封閉式 XAML 檔案位置的 uri，或在 uri 以 `/` 開頭時，將其相對於專案根目錄。
+[`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source)屬性會將樣式表單指定為相對於封閉式 XAML 檔案位置的 uri，或在 uri 以 `/`開頭時，將其相對於專案根目錄。
 
 > [!WARNING]
 > 如果其組建動作未設定為**EmbeddedResource**，CSS 檔案將無法載入。
@@ -148,7 +148,7 @@ public partial class MyPage : ContentPage
 }
 ```
 
-@No__t_0 方法的引數是已讀取樣式表單的 `TextReader`。
+`StyleSheet.FromReader` 方法的引數是已讀取樣式表單的 `TextReader`。
 
 ## <a name="selecting-elements-and-applying-properties"></a>選取專案和套用屬性
 
@@ -169,7 +169,7 @@ stacklayout {
 此選取器會識別使用樣式表單之頁面上的任何[`StackLayout`](xref:Xamarin.Forms.StackLayout)專案，並將其邊界設定為20的統一粗細。
 
 > [!NOTE]
-> @No__t_0 選取器不會識別指定之類型的子類別。
+> `element` 選取器不會識別指定之類型的子類別。
 
 ### <a name="selecting-elements-by-base-class"></a>依基類選取元素
 
@@ -184,7 +184,7 @@ stacklayout {
 此選取器會識別使用樣式表單的任何[`ContentPage`](xref:Xamarin.Forms.ContentPage)專案，並將其背景色彩設為 `lightgray`。
 
 > [!NOTE]
-> @No__t_0 選取器是 Xamarin 特有的，而且不是 CSS 規格的一部分。
+> `^base` 選取器是 Xamarin 特有的，而且不是 CSS 規格的一部分。
 
 ### <a name="selecting-an-element-by-name"></a>依名稱選取元素
 
@@ -282,7 +282,7 @@ listview image {
 ```
 
 > [!NOTE]
-> @No__t_0 選取器不需要子項目做為父系的_直接_子系–子項目可能會有不同的父系。 如果上階是指定的第一個元素，則會進行選取。
+> `element element` 選取器不需要子項目做為父系的_直接_子系–子項目可能會有不同的父系。 如果上階是指定的第一個元素，則會進行選取。
 
 ### <a name="selecting-direct-child-elements"></a>選取直接的子項目
 
@@ -313,7 +313,7 @@ stacklayout>image {
 ```
 
 > [!NOTE]
-> @No__t_0 選取器需要子項目是父系的_直接_子系。
+> `element>element` 選取器需要子項目是父系的_直接_子系。
 
 ## <a name="selector-reference"></a>選取器參考
 
@@ -352,7 +352,7 @@ stacklayout>image {
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
-|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| 0 1 2 3 4 5 6 7 8 9 0 1 2 |`align-content: space-between;`|
+|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| 0 1 2 |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| 0 1 2 3 4|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_色彩_\| `initial` |`background-color: springgreen;`|
@@ -372,7 +372,7 @@ stacklayout>image {
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \| _namedsize_ \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
-|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| 0 1 2 3 4 5 6 7 8 9 0|`justify-content: flex-end;`|
+|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
 |`line-height`|`Label`、 `Span`|_double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_粗細_\| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_粗細_\| `initial` |`margin-left: 3;`|
@@ -409,6 +409,8 @@ stacklayout>image {
 - 縮寫屬性，例如 `font` 和 `border`。
 
 此外，也沒有 `inherit` 的值，因此不支援繼承。 例如，您無法在版面配置上設定 `font-size` 屬性，並預期配置中的所有[`Label`](xref:Xamarin.Forms.Label)實例都會繼承值。 其中一個例外狀況是 `direction` 屬性，其預設值為 `inherit`。
+
+以 `Span` 專案為目標時，有一個已知的問題，導致無法以元素和名稱（使用 `#` 符號）做為 CSS 樣式的目標。 `Span` 專案衍生自 `GestureElement`，但沒有 `StyleClass` 屬性，因此跨越不支援 CSS 類別目標。 如需詳細資訊，請參閱[無法將 CSS 樣式套用至範圍控制](https://github.com/xamarin/Xamarin.Forms/issues/5979)。
 
 ### <a name="xamarinforms-specific-properties"></a>Xamarin. 表單特定屬性
 
