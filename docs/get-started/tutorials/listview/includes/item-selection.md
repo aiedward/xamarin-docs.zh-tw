@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a537bdaf2015dd7d179545cb7587934818e960d7
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
+ms.sourcegitcommit: ecb81266e59c9e1773a06582e138bf4eed713dfe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71004143"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74062863"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -39,7 +39,7 @@ ms.locfileid: "71004143"
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 上回應項目選取及點選的 ListView 螢幕擷取畫面](../images/item-selection.png "ListView 項目選取")](../images/item-selection-large.png#lightbox "ListView 項目選取")
+    [![iOS 和 Android 上回應項目選取及點選的 ListView 螢幕擷取畫面](../images/item-selection.png "ListView 項目選取範圍")](../images/item-selection-large.png#lightbox "ListView 項目選取範圍")
 
     在兩個事件處理常式中設定中斷點，並點選 [`ListView`](xref:Xamarin.Forms.ListView) 中的項目。 請注意，只有在 [`ListView`](xref:Xamarin.Forms.ListView) 中選取新項目時，才會引發 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件，而 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 事件會在每次點選項目時引發。
 
@@ -78,8 +78,8 @@ ms.locfileid: "71004143"
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 上回應項目選取及點選的 ListView 螢幕擷取畫面](../images/item-selection.png "ListView 項目選取")](../images/item-selection-large.png#lightbox "ListView 項目選取")
+    [![iOS 和 Android 上回應項目選取及點選的 ListView 螢幕擷取畫面](../images/item-selection.png "ListView 項目選取範圍")](../images/item-selection-large.png#lightbox "ListView 項目選取範圍")
 
     在兩個事件處理常式中設定中斷點，並點選 [`ListView`](xref:Xamarin.Forms.ListView) 中的項目。 請注意，只有在 [`ListView`](xref:Xamarin.Forms.ListView) 中選取新項目時，才會引發 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件，而 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 事件會在每次點選項目時引發。
 
-    如需專案選取和點選的詳細資訊，請參閱 [選取與點選](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and
+    如需有關項目選取及點選的詳細資訊，請參閱 [選取與點選](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps)。
