@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 0a2bd469477ce6e2aca03e1d4cf279bb5a7a16f9
-ms.sourcegitcommit: 94fa3bf464a2ee5ac4b6056691d264b8210b1192
+ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
+ms.sourcegitcommit: 233aaa1ac3d8f40c09b6daf6d944ea0b4cbee381
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72526813"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74135276"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>從 iOS 模擬器和 Android 模擬器連線到本機 Web 服務
 
@@ -37,13 +37,13 @@ ms.locfileid: "72526813"
 
 安裝 .NET Core SDK 會將 ASP.NET Core HTTPS 開發憑證安裝至本機使用者憑證存放區。 但是，雖然已安裝憑證，但憑證不受信任。 若要信任憑證，請執行下面的一次性步驟，以執行 dotnet `dev-certs` 工具：
 
-```console
+```dotnetcli
 dotnet dev-certs https --trust
 ```
 
 下列命令會提供 `dev-certs` 工具的說明：
 
-```console
+```dotnetcli
 dotnet dev-certs https --help
 ```
 
