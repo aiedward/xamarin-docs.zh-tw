@@ -93,11 +93,11 @@ protected override void OnCreate (Bundle bundle)
 ```
 
 這會使用[`Activity`](xref:Android.App.Activity)配置中的[`WebView`](xref:Android.Webkit.WebView)來初始化成員，並為具有[`JavaScriptEnabled`](xref:Android.Webkit.WebSettings.JavaScriptEnabled)
-`= true` 的[`WebView`](xref:Android.Webkit.WebView)啟用 JavaScript （請參閱[從 JavaScript 配方呼叫 C\#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)如何從 JavaScript 呼叫 C\# 函式的相關資訊。 最後，會載入包含[`LoadUrl(String)`](xref:Android.Webkit.WebView)的初始頁面。
+`= true` 的[`WebView`](xref:Android.Webkit.WebView)啟用 JavaScript （如需如何從 javascript 呼叫 c\# 函式的詳細資訊，請參閱[呼叫 c\# from javascript](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)配方）。 最後，會載入包含[`LoadUrl(String)`](xref:Android.Webkit.WebView)的初始頁面。
 
 建置和執行應用程式。 您應該會看到簡單的網頁檢視器應用程式，如下列螢幕擷取畫面所示：
 
-[顯示 Web 工作程式的![範例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
+[顯示 Web 工作程式的 ![範例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
 若要處理 [**上一頁**] 按鈕按鍵，請新增下列 using 語句：
 
@@ -124,7 +124,7 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 
 再次執行應用程式。 您現在應該可以追蹤連結，並透過頁面歷程記錄回頭流覽：
 
-[動作中 [上一頁] 按鈕的![範例螢幕擷取畫面](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
+[動作中 [上一頁] 按鈕的 ![範例螢幕擷取畫面](web-view-images/03-back-button-sml.png)](web-view-images/03-back-button.png#lightbox)
 
 *此頁面的部分是根據 Android 開放原始碼專案所建立和共用的工作進行修改，並根據*
 [*創意 Commons 2.5 屬性授權*](https://creativecommons.org/licenses/by/2.5/)中所述的條款來使用。

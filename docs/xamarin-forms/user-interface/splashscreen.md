@@ -28,7 +28,7 @@ ms.locfileid: "72035752"
 
 ## <a name="xamarinforms-android-splash-screen"></a>[Xamarin] 表單 Android 啟動顯示畫面
 
-若要在 Android 上建立啟動顯示畫面，必須建立啟動顯示 `Activity`，做為 `MainLauncher` 的特殊主題。 啟動顯示 `Activity` 開始時，它會以一般應用程式主題啟動主要 `Activity`。
+若要在 Android 上建立啟動顯示畫面，必須建立啟動顯示 `Activity` 作為具有特殊主題的 `MainLauncher`。 啟動顯示 `Activity` 開始時，它會啟動含有一般應用程式主題的主要 `Activity`。
 
 如需有關在 Xamarin 上啟動顯示畫面的詳細資訊，請參閱 [ [xamarin] 啟動](~/android/user-interface/splash-screen.md)顯示畫面。
 
@@ -36,13 +36,13 @@ ms.locfileid: "72035752"
 
 IOS 上的啟動顯示畫面稱為啟動畫面。 若要在 iOS 上建立啟動畫面，您必須建立一個分鏡腳本來定義啟動畫面的 UI，然後將分鏡腳本設定為**plist**中的啟動畫面。
 
-如需在 Xamarin 上啟動畫面的詳細資訊，請參閱 < [Xamarin Ios 啟動畫面](~/ios/app-fundamentals/images-icons/launch-screens.md)。
+如需在 Xamarin 上啟動畫面的詳細資訊，請參閱 [Xamarin Ios 啟動畫面](~/ios/app-fundamentals/images-icons/launch-screens.md)。
 
 ## <a name="xamarinforms-uwp-splash-screen"></a>[Xamarin] [表單 UWP] 啟動顯示畫面
 
 在 UWP 上， **package.appxmanifest.xml**包含具有 [**啟動顯示畫面**] 子功能表的 [**視覺資產**] 索引標籤。 您可以在此功能表中指定啟動顯示畫面圖形：
 
-[UWP 上的 @no__t 1Setting 啟動顯示畫面](splashscreen-images/uwp-splashscreen-cropped.png)](splashscreen-images/uwp-splashscreen.png#lightbox)
+[![在 UWP 上設定啟動顯示畫面](splashscreen-images/uwp-splashscreen-cropped.png)](splashscreen-images/uwp-splashscreen.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

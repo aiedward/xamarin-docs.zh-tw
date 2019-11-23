@@ -33,7 +33,7 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 1. 按一下 [Visual Studio for Mac] > [喜好設定...]
 2. 在左側樹狀檢視中，選取 [專案] > [建置]
 3. 在右側面板中，將 [記錄詳細資訊] 下拉式設定設為 [**診斷**]：[![](ios-build-mechanics-images/image2.png "設定記錄詳細資訊")](ios-build-mechanics-images/image2.png#lightbox)
-4. 按一下 [確定]
+4. 按一下 [確定]。
 5. 重新啟動 Visual Studio for Mac
 6. 清除並重建您的套件
 7. 按一下 [建置輸出] 按鈕，檢視錯誤板內的診斷輸出 ([檢視] > [板] > [錯誤])
@@ -45,7 +45,7 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 1. 按一下 [工具] > [選項...]
 2. 在左側樹狀檢視中，選取 [專案和方案] > [建置並執行]
 3. 在右側面板中，將 [ *MSBuild 組建輸出詳細資訊] 下拉式清單*設定為 [**診斷**]：[![](ios-build-mechanics-images/image2-vs.png "設定 MSBuild 組建輸出詳細資訊")](ios-build-mechanics-images/image2-vs.png#lightbox)
-4. 按一下 [確定]
+4. 按一下 [確定]。
 5. 清除並重建您的套件。
 6. 診斷輸出會顯示在 [輸出] 面板中。
 
@@ -192,7 +192,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
   - 這可協助原生連結器從您連結時所依據的程式庫消除機器碼。 
   - 請注意，動態查閱符號不適用於此案例。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南探討了要如何對 iOS 應用程式計時，以及取決於專案組建組態和選項的考量選項。 
 
@@ -280,4 +280,4 @@ L3 Cache: 4 MB
 
 - [部落格文章](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [在 iOS 上連結](~/ios/deploy-test/linker.md)
-- [自訂連結器組態](~/cross-platform/deploy-test/linker.md)
+- [自訂連結器設定](~/cross-platform/deploy-test/linker.md)

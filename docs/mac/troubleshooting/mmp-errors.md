@@ -172,7 +172,7 @@ Xamarin 需要標頭檔（來自錯誤訊息中指定的 SDK 版本），才能�
 
 <a name="MM0099" />
 
-#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099：內部錯誤 {0}。 請以測試案例（ https://bugzilla.xamarin.com) 提出錯誤報表。
+#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099：內部錯誤 {0}。 請以測試案例（ https://bugzilla.xamarin.com)提出錯誤報表。
 
 <a name="MM0114" />
 
@@ -338,7 +338,7 @@ Apple 已宣佈不允許 macOS App Store 提交32位應用程式（自1月2018�
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009：由 {0}所參考。{1} @ no__t_2_\* 此訊息與 MM2006 \*相關\*
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009：由 {0}所參考。{1}\*\* 此訊息與 MM2006 \*相關聯 \*
 
 <a name="MM2010" />
 
@@ -350,7 +350,7 @@ Apple 已宣佈不允許 macOS App Store 提交32位應用程式（自1月2018�
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012：只會顯示 {1} 「參考者」警告的第一個 {0}。 \*\* 與 2009 \*相關的此訊息\*
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012：只會顯示 {1} 「參考者」警告的第一個 {0}。 \*\* 與 2009 \*相關的此訊息 \*
 
 <a name="MM2013" />
 
@@ -358,7 +358,7 @@ Apple 已宣佈不允許 macOS App Store 提交32位應用程式（自1月2018�
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014： Xamarin 副檔名不支援連結。 將略過連結的要求。 \*\* 此訊息在 XM 3.6 + \*中已過時\*
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014： Xamarin 副檔名不支援連結。 將略過連結的要求。 \*\* 此訊息在 XM 3.6 + \*中已過時 \*
 
 <!-- 2015 used by mtouch -->
 
@@ -392,7 +392,7 @@ Apple 已宣佈不允許 macOS App Store 提交32位應用程式（自1月2018�
 
 連結器無法處理混合模式元件。
 
-如需混合模式元件的詳細資訊，請參閱 https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies 。
+如需混合模式元件的詳細資訊，請參閱 https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies。
 
 <a name="MM2106" />
 

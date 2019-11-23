@@ -16,9 +16,9 @@ ms.locfileid: "73022353"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>在 NSString 中的 iOS 和 Xamarin. Mac
 
-Xamarin 和 Xamarin 的設計會呼叫使用 API 來公開原生 .NET 字串類型（`string`），以用於和其他 .NET 程式設計語言中C#的字串操作，並將字串公開為 API 所公開的資料類型，而不是 `NSString` 資料類型。
+Xamarin 和 Xamarin 的設計會呼叫使用 API 來公開原生 .NET 字串類型，`string`，用於和其他 .NET 程式設計語言中C#的字串操作，並將字串公開為 API 所公開的資料類型，而不是 `NSString` 資料類型。
 
-這表示開發人員不應該在特殊類型（`Foundation.NSString`）中保留要用來呼叫 Xamarin. iOS & Xamarin. Mac API （統一）的字串，它們可以繼續針對所有作業使用 Mono 的 `System.String`，並在其中每個 APIXamarin 或 Xamarin 需要字串，我們的 API 系結會負責封送處理資訊。
+這表示開發人員不應該在特殊類型（`Foundation.NSString`）中保留要用來呼叫 Xamarin. iOS & Xamarin. Mac API （統一）的字串，它們可以繼續針對所有作業使用 Mono 的 `System.String`，而當 Xamarin 或 Xamarin 中的 API 需要字串時，我們的 API 系結會負責封送處理資訊。
 
 例如，`NSString`類型的 `UILabel` 上的目標-C "text" 屬性會宣告如下：
 
@@ -34,9 +34,9 @@ class UILabel {
 }
 ```
 
-在幕後，此屬性的執行會將C#字串封送處理為`NSString`，並以目標 C 的相同方式呼叫`objc_msgSend`方法。
+在幕後，此屬性的執行會將C#字串封送處理為 `NSString`，並以目標 C 的相同方式呼叫 `objc_msgSend` 方法。
 
-有幾個協力廠商的目標-C Api 不會耗用 `NSString`，而是使用 C 字串（"*char*"）。 在這些情況下，您仍然可以使用C# string 資料類型，但您必須使用[[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)屬性來通知系結產生器，此字串不應封送處理為`NSString`，而是以 C 字串的形式。
+有幾個協力廠商的目標-C Api 不會耗用 `NSString`，而是使用 C 字串（"*char*"）。 在這些情況下，您仍然可以使用C# string 資料類型，但您必須使用[[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md)屬性來通知系結產生器，此字串不應封送處理為 `NSString`，而是以 C 字串的形式。
 
  <a name="Exceptions_to_the_Rule" />
 

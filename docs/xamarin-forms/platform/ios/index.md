@@ -20,51 +20,51 @@ ms.locfileid: "72170935"
 
 ## <a name="platform-specifics"></a>平臺細節
 
-平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。
+平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。
 
 以下是針對 Xamarin 提供的平臺特定功能：表單檢視、頁面和版面配置。
 
-- 模糊的任何支援[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱[VisualElement 模糊 On iOS](visualelement-blur.md)。
-- 停用上支援的舊版的色彩模式[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱[在 iOS 上 VisualElement 舊版色彩模式](legacy-color-mode.md)。
-- 在啟用下拉式陰影[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)。 如需詳細資訊，請參閱[VisualElement Drop Shadows On iOS](visualelement-drop-shadow.md)。
+- 對任何[`VisualElement`](xref:Xamarin.Forms.VisualElement)的模糊支援。 如需詳細資訊，請參閱[VisualElement 模糊 On iOS](visualelement-blur.md)。
+- 在支援的[`VisualElement`](xref:Xamarin.Forms.VisualElement)上停用舊版色彩模式。 如需詳細資訊，請參閱[在 iOS 上 VisualElement 舊版色彩模式](legacy-color-mode.md)。
+- 在[`VisualElement`](xref:Xamarin.Forms.VisualElement)上啟用投影。 如需詳細資訊，請參閱[VisualElement Drop Shadows On iOS](visualelement-drop-shadow.md)。
 
 下列平臺特定功能適用于在 iOS 上的 Xamarin. 表單檢視：
 
 - 設定[`Cell`](xref:Xamarin.Forms.Cell)背景色彩。 如需詳細資訊，請參閱[iOS 上的儲存格背景色彩](cell-background-color.md)。
-- 確保所輸入文字融入[ `Entry` ](xref:Xamarin.Forms.Entry)藉由調整字型大小。 如需詳細資訊，請參閱[iOS 上的輸入字型大小](entry-font-size.md)。
-- 在 設定資料指標色彩[ `Entry` ](xref:Xamarin.Forms.Entry)。 如需詳細資訊，請參閱[iOS 上的輸入游標色彩](entry-cursor-color.md)。
-- 控制在滾動期間， [@no__t 1 的](xref:Xamarin.Forms.ListView)標頭儲存格是否浮動。 如需詳細資訊，請參閱[iOS 上的 ListView 群組標頭樣式](listview-group-header-style.md)。
-- 控制更新[@no__t 1](xref:Xamarin.Forms.ListView)專案集合時，是否要停用資料列動畫。 如需詳細資訊，請參閱[在 iOS 上 ListView 資料列動畫](listview-row-animations.md)。
-- 設定分隔符號樣式[ `ListView` ](xref:Xamarin.Forms.ListView)。 如需詳細資訊，請參閱[iOS 上的 ListView 分隔符號樣式](listview-separator-style.md)。
-- 控制中的項目選取項目發生時[ `Picker` ](xref:Xamarin.Forms.Picker)。 如需詳細資訊，請參閱[iOS 上的選擇器專案選擇](picker-selection.md)。
-- 啟用[ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)點選位置上設定上的屬性[ `Slider` ](xref:Xamarin.Forms.Slider)列，而不是由拖曳`Slider`捲動方塊。 如需詳細資訊，請參閱[iOS 上的滑杆](slider-thumb.md)。
+- 藉由調整字型大小，確保輸入的文字元合[`Entry`](xref:Xamarin.Forms.Entry) 。 如需詳細資訊，請參閱[iOS 上的輸入字型大小](entry-font-size.md)。
+- 在[`Entry`](xref:Xamarin.Forms.Entry)中設定游標色彩。 如需詳細資訊，請參閱[iOS 上的輸入游標色彩](entry-cursor-color.md)。
+- 控制是否[`ListView`](xref:Xamarin.Forms.ListView)標頭儲存格在滾動期間浮動。 如需詳細資訊，請參閱[iOS 上的 ListView 群組標頭樣式](listview-group-header-style.md)。
+- 控制當更新[`ListView`](xref:Xamarin.Forms.ListView)專案集合時，是否要停用資料列動畫。 如需詳細資訊，請參閱[在 iOS 上 ListView 資料列動畫](listview-row-animations.md)。
+- 在[`ListView`](xref:Xamarin.Forms.ListView)上設定分隔符號樣式。 如需詳細資訊，請參閱[iOS 上的 ListView 分隔符號樣式](listview-separator-style.md)。
+- 控制[`Picker`](xref:Xamarin.Forms.Picker)中發生專案選取的時機。 如需詳細資訊，請參閱[iOS 上的選擇器專案選擇](picker-selection.md)。
+- 藉由在 [ [`Slider`](xref:Xamarin.Forms.Slider) ] 列上的位置上點擊，而不是拖曳 `Slider` 捲動方塊，讓[`Slider.Value`](xref:Xamarin.Forms.Slider.Value)屬性得以設定。 如需詳細資訊，請參閱[iOS 上的滑杆](slider-thumb.md)。
 
 下列平臺特定功能是針對 iOS 上的 Xamarin. Forms 頁面所提供：
 
-- 在上隱藏巡覽列分隔符號[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)。 如需詳細資訊，請參閱[iOS 上的 NavigationPage Bar 分隔符號](navigation-bar-separator.md)。
-- 控制是否半透明的導覽列。 如需詳細資訊，請參閱[iOS 上的巡覽列半透明度](navigation-bar-translucent.md)。
-- 控制是否狀態列文字的色彩上[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)調整成符合要求的導覽列的明暗度。 如需詳細資訊，請參閱[iOS 上的 NavigationPage Bar 文本色彩模式](status-bar-text-color.md)。
-- 控制是否要將頁面標題顯示為頁面巡覽列中的大型標題。 如需詳細資訊，請參閱[iOS 上的大型頁面標題](page-large-title.md)。
+- 在[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)上隱藏導覽列分隔符號。 如需詳細資訊，請參閱[iOS 上的 NavigationPage Bar 分隔符號](navigation-bar-separator.md)。
+- 控制巡覽列是否為透明。 如需詳細資訊，請參閱[iOS 上的巡覽列半透明度](navigation-bar-translucent.md)。
+- 控制[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)上的狀態列文字色彩是否會調整以符合導覽列的亮度。 如需詳細資訊，請參閱[iOS 上的 NavigationPage Bar 文本色彩模式](status-bar-text-color.md)。
+- 控制頁面標題在頁面導覽列中是否顯示為大型標題。 如需詳細資訊，請參閱[iOS 上的大型頁面標題](page-large-title.md)。
 - 在[`Page`](xref:Xamarin.Forms.Page)上設定主指示器的可見度。 如需詳細資訊，請參閱[iOS 上的主指示器可見度](page-home-indicator.md)。
-- 設定狀態軸可見度[ `Page` ](xref:Xamarin.Forms.Page)。 如需詳細資訊，請參閱[iOS 上的頁面狀態列可見度](page-status-bar-visibility.md)。
-- 確保內容該頁面位於而言是安全的所有 iOS 裝置的螢幕區域。 如需詳細資訊，請參閱[iOS 上的安全區域版面配置指南](page-safe-area-layout.md)。
+- 在[`Page`](xref:Xamarin.Forms.Page)上設定狀態列可見度。 如需詳細資訊，請參閱[iOS 上的頁面狀態列可見度](page-status-bar-visibility.md)。
+- 確保頁面內容位於所有 iOS 裝置都安全的螢幕區域上。 如需詳細資訊，請參閱[iOS 上的安全區域版面配置指南](page-safe-area-layout.md)。
 - 設定模式頁面的呈現樣式。 如需詳細資訊，請參閱強制回應[頁面呈現樣式](page-presentation-style.md)。
 
 下列平臺特定功能是針對 Xamarin 提供的。表單版面配置在 iOS 上：
 
-- 控制是否[ `ScrollView` ](xref:Xamarin.Forms.ScrollView)處理觸控筆勢，或將它傳遞給它的內容。 如需詳細資訊，請參閱[在 iOS 上 ScrollView 內容的觸控](scrollview-content-touches.md)。
+- 控制[`ScrollView`](xref:Xamarin.Forms.ScrollView)是否處理觸控手勢，或將其傳遞至其內容。 如需詳細資訊，請參閱[在 iOS 上 ScrollView 內容的觸控](scrollview-content-touches.md)。
 
-IOS 上的 Xamarin [@no__t 1](xref:Xamarin.Forms.Application)類別提供下列平臺特定功能：
+IOS 上的 Xamarin [`Application`](xref:Xamarin.Forms.Application)類別提供下列平臺特定功能：
 
 - 停用已命名字型大小的協助工具縮放。 如需詳細資訊，請參閱[iOS 上命名的字型大小的協助工具調整](named-font-size-scaling.md)。
-- 啟用控制項的版面配置，並呈現在主執行緒上執行的更新。 如需詳細資訊，請參閱[iOS 上的主要執行緒控制更新](main-thread-updates-ui.md)。
-- 啟用[ `PanGestureRecognizer` ](xref:Xamarin.Forms.PanGestureRecognizer)捲動檢視來擷取，並分享捲動檢視中的移動瀏覽軌跡中。 如需詳細資訊，請參閱[iOS 上的同時](application-pan-gesture.md)移動流覽手勢辨識。
+- 啟用控制項版面配置，並在主執行緒上執行轉譯更新。 如需詳細資訊，請參閱[iOS 上的主要執行緒控制更新](main-thread-updates-ui.md)。
+- 在 [滾動] 視圖中啟用[`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) ，以使用 [滾動] 視圖來捕捉和共用平移手勢。 如需詳細資訊，請參閱[iOS 上的同時](application-pan-gesture.md)移動流覽手勢辨識。
 
 ## <a name="ios-specific-formatting"></a>iOS 特定格式
 
 Xamarin 可讓您設定跨平臺使用者介面樣式和色彩-但還有其他選項可以在 iOS 專案中使用平臺 Api 來設定 iOS 的主題。
 
-[深入瞭解如何使用](formatting.md)IOS 特定 api （例如**plist**設定和 @no__t 2 api）來格式化使用者介面。
+[深入](formatting.md)瞭解如何使用 IOS 特定 api （例如**plist**設定和 `UIAppearance` API）來格式化使用者介面。
 
 ![](images/status-white-sml.png "iOS 主題")
 

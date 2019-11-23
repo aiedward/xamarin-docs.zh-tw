@@ -30,7 +30,7 @@ Xamarin： Forms 應用程式可以使用 `DynamicResource` 標記延伸，在�
 下列螢幕擷取畫面顯示主題頁面，其中包含使用淺色主題的 iOS 應用程式，以及使用深色主題的 Android 應用程式：
 
 [![Ios 和 android 上主題應用程式主頁面的螢幕擷取畫面](theming-images/main-page-both-themes.png "主題應用程式的主頁面")](theming-images/main-page-both-themes-large.png#lightbox "主題應用程式的主頁面")
-[![ios 和 android 上主題應用程式詳細資料頁面的螢幕擷取畫面](theming-images/detail-page-both-themes.png "主題應用程式的詳細資料頁面")](theming-images/detail-page-both-themes-large.png#lightbox "主題應用程式的詳細資料頁面")
+[ ![ios 和 android 上主題應用程式詳細資料頁面的螢幕擷取畫面](theming-images/detail-page-both-themes.png "主題應用程式的詳細資料頁面")](theming-images/detail-page-both-themes-large.png#lightbox "主題應用程式的詳細資料頁面")
 
 ## <a name="define-themes"></a>定義主題
 
@@ -73,7 +73,7 @@ Xamarin： Forms 應用程式可以使用 `DynamicResource` 標記延伸，在�
 每個[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)都包含定義各自主題的[`Color`](xref:Xamarin.Forms.Color)資源，每個 `ResourceDictionary` 使用相同的索引鍵值。 如需資源字典的詳細資訊，請參閱[資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)。
 
 > [!IMPORTANT]
-> 呼叫 `InitializeComponent` 方法的每個 `ResourceDictionary` 都需要程式碼後置檔案。 這是必要的，因此，您可以在執行時間建立代表所選主題的 CLR 物件。
+> 呼叫 `InitializeComponent` 方法的每個 `ResourceDictionary`都需要程式碼後置檔案。 這是必要的，因此，您可以在執行時間建立代表所選主題的 CLR 物件。
 
 ## <a name="set-a-default-theme"></a>設定預設主題
 
@@ -183,7 +183,7 @@ Xamarin： Forms 應用程式可以使用 `DynamicResource` 標記延伸，在�
 在執行時間選取主題時，應用程式應該：
 
 1. 從應用程式中移除目前的主題。 這是藉由清除應用層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)的[`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)屬性來達成。
-2. 載入選取的主題。 藉由將所選主題的實例新增至應用層級 `ResourceDictionary` 的 `MergedDictionaries` 屬性，即可達成此目的。
+2. 載入選取的主題。 藉由將所選主題的實例新增至應用層級 `ResourceDictionary`的 `MergedDictionaries` 屬性，即可達成此目的。
 
 任何[`VisualElement`](xref:Xamarin.Forms.VisualElement)物件若設定具有 `DynamicResource` 標記延伸的屬性，就會套用新的主題值。 這是因為 `DynamicResource` 標記延伸會維護字典索引鍵的連結。 因此，當取代與索引鍵相關聯的值時，會將變更套用至 `VisualElement` 物件。
 

@@ -16,7 +16,7 @@ ms.locfileid: "71997148"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。
 
@@ -85,7 +85,7 @@ ms.locfileid: "71997148"
 
 ## <a name="data-triggers"></a>資料觸發程序
 
-資料觸發程序使用資料繫結來監視另一個控制項，導致呼叫 `Setter`。 請設定 `Binding` 屬性來監視指定的值，而不是屬性觸發程序中的 `Property` 屬性。
+資料觸發程序使用資料繫結來監視另一個控制項，導致呼叫 `Setter`。 請設定 `Property` 屬性來監視指定的值，而不是屬性觸發程序中的 `Binding` 屬性。
 
 下列範例使用資料繫結語法 `{Binding Source={x:Reference entry}, Path=Text.Length}`
 這是我們指稱另一個控制項屬性的方法。 當 `entry` 的長度為零時，會啟動觸發程序。 在此範例中，觸發程序會在輸入為空時停用按鈕。
@@ -278,12 +278,12 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 
 另一種在觸發程序發生時實作變更的方法，是藉由新增 `EnterActions` 和 `ExitActions` 集合，並指定 `TriggerAction<T>` 實作。
 
-[@No__t 1](xref:Xamarin.Forms.TriggerBase.EnterActions)集合是用來定義在符合觸發條件時，將會叫用的[`TriggerAction`](xref:Xamarin.Forms.TriggerAction)物件的 `IList`。 [@No__t 1](xref:Xamarin.Forms.TriggerBase.ExitActions)集合是用來定義 `TriggerAction` 物件的 `IList`，在不再符合觸發程式條件之後就會叫用。
+[`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions)集合是用來定義符合觸發條件時所要叫用之[`TriggerAction`](xref:Xamarin.Forms.TriggerAction)物件的 `IList`。 [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions)集合是用來定義在不再符合觸發條件之後，將會叫用的 `TriggerAction` 物件 `IList`。
 
 > [!NOTE]
-> [@No__t-5](xref:Xamarin.Forms.EventTrigger)類別會忽略在 `EnterActions` 和 `ExitActions` 集合中定義的[`TriggerAction`](xref:Xamarin.Forms.TriggerAction)物件。    
+> [`EventTrigger`](xref:Xamarin.Forms.EventTrigger)類別會忽略 `EnterActions` 和 `ExitActions` 集合中定義的[`TriggerAction`](xref:Xamarin.Forms.TriggerAction)物件。    
 
-您可以在觸發程式中*同時*提供 `EnterActions` 和 `ExitActions` 以及 @no__t 3 s，但請注意，@no__t 4s 會立即呼叫（它們不會等待 `EnterAction` 或 `ExitAction` 完成）。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
+您可以在觸發程式中*同時*提供 `EnterActions` 和 `ExitActions`，以及 `Setter`s，但請注意，`Setter`會立即呼叫（它們不會等待 `EnterAction` 或 `ExitAction` 完成）。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
 
 ```xaml
 <Entry Placeholder="enter job title">

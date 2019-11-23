@@ -108,7 +108,7 @@ namespace Cocos2D {
 
 API 定義檔只會包含命名空間和介面定義（具有介面可以包含的任何成員），而且不應該包含類別、列舉、委派或結構。 API 定義檔只是將用來產生 API 的合約。
 
-您需要的任何額外程式碼（如列舉或支援類別）都應該裝載在不同的檔案上，在上述範例中，"CameraMode" 是不存在於 CS 檔案中且應裝載于個別檔案中的列舉值，例如 `StructsAndEnums.cs`:
+您所需的任何額外程式碼，如列舉或支援類別，都應該裝載在不同的檔案上，在上述範例中，"CameraMode" 是不存在於 CS 檔案中且應裝載于個別檔案中的列舉值，例如 `StructsAndEnums.cs`：
 
 ```csharp
 public enum CameraMode {
@@ -132,7 +132,7 @@ public partial class Camera {
 
 建立程式庫將會產生您的原生系結。
 
-若要完成此系結，您應該將原生程式庫加入至專案。  若要這麼做，您可以將原生程式庫加入至專案，方法是將原生程式庫從搜尋工具拖放至方案 explorer 中的專案，或以滑鼠右鍵按一下專案，然後選擇 [**新增**] > [**將檔案新增**至選取]原生程式庫。
+若要完成此系結，您應該將原生程式庫加入至專案。  若要這麼做，您可以將原生程式庫加入至專案，方法是將原生程式庫從搜尋工具拖放至方案 explorer 中的專案，或以滑鼠右鍵按一下專案，然後選擇 [**新增**] > [**加入**檔案] 以選取原生程式庫。
 依慣例的原生程式庫會以 "lib" 一字開頭，並以副檔名 ". a" 結尾。 當您這麼做時，Visual Studio for Mac 將會加入兩個檔案：檔案和自動填入C#的檔案，其中包含原生程式庫所包含內容的相關資訊：
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
@@ -168,7 +168,7 @@ API 定義檔包含許多介面。 API 定義中的介面會轉換成類別宣�
 ### <a name="binding-methods"></a>系結方法
 
 您可以執行的最簡單系結是系結方法。 只要在介面中宣告具有C#命名慣例的方法，並使用[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)來裝飾方法即可。
-特性. [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性會連結您C#的名稱與 Xamarin iOS 執行時間中的目標-C 名稱。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)的參數 
+屬性中。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性會連結您C#的名稱與 Xamarin iOS 執行時間中的目標-C 名稱。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)的參數 
 attribute 是目標-C 選取器的名稱。 一些範例如下：
 
 ```csharp
@@ -283,7 +283,7 @@ string Text { get; [NullAllowed] set; }
 在這些類別中，通常會看到不可變的基類包含具有 getter 的屬性，但沒有 setter。 和，讓可變動的版本引進 setter。 因為這不太可能發生C#，所以我們必須將此方法對應到可使用的用法。 C#
 
 這個對應的方式C#是在基類上加入 getter 和 setter，但使用[`[NotImplemented]`](~/cross-platform/macios/binding/binding-types-reference.md#NotImplementedAttribute)來標示 setter
-特性.
+屬性中。
 
 然後，在可變的子類別上，您可以使用[`[Override]`](~/cross-platform/macios/binding/binding-types-reference.md#OverrideAttribute) 
 屬性（property）上的屬性（attribute），以確保屬性確實會覆寫父系的行為。
@@ -326,7 +326,7 @@ IntPtr Constructor (CGRect frame);
 ### <a name="binding-protocols"></a>系結通訊協定
 
 如 API 設計檔中所述，在[討論模型和通訊協定](~/ios/internals/api-design/index.md#models)一節中，Xamarin 會將目標 C 通訊協定對應至已使用[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)標記的類別。
-特性. 這通常是在執行目標-C 委派類別時使用。
+屬性中。 這通常是在執行目標-C 委派類別時使用。
 
 一般系結類別和委派類別之間的最大差異在於，委派類別可能會有一或多個選擇性方法。
 
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>系結目標-C 引數清單
 
-目標-C 支援 variadic 引數。 例如:
+目標-C 支援 variadic 引數。 例如：
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 這些欄位通常包含必須參考的字串或整數值。 它們通常用來做為代表特定通知的字串，以及做為字典中的索引鍵。
 
-若要系結欄位，請將屬性加入至您的介面定義檔，並使用[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性裝飾屬性。 這個屬性接受一個參數：要查閱之符號的 C 名稱。 例如:
+若要系結欄位，請將屬性加入至您的介面定義檔，並使用[`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)屬性裝飾屬性。 這個屬性接受一個參數：要查閱之符號的 C 名稱。 例如：
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ interface MyType {
 您可以使用[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)來裝飾方法（在傳回值上）、參數和屬性。 唯一的限制是您的成員**不得**位於[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute) 
 或[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)介面。
 
-例如:
+例如：
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)也支援 `NSNumber` `NSValue` 和 `NSString`（列舉）的陣列。
 
-例如:
+例如：
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -682,7 +682,7 @@ CAScroll [] SupportedScrollModes { get; set; }
 
 此屬性可用於不含任何承載之通知的引數，或者您可以指定參考 API 定義中另一個介面的 `System.Type`，其名稱通常會以 "EventArgs" 結尾。 產生器會將介面轉換成子類別 `EventArgs` 的類別，而且會包含其中列出的所有屬性。 在 EventArgs 類別中應該使用[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性來列出用來查閱目標-C 字典以提取值的索引鍵名稱。
 
-例如:
+例如：
 
 ```csharp
 interface MyClass {
@@ -901,11 +901,11 @@ Task<string> LoadFileAsync (string file);
 
 ### <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>呈現弱式 NSDictionary 參數的強式類型
 
-在目標-C API 的許多位置中，參數會以弱型別 `NSDictionary` Api 的形式傳遞，並具有特定的索引鍵和值，但這些是容易出錯的（您可以傳遞不正確索引鍵，而且不會收到任何警告; 您可以傳遞不正確值，且不會出現警告），並使用因為它們需要多個檔行程來查閱可能的索引鍵名稱和值。
+在目標-C API 中的許多位置中，參數會以弱型別 `NSDictionary` Api 的形式傳遞，並具有特定的索引鍵和值，但這些是容易出錯的（您可以傳遞不正確索引鍵，而不會收到警告; 您可以傳遞不正確值，而不會收到警告），而令人沮喪，因為他們需要多次行程檔，才能
 
 解決方案是提供強型別的版本，以提供 API 的強型別版本，而幕後則會對應各種基礎索引鍵和值。
 
-比方說，如果目標-C API 接受 `NSDictionary`，而且記錄為採用索引鍵 `XyzVolumeKey` 會將具有磁片區值從0.0 到1.0 的 `NSNumber`，以及接受字串的 `XyzCaptionKey`，您會想要讓使用者擁有一個類似以下的絕佳 API：
+因此，例如，如果目標-C API 接受 `NSDictionary`，而且記錄為採用索引鍵 `XyzVolumeKey`，而此金鑰會採用具有從0.0 到1.0 之磁片區值的 `NSNumber`，以及接受字串的 `XyzCaptionKey`，您會希望使用者擁有類似如下的絕佳 API：
 
 ```csharp
 public class  XyzOptions {
@@ -957,7 +957,7 @@ interface XyzPanel {
 ```
 
 如果您的 API 不需要覆寫，您可以使用[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)安全地隱藏以 NSDictionary 為基礎的 api
-特性.
+屬性中。
 
 如您所見，我們會使用[`[Wrap]`](~/cross-platform/macios/binding/binding-types-reference.md#WrapAttribute)
 用來呈現新 API 進入點的屬性，並使用我們的強型別 `XyzOptions` 類別來呈現。  包裝函式方法也允許傳遞 null。
@@ -1027,7 +1027,7 @@ interface XyzPanel {
 
 |目標-C 類型名稱|Unified API 類型的 Xamarin iOS|
 |---|---|
-|`BOOL`、 `GLboolean`|`bool`|
+|`BOOL`, `GLboolean`|`bool`|
 |`NSInteger`|`nint`|
 |`NSUInteger`|`nuint`|
 |`CFTimeInterval` / `NSTimeInterval`|`double`|
@@ -1036,7 +1036,7 @@ interface XyzPanel {
 |`CGRect`|`CGRect`|
 |`CGPoint`|`CGPoint`|
 |`CGSize`|`CGSize`|
-|`CGFloat`、 `GLfloat`|`nfloat`|
+|`CGFloat`, `GLfloat`|`nfloat`|
 |CoreFoundation 類型（`CF*`）|`CoreFoundation.CF*`|
 |`GLint`|`nint`|
 |`GLfloat`|`nfloat`|
@@ -1055,7 +1055,7 @@ interface XyzPanel {
 
 ### <a name="arrays"></a>陣列
 
-Xamarin iOS 執行時間會自動將陣列轉換C#成`NSArrays`並執行轉換，例如，會傳回`UIViews``NSArray`的虛構目標-C 方法：
+Xamarin iOS 執行時間會自動將陣列轉換C#成 `NSArrays` 並執行轉換，例如，會傳回 `UIViews``NSArray` 的虛構目標-C 方法：
 
 ```csharp
 // Get the peer views - untyped
@@ -1111,7 +1111,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-若要將系結更好C#到開發人員，您通常會提供採用`NSAction`參數的方法，讓C#您可以使用委派和 lambda，而不是`Target+Selector`。 若要這麼做，您通常會使用[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)標記來隱藏 `SetTarget` 方法
+若要將系結更好C#到開發人員，您通常會提供採用 `NSAction` 參數的方法，讓C#您可以使用委派和 lambda，而不是 `Target+Selector`。 若要這麼做，您通常會使用[`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)標記來隱藏 `SetTarget` 方法
 屬性，然後您會公開新的 helper 方法，如下所示：
 
 ```csharp
@@ -1159,7 +1159,7 @@ class DialogPrint : UIViewController {
 當您想要直接使用 `NSString` 時，唯一的情況就是使用此字串做為標記。 如需有關字串和 `NSString`的詳細資訊，請參閱[NSString 上的 API 設計](~/ios/internals/api-design/nsstring.md)檔。
 
 在某些罕見的情況下，API 可能會公開類似 C 的字串（`char *`），而不是目標-C 字串（`NSString *`）。 在這些情況下，您可以使用[`[PlainString]`](~/cross-platform/macios/binding/binding-types-reference.md#plainstring)來標注參數
-特性.
+屬性中。
 
 <a name="outref_parameters" />
 
@@ -1328,7 +1328,7 @@ c.Loaded += delegate (sender, args){
 
 如果您要系結的 Api 不是應用程式的一部分，您必須確定您的可執行檔已連結至這些程式庫。
 
-您必須通知 Xamarin，如何連結您的程式庫，這可以藉由變更組建設定來叫用 `mtouch` 命令，並使用一些額外的組建引數，指定如何使用 "-gcc_flags" 選項來連結新的程式庫，後面接著一個加上引號的字串，其中包含程式所需的所有額外程式庫，如下所示：
+您必須通知 Xamarin，您可以藉由變更組建設定來叫用 `mtouch` 命令，並搭配一些額外的組建引數，指定如何使用 "-gcc_flags" 選項與新程式庫連結，後面接著一個加上引號的字串，其中包含程式所需的所有額外程式庫，如下所示：
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
@@ -1337,7 +1337,7 @@ c.Loaded += delegate (sender, args){
 上述範例會將 `libMyLibrary.a`、`libSystemLibrary.dylib` 和 `CFNetwork` framework 程式庫連結至您的最終可執行檔。
 
 或者，您也可以利用元件層級的[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)，讓您可以將它內嵌在您的合約檔案中（例如 `AssemblyInfo.cs`）。
-當您使用[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)時，您必須在進行系結時使用原生程式庫，因為這會將原生程式庫內嵌至您的應用程式。 例如:
+當您使用[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)時，您必須在進行系結時使用原生程式庫，因為這會將原生程式庫內嵌至您的應用程式。 例如：
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1347,7 +1347,7 @@ c.Loaded += delegate (sender, args){
 [assembly: LinkWith ("libMyLibrary.a", LinkTarget.ArmV6 | LinkTarget.ArmV7 | LinkTarget.Simulator, ForceLoad = true, IsCxx = true)]
 ```
 
-您可能想知道，為什麼需要 `-force_load` 命令，而且 ObjC 旗標雖然在中編譯器代碼，但它並不會保留支援分類所需的中繼資料（連結器/編譯器停止程式碼去除），而您需要于適用于 Xamarin. iOS 的執行時間。
+您可能想知道，為什麼需要 `-force_load` 命令，而 ObjC 旗標雖然在中編譯器代碼，但它並不會保留在執行時間針對 Xamarin 所需的中繼資料，以支援分類（連結器/編譯器停止程式碼排除）。
 
 <a name="Assisted_References" />
 

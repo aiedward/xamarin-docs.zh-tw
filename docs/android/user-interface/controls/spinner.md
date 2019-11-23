@@ -21,7 +21,7 @@ ms.locfileid: "73029157"
 
 在本教學課程的第一個部分中，您將建立簡單的微調工具 widget，以顯示行星清單。 選取地球之後，快顯訊息會顯示選取的專案：
 
-[HelloSpinner 應用程式的![範例螢幕擷取畫面](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
+[HelloSpinner 應用程式的 ![範例螢幕擷取畫面](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 啟動名為**HelloSpinner**的新專案。
 
@@ -190,7 +190,7 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 執行應用程式;快顯看起來應該像這樣：
 
-[顯示溫度的地球選取![範例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
+[顯示溫度的地球選取 ![範例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
 
 ## <a name="resources"></a>資源
 

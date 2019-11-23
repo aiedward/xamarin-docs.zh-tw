@@ -73,7 +73,7 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 轉換為共用專案之後，請造訪 **> NuGet 套件 > 參考元件**
-[一節](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)中的專案選項，並確定已選取所有必要的設定檔（讓 NuGet 繼續與它的專案相容先前在中使用）。
+[一節](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)中的專案選項，並確定已選取所有必要的設定檔（讓 NuGet 繼續與先前用於的專案相容）。
 
 ## <a name="related-links"></a>相關連結
 
