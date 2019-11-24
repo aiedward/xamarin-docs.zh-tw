@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
-ms.translationtype: HT
+ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
+ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889211"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74451815"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 飛出視窗
 
@@ -20,7 +20,7 @@ ms.locfileid: "69889211"
 
 飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標頭、飛出視窗項目及選用功能表項目所組成：
 
-![Shell 已標註的飛出視窗螢幕擷取畫面](flyout-images/flyout-annotated.png "已標註的飛出視窗")
+![Screenshot of a Shell annotated flyout](flyout-images/flyout-annotated.png "Annotated flyout")
 
 如有需要，可以透過 `Shell.FlyoutBackgroundColor` 可繫結屬性來將飛出視窗的背景色彩設定為 [`Color`](xref:Xamarin.Forms.Color)。 這個屬性也可以從階層式樣式表 (CSS) 進行設定。 如需詳細資訊，請參閱 [Xamarin.Forms Shell 特定屬性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)。
 
@@ -93,7 +93,7 @@ Shell.Current.FlyoutIsPresented = false;
 
 這會產生下列飛出視窗標題：
 
-![飛出視窗標題的螢幕擷取畫面](flyout-images/flyout-header.png "飛出視窗標題")
+![Screenshot of the flyout header](flyout-images/flyout-header.png "飛出視窗標題")
 
 或者，透過將 `Shell.FlyoutHeaderTemplate` 屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，即可定義飛出視窗標題的外觀：
 
@@ -155,7 +155,7 @@ Shell.Current.FlyoutIsPresented = false;
 
 這會導致背景影像出現在飛出視窗中：
 
-![飛出視窗背景影像的螢幕擷取畫面](flyout-images/flyout-backgroundimage.png "飛出視窗背景影像")
+![Screenshot of a flyout background image](flyout-images/flyout-backgroundimage.png "飛出視窗背景影像")
 
 ## <a name="flyout-items"></a>飛出視窗項目
 
@@ -193,7 +193,7 @@ Shell.Current.FlyoutIsPresented = false;
 
 在此範例中，每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 都只能透過飛出視窗項目來存取：
 
-[![含飛出視窗項目的 Shell 兩頁應用程式在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/two-page-app-flyout.png "含飛出視窗項目的 Shell 兩頁應用程式")](flyout-images/two-page-app-flyout-large.png#lightbox "含飛出視窗項目的 Shell 兩頁應用程式")
+[![Screenshot of a Shell two page app with flyout items, on iOS and Android](flyout-images/two-page-app-flyout.png "Shell two page app with flyout items")](flyout-images/two-page-app-flyout-large.png#lightbox "Shell two page app with flyout items")
 
 > [!NOTE]
 > 如果沒有飛出視窗標題，飛出視窗項目就會出現在飛出視窗頂端。 否則，它們會出現在飛出視窗標題下方。
@@ -223,7 +223,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 `FlyoutItem` 類別包含下列屬性來控制飛出視窗項目的外觀和行為：
 
-- 型別為 `FlyoutDisplayOptions` 的 `FlyoutDisplayOptions` 可定義項目及其子系如何顯示於飛出視窗中。 預設值為 `AsSingleItem`。
+- 型別為 `FlyoutDisplayOptions` 的 `FlyoutDisplayOptions` 可定義項目及其子系如何顯示於飛出視窗中。 預設值是 `AsSingleItem`。
 - 型別為 `Tab` 的 `CurrentItem`，這是選取的項目。
 - 型別為 `IList<Tab>` 的 `Items` 會在 `FlyoutItem` 內定義所有索引標籤。
 - 型別為 `ImageSource` 的 `FlyoutIcon`，這是要針對項目使用的圖示。 如果未設定這個屬性，它將轉而使用 `Icon` 屬性值。
@@ -300,7 +300,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 這會產生下列飛出視窗項目：
 
-[![包含 FlyoutItem 物件的飛出視窗在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/flyout-reduced.png "包含 FlyoutItem 物件的 Shell 飛出視窗")](flyout-images/flyout-reduced-large.png#lightbox "包含 FlyoutItem 物件的 Shell 飛出視窗")
+[![Screenshot of flyout containing FlyoutItem objects, on iOS and Android](flyout-images/flyout-reduced.png "Shell flyout containing FlyoutItem objects")](flyout-images/flyout-reduced-large.png#lightbox "Shell flyout containing FlyoutItem objects")
 
 ## <a name="define-flyoutitem-appearance"></a>定義 FlyoutItem 外觀
 
@@ -331,10 +331,73 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 此範例會以斜體顯示每個 `FlyoutItem` 物件的標題：
 
-[![樣板化 FlyoutItem 物件在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/flyoutitem-templated.png "Shell 的樣板化 FlyoutItem 物件")](flyout-images/flyoutitem-templated-large.png#lightbox "Shell 的樣板化 FlyoutItem 物件")
+[![Screenshot of templated FlyoutItem objects, on iOS and Android](flyout-images/flyoutitem-templated.png "Shell templated FlyoutItem objects")](flyout-images/flyoutitem-templated-large.png#lightbox "Shell templated FlyoutItem objects")
+
+
+Because `Shell.ItemTemplate` is an attached property, different templates can be attached to specific `FlyoutItem` objects.
 
 > [!NOTE]
 > Shell 會將 `Title` 和 `FlyoutIcon` 屬性提供給 `ItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)。
+
+
+### <a name="default-template-for-flyoutitems-and-menuitems"></a>Default Template for FlyoutItems and MenuItems
+Shell uses the following template internally for its default implementation. This is a great starting point if all you want to do is make small tweaks to the existing layouts. This also demonstrates the Visual State Manager features of the flyout items. This same template can also be used for MenuItems
+
+```xaml
+<DataTemplate x:Key="FlyoutTemplates">
+    <Grid HeightRequest="{x:OnPlatform Android=50}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                    </VisualState>
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50}"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding FlyoutIcon}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="{x:OnPlatform Android=24, iOS=22}"
+            WidthRequest="{x:OnPlatform Android=24, iOS=22}">
+        </Image>
+        <Label VerticalOptions="Center"
+                Text="{Binding Title}"
+                FontSize="{x:OnPlatform Android=14, iOS=Small}"
+                FontAttributes="Bold" Grid.Column="1">
+            <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="#D2000000" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.TextColor>
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20, 0, 0, 0" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.Margin>
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="sans-serif-medium" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+    </Grid>
+</DataTemplate>
+```
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem 定位順序
 
@@ -403,7 +466,7 @@ Shell.Current.CurrentItem = aboutItem;
 
 此程式碼在飛出視窗中加入兩個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件 (在所有飛出視窗項目底下)：
 
-[![包含 MenuItem 物件的飛出視窗在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/flyout.png "包含 MenuItem 物件的 Shell 飛出視窗")](flyout-images/flyout-large.png#lightbox "包含 MenuItem 物件的 Shell 飛出視窗")
+[![Screenshot of flyout containing MenuItem objects, on iOS and Android](flyout-images/flyout.png "Shell flyout containing MenuItem objects")](flyout-images/flyout-large.png#lightbox "Shell flyout containing MenuItem objects")
 
 第一個 [`MenuItem`](xref:Xamarin.Forms.MenuItem) 物件會執行名為 `RandomPageCommand` 的 `ICommand`，這會巡覽至應用程式中的隨機頁面。 第二個 `MenuItem` 物件會執行名為 `HelpCommand` 的 `ICommand`，這會在網頁瀏覽器中開啟 `CommandParameter` 屬性所指定的 URL。
 
@@ -446,10 +509,10 @@ Shell.Current.CurrentItem = aboutItem;
 
 此範例會將 Shell 層級的 `MenuItemTemplate` 附加到每個 `MenuItem` 物件，以斜體顯示每個 `MenuItem` 物件的標題：
 
-[![樣板化 MenuItem 物件在 iOS 和 Android 上的螢幕擷取畫面](flyout-images/menuitem-templated.png "Shell 的樣板化 MenuItem 物件")](flyout-images/menuitem-templated-large.png#lightbox "Shell 的樣板化 MenuItem 物件")
+[![Screenshot of templated MenuItem objects, on iOS and Android](flyout-images/menuitem-templated.png "Shell templated MenuItem objects")](flyout-images/menuitem-templated-large.png#lightbox "Shell templated MenuItem objects")
 
 > [!NOTE]
-> Shell 會將 [`Text`](xref:Xamarin.Forms.MenuItem.Text) 和 [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) 屬性提供給 `MenuItemTemplate` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)。
+> Shell provides the [`Text`](xref:Xamarin.Forms.MenuItem.Text) and [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) properties to the [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) of the `MenuItemTemplate`. You can also use `Title` in place of `Text` and `Icon` in place of `IconImageSource` which will let you reuse the same template for Menu Items and Flyout Items
 
 因為 `Shell.MenuItemTemplate` 是附加屬性，所以可以將不同的範本附加至特定 `MenuItem` 物件：
 
@@ -488,6 +551,10 @@ Shell.Current.CurrentItem = aboutItem;
     </MenuItem>
 </Shell>
 ```
+
+
+> [!NOTE]
+> The same template used for [Flyout Items](#default-template-for-flyoutitems-and-menuitems) can also be used for Menu Items.
 
 此範例會將 Shell 層級的 `MenuItemTemplate` 附加到第一個 `MenuItem` 物件，並將內嵌 `MenuItemTemplate` 附加到第二個 `MenuItem`。
 
