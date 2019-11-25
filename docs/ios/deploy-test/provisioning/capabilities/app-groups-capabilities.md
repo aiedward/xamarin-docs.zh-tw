@@ -16,7 +16,7 @@ ms.locfileid: "73030179"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS 的應用程式群組功能
 
-_將功能新增至應用程式通常需要額外的布建設定。本指南說明應用程式群組功能所需的設定。_
+_為應用程式新增功能通常需要額外的佈建設定。本指南說明「應用程式群組」功能所需的設定。_
 
 「應用程式群組」可讓不同的應用程式 (或應用程式及其擴充功能) 存取共用檔案儲存體位置。 「應用程式群組」可用於資料下列資料：
 
@@ -28,7 +28,7 @@ _將功能新增至應用程式通常需要額外的布建設定。本指南說�
 
 設定共用位置時，會使用 [App Group](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19) \(應用程式群組\) 來設定，這是在 [Apple Developer Center](https://developer.apple.com/account/).\(Apple 開發人員中心\) 上的 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) 中進行設定。 每個專案的 Entitlements.plist 中也必須參考此值。
 
-應用程式群組會有識別碼，這通常是具有群組的套件組合識別碼。 前置詞. 例如，套件組合識別碼 `com.xamarin.WatchSettings` 的應用程式群組會是  `group.com.xamarin.WatchSettings`。
+應用程式群組會有識別碼，這通常是具有群組的套件組合識別碼。 前置詞的「套件組合識別碼」。 例如，套件組合識別碼 `com.xamarin.WatchSettings` 的應用程式群組會是  `group.com.xamarin.WatchSettings`。
 
 若要建立新的「應用程式群組」，請執行下列動作：
 
@@ -78,6 +78,6 @@ _將功能新增至應用程式通常需要額外的布建設定。本指南說�
 
 * 在您的應用程式中使用架構命名空間。
 * 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在應用程式的 [iOS 套件組合簽署] 中，確定 [自訂權利] 已設定為 **Entitlements.plist**。 這 _不_ Debug 和 iOS 模擬器組建的預設設定。
+* 在應用程式的 [iOS 套件組合簽署] 中，確定 [自訂權利] 已設定為 **Entitlements.plist**。 這「不是」 __  「偵錯」和「iOS 模擬器」組建的預設設定。
 
 如果您在應用程式服務方面遇到問題，請參閱主要指南的[疑難排解](~/ios/deploy-test/provisioning/capabilities/index.md)一節。

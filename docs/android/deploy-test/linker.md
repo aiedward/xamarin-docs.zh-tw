@@ -19,7 +19,7 @@ Xamarin.Android 應用程式會使用「連結器」來縮小應用程式的大�
 
 例如，[Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) 範例：
 
-|Configuration|1.2.0 大小|4.0.1 大小|
+|組態|1.2.0 大小|4.0.1 大小|
 |---|---|---|
 |沒有連結的版本：|14.0 MB|16.0 MB|
 |有連結的版本：|4.2 MB|2.9 MB|
@@ -209,5 +209,5 @@ class MyActivity {
 
 ## <a name="related-links"></a>相關連結
 
-- [自訂連結器組態](~/cross-platform/deploy-test/linker.md)
+- [自訂連結器設定](~/cross-platform/deploy-test/linker.md)
 - [在 iOS 上連結](~/ios/deploy-test/linker.md)
