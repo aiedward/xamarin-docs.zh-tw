@@ -12,7 +12,7 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/26/2019
 ms.locfileid: "74536492"
 ---
-# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials: Platform Extensions
+# <a name="xamarinessentials-platform-extensions"></a>Xamarin. Essentials：平臺擴充功能
 
 當必須使用像是矩形、大小、點等平台類型時，Xamarin.Essentials 可提供數種平台擴充方法。 這代表您可在 `System` 版的這些類型 (其 iOS、Android 及 UWP 特定類型) 間轉換。 
 

@@ -21,7 +21,7 @@ Xamarin.Essentials 提供單一跨平台 API，能夠搭配任何 iOS、Android 
 
 Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Studio 新增到任何現有或新的專案。
 
-1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/get-started/installation/index.md)的 [Visual Studio](https://visualstudio.microsoft.com/)。
+1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](https://visualstudio.microsoft.com/)的 [Visual Studio](~/get-started/installation/index.md)。
 
 2. 開啟現有專案，或建立使用 [Visual Studio C#] (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。
 
@@ -37,7 +37,7 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
 
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    In the Solution Explorer panel, right click on the project name and select **Add > Add NuGet Packages...** . Search for **Xamarin.Essentials** and install the package into **ALL** projects including Android, iOS, and .NET Standard libraries.
+    在 方案總管 面板中，以滑鼠右鍵按一下專案名稱，然後選取 **新增 > 新增 NuGet 套件**...。搜尋**Xamarin** ，並將套件安裝到**所有**專案，包括 Android、iOS 和 .NET Standard 程式庫。
 
     -----
 
@@ -51,7 +51,7 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-    Xamarin.Essentials 支援最低 Android 4.4 版，這對應到 API 層級 19，但目標 Android 版本必須是 9.0 才能進行編譯，這對應到 API 層級 28。 (In Visual Studio, these two versions are set in the Project Properties dialog for the Android project, in the Android Manifest tab. In Visual Studio for Mac, they're set in the Project Options dialog for the Android project, in the Android Application tab.)
+    Xamarin.Essentials 支援最低 Android 4.4 版，這對應到 API 層級 19，但目標 Android 版本必須是 9.0 才能進行編譯，這對應到 API 層級 28。 （在 Visual Studio 中，這兩個版本是在 android 專案的 [專案屬性] 對話方塊中，于 [Android 資訊清單] 索引標籤中設定。在 Visual Studio for Mac 中，它們是在 Android 專案的 [專案選項] 對話方塊中，于 [Android 應用程式] 索引標籤中設定。）
 
     Xamarin.Essentials 會安裝它所需的 Xamarin.Android.Support 程式庫 28.0.0.1 版。 您應用程式所需的任何其他 Xamarin.Android.Support 程式庫都也應該使用 NuGet 套件管理員更新到 28.0.0.1 版。 您應用程式使用的所有 Xamarin.Android.Support 程式庫都應該相同，而且至少必須是 28.0.0.1 版。 若您有關於在方案中新增 Xamarin.Essentials NuGet 或更新 NuGet 的問題，請參閱[疑難排解介面](troubleshooting.md)。
 

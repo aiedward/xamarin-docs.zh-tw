@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms Material Visual
-description: Xamarin.Forms Material Visual can be used to create Xamarin.Forms applications that look largely identical on iOS and Android.
+title: Xamarin. 表單材質視覺效果
+description: '[Xamarin]：表單材質視覺效果可用來建立在 iOS 和 Android 上看起來大致相同的 Xamarin. Forms 應用程式。'
 ms.prod: xamarin
 ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
 ms.technology: xamarin-forms
@@ -14,27 +14,27 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/25/2019
 ms.locfileid: "74465525"
 ---
-# <a name="xamarinforms-material-visual"></a>Xamarin.Forms Material Visual
+# <a name="xamarinforms-material-visual"></a>Xamarin. 表單材質視覺效果
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
-[Material Design](https://material.io) is an opinionated design system created by Google, that prescribes the size, color, spacing, and other aspects of how views and layouts should look and behave.
+[材質設計](https://material.io)是 Google 所建立的固定設計系統，其中規定了視圖和版面配置外觀與行為的大小、色彩、間距和其他層面。
 
-Xamarin.Forms Material Visual can be used to apply Material Design rules to Xamarin.Forms applications, creating applications that look largely identical on iOS and Android. When Material Visual is enabled, supported views adopt the same design cross-platform, creating a unified look and feel.
+[Xamarin]：表單材質視覺效果可用來將材質設計規則套用至 Xamarin。表單應用程式，建立在 iOS 和 Android 上看起來大致相同的應用程式。 啟用材質視覺效果時，支援的視圖會採用相同的設計跨平臺，並建立一致的外觀與風格。
 
-[![Material Visual screenshots](material-visual-images/material-visual-cropped.png)](material-visual-images/material-visual.png#lightbox)
+[![材質視覺螢幕擷取畫面](material-visual-images/material-visual-cropped.png)](material-visual-images/material-visual.png#lightbox)
 
-The process for enabling Xamarin.Forms Material Visual in your application is:
+在您的應用程式中啟用 Xamarin. 表單材質視覺效果的流程為：
 
-1. Add the [Xamarin.Forms.Visual.Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet package to your iOS and Android platform projects. This NuGet package delivers optimized Material Design renderers on iOS and Android. On iOS, the package provides the transitive dependency to [Xamarin.iOS.MaterialComponents](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents), which is a C# binding to Google's [Material Components for iOS](https://material.io/develop/ios/). On Android, the package provides build targets to ensure that your TargetFramework is correctly set up.
-1. Initialize Material Visual in each platform project. For more information, see [Initialize Material Visual](#initialize-material-visual).
-1. Create Material Visual controls by setting the [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) property to `Material` on any pages that should adopt the Material Design rules. For more information, see [Consume Material renderers](#apply-material-visual).
-1. [optional] Customize Material controls. For more information, see [Customize Material controls](#customize-material-visual).
+1. 將 [ [Xamarin](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) ] NuGet 套件新增至您的 IOS 和 Android 平臺專案。 此 NuGet 套件會在 iOS 和 Android 上提供優化的材質設計轉譯器。 在 iOS 上，套件會提供[MaterialComponents](https://www.nuget.org/packages/Xamarin.iOS.MaterialComponents)的可轉移相依性，這是C# Google 的[ios 材質元件](https://material.io/develop/ios/)系結。 在 Android 上，套件會提供組建目標，以確保您的 TargetFramework 已正確設定。
+1. 在每個平臺專案中初始化材質視覺效果。 如需詳細資訊，請參閱[初始化材質視覺效果](#initialize-material-visual)。
+1. 在應該採用材質設計規則的任何頁面上，將 [ [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) ] 屬性設定為 [`Material`]，以建立材質視覺控制項。 如需詳細資訊，請參閱[使用材質](#apply-material-visual)轉譯器。
+1. 選擇性自訂材質控制項。 如需詳細資訊，請參閱[自訂材質控制項](#customize-material-visual)。
 
 > [!IMPORTANT]
-> On Android, Material Visual requires a minimum version of 5.0 (API 21) or greater, and a TargetFramework of version 9.0 (API 28). In addition, your platform project requires Android support libraries 28.0.0 or greater, and its theme needs to inherit from a Material Components theme or continue to inherit from an AppCompat theme. For more information, see [Getting started with Material Components for Android](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md).
+> 在 Android 上，材質視覺效果所需的最低版本為5.0 （API 21）或更高版本，以及9.0 版（API 28）的 TargetFramework。 此外，您的平臺專案需要28.0.0 或更高版本的 Android 支援程式庫，而且其主題必須繼承自材質元件主題，或繼續繼承自 AppCompat 主題。 如需詳細資訊，請參閱[開始使用適用于 Android 的材質元件](https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md)。
 
-Material Visual currently supports the following controls:
+材質視覺效果目前支援下列控制項：
 
 - [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)
 - [`Button`](xref:Xamarin.Forms.Button)
@@ -49,29 +49,29 @@ Material Visual currently supports the following controls:
 - [`Stepper`](xref:Xamarin.Forms.Stepper)
 - [`TimePicker`](xref:Xamarin.Forms.TimePicker)
 
-Material controls are realized by Material renderers, which apply the Material Design rules. Functionally, Material renderers are no different to the default renderers. For more information, see [Customize Material Visual](#customize-material-visual).
+材質控制項是透過材質轉譯器來實現，其適用于材質設計規則。 在功能上，材質轉譯器與預設轉譯器並無不同。 如需詳細資訊，請參閱[自訂材質視覺效果](#customize-material-visual)。
 
-## <a name="initialize-material-visual"></a>Initialize Material Visual
+## <a name="initialize-material-visual"></a>初始化材質視覺效果
 
-After installing the [Xamarin.Forms.Visual.Material](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet package, the Material renderers must be initialized in each platform project.
+安裝[Xamarin](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/) NuGet 套件之後，必須在每個平臺專案中初始化材質轉譯器。
 
-On iOS, this should occur in **AppDelegate.cs** by invoking the `Xamarin.Forms.FormsMaterial.Init` method *after* the `Xamarin.Forms.Forms.Init` method:
+在 iOS 上，這應該會在**AppDelegate.cs**中發生，方法是在 `Xamarin.Forms.Forms.Init` 方法*之後*叫用 `Xamarin.Forms.FormsMaterial.Init` 方法：
 
 ```csharp
 global::Xamarin.Forms.Forms.Init();
 global::Xamarin.Forms.FormsMaterial.Init();
 ```
 
-On Android, this should occur in **MainActivity.cs** by invoking the `Xamarin.Forms.FormsMaterial.Init` method *after* the `Xamarin.Forms.Forms.Init` method:
+在 Android 上，這應該會在**MainActivity.cs**中發生，方法是在 `Xamarin.Forms.Forms.Init` 方法*之後*叫用 `Xamarin.Forms.FormsMaterial.Init` 方法：
 
 ```csharp
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 ```
 
-## <a name="apply-material-visual"></a>Apply Material Visual
+## <a name="apply-material-visual"></a>套用材質視覺效果
 
-Applications can enable Material Visual by setting the [`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual) property on a page, layout, or view, to `Material`:
+應用程式可以藉由將頁面、版面配置或視圖上的 [ [`VisualElement.Visual`](xref:Xamarin.Forms.VisualElement.Visual) ] 屬性設定為 `Material`，來啟用材質視覺效果：
 
 ```xaml
 <ContentPage Visual="Material"
@@ -80,42 +80,42 @@ Applications can enable Material Visual by setting the [`VisualElement.Visual`](
 </ContentPage>
 ```
 
-對等的 C# 程式碼為：
+對等的 C# 程式碼是：
 
 ```csharp
 ContentPage contentPage = new ContentPage();
 contentPage.Visual = VisualMarker.Material;
 ```
 
-Setting the `VisualElement.Visual` property to `Material` directs your application to use the Material Visual renderers instead of the default renderers. The [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) property can be set to any type that implements `IVisual`, with the [`VisualMarker`](xref:Xamarin.Forms.VisualMarker) class providing the following `IVisual` properties:
+將 `VisualElement.Visual` 屬性設定為 `Material` 會指示您的應用程式使用材質視覺化轉譯器，而不是預設轉譯器。 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)屬性可以設定為任何可執行 `IVisual`的型別，且[`VisualMarker`](xref:Xamarin.Forms.VisualMarker)類別提供下列 `IVisual` 屬性：
 
-- `Default` – indicates that the view should render using the default renderer.
-- `MatchParent` – indicates that the view should use the same renderer as its direct parent.
-- `Material` – indicates that the view should render using a Material renderer.
+- `Default` –表示此視圖應該使用預設轉譯器來呈現。
+- `MatchParent` –表示此視圖應該使用與其直接父系相同的轉譯器。
+- `Material` –表示此視圖應該使用材質轉譯器來呈現。
 
 > [!IMPORTANT]
-> The [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) property is defined in the [`VisualElement`](xref:Xamarin.Forms.VisualElement) class, with views inheriting the `Visual` property value from their parents. Therefore, setting the `Visual` property on a [`ContentPage`](xref:Xamarin.Forms.ContentPage) ensures that any supported views in the page will use that Visual. In addition, the `Visual` property can be overridden on a view.
+> [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)屬性是在[`VisualElement`](xref:Xamarin.Forms.VisualElement)類別中定義，而且 views 會從其父代繼承 `Visual` 屬性值。 因此，在[`ContentPage`](xref:Xamarin.Forms.ContentPage)上設定 `Visual` 屬性，可確保頁面中任何支援的視圖都會使用該視覺效果。 此外，您可以在視圖上覆寫 `Visual` 屬性。
 
-The following screenshots show a user interface rendered using the default renderers:
+下列螢幕擷取畫面顯示使用預設轉譯器呈現的使用者介面：
 
-[![Screenshot of default renderers, on iOS and Android](material-visual-images/default-renderers.png "Views using default renderers")](material-visual-images/default-renderers-large.png#lightbox)
+[![IOS 和 Android 上預設轉譯器的螢幕擷取畫面](material-visual-images/default-renderers.png "使用預設轉譯器的視圖")](material-visual-images/default-renderers-large.png#lightbox)
 
-The following screenshots show the same user interface rendered using the Material renderers:
+下列螢幕擷取畫面顯示使用材質轉譯器呈現的相同使用者介面：
 
-[![Screenshot of Material renderers, on iOS and Android](material-visual-images/material-renderers.png "Views using Material renderers")](material-visual-images/material-renderers-large.png#lightbox)
+[![IOS 和 Android 上的材質轉譯器螢幕擷取畫面](material-visual-images/material-renderers.png "使用材質轉譯器的視圖")](material-visual-images/material-renderers-large.png#lightbox)
 
-The main visible differences between the default renderers and Material renderers, shown here, are that the Material renderers capitalize [`Button`](xref:Xamarin.Forms.Button) text, and round the corners of [`Frame`](xref:Xamarin.Forms.Frame) borders. However, Material renderers use native controls, and therefore there may still be user interface differences between platforms for areas such as fonts, shadows, colors, and elevation.
+預設轉譯器和材質轉譯器之間的主要可見差異（如下所示），是材質轉譯器會[`Button`](xref:Xamarin.Forms.Button)文字，並將[`Frame`](xref:Xamarin.Forms.Frame)框線的角落四捨五入。 不過，材質轉譯器會使用原生控制項，因此，字型、陰影、色彩和提高許可權等區域的平臺可能還是會有使用者介面的差異。
 
 > [!NOTE]
-> Material Design components adhere closely to Google's guidelines. As a result, Material Design renderers are biased towards that sizing and behavior. When you require greater control of styles or behavior, you can still create your own [Effect](~/xamarin-forms/app-fundamentals/effects/index.md), [Behavior](~/xamarin-forms/app-fundamentals/behaviors/index.md), or [Custom Renderer](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) to achieve the detail you require.
+> 材質設計元件會嚴格遵守 Google 的指導方針。 因此，材質設計轉譯器會偏向大小和行為。 當您需要對樣式或行為有更大的控制權時，您仍然可以建立自己的[效果](~/xamarin-forms/app-fundamentals/effects/index.md)、[行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)或[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器，以達到所需的詳細資料。
 
-## <a name="customize-material-visual"></a>Customize Material Visual
+## <a name="customize-material-visual"></a>自訂材質視覺效果
 
-The Material Visual NuGet package is a collection of renderers that realize the Xamarin.Forms controls. Customizing Material Visual controls is identical to customizing default controls.
+材質視覺效果 NuGet 套件是可實現 Xamarin 控制項的轉譯器集合。 自訂材質視覺控制項與自訂預設控制項相同。
 
-Effects are the recommended technique when the goal is to customize an existing control. If a Material Visual renderer exists, it is less work to customize the control with an effect than it is to subclass the renderer. For more information about effects see [Xamarin.Forms effects](~/xamarin-forms/app-fundamentals/effects/index.md).
+當目標是要自訂現有的控制項時，效果是建議的技巧。 如果有材質視覺效果轉譯器，則自訂控制項的效果比較少，而不是將轉譯器設為子類別。 如需效果的詳細資訊，請參閱[Xamarin 效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
-Custom renderers are the recommended technique when a Material renderer does not exist. The following renderer classes are included with Material Visual:
+當材質轉譯器不存在時，自訂轉譯器是建議的技術。 下列轉譯程式類別隨附于材質視覺效果中：
 
 - `MaterialButtonRenderer`
 - `MaterialCheckBoxRenderer`
@@ -130,7 +130,7 @@ Custom renderers are the recommended technique when a Material renderer does not
 - `MaterialSliderRenderer`
 - `MaterialStepperRenderer`
 
-Subclassing a Material renderer is almost identical to non-Material renderers. However, when exporting a renderer that subclasses a Material renderer, you must provide a third argument to the `ExportRenderer` attribute that specifies the `VisualMarker.MaterialVisual` type:
+將材質轉譯器子類別化與非材質轉譯器幾乎相同。 不過，匯出子類別化材質轉譯器的轉譯器時，您必須將第三個引數提供給指定 `VisualMarker.MaterialVisual` 類型的 `ExportRenderer` 屬性：
 
 ```csharp
 using Xamarin.Forms.Material.Android;
@@ -145,16 +145,16 @@ namespace MyApp.Android
 }
 ```
 
-In this example, the `ExportRendererAttribute` specifies that the `CustomMaterialProgressBarRenderer` class will be used to render the [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) view, with the `IVisual` type registered as the third argument.
+在此範例中，`ExportRendererAttribute` 指定將使用 `CustomMaterialProgressBarRenderer` 類別來呈現[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)視圖，並將 `IVisual` 類型註冊為第三個引數。
 
 > [!NOTE]
-> A renderer that specifies an `IVisual` type, as part of its `ExportRendererAttribute`, will be used to render opted in views, rather than the default renderer. At renderer selection time, the `Visual` property of the view is inspected and included in the renderer selection process.
+> 指定 `IVisual` 類型做為其 `ExportRendererAttribute`之一部分的轉譯器，將用來轉譯選擇的視圖，而不是預設轉譯器。 在轉譯器選取時間，會檢查視圖的 `Visual` 屬性，並將其包含在轉譯器選取進程中。
 
-For more information about custom renderers, see [Custom Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
+如需自訂轉譯器的詳細資訊，請參閱[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器。
 
 ## <a name="related-links"></a>相關連結
 
-- [Material Visual (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
-- [Create a Xamarin.Forms Visual Renderer](create.md)
-- [Xamarin.Forms Effects](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [材質視覺效果（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+- [建立 Xamarin. Forms 視覺效果轉譯器](create.md)
+- [Xamarin. 表單效果](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
