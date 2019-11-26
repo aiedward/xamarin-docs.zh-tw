@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: d120b9420061ac0c3c4e2ccda3021320d29a547d
-ms.sourcegitcommit: 3434624a36a369986b6aeed7959dae60f7112a14
-ms.translationtype: HT
+ms.openlocfilehash: c73144f797447832d795c1379f12a52494c1fbca
+ms.sourcegitcommit: 1c87135a47780f34102952d4b140850b4f08b075
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69629589"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74536527"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -23,7 +23,7 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
 
 1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/get-started/installation/index.md)的 [Visual Studio](https://visualstudio.microsoft.com/)。
 
-2. 開啟現有專案，或建立使用 [Visual Studio C#]  (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。
+2. 開啟現有專案，或建立使用 [Visual Studio C#] (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。
 
     > [!IMPORTANT]
     > 若新增到 UWP 專案，請確保在專案屬性中設定組建 16299 或更高版本。
@@ -33,11 +33,11 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
     <!--markdownlint-disable MD023 -->
     # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]  。 搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部]  專案，包括 Android、iOS、UWP 與 .NET Standard 程式庫。
+    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。 搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部] 專案，包括 Android、iOS、UWP 與 .NET Standard 程式庫。
 
     # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]  。搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部]  專案，包括 Android、iOS 與 .NET Standard 程式庫。
+    In the Solution Explorer panel, right click on the project name and select **Add > Add NuGet Packages...** . Search for **Xamarin.Essentials** and install the package into **ALL** projects including Android, iOS, and .NET Standard libraries.
 
     -----
 
@@ -51,7 +51,7 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
 
     # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-    Xamarin.Essentials 支援最低 Android 4.4 版，這對應到 API 層級 19，但目標 Android 版本必須是 9.0 才能進行編譯，這對應到 API 層級 28。 (在 Visual Studio 中，這兩個版本是在 [Android 資訊清單] 索引標籤中 Android 專案的 [專案屬性] 中設定的。在 Visual Studio for Mac 中，它們是在 [Android 應用程式] 索引標籤中 [專案選項] 對話方塊中設定的。)
+    Xamarin.Essentials 支援最低 Android 4.4 版，這對應到 API 層級 19，但目標 Android 版本必須是 9.0 才能進行編譯，這對應到 API 層級 28。 (In Visual Studio, these two versions are set in the Project Properties dialog for the Android project, in the Android Manifest tab. In Visual Studio for Mac, they're set in the Project Options dialog for the Android project, in the Android Application tab.)
 
     Xamarin.Essentials 會安裝它所需的 Xamarin.Android.Support 程式庫 28.0.0.1 版。 您應用程式所需的任何其他 Xamarin.Android.Support 程式庫都也應該使用 NuGet 套件管理員更新到 28.0.0.1 版。 您應用程式使用的所有 Xamarin.Android.Support 程式庫都應該相同，而且至少必須是 28.0.0.1 版。 若您有關於在方案中新增 Xamarin.Essentials NuGet 或更新 NuGet 的問題，請參閱[疑難排解介面](troubleshooting.md)。
 
@@ -68,7 +68,7 @@ Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Stud
     若要處理 Android 上的執行階段權限，Xamarin.Essentials 必須接收任 `OnRequestPermissionsResult`。 將下列程式碼新增到所 `Activity` 類別：
 
     ```csharp
-    public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+    public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
     {
         Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
