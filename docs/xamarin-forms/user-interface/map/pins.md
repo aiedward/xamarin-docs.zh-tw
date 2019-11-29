@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
-ms.openlocfilehash: 930d2dcc701f88e2a350ec1011405bb18b86de6e
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.openlocfilehash: 197c48a7a3486d7161d351a6b06101daaa389256
+ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425551"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74556166"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. 表單地圖釘選
 
@@ -198,7 +198,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 </ContentPage>
 ```
 
-[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)的屬性資料會系結至已連線 viewmodel 的 `Locations` 屬性，它會傳回 `Location` 物件的 `ObservableCollection`，也就是自訂類型。 每個 `Location` 物件會定義 `string` 類型的 `Address` 和 `Description` 屬性，[以及 `Position` 類型](xref:Xamarin.Forms.Maps.Position)的 `Position` 屬性。
+[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)的屬性資料會系結至已連線 viewmodel 的 `Locations` 屬性，它會傳回 `Location` 物件的 `ObservableCollection`，也就是自訂類型。 每個 `Location` 物件會定義 `string`類型的 `Address` 和 `Description` 屬性，[以及 `Position` 類型](xref:Xamarin.Forms.Maps.Position)的`Position`屬性。
 
 `IEnumerable` 集合中每個專案的外觀都是藉由將[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)屬性設定為包含[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)來定義，而資料會系結至適當的屬性。
 
@@ -225,6 +225,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
             </local:MapItemTemplateSelector.DefaultTemplate>
             <local:MapItemTemplateSelector.XamarinTemplate>
                 <DataTemplate>
+                    <!-- Change the property values, or the properties that are bound to. -->
                     <maps:Pin Position="{Binding Position}"
                               Address="{Binding Address}"
                               Label="Xamarin!" />
@@ -259,6 +260,9 @@ public class MapItemTemplateSelector : DataTemplateSelector
 ```
 
 `MapItemTemplateSelector` 類別會定義設定為不同資料範本的 `DefaultTemplate` 和 `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `OnSelectTemplate` 方法會傳回 `XamarinTemplate`，當您按下 `Pin` 時，會將 "Xamarin" 顯示為標籤，而當專案具有包含「三藩市」的位址時。 當專案沒有包含「三藩市」的位址時，`OnSelectTemplate` 方法會傳回 `DefaultTemplate`。
+
+> [!NOTE]
+> 這項功能的使用案例是根據 `Pin` 子類型，將子歸類[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件的屬性系結至不同的屬性。
 
 如需資料範本選取器的詳細資訊，請參閱[建立 Xamarin DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 

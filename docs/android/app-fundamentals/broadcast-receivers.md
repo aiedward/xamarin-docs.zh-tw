@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: 9f490bec121481d9f3f661913d8aefcef999bb4a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c9a0eee2779aa392cb2049b5518b6f30b7f05abc
+ms.sourcegitcommit: 58a08133496df53a639a82a7f672724220c57fd5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016962"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540389"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin 中的廣播接收器
 
@@ -112,19 +112,19 @@ public class MainActivity: Activity
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
-        receiver = new MySampleBroadcastReceiver()
+        receiver = new MySampleBroadcastReceiver();
 
         // Code omitted for clarity
     }
 
-    protected override OnResume() 
+    protected override void OnResume() 
     {
         base.OnResume();
         RegisterReceiver(receiver, new IntentFilter("com.xamarin.example.TEST"));
         // Code omitted for clarity
     }
 
-    protected override OnPause() 
+    protected override void OnPause() 
     {
         UnregisterReceiver(receiver);
         // Code omitted for clarity
