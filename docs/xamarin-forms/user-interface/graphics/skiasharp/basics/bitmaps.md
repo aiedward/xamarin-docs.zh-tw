@@ -1,40 +1,40 @@
 ---
-title: SkiaSharp 點陣圖基本概念
-description: 本文說明如何從各種來源載入 SkiaSharp 點陣圖並將它們顯示在 Xamarin.Forms 應用程式，並示範此範例程式碼。
+title: SkiaSharp 中的點陣圖基本概念
+description: 本文說明如何從各種來源載入 SkiaSharp 中的點陣圖，並將其顯示在 Xamarin 中，並以範例程式碼示範。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 80f2b686e9802a93b0cf32420ccaef3e8877727c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4aa73e1cba3f970396e5a52679372a160f47f7af
+ms.sourcegitcommit: 3bf02ecac9a8855779e07eb1e7e27abb9fc38934
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759557"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74658264"
 ---
-# <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 點陣圖基本概念
+# <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的點陣圖基本概念
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _從各種來源載入點陣圖並加以顯示。_
 
-SkiaSharp 點陣圖的支援是很龐大。 本文章涵蓋的基本概念&mdash;如何載入點陣圖，以及如何顯示它們：
+SkiaSharp 中的點陣圖支援相當廣泛。 本文僅涵蓋基本 &mdash; 如何載入點陣圖以及如何顯示它們：
 
-![](bitmaps-images/basicbitmaps-small.png "顯示的兩個點陣圖")
+![](bitmaps-images/basicbitmaps-small.png "The display of two bitmaps")
 
-一節中可以找到更深入探索的點陣圖[SkiaSharp 點陣圖](../bitmaps/index.md)。
+在[SkiaSharp 點陣圖](../bitmaps/index.md)一節中可以找到更深入的點陣圖探索。
 
-SkiaSharp 點陣圖必須是類型的物件[ `SKBitmap` ](xref:SkiaSharp.SKBitmap)。 有許多方式可建立點陣圖，但這篇文章會限制本身[ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))方法，從.NET 載入點陣圖`Stream`物件。
+SkiaSharp 點陣圖是[`SKBitmap`](xref:SkiaSharp.SKBitmap)類型的物件。 建立點陣圖的方式有很多種，但本文會將自己限制為[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))方法，這會從 .net `Stream` 物件載入點陣圖。
 
-**基本點陣圖**頁面**SkiaSharpFormsDemos**程式示範如何從三個不同的來源載入點陣圖：
+**SkiaSharpFormsDemos**程式中的 [**基本點陣圖**] 頁面會示範如何從三個不同的來源載入點陣圖：
 
-- 透過網際網路
-- 從資源內嵌在可執行檔
+- 透過網際網路的
+- 從可執行檔中內嵌的資源
 - 從使用者的相片媒體櫃
 
-三個`SKBitmap`物件的下列三個來源定義為中的欄位[ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs)類別：
+這三個來源的三個 `SKBitmap` 物件會定義為[`BasicBitmapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs)類別中的欄位：
 
 ```csharp
 public class BasicBitmapsPage : ContentPage
@@ -59,15 +59,15 @@ public class BasicBitmapsPage : ContentPage
 
 ## <a name="loading-a-bitmap-from-the-web"></a>從 Web 載入點陣圖
 
-若要載入點陣圖，URL 為基礎，您可以使用[ `HttpClient` ](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0)類別。 您應該只有一個執行個體具現化`HttpClient`並重複使用它，因此將它儲存為欄位：
+若要載入以 URL 為基礎的點陣圖，您可以使用[`HttpClient`](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0)類別。 您應該只具現化 `HttpClient` 的一個實例並重複使用它，因此請將它儲存為欄位：
 
 ```csharp
 HttpClient httpClient = new HttpClient();
 ```
 
-使用時`HttpClient`iOS 和 Android 應用程式，您會想要設定專案屬性中所述的文件上 **[傳輸層安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** 。
+搭配 iOS 和 Android 應用程式使用 `HttpClient` 時，您會想要設定專案屬性，如 **[傳輸層安全性（TLS） 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** 檔中所述。
 
-因為它是最方便的方式使用`await`運算子搭配`HttpClient`，不能在執行的程式碼`BasicBitmapsPage`建構函式。 相反地，它屬於`OnAppearing`覆寫。 URL 會指向使用一些範例點陣圖 Xamarin 網站上的區域。 在網站上的套件可讓附加調整大小的點陣圖為特定寬度的規格：
+因為使用 `await` 運算子搭配 `HttpClient`最為方便，所以無法在 `BasicBitmapsPage` 的程式碼中執行程式碼。 相反地，它是 `OnAppearing` 覆寫的一部分。 這裡的 URL 會指向 Xamarin 網站上的某個區域，其中包含一些範例點陣圖。 網站上的封裝可讓您附加規格，將點陣圖大小調整為特定寬度：
 
 ```csharp
 protected override async void OnAppearing()
@@ -85,7 +85,7 @@ protected override async void OnAppearing()
             await stream.CopyToAsync(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            webBitmap = SKBitmap.Decode(stream);
+            webBitmap = SKBitmap.Decode(memStream);
             canvasView.InvalidateSurface();
         };
     }
@@ -95,15 +95,15 @@ protected override async void OnAppearing()
 }
 ```
 
-使用時，Android 作業系統會引發例外狀況`Stream`傳回從`GetStreamAsync`在`SKBitmap.Decode`方法因為它正在執行主執行緒上的長時間作業。 基於這個理由，點陣圖檔案的內容複製到`MemoryStream`物件使用`CopyToAsync`。
+使用 `SKBitmap.Decode` 方法中 `GetStreamAsync` 所傳回的 `Stream` 時，Android 作業系統會引發例外狀況，因為它會在主執行緒上執行冗長的作業。 基於這個理由，點陣圖檔案的內容會使用 `CopyToAsync`複製到 `MemoryStream` 物件。
 
-靜態`SKBitmap.Decode`方法會負責解碼點陣圖檔案。 它會搭配 JPEG、 PNG 和 GIF 點陣圖格式，並將結果儲存在內部 SkiaSharp 格式。 在此時`SKCanvasView`需要失效，以允許`PaintSurface`處理常式來更新顯示。
+靜態 `SKBitmap.Decode` 方法負責解碼點陣圖檔案。 其適用于 JPEG、PNG 和 GIF 點陣圖格式，並將結果儲存為內部 SkiaSharp 格式。 此時，`SKCanvasView` 必須失效，才能讓 `PaintSurface` 處理常式更新顯示。
 
-## <a name="loading-a-bitmap-resource"></a>正在載入點陣圖資源
+## <a name="loading-a-bitmap-resource"></a>載入點陣圖資源
 
-程式碼，以載入點陣圖的最簡單方法直接在您的應用程式中包括點陣圖資源。 **SkiaSharpFormsDemos**計畫包含名為的資料夾**媒體**包含數個點陣圖檔案，包括一個名為**monkey.png**。 點陣圖儲存為程式資源，您必須使用**屬性**對話方塊，請將檔案**建置動作**的**內嵌資源**！
+就程式碼而言，載入點陣圖最簡單的方法，就是直接在您的應用程式中包含點陣圖資源。 **SkiaSharpFormsDemos**套裝程式含名為**Media**的資料夾，其中包含數個位圖檔案，包括一個名為**的猴子 .png**。 對於儲存為程式資源的點陣圖，您必須使用 [**屬性**] 對話方塊為檔案提供**內嵌資源**的**組建動作**！
 
-每個內嵌資源都有一個*資源識別碼*，其中包含專案名稱、資料夾和檔案名，所有都是依期間連接：**SkiaSharpFormsDemos. Media. .png**。 您可以指定該資源，以取得存取此資源識別碼做為引數[ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法[ `Assembly` ](xref:System.Reflection.Assembly)類別：
+每個內嵌資源都有一個*資源識別碼*，其中包含專案名稱、資料夾和檔案名，全都以句點（.）： **SkiaSharpFormsDemos**連接。 您可以藉由將資源識別碼指定為[`Assembly`](xref:System.Reflection.Assembly)類別之[`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))方法的引數，來取得此資源的存取權：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -115,15 +115,15 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 }
 ```
 
-這`Stream`物件可以直接傳遞`SKBitmap.Decode`方法。
+這個 `Stream` 物件可以直接傳遞至 `SKBitmap.Decode` 方法。
 
-## <a name="loading-a-bitmap-from-the-photo-library"></a>從相片庫載入點陣圖
+## <a name="loading-a-bitmap-from-the-photo-library"></a>從相片媒體櫃載入點陣圖
 
-您也可讓使用者從裝置的圖片庫載入相片。 Xamarin.Forms 本身所未提供這項功能。 作業要求的相依性服務，例如本文所述[挑選相片圖片庫從](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)。
+使用者也可以從裝置的圖片庫載入相片。 Xamarin 不會提供這項功能。表單本身。 作業需要相依性服務，例如[從圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)一文中所述。
 
-**IPhotoLibrary.cs**中的檔案**SkiaSharpFormsDemos**專案和三個**PhotoLibrary.cs**平台專案中的檔案已經過修改從那篇文章。 此外，Android **MainActivity.cs**一文所述，檔案已修改和 iOS 專案具有權限可存取兩行的底端與相片媒體櫃**info.plist**檔案。
+**SkiaSharpFormsDemos**專案中的**IPhotoLibrary.cs**檔案和平臺專案中的三個**PhotoLibrary.cs**檔案已從該文章中改編。 此外，Android **MainActivity.cs**檔案已如文章中所述修改過，而且 iOS 專案已獲得存取相片媒體櫃的許可權，並在**plist**檔案的底部有兩行。
 
-`BasicBitmapsPage`建構函式加入`TapGestureRecognizer`到`SKCanvasView`點選的通知。 在點選，收到`Tapped`處理常式會取得存取圖片選擇器相依性服務和呼叫`PickPhotoAsync`。 如果`Stream`會傳回物件，則它會傳遞給`SKBitmap.Decode`方法：
+`BasicBitmapsPage` 的函式會將 `TapGestureRecognizer` 新增至 `SKCanvasView`，以接收點擊的通知。 當您收到點一下時，`Tapped` 處理常式會取得圖片選擇器相依性服務的存取權，並呼叫 `PickPhotoAsync`。 如果傳回 `Stream` 物件，則會將它傳遞至 `SKBitmap.Decode` 方法：
 
 ```csharp
 // Add tap gesture recognizer
@@ -145,21 +145,21 @@ tapRecognizer.Tapped += async (sender, args) =>
 canvasView.GestureRecognizers.Add(tapRecognizer);
 ```
 
-請注意，`Tapped`處理常式也會呼叫`InvalidateSurface`方法`SKCanvasView`物件。 這會產生新的呼叫`PaintSurface`處理常式。
+請注意，`Tapped` 處理常式也會呼叫 `SKCanvasView` 物件的 `InvalidateSurface` 方法。 這會產生新的 `PaintSurface` 處理常式呼叫。
 
 ## <a name="displaying-the-bitmaps"></a>顯示點陣圖
 
-`PaintSurface`處理常式需要顯示三個點陣圖。 處理常式會假設電話處於直向模式，並將畫布以垂直方式分割成三個相等的部分。
+`PaintSurface` 處理常式必須顯示三個位圖。 此處理程式假設電話是直向模式，並將畫布垂直分割成三個相等的部分。
 
-會顯示與最簡單的第一個點陣圖[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint))方法。 您只需要指定是點陣圖左上角放置所在的 X 和 Y 座標：
+第一個點陣圖會以最簡單的[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint))方法來顯示。 您只需要指定 X 和 Y 座標，點陣圖的左上角就會放在此處：
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, Single x, Single y, SKPaint paint = null)
 ```
 
-雖然`SKPaint`定義參數，它有預設值是`null`，您可以忽略它。 點陣圖的像素會直接轉換為一對一的對應與顯示表面的像素。 您會看到應用程式的這`SKPaint`上的 [下一步] 區段中的引數[ **SkiaSharp 透明度**](transparency.md)。
+雖然定義了 `SKPaint` 參數，但它的預設值是 `null`，而您可以忽略它。 點陣圖的圖元只會以一對一的對應傳輸到顯示介面的圖元。 您會在下一節[**SkiaSharp 透明度**](transparency.md)中看到此 `SKPaint` 引數的應用程式。
 
-程式可以取得包含點陣圖的像素尺寸[ `Width` ](xref:SkiaSharp.SKBitmap.Width)並[ `Height` ](xref:SkiaSharp.SKBitmap.Height)屬性。 這些內容可讓程式，以計算要放置點陣圖畫布右上第三個中央座標：
+程式可以使用[`Width`](xref:SkiaSharp.SKBitmap.Width)和[`Height`](xref:SkiaSharp.SKBitmap.Height)屬性來取得點陣圖的圖元尺寸。 這些屬性可讓程式計算座標，以將點陣圖放在畫布的上三分之一的中央：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -180,15 +180,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-版本會顯示其他兩個點陣圖[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint))使用`SKRect`參數：
+其他兩個位圖會以具有 `SKRect` 參數的[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint))版本顯示：
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, SKRect dest, SKPaint paint = null)
 ```
 
-第三個新版[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))有兩個`SKRect`本文中不使用引數來指定要顯示，但該版本的點陣圖矩形子集。
+第三版的[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))有兩個 `SKRect` 引數，可指定要顯示的點陣圖矩形子集，但此版本不會在本文中使用。
 
-以下是顯示從內嵌的資源點陣圖載入點陣圖的程式碼：
+以下程式碼顯示從內嵌資源點陣圖載入的點陣圖：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -203,11 +203,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-點陣圖縮放至矩形中，這就是為什麼 monkey 水平縮放這些螢幕擷取畫面中的維度：
+點陣圖會延展到矩形的維度，這就是在這些螢幕擷取畫面中，可將猴子水準延展的原因：
 
-[![](bitmaps-images/basicbitmaps-small.png "三個基本的點陣圖頁面的螢幕擷取畫面")](bitmaps-images/basicbitmaps-large.png#lightbox "三個基本的點陣圖頁面的螢幕擷取畫面")
+[![](bitmaps-images/basicbitmaps-small.png "A triple screenshot of the Basic Bitmaps page")](bitmaps-images/basicbitmaps-large.png#lightbox "A triple screenshot of the Basic Bitmaps page")
 
-第三個映像&mdash;如果您執行程式，並從您自己的圖片庫載入相片，只可以看到&mdash;也會顯示在矩形中，但該矩形的位置和大小會調整，以維持點陣圖的長寬比。 此計算是稍微複雜，因為它需要計算縮放比例取決於點陣圖和目的地矩形的大小和置中顯示該區域內的矩形：
+第三個影像 &mdash; 只有當您執行程式並從自己的圖片庫載入相片時，才會看到 &mdash; 也會顯示在矩形內，但是矩形的位置和大小會調整以維持點陣圖的外觀比例。 這項計算比較複雜，因為它需要根據點陣圖和目的地矩形的大小來計算縮放比例，並將矩形置中在該區域內：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,12 +242,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-如果沒有點陣圖具有尚未載入從圖片庫中，則`else`區塊顯示一些要提示使用者點選螢幕的文字。
+如果尚未從圖片庫載入任何點陣圖，則 [`else`] 區塊會顯示一些文字，以提示使用者點擊畫面。
 
-您可以顯示有不同程度的透明度，與下一個發行項上的點陣圖[ **SkiaSharp 透明度**](transparency.md)描述方式。
+您可以使用各種透明度來顯示點陣圖，而[**SkiaSharp 透明度**](transparency.md)的下一篇文章則說明。
 
 ## <a name="related-links"></a>相關連結
 
 - [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [從 圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
+- [從圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
