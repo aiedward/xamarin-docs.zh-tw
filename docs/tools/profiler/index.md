@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: 330d41ea795754388402fbb7c660ba8d77f1aa4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8927e7b2a1b194d1bfab334736c3d024f0542b01
+ms.sourcegitcommit: 60e955ce65194ffea987409157ccc7d5db87c2ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019401"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690203"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -34,8 +34,8 @@ Xamarin Profiler 是獨立應用程式，並已與 Visual Studio for Mac 和 Vis
 
 下載適用于您平臺的安裝套件：
 
-- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac.pkg)
-- [**時段**](https://dl.xamarin.com/profiler/profiler-windows.msi)
+- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac-1.6.10-15.pkg)
+- [**時段**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
 
 下載完成後，請啟動安裝程式，將 Xamarin Profiler 新增至您的系統。
 
@@ -96,7 +96,7 @@ Xamarin Profiler 的支援可在下列平臺上取得：
 
 您必須允許在應用程式的專案選項中進行分析，才能成功分析應用程式。
 
-- IOS
+- iOS：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -112,7 +112,7 @@ Xamarin Profiler 的支援可在下列平臺上取得：
 
 -----
 
-- 面向
+- Android：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -186,11 +186,11 @@ Xamarin Profiler 是由五個區段組成，如下所示：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[Visual Studio for Mac 中的![Profiler 區段](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
+[Visual Studio for Mac 中的 ![Profiler 區段](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[Visual Studio 中的![Profiler 區段](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
+[Visual Studio 中的 ![Profiler 區段](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -341,4 +341,4 @@ SGen 是一種產生的 GC，它會將應用程式的物件配置成三個堆積
 ## <a name="related-links"></a>相關連結
 
 - [記憶體和效能最佳做法](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [版本資訊](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/profiler/preview/index.md)
+- [版本資訊](/xamarin/tools/profiler/release-notes/)
