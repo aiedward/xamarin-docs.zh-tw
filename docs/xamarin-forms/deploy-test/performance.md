@@ -1,28 +1,28 @@
 ---
 title: 改進 Xamarin.Forms 應用程式效能
-description: 有許多技巧可增加 Xamarin.Forms 應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+description: 有許多技巧可增加 Xamarin.Forms 應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
 ms.prod: xamarin
 ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2019
-ms.openlocfilehash: 0841cb0cbe97644f3bb53105887f3adadf9bf6c5
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
-ms.translationtype: HT
+ms.date: 11/27/2019
+ms.openlocfilehash: c57281f3fa526bb238f4a0dd6a4fad70376c742e
+ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68820938"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74681336"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>改進 Xamarin.Forms 應用程式效能
 
 > [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]
 
-**Evolve 2016：使用 Xamarin.Forms 最佳化應用程式效能**
+**Evolve 2016：使用 Xamarin.Forms 最佳化應用程式效能** \(英文\)
 
 不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少裝置電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。
 
-有許多技術可用來提升 Xamarin.Forms 應用程式的效能和認知效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+有許多技術可用來提升 Xamarin.Forms 應用程式的效能和認知效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
 
 > [!NOTE]
 > 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中探討可改善記憶體使用情況的非平台專用技術，以及使用 Xamarin 平台建置之應用程式的效能。
@@ -43,7 +43,7 @@ XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (I
 
 ## <a name="reduce-unnecessary-bindings"></a>減少不必要的繫結
 
-請勿針對能輕易靜態設定的內容使用繫結。 將不需繫結的資料繫結並不會帶來任何好處，因為繫結本身並不符合成本效益。 例如，比起將 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 繫結到含有 "Accept" 值的 ViewModel `string` 屬性，設定 `Button.Text = "Accept"` 的額外負荷將會較少。
+請勿針對能輕易靜態設定的內容使用繫結。 將不需繫結的資料繫結並不會帶來任何好處，因為繫結本身並不符合成本效益。 例如，設定 `Button.Text = "Accept"` 的額外負荷比[`Button.Text`](xref:Xamarin.Forms.Button.Text)系結至值為 "Accept" 的 viewmodel `string` 屬性更少。
 
 ## <a name="use-fast-renderers"></a>使用快速轉譯器
 
@@ -157,6 +157,41 @@ Android 上的預先 (AOT) 編譯可將 Just in Time (JIT) 應用程式啟動額
 - 請勿過度頻繁地更新任何 [`Label`](xref:Xamarin.Forms.Label) 執行個體，因為變更標籤大小會使系統需重新計算整個畫面的版面配置。
 - 除非必要，請勿設定 [`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) 屬性。
 - 盡可能將任一 [`Label`](xref:Xamarin.Forms.Label) 執行個體的 [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) 設為 [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap)。
+
+## <a name="use-asynchronous-programming"></a>使用非同步程式設計
+
+藉由使用非同步程式設計，您的應用程式的整體回應性可以增強，而且通常會避免效能瓶頸。 在 .NET 中，以工作為[基礎的非同步模式（點路）](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)是非同步作業的建議設計模式。 不過，不正確使用點的方式可能會導致 unperformant 應用程式。 因此，使用點按時應遵循下列指導方針。
+
+### <a name="fundamentals"></a>Fundamentals
+
+- 瞭解工作生命週期，這是由 `TaskStatus` 列舉所表示。 如需詳細資訊，請參閱 TaskStatus 和工作[狀態](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap#task-status)的[意義](https://devblogs.microsoft.com/pfxteam/the-meaning-of-taskstatus/)。
+- 使用 `Task.WhenAll` 方法，以非同步方式等候多個非同步作業完成，而不是個別 `await` 一系列非同步作業。 如需詳細資訊，請參閱[system.threading.tasks.task.whenall](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall)。
+- 使用 `Task.WhenAny` 方法，以非同步方式等候多個非同步作業的其中一個完成。 如需詳細資訊，請參閱[system.threading.tasks.task.whenany](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall)。
+- 使用 `Task.Delay` 方法，產生在指定的時間之後完成的 `Task` 物件。 這適用于資料輪詢之類的案例，並延遲處理使用者輸入的預定時間。 如需詳細資訊，請參閱[Delay](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskdelay)。
+- 使用 `Task.Run` 方法，線上程集區上執行密集的同步 CPU 作業。 這個方法是 `TaskFactory.StartNew` 方法的快捷方式，其中已設定最最佳的引數。 如需詳細資訊，請參閱[執行](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskrun)。
+- 請避免嘗試建立非同步函式。 相反地，請使用生命週期事件或個別的初始化邏輯，以正確 `await` 任何初始化。 如需詳細資訊，請參閱 blog.stephencleary.com 上的[非同步構造](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html)函式。
+- 使用 [延遲工作模式]，以避免在應用程式啟動期間等候非同步作業完成。 如需詳細資訊，請參閱[asynclazy<t>](https://devblogs.microsoft.com/pfxteam/asynclazyt/)。
+- 建立現有非同步作業的工作包裝函式，而不使用點一下，方法是建立 `TaskCompletionSource<T>` 物件。 這些物件可獲得 `Task` 程式設計的優點，並可讓您控制相關聯 `Task`的存留期和完成。 如需詳細資訊，請參閱[TaskCompletionSource 的本質](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/)。
+非同步-mvvm-應用程式-命令）。
+- 當不需要處理非同步作業的結果時，傳回 `Task` 物件，而不是傳回等待的 `Task` 物件。 由於執行的內容切換較少，這會更有效率。
+- 使用工作平行程式庫（TPL）資料流程程式庫，例如在資料可用時進行處理，或當您有多個必須以非同步方式彼此通訊的作業時。 如需詳細資訊，請參閱[資料流程（工作平行程式庫）](/dotnet/standard/parallel-programming/dataflow-task-parallel-library)。
+
+### <a name="ui"></a>UI
+
+- 呼叫 API 的非同步版本（如果有的話）。 這可讓 UI 執行緒保持在未遭封鎖的狀態，協助改善使用者使用應用程式的體驗。
+- 使用 UI 執行緒上非同步作業的資料來更新 UI 元素，以避免擲回例外狀況。 不過，`ListView.ItemsSource` 屬性的更新會自動封送處理至 UI 執行緒。 如需判斷程式碼是否正在 UI 執行緒上執行的相關資訊，請參閱[Xamarin. Essentials： MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)。
+
+    > [!IMPORTANT]
+    > 透過資料系結更新的任何控制項屬性都會自動 marsheled 至 UI 執行緒。
+
+### <a name="error-handling"></a>錯誤處理
+
+- 瞭解非同步例外狀況處理。 以非同步方式執行的程式碼所擲回的未處理例外狀況，會傳播回到呼叫執行緒，但在某些情況下除外。 如需詳細資訊，請參閱[例外狀況處理（工作平行程式庫）](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library)。
+- 請避免建立 `async void` 方法，而是改為建立 `async Task` 方法。 這些可讓您更輕鬆地進行錯誤處理、複合性和可測試性。 此指導方針的例外狀況是非同步事件處理常式，必須傳回 `void`。 如需詳細資訊，請參閱[避免 Async Void](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#avoid-async-void)。
+- 請勿藉由呼叫 `Task.Wait`、`Task.Result`或 `GetAwaiter().GetResult` 方法來混合封鎖和非同步程式碼，因為它們可能會導致發生鎖死。 不過，如果必須違反這項指導方針，則慣用的方法是呼叫 `GetAwaiter().GetResult` 方法，因為它會保留工作例外狀況。 如需詳細資訊，請參閱[.net 4.5 中](https://devblogs.microsoft.com/pfxteam/task-exception-handling-in-net-4-5/)[的非同步方式和工作](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#async-all-the-way)例外狀況處理。
+- 盡可能使用 `ConfigureAwait` 方法，以建立無內容的程式碼。 無內容的程式碼對於行動應用程式具有較佳的效能，而且在使用部分非同步程式碼基底時，是避免鎖死的實用技巧。 如需詳細資訊，請參閱[設定內容](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#configure-context)。
+- 使用*接續*工作來執行功能，例如處理先前非同步作業所擲回的例外狀況，以及在啟動或正在執行時取消接續。 如需詳細資訊，請參閱[使用連續工作來連結](/dotnet/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks)工作。
+- 從 `ICommand`叫用非同步作業時，請使用非同步 `ICommand` 的執行。 這可確保非同步命令邏輯中的任何例外狀況都可以處理。 如需詳細資訊，請參閱[Async 程式設計：非同步 MVVM 應用程式的模式：命令](/archive/msdn-magazine/2014/april/async-programming-patterns-for-asynchronous-mvvm-applications-commands)。
 
 ## <a name="choose-a-dependency-injection-container-carefully"></a>謹慎選擇相依性插入容器
 
