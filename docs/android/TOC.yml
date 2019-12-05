@@ -476,7 +476,7 @@
           items:
             - name: 簡介
               href: data-cloud/data-access/introduction.md
-            - name: Configuration
+            - name: 設定
               href: data-cloud/data-access/configuration.md
             - name: 使用 SQLite.NET ORM
               href: data-cloud/data-access/using-sqlite-orm.md
@@ -619,8 +619,8 @@
           href: troubleshooting/resolving-library-installation-errors.md
         - name: 對於 Android SDK 工具所做的變更
           href: troubleshooting/sdk-cli-tooling-changes.md
-        - name: Xamarin.Android 錯誤參考
-          href: troubleshooting/errors.md
+        - name: Xamarin.Android 錯誤和警告參考
+          href: /xamarin/android/errors-and-warnings/
     - name: Wear
       href: wear/index.md
       items:
