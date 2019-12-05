@@ -6,17 +6,17 @@ ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
-ms.translationtype: HT
+ms.date: 12/03/2019
+ms.openlocfilehash: b87e713f89951d03408fa559bcf6e02cdae65e28
+ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978130"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74824238"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms 自訂轉譯器
 
-_Xamarin.Forms 使用者介面使用目標平台的原生控制項來轉譯，讓 Xamarin.Forms 應用程式保留每個平台適當的外觀及操作。自訂轉譯器可讓開發人員覆寫此程序，以自訂每個平台上 Xamarin.Forms 控制項的外觀和行為。_
+_Xamarin：表單使用者介面會使用目標平臺的原生控制項來轉譯，讓 Xamarin 應用程式能夠針對每個平臺保留適當的外觀與風格。自訂轉譯器可讓開發人員覆寫此程式，以自訂每個平臺上的 Xamarin 控制面板和行為。_
 
 ## <a name="introduction-to-custom-renderersintroductionmd"></a>[自訂轉譯器簡介](introduction.md)
 
@@ -46,18 +46,14 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 是將資料集合顯示
 
 Xamarin.Forms [`ViewCell`](xref:Xamarin.Forms.ViewCell) 是可以新增至 [`ListView`](xref:Xamarin.Forms.ListView) 或 [`TableView`](xref:Xamarin.Forms.TableView) 的資料格，包含開發人員定義的檢視。 本文示範如何建立 `ViewCell` 的自訂轉譯器，裝載於 Xamarin.Forms `ListView` 控制項內。 這會停止在 `ListView` 捲動期間重複呼叫 Xamarin.Forms 版面配置計算。
 
+## <a name="customizing-a-webviewhybridwebviewmd"></a>[自訂 Web 工作](hybridwebview.md)
+
+[Xamarin] [`WebView`](xref:Xamarin.Forms.WebView)是在您的應用程式中顯示 WEB 和 HTML 內容的視圖。 本文說明如何建立自訂轉譯器，以擴充 `WebView`，以允許C#從 JavaScript 叫用程式碼。
+
 ## <a name="implementing-a-viewviewmd"></a>[實作檢視](view.md)
 
 Xamarin.Forms 自訂使用者介面控制項應該衍生自用來在螢幕上放置配置和控制項的 [`View`](xref:Xamarin.Forms.View) 類別。 本文示範如何建立 Xamarin.Forms 自訂控制項的自訂轉譯器，用以從裝置相機顯示預覽視訊資料流。
 
-## <a name="implementing-a-hybridwebviewhybridwebviewmd"></a>[實作 HybridWebView](hybridwebview.md)
-
-本文示範如何建立 `HybridWebView` 自訂控制項的自訂轉譯器，該自訂控制項會示範如何強化平台特定的 Web 控制項，以允許從 JavaScript 叫用 C# 程式碼。
-
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[實作影片播放程式](video-player/index.md)
 
 本文說明如何編寫轉譯器以實作 `VideoPlayer` 控制項，此控制項可從 Web、內嵌為應用程式資源的影片、儲存於使用者裝置上影片庫中的影片，來播放影片。 已示範數種技術，其中包括實作方法和唯讀的可繫結屬性。
-
-## <a name="related-links"></a>相關連結
-
-- [Effects](~/xamarin-forms/app-fundamentals/effects/index.md)

@@ -1,18 +1,18 @@
 ---
 title: 轉譯器基底類別與原生控制項
-description: 每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。 本文列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。
+description: 每個 Xamarin.Forms 控制項都伴有每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 本文列出可實作每個 Xamarin.Forms 頁面、版面配置、檢視和資料格的轉譯器和原生控制項類別。
 ms.prod: xamarin
 ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/11/2019
-ms.openlocfilehash: cf9c5d7aa018a6d12a6c4788dc1e8114088d056c
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: a11bbbc40cd209f90d03817fc81f58bd5661bd23
+ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697123"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823878"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>轉譯器基底類別與原生控制項
 
@@ -38,7 +38,7 @@ _每個 Xamarin 控制項都有一個針對每個平臺所附的轉譯器，可�
 
 下表列出可實作每個 Xamarin.Forms [頁面](~/xamarin-forms/user-interface/controls/pages.md)類型的轉譯器和原生控制項類別：
 
-|頁面|轉譯器|iOS|Android|Android (AppCompat)|UWP|
+|頁面|轉換程式|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
 |[`ContentPage`](xref:Xamarin.Forms.ContentPage)|[PageRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/contentpage.md)|UIViewController|ViewGroup||FrameworkElement|
 |[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)|PhoneMasterDetailRenderer (iOS – 手機)、TabletMasterDetailPageRenderer (iOS – 平板電腦)、MasterDetailRenderer (Android)、MasterDetailPageRenderer (Android AppCompat)、MasterDetailPageRenderer (UWP)|UIViewController (手機)、UISplitViewController (平板電腦)|DrawerLayout (v4)|DrawerLayout (v4)|FrameworkElement (自訂控制項)|
@@ -51,12 +51,12 @@ _每個 Xamarin 控制項都有一個針對每個平臺所附的轉譯器，可�
 
 下表列出可實作每個 Xamarin.Forms [配置](~/xamarin-forms/user-interface/controls/layouts.md)類型的轉譯器和原生控制項類別：
 
-|配置|轉譯器|iOS|Android|UWP|
+|配置|轉換程式|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
 |[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|檢視|FrameworkElement|
 |[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|檢視|FrameworkElement|
 |[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|檢視|FrameworkElement|
-|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|Border|
+|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|邊界|
 |[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
 |[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|檢視|FrameworkElement|
 |[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|檢視|FrameworkElement|
@@ -68,9 +68,9 @@ _每個 Xamarin 控制項都有一個針對每個平臺所附的轉譯器，可�
 
 下表列出可實作每個 Xamarin.Forms [檢視](~/xamarin-forms/user-interface/controls/views.md)類型的轉譯器和原生控制項類別：
 
-|檢視|轉譯器|iOS|Android|Android (AppCompat)|UWP|
+|檢視|轉換程式|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
-|[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|進度列||進度列|
+|[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS 和 Android)、BoxViewRenderer (UWP)|UIView|ViewGroup||矩形|
 |[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|按鈕|AppCompatButton|按鈕|
 |[`CarouselView`](xref:Xamarin.Forms.CarouselView)|CarouselViewRenderer|UICollectionView||RecyclerView|ListViewBase|
@@ -85,7 +85,7 @@ _每個 Xamarin 控制項都有一個針對每個平臺所附的轉譯器，可�
 |[`ListView`](xref:Xamarin.Forms.ListView)|[ListViewRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)|UITableView|ListView||ListView|
 |[`Map`](xref:Xamarin.Forms.Maps.Map)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)|MKMapView|MapView||MapControl|
 |[`Picker`](xref:Xamarin.Forms.Picker)|PickerRenderer|UITextField|EditText|EditText|ComboBox|
-|[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|進度列||進度列|
+|[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|ProgressBar||ProgressBar|
 |`RefreshView`|RefreshViewRenderer|UIView||SwipeRefreshLayout|RefreshContainer|
 |[`SearchBar`](xref:Xamarin.Forms.SearchBar)|SearchBarRenderer|UISearchBar|SearchView||AutoSuggestBox|
 |[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|SeekBar||滑桿|
@@ -93,13 +93,13 @@ _每個 Xamarin 控制項都有一個針對每個平臺所附的轉譯器，可�
 |[`Switch`](xref:Xamarin.Forms.Switch)|SwitchRenderer|UISwitch|參數|SwitchCompat|ToggleSwitch|
 |[`TableView`](xref:Xamarin.Forms.TableView)|TableViewRenderer|UITableView|ListView||ListView|
 |[`TimePicker`](xref:Xamarin.Forms.TimePicker)|TimePickerRenderer|UITextField|EditText||TimePicker|
-|[`WebView`](xref:Xamarin.Forms.WebView)|WebViewRenderer|UIWebView|WebView||WebView|
+|[`WebView`](xref:Xamarin.Forms.WebView)|WkWebViewRenderer （iOS）、WebViewRenderer （Android 和 UWP）|WkWebView|WebView||WebView|
 
-## <a name="cells"></a>資料格
+## <a name="cells"></a>儲存格
 
 下表列出可實作每個 Xamarin.Forms [資料格](~/xamarin-forms/user-interface/controls/cells.md)類型的轉譯器和原生控制項類別：
 
-|資料格|轉譯器|iOS|Android|UWP|
+|儲存格|轉換程式|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
 |[`EntryCell`](xref:Xamarin.Forms.EntryCell)|EntryCellRenderer|具有 UITextField 的 UITableViewCell|具有 TextView 和 EditText 的 LinearLayout|具有 TextBox 的 DataTemplate|
 |[`SwitchCell`](xref:Xamarin.Forms.SwitchCell)|SwitchCellRenderer|具有 UISwitch 的 UITableViewCell|參數|具有 Grid 的 DataTemplate，包含 TextBlock 和 ToggleSwitch|
@@ -109,4 +109,4 @@ _每個 Xamarin 控制項都有一個針對每個平臺所附的轉譯器，可�
 
 ## <a name="summary"></a>總結
 
-本文列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。 每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。
+本文列出可實作每個 Xamarin.Forms 頁面、配置、檢視和資料格的轉譯器和原生控制項類別。 每個 Xamarin.Forms 控制項都伴有每個平台的轉譯器，這些平台可建立原生控制項的執行個體。
