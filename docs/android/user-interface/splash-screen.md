@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: cc499902058e7b20b00e65e0c6541b8d137804a7
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.openlocfilehash: c8363adf479f0880bfbdf6a047d495da4b849395
+ms.sourcegitcommit: a2ec4aef8457eab4310cde2a41485931263ce16b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425506"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74902263"
 ---
 # <a name="splash-screen"></a>啟動顯示畫面
 
@@ -20,7 +20,7 @@ ms.locfileid: "73425506"
 
 _Android 應用程式需要一些時間才能啟動，特別是當應用程式第一次在裝置上啟動時。啟動顯示畫面可能會顯示使用者的開始進度，或表示商標。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Android 應用程式需要一些時間才會啟動，特別是在第一次在裝置上執行應用程式時（有時這稱為 _「冷啟動」_ ）。 啟動顯示畫面可能會顯示使用者的開始進度，也可能會顯示商標資訊以識別並推廣應用程式。
 
@@ -88,7 +88,7 @@ Android 應用程式需要一些時間才會啟動，特別是在第一次在裝
   <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
   </style>
 
-    <style name="MyTheme" parent="MyTheme.Base">
+  <style name="MyTheme" parent="MyTheme.Base">
   </style>
 
   <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
