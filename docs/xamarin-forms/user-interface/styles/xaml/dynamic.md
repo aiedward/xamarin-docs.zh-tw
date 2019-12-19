@@ -1,6 +1,6 @@
 ---
-title: 在 Xamarin.Forms 中的動態樣式
-description: 這篇文章說明如何在 Xamarin.Forms 應用程式可以回應樣式變更在執行階段動態使用動態資源。
+title: Xamarin 中的動態樣式
+description: 本文說明 Xamarin Forms 應用程式如何使用動態資源，在執行時間動態回應樣式變更。
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
 ms.technology: xamarin-forms
@@ -15,15 +15,15 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 09/03/2019
 ms.locfileid: "70228188"
 ---
-# <a name="dynamic-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的動態樣式
+# <a name="dynamic-styles-in-xamarinforms"></a>Xamarin 中的動態樣式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_樣式，請勿回應屬性的變更和應用程式的持續期間保持不變。例如，指派樣式來視覺化項目，如果其中一個 Setter 執行個體已經過修改，移除或加入新的 set 存取子執行個體之後, 所做的變更不會套用至的視覺化項目。不過，應用程式可以使用動態資源回應在執行階段動態的樣式變更。_
+_樣式不會回應屬性變更，而且在應用程式的持續時間內會保持不變。例如，將樣式指派給視覺效果專案之後，如果其中一個 Setter 實例已修改、已移除，或加入新的 Setter 實例，這些變更將不會套用至視覺元素。不過，應用程式可以使用動態資源，在執行時間動態回應樣式變更。_
 
-`DynamicResource`標記延伸是類似`StaticResource`兩者都使用字典索引鍵，來擷取的值中的標記延伸[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)。 不過，雖然`StaticResource`執行單一字典查閱，`DynamicResource`維護字典索引鍵的連結。 因此，如果索引鍵相關聯的字典項目取代時，變更套用至的視覺化項目。 這可讓執行階段要在應用程式中進行的樣式變更。
+`DynamicResource` 標記延伸類似于 `StaticResource` 標記延伸，這兩者都使用字典索引鍵從[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)提取值。 不過，當 `StaticResource` 執行單一字典查閱時，`DynamicResource` 會維護字典索引鍵的連結。 因此，如果已取代與索引鍵相關聯的字典專案，則會將變更套用至視覺元素。 這可讓您在應用程式中進行執行時間樣式變更。
 
-下列程式碼範例示範*動態*XAML 頁面中的樣式：
+下列程式碼範例示範 XAML 頁面中的*動態*樣式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesPage" Title="Dynamic" IconImageSource="xaml.png">
@@ -54,9 +54,9 @@ _樣式，請勿回應屬性的變更和應用程式的持續期間保持不變�
 </ContentPage>
 ```
 
-[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體會使用`DynamicResource`標記延伸參考[ `Style` ](xref:Xamarin.Forms.Style)名為`searchBarStyle`，它不會在 XAML 中定義。 不過，因為[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)的屬性`SearchBar`執行個體已設定使用`DynamicResource`，遺漏的字典索引鍵不會導致擲回例外狀況。
+[`SearchBar`](xref:Xamarin.Forms.SearchBar)實例使用 `DynamicResource` 標記延伸來參考名為 `searchBarStyle`的[`Style`](xref:Xamarin.Forms.Style) ，但 XAML 中未定義此名稱。 不過，因為 `SearchBar` 實例的[`Style`](xref:Xamarin.Forms.NavigableElement.Style)屬性是使用 `DynamicResource`來設定，所以遺漏的字典索引鍵不會導致擲回例外狀況。
 
-相反地，在程式碼後置檔案中，建構函式建立[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)具有索引鍵的項目`searchBarStyle`，如下列程式碼範例所示：
+相反地，在程式碼後置檔案中，此函式會建立具有索引鍵 `searchBarStyle`的[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)專案，如下列程式碼範例所示：
 
 ```csharp
 public partial class DynamicStylesPage : ContentPage
@@ -82,12 +82,12 @@ public partial class DynamicStylesPage : ContentPage
 }
 ```
 
-當`OnButtonClicked`事件處理常式執行時，`searchBarStyle`將會切換`blueSearchBarStyle`和`greenSearchBarStyle`。 這會導致下列螢幕擷取畫面中顯示的外觀：
+執行 `OnButtonClicked` 事件處理常式時，`searchBarStyle` 會在 `blueSearchBarStyle` 和 `greenSearchBarStyle`之間切換。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
 [![藍色動態樣式範例](dynamic-images/dynamic-style-blue.png)](dynamic-images/dynamic-style-blue-large.png#lightbox)
- [ ![綠色動態樣式範例](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
+[![綠色動態樣式範例](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
 
-下列程式碼範例示範如何在 C# 中的對等頁面：
+下列程式碼範例示範中C#的對等頁面：
 
 ```csharp
 public class DynamicStylesPageCS : ContentPage
@@ -123,13 +123,13 @@ public class DynamicStylesPageCS : ContentPage
 }
 ```
 
-在 C# 中， [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體會使用[ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)方法，以參考`searchBarStyle`。 `OnButtonClicked`事件處理常式程式碼等同於 XAML 的範例，並執行時，`searchBarStyle`將會切換`blueSearchBarStyle`和`greenSearchBarStyle`。
+在C#中， [`SearchBar`](xref:Xamarin.Forms.SearchBar)實例會使用[`SetDynamicResource`](xref:Xamarin.Forms.Element.SetDynamicResource*)方法來參考 `searchBarStyle`。 `OnButtonClicked` 事件處理常式程式碼與 XAML 範例相同，而且在執行時，`searchBarStyle` 會在 `blueSearchBarStyle` 和 `greenSearchBarStyle`之間切換。
 
 ## <a name="dynamic-style-inheritance"></a>動態樣式繼承
 
-動態樣式衍生樣式無法使用來達成[ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)屬性。 相反地， [ `Style` ](xref:Xamarin.Forms.Style)類別包含[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)屬性，可以設定為字典索引鍵的值可能會以動態方式變更。
+無法使用[`Style.BasedOn`](xref:Xamarin.Forms.Style.BasedOn)屬性來衍生動態樣式的樣式。 相反地， [`Style`](xref:Xamarin.Forms.Style)類別包含[`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey)屬性，它可以設定為字典索引鍵，其值可能會動態變更。
 
-下列程式碼範例示範*動態*XAML 頁面中的樣式繼承：
+下列程式碼範例示範 XAML 頁面中的*動態*樣式繼承：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesInheritancePage" Title="Dynamic Inheritance" IconImageSource="xaml.png">
@@ -159,14 +159,14 @@ public class DynamicStylesPageCS : ContentPage
 </ContentPage>
 ```
 
-[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體會使用`StaticResource`標記延伸參考[ `Style` ](xref:Xamarin.Forms.Style)名為`tealSearchBarStyle`。 這`Style`會設定一些額外的屬性，並使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)屬性來參考`searchBarStyle`。 `DynamicResource`標記延伸模組不需要，因為`tealSearchBarStyle`不會變更，除了`Style`它衍生自。 因此，`tealSearchBarStyle`會維護連結`searchBarStyle`和更改基底的樣式變更時。
+[`SearchBar`](xref:Xamarin.Forms.SearchBar)實例會使用 `StaticResource` 標記延伸來參考名為 `tealSearchBarStyle`的[`Style`](xref:Xamarin.Forms.Style) 。 這個 `Style` 會設定一些額外的屬性，並使用[`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey)屬性來參考 `searchBarStyle`。 不需要 `DynamicResource` 標記延伸，因為 `tealSearchBarStyle` 不會變更，除了衍生自的 `Style` 以外。 因此，`tealSearchBarStyle` 會維持 `searchBarStyle` 的連結，並在基底樣式變更時改變。
 
-在程式碼後置檔案中，建構函式會建立[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)具有索引鍵的項目`searchBarStyle`、 每個先前的範例，示範動態樣式。 當`OnButtonClicked`事件處理常式執行時，`searchBarStyle`將會切換`blueSearchBarStyle`和`greenSearchBarStyle`。 這會導致下列螢幕擷取畫面中顯示的外觀：
+在程式碼後置檔案中，此函式會根據先前示範動態樣式的範例，建立具有索引鍵 `searchBarStyle`的[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)專案。 執行 `OnButtonClicked` 事件處理常式時，`searchBarStyle` 會在 `blueSearchBarStyle` 和 `greenSearchBarStyle`之間切換。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
 [![藍色動態樣式繼承範例](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
- [ ![綠色動態樣式繼承範例](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
+[![綠色動態樣式繼承範例](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
 
-下列程式碼範例示範如何在 C# 中的對等頁面：
+下列程式碼範例示範中C#的對等頁面：
 
 ```csharp
 public class DynamicStylesInheritancePageCS : ContentPage
@@ -206,16 +206,16 @@ public class DynamicStylesInheritancePageCS : ContentPage
 }
 ```
 
-`tealSearchBarStyle`直接指派給[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性[ `SearchBar` ](xref:Xamarin.Forms.SearchBar)執行個體。 這`Style`會設定一些其他的屬性，並使用[ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)屬性來參考`searchBarStyle`。 [ `SetDynamicResource` ](xref:Xamarin.Forms.Element.SetDynamicResource*)方法並不需要這裡因為`tealSearchBarStyle`不會變更，除了`Style`它衍生自。 因此，`tealSearchBarStyle`會維護連結`searchBarStyle`和更改基底的樣式變更時。
+`tealSearchBarStyle` 會直接指派給[`SearchBar`](xref:Xamarin.Forms.SearchBar)實例的[`Style`](xref:Xamarin.Forms.NavigableElement.Style)屬性。 這個 `Style` 會設定一些額外的屬性，並使用[`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey)屬性來參考 `searchBarStyle`。 這裡不需要[`SetDynamicResource`](xref:Xamarin.Forms.Element.SetDynamicResource*)方法，因為 `tealSearchBarStyle` 不會變更，除了衍生自的 `Style` 以外。 因此，`tealSearchBarStyle` 會維持 `searchBarStyle` 的連結，並在基底樣式變更時改變。
 
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [動態樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
-- [使用樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [動態樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+- [使用樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [樣式](xref:Xamarin.Forms.Style)
-- [Setter](xref:Xamarin.Forms.Setter)
+- [[樣式]](xref:Xamarin.Forms.Style)
+- [庫](xref:Xamarin.Forms.Setter)
 
 ## <a name="related-video"></a>相關影片
 
