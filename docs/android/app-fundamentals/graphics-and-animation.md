@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 1781503d214b959d31223cbe8f55fd6afa0fef44
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: eeee9b7d694d9380c653fb87c24171bcaf79389d
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019283"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655279"
 ---
 # <a name="android-graphics-and-animation"></a>Android 圖形和動畫
 
 _Android 提供非常豐富且多樣化的架構，可支援2D 圖形和動畫。本主題將介紹這些架構，並討論如何建立自訂的圖形和動畫，以用於 Xamarin. Android 應用程式。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 儘管在傳統上有電力限制的裝置上執行，最高等級的行動應用程式通常會有精密的使用者體驗（UX），並以高品質的圖形和動畫（提供直覺且快速的動態風格）來完成。 隨著行動應用程式變得更複雜，使用者也開始期待應用程式的越來越多。
 
@@ -47,7 +47,7 @@ Android 提供兩個不同的 API 來建立2D 圖形。 其中一個是高階宣
 
 所有這些架構都是可行的選項，但在可能的情況下，應該將喜好設定提供給屬性動畫，因為這是更有彈性的 API 可供使用。 屬性動畫允許將動畫邏輯封裝在不同的類別中，使程式碼共用變得更容易，並簡化程式碼維護。
 
-## <a name="accessibility"></a>Accessibility
+## <a name="accessibility"></a>協助工具
 
 圖形和動畫有助於讓 Android 應用程式更具吸引力且更有趣的使用;不過，請務必記住，某些互動會透過螢幕助讀程式、替代輸入裝置或輔助縮放來進行。
 此外，某些互動可能會在沒有音訊功能的情況下發生。
@@ -82,7 +82,7 @@ Android 定義數種不同類型的繪製資源：
 
 - [LevelListDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList) &ndash; 這非常類似*StateListDrawable* ，因為它會根據特定條件來顯示影像。 不過，不同于*StateListDrawable*， *LevelListDrawable*會根據整數值來顯示影像。 *LevelListDrawable*的範例是顯示 WiFi 信號的強度。 當 WiFi 信號的強度變更時，顯示的可繪製會隨之改變。
 
-- [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash; 顧名思義，這些可繪製資源提供了縮放和裁剪功能。 *ScaleDrawable*會調整另一個可繪製的，而*ClipDrawable*會裁剪另一個可繪製的。
+- [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale) / [ ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip)正&ndash;如其名, 這些可繪製資源同時提供縮放和裁剪功能。 *ScaleDrawable*會調整另一個可繪製的，而*ClipDrawable*會裁剪另一個可繪製的。
 
 - [InsetDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash; 此可繪製會將內凹套用至另一個可繪製資源的側邊。 當視圖需要的背景小於此視圖的實際界限時，就會使用它。
 
@@ -139,7 +139,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 若要查看這看起來的樣子，請執行*AnimationsDemo*專案，然後從主功能表中選取 [圖形可繪製] 專案。 我們應該會看到類似下列螢幕擷取畫面的內容：
 
-![具有自訂背景的 Textview，以漸層和圓角繪製](graphics-and-animation-images/image1.png)
+[![具有自訂背景的 Textview，並以漸層和圓角繪製](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
 
 如需有關可繪製資源的 XML 元素和語法的詳細資訊，請參閱[Google 的檔](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)。
 
@@ -162,17 +162,17 @@ Canvas canvas = new Canvas(b);
 
 取得 `Canvas` 物件的另一種方式是透過提供[View](xref:Android.Views.View)基類的[OnDraw](xref:Android.Views.View.OnDraw*)回呼方法。 Android 會在決定視圖需要自行繪製，並傳入 `Canvas` 物件，以供視圖使用時呼叫此方法。
 
-Canvas 類別會公開方法，以程式設計方式提供繪製指示。 例如:
+Canvas 類別會公開方法，以程式設計方式提供繪製指示。 例如：
 
-- [DrawPaint](xref:Android.Graphics.Canvas.DrawPaint*) &ndash; 會使用指定的繪製填滿整個畫布的點陣圖。
+- [Canvas.DrawPaint](xref:Android.Graphics.Canvas.DrawPaint*)&ndash;會以指定的繪製填滿整個畫布的點陣圖。
 
-- [DrawPath](xref:Android.Graphics.Canvas.DrawPath*) &ndash; 會使用指定的繪製繪製指定的幾何形狀。
+- [Canvas.DrawPath](xref:Android.Graphics.Canvas.DrawPath*) &ndash;使用指定的繪製繪製指定的幾何形狀。
 
-- [DrawText](xref:Android.Graphics.Canvas.DrawText*) &ndash; 會使用指定的色彩，在畫布上繪製文字。 文字會在位置 `x,y` 繪製。
+- [Canvas.DrawText](xref:Android.Graphics.Canvas.DrawText*) &ndash;會以指定的色彩繪製畫布上的文字。 文字會在位置 `x,y` 繪製。
 
 #### <a name="drawing-with-the-canvas-api"></a>使用畫布 API 繪製
 
-讓我們看一下作用中畫布 API 的範例。 下列程式碼片段顯示如何繪製視圖：
+以下是作用中畫布 API 的範例。 下列程式碼片段顯示如何繪製視圖：
 
 ```csharp
 public class MyView : View
@@ -201,7 +201,7 @@ public class MyView : View
 
 上述程式碼會先建立紅色繪製和綠色繪製物件。 它會以紅色填滿畫布的內容，然後指示畫布繪製一個綠色矩形，其為畫布寬度的25%。 如需這項工作的範例，請參閱本文的原始程式碼所包含的 `AnimationsDemo` 專案。 藉由啟動應用程式，然後從主功能表中選取繪製專案，我們應該會顯示類似下面的畫面：
 
-![具有紅色繪製和綠色繪製物件的畫面](graphics-and-animation-images/image3.png)
+[具有紅色油漆和綠色繪製物件的 ![畫面](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>動畫
 

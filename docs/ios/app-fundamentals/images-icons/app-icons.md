@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 885f5321c10bcbc5389daf7dd7a97d1f9d572499
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010370"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488424"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的應用程式圖示
 
@@ -47,23 +47,23 @@ ms.locfileid: "73010370"
     ||倍|
     |---|---|
     |應用程式圖示|180x180|
-    |突出|120x120|
+    |焦點|120x120|
     |設定|87x87|
 
 - **iPhone： iOS 7 & 8**
 
-    ||1x|2x|
+    ||1 倍|2x|
     |---|---|---|
     |應用程式圖示|iphones<sup>1</sup>|120x120|
-    |突出|40x40<sup>2</sup>|80x80|
+    |焦點|40x40<sup>2</sup>|80x80|
     |設定|-|-|
 
 - **iPhone： iOS 5 & 6**
 
-    ||1x|2x|
+    ||1 倍|2x|
     |---|---|---|
     |應用程式圖示|57x57|114x114|
-    |突出|29x29|58x58|
+    |焦點|29x29|58x58|
     |設定|29x29<sup>3、4</sup>|58x58<sup>3、4</sup>|
 
 ### <a name="ipad-icon-sizes"></a>iPad 圖示大小
@@ -73,23 +73,23 @@ ms.locfileid: "73010370"
     ||2x （iPad Pro）|
     |---|---|
     |應用程式圖示|167x167<sup>6</sup>|
-    |突出|120x120<sup>6</sup>|
+    |焦點|120x120<sup>6</sup>|
     |設定|58x58<sup>5</sup>|
 
 - **iPad： iOS 7 & 8**
 
-    ||1x|2x|
+    ||1 倍|2x|
     |---|---|---|
     |應用程式圖示|76x76|為152x152|
-    |突出|40x40|80x80|
+    |焦點|40x40|80x80|
     |設定|-|-|
 
 - **iPad： iOS 5 & 6**
 
-    ||1x|2x|
+    ||1 倍|2x|
     |---|---|---|
     |應用程式圖示|72x72|144x144|
-    |突出|50x50|100x100|
+    |焦點|50x50|100x100|
     |設定|29x29<sup>3、5</sup>|58x58<sup>3、5</sup>|
 
  1. Visual Studio for Mac 和 Xcode 不再支援為 iOS 7 設定1x 映射。
@@ -107,39 +107,48 @@ ms.locfileid: "73010370"
 
 針對圖示，可以將特殊的 `AppIcon` 映射集新增至應用程式專案中的 `Assets.xcassets` 檔案。 支援所有解析度所需的映射的所有版本都包含在_xcasset_中，並群組在一起。 Visual Studio for Mac 中的特殊編輯器可讓開發人員以圖形方式包含和設定這些影像。
 
-若要使用資產目錄，請執行下列動作：
+若要使用資產目錄，請遵循下列步驟：
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
-2. 向下卷到 [**應用程式圖示**] 區段。
-3. 從 [**來源**] 下拉式清單中，確定已選取 [ **AppIcon** ]： 
+2. 向下卷到 [ **IPhone 圖示**] 區段。
+3. 按一下 [**遷移至資產目錄**] 按鈕：
 
     ![](app-icons-images/migrate01.png "Ensure AppIcon is selected")
+
 4. 在 **方案總管**中，按兩下 `Assets.xcassets` 檔案以開啟它進行編輯： 
 
     ![](app-icons-images/asset01.png "The Assets.xcassets file in the Solution Explorer")
+
 5. 從資產清單中選取 [`AppIcon`]，以顯示 `Icon Editor`：
 
     ![](app-icons-images/asset02.png "The AppIcon editor")
+
 6. 按一下指定的圖示類型，然後選取所需類型/大小的影像檔案，或從資料夾中拖曳影像並放在所需的大小。
 7. 按一下 [**開啟**] 按鈕，在專案中包含影像，並在 xcasset 中加以設定。
 8. 針對所需的所有影像重複此動作。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. 按兩下**方案總管**中的**plist**檔案：
+1. 按兩下 [資訊]。  \* ***方案總管**中的檔案：
 
     ![](app-icons-images/icon01w.png "Select Info.plist")
+
 2. 按一下 [**視覺資產**] 索引標籤，然後按一下 [**應用程式圖示**] 底下的 [**使用資產目錄**] 按鈕： 
 
     ![](app-icons-images/icon02w.png "Select the Visual Assets tab")
+
+    如果沒有按鈕，而是下拉式清單，則表示資產目錄已經加入至這個專案。
+
 3. 從 [**方案總管**] 中，展開 [**資產目錄**] 資料夾： 
 
     ![](app-icons-images/image009.png "Expand the Asset Catalog folder")
+
 4. 按兩下**媒體**檔案，在編輯器中開啟它： 
 
     ![](app-icons-images/image010.png "Open the Media file in the editor")
+
 5. 開發人員可以在**Properties Explorer**中選取不同類型和所需的圖示大小。
 6. 按一下指定的圖示類型，然後選取所需類型/大小的影像檔案。
 7. 按一下 [**開啟**] 按鈕，在專案中包含影像，並在 xcasset 中加以設定。
@@ -148,36 +157,6 @@ ms.locfileid: "73010370"
 -----
 
 這是慣用的方法，包括和管理將用來提供應用程式、焦點和設定圖示的影像資產。
-
-### <a name="migrating-from-infoplist-to-asset-catalogs"></a>從 Info. plist 遷移至資產目錄
-
-針對現有的 Xamarin iOS 應用程式（使用 `Info.plist` 檔案來管理其圖示），強烈建議開發人員將其切換為使用 `Assets.xcassets`內的 `AppIcons` 影像資產。
-
-請執行下列動作：
-
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
-1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
-2. 向下卷到 [**應用程式圖示**] 區段。
-3. 從 [**來源**] 下拉式清單中，選取 [**遷移至資產目錄**]： 
-
-    ![](app-icons-images/migrate02.png "Select Migrate to Asset Catalogs")
-4. `Info.plist` 檔案中所定義的任何現有圖示，都會遷移到新增至 `Assets.xcassets`的 `AppIcons` 映射集： 
-
-     ![](app-icons-images/migrate03.png "The AppIcons Image Set in the Assets.xcassets")
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
-2. 按一下 [iPhone 圖示] 區段： 
-
-    ![](app-icons-images/image007.png "Rhe iPhone Icons editor")
-3. 向下卷到 [**圖示**] 區段。
-4. 從 [**資產目錄**] 下拉式清單中，選取 [**使用資產目錄**]。
-5. `Info.plist` 檔案中所定義的任何現有圖示，都會遷移到新增至 `Assets.xcassets`的 `Images` 組。
-6. 將變更儲存至 `Info.plist` 檔案。
-
------
 
 <a name="itunes" />
 

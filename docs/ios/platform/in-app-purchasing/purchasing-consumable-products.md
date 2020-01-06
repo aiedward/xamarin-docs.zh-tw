@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 5af4ba8057070481728948635352e1ec2484a0d4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fb8cd050c789e165c1774398a3a2cc8e0467bde1
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032343"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489020"
 ---
 # <a name="purchasing-consumable-products-in-xamarinios"></a>在 Xamarin 中購買可耗用的產品
 
@@ -74,7 +74,7 @@ buy10Button.TouchUpInside += (sender, e) => {
 使用者介面的第二個部分是處理交易成功的通知，在此情況下是藉由更新顯示的餘額：
 
 ```csharp
-priceObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
+succeededObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseManager.InAppPurchaseManagerTransactionSucceededNotification,
 (notification) => {
    balanceLabel.Text = CreditManager.Balance() + " monkey credits";
 });
@@ -323,10 +323,10 @@ if (iap.CanMakePayments()) {
 
 當應用程式**內購買**功能受到限制時，應用程式看起來會像這樣– [購買] 按鈕已停用。   
 
- [當應用程式內購買功能受到限制時，應用程式![如下所示：已停用 [購買] 按鈕](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
+ [當應用程式內購買功能受到限制時，應用程式 ![如下所示：已停用 [購買] 按鈕](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
 
-當 `CanMakePayments` 為 false 時仍然可以要求產品資訊，因此應用程式仍可取得和顯示價格。 這表示，如果我們從程式碼中移除 `CanMakePayments` 檢查，則 [購買] 按鈕仍會作用中，但在嘗試購買時，使用者會看到**不允許應用程式內購買**的訊息（StoreKit 會在付款佇列為時產生）已存取）：   
+當 `CanMakePayments` 為 false 時仍然可以要求產品資訊，因此應用程式仍可取得和顯示價格。 這表示，如果我們從程式碼中移除 `CanMakePayments` 檢查，則 [購買] 按鈕仍會作用中，但在嘗試購買時，使用者會看到**不允許在應用程式內購買**的訊息（由 StoreKit 在存取付款佇列時產生）：   
 
- [不允許![應用程式內購買](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+ [不允許 ![應用程式內購買](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
 
 實際的應用程式可能會採用不同的方法來處理限制，例如完全隱藏按鈕，而且可能會提供比 StoreKit 自動顯示的警示更詳細的訊息。

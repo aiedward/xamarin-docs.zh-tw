@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: ec5c6e4c4c47995e78c1819007a8fa5660873bd2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026587"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488929"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
@@ -36,7 +36,7 @@ ms.locfileid: "73026587"
 1. 按一下 [**工具] > 選項 ...**
 2. 在左側樹狀檢視中，選取 [**專案和方案] > [建立並執行**]
 3. 在右側面板中，將 [MSBuild 組建輸出詳細資訊] 下拉式清單設定為 [診斷]
-4. 按一下 [確定]。
+4. 按一下 [確定]
 5. 清除並重建您的套件。
 6. 診斷輸出會顯示在 [輸出] 面板中。
 
@@ -45,7 +45,7 @@ ms.locfileid: "73026587"
 1. 按一下 [ **Visual Studio for Mac > 喜好**設定 ...]
 2. 在左側樹狀檢視中，選取 [專案] [ **> 組建**]
 3. 在右側面板中，將 [記錄詳細資訊] 下拉式按鈕設定為 [診斷]
-4. 按一下 [確定]。
+4. 按一下 [確定]
 5. 重新啟動 Visual Studio for Mac
 6. 清除並重建您的套件。
 7. 按一下 [組建輸出] 按鈕，即可在 [錯誤] 面板中看到診斷輸出（**View > pad > 錯誤**）。
@@ -662,7 +662,7 @@ E/dalvikvm( 123): VM aborting
 
 ```shell
 Assertion: should not be reached at /Users/.../external/mono/mono/mini/tramp-x86.c:124
-Fatal signal 6 (SIGABRT), code -6 in tid 4051 (amarin.bug56111)
+Fatal signal 6 (SIGABRT), code -6 in tid 4051 (Xamarin.bug56111)
 ```
 
-這是[56111](https://bugzilla.xamarin.com/show_bug.cgi?id=56111)中回報的已知問題。 解決方法是停用 LLVM。
+這是已知的問題–因應措施是停用 LLVM。

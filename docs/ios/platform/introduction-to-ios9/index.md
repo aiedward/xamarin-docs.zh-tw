@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031788"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488942"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 簡介
 
@@ -141,7 +141,7 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 - 存取控制列出應用程式提供之 keychain 專案加密的熵（使用 [應用程式密碼] 選項）。
 - 支援在安全記憶體保護區（透過 `kSecAttrTokenIDSecureEnclave` 屬性）內產生和使用金鑰。
 
-如需詳細資訊，請參閱我們的[觸控識別碼簡介](~/ios/platform/touchid.md)檔。
+如需詳細資訊，請參閱[在 Xamarin 中的 TOUCH id 和臉部識別碼](~/ios/platform/touch-id-face-id.md)。
 
 ## <a name="right-to-left-language-support"></a>由右至左語言支援
 

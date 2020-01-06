@@ -6,13 +6,13 @@ ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/30/2019
-ms.openlocfilehash: 08026cd3f3ef7503a92f6c78f1e3e27ad3642d09
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.date: 12/04/2019
+ms.openlocfilehash: e115014728cce9252a92740b6db5beab582f61ed
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959129"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489865"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Xamarin. 表單相對系結
 
@@ -22,9 +22,9 @@ ms.locfileid: "72959129"
 
 `RelativeSourceExtension` 類別支援 `RelativeSource` 標記延伸，其定義下列屬性：
 
-- `RelativeBindingSourceMode` 類型的 `Mode`，會描述系結來源相對於系結目標位置的位置。
-- `AncestorLevel`，屬於 `int` 類型，這是在 `FindAncestor` `Mode` 屬性時要尋找的選擇性上階層級。
-- `AncestorType`，屬於 `Type` 的類型，這是 `Mode` 屬性 `FindAncestor` 時所要尋找之上階的類型。
+- `RelativeBindingSourceMode`類型的 `Mode`，會描述系結來源相對於系結目標位置的位置。
+- `AncestorLevel`，屬於 `int`類型，這是在 `FindAncestor``Mode` 屬性時要尋找的選擇性上階層級。 `n` 的 `AncestorLevel` 會略過 `AncestorType``n-1` 實例。
+- `AncestorType`，屬於 `Type`的類型，這是 `Mode` 屬性 `FindAncestor`時所要尋找之上階的類型。
 
 > [!NOTE]
 > XAML 剖析器允許 `RelativeSourceExtension` 類別縮寫為 `RelativeSource`。
@@ -82,6 +82,9 @@ ms.locfileid: "72959129"
 
 如果未明確設定 `Mode` 屬性，將 `AncestorType` 屬性設定為衍生自[`Element`](xref:Xamarin.Forms.Element)的類型，會將 `Mode` 屬性隱含地設定為 [`FindAncestor`]。 同樣地，將 `AncestorType` 屬性設定為不是衍生自 `Element` 的類型，會將 `Mode` 屬性隱含地設定為 `FindAncestorBindingContext`。
 
+> [!NOTE]
+> 當任何祖系的 `BindingContext` 變更時，會重新套用使用 `FindAncestorBindingContext` 模式的相對系結。
+
 下列 XAML 會顯示一個範例，其中 `Mode` 屬性會隱含地設定為 `FindAncestorBindingContext`：
 
 ```xaml
@@ -125,7 +128,7 @@ ms.locfileid: "72959129"
 
 ## <a name="bind-to-a-templated-parent"></a>系結至樣板化父系
 
-`TemplatedParent` 的相對系結模式是用來將控制項範本內的系結至套用範本的執行時間物件實例（稱為樣板化父系）。 只有當相對系結在控制項範本內，而且類似于設定 `TemplateBinding` 時，才適用此模式。
+`TemplatedParent` 的相對系結模式是用來將控制項範本內的系結至套用範本的執行時間物件實例（稱為樣板化父系）。 只有當相對系結在控制項範本內，而且類似于設定 `TemplateBinding`時，才適用此模式。
 
 下列 XAML 會顯示 `TemplatedParent` 相對系結模式的範例：
 
@@ -172,7 +175,7 @@ ms.locfileid: "72959129"
 </ContentPage>
 ```
 
-在此範例中， [`Frame`](xref:Xamarin.Forms.Frame)（也就是 `ControlTemplate` 的根項目）會將其 `BindingContext` 設定為套用範本的執行時間物件實例。 因此，`Frame` 及其子系會針對每個 `CardView` 物件的屬性，解析其系結運算式：
+在此範例中， [`Frame`](xref:Xamarin.Forms.Frame)（也就是 `ControlTemplate`的根項目）會將其 `BindingContext` 設定為套用範本的執行時間物件實例。 因此，`Frame` 及其子系會針對每個 `CardView` 物件的屬性，解析其系結運算式：
 
 [![TemplatedParent 模式相對系結（在 iOS 和 Android 上）的螢幕擷取畫面](relative-bindings-images/templatedparent-relative-binding.png "TemplatedParent 相對系結模式")](relative-bindings-images/templatedparent-relative-binding-large.png#lightbox "TemplatedParent 相對系結模式")
 

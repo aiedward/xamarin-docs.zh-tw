@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: b8020ae8539e12640cde0d565ccbd2eb0c01fc30
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e93a12fec63dcb0a31e57de26b3d7ee8827e7864
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022489"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489059"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>為 Xamarin.iOS 開發與 Mac 配對
 
 _本指南說明如何使用 [與 Mac 配對]，將 Visual Studio 2019 連線到 Mac 組建主機。相同的指示適用于 Visual Studio 2017。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 建置原生 iOS 應用程式需要存取只在 Mac 上執行的 Apple 組建工具。 因此，Visual Studio 2019 必須連線至網路可存取 Mac，才能建置 Xamarin.iOS 應用程式。
 
@@ -160,7 +160,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ## <a name="automatic-mac-provisioning"></a>自動 Mac 佈建
 
-從[Visual Studio 2019 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，與 mac 配對會自動布建 mac，其中包含建立 Xamarin ios 應用程式所需的軟體： Mono、Xamarin ios （軟體架構，而非 Visual Studio for Mac IDE）和各種Xcode 相關的工具（但不會 Xcode 本身）。
+從[Visual Studio 2019 15.6 版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)開始，與 mac 配對會自動布建 mac，其中包含建立 Xamarin ios 應用程式所需的軟體： Mono、Xamarin、ios （軟體架構，而不是 Visual Studio for Mac IDE）和各種 Xcode 相關工具（但不 Xcode 本身）。
 
 > [!IMPORTANT]
 >
@@ -168,7 +168,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 > - 自動 Mac 佈建需要在 Mac 上啟用遠端登入，而且 Mac 必須可透過網路存取 Windows 電腦。 如需詳細資訊，請參閱[在 Mac 上啟用遠端登入](#enable-remote-login-on-the-mac)。
 > - 自動化的 Mac 佈建需要 Mac 有 3 GB 的可用空間，才能安裝 Xamarin.iOS。
 
-[與 Mac 配對] 會在 Visual Studio 2017 [連線至 Mac](#connect-to-the-mac-from-visual-studio-2019) 時執行必要的軟體安裝/更新。
+當 Visual Studio 2019 連線[到 mac](#connect-to-the-mac-from-visual-studio-2019)時，[與 mac 配對] 會執行必要的軟體安裝/更新。
 
 ### <a name="mono"></a>Mono
 
@@ -204,7 +204,7 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 |---|---|---|
 |Xcode|[![缺少 Xcode 安裝](images/xcode-missing.png "缺少 Xcode 安裝")](images/xcode-missing-large.png#lightbox)|[![Xcode 授權](images/xcode-license.png "Xcode 授權")](images/xcode-license-large.png#lightbox)|
 
-此外，[與 Mac 配對] 將會安裝或更新利用 Xcode 所散發的各種套件。 例如:
+此外，[與 Mac 配對] 將會安裝或更新利用 Xcode 所散發的各種套件。 例如：
 
 - **MobileDeviceDevelopment.pkg**
 - **XcodeExtensionSupport.pkg**
@@ -218,11 +218,11 @@ Visual Studio 2019 的 [與 Mac 配對] 功能會探索、連線、驗證並記�
 
 ### <a name="troubleshooting-automatic-mac-provisioning"></a>針對自動 Mac 佈建進行疑難排解
 
-如果您使用自動 Mac 佈建時發生任何問題，請查看儲存於 **%LOCALAPPDATA%\Xamarin\Logs\15.0** 的 Visual Studio 2019 IDE 記錄。 這些記錄可能包含錯誤訊息，協助您進一步診斷失敗或取得支援。
+如果您在使用自動 Mac 布建時遇到任何問題，請查看儲存在 **%LOCALAPPDATA%\Xamarin\Logs\16.0**中的 VISUAL STUDIO 2019 IDE 記錄。 這些記錄可能包含錯誤訊息，協助您進一步診斷失敗或取得支援。
 
 ## <a name="build-ios-apps-from-the-windows-command-line"></a>從 Windows 命令列建置 iOS 應用程式
 
-[與 Mac 配對] 支援從命令列建置 Xamarin.iOS 應用程式。 例如:
+[與 Mac 配對] 支援從命令列建置 Xamarin.iOS 應用程式。 例如：
 
 ```bash
 C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamUser /p:Platform=iPhoneSimulator /p:ServerPassword=mypassword
@@ -236,7 +236,7 @@ C:\samples\App1>msbuild App1.sln /p:ServerAddress=10.211.55.2 /p:ServerUser=xamU
 - `ServerPassword` - 要在登入 Mac 組建主機時使用的密碼。
 
 > [!NOTE]
-> Visual Studio 2019 會將 `msbuild` 儲存在下列目錄中： **C:\Program Files （x86） \Microsoft Visual Studio\2017\\&lt;版本&gt;\MSBuild\15.0\Bin**
+> Visual Studio 2019 會將 `msbuild` 儲存在下列目錄中： **C:\Program Files （x86） \Microsoft Visual Studio\2019\\&lt;版本&gt;\MSBuild\Current\Bin**
 
 [與 Mac 配對] 第一次從 Visual Studio 2019 或命令列登入特定 Mac 組建主機時，會設定 SSH 金鑰。 如果使用這些金鑰，則未來的登入不需要使用者名稱或密碼。 新建立的金鑰會儲存在 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 0f3ff5357d3fb4c60a910dda6befa8c699c6fc07
-ms.sourcegitcommit: 5f7749d6ba1db79aa0fbf4ee7c90f2dcd4de812b
+ms.openlocfilehash: d94f18d00ebf6eeec5f33343b5c0f985ba2a6ea8
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884120"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655403"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>適用于 Xamarin 的 XAML 熱重載（預覽）
 
@@ -20,6 +20,8 @@ XAML 熱重載會插入您現有的工作流程，以提高您的生產力並節
 
 > [!NOTE]
 > 如果您要撰寫 WPF 或 UWP 應用程式，請參閱[適用于 UWP 和 WPF 的 XAML 熱重載](/visualstudio/debugger/xaml-hot-reload)。
+>
+> Xamarin 的 XAML 熱重載目前_不適_用於 Xamarin。表單 UWP 專案。
 
 ## <a name="system-requirements"></a>系統需求
 
@@ -49,6 +51,7 @@ Xamarin.Forms | 4.1 或更高版本
 - 藉由使用 `x:Name` 值將控制項指派給另一個欄位或屬性所建立的任何參考，將不會重載。
 - 在**AppShell**中更新 Shell 應用程式的視覺階層，可能會導致維護應用程式狀態的問題。 重建應用程式以繼續重載。
 - XAML 熱重載無法重載C#程式碼，包括事件處理常式、自訂控制項、分頁程式碼後置和其他類別。
+- 不適_用於其他_Xamarin。表單支援的平臺（例如 mac OS 或 UWP）。
 
 ## <a name="migrate-from-the-private-preview"></a>從私人預覽遷移
 

@@ -6,13 +6,13 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: c8d01846c9b860982cee74390dab85c7473ee141
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 12/11/2019
+ms.openlocfilehash: 9442f7878d9290946fabb7bfc5dee77a828228c7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662320"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488165"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin. 表單 CollectionView 資料
 
@@ -20,7 +20,7 @@ ms.locfileid: "73662320"
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)包含下列定義要顯示之資料的屬性，以及其外觀：
 
-- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)，屬於 `IEnumerable` 類型，會指定要顯示的專案集合，且預設值為 [`null`]。
+- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)，屬於 `IEnumerable`類型，會指定要顯示的專案集合，且預設值為 [`null`]。
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)，屬於[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)類型，會指定要套用至要顯示的專案集合中每個專案的範本。
 
 這些屬性是以[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件為後盾，也就是說，這些屬性可以是資料系結的目標。
@@ -79,7 +79,7 @@ collectionView.ItemsSource = new string[]
 > [!IMPORTANT]
 > 如果在基礎集合中加入、移除或變更專案時需要重新整理[`CollectionView`](xref:Xamarin.Forms.CollectionView) ，基礎集合應該是傳送屬性變更通知的 `IEnumerable` 集合，例如 `ObservableCollection`。
 
-如需如何變更[`CollectionView`](xref:Xamarin.Forms.CollectionView)版面配置的相關資訊，請參閱[CollectionView 版面](layout.md)配置。 如需如何在 `CollectionView` 中定義每個專案外觀的詳細資訊，請參閱[定義專案外觀](#define-item-appearance)。
+如需如何變更[`CollectionView`](xref:Xamarin.Forms.CollectionView)版面配置的相關資訊，請參閱[CollectionView 版面](layout.md)配置。 如需如何在 `CollectionView`中定義每個專案外觀的詳細資訊，請參閱[定義專案外觀](#define-item-appearance)。
 
 ### <a name="data-binding"></a>資料繫結
 
@@ -242,7 +242,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MonkeyDataTemplateSelector` 類別會定義設定為不同資料範本的 `AmericanMonkey` 和 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本，這會在猴子名稱包含 "北美洲" 時，以青色顯示猴子名稱和位置。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，以顯示銀級中的猴子名稱和位置：
+`MonkeyDataTemplateSelector` 類別定義設定為不同資料範本的 `AmericanMonkey` 與 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 屬性。 `OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本，這會在猴子名稱包含 "北美洲" 時，以青色顯示猴子名稱和位置。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，以顯示銀級中的猴子名稱和位置：
 
 [![在 iOS 和 Android 上 CollectionView 執行時間專案範本選擇的螢幕擷取畫面](populate-data-images/datatemplateselector.png "CollectionView 中的執行時間專案範本選擇")](populate-data-images/datatemplateselector-large.png#lightbox "CollectionView 中的執行時間專案範本選擇")
 
@@ -251,9 +251,88 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 > [!IMPORTANT]
 > 使用[`CollectionView`](xref:Xamarin.Forms.CollectionView)時，絕對不要將[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)物件的根項目設定為 `ViewCell`。 這會導致擲回例外狀況，因為 `CollectionView` 沒有資料格的概念。
 
-## <a name="pull-to-refresh"></a>提取至重新整理
+## <a name="context-menus"></a>操作功能表
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)支援透過 `RefreshView` 的提取至重新整理功能，可讓您藉由在專案清單上向下拉出來重新整理顯示的資料。 `RefreshView` 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CollectionView` 設定為 `RefreshView` 的子系，就會為其執行 pull 的「重新整理」：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)透過 `SwipeView`支援資料項目目的內容功能表，這會顯示具有滑動手勢的內容功能表。 `SwipeView` 是一個容器控制項，可包裝內容專案，並提供該內容專案的快顯功能表專案。 因此，操作功能表會藉由建立定義 `SwipeView` 所要包裝之內容的 `SwipeView`，以及由滑動手勢所顯示的操作功能表項目，來為 `CollectionView` 進行執行。 將 `SwipeView` 設定為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中的根視圖，以定義 `CollectionView`中每個資料項目目的外觀，即可達成此目的：
+
+```xaml
+<CollectionView x:Name="collectionView"
+                ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Favorite"
+                                   IconImageSource="favorite.png"
+                                   BackgroundColor="LightGreen"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.FavoriteCommand}"
+                                   CommandParameter="{Binding}" />
+                        <SwipeItem Text="Delete"
+                                   IconImageSource="delete.png"
+                                   BackgroundColor="LightPink"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.DeleteCommand}"
+                                   CommandParameter="{Binding}" />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Grid BackgroundColor="White"
+                      Padding="10">
+                    <!-- Define item appearance -->
+                </Grid>
+            </SwipeView>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>
+```
+
+對等的 C# 程式碼為：
+
+```csharp
+CollectionView collectionView = new CollectionView();
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+
+collectionView.ItemTemplate = new DataTemplate(() =>
+{
+    // Define item appearance
+    Grid grid = new Grid { Padding = 10, BackgroundColor = Color.White };
+    // ...
+
+    SwipeView swipeView = new SwipeView();
+    SwipeItem favoriteSwipeItem = new SwipeItem
+    {
+        Text = "Favorite",
+        IconImageSource = "favorite.png",
+        BackgroundColor = Color.LightGreen
+    };
+    favoriteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.FavoriteCommand", source: collectionView));
+    favoriteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+    SwipeItem deleteSwipeItem = new SwipeItem
+    {
+        Text = "Delete",
+        IconImageSource = "delete.png",
+        BackgroundColor = Color.LightPink
+    };
+    deleteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.DeleteCommand", source: collectionView));
+    deleteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+    swipeView.LeftItems = new SwipeItems { favoriteSwipeItem, deleteSwipeItem };
+    swipeView.Content = grid;    
+    return swipeView;
+});
+```
+
+在此範例中，`SwipeView` 內容是定義[`CollectionView`](xref:Xamarin.Forms.CollectionView)中每個專案外觀的[`Grid`](xref:Xamarin.Forms.Grid) 。 [滑動] 專案是用來對 `SwipeView` 內容執行動作，並在從左側撥動控制項時顯示：
+
+[![CollectionView 內容功能表項目在 iOS 和 Android 上的螢幕擷取畫面](populate-data-images/swipeview.png "具有 SwipeView 內容功能表項目的 CollectionView")](populate-data-images/swipeview-large.png#lightbox "具有 SwipeView 內容功能表項目的 CollectionView")
+
+`SwipeView` 支援四種不同的滑動方向，其中的滑動方向是由 `SwipeItems` 物件加入至的方向 `SwipeItems` 集合所定義。 根據預設，當使用者按下滑動專案時，就會執行它。 此外，一旦執行了滑動專案，就會隱藏滑動專案，並重新顯示 `SwipeView` 的內容。 不過，您可以變更這些行為。
+
+如需 `SwipeView` 控制項的詳細資訊，請參閱[SwipeView](~/xamarin-forms/user-interface/swipeview.md)。
+
+## <a name="pull-to-refresh"></a>拖動以重新整理
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)支援透過 `RefreshView`的提取至重新整理功能，可讓您藉由在專案清單上向下拉出來重新整理顯示的資料。 `RefreshView` 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CollectionView` 設定為 `RefreshView`的子系，就會為其執行 pull 的「重新整理」：
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -288,7 +367,7 @@ refreshView.Content = collectionView;
 
 `RefreshView.IsRefreshing` 屬性的值表示 `RefreshView`的目前狀態。 當使用者觸發重新整理時，這個屬性會自動轉換成 `true`。 重新整理完成後，您應該將屬性重設為 `false`。
 
-如需 `RefreshView` 的詳細資訊，請參閱[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
+如需 `RefreshView`的詳細資訊，請參閱[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
 
 ## <a name="load-data-incrementally"></a>以累加方式載入資料
 
@@ -296,8 +375,8 @@ refreshView.Content = collectionView;
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)定義下列屬性來控制資料的累加式載入：
 
-- `RemainingItemsThreshold`，屬於 `int` 類型，這是在將引發 `RemainingItemsThresholdReached` 事件的清單中尚未顯示的專案閾值。
-- `RemainingItemsThresholdReachedCommand`，屬於 `ICommand` 類型，這會在達到 `RemainingItemsThreshold` 時執行。
+- `RemainingItemsThreshold`，屬於 `int`類型，這是在將引發 `RemainingItemsThresholdReached` 事件的清單中尚未顯示的專案閾值。
+- `RemainingItemsThresholdReachedCommand`，屬於 `ICommand`類型，這會在達到 `RemainingItemsThreshold` 時執行。
 - `RemainingItemsThresholdReachedCommandParameter`，屬於 `object` 類型，這是傳遞至 `RemainingItemsThresholdReachedCommand` 的參數。
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)也會定義當 `CollectionView` 滾動到 `RemainingItemsThreshold` 專案尚未顯示的程度時，所引發的 `RemainingItemsThresholdReached` 事件。 您可以處理這個事件，以載入更多專案。 此外，當 `RemainingItemsThresholdReached` 事件引發時，會執行 `RemainingItemsThresholdReachedCommand`，以便在 viewmodel 中進行累加式資料載入。
@@ -344,6 +423,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 
 - [CollectionView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
+- [Xamarin. Forms SwipeView](~/xamarin-forms/user-interface/swipeview.md)
 - [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin. 表單資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 62560d97a2e85a6045e419f0c0602a375f5a2a75
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: da00eef7c08f7025239d15e60e6ec42416a36089
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027889"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487837"
 ---
 # <a name="garbage-collection"></a>記憶體回收
 
@@ -36,7 +36,7 @@ Xamarin 會使用 Mono 的[簡單代垃圾收集](https://www.mono-project.com/d
 
 - **JAVA 物件**：存在於 Android 執行時間 vm 中，但不會公開至 Mono VM 的 java 類型。 這些是乏味的，不會進一步討論。 這些通常是由 Android 執行時間 VM 所收集。 
 
-- **對等物件**：用來執行[IJAVAObject](xref:Android.Runtime.IJavaObject)的類型，[例如所有的](xref:Java.Lang.Object) [java.lang.throwable](xref:Java.Lang.Throwable)子類別。 這些類型的實例有兩個「halfs」*受控對等*體和*原生對等*體。 受管理的對等是C#類別的實例。 原生對等是 Android 執行時間 VM 中 JAVA 類別的實例，而C# [IJAVAObject](xref:Android.Runtime.IJavaObject.Handle)屬性包含原生對等的 JNI 全域參考。 
+- **對等物件**: 用來執行[IJAVAObject](xref:Android.Runtime.IJavaObject)的類型, 例如所有的[Java.Lang.Object](xref:Java.Lang.Object) 和 [Java.Lang.Throwable](xref:Java.Lang.Throwable)類別。 這些類型的實例有兩個「halfs」*受控對等*體和*原生對等*體。 受管理的對等是C#類別的實例。 原生對等是 Android 執行時間 VM 中 JAVA 類別的實例，而C# [IJAVAObject](xref:Android.Runtime.IJavaObject.Handle)屬性包含原生對等的 JNI 全域參考。 
 
 原生對等的類型有兩種：
 
@@ -104,17 +104,19 @@ GC 橋接器會在 Mono 垃圾收集期間運作，並指出哪些對等物件�
 
 要找出哪一個 GC 橋接器的最大效果，唯一的方法就是在應用程式中實驗並分析輸出。 有兩種方式可收集資料以進行效能評定： 
 
-- 針對每個 GC 橋接器選項**啟用記錄**功能（如[設定一節](~/android/internals/garbage-collection.md)中所述），然後捕獲並比較每個設定的記錄輸出。 檢查每個選項的 `GC` 訊息;特別是 `GC_BRIDGE` 訊息。 最多可容忍非互動式應用程式的150ms，但針對非常互動的應用程式（例如遊戲），暫停上述60毫秒是個問題。 
+- 針對每個 GC 橋接器選項**啟用記錄**功能 (如[設定](~/android/internals/garbage-collection.md)一節中所述), 然後捕獲並比較每個設定的記錄輸出。 檢查每個選項的 `GC` 訊息;特別是 `GC_BRIDGE` 訊息。 最多可容忍非互動式應用程式的150ms，但針對非常互動的應用程式（例如遊戲），暫停上述60毫秒是個問題。 
 
 - **啟用橋接器帳戶**處理-橋接器帳戶會顯示橋接器程式中每個物件所指向之物件的平均成本。 依大小排序這項資訊，將會提供有關保留最大數量之額外物件的提示。 
 
-若要指定應用程式應該使用哪個 `GC_BRIDGE` 選項，請將 `bridge-implementation=old`、`bridge-implementation=new` 或 `bridge-implementation=tarjan` 傳遞至 `MONO_GC_PARAMS` 環境變數，例如： 
+預設設定為**Tarjan**。 如果您發現回歸，您可能會發現需要將此選項設定為 [**舊**]。 此外，如果**Tarjan**不會改善效能，您可以選擇使用較穩定的**舊**選項。
+
+若要指定應用程式應使用的 `GC_BRIDGE` 選項，請將 `bridge-implementation=old`、`bridge-implementation=new` 或 `bridge-implementation=tarjan` 傳遞至 `MONO_GC_PARAMS` 環境變數。 這是藉由使用 `AndroidEnvironment`的**組建動作**，將新檔案新增至您的專案來完成。 例如： 
 
 ```shell
 MONO_GC_PARAMS=bridge-implementation=tarjan
 ```
 
-預設設定為**Tarjan**。 如果您發現回歸，您可能會發現需要將此選項設定為 [**舊**]。 此外，如果**Tarjan**不會改善效能，您可以選擇使用較穩定的**舊**選項。 
+如需詳細資訊，請參閱 [Configuration](#configuration)(組態)。
 
 <a name="Helping_the_GC" />
 
@@ -127,7 +129,7 @@ MONO_GC_PARAMS=bridge-implementation=tarjan
 GC 具有不完整的進程視圖，而且在記憶體不足時可能不會執行，因為 GC 不知道記憶體不足。 
 
 例如， [JAVA](xref:Java.Lang.Object)的實例類型或衍生類型的大小至少為20個位元組（如有變更，恕不另行通知等等）。 
-[Managed](~/android/internals/architecture.md)可呼叫包裝函式不會加入額外的實例成員，因此當您的[Android. Bitmap](xref:Android.Graphics.Bitmap)實例參考到 10 mb 的記憶體 blob 時，Xamarin 就無法得知 &ndash; GC 將會看到20個位元組的物件，而且會無法判斷它是否連結到會使記憶體維持10MB 的 Android 執行時間設定物件。 
+[Managed](~/android/internals/architecture.md)可呼叫包裝函式不會加入額外的實例成員，因此，當您的[android. Bitmap](xref:Android.Graphics.Bitmap)實例參考到 10 mb 的記憶體 blob 時，Xamarin 就無法得知 &ndash; gc 將會看到20個位元組的物件，而且將無法判斷它是否連結到會使記憶體維持10mb 的 android 執行時間設定物件。 
 
 經常需要協助 GC。 不幸的是， *GC。AddMemoryPressure （）* 和*GC。不支援 RemoveMemoryPressure （）* ，因此，如果您*知道*您剛釋放過大型 JAVA 配置的物件圖形，您可能需要手動呼叫[GC。Collect （）](xref:System.GC.Collect)以提示 GC 釋放 java 端記憶體，或者您可以明確處置*JAVA 的物件*子類別，並中斷受控可呼叫包裝函式與 JAVA 實例之間的對應。 例如，請參閱[Bug 1084](https://bugzilla.xamarin.com/show_bug.cgi?id=1084#c6)。 
 
@@ -138,7 +140,7 @@ GC 具有不完整的進程視圖，而且在記憶體不足時可能不會執�
 
 #### <a name="sharing-between-multiple-threads"></a>在多個執行緒之間共用
 
-如果*JAVA 或受控*實例可能會在多個執行緒之間共用，*則不應該 `Dispose()`d*。 例如， [`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
+如果*JAVA 或受控*實例可能會在多個執行緒之間共用，*則不應該 `Dispose()`d*。 例如，[`Typeface.Create()`](xref:Android.Graphics.Typeface.Create*) 
 可能會傳回快取的*實例*。 如果多個執行緒提供相同的引數，則會取得*相同*的實例。 因此，`Dispose()`來自某個執行緒的 `Typeface` 實例，可能會使其他執行緒失效，因而導致來自 `JNIEnv.CallVoidMethod()` 的 `ArgumentException`s （彼此之間），因為已從另一個執行緒處置該實例。 
 
 #### <a name="disposing-bound-java-types"></a>處置系結的 JAVA 類型
@@ -177,7 +179,7 @@ using (var listener = new MyClickListener ())
 
 #### <a name="using-explicit-checks-to-avoid-exceptions"></a>使用明確檢查來避免例外狀況
 
-如果您已執行了 JNI，請避免觸及[牽涉到的物件。](xref:Java.Lang.Object.Dispose*) 這麼做可能會建立一種*雙重處置*情況，讓您的程式碼可以（嚴重）嘗試存取已進行垃圾收集的基礎 JAVA 物件。 這樣做會產生類似下列的例外狀況： 
+如果您已執行了[Java.Lang.Object.Dispose](xref:Java.Lang.Object.Dispose*) JNI, 請避免觸及牽涉到的物件。 這麼做可能會建立一種*雙重處置*情況，讓您的程式碼可以（嚴重）嘗試存取已進行垃圾收集的基礎 JAVA 物件。 這樣做會產生類似下列的例外狀況： 
 
 ```shell
 System.ArgumentException: 'jobject' must not be IntPtr.Zero.
@@ -185,7 +187,7 @@ Parameter name: jobject
 at Android.Runtime.JNIEnv.CallVoidMethod
 ```
 
-當第一次處置物件導致成員變成 null，然後在這個 null 成員上進行後續的存取嘗試導致擲回例外狀況時，通常就會發生這種情況。 具體而言，物件的 `Handle` （連結受控實例至其基礎 JAVA 實例）在第一次處置時失效，但 managed 程式碼仍會嘗試存取此基礎 JAVA 實例，即使它已無法再使用也一樣（請參閱[受控](~/android/internals/architecture.md#Managed_Callable_Wrappers)可呼叫包裝函式，以深入瞭解 JAVA 實例和受控實例之間的對應。 
+當第一次處置物件導致成員變成 null，然後在這個 null 成員上進行後續的存取嘗試導致擲回例外狀況時，通常就會發生這種情況。 具體而言，物件的 `Handle` （將受控實例連結至其基礎 JAVA 實例）在第一次處置時失效，但 managed 程式碼仍會嘗試存取此基礎 JAVA 實例（即使已無法再使用）（如需 JAVA 實例與受控實例之間對應的詳細資訊，請參閱受控可呼叫[包裝](~/android/internals/architecture.md#Managed_Callable_Wrappers)函式）。 
 
 避免這個例外狀況的一個好方法，就是在您的 `Dispose` 方法中明確確認受控實例和基礎 JAVA 實例之間的對應是否仍然有效;也就是說，在存取其成員之前，請先檢查物件的 `Handle` 是否為 null （`IntPtr.Zero`）。 例如，下列 `Dispose` 方法會存取 `childViews` 物件： 
 
@@ -321,7 +323,7 @@ class BetterActivity : Activity {
 
 若要追蹤全域參考的建立和終結時間，您可以將 [ [debug .log](~/android/troubleshooting/index.md)系統] 屬性設定為包含[*grf*](~/android/troubleshooting/index.md)和/或[*gc*](~/android/troubleshooting/index.md)。 
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>組態
 
 您可以藉由設定 `MONO_GC_PARAMS` 環境變數，來設定 Xamarin 垃圾收集行程。 您可以使用[AndroidEnvironment](~/android/deploy-test/environment.md)的組建動作來設定環境變數。
 

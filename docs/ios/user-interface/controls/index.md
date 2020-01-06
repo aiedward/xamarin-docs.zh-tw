@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a4bf0b89a9ab336bf47ddcd104760211d912f423
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022050"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663430"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin 中的使用者介面控制項
 
@@ -80,9 +80,9 @@ Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的威�
 
 使用索引標籤導覽 UI 的 iOS 應用程式會使用 UITabBarController 類別來建立。 在本文中，我們將逐步解說如何設定包含數個控制器和 views 的索引標籤式應用程式。 然後，我們將檢查當 UITabBarController 不是根控制器（例如登入畫面之後）時，如何載入它。
 
-## <a name="web-viewsuiwebviewmd"></a>[Web 檢視](uiwebview.md)
+## <a name="web-viewswebviewmd"></a>[Web 檢視](webview.md)
 
-在本文中，我們將探討 Apple 提供的三個 Web 瀏覽器： `UIWebView`、`WKWebview`和 `SFSafariViewController`、其相似性和差異，以及如何使用它們。
+在本文中，我們將探討 Apple 所提供的 web 瀏覽器–`WKWebview` 和 `SFSafariViewController`–其相似性和差異，以及如何使用它們。
 
 ## <a name="related-links"></a>相關連結
 

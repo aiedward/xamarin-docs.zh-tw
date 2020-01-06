@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: c73144f797447832d795c1379f12a52494c1fbca
-ms.sourcegitcommit: 1c87135a47780f34102952d4b140850b4f08b075
+ms.openlocfilehash: e388df2b4c7201cad01789de1676f79bec8d351e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74536527"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488539"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -19,9 +19,9 @@ Xamarin.Essentials 提供單一跨平台 API，能夠搭配任何 iOS、Android 
 
 ## <a name="installation"></a>安裝
 
-Xamarin.Essentials 是以 NuGet 套件形式提供，可讓您使用 Visual Studio 新增到任何現有或新的專案。
+Xamarin 是以 NuGet 套件的形式提供，並包含在 Visual Studio 中的每個新專案中。 您可以利用下列步驟，將 alo 新增至任何現有的使用 Visual Studio。
 
-1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](https://visualstudio.microsoft.com/)的 [Visual Studio](~/get-started/installation/index.md)。
+1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/get-started/installation/index.md)的 [Visual Studio](https://visualstudio.microsoft.com/)。
 
 2. 開啟現有專案，或建立使用 [Visual Studio C#] (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。
 

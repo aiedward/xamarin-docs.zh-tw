@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 625826e729a6b4153396286361730d6a2b878dca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b357a6e1531c8f587c8fc0f86e2b56d6fecc2923
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010464"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488318"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>逐步解說-Xamarin 中的背景位置
 
@@ -80,7 +80,7 @@ ms.locfileid: "73010464"
     > [!IMPORTANT]
     > iOS 8 （和更新版本）也需要**plist**檔案中的專案，以在授權要求中顯示使用者。
 
-1. 在要求位置資料存取的警示中，使用將向使用者顯示的字串新增金鑰 `NSLocationAlwaysUsageDescription` 或 `NSLocationWhenInUseUsageDescription`。
+1. 針對應用程式所需的許可權類型（`NSLocationAlwaysUsageDescription`、`NSLocationWhenInUseUsageDescription`和/或 `NSLocationAlwaysAndWhenInUseUsageDescription`）新增**plist**金鑰，其中包含會向使用者顯示的字串，該警示會要求位置資料存取。
 
 1. iOS 9 會在使用 `AllowsBackgroundLocationUpdates` 資訊時要求 **。 plist**包含具有值 `location`的索引鍵 `UIBackgroundModes`。 如果您已完成本逐步解說的步驟2，這應該已經在您的 plist 檔案中。
 

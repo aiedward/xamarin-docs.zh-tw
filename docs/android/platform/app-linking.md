@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027752"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487824"
 ---
 # <a name="app-linking-in-android"></a>Android 中的應用程式連結
 
@@ -167,7 +167,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
         -d "http://<domain1>/recipe/scalloped-potato"
     ```
 
-2. 針對安裝在指定裝置上的應用程式顯示現有的連結處理原則。 下列命令會使用下列資訊，傾印裝置上每個使用者的連結原則清單。 在命令提示字元中輸入下列命令：
+2. 針對安裝在指定裝置上的應用程式顯示現有的連結處理原則。 下列命令會使用下列資訊，傾印裝置上每個使用者的連結原則清單。 請在命令提示字元中輸入下列命令：
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -177,7 +177,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     - **`Domain`** &ndash; 應用程式將會處理其 Web 連結的網域（以空格分隔）
     - **`Status`** &ndash; 這是應用程式目前的連結處理狀態。 的值**一律**表示應用程式已宣告 `android:autoVerify=true`，且已通過系統驗證。 後面接著一個十六進位數位，代表 Android 系統的喜好設定記錄。
 
-    例如:
+    例如：
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -195,7 +195,6 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
 ## <a name="related-links"></a>相關連結
 
 - [尋找金鑰儲存區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)
-- [活動和意圖](https://university.xamarin.com/classes#4)
 - [AppLinks](https://developers.facebook.com/docs/applinks)
 - [Google 數位資產連結](https://developers.google.com/digital-asset-links/)
 - [語句清單產生器和測試器](https://developers.google.com/digital-asset-links/tools/generator)

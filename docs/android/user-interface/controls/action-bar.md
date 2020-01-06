@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: b2b7c2cc87b37ae0e7397988e37df6b9b1e3aa10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f64b57e73b69b3111087ca1352f5fb9536f855e5
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029380"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488955"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>適用于 Xamarin 的 ActionBar
 
@@ -142,5 +142,3 @@ Intent CreateIntent ()
 
 - [Hello 索引標籤 ICS （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
 - [ShareActionProvider 示範（範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
-- [霜淇淋三明治簡介](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

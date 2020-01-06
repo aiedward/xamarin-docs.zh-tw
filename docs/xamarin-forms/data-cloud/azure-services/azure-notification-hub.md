@@ -6,13 +6,13 @@ ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 05/23/2019
-ms.openlocfilehash: 28abc7f4fa608091cfc7f4c64d4fcabfd9755c2b
-ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
+ms.date: 11/27/2019
+ms.openlocfilehash: 0152a61dabe4068892cb6b5aa5b535ab88d2ff95
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681349"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487447"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中樞和 Xamarin 來傳送和接收推播通知
 
@@ -29,6 +29,9 @@ ms.locfileid: "74681349"
 1. [設定推播通知的原生 iOS 專案](#configure-ios-for-notifications)。
 1. [使用 Azure 通知中樞的測試通知](#test-notifications-in-the-azure-portal)。
 1. [建立後端應用程式以傳送通知](#create-a-notification-dispatcher)。
+
+> [!NOTE]
+> 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
 
 ## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>設定推播 Notification Services 和 Azure 通知中樞
 

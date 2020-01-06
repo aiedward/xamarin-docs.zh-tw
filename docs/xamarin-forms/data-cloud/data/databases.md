@@ -4,123 +4,289 @@ description: Xamarin.Forms 使用 SQLite 資料庫引擎來支援資料庫驅動
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/21/2018
-ms.openlocfilehash: 9ea105b27aacef9ca9d63af0c57de880d039ff53
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/05/2019
+ms.openlocfilehash: 49344b089c3c49cd8cd566a690649b28101b51ba
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739170"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487268"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本機資料庫
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
-_Xamarin 會使用 SQLite 資料庫引擎來支援資料庫驅動的應用程式，讓您可以在共用程式碼中載入和儲存物件。本文說明 Xamarin 應用程式如何使用 SQLite.Net 來讀取和寫入資料至本機 SQLite 資料庫。_
+SQLite 資料庫引擎可讓 Xamarin 應用程式將資料物件載入和儲存在共用程式碼中。 範例應用程式會使用 SQLite 資料庫資料表來儲存 todo 專案。 本文說明如何在共用程式碼中使用 SQLite.Net，在本機資料庫中儲存和取出資訊。
 
-## <a name="overview"></a>總覽
+[在 iOS 和 Android 上 ![Todolist 應用程式的螢幕擷取畫面](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS 和 Android 上的 Todolist 應用程式")
 
-Xamarin.Forms 應用程式可以使用 [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) 套件，透過參考 NuGet 中隨附的 `SQLite` 類別，將資料庫作業併入共用程式碼中。 這些資料庫作業可在 Xamarin.Forms 解決方案的 .NET Standard 程式庫專案中定義。
+遵循下列步驟，將 SQLite.NET 整合到行動應用程式：
 
-隨附的[範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)是簡單的待辦事項清單應用程式。 下列螢幕擷取畫面顯示該範例在每個平台上的外觀：
+1. [安裝 Nuget 套件](#install-the-sqlite-nuget-package)。
+1. [設定常數](#configure-app-constants)。
+1. [建立資料庫存取類別](#create-a-database-access-class)。
+1. [存取 Xamarin. 表單中的資料](#access-data-in-xamarinforms)。
+1. [Advanced configuration](#advanced-configuration)。
 
-[![Xamarin. forms 資料庫範例螢幕擷取畫面](databases-images/todo-list-sml.png "TodoList 第一頁螢幕擷取畫面")](databases-images/todo-list.png#lightbox "TodoList 第一頁螢幕擷取畫面") [ ![xamarin. 表單資料庫範例螢幕擷取畫面](databases-images/todo-list-sml.png "TodoList 第一頁螢幕擷取畫面")](databases-images/todo-list.png#lightbox "TodoList 第一頁螢幕擷取畫面")
+## <a name="install-the-sqlite-nuget-package"></a>安裝 SQLite Nuget 套件
 
-<a name="Using_SQLite_with_PCL" />
+使用 Nuget 套件管理員來搜尋**sqlite-net-pcl** ，並將最新版本加入至共用程式碼專案。
 
-## <a name="using-sqlite"></a>使用 SQLite
-
-若要將 SQLite 支援新增至 Xamarin.Forms .NET Standard 程式庫，請使用 NuGet 的搜尋函式來尋找 **sqlite-net-pcl** 並安裝最新的套件：
-
-![新增 NuGet SQLite.NET PCL 套件](databases-images/vs2017-sqlite-pcl-nuget.png "新增 NuGet SQLite.NET PCL 套件")
-
-有些 NuGet 套件的名稱很類似，正確套件具有下列屬性：
+有一些 Nuget 套件具有類似的名稱。 正確的套件有下列屬性：
 
 - **建立者：** Frank A. Krueger
 - **識別碼：** sqlite-net-pcl
-- **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **Nuget 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> 不論套件名稱為何，請使用 **sqlite-net-pcl** NuGet 套件，即使在專案中也一樣。
+> 即使是套件名稱，也請使用**sqlite-net-pcl** Nuget 套件，即使在 .NET Standard 專案中也一樣。
 
-新增參考之後，將傳回儲存資料庫之本機檔案路徑的屬性新增至 `App` 類別：
+## <a name="configure-app-constants"></a>設定應用程式常數
+
+範例專案包含提供一般設定資料的**Constants.cs**檔案：
 
 ```csharp
-static TodoItemDatabase database;
+public static class Constants
+{
+    public const string DatabaseFilename = "TodoSQLite.db3";
 
+    public const SQLite.SQLiteOpenFlags Flags =
+        // open the database in read/write mode
+        SQLite.SQLiteOpenFlags.ReadWrite |
+        // create the database if it doesn't exist
+        SQLite.SQLiteOpenFlags.Create |
+        // enable multi-threaded database access
+        SQLite.SQLiteOpenFlags.SharedCache;
+
+    public static string DatabasePath
+    {
+        get
+        {
+            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            return Path.Combine(basePath, DatabaseFilename);
+        }
+    }
+}
+```
+
+常數檔案會指定預設 `SQLiteOpenFlag` 用來初始化資料庫連接的列舉值。 `SQLiteOpenFlag` 列舉支援下列值：
+
+- `Create`：如果資料庫檔案不存在，連接就會自動加以建立。
+- `FullMutex`：以序列化執行緒模式開啟連接。
+- `NoMutex`：連接會在多執行緒模式中開啟。
+- `PrivateCache`：即使已啟用，連接也不會參與共用快取。
+- `ReadWrite`：連接可以讀取和寫入資料。
+- `SharedCache`：如果已啟用，連接將會參與共用快取。
+- `ProtectionComplete`：當裝置鎖定時，檔案已加密且無法存取。
+- `ProtectionCompleteUnlessOpen`：檔案在開啟之前會經過加密，但可供存取，即使使用者鎖定裝置也是如此。
+- `ProtectionCompleteUntilFirstUserAuthentication`：檔案會經過加密，直到使用者已啟動並解除鎖定裝置為止。
+- `ProtectionNone`：資料庫檔案未加密。
+
+視您的資料庫使用方式而定，您可能需要指定不同的旗標。 如需 `SQLiteOpenFlags`的詳細資訊，請參閱在 sqlite.org 上[開啟新的資料庫連接](https://www.sqlite.org/c3ref/open.html)。
+
+## <a name="create-a-database-access-class"></a>建立資料庫存取類別
+
+資料庫包裝函式類別會將資料存取層從應用程式的其餘部分抽象化。 這個類別會集中查詢邏輯，並簡化資料庫初始化的管理，讓您在應用程式成長時更輕鬆地重構或擴充資料作業。 Todo 應用程式會針對此目的定義 `TodoItemDatabase` 類別。
+
+### <a name="lazy-initialization"></a>延遲初始設定
+
+`TodoItemDatabase` 使用 .NET `Lazy` 類別來延遲資料庫的初始化，直到第一次存取為止。 使用延遲初始化可防止資料庫載入進程延遲啟動應用程式。 如需詳細資訊，請參閱[Lazy&lt;t&gt; 類別](https://docs.microsoft.com/dotnet/api/system.lazy-1)。
+
+```csharp
+public class TodoItemDatabase
+{
+    static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
+    {
+        return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+    });
+
+    static SQLiteAsyncConnection Database => lazyInitializer.Value;
+    static bool initialized = false;
+
+    public TodoItemDatabase()
+    {
+        InitializeAsync().SafeFireAndForget(false);
+    }
+
+    async Task InitializeAsync()
+    {
+        if (!initialized)
+        {
+            if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(TodoItem).Name))
+            {
+                await Database.CreateTablesAsync(CreateFlags.None, typeof(TodoItem)).ConfigureAwait(false);
+                initialized = true;
+            }
+        }
+    }
+
+    //...
+}
+```
+
+資料庫連接是靜態欄位，可確保在應用程式的生命週期中使用單一資料庫連接。 使用持續性的靜態連線，可提供比在單一應用程式會話期間多次開啟和關閉連接更好的效能。
+
+`InitializeAsync` 方法負責檢查是否已有資料表儲存 `TodoItem` 物件。 如果資料表不存在，這個方法會自動建立。
+
+### <a name="the-safefireandforget-extension-method"></a>SafeFireAndForget 擴充方法
+
+當 `TodoItemDatabase` 類別具現化時，它必須初始化資料庫連接，這是非同步進程。 但是：
+
+- 類別的構造函式不能是非同步。
+- 未等待的非同步方法不會擲回例外狀況。
+- 使用 `Wait` 方法會封鎖執行緒_和_抑制例外狀況。
+
+為了啟動非同步初始化、避免封鎖執行，而且有機會攔截例外狀況，範例應用程式會使用稱為 `SafeFireAndForget`的擴充方法。 `SafeFireAndForget` 擴充方法會為 `Task` 類別提供額外的功能：
+
+```csharp
+public static class TaskExtensions
+{
+    // NOTE: Async void is intentional here. This provides a way
+    // to call an async method from the constructor while
+    // communicating intent to fire and forget, and allow
+    // handling of exceptions
+    public static async void SafeFireAndForget(this Task task,
+        bool returnToCallingContext,
+        Action<Exception> onException = null)
+    {
+        try
+        {
+            await task.ConfigureAwait(returnToCallingContext);
+        }
+
+        // if the provided action is not null, catch and
+        // pass the thrown exception
+        catch (Exception ex) when (onException != null)
+        {
+            onException(ex);
+        }
+    }
+}
+```
+
+`SafeFireAndForget` 方法會等候所提供 `Task` 物件的非同步執行，並可讓您附加在擲回例外狀況時呼叫的 `Action`。
+
+如需詳細資訊，請參閱以工作為[基礎的非同步模式（](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)點一下）。
+
+### <a name="data-manipulation-methods"></a>資料操作方法
+
+`TodoItemDatabase` 類別包含四種資料操作類型的方法： [建立]、[讀取]、[編輯] 和 [刪除]。 SQLite.NET 程式庫提供簡單的物件關聯式對應（ORM），可讓您儲存和抓取物件，而不需要撰寫 SQL 語句。
+
+```csharp
+public static class TodoItemDatabase {
+
+    // ...
+
+    public Task<List<TodoItem>> GetItemsAsync()
+    {
+        return Database.Table<TodoItem>().ToListAsync();
+    }
+
+    public Task<List<TodoItem>> GetItemsNotDoneAsync()
+    {
+        // SQL queries are also possible
+        return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+    }
+
+    public Task<TodoItem> GetItemAsync(int id)
+    {
+        return Database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+    }
+
+    public Task<int> SaveItemAsync(TodoItem item)
+    {
+        if (item.ID != 0)
+        {
+            return Database.UpdateAsync(item);
+        }
+        else
+        {
+            return Database.InsertAsync(item);
+        }
+    }
+
+    public Task<int> DeleteItemAsync(TodoItem item)
+    {
+        return Database.DeleteAsync(item);
+    }
+}
+```
+
+## <a name="access-data-in-xamarinforms"></a>存取 Xamarin 中的資料
+
+`App` 類別的 Xamarin 會公開 `TodoItemDatabase` 類別的實例：
+
+```csharp
 public static TodoItemDatabase Database
 {
-  get
-  {
-    if (database == null)
+    get
     {
-      database = new TodoItemDatabase(
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"));
+        if (database == null)
+        {
+            database = new TodoItemDatabase();
+        }
+        return database;
     }
-    return database;
-  }
 }
 ```
 
-`TodoItemDatabase` 建構函式採用資料庫檔案的路徑作為引數，如下所示：
+這個屬性可讓 Xamarin 元件呼叫 `Database` 實例上的資料抓取和操作方法，以回應使用者互動。 例如：
 
 ```csharp
-public TodoItemDatabase(string dbPath)
+var saveButton = new Button { Text = "Save" };
+saveButton.Clicked += async (sender, e) =>
 {
-  database = new SQLiteAsyncConnection(dbPath);
-  database.CreateTableAsync<TodoItem>().Wait();
-}
+    var todoItem = (TodoItem)BindingContext;
+    await App.Database.SaveItemAsync(todoItem);
+    await Navigation.PopAsync();
+};
 ```
 
-將資料庫公開為唯一資料庫的優點為，所建立的單一資料庫連線會在應用程式執行時保持開啟，因此可避免每次執行資料庫作業時開啟和關閉資料庫檔案的費用。
+## <a name="advanced-configuration"></a>進階設定
 
-`TodoItemDatabase` 類別的其餘部分包含跨平台執行的 SQLite 查詢。 範例查詢程式碼如下所示 (如需該語法的詳細資料，請參閱[搭配 Xamarin.iOS 使用 SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md)。
+SQLite 提供健全的 API，其功能比本文和範例應用程式中所涵蓋的更多功能。 下列各節涵蓋擴充性的重要功能。
+
+如需詳細資訊，請參閱 sqlite.org 上的[SQLite 檔](https://www.sqlite.org/docs.html)。
+
+### <a name="write-ahead-logging"></a>預先寫入記錄
+
+根據預設，SQLite 會使用傳統的回復日誌。 未變更的資料庫內容複本會寫入個別的復原檔案中，然後這些變更會直接寫入資料庫檔案中。 刪除復原日誌時，就會發生認可。
+
+預先寫入記錄（WAL）會先將變更寫入另一個 WAL 檔案。 在 WAL 模式中，認可是特殊記錄，附加至 WAL 檔案，可讓單一 WAL 檔案中發生多個交易。 在稱為「_檢查點_」的特殊作業中，WAL 檔案會合並回資料庫檔案中。
+
+本機資料庫的 WAL 可能會比較快，因為讀取器和寫入器不會彼此封鎖，讓讀寫作業得以並行處理。 不過，WAL 模式不允許變更_頁面大小_、將其他檔案關聯新增至資料庫，以及加入額外的_檢查點_作業。
+
+若要在 SQLite.NET 中啟用 WAL，請在 `SQLiteAsyncConnection` 實例上呼叫 `EnableWriteAheadLoggingAsync` 方法：
 
 ```csharp
-public Task<List<TodoItem>> GetItemsAsync()
-{
-  return database.Table<TodoItem>().ToListAsync();
-}
-
-public Task<List<TodoItem>> GetItemsNotDoneAsync()
-{
-  return database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-}
-
-public Task<TodoItem> GetItemAsync(int id)
-{
-  return database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
-}
-
-public Task<int> SaveItemAsync(TodoItem item)
-{
-  if (item.ID != 0)
-  {
-    return database.UpdateAsync(item);
-  }
-  else {
-    return database.InsertAsync(item);
-  }
-}
-
-public Task<int> DeleteItemAsync(TodoItem item)
-{
-  return database.DeleteAsync(item);
-}
+await Database.EnableWriteAheadLoggingAsync();
 ```
 
-> [!NOTE]
-> 使用非同步 SQLite.Net API 的優點為，資料庫作業會移至背景執行緒。 此外，不需要撰寫額外的並行處理程式碼，因為 API 會負責處理。
+如需詳細資訊，請參閱 sqlite.org 上的[SQLite 預先寫入記錄](https://www.sqlite.org/wal.html)。
 
-## <a name="summary"></a>總結
+### <a name="copying-a-database"></a>複製資料庫
 
-Xamarin.Forms 使用 SQLite 資料庫引擎來支援資料庫驅動型應用程式，讓您可以將物件載入和儲存至共用程式碼。
+在幾種情況下，可能必須複製 SQLite 資料庫：
 
-本文著重於使用 Xamarin.Forms 來**存取** SQLite 資料庫。 如需使用 SQLite.Net 本身的詳細資訊，請參閱 [Android 上的 SQLite.NET](~/android/data-cloud/data-access/using-sqlite-orm.md) 或 [iOS 上的 SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md) 文件。
+- 資料庫隨附于您的應用程式，但必須複製或移至行動裝置上可寫入的儲存體。
+- 您需要建立資料庫的備份或複本。
+- 您需要為資料庫檔案進行版本、移動或重新命名。
+
+一般來說，移動、重新命名或複製資料庫檔案與其他任何檔案類型相同，還有一些其他考慮：
+
+- 在嘗試移動資料庫檔案之前，應該先關閉所有資料庫連接。
+- 如果您使用預先[寫入記錄](#write-ahead-logging)，SQLite 會建立共用記憶體存取（. 具有下列 shm）檔案和（寫入預先記錄）（. wal）檔案。 請確定您也將任何變更套用至這些檔案。
+
+如需詳細資訊，請參閱[Xamarin. Forms 中](~/xamarin-forms/data-cloud/data/files.md)的檔案處理。
 
 ## <a name="related-links"></a>相關連結
 
-- [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
-- [Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Todo 範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+- [SQLite.NET Nuget 套件](https://www.nuget.org/packages/sqlite-net-pcl/)
+- [SQLite 檔](https://www.sqlite.org/docs.html)
+- [搭配使用 SQLite 與 Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
+- [搭配使用 SQLite 與 iOS](~/ios/data-cloud/data/using-sqlite-orm.md)
+- [以工作為基礎的非同步模式（點一下）](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [延遲<T> 類別](https://docs.microsoft.com//api/system.lazy-1)

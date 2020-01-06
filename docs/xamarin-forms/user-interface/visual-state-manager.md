@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/07/2018
-ms.openlocfilehash: 228501172ede71204c64e1efe1673ce92be424ea
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.date: 12/18/2019
+ms.openlocfilehash: 11de0ecf20c6748d4958d1f1f1bea80e6a87024e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68656061"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490008"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>[Xamarin] 視覺狀態管理員
 
@@ -33,7 +33,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 - 禁止
 - 作用
 
-所有衍生自[`VisualElement`](xref:Xamarin.Forms.VisualElement)的類別都支援此視覺狀態群組，這是[`View`](xref:Xamarin.Forms.View)和[`Page`](xref:Xamarin.Forms.Page)的基類。 
+所有衍生自[`VisualElement`](xref:Xamarin.Forms.VisualElement)的類別都支援此視覺狀態群組，這是[`View`](xref:Xamarin.Forms.View)和[`Page`](xref:Xamarin.Forms.Page)的基類。
 
 您也可以定義自己的視覺狀態群組和視覺狀態，如本文所示。
 
@@ -47,7 +47,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 例如，假設您在頁面上有一個 `Entry` 視圖，而您想要讓 `Entry` 的視覺外觀以下列方式變更：
 
 - 停用 `Entry` 時，`Entry` 應該會有粉紅色的背景。
-- @No__t_0 應正常具有酸淺的背景。
+- `Entry` 應正常具有酸淺的背景。
 - 當 `Entry` 有輸入焦點時，應該會展開為其一般高度的兩倍。
 
 您可以將 VSM 標記附加至個別的視圖，或者您也可以在套用到多個視圖的樣式中定義它。 接下來的兩節將說明這些方法。
@@ -62,7 +62,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 </Entry>
 ```
 
-因為其中一種狀態會使用 [`FontSize`] 屬性來將 `Entry` 中的文字大小加倍，所以會提供明確的字型大小。
+因為其中一種狀態會使用 [`FontSize`] 屬性來將 `Entry`中的文字大小加倍，所以會提供明確的字型大小。
 
 接下來，在這些標記之間插入 `VisualStateManager.VisualStateGroups` 標記：
 
@@ -76,7 +76,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 
 [`VisualStateGroups`](xref:Xamarin.Forms.VisualStateManager.VisualStateGroupsProperty)是由[`VisualStateManager`](xref:Xamarin.Forms.VisualStateManager)類別所定義的附加可系結屬性。 （如需附加可系結屬性的詳細資訊，請參閱[附加屬性](~/xamarin-forms/xaml/attached-properties.md)一文）。這是 `VisualStateGroups` 屬性附加至 `Entry` 物件的方式。
 
-@No__t_0 屬性是[`VisualStateGroupList`](xref:Xamarin.Forms.VisualStateGroupList)類型，這是[`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup)物件的集合。 在 `VisualStateManager.VisualStateGroups` 標籤中，為您想要包含的每個視覺狀態群組插入一對 `VisualStateGroup` 標記：
+`VisualStateGroups` 屬性是[`VisualStateGroupList`](xref:Xamarin.Forms.VisualStateGroupList)類型，這是[`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup)物件的集合。 在 `VisualStateManager.VisualStateGroups` 標籤中，為您想要包含的每個視覺狀態群組插入一對 `VisualStateGroup` 標記：
 
 ```xaml
 <Entry FontSize="18">
@@ -88,7 +88,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 </Entry>
 ```
 
-請注意，`VisualStateGroup` 標記具有 `x:Name` 屬性，指出群組的名稱。 @No__t_0 類別會定義您可以改用的 `Name` 屬性：
+請注意，`VisualStateGroup` 標記具有 `x:Name` 屬性，指出群組的名稱。 `VisualStateGroup` 類別會定義您可以改用的 `Name` 屬性：
 
 ```xaml
 <VisualStateGroup Name="CommonStates">
@@ -96,9 +96,9 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 
 您可以使用 `x:Name` 或 `Name`，但不能同時在相同的專案中。
 
-@No__t_0 類別會定義名為[`States`](xref:Xamarin.Forms.VisualStateGroup.States)的屬性，也就是[`VisualState`](xref:Xamarin.Forms.VisualState)物件的集合。 `States` 是 `VisualStateGroups` 的_content 屬性_，因此您可以直接在 `VisualStateGroup` 標記之間包含 `VisualState` 標記。 （內容屬性會在「[基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties)」一文中討論）。
+`VisualStateGroup` 類別會定義名為[`States`](xref:Xamarin.Forms.VisualStateGroup.States)的屬性，也就是[`VisualState`](xref:Xamarin.Forms.VisualState)物件的集合。 `States` 是 `VisualStateGroups` 的_content 屬性_，因此您可以直接在 `VisualStateGroup` 標記之間包含 `VisualState` 標記。 （內容屬性會在「[基本 XAML 語法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md#content-properties)」一文中討論）。
 
-下一個步驟是針對該群組中的每個視覺狀態包含一對標記。 這些也可以使用 `x:Name` 或 `Name` 來識別：
+下一個步驟是針對該群組中的每個視覺狀態包含一對標記。 這些也可以使用 `x:Name` 或 `Name`來識別：
 
 ```xaml
 <Entry FontSize="18">
@@ -122,7 +122,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 
 `VisualState` 會定義名為[`Setters`](xref:Xamarin.Forms.VisualState.Setters)的屬性，這是[`Setter`](xref:Xamarin.Forms.Setter)物件的集合。 這些是您在[`Style`](xref:Xamarin.Forms.Style)物件中使用的 `Setter` 物件。
 
-`Setters`_不_是 `VisualState` 的 content 屬性，因此必須包含 `Setters` 屬性的屬性元素標記：
+`Setters`_不_是 `VisualState`的 content 屬性，因此必須包含 `Setters` 屬性的屬性元素標記：
 
 ```xaml
 <Entry FontSize="18">
@@ -136,7 +136,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 
             <VisualState x:Name="Focused">
                 <VisualState.Setters>
-    
+
                 </VisualState.Setters>
             </VisualState>
 
@@ -178,7 +178,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 </Entry>
 ```
 
-每個 `Setter` 標籤都會指出當狀態為「目前」時，特定屬性的值。 @No__t_0 物件所參考的任何屬性，都必須由可系結的屬性支援。
+每個 `Setter` 標籤都會指出當狀態為「目前」時，特定屬性的值。 `Setter` 物件所參考的任何屬性，都必須由可系結的屬性支援。
 
 這種標記類似于 **[VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例程式中的**VSM on View**頁面的基礎。 此頁面包含三個 `Entry` 視圖，但只有第二個是附加的 VSM 標記：
 
@@ -211,7 +211,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
         <Entry>
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
-                    
+
                     <VisualState x:Name="Normal">
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor" Value="Lime" />
@@ -251,21 +251,21 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 </ContentPage>
 ```
 
-請注意，第二個 `Entry` 也有 `DataTrigger` 作為其 `Trigger` 集合的一部分。 這會導致 `Entry` 停用，直到 `Entry` 輸入到第三個為止。 以下是啟動時，在 iOS、Android 和通用 Windows 平臺（UWP）上執行的頁面：
+請注意，第二個 `Entry` 也有 `DataTrigger` 作為其 `Trigger` 集合的一部分。 這會導致 `Entry` 停用，直到 `Entry`輸入到第三個為止。 以下是啟動時，在 iOS、Android 和通用 Windows 平臺（UWP）上執行的頁面：
 
 [![在 View 上的 VSM：已停用](vsm-images/VsmOnViewDisabled.png "已停用 VSM-已停用")](vsm-images/VsmOnViewDisabled-Large.png#lightbox)
 
-目前的視覺狀態為「已停用」，因此第二個 `Entry` 的背景在 iOS 和 Android 畫面上為粉紅色。 @No__t_0 的 UWP 執行不允許在停用 `Entry` 時設定背景色彩。 
+目前的視覺狀態為「已停用」，因此第二個 `Entry` 的背景在 iOS 和 Android 畫面上為粉紅色。 `Entry` 的 UWP 執行不允許在停用 `Entry` 時設定背景色彩。
 
-當您在第三個 `Entry` 中輸入一些文字時，第二個 `Entry` 會切換為「正常」狀態，而背景現在則為「酸淺」：
+當您在第三個 `Entry`中輸入一些文字時，第二個 `Entry` 會切換為「正常」狀態，而背景現在則為「酸淺」：
 
 [![查看 VSM：正常](vsm-images/VsmOnViewNormal.png "VSM on view-normal")](vsm-images/VsmOnViewNormal-Large.png#lightbox)
 
-當您接觸第二個 `Entry` 時，它會取得輸入焦點。 它會切換為「焦點」狀態，並將其高度擴展為兩倍：
+當您接觸第二個 `Entry`時，它會取得輸入焦點。 它會切換為「焦點」狀態，並將其高度擴展為兩倍：
 
 [![VSM on View：已聚焦](vsm-images/VsmOnViewFocused.png "以視圖為焦點的 VSM")](vsm-images/VsmOnViewFocused-Large.png#lightbox)
 
-請注意，當 `Entry` 取得輸入焦點時，不會保留淺的背景。 當視覺狀態管理員在視覺狀態之間切換時，先前狀態所設定的屬性將會取消設定。 請記住，視覺狀態是互斥的。 「正常」狀態不表示已啟用 `Entry`。 這表示 `Entry` 已啟用，而且沒有輸入焦點。 
+請注意，當 `Entry` 取得輸入焦點時，不會保留淺的背景。 當視覺狀態管理員在視覺狀態之間切換時，先前狀態所設定的屬性將會取消設定。 請記住，視覺狀態是互斥的。 「正常」狀態不表示已啟用 `Entry`。 這表示 `Entry` 已啟用，而且沒有輸入焦點。
 
 如果您想要 `Entry` 在「焦點」狀態下具有淺的背景，請將另一個 `Setter` 新增至該視覺狀態：
 
@@ -282,7 +282,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 
 ```xaml
 <VisualState x:Name="Normal" />
-``` 
+```
 
 ### <a name="visual-state-manager-markup-in-a-style"></a>樣式中的視覺狀態管理員標記
 
@@ -294,7 +294,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 <Style TargetType="Entry">
     <Setter Property="Margin" Value="20, 0" />
     <Setter Property="FontSize" Value="18" />
-</Style> 
+</Style>
 ```
 
 為 `VisualStateManager.VisualStateGroups` 附加的可系結屬性新增 `Setter` 標記：
@@ -306,10 +306,10 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
     <Setter Property="VisualStateManager.VisualStateGroups">
 
     </Setter>
-</Style> 
+</Style>
 ```
 
-@No__t_0 的 content 屬性 `Value`，因此可以直接在這些標記內指定 `Value` 屬性的值。 該屬性的類型為 `VisualStateGroupList`：
+`Setter` 的 content 屬性 `Value`，因此可以直接在這些標記內指定 `Value` 屬性的值。 該屬性的類型為 `VisualStateGroupList`：
 
 ```xaml
 <Style TargetType="Entry">
@@ -320,7 +320,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
 
         </VisualStateGroupList>
     </Setter>
-</Style> 
+</Style>
 ```
 
 在這些標記內，您可以包含一個以上的 `VisualStateGroup` 物件：
@@ -336,7 +336,7 @@ VSM 引進了_視覺狀態_的概念。 如 `Button` 之類的 Xamarin 視圖，
             </VisualStateGroup>
         </VisualStateGroupList>
     </Setter>
-</Style> 
+</Style>
 ```
 
 VSM 標記的其餘部分與之前相同。
@@ -389,7 +389,7 @@ VSM 標記的其餘部分與之前相同。
         <Label Text="Normal Entry:" />
 
         <Entry />
-        
+
         <Label Text="Entry with VSM: " />
 
         <Entry>
@@ -416,6 +416,19 @@ VSM 標記的其餘部分與之前相同。
 
 [![以樣式的 VSM](vsm-images/VsmInStyle.png "以樣式的 VSM")](vsm-images/VsmInStyle-Large.png#lightbox)
 
+## <a name="visual-states-in-xamarinforms"></a>Xamarin 中的視覺狀態
+
+下表列出在 Xamarin 中定義的視覺狀態。表單：
+
+| 類別 | 狀態 | 更多資訊 |
+| ----- | ------ | ---------------- |
+| `Button` | `Pressed` | [按鈕視覺狀態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
+| `CollectionView` | `Selected` | [變更選取的專案色彩](~/xamarin-forms/user-interface/collectionview/selection.md#change-selected-item-color) |
+| `ImageButton` | `Pressed` | [ImageButton 視覺狀態](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
+| `VisualElement` | `Normal`中， `Disabled`中， `Focused` | [常見狀態](#the-common-states) |
+
+每個狀態都可以透過名為 `CommonStates`的視覺狀態群組來存取。
+
 ## <a name="defining-your-own-visual-states"></a>定義您自己的視覺狀態
 
 衍生自 `VisualElement` 的每個類別都支援三種常見狀態「正常」、「焦點」和「已停用」。 就內部而言， [`VisualElement`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs)類別會偵測到它已啟用或停用，或為焦點或未取得焦點，並呼叫靜態[`VisualStateManager.GoToState`](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String))方法：
@@ -424,13 +437,13 @@ VSM 標記的其餘部分與之前相同。
 VisualStateManager.GoToState(this, "Focused");
 ```
 
-這是您可以在 `VisualElement` 類別中找到的唯一視覺狀態管理員程式碼。 因為會根據衍生自 `VisualElement` 的每個類別，針對每個物件呼叫 `GoToState`，所以您可以使用視覺狀態管理員搭配任何 `VisualElement` 物件來回應這些變更。
+這是您可以在 `VisualElement` 類別中找到的唯一視覺狀態管理員程式碼。 因為會根據衍生自 `VisualElement`的每個類別，針對每個物件呼叫 `GoToState`，所以您可以使用視覺狀態管理員搭配任何 `VisualElement` 物件來回應這些變更。
 
-有趣的是，`VisualElement` 中未明確參考視覺狀態群組 "CommonStates" 的名稱。 組名不是 Visual State Manager API 的一部分。 在目前為止所顯示的兩個範例程式中，您可以將群組的名稱從 "CommonStates" 變更為其他任何專案，程式仍然可正常執行。 組名只是該群組中狀態的一般描述。 它會隱含地瞭解任何群組中的視覺狀態都是互斥的：一種狀態，而且每次只有一個狀態是最新的。
+有趣的是，`VisualElement`中未明確參考視覺狀態群組 "CommonStates" 的名稱。 組名不是 Visual State Manager API 的一部分。 在目前為止所顯示的兩個範例程式中，您可以將群組的名稱從 "CommonStates" 變更為其他任何專案，程式仍然可正常執行。 組名只是該群組中狀態的一般描述。 它會隱含地瞭解任何群組中的視覺狀態都是互斥的：一種狀態，而且每次只有一個狀態是最新的。
 
 如果您想要執行自己的視覺狀態，就必須從程式碼呼叫 `VisualStateManager.GoToState`。 通常您會從頁面類別的程式碼後置檔案進行此呼叫。
 
-**[VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例中的 [ **VSM 驗證**] 頁面會顯示如何使用與輸入驗證連接的視覺狀態管理員。 XAML 檔案包含兩個 `Label` 元素、一個 `Entry` 和一個 `Button`：
+**[VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** 範例中的 [ **VSM 驗證**] 頁面會顯示如何使用與輸入驗證連接的視覺狀態管理員。 XAML 檔案包含兩個 `Label` 元素、一個 `Entry`和一個 `Button`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -438,7 +451,7 @@ VisualStateManager.GoToState(this, "Focused");
              x:Class="VsmDemos.VsmValidationPage"
              Title="VSM Validation">
     <StackLayout Padding="10, 10">
-        
+
         <Label Text="Enter a U.S. phone number:"
                FontSize="Large" />
 
@@ -451,7 +464,7 @@ VisualStateManager.GoToState(this, "Focused");
                Text="Phone number must be of the form 555-555-5555, and not begin with a 0 or 1">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup Name="ValidityStates">
-                    
+
                     <VisualState Name="Valid">
                         <VisualState.Setters>
                             <Setter Property="TextColor" Value="Transparent" />
@@ -459,7 +472,7 @@ VisualStateManager.GoToState(this, "Focused");
                     </VisualState>
 
                     <VisualState Name="Invalid" />
-                    
+
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
         </Label>
@@ -472,7 +485,7 @@ VisualStateManager.GoToState(this, "Focused");
                 HorizontalOptions="Center">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup Name="ValidityStates">
-                    
+
                     <VisualState Name="Valid" />
 
                     <VisualState Name="Invalid">
@@ -480,7 +493,7 @@ VisualStateManager.GoToState(this, "Focused");
                             <Setter Property="IsEnabled" Value="False" />
                         </VisualState.Setters>
                     </VisualState>
-                    
+
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
         </Button>
@@ -488,7 +501,7 @@ VisualStateManager.GoToState(this, "Focused");
 </ContentPage>
 ```
 
-VSM 標記會附加至第二個 `Label` （名為 `helpLabel`）和 `Button` （名為 `submitButton`）。 有兩個互斥的狀態，名為「有效」和「無效」。 請注意，兩個 "ValidationState" 群組中的每一個都包含「有效」和「無效」的 `VisualState` 標記，不過其中一個在每個案例中都是空的。 
+VSM 標記會附加至第二個 `Label` （名為 `helpLabel`）和 `Button` （名為 `submitButton`）。 有兩個互斥的狀態，名為「有效」和「無效」。 請注意，兩個 "ValidationState" 群組中的每一個都包含「有效」和「無效」的 `VisualState` 標記，不過其中一個在每個案例中都是空的。
 
 如果 `Entry` 不包含有效的電話號碼，則目前的狀態會是「無效」，因此會顯示第二個 `Label` 並停用 `Button`：
 
@@ -498,7 +511,7 @@ VSM 標記會附加至第二個 `Label` （名為 `helpLabel`）和 `Button` （
 
 [![VSM 驗證：有效的狀態](vsm-images/VsmValidationValid.png "VSM 驗證-有效")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
-程式碼後置檔案會負責，以處理來自 `Entry` 的 `TextChanged` 事件。 處理常式會使用正則運算式來判斷輸入字串是否有效。 程式碼後置檔案中名為 `GoToState` 的方法會針對 `helpLabel` 和 `submitButton` 呼叫靜態 `VisualStateManager.GoToState` 方法：
+程式碼後置檔案會負責，以處理來自 `Entry`的 `TextChanged` 事件。 處理常式會使用正則運算式來判斷輸入字串是否有效。 程式碼後置檔案中名為 `GoToState` 的方法會針對 `helpLabel` 和 `submitButton`呼叫靜態 `VisualStateManager.GoToState` 方法：
 
 ```csharp
 public partial class VsmValidationPage : ContentPage
@@ -525,7 +538,7 @@ public partial class VsmValidationPage : ContentPage
 }
 ```
 
-同時也請注意，會從函式呼叫 `GoToState` 方法，以初始化狀態。 應該一律是目前的狀態。 但在程式碼中沒有任何名稱參考視覺狀態群組的名稱，但在 XAML 中是以「ValidationStates」的形式來表示，以利明確起見。 
+同時也請注意，會從函式呼叫 `GoToState` 方法，以初始化狀態。 應該一律是目前的狀態。 但在程式碼中沒有任何名稱參考視覺狀態群組的名稱，但在 XAML 中是以「ValidationStates」的形式來表示，以利明確起見。
 
 請注意，程式碼後置檔案必須考慮受這些視覺狀態影響之頁面上的每個物件，並針對每個物件呼叫 `VisualStateManager.GoToState`。 在此範例中，只有兩個物件（`Label` 和 `Button`），但它可能會更多。
 
@@ -537,7 +550,7 @@ public partial class VsmValidationPage : ContentPage
 
 ## <a name="using-the-visual-state-manager-for-adaptive-layout"></a>使用視覺狀態管理員進行自我調整版面配置
 
-在手機上執行的 Xamarin. Forms 應用程式通常會以直向或橫向外觀比例來查看，而且可以調整在桌面上執行的 Xamarin 程式，以採用許多不同大小和外觀比例。 設計良好的應用程式可能會以不同的方式來顯示其內容，以因應各種頁面或視窗的外型規格。 
+在手機上執行的 Xamarin. Forms 應用程式通常會以直向或橫向外觀比例來查看，而且可以調整在桌面上執行的 Xamarin 程式，以採用許多不同大小和外觀比例。 設計良好的應用程式可能會以不同的方式來顯示其內容，以因應各種頁面或視窗的外型規格。
 
 這項技術有時也稱為「調適型_版面_配置」。 因為自動調整版面配置只包含程式的視覺效果，所以它是視覺狀態管理員的理想應用程式。
 
@@ -551,7 +564,7 @@ public partial class VsmValidationPage : ContentPage
 
 從上到下，程式正在通用 Windows 平臺、Android 和 iOS 上執行。
 
-[VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)範例中的**VSM**調適型配置頁面會定義名為 "OrientationStates" 的群組，其中具有兩個名為「直向」和「橫向」的視覺狀態。 （較複雜的方法可能是以數種不同的頁面或視窗寬度為基礎）。 
+[VsmDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)範例中的**VSM**調適型配置頁面會定義名為 "OrientationStates" 的群組，其中具有兩個名為「直向」和「橫向」的視覺狀態。 （較複雜的方法可能是以數種不同的頁面或視窗寬度為基礎）。
 
 VSM 標記會出現在 XAML 檔案的四個位置中。 名為 `mainStack` 的 `StackLayout` 同時包含功能表和內容，也就是 `Image` 元素。 此 `StackLayout` 在直向模式中應該有垂直方向，而在橫向模式中應該是水準方向：
 
@@ -578,11 +591,11 @@ VSM 標記會出現在 XAML 檔案的四個位置中。 名為 `mainStack` 的 `
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        
+
         <ScrollView x:Name="menuScroll">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup Name="OrientationStates">
-                    
+
                     <VisualState Name="Portrait">
                         <VisualState.Setters>
                             <Setter Property="Orientation" Value="Horizontal" />
@@ -596,7 +609,7 @@ VSM 標記會出現在 XAML 檔案的四個位置中。 名為 `mainStack` 的 `
                     </VisualState>
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            
+
             <StackLayout x:Name="menuStack">
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup Name="OrientationStates">
@@ -644,15 +657,15 @@ VSM 標記會出現在 XAML 檔案的四個位置中。 名為 `mainStack` 的 `
                 <Button Text="Banana"
                         Command="{Binding SelectedCommand}"
                         CommandParameter="Banana.jpg" />
-                
+
                 <Button Text="Face Palm"
                         Command="{Binding SelectedCommand}"
                         CommandParameter="FacePalm.jpg" />
-                
+
                 <Button Text="Monkey"
                         Command="{Binding SelectedCommand}"
                         CommandParameter="monkey.png" />
-                
+
                 <Button Text="Seated Monkey"
                         Command="{Binding SelectedCommand}"
                         CommandParameter="SeatedMonkey.jpg" />
@@ -666,9 +679,9 @@ VSM 標記會出現在 XAML 檔案的四個位置中。 名為 `mainStack` 的 `
 </ContentPage>
 ```
 
-名為 `menuScroll` 的內部 `ScrollView` 和名為 `menuStack` 的 `StackLayout` 會執行按鈕的功能表。 這些版面配置的方向與 `mainStack` 相反。 功能表在直向模式中應該是水準的，而在橫向模式中則是垂直。
+名為 `menuScroll` 的內部 `ScrollView` 和名為 `menuStack` 的 `StackLayout` 會執行按鈕的功能表。 這些版面配置的方向與 `mainStack`相反。 功能表在直向模式中應該是水準的，而在橫向模式中則是垂直。
 
-VSM 標記的第四個區段是按鈕本身的隱含樣式。 此標記會設定 portait 和橫向方向的特定 `VerticalOptions`、`HorizontalOptions` 和 `Margin` 屬性。
+VSM 標記的第四個區段是按鈕本身的隱含樣式。 此標記會設定 portait 和橫向方向的特定 `VerticalOptions`、`HorizontalOptions`和 `Margin` 屬性。
 
 程式碼後置檔案會設定 `menuStack` 的 `BindingContext` 屬性，以執行 `Button` 命令，同時也會將處理常式附加至頁面的 `SizeChanged` 事件：
 
@@ -704,7 +717,7 @@ public partial class VsmAdaptiveLayoutPage : ContentPage
 }
 ```
 
-@No__t_0 處理常式會針對兩個 `StackLayout` 和 `ScrollView` 專案呼叫 `VisualStateManager.GoToState`，然後在 `menuStack` 的子系上執行迴圈，以呼叫 `VisualStateManager.GoToState` 元素的 `Button`。
+`SizeChanged` 處理常式會針對兩個 `StackLayout` 和 `ScrollView` 專案呼叫 `VisualStateManager.GoToState`，然後在 `menuStack` 的子系上執行迴圈，以呼叫 `VisualStateManager.GoToState` 元素的 `Button`。
 
 看起來像程式碼後置檔案可以藉由設定 XAML 檔案中專案的屬性，更直接處理方向變更，但是視覺狀態管理員絕對是更具結構化的方法。 所有視覺效果都會保留在 XAML 檔案中，讓它們變得更容易檢查、維護和修改。
 

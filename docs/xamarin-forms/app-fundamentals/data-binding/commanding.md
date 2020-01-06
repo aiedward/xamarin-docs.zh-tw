@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 7d442d14589b35632bce2b6caec09235138ec585
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 185aebf48b24a6abbdd8f56dbbfc32f6e99f6e63
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771629"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545591"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms 命令介面
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 在 Model-View-ViewModel (MVVM) 架構中，資料繫結是在 ViewModel (這通常是衍生自 `INotifyPropertyChanged` 的類別) 中屬性與檢視 (這通常是 XAML 檔案) 的屬性之間定義。 有時候應用程式需要超越這些屬性繫結，方法是要求使用者起始會影響 ViewModel 某些項目的命令。 這些命令通常是透過按鈕點擊或手指點選發出訊號，傳統上會以 `Button` 的 `Clicked` 事件處理常式或 `TapGestureRecognizer` 的 `Tapped` 事件處理常式在程式碼後置檔案中加以處理。
 
@@ -277,11 +277,11 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-以下是其運作方式：使用者第一次按下 [新增] 按鈕。 這會啟用項目表單，但停用 **New** 按鈕。 使用者接著輸入姓名、年齡和技能。 在編輯期間的任何時間，使用者可以按下 **Cancel** (取消) 按鈕，以便從頭開始。 只有在已輸入姓名和有效的年齡時，才會啟用 **Submit** (提交) 按鈕。 按下此 **Submit** 按鈕，就會將人員資料傳送到 `ListView` 所顯示的集合。 按下 **Cancel** 或 **Submit** 按鈕之後，系統會清除項目表單，並再次啟用 **New** 按鈕。
+以下是其運作方式：使用者第一次按下 **New** 按鈕。 這會啟用項目表單，但停用 **New** 按鈕。 使用者接著輸入姓名、年齡和技能。 在編輯期間的任何時間，使用者可以按下 **Cancel** (取消) 按鈕，以便從頭開始。 只有在已輸入姓名和有效的年齡時，才會啟用 **Submit** (提交) 按鈕。 按下此 **Submit** 按鈕，就會將人員資料傳送到 `ListView` 所顯示的集合。 按下 **Cancel** 或 **Submit** 按鈕之後，系統會清除項目表單，並再次啟用 **New** 按鈕。
 
-左側的 iOS 畫面會顯示輸入有效年齡之前的配置。 Android 和 UWP 畫面則顯示設定年齡後啟用的 **Submit** 按鈕：
+左側的 iOS 畫面會顯示輸入有效年齡之前的配置。 Android 螢幕會顯示在設定年齡之後啟用 [**提交**] 按鈕：
 
-[![人員輸入](commanding-images/personentry-small.png "人員輸入")](commanding-images/personentry-large.png#lightbox "人員輸入")
+[![Person 專案](commanding-images/personentry-small.png "Person 專案")](commanding-images/personentry-large.png#lightbox "Person 專案")
 
 此程式沒有任何可編輯現有項目的設備，當您離開該頁面時，也不會儲存項目。
 
@@ -532,7 +532,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 以下是運作中的程式：
 
-[![十進位鍵台](commanding-images/decimalkeyboard-small.png "十進位鍵台")](commanding-images/decimalkeyboard-large.png#lightbox "十進位鍵台")
+[![十進位數鍵盤](commanding-images/decimalkeyboard-small.png "十進位數鍵盤")](commanding-images/decimalkeyboard-large.png#lightbox "十進位數鍵盤")
 
 請注意，所有三個螢幕擷取畫面中小數點的按鈕已被停用，因為輸入的數字已包含小數點。
 
@@ -758,7 +758,7 @@ public partial class MainPage : ContentPage
 
 建構函式還會將頁面的 `BindingContext` 設定為其本身，以便繫結參考此類別中的 `NavigateCommand`。
 
-此建構函式中的程式碼順序會形成差異：`InitializeComponent` 呼叫會導致剖析 XAML，但該時間無法解析名為 `NavigateCommand` 的屬性繫結，因為 `BindingContext` 設定為 `null`。 如果在設定 `NavigateCommand`「之前」於建構函式中設定 `BindingContext`，則可在設定 `BindingContext` 後解析繫結，但此時 `NavigateCommand` 仍為 `null`。 在 `BindingContext` 之後設定 `NavigateCommand` 不會影響繫結，因為變更 `NavigateCommand` 並不會引發 `PropertyChanged` 事件，且繫結不知道 `NavigateCommand` 現在是有效的。
+此建構函式中的程式碼順序有所不同：`InitializeComponent` 呼叫會導致剖析 XAML，但該時間無法解析名為 `NavigateCommand` 的屬性繫結，因為 `BindingContext` 設定為 `null`。 如果在設定 `NavigateCommand`*之前*，在函式中設定 `BindingContext`，則可以在設定 `BindingContext` 時解析系結，但當時仍 `null``NavigateCommand`。 在 `BindingContext` 之後設定 `NavigateCommand` 不會影響繫結，因為變更 `NavigateCommand` 並不會引發 `PropertyChanged` 事件，且繫結不知道 `NavigateCommand` 現在是有效的。
 
 在呼叫 `InitializeComponent` 之前同時設定 `NavigateCommand` 和 `BindingContext` (依任意順序) 可正常運作，因為 XAML 剖析器遇到繫結定義時，已設定繫結的這兩個元件。
 

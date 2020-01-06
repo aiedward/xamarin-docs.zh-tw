@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/19/2019
-ms.openlocfilehash: fdee070021b22f82cb69571f0fa2f396831b14e6
-ms.sourcegitcommit: 6781967baeed4fe2c58f070476e7c21d01c25c30
+ms.date: 11/04/2019
+ms.openlocfilehash: 8425db35b64ec72ba0384f837e01acca49bd20f7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74052799"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490047"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表（CSS）設定 Xamarin 應用程式的樣式
 
@@ -196,7 +196,7 @@ stacklayout {
 }
 ```
 
-此選取器會識別其[`StyleId`](xref:Xamarin.Forms.Element.StyleId)屬性設定為 `listView` 的專案。 不過，如果未設定 [`StyleId`] 屬性，則選取器會切換回使用元素的 `x:Name`。 因此，在下列 XAML 範例中，`#listView` 選取器會識別其 `x:Name` 屬性設定為 `listView` 的[`ListView`](xref:Xamarin.Forms.ListView) ，並將它的背景色彩設定為 [`lightgray`]。
+此選取器會識別其[`StyleId`](xref:Xamarin.Forms.Element.StyleId)屬性設定為 `listView`的專案。 不過，如果未設定 [`StyleId`] 屬性，則選取器會切換回使用元素的 `x:Name`。 因此，在下列 XAML 範例中，`#listView` 選取器會識別其 `x:Name` 屬性設定為 `listView`的[`ListView`](xref:Xamarin.Forms.ListView) ，並將它的背景色彩設定為 [`lightgray`]。
 
 ```xaml
 <ContentPage ...>
@@ -322,15 +322,15 @@ stacklayout>image {
 |選取器|範例|描述|
 |---|---|---|
 |`.class`|`.header`|選取具有包含 ' header ' `StyleClass` 屬性的所有元素。 請注意，此選取器會區分大小寫。|
-|`#id`|`#email`|選取 `StyleId` 設定為 `email` 的所有元素。 如果未設定 `StyleId`，請回到 `x:Name`。 使用 XAML 時，`x:Name` 優先于 `StyleId`。 請注意，此選取器會區分大小寫。|
+|`#id`|`#email`|選取 `StyleId` 設定為 `email`的所有元素。 如果未設定 `StyleId`，請回到 `x:Name`。 使用 XAML 時，`x:Name` 優先于 `StyleId`。 請注意，此選取器會區分大小寫。|
 |`*`|`*`|選取所有元素。|
-|`element`|`label`|選取類型 `Label` 的所有專案，而不是子類別。 請注意，此選取器不區分大小寫。|
+|`element`|`label`|選取類型 `Label`的所有專案，而不是子類別。 請注意，此選取器不區分大小寫。|
 |`^base`|`^contentpage`|選取具有 `ContentPage` 做為基類的所有元素，包括 `ContentPage` 本身。 請注意，此選取器不區分大小寫，而且不是 CSS 規格的一部分。|
 |`element,element`|`label,button`|選取所有 `Button` 元素和所有 `Label` 元素。 請注意，此選取器不區分大小寫。|
-|`element element`|`stacklayout label`|選取 `StackLayout` 內的所有 `Label` 元素。 請注意，此選取器不區分大小寫。|
+|`element element`|`stacklayout label`|選取 `StackLayout`內的所有 `Label` 元素。 請注意，此選取器不區分大小寫。|
 |`element>element`|`stacklayout>label`|選取具有 `StackLayout` 作為直接父系的所有 `Label` 元素。 請注意，此選取器不區分大小寫。|
-|`element+element`|`label+entry`|在 `Label` 之後直接選取所有 `Entry` 專案。 請注意，此選取器不區分大小寫。|
-|`element~element`|`label~entry`|選取前面加上 `Label` 的所有 `Entry` 元素。 請注意，此選取器不區分大小寫。|
+|`element+element`|`label+entry`|在 `Label`之後直接選取所有 `Entry` 專案。 請注意，此選取器不區分大小寫。|
+|`element~element`|`label~entry`|選取前面加上 `Label`的所有 `Entry` 元素。 請注意，此選取器不區分大小寫。|
 
 具有相符選取器的樣式會以定義順序連續套用。 在特定專案上定義的樣式一律會最後套用。
 
@@ -346,33 +346,34 @@ stacklayout>image {
 > [!NOTE]
 > 不支援明確性和明確覆寫。
 
-## <a name="property-reference"></a>屬性參考
+## <a name="property-reference"></a>內容參照
 
 下列 CSS 屬性受到 Xamarin 的支援（在 [**值] 資料**行中，類型是_斜體_，而字串常值則是 `gray`）：
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
-|`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| 0 1 2 |`align-items: flex-start;`|
-|`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| 0 1 2 3 4|`align-self: flex-end;`|
+|`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
+|`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_色彩_\| `initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_字串_\| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`、`Frame`、`ImageButton`|_色彩_\| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`、`Button`、`Frame``ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
+|`border-color`|`Button`中， `Frame`中， `ImageButton`|_色彩_\| `initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`、 `Button`、 `Frame`、 `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
 |`border-width`|`Button`、 `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`、`BoxView`、`Button`、`CheckBox`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`ProgressBar`、`SearchBar`、`Switch`、`TimePicker`|_色彩_\| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
-|`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| 0 1 2|`flex-direction: column-reverse;`|
+|`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
 |`flex-basis`|`VisualElement`|_float_ \| `auto` \| `initial`。 此外，範圍0% 到100% 的百分比可以使用 `%` 正負號來指定。|`flex-basis: 25%;`|
 |`flex-grow`|`VisualElement`|_float_ \| `initial`|`flex-grow: 1.5;`|
 |`flex-shrink`|`VisualElement`|_float_ \| `initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字串_\| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \| _namedsize_ \| `initial` |`font-size: 12;`|
-|`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
+|`font-family`|+`Button`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`SearchBar`、`TimePicker`、`Span`|_字串_\| `initial` |`font-family: Consolas;`|
+|`font-size`|+`Button`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`SearchBar`、`TimePicker`、`Span`|_double_\| _namedsize_ \| `initial` |`font-size: 12;`|
+|`font-style`|+`Button`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`SearchBar`、`TimePicker`、`Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
+|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \| `initial`|`letter-spacing: 2.5;`|
 |`line-height`|`Label`、 `Span`|_double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_粗細_\| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_粗細_\| `initial` |`margin-left: 3;`|
@@ -384,19 +385,19 @@ stacklayout>image {
 |`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
 |`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
-|`padding`|`Button`、`ImageButton`、`Layout``Page`|_粗細_\| `initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`、`ImageButton`、`Layout``Page`|_double_ \| `initial`|`padding-left: 3;`|
-|`padding-top`|`Button`、`ImageButton`、`Layout``Page`| _double_ \| `initial` |`padding-top: 4;`|
-|`padding-right`|`Button`、`ImageButton`、`Layout``Page`| _double_ \| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`、`ImageButton`、`Layout``Page`| _double_ \| `initial` |`padding-bottom: 6;`|
+|`padding`|`Button`、 `ImageButton`、 `Layout`、 `Page`|_粗細_\| `initial` |`padding: 6 12 12;`|
+|`padding-left`|`Button`、 `ImageButton`、 `Layout`、 `Page`|_double_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`、 `ImageButton`、 `Layout`、 `Page`| _double_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`、 `ImageButton`、 `Layout`、 `Page`| _double_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`、 `ImageButton`、 `Layout`、 `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
 |`row-gap`|`Grid`| _double_ \| `initial`|`row-gap: 12;`|
-|`text-align`| `Entry`、`EntryCell`、`Label``SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| 0 1 2 3 4 5 6。 在由右至左的環境中，應該避免 `left` 和 `right`。| `text-align: right;`|
+|`text-align`| `Entry`、 `EntryCell`、 `Label`、 `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`。 在由右至左的環境中，應該避免 `left` 和 `right`。| `text-align: right;`|
 |`text-decoration`|`Label`、 `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \| `initial` |`transform-origin: 7.5, 12.5;`|
-|`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| 0 1 2 3 4 5 6|`vertical-align: bottom;`|
-|`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| 0|`visibility: hidden;`|
+|`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
+|`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
 |`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
 
 > [!NOTE]
@@ -404,9 +405,9 @@ stacklayout>image {
 
 目前不支援下列屬性：
 
-- `all: initial`
+- `all: initial`。
 - 版面配置屬性（box 或方格）。
-- 縮寫屬性，例如 `font` 和 `border`。
+- 縮寫屬性，例如 `font`和 `border`。
 
 此外，也沒有 `inherit` 的值，因此不支援繼承。 例如，您無法在版面配置上設定 `font-size` 屬性，並預期配置中的所有[`Label`](xref:Xamarin.Forms.Label)實例都會繼承值。 其中一個例外狀況是 `direction` 屬性，其預設值為 `inherit`。
 
@@ -424,9 +425,9 @@ stacklayout>image {
 |`-xf-max-length`|`Entry`、 `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_色彩_\| `initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_色彩_\| `initial` |`-xf-min-track-color: yellow;`|
-|`-xf-orientation`|`ScrollView`、 `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`。 只有 `ScrollView` 支援 `both`。 |`-xf-orientation: horizontal;`|
-|`-xf-placeholder`|`Entry`、`Editor`、`SearchBar`|以_引號括_住的文字 \| `initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`、`Editor`、`SearchBar`|_色彩_\| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-orientation`|`ScrollView`、 `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`。 只有 `ScrollView`支援 `both`。 |`-xf-orientation: horizontal;`|
+|`-xf-placeholder`|`Entry`中， `Editor`中， `SearchBar`|以_引號括_住的文字 \| `initial` |`-xf-placeholder: Enter name;`|
+|`-xf-placeholder-color`|`Entry`中， `Editor`中， `SearchBar`|_色彩_\| `initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
 |`-xf-thumb-color`|`Slider`、 `Switch`|_色彩_\| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|

@@ -1,39 +1,39 @@
 ---
-title: SkiaSharp 繪圖簡單的圓形
-description: 本文章說明 SkiaSharp 繪圖，包括畫布和 [小畫家] 物件，在 Xamarin.Forms 應用程式的基本概念，並示範此範例程式碼。
+title: 在 SkiaSharp 中繪製簡單的圓形
+description: 本文說明 SkiaSharp 繪圖的基本概念，包括 canvas 和油漆物件，以及在 Xamarin 中使用範例程式碼。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: a3eca2036b0e4c2722e034e48ad4ca3054343a89
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: a0ab6a965c2507c01f5b7ebdc3670e6661ca481e
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032577"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545630"
 ---
-# <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp 繪圖簡單的圓形
+# <a name="drawing-a-simple-circle-in-skiasharp"></a>在 SkiaSharp 中繪製簡單的圓形
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_了解 SkiaSharp 繪圖，包括畫布的基本概念，並繪製物件_
+_瞭解 SkiaSharp 繪圖的基本概念，包括畫布和油漆物件_
 
-這篇文章介紹的概念，繪製圖形中使用 SkiaSharp，包括建立 Xamarin.Forms`SKCanvasView`物件來裝載圖形中，處理`PaintSurface`事件，並使用`SKPaint`物件來指定色彩和其他繪圖屬性。
+本文介紹使用 SkiaSharp 在 Xamarin 中繪製圖形的概念，包括建立用來裝載圖形的 `SKCanvasView` 物件、處理 `PaintSurface` 事件，以及使用 `SKPaint` 物件指定色彩和其他繪圖屬性。
 
-[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式包含這個 SkiaSharp 文章的系列的所有範例程式碼。 有權使用的第一頁**簡單的圓形**，並叫用的頁面類別[ `SimpleCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)。 此程式碼示範如何在頁面中央，半徑為 100 像素繪製圓形。 外框的圓形是紅色，和內部的圓形是藍色。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)套裝程式含這一系列 SkiaSharp 文章的所有範例程式碼。 第一頁的標題是**簡單的 Circle** ，而且會叫用 page 類別[`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)。 這段程式碼示範如何在頁面中央繪製一個半徑為100圖元的圓形。 圓形的外框是紅色，而圓形的內部是藍色。
 
-![](circle-images/circleexample.png "紅色外框的藍色圓形")
+![](circle-images/circleexample.png "A blue circle outlined in red")
 
-[ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) Page 類別衍生自`ContentPage`且包含兩個`using`SkiaSharp 命名空間指示詞：
+[`SimpleCircle`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)頁面類別衍生自 `ContentPage`，且包含兩個適用于 SkiaSharp 命名空間的 `using` 指示詞：
 
 ```csharp
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
 ```
 
-下列類別的建構函式會建立[ `SKCanvasView` ](xref:SkiaSharp.Views.Forms.SKCanvasView)物件，將附加的處理常式[ `PaintSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface)事件，並設定`SKCanvasView`物件做為頁面的內容：
+下列類別的函式會建立[`SKCanvasView`](xref:SkiaSharp.Views.Forms.SKCanvasView)物件、附加[`PaintSurface`](xref:SkiaSharp.Views.Forms.SKCanvasView.PaintSurface)事件的處理常式，並將 `SKCanvasView` 物件設定為頁面的內容：
 
 ```csharp
 public SimpleCirclePage()
@@ -46,9 +46,9 @@ public SimpleCirclePage()
 }
 ```
 
-`SKCanvasView`佔用頁面的整個內容區域。 您也可以結合`SKCanvasView`其他 xamarin.forms`View`衍生項目，您會看到另一個例子。
+`SKCanvasView` 會佔用頁面的整個內容區域。 您也可以將 `SKCanvasView` 與其他 Xamarin 結合 `View` 衍生，如您在其他範例中所見。
 
-`PaintSurface`事件處理常式是您用來執行您的繪圖。 這個方法可以多次呼叫您的程式執行時，因此它應該維護所有資訊重新建立必要的圖形顯示：
+`PaintSurface` 事件處理常式是您進行所有繪製的地方。 當您的程式正在執行時，可以多次呼叫這個方法，因此應該維護重新建立圖形顯示所需的所有資訊：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -58,16 +58,16 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-[ `SKPaintSurfaceEventArgs` ](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs)伴隨事件的物件有兩個屬性：
+事件隨附的[`SKPaintSurfaceEventArgs`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs)物件有兩個屬性：
 
-- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info) 型別 [`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
-- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface) 型別 [`SKSurface`](xref:SkiaSharp.SKSurface)
+- 類型為 [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) 的 [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)
+- 類型為 [`SKSurface`](xref:SkiaSharp.SKSurface) 的 [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)
 
-`SKImageInfo`結構包含資訊的繪圖介面，最重要的是，其寬度和高度，單位為像素。 `SKSurface`物件都代表本身的繪圖介面。 此程式的繪圖介面是視訊的顯示，但在其他程式`SKSurface`物件也可以代表您使用 SkiaSharp 上繪製的點陣圖。
+`SKImageInfo` 結構包含繪圖介面的相關資訊，最重要的是，其寬度和高度（以圖元為單位）。 `SKSurface` 物件代表繪圖介面本身。 在此程式中，繪圖介面是影片顯示，但是在其他程式中，`SKSurface` 物件也可以代表您用來繪製 SkiaSharp 的點陣圖。
 
-最重要的屬性`SKSurface`已[ `Canvas` ](xref:SkiaSharp.SKSurface.Canvas)型別的[ `SKCanvas` ](xref:SkiaSharp.SKCanvas)。 這個類別是繪製您用來執行實際的繪圖內容的圖形。 `SKCanvas`物件封裝的圖形狀態，其中包含圖形的轉換和裁剪。
+`SKSurface` 的最重要屬性是類型[`SKCanvas`](xref:SkiaSharp.SKCanvas)的[`Canvas`](xref:SkiaSharp.SKSurface.Canvas) 。 這個類別是用來執行實際繪製的圖形繪圖內容。 `SKCanvas` 物件會封裝圖形狀態，其中包括圖形轉換和裁剪。
 
-以下是一般啟動`PaintSurface`事件處理常式：
+以下是 `PaintSurface` 事件處理常式的典型開始：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -82,9 +82,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-[ `Clear` ](xref:SkiaSharp.SKCanvas.Clear)方法會清除畫布，以透明色彩。 多載可讓您指定在畫布的背景色彩。
+[`Clear`](xref:SkiaSharp.SKCanvas.Clear)方法會清除具有透明色彩的畫布。 多載可讓您指定畫布的背景色彩。
 
-這裡的目標是要繪製填滿藍色的紅色圓圈。 因為這個特定的圖形影像會包含兩個不同的色彩，則必須在兩個步驟中完成作業。 第一個步驟是圓形的繪製外框。 若要指定色彩和線條的其他特性，建立並初始化[ `SKPaint` ](xref:SkiaSharp.SKPaint)物件：
+此處的目標是繪製以藍色填滿的紅色圓圈。 因為此特定圖形影像包含兩種不同的色彩，所以必須以兩個步驟來完成作業。 第一個步驟是繪製圓形的外框。 若要指定線條的色彩和其他特性，您可以建立並初始化[`SKPaint`](xref:SkiaSharp.SKPaint)物件：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -100,19 +100,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-[ `Style` ](xref:SkiaSharp.SKPaint.Style)屬性會指出您想要*筆劃*行 （在此案例的圓形外框） 而非*填滿*內部。 三個成員[ `SKPaintStyle` ](xref:SkiaSharp.SKPaintStyle)列舉如下所示：
+[`Style`](xref:SkiaSharp.SKPaint.Style)屬性指出您想要對線條（在此案例中為圓形的外框）進行*筆劃繪製*，而不是*填滿*內部。 [`SKPaintStyle`](xref:SkiaSharp.SKPaintStyle)列舉的三個成員如下所示：
 
 - [`Fill`](xref:SkiaSharp.SKPaintStyle.Fill)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-預設為 `Fill`。 您可以使用第三個選項來將線條描邊，並使用相同的色彩填滿內部。
+預設為 `Fill`。 使用第三個選項來繪製線條，並使用相同的色彩填滿內部。
 
-設定[ `Color` ](xref:SkiaSharp.SKPaint.Color)屬性設為值型別的[ `SKColor` ](xref:SkiaSharp.SKColor)。 其中一種方式來取得`SKColor`值是藉由轉換 Xamarin.Forms`Color`值`SKColor`值使用擴充方法[ `ToSKColor` ](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*)。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)類別在`SkiaSharp.Views.Forms`命名空間包含的其他方法的 Xamarin.Forms 值和 SkiaSharp 值之間轉換。
+將[`Color`](xref:SkiaSharp.SKPaint.Color)屬性設定為[`SKColor`](xref:SkiaSharp.SKColor)類型的值。 取得 `SKColor` 值的方法之一，就是使用[`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*)的擴充方法，將 `Color` 值轉換成 `SKColor` 值。 `SkiaSharp.Views.Forms` 命名空間中的[`Extensions`](xref:SkiaSharp.Views.Forms.Extensions)類別包含其他方法，可在 Xamarin. form 值和 SkiaSharp 值之間轉換。
 
-[ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)屬性表示線條的粗細。 這裡，它設為 25 像素。
+[`StrokeWidth`](xref:SkiaSharp.SKPaint.StrokeWidth)屬性工作表示線條的粗細。 其設定為25圖元。
 
-您可以使用該`SKPaint`繪製圓形物件：
+您可以使用該 `SKPaint` 物件來繪製圓形：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -123,11 +123,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-座標的指定相對於在顯示介面的左上角。 X 座標從右邊增加和 Y 座標增加下降。 通常在圖形的相關討論中，數學標記法 （x，y） 用來代表一個點。 點 （0，0） 會顯示介面的左上角，通常稱為*原點*。
+座標的指定相對於顯示介面的左上角。 X 座標會增加至右方，而 Y 座標則會增加。 在討論圖形時，通常會使用數學標記法（x，y）來表示某個點。 點（0，0）是顯示介面的左上角，通常稱為「*原點*」。
 
-前兩個引數`DrawCircle`指示的圓形中心的 X 和 Y 座標。 這些被指派給一半的寬度和高度顯示介面，以將圓形的中心放在顯示介面的中央。 第三個引數會指定圓形的半徑，和最後一個引數是`SKPaint`物件。
+`DrawCircle` 的前兩個引數表示圓形中心的 X 和 Y 座標。 這些會指派給顯示介面的一半寬度和高度，以將圓形的中心放在顯示介面的中央。 第三個引數會指定圓形的半徑，而最後一個引數則是 `SKPaint` 物件。
 
-填滿的圓形內部，您可以變更的兩個屬性`SKPaint`物件，然後呼叫`DrawCircle`一次。 此程式碼也會顯示的替代方式，以取得`SKColor`其中一個的許多欄位的值[ `SKColors` ](xref:SkiaSharp.SKColors)結構：
+若要填滿圓形的內部，您可以改變 `SKPaint` 物件的兩個屬性，然後再次呼叫 `DrawCircle`。 這段程式碼也會顯示從[`SKColors`](xref:SkiaSharp.SKColors)結構的許多欄位之一取得 `SKColor` 值的替代方法：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -139,24 +139,24 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-此時`DrawCircle`呼叫會使用新的屬性的 circle 填滿`SKPaint`物件。
+這次，`DrawCircle` 呼叫會使用 `SKPaint` 物件的新屬性來填滿圓形。
 
-以下是在 iOS、 Android 和通用 Windows 平台上執行的程式：
+以下是在 iOS 和 Android 上執行的程式：
 
-[![](circle-images/simplecircle-small.png "簡單圓形頁面的三重螢幕擷取畫面")](circle-images/simplecircle-large.png#lightbox "簡單圓形頁面的三重螢幕擷取畫面")
+[![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
 
-當自行執行程式，您可以開啟電話或模擬器側邊，以查看如何重新繪製圖形。 每次需要重新繪製的圖形`PaintSurface`再次呼叫事件處理常式。
+當您自行執行程式時，您可以將手機或模擬器旋轉一側，以查看圖形的重繪方式。 每次重新繪製圖形時，都會再次呼叫 `PaintSurface` 事件處理常式。
 
-它也可色彩與漸層或點陣圖的圖格的圖形物件。 在上一節中討論的這些選項[ **SkiaSharp 著色器**](../effects/shaders/index.md)。
+您也可以使用漸層或點陣圖磚來彩色繪圖物件。 這些選項會在[**SkiaSharp 著色**](../effects/shaders/index.md)器一節中討論。
 
-`SKPaint`物件是比圖形的繪製屬性的集合。 這些物件是輕量型。 您可以重複使用`SKPaint`物件，此程式執行，或者您可以建立多個`SKPaint`的繪圖內容的各種組合的物件。 您可以建立並初始化這些物件的外部`PaintSurface`事件處理常式，而且您可以將它們儲存為欄位頁面類別中。
+`SKPaint` 物件不只是圖形繪製屬性的集合。 這些物件很輕量。 您可以在此程式執行時重複使用 `SKPaint` 物件，也可以針對各種繪製屬性組合建立多個 `SKPaint` 物件。 您可以在 `PaintSurface` 事件處理常式之外建立和初始化這些物件，也可以將它們儲存為頁面類別中的欄位。
 
 > [!NOTE]
-> `SKPaint`類別會定義[ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)啟用消除鋸齒呈現圖形。 消除鋸齒通常會產生以視覺化方式較平滑的邊緣，因此您可能會想要將此屬性設定為`true`中的大部分您`SKPaint`物件。 為了簡單起見，這個屬性就_不_中大部分的範例頁面的設定。
+> `SKPaint` 類別會定義[`IsAntialias`](xref:SkiaSharp.SKPaint.IsAntialias) ，以在圖形呈現時啟用消除鋸齒功能。 消除鋸齒通常會產生視覺上更平滑的邊緣，因此您可能會想要將此屬性設定為大部分 `SKPaint` 物件中的 `true`。 為了簡單起見，此屬性_不_會在大部分的範例頁面中設定。
 
-雖然圓形外框的寬度是指定為25個圖元 &mdash; 或圓形半徑的四分之一 &mdash; 似乎較輕，而且有很好的理由：線條寬度的一半會被藍色圓圈遮蔽。 引數`DrawCircle`方法定義抽象圓形的幾何座標。 藍色的內部會調整成最接近像素，該維度，但 25 像素寬大綱 information officer 幾何圓形&mdash;一半內部和外部的下半部。
+雖然圓形外框的寬度是指定為25個圖元 &mdash; 或圓形半徑的一季，&mdash; 外觀較長，而且有很好的理由：線條寬度的一半是以藍色圓圈遮蔽。 `DrawCircle` 方法的引數會定義圓形的抽象幾何座標。 藍色內部的大小會調整為最接近的圖元，但25個圖元的外框會跨越幾何圓圈，而在外的內側和一半 &mdash; 一半。
 
-中的下一個範例[整合 Xamarin.Forms](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)文件會以視覺化方式示範。
+[與 Xamarin 進行整合](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)一文中的下一個範例會以視覺化方式示範。
 
 ## <a name="related-links"></a>相關連結
 

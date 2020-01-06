@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: davidortinau
 ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: cc404f3995bd1f2940897f6cb84d57cea39ae44b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7764d63991ec636043982509319e7097ef2091b
+ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016273"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663245"
 ---
 # <a name="binding-objective-c"></a>繫結 Objective C
 
@@ -48,7 +48,9 @@ ms.locfileid: "73016273"
 
 ## <a name="mac"></a>Mac
 
-在過去， [Mac 系](~/mac/platform/binding.md)結已經是非常手動的程式。 目前有[可下載](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview)的 Mac 系結專案支援，供未來的 Visual Studio for Mac 版本使用。
+遵循[Mac 系](~/mac/platform/binding.md)結指示來系結 macOS 程式庫。 您可以從 [**新增專案**] 視窗建立新的**Mac 系**結程式庫：
+
+[![檔案新的 mac 系結專案對話方塊](images/new-bindings-library-sml.png)](images/new-bindings-library.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

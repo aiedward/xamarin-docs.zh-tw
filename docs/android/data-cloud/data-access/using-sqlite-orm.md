@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 96f084dc49a5558767b162eee59eff722f247904
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ff59213a730b74b916b993c48a6f5f779149a6f9
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023677"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488071"
 ---
 # <a name="using-sqlitenet-with-android"></a>搭配使用 SQLite.NET 與 Android
 
@@ -128,9 +128,9 @@ public static void DoSomeDataAccess () {
 
 - **[自動遞增]** &ndash; 此屬性會使每個插入資料庫的新物件自動遞增整數屬性的值
 
-- **[Column （name）]** &ndash; 提供選擇性的 `name` 參數時，將會覆寫基礎資料庫資料行名稱的預設值（這與屬性相同）。
+- **[Column （name）]** &ndash; `name` 參數會設定基礎資料庫資料行的名稱。
 
-- **[Table （name）]** &ndash; 會將類別標示為能夠儲存在基礎 SQLite 資料表中。 指定選擇性的 name 參數將會覆寫基礎資料庫資料表名稱的預設值（這與類別名稱相同）。
+- **[Table （name）]** &ndash; 會將類別標示為能夠儲存在具有指定名稱的基礎 SQLite 資料表中。
 
 - **[MaxLength （值）]** &ndash; 在嘗試資料庫插入時，限制 text 屬性的長度。 使用程式碼應該在插入物件之前先驗證這個屬性，因為在嘗試執行資料庫插入或更新作業時，這個屬性只會「核取」。
 
@@ -139,7 +139,7 @@ public static void DoSomeDataAccess () {
 
 - **[Unique]** &ndash; 確保基礎資料庫資料行中的值是唯一的。
 
-這些屬性大部分都是選擇性的，SQLite 會使用資料表和資料行名稱的預設值。 您應該一律指定整數主鍵，以便在您的資料上有效率地執行選取和刪除查詢。
+這些屬性大部分都是選擇性的。 您應該一律指定整數主鍵，以便在您的資料上有效率地執行選取和刪除查詢。
 
 ## <a name="more-complex-queries"></a>更複雜的查詢
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 15d4159d89a463c0335d9c91b24b55151c91de8c
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 9bc6d47e4f935e84ae675eefeabac023920a344a
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72695905"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545600"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin. Forms DatePicker
 
@@ -23,27 +23,27 @@ _可讓使用者選取日期的 [Xamarin] 表單檢視。_
 [Xamarin] [`DatePicker`](xref:Xamarin.Forms.DatePicker)會叫用平臺的日期選擇器控制項，並允許使用者選取日期。 `DatePicker` 定義八個屬性：
 
 - [`DateTime`](xref:System.DateTime)類型的[`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) ，預設為1900年的第一天。
-- `DateTime` 類型的[`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) ，預設為2100年的最後一天。
+- `DateTime`類型的[`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) ，預設為2100年的最後一天。
 - [`Date`](xref:Xamarin.Forms.DatePicker.Date)類型 `DateTime`，這是選取的日期，預設為[`DateTime.Today`](xref:System.DateTime.Today)的值。
-- `string` 類型的[`Format`](xref:Xamarin.Forms.DatePicker.Format) ，這是[標準](/dotnet/standard/base-types/standard-date-and-time-format-strings/)或[自訂](/dotnet/standard/base-types/custom-date-and-time-format-strings/)的 .net 格式字串，預設為 "D"，完整日期模式。
+- `string`類型的[`Format`](xref:Xamarin.Forms.DatePicker.Format) ，這是[標準](/dotnet/standard/base-types/standard-date-and-time-format-strings/)或[自訂](/dotnet/standard/base-types/custom-date-and-time-format-strings/)的 .net 格式字串，預設為 "D"，完整日期模式。
 - [`Color`](xref:Xamarin.Forms.Color)類型的[`TextColor`](xref:Xamarin.Forms.DatePicker.TextColor) ，用來顯示所選日期的色彩，預設為[`Color.Default`](xref:Xamarin.Forms.Color.Default)。
 - [`FontAttributes`](xref:Xamarin.Forms.FontAttributes)類型的[`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) ，預設為[`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None)。
-- `string` 類型的[`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) ，預設為 `null`。
-- `double` 類型的[`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) ，預設為-1.0。
-- `CharacterSpacing`，屬於 `double` 類型，這是 `DatePicker` 文字字元之間的間距。
+- `string`類型的[`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) ，預設為 `null`。
+- `double`類型的[`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) ，預設為-1.0。
+- `CharacterSpacing`，屬於 `double`類型，這是 `DatePicker` 文字字元之間的間距。
 
 當使用者選取日期時，`DatePicker` 會引發[`DateSelected`](xref:Xamarin.Forms.DatePicker.DateSelected)事件。
 
 > [!WARNING]
-> 設定 `MinimumDate` 並 `MaximumDate` 時，請確定 `MinimumDate` 一律小於或等於 `MaximumDate`。 否則，`DatePicker` 將會引發例外狀況。
+> 設定 `MinimumDate` 並 `MaximumDate`時，請確定 `MinimumDate` 一律小於或等於 `MaximumDate`。 否則，`DatePicker` 將會引發例外狀況。
 
-就內部而言，`DatePicker` 可確保 `Date` 介於 `MinimumDate` 和 `MaximumDate` （含）之間。 如果 `MinimumDate` 或 `MaximumDate` 設定為 `Date` 不在兩者之間，`DatePicker` 會調整 `Date` 的值。
+就內部而言，`DatePicker` 可確保 `Date` 介於 `MinimumDate` 和 `MaximumDate`（含）之間。 如果 `MinimumDate` 或 `MaximumDate` 設定為 `Date` 不在兩者之間，`DatePicker` 會調整 `Date`的值。
 
-所有八個屬性都是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示它們可以樣式化，而屬性可以是資料系結的目標。 @No__t_0 屬性具有[`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)的預設系結模式，這表示它可以是使用[模型 ViewModel （MVVM）](~/xamarin-forms/enterprise-application-patterns/mvvm.md)架構之應用程式中的資料系結目標。
+所有八個屬性都是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示它們可以樣式化，而屬性可以是資料系結的目標。 `Date` 屬性具有[`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)的預設系結模式，這表示它可以是使用[模型 ViewModel （MVVM）](~/xamarin-forms/enterprise-application-patterns/mvvm.md)架構之應用程式中的資料系結目標。
 
 ## <a name="initializing-the-datetime-properties"></a>初始化 DateTime 屬性
 
-在程式碼中，您可以將 `MinimumDate`、`MaximumDate` 和 `Date` 屬性初始化為 `DateTime` 類型的值：
+在程式碼中，您可以將 `MinimumDate`、`MaximumDate`和 `Date` 屬性初始化為 `DateTime`類型的值：
 
 ```csharp
 DatePicker datePicker = new DatePicker
@@ -62,7 +62,7 @@ DatePicker datePicker = new DatePicker
             Date="06/21/2018" />
 ```
 
-如果 `DatePicker` 的 `BindingContext` 屬性設定為 viewmodel 的實例，其中包含名稱為 `MinDate`、`MaxDate` 和 `SelectedDate` 的類型 `DateTime` 屬性（例如），您可以將 `DatePicker` 具現化，如下所示:
+如果 `DatePicker` 的 `BindingContext` 屬性設定為 viewmodel 的實例，其中包含名稱為 `MinDate`、`MaxDate`和 `SelectedDate` 的類型 `DateTime` 屬性（例如），您可以將 `DatePicker` 具現化，如下所示：
 
 ```xaml
 <DatePicker MinimumDate="{Binding MinDate}"
@@ -70,7 +70,7 @@ DatePicker datePicker = new DatePicker
             Date="{Binding SelectedDate}" />
 ```
 
-在此範例中，所有三個屬性都會初始化為 viewmodel 中的對應屬性。 因為 `Date` 屬性具有 `TwoWay` 的系結模式，所以使用者選取的任何新日期都會自動反映在 viewmodel 中。
+在此範例中，所有三個屬性都會初始化為 viewmodel 中的對應屬性。 因為 `Date` 屬性具有 `TwoWay`的系結模式，所以使用者選取的任何新日期都會自動反映在 viewmodel 中。
 
 如果 `DatePicker` 不包含其 `Date` 屬性的系結，應用程式應將處理常式附加至 `DateSelected` 事件，以便在使用者選取新日期時收到通知。
 
@@ -78,7 +78,7 @@ DatePicker datePicker = new DatePicker
 
 ## <a name="datepicker-and-layout"></a>DatePicker 和版面配置
 
-您可以使用不受限制的水準配置選項，例如 `Center`、`Start` 或 `End` 與 `DatePicker`：
+您可以使用不受限制的水準配置選項，例如 `Center`、`Start`或 `End` 與 `DatePicker`：
 
 ```xaml
 <DatePicker ···
@@ -180,7 +180,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-第一次執行此範例時，兩個 `DatePicker` 視圖都會初始化為今天的日期。 下列螢幕擷取畫面顯示在 iOS、Android 和通用 Windows 平臺上執行的程式：
+第一次執行此範例時，兩個 `DatePicker` 視圖都會初始化為今天的日期。 下列螢幕擷取畫面顯示在 iOS 和 Android 上執行的程式：
 
 [![開始日期之間的天數](datepicker-images/DaysBetweenDatesStart.png "開始日期之間的天數")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "開始日期之間的天數")
 

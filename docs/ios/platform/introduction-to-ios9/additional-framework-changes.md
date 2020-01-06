@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ef0bcba7a59984c6bad7091431fe00b1f1b7eee3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d9d47e750580bb9e4a0f4a2283cbd9e8c6a44c93
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031798"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489085"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -62,7 +62,7 @@ CloudKit 架構可簡化存取 iCloud 之應用程式的開發。 這包括抓�
 - [CloudKit 快速入門](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)-Apple 簡介 CloudKit。
 - [CLOUDKIT JS 參考](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359)-Apple 的 CloudKit JS 檔。
 - [CloudKit Web 服務參考](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240)-描述要 CLOUDKIT 之 HTTP 介面的 Apple 參考。
-- [CloudKit 目錄：CloudKit （Cocoa 和 JavaScript）簡介使用 CloudKit 和 CloudKit JS](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599) Apple 的範例應用程式。
+- [CloudKit Catalog： CloudKit （Cocoa 和 JavaScript）簡介](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-使用 CloudKit 和 CloudKit JS 的 Apple 範例應用程式。
 
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
@@ -131,7 +131,7 @@ Apple 在 iOS 9 中對[本機驗證](xref:LocalAuthentication)架構包含下列
 - 在 Keychain 呼叫中使用_驗證內容_，以及支援評估 Keychain 存取控制清單的能力。
 - 能夠從程式碼取消使用者提示。
 
-如需在 Xamarin 中使用 Touch ID 的詳細資訊，請參閱我們的[觸控識別碼簡介](~/ios/platform/touchid.md)檔。
+如需詳細資訊，請參閱[TOUCH id 與 Xamarin. iOS 的臉部識別碼](~/ios/platform/touch-id-face-id.md)。
 
 ### <a name="lacontext-changes"></a>LACoNtext 變更
 

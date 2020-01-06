@@ -7,22 +7,20 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: b361cd00121d16752d5eebc971653c8ea185c641
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1bb7ffba11a7135735b7599fa7f12b47d0b347c8
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018099"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489384"
 ---
-# <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的佈建設定檔
+# <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin. Mac 應用程式的布建設定檔
 
 佈建設定檔可讓開發人員將數項macOS (之前稱為 Mac OS X) 特有功能 (例如 iCloud 與推播通知) 併入其 Xamarin.Mac 應用程式。 開發人員必須為他們所開發會使用這些功能的每個應用程式建立、下載並安裝 Mac 佈建設定檔。
 
 [![](profiles-images/certif13.png "The Apple Provisioning Portal")](profiles-images/certif13.png#lightbox)
 
-<a name="Development_Provisioning_Profile" />
-
-## <a name="development-provisioning-profile"></a>開發佈建設定檔
+## <a name="development-provisioning-profile"></a>開發布建設定檔
 
 開發佈建設定檔可讓以 Mac App Store 為目標的應用程式在設定檔中設定的特定電腦上進行測試。 這與使用像是 iCloud 與推播通知等 macOS 功能時特別相關。
 
@@ -61,9 +59,7 @@ ms.locfileid: "73018099"
 
 您必須為每一個新應用程式或要新增以進行測試的新電腦建立新的開發佈建設定檔。
 
-<a name="Production_Provisioning_Profile" />
-
-## <a name="production-provisioning-profile"></a>生產佈建設定檔
+## <a name="production-provisioning-profile"></a>生產布建設定檔
 
 若要建置可提交至 Mac App Store 的套件，您需要生產佈建設定檔。
 
@@ -99,4 +95,4 @@ ms.locfileid: "73018099"
 - [Hello, Mac 範例](~//mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
 - [工具指南：對應用程式進行程式碼簽署](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) \(英文\)
-- [開發人員識別碼和閘道管理員](https://developer.apple.com/resources/developer-id/) \(英文\)
+- [開發人員識別碼和 GateKeeper](https://developer.apple.com/resources/developer-id/) \(英文\)

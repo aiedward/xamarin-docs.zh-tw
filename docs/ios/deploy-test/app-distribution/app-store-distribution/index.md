@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 78df4a7f4c90cd6459216f1f65dd09e0daae19f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 96300cdddcc21511ef85ebbfe33f6ce32cb56cd7
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026694"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607928"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -62,7 +62,7 @@ ms.locfileid: "73026694"
 8. 最後，**下載**完成的憑證，並按兩下檔案以進行安裝。
 9. 此時，電腦上應該已安裝憑證，但是您可能需要[重新整理設定檔](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)，以確保會顯示在 Xcode 中。
 
-或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請遵循下列步驟：
+或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請依照下列步驟進行操作：
 
 1. 選取您的小組，然後按一下 [**管理憑證 ...** ]：[![](images/selectteam.png "選取小組並查看詳細資料")](images/selectteam.png#lightbox)
 
@@ -85,7 +85,7 @@ ms.locfileid: "73026694"
 3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取「明確」或「萬用字元」應用程式識別碼，並以反向 DNS 格式輸入套件組合識別碼，例如：
     - **明確**com.[網域名稱].[應用程式名稱]
     - **萬用字元**com.[網域名稱].*
-4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)。
+4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services)。
 5. 按一下 [繼續] 按鈕，然後依照畫面上的指示來建立新的 App ID (應用程式識別碼)。
 
 ### <a name="creating-a-provisioning-profile"></a>建立佈建設定檔

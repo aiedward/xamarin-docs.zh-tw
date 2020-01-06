@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2017
-ms.openlocfilehash: fda021eb90feba1fed2352ef7f771f5583b00920
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7ec5537345536884e2dc3da02ab54a3ca00f760e
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028851"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607967"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>以資料填入 Xamarin. Android ListView
 
@@ -33,7 +33,6 @@ public class HomeScreen : ListActivity {
        items = new string[] { "Vegetables","Fruits","Flower Buds","Legumes","Bulbs","Tubers" };
        ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, items);
    }
-   protected override void OnListItemClick(ListView l, View v, int position, long id)
 }
 ```
 
@@ -149,7 +148,7 @@ ListView.FastScrollEnabled = true;
 
 當使用者透過長清單快速滾動時，區段索引會提供額外的意見反應，&ndash; 它會顯示他們所滾動至的「區段」。 若要讓區段索引出現，介面卡子類別必須執行 `ISectionIndexer` 介面，以根據顯示的資料列提供索引文字：
 
-[H 的![螢幕擷取畫面，顯示在開頭為 H 的一節上方](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
+[H 的 ![螢幕擷取畫面，顯示在開頭為 H 的一節上方](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 若要執行 `ISectionIndexer` 您需要將三種方法新增到介面卡：
 

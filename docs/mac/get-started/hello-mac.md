@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: cb5eb783109f4758fcbc997c4f2bf4a93aaa262b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b56275ef903aa7def239a2e19980f52d83e6194f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018133"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489735"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac -  逐步解說
 
@@ -38,7 +38,7 @@ Xamarin.Mac 允許在 C# 與 .NET 中使用與在 *Objective-C* 或 *Swift*. 中
 Xamarin.Mac 應用程式開發需要：
 
 - 執行 macOS High Sierra (10.13) 或更高版本的 Mac 電腦。
-- [Xcode 9 或更高版本](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+- [Xcode 10 或更高版本](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
 - [Xamarin.Mac 與 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation/) 的最新版本。
 
 若要執行使用 Xamarin.Mac 建置的應用程式，您將需要：
@@ -77,7 +77,7 @@ Visual Studio for Mac 會建立新的 Xamarin.Mac 應用程式，並顯示加入
 
 [![](hello-mac-images/project01-sml.png "The new solution default view")](hello-mac-images/project01.png#lightbox)
 
-Visual Studio for Mac 使用與 Visual Studio 2019 相同的**解決方案**與**專案**結構。 A solution is a container that can hold one or more projects; projects can include applications, supporting libraries, test applications, etc. The **File > New Project** template creates a solution and an application project automatically.
+Visual Studio for Mac 使用與 Visual Studio 2019 相同的**解決方案**與**專案**結構。 解決方案是可以保存一個或多個專案的容器;專案可以包含應用程式、支援程式庫、測試應用程式等。[檔案 **> 新增專案**] 範本會自動建立方案和應用程式專案。
 
 ## <a name="anatomy-of-a-xamarinmac-application"></a>Xamarin.Mac 應用程式的結構
 
@@ -277,7 +277,7 @@ Interface Builder 是 Apple 建立的一種工具，屬於 Xcode 的一部分，
 
 ### <a name="interface-editor"></a>介面編輯器
 
-The **Interface Editor** section provides the surface on which the user interface is graphically laid out. Drag elements from the **Library** section of the **Properties & Utilities** section to create the design. 當使用者介面元素 (檢視) 加入到設計介面時，它們會以顯示在 [介面編輯器] 中的順序加入到 [介面階層架構] 區段。
+[**介面編輯器**] 區段提供以圖形方式配置使用者介面的表面。從 [**屬性] & [公用程式**] 區段的 [連結**庫**] 區段拖曳專案，以建立設計。 當使用者介面元素 (檢視) 加入到設計介面時，它們會以顯示在 [介面編輯器] 中的順序加入到 [介面階層架構] 區段。
 
 ### <a name="properties--utilities"></a>屬性和公用程式
 

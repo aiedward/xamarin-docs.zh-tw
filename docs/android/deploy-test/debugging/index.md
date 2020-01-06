@@ -1,5 +1,5 @@
 ---
-title: 偵測裝置和模擬器上的 Xamarin.Android
+title: 在裝置和模擬器上進行 Xamarin Android 應用程式的偵錯工具
 description: 如何針對您的 Xamarin.Android 應用程式進行測試和偵錯
 ms.prod: xamarin
 ms.assetid: A355A471-8195-4391-93FE-0000BCB17923
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 0f873f69de7f85a77bdd0ca7aafa33bff1d9b961
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3b3fa14ec81bd4f06322197b7140654f9086ce73
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021517"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556479"
 ---
-# <a name="debugging"></a>偵錯
+# <a name="debug-xamarinandroid-apps"></a>Debug Xamarin Android 應用程式
 
 本節討論如何偵錯裝置或模擬器上的 Xamarin.Android 應用程式。
 
@@ -28,11 +28,8 @@ ms.locfileid: "73021517"
 
 ### <a name="debugging-on-a-deviceandroiddeploy-testdebuggingdebug-on-devicemd"></a>[在裝置上進行偵錯](~/android/deploy-test/debugging/debug-on-device.md)
 
-這篇文章說明如何設定實體 Android 裝置，以便直接從 Visual Studio 或 Visual Studio for Mac 將 Xamarin.Android 應用程式部署至該實體裝置。
+本文說明如何設定實體 Android 裝置，讓您可以直接從 Visual Studio 或 Visual Studio for Mac 將 Xamarin 應用程式部署到其中。
 
 ### <a name="android-debug-logandroiddeploy-testdebuggingandroid-debug-logmd"></a>[Android 偵錯記錄檔](~/android/deploy-test/debugging/android-debug-log.md)
 
 開發人員所使用的其中一個非常常見的應用程式偵錯技巧就是使用 `Console.WriteLine`。 不過，在 Android 這類行動平台上並沒有主控台。 Android 裝置會提供一個記錄檔，您在撰寫應用程式時可能會需要用到此記錄檔。 由於擷取此記錄檔時所輸入命令的緣故，因此這個記錄檔有時稱為 **logcat**。 本文說明如何使用 **logcat**。
-
-> [!WARNING]
-> 請注意，**Xamarin Android Player** 已被取代。 如需詳細資訊，請參閱[這篇部落格文章中的公告](https://blog.xamarin.com/live-from-dotnetconf-cycle-7-xamarin-studio-6-and-more/) \(英文\)。 此外，**Visual Studio Android Emulator** 已取代為 Visual Studio 2017 Android Emulator。

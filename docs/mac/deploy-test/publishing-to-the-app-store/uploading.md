@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fede666071aad8702eda17a94a06c7de49c7397e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e2b25468255ff84a3fe79ed4fea913e04bf88687
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029480"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489360"
 ---
 # <a name="upload-to-mac-app-store"></a>上傳至 Mac App Store
 
 _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac App Store。_
 
-透過 [iTunes Connect](https://itunesconnect.apple.com/) 將應用程式提交給 Mac App Store 核准。
+透過 [iTunes Connect](https://itunesconnect.apple.com/) 將應用程式提交給 Mac App Store 核准。 您也將需要 App Store 中的[**Transporter**](https://apps.apple.com/us/app/transporter/id1450874784?mt=12)工具。
 
 1. 選擇要建立的 **macOS 應用程式**： 
 
@@ -70,37 +70,22 @@ _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac A
 
     [![](uploading-images/image76.png "The acceptance notification")](uploading-images/image76.png#lightbox)
 
-9. 啟動 Application Loader，請務必使用 Apple ID 來登入。
-選擇 [Deliver Your App] \(傳遞應用程式\) 以繼續進行： 
+9. 開始**Transporter** ，並使用您的 Apple ID 登入，然後選擇 [**新增應用程式**]：
 
-    [![](uploading-images/image77.png "The Application Loader interface")](uploading-images/image77.png#lightbox)
+    [![](uploading-images/transporter01-sml.png "The Application Loader interface")](uploading-images/transporter01.png#lightbox)
 
-10. 從處於 [Ready to Upload Binary] \(上傳二進位檔準備就緒\) 狀態的應用程式清單中選取，然後按一下 [Next] \(下一步\)： 
+    依照指示將您的應用程式套件上傳至 iTunes Connect。
 
-    [![](uploading-images/image78.png "Selecting the app to load")](uploading-images/image78.png#lightbox)
-
-11. 檢閱應用程式中繼資料，然後按一下 [Choose...] \(選擇...\) 以尋找套件檔案： 
-
-    [![](uploading-images/image79.png "Reviewing the app metadata")](uploading-images/image79.png#lightbox)
-
-12. 尋找在 Visual Studio for Mac 中使用 App Store 建置組態所建置的套件檔案： 
-
-    [![](uploading-images/image80.png "Selecting the file to upload")](uploading-images/image80.png#lightbox)
-
-13. 按 [Send] \(傳送\)： 
-
-    [![](uploading-images/image81.png "Sending the app")](uploading-images/image81.png#lightbox)
-
-14. 此套件會經過驗證並回報任何錯誤。 請修正這些錯誤，然後重新上傳。 上傳成功完成後，會自動提交應用程式以供 App Store 團隊檢閱： 
-
-    [![](uploading-images/image82.png "An example of upload errors")](uploading-images/image82.png#lightbox)
+    > [!NOTE]
+    > [**Transporter**](https://apps.apple.com/us/app/transporter/id1450874784?mt=12)會取代與 Xcode 10 和更早版本搭配使用的**應用程式載入**器工具。
+    > Xcode 11 或更新版本中已不再提供應用程式載入器。
 
 應用程式通過核准後，即可從 Mac App Store 下載或購買。
 
 ## <a name="related-links"></a>相關連結
 
 - [安裝](~//mac/get-started/installation.md)
-- [Hello, Mac 範例](~//mac/get-started/hello-mac.md)
+- [Hello, Mac 範例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
 - [工具指南：對應用程式進行程式碼簽署](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) \(英文\)
-- [開發人員識別碼和閘道管理員](https://developer.apple.com/resources/developer-id/) \(英文\)
+- [開發人員識別碼和 GateKeeper](https://developer.apple.com/resources/developer-id/) \(英文\)

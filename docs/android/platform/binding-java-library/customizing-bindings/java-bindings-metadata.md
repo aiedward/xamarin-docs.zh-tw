@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 1f06601b2b419141b4bd44677826df4e64a831fc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020574"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487785"
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
 
 _C#Xamarin 中的程式碼會透過系結呼叫 JAVA 程式庫，這是一種機制，可抽象化 JAVA 原生介面（JNI）中指定的低層級詳細資料。Xamarin 提供產生這些系結的工具。這項工具可讓開發人員控制如何使用中繼資料來建立系結，這可讓您修改命名空間和重新命名成員等程式。本檔討論中繼資料的運作方式、匯總中繼資料支援的屬性，以及說明如何藉由修改此中繼資料來解決系結問題。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式庫所需的大部分工作，與有時稱為系結產生_器的工具協助自動化。_ 當系結 JAVA 程式庫時，Xamarin 會檢查 JAVA 類別，並產生所有要系結的封裝、類型和成員的清單。 此 Api 清單會儲存在 XML 檔案中，該檔案位於**發行**組建的 **\{專案目錄} \obj\Release\api.xml** ，以及在**Debug**組建 **\{專案目錄} \obj\Debug\api.xml** 。
 
@@ -56,9 +56,9 @@ Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式�
 
 - **MetaData** &ndash; 允許對最終 API 進行變更，例如變更所產生系結的命名空間。 
 
-- **EnumFields** &ndash; 包含 JAVA `int` 常數與C#`enums`之間的對應。 
+- **EnumFields** &ndash; 包含 JAVA `int` 常數與C# `enums` 之間的對應。 
 
-- **EnumMethods** &ndash; 可讓您將方法參數和從 JAVA `int` 常數傳回的類型C#變更為`enums`。 
+- **EnumMethods** &ndash; 可讓您將方法參數和從 JAVA `int` 常數傳回的類型C#變更為 `enums`。 
 
 **中繼資料 .xml**檔案最容易匯入這些檔案，因為它允許對系結進行一般用途的變更，例如：
 
@@ -107,7 +107,7 @@ Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式�
 
 - `method` &ndash; 用來尋找 JAVA 類別或介面上的方法。 例如 `/class[@name='MapView']/method[@name='setTitleSource']`。
 
-- `parameter` &ndash; 識別方法的參數。 例如 `/parameter[@name='p0']`
+- `parameter` &ndash; 識別方法的參數。 例如，`/parameter[@name='p0']`
 
 ### <a name="adding-types"></a>加入類型
 
@@ -162,7 +162,7 @@ public class NewName : Java.Lang.Object { ... }
 
 #### <a name="renaming-eventarg-wrapper-classes"></a>重新命名 `EventArg` 的包裝函式類別
 
-當 Xamarin 的系結產生器識別出接聽程式_類型_的 `onXXX` setter 方法時， C#將會產生事件和`EventArgs`子類別，以支援以 JAVA 為基礎的接聽程式模式的 .net flavoured API。 例如，請考慮下列 JAVA 類別和方法：
+當 Xamarin 的系結產生器識別出接聽程式_類型_的 `onXXX` setter 方法時， C#將會產生事件和 `EventArgs` 子類別，以支援以 JAVA 為基礎的接聽程式模式的 .net flavoured API。 例如，請考慮下列 JAVA 類別和方法：
 
 ```xml
 com.someapp.android.mpa.guidance.NavigationManager.on2DSignNextManuever(NextManueverListener listener);
@@ -174,7 +174,7 @@ Xamarin 會從 setter 方法中卸載前置詞 `on`，而改為使用 `2DSignNex
 NavigationManager.2DSignNextManueverEventArgs
 ```
 
-這不是合法C#的類別名稱。 若要修正這個問題，系結作者必須使用 `argsType` 屬性，並提供`EventArgs`C#子類別的有效名稱：
+這不是合法C#的類別名稱。 若要修正這個問題，系結作者必須使用 `argsType` 屬性，並提供 `EventArgs` C#子類別的有效名稱：
 
 ```xml
 <attr path="/api/package[@name='com.someapp.android.mpa.guidance']/
@@ -216,7 +216,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 `managedType` 是用來變更方法的傳回型別。 在某些情況下，系結產生器會錯誤地推斷 JAVA 方法的傳回型別，這會導致編譯時期錯誤。 在此情況下，其中一個可行的解決方案是變更方法的傳回型別。
 
-例如，系結產生器認為 JAVA 方法 `de.neom.neoreadersdk.resolution.compareTo()` 應該會傳回 `int`，這會導致錯誤訊息**CS0535： ' DE。Neom. Neoreadersdk 解析 ' 不會執行介面成員 ' CompareTo （JAVA. Lang.ini. Object） '** 。 下列程式碼片段示範如何將產生C#之方法的參數類型從`DE.Neom.Neoreadersdk.Resolution`變更為 `Java.Lang.Object`： 
+例如，系結產生器會認為 JAVA 方法 `de.neom.neoreadersdk.resolution.compareTo()` 應該傳回 `int` 並接受 `Object` 作為參數，這會導致錯誤訊息**CS0535： ' DE。Neom. Neoreadersdk 解析 ' 不會執行介面成員 ' CompareTo （JAVA. Lang.ini. Object） '** 。 下列程式碼片段示範如何將產生C#之方法的第一個參數類型從 `DE.Neom.Neoreadersdk.Resolution` 變更為 `Java.Lang.Object`： 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/
@@ -271,7 +271,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="sender"></a>sender
 
-指定當方法對應至事件時，方法的哪一個參數應該是 `sender` 參數。 此值可以是 `true` 或 `false`。 例如:
+指定當方法對應至事件時，方法的哪一個參數應該是 `sender` 參數。 此值可以是 `true` 或 `false`。 例如：
 
 ```xml
 <attr path="/api/package[@name='android.app']/
@@ -283,7 +283,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="visibility"></a>可視性
 
-這個屬性是用來變更類別、方法或屬性的可見度。 例如，您可能需要升級 `protected` JAVA 方法，使其對應C#的包裝函式`public`：
+這個屬性是用來變更類別、方法或屬性的可見度。 例如，您可能需要升級 `protected` JAVA 方法，使其對應C#的包裝函式 `public`：
 
 ```xml
 <!-- Change the visibility of a class -->
@@ -299,7 +299,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 ### <a name="defining-an-enum-using-enumfieldsxml"></a>使用 EnumFields 定義列舉
 
-**EnumFields**包含 JAVA `int` 常數和C#`enums`之間的對應。 讓我們針對一組`int`常數建立C#列舉的下列範例： 
+**EnumFields**包含 JAVA `int` 常數和C# `enums`之間的對應。 讓我們針對一組 `int` 常數建立C#列舉的下列範例： 
 
 ```xml 
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings" clr-enum-type="Skobbler.Ngx.Map.RealReach.SKMeasurementUnit">
@@ -309,11 +309,11 @@ NavigationManager.2DSignNextManueverEventArgs
 </mapping>
 ```
 
-在這裡，我們已將 JAVA 類別 `SKRealReachSettings`，並C#在命名空間`Skobbler.Ngx.Map.RealReach`中定義名為`SKMeasurementUnit`的列舉。 `field` 專案會定義 JAVA 常數的名稱（範例 `UNIT_SECOND`）、列舉專案的名稱（範例 `Second`），以及這兩個實體所表示的整數值（範例 `0`）。 
+在這裡，我們已將 JAVA 類別 `SKRealReachSettings`，並C#在命名空間 `Skobbler.Ngx.Map.RealReach`中定義名為 `SKMeasurementUnit` 的列舉。 `field` 專案會定義 JAVA 常數的名稱（範例 `UNIT_SECOND`）、列舉專案的名稱（範例 `Second`），以及這兩個實體所表示的整數值（範例 `0`）。 
 
 ### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>使用 EnumMethods 定義 Getter/Setter 方法
 
-**EnumMethods**可讓您將方法參數和傳回類型從 JAVA `int` 常數變更為C#`enums`。 換句話說，它會將列舉（定義于**EnumFields**中C# ）的讀取和寫入對應至 JAVA `int`常數`get`和`set`方法。
+**EnumMethods**可讓您將方法參數和傳回類型從 JAVA `int` 常數變更為C# `enums`。 換句話說，它會將列舉（定義于**EnumFields**中C# ）的讀取和寫入對應至 JAVA `int` 常數 `get` 和 `set` 方法。
 
 假設在上面定義的 `SKRealReachSettings` 列舉，下列**EnumMethods**會定義此列舉的 getter/setter：
 

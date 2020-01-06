@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e229ad37e8cd5ff940fb5abece7b782b84336d50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fb0981fea906a474d39834a52f0a8bfdf496ca1e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008171"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488409"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>使用 SQLite.NET 搭配 Xamarin. iOS
 
@@ -21,7 +21,7 @@ ORM 代表物件關聯式對應–此 API 可讓您從資料庫儲存和抓取�
 
 <a name="Usage"/>
 
-## <a name="usage"></a>使用量
+## <a name="usage"></a>使用
 
 若要在 Xamarin 應用程式中包含 SQLite.NET 程式庫，請將下列 NuGet 套件新增至您的專案：
 
@@ -130,13 +130,13 @@ public static void DoSomeDataAccess () {
 
 - **[PrimaryKey]** –此屬性可以套用至整數屬性，以強制它成為基礎資料表的主鍵。 不支援複合主鍵。
 - **[自動遞增]** –此屬性會針對每個插入資料庫的新物件，使整數屬性的值成為自動遞增
-- **[Column （name）]** –提供選擇性的 `name` 參數將會覆寫基礎資料庫資料行名稱的預設值（這與屬性相同）。
-- **[資料表（名稱）]** –將類別標示為能夠儲存在基礎 SQLite 資料表中。 指定選擇性的 name 參數將會覆寫基礎資料庫資料表名稱的預設值（這與類別名稱相同）。
+- **[Column （name）]** &ndash; `name` 參數會設定基礎資料庫資料行的名稱。
+- **[資料表（名稱）]** –將類別標示為能夠儲存在具有指定名稱的基礎 SQLite 資料表中。
 - **[MaxLength （值）]** –在嘗試資料庫插入時，限制 text 屬性的長度。 使用程式碼應該在插入物件之前先驗證這個屬性，因為在嘗試執行資料庫插入或更新作業時，這個屬性只會「核取」。
 - **[忽略]** –讓 SQLite.NET 忽略此屬性。 這對於類型不能儲存在資料庫中的屬性而言特別有用，或是無法自動解析為 SQLite 的模型集合的屬性。
 - **[Unique]** –確保基礎資料庫資料行中的值是唯一的。
 
-這些屬性大部分都是選擇性的，SQLite 會使用資料表和資料行名稱的預設值。 您應該一律指定整數主鍵，以便在您的資料上有效率地執行選取和刪除查詢。
+這些屬性大部分都是選擇性的。 您應該一律指定整數主鍵，以便在您的資料上有效率地執行選取和刪除查詢。
 
 ## <a name="more-complex-queries"></a>更複雜的查詢
 

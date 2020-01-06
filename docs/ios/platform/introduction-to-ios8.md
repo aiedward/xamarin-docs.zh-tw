@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031811"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489202"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 簡介
 
 _在 iOS 8 中，Apple 提供了新架構和 Api 的眾多，可供激發和取悅開發人員使用。在本指南中，我們將介紹這些新的 Api，並瞭解 iOS 8 可以如何讓開發人員和使用者受益。_
 
-iOS 7 會以視覺化方式，從第一個 iPhone OS 直接變更整個 iOS 使用者介面，從使用者和開發人員都有預期。 IOS 8 藉由為開發人員提供許多架構來繼續進行，讓使用者可以從 iPhone 直接控制其生活的各個層面。 例如，您可以使用*HealthKit*來分析健康情況和適用性，密碼會 Sal 使用*LocalAuthentication*的生物識別驗證，*應用程式擴充*功能會開啟協力廠商應用程式之間的通道，以及*HomeKit*允許將您的房屋轉變成未來的家庭。 
+iOS 7 會以視覺化方式，從第一個 iPhone OS 直接變更整個 iOS 使用者介面，從使用者和開發人員都有預期。 IOS 8 藉由為開發人員提供許多架構來繼續進行，讓使用者可以從 iPhone 直接控制其生活的各個層面。 例如，健康狀態和適用性可以使用*HealthKit*進行分析，密碼會 Sal 使用*LocalAuthentication*的生物特徵辨識驗證，*應用程式擴充*功能會開啟協力廠商應用程式之間的通道，而*HomeKit*則允許將您的房屋轉變成未來的家裡。 
 
 如果 iOS 7 是關於讓滿意使用者，則 iOS 8 著重于讓滿意開發人員，其中涵蓋了這些好吃新工具的完整範圍。 
 
@@ -44,7 +44,7 @@ iOS 8 已透過使用 HomeKit 和 HealthKit，協助您將 Apple 和 iOS 裝置�
 
 有了 HomeKit，協力廠商應用程式和 Siri 就可以探索附屬元件，並將其新增至其個人的家庭設定資料庫，編輯並處理此資料，以及與配件和其服務進行通訊，以執行動作。
 
-### <a name="configuration"></a>Configuration
+### <a name="configuration"></a>組態
 
 下圖顯示 HomeKit 配件設定的基本階層：
 
@@ -93,7 +93,7 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 
 其次，LocalAuthentication 提供兩種方法，在本機驗證您的應用程式。 開發人員應該使用 `CanEvaluatePolicy` 來判斷裝置是否能夠接受 Touch ID，然後 `EvaluatePolicy` 啟動驗證作業。
 
-如需 Touch ID 的詳細資訊，以及瞭解如何將它整合到 Xamarin iOS 應用程式，請參閱[TouchID 指南簡介](~/ios/platform/touchid.md)。
+如需 Touch ID 的詳細資訊，以及瞭解如何將它整合到 Xamarin iOS 應用程式中，請參閱[在 xamarin 中的觸控識別碼和臉部識別碼](~/ios/platform/touch-id-face-id.md)指南。
 
 ### <a name="document-picker"></a>文件選擇器
 
@@ -172,5 +172,5 @@ iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合�
 - [檔選擇器簡介](~/ios/platform/document-picker.md)
 - [HealthKit 簡介](~/ios/platform/healthkit.md)
 - [手動相機控制項簡介](~/ios/user-interface/controls/intro-to-manual-camera-controls.md)
-- [TouchID 簡介](~/ios/platform/touchid.md)
+- [使用 Xamarin 的 Touch ID 和臉部識別碼](~/ios/platform/touch-id-face-id.md)
 - [整合分鏡腳本簡介](~/ios/user-interface/storyboards/unified-storyboards.md)

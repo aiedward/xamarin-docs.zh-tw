@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/14/2019
-ms.openlocfilehash: dc72dc7549a697c7231045601851ba4108f29e1b
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: ce0e0b63206ab918b5d761be3e619370aec1eec7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697581"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489748"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin. 表單 CarouselView 滾動
 
@@ -22,17 +22,17 @@ ms.locfileid: "72697581"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)定義下列捲軸相關屬性：
 
-- `HorizontalScrollBarVisibility`，屬於 `ScrollBarVisibility` 類型，可指定水準捲軸何時可見。
-- `IsDragging`，屬於 `bool` 類型，表示 `CarouselView` 是否正在滾動。 這是唯讀屬性，其預設值為 `false`。
-- `IsScrollAnimated`，屬於 `bool` 類型，可指定在滾動 `CarouselView` 時是否會發生動畫。 預設值是 `true`。
-- `ItemsUpdatingScrollMode`，屬於 `ItemsUpdatingScrollMode` 類型，代表將新專案新增至其中時，`CarouselView` 的滾動行為。
-- `VerticalScrollBarVisibility`，屬於 `ScrollBarVisibility` 類型，可指定垂直捲動條何時可見。
+- `HorizontalScrollBarVisibility`，屬於 `ScrollBarVisibility`類型，可指定水準捲軸何時可見。
+- `IsDragging`，屬於 `bool`類型，表示 `CarouselView` 是否正在滾動。 這是唯讀屬性，其預設值為 `false`。
+- `IsScrollAnimated`，屬於 `bool`類型，可指定在滾動 `CarouselView`時是否會發生動畫。 預設值為 `true`。
+- `ItemsUpdatingScrollMode`，屬於 `ItemsUpdatingScrollMode`類型，代表將新專案新增至其中時，`CarouselView` 的滾動行為。
+- `VerticalScrollBarVisibility`，屬於 `ScrollBarVisibility`類型，可指定垂直捲動條何時可見。
 
 所有這些屬性都是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示它們可以是資料系結的目標。
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)也會定義兩個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法，將專案滾動到 view。 其中一個多載會將指定索引處的專案滾動到 view，而另一個則會將指定的專案滾動到 view。 這兩個多載都有額外的引數，可指定以指出專案在捲軸完成後的確切位置，以及是否要以動畫顯示捲軸。
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)定義當叫用其中一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法時，所引發的[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)事件。 伴隨 `ScrollToRequested` 事件的[`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)物件有許多屬性，包括 `IsAnimated`、`Index`、`Item` 和 `ScrollToPosition`。 這些屬性是從 `ScrollTo` 方法呼叫中指定的引數所設定。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)定義當叫用其中一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法時，所引發的[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)事件。 伴隨 `ScrollToRequested` 事件的[`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)物件有許多屬性，包括 `IsAnimated`、`Index`、`Item`和 `ScrollToPosition`。 這些屬性是從 `ScrollTo` 方法呼叫中指定的引數所設定。
 
 此外， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會定義引發的 `Scrolled` 事件，以指出滾動發生。 伴隨 `Scrolled` 事件的 `ItemsViewScrolledEventArgs` 物件有許多屬性。 如需詳細資訊，請參閱偵測[滾動](#detect-scrolling)。
 
@@ -83,7 +83,7 @@ void OnCarouselViewScrolled(object sender, ItemsViewScrolledEventArgs e)
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>將索引中的專案滾動到 view
 
-第一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法多載會將位於指定索引處的專案滾動到 view。 假設有一個名為 `carouselView` 的[`CarouselView`](xref:Xamarin.Forms.CarouselView)物件，下列範例會示範如何將位於索引6的專案滾動到 view：
+第一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法多載會將位於指定索引處的專案滾動到 view。 假設有一個名為 `carouselView`的[`CarouselView`](xref:Xamarin.Forms.CarouselView)物件，下列範例會示範如何將位於索引6的專案滾動到 view：
 
 ```csharp
 carouselView.ScrollTo(6);
@@ -94,7 +94,7 @@ carouselView.ScrollTo(6);
 
 ## <a name="scroll-an-item-into-view"></a>將專案滾動到視野中
 
-第二個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法多載會將指定的專案滾動到 view。 假設有一個名為 `carouselView` 的[`CarouselView`](xref:Xamarin.Forms.CarouselView)物件，下列範例會示範如何將 Proboscis 的猴子專案滾動到 view：
+第二個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法多載會將指定的專案滾動到 view。 假設有一個名為 `carouselView`的[`CarouselView`](xref:Xamarin.Forms.CarouselView)物件，下列範例會示範如何將 Proboscis 的猴子專案滾動到 view：
 
 ```csharp
 MonkeysViewModel viewModel = BindingContext as MonkeysViewModel;
@@ -121,7 +121,7 @@ carouselView.ScrollTo(monkey, animate: false);
 
 ### <a name="makevisible"></a>MakeVisible
 
-[ [@No__t_1](xref:Xamarin.Forms.ScrollToPosition)成員] 表示專案應該滾動，直到在視圖中顯示為止：
+[ [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)成員] 表示專案應該滾動，直到在視圖中顯示為止：
 
 ```csharp
 carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
@@ -132,9 +132,9 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > 如果呼叫 `ScrollTo` 方法時未指定 `position` 引數，預設會使用[`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)成員。
 
-### <a name="start"></a>開始
+### <a name="start"></a>啟動
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的開頭：
+[`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的開頭：
 
 ```csharp
 carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
@@ -142,9 +142,9 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 這個範例程式碼會導致專案滾動到視圖的開頭。
 
-### <a name="center"></a>置中
+### <a name="center"></a>Center
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)成員表示該專案應該滾動到視圖的中心：
+[`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition)成員表示該專案應該滾動到視圖的中心：
 
 ```csharp
 carouselViewView.ScrollTo(monkey, position: ScrollToPosition.Center);
@@ -154,7 +154,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 ### <a name="end"></a>End - 結束
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的結尾：
+[`ScrollToPosition.End`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的結尾：
 
 ```csharp
 carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
@@ -170,7 +170,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
 - 新增新專案時，`KeepScrollOffset` 會維護相對於清單開頭的捲軸位移。
 - `KeepLastItemInView` 調整捲軸位移，以便在新增新專案時，讓最後一個專案保持可見。
 
-@No__t_0 屬性的預設值為 `KeepItemsInView`。 因此，當新專案新增至[`CarouselView`](xref:Xamarin.Forms.CarouselView)時，清單中的第一個可見專案將會保持顯示狀態。 為確保新加入的專案一律會顯示在清單底部，`ItemsUpdatingScrollMode` 屬性應該設定為 `KeepLastItemInView`：
+`ItemsUpdatingScrollMode` 屬性的預設值為 `KeepItemsInView`。 因此，當新專案新增至[`CarouselView`](xref:Xamarin.Forms.CarouselView)時，清單中的第一個可見專案將會保持顯示狀態。 為確保新加入的專案一律會顯示在清單底部，`ItemsUpdatingScrollMode` 屬性應該設定為 `KeepLastItemInView`：
 
 ```xaml
 <CarouselView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -209,28 +209,28 @@ CarouselView carouselView = new CarouselView
 
 ### <a name="snap-points-type"></a>貼齊點類型
 
-[@No__t_1](xref:Xamarin.Forms.SnapPointsType)列舉會定義下列成員：
+[`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)列舉會定義下列成員：
 
 - `None` 表示滾動不會貼齊至專案。
 - `Mandatory` 指出內容一律會貼齊到最接近的貼齊點，也就是慣性的方向。
-- `MandatorySingle` 表示與 `Mandatory` 相同的行為，但一次只會滾動一個專案。
+- `MandatorySingle` 表示與 `Mandatory`相同的行為，但一次只會滾動一個專案。
 
 根據預設，在[`CarouselView`](xref:Xamarin.Forms.CarouselView)上， [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)屬性會設定為 [`SnapPointsType.MandatorySingle`]，以確保滾動一次只會滾動一個專案。
 
 ### <a name="snap-points-alignment"></a>貼齊點對齊
 
-[@No__t_1](xref:Xamarin.Forms.SnapPointsAlignment)列舉會定義 `Start`、`Center` 和 `End` 成員。
+[`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)列舉會定義 `Start`、`Center`和 `End` 成員。
 
 > [!IMPORTANT]
 > 只有當 [ [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) ] 屬性設定為 [`Mandatory`] 或 [`MandatorySingle`] 時，才會遵守[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)屬性的值。
 
-#### <a name="start"></a>開始
+#### <a name="start"></a>啟動
 
-@No__t_0 成員表示貼齊點與專案的前置邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
+`SnapPointsAlignment.Start` 成員表示貼齊點與專案的前置邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"
@@ -256,15 +256,15 @@ CarouselView carouselView = new CarouselView
 
 當使用者撥動起始水準滾動[`CarouselView`](xref:Xamarin.Forms.CarouselView)的滾動時，左側專案會與視圖的左邊對齊。
 
-#### <a name="center"></a>置中
+#### <a name="center"></a>Center
 
-@No__t_0 成員表示貼齊點對齊專案的中心。
+`SnapPointsAlignment.Center` 成員表示貼齊點對齊專案的中心。
 
 根據預設，在[`CarouselView`](xref:Xamarin.Forms.CarouselView)上， [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)屬性會設定為 [`Center`]。 不過，基於完整性，下列 XAML 範例示範如何設定這個列舉成員：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"
@@ -292,11 +292,11 @@ CarouselView carouselView = new CarouselView
 
 #### <a name="end"></a>End - 結束
 
-@No__t_0 成員表示貼齊點與專案的尾端邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
+`SnapPointsAlignment.End` 成員表示貼齊點與專案的尾端邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
-              NumberOfSideItems="1">
+              PeekAreaInsets="100">
     <CarouselView.ItemsLayout>
         <LinearItemsLayout Orientation="Horizontal"
                            SnapPointsType="MandatorySingle"

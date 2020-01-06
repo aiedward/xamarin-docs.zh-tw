@@ -6,12 +6,12 @@ ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: 4e2b653365a747b30016a1fbd42b8a01c4c87848
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a8b63638861e8d44deb4ea72959d7461190f7713
+ms.sourcegitcommit: 6266ef043ae0289f174e901f204f2a280a53c071
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029749"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545802"
 ---
 # <a name="net-embedding-limitations"></a>.NET 嵌入限制
 
@@ -39,7 +39,7 @@ ms.locfileid: "73029749"
 
 ## <a name="objective-c-generated-code"></a>目標-C 產生的程式碼
 
-### <a name="nullability"></a>性
+### <a name="nullability"></a>Null 屬性
 
 .NET 中沒有中繼資料，告訴我們 API 是否可接受 null 參考。 大部分的 Api 如果無法處理 `null` 引數，將會擲回 `ArgumentNullException`。 這會造成問題，因為例外狀況的目標 C 處理是更能避免的事。
 
@@ -48,5 +48,11 @@ ms.locfileid: "73029749"
 ### <a name="bitcode-ios"></a>Bitcode （iOS）
 
 目前 .NET 內嵌不支援 iOS 上的 bitcode，其已針對某些 Xcode 專案範本啟用。 這將必須停用，才能成功連結產生的架構。
+
+* 針對 iOS，bitcode 是將應用程式提交至 Apple AppStore 的選擇性選項。 Xamarin 不支援 iOS，因為產生的 bitcode 是「內嵌元件」。 這不會對 iOS 平臺提供任何好處，因為它無法優化伺服器端，但會使二進位檔變大且更長的組建時間。
+
+* 針對 tvOS 和 watchOS，需要 bitcode 才能將應用程式提交至 Apple 的 AppStore。 在 tvOS 上支援 bitcode （做為「內嵌元件」）和 watchOS （如 "LLVM/IR"）以滿足這項需求。
+
+* 針對 macOS，目前不需要 bitcode 支援，也不支援 Xamarin。
 
 ![Bitcode 選項](images/ios-bitcode-option.png)

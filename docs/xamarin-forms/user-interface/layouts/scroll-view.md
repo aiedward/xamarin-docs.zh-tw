@@ -6,13 +6,13 @@ ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/17/2019
-ms.openlocfilehash: 8d523c6da6ca7feaf6894123822f789f37455865
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/18/2019
+ms.openlocfilehash: bb10cda7c9899f176861ceee712cc876984c56ef
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696858"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488266"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin. Forms ScrollView
 
@@ -26,7 +26,7 @@ ms.locfileid: "72696858"
 
 [`ScrollView`](xref:Xamarin.Forms.ScrollView)可以用來確保較大的視圖在較小的手機上顯示良好。 例如，可以在 iPhone 4s 上裁剪適用于 iPhone 6s 的版面配置。 使用 `ScrollView` 可以讓版面配置的裁剪部分顯示在較小的螢幕上。
 
-## <a name="usage"></a>使用量
+## <a name="usage"></a>使用
 
 > [!NOTE]
 > 不應將[`ScrollView`](xref:Xamarin.Forms.ScrollView)物件加以嵌套。 此外，`ScrollView`s 不應該與提供滾動的其他控制項（例如 `ListView` 和 `WebView`）加以嵌套。
@@ -47,27 +47,34 @@ ms.locfileid: "72696858"
 在 C# 中：
 
 ```csharp
-var scroll = new ScrollView();
-Content = scroll;
-var stack = new StackLayout();
-stack.Children.Add(new BoxView { BackgroundColor = Color.Red,    HeightRequest = 600, WidthRequest = 600 });
-stack.Children.Add(new Entry());
+public class ScrollingDemoCode : ContentPage
+{
+    public ScrollingDemoCode()
+    {
+        StackLayout stackLayout = new StackLayout();
+        stackLayout.Children.Add(new BoxView { BackgroundColor = Color.Red, HeightRequest = 600, WidthRequest = 150 });
+        stackLayout.Children.Add(new Entry());
+        ScrollView scrollView = new ScrollView();
+        scrollView.Content = stackLayout;
+        Content = scrollView;
+    }
+}
 ```
 
 在使用者向下滾動之前，只會顯示 `BoxView`：
 
 ![](scroll-view-images/scroll-start.png "BoxView in ScrollView")
 
-請注意，當使用者開始在 `Entry` 中輸入文字時，視圖會滾動，讓它在畫面上顯示：
+請注意，當使用者開始在 `Entry`中輸入文字時，視圖會滾動，讓它在畫面上顯示：
 
 ![](scroll-view-images/scroll-end.png "Entry in ScrollView")
 
-## <a name="properties"></a>內容
+## <a name="properties"></a>屬性
 
 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 會定義下列屬性：
 
 - [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty)取得代表內容大小的[`Size`](xref:Xamarin.Forms.Size)值。
-- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)取得或設定[`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation)列舉值，表示 `ScrollView` 的滾動方向。
+- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)取得或設定[`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation)列舉值，表示 `ScrollView`的滾動方向。
 - [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty)取得代表目前 X 捲軸位置的 `double`。
 - [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty)取得代表目前 Y 捲軸位置的 `double`。
 - [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty)取得或設定代表水準捲軸可見時間的[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)值。
@@ -89,7 +96,7 @@ scroll.ScrollToAsync(label, ScrollToPosition.Start, true); //scrolls so that the
 ```
 
 > [!IMPORTANT]
-> 當[`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)屬性設定為 `Neither` 時，`ScrollToAsync` 方法不會產生捲軸。
+> 當[`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)屬性設定為 `Neither`時，`ScrollToAsync` 方法不會產生捲軸。
 
 當滾動到特定專案時，`ScrollToPosition` 列舉會指定要在視圖中顯示元素的位置：
 
@@ -98,11 +105,11 @@ scroll.ScrollToAsync(label, ScrollToPosition.Start, true); //scrolls so that the
 - **MakeVisible** &ndash; 會滾動專案，使其可在視圖中顯示。
 - **開始**&ndash; 將元素滾動到視圖可見部分的開頭。
 
-[@No__t_0] 屬性會指定如何滾動視圖。 設定為 [`true`] 時，將會使用平滑動畫，而不是立即將內容移至 [視圖]。
+[`IsAnimated`] 屬性會指定如何滾動視圖。 設定為 [`true`] 時，將會使用平滑動畫，而不是立即將內容移至 [視圖]。
 
 ## <a name="events"></a>「事件」
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)只會定義一個事件，`Scrolled`。 當視圖完成滾動時，就會引發 `Scrolled`。 @No__t_0 的事件處理常式會接受 `ScrolledEventArgs`，其具有 `ScrollX` 和 `ScrollY` 屬性。 以下示範如何以 `ScrollView` 的目前滾動位置來更新標籤：
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)只會定義一個事件，`Scrolled`。 當視圖完成滾動時，就會引發 `Scrolled`。 `Scrolled` 的事件處理常式會接受 `ScrolledEventArgs`，其具有 `ScrollX` 和 `ScrollY` 屬性。 以下示範如何以 `ScrollView`的目前滾動位置來更新標籤：
 
 ```csharp
 Label label = new Label { Text = "Position: " };

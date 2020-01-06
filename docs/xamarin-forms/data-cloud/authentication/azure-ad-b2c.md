@@ -6,13 +6,13 @@ ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/17/2019
-ms.openlocfilehash: c1df3adfa67a363609b397731ed298155d7531be
-ms.sourcegitcommit: 483e0ab0e9f30382219084c0345519f1025169b2
+ms.date: 12/04/2019
+ms.openlocfilehash: 946cf65f7d83722fd388bed555b9d3f35c487708
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74809024"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489813"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 驗證使用者
 
@@ -26,15 +26,17 @@ Azure Active Directory B2C （ADB2C）是取用者面向應用程式的身分識
 
 將 Azure Active Directory B2C 身分識別管理服務整合到行動應用程式的流程如下所示：
 
-1. 建立 Active Directory B2C 租用戶
-1. 向 Azure Active Directory B2C 租使用者註冊您的行動應用程式
-1. 建立註冊和登入的原則，以及忘記密碼的使用者流程
+1. 建立 Azure Active Directory B2C 租使用者。
+1. 向 Azure Active Directory B2C 租使用者註冊您的行動應用程式。
+1. 建立註冊和登入的原則，以及忘記密碼的使用者流程。
 1. 使用 Microsoft 驗證程式庫（MSAL）來啟動 Azure Active Directory B2C 租使用者的驗證工作流程。
 
 > [!NOTE]
-> Azure Active Directory B2C 支援多個身分識別提供者，包括 Microsoft、GitHub、Facebook、Twitter 等等。 如需 Azure Active Directory B2C 功能的詳細資訊，請參閱[Azure Active Directory B2C 檔](/azure/active-directory-b2c/)。
->
-> Microsoft 驗證程式庫支援多個應用程式架構和平臺。 如需 MSAL 功能的相關資訊，請參閱 GitHub 上的[Microsoft 驗證程式庫](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)。
+> 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
+
+Azure Active Directory B2C 支援多個身分識別提供者，包括 Microsoft、GitHub、Facebook、Twitter 等等。 如需 Azure Active Directory B2C 功能的詳細資訊，請參閱[Azure Active Directory B2C 檔](/azure/active-directory-b2c/)。
+
+Microsoft 驗證程式庫支援多個應用程式架構和平臺。 如需 MSAL 功能的相關資訊，請參閱 GitHub 上的[Microsoft 驗證程式庫](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)。
 
 ## <a name="configure-an-azure-active-directory-b2c-tenant"></a>設定 Azure Active Directory B2C 租使用者
 
@@ -181,7 +183,7 @@ public partial class LoginPage : ContentPage
                 .WithPrompt(Prompt.SelectAccount)
                 .WithParentActivityOrWindow(App.UIParent)
                 .ExecuteAsync();
-    
+
             await Navigation.PushAsync(new LogoutPage(result));
         }
         catch (MsalException ex)

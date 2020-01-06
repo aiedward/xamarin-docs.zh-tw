@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 30415bd2df14cdc13f94a020475acf471b25c6ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1f71179ccafc2daf65e792c4538bf47ea2df1e7d
+ms.sourcegitcommit: 0177e06169da621ed9d5fa0f6118a628e8c92bd2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030377"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663702"
 ---
-# <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS 不同裝置的編譯
+# <a name="compiling-for-different-devices-in-xamarinios"></a>針對 Xamarin 中的不同裝置進行編譯
 
 可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建] (在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
 
@@ -30,27 +30,23 @@ ms.locfileid: "73030377"
 
 除了 UI 上可用的組態選項外，您也可以將自己的命令列選項集傳遞至 [Xamarin.iOS 建置工具 (mtouch)](~/ios/deploy-test/mtouch.md)。
 
-[http://iossupportmatrix.com/](http://iossupportmatrix.com/) 是很實用的資源，可用來確保您納入所有必要的裝置、架構和 iOS 版本。
-
- <a name="SDK_Options" />
-
 ## <a name="sdk-options"></a>SDK 選項
 
 Visual Studio for Mac 可讓您設定兩個與 SDK 相關的重要屬性：iOS SDK 版本 (用來建置軟體) 和部署目標 (或最小的必要 iOS 版本)。
 
-iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會將 Xamarin.iOS 導向至其應該在建置期間參考的編譯器、連結器和程式庫。 
+iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會將 Xamarin.iOS 導向至其應該在建置期間參考的編譯器、連結器和程式庫。 以滑鼠右鍵按一下專案，然後在 [選項] 視窗中依序選擇 [**選項**] 和 [ **iOS 組建**]：
 
-**部署目標**設定可用來選取應用程式執行所在之作業系統的最小必要版本。 這會設定在專案的 Info.plist 檔案中。 請挑選擁有您執行應用程式所需之所有 API 的最小版本。
+[![選擇 [選項] 視窗上的 [SDK 版本]](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
+
+**部署目標**設定可用來選取應用程式執行所在之作業系統的最小必要版本。 這會在您專案的**plist**檔案中設定。 請挑選擁有您執行應用程式所需之所有 API 的最小版本。
+
+[![在 plist 檔案中設定部署目標](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
 一般來說，Xamarin.iOS API 會公開最新版 SDK 中的所有可用方法，而且如有必要，我們也會提供可讓您偵測功能是否可在執行階段使用的便利屬性 (例如，`UIDevice.UserInterfaceIdiom` 和 `UIDevice.IsMultitaskingSupported` 隨時都會在 Xamarin.iOS 上運作，我們會執幕後行在所有工作)。
-
- <a name="Linking" />
 
 ## <a name="linking"></a>連結
 
 請參閱我們的[連結器](~/ios/deploy-test/linker.md)專屬頁面，以深入了解連結器如何協助您減少可執行檔的大小，以及了解如何有效地使用連結器。
-
- <a name="Code_Generation_Engine" />
 
 ## <a name="code-generation-engine"></a>程式碼產生引擎
 
@@ -66,11 +62,7 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 
 [![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
- <a name="ARMV7_and_ARMV7s_support" />
-
 ## <a name="architecture-support"></a>架構支援
-
-<a name="armv6-discontinued" />
 
 ### <a name="armv6-xamarinios-discontinued-support-for-armv6-with-v810"></a>ARMv6 (Xamarin.iOS 已在 8.10 版中斷對 ARMv6 的支援)
 
@@ -107,13 +99,9 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 
 請注意，提交至 App Store 的任何組建都必須包含 64 位元的支援，這是 [Apple](https://developer.apple.com/news/?id=12172014b) 所設下的需求。 此外，iOS 11 僅支援 64 位元應用程式。
 
- <a name="ARM_Thumb_Support" />
-
-### <a name="arm-thumb-2-support"></a>ARM Thumb-2 支援
+### <a name="arm-thumb-2-support"></a>ARM 拇指2支援
 
 Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thumb 支援，您可以減少可執行檔的大小，但代價是執行時間較久。 ARMv7 和 ARMv7s 可支援 Thumb。
-
- <a name="Conditional_framwork_useage" />
 
 ## <a name="conditional-framework-usage"></a>條件式架構使用方式
 
@@ -131,4 +119,3 @@ Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thum
 ## <a name="related-links"></a>相關連結
 
 - [連結器](~/ios/deploy-test/linker.md)
-- [外部 - iOS 支援對照表](http://iossupportmatrix.com/)

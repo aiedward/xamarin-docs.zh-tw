@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 8ca13b4f9c961b8bb206d065ce3cf641a8662160
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028088"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556518"
 ---
-# <a name="debugging-on-the-android-emulator"></a>在 Android Emulator 上偵錯
+# <a name="debug-on-the-android-emulator"></a>Android Emulator 上的 Debug
 
 _在本指南中，您將了解如何在 Android Emulator 中啟動虛擬裝置來偵錯和測試您的應用程式。_
-
-## <a name="overview"></a>總覽
 
 Android Emulator (安裝作為**使用 .NET 開發行動裝置應用程式**工作負載的一部分) 可在各種不同的組態中執行，以模擬不同的 Android 裝置。 這其中每一種組態都會建立為「虛擬裝置」。 在本指南中，您將了解如何從 Visual Studio 啟動模擬器，以及在虛擬裝置中執行應用程式。 如需有關設定 Android Emulator 及建立新虛擬裝置的資訊，請參閱 [Android Emulator Setup](~/android/get-started/installation/android-emulator/index.md) (Android 模擬器設定)。
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 1991be6961cbc296501a1df92fe3c89dda01d190
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: acfa7bc953906654567d361b93ec1ccff22c1f1b
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771684"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545639"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 繫結模式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 在[前一篇文章](basic-bindings.md)中，[替代程式碼繫結] 和 [替代 XAML 繫結] 頁面顯示的 `Label`，其 `Scale` 屬性繫結至 `Slider` 的 `Value` 屬性。 因為 `Slider` 初始值為 0，這導致 `Label` 的 `Scale` 屬性設為 0，而不是 1，並讓 `Label` 消失。
 
@@ -47,9 +47,9 @@ ms.locfileid: "70771684"
 
 如您所料，`Slider` 會從 `Label` 的初始 `Opacity` 值初始化為值 1。 如左側的 iOS 螢幕擷取畫面所示：
 
-[![反向繫結](binding-mode-images/reversebinding-small.png "反向繫結")](binding-mode-images/reversebinding-large.png#lightbox "反向繫結")
+[![反向系結](binding-mode-images/reversebinding-small.png "反向系結")](binding-mode-images/reversebinding-large.png#lightbox "反向系結")
 
-但您可能會覺得奇怪為何 `Slider` 仍繼續運作，如 Android 和 UWP 的螢幕擷取畫面所示。 這似乎表示由於初始化如我們預期般運作，因此當繫結目標是 `Slider` 而非 `Label` 時，資料繫結運作效果較佳。
+但您可能會很驚訝地，`Slider` 會繼續運作，如同 Android 螢幕擷取畫面所示。 這似乎表示由於初始化如我們預期般運作，因此當繫結目標是 `Slider` 而非 `Label` 時，資料繫結運作效果較佳。
 
 **反向繫結**範例和稍早範例之間的差異與「繫結模式」有關。
 
@@ -58,10 +58,10 @@ ms.locfileid: "70771684"
 繫結模式會以 [`BindingMode`](xref:Xamarin.Forms.BindingMode) 列舉的成員來指定：
 
 - [`Default`](xref:Xamarin.Forms.BindingMode.Default)
-- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) &ndash; 資料會在來源和目標之間雙向移動
-- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) &ndash; 資料會從來源移到目標
-- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; 資料會從目標移到來源
-- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; 資料會從來源移到目標，但只有在 `BindingContext` 變更時才會發生 (Xamarin.Forms 3.0 新功能)
+- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) &ndash; 資料會在來源與目標之間進行這兩種方式
+- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) &ndash; 資料從來源移至目標
+- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; 資料從目標移到來源
+- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; 資料會從來源移至目標，但只有在 `BindingContext` 變更時（使用 Xamarin 3.0 的新版本）
 
 每個可繫結屬性都會在可繫結屬性建立時設定預設繫結模式，並可透過 `BindableProperty` 物件的 [`DefaultBindingMode`](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) 屬性取得。 這個預設繫結模式表示當該屬性是資料繫結目標時，模式即已生效。
 
@@ -111,7 +111,7 @@ ms.locfileid: "70771684"
 
 ViewModel 是資料繫結來源。 ViewModel「不會」定義可繫結的屬性，但它會實作通知機制，以在屬性值變更時通知繫結基礎結構。 此通知機制是 [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) 介面，其會定義名為 [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) 的單一事件。 實作這個介面的類別通常會在其中一個公用屬性變更值時引發事件。 如果屬性從不變更，就不需要引發事件 (`BindableObject` 也會實作 `INotifyPropertyChanged` 介面，並在可繫結的屬性值變更時引發 `PropertyChanged` 事件)。
 
-`HslColorViewModel` 類別定義五個屬性：`Hue`、`Saturation`、`Luminosity` 和 `Color` 屬性相互關聯。 當這三個色彩元件其中之一變更值時，即會重新計算 `Color` 屬性，並引發所有四個屬性的 `PropertyChanged` 事件：
+`HslColorViewModel` 類別會定義五個屬性：`Hue`、`Saturation`、`Luminosity` 和 `Color` 則相互關聯。 當這三個色彩元件其中之一變更值時，即會重新計算 `Color` 屬性，並引發所有四個屬性的 `PropertyChanged` 事件：
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -255,15 +255,15 @@ public class HslColorViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-`BoxView`、`Label` 和三個 `Slider` 檢視會繼承 `Grid` 的繫結內容。 這些檢視都是參考 ViewModel 中來源屬性的繫結目標。 針對 `BoxView` 的 `Color` 屬性和 `Label` 的 `Text` 屬性，資料繫結為 `OneWay`：檢視中的屬性是根據 ViewModel 中的屬性設定的。
+`BoxView`、`Label` 和三個 `Slider` 檢視會繼承 `Grid` 的繫結內容。 這些檢視都是參考 ViewModel 中來源屬性的繫結目標。 若是 `BoxView` 的 `Color` 屬性和 `Label` 的 `Text` 屬性，資料繫結為 `OneWay`：檢視中的屬性會從 ViewModel 屬性來設定。
 
 不過，`Slider` 的 `Value` 屬性則為 `TwoWay`。 這可讓每個 `Slider` 從 ViewModel 設定，而 ViewModel 則從每個 `Slider` 來設定。
 
 第一次執行程式時，`BoxView`、`Label` 和三個 `Slider` 項目都會從 ViewModel 來設定，並以 ViewModel 具現化時設定的初始 `Color` 屬性為依據。 如左側的 iOS 螢幕擷取畫面所示：
 
-[![簡易色彩選取器](binding-mode-images/simplecolorselector-small.png "簡易色彩選取器")](binding-mode-images/simplecolorselector-large.png#lightbox "簡易色彩選取器")
+[![簡單色彩選取器](binding-mode-images/simplecolorselector-small.png "簡單色彩選取器")](binding-mode-images/simplecolorselector-large.png#lightbox "簡單色彩選取器")
 
-當您操作滑桿時，`BoxView` 和 `Label` 會隨之更新，如 Android 及 UWP 螢幕擷取畫面所示。
+當您操作滑杆時，`BoxView` 和 `Label` 會隨之更新，如 Android 螢幕擷取畫面所示。
 
 具現化資源字典中的 ViewModel 是一個常見的方法。 您也可以針對 `BindingContext` 屬性，具現化屬性項目標記內的 ViewModel。 在 [Simple Color Selector] \(簡易色彩選取器\) XAML 檔案中，嘗試從資源字典中移除 `HslColorViewModel`，並將它設定為 `Grid` 的 `BindingContext` 屬性，如下所示：
 

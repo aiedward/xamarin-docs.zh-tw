@@ -6,24 +6,24 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 765adf10e5bdf20191c5ee1c089d39032ea07ce0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3062afda82be2b45146687b9d77210a42f8f55fa
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021382"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487954"
 ---
 # <a name="publishing-an-application"></a>發行應用程式
 
 建立絕佳的應用程式之後，使用者將會想要使用它。 本節涵蓋透過電子郵件、私人 Web 伺服器、Google Play 或 Amazon App Store for Android 等管道公開散發使用 Xamarin.Android 所建立應用程式的步驟。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Xamarin.Android 應用程式開發的最後一個步驟就是發行應用程式。 發行是編譯 Xamarin.Android 應用程式以將其備妥供使用者安裝在其裝置上的過程，其中涉及兩項必要工作：
 
-- **做好發行準備** &ndash; 這會建立一個可部署至 Android 架構裝置的應用程式發行版本 (如需有關發行準備的詳細資訊，請參閱[準備可供發行的應用程式](~/android/deploy-test/release-prep/index.md))。
+- **針對**發行集的準備 &ndash; 會建立可部署至 Android 裝置的應用程式版本（如需有關發行準備的詳細資訊，請參閱[準備應用程式以進行發行](~/android/deploy-test/release-prep/index.md)）。
 
-- **散發** &ndash; 應用程式的發行版本會透過一或多個各種散發通道提供給使用者。
+- **散發**&ndash; 應用程式的發行版本會透過一或多個各種散發通道提供。
 
 下表說明發行 Xamarin.Android 應用程式所涉及的步驟：
 
@@ -31,9 +31,9 @@ Xamarin.Android 應用程式開發的最後一個步驟就是發行應用程式�
 
 如上圖所示，不論使用的散發方式是哪一種，準備工作都相同。 向使用者發行 Android 應用程式的方式有數種：
 
-- **透過網站** &ndash; 可以在網站上提供 Xamarin.Android 應用程式下載，讓使用者從網站上按一下連結來安裝應用程式。
-- **透過電子郵件** &ndash; 使用者可以從其電子郵件安裝 Xamarin.Android 應用程式。 使用 Android 架構裝置來開啟附件時，將會安裝應用程式。
-- **透過市集** &ndash; 有數個可供散發的市集存在，例如 [Google Play](https://play.google.com/) 或 [Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
+- 透過**網站**&ndash; Xamarin. Android 應用程式可在網站上提供下載，使用者接著可以按一下連結來安裝應用程式。
+- 透過**電子郵件**&ndash;，使用者可以從其電子郵件安裝 Xamarin. Android 應用程式。 使用 Android 架構裝置來開啟附件時，將會安裝應用程式。
+- **透過市場**&ndash; 有數個應用程式 marketplace 存在於散發，例如[Google Play](https://play.google.com/)或[Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011) 。
 
 使用已建立的市集是發行應用程式的最常見方式，因為它既提供最大的市場範圍，也提供最好的散發控制。 不過，透過市集發行應用程式需要額外的工作。
 
@@ -56,6 +56,7 @@ Google Play 可說是最全方位且最受歡迎的 Android 應用程式市集�
 - [建置流程](~/android/deploy-test/building-apps/build-process.md)
 - [連結](~/android/deploy-test/linker.md)
 - [取得 Google Maps API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
+- [透過 Visual Studio App Center 部署](https://docs.microsoft.com/appcenter/distribution/stores/googleplay)
 - [Application Signing](https://source.android.com/security/apksigning/) (應用程式簽署)
 - [在 Google Play 上發行](https://developer.android.com/distribute/googleplay/publish/index.html)
 - [Google 應用程式授權](https://developer.android.com/guide/google/play/licensing/index.html)

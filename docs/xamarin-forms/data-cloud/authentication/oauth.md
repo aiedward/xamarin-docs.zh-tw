@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
-ms.openlocfilehash: 83fbad8a9bbb9afef5ee80705fe9e86e51284e7d
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+ms.openlocfilehash: 25a09e27fb25e477c5176af0ee4a75a836751ccf
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842987"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487629"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>使用身分識別提供者驗證使用者
 
@@ -152,7 +152,7 @@ presenter.Login(authenticator);
 
 [**識別碼**] 值可以是任何專案，而且 [**角色**] 值必須設定為 [**檢視器]** 。 從 `com.googleusercontent.apps`開始的**Url**配置值，可以從[Google API 主控台](https://console.developers.google.com)上專案的 iOS 用戶端識別碼取得。
 
-當身分識別提供者完成授權要求時，它會重新導向至應用程式的重新導向 URL。 因為 URL 會使用自訂配置，所以會導致 iOS 啟動應用程式，並以啟動參數的形式傳入 URL，其中會由應用程式 `AppDelegate` 類別的 `OpenUrl` 覆寫來處理，如下列程式碼範例所示:
+當身分識別提供者完成授權要求時，它會重新導向至應用程式的重新導向 URL。 因為 URL 會使用自訂配置，所以會導致 iOS 啟動應用程式，並以啟動參數的形式傳入 URL，其中會由應用程式 `AppDelegate` 類別的 `OpenUrl` 覆寫來處理，如下列程式碼範例所示：
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -243,6 +243,9 @@ if (response != null)
 ### <a name="storing-and-retrieving-account-information-on-devices"></a>儲存和抓取裝置上的帳戶資訊
 
 Xamarin 會安全地將 `Account` 物件儲存在帳戶存放區中，讓應用程式不一定需要重新驗證使用者。 `AccountStore` 類別負責儲存帳戶資訊，並由 iOS 中的 Keychain 服務和 Android 中的 `KeyStore` 類別提供支援。
+
+> [!IMPORTANT]
+> 在 Xamarin 中的 `AccountStore` 類別已被取代，應改用 Xamarin. Essentials `SecureStorage` 類別。 如需詳細資訊，請參閱[從 AccountStore 遷移至 Xamarin. Essentials SecureStorage](https://github.com/xamarin/Xamarin.Auth/wiki/Migrating-from-AccountStore-to-Xamarin.Essentials-SecureStorage)。
 
 下列程式碼範例顯示如何安全地儲存 `Account` 物件：
 

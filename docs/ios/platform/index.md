@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 78f8c8d1340c6bb1063e59ad03485d8b9b807c58
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032272"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488994"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平臺功能總覽
 
@@ -53,7 +53,7 @@ iOS 有兩個內建的行事曆相關應用程式：行事曆應用程式和提�
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS 延伸模組](~/ios/platform/extensions.md)
 
-IOS 8 中引進的擴充功能是 iOS 在標準內容（例如，在**通知中心**內）所呈現的特製化 `UIViewControllers`，如同使用者用來執行特定輸入或其他內容的自訂鍵盤類型，如編輯延伸模組可提供特殊效果篩選的相片。
+IOS 8 中引進的擴充功能是 iOS 在標準內容（例如，在**通知中心**內）所提供的特製化 `UIViewControllers`，如同使用者用來執行特定輸入或其他內容的自訂鍵盤類型，像是編輯可提供特殊效果篩選的相片。
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[IOS 中的圖形和動畫](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -125,9 +125,9 @@ iOS 10 包含新的語音 API，可讓應用程式支援連續語音辨識和轉
 
 本文將提供使用新的 3D Touch Api，並介紹如何將壓力敏感手勢新增至在新 iPhone 6s 和 iPhone 6s Plus 裝置上執行的您的 Xamarin iOS 應用程式。
 
-## <a name="touch-idiosplatformtouchidmd"></a>[Touch ID](~/ios/platform/touchid.md)
+## <a name="touch-id-and-face-id-with-xamariniosiosplatformtouch-id-face-idmd"></a>[使用 Xamarin 的 Touch ID 和臉部識別碼](~/ios/platform/touch-id-face-id.md)
 
-在 iOS 7 中引進了 Touch ID，做為驗證使用者的方法-類似于密碼。 不過，它僅限於使用 App Store 解除鎖定裝置、使用 iTunes 並驗證 iCloud keychain。
+「Touch ID」和「臉部識別碼」是自 iOS 8 之後可用的生物識別驗證系統。 本文和範例說明如何搭配使用 Touch ID 和臉部識別碼與 Xamarin。
 
 ## <a name="user-notificationsiosplatformuser-notificationsindexmd"></a>[使用者通知](~/ios/platform/user-notifications/index.md)
 

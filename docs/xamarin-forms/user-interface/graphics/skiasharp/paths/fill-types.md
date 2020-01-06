@@ -1,41 +1,41 @@
 ---
 title: 路徑填滿類型
-description: 本文章檢查不同的效果可能使用 SkiaSharp 路徑填滿類型時，並示範此範例程式碼。
+description: 本文將探討 SkiaSharp 路徑填滿類型的各種可能效果，並以範例程式碼示範這種情況。
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
 ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 924b66b3bdb66c2197b708d87e20eeb6f3ed9f46
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 16d576c599dbf5815b19aec4a2e8390f7ed0e601
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770515"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545565"
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_探索不同的效果設有 SkiaSharp 路徑填滿類型_
+_使用 SkiaSharp 路徑填滿類型探索可能的不同效果_
 
-路徑中的兩個分佈可以重疊，而且行組成的單一分佈可以重疊。 可能可以填入任何括住的區域，但您可能不想以填滿所有括住的區域。 以下為範例：
+路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下為範例：
 
-![](fill-types-images/filltypeexample.png "五個指向部分星級 filles")
+![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-您可以透過這有點控制。 填滿演算法由[ `SKFillType` ](xref:SkiaSharp.SKPath.FillType)屬性`SKPath`，其中您將設定為隸屬[ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType)列舉型別：
+您對此有一些控制。 填入演算法是由 `SKPath`的[`SKFillType`](xref:SkiaSharp.SKPath.FillType)屬性所控制，您可以將其設定為[`SKPathFillType`](xref:SkiaSharp.SKPathFillType)列舉的成員：
 
-- `Winding`預設值
+- `Winding`，預設值
 - `EvenOdd`
 - `InverseWinding`
 - `InverseEvenOdd`
 
-捲繞和奇偶演算法判斷括住的任何區域是填滿或未填入 根據假設一行取自該區域，為無限大。 那一行會跨越一或多個界限組成線條的路徑。 捲曲的模式中，如果繪製單一方向餘額，放大在另一個方向，則區域中繪製的線條數目的界限行數不是填滿。 否則會填滿區域。 如果界限行數是奇數，則奇偶演算法會填滿區域。
+「纏繞」和「奇數」演算法都會根據從該區域繪製到無限大的假設線，來判斷是否有任何封閉的區域填滿或未填滿。 這一行會跨越組成路徑的一或多個界限行。 使用纏繞模式時，如果在某個方向繪製的邊界線條數目與另一個方向所繪製的直線數進行平衡，則不會填滿該區域。 否則會填滿區域。 如果界限的數目為奇數，則偶數演算法會填滿區域。
 
-許多例行的路徑，捲繞演算法通常會填滿所有括住的區域路徑。 奇偶演算法通常會產生更有趣的結果。
+使用許多例行路徑時，纏繞演算法通常會填滿路徑的所有封閉區域。 偶數-奇數演算法通常會產生更有趣的結果。
 
-典型的範例是五角星形，如所示**Five-Pointed 星狀**頁面。 [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)檔案具現化兩個`Picker`檢視來選取路徑填滿類型和路徑是將描邊還是填滿或兩者，以及依照什麼順序：
+典型的範例是以五個指向的星號，如五個**指向的星星**頁面中所示。 [**FivePointedStarPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)會具現化兩個 `Picker` 視圖，以選取路徑填滿類型，以及路徑為已繪製或已填滿，還是要以何種循序執行：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -102,7 +102,7 @@ _探索不同的效果設有 SkiaSharp 路徑填滿類型_
 </ContentPage>
 ```
 
-程式碼後置檔案會使用這兩者`Picker`繪製 5 角星形的值：
+程式碼後置檔案會使用這兩個 `Picker` 值來繪製五個指向的星號：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,20 +168,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-一般而言，路徑填滿類型應該會填滿並不是使用筆劃，但這兩個會影響`Inverse`模式會影響填滿和筆劃。 填滿，兩個`Inverse`類型填滿區域的號，讓區域外星狀填滿。 針對這兩個的筆劃`Inverse`類型色彩筆劃以外的所有內容。 使用這些反向的填滿類型可能會產生一些奇怪的效果，如 iOS 螢幕擷取畫面所示：
+一般來說，路徑填滿型別只會影響填滿，而不是筆劃，但兩種 `Inverse` 模式會影響填滿和筆劃。 針對填滿，這兩個 `Inverse` 類型會填滿區域 oppositely，讓星星外的區域填滿。 就筆劃而言，這兩個 `Inverse` 類型會對筆劃以外的所有專案進行色彩。 使用這些反填滿類型可能會產生一些奇怪的效果，如 iOS 螢幕擷取畫面所示：
 
-[![](fill-types-images/fivepointedstar-small.png "Five-Pointed 星狀頁面的三個螢幕擷取畫面")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed 星狀頁面的三個螢幕擷取畫面")
+[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
-Android 和 UWP 螢幕擷取畫面顯示典型的奇偶和捲繞效果，但筆觸和填滿的順序也會影響結果。
+Android 螢幕擷取畫面顯示一般的奇數和纏繞效果，但是筆劃和填滿的順序也會影響結果。
 
-捲曲的演算法是取決於繪製線條的方向。 通常當您要建立的路徑，您可以控制該方向與您指定行取自到另一個點。 不過，`SKPath`類別也會定義方法，例如`AddRect`和`AddCircle`，繪製整個分佈。 若要控制如何繪製這些物件，方法包含參數的型別[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)，其中包含兩個成員：
+纏繞演算法是根據繪製線條的方向而定。 通常當您建立路徑時，您可以在指定從某個點繪製線條至另一個位置時，控制該方向。 不過，`SKPath` 類別也會定義繪製整個輪廓的 `AddRect` 和 `AddCircle` 等方法。 為了控制這些物件的繪製方式，方法包含[`SKPathDirection`](xref:SkiaSharp.SKPathDirection)類型的參數，其中包含兩個成員：
 
 - `Clockwise`
 - `CounterClockwise`
 
-中的方法`SKPath`，包括`SKPathDirection`參數會指定它，預設值為`Clockwise`。
+`SKPath` 中包含 `SKPathDirection` 參數的方法，會提供預設值 [`Clockwise`]。
 
-**重疊圓形**頁面會使用四個重疊圓形奇偶路徑填滿類型建立路徑：
+[重**迭的圓形**] 頁面會建立具有四個重迭圓形的路徑，其中包含奇數路徑填滿類型：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -221,9 +221,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-它會建立最少的程式碼的有趣映像：
+這是以最少的程式碼建立的有趣映射：
 
-[![](fill-types-images/overlappingcircles-small.png "三個重疊圓形頁面螢幕擷取畫面")](fill-types-images/overlappingcircles-large.png#lightbox "重疊圓形頁面的三個螢幕擷取畫面")
+[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 
 ## <a name="related-links"></a>相關連結
 

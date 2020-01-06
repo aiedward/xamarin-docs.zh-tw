@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 66323974fa44f5397e21541595a187ce0ba4d061
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.openlocfilehash: 056bb16c76887661f054422b2c682a91e6bfa466
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71997148"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489891"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
@@ -43,8 +43,9 @@ ms.locfileid: "71997148"
 <Entry Placeholder="enter name">
     <Entry.Triggers>
         <Trigger TargetType="Entry"
-             Property="IsFocused" Value="True">
+                 Property="IsFocused" Value="True">
             <Setter Property="BackgroundColor" Value="Yellow" />
+            <!-- multiple Setters elements are allowed -->
         </Trigger>
     </Entry.Triggers>
 </Entry>
@@ -74,6 +75,7 @@ ms.locfileid: "71997148"
                 <Trigger TargetType="Entry"
                          Property="IsFocused" Value="True">
                     <Setter Property="BackgroundColor" Value="Yellow" />
+                    <!-- multiple Setters elements are allowed -->
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -85,7 +87,7 @@ ms.locfileid: "71997148"
 
 ## <a name="data-triggers"></a>資料觸發程序
 
-資料觸發程序使用資料繫結來監視另一個控制項，導致呼叫 `Setter`。 請設定 `Property` 屬性來監視指定的值，而不是屬性觸發程序中的 `Binding` 屬性。
+資料觸發程序使用資料繫結來監視另一個控制項，導致呼叫 `Setter`。 請設定 `Binding` 屬性來監視指定的值，而不是屬性觸發程序中的 `Property` 屬性。
 
 下列範例使用資料繫結語法 `{Binding Source={x:Reference entry}, Path=Text.Length}`
 這是我們指稱另一個控制項屬性的方法。 當 `entry` 的長度為零時，會啟動觸發程序。 在此範例中，觸發程序會在輸入為空時停用按鈕。
@@ -106,6 +108,7 @@ ms.locfileid: "71997148"
                                        Path=Text.Length}"
                      Value="0">
             <Setter Property="IsEnabled" Value="False" />
+            <!-- multiple Setters elements are allowed -->
         </DataTrigger>
     </Button.Triggers>
 </Button>
@@ -168,7 +171,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 
 在 `ResourceDictionary` 中共用觸發程序時請小心，將會在控制項之間共用一個執行個體，因此設定一次的任何狀態將會適用於全部。
 
-請注意，事件觸發程序不支援 `EnterActions` 和 `ExitActions`，[如下所述](#enterexit)。
+請注意，事件觸發程式不支援 `EnterActions` 並 `ExitActions`    [如下所述](#enterexit)。
 
 <a name="multi" />
 
@@ -188,8 +191,7 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
                                    Path=Text.Length}"
                                Value="0" />
     </MultiTrigger.Conditions>
-
-  <Setter Property="IsEnabled" Value="False" />
+    <Setter Property="IsEnabled" Value="False" />
     <!-- multiple Setter elements are allowed -->
 </MultiTrigger>
 ```
@@ -270,7 +272,7 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入，只需要有一個 `Entry` 即可啟用 [儲存] 按鈕。
 在畫面底部，[登入] 按鈕保持非使用中，直到兩個欄位都包含資料為止。
 
-![](triggers-images/multi-requireall.png "MultiTrigger 範例")
+![](triggers-images/multi-requireall.png "MultiTrigger Examples")
 
 <a name="enterexit" />
 
@@ -316,19 +318,18 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 ```csharp
 public class FadeTriggerAction : TriggerAction<VisualElement>
 {
-    public FadeTriggerAction() {}
-
     public int StartsFrom { set; get; }
 
-    protected override void Invoke (VisualElement visual)
+    protected override void Invoke(VisualElement sender)
     {
-            visual.Animate("", new Animation( (d)=>{
-                var val = StartsFrom==1 ? d : 1-d;
-                visual.BackgroundColor = Color.FromRgb(1, val, 1);
-
-            }),
-            length:1000, // milliseconds
-            easing: Easing.Linear);
+        sender.Animate("FadeTriggerAction", new Animation((d) =>
+        {
+            var val = StartsFrom == 1 ? d : 1 - d;
+            // so i was aiming for a different color, but then i liked the pink :)
+            sender.BackgroundColor = Color.FromRgb(1, val, 1);
+        }),
+        length: 1000, // milliseconds
+        easing: Easing.Linear);
     }
 }
 ```

@@ -6,13 +6,13 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/02/2019
-ms.openlocfilehash: 0ad31bc6f84ae633a9a18592a00670703db19df9
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/17/2019
+ms.openlocfilehash: 7d1183bf0c741b5a7ca02b43c4edb0c640ee1ac2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697609"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488216"
 ---
 # <a name="xamarinforms-carouselview-data"></a>Xamarin. 表單 CarouselView 資料
 
@@ -22,7 +22,7 @@ ms.locfileid: "72697609"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)包含下列定義要顯示之資料的屬性，以及其外觀：
 
-- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)，屬於 `IEnumerable` 類型，會指定要顯示的專案集合，且預設值為 [`null`]。
+- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)，屬於 `IEnumerable`類型，會指定要顯示的專案集合，且預設值為 [`null`]。
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)，屬於[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)類型，會指定要套用至要顯示的專案集合中每個專案的範本。
 
 這些屬性是以[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件為後盾，也就是說，這些屬性可以是資料系結的目標。
@@ -34,7 +34,7 @@ ms.locfileid: "72697609"
 
 ## <a name="populate-a-carouselview-with-data"></a>在 CarouselView 中填入資料
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)會藉由將其[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性設定為任何會執行 `IEnumerable` 的集合來填入資料。 藉由從字串陣列初始化 `ItemsSource` 屬性，可以在 XAML 中加入專案：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)會藉由將其[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)屬性設定為任何會執行 `IEnumerable`的集合來填入資料。 藉由從字串陣列初始化 `ItemsSource` 屬性，可以在 XAML 中加入專案：
 
 ```xaml
 <CarouselView>
@@ -78,7 +78,7 @@ carouselView.ItemsSource = new string[]
 
 [![IOS 和 Android 上包含文字專案之 CarouselView 的螢幕擷取畫面](populate-data-images/text.png "CarouselView 中的文字專案")](populate-data-images/text-large.png#lightbox "CarouselView 中的文字專案")
 
-如需如何變更[`CarouselView`](xref:Xamarin.Forms.CarouselView)方向的詳細資訊，請參閱[CarouselView 版面](layout.md)配置。 如需如何在 `CarouselView` 中定義每個專案外觀的詳細資訊，請參閱[定義專案外觀](#define-item-appearance)。
+如需如何變更[`CarouselView`](xref:Xamarin.Forms.CarouselView)方向的詳細資訊，請參閱[CarouselView 版面](layout.md)配置。 如需如何在 `CarouselView`中定義每個專案外觀的詳細資訊，請參閱[定義專案外觀](#define-item-appearance)。
 
 ### <a name="data-binding"></a>資料繫結
 
@@ -179,7 +179,7 @@ carouselView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中指定的元素會定義 `CarouselView` 中每個專案的外觀。 在此範例中，`DataTemplate` 內的配置是由[`StackLayout`](xref:Xamarin.Forms.StackLayout)所管理，而且資料會與[`Image`](xref:Xamarin.Forms.Image)物件和三個[`Label`](xref:Xamarin.Forms.Label)物件一起顯示，全都系結至 `Monkey` 類別的屬性：
+在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中指定的元素會定義 `CarouselView`中每個專案的外觀。 在此範例中，`DataTemplate` 內的配置是由[`StackLayout`](xref:Xamarin.Forms.StackLayout)所管理，而且資料會與[`Image`](xref:Xamarin.Forms.Image)物件和三個[`Label`](xref:Xamarin.Forms.Label)物件一起顯示，全都系結至 `Monkey` 類別的屬性：
 
 ```csharp
 public class Monkey
@@ -234,7 +234,7 @@ CarouselView carouselView = new CarouselView
 carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[@No__t_1](xref:Xamarin.Forms.ItemsView.ItemTemplate)屬性會設定為 `MonkeyDataTemplateSelector` 物件。 下列範例顯示 `MonkeyDataTemplateSelector` 類別：
+[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)屬性會設定為 `MonkeyDataTemplateSelector` 物件。 下列範例顯示 `MonkeyDataTemplateSelector` 類別：
 
 ```csharp
 public class MonkeyDataTemplateSelector : DataTemplateSelector
@@ -249,7 +249,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-@No__t_0 類別會定義設定為不同資料範本的 `AmericanMonkey` 和 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 當猴子名稱包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，它會將其資料顯示為灰色：
+`MonkeyDataTemplateSelector` 類別定義設定為不同資料範本的 `AmericanMonkey` 與 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 屬性。 當猴子名稱包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，它會將其資料顯示為灰色：
 
 [![在 iOS 和 Android 上 CarouselView 執行時間專案範本選擇的螢幕擷取畫面](populate-data-images/datatemplateselector.png "CarouselView 中的執行時間專案範本選擇")](populate-data-images/datatemplateselector-large.png#lightbox "CarouselView 中的執行時間專案範本選擇")
 
@@ -258,9 +258,37 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 > [!IMPORTANT]
 > 使用[`CarouselView`](xref:Xamarin.Forms.CarouselView)時，絕對不要將[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)物件的根項目設定為 `ViewCell`。 這會導致擲回例外狀況，因為 `CarouselView` 沒有資料格的概念。
 
-## <a name="pull-to-refresh"></a>提取至重新整理
+## <a name="display-indicators"></a>顯示指示器
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)支援透過 `RefreshView` 的提取至重新整理功能，可讓您藉由在專案上拉出來重新整理所顯示的資料。 @No__t_0 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CarouselView` 設定為 `RefreshView` 的子系，就會為其執行 pull 的「重新整理」：
+表示 `CarouselView`中的專案數和目前位置的指標，可以顯示在 `CarouselView`旁。 這可以透過 `IndicatorView` 控制項來完成：
+
+```xaml
+<StackLayout>
+    <CarouselView x:Name="carouselView"
+                  ItemsSource="{Binding Monkeys}">
+        <CarouselView.ItemTemplate>
+            <!-- DataTemplate that defines item appearance -->
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+    <IndicatorView ItemsSourceBy="carouselView"
+                   IndicatorColor="LightGray"
+                   SelectedIndicatorColor="DarkGray"
+                   HorizontalOptions="Center" />
+</StackLayout>
+```
+
+在此範例中，`IndicatorView` 會在 `CarouselView`之下轉譯，而 `CarouselView`中的每個專案都有一個指標。 `IndicatorView` 會藉由將 `ItemsSourceBy` 屬性設定為 `CarouselView` 物件來填入資料。 每個指標都是淺灰色圓圈，而表示 `CarouselView` 中目前專案的指標是暗灰色：
+
+[![CarouselView 和 IndicatorView （在 iOS 和 Android 上）的螢幕擷取畫面](populate-data-images/indicators.png "IndicatorView 圓形")](populate-data-images/indicators-large.png#lightbox "IndicatorView 圓形")
+
+> [!IMPORTANT]
+> 設定 `ItemsSourceBy` 屬性會導致 `IndicatorView.Position` 屬性系結至 `CarouselView.Position` 屬性，而 `IndicatorView.ItemsSource` 屬性系結至 `CarouselView.ItemsSource` 屬性。
+
+如需指標的詳細資訊，請參閱[IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)。
+
+## <a name="pull-to-refresh"></a>拖動以重新整理
+
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)支援透過 `RefreshView`的提取至重新整理功能，可讓您藉由在專案上拉出來重新整理所顯示的資料。 `RefreshView` 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CarouselView` 設定為 `RefreshView`的子系，就會為其執行 pull 的「重新整理」：
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -293,9 +321,9 @@ refreshView.Content = carouselView;
 
 [![IOS 和 Android 上的 CarouselView 提取重新整理的螢幕擷取畫面](populate-data-images/pull-to-refresh.png "CarouselView 的提取更新")](populate-data-images/pull-to-refresh-large.png#lightbox "CarouselView 的提取更新")
 
-@No__t_0 屬性的值表示 `RefreshView` 的目前狀態。 當使用者觸發重新整理時，這個屬性會自動轉換成 `true`。 重新整理完成後，您應該將屬性重設為 `false`。
+`RefreshView.IsRefreshing` 屬性的值表示 `RefreshView`的目前狀態。 當使用者觸發重新整理時，這個屬性會自動轉換成 `true`。 重新整理完成後，您應該將屬性重設為 `false`。
 
-如需 `RefreshView` 的詳細資訊，請參閱[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
+如需 `RefreshView`的詳細資訊，請參閱[RefreshView](~/xamarin-forms/user-interface/refreshview.md)。
 
 ## <a name="load-data-incrementally"></a>以累加方式載入資料
 
@@ -303,13 +331,13 @@ refreshView.Content = carouselView;
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)定義下列屬性來控制資料的累加式載入：
 
-- `RemainingItemsThreshold`，屬於 `int` 類型，這是在將引發 `RemainingItemsThresholdReached` 事件的清單中尚未顯示的專案閾值。
-- `RemainingItemsThresholdReachedCommand`，屬於 `ICommand` 類型，這會在達到 `RemainingItemsThreshold` 時執行。
+- `RemainingItemsThreshold`，屬於 `int`類型，這是在將引發 `RemainingItemsThresholdReached` 事件的清單中尚未顯示的專案閾值。
+- `RemainingItemsThresholdReachedCommand`，屬於 `ICommand`類型，這會在達到 `RemainingItemsThreshold` 時執行。
 - `RemainingItemsThresholdReachedCommandParameter`，屬於 `object` 類型，這是傳遞至 `RemainingItemsThresholdReachedCommand` 的參數。
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)也會定義當 `CarouselView` 滾動到 `RemainingItemsThreshold` 專案尚未顯示的程度時，所引發的 `RemainingItemsThresholdReached` 事件。 您可以處理這個事件，以載入更多專案。 此外，當 `RemainingItemsThresholdReached` 事件引發時，會執行 `RemainingItemsThresholdReachedCommand`，以便在 viewmodel 中進行累加式資料載入。
 
-@No__t_0 屬性的預設值為-1，表示永遠不會引發 `RemainingItemsThresholdReached` 事件。 當屬性值為0時，當[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中的最後一個專案顯示時，就會引發 `RemainingItemsThresholdReached` 事件。 對於大於0的值，當 `ItemsSource` 包含尚未滾動到的專案數時，就會引發 `RemainingItemsThresholdReached` 事件。
+`RemainingItemsThreshold` 屬性的預設值為-1，表示永遠不會引發 `RemainingItemsThresholdReached` 事件。 當屬性值為0時，當[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)中的最後一個專案顯示時，就會引發 `RemainingItemsThresholdReached` 事件。 對於大於0的值，當 `ItemsSource` 包含尚未滾動到的專案數時，就會引發 `RemainingItemsThresholdReached` 事件。
 
 > [!NOTE]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView)驗證 `RemainingItemsThreshold` 屬性，使其值一律大於或等於-1。
@@ -351,7 +379,8 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 ## <a name="related-links"></a>相關連結
 
 - [CarouselView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [Xamarin. Forms IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin. 表單資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

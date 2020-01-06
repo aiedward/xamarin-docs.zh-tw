@@ -1,18 +1,18 @@
 ---
 title: 改進 Xamarin.Forms 應用程式效能
-description: 有許多技巧可增加 Xamarin.Forms 應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
+description: 有許多技巧可增加 Xamarin.Forms 應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 ms.prod: xamarin
 ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2019
-ms.openlocfilehash: c57281f3fa526bb238f4a0dd6a4fad70376c742e
-ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
+ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681336"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487161"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>改進 Xamarin.Forms 應用程式效能
 
@@ -22,10 +22,10 @@ ms.locfileid: "74681336"
 
 不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少裝置電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。
 
-有許多技術可用來提升 Xamarin.Forms 應用程式的效能和認知效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
+有許多技術可用來提升 Xamarin.Forms 應用程式的效能和認知效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 
 > [!NOTE]
-> 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中探討可改善記憶體使用情況的非平台專用技術，以及使用 Xamarin 平台建置之應用程式的效能。
+> 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中討論非平台特定的技術來改善記憶體使用量和使用 Xamarin 平台所建置之應用程式的效能。
 
 ## <a name="enable-the-xaml-compiler"></a>啟用 XAML 編譯器
 
@@ -172,7 +172,7 @@ Android 上的預先 (AOT) 編譯可將 Just in Time (JIT) 應用程式啟動額
 - 請避免嘗試建立非同步函式。 相反地，請使用生命週期事件或個別的初始化邏輯，以正確 `await` 任何初始化。 如需詳細資訊，請參閱 blog.stephencleary.com 上的[非同步構造](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html)函式。
 - 使用 [延遲工作模式]，以避免在應用程式啟動期間等候非同步作業完成。 如需詳細資訊，請參閱[asynclazy<t>](https://devblogs.microsoft.com/pfxteam/asynclazyt/)。
 - 建立現有非同步作業的工作包裝函式，而不使用點一下，方法是建立 `TaskCompletionSource<T>` 物件。 這些物件可獲得 `Task` 程式設計的優點，並可讓您控制相關聯 `Task`的存留期和完成。 如需詳細資訊，請參閱[TaskCompletionSource 的本質](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/)。
-非同步-mvvm-應用程式-命令）。
+ 
 - 當不需要處理非同步作業的結果時，傳回 `Task` 物件，而不是傳回等待的 `Task` 物件。 由於執行的內容切換較少，這會更有效率。
 - 使用工作平行程式庫（TPL）資料流程程式庫，例如在資料可用時進行處理，或當您有多個必須以非同步方式彼此通訊的作業時。 如需詳細資訊，請參閱[資料流程（工作平行程式庫）](/dotnet/standard/parallel-programming/dataflow-task-parallel-library)。
 
@@ -182,7 +182,7 @@ Android 上的預先 (AOT) 編譯可將 Just in Time (JIT) 應用程式啟動額
 - 使用 UI 執行緒上非同步作業的資料來更新 UI 元素，以避免擲回例外狀況。 不過，`ListView.ItemsSource` 屬性的更新會自動封送處理至 UI 執行緒。 如需判斷程式碼是否正在 UI 執行緒上執行的相關資訊，請參閱[Xamarin. Essentials： MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)。
 
     > [!IMPORTANT]
-    > 透過資料系結更新的任何控制項屬性都會自動 marsheled 至 UI 執行緒。
+    > 透過資料系結更新的任何控制項屬性都會自動封送處理至 UI 執行緒。
 
 ### <a name="error-handling"></a>錯誤處理
 

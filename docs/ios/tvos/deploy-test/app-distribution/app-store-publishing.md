@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f49fa08e5d9b2ad76fc069b415d6ea5b899b2bf7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a3d0962eb8253ca72b6afce77036e02a7aa59b94
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030782"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607889"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>發行至 Apple TV App Store
 
@@ -69,7 +69,7 @@ Apple 也會維護一份 Apple 電視 App Store 提交秘訣的清單。 您可�
 
 <a name="Provisioning_for_Application_Services" />
 
-### <a name="provisioning-for-application-services"></a>佈建應用程式服務
+### <a name="provisioning-for-application-services"></a>應用程式服務的佈建
 
 Apple 提供選取的特殊應用程式服務（也稱為權利），可在您為其建立唯一識別碼時，為您的 tvOS 應用程式啟用。 無論您是否使用自訂權利，您仍然需要建立 tvOS 應用程式的唯一識別碼，才能將其發佈至 Apple TV App Store。
 
@@ -91,7 +91,7 @@ Apple 提供選取的特殊應用程式服務（也稱為權利），可在您�
 5. 選取並設定 tvOS 應用程式所需的權利，使其符合您在定義應用程式識別碼時所執行的安裝程式。
 6. 將變更儲存至 `Entitlements.plist` 檔案。
 
-如需詳細指示，請參閱我們的[佈建應用程式](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)文件。 雖然這份檔是針對 iOS 所撰寫，但使用相同的步驟來布建 tvOS 應用程式。
+如需詳細指示，請參閱我們的[佈建應用程式](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services)文件。 雖然這份檔是針對 iOS 所撰寫，但使用相同的步驟來布建 tvOS 應用程式。
 
 <a name="Setting_the_Apps_Icons_and_Launch_Screens" />
 
@@ -155,7 +155,7 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 
 ### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
-每次建置應用程式進行封存，都會自動開啟*封存檢視*，顯示依解決方案分組的所有已封存專案。 根據預設，此檢視只會顯示目前開啟的解決方案。 若要查看有封存的所有解決方案，請按一下 [顯示所有封存] 按鈕。
+每次建置應用程式進行封存，都會自動開啟*封存檢視*，顯示依解決方案分組的所有已封存專案。 根據預設，此檢視只會顯示目前開啟的解決方案。 若要查看所有具有封存的解決方案，請按一下 [Show all archives] (顯示所有封存) 選項。
 
 建議您保留部署至客戶的封存 (App Store 或 Enterprise 部署)，以便日後代表所產生的任何偵錯資訊。
 
@@ -164,7 +164,7 @@ tvOS 會使用布建*設定檔*來控制特定應用程式組建的部署方式�
 1. 選取 [**簽署並散發 ...** ]，如下所示：
 
     [![](app-store-publishing-images/buildxs04new.png ", Select theSign and Distribute...")](app-store-publishing-images/buildxs04new.png#lightbox)
-2. 這會開啟發佈精靈。 選取 **App Store** 散發管道以建立套件，然後開啟應用程式載入器：
+2. 如此將開啟發行精靈。 選取 **App Store** 散發管道以建立套件，然後開啟應用程式載入器：
 
     [![](app-store-publishing-images/distribute01.png "Select the App Store distribution channel")](app-store-publishing-images/distribute01.png#lightbox)
 3. 在 [布建設定檔] 畫面上，選取您的簽署身分識別和對應的布建設定檔，或以另一個身分識別重新簽署：

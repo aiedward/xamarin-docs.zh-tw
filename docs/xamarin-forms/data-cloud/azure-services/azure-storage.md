@@ -1,128 +1,131 @@
 ---
 title: 從 Xamarin 的 Azure 儲存體中儲存及存取資料
-description: Azure 儲存體是可以用來儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。 本文說明如何使用 Xamarin 將文字和二進位資料儲存在 Azure 儲存體中, 以及如何存取資料。
+description: Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。 本文說明如何使用 Xamarin 將文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/28/2018
-ms.openlocfilehash: 3f3ff0b06fe23d724e04ac34108119932aa666ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8d773abbca348d09d3359f09cbded22f6521fb7f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649716"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487317"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>從 Xamarin 的 Azure 儲存體中儲存及存取資料
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
-_Azure 儲存體是可以用來儲存非結構化及結構化資料的可調整的雲端儲存體解決方案。這篇文章會示範如何使用 Xamarin.Forms 來將文字和二進位資料儲存在 Azure 儲存體，以及如何存取資料。_
+_Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。本文示範如何使用 Xamarin 將文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。_
 
-Azure 儲存體提供四個儲存體服務：
+Azure 儲存體提供四種儲存體服務：
 
-- Blob 儲存體。 Blob 可以是文字或二進位資料，例如備份、 虛擬機器、 媒體檔案或文件。
-- 資料表儲存體是 NoSQL 索引鍵屬性存放區。
-- 佇列儲存體是工作流程處理和雲端服務之間通訊的傳訊服務。
-- 檔案儲存體提供共用儲存體使用 SMB 通訊協定。
+- Blob 儲存體。 Blob 可以是文字或二進位資料，例如備份、虛擬機器、媒體檔案或檔。
+- 表格儲存體是 NoSQL 索引鍵-屬性存放區。
+- 佇列儲存體是一種訊息服務，可處理工作流程和雲端服務之間的通訊。
+- 檔案儲存體會使用 SMB 通訊協定來提供共用存放裝置。
 
-有兩種類型的儲存體帳戶：
+儲存體帳戶分為兩種類型：
 
-- 一般用途儲存體帳戶會提供單一帳戶從 Azure 儲存體服務的存取。
-- Blob 儲存體帳戶是專門的儲存體帳戶用於儲存 blob。 您只需要儲存 blob 資料時，建議使用此帳戶類型。
+- 一般用途的儲存體帳戶可讓您從單一帳戶存取 Azure 儲存體服務。
+- Blob 儲存體帳戶是專門用來儲存 blob 的儲存體帳戶。 當您只需要儲存 blob 資料時，建議使用此帳戶類型。
 
-本文章中，和隨附的範例應用程式，示範如何上傳的影像和文字檔案到 blob 儲存體，並下載它們。 此外，它也示範從 blob 儲存體，擷取一份檔案及刪除檔案。
+本文和隨附的範例應用程式會示範如何將影像和文字檔上傳至 blob 儲存體，並下載這些檔案。 此外，它也會示範如何從 blob 儲存體中抓取檔案清單，以及如何刪除檔案。
 
-如需有關 Azure 儲存體的詳細資訊，請參閱 <<c0> [ 儲存體簡介](https://azure.microsoft.com/documentation/articles/storage-introduction/)。
+如需 Azure 儲存體的詳細資訊，請參閱[儲存體簡介](https://azure.microsoft.com/documentation/articles/storage-introduction/)。
+
+> [!NOTE]
+> 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
 
 ## <a name="introduction-to-blob-storage"></a>Blob 儲存體簡介
 
-Blob 儲存體包含三個元件，如下圖所示：
+Blob 儲存體是由三個元件所組成，如下圖所示：
 
-![](azure-storage-images/blob-storage.png "Blob 儲存體概念")
+![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
 
-Azure 儲存體的所有存取都都會透過儲存體帳戶。 儲存體帳戶可以包含無限的數量的容器和容器可以儲存無限的數量的 blob 儲存體帳戶容量上限。
+Azure 儲存體的所有存取都是透過儲存體帳戶。 儲存體帳戶可以包含無限數量的容器，而容器可以儲存不限數目的 blob，最高可達儲存體帳戶的容量限制。
 
 Blob 是任何類型和大小的檔案。 Azure 儲存體支援三種不同的 blob 類型：
 
-- 區塊 blob 已針對串流和儲存雲端物件，和最佳化是不錯的選擇儲存備份媒體檔案、 文件等等。區塊 blob 可達 195 Gb 的大小。
-- 附加 blob 是區塊 blob 類似，但最適合用於附加作業，例如記錄。 附加 blob 可達 195 Gb 的大小。
-- 分頁 blob 適用於頻繁的讀取/寫入作業，通常用於儲存虛擬機器和其磁碟。 分頁 blob 可以多達 1tb 的大小。
+- 區塊 blob 已針對串流和儲存雲端物件進行優化，而且是儲存備份、媒體檔案、檔等的理想選擇。區塊 blob 的大小最高可 195 Gb。
+- 附加 blob 類似于區塊 blob，但已針對附加作業（例如記錄）進行優化。 附加 blob 的大小最多可 195 Gb。
+- 分頁 blob 已針對頻繁的讀取/寫入作業進行優化，通常用於儲存虛擬機器及其磁片。 分頁 blob 的大小上限為1Tb。
 
 > [!NOTE]
-> 請注意，blob 儲存體帳戶支援區塊和附加 blob，但不是分頁 blob。
+> 請注意，blob 儲存體帳戶支援區塊和附加 blob，而非分頁 blob。
 
-將 blob 上傳至 Azure 儲存體，並從 Azure 儲存體、 下載為位元組資料流。 因此，檔案必須轉換成之前上傳，並轉換的回其原始的表示法，下載後的位元組資料流。
+Blob 會上傳至 Azure 儲存體，並以位元組資料流程的形式從 Azure 儲存體下載。 因此，檔案必須先轉換成位元組資料流程，然後再上傳，並在下載後轉換回其原始表示。
 
-Azure 儲存體中儲存的每個物件具有唯一的 URL 位址。 儲存體帳戶名稱會形成該位址和子網域和網域名稱形式的組合的子網域*端點*儲存體帳戶。 例如，如果您的儲存體帳戶命名為*mystorageaccount*，儲存體帳戶的預設 blob 端點是`https://mystorageaccount.blob.core.windows.net`。
+儲存在 Azure 儲存體中的每個物件都有唯一的 URL 位址。 儲存體帳戶名稱會形成該位址的子域，而子域和功能變數名稱的組合會形成儲存體帳戶的*端點*。 例如，如果您的儲存體帳戶名為*mystorageaccount*，則儲存體帳戶的預設 blob 端點會是 `https://mystorageaccount.blob.core.windows.net`。
 
-存取儲存體帳戶中的物件的 URL 是藉由附加至端點的儲存體帳戶中物件的位置。 例如，blob 位址將會有格式`https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`。
+用以存取儲存體帳戶中某物件的 URL，可藉由在端點後附加該物件在儲存體帳戶中的位置來建置。 例如，blob 位址的格式會是 `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`。
 
 ## <a name="setup"></a>安裝程式
 
-整合 Xamarin.Forms 應用程式中的 Azure 儲存體帳戶的程序如下所示：
+將 Azure 儲存體帳戶整合到 Xamarin. Forms 應用程式的流程如下所示：
 
-1. 建立儲存體帳戶。 如需詳細資訊，請參閱 <<c0> [ 建立儲存體帳戶](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
-1. 新增[Azure Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) Xamarin.Forms 應用程式。
-1. 設定儲存體連接字串。 如需詳細資訊，請參閱 <<c0> [ 連接到 Azure 儲存體](#connecting)。
-1. 新增`using`指示詞`Microsoft.WindowsAzure.Storage`和`Microsoft.WindowsAzure.Storage.Blob`命名空間，以將存取 Azure 儲存體的類別。
+1. 建立儲存體帳戶。 如需詳細資訊，請參閱[建立儲存體帳戶](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
+1. 將[Azure 儲存體用戶端程式庫](https://www.nuget.org/packages/WindowsAzure.Storage/)新增至 Xamarin. Forms 應用程式。
+1. 設定儲存體連接字串。 如需詳細資訊，請參閱[連接到 Azure 儲存體](#connecting)。
+1. 將 `Microsoft.WindowsAzure.Storage` 和 `Microsoft.WindowsAzure.Storage.Blob` 命名空間的 `using` 指示詞加入至將會存取 Azure 儲存體的類別。
 
 <a name="connecting" />
 
 ## <a name="connecting-to-azure-storage"></a>連接到 Azure 儲存體
 
-對儲存體帳戶資源的每個要求必須經過驗證。 雖然 blob 可以設定為支援匿名驗證，有兩個應用程式可用來驗證的儲存體帳戶的主要方法：
+針對儲存體帳戶資源提出的每個要求都必須經過驗證。 雖然可以將 blob 設定為支援匿名驗證，但應用程式可以使用兩種主要方法來向儲存體帳戶進行驗證：
 
-- 共用的金鑰。 這個方法會使用 Azure 儲存體帳戶名稱和帳戶金鑰來存取儲存體服務。 儲存體帳戶會指派可用的共用金鑰驗證的建立兩個私用的索引鍵。
-- 共用的存取簽章。 這是您可以附加至 URL，可讓您對儲存體資源的委派的存取權杖，具有權限它，會為指定的是有效的時間。
+- 共用金鑰。 此方法會使用 Azure 儲存體帳戶名稱和帳戶金鑰來存取儲存體服務。 儲存體帳戶會在建立時指派兩個可用於共用金鑰驗證的私密金鑰。
+- 共用存取簽章。 這是可以附加到 URL 的權杖，可讓您在有效的期間內，使用其指定的許可權來委派儲存體資源的存取權。
 
-包含從應用程式存取 Azure 儲存體資源所需的驗證資訊指定連接字串。 此外，可以從 Visual Studio 連線到 Azure 儲存體模擬器設定連接字串。
+您可以指定連接字串，其中包含從應用程式存取 Azure 儲存體資源所需的驗證資訊。 此外，連接字串可以設定為從 Visual Studio 連接到 Azure 儲存體模擬器。
 
 > [!NOTE]
-> Azure 儲存體支援 HTTP 和 HTTPS，連接字串中。 不過，建議使用 HTTPS。
+> Azure 儲存體支援連接字串中的 HTTP 和 HTTPS。 不過，建議使用 HTTPS。
 
-### <a name="connecting-to-the-azure-storage-emulator"></a>連線到 Azure 儲存體模擬器
+### <a name="connecting-to-the-azure-storage-emulator"></a>連接到 Azure 儲存體模擬器
 
-Azure 儲存體模擬器提供模擬 Azure blob、 佇列和表格服務進行開發本機環境。
+Azure 儲存體模擬器會提供一個模擬 Azure blob、佇列和表格服務的本機環境，以供開發之用。
 
-下列連接字串應該用來連線到 Azure 儲存體模擬器中：
+下列連接字串應該用來連接到 Azure 儲存體模擬器：
 
 ```csharp
 UseDevelopmentStorage=true
 ```
 
-如需有關 Azure 儲存體模擬器的詳細資訊，請參閱 <<c0> [ 使用 Azure 儲存體模擬器進行開發和測試](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)。
+如需 Azure 儲存體模擬器的詳細資訊，請參閱[使用 Azure 儲存體模擬器進行開發和測試](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)。
 
-### <a name="connecting-to-azure-storage-using-a-shared-key"></a>連接到 Azure 儲存體，使用共用的金鑰
+### <a name="connecting-to-azure-storage-using-a-shared-key"></a>使用共用金鑰連接到 Azure 儲存體
 
-下列連接字串格式應該用於連線到 Azure 儲存體，使用共用金鑰：
+下列連接字串格式應該用來連接到具有共用金鑰的 Azure 儲存體：
 
 ```csharp
 DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 ```
 
-`myAccountName` 用來取代您的儲存體帳戶的名稱和`myAccountKey`應該取代為兩個帳戶存取金鑰。
+`myAccountName` 應取代為您的儲存體帳戶名稱，`myAccountKey` 應取代為您的兩個帳戶存取金鑰的其中一個。
 
 > [!NOTE]
-> 當使用共用金鑰驗證，您的帳戶名稱和帳戶金鑰將會分送給每個會使用您的應用程式，這將會提供完整的讀取/寫入存取權的儲存體帳戶的個人。 因此，基於測試目的，使用共用金鑰驗證，而且永遠不會散發給其他使用者的金鑰。
+> 使用共用金鑰驗證時，您的帳戶名稱和帳戶金鑰會散發給每個使用您應用程式的人員，這會提供儲存體帳戶的完整讀取/寫入存取權。 因此，使用共用金鑰驗證僅供測試之用，而且永遠不會將金鑰散發給其他使用者。
 
-### <a name="connecting-to-azure-storage-using-a-shared-access-signature"></a>連接到 Azure 儲存體中使用共用存取簽章
+### <a name="connecting-to-azure-storage-using-a-shared-access-signature"></a>使用共用存取簽章連接到 Azure 儲存體
 
-下列連接字串格式應該用於連線到 Azure 儲存體 SAS:
+下列連接字串格式應該用來連接到具有 SAS 的 Azure 儲存體：
 
 `BlobEndpoint=myBlobEndpoint;SharedAccessSignature=mySharedAccessSignature`
 
-`myBlobEndpoint` 應該取代為您的 blob 端點的 URL 和`mySharedAccessSignature`應該取代為您的 SAS。 SAS 提供通訊協定、 服務端點，以及認證來存取資源。
+`myBlobEndpoint` 應取代為 blob 端點的 URL，而 `mySharedAccessSignature` 應取代為您的 SAS。 SAS 會提供通訊協定、服務端點，以及用來存取資源的認證。
 
 > [!NOTE]
-> SAS 驗證被建議用於生產應用程式。 不過，在實際執行的應用程式應該擷取 SAS 從後端服務隨，而不是所隨附的應用程式。
+> 建議針對生產環境應用程式使用 SAS 驗證。 不過，在生產應用程式中，應該視需要從後端服務取出 SAS，而不是與應用程式配套。
 
-如需有關共用存取簽章的詳細資訊，請參閱 <<c0> [ 使用共用存取簽章 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+如需共用存取簽章的詳細資訊，請參閱[使用共用存取簽章（SAS）](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 ## <a name="creating-a-container"></a>建立容器
 
-`GetContainer`方法用來擷取具名的容器，可用來擷取容器的 blob，或將 blob 新增至容器的參考。 下列程式碼範例示範`GetContainer`方法：
+`GetContainer` 方法是用來抓取命名容器的參考，然後用來從容器中抓取 blob，或將 blob 新增至容器。 下列程式碼範例示範 `GetContainer` 方法：
 
 ```csharp
 static CloudBlobContainer GetContainer(ContainerType containerType)
@@ -133,28 +136,28 @@ static CloudBlobContainer GetContainer(ContainerType containerType)
 }
 ```
 
-`CloudStorageAccount.Parse`方法會剖析連接字串，並傳回`CloudStorageAccount`代表儲存體帳戶的執行個體。 A`CloudBlobClient`執行個體，這用來擷取容器和 blob，然後由`CreateCloudBlobClient`方法。 `GetContainerReference`方法會擷取指定的容器，做為`CloudBlobContainer`執行個體，再傳回至呼叫的方法。 在此範例中，容器名稱是`ContainerType`列舉值，轉換成小寫的字串。
+`CloudStorageAccount.Parse` 方法會剖析連接字串，並傳回代表儲存體帳戶的 `CloudStorageAccount` 實例。 `CloudBlobClient` 實例（用來取得容器和 blob）接著會由 `CreateCloudBlobClient` 方法建立。 `GetContainerReference` 方法會先將指定的容器當做 `CloudBlobContainer` 實例來抓取，然後才會傳回給呼叫方法。 在此範例中，容器名稱是 `ContainerType` 的列舉值，轉換成小寫字串。
 
 > [!NOTE]
-> 容器名稱必須是小寫，並且必須以字母或數字開頭。 此外，它們只能包含字母、 數字和虛線字元，並必須介於 3 到 63 個字元之間。
+> 容器名稱必須是小寫，而且必須以字母或數位開頭。 此外，它們只能包含字母、數位和虛線字元，且長度必須介於3到63個字元之間。
 
-`GetContainer`叫用方法時，如下所示：
+會叫用 `GetContainer` 方法，如下所示：
 
 ```csharp
 var container = GetContainer(containerType);
 ```
 
-`CloudBlobContainer`執行個體可以再用來建立容器，如果不存在：
+然後，`CloudBlobContainer` 實例可以用來建立容器（如果尚未存在）：
 
 ```csharp
 await container.CreateIfNotExistsAsync();
 ```
 
-根據預設，新建立的容器是私用。 這表示必須指定儲存體存取金鑰，才能從容器擷取 blob。 進行中的容器的公用 blob 的相關資訊，請參閱[建立容器](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)。
+根據預設，新建立的容器是私用的。 這表示必須指定儲存體存取金鑰，才能從容器中取出 blob。 如需將容器內的 blob 設為公用的詳細資訊，請參閱[建立容器](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)。
 
 ## <a name="uploading-data-to-a-container"></a>將資料上傳至容器
 
-`UploadFileAsync`方法用來上傳至 blob 儲存體，位元組資料流，並在下列程式碼範例所示：
+`UploadFileAsync` 方法是用來將位元組資料串流上傳至 blob 儲存體，如下列程式碼範例所示：
 
 ```csharp
 public static async Task<string> UploadFileAsync(ContainerType containerType, Stream stream)
@@ -170,20 +173,20 @@ public static async Task<string> UploadFileAsync(ContainerType containerType, St
 }
 ```
 
-擷取後為容器參考，此方法會建立容器，如果不存在。 新`Guid`接著會建立做為唯一的 blob 名稱，和 blob 的區塊參考會擷取為`CloudBlockBlob`執行個體。 資料流然後上傳至 blob 使用`UploadFromStreamAsync`方法，它會建立 blob，如果它尚未存在，或存在則覆寫。
+在抓取容器參考之後，方法會建立容器（如果尚未存在的話）。 接著會建立新的 `Guid` 做為唯一的 blob 名稱，並將 blob 區塊參考抓取為 `CloudBlockBlob` 實例。 接著會使用 `UploadFromStreamAsync` 方法將資料串流上傳至 blob，如果 blob 不存在，則會加以覆寫，如果存在，則會加以覆寫。
 
-檔案可以上傳至 blob 儲存體中使用這個方法之前，它必須先轉換為位元組資料流。 下列程式碼範例所示：
+您必須先將檔案轉換成位元組資料流程，才能使用此方法將檔案上傳到 blob 儲存體。 這會在下列程式碼範例中示範：
 
 ```csharp
 var byteData = Encoding.UTF8.GetBytes(text);
 uploadedFilename = await AzureStorage.UploadFileAsync(ContainerType.Text, new MemoryStream(byteData));
 ```
 
-`text`資料會轉換成位元組陣列，然後再包裝為資料流傳遞至`UploadFileAsync`方法。
+`text` 的資料會轉換成位元組陣列，然後包裝為傳遞給 `UploadFileAsync` 方法的資料流程。
 
 ## <a name="downloading-data-from-a-container"></a>從容器下載資料
 
-`GetFileAsync`方法用來從 Azure 儲存體、 下載 blob 資料，以及下列的程式碼範例所示：
+`GetFileAsync` 方法是用來從 Azure 儲存體下載 blob 資料，如下列程式碼範例所示：
 
 ```csharp
 public static async Task<byte[]> GetFileAsync(ContainerType containerType, string name)
@@ -203,20 +206,20 @@ public static async Task<byte[]> GetFileAsync(ContainerType containerType, strin
 }
 ```
 
-在擷取之後為容器參考，方法會擷取 blob 參考的預存的資料。 如果 blob 存在，其屬性藉由擷取`FetchAttributesAsync`方法。 建立正確的大小的位元組陣列時，和 blob 會下載為位元組陣列傳回至呼叫的方法。
+在取得容器參考之後，方法會抓取所儲存資料的 blob 參考。 如果 blob 存在，則 `FetchAttributesAsync` 方法會抓取其屬性。 系統會建立正確大小的位元組陣列，並下載 blob 做為傳回給呼叫方法的位元組陣列。
 
-下載的 blob 位元組的資料之後, 它必須轉換成其原始的表示法。 下列程式碼範例所示：
+下載 blob 位元組資料之後，必須將它轉換成其原始表示。 這會在下列程式碼範例中示範：
 
 ```csharp
 var byteData = await AzureStorage.GetFileAsync(ContainerType.Text, uploadedFilename);
 string text = Encoding.UTF8.GetString(byteData);
 ```
 
-從 Azure 儲存體中，擷取的位元組陣列`GetFileAsync`方法，它會轉換回 UTF8 編碼的字串。
+在轉換回 UTF8 編碼的字串之前，`GetFileAsync` 方法會從 Azure 儲存體中抓取位元組陣列。
 
 ## <a name="listing-data-in-a-container"></a>列出容器中的資料
 
-`GetFilesListAsync`方法用來擷取儲存在容器中，blob 的清單和下列程式碼範例所示：
+`GetFilesListAsync` 方法是用來抓取容器中所儲存的 blob 清單，如下列程式碼範例所示：
 
 ```csharp
 public static async Task<IList<string>> GetFilesListAsync(ContainerType containerType)
@@ -241,11 +244,11 @@ public static async Task<IList<string>> GetFilesListAsync(ContainerType containe
 }
 ```
 
-在擷取之後為容器參考，此方法會使用容器的`ListBlobsSegmentedAsync`方法來擷取容器中 blob 的參考。 所傳回的結果`ListBlobsSegmentedAsync`方法會列舉雖然`BlobContinuationToken`執行個體不是`null`。 每個 blob 會轉型從傳回`IListBlobItem`要`CloudBlockBlob`順序存取`Name`屬性的 blob，值後，才會加入至`allBlobsList`集合。 一次`BlobContinuationToken`執行個體是`null`、 已傳回的最後一個 blob 名稱，而且會執行結束迴圈。
+在取得容器參考之後，方法會使用容器的 `ListBlobsSegmentedAsync` 方法來抓取容器中 blob 的參考。 不 `null``BlobContinuationToken` 實例時，會列舉 `ListBlobsSegmentedAsync` 方法所傳回的結果。 每個 blob 會從傳回的 `IListBlobItem` 轉換成 `CloudBlockBlob`，以便在將其值新增至 `allBlobsList` 集合之前，存取 blob 的 `Name` 屬性。 一旦 `null``BlobContinuationToken` 實例之後，最後一個 blob 名稱就會傳回，而執行則會結束迴圈。
 
-## <a name="deleting-data-from-a-container"></a>從容器中刪除資料
+## <a name="deleting-data-from-a-container"></a>刪除容器中的資料
 
-`DeleteFileAsync`方法用來刪除 blob 容器，從和下列程式碼範例所示：
+`DeleteFileAsync` 方法是用來從容器中刪除 blob，如下列程式碼範例所示：
 
 ```csharp
 public static async Task<bool> DeleteFileAsync(ContainerType containerType, string name)
@@ -256,12 +259,12 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 }
 ```
 
-在擷取之後為容器參考，方法會擷取指定的 blob 的 blob 參考。 Blob 刪除與`DeleteIfExistsAsync`方法。
+在取得容器參考之後，方法會抓取所指定 blob 的 blob 參考。 然後會使用 `DeleteIfExistsAsync` 方法來刪除 blob。
 
 ## <a name="related-links"></a>相關連結
 
-- [Azure 儲存體 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+- [Azure 儲存體（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [儲存體簡介](https://azure.microsoft.com/documentation/articles/storage-introduction/)
 - [如何使用 Xamarin 的 Blob 儲存體](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
-- [使用共用的存取簽章 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-- [Windows Azure 儲存體 (NuGet)](https://www.nuget.org/packages/WindowsAzure.Storage/)
+- [使用共用存取簽章 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
+- [Windows Azure 儲存體（NuGet）](https://www.nuget.org/packages/WindowsAzure.Storage/)

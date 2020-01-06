@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/08/2019
-ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.openlocfilehash: 0e5fd88678becd7becfcb1c43e14b1e33aad72de
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170969"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489872"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 發行-訂閱模式是一種訊息模式，發行者可以在不知道任何接收者 (稱為訂閱者) 的情況下傳送訊息。 同樣地，訂閱者可以在不知道任何發行者的情況下接聽特定訊息。
 
@@ -26,7 +26,7 @@ Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別會�
 
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 類別提供多點傳送的發行-訂閱功能。 這表示可以有多個發行單一訊息的發行者，而且可以有多個接聽相同訊息的訂閱者：
 
-![](messaging-center-images/messaging-center.png "多點傳送的發行-訂閱功能")
+![](messaging-center-images/messaging-center.png "Multicast publish-subscribe functionality")
 
 發行者會使用 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) 方法來傳送訊息，而訂閱者會使用 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法來接聽訊息。 此外，訂閱者也可以在必要時，使用 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 方法，取消訂閱訊息訂閱。
 
@@ -82,6 +82,9 @@ MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
 ```
 
 在此範例中，[`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) 方法會訂閱 `MainPage` 類型所傳送的 `Hi` 訊息，其承載資料為 `string`。 回呼委派會執行以回應接收這類訊息，其會在警示中顯示承載資料。
+
+> [!IMPORTANT]
+> `Subscribe` 方法所執行的委派將會在使用 `Send` 方法發佈訊息的相同執行緒上執行。
 
 ## <a name="unsubscribe-from-a-message"></a>從訊息中取消訂閱
 

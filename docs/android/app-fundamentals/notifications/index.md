@@ -1,40 +1,39 @@
 ---
-title: Notifications in Xamarin.Android
+title: Xamarin 中的通知
 ms.prod: xamarin
 ms.assetid: 2E54F1D0-45F4-43A7-B3A3-4F483B7150CB
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 5d91904e35a658b03d4602567e5a123cafd6926c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e0035414cb8a24e5571b2972ec638eec550c593c
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025528"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545552"
 ---
-# <a name="notifications-in-xamarinandroid"></a>Notifications in Xamarin.Android
+# <a name="notifications-in-xamarinandroid"></a>Xamarin 中的通知
 
-This section explains how to implement notifications in Xamarin.Android. It describes the various UI elements of an Android notification and discusses the API's involved with creating and displaying a notification.
+本節說明如何在 Xamarin 中執行通知。 其中說明 Android 通知的各種 UI 元素，並討論與建立和顯示通知相關的 API。
 
-## <a name="local-notifications-in-androidlocal-notificationsmd"></a>[Local notifications in Android](local-notifications.md)
+## <a name="local-notifications-in-androidlocal-notificationsmd"></a>[Android 中的本機通知](local-notifications.md)
 
-This section explains how to implement local notifications in Xamarin.Android. It describes the various UI elements of an Android notification and discuss the APIs involved with creating and displaying a notification.
+本節說明如何在 Xamarin 中執行本機通知。 其中說明 Android 通知的各種 UI 元素，並討論建立和顯示通知所牽涉到的 Api。
 
-## <a name="walkthrough---using-local-notifications-in-xamarinandroidlocal-notifications-walkthroughmd"></a>[Walkthrough - using local notifications in Xamarin.Android](local-notifications-walkthrough.md)  
+## <a name="walkthrough---using-local-notifications-in-xamarinandroidlocal-notifications-walkthroughmd"></a>[逐步解說-在 Xamarin 中使用本機通知](local-notifications-walkthrough.md)  
 
-This walkthrough covers how to use local notifications in a Xamarin.Android application. It demonstrates the basics of creating and publishing a notification. When the user clicks on the notification in the notification drawer it starts up a second Activity. 
+本逐步解說說明如何在 Xamarin Android 應用程式中使用本機通知。 它會示範建立和發佈通知的基本概念。 當使用者按一下通知抽屜中的通知時，會啟動第二個活動。 
 
 ## <a name="further-reading"></a>進一步閱讀
 
-[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; Firebase Cloud Messaging (FCM) is a service that facilitates messaging between mobile apps and server applications. Firebase Cloud Messaging can be used to implement remote notifications (also called push notifications) in Xamarin.Android applications.
+[Firebase 雲端通訊](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)&ndash; Firebase 雲端通訊（FCM）是一種服務，可在行動應用程式和伺服器應用程式之間進行訊息處理。 Firebase 雲端通訊可以用來在 Xamarin Android 應用程式中執行遠端通知（也稱為推播通知）。
 
-[Notifications](https://developer.android.com/guide/topics/ui/notifiers/notifications.html) &ndash; This Android Developer topic is the definitive guide for Android notifications. It includes a design considerations section that helps you design your notifications so that they conform to the guidelines of the Android user interface. It provides more background information about preserviing navigation when starting an Activity, and it explains how to display progress in a notification and control media playback on the Lock Screen.
+此 Android 開發人員主題 &ndash;[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)是 android 通知的最終指南。 其中包含設計考慮一節，可協助您設計您的通知，使其符合 Android 使用者介面的指導方針。 在啟動活動時，它會提供更多關於保留導覽的背景資訊，並說明如何在通知中顯示進度，並控制鎖定畫面上的媒體播放。
 
-[NotificationListenerService](xref:Android.Service.Notification.NotificationListenerService) &ndash; This Android service makes it possible for your app to listen to (and interact with) all notifications posted on the Android device, not just the notifications that your app is registered to receive.
-Note that the user must explicitly give permission to your app for it to be able to listen for notifications on the device.
+[NotificationListenerService](xref:Android.Service.Notification.NotificationListenerService) &ndash; 此 Android 服務可讓您的應用程式接聽 Android 裝置上張貼的所有通知（並與之互動），而不只是您的應用程式註冊要接收的通知。
+請注意，使用者必須明確授與您應用程式的許可權，讓它能夠接聽裝置上的通知。
 
 ## <a name="related-links"></a>相關連結
 
-- [Local Notifications (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
-- [Remote Notifications (sample)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/remotenotifications)
+- [本機通知（範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)

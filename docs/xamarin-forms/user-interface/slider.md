@@ -1,66 +1,66 @@
 ---
-title: Xamarin.Forms 滑桿
-description: Xamarin.Forms 滑桿是可由使用者選取從連續範圍的雙精度浮點數值操作的水平列。 這篇文章說明如何使用滑桿類別的連續值範圍從選取的值。
+title: Xamarin. Forms 滑杆
+description: '[Xamarin] 滑杆是一個水準橫條，可由使用者操作以從連續範圍選取雙精度值。 本文說明如何使用滑杆類別，從連續值的範圍中選取值。'
 ms.prod: xamarin
 ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
-ms.openlocfilehash: e54b36989f5b4694da5d46a89391d56920b8d6a9
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: ddb25a1f01f91b627fc0c370f7f21e2a797b72cb
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656245"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545578"
 ---
-# <a name="xamarinforms-slider"></a>Xamarin.Forms 滑桿
+# <a name="xamarinforms-slider"></a>Xamarin. Forms 滑杆
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
-_使用滑桿選取從連續值的範圍。_
+_使用滑杆來選取連續值的範圍。_
 
-Xamarin.Forms [ `Slider` ](xref:Xamarin.Forms.Slider)是可由使用者選取操作的水平列`double`從連續範圍的值。
+[Xamarin] [`Slider`](xref:Xamarin.Forms.Slider)是一個水準橫條，可由使用者操作以從連續範圍中選取 `double` 值。
 
-`Slider`會定義三個屬性的型別`double`:
+`Slider` 會定義 `double`類型的三個屬性：
 
-- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum) 最小的範圍，預設值為 0。
-- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum) 是最大值，預設值為 1。
-- [`Value`](xref:Xamarin.Forms.Slider.Value) 滑桿的值，範圍必須介於`Minimum`和`Maximum`且具有預設值為 0。
+- [`Minimum`](xref:Xamarin.Forms.Slider.Minimum)是範圍的最小值，預設值是0。
+- [`Maximum`](xref:Xamarin.Forms.Slider.Maximum)是範圍的上限，預設值是1。
+- [`Value`](xref:Xamarin.Forms.Slider.Value)是滑杆的值，其範圍可以介於 `Minimum` 和 `Maximum` 之間，而且預設值為0。
 
-所有的三個屬性都會受到`BindableProperty`物件。 `Value`屬性具有預設繫結模式`BindingMode.TwoWay`，這表示它很適合做為使用應用程式中的繫結來源[Model View ViewModel (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)架構。
-
-> [!WARNING]
-> 就內部而言，`Slider`可確保`Minimum`是小於`Maximum`。 如果`Minimum`或是`Maximum`曾經設定以便`Minimum`是不小於`Maximum`，會引發例外狀況。 請參閱[**預防措施**](#precautions)如需有關設定下面章節`Minimum`和`Maximum`屬性。
-
-`Slider`強制轉型`Value`屬性，使其之間`Minimum`和`Maximum`（包含頭尾)。 如果`Minimum`屬性設定為值大於`Value`屬性，`Slider`設定`Value`屬性設`Minimum`。 同樣地，如果`Maximum`的值設定小於`Value`，然後`Slider`設定`Value`屬性設`Maximum`。
-
-`Slider` 定義[ `ValueChanged` ](xref:Xamarin.Forms.Slider.ValueChanged)時引發的事件`Value`變更，不論是透過使用者操作`Slider`或程式時設定`Value`直接屬性。 A`ValueChanged`引發事件時也當`Value`前段中所述，會強制轉型屬性。
-
-[ `ValueChangedEventArgs` ](xref:Xamarin.Forms.ValueChangedEventArgs)隨附的物件`ValueChanged`事件有兩個屬性，這兩個型別`double`: [ `OldValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)並[ `NewValue` ](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue). 在引發事件時，windows 7`NewValue`等同`Value`屬性`Slider`物件。
-
-`Slider`也會`DragStarted`定義`DragCompleted`和事件, 它們會在拖曳動作的開頭和結尾引發。 與事件不同的`DragStarted` 是,`DragCompleted`和事件只會透過使用者操作來引發。 `Slider` [`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged) 當事件引發`DragStartedCommand`時, 會執行型`ICommand`別為的。 `DragStarted` 同樣地, 當`DragCompleted`事件引發`DragCompletedCommand`時, 會執行型`ICommand`別為的。
+這三個屬性都是由 `BindableProperty` 物件所支援。 `Value` 屬性具有 `BindingMode.TwoWay`的預設系結模式，這表示它適合做為使用[ViewModel （MVVM）](~/xamarin-forms/enterprise-application-patterns/mvvm.md)架構之應用程式中的系結來源。
 
 > [!WARNING]
-> 請勿使用未受限制的水平版面配置選項`Center`， `Start`，或`End`使用`Slider`。 在 Android 和 UWP，`Slider`列長度為零，並在 iOS 上，列摺疊是很短。 保留預設值`HorizontalOptions`設定`Fill`，而未使用的寬度`Auto`當放置`Slider`在`Grid`版面配置。
+> 就內部而言，`Slider` 可確保 `Minimum` 小於 `Maximum`。 如果 `Minimum` 或 `Maximum` 已設定為 `Minimum` 不小於 `Maximum`，則會引發例外狀況。 如需設定 `Minimum` 和 `Maximum` 屬性的詳細資訊，請參閱下面的[**預防措施**](#precautions)一節。
 
-`Slider`也會定義數個會影響其外觀的屬性：
+`Slider` 會將 `Value` 屬性強制轉型，使其介於 `Minimum` 和 `Maximum`（含）之間。 如果 `Minimum` 屬性設定為大於 `Value` 屬性的值，`Slider` 會將 `Value` 屬性設定為 [`Minimum`]。 同樣地，如果 `Maximum` 設定為小於 `Value`的值，`Slider` 會將 `Value` 屬性設定為 [`Maximum`]。
 
-- [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) 是一個長條色彩捲動方塊的左邊。
-- [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) 是一個長條色彩捲動方塊的右邊。
-- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) 是捲動方塊的色彩。
-- [`ThumbImageSource`](xref:Xamarin.Forms.Slider.ThumbImageSourceProperty) 是要用於基本原則是，類型的映像[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)。
+`Slider` 定義 `Value` 變更時所引發的[`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged)事件（不論是透過使用者操作 `Slider` 或當程式直接設定 `Value` 屬性時）。 當 `Value` 屬性強制轉型時，也會引發 `ValueChanged` 事件，如前一段所述。
+
+伴隨 `ValueChanged` 事件的[`ValueChangedEventArgs`](xref:Xamarin.Forms.ValueChangedEventArgs)物件有兩個屬性，兩種類型都 `double`： [`OldValue`](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue)和[`NewValue`](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue)。 引發事件時，`NewValue` 的值與 `Slider` 物件的 `Value` 屬性相同。
+
+`Slider` 也會定義在拖曳動作的開頭和結尾引發的 `DragStarted` 和 `DragCompleted` 事件。 不同于[`ValueChanged`](xref:Xamarin.Forms.Slider.ValueChanged)事件，`DragStarted` 和 `DragCompleted` 事件只會透過 `Slider`的使用者操作來引發。 當 `DragStarted` 事件引發時，會執行類型 `ICommand`的 `DragStartedCommand`。 同樣地，當 `DragCompleted` 事件引發時，會執行類型 `ICommand`的 `DragCompletedCommand`。
+
+> [!WARNING]
+> 請勿將 `Center`、`Start`或 `End` 的未受限制水準配置選項用於 `Slider`。 在 Android 和 UWP 上，`Slider` 會折迭為長度為零的長條，而在 iOS 上，橫條會非常短。 保留 `Fill`的預設 `HorizontalOptions` 設定，而且在 `Grid` 版面配置中放置 `Slider` 時，請勿使用 `Auto` 的寬度。
+
+`Slider` 也會定義數個會影響其外觀的屬性：
+
+- [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty)是捲動方塊左邊的橫條色彩。
+- [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty)是捲動方塊右側的橫條色彩。
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty)是捲動方塊色彩。
+- [`ThumbImageSource`](xref:Xamarin.Forms.Slider.ThumbImageSourceProperty)是要用於 thumb 的影像，類型[`ImageSource`](xref:Xamarin.Forms.ImageSource)。
 
 > [!NOTE]
-> `ThumbColor`和`ThumbImageSource`屬性互斥。 如果設定這兩個屬性，`ThumbImageSource`屬性將會優先。
+> `ThumbColor` 和 `ThumbImageSource` 屬性互斥。 如果同時設定這兩個屬性，`ThumbImageSource` 屬性的優先順序會較高。
 
-## <a name="basic-slider-code-and-markup"></a>滑桿的基本程式碼和標記
+## <a name="basic-slider-code-and-markup"></a>基本滑杆程式碼和標記
 
-[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例開頭的三個頁面的功能相同，但會以不同的方式實作。 第一頁會使用僅為 C# 程式碼、 第二個程式碼中，事件處理常式中使用 XAML 和第三個可使用 XAML 檔案中的資料繫結，以避免事件處理常式。
+[**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例一開始會有三個功能相同的頁面，但會以不同的方式來執行。 第一個頁面只C#會使用程式碼，第二個會使用 xaml 搭配程式碼中的事件處理常式，而第三個則能夠使用 xaml 檔案中的資料系結來避免事件處理常式。
 
-### <a name="creating-a-slider-in-code"></a>建立程式碼中的滑桿
+### <a name="creating-a-slider-in-code"></a>在程式碼中建立滑杆
 
-**滑桿的基本程式碼**頁面[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例示範如何建立`Slider`並將兩個`Label`程式碼中的物件：
+[**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例中的**基本滑杆代碼**頁會顯示如何在程式碼中建立 `Slider` 和兩個 `Label` 物件：
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -107,17 +107,17 @@ public class BasicSliderCodePage : ContentPage
 }
 ```
 
-`Slider`初始化為有`Maximum`360 屬性。 `ValueChanged`處理常式`Slider`會使用`Value`屬性`slider`若要設定的物件`Rotation`屬性的第一個`Label`，並使用`String.Format`方法`NewValue`屬性若要設定的事件引數`Text`屬性的第二個`Label`。 這兩種方法來取得目前的值`Slider`是可互換的。
+`Slider` 已初始化為具有360的 `Maximum` 屬性。 `Slider` 的 `ValueChanged` 處理常式會使用 `slider` 物件的 `Value` 屬性來設定第一個 `Rotation` 的 `Label` 屬性，並使用 `String.Format` 方法與事件引數的 `NewValue` 屬性來設定第二個 `Text` 的 `Label`屬性。 這兩種取得 `Slider` 目前值的方法是可互換的。
 
-以下是裝置 iOS、 Android 和通用 Windows 平台 (UWP) 上執行的程式：
+以下是在 iOS 和 Android 裝置上執行的程式：
 
-[![基本的滑桿的程式碼](slider-images/BasicSliderCode.png "基本的滑桿的程式碼")](slider-images/BasicSliderCode-Large.png#lightbox)
+[![基本滑杆程式碼](slider-images/BasicSliderCode.png "基本滑杆程式碼")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-第二個`Label`會顯示"（未初始化） 」 的文字，直到`Slider`操作，因而導致第一個`ValueChanged`引發的事件。 請注意，所顯示的小數位數不同的每個平台。 這些差異相關的平台實作`Slider`稍後一節中的這篇文章討論[平台實作差異](#implementations)。
+第二個 `Label` 會顯示 "（未初始化）" 文字，直到 `Slider` 操作為止，這會導致第一個 `ValueChanged` 事件引發。 請注意，每個平臺所顯示的小數位數是不同的。 這些差異與 `Slider` 的平臺執行相關，稍後將在本文章中的「平臺」的[差異](#implementations)一節中討論。
 
-### <a name="creating-a-slider-in-xaml"></a>在 XAML 中建立滑桿
+### <a name="creating-a-slider-in-xaml"></a>在 XAML 中建立滑杆
 
-**基本的滑桿 XAML**頁功能上是相同**滑桿的基本程式碼**但是實作大部分是在 XAML 中：
+**基本滑杆 XAML**頁面的功能與**基本滑杆程式碼**相同，但大部分都是在 XAML 中執行：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -143,7 +143,7 @@ public class BasicSliderCodePage : ContentPage
 </ContentPage>
 ```
 
-程式碼後置檔案包含的處理常式`ValueChanged`事件：
+程式碼後置檔案包含 `ValueChanged` 事件的處理常式：
 
 ```csharp
 public partial class BasicSliderXamlPage : ContentPage
@@ -162,21 +162,21 @@ public partial class BasicSliderXamlPage : ContentPage
 }
 ```
 
-您也可取得事件處理常式`Slider`所引發的事件，透過`sender`引數。 `Value`屬性包含目前的值：
+事件處理常式也可以透過 `sender` 引數取得引發事件的 `Slider`。 `Value` 屬性包含目前的值：
 
 ```csharp
 double value = ((Slider)sender).Value;
 ```
 
-如果`Slider`物件所指定的 XAML 檔案中的名稱`x:Name`屬性 (例如，"slider")，則事件處理常式無法參考該物件直接：
+如果在具有 `x:Name` 屬性的 XAML 檔案中指定 `Slider` 物件的名稱（例如，"slider"），則事件處理常式可以直接參考該物件：
 
 ```csharp
 double value = slider.Value;
 ```
 
-### <a name="data-binding-the-slider"></a>資料繫結滑桿
+### <a name="data-binding-the-slider"></a>資料系結滑杆
 
-**基本的滑桿繫結**頁面會顯示如何撰寫幾乎相當的程式，可減少`Value`使用的事件處理常式[資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md):
+[**基本滑杆**系結] 頁面會顯示如何撰寫幾乎相等的程式，藉由使用[資料](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結來去除 `Value` 事件處理常式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -205,13 +205,13 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-`Rotation`屬性的第一個`Label`繫結至`Value`屬性`Slider`，因為`Text`第二個屬性`Label`具有`StringFormat`規格。 **基本滑杆**系結頁面的運作方式與前兩個頁面的功能稍有不同:當頁面第一次出現時, `Label`第二個會顯示含有值的文字字串。 這是使用資料繫結的優點。 若要顯示沒有資料繫結的文字，您必須特別初始化`Text`的屬性`Label`，或模擬的引發`ValueChanged`藉由從類別建構函式呼叫的事件處理常式的事件。
+第一個 `Label` 的 `Rotation` 屬性會系結至 `Slider`的 `Value` 屬性，這是第二個 `Text` 中具有 `Label` 規格的 `StringFormat` 屬性。 **基本滑杆**系結頁面的運作方式與前兩頁不同：當頁面第一次出現時，第二個 `Label` 會顯示含有值的文字字串。 這是使用資料系結的優點。 若要顯示沒有資料系結的文字，您必須特別初始化 `Label` 的 `Text` 屬性，或從類別的函式呼叫事件處理常式來模擬 `ValueChanged` 事件的引發。
 
 <a name="precautions" />
 
-## <a name="precautions"></a>預防措施
+## <a name="precautions"></a>措施
 
-值`Minimum`屬性一律必須的值小於`Maximum`屬性。 下列程式碼片段會導致`Slider`引發例外狀況：
+`Minimum` 屬性的值必須一律小於 `Maximum` 屬性的值。 下列程式碼片段會導致 `Slider` 引發例外狀況：
 
 ```csharp
 // Throws an exception!
@@ -222,7 +222,7 @@ Slider slider = new Slider
 };
 ```
 
-C# 編譯器會產生在順序中，設定這兩個屬性的程式碼及何時`Minimum`屬性設定為 10，大於預設`Maximum`值為 1。 您可以在此情況下避免例外狀況，藉由設定`Maximum`屬性第一次：
+C#編譯器會產生依序設定這兩個屬性的程式碼，當 `Minimum` 屬性設定為10時，它會大於預設的 `Maximum` 值1。 在此情況下，您可以先設定 `Maximum` 屬性來避免例外狀況：
 
 ```csharp
 Slider slider = new Slider
@@ -232,23 +232,23 @@ Slider slider = new Slider
 };
 ```
 
-設定`Maximum`為 20 並不成問題，因為它大於預設值`Minimum`值為 0。 當`Minimum`設定，這個值是小於`Maximum`值為 20。
+將 `Maximum` 設定為20不是問題，因為它大於預設 `Minimum` 值0。 設定 `Minimum` 時，此值會小於 `Maximum` 值20。
 
-在 XAML 中，有相同的問題。 設定屬性的順序可確保`Maximum`一律是大於`Minimum`:
+XAML 中存在相同的問題。 以可確保 `Maximum` 一律大於 `Minimum`的順序設定屬性：
 
 ```xaml
 <Slider Maximum="20"
         Minimum="10" ... />
 ```
 
-您可以設定`Minimum`並`Maximum`負數的數字，但只能在訂單中的值所在`Minimum`是一定小於`Maximum`:
+您可以將 `Minimum` 和 `Maximum` 值設定為負數，但只能依照 `Minimum` 一律小於 `Maximum`的順序：
 
 ```xaml
 <Slider Minimum="-20"
         Maximum="-10" ... />
 ```
 
-`Value`屬性一律會是大於或等於`Minimum`值且小於或等於`Maximum`。 如果`Value`設定的值超出該範圍中，值將會強制轉型為落在範圍內，但會引發任何例外狀況。 比方說，這段程式碼將會*不*引發例外狀況：
+`Value` 屬性一律大於或等於 `Minimum` 值，且小於或等於 `Maximum`。 如果 `Value` 設定為超出該範圍的值，則會將值強制轉型為範圍內的，但不會引發任何例外狀況。 例如，此程式碼*不*會引發例外狀況：
 
 ```csharp
 Slider slider = new Slider
@@ -257,7 +257,7 @@ Slider slider = new Slider
 };
 ```
 
-相反地，`Value`屬性會強制轉型`Maximum`值為 1。
+相反地，`Value` 屬性會強制轉型為 `Maximum` 值1。
 
 以下是如上所示的程式碼片段：
 
@@ -269,9 +269,9 @@ Slider slider = new Slider
 };
 ```
 
-當`Minimum`設為 10，則`Value`也會設定為 10。
+當 `Minimum` 設定為10時，`Value` 也會設定為10。
 
-如果`ValueChanged`已附加事件處理常式時，`Value`屬性會強制轉型為 0，其預設值以外的項目則`ValueChanged`引發事件。 以下是 XAML 程式碼片段：
+如果 `ValueChanged` 事件處理常式在 `Value` 屬性強制轉型為預設值0以外的位置時附加，則會引發 `ValueChanged` 事件。 以下是 XAML 的程式碼片段：
 
 ```xaml
 <Slider ValueChanged="OnSliderValueChanged"
@@ -279,35 +279,35 @@ Slider slider = new Slider
         Minimum="10" />
 ```
 
-當`Minimum`設為 10，`Value`也會設定為 10，而`ValueChanged`引發事件時。 這可能是頁面的其餘部分都建構完畢，並處理常式可能會嘗試參考頁面上尚未建立的其他項目之前。 您可能想要新增一些程式碼`ValueChanged`處理常式會檢查`null`頁面上的其他元素的值。 或者，您可以設定`ValueChanged`之後的事件處理常式`Slider`已初始化值。
+當 `Minimum` 設定為10時，`Value` 也會設定為10，而 `ValueChanged` 事件則會引發。 這可能會在已建立其餘頁面之前發生，而且處理常式可能會嘗試參考尚未建立之頁面上的其他元素。 您可能想要將一些程式碼新增至 `ValueChanged` 處理常式，以檢查頁面上其他元素的 `null` 值。 或者，您可以在初始化 `Slider` 值之後，設定 `ValueChanged` 事件處理常式。
 
 <a name="implementations" />
 
-## <a name="platform-implementation-differences"></a>平台實作差異
+## <a name="platform-implementation-differences"></a>平臺執行差異
 
-稍早所示的螢幕擷取畫面顯示的值`Slider`不同數目的小數位數。 這涉及如何`Slider`在 Android 和 UWP 平台上實作。
+稍早所示的螢幕擷取畫面會以不同的小數點數目顯示 `Slider` 的值。 這與在 Android 和 UWP 平臺上執行 `Slider` 的方式有關。
 
-### <a name="the-android-implementation"></a>Android 的實作
+### <a name="the-android-implementation"></a>Android 的執行
 
-Android 的實作`Slider`為基礎的 Android [ `SeekBar` ](xref:Android.Widget.SeekBar) ，並一律設定[ `Max` ](xref:Android.Widget.ProgressBar.Max)屬性設為 1000年。 這表示`Slider`在 Android 上有只 1,001 離散的值。 如果您設定`Slider`能夠`Minimum`為 0，`Maximum`為 5000，則為`Slider`操作，`Value`屬性具有值 0、 5、 10、 15 及其他等等。
+Android 的 `Slider` 執行是以 Android [`SeekBar`](xref:Android.Widget.SeekBar)為基礎，而且一律會將[`Max`](xref:Android.Widget.ProgressBar.Max)屬性設為1000。 這表示 Android 上的 `Slider` 只有1001的離散值。 如果您將 `Slider` 的 `Minimum` 設定為0，而 `Maximum` 為5000，則在操作 `Slider` 時，`Value` 屬性的值為0、5、10、15等等。
 
-### <a name="the-uwp-implementation"></a>UWP 實作
+### <a name="the-uwp-implementation"></a>UWP 的執行
 
-UWP 實作`Slider`為基礎的 UWP [ `Slider` ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)控制項。 `StepFrequency`屬性的 UWP`Slider`設定的差異`Maximum`和`Minimum`屬性除以 10，但不是能大於 1。
+UWP 的 `Slider` 的執行是以 UWP [`Slider`](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)控制項為基礎。 UWP `Slider` 的 `StepFrequency` 屬性會設定為 `Maximum` 的差異和 `Minimum` 屬性除以10，但不大於1。
 
-例如，針對預設範圍 0 到 1`StepFrequency`屬性設定為 0.1。 作為`Slider`操作，`Value`屬性會限制為 0、 0.1、 0.2、 0.3、 0.4、 0.5，0.6，0.7，0.8、 0.9 及 1.0。 (這是最後一頁中明顯[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例。)時之間的差異`Maximum`並`Minimum`屬性可為 10 或更新版本，然後`StepFrequency`設定為 1，而`Value`屬性具有整數值。
+例如，如果預設範圍為0到1，`StepFrequency` 屬性會設定為0.1。 當 `Slider` 操作時，`Value` 屬性限制為0、0.1、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9 和1.0。 （這在[**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例的最後一頁中很明顯）。當 `Maximum` 和 `Minimum` 屬性之間的差異為10或以上時，`StepFrequency` 會設定為1，而 `Value` 屬性則具有整數值。
 
 ### <a name="the-stepslider-solution"></a>StepSlider 解決方案
 
-更靈活`StepSlider`討論[第 27 章。自訂轉譯器](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)活頁簿*使用 Xamarin.Forms 建立行動應用程式*。 `StepSlider`大致`Slider`但會增加`Steps`屬性來指定值之間的數字`Minimum`和`Maximum`。
+第27章會討論更多用途的 `StepSlider` [。](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)*使用 Xamarin 建立 Mobile Apps*之書籍的自訂轉譯器。 `StepSlider` 類似 `Slider` 但會加入 `Steps` 屬性，以指定 `Minimum` 和 `Maximum`之間的值數目。
 
-## <a name="sliders-for-color-selection"></a>色彩選取範圍的滑桿
+## <a name="sliders-for-color-selection"></a>色彩選取的滑杆
 
-最後兩個中的分頁[ **SliderDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例都使用三個`Slider`中色彩選取範圍的執行個體。 第一頁會處理在程式碼後置檔案中，所有的互動，而第二個頁面會顯示如何以資料繫結使用 ViewModel。
+[**SliderDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)範例中的最後兩個頁面都使用三個 `Slider` 實例來進行色彩選取。 第一個頁面會處理常式代碼後置檔案中的所有互動，而第二頁則顯示如何搭配 ViewModel 使用資料系結。
 
-### <a name="handling-sliders-in-the-code-behind-file"></a>處理程式碼後置檔案中的滑桿
+### <a name="handling-sliders-in-the-code-behind-file"></a>處理常式代碼後置檔案中的滑杆
 
-**RGB 色彩滑桿**頁面會具現化`BoxView`以顯示色彩，三個`Slider`執行個體，以選取色彩，以及三個紅色、 綠色和藍色元件`Label`顯示這些色彩的項目值：
+[ **RGB 色彩滑杆**] 頁面會具現化 `BoxView` 以顯示色彩、三個 `Slider` 實例，以選取色彩的紅色、綠色和藍色元件，以及三個用於顯示這些色彩值的 `Label` 元素：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -349,7 +349,7 @@ UWP 實作`Slider`為基礎的 UWP [ `Slider` ](https://docs.microsoft.com/uwp/a
 </ContentPage>
 ```
 
-A`Style`提供這三個`Slider`一個 0 到 255 的範圍的項目。 `Slider`項目共用相同`ValueChanged`處理常式，實作程式碼後置檔案中：
+`Style` 提供所有三個 `Slider` 的元素，範圍介於0到255之間。 `Slider` 的元素會共用相同的 `ValueChanged` 處理常式，並在程式碼後置檔案中執行：
 
 ```csharp
 public partial class RgbColorSlidersPage : ContentPage
@@ -381,13 +381,13 @@ public partial class RgbColorSlidersPage : ContentPage
 }
 ```
 
-第一個區段集合`Text`屬性的其中一個`Label`簡短文字字串，表示值的執行個體`Slider`十六進位。 然後，這三`Slider`執行個體存取建立`Color`從 RGB 元件的值：
+第一個區段會將其中一個 `Label` 實例的 `Text` 屬性設定為簡短的文字字串，指出十六進位中 `Slider` 的值。 然後，系統會存取這三個 `Slider` 實例，以從 RGB 元件建立 `Color` 值：
 
-[![RGB 色彩滑桿](slider-images/RgbColorSliders.png "RGB 色彩滑桿")](slider-images/RgbColorSliders-Large.png#lightbox)
+[![RGB 色彩滑杆](slider-images/RgbColorSliders.png "RGB 色彩滑杆")](slider-images/RgbColorSliders-Large.png#lightbox)
 
-### <a name="binding-the-slider-to-a-viewmodel"></a>繫結至 ViewModel 的滑桿
+### <a name="binding-the-slider-to-a-viewmodel"></a>將滑杆系結至 ViewModel
 
-**HSL 色彩滑桿**頁面會顯示如何執行用來建立計算使用 ViewModel`Color`色調、 飽和度和亮度值的值。 像所有的 Viewmodel`HSLColorViewModel`類別會實作`INotifyPropertyChanged`介面，而且會引發`PropertyChanged`事件其中一個屬性變更時：
+[ **HSL 色彩滑杆**] 頁面會顯示如何使用 ViewModel 來執行用來從色調、飽和度和亮度值建立 `Color` 值的計算。 就像所有的 Viewmodel，`HSLColorViewModel` 類別會實 `INotifyPropertyChanged` 介面，而且每當其中一個屬性變更時，就會引發 `PropertyChanged` 事件：
 
 ```csharp
 public class HslColorViewModel : INotifyPropertyChanged
@@ -462,9 +462,9 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-Viewmodel 並`INotifyPropertyChanged`一文中討論介面[資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+Viewmodel 和 `INotifyPropertyChanged` 介面會在[資料](~/xamarin-forms/app-fundamentals/data-binding/index.md)系結一文中討論。
 
-**HslColorSlidersPage.xaml**檔案會具現化`HslColorViewModel`並將它設定為頁面的`BindingContext`屬性。 這可讓繫結至在 ViewModel 屬性的 XAML 檔案中的所有項目：
+**HslColorSlidersPage**會具現化 `HslColorViewModel`，並將它設定為頁面的 `BindingContext` 屬性。 這可讓 XAML 檔案中的所有元素系結至 ViewModel 中的屬性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -501,13 +501,13 @@ Viewmodel 並`INotifyPropertyChanged`一文中討論介面[資料繫結](~/xamar
 </ContentPage>
 ```
 
-作為`Slider`項目進行操作，`BoxView`和`Label`項目會從 ViewModel 更新：
+在操作 `Slider` 元素時，`BoxView` 和 `Label` 元素會從 ViewModel 更新：
 
-[![HSL 色彩滑桿](slider-images/HslColorSliders.png "HSL 色彩滑桿")](slider-images/HslColorSliders-Large.png#lightbox)
+[![HSL 色彩滑杆](slider-images/HslColorSliders.png "HSL 色彩滑杆")](slider-images/HslColorSliders-Large.png#lightbox)
 
-`StringFormat`元件`Binding`標記延伸設定的 「 F2"格式顯示兩個小數位數。 (文章中有討論資料繫結中的格式字串[字串格式化](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)。)不過，程式的 UWP 版本僅限於值 0、 0.1、 0.2...0.9 及 1.0。 這是直接的結果之實作的 UWP`Slider`於一節所述[平台實作差異](#implementations)。
+`Binding` 標記延伸的 `StringFormat` 元件會設定為 "F2" 格式，以顯示兩個小數位數。 （資料系結中的字串格式會在[字串格式](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)一文中討論）。不過，程式的 UWP 版本限制為0、0.1、0.2、... 的值0.9 和1.0。 這是執行 UWP `Slider` 的直接結果，如上述「[平臺執行差異](#implementations)」一節中所述。
 
 ## <a name="related-links"></a>相關連結
 
-- [滑桿示範範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
-- [滑桿 API](xref:Xamarin.Forms.Slider)
+- [滑杆示範範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+- [滑杆 API](xref:Xamarin.Forms.Slider)

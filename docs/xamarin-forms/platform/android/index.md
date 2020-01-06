@@ -6,13 +6,13 @@ ms.assetid: E24168F3-0138-4814-86EA-B467F6B8A545
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2019
-ms.openlocfilehash: 73e838b3a63132230cf594a3461c9d7ee6f302b8
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/11/2019
+ms.openlocfilehash: 94523bb019e366738de65ce0b05c70264fce738b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696943"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489761"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 
@@ -31,8 +31,9 @@ ms.locfileid: "72696943"
 
 - 使用 Android 按鈕的預設填補和陰影值。 如需詳細資訊，請參閱[Android 上的按鈕填補和陰影](button-padding-shadow.md)。
 - 針對[`Entry`](xref:Xamarin.Forms.Entry)的螢幕小鍵盤設定 [輸入法] 編輯器選項。 如需詳細資訊，請參閱[Android 上的專案輸入方法編輯器選項](entry-ime-options.md)。
-- 在 `ImageButton` 上啟用投影。 如需詳細資訊，請參閱[Android 上的 ImageButton 投影](imagebutton-drop-shadow.md)。
+- 在 `ImageButton`上啟用投影。 如需詳細資訊，請參閱[Android 上的 ImageButton 投影](imagebutton-drop-shadow.md)。
 - 啟用[`ListView`](xref:Xamarin.Forms.ListView)中的快速滾動如需詳細資訊，請參閱[在 Android 上進行 ListView 快速滾動](listview-fast-scrolling.md)。
+- 控制開啟 `SwipeView`時所使用的轉換。 如需詳細資訊，請參閱[SwipeView 滑動轉換模式](swipeview-swipetransitionmode.md)。
 - 控制[`WebView`](xref:Xamarin.Forms.WebView)是否可以顯示混合內容。 如需詳細資訊，請參閱[在 Android 上進行 web](webview-mixed-content.md)程式的混合式內容。
 - 啟用[`WebView`](xref:Xamarin.Forms.WebView)的縮放。 如需詳細資訊，請參閱[Android 上的 web 程式顯示縮放](webview-zoom-controls.md)。
 
@@ -62,7 +63,7 @@ Xamarin： Android 專案現在會使用 `FormsAppCompatActivity` 做為其主�
 
 若要將材質設計主題新增至您的 Xamarin. 表單 Android 專案，請遵循[AppCompat 支援的安裝指示](appcompat-material-design.md)
 
-以下是預設 `FormsApplicationActivity` 的**Todo**範例：
+以下是預設 `FormsApplicationActivity`的**Todo**範例：
 
 [![](images/before-appcompat-sml.png "Todo Sample Application Without AppCompat")](images/before-appcompat.png#lightbox "Todo Sample Application Without AppCompat")
 
@@ -71,7 +72,7 @@ Xamarin： Android 專案現在會使用 `FormsAppCompatActivity` 做為其主�
 [![](images/post-appcompat-sml.png "Todo Sample Application With AppCompat and Theming")](images/post-appcompat.png#lightbox "Todo Sample Application With AppCompat and Theming")
 
 > [!NOTE]
-> 使用 `FormsAppCompatActivity` 時，[某些 Android 自訂](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)轉譯器的基類會不同。
+> 使用 `FormsAppCompatActivity`時，[某些 Android 自訂](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)轉譯器的基類會不同。
 
 ## <a name="related-links"></a>相關連結
 

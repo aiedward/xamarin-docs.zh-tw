@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: 4b3bf1fcc6be7713c87b16ef9ec083189793b324
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e9f910804f3da9d173206d51c59e1d7ddd9b90a6
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008062"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663508"
 ---
 # <a name="data-and-cloud-services-in-xamarinios-apps"></a>在 Xamarin iOS 應用程式中的資料和雲端服務
 
@@ -22,7 +22,7 @@ ms.locfileid: "73008062"
 
 ## <a name="icloudiosdata-cloudintroduction-to-icloudmd"></a>[iCloud](~/ios/data-cloud/introduction-to-icloud.md)
 
-IOS 5 中的 iCloud 儲存體 API 可讓應用程式將使用者檔和應用程式特定的資料儲存到中央位置，並從所有使用者的裝置存取這些專案。
+ICloud 儲存體 API 可讓應用程式將使用者檔和應用程式特定的資料儲存到中央位置，並從所有使用者的裝置存取這些專案。
 
 ## <a name="cloudkitiosdata-cloudintro-to-cloudkitmd"></a>[CloudKit](~/ios/data-cloud/intro-to-cloudkit.md)
 

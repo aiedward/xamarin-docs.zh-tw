@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 4d28b80b32ff0d20afbe643d9c000f301a8ea582
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4b1e0b32050b22a63bb89b28107877ef3e196b16
+ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027818"
+ms.lasthandoff: 01/06/2020
+ms.locfileid: "75667035"
 ---
 # <a name="android-job-scheduler"></a>Android 工作排程器
 
 _本指南討論如何使用 Android 工作排程器 API （可在執行 Android 5.0 （API 層級21）和更高版本的 Android 裝置上取得）來排定背景工作。_
 
-## <a name="overview"></a>總覽 
+## <a name="overview"></a>概觀 
 
 讓 Android 應用程式回應使用者的最佳方式之一，是確保在背景執行複雜或長時間的工作。 不過，背景工作不會對裝置的使用者體驗造成負面影響。 
 
@@ -33,7 +33,7 @@ Android 提供下列 Api 來協助在背景中執行工作，但本身並不足�
 有兩個主要功能可有效率地執行背景工作（有時稱為_背景作業_或_作業_）：
 
 1. 以**智慧方式排程工作**&ndash; 在應用程式于背景執行工作時，請務必將其做為良好公民。 在理想情況下，應用程式不應該要求執行作業。 相反地，應用程式應該指定作業可以執行時必須符合的條件，然後使用符合條件時將執行工作的作業系統，排程該作業。 這可讓 Android 執行此作業，以確保裝置上的最高效率。 例如，網路要求可能會批次處理成同時執行，以充分利用網路所涉及的額外負荷。
-2. **封裝工作**&ndash; 要執行背景工作的程式碼，應該封裝在可獨立于使用者介面之外執行的離散元件中，而且如果工作無法完成，則會相對容易重新排定原因.
+2. **封裝工作**&ndash; 要執行背景工作的程式碼，應該封裝在可獨立于使用者介面之外執行的離散元件中，而且如果工作因某些原因而無法完成，則會相對容易重新排定。
 
 Android 工作排程器是內建于 Android 作業系統的架構，可提供 Fluent API 來簡化排程背景工作。  Android 工作排程器是由下列類型組成：
 
@@ -43,7 +43,7 @@ Android 工作排程器是內建于 Android 作業系統的架構，可提供 Fl
 
 若要排定與 Android 工作排程器搭配使用，Xamarin. Android 應用程式必須將程式碼封裝在擴充 `JobService` 類別的類別中。 `JobService` 有三個生命週期方法，可在作業的存留期間呼叫：
 
-- **Bool OnStartJob （JobParameters 參數）** &ndash; 此方法是由 `JobScheduler` 所呼叫來執行工作，並在應用程式的主要執行緒上執行。 `JobService` 會負責以非同步方式執行工作，並在剩餘工作時 `true`，如果工作已完成，則會 `false`。
+- **Bool OnStartJob （JobParameters 參數）** &ndash; 此方法是由 `JobScheduler` 所呼叫來執行工作，並在應用程式的主要執行緒上執行。 `JobService` 會負責以非同步方式執行工作，並在剩餘工作時傳回 `true`; 如果工作已完成，則傳回 `false`。
     
     當 `JobScheduler` 呼叫此方法時，它會在作業的持續期間要求並保留 Android 的 wakelock。 當作業完成時，`JobService` 會負責藉由呼叫 `JobFinished` 方法（如下所述）來判斷此事實的 `JobScheduler`。
 

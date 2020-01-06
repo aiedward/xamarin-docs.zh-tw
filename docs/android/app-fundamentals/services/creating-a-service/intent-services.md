@@ -6,16 +6,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: c58787a051bfc965cb7493138ed6114ac23ed04d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: acf8824c7a575bca37301a409bdf6d5f42cca622
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024851"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488058"
 ---
 # <a name="intent-services-in-xamarinandroid"></a>Xamarin 中的意圖服務
-
-## <a name="intent-services-overview"></a>意圖服務總覽
 
 啟動和系結的服務都是在主執行緒上執行，這表示為了讓效能保持順暢，服務必須以非同步方式執行工作。 解決此問題最簡單的方法之一，就是使用背景_工作佇列處理器模式_，其中要完成的工作會放在由單一線程服務的佇列中。
 
@@ -57,8 +55,7 @@ public class DemoIntentService: IntentService
 Intent downloadIntent = new Intent(this, typeof(DemoIntentService));
 
 // This is just one example of passing some values to an IntentService via the Intent:
-downloadIntent.Put
-("file_to_download", "http://www.somewhere.com/file/to/download.zip");
+downloadIntent.PutPutExtra("file_to_download", "http://www.somewhere.com/file/to/download.zip");
 
 StartService(downloadIntent);
 ```

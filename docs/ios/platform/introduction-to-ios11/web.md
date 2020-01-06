@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/12/2017
-ms.openlocfilehash: ef9577aad756ae67ac9fed685d7e40faea33c316
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c52ac3c0f06d58ab5fff8228ca3bdf722056b5b6
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032057"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663443"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 中的 WebKit 和 Safari 變更
 
@@ -20,7 +20,7 @@ iOS 11 引進了新版本的 Safari web 瀏覽器– Safari 11.0 –其中包括
 
 ## <a name="safariservices"></a>SafariServices
 
-`SFSafariViewController` 是在 iOS 9 中引進，做為顯示 web 內容或從您的應用程式驗證使用者的選項。 如需其功能的詳細資訊，請參閱[Web Views](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller) guide。
+`SFSafariViewController` 是在 iOS 9 中引進，做為顯示 web 內容或從您的應用程式驗證使用者的選項。 如需其功能的詳細資訊，請參閱[Web Views](~/ios/user-interface/controls/webview.md#sfsafariviewcontroller) guide。
 
 iOS 11 引進了 Safari View Controller 的樣式更新，讓您的使用者在應用程式與 web 之間獲得更順暢的體驗。 例如，移除網址列現在會讓 Safari 視圖控制器感覺應用程式內瀏覽器，而不是迷你瀏覽器。 您也可以藉由設定 [`preferredBarTintColor`] 和 [`PreferredControlTintColor`] 屬性，自訂色彩配置以配合應用程式的色彩配置：
 
@@ -66,7 +66,7 @@ Apple 在 iOS 11 中引進了三項 `WKWebView` 的主要改良功能：
 
 - 管理 cookie 的能力
 - 內容篩選
-- 自訂資源載入。 
+- 自訂資源載入
 
 Cookie 管理是透過新的[`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore)類別來完成，它可讓您新增和刪除 cookie、取得儲存在 WKWebView 中的所有 cookie，以及觀察 cookie 存放區的變更。
 

@@ -6,13 +6,13 @@ ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2019
-ms.openlocfilehash: 116911787db128b103fb555554076704a0549db5
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.date: 11/05/2019
+ms.openlocfilehash: a4f91da6fcaefaffd41177d99ebe906aca3fdba2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959180"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487304"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Xamarin 中的簡單動畫
 
@@ -24,6 +24,8 @@ _ViewExtensions 類別提供可用來建立簡單動畫的擴充方法。本文�
 
 - [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))會以動畫呈現[`VisualElement`](xref:Xamarin.Forms.VisualElement)的[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)和[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)屬性。
 - [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)會以動畫呈現[`VisualElement`](xref:Xamarin.Forms.VisualElement)的[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性。
+- `ScaleXTo` 會以動畫呈現[`VisualElement`](xref:Xamarin.Forms.VisualElement)的[`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX)屬性。
+- `ScaleYTo` 會以動畫呈現[`VisualElement`](xref:Xamarin.Forms.VisualElement)的[`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY)屬性。
 - [`RelScaleTo`](xref:Xamarin.Forms.ViewExtensions.RelScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))會將動畫增量增加或減少套用至[`VisualElement`](xref:Xamarin.Forms.VisualElement)的[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性。
 - [`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))會以動畫呈現[`VisualElement`](xref:Xamarin.Forms.VisualElement)的[`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)屬性。
 - [`RelRotateTo`](xref:Xamarin.Forms.ViewExtensions.RelRotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))會將動畫增量增加或減少套用至[`VisualElement`](xref:Xamarin.Forms.VisualElement)的[`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)屬性。
@@ -63,6 +65,9 @@ image.Rotation = 0;
 
 ![](simple-images/rotateto.png "Rotation Animation")
 
+> [!NOTE]
+> 除了[`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法以外，還有[`RotateXTo`](xref:Xamarin.Forms.ViewExtensions.RotateXTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))和[`RotateYTo`](xref:Xamarin.Forms.ViewExtensions.RotateYTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法，分別會建立[`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX)和[`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)屬性的動畫。
+
 ### <a name="relative-rotation"></a>相對旋轉
 
 下列程式碼範例將示範如何使用[`RelRotateTo`](xref:Xamarin.Forms.ViewExtensions.RelRotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法，以累加方式增加或減少[`Image`](xref:Xamarin.Forms.Image)的[`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)屬性：
@@ -92,7 +97,7 @@ await image.ScaleTo (2, 2000);
 ![](simple-images/scaleto.png "Scaling Animation")
 
 > [!NOTE]
-> [`VisualElement`](xref:Xamarin.Forms.VisualElement) 類別也會定義 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 和 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 屬性，它們可以在水平和垂直方向以不同的方式調整 `VisualElement`。 這些屬性可以使用[`Animation`](xref:Xamarin.Forms.Animation)類別來進行動畫。 如需詳細資訊，請參閱[自訂在 Xamarin 中的動畫](custom.md)。
+> 除了[`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)方法以外，還有 `ScaleXTo` 和 `ScaleYTo` 方法，分別會建立[`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX)和[`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY)屬性的動畫。
 
 ### <a name="relative-scaling"></a>相對縮放比例
 

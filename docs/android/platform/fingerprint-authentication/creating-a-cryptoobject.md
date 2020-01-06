@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 609ee17b6f2fd392c612277de8bbf59f8780f7d9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 871058d1c128b37a0f2e77b43587139efb433de1
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020380"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487772"
 ---
 # <a name="creating-a-cryptoobject"></a>建立 CryptoObject
 
@@ -57,7 +57,7 @@ public class CryptoObjectHelper
         Cipher cipher = Cipher.GetInstance(TRANSFORMATION);
         try
         {
-            cipher.Init(CipherMode.EncryptMode | CipherMode.DecryptMode, key);
+            cipher.Init(CipherMode.EncryptMode, key);
         } catch(KeyPermanentlyInvalidatedException e)
         {
             _keystore.DeleteEntry(KEY_NAME);
@@ -132,7 +132,7 @@ public class CryptoObjectHelper
 
 ## <a name="using-the-cryptoobjecthelper"></a>使用 CryptoObjectHelper
 
-既然範例程式碼已經封裝了許多用來建立 `CryptoWrapper` 到 `CryptoObjectHelper` 類別的邏輯，讓我們重新流覽本指南開頭的程式碼，並使用 `CryptoObjectHelper` 來建立加密並啟動指紋掃描器: 
+既然範例程式碼已經封裝了許多用來建立 `CryptoWrapper` 到 `CryptoObjectHelper` 類別的邏輯，讓我們重新流覽本指南開頭的程式碼，並使用 `CryptoObjectHelper` 來建立加密並啟動指紋掃描器： 
 
 ```csharp
 protected void FingerPrintAuthenticationExample()

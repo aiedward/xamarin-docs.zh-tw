@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/01/2016
-ms.openlocfilehash: 85bdace802e58725195d9124af70f396a533aaee
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fc3a0ace7760b89ad9b2679243c9b6d562191554
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031230"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489072"
 ---
 # <a name="user-notifications-framework-in-xamarinios"></a>Xamarin 中的使用者通知架構
 
@@ -35,4 +35,4 @@ IOS 10 的新手，使用者通知架構允許傳遞和處理本機和遠端通�
 - [iOS 10 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [UserNotifications 架構參考](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
-- [本機和遠端通知程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html)
+- [本機和遠端通知程式設計指南](https://developer.apple.com/documentation/usernotifications)

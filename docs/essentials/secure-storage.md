@@ -1,19 +1,19 @@
 ---
-title: Xamarin.Essentials:安全存放裝置
+title: 'Xamarin.Essentials: Secure Storage'
 description: 此文件說明 Xamarin.Essentials 中的 SecureStorage 類別，它有助於安全地存放簡單的機碼/值組。 此文件討論如何使用該類別、平台實作特性與限制。
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: 1e4cb52772a60489f887116cbcfd4e6a8930fa3a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756790"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488487"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:安全存放裝置
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Secure Storage
 
 **SecureStorage** 類別有助於安全地存放簡單的機碼/值組。
 
@@ -155,13 +155,13 @@ SecureStorage.RemoveAll();
 
 加密值會存放在 `ApplicationData.Current.LocalSettings` 中名為 **[YOUR-APP-ID].xamarinessentials** 的容器內。
 
-**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。
+**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 它也會使用 `LocalSettings`，其限制是每個設定的名稱最多可以是255個字元的長度。 每個設定的大小最多可達8K 位元組，而且每個複合設定的大小最多可達64K 位元組。
 
 -----
 
 ## <a name="limitations"></a>限制
 
-此 API 旨在存放少量文字。  若嘗試使用它來存放大量文字，效能會變差。
+此 API 旨在存放少量文字。  若嘗試使用它來存放大量文字，效能會變差。 
 
 ## <a name="api"></a>API
 

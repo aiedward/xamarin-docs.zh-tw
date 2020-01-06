@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 60f51be5ffad67d839edd42b7826b0c57c46eb8a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2b6dcd53a9761ec3f030f3f5bf81894e9faa8b1f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029988"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487018"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>將 Xamarin.Mac 應用程式發佈到 Mac App Store
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Xamarin.Mac 應用程式可以兩種方式散發：
 
@@ -25,7 +25,7 @@ Xamarin.Mac 應用程式可以兩種方式散發：
 
 本文說明如何使用 Visual Studio for Mac 和 Xcode 來設定 Apple 開發人員帳戶，以及為每個部署類型設定 Xamarin.Mac 專案。
 
-## <a name="mac-developer-program"></a>Mac 開發人員計劃
+## <a name="mac-developer-program"></a>Mac 開發人員計畫
 
 當您加入 [Mac 開發人員計劃](https://developer.apple.com/devcenter/mac/) \(英文\) 時，開發人員可選擇要以 [Individual] \(個人\) 或 [Company] \(公司\) 的身分加入，如下列螢幕擷取畫面所示：
 
@@ -40,11 +40,11 @@ Xamarin.Mac 應用程式可以兩種方式散發：
 
 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要憑證與識別碼。
 
-### <a name="create-provisioning-profilemacdeploy-testpublishing-to-the-app-storeprofilesmd"></a>[建立佈建設定檔](~/mac/deploy-test/publishing-to-the-app-store/profiles.md)
+### <a name="create-provisioning-profilemacdeploy-testpublishing-to-the-app-storeprofilesmd"></a>[建立布建設定檔](~/mac/deploy-test/publishing-to-the-app-store/profiles.md)
 
 本指南逐步引導您建立發行 Xamarin.Mac 應用程式所需的必要佈建設定檔。
 
-### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac 應用程式組態](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
+### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac 應用程式設定](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
 
 本指南逐步說明設定 Xamarin.Mac 應用程式以供發行。
 
@@ -64,4 +64,4 @@ Xamarin.Mac 應用程式可以兩種方式散發：
 
 - [安裝](/visualstudio/mac/installation/)
 - [Hello, Mac 範例](~/mac/get-started/hello-mac.md)
-- [開發人員識別碼和閘道管理員](https://developer.apple.com/resources/developer-id/) \(英文\)
+- [開發人員識別碼和 GateKeeper](https://developer.apple.com/resources/developer-id/) \(英文\)

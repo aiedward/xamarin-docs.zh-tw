@@ -9,12 +9,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2019
-ms.openlocfilehash: 2c50ffb37f0fd1d7b0d9fad063c4d6195d6b1f08
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: fd2fcf6ebe11df27444f2ecc1d89955debf56cb4
+ms.sourcegitcommit: c4f72221a6dce1276a90f2b52282b8145f8e0f1c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199809"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502796"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>建置您的第一個 Xamarin.Forms 應用程式
 
@@ -26,51 +26,51 @@ ms.locfileid: "70199809"
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] **> [新增 > 專案**...] 或按 [**建立新專案 ...** ] 按鈕:
+1. 選擇 [檔案] **> [新增 > 專案**...] 或按 [**建立新專案 ...** ] 按鈕：
 
-    [![建立新專案](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
+    [![建立新的專案](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
-2. 搜尋「Xamarin」, 或從 [**專案類型**] 功能表選擇 [ **Mobile** ]。 選取 [行動**應用程式 (Xamarin)** ] 專案類型:
+2. 搜尋「Xamarin」，或從 [**專案類型**] 功能表選擇 [ **Mobile** ]。 選取 [行動**應用程式（Xamarin）** ] 專案類型：
 
-    [![Xamarin 專案的篩選](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
+    [Xamarin 專案的 ![篩選](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
-3. 選擇專案名稱&ndash;此範例使用 "AwesomeApp":
+3. 選擇專案名稱 &ndash; 範例會使用 "AwesomeApp"：
 
     [![選擇專案名稱](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. 按一下 [**空白**] 專案類型, 並確定已選取 [ **Android** ] 和 [ **iOS** ]:
+4. 按一下 [**空白**] 專案類型，並確定已選取 [ **Android** ] 和 [ **iOS** ]：
 
     [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
-6. 新的 Visual Studio 2019 安裝將不會設定 Android 模擬器。 按一下 **調試**程式 按鈕上的下拉箭號, 然後選擇 **建立 Android Emulator**以啟動模擬器建立畫面:
+6. 新的 Visual Studio 2019 安裝將不會設定 Android 模擬器。 按一下 **調試**程式 按鈕上的下拉箭號，然後選擇 **建立 Android Emulator**以啟動模擬器建立畫面：
 
     ![建立 Android Emulator 下拉式清單](images/win-2019/debug-dropdown.png)
 
-7. 在模擬器建立畫面中, 使用預設設定, 然後按一下 [**建立**] 按鈕:
+7. 在模擬器建立畫面中，使用預設設定，然後按一下 [**建立**] 按鈕：
 
     [![Android 模擬器建立畫面](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
 
-8. 建立模擬器會讓您回到 [Device Manager] 視窗。 按一下 [**啟動**] 按鈕以啟動新的模擬器:
+8. 建立模擬器會讓您回到 [Device Manager] 視窗。 按一下 [**啟動**] 按鈕以啟動新的模擬器：
 
     ![Device Manager 中的 Android 模擬器](images/win-2019/start-emulator.png)
 
-9. Visual Studio 2019 現在應該會在 [**調試**程式] 按鈕上顯示新模擬器的名稱:
+9. Visual Studio 2019 現在應該會在 [**調試**程式] 按鈕上顯示新模擬器的名稱：
 
     ![[偵錯工具] 按鈕上的 Android 模擬器名稱](images/win-2019/debug-emulator-name.png)
 
-10. 按一下 [ **Debug** ] 按鈕, 以建立應用程式並將其部署至 Android 模擬器:
+10. 按一下 [ **Debug** ] 按鈕，以建立應用程式並將其部署至 Android 模擬器：
 
     ![顯示應用程式的 Android 模擬器](images/win-2019/android-emulator.png)
 
 ## <a name="customize-the-application"></a>自訂應用程式
 
-您可以自訂應用程式來新增互動式功能。 請執行下列步驟, 以將使用者互動新增至應用程式:
+您可以自訂應用程式來新增互動式功能。 請執行下列步驟，以將使用者互動新增至應用程式：
 
 1. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
@@ -98,9 +98,9 @@ ms.locfileid: "70199809"
 
 ## <a name="build-an-ios-app-in-visual-studio-2019"></a>在 Visual Studio 2019 中建立 iOS 應用程式
 
-您可以從 Visual Studio 與已連線的 Mac 電腦, 建立和 debug iOS 應用程式。 如需詳細資訊，請參閱[安裝指示](~/ios/get-started/installation/windows/index.md)。
+您可以從 Visual Studio 與已連線的 Mac 電腦，建立和 debug iOS 應用程式。 如需詳細資訊，請參閱[安裝指示](~/ios/get-started/installation/windows/index.md)。
 
-這段影片涵蓋使用 Windows 上的 Visual Studio 2019 建立和測試 iOS 應用程式的流程:
+這段影片涵蓋使用 Windows 上的 Visual Studio 2019 建立和測試 iOS 應用程式的流程：
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Build-Your-First-iOS-App-with-Visual-Studio-2019-and-Xamarin/player]
 
@@ -111,7 +111,7 @@ ms.locfileid: "70199809"
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
@@ -158,7 +158,7 @@ ms.locfileid: "70199809"
 
 ## <a name="step-by-step-instructions-for-mac"></a>適用於 Mac 的逐步指示
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
@@ -211,6 +211,6 @@ ms.locfileid: "70199809"
 
 ## <a name="next-steps"></a>後續步驟
 
-- [單一頁面快速入門](~/get-started/quickstarts/single-page.md)&ndash;建立功能更強大的應用程式。
-- [Xamarin.Forms 範例](~/xamarin-forms/samples/index.yml) &ndash; 下載並執行程式碼範例和範例應用程式。
-- [建立行動應用程式電子書](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; 教導 Xamarin.Forms 開發的深入章節，提供 PDF 並包含數以百計的其他範例。
+- [單一頁面快速入門](~/get-started/quickstarts/single-page.md)&ndash; 建立功能更強大的應用程式。
+- &ndash; 下載並執行程式碼範例和範例應用程式的[Xamarin Forms 範例](~/xamarin-forms/samples/index.md)。
+- [建立 Mobile Apps 電子書](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)&ndash; 深入的章節，讓您瞭解 Xamarin. 表單開發，以 PDF 形式提供，並包含數百個額外的範例。

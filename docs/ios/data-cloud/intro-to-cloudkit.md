@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 01c8df7cc17c71cd2ddd55e7ed1f5a8e21617604
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 29ccb919f68a45212bff3b66b4bc3fbdebd24faf
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030468"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663456"
 ---
 # <a name="cloudkit-in-xamarinios"></a>在 Xamarin 中 CloudKit
 
@@ -33,9 +33,9 @@ CloudKit 架構可簡化存取 iCloud 之應用程式的開發。 這包括抓�
 
 ## <a name="what-is-cloudkit"></a>什麼是 CloudKit？
 
-CloudKit 是將 iCloud 伺服器的存取權授與開發人員的方式。 它提供 iCloud 磁片磁碟機和 iCloud 相片 Library 的基礎。 Mac OS X 和 Apple iOS 裝置都支援 CloudKit。
+CloudKit 是將 iCloud 伺服器的存取權授與開發人員的方式。 它提供 iCloud 磁片磁碟機和 iCloud 相片 Library 的基礎。 MacOS 和 iOS 裝置都支援 CloudKit。
 
- [![](intro-to-cloudkit-images/image1.png "How CloudKit is supported on both Mac OS X and Apple iOS Devices")](intro-to-cloudkit-images/image1.png#lightbox)
+[![macOS 和 iOS 裝置上支援 CloudKit 的方式](intro-to-cloudkit-images/image1.png)](intro-to-cloudkit-images/image1.png#lightbox)
 
 CloudKit 會使用 iCloud 帳戶基礎結構。 如果有使用者登入裝置上的 iCloud 帳戶，CloudKit 將會使用其識別碼來識別使用者。 如果沒有可用的帳戶，則會提供有限的唯讀存取權。
 
@@ -50,23 +50,24 @@ CloudKit 同時支援結構化和大量資料。 它可以順暢地處理大型�
 
 ## <a name="enabling-cloudkit-in-a-xamarin-application"></a>在 Xamarin 應用程式中啟用 CloudKit
 
-在 Xamarin 應用程式可以利用 CloudKit 架構之前，必須正確地布建應用程式，如[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)和[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南中所述
+在 Xamarin 應用程式可以利用 CloudKit 架構之前，必須正確地布建應用程式，如[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)和[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南中所述。
+
+若要存取 CloudKit， **plist**檔案必須包含 [**啟用 iCloud**]、[索引**鍵-值] 儲存體**和 [ **CloudKit** ] 許可權。
+
+### <a name="sample-app"></a>範例應用程式
+
+[CloudKitAtlas 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-cloudkitatlas)會示範如何搭配使用 CloudKit 與 Xamarin。 下列步驟顯示如何設定範例–除了 CloudKit 以外的需求之外，還需要額外的設定：
 
 1. 在 Visual Studio for Mac 或 Visual Studio 中開啟專案。
-2. 在**方案總管**中，開啟**plist**檔案，並確定套件組合**識別碼**與在布建設定中建立的 [**應用程式**識別碼] 中所定義的套件相符：
-
-    [![](intro-to-cloudkit-images/image26a.png "Enter the Bundle Identifier")](intro-to-cloudkit-images/image26a-orig.png#lightbox "Info.plist file displaying Bundle Identifier")
-
-3. 向下**plist**檔案的底部，並選取 [**啟用背景模式**]、[**位置更新**] 和 [**遠端通知**]：
-
-    [![](intro-to-cloudkit-images/image27a.png "Select Enabled Background Modes, Location Updates and Remote Notifications")](intro-to-cloudkit-images/image27a-orig.png#lightbox "Info.plist file displaying background modes")
+2. 在**方案總管**中，開啟**plist**檔案，並確定套件組合**識別碼**符合在布建設定中建立的 [**應用程式**識別碼] 中所定義的套件組合。
+3. 向下**plist**檔案的底部，然後選取 [**啟用背景模式**]、[**位置更新**] 和 [**遠端通知**]。
 4. 以滑鼠右鍵按一下方案中的 iOS 專案，然後選取 [**選項**]。
 5. 選取 [IOS 套件組合**簽署**]，然後選取先前建立的**開發人員身分識別**和布建**設定檔**。
-6. 請確認**權利。 plist**包含**Enable iCloud** 、 **Key-value storage**和**CloudKit** 。
-7. 請確定應用程式有**無所不在容器**（如上面所建立）。 範例：`iCloud.com.your-company.CloudKitAtlas`
+6. 請確認**權利。 plist**包含**Enable iCloud**、 **Key-value storage**和**CloudKit**。
+7. 請確定應用程式的**無所不在容器**存在。 範例：`iCloud.com.your-company.CloudKitAtlas`
 8. 將變更儲存到檔案。
 
-這些設定都備妥之後，應用程式就可以開始存取 CloudKit Framework Api。
+備妥這些設定後，範例應用程式現在已可存取 CloudKit Framework Api，以及背景、位置和通知服務。
 
 ## <a name="cloudkit-api-overview"></a>CloudKit API 總覽
 
@@ -102,11 +103,7 @@ ICloud 資料的容器化也可讓 CloudKit 封裝使用者資訊。 如此一�
 
 容器是由應用程式的開發人員透過 WWDR 入口網站完全管理。 容器的命名空間在所有的 Apple 開發人員中都是全域的，因此，容器不得只有特定開發人員的應用程式才能使用，而是對所有 Apple 開發人員和應用程式都是唯一的。
 
-Apple 建議在建立應用程式容器的命名空間時，使用反向 DNS 標記法。 範例：
-
-```csharp
-iCloud.com.company-name.application-name
-```
+Apple 建議在建立應用程式容器的命名空間時，使用反向 DNS 標記法。 範例：`iCloud.com.company-name.application-name`
 
 雖然容器預設會系結至指定的應用程式，但它們可以在應用程式之間共用。 因此，多個應用程式可以在單一容器上協調。 單一應用程式也可以與多個容器交談。
 
@@ -130,11 +127,11 @@ CloudKit 的主要功能之一，就是採用應用程式的資料模型和複�
 
 ```csharp
 using CloudKit;
-...
+//...
 
 public CKDatabase PublicDatabase { get; set; }
 public CKDatabase PrivateDatabase { get; set; }
-...
+//...
 
 // Get the default public and private databases for
 // the application
@@ -181,10 +178,10 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 ```csharp
 using CloudKit;
-...
+//...
 
 private const string ReferenceItemRecordName = "ReferenceItems";
-...
+//...
 
 var newRecord = new CKRecord (ReferenceItemRecordName);
 newRecord ["name"] = (NSString)nameTextField.Text;
@@ -221,7 +218,7 @@ await CloudManager.SaveAsync (newRecord);
 var recordID =  new CKRecordID("My Record");
 ```
 
-### <a name="references"></a>reference
+### <a name="references"></a>參考
 
 參考提供給定資料庫中相關記錄間的關聯性：
 
@@ -302,13 +299,10 @@ namespace CloudKitAtlas
     [Register ("AppDelegate")]
     public partial class AppDelegate : UIApplicationDelegate
     {
-        #region Computed Properties
         public override UIWindow Window { get; set;}
         public CKDatabase PublicDatabase { get; set; }
         public CKDatabase PrivateDatabase { get; set; }
-        #endregion
 
-        #region Override Methods
         public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
         {
             application.RegisterForRemoteNotifications ();
@@ -335,7 +329,6 @@ namespace CloudKitAtlas
         {
             Console.WriteLine ("Push received");
         }
-        #endregion
     }
 }
 ```
@@ -346,13 +339,11 @@ namespace CloudKitAtlas
 
 ```csharp
 using CloudKit;
-...
+//...
 
-#region Computed Properties
 public AppDelegate ThisApp {
     get { return (AppDelegate)UIApplication.SharedApplication.Delegate; }
 }
-#endregion
 ```
 
 這會新增 `AppDelegate` 的快捷方式，並存取上面建立的公用和私用資料庫快捷方式。
@@ -635,7 +626,7 @@ public override void ReceivedRemoteNotification (UIApplication application, NSDi
 
 如同本文開頭所述，CloudKit 是建立在現有的 iCloud 基礎結構之上。 下一節將詳細說明如何使用 CloudKit API 將帳戶公開給開發人員。
 
-### <a name="authentication"></a>驗證
+### <a name="authentication"></a>驗證  (可能為英文網頁)
 
 處理使用者帳戶時，第一個考慮是驗證。 CloudKit 支援透過裝置上目前登入的 iCloud 使用者進行驗證。 驗證會在幕後進行，並由 iOS 處理。 如此一來，開發人員就不需要擔心執行驗證的細節。 他們只會測試使用者是否已登入。
 
@@ -650,7 +641,7 @@ CloudKit 提供下列使用者資訊給開發人員：
 
 接下來，我們將詳細探討這些主題。
 
-#### <a name="identity"></a>識別
+#### <a name="identity"></a>Identity
 
 如上所述，CloudKit 提供了一種方法，讓應用程式可以唯一識別指定的使用者：
 
@@ -750,7 +741,7 @@ CloudKit 也提供一種方式，可讓您藉由查詢整個通訊錄，探索�
 
 ```csharp
 public CKDiscoveredUserInfo UserInfo { get; set; }
-...
+//...
 
 // Get the user's metadata
 CKContainer.DefaultContainer.DiscoverUserInfo(UserID, (info, e) => {
@@ -863,6 +854,6 @@ CloudKit 為應用程式的記錄類型和資料提供個別的開發和生產�
 
 ## <a name="related-links"></a>相關連結
 
+- [CloudKit （Apple）](https://developer.apple.com/icloud/cloudkit/)
 - [CloudKitAtlas （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-cloudkitatlas)
-- [iOS 8 簡介](~/ios/platform/introduction-to-ios8.md)
 - [建立布建設定檔](~/ios/get-started/installation/device-provisioning/index.md)

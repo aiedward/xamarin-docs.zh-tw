@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 658bb65c9f9dea2c68b782736de02d95df368dd3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 97c582ada0951f530885359112c3c7adfacc3502
+ms.sourcegitcommit: bdb8ad7337931adf2ea45b10c2af81ecc4aad26a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024858"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75500231"
 ---
 # <a name="creating-a-service"></a>建立服務
 
@@ -38,7 +38,7 @@ public class DemoService : Service
 <service android:name="md5a0cbbf8da641ae5a4c781aaf35e00a86.DemoService" />
 ```
 
-您可以藉由_匯出_服務與其他 Android 應用程式共用。 這是藉由在 `ServiceAttribute` 上設定 `Exported` 屬性來完成。 匯出服務時，也應該設定 `ServiceAttribute.Name` 屬性，為服務提供有意義的公用名稱。 此程式碼片段示範如何匯出和命名服務：
+您可以藉由_匯出_服務與其他 Android 應用程式共用。 這是藉由在 `ServiceAttribute`上設定 `Exported` 屬性來完成。 匯出服務時，也應該設定 `ServiceAttribute.Name` 屬性，為服務提供有意義的公用名稱。 此程式碼片段示範如何匯出和命名服務：
 
 ```csharp
 [Service(Exported=true, Name="com.xamarin.example.DemoService")]
@@ -75,7 +75,7 @@ public class DemoService : Service
 
 在 Android 中啟動服務的最基本方式是分派包含中繼資料的 `Intent`，以協助識別應該啟動的服務。 有兩種不同的意圖樣式可以用來啟動服務：
 
-- **明確意圖 &ndash;** _明確意圖_會識別應該使用哪一種服務來完成指定的動作。 明確的意圖可以視為具有特定位址的字母;Android 會將意圖路由傳送至明確識別的服務。 此程式碼片段是使用明確意圖啟動名為 `DownloadService` 之服務的其中一個範例：
+- **明確意圖 &ndash;** _明確意圖_會識別應該使用哪一種服務來完成指定的動作。 明確的意圖可以視為具有特定位址的字母;Android 會將意圖路由傳送至明確識別的服務。 此程式碼片段是使用明確意圖啟動名為 `DownloadService`之服務的其中一個範例：
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ public class DemoService : Service
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
-- **隱含意圖**&ndash; 這種意圖會鬆散識別使用者想要執行的動作，但完成該動作的確切服務是未知的。 隱含的意圖可以視為「可能會關注的目標」的字母。
+- **隱含意圖**&ndash; 這種意圖會鬆散識別使用者想要執行的動作類型，但完成該動作的確切服務是未知的。 隱含的意圖可以視為「可能會關注的目標」的字母。
     Android 會檢查意圖的內容，並判斷是否有符合意圖的現有服務。
 
     _意圖篩選_是用來協助符合隱含意圖與已註冊的服務。 意圖篩選是新增至**androidmanifest.xml**的 xml 專案，其中包含必要的中繼資料，以協助符合具有隱含意圖的服務。
@@ -106,7 +106,7 @@ public class DemoService : Service
 
 ### <a name="creating-an-intent-filter-for-implicit-intents"></a>為隱含意圖建立意圖篩選
 
-若要將服務與隱含意圖建立關聯，Android 應用程式必須提供一些中繼資料來識別服務的功能。 此中繼資料是由_意圖篩選_條件所提供。 意圖篩選包含某些資訊（例如動作或資料類型），其必須存在於意圖中以啟動服務。 在 Xamarin 中，意圖篩選是以[`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)來裝飾服務，在**androidmanifest.xml**中註冊。 例如，下列程式碼會使用 `com.xamarin.DemoService` 的相關聯動作來新增意圖篩選：
+若要將服務與隱含意圖建立關聯，Android 應用程式必須提供一些中繼資料來識別服務的功能。 此中繼資料是由_意圖篩選_條件所提供。 意圖篩選包含某些資訊（例如動作或資料類型），其必須存在於意圖中以啟動服務。 在 Xamarin 中，意圖篩選是以[`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)來裝飾服務，在**androidmanifest.xml**中註冊。 例如，下列程式碼會使用 `com.xamarin.DemoService`的相關聯動作來新增意圖篩選：
 
 ```csharp
 [Service]
@@ -130,7 +130,7 @@ public class DemoService : Service
 
 ## <a name="related-links"></a>相關連結
 
-- [Android 應用程式服務](xref:Android.App.Service)
+- [Android.App.Service](xref:Android.App.Service)
 - [ServiceAttribute](xref:Android.App.ServiceAttribute)
 - [Android. App. 意圖](xref:Android.Content.Intent)
 - [IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/28/2019
-ms.openlocfilehash: d47146c90635084a4974cfa0c7dcb142ac918788
-ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
+ms.openlocfilehash: 64fa15a15468a84ada3a377a9ac85bbf6310099c
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74556171"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490034"
 ---
 # <a name="xamarinforms-label"></a>Xamarin. 表單標籤
 
@@ -190,11 +190,9 @@ Label label = new Label
 
 ```xaml
 <Label TextType="Html">
-    <x:String>
-        <![CDATA[
-        This is <strong style="color:red">HTML</strong> text.
-        ]]>
-    </x:String>
+    <![CDATA[
+    This is <strong style="color:red">HTML</strong> text.
+    ]]>
 </Label>
 ```
 
@@ -406,7 +404,7 @@ Label label = new Label
 
 如需填補的詳細資訊，請參閱[邊界和填補](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
-## <a name="hyperlinks"></a>指向
+## <a name="hyperlinks"></a>超連結
 
 [`Label`](xref:Xamarin.Forms.Label)和[`Span`](xref:Xamarin.Forms.Span)實例所顯示的文字，可以使用下列方法轉換成超連結：
 
@@ -438,7 +436,7 @@ Label label = new Label
 
 在此範例中，第一個和第三個[`Span`](xref:Xamarin.Forms.Span)實例會包含文字，而第二個 `Span` 則代表 tappable 超連結。 其文字色彩設為藍色，且具有底線文字裝飾。 這會建立超連結的外觀，如下列螢幕擷取畫面所示：
 
-[![指向](label-images/hyperlinks-small.png "指向")](label-images/hyperlinks-large.png#lightbox)
+[![指向](label-images/hyperlinks-small.png "超連結")](label-images/hyperlinks-large.png#lightbox)
 
 當按下超連結時， [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)會藉由執行其[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)屬性所定義的 `ICommand` 來回應。 此外， [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性所指定的 URL 將會以參數的形式傳遞至 `ICommand`。
 
@@ -522,7 +520,7 @@ public class HyperlinkSpan : Span
 
 ## <a name="related-links"></a>相關連結
 
-- [文字（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [文字 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [超連結（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [使用 Xamarin 建立 Mobile Apps，第3章](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [Label API](xref:Xamarin.Forms.Label)

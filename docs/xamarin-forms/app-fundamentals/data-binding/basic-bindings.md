@@ -8,16 +8,16 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d981307ae96f75c67442d3898255c8bed62f1cf7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771721"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545659"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本繫結
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 Xamarin.Forms 資料繫結會連結兩個物件之間的一組屬性，而這兩個物件其中至少一個通常是使用者介面物件。 這兩個物件稱為「目標」和「來源」：
 
@@ -97,7 +97,7 @@ label.SetBinding(RotationProperty, "Value");
 
 在您操作 `Slider` 時，`Label` 會跟著旋轉：
 
-[![基本程式碼繫結](basic-bindings-images/basiccodebinding-small.png "基本程式碼繫結")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本程式碼繫結")
+[![基本程式碼系結](basic-bindings-images/basiccodebinding-small.png "基本程式碼系結")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本程式碼系結")
 
 [基本 XAML 繫結] 頁面與 [基本程式碼繫結] 相同，不同之處在於它會在 XAML 中定義整個資料繫結：
 
@@ -193,11 +193,11 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 執行此程式可能會有點令人驚訝：
 
-[![替代程式碼繫結](basic-bindings-images/alternativecodebinding-small.png "替代程式碼繫結")](basic-bindings-images/alternativecodebinding-large.png#lightbox "替代程式碼繫結")
+[![替代程式碼系結](basic-bindings-images/alternativecodebinding-small.png "替代程式碼系結")](basic-bindings-images/alternativecodebinding-large.png#lightbox "替代程式碼系結")
 
 左側的 iOS 畫面會顯示頁面第一次出現時的螢幕外觀。 `Label` 在哪裡？
 
-問題在於 `Slider` 初始值為 0。 這會導致 `Label` 的 `Scale` 屬性也設定為 0，覆寫其預設值 1。 這導致一開始看不到 `Label`。 如 Android 和通用 Windows 平台 (UWP) 的螢幕擷取畫面所示，您可以操作 `Slider`，讓 `Label` 再次出現，但其初始消失令人不安。
+問題在於 `Slider` 初始值為 0。 這會導致 `Label` 的 `Scale` 屬性也設定為 0，覆寫其預設值 1。 這導致一開始看不到 `Label`。 如 Android 螢幕擷取畫面所示，您可以操作 `Slider`，讓 `Label` 再次出現，但其初始消失是令人不安。
 
 您將在[下一篇文章](binding-mode.md)中發現如何藉由從 `Scale` 屬性的預設值初始化 `Slider` 來避免這個問題。
 
@@ -325,7 +325,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 `StackLayout` 的 `BindingContext` 屬性設定為 `slider` 物件。 這個繫結內容同時由 `Label` 和 `BoxView` 繼承，這兩者的 `Rotation` 屬性都設定為 `Slider` 的 `Value` 屬性：
 
-[![繫結內容繼承](basic-bindings-images/bindingcontextinheritance-small.png "繫結內容繼承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "繫結內容繼承")
+[![系結內容繼承](basic-bindings-images/bindingcontextinheritance-small.png "繫結內容繼承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "繫結內容繼承")
 
 在[下一篇文章](binding-mode.md)中，您會看到「繫結模式」如何變更目標和來源物件之間的資料流程。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 50d13532585e6edc3dac530558937ee6e0a02268
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4f73ea249d29075b0e9e115e86afc971632b7b61
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032801"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487499"
 ---
 # <a name="text-translation-using-the-translator-api"></a>使用翻譯工具 API 進行文字翻譯
 
@@ -20,20 +20,23 @@ ms.locfileid: "73032801"
 
 _Microsoft Translator API 可透過 REST API 用來轉譯語音和文字。本文說明如何使用 Microsoft 翻譯工具文字 API，在 Xamarin. Forms 應用程式中將文字翻譯成另一種語言。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Translator API 有兩個元件：
 
 - 文字翻譯 REST API 將文字從一種語言翻譯成另一種語言的文字。 API 會自動偵測在翻譯之前所傳送文字的語言。
-- 語音翻譯 REST API 將語音從一種語言轉譯成另一種語言的文字。 此 API 也會整合文字轉換語音功能，以向後說出翻譯的文字。
+- 語音翻譯 REST API 將語音從一種語言轉譯成另一種語言的文字。 此 API 也會整合文字轉換語音功能，以說出翻譯的文字。
 
 本文著重于使用翻譯工具文字 API，將文字翻譯成另一種語言。
+
+> [!NOTE]
+> 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
 
 必須取得 API 金鑰，才能使用翻譯工具文字 API。 這可以在[如何註冊 Microsoft 翻譯工具文字 API](/azure/cognitive-services/translator/translator-text-how-to-signup/)中取得。
 
 如需有關 Microsoft 翻譯工具文字 API 的詳細資訊，請參閱[翻譯工具文字 API 檔](/azure/cognitive-services/translator/)。
 
-## <a name="authentication"></a>驗證
+## <a name="authentication"></a>驗證  (可能為英文網頁)
 
 對翻譯工具文字 API 提出的每個要求都需要 JSON Web 權杖（JWT）存取權杖，可從 `https://api.cognitive.microsoft.com/sts/v1.0/issueToken`的認知服務權杖服務取得。 您可以對權杖服務提出 POST 要求來取得權杖，並指定 `Ocp-Apim-Subscription-Key` 標頭，其中包含 API 金鑰做為其值。
 
