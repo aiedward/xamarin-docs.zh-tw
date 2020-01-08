@@ -22,7 +22,7 @@
               href: app-fundamentals/building-cross-platform-applications/architecture.md
             - name: 第 3 部分 - 設定 Xamarin 跨平台解決方案
               href: app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution.md
-            - name: 第 4 部分 - 處理多個平台
+            - name: 第 4 部分 - 處理多平台狀況
               href: app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation.md
             - name: 第 5 部分 - 實用的程式碼共用策略
               href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
@@ -53,7 +53,7 @@
               href: app-fundamentals/nuget-multiplatform-libraries/platform-specific.md
             - name: 中繼資料指南
               href: app-fundamentals/nuget-multiplatform-libraries/metadata.md
-        - name: NuGet 套件 (手動)
+        - name: NuGet 套件 (手冊)
           href: app-fundamentals/nuget-manual.md
         - name: 在跨平台應用程式中使用 C/C++ 程式庫
           href: cpp/index.md
@@ -69,7 +69,7 @@
         - name: 'F#'
           href: platform/fsharp/index.md
           items:
-            - name: 快速入門
+            - name: 開始使用
               href: platform/fsharp/overview.md
             - name: 'F# 範例'
               href: platform/fsharp/samples.md
@@ -88,6 +88,8 @@
         - name: 效能
           href: deploy-test/memory-perf-best-practices.md
           items:
+            - name: Xamarin.Forms 效能
+              href: ~/xamarin-forms/deploy-test/performance.md?context=xamarin/cross-platform
             - name: Android 效能
               href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
             - name: iOS 效能
@@ -108,10 +110,10 @@
           href: deploy-test/connect-to-local-web-services.md
         - name: 自訂連結器組態
           href: deploy-test/linker.md
-        - name: 多重處理序偵錯
+        - name: 多處理序偵錯
           href: deploy-test/multi-process-debugging.md
     - name: 桌面開發人員
-      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers'
+      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP developers'
       href: desktop/index.md
       items:
         - name: 應用程式生命週期的比較
@@ -171,4 +173,4 @@
         - name: 將元件參考更新為 NuGet
           href: troubleshooting/component-nuget.md
     - name: 範例
-      href: samples/index.yml
+      href: samples/index.md

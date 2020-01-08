@@ -1,5 +1,5 @@
 - name: 工具
-  href: index.yml
+  href: index.md
   expanded: true
   items:
     - name: iOS 模擬器
@@ -22,7 +22,7 @@
       items:
         - name: 關於 Xamarin Live Player 預覽
           href: live-player/index.md
-        - name: Visual Studio 設定
+        - name: Visual Studio 組態
           href: live-player/install.md
         - name: Xamarin Live Player 應用程式
           href: live-player/player.md

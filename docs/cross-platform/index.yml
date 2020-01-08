@@ -1,89 +1,83 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: 跨平台指引
+summary: Xamarin 提供適用於行動裝置、平板電腦和傳統型應用程式的跨平台開發解決方案。 本節包含適用所有目標平台的詳細資料。
 metadata:
-  description: 適用於行動裝置開發人員的跨平台指引。
+  title: 跨平台指引
+  description: Xamarin 提供適用於行動裝置、平板電腦和傳統型應用程式的跨平台開發解決方案。 本節包含適用所有目標平台的詳細資料。
   author: davidortinau
   ms.author: daortin
-  ms.date: 04/25/2018
+  ms.date: 12/23/2019
   ms.topic: landing-page
-abstract:
-  description: Xamarin 提供適用於行動裝置、平板電腦和傳統型應用程式的跨平台開發解決方案。 本節涵蓋無論您以哪一個平台為目標皆適用的詳細資料。
-  menu:
-    items:
-      - href: ~/cross-platform/samples/index.yml
-        text: Xamarin 範例
-      - href: /visualstudio/
-        text: Visual Studio
-      - href: /visualstudio/mac/
-        text: Visual Studio for Mac
-sections:
-  - title: 開始使用
-    items:
-      - type: paragraph
-        text: '了解如何使用 Xamarin 和 C# 建置您的第一個適用於 Android、iOS、macOS、UWP 及更多平台的應用程式。'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 需求
-            href: ~/cross-platform/get-started/requirements.md
-          - image:
-              src: ~/media/icons/i_desktop-phone.svg
-            text: Xamarin.Forms
-            href: ~/get-started/quickstarts/index.yml
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: Android
-            href: ~/android/get-started/hello-android/hello-android-quickstart
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-            text: iOS
-            href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-            text: Mac
-            href: ~/mac/get-started/hello-mac.md
-  - title: 輔助線
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: ~/cross-platform/get-started/index.md
-            html: 使用 Xamarin 開發行動應用程式的簡介。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-              href: ~/cross-platform/get-started/index.md
-            title: 建置行動應用程式
-          - href: ~/cross-platform/platform/index.md
-            html: 'Xamarin 支援 C#、F# 和 Razor 樣板化引擎。'
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: ~/cross-platform/platform/index.md
-            title: 語言支援
-          - href: ~/cross-platform/app-fundamentals/index.md
-            html: 建置應用程式所需知道的一切。
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: ~/cross-platform/app-fundamentals/index.md
-            title: 共用程式碼
-          - href: ~/cross-platform/deploy-test/performance.md
-            html: 應用程式效能和安全性指導方針。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-performance.svg'
-              href: ~/cross-platform/deploy-test/performance.md
-            title: 效能與安全性
-          - href: ~/cross-platform/deploy-test/index.md
-            html: 偵錯和部署的秘訣。
-            image:
-              src: ~/media/icons/i_deploy-test.svg
-              href: ~/cross-platform/deploy-test/index.md
-            title: 部署和偵錯
-          - href: ~/cross-platform/desktop/index.md
-            html: 適用於有意建置行動應用程式之 .NET 桌面開發人員的指引。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-              href: ~/cross-platform/desktop/index.md
-            title: 桌面開發人員
+  ms.openlocfilehash: 244eb52cd22e04518da8d69b6e74dd0e1b68bf0a
+  ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75488552"
+landingContent:
+- title: 建置跨平台應用程式
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 需求
+      url: ~/cross-platform/get-started/requirements.md
+    - text: Xamarin.Forms
+      url: ~/get-started/quickstarts/index.yml
+    - text: .NET Standard
+      url: ~/cross-platform/app-fundamentals/net-standard.md
+  - linkListType: how-to-guide
+    links:
+    - text: 應用程式開發週期
+      url: ~/cross-platform/get-started/introduction-to-mobile-sdlc.md
+    - text: 逐步解說
+      url: ~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md
+- title: 語言支援
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 總覽
+      url: ~/cross-platform/platform/index.md
+    - text: C#
+      url: ~/cross-platform/platform/csharp-six.md
+    - text: F#
+      url: ~/cross-platform/platform/fsharp/index.md
+    - text: Visual Basic
+      url: ~/cross-platform/platform/visual-basic/index.md
+    - text: Razor HTML 範本
+      url: ~/cross-platform/platform/razor-html-templates/index.md
+- title: 效能與安全性
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Xamarin.Forms 效能
+      url: /xamarin/xamarin-forms/deploy-test/performance?context=xamarin/cross-platform
+    - text: Android 效能
+      url: /xamarin/android/deploy-test/performance?context=xamarin/cross-platform
+    - text: iOS 效能
+      url: /xamarin/ios/deploy-test/performance?context=xamarin/cross-platform
+    - text: Mac 效能
+      url: /xamarin/mac/deploy-test/performance?context=xamarin/cross-platform
+    - text: 傳輸層安全性 (TLS) 1.2
+      url: ~/cross-platform/app-fundamentals/transport-layer-security.md
+- title: 部署和偵錯
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 自訂連結器組態
+      url: ~/cross-platform/deploy-test/linker.md
+  - linkListType: how-to-guide
+    links:
+    - text: 連線到本機 Web 服務
+      url: ~/cross-platform/deploy-test/connect-to-local-web-services.md
+    - text: 多處理序偵錯
+      url: ~/cross-platform/deploy-test/multi-process-debugging.md
+- title: 桌面開發人員
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 應用程式生命週期的比較
+      url: ~/cross-platform/desktop/lifecycle.md
+    - text: UI 控制項的比較
+      url: ~/cross-platform/desktop/controls/index.md
+    - text: 移植指南
+      url: ~/cross-platform/desktop/porting.md
