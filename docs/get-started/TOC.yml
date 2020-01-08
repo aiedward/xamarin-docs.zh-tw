@@ -26,7 +26,7 @@
     - name: 第一個應用程式
       href: first-app/index.md
     - name: 快速入門
-      href: quickstarts/index.yml
+      href: quickstarts/index.md
       expanded: true
       items:
         - name: '[檔案] > [新增]'
@@ -70,11 +70,7 @@
     - name: 了解 Xamarin
       expanded: true
       items:
-        - name: 原生應用程式
-          href: ~/cross-platform/get-started/introduction-to-mobile-development.md
         - name: .NET 開發人員
-          href: ~/cross-platform/desktop/index.md
-        - name: ASP.NET 開發人員
           href: ~/cross-platform/desktop/index.md
         - name: Java 開發人員
           href: ~/android/get-started/java-developers.md
