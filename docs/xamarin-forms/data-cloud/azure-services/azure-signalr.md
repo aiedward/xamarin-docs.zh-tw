@@ -6,12 +6,12 @@ ms.assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 06/07/2019
-ms.openlocfilehash: e95dd72513562bba9fb513c4742e476bc7be0c94
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: HT
+ms.openlocfilehash: 7b5cb6a93e5dcb958fcb30f0469b8300b169ee86
+ms.sourcegitcommit: cead6f989860331777b0502a5e56269958046517
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487401"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75687423"
 ---
 # <a name="azure-signalr-service-with-xamarinforms"></a>使用 Xamarin 的 Azure SignalR Service
 
@@ -208,6 +208,7 @@ public async Task ConnectAsync()
         string negotiateJson = await client.GetStringAsync($"{Constants.HostName}/api/negotiate");
         NegotiateInfo negotiate = JsonConvert.DeserializeObject<NegotiateInfo>(negotiateJson);
         HubConnection connection = new HubConnectionBuilder()
+            .AddNewtonsoftJsonProtocol()
             .WithUrl(negotiate.Url, options =>
             {
                 options.AccessTokenProvider = async () => negotiate.AccessToken;
@@ -228,6 +229,9 @@ public async Task ConnectAsync()
     }
 }
 ```
+
+> [!NOTE]
+> 根據預設，SignalR 服務會使用 `System.Text.Json` 來序列化和還原序列化 JSON。 與其他程式庫（例如 Newtonsoft）序列化的資料可能無法由 SignalR 服務還原序列化。 範例專案中的 `HubConnection` 實例包含呼叫 `AddNewtonsoftJsonProtocol` 以指定 JSON 序列化程式。 這個方法是在名為**AspNetCore SignalR**的特殊 NuGet 套件中定義，必須包含在專案中。 如果您使用 `System.Text.Json` 來序列化/還原序列化 JSON 資料，則不應使用此方法和 NuGet 套件。
 
 `AddNewMessage` 方法會系結為 `ConnectAsync` 訊息中的事件處理常式，如先前的程式碼所示。 當收到訊息時，會使用以 `JObject`提供的訊息資料來呼叫 `AddNewMessage` 方法。 `AddNewMessage` 方法會將 `JObject` 轉換為 `Message` 類別的實例，然後叫用 `NewMessageReceived` 的處理常式（如果已系結）。 下列程式碼顯示 `AddNewMessage` 方法：
 
