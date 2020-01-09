@@ -1,63 +1,45 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Forms 部署及測試
+summary: 了解如何穩定及發佈 Xamarin.Forms 應用程式。
 metadata:
   title: Xamarin.Forms 部署及測試
-  description: 了解如何穩定及發佈 Xamarin.Forms 應用程式。 這包括微調效能，以及使用 Xamarin.UITest 與 App Center 進行自動化的測試。
+  description: 了解如何穩定及發佈 Xamarin.Forms 應用程式。 這包括微調效能，以及使用 Xamarin.UITest 與 Visual Studio App Center 進行自動化測試。
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: 705c9fa4-12ef-4ee0-ab3e-8319ee9944c5
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/23/2019
-abstract:
-  description: 了解如何穩定及發佈 Xamarin.Forms 應用程式。 這包括微調效能，以及使用 Xamarin.UITest 與 App Center 進行自動化的測試。
-sections:
-  - title: 測試
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: performance.md
-            html: 了解如何對 Xamarin.Forms 應用程式進行效能微調。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-performance.svg'
-              href: performance.md
-            title: 提升應用程式效能
-          - href: /appcenter/test-cloud/
-            html: 了解如何透過對裝載在 Microsoft 資料中心中數以百計的唯一裝置執行測試，來進行自動化的行動應用程式測試。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_test.svg'
-              href: /appcenter/test-cloud/
-            title: 使用 Visual Studio App Center 進行自動化的測試
-  - title: 部署
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: ~/ios/deploy-test/app-distribution/index.md
-            html: 了解如何透過 Apple 的 App Store、內部作業與臨機操作管道來散發 iOS 應用程式。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
-              href: ~/ios/deploy-test/app-distribution/index.md
-            title: 發佈 iOS 應用程式
-          - href: ~/android/deploy-test/publishing/index.md
-            html: 了解如何透過電子郵件、私人網頁伺服器、Google Play 或適用於 Android 的 Amazon App Store 等管道來散發 Android 應用程式。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_android.svg'
-              href: ~/android/deploy-test/publishing/index.md
-            title: 發佈 Android 應用程式
-          - href: /windows/uwp/packaging/
-            html: 了解如何透過 Microsoft Store、直接將應用程式套件側載到裝置，或透過 Web 安裝來散發 UWP 應用程式。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_Windows.svg'
-              href: /windows/uwp/packaging/
-            title: 發佈通用 Windows 平台應用程式
-          - href: ~/mac/deploy-test/publishing-to-the-app-store/index.md
-            html: 了解如何透過 Mac App Store 或直接散發來散發 Mac 應用程式。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-              href: ~/mac/deploy-test/publishing-to-the-app-store/index.md
-            title: 發佈 Mac 應用程式
+  ms.date: 01/03/2020
+  ms.openlocfilehash: 39d3458fab6f5eaf827a5475c919c3d9767b01d3
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679619"
+landingContent:
+- title: 測試
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 提升應用程式效能
+      url: performance.md
+    - text: 使用 Visual Studio App Center 進行自動化測試
+      url: /appcenter/test-cloud/
+- title: 部署
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 發佈 iOS 應用程式
+      url: ~/ios/deploy-test/app-distribution/index.md
+    - text: 發佈 Android 應用程式
+      url: ~/android/deploy-test/publishing/index.md
+    - text: 發佈通用 Windows 平台應用程式
+      url: /windows/uwp/packaging/
+- title: Microsoft Learn 課程模組
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: App Center 簡介
+      url: /learn/modules/intro-to-app-center/
+    - text: 準備發佈您的 Xamarin 應用程式
+      url: /learn/modules/prepare-to-publish-your-xamarin-application/

@@ -1,169 +1,93 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin 使用者入門
+summary: Xamarin.Forms 是一種跨平台 UI 工具組，可讓開發人員有效地建立能夠跨 iOS、Android 和通用 Windows 平台應用程式共用的原生使用者介面版面配置。
 metadata:
   title: Xamarin 使用者入門
   description: 關於使用 Visual Studio 和 Visual Studio for Mac 開發 Xamarin 應用程式的文章、快速入門和教學課程。
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: 0F440777-74A2-4AE5-AD1E-5B51EB8BD228
-  ms.technology: xamarin-forms
   author: davidbritch
   ms.author: dabritch
-  ms.date: 02/15/2018
-abstract:
-  description: Xamarin.Forms 是一種跨平台 UI 工具組，可讓開發人員有效地建立能夠跨 iOS、Android 和通用 Windows 平台應用程式共用的原生使用者介面版面配置。 如需完整 Xamarin.Forms 文件，請參閱 <a href="/xamarin/xamarin-forms/">Xamarin.Forms 文件</a>。
-sections:
-  - title: 開始使用
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: requirements.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_tasks.svg'
-            title: 需求
-          - href: installation/index.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            title: 安裝
-          - href: first-app/index.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-            title: 建置您的第一個應用程式
-  - title: 快速入門
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: quickstarts/single-page.md
-            html: <p></p>
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-            title: 建立單頁 Xamarin.Forms 應用程式
-          - href: quickstarts/multi-page.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_class.svg'
-            title: 在多頁 Xamarin.Forms 應用程式中執行巡覽
-          - href: quickstarts/database.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_generic-database.svg'
-            title: 將資料儲存在本機 SQLite.NET 資料庫中
-          - href: quickstarts/styling.md
-            html: <p></p>
-            image:
-              src: ~/media/icons/i_user-interface.svg
-            title: 設計跨平台 Xamarin.Forms 應用程式
-          - href: quickstarts/deepdive.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
-            title: 快速入門深度剖析
-  - title: 教學課程
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: tutorials/stacklayout/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-            title: StackLayout
-          - href: tutorials/label/
-            html: <p></p>
-            image:
-              src: ~/media/icons/i_form-label.svg
-            title: 標籤
-          - href: tutorials/button/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_button.svg'
-            title: 按鈕
-          - href: tutorials/entry/
-            html: <p></p>
-            image:
-              src: ~/media/icons/i_form-entry.svg
-            title: 進入
-          - href: tutorials/editor/
-            html: <p></p>
-            image:
-              src: ~/media/icons/i_form-editor.svg
-            title: 編輯器
-          - href: tutorials/image/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_account-management.svg'
-            title: Image
-          - href: tutorials/grid/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_table.svg'
-            title: Grid
-          - href: tutorials/listview/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_sharepoint-list.svg'
-            title: ListView
-          - href: tutorials/pop-ups/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_alert.svg'
-            title: 快顯視窗
-          - href: tutorials/app-lifecycle/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_agile.svg'
-            title: 應用程式生命週期
-          - href: tutorials/local-database/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_generic-database.svg'
-            title: 本機資料庫
-          - href: tutorials/web-service/
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_server.svg'
-            title: Web 服務
-  - title: 了解 Xamarin
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: ~/cross-platform/get-started/introduction-to-mobile-development.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_xamarin.svg'
-            title: 原生應用程式
-          - href: ~/cross-platform/desktop/index.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_NET.svg'
-            title: .NET 開發人員
-          - href: ~/android/get-started/java-developers.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_java.svg'
-            title: Java 開發人員
-          - href: ~/ios/get-started/objective-c-developers/index.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_xcode.svg'
-            title: Objective-C 開發人員
-          - href: ~/xamarin-forms/data-cloud/index.md
-            html: <p></p>
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_azure.svg'
-            title: Azure
+  ms.date: 12/23/2019
+  ms.openlocfilehash: 980fced1b47ff1fa51e6f39840dc2cafce9a239e
+  ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 01/07/2020
+  ms.locfileid: "75718723"
+landingContent:
+- title: 開始使用
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 什麼是 Xamarin？
+      url: ~/get-started/what-is-xamarin.md
+    - text: 需求
+      url: requirements.md
+  - linkListType: how-to-guide
+    links:
+    - text: 安裝
+      url: installation/index.md
+    - text: 建置您的第一個應用程式
+      url: first-app/index.md
+- title: 快速入門
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 建立單頁 Xamarin.Forms 應用程式
+      url: quickstarts/single-page.md
+    - text: 在多頁 Xamarin.Forms 應用程式中執行巡覽
+      url: quickstarts/multi-page.md
+    - text: 將資料儲存在本機 SQLite.NET 資料庫中
+      url: quickstarts/database.md
+    - text: 設計跨平台 Xamarin.Forms 應用程式
+      url: quickstarts/styling.md
+  - linkListType: concept
+    links:
+    - text: 快速入門深度剖析
+      url: quickstarts/deepdive.md
+- title: 使用者介面教學課程
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: StackLayout
+      url: tutorials/stacklayout/index.yml
+    - text: 標籤
+      url: tutorials/label/index.yml
+    - text: 按鈕
+      url: tutorials/button/index.yml
+    - text: 進入
+      url: tutorials/entry/index.yml
+    - text: 編輯器
+      url: tutorials/editor/index.yml
+    - text: Image
+      url: tutorials/image/index.yml
+    - text: Grid
+      url: tutorials/grid/index.yml
+    - text: ListView
+      url: tutorials/listview/index.yml
+    - text: 快顯視窗
+      url: tutorials/pop-ups/index.yml
+- title: 應用程式基本概念
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 應用程式生命週期
+      url: tutorials/app-lifecycle/index.yml
+    - text: 本機資料庫
+      url: tutorials/local-database/index.yml
+    - text: Web 服務
+      url: tutorials/web-service/index.yml
+- title: 了解 Xamarin
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: .NET 開發人員
+      url: ~/cross-platform/desktop/index.md
+    - text: Java 開發人員
+      url: ~/android/get-started/java-developers.md
+    - text: Objective-C 開發人員
+      url: ~/ios/get-started/objective-c-developers/index.md
+    - text: Azure
+      url: ~/xamarin-forms/data-cloud/index.yml

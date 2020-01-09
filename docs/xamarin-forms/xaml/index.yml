@@ -1,6 +1,6 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: eXtensible Application Markup Language (XAML)
+summary: 了解如何使用 XAML 來定義 Xamarin.Forms 使用者介面。
 metadata:
   title: eXtensible Application Markup Language (XAML)
   description: 了解如何使用 XAML 來定義 Xamarin.Forms 使用者介面。
@@ -9,127 +9,59 @@ metadata:
   ms.assetid: CD30EECC-8AC1-4CF5-A4FE-348420A6231E
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/31/2019
-abstract:
-  description: 了解如何使用 XAML 來定義 Xamarin.Forms 使用者介面。
-sections:
-  - title: 開始使用
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: xaml-basics/index.md
-            html: 了解使用 XAML 開發 Xamarin.Forms 使用者介面的基本概念。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
-              href: xaml-basics/index.md
-            title: 基本概念
-          - href: xaml-controls.md
-            html: 了解可從 XAML 檔案參考的 Xamarin.Forms 檢視。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_form.svg'
-              href: xaml-controls.md
-            title: 控制項
-          - href: xamlc.md
-            html: 了解如何使用 XAML 將 XAML 直接編譯為中繼語言。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_build.svg'
-              href: xamlc.md
-            title: 編譯
-          - href: markup-extensions/index.md
-            html: 了解 XAML 標記延伸，這允許從常值文字字串以外的項目設定元素屬性。
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: markup-extensions/index.md
-            title: 標記延伸
-  - title: Tooling
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: hot-reload.md
-            html: 了解如何使用 XAML 熱重載來快速驗證 UI 變更。
-            image:
-              src: ~/media/icons/i_quickstart-3.svg
-              href: hot-reload.md
-            title: 熱重載
-          - href: toolbox.md
-            html: 了解如何使用 XAML 工具箱將 Xamarin.Forms 控制項與版面配置拖曳到 XAML 編輯器中。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_tools.svg'
-              href: toolbox.md
-            title: 工具箱
-          - href: xaml-previewer/index.md
-            html: 了解如何使用 XAML 預覽程式，使用頁面的 XAML 標記以並排方式查看頁面的即時預覽。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_responsive.svg'
-              href: xaml-previewer/index.md
-            title: 預覽程式
-  - title: 命名空間
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: namespaces.md
-            html: 了解 XAML 命名空間語法，以及如何宣告 XAML 命名空間以存取類型。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_namespace.svg'
-              href: namespaces.md
-            title: 命名空間
-          - href: custom-namespace-schemas.md
-            html: 了解如何建立 XAML 自訂命名空間結構描述，這會指定自訂 URL 與一或多個 CLR 命名空間之間的對應。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-blocks.svg'
-              href: custom-namespace-schemas.md
-            title: 自訂命名空間結構描述
-          - href: custom-prefix.md
-            html: 了解如何指定建議的首碼以與 XAML 命名空間關聯 (針對 XAML 用途)。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-automate.svg'
-              href: custom-prefix.md
-            title: 命名空間建議首碼
-  - title: 其他功能
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: bindable-properties.md
-            html: 了解如何建立可繫結的屬性，以及如何從 XAML 取用它們。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-edit.svg'
-              href: bindable-properties.md
-            title: 可繫結的屬性
-          - href: attached-properties.md
-            html: 了解如何建立附加的屬性，以及如何從 XAML 取用它們。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-samples.svg'
-              href: attached-properties.md
-            title: 附加屬性
-          - href: resource-dictionaries.md
-            html: 了解如何建立 XAML 資源，以及透過 Xamarin.Forms 應用程式重複使用它們。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_reference.svg'
-              href: resource-dictionaries.md
-            title: 資源字典
-          - href: passing-arguments.md
-            html: 了解如何使用 XAML 將引數傳遞到建構函式，以呼叫 Factory 方法，以及指定泛型引數的型別。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_learn-about.svg'
-              href: passing-arguments.md
-            title: 傳遞引數
-          - href: field-modifiers.md
-            html: 了解 XAML 欄位修飾詞，這可針對為具名 XAML 元素產生的欄位指定存取層級。
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: field-modifiers.md
-            title: 欄位修飾詞
-          - href: runtime-load.md
-            html: 了解如何在執行階段載入並剖析 XAML。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-              href: runtime-load.md
-            title: 在執行階段載入 XAML
+  ms.date: 12/27/2019
+  ms.openlocfilehash: 5f01b3ecf914d6c7c5c36378511c0fd7e30c952c
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679684"
+landingContent:
+- title: 開始使用
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 基本概念
+      url: xaml-basics/index.md
+    - text: 控制項
+      url: xaml-controls.md
+    - text: 編譯
+      url: xamlc.md
+    - text: 標記延伸
+      url: markup-extensions/index.md
+- title: Tooling
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 熱重新載入
+      url: hot-reload.md
+    - text: 工具箱
+      url: toolbox.md
+    - text: 預覽程式
+      url: xaml-previewer/index.md
+- title: 命名空間
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 命名空間
+      url: namespaces.md
+    - text: 自訂命名空間結構描述
+      url: custom-namespace-schemas.md
+    - text: 命名空間建議首碼
+      url: custom-prefix.md
+- title: 其他功能
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 可繫結的屬性
+      url: bindable-properties.md
+    - text: 附加屬性
+      url: attached-properties.md
+    - text: 資源字典
+      url: resource-dictionaries.md
+    - text: 傳遞引數
+      url: passing-arguments.md
+    - text: 欄位修飾詞
+      url: field-modifiers.md
+    - text: 在執行階段載入 XAML
+      url: runtime-load.md

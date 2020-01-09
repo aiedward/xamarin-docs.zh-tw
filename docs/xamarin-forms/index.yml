@@ -9,12 +9,12 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 11/06/2019
-  ms.openlocfilehash: a5289c5b1935ec133b0f823a7fbebe307a8606a6
-  ms.sourcegitcommit: 2dea02d0c7497cd5a5cbdce5a26ae33540d78dcc
+  ms.openlocfilehash: e8269c87513c127c24fbfa3b93963300c41d8eae
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 11/27/2019
-  ms.locfileid: "74550089"
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75680127"
 highlightedContent:
   items:
   - title: 什麼是 Xamarin.Forms？
@@ -96,7 +96,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/app-fundamentals/index.yml
-      text: 更多資訊
+      text: 查看更多項目
   - title: 使用者介面
     links:
     - text: CollectionView
@@ -113,7 +113,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/user-interface/index.yml
-      text: 更多資訊
+      text: 查看更多項目
   - title: Xamarin.Forms XAML
     links:
     - text: XAML 基本知識
@@ -130,7 +130,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/xaml/index.yml
-      text: 更多資訊
+      text: 查看更多項目
   - title: 平台功能
     links:
     - text: Android 平台專用
@@ -147,7 +147,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/platform/index.yml
-      text: 更多資訊
+      text: 查看更多項目
   - title: Xamarin.Essentials
     links:
     - text: 開始使用
@@ -164,7 +164,7 @@ conceptualContent:
       itemType: reference
     footerLink:
       url: ~/essentials/index.md?context=xamarin/xamarin-forms
-      text: 更多資訊
+      text: 查看更多項目
   - title: 資料與 Azure 雲端服務
     links:
     - text: 檔案處理
@@ -181,7 +181,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/data-cloud/index.yml
-      text: 更多資訊
+      text: 查看更多項目
   - title: 部署及測試
     links:
     - text: 使用 Visual Studio App Center 進行自動化的測試
@@ -198,7 +198,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/deploy-test/index.yml
-      text: 更多資訊
+      text: 查看更多項目
   - title: 進階概念與內部項目
     links:
     - text: 控制項類別階層
@@ -214,8 +214,8 @@ conceptualContent:
       url: ~/xamarin-forms/internals/sourcelink.md
       itemType: concept
     footerLink:
-      url: ~/xamarin-forms/internals/index.yml
-      text: 更多資訊
+      url: ~/xamarin-forms/internals/index.md
+      text: 查看更多項目
 additionalContent:
   sections:
   - title: 書籍
