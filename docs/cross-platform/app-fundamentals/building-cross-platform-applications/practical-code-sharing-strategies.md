@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fdc9fd6eac8c7b0c9ec91eb66b5d6723cda71006
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ad576f10fc0af5d96396d90b3e502e21da1182d
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016831"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728235"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 實用的程式碼共用策略
 
@@ -155,7 +155,7 @@ string filePath = Path.Combine (
         Environment.GetFolderPath (Environment.SpecialFolder.Personal),
         "MyFile.txt");
 System.IO.File.WriteAllText (filePath, "Contents of text file");
-Console.WriteLine (System.IO.ReadAllText (filePath));
+Console.WriteLine (System.IO.File.ReadAllText (filePath));
 ```
 
 如需有關 iOS 特定 filesystem 功能的詳細資訊，請參閱使用[檔案系統檔](~/ios/app-fundamentals/file-system.md)的 Xamarin。 撰寫跨平臺檔案存取碼時，請記住，有些檔案系統會區分大小寫，而且有不同的目錄分隔符號。 在建立檔案或目錄路徑時，一律使用相同的檔案名和 `Path.Combine()` 方法的大小寫是很好的作法。
@@ -190,7 +190,7 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 ### <a name="cross-platform-file-access-in-pcls"></a>Pcl 中的跨平臺檔案存取
 
-另外還有 PCL 相容的 Nuget – [PCLStorage](https://www.nuget.org/packages/PCLStorage/) –可跨平臺檔案存取 Xamarin 支援的平臺和最新的 Windows api。
+另外還有 PCL 相容的 NuGet – [PCLStorage](https://www.nuget.org/packages/PCLStorage/) –可跨平臺檔案存取 Xamarin 支援的平臺和最新的 Windows api。
 
 ## <a name="network-operations"></a>網路作業
 
@@ -205,7 +205,7 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 ### <a name="httpclient"></a>HttpClient
 
-`System.Net.Http` 命名空間中的 `HttpClient` 類別可在 Xamarin. iOS、Xamarin 和大部分的 Windows 平臺中使用。 您可以使用[MICROSOFT HTTP 用戶端程式庫 Nuget](https://www.nuget.org/packages/Microsoft.Net.Http/) ，將此 API 帶入可移植的類別庫（和 Windows Phone 8 Silverlight）。
+`System.Net.Http` 命名空間中的 `HttpClient` 類別可在 Xamarin. iOS、Xamarin 和大部分的 Windows 平臺中使用。 您可以使用[MICROSOFT HTTP 用戶端程式庫 NuGet](https://www.nuget.org/packages/Microsoft.Net.Http/) ，將此 API 帶入可移植的類別庫（和 Windows Phone 8 Silverlight）。
 
 ```csharp
 var client = new HttpClient();
@@ -262,7 +262,7 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 
  <a name="Reachability" />
 
-### <a name="reachability"></a>達
+### <a name="reachability"></a>Reachability
 
 行動裝置會在各種網路狀況下運作，從快速的 Wi-fi 或4G 連線到不佳的接收區域和緩慢的邊緣資料連結。 因此，在嘗試連線到遠端伺服器之前，最好先偵測網路是否可用，以及是否有可用的網路類型。
 

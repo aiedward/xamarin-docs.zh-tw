@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: cbea7686c2ec96492f9531e1ff30d1686db1a4c0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: edc778879aa88d420f41bd2b7b8e15b6d80b5939
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031766"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728261"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 相容性
 
@@ -46,7 +46,7 @@ _即使您不打算立即使用 iOS 9 功能更新您的應用程式，我們仍
 您**不**需要等候您所使用之任何元件或 nuget 的新版本，來解決上述的兩個問題。
 只要使用最新穩定版本的 Xamarin 來重新建立應用程式，就可以解決這些問題。
 
-同樣地，元件廠商和 Nuget 作者**不**需要提交新組建，就能修正上述兩個問題。 不過，如果有任何元件或 Nuget 使用來自**Xib**檔案的 `UICollectionView` 或載入視圖，則*可能*需要進行更新，才能解決下列所述的 iOS 9 相容性問題。
+同樣地，元件廠商和 NuGet 作者**不**需要提交新組建，就能修正上述兩個問題。 不過，如果有任何元件或 NuGet 使用來自**Xib**檔案的 `UICollectionView` 或載入視圖，則*可能*需要進行更新，才能解決下列所述的 iOS 9 相容性問題。
 
 <a name="compat" />
 

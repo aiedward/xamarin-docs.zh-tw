@@ -8,20 +8,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 93cab36b21e2fe73a0e6890140b5ebaeb32f7951
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b38e33e05b0bb9d40582611857671d6617023b35
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760038"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728313"
 ---
 # <a name="troubleshooting"></a>疑難排解
 
 _常見的錯誤狀況和解決方式_
 
-## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>錯誤：「找不到 Xamarin 的版本。與相容的表單 ...」
+## <a name="error-unable-to-find-a-version-of-xamarinforms-compatible-with"></a>錯誤：「找不到 Xamarin 的版本。與下列相容的表單 ...」
 
-更新 Xamarin 中的所有 Nuget 套件時，或在 Xamarin 的 Android 應用程式專案中，可能會在**套件主控台**視窗中出現下列錯誤：
+更新 Xamarin 中的所有 NuGet 套件時，或在 Xamarin 的 Android 應用程式專案中，可能會在**套件主控台**視窗中出現下列錯誤：
 
 ```csharp
 Attempting to resolve dependency 'Xamarin.Android.Support.v7.AppCompat (= 23.3.0.0)'.
@@ -34,9 +34,9 @@ Unable to find a version of 'Xamarin.Forms' that is compatible with 'Xamarin.And
 
 ### <a name="what-causes-this-error"></a>造成此錯誤的原因為何？
 
-Visual Studio for Mac （或 Visual Studio）可能表示更新適用于 Xamarin. form Nuget 套件*及其所有*相依性。 在 Xamarin Studio 中，解決方案的 [**套件**] 節點看起來可能像這樣（版本號碼可能不同）：
+Visual Studio for Mac （或 Visual Studio）可能表示更新適用于 Xamarin. form NuGet 套件*及其所有*相依性。 在 Xamarin Studio 中，解決方案的 [**套件**] 節點看起來可能像這樣（版本號碼可能不同）：
 
-![](images/updates-available.png "Android 專案套件資料夾")
+![](images/updates-available.png "Android Project Packages Folder")
 
 如果您嘗試更新_所有_的封裝，可能會發生此錯誤。
 
@@ -45,13 +45,13 @@ Visual Studio for Mac （或 Visual Studio）可能表示更新適用于 Xamarin
 在此情況下，您應該_只_更新**Xamarin Forms**封裝，因為這可確保相依性會維持在相容的版本上。 您已新增至專案的其他套件也可能會個別更新，只要它們不會導致 Android 支援套件更新。
 
 > [!NOTE]
-> 如果您使用的是2.3.4 或更高版本 **，且**您的 android 專案的目標/編譯版本設定為 android 7.0 （API 24）或更高版本，則不會再套用上述的硬性相依性，而且您可以獨立更新支援封裝Xamarin. Forms 封裝。
+> 如果您使用的是2.3.4 或更高版本，**且**您的 android 專案的目標/編譯版本設定為 android 7.0 （API 24）或更高版本，則不會再套用上述的硬性相依性，而且您可以獨立于 Xamarin. Forms 封裝來更新支援套件。
 
-### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>補丁移除所有套件，然後重新加入 Xamarin. Forms
+### <a name="fix-remove-all-packages-and-re-add-xamarinforms"></a>修正：移除所有套件，然後重新加入 Xamarin. Forms
 
 如果**支援**套件已更新為不相容的版本，最簡單的解決方法是：
 
-1. 手動刪除 Android 專案中的所有 Nuget 套件，然後
+1. 手動刪除 Android 專案中的所有 NuGet 套件，然後
 2. 重新加入**Xamarin. Forms**封裝。
 
 這會自動下載其他套件的*正確*版本。

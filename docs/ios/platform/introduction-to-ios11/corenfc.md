@@ -7,18 +7,18 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 110df71dd043f627b89a7c4a906db0418a8cfae8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2e19fd37270d3c96cb175d30dc786a95a01c3fcf
+ms.sourcegitcommit: 2ed3d1c933fce4ce332128f125acb2f23f9e0f1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032199"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75753024"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Xamarin 中的核心 NFC
 
 _使用 iOS 11 讀取近距離無線通訊（NFC）標記_
 
-CoreNFC 是 iOS 11 中的新架構，可讓您存取_近_距離無線通訊（NFC）廣播，以讀取應用程式內的標記。 其適用于 iPhone 7、7加、8、8 Plus 和 X。
+CoreNFC 是 iOS 11 中的新架構，可讓您存取_近_距離無線通訊（NFC）廣播，以讀取應用程式內的標記。 CoreNFC 適用于 iPhone 7、iPhone 7 Plus、iPhone 8、iPhone 8 Plus、iPhone X、iPhone XS 和 iPhone 11 型號（雖然 iPhone 6 和 iPhone 6 Plus 機型具有 NFC 付款功能，但它們不支援 CoreNFC）。
 
 IOS 裝置中的 NFC 標記讀取器支援所有 NFC 標記類型1到5，其中包含_NFC 資料交換格式_（NDEF）資訊。
 
@@ -31,7 +31,7 @@ IOS 裝置中的 NFC 標記讀取器支援所有 NFC 標記類型1到5，其中�
 
 此頁面說明使用 CoreNFC 所需的設定，並說明如何使用「 [NFCTagReader」範例程式碼](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)來使用 API。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>組態
 
 若要啟用 CoreNFC，您必須在專案中設定三個專案：
 

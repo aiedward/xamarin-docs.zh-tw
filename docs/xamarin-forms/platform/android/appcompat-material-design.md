@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: e8c05000275b65c18ddb6b628091da0fac462278
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73005457"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728326"
 ---
 # <a name="adding-appcompat-and-material-design"></a>新增 AppCompat 和材質設計
 
@@ -21,13 +21,13 @@ _請遵循下列步驟來轉換現有的 Xamarin Android 應用程式，以使�
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 這些指示說明如何更新現有的 Xamarin Android 應用程式，以使用 AppCompat 程式庫，並在 Android 版本的 Xamarin. Forms 應用程式中啟用材質設計。
 
 ### <a name="1-update-xamarinforms"></a>1. 更新 Xamarin. 表單
 
-請確定解決方案使用的是 Xamarin 2.0 或更新版本。 如有需要，請將 [Xamarin] Nuget 套件更新為2.0。
+請確定解決方案使用的是 Xamarin 2.0 或更新版本。 如有需要，請將 [Xamarin] NuGet 套件更新為2.0。
 
 ### <a name="2-check-android-version"></a>2. 檢查 Android 版本
 

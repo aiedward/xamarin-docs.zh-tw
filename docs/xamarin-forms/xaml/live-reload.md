@@ -8,12 +8,12 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: 9fb085313e994adc486833bb25e893659aa33b4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032763"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728339"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload （預覽）
 
@@ -27,7 +27,7 @@ Xamarin Live Reload 可讓您**變更 XAML 並查看其即時反映，而不需�
 * 使用 .NET 的行動裝置**開發**工作負載， [Visual Studio 2017 15.7 版或更新版本](https://visualstudio.microsoft.com/vs/)。
 * [3.0.0 或更高](https://www.nuget.org/packages/Xamarin.Forms/)版本。
 
-## <a name="getting-started"></a>快速入門
+## <a name="getting-started"></a>使用者入門
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. 從 Visual Studio Marketplace 安裝 Xamarin Live Reload
 
 Xamarin Live Reload 會透過 Visual Studio Marketplace 散發。 若要安裝此擴充功能，請造訪[Visual Studio Marketplace 網站上的 Xamarin Live Reload 頁面](https://marketplace.visualstudio.com/items?itemName=Xamarin.XamarinLiveReload)，然後按一下 [**下載**]。
@@ -105,7 +105,7 @@ Live Reload 適用于 Xamarin 所支援的任何平臺，包括 Android、iOS �
 
 ### <a name="does-it-require-debugging-the-app"></a>是否需要對應用程式進行偵錯工具？ 
 
-否。 事實上，您甚至可以在任意數目的裝置或模擬器/模擬器上啟動所有支援的應用程式目標（Android、iOS 和 UWP），並一次查看所有的更新。 
+No。 事實上，您甚至可以在任意數目的裝置或模擬器/模擬器上啟動所有支援的應用程式目標（Android、iOS 和 UWP），並一次查看所有的更新。 
 
 ## <a name="limitations"></a>限制
 
@@ -127,15 +127,15 @@ Live Reload 適用于 Xamarin 所支援的任何平臺，包括 Android、iOS �
 
 * **XLR001**：*目前的專案參考 ' LiveReload ' NuGet 套件版本 ' [版本] '，但 Xamarin Live 重載延伸模組需要版本 ' [版本] '。*
 
-  為了讓即時重載功能能夠快速反復反覆運算和進化，nuget 封裝和 Visual Studio 延伸模組必須完全相符。 將您的 nuget 套件更新至您已安裝的相同延伸模組版本。
+  為了讓即時重載功能能夠快速反復反覆運算和進化，NuGet 封裝和 Visual Studio 延伸模組必須完全相符。 將您的 NuGet 套件更新至您已安裝的相同延伸模組版本。
 
 * **XLR002**： *Live Reload 從命令列建立時，至少需要 ' MqttHostname ' 屬性。或者，將 ' EnableLiveReload ' 設定為 ' false ' 以停用此功能。*
 
   從命令列（或連續整合）中建立時，無法使用 Live Reload 所需的屬性，因此必須明確地提供。 
 
-* **XLR003**： *Live reload nuget 套件需要安裝 Xamarin Live reload Visual Studio 延伸模組。*
+* **XLR003**： *Live reload NuGet 套件需要安裝 Xamarin Live reload Visual Studio 延伸模組。*
 
-  嘗試建立參考即時重載 nuget 套件的專案，但未安裝視覺效果延伸模組。  
+  嘗試建立參考即時重載 NuGet 套件的專案，但未安裝視覺效果延伸模組。  
 
 * *載入元件時發生例外狀況： FileNotFoundException：無法載入元件 ' Xamarin. 重載，版本 = 0.3.27.0，文化特性 = 中性，PublicKeyToken = '。*
 
@@ -143,7 +143,7 @@ Live Reload 適用于 Xamarin 所支援的任何平臺，包括 Android、iOS �
 
 ### <a name="app-doesnt-connect"></a>應用程式未連接
 
-建立應用程式時，從 [工具] **> 選項 > Xamarin > Live Reload** （主機名稱、埠和加密金鑰）的資訊會內嵌在應用程式中，因此當 `LiveReload.Init()` 執行時，連線到時不需要任何配對或設定失效.
+建立應用程式時，[**工具] > 選項 > Xamarin > Live Reload** （主機名稱、埠和加密金鑰）的資訊會內嵌在應用程式中，因此當 `LiveReload.Init()` 執行時，連線就不需要進行配對或設定，連線就會成功。
 
 除了一般網路問題（防火牆、其他網路上的裝置），應用程式可能無法成功連接 IDE 的主要原因是它的設定與 Visual Studio 中的不同。 這可能發生在下列情況：
 
@@ -160,9 +160,9 @@ Live Reload 適用于 Xamarin 所支援的任何平臺，包括 Android、iOS �
 1. 刪除資料夾**C:\Program Files （x86） \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** （注意：以您已安裝的版本取代 "Enterprise"，如果您安裝到穩定的 VS，則以 "2017" 取代 "Preview"）
 2. 開啟該 Visual Studio 的**開發人員命令提示**字元，然後執行 `devenv /updateconfiguration`。 
 
-## <a name="tips--tricks"></a>秘訣 & 訣竅
+## <a name="tips--tricks"></a>秘訣和竅門
 
-* 只要即時重載設定不會變更（包括加密金鑰，例如，如果您關閉**自動產生加密金鑰**），而且您是從相同的電腦建立，除非您變更，否則不需要在初始部署之後建立及部署應用程式。程式碼或相依性。 您只要重新開機先前部署的應用程式，它就會連接到最後使用的主機。
+* 只要即時重載設定不會變更（包括加密金鑰，例如，如果您關閉**自動產生加密金鑰**），而且您是從相同的電腦建立，除非您變更程式碼或相依性，否則您不需要在初始部署之後建立及部署應用程式。 您只要重新開機先前部署的應用程式，它就會連接到最後使用的主機。
 
 * 您可以連接到相同 Visual Studio 會話的裝置數目並無任何限制。 您可以視需要在多個裝置/模擬器中部署和啟動應用程式，以查看在同一時間內進行的即時重載。
 
@@ -170,7 +170,7 @@ Live Reload 適用于 Xamarin 所支援的任何平臺，包括 Android、iOS �
 
 ## <a name="live-reload-server"></a>Live Reload 伺服器
 
-在從執行中的應用程式連線到您的電腦的情況下（如使用 `localhost` 或 `127.0.0.1` 在 [**工具] > 選項 > Xamarin > Live 重載**）中，您可以設定遠端伺服器相反地，IDE 和應用程式會連線到。
+在從執行中的應用程式連線到您的電腦的情況下（例如，使用 `localhost` 或 `127.0.0.1` 在 [工具] [ **> 即時重載] 的 [工具] > > 選項**中所表示）不可行（也就是防火牆、不同的網路），您可以設定遠端伺服器，而這兩個 IDE 和應用程式將會連線到。
 
 Live Reload 會使用標準[MQTT 通訊協定](https://mqtt.org/)來交換訊息，因此可以與[協力廠商伺服器](https://github.com/mqtt/mqtt.github.io/wiki/servers)通訊。 您甚至可以使用[公用伺服器](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers)（也稱為「訊息*代理*程式」）。 Live Reload 已經過 `broker.hivemq.com` 和 `iot.eclipse.org` 主機名稱，以及[www.cloudmqtt.com](https://www.cloudmqtt.com)和[www.cloudamqp.com](https://www.cloudamqp.com)所提供的服務進行測試。 您也可以在雲端中部署自己的 MQTT 伺服器，例如[Azure 上的 HiveMQ](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)。
 

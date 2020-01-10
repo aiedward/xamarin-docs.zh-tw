@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/05/2019
-ms.openlocfilehash: 49344b089c3c49cd8cd566a690649b28101b51ba
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 190aeb83456fa7c7ba8a9415b02ab56f3f8779da
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487268"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728274"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本機資料庫
 
@@ -24,24 +24,24 @@ SQLite 資料庫引擎可讓 Xamarin 應用程式將資料物件載入和儲存�
 
 遵循下列步驟，將 SQLite.NET 整合到行動應用程式：
 
-1. [安裝 Nuget 套件](#install-the-sqlite-nuget-package)。
+1. [安裝 NuGet 套件](#install-the-sqlite-nuget-package)。
 1. [設定常數](#configure-app-constants)。
 1. [建立資料庫存取類別](#create-a-database-access-class)。
 1. [存取 Xamarin. 表單中的資料](#access-data-in-xamarinforms)。
 1. [Advanced configuration](#advanced-configuration)。
 
-## <a name="install-the-sqlite-nuget-package"></a>安裝 SQLite Nuget 套件
+## <a name="install-the-sqlite-nuget-package"></a>安裝 SQLite NuGet 套件
 
-使用 Nuget 套件管理員來搜尋**sqlite-net-pcl** ，並將最新版本加入至共用程式碼專案。
+使用 NuGet 套件管理員來搜尋**sqlite-net-pcl** ，並將最新版本加入至共用程式碼專案。
 
-有一些 Nuget 套件具有類似的名稱。 正確的套件有下列屬性：
+有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
 
 - **建立者：** Frank A. Krueger
 - **識別碼：** sqlite-net-pcl
-- **Nuget 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
+- **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> 即使是套件名稱，也請使用**sqlite-net-pcl** Nuget 套件，即使在 .NET Standard 專案中也一樣。
+> 不論套件名稱為何，請使用 **sqlite-net-pcl** NuGet 套件，即使在專案中也一樣。
 
 ## <a name="configure-app-constants"></a>設定應用程式常數
 
@@ -284,7 +284,7 @@ await Database.EnableWriteAheadLoggingAsync();
 ## <a name="related-links"></a>相關連結
 
 - [Todo 範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
-- [SQLite.NET Nuget 套件](https://www.nuget.org/packages/sqlite-net-pcl/)
+- [SQLite.NET NuGet 套件](https://www.nuget.org/packages/sqlite-net-pcl/)
 - [SQLite 檔](https://www.sqlite.org/docs.html)
 - [搭配使用 SQLite 與 Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [搭配使用 SQLite 與 iOS](~/ios/data-cloud/data/using-sqlite-orm.md)

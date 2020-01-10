@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e38fc0d23c65189f51f7f8f159a07894b3e1ab72
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a94baa66c1ca18762efccd980264170648c232fa
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030326"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728287"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平臺應用程式案例研究： Tasky
 
@@ -19,7 +19,7 @@ ms.locfileid: "73030326"
 
 <a name="Design_Process" />
 
-## <a name="design-process"></a>設計流程
+## <a name="design-process"></a>設計程序
 
 建議您在開始撰寫程式碼之前，先建立一個您想要達到的道路圖。 這對於跨平臺開發特別適用，因為您正在建立將以多種方式公開的功能。 從現在開始，您可以清楚瞭解您所建立的內容，在未來的開發週期中節省時間和工作量。
 
@@ -52,7 +52,7 @@ ms.locfileid: "73030326"
 
 Tasky 需要為每個 ' TaskItem ' 儲存三個屬性：
 
-- **名稱**–字串
+- **Name** – 字串
 - **附注**–字串
 - **完成**-布林值
 
@@ -103,7 +103,7 @@ Tasky 可攜性會使用可移植的類別庫策略來共用通用程式碼。 �
 
  <a name="References" />
 
-### <a name="references"></a>reference
+### <a name="references"></a>參考
 
 可移植的類別庫必須可在多個平臺上使用，而且各有不同的平臺和架構功能支援層級。 因此，可以使用的套件和架構程式庫有一些限制。 例如，Xamarin 不支援 c # `dynamic` 關鍵字，因此可移植的類別庫不能使用相依于動態程式碼的任何套件，即使這類程式碼可以在 Android 上運作也一樣。 Visual Studio for Mac 將會讓您無法新增不相容的套件和參考，但您會想要保留限制以避免日後發生意外。
 
@@ -115,7 +115,7 @@ Tasky 可攜性會使用可移植的類別庫策略來共用通用程式碼。 �
 
 資料層包含執行資料實體儲存的程式碼–不論是資料庫、一般檔案或其他機制。 Tasky 資料層是由兩個部分組成： SQLite 程式庫和新增的自訂程式碼，以連線到網路。
 
-Tasky 依賴 Sqlite-net nuget 套件（由 Frank Kreuger 發行）來內嵌 SQLite .NET 程式碼，以提供物件關聯式對應（ORM）資料庫介面。 `TaskItemDatabase` 類別繼承自 `SQLiteConnection`，並新增必要的 Create、Read、Update、Delete （CRUD）方法來讀取和寫入資料至 SQLite。 這是可在其他專案中重複使用之一般 CRUD 方法的簡單方式。
+Tasky 依賴 Sqlite-net NuGet 套件（由 Frank Kreuger 發行）來內嵌 SQLite .NET 程式碼，以提供物件關聯式對應（ORM）資料庫介面。 `TaskItemDatabase` 類別繼承自 `SQLiteConnection`，並新增必要的 Create、Read、Update、Delete （CRUD）方法來讀取和寫入資料至 SQLite。 這是可在其他專案中重複使用之一般 CRUD 方法的簡單方式。
 
 `TaskItemDatabase` 是單一的，確保所有存取都是針對相同的實例進行。 鎖定是用來防止平行存取多個執行緒。
 
@@ -243,7 +243,7 @@ path>/Documents/TaskDB.db3" （適用于 Android）或只是 "TaskDB" （適用�
 
 撰寫通用程式碼之後，必須建立使用者介面來收集並顯示其所公開的資料。 `TaskItemManager` 類別會執行面板模式，以提供簡單的 API 讓應用程式代碼存取。
 
-在每個平臺特定專案中撰寫的程式碼通常會與該裝置的原生 SDK 緊密結合，而且只會使用 `TaskItemManager` 所定義的 API 來存取通用程式碼。 這包括其公開的方法和商業類別，例如 `TaskItem`。
+在每個平臺特定專案中撰寫的程式碼通常會與該裝置的原生 SDK 緊密結合，而且只會使用 `TaskItemManager`所定義的 API 來存取通用程式碼。 這包括其公開的方法和商業類別，例如 `TaskItem`。
 
 映射不會跨平臺共用，而是獨立新增至每個專案。 這很重要，因為每個平臺會使用不同的檔案名、目錄和解析度，以不同的方式處理影像。
 
@@ -263,7 +263,7 @@ path>/Documents/TaskDB.db3" （適用于 Android）或只是 "TaskDB" （適用�
 
  <a name="References" />
 
-### <a name="references"></a>reference
+### <a name="references"></a>參考
 
 IOS 應用程式參考平臺特定的 SDK 程式庫–例如 [Xamarin] 和 [MonoTouch]。對話方塊-1。
 
@@ -341,7 +341,7 @@ public class TaskDialog {
 
 工作詳細資料是允許編輯或刪除工作的輸入畫面。
 
-Tasky 會使用 `MonoTouch.Dialog` 的反映 API 來顯示畫面，因此不會有任何 `UIViewController` 的執行。 相反地，`HomeScreen` 類別會具現化，並使用應用層中的 `TaskDialog` 類別來顯示 `DialogViewController`。
+Tasky 會使用 `MonoTouch.Dialog`的反映 API 來顯示畫面，因此不會有任何 `UIViewController` 的執行。 相反地，`HomeScreen` 類別會具現化，並使用應用層中的 `TaskDialog` 類別來顯示 `DialogViewController`。
 
 這個螢幕擷取畫面顯示一個空白畫面，其中會示範在 [**名稱**] 和 [**附注**] 欄位中設定浮水印文字的 `Entry` 屬性：
 
@@ -367,7 +367,7 @@ Tasky 會使用 `MonoTouch.Dialog` 的反映 API 來顯示畫面，因此不會�
 
  <a name="References" />
 
-### <a name="references"></a>reference
+### <a name="references"></a>參考
 
 Android 應用程式專案必須參考平臺特定的 Xamarin. Android 元件，才能從 Android SDK 存取類別。
 
@@ -381,11 +381,11 @@ Android 應用程式專案必須參考平臺特定的 Xamarin. Android 元件，
 
 類似于稍早所探討的 iOS 版本，Android 版本中的應用層包含將核心公開的物件「系結」至 UI 所需的平臺特定類別。
 
- **TaskListAdapter** -若要顯示物件的清單 \<T > 我們需要執行介面卡，以在 `ListView` 中顯示自訂物件。 介面卡會控制清單中每個專案所使用的版面配置，在此情況下，程式碼會使用 Android 內建版面配置 `SimpleListItemChecked`。
+ **TaskListAdapter** -若要顯示物件的清單\<t >，我們需要執行介面卡以在 `ListView`中顯示自訂物件。 介面卡會控制清單中每個專案所使用的版面配置，在此情況下，程式碼會使用 Android 內建版面配置 `SimpleListItemChecked`。
 
  <a name="User_Interface_(UI)" />
 
-### <a name="user-interface-ui"></a>使用者介面（UI）
+### <a name="user-interface-ui"></a>使用者介面 (UI)
 
 Android 應用程式的使用者介面層是程式碼和 XML 標記的組合。
 
@@ -426,7 +426,7 @@ PCL 程式庫的所有參考都是透過 `TaskItemManager` 類別。
 
  <a name="References" />
 
-### <a name="references"></a>reference
+### <a name="references"></a>參考
 
 平臺特定專案必須參考所需的平臺特定程式庫（例如 `Microsoft.Phone` 和 `System.Windows`），才能建立有效的 Windows Phone 應用程式。
 
@@ -448,7 +448,7 @@ Viewmodel 會從 PCL （`TaskItemManager`）包裝資料，並以可供 Silverli
 
  <a name="User_Interface_(UI)" />
 
-### <a name="user-interface-ui"></a>使用者介面（UI）
+### <a name="user-interface-ui"></a>使用者介面 (UI)
 
 XAML 具有唯一的資料系結功能，可在標記中宣告，並減少顯示物件所需的程式碼數量：
 

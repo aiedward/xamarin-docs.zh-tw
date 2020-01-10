@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 47f47882cb270a8e2517f7cab6f1d6af1cf473f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a5aa13a197e885b074b07eae3594abd4992ee71
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014336"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728248"
 ---
 # <a name="updating-component-references-to-nuget"></a>正在更新 NuGet 的元件參考
 
@@ -37,7 +37,7 @@ ms.locfileid: "73014336"
 
 若要從專案中移除元件：
 
-1. 開啟 **.csproj**檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 **[卸載專案**]。 
+1. 開啟 .csproj 檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 **[卸載專案**]。 
 
 2. 在卸載的專案上再次以滑鼠右鍵按一下，然後選取 [**編輯 {您的專案名稱} .csproj**]。
 
@@ -137,7 +137,7 @@ ms.locfileid: "73014336"
 
 ![刪除元件](component-nuget-images/delete-component-sml.png)
 
-NuGet 套件會繼續列在 [**套件**] 節點中，且您的應用程式會如往常般編譯並執行。 未來，將會透過**Nuget**更新功能來執行此套件的更新：
+NuGet 套件會繼續列在 [**套件**] 節點中，且您的應用程式會如往常般編譯並執行。 未來，將會透過**NuGet**更新功能來執行此套件的更新：
 
 ![更新 NuGet 套件](component-nuget-images/nuget-update-sml.png)
 

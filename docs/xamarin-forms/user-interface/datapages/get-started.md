@@ -1,41 +1,41 @@
 ---
-title: Getting Started with DataPages
-description: 這篇文章說明如何開始建置使用 Xamarin.Forms DataPages 的簡單資料驅動頁面。
+title: 使用 DataPages 消費者入門
+description: 本文說明如何使用 DataPages 來開始建立簡單的資料驅動頁面。
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: c6534067388b59c1e191426011fd0e6b8560348f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 653d2420a9101203412b91a93cc7b6f681e2f5f2
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759727"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728300"
 ---
-# <a name="getting-started-with-datapages"></a>Getting Started with DataPages
+# <a name="getting-started-with-datapages"></a>使用 DataPages 消費者入門
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
-![](~/media/shared/preview.png "此 API 目前為預覽狀態")
+![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
 > DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [Xamarin.Forms.Theme.Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)nuget 套件安裝到您的專案中, 後面接著 [Xamarin.Forms.Theme.Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) 或 [Xamarin.Forms.Theme.Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)。
 
-若要開始建置使用 DataPages 預覽的簡單資料驅動頁面，請遵循下列步驟。 在預覽中的硬式編碼樣式 （「 事件 」） 建置的這個示範會使用僅適用於特定程式碼中的 JSON 格式。
+若要開始建置使用 DataPages 預覽的簡單資料驅動頁面，請遵循下列步驟。 本示範使用預覽組建中的硬式編碼樣式（「事件」），其僅適用于程式碼中的特定 JSON 格式。
 
-[![](get-started-images/demo-sml.png "DataPages 範例應用程式")](get-started-images/demo.png#lightbox "DataPages 範例應用程式")
+[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
 
-## <a name="1-add-nuget-packages"></a>1.新增 NuGet 封裝
+## <a name="1-add-nuget-packages"></a>1. 新增 NuGet 套件
 
-將這些 Nuget 套件新增至 Xamarin.Forms.NET Standard 程式庫和應用程式專案中：
+將這些 NuGet 套件新增至您的 Xamarin. 表單 .NET Standard 程式庫和應用程式專案：
 
-- Xamarin.Forms.Pages
-- Xamarin.Forms.Theme.Base
-- 佈景主題的實作 （例如 Nuget Xamarin.Forms.Theme.Light)
+- Xamarin. Forms. 頁面
+- Xamarin. 表單. Base
+- 主題執行 NuGet （例如 [Xamarin]。淺色）
 
-## <a name="2-add-theme-reference"></a>2.新增佈景主題參考
+## <a name="2-add-theme-reference"></a>2. 新增主題參考
 
 在  **App.xaml**檔案中，新增自訂`xmlns:mytheme`佈景主題，並確定 佈景主題已合併到應用程式的資源字典：
 
@@ -51,13 +51,13 @@ ms.locfileid: "70759727"
 ```
 
 > [!IMPORTANT]
-> 您也應該遵循步驟來[載入主題元件（如下）](#loadtheme) ，方法是將一些未定案的程式`AppDelegate`代碼新增`MainActivity`至 iOS 和 Android。 這會改善未來的預覽版。
+> 您也應該遵循步驟來[載入主題元件（下方）](#loadtheme) ，方法是將一些未定案的程式碼新增至 iOS `AppDelegate` 和 Android `MainActivity`。 這會改善未來的預覽版。
 
-## <a name="3-add-a-xaml-page"></a>3.新增 XAML 頁面
+## <a name="3-add-a-xaml-page"></a>3. 新增 XAML 頁面
 
-將新的 XAML 頁面新增至 Xamarin.Forms 應用程式，並*基底類別變更*從`ContentPage`至`Xamarin.Forms.Pages.ListDataPage`。 此值必須在 C# 和 XAML 中完成：
+將新的 XAML 頁面加入至 [Xamarin] 應用程式，然後*將基類從 [* `ContentPage`] 變更為 [`Xamarin.Forms.Pages.ListDataPage`]。 這必須在C#和 XAML 中完成：
 
-**C# 檔案**
+**C#文字檔**
 
 ```csharp
 public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was ContentPage
@@ -71,7 +71,7 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **XAML 檔案**
 
-除了變更至根項目`<p:ListDataPage>`的自訂命名空間`xmlns:p`也必須加入：
+除了將根項目變更為 `<p:ListDataPage>` 也必須加入 `xmlns:p` 的自訂命名空間：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -87,18 +87,18 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **應用程式子類別**
 
-變更`App`類別建構函式，讓`MainPage`設為`NavigationPage`包含新`SessionDataPage`。 導覽頁*必須*使用。
+變更 `App` 類別的函式，使 `MainPage` 設定為包含新 `SessionDataPage`的 `NavigationPage`。 *必須*使用導覽頁面。
 
 ```csharp
 MainPage = new NavigationPage (new SessionDataPage ());
 ```
 
-## <a name="3-add-the-datasource"></a>3.新增資料來源
+## <a name="3-add-the-datasource"></a>3. 新增資料來源
 
-刪除`Content`項目並將它取代為`p:ListDataPage.DataSource`來填入資料的頁面。 在下面的遠端的 Json 範例資料檔案從 URL 載入。
+刪除 `Content` 專案，並將其取代為 `p:ListDataPage.DataSource`，以將資料填入頁面。 在下面的遠端的 Json 範例資料檔案從 URL 載入。
 
 > [!NOTE]
-> 預覽*需要* `StyleClass`屬性來提供資料來源的呈現提示。 `StyleClass="Events"`預先定義在預覽中，並包含樣式的配置是指*硬式編碼*以符合所使用的 JSON 資料來源。
+> 預覽*需要*`StyleClass` 屬性來提供資料來源的呈現提示。 `StyleClass="Events"`預先定義在預覽中，並包含樣式的配置是指*硬式編碼*以符合所使用的 JSON 資料來源。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -117,7 +117,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 **JSON 資料**
 
-從 JSON 資料的範例[示範來源](http://demo3143189.mockable.io/sessions)如下所示：
+[示範來源](http://demo3143189.mockable.io/sessions)的 JSON 資料範例如下所示：
 
 ```json
 [{
@@ -133,19 +133,19 @@ MainPage = new NavigationPage (new SessionDataPage ());
 }]
 ```
 
-## <a name="4-run"></a>4.執行 ！
+## <a name="4-run"></a>4. 執行！
 
-上述的步驟應該會導致工作資料頁面：
+上述步驟應會產生 [可運作的資料] 頁面：
 
-[![](get-started-images/demo-sml.png "DataPages 範例應用程式")](get-started-images/demo.png#lightbox "DataPages 範例應用程式")
+[![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
 
-這是因為預先建置的樣式 **「 事件 」** Light 佈景主題的 Nuget 套件中存在，而且有定義的樣式，將資料來源 （例如比對。 "title"、"image"、"主持人 」）。
+這是因為預先建立的樣式「**事件**」存在於淺色主題 NuGet 套件中，而且已定義符合資料來源的樣式（例如， 「標題」、「影像」、「展示者」）。
 
-「 事件 」`StyleClass`建置用來顯示`ListDataPage`自訂控制項`CardView`控制項中所定義的 Xamarin.Forms.Pages。 `CardView`控制項有三個屬性： `ImageSource`， `Text`，和`Detail`。 佈景主題是硬式編碼繫結資料來源的三個欄位 （來自 JSON 檔案中） 來顯示這些屬性。
+「事件」 `StyleClass` 是用來顯示具有自訂 `CardView` 控制項的 `ListDataPage` 控制項，該控制項會定義于 Xamarin. Forms. 頁面中。 `CardView` 控制項有三個屬性： `ImageSource`、`Text`和 `Detail`。 此主題已硬式編碼，可將資料來源的三個欄位（來自 JSON 檔案）系結至這些屬性以供顯示。
 
-## <a name="5-customize"></a>5.自訂
+## <a name="5-customize"></a>5. 自訂
 
-可以覆寫繼承的樣式，藉由指定範本，並使用資料來源繫結。 下列 XAML 會宣告每個資料列，使用新的自訂範本`ListItemControl`並`{p:DataSourceBinding}`中所含的語法**Xamarin.Forms.Pages** Nuget:
+您可以藉由指定範本和使用資料來源系結來覆寫繼承的樣式。 下列 XAML 會使用新的 `ListItemControl` 和包含在 [ **Xamarin** ] NuGet 中的 `{p:DataSourceBinding}` 語法，為每個資料列宣告自訂範本：
 
 ```xaml
 <p:ListDataPage.DefaultItemTemplate>
@@ -164,9 +164,9 @@ MainPage = new NavigationPage (new SessionDataPage ());
 </p:ListDataPage.DefaultItemTemplate>
 ```
 
-藉由提供`DataTemplate`這段程式碼會覆寫`StyleClass`，並改為使用的預設版面配置`ListItemControl`。
+藉由提供 `DataTemplate` 此程式碼會覆寫 `StyleClass`，改為使用 `ListItemControl`的預設版面配置。
 
-[![](get-started-images/custom-sml.png "DataPages 範例應用程式")](get-started-images/custom.png#lightbox "DataPages 範例應用程式")
+[![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
 
 開發人員偏好在 C# XAML 可以建立資料來源繫結太 (請記得包含`using Xamarin.Forms.Pages;`陳述式):
 
@@ -180,13 +180,13 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 
 <a name="loadtheme" />
 
-## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>無法載入檔案或組件 'Xamarin.Forms.Theme.Light' 或其中一個相依性
+## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>無法載入檔案或元件 ' Xamarin ' 或其相依性的其中之一
 
-在預覽版本中，佈景主題可能無法在執行階段載入。 新增下面顯示相關的專案。 若要修正此錯誤的程式碼。
+在預覽版本中，主題可能無法在執行時間載入。 將下方顯示的程式碼新增至相關專案，以修正此錯誤。
 
 **iOS**
 
-在  **AppDelegate.cs**新增下列行之後 `LoadApplication`
+在**AppDelegate.cs**中，于之後新增下列幾行 `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
@@ -196,7 +196,7 @@ x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 
 **Android**
 
-在  **MainActivity.cs**新增下列行之後 `LoadApplication`
+在**MainActivity.cs**中，于之後新增下列幾行 `LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
