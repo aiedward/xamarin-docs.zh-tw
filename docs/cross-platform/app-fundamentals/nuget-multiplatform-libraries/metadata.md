@@ -6,12 +6,12 @@ ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5965b3f78bfc086b1cc6030a02f1cabafaae29d3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e71ff86869c42d478fbf1ee3f6de5bff59431fc
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016746"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728209"
 ---
 # <a name="editing-nuget-metadata"></a>編輯 NuGet 中繼資料
 
@@ -27,7 +27,7 @@ _使用專案選項來編輯多平臺程式庫的 NuGet 中繼資料_
 
 [![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
 
-- **識別碼–套件**識別碼，在 Nuget.org 中（或封裝的散發位置）必須是唯一的。 遵循此[指引](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)，並只使用 URL 中有效的字元（不含空格，並避免大部分的特殊字元）。
+- **識別碼–套件**識別碼，在 NuGet.org 中（或封裝的散發位置）必須是唯一的。 遵循此[指引](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)，並只使用 URL 中有效的字元（不含空格，並避免大部分的特殊字元）。
 - **版本**-選擇與[NuGet 版本控制規則](https://docs.microsoft.com/nuget/create-packages/dependency-versions)一致的版本號碼。
 - **作者**–以逗號分隔的名稱清單。
 - **描述**–在使用者選取套件時所顯示的套件功能總覽。

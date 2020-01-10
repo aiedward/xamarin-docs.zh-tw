@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: da477ca647de765d0173b223e2df2fe04959221b
-ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
-ms.translationtype: HT
+ms.openlocfilehash: 1ae3a2af436a4ad8860ab27df550a1d74d5084a6
+ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75663538"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718762"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web Views
 
@@ -22,7 +22,7 @@ iOS 11 引進了 `WKWebView` 和 `SFSafariViewController`的新變更。 如需�
 
 ## <a name="wkwebview"></a>WKWebView
 
-`WKWebView` 是在 iOS 8 中引進，可讓應用程式開發人員執行類似于行動 Safari 的 web 流覽介面。 這種情況的原因是，`WKWebView` 使用 Nitro JAVAscript 引擎，這是 mobile Safari 所使用的相同引擎。 `WKWebView` 應一律透過 UIWebView 使用，可能是因為[效能增加](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview)、內建的使用者易記手勢，以及網頁與應用程式之間的互動容易。
+`WKWebView` 是在 iOS 8 中引進，可讓應用程式開發人員執行類似于行動 Safari 的 web 流覽介面。 這種情況的原因是，`WKWebView` 使用 Nitro JAVAscript 引擎，這是 mobile Safari 所使用的相同引擎。 `WKWebView` 應該一律在可能的情況下使用於 UIWebView，因為[效能增加](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview)、內建的使用者易記手勢，以及網頁與應用程式之間的互動輕鬆。
   
 `WKWebView` 可以使用幾乎完全相同的方式新增至您的應用程式，但身為開發人員，您對 UI/UX 和功能有更大的控制權。 建立和顯示 web view 物件將會顯示要求的頁面，不過您可以控制如何呈現視圖、使用者可以流覽的方式，以及使用者如何結束視圖。  
 
@@ -92,11 +92,11 @@ IOS 9 中的 Apple 引進了應用程式傳輸安全性或*ATS* ，以確保所�
 ## <a name="uiwebview-deprecated"></a>UIWebView （已被取代）
 
 > [!IMPORTANT]
-> [Apple 的 `UIWebView` 檔](https://developer.apple.com/documentation/uikit/uiwebview)指出控制項已被取代。 所有應用程式都應該改用[`WKWebKit`](#wkwebview) 。
+> `UIWebView` 已被取代。 在2020年4月之前，使用此控制項的應用程式將[不會被接受到 App Store，而現有的應用程式必須在2020年12月將其移除](https://developer.apple.com/news/?id=12232019b)。
+> 
+> [Apple 的 `UIWebView` 檔](https://developer.apple.com/documentation/uikit/uiwebview)建議應用程式應該改用[`WKWebView`](#wkwebview) 。
 
 `UIWebView` 是 Apple 在您的應用程式中提供 web 內容的舊版方式。 它是在 iOS 2.0 中發行，並已淘汰8.0。
-
-如果您打算支援早于8.0 的 iOS 版本，就必須使用 `UIWebView`。 由於 `UIWebView` 的效能比其他替代方案還低，因此建議您檢查使用者的 iOS 版本。 如果是8.0 或更高版本，使用下列其中一個選項，將會建立更佳的使用者體驗。
 
 若要將 UIWebView 新增至您的 Xamarin iOS 應用程式，請使用下列程式碼：
 

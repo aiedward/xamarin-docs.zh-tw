@@ -6,33 +6,33 @@ ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
 author: davidortinau
 ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 100ef7ffd7e05db0ed8b2af6b9990fc3a0ac1fa9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0b2fd92eb9157b561708eafe10d341381fa21543
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014140"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728196"
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>整合 Google Play Services 元件和 NuGet
 
-## <a name="history"></a>歷程
+## <a name="history"></a>歷程記錄
 
-There used to be several Google Play Services Components and NuGet packages:
+其中有數個 Google Play Services 元件和 NuGet 套件：
 
-- Google Play Services (Froyo)
+- Google Play Services （Froyo）
 - Google Play Services （Gingerbread）
-- Google Play Services (ICS)
+- Google Play Services （ICS）
 - Google Play Services （提供 jellybean）
 - Google Play Services （KitKat）
 
-Google actually only ships two .jar files for Google Play Services:
+Google 實際上只會寄送兩個 Google Play Services 的 .jar 檔案：
 
 - `google-play-services-froyo.jar`
 - `google-play-services.jar`
 
-The discrepancy existed because our tooling didn't properly tell `aapt.exe` what the maximum resource API Level was to be used for a given app. This meant, we received compile errors if we tried using the Google Play Services (KitKat) binding on a lower API level like Gingerbread.
+因為我們的工具並未適當地告訴 `aapt.exe` 要針對指定的應用程式使用的資源 API 層級上限，所以存在差異。 也就是說，如果我們嘗試在較低的 API 層級（例如 Gingerbread）上使用 Google Play Services （KitKat）系結，就會收到編譯錯誤。
 
-## <a name="unifying-google-play-services"></a>Unifying Google Play Services
+## <a name="unifying-google-play-services"></a>統一 Google Play Services
 
 在較新版本的 Xamarin 中，我們現在會告訴 `aapt.exe` 要使用的資源版本上限，因此這個問題會讓我們消失。
 
@@ -59,6 +59,6 @@ Gingerbread 預設不支援片段，因此，系結中的某些類別在 Gingerb
 - Google Play Services （提供 jellybean）
 - Google Play Services （KitKat）
 
-現有的_Google Play Services （ICS）_ 元件/Nuget 已重新命名為_Google Play Services_ ，將會持續保持最新狀態。 所有參考其中一個已停用/Delisted 套件的專案，都應該更新為使用此封裝。
+現有的_Google Play Services （ICS）_ 元件/NuGet 已重新命名為_Google Play Services_ ，將會持續保持最新狀態。 所有參考其中一個已停用/Delisted 套件的專案，都應該更新為使用此封裝。
 
 已停用的元件仍然存在，而且對於仍在中被參考的專案應該是可還原的，以避免中斷它們。 同樣地，delisted NuGet 套件仍然存在，而且可以還原。 它們不會繼續更新。

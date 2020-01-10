@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 65a613f229f04a4ab01ca73a9c53c026add49f84
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029040"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728144"
 ---
 # <a name="viewpager-with-views"></a>使用檢視的 ViewPager
 
 _ViewPager 是可讓您執行 gestural 導覽的版面建構管理員。Gestural 導覽可讓使用者向左和向右滑動以逐步執行資料頁面。本指南說明如何使用 ViewPager 和 PagerTabStrip 來執行 swipeable UI，並以 Views 作為資料頁（後續的指南會討論如何使用頁面的片段）。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 本指南提供逐步解說，說明如何使用 `ViewPager` 來實作為落葉和長時間樹狀結構的映射庫。 在此應用程式中，使用者會透過「樹狀目錄」向左和向右撥動以觀看樹狀結構影像。 在目錄的每一頁頂端，樹狀目錄的名稱會列在`PagerTabStrip`中，而樹狀結構的影像會顯示在 `ImageView`中。 介面卡是用來將 `ViewPager` 介面用於基礎資料模型。 此應用程式會實行衍生自 `PagerAdapter`的介面卡。 
 
@@ -28,7 +28,7 @@ _ViewPager 是可讓您執行 gestural 導覽的版面建構管理員。Gestural
 
 建立名為**TreePager**的新 Android 專案（如需有關建立新 Android 專案的詳細資訊，請參閱[Hello，android](~/android/get-started/hello-android/hello-android-quickstart.md) ）。 接下來，啟動 NuGet 套件管理員。 （如需安裝 NuGet 套件的詳細資訊，請參閱[逐步解說：在您的專案中包含 NuGet](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)）。 尋找並安裝**Android 支援程式庫 v4**： 
 
-[![在 NuGet 套件管理員中選取的支援 v4 Nuget 的螢幕擷取畫面](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
+[![在 NuGet 套件管理員中選取的支援 v4 NuGet 的螢幕擷取畫面](viewpager-and-views-images/01-install-support-lib-sml.png)](viewpager-and-views-images/01-install-support-lib.png#lightbox)
 
 這也會安裝**Android 支援程式庫 v4**所 reaquired 的任何其他套件。
 
@@ -238,13 +238,13 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 
 1. 將傳遞的容器 `View` 轉換成 `ViewPager` 參考。
 
-2. 將傳遞的 JAVA 物件（`view`）轉換成C#`View`（`view as View`）;
+2. 將傳遞的 JAVA 物件（`view`）轉換成C# `View` （`view as View`）;
 
 3. 從 `ViewPager`中移除此視圖。 
 
 ### <a name="implement-isviewfromobject"></a>執行 IsViewFromObject
 
-當使用者在內容頁面中向左和向右滑動時，`ViewPager` 會呼叫 `IsViewFromObject` 以確認指定位置的子 `View` 與該相同位置的介面卡物件相關聯（因此，介面卡的物件稱為*物件金鑰*）。). 對於相對簡單的應用程式，此關聯是識別的其中一個 &ndash; 介面卡的物件金鑰是先前透過 `InstantiateItem`傳回 `ViewPager` 的視圖。 不過，對於其他應用程式，物件索引鍵可能是與 `ViewPager` 在該位置顯示的子視圖相關聯的其他介面卡特定類別實例（但不是相同的）。 只有介面卡知道傳遞的視圖和物件金鑰是否相關聯。 
+當使用者在內容頁面中向左或向右滑動時，`ViewPager` 會呼叫 `IsViewFromObject`，以確認指定位置的子 `View` 與該相同位置的介面卡物件相關聯（因此，介面卡的物件稱為物件索引*鍵*）。 對於相對簡單的應用程式，此關聯是識別的其中一個 &ndash; 介面卡的物件金鑰是先前透過 `InstantiateItem`傳回 `ViewPager` 的視圖。 不過，對於其他應用程式，物件索引鍵可能是與 `ViewPager` 在該位置顯示的子視圖相關聯的其他介面卡特定類別實例（但不是相同的）。 只有介面卡知道傳遞的視圖和物件金鑰是否相關聯。 
 
 必須執行 `IsViewFromObject`，`PagerAdapter` 才能正常運作。 如果 `IsViewFromObject` 傳回指定位置 `false`，`ViewPager` 將不會在該位置顯示視圖。 在 `TreePager` 應用程式中，由 `InstantiateItem` 傳回的物件索引鍵*是*樹狀結構的頁面 `View`，因此程式碼只需要檢查身分識別（亦即，物件索引鍵和視圖都是相同的）。 以下列程式碼取代 `IsViewFromObject`： 
 
@@ -267,7 +267,7 @@ viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 
 核心執行現在已完成，&ndash; 建立並執行應用程式。 您應該會看到樹狀目錄的第一個影像顯示在畫面上，如下一個螢幕擷取畫面所示。 向左滑動以查看更多樹狀檢視，然後向右滑動以移回樹狀目錄： 
 
-[透過樹狀結構影像![TreePager 應用程式的螢幕擷取畫面](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
+[透過樹狀結構影像 ![TreePager 應用程式的螢幕擷取畫面](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
 ## <a name="add-a-pager-indicator"></a>新增分頁指標
 
@@ -319,11 +319,11 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 `PagerTitleStrip` 與 `PagerTabStrip` 非常類似，不同之處在于 `PagerTabStrip` 會為目前選取的索引標籤加上底線。您可以使用上述版面配置中的 `PagerTitleStrip` 來取代 `PagerTabStrip`，然後再次執行應用程式，以查看其 `PagerTitleStrip`的外觀： 
 
-[已從文字中移除底線的![PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
+[已從文字中移除底線的 ![PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
 請注意，當您轉換成 `PagerTitleStrip`時，會移除底線。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本逐步解說提供如何建立基本 `ViewPager`型應用程式，而不需要使用 `Fragment`的逐步範例。 它會呈現包含影像和標題字串的範例資料來源、用來顯示影像的 `ViewPager` 配置，以及將 `ViewPager` 連接至資料來源的 `PagerAdapter` 子類別。 為了協助使用者流覽資料集，其中包含說明如何新增 `PagerTabStrip` 或 `PagerTitleStrip`，以在每個頁面頂端顯示影像標題的指示。 
 

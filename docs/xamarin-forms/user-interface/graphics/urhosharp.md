@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: 7045bd4d3343d0c11c6cd52fa02cdc005175b8a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 60c647a9a09ebffa5a9d50c799c09cf0dbf2e4ac
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772927"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728003"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>在 Xamarin 中使用 UrhoSharp
 
@@ -25,21 +25,21 @@ ms.locfileid: "70772927"
 UrhoSharp 可以用來轉譯 Xamarin 應用程式中的圖形。
 這個[範例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)示範如何使用 UrhoSharp 來建立互動式的3d 圖表：
 
-![](urhosharp-images/ios-animation.gif "在 iOS 上 UrhoSharp 3d 互動式圖表")
-![] (urhosharp-images/android-animation.gif "UrhoSharp Android 上的3d 互動式圖表")
+![](urhosharp-images/ios-animation.gif "UrhoSharp 3D Interactive Chart on iOS")
+![](urhosharp-images/android-animation.gif "UrhoSharp 3D Interactive Chart on Android")
 
-## <a name="adding-the-urhosharp-nuget-packages"></a>新增 UrhoSharp Nuget 套件
+## <a name="adding-the-urhosharp-nuget-packages"></a>新增 UrhoSharp NuGet 套件
 
-在使用 UrhoSharp 之前，開發人員必須在其解決方案中新增 UrhoSharp Nuget 套件。 本指南假設有一個包含 iOS、Android 和 .NET Standard 程式庫專案的 Xamarin. Forms 專案。 所有程式碼都會寫入 .NET Standard 程式庫專案中;但 UrhoSharp Nuget 也必須新增至 iOS 和 Android 專案。
+在使用 UrhoSharp 之前，開發人員必須在其解決方案中新增 UrhoSharp NuGet 套件。 本指南假設有一個包含 iOS、Android 和 .NET Standard 程式庫專案的 Xamarin. Forms 專案。 所有程式碼都會寫入 .NET Standard 程式庫專案中;但 UrhoSharp NuGet 也必須新增至 iOS 和 Android 專案。
 
-UrhoSharp Nuget 套件包含建立 UrhoSharp 物件所需的所有物件。 UrhoSharp nuget 套件包含 `UrhoSurface` 類別，用來裝載 Xamarin 中的 UrhoSharp。
+UrhoSharp NuGet 套件包含建立 UrhoSharp 物件所需的所有物件。 UrhoSharp NuGet 套件包含 `UrhoSurface` 類別，用來裝載 Xamarin 中的 UrhoSharp。
 若要開始，請以滑鼠右鍵按一下 .NET Standard 程式庫專案中的 [**套件**] 資料夾，然後選取 [**新增套件**]。輸入搜尋詞彙**UrhoSharp**，**針對 [Xamarin**] 選取 [UrhoSharp]，然後按一下 [**新增套件**]。
 
-新增封裝對話方塊(urhosharp-images/add-package.png#lightbox "新增封裝對話方塊") [ ![(urhosharp-images/add-package-sml.png "")] ]
+[![](urhosharp-images/add-package-sml.png "Add Packages Dialog")](urhosharp-images/add-package.png#lightbox "Add Packages Dialog")
 
 UrhoSharp NuGet 套件會新增至專案：
 
-![](urhosharp-images/packages.png "封裝資料夾")
+![](urhosharp-images/packages.png "Packages Folder")
 
 針對平臺特定專案（例如 iOS 和 Android）重複上述步驟。
 

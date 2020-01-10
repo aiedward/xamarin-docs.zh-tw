@@ -6,12 +6,12 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: davidortinau
 ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 0e49ef8fa0bf00d5ed41f3411393ffaf4891c1b8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 30827292e59c70395fce17bb520f48b2f19c7d1e
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013987"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728172"
 ---
 # <a name="general-frequently-asked-questions"></a>一般常見問題
 
@@ -33,7 +33,7 @@ Xamarin. iOS 和 Xamarin 不會將其允許的每個 PCL 設定檔的100% 實作
 ### <a name="how-do-i-downgrade-a-nuget-packagenuget-package-downgrademd"></a>[如何下載 NuGet 套件？](nuget-package-downgrade.md)
 Visual Studio for Mac & Visual Studio 都具有選取舊版套件並自動安裝的功能;與更新封裝的運作方式類似。
 
-### <a name="missing-packages-error-after-updating-nuget-packagesnuget-packages-missingmd"></a>[更新 Nuget 套件之後的遺失套件錯誤](nuget-packages-missing.md)
+### <a name="missing-packages-error-after-updating-nuget-packagesnuget-packages-missingmd"></a>[更新 NuGet 套件之後遺失套件錯誤](nuget-packages-missing.md)
 這個問題主要是在 Xamarin 上回報。表單範例應用程式解決方案，但此問題的潛能可能發生在任何使用 NuGet 套件的專案上。
 
 ### <a name="unifying-google-play-services-components-and-nugetgps-components-nugetmd"></a>[統一 Google Play 服務元件和 NuGet](gps-components-nuget.md)
