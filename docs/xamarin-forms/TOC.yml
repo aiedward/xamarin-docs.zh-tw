@@ -1,0 +1,895 @@
+- name: Xamarin.Forms
+  href: index.yml
+  items:
+    - name: 開始使用
+      href: ~/get-started/index.yml
+      items:
+        - name: 什麼是 Xamarin.Forms
+          href: ~/get-started/what-is-xamarin-forms.md
+        - name: 需求
+          href: ~/get-started/requirements.md
+        - name: 安裝
+          href: ~/get-started/installation/index.md
+        - name: 建置您的第一個應用程式
+          href: ~/get-started/first-app/index.md
+        - name: 單頁快速入門
+          href: ~/get-started/quickstarts/single-page.md
+        - name: 多頁快速入門
+          href: ~/get-started/quickstarts/multi-page.md
+        - name: 本機資料庫快速入門
+          href: ~/get-started/quickstarts/database.md
+        - name: 樣式快速入門
+          href: ~/get-started/quickstarts/styling.md
+        - name: 深度剖析
+          href: ~/get-started/quickstarts/deepdive.md
+    - name: XAML
+      items:
+        - name: 總覽
+          href: xaml/index.yml
+        - name: XAML 基本知識
+          href: xaml/xaml-basics/index.md
+          items:
+            - name: 第 1 部份： 開始使用 XAML
+              href: xaml/xaml-basics/get-started-with-xaml.md
+            - name: 第 2 部分： 基本 XAML 語法
+              href: xaml/xaml-basics/essential-xaml-syntax.md
+            - name: 第 3 部分： XAML 標記延伸
+              href: xaml/xaml-basics/xaml-markup-extensions.md
+            - name: 第 4 部分： 資料繫結的基本概念
+              href: xaml/xaml-basics/data-binding-basics.md
+            - name: 第 5 部分： 從資料繫結到 MVVM
+              href: xaml/xaml-basics/data-bindings-to-mvvm.md
+        - name: XAML 控制項
+          href: xaml/xaml-controls.md
+        - name: XAML 編譯
+          href: xaml/xamlc.md
+        - name: XAML 標記延伸
+          href: xaml/markup-extensions/index.md
+          items:
+            - name: 使用 XAML 標記延伸
+              href: xaml/markup-extensions/consuming.md
+            - name: 建立 XAML 標記延伸
+              href: xaml/markup-extensions/creating.md
+        - name: Tooling
+          items:
+            - name: XAML 熱重新載入
+              href: xaml/hot-reload.md
+            - name: XAML 工具箱
+              href: xaml/toolbox.md
+            - name: XAML 預覽程式
+              href: xaml/xaml-previewer/index.md
+              items:
+                - name: 設計階段資料
+                  href: xaml/xaml-previewer/design-time-data.md
+                - name: 自訂控制項
+                  href: xaml/xaml-previewer/render-custom-controls.md
+        - name: 命名空間
+          items:
+            - name: XAML 命名空間
+              href: xaml/namespaces.md
+            - name: XAML 自訂命名空間結構描述
+              href: xaml/custom-namespace-schemas.md
+            - name: XAML 命名空間建議的前置詞
+              href: xaml/custom-prefix.md
+        - name: 其他功能
+          items:
+            - name: 可繫結的屬性
+              href: xaml/bindable-properties.md
+            - name: 附加屬性
+              href: xaml/attached-properties.md
+            - name: 資源字典
+              href: xaml/resource-dictionaries.md
+            - name: 傳遞引數
+              href: xaml/passing-arguments.md
+            - name: 欄位修飾詞
+              href: xaml/field-modifiers.md
+            - name: 在執行階段載入 XAML
+              href: xaml/runtime-load.md
+    - name: 應用程式基本概念
+      items:
+        - name: 總覽
+          href: app-fundamentals/index.yml
+        - name: 協助工具選項
+          href: app-fundamentals/accessibility/index.md
+          items:
+            - name: 自動化屬性
+              href: app-fundamentals/accessibility/automation-properties.md
+            - name: 鍵盤協助工具
+              href: app-fundamentals/accessibility/keyboard.md
+        - name: 應用程式類別
+          href: app-fundamentals/application-class.md
+        - name: 應用程式生命週期
+          href: app-fundamentals/app-lifecycle.md
+        - name: 應用程式索引和深層連結
+          href: app-fundamentals/deep-linking.md
+        - name: 「行為」
+          href: app-fundamentals/behaviors/index.md
+          items:
+            - name: 簡介
+              href: app-fundamentals/behaviors/introduction.md
+            - name: 附加的行為
+              href: app-fundamentals/behaviors/attached.md
+            - name: Xamarin.Forms 行為
+              href: app-fundamentals/behaviors/creating.md
+            - name: 可重複使用的行為
+              href: app-fundamentals/behaviors/reusable/index.md
+              items:
+                - name: EffectBehavior
+                  href: app-fundamentals/behaviors/reusable/effect-behavior.md
+                - name: EventToCommandBehavior
+                  href: app-fundamentals/behaviors/reusable/event-to-command-behavior.md
+        - name: 自訂轉譯器
+          href: app-fundamentals/custom-renderer/index.md
+          items:
+            - name: 簡介
+              href: app-fundamentals/custom-renderer/introduction.md
+            - name: 轉譯器基底類別與原生控制項
+              href: app-fundamentals/custom-renderer/renderers.md
+            - name: 自訂 Entry
+              href: app-fundamentals/custom-renderer/entry.md
+            - name: 自訂 ContentPage
+              href: app-fundamentals/custom-renderer/contentpage.md
+            - name: 自訂地圖
+              href: app-fundamentals/custom-renderer/map/index.md
+              items:
+                - name: 自訂地圖釘選
+                  href: app-fundamentals/custom-renderer/map/customized-pin.md
+                - name: 醒目提示地圖上的循環區域
+                  href: app-fundamentals/custom-renderer/map/circle-map-overlay.md
+            - name: 自訂 ListView
+              href: app-fundamentals/custom-renderer/listview.md
+            - name: 自訂 ViewCell
+              href: app-fundamentals/custom-renderer/viewcell.md
+            - name: 自訂 WebView
+              href: app-fundamentals/custom-renderer/hybridwebview.md
+            - name: 實作檢視
+              href: app-fundamentals/custom-renderer/view.md
+            - name: 實作影片播放程式
+              href: app-fundamentals/custom-renderer/video-player/index.md
+              items:
+                - name: 建立平台影片播放程式
+                  href: app-fundamentals/custom-renderer/video-player/player-creation.md
+                - name: 播放網路影片
+                  href: app-fundamentals/custom-renderer/video-player/web-videos.md
+                - name: 將影片來源繫結至播放程式
+                  href: app-fundamentals/custom-renderer/video-player/source-bindings.md
+                - name: 載入應用程式資源影片
+                  href: app-fundamentals/custom-renderer/video-player/loading-resources.md
+                - name: 存取裝置的影片庫
+                  href: app-fundamentals/custom-renderer/video-player/accessing-library.md
+                - name: 自訂影片傳輸控制項
+                  href: app-fundamentals/custom-renderer/video-player/custom-transport.md
+                - name: 自訂影片位置
+                  href: app-fundamentals/custom-renderer/video-player/custom-positioning.md
+        - name: 資料繫結
+          href: app-fundamentals/data-binding/index.md
+          items:
+            - name: 基本繫結
+              href: app-fundamentals/data-binding/basic-bindings.md
+            - name: 繫結模式
+              href: app-fundamentals/data-binding/binding-mode.md
+            - name: 字串格式化
+              href: app-fundamentals/data-binding/string-formatting.md
+            - name: 繫結路徑
+              href: app-fundamentals/data-binding/binding-path.md
+            - name: 繫結值轉換器
+              href: app-fundamentals/data-binding/converters.md
+            - name: 相對繫結
+              href: app-fundamentals/data-binding/relative-bindings.md
+            - name: 繫結後援
+              href: app-fundamentals/data-binding/binding-fallbacks.md
+            - name: 命令介面
+              href: app-fundamentals/data-binding/commanding.md
+            - name: 編譯的繫結
+              href: app-fundamentals/data-binding/compiled-bindings.md
+        - name: DependencyService
+          href: app-fundamentals/dependency-service/index.md
+          items:
+            - name: 簡介
+              href: app-fundamentals/dependency-service/introduction.md
+            - name: 註冊和解析
+              href: app-fundamentals/dependency-service/registration-and-resolution.md
+            - name: 從相片庫挑選
+              href: app-fundamentals/dependency-service/photo-picker.md
+        - name: 效果
+          href: app-fundamentals/effects/index.md
+          items:
+            - name: 簡介
+              href: app-fundamentals/effects/introduction.md
+            - name: 效果建立
+              href: app-fundamentals/effects/creating.md
+            - name: 傳遞參數
+              href: app-fundamentals/effects/passing-parameters/index.md
+              items:
+                - name: 參數為 CLR 屬性
+                  href: app-fundamentals/effects/passing-parameters/clr-properties.md
+                - name: 參數為附加屬性
+                  href: app-fundamentals/effects/passing-parameters/attached-properties.md
+            - name: 叫用事件
+              href: app-fundamentals/effects/touch-tracking.md
+            - name: 可重複使用的 RoundEffect
+              href: app-fundamentals/effects/reusable-roundeffect.md
+        - name: 軌跡
+          href: app-fundamentals/gestures/index.md
+          items:
+            - name: 點選
+              href: app-fundamentals/gestures/tap.md
+            - name: 捏合
+              href: app-fundamentals/gestures/pinch.md
+            - name: 移動瀏覽
+              href: app-fundamentals/gestures/pan.md
+            - name: 撥動
+              href: app-fundamentals/gestures/swipe.md
+        - name: 本機通知
+          href: app-fundamentals/local-notifications.md
+        - name: 當地語系化
+          href: app-fundamentals/localization/index.md
+          items:
+            - name: 字串及影像當地語系化
+              href: app-fundamentals/localization/text.md
+            - name: 從右至左當地語系化
+              href: app-fundamentals/localization/right-to-left.md
+        - name: MessagingCenter
+          href: app-fundamentals/messaging-center.md
+        - name: 巡覽
+          href: app-fundamentals/navigation/index.md
+          items:
+            - name: 階層式導覽
+              href: app-fundamentals/navigation/hierarchical.md
+            - name: TabbedPage
+              href: app-fundamentals/navigation/tabbed-page.md
+            - name: CarouselPage
+              href: app-fundamentals/navigation/carousel-page.md
+            - name: MasterDetailPage
+              href: app-fundamentals/navigation/master-detail-page.md
+            - name: 強制回應頁面
+              href: app-fundamentals/navigation/modal.md
+        - name: Shell
+          href: app-fundamentals/shell/index.md
+          items:
+            - name: 簡介
+              href: app-fundamentals/shell/introduction.md
+            - name: 建立 Shell 應用程式
+              href: app-fundamentals/shell/create.md
+            - name: Flyout
+              href: app-fundamentals/shell/flyout.md
+            - name: 定位點
+              href: app-fundamentals/shell/tabs.md
+            - name: 頁面設定
+              href: app-fundamentals/shell/configuration.md
+            - name: 巡覽
+              href: app-fundamentals/shell/navigation.md
+            - name: 搜尋
+              href: app-fundamentals/shell/search.md
+            - name: 生命週期
+              href: app-fundamentals/shell/lifecycle.md
+            - name: 自訂轉譯器
+              href: app-fundamentals/shell/customrenderers.md
+        - name: 範本
+          href: app-fundamentals/templates/index.md
+          items:
+            - name: 控制項範本
+              href: app-fundamentals/templates/control-templates/index.md
+              items:
+                - name: 簡介
+                  href: app-fundamentals/templates/control-templates/introduction.md
+                - name: 控制項範本建立
+                  href: app-fundamentals/templates/control-templates/creating.md
+                - name: 範本繫結
+                  href: app-fundamentals/templates/control-templates/template-binding.md
+            - name: 資料範本
+              href: app-fundamentals/templates/data-templates/index.md
+              items:
+                - name: 簡介
+                  href: app-fundamentals/templates/data-templates/introduction.md
+                - name: 資料範本建立
+                  href: app-fundamentals/templates/data-templates/creating.md
+                - name: 資料範本選擇
+                  href: app-fundamentals/templates/data-templates/selector.md
+        - name: 觸發程序
+          href: app-fundamentals/triggers.md
+    - name: 使用者介面
+      items:
+        - name: 總覽
+          href: user-interface/index.yml
+        - name: 控制項參考
+          items:
+            - name: 總覽
+              href: user-interface/controls/index.md
+            - name: 頁面
+              href: user-interface/controls/pages.md
+            - name: 版面配置
+              href: user-interface/controls/layouts.md
+            - name: 檢視
+              href: user-interface/controls/views.md
+            - name: 資料格
+              href: user-interface/controls/cells.md
+            - name: 一般屬性、方法與事件
+              href: user-interface/controls/common-properties.md
+            - name: 第三方控制項
+              href: user-interface/controls/thirdparty.md
+        - name: 呈現資料
+          items:
+            - name: BoxView
+              href: user-interface/boxview.md
+            - name: Image
+              href: user-interface/images.md
+            - name: 標籤
+              href: user-interface/text/label.md
+            - name: 對應
+              items:
+                - name: 總覽
+                  href: user-interface/map/index.md
+                - name: 初始化和設定
+                  href: user-interface/map/setup.md
+                - name: 地圖控制項
+                  href: user-interface/map/map.md
+                - name: 位置和距離
+                  href: user-interface/map/position-distance.md
+                - name: 釘選
+                  href: user-interface/map/pins.md
+                - name: 多邊形和聚合線條
+                  href: user-interface/map/polygons.md
+                - name: 地理編碼
+                  href: user-interface/map/geocoder.md
+                - name: 啟動原生地圖應用程式
+                  href: user-interface/map/native-map-app.md
+            - name: WebView
+              href: user-interface/webview.md
+        - name: 起始命令
+          items:
+            - name: 按鈕
+              href: user-interface/button.md
+            - name: ImageButton
+              href: user-interface/imagebutton.md
+            - name: RefreshView
+              href: user-interface/refreshview.md
+            - name: 搜尋列
+              href: user-interface/searchbar.md
+            - name: SwipeView
+              href: user-interface/swipeview.md
+        - name: 設定值
+          items:
+            - name: 核取方塊
+              href: user-interface/checkbox.md
+            - name: DatePicker
+              href: user-interface/datepicker.md
+            - name: 滑桿
+              href: user-interface/slider.md
+            - name: Stepper
+              href: user-interface/stepper.md
+            - name: 參數
+              href: user-interface/switch.md
+            - name: TimePicker
+              href: user-interface/timepicker.md
+        - name: 編輯文字
+          items:
+            - name: 編輯器
+              href: user-interface/text/editor.md
+            - name: 進入
+              href: user-interface/text/entry.md
+        - name: 表示活動
+          items:
+            - name: ActivityIndicator
+              href: user-interface/activityindicator.md
+            - name: 進度列
+              href: user-interface/progressbar.md
+        - name: 顯示集合
+          items:
+            - name: CarouselView
+              href: user-interface/carouselview/index.md
+              items:
+                - name: 簡介
+                  href: user-interface/carouselview/introduction.md
+                - name: 資料
+                  href: user-interface/carouselview/populate-data.md
+                - name: 配置
+                  href: user-interface/carouselview/layout.md
+                - name: 互動
+                  href: user-interface/carouselview/interaction.md
+                - name: EmptyView
+                  href: user-interface/carouselview/emptyview.md
+                - name: 捲動
+                  href: user-interface/carouselview/scrolling.md
+            - name: CollectionView
+              href: user-interface/collectionview/index.md
+              items:
+                - name: 簡介
+                  href: user-interface/collectionview/introduction.md
+                - name: 資料
+                  href: user-interface/collectionview/populate-data.md
+                - name: 配置
+                  href: user-interface/collectionview/layout.md
+                - name: 選取
+                  href: user-interface/collectionview/selection.md
+                - name: EmptyView
+                  href: user-interface/collectionview/emptyview.md
+                - name: 捲動
+                  href: user-interface/collectionview/scrolling.md
+                - name: 群組
+                  href: user-interface/collectionview/grouping.md
+            - name: IndicatorView
+              href: user-interface/indicatorview.md
+            - name: ListView
+              href: user-interface/listview/index.md
+              items:
+                - name: Data Sources
+                  href: user-interface/listview/data-and-databinding.md
+                - name: 儲存格外觀
+                  href: user-interface/listview/customizing-cell-appearance.md
+                - name: 清單外觀
+                  href: user-interface/listview/customizing-list-appearance.md
+                - name: 互動
+                  href: user-interface/listview/interactivity.md
+                - name: 效能
+                  href: user-interface/listview/performance.md
+            - name: Picker
+              href: user-interface/picker/index.md
+              items:
+                - name: 設定 Picker 的 ItemsSource 屬性
+                  href: user-interface/picker/populating-itemssource.md
+                - name: 將資料新增到 Picker 的項目集合
+                  href: user-interface/picker/populating-items.md
+            - name: TableView
+              href: user-interface/tableview.md
+        - name: 其他控制項
+          items:
+            - name: MenuItem
+              href: user-interface/menuitem.md
+            - name: ToolbarItem
+              href: user-interface/toolbaritem.md
+        - name: 概念
+          items:
+            - name: 動畫
+              href: user-interface/animation/index.md
+              items:
+                - name: 簡單動畫
+                  href: user-interface/animation/simple.md
+                - name: Easing 函式
+                  href: user-interface/animation/easing.md
+                - name: 自訂動畫
+                  href: user-interface/animation/custom.md
+            - name: 色彩
+              href: user-interface/colors.md
+            - name: DataPages
+              href: user-interface/datapages/index.md
+              items:
+                - name: 開始使用
+                  href: user-interface/datapages/get-started.md
+                - name: 控制項參考
+                  href: user-interface/datapages/controls.md
+            - name: 顯示快顯
+              href: user-interface/pop-ups.md
+            - name: 字型
+              href: user-interface/text/fonts.md
+            - name: 使用 Skiasharp 的圖形
+              href: user-interface/graphics/skiasharp/index.md
+            - name: 啟動顯示畫面
+              href: user-interface/splashscreen.md
+            - name: 樣式
+              href: user-interface/styles/index.md
+              items:
+                - name: 使用 XAML 樣式設定 Xamarin.Forms 應用程式的樣式
+                  href: user-interface/styles/xaml/index.md
+                  items:
+                    - name: 簡介
+                      href: user-interface/styles/xaml/introduction.md
+                    - name: 明確樣式
+                      href: user-interface/styles/xaml/explicit.md
+                    - name: 隱含樣式
+                      href: user-interface/styles/xaml/implicit.md
+                    - name: 全域樣式
+                      href: user-interface/styles/xaml/application.md
+                    - name: 樣式繼承
+                      href: user-interface/styles/xaml/inheritance.md
+                    - name: 動態樣式
+                      href: user-interface/styles/xaml/dynamic.md
+                    - name: 裝置樣式
+                      href: user-interface/styles/xaml/device.md
+                    - name: 樣式類別
+                      href: user-interface/styles/xaml/style-class.md
+                - name: 使用階層式樣式表 (CSS) 設定 Xamarin.Forms 應用程式的樣式
+                  href: user-interface/styles/css/index.md
+            - name: 佈景主題
+              href: user-interface/theming.md
+            - name: 視覺效果
+              href: user-interface/visual/index.md
+              items:
+                - name: 質感視覺效果
+                  href: user-interface/visual/material-visual.md
+                - name: 建立視覺效果轉譯器
+                  href: user-interface/visual/create.md
+            - name: Visual State Manager
+              href: user-interface/visual-state-manager.md
+        - name: 版面配置
+          items:
+            - name: 總覽
+              href: user-interface/layouts/index.yml
+            - name: 選擇版面配置
+              href: user-interface/layouts/choose-layout.md
+            - name: 核心版面配置
+              items:
+                - name: AbsoluteLayout
+                  href: user-interface/layouts/absolute-layout.md
+                - name: FlexLayout
+                  href: user-interface/layouts/flex-layout.md
+                - name: Grid
+                  href: user-interface/layouts/grid.md
+                - name: RelativeLayout
+                  href: user-interface/layouts/relative-layout.md
+                - name: StackLayout
+                  href: user-interface/layouts/stack-layout.md
+            - name: 其他版面配置
+              items:
+                - name: ContentView
+                  href: user-interface/layouts/contentview.md
+                - name: Frame
+                  href: user-interface/layouts/frame.md
+                - name: ScrollView
+                  href: user-interface/layouts/scroll-view.md
+            - name: 概念
+              items:
+                - name: 可繫結的版面配置
+                  href: user-interface/layouts/bindable-layouts.md
+                - name: 自訂配置
+                  href: user-interface/layouts/custom.md
+                - name: 裝置方向
+                  href: user-interface/layouts/device-orientation.md
+                - name: LayoutOptions
+                  href: user-interface/layouts/layout-options.md
+                - name: 版面配置壓縮
+                  href: user-interface/layouts/layout-compression.md
+                - name: 邊界和邊框間距
+                  href: user-interface/layouts/margin-and-padding.md
+                - name: 平板電腦與桌上型電腦
+                  href: user-interface/layouts/tablet.md
+    - name: 平台功能
+      items:
+        - name: 總覽
+          href: platform/index.yml
+        - name: Android
+          items:
+            - name: 總覽
+              href: platform/android/index.md
+            - name: AppCompat 與質感設計
+              href: platform/android/appcompat-material-design.md
+            - name: 按鈕邊框間距與陰影
+              href: platform/android/button-padding-shadow.md
+            - name: Entry 輸入法選項
+              href: platform/android/entry-ime-options.md
+            - name: ImageButton 陰影
+              href: platform/android/imagebutton-drop-shadow.md
+            - name: ListView 快速捲動
+              href: platform/android/listview-fast-scrolling.md
+            - name: NavigationPage 列高度
+              href: platform/android/navigationpage-bar-height.md
+            - name: 頁面週期事件
+              href: platform/android/page-lifecycle-events.md
+            - name: 螢幕小鍵盤輸入模式
+              href: platform/android/soft-keyboard-input-mode.md
+            - name: SwipeView 撥動轉換模式
+              href: platform/android/swipeview-swipetransitionmode.md
+            - name: TabbedPage 頁面撥動
+              href: platform/android/tabbedpage-page-swiping.md
+            - name: TabbedPage 頁面轉換動畫
+              href: platform/android/tabbedpage-transition-animations.md
+            - name: TabbedPage 工具列放置與色彩
+              href: platform/android/tabbedpage-toolbar-placement-color.md
+            - name: ViewCell 內容動作
+              href: platform/android/viewcell-context-actions.md
+            - name: VisualElement 上移
+              href: platform/android/visualelement-elevation.md
+            - name: VisualElement 舊版色彩模式
+              href: platform/android/legacy-color-mode.md
+            - name: WebView 混合內容
+              href: platform/android/webview-mixed-content.md
+            - name: WebView 縮放
+              href: platform/android/webview-zoom-controls.md
+        - name: iOS
+          items:
+            - name: 總覽
+              href: platform/ios/index.md
+            - name: 具名字型大小的協助工具縮放
+              href: platform/ios/named-font-size-scaling.md
+            - name: 儲存格背景色彩
+              href: platform/ios/cell-background-color.md
+            - name: Entry 游標色彩
+              href: platform/ios/entry-cursor-color.md
+            - name: Entry 字型大小
+              href: platform/ios/entry-font-size.md
+            - name: 格式化
+              href: platform/ios/formatting.md
+            - name: 強制回應頁面呈現樣式
+              href: platform/ios/page-presentation-style.md
+            - name: 大型頁面標題
+              href: platform/ios/page-large-title.md
+            - name: ListView 群組標題樣式
+              href: platform/ios/listview-group-header-style.md
+            - name: ListView 列動畫
+              href: platform/ios/listview-row-animations.md
+            - name: ListView 分隔符號樣式
+              href: platform/ios/listview-separator-style.md
+            - name: 主要執行緒控制項更新
+              href: platform/ios/main-thread-updates-ui.md
+            - name: NavigationPage 列分隔符號
+              href: platform/ios/navigation-bar-separator.md
+            - name: NavigationPage 列文字色彩模式
+              href: platform/ios/status-bar-text-color.md
+            - name: NavigationPage 列半透明度
+              href: platform/ios/navigation-bar-translucent.md
+            - name: Page 首頁指標可見度
+              href: platform/ios/page-home-indicator.md
+            - name: Page 狀態列可見度
+              href: platform/ios/page-status-bar-visibility.md
+            - name: Picker 項目選取
+              href: platform/ios/picker-selection.md
+            - name: 安全區域版面配置輔助線
+              href: platform/ios/page-safe-area-layout.md
+            - name: ScrollView 內容觸控
+              href: platform/ios/scrollview-content-touches.md
+            - name: 同時移動瀏覽手勢辨識
+              href: platform/ios/application-pan-gesture.md
+            - name: 滑桿指標點選
+              href: platform/ios/slider-thumb.md
+            - name: SwipeView 撥動轉換模式
+              href: platform/ios/swipeview-swipetransitionmode.md
+            - name: VisualElement 模糊
+              href: platform/ios/visualelement-blur.md
+            - name: VisualElement 陰影
+              href: platform/ios/visualelement-drop-shadow.md
+            - name: VisualElement 舊版色彩模式
+              href: platform/ios/legacy-color-mode.md
+        - name: Windows
+          items:
+            - name: 總覽
+              href: platform/windows/index.md
+            - name: InputView 閱讀順序
+              href: platform/windows/inputview-reading-order.md
+            - name: ListView SelectionMode
+              href: platform/windows/listview-selectionmode.md
+            - name: MasterDetailPage 瀏覽列
+              href: platform/windows/masterdetailpage-navigation-bar.md
+            - name: Page 工具列放置
+              href: platform/windows/page-toolbar-placement.md
+            - name: 平台設定
+              href: platform/windows/installation/index.md
+            - name: RefreshView 拖動方向
+              href: platform/windows/refreshview-pulldirection.md
+            - name: SearchBar 拼字檢查
+              href: platform/windows/searchbar-spell-check.md
+            - name: TabbedPage 圖示
+              href: platform/windows/tabbedpage-icons.md
+            - name: VisualElement 便捷鍵
+              href: platform/windows/visualelement-access-keys.md
+            - name: VisualElement 舊版色彩模式
+              href: platform/windows/legacy-color-mode.md
+            - name: WebView JavaScript 警示
+              href: platform/windows/webview-javascript-alert.md
+        - name: 建立平台專用
+          href: platform/platform-specifics/index.md
+        - name: Device 類別
+          href: platform/device.md
+        - name: 原生表單
+          href: platform/native-forms.md
+        - name: 原生檢視
+          href: platform/native-views/index.md
+          items:
+            - name: XAML 中的原生檢視
+              href: platform/native-views/xaml.md
+            - name: 'C# 中的原生檢視'
+              href: platform/native-views/code.md
+        - name: 透過 Apple 登入
+          href: platform/sign-in-with-apple/index.md
+          items:
+            - name: 為 iOS 進行設定
+              href: ~/ios/platform/ios13/sign-in.md
+            - name: 為其他平台進行設定
+              href: platform/sign-in-with-apple/setup.md
+            - name: '使用 [透過 Apple 登入]'
+              href: platform/sign-in-with-apple/android-ios-sign-in.md
+        - name: 其他平台
+          href: platform/other/index.md
+          items:
+            - name: 'GTK#'
+              href: platform/other/gtk.md
+            - name: Mac
+              href: platform/other/mac.md
+            - name: Tizen
+              href: platform/other/tizen.md
+            - name: WPF
+              href: platform/other/wpf.md
+    - name: Xamarin.Essentials
+      href: ~/essentials/index.md?context=xamarin/xamarin-forms
+      items:
+        - name: 開始使用
+          href: ~/essentials/get-started.md?context=xamarin/xamarin-forms
+        - name: 平台與功能支援
+          href: ~/essentials/platform-feature-support.md?context=xamarin/xamarin-forms
+        - name: 加速計
+          href: ~/essentials/accelerometer.md?context=xamarin/xamarin-forms
+        - name: 應用程式資訊
+          href: ~/essentials/app-information.md?context=xamarin/xamarin-forms
+        - name: 氣壓計
+          href: ~/essentials/barometer.md?context=xamarin/xamarin-forms
+        - name: 電池
+          href: ~/essentials/battery.md?context=xamarin/xamarin-forms
+        - name: 剪貼簿
+          href: ~/essentials/clipboard.md?context=xamarin/xamarin-forms
+        - name: 色彩轉換器
+          href: ~/essentials/color-converters.md?context=xamarin/xamarin-forms
+        - name: 羅盤
+          href: ~/essentials/compass.md?context=xamarin/xamarin-forms
+        - name: 連線能力
+          href: ~/essentials/connectivity.md?context=xamarin/xamarin-forms
+        - name: 偵測搖動
+          href: ~/essentials/detect-shake.md?context=xamarin/xamarin-forms
+        - name: 裝置顯示資訊
+          href: ~/essentials/device-display.md?context=xamarin/xamarin-forms
+        - name: 裝置資訊
+          href: ~/essentials/device-information.md?context=xamarin/xamarin-forms
+        - name: Email
+          href: ~/essentials/email.md?context=xamarin/xamarin-forms
+        - name: 檔案系統協助程式
+          href: ~/essentials/file-system-helpers.md?context=xamarin/xamarin-forms
+        - name: 手電筒
+          href: ~/essentials/flashlight.md?context=xamarin/xamarin-forms
+        - name: 地理編碼
+          href: ~/essentials/geocoding.md?context=xamarin/xamarin-forms
+        - name: 地理位置
+          href: ~/essentials/geolocation.md?context=xamarin/xamarin-forms
+        - name: 迴轉儀
+          href: ~/essentials/gyroscope.md?context=xamarin/xamarin-forms
+        - name: 啟動器
+          href: ~/essentials/launcher.md?context=xamarin/xamarin-forms
+        - name: 磁力計
+          href: ~/essentials/magnetometer.md?context=xamarin/xamarin-forms
+        - name: 主執行緒
+          href: ~/essentials/main-thread.md?context=xamarin/xamarin-forms
+        - name: 地圖
+          href: ~/essentials/maps.md?context=xamarin/xamarin-forms
+        - name: 開啟瀏覽器
+          href: ~/essentials/open-browser.md?context=xamarin/xamarin-forms
+        - name: 方向感應器
+          href: ~/essentials/orientation-sensor.md?context=xamarin/xamarin-forms
+        - name: 電話撥號程式
+          href: ~/essentials/phone-dialer.md?context=xamarin/xamarin-forms
+        - name: '平台擴充 (Size, Rect, Point)'
+          href: ~/essentials/platform-extensions.md?context=xamarin/xamarin-forms
+        - name: 偏好設定
+          href: ~/essentials/preferences.md?context=xamarin/xamarin-forms
+        - name: 安全存放裝置
+          href: ~/essentials/secure-storage.md?context=xamarin/xamarin-forms
+        - name: 共用
+          href: ~/essentials/share.md?context=xamarin/xamarin-forms
+        - name: SMS
+          href: ~/essentials/sms.md?context=xamarin/xamarin-forms
+        - name: 文字轉換語音
+          href: ~/essentials/text-to-speech.md?context=xamarin/xamarin-forms
+        - name: 單位轉換器
+          href: ~/essentials/unit-converters.md?context=xamarin/xamarin-forms
+        - name: 版本追蹤
+          href: ~/essentials/version-tracking.md?context=xamarin/xamarin-forms
+        - name: 震動
+          href: ~/essentials/vibrate.md?context=xamarin/xamarin-forms
+        - name: Xamarin.Essentials 版本資訊
+          href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
+        - name: 疑難排解
+          href: ~/essentials/troubleshooting.md?context=xamarin/xamarin-forms
+    - name: 資料與 Azure 雲端服務
+      items:
+        - name: 總覽
+          href: data-cloud/index.yml
+        - name: 本機資料儲存體
+          items:
+            - name: 總覽
+              href: data-cloud/data/index.md
+            - name: 檔案處理
+              href: data-cloud/data/files.md
+            - name: 本機資料庫
+              href: data-cloud/data/databases.md
+        - name: Azure 服務
+          items:
+            - name: Azure 服務概觀
+              href: data-cloud/azure-services/index.md
+            - name: Azure Cosmos DB 文件資料庫
+              href: data-cloud/azure-services/azure-cosmosdb.md
+            - name: Azure 通知中樞
+              href: data-cloud/azure-services/azure-notification-hub.md
+            - name: Azure 儲存體
+              href: data-cloud/azure-services/azure-storage.md
+            - name: Azure 搜尋服務
+              href: data-cloud/azure-services/azure-search.md
+            - name: Azure Functions
+              href: data-cloud/azure-services/azure-functions.md
+            - name: Azure SignalR Service
+              href: data-cloud/azure-services/azure-signalr.md
+        - name: Azure 認知服務
+          items:
+            - name: 認知服務概觀
+              href: data-cloud/azure-cognitive-services/index.md
+            - name: 簡介
+              href: data-cloud/azure-cognitive-services/introduction.md
+            - name: 語音辨識
+              href: data-cloud/azure-cognitive-services/speech-recognition.md
+            - name: 拼字檢查
+              href: data-cloud/azure-cognitive-services/spell-check.md
+            - name: 文字翻譯
+              href: data-cloud/azure-cognitive-services/text-translation.md
+            - name: 認知表情辨識
+              href: data-cloud/azure-cognitive-services/emotion-recognition.md
+        - name: Web 服務
+          items:
+            - name: Web 服務概觀
+              href: data-cloud/web-services/index.md
+            - name: 簡介
+              href: data-cloud/web-services/introduction.md
+            - name: ASMX
+              href: data-cloud/web-services/asmx.md
+            - name: WCF
+              href: data-cloud/web-services/wcf.md
+            - name: REST
+              href: data-cloud/web-services/rest.md
+        - name: 驗證
+          items:
+            - name: 驗證概觀
+              href: data-cloud/authentication/index.md
+            - name: REST
+              href: data-cloud/authentication/rest.md
+            - name: OAuth
+              href: data-cloud/authentication/oauth.md
+            - name: Azure Active Directory B2C
+              href: data-cloud/authentication/azure-ad-b2c.md
+            - name: Azure Cosmos DB 驗證
+              href: data-cloud/authentication/azure-cosmosdb-auth.md
+    - name: 部署與測試
+      items:
+        - name: 總覽
+          href: deploy-test/index.yml
+        - name: 改善效能
+          href: deploy-test/performance.md
+        - name: 使用 Visual Studio App Center 進行自動化的測試
+          href: /appcenter/test-cloud/uitest/get-started-xamarin-forms
+        - name: 發佈 iOS 應用程式
+          href: ~/ios/deploy-test/app-distribution/index.md
+        - name: 發佈 Android 應用程式
+          href: ~/android/deploy-test/publishing/index.md
+        - name: 發佈 UWP 應用程式
+          href: /windows/uwp/packaging/
+        - name: 發佈 Mac 應用程式
+          href: ~/mac/deploy-test/publishing-to-the-app-store/index.md
+    - name: 進階概念與內部項目
+      items:
+        - name: 總覽
+          href: internals/index.md
+        - name: 控制項類別階層
+          href: internals/class-hierarchy.md
+        - name: 相依性解析
+          href: internals/dependency-resolution.md
+        - name: 快速轉譯器
+          href: internals/fast-renderers.md
+        - name: 來源連結
+          href: internals/sourcelink.md
+    - name: 疑難排解
+      href: troubleshooting/index.md
+      items:
+        - name: 常見問題集
+          href: troubleshooting/questions/index.md
+          items:
+            - name: 我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？
+              href: troubleshooting/questions/update-forms-template.md
+            - name: 為什麼 Visual Studio XAML 設計工具不適用於 Xamarin.Forms XAML 檔案？
+              href: troubleshooting/questions/forms-xaml-designer.md
+            - name: Android 建置錯誤：LinkAssemblies 工作意外失敗
+              href: troubleshooting/questions/android-linkassemblies-error.md
+            - name: '為什麼我的 Xamarin.Forms.Maps Android 專案因為 COMPILETODALVIK :UNEXPECTED TOP-LEVEL ERROR 而失敗？'
+              href: troubleshooting/questions/maps-compiletodalvik-error.md
+    - name: 版本資訊
+      href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+    - name: 範例
+      href: samples/index.md
+    - name: 使用 Xamarin.Forms Book 建立行動應用程式
+      href: creating-mobile-apps-xamarin-forms/index.md
+    - name: 企業應用程式模式電子書
+      href: enterprise-application-patterns/index.md
+    - name: Xamarin.Forms 中的 SkiaSharp 圖形
+      href: user-interface/graphics/skiasharp/index.md
