@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: c9a0eee2779aa392cb2049b5518b6f30b7f05abc
-ms.sourcegitcommit: 58a08133496df53a639a82a7f672724220c57fd5
+ms.openlocfilehash: 2dd0a9a98c05204606f157cd9cd1028582af375b
+ms.sourcegitcommit: 5d75830fca6f2e58452d4445806e3653a3145dc0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540389"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870905"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin 中的廣播接收器
 
@@ -82,6 +82,9 @@ public class MyBootReceiver : BroadcastReceiver
     }
 }
 ```
+
+> [!NOTE]
+> 在 Android 8.0 （API 26 和更新版本）中，Google 對應用程式可執行檔工作，以及使用者不會直接與他們互動時的[限制](https://developer.android.com/about/versions/oreo/background)。 這些限制會影響背景服務和隱含廣播接收器，例如 `Android.Content.Intent.ActionBootCompleted`。 基於這些限制，您可能會在較新版本的 Android 上註冊 `Boot Completed` 廣播接收器時遇到問題。 如果是這種情況，請注意，這些限制並不適用于前景服務，可從您的廣播接收器呼叫。
 
 您也可以建立會回應自訂意圖的意圖篩選準則。 參考下列範例： 
 

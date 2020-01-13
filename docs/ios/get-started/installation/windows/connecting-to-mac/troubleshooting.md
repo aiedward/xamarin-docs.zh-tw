@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 4abe0da2b75b6859c6547f0dc1c4cf8708491afb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 40f99fb4e7e44e0a3dc499dc603e66620b890eaa
+ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022470"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886563"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 組建主機的連線疑難排解
 
@@ -20,8 +20,8 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 ## <a name="log-file-location"></a>記錄檔位置
 
-- **Mac** – ~/Library/Logs/Xamarin-[MAJOR.MINOR]
-- **Windows** – %LOCALAPPDATA%\Xamarin\Logs
+- **Mac** – `~/Library/Logs/Xamarin-[MAJOR.MINOR]`
+- **Windows** – `%LOCALAPPDATA%\Xamarin\Logs`
 
 您可以在 Visual Studio 中瀏覽至 [說明] &gt; [Xamarin] &gt; [Zip 記錄檔] 來找出記錄檔。
 
@@ -114,7 +114,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 <a name="knownissues" />
 
-### <a name="known-issues-and-limitations"></a>已知的問題與限制
+### <a name="known-issues-and-limitations"></a>已知的問題和限制
 
 > [!NOTE]
 > 本節僅適用於您已經使用 OpenSSH SSH 用戶端以 Mac 使用者名稱和密碼成功連線到 Mac 組建主機 (如上述步驟 8 和 9 所述) 的情況。
