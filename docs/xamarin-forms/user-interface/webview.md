@@ -6,13 +6,13 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2019
-ms.openlocfilehash: cdb2a9f1a37dc7bca458a4291ce6fe5ac9c120aa
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 11/04/2019
+ms.openlocfilehash: c9f934ad690bffa2418a7221445a473d9a90fdb9
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696047"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490203"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin. Forms Web 視圖
 
@@ -114,7 +114,7 @@ browser.Source = htmlSource;
 
 ### <a name="local-html-content"></a>本機 HTML 內容
 
-Web 工作可從應用程式內的 HTML、CSS 和 JAVAscript 中顯示內容。 例如：
+Web 工作可從應用程式內的 HTML、CSS 和 JAVAscript 中顯示內容。 例如:
 
 ```html
 <html>
@@ -352,7 +352,7 @@ Web 工作會引發下列事件，以協助您回應狀態的變更：
 - `Source` –執行導覽的元素。
 - `Url` –導覽目的地。
 
-如果您預期使用需要較長時間載入的網頁，請考慮使用[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)和[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件來執行狀態指示器。 例如：
+如果您預期使用需要較長時間載入的網頁，請考慮使用[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)和[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件來執行狀態指示器。 例如:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -403,15 +403,17 @@ webView.Reload();
 
 ## <a name="performance"></a>效能
 
-熱門的 web 瀏覽器現在採用硬體加速轉譯和 JavaScript 編譯等技術。 根據預設，在 iOS 上，`WebView` 的 Xamarin 會由 `UIWebView` 類別來執行，而這其中許多技術在此實作為中無法使用。 不過，應用程式可以選擇使用 iOS `WkWebView` 類別來執行 Xamarin. Forms `WebView`，以支援更快速的流覽。 將下列程式碼新增至應用程式的 iOS 平臺專案中的**AssemblyInfo.cs**檔案，即可達成此目的：
-
-```csharp
-// Opt-in to using WkWebView instead of UIWebView.
-[assembly: ExportRenderer(typeof(WebView), typeof(Xamarin.Forms.Platform.iOS.WkWebViewRenderer))]
-```
+熱門的 web 瀏覽器採用硬體加速轉譯和 JavaScript 編譯等技術。 在 Xamarin. 表單4.4 之前，`UIWebView` 類別會在 iOS 上執行 Xamarin. Forms `WebView`。 不過，這其中許多技術在此實行中無法使用。 因此，自 Xamarin. 表單4.4 之後，就會透過 `WkWebView` 類別在 iOS 上執行 Xamarin. Forms `WebView`，以支援更快速的流覽。
 
 > [!NOTE]
 > 在 iOS 上，`WkWebViewRenderer` 具有接受 `WkWebViewConfiguration` 引數的函數多載。 這可讓轉譯器在建立時設定。
+
+基於相容性的考慮，應用程式可以使用 iOS `UIWebView` 類別來執行 Xamarin `WebView`。 將下列程式碼新增至應用程式的 iOS 平臺專案中的**AssemblyInfo.cs**檔案，即可達成此目的：
+
+```csharp
+// Opt-in to using UIWebView instead of WkWebView.
+[assembly: ExportRenderer(typeof(Xamarin.Forms.WebView), typeof(Xamarin.Forms.Platform.iOS.WebViewRenderer))]
+```
 
 根據預設，Android 上的 `WebView` 與內建瀏覽器的速度一樣快。
 

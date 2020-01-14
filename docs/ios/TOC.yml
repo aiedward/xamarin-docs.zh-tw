@@ -613,8 +613,9 @@
         - name: 總覽
           href: deploy-test/index.md
         - name: 應用程式散發
-          href: deploy-test/app-distribution/index.md
           items:
+            - name: 總覽
+              href: deploy-test/app-distribution/index.md
             - name: App Store 散發
               href: deploy-test/app-distribution/app-store-distribution/index.md
               items:
@@ -622,11 +623,11 @@
                   href: deploy-test/app-distribution/app-store-distribution/itunesconnect.md
                 - name: 發佈至 App Store
                   href: deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md
-            - name: 內部 (Enterprise) 散發
+            - name: 內部 (企業) 散發
               href: deploy-test/app-distribution/in-house-distribution.md
             - name: 臨機操作散發
               href: deploy-test/app-distribution/ad-hoc-distribution.md
-            - name: iTunesMetadata.plist 檔案
+            - name: Itunesmetadata.plist. plist 檔案
               href: deploy-test/app-distribution/itunesmetadata.md
             - name: IPA 支援
               href: deploy-test/app-distribution/ipa-support.md
