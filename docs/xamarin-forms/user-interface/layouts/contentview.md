@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 69f3311834fd438af97b3d2fa527572f02d2b0cb
-ms.sourcegitcommit: fa2898d95b35fcee05503f3829351ba5a7d4a44d
+ms.openlocfilehash: 712aa43fb4959b766786c8fd0969ef2c2c8f00ef
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74955075"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955727"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
@@ -204,11 +204,11 @@ CardView card = new CardView
 
 [![CardView ControlTemplate 螢幕擷取畫面](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
 
-如需控制項範本的詳細資訊，請參閱[Xamarin 控制項範本](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)。
+如需控制項範本的詳細資訊，請參閱[Xamarin 控制項範本](~/xamarin-forms/app-fundamentals/templates/control-template.md)。
 
 ## <a name="related-links"></a>相關連結
 
 * [ContentView 範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * 可系結[屬性](~/xamarin-forms/xaml/bindable-properties.md)。
-* [Xamarin. Forms 控制項範本](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)
+* [Xamarin. Forms 控制項範本](~/xamarin-forms/app-fundamentals/templates/control-template.md)

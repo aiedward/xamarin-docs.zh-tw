@@ -1,6 +1,6 @@
 ---
 title: 資源字典
-description: XAML 資源是可共用及重複使用在 Xamarin.Forms 應用程式的物件。
+description: XAML 資源是可以在整個 Xamarin 應用程式中共用和重複使用的物件。
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
@@ -8,38 +8,38 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/15/2019
 ms.custom: video
-ms.openlocfilehash: 7c0fffbe626a740c15d85b1277c5158a5e564a15
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: 49ea5c2a8332e625710af8a9947e1cb0e0338040
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228081"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955821"
 ---
 # <a name="resource-dictionaries"></a>資源字典
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
-_XAML 資源是物件的定義, 可在整個 Xamarin 應用程式中共用和重複使用。這些資源物件會儲存在資源字典中。_
+_XAML 資源是物件的定義，可在整個 Xamarin 應用程式中共用和重複使用。這些資源物件會儲存在資源字典中。_
 
-A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)是資源所使用的 Xamarin.Forms 應用程式的儲存機制。 一般資源儲存在`ResourceDictionary`包括[樣式](~/xamarin-forms/user-interface/styles/index.md)，[控制項範本](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)，[資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)、 色彩和轉換器。
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)是 Xamarin. Forms 應用程式所使用之資源的存放庫。 儲存在 `ResourceDictionary` 中的一般資源包括[樣式](~/xamarin-forms/user-interface/styles/index.md)、[控制項範本](~/xamarin-forms/app-fundamentals/templates/control-template.md)、[資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)、色彩和轉換器。
 
-在 XAML 中，會儲存在的資源`ResourceDictionary`然後可以擷取並套用至項目使用`StaticResource`標記延伸。 在 C# 中，資源也可以定義在`ResourceDictionary`然後擷取並套用至項目使用字串為基礎的索引子。 不過，還有使用的一些好處`ResourceDictionary`在 C# 中，因為共用的物件可以直接儲存為欄位或屬性，並不直接存取需要第一個擷取這些字典中。
+在 XAML 中，儲存在 `ResourceDictionary` 中的資源可以使用 `StaticResource` 標記延伸來抓取和套用至元素。 在C#中，您也可以在 `ResourceDictionary` 中定義資源，然後使用以字串為基礎的索引子來抓取和套用至專案。 不過，在中C#使用 `ResourceDictionary` 並沒有任何好處，因為共用物件可以單純地儲存為欄位或屬性，並直接存取，而不需要先從字典中取出。
 
 ## <a name="create-and-consume-a-resourcedictionary"></a>建立和使用 ResourceDictionary
 
-資源定義於[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)亦即則設定為下列其中一種`Resources`屬性：
+資源會在[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中定義，然後設定為下列其中一個 `Resources` 屬性：
 
-- [ `Resources` ](xref:Xamarin.Forms.Application.Resources)任何衍生自的類別屬性 [`Application`](xref:Xamarin.Forms.Application)
-- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)任何衍生自的類別屬性 [`VisualElement`](xref:Xamarin.Forms.Application)
+- 衍生自之任何類別的[`Resources`](xref:Xamarin.Forms.Application.Resources)屬性[`Application`](xref:Xamarin.Forms.Application)
+- 衍生自之任何類別的[`Resources`](xref:Xamarin.Forms.VisualElement.Resources)屬性[`VisualElement`](xref:Xamarin.Forms.Application)
 
-Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍生自的許多類別，但`VisualElement`，包括頁面、 版面配置和控制項。 任何這些物件可以有其`Resources`屬性設定為`ResourceDictionary`。 選擇要放置特定`ResourceDictionary`可以在其中使用的資源的影響：
+Xamarin 程式僅包含一個衍生自 `Application` 的類別，但通常會使用衍生自 `VisualElement`的許多類別，包括頁面、版面配置和控制項。 這些物件中的任何一個都可以將其 `Resources` 屬性設為 `ResourceDictionary`。 選擇要在何處放置特定 `ResourceDictionary` 會影響可使用資源的位置：
 
-- 中的資源`ResourceDictionary`，例如附加到檢視`Button`或`Label`只能套用至該特定的物件，因此這不是很有用。
-- 中的資源`ResourceDictionary`這類附加到版面配置`StackLayout`或`Grid`可以套用至版面配置和版面配置的所有子系。
-- 中的資源`ResourceDictionary`定義在頁面層級可以套用至頁面和其所有子系。
-- 中的資源`ResourceDictionary`定義在應用程式層級可以套用整個應用程式。
+- `ResourceDictionary` 中附加到 `Button` 或 `Label` 等視圖的資源，只能套用至該特定物件，因此這不是很好用。
+- `ResourceDictionary` 中附加至配置（例如 `StackLayout` 或 `Grid`）的資源，可以套用至該配置的版面配置和所有子系。
+- 在頁面層級定義之 `ResourceDictionary` 中的資源，可以套用至頁面和其所有子系。
+- 在應用層級定義的 `ResourceDictionary` 中的資源，可以在整個應用程式中套用。
 
-下列 XAML 會顯示在應用程式層級中定義的資源`ResourceDictionary`中**App.xaml**建立標準的 Xamarin.Forms 方案的檔案：
+下列 XAML 會顯示在應用層級中定義的資源 `ResourceDictionary` 在建立為標準 Xamarin. Forms 程式一部分的**app.xaml**檔案中：
 
 ```xaml
 <Application ...>
@@ -58,9 +58,9 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </Application>
 ```
 
-這`ResourceDictionary`會定義三個[ `Color` ](xref:Xamarin.Forms.Color)資源並[ `Style` ](xref:Xamarin.Forms.Style)資源。 如需詳細資訊`App`類別，請參閱[應用程式類別](~/xamarin-forms/app-fundamentals/application-class.md)。
+此 `ResourceDictionary` 會定義三個[`Color`](xref:Xamarin.Forms.Color)資源和一個[`Style`](xref:Xamarin.Forms.Style)資源。 如需 `App` 類別的詳細資訊，請參閱[應用程式類別](~/xamarin-forms/app-fundamentals/application-class.md)。
 
-開始在 Xamarin.Forms 3.0 中，明確`ResourceDictionary`標記並不需要。 `ResourceDictionary`物件會自動建立，而且您可以直接之間插入資源`Resources`屬性項目標記：
+從 Xamarin. 表單3.0 開始，不需要明確的 `ResourceDictionary` 標記。 `ResourceDictionary` 物件會自動建立，而且您可以直接在 `Resources` 屬性元素標記之間插入資源：
 
 ```xaml
 <Application ...>
@@ -77,7 +77,7 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </Application>
 ```
 
-每個資源都使用指定的索引鍵`x:Key`屬性，它會變成為字典索引鍵中的`ResourceDictionary`。 金鑰可用來擷取資源，以從`ResourceDictionary`所[ `StaticResource` ](xref:Xamarin.Forms.Xaml.StaticResourceExtension)標記延伸，如下列 XAML 程式碼範例顯示定義內的其他資源所示`StackLayout`:
+每個資源都有一個使用 `x:Key` 屬性指定的索引鍵，它會成為 `ResourceDictionary`中的字典索引鍵。 金鑰是用來從 `ResourceDictionary` 的[`StaticResource`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)標記延伸抓取資源，如下列 XAML 程式碼範例所示，其中會顯示在 `StackLayout`內定義的其他資源：
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -105,16 +105,16 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </StackLayout>
 ```
 
-第一個[ `Label` ](xref:Xamarin.Forms.Label)執行個體擷取並取用`LabelPageHeadingStyle`中的應用程式層級定義的資源`ResourceDictionary`，第二個`Label`執行個體擷取及使用`LabelNormalStyle`控制層級中定義的資源`ResourceDictionary`。 同樣地， [ `Button` ](xref:Xamarin.Forms.Button)擷取執行個體，並取用`NormalTextColor`中的應用程式層級定義的資源`ResourceDictionary`，而`MediumBoldText`控制層級中定義的資源`ResourceDictionary`。 這會導致下列螢幕擷取畫面中顯示的外觀：
+第一個[`Label`](xref:Xamarin.Forms.Label)實例會抓取並取用在應用層級 `ResourceDictionary`中定義的 `LabelPageHeadingStyle` 資源，第二個 `Label` 實例會抓取並取用控制項層級 `LabelNormalStyle` 中定義的 `ResourceDictionary`資源。 同樣地， [`Button`](xref:Xamarin.Forms.Button)實例會抓取並取用在應用層級 `ResourceDictionary`中定義的 `NormalTextColor` 資源，以及在控制項層級 `ResourceDictionary`中定義的 `MediumBoldText` 資源。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
 [![使用 ResourceDictionary 資源](resource-dictionaries-images/screenshots-sml.png)](resource-dictionaries-images/screenshots.png#lightbox)
 
 > [!NOTE]
-> 在應用程式層級資源字典中，這類資源將然後在應用程式啟動，而不是剖析，需要一個頁面時，不應包含專屬於單一頁面的資源。 如需詳細資訊，請參閱 <<c0> [ 減少應用程式資源字典大小](~/xamarin-forms/deploy-test/performance.md)。
+> 單一頁面特有的資源不應包含在應用層級資源字典中，因為這類資源會在應用程式啟動時進行剖析，而不是在頁面需要時進行剖析。 如需詳細資訊，請參閱[減少應用程式資源字典大小](~/xamarin-forms/deploy-test/performance.md)。
 
 ## <a name="override-resources"></a>覆寫資源
 
-當`ResourceDictionary`資源共用`x:Key`屬性值，定義檢視階層中的較低的資源將會優先於設定更高版本定義。 例如，設定`PageBackgroundColor`資源`Blue`在應用程式層級會覆寫頁面層級`PageBackgroundColor`資源集`Yellow`。 同樣地，頁面層級`PageBackgroundColor`控制層級會覆寫資源`PageBackgroundColor`資源。 下列 XAML 程式碼範例示範此優先順序是：
+當 `ResourceDictionary` 資源分享 `x:Key` 屬性值時，在視圖階層架構中所定義的資源會優先于所定義的較高層級。 例如，將 `PageBackgroundColor` 資源設定為應用層級的 `Blue`，將會被設定為 `Yellow`的頁面層級 `PageBackgroundColor` 資源所覆寫。 同樣地，`PageBackgroundColor` 資源的控制項層級會覆寫 `PageBackgroundColor` 資源的頁面層級。 下列 XAML 程式碼範例會示範此優先順序：
 
 ```xaml
 <ContentPage ... BackgroundColor="{StaticResource PageBackgroundColor}">
@@ -140,21 +140,21 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </ContentPage>
 ```
 
-原始`PageBackgroundColor`並`NormalTextColor`執行個體，在應用程式層級中，定義會覆寫`PageBackgroundColor`和`NormalTextColor`頁面層級定義的執行個體。 因此，網頁的背景色彩會變成藍色，並如下列螢幕擷取畫面所示的頁面上的文字會變成黃色:
+在應用層級定義的原始 `PageBackgroundColor` 和 `NormalTextColor` 實例會由在頁面層級定義的 `PageBackgroundColor` 和 `NormalTextColor` 實例覆寫。 因此，頁面背景色彩會變成藍色，而頁面上的文字會變成黃色，如下列螢幕擷取畫面所示：
 
 [![覆寫 ResourceDictionary 資源](resource-dictionaries-images/overridding-screenshots-sml.png)](resource-dictionaries-images/overridding-screenshots.png#lightbox)
 
-但請注意，背景列[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)仍然是黃色，因為[ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)屬性設定的值為`PageBackgroundColor`應用程式中定義的資源層級`ResourceDictionary`。
+不過，請注意， [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)的背景橫條仍然是黃色，因為[`BarBackgroundColor`](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)屬性會設定為應用層級 `ResourceDictionary`中所定義 `PageBackgroundColor` 資源的值。
 
-以下是另一種考慮`ResourceDictionary`優先順序的方法:當 XAML 剖析器遇到`StaticResource`時, 它會使用所找到的第一個相符項, 透過視覺化樹狀結構來搜尋相符的索引鍵。 如果此搜尋網頁上就會結束，且金鑰仍尚未發現，XAML 剖析器會搜尋`ResourceDictionary`附加至`App`物件。 如果仍然找不到索引鍵，則會引發例外狀況。
+以下是另一種考慮 `ResourceDictionary` 優先順序的方法：當 XAML 剖析器遇到 `StaticResource`時，它會使用所找到的第一個相符項，透過視覺化樹狀結構來搜尋相符的索引鍵。 如果此搜尋結束于頁面，但仍找不到索引鍵，則 XAML 剖析器會搜尋附加至 `App` 物件的 `ResourceDictionary`。 如果仍然找不到索引鍵，則會引發例外狀況。
 
 ## <a name="stand-alone-resource-dictionaries"></a>獨立資源字典
 
-類別衍生自`ResourceDictionary`也可以在不同的獨立檔案。 (更精確地說，衍生自類別`ResourceDictionary`通常需要_配對_檔案的資源會定義在 XAML 檔案，但使用的程式碼後置檔案，因為`InitializeComponent`也是必要的呼叫。)產生的檔案就可以在應用程式之間共用。
+衍生自 `ResourceDictionary` 的類別也可以位於個別的獨立檔案中。 （更精確地說，衍生自 `ResourceDictionary` 的類別通常_需要一組_檔案，因為資源是在 XAML 檔案中定義，但也需要具有 `InitializeComponent` 呼叫的程式碼後置檔案）。然後，就可以在應用程式之間共用結果檔案。
 
-若要建立這類檔案，加入新**內容檢視**或**內容頁**項目加入專案 (而非**內容檢視**或**內容頁面**與只有 C# 檔案）。 XAML 檔案和 C# 檔案中，變更 基底類別的名稱`ContentView`或是`ContentPage`至`ResourceDictionary`。 在 XAML 檔案中，基底類別的名稱會是最上層元素。
+若要建立這類檔案，請將新的 [**內容**] 或 [**內容] 頁面**專案新增至專案（而不是只C#包含檔案的**內容視圖**或**內容頁面**）。 在 XAML 檔案和C#檔案中，將基類的名稱從 `ContentView` 或 `ContentPage` 變更為 `ResourceDictionary`。 在 XAML 檔案中，基類的名稱是最上層的元素。
 
-下列 XAML 範例所示[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)名為`MyResourceDictionary`:
+下列 XAML 範例顯示名為 `MyResourceDictionary`的[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ：
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -177,9 +177,9 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </ResourceDictionary>
 ```
 
-這`ResourceDictionary`包含單一資源，也就是型別的物件`DataTemplate`。
+此 `ResourceDictionary` 包含單一資源，也就是 `DataTemplate`類型的物件。
 
-您可以具現化`MyResourceDictionary`將它放一對之間`Resources`property 項目，例如，在標記`ContentPage`:
+您可以將 `MyResourceDictionary` 放在一對 `Resources` 屬性專案標記之間，例如，在 `ContentPage`中：
 
 ```xaml
 <ContentPage ...>
@@ -190,19 +190,19 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </ContentPage>
 ```
 
-執行個體`MyResourceDictionary`設定為`Resources`屬性`ContentPage`物件。
+`MyResourceDictionary` 的實例會設定為 `ContentPage` 物件的 `Resources` 屬性。
 
-不過, 這種方法有一些限制:的屬性只會參考此項`ResourceDictionary`。 `ContentPage` `Resources` 在大部分情況下，您想要包括其他選項`ResourceDictionary`執行個體，可能是其他資源，以及。
+不過，這種方法有一些限制： `ContentPage` 的 `Resources` 屬性只會參考這個 `ResourceDictionary`。 在大部分的情況下，您會想要選擇包含其他 `ResourceDictionary` 實例，也可能是其他資源。
 
 這項工作需要合併的資源字典。
 
 ## <a name="merged-resource-dictionaries"></a>合併的資源字典
 
-合併的資源字典會將一[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)或多個`ResourceDictionary`物件結合成另一個。
+合併的資源字典會將一或多個[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)物件結合成另一個 `ResourceDictionary`。
 
 ### <a name="merge-local-resource-dictionaries"></a>合併本機資源字典
 
-將[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [屬性`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)設定為 XAML 檔案的`ResourceDictionary`檔案名 (包含下列資源), 即可將本機合併至另一個:
+本機[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)可以合併到另一個 `ResourceDictionary`，方法是將[`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)屬性設定為 XAML 檔案的檔案名，其中包含下列資源：
 
 ```xaml
 <ContentPage ...>
@@ -215,19 +215,19 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </ContentPage>
 ```
 
-這個語法不會具現`MyResourceDictionary`化類別。 相反地，它會參考 XAML 檔案。 基於這個[`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)理由, 設定屬性時, 不需要程式碼後置檔案 (**MyResourceDictionary.xaml.cs**), 而且可以從`x:Class` **MyResourceDictionary**的根標記中移除該屬性。 此外, 使用這種方法來合併資源字典時, Xamarin 會自動具現化[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary), 因此不需要`ResourceDictionary`外部標記。
+這個語法不會具現化 `MyResourceDictionary` 類別。 相反地，它會參考 XAML 檔案。 基於這個理由，設定[`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)屬性時，不需要程式碼後置檔案（**MyResourceDictionary.xaml.cs**），而且 `x:Class` 屬性可以從**MyResourceDictionary**的根標記中移除。 此外，使用這種方法來合併資源字典時，Xamarin 會自動具現化[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)，因此不需要外部 `ResourceDictionary` 標記。
 
 > [!IMPORTANT]
-> [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)屬性只能從 XAML 設定。
+> 只能從 XAML 設定[`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)屬性。
 
 ### <a name="merge-resource-dictionaries-from-other-assemblies"></a>合併其他元件中的資源字典
 
-也[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)可以藉`ResourceDictionary` 由將`ResourceDictionary`它加入至的[屬性,以合併至另一個。`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) 這項技術可讓資源字典合併, 而不論其所在的元件為何。
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)也可以藉由將它加入至 `ResourceDictionary`的[`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)屬性，而合併至另一個 `ResourceDictionary`。 這項技術可讓資源字典合併，而不論其所在的元件為何。
 
 > [!IMPORTANT]
-> 類別也會[`MergedWith`](xref:Xamarin.Forms.ResourceDictionary.MergedWith)定義屬性。 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 不過, 此屬性已被取代, 且不應再使用。
+> [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)類別也會定義[`MergedWith`](xref:Xamarin.Forms.ResourceDictionary.MergedWith)屬性。 不過，此屬性已被取代，且不應再使用。
 
-下列程式碼範例`MyResourceDictionary`會示範如何新增至頁面層級[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)的[`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)集合:
+下列程式碼範例會示範如何將 `MyResourceDictionary` 新增至頁面層級的[`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)集合[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)：
 
 ```xaml
 <ContentPage ...
@@ -243,7 +243,7 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 </ContentPage>
 ```
 
-這個範例會顯示實例`MyResourceDictionary`, 其位於相同的元件中, 並加入[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)至。 此外, 您也可以從其他元件、 `ResourceDictionary` [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)屬性專案標記內的其他物件, 以及這些標記以外的其他資源加入資源字典:
+這個範例會顯示 `MyResourceDictionary`的實例（位於相同的元件中），並新增至[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)。 此外，您也可以從其他元件、 [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)屬性專案標記內的其他 `ResourceDictionary` 物件，以及這些標記以外的其他資源加入資源字典：
 
 ```xaml
 <ContentPage ...
@@ -266,19 +266,19 @@ Xamarin.Forms 程式包含一個類別衍生自`Application`通常會使用衍�
 ```
 
 > [!IMPORTANT]
-> 中只能有一個`MergedDictionaries`屬性專案標記`ResourceDictionary` [,但您可以視需要將多個物件`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)放在該處。
+> [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中只能有一個 `MergedDictionaries` 的屬性元素標記，但您可以視需要在該處放入許多 `ResourceDictionary` 物件。
 
-當合併[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)資源共用相同`x:Key`屬性值，Xamarin.Forms 會使用下列資源優先順序：
+當合併[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)資源分享相同的 `x:Key` 屬性值時，Xamarin. Forms 會使用下列資源優先順序：
 
-1. 資源字典的本機資源中。
-1. 透過合併的資源字典中包含的資源`MergedDictionaries`中所述的反向順序的集合，`MergedDictionaries`屬性。
+1. 資源字典的本機資源。
+1. 資源字典中所包含的資源，已透過 `MergedDictionaries` 集合合併，並以相反順序列在 `MergedDictionaries` 屬性中。
 
 > [!NOTE]
-> 搜尋資源字典可能是密集運算的工作，如果應用程式包含多個大型的資源字典。 因此，若要避免不必要的搜尋，您應該確定應用程式中的每個頁面只會使用適用於頁面資源字典。
+> 如果應用程式包含多個大型資源字典，搜尋資源字典可能是需要大量計算的工作。 因此，若要避免不必要的搜尋，您應該確定應用程式中的每個頁面只會使用適用于該頁面的資源字典。
 
 ## <a name="related-links"></a>相關連結
 
-- [資源字典 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+- [資源字典（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [樣式](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 

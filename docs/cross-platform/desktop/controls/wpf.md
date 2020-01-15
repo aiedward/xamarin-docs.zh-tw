@@ -5,18 +5,18 @@ description: 本檔會比較 WPF 與 Xamarin 的格式，並將其對照。 其�
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 798839457a418d457bac83e6e20397722423dbac
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e87595c121f1117d055d812cb06c81ecba850c12
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016492"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955660"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 與 Xamarin. 表單：相似 & 差異
 
 ## <a name="control-templates"></a>控制項範本
 
-WPF 支援提供控制項（`Button`、`ListBox` 等）之視覺效果指示的*控制項範本*概念。 如上所述，Xamarin 會使用適用于這種情況的具體_呈現_類別，這會與原生平臺（IOS、Android 等）互動以視覺化控制項。
+WPF 支援提供控制項（`Button`、`ListBox`等）之視覺效果指示的*控制項範本*概念。 如上所述，Xamarin 會使用適用于這種情況的具體_呈現_類別，這會與原生平臺（IOS、Android 等）互動以視覺化控制項。
 
 不過，Xamarin_的確_有 `ControlTemplate` 型別，用於主題 `Page` 物件。 它會提供提供一致內容之 `Page` 的定義，但可讓頁面的使用者變更色彩、字型等，甚至是新增專案，使其對應用程式而言是唯一的。
 
@@ -27,13 +27,13 @@ WPF 支援提供控制項（`Button`、`ListBox` 等）之視覺效果指示的*
 3. `ContentPresenter`
 4. `TemplateBinding`
 
-但請務必瞭解，這些服務在 Xamarin 中的用途並_不_相同。 如需這項功能的詳細資訊，請參閱[檔頁面](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)。
+但請務必瞭解，這些服務在 Xamarin 中的用途並_不_相同。 如需這項功能的詳細資訊，請參閱[檔頁面](~/xamarin-forms/app-fundamentals/templates/control-template.md)。
 
 ## <a name="xaml"></a>XAML
 
 XAML 是用來做為 WPF 和 Xamarin 的宣告式標記語言。 在大部分的情況下，語法是相同的，主要差異在於 XAML 圖形所定義/建立的物件。
 
-- Xamarin 支援[XAML 2009 規格](/dotnet/framework/xaml-services/xaml-2009-language-features/);這可讓您更輕鬆地定義資料（例如 `string`s、`int`s 等），以及定義泛型型別並將引數傳遞至函式。
+- Xamarin 支援[XAML 2009 規格](/dotnet/framework/xaml-services/xaml-2009-language-features/);這可讓您更輕鬆地定義 `string`s、`int`s 等資料，以及定義泛型型別並將引數傳遞至函式。
 
 - 目前沒有任何方法可以動態載入 XAML （例如 WPF）與 `XamlReader`。 不過，您可以使用[NuGet 套件](https://www.nuget.org/packages/Xamarin.Forms.Dynamic/)來取得相同的基本功能。
 
@@ -128,7 +128,7 @@ Text={Binding Source={x:Reference otherControl}, Path=Text}
 
 在 Xamarin 中，完全支援值轉換器。表單就像 WPF 一樣。 使用相同的介面圖形，但是 Xamarin. 表單具有 `Xamarin.Forms` 命名空間中定義的介面。
 
-### <a name="model-view-viewmodel"></a>模型-視圖-ViewModel
+### <a name="model-view-viewmodel"></a>Model-View-ViewModel
 
 以 WPF 和 Xamarin 完全支援 MVVM。
 
@@ -138,20 +138,20 @@ WPF 包含內建的 `RoutedCommand`，有時會使用此功能;在 `ICommand` �
 
 Xamarin. Forms 系結完全支援這兩個介面。 與許多以 XAML 為基礎的架構不同的是，屬性變更通知可以在 Xamarin 的背景執行緒上引發（就像 WPF 一樣），而系結引擎會適當地轉換至 UI 執行緒。
 
-此外，這兩個環境都支援 `SynchronziationContext` 和 `async` / `await` 來進行適當的執行緒封送處理。 WPF 包含所有視覺元素上的 `Dispatcher` 類別，而 Xamarin 則具有靜態方法 `Device.BeginInvokeOnMainThread` 也可以使用（雖然 `SynchronizationContext` 是用於跨平臺程式碼的偏好）。
+此外，這兩個環境都支援 `SynchronziationContext` 和 `async`/`await` 來進行適當的執行緒封送處理。 WPF 包含所有視覺元素上的 `Dispatcher` 類別，而 Xamarin 則具有靜態方法 `Device.BeginInvokeOnMainThread` 也可以使用（雖然 `SynchronizationContext` 是用於跨平臺程式碼的偏好）。
 
 - Xamarin 包含支援集合變更通知的 `ObservableCollection<T>`。
 - 您可以使用 `BindingBase.EnableCollectionSynchronization` 來啟用集合的跨執行緒更新。 此 API 與 WPF 變化稍有不同，請[參閱檔以取得使用方式詳細資料](xref:Xamarin.Forms.BindingBase.EnableCollectionSynchronization*)。
 
 ## <a name="data-templates"></a>資料範本
 
-在 Xamarin 中可支援資料範本，以自訂 `ListView` row （資料格）的呈現。 不同于 WPF 可以利用任何內容導向控制項的 `DataTemplate`s，Xamarin 目前只會使用它們來進行 `ListView`。 範本定義可以定義為內嵌（指派給 `ItemTemplate` 屬性），或是 `ResourceDictionary` 中的資源。
+在 Xamarin 中可支援資料範本，以自訂 `ListView` row （資料格）的呈現。 不同于 WPF 可以利用 `DataTemplate`的任何內容導向控制項，Xamarin。表單目前只會使用它們來進行 `ListView`。 範本定義可以定義為內嵌（指派給 `ItemTemplate` 屬性），或是 `ResourceDictionary`中的資源。
 
 此外，它們與其 WPF 對應項的彈性並不一樣。
 
 1. `DataTemplate` 的根項目必須_一律_是 `ViewCell` 物件。
 2. 資料範本中完全支援資料觸發程式，但必須包含 `DataType` 屬性，以指出與觸發程式相關聯的屬性類型。
-3. 也支援 `DataTemplateSelector`，但衍生自 `DataTemplate`，因此只會直接指派給 `ItemTemplate` 屬性（vs。 WPF 中的 `ItemTemplateSelector`）。
+3. 也支援 `DataTemplateSelector`，但衍生自 `DataTemplate`，因此只會直接指派給 `ItemTemplate` 屬性（在 WPF 中為 `ItemTemplateSelector`）。
 
 ## <a name="itemscontrol"></a>ItemsControl
 
@@ -159,9 +159,9 @@ Xamarin. Forms 系結完全支援這兩個介面。 與許多以 XAML 為基礎�
 
 ## <a name="user-controls"></a>使用者控制項
 
-在 WPF 中，`UserControl`s 是用來提供具有相關聯線為的 UI 區段。 在 Xamarin 中，我們將 `ContentView` 用於相同的用途。 支援在 XAML 中系結和包含。
+在 WPF 中，`UserControl`是用來提供具有相關聯線為的 UI 區段。 在 Xamarin 中，我們將 `ContentView` 用於相同的用途。 支援在 XAML 中系結和包含。
 
-## <a name="navigation"></a>巡覽
+## <a name="navigation"></a>瀏覽
 
 WPF 包含很少使用的 `NavigationService`，可用來提供「類似瀏覽器」的導覽功能。 大部分的應用程式都不會對此造成困擾，而是使用不同的 `Window` 元素，或視窗的不同區段來顯示資料。
 
@@ -171,7 +171,7 @@ WPF 包含很少使用的 `NavigationService`，可用來提供「類似瀏覽�
 |--- |--- |
 |堆疊型（推播/pop）|NavigationPage|
 |主版/詳細|MasterDetailPage|
-|定位點|TabbedPage|
+|索引標籤|TabbedPage|
 |向左/向右滑動|CarouselView|
 
 `NavigationPage` 是最常見的方法，而且每個頁面都有一個 `Navigation` 屬性，可以用來在導覽堆疊上推入或彈出頁面。 這是與 WPF 中找到的 `NavigationService` 最接近的對應項。
