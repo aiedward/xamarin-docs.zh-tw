@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ae3a2af436a4ad8860ab27df550a1d74d5084a6
-ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
+ms.openlocfilehash: 933edb1c0681f3fc9cbb8d81aa3091a65c4346e3
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718762"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031351"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web Views
 
@@ -95,6 +95,9 @@ IOS 9 中的 Apple 引進了應用程式傳輸安全性或*ATS* ，以確保所�
 > `UIWebView` 已被取代。 在2020年4月之前，使用此控制項的應用程式將[不會被接受到 App Store，而現有的應用程式必須在2020年12月將其移除](https://developer.apple.com/news/?id=12232019b)。
 > 
 > [Apple 的 `UIWebView` 檔](https://developer.apple.com/documentation/uikit/uiwebview)建議應用程式應該改用[`WKWebView`](#wkwebview) 。
+
+> [!IMPORTANT]
+> 如果您要在使用 Xamarin 時尋找 `UIWebView` 取代警告（ITMS-90809）的相關資源，請參閱[Xamarin web](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)工作檔。
 
 `UIWebView` 是 Apple 在您的應用程式中提供 web 內容的舊版方式。 它是在 iOS 2.0 中發行，並已淘汰8.0。
 

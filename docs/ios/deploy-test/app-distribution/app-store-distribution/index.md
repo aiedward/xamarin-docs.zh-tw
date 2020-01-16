@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 96300cdddcc21511ef85ebbfe33f6ce32cb56cd7
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
+ms.openlocfilehash: 73c4e992fae1a2d525670604d98f277fe4fde794
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75607928"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031417"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -21,6 +21,9 @@ ms.locfileid: "75607928"
 > [!IMPORTANT]
 > Apple [已宣佈](https://developer.apple.com/ios/submit/)從 2019 年 3 月開始，提交至 App Store 的所有應用程式與更新，都必須使用 iOS 12.1 SDK 或更新版本 (包含在 Xcode 10.1 或更新版本中) 進行建置。
 > 應用程式也應支援 iPhone XS 及 12.9" iPad Pro 的螢幕大小。
+
+> [!IMPORTANT]
+> 如果您要在使用 Xamarin 時尋找 `UIWebView` 取代警告（ITMS-90809）的相關資源，請參閱[Xamarin web](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)工作檔。
 
 如同開發應用程式，散發應用程式需使用適當的「佈建設定檔」來佈建應用程式。 佈建設定檔是一種檔案，其包含程式碼簽署資訊、應用程式身分識別及預期的散發機制。 對於非 App Store 的散發，佈建設定檔也包含可用來部署應用程式之裝置的相關資訊。
 
@@ -86,7 +89,7 @@ ms.locfileid: "75607928"
     - **明確**com.[網域名稱].[應用程式名稱]
     - **萬用字元**com.[網域名稱].*
 4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services)。
-5. 按一下 [繼續] 按鈕，然後依照畫面上的指示來建立新的 App ID (應用程式識別碼)。
+5. 按一下 [繼續] 按鈕，並遵循畫面指示來建立新的應用程式識別碼。
 
 ### <a name="creating-a-provisioning-profile"></a>建立佈建設定檔
 
@@ -116,7 +119,7 @@ ms.locfileid: "75607928"
 
     [![](images/distribute06.png "Enter a Name for the new Distribution Profile")](images/distribute06.png#lightbox)
 
-7. 按一下 [產生] 按鈕，以建立新的設定檔，並完成程序。
+7. 按一下 [產生] 按鈕，以建立新的設定檔，並完成流程。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
