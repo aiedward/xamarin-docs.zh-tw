@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: c9f934ad690bffa2418a7221445a473d9a90fdb9
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: dedce45d0c09f807aaf2ecbf540b8c9f319a4f16
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490203"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031407"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin. Forms Web 視圖
 
@@ -34,7 +34,7 @@ ms.locfileid: "75490203"
 > [!NOTE]
 > Windows 上的 `WebView` 不支援 Silverlight、Flash 或任何 ActiveX 控制項，即使該平臺上的 Internet Explorer 支援也一樣。
 
-### <a name="websites"></a>網站
+### <a name="websites"></a>Websites
 
 若要從網際網路顯示網站，請將 `WebView`的[`Source`](xref:Xamarin.Forms.WebViewSource)屬性設定為字串 URL：
 
@@ -114,7 +114,7 @@ browser.Source = htmlSource;
 
 ### <a name="local-html-content"></a>本機 HTML 內容
 
-Web 工作可從應用程式內的 HTML、CSS 和 JAVAscript 中顯示內容。 例如:
+Web 工作可從應用程式內的 HTML、CSS 和 JAVAscript 中顯示內容。 例如：
 
 ```html
 <html>
@@ -129,7 +129,7 @@ Web 工作可從應用程式內的 HTML、CSS 和 JAVAscript 中顯示內容。 
 </html>
 ```
 
-</C3>
+CSS:
 
 ```css
 html,body {
@@ -260,7 +260,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>巡覽
+## <a name="navigation"></a>瀏覽
 
 Web 程式支援透過數個可用的方法和屬性進行流覽：
 
@@ -330,7 +330,7 @@ public partial class InAppBrowserXaml : ContentPage
 
 ![Web 流覽導覽按鈕](webview-images/in-app-browser.png)
 
-## <a name="events"></a>Events
+## <a name="events"></a>「事件」
 
 Web 工作會引發下列事件，以協助您回應狀態的變更：
 
@@ -352,7 +352,7 @@ Web 工作會引發下列事件，以協助您回應狀態的變更：
 - `Source` –執行導覽的元素。
 - `Url` –導覽目的地。
 
-如果您預期使用需要較長時間載入的網頁，請考慮使用[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)和[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件來執行狀態指示器。 例如:
+如果您預期使用需要較長時間載入的網頁，請考慮使用[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)和[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)事件來執行狀態指示器。 例如：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -518,6 +518,50 @@ function factorial(num) {
 </body>
 </html>
 ```
+
+## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>UIWebView 淘汰和 App Store 拒絕（ITMS-90809）
+
+從2020年4月開始， [Apple 會拒絕](https://developer.apple.com/news/?id=12232019b)仍使用已被取代之 `UIWebView` API 的應用程式。 雖然 Xamarin 已切換至 `WKWebView` 做為預設值，但是在 Xamarin 中，仍有舊版 SDK 的參考。 目前的[iOS 連結器](~/ios/deploy-test/linker.md)行為並不會移除此動作，因此，當您提交至 app Store 時，已淘汰的 `UIWebView` API 仍然會在應用程式中被參考。
+
+連結器的預覽版本可用來修正此問題。 若要啟用預覽，您將需要提供額外的引數 `--optimize=experimental-xforms-product-type` 至連結器。 
+
+此作業的必要條件如下：
+
+- Xamarin.**表單4.5 或更高**版本 &ndash; Xamarin 的預先發行版本。您可以使用表單4.5。
+- **13.10.0.17 或更新版本**&ndash; 檢查[Visual Studio 中](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)的 xamarin. ios 版本。 這個版本的 Xamarin 隨附于 Visual Studio for Mac dbms-guide-8.4.1 和 Visual Studio 16.4.3 中。
+- **移除 `UIWebView`的參考**&ndash; 您的程式碼不應該有任何 `UIWebView` 的參考，或是任何使用 `UIWebView`的類別。
+
+### <a name="configure-the-linker-preview"></a>設定連結器預覽
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+請遵循下列步驟來讓連結器移除 `UIWebView` 參考：
+
+1. **開啟 ios 專案屬性**&ndash; 以滑鼠右鍵按一下您的 ios 專案，然後選擇 [**屬性**]。
+1. **流覽至 [Ios 組建] 區段**&ndash; 選取 [ **ios 組建**] 區段。
+1. 更新其他**mtouch 引數**&ndash; 中**的其他 mtouch 引數**，將此旗標新增 `--optimize=experimental-xforms-product-type` （除了任何可能已存在的值中）。 
+1. **更新所有組建**設定 &ndash; 使用視窗頂端**的 [設定**] 和 [**平臺**] 清單來更新所有組建設定。 更新的最重要設定是**Release/iPhone**設定，因為這通常是用來建立 App Store 提交的組建。
+
+在此螢幕擷取畫面中，您可以看到具有新旗標的視窗：
+
+[![在 iOS 組建區段中設定旗標](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+請遵循下列步驟來讓連結器移除 `UIWebView` 參考
+
+1. **開啟 ios 專案選項**&ndash; 以滑鼠右鍵按一下您的 ios 專案，然後選擇 [**選項**]。
+1. **流覽至 [Ios 組建] 區段**&ndash; 選取 [ **ios 組建**] 區段。
+1. **更新其他_mtouch_引數**&ndash; 在**額外的_mtouch_引數**新增此旗標 `--optimize=experimental-xforms-product-type` （除了其中可能已有的任何值）。
+1. **更新所有組建**設定 &ndash; 使用視窗頂端**的 [設定**] 和 [**平臺**] 清單來更新所有組建設定。 更新的最重要設定是**Release/iPhone**設定，因為這通常是用來建立 App Store 提交的組建。
+
+在此螢幕擷取畫面中，您可以看到具有新旗標的視窗：
+
+[![在 iOS 組建區段中設定旗標](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
+
+-----
+
+現在，當您建立新的（發行）組建並提交至 App Store 時，應該不會有關于已被取代之 API 的警告。
 
 ## <a name="related-links"></a>相關連結
 
