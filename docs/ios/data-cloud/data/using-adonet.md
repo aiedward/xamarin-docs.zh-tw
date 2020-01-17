@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: db26de8deed9945c6fff2d49f7d12de03fbe38df
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ed16c651d0b373e33d58bb73591977d3484d6e0
+ms.sourcegitcommit: be8ce3449afab22673e48b546d857431c071d66f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008242"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162936"
 ---
 # <a name="using-adonet-with-xamarinios"></a>使用 ADO.NET 搭配 Xamarin. iOS
 
@@ -209,6 +209,17 @@ using (var contents = connection.CreateCommand ()) {
 ```
 
 `ExecuteScalar` 方法的傳回型別是 `object` –您應該根據資料庫查詢來轉換結果。 結果可能是來自計數查詢的整數，或是來自單一資料行 SELECT 查詢的字串。 請注意，這不同于傳回 reader 物件的其他 Execute 方法，或受影響的資料列數目計數。
+
+## <a name="microsoftdatasqlite"></a>Microsoft.Data.Sqlite
+
+還有另一個程式庫 `Microsoft.Data.Sqlite`，可以[從 NuGet 安裝](https://www.nuget.org/packages/Microsoft.Data.Sqlite)，這在功能上相當於 `Mono.Data.Sqlite`，並允許相同類型的查詢。
+
+[這兩個程式庫](https://docs.microsoft.com/dotnet/standard/data/sqlite/compare)和一些[Xamarin 特定的詳細資料](https://docs.microsoft.com/dotnet/standard/data/sqlite/xamarin)有比較。 最重要的是，對於 Xamarin iOS 應用程式，您必須包含初始化呼叫：
+
+```csharp
+// required for Xamarin.iOS
+SQLitePCL.Batteries_V2.Init();
+```
 
 ## <a name="related-links"></a>相關連結
 
