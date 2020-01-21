@@ -35,7 +35,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 > 這些疑難排解步驟主要是針對在新系統初始設定時發生的問題。  若您先前曾經在特定環境中使用連線，但連線突然或間歇性停止運作，您可以 (在大部分的情況下) 跳過並直接檢查下列資訊是否有幫助： 
 >
 > - 刪除剩餘的處理序，如下面的[由於現有建置主機處理序所發生的錯誤](#errors)。 
-> - 如清除[Broker、.idb、組建和設計工具代理](#clearing)程式底下所述清除代理程式，然後使用有線網際網路連線並直接透過 IP 位址連接，如[無法連線至 macbuildhost.local。請再試一次](#tryagain)。  
+> - 依照[清除訊息代理程式、IDB、建置與設計代理程式](#clearing)所述清除代理程式，然後使用有線網際網路連線並根據[無法連線到 MacBuildHost.local。請重試。](#tryagain)所述透過 IP 位址直接連線。  
 > 如果那些選項都沒有幫助，則請依照[步驟 9](#stepnine) 中的指示，提出新的錯誤 (Bug) 報告。
 
 1. 確認您的 Mac 上已安裝相容的 Xamarin.iOS 版本。 若要使用 Visual Studio 2017 來執行此操作，請確定您位於 Visual Studio for Mac 中的**穩定**散發通道上。 在 Visual Studio 2015 和更早的版本中，請確定您在兩個 IDE 上都是位於相同的散發通道上。
@@ -114,7 +114,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 <a name="knownissues" />
 
-### <a name="known-issues-and-limitations"></a>已知的問題和限制
+### <a name="known-issues-and-limitations"></a>已知的問題與限制
 
 > [!NOTE]
 > 本節僅適用於您已經使用 OpenSSH SSH 用戶端以 Mac 使用者名稱和密碼成功連線到 Mac 組建主機 (如上述步驟 8 和 9 所述) 的情況。
@@ -129,11 +129,11 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 已知的原因：
 
-- **SSH 安全性限制** – 此訊息最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的 [終端機] 命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
+- **SSH 安全性限制** – 此訊息最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的終端機命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
 
 #### <a name="trying-to-connect-never-completes"></a>「正在嘗試連線...」永遠無法完成
 
-- **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – 如果在 [系統偏好設定] &gt; [使用者與群組] 中，Mac 使用者 [進階選項] 操作功能表中的 [登入 Shell] 設定為 **/bin/bash** 以外的值，在 Xamarin 4.1 上就可能發生此問題。 （從 Xamarin 4.2 開始，此案例會改為導致「無法連線」錯誤訊息）。因應**措施：將** **登入命令**介面變更回 **/bin/bash**的原始預設值。
+- **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – 如果在 [系統偏好設定] &gt; [使用者與群組] 中，Mac 使用者 [進階選項] 操作功能表中的 [登入 Shell] 設定為 **/bin/bash** 以外的值，在 Xamarin 4.1 上就可能發生此問題。 (從 Xamarin 4.2 開始，此情況會改為導致產生「無法連線」錯誤訊息)。**因應措施**：將 [登入 Shell] 變更回原始預設值 **/bin/bash**。
 
 <a name="tryagain" />
 
@@ -141,19 +141,19 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 回報的原因：
 
-- **Bug** –少數使用者已看到此錯誤訊息，並在記錄檔中顯示更詳細的錯誤：「為使用者設定 SSH 時發生未預期的錯誤 .。。當嘗試使用 Active Directory 或其他目錄服務網域使用者帳戶登入組建主機時，會話作業已超時。 **因應措施：** 改用本機使用者帳戶來登入組建主機。
+- **Bug** – 一些使用者在嘗試使用 Active Directory 或其他目錄服務網域使用者帳戶來登入組建主機時，在記錄檔中看到此訊息且伴隨更詳細的錯誤「為使用者設定 SSH 時發生未預期的錯誤...工作階段作業逾時」。 **因應措施：** 改用本機使用者帳戶來登入組建主機。
 
-- **Bug** – 一些使用者在嘗試於連線對話方塊中按兩下 Mac 名稱來連線到組建主機時看到此錯誤。 **可能的因應措施**使用 IP 位址來[手動新增 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
+- **Bug** – 一些使用者在嘗試於連線對話方塊中按兩下 Mac 名稱來連線到組建主機時看到此錯誤。 **可能的因應措施**：使用 IP 位址來[手動新增 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
 
-- **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些使用者在於 Mac 組建主機與 Windows 之間使用無線網路連線遇到此錯誤。 **可能的因應措施**將兩部電腦都移至有線網路連線。
+- **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些使用者在於 Mac 組建主機與 Windows 之間使用無線網路連線遇到此錯誤。 **可能的因應措施**：將這兩部電腦移至有線網路連線。
 
-- **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 上，只要 Mac 上的 **$HOME/.bashrc** 檔案中包含錯誤，就會出現此訊息。 （從 Xamarin 4.1 開始， **.bashrc**檔案中的錯誤將不再影響連接程式）。因應**措施：將** **.bashrc**檔案移至備份位置（或如果您知道不需要，請將其刪除）。
+- **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 上，只要 Mac 上的 **$HOME/.bashrc** 檔案中包含錯誤，就會出現此訊息。 (從 Xamarin 4.1 開始， **.bashrc** 檔案中的錯誤將不再影響連線程序)。**因應措施**：將 **.bashrc** 檔案移至備份位置 (或如果您知道已不需要此檔案，則可將其刪除)。
 
 - **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – 如果在 [系統偏好設定] > [使用者與群組] 中，Mac 使用者 [進階選項] 操作功能表中的 [登入 Shell] 設定為 **/bin/bash** 以外的值，就可能出現此錯誤。 **因應措施**：將 [登入 Shell] 變更回原始預設值 **/bin/bash**。
 
 - **限制** – 如果 Mac 組建主機連線到無法存取網際網路的路由器 (或如果 Mac 使用的 DNS 伺服器在要求 Windows 電腦的反向 DNS 查閱時逾時)，就可能出現此錯誤。 Visual Studio 會花費大約 30 秒的時間來擷取 SSH 指紋，但最終無法連線。
 
-    **可能的因應措施**將 "UseDNS no" 新增至 **sshd\_config** 檔案。 請務必先了解此 SSH 設定，然後再進行變更。 如需範例，請參閱 [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](https://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option)(英文\)。
+    **可能的因應措施**：將 "UseDNS no" 新增至 **sshd\_config** 檔案。 請務必先了解此 SSH 設定，然後再進行變更。 如需範例，請參閱 [unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](https://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option)(英文\)。
 
     下列步驟說明一個變更此設定的方式。 您將需要登入 Mac 上的系統管理員帳戶，才能完成這些步驟。
 
@@ -209,7 +209,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 只要您已確認 Mac 和 Windows 都已更新成相同的散發通道，便可忽略此警告。
 
-#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>「無法執行 'ls /usr/bin/mono': ExitStatus=1」
+#### <a name="failed-to-execute-ls-usrbinmono-exitstatus1"></a>「無法執行 'ls /usr/bin/mono':ExitStatus=1」
 
 只要 Mac 執行的是 OS X 10.11 (El Capitan) 或更新版本，便可忽略此訊息。 此訊息在 OS X 10.11 上並不成問題，因為 Xamarin 也會檢查 **/usr/local/bin/mono**，這是 OS X 10.11 上 `mono` 的正確預期位置。
 
@@ -302,9 +302,9 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 已知的原因：
 
-- **Xamarin 4.1 安全性功能** – 如果您在使用 Xamarin 4.1 或更新版本之後降級成 Xamarin 4.0，就「會」發生此錯誤。 在此情況下，錯誤會伴隨有額外的警告「私密金鑰已加密，但複雜密碼是空的」。 這是一個因 Xamarin 4.1 中的新安全性功能而進行的「刻意」變更。 **建議的修正**從 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中刪除 **id\_rsa** 和 **id\_rsa.pub**，然後重新連線到 Mac 組建主機。
+- **Xamarin 4.1 安全性功能** – 如果您在使用 Xamarin 4.1 或更新版本之後降級成 Xamarin 4.0，就「會」發生此錯誤。 在此情況下，錯誤會伴隨有額外的警告「私密金鑰已加密，但複雜密碼是空的」。 這是一個因 Xamarin 4.1 中的新安全性功能而進行的「刻意」變更。 **建議的修正**：從 **%LOCALAPPDATA%\Xamarin\MonoTouch** 中刪除 **id\_rsa** 和 **id\_rsa.pub**，然後重新連線到 Mac 組建主機。
 
-- **SSH 安全性限制** - 當此訊息伴隨有額外警告「無法使用現有的 SSH 金鑰驗證使用者」時，最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的 [終端機] 命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
+- **SSH 安全性限制** - 當此訊息伴隨有額外警告「無法使用現有的 SSH 金鑰驗證使用者」時，最常意謂著 Mac 上 **$HOME/.ssh/authorized\_keys** 完整路徑中的其中一個檔案或目錄已針對 _other_ 或 _group_ 成員啟用寫入權限。 **一般修正**：在 Mac 上的終端機命令提示字元中執行 `chmod og-w "$HOME"`。 如需有關是哪個特定檔案或目錄造成問題的詳細資料，請在 [終端機] 中執行 `grep sshd /var/log/system.log > "$HOME/Desktop/sshd.log"`，然後從您的桌面開啟 **sshd.log** 檔案並尋找 "Authentication refused: bad ownership or modes" (驗證被拒：無效的擁有權或模式)。
 
 ### <a name="solutions-cannot-be-loaded-from-a-network-share"></a>無法從網路共用載入解決方案
 

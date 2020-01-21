@@ -19,7 +19,7 @@ ms.locfileid: "75728027"
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [ [xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) ] nuget 套件安裝到您的專案中，後面接著 [ [xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) [] 或 [](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) node.js] nuget 套件。
+> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [Xamarin.Forms.Theme.Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)nuget 套件安裝到您的專案中, 後面接著 [Xamarin.Forms.Theme.Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) 或 [Xamarin.Forms.Theme.Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)。
 
 DataPages NuGet 包含許多可以利用資料來源系結的控制項。
 
@@ -46,7 +46,7 @@ DataPages NuGet 包含許多可以利用資料來源系結的控制項。
 
 `HeroImage` 控制項有四個屬性：
 
-* Text
+* 文字
 * 詳細資料
 * ImageSource
 * 方向
@@ -107,7 +107,7 @@ DataPages NuGet 包含許多可以利用資料來源系結的控制項。
 
 它會包含三個屬性：
 
-* Text
+* 文字
 * 詳細資料
 * ImageSource
 
@@ -145,7 +145,7 @@ DataPages NuGet 包含許多可以利用資料來源系結的控制項。
 
 <a name="1" />
 
-#### <a name="1-dataview-subclass"></a>1. DataView 子類別
+#### <a name="1-dataview-subclass"></a>1.DataView 子類別
 
 `DataView` C#的子類別會定義控制項的可系結屬性。
 
@@ -187,7 +187,7 @@ public class CardView : DataView
 
 <a name="2" />
 
-#### <a name="2-define-font-layout-and-margins"></a>2. 定義字型、版面配置和邊界
+#### <a name="2-define-font-layout-and-margins"></a>2.定義字型、版面配置和邊界
 
 控制項設計工具會在自訂控制項的使用者介面設計中，找出這些值。 需要平臺特定規格時，會使用 `OnPlatform` 元素。
 
@@ -245,7 +245,7 @@ public class CardView : DataView
 
 <a name="3" />
 
-#### <a name="3-create-styles-for-the-controls-children"></a>3. 建立控制項子系的樣式
+#### <a name="3-create-styles-for-the-controls-children"></a>3.建立控制項子系的樣式
 
 參考所有定義的元素，以建立將在自訂控制項中使用的子系：
 
@@ -277,7 +277,7 @@ public class CardView : DataView
 
 <a name="4" />
 
-#### <a name="4-create-the-control-layout-template"></a>4. 建立控制項版面配置範本
+#### <a name="4-create-the-control-layout-template"></a>4.建立控制項版面配置範本
 
 自訂控制項的視覺化設計會使用上述定義的資源，在控制項範本中明確宣告：
 
@@ -320,7 +320,7 @@ public class CardView : DataView
 
 <a name="5" />
 
-#### <a name="5-add-the-theme-specific-resources"></a>5. 新增主題特定資源
+#### <a name="5-add-the-theme-specific-resources"></a>5.新增主題特定資源
 
 因為這是自訂控制項，所以請新增符合您使用資源字典之主題的資源：
 
@@ -353,7 +353,7 @@ public class CardView : DataView
 
 <a name="6" />
 
-#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. 設定 CardView 類別的 ControlTemplate
+#### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6.設定 CardView 類別的 ControlTemplate
 
 最後，請確定C#在[步驟 1](#1)中建立的類別會使用[步驟 4](#4)中所定義的控制項範本，並使用 `Style` 的 `Setter` 元素
 
@@ -367,7 +367,7 @@ public class CardView : DataView
 
 <a name="7" />
 
-#### <a name="7-add-the-control-to-a-page"></a>7. 將控制項加入至頁面
+#### <a name="7-add-the-control-to-a-page"></a>7.將控制項新增至頁面
 
 `CardView` 控制項現在可以加入至頁面。 下列範例顯示它裝載在 `StackLayout`中：
 
