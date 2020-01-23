@@ -1,7 +1,16 @@
+---
+ms.openlocfilehash: 4d045c0025effae4f5e4cd30e03f8776be0c1270
+ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "76530859"
+---
 # <a name="voice-and-tone-guidelines"></a>文件編寫指南
 
 開發人員將閱讀您的文件來學習 Xamarin，並用於他們的日常工作。
 您的目的是建立能協助讀者完成工作的有用文件。 而我們的指導方針有助於達成這點。 我們的風格指南包含四個建議：
+
 - [使用白話的語氣](#use-a-conversational-tone)
 - [以第二人稱撰寫](#write-in-2nd-person)
 - [使用主動的語法](#use-active-voice)
