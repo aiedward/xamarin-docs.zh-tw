@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "68669572"
 ---
 REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺服器的相同 HTTP 指令動詞，並透過 HTTP 提出。 在此練習中，您會建立一個類別，該類別會使用 GET 指令動詞從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取資料。 此 Web API 可用來擷取指定位置的天氣預報資料。 您需要註冊 API 金鑰，才能使用此 Web API。
