@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: e4c8e404f447dd88b338123335a291bc9f23e449
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.openlocfilehash: d6300d6d3fdebf851c3710aa2a949575e6fe3f68
+ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70119011"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "76530868"
 ---
 # <a name="metadata-and-markdown-template"></a>中繼資料和 Markdown 範本
 
@@ -65,6 +65,7 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 ## <a name="file-name"></a>檔案名稱
 
 檔案名稱使用下列規則︰
+
 - 只包含小寫字母、數字和連字號。
 - 不使用空格或標點符號。 使用連字號來分隔檔名中的文字和數字。
 - 使用明確的動作動詞，例如 develop、buy、build、troubleshoot。 不使用 -ing 字詞。
@@ -72,11 +73,10 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 - 必須為 Markdown 格式且使用副檔名 .md。
 - 盡可能保持檔名簡短。 它們會是文章 URL 的一部分。
 
-
-
 ## <a name="headings"></a>標題
 
 使用句子樣式的大寫。 下列情況一律大寫：
+
 - 標題的第一個字。
 - 標題中冒號後的第一個字 (例如，"How to:Sort an array")。
 
@@ -133,6 +133,7 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 當連結到 API 時，您可以使用從原始程式碼自動產生的唯一識別碼 (UID)。
 
 您可以使用下列其中一個語法：
+
 1. Markdown 連結：`[link_text](xref:UID)`
 2. 自動連結︰`<xref:UID>`
 3. 簡短格式：`@UID`
@@ -145,6 +146,7 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 > 目前沒有簡單的方法可以尋找 UID。 尋找 UID 的最佳方法是在此存放庫中搜尋：[docascode/coreapi (英文)](https://github.com/docascode/coreapi)。 我們正努力讓系統變得更好。
 
 當 UID 包含特殊字元 \`或 \# 時，該 UID 值必須分別編碼為 HTML 代碼 %60 和 %23，如下列範例：
+
 - 範例：@System.Threading.Tasks.Task\`1 變成 `@System.Threading.Tasks.Task%601`
 - 範例：@System.Exception.\#ctor 變成 `@System.Exception.%23ctor`
 
@@ -158,7 +160,6 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 1. 排序
 1. 清單
 
-
 #### <a name="ordered-list-with-an-embedded-list"></a>包含內嵌清單的排序清單
 
 1. 這裡
@@ -170,7 +171,6 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 1. 排序
 1. 清單
 
-
 ### <a name="unordered-lists"></a>未排序清單
 
 - 這個
@@ -179,20 +179,18 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 - 項目符號
 - 清單
 
-
-##### <a name="unordered-list-with-an-embedded-list"></a>包含內嵌清單的未排序清單
+#### <a name="unordered-list-with-an-embedded-list"></a>包含內嵌清單的未排序清單
 
 - 這個
 - 項目符號
 - 清單
-    - Mrs. Peacock
-    - Mr. Green
+  - Mrs. Peacock
+  - Mr. Green
 - 包含
 - 另一個
     1. Colonel Mustard
     1. Mrs. White
 - 清單
-
 
 ## <a name="horizontal-rule"></a>水平線
 
@@ -208,12 +206,11 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 
 您可以使用 [Markdown 表格產生工具 (英文)](http://www.tablesgenerator.com/markdown_tables) 來輕鬆產生表格。
 
-
 ### <a name="inline-code-blocks-with-language-identifier"></a>具有語言識別碼的內嵌程式碼區塊
 
 使用「三個反引號 (\`\`\`) + 語言識別碼」，來在程式碼區塊套用該語言的語法著色。 這裡有 [GFM 語言識別碼 (英文)](https://github.com/jmm/gfm-lang-ids/wiki/GitHub-Flavored-Markdown-(GFM)-language-IDs) 的完整清單。
 
-##### <a name="c9839"></a>C&#9839;
+#### <a name="c9839"></a>C&#9839;
 
 ```c#
 using System;
