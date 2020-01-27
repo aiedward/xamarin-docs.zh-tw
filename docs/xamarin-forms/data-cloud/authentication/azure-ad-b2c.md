@@ -44,7 +44,7 @@ Microsoft 驗證程式庫支援多個應用程式架構和平臺。 如需 MSAL 
 
 建立租使用者之後，您將需要租使用者**名稱**和**租使用者識別碼**來設定行動應用程式。 租使用者識別碼和名稱是由您在建立租使用者 URL 時所產生的網域所定義。 如果您產生的租使用者 URL 是 `https://contoso20190410tenant.onmicrosoft.com/` 則會 `contoso20190410tenant.onmicrosoft.com`**租使用者識別碼**，而且會 `contoso20190410tenant`**租使用者名稱**。 按一下頂端功能表中的 [**目錄和訂**用帳戶] 篩選，尋找 Azure 入口網站中的租使用者網域。 下列螢幕擷取畫面顯示 [Azure 目錄和訂用帳戶篩選] 按鈕和租使用者網域：
 
-[Azure 目錄和訂用帳戶篩選器視圖中的 ![租使用者名稱](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
+[![Azure 目錄和訂用帳戶篩選器視圖中的 租使用者名稱](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
 
 在範例專案中，編輯**Constants.cs**檔案，以設定 `tenantName` 和 `tenantId` 欄位。 下列程式碼顯示如果您的租使用者網域 `https://contoso20190410tenant.onmicrosoft.com/`，應該如何設定這些值，請將這些值取代為您入口網站中的值：
 
@@ -61,7 +61,7 @@ public static class Constants
 
 行動應用程式必須先向租使用者註冊，才能夠連線並驗證使用者。 註冊程式會將唯一的**應用程式識別碼**指派給應用程式，並將驗證之後將回應導向回應用程式的重新**導向 URL** 。 如需詳細資訊，請參閱[Azure Active Directory B2C：註冊您的應用程式](/azure/active-directory-b2c/active-directory-b2c-app-registration/)。 您必須知道指派給應用程式的**應用程式識別碼**，這會列在 [屬性] 視圖中的應用程式名稱後面。 下列螢幕擷取畫面顯示哪裡可以找到應用程式識別碼：
 
-[Azure 應用程式屬性視圖中的 ![應用程式識別碼](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
+[![Azure 應用程式屬性視圖中的 應用程式識別碼](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
 
 Microsoft 驗證程式庫預期您的應用程式的重新**導向 URL**是您的**應用程式識別碼**，前面加上 "msal" 文字，後面接著稱為 "auth" 的端點。 如果您的應用程式識別碼是 "1234abcd"，則完整的 URL 應該是 `msal1234abcd://auth`。 請確定您的應用程式已啟用**Native client**設定，並使用您的應用程式識別碼來建立**自訂重新導向 URI** ，如下列螢幕擷取畫面所示：
 

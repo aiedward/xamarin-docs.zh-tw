@@ -9,7 +9,7 @@ ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
 ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/25/2019
 ms.locfileid: "75487824"
@@ -47,7 +47,7 @@ Android 6.0 使用自動連結處理來改善這項操作。 Android 可以自�
 在 Android 6.0 中設定應用程式連結會包含兩個主要步驟：
 
 1. 為**網站 URI 新增一或多個意圖篩選器**&ndash; 在行動瀏覽器中，于 [如何處理 URL] 中按一下 [意圖篩選指南 Android]。
-2. 在**網站上發佈*數位資產連結 JSON* 檔案** &ndash; 這是上傳至網站的檔案，且由 Android 用來驗證行動應用程式與網站網域之間的關聯性。 若沒有這種情況，Android 就無法將應用程式安裝為 URI 的預設控制碼;使用者必須手動執行此動作。
+2. 在 **網站上發佈*數位資產連結 JSON*檔案** &ndash; 這是上傳至網站的檔案，且由 Android 用來驗證行動應用程式與網站網域之間的關聯性。 若沒有這種情況，Android 就無法將應用程式安裝為 URI 的預設控制碼;使用者必須手動執行此動作。
 
 <a name="configure-intent-filter" />
 

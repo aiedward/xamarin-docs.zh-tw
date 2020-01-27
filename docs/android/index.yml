@@ -12,7 +12,7 @@ abstract:
   description: 'Xamarin.Android 公開了適用於 .NET 開發人員的完整 Android SDK。 在 Visual Studio 中使用 C# 或 F# 建置完全原生的 Android 應用程式。'
   menu:
     items:
-      - href: ~/android/samples/
+      - href: ~/android/samples/index.md
         text: Android 範例
       - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
         text: 版本資訊
