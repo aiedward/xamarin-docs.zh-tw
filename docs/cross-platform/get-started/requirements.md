@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
-ms.openlocfilehash: 093369010d9327cd2b19fdac09f77697532bfb75
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: c4eaebc8d5f184b1108815c37e992fa97e67aa8f
+ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016432"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76550016"
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -59,7 +59,7 @@ Visual Studio 2019 和 Visual Studio 2017 安裝程式包括自動安裝 Xamarin
 > [!NOTE]
 >
 > - Xamarin for Visual Studio 支援 Visual Studio 2019 或 Visual Studio 2017 (Community、Professional 和 Enterprise)。
-> - 若要使用最新的 Android 和 iOS Sdk，需要最新版本的 Visual Studio。 如需特定版本需求，請參閱《 [xamarin 版本資訊》](/xamarin/android/release-notes/)和「 [xamarin 版本](/xamarin/ios/release-notes/)資訊」。
+> - 若要使用最新的 Android 和 iOS SDK，則需要最新版本的 Visual Studio。 針對特定版本需求，請參閱 [Xamarin.Android 版本資訊](/xamarin/android/release-notes/)和 [Xamarin.iOS 版本資訊](/xamarin/ios/release-notes/)。
 > - 若要在通用 Windows 平台 (UWP) 開發 Xamarin.Forms 應用程式，需要已安裝 Visual Studio 2017 的 Windows 10。 建議使用 Visual Studio 2019。
 
 ### <a name="testing--debugging-on-windows"></a>Windows 上的測試和偵錯
@@ -80,7 +80,7 @@ Visual Studio 2019 和 Visual Studio 2017 安裝程式包括自動安裝 Xamarin
 - [Xamarin.Android](~/android/get-started/installation/index.md)
 - [Xamarin.Mac](~/mac/get-started/installation.md)
 
-這裡也提供有關 [Xamarin.Forms 需求和支援平台](~/get-started/requirements.md)的其他資訊。
+這裡也提供 [Xamarin.Forms 支援平台](~/get-started/supported-platforms.md)的其他資訊。
 
 ## <a name="related-links"></a>相關連結
 

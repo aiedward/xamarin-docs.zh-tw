@@ -201,7 +201,7 @@ public class MyView : View
 
 上述程式碼會先建立紅色繪製和綠色繪製物件。 它會以紅色填滿畫布的內容，然後指示畫布繪製一個綠色矩形，其為畫布寬度的25%。 如需這項工作的範例，請參閱本文的原始程式碼所包含的 `AnimationsDemo` 專案。 藉由啟動應用程式，然後從主功能表中選取繪製專案，我們應該會顯示類似下面的畫面：
 
-[具有紅色油漆和綠色繪製物件的 ![畫面](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
+[![具有紅色油漆和綠色繪製物件的 畫面](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>動畫
 

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: b1a041f1a2baae9b06de023f6eae9c6598b80061
-ms.sourcegitcommit: 5efbf5ab53532b3a74c80129ff4e0ca84b476d21
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "72678711"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -37,7 +37,7 @@ ms.locfileid: "72678711"
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 遠端模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 上格線中標籤的螢幕擷取畫面](../images/create-grid.png "包含標籤的格線")](../images/create-grid-large.png#lightbox "包含標籤的格線s")
+    [![iOS 和 Android 上格線中標籤的螢幕擷取畫面](../images/create-grid.png "包含標籤的格線")](../images/create-grid-large.png#lightbox "包含 Label 的 Grid")
 
     如需有關 [`Grid`](xref:Xamarin.Forms.Grid) 的詳細資訊，請參閱 [Xamarin.Forms 格線](~/xamarin-forms/user-interface/layouts/grid.md)。
 
@@ -72,6 +72,6 @@ ms.locfileid: "72678711"
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 上格線中標籤的螢幕擷取畫面](../images/create-grid.png "包含標籤的格線")](../images/create-grid-large.png#lightbox "包含標籤的格線s")
+    [![iOS 和 Android 上格線中標籤的螢幕擷取畫面](../images/create-grid.png "包含標籤的格線")](../images/create-grid-large.png#lightbox "包含 Label 的 Grid")
 
     如需有關 [`Grid`](xref:Xamarin.Forms.Grid) 的詳細資訊，請參閱 [Xamarin.Forms 格線](~/xamarin-forms/user-interface/layouts/grid.md)。

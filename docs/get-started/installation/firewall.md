@@ -1,23 +1,23 @@
 ---
 title: Xamarin 防火牆組態指示
-description: 本檔提供的主機清單必須允許在您的防火牆中允許 Xamarin 在公司環境中工作。
+description: 您的防火牆必須允許本文件所提供主機清單，Xamarin 才能在公司環境中運作。
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: conceptdev
 ms.author: crdun
 ms.date: 07/17/2019
 ms.openlocfilehash: 2b52dfd55194ec076f28f8c33e758a39d14f5943
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
-ms.translationtype: MT
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "70291323"
 ---
-# <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆設定指示
+# <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆組態指示
 
-_您需要在防火牆中允許的主機清單，以便讓 Xamarin 平臺能為您的公司工作。_
+允許 Xamarin 平台在防火牆中為公司提供服務所需的主機清單。 
 
-為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本檔概述一些需要在防火牆中允許的已知端點，以讓 Xamarin 能夠正常操作。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
+為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本文件概要說明為使 Xamarin 正常運作，您的防火牆需要允許的一些已知端點。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
 
 ## <a name="endpoints-to-allow"></a>要允許的端點
 
@@ -39,7 +39,7 @@ _您需要在防火牆中允許的主機清單，以便讓 Xamarin 平臺能為�
 
 您必須新增下列位址，才能存取 NuGet (Xamarin.Forms 已封裝為 NuGet)：
 
-- [www.nuget.org](www.nuget.org) (以存取 NuGet)
+- www.nuget.org (以存取 NuGet)
 - globalcdn.nuget.org (NuGet 下載)
 - dl-ssl.google.com (適用於 Android 和 Xamarin.Forms 的 Google 元件)
 

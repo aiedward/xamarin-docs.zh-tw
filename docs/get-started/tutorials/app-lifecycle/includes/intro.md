@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cae1ec70880fe694584e14b732608725bcbb1d91
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059599"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -21,4 +21,4 @@ ms.locfileid: "71059599"
 
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何在生命週期狀態變更期間保留資料的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
-[![iOS 和 Android 中生命週期狀態變更期間其文字屬性已保留的輸入螢幕擷取畫面](../images/persist-data.png "生命週期狀態變更期間其文字屬性已保留的輸入")](../images/persist-data-large.png#lightbox "生命週期狀態變更期間其文字屬性已保留的輸入")
+[![螢幕擷取畫面：在 iOS 和 Android 上，Entry 的 Text 屬性跨生命週期狀態變更保留](../images/persist-data.png "Text 屬性會跨生命週期狀態變更保留的 Entry")](../images/persist-data-large.png#lightbox "Text 屬性會跨生命週期狀態變更保留的 Entry")

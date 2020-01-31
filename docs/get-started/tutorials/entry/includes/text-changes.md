@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3130c20d39e0140695eed92ffa4941d6bafe796e
-ms.sourcegitcommit: b4c9c574b771ae0265171ca5e938aed1c5e35028
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67394541"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -42,7 +42,7 @@ ms.locfileid: "67394541"
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![螢幕擷取畫面：iOS 和 Android 上包含文字的項目](../images/text-changes.png "包含文字的項目")](../images/text-changes-large.png#lightbox "包含文字的項目")
+    [![螢幕擷取畫面：iOS 和 Android 上包含文字的 Entry](../images/text-changes.png "包含文字的 Entry")](../images/text-changes-large.png#lightbox "包含文字的 Entry")
 
     在兩個事件處理常式中設定中斷點，並將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，然後觀察 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件的引發。
 
@@ -84,7 +84,7 @@ ms.locfileid: "67394541"
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![螢幕擷取畫面：iOS 和 Android 上包含文字的項目](../images/text-changes.png "包含文字的項目")](../images/text-changes-large.png#lightbox "包含文字的項目")
+    [![螢幕擷取畫面：iOS 和 Android 上包含文字的 Entry](../images/text-changes.png "包含文字的 Entry")](../images/text-changes-large.png#lightbox "包含文字的 Entry")
 
     在兩個事件處理常式中設定中斷點，並將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，然後觀察 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件的引發。
 

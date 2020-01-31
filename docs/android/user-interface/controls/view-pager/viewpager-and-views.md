@@ -267,7 +267,7 @@ viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 
 核心執行現在已完成，&ndash; 建立並執行應用程式。 您應該會看到樹狀目錄的第一個影像顯示在畫面上，如下一個螢幕擷取畫面所示。 向左滑動以查看更多樹狀檢視，然後向右滑動以移回樹狀目錄： 
 
-[透過樹狀結構影像 ![TreePager 應用程式的螢幕擷取畫面](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
+[![透過樹狀結構影像 TreePager 應用程式的螢幕擷取畫面](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
 ## <a name="add-a-pager-indicator"></a>新增分頁指標
 
@@ -319,7 +319,7 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 `PagerTitleStrip` 與 `PagerTabStrip` 非常類似，不同之處在于 `PagerTabStrip` 會為目前選取的索引標籤加上底線。您可以使用上述版面配置中的 `PagerTitleStrip` 來取代 `PagerTabStrip`，然後再次執行應用程式，以查看其 `PagerTitleStrip`的外觀： 
 
-[已從文字中移除底線的 ![PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
+[![已從文字中移除底線的 PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
 請注意，當您轉換成 `PagerTitleStrip`時，會移除底線。 
 

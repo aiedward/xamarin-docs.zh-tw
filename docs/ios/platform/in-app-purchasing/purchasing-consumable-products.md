@@ -327,6 +327,6 @@ if (iap.CanMakePayments()) {
 
 當 `CanMakePayments` 為 false 時仍然可以要求產品資訊，因此應用程式仍可取得和顯示價格。 這表示，如果我們從程式碼中移除 `CanMakePayments` 檢查，則 [購買] 按鈕仍會作用中，但在嘗試購買時，使用者會看到**不允許在應用程式內購買**的訊息（由 StoreKit 在存取付款佇列時產生）：   
 
- [不允許 ![應用程式內購買](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+ [![不允許 應用程式內購買](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
 
 實際的應用程式可能會採用不同的方法來處理限制，例如完全隱藏按鈕，而且可能會提供比 StoreKit 自動顯示的警示更詳細的訊息。

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 552251490665b673e02eb58c50c643daed9c1aed
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107191"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -25,4 +25,4 @@ ms.locfileid: "71107191"
 
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何自訂 [`ListView`](xref:Xamarin.Forms.ListView) 之外觀的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
-[![ListView 的螢幕擷取畫面，其項目是以資料範本進行樣板化](../images/customize-cell-appearance-reduced.png "顯示樣板化資料的 ListView")](../images/customize-cell-appearance-large.png#lightbox "顯示樣板化資料的 ListView")
+[![螢幕擷取畫面：項目以資料範本樣板化的 ListView](../images/customize-cell-appearance-reduced.png "顯示樣板化資料的 ListView")](../images/customize-cell-appearance-large.png#lightbox "顯示樣板化資料的 ListView")

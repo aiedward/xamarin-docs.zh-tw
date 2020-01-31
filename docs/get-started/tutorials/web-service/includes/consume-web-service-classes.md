@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67659766"
 ---
 在此練習中，您會建立使用者介面來取用 `RestService` 類別，接著從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取資料。
@@ -123,7 +123,7 @@ ms.locfileid: "67659766"
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 點選 [`Button`](xref:Xamarin.Forms.Button) 以擷取西雅圖目前的天氣資料：
 
-    [![西雅圖天氣資料的螢幕擷取畫面 (在 iOS 和 Android 上)](../images/consume-web-service.png "西雅圖天氣資料")](../images/consume-web-service-large.png#lightbox "西雅圖天氣資料")
+    [![螢幕擷取畫面：iOS 和 Android 上的西雅圖天氣資料](../images/consume-web-service.png "西雅圖天氣資料")](../images/consume-web-service-large.png#lightbox "西雅圖天氣資料")
 
     > [!IMPORTANT]
     > 您個人的 OpenWeatherMap API 金鑰必須設定為 `Constants` 類別中 `OpenWeatherMapAPIKey` 常數的值。
@@ -245,7 +245,7 @@ ms.locfileid: "67659766"
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 點選 [`Button`](xref:Xamarin.Forms.Button) 以擷取西雅圖目前的天氣資料：
 
-    [![西雅圖天氣資料的螢幕擷取畫面 (在 iOS 和 Android 上)](../images/consume-web-service.png "西雅圖天氣資料")](../images/consume-web-service-large.png#lightbox "西雅圖天氣資料")
+    [![螢幕擷取畫面：iOS 和 Android 上的西雅圖天氣資料](../images/consume-web-service.png "西雅圖天氣資料")](../images/consume-web-service-large.png#lightbox "西雅圖天氣資料")
 
     > [!IMPORTANT]
     > 您個人的 OpenWeatherMap API 金鑰必須設定為 `Constants` 類別中 `OpenWeatherMapAPIKey` 常數的值。

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61375384"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -44,9 +44,9 @@ ms.locfileid: "61375384"
     > [!NOTE]
     > 您可使用 [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 和 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 屬性設定 [`Grid`](xref:Xamarin.Forms.Grid) 中資料行與資料列之間的間距。 如需詳細資訊，請參閱 [Xamarin.Forms 方格](~/xamarin-forms/user-interface/layouts/grid.md)指南中的[間距](~/xamarin-forms/user-interface/layouts/grid.md#spacing)。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 上資料行和資料列中已配置內容的方格螢幕擷取畫面](../images/columns-rows.png "資料行和資料列中有內容的方格")](../images/columns-rows-large.png#lightbox "資料行和資料列中有內容的方格")
+    [![螢幕擷取畫面：在 iOS 和 Android 上，以欄和列顯示內容的 Grid](../images/columns-rows.png "以欄和列顯示內容的 Grid")](../images/columns-rows-large.png#lightbox "以欄和列顯示內容的 Grid")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -86,6 +86,6 @@ ms.locfileid: "61375384"
     > [!NOTE]
     > 您可使用 [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 和 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 屬性設定 [`Grid`](xref:Xamarin.Forms.Grid) 中資料行與資料列之間的間距。 如需詳細資訊，請參閱 [Xamarin.Forms 方格](~/xamarin-forms/user-interface/layouts/grid.md)指南中的[間距](~/xamarin-forms/user-interface/layouts/grid.md#spacing)。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 上資料行和資料列中已配置內容的方格螢幕擷取畫面](../images/columns-rows.png "資料行和資料列中有內容的方格")](../images/columns-rows-large.png#lightbox "資料行和資料列中有內容的方格")
+    [![螢幕擷取畫面：在 iOS 和 Android 上，以欄和列顯示內容的 Grid](../images/columns-rows.png "以欄和列顯示內容的 Grid")](../images/columns-rows-large.png#lightbox "以欄和列顯示內容的 Grid")

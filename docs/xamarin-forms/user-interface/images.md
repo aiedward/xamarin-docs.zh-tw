@@ -273,7 +273,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 下列螢幕擷取畫面顯示在每個平臺上顯示遠端影像的結果：
 
-[顯示已下載影像的 ![範例應用程式](images-images/download-sml.png)](images-images/download.png#lightbox)
+[![顯示已下載影像的 範例應用程式](images-images/download-sml.png)](images-images/download.png#lightbox)
 
 ### <a name="downloaded-image-caching"></a>已下載影像快取
 

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 4416eddfab4bfcf2b3274054db9bcfc60ed8fdec
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059603"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -21,4 +21,4 @@ ms.locfileid: "71059603"
 
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何自訂 [`Editor`](xref:Xamarin.Forms.Editor) 之行為的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
-[![螢幕擷取畫面：iOS 和 Android 上的自動調整大小編輯器](../images/customize-behavior.png "自動調整大小編輯器")](../images/customize-behavior-large.png#lightbox "自動調整大小編輯器")
+[![螢幕擷取畫面：iOS 和 Android 上的自動調整大小 Editor](../images/customize-behavior.png "自動調整大小 Editor")](../images/customize-behavior-large.png#lightbox "自動調整大小 Editor")

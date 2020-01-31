@@ -898,6 +898,8 @@
           href: deploy-test/index.yml
         - name: 改善效能
           href: deploy-test/performance.md
+        - name: 快速重新啟動
+          href: deploy-test/hot-restart.md
         - name: 使用 Visual Studio App Center 進行自動化的測試
           href: /appcenter/test-cloud/uitest/get-started-xamarin-forms
         - name: 發佈 iOS 應用程式

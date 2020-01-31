@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: ff3a0477c6b8a2bf30693ff05a4a992ad053d2b9
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107194"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -21,4 +21,4 @@ ms.locfileid: "71107194"
 
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何在 [`Label`](xref:Xamarin.Forms.Label) 中顯示文字的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
-[![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的標籤](../images/label-formatted-text.png "具有格式化文字的標籤")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的標籤")
+[![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")

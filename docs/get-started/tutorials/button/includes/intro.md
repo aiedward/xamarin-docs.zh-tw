@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 42b42e8013032b684b31e8bd974c433ef176be52
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059595"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -21,4 +21,4 @@ ms.locfileid: "71059595"
 
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何自訂 [`Button`](xref:Xamarin.Forms.Button) 的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
-[![螢幕擷取畫面：iOS 和 Android 上視覺外觀已變更的按鈕](../images/change-button-appearance.png "外觀已變更的按鈕")](../images/change-button-appearance-large.png#lightbox "外觀已變更的按鈕")
+[![螢幕擷取畫面：在 iOS 和 Android 上，視覺外觀已變更的 Button](../images/change-button-appearance.png "外觀已變更的 Button")](../images/change-button-appearance-large.png#lightbox "外觀已變更的 Button")

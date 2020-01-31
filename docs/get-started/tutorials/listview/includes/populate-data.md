@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/16/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "69541436"
 ---
 [`ListView`](xref:Xamarin.Forms.ListView) 會使用類型為 `IEnumerable` 的 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性來填入資料。 上一個步驟已使用字串陣列填入 XAML 中的 `ListView`。 不過，一般而言，`ListView` 會從程式碼後置中所定義且實作 `IEnumerable` 的集合填入資料。
@@ -187,7 +187,7 @@ ms.locfileid: "69541436"
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 中從集合填入資料的 ListView 螢幕擷取畫面](../images/populate-data.png "從集合顯示資料的 ListView")](../images/populate-data-large.png#lightbox "從集合顯示資料的 ListView")
+    [![螢幕擷取畫面：iOS 和 Android 上從集合填入資料的 ListView](../images/populate-data.png "顯示來自集合之資料的 ListView")](../images/populate-data-large.png#lightbox "顯示來自集合之資料的 ListView")
 
     [`ListView`](xref:Xamarin.Forms.ListView) 會顯示 `Monkeys` 集合中每個 `Monkey` 的 `Name` 屬性。 這是因為從集合顯示物件時，`ListView` 預設會呼叫 `ToString` 方法 (已在 `Monkey` 類別中進行覆寫，進而傳回 `Name` 屬性值)。
 
@@ -368,6 +368,6 @@ ms.locfileid: "69541436"
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 中從集合填入資料的 ListView 螢幕擷取畫面](../images/populate-data.png "從集合顯示資料的 ListView")](../images/populate-data-large.png#lightbox "從集合顯示資料的 ListView")
+    [![螢幕擷取畫面：iOS 和 Android 上從集合填入資料的 ListView](../images/populate-data.png "顯示來自集合之資料的 ListView")](../images/populate-data-large.png#lightbox "顯示來自集合之資料的 ListView")
 
     [`ListView`](xref:Xamarin.Forms.ListView) 會顯示 `Monkeys` 集合中每個 `Monkey` 的 `Name` 屬性。 這是因為從集合顯示物件時，`ListView` 預設會呼叫 `ToString` 方法 (已在 `Monkey` 類別中進行覆寫，進而傳回 `Name` 屬性值)。

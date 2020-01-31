@@ -119,7 +119,7 @@ Certificate fingerprints:
 
 3. 一分鐘之後，即會建立專案，並將您帶到專案的 [**儀表板**] 頁面。 從該處按一下 [**啟用 API 和服務**]：
 
-   [在 [程式庫] 區段中 ![按一下 [Google Maps Android API]](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
+   [![在 [程式庫] 區段中 按一下 [Google Maps Android API]](obtaining-a-google-maps-api-key-images/03-api-selection-vs-sml.png)](obtaining-a-google-maps-api-key-images/03-api-selection-vs.png#lightbox)
 
 4. 在 [ **API 程式庫**] 頁面中，按一下 [**適用于 ANDROID 的 Maps SDK**]。 在下一個頁面上，按一下 [**啟用**] 以開啟此專案的服務：
 
@@ -153,15 +153,15 @@ Certificate fingerprints:
 
 6. 輸入您的應用程式的套件名稱，並輸入 SHA-1 憑證指紋（透過 `keytool` 取得，如本指南稍早所述）。 在下列範例中，會輸入 `XamarinMapsDemo` 的套件名稱，後面接著從**debug. 金鑰**儲存區取得的 sha-1 憑證指紋：
 
-   [輸入的 ![套件名稱為 .com。](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
+   [![輸入的 套件名稱為 .com。](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 
 7. 請注意，為了讓您的 APK 存取 Google Maps，您必須針對用來簽署 APK 的每個金鑰儲存區（debug 和 release）包含 SHA-1 指紋和套件名稱。 例如，如果您使用一部電腦進行 debug，而另一部電腦用於產生發行 APK，您應該包含第一部電腦的 debug 金鑰儲存區中的 SHA-1 憑證指紋，以及來自的版本金鑰儲存區的 SHA-1 憑證指紋第二部電腦。 按一下 [ **+ 新增套件名稱和指紋**]，以新增另一個指紋和套件名稱，如下列範例所示：
 
-   [新增另一個指紋 ![建立另一個 SHA-1 憑證](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
+   [![新增另一個指紋 建立另一個 SHA-1 憑證](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/11-second-fingerprint-vs.png#lightbox)
 
 8. 按一下 [儲存] 按鈕儲存您的變更。 接下來，您會回到 API 金鑰清單。 如果您稍早建立了其他 API 金鑰，它們也會列在此處。 在此範例中，只會列出一個 API 金鑰（在先前步驟中建立的）：
 
-   [[API 金鑰] 清單中會顯示 ![XamarinMapsDemoKey](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
+   [[![API 金鑰] 清單中會顯示 XamarinMapsDemoKey](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
 ## <a name="connect-the-project-to-a-billable-account"></a>將專案連接到可計費帳戶
 

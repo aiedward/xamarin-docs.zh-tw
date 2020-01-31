@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 338b03ae5e52b06c6ddc225b418ee2bc7d5e5ffc
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107199"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -24,4 +24,4 @@ ms.locfileid: "71107199"
 
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何從 [OpenWeatherMap](https://openweathermap.org/) \(英文\) Web 服務擷取資料的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
-[![西雅圖天氣資料的螢幕擷取畫面 (在 iOS 和 Android 上)](../images/consume-web-service.png "西雅圖天氣資料")](../images/consume-web-service-large.png#lightbox "西雅圖天氣資料")
+[![螢幕擷取畫面：iOS 和 Android 上的西雅圖天氣資料](../images/consume-web-service.png "西雅圖天氣資料")](../images/consume-web-service-large.png#lightbox "西雅圖天氣資料")

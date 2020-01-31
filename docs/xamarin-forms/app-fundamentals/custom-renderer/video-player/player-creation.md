@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: 007c027772701e424aad5995c0ec025c3589171c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771780"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725087"
 ---
 # <a name="creating-the-platform-video-players"></a>建立平台視訊播放程式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解決方案包含所有實作 Xamarin.Forms 視訊播放程式的程式碼。 它也包含一系列頁面，示範如何在應用程式中使用視訊播放程式。 所有 `VideoPlayer` 及其平台轉譯器都位於名為 `FormsVideoLibrary` 的專案資料夾內，且使用 `FormsVideoLibrary` 命名空間。 這應該可讓您輕鬆地將檔案複製到您的應用程式並參考類別。
 
 ## <a name="the-video-player"></a>視訊播放程式
 
-[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) 類別是 **VideoPlayerDemos** .NET Standard 程式庫的一部分，該程式庫會在平台間共用。 它衍生自 `View`：
+[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoPlayer.cs) 類別是 **VideoPlayerDemos** .NET Standard 程式庫的一部分，該程式庫會在平台間共用。 它衍生自 `View`：
 
 ```csharp
 using System;
@@ -45,7 +45,7 @@ namespace FormsVideoLibrary
 
 在 iOS 中實作視訊播放程式會涉及數個類別。 應用程式會先建立 [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController)，然後將 [`Player`](xref:AVKit.AVPlayerViewController.Player*) 屬性設為類型 [`AVPlayer`](xref:AVFoundation.AVPlayer) 的物件。 將視訊來源指派給播放程式時，還需要其他類別。
 
-像所有轉譯器而言，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs)包含`ExportRenderer`屬性，可識別`VideoPlayer`產生器檢視：
+與所有轉譯器相似，iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/FormsVideoLibrary/VideoPlayerRenderer.csVideoPlayerRenderer.cs) 包含 `ExportRenderer` 屬性，可識別 `VideoPlayer` 檢視及轉譯器：
 
 ```csharp
 using System;
@@ -120,7 +120,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-view"></a>Android 視訊檢視
 
-`VideoPlayer` 的 Android 轉譯器是以 Android [`VideoView`](xrtef:Android.Widget.VideoView) 類別為基礎。 但是，若 `VideoView` 使用自身來在 Xamarin.Forms 應用程式中播放視訊，則視訊會填入分配給 `VideoPlayer` 的區域，而不會維持正確的外觀比例。 基於此原因 (您會在稍後了解)，`VideoView` 會成為 Android `RelativeLayout` 的子系。 `using` 指示詞會定義 `ARelativeLayout`，將它與 Xamarin.Forms `RelativeLayout` 區別，且即是 `ViewRenderer` 中的第二個泛型引數：
+`VideoPlayer` 的 Android 轉譯器是以 Android [`VideoView`](xref:Android.Widget.VideoView) 類別為基礎。 但是，若 `VideoView` 使用自身來在 Xamarin.Forms 應用程式中播放視訊，則視訊會填入分配給 `VideoPlayer` 的區域，而不會維持正確的外觀比例。 基於此原因 (您會在稍後了解)，`VideoView` 會成為 Android `RelativeLayout` 的子系。 `using` 指示詞會定義 `ARelativeLayout`，將它與 Xamarin.Forms `RelativeLayout` 區別，且即是 `ViewRenderer` 中的第二個泛型引數：
 
 ```csharp
 using System;

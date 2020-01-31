@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 8f379e8639846d9a6424c4aaadf83ff89d7a8684
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107195"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -24,4 +24,4 @@ ms.locfileid: "71107195"
 
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何在本機 SQLite.NET 資料庫中儲存資料的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
-[![iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留螢幕擷取畫面](../images/consume-data-access-classes-reduced.png "本機資料庫的資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫的資料保留")
+[![螢幕擷取畫面：iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留](../images/consume-data-access-classes-reduced.png "本機資料庫資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫資料保留")

@@ -453,7 +453,7 @@ void NewDocument (NSObject sender) {
 
 這段程式碼會建立視窗控制器的新版本、載入新視窗、使其成為主要和金鑰視窗，並設定它的標題。 現在，如果我們執行應用程式，然後從 [檔案] 功能表中選取 [**新增**]，就會開啟並顯示**新的編輯器**視窗：
 
-[已新增新的未命名視窗 ![](window-images/display04.png)](window-images/display04.png#lightbox)
+[![已新增新的未命名視窗](window-images/display04.png)](window-images/display04.png#lightbox)
 
 如果開啟 [ **windows** ] 功能表，您可以看到應用程式會自動追蹤並處理我們開啟的視窗：
 
@@ -747,7 +747,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 如果我們執行應用程式，將會顯示面板：
 
-[在執行中的應用程式中 ![面板](window-images/panels04.png)](window-images/panels04.png#lightbox)
+[![在執行中的應用程式中 面板](window-images/panels04.png)](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > Apple 已淘汰面板視窗，應該以**偵測器介面**取代。 如需在 Xamarin. Mac 應用程式中建立偵測**器**的完整範例，請參閱我們的[MacInspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)範例應用程式。

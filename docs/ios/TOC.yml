@@ -140,6 +140,11 @@
       items:
         - name: 總覽
           href: user-interface/index.md
+        - name: Storyboard
+          href: user-interface/storyboards/index.md
+          items:
+            - name: 整合的 Storyboard
+              href: user-interface/storyboards/unified-storyboards.md
         - name: iOS 設計工具
           href: user-interface/designer/index.md
           items:
@@ -151,11 +156,6 @@
               href: user-interface/designer/ios-designable-controls-walkthrough.md
             - name: 使用 iOS 設計工具的自動配置
               href: user-interface/designer/designer-auto-layout.md
-        - name: Storyboard
-          href: user-interface/storyboards/index.md
-          items:
-            - name: 整合的 Storyboard
-              href: user-interface/storyboards/unified-storyboards.md
         - name: iOS 中的使用者介面
           href: user-interface/ios-ui/index.md
           items:

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 19276826e1996e68fd27107d23e0def76a1025a5
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059601"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -21,4 +21,4 @@ ms.locfileid: "71059601"
 
 您將會使用 Visual Studio 2019 或 Visual Studio for Mac 來建立能示範如何在 Xamarin.Forms 中顯示快顯的簡單應用程式。 下列螢幕擷取畫面顯示的是最終的應用程式：
 
-[![iOS 和 Android 上動作表的螢幕擷取畫面](../images/actionsheet-reduced.png "引導使用者執行工作的動作表")](../images/actionsheet-large.png#lightbox "引導使用者執行工作的動作表")
+[![螢幕擷取畫面：iOS 和 Android 上的動作表](../images/actionsheet-reduced.png "引導使用者執行工作的動作表")](../images/actionsheet-large.png#lightbox "引導使用者執行工作的動作表")

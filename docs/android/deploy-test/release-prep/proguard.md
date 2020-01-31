@@ -79,7 +79,7 @@ Xamarin.Android 連結器會為您的應用程式使用靜態分析，以判斷�
    
 2. 從 [ **Android 選項] 視窗 > 屬性**的 [程式**代碼壓縮工具**] 下拉式清單中選擇 [ **ProGuard** ]： 
 
-    [已選取 ![Proguard 程式碼壓縮工具](proguard-images/03-enable-proguard-shrinker-sml.png)](proguard-images/03-enable-proguard-shrinker.png#lightbox)
+    [![已選取 Proguard 程式碼壓縮工具](proguard-images/03-enable-proguard-shrinker-sml.png)](proguard-images/03-enable-proguard-shrinker.png#lightbox)
 
 針對大部分的 Xamarin.Android 應用程式而言，Xamarin.Android 提供的預設 ProGuard 組態檔即足以移除所有 (且僅限) 未使用的程式碼。 若要檢視預設 ProGuard 組態，請開啟位在 **obj\\Release\\proguard\\proguard_xamarin.cfg** 的檔案。
 

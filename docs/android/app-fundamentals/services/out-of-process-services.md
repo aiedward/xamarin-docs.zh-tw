@@ -469,7 +469,7 @@ Android 提供四種不同的許可權等級：
 
 若要查看已授與應用程式的許可權，請開啟 [Android 設定] 應用程式，然後選取 [**應用**程式]。 尋找並選取清單中的應用程式。 在 [**應用程式資訊**] 畫面上，按一下 [**許可權**]，這會顯示授與應用程式擁有權限的視圖：
 
-[從 Android 裝置 ![螢幕擷取畫面，其中顯示如何尋找已授與應用程式的許可權](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
+[![從 Android 裝置 螢幕擷取畫面，其中顯示如何尋找已授與應用程式的許可權](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
 ## <a name="summary"></a>總結
 

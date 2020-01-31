@@ -148,7 +148,7 @@ ListView.FastScrollEnabled = true;
 
 當使用者透過長清單快速滾動時，區段索引會提供額外的意見反應，&ndash; 它會顯示他們所滾動至的「區段」。 若要讓區段索引出現，介面卡子類別必須執行 `ISectionIndexer` 介面，以根據顯示的資料列提供索引文字：
 
-[H 的 ![螢幕擷取畫面，顯示在開頭為 H 的一節上方](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
+[![H 的 螢幕擷取畫面，顯示在開頭為 H 的一節上方](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 若要執行 `ISectionIndexer` 您需要將三種方法新增到介面卡：
 

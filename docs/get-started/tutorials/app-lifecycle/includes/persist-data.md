@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 16ceaba572ca932777bb366d9f7c58f6dcb24f70
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67841418"
 ---
 [`Application`](xref:Xamarin.Forms.Application) 子類別具有靜態 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典，可用來在生命週期狀態變更期間儲存資料。 此字典使用 `string` 索引鍵並儲存 `object` 值。 字典會自動儲存至裝置，並在應用程式重新啟動時重新填入。
@@ -113,7 +113,7 @@ ms.locfileid: "67841418"
 
     最後，再次從 Visual Studio 中啟動應用程式，先前輸入到 [`Entry`](xref:Xamarin.Forms.Entry) 中的文字將會還原：
 
-    [![iOS 和 Android 中生命週期狀態變更期間其文字屬性已保留的輸入螢幕擷取畫面](../images/persist-data.png "生命週期狀態變更期間其文字屬性已保留的輸入")](../images/persist-data-large.png#lightbox "生命週期狀態變更期間其文字屬性已保留的輸入")
+    [![螢幕擷取畫面：在 iOS 和 Android 上，Entry 的 Text 屬性跨生命週期狀態變更保留](../images/persist-data.png "Text 屬性會跨生命週期狀態變更保留的 Entry")](../images/persist-data-large.png#lightbox "Text 屬性會跨生命週期狀態變更保留的 Entry")
 
     如需有關將資料保存到屬性字典的詳細資訊，請參閱 [Xamarin.Forms 應用程式類別](~/xamarin-forms/app-fundamentals/application-class.md)指南中的[屬性字典](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)。
 
@@ -217,6 +217,6 @@ ms.locfileid: "67841418"
 
     最後，再次從 Visual Studio for Mac 中啟動應用程式，先前輸入到 [`Entry`](xref:Xamarin.Forms.Entry) 中的文字將會還原：
 
-    [![iOS 和 Android 中生命週期狀態變更期間其文字屬性已保留的輸入螢幕擷取畫面](../images/persist-data.png "生命週期狀態變更期間其文字屬性已保留的輸入")](../images/persist-data-large.png#lightbox "生命週期狀態變更期間其文字屬性已保留的輸入")
+    [![螢幕擷取畫面：在 iOS 和 Android 上，Entry 的 Text 屬性跨生命週期狀態變更保留](../images/persist-data.png "Text 屬性會跨生命週期狀態變更保留的 Entry")](../images/persist-data-large.png#lightbox "Text 屬性會跨生命週期狀態變更保留的 Entry")
 
     如需有關將資料保存到屬性字典的詳細資訊，請參閱 [Xamarin.Forms 應用程式類別](~/xamarin-forms/app-fundamentals/application-class.md)指南中的[屬性字典](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)。

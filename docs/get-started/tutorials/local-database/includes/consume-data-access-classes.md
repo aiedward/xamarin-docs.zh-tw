@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67659764"
 ---
 在此練習中，您將建立使用者介面來使用先前建立的資料存取類別。
@@ -74,7 +74,7 @@ ms.locfileid: "67659764"
 
     輸入數個資料項目，點選每個資料項目的 [`Button`](xref:Xamarin.Forms.Button)。 這會將資料儲存至資料庫，並以所有資料庫資料重新填入 [`ListView`](xref:Xamarin.Forms.ListView)：
 
-    [![iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留螢幕擷取畫面](../images/consume-data-access-classes.png "本機資料庫的資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫的資料保留")
+    [![螢幕擷取畫面：iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留](../images/consume-data-access-classes.png "本機資料庫資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫資料保留")
 
     如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/data-cloud/data/databases.md)
 
@@ -144,6 +144,6 @@ ms.locfileid: "67659764"
 
     輸入數個資料項目，點選每個資料項目的 [`Button`](xref:Xamarin.Forms.Button)。 這會將資料儲存至資料庫，並以所有資料庫資料重新填入 [`ListView`](xref:Xamarin.Forms.ListView)：
 
-    [![iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留螢幕擷取畫面](../images/consume-data-access-classes.png "本機資料庫的資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫的資料保留")
+    [![螢幕擷取畫面：iOS 和 Android 上的本機 SQLite.NET 資料庫資料保留](../images/consume-data-access-classes.png "本機資料庫資料保留")](../images/consume-data-access-classes-large.png#lightbox "本機資料庫資料保留")
 
     如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/data-cloud/data/databases.md)

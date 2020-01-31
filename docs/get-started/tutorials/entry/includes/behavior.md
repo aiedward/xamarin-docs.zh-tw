@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 48af50d31013f696879174a5cf108ab9fde92d0b
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61343409"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -23,9 +23,9 @@ ms.locfileid: "61343409"
     > [!NOTE]
     > 在某些文字輸入的案例中 (例如輸入密碼)，拼字檢查和文字預測上會出現負面的體驗，因此應該停用。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，您將看到密碼遮罩字元會取代每個字元，而可以輸入的字元數目上限為 15 個字元：
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，您將看到密碼遮罩字元會取代每個字元，而可以輸入的字元數目上限為 15 個字元：
 
-    [![iOS 和 Android 上由密碼字元遮罩的文字輸入螢幕擷取畫面](../images/customize-behavior.png "以密碼字元遮罩的輸入")](../images/customize-behavior-large.png#lightbox "以密碼字元遮罩的輸入")
+    [![螢幕擷取畫面：在 iOS 和 Android 上，文字由密碼字元遮罩的 Entry](../images/customize-behavior.png "使用密碼字元遮罩的 Entry")](../images/customize-behavior-large.png#lightbox "使用密碼字元遮罩的 Entry")
 
     如需有關自訂 [`Entry`](xref:Xamarin.Forms.Entry) 行為的詳細資訊，請參閱 [Xamarin.Forms 輸入](~/xamarin-forms/user-interface/text/entry.md)指南。
 
@@ -46,8 +46,8 @@ ms.locfileid: "61343409"
     > [!NOTE]
     > 在某些文字輸入的案例中 (例如輸入密碼)，拼字檢查和文字預測上會出現負面的體驗，因此應該停用。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，您將看到密碼遮罩字元會取代每個字元，而可以輸入的字元數目上限為 15 個字元：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，您將看到密碼遮罩字元會取代每個字元，而可以輸入的字元數目上限為 15 個字元：
 
-    [![iOS 和 Android 上由密碼字元遮罩的文字輸入螢幕擷取畫面](../images/customize-behavior.png "以密碼字元遮罩的輸入")](../images/customize-behavior-large.png#lightbox "以密碼字元遮罩的輸入")
+    [![螢幕擷取畫面：在 iOS 和 Android 上，文字由密碼字元遮罩的 Entry](../images/customize-behavior.png "使用密碼字元遮罩的 Entry")](../images/customize-behavior-large.png#lightbox "使用密碼字元遮罩的 Entry")
 
     如需有關自訂 [`Entry`](xref:Xamarin.Forms.Entry) 行為的詳細資訊，請參閱 [Xamarin.Forms 輸入](~/xamarin-forms/user-interface/text/entry.md)指南。

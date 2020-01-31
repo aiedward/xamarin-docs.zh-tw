@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 19afeed47f1c06c89c58dfd996d360698b19fc9c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61373350"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -19,7 +19,7 @@ ms.locfileid: "61373350"
 
     此程式碼會將 [`TextChanged`](xref:Xamarin.Forms.Editor.TextChanged) 事件設定成名為 `OnEditorTextChanged` 的事件處理常式，並將 [`Completed`](xref:Xamarin.Forms.Editor.Completed) 事件設定成名為 `OnEditorCompleted` 的事件處理常式。 下一個步驟將會建立這兩個事件處理常式。
 
-1. 在 [方案總管] 的 **EditorTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnEditorTextChanged` 和 `OnEditorCompleted` 事件處理常式新增至類別：
+1. 在 [方案總管]  的 **EditorTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnEditorTextChanged` 和 `OnEditorCompleted` 事件處理常式新增至類別：
 
     ```csharp
     void OnEditorTextChanged(object sender, TextChangedEventArgs e)
@@ -41,9 +41,9 @@ ms.locfileid: "61373350"
     > [!IMPORTANT]
     > 輸入到 [`Editor`](xref:Xamarin.Forms.Editor) 的任何文字都會儲存到 [`Text`](xref:Xamarin.Forms.Editor.Text) 屬性。
 
-1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 上包含文字的編輯器螢幕擷取畫面](../images/text-changes.png "包含文字的編輯器")](../images/text-changes-large.png#lightbox "包含文字的編輯器")
+    [![螢幕擷取畫面：iOS 和 Android 上包含文字的 Editor](../images/text-changes.png "包含文字的 Editor")](../images/text-changes-large.png#lightbox "包含文字的 Editor")
 
     在兩個事件處理常式中設定中斷點、將文字輸入 [`Editor`](xref:Xamarin.Forms.Editor)，並觀察 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件的引發。 從 `Editor` 上移開焦點，即可看到 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件引發。
 
@@ -62,7 +62,7 @@ ms.locfileid: "61373350"
 
     此程式碼會將 [`TextChanged`](xref:Xamarin.Forms.Editor.TextChanged) 事件設定成名為 `OnEditorTextChanged` 的事件處理常式，並將 [`Completed`](xref:Xamarin.Forms.Editor.Completed) 事件設定成名為 `OnEditorCompleted` 的事件處理常式。 下一個步驟將會建立這兩個事件處理常式。
 
-1. 在 [Solution Pad] 的 **EditorTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnEditorTextChanged` 和 `OnEditorCompleted` 事件處理常式新增至類別：
+1. 在 [Solution Pad]  的 **EditorTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnEditorTextChanged` 和 `OnEditorCompleted` 事件處理常式新增至類別：
 
     ```csharp
     void OnEditorTextChanged(object sender, TextChangedEventArgs e)
@@ -84,9 +84,9 @@ ms.locfileid: "61373350"
     > [!IMPORTANT]
     > 輸入到 [`Editor`](xref:Xamarin.Forms.Editor) 的任何文字都會儲存到 [`Text`](xref:Xamarin.Forms.Editor.Text) 屬性。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
-    [![iOS 和 Android 上包含文字的編輯器螢幕擷取畫面](../images/text-changes.png "包含文字的編輯器")](../images/text-changes-large.png#lightbox "包含文字的編輯器")
+    [![螢幕擷取畫面：iOS 和 Android 上包含文字的 Editor](../images/text-changes.png "包含文字的 Editor")](../images/text-changes-large.png#lightbox "包含文字的 Editor")
 
     在兩個事件處理常式中設定中斷點、將文字輸入 [`Editor`](xref:Xamarin.Forms.Editor)，並觀察 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件的引發。 從 `Editor` 上移開焦點，即可看到 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件引發。
 
