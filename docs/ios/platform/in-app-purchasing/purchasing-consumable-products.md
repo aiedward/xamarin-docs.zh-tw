@@ -323,7 +323,7 @@ if (iap.CanMakePayments()) {
 
 當應用程式**內購買**功能受到限制時，應用程式看起來會像這樣– [購買] 按鈕已停用。   
 
- [當應用程式內購買功能受到限制時，應用程式 ![如下所示：已停用 [購買] 按鈕](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
+ [![當應用程式內購買功能受到限制時，應用程式 如下所示：已停用 [購買] 按鈕](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
 
 當 `CanMakePayments` 為 false 時仍然可以要求產品資訊，因此應用程式仍可取得和顯示價格。 這表示，如果我們從程式碼中移除 `CanMakePayments` 檢查，則 [購買] 按鈕仍會作用中，但在嘗試購買時，使用者會看到**不允許在應用程式內購買**的訊息（由 StoreKit 在存取付款佇列時產生）：   
 

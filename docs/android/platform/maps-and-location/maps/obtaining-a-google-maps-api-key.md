@@ -133,7 +133,7 @@ Certificate fingerprints:
 
 1. 在顯示的 [ **MAPS SDK For Android** ] 頁面中（在上一個步驟中按一下 [**啟用**] 之後），移至 [**認證**] 索引標籤，然後按一下 [**建立認證**] 按鈕：
 
-   [適用于 Android 認證的 ![Maps SDK 訊息](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
+   [![適用于 Android 認證的 Maps SDK 訊息](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs-sml.png)](obtaining-a-google-maps-api-key-images/05-api-is-enabled-vs.png#lightbox)
 
 2. 按一下 [ **API 金鑰**]：
 

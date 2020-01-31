@@ -20,7 +20,7 @@ ms.locfileid: "75728274"
 
 SQLite 資料庫引擎可讓 Xamarin 應用程式將資料物件載入和儲存在共用程式碼中。 範例應用程式會使用 SQLite 資料庫資料表來儲存 todo 專案。 本文說明如何在共用程式碼中使用 SQLite.Net，在本機資料庫中儲存和取出資訊。
 
-[在 iOS 和 Android 上 ![Todolist 應用程式的螢幕擷取畫面](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS 和 Android 上的 Todolist 應用程式")
+[![在 iOS 和 Android 上 Todolist 應用程式的螢幕擷取畫面](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS 和 Android 上的 Todolist 應用程式")
 
 遵循下列步驟，將 SQLite.NET 整合到行動應用程式：
 
