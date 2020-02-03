@@ -7,78 +7,78 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: e2b25468255ff84a3fe79ed4fea913e04bf88687
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.openlocfilehash: 5569e10c059dec26137aadb814101992ed7e9f7e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489360"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725047"
 ---
 # <a name="upload-to-mac-app-store"></a>上傳至 Mac App Store
 
 _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac App Store。_
 
-透過 [iTunes Connect](https://itunesconnect.apple.com/) 將應用程式提交給 Mac App Store 核准。 您也將需要 App Store 中的[**Transporter**](https://apps.apple.com/us/app/transporter/id1450874784?mt=12)工具。
+透過 [iTunes Connect](https://itunesconnect.apple.com/) 將應用程式提交給 Mac App Store 核准。 您也會需要來自 App Store 的 [**Transporter**](https://apps.apple.com/us/app/transporter/id1450874784?mt=12) 工具。
 
-1. 選擇要建立的 **macOS 應用程式**： 
+1. 選擇要建立的 **macOS 應用程式**：
 
     [![](uploading-images/image65.png "iTunes Connect")](uploading-images/image65.png#lightbox)
 
-2. 輸入應用程式的名稱與其他詳細資料。 開發人員只能從先前建立的現有 [Bundle ID] \(套件組合識別碼\) 中選擇： 
+2. 輸入應用程式的名稱與其他詳細資料。 開發人員只能從先前建立的現有 [Bundle ID] \(套件組合識別碼\)  中選擇：
 
     [![](uploading-images/image66.png "Selecting the bundle ID")](uploading-images/image66.png#lightbox)
 
-3. 選取上市日期與價格。 不論開發人員選取的上市日期為何，應用程式只有在通過核准後才可供銷售。 如果開發人員想要更充分掌控實際的上市日期，可將此值設定為很久以後的將來： 
+3. 選取上市日期與價格。 不論開發人員選取的上市日期為何，應用程式只有在通過核准後才可供銷售。 如果開發人員想要更充分掌控實際的上市日期，可將此值設定為很久以後的將來：
 
     [![](uploading-images/image67.png "Setting the available date and price")](uploading-images/image67.png#lightbox)
 
-4. 輸入應用程式的資訊，包括其所屬的 App Store 類別： 
+4. 輸入應用程式的資訊，包括其所屬的 App Store 類別：
 
-    [![](uploading-images/image68.png "Entering the app information")](uploading-images/image68.png#lightbox) 
+    [![](uploading-images/image68.png "Entering the app information")](uploading-images/image68.png#lightbox)
 
-    選取適用的分級： 
+    選取適用的分級：
 
-    [![](uploading-images/image69.png "Setting the app ratings")](uploading-images/image69.png#lightbox) 
+    [![](uploading-images/image69.png "Setting the app ratings")](uploading-images/image69.png#lightbox)
 
-    描述、關鍵字及連絡 URL： 
+    描述、關鍵字及連絡 URL：
 
-    [![](uploading-images/image70.png "Editing the Description, keywords and contact URLs")](uploading-images/image70.png#lightbox) 
+    [![](uploading-images/image70.png "Editing the Description, keywords and contact URLs")](uploading-images/image70.png#lightbox)
 
-    提供給 App Store 檢閱者的連絡資訊和建議： 
+    提供給 App Store 檢閱者的連絡資訊和建議：
 
-    [![](uploading-images/image71.png "Editing the contact information and advice for the App Store reviewers")](uploading-images/image71.png#lightbox) 
+    [![](uploading-images/image71.png "Editing the contact information and advice for the App Store reviewers")](uploading-images/image71.png#lightbox)
 
-    最後，螢幕擷取畫面： 
+    最後，螢幕擷取畫面：
 
-    [![](uploading-images/image72.png "Adding the required screenshots")](uploading-images/image72.png#lightbox) 
+    [![](uploading-images/image72.png "Adding the required screenshots")](uploading-images/image72.png#lightbox)
 
-    螢幕擷取畫面的格式應為 JPG、TIF 或 PNG，大小為 1280x800、1440x900、2880x1800 或 2560x1600 像素。 按 [Save] \(儲存\) 以完成。
+    螢幕擷取畫面的格式應為 JPG、TIF 或 PNG，大小為 1280x800、1440x900、2880x1800 或 2560x1600 像素。 按 [Save] \(儲存\)  以完成。
 
-5. 應用程式資訊隨即顯示以供檢閱。 按一下 [View Details] \(檢視詳細資料\) 來變更狀態： 
+5. 應用程式資訊隨即顯示以供檢閱。 按一下 [View Details] \(檢視詳細資料\)  來變更狀態：
 
     [![](uploading-images/image73.png "Viewing the app details")](uploading-images/image73.png#lightbox)
 
-6. 在詳細資料檢視中，按一下 [Ready to Upload Binary] \(上傳二進位檔準備就緒\)，以提交應用程式套件檔案： 
+6. 在詳細資料檢視中，按一下 [Ready to Upload Binary] \(上傳二進位檔準備就緒\)，以提交應用程式套件檔案：
 
     [![](uploading-images/image74.png "Selecting Ready to Upload Binary")](uploading-images/image74.png#lightbox)
 
-7. 回答加密問題： 
+7. 回答加密問題：
 
     [![](uploading-images/image75.png "Answering the cryptography question")](uploading-images/image75.png#lightbox)
 
-8. 網站準備就緒可接受應用程式套件檔案時會通知您： 
+8. 網站準備就緒可接受應用程式套件檔案時會通知您：
 
     [![](uploading-images/image76.png "The acceptance notification")](uploading-images/image76.png#lightbox)
 
-9. 開始**Transporter** ，並使用您的 Apple ID 登入，然後選擇 [**新增應用程式**]：
+9. 啟動 **Transporter** 並使用您的 Apple ID 登入，然後選擇 [新增應用程式]  ：
 
     [![](uploading-images/transporter01-sml.png "The Application Loader interface")](uploading-images/transporter01.png#lightbox)
 
-    依照指示將您的應用程式套件上傳至 iTunes Connect。
+    遵循指示將應用程式套件上傳至 iTunes Connect。
 
     > [!NOTE]
-    > [**Transporter**](https://apps.apple.com/us/app/transporter/id1450874784?mt=12)會取代與 Xcode 10 和更早版本搭配使用的**應用程式載入**器工具。
-    > Xcode 11 或更新版本中已不再提供應用程式載入器。
+    > [**Transporter**](https://apps.apple.com/us/app/transporter/id1450874784?mt=12) 取代 Xcode 10 和較舊版本曾使用的 **Application Loader** 工具。
+    > Xcode 11 或更新版本中已不再提供 Application Loader。
 
 應用程式通過核准後，即可從 Mac App Store 下載或購買。
 
@@ -87,5 +87,5 @@ _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac A
 - [安裝](~//mac/get-started/installation.md)
 - [Hello, Mac 範例](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
-- [工具指南：對應用程式進行程式碼簽署](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) \(英文\)
-- [開發人員識別碼和 GateKeeper](https://developer.apple.com/resources/developer-id/) \(英文\)
+- [Tools Guide :Code Signing Your App](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) (工具指南：以程式碼簽署應用程式)
+- [開發人員識別碼和 GateKeeper](https://developer.apple.com/developer-id/) \(英文\)

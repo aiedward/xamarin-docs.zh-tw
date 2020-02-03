@@ -7,22 +7,22 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: bc5a151323414e867b919035b0c5705234faebf9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 40d849ad403f2f47c00be9d3da7b59fc27ce8002
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021662"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725489"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>在 Xamarin.Mac 應用程式中偵錯原生損毀
 
 ## <a name="overview"></a>總覽
 
-有時程式設計錯誤會造成原生 Objective-C 執行階段發生損毀。 不同於 C# 例外狀況，這些並不會指向可供您查看來修正的特定程式碼行。 有時它們可能太過瑣細而不易找出並修正，或是極難以追蹤。 
+有時程式設計錯誤會造成原生 Objective-C 執行階段發生損毀。 不同於 C# 例外狀況，這些並不會指向可供您查看來修正的特定程式碼行。 有時它們可能太過瑣細而不易找出並修正，或是極難以追蹤。
 
 我們將逐步解說幾個真實的原生損毀範例來探究一下。
 
-## <a name="example-1-assertion-failure"></a>範例 1：判斷提示失敗
+## <a name="example-1-assertion-failure"></a>範例 1：宣告失敗
 
 以下是一個簡單測試應用程式中的前幾行損毀程式碼 (此資訊將會在**應用程式輸出**面板中)：
 
@@ -61,7 +61,7 @@ public override nfloat GetRowHeight (NSTableView tableView, nint row)
 }
 ```
 
-## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>範例 2：回呼不知跳到哪裡去
+## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>範例 2：回呼跳到不知名的位置
 
 ```csharp
 Stacktrace:
@@ -163,40 +163,40 @@ Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
 
 ### <a name="locating"></a>找出問題
 
-在幾乎每個有此性質之 Bug 的情況中，主要的徵兆都是原生損毀，通常在堆疊頂端的框架中，會有類似 `mono_sigsegv_signal_handler` 或 `_sigtrap` 的行。 Cocoa 嘗試回呼您的 C# 程式碼，但卻遇到已被執行記憶體回收的物件，然後就發生損毀。 不過，並非每個具有這些表徵的損毀都是由這類繫結問題所造成，您將必須進行一些額外的探究，才能確認這是問題所在。 
+在幾乎每個有此性質之 Bug 的情況中，主要的徵兆都是原生損毀，通常在堆疊頂端的框架中，會有類似 `mono_sigsegv_signal_handler` 或 `_sigtrap` 的行。 Cocoa 嘗試回呼您的 C# 程式碼，但卻遇到已被執行記憶體回收的物件，然後就發生損毀。 不過，並非每個具有這些表徵的損毀都是由這類繫結問題所造成，您將必須進行一些額外的探究，才能確認這是問題所在。
 
 導致這些 Bug 難以追蹤的原因在於，只有在記憶體回收作業已處置所提到的物件**之後**，這些 Bug 才會發生。 如果您確信您已遇到這其中一個 Bug，請在您的啟動序列中新增下列程式碼：
 
 ```csharp
-new System.Threading.Thread (() => 
+new System.Threading.Thread (() =>
 {
     while (true) {
          System.Threading.Thread.Sleep (1000);
          GC.Collect ();
     }
-}).Start (); 
+}).Start ();
 ```
 
 這會強制您的應用程式每秒都執行記憶體回收行程。 請重新執行您的應用程式並嘗試重現 Bug。 如果立即發生損毀，或持續不斷發生而不是隨機發生，即表示您的做法正確。
 
 ### <a name="reporting"></a>報告
 
-下一步是要將問題回報給 Xamarin，以便在未來的版本中修正此繫結。 如果您是商務版或企業版授權的持有者，請透過下列方式建立票證 
+下一步是要將問題回報給 Xamarin，以便在未來的版本中修正此繫結。 如果您是商務版或企業版授權的持有者，請透過下列方式建立票證
 
 [visualstudio.microsoft.com/vs/support/](https://visualstudio.microsoft.com/vs/support/)
 
 否則，請搜尋現有的問題：
 
-- 查看 [Xamarin.Mac 論壇](https://forums.xamarin.com/categories/mac) \(英文\)
+- 查看 [Xamarin.Mac 論壇](https://forums.xamarin.com/categories/xamarin-mac) \(英文\)
 - 搜尋[問題存放庫](https://github.com/xamarin/xamarin-macios/issues) \(英文\)
 - 在切換到 GitHub 問題之前，Xamarin 問題的追蹤是在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) \(英文\) 上進行的。 請從該處搜尋相符的問題。
 - 如果您找不到相符的問題，請在 [GitHub 問題存放庫](https://github.com/xamarin/xamarin-macios/issues/new) \(英文\) 中提出新的問題。
 
-GitHub 問題全都是公開的。 無法隱藏意見或附件。 
+GitHub 問題全都是公開的。 無法隱藏意見或附件。
 
 請儘量包含下列資訊：
 
-- 一個可重現問題的簡單範例。 這是**非常寶貴的**，請盡您所能提供。 
+- 一個可重現問題的簡單範例。 這是**非常寶貴的**，請盡您所能提供。
 - 損毀狀況的完整堆疊追蹤。
 - 損毀狀況周圍的 C# 程式碼。   
 
@@ -248,6 +248,6 @@ void AddObject ()
 
 您應該一律不允許 C# 例外狀況將受控碼「逸出」至呼叫端 Objective-C 方法。 如果您這麼做，結果並不明確，但通常會涉及損毀。 一般而言，我們會竭盡所能提供實用的原生和受控損毀資訊，來協助您快速解決問題。
 
-如果不過於深究技術原因，設定基礎結構以在每個受控/原生界限攔截受控例外狀況，不僅成本非常高昂，而且還會有「許多」發生在眾多常見作業中的轉換。 許多作業 (特別是涉及 UI 執行緒的作業) 必須快速完成，否則您的應用程式執行將會斷斷續續，或是效能讓人難以接受。 這些回呼中有許多都是執行不太可能擲回例外狀況的非常簡單工作，所以在這些案例中，這個額外負荷不僅成本太高，也沒有必要性。
+如果不過於深究技術原因，設定基礎結構以在每個受控/原生界限攔截受控例外狀況，不僅成本非常高昂，而且還會有「許多」  發生在眾多常見作業中的轉換。 許多作業 (特別是涉及 UI 執行緒的作業) 必須快速完成，否則您的應用程式執行將會斷斷續續，或是效能讓人難以接受。 這些回呼中有許多都是執行不太可能擲回例外狀況的非常簡單工作，所以在這些案例中，這個額外負荷不僅成本太高，也沒有必要性。
 
-因此，我們不會為您設定這些 try/catch。 針對程式碼執行非瑣碎工作 (例如不僅僅只是傳回布林值或執行簡單比對) 的情況，您可以自行嘗試 try catch。 
+因此，我們不會為您設定這些 try/catch。 針對程式碼執行非瑣碎工作 (例如不僅僅只是傳回布林值或執行簡單比對) 的情況，您可以自行嘗試 try catch。

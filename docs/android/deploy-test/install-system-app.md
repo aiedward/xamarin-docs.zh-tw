@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 5eff10d58ac094f3493bd60bdb621df1bcb30477
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 72cddde86708b5573dc578165354d137c4dc35b6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028063"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723896"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>將 Xamarin.Android 安裝為系統應用程式
 
-_本指南將討論系統應用程式與使用者應用程式之間的差異，以及如何將 Xamarin Android 應用程式安裝為系統應用程式。本指南適用于自訂 Android ROM 映射的作者。它不會說明如何建立自訂 ROM。_
+_本指南會討論系統應用程式與使用者應用程式的差異，以及如何將 Xamarin.Android 應用程式安裝為系統應用程式。本指南適用於自訂 Android ROM 映像的作者。它不會說明如何建立自訂 ROM。_
 
 ## <a name="system-app"></a>系統應用程式
 
@@ -50,9 +50,9 @@ _本指南將討論系統應用程式與使用者應用程式之間的差異，�
 
    在先前的螢幕擷取畫面中，只有一個受支援的 ABI (**armeabi-v7a**) 保有兩個應用程式需要的 **.so** 檔案。 請注意，只需要擷取適用於裝置或裝置 ROM 目標架構的 ABI 檔案，也就是請不要將 **x86** 資料夾中的 **.so** 檔案複製到 **armeabi-v7a** 裝置或 ROM。
 
-3. **將 .so 檔案複製到 /system/lib** &ndash; 將在先前步驟中從 APK 擷取的 **.so** 檔案複製到自訂 ROM 上的 **/system/lib/** 。
+3. **將 .so 檔案複製到 /system/lib** &ndash; 將在先前步驟中從 APK 擷取的 **.so** 檔案，複製到自訂 ROM 上的 **/system/lib/** 。
 
-4. **將 APK 檔案複製到 /system/app** &ndash; 最後一個步驟便是將 APK 檔案複製到 ROM 上的 **/system/app** 資料夾。
+4. **將 APK 檔案複製到 /system/app** &ndash; 最後一個步驟是將 APK 檔案複製到 ROM 上的 **/system/app** 資料夾。
 
 ## <a name="summary"></a>總結
 
@@ -63,4 +63,4 @@ _本指南將討論系統應用程式與使用者應用程式之間的差異，�
 - [發行應用程式](~/android/deploy-test/publishing/index.md)
 - [CPU 架構](~/android/app-fundamentals/cpu-architectures.md)
 - [BLUETOOTH_PRIVILEGED](https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_PRIVILEGED)
-- [API 管理](https://developer.android.com/ndk~/abis.html)
+- [API 管理](https://developer.android.com/ndk/guides/abis)

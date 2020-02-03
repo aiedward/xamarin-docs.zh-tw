@@ -6,38 +6,39 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: b54296da3f1253b77b63363583c34e1548cd6abc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021257"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724080"
 ---
 # <a name="manually-uploading-the-apk"></a>手動上傳 APK
 
-第一次將 APK 提交給 Google Play 時 (或如果使用舊版 Xamarin.Android)，必須透過 [Google Play 開發人員控制台](https://play.google.com/apps/publish)手動上傳 APK。 本指南將說明此程序所需的步驟。 
+第一次將 APK 提交給 Google Play 時 (或如果使用舊版 Xamarin.Android)，必須透過 [Google Play 開發人員控制台](https://play.google.com/apps/publish)手動上傳 APK。
+本指南將說明此程序所需的步驟。
 
 ## <a name="google-play-developer-console"></a>Google Play 開發人員控制台
 
-編譯完 APK 並備妥宣傳資產之後，必須將應用程式上傳到 Google Play。 做法是登入 [Google Play 開發人員控制台](https://play.google.com/apps/publish)(參見下圖)。 按一下 [在 Google Play 上發佈 Android 應用程式] 按鈕，以起始散發應用程式的程序。
+編譯完 APK 並備妥宣傳資產之後，必須將應用程式上傳到 Google Play。 做法是登入 [Google Play 開發人員控制台](https://play.google.com/apps/publish)(參見下圖)。 按一下 [在 Google Play 上發佈 Android 應用程式]  按鈕，以起始散發應用程式的程序。
 
 [![Google Play 開發人員控制台](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png#lightbox)
 
-如果您已經有向 Google Play 註冊的現有應用程式，請按一下 [新增應用程式] 按鈕：
+如果您已經有向 Google Play 註冊的現有應用程式，請按一下 [新增應用程式]  按鈕：
 
 [![[新增應用程式] 按鈕](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png#lightbox)
 
-顯示 [新增應用程式] 對話方塊時，輸入應用程式的名稱，然後按一下 [上傳 APK]：
+顯示 [新增應用程式]  對話方塊時，輸入應用程式的名稱，然後按一下 [上傳 APK]  ：
 
 [![[上傳 APK] 按鈕](manually-uploading-the-apk-images/02-add-new-application-sml.png)](manually-uploading-the-apk-images/02-add-new-application.png#lightbox)
 
-下一個畫面會允許發行 Alpha 測試階段、Beta 測試階段或正式發佈階段的應用程式。 在以下範例中，已選取 [Alpha 測試階段] 索引標籤。 由於 **MyApp** 並不使用授權服務，因此針對此範例並不需要按一下 [取得授權金鑰] 按鈕。 在這裡會按一下 [將您的第一個 APK 上傳到 Alpha 測試階段] 按鈕來發行至 Alpha 頻道：
+下一個畫面會允許發行 Alpha 測試階段、Beta 測試階段或正式發佈階段的應用程式。 在以下範例中，已選取 [Alpha 測試階段]  索引標籤。 由於 **MyApp** 並不使用授權服務，因此針對此範例並不需要按一下 [取得授權金鑰]  按鈕。 在這裡會按一下 [將您的第一個 APK 上傳到 Alpha 測試階段]  按鈕來發行至 Alpha 頻道：
 
 [![[將您的第一個 APK 上傳到 Alpha 測試階段] 按鈕](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
 
-[將新 APK 上傳到 ALPHA 測試階段] 對話方塊隨即顯示。 您可以按一下 [瀏覽檔案] 按鈕或拖放 APK 來上傳 APK： 
+[將新 APK 上傳到 ALPHA 測試階段]  對話方塊隨即顯示。 您可以按一下 [瀏覽檔案]  按鈕或拖放 APK 來上傳 APK：
 
-[![[將新 APK 上傳到 Alpha測試階段] 對話方塊](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
+[![[將新 APK 上傳到 ALPHA 測試階段] 對話方塊](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
 
 請務必上傳已準備好要發行並進行散發的 APK。
 下一個對話方塊會指出 APK 的上傳進度：
@@ -54,21 +55,21 @@ ms.locfileid: "73021257"
 
 ## <a name="store-listing"></a>商店資訊
 
-按一下 **Google Play 開發人員控制台**中的 [商店資訊]，以輸入Google Play 將向可能的應用程式使用者顯示的資訊： 
+按一下 **Google Play 開發人員控制台**中的 [商店資訊]  ，以輸入Google Play 將向可能的應用程式使用者顯示的資訊：
 
-[![[Store 清單] 對話方塊](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
+[![[商店資訊] 對話方塊](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
 
 ### <a name="graphics-assets"></a>圖片資產
 
-向下捲動至 [商店資訊] 頁面的 [圖片資產] 區段：
+向下捲動至 [商店資訊]  頁面的 [圖片資產]  區段：
 
-[![[圖形資產] 區段](manually-uploading-the-apk-images/08-graphic-assets-sml.png)](manually-uploading-the-apk-images/08-graphic-assets.png#lightbox)
+[![[圖片資產] 區段](manually-uploading-the-apk-images/08-graphic-assets-sml.png)](manually-uploading-the-apk-images/08-graphic-assets.png#lightbox)
 
 所有先前準備的宣傳資產都會在此區段中上傳。 針對必須提供哪些宣傳資產，以及應該以哪種格式提供，都有提供相關指引。
 
 ### <a name="categorization"></a>分類
 
-在 [圖片資產] 區段之後是 [分類] 區段，請選取應用程式類型和類別：
+在 [圖片資產]  區段之後是 [分類]  區段，請選取應用程式類型和類別：
 
 [![[分類] 區段](manually-uploading-the-apk-images/09-categorization-sml.png)](manually-uploading-the-apk-images/09-categorization.png#lightbox)
 
@@ -76,62 +77,62 @@ ms.locfileid: "73021257"
 
 ### <a name="contact-details"></a>聯絡詳細資料
 
-此頁面的最後一個區段式 [聯絡詳細資料] 區段。 此區段可用來收集應用程式開發人員的聯絡資訊：
+此頁面的最後一個區段式 [聯絡詳細資料]  區段。 此區段可用來收集應用程式開發人員的聯絡資訊：
 
-[![[連絡人詳細資料] 區段](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
+[![[聯絡詳細資料] 區段](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
 
-您可以在 [隱私權政策] 區段提供隱私權政策的 URL，如以上所示。
+您可以在 [隱私權政策]  區段提供隱私權政策的 URL，如以上所示。
 
 ## <a name="content-rating"></a>內容分級
 
-按一下 **Google Play 開發人員控制台**中的 [內容分級]。 在此頁面中，您可以指定應用程式的內容分級。 Google Play 要求所有應用程式都要指定內容分級。 請按一下 [繼續] 按鈕以完成內容分級問卷：
+按一下 **Google Play 開發人員控制台**中的 [內容分級]  。 在此頁面中，您可以指定應用程式的內容分級。 Google Play 要求所有應用程式都要指定內容分級。 請按一下 [繼續]  按鈕以完成內容分級問卷：
 
 [![[內容分級] 區段](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
 Google Play 上的所有應用程式都必須根據 Google Play 分級系統進行分級。 除了內容分級之外，所有應用程式也必須遵守 Google 的[開發人員內容政策](https://www.android.com/us/developer-content-policy.html)。
 
-以下列出 Google Play 分級系統中的四個等級，並提供一些指引作為會要求或強制分級的特徵或內容： 
+以下列出 Google Play 分級系統中的四個等級，並提供一些指引作為會要求或強制分級的特徵或內容：
 
-- **所有人** &ndash;不可存取、發行或分享位置資料。 不可裝載任何使用者產生的內容。 不可讓使用者之間進行通訊。 
+- **所有人** &ndash; 不可存取、發佈或共用位置資料。 不可裝載任何使用者產生的內容。 不可讓使用者之間進行通訊。
 
-- **少年級** &ndash; 存取但不分享位置資料的應用程式。 描述輕微或卡通暴力。 
+- **少年級** &ndash; 存取但不共用位置資料的應用程式。 描述輕微或卡通暴力。
 
-- **青少年級** &ndash; 涉及藥物或菸酒。 賭博主題或模擬賭博。 煽動性的內容。 褻瀆或低級幽默。 具挑逗性或性暗示。 
-    強烈的幻想型暴力。 真實型暴力。 允許使用者找到彼此。 允許使用者彼此進行通訊。 
-    分享使用者位置資料。 
+- **青少年級** &ndash; 涉及藥物或菸酒。 賭博主題或模擬賭博。 煽動性的內容。 褻瀆或低級幽默。 具挑逗性或性暗示。
+    強烈的幻想型暴力。 真實型暴力。 允許使用者找到彼此。 允許使用者彼此進行通訊。
+    分享使用者位置資料。
 
-- **成人級** &ndash; 著重於菸酒或藥物的消費或販售。 著重於具挑逗性或性方面的暗示。 圖片暴力。 
+- **成人級** &ndash; 著重於菸酒或藥物的消費或販售。 著重於具挑逗性或性方面的暗示。 圖片暴力。
 
-「青少年級」清單中的項目相當主觀，因此看似規定「青少年級」分級的指導方針可能強度會足以達到「成人級」分級。 
+「青少年級」清單中的項目相當主觀，因此看似規定「青少年級」分級的指導方針可能強度會足以達到「成人級」分級。
 
 ## <a name="pricing-amp-distribution"></a>定價與發佈
 
-按一下 **Google Play 開發人員控制台**中的 [定價與發佈]。 在此頁面中，如果應用程式是付費應用程式，請設定價格。
+按一下 **Google Play 開發人員控制台**中的 [定價與發佈]  。 在此頁面中，如果應用程式是付費應用程式，請設定價格。
 或者，您也可以將應用程式免費散發給所有使用者。 一旦將應用程式指定為免費，它就必須維持免費。
 Google Play 不允許將免費應用程式變更為付費應用程式 (不過，可以在免費應用程式使用應用程式內結帳功能來銷售內容)。 Google Play 允許隨時將付費應用程式變更為免費應用程式。
 
-發行付費應用程式之前，必須先有商家帳戶。若要這麼做，請按一下 [設定商家帳戶] 並依照指示進行操作。
+發行付費應用程式之前，必須先有商家帳戶。若要這麼做，請按一下 [設定商家帳戶]  並依照指示進行操作。
 
-[![[定價與發行] 對話方塊](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
+[![[定價與發佈] 對話方塊](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
 
 ### <a name="manage-countries"></a>管理國家/地區
 
-下一個區段 [管理國家/地區] 可控制應用程式能發行到哪些國家/地區：
+下一個區段 [管理國家/地區]  可控制應用程式能發行到哪些國家/地區：
 
 [![[管理國家/地區] 對話方塊](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
 
 ### <a name="other-information"></a>其他資訊
 
-請進一步向下捲動以指定應用程式是否含廣告內容。 此外，[裝置類別] 區段也提供選項，可讓您視需要發行適用於 Android Wear、Android TV 或 Android Auto 的應用程式：
+請進一步向下捲動以指定應用程式是否含廣告內容。 此外，[裝置類別]  區段也提供選項，可讓您視需要發行適用於 Android Wear、Android TV 或 Android Auto 的應用程式：
 
 [![[含廣告內容] 區段](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
 
-此區段之後是一些可選取的額外選項，例如選擇加入 [闔家適用] 計劃，然後透過 Google Play for Education 散發應用程式。
+此區段之後是一些可選取的額外選項，例如選擇加入 [闔家適用]  計劃，然後透過 Google Play for Education 散發應用程式。
 
 ### <a name="consent"></a>同意
 
-位於 [定價與發佈] 頁面底部的是 [同意] 區段。
-這是一個強制性區段，用來宣告應用程式符合 [Android 內容指導方針](https://www.android.com/market/terms/developer-content-policy.html#hl=us)，並認可應用程式受到美國出口法律約束：
+位於 [定價與發佈]  頁面底部的是 [同意]  區段。
+這是一個強制性區段，用來宣告應用程式符合 [Android 內容指導方針](https://play.google.com/about/restricted-content/)，並認可應用程式受到美國出口法律約束：
 
 [![[同意] 區段](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
@@ -149,29 +150,29 @@ Google Play 不允許將免費應用程式變更為付費應用程式 (不過，
 
 您可以在應用程式的資訊清單中新增元素，來協助控制 Google Play 商店中篩選應用程式的方式。 以下列出可用來篩選應用程式的資訊清單元素和屬性：
 
-- [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play 將會使用這些屬性，根據螢幕大小來判斷應用程式是否可以部署到某個裝置。 
-    Google Play 會假設 Android 可以將較小的版面配置放在較大的螢幕中，但無法將較大的版面配置放在較小的螢幕中。 因此，宣稱可以支援一般螢幕的應用程式會出現在大型螢幕的搜尋結果中，但不會出現在小型螢幕的搜尋結果中。 如果 Xamarin.Android 應用程式並未在資訊清單檔中提供 `<supports-screen>` 元素，Google Play 將會假設所有屬性值都為 true，且應用程式支援所有螢幕大小。 此元素必須以手動方式新增至 **AndroidManifest.xml**。 
+- [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play 將會使用這些屬性，根據螢幕大小來判斷應用程式是否可以部署到某個裝置。
+    Google Play 會假設 Android 可以將較小的版面配置放在較大的螢幕中，但無法將較大的版面配置放在較小的螢幕中。 因此，宣稱可以支援一般螢幕的應用程式會出現在大型螢幕的搜尋結果中，但不會出現在小型螢幕的搜尋結果中。 如果 Xamarin.Android 應用程式並未在資訊清單檔中提供 `<supports-screen>` 元素，Google Play 將會假設所有屬性值都為 true，且應用程式支援所有螢幕大小。 此元素必須以手動方式新增至 **AndroidManifest.xml**。
 
-- [使用-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此資訊清單元素用來要求特定硬體功能，例如鍵盤類型、流覽裝置、觸控式螢幕等。此元素必須以手動方式加入至**androidmanifest.xml** 。 
+- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此資訊清單項目用來要求特定硬體功能，例如鍵盤類型、導航裝置、觸控式螢幕等。此元素必須以手動方式新增至 **AndroidManifest.xml**。
 
-- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此資訊清單元素會宣告應用程式運作所需的裝置必備硬體或軟體功能。 此屬性只用來提供資訊。 Google Play 不會對不符合此篩選條件的裝置顯示此應用程式。 您仍可透過其他方式 (手動或下載) 安裝此應用程式。 此元素必須以手動方式新增至 **AndroidManifest.xml**。 
+- [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此資訊清單項目會宣告應用程式運作所需的裝置必備硬體或軟體功能。 此屬性只用來提供資訊。 Google Play 不會對不符合此篩選條件的裝置顯示此應用程式。 您仍可透過其他方式 (手動或下載) 安裝此應用程式。 此元素必須以手動方式新增至 **AndroidManifest.xml**。
 
-- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此元素會指定裝置上必須要有特定的共用程式庫，例如 Google Maps。 指定此元素時，也可以使用 `Android.App.UsesLibraryAttribute` 來指定。 例如: 
+- [uses-library](https://developer.android.com/guide/topics/manifest/uses-library-element.html) &ndash; 此項目會指定裝置上必須要有特定的共用程式庫，例如 Google Maps。 指定此元素時，也可以使用 `Android.App.UsesLibraryAttribute` 來指定。 例如：
 
     ```csharp
     [assembly: UsesLibrary("com.google.android.maps", true)]
     ```
 
-- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; 此元素可用來推斷應用程式執行必備但可能尚未以 `<uses-feature>` 元素適當宣告的特定硬體功能。 例如，如果應用程式會要求使用相機的權限，則即使沒有任何宣告相機的 `<uses-feature>` 元素存在，Google Play 也會假設該裝置必須具有相機。 設定此元素時，可以使用 `Android.App.UsesPermissionsAttribute` 來設定。 例如: 
+- [uses-permission](https://developer.android.com/guide/topics/manifest/uses-permission-element.html) &ndash; 此項目可用來推斷應用程式執行必備但可能尚未以 `<uses-feature>` 項目適當宣告的特定硬體功能。 例如，如果應用程式會要求使用相機的權限，則即使沒有任何宣告相機的 `<uses-feature>` 元素存在，Google Play 也會假設該裝置必須具有相機。 設定此元素時，可以使用 `Android.App.UsesPermissionsAttribute` 來設定。 例如：
 
     ```csharp
     [assembly: UsesPermission(Manifest.Permission.Camera)]
     ```
 
-- [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; 此元素可用來宣告應用程式所需的最低 Android API 層級。 您可以在 Xamarin.Android 專案的 Xamarin.Android 選項中設定此元素。 
+- [uses-sdk](https://developer.android.com/guide/topics/manifest/uses-sdk-element.html) &ndash; 此項目可用來宣告應用程式所需的最低 Android API 層級。 您可以在 Xamarin.Android 專案的 Xamarin.Android 選項中設定此元素。
 
-- [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; 此元素可用來篩選不符合此元素所指定螢幕大小和密度的應用程式。 大多數應用程式都不應該使用此屬性。 針對需要嚴格控制應用程式散發的特定高效能遊戲或應用程式，才需要使用此屬性。 建議使用上述的 `<support-screen>` 屬性。 
+- [compatible-screens](https://developer.android.com/guide/topics/manifest/compatible-screens-element.html) &ndash; 此項目可用來篩選不符合此項目所指定螢幕大小和密度的應用程式。 大多數應用程式都不應該使用此屬性。 針對需要嚴格控制應用程式散發的特定高效能遊戲或應用程式，才需要使用此屬性。 建議使用上述的 `<support-screen>` 屬性。
 
-- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; 此元素可用來宣告應用程式所需的 GL 材質壓縮形成方式。 大多數應用程式都不應該使用此屬性。 針對需要嚴格控制應用程式散發的特定高效能遊戲或應用程式，才需要使用此屬性。 
+- [supports-gl-texture](https://developer.android.com/guide/topics/manifest/supports-gl-texture-element.html) &ndash; 此項目可用來宣告應用程式所需的 GL 材質壓縮形成方式。 大多數應用程式都不應該使用此屬性。 針對需要嚴格控制應用程式散發的特定高效能遊戲或應用程式，才需要使用此屬性。
 
 如需有關設定應用程式資訊清單的詳細資訊，請參閱 Android [應用程式宣示說明](https://developer.android.com/guide/topics/manifest/manifest-intro.html)主題。

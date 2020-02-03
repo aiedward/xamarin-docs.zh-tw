@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f43cb3ac5ff4d976c57a9d82c2003a08954ef1a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 2d84d149b2eb4194de35fabc69cf44af99c04d25
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021044"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724122"
 ---
 # <a name="manually-signing-the-apk"></a>手動簽署 APK
 
@@ -22,11 +22,11 @@ ms.locfileid: "73021044"
 
 2. **Zipalign APK** &ndash; *Zipalign* 是在應用程式上執行的最佳化程序。 它讓 Android 能夠在執行階段，更有效率地與 APK 互動。 Xamarin.Android 會在執行階段進行檢查，而且如果尚未針對 APK 進行 zipalign，則不允許應用程式執行。
 
-3. **簽署 APK** &ndash; 這個步驟包含使用 Android SDK 的 **apksigner** 公用程式，並使用上一個步驟中所建立的私密金鑰來簽署 APK。 使用版本早於 v24.0.3 的 Android SDK 建置工具開發的應用程式，將會使用 JDK 的 **jarsigner** 應用程式。 以下將更詳細討論這兩種工具。 
+3. **簽署 APK** &ndash; 這個步驟包含使用 Android SDK 的 **apksigner** 公用程式，並使用上一個步驟中所建立的私密金鑰來簽署 APK。 使用版本早於 v24.0.3 的 Android SDK 建置工具開發的應用程式，將會使用 JDK 的 **jarsigner** 應用程式。 以下將更詳細討論這兩種工具。
 
-步驟的順序很重要，而且取決於用來簽署 APK 的工具。 使用 **apksigner** 時，務必先針對應用程式進行 **zipalign**，然後使用 **apksigner** 來簽署它。  如果需要使用 **jarsigner** 簽署 APK，則務必先簽署 APK，然後執行 **zipalign**。 
+步驟的順序很重要，而且取決於用來簽署 APK 的工具。 使用 **apksigner** 時，務必先針對應用程式進行 **zipalign**，然後使用 **apksigner** 來簽署它。  如果需要使用 **jarsigner** 簽署 APK，則務必先簽署 APK，然後執行 **zipalign**。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>必要條件
 
 本指南將著重於從 Android SDK 建置工具 (v24.0.3 或更高版本) 使用 **apksigner**。 它假設 APK 已經建置。
 
@@ -34,7 +34,7 @@ ms.locfileid: "73021044"
 
 ## <a name="create-a-private-keystore"></a>建立私密金鑰儲存區
 
-「金鑰儲存區」是一個安全性憑證的資料庫，此資料庫是使用 Java SDK 的 [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) \(英文\) 程式所建立。 金鑰儲存區對於發行 Xamarin.Android 應用程式而言是不可或缺的，因為 Android 將不會執行未經過數位簽署的應用程式。
+「金鑰儲存區」  是一個安全性憑證的資料庫，此資料庫是使用 Java SDK 的 [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) \(英文\) 程式所建立。 金鑰儲存區對於發行 Xamarin.Android 應用程式而言是不可或缺的，因為 Android 將不會執行未經過數位簽署的應用程式。
 
 在開發期間，Xamarin.Android 會使用偵錯金鑰儲存區來簽署應用程式，讓應用程式能夠直接部署至模擬器，或部署至設定來使用可偵錯應用程式的裝置。
 不過，無法將此金鑰儲存區辨識為用於散發應用程式目的的有效金鑰儲存區。
@@ -82,7 +82,7 @@ Re-enter new password:
 [Storing xample.keystore]
 ```
 
-若要列出儲存於金鑰儲存區中的金鑰，請搭配&ndash; `list` 選項使用 **keytool**：
+若要列出儲存於金鑰儲存區中的金鑰，請搭配 &ndash; `list` 選項使用 **keytool**：
 
 ```shell
 $ keytool -list -keystore xample.keystore
@@ -127,7 +127,7 @@ $ apksigner sign --ks xample.keystore --ks-key-alias publishingdoc mono.samples.
 > [!WARNING]
 > 唯有在需要使用 **jarsigner** 公用程式簽署 APK 時，本節才適用。 建議開發人員使用 **apksigner** 簽署 APK。
 
-此技術牽涉到使用 Java SDK 的 **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)**  \(英文\) 命令來簽署 APK 檔案。  **Jarsigner** 工具由 Java SDK 所提供。 
+此技術牽涉到使用 Java SDK 的 **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)** \(英文\) 命令來簽署 APK 檔案。  **Jarsigner** 工具由 Java SDK 所提供。
 
 下列範例示範如何使用 **jarsigner** 和金鑰 `publishingdoc` 來簽署 APK，此金鑰包含在名為 **xample.keystore** 的金鑰儲存區檔案中：
 
@@ -141,7 +141,6 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 ## <a name="related-links"></a>相關連結
 
 - [Application Signing](https://source.android.com/security/apksigning/) (應用程式簽署)
-- [Java JAR 簽署](https://docs.oracle.com/javase/8/docs/technotes~/jar/jar.html#Signed_JAR_File)
 - [jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)
 - [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html)
 - [zipalign](https://developer.android.com/studio/command-line/zipalign.html)
