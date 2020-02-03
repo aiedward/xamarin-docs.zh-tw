@@ -161,7 +161,7 @@ Certificate fingerprints:
 
 8. 按一下 [儲存] 按鈕儲存您的變更。 接下來，您會回到 API 金鑰清單。 如果您稍早建立了其他 API 金鑰，它們也會列在此處。 在此範例中，只會列出一個 API 金鑰（在先前步驟中建立的）：
 
-   [[![API 金鑰] 清單中會顯示 XamarinMapsDemoKey](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
+   [![[API 金鑰] 清單中會顯示 XamarinMapsDemoKey](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs-sml.png)](obtaining-a-google-maps-api-key-images/12-list-of-apis-vs.png#lightbox)
 
 ## <a name="connect-the-project-to-a-billable-account"></a>將專案連接到可計費帳戶
 
