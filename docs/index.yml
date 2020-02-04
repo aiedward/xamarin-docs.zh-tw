@@ -9,12 +9,12 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: fa152418c40ac61df15e8a22b838d012935bee4b
-  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.openlocfilehash: c28f849f772bb496b526552745a0aea1c2e08e62
+  ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 01/06/2020
-  ms.locfileid: "75679710"
+  ms.lasthandoff: 02/01/2020
+  ms.locfileid: "76940712"
 highlightedContent:
   items:
   - title: 設定與安裝
@@ -140,7 +140,7 @@ additionalContent:
       summary: 常見裝置功能的跨平台 API。
       url: ~/essentials/index.md
     - title: 存取 REST Web 服務
-      summary: 使用 Git 和 TFVC 等版本控制技術來共用程式碼。
+      summary: 使用 HTTP 與 JSON 整合 Web 服務並與其互動
       url: ~/xamarin-forms/data-cloud/web-services/rest.md
     - title: 部署至 Android 與 iOS 裝置
       summary: 上傳以測試裝置和應用程式存放區。
