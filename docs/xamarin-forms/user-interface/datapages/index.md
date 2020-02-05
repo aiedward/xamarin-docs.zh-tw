@@ -19,7 +19,7 @@ ms.locfileid: "75727936"
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [ [xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) ] nuget 套件安裝到您的專案中，後面接著 [ [xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) [] 或 [](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) node.js] nuget 套件。
+> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [Xamarin.Forms.Theme.Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)nuget 套件安裝到您的專案中, 後面接著 [Xamarin.Forms.Theme.Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) 或 [Xamarin.Forms.Theme.Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)。
 
 DataPages 已于演進2016宣佈，並可供客戶試用並提供意見反應。
 
