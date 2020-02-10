@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b11f21b0d0932013c65ea9298ad9425747afdf79
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028141"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940629"
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 
@@ -30,7 +30,7 @@ _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 
 本指南會說明如何編寫指令碼為 Xamarin.Android 應用程式建置多重 APK，並使每個 APK 都瞄準特定的 ABI。 它涵蓋了下列主題：
 
-1. 為 APK 建立唯一的「版本代碼」。
+1. 為 APK 建立唯一的「版本代碼」  。
 1. 建立會用於此 APK 的 **AndroidManifest.XML** 暫存版本。
 1. 使用先前步驟中的 **AndroidManifest.XML** 來建置應用程式。
 1. 透過簽署及 Zipalign 來準備 APK。
@@ -64,17 +64,17 @@ Google 建議針對使用七位數版本代碼的版本代碼使用特定的演�
 
 Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是正確的 APK。 具有最高版本代碼的 APK 會傳遞到裝置。 例如，應用程式可能會有三個 APK，並具有下列版本代碼：
 
-- 11413456 - ABI 為 `armeabi`，瞄準的 API 層級為 14，適用於小型至大型螢幕，版本號碼為 456。
-- 21423456 - ABI 為 `armeabi-v7a`，瞄準的 API 層級為 14，適用於一般 &amp; 大型螢幕，版本號碼為 456。
-- 61423456 - ABI 為 `x86`，瞄準的 API 層級為 14，適用於一般 &amp; 大型螢幕，版本號碼為 456。
+- 11413456 - ABI 為 `armeabi`；以 API 層級 14 為目標，適用於小型至大型螢幕，版本號碼為 456。
+- 21423456 - ABI 為 `armeabi-v7a`；以 API 層級 14 為目標，適用於一般 &amp; 大型螢幕，版本號碼為 456。
+- 61423456 - ABI 為 `x86`；以 API 層級 14 為目標，適用於一般 &amp; 大型螢幕，版本號碼為 456。
 
 繼續進行此範例，假設針對 `armeabi-v7a` 修正了一個 Bug)。 應用程式版本會增加到 457，並且新的 APK 會將 `android:versionCode` 設為 21423457 進行建置。 `armeabi` 及 `x86` 版本的版本代碼維持不變。
 
 現在，想像 x86 版本接收到一些針對更新版本 API (API 層級 19) 的更新或 Bug 修正，使其成為應用程式的版本 500。 新的 `versionCode` 會變更為 61923500，armeabi/armeabi-v7a 的版本代碼則維持不變。 此時，版本代碼將為：
 
-- 11413456 - ABI 為 `armeabi`，瞄準的 API 層級為 14，適用於小型至大型螢幕，版本名稱為 456。
-- 21423457 - ABI 為 `armeabi-v7a`，瞄準的 API 層級為 14，適用於一般 &amp; 大型螢幕，版本名稱為 457。
-- 61923500 - ABI 為 `x86`，瞄準的 API 層級為 19，適用於一般 &amp; 大型螢幕，版本名稱為 500。
+- 11413456 - ABI 為 `armeabi`；以 API 層級 14 為目標，適用於小型至大型螢幕，版本名稱為 456。
+- 21423457 - ABI 為 `armeabi-v7a`，以 API 層級 14 為目標，適用於一般 &amp; 大型螢幕，版本名稱為 457。
+- 61923500 - ABI 為 `x86`，以 API 層級 19 為目標，適用於一般 &amp; 大型螢幕，版本名稱為 500。
 
 手動維持這些版本代碼對開發人員來說將會是沉重的負擔。 計算正確 `android:versionCode` 及建置 APK 的程序應該自動化。
 本文的最後的逐步解說會說明如何進行此動作。
@@ -97,17 +97,17 @@ Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是
 
 - `/t:Package` &ndash; 建立使用偵錯金鑰儲存區簽署的 Android APK
 
-- `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; 要瞄準的 ABI。 必須為 `armeabi`、`armeabi-v7a`，或 `x86` 中的其中一個
+- `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; 這是要以其為目標的 ABI。 必須為 `armeabi`、`armeabi-v7a`，或 `x86` 中的其中一個
 
-- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; 此為保有在建置時建立之中繼檔案的目錄。 若有必要，Xamarin.Android 會根據 ABI 的名稱建立目錄，例如 `obj.armeabi-v7a`。 通常建議針對每個 ABI 各自使用一個資料夾，因為這可以防止發生檔案從其中一個組建「洩漏」到另一個組建的問題。 請注意，這個值會使用目錄分隔符號來終止 (若為 OS X 則為 `/`)。
+- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; 這是將保存在建置期間建立之中繼檔案的目錄。 若有必要，Xamarin.Android 會根據 ABI 的名稱建立目錄，例如 `obj.armeabi-v7a`。 通常建議針對每個 ABI 各自使用一個資料夾，因為這可以防止發生檔案從其中一個組建「洩漏」到另一個組建的問題。 請注意，這個值會使用目錄分隔符號來終止 (若為 OS X 則為 `/`)。
 
-- `/p:AndroidManifest` &ndash; 此屬性指定在建置時使用之 **AndroidManifest.XML** 的路徑。
+- `/p:AndroidManifest` &ndash; 此屬性會指定在建置期間將使用的 **AndroidManifest.XML** 檔案路徑。
 
-- `/p:OutputPath=bin.<TARGET_ABI>` &ndash; 此為儲存最終 APK 的目錄。 Xamarin.Android 會根據 ABI 的名稱來建立目錄，例如 `bin.armeabi-v7a`。
+- `/p:OutputPath=bin.<TARGET_ABI>` &ndash; 這是將存放最終 APK 的目錄。 Xamarin.Android 會根據 ABI 的名稱來建立目錄，例如 `bin.armeabi-v7a`。
 
-- `/p:Configuration=Release` &ndash; 執行 APK 的發行組建。 偵錯組建無法上傳至 Google Play。
+- `/p:Configuration=Release` &ndash; 執行 APK 的發行建置。 偵錯組建無法上傳至 Google Play。
 
-- `<CS_PROJ FILE>` &ndash; 此為 Xamarin.Android `.csproj` 檔案的路徑。
+- `<CS_PROJ FILE>` &ndash; 這是 Xamarin.Android 專案的 `.csproj` 檔案路徑。
 
 ### <a name="sign-and-zipalign-the-apk"></a>針對 APK 進行簽署及 Zipalign
 

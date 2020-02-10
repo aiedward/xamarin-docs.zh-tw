@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: ba7148ecabf7f534a953fda3c3d3021abeaa034c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771571"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940385"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字串格式化
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 有時候，使用資料繫結來顯示物件或值的字串表示相當方便。 例如，您可能想要使用 `Label` 來顯示目前 `Slider` 的值。 在此資料繫結中，`Slider` 是來源，而目標則是 `Label` 的 `Text` 屬性。
 
@@ -44,7 +44,7 @@ ms.locfileid: "70771571"
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="DataBindingDemos.StringFormattingPage"
              Title="String Formatting">
 
@@ -123,7 +123,7 @@ XAML 檔案中的下一個區段是 `StackLayout`，其 `BindingContext` 已設�
 
 以下是程式執行情況：
 
-[![字串格式化](string-formatting-images/stringformatting-small.png "字串格式化")](string-formatting-images/stringformatting-large.png#lightbox "字串格式化")
+[![字串格式設定](string-formatting-images/stringformatting-small.png "字串格式化")](string-formatting-images/stringformatting-large.png#lightbox "字串格式化")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModel 和字串格式化
 
@@ -176,11 +176,11 @@ XAML 檔案中的下一個區段是 `StackLayout`，其 `BindingContext` 已設�
 
 現在有三對 `Slider` 和 `Label` 元素均已繫結至 `HslColorViewModel` 物件中的相同來源屬性。 唯一的不同是`Label` 具有會顯示各 `Slider` 值的 `StringFormat` 屬性。
 
-[![Better Color Selector](string-formatting-images/bettercolorselector-small.png "Better Color Selector")](string-formatting-images/bettercolorselector-large.png#lightbox "Better Color Selector")
+[![較佳的色彩選取器](string-formatting-images/bettercolorselector-small.png "較佳的色彩選取器")](string-formatting-images/bettercolorselector-large.png#lightbox "較佳的色彩選取器")
 
 您可能會不清楚如何以傳統二位數十六進位格式來顯示 RGB (紅、綠、藍) 值。 這是因為這些值都無法直接從 `Color` 結構使用。 其中一種解決方法是計算 ViewModel 中色彩元件的整數值，並將它們作為屬性公開。 接著您可以使用 `X2` 格式化規格將它們格式化。
 
-另一種方法更加常見：您可以撰寫「繫結值轉換器」，這會在之後的[**繫結值轉換器**](converters.md)一文中提到。
+另一種方法更加常見：您可以撰寫「繫結值轉換器」  ，這會在之後的[**繫結值轉換器**](converters.md)一文中提到。
 
 不過，下一篇文章會更詳細地探索[**繫結路徑**](binding-path.md)，並向您示範如何使用它參考子屬性及集合中的項目。
 

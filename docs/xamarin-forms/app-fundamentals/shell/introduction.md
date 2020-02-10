@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 3e63a580bbdb1c220d44b100725cdc8ce387b405
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
-ms.translationtype: MT
+ms.openlocfilehash: cb2ae3afe9db86d4db603d499ef0e75e7cbbf552
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696524"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940408"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms Shell 簡介
 
@@ -28,36 +28,38 @@ Xamarin.Forms Shell 會提供大部分行動應用程式需要的基本功能，
 此外，Shell 應用程式的優點是轉譯速度更快，且記憶體使用量更少。
 
 > [!IMPORTANT]
-> 現有的應用程式可以從流覽、效能和擴充性的改善，立即採用 Shell 和優點。
+> 現有的應用程式可採用 Shell，立即受益於導覽、效能與擴充性等改進功能。
 
 ## <a name="platform-support"></a>平台支援
 
-在 iOS 和 Android 上，已完全提供 Forms Shell，但只有部分可在通用 Windows 平臺（UWP）上使用。 此外，在 UWP 上，Shell 目前為實驗性，而且只能透過將下列程式程式碼新增至 UWP 專案中的 `App` 類別，然後再呼叫 `Forms.Init`：
+Xamarin.Forms Shell 在 iOS 與 Android 上已完全可用，但在通用 Windows 平台 (UWP) 上僅部分可用。 此外，Shell 目前在 UWP 上為實驗性，而且只能透過在呼叫 `Forms.Init` 之前將下列程式碼行新增至 UWP 專案中的 `App` 類別來使用：
 
 ```csharp
 global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
 ```
 
+如需如何將 UWP 專案新增至 Xamarin.Forms 解決方案的詳細資訊，請參閱[設定 Windows 專案](~/xamarin-forms/platform/windows/installation/index.md)。
+
 ## <a name="shell-navigation-experience"></a>Shell 導覽體驗
 
 Shell 會根據飛出視窗和索引標籤，提供固定的導覽體驗。 Shell 應用程式中的最上層導覽是飛出視窗或底部索引標籤列，具體取決於應用程式的導覽要求。 下列範例示範最上層導覽為飛出視窗的應用程式：
 
-[![IOS 和 Android 上 Shell 飛出視窗的螢幕擷取畫面](introduction-images/flyout.png "Shell 飛出視窗")](introduction-images/flyout-large.png#lightbox "Shell 飛出視窗")
+[![iOS 與 Android 上的 Shell 飛出視窗螢幕擷取畫面](introduction-images/flyout.png "Shell 飛出視窗")](introduction-images/flyout-large.png#lightbox "Shell 飛出視窗")
 
 選取飛出視窗項目會產生代表要選取並顯示之項目的底部索引標籤：
 
-[![在 iOS 和 Android 上 Shell 底端索引標籤的螢幕擷取畫面](introduction-images/monkeys.png "Shell 底端索引標籤")](introduction-images/monkeys-large.png#lightbox "Shell 底端索引標籤")
+[![iOS 與 Android 上的 Shell 底部索引標籤螢幕擷取畫面](introduction-images/monkeys.png "Shell 底部索引標籤")](introduction-images/monkeys-large.png#lightbox "Shell 底部索引標籤")
 
 > [!NOTE]
 > 未開啟飛出視窗時，底部的索引標籤列可視為應用程式中導覽的最上層。
 
 每個索引標籤都會顯示一個 [`ContentPage`](xref:Xamarin.Forms.ContentPage)。 不過，如果底部索引標籤包含多個頁面，則可透過頂端索引標籤列導覽頁面：
 
-[![在 iOS 和 Android 上 Shell 頂端索引標籤的螢幕擷取畫面](introduction-images/cats.png "Shell 頂端索引標籤")](introduction-images/cats-large.png#lightbox "Shell 頂端索引標籤")
+[![iOS 與 Android 上的 Shell 頂端索引標籤螢幕擷取畫面](introduction-images/cats.png "Shell 頂端索引標籤")](introduction-images/cats-large.png#lightbox "Shell 頂端索引標籤")
 
 在每個索引標籤中，都可以導覽至其他 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件：
 
-[![Shell 頁面流覽在 iOS 和 Android 上的螢幕擷取畫面](introduction-images/cat-details.png "Shell 應用程式導覽")](introduction-images/cat-details-large.png#lightbox "Shell 應用程式導覽")
+[![iOS 與 Android 上的 Shell 頁面巡覽螢幕擷取畫面](introduction-images/cat-details.png "Shell 應用程式導覽")](introduction-images/cat-details-large.png#lightbox "Shell 應用程式導覽")
 
 ## <a name="related-links"></a>相關連結
 
