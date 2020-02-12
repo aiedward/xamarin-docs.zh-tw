@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7471d6bc66463091fafea855b12da06292055be6
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: fe7e11f37f303c2ec1f5bc58e98953449694191c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67277152"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135032"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,7 +31,7 @@ ms.locfileid: "67277152"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Editor`](xref:Xamarin.Forms.Editor)。 [`Editor.Placeholder`](xref:Xamarin.Forms.Editor.Placeholder) 屬性會指定 `Editor` 第一次顯示時呈現的預留位置文字。 此外，[`HeightRequest`](xref:Xamarin.Forms.VisualElement) 屬性可指定 `Editor` 的高度 (採用與裝置無關的單位)。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Editor`](xref:Xamarin.Forms.Editor)。 [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Editor` 第一次顯示時呈現的預留位置文字。 此外，[`HeightRequest`](xref:Xamarin.Forms.VisualElement) 屬性可指定 `Editor` 的高度 (採用與裝置無關的單位)。
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
@@ -65,7 +65,7 @@ ms.locfileid: "67277152"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Editor`](xref:Xamarin.Forms.Editor)。 [`Editor.Placeholder`](xref:Xamarin.Forms.Editor.Placeholder) 屬性會指定 `Editor` 第一次顯示時呈現的預留位置文字。 此外，[`HeightRequest`](xref:Xamarin.Forms.VisualElement) 屬性可指定 `Editor` 的高度 (採用與裝置無關的單位)。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Editor`](xref:Xamarin.Forms.Editor)。 [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Editor` 第一次顯示時呈現的預留位置文字。 此外，[`HeightRequest`](xref:Xamarin.Forms.VisualElement) 屬性可指定 `Editor` 的高度 (採用與裝置無關的單位)。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 

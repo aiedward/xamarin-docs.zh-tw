@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: 90f3f9ff5ed29a1ae2c93e355fc15bc6550d78dd
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67659766"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135031"
 ---
 在此練習中，您會建立使用者介面來取用 `RestService` 類別，接著從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取資料。
 
@@ -67,7 +67,7 @@ ms.locfileid: "67659766"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button)，以及 [`Grid`](xref:Xamarin.Forms.Grid) 中一系列的 [`Label`](xref:Xamarin.Forms.Label) 執行個體。 `Entry` 已藉由設定其 [`Text`](xref:Xamarin.Forms.Entry.Text) 屬性預先填入 "Seattle"。 `Button` 會將其 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件設定為名為 `OnButtonClicked` 的事件處理常式 (將在下一個步驟中建立)。 其中一半的 `Label` 執行個體會顯示靜態文字，剩餘的執行個體資料繫結至 `WeatherData` 屬性。 在執行階段，使用資料繫結的 `Label` 執行個體會針對要使用於其繫結運算式的 `WeatherData` 物件，查看其各自的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button)，以及 [`Grid`](xref:Xamarin.Forms.Grid) 中一系列的 [`Label`](xref:Xamarin.Forms.Label) 執行個體。 `Entry` 已藉由設定其 [`Text`](xref:Xamarin.Forms.InputView.Text) 屬性預先填入 "Seattle"。 `Button` 會將其 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件設定為名為 `OnButtonClicked` 的事件處理常式 (將在下一個步驟中建立)。 其中一半的 `Label` 執行個體會顯示靜態文字，剩餘的執行個體資料繫結至 `WeatherData` 屬性。 在執行階段，使用資料繫結的 `Label` 執行個體會針對要使用於其繫結運算式的 `WeatherData` 物件，查看其各自的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 具有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用指派的名稱來存取物件。
 
@@ -187,7 +187,7 @@ ms.locfileid: "67659766"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button)，以及 [`Grid`](xref:Xamarin.Forms.Grid) 中一系列的 [`Label`](xref:Xamarin.Forms.Label) 執行個體。 `Entry` 已藉由設定其 [`Text`](xref:Xamarin.Forms.Entry.Text) 屬性預先填入 "Seattle"。 `Button` 會將其 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件設定為名為 `OnButtonClicked` 的事件處理常式 (將在下一個步驟中建立)。 其中一半的 `Label` 執行個體會顯示靜態文字，剩餘的執行個體資料繫結至 `WeatherData` 屬性。 在執行階段，使用資料繫結的 `Label` 執行個體會針對要使用於其繫結運算式的 `WeatherData` 物件，查看其各自的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button)，以及 [`Grid`](xref:Xamarin.Forms.Grid) 中一系列的 [`Label`](xref:Xamarin.Forms.Label) 執行個體。 `Entry` 已藉由設定其 [`Text`](xref:Xamarin.Forms.InputView.Text) 屬性預先填入 "Seattle"。 `Button` 會將其 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件設定為名為 `OnButtonClicked` 的事件處理常式 (將在下一個步驟中建立)。 其中一半的 `Label` 執行個體會顯示靜態文字，剩餘的執行個體資料繫結至 `WeatherData` 屬性。 在執行階段，使用資料繫結的 `Label` 執行個體會針對要使用於其繫結運算式的 `WeatherData` 物件，查看其各自的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 具有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用指派的名稱來存取物件。
 
