@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 92e2ceeea901e2acea70118e75d936f3b3ac94db
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
-ms.translationtype: MT
+ms.openlocfilehash: 12c6229c1922f0bd4a4d25ca796bcb46141a326c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199989"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131131"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>在 Xamarin.Forms 中的自動化屬性
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 _Xamarin.Forms 可讓協助在使用者介面項目上，使用來自 AutomationProperties 類別的附加屬性設定協助工具值，然後附加屬性會設定原生的協助工具值。本文說明如何使用 AutomationProperties 類別，讓螢幕助讀程式可以讀出頁面上的項目。_
 
@@ -113,7 +113,7 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 > [!NOTE]
 > 請注意，[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) 方法也可用來設定 `AutomationProperties.HelpText` 附加屬性 – `button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
-在某些平台上，對於編輯控制項，例如 [`Entry`](xref:Xamarin.Forms.Entry)，`HelpText` 屬性可以有時省略並取代為預留位置文字。 比方說，「輸入您的名稱」就是 [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) 屬性很好的候選，它會在使用者實際輸入之前將文字放在控制項中。
+在某些平台上，對於編輯控制項，例如 [`Entry`](xref:Xamarin.Forms.Entry)，`HelpText` 屬性可以有時省略並取代為預留位置文字。 比方說，「輸入您的名稱」就是 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性很好的候選，它會在使用者實際輸入之前將文字放在控制項中。
 
 <a name="labeledby" />
 
