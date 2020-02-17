@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: a3b9653651e3000b954cb6d16154cddc8d5d363a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: 42ad56a7ae34bcef638ed25bea267dcabd21e20c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772093"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131096"
 ---
 # <a name="create-xamarinforms-behaviors"></a>建立 Xamarin.Forms 行為
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
 _Xamarin.Forms 行為由衍生自 Behavior 或 Behavior&lt;T&gt; 的類別建立。本文示範如何建立與使用 Xamarin.Forms 行為。_
 
@@ -84,7 +84,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` 衍生自 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 類別，其中 `T` 是 [`Entry`](xref:Xamarin.Forms.Entry)。 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法會註冊 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件的事件處理常式，以 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法取消註冊 `TextChanged` 事件來防止記憶體流失。 行為的核心功能是由 `OnEntryTextChanged` 方法提供，它會剖析使用者輸入 `Entry` 的值，並將 [`TextColor`](xref:Xamarin.Forms.Entry.TextColor) 屬性設為紅色，如果值不是 `double`。
+`NumericValidationBehavior` 衍生自 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 類別，其中 `T` 是 [`Entry`](xref:Xamarin.Forms.Entry)。 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) 方法會註冊 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 事件的事件處理常式，以 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) 方法取消註冊 `TextChanged` 事件來防止記憶體流失。 行為的核心功能是由 `OnEntryTextChanged` 方法提供，它會剖析使用者輸入 `Entry` 的值，並將 [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) 屬性設為紅色，如果值不是 `double`。
 
 > [!NOTE]
 > Xamarin.Forms 不會設定行為的 `BindingContext`，因為行為可以透過樣式共用並套用到多個控制項。
@@ -110,7 +110,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 在執行階段，行為會根據行為實作回應與控制項的互動。 下列螢幕擷取畫面示範行為如何回應無效的輸入：
 
-[![](creating-images/screenshots-sml.png "使用 Xamarin.Forms 行為的範例應用程式")](creating-images/screenshots.png#lightbox "使用 Xamarin.Forms 行為的範例應用程式")
+[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
 
 > [!NOTE]
 > 行為是針對特定的控制項類型 (或可套用至許多控制項的 Superclass) 所撰寫，且應該只新增至相容的控制項。 嘗試將行為附加至不相容的控制項會導致擲回例外狀況。
@@ -164,7 +164,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 `NumericValidationBehavior` 類別包含名為 `AttachBehavior` 並具有 `static` getter 和 setter 的附加屬性，其控制所要附加之控制項的行為新增與移除。 此附加屬性會註冊 `OnAttachBehaviorChanged` 方法；當屬性的值變更時，就會執行此方法。 此方法會根據 `AttachBehavior` 附加屬性的值，新增或移除控制項的行為。
 
-下列程式碼範例示範使用 `AttachBehavior` 附加屬性之 `NumericValidationBehavior` 的「明確」樣式，且可套用至 [`Entry`](xref:Xamarin.Forms.Entry) 控制項：
+下列程式碼範例示範使用 `AttachBehavior` 附加屬性之 `NumericValidationBehavior` 的「明確」  樣式，且可套用至 [`Entry`](xref:Xamarin.Forms.Entry) 控制項：
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">

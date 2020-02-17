@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: jimmgarrido
 ms.author: jigarrid
 ms.date: 01/14/2020
-ms.openlocfilehash: fb607ab605322499e42f500e4f3bf08c1c267c23
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: 2cf925a96e952e6b760da9ca5416e124a3e3716b
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519682"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77071149"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 熱重新開機 (預覽)
 
@@ -52,7 +52,7 @@ Xamarin 熱重新開機可讓您在開發期間快速測試應用程式的變更
 > 建議使用自動化佈建，這樣便可以輕鬆地針對部署設定額外的 iOS 裝置。 不過，如果有正確的佈建設定檔，則您可以將其停用並繼續使用手動佈建。
 
 ## <a name="use-xamarin-hot-restart"></a>使用 Xamarin 熱重新開機
-初始設定之後，連線的裝置會出現在偵錯目標下拉式功能表中。 若要針對應用程式進行偵錯，請在下拉式清單中選取裝置，然後按一下 [執行]  按鈕。 您可能需要在裝置上手動啟動應用程式，才能啟動偵錯工作階段。
+初始設定之後，連線的裝置會出現在偵錯目標下拉式功能表中。 若要針對應用程式進行偵錯，請在下拉式清單中選取裝置，然後按一下 [執行]  按鈕。 您可能會在 Visual Studio 中看到一則訊息，要求您在裝置上手動啟動應用程式，以便啟動偵錯工作階段。
 
 您可以在偵錯時對程式碼檔案進行編輯，然後按下偵錯工具列中的 [重新啟動]  按鈕，或使用 **Ctrl+Shift+F5** 來重新啟動偵錯工作階段，並套用新變更：
 
@@ -66,6 +66,7 @@ Xamarin 熱重新開機可讓您在開發期間快速測試應用程式的變更
 
 ## <a name="troubleshoot"></a>疑難排解
 - 如果 iTunes 是透過 Microsoft Store 安裝，則安裝精靈將不會偵測到 iTunes。 您必須先解除安裝該版本，然後[從 Apple下載安裝程式](https://go.microsoft.com/fwlink/?linkid=2101014)。
+- 有一個已知問題，那就是啟用裝置專屬組建會導致應用程式無法進入偵錯模式。 因應措施是在 [屬性] > [iOS 組建]  下停用此功能，然後重試偵錯。 未來的版本中將會修正此問題。
 - 如果應用程式已存在於裝置上，則嘗試使用熱重新開機進行部署可能會失敗，並出現 `AMDeviceStartHouseArrestService` 錯誤。 因應措施是在裝置上解除安裝應用程式，然後再次部署。
 
 若要回報其他問題，請使用意見反應工具，工具位於 [[說明] > [傳送意見反應] > [回報問題]](/visualstudio/ide/feedback-options?view=vs-2019#report-a-problem)。

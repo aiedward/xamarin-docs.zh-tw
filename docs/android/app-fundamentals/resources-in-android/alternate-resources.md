@@ -8,7 +8,7 @@ ms.author: daortin
 ms.date: 03/13/2018
 ms.openlocfilehash: 644262310614874794810fd083ba1823abfd0da2
 ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73025408"
@@ -42,7 +42,7 @@ ms.locfileid: "73025408"
 
 以下列出可能的限定詞供您參考：
 
-- **Mcc 和 MNC** &ndash; 行動[國家/地區代碼](https://en.wikipedia.org/wiki/List_of_mobile_country_codes)（MCC），以及選擇性的行動[網路代碼](https://en.wikipedia.org/wiki/Mobile_Network_Code)（MNC）。 SIM 卡會提供 MCC，而裝置所連線的網路則會提供 MNC。 雖然可以使用行動國家（地區）代碼來鎖定地區設定，但建議的方法是使用以下指定的語言限定詞。 例如，若要將資源的目標設為德國，辨識符號會是 `mcc262`。 若要以美國的 T 行動裝置資源為目標，辨識符號為 `mcc310-mnc026`。
+- **Mcc 和 MNC** &ndash; 行動[國家/地區代碼](https://en.wikipedia.org/wiki/List_of_mobile_country_codes)（MCC），以及選擇性的行動[網路代碼](https://en.wikipedia.org/wiki/Mobile_Network_Code)（MNC）。 SIM 卡會提供 MCC，而裝置所連線的網路則會提供 MNC。 雖然可以使用行動國家/地區代碼來鎖定地區設定，但建議的方法是使用以下指定的語言限定詞。 例如，若要將資源的目標設為德國，辨識符號會是 `mcc262`。 若要以美國的 T 行動裝置資源為目標，辨識符號為 `mcc310-mnc026`。
   如需行動國家/地區代碼和行動網路程式碼的完整清單，請參閱 <http://mcc-mnc.com/>。
 
 - **Language** &ndash; 兩個字母的[iso 639-1 語言代碼](https://en.wikipedia.org/wiki/ISO_639-1)，並選擇性地加上兩個字母的[iso-3166-](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)英數位元-2 個區域程式碼。 

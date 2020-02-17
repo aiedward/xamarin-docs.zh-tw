@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: ab39c79c59855c9f78184614176b1658ee0e29b2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772105"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131124"
 ---
 # <a name="attached-behaviors"></a>附加的行為
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
 
 _附加的行為是具有一或多個附加屬性的靜態類別。本文示範如何建立和使用附加的行為。_
 
@@ -80,7 +80,7 @@ public static class NumericValidationBehavior
 }
 ```
 
-`NumericValidationBehavior` 類別包含名為 `AttachBehavior` 並具有 `static` getter 和 setter 的附加屬性，其控制所要附加之控制項的行為新增與移除。 此附加屬性會註冊 `OnAttachBehaviorChanged` 方法；當屬性的值變更時，就會執行此方法。 此方法會根據 `AttachBehavior` 附加屬性的值，註冊或取消註冊 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件的事件處理常式。 行為的核心功能是由 `OnEntryTextChanged` 方法所提供，它會剖析使用者輸入 [`Entry`](xref:Xamarin.Forms.Entry) 的值，並將 `TextColor` 屬性設定為紅色 (如果值不是 `double`)。
+`NumericValidationBehavior` 類別包含名為 `AttachBehavior` 並具有 `static` getter 和 setter 的附加屬性，其控制所要附加之控制項的行為新增與移除。 此附加屬性會註冊 `OnAttachBehaviorChanged` 方法；當屬性的值變更時，就會執行此方法。 此方法會根據 `AttachBehavior` 附加屬性的值，註冊或取消註冊 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 事件的事件處理常式。 行為的核心功能是由 `OnEntryTextChanged` 方法所提供，它會剖析使用者輸入 [`Entry`](xref:Xamarin.Forms.Entry) 的值，並將 `TextColor` 屬性設定為紅色 (如果值不是 `double`)。
 
 ## <a name="consuming-an-attached-behavior"></a>使用附加的行為
 
@@ -103,7 +103,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 在執行階段，行為會根據行為實作來回應與控制項的互動。 下列螢幕擷取畫面示範附加的行為如何回應無效的輸入：
 
-[![](attached-images/screenshots-sml.png "具有附加行為的範例應用程式")](attached-images/screenshots.png#lightbox "具有附加行為的範例應用程式")
+[![](attached-images/screenshots-sml.png "Sample Application with Attached Behavior")](attached-images/screenshots.png#lightbox "Sample Application with Attached Behavior")
 
 > [!NOTE]
 > 附加的行為是針對特定控制項類型 (或可套用至許多控制項的子類別) 所撰寫，而且只應新增至相容的控制項。 嘗試將行為附加至不相容的控制項會導致行為不明，並會取決於行為實作。
@@ -123,7 +123,7 @@ var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-在執行階段，當 `AttachBehavior` 附加屬性的值設定為 `false` 時，將會執行 `OnAttachBehaviorChanged` 方法。 `OnAttachBehaviorChanged` 方法會接著取消註冊 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) 事件的事件處理常式，以確保當使用者與控制項互動時不會執行此行為。
+在執行階段，當 `AttachBehavior` 附加屬性的值設定為 `false` 時，將會執行 `OnAttachBehaviorChanged` 方法。 `OnAttachBehaviorChanged` 方法會接著取消註冊 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 事件的事件處理常式，以確保當使用者與控制項互動時不會執行此行為。
 
 ## <a name="summary"></a>總結
 

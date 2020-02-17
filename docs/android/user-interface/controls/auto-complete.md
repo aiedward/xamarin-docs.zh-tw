@@ -8,7 +8,7 @@ ms.author: daortin
 ms.date: 08/31/2018
 ms.openlocfilehash: 5a11ab06321b890d8f1f5a35a8456b06a900fbcc
 ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73029371"
@@ -25,7 +25,7 @@ ms.locfileid: "73029371"
 機械. 系統會透過[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter)，從與 widget 相關聯的字串集合收到建議。
 
 在本教學課程中，您將建立[`AutoCompleteTextView`](xref:Android.Widget.AutoCompleteTextView)
-提供國家（地區）名稱建議的 widget。
+提供國家/地區名稱建議的 widget。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
