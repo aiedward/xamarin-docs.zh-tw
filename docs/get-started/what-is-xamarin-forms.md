@@ -6,12 +6,12 @@ ms.assetid: C1E24DB9-3099-4F79-BB88-10AABF7D4614
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/18/2019
-ms.openlocfilehash: 8bd530e743330ab8058f13cb7ba09f95a30ee886
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: aaceb6089a5b7e5f0551dafe9ef1fe50d01433d9
+ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "75607837"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77374019"
 ---
 # <a name="what-is-xamarinforms"></a>什麼是 Xamarin.Forms？
 
@@ -35,7 +35,7 @@ Xamarin.Forms 適用於具有下列目標的開發人員：
 
 Xamarin.Forms 提供統一的 API，讓您可以跨平台建立 UI 元素。 此 API 可於 XAML 或 C# 中實作，並支援如 Model-View-ViewModel (MVVM) 等模式的資料繫結。
 
-在執行階段，Xamarin.Forms 會利用平台轉譯器，將跨平台 UI 元素轉換成 Android、iOS，以及 UWP 上的原生控制項。 可讓開發人員取得原生外觀、操作和效能，並同時實現跨平台共用程式碼的優點。
+在執行階段，Xamarin.Forms 會利用平台轉譯器，將跨平台 UI 元素轉換成 Android、iOS，以及 UWP 上的原生控制項。 這可讓開發人員取得原生外觀、風格和效能，並同時實現跨平台共用程式碼的優點。
 
 Xamarin.Forms 應用程式通常是由共用的 .NET Standard 程式庫與個別的平台專案所組成。 共用程式庫包含 XAML 或 C# 檢視，以及所有例如服務、模型或其他程式碼等商務邏輯。 平台專案則包含應用程式所需的所有平台特定邏輯或套件。
 

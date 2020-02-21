@@ -1,41 +1,41 @@
 ---
 title: Xamarin.Forms DualScreenInfo
-description: 本指南說明如何使用 Xamarin.Forms DualScreenInfo，將雙螢幕裝置 (例如 Surface Duo 和 Surface Neo) 的應用程式體驗最佳化。
+description: 本指南說明如何使用 Xamarin.Forms DualScreenInfo 類別，將雙螢幕裝置 (例如 Surface Duo 和 Surface Neo) 的應用程式體驗最佳化。
 ms.prod: xamarin
 ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
 ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: cae704b7d6300a9dc5eb456f0dec8989813c6581
-ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
+ms.openlocfilehash: e9a01ed3720f1501423eb1c0746d311918af82fb
+ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145612"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480588"
 ---
 # <a name="xamarinforms-dualscreeninfo"></a>Xamarin.Forms DualScreenInfo
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
 
-_DualScreenInfo 可用來偵測和通知雙螢幕的變更，以及其目前的版面配置關聯性。_
+`DualScreenInfo` 類別可讓您決定檢視所在的窗格、窗格大小、裝置方向、鉸鏈角度等。
 
 ## <a name="properties"></a>屬性
 
-- `SpanningBounds`：當跨越兩個螢幕時，這會傳回兩個矩形，指出每個可見區域的界限。 如果視窗未跨越兩個螢幕，則會傳回空陣列。
-- `HingeBounds`：螢幕上的鉸鏈位置。
-- `IsLandscape`：指出裝置是否為橫向。 因為在應用程式跨越兩個螢幕時，原生方向 API 不會正確回報方向，所以這會很有用。
-- `PropertyChanged`：當任何屬性變更時引發。
+- 當跨越兩個螢幕時，`SpanningBounds` 會傳回兩個矩形，表示每個可見區域的界限。 如果視窗未跨越兩個螢幕，則會傳回空陣列。
+- `HingeBounds` 表示螢幕上的鉸鏈位置。
+- `IsLandscape`：指出裝置是否為橫向。 因為在應用程式跨越兩個螢幕時，原生方向 API 並不會正確回報方向，所以這會非常有幫助。
 - `SpanMode`：指出版面配置處於直向、橫向或單一窗格模式。
 
-## <a name="android-only-property"></a>Android 專屬屬性
+此外，當有任何屬性變更時，也會引發 `PropertyChanged` 事件。
 
-只有從 Android 平台專案存取 DualScreenInfo 時，才能使用此屬性。
-您可以從自訂轉譯器使用此屬性。
+## <a name="poll-hinge-angle-on-android"></a>在 Android 上輪詢鉸鏈角度
+
+從 Android 平台專案存取 `DualScreenInfo` 時，可使用下列屬性：
 
 - `GetHingeAngleAsync`：擷取裝置鉸鏈的目前角度。 使用模擬器時，可以藉由修改壓力感應器來設定 HingeAngle。
 
-## <a name="android-custom-renderer-for-polling-hinge-angle"></a>用於輪詢鉸鏈角度的 Android 自訂轉譯器
+您可從 Android 自訂轉譯器中使用此屬性：
 
 ```csharp
 public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer
@@ -89,7 +89,9 @@ public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRender
 }
 ```
 
-## <a name="access-dualscreeninfo-for-application-window"></a>存取應用程式視窗的 DualScreenInfo
+## <a name="access-dualscreeninfo-in-your-application-window"></a>在您的應用程式視窗存取 DualScreenInfo
+
+下列程式碼示範如何在您的應用程式視窗存取 `DualScreenInfo`：
 
 ```csharp
 DualScreenInfo currentWindow = DualScreenInfo.Current;
@@ -104,11 +106,11 @@ if(currentWindow.SpanMode == TwoPaneViewMode.SinglePane)
 }
 else if(currentWindow.SpanMode == TwoPaneViewMode.Tall)
 {
-    // window is spanned across two screens and oriented as landscape
+    // window is spanned across two screens and oriented top-bottom
 }
 else if(currentWindow.SpanMode == TwoPaneViewMode.Wide)
 {
-    // window is spanned across two screens and oriented as portrait
+    // window is spanned across two screens and oriented side-by-side
 }
 
 // Detect if any of the properties on DualScreenInfo change.
@@ -117,20 +119,26 @@ else if(currentWindow.SpanMode == TwoPaneViewMode.Wide)
 currentWindow.PropertyChanged += OnDualScreenInfoChanged;
 ```
 
-## <a name="apply-dualscreeninfo-to-your-own-layouts"></a>將 DualScreenInfo 套用至您自己的版面配置
+## <a name="apply-dualscreeninfo-to-layouts"></a>將 DualScreenInfo 套用至版面配置
 
-DualScreenInfo 包含一個可採用版面配置的建構函式，並會提供您裝置上兩個螢幕相對版面配置的相關資訊。
+`DualScreenInfo` 類別包含一個可採用版面配置的建構函式，並會提供您裝置上兩個螢幕相對版面配置的相關資訊：
 
 ```xaml
 <Grid x:Name="grid" ColumnSpacing="0">
     <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="{Binding Column1Width}"></ColumnDefinition>
-        <ColumnDefinition Width="{Binding Column2Width}"></ColumnDefinition>
-        <ColumnDefinition Width="{Binding Column3Width}"></ColumnDefinition>
+        <ColumnDefinition Width="{Binding Column1Width}" />
+        <ColumnDefinition Width="{Binding Column2Width}" />
+        <ColumnDefinition Width="{Binding Column3Width}" />
     </Grid.ColumnDefinitions>
-
-    <Label FontSize="Large" VerticalOptions="Center" HorizontalOptions="End" Text="I should be on the left side of the hinge"></Label>
-    <Label FontSize="Large" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="2" Text="I should be on the right side of the hinge"></Label>
+    <Label FontSize="Large"
+           VerticalOptions="Center"
+           HorizontalOptions="End"
+           Text="I should be on the left side of the hinge" />
+    <Label FontSize="Large"
+           VerticalOptions="Center"
+           HorizontalOptions="Start"
+           Grid.Column="2"
+           Text="I should be on the right side of the hinge" />
 </Grid>
 ```
 
@@ -197,6 +205,8 @@ public partial class GridUsingDualScreenInfo : ContentPage
     }
 }
 ```
+
+下列螢幕擷取畫面顯示產生的版面配置：
 
 ![](dual-screen-info-images/grid-on-two-screens.png "Positioning Grid on Two Screens")
 
