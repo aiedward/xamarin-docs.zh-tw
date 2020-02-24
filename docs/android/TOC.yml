@@ -373,6 +373,11 @@
                   href: platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md
             - name: 對繫結進行疑難排解
               href: platform/binding-java-library/troubleshooting-bindings.md
+        - name: 繫結 Kotlin 程式庫
+          href: platform/binding-kotlin-library/index.md
+          items:
+            - name: 逐步解說
+              href: platform/binding-kotlin-library/walkthrough.md
         - name: 使用原生程式庫
           href: platform/native-libraries.md
         - name: Renderscript
