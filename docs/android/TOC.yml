@@ -393,6 +393,8 @@
           href: ~/essentials/accelerometer.md?context=xamarin/android
         - name: 應用程式資訊
           href: ~/essentials/app-information.md?context=xamarin/android
+        - name: 應用程式主題
+          href: ~/essentials/app-theme.md?context=xamarin/android
         - name: 氣壓計
           href: ~/essentials/barometer.md?context=xamarin/android
         - name: 電池
@@ -435,6 +437,8 @@
           href: ~/essentials/open-browser.md?context=xamarin/android
         - name: 方向感應器
           href: ~/essentials/orientation-sensor.md?context=xamarin/android
+        - name: 權限
+          href: ~/essentials/permissions.md?context=xamarin/android
         - name: 電話撥號程式
           href: ~/essentials/phone-dialer.md?context=xamarin/android
         - name: '平台擴充 (Size, Rect, Point)'
