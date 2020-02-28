@@ -398,6 +398,8 @@
                   href: user-interface/map/geocoder.md
                 - name: 啟動原生地圖應用程式
                   href: user-interface/map/native-map-app.md
+            - name: MediaElement
+              href: user-interface/mediaelement.md
             - name: WebView
               href: user-interface/webview.md
         - name: 起始命令
@@ -620,6 +622,8 @@
           items:
             - name: 總覽
               href: platform/android/index.md
+            - name: AndroidX 移轉
+              href: platform/android/androidx-migration.md
             - name: AppCompat 與質感設計
               href: platform/android/appcompat-material-design.md
             - name: 按鈕邊框間距與陰影
@@ -662,6 +666,8 @@
               href: platform/ios/named-font-size-scaling.md
             - name: 儲存格背景色彩
               href: platform/ios/cell-background-color.md
+            - name: DatePicker 項目選取
+              href: platform/ios/datepicker-selection.md
             - name: Entry 游標色彩
               href: platform/ios/entry-cursor-color.md
             - name: Entry 字型大小
@@ -702,16 +708,24 @@
               href: platform/ios/slider-thumb.md
             - name: SwipeView 撥動轉換模式
               href: platform/ios/swipeview-swipetransitionmode.md
+            - name: TabbedPage 半透明索引標籤列
+              href: platform/ios/tabbedpage-translucent-tabbar.md
+            - name: TimePicker 項目選取
+              href: platform/ios/timepicker-selection.md
             - name: VisualElement 模糊
               href: platform/ios/visualelement-blur.md
             - name: VisualElement 陰影
               href: platform/ios/visualelement-drop-shadow.md
             - name: VisualElement 舊版色彩模式
               href: platform/ios/legacy-color-mode.md
+            - name: VisualElement 第一個回應程式
+              href: platform/ios/visualelement-first-responder.md
         - name: Windows
           items:
             - name: 總覽
               href: platform/windows/index.md
+            - name: 預設影像目錄
+              href: platform/windows/default-image-directory.md
             - name: InputView 閱讀順序
               href: platform/windows/inputview-reading-order.md
             - name: ListView SelectionMode
