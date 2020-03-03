@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e0694598fe5637f6e63ebf64dce4a7d9768eba5f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.openlocfilehash: efe41fa5f25f6257587fd97a2711e9037b94dc6e
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771821"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636012"
 ---
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 影片播放程式的傳輸控制項包括執行 [播放]、[暫停] 和 [停止] 功能的按鈕。 這些按鈕通常會以熟悉的圖示而非文字呈現，且 [播放] 及 [暫停] 功能常會合併為一個按鈕。
 
@@ -613,7 +613,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-資料觸發程序在[資料觸發程序](~/xamarin-forms/app-fundamentals/triggers.md#data)一文中有詳盡的描述。
+資料觸發程序在[資料觸發程序](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)一文中有詳盡的描述。
 
 程式碼後置檔案具有按鈕 `Clicked` 事件的處理常式：
 
@@ -649,11 +649,11 @@ namespace VideoPlayerDemos
 
 因為在 **CustomTransport.xaml** 檔案中 `AutoPlay` 設定為 `false`，所以您必須在其啟用時按 [播放] 按鈕以開始影片。 因為定義了這些按鈕，所以上面討論的 Unicode 字元都會附有其相對應文字。 當影片播放時，按鈕在各平台上都有一致的外觀：
 
-[![自訂傳輸播放](custom-transport-images/customtransportplaying-small.png "自訂傳輸播放")](custom-transport-images/customtransportplaying-large.png#lightbox "自訂傳輸播放")
+[![自訂傳輸正在播放](custom-transport-images/customtransportplaying-small.png "自訂傳輸正在播放")](custom-transport-images/customtransportplaying-large.png#lightbox "自訂傳輸正在播放")
 
 但在影片暫停時，Android 及 UWP 上的 [播放] 看起來大不相同：
 
-[![自訂傳輸暫停](custom-transport-images/customtransportpaused-small.png "自訂傳輸暫停")](custom-transport-images/customtransportpaused-large.png#lightbox "自訂傳輸暫停")
+[![自訂傳輸已暫停](custom-transport-images/customtransportpaused-small.png "自訂傳輸已暫停")](custom-transport-images/customtransportpaused-large.png#lightbox "自訂傳輸已暫停")
 
 在生產應用程式中，您可能會想要使用自己的點陣圖影像讓按鈕達成視覺上的一致性。
 

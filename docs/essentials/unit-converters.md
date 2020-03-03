@@ -4,13 +4,13 @@ description: Xamarin.Essentials 中的 UnitConverters 類別可提供數種單�
 ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: be560a156647274932265597ae5b83f22255d061
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.date: 01/06/2020
+ms.openlocfilehash: c07e0c7d9645c22f0d70c75fd7d8dffdec8cde04
+ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70120142"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77545029"
 ---
 # <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials:單位轉換器
 
@@ -31,7 +31,7 @@ using Xamarin.Essentials;
 可利用 Xamarin.Essentials 中的靜態 `UnitConverters` 類別，使用全部的單位轉換器。 比方說，您可輕易地將華氏轉換為攝氏。
 
 ```csharp
-var celcius = UnitConverters.FahrenheitToCelsius(32.0);
+var celsius = UnitConverters.FahrenheitToCelsius(32.0);
 ```
 
 以下為可用的轉換清單：
@@ -43,6 +43,8 @@ var celcius = UnitConverters.FahrenheitToCelsius(32.0);
 - MilesToMeters
 - MilesToKilometers
 - KilometersToMiles
+- MetersToInternationalFeet
+- InternationalFeetToMeters
 - DegreesToRadians
 - RadiansToDegrees
 - DegreesPerSecondToRadiansPerSecond
@@ -59,6 +61,10 @@ var celcius = UnitConverters.FahrenheitToCelsius(32.0);
 - PascalsToAtmospheres
 - CoordinatesToMiles
 - CoordinatesToKilometers
+- KilogramsToPounds
+- PoundsToKilograms
+- StonesToPounds
+- PoundsToStones
 
 ## <a name="api"></a>API
 
