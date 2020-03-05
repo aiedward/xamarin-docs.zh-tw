@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/21/2018
-ms.openlocfilehash: e247be8387ce984d6695431ec432119d01344b42
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 4747ce6555a6440c687dc3d239d75307f68683ca
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955773"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292333"
 ---
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms 版面配置
 
@@ -36,12 +36,12 @@ Xamarin 中的[`Layout`](xref:Xamarin.Forms.Layout)和[`Layout<T>`](xref:Xamarin
 
 |     |     |
 | --- | --- |
-| [`ContentView`](xref:Xamarin.Forms.ContentView)包含以[`Content`](xref:Xamarin.Forms.ContentView.Content)屬性設定的單一子系。 `Content` 屬性可以設定為任何 `View` 的衍生，包括其他 `Layout` 的衍生。 `ContentView` 大多用來做為結構化元素，並做為[`Frame`](#frame)的基類。<br /><br />[API 檔](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-cardview/) | [![ContentView 範例](layouts-images/ContentView.png "ContentView 範例")](layouts-images/ContentView-Large.png#lightbox "ContentView 範例")<br />[ 此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs)  / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
+| [`ContentView`](xref:Xamarin.Forms.ContentView)包含以[`Content`](xref:Xamarin.Forms.ContentView.Content)屬性設定的單一子系。 `Content` 屬性可以設定為任何 `View` 的衍生，包括其他 `Layout` 的衍生。 `ContentView` 大多用來做為結構化元素，並做為[`Frame`](#frame)的基類。<br /><br />[API 檔](xref:Xamarin.Forms.ContentView) / [指南](~/xamarin-forms/user-interface/layouts/contentview.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/) | [![ContentView 範例](layouts-images/ContentView.png "ContentView 範例")](layouts-images/ContentView-Large.png#lightbox "ContentView 範例")<br />[ 此頁面的 C# 程式碼](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs)  / [XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
 <a named="frame" />
 
-### <a name="frame"></a>畫面格
+### <a name="frame"></a>Frame
 
 |     |     |
 | --- | --- |
@@ -97,7 +97,7 @@ Xamarin 中的[`Layout`](xref:Xamarin.Forms.Layout)和[`Layout<T>`](xref:Xamarin
 
 |     |     |
 | --- | --- |
-| [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)會將子專案置於相對於其父系的特定位置。 子系的位置會使用[附加屬性](~/xamarin-forms/xaml/attached-properties.md) [`LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)和[`LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)來表示。 `AbsoluteLayout` 適用于以動畫顯示視圖的位置。<br /><br />[API 檔](xref:Xamarin.Forms.AbsoluteLayout) / [指南](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![AbsoluteLayout 範例](layouts-images/AbsoluteLayout.png "AbsoluteLayout 範例")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout 範例")<br />此頁面的程式碼 / 包含[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutdDemoPage.cs) |
+| [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)會將子專案置於相對於其父系的特定位置。 子系的位置會使用[附加屬性](~/xamarin-forms/xaml/attached-properties.md) [`LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)和[`LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)來表示。 `AbsoluteLayout` 適用于以動畫顯示視圖的位置。<br /><br />[API 檔](xref:Xamarin.Forms.AbsoluteLayout) / [指南](~/xamarin-forms/user-interface/layouts/absolute-layout.md) / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![AbsoluteLayout 範例](layouts-images/AbsoluteLayout.png "AbsoluteLayout 範例")](layouts-images/AbsoluteLayout-Large.png#lightbox "AbsoluteLayout 範例")<br />此頁面的程式碼 / 包含[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/AbsoluteLayoutDemoPage.xaml) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/AbsoluteLayoutDemoPage.cs) |
 |     |     |
 
 ### <a name="relativelayout"></a>RelativeLayout
