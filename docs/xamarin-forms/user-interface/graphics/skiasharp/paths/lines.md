@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 9aaecb8c63ff28111097dce81954f523b4c7731b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545601"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291888"
 ---
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
@@ -38,7 +38,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 - `Square`
 - `Round`
 
-這是一個範例程式的最佳說明。 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式的 [ **SkiaSharp 程式列] 和 [路徑**] 區段，會以[`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)類別**為基礎的**封面頁面開始。 這個頁面會定義一個 `PaintSurface` 事件處理常式，以對 `SKStrokeCap` 列舉的三個成員進行迴圈，同時顯示列舉成員的名稱，並使用該筆劃端點繪製線條：
+這是一個範例程式的最佳說明。 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程式的 [ **SkiaSharp 程式列] 和 [路徑**] 區段，會以[`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs)類別**為基礎的**封面頁面開始。 這個頁面會定義一個 `PaintSurface` 事件處理常式，以對 `SKStrokeCap` 列舉的三個成員進行迴圈，同時顯示列舉成員的名稱，並使用該筆劃端點繪製線條：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ DrawPoints (SKPointMode mode, points, paint)
 - `Lines` 連接每一對點
 - 連接所有連續點的 `Polygon`
 
-[**多行**] 頁面會示範這個方法。 [**MultipleLinesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)會具現化兩個 `Picker` 視圖，讓您選取 `SKPointMode` 列舉的成員，以及 `SKStrokeCap` 列舉的成員：
+[**多行**] 頁面會示範這個方法。 [**MultipleLinesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml)會具現化兩個 `Picker` 視圖，讓您選取 `SKPointMode` 列舉的成員，以及 `SKStrokeCap` 列舉的成員：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

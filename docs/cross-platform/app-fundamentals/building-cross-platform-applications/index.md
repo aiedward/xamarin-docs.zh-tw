@@ -6,12 +6,12 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: davidortinau
 ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: b3444b962a032ceaeeba36f63ad975b3d80a9f14
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 551e9b1fc6298ddc2cf64e2e9ef60d90f6c1abac
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016934"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291488"
 ---
 # <a name="building-cross-platform-applications"></a>建置跨平台應用程式
 
@@ -50,7 +50,7 @@ Tasky 是適用于 iOS、Android 和 Windows Phone 的簡單待辦事項清單�
 
 閱讀[Tasky 案例研究](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本節介紹 Xamarin 的應用程式開發工具，並討論如何建立以多個行動平臺為目標的應用程式。
 
@@ -67,4 +67,3 @@ Tasky 是適用于 iOS、Android 和 Windows Phone 的簡單待辦事項清單�
 - [Tasky 範例應用程式（github）](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
 - [Xamarin 行動應用程式開發：跨平臺C#和 Xamarin。表單基本概念（Amazon）](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [以 Greg Shackles C# （O'Reilly）的行動裝置開發](https://shop.oreilly.com/product/0636920024002.do)
-- [Scott Olson、John Hunter、Ben C# Horgen、Kenny Goers （Wrox）中的專業跨平臺行動裝置開發](https://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

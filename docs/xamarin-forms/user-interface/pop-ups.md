@@ -6,13 +6,13 @@ ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
-ms.openlocfilehash: 83aca8c9e64ffb01eb9773c17b42333f73c1aab5
-ms.sourcegitcommit: 9fa7cf9fae44ed092bc9cab17c843a443001734e
+ms.date: 01/17/2020
+ms.openlocfilehash: c71153cdaa94a7983b89968abc828011a648f2b1
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72971256"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78293043"
 ---
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
@@ -22,7 +22,7 @@ ms.locfileid: "72971256"
 
 ## <a name="display-an-alert"></a>顯示警示
 
-所有 Xamarin.Forms 支援的平台都有強制回應快顯視窗，可警示使用者或是詢問簡易問題。 若要在 Xamarin.Forms 中顯示警示，請在任何 [`Page`](xref:Xamarin.Forms.Page) 上使用 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法。 下列程式碼會顯示簡易訊息給使用者：
+所有 Xamarin.Forms 支援的平台都有強制回應快顯視窗，可警示使用者或是詢問簡易問題。 若要在 Xamarin.Forms 中顯示警示，請在任何 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 上使用 [`Page`](xref:Xamarin.Forms.Page) 方法。 下列程式碼會顯示簡易訊息給使用者：
 
 ```csharp
 await DisplayAlert ("Alert", "You have been alerted", "OK");
@@ -48,7 +48,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [UIActionSheet](https://developer.apple.com/library/ios/documentation/uikit/reference/uiactionsheet_class/Reference/Reference.html) 是 iOS 中常見的 UI 元素。 Xamarin.Forms [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)方法可讓您在跨平台應用程式中包含此控制項，以在 Android 和 UWP 中轉譯原生替代項目。
 
-若要顯示動作表，請在任何 [`Page`](xref:Xamarin.Forms.Page) 中的 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 加上 `await`，將以字串的形式傳遞訊息和按鈕標籤。 方法會傳回使用者所按按鈕的字串標籤。 簡易範例如下所示︰
+若要顯示動作表，請 `await` 任何[`Page`](xref:Xamarin.Forms.Page)中的[`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) ，以字串的形式傳遞訊息和按鈕標籤。 方法會傳回使用者所按按鈕的字串標籤。 簡易範例如下所示︰
 
 ```csharp
 async void OnActionSheetSimpleClicked (object sender, EventArgs e)
@@ -84,25 +84,26 @@ string result = await DisplayPromptAsync("Question 1", "What's your name?");
 
 [![在 iOS 和 Android 上強制回應提示的螢幕擷取畫面](pop-ups-images/simple-prompt.png "強制回應提示")](pop-ups-images/simple-prompt-large.png#lightbox "強制回應提示")
 
-如果您按下 [確定] 按鈕，則會以 `string` 傳回輸入的回應。 如果點擊 [取消] 按鈕，則會傳回 `null`。
+如果您按下 [確定] 按鈕，則會以 `string`傳回輸入的回應。 如果點擊 [取消] 按鈕，則會傳回 `null`。
 
 `DisplayPromptAsync` 方法的完整引數清單是：
 
-- `title`，屬於 `string` 類型，這是要顯示在提示字元中的標題。
-- `message`，屬於 `string` 類型，這是要在提示字元中顯示的訊息。
-- `string` 類型的 `accept` 是 [接受] 按鈕的文字。 這是選擇性引數，其預設值為 OK。
-- `cancel`，屬於 `string` 類型，是 [取消] 按鈕的文字。 這是選擇性引數，其預設值為 Cancel。
-- `placeholder`，屬於 `string` 類型，這是要在提示中顯示的預留位置文字。 這是選擇性引數，其預設值為 `null`。
-- `maxLength`，屬於 `int` 類型，是使用者回應的最大長度。 這是選擇性引數，其預設值為-1。
-- `keyboard`，屬於 `Keyboard` 類型，這是用於使用者回應的鍵盤類型。 這是選擇性引數，其預設值為 `Keyboard.Default`。
+- `title`，屬於 `string`類型，這是要顯示在提示字元中的標題。
+- `message`，屬於 `string`類型，這是要在提示字元中顯示的訊息。
+- `string`類型的 `accept`是 [接受] 按鈕的文字。 這是選擇性引數，其預設值為 OK。
+- `cancel`，屬於 `string`類型，是 [取消] 按鈕的文字。 這是選擇性引數，其預設值為 Cancel。
+- `placeholder`，屬於 `string`類型，這是要在提示中顯示的預留位置文字。 這是選擇性引數，其預設值為 `null`。
+- `maxLength`，屬於 `int`類型，是使用者回應的最大長度。 這是選擇性引數，其預設值為-1。
+- `keyboard`，屬於 `Keyboard`類型，這是用於使用者回應的鍵盤類型。 這是選擇性引數，其預設值為 `Keyboard.Default`。
+- `initialValue`，屬於 `string`類型，是預先定義的回應，將會顯示並可供編輯。 這是選擇性引數，其預設值為空的 `string`。
 
 下列範例會示範如何設定一些選擇性引數：
 
 ```csharp
-string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", maxLength: 2, keyboard: Keyboard.Numeric);
+string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialValue: "10", maxLength: 2, keyboard: Keyboard.Numeric);
 ```
 
-這段程式碼會將可輸入的字元數限制為2，並顯示數字鍵台以進行使用者輸入：
+此程式碼會顯示預先定義的回應10、將可輸入的字元數限制為2，並顯示數字鍵台以進行使用者輸入：
 
 [![在 iOS 和 Android 上強制回應提示的螢幕擷取畫面](pop-ups-images/keyboard-prompt.png "強制回應提示")](pop-ups-images/keyboard-prompt-large.png#lightbox "強制回應提示")
 

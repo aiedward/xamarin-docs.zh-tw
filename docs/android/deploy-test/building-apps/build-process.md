@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2019
-ms.openlocfilehash: 06e40fce69ee6d614bcf27bd563d9452595bd6ab
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 59f7ce953d7cf957529f5b22b2dfb549c0105f4a
+ms.sourcegitcommit: eea5b096ace7551ba64a470d0b78ccc56b6ef418
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028142"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279908"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -59,15 +59,15 @@ Xamarin.Android 建置程序是以 MSBuild 作為基礎，而這也是 Visual St
 
 下列是針對 Xamarin.Android 專案所定義的建置目標：
 
-- **建置** &ndash; 建置套件。
+- **組建**&ndash; 會建立封裝。
 
-- **清除** &ndash; 移除建置程序所產生的所有檔案。
+- [**清除**] &ndash; 會移除由組建進程所產生的所有檔案。
 
-- **安裝** &ndash; 將套件安裝到預設裝置或虛擬裝置上。
+- **安裝**&ndash; 會將套件安裝到預設裝置或虛擬裝置上。
 
-- **解除安裝** &ndash; 在預設裝置或虛擬裝置上將套件解除安裝。
+- **卸載**&ndash; 從預設裝置或虛擬裝置卸載套件。
 
-- **SignAndroidPackage** &ndash; 建立和簽署套件 (`.apk`)。 與 `/p:Configuration=Release` 搭配使用來產生獨立的「發行」套件。
+- **SignAndroidPackage** &ndash; 會建立並簽署封裝（`.apk`）。 與 `/p:Configuration=Release` 搭配使用來產生獨立的「發行」套件。
 
 - **UpdateAndroidResources** &ndash; 更新 `Resource.designer.cs` 檔案。 當專案新增資源時，IDE 通常會呼叫此目標。
 
@@ -86,11 +86,11 @@ Xamarin. Android 建置系統為想要在我們的建置系統中建立掛鉤的
 
 關於擴充組建程式的注意事項：如果未正確寫入，組建延伸模組可能會影響您的組建效能，尤其是在每個組建上執行時。 極力建議您先閱讀 MSBuild [文件](https://docs.microsoft.com/visualstudio/msbuild/msbuild)，然後再執行這類延伸模組。
 
-- 此屬性中所列的 **AfterGenerateAndroidManifest** &ndash; 目標會緊接在內部 `_GenerateJavaStubs` 目標之後執行。 這是 `AndroidManifest.xml` 檔案在 `$(IntermediateOutputPath)` 之中的產生位置。 因此，若您想要修改所產生的 `AndroidManifest.xml` 檔案，可使用此擴充點來執行此作業。
+- 此屬性中所列的**AfterGenerateAndroidManifest** &ndash; 目標會直接在內部 `_GenerateJavaStubs` 目標之後執行。 這是 `AndroidManifest.xml` 檔案在 `$(IntermediateOutputPath)` 之中的產生位置。 因此，若您想要修改所產生的 `AndroidManifest.xml` 檔案，可使用此擴充點來執行此作業。
 
   Xamarin.Android 9.4 已新增此支援。
 
-- 此屬性中所列的 **BeforeGenerateAndroidManifest** &ndash; 目標會緊接在 `_GenerateJavaStubs` 之前執行。
+- 此屬性中所列的**BeforeGenerateAndroidManifest** &ndash; 目標會在 `_GenerateJavaStubs`之前直接執行。
 
   Xamarin.Android 9.4 已新增此支援。
 
@@ -98,15 +98,15 @@ Xamarin. Android 建置系統為想要在我們的建置系統中建立掛鉤的
 
 MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.csproj**) 的 [MSBuild PropertyGroup 元素](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)內指定這些屬性。
 
-- **組態** &ndash; 指定要使用的組建組態，例如「偵錯」或「發行」。 組態屬性可用來決定其他會決定目標行為之屬性的預設值。 您可以在 IDE 內建立其他組態。
+- **Configuration** &ndash; 指定要使用的組建設定，例如 "Debug" 或 "Release"。 組態屬性可用來決定其他會決定目標行為之屬性的預設值。 您可以在 IDE 內建立其他組態。
 
   根據預設，`Debug` 組態會導致 `Install` 和 `SignAndroidPackage` 目標建立容量較小、需要有其他檔案和套件才能運作的 Android 套件。
 
   預設的 `Release` 設定會導致 `Install` 和 `SignAndroidPackage` 目標建立獨立式 Android 套件，而且不必安裝任何其他套件或檔案即可使用。
 
-- **DebugSymbols** &ndash; 搭配  *屬性來決定 Android 套件是否可偵錯*`$(DebugType)`的布林值。 可偵錯的套件會包含偵錯符號、將 `//application/@android:debuggable` 屬性設定為 `true`，並且會自動新增 `INTERNET` 權限讓偵錯工具可以附加至程序。 如果 `DebugSymbols` 是 `True` 且`DebugType` 為空字串或 `Full`，則應用程式是可偵錯的。
+- **DebugSymbols** &ndash; 布林值，用來判斷 Android 封裝是否可*調試*，並結合 `$(DebugType)` 屬性。 可偵錯的套件會包含偵錯符號、將 `//application/@android:debuggable` 屬性設定為 `true`，並且會自動新增 `INTERNET` 權限讓偵錯工具可以附加至程序。 如果 `DebugSymbols` 是 `True`*而*`DebugType` 是空字串或 `Full`，應用程式就可以進行可調試。
 
-- **DebugType** &ndash; 指定要在建置過程中產生的[偵錯符號類型](https://docs.microsoft.com/visualstudio/msbuild/csc-task)，此值也會影響應用程式是否可偵錯。 可能的值包括：
+- **DebugType** &ndash; 指定要在組建中產生的[debug 符號類型](https://docs.microsoft.com/visualstudio/msbuild/csc-task)，這也會影響應用程式是否可調試。 可能的值包括：
 
   - **完整**：產生完整符號。 如果 `DebugSymbols` MSBuild 屬性也是 `True`，則應用程式套件是可偵錯的。
 
@@ -114,13 +114,13 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   如果 `DebugType` 未設定或者是空字串，則 `DebugSymbols` 屬性會控制應用程式是否可偵錯。
 
-  - **AndroidGenerateLayoutBindings** &ndash; 若設定為 [即可產生](https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/LayoutCodeBehind.md)配置程式碼後置`true`；若設定為 `false`，則會完全予以停用。 預設值為 `false`。
+  - 如果 `true` 設定為 [`false`]， **AndroidGenerateLayoutBindings** &ndash; 可讓產生配置[程式碼後](https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/LayoutCodeBehind.md)置。 預設值是 `false`。
 
 ### <a name="install-properties"></a>安裝屬性
 
 安裝屬性可控制 `Install` 和 `Uninstall` 目標的行為。
 
-- **AdbTarget** &ndash; 指定可供安裝或移除 Android 套件的 Android 目標裝置。 這個屬性的值和 [`adb` 目標裝置選項](https://developer.android.com/tools/help/adb.html#issuingcommands)相同：
+- **AdbTarget** &ndash; 指定 android 封裝可安裝或從中移除的 android 目標裝置。 這個屬性的值和 [`adb` 目標裝置選項](https://developer.android.com/tools/help/adb.html#issuingcommands)相同：
 
   ```bash
   # Install package onto emulator via -e
@@ -133,57 +133,57 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 封裝屬性可控制 Android 套件的建立，並可供 `Install` 和 `SignAndroidPackage` 目標使用。
 在封裝發行應用程式時，也會與[簽署屬性](#Signing_Properties)關。
 
-- **AndroidApkDigestAlgorithm** &ndash; 此字串值指定要與 `jarsigner -digestalg` 一起使用的摘要演算法。
+- **AndroidApkDigestAlgorithm** &ndash; 字串值，指定要搭配 `jarsigner -digestalg`使用的摘要演算法。
 
   APK 的預設值為 `SHA1`，應用程式套件組合的預設值為 `SHA-256`。
 
   Xamarin.Android 9.4 已新增此支援。
 
-- **AndroidApkSignerAdditionalArguments** &ndash; 字串屬性，可允許開發人員將額外引數提供給 `apksigner` 工具。
+- **AndroidApkSignerAdditionalArguments** &ndash; 字串屬性，可讓開發人員提供其他引數給 `apksigner` 工具。
 
   已在 Xamarin.Android 8.2 中新增。
 
-- **AndroidApkSigningAlgorithm** &ndash;字串值，指定要搭配 `jarsigner -sigalg` 使用的簽署演算法。
+- **AndroidApkSigningAlgorithm** &ndash; 字串值，指定要搭配 `jarsigner -sigalg`使用的簽署演算法。
 
   APK 的預設值為 `md5withRSA`，應用程式套件組合的預設值為 `SHA256withRSA`。
 
   已在 Xamarin.Android 8.2 中新增。
 
-- **AndroidApplication** &ndash; 指出專案適用於 Android 應用程式 (`True`) 還是 Android 程式庫專案 (`False` 或不存在) 的布林值。
+- **AndroidApplication** &ndash; 布林值，指出專案是適用于 Android 應用程式（`True`）或 Android 程式庫專案（`False` 或不存在）。
 
   Android 套件內只能有一個具有 `<AndroidApplication>True</AndroidApplication>` 的專案。 (遺憾的是，此限制尚未經過驗證，因而可能造成 Android 資源發生些微異常錯誤。)
 
-- **AndroidApplicationJavaClass** &ndash; 當類別是繼承自 `android.app.Application`Android.App.Application[ 時，要用來取代 ](xref:Android.App.Application) 的完整 Java 類別名稱。
+- **AndroidApplicationJAVAClass** &ndash; 要用來取代 `android.app.Application` 的完整 JAVA 類別名稱（當類別繼承自[應用程式](xref:Android.App.Application)時）。
 
   這個屬性通常由其他屬性來設定，例如 `$(AndroidEnableMultiDex)` MSBuild 屬性。
 
   已在 Xamarin.Android 6.1 中新增。
 
-- **AndroidBuildApplicationPackage** &ndash; 指出是否要建立和簽署套件 (.apk) 的布林值。 將此值設定為 `True` 就等於使用 [SignAndroidPackage](#Build_Targets) 建置目標。
+- **AndroidBuildApplicationPackage** &ndash; 布林值，指出是否要建立及簽署封裝（. apk）。 將此值設定為 `True` 就等於使用 [SignAndroidPackage](#Build_Targets) 建置目標。
 
   在 Xamarin.Android 7.1 之後已新增這個屬性的支援。
 
   這個屬性的預設值是 `False`。
 
-- **AndroidDexTool** &ndash; 有效值為 `dx` 或 `d8` 的列舉樣式屬性。 指出在 Xamarin.Android 建置程序期間使用哪一個 Android [dex][dex] 編譯器。
+- **AndroidDexTool** &ndash; 具有有效值 `dx` 或 `d8`的列舉樣式屬性。 指出在 Xamarin.Android 建置程序期間使用哪一個 Android [dex][dex] 編譯器。
   目前預設為 `dx`。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
 
   [dex]: https://source.android.com/devices/tech/dalvik/dalvik-bytecode
   [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
 
-- **AndroidEnableDesugar** &ndash; 用來決定是否啟用 `desugar` 的布林屬性值。 Android 目前不支援所有 Java 8 功能，預設工具鏈會藉由在 `desugar` 編譯器的輸出上執行位元組程式碼轉換 (稱為 `javac`)，以實作新的語言功能。 若使用 `False`，預設即為 `AndroidDexTool=dx`；若使用 `True`，預設則為 `AndroidDexTool=d8`。
+- **AndroidEnableDesugar** &ndash; 布林值屬性，以判斷是否已啟用 `desugar`。 Android 目前不支援所有 Java 8 功能，預設工具鏈會藉由在 `desugar` 編譯器的輸出上執行位元組程式碼轉換 (稱為 `javac`)，以實作新的語言功能。 若使用 `False`，預設即為 `AndroidDexTool=dx`；若使用 `True`，預設則為 `AndroidDexTool=d8`。
 
 - **AndroidEnableGooglePlayStoreChecks** &ndash; bool 屬性，可讓開發人員停用下列 Google Play 商店檢查： XA1004、XA1005 和 XA1006。 這適用於不是以 Google Play 商店為目標，所以不想要執行這些檢查的開發人員。
 
   Xamarin.Android 9.4 已新增此支援。
 
-- **AndroidEnableMultiDex** &ndash; 決定是否會在最終的 `.apk` 內使用 Multi-Dex 支援的布林值屬性。
+- **AndroidEnableMultiDex** &ndash; 布林值屬性，可決定是否將在最終 `.apk`中使用多 dex 支援。
 
   在 Xamarin.Android 5.1 中已新增這個屬性的支援。
 
   這個屬性的預設值是 `False`。
 
-- **AndroidEnablePreloadAssemblies** &ndash; 布林值屬性，可控制是否要在流程啟動期間載入應用程式套件內隨附的所有受控組件。
+- **AndroidEnablePreloadAssemblies** &ndash; 布林值屬性，可控制是否要在進程啟動期間載入應用程式封裝內所有的 managed 元件。
 
   設定為 `True` 時，就會在流程啟動期間先載入應用程式套件內隨附的所有組件，然後再叫用任何應用程式程式碼。
   這與 Xamarin.Android 9.2 之前版本的做法一致。
@@ -197,7 +197,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   已在 Xamarin.Android 9.2 中新增。
 
-- **AndroidEnableProfiledAot** &ndash; 此布林值屬性決定預先編譯時，是否要使用 AOT 設定檔。
+- **AndroidEnableProfiledAot** &ndash; 布林值屬性，可決定是否要在進行預先編譯時使用 AOT 設定檔。
 
   這些設定檔會列在 `AndroidAotProfile` 項目群組中。 此 ItemGroup 包含預設設定檔。 只要移除現有的設定檔，然後新增您的 AOT 設定檔，就能加以覆寫。
 
@@ -205,14 +205,14 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   這個屬性的預設值是 `False`。
 
-- **AndroidEnableSGenConcurrent** &ndash; 決定是否會使用 Mono [並行 GC 收集器](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)的布林值屬性。
+- **AndroidEnableSGenConcurrent** &ndash; 布林值屬性，可決定是否將使用 Mono 的[並行 GC 收集器](https://www.mono-project.com/docs/about-mono/releases/4.8.0/#concurrent-sgen)。
 
   在 Xamarin.Android 7.2 中已新增這個屬性的支援。
 
   這個屬性的預設值是 `False`。
 
-- **AndroidErrorOnCustomJavaObject** &ndash;布林屬性，決定型別是否可能實作 `Android.Runtime.IJavaObject`
-   而不繼承自 `Java.Lang.Object` 或 `Java.Lang.Throwable`：
+- **AndroidErrorOnCustomJAVAObject** &ndash; 布林值屬性，可判斷類型是否可以實 `Android.Runtime.IJavaObject`
+  ，*而不需要*同時繼承 `Java.Lang.Object` 或 `Java.Lang.Throwable`：
 
   ```csharp
   class BadType : IJavaObject {
@@ -232,17 +232,17 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   這個屬性的預設值是 `True`。
 
-- **AndroidFastDeploymentType** &ndash; 當 `:` MSBuild 屬性是 [ 時，用來控制哪些類型可以部署到目標裝置上](#Fast_Deployment)快速部署目錄`$(EmbedAssembliesIntoApk)`的 `False` (冒號) 分隔值清單。 資源如果使用快速部署，則不會內嵌到所產生的 `.apk`，從而可加快部署時間 （快速部署的越多，需要重建 `.apk` 的頻率就越低，安裝程式也會更快）。有效的值包括：
+- **AndroidFastDeploymentType** &ndash; 一個以 `:` （冒號）分隔的值清單，以控制當 `$(EmbedAssembliesIntoApk)` MSBuild 屬性 `False`時，可以將哪些類型部署至目標裝置上的[快速部署目錄](#Fast_Deployment)。 資源如果使用快速部署，則不會內嵌到所產生的 `.apk`，從而可加快部署時間 （快速部署的越多，需要重建 `.apk` 的頻率就越低，安裝程式也會更快）。有效的值包括：
 
   - `Assemblies`：部署應用程式組件。
 
   - `Dexes`：部署 `.dex` 檔案、Android 資源和 Android 資產。 **執行 Android 4.4 或更新版本 (API-19) 的裝置上才能使用這個值。**
 
-  預設值為 `Assemblies`。
+  預設值是 `Assemblies`。
 
   **實驗**。 已在 Xamarin.Android 6.1 中新增。
 
-- **AndroidGenerateJniMarshalMethods** &ndash; 可在建置流程期間產生 JNI 封送處理方法的布林屬性。 這可大幅減少 System.Reflection 在繫結協助程式碼中的使用量。
+- **AndroidGenerateJniMarshalMethods** &ndash; bool 屬性，可在組建程式中產生 JNI 封送處理方法。 這可大幅減少 System.Reflection 在繫結協助程式碼中的使用量。
 
   根據預設，這會設定為 False。 如果開發人員想要使用新的 JNI 封送處理方法功能，他們可以在其 csproj 中設定下列程式碼：
 
@@ -257,9 +257,9 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   ```
 
   **實驗**。 已在 Xamarin.Android 9.2 中新增。
-  預設值為 False。
+  預設值是 False。
 
-- **AndroidGenerateJniMarshalMethodsAdditionalArguments** &ndash; 可用來將額外的參數新增至 `jnimarshalmethod-gen.exe` 引動過程的字串屬性。  這適用於偵錯，因此可以使用 `-v`、`-d` 或 `--keeptemp` 等選項。
+- **AndroidGenerateJniMarshalMethodsAdditionalArguments** &ndash; 字串屬性，可以用來將其他參數新增至 `jnimarshalmethod-gen.exe` 調用。  這適用於偵錯，因此可以使用 `-v`、`-d` 或 `--keeptemp` 等選項。
 
   預設值為空字串。 它可以在 csproj 檔案或在命令列中設定。 例如：
 
@@ -267,7 +267,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   <AndroidGenerateJniMarshalMethodsAdditionalArguments>-v -d --keeptemp</AndroidGenerateJniMarshalMethodsAdditionalArguments>
   ```
 
-  或：
+  或者：
 
   ```
   /p:AndroidGenerateJniMarshalMethodsAdditionalArguments="-v -d --keeptemp"
@@ -275,7 +275,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   已在 Xamarin.Android 9.2 中新增。
 
-- **AndroidHttpClientHandlerType** &ndash;控制預設 `System.Net.Http.HttpMessageHandler` 實作，該實作將由 `System.Net.Http.HttpClient` 預設建構函式使用。 該值為 `HttpMessageHandler` 子類別的組件限定類型名稱，適合搭配 [`System.Type.GetType(string)`](https://docs.microsoft.com/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_) 使用。
+- **AndroidHttpClientHandlerType** &ndash; 會控制 `System.Net.Http.HttpClient` 預設的函式將使用的預設 `System.Net.Http.HttpMessageHandler` 執行。 該值為 `HttpMessageHandler` 子類別的組件限定類型名稱，適合搭配 [`System.Type.GetType(string)`](https://docs.microsoft.com/dotnet/api/system.type.gettype?view=netcore-2.0#System_Type_GetType_System_String_) 使用。
   此屬性最常見的值：
 
   - `Xamarin.Android.Net.AndroidClientHandler`：使用 Android JAVA Api 來執行網路要求。 這允許在基礎 Android 版本支援 TLS 1.2 時存取 TLS 1.2 URL。 只有 Android 5.0 及更新版本能夠可靠地透過 Java 提供 TLS 1.2 支援。
@@ -295,7 +295,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
     這對應到 Visual Studio屬性頁中的 [受控] 選項。
 
   > [!NOTE]
-  > 若舊於 5.0 版的 Android 需要 TLS 1.2 支援，或者 `System.Net.WebClient` 和相關 API 需要 TLS 1.2 支援，則應使用 `$(AndroidTlsProvider)`。
+  > 若舊於 5.0 版的 Android 需要 TLS 1.2 支援，或者`System.Net.WebClient` 和相關 API 需要 TLS 1.2 支援，則應使用 `$(AndroidTlsProvider)`。
 
   > [!NOTE]
   > 透過設定 [`XA_HTTP_CLIENT_HANDLER_TYPE` 環境變數](~/android/deploy-test/environment.md)以支援此屬性。
@@ -303,7 +303,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   已在 Xamarin.Android 6.1 中新增。
 
-- **AndroidLinkMode** &ndash; 指定該對 Android 套件內所包含的組件執行哪一種[連結](~/android/deploy-test/linker.md)。 僅限用於 Android 應用程式專案內。 預設值是 SdkOnly。 有效值為：
+- **AndroidLinkMode** &ndash; 指定應該對 Android 封裝內包含的元件執行哪種類型的[連結](~/android/deploy-test/linker.md)。 僅限用於 Android 應用程式專案內。 預設值是 SdkOnly。 有效值為：
 
   - **無**：不會嘗試任何連結。
 
@@ -318,38 +318,38 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   ```
 
-- **AndroidLinkSkip** &ndash; 指定不該連結之組件的組件名稱清單 (不含副檔名，並以分號分隔 (`;`))。 僅限用於 Android 應用程式專案內。
+- **AndroidLinkSkip** &ndash; 指定不應連結之元件名稱的分號分隔（`;`）清單（不含副檔名）。 僅限用於 Android 應用程式專案內。
 
   ```xml
   <AndroidLinkSkip>Assembly1;Assembly2</AndroidLinkSkip>
   ```
 
-- **AndroidLinkTool** &ndash; 有效值為 `proguard` 或 `r8` 的列舉樣式屬性。 指出哪一個程式碼壓縮工具用於 Java 程式碼。 目前預設為空字串，如果 `proguard` 為 `$(AndroidEnableProguard)`，則預設為 `True`。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
+- **AndroidLinkTool** &ndash; 具有有效值 `proguard` 或 `r8`的列舉樣式屬性。 指出哪一個程式碼壓縮工具用於 Java 程式碼。 目前預設為空字串，如果 `proguard` 為 `$(AndroidEnableProguard)`，則預設為 `True`。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
 
   [d8-r8]: https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/D8andR8.md
 
-- **AndroidLintEnabled** &ndash; 布林屬性，可允許開發人員在封裝流程期間執行 Android `lint` 工具。
+- **AndroidLintEnabled** &ndash; bool 屬性，可讓開發人員在封裝過程中執行 android `lint` 工具。
 
-  - **AndroidLintEnabledIssues** &ndash; 要啟用的 Lint 問題清單 (以逗號分隔)。
+  - **Androidlintenabledissues (** &ndash; 要啟用的不起毛問題清單（以逗號分隔）。
 
-  - **AndroidLintDisabledIssues** &ndash; 要啟用的 Lint 問題清單 (以逗號分隔)。
+  - **AndroidLintDisabledIssues** &ndash; 要停用的不起毛問題清單（以逗號分隔）。
 
-  - **AndroidLintCheckIssues** &ndash; 要檢查的 Lint 問題清單 (以逗號分隔)。
+  - **Androidlintcheckissues (** &ndash; 以逗號分隔的清單，列出要檢查的不起毛問題。
     注意：只會檢查這些問題。
 
-  - **AndroidLintConfig** &ndash; 這是 Lint 樣式組態檔的建置動作。 這可用來啟用/停用要檢查的問題。 多個檔案可以使用此建置動作，因為其內容將會合併。
+  - **AndroidLintConfig** &ndash; 這是不起毛的樣式設定檔的組建動作。 這可用來啟用/停用要檢查的問題。 多個檔案可以使用此建置動作，因為其內容將會合併。
 
   如需 Android [ 工具的詳細資訊，請參閱 ](https://developer.android.com/studio/write/lint)Lint 說明`lint`。
 
-- **AndroidManagedSymbols** &ndash; 布林值屬性，可控制是否產生序列點以便可從 `Release` 堆疊追蹤擷取檔案名稱和行號資訊。
+- **AndroidManagedSymbols** &ndash; 布林值屬性，可控制是否產生序列點，以便從 `Release` 堆疊追蹤中解壓縮檔案名和行號資訊。
 
   已在 Xamarin.Android 6.1 中新增。
 
-- **AndroidManifest** &ndash; 指定要作為應用程式之 [`AndroidManifest.xml`](~/android/platform/android-manifest.md) 範本的檔案名稱。
+- **Androidmanifest.xml** &ndash; 指定要用來做為應用程式[`AndroidManifest.xml`](~/android/platform/android-manifest.md)範本的檔案名。
   建置期間會合併任何其他必要值以產生實際的 `AndroidManifest.xml`。
   `$(AndroidManifest)` 必須在 `/manifest/@package` 屬性中包含套件名稱。
 
-- **AndroidMultiDexClassListExtraArgs** &ndash; 可讓開發人員在產生 `com.android.multidex.MainDexListBuilder` 檔案時，將額外的引數傳遞給 `multidex.keep` 的字串屬性。
+- **Androidmultidexclasslistextraargs 給**&ndash; 字串屬性，可讓開發人員在產生 `multidex.keep` 檔案時，將其他引數傳遞至 `com.android.multidex.MainDexListBuilder`。
 
   其中一個特定情況是您在 `dx` 編譯期間收到下列錯誤時。
 
@@ -368,7 +368,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   已在 Xamarin.Android 8.3 中新增。
 
-- **AndroidPackageFormat** &ndash; 此 enum-style 屬性具有有效值 `apk` 或 `aab`。 這會指出您要將 Android 應用程式封裝為 [ APK 檔案][apk]或[ Android 應用程式套件組合][bundle]。 應用程式套件組合是 `Release` 的新格式，專供 Google Play 中的提交之用。 此值目前的預設值為 `apk`。
+- **AndroidPackageFormat** &ndash; 具有有效值 `apk` 或 `aab`的列舉樣式屬性。 這會指出您要將 Android 應用程式封裝為 [ APK 檔案][apk]或[ Android 應用程式套件組合][bundle]。 應用程式套件組合是 `Release` 的新格式，專供 Google Play 中的提交之用。 此值目前的預設值為 `apk`。
 
   當 `$(AndroidPackageFormat)` 的設定為 `aab` 時，將會一併設定 Android 應用程式套件組合所需的其他 MSBuild 屬性：
 
@@ -379,13 +379,13 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   [apk]: https://en.wikipedia.org/wiki/Android_application_package
   [bundle]: https://developer.android.com/platform/technology/app-bundle
 
-- **AndroidR8JarPath** &ndash; `r8.jar` 的路徑，用於 R8 Dex 編譯器和壓縮工具。 預設為 Xamarin.Android 安裝中的路徑。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
+- **AndroidR8JarPath** &ndash; 要與 r8 dex 和壓縮工具搭配使用之 `r8.jar` 的路徑。 預設為 Xamarin.Android 安裝中的路徑。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
 
-- **AndroidSdkBuildToolsVersion** &ndash; Android SDK 建置工具套件提供 **aapt** 和 **zipalign** 等工具。 您可以同時安裝建置工具套件的多個不同版本。 如果「慣用的」建置工具版本存在，可藉由檢查及使用該版本來完成選擇要封裝的建置工具套件，如果「慣用的」版本不存在，則會使用已安裝的建置工具套件中版本最高者。
+- **AndroidSdkBuildToolsVersion** &ndash; Android SDK build 工具套件提供**aapt**和**zipalign**工具，還有其他工具。 您可以同時安裝建置工具套件的多個不同版本。 如果「慣用的」建置工具版本存在，可藉由檢查及使用該版本來完成選擇要封裝的建置工具套件，如果「慣用的」版本不存在，則會使用已安裝的建置工具套件中版本最高者。
 
   `$(AndroidSdkBuildToolsVersion)` MSBuild 屬性包含慣用的建置工具版本。 Xamarin.Android 建置系統會在 `Xamarin.Android.Common.targets` 中提供預設值，而如果 (舉例來說) 最新的 aapt 損毀但您知道有舊版 aapt 能夠正常運作，則可以在專案檔內複寫此預設值，以選擇其他建置工具版本。
 
-- **AndroidSupportedAbis** &ndash; 字串屬性，內含應納入 `;` 之 ABI 的分號 (`.apk`) 分隔清單。
+- **AndroidSupportedAbis** &ndash; 字串屬性，其中包含以分號（`;`）分隔的 abi 清單，其中應包含在 `.apk`中。
 
   支援的值包括：
 
@@ -394,7 +394,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   - `arm64-v8a`：需要 Xamarin.Android 5.1 和更新版本。
   - `x86_64`：需要 Xamarin.Android 5.1 和更新版本。
 
-- **AndroidTlsProvider** &ndash; 指定應用程式中應該使用哪一個 TLS 提供者的字串值。 可能的值為：
+- **AndroidTlsProvider** &ndash; 字串值，指定應用程式中應使用的 TLS 提供者。 可能的值包括：
 
   - 取消設定/空字串：在 Xamarin. Android 7.3 和更新版本中，這相當於 `btls`。
 
@@ -420,23 +420,23 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   在 Xamarin.Android 7.1 中已新增。
 
-- **AndroidUseApkSigner** &ndash; 布林值屬性，可讓開發人員使用 `apksigner` 工具而非 `jarsigner`。
+- **AndroidUseApkSigner** &ndash; bool 屬性，可讓開發人員使用 `apksigner` 工具，而不是 `jarsigner`。
 
     已在 Xamarin.Android 8.2 中新增。
 
-- **AndroidUseLegacyVersionCode** &ndash; 布林值屬性允許開發人員將 versionCode 計算還原回 Xamarin.Android 8.2 之前的舊行為。 這應該「僅」針對 Google Play 商店中擁有現有應用程式的開發人員使用。 強烈建議使用新的 `$(AndroidVersionCodePattern)` 屬性。
+- **AndroidUseLegacyVersionCode** &ndash; 布林值屬性可讓開發人員將 versionCode 計算還原回舊的預先 Xamarin. Android 8.2 行為。 這應該「僅」針對 Google Play 商店中擁有現有應用程式的開發人員使用。 強烈建議使用新的 `$(AndroidVersionCodePattern)` 屬性。
 
   已在 Xamarin.Android 8.2 中新增。
 
-- **AndroidUseManagedDesignTimeResourceGenerator** &ndash; 布林屬性，可切換設計階段組建以使用受控資源剖析器而非 `aapt`。
+- **AndroidUseManagedDesignTimeResourceGenerator** &ndash; 一個布林值屬性，它會切換設計階段組建以使用受控資源剖析器，而不是 `aapt`。
 
   已在 Xamarin.Android 8.1 中新增。
 
-- **AndroidUseSharedRuntime** &ndash; 布林值屬性，可決定是否需要有共用執行階段套件才能在目標裝置上執行應用程式。 依賴共用執行階段套件可讓應用程式套件小一些、加快套件的建立和部署程序速度，進而提升建置/部署/偵錯往返循環速度。
+- **AndroidUseSharedRuntime** &ndash; 布林值屬性，可決定是否需要*共用執行時間封裝*，才能在目標裝置上執行應用程式。 依賴共用執行階段套件可讓應用程式套件小一些、加快套件的建立和部署程序速度，進而提升建置/部署/偵錯往返循環速度。
 
   如果是偵錯組建，這個屬性應該是 `True`，如果是發行專案，則應該是 `False`。
 
-- **AndroidVersionCodePattern** &ndash; 字串屬性，可讓開發人員在資訊清單中自訂 `versionCode`。
+- **AndroidVersionCodePattern** &ndash; 字串屬性，可讓開發人員自訂資訊清單中的 `versionCode`。
   如需有關決定 [ 的資訊，請參閱](~/android/deploy-test/building-apps/abi-specific-apks.md)為 APK 建立版本代碼`versionCode`。
 
   一些範例，如果 `abi` 是 `armeabi` 且資訊清單中的 `versionCode` 是 `123`，則在 `{abi}{versionCode}` 為 True 時，`1123` 會產生 `$(AndroidCreatePackagePerAbi)` 的 versionCode，否則會產生 123 的值。
@@ -449,15 +449,15 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   預先定義的索引鍵項目
 
-  - **abi** &ndash; 為應用程式插入設為目標的 abi
+  - **abi**&ndash; 插入應用程式的目標 abi
     - 2 &ndash; `armeabi-v7a`
     - 3 &ndash; `x86`
     - 4 &ndash; `arm64-v8a`
     - 5 &ndash; `x86_64`
 
-  - **minSDK** &ndash; 若未定義任何項目，則插入所支援的最小 Sdk 值 (`AndroidManifest.xml` 或 `11`)。
+  - 如果未定義任何值，則**minSDK**&ndash; 會從 `AndroidManifest.xml` 或 `11` 插入最低支援 Sdk 值。
 
-  - **versionCode** &ndash; 直接使用 `Properties\AndroidManifest.xml` 中的版本代碼。
+  - **versionCode** &ndash; 直接從 `Properties\AndroidManifest.xml`使用版本代碼。
 
   您可使用 `$(AndroidVersionCodeProperties)` 屬性 (於下一步定義) 定義自訂項目。
 
@@ -465,23 +465,23 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   已在 Xamarin.Android 7.2 中新增。
 
-- **AndroidVersionCodeProperties** &ndash; 字串屬性可讓開發人員定義要與 `AndroidVersionCodePattern` 搭配使用的自訂項目。 其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如：`screen=23;target=$(_AndroidApiLevel)`。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
+- **AndroidVersionCodeProperties** &ndash; 字串屬性，可讓開發人員定義要搭配 `AndroidVersionCodePattern`使用的自訂專案。 其格式為 `key=value` 組。 `value` 中的所有項目都應該是整數值。 例如： `screen=23;target=$(_AndroidApiLevel)` 。 如您所見，您可以在字串中利用現有或自訂的 MSBuild 屬性。
 
   已在 Xamarin.Android 7.2 中新增。
 
-- **AotAssemblies** &ndash; 布林值屬性，可決定組件是否會預先編譯至機器碼，並納入 `.apk` 中。
+- **AotAssemblies** &ndash; 布林值屬性，可決定元件是否會預先編譯為機器碼並包含在 `.apk`中。
 
   在 Xamarin.Android 5.1 中已新增這個屬性的支援。
 
   這個屬性的預設值是 `False`。
 
-- **EmbedAssembliesIntoApk** &ndash; 布林值屬性，可決定應用程式的組件是否應內嵌到應用程式套件中。
+- **EmbedAssembliesIntoApk** &ndash; 布林值屬性，可決定是否應該將應用程式的元件內嵌至應用程式封裝。
 
   如果是發行組建，這個屬性應該是 `True`，如果是偵錯組建，則應該是 `False`。 如果快速部署不支援目標裝置，則在偵錯組建中，這個屬性可能需為 `True`。
 
   當這個屬性是 `False` 時，`$(AndroidFastDeploymentType)` MSBuild 屬性也可控制所要內嵌到 `.apk` 的項目，而這可能會影響部署和重建時間。
 
-- **EnableLLVM** &ndash; 布林值屬性，可決定在將組件預先編譯至機器碼時，是否會使用 LLVM。
+- **EnableLLVM** &ndash; 布林值屬性，可決定在將元件預先編譯為機器碼時，是否要使用 LLVM。
 
   在 Xamarin.Android 5.1 中已新增這個屬性的支援。
 
@@ -489,7 +489,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   除非 `$(AotAssemblies)` MSBuild 屬性為 `True`，否則會忽略這個屬性。
 
-- **EnableProguard** &ndash; 布林值屬性，可決定 [proguard](https://developer.android.com/tools/help/proguard.html) 是否會在封裝程序進行期間執行以便連結 Java 程式碼。
+- **EnableProguard** &ndash; 布林值屬性，可決定是否要在封裝程式中執行[Proguard](https://developer.android.com/tools/help/proguard.html)以連結 JAVA 程式碼。
 
   在 Xamarin.Android 5.1 中已新增這個屬性的支援。
 
@@ -497,8 +497,8 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   若為 `True`，則會使用 [ProguardConfiguration](#ProguardConfiguration) 檔案來控制 `proguard` 執行。
 
-- **JavaMaximumHeapSize** &ndash; 指定在封裝程序進行期間建置 ** 檔案時，所要使用之 **java
-  `-Xmx``.dex` 參數值的值。 如果未指定，則 `-Xmx` 選項會為 **java** 提供值 `1G`。 相較於其他平台，這在 Windows 上通常是必要項目。
+- **JAVAMaximumHeapSize** &ndash; 指定在封裝程式中建立 `.dex` 檔案時，要使用的**java**
+  `-Xmx` 參數值的值。 如果未指定，則 `-Xmx` 選項會為 **java** 提供值 `1G`。 相較於其他平台，這在 Windows 上通常是必要項目。
 
   如果 [`_CompileDex` 目標擲回 `java.lang.OutOfMemoryError`](https://bugzilla.xamarin.com/show_bug.cgi?id=18327)，則必須指定這個屬性。
 
@@ -508,33 +508,33 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   ```
 
-- **JavaOptions** &ndash; 指定要在建置 **檔案時傳遞給**java`.dex` 的其他命令列選項。
+- **JAVAOptions** &ndash; 指定建立 `.dex` 檔案時，要傳遞至**java**的其他命令列選項。
 
-- **LinkerDumpDependencies** &ndash; 可產生連結器相依性檔案的布林屬性。 此檔案可作為 [illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md) 工具的輸入使用。
+- **LinkerDumpDependencies** &ndash; bool 屬性，可產生連結器相依性檔案。 此檔案可作為 [illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md) 工具的輸入使用。
 
-  預設值為 False。
+  預設值是 False。
 
-- **MandroidI18n** &ndash; 指定應用程式隨附的國際化支援，例如定序和排序資料表。 此值是下列一或多個不區分大小寫之值的逗號或分號分隔清單：
+- **MandroidI18n** &ndash; 指定包含在應用程式中的國際化支援，例如定序和排序表。 此值是下列一或多個不區分大小寫之值的逗號或分號分隔清單：
 
   - **無**：未包含其他編碼。
 
   - **全部**：包含所有可用的編碼。
 
-  - **CJK**：包含中文、日文和韓文編碼，例如日文 (EUC) \[enc-jp, CP51932\]、日文 (Shift-JIS) \[iso-2022-jp, shift\_jis, CP932\]、日文 (JIS) \[CP50220\]、簡體中文 (GB2312) \[gb2312, CP936\]、韓文 (UHC) \[ks\_c\_5601-1987, CP949\]、韓文 (EUC) \[euc-kr, CP51949\]、繁體中文(Big5) \[big5, CP950\] 和簡體中文 (GB18030) \[GB18030, CP54936\]。
+  - **CJK**：包含中文、日文和韓文編碼，例如*日文（EUC）* \[ENC-jp，CP51932\]，*日文（shift-jis）* \[iso-2022-JP，Shift\_JIS，CP932\]，*日文（JIS）* \[CP50220\]，*簡體中文（GB2312）* \[GB2312，CP936\]，*韓文（UHC）* \[ks\_c\_5601-1987，CP949\]，*韓文（euc）* \[EUC-kr，CP51949\]、*繁體中文（Big5）* \[BIG5、CP950\]和*簡體中文（GB18030）* \[GB18030、CP54936\]。
 
-  - **中東**：包含中東編碼，例如土耳其文 (Windows) \[iso-8859-9, CP1254\]、希伯來文 (Windows) \[windows-1255, CP1255\]、阿拉伯文 (Windows) \[windows-1256, CP1256\]、阿拉伯文 (ISO) \[iso-8859-6, CP28596\]、希伯來文 (ISO) \[iso-8859-8, CP28598\]、拉丁文 5 (ISO) \[iso-8859-9, CP28599\] 和希伯來文 (Iso Alternative) \[iso-8859-8, CP38598\]。
+  - **務必**：包含中間東部編碼，例如*土耳其文（Windows）* \[ISO-8859-9、CP1254\]、*希伯來文（windows）* \[windows-1255、CP1255\]、*阿拉伯文（WINDOWS）* \[Windows-1256、CP1256\]、*阿拉伯文（iso）* \[iso-8859-6、CP28596\]、*希伯來文（iso）* \[iso-8859-8、CP28598\]、*拉丁文5（Iso）* \[iso-8859-9、CP28599\]和*希伯來文（iso 替代）* \[iso-8859-8，CP38598\]。
 
-  - **其他**：包含其他編碼，例如斯拉夫文 (Windows) \[CP1251\]、波羅的海文 (Windows) \[iso-8859-4, CP1257\]、越南文 (Windows) \[CP1258\]、斯拉夫文 (KOI8-R) \[koi8-r, CP1251\]、烏克蘭文 (KOI8-U) \[koi8-u, CP1251\]、波羅的海文 (ISO) \[iso-8859-4, CP1257\]、斯拉夫文 (ISO) \[iso-8859-5, CP1251\]、ISCII 梵文 \[x-iscii-de, CP57002\]、ISCII 孟加拉文 \[x-iscii-be, CP57003\]、ISCII 坦米爾文 \[x-iscii-ta, CP57004\]、ISCII 特拉古文 \[x-iscii-te, CP57005\]、ISCII 阿薩姆文 \[x-iscii-as, CP57006\]、ISCII 歐利亞文 \[x-iscii-or, CP57007\]、ISCII 坎那達文 \[x-iscii-ka, CP57008\]、ISCII 馬來亞拉姆文 \[x-iscii-ma, CP57009\]、ISCII 古吉拉特文 \[x-iscii-gu, CP57010\]、ISCII 旁遮普文 \[x-iscii-pa, CP57011\] 和泰文 (Windows) \[CP874\]。
+  - **其他**：包含其他編碼方式，例如*斯拉夫文（WINDOWS）* \[CP1251\]、*波羅的海文（Windows）* \[iso-8859-4、CP1257\]、*越南文（Windows）* \[CP1258\]、*斯拉夫文（koi8-r）* \[KOI8-R-R、CP1251\]、*烏克蘭文（koi8-r-U）* \[koi8-r-U、CP1251\]、*波羅的海文（ISO）* \[iso-8859-4、CP1257\]、*斯拉夫文（iso）* \[iso-8859-5、CP1251\]， *Iscii Davenagari* \[x-ISCII-DE，CP57002\]， *iscii 孟加拉國文*\[x-ISCII-CP57004，CP57003\]， *ISCII 泰米爾*\[x-iscii-Ta，\]， *iscii 泰盧*\[x-Iscii-te，CP57005\]， *iscii 阿薩姆*\[x-iscii-as，CP57006\]， *iscii 奧裡*\[x-iscii-or，，iscii *，\]x* -iscii，CP57007 \[， *ISCII馬拉*地 \[x-iscii-ma、CP57009\]、 *Iscii 古吉*語 \[x-iscii-gu、CP57010\]、 *iscii 旁遮普*文 \[x-iscii-Pa、CP57011\]和*泰文（Windows）* \[CP874\]。\]
 
-  - **罕見**：包含罕見的編碼，例如 IBM EBCDIC (土耳其文) \[CP1026\]、IBM EBCDIC (開啟系統拉丁文 1) \[CP1047\]、IBM EBCDIC (美國-加拿大與歐元區) \[CP1140\]、IBM EBCDIC (德國與歐元區) \[CP1141\]、IBM EBCDIC (丹麥/挪威與歐元區) \[CP1142\]、IBM EBCDIC (芬蘭/瑞典與歐元區) \[CP1143\]、IBM EBCDIC (義大利與歐元區) \[CP1144\]、IBM EBCDIC (拉丁美洲/西班牙與歐元區) \[CP1145\]、IBM EBCDIC (英國與歐元區) \[CP1146\]、IBM EBCDIC (法國與歐元區) \[CP1147\]、IBM EBCDIC (國際與歐元區) \[CP1148\]、IBM EBCDIC (冰島與歐元區) \[CP1149\]、IBM EBCDIC (德國) \[CP20273\]、IBM EBCDIC (丹麥/挪威) \[CP20277\]、IBM EBCDIC (芬蘭/瑞典) \[CP20278\]、IBM EBCDIC (義大利) \[CP20280\]、IBM EBCDIC (拉丁美洲/西班牙) \[CP20284\]、IBM EBCDIC (英國) \[CP20285\]、IBM EBCDIC (日文片假名延伸) \[CP20290\]、IBM EBCDIC (法國) \[CP20297\]、IBM EBCDIC (阿拉伯文) \[CP20420\]、IBM EBCDIC (希伯來文) \[CP20424\]、IBM EBCDIC (冰島文) \[CP20871\]、IBM EBCDIC (斯拉夫文-塞爾維亞文、保加利亞文) \[CP21025\]、IBM EBCDIC (美國-加拿大) \[CP37\]、IBM EBCDIC (國際) \[CP500\]、阿拉伯文 (ASMO 708) \[CP708\]、中歐語系 (DOS) \[CP852\]、斯拉夫文 (DOS) \[CP855\]、土耳其文 (DOS) \[CP857\]、西歐語系 (DOS 與歐元區) \[CP858\]、希伯來文 (DOS) \[CP862\]、阿拉伯文 (DOS) \[CP864\]、俄文 (DOS) \[CP866\]、Greek (DOS) \[CP869\]、IBM EBCDIC (拉丁文 2) \[CP870\] 和 IBM EBCDIC (希臘文) \[CP875\]。
+  - **罕見**：包含罕見的編碼，例如*IBM EBCDIC （土耳其文）* \[CP1026\]、 *Ibm ebcdic （開放式系統拉丁1）* \[CP1047\]、 *Ibm ebcdic （美國-加拿大含歐洲）* \[CP1140\]、 *ibm ebcdic （德國含歐洲）* \[CP1141\]、 *ibm ebcdic （丹麥/挪威 with Euro）* \[CP1142\]、ibm Ebcdic （*芬蘭/瑞典 with 歐元）* \[CP1143\]、 *ibm ebcdic）* \[CP1144\]、IBM *ebcdic （拉丁美洲/西班牙含歐元）* \[CP1145\]、 *ibm ebcdic （英國加上歐元）* \[CP1146\]、 *ibm ebcdic （法國含歐元）* \[CP1147\]、Ibm ebcdic （以歐元提供的*國際*） \[CP1148 *\]、ibm* ebcdic （*德國）* \[CP1149\]、 *ibm ebcdic （丹麥/挪威）* \[CP20277\]、 *ibm Ebcdic （芬蘭/瑞典）* \[CP20278\]、 *ibm ebcdic （義大利）* \[CP20280\]、Ibm ebcdic （*拉丁美洲/西班牙）* \[CP20284\]、 *ibm Ebcdic （英國）* \[CP20285\]、ibm ebcdic （*日文片假名 Extended）* \[CP20290 *\]、ibm* *ebcdic）* \[CP20420\]、 *ibm Ebcdic （希伯來文）* \[CP20424\]、 *ibm ebcdic （冰島）* \[CP20871\]、 *Ibm Ebcdic （斯拉夫文、保加利亞文）* \[CP21025\]、ibm EBCDIC *（美國-加拿大）* \[CP37\]、 *ibm EBCDIC （國際）* \[CP500\]、*阿拉伯文（ASMO 708）* \[CP708\]、 *Central 歐洲（DOS）* \[CP852\] *、斯拉夫文（dos）* \[CP855\]、*土耳其文（DOS）* \[CP857\]、*西歐（含歐元的 DOS）* \[CP858\]、*希伯來文（dos）* \[CP862\]、*阿拉伯文（dos）* \[CP864\]、*俄文（dos）* \[CP866\]、*希臘文（DOS）* \[CP869\]、 *ibm ebcdic （拉丁文2）* \[CP870\]和*ibm ebcdic （希臘文*\[CP875\]。\[\]\[\]
 
-  - **西方**：包含西方編碼，例如西歐語系 (Mac) \[macintosh, CP10000\]、冰島文 (Mac) \[x-mac-icelandic, CP10079\]、中歐語系 (Windows) \[iso-8859-2, CP1250\]、西歐語系 (Windows) \[iso-8859-1, CP1252\]、希臘文 (Windows) \[iso-8859-7, CP1253\]、中歐語系 (ISO) \[iso-8859-2, CP28592\]、拉丁文 3 (ISO) \[iso-8859-3, CP28593\]、希臘文 (ISO) \[iso-8859-7, CP28597\]、拉丁文 9 (ISO) \[iso-8859-15, CP28605\]、OEM 美國 \[CP437\]、西歐語系 (DOS) \[CP850\]、葡萄牙文 (DOS) \[CP860\]、冰島文 (DOS) \[CP861\]、加拿大法文 (DOS) \[CP863\] 和北歐語言 (DOS) \[CP865\]。
+  - **西部**：包含西方編碼，例如*西歐（Mac）* \[macintosh、CP10000\]，*冰島（Mac）* \[x-Mac-冰島文，CP10079\]，*歐洲中部（WINDOWS）* \[iso-8859-2，CP1250\]，*西歐（windows）* \[Iso-8859-1，CP1252\]，*希臘文（Windows）* \[iso-8859-7，CP1253\]，*歐洲中部（iso）* \[iso-8859-2，CP28592\]，*拉丁文3（ISO）* \[ISO-8859-3、CP28593\]、*希臘文（iso）* \[ISO-8859-7、CP28597\] *、拉丁文9（iso）* \[ISO-8859-15、CP28605\]、 *OEM 美國*\[CP437\]、*西歐（dos）* \[CP850\]、*葡萄牙*文（dos） \[CP860\]、*冰島*文（ *dos） \[* CP861\]和*北歐（DOS）* \[CP865\]。\[\]
 
   ```xml
   <MandroidI18n>West</MandroidI18n>
   ```
 
-- **MonoSymbolArchive** &ndash; 布林值屬性，可控制是否建立 `.mSYM` 以供稍後與 `mono-symbolicate` 搭配使用，以便從發行堆疊追蹤擷取&ldquo;真實的&rdquo;檔案名稱和行號資訊。
+- **MonoSymbolArchive** &ndash; 一個布林值屬性，可控制是否建立 `.mSYM` 成品以供稍後與 `mono-symbolicate`搭配使用，以從發行堆疊追蹤中解壓縮 &ldquo;真實&rdquo; 檔案名和行號資訊。
 
   若為已啟用偵錯符號的&ldquo;發行&rdquo;應用程式，此值預設是 True：`$(EmbedAssembliesIntoApk)` 為 True、`$(DebugSymbols)` 為 True，且 `$(Optimize)` 為 True。
 
@@ -544,7 +544,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 下列 MSBuild 屬性可與[繫結專案](~/android/platform/binding-java-library/index.md)搭配使用：
 
-- **AndroidClassParser** &ndash; 可控制 `.jar` 檔案剖析方式的字串屬性。 可能的值包括：
+- **AndroidClassParser** &ndash; 字串屬性，可控制 `.jar` 檔案的剖析方式。 可能的值包括：
 
   - **class-parse**：使用 `class-parse.exe` 來直接剖析 Java 位元組程式碼，而不需要 JVM 的協助。 這是實驗值。
 
@@ -558,13 +558,13 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   **實驗**。 已在 Xamarin.Android 6.0 中新增。
 
-  預設值為 `jar2xml`。
+  預設值是 `jar2xml`。
 
   未來版本的預設值會變更。
 
-- **AndroidCodegenTarget** &ndash; 可控制程式碼產生目標 ABI 的字串屬性。 可能的值包括：
+- **AndroidCodegenTarget** &ndash; 控制程式代碼產生目標 ABI 的字串屬性。 可能的值包括：
 
-  - **XamarinAndroid**：使用自 Mono for Android 1.0 起便存在的 JNI 繫結 API。 使用 Xamarin.Android 5.0 或更新版本所建置的繫結組件只可在 Xamarin.Android 5.0 或更新版本 (API/ABI 新增項目) 上執行，但「來源」與舊版產品相容。
+  - **XamarinAndroid**：使用自 Mono for Android 1.0 之後出現的 JNI 系結 API。 使用 Xamarin.Android 5.0 或更新版本所建置的繫結組件只可在 Xamarin.Android 5.0 或更新版本 (API/ABI 新增項目) 上執行，但「來源」與舊版產品相容。
 
   - **XAJavaInterop1**：在 JNI 引動過程使用 Java.Interop。 使用 `XAJavaInterop1` 的繫結組件只可使用 Xamarin.Android 6.1 或更新版本來建置及執行。 Xamarin.Android 6.1 及更新版本使用此值繫結 `Mono.Android.dll`。
 
@@ -576,31 +576,31 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     - 以 `jmethodID` 快取受控子類別的 Java 可呼叫包裝函式建構函式。
 
-    預設值為 `XAJavaInterop1`。
+    預設值是 `XAJavaInterop1`。
 
-### <a name="resource-properties"></a>資源屬性
+### <a name="resource-properties"></a>資料屬性
 
 資源屬性可控制 `Resource.designer.cs` 檔案的產生，而此檔案可提供 Android 資源的存取權。
 
-- **AndroidAapt2CompileExtraArgs** &ndash; 指定要在處理 Android 資產和資源時，傳遞給 **aapt2 compile** 命令的其他命令列選項。
+- **AndroidAapt2CompileExtraArgs** &ndash; 指定在處理 Android 資產和資源時，要傳遞至**aapt2 compile**命令的其他命令列選項。
 
   已在 Xamarin.Android 9.1 中新增。
 
-- **AndroidAapt2LinkExtraArgs** &ndash; 指定要在處理 Android 資產和資源時，傳遞給 **aapt2 link** 命令的其他命令列選項。
+- **AndroidAapt2LinkExtraArgs** &ndash; 指定在處理 Android 資產和資源時，要傳遞至**aapt2 link**命令的其他命令列選項。
 
   已在 Xamarin.Android 9.1 中新增。
 
-- **AndroidExplicitCrunch** &ndash; 如果您要使用非常大量的本機可繪製資源來建置應用程式，則初始建置 (或重建) 可能需要幾分鐘的時間才能完成。 若要加快建置程序，請嘗試納入此屬性並將它設定為 `True`。 若設定了這個屬性，建置程序就會預先處理 .png 檔案。
+- **AndroidExplicitCrunch** &ndash; 如果您要建立的應用程式具有非常大量的本機可繪製資源，則初始組建（或重建）可能需要幾分鐘的時間才能完成。 若要加快建置程序，請嘗試納入此屬性並將它設定為 `True`。 若設定了這個屬性，建置程序就會預先處理 .png 檔案。
 
   注意：此選項與 `$(AndroidUseAapt2)` 選項不相容。 如果啟用 `$(AndroidUseAapt2)`，將會停用這項功能。 如果您想要繼續使用此功能，請將 `$(AndroidUseAapt2)` 設定為 `False`。
 
   **實驗**。 已在 Xamarin.Android 7.0 中新增。
 
-- **AndroidResgenExtraArgs** &ndash; 指定要在處理 Android 資產和資源時傳遞給 **aapt** 命令的其他命令列選項。
+- **AndroidResgenExtraArgs** &ndash; 指定在處理 Android 資產和資源時，要傳遞至**aapt**命令的其他命令列選項。
 
-- **AndroidResgenFile** &ndash; 指定要產生之資源檔的名稱。 預設範本會將此值設定為 `Resource.designer.cs`。
+- **AndroidResgenFile** &ndash; 指定要產生的資源檔名稱。 預設範本會將此值設定為 `Resource.designer.cs`。
 
-- **AndroidUseAapt2** &ndash; 可讓開發人員控制 `aapt2` 工具的使用以進行封裝的布林屬性。
+- **AndroidUseAapt2** &ndash; bool 屬性，可讓開發人員控制用於封裝之 `aapt2` 工具的使用。
   根據預設，這會設定為 False，而我們將使用 `aapt`。
   如果開發人員想要使用新的 `aapt2`，他們可以在其 csproj 中設定下列程式碼：
 
@@ -616,9 +616,9 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   已在 Xamarin.Android 8.3 中新增。
 
-- **MonoAndroidResourcePrefix** &ndash; 指定要使用  *的建置動作從檔案名稱開頭移除的路徑前置詞*`AndroidResource`。 這是為了允許變更資源所在位置。
+- **MonoAndroidResourcePrefix** &ndash; 指定從檔案名開頭移除的*路徑前置*詞，其組建動作為 `AndroidResource`。 這是為了允許變更資源所在位置。
 
-  預設值為 `Resources`。 若為 Java 專案結構，請將此值變更為 `res`。
+  預設值是 `Resources`。 若為 Java 專案結構，請將此值變更為 `res`。
 
 <a name="Signing_Properties" />
 
@@ -628,19 +628,19 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 根據預設，簽署目標會產生新的偵錯簽署金鑰 (如有必要)。 如果您想要使用特定索引鍵，例如在建置伺服器上，則可以使用下列 MSBuild 屬性：
 
-- **AndroidDebugKeyAlgorithm** &ndash;指定要針對 `debug.keystore` 使用的預設演算法。 預設值為 `RSA`。
+- **AndroidDebugKeyAlgorithm** &ndash; 指定 `debug.keystore`要使用的預設演算法。 預設值為 `RSA`。
 
-- **AndroidDebugKeyValidity** &ndash;指定要針對 `debug.keystore` 使用的預設有效性。 預設值為 `10950`、`30 * 365` 或 `30 years`。
+- **AndroidDebugKeyValidity** &ndash; 指定 `debug.keystore`要使用的預設有效性。 預設值為 `10950`、`30 * 365` 或 `30 years`。
 
-- **AndroidKeyStore** &ndash; 指出是否應該使用自訂簽署資訊的布林值。 預設值是 `False`，也就是會使用預設的偵錯簽署金鑰來簽署套件。
+- **AndroidKeyStore** &ndash; 布林值，指出是否應該使用自訂簽署資訊。 預設值是 `False`，也就是會使用預設的偵錯簽署金鑰來簽署套件。
 
-- **AndroidSigningKeyAlias** &ndash; 指定金鑰儲存區中之金鑰的別名。 這是在建立金鑰儲存區時所使用的 **keytool -alias** 值。
+- **AndroidSigningKeyAlias** &ndash; 會在金鑰存放區中指定金鑰的別名。 這是在建立金鑰儲存區時所使用的 **keytool -alias** 值。
 
-- **AndroidSigningKeyPass** &ndash; 指定金鑰儲存區檔案內之金鑰的密碼。 這是在 `keytool` 要求**輸入 $(AndroidSigningKeyAlias) 的金鑰密碼**時所輸入的值。
+- **AndroidSigningKeyPass** &ndash; 指定金鑰儲存區檔案中的金鑰密碼。 這是在 `keytool` 要求**輸入 $(AndroidSigningKeyAlias) 的金鑰密碼**時所輸入的值。
 
-- **AndroidSigningKeyStore** &ndash; 指定 `keytool` 所建立之金鑰儲存區檔案的檔案名稱。 這會對應至提供給 **keytool -keystore** 選項的值。
+- **AndroidSigningKeyStore** &ndash; 指定 `keytool`所建立之金鑰儲存區檔案的檔案名。 這會對應至提供給 **keytool -keystore** 選項的值。
 
-- **AndroidSigningStorePass** &ndash; 指定 `$(AndroidSigningKeyStore)` 的密碼。 這是在建立金鑰儲存區檔案時提供給 `keytool`，並且會要求**輸入金鑰儲存區密碼:** 的值。
+- **AndroidSigningStorePass** &ndash; 指定要 `$(AndroidSigningKeyStore)`的密碼。 這是在建立金鑰儲存區檔案時提供給 `keytool`，並且會要求**輸入金鑰儲存區密碼:** 的值。
 
 例如，請考慮下列 `keytool` 引動過程：
 
@@ -729,7 +729,7 @@ Enter key password for keystore.alias
 
 #### <a name="item-attribute-name"></a>項目屬性名稱
 
-**Abi** &ndash; 指定原生程式庫的 ABI。
+**Abi** &ndash; 指定原生程式庫的 abi。
 
 ```xml
 <ItemGroup>
@@ -763,7 +763,7 @@ Enter key password for keystore.alias
 </PropertyGroup>
 ```
 
-**LogicalName** &ndash; 明確指定資源路徑。 允許對檔案&ldquo;設定別名&rdquo;，讓檔案能夠以多個不同的資源名稱來提供。
+**LogicalName** &ndash; 會明確指定資源路徑。 允許對檔案&ldquo;設定別名&rdquo;，讓檔案能夠以多個不同的資源名稱來提供。
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">

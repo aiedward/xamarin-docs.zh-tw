@@ -8,14 +8,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: 21b1f0c29962b7aeb45a836c976ec2635a39622e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030873"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292876"
 ---
-# <a name="troubleshooting-tips-for-xamarinios"></a>適用于 Xamarin 的疑難排解秘訣 
+# <a name="troubleshooting-tips-for-xamarinios"></a>適用于 Xamarin 的疑難排解秘訣
 
 ## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin. iOS 無法解析 System.valuetuple
 
@@ -128,7 +128,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 介面產生器檔案的動作會在執行時間依反映連接到 widget，因此應該會出現這項警告。
 
-如果您想要針對這些方法隱藏此警告，您可以使用「#pragma 警告停用0169」」 #pragma 警告啟用0169」，或者如果您想要針對整個專案停用，請將0169加入編譯器選項中的 [忽略警告] 欄位（而不是建議）。
+如果您想要針對這些方法隱藏此警告，您可以使用「#pragma 警告停用0169」」 #pragma 警告啟用0169」，或者如果您想要針對整個專案停用此警告，請將0169新增至 [忽略警告] 欄位（不建議）。
 
 ## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch 失敗，並出現下列訊息：無法開啟元件 '/path/to/yourproject.exe '
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 這表示您要將以 thumb 程式碼編譯的靜態程式庫連結至您的專案。 自 iPhone SDK 3.1 版（或在撰寫本文時更高版本）開始，Apple 在連結非 Thumb 程式碼（Xamarin. iOS）與 Thumb 程式碼（您的靜態程式庫）時，在連結器中引進了 bug。您必須使用靜態程式庫的非 Thumb 版本來進行連結，以減輕這個問題。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>ExecutionEngineException：正在嘗試 JIT 編譯方法（由包裝函式管理） Foo []： ICollection'1. get_Count （）
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>ExecutionEngineException：正在嘗試 JIT 編譯方法（包裝函式 managed） Foo []： system.string ' 1. get_Count （）
 
 [] 尾碼表示您或類別庫正透過泛型集合在陣列上呼叫方法，例如 IEnumerable < >、ICollection < > 或 IList < >。 因應措施是，您可以明確地強制 AOT 編譯器藉由呼叫方法來包含這類方法，並確保在觸發例外狀況的呼叫之前執行此程式碼。 在此情況下，您可以撰寫：
 
@@ -208,7 +208,7 @@ int count = ((ICollection<Foo>) array).Count;
 1. 嘗試重複步驟（1），並將 [橫樑同步] 保持為停用。
 1. 如果編輯器停止回應超過幾秒鐘，請嘗試在終端機中執行 "killall-QUIT [Visual Studio for Mac]"。 當編輯器停止回應時，可能會很難以結束 kill 命令，但這是必要的動作，因為命令會強制 Mono 將所有線程的堆疊追蹤寫入 MD 記錄檔中，我們可以使用這些內容來探索當 XS 停止回應時執行緒所在的狀態。
 
-請附加 XS 記錄、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **ANDROIDTOOLS-{timestamp} .log**和**元件-{timestamp} .log** （在較舊版本的 XS/MonoDevelop 中，只傳送 **~/Library/Logs/MonoDevelop-（3.0 | 2.8 | 2.6）/MonoDevelop.log**）。
+請附加 XS 記錄檔 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**， **ANDROIDTOOLS-{timestamp} .log**和**元件-{timestamp} .log** （在較舊版本的 XS/MonoDevelop 中，只傳送 **~/Library/Logs/MonoDevelop-（3.0 | 2.8 | 2.6）/MonoDevelop.log**）。
 
 > [!NOTE]
 > 上述問題已在 XS 2.2 最後的版本中修正 * *
@@ -219,7 +219,7 @@ int count = ((ICollection<Foo>) array).Count;
 
 從 Xamarin. iOS 1.3，debug 組建包含 Mono 之每個單一元件（架構的每個類別）的偵錯工具支援。  
 
-使用 Xamarin. iOS 1.4，我們將介紹更精細的偵錯工具方法，預設值是只提供程式碼和程式庫的偵錯工具檢測，而不是對所有[Mono 元件](~/cross-platform/internals/available-assemblies.md)執行此動作（這仍然可行，但您會將必須加入以對這些元件進行偵錯工具。
+使用 Xamarin. iOS 1.4，我們將為您介紹更精細的偵錯工具方法，預設值是只提供程式碼和程式庫的偵錯工具檢測，而不是對所有[Mono 元件](~/cross-platform/internals/available-assemblies.md)執行此動作（這仍然可行，但您必須選擇使用這些元件來進行偵錯工具）。
 
 ## <a name="installation-hangs"></a>安裝停止回應
 
@@ -287,7 +287,7 @@ Visual Studio for Mac 2.2 有一個 bug，導致它不會偵測到包含逗號�
 ## <a name="error-mtouch-failed-with-no-output"></a>「Mtouch 失敗，沒有輸出」錯誤
 
 當儲存方案或專案的專案名稱或目錄包含空格時，目前的 Xamarin. iOS 和 Visual Studio for Mac 版本會失敗。
-修正方法：
+若要修正此問題：
 
 - 請確定您的專案或其儲存所在的目錄都不包含空格。
 - 在您的專案「主要設定」中，請確定專案名稱不包含任何空格。
@@ -309,7 +309,7 @@ Visual Studio for Mac 2.2 有一個 bug，導致它不會偵測到包含逗號�
 
 （由 Ed Anuff 貢獻）
 
-請依照下列步驟：
+請遵循下列步驟：
 
 - 將 iPhone Build 中的 SDK 版本變更為3.2 或 iTunes connect 會在上傳時拒絕它，因為它會看到使用低於3.2 的 SDK 版本所建立的 iPad 相容應用程式
 - 建立專案的自訂 plist，並在其中將 MinimumOSVersion 明確設定為3.0。   這會覆寫 Xamarin 所設定的 MinimumOSVersion 3.2 值。   如果您未這麼做，應用程式將無法在 iPhone 上執行。
@@ -368,7 +368,7 @@ SDK 版本不應與「最低 OS 版本」設定混淆。
 
 這表示您已安裝 XCode 4。   在 XCode 4 中，已移除工具 ibtool，因此無法再使用獨立工具來編輯您的 XIB 檔案。
 
-如果您想要使用 Interface Builder，請安裝可從 Apple 網站取得的[XCode 系列 3](https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)。
+如果您想要使用 Interface Builder，請安裝可從 Apple 網站取得的 XCode 系列3。
 
 ## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>「無法建立 mime 類型的顯示系結： application/application. apple-interface-builder」
 
@@ -394,7 +394,7 @@ SDK 版本不應與「最低 OS 版本」設定混淆。
 當應用程式名稱包含 '. ' 時，就可能發生這種情況。其名稱中的（點）。
 這會被禁止為 CFBundleExecutable 中的可執行檔名稱，即使它可以在許多其他情況下運作（例如裝置）也一樣。
 
- \* 「此值不應包含名稱上的任何延伸模組」。- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+「值不應在名稱中包含任何延伸模組」。
 
 ## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>錯誤：按兩下 xib 檔案時，不支援自訂屬性類型0x43
 

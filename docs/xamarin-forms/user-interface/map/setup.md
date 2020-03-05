@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 038ff27907573c1fe15516f6f4caf26d0892ab9f
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 02/07/2020
+ms.openlocfilehash: c3c4863814949be2e6575e92136ca740452a2f3c
+ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662334"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78291893"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. 表單對應初始化和設定
 
@@ -58,12 +58,12 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 - iOS 11 和更新版本
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –用於使用應用程式時的位置服務
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) –隨時使用位置服務
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) –隨時使用位置服務
 - iOS 10 和更早版本
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –用於使用應用程式時的位置服務
   - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) –隨時使用位置服務    
 
-若要支援 iOS 11 和更早版本，您可以包含三個金鑰： `NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysAndWhenInUseUsageDescription` 和 `NSLocationAlwaysUsageDescription`。
+若要支援 iOS 11 和更早版本，您可以包含三個金鑰： `NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysAndWhenInUseUsageDescription`和 `NSLocationAlwaysUsageDescription`。
 
 **Plist**中這些索引鍵的 XML 表示如下所示。 您應該更新 `string` 值，以反映應用程式使用位置資訊的方式：
 
@@ -105,14 +105,16 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 ```xml
 <application ...>
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="PASTE-YOUR-API-KEY-HERE" />
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="PASTE-YOUR-API-KEY-HERE" />
 </application>
 ```
 
 這會將 API 金鑰內嵌到資訊清單中。 如果沒有有效的 API 金鑰， [`Map`](xref:Xamarin.Forms.Maps.Map)控制項將會顯示空白方格。
 
 > [!NOTE]
-> 請注意，為了讓您的 APK 存取 Google Maps，您必須針對用來簽署 APK 的每個金鑰儲存區（debug 和 release）包含 SHA-1 指紋和套件名稱。 例如，如果您使用一部電腦進行 debug，而另一部電腦用於產生發行 APK，您應該包含第一部電腦的 debug 金鑰儲存區中的 SHA-1 憑證指紋，以及來自的版本金鑰儲存區的 SHA-1 憑證指紋第二部電腦。 也請記得在應用程式的**套件名稱**變更時編輯金鑰認證。 請參閱[取得 Google MAPS API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
+> `com.google.android.geo.API_KEY` 是 API 金鑰的建議中繼資料名稱。 針對回溯相容性，可以使用 `com.google.android.maps.v2.API_KEY` 中繼資料名稱，但只允許對 Android 地圖服務 API v2 進行驗證。
+
+若要讓您的 APK 存取 Google Maps，您必須針對用來簽署 APK 的每個金鑰儲存區（debug 和 release）包含 SHA-1 指紋和套件名稱。 例如，如果您使用一部電腦進行 debug，而另一部電腦用於產生發行 APK，您應該包含第一部電腦的 debug 金鑰儲存區中的 SHA-1 憑證指紋，以及來自的版本金鑰儲存區的 SHA-1 憑證指紋第二部電腦。 也請記得在應用程式的**套件名稱**變更時編輯金鑰認證。 請參閱[取得 Google MAPS API 金鑰](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
 
 #### <a name="specify-the-google-play-services-version-number"></a>指定 Google Play 服務版本號碼
 
@@ -234,6 +236,9 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
 在 UWP 上，您的應用程式必須經過驗證，才能顯示地圖和取用地圖服務。 若要驗證您的應用程式，您必須指定對應驗證金鑰。 如需詳細資訊，請參閱[要求對應的驗證金鑰](/windows/uwp/maps-and-location/authentication-key)。 接著，您應該在 `FormsMaps.Init("AUTHORIZATION_TOKEN")` 方法呼叫中指定驗證權杖，以使用 Bing 地圖服務來驗證應用程式。
+
+> [!NOTE]
+> 在 UWP 上，若要使用對應服務（例如地理編碼），您也必須將 `MapService.ServiceToken` 屬性設定為驗證金鑰值。 這可以透過下列程式程式碼來完成： `Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";`。
 
 此外，如果您的應用程式需要存取使用者的位置，您必須在封裝資訊清單中啟用位置功能。 執行下列工作即可達成這點：
 

@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/09/2018
-ms.openlocfilehash: 8f732e05565c420ef28da38c0da0e61ecd595313
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3bfa3bbde68fab95d729cc8a558d4eb3baf7b4fa
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025015"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292398"
 ---
 # <a name="fonts"></a>字型
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 從 API 層級26開始，Android SDK 允許將字型視為資源，就像版面配置或可繪製資源一樣。 [Android 支援程式庫 26 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/26.1.0.1)會將新的字型 API 將至以 API 層級14或更高版本為目標的應用程式。
 
-瞄準 API 26 或安裝 Android 支援程式庫 v26 之後，有兩種方式可以在 Android 應用程式中使用字型：
+以 API 26 為目標或安裝 Android 支援程式庫 v26 之後，有兩種方式可在 Android 應用程式中使用字型：
 
 1. 將**字型封裝為 Android 資源**&ndash; 這可確保該字型一律可供應用程式使用，但會增加 APK 的大小。
 2. **下載字體**&ndash; Android 也支援從_字型提供者_下載字型。 字型提供者會檢查字型是否已存在於裝置上。 如有必要，字型將會下載並快取在裝置上。 此字型可以在多個應用程式之間共用。
@@ -60,22 +60,22 @@ Android 支援程式庫 v26 會將對 API 層級26的字型支援。 以較舊�
 
 ## <a name="fonts-as-a-resource"></a>作為資源的字型
 
-將字型封裝成 Android APK，可確保應用程式一律可供使用。 A font file (either a .TTF or a .OTF file) is added to a Xamarin.Android application just like any other resource, by copying files to a subdirectory in the **Resources** folder of a Xamarin.Android project. Fonts resources are kept in a **font** sub-directory of the **Resources** folder of the project.
+將字型封裝成 Android APK，可確保應用程式一律可供使用。 字型檔案（或）.TTF 或。OTF 檔案）會新增至 Xamarin Android 應用程式，就像任何其他資源一樣，只要將檔案複製到 Xamarin 專案之**Resources**資料夾中的子目錄即可。 字型資源會保留在專案的 [**資源**] 資料夾的**字型**子目錄中。
 
 > [!NOTE]
-> The fonts should have a **Build Action** of **AndroidResource** or they will not be packaged into the final APK. The build action should be automatically set by the IDE.
+> 字型應具有 [ **AndroidResource** ] 的 [**組建] 動作**，否則不會封裝到最終的 APK 中。 組建動作應由 IDE 自動設定。
 
-When there are many similar font files (for example, the same font with different weights or styles) it is possible to group them into a font family.
+當有許多類似的字型檔案（例如，具有不同權數或樣式的相同字型）時，可以將它們分組為字型系列。
 
 <a name="font_families" />
 
-### <a name="font-families"></a>Font Families
+### <a name="font-families"></a>字型系列
 
-A font family is a set of fonts that have different weights and styles. For example, there might be separate font files for bold or italic fonts. The font family is defined by `font` elements in an XML file that is kept in the  **Resources/font** directory. Each font family should have it's own XML file.
+字型家族是一組具有不同權數和樣式的字型。 例如，可能會有不同的字型檔案用於粗體或斜體字體。 字型系列是由 XML 檔案中保留在**Resources/font-size**目錄中的 `font` 元素所定義。 每個字型系列都應該有自己的 XML 檔案。
 
-To create a font family, first add all the fonts to the **Resources/font** folder. Then create a new XML file in the font folder for the font family. The name of the XML file has no affinity or relationship to the fonts being referenced; the resource file can be any legal Android resource file name. This XML file will have a root `font-family` element that contains one or more `font` elements. Each `font` element declares the attributes of a font.
+若要建立字型家族，請先將所有字型新增至**Resources/font-size**資料夾。 然後在字型系列的字型資料夾中建立新的 XML 檔案。 XML 檔案的名稱與所參考的字型沒有相似性或關聯性;資源檔可以是任何合法的 Android 資源檔名稱。 這個 XML 檔案會有一個根 `font-family` 元素，其中包含一或多個 `font` 元素。 每個 `font` 元素都會宣告字型的屬性。
 
-The following XML is an example of a font family for the _Sources Sans Pro_ font that defines many different font weights. This is saved as file in the **Resources/font** folder named **sourcesanspro.xml**:
+下列 XML 是_來源 San Pro_字型的字型家族範例，其定義了許多不同的字型粗細。 這會儲存為 [資源] **/[字型**] 資料夾中名為**sourcesanspro**的檔案：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -102,24 +102,24 @@ The following XML is an example of a font family for the _Sources Sans Pro_ font
 </font-family>
 ```
 
-The `fontStyle` attribute has two possible values:
+`fontStyle` 屬性有兩個可能的值：
 
-- **normal** &ndash; a normal font
-- **italic** &ndash; an italic font
+- **normal &ndash; 一般**字型
+- **斜體**&ndash; 斜體字型
 
-The `fontWeight` attribute corresponds to the CSS `font-weight` attribute and refers to the thickness of the font. This is a value in the range of 100 - 900. The following list describes the common font weight values and their name:
+`fontWeight` 屬性會對應至 CSS `font-weight` 屬性，並參考字型的粗細。 這是 100-900 範圍內的值。 下列清單描述常見的字型粗細值和其名稱：
 
-- **Thin** &ndash; 100
-- **Extra Light** &ndash; 200
-- **Light** &ndash; 300
-- **Normal** &ndash; 400
-- **Medium** &ndash; 500
-- **Semi Bold** &ndash; 600
-- **Bold** &ndash; 700
-- **Extra Bold** &ndash; 800
-- **Black** &ndash; 900
+- **精簡**&ndash; 100
+- **額外的 Light** &ndash; 200
+- **淺**&ndash; 300
+- **一般**&ndash; 400
+- **中**&ndash; 500
+- **半粗體**&ndash; 600
+- **粗體**&ndash; 700
+- **額外的粗體**&ndash; 800
+- **黑色**&ndash; 900
 
-Once a font family has been defined, it can be used declaratively by setting the `fontFamily`, `textStyle`, and `fontWeight` attributes in the layout file.  For example the following XML snippet sets a 600 weight font (normal) and an italic text style:
+一旦定義了字型系列，就可以在配置檔案中設定 `fontFamily`、`textStyle`和 `fontWeight` 屬性，以宣告方式使用它。  例如，下列 XML 程式碼片段會設定600權數位型（一般）和斜體文字樣式：
 
 ```xml
 <TextView
@@ -134,9 +134,9 @@ Once a font family has been defined, it can be used declaratively by setting the
     />
 ```
 
-### <a name="programmatically-assigning-fonts"></a>Programmatically Assigning Fonts
+### <a name="programmatically-assigning-fonts"></a>以程式設計方式指派字型
 
-Fonts can be programmatically set by using the [`Resources.GetFont`](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int)) method to retrieve a [`Typeface`](https://developer.android.com/reference/android/graphics/Typeface.html) object. Many views have a `TypeFace` property that can be used to assign the font to the widget. This code snippet shows how to programmatically set the font on a TextView:
+您可以使用[`Resources.GetFont`](https://developer.android.com/reference/android/content/res/Resources.html#getFont(int))方法，以程式設計方式設定字型，以取出[`Typeface`](https://developer.android.com/reference/android/graphics/Typeface.html)物件。 許多視圖都有 `TypeFace` 屬性可用來將字型指派給 widget。 此程式碼片段示範如何以程式設計方式在 TextView 上設定字型：
 
 ```csharp
 Android.Graphics.Typeface typeface = this.Resources.GetFont(Resource.Font.caveat_regular);
@@ -144,7 +144,7 @@ textView1.Typeface = typeface;
 textView1.Text = "Changed the font";
 ```
 
-The `GetFont` method will automatically load the first font within a font family.  To load a font that matches a specific style, use the `Typeface.Create` method. This method will try to load a font that matches the specified style. 例如，此程式碼片段會嘗試從 [**資源/** 字型] 中定義的字型家族載入粗體 `Typeface` 物件：
+`GetFont` 方法會自動載入字型系列內的第一個字型。  若要載入符合特定樣式的字型，請使用 `Typeface.Create` 方法。 這個方法會嘗試載入符合指定樣式的字型。 例如，此程式碼片段會嘗試從 [**資源/** 字型] 中定義的字型家族載入粗體 `Typeface` 物件：
 
 ```csharp
 var typeface = Typeface.Create("<FONT FAMILY NAME>", Android.Graphics.TypefaceStyle.Bold);
@@ -197,7 +197,7 @@ Android 8.0 支援以兩種不同的方式下載字型：
 
 如果裝置上未預先安裝字型提供者，或是應用程式使用 `Xamarin.Android.Support.Compat` 程式庫，則 Android 會要求字型提供者的安全性憑證。 這些憑證會列在保留在**Resources/values**目錄中的陣列資源檔中。
 
-例如，下列 XML 會命名為**Resources/values/fonts_cert** ，並儲存 Google 字型提供者的憑證：
+例如，下列 XML 會命名為**Resources/values/fonts_cert .xml** ，並儲存 Google 字型提供者的憑證：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -234,7 +234,7 @@ Android 8.0 支援以兩種不同的方式下載字型：
 </resources>
 ```
 
-若要下載這些字型，必須在**androidmanifest.xml**中宣告這些字型，方法是加入 `meta-data` 做為 `application` 元素的子系。 例如，如果可下載的字型是在資源 **/值/downloadable_fonts**的資源檔中宣告，則必須將此程式碼片段新增至資訊清單：
+若要下載這些字型，必須在**androidmanifest.xml**中宣告這些字型，方法是加入 `meta-data` 做為 `application` 元素的子系。 例如，如果可下載的字型是在資源 **/值/downloadable_fonts .xml**的資源檔中宣告，則必須將此程式碼片段新增至資訊清單：
 
 ```xml
 <meta-data android:name="downloadable_fonts" android:resource="@array/downloadable_fonts" />
@@ -264,7 +264,7 @@ FontRequest request = new FontRequest("com.google.android.gms.fonts", "com.googl
 - **`FontsContractCompat.FontRequestCallback`** &ndash; 這是必須擴充的抽象類別。 這是當 `RequestFont` 完成時，將會叫用的回呼。 Xamarin Android 應用程式必須將 `FontsContractCompat.FontRequestCallback` 子類別化，並覆寫 `OnTypefaceRequestFailed` 和 `OnTypefaceRetrieved`，以提供在下載失敗或分別成功時所要採取的動作。
 - **`Handler`** &ndash; 這是 `Handler`，`RequestFont` 會在必要時，用來線上程上下載字型。 字型**不**應在 UI 執行緒上下載。
 
-此程式碼片段是C#類別的範例，將會以非同步方式從 Google 字型的開放原始碼集合下載字型。 它會執行 `FontRequestCallback` 介面，並在 `FontRequest`C#完成時引發事件。
+此程式碼片段是C#類別的範例，將會以非同步方式從 Google 字型的開放原始碼集合下載字型。 它會執行 `FontRequestCallback` 介面，並在 `FontRequest` C#完成時引發事件。
 
 ```csharp
 public class FontDownloadHelper : FontsContractCompat.FontRequestCallback
@@ -338,7 +338,7 @@ fontHelper.FontDownloaded += (object sender, FontDownloadEventArg e) =>
 fontHelper.DownloadFonts(this); // this is an Android Context instance.
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南討論 Android 8.0 中的新 Api，以支援可下載的字型和字型作為資源。 它討論了如何將現有的字型內嵌在 APK 中，並在版面配置中使用它們。 同時也會討論 Android 8.0 如何以程式設計方式或在資源檔中宣告字型中繼資料，來支援從字型提供者下載字體。
 

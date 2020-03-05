@@ -7,32 +7,32 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 0812347e85b0ccb6aa0bbb16649a89bb4d961c9b
-ms.sourcegitcommit: a14edebf00f3e0f8944e59042ca7aa5c42173e30
+ms.openlocfilehash: afdf9029f836ac8e55b2bb338b31f669af946c12
+ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72780347"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "78291827"
 ---
 # <a name="xamarinforms-toolbaritem"></a>Xamarin. Forms ToolbarItem
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
-[Xamarin] [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)類別是一種特殊類型的按鈕，可以加入 `Page` 物件的 `ToolbarItems` 集合。 每個 `ToolbarItem` 物件都會在應用程式的導覽列中顯示為按鈕。 @No__t_0 實例可以有圖示，並顯示為主要或次要功能表項目。 @No__t_0 類別繼承自[`MenuItem`](xref:Xamarin.Forms.MenuItem)。
+[Xamarin] [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)類別是一種特殊類型的按鈕，可以加入 `Page` 物件的 `ToolbarItems` 集合。 每個 `ToolbarItem` 物件都會在應用程式的導覽列中顯示為按鈕。 `ToolbarItem` 實例可以有圖示，並顯示為主要或次要功能表項目。 `ToolbarItem` 類別繼承自[`MenuItem`](xref:Xamarin.Forms.MenuItem)。
 
 下列螢幕擷取畫面顯示 iOS 和 Android 上巡覽列中 `ToolbarItem` 物件：
 
 ![「Android 和 iOS 上的 ToolbarItem 示範螢幕擷取畫面」](toolbaritem-images/toolbaritem-device-screenshot.png "Android 和 iOS 上的 ToolbarItem 示範螢幕擷取畫面")
 
-@No__t_0 類別會定義下列屬性：
+`ToolbarItem` 類別會定義下列屬性：
 
 * [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)是 `ToolbarItemOrder` 列舉值，可判斷 `ToolbarItem` 實例是否會顯示在主要或次要功能表中。
 * [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)是 `integer` 值，可決定 `Page` 物件的 `ToolbarItems` 集合中專案的顯示順序。
 
-@No__t_0 類別會從 `MenuItem` 類別繼承下列常用的屬性：
+`ToolbarItem` 類別會從 `MenuItem` 類別繼承下列常用的屬性：
 
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command)是一種 `ICommand`，可讓您將使用者動作（例如手指點按或按一下）系結至 viewmodel 上定義的命令。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是指定應傳遞至 `Command` 之參數的 `object`。
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是指定應傳遞至 `Command`之參數的 `object`。
 * [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)是 `ImageSource` 值，可決定 `ToolbarItem` 物件上的顯示圖示。
 * [`Text`](xref:Xamarin.Forms.MenuItem.Text)是決定 `ToolbarItem` 物件上顯示文字的 `string`。
 
@@ -43,7 +43,7 @@ ms.locfileid: "72780347"
 
 ## <a name="create-a-toolbaritem"></a>建立 ToolbarItem
 
-@No__t_0 物件可以在 XAML 中具現化。 您可以設定 [`Text`] 和 [`IconImageSource`] 屬性，以決定按鈕在導覽列中的顯示方式。 下列範例示範如何具現化已設定一些通用屬性的 `ToolbarItem`，並將它新增至 `ContentPage` 的 `ToolbarItems` 集合：
+`ToolbarItem` 物件可以在 XAML 中具現化。 您可以設定 [`Text`] 和 [`IconImageSource`] 屬性，以決定按鈕在導覽列中的顯示方式。 下列範例示範如何具現化已設定一些通用屬性的 `ToolbarItem`，並將它新增至 `ContentPage`的 `ToolbarItems` 集合：
 
 ```xaml
 <ContentPage.ToolbarItems>
@@ -69,14 +69,14 @@ ToolbarItem item = new ToolbarItem
 this.ToolbarItems.Add(item);
 ```
 
-@No__t_0 所代表的檔案（以 `IconImageSource` 屬性的形式提供）必須存在於每個平臺專案中。
+`string`所代表的檔案（以 `IconImageSource` 屬性的形式提供）必須存在於每個平臺專案中。
 
 > [!NOTE]
-> 映射資產在每個平臺上的處理方式不同。 @No__t_0 可以來自來源，包括本機檔案或內嵌資源、URI 或資料流程。 如需在 [表單] 中設定 `IconImageSource` 屬性和影像的詳細資訊，請參閱[xamarin 中的影像](~/xamarin-forms/user-interface/images.md)。
+> 映射資產在每個平臺上的處理方式不同。 `ImageSource` 可以來自來源，包括本機檔案或內嵌資源、URI 或資料流程。 如需在 [表單] 中設定 `IconImageSource` 屬性和影像的詳細資訊，請參閱[xamarin 中的影像](~/xamarin-forms/user-interface/images.md)。
 
 ## <a name="define-button-behavior"></a>定義按鈕行為
 
-@No__t_0 類別會從 `MenuItem` 類別繼承 `Clicked` 事件。 事件處理常式可以附加至 `Clicked` 事件，以回應在 XAML 中 `ToolbarItem` 實例的點擊或點擊：
+`ToolbarItem` 類別會從 `MenuItem` 類別繼承 `Clicked` 事件。 事件處理常式可以附加至 `Clicked` 事件，以回應在 XAML 中 `ToolbarItem` 實例的點擊或點擊：
 
 ```xaml
 <ToolbarItem ...
@@ -102,15 +102,21 @@ void OnItemClicked(object sender, EventArgs e)
 
 `ToolbarItem` 物件也可以使用 `Command` 和 `CommandParameter` 屬性來回應使用者輸入，而不需要事件處理常式。 如需 `ICommand` 介面和 MVVM 資料系結的詳細資訊，請參閱[Xamarin。表單 MENUITEM MVVM 行為](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm)。
 
+## <a name="enable-or-disable-a-toolbaritem-at-runtime"></a>在執行時間啟用或停用 ToolbarItem
+
+若要啟用在執行時間停用 `ToolbarItem`，請將其 `Command` 屬性系結至 `ICommand` 的執行，並確保 `canExecute` 委派會適當地啟用和停用 `ICommand`。
+
+如需詳細資訊，請參閱[在執行時間啟用或停用 MenuItem](menuitem.md#enable-or-disable-a-menuitem-at-runtime)。
+
 ## <a name="primary-and-secondary-menus"></a>主要和次要功能表
 
-@No__t_0 列舉具有 `Default`、`Primary` 和 `Secondary` 值。
+`ToolbarItemOrder` 列舉具有 `Default`、`Primary`和 `Secondary` 值。
 
 當 [`Order`] 屬性設定為 [`Primary`] 時，`ToolbarItem` 物件將會出現在所有平臺的主要導覽列中。 `ToolbarItem` 物件的優先順序高於頁面標題，將會被截斷以騰出空間給專案。 下列螢幕擷取畫面顯示 iOS 和 Android 上主要功能表中 `ToolbarItem` 物件：
 
 ![「ToolbarItem 主要功能表螢幕擷取畫面 Android 和 iOS」](toolbaritem-images/toolbaritem-primary-menu.png "ToolbarItem Android 和 iOS 上的主要功能表螢幕擷取畫面")
 
-當 `Order` 屬性設定為 `Secondary` 時，行為會因平臺而異。 在 UWP 和 Android 上，[`Secondary` 專案] 功能表會顯示為三個點，可點擊或按一下以顯示垂直清單中的專案。 在 iOS 上，[`Secondary` 專案] 功能表會出現在巡覽列下方做為水準清單。 下列螢幕擷取畫面顯示 iOS 和 Android 上的次要功能表：
+當 `Order` 屬性設定為 `Secondary`時，行為會因平臺而異。 在 UWP 和 Android 上，[`Secondary` 專案] 功能表會顯示為三個點，可點擊或按一下以顯示垂直清單中的專案。 在 iOS 上，[`Secondary` 專案] 功能表會出現在巡覽列下方做為水準清單。 下列螢幕擷取畫面顯示 iOS 和 Android 上的次要功能表：
 
 ![「ToolbarItem 次要功能表螢幕擷取畫面 Android 和 iOS」](toolbaritem-images/toolbaritem-secondary-menu.png "在 Android 和 iOS 上 ToolbarItem 次要功能表螢幕擷取畫面")
 
@@ -121,4 +127,4 @@ void OnItemClicked(object sender, EventArgs e)
 
 * [ToolbarItem 示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Xamarin 中的影像](~/xamarin-forms/user-interface/images.md)
-* [Xamarin. 表單 MenuItem](~/xamarin-forms/user-interface/menuitem.md)
+* [Xamarin.Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md)

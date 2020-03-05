@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ad4682e9a3d4de2565bee54ffa159fd739572e24
-ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
+ms.openlocfilehash: 25d8563288cce614bc2823b0146e5121688c6f02
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75663300"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291750"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Xamarin 中的索引標籤列和索引標籤列控制器
 
@@ -27,7 +27,7 @@ ms.locfileid: "75663300"
 `UITabBarController` 支援下列各項的索引標籤式應用程式開發：
 
 - 允許將多個控制器新增至其中。
-- 透過 `UITabBar` 類別提供索引標籤式使用者介面，讓使用者可以在控制器與其視圖之間切換。 
+- 透過 `UITabBar` 類別提供索引標籤式使用者介面，讓使用者可以在控制器與其視圖之間切換。
 
 控制器會透過其 `ViewControllers` 屬性（也就是 `UIViewController` 陣列）新增至 `UITabBarController`。 `UITabBarController` 本身會處理載入適當的控制器，並根據選取的索引標籤呈現其 view。
 
@@ -63,9 +63,9 @@ ms.locfileid: "75663300"
 
 若要執行 `UITabBarController` 我們需要執行下列動作：
 
-1. 將 `TabController` 的基底類別設定為 `UITabBarController`。 
-1. 建立要新增至 `TabController` 的 `UIViewController` 實例。 
-1. 將 `UIViewController` 實例新增至指派給 `TabController` 之 `ViewControllers` 屬性的陣列。 
+1. 將 `TabController` 的基底類別設定為 `UITabBarController`。
+1. 建立要新增至 `TabController` 的 `UIViewController` 實例。
+1. 將 `UIViewController` 實例新增至指派給 `TabController` 之 `ViewControllers` 屬性的陣列。
 
 將下列程式碼新增至 `TabController` 類別，以達成這些步驟：
 
@@ -118,16 +118,16 @@ public partial class AppDelegate : UIApplicationDelegate
 {
     UIWindow window;
     TabController tabController;
-    
+
     public override bool FinishedLaunching (UIApplication app, NSDictionary options)
     {
         window = new UIWindow (UIScreen.MainScreen.Bounds);
-        
+
         tabController = new TabController ();
         window.RootViewController = tabController;
-        
+
         window.MakeKeyAndVisible ();
-        
+
         return true;
     }
 }
@@ -217,11 +217,11 @@ tab3.TabBarItem.BadgeValue = null;
 
 - 當 [新增檔案] 對話方塊出現時，流覽至**iOS > 空白的 iPhone**分鏡腳本。
 
-讓我們來呼叫這個新的分鏡腳本**mainstoryboard.storyboard** ，如下所示： 
+讓我們來呼叫這個新的分鏡腳本**mainstoryboard.storyboard** ，如下所示：
 
 [![](creating-tabbed-applications-images/new-file-dialog.png "Add a MainStoryboard file to the project")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
-將分鏡腳本新增至先前的非分鏡腳本檔案時，有幾個要注意的重要步驟，如腳本[簡介](~/ios/user-interface/storyboards/index.md)指南所述。 這些是：
+將分鏡腳本新增至先前的非分鏡腳本檔案時，有幾個要注意的重要步驟，如腳本[簡介](~/ios/user-interface/storyboards/index.md)指南所述。 它們是：
 
 1. 將您的分鏡腳本名稱新增至 `Info.plist`的**主要介面**區段中：
 
@@ -295,7 +295,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 在我們的腳本中，我們可以使用 Segue 來處理 TabBarController 與我們的視圖控制器之間的轉換。 與初始視圖互動之後，我們想要將它載入至呈現給使用者的 TabBarController。 讓我們在設計工具中進行這項設定。
 
-**按 Ctrl-按一下**並從 [] 按鈕**拖曳**至 [TabBarController]。 當滑鼠開啟時，將會出現內容功能表。 我們想要使用強制回應 segue。 
+**按 Ctrl-按一下**並從 [] 按鈕**拖曳**至 [TabBarController]。 當滑鼠開啟時，將會出現內容功能表。 我們想要使用強制回應 segue。
 
 若要設定每個索引標籤，請從 TabBarController 中依序**按一下**每個 View controller （從一到三），然後從內容功能表中選取 [關聯性 **]** 索引標籤，如下所示：
 
@@ -309,7 +309,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 [![](creating-tabbed-applications-images/properties-panel.png "Setting the tab options in the Properties Explorer")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
-我們可以使用這個來編輯特定的屬性，例如徽章、標題和 iOS[識別碼](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html)，還有其他內容
+我們可以使用這個來編輯特定的屬性，例如徽章、標題和 iOS 識別碼等等。
 
 如果我們立即儲存並執行應用程式，我們會發現當 ViewController1 實例載入 TabBarController 時，按鈕會重新出現。 讓我們來修正此問題，方法是檢查目前的視圖是否有父視圖控制器。 如果有的話，我們知道我們在 TabBarController 內，因此應該隱藏按鈕。 讓我們將下列程式碼新增至 ViewController1 類別：
 
@@ -326,7 +326,7 @@ public override void ViewDidLoad ()
 
 [![範例應用程式輸出](creating-tabbed-applications-images/first-view-sml.png)](creating-tabbed-applications-images/first-view.png#lightbox)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋如何在應用程式中使用 `UITabBarController`。 我們逐步解說如何將控制器載入每個索引標籤，以及如何設定索引標籤（例如標題、影像和徽章）的屬性。 然後我們會使用分鏡腳本來進行檢查，當它不是視窗的 `RootViewController` 時，如何在執行時間載入 `UITabBarController`。
 

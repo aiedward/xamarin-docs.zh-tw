@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: e2d459650c4e5ea38d5e54aef64cc3d7dcb5625c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0e283c9d9d1143f7cf4b0d2da0616e94d6ce5bce
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029883"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291822"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin. Mac 中的 Opentk 簡介簡介
 
@@ -20,9 +20,9 @@ Opentk 簡介（開放工具組）是一種高階的高階連結C#庫，可讓�
 
 [![](opentk-images/intro01.png "An example app run")](opentk-images/intro01.png#lightbox)
 
-在本文中，我們將討論在 Xamarin. Mac 應用程式中 Opentk 簡介的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。本文。
+在本文中，我們將討論在 Xamarin. Mac 應用程式中 Opentk 簡介的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在本文中使用的重要概念和技巧。
 
-您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的「 C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將類別連線到目標-c 的`Register`和`Export`命令物件和 UI 元素。
+您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的 [ C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) ] 區段，它會說明用來將類別連接至目標-c 物件和 UI 元素的 `Register` 和 `Export` 命令。
 
 <a name="About_OpenTK" />
 
@@ -40,7 +40,7 @@ Opentk 簡介（開放工具組）是一種高階的高階連結C#庫，可讓�
 
 Opentk 簡介可用於需要3D 圖形、音訊或計算功能的遊戲、科學應用程式或其他專案。
 
-如需詳細資訊，請參閱[開放工具](http://www.opentk.com)組網站。
+如需詳細資訊，請參閱[開放工具](https://opentk.net)組網站。
 
 <a name="OpenTK_Quickstart" />
 
@@ -286,7 +286,7 @@ Game.RenderFrame += (sender, e) =>
 
 ### <a name="running-the-game-view"></a>執行遊戲視圖
 
-當所有必要的事件都定義並將遊戲視圖附加至應用程式的主要 Mac 視窗後，我們就會閱讀執行遊戲視圖並顯示我們的圖形。 請使用下列程式碼：
+當所有必要的事件都定義並將遊戲視圖附加至應用程式的主要 Mac 視窗後，我們就會閱讀執行遊戲視圖並顯示我們的圖形。 使用下列程式碼：
 
 ```csharp
 // Run the game at 60 updates per second
@@ -319,7 +319,7 @@ Game.Run(60.0);
 
 <a name="Summary" />
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已快速探討如何在 Xamarin. Mac 應用程式中使用 Opentk 簡介。 我們已瞭解如何建立遊戲視窗、如何將遊戲視窗附加至 Mac 視窗，以及如何在遊戲視窗中轉譯簡單的圖形。
 
@@ -329,6 +329,6 @@ Game.Run(60.0);
 - [MonoMacGameView （範例）](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [使用 Windows](~/mac/user-interface/window.md)
-- [開啟的工具組](http://www.opentk.com)
+- [開啟的工具組](https://opentk.net)
 - [OS X 人性化介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) \(英文\)
 - [Windows 簡介](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

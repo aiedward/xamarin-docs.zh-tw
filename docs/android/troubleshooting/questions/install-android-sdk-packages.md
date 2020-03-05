@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2018
-ms.openlocfilehash: d48767ea29c5f610e02fade20ae92c5e085cc9be
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 24c70c2e869f59091a1519af6d1165dbea9cc467
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026955"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292472"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>應該安裝哪一個 Android SDK 套件？
 
@@ -28,9 +28,9 @@ ms.locfileid: "73026955"
 
 ## <a name="android-platforms"></a>Android 平臺
 
-針對您已設定為最小 & 目標的 Android 版本，安裝「SDK 平臺」。 
+針對您已設定為最小 & 目標的 Android 版本，安裝「SDK 平臺」。
 
-例如：
+範例：
 
 - 目標 API 23
 - 最低 API 23
@@ -48,6 +48,3 @@ ms.locfileid: "73026955"
 
 ## <a name="extras"></a>額外項目
 通常不需要 Android SDK 額外專案;但請注意，因為它們可能需要視您的使用案例而定。
-
-## <a name="further-reading"></a>進一步閱讀
-下列指南涵蓋這些選項，並詳細說明 SDK manager 提供的不同套件： [Android SDK Manager 安裝指南](http://www.themethodology.net/2015/02/android-sdk-manager-setup-for.html?m=1)

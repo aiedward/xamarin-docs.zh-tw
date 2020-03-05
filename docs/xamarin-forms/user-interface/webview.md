@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: dedce45d0c09f807aaf2ecbf540b8c9f319a4f16
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.openlocfilehash: 26fbe6af639c67a94408605ba456bb3a100d2355
+ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031407"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78291964"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin. Forms Web 視圖
 
@@ -34,7 +34,7 @@ ms.locfileid: "76031407"
 > [!NOTE]
 > Windows 上的 `WebView` 不支援 Silverlight、Flash 或任何 ActiveX 控制項，即使該平臺上的 Internet Explorer 支援也一樣。
 
-### <a name="websites"></a>Websites
+### <a name="websites"></a>網站
 
 若要從網際網路顯示網站，請將 `WebView`的[`Source`](xref:Xamarin.Forms.WebViewSource)屬性設定為字串 URL：
 
@@ -107,7 +107,7 @@ browser.Source = htmlSource;
 
 ![顯示 HTML 字串的 Web 型](webview-images/html-string.png)
 
-在上述程式碼中，`@` 是用來將 HTML 標籤為字串常值，這表示會忽略所有一般的逸出字元。
+在上述程式碼中，`@` 是用來將 HTML 標籤為[逐字字串常](/dotnet/csharp/programming-guide/strings/#regular-and-verbatim-string-literals)值，這表示會忽略大部分的換用字元。
 
 > [!NOTE]
 > 您可能必須設定[`WebView`](xref:Xamarin.Forms.WebView)的 `WidthRequest` 和 `HeightRequest` 屬性，才能看到 HTML 內容，視 `WebView` 是的子配置而定。 例如，在[`StackLayout`](xref:Xamarin.Forms.StackLayout)中，這是必要的。
@@ -122,7 +122,7 @@ Web 工作可從應用程式內的 HTML、CSS 和 JAVAscript 中顯示內容。 
     <title>Xamarin Forms</title>
   </head>
   <body>
-    <h1>Xamrin.Forms</h1>
+    <h1>Xamarin.Forms</h1>
     <p>This is an iOS web page.</p>
     <img src="XamarinLogo.png" />
   </body>
@@ -174,11 +174,11 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 在 iOS 上，web 內容應該位於專案的根目錄或**Resources**目錄中，並具有組建動作*BundleResource*，如下所示：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![IOS 上的本機檔案](webview-images/ios-vs.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![IOS 上的本機檔案](webview-images/ios-xs.png)
 
@@ -204,11 +204,11 @@ namespace WorkingWithWebview.iOS
 
 在 Android 上，使用 [組建動作*AndroidAsset* ] 將 HTML、CSS 和影像放在 [資產] 資料夾中，如下所示：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Android 上的本機檔案](webview-images/android-vs.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![Android 上的本機檔案](webview-images/android-xs.png)
 
@@ -260,7 +260,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>瀏覽
+## <a name="navigation"></a>導覽
 
 Web 程式支援透過數個可用的方法和屬性進行流覽：
 
@@ -326,11 +326,11 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-就這麼容易！
+就這麼簡單！
 
 ![Web 流覽導覽按鈕](webview-images/in-app-browser.png)
 
-## <a name="events"></a>「事件」
+## <a name="events"></a>事件
 
 Web 工作會引發下列事件，以協助您回應狀態的變更：
 
@@ -427,7 +427,7 @@ webView.Reload();
 - 只有在從網路顯示內容時， **Android** &ndash; 才需要 `INTERNET`。 本機內容不需要任何特殊許可權。
 - **iOS** &ndash; 不需要任何特殊許可權。
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>版面配置
 
 不同于大部分其他的 Xamarin. 表單檢視，`WebView` 需要在 StackLayout 或 RelativeLayout 中包含時，指定 `HeightRequest` 和 `WidthRequest`。 如果您無法指定這些屬性，則不會呈現 `WebView`。
 
@@ -533,26 +533,26 @@ function factorial(num) {
 
 ### <a name="configure-the-linker-preview"></a>設定連結器預覽
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 請遵循下列步驟來讓連結器移除 `UIWebView` 參考：
 
 1. **開啟 ios 專案屬性**&ndash; 以滑鼠右鍵按一下您的 ios 專案，然後選擇 [**屬性**]。
 1. **流覽至 [Ios 組建] 區段**&ndash; 選取 [ **ios 組建**] 區段。
-1. 更新其他**mtouch 引數**&ndash; 中**的其他 mtouch 引數**，將此旗標新增 `--optimize=experimental-xforms-product-type` （除了任何可能已存在的值中）。 
+1. 更新其他**mtouch 引數**&ndash; 中**的其他 mtouch 引數**，將此旗標新增 `--optimize=experimental-xforms-product-type` （除了任何可能已存在的值中）。 注意：此旗標可搭配設定為 [**僅限 SDK** ] 或 [**全部連結**] 的**連結器行為**一起運作。 如果您基於任何原因，在將連結器行為設定為 [全部] 時看到錯誤，這很可能是應用程式代碼或不是連結器安全之協力廠商程式庫內的問題。 如需連結器的詳細資訊，請參閱[連結 Xamarin IOS 應用程式](~/ios/deploy-test/linker.md)。
 1. **更新所有組建**設定 &ndash; 使用視窗頂端**的 [設定**] 和 [**平臺**] 清單來更新所有組建設定。 更新的最重要設定是**Release/iPhone**設定，因為這通常是用來建立 App Store 提交的組建。
 
 在此螢幕擷取畫面中，您可以看到具有新旗標的視窗：
 
 [![在 iOS 組建區段中設定旗標](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 請遵循下列步驟來讓連結器移除 `UIWebView` 參考
 
 1. **開啟 ios 專案選項**&ndash; 以滑鼠右鍵按一下您的 ios 專案，然後選擇 [**選項**]。
 1. **流覽至 [Ios 組建] 區段**&ndash; 選取 [ **ios 組建**] 區段。
-1. **更新其他_mtouch_引數**&ndash; 在**額外的_mtouch_引數**新增此旗標 `--optimize=experimental-xforms-product-type` （除了其中可能已有的任何值）。
+1. **更新** 其他 **_mtouch_引數**&ndash; 中的其他 mtouch 引數，將此旗標新增 `--optimize=experimental-xforms-product-type` （除了任何可能已存在的值中）。 注意：此旗標可搭配設定為 [**僅限 SDK** ] 或 [**全部連結**] 的**連結器行為**一起運作。 如果您基於任何原因，在將連結器行為設定為 [全部] 時看到錯誤，這很可能是應用程式代碼或不是連結器安全之協力廠商程式庫內的問題。 如需連結器的詳細資訊，請參閱[連結 Xamarin IOS 應用程式](~/ios/deploy-test/linker.md)。
 1. **更新所有組建**設定 &ndash; 使用視窗頂端**的 [設定**] 和 [**平臺**] 清單來更新所有組建設定。 更新的最重要設定是**Release/iPhone**設定，因為這通常是用來建立 App Store 提交的組建。
 
 在此螢幕擷取畫面中，您可以看到具有新旗標的視窗：

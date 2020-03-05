@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2019
-ms.openlocfilehash: 106d22cd7f20f8368bc728aa45c4d7f19d09c44c
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: c7daad8898d3048f10c9489ee4e2c78f147c6e52
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697070"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131153"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin. 表單專案
 
@@ -20,13 +20,13 @@ ms.locfileid: "72697070"
 
 _單行文字或密碼輸入_
 
-[Xamarin] [`Entry`](xref:Xamarin.Forms.Entry)用於單行文字輸入。 @No__t_0 （如[`Editor`](xref:Xamarin.Forms.Editor)視圖）支援多種鍵盤類型。 此外，也可以使用 `Entry` 做為密碼欄位。
+[Xamarin] [`Entry`](xref:Xamarin.Forms.Entry)用於單行文字輸入。 `Entry`（如[`Editor`](xref:Xamarin.Forms.Editor)視圖）支援多種鍵盤類型。 此外，也可以使用 `Entry` 做為密碼欄位。
 
 ## <a name="display-customization"></a>顯示自訂
 
 ### <a name="setting-and-reading-text"></a>設定和讀取文字
 
-@No__t_0，如同其他文字呈現的視圖，會公開[`Text`](xref:Xamarin.Forms.Entry.Text)屬性。 這個屬性可以用來設定和讀取 `Entry` 所呈現的文字。 下列範例示範如何在 XAML 中設定 `Text` 屬性：
+`Entry`，如同其他文字呈現的視圖，會公開[`Text`](xref:Xamarin.Forms.InputView.Text)屬性。 這個屬性可以用來設定和讀取 `Entry`所呈現的文字。 下列範例示範如何在 XAML 中設定 `Text` 屬性：
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -46,7 +46,7 @@ var text = MyEntry.Text;
 
 ### <a name="setting-placeholder-text"></a>設定預留位置文字
 
-[@No__t_1](xref:Xamarin.Forms.Entry)可以設定為在未儲存使用者輸入時顯示預留位置文字。 這是藉由將 [ [`Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) ] 屬性設定為 [`string`] 來完成，而且通常用來指出適用于 `Entry` 的內容類型。 此外，您可以藉由將 [ [`PlaceholderColor`](xref:Xamarin.Forms.Entry.PlaceholderColor) ] 屬性設定為 [ [`Color`](xref:Xamarin.Forms.Color)] 來控制預留位置文字色彩：
+[`Entry`](xref:Xamarin.Forms.Entry)可以設定為在未儲存使用者輸入時顯示預留位置文字。 這是藉由將 [ [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) ] 屬性設定為 [`string`] 來完成，而且通常用來指出適用于 `Entry`的內容類型。 此外，您可以藉由將 [ [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor) ] 屬性設定為 [ [`Color`](xref:Xamarin.Forms.Color)] 來控制預留位置文字色彩：
 
 ```xaml
 <Entry Placeholder="Username" PlaceholderColor="Olive" />
@@ -57,7 +57,7 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 ```
 
 > [!NOTE]
-> @No__t_0 的寬度可以藉由設定其 `WidthRequest` 屬性來定義。 請勿依據其 `Text` 屬性的值所定義之 `Entry` 的寬度而定。
+> `Entry` 的寬度可以藉由設定其 `WidthRequest` 屬性來定義。 請勿依據其 `Text` 屬性的值所定義之 `Entry` 的寬度而定。
 
 ### <a name="preventing-text-entry"></a>防止文字輸入
 
@@ -73,11 +73,11 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 ```
 
 > [!NOTE]
-> @No__t_0 屬性不會改變[`Entry`](xref:Xamarin.Forms.Entry)的視覺外觀，不同于也會將 `Entry` 的視覺外觀變更為灰色的 `IsEnabled` 屬性。
+> `IsReadonly` 屬性不會改變[`Entry`](xref:Xamarin.Forms.Entry)的視覺外觀，不同于也會將 `Entry` 的視覺外觀變更為灰色的 `IsEnabled` 屬性。
 
 ### <a name="limiting-input-length"></a>限制輸入長度
 
-[@No__t_1](xref:Xamarin.Forms.InputView.MaxLength)屬性可以用來限制[`Entry`](xref:Xamarin.Forms.Entry)所允許的輸入長度。 此屬性應該設定為正整數：
+[`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength)屬性可以用來限制[`Entry`](xref:Xamarin.Forms.Entry)所允許的輸入長度。 此屬性應該設定為正整數：
 
 ```xaml
 <Entry ... MaxLength="10" />
@@ -87,7 +87,7 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 var entry = new Entry { ... MaxLength = 10 };
 ```
 
-[@No__t_1](xref:Xamarin.Forms.InputView.MaxLength)屬性值0表示不允許輸入，而且 `int.MaxValue` 的值（這是[`Entry`](xref:Xamarin.Forms.Entry)的預設值），表示可以輸入的字元數沒有有效的限制。
+[`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength)屬性值0表示不允許輸入，而且 `int.MaxValue`的值（這是[`Entry`](xref:Xamarin.Forms.Entry)的預設值），表示可以輸入的字元數沒有有效的限制。
 
 ### <a name="character-spacing"></a>字元間距
 
@@ -107,11 +107,11 @@ Entry entry = new Entry { CharacterSpacing = 10 };
 結果是[`Entry`](xref:Xamarin.Forms.Entry)所顯示文字中的字元間距，`CharacterSpacing` 與裝置無關的單位分開。
 
 > [!NOTE]
-> [@No__t_0] 屬性值會套用至 [`Text`] 和 [`Placeholder`] 屬性所顯示的文字。
+> [`CharacterSpacing`] 屬性值會套用至 [`Text`] 和 [`Placeholder`] 屬性所顯示的文字。
 
 ### <a name="password-fields"></a>密碼欄位
 
-`Entry` 提供 `IsPassword` 屬性。 當 `IsPassword` `true` 時，欄位的內容會以黑色圓圈呈現：
+`Entry` 提供 `IsPassword` 屬性。 當 `IsPassword` `true`時，欄位的內容會以黑色圓圈呈現：
 
 在 XAML 中：
 
@@ -145,7 +145,7 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ### <a name="setting-the-cursor-position-and-text-selection-length"></a>設定游標位置和文字選取範圍長度
 
-[@No__t_1](xref:Xamarin.Forms.Entry.CursorPosition)屬性可以用來傳回或設定下一個字元將插入至儲存在[`Text`](xref:Xamarin.Forms.Entry.Text)屬性中之字串的位置：
+[`CursorPosition`](xref:Xamarin.Forms.Entry.CursorPosition)屬性可以用來傳回或設定下一個字元將插入至儲存在[`Text`](xref:Xamarin.Forms.InputView.Text)屬性中之字串的位置：
 
 ```xaml
 <Entry Text="Cursor position set" CursorPosition="5" />
@@ -155,9 +155,9 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 var entry = new Entry { Text = "Cursor position set", CursorPosition = 5 };
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Entry.CursorPosition)屬性的預設值為0，表示將會在 `Entry` 開頭插入文字。
+[`CursorPosition`](xref:Xamarin.Forms.Entry.CursorPosition)屬性的預設值為0，表示將會在 `Entry`開頭插入文字。
 
-此外， [`SelectionLength`](xref:Xamarin.Forms.Entry.SelectionLength)屬性可以用來傳回或設定 `Entry` 內文字選取的長度：
+此外， [`SelectionLength`](xref:Xamarin.Forms.Entry.SelectionLength)屬性可以用來傳回或設定 `Entry`內文字選取的長度：
 
 ```xaml
 <Entry Text="Cursor position and selection length set" CursorPosition="2" SelectionLength="10" />
@@ -167,11 +167,11 @@ var entry = new Entry { Text = "Cursor position set", CursorPosition = 5 };
 var entry = new Entry { Text = "Cursor position and selection length set", CursorPosition = 2, SelectionLength = 10 };
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Entry.SelectionLength)屬性的預設值為0，表示未選取任何文字。
+[`SelectionLength`](xref:Xamarin.Forms.Entry.SelectionLength)屬性的預設值為0，表示未選取任何文字。
 
 ### <a name="displaying-a-clear-button"></a>顯示 [清除] 按鈕
 
-@No__t_0 屬性可以用來控制[`Entry`](xref:Xamarin.Forms.Entry)是否顯示 [清除] 按鈕，讓使用者可以清除文字。 這個屬性應該設定為 `ClearButtonVisibility` 列舉成員：
+`ClearButtonVisibility` 屬性可以用來控制[`Entry`](xref:Xamarin.Forms.Entry)是否顯示 [清除] 按鈕，讓使用者可以清除文字。 這個屬性應該設定為 `ClearButtonVisibility` 列舉成員：
 
 - `Never` 表示永遠不會顯示 [清除] 按鈕。 這是 `Entry.ClearButtonVisibility` 屬性的預設值。
 - `WhileEditing` 表示[`Entry`](xref:Xamarin.Forms.Entry)中會顯示 [清除] 按鈕，而其具有焦點和文字。
@@ -282,9 +282,9 @@ var entry = new Entry { ReturnType = ReturnType.Send };
 
 ### <a name="enabling-and-disabling-spell-checking"></a>啟用和停用拼寫檢查
 
-[@No__t_1](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性可控制是否啟用拼寫檢查。 根據預設，屬性會設定為 `true`。 當使用者輸入文字時，會顯示拼寫錯誤。
+[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性可控制是否啟用拼寫檢查。 根據預設，屬性會設定為 `true`。 當使用者輸入文字時，會顯示拼寫錯誤。
 
-不過，針對某些文字輸入案例（例如輸入使用者名稱），拼寫檢查會提供負面的體驗，而且應該藉由將[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設定為 `false` 來停用：
+不過，針對某些文字輸入案例（例如輸入使用者名稱），拼寫檢查會提供負面的體驗，而且應該藉由將[`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)屬性設定為 `false`來停用：
 
 ```xaml
 <Entry ... IsSpellCheckEnabled="false" />
@@ -299,9 +299,9 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 
 ### <a name="enabling-and-disabling-text-prediction"></a>啟用和停用文字預測
 
-[@No__t_1](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)屬性可控制是否啟用文字預測和自動文字更正。 根據預設，屬性會設定為 `true`。 當使用者輸入文字時，會顯示文字預測。
+[`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)屬性可控制是否啟用文字預測和自動文字更正。 根據預設，屬性會設定為 `true`。 當使用者輸入文字時，會顯示文字預測。
 
-不過，對於某些文字輸入案例，例如輸入使用者名稱、文字預測和自動文字更正會提供負面的體驗，而且應該藉由將[`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)屬性設定為 `false` 來停用：
+不過，對於某些文字輸入案例，例如輸入使用者名稱、文字預測和自動文字更正會提供負面的體驗，而且應該藉由將[`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)屬性設定為 `false`來停用：
 
 ```xaml
 <Entry ... IsTextPredictionEnabled="false" />
@@ -340,7 +340,7 @@ entry.TextColor = Color.Green;
 
 ![專案 TextColor 範例](entry-images/textcolor.png)
 
-請注意，預留位置不會受到指定 `TextColor` 的影響。
+請注意，預留位置不會受到指定 `TextColor`的影響。
 
 若要設定 XAML 中的背景色彩：
 
@@ -363,15 +363,15 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 專案會公開兩個事件：
 
-- 當專案中的文字變更時， [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) &ndash; 引發。 提供變更前後的文字。
+- 當專案中的文字變更時， [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) &ndash; 引發。 提供變更前後的文字。
 - 當使用者按下鍵盤上的 return 鍵結束輸入時， [`Completed`](xref:Xamarin.Forms.Entry.Completed) &ndash; 引發。
 
 > [!NOTE]
-> [@No__t_3](xref:Xamarin.Forms.Entry)繼承的[`VisualElement`](xref:Xamarin.Forms.VisualElement)類別，也會有[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)和[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
+> [`Entry`](xref:Xamarin.Forms.Entry)繼承的[`VisualElement`](xref:Xamarin.Forms.VisualElement)類別，也會有[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)和[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
 
-### <a name="completed"></a>已完成
+### <a name="completed"></a>Completed
 
-@No__t_0 事件是用來回應與專案互動的完成。 當使用者在鍵盤上按下 enter 鍵（或按 UWP 上的 Tab 鍵）時，就會引發 `Completed`。 事件的處理常式是一般事件處理常式，會取得傳送者並 `EventArgs`：
+`Completed` 事件是用來回應與專案互動的完成。 當使用者在鍵盤上按下 enter 鍵（或按 UWP 上的 Tab 鍵）時，就會引發 `Completed`。 事件的處理常式是一般事件處理常式，會取得傳送者並 `EventArgs`：
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -397,9 +397,9 @@ entry.Completed += Entry_Completed;
 
 ### <a name="textchanged"></a>TextChanged
 
-@No__t_0 事件是用來回應欄位內容中的變更。
+`TextChanged` 事件是用來回應欄位內容中的變更。
 
-每當 `Entry` 的 `Text` 變更時，就會引發 `TextChanged`。 事件的處理常式會取得 `TextChangedEventArgs` 的實例。 `TextChangedEventArgs` 透過 `OldTextValue` 和 `NewTextValue` 屬性，提供 `Entry` `Text` 的新舊值的存取權：
+每當 `Entry` 的 `Text` 變更時，就會引發 `TextChanged`。 事件的處理常式會取得 `TextChangedEventArgs`的實例。 `TextChangedEventArgs` 透過 `OldTextValue` 和 `NewTextValue` 屬性，提供 `Entry` `Text` 的新舊值的存取權：
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -409,7 +409,7 @@ void Entry_TextChanged (object sender, TextChangedEventArgs e)
 }
 ```
 
-@No__t_0 事件可以在 XAML 中訂閱：
+`TextChanged` 事件可以在 XAML 中訂閱：
 
 ```xaml
 <Entry TextChanged="Entry_TextChanged" />

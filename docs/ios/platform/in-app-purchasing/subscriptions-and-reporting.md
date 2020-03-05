@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e1019417ff7ac93abfe2396a4acaa76c66d182f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032297"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292266"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin 中的訂閱和報告
 
 ## <a name="about-non-renewing-subscriptions"></a>關於非續約訂閱
 
 非續訂訂閱適用于代表服務銷售時間限制的產品（例如一周的流覽應用程式存取權，或資料封存的限時存取）。   
-   
+
 非續約訂閱和其他產品類型之間的主要差異：
 
-- ITunes Connect 中的產品定義不包含該詞彙。 應用程式代碼必須能夠從產品識別碼推斷有效期間。 
-- 您可以購買多次（例如可耗用的產品）。 需要應用程式來管理訂用帳戶期限/到期日和更新，並防止使用者購買重迭的訂閱。 
-- StoreKit Restore 函數不支援購買。 如果訂用帳戶在所有使用者的裝置上都可供使用，則應用程式必須與遠端伺服器一起設計和執行這項功能。 應用程式也會負責備份裝置備份時的訂用帳戶狀態，然後從備份進行還原。 
+- ITunes Connect 中的產品定義不包含該詞彙。 應用程式代碼必須能夠從產品識別碼推斷有效期間。
+- 您可以購買多次（例如可耗用的產品）。 需要應用程式來管理訂用帳戶期限/到期日和更新，並防止使用者購買重迭的訂閱。
+- StoreKit Restore 函數不支援購買。 如果訂用帳戶在所有使用者的裝置上都可供使用，則應用程式必須與遠端伺服器一起設計和執行這項功能。 應用程式也會負責備份裝置備份時的訂用帳戶狀態，然後從備份進行還原。
 - 執行總覽
-- 通常應該使用伺服器提供的工作流程和受控的取用產品來執行非續訂訂閱。 
+- 通常應該使用伺服器提供的工作流程和受控的取用產品來執行非續訂訂閱。
 
 ## <a name="about-free-subscriptions"></a>關於免費訂閱
 
@@ -44,12 +44,12 @@ ms.locfileid: "73032297"
 
 自動可續訂訂閱應使用伺服器提供的產品工作流程來執行（請參閱*收據驗證和伺服器提供的產品*一節）。
 
-#### <a name="shared-secret"></a>共用密碼
+#### <a name="shared-secret"></a>共用祕密
 
 在您的伺服器上驗證自動可續訂訂閱時，必須在 JSON 要求中使用應用程式內購買共用密碼。 共用密碼是透過 iTunes Connect 建立/存取。
 
 從 iTunes Connect 首頁選取 **我的應用程式**：   
-   
+
  [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 選取應用程式，然後按一下 [**在應用程式內購買**] 索引標籤：
@@ -57,7 +57,7 @@ ms.locfileid: "73032297"
 [![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 從頁面底部，選取 [查看]**或 [產生共用密碼**]：
-   
+
  [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
@@ -101,16 +101,15 @@ SKPaymentTransaction 物件不包含訂用帳戶期限–您應該針對每個�
 ## <a name="reporting"></a>報告
 
 iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）提供：   
-   
+
  **銷售和趨勢**–顯示應用程式下載、更新和應用程式內購買的詳細資料。   
-   
+
  **付款和財務報表**-詳述您的應用程式所獲得的收益，以及列出已支付的款項和您所欠的金額。
 
 範例銷售和趨勢報表如下所示：   
 
  [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
-   
- 另外還有一個[ **[行楷] [連線] [** 行動 IOS 應用程式] （iTunes 連結）](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)。
-以下顯示一些可用統計資料的 iPhone 螢幕擷取畫面：   
-   
+
+ 另外還有一種**行楷 Connect**行動裝置 iOS 應用程式。 以下顯示一些可用統計資料的 iPhone 螢幕擷取畫面：   
+
  [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/21/2018
-ms.openlocfilehash: 2c1f571efb9ec3fb726912eb1e30496bc51fe26e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 49d1eea60f766f4cb61484a6e441506cf8f046ff
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026992"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291562"
 ---
 # <a name="is-it-possible-to-connect-to-android-emulators-running-on-a-mac-from-a-windows-vm"></a>從 Windows VM 連線到在 Mac 上執行的 Android 模擬器是否可行？
 
@@ -37,8 +37,7 @@ ms.locfileid: "73026992"
 
     奇數通訊埠是用來連接到 `adb`。 另請參閱[https://developer.android.com/tools/devices/emulator.html#emulatornetworking](https://developer.android.com/tools/devices/emulator.html#emulatornetworking)。
 
-4. _選項 1_：使用[`nc`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/nc.1.html)
-    將埠5555（或您想要的任何其他埠）外部接收的輸入 TCP 封包轉送到回送介面上的奇數埠（在此範例中為**127.0.0.1 5555** ），並將輸出封包轉送回另一種方式：
+4. _選項 1_：使用 `nc` 將埠5555（或您喜歡的任何其他埠）上外部接收的輸入 TCP 封包轉送到回送介面上的奇數埠（在此範例中為**127.0.0.1 5555** ），並以另一種方式轉送輸出封包：
 
     ```bash
     cd /tmp
@@ -48,10 +47,9 @@ ms.locfileid: "73026992"
 
     只要 `nc` 命令會在終端機視窗中保持執行狀態，封包就會如預期般轉送。 您可以在終端機視窗中輸入 Control-C，以在使用模擬器完成後結束 `nc` 命令。
 
-    （選項1通常比選項2更簡單，特別是如果**系統喜好設定 > 安全性 & 隱私權 > 防火牆**已開啟）。 
+    （選項1通常比選項2更簡單，特別是如果**系統喜好設定 > 安全性 & 隱私權 > 防火牆**已開啟）。
 
-    _選項 2_：使用[`pfctl`](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/pfctl.8.html)
-    若要將 TCP 封包從埠 `5555` （或您[喜歡的任何](https://kb.parallels.com/en/4948)其他埠）重新導向至回送介面上的奇數埠（在此範例中為`127.0.0.1:5555`）：
+    _選項 2_：使用 `pfctl` 將 TCP 封包從[共用網路](https://kb.parallels.com/en/4948)介面上的埠 `5555` （或您喜歡的任何其他埠）重新導向至回送介面上的奇數埠（在此範例中為`127.0.0.1:5555`）：
 
     ```bash
     sed '/rdr-anchor/a rdr pass on vmnet8 inet proto tcp from any to any port 5555 -> 127.0.0.1 port 5555' /etc/pf.conf | sudo pfctl -ef -
@@ -77,7 +75,7 @@ ms.locfileid: "73026992"
 
 3. 在 Windows 上執行 `ssh`，以在 Windows 上的本機埠（在此範例中為`localhost:15555`）與 Mac 回送介面上的奇數模擬器埠（在此範例中為`127.0.0.1:5555`）上設定雙向埠轉送：
 
-    ```cmd 
+    ```cmd
     C:\> ssh -L localhost:15555:127.0.0.1:5555 mac-username@ip-address-of-the-mac
     ```
 
@@ -103,4 +101,4 @@ ms.locfileid: "73026992"
 本檔討論2016年3月的目前行為。 本檔中所述的技術不是適用于 Xamarin 的穩定測試套件的一部分，因此未來可能會中斷。
 
 如果您注意到此技術已不再運作，或您注意到檔中有任何其他錯誤，歡迎您加入下列論壇往來文章的討論： [http://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm](https://forums.xamarin.com/discussion/33702/android-emulator-from-host-device-inside-windows-vm)。
-謝謝！
+感謝您！

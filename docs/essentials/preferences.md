@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: 1c6e55b69ca683b7fc1919995ba576ab77bf3c3b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: c7d4e4f7ea27e150752b222e3ea4ce2c4256a43a
+ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488500"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78295400"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
 
@@ -39,6 +39,12 @@ Preferences.Set("my_key", "my_value");
 
 ```csharp
 var myValue = Preferences.Get("my_key", "default_value");
+```
+
+若要檢查指定的索引_鍵_是否存在於喜好設定中：
+
+```csharp
+bool hasKey = Preferences.HasKey("my_key");
 ```
 
 從喜好設定中移除「鍵」：
@@ -73,15 +79,15 @@ Preferences.Clear();
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 所有資料都會儲存於[共用的喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)中。 如果未指定 `sharedName`，則會使用預設的共用喜好設定，否則該名稱會用來取得具有指定名稱的**私人**共用喜好設定。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
-[KeyChain](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) 用於在 iOS 裝置上儲存值。 如果未指定 `sharedName`，則會使用 `StandardUserDefaults`；否則該名稱會用於建立具有用於 `NSUserDefaultsType.SuiteName` 之指定名稱的新 `NSUserDefaults`。
+[KeyChain](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) 用於在 iOS 裝置上儲存值。 如果未指定 `sharedName`，則會使用 `StandardUserDefaults`；否則該名稱會用於建立具有用於 `NSUserDefaults` 之指定名稱的新 `NSUserDefaultsType.SuiteName`。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 用於將值儲存在裝置上。 如果未指定 `sharedName`，則會使用 `LocalSettings`否則該名稱會用於建立 `LocalSettings` 內的容器。 
 

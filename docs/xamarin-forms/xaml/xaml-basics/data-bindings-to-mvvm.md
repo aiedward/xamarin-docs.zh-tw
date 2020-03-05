@@ -1,5 +1,5 @@
 ---
-title: 第 5 部分： 從資料繫結到 MVVM
+title: 第 5 部分。 從資料繫結到 MVVM
 description: MVVM 模式會強制執行三個軟體層級的分隔，也就是 XAML 使用者介面，稱為 View;基礎資料，稱為模型;以及視圖與模型之間的媒介，稱為 ViewModel。
 ms.prod: xamarin
 ms.custom: video
@@ -8,14 +8,14 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
-ms.openlocfilehash: 80386780d52f9a28d421d2a83981085956d06ea5
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+ms.openlocfilehash: 1a6ab1393cbcd8224411aeea2af2aca27381bba3
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842943"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292881"
 ---
-# <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分： 從資料繫結到 MVVM
+# <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 從資料繫結到 MVVM
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
@@ -27,7 +27,7 @@ _Model View ViewModel （MVVM）架構模式是以 XAML 為出發點。此模式
 稍早您已瞭解如何定義新的 XML 命名空間宣告，以允許 XAML 檔案參考其他元件中的類別。 以下程式會定義 `System` 命名空間的 XML 命名空間宣告：
 
 ```csharp
-xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=netstandard"
 ```
 
 程式可以使用 `x:Static` 從靜態 `DateTime.Now` 屬性取得目前的日期和時間，並將該 `DateTime` 值設定為 `StackLayout`上的 `BindingContext`：
@@ -43,7 +43,7 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib"
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="XamlSamples.OneShotDateTimePage"
              Title="One-Shot DateTime Page">
 
@@ -699,13 +699,13 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 }
 ```
 
-## <a name="video"></a>視訊
+## <a name="video"></a>影片
 
 > [!VIDEO https://youtube.com/embed/DYRLcqG2BAY]
 
 **Xamarin 演變2016：使用 Xamarin 和 Prism 使 MVVM 變得簡單**
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 XAML 是一種功能強大的工具，可在 Xamarin. Forms 應用程式中定義使用者介面，特別是在使用資料系結和 MVVM 時。 結果是全新、精緻且可能 toolable 的使用者介面標記法，其中包含程式碼中的所有背景支援。
 

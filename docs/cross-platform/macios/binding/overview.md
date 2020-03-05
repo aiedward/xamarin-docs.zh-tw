@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015875"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292179"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目標-C 系結的總覽
 
@@ -19,7 +19,7 @@ _系結程式運作方式的詳細資料_
 
 系結與 Xamarin 搭配使用的目標-C 程式庫需要三個步驟：
 
-1. C#撰寫「API 定義」來描述如何在 .net 中公開原生 API，以及如何將它對應至基礎目標-C。 這是使用標準C#結構（例如 `interface`和各種系結**屬性**）來完成（請參閱這個簡單的[範例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
+1. C#撰寫「API 定義」來描述如何在 .net 中公開原生 API，以及如何將它對應至基礎目標-C。 這是使用標準C#結構（例如 `interface` 和各種系結**屬性**）來完成（請參閱這個簡單的[範例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)）。
 
 2. 在中C#撰寫「API 定義」之後，您可以將它編譯以產生「系結」元件。 這可以在[**命令列**](#commandline)上執行，或在 Visual Studio for Mac 或 Visual Studio 中使用系結[**專案**](#bindingproject)。
 
@@ -35,7 +35,7 @@ _系結程式運作方式的詳細資料_
 
 ## <a name="command-line-bindings"></a>命令列系結
 
-您可以使用適用于 Xamarin 的 `btouch-native` （或者，如果您使用的是 Xamarin，則為 `bmac-native`）直接建立系結。 其運作方式是將C#您手動建立的 API 定義（或使用目標 Sharpie）傳遞至命令列工具（適用于 iOS 的`btouch-native`或 Mac 的`bmac-native`）。
+您可以使用適用于 Xamarin 的 `btouch-native` （或者，如果您使用的是 Xamarin，則為 `bmac-native`）直接建立系結。 其運作方式是將C#您手動建立的 API 定義（或使用目標 Sharpie）傳遞至命令列工具（適用于 iOS 的`btouch-native` 或 Mac 的 `bmac-native`）。
 
 叫用這些工具的一般語法如下：
 
@@ -73,7 +73,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 您可以使用[[Register]](xref:Foundation.RegisterAttribute)屬性、 [[Export]](xref:Foundation.ExportAttribute)屬性和[手動的目標 c 選取器調用](~/ios/internals/objective-c-selectors.md)，以手動方式系結新的（先前未系結的）目標 c 類型。
 
-首先，尋找您想要系結的類型。 為了進行討論（和簡化），我們會系結[NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)類型（已系結至[NSEnumerator](xref:Foundation.NSEnumerator); 以下的實作為範例）。
+首先，尋找您想要系結的類型。 為了進行討論（和簡化），我們會系結[NSEnumerator](https://developer.apple.com/documentation/foundation/nsenumerator)類型（已系結至[NSEnumerator](xref:Foundation.NSEnumerator); 以下的實作為範例）。
 
 第二，我們需要建立C#型別。 我們可能會想要將它放在命名空間中;因為目標-C 不支援命名空間，所以我們必須使用 `[Register]` 屬性來變更 Xamarin iOS 將向目標 C 執行時間註冊的類型名稱。 C#型別也必須繼承自[NSObject](xref:Foundation.NSObject)：
 

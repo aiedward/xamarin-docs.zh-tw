@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 778b8eeb82ebfb62cfb8c16e14f341c9afb8ff7a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f6218977e9ad0d4c396ef127c3c3ca53dc56d7d3
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022246"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292708"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>。在 Xamarin 中產生 xib 程式碼
 
@@ -33,7 +33,7 @@ Visual Studio 的 Xamarin 目前不支援使用**xib**檔案。
 
 ## <a name="generating-code"></a>產生程式碼
 
-針對具有 [建立] 動作為 [*頁面*] 的任何 **{0}xib**檔案，如果專案中也有 **{0}xib.designer.cs**檔案，Visual Studio for Mac 將會在設計工具檔案中，為它可以在中找到的所有使用者類別產生部分類別。**xib**檔案，其中包含所有動作的輸出屬性和部分方法。 只要此檔案存在，就會啟用程式碼產生。
+針對具有 [建立] 動作為 [*頁面*] 的任何 **{0}xib**檔案，如果專案中也有 **{0}xib.designer.cs**檔案，Visual Studio for Mac 將會在設計工具檔案中，為它在**xib**檔案中找到的所有使用者類別產生部分類別，並提供所有動作的輸出和部分方法的屬性。 只要此檔案存在，就會啟用程式碼產生。
 
 當**xib**檔案變更時，會自動更新設計工具檔案，並 Visual Studio for Mac 重新取得焦點。 設計工具檔案不應手動修改，因為下次 Visual Studio for Mac 更新檔案時，將會覆寫變更。
 
@@ -47,7 +47,7 @@ Visual Studio for Mac 會使用設計工具檔案位置的專案預設命名空�
 
 ## <a name="non-designer-class-parts"></a>非設計工具類別元件
 
-設計工具部分類別不適合用來依原本使用。 輸出為私用，且未指定任何基底類別。 預期每個類別在另一個檔案中將會有對應的「非設計師」類別部分，而這個檔案會設定基類、使用或公開輸出，以及定義在載入時從機器碼具現化類別所需的函式 **。 xib**. **Xib**範本會執行這項操作，但針對您在**xib**中定義的任何其他自訂類別，您必須手動新增非設計工具元件。
+設計工具部分類別不適合用來依原本使用。 輸出為私用，且未指定任何基底類別。 預期每個類別在另一個檔案中將會有對應的「非設計工具」類別部分，這會設定基類、使用或公開輸出，以及定義在載入 **. xib**時，從機器碼具現化類別所需的函式。 **Xib**範本會執行這項操作，但針對您在**xib**中定義的任何其他自訂類別，您必須手動新增非設計工具元件。
 
 這是需要彈性的原因。 例如，多個程式碼後置類別可以子類別化通用的 managed 抽象類別，這會將類別分類為由 IB 進行子類別化。
 
@@ -81,7 +81,7 @@ Visual Studio for Mac 會使用設計工具檔案位置的專案預設命名空�
 
 ## <a name="cross-xib-class-usage"></a>跨 XIB 類別使用方式
 
-有時候，使用者想要從多個**xib**檔案參考相同的類別，例如使用索引標籤控制器。 這可以藉由明確從另一個**xib**檔案參考類別定義來完成，或在第二個 **. xib**中再次定義相同的類別名稱。
+有時候，使用者想要從多個**xib**檔案參考相同的類別，例如使用索引標籤控制器。 這可以藉由從另一個**xib**檔案明確參考類別定義，或在第二個**xib**中再次定義相同的類別名稱來完成。
 
 第二種情況可能會造成問題，因為 Visual Studio for Mac 個別處理**xib**檔案。 它無法自動偵測及合併重複的定義，因此當您在多個設計工具檔案中定義相同的部分類別時，您可能會發現多次套用 Register 屬性的衝突。 最新版本的 Visual Studio for Mac 嘗試解決此問題，但可能不一定會如預期般運作。 在未來，這可能會變得不受支援，而是 Visual Studio for Mac 會讓專案中所有**xib**檔案和 managed 程式碼中定義的所有型別直接顯示在所有**xib**檔中。
 

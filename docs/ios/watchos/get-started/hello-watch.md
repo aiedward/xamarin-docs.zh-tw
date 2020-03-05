@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/14/2016
-ms.openlocfilehash: f1551607a621ac3960c39d282111065c258ed90e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d8b48892a5a1106b03778ac30eca4b18f049f4d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032768"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292627"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello，watchOS –逐步解說
 
@@ -28,17 +28,17 @@ ms.locfileid: "73032768"
 
 您應該能夠立即執行監看式應用程式，但因為監看式應用程式中的分鏡腳本檔案是空白的，所以您將無法分辨。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](hello-watch-images/projectstructure.png "The Solution Explorer")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](hello-watch-images/vs-projectstructure.png "The Solution Explorer")
 
 -----
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 按兩下監看式應用程式中的介面，以啟動 Xamarin iOS 設計工具（如果您是在 Mac 上，您也可以用滑鼠右鍵按一下並**開啟，> Xcode Interface Builder**）
 
@@ -49,7 +49,7 @@ ms.locfileid: "73032768"
 
     ![](hello-watch-images/interfacecontrollerattributes.png "Set the Identifier and Title of the Interface Controller to interfaceController and Hi Watch")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 按兩下 [監看式] 應用程式中的 [腳本]，在 Visual Studio 中使用 Xamarin iOS 設計工具進行編輯：
 
@@ -68,11 +68,11 @@ ms.locfileid: "73032768"
 1. 將**按鈕**和**標籤**拖放到場景上，然後
 1. 設定控制項的文字和屬性，如下所示：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](hello-watch-images/draganddrop.png "Set the text and attributes of the controls as shown")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](hello-watch-images/vs-draganddrop.png "Set the text and attributes of the controls as shown")
 
@@ -87,7 +87,7 @@ ms.locfileid: "73032768"
 
 ![](hello-watch-images/buttonaction.png "The OnButtonPress Action added to a button")
 
-儲存腳本之後， **InterfaceController.designer.cs**會以控制項名稱和動作進行更新。 如果您在更新檔案之後開啟此檔案，您可以查看 `RegisterAttribute` 如何對應至控制器，以及 UI 控制項如何對應至C#以`OutletAttribute`標記的執行個體變數，以及動作如何對應至標記為`ActionAttribute`的部分方法。:
+儲存腳本之後， **InterfaceController.designer.cs**會以控制項名稱和動作進行更新。 如果您在更新檔案之後開啟此檔案，您可以查看 `RegisterAttribute` 如何對應至控制器，以及 UI 控制項如何對應至C#以 `OutletAttribute` 標記的執行個體變數，以及動作如何對應至標記為 `ActionAttribute`的部分方法：
 
 ```csharp
 // WARNING
@@ -155,6 +155,5 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 
 ## <a name="related-links"></a>相關連結
 
-- [消費者入門（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gettingstarted)
 - [設定與安裝](~/ios/watchos/get-started/installation.md)
 - [第一次監看應用程式影片](https://blog.xamarin.com/your-first-watch-kit-app/)

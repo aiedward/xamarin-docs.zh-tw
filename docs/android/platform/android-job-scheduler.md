@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 4b1e0b32050b22a63bb89b28107877ef3e196b16
-ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
+ms.openlocfilehash: 10d2ae6ac35f02d75ef6e04a0531ec3f5dafd668
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667035"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78291965"
 ---
 # <a name="android-job-scheduler"></a>Android 工作排程器
 
@@ -76,7 +76,7 @@ Android 工作排程器程式庫所執行的所有工作都必須在擴充 `Andr
 3. 將 `ServiceAttribute` 上的 `Permission` 屬性設定為字串 `android.permission.BIND_JOB_SERVICE`。
 4. 覆寫 `OnStartJob` 方法，並加入程式碼來執行工作。 Android 會在應用程式的主執行緒上叫用此方法，以執行作業。 需要線上程上執行數毫秒的工作，以避免封鎖應用程式。
 5. 當工作完成時，`JobService` 必須呼叫 `JobFinished` 方法。 這個方法是 `JobService` 告訴 `JobScheduler` 完成工作的方式。 無法呼叫 `JobFinished` 會導致 `JobService` 在裝置上放置不必要的需求，因而縮短電池壽命。 
-6. 也要覆寫 `OnStopJob` 方法是個不錯的主意。 此方法是由 Android 在作業完成前關閉，並提供 `JobService` 有機會適當處置任何資源。 如果需要重新排程作業，則這個方法應該會傳回 `true`，如果不是 desireable 來重新執行作業，則會傳回 `false`。
+6. 也要覆寫 `OnStopJob` 方法是個不錯的主意。 此方法是由 Android 在作業完成前關閉，並提供 `JobService` 有機會適當處置任何資源。 如果需要重新排程作業，則這個方法應該會傳回 `true`，如果不想要重新執行作業，則 `false`。
 
 下列程式碼是應用程式最簡單 `JobService` 的範例，使用 TPL 以非同步方式執行一些工作：
 
@@ -148,7 +148,7 @@ Android 工作排程器的強大功能之一，就是能夠控制作業的執行
 
 `SetBackoffCriteria` 會提供一些指引，說明在嘗試再次執行作業之前，`JobScheduler` 應該等待多久時間。 輪詢準則有兩個部分：延遲（以毫秒為單位）（預設值為30秒），以及應該使用的後端類型（有時稱為「輪詢_原則_」或「_重試原則_」）。 這兩個原則封裝在 `Android.App.Job.BackoffPolicy` 列舉：
 
-- `BackoffPolicy.Exponential` &ndash; 指數輪詢原則會在每次失敗後，以指數方式增加初始輪詢值。 第一次作業失敗時，程式庫會等待重新排程作業之前指定的初始間隔–範例為30秒。 第二次作業失敗時，程式庫會等待至少60秒，然後才嘗試執行此作業。 第三次嘗試失敗之後，程式庫會等候120秒，依此類推。 此為預設值。
+- `BackoffPolicy.Exponential` &ndash; 指數輪詢原則會在每次失敗後，以指數方式增加初始輪詢值。 第一次作業失敗時，程式庫會等待重新排程作業之前指定的初始間隔–範例為30秒。 第二次作業失敗時，程式庫會等待至少60秒，然後才嘗試執行此作業。 第三次嘗試失敗之後，程式庫會等候120秒，依此類推。 這是預設值。
 - `BackoffPolicy.Linear` &ndash; 此策略是一種線性輪詢，應將作業重新排程為在設定的間隔執行（直到成功為止）。 線性輪詢最適用于必須儘快完成的工作，或可快速解決的問題。 
 
 如需建立 `JobInfo` 物件的詳細資訊，請參閱[Google 的 `JobInfo.Builder` 類別檔](https://developer.android.com/reference/android/app/job/JobInfo.Builder.html)。
@@ -214,7 +214,7 @@ jobScheduler.CancelAll();
 jobScheduler.Cancel(1)
 ```
   
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南將討論如何使用 Android 工作排程器，以智慧方式在背景中執行工作。 它討論了如何封裝要當做 `JobService` 執行的工作，以及如何使用 `JobScheduler` 來排程該工作、指定 `JobTrigger` 的準則，以及如何使用 `RetryStrategy`來處理失敗。
 

@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 4b6fcfc3120c3ef09556f3466295f4bee35fad0c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 13271b50353d95ecd2db40e25d549788111530f7
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029000"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292702"
 ---
 # <a name="xamarinandroid-gridlayout"></a>Xamarin. Android GridLayout
 
 `GridLayout` 是新的 `ViewGroup` 子類別，支援在2D 方格中配置視圖，類似于 HTML 表格，如下所示：
 
- [顯示四個數據格的![裁剪 GridLayout](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
+ [顯示四個數據格的 ![裁剪 GridLayout](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
  `GridLayout` 適用于一般視圖階層，其中子視圖會藉由指定應該位於其中的資料列和資料行，在方格中設定其位置。 如此一來， *GridLayout*就能夠在方格中定位視圖，而不需要任何中繼視圖都提供資料表結構，例如在 TableLayout 中使用的資料表資料列中顯示。 藉由維護平面階層， *GridLayout*可以更快速地配置其子視圖。 讓我們來看一個範例，以說明這個概念在程式碼中實際代表的意義。
 
@@ -49,11 +49,11 @@ ms.locfileid: "73029000"
 
 版面配置會調整資料列和資料行的大小，讓資料格可以符合其內容，如下圖所示：
 
- [版面配置的![圖，顯示左邊小於右邊的兩個儲存格](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
+ [版面配置的 ![圖，顯示左邊小於右邊的兩個儲存格](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
 這會在應用程式中執行時產生下列使用者介面：
 
- [顯示四個數據格的 GridLayoutDemo 應用程式![螢幕擷取畫面](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
+ [顯示四個數據格的 GridLayoutDemo 應用程式 ![螢幕擷取畫面](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
 ## <a name="specifying-orientation"></a>指定方向
 
@@ -71,7 +71,7 @@ ms.locfileid: "73029000"
 
 現在，`GridLayout` 會將每個資料行中的儲存格（而不是由左至右）放在上方，如下所示：
 
- [說明如何以垂直方向放置儲存格的![圖表](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
+ [說明如何以垂直方向放置儲存格的 ![圖表](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
 這會在執行時間產生下列使用者介面：
 
@@ -113,7 +113,7 @@ ms.locfileid: "73029000"
 
 ### <a name="specifying-spacing"></a>指定間距
 
-我們有幾個選項可提供 `GridLayout` 的子視圖之間的間距。 我們可以使用 `layout_margin` 屬性來直接設定每個子視圖的邊界，如下所示
+我們有幾個選項可提供 `GridLayout`的子視圖之間的間距。 我們可以使用 `layout_margin` 屬性來直接設定每個子視圖的邊界，如下所示
 
 ```xml
 <TextView
@@ -125,7 +125,7 @@ ms.locfileid: "73029000"
 ```
 
 此外，在 Android 4 中，現在可以使用新的一般用途間距視圖，稱為 `Space`。 若要使用它，請直接將它新增為子視圖。
-例如，下列 XML 會將一個額外的資料列新增至 `GridLayout`，方法是將其 `rowcount` 設定為3，並加入 `Space` 視圖，以提供 `TextViews` 之間的間距。
+例如，下列 XML 會將一個額外的資料列新增至 `GridLayout`，方法是將其 `rowcount` 設定為3，並加入 `Space` 視圖，以提供 `TextViews`之間的間距。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -165,7 +165,7 @@ ms.locfileid: "73029000"
 
 此 XML 會在 `GridLayout` 中建立間距，如下所示：
 
- [GridLayoutDemo 的螢幕擷取畫面，其中會以間距說明較大的資料格![](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
+ [GridLayoutDemo 的螢幕擷取畫面，其中會以間距說明較大的資料格 ![](grid-layout-images/03-gridlayout.png)](grid-layout-images/03-gridlayout.png#lightbox)
 
 使用新的 `Space` view 的優點是，它允許間距，而且不需要我們在每個子視圖上設定屬性。
 
@@ -236,5 +236,3 @@ ms.locfileid: "73029000"
 ## <a name="related-links"></a>相關連結
 
 - [GridLayoutDemo （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/gridlayoutdemo)
-- [霜淇淋三明治簡介](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

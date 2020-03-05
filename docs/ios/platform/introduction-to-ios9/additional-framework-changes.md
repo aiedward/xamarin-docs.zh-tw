@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d9d47e750580bb9e4a0f4a2283cbd9e8c6a44c93
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: fd9bced0d2185fd9bd0d18932921c101b2ed207c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489085"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292950"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>其他 iOS 9 架構變更
 
@@ -61,7 +61,6 @@ CloudKit 架構可簡化存取 iCloud 之應用程式的開發。 這包括抓�
 - [CloudKit 簡介](~/ios/data-cloud/intro-to-cloudkit.md)-我們在 Xamarin iOS 應用程式中使用 CloudKit 的簡介。
 - [CloudKit 快速入門](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)-Apple 簡介 CloudKit。
 - [CLOUDKIT JS 參考](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359)-Apple 的 CloudKit JS 檔。
-- [CloudKit Web 服務參考](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240)-描述要 CLOUDKIT 之 HTTP 介面的 Apple 參考。
 - [CloudKit Catalog： CloudKit （Cocoa 和 JavaScript）簡介](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-使用 CloudKit 和 CloudKit JS 的 Apple 範例應用程式。
 
 > [!IMPORTANT]
@@ -117,7 +116,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 Apple 在 iOS 9 中的[HealthKit](xref:HealthKit)架構包含下列變更：
 
 - 支援 HealthKit 資料庫中的專案大量刪除和刪除追蹤。 如需詳細資訊，請參閱 Apple 的[HKDeletedObject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject)、 [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery)和[HKHealthStore 類別參考](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708)。
-- 新的追蹤分類和特性已新增至 `HKQuantityTypeIdentifier` 類別（例如 `UVExposure`）和 `HKCategoryTypeIdentifier` 類別（例如 `OvulationTestResult`）。 如需詳細資訊，請參閱 Apple 的[HealthKit 常數參考](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710)。
+- 新的追蹤分類和特性已新增至 `HKQuantityTypeIdentifier` 類別（例如 `UVExposure`）和 `HKCategoryTypeIdentifier` 類別（例如 `OvulationTestResult`）。 
 
 如需在 Xamarin 中使用 HealthKit 的詳細資訊，請參閱我們的[HealthKit 簡介](~/ios/platform/healthkit.md)檔。
 
@@ -125,7 +124,7 @@ Apple 在 iOS 9 中的[HealthKit](xref:HealthKit)架構包含下列變更：
 
 Apple 在 iOS 9 中對[本機驗證](xref:LocalAuthentication)架構包含下列變更：
 
-- 使用 [LACoNtext](xref:LocalAuthentication.LAContext) 類別的`EvaluateAccessControl`和`EvaluatePolicy`方法, 您現在可以重複使用先前成功的解除鎖定嘗試的觸控識別碼相符專案。
+- 使用[LACoNtext](xref:LocalAuthentication.LAContext)類別的 `EvaluateAccessControl` 和 `EvaluatePolicy` 方法，您現在可以重複使用先前成功的解除鎖定嘗試的觸控識別碼相符專案。
 - 取得目前已註冊手指清單的能力。
 - 支援在從驗證新增或移除手指時進行追蹤。
 - 在 Keychain 呼叫中使用_驗證內容_，以及支援評估 Keychain 存取控制清單的能力。
@@ -221,7 +220,7 @@ Apple 在 iOS 9 中提供了許多觸控事件的增強功能。 這些功能包
 
 新的 `NSLayoutAnchor` 和 `NSLayoutDimension` 版面配置錨點類別會使用[UIView](xref:UIKit.UIView)類別的新錨點屬性（例如 `LeadingAnchor` 和 `WidthAnchor`），讓 iOS 9 中的版面配置變得更容易。
 
-如需在 Xamarin iOS 應用程式中使用自動調整和大小類別的詳細資訊, 請參閱我們的[整合分鏡指令檔簡介](~/ios/user-interface/storyboards/unified-storyboards.md)和 Apple 的[NSLayoutAnchor 參考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)、 [NSLayoutDimension 參考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)和[ UIView 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)如需詳細資訊, 請參閱。
+如需有關在 Xamarin iOS 應用程式中使用自動調整和大小類別的詳細資訊，請參閱我們的[整合](~/ios/user-interface/storyboards/unified-storyboards.md)分鏡指令檔簡介和 Apple 的[NSLayoutAnchor 參考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)、 [NSLayoutDimension 參考](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)和[UIView 參考](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)，以取得詳細資訊。
 
 ### <a name="new-readable-content-margins"></a>新的可讀取內容邊界
 

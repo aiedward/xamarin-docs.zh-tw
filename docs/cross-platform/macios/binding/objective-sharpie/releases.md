@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: davidortinau
 ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: 2f1fb3706012fa86834986064a366071b644b2dc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f60be3f7dc14749f5cd58d5228c17fa85282cd78
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015959"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291684"
 ---
 # <a name="objective-sharpie-release-history"></a>目標 Sharpie 發行歷程記錄
 
@@ -57,8 +57,6 @@ ms.locfileid: "73015959"
 * 若為建立架構產品的 Xcode 專案，請將該產品（而不是中繼產品目標）剖析為 Xcode 專案中的非架構目標，可能仍會有無法自動解決的多義性。
 
 ## <a name="216-march-17-2015"></a>2.1.6 （2015年3月17日）
-
-[下載 v 2.1。6](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.6.pkg)
 
 * 已修正二元運算子運算式系結：運算式的左邊未正確地與右手交換（例如，`1 << 0` 不正確地系結為 `0 << 1`）。 感謝 Adam Kemp 注意這一點！
 * 已修正 `NSInteger` 和 `NSUInteger` 系結為 `int` 和 `uint`，而不是在 i386 上 `nint` 和 `nuint` 的問題。`-DNS_BUILD_32_LIKE_64` 現在會傳遞至 Clang，使剖析 `objc/NSObjCRuntime.h` 在 i386 上如預期般運作。

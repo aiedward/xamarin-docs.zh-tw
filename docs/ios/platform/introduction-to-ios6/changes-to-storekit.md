@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1d49be1f4339b658e8202d4091b9a12b45d7b507
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7cf18934c70acf59213a697ab57b6c5e308e7b2a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031913"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291883"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中對 StoreKit 所做的變更
 
@@ -21,7 +21,7 @@ _iOS 6 對商店套件 API 引進了兩項變更：從您的應用程式中顯�
 在 iOS6 中儲存套件的主要變更為這兩項新功能：
 
 - **應用程式內內容顯示 & 購買**-使用者可以購買並下載應用程式、音樂、書籍和其他 iTunes 內容，而不需要離開您的應用程式。 您也可以連結到您自己的應用程式來推廣購買，或只是鼓勵評論和評等。
-- **應用程式內購買**裝載的內容– Apple 會儲存並提供與您的應用程式內購買產品相關聯的內容，這不需要個別的伺服器來裝載您的檔案，而會自動支援背景下載並讓您撰寫較少的程式碼。
+- **應用程式內購買**裝載的內容– Apple 會儲存並傳遞與您的應用程式內購買產品相關聯的內容，這不需要個別的伺服器來裝載您的檔案、自動支援背景下載，並可讓您撰寫較少的程式碼。
 
 如需 StoreKit Api 的詳細涵蓋範圍，請參閱[應用程式內購買](~/ios/platform/in-app-purchasing/index.md)指南。
 
@@ -100,14 +100,14 @@ void Buy (int productId)
 if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
     // do iOS6+ stuff, using SKStoreProductViewController as shown above
 } else {
-    // don't do stuff requiring iOS 6.0, use the old syntax 
+    // don't do stuff requiring iOS 6.0, use the old syntax
     // (which will take the user out of your app)
     var nsurl = new NSUrl("http://itunes.apple.com/us/app/angry-birds/id343200656?mt=8");
     UIApplication.SharedApplication.OpenUrl (nsurl);
 }
 ```
 
-### <a name="errors"></a>錯誤
+### <a name="errors"></a>Errors
 
 如果您使用的 Apple ID 無效，將會發生下列錯誤，這可能會造成混淆，因為它暗示了某種類型的網路或驗證問題。
 
@@ -131,18 +131,18 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 
 ### <a name="search-api"></a>搜尋 API
 
-Apple 提供動態搜尋 API 來查詢 App Store、iTunes 和 iBookstore 中的所有產品。 如需如何存取搜尋 API 的資訊，請參閱[Apple 的分支機搆資源](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)，雖然 API 會公開給任何人（而不只是註冊的關係企業）。 您可以剖析產生的 JSON，以探索要搭配 `SKStoreProductViewController`使用的 Apple ID `trackId`。
+Apple 提供動態搜尋 API 來查詢 App Store、iTunes 和 iBookstore 中的所有產品。 如需如何存取搜尋 API 的資訊，請參閱 Apple 的分支機搆資源，雖然 API 會公開給任何人（而不只是註冊的關係企業）。 您可以剖析產生的 JSON，以探索要搭配 `SKStoreProductViewController`使用的 Apple ID `trackId`。
 
 結果也會包含其他中繼資料，包括可在應用程式中用來呈現產品的顯示資訊和插圖 Url。
 
 以下是一些範例：
 
-- **iBooks 應用程式**– [https://itunes.apple.com/search?term=ibooks&amp ; 實體 = 軟體&amp; 國家/地區 = 美國](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
-- **點和 Kangaroo ibook store** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; entity = 電子書&amp; country = us](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
+- **iBooks 應用程式**– [https://itunes.apple.com/search?term=ibooks&amp; 實體 = 軟體&amp;國家/地區 = 美國](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
+- **點和 Kangaroo ibook store** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; entity = 電子書&amp;country = us](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
 
 ### <a name="enterprise-partner-feed"></a>企業合作夥伴摘要
 
-Apple 為核准合作夥伴提供所有產品的完整資料傾印，其形式為可下載資料庫的一般檔案。 如果您有資格存取[企業合作夥伴](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-enterprise-partner-feed.html)摘要，則可以在該資料集中找到任何產品的 Apple ID。
+Apple 為核准合作夥伴提供所有產品的完整資料傾印，其形式為可下載資料庫的一般檔案。 如果您有資格存取企業合作夥伴摘要，則可以在該資料集中找到任何產品的 Apple ID。
 
 企業合作夥伴摘要的許多使用者都是「[分支機搆計畫](https://www.apple.com/itunes/affiliates)」的成員，可讓您贏得「產品銷售」的傭金。 `SKStoreProductViewController` 不支援分支機搆識別碼（在撰寫本文時）。
 
@@ -170,8 +170,8 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 如果您的應用程式內購買包含可下載的內容（例如書籍或其他媒體、遊戲層級的美工和設定，或其他大型檔案），則這些檔案會裝載在您的 web 伺服器上，而應用程式必須納入程式碼，以便在之後安全地下載購. 從 iOS 6 開始，Apple 會在其伺服器上裝載您的檔案，而不需要個別的伺服器。 此功能僅適用于非使用中的產品（不是可取用或訂用帳戶）。 使用 Apple 主控服務的優點包括：
 
 - 節省裝載 & 頻寬成本。
-- 可能比您目前使用的任何伺服器主機更具擴充性。 
-- 較少撰寫程式碼，因為您不需要建立任何伺服器端處理。 
+- 可能比您目前使用的任何伺服器主機更具擴充性。
+- 較少撰寫程式碼，因為您不需要建立任何伺服器端處理。
 - 系統會為您實作為背景下載。
 
 注意：不支援在 iOS 模擬器中測試裝載的應用程式內購買內容，因此您必須使用實際裝置進行測試。
@@ -196,7 +196,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 下列各節說明如何使用本文的範例程式碼，從建立和上傳封裝到管理購買和下載程式，以執行裝載的內容。
 
-### <a name="sample-code"></a>程式碼範例
+### <a name="sample-code"></a>範例程式碼
 
 範例專案*HostedNonConsumables* （在 StoreKitiOS6 中）會使用裝載的內容。 此應用程式提供兩個「書籍章節」來銷售，其內容裝載于 Apple 的伺服器上。 內容是由文字檔和影像所組成，雖然在實際的應用程式中可以使用更複雜的內容。
 
@@ -269,7 +269,8 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 ![](changes-to-storekit-images/image13.png "Choose Archiven")
 
-內容套件隨後會出現在封存中，如下所示。 封存類型和圖示顯示這一行是**應用程式內購買內容**封存。 按一下 [**驗證 ...** ] 若要檢查我們的內容套件是否有錯誤，而不實際執行上傳。
+內容套件隨後會出現在封存中，如下所示。
+封存類型和圖示顯示這一行是**應用程式內購買內容**封存。 按一下 [**驗證 ...** ] 若要檢查我們的內容套件是否有錯誤，而不實際執行上傳。
 
 [![](changes-to-storekit-images/image14.png "Validate the package")](changes-to-storekit-images/image14.png#lightbox)
 
@@ -469,7 +470,7 @@ public void SaveDownload (SKDownload download)
     // targetfolder will be "/Documents/com.xamarin.storekitdoc.montouchimages/" or something like that
     if (!System.IO.Directory.Exists (targetfolder))
         System.IO.Directory.CreateDirectory (targetfolder);
-    foreach (var file in System.IO.Directory.EnumerateFiles 
+    foreach (var file in System.IO.Directory.EnumerateFiles
              (System.IO.Path.Combine(download.ContentUrl.Path, "Contents"))) { // Contents directory is the default in .PKG files
         var fileName = file.Substring (file.LastIndexOf ("/") + 1);
         var newFilePath = System.IO.Path.Combine(targetfolder, fileName);
@@ -514,7 +515,7 @@ public void SaveDownload (SKDownload download)
 
 Apple 的 iCloud 備份指導方針會建議您不應該備份從伺服器輕鬆還原的非使用者內容（因為它*不*需要使用 iCloud 存放裝置）。 如需設定 backup 屬性的詳細資訊，請參閱[檔案系統檔](~/ios/app-fundamentals/file-system.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文在 iOS6 中引進了兩項新功能：在您的應用程式中購買 iTunes 和其他內容，以及利用 Apple 的伺服器來裝載您自己的應用程式內購買。 本簡介應與現有的[應用程式內購買檔](~/ios/platform/in-app-purchasing/index.md)一起閱讀，以取得完整的商店套件功能涵蓋範圍。
 
@@ -524,7 +525,6 @@ Apple 的 iCloud 備份指導方針會建議您不應該備份從伺服器輕鬆
 - [App 內購買](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit 架構參考](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController 類別參考](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
-- [iTunes 搜尋 API 參考](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
 - [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)

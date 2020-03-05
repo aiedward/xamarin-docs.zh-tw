@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: e0ab824eff4c8bb18a2bd1998862df433cdade1a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 84d235bb7c6874255ea025ff5897e150bd6f023b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011110"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292400"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin 中的應用程式傳輸安全性
 
 _應用程式傳輸安全性（ATS）會在網際網路資源（例如應用程式的後端伺服器）和您的應用程式之間，強制執行安全的連接。_
 
-本文將介紹應用程式傳輸安全性在 iOS 9 應用程式上強制執行的安全性變更，以及[這對您的 Xamarin ios 專案所代表的意義。](#xamarinsupport)它會涵蓋[ATS 設定選項](#config)，並涵蓋如何選擇不使用[ATS](#optout)ATS （如有必要）。 因為預設會啟用 ATS，所以任何不安全的網際網路連線都會在 iOS 9 應用程式中引發例外狀況（除非您已明確允許）。
+本文將介紹應用程式傳輸安全性在 iOS 9 應用程式上強制執行的安全性變更，以及[這對您的 Xamarin ios 專案所代表的意義](#xamarinsupport)。它會涵蓋[ATS 設定選項](#config)，並涵蓋如何選擇不使用[ATS](#optout) ATS （如有必要）。 因為預設會啟用 ATS，所以任何不安全的網際網路連線都會在 iOS 9 應用程式中引發例外狀況（除非您已明確允許）。
 
 ## <a name="about-app-transport-security"></a>關於應用程式傳輸安全性
 
@@ -72,7 +72,7 @@ ATS 安全的網際網路通訊可接受下列轉寄密碼加密類型：
 
 針對新的 Xamarin iOS 應用程式，您應該在與網際網路資源通訊時，以獨佔方式使用 `HTTPS`。 同樣地，有時可能會發生這種情況（例如使用協力廠商 web 服務），而您必須退出宣告 ATS。
 
-此外，ATS 會強制使用具有轉寄密碼的 TLS 1.2 版來加密高階 API 通訊。 如需詳細資訊，請參閱上面的 [ATS 連線需求](#ats-connection-requirements)和[ATS 相容](#ats-compatible-ciphers)的加密一節。
+此外，ATS 會強制使用具有轉寄密碼的 TLS 1.2 版來加密高階 API 通訊。 如需詳細資訊，請參閱上面的 < [ATS 連線需求](#ats-connection-requirements)和[ATS 相容](#ats-compatible-ciphers)的加密一節。
 
 雖然您可能不熟悉 TLS （[傳輸層安全性](https://en.wikipedia.org/wiki/Transport_Layer_Security)），但它是 SSL （[安全通訊端層](https://en.wikipedia.org/wiki/Transport_Layer_Security)）的後續版本，並提供一組密碼編譯通訊協定，以透過網路連線來強制執行安全性。
 
@@ -93,11 +93,11 @@ TLS 層級是由您使用的 web 服務所控制，因此在應用程式的控�
 
 Managed 處理常式是由舊版的 Xamarin 隨附的完全受控 HttpClient 處理常式，而且是預設的處理常式。
 
-展開
+優點：
 
 - 它與 Microsoft .NET 和舊版 Xamarin 最相容。
 
-各有利弊
+缺點：
 
 - 它不完全與 iOS 整合（例如，它僅限於 TLS 1.0）。
 - 通常速度會比原生 Api 慢很多。
@@ -107,12 +107,12 @@ Managed 處理常式是由舊版的 Xamarin 隨附的完全受控 HttpClient 處
 
 以 CFNetwork 為基礎的處理常式是以原生 `CFNetwork` 架構為基礎。
 
-展開
+優點：
 
 - 使用原生 API 以獲得更佳的效能和較小的可執行檔案大小。
 - 新增 TLS 1.2 等較新標準的支援。
 
-各有利弊
+缺點：
 
 - 需要 iOS 6 或更新版本。
 - WatchOS 無法使用。
@@ -122,12 +122,12 @@ Managed 處理常式是由舊版的 Xamarin 隨附的完全受控 HttpClient 處
 
 以 NSUrlSession 為基礎的處理常式是以原生 `NSUrlSession` API 為基礎。
 
-展開
+優點：
 
 - 使用原生 API 以獲得更佳的效能和較小的可執行檔案大小。
 - 新增 TLS 1.2 等較新標準的支援。
 
-各有利弊
+缺點：
 
 - 需要 iOS 7 或更新版本。
 - 有些 HttpClient 功能和選項無法使用。
@@ -136,7 +136,7 @@ Managed 處理常式是由舊版的 Xamarin 隨附的完全受控 HttpClient 處
 
 嘗試直接或從 iOS 9 中的 web view 連線到網際網路時，您可能會收到下列格式的錯誤：
 
-> 應用程式傳輸安全性已封鎖純文字 HTTP （ http://www.-the-blocked-domain.com) 資源載入，因為它不安全。 您可以透過應用程式的 plist 檔案來設定暫時的例外狀況。
+> 應用程式傳輸安全性已封鎖純文字 HTTP （`http://www.-the-blocked-domain.com`）資源載入，因為它不安全。 您可以透過應用程式的 plist 檔案來設定暫時的例外狀況。
 
 在 iOS9 中，應用程式傳輸安全性（ATS）會在網際網路資源（例如應用程式的後端伺服器）和您的應用程式之間強制執行安全的連線。 此外，ATS 需要使用 `HTTPS` 通訊協定和高階 API 通訊，透過具有轉寄密碼的 TLS 1.2 版進行加密。
 
@@ -245,7 +245,7 @@ NSAppTransportSecurity
 
 <a name="Summary" />
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文引進了應用程式傳輸安全性（ATS），並說明它如何強制執行與網際網路的安全通訊。 首先，我們涵蓋了在 iOS 9 上執行的 Xamarin iOS 應用程式所需的變更 ATS。 接著，我們討論了如何控制 ATS 的功能和選項。 最後，我們在您的 Xamarin iOS 應用程式仲介紹了退出 ATS。
 

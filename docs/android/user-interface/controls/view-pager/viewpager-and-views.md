@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
-ms.translationtype: HT
+ms.openlocfilehash: 7413fbe3f08988cfdb7c7b4e5237539aca250772
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728144"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292620"
 ---
 # <a name="viewpager-with-views"></a>使用檢視的 ViewPager
 
@@ -62,18 +62,13 @@ int imageId = treeCatalog[2].imageId;
     android:layout_height="match_parent" >
 
 </android.support.v4.view.ViewPager>
+```
 
-```csharp
-This XML defines a `ViewPager` that occupies the entire screen. Note that
-you must use the fully-qualified name **android.support.v4.view.ViewPager**
-because `ViewPager` is packaged in a support library. `ViewPager` is
-available only from 
-[Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);
-it is not available in the Android SDK. 
+此 XML 會定義佔用整個螢幕的 `ViewPager`。 請注意，您必須使用完整名稱**ViewPager** ，因為 `ViewPager` 封裝在支援程式庫中。 `ViewPager` 僅適用于[Android 支援程式庫 v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);Android SDK 中無法使用它。 
 
-## Set up ViewPager
+## <a name="set-up-viewpager"></a>設定 ViewPager
 
-Edit **MainActivity.cs** and add the following `using` statement:
+編輯**MainActivity.cs**並新增下列 `using` 語句：
 
 ```csharp
 using Android.Support.V4.View;
@@ -91,7 +86,7 @@ protected override void OnCreate(Bundle bundle)
 }
 ```
 
-此程式碼會執行下列動作：
+此程式碼會執行以下動作：
 
 1. 設定**axml**版面配置資源的視圖。
 
@@ -207,7 +202,7 @@ public override Java.Lang.Object InstantiateItem (View container, int position)
 }
 ```
 
-此程式碼會執行下列動作：
+此程式碼會執行以下動作：
 
 1. 具現化新的 `ImageView`，以在指定的位置顯示樹狀結構影像。 應用程式的 `MainActivity` 是將傳遞至 `ImageView` 的函式的內容。
 
@@ -234,7 +229,7 @@ public override void DestroyItem(View container, int position, Java.Lang.Object 
 }
 ```
 
-此程式碼會執行下列動作：
+此程式碼會執行以下動作：
 
 1. 將傳遞的容器 `View` 轉換成 `ViewPager` 參考。
 
@@ -267,7 +262,7 @@ viewPager.Adapter = new TreePagerAdapter(this, treeCatalog);
 
 核心執行現在已完成，&ndash; 建立並執行應用程式。 您應該會看到樹狀目錄的第一個影像顯示在畫面上，如下一個螢幕擷取畫面所示。 向左滑動以查看更多樹狀檢視，然後向右滑動以移回樹狀目錄： 
 
-[![透過樹狀結構影像 TreePager 應用程式的螢幕擷取畫面](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
+[透過樹狀結構影像 ![TreePager 應用程式的螢幕擷取畫面](viewpager-and-views-images/03-example-views-sml.png)](viewpager-and-views-images/03-example-views.png#lightbox)
 
 ## <a name="add-a-pager-indicator"></a>新增分頁指標
 
@@ -319,7 +314,7 @@ public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
 
 `PagerTitleStrip` 與 `PagerTabStrip` 非常類似，不同之處在于 `PagerTabStrip` 會為目前選取的索引標籤加上底線。您可以使用上述版面配置中的 `PagerTitleStrip` 來取代 `PagerTabStrip`，然後再次執行應用程式，以查看其 `PagerTitleStrip`的外觀： 
 
-[![已從文字中移除底線的 PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
+[已從文字中移除底線的 ![PagerTitleStrip](viewpager-and-views-images/06-pagetitlestrip-example-sml.png)](viewpager-and-views-images/06-pagetitlestrip-example.png#lightbox)
 
 請注意，當您轉換成 `PagerTitleStrip`時，會移除底線。 
 

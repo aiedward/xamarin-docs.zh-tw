@@ -8,16 +8,16 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7bb17abf8cdb943780bb3939aae8e461925b6517
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8714297c4948dbb65c521d6a32bac3e437b40733
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001600"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292715"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin. Mac 疑難排解秘訣
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 有時候，在處理專案時，我們全都會停滯，因為無法取得 API 以我們想要的方式運作，或嘗試解決 bug。 我們在 Xamarin 的目標是要讓您成功撰寫行動和桌面應用程式，並提供一些資源來協助您。
 
@@ -29,62 +29,62 @@ ms.locfileid: "73001600"
 
   - 「我無法讓 NSTable 工作」比「我的 NSTableDelegate 上的任何方法在此情況下似乎被呼叫」沒有用處。
 
-- 可能的話，請提供一個顯示問題的小型範例程式。 Digging through pages of source code looking for the issue takes orders of magnitude more time and effort.
+- 可能的話，請提供一個顯示問題的小型範例程式。 深入探討到尋找問題的源字碼頁面，會使時間和工作的程度更高。
 
-- Knowing what changes you’ve made to your application to cause an issue to appear can quickly narrow down the source of the problem. Noting if you’ve recently upgraded versions of Xamarin.Mac, trimming out sections of your application to find the part causing the issue, or testing previous builds to find what change introduced the issue can be very helpful.
+- 知道您對應用程式造成問題的變更，可以快速縮小問題來源的範圍。 請注意，如果您最近已升級 Xamarin. Mac 的版本，請修剪應用程式的各個區段以找出造成問題的部分，或測試先前的組建，以找出問題的變更可能會很有説明。
 
-### <a name="what-to-do-when-your-app-crashes-with-no-output"></a>What to do when your app crashes with no output
+### <a name="what-to-do-when-your-app-crashes-with-no-output"></a>當您的應用程式損毀但沒有輸出時該怎麼辦
 
-In most cases, the debugger in Visual Studio for Mac will catch exceptions and crashes in your application and help you track down the root cause. However there are some cases where your application will bounce on the dock and then exit with little or no output. These can include:
+在大部分情況下，Visual Studio for Mac 中的偵錯工具將會攔截例外狀況，並在您的應用程式中損毀，並協助您追蹤根本原因。 不過，在某些情況下，您的應用程式會在 dock 上彈，然後在很少或沒有輸出的情況下結束。 這些可能包括：
 
-- Code signing issues.
-- Certain mono runtime crashes.
-- Some Objective-c exceptions and crashes.
-- Some crashes very early the process lifetime.
-- Some stack overflows.
-- The macOS version listed in your **Info.plist** is newer than your currently installed macOS version or it is invalid.
+- 程式碼簽署問題。
+- 特定 mono 執行時間損毀。
+- 某些目標-c 例外狀況和當機。
+- 有些會在進程存留期初期發生損毀。
+- 某些堆疊溢位。
+- 您的**資訊**中所列的 macOS 版本比您目前安裝的 macOS 版本還新，或其無效。
 
-Debugging these programs can be frustrating, as finding the information necessary can be difficult. Here are a few approaches that may help:
+對這些程式進行調試可能會令人沮喪，因為尋找所需的資訊可能會很難。 以下是一些可能有説明的方法：
 
-- Ensure that the macOS version listed in the **Info.plist** is the same one as the version of macOS currently installed on the computer.
-- Check the Visual Studio for Mac Application Output (**View** -> **Pads** -> **Application Output**) for stack traces or output in red from Cocoa that may describe the output.
-- Run your application from the command line and look at the output (in the **Terminal** app) by using:
+- 請確定**plist**中所列的 macOS 版本與目前安裝在電腦上的 macOS 版本相同。
+- 檢查堆疊追蹤的 Visual Studio for Mac 應用程式輸出（**View** -> **Pad** -> **應用程式輸出**），或從可能描述輸出的 Cocoa 輸出（以紅色表示）。
+- 從命令列執行您的應用程式，並使用來查看輸出（在**終端**機應用程式中）：
 
-  `MyApp.app/Contents/MacOS/MyApp` (where `MyApp` is the name of your application)
-- You can increase the output by adding "MONO_LOG_LEVEL" to your command on the command line, for example:
+  `MyApp.app/Contents/MacOS/MyApp` （其中 `MyApp` 是應用程式的名稱）
+- 您可以在命令列上將 "MONO_LOG_LEVEL" 新增至命令，以增加輸出，例如：
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- You could attach a native debugger (`lldb`) to your process to see if that provides any more information (this requires a paid license). For example, do the following:
+- 您可以將原生偵錯工具（`lldb`）附加至您的進程，以查看是否有提供任何更多資訊（這需要付費授權）。 例如，請執行下列作業：
 
-  1. Enter `lldb MyApp.app/Contents/MacOS/MyApp` in the Terminal.
-  2. Enter `run` in the Terminal.
-  3. Enter `c` in the Terminal.
-  4. Exit when finished debugging.
-- As a last resort, before calling `NSApplication.Init` in your `Main` method (or in other places as required), you could write text to a file in a known location to track down at what step of launch you are running into trouble.
+  1. 在終端機中輸入 `lldb MyApp.app/Contents/MacOS/MyApp`。
+  2. 在終端機中輸入 `run`。
+  3. 在終端機中輸入 `c`。
+  4. 完成調試時結束。
+- 做為最後的手段，在呼叫 `Main` 方法（或其他位置中的 `NSApplication.Init`）之前，您可以將文字寫入已知位置中的檔案，以追蹤遇到問題的啟動步驟。
 
 ## <a name="known-issues"></a>已知問題
 
-The following sections cover known issues and their solutions.
+下列各節涵蓋已知問題及其解決方案。
 
-### <a name="unable-to-connect-to-the-debugger-in-sandboxed-apps"></a>Unable to connect to the debugger in sandboxed apps
+### <a name="unable-to-connect-to-the-debugger-in-sandboxed-apps"></a>無法連接至沙箱應用程式中的偵錯工具
 
-The debugger connects to Xamarin.Mac apps through TCP, which means that by default when you enable sandboxing, it is unable to connect to the app, so if you try to run the app without the proper permissions enabled, you get an error *“Unable to connect to the debugger”* .
+偵錯工具會透過 TCP 連線到 Xamarin. Mac 應用程式，這表示根據預設，當您啟用沙箱時，它無法連線到應用程式，因此如果您嘗試在未啟用適當許可權的情況下執行應用程式，就會收到錯誤「*無法連接到偵錯工具*」。
 
-[![Editing the entitlements](troubleshooting-images/debug01.png "編輯權利")](troubleshooting-images/debug01-large.png#lightbox)
+[![編輯權利](troubleshooting-images/debug01.png "編輯權利")](troubleshooting-images/debug01-large.png#lightbox)
 
-The **Allow Outgoing Network Connections (Client)** permission is the one required for the debugger, enabling this one will allow debugging normally. Since you can’t debug without it, we have updated the `CompileEntitlements` target for `msbuild` to automatically add that permission to the entitlements for any app that is sandboxed for debug builds only. Release builds should use the entitlements specified in the entitlements file, unmodified.
+「**允許外寄網路連線（用戶端）** 」許可權就是偵錯工具所需的許可權，讓這種連線能夠正常進行偵測。 由於您無法在沒有此程式的情況下進行調試，因此我們已更新 `msbuild` 的 `CompileEntitlements` 目標，以便將該許可權自動新增至任何已針對 debug build 進行沙箱化之應用程式的權利。 發行組建應使用權利檔案中所指定的權利（未經修改）。
 
-### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>System.NotSupportedException: no data is available for encoding 437
+### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException：沒有可供編碼437使用的資料
 
-When including 3rd party libraries in your Xamarin.Mac app, you might get an error in the form "System.NotSupportedException: No data is available for encoding 437" when trying to compile and run the app. For example, libraries, such as `Ionic.Zip.ZipFile`, may throw this exception during operation.
+在您的 Xamarin. Mac 應用程式中包含協力廠商程式庫時，在嘗試編譯和執行應用程式時，可能會收到「NotSupportedException：沒有資料可供編碼437」形式的錯誤。 例如，程式庫（例如 `Ionic.Zip.ZipFile`）可能會在操作期間擲回此例外狀況。
 
-This can be solved by opening the options for the Xamarin.Mac project, going to **Mac Build** > **Internationalization** and checking the **West** internationalization:
+這可以藉由開啟 Xamarin 專案的選項來解決，前往**Mac Build** > **國際化**並檢查**West**國際化：
 
-[![Editing the build options](troubleshooting-images/issue01.png "編輯組建選項")](troubleshooting-images/issue01-large.png#lightbox)
+[![編輯建置選項](troubleshooting-images/issue01.png "編輯建置選項")](troubleshooting-images/issue01-large.png#lightbox)
 
-### <a name="failed-to-compile-mm5103"></a>Failed to compile (mm5103)
+### <a name="failed-to-compile-mm5103"></a>無法編譯（mm5103）
 
-This error is usually caused when a new version of Xcode is release and you have installed the new version but no yet run it. 嘗試使用新版本的 Xcode 進行編譯之前，您必須先執行該版本至少一次。
+此錯誤通常是因為 Xcode 的新版本已發行，而您已安裝新版本但尚未執行。 嘗試使用新版本的 Xcode 進行編譯之前，您必須先執行該版本至少一次。
 
 當您第一次執行新版本的 Xcode 時，它會安裝 Xamarin 所需的數個命令列工具。 此外，您應該在更新 Xcode 或您的 Xamarin. Mac 版本之後，執行乾淨的組建。
 
@@ -112,13 +112,13 @@ This error is usually caused when a new version of Xcode is release and you have
 
 ## <a name="community-support-on-the-forums"></a>論壇上的社區支援
 
-使用 Xamarin 產品的開發人員群很驚人，而且有許多人可以造訪我們的[xamarin 論壇](https://forums.xamarin.com/categories/mac)，分享經驗和其專長。 此外，Xamarin 工程師會定期流覽論壇以提供協助。
+使用 Xamarin 產品的開發人員群很驚人，而且有許多人可以造訪我們的[xamarin 論壇](https://forums.xamarin.com/categories/xamarin-mac)，分享經驗和其專長。 此外，Xamarin 工程師會定期流覽論壇以提供協助。
 
 <a name="filing-a-bug"/>
 
 ## <a name="filing-a-bug"></a>提出 bug
 
-您的意見反應對我們很重要。 如果您發現 Xamarin. Mac 有任何問題：
+您的意見反應對我們非常寶貴。 如果您發現 Xamarin. Mac 有任何問題：
 
 - 搜尋[問題存放庫](https://github.com/xamarin/xamarin-macios/issues) \(英文\)
 - 在切換到 GitHub 問題之前，Xamarin 問題的追蹤是在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) \(英文\) 上進行的。 請從該處搜尋相符的問題。

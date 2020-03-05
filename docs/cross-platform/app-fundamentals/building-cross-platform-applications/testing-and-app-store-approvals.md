@@ -6,12 +6,12 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a9f84192a312f9aba98817b75c058229e6c721bb
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016846"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292408"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>第 6 部分 - 測試和 App Store 核准
 
@@ -31,7 +31,7 @@ ms.locfileid: "73016846"
 
 行動電話和平板電腦生態系統持續成長，讓您無法在不斷增加的可用裝置數目上進行測試。 為了解決這個問題，有一些服務可讓您從遠端控制許多不同的裝置，以便在不需要直接投資大量硬體的情況下，就能安裝和測試應用程式。
 
-[App Center 測試](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)提供簡單的方法，在數百個不同的裝置上測試 IOS 和 Android 應用程式。
+App Center 測試提供簡單的方法，在數百個不同的裝置上測試 iOS 和 Android 應用程式。 如需詳細資訊，請參閱[準備 Xamarin Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)和[準備 xamarin 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
 ### <a name="test-management"></a>測試管理
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 16d576c599dbf5815b19aec4a2e8390f7ed0e601
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545565"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291962"
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
@@ -20,7 +20,7 @@ ms.locfileid: "75545565"
 
 _使用 SkiaSharp 路徑填滿類型探索可能的不同效果_
 
-路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下為範例：
+路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下是範例：
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
@@ -35,7 +35,7 @@ _使用 SkiaSharp 路徑填滿類型探索可能的不同效果_
 
 使用許多例行路徑時，纏繞演算法通常會填滿路徑的所有封閉區域。 偶數-奇數演算法通常會產生更有趣的結果。
 
-典型的範例是以五個指向的星號，如五個**指向的星星**頁面中所示。 [**FivePointedStarPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml)會具現化兩個 `Picker` 視圖，以選取路徑填滿類型，以及路徑為已繪製或已填滿，還是要以何種循序執行：
+典型的範例是以五個指向的星號，如五個**指向的星星**頁面中所示。 [**FivePointedStarPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)會具現化兩個 `Picker` 視圖，以選取路徑填滿類型，以及路徑為已繪製或已填滿，還是要以何種循序執行：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
         // angle from vertical
         double angle = i * 4 * Math.PI / 5;
-        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle), 
+        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle),
                                         -radius * (float)Math.Cos(angle)));
     }
     path.Close();

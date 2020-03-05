@@ -6,20 +6,20 @@ ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: d081795ecfcc5d0aa2559b866fcc57076fe8248b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f0e2128bca5d2965395647353cd5a95a4030439f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007016"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292710"
 ---
 # <a name="getting-started-with-macos"></a>開始使用 macOS
 
-## <a name="what-you-will-need"></a>您需要的內容
+## <a name="what-you-will-need"></a>您將需要
 
 * 遵循[開始使用目標-C](~/tools/dotnet-embedding/get-started/objective-c/index.md)指南中的指示。
 
-## <a name="hello-world"></a>Hello World
+## <a name="hello-world"></a>Hello world
 
 首先，在中C#建立簡單的 hello world 範例。
 
@@ -82,7 +82,7 @@ objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csha
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     MyNSView *view = [[MyNSView alloc] init];
     view.frame = CGRectMake(0, 200, 200, 200);
     [self.view addSubview: view];
@@ -94,5 +94,3 @@ objcgen ~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csha
 最後，執行 Xcode 專案，就會顯示如下所示的內容：
 
 ![在模擬器C#中執行的範例 Hello](macos-images/hello-from-csharp-mac.png)
-
-[這裡提供](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)更完整且更清楚的範例。

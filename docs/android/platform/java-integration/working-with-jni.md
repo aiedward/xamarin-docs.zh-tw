@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 4d4274770263b120e856cf8db01a71f7ed124a63
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0fa717a775ff2f1ace9e248a8afde8d373e8a1f8
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027175"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291881"
 ---
 # <a name="working-with-jni-and-xamarinandroid"></a>使用 JNI 和 Xamarin
 
 _Xamarin 允許使用C# （而不是 JAVA）來撰寫 android 應用程式。Xamarin 提供了數個元件，提供 JAVA 程式庫的系結，包括 Mono. GoogleMaps 和 Mono。不過，不會為每個可能的 JAVA 程式庫提供系結，而且所提供的系結可能不會系結每個 JAVA 類型和成員。若要使用未系結的 JAVA 類型和成員，可以使用 JAVA 原生介面（JNI）。本文說明如何使用 JNI，與 Xamarin. Android 應用程式中的 JAVA 類型和成員互動。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 您不一定要建立受控可呼叫包裝函式（MCW）來叫用 JAVA 程式碼。 在許多情況下，「內嵌」 JNI 是完全可接受的，並且適用于一次使用未系結的 JAVA 成員。 使用 JNI 來叫用 JAVA 類別上的單一方法，通常會比產生整個 .jar 系結來得簡單。
 
@@ -57,7 +57,7 @@ JNI （如[JNIEnv 命名空間](xref:Android.Runtime.JNIEnv)所公開）可用�
 
 每當 Android 程式碼需要執行在 managed 程式碼中覆寫或執行的虛擬或介面方法時，Xamarin。 Android 必須提供 JAVA proxy，才能將此方法分派至適當的 managed 類型。 這些 JAVA proxy 類型是 JAVA 程式碼，其具有「相同」基類和 JAVA 介面清單做為 managed 類型，它會執行相同的函式，並宣告任何覆寫的基類和介面方法。
 
-Android 可呼叫包裝函式會在[建立程式](~/android/deploy-test/building-apps/build-process.md)期間由**monodroid**產生, 而且會針對 (直接或間接) 繼承 [Java.Lang.Object](xref:Java.Lang.Object) 的所有類型產生。
+Android 可呼叫包裝函式會在[建立](~/android/deploy-test/building-apps/build-process.md)程式期間由**monodroid**產生，而且會針對（直接或間接[）繼承的](xref:Java.Lang.Object)所有類型產生。
 
 ### <a name="implementing-interfaces"></a>實作介面
 
@@ -149,13 +149,11 @@ public class HelloAndroid extends android.app.Activity {
 
 - [Parcelable](xref:Android.OS.Parcelable)介面預期執行類別必須具有 `Parcelable.Creator`類型的靜態欄位 `CREATOR`。 產生的 JAVA 程式碼需要一些明確的欄位。 在我們的標準案例中，沒有任何方法可從 managed 程式碼輸出 JAVA 程式碼中的欄位。
 
-因為程式碼產生並未提供可產生任意名稱之任意 JAVA 方法的解決方案，所以從 Xamarin. Android 4.2 開始，引進了[ExportAttribute](xref:Java.Interop.ExportAttribute)和[ExportFieldAttribute](xref:Java.Interop.ExportFieldAttribute)來提供上述解決方案場景. 這兩個屬性都位於 `Java.Interop` 命名空間：
+因為程式碼產生不提供使用任意名稱來產生任意 JAVA 方法的解決方案，所以從 Xamarin. Android 4.2 開始，引進了[ExportAttribute](xref:Java.Interop.ExportAttribute)和[ExportFieldAttribute](xref:Java.Interop.ExportFieldAttribute)來提供上述案例的解決方案。 這兩個屬性都位於 `Java.Interop` 命名空間：
 
 - `ExportAttribute` &ndash; 指定方法名稱和其預期的例外狀況類型（以 JAVA 提供明確的「擲回」）。 在方法上使用時，此方法會「匯出」 JAVA 方法，以產生分派程式碼給 managed 方法的對應 JNI 調用。 這可以與 `android:onClick` 和 `java.io.Serializable`搭配使用。
 
 - `ExportFieldAttribute` &ndash; 指定功能變數名稱。 它位於當做欄位初始化運算式運作的方法上。 這可與 `android.os.Parcelable`搭配使用。
-
-[ExportAttribute](https://docs.microsoft.com/samples/xamarin/monodroid-samples/exportattribute)範例專案說明如何使用這些屬性。
 
 #### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>疑難排解 ExportAttribute 和 ExportFieldAttribute
 
@@ -257,13 +255,13 @@ public static System.IO.Stream In
 }
 ```
 
-注意:我們會使用[InputStreamInvoker](xref:Android.Runtime.InputStreamInvoker.FromJniHandle*)將 JNI 參考轉換成 `System.IO.Stream` 實例，而且我們使用 `JniHandleOwnership.TransferLocalRef`，因為[JNIEnv. GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)會傳回本機參考。
+注意：我們會使用[InputStreamInvoker](xref:Android.Runtime.InputStreamInvoker.FromJniHandle*)將 JNI 參考轉換成 `System.IO.Stream` 實例，而我們會使用 `JniHandleOwnership.TransferLocalRef`，因為[JNIEnv. GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)會傳回區域參考。
 
 許多[Android. 運行](xref:Android.Runtime)時間類型都具有 `FromJniHandle` 方法，可將 JNI 參考轉換成所需的類型。
 
 ### <a name="method-binding"></a>方法系結
 
-JAVA 方法會公開為C#方法和C#屬性。 例如， [runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean))方法的 java 方法會系結為[runFinalizersOnExit](xref:Java.Lang.Runtime.RunFinalizersOnExit*)方法，而[getClass](https://developer.android.com/reference/java/lang/Object.html#getClass)方法則會系結為[.java. Class. 類別（Class）的物件（Class）。](xref:Java.Lang.Object.Class)屬性。
+JAVA 方法會公開為C#方法和C#屬性。 例如，JAVA 方法[runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean))方法會系結為[runFinalizersOnExit](xref:Java.Lang.Runtime.RunFinalizersOnExit*)方法，而[getClass](https://developer.android.com/reference/java/lang/Object.html#getClass)方法則會系結為[.java. object. Class](xref:Java.Lang.Object.Class)屬性（property）的系結（node.js）。
 
 方法調用是兩個步驟的程式：
 
@@ -344,7 +342,7 @@ IntPtr lrefInstance = JNIEnv.NewObject (class_ref, id_ctor_I, new JValue (value)
 
 1. 如果類型具有 `RegisterAttribute`，且 `RegisterAttribute.DoNotGenerateAcw` 為 `true`，則 `RegisterAttribute.Name` 類型的實例會透過其預設的處理常式來建立。
 
-1. 否則, 對應至`this.GetType`的 [Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md) (ACW) 會透過其預設的處理常式具現化。 在封裝建立期間，會針對每個未將 `RegisterAttribute.DoNotGenerateAcw` 設定為 `true`的 `Java.Lang.Object` 子類別，產生 Android 可呼叫包裝函式。
+1. 否則，與 `this.GetType` 對應的 Android 可呼叫[包裝](~/android/platform/java-integration/android-callable-wrappers.md)函式（ACW）會透過其預設的處理常式具現化。 在封裝建立期間，會針對每個未將 `RegisterAttribute.DoNotGenerateAcw` 設定為 `true`的 `Java.Lang.Object` 子類別，產生 Android 可呼叫包裝函式。
 
 對於不是類別系結的類型，這是預期的語義：具現C#化 `Mono.Samples.HelloWorld.HelloAndroid` 實例應該會建立 JAVA `mono.samples.helloworld.HelloAndroid` 實例，這是產生的 Android 可呼叫包裝函式。
 
@@ -352,11 +350,11 @@ IntPtr lrefInstance = JNIEnv.NewObject (class_ref, id_ctor_I, new JValue (value)
 
 1. 叫用 JniHandleOwnership [（IntPtr，），](xref:Java.Lang.Object#ctor*)而不是預設的 `Java.Lang.Object` 的函式。 若要避免建立新的 JAVA 實例，這是必要的。
 
-1. 建立任何 JAVA 實例之前, 請先檢查 [Java.Lang.物件控點](xref:Java.Lang.Object.Handle)的值。 如果在 JAVA 程式碼中建立了 Android 可呼叫包裝函式，而且類別系結正在進行結構化以包含已建立的 Android 可呼叫包裝函式實例，則 `Object.Handle` 屬性會有 `IntPtr.Zero` 以外的值。 例如，當 Android 建立 `mono.samples.helloworld.HelloAndroid` 實例時，會先建立 Android 可呼叫包裝函式，而 JAVA `HelloAndroid` 的程式會建立對應 `Mono.Samples.HelloWorld.HelloAndroid` 類型的實例，並將 `Object.Handle` 屬性設定為 JAVA 實例在執行此函式之前。
+1. 建立任何 JAVA 實例[之前，](xref:Java.Lang.Object.Handle)請先檢查的值。 如果在 JAVA 程式碼中建立了 Android 可呼叫包裝函式，而且類別系結正在進行結構化以包含已建立的 Android 可呼叫包裝函式實例，則 `Object.Handle` 屬性會有 `IntPtr.Zero` 以外的值。 例如，當 Android 建立 `mono.samples.helloworld.HelloAndroid` 實例時，會先建立 Android 可呼叫包裝函式，而 JAVA `HelloAndroid` 的處理常式將會建立對應 `Mono.Samples.HelloWorld.HelloAndroid` 類型的實例，並在執行函式之前將 `Object.Handle` 屬性設定為 JAVA 實例。
 
 1. 如果目前的執行時間類型與宣告類型不同，則必須建立對應之 Android 可呼叫包裝函式的實例，並使用[SetHandle](xref:Java.Lang.Object.SetHandle*)來儲存[JNIEnv](xref:Android.Runtime.JNIEnv.CreateInstance*)所傳回的控制碼。
 
-1. 如果目前的執行時間型別與宣告型別相同，則會叫用 JAVA 處理常式 `JNIEnv.NewInstance`，並使用 [Object.SetHandle](xref:Java.Lang.Object.SetHandle*) 來儲存所傳回的控制碼。
+1. 如果目前的執行時間型別與宣告型別相同，則會叫用 JAVA 處理常式，並使用[SetHandle](xref:Java.Lang.Object.SetHandle*)來儲存 `JNIEnv.NewInstance` 所傳回的控制碼。
 
 例如，請考慮採用[.JAVA 整數（int）](https://developer.android.com/reference/java/lang/Integer.html#Integer(int))的函式。 這會系結為：
 
@@ -395,13 +393,13 @@ public Integer (int value)
 }
 ```
 
-[JNIEnv](xref:Android.Runtime.JNIEnv.CreateInstance*)方法是協助程式在從 `JNIEnv.FindClass`傳回的值上執行 `JNIEnv.FindClass`、`JNIEnv.GetMethodID`、`JNIEnv.NewObject`和 `JNIEnv.DeleteGlobalReference`。 如需詳細資訊，請參閱下一節。
+[JNIEnv](xref:Android.Runtime.JNIEnv.CreateInstance*)方法是協助程式在從 `JNIEnv.FindClass`傳回的值上執行 `JNIEnv.FindClass`、`JNIEnv.GetMethodID`、`JNIEnv.NewObject`和 `JNIEnv.DeleteGlobalReference`。 如需詳細資料，請參閱下一節。
 
 <a name="_Supporting_Inheritance,_Interfaces_1" />
 
 ### <a name="supporting-inheritance-interfaces"></a>支援繼承，介面
 
-將 java 類型子類別化或執行 java 介面時, 需要產生可在封裝程式期間針對每個`Java.Lang.Object`子類別產生的[ Android 可呼叫包裝函式](~/android/platform/java-integration/android-callable-wrappers.md) (ACWs)。 ACW 產生是透過[RegisterAttribute](xref:Android.Runtime.RegisterAttribute)自訂屬性來控制。
+將 JAVA 類型子類別化或執行 JAVA 介面時，需要產生可在封裝程式期間針對每個 `Java.Lang.Object` 子類別產生的 Android 可呼叫[包裝](~/android/platform/java-integration/android-callable-wrappers.md)函式（ACWs）。 ACW 產生是透過[RegisterAttribute](xref:Android.Runtime.RegisterAttribute)自訂屬性來控制。
 
 針對C#型別，`[Register]` 的自訂屬性（attribute）函式需要一個引數：對應 JAVA 類型的[JNI 簡化型別參考](#_Simplified_Type_References_1)。 這可讓您在 JAVA 和C#之間提供不同的名稱。
 
@@ -598,7 +596,7 @@ int>` 委派，然後叫用[JNINativeWrapper。 system.delegate.createdelegate](
 
 最後，`n_Add` 方法會負責將 JNI 參數封送處理至對應的 managed 類型，然後委派方法呼叫。
 
-注意:透過 JAVA 實例取得 MCW 時，請一律使用 `JniHandleOwnership.DoNotTransfer`。 將它們視為本機參考（因而呼叫 `JNIEnv.DeleteLocalRef`）將會中斷 managed&gt; JAVA&gt; 的 managed 堆疊轉換。
+注意：透過 JAVA 實例取得 MCW 時，請一律使用 `JniHandleOwnership.DoNotTransfer`。 將它們視為本機參考（因而呼叫 `JNIEnv.DeleteLocalRef`）將會中斷 managed&gt; JAVA&gt; 的 managed 堆疊轉換。
 
 ### <a name="complete-adder-binding"></a>完成的連結連結
 
@@ -799,7 +797,7 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-注意:`Handle` 屬性必須在此函式主體內使用，而不是在 `handle` 參數中，如同 Android v4.0，在基底函式完成執行之後，`handle` 參數可能會無效。
+注意： `Handle` 屬性必須在函式主體內使用，而不是在 `handle` 參數中，如同 Android v4.0，在基底函式完成執行之後，`handle` 參數可能會無效。
 
 #### <a name="dispose-method"></a>Dispose 方法
 
@@ -889,7 +887,7 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-如果`int[]`優先使用,則可以改用[JNIEnvGetArray()](xref:Android.Runtime.JNIEnv.GetArray*):`JavaList<int>`
+如果 `int[]` 會優先于 `JavaList<int>`，則可以改為使用[JNIEnv GetArray （）](xref:Android.Runtime.JNIEnv.GetArray*) ：
 
 ```csharp
 int[] _values = (int[]) JNIEnv.GetArray(values, JniHandleOwnership.DoNotTransfer, typeof (int));
@@ -975,7 +973,7 @@ new JValue (currentSum));
 
 區域參考是由*大部分*的參考建立方法所建立。
 Android 只允許在任何指定時間都有有限數目的本機參考，通常是512。 本機參考可以透過 JNIEnv 來刪除[。 DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*)。
-不同于 JNI，並非所有傳回物件參考的參考 JNIEnv 方法都會傳回本機參考;[JNIEnv. FindClass](xref:Android.Runtime.JNIEnv.FindClass*)會傳回*全域*參考。 強烈建議您儘快刪除本機參考，可能的話，您可以在[物件周圍建立](xref:Java.Lang.Object)JniHandleOwnership，並指定對的 `JniHandleOwnership.TransferLocalRef` [（IntPtr 控制碼，傳輸）](xref:Java.Lang.Object#ctor*)函數.
+不同于 JNI，並非所有傳回物件參考的參考 JNIEnv 方法都會傳回本機參考;[JNIEnv. FindClass](xref:Android.Runtime.JNIEnv.FindClass*)會傳回*全域*參考。 強烈建議您儘快刪除本機參考，可能的話，您可以在物件周圍建立[JAVA Lang.ini 物件](xref:Java.Lang.Object)，並指定 `JniHandleOwnership.TransferLocalRef` 到 JniHandleOwnership [（IntPtr 控制碼，transfer）](xref:Java.Lang.Object#ctor*)的函式。
 
 全域參考是由[JNIEnv. NewGlobalRef](xref:Android.Runtime.JNIEnv.NewGlobalRef*)和[JNIEnv](xref:Android.Runtime.JNIEnv.FindClass*)所建立。
 您可以使用[JNIEnv DeleteGlobalRef](xref:Android.Runtime.JNIEnv.DeleteGlobalRef*)來終結它們。
@@ -985,7 +983,7 @@ Android 只允許在任何指定時間都有有限數目的本機參考，通常
 
 ### <a name="dealing-with-jni-local-references"></a>處理 JNI 區域參考
 
-[JNIEnv.GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*)[JNIEnv.GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)、[JNIEnv.CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*)[JNIEnv.CallNonvirtualObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*) 和 [JNIEnv.CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) 會傳回，包含 java 物件的 JNI 區域參考的 `IntPtr`，獲如果 Java 傳回`null`，則為`IntPtr.Zero`。 由於可以一次處理的本機參考數目有限（512個專案），因此最好確保參考會及時刪除。 有三種方式可以處理本機參考：明確刪除它們、建立 `Java.Lang.Object` 實例來保存它們，以及使用 `Java.Lang.Object.GetObject<T>()` 在其周圍建立受控可呼叫包裝函式。
+[GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*)、 [JNIEnv、GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)、 [JNIEnv](xref:Android.Runtime.JNIEnv.CallObjectMethod*)、 [CallObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*)和[JNIEnv.](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) CallNonvirtualObjectMethod 方法會傳回 `IntPtr`，其中包含 JAVA 物件的 JNIEnv 本機參考，或 `IntPtr.Zero` 如果 java 傳回 `null`。 由於可以一次處理的本機參考數目有限（512個專案），因此最好確保參考會及時刪除。 有三種方式可以處理本機參考：明確刪除它們、建立 `Java.Lang.Object` 實例來保存它們，以及使用 `Java.Lang.Object.GetObject<T>()` 在其周圍建立受控可呼叫包裝函式。
 
 ### <a name="explicitly-deleting-local-references"></a>明確刪除本機參考
 
@@ -1036,7 +1034,7 @@ using (var value = new Java.Lang.Object (lref, JniHandleOwnership.TransferLocalR
 
 1. `T` 必須是參考型別。
 
-1. `T` 必須執行 `IJavaObject` 介面。
+1. `T` 必須實作 `IJavaObject` 介面。
 
 1. 如果 `T` 不是抽象類別或介面，則 `T` 必須提供 `(IntPtr,
     JniHandleOwnership)` 參數類型的處理常式。
@@ -1057,7 +1055,7 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 若要查閱 JNI 中的欄位或方法，必須先查閱欄位或方法的宣告類型。 [JNIEnv. FindClass （string）](xref:Android.Runtime.JNIEnv.FindClass*)）方法是用來查閱 JAVA 類型。 String 參數是 JAVA 類型的*簡化型別參考*或*完整型別參考*。 如需簡化和完整型別參考的詳細資訊，請參閱[JNI 型別參考一節](#_JNI_Type_References)。
 
-注意:不同于傳回物件實例的每個 `JNIEnv` 方法，`FindClass` 會傳回全域參考，而不是區域參考。
+注意：不同于傳回物件實例的每個 `JNIEnv` 方法，`FindClass` 會傳回全域參考，而不是區域參考。
 
 <a name="_Instance_Fields" />
 
@@ -1293,7 +1291,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 ## <a name="jni-type-signatures"></a>JNI 類型簽章
 
-[JNI 類型](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp16432)簽章是[JNI 類型參考](#_JNI_Type_References)（雖然不是簡化的類型參考），但方法除外。 使用方法時，JNI 類型簽章是一個左括弧 `'('`，後面接著串連在一起的所有參數類型的類型參考（不分隔逗號或任何其他專案），後面接著右括弧 `')'`，後面接著方法傳回類型的 JNI 類型參考。
+[JNI 類型](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp16432)簽章是[JNI 類型參考](#_JNI_Type_References)（雖然不是簡化的類型參考），但方法除外。 使用方法時，JNI 類型簽章是一個左括弧 `'('`，後面接著串連在一起的所有參數類型的類型參考（不分隔逗號或任何其他專案），後面接著右括弧 `')'`，接著是方法傳回類型的 JNI 類型參考。
 
 例如，假設有 JAVA 方法：
 
@@ -1307,7 +1305,7 @@ JNI 類型簽章會是：
 (ILjava/lang/String;[I)J
 ```
 
-一般來說，*強烈*建議使用 `javap` 命令來判斷 JNI 簽章。 例如， [valueOf （String）](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String))方法的 JNI 類型簽章是 "（Ljava/Lang/String;） Ljava/Lang/Thread $ State;"，而的 JNI 類型簽章則是 "（） [Ljava/。[值](https://developer.android.com/reference/java/lang/Thread.State.html#values)] 方法。lang/Thread $ State; "。 請留意尾端的分號;這些*是*JNI 類型簽章的一部分。
+一般來說，*強烈*建議使用 `javap` 命令來判斷 JNI 簽章。 例如， [valueOf （String）](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String))方法的 JNI 類型簽章是 "（Ljava/Lang/String;） Ljava/Lang/Thread $ State;"，而的 JNI 類型簽[章則是](https://developer.android.com/reference/java/lang/Thread.State.html#values)"（） [Ljava/Lang/Thread $ State;"。（）。 請留意尾端的分號;這些*是*JNI 類型簽章的一部分。
 
 <a name="_JNI_Type_References" />
 
@@ -1316,7 +1314,7 @@ JNI 類型簽章會是：
 JNI 類型參考與 JAVA 類型參考不同。 您不能使用完整的 JAVA 類型名稱（例如 `java.lang.String` 與 JNI），您必須改為使用 JNI 變化 `"java/lang/String"` 或 `"Ljava/lang/String;"`，視內容而定;如需詳細資訊，請參閱下文。
 JNI 類型參考有四種類型：
 
-- **built-in**
+- **內建**
 - **減少**
 - **type**
 - **array**
@@ -1350,7 +1348,7 @@ JNI 類型參考有四種類型：
 
 ### <a name="type-references"></a>型別參考
 
-型別參考是內建型別參考，或是具有 `'L'` 前置詞和 `';'` 尾碼的簡化型別參考。 若為 java 類型[java.lang.String](https://developer.android.com/reference/java/lang/String.html), 則簡化型別參考是`"java/lang/String"`, 而型別參考是`"Ljava/lang/String;"`。
+型別參考是內建型別參考，或是具有 `'L'` 前置詞和 `';'` 尾碼的簡化型別參考。 若為 JAVA 類型，則會 `"java/lang/String"`簡化的類型[參考，而](https://developer.android.com/reference/java/lang/String.html)類型參考則 `"Ljava/lang/String;"`。
 
 型別參考用於陣列型別參考和 JNI 簽章。
 
@@ -1462,7 +1460,7 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 此外，所有的 JNI 函數都已藉由移除每個 JNI 函式中的 `JNIEnv*` 參數來修改。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 直接處理 JNI 是一種非常可怕的體驗，應盡可能避免所有成本。 可惜的是，它不一定是肇因;希望當您使用 Mono for Android 叫用未系結的 JAVA 案例時，本指南會提供一些協助。
 

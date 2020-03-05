@@ -6,12 +6,12 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: e1a540eef2a4d54ead68ae4a9427b0622b668182
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 42be47e74b4b0da60d517a17bb6090c58448b718
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014555"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292871"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>使用 Visual Basic.NET 的 Xamarin
 
@@ -32,7 +32,7 @@ Xamarin 不支援直接 Visual Basic-遵循此頁面上的指示來建立C# Xama
 
 2. 在 [**建立新專案**] 視窗中，輸入 [ **Xamarin** ] 以篩選清單並選取 [行動**應用程式（Xamarin）** ]，然後按 **[下一步]** 。
 
-    [Xamarin. Forms 應用程式的![篩選](xamarin-forms-images/02-sml.png)](xamarin-forms-images/02.png#lightbox)
+    [Xamarin. Forms 應用程式的 ![篩選](xamarin-forms-images/02-sml.png)](xamarin-forms-images/02.png#lightbox)
 
 3. 在下一個畫面上，輸入專案的名稱，然後按 [**建立**]。
 
@@ -46,7 +46,7 @@ Xamarin 不支援直接 Visual Basic-遵循此頁面上的指示來建立C# Xama
 
 6. 輸入**Visual Basic 程式庫** 來篩選項目選項，然後選擇 **類別庫 （.NET Standard）** 選項與 Visual Basic 圖示：
 
-    [Visual Basic 程式庫的![篩選](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
+    [Visual Basic 程式庫的 ![篩選](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
 
 7. 在下一個畫面上，輸入專案的名稱，然後按 [**建立**]。
 
@@ -121,7 +121,7 @@ Xamarin 不支援直接 Visual Basic-遵循此頁面上的指示來建立C# Xama
 
 如[便攜視覺 Basic.NET 頁面](~/cross-platform/platform/visual-basic/index.md)上所述，Xamarin 不支援 Visual Basic 語言。 這表示您可以使用 Visual Basic 的位置有一些限制：
 
-- XAML 頁面不能包含在 Visual Basic 專案中-程式碼後置產生器只能建立C#。 您可以將 XAML 包含在另一個參考的C#可移植類別庫中，並使用資料系結透過 Visual Basic 模型來填入 xaml 檔案（範例包含在[範例](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB/XamlPages)中）。
+- XAML 頁面不能包含在 Visual Basic 專案中-程式碼後置產生器只能建立C#。 您可以將 XAML 包含在另一個參考的C#可移植類別庫中，並使用資料系結透過 Visual Basic 模型來填入 xaml 檔案（範例包含在[範例](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)中）。
 
 - 自訂轉譯器無法以 Visual Basic 撰寫，必須在原生C#平臺專案中撰寫。
 

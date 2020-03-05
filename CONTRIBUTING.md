@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: dffa9c202d42cfb12ed67e219b4e3155e4e554d0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: HT
+ms.openlocfilehash: 0071fcc72844e4816e707c5828464859e09db68c
+ms.sourcegitcommit: 2503da076966d12a8bdbf7af209662b74913a15c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751927"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261614"
 ---
-# <a name="contributing"></a>貢獻
+# <a name="contributing"></a>參與
 
 感謝您想要投稿 Xamarin 文件！
 
@@ -18,7 +18,7 @@ ms.locfileid: "70751927"
 
 ### <a name="small-changes--edits"></a>少量變更和編輯
 
-若要更正和進行少量更新，您可以按一下任何頁面上的 [編輯]  按鈕並使用 GitHub 網站來投稿，或是遵循下列步驟：
+若要更正和進行少量更新，您可以按一下任何頁面上的 [編輯] 按鈕並使用 GitHub 網站來投稿，或是遵循下列步驟：
 
 1. 派生 `MicrosoftDocs/xamarin-docs` 存放庫。
 
@@ -64,6 +64,10 @@ Xamarin 小組會檢閱您的 PR，並會讓您知道變更是否適合 (透過 
 套用意見反應且您的變更也適切之後，維護人員接著會合併 PR。
 
 我們會依特定的頻率，將所有認可項目從主要分支推送到即時網站，您如此即可於 https://docs.microsoft.com/xamarin/ 看到您的投稿。
+
+### <a name="contributing-to-international-content"></a>參與國際內容
+
+目前不接受電腦轉譯（MT）內容的貢獻。 為了改善 MT 內容的品質，我們已轉換成類神經 MT 引擎。 我們接受並鼓勵人為翻譯（HT）內容的貢獻，這是用來訓練類神經 MT 引擎。 過了一段時間，對 HT 內容的貢獻將可改善 HT 和 MT 的品質。 MT 主題會有免責聲明，表示主題的部分可能是 MT，而 [**編輯**] 按鈕則不會顯示為已停用。
 
 ## <a name="dos-and-donts"></a>可進行及不可進行的事項
 

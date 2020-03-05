@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
-ms.openlocfilehash: 1858d98b37df7d98f725b377280a971b3034ef0d
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: a4cc237ef738edeccf66f1a91a010e4831c1c72f
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696368"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292802"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>CollectionView 選取專案的表單
 
@@ -21,16 +21,16 @@ ms.locfileid: "72696368"
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)會定義控制專案選取的下列屬性：
 
 - [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)，屬於[`SelectionMode`](xref:Xamarin.Forms.SelectionMode)類型的選取模式。
-- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)，屬於 `object` 的類型，這是清單中選取的專案。 此屬性具有 `TwoWay` 的預設系結模式，而且未選取任何專案時，會具有 `null` 值。
-- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)，屬於 `IList<object>` 類型，這是清單中選取的專案。 這個屬性具有 `OneWay` 的預設系結模式，而且未選取任何專案時，會有 `null` 值。
-- [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)，屬於 `ICommand` 類型，這會在選取的專案變更時執行。
-- [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)，屬於 `object` 類型，這是傳遞至 `SelectionChangedCommand` 的參數。
+- [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)，屬於 `object`的類型，這是清單中選取的專案。 此屬性具有 `TwoWay`的預設系結模式，而且未選取任何專案時，會具有 `null` 值。
+- [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)，屬於 `IList<object>`類型，這是清單中選取的專案。 這個屬性具有 `OneWay`的預設系結模式，而且未選取任何專案時，會有 `null` 值。
+- [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)，屬於 `ICommand`類型，這會在選取的專案變更時執行。
+- [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)，屬於 `object`類型，這是傳遞至 `SelectionChangedCommand`的參數。
 
 所有這些屬性都以 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 物件為後盾，也就是說，這些屬性可以是資料繫結的目標。
 
 預設會停用[`CollectionView`](xref:Xamarin.Forms.CollectionView)選取專案。 不過，將[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性值設定為其中一個[`SelectionMode`](xref:Xamarin.Forms.SelectionMode)列舉成員，即可變更此行為：
 
-- `None` –表示無法選取專案。 此為預設值。
+- `None` –表示無法選取專案。 這是預設值。
 - `Single` –表示可選取單一專案，並反白顯示選取的專案。
 - `Multiple` –表示可以選取多個專案，並反白顯示選取的專案。
 
@@ -39,9 +39,11 @@ ms.locfileid: "72696368"
 - `PreviousSelection` –選取範圍變更之前所選取的專案清單。
 - `CurrentSelection` –選取範圍變更之後所選取的專案清單。
 
+此外， [`CollectionView`](xref:Xamarin.Forms.CollectionView)具有 `UpdateSelectedItems` 方法，會以選取的專案清單更新[`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性，而只會引發單一變更通知。
+
 ## <a name="single-selection"></a>單一選取
 
-當 [ [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) ] 屬性設定為 [`Single`] 時，就可以選取[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的單一專案。 選取專案時， [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性會設定為所選取專案的值。 當這個屬性變更時，會執行[`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) （具有傳遞給 `ICommand` 的[`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)值），並引發[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件。
+當 [ [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) ] 屬性設定為 [`Single`] 時，就可以選取[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的單一專案。 選取專案時， [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性會設定為所選取專案的值。 當這個屬性變更時，會執行[`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) （具有傳遞給 `ICommand`的[`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)值），並引發[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件。
 
 下列 XAML 範例顯示可以回應單一專案選取的[`CollectionView`](xref:Xamarin.Forms.CollectionView) ：
 
@@ -76,7 +78,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 ```
 
 > [!IMPORTANT]
-> [@No__t_1](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件可以由變更[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性所造成的變更引發。
+> [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件可以由變更[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性所造成的變更引發。
 
 下列螢幕擷取畫面顯示[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的單一專案選擇：
 
@@ -84,7 +86,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 ## <a name="multiple-selection"></a>多重選取
 
-當 [ [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) ] 屬性設定為 [`Multiple`] 時，就可以選取[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的多個專案。 選取專案時， [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性會設定為選取的專案。 當這個屬性變更時，會執行[`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) （具有傳遞給 `ICommand` 的[`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)值），並引發[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件。
+當 [ [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) ] 屬性設定為 [`Multiple`] 時，就可以選取[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的多個專案。 選取專案時， [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性會設定為選取的專案。 當這個屬性變更時，會執行[`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) （具有傳遞給 `ICommand`的[`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)值），並引發[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件。
 
 下列 XAML 範例顯示可以回應多個專案選取的[`CollectionView`](xref:Xamarin.Forms.CollectionView) ：
 
@@ -119,7 +121,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 ```
 
 > [!IMPORTANT]
-> [@No__t_1](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件可以由變更[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性所造成的變更引發。
+> [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件可以由變更[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性所造成的變更引發。
 
 下列螢幕擷取畫面顯示[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的多個專案選擇：
 
@@ -149,9 +151,9 @@ collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, "SelectedMon
 ```
 
 > [!NOTE]
-> [@No__t_1](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性具有 `TwoWay` 的預設系結模式。
+> [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性具有 `TwoWay`的預設系結模式。
 
-[@No__t_1](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)的屬性資料會系結至已連線視圖模型的 `SelectedMonkey` 屬性，其類型為 `Monkey`。 根據預設，會使用 `TwoWay` 系結，因此，如果使用者變更選取的專案，則 `SelectedMonkey` 屬性的值將會設定為選取的 `Monkey` 物件。 @No__t_0 屬性是在 `MonkeysViewModel` 類別中定義，而且會設定為 `Monkeys` 集合的第四個專案：
+[`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)的屬性資料會系結至已連線視圖模型的 `SelectedMonkey` 屬性，其類型為 `Monkey`。 根據預設，會使用 `TwoWay` 系結，因此，如果使用者變更選取的專案，則 `SelectedMonkey` 屬性的值將會設定為選取的 `Monkey` 物件。 `SelectedMonkey` 屬性是在 `MonkeysViewModel` 類別中定義，而且會設定為 `Monkeys` 集合的第四個專案：
 
 ```csharp
 public class MonkeysViewModel : INotifyPropertyChanged
@@ -213,9 +215,9 @@ collectionView.SetBinding(SelectableItemsView.SelectedItemsProperty, "SelectedMo
 ```
 
 > [!NOTE]
-> [@No__t_1](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性具有 `OneWay` 的預設系結模式。
+> [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性具有 `OneWay`的預設系結模式。
 
-[@No__t_1](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)的屬性資料會系結至已連線視圖模型的 `SelectedMonkeys` 屬性，其類型為 `ObservableCollection<object>`。 @No__t_0 屬性是在 `MonkeysViewModel` 類別中定義，而且會設定為 `Monkeys` 集合中的第二、第四和第五個專案：
+[`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)的屬性資料會系結至已連線視圖模型的 `SelectedMonkeys` 屬性，其類型為 `ObservableCollection<object>`。 `SelectedMonkeys` 屬性是在 `MonkeysViewModel` 類別中定義，而且會設定為 `Monkeys` 集合中的第二、第四和第五個專案：
 
 ```csharp
 namespace CollectionViewDemos.ViewModels
@@ -258,11 +260,11 @@ namespace CollectionViewDemos.ViewModels
 
 ## <a name="clear-selections"></a>清除選取專案
 
-[@No__t_1](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)和[`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性可以藉由設定它們或其系結至 `null` 的物件來加以清除。
+[`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)和[`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems)屬性可以藉由設定它們或其系結至 `null`的物件來加以清除。
 
 ## <a name="change-selected-item-color"></a>變更選取的專案色彩
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)具有 `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) ，可用來起始對 `CollectionView` 中所選取專案的視覺效果變更。 此 `VisualState` 的常見使用案例是變更所選項目的背景色彩，如下列 XAML 範例所示：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)具有 `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) ，可用來起始對 `CollectionView`中所選取專案的視覺效果變更。 此 `VisualState` 的常見使用案例是變更所選項目的背景色彩，如下列 XAML 範例所示：
 
 ```xaml
 <ContentPage ...>
@@ -301,7 +303,7 @@ namespace CollectionViewDemos.ViewModels
 > [!IMPORTANT]
 > 包含 `Selected` `VisualState` 的[`Style`](xref:Xamarin.Forms.Style)必須具有[`TargetType`](xref:Xamarin.Forms.Style.TargetType)屬性值，這是[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)的根項目類型，會設定為 `ItemTemplate` 屬性值。
 
-在此範例中， [`Style.TargetType`](xref:Xamarin.Forms.Style.TargetType)屬性值設定為 `Grid`，因為[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)的根項目是[`Grid`](xref:Xamarin.Forms.Grid)。 @No__t_0 [`VisualState`](xref:Xamarin.Forms.VisualState)指定當選取[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的專案時，專案的[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)將會設定為 `LightSkyBlue`：
+在此範例中， [`Style.TargetType`](xref:Xamarin.Forms.Style.TargetType)屬性值設定為 `Grid`，因為[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)的根項目是[`Grid`](xref:Xamarin.Forms.Grid)。 `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState)指定當選取[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的專案時，專案的[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)將會設定為 `LightSkyBlue`：
 
 [![在 iOS 和 Android 上具有自訂單一選取色彩之 CollectionView 垂直清單的螢幕擷取畫面](selection-images/single-selection-color.png "具有自訂單一選取色彩的 CollectionView 垂直清單")](selection-images/single-selection-color-large.png#lightbox "具有自訂單一選取色彩的 CollectionView 垂直清單")
 
@@ -329,7 +331,7 @@ CollectionView collectionView = new CollectionView
 當 [ [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) ] 屬性設定為 [`None`] 時，就無法選取[`CollectionView`](xref:Xamarin.Forms.CollectionView)中的專案， [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性仍會 `null`，而且不會引發[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件。
 
 > [!NOTE]
-> 當選取專案且[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性從 `Single` 變更為 `None` 時， [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性會設定為 `null`，而且[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件將會以空的 `CurrentSelection` 屬性來引發。
+> 當選取專案且[`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)屬性從 `Single` 變更為 `None`時， [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)屬性會設定為 `null`，而且[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged)事件將會以空的 `CurrentSelection` 屬性來引發。
 
 ## <a name="related-links"></a>相關連結
 

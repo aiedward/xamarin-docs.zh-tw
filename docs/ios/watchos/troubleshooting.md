@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1f5c4135dc1db874de16f6783a86fa7ea927676c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 06524163fadc4300d55ec90f35723fd1561bb8a0
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032737"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292268"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS 疑難排解
 
@@ -36,9 +36,9 @@ ms.locfileid: "73032737"
 <a name="deploy" />
 
 - 舊版的 Visual Studio for Mac 不正確地將其中一個**AppleCompanionSettings**圖示顯示為88x88 圖元;如果您嘗試提交至 App Store，這會導致**遺失圖示錯誤**。
-    此圖示應該是87x87 圖元（ **@3x** Retina 螢幕的29個單位）。 您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯映射資產，或手動編輯**內容 json**檔案（以符合[此範例](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)）。
+    此圖示應該是87x87 圖元（ **@3x** Retina 螢幕的29個單位）。 您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯映射資產，或手動編輯**內容. json**檔案。
 
-- 如果 Watch 延伸模組專案的**Info. plist > WKApp 配套識別碼**未[正確設定](~/ios/watchos/get-started/project-references.md)為符合監看式應用程式的套件組合**識別碼**，偵錯工具將無法連線，而且 Visual Studio for Mac 會等候訊息「*正在等候偵錯工具connect "* 。
+- 如果 Watch 延伸模組專案的**Info. plist > WKApp 配套識別碼**未[正確設定](~/ios/watchos/get-started/project-references.md)為符合監看式應用程式的套件組合**識別碼**，偵錯工具將無法連線，而且 Visual Studio for Mac 會等候訊息「*正在等候偵錯工具*連線」。
 
 - **通知**模式支援調試，但可能不可靠。 重試有時會有效。 確認 Watch 應用程式的**plist** `WKCompanionAppBundleIdentifier` 設定為符合 iOS 父系/容器應用程式的套件組合識別碼（即 iPhone 上執行的）。
 
@@ -166,7 +166,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
     ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. 選取您的新介面控制器，並為它提供您在上方定義的 classname，例如 `MyInterfaceController`
+8. 選取您的新介面控制器，並為它提供您在上方定義的 classname，例如 `MyInterfaceController`第 1 課：建立 Windows Azure 儲存體物件{2}。
     如果一切都正常運作，它應該會自動出現在 [**類別：** ] 下拉式清單中，而且您可以從該處選取它。
 
     ![](troubleshooting-images/add-4.png "Setting a custom class")
@@ -257,7 +257,7 @@ IOS 應用程式的主要應用程式套件組合的完整路徑 *，其中包�
 
 ### <a name="--sdkroot"></a>--sdkroot
 
-必要項。 指定 Xcode （6.2 或更新版本）的路徑。
+必要。 指定 Xcode （6.2 或更新版本）的路徑。
 
 範例：
 

@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
-ms.openlocfilehash: 11f1d38eb10421d4ecef3e2039688b2d9a6d9e6e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aab121ed5f811baf38eed48cf891ccdf076eaf44
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027834"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291955"
 ---
 # <a name="android-beam"></a>Android Beam
 
 Android 橫樑是 Android 4.0 中引進的近距離無線通訊（NFC）技術，可讓應用程式在接近鄰近的情況時，透過 NFC 分享資訊。
 
-[說明近近分享資訊中兩個裝置的![圖表](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
+[說明近近分享資訊中兩個裝置的 ![圖表](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
 Android 橫樑的運作方式是在兩個裝置都在範圍內時，透過 NFC 推播訊息。 彼此4cm 的裝置可以使用 Android 橫樑共用資料。 一個裝置上的活動會建立一則訊息，並指定可處理推送它的活動（或活動）。 當指定的活動位於前景且裝置在範圍內時，Android 橫樑會將訊息推送到第二個裝置。 在接收的裝置上，會叫用包含訊息資料的意圖。
 
@@ -74,10 +74,8 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 如需使用 Android 橫樑的完整程式碼範例（如下列螢幕擷取畫面所示），請參閱範例庫中的[Android 橫樑示範](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)。
 
-[Android 橫樑示範中的![範例螢幕擷取畫面](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
+[Android 橫樑示範中的 ![範例螢幕擷取畫面](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 
 - [Android 橫樑示範（範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
-- [霜淇淋三明治簡介](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

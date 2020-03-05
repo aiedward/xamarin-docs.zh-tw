@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c25ea0878906b31028143ff1ad689db56b197458
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a6ec3c34afc0c017d5b37eec080f7f9bad08c0c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032260"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78293033"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>其他 iOS 10 架構變更
 
@@ -23,7 +23,7 @@ _本文涵蓋適用于 iOS 10 現有架構的其他、次要變更或增強功�
 AVFoundation 架構包含下列增強功能：
 
 - 在 iOS 10 中，開發人員不再需要根據內容類型來執行不同的[AVPlayerItem](xref:AVFoundation.AVPlayerItem)行為。 只要設定 `Rate` 屬性，AVFoundation 就會判斷有足夠的內容可供播放而不停止。
-- 新的[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)類別會取代已被取代的 `AVCaptureStillImageOutput` 類別，並提供統一的方法來處理所有攝影工作流程，藉由提供複雜的控制和監視功能，並支援新功能，例如作為即時相片和原始捕捉格式。
+- 新的[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)類別會取代已被取代的 `AVCaptureStillImageOutput` 類別，並提供統一的方法來處理所有攝影工作流程，其方式是提供新功能（例如即時相片和原始捕捉格式）的複雜控制和監視。
 - 新的 `AVPlayerLooper` 類別可讓您更輕鬆地在播放期間迴圈指定的媒體片段。
 - `AVAssetDownloadURLSession` 類別可讓您下載及稍後播放 FairPlay 加密的 HLS 串流。
 - 根據預設， [AVCaptureSession](xref:AVFoundation.AVCaptureSession)類別會在裝置硬體支援時，自動支援寬色彩的寬區捕捉。 如需詳細資訊，請參閱 Apple 的[IOS 裝置相容性參考](https://developer.apple.com/library/prerelease/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013599)。
@@ -49,8 +49,8 @@ iOS 10 包含下列核心資料架構的增強功能：
 iOS 10 對核心映射架構提供下列增強功能：
 
 - 開發人員現在可以在處理之前和之後來回轉換色彩空間，以在核心影像內容的工作色彩空間之外的色彩空間中處理影像。
-- 對於使用 A8 或 A9 Cpu 的 iOS 裝置，現在支援原始影像格式。 核心映射現在支援從內建的 iSight 攝影機或從協力廠商攝影機解碼原始影像。 使用 [CIFilter](xref:CoreImage.CIFilter) 類別`FilterWithImageURL`的或方法來處理原始影像`FilterWithImageData` 。
-- 在 `UIImageView` 物件中，已對 `UIImage` 轉譯（以核心映射映射存放區支援）進行數個轉譯效能增強功能。 
+- 對於使用 A8 或 A9 Cpu 的 iOS 裝置，現在支援原始影像格式。 核心映射現在支援從內建的 iSight 攝影機或從協力廠商攝影機解碼原始影像。 使用[CIFilter](xref:CoreImage.CIFilter)類別的 `FilterWithImageData` 或 `FilterWithImageURL` 方法來處理原始影像。
+- 在 `UIImageView` 物件中，已對 `UIImage` 轉譯（以核心映射映射存放區支援）進行數個轉譯效能增強功能。
 - 標記為寬範圍的 `UIImage` 物件將會在支援寬色彩的 iOS 裝置上，于 `UIImageView` 物件中轉譯為寬範圍色彩。
 - 核心影像核心程式代碼現在可以要求特定圖元輸出格式。
 - [CIFilter](xref:CoreImage.CIFilter)類別的 `ImageWithExtent` 方法可以用來將自訂處理插入篩選作業中。 核心映射會在處理輸出或顯示的影像時，叫用篩選之間的指定回呼。
@@ -82,7 +82,7 @@ iOS 10 對核心映射架構提供下列增強功能：
 
 IOS 10 中的 GameKit 架構已進行下列增強功能：
 
-- **Game Center 應用程式**已被取代，並已從 iOS 移除。 如果應用程式使用 GameKit，它_必須_提供自己的介面來顯示 GameKit 功能，例如排行榜等。 
+- **Game Center 應用程式**已被取代，並已從 iOS 移除。 如果應用程式使用 GameKit，它_必須_提供自己的介面來顯示 GameKit 功能，例如排行榜等。
 - [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)類別已實作為僅限 iCloud 的新帳戶類型。
 - 新的[GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession)類別提供通用的解決方案來管理 Game Center 上的持續性資料存放區。 `GKGameSession` 會維護一份玩家清單，而應用程式會負責執行在玩家之間儲存、抓取或交換參與者日期的方式和時機。 在許多情況下，遊戲會話可以取代現有的回合型比對、即時符合或持續的遊戲儲存方法。
 
@@ -165,7 +165,7 @@ IOS 10 中的 SceneKit 架構已進行下列增強功能：
 - [立即 SceneKit] 色彩會藉由閱讀色彩設定檔資訊來符合所有色彩。
 - SceneKit 會針對所有著色器類型，以線性 RGB 色彩空間來解讀色彩元件值。
 - 您可以藉由在應用程式的 `Info.plist`中指定 `SCNDisableLinearSpaceRendering` 和 `SCNDisableWideGamut` 金鑰，來停用線性色彩空間呈現和寬色彩。
-- 建立任意多邊形 primates （從檔案載入或以程式設計方式產生），以使用新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)類別來指定幾何。
+- 建立任意多邊形 primates （從檔案載入或以程式設計方式產生），以使用新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon)類別來指定幾何。
 - 由於 SceneKit 會讀取和調整材質影像中的色彩設定檔資訊，因此請針對所有影像使用資產目錄，以確保提供這項資訊。
 
 ## <a name="spritekit-enhancements"></a>SpriteKit 增強功能
@@ -192,7 +192,7 @@ IOS 10.3 中的 ScrollView 控制項已進行下列增強功能：
 IOS 10 中的 UIKit 架構已進行下列增強功能：
 
 - 新的[UIPasteboard](xref:UIKit.UIPasteboard) API 會提供新的選項（例如存留期限制），並會自動為一般類別類型宣告相容的內容類型。
-- 新增完全互動式、以物件為基礎、可中斷的動畫支援，並且可以連結到筆勢。 請參閱 Apple 的[UIViewAnimating 通訊協定參考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 類別參考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 通訊協定參考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 類別參考](https://developer.apple.com/reference/uikit/uicubictimingparameters)和[UISpringTimingParameter ](https://developer.apple.com/reference/uikit/uispringtimingparameters)如需詳細資訊, 類別參考。
+- 新增完全互動式、以物件為基礎、可中斷的動畫支援，並且可以連結到筆勢。 如需詳細資訊，請參閱 Apple 的[UIViewAnimating 通訊協定參考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 類別參考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 通訊協定參考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 類別參考](https://developer.apple.com/reference/uikit/uicubictimingparameters)和[UISpringTimingParameter 類別參考](https://developer.apple.com/reference/uikit/uispringtimingparameters)。
 - 新的 `UIPreviewInteraction` 和 `UIPreviewInteractionDelegate` 可讓開發人員應用程式提供查看和 pop 作業的自訂介面。
 - 新的 `UIAccessibilityCustomRotor` 類別可讓應用程式提供自訂的內容特定功能給輔助技術，例如 Voice。
 - 使用 `UIAccessibilityIsAssistiveTouchRunning` 和 `UIAccessibilityAssistiveTouchStatusDidChangeNotification` 符號來判斷是否已啟用 AssistiveTouch。

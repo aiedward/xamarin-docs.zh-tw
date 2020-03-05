@@ -5,12 +5,12 @@ description: 本檔會比較 WPF 與 Xamarin 的格式，並將其對照。 其�
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: e87595c121f1117d055d812cb06c81ecba850c12
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 9c69449f88f9c237b5075967c89ff7ff3b6fb57a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955660"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292183"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF 與 Xamarin. 表單：相似 & 差異
 
@@ -74,11 +74,11 @@ Xamarin 也支援自訂標記延伸模組，但執行方式稍有不同。 在 W
 
 ### <a name="attached-properties"></a>附加屬性
 
-附加屬性是可系結屬性的子集，而且其作用方式與在 WPF 中相同。 主要的差異在於，在此情況下會省略此步驟屬性包裝函式，並將其取代為擁有類別上的一組靜態 get/set 方法。 如需詳細資訊，請參閱[Xamarin. Forms 中的附加屬性](~/xamarin-forms/xaml/attached-properties.md)。
+附加屬性是可系結屬性的子集，而且其作用方式與在 WPF 中相同。 主要的差異在於，在此情況下會省略屬性包裝函式，並將其取代為擁有類別上的一組靜態 get/set 方法。 如需詳細資訊，請參閱[Xamarin. Forms 中的附加屬性](~/xamarin-forms/xaml/attached-properties.md)。
 
 ### <a name="using-the-binding-engine"></a>使用系結引擎
 
-使用系結引擎的程式與在 WPF 中的處理方式相同。 藉由建立系結至來源物件（任何 .NET 類型）和選擇性屬性值的 `Binding` 物件（如果省略此步驟，它會將來源物件視為屬性本身，就像 WPF），可以在程式碼後置中使用它。 接著，您可以在任何 `BindableObject` 上使用 `SetBinding`，將系結關聯至 `BindableProperty`。
+使用系結引擎的程式與在 WPF 中的處理方式相同。 藉由建立系結至來源物件（任何 .NET 型別）和選擇性屬性值的 `Binding` 物件（如果省略，它會將來源物件視為屬性本身，就像 WPF），可以在程式碼後置中使用它。 接著，您可以在任何 `BindableObject` 上使用 `SetBinding`，將系結關聯至 `BindableProperty`。
 
 或者，您可以使用 `BindingExtension`，在 XAML 中定義系結關聯性。 它與 WPF 中的延伸模組具有相同的基本值。
 
@@ -128,7 +128,7 @@ Text={Binding Source={x:Reference otherControl}, Path=Text}
 
 在 Xamarin 中，完全支援值轉換器。表單就像 WPF 一樣。 使用相同的介面圖形，但是 Xamarin. 表單具有 `Xamarin.Forms` 命名空間中定義的介面。
 
-### <a name="model-view-viewmodel"></a>Model-View-ViewModel
+### <a name="model-view-viewmodel"></a>模型-視圖-ViewModel
 
 以 WPF 和 Xamarin 完全支援 MVVM。
 
@@ -161,7 +161,7 @@ Xamarin. Forms 系結完全支援這兩個介面。 與許多以 XAML 為基礎�
 
 在 WPF 中，`UserControl`是用來提供具有相關聯線為的 UI 區段。 在 Xamarin 中，我們將 `ContentView` 用於相同的用途。 支援在 XAML 中系結和包含。
 
-## <a name="navigation"></a>瀏覽
+## <a name="navigation"></a>導覽
 
 WPF 包含很少使用的 `NavigationService`，可用來提供「類似瀏覽器」的導覽功能。 大部分的應用程式都不會對此造成困擾，而是使用不同的 `Window` 元素，或視窗的不同區段來顯示資料。
 
@@ -171,7 +171,7 @@ WPF 包含很少使用的 `NavigationService`，可用來提供「類似瀏覽�
 |--- |--- |
 |堆疊型（推播/pop）|NavigationPage|
 |主版/詳細|MasterDetailPage|
-|索引標籤|TabbedPage|
+|定位點|TabbedPage|
 |向左/向右滑動|CarouselView|
 
 `NavigationPage` 是最常見的方法，而且每個頁面都有一個 `Navigation` 屬性，可以用來在導覽堆疊上推入或彈出頁面。 這是與 WPF 中找到的 `NavigationService` 最接近的對應項。

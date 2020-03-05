@@ -7,18 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/08/2019
-ms.openlocfilehash: 2fe4d984f36880493a9a04d99b63876551366477
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 2c3e15ce68ad1507318a1d8155f9ab03095ea409
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696979"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292125"
 ---
 # <a name="xamarinforms-carouselview-introduction"></a>Xamarin. Forms CarouselView 簡介
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)是以可滾動的版面配置呈現資料的視圖，使用者可以在其中滑動以移動專案集合。 根據預設，`CarouselView` 會以水準方向顯示其專案。 螢幕上會顯示單一專案，而滑動手勢會導致向前和向後流覽專案的集合。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)是以可滾動的版面配置呈現資料的視圖，使用者可以在其中滑動以移動專案集合。 根據預設，`CarouselView` 會以水準方向顯示其專案。 螢幕上會顯示單一專案，而滑動手勢會導致向前和向後流覽專案的集合。 此外，也可以顯示代表 `CarouselView`中每個專案的指標：
+
+[![CarouselView 和 IndicatorView （在 iOS 和 Android 上）的螢幕擷取畫面](populate-data-images/indicators.png "IndicatorView 圓形")](populate-data-images/indicators-large.png#lightbox "IndicatorView 圓形")
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)適用于 Xamarin. 表單4.3。 不過，它目前是實驗性，而且只能透過將下列程式程式碼新增至 iOS 上的 `AppDelegate` 類別，或在 Android 上的 `MainActivity` 類別中使用，然後再呼叫 `Forms.Init`：
 

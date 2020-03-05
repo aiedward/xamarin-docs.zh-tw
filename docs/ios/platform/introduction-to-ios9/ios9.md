@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: edc778879aa88d420f41bd2b7b8e15b6d80b5939
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e12bac1f65981776a7bd650cbc840cc0cdf72892
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728261"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292048"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 相容性
 
@@ -21,9 +21,7 @@ _即使您不打算將 iOS 9 功能直接新增至您的應用程式，您還是
 > [!IMPORTANT]
 > 此頁面上的資訊適用于已在 App Store 以 iOS 8 或更早版本為目標的應用程式，但尚未提交適用于 iOS 9 相容性更新的客戶。 如果您已經在使用最新版本-Xcode 7 和 Xamarin。 iOS 9-針對您的應用程式開發，請流覽[iOS 9 簡介](~/ios/platform/introduction-to-ios9/index.md)。
 
-當第一個 iOS 9 Beta 版出現時，我們發現有兩個舊版 Xamarin 的問題顯示為無法在 iOS 9 上啟動的繼承應用程式。
-
-這兩個問題（如[我們的論壇所詳述](https://forums.xamarin.com/discussion/comment/131529/#Comment_131529)）是：
+當第一個 iOS 9 Beta 版出現時，我們發現下列兩個舊版 Xamarin 的問題，其列出的繼承應用程式無法在 iOS 9 上啟動：
 
 - IOS 8 或更早版本的應用程式組建無法在32位裝置（包括以[Unified API](~/cross-platform/macios/unified/index.md)建立的應用程式）上啟動。
 - 未指定完整路徑，P/Invoke 失敗。

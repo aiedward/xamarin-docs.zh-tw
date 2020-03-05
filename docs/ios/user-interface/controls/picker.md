@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/14/2018
-ms.openlocfilehash: ac96363378e91c60956d28352535733c7e954e6a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 43dbafe16d7cbabdb3b7902dd3d46d845f213fcd
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021987"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78291958"
 ---
 # <a name="picker-control-in-xamarinios"></a>Xamarin 中的選擇器控制項
 
@@ -27,7 +27,7 @@ ms.locfileid: "73021987"
 
 ### <a name="implementing-a-picker"></a>執行選擇器
 
-藉由具現化新的 `UIPickerView` 來執行選擇器：
+藉由具現化新的 `UIPickerView`來執行選擇器：
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
@@ -132,13 +132,13 @@ public class PeopleModel : UIPickerViewModel
 ### <a name="customizing-a-pickers-appearance"></a>自訂選擇器的外觀
 
 若要自訂選擇器的外觀，請使用[`UIPickerView.UIPickerViewAppearance`](xref:UIKit.UIPickerView.UIPickerViewAppearance)
-類別或覆寫 `UIPickerViewModel` 中的[`GetView`](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))和[`GetRowHeight`](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint))方法。
+類別或覆寫 `UIPickerViewModel`中的[`GetView`](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))和[`GetRowHeight`](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint))方法。
 
 ## <a name="uidatepicker"></a>UIDatePicker
 
 ### <a name="implementing-a-date-picker"></a>執行日期選擇器
 
-藉由具現化 `UIDatePicker` 來執行日期選擇器：
+藉由具現化 `UIDatePicker`來執行日期選擇器：
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
@@ -168,9 +168,9 @@ var calendar = new NSCalendar(NSCalendarType.Gregorian);
 var currentDate = NSDate.Now;
 var components = new NSDateComponents();
 components.Year = -60;
-NSDate minDate = calendar.DateByAddingComponents(components, NSDate.Now, NSCalendarOptions.None);
+NSDate minDate = calendar.DateByAddingComponents(components, currentDate, NSCalendarOptions.None);
 datePickerView.MinimumDate = minDate;
-datePickerView.MaximumDate = NSDate.Now;
+datePickerView.MaximumDate = currentDate;
 ```
 
 > [!TIP]
@@ -189,7 +189,7 @@ datePickerView.MaximumDate = NSDate.Now;
 datePickerView.MinuteInterval = 10;
 ```
 
-#### <a name="mode"></a>模式
+#### <a name="mode"></a>[模式]
 
 日期選擇器支援四種[模式](xref:UIKit.UIDatePickerMode)，如下所述：
 
@@ -234,7 +234,7 @@ datePickerView.Mode = UIDatePickerMode.DateAndTime;
 如同[`UIDatePickerMode.Date`](#uidatepickermodedate)，選取器的順序和12或24小時制的使用取決於日期選擇器的地區設定。
 
 > [!TIP]
-> 使用 `Date` 屬性，以模式 `UIDatePickerMode.Time`、`UIDatePickerMode.Date` 或 `UIDatePickerMode.DateAndTime` 來捕捉日期選擇器的值。 這個值會儲存為 `NSDate`。
+> 使用 `Date` 屬性，以模式 `UIDatePickerMode.Time`、`UIDatePickerMode.Date`或 `UIDatePickerMode.DateAndTime`來捕捉日期選擇器的值。 這個值會儲存為 `NSDate`。
 
 ##### <a name="uidatepickermodecountdowntimer"></a>UIDatePickerMode.CountDownTimer
 
@@ -260,7 +260,7 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 若要格式化 `NSDate`，請使用[`NSDateFormatter`](xref:Foundation.NSDateFormatter)。
 
-若要使用 `NSDateFormatter`，請呼叫其[`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))方法。 例如:
+若要使用 `NSDateFormatter`，請呼叫其[`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))方法。 例如：
 
 ```csharp
 var date = NSDate.Now;
@@ -313,7 +313,7 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 - `NSDateFormatterStyle.Short`：8/2/17、7:50 PM
 
 > [!NOTE]
-> `DateFormat` 和 `DateStyle` / `TimeStyle` 提供不同的方式來指定日期和時間格式。 最近設定的屬性會決定日期格式器的輸出。
+> `DateFormat` 和 `DateStyle`/`TimeStyle` 提供不同的方式來指定日期和時間格式。 最近設定的屬性會決定日期格式器的輸出。
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1339a6c2909c7ba62592d66dcdf08bcfd2e668a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b9dfb354f33f67c73b415f8c109ebdc27dcdb6d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030628"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291819"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>其他 tvOS 10 架構變更
 
@@ -55,7 +55,7 @@ tvOS 10 包含下列核心資料架構的增強功能：
 
 tvOS 10 包含下列核心圖形架構的增強功能：
 
-- 新的[CGColorConverterRef](https://developer.apple.com/reference/coregraphics/cgcolorconverterref)類別可以用來執行一系列的色彩轉換。
+- 新的 CGColorConverterRef 類別可以用來執行一系列的色彩轉換。
 
 <a name="Core-Image-Enhancements" />
 
@@ -65,7 +65,7 @@ tvOS 10 對核心映射架構提供下列增強功能：
 
 - [CIFilter](https://developer.apple.com/reference/coreimage/cifilter)類別的 `ImageWithExtent` 方法可以用來將自訂處理插入篩選作業中。 核心映射會在處理輸出或顯示的影像時，叫用篩選之間的指定回呼。
 - 應用程式現在可以在處理之前和之後來回轉換色彩空間，以在核心影像內容的工作色彩空間之外的色彩空間中處理影像。
-- 在 `UIImageView` 物件中，已對 `UIImage` 轉譯（以核心映射映射存放區支援）進行數個轉譯效能增強功能。 
+- 在 `UIImageView` 物件中，已對 `UIImage` 轉譯（以核心映射映射存放區支援）進行數個轉譯效能增強功能。
 - 標記為寬範圍的 `UIImage` 物件將會在支援寬色彩的 iOS 裝置上，于 `UIImageView` 物件中轉譯為寬範圍色彩。
 - 核心影像核心程式代碼現在可以要求特定圖元輸出格式。
 
@@ -159,7 +159,7 @@ TvOS 10 中的 SceneKit 架構已進行下列增強功能：
 - SceneKit 會針對所有著色器類型，以線性 RGB 色彩空間來解讀色彩元件值。
 - 由於 SceneKit 會讀取和調整材質影像中的色彩設定檔資訊，因此請針對所有影像使用資產目錄，以確保提供這項資訊。
 - 您可以藉由在應用程式的 `Info.plist`中指定 `SCNDisableLinearSpaceRendering` 和 `SCNDisableWideGamut` 金鑰，來停用線性色彩空間呈現和寬色彩。
-- 建立任意多邊形 primates （從檔案載入或以程式設計方式產生），以使用新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)類別來指定幾何。
+- 建立任意多邊形 primates （從檔案載入或以程式設計方式產生），以使用新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon)類別來指定幾何。
 
 <a name="SpriteKit-Enhancements" />
 
@@ -181,7 +181,7 @@ TvOS 10 中的 UIKit 架構已進行下列增強功能：
 - 焦點 API 已經過增強，可支援非 view 專案的焦點，以及 `UIViews`。 支援焦點的專案_必須_執行 `IUIFocusItem` 介面。
 - 新的 `UIGraphicsRender` 類別提供物件導向的方法，從 UIKit 轉譯或核心圖形建立點陣圖或 Pdf，並取代已淘汰的 `UIGraphicsBeginImageContext` 方法。
 - 已新增 `UIUserInterfaceStyle` 類別，以判斷哪個使用者介面主題（深色或淺色）目前為使用中狀態。
-- 新增完全互動式、以物件為基礎、可中斷的動畫支援，並將 van 連結至手勢。 Pleas 請參閱 Apple 的[UIViewAnimating 通訊協定參考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 類別參考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 通訊協定參考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 類別參考](https://developer.apple.com/reference/uikit/uicubictimingparameters)和[UISpringTimingParameter 類別參考](https://developer.apple.com/reference/uikit/uispringtimingparameters)如需詳細資訊, 。
+- 新增完全互動式、以物件為基礎、可中斷的動畫支援，並將 van 連結至手勢。 Pleas 如需詳細資訊，請參閱 Apple 的[UIViewAnimating 通訊協定參考](https://developer.apple.com/reference/uikit/uiviewanimating)、 [UIViewPropertyAnimator 類別參考](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider 通訊協定參考](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters 類別參考](https://developer.apple.com/reference/uikit/uicubictimingparameters)和[UISpringTimingParameter 類別參考](https://developer.apple.com/reference/uikit/uispringtimingparameters)。
 - 新的 `UIPreviewInteraction` 和 `UIPreviewInteractionDelegate` 可讓應用程式提供查看和 pop 作業的自訂介面。
 - 新的 `UIAccessibilityCustomRotor` 類別可讓應用程式提供自訂的內容特定功能給輔助技術，例如 Voice。
 - 使用 `UIAccessibilityIsAssistiveTouchRunning` 和 `UIAccessibilityAssistiveTouchStatusDidChangeNotification` 符號來判斷是否已啟用 AssistiveTouch。

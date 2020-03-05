@@ -6,13 +6,13 @@ ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/02/2016
-ms.openlocfilehash: 3f06e4d94103e895bdceb2836c67709eb0f48c9a
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/16/2020
+ms.openlocfilehash: 56583aa0df676ae55e1b283f1a8e151b69a13d28
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490099"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292632"
 ---
 # <a name="xamarinforms-bindable-properties"></a>Xamarin. Forms 可系結屬性
 
@@ -37,7 +37,7 @@ Xamarin. Forms 可系結屬性的範例包括[`Label.Text`](xref:Xamarin.Forms.L
 1. 使用其中一個[`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create*)方法多載來建立[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)實例。
 1. 定義[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)實例的屬性存取子。
 
-請注意，您必須在 UI 執行緒上建立所有[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)實例。 這表示只有在 UI 執行緒上執行的程式碼可以取得或設定可系結屬性的值。 不過，您可以使用[`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))方法封送處理至 UI 執行緒，以從其他執行緒存取 `BindableProperty` 實例。
+所有[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)實例都必須在 UI 執行緒上建立。 這表示只有在 UI 執行緒上執行的程式碼可以取得或設定可系結屬性的值。 不過，您可以使用[`Device.BeginInvokeOnMainThread`](xref:Xamarin.Forms.Device.BeginInvokeOnMainThread(System.Action))方法封送處理至 UI 執行緒，以從其他執行緒存取 `BindableProperty` 實例。
 
 ### <a name="create-a-property"></a>建立屬性
 
@@ -166,6 +166,9 @@ static bool IsValidValue (BindableObject view, object value)
 
 `static` 強制型轉值回呼方法可以透過指定[`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate))方法的 `coerceValue` 參數，向可系結的屬性註冊。 當可系結屬性的值變更時，將會叫用指定的回呼方法。
 
+> [!IMPORTANT]
+> `BindableObject` 類型具有 `CoerceValue` 方法，可透過叫用其強制轉型值回呼，加以呼叫來強制重新評估其 `BindableProperty` 引數的值。
+
 當屬性的值變更時，強制重新評估可系結屬性的強制值回呼。 例如，強制型轉值回呼可以用來確保一個可系結屬性的值不大於另一個可系結屬性的值。
 
 下列程式碼範例顯示 `Angle` 可系結屬性如何將 `CoerceAngle` 方法註冊為強制值回呼方法：
@@ -174,7 +177,7 @@ static bool IsValidValue (BindableObject view, object value)
 public static readonly BindableProperty AngleProperty = BindableProperty.Create (
   "Angle", typeof(double), typeof(HomePage), 0.0, coerceValue: CoerceAngle);
 public static readonly BindableProperty MaximumAngleProperty = BindableProperty.Create (
-  "MaximumAngle", typeof(double), typeof(HomePage), 360.0);
+  "MaximumAngle", typeof(double), typeof(HomePage), 360.0, propertyChanged: ForceCoerceValue);
 ...
 
 static object CoerceAngle (BindableObject bindable, object value)
@@ -188,9 +191,14 @@ static object CoerceAngle (BindableObject bindable, object value)
   }
   return input;
 }
+
+static void ForceCoerceValue(BindableObject bindable, object oldValue, object newValue)
+{
+  bindable.CoerceValue(AngleProperty);
+}
 ```
 
-`CoerceAngle` 方法會檢查 `MaximumAngle` 屬性的值，如果 `Angle` 屬性值大於該值，則會將值強制轉型為 `MaximumAngle` 屬性值。
+`CoerceAngle` 方法會檢查 `MaximumAngle` 屬性的值，如果 `Angle` 屬性值大於該值，則會將值強制轉型為 `MaximumAngle` 屬性值。 此外，當 `MaximumAngle` 屬性變更時，會藉由呼叫 `CoerceValue` 方法，在 `Angle` 屬性上叫用強制轉型值回呼。
 
 ### <a name="create-a-default-value-with-a-func"></a>使用 Func 建立預設值
 

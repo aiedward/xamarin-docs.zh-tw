@@ -1,67 +1,69 @@
 ---
-title: 在 Xamarin.Forms 中的自訂動畫
-description: 這篇文章會示範如何使用 Xamarin.FOrms 動畫類別來建立及取消動畫，並同步處理多個動畫，並建立自訂動畫顯示屬性不是由現有的動畫方法建立動畫的動畫。
+title: Xamarin 中的自訂動畫
+description: 本文示範如何使用 [Xamarin 動畫] 類別來建立和取消動畫、同步處理多個動畫，以及建立自訂動畫，以動畫顯示現有動畫方法不會產生動畫的屬性。
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/14/2016
-ms.openlocfilehash: 86fac9dd0c2f9281a0c828ace68fbf77679dce5b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 02/10/2019
+ms.openlocfilehash: 405d7990b622b890aa3d66bd632662f086441666
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759831"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292629"
 ---
-# <a name="custom-animations-in-xamarinforms"></a>在 Xamarin.Forms 中的自訂動畫
+# <a name="custom-animations-in-xamarinforms"></a>Xamarin 中的自訂動畫
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
-_動畫類別是所有的 Xamarin.Forms 動畫，以建立一或多個動畫物件 ViewExtensions 類別的擴充方法的建置組塊。這篇文章會示範如何使用動畫類別來建立及取消動畫，並同步處理多個動畫，並建立自訂動畫顯示屬性不是由現有的動畫方法建立動畫的動畫。_
+_動畫類別是所有 Xamarin. 表單動畫的建立區塊，而 ViewExtensions 類別中的擴充方法會建立一或多個動畫物件。本文示範如何使用動畫類別來建立和取消動畫、同步處理多個動畫，以及建立自訂動畫，以動畫顯示現有動畫方法不會產生動畫的屬性。_
 
-必須在建立時，指定的參數數目`Animation`物件，包含正在繪製之屬性的開始和結束值和回呼，以變更屬性的值。 `Animation`物件也可以維護其子動畫可以執行並同步處理的集合。 如需詳細資訊，請參閱 <<c0> [ 其子動畫](#child)。
+建立 `Animation` 物件時，必須指定一些參數，包括正在動畫之屬性的開始和結束值，以及變更屬性值的回呼。 `Animation` 物件也可以維護可執行及同步處理的子動畫集合。 如需詳細資訊，請參閱[子動畫](#child)。
 
-執行以建立動畫[ `Animation` ](xref:Xamarin.Forms.Animation)類別，這可能會或可能不包含其子動畫，之後，即可呼叫[ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))方法。 這個方法指定的持續時間的動畫，並接手其他項目，可控制是否要重複動畫的回呼。
+藉由呼叫[`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))方法，來執行以[`Animation`](xref:Xamarin.Forms.Animation)類別（不一定包括子動畫）建立的動畫。 這個方法會指定動畫的持續時間，以及其他專案之間，控制是否要重複動畫的回呼。
 
-## <a name="creating-an-animation"></a>建立動畫
+此外， [`Animation`](xref:Xamarin.Forms.Animation)類別具有 `IsEnabled` 屬性，可加以檢查以判斷作業系統是否已停用動畫，例如啟用省電模式時。
 
-建立時[ `Animation` ](xref:Xamarin.Forms.Animation)物件時，通常至少三個參數是必要的如下列程式碼範例所示：
+## <a name="create-an-animation"></a>建立動畫
+
+建立[`Animation`](xref:Xamarin.Forms.Animation)物件時，通常需要至少三個參數，如下列程式碼範例所示：
 
 ```csharp
 var animation = new Animation (v => image.Scale = v, 1, 2);
 ```
 
-此程式碼定義的動畫[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性[ `Image` ](xref:Xamarin.Forms.Image)執行個體從值 1 的值為 2。 動畫的值，這 Xamarin.Forms 所衍生的會傳遞至做為第一個引數，指定的回呼，它用來變更值`Scale`屬性。
+此程式碼會將[`Image`](xref:Xamarin.Forms.Image)實例之[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性的動畫，從1的值定義為2。 由 Xamarin 所衍生的動畫值會傳遞至指定為第一個引數的回呼，用來變更 `Scale` 屬性的值。
 
-藉由呼叫啟動動畫[ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))方法，如下列程式碼範例所示：
+動畫會使用[`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))方法的呼叫來啟動，如下列程式碼範例所示：
 
 ```csharp
 animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => image.Scale = 1, () => true);
 ```
 
-請注意， [ `Commit` ](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))方法沒有傳回`Task`物件。 相反地，通知會透過回呼方法的方式提供。
+請注意， [`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))方法不會傳回 `Task` 物件。 相反地，會透過回呼方法來提供通知。
 
-下列引數中指定`Commit`方法：
+下列引數是在 `Commit` 方法中指定：
 
-- 第一個引數 (*擁有者*) 識別動畫的擁有者。 這可以是視覺化的項目套用動畫或另一個視覺元素的詳細資訊，例如頁面。
-- 第二個引數 (*名稱*) 識別的名稱動畫。 名稱會與擁有者才能唯一識別動畫結合。 此唯一的識別可以再用來判斷動畫是否正在執行 ([`AnimationIsRunning`](xref:Xamarin.Forms.AnimationExtensions.AnimationIsRunning(Xamarin.Forms.IAnimatable,System.String)))，或將其取消即可 ([`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String)))。
-- 第三個引數 (*速率*) 表示的每個呼叫中定義的回呼方法之間的毫秒數[ `Animation` ](xref:Xamarin.Forms.Animation)建構函式
-- 第四個引數 (*長度*) 指出動畫，以毫秒為單位的持續時間。
-- 第五個引數 (*加/減速*) 定義要用於動畫的 easing 函式。 或者，指定的 easing 函式，做為引數[ `Animation` ](xref:Xamarin.Forms.Animation)建構函式。 如需有關 easing 函式的詳細資訊，請參閱[Easing 函式](~/xamarin-forms/user-interface/animation/easing.md)。
-- 第六個引數 (*完成*) 是將動畫完成時執行的回呼。 此回呼會採用兩個引數，以指出最終的值，以及第二個引數的第一個引數`bool`設定為`true`如果動畫已取消。 或者，*完成*回呼可以指定為引數[ `Animation` ](xref:Xamarin.Forms.Animation)建構函式。 不過，透過單一動畫時，如果*完成*兩者都指定回呼`Animation`建構函式和`Commit`方法，只在指定的回呼`Commit`方法將會執行。
-- 第七個引數 (*重複*) 是可讓重複動畫的回呼。 它會呼叫結尾的動畫，並傳回`true`表示應該重複動畫。
+- 第一個引數（*擁有*者）會識別動畫的擁有者。 這可以是套用動畫的視覺專案，或是另一個視覺元素（例如頁面）。
+- 第二個引數（*name*）會以名稱來識別動畫。 名稱會與擁有者結合，以唯一識別動畫。 此唯一識別可接著用來判斷動畫是否正在執行（[`AnimationIsRunning`](xref:Xamarin.Forms.AnimationExtensions.AnimationIsRunning(Xamarin.Forms.IAnimatable,System.String))），或取消它（[`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String))）。
+- 第三個引數（*速率*）表示每次呼叫[`Animation`](xref:Xamarin.Forms.Animation)函式中所定義的回呼方法之間的毫秒數
+- 第四個引數（*長度*）表示動畫的持續時間（以毫秒為單位）。
+- 第五個引數（*緩動*）定義要在動畫中使用的緩動函式。 或者，可以將緩動函式指定為[`Animation`](xref:Xamarin.Forms.Animation)的參數的引數。 如需緩時函數的詳細資訊，請參閱[簡化](~/xamarin-forms/user-interface/animation/easing.md)函式。
+- 第六個引數（*完成*）是當動畫完成時，將會執行的回呼。 這個回呼會採用兩個引數，其中第一個引數表示最後一個值，而第二個引數是設定為 `true` 的 `bool` （如果已取消動畫）。 或者，您也可以將*完成*的回呼指定為[`Animation`](xref:Xamarin.Forms.Animation)的函式的引數。 不過，透過單一動畫，如果*已完成*的回呼是在 `Animation` 的函式和 `Commit` 方法中指定，則只會執行 `Commit` 方法中指定的回呼。
+- 第七個引數（*重複*）是允許重複動畫的回呼。 它會在動畫結束時呼叫，並傳回 `true` 表示動畫應重複。
 
-整體影響是若要建立動畫，從而[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性[ `Image` ](xref:Xamarin.Forms.Image)從 1 到 2，超過 2 秒 （2000年毫秒），使用[ `Linear`](xref:Xamarin.Forms.Easing.Linear) easing 函式。 動畫完成時，每次其`Scale`屬性重設為 1，以及動畫重複一次。
+整體效果是建立一個動畫，將[`Image`](xref:Xamarin.Forms.Image)的[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性從1到2，使用[`Linear`](xref:Xamarin.Forms.Easing.Linear)的緩時數（2000毫秒）來增加。 每次動畫完成時，其 `Scale` 屬性都會重設為1，且動畫會重複。
 
 > [!NOTE]
-> 可建構並行的動畫，獨立執行，藉由建立`Animation`每個動畫的物件，然後呼叫`Commit`上每個動畫的方法。
+> 並行的動畫（彼此獨立執行）可以藉由建立每個動畫的 `Animation` 物件，然後在每個動畫上呼叫 `Commit` 方法來加以建造。
 
 <a name="child" />
 
-### <a name="child-animations"></a>其子動畫
+### <a name="child-animations"></a>子動畫
 
-[ `Animation` ](xref:Xamarin.Forms.Animation)類別也支援其子動畫，其中包含建立`Animation`物件的其他`Animation`物件會加入。 這可讓一系列的動畫會執行，以及同步處理。 下列程式碼範例示範如何建立和執行其子動畫：
+[`Animation`](xref:Xamarin.Forms.Animation)類別也支援子動畫，這牽涉到建立加入其他 `Animation` 物件的 `Animation` 物件。 這可讓一系列的動畫執行並同步處理。 下列程式碼範例示範如何建立和執行子動畫：
 
 ```csharp
 var parentAnimation = new Animation ();
@@ -76,7 +78,7 @@ parentAnimation.Add (0.5, 1, scaleDownAnimation);
 parentAnimation.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
 ```
 
-或者，在程式碼範例可以撰寫更簡潔，如下列程式碼範例所示：
+或者，您也可以撰寫更簡潔的程式碼範例，如下列程式碼範例所示：
 
 ```csharp
 new Animation {
@@ -86,31 +88,31 @@ new Animation {
     }.Commit (this, "ChildAnimations", 16, 4000, null, (v, c) => SetIsEnabledButtonState (true, false));
 ```
 
-在這兩個程式碼範例中，父代[ `Animation` ](xref:Xamarin.Forms.Animation)建立物件時，其他的`Animation`物件再加入。 前兩個引數[ `Add` ](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))方法指定何時開始及完成子動畫。 將引數值必須介於 0 和 1，並代表相對的期間內可使用指定的子系動畫的父代動畫。 因此，在此範例中`scaleUpAnimation`是可使用的動畫的前半`scaleDownAnimation`的後半部的動畫，將會啟用而`rotateAnimation`後的整個持續期間。
+在這兩個程式碼範例中，會建立一個父系[`Animation`](xref:Xamarin.Forms.Animation)物件，然後再新增額外的 `Animation` 物件。 [`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))方法的前兩個引數會指定開始和完成子動畫的時機。 引數值必須介於0和1之間，而且代表父動畫中指定子動畫將使用的相對期間。 因此，在此範例中，`scaleUpAnimation` 將在動畫的前半部作用中，`scaleDownAnimation` 將在動畫的後半部作用中，而 `rotateAnimation` 則會在整個持續時間內作用。
 
-整體影響是，動畫會超過 4 秒 （4000 毫秒為單位）。 `scaleUpAnimation`繪製[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)從 1 到 2，超過 2 秒的屬性。 `scaleDownAnimation`然後以動畫顯示`Scale`屬性從 2 設為 1，超過 2 秒。 這兩個小數位數動畫發生，而`rotateAnimation`繪製[ `Rotation` ](xref:Xamarin.Forms.VisualElement.Rotation)屬性從 0 到 360，超過 4 秒。 請注意，調整動畫也會使用 easing 函式。 [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn) Easing 函式會導致[ `Image` ](xref:Xamarin.Forms.Image)最初壓縮再取得較大，而[ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut) easing 函式會導致`Image`變成小於實際大小完整的動畫的結尾。
+整體效果是動畫會在4秒（4000毫秒）發生。 `scaleUpAnimation` 會在2秒內，從1到2繪製[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性的動畫。 然後，`scaleDownAnimation` 會在2秒內，將 `Scale` 屬性從2動畫繪製到1。 同時發生這兩個調整動畫時，`rotateAnimation` 會在4秒內，從0到360繪製[`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)屬性的動畫。 請注意，縮放動畫也會使用緩動函數。 [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn)的緩時函式會導致[`Image`](xref:Xamarin.Forms.Image)一開始先壓縮，再變大，而[`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)緩動函式會導致 `Image` 小於完整動畫結尾的實際大小。
 
-有一些之間的差異[ `Animation` ](xref:Xamarin.Forms.Animation)使用其子動畫的物件和不的一個：
+使用子動畫的[`Animation`](xref:Xamarin.Forms.Animation)物件與不會有一些差異：
 
-- 使用其子動畫時*完成*回呼，在子系的動畫上指出子系已完成，而*完成*回呼傳遞至`Commit`方法表示已完成完整的動畫。
-- 當使用其子動畫時，傳回`true`從*重複*回呼`Commit`方法並不會造成動畫重複，但動畫將會繼續執行而不需要新的值。
-- 包括中的加/減速函式時`Commit`方法和 easing 函式傳回的值大於 1，動畫將會終止。 如果 easing 函式會傳回小於 0 的值，該值會限於 0。 若要使用 easing 函式傳回值小於 0 或大於 1，就必須指定在其中的子系動畫，而不是在`Commit`方法。
+- 使用子動畫時，子動畫上*完成*的回呼會指出子系完成的時間，而傳遞至 `Commit` 方法的*完成*回呼會指出整個動畫完成的時間。
+- 使用子動畫時，從 `Commit` 方法的*重複*回呼傳回 `true` 不會導致動畫重複，但動畫將會繼續執行，而不會有新的值。
+- 當 `Commit` 方法中包含緩動函式，而緩動函式傳回的值大於1時，動畫將會終止。 如果緩動函式傳回的值小於0，則此值會壓制為0。 若要使用會傳回小於0或大於1之值的緩動函式，它必須指定于其中一個子動畫，而不是在 `Commit` 方法中。
 
-[ `Animation` ](xref:Xamarin.Forms.Animation)類別也包含[ `WithConcurrent` ](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))方法，可用來將其子動畫加入至父代`Animation`物件。 不過，其*開始*並*完成*引數值不限制在 0 到 1，但只有該部分對應至範圍 0 到 1 的子系動畫將會啟用。 例如，如果`WithConcurrent`方法呼叫定義為目標的子系動畫[ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale)屬性從 1 到 6，但*開始*並*完成*的值-2 和 3，*開始*-2 值會對應到`Scale`值為 1，而*完成*值為 3 會對應到`Scale`6 的值。 0 和 1 的範圍以外的值沒有任何部分播放動畫，因為`Scale`屬性將只會從以動畫顯示 3 到 6。
+[`Animation`](xref:Xamarin.Forms.Animation)類別也包含[`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))方法，可用於將子動畫新增至父 `Animation` 物件。 不過，其*begin*和*finish*引數值不會限制為0到1，但只有對應到0到1範圍的子動畫部分，才會處於作用中狀態。 例如，如果 `WithConcurrent` 方法呼叫定義的子動畫的目標是從1到6的[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性，但具有-2 和3的*開始*和*結束*值，則-2 的*開始*值會對應至 `Scale` 值1，而*完成*值3則對應至6的 `Scale` 值。 由於0和1範圍以外的值不會在動畫中播放，因此 `Scale` 屬性只會從3到6的動畫。
 
-## <a name="canceling-an-animation"></a>正在取消動畫
+## <a name="cancel-an-animation"></a>取消動畫
 
-應用程式可以取消呼叫的動畫[ `AbortAnimation` ](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String))擴充方法，如下列程式碼範例所示：
+應用程式可以透過呼叫[`AbortAnimation`](xref:Xamarin.Forms.AnimationExtensions.AbortAnimation(Xamarin.Forms.IAnimatable,System.String))擴充方法來取消動畫，如下列程式碼範例所示：
 
 ```csharp
 this.AbortAnimation ("SimpleAnimation");
 ```
 
-請注意，動畫擁有者和動畫名稱的組合唯一識別動畫。 因此，擁有者和名稱會指定當執行動畫必須指定要取消的動畫。 因此，在程式碼範例將會立即取消名為動畫`SimpleAnimation`頁面所擁有。
+請注意，動畫會由動畫擁有者和動畫名稱的組合來唯一識別。 因此，必須指定執行動畫時指定的擁有者和名稱，才能取消動畫。 因此，程式碼範例會立即取消名為 `SimpleAnimation` 的動畫，此為頁面所擁有。
 
-## <a name="creating-a-custom-animation"></a>建立自訂的動畫
+## <a name="create-a-custom-animation"></a>建立自訂動畫
 
-此處提供的範例到目前為止已證明同樣使用中的方法中達成的動畫[ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)類別。 不過，善用[ `Animation` ](xref:Xamarin.Forms.Animation)類別是它有回呼方法中，當動畫的值變更時執行的存取。 這可讓回呼來實作任何所需的動畫。 例如，下列程式碼範例會展示動畫[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)屬性設定為頁面[ `Color` ](xref:Xamarin.Forms.Color)所建立的值[ `Color.FromHsla` ](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))方法中，範圍從 0 到 1 的色調值：
+這裡所示的範例，示範了可以使用[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)類別中的方法來達成的動畫。 不過， [`Animation`](xref:Xamarin.Forms.Animation)類別的優點是它可以存取回呼方法，這會在動畫值變更時執行。 這可讓回呼執行任何想要的動畫。 例如，下列程式碼範例會將頁面的[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)屬性設定為[`Color`](xref:Xamarin.Forms.Color) [`Color.FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))方法所建立的值，並以介於0到1的色調值進行動畫處理：
 
 ```csharp
 new Animation (callback: v => BackgroundColor = Color.FromHsla (v, 1, 0.5),
@@ -118,20 +120,20 @@ new Animation (callback: v => BackgroundColor = Color.FromHsla (v, 1, 0.5),
   end: 1).Commit (this, "Animation", 16, 4000, Easing.Linear, (v, c) => BackgroundColor = Color.Default);
 ```
 
-產生動畫有提供逐步引導到頁面背景色彩的 rainbow 透過的外觀。
+產生的動畫會透過彩虹的色彩來提供頁面背景前進的外觀。
 
-如需建立複雜的動畫，包括貝茲曲線動畫的範例，請參閱[第 22 章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)的[使用 Xamarin.Forms 建立行動應用程式](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)。
+如需建立複雜動畫的更多範例，包括貝茲曲線動畫，請參閱[使用 Xamarin 建立 Mobile Apps](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)的第[22 章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)。
 
-## <a name="creating-a-custom-animation-extension-method"></a>建立自訂動畫擴充方法
+## <a name="create-a-custom-animation-extension-method"></a>建立自訂動畫擴充方法
 
-中的擴充方法[ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)類別建立動畫從其目前值的屬性，指定的值。 這讓使用者難以建立，比方說，`ColorTo`因為可以用來以動畫顯示到另一個值色彩的動畫方法：
+[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)類別中的擴充方法會從其目前值建立屬性的動畫，並將其設為指定的值。 這樣就很容易建立一個 `ColorTo` 動畫方法，用來在某個值之間建立色彩的動畫，因為：
 
-- 唯一[ `Color` ](xref:Xamarin.Forms.Color)屬性所定義[ `VisualElement` ](xref:Xamarin.Forms.VisualElement)類別是[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)，但這並非絕對需要`Color`屬性若要以動畫顯示。
-- 通常的目前值[ `Color` ](xref:Xamarin.Forms.Color)屬性是[ `Color.Default` ](xref:Xamarin.Forms.Color.Default)，哪些不是真實的色彩，就無法使用的內插補點計算。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)類別所定義的唯一[`Color`](xref:Xamarin.Forms.Color)屬性是[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)，這不一定是要建立動畫所需的 `Color` 屬性。
+- 通常[`Color`](xref:Xamarin.Forms.Color)屬性的目前值是[`Color.Default`](xref:Xamarin.Forms.Color.Default)，這不是真實的色彩，而且無法用於插補計算中。
 
-此問題的解決方案是沒有`ColorTo`方法為目標的特定[ `Color` ](xref:Xamarin.Forms.Color)屬性。 相反地，通過插補有回呼方法寫入`Color`回呼叫端的值。 此外，方法會啟動，並結束`Color`引數。
+這個問題的解決方法是不讓 `ColorTo` 方法以特定[`Color`](xref:Xamarin.Forms.Color)屬性為目標。 相反地，它可以使用回呼方法來撰寫，將插補 `Color` 值傳遞回呼叫端。 此外，方法將會使用開始和結束 `Color` 引數。
 
-`ColorTo`方法可以實作為擴充方法使用[ `Animate` ](xref:Xamarin.Forms.AnimationExtensions.Animate*)中的方法[ `AnimationExtensions` ](xref:Xamarin.Forms.AnimationExtensions)類別，以提供其功能。 這是因為`Animate`方法可用於目標屬性的型別不是`double`，如下列程式碼範例所示：
+`ColorTo` 方法可以實作為擴充方法，以在[`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions)類別中使用[`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*)方法來提供其功能。 這是因為 `Animate` 方法可以用來將不屬於類型 `double`的屬性設為目標，如下列程式碼範例所示：
 
 ```csharp
 public static class ViewExtensions
@@ -162,9 +164,9 @@ public static class ViewExtensions
 }
 ```
 
-[ `Animate` ](xref:Xamarin.Forms.AnimationExtensions.Animate*)方法需要*轉換*引數，這是一個回呼方法。 此回呼中的輸入一律是`double`範圍從 0 到 1。 因此，`ColorTo`方法來定義自己的轉換`Func`它會接受`double`範圍從 0 到 1，且會傳回[ `Color` ](xref:Xamarin.Forms.Color)對應至該值的值。 `Color`透過在計算值[ `R` ](xref:Xamarin.Forms.Color.R)， [ `G` ](xref:Xamarin.Forms.Color.G)， [ `B` ](xref:Xamarin.Forms.Color.B)，以及[ `A`](xref:Xamarin.Forms.Color.A)提供兩個`Color`引數。 `Color`值接著會傳遞至回呼方法，讓應用程式特定的屬性。
+[`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*)方法需要*轉換*引數，這是回呼方法。 此回呼的輸入一律為範圍從0到1的 `double`。 因此，`ColorTo` 方法會定義它自己的轉換 `Func`，它會接受從0到1的 `double` 範圍，並傳回與該值對應的[`Color`](xref:Xamarin.Forms.Color)值。 `Color` 值的計算方式，是將這兩個所提供`A`引數的[`R`](xref:Xamarin.Forms.Color.R)、 [`G`](xref:Xamarin.Forms.Color.G)、 [`B`](xref:Xamarin.Forms.Color.B)和[`Color`](xref:Xamarin.Forms.Color.A)值插上。 然後，`Color` 值會傳遞給應用程式的回呼方法，以進行特定屬性。
 
-此方法可讓`ColorTo`方法，以動畫顯示任何[ `Color` ](xref:Xamarin.Forms.Color)屬性，如下列程式碼範例所示：
+這種方法可讓 `ColorTo` 方法以動畫顯示任何[`Color`](xref:Xamarin.Forms.Color)屬性，如下列程式碼範例所示：
 
 ```csharp
 await Task.WhenAll(
@@ -174,14 +176,10 @@ await this.ColorTo(Color.FromRgb(0, 0, 0), Color.FromRgb(255, 255, 255), c => Ba
 await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 ```
 
-在此範例中，`ColorTo`方法以動畫顯示[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)並[ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)屬性[ `Label` ](xref:Xamarin.Forms.Label)， `BackgroundColor`屬性 頁面上，而[ `Color` ](xref:Xamarin.Forms.BoxView.Color)屬性[ `BoxView` ](xref:Xamarin.Forms.BoxView)。
-
-## <a name="summary"></a>總結
-
-這篇文章示範如何使用[ `Animation` ](xref:Xamarin.Forms.Animation)類別來建立和取消動畫、 同步處理多個動畫，並建立自訂動畫顯示屬性不是由現有動畫建立動畫的動畫方法。 `Animation`類別是所有的 Xamarin.Forms 動畫的建置組塊。
+在此程式碼範例中，`ColorTo` 方法會以動畫呈現[`Label`](xref:Xamarin.Forms.Label)的[`TextColor`](xref:Xamarin.Forms.Label.TextColor)和[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)屬性、頁面的 `BackgroundColor` 屬性，以及[`Color`](xref:Xamarin.Forms.BoxView)的[`BoxView`](xref:Xamarin.Forms.BoxView.Color)屬性。
 
 ## <a name="related-links"></a>相關連結
 
-- [自訂動畫 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
-- [動畫](xref:Xamarin.Forms.Animation)
-- [AnimationExtensions](xref:Xamarin.Forms.AnimationExtensions)
+- [自訂動畫（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
+- [動畫 API](xref:Xamarin.Forms.Animation)
+- [Petzold.animationextensions API](xref:Xamarin.Forms.AnimationExtensions)

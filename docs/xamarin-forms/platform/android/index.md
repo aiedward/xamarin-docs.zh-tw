@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2019
-ms.openlocfilehash: 94523bb019e366738de65ce0b05c70264fce738b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 7ad7349c89913129cccdd77ac843188cbe668571
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489761"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292798"
 ---
 # <a name="android-platform-features"></a>Android 平台功能
 
-開發適用于 Android 的 Xamarin. Forms 應用程式需要 Visual Studio。 [[需求] 頁面](~/get-started/requirements.md)包含必要元件的詳細資訊。
+開發適用于 Android 的 Xamarin. Forms 應用程式需要 Visual Studio。 [[支援的平臺] 頁面](~/get-started/supported-platforms.md)包含必要元件的詳細資訊。
 
-## <a name="platform-specifics"></a>平臺細節
+## <a name="platform-specifics"></a>平台特定功能
 
 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。
 
@@ -73,6 +73,10 @@ Xamarin： Android 專案現在會使用 `FormsAppCompatActivity` 做為其主�
 
 > [!NOTE]
 > 使用 `FormsAppCompatActivity`時，[某些 Android 自訂](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)轉譯器的基類會不同。
+
+## <a name="androidx-migration"></a>AndroidX 移轉
+
+AndroidX 取代了 Android 支援程式庫。 若要瞭解 AndroidX，以及如何將 Xamarin 應用程式遷移為使用 AndroidX 程式庫，請參閱[在 xamarin 中 AndroidX 遷移](~/xamarin-forms/platform/android/androidx-migration.md)。
 
 ## <a name="related-links"></a>相關連結
 

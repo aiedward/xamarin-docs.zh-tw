@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: daab2b3a18eeea2f50c9518144b3396fbba90928
-ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
-ms.translationtype: HT
+ms.openlocfilehash: 251c1b8102327093fcb142ca056743f00618f81b
+ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77545129"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78214969"
 ---
 # <a name="get-started-with-xamarinessentials"></a>開始使用 Xamarin.Essentials
 
@@ -19,11 +19,11 @@ Xamarin.Essentials 提供單一跨平台 API，能夠搭配任何 iOS、Android 
 
 ## <a name="installation"></a>安裝
 
-Xamarin.Essentials 以 NuGet 套件的形式提供，而且包含在 Visual Studio 的所有新專案中。 您也可以使用 Visual Studio 透過下列步驟將其新增至任何現有的專案。
+Xamarin 是以 NuGet 套件的形式提供，並包含在 Visual Studio 中的每個新專案中。 您也可以使用下列步驟，將它新增至任何現有的 Visual Studio。
 
-1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](~/get-started/installation/index.md)的 [Visual Studio](https://visualstudio.microsoft.com/)。
+1. 下載並安裝具有[適用於 Xamarin 的 Visual Studio 工具](https://visualstudio.microsoft.com/)的 [Visual Studio](~/get-started/installation/index.md)。
 
-2. 開啟現有專案，或建立使用 [Visual Studio C#]**** (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。
+2. 開啟現有專案，或建立使用 [Visual Studio C#] (Android、iPhone 與 iPad 或跨平台) 下的空白應用程式範本建立新專案。
 
     > [!IMPORTANT]
     > 若新增到 UWP 專案，請確保在專案屬性中設定組建 16299 或更高版本。
@@ -33,11 +33,11 @@ Xamarin.Essentials 以 NuGet 套件的形式提供，而且包含在 Visual Stud
     <!--markdownlint-disable MD023 -->
     # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]****。 搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部]**** 專案，包括 Android、iOS、UWP 與 .NET Standard 程式庫。
+    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]。 搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部] 專案，包括 Android、iOS、UWP 與 .NET Standard 程式庫。
 
     # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-    在 [方案總管] 窗格中，以滑鼠右鍵按一下方案名稱並選取 [管理 NuGet 套件]****。搜尋 **Xamarin.Essentials** 並將套件安裝到 [全部]**** 專案，包括 Android、iOS 與 .NET Standard 程式庫。
+    在 方案總管 面板中，以滑鼠右鍵按一下專案名稱，然後選取 **新增 > 新增 NuGet 套件**...。搜尋**Xamarin** ，並將套件安裝到**所有**專案，包括 Android、iOS 和 .NET Standard 程式庫。
 
     -----
 
@@ -51,9 +51,9 @@ Xamarin.Essentials 以 NuGet 套件的形式提供，而且包含在 Visual Stud
 
     # <a name="android"></a>[Android](#tab/android)
 
-    Xamarin.Essentials 支援最低 Android 4.4 版，這對應到 API 層級 19，但目標 Android 版本必須是 9.0 才能進行編譯，這對應到 API 層級 28。 (在 Visual Studio 中，這兩個版本是在 [Android 資訊清單] 索引標籤中 Android 專案的 [專案屬性] 中設定的。在 Visual Studio for Mac 中，它們是在 [Android 應用程式] 索引標籤中 [專案選項] 對話方塊中設定的。)
+    Xamarin.Essentials 支援最低 Android 4.4 版，這對應到 API 層級 19，但目標 Android 版本必須是 9.0 才能進行編譯，這對應到 API 層級 28。 （在 Visual Studio 中，這兩個版本是在 android 專案的 [專案屬性] 對話方塊中，于 [Android 資訊清單] 索引標籤中設定。在 Visual Studio for Mac 中，它們是在 Android 專案的 [專案選項] 對話方塊中，于 [Android 應用程式] 索引標籤中設定。）
 
-    Xamarin.Essentials 會安裝其所需的 Xamarin.Android.Support 程式庫 28.0.0.3 版。 您應用程式所需的任何其他 Xamarin.Android.Support 程式庫也都應該使用 NuGet 套件管理員更新到 28.0.0.3 版。 您應用程式使用的所有 Xamarin.Android.Support 程式庫都應該相同，而且至少必須是 28.0.0.3 版。 若您有關於在方案中新增 Xamarin.Essentials NuGet 或更新 NuGet 的問題，請參閱[疑難排解介面](troubleshooting.md)。
+    Xamarin 會安裝所需的支援程式庫版本28.0.0.3。 您的應用程式所需的任何其他支援程式庫，也應該更新為使用 NuGet 套件管理員的版本28.0.0.3。 您的應用程式所使用的所有 Xamarin. 支援程式庫都應該相同，而且至少應為版本28.0.0.3。 若您有關於在方案中新增 Xamarin.Essentials NuGet 或更新 NuGet 的問題，請參閱[疑難排解介面](troubleshooting.md)。
 
     在 Android 專案的 `MainLauncher` 或任何啟動的任何 `Activity` 中，Xamarin.Essentials都必須在 `OnCreate` 方法中初始化：
 

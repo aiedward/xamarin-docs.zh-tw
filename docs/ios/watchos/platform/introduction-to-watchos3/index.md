@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2017
-ms.openlocfilehash: 5ff315270646389d67b505eef04c1aa11d0029c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f849ad9d722e297438b3960f74953ff922be0e56
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028270"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291490"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 簡介
 
@@ -79,7 +79,7 @@ watchOS 3 讓應用程式能夠針對 watch 應用程式建立一或多個複雜
 - 使用者可以直接從監看表面上點擊複雜的方式來快速啟動應用程式。
 - 將應用程式的其中一個複雜性放在監看面上，會導致系統將應用程式保持在「立即啟動」狀態，讓它嘗試在背景啟動應用程式、將它保留在記憶體中，並提供更多時間來更新。
 - 每日至少會保證有50個推播更新的複雜性。
-- 當應用程式包含複雜的複雜性時，它會在 Apple Watch 臉部資源庫中加以精選（如需詳細資訊，請參閱 Apple 對圖庫檔的[增加複雜性](https://developer.apple.com/documentation/clockkit/adding_complications_to_the_gallery)）。
+- 當應用程式包含複雜功能時，它會在 Apple Watch 臉部圖庫中提供。
 
 在 watchOS 3 中，ClockKit 架構現在包含數個新的範本，可用於額外的大型複雜，例如[CLKComplicationTemplateExtraLargeColumnsText](https://developer.apple.com/reference/clockkit/clkcomplicationtemplateextralargecolumnstext)和[CLKComplicationTemplateExtraLargeRingImage](https://developer.apple.com/reference/clockkit/clkcomplicationtemplateextralargeringimage)。 此外，若要建立可當地語系化的文字，請使用[CLKTextProvider](https://developer.apple.com/reference/clockkit/clktextprovider)類別的新方法。
 

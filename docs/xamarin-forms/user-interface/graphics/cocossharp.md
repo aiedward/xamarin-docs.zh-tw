@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: d13237f270fe01e2a91b69a60c3109843db713bf
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 8ba9e4b119384db401fc631f58c37a28cd2b8004
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728005"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292053"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>在 Xamarin 中使用 CocosSharp
 
-[![下載範例](~/media/shared/download.png) 下載範例](h https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
 
 _CocosSharp 可以用來將精確的圖形、影像和文字轉譯新增至應用程式，以進行先進的視覺效果_
 

@@ -8,20 +8,20 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2018
-ms.openlocfilehash: 41f207f5a7f7b861a3406572372ead31c957c849
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e99e12aa73374cc8145fad0eb5aad7f3259e0ca2
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026723"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292868"
 ---
 # <a name="resolving-library-installation-errors"></a>解析程式庫安裝錯誤
 
 _在某些情況下，您可能會在安裝 Android 支援程式庫時收到錯誤。本指南提供一些常見錯誤的因應措施。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-建立 Xamarin Android 應用程式專案時，您可能會在 Visual Studio 或 Visual Studio for Mac 嘗試下載並安裝相依性程式庫時收到組建錯誤。 這些錯誤中的許多都是由網路連線問題、檔案損毀或版本設定問題所造成。 本指南說明最常見的支援程式庫安裝錯誤，並提供解決這些問題的步驟，並讓您的應用程式專案重新建立。 
+建立 Xamarin Android 應用程式專案時，您可能會在 Visual Studio 或 Visual Studio for Mac 嘗試下載並安裝相依性程式庫時收到組建錯誤。 這些錯誤中的許多都是由網路連線問題、檔案損毀或版本設定問題所造成。 本指南說明最常見的支援程式庫安裝錯誤，並提供解決這些問題的步驟，並讓您的應用程式專案重新建立。
 
 ## <a name="errors-while-downloading-m2repository"></a>下載 m2Repository 時發生錯誤
 
@@ -31,37 +31,37 @@ _在某些情況下，您可能會在安裝 Android 支援程式庫時收到錯�
 Download failed. Please download https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip and extract it to the C:\Users\mgm\AppData\Local\Xamarin\Android.Support.v4\22.2.1\content directory.
 ```
 
-此範例適用于**android\_m2repository\_r16**，但您可能會看到不同版本的相同錯誤訊息，例如**android\_m2repository\_r18**或**android\_m2repository\_r25**。 
+此範例適用于**android\_m2repository\_r16**，但您可能會看到不同版本的相同錯誤訊息，例如**android\_m2repository\_r18**或**android\_m2repository\_r25**。
 
-### <a name="automatic-recovery-from-m2repository-errors"></a>從 m2repository 錯誤自動復原 
+### <a name="automatic-recovery-from-m2repository-errors"></a>從 m2repository 錯誤自動復原
 
-通常，您可以藉由刪除有問題的程式庫並根據下列步驟重建，來補救此問題： 
+通常，您可以藉由刪除有問題的程式庫並根據下列步驟重建，來補救此問題：
 
 1. 流覽至電腦上的支援程式庫目錄：
 
-    - 在 Windows 上，支援程式庫位於**C：\\使用者\\_Username_\\AppData\\本機\\Xamarin**。 
+    - 在 Windows 上，支援程式庫位於**C：\\使用者\\_Username_\\AppData\\本機\\Xamarin**。
 
-    - 在 Mac OS X 上，支援程式庫位於 **/Users/_username_/.local/share/Xamarin**。 
+    - 在 Mac OS X 上，支援程式庫位於 **/Users/_username_/.local/share/Xamarin**。
 
 2. 找出對應于錯誤訊息的程式庫和版本資料夾。 例如，上述錯誤訊息的程式庫和版本資料夾位於**Android.\\22.2.1**：
 
-    [22.2.1 支援程式庫的![範例資料夾位置](resolving-library-installation-errors-images/01-example-location.png)](resolving-library-installation-errors-images/01-example-location.png#lightbox)
+    [22.2.1 支援程式庫的 ![範例資料夾位置](resolving-library-installation-errors-images/01-example-location.png)](resolving-library-installation-errors-images/01-example-location.png#lightbox)
 
 3. 刪除版本資料夾的內容。 請務必移除 **.zip**檔案以及此資料夾中的**內容**和**內嵌**子目錄。 如上所示的範例錯誤訊息，將會刪除這個螢幕擷取畫面中所顯示的檔案和子目錄（**content**、 **embedded**和**android_m2repository_r16 .zip**）：
 
-    [22.2.1 支援程式庫資料夾的![範例內容](resolving-library-installation-errors-images/02-example-folder-vs.png)](resolving-library-installation-errors-images/02-example-folder-vs.png#lightbox)
+    [22.2.1 支援程式庫資料夾的 ![範例內容](resolving-library-installation-errors-images/02-example-folder-vs.png)](resolving-library-installation-errors-images/02-example-folder-vs.png#lightbox)
 
    請注意，刪除此資料夾的*整個*內容是很重要的。 雖然此資料夾一開始可能會包含「遺失」的**android\_m2repository\_r16**檔案，但此檔案可能已部分下載或損毀。
 
 4. 重建專案 &ndash; 這麼做會導致組建程式重新下載遺失的程式庫。
 
-在大部分情況下，這些步驟會解決組建錯誤，並允許您繼續進行。 如果刪除此媒體櫃無法解決組建錯誤，您必須手動下載並安裝**android\_m2repository\_r_nn_** ，如下一節所述。 
+在大部分情況下，這些步驟會解決組建錯誤，並允許您繼續進行。 如果刪除此媒體櫃無法解決組建錯誤，您必須手動下載並安裝**android\_m2repository\_r_nn_ .zip**檔案，如下一節所述。
 
 ### <a name="manually-downloading-m2repository"></a>手動下載 m2repository
 
-如果您嘗試使用上述自動復原步驟，但仍有組建錯誤，您可以手動下載**android\_m2repository\_r_nn_** （使用網頁瀏覽器），並根據下列步驟進行安裝。 如果您的開發電腦上沒有網際網路存取，但是您可以使用不同的電腦下載封存，這個程式也很有用。 
+如果您嘗試使用上述自動復原步驟，但仍有組建錯誤，您可以手動下載**android\_m2repository\_r_nn_ .zip**檔案（使用網頁瀏覽器），並根據下列步驟進行安裝。 如果您的開發電腦上沒有網際網路存取，但是您可以使用不同的電腦下載封存，這個程式也很有用。
 
-1. 下載**android\_m2repository\_r_nn_** 檔案，該檔案對應至下列清單中提供的錯誤訊息 &ndash; 連結（以及每個連結 URL 的對應 MD5 雜湊）：
+1. 下載**android\_m2repository\_r_nn_ .zip**檔案，該檔案對應至下列清單中提供的錯誤訊息 &ndash; 連結（以及每個連結 URL 的對應 MD5 雜湊）：
 
     - [android\_m2repository\_r33](https://dl-ssl.google.com/android/repository/android_m2repository_r33.zip) &ndash; 5FB756A25962361D17BBE99C3B3FCC44
 
@@ -99,25 +99,25 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     - [android\_m2repository\_r16](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A83087881EE6
 
-    如果**m2repository**封存未顯示在此表格中，您可以在要下載的**m2repository**名稱前面加上 **https://dl-ssl.google.com/android/repository/** ，以建立下載 URL。 例如，使用 **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** 下載**android\_ m2repository\_ r10**。
+    如果**m2repository**封存未顯示在此表格中，您可以在要下載的**m2repository**名稱前面加上 `https://dl-ssl.google.com/android/repository/`，以建立下載 URL。 例如，使用 **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** 下載**android\_m2repository\_r10**。
 
-2. 將檔案重新命名為下載 URL 的對應 MD5 雜湊，如上表所示。 例如，如果您已下載**android\_m2repository\_r25**，請將它重新命名為**0B3F1796C97C707339FB13AE8507AF50 .zip**。 如果下載的檔案之下載 URL 的 MD5 雜湊不會顯示在表格中，您可以使用[線上 MD5](http://www.webconfs.com/online-md5-generator.php)產生器，將 url 轉換成 MD5 雜湊字串。 
+2. 將檔案重新命名為下載 URL 的對應 MD5 雜湊，如上表所示。 例如，如果您已下載**android\_m2repository\_r25**，請將它重新命名為**0B3F1796C97C707339FB13AE8507AF50 .zip**。 如果下載的檔案之下載 URL 的 MD5 雜湊不會顯示在表格中，您可以使用[線上 MD5](http://www.webconfs.com/online-md5-generator.php)產生器，將 url 轉換成 MD5 雜湊字串。
 
-3. 將檔案複製到 Xamarin **zips**資料夾： 
+3. 將檔案複製到 Xamarin **zips**資料夾：
 
-    - 在 Windows 上，此資料夾位於**C：\\使用者\\***Username***\\AppData\\本機\\Xamarin\\zips**。 
+    - 在 Windows 上，此資料夾位於**C：\\使用者\\***Username***\\AppData\\本機\\Xamarin\\zips**。
 
-    - 在 Mac OS X 上，此資料夾位於 **/Users/***username***/.local/share/Xamarin/zips**。 
+    - 在 Mac OS X 上，此資料夾位於 **/Users/***username***/.local/share/Xamarin/zips**。
 
     例如，下列螢幕擷取畫面說明當**android\_m2repository\_r16**下載並重新命名為 Windows 上下載 URL 的 MD5 雜湊時，會產生的結果：
 
-    [要重新命名為0595E577D19D31708195A83087881EE6 的 r16 存放庫![範例](resolving-library-installation-errors-images/03-md5-rename-vs.png)](resolving-library-installation-errors-images/03-md5-rename-vs.png#lightbox)
+    [要重新命名為0595E577D19D31708195A83087881EE6 的 r16 存放庫 ![範例](resolving-library-installation-errors-images/03-md5-rename-vs.png)](resolving-library-installation-errors-images/03-md5-rename-vs.png#lightbox)
 
-如果此程式無法解決組建錯誤，您必須手動下載**android\_m2repository\_r_nn_** 檔案、將它解壓縮，然後安裝其內容，如下一節所述。 
+如果此程式無法解決組建錯誤，您必須手動下載**android\_m2repository\_r_nn_ .zip**檔案、將它解壓縮，然後安裝其內容，如下一節所述。
 
 ### <a name="manually-downloading-and-installing-m2repository-files"></a>手動下載並安裝 m2repository 檔案
 
-從**m2repository**錯誤中復原的完整手動程式需要下載**android\_m2repository\_r_nn_ .zip**檔案（使用網頁瀏覽器）、將其解壓縮，並將其內容複寫到支援程式庫目錄在您的電腦上。 在下列範例中，我們將從這個錯誤訊息中復原： 
+從**m2repository**錯誤中復原的完整手動程式需要下載**android\_m2repository\_r_nn_ .zip**檔案（使用網頁瀏覽器）、將它解壓縮，然後將其內容複寫到您電腦上的支援程式庫目錄。 在下列範例中，我們將從這個錯誤訊息中復原：
 
 ```shell
 Unzipping failed. Please download https://dl-ssl.google.com/android/repository/android_m2repository_r25.zip and extract it to the C:\Users\mgm\AppData\Local\Xamarin\Android.Support.v4\23.1.1\content directory.
@@ -125,40 +125,41 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
 使用下列步驟來下載**m2repository**並安裝其內容：
 
-1. 刪除對應于錯誤訊息之程式庫資料夾的內容。 例如，在上述錯誤訊息中，您會刪除**C：\\使用者\\***username***的內容\\AppData\\本機\\Xamarin\\Android. v4\\23.1.1.0**。 
+1. 刪除對應于錯誤訊息之程式庫資料夾的內容。 例如，在上述錯誤訊息中，您會刪除**C：\\使用者\\***username***的內容\\AppData\\本機\\Xamarin\\Android. v4\\23.1.1.0**。
     如先前所述，您必須刪除此目錄的完整內容：
 
-    [![從23.1.1.0 資料夾刪除 content、embedded 和 android_m2repository 資料夾](resolving-library-installation-errors-images/04-delete-contents-vs.png)](resolving-library-installation-errors-images/04-delete-contents-vs.png#lightbox)
+    [![從23.1.1.0 資料夾刪除內容、內嵌和 android_m2repository 資料夾](resolving-library-installation-errors-images/04-delete-contents-vs.png)](resolving-library-installation-errors-images/04-delete-contents-vs.png#lightbox)
 
-2. 從 Google 下載與錯誤訊息對應的**android\_m2repository\_r_nn_** （請參閱上一節中有關連結的表格）。
+2. 從 Google 下載與錯誤訊息對應的**android\_m2repository\_r_nn_ .zip**檔案（請參閱上一節中有關連結的表格）。
 
-3. 將此 **.zip**封存檔解壓縮到任何位置（例如桌面）。 這應該會建立一個對應至 **.zip**封存名稱的目錄。 在此目錄中，您應該會找到名為**m2repository**的子目錄： 
+3. 將此 **.zip**封存檔解壓縮到任何位置（例如桌面）。 這應該會建立一個對應至 **.zip**封存名稱的目錄。 在此目錄中，您應該會找到名為**m2repository**的子目錄：
 
-    [在解壓縮的 zip 封存中找到![m2repository 資料夾](resolving-library-installation-errors-images/05-m2repository-vs.png)](resolving-library-installation-errors-images/05-m2repository-vs.png#lightbox)
+    [在解壓縮的 zip 封存中找到 ![m2repository 資料夾](resolving-library-installation-errors-images/05-m2repository-vs.png)](resolving-library-installation-errors-images/05-m2repository-vs.png#lightbox)
 
-4. 在您于步驟1中清除的版本程式庫目錄中，重新建立**內容**和**內嵌**的子目錄。 例如，下列螢幕擷取畫面說明在**android\_m2repository\_r25**的**23.1.1.0**資料夾中建立的**內容**和**內嵌**的子目錄： 
+4. 在您于步驟1中清除的版本程式庫目錄中，重新建立**內容**和**內嵌**的子目錄。 例如，下列螢幕擷取畫面說明在**android\_m2repository\_r25**的**23.1.1.0**資料夾中建立的**內容**和**內嵌**的子目錄：
 
     [![在23.1.1.0 資料夾中建立內容和內嵌資料夾](resolving-library-installation-errors-images/06-recreate-folders-vs.png)](resolving-library-installation-errors-images/06-recreate-folders-vs.png#lightbox)
 
-5. 將**m2repository**從解壓縮的 **.zip**複製到您在上一個步驟中建立的**content**目錄： 
+5. 將**m2repository**從解壓縮的 **.zip**複製到您在上一個步驟中建立的**content**目錄：
 
     [![m2repository 複製到 23.1.1.0/content 資料夾的螢幕擷取畫面](resolving-library-installation-errors-images/07-copied-m2repository-vs.png)](resolving-library-installation-errors-images/07-copied-m2repository-vs.png#lightbox)
 
 6. 在解壓縮的 **.zip**目錄中，流覽至**m2repository\\com\\android\\支援\\支援-v4** ，並開啟與上面所建立版本號碼相對應的資料夾（在此範例中為**23.1.1**）：
 
-    [支援-v4/23.1.1 資料夾中所含檔案的![範例清單](resolving-library-installation-errors-images/08-zip-contents-vs.png)](resolving-library-installation-errors-images/08-zip-contents-vs.png#lightbox)
+    [支援-v4/23.1.1 資料夾中所含檔案的 ![範例清單](resolving-library-installation-errors-images/08-zip-contents-vs.png)](resolving-library-installation-errors-images/08-zip-contents-vs.png#lightbox)
 
 7. 將此資料夾中的所有檔案複製到步驟4中建立的**embedded**目錄：
 
-    [複製到 23.1.1.0/embedded 資料夾的檔案![範例](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
+    [複製到 23.1.1.0/embedded 資料夾的檔案 ![範例](resolving-library-installation-errors-images/09-copied-vs.png)](resolving-library-installation-errors-images/09-copied-vs.png#lightbox)
 
 8. 確認已複製所有檔案。 **內嵌**目錄現在應該包含檔案，例如 **.jar**、 **. aar**和**pom**。
 
 9. 將任何已解壓縮的**aar**檔案的內容解壓縮至**內嵌**目錄。 在 Windows 上，將 **.zip**副檔名附加至**aar**檔案，將它開啟，然後將內容複寫到**內嵌**目錄。
     在 macOS 上，使用終端機中的 [**解壓縮**] 命令（例如，**解壓縮檔案. aar**）將**aar**檔案解壓縮。
 
-此時，您已手動安裝遺失的元件，而您的專案應該會建立而不會發生錯誤。 如果不是，請確認您已下載與錯誤訊息中的版本完全對應的**m2repository**封存版本，並確認您已在正確的位置安裝其內容，如上述步驟所述。 
+此時，您已手動安裝遺失的元件，而您的專案應該會建立而不會發生錯誤。 如果不是，請確認您已下載與錯誤訊息中的版本完全對應的**m2repository**封存版本，並確認您已在正確的位置安裝其內容，如上述步驟所述。
 
-## <a name="summary"></a>總結 
+## <a name="summary"></a>摘要
 
-本文說明如何從自動下載和安裝相依性程式庫期間可能發生的常見錯誤中復原。 文中說明了如何刪除有問題的程式庫，並重建專案以重新下載並重新安裝程式庫。 文中說明如何下載程式庫，並將它安裝在**zips**資料夾中。 另外也說明了手動下載和安裝必要檔案的程式，以解決無法透過自動方式解決的問題。 
+本文說明如何從自動下載和安裝相依性程式庫期間可能發生的常見錯誤中復原。 文中說明了如何刪除有問題的程式庫，並重建專案以重新下載並重新安裝程式庫。
+文中說明如何下載程式庫，並將它安裝在**zips**資料夾中。 另外也說明了手動下載和安裝必要檔案的程式，以解決無法透過自動方式解決的問題。

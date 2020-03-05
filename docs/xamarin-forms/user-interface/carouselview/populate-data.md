@@ -6,13 +6,13 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/17/2019
-ms.openlocfilehash: 7d1183bf0c741b5a7ca02b43c4edb0c640ee1ac2
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 02/27/2019
+ms.openlocfilehash: 154d039e95ccc2de28e09a7162a32a19f8f84656
+ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488216"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "78292485"
 ---
 # <a name="xamarinforms-carouselview-data"></a>Xamarin. 表單 CarouselView 資料
 
@@ -249,7 +249,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MonkeyDataTemplateSelector` 類別定義設定為不同資料範本的 `AmericanMonkey` 與 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 屬性。 當猴子名稱包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，它會將其資料顯示為灰色：
+`MonkeyDataTemplateSelector` 類別會定義設定為不同資料範本的 `AmericanMonkey` 和 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 當猴子名稱包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，它會將其資料顯示為灰色：
 
 [![在 iOS 和 Android 上 CarouselView 執行時間專案範本選擇的螢幕擷取畫面](populate-data-images/datatemplateselector.png "CarouselView 中的執行時間專案範本選擇")](populate-data-images/datatemplateselector-large.png#lightbox "CarouselView 中的執行時間專案範本選擇")
 
@@ -264,29 +264,29 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 ```xaml
 <StackLayout>
-    <CarouselView x:Name="carouselView"
-                  ItemsSource="{Binding Monkeys}">
+    <CarouselView ItemsSource="{Binding Monkeys}"
+                  IndicatorView="indicatorView">
         <CarouselView.ItemTemplate>
             <!-- DataTemplate that defines item appearance -->
         </CarouselView.ItemTemplate>
     </CarouselView>
-    <IndicatorView ItemsSourceBy="carouselView"
+    <IndicatorView x:Name="indicatorView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="DarkGray"
                    HorizontalOptions="Center" />
 </StackLayout>
 ```
 
-在此範例中，`IndicatorView` 會在 `CarouselView`之下轉譯，而 `CarouselView`中的每個專案都有一個指標。 `IndicatorView` 會藉由將 `ItemsSourceBy` 屬性設定為 `CarouselView` 物件來填入資料。 每個指標都是淺灰色圓圈，而表示 `CarouselView` 中目前專案的指標是暗灰色：
+在此範例中，`IndicatorView` 會在 `CarouselView`之下轉譯，而 `CarouselView`中的每個專案都有一個指標。 `IndicatorView` 會藉由將 `CarouselView.IndicatorView` 屬性設定為 `IndicatorView` 物件來填入資料。 每個指標都是淺灰色圓圈，而表示 `CarouselView` 中目前專案的指標是暗灰色：
 
 [![CarouselView 和 IndicatorView （在 iOS 和 Android 上）的螢幕擷取畫面](populate-data-images/indicators.png "IndicatorView 圓形")](populate-data-images/indicators-large.png#lightbox "IndicatorView 圓形")
 
 > [!IMPORTANT]
-> 設定 `ItemsSourceBy` 屬性會導致 `IndicatorView.Position` 屬性系結至 `CarouselView.Position` 屬性，而 `IndicatorView.ItemsSource` 屬性系結至 `CarouselView.ItemsSource` 屬性。
+> 設定 `CarouselView.IndicatorView` 屬性會導致 `IndicatorView.Position` 屬性系結至 `CarouselView.Position` 屬性，而 `IndicatorView.ItemsSource` 屬性系結至 `CarouselView.ItemsSource` 屬性。
 
 如需指標的詳細資訊，請參閱[IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)。
 
-## <a name="pull-to-refresh"></a>拖動以重新整理
+## <a name="pull-to-refresh"></a>提取至重新整理
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)支援透過 `RefreshView`的提取至重新整理功能，可讓您藉由在專案上拉出來重新整理所顯示的資料。 `RefreshView` 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CarouselView` 設定為 `RefreshView`的子系，就會為其執行 pull 的「重新整理」：
 
@@ -381,6 +381,6 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 - [CarouselView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin. Forms IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
-- [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin. 表單資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

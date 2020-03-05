@@ -5,12 +5,12 @@ ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: f23f155a02422a3d04a0b14b282929ea63d60765
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d1d5b8985d132e5a5839e3cd23aaec32fc3815a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007296"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292050"
 ---
 # <a name="callbacks-on-android"></a>Android 上的回呼
 
@@ -97,7 +97,7 @@ public void abstractCallback() throws Throwable {
 System.NotSupportedException: Unable to find Invoker for type 'Android.AbstractClass'. Was it linked away?
 ```
 
-此處遺漏的是 `Invoker` 類型。 這是將呼叫轉送C#至 JAVA 的 `AbstractClass` 子類別。 如果 JAVA C#物件進入世界，而對等C#類型是 abstract，則 Xamarin 會自動尋找具有後置字元C#的類型，`Invoker`在程式碼中C#使用。
+此處遺漏的是 `Invoker` 類型。 這是將呼叫轉送C#至 JAVA 的 `AbstractClass` 子類別。 如果 JAVA C#物件進入世界，而對等C#類型是 abstract，則 Xamarin 會自動尋找具有後置字元C#的類型，`Invoker` 在程式碼中C#使用。
 
 Xamarin 會針對 JAVA 系結專案使用這種 `Invoker` 模式。
 
@@ -269,7 +269,7 @@ public class VirtualClass : Java.Lang.Object
 
 如果您遵循上述的 `abstract` 類別範例，則除了一個詳細資料之外，它仍可正常執行： _Xamarin 不會查閱 `Invoker`_ 。
 
-若要修正此問題， C#請將類別修改為`abstract`：
+若要修正此問題， C#請將類別修改為 `abstract`：
 
 ```csharp
 public abstract class VirtualClass : Java.Lang.Object
@@ -291,10 +291,9 @@ public abstract class VirtualClass : Java.Lang.Object
 
 這裡有很多工作可以完成，但是 .NET 內嵌的增強功能也是可行的。
 
-## <a name="further-reading"></a>進一步閱讀
+## <a name="further-reading"></a>進階閱讀
 
 - [Android 上的消費者入門](~/tools/dotnet-embedding/get-started/java/android.md)
 - [初稿 Android Research](~/tools/dotnet-embedding/android/index.md)
 - [.NET 嵌入限制](~/tools/dotnet-embedding/limitations.md)
-- [參與開放原始碼專案](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
 - [錯誤碼和描述](~/tools/dotnet-embedding/errors.md)

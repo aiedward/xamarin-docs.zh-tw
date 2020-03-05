@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 2eea51764e0e0f13c1a1a91db664872a67420d33
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0c273797d7512f062260e49e0f71fdd1132f037b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020561"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78293029"
 ---
 # <a name="troubleshooting-bindings"></a>對繫結進行疑難排解
 
 _本文摘要說明產生系結時可能會發生的多種常見錯誤，以及可能的原因和解決這些問題的建議方法。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 系結 Android 程式庫（ **aar**或 **.jar**）檔案不太容易開一整天;通常需要額外的工作來減輕 JAVA 和 .NET 之間的差異所造成的問題。
 這些問題將導致 Xamarin 無法系結 Android 程式庫，並將其本身呈現為組建記錄檔中的錯誤訊息。 本指南將提供一些疑難排解問題的秘訣、列出一些較常見的問題/案例，並提供成功系結 Android 程式庫的可能解決方案。
@@ -52,7 +52,7 @@ _本文摘要說明產生系結時可能會發生的多種常見錯誤，以及�
   - 類別名稱包含 **$** ，亦即 **$ 類別**。
   - 類別名稱完全洩露小寫字元，亦即**類別**      
 
-- 未**參考程式庫的`import` 語句**&ndash; 識別未參考的程式庫，並將這些相依性新增至**ReferenceJar**或 EmbedddedReferenceJar 的**組建動作**的 Xamarin 繫結項目.
+- 未**參考程式庫的`import` 語句**&ndash; 識別未參考的程式庫，並將這些相依性新增至**ReferenceJar**或**EmbedddedReferenceJar**的**組建動作**的 Xamarin 繫結項目。
 
 > [!NOTE]
 > 反向組譯 JAVA 程式庫可能會被禁止，或根據當地法律或用來發行 JAVA 程式庫的授權而受到法律限制。 如有必要，請在嘗試將 JAVA 程式庫進行反編譯並檢查原始程式碼之前，先登記合法專業人員的服務。
@@ -85,7 +85,7 @@ _本文摘要說明產生系結時可能會發生的多種常見錯誤，以及�
 
 系結程式庫產生器無法載入。JAR 程式庫。
 
-#### <a name="possible-causes"></a>可能原因
+#### <a name="possible-causes"></a>可能的原因
 
 部分.JAVA 工具無法載入使用程式碼混淆的 JAR 程式庫（透過 Proguard 之類的工具）。 因為我們的工具會使用 JAVA 反映和 ASM 位元組程式碼工程程式庫，所以當 Android 執行時間工具可能通過時，這些相依的工具可能會拒絕模糊的程式庫。 這個方法的因應措施是手動系結這些程式庫，而不是使用系結產生器。
 
@@ -105,7 +105,7 @@ _本文摘要說明產生系結時可能會發生的多種常見錯誤，以及�
 
 - JAVA 允許從非公用類別衍生公用類別，但 .NET 不支援這種方式。 由於系結產生器不會針對非公用類別產生系結，因此無法正確產生衍生類別（例如）。 若要修正此問題，請使用**metadata**中的 remove 節點移除這些衍生類別的中繼資料專案，或修正使非公用類別成為公用的中繼資料。 雖然後者的解決方案將會建立系結，以便C#建立來源，但不應使用非公用類別。
 
-  例如:
+  例如：
 
   ```xml
   <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
@@ -157,7 +157,7 @@ public interface MediationInterstitialListener {
 }
 ```
 
-這是設計的，因此會避免事件引數類型上冗長的名稱。 為了避免這些衝突，需要進行一些中繼資料轉換。 編輯[**Transforms\Metadata.xml**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml) ，並在任一介面上（或在介面方法上）新增 `argsType` 屬性：
+這是設計的，因此會避免事件引數類型上冗長的名稱。 為了避免這些衝突，需要進行一些中繼資料轉換。 編輯**Transforms\Metadata.xml** ，並在任一介面上（或在介面方法上）新增 `argsType` 屬性：
 
 ```xml
 <attr path="/api/package[@name='com.google.ads.mediation']/
@@ -204,7 +204,7 @@ return type of 'Java.Lang.Object'
   }
   ```
 
-- 從產生C#的程式碼中移除共變數。 這牽涉到將下列轉換新增至**Transforms\Metadata.xml** ，這會導致C#產生的程式碼具有`Java.Lang.Object`的傳回類型：
+- 從產生C#的程式碼中移除共變數。 這牽涉到將下列轉換新增至**Transforms\Metadata.xml** ，這會導致C#產生的程式碼具有 `Java.Lang.Object`的傳回類型：
 
   ```xml
   <attr
@@ -231,13 +231,13 @@ return type of 'Java.Lang.Object'
 
 某些系結專案也可能相依于中的功能 **。因此，** 請參閱程式庫。 Xamarin 可能不會自動載入 **。因此**，請看程式庫。 當包裝的 JAVA 程式碼執行時，Xamarin 將無法進行 JNI 呼叫，且錯誤訊息_UnsatisfiedLinkError：找不到原生方法：_ 將會出現在應用程式的 logcat 中。
 
-修正此問題的方法是以手動方式載入 **。因此**，您可以呼叫 `Java.Lang.JavaSystem.LoadLibrary`的程式庫。 例如，假設 Xamarin 專案有共用程式庫**libpocketsphinx_jni。因此**包含在系結專案中，且組建動作為**EmbeddedNativeLibrary**，下列程式碼片段（在使用共用程式庫之前執行）會載入 **。因此，** 程式庫：
+修正此問題的方法是以手動方式載入 **。因此**，您可以呼叫 `Java.Lang.JavaSystem.LoadLibrary`的程式庫。 例如，假設 Xamarin Android 專案有共用程式庫**libpocketsphinx_jni。因此**，包含在具有**EmbeddedNativeLibrary**組建動作的系結專案中，下列程式碼片段（在使用共用程式庫之前執行）將會載入 **。因此**，程式庫：
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本文中，我們列出了與 JAVA 系結相關的常見疑難排解問題，並說明如何解決它們。
 

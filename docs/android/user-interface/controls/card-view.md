@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 053847426d770408826297d9a80b6e38d7f6bc44
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 37afc9ef7773bbfefe442216055c0501af2ab966
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029273"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292621"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin. Android CardView
 
 _Cardview widget 是一個 UI 元件，它會在類似卡片的視圖中顯示文字和影像內容。本指南說明如何在 Xamarin Android 應用程式中使用和自訂 CardView，同時維持與舊版 Android 的回溯相容性。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 在 Android 5.0 （棒糖）中引進的 `Cardview` widget 是一個 UI 元件，它會在類似卡片的視圖中顯示文字和影像內容。 `CardView` 會實作為具有圓角和陰影的 `FrameLayout` widget。 一般來說，`CardView` 是用來呈現 `ListView` 或 `GridView` view 群組中的單一資料列專案。 例如，下列螢幕擷取畫面是旅遊保留應用程式的範例，它會在可滾動的 `ListView`中執行以 `CardView`為基礎的旅遊目的地卡片：
 
@@ -36,7 +36,7 @@ _Cardview widget 是一個 UI 元件，它會在類似卡片的視圖中顯示�
 
 - **Android SDK** &ndash; Android 5.0 （API 21）或更新版本必須透過 Android SDK 管理員進行安裝。
 
-- 如果您特別瞄準 API 層級23和更早版本，則可以使用**JAVA jdk 1.8** &ndash; JDK 1.7。 JDK 1.8 可從[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)取得。
+- 如果您特別以 API 層級23和更早版本為目標，則可以使用**JAVA jdk 1.8** &ndash; JDK 1.7。 JDK 1.8 可從[Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)取得。
 
 您的應用程式也必須包含 `Xamarin.Android.Support.v7.CardView` 套件。 若要在 Visual Studio for Mac 中新增 `Xamarin.Android.Support.v7.CardView` 封裝：
 
@@ -90,7 +90,7 @@ _Cardview widget 是一個 UI 元件，它會在類似卡片的視圖中顯示�
 
 此配置範例會使用單行文字建立預設 `CardView`，如下列螢幕擷取畫面所示：
 
-[以白色背景和文字行![CardView 的螢幕擷取畫面](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
+[以白色背景和文字行 ![CardView 的螢幕擷取畫面](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
 在此範例中，應用程式樣式設定為亮材質主題（`Theme.Material.Light`），使 `CardView` 的陰影和邊緣更容易看到。 如需有關 Android 5.0 應用程式主題的詳細資訊，請參閱[材質主題](~/android/user-interface/material-theme.md)。 在下一節中，我們將瞭解如何自訂應用程式的 `CardView`。
 
@@ -163,16 +163,16 @@ _Cardview widget 是一個 UI 元件，它會在類似卡片的視圖中顯示�
 
 您可以藉由設定一個或多個會影響其填補、提高許可權、圓角半徑和背景色彩的屬性，來自訂 `CardView` 版面配置：
 
-[CardView 屬性的![圖](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
+[CardView 屬性的 ![圖](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
 
 您也可以藉由呼叫互相對應的 `CardView` 方法來動態變更每個屬性（如需 `CardView` 方法的詳細資訊，請參閱[CardView 類別參考](https://developer.android.com/reference/android/support/v7/widget/CardView.html)）。
 請注意，這些屬性（背景色彩除外）接受維度值，也就是十進位數，後面接著單位。 例如，`11.5dp` 指定11.5 與密度無關的圖元。
 
-#### <a name="padding"></a>與邊框距離
+#### <a name="padding"></a>填補
 
 `CardView` 提供五個填補屬性來定位卡片內的內容。 您可以在版面配置 XML 中設定它們，也可以在程式碼中呼叫類似的方法：
 
-[CardView 填補屬性的![圖](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
+[CardView 填補屬性的 ![圖](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
 填補屬性的說明如下：
 
@@ -189,11 +189,11 @@ _Cardview widget 是一個 UI 元件，它會在類似卡片的視圖中顯示�
 內容填補屬性是相對於內容區域的界限，而不是位於內容區域內的任何指定 widget。
 例如，如果 `contentPadding` 在相片觀賞應用程式中已足夠增加，`CardView` 會裁剪影像和卡片上顯示的文字。
 
-#### <a name="elevation"></a>高度
+#### <a name="elevation"></a>Elevation
 
 `CardView` 提供兩個提高許可權的屬性來控制其提升許可權，因此其陰影的大小如下：
 
-[CardView 提升許可權屬性的![圖](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
+[CardView 提升許可權屬性的 ![圖](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
 
 提高許可權屬性的說明如下：
 
@@ -208,7 +208,7 @@ _Cardview widget 是一個 UI 元件，它會在類似卡片的視圖中顯示�
 
 `CardView` 提供可用來控制其圓角半徑和背景色彩的屬性。 這兩個屬性可讓您變更 `CardView`的整體樣式：
 
-[CardView 角落 radious 和背景色彩屬性的![圖](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png#lightbox)
+[CardView 角落 radious 和背景色彩屬性的 ![圖](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png#lightbox)
 
 這些屬性的說明如下：
 
@@ -237,7 +237,7 @@ _Cardview widget 是一個 UI 元件，它會在類似卡片的視圖中顯示�
 
 如需維護與舊版 Android 相容性的詳細資訊，請參閱[維護相容性](https://developer.android.com/training/material/compatibility.html)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南介紹 Android 5.0 （棒棒）中包含的新 `CardView` widget。 它示範了預設 `CardView` 外觀，並說明如何藉由變更其提高許可權、角落圓度、內容填補和背景色彩來自訂 `CardView`。 它列出了 `CardView` 的版面配置屬性（包含參考圖表），並說明如何在 Android 5.0 棒的 Android 裝置上使用 `CardView`。 如需 `CardView`的詳細資訊，請參閱[CardView 類別參考](https://developer.android.com/reference/android/support/v7/widget/CardView.html)。
 

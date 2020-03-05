@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
-ms.openlocfilehash: 25a09e27fb25e477c5176af0ee4a75a836751ccf
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 0fa433de7fd1acb6fb27741f1615a644315f373f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487629"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291613"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>使用身分識別提供者驗證使用者
 
@@ -90,7 +90,7 @@ var authenticator = new OAuth2Authenticator(
 
 - **用戶端識別碼**–這會識別提出要求的用戶端，並可從[Google API 主控台](https://console.developers.google.com)中的專案抓取。
 - **用戶端密碼**–這應該是 `null` 或 `string.Empty`。
-- **範圍**–這會識別應用程式所要求的 API 存取，而值會通知向使用者顯示的同意畫面。 如需有關範圍的詳細資訊，請參閱在 Google 網站上[授權 API 要求](https://developers.google.com/+/web/api/rest/oauth)。
+- **範圍**–這會識別應用程式所要求的 API 存取，而值會通知向使用者顯示的同意畫面。 如需有關範圍的詳細資訊，請參閱在 Google 網站上[授權要求](https://developers.google.com/docs/api/how-tos/authorizing)。
 - **授權 url** –這會識別用來取得授權碼的 url。
 - [重新**導向 url** ] –這會識別要傳送回應的 url。 此參數的值必須符合在[Google 開發人員主控台](https://console.developers.google.com/)中，專案的 [**認證**] 索引標籤中出現的其中一個值。
 - **AccessToken url** –這會識別取得授權碼之後，用來要求存取權杖的 Url。
@@ -273,7 +273,7 @@ Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
 
 - 在 Android 上，如果瀏覽器未自動關閉，暫時的解決方法是將 Xamarin. Auth 封裝降級為版本1.5.0.3。 然後，將 PCL 密碼編譯[v 2.0.147](https://www.nuget.org/packages/PCLCrypto/2.0.147)新增至 Android 專案。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明如何使用 Xamarin. Auth 來管理 Xamarin. Forms 應用程式中的驗證進程。 [Xamarin] 提供 Xamarin 所使用的 `OAuth2Authenticator` 和 `OAuth2Request` 類別，以取用 Google、Microsoft、Facebook 和 Twitter 等身分識別提供者。
 

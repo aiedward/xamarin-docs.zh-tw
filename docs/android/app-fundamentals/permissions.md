@@ -1,72 +1,72 @@
 ---
-title: Permissions In Xamarin.Android
+title: Xamarin 中的許可權
 ms.prod: xamarin
 ms.assetid: 3C440714-43E3-4D31-946F-CA59DAB303E8
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 911f56026a1495099e81a542b30b280f26b6a9e1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: da4884e7f1e3ec1ae8653ea8ec4247fce54a6565
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025453"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78291815"
 ---
-# <a name="permissions-in-xamarinandroid"></a>Permissions In Xamarin.Android
+# <a name="permissions-in-xamarinandroid"></a>Xamarin 中的許可權
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-Android applications run in their own sandbox and for security reasons do not have access to certain system resources or hardware on the device. The user must explicitly grant permission to the app before it may use these resources. For example, an application cannot access the GPS on a device without explicit permission from the user. Android will throw a `Java.Lang.SecurityException` if an app tries to access a protected resource without permission.
+Android 應用程式會在自己的沙箱中執行，且基於安全性考慮，無法存取裝置上的特定系統資源或硬體。 使用者必須先明確授與應用程式的許可權，才能使用這些資源。 例如，應用程式無法存取裝置上的 GPS，而不需要使用者的明確許可權。 如果應用程式嘗試在沒有許可權的情況下存取受保護的資源，則 Android 會擲回 `Java.Lang.SecurityException`。
 
-Permissions are declared in the **AndroidManifest.xml** by the application developer when the app is developed. Android has two different workflows for obtaining the user's consent for those permissions:
+應用程式開發人員會在**androidmanifest.xml**中宣告許可權。 Android 有兩個不同的工作流程，可取得使用者對這些許可權的同意：
 
-- For apps that targeted Android 5.1 (API level 22) or lower, the permission request occurred when the app was installed. If the user did not grant the permissions, then the app would not be installed. Once the app is installed, there is no way to revoke the permissions except by uninstalling the app.
-- Starting in Android 6.0 (API level 23), users were given more control over permissions; they can grant or revoke permissions as long as the app is installed on the device. This screenshot shows the permission settings for the Google Contacts app. It lists the various permissions and allows the user to enable or disable permissions:
+- 針對以 Android 5.1 （API 層級22）或更低版本為目標的應用程式，在安裝應用程式時，就會發生許可權要求。 如果使用者未授與許可權，則不會安裝應用程式。 安裝應用程式之後，除非卸載應用程式，否則沒有任何方法可以撤銷許可權。
+- 從 Android 6.0 （API 層級23）開始，使用者對許可權擁有更多控制權;只要應用程式安裝在裝置上，他們就可以授與或撤銷許可權。 此螢幕擷取畫面顯示 Google Contacts 應用程式的許可權設定。 它會列出各種許可權，並允許使用者啟用或停用許可權：
 
-![Sample Permissions screen](permissions-images/01-permissions-check.png) 
+![範例許可權畫面](permissions-images/01-permissions-check.png) 
 
-Android apps must check at run-time to see if they have permission to access a protected resource. If the app does not have permission, then it must make requests using the new APIs provided by the Android SDK for the user to grant the permissions. Permissions are divided into two categories:
+Android 應用程式必須在執行時間檢查，以查看他們是否有權存取受保護的資源。 如果應用程式沒有許可權，則必須使用 Android SDK 提供的新 Api 提出要求，以供使用者授與許可權。 許可權分成兩個類別：
 
-- **Normal Permissions** &ndash; These are permissions which pose little security risk to the user's security or privacy. Android 6.0 will automatically grant normal permissions at the time of installation. Please consult the Android documentation for a [complete list of normal permissions](https://developer.android.com/guide/topics/permissions/normal-permissions.html).
-- **Dangerous Permissions** &ndash; In contrast to normal permissions, dangerous permissions are those that protect the user's security or privacy. These must be explictly granted by the user. Sending or receiving an SMS message is an example of an action requiring a dangerous permission.
+- **一般許可權**&ndash; 這些許可權會對使用者的安全性或隱私權造成較小的安全性風險。 Android 6.0 會在安裝時自動授與一般許可權。 如需[一般許可權的完整清單](https://developer.android.com/guide/topics/permissions/normal-permissions.html)，請參閱 Android 檔。
+- **危險的許可權**&ndash; 相對於一般許可權，危險的許可權是保護使用者安全性或隱私權的許可權。 使用者必須明確授與這些許可權。 傳送或接收 SMS 訊息是需要危險許可權的動作範例。
 
 > [!IMPORTANT]
-> The category that a permission belongs to may change over time.  It is possible that a permission which was categorized as a "normal" permission may be elevated in future API levels to a dangerous permission.
+> 許可權所屬的類別目錄可能會隨著時間而變更。  已分類為「一般」許可權的許可權可能會在未來的 API 層級提升為危險許可權。
 
-Dangerous permissions are further sub-divided into [_permission groups_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups). A permission group will hold permissions that are logically related. When the user grants permission to one member of a permission group, Android automatically grants permission to all members of that group. For example, the [`STORAGE`](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE) permission group holds both the `WRITE_EXTERNAL_STORAGE` and `READ_EXTERNAL_STORAGE` permissions. If the user grants permission to `READ_EXTERNAL_STORAGE`, then the `WRITE_EXTERNAL_STORAGE` permission is automatically granted at the same time.
+危險的許可權會進一步細分為[_許可權群組_](https://developer.android.com/guide/topics/permissions/requesting.html#perm-groups)。 許可權群組會保留邏輯上相關的許可權。 當使用者將許可權授與許可權群組的其中一個成員時，Android 會自動將許可權授與該群組的所有成員。 例如， [`STORAGE`](https://developer.android.com/reference/android/Manifest.permission_group.html#STORAGE)許可權群組會同時保存 `WRITE_EXTERNAL_STORAGE` 和 `READ_EXTERNAL_STORAGE` 許可權。 如果使用者授與 `READ_EXTERNAL_STORAGE`的許可權，則會同時自動授與 `WRITE_EXTERNAL_STORAGE` 許可權。
 
-Before requesting one or more permissions, it is a best practice to provide a rationale as to why the app requires the permission before requesting the permission. Once the user understands the rationale, the app can request permission from the user. By understanding the rationale, the user can make an informed decision if they wish to grant the permission and understand the repercussions if they do not. 
+在要求一個或多個許可權之前，最好先提供理由，說明為什麼應用程式需要許可權，然後再要求許可權。 一旦使用者瞭解其基本原理，應用程式就可以向使用者要求許可權。 藉由瞭解其基本概念，如果使用者想要授與許可權並瞭解影響（如果沒有的話），則可以做出明智的決定。 
 
-The whole workflow of checking and requesting permissions is known as a _run-time permissions_ check, and can be summarized in the following diagram: 
+檢查和要求許可權的整個工作流程稱為「_執行時間」許可權_檢查，並可在下圖中摘要說明： 
 
-[![Run-time permission check flow chart](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
+[![執行時間許可權檢查流程圖](permissions-images/02-permissions-workflow-sml.png)](permissions-images/02-permissions-workflow.png#lightbox)
 
-The Android Support Library backports some of the new APIs for permissions to older versions of Android. These backported APIs will automatically check the version of Android on the device so it is not necessary to perform an API level check each time.  
+Android 支援程式庫反向移植一些新的 Api，以取得舊版 Android 的許可權。 這些 backport Api 會自動檢查裝置上的 Android 版本，因此不需要每次都執行 API 層級檢查。  
 
-This document will discuss how to add permissions to a Xamarin.Android application and how apps that target Android 6.0 (API level 23) or higher should perform a run-time permission check.
+本檔將討論如何將許可權新增至 Xamarin Android 應用程式，以及以 Android 6.0 （API 層級23）或更高版本為目標的應用程式應該如何執行執行時間許可權檢查。
 
 > [!NOTE]
-> It is possible that permissions for hardware may affect how the app is filtered by Google Play. For example, if the app requires permission for the camera, then Google Play will not show the app in the Google Play Store on a device that does not have a camera installed.
+> 硬體的許可權可能會影響應用程式 Google Play 的篩選方式。 例如，如果應用程式需要相機的許可權，則 Google Play 不會在未安裝相機的裝置上顯示 Google Play 商店中的應用程式。
 
 <a name="requirements" />
 
 ## <a name="requirements"></a>需求
 
-It is strongly recommended that Xamarin.Android projects include the [Xamarin.Android.Support.Compat](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/) NuGet package. This package will backport permission specific APIs to older versions of Android, providing one common interface without the need to constantly check the version of Android that the app is running on.
+強烈建議使用 Xamarin Android 專案，包括[支援相容](https://www.nuget.org/packages/Xamarin.Android.Support.Compat/)的 NuGet 套件。 此套件會將許可權特定的 Api 將到舊版的 Android，提供一個通用介面，而不需要持續檢查應用程式執行所在的 Android 版本。
 
-## <a name="requesting-system-permissions"></a>Requesting System Permissions
+## <a name="requesting-system-permissions"></a>要求系統許可權
 
-The first step in working with Android permissions is to declare the permissions in the Android manifest file. This must be done regardless of the API level that the app is targetting.
+使用 Android 許可權的第一個步驟是在 Android 資訊清單檔案中宣告許可權。 無論應用程式瞄準的 API 層級為何，都必須執行此動作。
 
-Apps that target Android 6.0 or higher cannot assume that because the user granted permission at some point in the past, that the permission will  be valid the next time. An app that targets Android 6.0 must always perform a runtime permission check. Apps that target Android 5.1 or lower do not need to perform a run-time permission check.
+以 Android 6.0 或更高版本為目標的應用程式無法假設，因為使用者在過去某個時間點授與許可權，所以該許可權將會在下一次生效。 以 Android 6.0 為目標的應用程式必須一律執行執行時間許可權檢查。 以 Android 5.1 或更低版本為目標的應用程式不需要執行執行時間許可權檢查。
 
 > [!NOTE]
-> Applications should only request the permissions that they require.
+> 應用程式應該只要求其所需的許可權。
 
-### <a name="declaring-permissions-in-the-manifest"></a>Declaring Permissions in the Manifest
+### <a name="declaring-permissions-in-the-manifest"></a>在資訊清單中宣告許可權
 
-Permissions are added to the  **AndroidManifest.xml** with the `uses-permission` element. For example, if an application is to locate the position of the device, it requires fine and course location permissions. The following two elements are added to the manifest: 
+許可權會使用 `uses-permission` 元素加入至**androidmanifest.xml** 。 例如，如果應用程式要找出裝置的位置，它需要良好和課程的位置許可權。 下列兩個元素會新增至資訊清單： 
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -75,52 +75,52 @@ Permissions are added to the  **AndroidManifest.xml** with the `uses-permission`
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-It is possible to declare the permissions using the tool support built into Visual Studio:
+您可以使用內建于 Visual Studio 的工具支援來宣告許可權：
 
-1. Double-click **Properties** in the **Solution Explorer** and select the **Android Manifest** tab in the Properties window:
+1. 按兩下 **方案總管**中的 **屬性**，然後選取屬性視窗中的  **Android 資訊清單** 索引標籤：
 
-    [![Required permissions in the Android Manifest tab](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
+    [在 [Android 資訊清單] 索引標籤中 ![必要許可權](permissions-images/04-required-permissions-vs-sml.png)](permissions-images/04-required-permissions-vs.png#lightbox)
 
-2. If the application does not already have an AndroidManifest.xml, click **No AndroidManifest.xml found. Click to add one** as shown below:
+2. 如果應用程式還沒有 Androidmanifest.xml，請按一下 [**找不到 androidmanifest.xml]。按一下以新增一個**，如下所示：
 
-    [![No AndroidManifest.xml message](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
+    [![沒有 Androidmanifest.xml 的 xml 訊息](permissions-images/05-no-manifest-vs-sml.png)](permissions-images/05-no-manifest-vs.png#lightbox)
 
-3. Select any permissions your application needs from the **Required permissions** list and save:
+3. 從 [**必要許可權**] 清單中選取您的應用程式所需的任何許可權，並儲存：
 
-    [![Example CAMERA permissions selected](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
+    [已選取 ![範例相機許可權](permissions-images/06-selected-permission-vs-sml.png)](permissions-images/06-selected-permission-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-It is possible to declare the permissions using the tool support built into Visual Studio for Mac:
+您可以使用內建于 Visual Studio for Mac 的工具支援來宣告許可權：
 
-1. Double-click the project in the **Solution Pad** and select **Options > Build > Android Application**:
+1. 按兩下  **Solution Pad**中的專案，然後選取 **選項 > 組建 > Android 應用程式**：
 
-    [![Required Permissions section shown](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
+    [顯示 ![必要許可權區段](permissions-images/04-required-permissions-xs-sml.png)](permissions-images/04-required-permissions-xs.png#lightbox)
 
-2. Click the **Add Android Manifest** button if the project does not already have an **AndroidManifest.xml**:
+2. 如果專案還沒有**androidmanifest.xml**，請按一下 [**新增 Android 資訊清單**] 按鈕：
 
-    [![The project's Android manifest is missing](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
+    [![專案的 Android 資訊清單遺失](permissions-images/05-no-manifest-xs-sml.png)](permissions-images/05-no-manifest-xs.png#lightbox)
 
-3. Select any permissions your application needs from the **Required permissions** list and click **OK**:
+3. 從 [**必要許可權**] 清單中選取您應用程式所需的任何許可權，然後按一下 **[確定]** ：
 
-    [![Example CAMERA permissions selected](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
+    [已選取 ![範例相機許可權](permissions-images/03-select-permission-xs-sml.png)](permissions-images/03-select-permission-xs.png#lightbox)
     
 -----
 
-Xamarin.Android will automatically add some permissions at build time to Debug builds. This will make debugging the application easier. In particular, two notable permissions are `INTERNET` and `READ_EXTERNAL_STORAGE`. These automatically-set permissions will not appear to be enabled in the **Required permissions** list. Release builds, however, use only the permissions that are explicitly set in the **Required permissions** list. 
+Xamarin 會在組建階段自動將部分許可權新增至 Debug 組建。 這可讓您更輕鬆地對應用程式進行偵錯工具。 特別的是，`INTERNET` 和 `READ_EXTERNAL_STORAGE`兩個值得注意的許可權。 這些自動設定的許可權將不會在 [**必要許可權**] 清單中啟用。 不過，發行組建只會使用在 [**必要許可權**] 清單中明確設定的許可權。 
 
-For apps that target Android 5.1(API level 22) or lower, there is nothing more that needs to be done. Apps that will run on Android 6.0 (API 23 level 23) or higher should proceed on to the next section on how to perform run time permission checks. 
+若為以 Android 5.1 （API 層級22）或更低版本為目標的應用程式，則不需要執行其他動作。 將在 Android 6.0 （API 23 層級23）或更高版本上執行的應用程式，應該繼續進行下一節，以瞭解如何執行執行時間許可權檢查。 
 
-### <a name="runtime-permission-checks-in-android-60"></a>Runtime Permission Checks in Android 6.0
+### <a name="runtime-permission-checks-in-android-60"></a>Android 6.0 中的執行時間許可權檢查
 
-The `ContextCompat.CheckSelfPermission`  method (available with the Android Support Library) is used to check if a specific permission has been granted. This method will return a [`Android.Content.PM.Permission`](xref:Android.Content.PM.Permission) enum which has one of two values:
+`ContextCompat.CheckSelfPermission` 方法（可用於 Android 支援程式庫）是用來檢查是否已授與特定的許可權。 這個方法會傳回具有兩個值之一的[`Android.Content.PM.Permission`](xref:Android.Content.PM.Permission)列舉：
 
-- **`Permission.Granted`** &ndash; The specified permission has been granted.
-- **`Permission.Denied`** &ndash; The specified permission has not been granted.
+- **`Permission.Granted`** &ndash; 已授與指定的許可權。
+- **`Permission.Denied`** &ndash; 未授與指定的許可權。
 
-This code snippet is an example of how to check for the Camera permission in an Activity: 
+此程式碼片段是如何檢查活動中的攝影機許可權的範例： 
 
 ```csharp
 if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.Camera) == (int)Permission.Granted) 
@@ -133,19 +133,19 @@ else
 }
 ```
 
-It is a best practice to inform the user as to why a permission is necessary for an application so that an informed decision can be made to grant the permission. An example of this would be an app that takes photos and geo-tags them. It is clear to the user that the camera permission is necessary, but it might not be clear why the app also needs the location of the device. The rationale should display a message to help the user understand why the location permission is desirable and that the camera permission is required.
+最佳做法是將應用程式的必要許可權通知使用者，以做出明智的決策來授與許可權。 其中一個範例是將相片和異地標記拍照的應用程式。 使用者可以清楚瞭解相機許可權，但可能不清楚為什麼應用程式也需要裝置的位置。 基本原理應該會顯示一則訊息，協助使用者瞭解為什麼需要 location 許可權，以及需要攝影機許可權。
 
-The `ActivityCompat.ShouldShowRequestPermissionRationale` method is used to determine if the rationale should be shown to the user. This method will return `true` if the rationale for a given permission should be displayed. This screenshot shows an example of a Snackbar displayed by an application that explains why the app needs to know the location of the device:
+`ActivityCompat.ShouldShowRequestPermissionRationale` 方法是用來判斷是否應該向使用者顯示基本原理。 如果應該顯示指定許可權的基本原理，這個方法將會傳回 `true`。 此螢幕擷取畫面顯示應用程式所顯示的 Snackbar 範例，說明應用程式為何需要知道裝置的位置：
 
-![Rationale for location](permissions-images/07-rationale-snackbar.png) 
+![位置的基本原理](permissions-images/07-rationale-snackbar.png) 
 
-If the user grants the permission, the `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` method should be called. This method requires the following parameters:
+如果使用者授與許可權，則應該呼叫 `ActivityCompat.RequestPermissions(Activity activity, string[] permissions, int requestCode)` 方法。 這個方法需要下列參數：
 
-- **activity** &ndash; This is the activity that is requesting the permissions and is to be informed by Android of the results.
-- **permissions** &ndash; A list of the permissions that are being requested.
-- **requestCode** &ndash; An integer value that is used to match the results of the permission request to a `RequestPermissions` call. 這個值應大於零。
+- **活動**&ndash; 這是要求許可權的活動，而且會由 Android 的結果通知。
+- **許可權**&ndash; 所要求的許可權清單。
+- **requestCode** &ndash; 用來比對 `RequestPermissions` 呼叫之許可權要求結果的整數值。 這個值應大於零。
 
-This code snippet is an example of the two methods that were discussed. First, a check is made to determine if the permission rationale should be shown. If the rationale is to be shown, then a Snackbar is displayed with the rationale. If the user clicks **OK** in the Snackbar, then the app will request the permissions. If the user does not accept the rationale, then the app should not proceed to request permissions. If the rationale is not shown, then the Activity will request the permission:
+此程式碼片段是所討論兩種方法的範例。 首先，會進行檢查，以判斷是否應該顯示許可權的理由。 如果要顯示基本原理，則會顯示 Snackbar，其中包含基本原理。 如果使用者在 Snackbar 中按一下 **[確定]** ，則應用程式會要求許可權。 如果使用者不接受基本原理，則應用程式不應該繼續要求許可權。 如果沒有顯示 [基本]，則活動會要求許可權：
 
 ```csharp
 if (ActivityCompat.ShouldShowRequestPermissionRationale(this, Manifest.Permission.AccessFineLocation)) 
@@ -172,11 +172,11 @@ else
 }
 ```
 
-`RequestPermission` can be called even if the user has already granted permission. Subsequent calls are not necessary, but they provide the user with the opportunity to confirm (or revoke) the permission. When `RequestPermission` is called, control is handed off to the operating system, which will display a UI for accepting the permissions:  
+即使使用者已授與許可權，也可以呼叫 `RequestPermission`。 後續的呼叫並不是必要的，但可讓使用者有機會確認（或撤銷）許可權。 呼叫 `RequestPermission` 時，系統會將控制權移交給作業系統，這會顯示可接受許可權的 UI：  
 
-![Permssion Dialog](permissions-images/08-location-permission-dialog.png)
+![許可權對話方塊](permissions-images/08-location-permission-dialog.png)
 
-After the user is finished, Android will return the results to the Activity via a callback method, `OnRequestPermissionResult`. This method is a part of the interface  `ActivityCompat.IOnRequestPermissionsResultCallback` which must be implemented by the Activity. This interface has a single method, `OnRequestPermissionsResult`, which will be invoked by Android to inform the Activity of the user's choices. If the user has granted the permission, then the app can go ahead and use the protected resource. An example of how to implement `OnRequestPermissionResult` is shown below: 
+使用者完成之後，Android 會透過回呼方法（`OnRequestPermissionResult`）將結果傳回給活動。 這個方法是介面 `ActivityCompat.IOnRequestPermissionsResultCallback` 的一部分，必須由活動執行。 此介面具有單一方法，`OnRequestPermissionsResult`，其將由 Android 叫用以通知活動使用者的選擇。 如果使用者已授與許可權，則應用程式可以繼續使用受保護的資源。 如何執行 `OnRequestPermissionResult` 的範例如下所示： 
 
 ```csharp
 public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
@@ -205,12 +205,12 @@ public override void OnRequestPermissionsResult(int requestCode, string[] permis
 }
 ```  
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-This guide discussed how to add and check for permissions in an Android device. The differences in how permissions work between old Android apps (API level < 23) and new Android apps (API level > 22). It discussed how to perform run-time permission checks in Android 6.0.
+本指南討論如何在 Android 裝置中新增和檢查許可權。 舊版 Android 應用程式（API 層級 < 23）和新的 Android 應用程式（API 層級 > 22）之間的許可權使用方式上的差異。 它討論了如何在 Android 6.0 中執行執行時間許可權檢查。
 
 ## <a name="related-links"></a>相關連結
 
-- [List of Normal Permissions](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
-- [Runtime Permissions Sample App](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)
-- [Handling Permissions in Xamarin.Android](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)
+- [一般許可權的清單](https://developer.android.com/guide/topics/permissions/normal-permissions.html)
+- [執行時間許可權範例應用程式](https://github.com/xamarin/monodroid-samples/tree/master/android-m/RuntimePermissions)
+- [在 Xamarin 中處理許可權](https://github.com/xamarin/recipes/tree/master/Recipes/android/general/projects/add_permissions_to_android_manifest)

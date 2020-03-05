@@ -6,13 +6,13 @@ ms.assetid: fede0382-c972-4023-a4ea-fe5cadec91a6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/14/2019
-ms.openlocfilehash: 0149a66fedd98a94f1c9d96bf8e7e57715d1b90b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/28/2020
+ms.openlocfilehash: 2e3d3ccd42907ef3678ccfb634c036930800a145
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488253"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292805"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin. Forms CarouselView 版面配置
 
@@ -45,9 +45,9 @@ ms.locfileid: "75488253"
 > [!NOTE]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView)會使用原生版面配置引擎來執行版面配置。
 
-## <a name="horizontal-layout"></a>水平的版面配置
+## <a name="horizontal-layout"></a>水準配置
 
-根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會水準顯示其專案。 因此，不需要將[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設定為使用此配置：
+根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會水準顯示其專案。 因此，不需要將[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為使用此配置：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -87,7 +87,7 @@ ms.locfileid: "75488253"
 </CarouselView>
 ```
 
-或者，也可以藉由將[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件，將 `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定為 `Orientation` 屬性值，來完成此配置：
+或者，也可以藉由將[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件，將 `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定為 `Orientation` 屬性值，來完成此配置：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -108,11 +108,13 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-這會導致在新增新專案時水準成長的版面配置。
+這會導致在新增新專案時水準成長的版面配置：
+
+[![IOS 和 Android 上的 CarouselView 水準版面配置螢幕擷取畫面](layout-images/horizontal.png "CarouselView 水準版面配置")](layout-images/horizontal-large.png#lightbox "CarouselView 水準版面配置")
 
 ## <a name="vertical-layout"></a>垂直版面配置
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以將[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件，並將 `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定為 `Orientation` 屬性值，以垂直方式顯示其專案：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以將[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件，並將 `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定為 `Orientation` 屬性值，以垂直方式顯示其專案：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -165,7 +167,9 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-這會導致在加入新專案時，垂直成長的版面配置。
+這會導致在新增新專案時，垂直成長的版面配置：
+
+[![在 iOS 和 Android 上 CarouselView 垂直版面配置的螢幕擷取畫面](layout-images/vertical.png "CarouselView 垂直版面配置")](layout-images/vertical-large.png#lightbox "CarouselView 垂直版面配置")
 
 ## <a name="partially-visible-adjacent-items"></a>部分可見的相鄰專案
 
@@ -188,13 +192,15 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-結果是連續的專案會在螢幕上部分公開。
+結果是連續的專案會在螢幕上部分公開：
+
+[![IOS 和 Android 上部分可見的相鄰專案之 CollectionView 的螢幕擷取畫面](layout-images/peek-items.png "CarouselView 查看區域內凹")](layout-images/peek-items-large.png#lightbox "CarouselView 尖峰區域內凹")
 
 ## <a name="item-spacing"></a>專案間距
 
 根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)中的每個專案在其周圍不會有任何空白空間。 藉由設定 `CarouselView`所使用之專案配置的屬性，即可變更此行為。
 
-當[`CarouselView`](xref:Xamarin.Forms.CarouselView)將其[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件時，`LinearItemsLayout.ItemSpacing` 屬性可以設定為 `double` 值，表示每個專案周圍的空白空間：
+當[`CarouselView`](xref:Xamarin.Forms.CarouselView)將其[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件時，`LinearItemsLayout.ItemSpacing` 屬性可以設定為 `double` 值，表示每個專案周圍的空白空間：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -238,7 +244,9 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-系統會執行 `OnImageTapped` 事件處理常式，以回應所按下的[`Image`](xref:Xamarin.Forms.Image)物件，並變更影像的維度（和其父框架），使其更容易被查看。
+系統會執行 `OnImageTapped` 事件處理常式，以回應所按下的[`Image`](xref:Xamarin.Forms.Image)物件，並變更影像的維度（及其父 `Frame`），以便更輕鬆地查看：
+
+[![在 iOS 和 Android 上具有動態專案大小的 CarouselView 螢幕擷取畫面](layout-images/runtime-resizing.png "CarouselView 動態專案大小")](layout-images/runtime-resizing-large.png#lightbox "CarouselView 動態專案大小")
 
 ## <a name="right-to-left-layout"></a>由右至左的版面配置
 

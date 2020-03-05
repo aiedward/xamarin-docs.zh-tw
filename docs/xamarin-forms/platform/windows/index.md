@@ -6,21 +6,21 @@ ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: 0e2db2a054c871668b5787a53ffbe4464f982174
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 01/16/2020
+ms.openlocfilehash: 694ec24697937b114036eceab1cafd5aae3617d8
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696923"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78291492"
 ---
 # <a name="windows-platform-features"></a>Windows 平臺功能
 
-開發適用于 Windows 平臺的 Xamarin. Forms 應用程式需要 Visual Studio。 [[需求] 頁面](~/get-started/requirements.md)包含必要元件的詳細資訊。
+開發適用于 Windows 平臺的 Xamarin. Forms 應用程式需要 Visual Studio。 [[支援的平臺] 頁面](~/get-started/supported-platforms.md)包含必要元件的詳細資訊。
 
 ![](images/allhanselman.png "Xamarin.Forms Applications Running on Windows")
 
-## <a name="platform-specifics"></a>平臺細節
+## <a name="platform-specifics"></a>平台特定功能
 
 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。
 
@@ -43,6 +43,10 @@ ms.locfileid: "72696923"
 - 設定工具列位置選項。 如需詳細資訊，請參閱[Windows 上的頁面工具列位置](page-toolbar-placement.md)。
 - 啟用要在[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)工具列上顯示的頁面圖示。 如需詳細資訊，請參閱[TabbedPage Windows 上的圖示](tabbedpage-icons.md)。
 
+下列平臺特定功能是針對 UWP 上的 Xamarin. Forms [`Application`](xref:Xamarin.Forms.Application)類別提供的：
+
+- 指定專案中將從中載入影像資產的目錄。 如需詳細資訊，請參閱[Windows 上的預設影像目錄](default-image-directory.md)。
+
 ## <a name="platform-support"></a>平台支援
 
 Visual Studio 中提供的 Xamarin 範本包含通用 Windows 平臺（UWP）專案。
@@ -50,7 +54,7 @@ Visual Studio 中提供的 Xamarin 範本包含通用 Windows 平臺（UWP）專
 > [!NOTE]
 > Xamarin. x 和2.x 支援_Windows Phone 8 Silverlight_、 _Windows Phone 8.1_，以及_Windows 8.1_應用程式開發。 不過，這些專案類型已被取代。
 
-## <a name="getting-started"></a>使用者入門
+## <a name="getting-started"></a>開始使用
 
 移至 [檔案] > Visual Studio 中的**新 > 專案**，然後選擇其中一個**跨平臺 > 空白應用程式（Xamarin）** 範本以開始使用。
 

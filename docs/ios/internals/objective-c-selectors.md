@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/12/2017
-ms.openlocfilehash: 79f226c137c3ab6b1dd2de9f92cb868056aa9d59
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2a4d255500f68497fe7cb0cc439c5f9c0504b0f2
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022280"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291747"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin 中的目標-C 選取器
 
 目標 C 語言是以*選取器*為基礎。 「選取器」是可以傳送至物件或*類別*的訊息。 [ [Xamarin](~/ios/internals/api-design/index.md) ] 會將實例選取器對應至實例方法，並將類別選取器對應至靜態方法。
 
 與一般 C 函式（和C++ like 成員函式）不同的是，您無法使用[P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)直接叫用選取器，而是使用[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)將選取器傳送至目標 C 類別或實例。
-函數.
+。
 
 如需有關目標-C 中訊息的詳細資訊，請參閱 Apple 的[使用物件](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)指南。
 
@@ -45,10 +45,10 @@ ms.locfileid: "73022280"
 
 ```csharp
 CGSize objc_msgSend(
-    IntPtr target, 
-    IntPtr selector, 
-    IntPtr font, 
-    nfloat width, 
+    IntPtr target,
+    IntPtr selector,
+    IntPtr font,
+    nfloat width,
     UILineBreakMode mode
 );
 ```
@@ -58,7 +58,7 @@ CGSize objc_msgSend(
 ```csharp
 [DllImport (Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend")]
 static extern CGSize cgsize_objc_msgSend_IntPtr_float_int (
-    IntPtr target, 
+    IntPtr target,
     IntPtr selector,
     IntPtr font,
     nfloat width,
@@ -76,7 +76,7 @@ nfloat width = ...
 UILineBreakMode mode = ...
 
 CGSize size = cgsize_objc_msgSend_IntPtr_float_int(
-    target.Handle, 
+    target.Handle,
     selector.Handle,
     font == null ? IntPtr.Zero : font.Handle,
     width,
@@ -90,7 +90,7 @@ CGSize size = cgsize_objc_msgSend_IntPtr_float_int(
 [DllImport (MonoTouch.Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend_stret")]
 static extern void cgsize_objc_msgSend_stret_IntPtr_float_int (
     out CGSize retval,
-    IntPtr target, 
+    IntPtr target,
     IntPtr selector,
     IntPtr font,
     nfloat width,
@@ -111,7 +111,7 @@ CGSize size;
 
 if (Runtime.Arch == Arch.SIMULATOR)
     size = cgsize_objc_msgSend_IntPtr_float_int(
-        target.Handle, 
+        target.Handle,
         selector.Handle,
         font == null ? IntPtr.Zero : font.Handle,
         width,
@@ -154,9 +154,9 @@ else
 
 有一個以上的 `objc_msgSend` 函數：
 
-- 針對傳回結構的選取器，請使用[`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc) 。 在 ARM 上，這包括不是列舉或任何 C 內建類型（`char`、`short`、`int`、`long`、`float`、`double`）的所有傳回類型。 在 x86 （模擬器）上，此方法必須用於大小大於8個位元組的所有結構（`CGSize` 為8個位元組，而且不會在模擬器中使用 `objc_msgSend_stret`）。 
-- 僅針對在 x86 上傳回浮點值的選取器使用[`objc_msgSend_fpret`](https://developer.apple.com/documentation/objectivec/1456697-objc_msgsend_fpret?language=objc) 。 此函式不需要在 ARM 上使用;請改用 `objc_msgSend`。 
-- 主要[objc_msgSend](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)函數會用於所有其他選取器。
+- 針對傳回結構的選取器，請使用[`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc) 。 在 ARM 上，這包括不是列舉或任何 C 內建類型（`char`、`short`、`int`、`long`、`float`、`double`）的所有傳回類型。 在 x86 （模擬器）上，此方法必須用於大小大於8個位元組的所有結構（`CGSize` 為8個位元組，而且不會在模擬器中使用 `objc_msgSend_stret`）。
+- 僅針對在 x86 上傳回浮點值的選取器使用[`objc_msgSend_fpret`](https://developer.apple.com/documentation/objectivec/1456697-objc_msgsend_fpret?language=objc) 。 此函式不需要在 ARM 上使用;請改用 `objc_msgSend`。
+- 主要[objc_msgSend](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)函式會用於所有其他選取器。
 
 一旦您決定需要呼叫的 `objc_msgSend` 函式（模擬器和裝置可能需要不同的方法），您可以使用一般的[`[DllImport]`](xref:System.Runtime.InteropServices.DllImportAttribute)方法來宣告函式以供稍後的叫用。
 
@@ -183,7 +183,7 @@ if (Runtime.Arch == Arch.DEVICE)
     PointF ret;
     Messaging.PointF_objc_msgSend_stret_PointF_IntPtr (out ret, myHandle, selector.Handle);
     return ret;
-} 
+}
 else
 {
     return Messaging.PointF_objc_msgSend_PointF_IntPtr (myHandle, selector.Handle);
@@ -201,7 +201,3 @@ else
 ### <a name="creating-your-own-signatures"></a>建立您自己的簽章
 
 如有需要，可以使用下列[gist](https://gist.github.com/rolfbjarne/981b778a99425a6e630c)來建立您自己的簽章。
-
-## <a name="related-links"></a>相關連結
-
-- [目標-C 選取器](https://developer.xamarin.com/samples/mac-ios/Objective-C/)範例

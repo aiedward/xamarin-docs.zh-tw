@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: fe4b9ade9e6e462c3472a8bb3bb8750ed6cac326
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8194c369aa0e4f8bb17a1a162354b4f72c6aaa41
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015883"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291816"
 ---
 # <a name="binding-troubleshooting"></a>系結疑難排解
 
@@ -42,17 +42,17 @@ ms.locfileid: "73015883"
 
 ## <a name="reporting-bugs"></a>報告錯誤
 
-您的意見反應對我們很重要。 如果您發現 Xamarin. Mac 有任何問題：
+您的意見反應對我們非常寶貴。 如果您發現 Xamarin. Mac 有任何問題：
 
-- 查看 [Xamarin.Mac 論壇](https://forums.xamarin.com/categories/mac) \(英文\)
-- 搜尋[問題存放庫](https://github.com/xamarin/xamarin-macios/issues) \(英文\) 
+- 查看 [Xamarin.Mac 論壇](https://forums.xamarin.com/categories/xamarin-mac) \(英文\)
+- 搜尋[問題存放庫](https://github.com/xamarin/xamarin-macios/issues) \(英文\)
 - 在切換到 GitHub 問題之前，Xamarin 問題的追蹤是在 [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) \(英文\) 上進行的。 請從該處搜尋相符的問題。
 - 如果您找不到相符的問題，請在 [GitHub 問題存放庫](https://github.com/xamarin/xamarin-macios/issues/new) \(英文\) 中提出新的問題。
 
-GitHub 問題全都是公開的。 無法隱藏意見或附件。 
+GitHub 問題全都是公開的。 無法隱藏意見或附件。
 
 請儘量包含下列資訊：
 
-- 一個可重現問題的簡單範例。 這是**非常寶貴的**，請盡您所能提供。 
+- 一個可重現問題的簡單範例。 這是**非常寶貴的**，請盡您所能提供。
 - 損毀狀況的完整堆疊追蹤。
 - 損毀狀況周圍的 C# 程式碼。

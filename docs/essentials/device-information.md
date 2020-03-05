@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials:裝置資訊
+title: Xamarin.Essentials：裝置資訊
 description: 本文件描述 Xamarin.Essentials 中的 DeviceInfo 類別，可提供執行應用程式的裝置相關資訊。
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 29b67e4410a3549e4e2cd63121ffa2e2205e0941
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
-ms.translationtype: HT
+ms.openlocfilehash: 1cab4ea8ea3f98def4830e101783db1554efa69c
+ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940809"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78295413"
 ---
-# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials:裝置資訊
+# <a name="xamarinessentials-device-information"></a>Xamarin.Essentials：裝置資訊
 
 **DeviceInfo** 類別可提供執行應用程式的裝置相關資訊。
 
@@ -79,9 +79,9 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
-iOS 不會為開發人員公開 API 以取得特定 iOS 裝置的名稱。 而會傳回硬體識別碼，例如代表 iPhone X 的 _iPhone10,6_。這些識別碼的對應不是由 Apple 提供，但可以在 [iPhone Wiki](https://www.theiphonewiki.com/wiki/Models) \(英文\) 上找到 (非官方來源)。
+iOS 不會為開發人員公開 API 以取得特定 iOS 裝置的型號。 相反地，會傳回硬體識別碼（例如_代表 iphone10，6），_ 這是指 iPhone X。Apple 不會提供這些識別碼的對應，但可以在[IPhone Wiki 的](https://www.theiphonewiki.com/wiki/Models)這些（非官方來源）上找到，並[取得 iOS 模型](https://github.com/dannycabrera/Get-iOS-Model)。
 
 --------------
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1efb8df4bac307d0e73da6bcbf645077cb63c839
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5aabaadfb1781f9f1622abf5687252b16b327d34
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032349"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291957"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin 中的應用程式內購買
 
@@ -46,7 +46,7 @@ iOS 應用程式可以使用 StoreKit 來銷售數位產品或服務– iOS 所�
 
 - [訂用帳戶與報表](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已介紹應用程式內購買的概念，並概述如何設定您的應用程式，以利用 Xamarin. iOS 來使用它和呈現的範例。 其中涵蓋：
 
@@ -65,7 +65,6 @@ iOS 應用程式可以使用 StoreKit 來銷售數位產品或服務– iOS 所�
 - [應用程式內購買產品識別碼問 &](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
 - [應用程式內購買技術提示](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html)
 - [您的第一個 App Store 提交](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
-- [App Store 資源中心](https://developer.apple.com/appstore/index.html)
 - [App Store 提交提示](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [App Store 審查指導方針](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [管理您的應用程式](https://developer.apple.com/appstore/resources/managing/index.html)

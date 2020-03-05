@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: f15c754a47f910f430af3c036ed510cc9e130eac
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021816"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292404"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin Designer for iOS 的自動版面配置
 
@@ -69,72 +69,72 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
 若要在選取的視圖上編輯條件約束，請按一下省略號以顯示 [popover： ![條件約束編輯 popover]](designer-auto-layout-images/constraints-popup.png)
 
-開啟 [條件約束] popover 時，它會在此視圖上顯示任何預設的條件約束。 We can set all the spacing constraints selecting **All Sides** from the combobox on top right corner, and select **Clear All** to remove them. 
+開啟 [條件約束] popover 時，它會在此視圖上顯示任何預設的條件約束。 我們**可以從右上**角的下拉式方塊中選取所有的間距條件約束，然後選取 [**全部清除**] 將它們移除。
 
-The **W** will set width and **H** will set height constraint. When you check **Aspect Ratio**, the views height and width will be controlled on different screen sizes, the width of the view is used as numerator for the ration, and the height as denominator.
+**W**會設定 width，而**H**會設定 height 條件約束。 當您檢查**外觀比例**時，會以不同的螢幕大小來控制 views 的高度和寬度，視圖的寬度會當做比例的分子，而高度則做為分母。
 
-![constraints spacing](designer-auto-layout-images/constraints-spacing.png)
+![條件約束間距](designer-auto-layout-images/constraints-spacing.png)
 
-Four combo boxes for spacing constraints lists the neighboring views to anchor the constraint
+四個間距條件約束的下拉式方塊列出要錨定條件約束的相鄰視圖
 
-## <a name="surface-based-constraint-editing"></a>Surface-Based Constraint Editing
+## <a name="surface-based-constraint-editing"></a>以介面為基礎的條件約束編輯
 
-For more fine-tuned constraint editing, we can interact with constraints directly on the design surface. This section introduces the basics of surface-based constraint editing, including pin-spacing controls, drop areas, and working with different types of constraints.
+針對更微調的條件約束編輯，我們可以直接在設計介面上與條件約束互動。 本節介紹以介面為基礎之條件約束編輯的基本概念，包括固定間距控制項、放置區域，以及使用不同類型的條件約束。
 
-### <a name="creating-constraints"></a>Creating Constraints
+### <a name="creating-constraints"></a>建立條件約束
 
-The iOS Designer tool offers two types of controls for manipulating elements on the design surface. *Dragging controls* and *pin-spacing controls*, as illustrated in the following image:
+IOS 設計工具提供兩種類型的控制項，用於操作設計介面上的元素。 *拖曳控制項*和*釘選間距控制項*，如下圖所示：
 
-![view controls](designer-auto-layout-images/controls.png)
+![view 控制項](designer-auto-layout-images/controls.png)
 
-These are toggled by selecting the constraints mode button in the constraints bar.
+這些會藉由選取條件約束列中的 [條件約束模式] 按鈕來切換。
 
-The 4 T-shaped handles on each side of the element define the *top*, *right*, *bottom*, and *left* edges of the element for a constraint. The two I-shaped handles at the right and bottom of the element define *height* and *width* constraint respectively. The middle square handles both *centerX* and *centerY* constraints.
+元素每一端上的4個 T 形狀控點會定義條件約束之元素的*上*、*右*、*下*邊緣和*左邊*緣。 元素右邊和底部的兩個 I 形狀控點會分別定義*height*和*width*條件約束。 中間方形會處理*system.windows.media.rotatetransform.centerx*和*centerY*條件約束。
 
-To create a constraint, pick a handle and drag it somewhere on the design surface. When you start the drag, a series of green lines/boxes will appear on the surface telling you what you can constrain. For example, in the screenshot below, we are constraining the top side of the middle button:
+若要建立條件約束，請挑選一個控點，並將它拖曳至設計介面上的某個位置。 當您開始拖曳時，一系列的綠色線條/方塊會出現在介面上，告訴您可以限制的內容。 例如，在下面的螢幕擷取畫面中，我們會限制中間按鈕的頂端：
 
  [![](designer-auto-layout-images/image07.png "Constraining the top side of the middle button")](designer-auto-layout-images/image07.png#lightbox)
 
-Note the three dashed green lines across the other two buttons. The green lines indicate *drop areas*, or the attributes of other elements to which we can constrain. In the screenshot above, the other two buttons offer 3 vertical drop areas ( *bottom*, *centerY*, *top*) to constrain our button. The dashed green line at the top of the view means the view controller offers a constraint at the top of the view, and the solid green box means the view controller offers a constraint below the top layout guide.
+請注意，在其他兩個按鈕中，三個虛線的綠色線條。 綠色線條表示*放置區域*，或是我們可以限制的其他元素的屬性。 在上方的螢幕擷取畫面中，其他兩個按鈕會提供3個垂直拖放區域（*底部*、 *centerY*、*頂端*）來限制按鈕。 視圖頂端的綠色虛線表示視圖控制器在視圖頂端提供條件約束，而綠色方塊表示 view controller 在頂端版面配置指南底下提供了條件約束。
 
 > [!IMPORTANT]
-> Layout guides are special types of constraint targets that allow us to create top and bottom constraints that take into account the presence of system bars, such as status bars or toolbars. One of the main uses is to have an app compatible between iOS 6 and iOS 7 since the newest version has the container view extending below the status bar. For more information on the top layout guide, refer to the [Apple documentation](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2).
+> 版面配置指南是特殊類型的條件約束目標，可讓我們建立最上層和底部的條件約束，以考慮系統橫條的存在，例如狀態列或工具列。 其中一個主要用途是讓應用程式在 iOS 6 和 iOS 7 之間相容，因為最新版本的容器視圖會延伸到狀態列底下。 如需有關最上層版面配置指南的詳細資訊，請參閱[Apple 檔](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/transitionguide/AppearanceCustomization.html#//apple_ref/doc/uid/TP40013174-CH15-SW2)。
 
-The next three sections introduce working with different types of constraints.
+接下來的三個章節會介紹如何使用不同類型的條件約束。
 
-### <a name="size-constraints"></a>Size Constraints
+### <a name="size-constraints"></a>大小條件約束
 
-With size constraints - *height* and *width* - you have two options. The first option is to drag the handle to constrain to a neighbor element size, as illustrated by the example above. The other option is to double-click the handle to create a self-constraint. This allows us to specify a constant size value, as illustrated by the screenshot below:
+具有大小限制-*高度*和*寬度*-您有兩個選項。 第一個選項是拖曳控點來限制為鄰近的元素大小，如上述範例所示。 另一個選項是按兩下該控制碼，以建立自我條件約束。 這可讓我們指定常數大小值，如下列螢幕擷取畫面所示：
 
  [![](designer-auto-layout-images/sizec.png "Drag the handle to constrain to a neighbor element size, as illustrated here")](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>中心條件約束
 
-The square handle will create a *centerX* or *centerY* constraint, depending on the context. Dragging the square handle will light up the other elements to offer both vertical and horizontal drop areas, as illustrated by the screenshot below:
+視內容而定，方形控點會建立*system.windows.media.rotatetransform.centerx*或*centerY*條件約束。 拖曳方形控點會使其他元素變亮，以同時提供垂直和水準放置區，如下列螢幕擷取畫面所示：
 
  [![](designer-auto-layout-images/centerc.png "Center Constraints")](designer-auto-layout-images/centerc.png#lightbox)
 
-If you choose a vertical drop area, a *centerY* constraint will be created. If you choose a horizontal drop area, the constraint will be based on *centerX*.
+如果您選擇垂直放置區，將會建立*centerY*條件約束。 如果您選擇水準放置區，則條件約束會以*system.windows.media.rotatetransform.centerx*為基礎。
 
 ### <a name="combinational-constraints"></a>Combinational 條件約束
 
-To create both alignment and size equality constraints between two elements, you can select items from a top toolbar to specify - in order - horizontal alignment, vertical alignment and size equalities, as illustrated by the screenshot below:
+若要在兩個元素之間建立對齊和大小相等條件約束，您可以從頂端工具列選取專案，以指定順序水準對齊、垂直對齊和大小 equalities，如下列螢幕擷取畫面所示：
 
  [![](designer-auto-layout-images/image06.png "Combinational Constraints")](designer-auto-layout-images/image06.png#lightbox)
 
-### <a name="visualizing-and-editing-constraints"></a>Visualizing and Editing Constraints
+### <a name="visualizing-and-editing-constraints"></a>視覺化和編輯條件約束
 
-When you add a constraint, it will be displayed on the design surface as a blue line when you select an item:
+當您加入條件約束時，當您選取專案時，它會在設計介面上顯示為藍色線條：
 
  [![](designer-auto-layout-images/image09.png "Visualizing Constraints")](designer-auto-layout-images/image09.png#lightbox)
 
-You can select a constraint by clicking on a blue line and editing the constraint values directly in the property panel. Alternatively, double-clicking on a blue line will bring up a popover that lets you edit the values directly on the design surface:
+您可以按一下藍線，並直接在屬性面板中編輯條件約束值，以選取條件約束。 或者，按兩下藍線會顯示一個 popover，讓您直接在設計介面上編輯值：
 
  [![](designer-auto-layout-images/image08.png "Editing Constraints")](designer-auto-layout-images/image08.png#lightbox)
 
-## <a name="constraint-issues"></a>Constraint Issues
+## <a name="constraint-issues"></a>條件約束問題
 
-Several types of issues can arise when using constraints:
+使用條件約束時，可能會發生數種類型的問題：
 
 - **衝突的條件約束**：當多個條件約束強制元素具有衝突的屬性值，且條件約束引擎無法協調它們時，就會發生這種情況。
 - **Underconstrained 專案**：元素的屬性（位置 + 大小）必須完全涵蓋于其條件約束集和內建大小，條件約束才會是有效的。 如果這些值不明確，則專案會被視為 underconstrained。
@@ -201,7 +201,7 @@ ViewInfoHeight.Constant = 0;
 
 自動設定引擎不會立即更新附加的視圖以回應條件約束變更，而是會在不久的未來排程延遲的配置_傳遞_。 在此延後行程期間，不僅會更新指定的視圖條件約束，也會重新計算階層中每個視圖的條件約束，並更新以調整新的版面配置。
 
-在任何時間點，您都可以藉由呼叫父視圖的 `SetNeedsLayout` 或 `SetNeedsUpdateConstraints` 方法，來排程自己的延後配置傳遞。 
+在任何時間點，您都可以藉由呼叫父視圖的 `SetNeedsLayout` 或 `SetNeedsUpdateConstraints` 方法，來排程自己的延後配置傳遞。
 
 延遲的版面配置傳遞是由兩個透過 view 階層的唯一階段所組成：
 
@@ -210,7 +210,7 @@ ViewInfoHeight.Constant = 0;
 
 ### <a name="animating-constraint-changes"></a>動畫條件約束變更
 
-除了修改條件約束屬性之外，您還可以使用核心動畫來建立對視圖條件約束變更的動畫。 例如:
+除了修改條件約束屬性之外，您還可以使用核心動畫來建立對視圖條件約束變更的動畫。 例如：
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");
@@ -224,7 +224,7 @@ UIView.CommitAnimations();
 
 此處的索引鍵是在動畫區塊內呼叫父視圖的 `LayoutIfNeeded` 方法。 這會告訴此視圖繪製動畫位置或大小變更的每個「框架」。 如果沒有這一行，此視圖只會貼齊最終版本，而不會產生動畫。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南引進 iOS 自動（或「調適型」）配置，以及在設計介面上專案之間的關聯性數學標記法的條件約束概念。 本文說明如何在 iOS 設計工具中啟用自動版面配置、使用**條件約束工具列**，以及在設計介面上個別編輯條件約束。 接下來，它會說明如何針對三個常見的條件約束問題進行疑難排解。 最後，它會示範如何修改程式碼中的條件約束。
 
@@ -234,4 +234,3 @@ UIView.CommitAnimations();
 - [iOS 設計的控制項逐步解說](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Android Designer 總覽](~/android/user-interface/android-designer/index.md)
 - [程式設計條件約束](~/ios/user-interface/programmatic-layout-constraints.md)
-- [Apple-自動版面配置指南](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/AutolayoutPG/Introduction/Introduction.html#/apple_ref/doc/uid/TP40010853-CH13-SW1)

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/05/2019
-ms.openlocfilehash: 190aeb83456fa7c7ba8a9415b02ab56f3f8779da
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
-ms.translationtype: HT
+ms.openlocfilehash: 52b227b0244a83ec4a7466cca7591c6b712f1c76
+ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728274"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "78292341"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms 本機資料庫
 
@@ -20,7 +20,7 @@ ms.locfileid: "75728274"
 
 SQLite 資料庫引擎可讓 Xamarin 應用程式將資料物件載入和儲存在共用程式碼中。 範例應用程式會使用 SQLite 資料庫資料表來儲存 todo 專案。 本文說明如何在共用程式碼中使用 SQLite.Net，在本機資料庫中儲存和取出資訊。
 
-[![在 iOS 和 Android 上 Todolist 應用程式的螢幕擷取畫面](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS 和 Android 上的 Todolist 應用程式")
+[在 iOS 和 Android 上 ![Todolist 應用程式的螢幕擷取畫面](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS 和 Android 上的 Todolist 應用程式")
 
 遵循下列步驟，將 SQLite.NET 整合到行動應用程式：
 
@@ -92,7 +92,7 @@ public static class Constants
 
 ### <a name="lazy-initialization"></a>延遲初始設定
 
-`TodoItemDatabase` 使用 .NET `Lazy` 類別來延遲資料庫的初始化，直到第一次存取為止。 使用延遲初始化可防止資料庫載入進程延遲啟動應用程式。 如需詳細資訊，請參閱[Lazy&lt;t&gt; 類別](https://docs.microsoft.com/dotnet/api/system.lazy-1)。
+`TodoItemDatabase` 使用 .NET `Lazy` 類別來延遲資料庫的初始化，直到第一次存取為止。 使用延遲初始化可防止資料庫載入進程延遲啟動應用程式。 如需詳細資訊，請參閱[Lazy&lt;t&gt; 類別](xref:System.Lazy`1)。
 
 ```csharp
 public class TodoItemDatabase
@@ -175,7 +175,7 @@ public static class TaskExtensions
 `TodoItemDatabase` 類別包含四種資料操作類型的方法： [建立]、[讀取]、[編輯] 和 [刪除]。 SQLite.NET 程式庫提供簡單的物件關聯式對應（ORM），可讓您儲存和抓取物件，而不需要撰寫 SQL 語句。
 
 ```csharp
-public static class TodoItemDatabase {
+public class TodoItemDatabase {
 
     // ...
 
@@ -244,7 +244,7 @@ saveButton.Clicked += async (sender, e) =>
 };
 ```
 
-## <a name="advanced-configuration"></a>進階設定
+## <a name="advanced-configuration"></a>進階組態
 
 SQLite 提供健全的 API，其功能比本文和範例應用程式中所涵蓋的更多功能。 下列各節涵蓋擴充性的重要功能。
 
@@ -289,4 +289,4 @@ await Database.EnableWriteAheadLoggingAsync();
 - [搭配使用 SQLite 與 Android](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [搭配使用 SQLite 與 iOS](~/ios/data-cloud/data/using-sqlite-orm.md)
 - [以工作為基礎的非同步模式（點一下）](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
-- [延遲<T> 類別](https://docs.microsoft.com//api/system.lazy-1)
+- [延遲&lt;T&gt; 類別](xref:System.Lazy`1)

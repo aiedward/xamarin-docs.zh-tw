@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 50302b0b9cf96d211c704ab9e68d1c61d11e807a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ebd7cad9ef33a44dbc7aa469bb4e866bdfea2e61
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016576"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292263"
 ---
 # <a name="introduction-to-web-services"></a>Web 服務簡介
 
@@ -165,7 +165,7 @@ public class RxTermNSURLConnectionDelegate : NSUrlConnectionDelegate
 
 ### <a name="servicestack"></a>Servicestack.redis 時
 
-呼叫 web 服務的另一個選項是[服務堆疊](https://www.servicestack.net/)程式庫。 例如，下列程式碼顯示如何使用服務堆疊的 `IServiceClient.GetAsync` 方法來發出服務要求：
+呼叫 web 服務的另一個選項是[服務堆疊](https://servicestack.net)程式庫。 例如，下列程式碼顯示如何使用服務堆疊的 `IServiceClient.GetAsync` 方法來發出服務要求：
 
 ```csharp
 client.GetAsync<CustomersResponse>("",
@@ -301,7 +301,7 @@ file:///Users/myUserName/projects/MyProjectName/service.wsdl
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>手動將 Proxy 新增至專案
 
-如果您有使用相容工具產生的現有 proxy，則當您的專案包含時，可以使用此輸出。 在 Visual Studio for Mac 中，使用 [**新增檔案 ...** ] 用來新增 proxy 的功能表選項。 此外，這需要使用 [**加入參考 ...** ] 明確參考*system.web* 。 .
+如果您有使用相容工具產生的現有 proxy，則當您的專案包含時，可以使用此輸出。 在 Visual Studio for Mac 中，使用 [**新增檔案 ...** ] 用來新增 proxy 的功能表選項。 此外，這需要使用 [**加入參考 ...** ] 明確參考*system.web* 。 對話方塊中，新增使用者帳戶。
 
 ### <a name="consuming-the-proxy"></a>使用 Proxy
 
@@ -438,7 +438,7 @@ client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
 
-在上述範例中，如果您收到「已用完類型0的 trampolines」訊息，您可以藉由將 `–aot “trampolines={number of trampolines}”` 引數加入至組建，來增加類型 0 trampolines 的數目。 如需詳細資訊，請參閱[疑難排解](~/ios/troubleshooting/troubleshooting.md#trampolines)。
+在上述範例中，如果您收到「已用完類型0的 trampolines」訊息，您可以藉由將 `–aot “trampolines={number of trampolines}”` 引數加入至組建，來增加類型 0 trampolines 的數目。 如需詳細資訊，請參閱 [疑難排解](~/ios/troubleshooting/troubleshooting.md#trampolines)。
 
 如需 HTTP 基本驗證的詳細資訊，雖然在 REST web 服務的內容中，請參閱[驗證 RESTful Web 服務](~/xamarin-forms/data-cloud/authentication/rest.md)。
 

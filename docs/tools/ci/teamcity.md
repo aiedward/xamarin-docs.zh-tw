@@ -6,12 +6,12 @@ ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5a16ec338d5929a217ee2e4a622bdce4da617e86
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 94bc775366d832e0994b8d3c74a45123ff56c13b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029794"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78293036"
 ---
 # <a name="using-team-city-with-xamarin"></a>搭配 Xamarin 使用小組城市
 
@@ -87,7 +87,7 @@ TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
 
 - [**假**](https://fsharp.github.io/FAKE/)–這是以 DSL 為基礎F#的，可讓您在必要時利用現有的 .net 程式庫。
 
-所使用的指令碼語言取決於您的喜好設定和需求。 [TaskyPro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)範例包含使用 Rake 做為[組建腳本](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)的範例。
+所使用的指令碼語言取決於您的喜好設定和需求。
 
 > [!NOTE]
 > 您可以使用以 XML 為基礎的組建系統（例如 MSBuild 或 NAnt），但這些都缺乏專門用來建立軟體的 DSL 表達和可維護性。
@@ -201,7 +201,7 @@ $ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DE
 
 8. 組建完成後，請檢查組建記錄檔，並查看是否有任何需要注意的組建發生問題或警告。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南涵蓋如何使用 TeamCity 來建立 Xamarin 行動應用程式，然後將其提交至測試雲端。 我們已討論如何建立組建腳本，以將組建程式自動化。 組建腳本會負責編譯應用程式、提交至測試雲端，以及等待結果
 

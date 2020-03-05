@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2019
-ms.openlocfilehash: 979df7965e6a972ffc80d786a26d36aa0a1a939b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b621d61584cc39f669c662db3d1df264d9a92eb9
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021607"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291487"
 ---
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google 雲端通訊的遠端通知
 
@@ -25,26 +25,27 @@ _本逐步解說提供如何使用 Google 雲端通訊在 Xamarin Android 應用
 
 ## <a name="gcm-notifications-overview"></a>GCM 通知總覽
 
-在此逐步解說中，我們將建立使用 Google 雲端通訊（GCM）來執行遠端通知（也稱為*推播通知*）的 Xamarin Android 應用程式。 我們將會實行使用 GCM 進行遠端通訊的各種意圖和接聽程式服務，我們會使用模擬應用程式伺服器的命令列程式來測試我們的執行。 
+在此逐步解說中，我們將建立使用 Google 雲端通訊（GCM）來執行遠端通知（也稱為*推播通知*）的 Xamarin Android 應用程式。 我們將會實行使用 GCM 進行遠端通訊的各種意圖和接聽程式服務，我們會使用模擬應用程式伺服器的命令列程式來測試我們的執行。
 
-繼續進行本逐步解說之前，您必須先取得使用 Google GCM 伺服器所需的認證;[Google 雲端通訊](~/android/data-cloud/google-messaging/google-cloud-messaging.md)中會說明此程式。 特別是，您需要有*API 金鑰*和傳送者*識別碼*，才能插入本逐步解說中所提供的範例程式碼。 
+繼續進行本逐步解說之前，您必須先取得使用 Google GCM 伺服器所需的認證;[Google 雲端通訊](~/android/data-cloud/google-messaging/google-cloud-messaging.md)中會說明此程式。
+特別是，您需要有*API 金鑰*和傳送者*識別碼*，才能插入本逐步解說中所提供的範例程式碼。
 
 我們將使用下列步驟來建立具備 GCM 功能的 Xamarin 用戶端應用程式：
 
 1. 安裝與 GCM 伺服器通訊所需的其他套件。
 2. 設定應用程式許可權以存取 GCM 伺服器。
-3. 執行程式碼以檢查 Google Play Services 是否存在。 
+3. 執行程式碼以檢查 Google Play Services 是否存在。
 4. 針對註冊權杖，執行與 GCM 協商的註冊意圖服務。
 5. 執行可接聽 GCM 註冊權杖更新的實例識別碼接聽程式服務。
 6. 執行 GCM 接聽程式服務，以透過 GCM 接收來自應用程式伺服器的遠端訊息。
 
-此應用程式將使用稱為*主題訊息*的新 GCM 功能。 在主題訊息中，應用程式伺服器會將訊息傳送至主題，而不是個別裝置的清單。 訂閱該主題的裝置可以接收主題訊息做為推播通知。 如需 GCM 主題訊息的詳細資訊，請參閱 Google 的[實施主題訊息](https://developers.google.com/cloud-messaging/topic-messaging)。 
+此應用程式將使用稱為*主題訊息*的新 GCM 功能。 在主題訊息中，應用程式伺服器會將訊息傳送至主題，而不是個別裝置的清單。 訂閱該主題的裝置可以接收主題訊息做為推播通知。
 
-當用戶端應用程式準備就緒時，我們將會執行命令C#行應用程式，透過 GCM 將推播通知傳送至用戶端應用程式。 
+當用戶端應用程式準備就緒時，我們將會執行命令C#行應用程式，透過 GCM 將推播通知傳送至用戶端應用程式。
 
-## <a name="walkthrough"></a>逐步解說
+## <a name="walkthrough"></a>逐步介紹
 
-首先，讓我們建立一個新的空白解決方案，稱為 **[] remotenotifications**。 接下來，讓我們將新的 Android 專案新增至以**Android 應用程式**範本為基礎的解決方案。 讓我們來呼叫這個專案**ClientApp**。 （如果您不熟悉如何建立 Xamarin Android 專案，請參閱[Hello，android](~/android/get-started/hello-android/hello-android-quickstart.md)）。**ClientApp**專案會包含會透過 GCM 接收遠端通知之 Xamarin. Android 用戶端應用程式的程式碼。 
+首先，讓我們建立一個新的空白解決方案，稱為 **[] remotenotifications**。 接下來，讓我們將新的 Android 專案新增至以**Android 應用程式**範本為基礎的解決方案。 讓我們來呼叫這個專案**ClientApp**。 （如果您不熟悉如何建立 Xamarin Android 專案，請參閱[Hello，android](~/android/get-started/hello-android/hello-android-quickstart.md)）。**ClientApp**專案會包含會透過 GCM 接收遠端通知之 Xamarin. Android 用戶端應用程式的程式碼。
 
 ### <a name="add-required-packages"></a>新增必要的套件
 
@@ -52,13 +53,13 @@ _本逐步解說提供如何使用 Google 雲端通訊在 Xamarin Android 應用
 
 #### <a name="add-the-xamarin-google-play-services-gcm-package"></a>新增 Xamarin Google Play Services GCM 封裝
 
-若要從 Google 雲端通訊接收訊息，裝置上必須有[Google Play Services](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Gcm/)架構。 若沒有此架構，Android 應用程式就無法接收來自 GCM 伺服器的訊息。 當 Android 裝置開機時，Google Play Services 會在背景中執行，並無訊息地接聽 GCM。 當這些訊息抵達時，Google Play Services 會將訊息轉換為意圖，然後將這些意圖廣播給已為其註冊的應用程式。 
+若要從 Google 雲端通訊接收訊息，裝置上必須有[Google Play Services](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Gcm/)架構。 若沒有此架構，Android 應用程式就無法接收來自 GCM 伺服器的訊息。 當 Android 裝置開機時，Google Play Services 會在背景中執行，並無訊息地接聽 GCM。 當這些訊息抵達時，Google Play Services 會將訊息轉換為意圖，然後將這些意圖廣播給已為其註冊的應用程式。
 
-在 Visual Studio 中，以滑鼠右鍵按一下 **參考 > 管理 NuGet 套件 ...** ;在 Visual Studio for Mac 中，以滑鼠右鍵按一下 **套件 > 新增封裝**...。搜尋**Xamarin Google Play Services-GCM** ，並將此套件安裝到**ClientApp**專案： 
+在 Visual Studio 中，以滑鼠右鍵按一下 **參考 > 管理 NuGet 套件 ...** ;在 Visual Studio for Mac 中，以滑鼠右鍵按一下 **套件 > 新增封裝**...。搜尋**Xamarin Google Play Services-GCM** ，並將此套件安裝到**ClientApp**專案：
 
 [![安裝 Google Play Services](remote-notifications-with-gcm-images/1-google-play-services-sml.png)](remote-notifications-with-gcm-images/1-google-play-services.png#lightbox)
 
-當您安裝**xamarin Google Play Services-GCM**時，會自動安裝**Xamarin Google Play Services 基底**。 如果您收到錯誤，請將專案的 [*最低 Android 至目標*] 設定變更為 [**使用 SDK 版本編譯**] 以外的值，然後再次嘗試安裝 NuGet。 
+當您安裝**xamarin Google Play Services-GCM**時，會自動安裝**Xamarin Google Play Services 基底**。 如果您收到錯誤，請將專案的 [*最低 Android 至目標*] 設定變更為 [**使用 SDK 版本編譯**] 以外的值，然後再次嘗試安裝 NuGet。
 
 接著，編輯**MainActivity.cs**並新增下列 `using` 語句：
 
@@ -67,13 +68,14 @@ using Android.Gms.Common;
 using Android.Util;
 ```
 
-這可讓程式碼使用 Google Play Services GMS 套件中的型別，並加入我們將用來追蹤交易與 GMS 的記錄功能。 
+這可讓程式碼使用 Google Play Services GMS 套件中的型別，並加入我們將用來追蹤交易與 GMS 的記錄功能。
 
 #### <a name="google-play-store"></a>Google Play 商店
 
-若要從 GCM 接收訊息，必須在裝置上安裝 Google Play 商店應用程式。 （每當裝置上安裝 Google Play 應用程式時，也會一併安裝 Google Play 商店，因此它很可能已經安裝在您的測試裝置上）。若沒有 Google Play，Android 應用程式就無法接收來自 GCM 的訊息。 如果您尚未在裝置上安裝 Google Play 商店應用程式，請造訪[Google Play](https://support.google.com/googleplay)網站下載並安裝 Google Play。 
+若要從 GCM 接收訊息，必須在裝置上安裝 Google Play 商店應用程式。 （每當裝置上安裝 Google Play 應用程式時，也會一併安裝 Google Play 商店，因此它很可能已經安裝在您的測試裝置上）。若沒有 Google Play，Android 應用程式就無法接收來自 GCM 的訊息。
+如果您尚未在裝置上安裝 Google Play 商店應用程式，請造訪[Google Play](https://support.google.com/googleplay)網站下載並安裝 Google Play。
 
-或者，您可以使用執行 Android 2.2 或更新版本的 Android 模擬器，而不是測試裝置（您不需要在 Android 模擬器上安裝 Google Play 商店）。 不過，如果您使用模擬器，則必須使用 Wi-fi 連線到 GCM，而且您必須在 Wi-fi 防火牆中開啟數個埠，如本逐步解說稍後所述。 
+或者，您可以使用執行 Android 2.2 或更新版本的 Android 模擬器，而不是測試裝置（您不需要在 Android 模擬器上安裝 Google Play 商店）。 不過，如果您使用模擬器，則必須使用 Wi-fi 連線到 GCM，而且您必須在 Wi-fi 防火牆中開啟數個埠，如本逐步解說稍後所述。
 
 ### <a name="set-the-package-name"></a>設定封裝名稱
 
@@ -81,48 +83,48 @@ using Android.Util;
 
 [![設定封裝名稱](remote-notifications-with-gcm-images/2-package-name-sml.png)](remote-notifications-with-gcm-images/2-package-name.png#lightbox)
 
-請注意，如果此套件名稱不*完全*符合我們在 Google 開發人員主控台中輸入的套件名稱，用戶端應用程式將無法從 GCM 接收註冊權杖。 
+請注意，如果此套件名稱不*完全*符合我們在 Google 開發人員主控台中輸入的套件名稱，用戶端應用程式將無法從 GCM 接收註冊權杖。
 
 ### <a name="add-permissions-to-the-android-manifest"></a>將許可權新增至 Android 資訊清單
 
-Android 應用程式必須先設定下列許可權，才能接收來自 Google 雲端通訊的通知： 
+Android 應用程式必須先設定下列許可權，才能接收來自 Google 雲端通訊的通知：
 
-- `com.google.android.c2dm.permission.RECEIVE` &ndash; 會將許可權授與我們的應用程式，以註冊和接收來自 Google 雲端通訊的訊息。 （`c2dm` 是什麼意思？ 這代表_雲端到裝置的通訊_，這是 GCM 的現在已淘汰的前身。 
-    GCM 仍然會使用其中許多許可權字串中的 `c2dm`）。 
+- `com.google.android.c2dm.permission.RECEIVE` &ndash; 會將許可權授與我們的應用程式，以註冊和接收來自 Google 雲端通訊的訊息。 （`c2dm` 是什麼意思？ 這代表_雲端到裝置的通訊_，這是 GCM 的現在已淘汰的前身。
+    GCM 仍然會使用其中許多許可權字串中的 `c2dm`）。
 
-- `android.permission.WAKE_LOCK` &ndash; （選擇性）在接聽訊息時，防止裝置 CPU 進入睡眠狀態。 
+- `android.permission.WAKE_LOCK` &ndash; （選擇性）在接聽訊息時，防止裝置 CPU 進入睡眠狀態。
 
-- `android.permission.INTERNET` &ndash; 授與網際網路存取權，讓用戶端應用程式可以與 GCM 通訊。 
+- `android.permission.INTERNET` &ndash; 授與網際網路存取權，讓用戶端應用程式可以與 GCM 通訊。
 
-- *package_name*`.permission.C2D_MESSAGE` &ndash; 會向 Android 註冊應用程式，並要求取得獨佔接收所有 C2D （雲端到裝置）訊息的許可權。 *Package_name*前置詞與您的應用程式識別碼相同。 
+- *package_name*`.permission.C2D_MESSAGE` &ndash; 會向 Android 註冊應用程式，並要求取得獨佔接收所有 C2D （雲端到裝置）訊息的許可權。 *Package_name*前置詞與您的應用程式識別碼相同。
 
-我們會在 Android 資訊清單中設定這些許可權。 讓我們編輯**androidmanifest.xml** ，並將內容取代為下列 xml： 
+我們會在 Android 資訊清單中設定這些許可權。 讓我們編輯**androidmanifest.xml** ，並將內容取代為下列 xml：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
-    package="YOUR_PACKAGE_NAME" 
-    android:versionCode="1" 
-    android:versionName="1.0" 
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="YOUR_PACKAGE_NAME"
+    android:versionCode="1"
+    android:versionName="1.0"
     android:installLocation="auto">
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="YOUR_PACKAGE_NAME.permission.C2D_MESSAGE" />
-    <permission android:name="YOUR_PACKAGE_NAME.permission.C2D_MESSAGE" 
+    <permission android:name="YOUR_PACKAGE_NAME.permission.C2D_MESSAGE"
                 android:protectionLevel="signature" />
     <application android:label="ClientApp" android:icon="@drawable/Icon">
     </application>
 </manifest>
 ```
 
-在上述 XML 中，將*YOUR_PACKAGE_NAME*變更為用戶端應用程式專案的套件名稱。 例如，`com.xamarin.gcmexample`。 
+在上述 XML 中，將*YOUR_PACKAGE_NAME*變更為用戶端應用程式專案的套件名稱。 例如： `com.xamarin.gcmexample` 。
 
 ### <a name="check-for-google-play-services"></a>檢查是否有 Google Play Services
 
-在此逐步解說中，我們會在 UI 中建立具有單一 `TextView` 的單純應用程式。 此應用程式不會直接指出與 GCM 的互動。 相反地，我們會監看 [輸出] 視窗，以查看我們的應用程式如何與 GCM 交握，而我們會在通知紙匣收到新通知時加以檢查。 
+在此逐步解說中，我們會在 UI 中建立具有單一 `TextView` 的單純應用程式。 此應用程式不會直接指出與 GCM 的互動。 相反地，我們會監看 [輸出] 視窗，以查看我們的應用程式如何與 GCM 交握，而我們會在通知紙匣收到新通知時加以檢查。
 
-首先，讓我們建立訊息區域的版面配置。 編輯**axml** ，並將內容取代為下列 XML： 
+首先，讓我們建立訊息區域的版面配置。 編輯**axml** ，並將內容取代為下列 XML：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -143,13 +145,13 @@ Android 應用程式必須先設定下列許可權，才能接收來自 Google �
 
 儲存**axml**並加以關閉。
 
-當用戶端應用程式啟動時，我們想要確認 Google Play Services 可供使用，然後再嘗試聯繫 GCM。 編輯**MainActivity.cs** ，並將 ``count`` 的執行個體變數宣告取代為下列執行個體變數宣告： 
+當用戶端應用程式啟動時，我們想要確認 Google Play Services 可供使用，然後再嘗試聯繫 GCM。 編輯**MainActivity.cs** ，並將 ``count`` 的執行個體變數宣告取代為下列執行個體變數宣告：
 
 ```csharp
 TextView msgText;
 ```
 
-接下來，將下列方法新增至**MainActivity**類別： 
+接下來，將下列方法新增至**MainActivity**類別：
 
 ```csharp
 public bool IsPlayServicesAvailable ()
@@ -174,7 +176,7 @@ public bool IsPlayServicesAvailable ()
 }
 ```
 
-此程式碼會檢查裝置，以查看是否已安裝 Google Play Services APK。 如果未安裝，訊息區域中會顯示一則訊息，指示使用者從 Google Play 商店下載 APK （或在裝置的系統設定中啟用）。 因為我們想要在用戶端應用程式啟動時執行這項檢查，所以我們會在 `OnCreate`結尾新增對此方法的呼叫。 
+此程式碼會檢查裝置，以查看是否已安裝 Google Play Services APK。 如果未安裝，訊息區域中會顯示一則訊息，指示使用者從 Google Play 商店下載 APK （或在裝置的系統設定中啟用）。 因為我們想要在用戶端應用程式啟動時執行這項檢查，所以我們會在 `OnCreate`結尾新增對此方法的呼叫。
 
 接下來，使用下列程式碼取代 `OnCreate` 方法：
 
@@ -190,19 +192,19 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-此程式碼會檢查 Google Play Services APK 是否存在，並將結果寫入訊息區域。 
+此程式碼會檢查 Google Play Services APK 是否存在，並將結果寫入訊息區域。
 
-讓我們完全重建並執行應用程式。 您應該會看到如下列螢幕擷取畫面所示的畫面： 
+讓我們完全重建並執行應用程式。 您應該會看到如下列螢幕擷取畫面所示的畫面：
 
 [![Google Play Services 可供使用](remote-notifications-with-gcm-images/3-first-screen-sml.png)](remote-notifications-with-gcm-images/3-first-screen.png#lightbox)
 
-如果您沒有取得此結果，請確認您的裝置上已安裝 Google Play Services APK，而且**Xamarin GOOGLE PLAY SERVICES GCM**套件已新增至您的**ClientApp**專案（如先前所述）。 如果您收到組建錯誤，請嘗試清除方案，然後重新建立專案。 
+如果您沒有取得此結果，請確認您的裝置上已安裝 Google Play Services APK，而且**Xamarin GOOGLE PLAY SERVICES GCM**套件已新增至您的**ClientApp**專案（如先前所述）。 如果您收到組建錯誤，請嘗試清除方案，然後重新建立專案。
 
 接下來，我們將撰寫程式碼來聯絡 GCM，並取回註冊權杖。
 
 ### <a name="register-with-gcm"></a>向 GCM 註冊
 
-在應用程式可以從應用程式伺服器接收遠端通知之前，它必須向 GCM 註冊並取回註冊權杖。 向 GCM 註冊應用程式的工作是由我們所建立的 `IntentService` 來處理。 我們的 `IntentService` 會執行下列步驟： 
+在應用程式可以從應用程式伺服器接收遠端通知之前，它必須向 GCM 註冊並取回註冊權杖。 向 GCM 註冊應用程式的工作是由我們所建立的 `IntentService` 來處理。 我們的 `IntentService` 會執行下列步驟：
 
 1. 會使用[InstanceID](https://developers.google.com/instance-id/) API 來產生安全性權杖，以授權我們的用戶端應用程式存取應用程式伺服器。 傳回時，我們會從 GCM 取得註冊權杖。
 
@@ -268,17 +270,17 @@ namespace ClientApp
 }
 ```
 
-在上述範例程式碼中，將*YOUR_SENDER_ID*變更為用戶端應用程式專案的寄件者識別碼。 若要取得專案的寄件者識別碼： 
+在上述範例程式碼中，將*YOUR_SENDER_ID*變更為用戶端應用程式專案的寄件者識別碼。 若要取得專案的寄件者識別碼：
 
 1. 登入[Google Cloud 主控台](https://console.cloud.google.com/)，然後從下拉式功能表中選取您的專案名稱。 在針對專案顯示的 [**專案資訊**] 窗格中，按一下 [**移至專案設定**]：
 
-    [選取 XamarinGCM 專案![](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
+    [選取 XamarinGCM 專案 ![](remote-notifications-with-gcm-images/7-choose-project-sml.png)](remote-notifications-with-gcm-images/7-choose-project.png#lightbox)
 
 2. 在 [**設定**] 頁面上，找出**專案編號**&ndash; 這是您專案的寄件者識別碼：
 
-    [顯示![專案編號](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
+    [顯示 ![專案編號](remote-notifications-with-gcm-images/9-project-number-sml.png)](remote-notifications-with-gcm-images/9-project-number.png#lightbox)
 
-我們想要在應用程式開始執行時，啟動我們的 `RegistrationIntentService`。 編輯**MainActivity.cs**並修改 `OnCreate` 方法，以便在我們檢查 Google Play Services 是否存在之後，啟動 `RegistrationIntentService`： 
+我們想要在應用程式開始執行時，啟動我們的 `RegistrationIntentService`。 編輯**MainActivity.cs**並修改 `OnCreate` 方法，以便在我們檢查 Google Play Services 是否存在之後，啟動 `RegistrationIntentService`：
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -296,15 +298,15 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-現在讓我們來看一下 `RegistrationIntentService` 的每個區段，以瞭解其運作方式。 
+現在讓我們來看一下 `RegistrationIntentService` 的每個區段，以瞭解其運作方式。
 
-首先，我們使用下列屬性來標注我們的 `RegistrationIntentService`，以指出我們的服務不會由系統具現化： 
+首先，我們使用下列屬性來標注我們的 `RegistrationIntentService`，以指出我們的服務不會由系統具現化：
 
 ```csharp
 [Service (Exported = false)]
 ```
 
-`RegistrationIntentService` 的函式會將背景工作執行緒*RegistrationIntentService*命名，讓調試更容易。 
+`RegistrationIntentService` 的函式會將背景工作執行緒*RegistrationIntentService*命名，讓調試更容易。
 
 ```csharp
 public RegistrationIntentService() : base ("RegistrationIntentService") { }
@@ -314,7 +316,7 @@ public RegistrationIntentService() : base ("RegistrationIntentService") { }
 
 #### <a name="request-a-registration-token"></a>要求註冊權杖
 
-`OnHandleIntent` 會先呼叫 Google 的[InstanceID. GetToken](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;)方法，以向 GCM 要求註冊權杖。 我們會將此程式碼包裝在 `lock` 中，以防止多個註冊意圖同時發生的可能性 &ndash; `lock` 確保這些意圖會依序處理。 如果我們無法取得註冊權杖，則會擲回例外狀況，並記錄錯誤。 如果註冊成功，`token` 會設定為我們從 GCM 傳回的註冊權杖： 
+`OnHandleIntent` 會先呼叫 Google 的[InstanceID. GetToken](https://developers.google.com/android/reference/com/google/android/gms/iid/InstanceID.html#getToken&#40;java.lang.String,%20java.lang.String&#41;)方法，以向 GCM 要求註冊權杖。 我們會將此程式碼包裝在 `lock` 中，以防止多個註冊意圖同時發生的可能性 &ndash; `lock` 確保這些意圖會依序處理。 如果我們無法取得註冊權杖，則會擲回例外狀況，並記錄錯誤。 如果註冊成功，`token` 會設定為我們從 GCM 傳回的註冊權杖：
 
 ```csharp
 static object locker = new object ();
@@ -336,7 +338,7 @@ catch (Exception e)
 
 #### <a name="forward-the-registration-token-to-the-app-server"></a>將註冊權杖轉送至應用程式伺服器
 
-如果我們取得註冊權杖（也就是未擲回任何例外狀況），我們會呼叫 `SendRegistrationToAppServer`，將使用者的註冊權杖與應用程式維護的伺服器端帳戶（如果有的話）產生關聯。 由於此實施取決於應用程式伺服器的設計，因此在此提供空的方法： 
+如果我們取得註冊權杖（也就是未擲回任何例外狀況），我們會呼叫 `SendRegistrationToAppServer`，將使用者的註冊權杖與應用程式維護的伺服器端帳戶（如果有的話）產生關聯。 由於此實施取決於應用程式伺服器的設計，因此在此提供空的方法：
 
 ```csharp
 void SendRegistrationToAppServer (string token)
@@ -345,11 +347,11 @@ void SendRegistrationToAppServer (string token)
 }
 ```
 
-在某些情況下，應用程式伺服器不需要使用者的註冊權杖;在此情況下，可以省略這個方法。 當註冊權杖傳送至應用程式伺服器時，`SendRegistrationToAppServer` 應該維護一個布林值，以指出是否已將權杖傳送至伺服器。 如果此布林值為 false，`SendRegistrationToAppServer` 會將權杖傳送至應用程式伺服器 &ndash; 否則，權杖已在先前的呼叫中傳送至應用程式伺服器。 
+在某些情況下，應用程式伺服器不需要使用者的註冊權杖;在此情況下，可以省略這個方法。 當註冊權杖傳送至應用程式伺服器時，`SendRegistrationToAppServer` 應該維護一個布林值，以指出是否已將權杖傳送至伺服器。 如果此布林值為 false，`SendRegistrationToAppServer` 會將權杖傳送至應用程式伺服器 &ndash; 否則，權杖已在先前的呼叫中傳送至應用程式伺服器。
 
 #### <a name="subscribe-to-the-notification-topic"></a>訂閱通知主題
 
-接下來，我們會呼叫 `Subscribe` 方法，向 GCM 指出我們想要訂閱通知主題。 在 `Subscribe`中，我們會呼叫[GcmPubSub](https://developers.google.com/android/reference/com/google/android/gms/gcm/GcmPubSub.html#subscribe&#40;java.lang.String,%20java.lang.String,%20android.os.Bundle&#41;) ，以將用戶端應用程式訂閱到 `/topics/global`下的所有訊息：
+接下來，我們會呼叫 `Subscribe` 方法，向 GCM 指出我們想要訂閱通知主題。 在 `Subscribe`中，我們會呼叫 GcmPubSub，以將用戶端應用程式訂閱到 `/topics/global`下的所有訊息：
 
 ```csharp
 void Subscribe (string token)
@@ -359,15 +361,13 @@ void Subscribe (string token)
 }
 ```
 
-應用程式伺服器必須將通知訊息傳送至 `/topics/global` （如果我們接收）。 請注意，只要應用程式伺服器和用戶端應用程式都同意這些名稱，[`/topics`] 底下的主題名稱就可以是您想要的任何專案。 （在這裡，我們選擇名稱 `global`，表示我們想要接收應用程式伺服器所支援之所有主題的訊息）。 
-
-如需伺服器端上 GCM 主題訊息的相關資訊，請參閱 Google 的傳送[訊息至主題](https://developers.google.com/cloud-messaging/topic-messaging)。 
+應用程式伺服器必須將通知訊息傳送至 `/topics/global` （如果我們接收）。 請注意，只要應用程式伺服器和用戶端應用程式都同意這些名稱，[`/topics`] 底下的主題名稱就可以是您想要的任何專案。 （在這裡，我們選擇名稱 `global`，表示我們想要接收應用程式伺服器所支援之所有主題的訊息）。
 
 #### <a name="implement-an-instance-id-listener-service"></a>執行實例識別碼接聽程式服務
 
-註冊權杖是獨一無二且安全的;不過，用戶端應用程式（或 GCM）可能需要在應用程式重新安裝或發生安全性問題時重新整理註冊權杖。 基於這個理由，我們必須執行可回應來自 GCM 之權杖重新整理要求的 `InstanceIdListenerService`。 
+註冊權杖是獨一無二且安全的;不過，用戶端應用程式（或 GCM）可能需要在應用程式重新安裝或發生安全性問題時重新整理註冊權杖。 基於這個理由，我們必須執行可回應來自 GCM 之權杖重新整理要求的 `InstanceIdListenerService`。
 
-新增名為**InstanceIdListenerService.cs**的新檔案，並將範本程式碼取代為下列內容： 
+新增名為**InstanceIdListenerService.cs**的新檔案，並將範本程式碼取代為下列內容：
 
 ```csharp
 using Android.App;
@@ -388,7 +388,7 @@ namespace ClientApp
 }
 ```
 
-使用下列屬性標注 `InstanceIdListenerService`，以指出該服務不會由系統具現化，而且它可以接收 GCM 註冊權杖（也稱為*實例識別碼*）重新整理要求： 
+使用下列屬性標注 `InstanceIdListenerService`，以指出該服務不會由系統具現化，而且它可以接收 GCM 註冊權杖（也稱為*實例識別碼*）重新整理要求：
 
 ```csharp
 [Service(Exported = false), IntentFilter(new[] { "com.google.android.gms.iid.InstanceID" })]
@@ -398,7 +398,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>使用 GCM 測試註冊
 
-讓我們完全重建並執行應用程式。 如果您成功地從 GCM 接收註冊權杖，註冊權杖應該會顯示在 [輸出] 視窗中。 例如: 
+讓我們完全重建並執行應用程式。 如果您成功地從 GCM 接收註冊權杖，註冊權杖應該會顯示在 [輸出] 視窗中。 例如：
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2
@@ -407,13 +407,13 @@ I/RegistrationIntentService( 1934): GCM Registration Token: f8LdveCvXig:APA91bFI
 
 ```
 
-### <a name="handle-downstream-messages"></a>處理下游訊息 
+### <a name="handle-downstream-messages"></a>處理下游訊息
 
-到目前為止，我們所執行的程式碼只是「設定」程式碼;它會檢查是否已安裝 Google Play Services，並與 GCM 和應用程式伺服器協商，以準備我們的用戶端應用程式以接收遠端通知。 不過，我們尚未執行實際接收和處理下游通知訊息的程式碼。 若要這麼做，我們必須執行*GCM*接聽程式服務。 此服務會從應用程式伺服器接收主題訊息，並在本機將它們廣播為通知。 在我們執行此服務之後，我們會建立一個測試程式，將訊息傳送至 GCM，讓我們可以查看我們的執行是否正常運作。 
+到目前為止，我們所執行的程式碼只是「設定」程式碼;它會檢查是否已安裝 Google Play Services，並與 GCM 和應用程式伺服器協商，以準備我們的用戶端應用程式以接收遠端通知。 不過，我們尚未執行實際接收和處理下游通知訊息的程式碼。 若要這麼做，我們必須執行*GCM*接聽程式服務。 此服務會從應用程式伺服器接收主題訊息，並在本機將它們廣播為通知。 在我們執行此服務之後，我們會建立一個測試程式，將訊息傳送至 GCM，讓我們可以查看我們的執行是否正常運作。
 
 #### <a name="add-a-notification-icon"></a>新增通知圖示
 
-讓我們先新增一個小圖示，在通知啟動時出現在通知區域中。 您可以將[此圖示](remote-notifications-with-gcm-images/ic-stat-ic-notification.png)複製到您的專案，或建立您自己的自訂圖示。 我們會將圖示檔案命名為**ic_stat_button_click** ，並將它複製到**Resources/可繪製**資料夾。 請記得使用 [**加入 > 現有專案**...]，在您的專案中包含此圖示檔。
+讓我們先新增一個小圖示，在通知啟動時出現在通知區域中。 您可以將[此圖示](remote-notifications-with-gcm-images/ic-stat-ic-notification.png)複製到您的專案，或建立您自己的自訂圖示。 我們會將圖示檔命名為**ic_stat_button_click .png** ，並將它複製到**Resources/可繪製**資料夾。 請記得使用 [**加入 > 現有專案**...]，在您的專案中包含此圖示檔。
 
 #### <a name="implement-a-gcm-listener-service"></a>執行 GCM 接聽程式服務
 
@@ -459,15 +459,15 @@ namespace ClientApp
 }
 ```
 
-讓我們看一下 `GcmListenerService` 的每個區段，以瞭解其運作方式。 
+讓我們看一下 `GcmListenerService` 的每個區段，以瞭解其運作方式。
 
-首先，我們使用屬性來標注 `GcmListenerService`，以指出系統不會將此服務具現化，而且我們包含意圖篩選準則來表示它會接收 GCM 訊息： 
+首先，我們使用屬性來標注 `GcmListenerService`，以指出系統不會將此服務具現化，而且我們包含意圖篩選準則來表示它會接收 GCM 訊息：
 
 ```csharp
 [Service (Exported = false), IntentFilter (new [] { "com.google.android.c2dm.intent.RECEIVE" })]
 ```
 
-當 `GcmListenerService` 從 GCM 收到訊息時，就會叫用 `OnMessageReceived` 方法。 這個方法會從傳入的 `Bundle`解壓縮訊息內容，記錄訊息內容（因此我們可以在 [輸出] 視窗中查看），然後呼叫 `SendNotification` 以使用接收的訊息內容來啟動本機通知： 
+當 `GcmListenerService` 從 GCM 收到訊息時，就會叫用 `OnMessageReceived` 方法。 這個方法會從傳入的 `Bundle`解壓縮訊息內容，記錄訊息內容（因此我們可以在 [輸出] 視窗中查看），然後呼叫 `SendNotification` 以使用接收的訊息內容來啟動本機通知：
 
 ```csharp
 var message = data.GetString ("message");
@@ -481,12 +481,12 @@ SendNotification (message);
 
 #### <a name="declare-the-receiver-in-the-manifest"></a>在資訊清單中宣告接收者
 
-我們必須先在 Android 資訊清單中宣告 GCM 接聽程式，才可以從 GCM 接收訊息。 讓我們編輯**androidmanifest.xml** ，並將 `<application>` 區段取代為下列 xml： 
+我們必須先在 Android 資訊清單中宣告 GCM 接聽程式，才可以從 GCM 接收訊息。 讓我們編輯**androidmanifest.xml** ，並將 `<application>` 區段取代為下列 xml：
 
 ```xml
 <application android:label="RemoteNotifications" android:icon="@drawable/Icon">
-    <receiver android:name="com.google.android.gms.gcm.GcmReceiver" 
-              android:exported="true" 
+    <receiver android:name="com.google.android.gms.gcm.GcmReceiver"
+              android:exported="true"
               android:permission="com.google.android.c2dm.permission.SEND">
         <intent-filter>
             <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -497,7 +497,7 @@ SendNotification (message);
 </application>
 ```
 
-在上述 XML 中，將*YOUR_PACKAGE_NAME*變更為用戶端應用程式專案的套件名稱。 在我們的逐步解說範例中，封裝名稱是 `com.xamarin.gcmexample`。 
+在上述 XML 中，將*YOUR_PACKAGE_NAME*變更為用戶端應用程式專案的套件名稱。 在我們的逐步解說範例中，封裝名稱是 `com.xamarin.gcmexample`。
 
 讓我們看看此 XML 中的每個設定有何作用：
 
@@ -508,23 +508,23 @@ SendNotification (message);
 |`com.google.android.c2dm.intent.RECEIVE`|意圖篩選準則廣告，我們的應用程式會處理來自 GCM 的廣播訊息。|
 |`com.google.android.c2dm.intent.REGISTRATION`|意圖篩選廣告：我們的應用程式會處理新的註冊意圖（也就是我們已實作為實例識別碼接聽程式服務）。|
 
-或者，您可以使用這些屬性來裝飾 `GcmListenerService`，而不是在 XML 中指定它們。在這裡，我們將它們指定為**androidmanifest.xml** ，讓程式碼範例更容易遵循。 
+或者，您可以使用這些屬性來裝飾 `GcmListenerService`，而不是在 XML 中指定它們。在這裡，我們將它們指定為**androidmanifest.xml** ，讓程式碼範例更容易遵循。
 
 ### <a name="create-a-message-sender-to-test-the-app"></a>建立訊息寄件者以測試應用程式
 
-讓我們將C#桌面主控台應用程式專案新增至方案，並將其稱為**MessageSender**。 我們將使用此主控台應用程式來模擬應用程式伺服器 &ndash; 它會透過 GCM 將通知訊息傳送至**ClientApp** 。 
+讓我們將C#桌面主控台應用程式專案新增至方案，並將其稱為**MessageSender**。 我們將使用此主控台應用程式來模擬應用程式伺服器 &ndash; 它會透過 GCM 將通知訊息傳送至**ClientApp** 。
 
 #### <a name="add-the-jsonnet-package"></a>新增 Json.NET 套件
 
-在此主控台應用程式中，我們會建立 JSON 承載，其中包含我們想要傳送至用戶端應用程式的通知訊息。 我們將在**MessageSender**中使用**Json.NET**套件，讓您更輕鬆地建立 GCM 所需的 Json 物件。 在 Visual Studio 中，以滑鼠右鍵按一下 **參考 > 管理 NuGet 套件 ...** ;在 Visual Studio for Mac 中，以滑鼠右鍵按一下 **套件 > 新增封裝**...。 
+在此主控台應用程式中，我們會建立 JSON 承載，其中包含我們想要傳送至用戶端應用程式的通知訊息。 我們將在**MessageSender**中使用**Json.NET**套件，讓您更輕鬆地建立 GCM 所需的 Json 物件。 在 Visual Studio 中，以滑鼠右鍵按一下 **參考 > 管理 NuGet 套件 ...** ;在 Visual Studio for Mac 中，以滑鼠右鍵按一下 **套件 > 新增封裝**...。
 
-讓我們搜尋**Json.NET**套件，並將它安裝在專案中： 
+讓我們搜尋**Json.NET**套件，並將它安裝在專案中：
 
 [![安裝 Json.NET 套件](remote-notifications-with-gcm-images/4-add-json.net-sml.png)](remote-notifications-with-gcm-images/4-add-json.net.png#lightbox)
 
 #### <a name="add-a-reference-to-systemnethttp"></a>新增對系統 .Net 的參考。 Http
 
-我們也需要加入 `System.Net.Http` 的參考，讓我們可以具現化 `HttpClient`，以便將測試訊息傳送至 GCM。 在**MessageSender**專案中，以滑鼠右鍵按一下 [**參考] > [加入參考**] 並向下滾動，直到您看到 [ **System .net. Http**] 為止。 在 [ **System .net. Http** ] 旁加上核取記號，然後按一下 **[確定]** 。 
+我們也需要加入 `System.Net.Http` 的參考，讓我們可以具現化 `HttpClient`，以便將測試訊息傳送至 GCM。 在**MessageSender**專案中，以滑鼠右鍵按一下 [**參考] > [加入參考**] 並向下滾動，直到您看到 [ **System .net. Http**] 為止。 在 [ **System .net. Http** ] 旁加上核取記號，然後按一下 **[確定]** 。
 
 #### <a name="implement-code-that-sends-a-test-message"></a>執行傳送測試訊息的程式碼
 
@@ -584,7 +584,7 @@ namespace MessageSender
 }
 ```
 
-在上述程式碼中，將*YOUR_API_KEY*變更為用戶端應用程式專案的 API 金鑰。 
+在上述程式碼中，將*YOUR_API_KEY*變更為用戶端應用程式專案的 API 金鑰。
 
 此測試應用程式伺服器會將下列 JSON 格式的訊息傳送至 GCM：
 
@@ -599,7 +599,7 @@ namespace MessageSender
 
 接著，GCM 會將此訊息轉送到您的用戶端應用程式。 讓我們建立**MessageSender** ，並開啟主控台視窗，我們可以從命令列執行它。
 
-### <a name="try-it"></a>請嘗試
+### <a name="try-it"></a>試試看吧！
 
 現在我們已經準備好測試用戶端應用程式。 如果您使用模擬器，或如果您的裝置透過 Wi-fi 與 GCM 通訊，則必須在防火牆上開啟下列 TCP 埠，才能取得 GCM 訊息：5228、5229和5230。
 
@@ -618,36 +618,36 @@ I/RegistrationIntentService(16103): GCM Registration Token: eX9ggabZV1Q:APA91bHj
 MessageSender.exe
 ```
 
-若要在 Visual Studio for Mac 下執行**MessageSender** ，請開啟終端機會話，變更為**MessageSender/bin/Debug**目錄，然後使用 mono 來執行**MessageSender .exe** 
+若要在 Visual Studio for Mac 下執行**MessageSender** ，請開啟終端機會話，變更為**MessageSender/bin/Debug**目錄，然後使用 mono 來執行**MessageSender .exe**
 
 ```bash
 mono MessageSender.exe
 ```
 
-訊息可能需要一分鐘的時間，才能透過 GCM 傳播至您的用戶端應用程式。 如果成功接收訊息，我們應該會在 [輸出] 視窗中看到類似下列的輸出： 
+訊息可能需要一分鐘的時間，才能透過 GCM 傳播至您的用戶端應用程式。 如果成功接收訊息，我們應該會在 [輸出] 視窗中看到類似下列的輸出：
 
 ```shell
 D/MyGcmListenerService(16103): From:    /topics/global
 D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 ```
 
-此外，您應該注意到通知紙匣中出現了新的通知圖示： 
+此外，您應該注意到通知紙匣中出現了新的通知圖示：
 
-[裝置上出現![通知圖示](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
+[裝置上出現 ![通知圖示](remote-notifications-with-gcm-images/5-icon-appears-sml.png)](remote-notifications-with-gcm-images/5-icon-appears.png#lightbox)
 
 當您開啟通知紙匣以查看通知時，您應該會看到我們的遠端通知：
 
-[顯示![通知訊息](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
+[顯示 ![通知訊息](remote-notifications-with-gcm-images/6-notification-in-tray-sml.png)](remote-notifications-with-gcm-images/6-notification-in-tray.png#lightbox)
 
 恭喜，您的應用程式已收到第一個遠端通知！
 
-請注意，如果應用程式是強制停止的，則不會再收到 GCM 訊息。 若要在強制停止後繼續通知，必須手動重新開機應用程式。 如需此 Android 原則的詳細資訊，請參閱[在已停止的應用程式上啟動控制項](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)和此[堆疊溢位文章](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。 
+請注意，如果應用程式是強制停止的，則不會再收到 GCM 訊息。 若要在強制停止後繼續通知，必須手動重新開機應用程式。 如需此 Android 原則的詳細資訊，請參閱[在已停止的應用程式上啟動控制項](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)和此[堆疊溢位文章](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本逐步解說詳述在 Xamarin Android 應用程式中執行遠端通知的步驟。 文中說明如何安裝 GCM 通訊所需的其他套件，並說明如何設定應用程式許可權以存取 GCM 伺服器。 它提供範例程式碼，說明如何檢查是否存在 Google Play Services、如何執行註冊意圖服務和實例識別碼接聽程式服務，以與 GCM 協商以進行註冊權杖，以及如何執行 GCM 接聽程式接收和處理遠端通知訊息的服務。 最後，我們已實行命令列測試程式，透過 GCM 將測試通知傳送至用戶端應用程式。 
+本逐步解說詳述在 Xamarin Android 應用程式中執行遠端通知的步驟。 文中說明如何安裝 GCM 通訊所需的其他套件，並說明如何設定應用程式許可權以存取 GCM 伺服器。
+它提供範例程式碼，說明如何檢查是否存在 Google Play Services、如何執行註冊意圖服務和實例識別碼接聽程式服務，以與 GCM 協商以進行註冊權杖，以及如何執行 GCM 接聽程式接收和處理遠端通知訊息的服務。 最後，我們已實行命令列測試程式，透過 GCM 將測試通知傳送至用戶端應用程式。
 
 ## <a name="related-links"></a>相關連結
 
-- [GCM [] Remotenotifications （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/remotenotifications)
-- [Google Cloud Messaging](~/android/data-cloud/google-messaging/google-cloud-messaging.md)
+- [Google 雲端通訊](~/android/data-cloud/google-messaging/google-cloud-messaging.md)

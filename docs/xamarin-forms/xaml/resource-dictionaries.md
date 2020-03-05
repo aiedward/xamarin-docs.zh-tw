@@ -6,14 +6,14 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/15/2019
+ms.date: 02/26/2020
 ms.custom: video
-ms.openlocfilehash: 49ea5c2a8332e625710af8a9947e1cb0e0338040
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: f5266049e1498d902864185a61cba6d3730f9594
+ms.sourcegitcommit: 2836f2003a5b745b042ee6003a3d6a11b9139e44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955821"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292054"
 ---
 # <a name="resource-dictionaries"></a>資源字典
 
@@ -264,6 +264,8 @@ Xamarin 程式僅包含一個衍生自 `Application` 的類別，但通常會使
     ...
 </ContentPage>
 ```
+
+將[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)放在外部元件時，請確定其組建動作已設定為**EmbeddedResource**。 此外，請確定它具有程式碼後置檔案。
 
 > [!IMPORTANT]
 > [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中只能有一個 `MergedDictionaries` 的屬性元素標記，但您可以視需要在該處放入許多 `ResourceDictionary` 物件。

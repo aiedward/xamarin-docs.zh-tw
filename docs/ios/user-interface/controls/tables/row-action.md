@@ -1,20 +1,20 @@
 ---
-title: Working with Row Actions in Xamarin.iOS
-description: This guide demonstrates how to create custom swipe actions for table rows with UISwipeActionsConfiguration or UITableViewRowAction
+title: 在 Xamarin 中使用資料列動作
+description: 本指南示範如何使用 UISwipeActionsConfiguration 或 UITableViewRowAction，為數據表資料列建立自訂的滑動動作
 ms.prod: xamarin
 ms.assetid: 340FB633-0C46-40AA-9963-FF17D7CA6858
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 542ae6696bae8fccfa6d5ed9842bce126760da37
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8efa116a82ba021c2a723dc6ab636f54b6b5af71
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021859"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292403"
 ---
-# <a name="working-with-row-actions-in-xamarinios"></a>Working with Row Actions in Xamarin.iOS
+# <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用資料列動作
 
 _本指南示範如何使用 UISwipeActionsConfiguration 或 UITableViewRowAction，為數據表資料列建立自訂的滑動動作_
 
@@ -33,7 +33,7 @@ iOS 提供兩種在資料表上執行動作的方式： `UISwipeActionsConfigura
 
 1. 覆寫 `GetLeadingSwipeActionsConfiguration` 和/或 `GetTrailingSwipeActionsConfiguration` 方法。 這些方法會傳回 `UISwipeActionsConfiguration`。
 2. 具現化要傳回的 `UISwipeActionsConfiguration`。 這個類別會採用 `UIContextualAction`的陣列。
-3. 建立 `UIContextualAction`。
+3. 建立`UIContextualAction`。
 
 下列各節會更詳細地說明這些功能。
 
@@ -117,7 +117,7 @@ public UIContextualAction ContextualFlagAction(int row)
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-若要定義 `UITableView`的一個或多個自訂資料列動作，您必須建立 `UITableViewDelegate` 類別的實例，並覆寫 `EditActionsForRow` 方法。 例如:
+若要定義 `UITableView`的一個或多個自訂資料列動作，您必須建立 `UITableViewDelegate` 類別的實例，並覆寫 `EditActionsForRow` 方法。 例如：
 
 ```csharp
 using System;
@@ -161,7 +161,7 @@ namespace BasicTable
 }
 ```
 
-靜態 `UITableViewRowAction.Create` 方法是用來建立新的 `UITableViewRowAction`，當使用者在資料表中的資料列上水準撥動時，將會顯示 [ **Hi** ] 按鈕。 之後，就會建立新的 `TableDelegate` 實例，並將其附加至 `UITableView`。 例如:
+靜態 `UITableViewRowAction.Create` 方法是用來建立新的 `UITableViewRowAction`，當使用者在資料表中的資料列上水準撥動時，將會顯示 [ **Hi** ] 按鈕。 之後，就會建立新的 `TableDelegate` 實例，並將其附加至 `UITableView`。 例如：
 
 ```csharp
 TableDelegate tableDelegate;
@@ -182,4 +182,4 @@ table.Delegate = tableDelegate;
 ## <a name="related-links"></a>相關連結
 
 - [TableSwipeActions （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
-- [WorkingWithTables (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)

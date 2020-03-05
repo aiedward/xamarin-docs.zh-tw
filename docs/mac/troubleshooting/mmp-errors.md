@@ -8,18 +8,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: 32fecaff7f6896c03f3ac094d478fef3338f844d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b1125ab554bd9c73917c106c7486b742f16e628a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025728"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292633"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin. Mac 錯誤訊息（mmp）
 
 ## <a name="mm0xxx-mmp-error-messages"></a>MM0xxx： mmp 錯誤訊息
 
-例如， 參數、環境、遺漏工具。
+例如 參數、環境、遺漏工具。
 
 <a name="MM0000" />
 
@@ -158,7 +158,7 @@ Xamarin 需要標頭檔（來自錯誤訊息中指定的 SDK 版本），才能�
 
 有一個可能的替代方案，就是啟用 managed 連結器。 這會移除未使用的 API，包括在大多數情況下，缺少標頭檔案的新 API （或不完整）。 不過，如果您的專案使用的 API 與您的 Xcode 所提供的版本較新的 SDK 相比，這將無法正常執行。
 
-第二個可能的替代方案是改用動態註冊機構。 這將會以動態方式註冊類型，但移除標頭檔需求，以強制啟動成本。 
+第二個可能的替代方案是改用動態註冊機構。 這將會以動態方式註冊類型，但移除標頭檔需求，以強制啟動成本。
 
 最後 straw 的解決方案是使用較舊版本的 Xamarin，其中一個支援您的專案所需的 SDK。
 
@@ -210,7 +210,7 @@ Xamarin 需要標頭檔（來自錯誤訊息中指定的 SDK 版本），才能�
 
 接受的格式為 `[+|-]optimization-name`，其中 `optimization-name` 是錯誤訊息中所列的其中一個值。
 
-如需每個優化的完整描述，請參閱[組建優化](https://developer.xamarin.com/guides/cross-platform/macios/build-optimizations)。
+如需每個優化的完整描述，請參閱[組建優化](~/cross-platform/macios/optimizations.md)。
 
 <a name="MM0133" />
 
@@ -220,9 +220,9 @@ Xamarin 需要標頭檔（來自錯誤訊息中指定的 SDK 版本），才能�
 
 #### <a name="mm0134-32-bit-applications-should-be-migrated-to-64-bit"></a>MM0134：32位應用程式應該遷移至64位。
 
-Apple 已宣佈不允許 macOS App Store 提交32位應用程式（自1月2018日起）。 
+Apple 已宣佈不允許 macOS App Store 提交32位應用程式（自1月2018日起）。
 
-此外，32位應用程式將不會在高階「沒有危害」的 macOS 版本上執行。 
+此外，32位應用程式將不會在高階「沒有危害」的 macOS 版本上執行。
 
 如需詳細資訊： https://developer.apple.com/news/?id=06282017a
 
@@ -270,7 +270,7 @@ Apple 已宣佈不允許 macOS App Store 提交32位應用程式（自1月2018�
 
 <a name="MM1406" />
 
-#### <a name="mm1406-target-framework-0-is-invalid-when-targetting-xamarinmac-45-net-framwork"></a>MM1406：瞄準 Xamarin 4.5 .NET framwork 時，目標 framework '{0}' 無效。
+#### <a name="mm1406-target-framework-0-is-invalid-when-targeting-xamarinmac-45-net-framwork"></a>MM1406：目標 framework '{0}' 在以 Xamarin. Mac 4.5 .NET framwork 為目標時無效。
 
 <a name="MM1407" />
 

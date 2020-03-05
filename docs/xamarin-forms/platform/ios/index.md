@@ -6,19 +6,19 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: 5d0e289ddeb7eabef6d96c8882c772c704c54b34
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/15/2020
+ms.openlocfilehash: 015db40ce983d979109d4cce32c011f8c61a729c
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489722"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292545"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>Xamarin 中的 iOS 平臺功能
 
-開發適用于 iOS 的 Xamarin 應用程式需要 Visual Studio。 [[需求] 頁面](~/get-started/requirements.md)包含必要元件的詳細資訊。
+開發適用于 iOS 的 Xamarin 應用程式需要 Visual Studio。 [[支援的平臺] 頁面](~/get-started/supported-platforms.md)包含必要元件的詳細資訊。
 
-## <a name="platform-specifics"></a>平臺細節
+## <a name="platform-specifics"></a>平台特定功能
 
 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。
 
@@ -27,10 +27,12 @@ ms.locfileid: "75489722"
 - 對任何[`VisualElement`](xref:Xamarin.Forms.VisualElement)的模糊支援。 如需詳細資訊，請參閱[VisualElement 模糊 On iOS](visualelement-blur.md)。
 - 在支援的[`VisualElement`](xref:Xamarin.Forms.VisualElement)上停用舊版色彩模式。 如需詳細資訊，請參閱[在 iOS 上 VisualElement 舊版色彩模式](legacy-color-mode.md)。
 - 在[`VisualElement`](xref:Xamarin.Forms.VisualElement)上啟用投影。 如需詳細資訊，請參閱[VisualElement Drop Shadows On iOS](visualelement-drop-shadow.md)。
+- 讓[`VisualElement`](xref:Xamarin.Forms.VisualElement)物件成為觸控事件的第一個回應程式。 如需詳細資訊，請參閱[VisualElement 第一個回應](visualelement-first-responder.md)。
 
 下列平臺特定功能適用于在 iOS 上的 Xamarin. 表單檢視：
 
 - 設定[`Cell`](xref:Xamarin.Forms.Cell)背景色彩。 如需詳細資訊，請參閱[iOS 上的儲存格背景色彩](cell-background-color.md)。
+- 控制[`DatePicker`](xref:Xamarin.Forms.DatePicker)中發生專案選取的時機。 如需詳細資訊，請參閱[iOS 上的 DatePicker 專案選取](datepicker-selection.md)。
 - 藉由調整字型大小，確保輸入的文字元合[`Entry`](xref:Xamarin.Forms.Entry) 。 如需詳細資訊，請參閱[iOS 上的輸入字型大小](entry-font-size.md)。
 - 在[`Entry`](xref:Xamarin.Forms.Entry)中設定游標色彩。 如需詳細資訊，請參閱[iOS 上的輸入游標色彩](entry-cursor-color.md)。
 - 控制是否[`ListView`](xref:Xamarin.Forms.ListView)標頭儲存格在滾動期間浮動。 如需詳細資訊，請參閱[iOS 上的 ListView 群組標頭樣式](listview-group-header-style.md)。
@@ -39,6 +41,7 @@ ms.locfileid: "75489722"
 - 控制[`Picker`](xref:Xamarin.Forms.Picker)中發生專案選取的時機。 如需詳細資訊，請參閱[iOS 上的選擇器專案選擇](picker-selection.md)。
 - 藉由在 [ [`Slider`](xref:Xamarin.Forms.Slider) ] 列上的位置上點擊，而不是拖曳 `Slider` 捲動方塊，讓[`Slider.Value`](xref:Xamarin.Forms.Slider.Value)屬性得以設定。 如需詳細資訊，請參閱[iOS 上的滑杆](slider-thumb.md)。
 - 控制開啟 `SwipeView`時所使用的轉換。 如需詳細資訊，請參閱[SwipeView 滑動轉換模式](swipeview-swipetransitionmode.md)。
+- 控制[`TimePicker`](xref:Xamarin.Forms.TimePicker)中發生專案選取的時機。 如需詳細資訊，請參閱[iOS 上的 TimePicker 專案選取](timepicker-selection.md)。
 
 下列平臺特定功能是針對 iOS 上的 Xamarin. Forms 頁面所提供：
 
@@ -50,6 +53,7 @@ ms.locfileid: "75489722"
 - 在[`Page`](xref:Xamarin.Forms.Page)上設定狀態列可見度。 如需詳細資訊，請參閱[iOS 上的頁面狀態列可見度](page-status-bar-visibility.md)。
 - 確保頁面內容位於所有 iOS 裝置都安全的螢幕區域上。 如需詳細資訊，請參閱[iOS 上的安全區域版面配置指南](page-safe-area-layout.md)。
 - 設定模式頁面的呈現樣式。 如需詳細資訊，請參閱強制回應[頁面呈現樣式](page-presentation-style.md)。
+- 在[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)上設定索引標籤欄的半透明度模式。 如需詳細資訊，請參閱[TabbedPage 半透明 TabBar On iOS](tabbedpage-translucent-tabbar.md)。
 
 下列平臺特定功能是針對 Xamarin 提供的。表單版面配置在 iOS 上：
 

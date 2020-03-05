@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: 8425db35b64ec72ba0384f837e01acca49bd20f7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 726ebd55b38460ee966113e4ee487327cd42b03d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490047"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291497"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表（CSS）設定 Xamarin 應用程式的樣式
 
@@ -346,7 +346,7 @@ stacklayout>image {
 > [!NOTE]
 > 不支援明確性和明確覆寫。
 
-## <a name="property-reference"></a>內容參照
+## <a name="property-reference"></a>屬性參考
 
 下列 CSS 屬性受到 Xamarin 的支援（在 [**值] 資料**行中，類型是_斜體_，而字串常值則是 `gray`）：
 
@@ -357,9 +357,9 @@ stacklayout>image {
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_色彩_\| `initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_字串_\| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`中， `Frame`中， `ImageButton`|_色彩_\| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`、 `Button`、 `Frame`、 `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
-|`border-width`|`Button`、 `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
+|`border-color`|`Button`、`Frame`、`ImageButton`|_色彩_\| `initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`、`BoxView`、`Button`、`CheckBox`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`ProgressBar`、`SearchBar`、`Switch`、`TimePicker`|_色彩_\| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
@@ -368,13 +368,13 @@ stacklayout>image {
 |`flex-grow`|`VisualElement`|_float_ \| `initial`|`flex-grow: 1.5;`|
 |`flex-shrink`|`VisualElement`|_float_ \| `initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|+`Button`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`SearchBar`、`TimePicker`、`Span`|_字串_\| `initial` |`font-family: Consolas;`|
-|`font-size`|+`Button`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`SearchBar`、`TimePicker`、`Span`|_double_\| _namedsize_ \| `initial` |`font-size: 12;`|
-|`font-style`|+`Button`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`SearchBar`、`TimePicker`、`Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字串_\| `initial` |`font-family: Consolas;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_\| _namedsize_ \| `initial` |`font-size: 12;`|
+|`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
 |`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \| `initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`、 `Span`|_double_ \| `initial` |`line-height: 1.8;`|
+|`line-height`|`Label`, `Span`|_double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_粗細_\| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_粗細_\| `initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_粗細_\| `initial` |`margin-top: 2;`|
@@ -385,15 +385,15 @@ stacklayout>image {
 |`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
 |`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
-|`padding`|`Button`、 `ImageButton`、 `Layout`、 `Page`|_粗細_\| `initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`、 `ImageButton`、 `Layout`、 `Page`|_double_ \| `initial`|`padding-left: 3;`|
-|`padding-top`|`Button`、 `ImageButton`、 `Layout`、 `Page`| _double_ \| `initial` |`padding-top: 4;`|
-|`padding-right`|`Button`、 `ImageButton`、 `Layout`、 `Page`| _double_ \| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`、 `ImageButton`、 `Layout`、 `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
+|`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_粗細_\| `initial` |`padding: 6 12 12;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
 |`row-gap`|`Grid`| _double_ \| `initial`|`row-gap: 12;`|
-|`text-align`| `Entry`、 `EntryCell`、 `Label`、 `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`。 在由右至左的環境中，應該避免 `left` 和 `right`。| `text-align: right;`|
-|`text-decoration`|`Label`、 `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
+|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`。 在由右至左的環境中，應該避免 `left` 和 `right`。| `text-align: right;`|
+|`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \| `initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
@@ -405,7 +405,7 @@ stacklayout>image {
 
 目前不支援下列屬性：
 
-- `all: initial`。
+- `all: initial`第 1 課：建立 Windows Azure 儲存體物件{2}。
 - 版面配置屬性（box 或方格）。
 - 縮寫屬性，例如 `font`和 `border`。
 
@@ -419,17 +419,17 @@ stacklayout>image {
 
 |屬性|適用於|值|範例|
 |---|---|---|---|
-|`-xf-bar-background-color`|`NavigationPage`、 `TabbedPage`|_色彩_\| `initial` |`-xf-bar-background-color: teal;`|
-|`-xf-bar-text-color`|`NavigationPage`、 `TabbedPage`|_色彩_\| `initial` |`-xf-bar-text-color: gray`|
+|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_色彩_\| `initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_色彩_\| `initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`、 `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
+|`-xf-max-length`|`Entry`, `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_色彩_\| `initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_色彩_\| `initial` |`-xf-min-track-color: yellow;`|
-|`-xf-orientation`|`ScrollView`、 `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`。 只有 `ScrollView`支援 `both`。 |`-xf-orientation: horizontal;`|
-|`-xf-placeholder`|`Entry`中， `Editor`中， `SearchBar`|以_引號括_住的文字 \| `initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`中， `Editor`中， `SearchBar`|_色彩_\| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`。 只有 `ScrollView`支援 `both`。 |`-xf-orientation: horizontal;`|
+|`-xf-placeholder`|`Entry`、`Editor`、`SearchBar`|以_引號括_住的文字 \| `initial` |`-xf-placeholder: Enter name;`|
+|`-xf-placeholder-color`|`Entry`、`Editor`、`SearchBar`|_色彩_\| `initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
-|`-xf-thumb-color`|`Slider`、 `Switch`|_色彩_\| `initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-thumb-color`|`Slider`, `Switch`|_色彩_\| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
 |`-xf-visual`|`VisualElement`|_字串_\| `initial` |`-xf-visual: material;`|
@@ -452,11 +452,11 @@ stacklayout>image {
 |`-xf-shell-title`|`Element`|_色彩_\| `initial` |`-xf-shell-title: teal;`|
 |`-xf-shell-unselected`|`Element`|_色彩_\| `initial` |`-xf-shell-unselected: limegreen;`|
 
-### <a name="color"></a>色彩
+### <a name="color"></a>Color
 
 支援下列 `color` 值：
 
-- `X11`[色彩](https://en.wikipedia.org/wiki/X11_color_names/)，符合 CSS 色彩、UWP 預先定義的色彩，以及 Xamarin. 表單色彩。 請注意，這些色彩值不區分大小寫。
+- `X11`[色彩](https://en.wikipedia.org/wiki/X11_color_names)，符合 CSS 色彩、UWP 預先定義的色彩，以及 Xamarin. 表單色彩。 請注意，這些色彩值不區分大小寫。
 - 十六進位色彩： `#rgb`、`#argb`、`#rrggbb`、`#aarrggbb`
 - rgb 色彩： `rgb(255,0,0)`，`rgb(100%,0%,0%)`。 值的範圍為0-255，或 0%-100%。
 - rgba 色彩： `rgba(255, 0, 0, 0.8)`、`rgba(100%, 0%, 0%, 0.8)`。 不透明度值的範圍為 0.0-1.0。

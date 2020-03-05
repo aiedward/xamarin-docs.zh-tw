@@ -1,40 +1,40 @@
 ---
 title: 路徑資訊與列舉
-description: 本文說明如何取得 SkiaSharp 路徑的相關資訊，並列舉內容，並示範此範例程式碼。
+description: 本文說明如何取得 SkiaSharp 路徑和列舉內容的相關資訊，並使用範例程式碼示範這項操作。
 ms.prod: xamarin
 ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
 ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/12/2017
-ms.openlocfilehash: 05d5003d349ae11a1ec6a1b6f3d66b2f68ffad8a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 6f4f4e6253c14d86e2057f13d6232a07a83b4d26
+ms.sourcegitcommit: ae5557c5024d4b7bd52b2f33cb96114ce2b8e086
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68652873"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "78291493"
 ---
 # <a name="path-information-and-enumeration"></a>路徑資訊與列舉
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_取得路徑的相關資訊，並列舉內容_
+_取得路徑的相關資訊並列舉內容_
 
-[ `SKPath` ](xref:SkiaSharp.SKPath)類別會定義數個屬性和方法，可讓您取得路徑的相關資訊。 [ `Bounds` ](xref:SkiaSharp.SKPath.Bounds)並[ `TightBounds` ](xref:SkiaSharp.SKPath.TightBounds)屬性 （和相關的方法） 取得 metrical 維度的路徑。 [ `Contains` ](xref:SkiaSharp.SKPath.Contains(System.Single,System.Single))方法可讓您判斷特定的點是否在路徑。
+[`SKPath`](xref:SkiaSharp.SKPath)類別定義數個屬性和方法，可讓您取得路徑的相關資訊。 [`Bounds`](xref:SkiaSharp.SKPath.Bounds)和[`TightBounds`](xref:SkiaSharp.SKPath.TightBounds)屬性（和相關的方法）會取得路徑的度量維度。 [`Contains`](xref:SkiaSharp.SKPath.Contains(System.Single,System.Single))方法可讓您判斷特定點是否在路徑內。
 
-有時候，它是很有用來判斷所有的直線和曲線路徑所組成的總長度。 計算這個長度不是以簡單的工作，因此整個類別名為[ `PathMeasure` ](xref:SkiaSharp.SKPathMeasure)專門提供給它。
+有時候，判斷組成路徑的所有線條和曲線的總長度會很有用。 計算此長度不是以演算法方式的簡單工作，因此名為[`PathMeasure`](xref:SkiaSharp.SKPathMeasure)的整個類別專門用於該工作。
 
-最好也有時若要取得所有繪圖作業和組成路徑的點。 一開始, 這種設備看起來可能不是必要的:如果您的程式已建立路徑, 則程式已知道內容。 不過，您已了解也可以藉由建立路徑[路徑效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)並藉由轉換[為路徑的文字字串](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)。 您也可以取得所有繪圖作業和構成這些路徑的點。 其中一個可能性是適用於演算法的轉換所有的點，如，而繞半球：
+它有時也很適合用來取得組成路徑的所有繪圖作業和點。 一開始，這種設備看起來可能不是必要的：如果您的程式已建立路徑，則程式已經知道內容。 不過，您已經看到路徑也可以透過[路徑效果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)來建立，並將[文字字串轉換成路徑](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)。 您也可以取得組成這些路徑的所有繪圖作業和點。 其中一個可能性是將演算法轉換套用到所有點，例如，將文字包裝在半球周圍：
 
-![](information-images/pathenumerationsample.png "包裝半球上的文字")
+![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
 
 ## <a name="getting-the-path-length"></a>取得路徑長度
 
-文件中[**路徑及文字**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)了解如何使用[ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))方法來繪製文字字串，其基準遵循的路徑。 但是，如果您要的文字大小，使其精確地符合路徑？ 圓形周圍繪製的文字很容易，因為圓形的圓周是簡單計算。 但的橢圓形的圓周或貝茲曲線的長度不是那麼簡單。
+在文章[**路徑和文字**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)中，您會看到如何使用[`DrawTextOnPath`](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint))方法來繪製一個文字字串，其基準遵循路徑的過程。 但是，如果您想要調整文字大小，使其精確地配合路徑，該怎麼做？ 在圓形周圍繪製文字很簡單，因為圓形的圓周很容易計算。 但是，橢圓形的圓周或貝茲曲線的長度並不簡單。
 
-[ `SKPathMeasure` ](xref:SkiaSharp.SKPathMeasure)類別可以幫助。 [建構函式](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single))接受`SKPath`引數，而[ `Length` ](xref:SkiaSharp.SKPathMeasure.Length)屬性會顯示它的長度。
+[`SKPathMeasure`](xref:SkiaSharp.SKPathMeasure)類別可以提供協助。 此函式[會接受 `SKPath`](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single))引數，而[`Length`](xref:SkiaSharp.SKPathMeasure.Length)屬性會顯示其長度。
 
-這個類別所示**路徑長度**範例中，此作業取決於**貝茲曲線**頁面。 [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)檔案衍生自`InteractivePage`並包含在觸控式介面：
+此類別會在**路徑長度**範例中示範，這是以 [**貝茲曲線**] 頁面為基礎。 [**PathLengthPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)衍生自 `InteractivePage` 並包含 touch 介面：
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -55,7 +55,7 @@ _取得路徑的相關資訊，並列舉內容_
 </local:InteractivePage>
 ```
 
-[ **PathLengthPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs)程式碼後置檔案可讓您將四個觸控點，來定義結束點，以及控制三次方貝茲曲線的點。 三個欄位定義的文字字串，`SKPaint`物件，而導出的文字的寬度：
+[**PathLengthPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml.cs)程式碼後置檔案可讓您移動四個觸控點，以定義三次方貝茲曲線的端點和控制點。 三個欄位會定義文字字串、`SKPaint` 物件，以及文字的計算寬度：
 
 ```csharp
 public partial class PathLengthPage : InteractivePage
@@ -74,9 +74,9 @@ public partial class PathLengthPage : InteractivePage
 }
 ```
 
-`baseTextWidth`欄位是根據文字的寬度`TextSize`設定為 10。
+[`baseTextWidth`] 欄位是以10的 `TextSize` 設定為基礎的文字寬度。
 
-`PaintSurface`處理常式繪製貝茲曲線，並再調整大小以符合沿著其完整長度的文字：
+`PaintSurface` 處理常式會繪製貝茲曲線，然後調整文字大小以配合其完整長度：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,15 +110,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`Length`新建屬性`SKPathMeasure`物件取得路徑的長度。 路徑長度除以`baseTextWidth`值 （即 10 的文字大小所根據的文字的寬度），然後再乘以 10 的基底的文字大小。 結果會是新的文字大小，用於顯示文字沿該路徑：
+新建立之 `SKPathMeasure` 物件的 `Length` 屬性會取得路徑的長度。 路徑長度除以 `baseTextWidth` 值（這是以10的文字大小為基礎的文字寬度），然後乘以基底文字大小10。 結果是以新的文字大小顯示該路徑中的文字：
 
-[![](information-images/pathlength-small.png "路徑長度頁面的三個螢幕擷取畫面")](information-images/pathlength-large.png#lightbox "的路徑長度的頁面上的三個螢幕擷取畫面")
+[![](information-images/pathlength-small.png "Triple screenshot of the Path Length page")](information-images/pathlength-large.png#lightbox "Triple screenshot of the Path Length page")
 
-貝茲曲線越長或短，您可以看到變更文字大小。
+當貝茲曲線變長或較短時，您可以看到文字大小變更。
 
-## <a name="traversing-the-path"></a>周遊的路徑
+## <a name="traversing-the-path"></a>遍歷路徑
 
-`SKPathMeasure` 可以執行不只是量值路徑的長度。 每個值介於 0 到路徑的長度，`SKPathMeasure`物件可以在該點取得的位置路徑，以及路徑曲線的正切函數。 正切函數是可用的表單中的向量`SKPoint`物件，或為旋轉封裝在`SKMatrix`物件。 以下是方法的`SKPathMeasure`，以各不相同且彈性的方式取得這項資訊：
+`SKPathMeasure` 可以不只是測量路徑的長度。 對於介於零和路徑長度之間的任何值，`SKPathMeasure` 物件可以取得路徑上的位置，以及該點上路徑曲線的正切函數。 正切函數以 `SKPoint` 物件的形式提供，或當做 `SKMatrix` 物件中封裝的旋轉。 以下是以不同且彈性的方式取得此資訊的 `SKPathMeasure` 方法：
 
 ```csharp
 Boolean GetPosition (Single distance, out SKPoint position)
@@ -130,17 +130,17 @@ Boolean GetPositionAndTangent (Single distance, out SKPoint position, out SKPoin
 Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlags flag)
 ```
 
-成員[ `SKPathMeasureMatrixFlags` ](xref:SkiaSharp.SKPathMeasureMatrixFlags)列舉型別是：
+[`SKPathMeasureMatrixFlags`](xref:SkiaSharp.SKPathMeasureMatrixFlags)列舉的成員如下：
 
 - `GetPosition`
 - `GetTangent`
 - `GetPositionAndTangent`
 
-**獨半管道**頁面繪製桿狀圖形上似乎來回寫沿著三次方貝茲曲線獨：
+**Unicycle 的半管道**頁面會在看起來像是以三次方貝茲曲線來回往返的 Unicycle 上繪製一個杆圖：
 
-[![](information-images/unicyclehalfpipe-small.png "獨半管道頁面的三個螢幕擷取畫面")](information-images/unicyclehalfpipe-large.png#lightbox "獨半管道頁面的三個螢幕擷取畫面")
+[![](information-images/unicyclehalfpipe-small.png "Triple screenshot of the Unicycle Half-Pipe page")](information-images/unicyclehalfpipe-large.png#lightbox "Triple screenshot of the Unicycle Half-Pipe page")
 
-用來對半管道和 unicycle 進行筆劃的`UnicycleHalfPipePage` 物件,會定義為類別中的欄位。`SKPaint` 也定義是`SKPath`獨物件：
+用來將 unicycle 用於筆劃的 `SKPaint` 物件，會定義為 `UnicycleHalfPipePage` 類別中的欄位。 此外，也定義了 unicycle 的 `SKPath` 物件：
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -165,7 +165,7 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-此類別包含的標準的覆寫`OnAppearing`和`OnDisappearing`動畫的方法。 `PaintSurface`處理常式建立半管道的路徑，然後將它繪製。 `SKPathMeasure`物件然後建立根據此路徑：
+類別包含 `OnAppearing` 的標準覆寫和動畫的 `OnDisappearing` 方法。 `PaintSurface` 處理常式會建立半管道的路徑，然後繪製它。 接著會根據此路徑建立 `SKPathMeasure` 物件：
 
 ```csharp
 public class UnicycleHalfPipePage : ContentPage
@@ -211,15 +211,15 @@ public class UnicycleHalfPipePage : ContentPage
 }
 ```
 
-`PaintSurface`處理常式會計算值為`t`，是從 0 到 1 每五秒。 然後它會使用`Math.Cos`將其轉換為值的函式`t`，範圍從 0 到 1，再回復成 0，其中 0 對應到位於左上方，開頭獨右上方獨 1 與對應。 餘弦函式會導致最慢管道頂端和底部最快的速度。
+`PaintSurface` 處理常式會計算每五秒從0到1的 `t` 值。 接著，它會使用 `Math.Cos` 函式，將其轉換為範圍從0到1的 `t` 值，並傳回0，其中0對應至左上方的 unicycle，而1對應到右上方的 unicycle。 余弦函數會使速度在管道頂端最慢，最快到底部。
 
-請注意，此值`t`必須第一個引數的路徑長度乘以`GetMatrix`。 矩陣會套用到`SKCanvas`繪製獨路徑的物件。
+請注意，`t` 的這個值必須乘以第一個引數的路徑長度，才能 `GetMatrix`。 然後，矩陣會套用至 `SKCanvas` 物件，以繪製 unicycle 路徑。
 
 ## <a name="enumerating-the-path"></a>列舉路徑
 
-兩個內嵌的類別`SKPath`可讓您列舉路徑的內容。 這些類別是[ `SKPath.Iterator` ](xref:SkiaSharp.SKPath.Iterator)並[ `SKPath.RawIterator` ](xref:SkiaSharp.SKPath.RawIterator)。 這兩個類別都非常類似，但`SKPath.Iterator`可以排除在路徑中，長度為零，或接近零長度的項目。 `RawIterator`下面的範例中使用。
+`SKPath` 的兩個內嵌類別，可讓您列舉路徑的內容。 這些類別是[`SKPath.Iterator`](xref:SkiaSharp.SKPath.Iterator)和[`SKPath.RawIterator`](xref:SkiaSharp.SKPath.RawIterator)。 這兩個類別非常類似，但 `SKPath.Iterator` 可以排除長度為零或接近零長度之路徑中的元素。 下列範例會使用 `RawIterator`。
 
-您可以取得型別的物件`SKPath.RawIterator`藉由呼叫[ `CreateRawIterator` ](xref:SkiaSharp.SKPath.CreateRawIterator)方法`SKPath`。 列舉路徑透過重複呼叫[ `Next` ](xref:SkiaSharp.SKPath.RawIterator.Next*)方法。 將傳遞給它的四個陣列`SKPoint`值：
+您可以藉由呼叫 `SKPath`的[`CreateRawIterator`](xref:SkiaSharp.SKPath.CreateRawIterator)方法，取得 `SKPath.RawIterator` 類型的物件。 藉由重複呼叫[`Next`](xref:SkiaSharp.SKPath.RawIterator.Next*)方法，即可完成路徑的列舉。 將四個 `SKPoint` 值的陣列傳遞給它：
 
 ```csharp
 SKPoint[] points = new SKPoint[4];
@@ -227,35 +227,35 @@ SKPoint[] points = new SKPoint[4];
 SKPathVerb pathVerb = rawIterator.Next(points);
 ```
 
-`Next`方法傳回的成員[ `SKPathVerb` ](xref:SkiaSharp.SKPathVerb)列舉型別。 這些值會指出特定的繪製命令的路徑中。 陣列中插入有效的點數目取決於此動詞命令：
+`Next` 方法會傳回[`SKPathVerb`](xref:SkiaSharp.SKPathVerb)列舉類型的成員。 這些值表示路徑中的特定繪圖命令。 陣列中插入的有效點數目取決於這個動詞：
 
-- `Move` 單點
-- `Line` 兩個點
-- `Cubic` 具有四個點
-- `Quad` 使用三個點
-- `Conic` 使用三個點 (也呼叫[ `ConicWeight` ](xref:SkiaSharp.SKPath.RawIterator.ConicWeight*)方法的權數)
-- `Close` 一個點
+- 具有單一點的 `Move`
+- 有兩個點的 `Line`
+- 具有四個點的 `Cubic`
+- 具有三個點的 `Quad`
+- 具有三個點的 `Conic` （也會針對權數呼叫[`ConicWeight`](xref:SkiaSharp.SKPath.RawIterator.ConicWeight*)方法）
+- 具有一個點的 `Close`
 - `Done`
 
-`Done`動詞表示路徑列舉已完成。
+`Done` 動詞表示路徑列舉已完成。
 
-請注意，有沒有`Arc`動詞命令。 這表示所有弧線會都轉換成貝茲曲線加入至路徑時。
+請注意，沒有 `Arc` 動詞。 這表示在新增至路徑時，所有弧形都會轉換成貝茲曲線。
 
-中的資訊的一些`SKPoint`是多餘的陣列。 例如，如果`Move`動詞後面`Line`動詞命令，則伴隨的兩個點的第一個`Line`等同於`Move`點。 在實務上，此備援是非常有幫助。 當您進入`Cubic`動詞，伴隨著所有四個點定義三次方貝茲曲線。 您不需要保留先前所用的動詞命令所建立的目前位置。
+`SKPoint` 陣列中的部分資訊是多餘的。 例如，如果 `Move` 動詞後面接著 `Line` 動詞，則伴隨 `Line` 的兩個點的第一個會與 `Move` 點相同。 實際上，這項冗余非常有用。 當您取得 `Cubic` 動詞命令時，會伴隨著定義三次貝茲曲線的四個點。 您不需要保留先前動詞所建立的目前位置。
 
-有問題的動詞命令，不過，是`Close`。 此命令從目前的位置繪製直線線段稍早建立的開頭`Move`命令。 在理想情況下，`Close`動詞命令應提供這些兩個點，而不是只是一個點。 更糟的是在於點隨附`Close`動詞命令一律是 （0，0）。 當您列舉路徑時，您可能需要保留`Move`點和目前的位置。
+不過，有問題的動詞是 `Close`。 此命令會從目前位置繪製一條直線，到 `Move` 命令稍早所建立的輪廓開頭。 在理想的情況下，`Close` 動詞應該提供這兩個點，而不只是一個點。 更糟的是，`Close` 動詞所附的點一律是（0，0）。 當您列舉路徑時，您可能需要保留 `Move` 點和目前的位置。
 
-## <a name="enumerating-flattening-and-malforming"></a>列舉，扁平化和 Malforming
+## <a name="enumerating-flattening-and-malforming"></a>列舉、簡維和 Malforming
 
-有時會需要套用演算法 malform 的路徑將其轉換以某種方式：
+有時候，您可能會想要將演算法轉換套用至路徑，以便以某種方式 malform 它：
 
-![](information-images/pathenumerationsample.png "包裝半球上的文字")
+![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
 
-大部分的這些字母所組成的直線，但顯然成曲線 twisted 這些直線。 這是怎麼辦到？
+其中大部分的字母都是由直線組成，不過這些直線已明顯地轉換成曲線。 這是怎麼可行的？
 
-索引鍵是原始的直線，線條分成一系列的較小的直線，線條。 然後可以操作這些個別較小的直線，線條以不同的方式，以形成曲線。
+關鍵在於，原始直線會分成一連串較小的直線。 然後可以用不同的方式操作這些個別的直線，以形成曲線。
 
-若要協助進行此程序中， [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含靜態[ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)類別`Interpolate`細分的方法許多較短的行就是只有一個單位的長度成直線。 此外，此類別包含數種方法，轉換成一系列的小的直線，線條估計曲線的貝茲曲線的三種類型。 (一文中提供的參數化的公式[**三種類型的貝茲曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)。)這個過程就叫做_壓平合併_曲線：
+為了協助進行此程式， [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含靜態[`PathExtensions`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs)類別，其具有 `Interpolate` 方法，可將直線細分成多行，只是長度的一個單位。 此外，類別還包含數個方法，可將這三種類型的貝茲曲線轉換成一系列的一條小型直線，使曲線近似。 （參數化公式會在文章[**三種類型的貝茲曲線**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md)中顯示）。此_程式稱為簡_維曲線：
 
 ```csharp
 static class PathExtensions
@@ -328,6 +328,7 @@ static class PathExtensions
             float y = (1 - t) * (1 - t) * pt0.Y + 2 * weight * t * (1 - t) * pt1.Y + t * t * pt2.Y;
             x /= denominator;
             y /= denominator;
+            points[i] = new SKPoint(x, y);
         }
 
         return points;
@@ -340,9 +341,9 @@ static class PathExtensions
 }
 ```
 
-所有這些方法被參考的擴充方法`CloneWithTransform`也包含在這個類別，並如下所示。 這個方法會複製為路徑列舉路徑命令，並建構新的路徑，以資料為依據。 不過，新的路徑中只包含`MoveTo`和`LineTo`呼叫。 所有的曲線和直線縮減為一系列的小型線條。
+所有這些方法都是從擴充方法參考 `CloneWithTransform` 也包含在此類別中，如下所示。 這個方法會列舉路徑命令，並根據資料來建立新路徑，以複製路徑。 不過，新的路徑只包含 `MoveTo` 和 `LineTo` 呼叫。 所有曲線和直線都會縮減成一系列的小線條。
 
-當呼叫`CloneWithTransform`，您傳遞給方法`Func<SKPoint, SKPoint>`，這是使用函式`SKPaint`傳回的參數`SKPoint`值。 每個點，以套用自訂演算法的轉換，會呼叫此函數：
+呼叫 `CloneWithTransform`時，您會將 `Func<SKPoint, SKPoint>`傳遞至方法，此函式具有會傳回 `SKPoint` 值的 `SKPaint` 參數。 會針對每個點呼叫此函式，以套用自訂演算法轉換：
 
 ```csharp
 static class PathExtensions
@@ -431,15 +432,15 @@ static class PathExtensions
 }
 ```
 
-複製的路徑會減少到小的直線，因為轉換函式會有將直線，線條轉換成曲線的能力。
+因為複製的路徑會縮減為小型直線，所以轉換函式具有將直線轉換成曲線的功能。
 
-請注意，方法會保留第一個點的呼叫的變數中的每個分佈`firstPoint`和目前的位置，在每個變數中繪製命令`lastPoint`。 這些變數是必要建構最後的結尾行時`Close`遇到動詞命令。
+請注意，方法會保留變數中每個輪廓的第一個點，稱為 `firstPoint`，而變數中的每個繪製命令之後的目前位置 `lastPoint`。 當遇到 `Close` 動詞時，必須要有這些變數來建立最後的結束行。
 
-**GlobularText**範例會使用這個延伸模組方法看似繞半球 3D 的作用中：
+**GlobularText**範例會使用此擴充方法，以3d 效果括住半球的文字：
 
-[![](information-images/globulartext-small.png "Globular 文字頁面的三個螢幕擷取畫面")](information-images/globulartext-large.png#lightbox "Globular 文字頁面的三個螢幕擷取畫面")
+[![](information-images/globulartext-small.png "Triple screenshot of the Globular Text page")](information-images/globulartext-large.png#lightbox "Triple screenshot of the Globular Text page")
 
-[ `GlobularTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)類別建構函式會執行這項轉換。 它會建立`SKPaint`物件的文字，並再取得`SKPath`物件從`GetTextPath`方法。 這是傳遞至的路徑`CloneWithTransform`以及的轉換函式的擴充方法：
+[`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)類別的函數會執行這種轉換。 它會建立文字的 `SKPaint` 物件，然後從 `GetTextPath` 方法取得 `SKPath` 物件。 這是傳遞給 `CloneWithTransform` 擴充方法和轉換函式的路徑：
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -486,9 +487,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-轉換函式會先計算兩個名為的值`longitude`和`latitude`– π/2 上方和左邊的文字，從範圍到 π/2，在右側和底部的文字。 這些值的範圍不是視覺上令人滿意的所以它們會減少乘以 0.75。 （請嘗試這些調整沒有程式碼。 文字會變得太模糊的北部和中南部兩極，且太精簡側邊。）這些更低的球面的三維座標會轉換為二維`x`和`y`座標標準的公式。
+轉換函式會先計算名為 `longitude` 的兩個值，以及介於文字左上方–π/2 的 `latitude`，並在文字的右邊和底部為π/2。 這些值的範圍無法以視覺效果呈現，因此會乘以0.75 來減少。 （嘗試程式碼而不進行這些調整。 文字會在北部和南兩極變得太模糊，而不會在側邊太窄）。這三維球面座標會轉換成二維 `x`，並依標準公式 `y` 座標。
 
-新的路徑儲存為欄位。 `PaintSurface`處理常式則只需要置中與縮放以顯示在螢幕上的路徑：
+新的路徑會儲存為欄位。 `PaintSurface` 處理常式就只需要將路徑置中並縮放以顯示在螢幕上：
 
 ```csharp
 public class GlobularTextPage : ContentPage
@@ -518,7 +519,7 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-這是非常靈活的技巧。 如果路徑效果的陣列中所述[**路徑效果**](effects.md)文章相當不包含項目您認為應包含，這是要填滿間距的方法。
+這是一種非常多樣化的技術。 如果[**路徑效果**](effects.md)一文中所述的路徑效果陣列並不包含您覺得應該納入的內容，這就是填滿間距的方法。
 
 ## <a name="related-links"></a>相關連結
 

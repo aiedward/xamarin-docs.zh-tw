@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 653d2420a9101203412b91a93cc7b6f681e2f5f2
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 1f7917784ea66c31979b87f43639a7d03756692c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728300"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78293037"
 ---
 # <a name="getting-started-with-datapages"></a>使用 DataPages 消費者入門
 
@@ -21,7 +21,7 @@ ms.locfileid: "75728300"
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [Xamarin.Forms.Theme.Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)nuget 套件安裝到您的專案中, 後面接著 [Xamarin.Forms.Theme.Light](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) 或 [Xamarin.Forms.Theme.Dark](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)。
+> DataPages 需要有 Xamarin 主題參考才能呈現。 這牽涉到將 [ [xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) ] nuget 套件安裝到您的專案中，後面接著 [ [xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/) [] 或 [](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) node.js] nuget 套件。
 
 若要開始建置使用 DataPages 預覽的簡單資料驅動頁面，請遵循下列步驟。 本示範使用預覽組建中的硬式編碼樣式（「事件」），其僅適用于程式碼中的特定 JSON 格式。
 
@@ -37,7 +37,7 @@ ms.locfileid: "75728300"
 
 ## <a name="2-add-theme-reference"></a>2. 新增主題參考
 
-在  **App.xaml**檔案中，新增自訂`xmlns:mytheme`佈景主題，並確定 佈景主題已合併到應用程式的資源字典：
+在**app.xaml**檔案中，新增主題的自訂 `xmlns:mytheme`，並確保主題會合並到應用程式的資源字典中：
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -98,7 +98,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 刪除 `Content` 專案，並將其取代為 `p:ListDataPage.DataSource`，以將資料填入頁面。 在下面的遠端的 Json 範例資料檔案從 URL 載入。
 
 > [!NOTE]
-> 預覽*需要*`StyleClass` 屬性來提供資料來源的呈現提示。 `StyleClass="Events"`預先定義在預覽中，並包含樣式的配置是指*硬式編碼*以符合所使用的 JSON 資料來源。
+> 預覽*需要*`StyleClass` 屬性來提供資料來源的呈現提示。 `StyleClass="Events"` 指的是在預覽中預先定義的版面配置，並包含*硬式編碼*的樣式，以符合所使用的 JSON 資料來源。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -117,7 +117,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 **JSON 資料**
 
-[示範來源](http://demo3143189.mockable.io/sessions)的 JSON 資料範例如下所示：
+示範來源的 JSON 資料範例如下所示：
 
 ```json
 [{
@@ -168,7 +168,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 [![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
 
-開發人員偏好在 C# XAML 可以建立資料來源繫結太 (請記得包含`using Xamarin.Forms.Pages;`陳述式):
+偏好使用C# XAML 的開發人員也可以建立資料來源系結（請記得包含 `using Xamarin.Forms.Pages;` 語句）：
 
 ```csharp
 SetBinding (TitleProperty, new DataSourceBinding ("title"));

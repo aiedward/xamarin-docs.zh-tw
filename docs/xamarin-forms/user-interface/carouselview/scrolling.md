@@ -6,13 +6,13 @@ ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/14/2019
-ms.openlocfilehash: ce0e0b63206ab918b5d761be3e619370aec1eec7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/28/2020
+ms.openlocfilehash: 735a572f4aadfc224e545e371525b96f29c9552e
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489748"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78292185"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin. 表單 CarouselView 滾動
 
@@ -24,7 +24,7 @@ ms.locfileid: "75489748"
 
 - `HorizontalScrollBarVisibility`，屬於 `ScrollBarVisibility`類型，可指定水準捲軸何時可見。
 - `IsDragging`，屬於 `bool`類型，表示 `CarouselView` 是否正在滾動。 這是唯讀屬性，其預設值為 `false`。
-- `IsScrollAnimated`，屬於 `bool`類型，可指定在滾動 `CarouselView`時是否會發生動畫。 預設值為 `true`。
+- `IsScrollAnimated`，屬於 `bool`類型，可指定在滾動 `CarouselView`時是否會發生動畫。 預設值是 `true`。
 - `ItemsUpdatingScrollMode`，屬於 `ItemsUpdatingScrollMode`類型，代表將新專案新增至其中時，`CarouselView` 的滾動行為。
 - `VerticalScrollBarVisibility`，屬於 `ScrollBarVisibility`類型，可指定垂直捲動條何時可見。
 
@@ -132,7 +132,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > 如果呼叫 `ScrollTo` 方法時未指定 `position` 引數，預設會使用[`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)成員。
 
-### <a name="start"></a>啟動
+### <a name="start"></a>Start
 
 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的開頭：
 
@@ -142,7 +142,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 這個範例程式碼會導致專案滾動到視圖的開頭。
 
-### <a name="center"></a>Center
+### <a name="center"></a>中心
 
 [`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition)成員表示該專案應該滾動到視圖的中心：
 
@@ -152,7 +152,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 這個範例程式碼會將專案滾動到視圖的中央。
 
-### <a name="end"></a>End - 結束
+### <a name="end"></a>結束
 
 [`ScrollToPosition.End`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的結尾：
 
@@ -217,6 +217,10 @@ CarouselView carouselView = new CarouselView
 
 根據預設，在[`CarouselView`](xref:Xamarin.Forms.CarouselView)上， [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)屬性會設定為 [`SnapPointsType.MandatorySingle`]，以確保滾動一次只會滾動一個專案。
 
+下列螢幕擷取畫面顯示貼齊已關閉的[`CarouselView`](xref:Xamarin.Forms.CarouselView) ：
+
+[![IOS 和 Android 上沒有貼齊點的 CarouselView 螢幕擷取畫面](scrolling-images/snappoints-none.png "不含貼齊點的 CarouselView")](scrolling-images/snappoints-none-large.png#lightbox "不含貼齊點的 CarouselView")
+
 ### <a name="snap-points-alignment"></a>貼齊點對齊
 
 [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)列舉會定義 `Start`、`Center`和 `End` 成員。
@@ -224,7 +228,7 @@ CarouselView carouselView = new CarouselView
 > [!IMPORTANT]
 > 只有當 [ [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) ] 屬性設定為 [`Mandatory`] 或 [`MandatorySingle`] 時，才會遵守[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)屬性的值。
 
-#### <a name="start"></a>啟動
+#### <a name="start"></a>Start
 
 `SnapPointsAlignment.Start` 成員表示貼齊點與專案的前置邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
 
@@ -254,9 +258,11 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-當使用者撥動起始水準滾動[`CarouselView`](xref:Xamarin.Forms.CarouselView)的滾動時，左側專案會與視圖的左邊對齊。
+當使用者撥動起始水準滾動[`CarouselView`](xref:Xamarin.Forms.CarouselView)的滾動時，左側專案會與視圖的左邊對齊：
 
-#### <a name="center"></a>Center
+[![在 iOS 和 Android 上具有開始貼齊點的 CarouselView 螢幕擷取畫面](scrolling-images/snappoints-start.png "具有開始貼齊點的 CarouselView")](scrolling-images/snappoints-start-large.png#lightbox "具有開始貼齊點的 CarouselView")
+
+#### <a name="center"></a>中心
 
 `SnapPointsAlignment.Center` 成員表示貼齊點對齊專案的中心。
 
@@ -288,9 +294,11 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-當使用者撥動起始水準滾動[`CarouselView`](xref:Xamarin.Forms.CarouselView)的滾動時，中心專案會對齊視圖的中心。
+當使用者撥動起始水準滾動[`CarouselView`](xref:Xamarin.Forms.CarouselView)的滾動時，中心專案會對齊視圖的中心：
 
-#### <a name="end"></a>End - 結束
+[![在 iOS 和 Android 上具有中心貼齊點的 CarouselView 螢幕擷取畫面](scrolling-images/snappoints-center.png "具有中心貼齊點的 CarouselView")](scrolling-images/snappoints-center-large.png#lightbox "具有中心貼齊點的 CarouselView")
+
+#### <a name="end"></a>結束
 
 `SnapPointsAlignment.End` 成員表示貼齊點與專案的尾端邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
 
@@ -321,6 +329,8 @@ CarouselView carouselView = new CarouselView
 ```
 
 當使用者撥動起始水準滾動[`CarouselView`](xref:Xamarin.Forms.CarouselView)的滾動時，右邊的專案會對齊視圖的右邊。
+
+[![在 iOS 和 Android 上具有結束貼齊點的 CarouselView 螢幕擷取畫面](scrolling-images/snappoints-end.png "具有結束貼齊點的 CarouselView")](scrolling-images/snappoints-end-large.png#lightbox "具有結束貼齊點的 CarouselView")
 
 ## <a name="related-links"></a>相關連結
 

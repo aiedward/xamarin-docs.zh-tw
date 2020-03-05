@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 104141d98cecb31cae17f4510f742387be4a3fb7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 297c7806ce8a880d65c38ef0e4672e41fee5acfe
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027245"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292262"
 ---
 # <a name="lollipop-features"></a>棒糖功能
 
@@ -44,7 +44,7 @@ Android 5.0 （棒糖）引進新的設計語言、*材質設計*，並支援新
 
 若要在 Xamarin 應用程式中使用新的 Android 5.0 功能，需要下列各項：
 
-- **&ndash; xamarin. android 4.20**或更新版本必須安裝，並以 Visual Studio 或 Visual Studio for Mac 設定。 
+- **&ndash; xamarin. android 4.20**或更新版本必須安裝，並以 Visual Studio 或 Visual Studio for Mac 設定。
 
 - **Android SDK** &ndash; Android 5.0 （API 21）或更新版本必須透過 Android SDK 管理員進行安裝。
 
@@ -105,7 +105,7 @@ Android 5.0 中的通知已大幅變更：
 
 - 音效**和震動的處理方式不同**&ndash; 通知音效，而 vibrations 現在由 `Notification.Builder` 處理，而不是 `Ringtone`、`MediaPlayer`和 `Vibrator`。
 
-- **新的色彩配置**&ndash; 根據材質主題，通知會以深色文字呈現，而非白色或非常淺背景。 此外，在通知圖示中的 Alpha 聲道可能會由 Android 修改以與系統色彩配置協調。 
+- **新的色彩配置**&ndash; 根據材質主題，通知會以深色文字呈現，而非白色或非常淺背景。 此外，在通知圖示中的 Alpha 聲道可能會由 Android 修改以與系統色彩配置協調。
 
 - **鎖屏通知**&ndash; 通知現在會出現在裝置的鎖屏上。
 
@@ -113,7 +113,7 @@ Android 5.0 中的通知已大幅變更：
 
 在大部分情況下，將現有的代理程式更新功能移植到 Android 5.0 需要執行下列步驟：
 
-1. 轉換您的程式碼，以使用 `Notification.Builder` （或 `NotificationsCompat.Builder`）來建立通知。 
+1. 轉換您的程式碼，以使用 `Notification.Builder` （或 `NotificationsCompat.Builder`）來建立通知。
 
 2. 確認現有的通知資產可以在新的 [材質主題色彩配置] 中看到。
 
@@ -133,7 +133,7 @@ Android 5.0 中的通知已大幅變更：
 
 Android 5.0 問候左側顯示的主畫面。 中央螢幕擷取畫面是應用程式清單的第一個畫面，右側的螢幕擷取畫面是 [**設定**] 畫面。 Google 的[材質設計](https://material.io/guidelines/material-design/introduction.html)規格說明了新材質主題概念背後的基礎設計規則。
 
-材質主題包含三個可在應用程式中使用的內建類型： `Theme.Material` 深色主題 （預設值）、`Theme.Material.Light` 主題 和 `Theme.Material.Light.DarkActionBar` 主題： 
+材質主題包含三個可在應用程式中使用的內建類型： `Theme.Material` 深色主題 （預設值）、`Theme.Material.Light` 主題 和 `Theme.Material.Light.DarkActionBar` 主題：
 
 [![深色、淺色和 DarkActionBar 主題的螢幕擷取畫面](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
@@ -165,7 +165,7 @@ Android 5.0 提供觸控式意見反應動畫、活動轉換動畫，以及檢�
 
 例如，下列螢幕擷取畫面的順序說明共用專案轉換：
 
-[共用專案轉換動畫的![框架（依框架螢幕擷取畫面）](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
+[共用專案轉換動畫的 ![框架（依框架螢幕擷取畫面）](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
 
 共用元素（caterpillar 的相片）是第一個活動中的數個視圖之一;它會放大為第二個活動的唯一顯示，因為第一個活動會轉換成第二個活動。
 
@@ -215,11 +215,11 @@ Android 5.0 提供觸控式意見反應動畫、活動轉換動畫，以及檢�
 
 *顯示效果*是變更半徑以顯示或隱藏視圖的裁剪圓形。 您可以藉由設定裁剪圓形的初始和最終半徑來控制此效果。 下列螢幕擷取畫面的順序說明從畫面中央顯示效果動畫：
 
-[顯示動畫的![框架螢幕擷取畫面](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
+[顯示動畫的 ![框架螢幕擷取畫面](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
 
 下一個順序說明從畫面左下角進行的顯示效果動畫：
 
-[裁剪動畫的![框架並排螢幕擷取畫面](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
+[裁剪動畫的 ![框架並排螢幕擷取畫面](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
 
 您可以反轉顯示動畫;也就是說，裁剪圓形可以縮小以隱藏視圖，而不是放大以顯示視圖。
 
@@ -243,7 +243,7 @@ Android 5.0 提供觸控式意見反應動畫、活動轉換動畫，以及檢�
 
 下列範例說明當其提高許可權屬性分別設定為2dp、4dp 和6dp 時，空的 `TextView` 控制項的陰影轉換：
 
-[progessively 較大視圖陰影的![螢幕擷取畫面](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
+[progessively 較大視圖陰影的 ![螢幕擷取畫面](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
 
 視圖陰影設定可以是靜態的（如上所示），也可以在動畫中用來讓視圖顯示，暫時高於視圖的背景。 您可以使用 `ViewPropertyAnimator` 類別，以動畫顯示高度的提升許可權。 View 的高度是其配置的總和 `elevation` 設定加上您可以透過 `ViewPropertyAnimator` 方法呼叫來設定的 `translationZ` 屬性。
 
@@ -331,7 +331,7 @@ Android 5.0 引進兩個新的 UI 小工具：
 
 `CardView` 是一個簡單的視圖，可模擬具有圓角的浮動卡片。 因為 `CardView` 具有內建的視圖陰影，所以可讓您輕鬆地在應用程式中加入視覺深度。 下列螢幕擷取畫面顯示三個文字導向的 `CardView`範例：
 
-[使用 RecyclerView 搭配以 CardView 為基礎的專案來![應用程式的範例螢幕擷取畫面](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
+[使用 RecyclerView 搭配以 CardView 為基礎的專案來 ![應用程式的範例螢幕擷取畫面](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 上述範例中的每張卡片都包含 `TextView`;背景色彩是透過 `cardBackgroundColor` 屬性來設定。
 
@@ -343,7 +343,7 @@ Android 5.0 中的通知系統已使用新的視覺效果格式和新功能大�
 
 ![未展開的 Android 5.0 通知範例](lollipop-images/expanded-notification-contracted.png)
 
-當通知中顯示大型圖示時（如上述範例所示），Android 5.0 會在大型圖示上以徽章呈現小圖示。 
+當通知中顯示大型圖示時（如上述範例所示），Android 5.0 會在大型圖示上以徽章呈現小圖示。
 
 在 Android 5.0 中，通知也可能會出現在裝置上的鎖屏。
 例如，以下是具有單一通知之鎖屏的範例螢幕擷取畫面：
@@ -352,7 +352,8 @@ Android 5.0 中的通知系統已使用新的視覺效果格式和新功能大�
 
 使用者可以在鎖屏上按兩下通知，以解除鎖定裝置，並跳至產生該通知的應用程式，或滑動以關閉通知。 通知會有新的*可見度*設定，可決定可以在鎖定上顯示多少內容。 使用者可以選擇是否允許在鎖屏通知中顯示機密內容。
 
-Android 5.0 引進新的高優先順序通知簡報格式，稱為「*列印頭*」。 標題通知會從畫面頂端向下滑動幾秒鐘，然後回頭回到畫面頂端的通知網底。 標頭通知讓系統 UI 可以將重要資訊放在使用者前方，而不會中斷目前執行的活動。 下列範例說明在應用程式頂端顯示的簡單標題通知：
+Android 5.0 引進新的高優先順序通知簡報格式，稱為「*列印頭*」。 標題通知會從畫面頂端向下滑動幾秒鐘，然後回頭回到畫面頂端的通知網底。 標頭通知讓系統 UI 可以將重要資訊放在使用者前方，而不會中斷目前執行的活動。
+下列範例說明在應用程式頂端顯示的簡單標題通知：
 
 [![的列印頭通知範例](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
@@ -377,7 +378,7 @@ Android 5.0 只有在具有高或最大優先順序設定時，才會以列印�
 
 除了上述的新外觀與風格功能以外，Android 5.0 還新增了新的 Api，可擴充現有多媒體、存放裝置和無線/連線功能的功能。 此外，Android 5.0 包含新的 Api，可提供新作業排程器功能的支援。
 
-### <a name="camera"></a>觀景窗
+### <a name="camera"></a>相機
 
 Android 5.0 提供數個新的 Api，以增強相機功能。 新的 `Android.Hardware.Camera2` 命名空間包含存取連線至 Android 裝置之個別相機裝置的功能。 此外，`Android.Hardware.Camera2` 會將每個相機裝置當做管線來建立模型：它會接受 capture 要求、捕獲影像，然後輸出結果。 這種方法可讓應用程式將多個捕獲要求佇列至相機裝置。
 
@@ -417,7 +418,7 @@ Android 5.0 引進新的 `Android.Media.MediaController` 類別，它會取代 `
 
 如需 Android 5.0 中新媒體播放控制功能的詳細資訊，請參閱[媒體](https://developer.android.com/about/versions/android-5.0.html#Media)。
 
-### <a name="storage"></a>存放裝置
+### <a name="storage"></a>儲存體
 
 Android 5.0 會更新儲存體存取架構，讓應用程式更容易使用目錄和檔：
 
@@ -441,13 +442,13 @@ Android 5.0 新增下列適用于無線和連線能力的 API 增強功能：
 
 如需 Android 5.0 中新無線和連線 Api 的詳細資訊，請參閱[無線和連線能力](https://developer.android.com/preview/api-overview.html#Wireless)。
 
-### <a name="job-scheduling"></a>作業排程
+### <a name="job-scheduling"></a>工作排程
 
 Android 5.0 引進新的 `JobScheduler` API，可協助使用者將特定工作排程為只有在裝置插入和收費時才執行，以將電池清空降至最低。 這項工作排程器功能也可以用來排定工作，以便在條件較適合該工作時執行，例如在裝置透過 Wi-fi 網路（而非計量付費網路）連線時下載大型檔案。
 
 如需 Android 5.0 中新作業排程 Api 的詳細資訊，請參閱[排程工作](https://developer.android.com/preview/api-overview.html#JobScheduler)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文概述適用于 Xamarin 的 Android 5.0 重要新功能。 Android 應用程式開發人員：
 
@@ -473,4 +474,3 @@ Android 5.0 引進新的 `JobScheduler` API，可協助使用者將特定工作�
 - [Android L 開發人員預覽](https://developer.android.com/preview/index.html)
 - [取得 Android SDK](https://developer.android.com/sdk/index.html#Other)
 - [材質設計](https://developer.android.com/preview/material/index.html)
-- [材質設計原則](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

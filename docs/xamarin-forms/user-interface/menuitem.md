@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/01/2019
-ms.openlocfilehash: 5bc36f03eac4ced7c19a0053dfea93dbe2ca4497
-ms.sourcegitcommit: 850dd7a3ed10eb3f66692e765d3e31438cff0288
+ms.openlocfilehash: b4690feb6444405d090a0b2bafd6c8615b2ffa8b
+ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72531018"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "78292184"
 ---
 # <a name="xamarinforms-menuitem"></a>Xamarin. 表單 MenuItem
 
@@ -22,22 +22,22 @@ ms.locfileid: "72531018"
 
 下列螢幕擷取畫面顯示 iOS 和 Android 上 `ListView` 內容功能表中的 `MenuItem` 物件：
 
-[![「IOS 和 Android 上的 MenuItems」](menuitem-images/menuitem-demo-cropped.png "IOS 和 Android 上的 MenuItems")](menuitem-images/menuitem-demo-full.png#lightbox "IOS 和 Android 上的 MenuItems full image")
+[![「IOS 和 Android 上的 MenuItems」](menuitem-images/menuitem-demo-cropped.png "IOS 和 Android 上的 MenuItems")](menuitem-images/menuitem-demo-full.png#lightbox "IOS 和 Android 上的 MenuItems 完整映射")
 
-@No__t_0 類別會定義下列屬性：
+`MenuItem` 類別會定義下列屬性：
 
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command)是一種 `ICommand`，可讓您將使用者動作（例如手指點按或按一下）系結至 viewmodel 上定義的命令。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是指定應傳遞至 `Command` 之參數的 `object`。
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)是指定應傳遞至 `Command`之參數的 `object`。
 * [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)是定義顯示圖示的 `ImageSource` 值。
 * [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive)是 `bool` 值，指出 `MenuItem` 是否會從清單中移除其相關聯的 UI 元素。
-* [`IsEnabled`](xref:Xamarin.Forms.MenuItem.IsEnabled)是 `bool` 值，可判斷此物件是否會回應使用者輸入。
+* [`IsEnabled`](xref:Xamarin.Forms.MenuItem.IsEnabled)是 `bool` 值，指出此物件是否會回應使用者輸入。
 * [`Text`](xref:Xamarin.Forms.MenuItem.Text)是指定顯示文字的 `string` 值。
 
 這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，因此 `MenuItem` 實例可以是資料系結的目標。
 
 ## <a name="create-a-menuitem"></a>建立 MenuItem
 
-`MenuItem` 物件可以在 `ListView` 物件專案的內容功能表中使用。 最常見的模式是在 `ViewCell` 實例中建立 `MenuItem` 物件，這會用來做為 `ListView`s `ItemTemplate` 的 `DataTemplate` 物件。 填入 `ListView` 物件時，會使用 `DataTemplate` 建立每個專案，並在啟用專案的操作功能表時公開 `MenuItem` 選項。
+`MenuItem` 物件可以在 `ListView` 物件專案的內容功能表中使用。 最常見的模式是在 `ViewCell` 實例中建立 `MenuItem` 物件，這會用來做為 `ListView`s `ItemTemplate`的 `DataTemplate` 物件。 填入 `ListView` 物件時，會使用 `DataTemplate`建立每個專案，並在啟用專案的操作功能表時公開 `MenuItem` 選項。
 
 下列範例顯示 `ListView` 物件內容中的 `MenuItem` 具現化：
 
@@ -127,7 +127,7 @@ void OnItemClicked(object sender, EventArgs e)
 
 ## <a name="define-menuitem-behavior-with-mvvm"></a>使用 MVVM 定義 MenuItem 行為
 
-@No__t_0 類別透過[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件和 `ICommand` 介面，支援模型視圖 VIEWMODEL （MVVM）模式。 下列 XAML 會顯示系結至 viewmodel 上所定義之命令的 `MenuItem` 實例：
+`MenuItem` 類別透過[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件和 `ICommand` 介面，支援模型視圖 VIEWMODEL （MVVM）模式。 下列 XAML 會顯示系結至 viewmodel 上所定義之命令的 `MenuItem` 實例：
 
 ```xaml
 <ContentPage.BindingContext>
@@ -196,6 +196,51 @@ public MenuItemXamlMvvmPage()
 ![「Android 上 MenuItem 圖示的螢幕擷取畫面」](menuitem-images/menuitem-android-icon.png "Android 上 MenuItem 圖示的螢幕擷取畫面")
 
 如需在 [表單] 中使用影像的詳細資訊，請參閱[xamarin 中的影像](~/xamarin-forms/user-interface/images.md)。
+
+## <a name="enable-or-disable-a-menuitem-at-runtime"></a>在執行時間啟用或停用 MenuItem
+
+若要啟用在執行時間停用 `MenuItem`，請將其 `Command` 屬性系結至 `ICommand` 的執行，並確保 `canExecute` 委派會適當地啟用和停用 `ICommand`。
+
+> [!IMPORTANT]
+> 使用 `Command` 屬性來啟用或停用 `MenuItem`時，請勿將 `IsEnabled` 屬性系結至另一個屬性。
+
+下列範例顯示的 `MenuItem`，其 `Command` 屬性系結至名為 `MyCommand`的 `ICommand`：
+
+```xaml
+<MenuItem Text="My menu item"
+          Command="{Binding MyCommand}" />
+```
+
+`ICommand` 的執行需要一個 `canExecute` 委派，它會傳回 `bool` 屬性的值，以啟用和停用 `MenuItem`：
+
+```csharp
+public class MyViewModel : INotifyPropertyChanged
+{
+    bool isMenuItemEnabled = false;
+    public bool IsMenuItemEnabled
+    {
+        get { return isMenuItemEnabled; }
+        set
+        {
+            isMenuItemEnabled = value;
+            MyCommand.ChangeCanExecute();
+        }
+    }
+
+    public Command MyCommand { get; private set; }
+
+    public ToolbarItemViewModel()
+    {
+        MyCommand = new Command(() =>
+        {
+            // Execute logic here
+        },
+        () => IsToolbarItemEnabled);
+    }
+}
+```
+
+在此範例中，除非設定 `IsMenuItemEnabled` 屬性，否則會停用 `MenuItem`。 發生這種情況時，會呼叫 `Command.ChangeCanExecute` 方法，以重新評估 `MyCommand` 的 `canExecute` 委派。
 
 ## <a name="cross-platform-context-menu-behavior"></a>跨平臺內容功能表行為
 

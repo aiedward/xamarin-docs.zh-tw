@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 3adabbac3f56747093aa8a3def85869a92d33600
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ef1a97df5648d0f120b58f6206f18f74a6f50f92
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010491"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292047"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>適用于 Xamarin iOS 應用程式的啟動畫面
 
@@ -28,7 +28,7 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 
 在 iOS 8 （和更新版本）中，開發人員可以建立特殊的整合分鏡腳本來提供啟動畫面，而不是使用一或多個靜態啟動映射。 在 iOS 設計工具中建立啟動分鏡腳本時，請使用大小類別和自動設定來定義不同顯示環境的不同版面配置。 藉由使用大小類別和自動設定，開發人員可以建立在所有裝置和顯示環境中都看起來良好的單一啟動畫面。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中，選取 [檔案] **> [新增方案**]，然後選擇 [**單一視圖應用程式**] 來建立新的專案： 
 
@@ -95,9 +95,9 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 
 13. 將變更儲存至分鏡腳本。 在模擬器或裝置上執行應用程式，啟動畫面會在應用程式啟動時顯示。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 建立新的專案。 在 Visual Studio 中，選取 檔案 **> 新增 > C#專案 > Visual > iPhone & IPad > iOS 應用程式（Xamarin）** ：
+1. 建立新專案。 在 Visual Studio 中，選取 檔案 **> 新增 > C#專案 > Visual > iPhone & IPad > iOS 應用程式（Xamarin）** ：
 
     ![已選取 iOS 應用程式（Xamarin）的 [新增專案] 視窗](launch-screens-images/launch01.w157.png)
 
@@ -187,7 +187,7 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 
 ## <a name="migrating-to-launch-screen-storyboards"></a>遷移以啟動畫面分鏡腳本
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 當更新現有的應用程式以針對其啟動畫面使用分鏡腳本時，請以滑鼠右鍵按一下 **方案總管**中的**專案名稱**，**然後選取** 新增 > **新**檔案 ...。選取  **iOS**  > **啟動畫面**，然後按一下 **新增** 按鈕：
 
@@ -204,7 +204,7 @@ _本文說明如何使用單一的整合分鏡腳本，針對所有 iOS 裝置�
 
     ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 以滑鼠右鍵按一下 **方案總管**中的專案名稱，然後**選取** **新增 > 新檔案 ...** ： 
 

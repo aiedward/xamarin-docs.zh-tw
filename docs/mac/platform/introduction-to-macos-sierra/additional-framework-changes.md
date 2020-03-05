@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 3db7e456d4321aa7eba415813f8c374b030da4ca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 44468d3f2d323065161c290f2df8e6f0e89d3def
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029870"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292405"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>其他 macOS Sierra 架構變更
 
@@ -101,7 +101,7 @@ MacOS Sierra 的基礎架構已進行下列增強功能：
 
 MacOS Sierra 的 GameKit 架構已進行下列增強功能：
 
-- **Game Center 應用程式**已被取代，並已從 macOS 中移除。 如果應用程式使用 GameKit，它_必須_提供自己的介面來顯示 GameKit 功能，例如排行榜等。 
+- **Game Center 應用程式**已被取代，並已從 macOS 中移除。 如果應用程式使用 GameKit，它_必須_提供自己的介面來顯示 GameKit 功能，例如排行榜等。
 - [GKCloudPlayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)類別已實作為僅限 iCloud 的新帳戶類型。
 - 新的[GKGameSession](https://developer.apple.com/reference/gamekit/gkgamesession)類別提供通用的解決方案來管理 Game Center 上的持續性資料存放區。 `GKGameSession` 會維護一份玩家清單，而應用程式會負責執行如何及何時儲存參與者日期、在玩家之間抓取或交換的形式。 在許多情況下，遊戲會話可以取代現有的回合型比對、即時符合或持續的遊戲儲存方法。
 
@@ -169,7 +169,7 @@ MacOS Sierra 的 SceneKit 架構已進行下列增強功能：
 - SceneKit 會針對所有著色器類型，以線性 RGB 色彩空間來解讀色彩元件值。
 - 由於 SceneKit 會讀取和調整材質影像中的色彩設定檔資訊，因此請針對所有影像使用資產目錄，以確保提供這項資訊。
 - 您可以藉由在應用程式的 `Info.plist`中指定 `SCNDisableLinearSpaceRendering` 和 `SCNDisableWideGamut` 金鑰，來停用線性色彩空間呈現和寬色彩。
-- 建立任意多邊形 primates （從檔案載入或以程式設計方式產生），以使用新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)類別來指定幾何。
+- 建立任意多邊形 primates （從檔案載入或以程式設計方式產生），以使用新的[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon?language=objc)類別來指定幾何。
 
 <a name="Security-Framework-Enhancements" />
 

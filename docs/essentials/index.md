@@ -4,13 +4,13 @@ description: 此文件連結到描述 Xamarin.Essentials 的各種指南，提�
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 08/27/2019
-ms.openlocfilehash: 2101d2e3948cb917e62725731c4895cc57282b3b
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
-ms.translationtype: HT
+ms.date: 02/26/2020
+ms.openlocfilehash: a0d1e397725ca0a60eb68fb0e6b989ee22c3f56a
+ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065137"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155260"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -18,7 +18,7 @@ Xamarin.Essentials 提供開發人員適用於其行動應用程式的跨平台 
 
 Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人員可以在 C# 中使用 Xamarin 存取全部項目。 Xamarin.Essentials 提供單一跨平台 API，能夠搭配任何 Xamarin.Forms、Android、iOS 或 UWP 應用程式使用，且無論使用者介面建立的方式為何，都能從共用的程式碼進行存取。
 
-## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[開始使用 Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentials"></a>[開始使用 Xamarin.Essentials](get-started.md?context=xamarin/xamarin-forms)
 
 遵循[快速入門指南](get-started.md)，將 **Xamarin.Essentials** NuGet 套件安裝到您現有或新的 Xamarin.Forms、Android、iOS 或 UWP 專案。
 
@@ -49,6 +49,7 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [地圖](maps.md?content=xamarin/xamarin-forms)：開啟地圖應用程式至特定位置。
 * [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms)：輕鬆快速地開啟瀏覽器至特定網站。
 * [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的方向。
+* [許可權](permissions.md?context=xamarin/xamarin-forms)–檢查並要求使用者的許可權。
 * [電話撥號程式](phone-dialer.md?context=xamarin/xamarin-forms)：開啟電話撥號程式。
 * [平台擴充](platform-extensions.md?context=xamarin/xamarin-forms) - 可轉換矩形、大小及點的 Helper 方法。
 * [偏好設定](preferences.md?context=xamarin/xamarin-forms)：輕鬆快速地新增永續性偏好設定。
@@ -60,14 +61,14 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [版本追蹤](version-tracking.md?context=xamarin/xamarin-forms)：追蹤應用程式版本與組建編號。
 * [震動](vibrate.md?context=xamarin/xamarin-forms)：讓裝置震動。
 
-## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[疑難排解](troubleshooting.md?context=xamarin/xamarin-forms)
+## <a name="troubleshooting"></a>[疑難排解](troubleshooting.md?context=xamarin/xamarin-forms)
 
 在您遇到問題時可尋找說明。
 
-## <a name="release-noteshttpsdocsmicrosoftcomxamarinessentialsrelease-notes"></a>[版本資訊](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+## <a name="release-notes"></a>[版本資訊](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 
 尋找每一版的 Xamarin.Essentials 完整版本資訊。
 
-## <a name="api-documentationxrefxamarinessentials"></a>[API 文件](xref:Xamarin.Essentials)
+## <a name="api-documentation"></a>[API 文件](xref:Xamarin.Essentials)
 
 瀏覽 API 文件以了解 Xamarin.Essentials 的每個功能。

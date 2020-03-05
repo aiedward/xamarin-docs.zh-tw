@@ -6,12 +6,12 @@ ms.assetid: 1E6825DF-1254-4FCB-B94D-ADD33D1B5309
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 6d420faf59d940bb111b5ecd326a29083cab012e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4f91e683b826657a9740de7e0b98137858130042
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029919"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292270"
 ---
 # <a name="using-jenkins-with-xamarin"></a>搭配 Xamarin 使用 Jenkins
 
@@ -99,7 +99,7 @@ Jenkins 執行之後，您可能會想要將它設定為登入專案，以便在
 
 ### <a name="installing-plugins"></a>安裝外掛程式
 
-當 Jenkins 安裝程式完成時，它會開始 Jenkins，並以 http://localhost:8080 的 URL 啟動網頁瀏覽器，如下列螢幕擷取畫面所示：
+當 Jenkins 安裝程式完成時，它會開始 Jenkins，並以 http://localhost:8080的 URL 啟動網頁瀏覽器，如下列螢幕擷取畫面所示：
 
 [![](jenkins-walkthrough-images/image10.png "8080, as shown in this screenshot")](jenkins-walkthrough-images/image10.png#lightbox)
 
@@ -142,7 +142,7 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 為了讓 macOS 工作站能夠與 TFS 伺服器互動， [Team Explorer Everywhere](https://docs.microsoft.com/azure/devops/java/download-eclipse-plug-in/)必須安裝在工作站上。 Team Explorer Everywhere 是 Microsoft 提供的一組工具，其中包含用於存取 TFS 的跨平臺命令列用戶端。 Team Explorer Everywhere 可以從 Microsoft 下載並以三個步驟安裝：
 
 1. 將封存檔案解壓縮到使用者帳戶可存取的目錄。 例如，您可能會將檔案解壓縮至 **~/tee**。
-2. 設定 shell 或系統路徑，使其包含在上述步驟一中解壓縮的檔案資料夾。 例如，套用至物件的
+2. 設定 shell 或系統路徑，使其包含在上述步驟一中解壓縮的檔案資料夾。 例如，
 
     ```
     echo export PATH~/tee/:$PATH' >> ~/.bash_profile
@@ -196,7 +196,7 @@ MSBuild 外掛程式必須設定為使用 **/Library/Frameworks/Mono.framework/C
 2. 在文字編輯器中開啟檔案 **~/.jenkins/config.xml** 。
 3. 將 `<usesecurity></usesecurity>` 元素的值從 `true` 變更為 `false`。
 4. 從檔案中刪除 `<authorizationstrategy></authorizationstrategy>` 和 `<securityrealm></securityrealm>` 元素。
-5. 重新開機 Jenkins。
+5. 重新啟動 Jenkins。
 
 ## <a name="setting-up-a-job"></a>設定作業
 
@@ -387,9 +387,9 @@ zipalign -f -v 4 $SIGNED_APK $FINAL_APK
 
 ### <a name="submitting-tests-to-test-cloud"></a>將測試提交至測試雲端
 
-您可以使用 shell 命令將自動化測試提交至測試雲端。 如需在 Xamarin Test Cloud 中設定測試回合的詳細資訊，請參閱本指南以瞭解如何使用[UITest](/appcenter/test-cloud/preparing-for-upload/uitest/)。
+您可以使用 shell 命令將自動化測試提交至測試雲端。 如需在 Xamarin Test Cloud 中設定測試回合的詳細資訊，請參閱[準備 Xamarin Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)和[準備 xamarin 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本指南中，我們在 macOS 上引進了 Jenkins 做為組建伺服器，並將其設定為編譯和準備要發行的 Xamarin 行動應用程式。 我們已在 macOS 電腦上安裝 Jenkins，並在其中包含數個外掛程式以支援組建程式。 我們已建立並設定將從 TFS 或 Git 提取程式碼的作業，然後將該程式碼編譯成發行準備就緒的應用程式。 我們也探討了兩種不同的方式來排程應執行作業的時間。
 

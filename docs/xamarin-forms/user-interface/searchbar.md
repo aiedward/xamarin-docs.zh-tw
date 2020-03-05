@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/04/2019
-ms.openlocfilehash: 8888f1615f250a908930cec9058a54bd6e7fedc2
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: a48a91b886cadcbe9dfa73a524b7bfa9fb2cf5fb
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490073"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "78292884"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms 搜尋列
 
@@ -31,12 +31,12 @@ ms.locfileid: "75490073"
 * [`FontSize`](xref:Xamarin.Forms.SearchBar.FontSize)可以是 `NamedSize` 列舉值，或代表跨平臺之特定字型大小的 `double` 值。
 * [`HorizontalTextAlignment`](xref:Xamarin.Forms.SearchBar.HorizontalTextAlignment)是一個 `TextAlignment` 列舉值，可定義查詢文字的水準對齊方式。
 * `VerticalTextAlignment` 是一個 `TextAlignment` 列舉值，可定義查詢文字的垂直對齊方式。
-* [`Placeholder`](xref:Xamarin.Forms.SearchBar.Placeholder)是定義預留位置文字的 `string`，例如「搜尋 ...」。
-* [`PlaceholderColor`](xref:Xamarin.Forms.SearchBar.PlaceholderColor)是定義預留位置文字色彩的 `Color`。
+* [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)是定義預留位置文字的 `string`，例如「搜尋 ...」。
+* [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor)是定義預留位置文字色彩的 `Color`。
 * [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand)是一種 `ICommand`，可讓您將使用者動作（例如手指點按或按一下）系結至 viewmodel 上定義的命令。
 * [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)是指定應傳遞至 `SearchCommand`之參數的 `object`。
-* [`Text`](xref:Xamarin.Forms.SearchBar.Text)是包含 `SearchBar`中查詢文字的 `string`。
-* [`TextColor`](xref:Xamarin.Forms.SearchBar.TextColor)是定義查詢文字色彩的 `Color`。
+* [`Text`](xref:Xamarin.Forms.InputView.Text)是包含 `SearchBar`中查詢文字的 `string`。
+* [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)是定義查詢文字色彩的 `Color`。
 
 這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示 `SearchBar` 可以自訂，而且是資料系結的目標。 在 `SearchBar` 上指定字型屬性，與在其他 Xamarin 上自訂文字是一致的。[表單文字控制項](~/xamarin-forms/user-interface/text/index.md)。 如需詳細資訊，請參閱「 [Xamarin 中](~/xamarin-forms/user-interface/text/fonts.md)的字型」。
 
@@ -94,7 +94,7 @@ SearchBar searchBar = new SearchBar
 藉由將事件處理常式附加至下列其中一個事件，可以使用 `SearchBar` 控制項來執行搜尋：
 
 * 當使用者按一下 [搜尋] 按鈕或按下 enter 鍵時，會呼叫[`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed) 。
-* 每當查詢方塊中的文字變更時，就會呼叫[`TextChanged`](xref:Xamarin.Forms.SearchBar.TextChanged) 。
+* 每當查詢方塊中的文字變更時，就會呼叫[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 。
 
 下列範例顯示附加至 XAML 中 `TextChanged` 事件的事件處理常式，並使用 `ListView` 顯示搜尋結果：
 

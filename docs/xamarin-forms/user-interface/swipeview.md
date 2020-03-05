@@ -6,13 +6,13 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: 4119a650c431013bb0c8e680de600ed4e73d0c93
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 02/11/2020
+ms.openlocfilehash: 6131287b200846a033e0c476d7039dfd774cab68
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490385"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "78291569"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin. Forms SwipeView
 
@@ -84,6 +84,49 @@ Forms.SetFlags("SwipeView_Experimental");
 </SwipeView>
 ```
 
+對等的 C# 程式碼為：
+
+```csharp
+// SwipeItems
+SwipeItem favoriteSwipeItem = new SwipeItem
+{
+    Text = "Favorite",
+    IconImageSource = "favorite.png",
+    BackgroundColor = Color.LightGreen
+};
+favoriteSwipeItem.Invoked += OnFavoriteSwipeItemInvoked;
+
+SwipeItem deleteSwipeItem = new SwipeItem
+{
+    Text = "Delete",
+    IconImageSource = "delete.png",
+    BackgroundColor = Color.LightPink
+};
+deleteSwipeItem.Invoked += OnDeleteSwipeItemInvoked;
+
+List<SwipeItem> swipeItems = new List<SwipeItem>() { favoriteSwipeItem, deleteSwipeItem };
+
+// SwipeView content
+Grid grid = new Grid
+{
+    HeightRequest = 60,
+    WidthRequest = 300,
+    BackgroundColor = Color.LightGray
+};
+grid.Children.Add(new Label
+{
+    Text = "Swipe right",
+    HorizontalOptions = LayoutOptions.Center,
+    VerticalOptions = LayoutOptions.Center
+});
+
+SwipeView swipeView = new SwipeView
+{
+    LeftItems = new SwipeItems(swipeItems),
+    Content = grid
+};
+```
+
 在此範例中，`SwipeView` 內容是包含[`Label`](xref:Xamarin.Forms.Label)的[`Grid`](xref:Xamarin.Forms.Grid) ：
 
 [![SwipeView 內容（在 iOS 和 Android 上）的螢幕擷取畫面](swipeview-images/swipeview-content.png "SwipeView 內容")](swipeview-images/swipeview-content-large.png#lightbox "SwipeView 內容")
@@ -136,14 +179,16 @@ Forms.SetFlags("SwipeView_Experimental");
 </SwipeView>
 ```
 
-每個 `SwipeItem` 的外觀都是由 `Text`、`IconImageSource`和 `BackgroundColor` 屬性所定義：
+每個 `SwipeItem` 的外觀都是由 `Text`、`IconImageSource`和 `BackgroundColor` 屬性的組合所定義：
 
 [![SwipeView 的螢幕擷取畫面： iOS 和 Android 上的滑動專案](swipeview-images/swipeview-swipeitems.png "SwipeView 滑動專案")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView 滑動專案")
 
 當您按下 `SwipeItem` 時，它的 `Invoked` 事件會引發，並由其註冊的事件處理常式來處理。 或者，`Command` 屬性可以設定為在叫用 `SwipeItem` 時將執行的 `ICommand` 實。
 
 > [!NOTE]
-> 除了將 [滑動專案] 定義為 `SwipeItem` 物件之外，也可以定義自訂的滑動專案視圖。 如需詳細資訊，請參閱[自訂滑動專案](#custom-swipe-items)。
+> 當 `SwipeItem` 的外觀僅使用 `Text` 或 `IconImageSource` 屬性來定義時，內容一律會置中。
+
+除了將 [滑動專案] 定義為 `SwipeItem` 物件之外，也可以定義自訂的滑動專案視圖。 如需詳細資訊，請參閱[自訂滑動專案](#custom-swipe-items)。
 
 ## <a name="swipe-direction"></a>滑動方向
 
@@ -288,4 +333,4 @@ Forms.SetFlags("SwipeView_Experimental");
 ## <a name="related-links"></a>相關連結
 
 - [SwipeView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
-- [Xamarin. 表單 MenuItem](~/xamarin-forms/user-interface/menuitem.md)
+- [Xamarin.Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md)

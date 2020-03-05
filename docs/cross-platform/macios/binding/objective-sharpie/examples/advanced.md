@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 23ca9c3fe36a65aefb17f10fd3e680937c36acc0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e36a66949c55a85d84cbbb17fa4d276e3af1eee
+ms.sourcegitcommit: acbaedbcb78bb5629d4a32e3b00f11540c93c216
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016259"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "78291744"
 ---
 # <a name="advanced-manual-real-world-example"></a>Advanced （手動）真實世界範例
 
@@ -19,7 +19,7 @@ ms.locfileid: "73016259"
 
 本節涵蓋更先進的系結方法，我們將使用 Apple 的 `xcodebuild` 工具先建立 POP 專案，然後手動推算目標 Sharpie 的輸入。 這基本上涵蓋了目標 Sharpie 在上一節中的作用。
 
-```
+```bash
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 因為 POP 程式庫有 Xcode 專案（`pop.xcodeproj`），所以我們可以直接使用 `xcodebuild` 來建立 POP。 這個進程可能會產生目標 Sharpie 可能需要剖析的標頭檔。 這就是在系結之前建立的原因很重要。 透過 `xcodebuild` 來建立時，請務必傳遞您要傳遞至目標 Sharpie 的相同 SDK 識別碼和架構（而且請記住，目標 Sharpie 3.0 通常可以為您執行此動作！）：
 
-```
+```bash
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 
 我們現在已準備好系結 POP。 我們知道，我們想要使用 `arm64` 架構建立 SDK `iphoneos8.1`，而且我們關心的標頭檔是在 POP git 結帳的 `build/Headers` 中。 如果我們查看 `build/Headers` 目錄，我們會看到一些標頭檔：
 
-```
+```bash
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 如果我們查看 `POP.h`，我們可以看到它是程式庫的主要最上層標頭檔，`#import`其他檔案。 因此，我們只需要將 `POP.h` 傳遞至目標 Sharpie，clang 就會在幕後執行其餘工作：
 
-```
+```bash
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64
@@ -122,7 +122,7 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-您會發現我們已將 `-scope build/Headers` 引數傳遞至目標 Sharpie。 因為 C 和目標 C 程式庫必須 `#import` 或 `#include` 其他的標頭檔，這些是程式庫的執行詳細資料，而不是您想要系結的 API，所以 `-scope` 引數會指示目標 Sharpie 忽略檔案中未定義的任何 API在 `-scope` 目錄中。
+您會發現我們已將 `-scope build/Headers` 引數傳遞至目標 Sharpie。 因為 C 和目標 C 程式庫必須 `#import` 或 `#include` 其他的標頭檔，這些是程式庫的執行詳細資料，而不是您想要系結的 API，所以 `-scope` 引數會指示目標 Sharpie 忽略 `-scope` 目錄中某處檔案中未定義的任何 API。
 
 您會發現，`-scope` 引數通常是對完全實作為程式庫而言是選擇性的，但是明確提供它並不會有任何傷害。
 

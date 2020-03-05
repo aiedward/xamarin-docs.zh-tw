@@ -6,12 +6,12 @@ ms.assetid: 107FBCEA-266B-4295-B7AA-40A881B82B7B
 author: davidortinau
 ms.author: daortin
 ms.date: 01/15/2016
-ms.openlocfilehash: 6fffad744fa2f60239b0c96f01ff241e2cad9252
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d951952103a94dfc60a8083a75998611b635cda9
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016065"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "78292474"
 ---
 # <a name="objective-sharpie-verify-attributes"></a>目標 Sharpie 驗證屬性
 
@@ -28,9 +28,9 @@ ms.locfileid: "73016065"
 
 提供給屬性的提示引數可以與下列檔交叉參考。 在完成系結之後，主控台上也會提供任何所產生 `[Verify]` 屬性的檔。
 
-|`[Verify]` 提示|說明|
+|`[Verify]` 提示|描述|
 |---|---|
-|InferredFromPreceedingTypedef|這個宣告的名稱是由原始機器碼中緊接在前 `typedef` 的一般慣例推斷而來。 請確認推斷的名稱是正確的，因為此慣例不明確。|
+|InferredFromPreceedingTypedef|這個宣告的名稱是由原始原生原始程式碼中緊接在 `typedef` 的一般慣例所推斷。 請確認推斷的名稱是正確的，因為此慣例不明確。|
 |ConstantsInterfaceAssociation|沒有任何欺騙的方法可以判斷外部變數宣告可能會產生關聯的目標 C 介面。 這些實例會系結為部分介面中的 `[Field]` 屬性，以產生更直覺化的 API，可能會完全排除 ' 常數 ' 介面。|
 |MethodToProperty|因為慣例（例如不接受任何參數並C#傳回值）（非 void 傳回），所以會將目標 C 方法系結為屬性。 通常這類方法應該系結為屬性以呈現更好 API，但有時可能會發生誤報，而且系結實際上應該是方法。|
 |StronglyTypedNSArray|原生 `NSArray*` 已系結為 `NSObject[]`。 您可能可以根據 API 檔中的預期設定（例如標頭檔中的批註）或透過測試檢查陣列內容，更強地在系結中輸入陣列。 例如，僅包含 NSNumber * instancescan 的 NSArray * 會系結為 `NSNumber[]`，而不是 `NSObject[]`。|

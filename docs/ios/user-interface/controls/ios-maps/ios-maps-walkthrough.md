@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 404483bb0c2c405fb810ebcd3a8007692219f522
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7e9010eb579f28e62b5f7ab72ac061e9898e7ecf
+ms.sourcegitcommit: a9b180651863cb7da31d3af14182fe3ad44796f7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022007"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "78291749"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注釋和重迭
 
@@ -80,7 +80,7 @@ ms.locfileid: "73022007"
 
     ```
 
-1. 建立 `MapDelegate` 的新實例，並將它指派給 `MKMapView`的 `Delegate`。 同樣地，我們很快就會 implcodeent `MapDelegate`：
+1. 建立 `MapDelegate` 的新實例，並將它指派給 `MKMapView`的 `Delegate`。 同樣地，我們將會很快地執行 `MapDelegate`：
 
     ```csharp
     mapDelegate = new MapDelegate ();
@@ -107,7 +107,7 @@ ms.locfileid: "73022007"
 
     和字串：
 
-    `Maps Walkthrough Docs Sample`
+    `Maps Walkthrough Docs Sample`第 1 課：建立 Windows Azure 儲存體物件{2}。
 
 ## <a name="conferenceannotationcs--a-class-for-custom-annotations"></a>ConferenceAnnotation.cs –自訂批註的類別
 
@@ -245,7 +245,7 @@ ms.locfileid: "73022007"
     }
     ```
 
-1. 若要在使用者藉由點擊地圖上的任何位置來取消選擇批註時隱藏影像，請依照下列方式執行 `DidSelectAnnotationView` 方法：
+1. 若要在使用者藉由點擊地圖上的任何位置來取消選擇批註時隱藏影像，請依照下列方式執行 `DidDeselectAnnotationView` 方法：
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -280,7 +280,7 @@ ms.locfileid: "73022007"
 
  [![](ios-maps-walkthrough-images/01-map-image.png "Tap on the annotation and the image of Austin is displayed")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本文中，我們探討了如何將批註新增至地圖，以及如何為指定的多邊形加入重迭。 我們也示範了如何將觸控支援新增至注釋，以在地圖上建立影像的動畫。
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2018
-ms.openlocfilehash: 252a104118b0419f33abdf7f522ad8fc358e3f76
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 395f7c477f1f2bdb608aec918f877f6d320d75cc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028705"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291683"
 ---
 # <a name="user-profile"></a>使用者設定檔
 
@@ -23,7 +23,7 @@ var uri = ContactsContract.Contacts.ContentUri;
 
 // Setup the "projection" (columns we want) for only the ID and display name:
 string[] projection = {
-    ContactsContract.Contacts.InterfaceConsts.Id, 
+    ContactsContract.Contacts.InterfaceConsts.Id,
     ContactsContract.Contacts.InterfaceConsts.DisplayName };
 
 // Use a CursorLoader to retrieve the user's contacts data:
@@ -47,7 +47,7 @@ if (cursor != null)
 
 從 Android 4 （API 層級14）開始，您可以透過 `ContactsContract` 提供者取得[ContactsContact 設定檔](xref:Android.Provider.ContactsContract.Profile)類別。 `ContactsContact.Profile` 提供裝置擁有者個人設定檔的存取權，其中包括連絡人資料，例如裝置擁有者的名稱和電話號碼。
 
-## <a name="required-permissions"></a>必要的使用權限
+## <a name="required-permissions"></a>必要權限
 
 若要讀取和寫入連絡人資料，應用程式必須分別要求 `READ_CONTACTS` 和 `WRITE_CONTACTS` 許可權。
 此外，若要讀取和編輯使用者設定檔，應用程式必須要求 `READ_PROFILE` 並 `WRITE_PROFILE` 許可權。
@@ -100,12 +100,10 @@ StartActivity (intent);
 
 執行上述程式碼時，會顯示使用者設定檔，如下列螢幕擷取畫面所示：
 
-[顯示 John Doe 使用者設定檔的設定檔![螢幕擷取畫面](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
+[顯示 John Doe 使用者設定檔的設定檔 ![螢幕擷取畫面](user-profile-images/01-profile-screen-sml.png)](user-profile-images/01-profile-screen.png#lightbox)
 
 使用使用者設定檔類似于與 Android 中的其他資料互動，並提供額外的裝置個人化層級。
 
 ## <a name="related-links"></a>相關連結
 
 - [ContactsProviderDemo （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/contactsproviderdemo)
-- [霜淇淋三明治簡介](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 平臺](https://developer.android.com/sdk/android-4.0.html)

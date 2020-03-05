@@ -1,5 +1,5 @@
 ---
-title: Firebase 雲端傳訊
+title: Firebase Cloud Messaging
 description: Firebase 雲端通訊（FCM）是一種服務，可在行動應用程式和伺服器應用程式之間進行訊息處理。 本文概述 FCM 的運作方式，並說明如何設定 Google 服務，讓您的應用程式可以使用 FCM。
 ms.prod: xamarin
 ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: c97c931445122cbaa613b87e3778f4dc9e92f4d0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4cf32bae208efa67acbb08f2e4525e4571b14b16
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023659"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291561"
 ---
-# <a name="firebase-cloud-messaging"></a>Firebase 雲端傳訊
+# <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 
 _Firebase 雲端通訊（FCM）是一種服務，可在行動應用程式和伺服器應用程式之間進行訊息處理。本文概述 FCM 的運作方式，並說明如何設定 Google 服務，讓您的應用程式可以使用 FCM。_
 
@@ -22,7 +22,7 @@ _Firebase 雲端通訊（FCM）是一種服務，可在行動應用程式和伺�
 
 本主題概要說明 Firebase 雲端通訊如何在您的 Xamarin Android 應用程式與應用程式伺服器之間路由傳送訊息，並提供逐步程式來取得認證，讓您的應用程式可以使用 FCM 服務。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Firebase 雲端通訊（FCM）是一種跨平臺服務，可處理伺服器應用程式與行動用戶端應用程式之間的訊息傳送、路由和佇列。 FCM 是 Google 雲端通訊（GCM）的後繼，它是建置於 Google Play Services 上。
 
@@ -34,7 +34,7 @@ Firebase 雲端通訊（FCM）是一種跨平臺服務，可處理伺服器應�
 
 ## <a name="fcm-in-action"></a>Firebase 雲端通訊的運作方式
 
-當下游訊息從應用程式伺服器傳送至用戶端應用程式時，應用程式伺服器會將訊息傳送至 Google 提供的*FCM 連線伺服器*;FCM 連線伺服器接著會將訊息轉送至執行用戶端應用程式的裝置。 訊息可以透過 HTTP 或[XMPP](https://developers.google.com/cloud-messaging/ccs) （可擴充訊息和目前狀態通訊協定）傳送。 因為用戶端應用程式不一定會連線或執行，所以 FCM 連線伺服器會將並儲存訊息，並在用戶端應用程式重新連接並可供使用時，將它們傳送給它們。 同樣地，如果應用程式伺服器無法使用，FCM 會將用戶端應用程式的上游訊息加入至應用程式伺服器。 如需 FCM 連接伺服器的詳細資訊，請參閱[關於 Firebase 雲端通訊伺服器](https://firebase.google.com/docs/cloud-messaging/server)。
+當下游訊息從應用程式伺服器傳送至用戶端應用程式時，應用程式伺服器會將訊息傳送至 Google 提供的*FCM 連線伺服器*;FCM 連線伺服器接著會將訊息轉送至執行用戶端應用程式的裝置。 訊息可以透過 HTTP 或[XMPP](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) （可擴充訊息和目前狀態通訊協定）傳送。 因為用戶端應用程式不一定會連線或執行，所以 FCM 連線伺服器會將並儲存訊息，並在用戶端應用程式重新連接並可供使用時，將它們傳送給它們。 同樣地，如果應用程式伺服器無法使用，FCM 會將用戶端應用程式的上游訊息加入至應用程式伺服器。 如需 FCM 連接伺服器的詳細資訊，請參閱[關於 Firebase 雲端通訊伺服器](https://firebase.google.com/docs/cloud-messaging/server)。
 
 FCM 會使用下列認證來識別應用程式伺服器和用戶端應用程式，並使用這些認證透過 FCM 來授權訊息交易：
 
@@ -141,7 +141,7 @@ FCM 會使用下列認證來識別應用程式伺服器和用戶端應用程式�
 
 如需如何將**google-服務 json**新增至應用程式專案以在 Android 上接收 FCM 推播通知訊息的詳細範例，請參閱[使用 FCM 的遠端通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)。
 
-## <a name="for-further-reading"></a>進一步閱讀
+## <a name="for-further-reading"></a>進階閱讀
 
 - Google 的[Firebase 雲端通訊](https://firebase.google.com/docs/cloud-messaging/)提供 Firebase 雲端通訊的主要功能、其運作方式說明，以及設定指示的總覽。
 
@@ -151,10 +151,10 @@ FCM 會使用下列認證來識別應用程式伺服器和用戶端應用程式�
 
 - [關於 FCM 訊息](https://firebase.google.com/docs/cloud-messaging/concept-options)描述可透過 Firebase 雲端通訊傳送的不同訊息類型。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文提供 Firebase 雲端通訊（FCM）的總覽。 它說明了各種認證，用來識別和授權應用程式伺服器與用戶端應用程式之間的訊息。 其中說明了註冊和下游訊息案例，並詳述向 FCM 註冊應用程式以使用 FCM 服務的步驟。
 
 ## <a name="related-links"></a>相關連結
 
-- [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/)
+- [Firebase 雲端傳訊](https://firebase.google.com/docs/cloud-messaging/)

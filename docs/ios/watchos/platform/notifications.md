@@ -1,129 +1,129 @@
 ---
-title: watchOS Notifications in Xamarin
-description: This document describes how to work with watchOS notifications in Xamarin. It discusses creating notification controllers, generating notifications, and testing notifications.
+title: 在 Xamarin 中 watchOS 通知
+description: 本檔說明如何在 Xamarin 中使用 watchOS 通知。 它討論如何建立通知控制器、產生通知和測試通知。
 ms.prod: xamarin
 ms.assetid: 0BC1306E-0713-4592-996E-7530CCF281E7
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 6be46d31ac2c16d02749519907d650588dbbcbe6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 85a55967446da5cf89e8ce19dadf88d0de16d80a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028220"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78291821"
 ---
-# <a name="watchos-notifications-in-xamarin"></a>watchOS Notifications in Xamarin
+# <a name="watchos-notifications-in-xamarin"></a>在 Xamarin 中 watchOS 通知
 
-Watch apps can receive notifications if the containing iOS app supports them. There is built-in notification handling so you do not *need* to add the additional notification support described below, however if you wish to customize notification behavior and appearance then read on.
+如果包含的 iOS 應用程式支援，監看應用程式可以接收通知。 有內建的通知處理，因此您不*需要*新增以下所述的其他通知支援，不過，如果您想要自訂通知行為和外觀，請繼續閱讀。
 
-Refer to the [iOS Notifications](~/ios/platform/user-notifications/deprecated/index.md) doc for more information on adding notification support to the iOS app in your solution.
+如需在解決方案中將通知支援新增至 iOS 應用程式的詳細資訊，請參閱[IOS 通知](~/ios/platform/user-notifications/deprecated/index.md)檔。
 
-## <a name="creating-notification-controllers"></a>Creating Notification Controllers
+## <a name="creating-notification-controllers"></a>建立通知控制器
 
-On the storyboard notifications controllers have a special type of segue triggering them. When you drag a new **Notification Interface Controller** onto a storyboard it will automatically have a segue attached:
+在分鏡腳本通知控制器上，有特殊類型的 segue 觸發它們。 當您將新的**通知介面控制器**拖曳至分鏡腳本時，它會自動附加 segue：
 
 ![](notifications-images/notification-storyboard1.png "A new Notification Interface Controller with a segue attached")
 
-When the notification segue is selected you can edit its properties:
+當您選取 [通知] segue 時，您可以編輯其屬性：
 
 ![](notifications-images/notification-storyboard2.png "The notification segue selected")
 
-After you have customized the controller it may look like this example from the WatchKitCatalog:
+自訂控制器之後，它可能會從 WatchKitCatalog 中看起來像這個範例：
 
 ![](notifications-images/notifications-segue.png "The Notification Properties")
 
-There are two types of notification:
+通知的類型有兩種：
 
-- **Short-look** - non-scrollable static view defined by the system.
+- 系統所定義的「**短期**不受滾動」靜態視圖。
 
-- **Long-look** - scrollable, customizable view defined by you! A simpler, static version and a more complex dynamic version can be specified.
+- 由您定義的**完整外觀**、可自訂的視圖！ 您可以指定較簡單的靜態版本和更複雜的動態版本。
 
-### <a name="short-look-notification-controller"></a>Short-Look Notification Controller
+### <a name="short-look-notification-controller"></a>簡短外觀通知控制器
 
-The short-look UI consists of just the app icon, app name and the notification title string.
+簡短外觀 UI 只包含應用程式圖示、應用程式名稱和通知標題字串。
 
-If the user does not ignore the notification, the system will automatically switch to a long-look notification that provides more information.
+如果使用者不忽略通知，系統將會自動切換至提供詳細資訊的長時間查看通知。
 
-### <a name="long-look-notification-controller"></a>Long-Look Notification Controller
+### <a name="long-look-notification-controller"></a>長時間查看通知控制器
 
-The OS decides whether to display the static or dynamic view based on a number of factors. You must provide a static interface, and can optionally also include a dynamic interface for notifications.
+OS 會決定是否要根據數個因素來顯示靜態或動態視圖。 您必須提供靜態介面，而且也可以選擇性地包含通知的動態介面。
 
-#### <a name="static"></a>Static
+#### <a name="static"></a>靜態
 
-The static view should be simple and quick to display.
+靜態視圖應該簡單且快速地顯示。
 
 ![](notifications-images/notification-static.png "The static view")
 
 #### <a name="dynamic"></a>動態
 
-The dynamic view can display more data and provide more interactivity.
+動態視圖可以顯示更多的資料，並提供更多的互動性。
 
 ![](notifications-images/notification-dynamic.png "The dynamic view")
 
-## <a name="generating-notifications"></a>Generating Notifications
+## <a name="generating-notifications"></a>產生通知
 
-Notifications can come from a remote server ([Apple Push Notifications Service](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html), or APNS) or can be generated locally in the iOS app.
+通知可以來自遠端伺服器，也可以在 iOS 應用程式的本機上產生。
 
-Refer to the [iOS Notifications walkthrough](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md) for an example of how to generate local notifications, and the [WatchNotifications sample](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications) for a working example.
+如需如何產生本機通知的範例，請參閱[IOS 通知逐步](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)解說。
 
-Local notifications must have the `AlertTitle` set to be displayed on the Apple Watch - the `AlertTitle` string is displayed in the Short-Look interface. Both the `AlertTitle` and `AlertBody` are displayed in the notifications list; and the `AlertBody` is displayed in the Long-Look interface.
+本機通知必須將 `AlertTitle` 設定為要顯示在 Apple Watch 上，`AlertTitle` 字串會顯示在簡短外觀的介面中。 `AlertTitle` 和 `AlertBody` 都會顯示在 通知 清單中;而 `AlertBody` 會顯示在「長外觀」介面中。
 
-This screenshot shows the `AlertTitle` being displayed in the notifications list, and the `AlertBody` displayed in the Long-Look interface (using the [sample code](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)):
+此螢幕擷取畫面顯示 [通知] 清單中顯示的 `AlertTitle`，以及顯示在 [長期外觀] 介面中的 `AlertBody`：
 
-![](notifications-images/watch-notificationslist-sml.png "This screenshot shows the AlertTitle being displayed in the notifications list") ![](notifications-images/watch-notificationcontroller-sml.png "The AlertBody displayed in the Long-Look interface")
+![](notifications-images/watch-notificationslist-sml.png "此螢幕擷取畫面顯示 [通知] 清單中顯示的 AlertTitle") ![](notifications-images/watch-notificationcontroller-sml.png "AlertBody 會顯示在「長外觀」介面中")
 
-## <a name="testing-notifications"></a>Testing Notifications
+## <a name="testing-notifications"></a>測試通知
 
-Notifications (both local and remote) can only be properly tested on a device, however they can be simulated using a **.json** file in the iOS Simulator.
+通知（本機和遠端）只能在裝置上適當地測試，不過，您可以使用 iOS 模擬器中的**json**檔案來模擬它們。
 
-### <a name="testing-on-apple-watch"></a>Testing on Apple Watch
+### <a name="testing-on-apple-watch"></a>在 Apple Watch 上測試
 
-When testing notifications on an Apple Watch, remember that [Apple's documentation](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html) states the following:
+在 Apple Watch 上測試通知時，請記住[Apple 的檔](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)會指出下列事項：
 
-> When one of your app’s local or remote notifications arrives on the user’s iPhone, iOS decides whether to display that notification on the iPhone or on the Apple Watch.
+> 當您的其中一個應用程式本機或遠端通知抵達使用者的 iPhone 時，iOS 會決定是否要在 iPhone 或 Apple Watch 上顯示該通知。
 
-This is alluding to the fact that iOS decides whether a notification will appear on the iPhone or on the Watch. If the paired iPhone is active when a notification is received, the notification is likely to be displayed on the iPhone and *not* routed to the Watch.
+這 alluding 于 iOS 決定通知是否會出現在 iPhone 或 Watch 上。 如果在收到通知時，配對的 iPhone 是作用中，則通知可能會顯示在 iPhone 上，而*不*會路由傳送至監看式。
 
-To ensure the notification appears on the watch, turn off the iPhone screen (pressing the power button once) or let it go to sleep. If the paired Watch is in range, has power and is being worn on your wrist, the notification will be routed there and appear on the Watch (accompanied by a subtle ).
+若要確保通知會出現在監看上，請關閉 iPhone 畫面（按電源按鈕一次），或讓它進入睡眠狀態。 如果配對的監看在範圍內，有電力並在手腕上磨損，則會在該處路由傳送通知，並顯示在監看式上（附有微妙）。
 
-### <a name="testing-on-the-ios-simulator"></a>Testing on the iOS Simulator
+### <a name="testing-on-the-ios-simulator"></a>在 iOS 模擬器上進行測試
 
-You *must* provide a test JSON payload when testing notification mode in the iOS Simulator. Set the path in the **Custom Execution Arguments** window in Visual Studio for Mac.
+在 iOS 模擬器中測試通知模式時，您*必須*提供測試 JSON 承載。 在 Visual Studio for Mac 的 [**自訂執行引數**] 視窗中設定路徑。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac will display additional options when a watch extension is set as the **Startup project**.
-Right-click on the watch extension project and choose **Run With > Custom Parameters...** :
+當監看式擴充功能設定為**啟始專案**時，Visual Studio for Mac 將會顯示其他選項。
+以滑鼠右鍵按一下 [監看式] 延伸模組專案，然後選擇 [以 **> 自訂參數執行**]：
 
 [![](notifications-images/runwith-customparams-sml.png "Running with Custom Properties")](notifications-images/runwith-customparams.png#lightbox)
 
-This opens the **Execution Arguments** window which contains a **WatchKit** tab. Select **Notification** and provide a JSON payload, then press **Execute** to start the watch app in the simulator:
+這會開啟 [**執行引數**] 視窗，其中包含 [ **WatchKit** ] 索引標籤。選取 [**通知**] 並提供 JSON 承載，然後按 [**執行**] 以啟動模擬器中的監看式應用程式：
 
 [![](notifications-images/runwith-execargs-sml.png "Select Notification Payload Default")](notifications-images/runwith-execargs.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-To set the test notification payload in Visual Studio right-click on the watch extension to edit the **Project properties**. Go to the **Debug** section and select a notifications JSON file from the list (it will automatically list all the JSON files included in the project).
+若要在中設定測試通知承載 Visual Studio 以滑鼠右鍵按一下 [監看式] 延伸模組，以編輯**專案屬性**。 移至 [ **Debug** ] 區段，並從清單中選取通知 json 檔案（它會自動列出專案中包含的所有 json 檔案）。
 
 [![](notifications-images/runwith-execargs-sml-vs.png "Select a notifications JSON file")](notifications-images/runwith-execargs-vs.png#lightbox)
 
-When the watch extension is the **Startup Project**, Visual Studio will display additional options as shown below. Choose one of the **Notification** options to start the watch app in **Notification** mode (using the JSON file selected in the properties window):
+當 [監看式] 延伸模組是**啟始專案**時，Visual Studio 會顯示其他選項，如下所示。 選擇其中一個**通知**選項，以**通知**模式啟動監看式應用程式（使用 [屬性] 視窗中選取的 JSON 檔案）：
 
 ![](notifications-images/runwith-vs.png "The Device menu")
 
 -----
 
-The default notification controller looks like this when testing on the simulator with the default payload JSON file:
+使用預設承載 JSON 檔案在模擬器上進行測試時，預設通知控制器看起來會像這樣：
 
 ![](notifications-images/notification-debug-sml.png "An example notification")
 
-It is also possible to use the [command line](~/ios/watchos/troubleshooting.md#command_line) to start the iOS Simulator.
+您也可以使用[命令列](~/ios/watchos/troubleshooting.md#command_line)來啟動 iOS 模擬器。
 
-### <a name="example-notification-payload"></a>Example Notification Payload
+### <a name="example-notification-payload"></a>範例通知承載
 
-In the [Watch Kit Catalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) sample there is an example payload JSON file **NotificationPayload.json** (listed below).
+在「[監看套件目錄](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)」範例中，有一個範例承載 JSON 檔案**NotificationPayload** （如下所示）。
 
 ```json
 {
@@ -146,6 +146,5 @@ In the [Watch Kit Catalog](https://docs.microsoft.com/samples/xamarin/ios-sample
 
 ## <a name="related-links"></a>相關連結
 
-- [WatchNotifications (local notifications) (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-watchnotifications)
-- [WatchKitCatalog (sample)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
-- [Apple's Watch Kit Notifications docs](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)
+- [WatchKitCatalog （範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [Apple 的監看套件通知檔](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)
