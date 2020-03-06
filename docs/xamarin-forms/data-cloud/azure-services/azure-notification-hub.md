@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/27/2019
-ms.openlocfilehash: 8b633481d74810bc4d86d68f8c36d55980092510
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 778f56ec844e2802c1e1bc783824d55218678761
+ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292057"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78337297"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中樞和 Xamarin 來傳送和接收推播通知
 
@@ -518,6 +518,7 @@ Azure 通知中樞可讓您檢查應用程式是否可以接收測試訊息。 [
 1. 測試應用程式能否接收推播通知時，您必須使用實體裝置。 Android 和 iOS 虛擬裝置可能未正確設定，而無法接收推播通知。
 1. Android 應用程式範例會在發出 Firebase token 時，註冊其權杖和範本一次。 在測試期間，您可能需要要求新的權杖，並使用 Azure 通知中樞重新註冊。 強制執行此工作的最佳方式是清理您的專案、刪除 `bin` 和 `obj` 資料夾，並從裝置卸載應用程式，然後再重建和部署。
 1. 推播通知流程的許多部分會以非同步方式執行。 這可能會導致中斷點未被叫用，或未依預期的順序叫用。 使用裝置或 debug 記錄來追蹤執行，而不中斷應用程式流程。 使用 `Constants`中指定的 `DebugTag` 來篩選 Android 裝置記錄。
+1. 當 Visual Studio 中的偵錯工具停止時，應用程式會強制關閉。 任何在偵錯工具中啟動的訊息接收者或其他服務都會關閉，而且不會回應訊息事件。
 
 ## <a name="create-a-notification-dispatcher"></a>建立通知發送器
 
