@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: a0d1e397725ca0a60eb68fb0e6b989ee22c3f56a
-ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
+ms.openlocfilehash: 42cdfe6c54354f1616606c9b3a40de78446c5c39
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155260"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910737"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -28,6 +28,7 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 
 * [加速計](accelerometer.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的加速度資料。
 * [應用程式資訊](app-information.md?context=xamarin/xamarin-forms)：了解應用程式的相關資訊。
+* [應用程式主題](app-theme.md?context=xamarin/xamarin-forms)–偵測應用程式所要求的目前主題。
 * [氣壓計](barometer.md?context=xamarin/xamarin-forms)：監視氣壓計的壓力變化。
 * [電池](battery.md?context=xamarin/xamarin-forms)：簡單地偵測電池電量、來源和狀態。
 * [剪貼簿](clipboard.md?context=xamarin/xamarin-forms)：輕鬆快速地設定或讀取剪貼簿上的文字。

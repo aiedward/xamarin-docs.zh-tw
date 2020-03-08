@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
 ms.openlocfilehash: 197c48a7a3486d7161d351a6b06101daaa389256
-ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74556166"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912680"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. 表單地圖釘選
 

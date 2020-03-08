@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
-ms.date: 03/22/2019
-ms.openlocfilehash: 59f7ce953d7cf957529f5b22b2dfb549c0105f4a
-ms.sourcegitcommit: eea5b096ace7551ba64a470d0b78ccc56b6ef418
+ms.date: 03/06/2020
+ms.openlocfilehash: 883a6c3edc0c4e0bf6eac92b1766ec18ac114f8c
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279908"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911543"
 ---
 # <a name="build-process"></a>建置流程
 
@@ -61,13 +61,45 @@ Xamarin.Android 建置程序是以 MSBuild 作為基礎，而這也是 Visual St
 
 - **組建**&ndash; 會建立封裝。
 
+- **BuildAndStartAotProfiling** &ndash; 會使用內嵌的 AOT Profiler 來建立應用程式、將 profiler TCP 通訊埠設定為 `$(AndroidAotProfilerPort)`，並啟動預設活動。
+
+  預設 TCP 通訊埠為 `9999`。
+
+  已在 Xamarin. Android 10.2 中新增。
+
 - [**清除**] &ndash; 會移除由組建進程所產生的所有檔案。
+
+- **FinishAotProfiling** &ndash; 會透過 TCP 埠 `$(AndroidAotProfilerPort)` 從裝置或模擬器收集 AOT profiler 資料，並將它們寫入 `$(AndroidAotCustomProfilePath)`。
+
+  埠和自訂設定檔的預設值為 `9999` 和 `custom.aprof`。
+
+  若要將其他選項傳遞至 `aprofutil`，請在 `$(AProfUtilExtraOptions)` 屬性中加以設定。
+
+  這相當於：
+
+  ```
+  aprofutil $(AProfUtilExtraOptions) -s -v -f -p $(AndroidAotProfilerPort) -o "$(AndroidAotCustomProfilePath)"
+  ```
+
+  已在 Xamarin. Android 10.2 中新增。
 
 - **安裝**&ndash; 會將套件安裝到預設裝置或虛擬裝置上。
 
-- **卸載**&ndash; 從預設裝置或虛擬裝置卸載套件。
-
 - **SignAndroidPackage** &ndash; 會建立並簽署封裝（`.apk`）。 與 `/p:Configuration=Release` 搭配使用來產生獨立的「發行」套件。
+
+- **StartAndroidActivity** &ndash; 會啟動裝置上的預設活動或執行中的模擬器。 若要啟動不同的活動，請將 `$(AndroidLaunchActivity)` 屬性設定為活動名稱。
+
+  這相當於 `adb shell am start @PACKAGE_NAME@/$(AndroidLaunchActivity)`。
+
+  已在 Xamarin. Android 10.2 中新增。
+
+- **StopAndroidPackage** &ndash; 會完全停止裝置上的應用程式封裝或執行中的模擬器。
+
+  這相當於 `adb shell am force-stop @PACKAGE_NAME@`。
+
+  已在 Xamarin. Android 10.2 中新增。
+
+- **卸載**&ndash; 從預設裝置或虛擬裝置卸載套件。
 
 - **UpdateAndroidResources** &ndash; 更新 `Resource.designer.cs` 檔案。 當專案新增資源時，IDE 通常會呼叫此目標。
 
@@ -133,9 +165,13 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 封裝屬性可控制 Android 套件的建立，並可供 `Install` 和 `SignAndroidPackage` 目標使用。
 在封裝發行應用程式時，也會與[簽署屬性](#Signing_Properties)關。
 
+- **AndroidAotProfiles** &ndash; 字串屬性，可讓開發人員從命令列新增 AOT 設定檔。 它是以分號或逗號分隔的絕對路徑清單。
+
+  已在 Xamarin. Android 10.1 中新增。
+
 - **AndroidApkDigestAlgorithm** &ndash; 字串值，指定要搭配 `jarsigner -digestalg`使用的摘要演算法。
 
-  APK 的預設值為 `SHA1`，應用程式套件組合的預設值為 `SHA-256`。
+  預設值是 `SHA-256`。 在 Xamarin 10.0 和更早版本中，預設值為 `SHA1`。
 
   Xamarin.Android 9.4 已新增此支援。
 
@@ -145,7 +181,7 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 - **AndroidApkSigningAlgorithm** &ndash; 字串值，指定要搭配 `jarsigner -sigalg`使用的簽署演算法。
 
-  APK 的預設值為 `md5withRSA`，應用程式套件組合的預設值為 `SHA256withRSA`。
+  預設值是 `SHA256withRSA`。 在 Xamarin 10.0 和更早版本中，預設值為 `md5withRSA`。
 
   已在 Xamarin.Android 8.2 中新增。
 
@@ -159,11 +195,45 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
   已在 Xamarin.Android 6.1 中新增。
 
+- **AndroidBinUtilsPath** &ndash; 包含 Android [binutils][binutils]的目錄路徑，例如 `ld`、原生連結器，以及 `as`原生組合語言。 這些工具是 Android NDK 的一部分，而且也包含在 Xamarin 安裝中。
+
+  預設值是 `$(MonoAndroidBinDirectory)\ndk\`。
+
+  已在 Xamarin. Android 10.0 中新增。
+
+  [binutils]: https://android.googlesource.com/toolchain/binutils/
+
+- **AndroidBoundExceptionType** &ndash; 字串值，指定當 Xamarin 提供的類型根據 JAVA 類型（例如 `Android.Runtime.InputStreamInvoker` 和 `System.IO.Stream`，或 `Android.Runtime.JavaDictionary` 和 `System.Collections.IDictionary`）來執行 .net 類型或介面時，應如何傳播例外狀況。
+
+  - `Java`：原始 JAVA 例外狀況類型會依原本方式傳播。
+
+    這表示 `InputStreamInvoker` 不會正確地執行 `System.IO.Stream` API，因為 `Java.IO.IOException` 可能會從 `Stream.Read()` 擲回，而不是 `System.IO.IOException`。
+
+    這是10.2 之前所有版本中的例外狀況傳播行為。
+
+    這是 Xamarin. Android 10.2 中的預設值。
+
+  - `System`：攔截原始 JAVA 例外狀況類型，並以適當的 .NET 例外狀況類型包裝。
+
+    這表示 `InputStreamInvoker` 正確地執行 `System.IO.Stream`，而 `Stream.Read()`*不*會擲回 `Java.IO.IOException` 實例。  （它可以改為擲回具有 `Java.IO.IOException` 做為 `Exception.InnerException` 值的 `System.IO.IOException`）。
+
+    這會成為 Xamarin. Android 11.0 中的預設值。
+
+  已在 Xamarin. Android 10.2 中新增。
+
 - **AndroidBuildApplicationPackage** &ndash; 布林值，指出是否要建立及簽署封裝（. apk）。 將此值設定為 `True` 就等於使用 [SignAndroidPackage](#Build_Targets) 建置目標。
 
   在 Xamarin.Android 7.1 之後已新增這個屬性的支援。
 
   這個屬性的預設值是 `False`。
+
+- **AndroidBundleConfigurationFile** &ndash; 指定在建立 Android 應用程式套件組合時，用來做為 `bundletool`[設定檔][bundle-config-format]的檔案名。 這個檔案會控制如何從組合產生 Apk 的某些層面，例如，將組合分割成產生 Apk 的維度。 請注意，Xamarin 會自動設定其中部分設定，包括要保留未壓縮的副檔名清單。
+
+  只有當 `$(AndroidPackageFormat)` 設定為 `aab`時，這個屬性才會相關。
+
+  已在 Xamarin. Android 10.2 中新增。
+
+  [bundle-config-format]: https://developer.android.com/studio/build/building-cmdline#bundleconfig
 
 - **AndroidDexTool** &ndash; 具有有效值 `dx` 或 `d8`的列舉樣式屬性。 指出在 Xamarin.Android 建置程序期間使用哪一個 Android [dex][dex] 編譯器。
   目前預設為 `dx`。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
@@ -231,6 +301,14 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   在 Xamarin.Android 8.1 中已新增這個屬性的支援。
 
   這個屬性的預設值是 `True`。
+
+- **AndroidExtraAotOptions** &ndash; 字串屬性，可在 `Aot` 工作期間，針對 `$(AndroidEnableProfiledAot)` 或 `$(AotAssemblies)` 設定為 `true`的專案，將其他選項傳遞至 Mono 編譯器。 呼叫 Mono 交叉編譯器時，會將屬性的字串值新增至回應檔。
+
+  一般而言，此屬性應保留空白，但在某些特殊情況下，它可能會提供有用的彈性。
+
+  請注意，此屬性不同于相關的 `$(AndroidAotAdditionalArguments)` 屬性。 該屬性會將以逗號分隔的引數放入 Mono 編譯器的 `--aot` 選項中。 `$(AndroidExtraAotOptions)` 會改為將完整獨立空格分隔的選項（例如 `--verbose` 或 `--debug`）傳遞給編譯器。
+
+  已在 Xamarin. Android 10.2 中新增。
 
 - **AndroidFastDeploymentType** &ndash; 一個以 `:` （冒號）分隔的值清單，以控制當 `$(EmbedAssembliesIntoApk)` MSBuild 屬性 `False`時，可以將哪些類型部署至目標裝置上的[快速部署目錄](#Fast_Deployment)。 資源如果使用快速部署，則不會內嵌到所產生的 `.apk`，從而可加快部署時間 （快速部署的越多，需要重建 `.apk` 的頻率就越低，安裝程式也會更快）。有效的值包括：
 
@@ -349,6 +427,16 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   建置期間會合併任何其他必要值以產生實際的 `AndroidManifest.xml`。
   `$(AndroidManifest)` 必須在 `/manifest/@package` 屬性中包含套件名稱。
 
+- **AndroidManifestMerger** &ndash; 指定合併*androidmanifest.xml*的執行。 這是列舉樣式屬性，其中 `legacy` 會選取原始C#的執行，並 `manifestmerger.jar` 選取 Google 的 JAVA 執行。
+
+  預設值目前 `legacy`。 這會在未來的版本中變更為 `manifestmerger.jar`，以配合 Android Studio 的行為。
+
+  Google 的合併可支援[Android 檔][manifest-merger]中所述的 `xmlns:tools="http://schemas.android.com/tools"`。
+
+  在 Xamarin 中引進。 Android 10。2
+
+  [manifest-merger]: https://developer.android.com/studio/build/manifest-merge
+
 - **Androidmultidexclasslistextraargs 給**&ndash; 字串屬性，可讓開發人員在產生 `multidex.keep` 檔案時，將其他引數傳遞至 `com.android.multidex.MainDexListBuilder`。
 
   其中一個特定情況是您在 `dx` 編譯期間收到下列錯誤時。
@@ -379,6 +467,14 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   [apk]: https://en.wikipedia.org/wiki/Android_application_package
   [bundle]: https://developer.android.com/platform/technology/app-bundle
 
+- **AndroidPackageNamingPolicy** &ndash; 列舉樣式屬性，以指定所產生 java 原始程式碼的 java 封裝名稱。
+
+  在 Xamarin. Android 10.2 和更新版本中，唯一支援的值為 `LowercaseCrc64`。
+
+  在 Xamarin 10.1 中，也提供轉換 `LowercaseMD5` 值，允許切換回原始的 JAVA 套件名稱樣式，如同在 Xamarin. Android 10.0 和更早版本中所使用。 此選項已在 Xamarin. Android 10.2 中移除，以改善與已強制執行 FIPS 合規性之組建環境的相容性。
+
+  已在 Xamarin. Android 10.1 中新增。
+
 - **AndroidR8JarPath** &ndash; 要與 r8 dex 和壓縮工具搭配使用之 `r8.jar` 的路徑。 預設為 Xamarin.Android 安裝中的路徑。 如需進一步的詳細資訊，請參閱有關 [D8 和 R8][d8-r8] 的文件。
 
 - **AndroidSdkBuildToolsVersion** &ndash; Android SDK build 工具套件提供**aapt**和**zipalign**工具，還有其他工具。 您可以同時安裝建置工具套件的多個不同版本。 如果「慣用的」建置工具版本存在，可藉由檢查及使用該版本來完成選擇要封裝的建置工具套件，如果「慣用的」版本不存在，則會使用已安裝的建置工具套件中版本最高者。
@@ -408,9 +504,11 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
     這對應到 Visual Studio 屬性頁中的 [原生 TLS 1.2+] 設定。
 
-  - `legacy`：在網路互動中使用過往的受控 SSL 實作。 這不支援 TLS 1.2。
+  - `legacy`：在 Xamarin 10.1 和更早版本中，請使用適用于網路互動的歷史受控 SSL 執行。 這不支援 TLS 1.2。
 
     這對應到 Visual Studio 屬性頁中的 [原生 TLS 1.0] 設定。
+
+    在 Xamarin. Android 10.2 和更新版本中，會忽略此值，並使用 `btls` 設定。
 
   - `default`：在 Xamarin Android 專案中不太可能使用此值。 建議改用對應到 Visual Studio 屬性頁中之 [預設] 設定的空字串值。
 
@@ -423,6 +521,12 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 - **AndroidUseApkSigner** &ndash; bool 屬性，可讓開發人員使用 `apksigner` 工具，而不是 `jarsigner`。
 
     已在 Xamarin.Android 8.2 中新增。
+
+- **AndroidUseDefaultAotProfile** &ndash; bool 屬性，可讓開發人員隱藏預設 AOT 設定檔的使用方式。
+
+  若要隱藏預設的 AOT 設定檔，請將屬性設定為 `false`。
+
+  已在 Xamarin. Android 10.1 中新增。
 
 - **AndroidUseLegacyVersionCode** &ndash; 布林值屬性可讓開發人員將 versionCode 計算還原回舊的預先 Xamarin. Android 8.2 行為。 這應該「僅」針對 Google Play 商店中擁有現有應用程式的開發人員使用。 強烈建議使用新的 `$(AndroidVersionCodePattern)` 屬性。
 
@@ -482,6 +586,8 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
   當這個屬性是 `False` 時，`$(AndroidFastDeploymentType)` MSBuild 屬性也可控制所要內嵌到 `.apk` 的項目，而這可能會影響部署和重建時間。
 
 - **EnableLLVM** &ndash; 布林值屬性，可決定在將元件預先編譯為機器碼時，是否要使用 LLVM。
+
+  必須安裝 Android NDK，才能建立已啟用此屬性的專案。
 
   在 Xamarin.Android 5.1 中已新增這個屬性的支援。
 
@@ -632,15 +738,83 @@ MSBuild 屬性可控制目標的行為。 您可以在專案檔 (例如 **MyApp.
 
 - **AndroidDebugKeyValidity** &ndash; 指定 `debug.keystore`要使用的預設有效性。 預設值為 `10950`、`30 * 365` 或 `30 years`。
 
+- **AndroidDebugStoreType** &ndash; 指定 `debug.keystore`要使用的金鑰存放區檔案格式。 預設值為 `pkcs12`。
+
+  已在 Xamarin. Android 10.2 中新增。
+
 - **AndroidKeyStore** &ndash; 布林值，指出是否應該使用自訂簽署資訊。 預設值是 `False`，也就是會使用預設的偵錯簽署金鑰來簽署套件。
 
 - **AndroidSigningKeyAlias** &ndash; 會在金鑰存放區中指定金鑰的別名。 這是在建立金鑰儲存區時所使用的 **keytool -alias** 值。
 
 - **AndroidSigningKeyPass** &ndash; 指定金鑰儲存區檔案中的金鑰密碼。 這是在 `keytool` 要求**輸入 $(AndroidSigningKeyAlias) 的金鑰密碼**時所輸入的值。
 
+  在 Xamarin. Android 10.0 和更早版本中，此屬性只支援純文字密碼。
+
+  在 Xamarin 10.1 和更新版本中，此屬性也支援 `env:` 和 `file:` 首碼，可用於指定包含密碼的環境變數或檔案。 這些選項提供防止密碼出現在組建記錄檔中的方法。
+
+  例如，若要使用名為*AndroidSigningPassword*的環境變數：
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningKeyPass>env:AndroidSigningPassword</AndroidSigningKeyPass>
+  </PropertyGroup>
+  ```
+
+  若要使用位於 `C:\Users\user1\AndroidSigningPassword.txt`的檔案：
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningKeyPass>file:C:\Users\user1\AndroidSigningPassword.txt</AndroidSigningKeyPass>
+  </PropertyGroup>
+  ```
+
+  > [!NOTE]
+  > 當 `$(AndroidPackageFormat)` 設定為 `aab`時，不支援 `env:` 前置詞。
+
 - **AndroidSigningKeyStore** &ndash; 指定 `keytool`所建立之金鑰儲存區檔案的檔案名。 這會對應至提供給 **keytool -keystore** 選項的值。
 
 - **AndroidSigningStorePass** &ndash; 指定要 `$(AndroidSigningKeyStore)`的密碼。 這是在建立金鑰儲存區檔案時提供給 `keytool`，並且會要求**輸入金鑰儲存區密碼:** 的值。
+
+  在 Xamarin. Android 10.0 和更早版本中，此屬性只支援純文字密碼。
+
+  在 Xamarin 10.1 和更新版本中，此屬性也支援 `env:` 和 `file:` 首碼，可用於指定包含密碼的環境變數或檔案。 這些選項提供防止密碼出現在組建記錄檔中的方法。
+
+  例如，若要使用名為*AndroidSigningPassword*的環境變數：
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningStorePass>env:AndroidSigningPassword</AndroidSigningStorePass>
+  </PropertyGroup>
+  ```
+
+  若要使用位於 `C:\Users\user1\AndroidSigningPassword.txt`的檔案：
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningStorePass>file:C:\Users\user1\AndroidSigningPassword.txt</AndroidSigningStorePass>
+  </PropertyGroup>
+  ```
+
+  > [!NOTE]
+  > 當 `$(AndroidPackageFormat)` 設定為 `aab`時，不支援 `env:` 前置詞。
+
+- **JarsignerTimestampAuthorityCertificateAlias** &ndash; 此屬性可讓您在時間戳記授權單位中指定金鑰儲存區中的別名。
+  如需詳細資訊，請參閱 JAVA[簽章時間戳支援](https://docs.oracle.com/javase/8/docs/technotes/guides/security/time-of-signing.html)檔。
+
+  ```xml
+  <PropertyGroup>
+      <JarsignerTimestampAuthorityCertificateAlias>Alias</JarsignerTimestampAuthorityCertificateAlias>
+  </PropertyGroup>
+  ```
+
+- **JarsignerTimestampAuthorityUrl** &ndash; 此屬性可讓您指定時間戳記授權單位服務的 URL。 這可以用來確保您的 `.apk` 簽章包含時間戳記。
+  如需詳細資訊，請參閱 JAVA[簽章時間戳支援](https://docs.oracle.com/javase/8/docs/technotes/guides/security/time-of-signing.html)檔。
+
+  ```xml
+  <PropertyGroup>
+      <JarsignerTimestampAuthorityUrl>http://example.tsa.url</JarsignerTimestampAuthorityUrl>
+  </PropertyGroup>
+  ```
 
 例如，請考慮下列 `keytool` 引動過程：
 
@@ -775,6 +949,14 @@ Enter key password for keystore.alias
   </AndroidResource>
 </ItemGroup>
 ```
+
+### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
+
+[建立] 動作 `AndroidResourceAnalysisConfig` 會將檔案標示為 Xamarin Android Designer 配置診斷工具的嚴重性層級設定檔案。 這目前僅用於版面配置編輯器，而不適用於組建訊息。
+
+如需詳細資訊，請參閱[Android 資源分析檔](https://aka.ms/androidresourceanalysis)。
+
+已在 Xamarin. Android 10.2 中新增。
 
 ### <a name="content"></a>內容
 
