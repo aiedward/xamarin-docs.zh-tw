@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/15/2017
 ms.openlocfilehash: 945a42485486dbfddfd023a72e88d9127651c71f
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75607943"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911517"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS 的手動佈建
 
@@ -37,7 +37,7 @@ _成功安裝 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS 裝�
 
 若要產生簽署身分識別，請執行下列動作：
 
-1. 登入 Developer Portal (開發人員入口網站) 的 [Certificates, Identifiers, and Profiles](https://developer.apple.com/account/overview.action) \(憑證、識別碼及設定檔\) 區段，然後從 [iOS Apps] \(iOS 應用程式\) 資料行中選取 [Certificates] 區段。 接著，按一下 [+] 以建立新的憑證：
+1. 登入 Developer Portal (開發人員入口網站) 的 [Certificates, Identifiers, and Profiles](https://developer.apple.com/account/overview.action) \(憑證、識別碼及設定檔\) 區段，然後從 [iOS Apps] \(iOS 應用程式\) 資料行中選取 [Certificates] 區段。 接著，按一下 [ **]+** 以建立新的憑證：
 
     [![](manual-provisioning-images/cert-plus.png "Click the + to create a new certificate")](manual-provisioning-images/cert-plus.png#lightbox)
 
@@ -73,11 +73,11 @@ _成功安裝 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS 裝�
 
 ### <a name="understanding-certificate-key-pairs"></a>了解憑證金鑰組
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 「開發人員設定檔」包含憑證、其相關金鑰，以及該帳戶的任何相關佈建設定檔。 「開發人員設定檔」實際上有兩個版本 — 一個是在 Developer Portal (開發人員入口網站) 上，另一個位於本機 Mac 上。 兩者的差異在於其包含的金鑰類型：入口網站上的設定檔裝載與您憑證相關的所有公開金鑰，而本機 Mac 上的複本則包含所有私密金鑰。 憑證若要有效，金鑰組必須相符。 請在本機 Mac 上保留一份「開發人員設定檔」備份，因為如果遺失私密金鑰，就必須重新產生所有憑證和佈建設定檔。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 「開發人員設定檔」包含憑證、其相關金鑰，以及該帳戶的任何相關佈建設定檔。 「開發人員設定檔」實際上有兩個版本 — 一個是在 Developer Portal (開發人員入口網站) 上，另一個位於 Mac 上。 兩者的差異在於其包含的金鑰類型：入口網站上的設定檔裝載與您憑證相關的所有公開金鑰，而 Mac 上的複本則包含所有私密金鑰。 憑證若要有效，金鑰組必須相符。 請在 Xamarin 組建主機的 Mac 上保留一份「開發人員設定檔」備份，因為如果遺失私密金鑰，就必須重新產生所有憑證和佈建設定檔。
 
@@ -118,7 +118,7 @@ _成功安裝 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS 裝�
 
    [![](manual-provisioning-images/add04.png "Click on the Devices link")](manual-provisioning-images/add04.png#lightbox)
 
-9. 按一下 [+] 按鈕：
+9. 按一下 [ **]+** 按鈕：
 
    [![](manual-provisioning-images/add05.png "Click the + button")](manual-provisioning-images/add05.png#lightbox)
 
@@ -146,7 +146,7 @@ _成功安裝 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS 裝�
 ### <a name="app-id"></a>應用程式識別碼
 
 1. 在[開發人員入口網站](https://developer.apple.com/account/overview.action)中，瀏覽至 Apple Developer Center (Apple 開發人員中心) 中的 [Certificate, Identifiers and Profiles] \(憑證、識別碼及設定檔\) 區段。 選取 [Identifiers] \(識別碼\) 底下的 [App IDs] \(應用程式識別碼\)。
-2. 按一下 [+] 按鈕，然後提供 [Name] \(名稱\)：
+2. 按一下 [ **]+** 按鈕，然後提供 [Name] \(名稱\)：
 
     [![](manual-provisioning-images/appid05a.png "Provide a Name")](manual-provisioning-images/appid05a.png#lightbox)
 3. 應用程式前置詞應該已預先設定。 針對應用程式後置詞，選取 [Wildcard App ID] \(萬用字元應用程式識別碼\)。 以 `com.[DomainName].*` 格式輸入 Bundle ID (套件組合識別碼)：
@@ -162,7 +162,7 @@ _成功安裝 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS 裝�
 若要手動建立佈建設定檔以進行開發，請執行下列操作：
 
 1. 使用 Safari 來瀏覽至 [Apple Developers Member Center](https://developer.apple.com/membercenter/index.action) \(Apple 開發人員成員中心\)，然後在 [Certificates, Identifiers & Profiles] \(憑證、識別碼及設定檔\) 底下，選取 [Provisioning Profiles] \(佈建設定檔\)。
-2. 按一下右上角的 [+] 按鈕來建立新的設定檔。
+2. 按一下右上角的 [ **]+** 按鈕來建立新的設定檔。
 3. 從 [Development] \(開發\) 區段中，選取 [iOS App Development] \(iOS 應用程式開發\) 旁邊的選項按鈕，然後按 [Continue] \(繼續\)：
 
     [![](manual-provisioning-images/provisioning-profile01.png "Select the type of profile to create")](manual-provisioning-images/provisioning-profile01.png#lightbox)
@@ -207,12 +207,12 @@ _成功安裝 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS 裝�
 
 新憑證或佈建設定檔將會出現在 Visual Studio for Mac 或 Visual Studio 中，並已可供使用。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 > [!IMPORTANT]
 > 可能必須將 Visual Studio for Mac 停止後再重新啟動，才能看見由 Xcode 所更新的新的或已修改的憑證或設定檔。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > 可能必須將 Visual Studio 停止後再重新啟動，才能看見由 Xcode 所更新的新的或已修改的憑證或設定檔。
@@ -229,9 +229,9 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 
 ## <a name="deploying-to-a-device"></a>部署至裝置
 
-此時佈建應該已完成，已可將應用程式部署至裝置。 若要這樣做，請依照下列步驟進行操作：
+此時佈建應該已完成，已可將應用程式部署至裝置。 若要這樣做，請遵循下面的步驟：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 > [!IMPORTANT]
 > 在您開始之前，請確定選取 **Info.plist** 中的 [手動佈建]。
@@ -247,10 +247,10 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 
    如果這已設定為 [自動]，Visual Studio for Mac 就會根據步驟 2 中設定的「套件組合識別碼」來選取身分識別和設定檔。
 
-4. 確定將組建組態設定為 [iPhone / iPad]，而不是模擬器。
+4. 確定將組建組態設定為 [iPhone**iPad]**  / ，而不是模擬器。
 5. 在 Visual Studio for Mac 中按一下 [執行]，即可檢視在裝置上執行的應用程式。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > 在您開始之前，請確定選取 [專案] > [佈建內容] 中的 [手動佈建]。
@@ -269,7 +269,7 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 
 -----
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南涵蓋了為 Xamarin.iOS 設定開發環境所需的步驟。 其中探索如何使用開發人員、開發人員的小組、可執行應用程式的裝置及個別應用程式識別碼的相關資訊，對應用程式進行程式碼簽署。
 
@@ -278,4 +278,4 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 - [免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
-- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) \(英文\)

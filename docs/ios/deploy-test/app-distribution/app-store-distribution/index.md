@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
 ms.openlocfilehash: 73c4e992fae1a2d525670604d98f277fe4fde794
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031417"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913572"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -50,7 +50,7 @@ ms.locfileid: "76031417"
 
 1. 瀏覽至 Apple Developer Member Center 的「憑證、識別碼與設定檔」區段。
 2. 在 [憑證] 下，選取 [生產環境]。
-3. 按一下 [+] 按鈕以建立新的憑證。
+3. 按一下 [ **]+** 按鈕以建立新的憑證。
 4. 在「生產環境」標題下，選取 [App Store and Ad Hoc] (App Store 和臨機操作)：
 
     [![](images/createcertmanually01.png "Select App Store and Ad Hoc")](images/createcertmanually01.png#lightbox)
@@ -65,7 +65,7 @@ ms.locfileid: "76031417"
 8. 最後，**下載**完成的憑證，並按兩下檔案以進行安裝。
 9. 此時，電腦上應該已安裝憑證，但是您可能需要[重新整理設定檔](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)，以確保會顯示在 Xcode 中。
 
-或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請依照下列步驟進行操作：
+或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請遵循下面的步驟：
 
 1. 選取您的小組，然後按一下 [**管理憑證 ...** ]：[![](images/selectteam.png "選取小組並查看詳細資料")](images/selectteam.png#lightbox)
 
@@ -84,12 +84,12 @@ ms.locfileid: "76031417"
 如同您所建立的其他任何佈建設定檔，此處也需要應用程式識別碼才能識別您要散發給使用者裝置的應用程式。 如果您尚未建立應用程式識別碼，請遵循下列步驟來建立：
 
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」區段。 選取 [Identifiers] \(識別碼\) 底下的 [App IDs] \(應用程式識別碼\)。
-2. 按一下 [+] 按鈕，並提供可在入口網站中識別應用程式的**名稱**。
+2. 按一下 [ **]+** 按鈕，並提供可在入口網站中識別應用程式的**名稱**。
 3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取「明確」或「萬用字元」應用程式識別碼，並以反向 DNS 格式輸入套件組合識別碼，例如：
     - **明確**com.[網域名稱].[應用程式名稱]
     - **萬用字元**com.[網域名稱].*
 4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services)。
-5. 按一下 [繼續] 按鈕，並遵循畫面指示來建立新的應用程式識別碼。
+5. 按一下 [繼續] 按鈕，然後依照畫面上的指示來建立新的 App ID (應用程式識別碼)。
 
 ### <a name="creating-a-provisioning-profile"></a>建立佈建設定檔
 
@@ -99,7 +99,7 @@ ms.locfileid: "76031417"
 
     [![](images/distribute01.png "RSelect Provisioning > Distribution")](images/distribute01.png#lightbox)
 
-2. 按一下 [+] 按鈕，並選取您想要建立為  **App Store** 的散發設定檔類型：
+2. 按一下 [ **]+** 按鈕，並選取您想要建立為  **App Store** 的散發設定檔類型：
 
     [![](images/distribute02.png "Create an App Store distribution profile")](images/distribute02.png#lightbox)
 
@@ -121,11 +121,11 @@ ms.locfileid: "76031417"
 
 7. 按一下 [產生] 按鈕，以建立新的設定檔，並完成流程。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  您可能需要結束 Visual Studio for Mac 並讓 Xcode 重新整理其可用「簽署身分識別」和「佈建設定檔」的清單 (遵循[要求簽署身分識別](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)一節中的指示)，之後才能在 Visual Studio for Mac 中使用新的散發設定檔。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
  您可能需要結束 Visual Studio 並讓 Xcode (在組建 主機的 Mac 上) 重新整理其可用「簽署身分識別」和「佈建設定檔」的清單 (遵循[要求簽署身分識別](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)一節中的指示)，之後才能在 Visual Studio 中使用新的散發設定檔。
 
@@ -137,7 +137,7 @@ ms.locfileid: "76031417"
 
 當您準備好為將於 iTunes App Store 上銷售的 Xamarin.iOS 應用程式進行最終建置，請選取上面所建立的散發設定檔。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  請在 Visual Studio for Mac 中執行下列動作：
 
@@ -153,9 +153,9 @@ ms.locfileid: "76031417"
     ![](images/releasexs03.png "Select the Signing Identity and Distribution Profiles")
 5. 按一下 [確定] 按鈕以儲存所做的變更。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- 請在 Visual Studio 中執行下列動作：
+ 在 Visual Studio 中，執行下列操作：
 
 1. 請以滑鼠右鍵按一下方案總管 中的專案名稱，並且選取 [屬性]，將其開啟進行編輯。
 2. 從 [組態] 下拉式清單中選取 [iOS Bundle Signing] (iOS 套件組合簽署) 和 [發行 | iPhone]：
@@ -195,7 +195,7 @@ ms.locfileid: "76031417"
 
 [!include[](~/ios/includes/copy-app-bundle-to-windows.md)]
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋了準備在 App Store 中發佈 Xamarin.iOS 應用程式的關鍵元件。
 

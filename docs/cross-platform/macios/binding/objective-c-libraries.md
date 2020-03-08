@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016296"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915195"
 ---
 # <a name="binding-objective-c-libraries"></a>系結目標-C 程式庫
 
@@ -32,16 +32,16 @@ ms.locfileid: "73016296"
 
 <a name="Getting_Started" />
 
-## <a name="getting-started"></a>使用者入門
+## <a name="getting-started"></a>開始使用
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 建立系結最簡單的方式，就是建立一個 Xamarin. iOS 系結專案。
 您可以從 Visual Studio for Mac 選取專案類型 [ **iOS > 程式庫] >** 系結程式庫來執行此動作：
 
 [![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 建立系結最簡單的方式，就是建立一個 Xamarin. iOS 系結專案。
 您可以從 Windows 上的 Visual Studio 選取專案類型 [ **Visual C# > ios > 系結程式庫（ios）** ] 來執行這項操作：
@@ -169,7 +169,7 @@ API 定義檔包含許多介面。 API 定義中的介面會轉換成類別宣�
 
 您可以執行的最簡單系結是系結方法。 只要在介面中宣告具有C#命名慣例的方法，並使用[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)來裝飾方法即可。
 屬性中。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)屬性會連結您C#的名稱與 Xamarin iOS 執行時間中的目標-C 名稱。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)的參數 
-attribute 是目標-C 選取器的名稱。 一些範例如下：
+attribute 是目標-C 選取器的名稱。 以下是一些範例：
 
 ```csharp
 // A method, that takes no arguments
@@ -779,7 +779,7 @@ interface MyUIViewExtension {
 }
 ```
 
-上述會建立一個 `MyUIViewExtension` 包含 `MakeBackgroundRed` 擴充方法的類別。  這表示您現在可以在任何 `UIView` 子類別上呼叫 "MakeBackgroundRed"，提供您在目標上取得的相同功能。 在某些其他情況下，則不會使用類別來擴充系統類別，而是用來組織功能，純粹用於裝飾用途。  與下列類似：
+上述會建立一個 `MyUIViewExtension` 包含 `MakeBackgroundRed` 擴充方法的類別。  這表示您現在可以在任何 `UIView` 子類別上呼叫 "MakeBackgroundRed"，提供您在目標上取得的相同功能。 在某些其他情況下，則不會使用類別來擴充系統類別，而是用來組織功能，純粹用於裝飾用途。  例如：
 
 ```csharp
 @interface SocialNetworking (Twitter)
@@ -1041,7 +1041,7 @@ interface XyzPanel {
 |`GLint`|`nint`|
 |`GLfloat`|`nfloat`|
 |基礎類型（`NS*`）|`Foundation.NS*`|
-|`id`|`Foundation`.`NSObject`|
+|`id`|`Foundation`。`NSObject`|
 |`NSGlyph`|`nint`|
 |`NSSize`|`CGSize`|
 |`NSTextAlignment`|`UITextAlignment`|
@@ -1198,7 +1198,7 @@ void SomeString (ref NSObject byref);
 上述會將值標示為具有「保留」的語法。 可用的語法如下：
 
 - 指派
-- 複製
+- [複製]
 - 保留
 
 <a name="Style_Guidelines" />

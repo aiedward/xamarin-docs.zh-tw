@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/17/2019
 ms.openlocfilehash: 7aef14cbb854d89a2088a450353b943402f76a86
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697224"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913113"
 ---
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin. 表單 CollectionView 滾動
 
@@ -20,7 +20,7 @@ ms.locfileid: "72697224"
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)會定義兩個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法，將專案滾動到 view。 其中一個多載會將指定索引處的專案滾動到 view，而另一個則會將指定的專案滾動到 view。 這兩個多載都有額外的引數，可指定以指出專案所屬的群組、在完成捲軸之後，專案的確切位置，以及是否要以動畫顯示捲軸。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義當叫用其中一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法時，所引發的[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)事件。 伴隨 `ScrollToRequested` 事件的[`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)物件有許多屬性，包括 `IsAnimated`、`Index`、`Item` 和 `ScrollToPosition`。 這些屬性是從 `ScrollTo` 方法呼叫中指定的引數所設定。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)定義當叫用其中一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法時，所引發的[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)事件。 伴隨 `ScrollToRequested` 事件的[`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)物件有許多屬性，包括 `IsAnimated`、`Index`、`Item`和 `ScrollToPosition`。 這些屬性是從 `ScrollTo` 方法呼叫中指定的引數所設定。
 
 此外， [`CollectionView`](xref:Xamarin.Forms.CollectionView)會定義引發的 `Scrolled` 事件，以指出滾動發生。 伴隨 `Scrolled` 事件的 `ItemsViewScrolledEventArgs` 物件有許多屬性。 如需詳細資訊，請參閱偵測[滾動](#detect-scrolling)。
 
@@ -69,7 +69,7 @@ void OnCollectionViewScrolled(object sender, ItemsViewScrolledEventArgs e)
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>將索引中的專案滾動到 view
 
-第一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法多載會將位於指定索引處的專案滾動到 view。 假設有一個名為 `collectionView` 的[`CollectionView`](xref:Xamarin.Forms.CollectionView)物件，下列範例會示範如何將索引12處的專案滾動到 view：
+第一個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法多載會將位於指定索引處的專案滾動到 view。 假設有一個名為 `collectionView`的[`CollectionView`](xref:Xamarin.Forms.CollectionView)物件，下列範例會示範如何將索引12處的專案滾動到 view：
 
 ```csharp
 collectionView.ScrollTo(12);
@@ -87,7 +87,7 @@ collectionView.ScrollTo(2, 1);
 
 ## <a name="scroll-an-item-into-view"></a>將專案滾動到視野中
 
-第二個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法多載會將指定的專案滾動到 view。 假設有一個名為 `collectionView` 的[`CollectionView`](xref:Xamarin.Forms.CollectionView)物件，下列範例會示範如何將 Proboscis 的猴子專案滾動到 view：
+第二個[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)方法多載會將指定的專案滾動到 view。 假設有一個名為 `collectionView`的[`CollectionView`](xref:Xamarin.Forms.CollectionView)物件，下列範例會示範如何將 Proboscis 的猴子專案滾動到 view：
 
 ```csharp
 MonkeysViewModel viewModel = BindingContext as MonkeysViewModel;
@@ -121,7 +121,7 @@ collectionView.ScrollTo(monkey, animate: false);
 
 ### <a name="makevisible"></a>MakeVisible
 
-[ [@No__t_1](xref:Xamarin.Forms.ScrollToPosition)成員] 表示專案應該滾動，直到在視圖中顯示為止：
+[ [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)成員] 表示專案應該滾動，直到在視圖中顯示為止：
 
 ```csharp
 collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
@@ -134,9 +134,9 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > 如果呼叫 `ScrollTo` 方法時未指定 `position` 引數，預設會使用[`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)成員。
 
-### <a name="start"></a>開始
+### <a name="start"></a>Start
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的開頭：
+[`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的開頭：
 
 ```csharp
 collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
@@ -146,9 +146,9 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 [![CollectionView 垂直清單的螢幕擷取畫面，其中的專案會在 iOS 和 Android 上滾動到 view](scrolling-images/scrolltoposition-start.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-start-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
 
-### <a name="center"></a>置中
+### <a name="center"></a>中心
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)成員表示該專案應該滾動到視圖的中心：
+[`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition)成員表示該專案應該滾動到視圖的中心：
 
 ```csharp
 collectionView.ScrollTo(monkey, position: ScrollToPosition.Center);
@@ -158,9 +158,9 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 [![CollectionView 垂直清單的螢幕擷取畫面，其中的專案會在 iOS 和 Android 上滾動到 view](scrolling-images/scrolltoposition-center.png "具有滾動專案的 CollectionView 垂直清單")](scrolling-images/scrolltoposition-center-large.png#lightbox "具有滾動專案的 CollectionView 垂直清單")
 
-### <a name="end"></a>End - 結束
+### <a name="end"></a>結束
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的結尾：
+[`ScrollToPosition.End`](xref:Xamarin.Forms.ScrollToPosition)成員表示專案應該滾動到視圖的結尾：
 
 ```csharp
 collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
@@ -178,7 +178,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 - 新增新專案時，`KeepScrollOffset` 會維護相對於清單開頭的捲軸位移。
 - `KeepLastItemInView` 調整捲軸位移，以便在新增新專案時，讓最後一個專案保持可見。
 
-@No__t_0 屬性的預設值為 `KeepItemsInView`。 因此，當新專案新增至[`CollectionView`](xref:Xamarin.Forms.CollectionView)時，清單中的第一個可見專案將會保持顯示狀態。 為確保新加入的專案一律會顯示在清單底部，`ItemsUpdatingScrollMode` 屬性應該設定為 `KeepLastItemInView`：
+`ItemsUpdatingScrollMode` 屬性的預設值為 `KeepItemsInView`。 因此，當新專案新增至[`CollectionView`](xref:Xamarin.Forms.CollectionView)時，清單中的第一個可見專案將會保持顯示狀態。 為確保新加入的專案一律會顯示在清單底部，`ItemsUpdatingScrollMode` 屬性應該設定為 `KeepLastItemInView`：
 
 ```xaml
 <CollectionView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -217,11 +217,11 @@ CollectionView collectionView = new CollectionView
 
 ### <a name="snap-points-type"></a>貼齊點類型
 
-[@No__t_1](xref:Xamarin.Forms.SnapPointsType)列舉會定義下列成員：
+[`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)列舉會定義下列成員：
 
 - `None` 表示滾動不會貼齊至專案。
 - `Mandatory` 指出內容一律會貼齊到最接近的貼齊點，也就是慣性的方向。
-- `MandatorySingle` 表示與 `Mandatory` 相同的行為，但一次只會滾動一個專案。
+- `MandatorySingle` 表示與 `Mandatory`相同的行為，但一次只會滾動一個專案。
 
 根據預設， [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)屬性會設定為 [`SnapPointsType.None`]，以確保滾動不會貼齊專案，如下列螢幕擷取畫面所示：
 
@@ -229,14 +229,14 @@ CollectionView collectionView = new CollectionView
 
 ### <a name="snap-points-alignment"></a>貼齊點對齊
 
-[@No__t_1](xref:Xamarin.Forms.SnapPointsAlignment)列舉會定義 `Start`、`Center` 和 `End` 成員。
+[`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)列舉會定義 `Start`、`Center`和 `End` 成員。
 
 > [!IMPORTANT]
 > 只有當 [ [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) ] 屬性設定為 [`Mandatory`] 或 [`MandatorySingle`] 時，才會遵守[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)屬性的值。
 
-#### <a name="start"></a>開始
+#### <a name="start"></a>Start
 
-@No__t_0 成員表示貼齊點與專案的前置邊緣對齊。
+`SnapPointsAlignment.Start` 成員表示貼齊點與專案的前置邊緣對齊。
 
 根據預設， [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)屬性會設定為 [`SnapPointsAlignment.Start`]。 不過，基於完整性，下列 XAML 範例示範如何設定這個列舉成員：
 
@@ -269,9 +269,9 @@ CollectionView collectionView = new CollectionView
 
 [![在 iOS 和 Android 上具有開始貼齊點之 CollectionView 垂直清單的螢幕擷取畫面](scrolling-images/snappoints-start.png "具有開始貼齊點的 CollectionView 垂直清單")](scrolling-images/snappoints-start-large.png#lightbox "具有開始貼齊點的 CollectionView 垂直清單")
 
-#### <a name="center"></a>置中
+#### <a name="center"></a>中心
 
-@No__t_0 成員表示貼齊點對齊專案的中心。 下列 XAML 範例顯示如何設定此列舉成員：
+`SnapPointsAlignment.Center` 成員表示貼齊點對齊專案的中心。 下列 XAML 範例顯示如何設定此列舉成員：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -302,9 +302,9 @@ CollectionView collectionView = new CollectionView
 
 [![在 iOS 和 Android 上具有中心貼齊點之 CollectionView 垂直清單的螢幕擷取畫面](scrolling-images/snappoints-center.png "具有中心貼齊點的 CollectionView 垂直清單")](scrolling-images/snappoints-center-large.png#lightbox "具有中心貼齊點的 CollectionView 垂直清單")
 
-#### <a name="end"></a>End - 結束
+#### <a name="end"></a>結束
 
-@No__t_0 成員表示貼齊點與專案的尾端邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
+`SnapPointsAlignment.End` 成員表示貼齊點與專案的尾端邊緣對齊。 下列 XAML 範例顯示如何設定此列舉成員：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2019
 ms.openlocfilehash: 9442f7878d9290946fabb7bfc5dee77a828228c7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488165"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913407"
 ---
 # <a name="xamarinforms-collectionview-data"></a>Xamarin. 表單 CollectionView 資料
 
@@ -242,7 +242,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MonkeyDataTemplateSelector` 類別定義設定為不同資料範本的 `AmericanMonkey` 與 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 屬性。 `OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本，這會在猴子名稱包含 "北美洲" 時，以青色顯示猴子名稱和位置。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，以顯示銀級中的猴子名稱和位置：
+`MonkeyDataTemplateSelector` 類別會定義設定為不同資料範本的 `AmericanMonkey` 和 `OtherMonkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `OnSelectTemplate` 覆寫會傳回 `AmericanMonkey` 範本，這會在猴子名稱包含 "北美洲" 時，以青色顯示猴子名稱和位置。 當猴子名稱不包含 "北美洲" 時，`OnSelectTemplate` 覆寫會傳回 `OtherMonkey` 範本，以顯示銀級中的猴子名稱和位置：
 
 [![在 iOS 和 Android 上 CollectionView 執行時間專案範本選擇的螢幕擷取畫面](populate-data-images/datatemplateselector.png "CollectionView 中的執行時間專案範本選擇")](populate-data-images/datatemplateselector-large.png#lightbox "CollectionView 中的執行時間專案範本選擇")
 
@@ -330,7 +330,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 
 如需 `SwipeView` 控制項的詳細資訊，請參閱[SwipeView](~/xamarin-forms/user-interface/swipeview.md)。
 
-## <a name="pull-to-refresh"></a>拖動以重新整理
+## <a name="pull-to-refresh"></a>提取至重新整理
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)支援透過 `RefreshView`的提取至重新整理功能，可讓您藉由在專案清單上向下拉出來重新整理顯示的資料。 `RefreshView` 是一個容器控制項，可讓您將提取重新整理功能給其子系，前提是子系支援可滾動的內容。 因此，藉由將 `CollectionView` 設定為 `RefreshView`的子系，就會為其執行 pull 的「重新整理」：
 
@@ -424,6 +424,6 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 - [CollectionView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin. Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin. Forms SwipeView](~/xamarin-forms/user-interface/swipeview.md)
-- [Xamarin. 表單資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin. 表單資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

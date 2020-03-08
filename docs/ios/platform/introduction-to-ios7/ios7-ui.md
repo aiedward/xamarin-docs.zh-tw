@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 4731be58c1fadae0bba6768570ecfd181b071dd2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031857"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915741"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 使用者介面概觀
 
@@ -201,7 +201,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
  [![](ios7-ui-images/good.png "Example with whole image visible")](ios7-ui-images/good.png#lightbox)
 
-請注意，雖然 `TopLayoutGuide/BottomLayoutGuide` 和 `EdgesForExtendedLayout` Api 的效果很類似，但它們的目的是要填滿不同的目標。 從預設值變更 `EdgesForExtendedLayout` 設定，可能會修正針對 iOS 6 設計之應用程式中的裁剪視圖，但良好的 iOS 7 設計應接受全螢幕的美觀，並提供全螢幕的觀賞體驗，依賴 `TopLayoutGuide` 並 `BottomLayoutGuide` 適當的將要操作的內容放入適合使用者的舒適位置。
+請注意，雖然 `TopLayoutGuide/BottomLayoutGuide` 和 `EdgesForExtendedLayout` Api 的效果很類似，但它們的目的是要填滿不同的目標。 從預設值變更 `EdgesForExtendedLayout` 設定可能會修正針對 iOS 6 設計之應用程式中的裁剪視圖，但良好的 iOS 7 設計應接受全螢幕的美觀並提供全螢幕的觀賞體驗，並依賴 `TopLayoutGuide` 和 `BottomLayoutGuide`，適當地將要操作的內容定位到適合使用者的慣用位置。
 
 如需實用範例，請參閱[ImageViewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) 。
 
@@ -258,7 +258,7 @@ public override bool PrefersStatusBarHidden ()
 
 在 iOS 7 中，使用者可以在系統設定中指定文字大小。 使用動態類型時，字型會以動態方式調整，而不論大小為何都很好。 `UIFont.PreferredFontForTextStyle` 應該用來取得針對使用者控制大小優化的字型。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋 iOS 7 中使用者介面元素的變更。 它會檢查 UIKit 中對 views 和控制項所做的幾項變更，同時強調顯示視覺效果的變更，以及對相關 Api 的變更。 最後，它引進了新的 Api，以使用全螢幕內容、新的色調色彩支援和動態類型。
 

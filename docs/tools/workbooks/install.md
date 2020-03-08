@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029624"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914388"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝和需求
 
@@ -21,13 +21,13 @@ ms.locfileid: "73029624"
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 1. 請檢查下列[需求](#requirements)。
 2. 下載並安裝[適用于 Windows 的 Xamarin Workbooks](https://dl.xamarin.com/interactive/XamarinInteractive.msi)。
 3. 開始[試用](~/tools/workbooks/workbook.md)活頁簿。
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. 請檢查下列[需求](#requirements)。
 2. 下載並安裝[適用于 Mac 的 Xamarin Workbooks](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)。
@@ -37,14 +37,14 @@ ms.locfileid: "73029624"
 
 ## <a name="requirements"></a>需求
 
-#### <a name="supported-operating-systems"></a>Supported Operating Systems
+#### <a name="supported-operating-systems"></a>支援的作業系統
 
 - **Mac** -OS X 10.11 或更新版本
 - **Windows** -windows 7 或更新版本（包含 Internet Explorer 11 或更新版本，以及 .net 4.6.1 或更高版本）
 
 #### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
-|應用程式平臺|OS 支援|備註|
+|應用程式平台|OS 支援|注意|
 |--- |--- |--- |
 |Mac|僅在 Mac 上支援|
 |iOS|在 Mac 和 Windows 上支援|您必須在 Mac 上安裝 Xamarin. iOS 11.0 和 Xcode 9.0 或更新版本。 在 Windows 上執行 iOS 活頁簿需要 Mac 組建主機，並在 Windows 上安裝上述所有和[遠端 iOS](~/tools/ios-simulator/index.md)模擬器。|
@@ -53,7 +53,7 @@ ms.locfileid: "73029624"
 |主控台（.NET Framework）|在 Mac 和 Windows 上支援|
 |主控台（.NET Core）|在 Mac 和 Windows 上支援|
 
-## <a name="reporting-bugs"></a>報告錯誤
+## <a name="reporting-bugs"></a>報告錯誤 (Bug)
 
 請[報告 GitHub 上的問題][bugs]，並包含下列所有資訊：
 
@@ -61,7 +61,7 @@ ms.locfileid: "73029624"
 
 一律附加活頁簿用戶端記錄檔：
 
-- Mac： `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Mac：`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
 1.4. x 也能夠直接從主功能表選取搜尋工具（macOS）或 Explorer （Windows）中的記錄檔：
@@ -70,7 +70,7 @@ ms.locfileid: "73029624"
 
 #### <a name="log-paths-for-workbooks-13-and-earlier"></a>活頁簿1.3 和更早版本的記錄檔路徑：
 
-- Mac： `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac：`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 ### <a name="platform-version-information"></a>平臺版本資訊

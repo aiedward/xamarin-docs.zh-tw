@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
 ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488424"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916521"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的應用程式圖示
 
@@ -109,7 +109,7 @@ ms.locfileid: "75488424"
 
 若要使用資產目錄，請遵循下列步驟：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
 2. 向下卷到 [ **IPhone 圖示**] 區段。
@@ -129,7 +129,7 @@ ms.locfileid: "75488424"
 7. 按一下 [**開啟**] 按鈕，在專案中包含影像，並在 xcasset 中加以設定。
 8. 針對所需的所有影像重複此動作。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下 [資訊]。  \* ***方案總管**中的檔案：
 
@@ -166,7 +166,7 @@ ms.locfileid: "75488424"
 
 若要指定 iTunes 插圖，請執行下列動作：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
 2. 流覽至編輯器的**ITunes 藝術品**區段： 
@@ -175,7 +175,7 @@ ms.locfileid: "75488424"
 3. 針對任何遺失的影像，按一下編輯器中的縮圖，從 [開啟檔案] 對話方塊中選取所需 iTunes 插圖的影像檔案，然後按一下 [**確定]** 按鈕。
 4. 重複此步驟，直到為應用程式指定所有所需的映射為止。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
 

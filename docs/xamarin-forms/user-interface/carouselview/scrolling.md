@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/28/2020
 ms.openlocfilehash: 735a572f4aadfc224e545e371525b96f29c9552e
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "78292185"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913056"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin. 表單 CarouselView 滾動
 

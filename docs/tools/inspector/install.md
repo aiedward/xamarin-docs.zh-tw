@@ -7,23 +7,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029701"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917582"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector 安裝和需求
 
 ## <a name="download-and-installation"></a>下載並安裝
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 1. 下載並安裝[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)並選取 [**使用 .net 進行行動開發**] 工作負載。
 1. 登入以啟用您的企業訂[用](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)帳戶。
 1. [檢查](~/tools/inspector/inspect.md)您自己的應用程式！
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. 下載並安裝[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。
 1. 登入以啟用您的企業訂[用](https://docs.microsoft.com/visualstudio/mac/activation)帳戶。
@@ -33,7 +33,7 @@ ms.locfileid: "73029701"
 
 ## <a name="requirements"></a>需求
 
-### <a name="supported-operating-systems"></a>Supported Operating Systems
+### <a name="supported-operating-systems"></a>支援的作業系統
 
 - **Mac** -OS X 10.11 或更新版本
 - **Windows** -windows 7 或更新版本（包含 Internet Explorer 11 或更新版本，以及 .net 4.6.1 或更高版本）
@@ -49,7 +49,7 @@ ms.locfileid: "73029701"
 
 ### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
-|應用程式平臺|IDE 支援|備註|
+|應用程式平台|IDE 支援|注意|
 |--- |--- |--- |
 |Mac|僅 Visual Studio for Mac 中支援|
 |iOS|支援 Visual Studio 2017 和 Visual Studio for Mac| 連結器行為必須設定為 [**不要連結**] （在 [ **iOS 組建**專案] 選項底下） |
@@ -58,7 +58,7 @@ ms.locfileid: "73029701"
 
 <a name="reporting-bugs" />
 
-## <a name="reporting-bugs"></a>報告錯誤
+## <a name="reporting-bugs"></a>報告錯誤 (Bug)
 
 Bug 應該透過 Visual Studio 直接回報：
 
@@ -86,7 +86,7 @@ Visual Studio
 
 偵測器用戶端
 
-- Mac： `~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
+- Mac：`~/Library/Logs/Xamarin/Inspector/Xamarin Inspector {date}.log`
 - Windows：`%LOCALAPPDATA%\Xamarin\Inspector\logs\Xamarin Inspector {date}.log`
 
 1.4. x 也能夠直接從主功能表選取搜尋工具（macOS）或 Explorer （Windows）中的記錄檔：

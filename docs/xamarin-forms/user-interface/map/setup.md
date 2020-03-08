@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/07/2020
 ms.openlocfilehash: c3c4863814949be2e6575e92136ca740452a2f3c
-ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78291893"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912967"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. 表單對應初始化和設定
 

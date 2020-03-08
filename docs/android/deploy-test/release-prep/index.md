@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
 ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021199"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911043"
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
@@ -19,19 +19,19 @@ ms.locfileid: "73021199"
 
 使用下列步驟建置可供發行的應用程式：
 
-- **[指定應用程式圖示](#Specify_the_Application_Icon)** &ndash; 每個 Xamarin.Android 應用程式都應要指定應用程式圖示。 雖非技術上必要，但一些市場有此要求，例如 Google Play。
+- 指定每個 Xamarin &ndash; **[的應用程式圖示](#Specify_the_Application_Icon)** 。 Android 應用程式應指定應用程式圖示。 雖非技術上必要，但一些市場有此要求，例如 Google Play。
 
-- **[控制應用程式版本](#Versioning)** &ndash;此步驟牽涉到初始化或更新版本設定資訊。 這對未來應用程式更新很重要，並可確保使用者了解他們已安裝哪個應用程式版本。
+- **[版本應用程式](#Versioning)** &ndash; 此步驟包含初始化或更新版本設定資訊。 這對未來應用程式更新很重要，並可確保使用者了解他們已安裝哪個應用程式版本。
 
-- **[壓縮 APK](#shrink_apk)** &ndash; 在受控碼上使用 Xamarin.Android 連結器並在 Java 位元組程式碼上使用 ProGuard，可大幅降低最終 APK 的大小。
+- **[壓縮 APK](#shrink_apk)** &ndash; 可大幅減少最終 APK 的大小，方法是在 managed 程式碼上使用 Xamarin 連結器，並在 JAVA 位元組程式碼上 ProGuard。
 
-- **[保護應用程式](#protect_app)** &ndash; 停用偵錯、混淆受控碼、新增反偵錯與反竄改以及使用原生編譯，來防止使用者或攻擊者對應用程式進行偵錯、竄改或還原工程。
+- **[保護應用程式](#protect_app)** &ndash; 防止使用者或攻擊者藉由停用偵錯工具、將 managed 程式碼模糊、新增反編譯和防篡改，以及使用原生編譯，來偵測、篡改或反向工程應用程式。
 
-- **[設定封裝屬性](#Set_Packaging_Properties)** &ndash;封裝屬性會控制 Android 應用程式套件 (APK) 的建立。 此步驟可將 APK 最佳化、保護其資產並視需要將套件模組化。
+- **[設定封裝屬性](#Set_Packaging_Properties)** &ndash; 封裝屬性會控制 Android 應用程式套件（APK）的建立。 此步驟可將 APK 最佳化、保護其資產並視需要將套件模組化。
 
-- **[編譯](#Compile)** &ndash; 此步驟可編譯程式碼與資產，確認它是在發行模式中建置的。
+- **[編譯](#Compile)** &ndash; 此步驟會編譯器代碼和資產，以確認它是以發行模式建立。
 
-- **[封存以供發佈](#archive)** &ndash; 此步驟會建置應用程式並置入封存，以供簽署和發佈。
+- 封存 **[以供發佈](#archive)** &ndash; 此步驟會建立應用程式，並將其放在封存中以供簽署和發行。
 
 每個步驟在下方均會詳細說明。
 
@@ -39,17 +39,17 @@ ms.locfileid: "73021199"
 
 ## <a name="specify-the-application-icon"></a>指定應用程式圖示
 
-強烈建議每個 Xamarin.Android 應用程式都指定應用程式圖示。 某些應用程式市集要求一定要有圖示，才能發行 Android 應用程式。 `Application` 屬性的 `Icon` 屬性可用來指定 Xamarin.Android 專案的應用程式圖示。
+強烈建議每個 Xamarin.Android 應用程式都指定應用程式圖示。 某些應用程式市集要求一定要有圖示，才能發行 Android 應用程式。 `Icon` 屬性的 `Application` 屬性可用來指定 Xamarin.Android 專案的應用程式圖示。
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 2017 和更新版本中，透過專案 [屬性] 的 [Android 資訊清單] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
 
 [![設定應用程式圖示](images/vs/01-application-icon-sml.png)](images/vs/01-application-icon.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，也可以透過 [專案選項] 的 [Android 應用程式] 區段來指定應用程式圖示，如下列螢幕擷取畫面所示：
 
@@ -71,17 +71,17 @@ ms.locfileid: "73021199"
 
 版本控制對於 Android 應用程式維護和發佈至關重要。 如果沒有採取某種版本控制，會很難判斷應用程式是否應該更新和如何更新。 為了協助進行版本控制，Android 可辨識兩種不同類型的資訊： 
 
-- **版本號碼** &ndash; 整數值 (由 Android 應用程式內部使用)，表示應用程式的版本。 大部分應用程式一開始都會將此值設定為 1，然後隨每個組建遞增。 此值和版本名稱屬性沒有任何關係或同質性 (請參閱下文)。 應用程式和發佈服務不應對使用者顯示此值。 此值會在 **AndroidManifest.xml** 檔案中儲存為 `android:versionCode`。 
+- **版本號碼**&ndash; 代表應用程式版本的整數值（由 Android 和應用程式在內部使用）。 大部分應用程式一開始都會將此值設定為 1，然後隨每個組建遞增。 此值和版本名稱屬性沒有任何關係或同質性 (請參閱下文)。 應用程式和發佈服務不應對使用者顯示此值。 此值會在 **AndroidManifest.xml** 檔案中儲存為 `android:versionCode`。 
 
-- **版本名稱** &ndash; 此字串只用來和使用者通訊有關應用程式版本的資訊 (安裝在特定裝置時)。 版本名稱主要是向使用者顯示或在 Google Play 中顯示。 Android 不會在內部使用此字串。 可幫助使用者識別其裝置上所安裝組建的任何字串值，都可以是版本名稱。 此值會在 **AndroidManifest.xml** 檔案中儲存為 `android:versionName`。 
+- **版本名稱**&ndash; 僅用於向使用者傳達應用程式版本（安裝在特定裝置上）之相關資訊的字串。 版本名稱主要是向使用者顯示或在 Google Play 中顯示。 Android 不會在內部使用此字串。 可幫助使用者識別其裝置上所安裝組建的任何字串值，都可以是版本名稱。 此值會在 **AndroidManifest.xml** 檔案中儲存為 `android:versionName`。 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中，可在專案 [屬性] 的 [Android 資訊清單] 區段中設定這些值，如下列螢幕擷取畫面所示：
 
 [![設定版本號碼](images/vs/02-versioning-sml.png)](images/vs/02-versioning.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 這些值可以透過 [專案選項] 的 [建置] > [Android 應用程式] 區段來設定，如下列螢幕擷取畫面所示：
 
@@ -103,7 +103,7 @@ ms.locfileid: "73021199"
 
 - 設定：僅限 SDK 組件 &ndash; Xamarin.Android 4.2.5 大小 = 3.0 MB。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 透過專案 [屬性] 的 [Android 選項] 區段來設定連結器選項：
 
@@ -111,14 +111,14 @@ ms.locfileid: "73021199"
 
 [連結] 下拉式功能表提供下列控制連結器選項：
 
-- **無** &ndash; 這會關閉連結器，不執行任何連結。
+- **無**&ndash; 這會關閉連結器;不會執行任何連結。
 
-- **僅限 SDK 組件** &ndash; 這只會連結 [Xamarin.Android 所需](~/cross-platform/internals/available-assemblies.md)的組件。 
+- **SDK 元件僅**&ndash; 這只會連結[Xamarin 所需](~/cross-platform/internals/available-assemblies.md)的元件。 
     不會連結其他組件。
 
-- **SDK 與使用者組件** &ndash; 這會連結應用程式所需的所有組件，而不只是 Xamarin.Android 所需的組件。
+- **Sdk 和使用者元件**&ndash; 這會連結應用程式所需的所有元件，而不只是 Xamarin 所需的元件。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 在 [專案選項] 的 [Android 組建] 區段中，透過 [連結器] 索引標籤來設定連結器選項 ，如下列螢幕擷取畫面所示：
 
@@ -126,11 +126,11 @@ ms.locfileid: "73021199"
 
 控制連結器選項如下所示：
 
-- **不要連結** &ndash; 這會關閉連結器，不執行任何連結。
+- **不要連結**&ndash; 這會關閉連結器;不會執行任何連結。
 
-- **僅連結 SDK 組件** &ndash; 這只會連結 [Xamarin.Android 所需](~/cross-platform/internals/available-assemblies.md)的組件。 不會連結其他組件。
+- **僅連結 SDK 元件**&ndash; 這只會連結[Xamarin 所需](~/cross-platform/internals/available-assemblies.md)的元件。 不會連結其他組件。
 
-- **連結所有組件** &ndash; 這會連結應用程式所需的所有組件，而不只是 Xamarin.Android 所需的組件。
+- **連結所有元件**&ndash; 這會連結應用程式所需的所有元件，而不只是 Xamarin 所需的元件。
 
 -----
 
@@ -144,11 +144,11 @@ ProGuard 並非要替代 Xamarin.Android 連結器。 Xamarin.Android 受控碼�
 
 已勾選 [啟用 ProGuard] 時，Xamarin.Android 會在產生的 APK 上執行 ProGuard 工具。 ProGuard 會在建置階段產生並使用 ProGuard 組態檔。 Xamarin.Android 也支援自訂 *ProguardConfiguration* 建置動作。 您可以將自訂 ProGuard 組態檔加入至專案，以滑鼠右鍵按一下，並選取做為建置動作，如此範例所示： 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![ProGuard 建置動作](images/vs/05-proguard-build-action-sml.png)](images/vs/05-proguard-build-action.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![ProGuard 建置動作](images/xs/05-proguard-build-action-sml.png)](images/xs/05-proguard-build-action.png#lightbox)
 
@@ -187,7 +187,7 @@ Android 資訊清單包含 `android:debuggable` 屬性，可控制是否能對�
 
 ### <a name="application-protection-with-dotfuscator"></a>使用 Dotfuscator 保護應用程式
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 即使[已停用偵錯](#Disable_Debugging)，攻擊者還是可以重新封裝應用程式、新增或移除組態選項或權限。 這可讓他們進行還原工程、偵錯，或竄改應用程式。
 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) 可用來混淆受控碼，並在建置階段將執行階段安全性狀態偵測程式碼插入 Xamarin.Android 應用程式，以偵測應用程式是否正在 Root 破解的裝置上執行並回應。
@@ -198,7 +198,7 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 若要設定 Dotfuscator CE，請參閱[搭配 Xamarin 使用 Dotfuscator Community Edition](https://www.preemptive.com/obfuscating-xamarin-with-dotfuscator)。
 一旦設定之後，Dotfuscator CE 會自動保護建立的每個組建。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 即使[已停用偵錯](#Disable_Debugging)，攻擊者還是可以重新封裝應用程式、新增或移除組態選項或權限。 這可讓他們進行還原工程、偵錯，或竄改應用程式。
 雖然不支援 Visual Studio for Mac，但您可以使用 Visual Studio 所附的 [Dotfuscator Community Edition (CE)](https://www.preemptive.com/products/dotfuscator/overview) 來混淆受控碼，並在建置階段將執行階段安全性狀態偵測程式碼插入 Xamarin.Android 應用程式，以偵測應用程式是否正在 Root 破解的裝置上執行並回應。
@@ -237,13 +237,13 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 ## <a name="set-packaging-properties"></a>設定封裝屬性
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 封裝屬性可以在專案 [屬性] 的 [Android 選項] 區段中設定，如下列螢幕擷取畫面所示：
 
 [![封裝屬性](images/vs/04-packaging-sml.png)](images/vs/04-packaging.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 封裝屬性可以在 [專案選項] 中設定，如下列螢幕擷取畫面所示：
 
@@ -273,13 +273,13 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 ## <a name="compile"></a>編譯
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 上述所有步驟都完成後，應用程式已準備好進行編譯。 選取[建置] > [重建方案]，來確認可在發行模式中成功建置。 請注意，此步驟還不會產生 APK。
 
 [簽署應用程式套件](~/android/deploy-test/signing/index.md)會詳細討論封裝和簽署。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 完成所有上述步驟之後，請編譯應用程式 (選取 [建置] > [全部建置])，來確認可在發行模式中成功建置。 請注意，此步驟還不會產生 APK。
 
@@ -289,7 +289,7 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 ## <a name="archive-for-publishing"></a>封存以供發行
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要開始發行程序，請以滑鼠右鍵按一下 [方案總管] 中的專案，然後選取 [封存] 操作功能表項目：
 
@@ -319,15 +319,15 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 **解決方案清單**會顯示至少有一個封存專案的解決方案。 **解決方案清單**包括下列區段：
 
-- **目前的解決方案** &ndash; 顯示目前的解決方案。 請注意，如果目前的解決方案無現有的封存，此區域可能會是空的。
-- **所有封存** &ndash;顯示所有具有封存的解決方案。
+- **目前的方案**&ndash; 會顯示目前的解決方案。 請注意，如果目前的解決方案無現有的封存，此區域可能會是空的。
+- [**所有**封存] &ndash; 會顯示所有具有封存的解決方案。
 - [搜尋] 文字方塊 (位於頂端) &ndash; 根據文字方塊中輸入的搜尋字串，來篩選 [所有封存] 清單中所列的解決方案。
 
 [封存清單] 顯示所選取解決方案之所有封存的清單。 [封存清單] 包括下列區段：
 
-- **選取的解決方案名稱** &ndash; 顯示在**解決方案清單**中所選取解決方案的名稱。 [封存清單] 中顯示的所有資訊是指這個選取的解決方案。
-- **平台篩選** &ndash; 這個欄位可讓封存管理員根據平台類型 (例如 iOS 或 Android) 來篩選封存。
-- **封存項目** &ndash;所選取之解決方案的封存清單。 此清單中的每個項目都包括專案名稱、建立日期和平台。 在封存或發佈項目時，也可以顯示其他資訊，例如進度。
+- **選取的方案名稱**&ndash; 會顯示在 [**方案清單**] 中選取的解決方案名稱。 [封存清單] 中顯示的所有資訊是指這個選取的解決方案。
+- **平臺篩選**&ndash; 此欄位可讓您依平臺類型（例如 IOS 或 Android）篩選封存。
+- 封存**專案**&ndash; 所選解決方案的封存清單。 此清單中的每個項目都包括專案名稱、建立日期和平台。 在封存或發佈項目時，也可以顯示其他資訊，例如進度。
 
 **詳細資料面板**可顯示每個封存的其他相關資訊。 它也可讓使用者開始散發工作流程或開啟散發建立所在的資料夾。 [組建註解] 區段可以在封存中包括組建註解。
 
@@ -343,11 +343,11 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 您可選擇下列其中一個散發通道：
 
-- **臨機操作** &ndash; 將簽署的 APK 儲存至可側載至 Android 裝置的磁碟。 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
+- 臨機**操作 &ndash; 會**將已簽署的 APK 儲存至可側載至 Android 裝置的磁片。 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
 
-- **Google Play** &ndash; 可將簽署的 APK 發佈至 Google Play。 繼續前往[發佈至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何在 Google Play 商店中簽署和發佈 APK。
+- **Google Play** &ndash; 會將已簽署的 APK 發佈至 Google Play。 繼續前往[發佈至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何在 Google Play 商店中簽署和發佈 APK。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 若要開始發佈流程，請選取 [建置] > [封存以供發行]：
 
@@ -363,9 +363,9 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 您可以從這裡選擇散發通道：
 
-- **臨機操作** &ndash; 將簽署的 APK 儲存至磁碟，以便側載至 Android 裝置。 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」&ldquo;&rdquo;版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
+- 臨機**操作 &ndash; 會**將已簽署的 APK 儲存至磁片，以便側載至 Android 裝置。 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」&ldquo;&rdquo;版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
 
-- **Google Play** &ndash; 可將簽署的 APK 發佈至 Google Play。
+- **Google Play** &ndash; 會將已簽署的 APK 發佈至 Google Play。
     繼續前往[發佈至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何在 Google Play 商店中簽署和發佈 APK。
 
 -----

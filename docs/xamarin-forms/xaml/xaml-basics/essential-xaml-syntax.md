@@ -1,6 +1,6 @@
 ---
 title: 第 2 部分。 基本 XAML 語法
-description: 這篇文章會說明基本 XAML 語法的功能屬性的項目，並附加屬性。
+description: 本文說明屬性元素和附加屬性的基本 XAML 語法功能。
 ms.prod: xamarin
 ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
 ms.technology: xamarin-forms
@@ -8,21 +8,21 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: f79a07a04eddeea1441f7938fdef210a37fb920a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772880"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918353"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 語法
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-_XAML 是大部分被針對具現化並初始化物件。通常，屬性必須設定為複雜的物件無法輕鬆地表示為 XML 字串，但有時一個類別所定義的屬性必須設定的子類別。這些兩種需求需要基本 XAML 語法的功能屬性項目和附加的屬性。_
+_XAML 大多是設計來具現化及初始化物件。但通常，屬性必須設定為不容易以 XML 字串表示的複雜物件，而且有時必須在子類別上設定一個類別所定義的屬性。這兩個需求需要屬性專案和附加屬性的基本 XAML 語法功能。_
 
-## <a name="property-elements"></a>Property 項目
+## <a name="property-elements"></a>Property 元素
 
-在 XAML 中，類別的屬性通常會設為 XML 屬性：
+在 XAML 中，類別的屬性通常會設定為 XML 屬性：
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -32,7 +32,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
        TextColor="Aqua" />
 ```
 
-不過，還有在 XAML 中設定屬性的替代方式。 若要嘗試使用此替代方案`TextColor`，先刪除現有`TextColor`設定：
+不過，還有另一種方法可以在 XAML 中設定屬性。 若要使用 `TextColor`來嘗試這種替代方案，請先刪除現有的 `TextColor` 設定：
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -41,7 +41,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
        FontSize="Large" />
 ```
 
-開啟空白項目`Label`分隔成開始和結束標記的標記：
+將空白元素的 `Label` 標籤分隔成開始和結束標記，以開啟該標記：
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -52,7 +52,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </Label>
 ```
 
-在這些標記中，新增的類別名稱和以句號分隔屬性名稱所組成的開始與結束標記：
+在這些標記內，新增包含類別名稱和屬性名稱的開始和結束標記，並以句號分隔：
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -65,7 +65,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </Label>
 ```
 
-將屬性值設定為這些新的標籤，就像這樣的內容中：
+將屬性值設定為這些新標記的內容，如下所示：
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -78,19 +78,19 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </Label>
 ```
 
-若要指定這兩種方式`TextColor`屬性的功能相同，但並不是使用兩種方式為相同的屬性，因為這會有效地設定此屬性兩次，並可能會模稜兩可。
+這兩種指定 `TextColor` 屬性的方式在功能上是相同的，但請勿針對相同的屬性使用兩種方式，因為這樣會有效地設定屬性兩次，而且可能不明確。
 
-使用此新的語法，可能會造成一些好用的術語：
+有了這個新的語法，就可以引進一些便利的術語：
 
-- `Label` 已*物件項目*。 它是以 XML 項目表示 Xamarin.Forms 物件。
-- `Text``VerticalOptions`，`FontAttributes`並`FontSize`會*property 屬性*。 它們都是以 XML 屬性的 Xamarin.Forms 屬性。
-- 在該最終程式碼片段`TextColor`日益*property 項目*。 它是 Xamarin.Forms 屬性，但它現在是 XML 項目。
+- `Label` 是*物件元素*。 它是以 XML 元素表示的 Xamarin. Forms 物件。
+- `Text`、`VerticalOptions`、`FontAttributes` 和 `FontSize` 是*屬性屬性*。 它們是以 XML 屬性工作表示的 Xamarin. 表單內容。
+- 在最後一個程式碼片段中，`TextColor` 已成為*屬性元素*。 它是一個 Xamarin. form 屬性，但它現在是 XML 元素。
 
-定義的屬性項目可能會在第一次似乎是 XML 語法的違規情形，但它不是。 期限在 XML 中沒有任何特殊意義。 以 XML 的解碼器，`Label.TextColor`是只是一般的子元素。
+屬性專案的定義一開始可能會違反 XML 語法，但不會發生這種情況。 句點在 XML 中沒有任何特殊意義。 對 XML 解碼器而言，`Label.TextColor` 只是一個一般的子項目。
 
-在 XAML，不過，此語法是非常特殊。 其中一個屬性元素的規則是沒有其他項目可以出現在`Label.TextColor`標記。 屬性的值一律定義為屬性項目開始和結束標記之間的內容。
+不過，在 XAML 中，此語法非常特殊。 屬性專案的其中一個規則是，沒有其他專案可以出現在 `Label.TextColor` 標記中。 屬性的值一律會定義為屬性專案開始和結束標記之間的內容。
 
-您可以使用屬性元素語法，在多個屬性：
+您可以在一個以上的屬性上使用屬性元素語法：
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -107,7 +107,7 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </Label>
 ```
 
-或者，您可以使用屬性元素語法的所有屬性：
+或者，您可以針對所有屬性使用屬性元素語法：
 
 ```xaml
 <Label>
@@ -129,9 +129,9 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </Label>
 ```
 
-一開始，屬性元素語法看起來像是的不必要的 long-winded 取代為相對很簡單的項目，並在這些範例中這個方法的確如此。
+一開始，屬性元素語法看起來可能像是一個不必要的長冗長取代，因為它相對相當簡單，而在這些範例中當然是如此。
 
-不過，屬性元素語法變得很重要時的屬性值太複雜而無法表示為一個簡單的字串。 在屬性項目的標記內，您可以具現化另一個物件，並設定其屬性。 例如，您可以明確設定屬性這類`VerticalOptions`至`LayoutOptions`屬性設定的值：
+不過，當屬性的值太複雜而無法表示為簡單字串時，屬性元素語法就會變得很重要。 在屬性元素標記中，您可以具現化另一個物件並設定其屬性。 例如，您可以使用屬性設定，將 `VerticalOptions` 的屬性明確設定為 `LayoutOptions` 值：
 
 ```xaml
 <Label>
@@ -142,9 +142,9 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </Label>
 ```
 
-另一個範例：有`Grid`兩個名為`RowDefinitions`和`ColumnDefinitions`的屬性。 這兩個屬性都屬於型別`RowDefinitionCollection`並`ColumnDefinitionCollection`，而這是集合的`RowDefinition`和`ColumnDefinition`物件。 您要使用屬性元素語法來設定這些集合。
+另一個範例： `Grid` 有兩個名為 `RowDefinitions` 和 `ColumnDefinitions`的屬性。 這兩個屬性的類型是 `RowDefinitionCollection` 和 `ColumnDefinitionCollection`，這是 `RowDefinition` 和 `ColumnDefinition` 物件的集合。 您必須使用屬性元素語法來設定這些集合。
 
-以下是為 XAML 檔案的開頭`GridDemoPage`類別，顯示的屬性項目標記`RowDefinitions`和`ColumnDefinitions`集合：
+以下是 `GridDemoPage` 類別之 XAML 檔案的開頭，其中顯示 `RowDefinitions` 和 `ColumnDefinitions` 集合的屬性元素標記：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -167,25 +167,25 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </ContentPage>
 ```
 
-請注意縮寫的語法來定義自動調整大小的儲存格，像素寬度和高度，以及星型的設定儲存格。
+請注意定義自動調整大小的儲存格、圖元寬度和高度的資料格，以及星星設定的縮寫語法。
 
 ## <a name="attached-properties"></a>附加屬性
 
-您已經知道，`Grid`要求的屬性項目`RowDefinitions`和`ColumnDefinitions`集合定義的資料列和資料行。 不過，必須也有一些讓程式設計人員指出的資料列和資料行，每一個子系`Grid`所在。
+您剛剛看到 `Grid` 需要 `RowDefinitions` 和 `ColumnDefinitions` 集合的屬性元素，才能定義資料列和資料行。 不過，程式設計人員也必須有一些方法，指出 `Grid` 的每個子系所在的資料列和資料行。
 
-每一個子系的標記內`Grid`您指定的資料列和資料行的子系使用下列屬性：
+在 `Grid` 的每個子系的標記中，您可以使用下列屬性來指定該子系的資料列和資料行：
 
 - `Grid.Row`
 - `Grid.Column`
 
-這些屬性的預設值為 0。 您也可以指定是否子系跨越多個資料列或資料行，這些屬性：
+這些屬性的預設值為0。 您也可以使用下列屬性來指出子系是否跨越一個以上的資料列或資料行：
 
 - `Grid.RowSpan`
 - `Grid.ColumnSpan`
 
-這兩個屬性有預設值為 1。
+這兩個屬性的預設值為1。
 
-以下是完整的 GridDemoPage.xaml 檔案：
+以下是完整的 GridDemoPage .xaml 檔案：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -250,21 +250,21 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </ContentPage>
 ```
 
-`Grid.Row`和`Grid.Column`並不需要設定為 0，但通常包含為了清楚起見。
+`Grid.Row` 和 `Grid.Column` 設定都不是必要的，但通常是為了清楚起見而納入。
 
-看起來如下：
+如下所示：
 
 [![方格版面配置](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
 
-僅從語法中，這些`Grid.Row`， `Grid.Column`， `Grid.RowSpan`，和`Grid.ColumnSpan`靜態欄位或屬性的屬性會出現`Grid`，但有趣的是，`Grid`不會定義名為的任何項目`Row`， `Column`， `RowSpan`，或`ColumnSpan`。
+這些 `Grid.Row`、`Grid.Column`、`Grid.RowSpan`和 `Grid.ColumnSpan` 屬性都只會從語法中判斷為靜態欄位或 `Grid`屬性，但有趣的是，`Grid` 不會定義任何名稱為 `Row`、`Column`、`RowSpan`或 `ColumnSpan`的專案。
 
-相反地，`Grid`會定義四個可繫結的屬性，名為`RowProperty`， `ColumnProperty`， `RowSpanProperty`，和`ColumnSpanProperty`。 這些是特殊類型的可繫結的屬性，稱為*附加屬性*。 會定義的`Grid`類別，但設定的子系`Grid`。
+相反地，`Grid` 會定義四個可系結的屬性，名為 `RowProperty`、`ColumnProperty`、`RowSpanProperty`和 `ColumnSpanProperty`。 這些是可系結屬性的特殊類型，稱為*附加屬性*。 它們是由 `Grid` 類別定義，但是是在 `Grid`的子系上設定。
 
-當您想要使用這些項目附加在程式碼中的屬性`Grid`類別提供靜態方法，名為`SetRow`， `GetColumn`，依此類推。 在 XAML 中，這些附加的屬性會設定為的子系內的屬性，但`Grid`使用簡單的屬性名稱。
+當您想要在程式碼中使用這些附加屬性時，`Grid` 類別會提供名為 `SetRow`、`GetColumn`等等的靜態方法。 但是在 XAML 中，這些附加屬性會使用簡單的屬性名稱，設定為 `Grid` 子系中的屬性。
 
-附加的屬性都可辨識在 XAML 檔案中做為包含類別和屬性名稱，以句點分隔的屬性。 在呼叫*附加屬性*因為會定義一個類別的 (在此情況下， `Grid`)，但連接至其他物件 (在此案例中的子系`Grid`)。 在配置期間`Grid`可以查閱這些附加的屬性，知道每個子系的位置的值。
+在 XAML 檔案中，附加屬性一律可辨識為包含類別和屬性名稱的屬性，並以句號分隔。 它們稱為*附加屬性*，因為它們是由一個類別（在此案例中為 `Grid`）所定義，但附加至其他物件（在此案例中為 `Grid`的子系）。 在版面配置期間，`Grid` 可以詢問這些附加屬性的值，以知道要將每個子系放在何處。
 
-`AbsoluteLayout`類別會定義兩個附加的屬性，名為`LayoutBounds`和`LayoutFlags`。 以下是以棋盤式圖樣，實現使用依比例的定位和調整大小功能`AbsoluteLayout`:
+`AbsoluteLayout` 類別會定義兩個名為 `LayoutBounds` 和 `LayoutFlags`的附加屬性。 以下是使用 `AbsoluteLayout`的比例定位和調整大小功能所實現的棋盤模式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -309,19 +309,19 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 </ContentPage>
 ```
 
-而以下是：
+這是：
 
 [![絕對版面配置](essential-xaml-syntax-images/absolutedemo-large.png)](essential-xaml-syntax-images/absolutedemo-large.png#lightbox)
 
-什麼像這樣的項目，您可能問題的常識使用 XAML。 當然，重複和的規律`LayoutBounds`矩形所示，可能會在程式碼中進一步實現。
+就像這樣的情況，您可能會問使用 XAML 的智慧功能。 當然，`LayoutBounds` 矩形的重複和變更規律性，表示它可能會在程式碼中更好實現。
 
-這當然是合法的問題，並定義您的使用者介面時，平衡使用程式碼和標記沒有問題。 它是在 XAML 中定義一些視覺效果，然後使用程式碼後置檔案的建構函式將可能會更好的迴圈中產生一些更多視覺效果變得更加容易。
+這當然是合法的考慮，而且在定義使用者介面時，不會有平衡程式碼和標記的使用方式的問題。 您可以輕鬆地在 XAML 中定義部分視覺效果，然後使用程式碼後置檔案的函式來新增更多視覺效果，以便在迴圈中產生更好的外觀。
 
 ## <a name="content-properties"></a>內容屬性
 
-在上一個範例中， `StackLayout`， `Grid`，並`AbsoluteLayout`物件都會設為`Content`屬性`ContentPage`，以及這些配置的子系是實際上中的項目`Children`集合。 但這些`Content`和`Children`屬性是沒地方 XAML 檔案中。
+在先前的範例中，`StackLayout`、`Grid`和 `AbsoluteLayout` 物件會設定為 `ContentPage`的 `Content` 屬性，而這些配置的子系實際上是 `Children` 集合中的專案。 不過，這些 `Content` 和 `Children` 屬性在 XAML 檔案中沒有任何地方。
 
-您當然可以包含`Content`並`Children`做為屬性項目，例如在屬性**XamlPlusCode**範例：
+您當然可以將 `Content` 和 `Children` 屬性納入為屬性元素，例如**XamlPlusCode**範例中的：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -352,29 +352,29 @@ _XAML 是大部分被針對具現化並初始化物件。通常，屬性必須�
 
 真正的問題是：為什麼 XAML 檔案中*不*需要這些屬性元素？
 
-用於 XAML 中定義在 Xamarin.Forms 中的項目可以有一個屬性中加上旗標`ContentProperty`類別上的屬性。 如果您查閱`ContentPage`類別在線上的 Xamarin.Forms 文件，您會看到這個屬性：
+在 Xamarin 中定義的專案，可以在類別的 `ContentProperty` 屬性中加上旗標的一個屬性。 如果您在線上 Xamarin. 表單檔中查閱 `ContentPage` 類別，您會看到此屬性：
 
 ```csharp
 [Xamarin.Forms.ContentProperty("Content")]
 public class ContentPage : TemplatedPage
 ```
 
-這表示`Content`屬性項目標記不需要。 任何出現的開始和結束之間的 XML 內容`ContentPage`標記會假設為指派給`Content`屬性。
+這表示不需要 `Content` 屬性元素標記。 在開始和結束 `ContentPage` 標記之間出現的任何 XML 內容，都會假設指派給 `Content` 屬性。
 
- `StackLayout``Grid`， `AbsoluteLayout`，並`RelativeLayout`都是衍生自`Layout<View>`，而且如果您查閱`Layout<T>`中的 Xamarin.Forms 文件中，您會看到另一個`ContentProperty`屬性：
+ `StackLayout`、`Grid`、`AbsoluteLayout`和 `RelativeLayout` 全都衍生自 `Layout<View>`，如果您在 [Xamarin] 檔中查閱 `Layout<T>`，則會看到另一個 `ContentProperty` 屬性：
 
 ```csharp
 [Xamarin.Forms.ContentProperty("Children")]
 public abstract class Layout<T> : Layout ...
 ```
 
-可讓內容會自動加入至版面配置`Children`集合，而不需要明確`Children`屬性項目標記。
+，可讓配置的內容自動加入至 `Children` 集合，而不需要明確 `Children` 屬性專案標記。
 
-其他類別也具有`ContentProperty`屬性定義。 例如，內容屬性的`Label`是`Text`。 請檢查其他人的 API 文件。
+其他類別也有 `ContentProperty` 的屬性定義。 例如，`Label` 的 content 屬性是 `Text`。 查看其他人的 API 檔。
 
-## <a name="platform-differences-with-onplatform"></a>OnPlatform 平台差異
+## <a name="platform-differences-with-onplatform"></a>與 OnPlatform 的平臺差異
 
-在單一頁面應用程式，通常會設定`Padding`以避免覆寫 iOS 狀態列 頁面上的屬性。 在程式碼中，您可以使用`Device.RuntimePlatform`針對此用途的屬性：
+在單一頁面應用程式中，通常會在頁面上設定 [`Padding`] 屬性，以避免覆寫 iOS 狀態列。 在程式碼中，您可以針對此目的使用 `Device.RuntimePlatform` 屬性：
 
 ```csharp
 if (Device.RuntimePlatform == Device.iOS)
@@ -383,7 +383,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-您也可以使用[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和[`On`](xref:Xamarin.Forms.On)類別，在 XAML 中執行類似的動作。 第一個包含屬性項目`Padding`屬性頁面的頂端附近：
+您也可以使用[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)和[`On`](xref:Xamarin.Forms.On)類別，在 XAML 中執行類似的動作。 在靠近頁面頂端的 `Padding` 屬性中，首先包含屬性元素：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -397,7 +397,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-兩個標記，包括`OnPlatform`標記。 `OnPlatform` 是泛型類別。 您必須指定泛型型別引數時，在此情況下， `Thickness`，這是種`Padding`屬性。 所幸還有專為定義呼叫的泛型引數的 XAML 屬性`x:TypeArguments`。 這應該符合您所設定之屬性的型別：
+在這些標記中，包含 `OnPlatform` 標記。 `OnPlatform` 是泛型類別。 您需要指定泛型型別引數，在此案例中為 `Thickness`，這是 `Padding` 屬性的類型。 幸好，有一個 XAML 屬性專門用來定義稱為 `x:TypeArguments`的泛型引數。 這應符合您所設定之屬性的類型：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -413,7 +413,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-`OnPlatform` 有一個叫做屬性`Platforms`也就是說`IList`的`On`物件。 使用該屬性的屬性項目標記：
+`OnPlatform` 具有名為 `Platforms` 的屬性，這是 `On` 物件的 `IList`。 針對該屬性使用 property 元素標記：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -431,7 +431,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-現在加入`On`項目。 針對每個設定`Platform`屬性和`Value`屬性來標記`Thickness`屬性：
+現在加入 `On` 元素。 針對每個設定，將 [`Platform`] 屬性和 [`Value`] 屬性設為 [`Thickness`] 屬性的 [標記]：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -451,7 +451,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-可以簡化此標記。 內容屬性`OnPlatform`是`Platforms`，因此可以移除這些屬性-元素標記：
+此標記可以簡化。 `OnPlatform` 的 content 屬性 `Platforms`，因此可以移除這些屬性元素的標記：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -469,7 +469,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-`Platform`的屬性`On`別的`IList<string>`，因此，如果值相同，您可以包含多個平台：
+`On` 的 `Platform` 屬性是 `IList<string>`類型，因此如果這些值相同，您可以包含多個平臺：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -486,7 +486,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-因為 Android 及 UWP 設定的預設值為`Padding`，可以移除標記：
+因為 Android 和 UWP 設定為預設值 `Padding`，所以可以移除該標記：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -502,7 +502,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-這是設定平台相依的標準方式`Padding`在 XAML 中的屬性。 如果`Value`設定無法以單一字串表示，您可以為它定義屬性的項目：
+這是在 XAML 中設定平臺相依 `Padding` 屬性的標準方式。 如果 `Value` 設定無法以單一字串表示，您可以為它定義屬性元素：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -523,16 +523,16 @@ if (Device.RuntimePlatform == Device.iOS)
 ```
 
 > [!NOTE]
-> `OnPlatform`標記延伸也可以在 XAML 中用來自訂以每個平臺為基礎的 UI 外觀。 它提供與`OnPlatform`和`On`類別相同的功能，但具有更精確的標記法。 如需詳細資訊，請參閱 < [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+> `OnPlatform` 標記延伸也可以在 XAML 中用來自訂以每個平臺為基礎的 UI 外觀。 它提供與 `OnPlatform` 和 `On` 類別相同的功能，但具有更精確的標記法。 如需詳細資訊，請參閱[OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-Property 項目和附加的屬性，大部分的基本 XAML 語法建立的。 不過，有時候您需要從資源字典中以間接方式，例如，設定屬性物件。 在下一步 部分中，部分涵蓋此方法的[3。XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
+在屬性專案和附加屬性中，已建立許多基本 XAML 語法。 不過，有時候您需要以間接方式（例如從資源字典）將屬性設定為物件。 這種方法在下一個部分（第3部分）中涵蓋[。XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
 
 ## <a name="related-links"></a>相關連結
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
-- [第 1 部分：開始使用 XAML](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [第 3 部分：XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [第 4 部分：資料繫結的基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [第 5 部分：從資料繫結至 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [第1部分。使用 XAML 消費者入門](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [第3部分。XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [第4部分。資料系結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [第5部分：從資料系結到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
