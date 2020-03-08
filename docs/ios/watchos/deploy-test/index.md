@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028346"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918724"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>使用 Xamarin 部署和測試 watchOS 應用程式
 
@@ -74,7 +74,7 @@ ms.locfileid: "73028346"
 
 - 已在 Apple 開發人員入口網站的 [**憑證]、[識別碼 & 設定檔**] 區段中設定**應用程式群組**。
 
-- 在 iOS 應用程式和監看式延伸模組的**應用程式識別碼**和**權利. plist** *中，* 啟用**應用程式群組**（並提供**應用程式群組識別碼**）。
+- 在 iOS 應用程式和監看式延伸模組的**應用程式識別碼**和**權利. plist***中，* 啟用**應用程式群組**（並提供**應用程式群組識別碼**）。
 
 ### <a name="certificates-identifiers--profiles"></a>憑證、識別碼 & 設定檔
 
@@ -100,7 +100,7 @@ ms.locfileid: "73028346"
 - iOS 應用程式專案
 - 監看延伸模組專案
 
-執行個體時提供 SQL Server 登入。![Plist 編輯器](images/entitlements-plist-sml.png)
+。![Plist 編輯器](images/entitlements-plist-sml.png)
 
 請勿在監看式應用程式專案**中啟用權利**。 不需要在監看式本身上啟用。
 

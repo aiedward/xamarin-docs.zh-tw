@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016324"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910742"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 位平臺考慮
 
@@ -36,7 +36,7 @@ Xamarin 的 Classic API （`XamMac.dll` 和 `monotouch.dll`）僅支援32位應�
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在  **Solution Pad**中，按兩下應用程式的專案，以開啟 **專案選項** 視窗。
 2. 選取 [ **IOS 組建**]。
@@ -49,9 +49,9 @@ Xamarin 的 Classic API （`XamMac.dll` 和 `monotouch.dll`）僅支援32位應�
    [![將支援的架構設定為其中一個 ARM64 組合](Images/Image02.png "將支援的架構設定為其中一個 ARM64 組合")](Images/Image02-large.png#lightbox)
 
 5. 按一下 [確定]。
-6. 執行乾淨的組建。
+6. 執行清除組建。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 在 **方案總管**中，以滑鼠右鍵按一下應用程式的專案，然後選取 **屬性**。
 2. 選取 [ **IOS 組建**]。
@@ -64,7 +64,7 @@ Xamarin 的 Classic API （`XamMac.dll` 和 `monotouch.dll`）僅支援32位應�
    [![將支援的架構設定為其中一個 ARM64 組合](Images/VS01.png "將支援的架構設定為其中一個 ARM64 組合")](Images/VS01-large.png#lightbox)
 
 5. 儲存您的變更。
-6. 執行乾淨的組建。
+6. 執行清除組建。
 
 -----
 

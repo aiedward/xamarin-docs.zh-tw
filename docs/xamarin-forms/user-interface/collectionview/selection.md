@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: a4cc237ef738edeccf66f1a91a010e4831c1c72f
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "78292802"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918395"
 ---
 # <a name="xamarinforms-collectionview-selection"></a>CollectionView 選取專案的表單
 

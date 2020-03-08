@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/20/2020
 ms.openlocfilehash: 3798e3612547d36905dd62e6314f158958782874
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78291889"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911329"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin 中的字型
 

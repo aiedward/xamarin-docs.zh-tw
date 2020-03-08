@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
 ms.openlocfilehash: 7c6647a0299b5ece3caaaa1d322ec1a0efac3557
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490086"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912239"
 ---
 # <a name="xamarinforms-imagebutton"></a>Xamarin. Forms ImageButton
 
