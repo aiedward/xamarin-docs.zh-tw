@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
 ms.openlocfilehash: 11ad1fb18d1263eb77ef037350a3633510934c42
-ms.sourcegitcommit: 0df727caf941f1fa0aca680ec871bfe7a9089e7c
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69621092"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915666"
 ---
 # <a name="hierarchical-navigation"></a>階層式導覽
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
-_NavigationPage 類別提供的階層式導覽體驗讓使用者能夠視需要，向前及向後巡覽頁面。此類別會實作一堆後進先出 (LIFO) 的 Page 物件導覽。本文示範如何使用 NavigationPage 類別，在一堆頁面中執行導覽。_
+_NavigationPage 類別提供階層式導覽體驗，讓使用者能夠視需要，向前和向後流覽頁面。類別會將導覽實作為頁面物件的後進先出（LIFO）堆疊。本文示範如何使用 NavigationPage 類別，在一堆頁面中執行導覽。_
 
 若要從一頁移到另一頁，應用程式會將新的頁面推送到導覽堆疊上，該頁面就會變成使用中頁面，如下圖所示：
 
-![](hierarchical-images/pushing.png "將頁面推送到導覽堆疊")
+![](hierarchical-images/pushing.png "Pushing a Page to the Navigation Stack")
 
 若要返回上一頁，應用程式將會從導覽堆疊中快顯目前的頁面，新的最上層頁面就會變成使用中頁面，如下圖所示：
 
-![](hierarchical-images/popping.png "從導覽堆疊中快顯頁面")
+![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
 
 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性會在任何 [`Page`](xref:Xamarin.Forms.Page) 衍生類型上公開導覽方法。 這些方法可讓您將頁面推送到導覽堆疊上、從導覽堆疊中快顯頁面，以及執行堆疊操作。
 
@@ -36,18 +36,18 @@ _NavigationPage 類別提供的階層式導覽體驗讓使用者能夠視需要�
 
 在階層式導覽中，[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 類別用來導覽一疊 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件。 下列螢幕擷取畫面顯示每個平台上 `NavigationPage` 的主要元件：
 
-![](hierarchical-images/navigationpage-components.png "NavigationPage 元件")
+![](hierarchical-images/navigationpage-components.png "NavigationPage Components")
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的配置取決於平台：
 
-- 在 iOS 上，頁面頂端有一個導覽列，其中顯示標題，並具有可返回上一頁的 [上一頁]  按鈕。
-- 在 Android 上，頁面頂端有一個導覽列，其中顯示標題、圖示，以及可返回上一頁的 [上一頁]  按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。
+- 在 iOS 上，頁面頂端有一個導覽列，其中顯示標題，並具有可返回上一頁的 [上一頁] 按鈕。
+- 在 Android 上，頁面頂端有一個導覽列，其中顯示標題、圖示，以及可返回上一頁的 [上一頁] 按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。
 - 在通用 Windows 平台上，頁面頂端有一個顯示標題的導覽列。
 
 在所有平台上，[`Page.Title`](xref:Xamarin.Forms.Page.Title) 屬性的值會顯示為頁面標題。
 
 > [!NOTE]
-> 建議僅以 `ContentPage` 執行個體填入 `NavigationPage`。
+> 建議僅以 `NavigationPage` 執行個體填入 `ContentPage`。
 
 ### <a name="creating-the-root-page"></a>建立根頁面
 
@@ -60,16 +60,16 @@ public App ()
 }
 ```
 
-這會使 `Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體推送至導覽堆疊上，而變成使用中頁面及應用程式的根頁面。 如下列螢幕擷取畫面所示：
+這會導致 `Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPage)實例推送至導覽堆疊上，而它會成為應用程式的使用中頁面和根頁面。 如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/mainpage.png "導覽堆疊的根頁面")
+![](hierarchical-images/mainpage.png "Root Page of Navigation Stack")
 
 > [!NOTE]
-> [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體的 [`RootPage`](xref:Xamarin.Forms.NavigationPage.RootPage) 屬性可讓您存取導覽堆疊中的第一頁。
+> [`RootPage`](xref:Xamarin.Forms.NavigationPage.RootPage) 執行個體的 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 屬性可讓您存取導覽堆疊中的第一頁。
 
 ### <a name="pushing-pages-to-the-navigation-stack"></a>將頁面推送到導覽堆疊
 
-若要巡覽至 `Page2Xaml`，必須在目前頁面的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性上叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法，如下列程式碼範例所示：
+若要巡覽至 `Page2Xaml`，必須在目前頁面的 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 屬性上叫用 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 方法，如下列程式碼範例所示：
 
 ```csharp
 async void OnNextPageButtonClicked (object sender, EventArgs e)
@@ -80,7 +80,7 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 
 這會使 `Page2Xaml` 執行個體推送至導覽堆疊上，而變成使用中的頁面。 如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/secondpage.png "推送到導覽堆疊上的頁面")
+![](hierarchical-images/secondpage.png "Page Pushed onto Navigation Stack")
 
 叫用 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 方法時，會發生下列事件：
 
@@ -95,7 +95,7 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 
 ### <a name="popping-pages-from-the-navigation-stack"></a>從導覽堆疊中快顯頁面
 
-無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁]  按鈕都可以從導覽堆疊快顯使用中的頁面。
+無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁] 按鈕都可以從導覽堆疊快顯使用中的頁面。
 
 若要以程式設計的方式返回原始頁面，`Page2Xaml` 執行個體必須叫用 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，如下列程式碼範例所示：
 
@@ -182,7 +182,7 @@ public MainPage (string date)
 
 接著可設定 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 屬性在頁面上顯示資料，如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/passing-data-constructor.png "透過頁面建構函式傳遞的資料")
+![](hierarchical-images/passing-data-constructor.png "Data Passed Through a Page Constructor")
 
 ### <a name="passing-data-through-a-bindingcontext"></a>透過 BindingContext 傳遞資料
 
@@ -204,7 +204,7 @@ async void OnNavigateButtonClicked (object sender, EventArgs e)
 }
 ```
 
-此程式碼會將 `SecondPage` 執行個體的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 設定為 `Contact` 執行個體，然後巡覽至 `SecondPage`。
+此程式碼會將 [ 執行個體的 `BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)`SecondPage` 設定為 `Contact` 執行個體，然後巡覽至 `SecondPage`。
 
 `SecondPage` 會接著使用資料繫結來顯示 `Contact` 執行個體資料，如下列 XAML 程式碼範例所示：
 
@@ -268,7 +268,7 @@ public class SecondPageCS : ContentPage
 
 接著可透過一連串的 [`Label`](xref:Xamarin.Forms.Label) 控制項在頁面上顯示資料，如下列螢幕擷取畫面所示：
 
-![](hierarchical-images/passing-data-bindingcontext.png "透過 BindingContext 傳遞的資料")
+![](hierarchical-images/passing-data-bindingcontext.png "Data Passed Through a BindingContext")
 
 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
@@ -280,11 +280,11 @@ public class SecondPageCS : ContentPage
 
 [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) 方法會將指定的頁面插入導覽堆疊中現有指定頁面之前，如下圖所示：
 
-![](hierarchical-images/insert-page-before.png "將頁面插入導覽堆疊")
+![](hierarchical-images/insert-page-before.png "Inserting a Page in the Navigation Stack")
 
 [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) 方法會從導覽堆疊中移除指定的頁面，如下圖所示：
 
-![](hierarchical-images/remove-page.png "從導覽堆疊中移除頁面")
+![](hierarchical-images/remove-page.png "Removing a Page from the Navigation Stack")
 
 這些方法會啟用自訂導覽體驗，例如在成功登入之後，以新頁面取代登入頁面。 下列程式碼範例將示範此情節：
 
@@ -337,9 +337,9 @@ public class TitleViewPage : ContentPage
 }
 ```
 
-這會導致在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的導覽列中顯示 [`Slider`](xref:Xamarin.Forms.Slider)：
+這會導致在 [`Slider`](xref:Xamarin.Forms.Slider) 的導覽列中顯示 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)：
 
-[![滑桿 TitleView](hierarchical-images/titleview-small.png "滑桿 TitleView")](hierarchical-images/titleview-large.png#lightbox "滑桿 TitleView")
+[![滑杆 TitleView](hierarchical-images/titleview-small.png "滑杆 TitleView")](hierarchical-images/titleview-large.png#lightbox "滑杆 TitleView")
 
 > [!IMPORTANT]
 > 除非使用 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 和 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 屬性指定檢視的大小，否則許多檢視不會出現在導覽列中。 或者，您可以將檢視包裝在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中，並將 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設定為適當的值。
@@ -353,7 +353,7 @@ public class TitleViewPage : ContentPage
 
 ### <a name="limitations"></a>限制
 
-在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的導覽列中顯示 [`View`](xref:Xamarin.Forms.View) 時有一些要注意的限制：
+在 [`View`](xref:Xamarin.Forms.View) 的導覽列中顯示 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 時有一些要注意的限制：
 
 - 在 iOS 上，放在 `NavigationPage` 導覽列中的檢視會根據是否啟用大型標題，出現在不同的位置。 如需啟用大型標題的詳細資訊，請參閱[顯示大型標題](~/xamarin-forms/platform/ios/page-large-title.md)。
 - 在 Android 上，只有在使用 app-compat 的應用程式中，才能成功將檢視放在 `NavigationPage` 的導覽列中。

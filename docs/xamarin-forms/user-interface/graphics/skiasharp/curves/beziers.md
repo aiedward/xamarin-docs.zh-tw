@@ -1,6 +1,6 @@
 ---
 title: 三種類型的貝茲曲線
-description: 本文說明如何使用 SkiaSharp 呈現在 Xamarin.Forms 應用程式的三次方、 二次方，以及 conic 貝茲曲線，並示範此範例程式碼。
+description: 本文說明如何使用 SkiaSharp 來轉譯 Xamarin 中的三次、二次方和圓錐形曲線，並使用範例程式碼示範這項功能。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
@@ -8,33 +8,33 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/25/2017
 ms.openlocfilehash: 1cf061f2ff27720ad78567bc26f00d99c5456f04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759423"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915939"
 ---
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_探索如何使用 SkiaSharp 呈現三次方、 二次方，以及 conic 貝茲曲線_
+_探索如何使用 SkiaSharp 呈現三重、二次方和圓錐的貝茲曲線_
 
-貝茲曲線被命名匹貝茲 (1910年 – 1999)，法文的工程師在汽車公司 Renault，使用電腦輔助設計的車內文的曲線。
+Bezier 曲線是在聖皮爾 Bezier （1910–1999）之後命名，這是汽車公司 Renault 的法文工程師，其使用汽車內電腦輔助設計的曲線。
 
-貝茲曲線已知適合用於互動式設計：它們的行為也&mdash;不太 singularities，因此不會造成曲線變得無限或難以&mdash;執行，而且通常內賞心悅目令人滿意：
+貝茲曲線的功能非常適合互動式設計：它們的行為良好 &mdash; 換句話說，沒有 singularities 會導致曲線變得無限或不費力 &mdash; 而且通常會內賞心悅目滿意：
 
 ![樣本貝茲曲線](beziers-images/beziersample.png)
 
-使用貝茲曲線，通常被定義字元外框輪廓的電腦為基礎的字型。
+以電腦為基礎的字型的字元外框，通常是以貝茲曲線來定義。
 
-在維基百科文章[**貝茲曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)包含一些有用的背景資訊。 詞彙*貝茲曲線*實際上是指一系列的類似的曲線。 SkiaSharp 支援三種類型的貝茲曲線，稱為*三次方*，則*二次方*，而*conic*。 Conic 就是所謂*rational 二次方程式*。
+有關[**貝茲曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)的維琪百科文章包含一些實用的背景資訊。 「*貝茲曲線*」一詞實際上是指類似曲線的系列。 SkiaSharp 支援三種類型的貝茲曲線，稱為「*三*角」、「*二次*」和「*圓錐*」。 圓錐也稱為*有理數二次*方。
 
 ## <a name="the-cubic-bzier-curve"></a>三次方貝茲曲線
 
-三次方是貝茲曲線的貝茲曲線主旨出現時，大部分的開發人員認為的類型。
+這三種類型是大部分開發人員在貝茲曲線的主旨出現時所想要的貝茲曲線類型。
 
-您可以加入到三次方貝茲曲線`SKPath`物件使用[ `CubicTo` ](xref:SkiaSharp.SKPath.CubicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKPoint))具有三個方法`SKPoint`參數，或[ `CubicTo` ](xref:SkiaSharp.SKPath.CubicTo(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single))多載，使用不同`x`和`y`參數：
+您可以使用具有三個 `SKPoint` 參數的[`CubicTo`](xref:SkiaSharp.SKPath.CubicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKPoint))方法，或具有個別 `x` 和 `y` 參數的[`CubicTo`](xref:SkiaSharp.SKPath.CubicTo(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single))多載，將三次方貝茲曲線新增至 `SKPath` 物件：
 
 ```csharp
 public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
@@ -42,16 +42,16 @@ public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
 public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Single y3)
 ```
 
-曲線開始移動平均的分佈。 完整的三次方貝茲曲線是由四個點定義：
+曲線會從等高線的目前點開始。 完整的三次方貝茲曲線是由四個點所定義：
 
-- 起始點： 目前的點線段，或 （0，0） 如果`MoveTo`尚未呼叫
-- 第一次控制點：`point1`在`CubicTo`呼叫
-- 第二個控制點：`point2`在`CubicTo`呼叫
-- 結束點：`point3`在`CubicTo`呼叫
+- 起點：輪廓中的目前點，如果尚未呼叫 `MoveTo`，則為（0，0）
+- 第一個控制點： `CubicTo` 呼叫中的 `point1`
+- 第二個控制點： `CubicTo` 呼叫中的 `point2`
+- 結束點： `CubicTo` 呼叫中的 `point3`
 
-結果的曲線的起始點開始，並在結束點結束。 曲線通常不會通過兩個控制點;而是兩個控制點函式非常類似磁鐵提取他們而來的曲線。
+結果曲線會從起點開始，並在結束點結束。 曲線通常不會通過這兩個控制點;相反地，控制點的運作方式很像磁鐵，可以向它們拉出曲線。
 
-若要概略了三次方貝茲曲線，最好是測試。 這是目的**貝茲曲線**頁面上，衍生自`InteractivePage`。 [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)檔案會具現化`SKCanvasView`和`TouchEffect`。 [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)程式碼後置檔案會建立四個`TouchPoint`其建構函式中的物件。 `PaintSurface`事件處理常式會建立`SKPath`呈現根據四個貝茲曲線`TouchPoint`物件，而且也繪製虛線的正切函數控點從端點：
+若要瞭解三次方貝茲曲線的最佳方式，就是透過實驗。 這是 [**貝茲曲線**] 頁面的用途，其衍生自 `InteractivePage`。 [**BezierCurvePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)會將 `SKCanvasView` 和 `TouchEffect`具現化。 [**BezierCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)程式碼後置檔案會在其函式中建立四個 `TouchPoint` 物件。 `PaintSurface` 事件處理常式會建立 `SKPath`，以根據四個 `TouchPoint` 物件來呈現貝茲曲線，並且也會從控制點將圓點的正切線條繪製到結束點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -91,49 +91,49 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-以下執行：
+它正在執行：
 
-[![[貝茲曲線] 頁面的三重螢幕擷取畫面](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
+[![貝茲曲線頁面的三重螢幕擷取畫面](beziers-images/beziercurve-small.png)](beziers-images/beziercurve-large.png#lightbox)
 
-以數學方式，曲線是三次方多項式次方。 曲線最相交於三個點的直線。 起始點，在曲線一律為，然後在方向相同的正切函數，一條直線開始點的第一個控制點。 結束點曲線一律為，然後在方向相同的正切函數，從第二個控制項一條直線指向結束點。
+在數學上，曲線是三個多項式。 曲線最多隻會在三個點的直線相交。 在起點，曲線一律會在從起點到第一個控制點的直線中，與相同的方向相切。 在結束點，曲線一律會從第二個控制點到結束點的直線，並以與相同的方向來正切。
 
-連接四個點的凸方形一律會受限於三次方貝茲曲線。 這就叫做*凸殼*。 如果控制項點位於上開始和結束點之間的直線，貝茲曲線就會轉譯為一條直線。 但曲線也可以跨越本身，如第三個螢幕擷取畫面所示。
+三次方貝茲曲線一律是由連接四個點的凸四邊形所限制。 這稱為*凸*殼。 如果控制點位於起點和終點之間的直線，則貝茲曲線會呈現為直線。 但曲線也可以跨越自己，如第三個螢幕擷取畫面所示。
 
-路徑 contour 可以包含多個連接的三次方貝茲曲線，但兩個三次方貝茲曲線之間的連線會 smooth 只有 colinear 下列三個點 （也就是上一條直線之間）：
+路徑等高線可以包含多個連接的三次方貝茲曲線，但只有在下列三個點 colinear （也就是在直線上）時，兩個三次方貝茲曲線之間的連接才會平滑：
 
 - 第一個曲線的第二個控制點
-- 第一個曲線，這也是第二個曲線的起始點的結束點
+- 第一個曲線的結束點，也是第二個曲線的起點。
 - 第二個曲線的第一個控制點
 
-在下一篇文章上[ **SVG 路徑資料**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)，您會發現的機能，以便順利連接的貝茲曲線的定義。
+在下一篇有關[**SVG 路徑資料**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)的文章中，您將會發現一個設備，讓您能夠輕鬆定義平滑連線的貝茲曲線。
 
-有時會很有幫助呈現三次方貝茲曲線基礎參數化的方程式。 針對*t*範圍從 0 到 1，參數化的方程式如下所示：
+有時，知道會呈現三次方貝茲曲線的基礎參數方程式，會很有用。 對於範圍從0到1的*t* ，參數化方程式如下所示：
 
-x(t) = (1 – t) ³x₀ + 3t (1 – t) ²x₁ + 3t² (1 – t) x₂ + t³x₃
+x （t） = （1– t）³ x ₀ + 3t （1– t）² x ₁ + 3t ²（1– t） x ₂ + t ³ x ₃
 
-y(t) = (1 – t) ³y₀ + 3t (1 – t) ²y₁ + 3t² (1 – t) y₂ + t³y₃
+y （t） = （1– t）³ y ₀ + 3t （1– t）² y ₁ + 3t ²（1– t） y ₂ + t ³ y ₃
 
-3 的最高的指數確認，這些都是三次方 polynomials。 就可以輕鬆地驗證，當`t`等於 0，重點是 (x₀ y₀)，這是起始點，以及當`t`等於 1，重點是 (x₃ y₃)，這是結束點。 附近的起始點 (低值`t`)，第一個控制點 （x₁、 y₁） 具有強式生效，並近乎結束點 (最高值的 ' t ') 的第二個控制點 （x₂、 y₂） 有很大的影響。
+最高的指數3會確認這些是三 polynomials。 當 `t` 等於0時，點是（x ₀，y ₀），也就是起點，而當 `t` 等於1時，點是（x ₃，y ₃），也就是結束點。 接近起點（`t`的低值）時，第一個控制點（x ₁、y ₁）的效果很強，而且接近結束點（高值為 ' t '）時，第二個控制點（x ₂、y ₂）會有強烈的效果。
 
-## <a name="bezier-curve-approximation-to-circular-arcs"></a>圓弧的貝茲曲線最近似值
+## <a name="bezier-curve-approximation-to-circular-arcs"></a>圓弧的貝茲曲線近似值
 
-可能會很方便地使用貝茲曲線來呈現圓弧線段。三次方貝茲曲線可以近似圓弧線段很高達四分之一圓形，因此四個連接的貝茲曲線可以定義整個圓形。 已發行超過 25 年多前的兩篇文章討論這項估計值：
+有時候，使用貝茲曲線來呈現圓弧會很方便。三次方貝茲曲線可能會大致地逼近圓弧，因此四個連接的貝茲曲線可以定義整個圓形。 這項近似值會在25年前發佈的兩篇文章中討論：
 
-> Tor Dokken 等，「 適當近似值圓形的曲率連續的貝茲曲線，「*電腦輔助幾何設計 7* (1990)，33 41。
+> Tor Dokken，加上「曲線的良好近似值-連續的貝茲曲線」、「*電腦輔助幾何設計 7* （1990）、33-41。
 
-> Michael Goldapp、"近似值圓弧三次方 Polynomials，由 「*電腦輔助的幾何設計 8* （1991 年以來），227 238。
+> Michael Goldapp，「依三次的圓弧 Polynomials」，*電腦輔助幾何設計 8* （1991），227-238。
 
-下圖顯示四個點標示`pto`， `pt1`， `pt2`，和`pt3`定義近似圓弧線段的貝茲曲線 （以紅色顯示）：
+下圖顯示四個標示為 `pto`、`pt1`、`pt2`和 `pt3` 的點，其定義了接近圓弧的貝茲曲線（以紅色顯示）：
 
 ![以貝茲曲線繪製圓弧的近似值](beziers-images/bezierarc45.png)
 
-中開始和結束點的程式行，以控點會圓形，貝茲曲線的正切函數，而且必須一段*L*。上述第一篇文章指出最佳的貝茲曲線接近圓弧線段時，長度*L*計算如下：
+從起點和終點到控制點的線條會與圓形或貝茲曲線相切，而且其長度為*L*。上述第一個提及的文章指出，當長度*L*的計算方式如下時，貝茲曲線最適合圓弧：
 
-L = 4 × tan(α / 4) / 3
+L = 4 × tan （α/4）/3
 
-此圖顯示 45 度的角度，因此 L 等於 0.265。 在程式碼，該值會乘以需圓形的半徑。
+下圖顯示45度的角度，因此 L 等於0.265。 在程式碼中，該值會乘以所需的圓形半徑。
 
-**貝茲圓弧** 頁面可讓您實驗定義的貝茲曲線，來模擬圓弧範圍最多 180 度的角度。 [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml)檔案會具現化`SKCanvasView`和`Slider`可供選取的角度。 `PaintSurface`中的事件處理常式[ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs)程式碼後置檔案會使用轉換來設定畫布的中心點 （0，0）。 它繪製圓形，相較之下，該點上置中，然後計算貝茲曲線的兩個控點：
+[**貝塞爾**圓弧] 頁面可讓您試驗定義貝茲曲線，使其角度接近最高達180度的圓弧。 [**BezierCircularArcPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml)會將 `SKCanvasView` 和用來選取角度的 `Slider` 具現化。 在[**BezierCircularArgPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs)程式碼後置檔案中的 `PaintSurface` 事件處理常式會使用轉換，將點（0，0）設為畫布的中心。 它會繪製以該點為中心的圓形以進行比較，然後計算貝茲曲線的兩個控制點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -207,21 +207,21 @@ float Magnitude(SKPoint v)
 
 ```
 
-開始和結束點 (`point0`和`point3`) 會計算是根據圓形一般參數化的方程式。 因為圓形中心位於 （0，0），這些點也可視為星形向量從圓形的中心來圓周。 控制點位於行的正切函數為圓形，讓它們為直角成這些星形的向量。 呈直角到另一個向量是只要原始向量與交換的 X 和 Y 座標和其中所做的負值。
+開始和結束點（`point0` 和 `point3`）是根據圓形的一般參數方程式來計算。 因為圓形是以（0，0）為中心，所以這些點也可以視為從圓形中央到圓周的放射狀向量。 控制點會在與圓形相切的線條上，因此它們會以適當的角度指向這些放射狀向量。 指向另一個角度的向量就是已交換 X 和 Y 座標的原始向量，而其中一個設為負值。
 
-以下是執行不同的角度的程式：
+以下是以不同角度執行的程式：
 
-[![[貝塞爾圓弧] 頁面的三重螢幕擷取畫面](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
+[![貝塞爾圓弧頁面的三重螢幕擷取畫面](beziers-images/beziercirculararc-small.png)](beziers-images/beziercirculararc-large.png#lightbox)
 
-仔細看看第三個螢幕擷取畫面，您會看到，貝茲曲線值得注意的是衍生自半圓形的角度為 180 度，但 iOS 畫面會顯示它似乎符合四分之一圓形正常，角度為 90 度時。
+請仔細查看第三個螢幕擷取畫面，您會看到當角度為180度時，貝茲曲線與半圓的偏差很明顯，但 iOS 畫面顯示在角度為90度時，它似乎符合四分之一圓。
 
-計算兩個控制點座標是相當簡單，導向這類四分之一圓形時：
+當季圓形的方向如下時，計算兩個控制點的座標相當簡單：
 
 ![具有貝茲曲線的季圓近似值](beziers-images/bezierarc90.png)
 
-如果圓形的半徑為 100，則*L* 55，而且是簡單的數字，要記住。
+如果圓形的半徑為100，則*L*是55，而這是很容易記住的數位。
 
-**Number 圓形**頁面以動畫顯示的圖形之間的圓形和正方形。 在這個陣列定義的第一個資料行中顯示其座標的四個貝茲曲線近似於圓形[ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs)類別：
+「**圓形**」頁面會在圓形和正方形之間繪製圖形。 圓形的近似值是四個貝茲曲線，其座標會顯示在[`SquaringTheCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs)類別中此陣列定義的第一個資料行中：
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -246,9 +246,9 @@ public class SquaringTheCirclePage : ContentPage
 }
 ```
 
-第二個資料行包含定義區域大約是圓形的面積相同正方形的四個貝茲曲線的座標。 (繪製的正方形*確切*區域中指定的圓形是的傳統無法解決幾何的問題[number 圓形](https://en.wikipedia.org/wiki/Squaring_the_circle)。)轉譯貝茲曲線的正方形，每條曲線的兩個控制點相同，且都是 colinear 開始與結束點，因此貝茲曲線會轉譯成一條直線。
+第二個數據行包含四個貝茲曲線的座標，其定義的正方形與圓形的面積大致相同。 （以*確切*的面積繪製正方形，做為指定的圓形，這是用來[求出圓形](https://en.wikipedia.org/wiki/Squaring_the_circle)的傳統死結幾何問題）。對於呈現具有貝茲曲線的正方形，每個曲線的兩個控制點都相同，而且會與起點和終點 colinear，因此會以直線呈現貝茲曲線。
 
-動畫的插補值是陣列的第三個資料行。 頁面將計時器設為 16 毫秒，而`PaintSurface`處理常式會呼叫的速率：
+陣列的第三個數據行是用於動畫的插補值。 此頁面會將計時器設定為16毫秒，並以該速率呼叫 `PaintSurface` 處理常式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -291,13 +291,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-根據 sinusoidally 不穩定的值插補點`t`。 插補的點接著會用於建構一系列的四個連接的貝茲曲線。 以下是執行動畫：
+這些點會根據 `t`的 sinusoidally 振盪值插補。 然後，插補點會用來建立一連串四個連接的貝茲曲線。 以下是執行的動畫：
 
-[![將 [圓形] 頁面重數的三向螢幕擷取畫面](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
+[![[迴圈圓形] 頁面的三重螢幕擷取畫面](beziers-images/squaringthecircle-small.png)](beziers-images/squaringthecircle-large.png#lightbox)
 
-這類動畫是不可能沒有又靈活地轉譯為圓弧及直線，線條的曲線。
+如果曲線的以演算法方式彈性足以轉譯成圓弧和直線，這種動畫就不可能發生。
 
-**貝茲無限大**頁面也會利用貝茲曲線的能力，來模擬圓弧線段。以下是`PaintSurface`處理常式[ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs)類別：
+[**貝塞爾無限大**] 頁面也會利用貝茲曲線的功能來逼近圓弧。以下是來自[`BezierInfinityPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs)類別的 `PaintSurface` 處理常式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -338,23 +338,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-它可能是很好的演練來繪製圖形紙張上的這些座標，以查看它們相關。 無限大符號為中心點 （0，0），還有兩個迴圈的中心 （–150，0） 和 150 (0） 和半徑為 100。 中的一系列`CubicTo`命令，您可以看到 X 座標的控制點，採用 –95 和 –205 的值 （這些值都 –150 加號和減號 55） 205 和 95 (150 加號和減號 55)，以及 250 和左右兩邊的 –250。 唯一的例外狀況時，infinity 登跨越本身在中心。 在此情況下，控點會有 50 和組合 –50 矯正出中央附近的曲線的座標。
+這可能是在圖表紙張上繪製這些座標以查看其相關方式的最佳做法。 無限大符號以點（0，0）為中心，而兩個迴圈的中心為（–150，0）和（150，0），而半徑為100。 在 `CubicTo` 的命令系列中，您可以看到控制點的 X 座標，會佔用–95和–205的值（這些值包括–150加和減55）、205和95（150 plus 和減號55），以及向右和左側的250和–250。 唯一的例外是當無限大的符號在中央時，會將其本身相交。 在此情況下，控制點具有結合50和–50的座標，可將曲線拉近中央。
 
 以下是無限大符號：
 
-[![貝塞爾無限大頁面的三重螢幕擷取畫面](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
+[![貝塞爾無限大頁面的三向螢幕擷取畫面](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
-它是有點順暢朝中央所呈現的無限大符號**弧線無限大**頁面上，從[**繪製弧形的三種方式**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)文章。
+從[**三種繪製弧線文章的方式來**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)看，中心比「 **arc 無限大**」頁面所轉譯的無限大符號稍微平滑。
 
 ## <a name="the-quadratic-bzier-curve"></a>二次方貝茲曲線
 
-二次方貝茲曲線只有一個的控制點，而且只需要三個點定義曲線︰ 起點、 控制項控點和結束點。 參數化的方程式是三次方貝茲曲線，非常類似，不同之處在於最高的指數是 2，因此曲線是二次方多項式次方：
+二次方貝茲曲線只有一個控制點，而曲線只是由三個點所定義：起點、控制點和終點。 參數化方程式與三次貝茲曲線非常類似，不同之處在于最高的指數是2，因此曲線是二次多項式：
 
-x(t) = (1 – t) ²x₀ + 2t (1 – t) x₁ + t²x₂
+x （t） = （1– t）² x ₀ + 2t （1– t） x ₁ + t ² x ₂
 
-y(t) = (1 – t) ²y₀ + 2t (1 – t) y₁ + t²y₂
+y （t） = （1– t）² y ₀ + 2t （1– t） y ₁ + t ² y ₂
 
-若要新增的二次方貝茲曲線的路徑，請使用[ `QuadTo` ](xref:SkiaSharp.SKPath.QuadTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint))方法或[ `QuadTo` ](xref:SkiaSharp.SKPath.QuadTo(System.Single,System.Single,System.Single,System.Single))使用不同的多載`x`和`y`座標：
+若要將二次方貝茲曲線加入至路徑，請使用[`QuadTo`](xref:SkiaSharp.SKPath.QuadTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint))方法或具有個別 `x` 和 `y` 座標的[`QuadTo`](xref:SkiaSharp.SKPath.QuadTo(System.Single,System.Single,System.Single,System.Single))多載：
 
 ```csharp
 public void QuadTo (SKPoint point1, SKPoint point2)
@@ -362,9 +362,9 @@ public void QuadTo (SKPoint point1, SKPoint point2)
 public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 ```
 
-方法會從目前的位置向新增曲線`point2`與`point1`為控制項控點。
+方法會從目前的位置加入曲線，以 `point1` 做為控制點來 `point2`。
 
-您可以實驗使用的二次方貝茲曲線**二次方曲線**頁面上，這是非常類似於**貝茲曲線**頁面上，但它有三個觸控點。 以下是`PaintSurface`中的處理常式[ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs)程式碼後置檔案：
+您可以使用**二次方曲線**頁面來實驗二次方貝茲曲線，這非常類似于 [**貝茲曲線**] 頁面，但只有三個觸控點。 以下是[**QuadraticCurve.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs)程式碼後置檔案中的 `PaintSurface` 處理常式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -403,35 +403,35 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-並執行以下：
+而且它正在執行：
 
-[![二次方曲線頁面的三重螢幕擷取畫面](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
+[![二曲線頁面的三重螢幕擷取畫面](beziers-images/quadraticcurve-small.png)](beziers-images/quadraticcurve-large.png#lightbox)
 
-點線是起點和終點曲線的正切函數，並符合在控制項控點。
+點線會在起點和終點的曲線上相切，並在控制點上符合。
 
-如果您需要的曲線的一般形狀，但您偏好只在一個控制點而非兩個的便利性，二次方貝茲是很好。 二次方貝茲呈現比任何其他曲線，這就是為什麼它用於在內部 Skia 呈現橢圓弧形更有效率。
+如果您需要一般圖形的曲線，但您偏好只是一個控制點（而不是兩個）的便利性，則二次方貝塞爾就很好用。 二次方貝塞爾的呈現比其他任何曲線更有效率，這就是為什麼它會在 Skia 內部用來轉譯橢圓形弧形。
 
-不過，二次方貝茲曲線的圖形不是橢圓形，這也是為什麼多個二次方 Béziers 才能近似橢圓形弧線。二次方貝茲會 parabola 的區段。
+不過，二次方貝茲曲線的形狀不是橢圓形，這就是為什麼需要多個二次方 Béziers 來接近橢圓形弧線的原因。二次方貝塞爾會改為 parabola 的區段。
 
-## <a name="the-conic-bzier-curve"></a>Conic 貝茲曲線
+## <a name="the-conic-bzier-curve"></a>圓錐貝茲曲線
 
-Conic 貝茲曲線&mdash;也稱為 rational 二次方貝茲曲線&mdash;是較新的貝茲曲線的系列。 二次方貝茲曲線，例如起點、 結束點和一個的控制點，牽涉到合理的二次方貝茲曲線。 但也需要合理的二次方貝茲曲線*權數*值。 它會呼叫*rational*二次方，因為參數化的公式牽涉到的比例。
+「圓錐」貝茲曲線 &mdash; 也稱為「有理數二次方貝茲曲線」，&mdash; 是一系列貝茲曲線的相對最近新增。 就像二次方貝茲曲線，有理數二次方貝茲曲線牽涉到起點、終點和一個控制點。 但有理數二次方貝茲曲線也需要*權數*值。 因為參數化公式牽涉到比例，所以稱為*有理數*二次方。
 
-參數化的方程式 X 和 Y 是共用相同的分母的比例。 以下是方程式的分母*t*範圍從 0 1 」 和 「 加權值是*w*:
+X 和 Y 的參數化方程式是共用相同分母的比率。 以下是*t*範圍從0到1以及權數值為*w*的分母方程式：
 
-d(t) = (1 – t) ² + 2wt(1 – t) + t²
+d （t） = （1– t）² + 2wt （1– t） + t ²
 
-理論上，rational 二次方程式可以包含三個不同的加權值，分別用於三個詞彙，但這些可以簡化成只在一個中介詞彙的加權值。
+理論上，有理二分可能牽涉到三個不同的加權值，每一個都有三個詞彙，但可以簡化為中間詞彙的一個權數值。
 
-但是也包含中間詞彙的加權值，而運算式除以分母，X 和 Y 座標參數化的方程式是類似的二次方貝茲參數化的方程式：
+X 和 Y 座標的參數方程式類似于二次方貝茲曲線的參數方程式，不同之處在于中間詞彙也包含權數值，而運算式則除以分母：
 
-x(t) = ((1 – t) ²x₀ + 2wt (1 – t) x₁ + t²x₂)) ÷ d(t)
+x （t） = （（1– t）² x ₀ + 2wt （1– t） x ₁ + t ² x ₂））÷ d （t）
 
-y(t) = ((1 – t) ²y₀ + 2wt (1 – t) y₁ + t²y₂)) ÷ d(t)
+y （t） = （（1– t）² y ₀ + 2wt （1– t） y ₁ + t ² y ₂））÷ d （t）
 
-也稱為有理數的二次方貝茲曲線*conics*因為它們可以完全代表任何 conic 區段的區段&mdash;hyperbolas、 parabolas、 橢圓形和圓形。
+有理數二次方貝茲曲線也稱為*conics* ，因為它們可以完全代表任何圓錐區段的區段 &mdash; hyperbolas、parabolas、橢圓形和圓形。
 
-若要新增有理數的二次方貝茲曲線的路徑，請使用[ `ConicTo` ](xref:SkiaSharp.SKPath.ConicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single))方法或[ `ConicTo` ](xref:SkiaSharp.SKPath.ConicTo(System.Single,System.Single,System.Single,System.Single,System.Single))使用不同的多載`x`和`y`座標：
+若要在路徑中加入有理數二次方貝茲曲線，請使用[`ConicTo`](xref:SkiaSharp.SKPath.ConicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single))方法或具有個別 `x` 和 `y` 座標的[`ConicTo`](xref:SkiaSharp.SKPath.ConicTo(System.Single,System.Single,System.Single,System.Single,System.Single))多載：
 
 ```csharp
 public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
@@ -439,9 +439,9 @@ public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
 public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 ```
 
-請注意最後`weight`參數。
+請注意最後 `weight` 參數。
 
-**Conic 曲線**頁面可讓您試驗這些曲線。 `ConicCurvePage` 類別衍生自 `InteractivePage`。 [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)檔案會具現化`Slider`選取 – 2 到 2 之間的加權值。 [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)程式碼後置檔案會建立三個`TouchPoint`物件，而`PaintSurface`處理常式只是呈現給控制項的切線產生曲線重點：
+[**圓錐曲線**] 頁面可讓您試驗這些曲線。 `ConicCurvePage` 類別衍生自 `InteractivePage`。 [**ConicCurvePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)會具現化 `Slider`，以選取介於–2到2之間的權數值。 [**ConicCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)程式碼後置檔案會建立三個 `TouchPoint` 物件，而 `PaintSurface` 處理常式只會將具有正切線條的結果曲線轉譯為控制點：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -481,21 +481,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-以下執行：
+它正在執行：
 
-[![[圓錐曲線] 頁面的三重螢幕擷取畫面](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
+[![圓錐曲線頁面的三重螢幕擷取畫面](beziers-images/coniccurve-small.png)](beziers-images/coniccurve-large.png#lightbox)
 
-如您所見，控制項控點會似乎較高權數時提取朝向它更多曲線。 當加權為零時，曲線就會變成一條直線開始點至結束點。
+如您所見，當權數較高時，控制點似乎會將曲線拉往更多的位置。 當權數為零時，曲線會從起點到終點的直線。
 
-理論上，負加權允許，而導致要東改西改的曲線*離開*從控制項控點。 不過，加權為-1 或以下原因變成負數之特定值的參數化的方程式中的分母*t*。 可能基於這個理由，負加權時，會忽略`ConicTo`方法。 **Conic 曲線**程式可讓您設定負加權，但如您所見的實驗，負加權有加權設為零，相同的效果，而且會導致要呈現一條直線。
+理論上，允許負權數，並使曲線*遠離*控制點。 不過，-1 或以下的權數會使參數方程式中的分母成為負數，以用於*t*的特定值。 這可能是因為在 `ConicTo` 方法中，會忽略負值加權。 「**圓錐曲線**」程式可讓您設定負權數，但如您所見，您可以藉由實驗來看出，負加權的效果等同于零的加權，並會導致呈現直線。
 
-它是很容易就能衍生的控制項控點和要使用的權數`ConicTo`方法，最多可繪製圓弧線段 （但不是包括） 半圓形。 在下列圖表中，從開始和結束點的切線符合在控制項控點。
+您很容易就能衍生控制點和權數，以使用 `ConicTo` 方法來繪製圓弧（但不包括）半圓。 在下圖中，起點和終點的正切線條符合控制點。
 
 ![圓弧的圓錐弧線呈現](beziers-images/conicarc.png)
 
-您可以使用三角函數來判斷控制點與圓形中心的距離：這是圓形的半徑除以α角度的余弦。 若要開始和結束點之間繪製圓弧線段，設定權數為該相同的一半的角度的餘弦值。 請注意，如果角度為 180 度，然後永遠無法符合的切線加權為零。 但如角度小於 180 度、 數學可正常運作。
+您可以使用三角函數來判斷控制點與圓形中心的距離：它是圓形半徑除以α角度的余弦值。 若要在起點和終點之間繪製圓弧，請將權數設定為該角度的相同余弦值。 請注意，如果角度是180度，則正切線條永遠不會符合，而權數則為零。 但針對小於180度的角度，數學運算會正常運作。
 
-**Conic 圓弧**示範這項 頁面。 [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)檔案會具現化`Slider`可供選取的角度。 `PaintSurface`中的處理常式[ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)的控制點和重量，計算程式碼後置檔案：
+[**圓錐**圓弧] 頁面會示範這種情況。 [**ConicCircularArc**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)會具現化用來選取角度的 `Slider`。 [**ConicCircularArc.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)程式碼後置檔案中的 `PaintSurface` 處理常式會計算控制點和權數：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -545,13 +545,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-如您所見，沒有任何視覺化差異`ConicTo`以紅色顯示的路徑，且顯示供參考的基礎圓圈：
+如您所見，紅色所顯示的 `ConicTo` 路徑與顯示的基礎圓形之間沒有任何視覺差異，可供參考：
 
-[![圓錐圓弧頁的三向螢幕擷取畫面](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
+[![圓錐圓弧頁面的三重螢幕擷取畫面](beziers-images/coniccirculararc-small.png)](beziers-images/coniccirculararc-large.png#lightbox)
 
-但是，角度設 180 度，以及數學失敗。
+但將角度設定為180度，而數學運算失敗。
 
-可惜的是在此情況下，`ConicTo`不支援負加權，因為可以使用另一個呼叫完成 （根據參數化的方程式） 的理論上來說，圓形`ConicTo`擁有相同的點，但負值的加權。 這可讓使用正是其中兩個建立完整的圓形`ConicTo`曲線根據任何角度之間 （但不是包括） 零度和 180 度。
+在此情況下，`ConicTo` 不支援負值權數，因為理論上（根據參數化方程式），可以使用相同點的另一個呼叫 `ConicTo` 來完成圓形，但權數的負值值則為負數。 如此一來，就可以根據介於（但不包括）零度和180度之間的任何角度，建立包含兩個 `ConicTo` 曲線的整個圓形。
 
 ## <a name="related-links"></a>相關連結
 
