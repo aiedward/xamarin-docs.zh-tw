@@ -1,6 +1,6 @@
 ---
 title: SkiaSharp 線性漸層
-description: 了解如何繪製行，或使用兩種色彩逐漸 blend 所組成的漸層填滿區域。
+description: 探索如何使用由兩種色彩的漸進混合所組成的漸層來繪製線條或填滿區域。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
@@ -8,36 +8,36 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: 290e533e54b2ee150b94d9fb6b0f5119324f9cf0
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197983"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915983"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 線性漸層
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[ `SKPaint` ](xref:SkiaSharp.SKPaint)類別會定義[ `Color` ](xref:SkiaSharp.SKPaint.Color)用來繪製線條，或使用純色填滿區域的屬性。 或者繪製線條或填滿的區域_漸層_，這是漸進式混合色彩：
+[`SKPaint`](xref:SkiaSharp.SKPaint)類別會定義用來以純色繪製線條或填滿區域的[`Color`](xref:SkiaSharp.SKPaint.Color)屬性。 或者 _，您也可以使用漸_層色彩來筆劃線條或填滿區域，這是色彩的漸進混合：
 
-![線性漸層停駐範例](linear-gradient-images/LinearGradientSample.png "線性漸層停駐的範例")
+![線性漸層範例](linear-gradient-images/LinearGradientSample.png "線性漸層範例")
 
-最基本的漸層的類型是_線性_漸層停駐。 色彩的混合，就會發生在行 (稱為_漸層線_) 從另一個點。 與 axis 成漸層線的線條會具有相同的色彩。 建立線形漸層使用其中兩個靜態[ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient*)方法。 其中包括矩陣的轉換，和其他沒有兩個多載之間的差異。 
+最基本的漸層類型是_線性_漸層。 色彩的 blend 會在一條線（稱為漸層_線_）的某個點發生。 垂直于漸層線條的線條具有相同的色彩。 您可以使用兩個靜態[`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*)方法中的其中一個來建立線性漸層。 這兩個多載之間的差異在於其中一個會包含矩陣轉換，另一個則不會。 
 
-這些方法會傳回類型的物件[ `SKShader` ](xref:SkiaSharp.SKShader)設為[ `Shader` ](xref:SkiaSharp.SKPaint.Shader)屬性`SKPaint`。 如果`Shader`屬性為非 null，它會覆寫`Color`屬性。 任何描邊的一行或任何使用此填滿的區域`SKPaint`物件為基礎的漸層，而不是色彩的純色。
+這些方法會傳回[`SKShader`](xref:SkiaSharp.SKShader)類型的物件，您可以將其設定為 `SKPaint`的[`Shader`](xref:SkiaSharp.SKPaint.Shader)屬性。 如果 `Shader` 屬性為非 null，則會覆寫 `Color` 屬性。 任何已繪製的線條，或使用此 `SKPaint` 物件填滿的任何區域，都是根據漸層而不是純色。
 
 > [!NOTE]
-> `Shader`屬性會被忽略，當您將包含`SKPaint`物件中`DrawBitmap`呼叫。 您可以使用`Color`屬性`SKPaint`若要設定顯示點陣圖的透明度層級 (文件中所述[顯示 SkiaSharp 點陣圖](../../bitmaps/displaying.md#displaying-in-pixel-dimensions))，但是您無法使用`Shader`顯示的屬性漸層的透明度與點陣圖。 其他技術可用於顯示具有漸層透明效果的點陣圖:這些檔會在[SkiaSharp 迴圈](circular-gradients.md#radial-gradients-for-masking)漸層和[SkiaSharp 複合和 blend 模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)的文章中加以說明。
+> 當您在 `DrawBitmap` 呼叫中包含 `SKPaint` 物件時，會忽略 `Shader` 屬性。 您可以使用 `SKPaint` 的 [`Color`] 屬性來設定顯示點陣圖的透明度層級（如[顯示 SkiaSharp 點陣圖](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)一文所述），但不能使用 [`Shader`] 屬性來顯示具有漸層透明度的點陣圖。 其他技術可用於顯示具有漸層透明度的點陣圖：這些會在[SkiaSharp 圓形](circular-gradients.md#radial-gradients-for-masking)漸層和[SkiaSharp 複合和 blend 模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)的文章中加以說明。
 
-## <a name="corner-to-corner-gradients"></a>角-漸層
+## <a name="corner-to-corner-gradients"></a>邊角漸層
 
-通常線形漸層從一個矩形角延伸到另一個。 如果矩形左上角的起始點，可以擴充之漸層：
+線性漸層通常會從矩形的一個角落延伸至另一個。 如果起始點是矩形的左上角，則漸層可以擴充：
 
-- 垂直至左下角
-- 水平擴展至右上角
-- 右下方的對角線，
+- 垂直到左下角
+- 水準到右上角
+- 對角線向右下角
 
-對角線性漸層所示的第一頁**SkiaSharp 著色器和其他效果**一節[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例。 **角-漸層** 頁面建立`SKCanvasView`其建構函式中。 `PaintSurface`處理常式會建立`SKPaint`物件中`using`陳述式，然後定義置於畫布的 300 像素正方形的矩形：
+對角線線性漸層會在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的**SkiaSharp 著色器和其他效果**區段的第一頁中示範。 **角落**的漸層頁面會在其程式中建立 `SKCanvasView`。 `PaintSurface` 處理常式會在 `using` 語句中建立 `SKPaint` 物件，然後定義以畫布為中心的300圖元方形矩形：
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -84,33 +84,33 @@ public class CornerToCornerGradientPage : ContentPage
 }
 ```
 
-`Shader`的屬性`SKPaint`指派`SKShader`傳回的值從靜態`SKShader.CreateLinearGradient`方法。 五個引數如下所示：
+`SKPaint` 的 `Shader` 屬性會從靜態 `SKShader.CreateLinearGradient` 方法指派 `SKShader` 傳回值。 五個引數如下所示：
 
-- 矩形左上角這裡設漸層的起始點
-- 矩形右下角這裡設漸層的結束點
-- 兩個或多個參與的漸層的色彩的陣列
-- 陣列`float`值，表示的色彩在漸層線的相對位置
-- 成員[ `SKShaderTileMode` ](xref:SkiaSharp.SKShaderTileMode)列舉類型，表示漸層線結束部分超出漸層的運作方式
+- 漸層的起點，設定在此矩形的左上角
+- 漸層的結束點，在這裡設定為矩形的右下角
+- 組成漸層的兩個或多個色彩的陣列
+- `float` 值的陣列，表示漸層中色彩的相對位置。
+- [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode)列舉的成員，表示漸層的行為超出漸層線的結尾
 
-建立漸層停駐的物件之後，`DrawRect`方法可讓您繪製 300 像素的正方形矩形使用`SKPaint`物件，其中包含著色器。 這裡執行 iOS、 Android 和通用 Windows 平台 (UWP) 上：
+建立漸層物件之後，`DrawRect` 方法會使用包含著色器的 `SKPaint` 物件，繪製300圖元的方形矩形。 在這裡，它是在 iOS、Android 和通用 Windows 平臺（UWP）上執行：
 
-[![角-漸層](linear-gradient-images/CornerToCornerGradient.png "角-漸層")](linear-gradient-images/CornerToCornerGradient-Large.png#lightbox)
+[![邊角漸層](linear-gradient-images/CornerToCornerGradient.png "邊角漸層")](linear-gradient-images/CornerToCornerGradient-Large.png#lightbox)
 
-指定為前兩個引數的兩個點定義漸層線。 請注意，這些點的相對_畫布_並_不_圖形顯示使用之漸層的物件。 沿著漸層的線條、 色彩，逐漸轉換從左上方為藍色右下方的紅色。 垂直漸層停駐列於任何一行有常數的色彩。
+漸層線條是由指定為前兩個引數的兩個點所定義。 請注意，這些點是相對於_畫布_，而_不_是與漸層一起顯示的繪圖物件。 沿著漸層線條，色彩會逐漸從右下方的左上到藍色從紅色轉換。 任何垂直漸層線條的線條都有常數色彩。
 
-陣列`float`指定為第四個引數的值有一對一的對應色彩的陣列。 值，表示這些色彩的發生位置的相對位置沿著漸層線。 在這裡，0 表示`Red`就會發生在漸層停駐列，開頭和 1 則表示`Blue`結尾的行，就會發生。 數字必須遞增排序，並應在 0 到 1 的範圍內。 如果沒有在該範圍內，它們將會調整為在該範圍內。
+指定為第四個引數的 `float` 值陣列，與色彩的陣列具有一對一的對應關係。 這些值表示沿著漸層線條上發生這些色彩的相對位置。 在這裡，0表示 `Red` 發生在漸層行首，而1表示在行尾發生 `Blue`。 數位必須是遞增的，且應介於0到1的範圍內。 如果它們不在該範圍內，則會調整為在該範圍內。
 
-陣列中的兩個值可以設定為，0 和 1 以外。 試試這個：
+陣列中的兩個值可以設定為0和1以外的值。 試試看：
 
 ```csharp
 new float[] { 0.25f, 0.75f }
 ```
 
-現在整個第一季的漸層線純紅色，而最後一季純藍色。 漸層線的中央部分只有紅色和藍色的組合。
+現在漸層的整個第一季是純紅色，而最後一季是純藍色。 紅色和藍色的混合會限制為漸層的中半部。
 
-一般而言，您會想空間同樣是介於 0 到 1 這些位置值。 如果是這樣，您只可以提供`null`做為第四個引數`CreateLinearGradient`。
+一般來說，您會想要將這些位置值的空間平均從0到1。 如果是這種情況，您可以只提供 `null` 做為 `CreateLinearGradient`的第四個引數。
 
-雖然這個漸層的 300 像素的正方形矩形的兩個邊角之間定義，但不限於填滿該矩形。 **角-漸層**頁面包含一些額外的程式碼，以回應點選或按一下網頁上的滑鼠。 `drawBackground`欄位就會切換為之間`true`和`false`與每次點選。 如果值為`true`，則`PaintSurface`處理常式會使用相同`SKPaint`物件以填滿整個畫布，然後繪製以黑色矩形表示較小的矩形： 
+雖然此漸層是在300圖元方形矩形的兩個角落之間定義的，但並不限於填滿該矩形。 **邊**角漸層頁面包含一些額外的程式碼，可回應頁面上的點擊或滑鼠點擊。 [`drawBackground`] 欄位會在每次點按 `true` 和 `false` 之間切換。 如果值為 `true`，則 `PaintSurface` 處理常式會使用相同的 `SKPaint` 物件來填滿整個畫布，然後繪製黑色矩形來表示較小的矩形： 
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -151,19 +151,19 @@ public class CornerToCornerGradientPage : ContentPage
 }
 ```
 
-以下是您會看到點選螢幕之後：
+以下是您在點擊畫面後會看到的內容：
 
-[![角右上角的漸層停駐全文](linear-gradient-images/CornerToCornerGradientFull.png "角右上角的漸層停駐全文")](linear-gradient-images/CornerToCornerGradientFull-Large.png#lightbox)
+[![邊角漸層已滿](linear-gradient-images/CornerToCornerGradientFull.png "邊角漸層已滿")](linear-gradient-images/CornerToCornerGradientFull-Large.png#lightbox)
 
-請注意，漸層會自行重複超過定義漸層線的點相同的模式中。 因為，就會發生此重複的最後一個引數`CreateLinearGradient`是`SKShaderTileMode.Repeat`。 （您很快其他選項。）
+請注意，漸層會在定義漸層線條的點以外的相同模式中重複。 發生這種重複的原因，是因為 `CreateLinearGradient` 的最後一個引數是 `SKShaderTileMode.Repeat`。 （您很快就會看到其他選項）。
 
-也請注意您用來指定漸層線的點不是唯一的。 與 axis 成漸層線的線條會有相同的色彩，因此會有無限個漸層的線條，您可以指定相同的效果。 例如，當水平漸層填滿矩形，您可以指定左上角和右上角的左下角和右下角或甚至使用和並行的這幾行的任何兩個點。
+另請注意，您用來指定漸層線條的點不是唯一的。 垂直于漸層線條的線條具有相同的色彩，因此，您可以為相同效果指定無限多的漸層。 例如，當填滿具有水準漸層的矩形時，您可以指定左上角和右上角，或是左下方和右下角，或任何兩個甚至是與這些線條平行的點。
 
-## <a name="interactively-experiment"></a>以互動方式進行實驗
+## <a name="interactively-experiment"></a>以互動方式實驗
 
-您可以以互動方式試驗使用線形漸層**互動式線性漸層停駐**頁面。 此頁面會使用`InteractivePage`一文中導入的類別[**繪製弧形的三種方式**](../../curves/arcs.md)。`InteractivePage`控制代碼[ `TouchEffect` ](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)維護的集合的事件`TouchPoint`您可以使用手指或滑鼠移動的物件。
+您可以使用**互動式線性**漸層頁面，以互動方式試驗線性漸層。 此頁面會使用文章中引進的 `InteractivePage` 類別，[**以三種方式繪製弧線**](../../curves/arcs.md)。`InteractivePage` 會處理[`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)的事件，以維護 `TouchPoint` 物件的集合，您可以使用手指或滑鼠來移動。
 
-XAML 檔案會附加`TouchEffect`到上層`SKCanvasView`還包含`Picker`，可讓您選取其中一個的三個成員[ `SKShaderTileMode` ](xref:SkiaSharp.SKShaderTileMode)列舉型別：
+XAML 檔案會將 `TouchEffect` 附加至 `SKCanvasView` 的父系，而且也包含 `Picker`，可讓您選取[`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode)列舉的三個成員之一：
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -211,7 +211,7 @@ XAML 檔案會附加`TouchEffect`到上層`SKCanvasView`還包含`Picker`，可�
 </local:InteractivePage>
 ```
 
-在程式碼後置檔案中的建構函式會建立兩個`TouchPoint`起點和終點的線性漸層的物件。 `PaintSurface`處理常式定義 （用於漸層從紅色到綠色和藍色） 的三種色彩的陣列，並取得目前`SKShaderTileMode`從`Picker`:
+程式碼後置檔案中的函式會為線性漸層的起點和終點建立兩個 `TouchPoint` 物件。 `PaintSurface` 處理常式會定義三種色彩的陣列（針對從紅色到綠色到藍色的漸層），並從 `Picker`取得目前的 `SKShaderTileMode`：
 
 ```csharp
 public partial class InteractiveLinearGradientPage : InteractivePage
@@ -266,9 +266,9 @@ public partial class InteractiveLinearGradientPage : InteractivePage
 }
 ```
 
-`PaintSurface`處理常式會建立`SKShader`物件，該資訊，並使用它來色彩整個畫布。 陣列`float`值設為`null`。 否則為要同樣空間三種色彩，您應該設定該參數為 0，0.5 和 1 的值陣列。
+`PaintSurface` 處理常式會從所有該資訊建立 `SKShader` 物件，並使用它來為整個畫布上色。 `float` 值的陣列設定為 `null`。 否則，若要將該參數設定為值為0、0.5 和1的陣列，
 
-大量`PaintSurface`處理常式用來顯示數個物件： 觸控點，圓形外框、 漸層停駐列，以及垂直觸控點的漸層線條的線條：
+大量的 `PaintSurface` 處理常式專門用來顯示數個物件：觸控點為外框、漸層線條，以及與觸控點上的漸層垂直線垂直的線條：
 
 ```csharp
 public partial class InteractiveLinearGradientPage : InteractivePage
@@ -322,23 +322,23 @@ public partial class InteractiveLinearGradientPage : InteractivePage
 }
 ```
 
-漸層線連接兩個接觸點很容易繪製，但垂直線需要一些更多的工作。 漸層線會轉換為向量，正規化為長度為一個單位，並再旋轉 90 度。 該向量則是提供長度為 200 像素。 它用來繪製為垂直漸層線的觸控點從擴充的四行程式碼。
+連接兩個接觸點的漸層線條很容易繪製，但是垂直線需要一些工作。 漸層線條會轉換成向量，並正規化為長度為一個單位，然後旋轉90度。 接著，該向量會得到200圖元的長度。 它是用來繪製四條線，從觸控點擴充以垂直到漸層線條。
 
-垂直線符合開始和結束點。 除了這幾行的情況取決於設定`SKShaderTileMode`列舉型別：
+垂直線會與漸層的開始和結束點一致。 這幾行之後會發生什麼事，視 `SKShaderTileMode` 列舉的設定而定：
 
-[![互動式的線性漸層](linear-gradient-images/InteractiveLinearGradient.png "互動式的線性漸層")](linear-gradient-images/InteractiveLinearGradient-Large.png#lightbox)
+[![互動式線性漸層](linear-gradient-images/InteractiveLinearGradient.png "互動式線性漸層")](linear-gradient-images/InteractiveLinearGradient-Large.png#lightbox)
 
-三個螢幕擷取畫面顯示三個不同值的結果[ `SKShaderTileMode` ](xref:SkiaSharp.SKShaderTileMode)。 IOS 螢幕擷取畫面顯示`SKShaderTileMode.Clamp`，這只會延長上之漸層框線的色彩。 `SKShaderTileMode.Repeat` Android 的螢幕擷取畫面中的選項會顯示如何重複漸層停駐的模式。 `SKShaderTileMode.Mirror` UWP 螢幕擷取畫面中的選項也會重複模式，但模式相反，每次導致沒有色彩的不連續。
+這三個螢幕擷取畫面顯示三個不同值[`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode)的結果。 IOS 螢幕擷取畫面會顯示 `SKShaderTileMode.Clamp`，這只會擴充漸層框線的色彩。 Android 螢幕擷取畫面中的 [`SKShaderTileMode.Repeat`] 選項會顯示如何重複漸層模式。 UWP 螢幕擷取畫面中的 [`SKShaderTileMode.Mirror`] 選項也會重複模式，但是每次都會反轉模式，因此不會不連續色彩。
 
-## <a name="gradients-on-gradients"></a>在漸層的漸層
+## <a name="gradients-on-gradients"></a>梯度的漸層
 
-`SKShader`類別會定義任何公用屬性或方法，除了`Dispose`。 `SKShader`物件建立它的靜態方法，因此是固定不變。 即使您使用相同的漸層的兩個不同的物件時，很可能您會想要稍有差異之漸層。 若要這麼做，您將需要建立新`SKShader`物件。
+`SKShader` 類別不會定義 `Dispose`以外的公用屬性或方法。 因此，由其靜態方法所建立的 `SKShader` 物件是不可變的。 即使針對兩個不同的物件使用相同的漸層，您可能會想要稍微改變漸層。 若要這麼做，您必須建立新的 `SKShader` 物件。
 
-**漸層停駐文字**頁面會顯示文字和兩者著色使用類似的漸層背景：
+[漸層**文字**] 頁面會顯示以類似漸層著色的文字和背景：
 
-[![漸層停駐文字](linear-gradient-images/GradientText.png "漸層停駐文字")](linear-gradient-images/GradientText-Large.png#lightbox)
+[![漸層文字](linear-gradient-images/GradientText.png "漸層文字")](linear-gradient-images/GradientText-Large.png#lightbox)
 
-漸層的唯一差異是開始和結束點。 用來顯示文字的漸層為基礎的文字的週框矩形邊角的兩個點。 兩個點的背景，依據整個畫布。 程式碼如下：
+漸層的唯一差異在於起點和終點。 用於顯示文字的漸層是以文字周框角落的兩個點為基礎。 就背景而言，這兩個點是以整個畫布為基礎。 此程式碼如下：
 
 ```csharp
 public class GradientTextPage : ContentPage
@@ -409,25 +409,25 @@ public class GradientTextPage : ContentPage
 }
 ```
 
-`Shader`屬性`SKPaint`物件第一次設定為顯示到覆蓋背景的漸層。 漸層停駐點會設定為畫布的左上角和右下角邊角。
+`SKPaint` 物件的 `Shader` 屬性會先設定成顯示漸層來涵蓋背景。 漸層點會設定為畫布的左上方和右下角。
 
-程式碼集`TextSize`屬性`SKPaint`物件，讓文字會顯示在畫布的寬度的 90%。 文字範圍用來計算`xText`並`yText`值来傳遞至`DrawText`方法將文字置中。
+程式碼會設定 `SKPaint` 物件的 `TextSize` 屬性，使文字顯示在畫布寬度的90%。 文字界限用來計算要傳遞至 `DrawText` 方法以將文字置中的 `xText` 和 `yText` 值。
 
-第二個漸層的點但`CreateLinearGradient`呼叫必須參考的文字相對於在畫布的左上角和右下角顯示。 這透過移位`textBounds`由相同矩形`xText`和`yText`值：
+不過，第二個 `CreateLinearGradient` 呼叫的漸層點必須參考顯示時相對於畫布的文字左上角和右下角。 這是藉由使用相同的 `xText` 和 `yText` 值來將 `textBounds` 矩形移位來完成：
 
 ```csharp
 textBounds.Offset(xText, yText);
 ```
 
-現在，矩形的左上角和右下角邊角可用來設定開始和結束點的漸層。
+現在可以使用矩形的左上角和右下角來設定漸層的起點和終點。
 
-## <a name="animating-a-gradient"></a>以動畫顯示漸層
+## <a name="animating-a-gradient"></a>建立漸層動畫
 
-有數種方式來建立漸層的動畫。 其中一個方法是以動畫顯示開始和結束點。 **漸層停駐的動畫**頁面移動兩個點置中對齊是圓形中畫布上。 此圓形的半徑一半的寬度或高度的畫布，取其較小。 開始和結束點位於相反彼此此圓形，而漸層會從白色與黑色`Mirror`並排顯示模式：
+有數種方式可建立漸層的動畫。 其中一種方法是以動畫顯示起點和終點。 [漸層**動畫**] 頁面會在以畫布為中心的圓形上移動兩個點。 此圓形的半徑為畫布寬度或高度的一半，以較小者為准。 起點和終點在此圓形上彼此相反，而漸層會以 `Mirror` 磚模式從白色到黑色：
 
-[![漸層停駐的動畫](linear-gradient-images/GradientAnimation.png "漸層停駐的動畫")](linear-gradient-images/GradientAnimation-Large.png#lightbox)
+[![漸層動畫](linear-gradient-images/GradientAnimation.png "漸層動畫")](linear-gradient-images/GradientAnimation-Large.png#lightbox)
 
-建構函式建立`SKCanvasView`。 `OnAppearing`和`OnDisappearing`方法會處理動畫邏輯：
+此函式會建立 `SKCanvasView`。 `OnAppearing` 和 `OnDisappearing` 方法會處理動畫邏輯：
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -475,9 +475,9 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-`OnTimerTick`方法會計算`angle`以動畫顯示從 0 到 2 π 每隔 3 秒的值。 
+`OnTimerTick` 方法會計算每3秒從0到2π的動畫 `angle` 值。 
 
-以下是一個來計算兩個漸層停駐點的方式。 `SKPoint`值並命名為`vector`計算圓形的半徑點延伸從畫布的正中央。 這個向量的方向根據角度的正弦和餘弦值。 接著會計算兩個相反的漸層點:其中一個點的計算方式是從中心點減去該向量, 而其他點則是藉由將向量新增至中心點來計算:
+以下是計算兩個漸層點的一種方式。 系統會計算名為 `vector` 的 `SKPoint` 值，使其從畫布中央延伸到圓形半徑上的點。 這個向量的方向是以角度的正弦和余弦值為基礎。 接著會計算兩個相反的漸層點：一個點的計算方式是從中心點減去該向量，而其他點則是藉由將向量新增至中心點來計算：
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -511,7 +511,7 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-以稍有不同的方法需要較少的程式碼。 這個方法會利用[ `SKShader.CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))矩陣轉換，最後一個引數的方法多載。 這種方法是中的版本[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例：
+有些不同的方法需要較少的程式碼。 這個方法會使用[`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))多載方法搭配矩陣轉換做為最後一個引數。 此方法是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的版本：
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -542,13 +542,13 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-如果畫布的寬度小於高度，則兩個漸層停駐點設定為 （0，0） 和 (`info.Width`，0)。 傳遞做為最後一個引數的旋轉轉換`CreateLinearGradient`有效地旋轉中心周圍螢幕的這兩個點。
+如果畫布的寬度小於高度，則兩個漸層點會設定為（0，0）和（`info.Width`，0）。 做為最後一個引數傳遞至 `CreateLinearGradient` 的旋轉轉換，可有效地將這兩個點繞著螢幕中央。
 
-請注意，如果角度為 0，沒有任何循環，而且兩個的漸層停駐點是畫布的左上角和右上角。 這些點不是相同的計算方式為先前所示的漸層停駐點`CreateLinearGradient`呼叫。 但這些點_平行_以水平漸層線的 bisects 畫布的中心與它們產生相同的漸層。
+請注意，如果角度為0，則不會旋轉，而且兩個漸層點是畫布的左上角和右上角。 這些點不是先前的 `CreateLinearGradient` 呼叫所計算的相同漸層點。 但這些點會_平行_處理 bisects 畫布中心的水準漸層線條，而且會產生相同的漸層。
 
-**Rainbow 漸層**
+**彩虹漸層**
 
-**彩虹漸層停駐**頁面將 rainbow 繪製從畫布的左上角至右下角。 但不像真正的彩虹的這個 rainbow 漸層。 直線，而不是曲線，但它根據取決於一一巡視色調值從 0 到 360 的八個 HSL （色相-彩度-亮度） 色彩：
+**彩虹**漸層頁面會將畫布左上角的彩虹繪製至右下角。 但這個彩虹漸層不像是一個真實的彩虹。 它是直接而不是彎曲的，但它是以8個 HSL （色調-飽和度-亮度）色彩為基礎，而這是透過從0到360的色調值來決定的：
 
 ```csharp
 SKColor[] colors = new SKColor[8];
@@ -559,7 +559,7 @@ for (int i = 0; i < colors.Length; i++)
 }
 ```
 
-程式碼是一部分`PaintSurface`如下所示的處理常式。 處理常式一開始會建立可定義六個邊的多邊形從畫布的左上角延伸至右下角的路徑：
+該程式碼是下面所示 `PaintSurface` 處理常式的一部分。 處理常式一開始會先建立一個路徑，以定義從畫布左上角延伸至右下角的六側多邊形：
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -617,13 +617,13 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-`CreateLinearGradient`方法中的兩個漸層點是以定義此路徑的兩個點為基礎:這兩個點都靠近左上角。 第一個是在畫布的邊緣和第二個是在畫布左邊緣。 結果如下：
+`CreateLinearGradient` 方法中的兩個漸層點是以定義此路徑的兩個點為基礎：兩個點都靠近左上角。 第一個是位於畫布的上邊緣，而第二個位于畫布的左邊緣。 結果如下︰
 
-[![Rainbow 漸層故障](linear-gradient-images/RainbowGradientFaulty.png "故障的 Rainbow 漸層")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
+[![彩虹梯度錯誤](linear-gradient-images/RainbowGradientFaulty.png "彩虹梯度錯誤")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 
-這是一個有趣的影像，但不是很意圖。 問題是在建立線形漸層時，常數色彩的線條垂直漸層線。 漸層線為基礎的點圖碰觸的上方和左邊的側邊，而那一行通常不是垂直延伸至右下角圖的邊緣。 這種方法可行，只有當畫布已在方形。
+這是一個有趣的映射，但它並不是真正的目的。 問題在於，建立線性漸層時，常數色彩的線條會垂直到漸層線條。 漸層線條是以圖表觸及頂端和左邊的點為基礎，而該線條通常不會垂直于延伸至右下角的圖形邊緣。 只有當畫布為正方形時，此方法才會生效。
 
-若要建立適當的 rainbow 漸層，必須是彩虹的邊緣的垂直漸層線。 這是更複雜的計算。 向量必須定義平行圖的長邊。 讓您可於該側的垂直向量會是旋轉 90 度。 然後要乘以的圖的寬度加長`rainbowWidth`。 兩個漸層停駐點是根據上圖中，旁邊的點以及計算該點再加上向量。 以下是會出現在程式碼**彩虹漸層停駐**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例：
+若要建立適當的彩虹漸層，漸層線條必須垂直于彩虹的邊緣。 這是比較牽涉的計算。 向量必須定義為與圖表的長邊平行。 向量會旋轉90度，使其與該邊垂直。 然後藉由乘以 `rainbowWidth`，將它加長成圖形的寬度。 這兩個漸層點是根據圖表側邊的點來計算，而該點加上向量。 以下是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的**彩虹**漸層頁面中顯示的程式碼：
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -672,15 +672,15 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-現在的 rainbow 色彩符合圖：
+現在，彩虹色彩會與圖對齊：
 
-[![Rainbow 漸層](linear-gradient-images/RainbowGradient.png "彩虹漸層")](linear-gradient-images/RainbowGradient-Large.png#lightbox)
+[![彩虹漸層](linear-gradient-images/RainbowGradient.png "彩虹漸層")](linear-gradient-images/RainbowGradient-Large.png#lightbox)
 
 **無限大色彩**
 
-Rainbow 漸層也會在**無限大色彩**頁面。 此頁面會繪製使用本文所述的路徑物件無限大登[**三種類型的貝茲曲線**](../../curves/beziers.md#bezier-curve-approximation-to-circular-arcs)。 然後使用持續掃掠整個映像的動畫的 rainbow 漸層著色映像。
+[**無限大色彩**] 頁面也會使用彩虹漸層。 此頁面會使用一文中所述的路徑物件來繪製無限大符號，這是[**第三種類型的貝茲曲線**](../../curves/beziers.md#bezier-curve-approximation-to-circular-arcs)。 然後，影像會以動畫的彩虹漸層著色，持續在影像之間進行掃描。
 
-建構函式建立`SKPath`描述無限大符號的物件。 建立路徑之後，建構函式也可以取得路徑的矩形界限。 接著再計算一個值，稱為`gradientCycleLength`。 如果漸層為基礎的左上角和右下角邊角`pathBounds`矩形中，這`gradientCycleLength`值是漸層停駐模式的總水平寬度：
+此構造函式會建立描述無限大符號的 `SKPath` 物件。 建立路徑之後，此構造函式也可以取得路徑的矩形界限。 然後，它會計算名為 `gradientCycleLength`的值。 如果漸層是以 `pathBounds` 矩形的左上方和右下角為基礎，這個 `gradientCycleLength` 值就是漸層模式的總水準寬度：
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -733,9 +733,9 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-建構函式也會建立`colors`彩虹，陣列和`SKCanvasView`物件。
+此函式也會建立彩虹的 `colors` 陣列，以及 `SKCanvasView` 物件。
 
-覆寫`OnAppearing`和`OnDisappearing`方法動畫會執行額外負荷。 `OnTimerTick`方法以動畫展示`offset`欄位從 0 到`gradientCycleLength`每隔兩秒鐘：
+`OnAppearing` 和 `OnDisappearing` 方法的覆寫會對動畫執行額外負荷。 `OnTimerTick` 方法會將 `offset` 欄位從0繪製到每兩秒 `gradientCycleLength` 一次：
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -777,9 +777,9 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-最後，`PaintSurface`處理常式可以呈現的無限值正負號。 因為路徑包含負數和正數圍繞的中心點的座標 （0，0），`Translate`畫布上的轉換用來移位至中心。 平移轉換後面`Scale`適用於縮放的比例，同時仍然合乎 95%的寬度和高度的畫布，讓無限大登一樣大的轉換。 
+最後，`PaintSurface` 處理常式會呈現無限大符號。 因為路徑包含圍繞著中心點（0，0）的負數和正座標，所以畫布上的 `Translate` 轉換會用來將它移到中央。 「轉譯」轉換後面會加上一個 `Scale` 的轉換，它會套用調整因數，讓無限大的正負號變大，同時仍保持在畫布的寬度和高度的95% 內。 
 
-請注意，`STROKE_WIDTH`常數會新增至路徑的週框矩形的高度與寬度。 將一行則為這個寬度，圖案的路徑，讓呈現的無限值大小的大小會增加四個邊的一半，寬度：
+請注意，[`STROKE_WIDTH`] 常數會加入至 [路徑] 周框的寬度和高度。 此路徑會以此寬度的線條進行繪製，因此，呈現的無限大大小大小會增加到所有四側的一半寬度：
 
 ```csharp
 public class InfinityColorsPage : ContentPage
@@ -818,25 +818,25 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-看看前兩個引數形式傳遞的點`SKShader.CreateLinearGradient`。 這些點為基礎的週框矩形的原始路徑。 第一個點 (&ndash;250， &ndash;100) 的第二個是 （250，100）。 內部 SkiaSharp，這些點受制於目前的畫布轉換使它們顯示的無限大號正確對齊。
+查看以 `SKShader.CreateLinearGradient`的前兩個引數傳遞的點。 這些點是以原始的路徑周框為基礎。 第一個點是（&ndash;250，&ndash;100），而第二個是（250，100）。 在 SkiaSharp 內部，這些點會受到目前畫布的轉換，使其能以顯示的無限大符號正確對齊。
 
-而最後一個引數不`CreateLinearGradient`，您會看到從左上無限大符號的低權限延伸的 rainbow 漸層。 （事實上，漸層從延伸左上角到指定的週框右下角。 轉譯的無限大登大於一半的周框`STROKE_WIDTH`所有側邊的值。 因為漸層是紅色開頭和結尾，且漸層會透過`SKShaderTileMode.Repeat`，差異並不明顯。)
+如果沒有 `CreateLinearGradient`的最後一個引數，您會看到彩虹漸層，從無限大符號的左上角延伸至右下方。 （實際上，漸層會從左上角延伸到周框的右下角。 呈現的無限大符號大於周框中的 `STROKE_WIDTH` 值一半的周框。 因為漸層在開頭和結尾都是紅色，而漸層是以 `SKShaderTileMode.Repeat`建立的，所以差異並不明顯。）
 
-最後一個引數與`CreateLinearGradient`，漸層停駐模式持續掃掠整個映像：
+有了 `CreateLinearGradient`的最後一個引數，漸層模式會持續在影像上進行掃描：
 
 [![無限大色彩](linear-gradient-images/InfinityColors.png "無限大色彩")](linear-gradient-images/InfinityColors-Large.png#lightbox)
 
-## <a name="transparency-and-gradients"></a>透明及漸層
+## <a name="transparency-and-gradients"></a>透明度和漸層
 
-用於漸層的色彩可以納入透明度。 而不是從一種色彩之間淡入淡漸層、 漸層可以從淡出色彩為透明。 
+參與漸層的色彩可以納入透明度。 漸層不會從某種色彩漸淡成另一種顏色，而是從色彩淡出到透明。 
 
-您可以使用這項技術的一些有趣效果。 其中一個典型的範例顯示具有其反映的圖形化的物件：
+您可以使用這項技術來進行一些有趣的效果。 其中一個傳統範例顯示繪圖物件及其反映：
 
-[![反映漸層](linear-gradient-images/ReflectionGradient.png "反映漸層")](linear-gradient-images/ReflectionGradient-Large.png#lightbox)
+[![反映梯度](linear-gradient-images/ReflectionGradient.png "反映梯度")](linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-使用 50%透明頂端到底部完全透明的漸層著色顛倒的文字。 以下層級是透明度的 alpha 值 0x80 和 0 相關聯。
+反轉的文字會以漸層的色彩呈現，其頂端為50% 透明，而在底部是完全透明。 這些透明度層級會與0x80 和0的 Alpha 值相關聯。
 
-`PaintSurface`中的處理常式**反映漸層停駐**頁面縮放的 90%的畫布的寬度的文字大小。 接著再計算`xText`和`yText`往水平置中對齊文字的值，但基準，對應至垂直置中頁面的位置：
+[**反映**漸層] 頁面中的 `PaintSurface` 處理常式會將文字大小調整為畫布寬度的90%。 然後，它會計算 `xText` 和 `yText` 值，以將文字置中水準置中，但在相對於頁面垂直中心的基準上放置：
 
 ```csharp
 public class ReflectionGradientPage : ContentPage
@@ -904,15 +904,15 @@ public class ReflectionGradientPage : ContentPage
 }
 ```
 
-那些`xText`及`yText`的值為相同的值，用來顯示中的反映的文字`DrawText`底部的呼叫`PaintSurface`處理常式。 之前該程式碼，不過，您會看到呼叫`Scale`方法的`SKCanvas`。 這`Scale`方法會水平調整 （這不執行任何動作） 1 但垂直的&ndash;1，有效地翻轉的所有項目為上下顛倒。 旋轉的中心點設定為點 (0， `yText`)，其中`yText`是垂直中心的畫布，原先做為計算`info.Height`除以 2。
+這些 `xText` 和 `yText` 值與在 `PaintSurface` 處理常式底部的 `DrawText` 呼叫中，用來顯示反映之文字的值相同。 不過，在該程式碼之前，您會看到 `SKCanvas`的 `Scale` 方法的呼叫。 這個 `Scale` 方法會水準縮放1（不會執行任何操作），但會由 &ndash;1 垂直調整，這可有效地將所有專案反轉。 旋轉中心會設定為點（0，`yText`），其中 `yText` 是畫布的垂直中心，原先是以 `info.Height` 除以2來計算。
 
-請記住，Skia 會使用之漸層色彩的畫布轉換之前的圖形物件。 繪製 unreflected 的文字之後，`textBounds`矩形都會轉移，因此它會對應至顯示的文字：
+請記住，在畫布轉換之前，Skia 會使用漸層來著色繪圖物件。 繪製 unreflected 文字之後，就會將 `textBounds` 矩形移位，使其對應至顯示的文字：
 
 ```csharp
 textBounds.Offset(xText, yText);
 ```
 
-`CreateLinearGradient`呼叫會定義從該矩形的頂端到底部的漸層。 漸層是從完全透明的藍色 (`paint.Color.WithAlpha(0)`) 為 50%透明的藍色 (`paint.Color.WithAlpha(0x80)`)。 50%透明藍色開始基準，因此會變成透明頂端的文字，畫布轉換就會翻轉為上下顛倒的文字。
+`CreateLinearGradient` 呼叫會定義從矩形頂端到底部的漸層。 漸層是從完全透明的藍色（`paint.Color.WithAlpha(0)`）到50% 透明藍色（`paint.Color.WithAlpha(0x80)`）。 畫布轉換會反轉文字的倒置，因此50% 透明藍色會從基準開始，並在文字頂端變成透明。
 
 ## <a name="related-links"></a>相關連結
 
