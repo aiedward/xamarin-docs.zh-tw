@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2020
 ms.openlocfilehash: 5751983bf4a818e8ee91af98b0c05658efaca8b2
-ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76550225"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915665"
 ---
 # <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms 支援的平台
 
@@ -44,21 +44,21 @@ Xamarin.Forms 可支援 iOS、Android 和 Windows 以外的其他平台：
 
 您應該已安裝最新的 Android SDK 工具和 Android API 平台。 您可以使用 [Android SDK 管理員](~/android/get-started/installation/android-sdk.md)更新至最新版本。
 
-此外，Android 專案的目標/編譯版本**必須**設定為*使用最新安裝的平台*。 不過，最低版本可以設定為 API 19，讓您可以繼續支援使用 Android 4.4 及更新版本的裝置。 這些值是在 [專案選項]  中設定的：
+此外，Android 專案的目標/編譯版本**必須**設定為*使用最新安裝的平台*。 不過，最低版本可以設定為 API 19，讓您可以繼續支援使用 Android 4.4 及更新版本的裝置。 這些值是在 [專案選項] 中設定的：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[專案選項] > [應用程式] > [應用程式屬性] 
+[專案選項] > [應用程式] > [應用程式屬性]
 
 ![Visual Studio 中的 Android 建置選項](requirements-images/options-android-vs-sml.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[建置] > [一般] 
+[建置] > [一般]
 
 ![選取最新的目標 Framework](requirements-images/options-general-sml.png)
 
-[建置] > [Android 應用程式] 
+[建置] > [Android 應用程式]
 
 ![選取適用於應用程式的最舊及目標 Android 版本](requirements-images/options-android-sml.png)
 
