@@ -1,6 +1,6 @@
 ---
-title: Installing and Using watchOS in Xamarin
-description: This document describes how to install and use watchOS with Xamarin. It discusses installation, watchOS project structure, how to use the iOS designer, Xcode integration, and provides troubleshooting tips.
+title: 在 Xamarin 中安裝和使用 watchOS
+description: 本檔說明如何安裝和使用 watchOS 搭配 Xamarin。 它討論安裝、watchOS 專案結構、如何使用 iOS 設計工具、Xcode 整合，以及提供疑難排解秘訣。
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
@@ -8,110 +8,110 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/05/2017
 ms.openlocfilehash: f986099011dbccb0eb43c62d253ee497d46ca08e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001690"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915556"
 ---
-# <a name="installing-and-using-watchos-in-xamarin"></a>Installing and Using watchOS in Xamarin
+# <a name="installing-and-using-watchos-in-xamarin"></a>在 Xamarin 中安裝和使用 watchOS
 
-watchOS 4 requires macOS Sierra (10.12) with Xcode 9.
+watchOS 4 需要具有 Xcode 9 的 macOS Sierra （10.12）。
 
-watchOS 1 originally required OS X Yosemite (10.10) with Xcode 7.
+watchOS 1 原本需要使用 Xcode 7 的 OS X Yosemite （10.10）。
 
 > [!WARNING]
-> [watchOS 1 updates will not be accepted after April 1, 2018](https://developer.apple.com/news/?id=11162017a). Future updates must use watchOS 2 SDK or later; building with the watchOS 4 SDK is recommended.
+> [2018 年4月1日之後，將不會接受 watchOS 1 更新](https://developer.apple.com/news/?id=11162017a)。 未來的更新必須使用 watchOS 2 SDK 或更新版本;建議使用 watchOS 4 SDK 來建立。
 
-## <a name="project-structure"></a>Project Structure
+## <a name="project-structure"></a>專案結構
 
-A watch app consists of three projects:
+監看式應用程式是由三個專案所組成：
 
-- **Xamarin.iOS iPhone app project** - This is a normal iPhone project, it can be any of the Xamarin.iOS templates. The Watch App and its extension will be bundled inside this main project.
+- **Xamarin IOS iPhone 應用程式專案**-這是一般的 iphone 專案，可以是任何一個 Xamarin 範本。 監看式應用程式及其延伸模組將會配套在此主要專案內。
 
-- **Watch Extension project** - This contains the code (such as Controller classes) for the Watch App.
+- **監看延伸專案**-這包含監看式應用程式的程式碼（例如控制器類別）。
 
-- **Watch App project** - This contains the User Interface storyboard file with all the UI resources for the Watch App.
+- **監看應用程式專案**-這包含具有 Watch 應用程式所有 UI 資源的使用者介面分鏡腳本檔案。
 
-The [Watch Kit Catalog sample](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) solution looks like this in Xamarin.Studio:
+「[監看套件類別目錄」範例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)解決方案在 Xamarin 中看起來像這樣：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](installation-images/catalog-solution.png "The solution in Visual Studio")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](installation-images/catalog-solution-vs.png "The solution in Visual Studio")
 
 -----
 
-Download and run the [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog) sample to get started.
-Screens from the sample can be found on the [Controls](~/ios/watchos/user-interface/index.md) page.
+下載並執行[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)範例，以開始使用。
+您可以在 [[控制項](~/ios/watchos/user-interface/index.md)] 頁面上找到範例中的畫面。
 
 ## <a name="creating-a-new-project"></a>建立新專案
 
-You cannot create a new "Watch Solution"... rather you can add a Watch App to an existing iOS application. Follow these steps to create a watch app:
+您無法建立新的「監看式解決方案」 .。。相反地，您可以將 Watch 應用程式新增至現有的 iOS 應用程式。 請遵循下列步驟來建立監看式應用程式：
 
-1. If you don't have  an existing project, first choose **File > New Solution** and  create an iOS app (for example, a **Single View App**):
+1. 如果您沒有現有的專案，請先選擇 檔案 **> 新方案**，然後建立 iOS 應用程式（例如，**單一 View 應用程式**）：
 
     [![](installation-images/cycle8-2-sml.png "Choose File > New Solution and create an iOS app")](installation-images/cycle8-2.png#lightbox)
 
-2. Once the iOS app is created (or you plan to use your existing iOS app),  right-click on the solution  and choose **Add > Add New Project..** . In the **New Project** window select **watchOS > App > WatchKit App**:
+2. 建立 iOS 應用程式（或您打算使用現有的 iOS 應用程式）之後，以滑鼠右鍵按一下方案，然後選擇 [**新增] > [加入新專案**]。在 [**新增專案**] 視窗中，選取 [ **WatchOS] > 應用程式 > WatchKit 應用程式**：
 
     [![](installation-images/cycle8-6-sml.png "Select watchOS > App > WatchKit App")](installation-images/cycle8-6.png#lightbox)
 
-3. The next screen lets you choose which iOS app project  should include the watch app:
+3. 下一個畫面可讓您選擇應包含監看式應用程式的 iOS 應用程式專案：
 
     [![](installation-images/cycle8-7-sml.png "Choose which iOS app project should include the watch app")](installation-images/cycle8-7.png#lightbox)
 
-4. Finally, choose the location to save the project  (and optionally enabled source control):
+4. 最後，選擇要儲存專案的位置（並選擇性地啟用原始檔控制）：
 
     [![](installation-images/cycle8-8-sml.png "Choose the location to save the project")](installation-images/cycle8-8.png#lightbox)
 
-5. Visual Studio for Mac automatically configures [project references  and **Info.plist** settings](~/ios/watchos/get-started/project-references.md) for you.
+5. Visual Studio for Mac 會自動為您[設定專案參考和**plist**設定](~/ios/watchos/get-started/project-references.md)。
 
-## <a name="creating-the-watch-user-interface"></a>Creating the Watch User Interface
+## <a name="creating-the-watch-user-interface"></a>建立監看式使用者介面
 
 <a name="designer" />
 
-### <a name="using-the-xamarin-ios-designer"></a>Using the Xamarin iOS Designer
+### <a name="using-the-xamarin-ios-designer"></a>使用 Xamarin iOS 設計工具
 
-Double-click on the watch app's **Interface.storyboard** to edit using the iOS Designer. You can drag interface controllers and UI controls onto the storyboard from the **Toolbox** and configure them using the **Properties** pad:
+按兩下 [監看式] 應用程式的**介面。** 使用 iOS 設計工具進行編輯的腳本。 您可以從 [**工具箱**] 將介面控制器和 UI 控制項拖曳至分鏡腳本，並使用**Properties** pad 加以設定：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](installation-images/iosdesigner-sml.png "The storyboard in the Designer")](installation-images/iosdesigner.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![](installation-images/iosdesigner-sml-vs.png "The storyboard in the Designer")](installation-images/iosdesigner-vs.png#lightbox)
 
 -----
 
-You should give each new interface controller a **Class** by selecting it and then entering the name in the **Properties** pad (this will create the required C# codebehind files automatically):
+您應該選取一個類別，然後在**Properties** pad 中輸入名稱（這會自動建立必要C#的程式碼後置檔案），為每個新介面控制器提供一個**類別**：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](installation-images/iosdesigner-classname.png "Give each new interface controller a Class")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](installation-images/iosdesigner-classname-vs.png "Give each new interface controller a Class")
 
 -----
 
-Create segues by **Ctrl + dragging** from a button, table or interface controller onto another interface controller.
+**Ctrl +** 從按鈕、表格或介面控制器拖曳至另一個介面控制器，以建立 segue。
 
-### <a name="using-xcode-on-the-mac"></a>Using Xcode on the Mac
+### <a name="using-xcode-on-the-mac"></a>在 Mac 上使用 Xcode
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-You can continue to use Xcode to build your user interface by right-clicking on the Interface.storyboard file and selecting **Open With > Xcode Interface Builder**:
+您可以繼續使用 Xcode 來建立使用者介面，方法是以滑鼠右鍵按一下介面. 分鏡腳本檔案，然後選取 [**開啟方式]，> Xcode Interface Builder**：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Visual Studio users can also use Xcode to build their user interface by switching over to use the Mac Build Host directly.
-Open your solution in Visual Studio for Mac and then right-click on the Interface.storyboard file and select **Open With > Xcode Interface Builder**:
+Visual Studio 使用者也可以使用 Xcode 來建立使用者介面，方法是切換至直接使用 Mac 組建主機。
+在 Visual Studio for Mac 中開啟您的方案，然後以滑鼠右鍵按一下介面. 分鏡腳本檔案，然後選取 [**開啟方式] > Xcode Interface Builder**：
 
 -----
 

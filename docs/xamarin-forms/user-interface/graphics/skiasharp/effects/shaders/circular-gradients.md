@@ -1,6 +1,6 @@
 ---
-title: SkiaSharp 循環的漸層
-description: 深入了解不同類型的圓形為基礎的漸層。
+title: SkiaSharp 迴圈漸層
+description: 瞭解以圓形為基礎的不同漸層類型。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732
@@ -8,37 +8,37 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
 ms.openlocfilehash: d56cc499112a937cd1a22664adeedd54c4397341
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199008"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916443"
 ---
-# <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 循環的漸層
+# <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 迴圈漸層
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[ `SKShader` ](xref:SkiaSharp.SKShader)類別定義來建立漸層的四種不同類型的靜態方法。 [ **SkiaSharp 線性漸層**](linear-gradient.md)文章討論[ `CreateLinearGradient` ](xref:SkiaSharp.SKShader.CreateLinearGradient*)方法。 本文章涵蓋其他三種類型的漸層，全部都根據圓形。
+[`SKShader`](xref:SkiaSharp.SKShader)類別會定義靜態方法，以建立四種不同類型的漸層。 [**SkiaSharp 線性**](linear-gradient.md)漸層文章討論[`CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*)方法。 本文涵蓋其他三種類型的漸層，這些都是以圓形為基礎。
 
-[ `CreateRadialGradient` ](xref:SkiaSharp.SKShader.CreateRadialGradient*)方法會建立從圓形的中心發源漸層：
+[`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient*)方法會建立從圓形中心 emanates 的漸層：
 
-![放射狀漸層停駐的範例](circular-gradients-images/RadialGradientSample.png)
+![放射漸層範例](circular-gradients-images/RadialGradientSample.png)
 
-[ `CreateSweepGradient` ](xref:SkiaSharp.SKShader.CreateSweepGradient*)方法會建立在周圍的圓形中心的掃掠的漸層：
+[`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient*)方法會建立一個沿著圓形中心進行掃描的漸層：
 
-![掃掠漸層停駐範例](circular-gradients-images/SweepGradientSample.png)
+![清理漸層範例](circular-gradients-images/SweepGradientSample.png)
 
-漸層的第三個類型是很正常的。 它會呼叫兩個點的模式漸層，並由此[ `CreateTwoPointConicalGradient` ](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient*)方法。 從一個圓形的漸層是到另一個延伸：
+第三種類型的漸層很異常。 這稱為雙點圓錐漸層，而且是由[`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient*)方法所定義。 漸層會從一個圓形延伸至另一個圓圈：
 
-![模式的漸層停駐範例](circular-gradients-images/ConicalGradientSample.png)
+![圓錐漸層範例](circular-gradients-images/ConicalGradientSample.png)
 
-如果兩個圓形是不同的大小，然後漸層的形式圓錐圖。
+如果兩個圓圈的大小不同，則漸層的格式會是圓錐。
 
-這篇文章將探討這些詳細的漸層。
+這篇文章會更詳細地探討這些漸層。
 
 ## <a name="the-radial-gradient"></a>放射狀漸層
 
-[ `CreateRadialGradient` ](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode))方法具有下列語法：
+[`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode))方法具有下列語法：
 
 ```csharp
 public static SKShader CreateRadialGradient (SKPoint center, 
@@ -48,13 +48,13 @@ public static SKShader CreateRadialGradient (SKPoint center,
                                              SKShaderTileMode mode)
 ```
 
-A [ `CreateRadialGradient` ](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))多載也會包含轉換矩陣參數。
+[`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))多載也包含轉換矩陣參數。
 
-前兩個引數指定圓形的半徑 center。 漸層開始該中心，並且針對向外擴充`radius`像素為單位。 超過怎麼辦`radius`而定[ `SKShaderTileMode` ](xref:SkiaSharp.SKShaderTileMode)引數。 `colors`參數是陣列的兩個或多個色彩 （如同線性漸層停駐方法），和`colorPos`是介於 0 到 1 的整數的陣列。 這些整數表示的色彩，沿著的相對位置`radius`列。 您可以將該引數設定為`null`以同樣的空間色彩。
+前兩個引數會指定圓形的中心和半徑。 漸層會從該中心開始，並向外擴充以 `radius` 圖元。 `radius` 會因[`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode)引數而異。 `colors` 參數是兩個或多個色彩的陣列（就像線上性漸層方法中一樣），而 `colorPos` 是介於0到1之間的整數陣列。 這些整數表示色彩沿著該 `radius` 線的相對位置。 您可以將該引數設定為 `null`，使色彩的空間相等。
 
-如果您使用`CreateRadialGradient`填滿的圓形，您可以設定漸層中心的圓圈，中心和圓形的半徑漸層的半徑。 在此情況下，`SKShaderTileMode`引數具有不會影響呈現之漸層。 但是，如果大於圓形定義漸層的漸層填滿的區域則`SKShaderTileMode`引數具有深遠影響圓圈外發生的事件。
+如果您使用 `CreateRadialGradient` 來填滿圓形，可以將漸層的中心設為圓形的中心，並將漸層的半徑設定為圓形的半徑。 在此情況下，`SKShaderTileMode` 引數不會影響漸層的呈現。 但是，如果漸層填滿的區域大於漸層所定義的圓形，則 `SKShaderTileMode` 引數會對在圓形外發生的事情有深遠的影響。
 
-效果`SKShaderMode`所示**放射狀漸層**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例。 此頁面的 XAML 檔案會具現化`Picker`，可讓您選取其中一個的三個成員`SKShaderTileMode`列舉型別：
+`SKShaderMode` 的效果會在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的 [**放射**漸層] 頁面中示範。 此頁面的 XAML 檔案會具現化 `Picker`，可讓您選取 `SKShaderTileMode` 列舉的三個成員之一：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -94,7 +94,7 @@ A [ `CreateRadialGradient` ](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSh
 </ContentPage>
 ```
 
-程式碼後置檔案色彩整個畫布使用放射狀漸層。 漸層中心設為中心的畫布，radius 設定為 100 像素為單位。 漸層是由兩個色彩，黑白所組成：
+程式碼後置檔案會使用放射狀漸層來為整個畫布加上色彩。 漸層的中心是設定為畫布的中央，而半徑設定為100圖元。 漸層只包含兩種色彩：黑色和白色。
 
 ```csharp
 public partial class RadialGradientPage : ContentPage
@@ -136,15 +136,15 @@ public partial class RadialGradientPage : ContentPage
 }
 ```
 
-此程式碼會建立具有黑色在中心，成白色 100 像素中心漸逐漸淡漸層。 超過該 radius 的情況取決於`SKShaderTileMode`引數：
+這段程式碼會在中央建立具有黑色的漸層，並從中央逐漸淡出白色100圖元。 超過該半徑所發生的情況取決於 `SKShaderTileMode` 引數：
 
-[![放射狀漸層](circular-gradients-images/RadialGradient.png "放射狀漸層")](circular-gradients-images/RadialGradient-Large.png#lightbox)
+[![放射漸層](circular-gradients-images/RadialGradient.png "放射漸層")](circular-gradients-images/RadialGradient-Large.png#lightbox)
 
-在所有三個情況下，漸層填滿畫布。 在左側的 [iOS] 畫面上超過 radius 漸層會繼續進行最後的色彩為白色。 所產生的`SKShaderTileMode.Clamp`。 [Android] 畫面會顯示下列`SKShaderTileMode.Repeat`各項的效果:從中央起的100圖元開始, 漸層會以第一個色彩 (也就是黑色) 重新開始。 漸層會重複半徑的每個 100 像素。 
+在這三種情況下，漸層都會填滿畫布。 在左側的 iOS 畫面上，超過半徑的漸層會繼續使用最後一個色彩，也就是白色。 這是 `SKShaderTileMode.Clamp`的結果。 [Android] 畫面會顯示 `SKShaderTileMode.Repeat`的效果：從中央100圖元開始，漸層會以第一個色彩（黑色）重新開始。 梯度會重複每100圖元的半徑。 
 
-在右側顯示的 [通用 Windows 平台] 畫面如何`SKShaderTileMode.Mirror`造成的漸層來替代指示。 第一個漸層是從中央黑色到白色，在 100 像素為單位的半徑。 下一步是從 100 像素 radius 為黑色 200 像素半徑，在白色與下一個漸層會反轉一次。
+右側的 [通用 Windows 平臺] 畫面會顯示 `SKShaderTileMode.Mirror` 如何讓漸層成為其他方向。 第一個漸層是從黑色到白色，在100圖元的半徑的中間。 下一個是200圖元半徑的 100-圖元半徑到黑色的白色，而下一個漸層則會再次反轉。
 
-放射狀漸層中，您可以使用兩個以上的色彩。 **彩虹弧線漸層停駐**範例會建立對應至彩虹和紅色，做為結尾的色彩的八種色彩的陣列以及八個位置值的陣列：
+放射狀漸層中可以使用兩種以上的色彩。 **彩虹 Arc**漸層範例會建立八個色彩的陣列，其對應于彩虹和結尾為紅色的色彩，同時也是八個位置值的陣列：
 
 ```csharp
 public class RainbowArcGradientPage : ContentPage
@@ -204,17 +204,17 @@ public class RainbowArcGradientPage : ContentPage
 }
 ```
 
-假設寬度的最小值，並在畫布上的高度為 1000，這表示`rainbowWidth`值為 250。 `outerRadius`和`innerRadius`值都會設為 1000年和 750，分別。 這些值可用來計算`positions`陣列; 0.75f 到 1 的八個的值範圍內。 `radius`值會用於繪製圓形。 875 250 像素筆觸粗細擴充 750 個像素的半徑和 1000年像素為單位的半徑之間的表示值：
+假設畫布的寬度和高度的最小值為1000，表示 `rainbowWidth` 值為250。 `outerRadius` 和 `innerRadius` 值分別設定為1000和750。 這些值會用來計算 `positions` 陣列;八個值的範圍從 0.75 f 到1。 `radius` 值是用來為圓形加上筆劃。 875的值表示250圖元的筆劃寬度會在750圖元的半徑和1000圖元的半徑之間擴充：
 
-[![Rainbow 弧線漸層](circular-gradients-images/RainbowArcGradient.png "彩虹弧線漸層")](circular-gradients-images/RainbowArcGradient-Large.png#lightbox)
+[![彩虹弧線漸層](circular-gradients-images/RainbowArcGradient.png "彩虹弧線漸層")](circular-gradients-images/RainbowArcGradient-Large.png#lightbox)
 
-如果您這個漸層填滿整個畫布，您會看到它是紅色內半徑內。 這是因為`positions`陣列不會從 0 開始。 第一個色彩用於 0 到第一個陣列值的位移。 漸層也是紅色超過外部 radius。 所產生的`Clamp`並排顯示模式。 使用之漸層繪製粗線，因為這些紅色區域看不到。
+如果您使用此漸層填滿整個畫布，您會看到它在內部半徑內是紅色的。 這是因為 `positions` 陣列的開頭不是0。 第一個色彩用於0到第一個陣列值的位移。 漸層也是紅色，超出外部半徑。 這是 `Clamp` 磚模式的結果。 因為漸層用於粗線的筆劃，所以不會顯示這些紅色區域。
 
-## <a name="radial-gradients-for-masking"></a>進行遮罩處理的放射狀漸層
+## <a name="radial-gradients-for-masking"></a>遮罩的放射漸層
 
-線形漸層，例如放射狀漸層可以將透明或部分透明的色彩。 這項功能可用於這個程序稱為_遮罩_，這會隱藏強調另一個組件映像的映像的一部分。
+如同線性漸層，星形漸層可以納入透明或部分透明的色彩。 這項功能適用于稱為_遮罩_的進程，它會隱藏部分影像以強調影像的另一個部分。
 
-**放射狀漸層停駐的遮罩**頁面會顯示範例。 在程式載入資源點陣圖的其中一個。 `CENTER`和`RADIUS`欄位所決定的點陣圖檢查，並參考應該會反白顯示的區域。 `PaintSurface`處理常式中一開始會計算要顯示的點陣圖矩形，然後顯示該矩形中：
+[**放射**漸層遮罩] 頁面會顯示範例。 程式會載入其中一個資源點陣圖。 [`CENTER`] 和 [`RADIUS`] 欄位是由點陣圖的檢查所決定，並參考應反白顯示的區域。 `PaintSurface` 處理常式一開始會計算一個矩形來顯示點陣圖，然後將它顯示在該矩形中：
 
 ```csharp
 public class RadialGradientMaskPage : ContentPage
@@ -278,19 +278,19 @@ public class RadialGradientMaskPage : ContentPage
 }
 ```
 
-後繪製點陣圖，一些簡單的程式碼會轉換`CENTER`並`RADIUS`要`center`和`radius`，指縮放及顯示移位的點陣圖中醒目提示的區域。 這些值會用來建立具有該中心和 radius 的放射狀漸層。 兩個色彩開始透明 center，以及第一個 60%的半徑。 漸層接著會逐漸淡化為白色：
+繪製點陣圖之後，部分簡單的程式碼會將 `CENTER` 和 `RADIUS` 轉換成 `center` 和 `radius`，這會參考點陣圖中反白顯示的區域，其已縮放並已移位以供顯示。 這些值是用來建立具有該中心和半徑的放射狀漸層。 這兩種色彩從中間開始，並以半徑的前60% 為開頭。 然後漸層會淡入白色：
 
-[![放射狀漸層停駐的遮罩](circular-gradients-images/RadialGradientMask.png "放射狀漸層停駐的遮罩")](circular-gradients-images/RadialGradientMask-Large.png#lightbox)
+[![放射漸層遮罩](circular-gradients-images/RadialGradientMask.png "放射漸層遮罩")](circular-gradients-images/RadialGradientMask-Large.png#lightbox)
 
-這個方法並不加上遮罩點陣圖的最佳方式。 問題在於遮罩大多具有白色，選擇用來比對畫布的背景色彩。 如果背景是某些其他色彩&mdash;或 可能的漸層本身&mdash;它不會相符。 更好的方法，來遮罩所示的發行項[SkiaSharp Porter Duff 混合模式](../blend-modes/porter-duff.md)。
+這種方法不是遮罩點陣圖的最佳方式。 問題在於遮罩的色彩大多是白色，其選擇與畫布的背景一致。 如果背景是其他色彩 &mdash; 或可能是漸層本身 &mdash; 則不會相符。 [SkiaSharp Porter-Duff blend 模式](../blend-modes/porter-duff.md)一文中會顯示較佳的遮罩方式。
 
-## <a name="radial-gradients-for-specular-highlights"></a>放射狀漸層的反射反白顯示
+## <a name="radial-gradients-for-specular-highlights"></a>反射反白顯示的放射漸層
 
-當光線會發生捨入的介面時，它反映出許多方向的光線，但部分的燈號彈出直接在檢視器的眼睛。 這通常稱為介面上建立模糊的白色區域的外觀_反射反白顯示_。
+當光線出現圓角表面時，它會以許多方向來反映光，但是有些光線會直接進入檢視器的眼睛。 這通常會在表面上建立模糊白色區域的外觀，稱為_反射醒目_提示。
 
-在 3d 圖形中，反射反白顯示通常是因為用來判斷淺的路徑和網底的演算法。 在二維圖形中，反射亮部會有時會新增至建議的 3D 曲面的外觀。 反射反白顯示可以轉換圓角的紅色圓球的單層紅色圓圈。
+在3d 圖形中，反光通常是來自用來決定淺色路徑和陰影的演算法所產生的結果。 在二維圖形中，有時會加入反射高光，以建議3D 介面的外觀。 反射反白顯示可以將平面紅色圓形轉換成圓形紅色球形。
 
-**星形反射反白顯示**頁面要精確地說，使用放射狀漸層。 `PaintSurface`處理常式就藉由計算的圓形，以及兩個半徑`SKPoint`值&mdash;`center`和`offCenter`是偶數中心點，圓形的左上角邊緣：
+星形**反射反白顯示**頁面會使用放射狀漸層來精確地執行此動作。 `PaintSurface` 處理常式是藉由計算圓形的半徑，以及兩個 `SKPoint` 的值 &mdash; `center`，以及介於圓心和圓形左上角的 `offCenter` 之間。
 
 ```csharp
 public class RadialSpecularHighlightPage : ContentPage
@@ -331,15 +331,15 @@ public class RadialSpecularHighlightPage : ContentPage
 }
 ```
 
-`CreateRadialGradient`呼叫會建立漸層開頭看`offCenter`具有白色、 紅色在一半的半徑距離的結束點。 看起來如下：
+`CreateRadialGradient` 呼叫會建立從該 `offCenter` 點開始的漸層，並在半徑一半的距離結尾為紅色。 以下是它看起來的樣子：
 
-[![星形的反射亮](circular-gradients-images/RadialSpecularHighlight.png "星形反射反白顯示")](circular-gradients-images/RadialSpecularHighlight-Large.png#lightbox)
+[![星形反射反白顯示](circular-gradients-images/RadialSpecularHighlight.png "星形反射反白顯示")](circular-gradients-images/RadialSpecularHighlight-Large.png#lightbox)
 
-如果您仔細查看這個漸層中，您可能會決定它有瑕疵。 漸層的重心是特定的點，並可能會希望能減少對稱以反映捨入的介面。 在此情況下，您可能會偏好反射反白顯示，如下一節所示[**反射反白顯示的漸層模式**](#conical-gradients-for-specular-highlights)。
+如果您仔細查看此漸層，您可能會決定其是否有瑕疵。 漸層是以特定點為中心，而您可能想要以較小的對稱方式來反映圓角表面。 在這種情況下，您可能會想要在反射反白[**顯示的圓錐**](#conical-gradients-for-specular-highlights)漸層一節中顯示如下的反射醒目提示。
 
-## <a name="the-sweep-gradient"></a>掃掠漸層
+## <a name="the-sweep-gradient"></a>清理漸層
 
-[ `CreateSweepGradient` ](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[]))方法具有漸層建立的所有方法的最簡單的語法：
+[`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[]))方法具有所有梯度建立方法的最簡單語法：
 
 ```csharp
 public static SKShader CreateSweepGradient (SKPoint center, 
@@ -347,15 +347,15 @@ public static SKShader CreateSweepGradient (SKPoint center,
                                             Single[] colorPos)
 ```
 
-它是只在中心色彩的陣列，色彩的位置。 漸層的中心點的右邊開始，和掃掠 360 度順時針旋轉中心周圍。 請注意，有沒有`SKShaderTileMode`參數。
+它只是一個中心、一個色彩陣列和色彩位置。 漸層會從中心點的右邊開始，並以順時針方向在中央處掃描360度。 請注意，沒有 `SKShaderTileMode` 參數。
 
-A [ `CreateSweepGradient` ](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKMatrix))矩陣轉換參數多載也會提供。 若要變更的起始點的漸層，您可以套用的旋轉變形。 您也可以套用到以逆時針方向，順時針方向從變更方向縮放轉換。
+同時也提供具有矩陣轉換參數的[`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKMatrix))多載。 您可以將旋轉轉換套用至漸層，以變更開始點。 您也可以套用尺規轉換，將方向從順時針變更為逆時針。
 
-**掃掠漸層停駐**頁面用以掃掠漸層色彩的圓形，筆劃寬度為 50 個像素：
+[**清除**漸層] 頁面使用清除漸層來為筆觸寬度為50圖元的圓形加上色彩：
 
-[![漸層的掃掠](circular-gradients-images/SweepGradient.png "掃掠漸層")](circular-gradients-images/SweepGradient-Large.png#lightbox)
+[![清理漸層](circular-gradients-images/SweepGradient.png "清理漸層")](circular-gradients-images/SweepGradient-Large.png#lightbox)
 
-`SweepGradientPage`類別會定義具有不同的色調值八種色彩的陣列。 請注意陣列開始，並結束 red （0 或 360 的色調值），它會顯示在最右邊的螢幕擷取畫面中：
+`SweepGradientPage` 類別會定義具有不同色調值之八種色彩的陣列。 請注意，陣列的開頭和結尾都是紅色（色調值為0或360），這會出現在螢幕擷取畫面的最右邊：
 
 ```csharp
 public class SweepGradientPage : ContentPage
@@ -421,15 +421,15 @@ public class SweepGradientPage : ContentPage
 }
 ```
 
-程式也會實作`TapGestureRecognizer`，可讓一些程式碼的結尾`PaintSurface`處理常式。 此程式碼會使用相同的漸層填滿畫布：
+此程式也會執行 `TapGestureRecognizer`，在 `PaintSurface` 處理常式的結尾處啟用部分程式碼。 這段程式碼會使用相同的漸層來填滿畫布：
 
-[![掃掠漸層停駐全文](circular-gradients-images/SweepGradientFull.png "掃掠漸層停駐的全文")](circular-gradients-images/SweepGradientFull-Large.png#lightbox)
+[![清理漸層已滿](circular-gradients-images/SweepGradientFull.png "清理漸層已滿")](circular-gradients-images/SweepGradientFull-Large.png#lightbox)
 
-這些螢幕擷取畫面示範，漸層填滿任何色彩為它。 如果漸層尚未開始的相同色彩的結尾，會有連續的中心點的右邊。
+這些螢幕擷取畫面顯示漸層填滿其彩色的任何區域。 如果漸層不是以相同的色彩開始和結束，中心點的右方就會發生不連續的情況。
 
-## <a name="the-two-point-conical-gradient"></a>兩個點的模式漸層
+## <a name="the-two-point-conical-gradient"></a>雙點圓錐漸層
 
-[ `CreateTwoPointConicalGradient` ](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode))方法具有下列語法：
+[`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode))方法具有下列語法：
 
 ```csharp
 public static SKShader CreateTwoPointConicalGradient (SKPoint startCenter, 
@@ -441,11 +441,11 @@ public static SKShader CreateTwoPointConicalGradient (SKPoint startCenter,
                                                       SKShaderTileMode mode)
 ```
 
-參數開頭為中心點和稱為的兩個圓形的半徑_開始_圓形並_結束_圓形。 其餘的三個參數都相同`CreateLinearGradient`和`CreateRadialGradient`。 A [ `CreateTwoPointConicalGradient` ](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))多載包含矩陣轉換。
+參數的開頭為中間點，而半徑代表兩個圓形，稱為_開始_圓形和_結束_圓形。 其餘三個參數與 `CreateLinearGradient` 和 `CreateRadialGradient`相同。 [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))多載包括矩陣轉換。
 
-漸層開始入門圓形，並結束圓形當做結尾。 `SKShaderTileMode`參數會控管會怎樣超過兩個圓形。 兩個點的模式漸層是唯一不完全填滿區域的漸層。 如果兩個圓形的半徑相同，漸層僅限於具有等同於圓形的直徑寬度的矩形。 如果兩個圓形會有不同的半徑，漸層會形成圓錐式。
+漸層從開始圓形開始，並在結束圓形結束。 `SKShaderTileMode` 參數會控制在兩個圓形以外的情況。 雙點的圓錐漸層是唯一不會完全填滿區域的漸層。 如果兩個圓形具有相同的半徑，則會將漸層限制為寬度與圓形直徑相同的矩形。 如果兩個圓圈有不同的半徑，漸層會形成一個錐形。
 
-很可能您會想要試驗之兩個點的模式漸層，因此**漸層模式**分頁衍生自`InteractivePage`允許兩個觸控點移動的兩個圓形的半徑：
+您很可能會想要試驗雙點的圓錐漸層，因此，[**圓錐**漸層] 頁面會衍生自 `InteractivePage`，以允許針對兩個圓形半徑移動兩個觸控點：
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -493,7 +493,7 @@ public static SKShader CreateTwoPointConicalGradient (SKPoint startCenter,
 </local:InteractivePage>
 ```
 
-程式碼後置檔案會定義兩個`TouchPoint`物件具有固定的 50 到 100 的半徑：
+程式碼後置檔案會定義兩個具有固定半徑50和100的 `TouchPoint` 物件：
 
 ```csharp
 public partial class ConicalGradientPage : InteractivePage
@@ -567,29 +567,29 @@ public partial class ConicalGradientPage : InteractivePage
 }
 ```
 
-`colors`陣列是紅色、 綠色和藍色。 底端的程式碼`PaintSurface`處理常式繪製兩個觸控點，因為黑色圓形，讓它們不妨礙漸層。
+`colors` 的陣列是紅色、綠色和藍色。 接近 `PaintSurface` 處理常式底部的程式碼，會將兩個觸控點繪製為黑色圓形，使其不會妨礙漸層。
 
-請注意，`DrawRect`呼叫使用之漸層色彩整個畫布。 在一般的情況下，不過，大部分的畫布仍會維持周圍的漸層，未上色。 以下是顯示三個可能的組態程式：
+請注意，`DrawRect` 呼叫會使用漸層來為整個畫布上色。 不過，在一般情況下，漸層中的大部分畫布仍然是 uncolored 的。 以下是顯示三種可能設定的程式：
 
-[![模式的漸層](circular-gradients-images/ConicalGradient.png "圓錐漸層")](circular-gradients-images/ConicalGradient-Large.png#lightbox)
+[![圓錐漸層](circular-gradients-images/ConicalGradient.png "圓錐漸層")](circular-gradients-images/ConicalGradient-Large.png#lightbox)
 
-在左側的 [iOS] 畫面會顯示的效果`SKShaderTileMode`設定`Clamp`。 漸層開始的邊緣為相反側邊為第二個圓形最接近的小圓圈內的紅色。 `Clamp`值也會讓繼續的點 cone 紅色。 漸層結束以藍色邊緣外部的較大圓形最接近的第一個圓圈，但會繼續以藍色的圓圈中及更新版本。
+左側的 iOS 畫面會顯示 `SKShaderTileMode` 設定 `Clamp`的效果。 漸層在較小圓圈的邊緣（相對於最接近第二個圓形的側邊）中以紅色開頭。 `Clamp` 值也會造成紅色，以繼續到錐形的點。 在最靠近第一個圓形之較大圓形的外部邊緣，漸層會以藍色結束，但會在該圓形內以藍色繼續，並在該圓圈的後面。
 
-Android 的畫面很類似，但`SKShaderTileMode`的`Repeat`。 現在就更清楚的漸層的第一個圓圈內開始和結束第二個圓圈外。 `Repeat`設定會導致重複一次以紅色圓圈內的較大的漸層。
+Android 畫面類似，但具有 `Repeat`的 `SKShaderTileMode`。 現在更清楚的是，漸層是從第一個圓形開始，並在第二個圓形之外結束。 `Repeat` 設定會導致漸層在較大圓圈內以紅色重複出現。
 
-UWP 畫面會顯示較小的圓形移完全的較大的圓圈內時，會發生什麼事。 漸層不再做圓錐式，並改為填滿整個區域。 效果類似於放射狀漸層中，但如果較小的圓形不完全置於較大的圓形，它是不對稱。
+UWP 畫面會顯示將較小的圓形完全移到較大的圓形內時，會發生什麼事。 漸層停駐于錐形，而是填滿整個區域。 效果類似于星形漸層，但如果較小的圓形不是在較大的圓形內，則不對稱。
 
-當一個圓圈巢狀方式置於另一個，但卻很適合的反射反白顯示，您可能會懷疑漸層的實際效益。
+當某個圓形已內嵌在另一個圓圈時，您可能會不確定漸層的實際實用性，但它非常適合反射醒目提示。
 
-## <a name="conical-gradients-for-specular-highlights"></a>反射反白顯示的漸層模式
+## <a name="conical-gradients-for-specular-highlights"></a>反射反白顯示的圓錐漸層
 
-稍早在本文中，您會看到如何使用放射狀漸層建立的反射反白顯示。 您也可以基於此目的，使用兩個點的模式漸層，您可能會偏好它的樣子：
+稍早在本文中，您已瞭解如何使用放射狀漸層來建立反射醒目提示。 您也可以針對此目的使用雙點的圓錐漸層，而且您可能會偏好其外觀：
 
-[![模式的反射亮](circular-gradients-images/ConicalSpecularHighlight.png "圓錐反射反白顯示")](circular-gradients-images/ConicalSpecularHighlight-Large.png#lightbox)
+[![圓錐反射反白顯示](circular-gradients-images/ConicalSpecularHighlight.png "圓錐反射反白顯示")](circular-gradients-images/ConicalSpecularHighlight-Large.png#lightbox)
 
-不對稱的外觀更建議物件的捨入的表面。 
+不對稱的外觀更能建議物件的圓角表面。 
 
-中的繪圖程式碼**圓錐反射反白顯示**頁面是相同**星形反射反白顯示**除了著色器的頁面：
+**圓錐反射醒目**提示頁面中的繪圖程式碼與星形**反射反白顯示**頁面相同，但著色器除外：
 
 ```csharp
 public class ConicalSpecularHighlightPage : ContentPage
@@ -615,7 +615,7 @@ public class ConicalSpecularHighlightPage : ContentPage
 }
 ```
 
-兩個圓形必須的中心`offCenter`和`center`。 在置中的圓形`center`相關聯，包含整個球，但位於圓形的半徑`offCenter`一個半徑為一個像素。 漸層有效地在該點開始和結束邊緣的球。
+這兩個圓形的中心是 `offCenter` 和 `center`。 以 `center` 為中心的圓形與包含整個球的半徑相關聯，但是以 `offCenter` 為中心的圓形只有一個圖元的半徑。 漸層有效地從該點開始，並在球的邊緣結束。
 
 ## <a name="related-links"></a>相關連結
 
