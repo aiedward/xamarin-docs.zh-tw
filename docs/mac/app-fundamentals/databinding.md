@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030213"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918830"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac 中的資料系結和索引鍵-值編碼
 
 _本文涵蓋使用索引鍵/值編碼和索引鍵-值觀察，以允許資料系結至 Xcode 的 Interface Builder 中的 UI 元素。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 在 Xamarin. C# Mac 應用*程式中使用*和 .net 時，您可以存取開發人員在*Xcode*中運作的相同索引鍵值編碼和資料系結技術。 因為 Xamarin 會直接與 Xcode 整合，所以您可以使用 Xcode 的_Interface Builder_來與 UI 元素進行資料系結，而不是撰寫程式碼。
 
@@ -26,9 +26,9 @@ _本文涵蓋使用索引鍵/值編碼和索引鍵-值觀察，以允許資料�
 
 [![執行中應用程式的範例](databinding-images/intro01.png "執行中應用程式的範例")](databinding-images/intro01-large.png#lightbox)
 
-在本文中，我們將討論在 Xamarin. Mac 應用程式中使用索引鍵/值編碼和資料系結的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。本文。
+在本文中，我們將討論在 Xamarin. Mac 應用程式中使用索引鍵/值編碼和資料系結的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在本文中使用的重要概念和技巧。
 
-您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的「 C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將類別連線到目標-c 的 `Register` 和 `Export` 屬性物件和 UI 元素。
+您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的 [ C# [公開C#類別/方法至目標-C](~/mac/internals/how-it-works.md) ] 區段，它會說明用來將類別連接至目標-c 物件和 UI 元素的 `Register` 和 `Export` 屬性。
 
 <a name="What_is_Key-Value_Coding" />
 
@@ -68,9 +68,9 @@ namespace MacDatabinding
 }
 ```
 
-首先，`[Register("PersonModel")]` 屬性會註冊類別，並將其公開至目標-C。 然後，類別必須繼承自 `NSObject` （或繼承自 `NSObject` 的子類別），這會新增數個基底方法，讓類別 KVC 符合規範。 接下來，`[Export("Name")]` 屬性會公開 `Name` 屬性，並定義稍後用來透過 KVC 和 KVO 技術來存取屬性的金鑰值。
+首先，`[Register("PersonModel")]` 屬性會註冊類別，並將其公開至目標-C。 然後，類別必須繼承自 `NSObject` （或繼承自 `NSObject`的子類別），這會新增數個基底方法，讓類別 KVC 符合規範。 接下來，`[Export("Name")]` 屬性會公開 `Name` 屬性，並定義稍後用來透過 KVC 和 KVO 技術來存取屬性的金鑰值。
 
-最後，若要能夠以索引鍵/值觀察屬性值的變更，存取子必須在 `WillChangeValue` 和 `DidChangeValue` 方法呼叫（指定與 `Export` 屬性相同的索引鍵）中，將變更的值換行。  例如:
+最後，若要能夠以索引鍵/值觀察屬性值的變更，存取子必須在 `WillChangeValue` 和 `DidChangeValue` 方法呼叫（指定與 `Export` 屬性相同的索引鍵）中，將變更的值換行。  例如，
 
 ```csharp
 set {
@@ -142,7 +142,7 @@ namespace MacDatabinding
 var name = Person.ValueForKey (new NSString("Name"));
 ```
 
-這會傳回 `PersonModel` 實例的 `Name` 屬性值。
+這會傳回 `PersonModel`實例的 `Name` 屬性值。
 
 ### <a name="setting-values-using-key-value-coding"></a>使用索引鍵-值編碼來設定值
 
@@ -159,7 +159,7 @@ Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 
 ### <a name="observing-value-changes"></a>觀察值變更
 
-使用索引鍵/值觀察（KVO），您可以將觀察者附加至 KVC 相容類別的特定索引鍵，並在每次修改該索引鍵的值時收到通知（使用 KVC 技術或直接在程式碼C#中存取指定的屬性）。 例如:
+使用索引鍵/值觀察（KVO），您可以將觀察者附加至 KVC 相容類別的特定索引鍵，並在每次修改該索引鍵的值時收到通知（使用 KVC 技術或直接在程式碼C#中存取指定的屬性）。 例如，
 
 ```csharp
 // Watch for the name value changing
@@ -317,7 +317,7 @@ namespace MacDatabinding
 }
 ```
 
-此類別的大部分功能都涵蓋在上述[什麼是索引鍵/值編碼](#What_is_Key-Value_Coding)一節中。 不過，讓我們來看看幾個特定的元素，還有一些新增功能，讓這個類別做為**陣列控制器**和**樹狀結構**的資料模型（我們稍後會用來進行資料系結**樹狀檢視**，**大綱視圖**和**集合視圖**）。
+此類別的大部分功能都涵蓋在上述[什麼是索引鍵/值編碼](#What_is_Key-Value_Coding)一節中。 不過，讓我們來看幾個特定的元素，還有一些新增功能，讓這個類別做為**陣列控制器**和**樹狀結構**的資料模型（我們稍後會使用這些專案來進行資料系結**樹狀檢視**、**大綱視圖**和**集合視圖**）。
 
 首先，因為員工可能是經理，所以我們使用了 `NSArray` （特別是 `NSMutableArray`，因此可以修改值），讓他們所管理的員工得以附加至他們：
 
@@ -334,7 +334,7 @@ public NSArray People {
 這裡有兩個要注意的事項：
 
 1. 我們使用了 `NSMutableArray`，而不是C#標準的陣列或集合，因為這是資料系結至 AppKit 控制項（例如**資料表視圖**、**大綱視圖**和**集合**）的必要條件。
-2. 我們會將員工的陣列轉換成 `NSArray` 以進行資料系結，並將其C#格式化名稱（`People`）變更為資料系結所預期的格式，`personModelArray`格式為 **{class_name} 陣列**（請注意，第一個字元已設為小寫）。
+2. 我們會將員工的陣列轉換成 `NSArray` 以進行資料系結，並將其C#格式化的名稱（`People`）變更為資料系結所預期的格式，`personModelArray` 格式為 **{class_name} 陣列**（請注意，第一個字元的大小寫是小寫）。
 
 接下來，我們需要新增一些特殊名稱的公用方法，以支援**陣列控制器**和**樹狀目錄控制器**：
 
@@ -423,7 +423,7 @@ public bool isManager {
 
 [![加入新的視圖控制器](databinding-images/simple01.png "加入新的視圖控制器")](databinding-images/simple01-large.png#lightbox)
 
-接下來，返回 Visual Studio for Mac，編輯**SimpleViewController.cs**檔案（已自動新增至我們的專案），並公開要將我們的表單資料系結的 `PersonModel` 實例。 加入下列程式碼：
+接下來，返回 Visual Studio for Mac，編輯**SimpleViewController.cs**檔案（已自動新增至我們的專案），並公開要將我們的表單資料系結的 `PersonModel` 實例。 新增下列程式碼：
 
 ```csharp
 private PersonModel _person = new PersonModel();
@@ -507,7 +507,7 @@ public override void ViewDidLoad ()
 
 [![加入新的視圖控制器](databinding-images/table01.png "加入新的視圖控制器")](databinding-images/table01-large.png#lightbox)
 
-接下來，我們要編輯**TableViewController.cs**檔案（該檔案已自動新增至我們的專案中），並公開 `PersonModel` 類別的陣列（`NSArray`），以將我們的表單系結至其中。 加入下列程式碼：
+接下來，我們要編輯**TableViewController.cs**檔案（該檔案已自動新增至我們的專案中），並公開 `PersonModel` 類別的陣列（`NSArray`），以將我們的表單系結至其中。 新增下列程式碼：
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -548,7 +548,7 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-就像我們在[定義您的資料模型](#Defining_your_Data_Model)一節中的 `PersonModel` 類別所做的一樣，我們已公開四個特別命名的公用方法，讓陣列控制器和從我們的 `PersonModels` 集合讀取和寫入資料。
+就像我們在[定義您的資料模型](#Defining_your_Data_Model)一節中的 `PersonModel` 類別所做的一樣，我們已公開四個特別命名的公用方法，讓陣列控制器和從我們的 `PersonModels`集合讀取和寫入資料。
 
 接下來，當您載入此視圖時，我們必須使用下列程式碼填入陣列：
 
@@ -586,7 +586,7 @@ public override void AwakeFromNib ()
 
     ![新增必要的機碼路徑](databinding-images/table05.png "新增必要的機碼路徑")
 4. 這會告訴陣列控制器它管理的陣列，以及應該公開的屬性（透過金鑰）。
-5. 切換至 系結 偵測**器**，然後在 **內容陣列** **底下選取** 系結 和 **資料表視圖控制器** 輸入 `self.personModelArray` 的**模型索引鍵路徑**：
+5. 切換至 系結 偵測**器**，然後在 **內容陣列** **底下選取** 系結 和 **資料表視圖控制器** 輸入 `self.personModelArray`的**模型索引鍵路徑**：
 
     ![輸入金鑰路徑](databinding-images/table06.png "輸入金鑰路徑")
 6. 這會將陣列控制器與我們在視圖控制器上公開的 `PersonModels` 陣列結合。
@@ -608,7 +608,7 @@ public override void AwakeFromNib ()
     [![設定模型索引鍵路徑](databinding-images/table10.png "設定模型索引鍵路徑")](databinding-images/table10-large.png#lightbox)
 6. 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
-如果我們執行應用程式，資料表將會填入 `PersonModels` 的陣列：
+如果我們執行應用程式，資料表將會填入 `PersonModels`的陣列：
 
 [![執行應用程式](databinding-images/table11.png "執行應用程式")](databinding-images/table11-large.png#lightbox)
 
@@ -622,7 +622,7 @@ public override void AwakeFromNib ()
 
 [![加入新的視圖控制器](databinding-images/outline01.png "加入新的視圖控制器")](databinding-images/outline01-large.png#lightbox)
 
-接下來，我們要編輯**OutlineViewController.cs**檔案（該檔案已自動新增至我們的專案中），並公開 `PersonModel` 類別的陣列（`NSArray`），以將我們的表單系結至其中。 加入下列程式碼：
+接下來，我們要編輯**OutlineViewController.cs**檔案（該檔案已自動新增至我們的專案中），並公開 `PersonModel` 類別的陣列（`NSArray`），以將我們的表單系結至其中。 新增下列程式碼：
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -663,7 +663,7 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-就像我們在[定義您的資料模型](#Defining_your_Data_Model)一節中的 `PersonModel` 類別所做的一樣，我們已公開四個特別命名的公用方法，讓樹系控制器和從我們的 `PersonModels` 集合讀取和寫入資料。
+就像我們在[定義您的資料模型](#Defining_your_Data_Model)一節中的 `PersonModel` 類別所做的一樣，我們已公開四個特別命名的公用方法，讓樹系控制器和從我們的 `PersonModels`集合讀取和寫入資料。
 
 接下來，當您載入此視圖時，我們必須使用下列程式碼填入陣列：
 
@@ -708,7 +708,7 @@ public override void AwakeFromNib ()
 
     ![設定樹狀控制器金鑰路徑](databinding-images/outline05.png "設定樹狀控制器金鑰路徑")
 6. 這會告訴樹狀結構控制器要在何處尋找任何子節點、有多少個子節點，以及目前節點是否有子節點。
-7. 切換至 系結 偵測**器**，然後在 **內容陣列** 下選取 系結**至** 和 檔案**擁有** 輸入 `self.personModelArray` 的**模型索引鍵路徑**：
+7. 切換至 系結 偵測**器**，然後在 **內容陣列** 下選取 系結**至** 和 檔案**擁有** 輸入 `self.personModelArray`的**模型索引鍵路徑**：
 
     ![編輯索引鍵路徑](databinding-images/outline06.png "編輯索引鍵路徑")
 8. 這會將樹狀控制器系結至我們在視圖控制器上公開的 `PersonModels` 陣列。
@@ -730,7 +730,7 @@ public override void AwakeFromNib ()
     [![輸入模型索引鍵路徑](databinding-images/outline10.png "輸入模型索引鍵路徑")](databinding-images/outline10-large.png#lightbox)
 6. 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
-如果我們執行應用程式，大綱將會填入我們的 `PersonModels` 陣列：
+如果我們執行應用程式，大綱將會填入我們的 `PersonModels`陣列：
 
 [![執行應用程式](databinding-images/outline11.png "執行應用程式")](databinding-images/outline11-large.png#lightbox)
 
@@ -864,7 +864,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 在資料系結期間，原生損毀通常有四個主要原因：
 
-1. 您的資料模型不會繼承自 `NSObject` 或 `NSObject` 的子類別。
+1. 您的資料模型不會繼承自 `NSObject` 或 `NSObject`的子類別。
 2. 您未使用 `[Export("key-name")]` 屬性將屬性公開給目標-C。
 3. 您未在 `WillChangeValue` 和 `DidChangeValue` 方法呼叫中，將變更包裝到存取子的值（指定與 `Export` 屬性相同的索引鍵）。
 4. Interface Builder 的系結偵測**器**中有錯誤或輸入的索引鍵。
@@ -875,7 +875,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 [![編輯系結機碼](databinding-images/debug02.png "編輯系結機碼")](databinding-images/debug02-large.png#lightbox)
 
-讓我們儲存變更，切換回 Visual Studio for Mac 以與 Xcode 同步，然後執行我們的應用程式。 當 [集合] 視圖顯示時，應用程式會暫時當機，並出現 `SIGABRT` 錯誤（如 Visual Studio for Mac 中的**應用程式輸出**中所示），因為 `PersonModel` 不會使用索引鍵 `Title` 來公開屬性：
+讓我們儲存變更，切換回 Visual Studio for Mac 以與 Xcode 同步，然後執行我們的應用程式。 當 [集合] 視圖顯示時，應用程式會暫時當機，並出現 `SIGABRT` 錯誤（如 Visual Studio for Mac 中的**應用程式輸出**中所示），因為 `PersonModel` 不會使用索引鍵 `Title`來公開屬性：
 
 [![系結錯誤的範例](databinding-images/debug03.png "系結錯誤的範例")](databinding-images/debug03-large.png#lightbox)
 
@@ -885,7 +885,7 @@ For more information on working with Collection Views, please see our [Collectio
 
 這一行告訴我們，索引鍵 `Title` 不存在於所系結的物件上。 如果我們將系結回到 Interface Builder 中的 `Name`、儲存、同步處理、重建和執行，應用程式會如預期般執行，而不會發生問題。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已詳細探討如何在 Xamarin. Mac 應用程式中使用資料系結和索引鍵-值編碼。 首先，它探討了C#如何使用索引鍵/值編碼（KVC）和索引鍵-值觀察（KVO），將類別公開至目標-C。 接下來，它會示範如何使用 KVO 相容的類別，並將資料系結至 Xcode 的 Interface Builder 中的 UI 元素。 最後，它會使用**陣列控制器**和**樹狀結構**來顯示覆雜的資料系結。
 

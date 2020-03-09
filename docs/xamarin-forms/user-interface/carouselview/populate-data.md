@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2019
 ms.openlocfilehash: 154d039e95ccc2de28e09a7162a32a19f8f84656
-ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "78292485"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913378"
 ---
 # <a name="xamarinforms-carouselview-data"></a>Xamarin. 表單 CarouselView 資料
 

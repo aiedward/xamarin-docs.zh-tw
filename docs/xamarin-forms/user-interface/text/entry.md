@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2019
 ms.openlocfilehash: c7daad8898d3048f10c9489ee4e2c78f147c6e52
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77131153"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914544"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin. 表單專案
 
@@ -369,7 +369,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 > [!NOTE]
 > [`Entry`](xref:Xamarin.Forms.Entry)繼承的[`VisualElement`](xref:Xamarin.Forms.VisualElement)類別，也會有[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)和[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)事件。
 
-### <a name="completed"></a>Completed
+### <a name="completed"></a>已完成
 
 `Completed` 事件是用來回應與專案互動的完成。 當使用者在鍵盤上按下 enter 鍵（或按 UWP 上的 Tab 鍵）時，就會引發 `Completed`。 事件的處理常式是一般事件處理常式，會取得傳送者並 `EventArgs`：
 

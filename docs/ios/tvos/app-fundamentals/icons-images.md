@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030846"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915774"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>在 Xamarin 中使用 tvOS 圖示和影像
 
@@ -38,7 +38,7 @@ ms.locfileid: "73030846"
 
 啟動映射不是 ads 或藝術運算式的機會，它們只是為了讓您的應用程式快速啟動並可供使用的印象。
 
-|啟動影像大小|備註|
+|啟動影像大小|注意事項|
 |---|---|
 |1920x1080px<br>|僅限非多層的 .png 檔案|
 
@@ -187,7 +187,7 @@ Apple 提供下列建議來建立您的應用程式圖示：
 
 您可以將最上層映射當做單一靜態 `.png` 或 `.lsr` 檔案提供（請參閱[建立分層映射](#Creating-Layered-Images)），或在執行時間動態建立為可設定焦點的專案的單一資料列（請參閱下方的[動態主要貨位內容](#Dynamic-Top-Shelf-Content)）。
 
-|主要貨位影像大小|備註|
+|主要貨位影像大小|注意事項|
 |---|---|
 |1920x720px|靜態 .png 或 lsr 檔案|
 
@@ -281,17 +281,17 @@ Apple 針對捲軸的橫幅提供下列建議：
 
 ||成就圖示|儀表板插圖|排行榜插圖|
 |---|---|---|---|
-|可見大小|200x200px|923x150px|N/A|
-|實際大小|320x320px|N/A|659x371px|
-|安全區域大小|N/A|N/A|618x348px|
-|未取得焦點大小|N/A|N/A|548x309px|
-|焦點大小|N/A|N/A|618x348px|
+|可見大小|200x200px|923x150px|n/a|
+|實際大小|320x320px|n/a|659x371px|
+|安全區域大小|n/a|n/a|618x348px|
+|未取得焦點大小|n/a|n/a|548x309px|
+|焦點大小|n/a|n/a|618x348px|
 
 如需有關使用 Game Center 的詳細資訊，請參閱 Apple 的[Game Center 程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)。
 
 <a name="Working-with-Images" />
 
-## <a name="working-with-images"></a>利用影像
+## <a name="working-with-images"></a>使用映像
 
 由於 tvOS 9 是 iOS 9 的子集，用來在 Xamarin iOS 應用程式中包含和顯示影像的相同技術也適用于 tvOS 應用程式。 如需詳細資訊，請參閱我們的[顯示影像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)檔。
 
@@ -314,7 +314,7 @@ Apple 針對捲軸的橫幅提供下列建議：
 
 <a name="Summary" />
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文涵蓋了 tvOS 應用程式中使用的所有映射類型和大小。 首先，it 涵蓋啟動影像、分層影像、應用程式圖示、最上層影像和 Game Center 影像。 接著，它涵蓋了使用 tvOS 應用程式中的影像。
 

@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/26/2019
 ms.openlocfilehash: 1ae176cfebdde31038c30895d1bf562ff3396eaa
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "78292122"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915337"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin. 表單編輯器
 
