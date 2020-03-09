@@ -9,11 +9,11 @@ ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: 9a26532d13b843b812da94739be071c7accac212
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228188"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918667"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Xamarin 中的動態樣式
 
@@ -214,7 +214,7 @@ public class DynamicStylesInheritancePageCS : ContentPage
 - [動態樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 - [使用樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [[樣式]](xref:Xamarin.Forms.Style)
+- [Style](xref:Xamarin.Forms.Style)
 - [庫](xref:Xamarin.Forms.Setter)
 
 ## <a name="related-video"></a>相關影片

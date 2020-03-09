@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 809f6241b3a17f63fe3077f896095c303e1dfd2e
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292399"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916814"
 ---
 # <a name="material-theme"></a>材質佈景主題
 
@@ -28,8 +28,7 @@ Android 提供三種材質主題：
 
 這些材質主題類別的範例如下所示：
 
-
-[[深色主題]、[淺色主題] 和 [深色動作列主題的] ![範例螢幕擷取畫面](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
+[[深色主題]、[淺色主題] 和 深色動作列主題的 ![範例螢幕擷取畫面](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
 
 您可以從材質主題衍生，以建立您自己的主題，並覆寫部分或全部的色彩屬性。 例如，您可以建立一個衍生自 `Theme.Material.Light`的主題，但會覆寫應用程式行色彩以符合您品牌的色彩。 您也可以將個別的視圖樣式：例如，您可以為具有更多圓角的[CardView](~/android/user-interface/controls/card-view.md)建立樣式，並使用較暗的背景色彩。
 
