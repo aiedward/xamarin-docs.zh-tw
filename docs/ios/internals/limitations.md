@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/09/2018
 ms.openlocfilehash: 91513936a0223af0e4220154d0fe65ee0a599a4f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022315"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911562"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin 的限制
 
@@ -49,7 +49,7 @@ class Foo<T> : UIView {
 
 ## <a name="no-dynamic-code-generation"></a>不產生動態程式碼
 
-由於 iOS 核心會防止應用程式動態產生程式碼，因此 Xamarin 不支援任何形式的動態程式碼產生。 它們包括：
+由於 iOS 核心會防止應用程式動態產生程式碼，因此 Xamarin 不支援任何形式的動態程式碼產生。 其中包括：
 
 - 無法使用 [System.object]。
 - 不支援 System.web. Remoting。
@@ -60,7 +60,7 @@ class Foo<T> : UIView {
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
-缺少 System.object。 **發出**表示不會有任何相依于執行時間程式碼產生作業的程式碼。 這包括如下的內容：
+缺少 System.object。 **發出**表示不會有任何相依于執行時間程式碼產生作業的程式碼。 這包括像是：
 
 - 動態語言執行時間。
 - 以動態語言執行時間為基礎的任何語言。
@@ -107,7 +107,7 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 Mono 的 iOS 執行時間已停用下列功能：
 
-- 程式碼剖析工具
+- 分析工具
 - 反映。發出
 - 反映。發出。儲存功能
 - COM 系結

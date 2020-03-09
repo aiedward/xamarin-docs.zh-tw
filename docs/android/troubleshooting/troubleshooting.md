@@ -8,18 +8,18 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
 ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488929"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912443"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
 
 ## <a name="getting-diagnostic-information"></a>取得診斷資訊
 
 在追蹤各種 bug 時，Xamarin 有幾個地方需要尋找。
-它們包括：
+其中包括：
 
 1. 診斷 MSBuild 輸出。
 2. 裝置部署記錄。
@@ -36,7 +36,7 @@ ms.locfileid: "75488929"
 1. 按一下 [**工具] > 選項 ...**
 2. 在左側樹狀檢視中，選取 [**專案和方案] > [建立並執行**]
 3. 在右側面板中，將 [MSBuild 組建輸出詳細資訊] 下拉式清單設定為 [診斷]
-4. 按一下 [確定]
+4. 按一下 [確定]。
 5. 清除並重建您的套件。
 6. 診斷輸出會顯示在 [輸出] 面板中。
 
@@ -45,7 +45,7 @@ ms.locfileid: "75488929"
 1. 按一下 [ **Visual Studio for Mac > 喜好**設定 ...]
 2. 在左側樹狀檢視中，選取 [專案] [ **> 組建**]
 3. 在右側面板中，將 [記錄詳細資訊] 下拉式按鈕設定為 [診斷]
-4. 按一下 [確定]
+4. 按一下 [確定]。
 5. 重新啟動 Visual Studio for Mac
 6. 清除並重建您的套件。
 7. 按一下 [組建輸出] 按鈕，即可在 [錯誤] 面板中看到診斷輸出（**View > pad > 錯誤**）。
@@ -279,7 +279,7 @@ Xamarin 支援多個裝置 Abi： *armeabi*、 *armeabi armeabi-v7a*和*x86*。 
 適用于 Windows 的 Android SDK 可從 Google 取得2個下載。
 如果您選擇 .exe 安裝程式，它將會寫入登錄機碼，告訴 Xamarin Android 安裝所在的位置。 如果您自行選擇 .zip 檔案並將它解壓縮，則 Xamarin 不知道要在哪裡尋找 SDK。 您可以前往 [工具] [ **> 選項] > [xamarin > Android 設定**]，告訴您 SDK 所在的 Visual Studio：
 
-[![在 Xamarin Android 設定中 Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+[在 Xamarin Android 設定中 ![Android SDK 位置](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 ## <a name="ide-does-not-display-target-device"></a>IDE 不會顯示目標裝置
 
@@ -464,7 +464,7 @@ mAdapter = new SimpleExpandableListAdapter (
 );
 ```
 
-問題在於，Xamarin 不正確地封送處理嵌套的泛型型別。 `List<IDictionary<string, object>>` 會封送處理至 [java.lang.ArrrayList](xref:Java.Util.ArrayList), 但`ArrayList`包含`mono.android.runtime.JavaObject`實例 (參考`Dictionary<string, object>`實例), 而不是執行 [java.util.Map](xref:Java.Util.IMap)的物件。 產生下列例外狀況:
+問題在於，Xamarin 不正確地封送處理嵌套的泛型型別。 `List<IDictionary<string, object>>` 會封送處理至[ArrrayList](xref:Java.Util.ArrayList)，但 `ArrayList` 包含 `mono.android.runtime.JavaObject` 實例（參考 `Dictionary<string, object>` 實例），而不是執行[util](xref:Java.Util.IMap)的專案，因此會產生下列例外狀況：
 
 ```shell
 E/AndroidRuntime( 2991): FATAL EXCEPTION: main
@@ -478,7 +478,7 @@ E/AndroidRuntime( 2991):        at android.widget.ListView.fillFromTop(ListView.
 E/AndroidRuntime( 2991):        at android.widget.ListView.layoutChildren(ListView.java:1622)
 ```
 
-因應措施是使用所提供的[JAVA集合類型](~/android/internals/api-design.md),而不是`System.Collections.Generic`內部&ldquo;類型的類型。 這會在封送處理實例時，產生適當的 JAVA 類型。 （下列程式碼比所需更複雜，以便減少 grf 的存留期。 您可以透過 `s/List/JavaList/g` 來簡化原始程式碼的變更，並在不擔心 grf 存留期時 `s/Dictionary/JavaDictionary/g`。）
+因應措施是使用所提供的[JAVA 集合類型](~/android/internals/api-design.md)，而不是 &ldquo;內部&rdquo; 類型的 `System.Collections.Generic` 類型。 這會在封送處理實例時，產生適當的 JAVA 類型。 （下列程式碼比所需更複雜，以便減少 grf 的存留期。 您可以透過 `s/List/JavaList/g` 來簡化原始程式碼的變更，並在不擔心 grf 存留期時 `s/Dictionary/JavaDictionary/g`。）
 
 ```csharp
 // insert good code here

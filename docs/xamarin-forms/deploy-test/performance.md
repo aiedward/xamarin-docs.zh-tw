@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2019
 ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487161"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913170"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>改進 Xamarin.Forms 應用程式效能
 
@@ -25,7 +25,7 @@ ms.locfileid: "75487161"
 有許多技術可用來提升 Xamarin.Forms 應用程式的效能和認知效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 
 > [!NOTE]
-> 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中討論非平台特定的技術來改善記憶體使用量和使用 Xamarin 平台所建置之應用程式的效能。
+> 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中探討可改善記憶體使用情況的非平台專用技術，以及使用 Xamarin 平台建置之應用程式的效能。
 
 ## <a name="enable-the-xaml-compiler"></a>啟用 XAML 編譯器
 
@@ -85,7 +85,7 @@ Android 上的預先 (AOT) 編譯可將 Just in Time (JIT) 應用程式啟動額
 </ContentPage>
 ```
 
-此外，請勿嘗試使用其他版面配置的組合來重現特定版面配置的外觀，這會導致執行不必要的版面配置計算。 例如，請勿嘗試使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 執行個體的組合，重現 [`Grid`](xref:Xamarin.Forms.Grid) 版面配置。 下列程式碼範例會示範此錯誤作法的範例：
+此外，請勿嘗試使用其他版面配置的組合來重現特定版面配置的外觀，這會導致執行不必要的版面配置計算。 例如，請勿嘗試使用 [`Grid`](xref:Xamarin.Forms.Grid) 執行個體的組合，重現 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 版面配置。 下列程式碼範例會示範此錯誤作法的範例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -156,13 +156,13 @@ Android 上的預先 (AOT) 編譯可將 Just in Time (JIT) 應用程式啟動額
 - 避免呼叫 [`Layout`](xref:Xamarin.Forms.Layout) 類別的任一方法，因為它們會導致執行高成本的版面配置計算。 所需的版面配置行為通常可以透過改為設定 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 和 [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) 屬性來取得。 或是將 [`Layout<View>`](xref:Xamarin.Forms.Layout`1) 類別子類別化，以實現所需的版面配置行為。
 - 請勿過度頻繁地更新任何 [`Label`](xref:Xamarin.Forms.Label) 執行個體，因為變更標籤大小會使系統需重新計算整個畫面的版面配置。
 - 除非必要，請勿設定 [`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) 屬性。
-- 盡可能將任一 [`Label`](xref:Xamarin.Forms.Label) 執行個體的 [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) 設為 [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap)。
+- 盡可能將任一 [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) 執行個體的 [`Label`](xref:Xamarin.Forms.Label) 設為 [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap)。
 
 ## <a name="use-asynchronous-programming"></a>使用非同步程式設計
 
 藉由使用非同步程式設計，您的應用程式的整體回應性可以增強，而且通常會避免效能瓶頸。 在 .NET 中，以工作為[基礎的非同步模式（點路）](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)是非同步作業的建議設計模式。 不過，不正確使用點的方式可能會導致 unperformant 應用程式。 因此，使用點按時應遵循下列指導方針。
 
-### <a name="fundamentals"></a>Fundamentals
+### <a name="fundamentals"></a>基礎
 
 - 瞭解工作生命週期，這是由 `TaskStatus` 列舉所表示。 如需詳細資訊，請參閱 TaskStatus 和工作[狀態](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap#task-status)的[意義](https://devblogs.microsoft.com/pfxteam/the-meaning-of-taskstatus/)。
 - 使用 `Task.WhenAll` 方法，以非同步方式等候多個非同步作業完成，而不是個別 `await` 一系列非同步作業。 如需詳細資訊，請參閱[system.threading.tasks.task.whenall](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall)。
@@ -327,7 +327,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<NativeListView
 當 `Control` 屬性是 `null` 時，新的原生控制項只應具現化一次。 此外，應該只在自訂控制項附加於新的 Xamarin.Forms 元素時，才建立、設定控制項並訂閱事件處理常式。 同樣地，應該只在轉譯器附加到的元素變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立有效執行的自訂轉譯器，避免發生記憶體流失。
 
 > [!IMPORTANT]
-> 只有在 `e.NewElement` 屬性不是 `null`，且 `Control` 屬性為 `null` 時，才應叫用 `SetNativeControl` 方法。
+> 只有在 `SetNativeControl` 屬性不是 `e.NewElement`，且 `null` 屬性為 `Control` 時，才應叫用 `null` 方法。
 
 如需自訂轉譯器的詳細資訊，請參閱[在每個平台上自訂控制項](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
 
