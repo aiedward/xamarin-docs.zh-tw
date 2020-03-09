@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/02/2017
 ms.openlocfilehash: cd427d13bb79fd31e1e814726aaaf61788ae10ec
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030069"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917570"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>適用于 Xamarin 的 macOS Api 開發人員
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 在大部分的C#情況下，使用 Xamarin 進行開發時，您可以考慮、閱讀和撰寫，而不需要擔心基礎的目標-C api。 不過，有時候您必須閱讀 Apple 的 API 檔，將答案從 Stack Overflow 轉譯為問題的解決方案，或與現有的範例進行比較。
 
@@ -36,7 +36,7 @@ ms.locfileid: "73030069"
 - `(NSIndexSet *)rowIndexes` 是第一個參數，且其類型為。 第一個參數的格式為： `(Type) pararmName`
 - `atPoint:(NSPoint)mouseDownPoint` 是第二個參數和其類型。 第一個後面的每個參數都是格式： `selectorPart:(Type) pararmName`
 - 此訊息選取器的完整名稱為： `canDragRowsWithIndexes:atPoint:`。 請注意，`:` 在結尾，這一點很重要。
-- 實際的 Xamarin. Mac C#系結為：`bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
+- 實際的 Xamarin. Mac C#系結為： `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
 此選取器調用的讀取方式可以相同：
 
@@ -45,7 +45,7 @@ ms.locfileid: "73030069"
 ```
 
 - 實例 `v` 使用傳入的兩個參數（`set` 和 `point`）來呼叫它的 `canDragRowsWithIndexes:atPoint` 選取器。
-- 在C#中，方法調用看起來像這樣：`x.CanDragRows (set, point);`
+- 在C#中，方法調用看起來像這樣： `x.CanDragRows (set, point);`
 
 <a name="finding_selector" />
 

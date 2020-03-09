@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760398"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915227"
 ---
 # <a name="containerized-microservices"></a>容器化的微服務
 
@@ -20,7 +20,7 @@ ms.locfileid: "70760398"
 
 特別是在雲端存在時，無法輕鬆調整個別元件。 整合型應用程式包含特定領域的功能，通常是由功能層（例如前端、商務邏輯和資料儲存）來劃分。 整合單一應用程式的方式是將整個應用程式複製到多部電腦，如圖8-1 所示。
 
-![](containerized-microservices-images/monolithicapp.png "整合型應用程式調整方法")
+![](containerized-microservices-images/monolithicapp.png "Monolithic application scaling approach")
 
 **圖 8-1**：整合型應用程式調整方法
 
@@ -30,7 +30,7 @@ ms.locfileid: "70760398"
 
 相較于大規模的整合型應用程式，微服務可以獨立相應放大。 這表示需要更多處理能力或網路頻寬以支援需求的特定功能區域可以調整，而不是不必要地相應放大應用程式的其他區域。 圖8-2 說明此方法，其中微服務會獨立部署和調整，跨電腦建立服務的實例。
 
-![](containerized-microservices-images/microservicesapp.png "微服務應用程式調整方法")
+![](containerized-microservices-images/microservicesapp.png "Microservices application scaling approach")
 
 **圖 8-2**：微服務應用程式調整方法
 
@@ -64,7 +64,7 @@ ms.locfileid: "70760398"
 
 容器和虛擬機器之間有許多相似之處，如圖8-3 所示。
 
-![](containerized-microservices-images/containersvsvirtualmachines.png "微服務應用程式調整方法")
+![](containerized-microservices-images/containersvsvirtualmachines.png "Microservices application scaling approach")
 
 **圖 8-3**：虛擬機器和容器的比較
 
@@ -76,15 +76,15 @@ ms.locfileid: "70760398"
 
 - 容器主機：設定為裝載容器的實體或虛擬機器。 容器主機將會執行一或多個容器。
 - 容器映射：映射是由堆疊在彼此之上的多層式檔集所組成，而且是容器的基礎。 映射不具有狀態，而且在部署至不同環境時永遠不會變更。
-- 箱容器是影像的執行時間實例。
-- 容器 OS 映射：容器會從映射進行部署。 容器作業系統映射是可能有許多影像層組成容器的第一層。 容器作業系統不可變，而且無法修改。
-- 容器存放庫：每次建立容器映射時，映射和其相依性都會儲存在本機存放庫中。 這些映射可在容器主機上重複使用多次。 容器映射也可以儲存在公用或私用登錄中（例如[Docker Hub](https://hub.docker.com/)），以便在不同的容器主機上使用它們。
+- 容器：容器是影像的執行時間實例。
+- 容器 OS 映像：容器會從映像進行部署。 容器作業系統映射是可能有許多影像層組成容器的第一層。 容器作業系統不可變，而且無法修改。
+- 容器存放庫：每次建立容器映射時，映射和其相依性都會儲存在本機儲存機制中。 這些映像可在容器主機上重複使用多次。 容器映射也可以儲存在公用或私用登錄中（例如[Docker Hub](https://hub.docker.com/)），以便在不同的容器主機上使用它們。
 
 企業在實行以微服務為基礎的應用程式時，逐漸採用容器，而 Docker 已成為大部分軟體平臺和雲端廠商採用的標準容器執行。
 
 EShopOnContainers reference 應用程式會使用 Docker 來裝載四個容器化後端微服務，如圖8-4 所示。
 
-![](containerized-microservices-images/microservicesarchitecture.png "eShopOnContainers 參考應用程式後端微服務")
+![](containerized-microservices-images/microservicesarchitecture.png "eShopOnContainers reference application back-end microservices")
 
 **圖 8-4**： eShopOnContainers 參考應用程式後端微服務
 
@@ -92,7 +92,7 @@ EShopOnContainers reference 應用程式會使用 Docker 來裝載四個容器�
 
 每個微服務都有自己的資料庫，讓它能夠與其他微服務完全分離。 在必要時，會使用應用層級事件來達成來自不同微服務的資料庫之間的一致性。 如需詳細資訊，請參閱[微服務之間的通訊](#communication_between_microservices)。
 
-如需參考應用程式的詳細資訊， [請參閱 .net 微服務：容器化 .NET 應用程式的架構](https://aka.ms/microservicesebook)。
+如需參考應用程式的詳細資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
 <a name="communication_between_client_and_microservices" />
 
@@ -100,14 +100,14 @@ EShopOnContainers reference 應用程式會使用 Docker 來裝載四個容器�
 
 EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊（如圖8-5 所示）與容器化後端微服務通訊。
 
-![](containerized-microservices-images/directclienttomicroservicecommunication.png "微服務應用程式調整方法")
+![](containerized-microservices-images/directclienttomicroservicecommunication.png "Microservices application scaling approach")
 
 **圖 8-5**：直接用戶端對微服務通訊
 
 使用直接用戶端對微服務通訊，行動應用程式會透過其公用端點直接對每個微服務提出要求，每個微服務各有不同的 TCP 埠。 在生產環境中，端點通常會對應至微服務的負載平衡器，其會將要求分散到可用的實例。
 
 > [!TIP]
-> 請考慮使用 API 閘道通訊。 當您建立大型且複雜的微服務型應用程式時，直接用戶端對微服務通訊可能會有缺點，但對於小型應用程式而言，它就夠多了。 設計具有數十個微服務的大型微服務型應用程式時，請考慮使用 API 閘道通訊。 如需詳細資訊， [請參閱 .net 微服務：容器化 .NET 應用程式的架構](https://aka.ms/microservicesebook)。
+> 請考慮使用 API 閘道通訊。 當您建立大型且複雜的微服務型應用程式時，直接用戶端對微服務通訊可能會有缺點，但對於小型應用程式而言，它就夠多了。 設計具有數十個微服務的大型微服務型應用程式時，請考慮使用 API 閘道通訊。 如需詳細資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
 <a name="communication_between_microservices" />
 
@@ -121,19 +121,19 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 
 事件匯流排允許微服務之間的發佈-訂閱通訊，而不需要明確察覺元件，如圖8-6 所示。
 
-![](containerized-microservices-images/eventbus.png "發佈-訂閱事件匯流排")
+![](containerized-microservices-images/eventbus.png "Publish-subscribe with an event bus")
 
 **圖8-6：** 發佈-訂閱事件匯流排
 
 從應用程式的觀點來看，事件匯流排只是透過介面公開的發佈-訂閱通道。 不過，事件匯流排的執行方式可能有所不同。 例如，事件匯流排執行可能會使用 RabbitMQ、Azure 服務匯流排或其他服務匯流排，例如 NServiceBus 和 MassTransit。 圖8-7 顯示如何在 eShopOnContainers 參考應用程式中使用事件匯流排。
 
-![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "參考應用程式中的非同步事件驅動通訊")
+![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "Asynchronous event-driven communication in the reference application")
 
 **圖8-7：** 參考應用程式中的非同步事件驅動通訊
 
 使用 RabbitMQ 所執行的 eShopOnContainers 事件匯流排提供一對多的非同步發佈訂閱功能。 這表示在發行事件之後，可以有多個訂閱者接聽相同的事件。 圖8-9 說明此關聯性。
 
-![](containerized-microservices-images/eventdrivencommunication.png "一對多通訊")
+![](containerized-microservices-images/eventdrivencommunication.png "One-to-many communication")
 
 **圖 8-9**：一對多通訊
 
@@ -142,7 +142,7 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 > [!NOTE]
 > 使用 RabbitMQ 所實 eShopOnContainers 的事件匯流排，主要是用來做為概念證明。 針對生產系統，應該考慮替代的事件匯流排執行。
 
-如需事件匯流排執行的相關資訊， [請參閱 .net 微服務：容器化 .NET 應用程式的架構](https://aka.ms/microservicesebook)。
+如需事件匯流排執行的相關資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
 ## <a name="summary"></a>總結
 

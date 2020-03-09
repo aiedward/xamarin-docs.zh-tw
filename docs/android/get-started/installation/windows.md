@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020693"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912365"
 ---
 # <a name="windows-installation"></a>Windows 安裝
 
 _本指南說明在 Windows 上安裝 Xamarin.Android for Visual Studio 的步驟，並說明如何設定 Xamarin.Android 以建置您的第一個 Xamarin.Android 應用程式。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 因為所有 Visual Studio 版本現在都免費隨附 Xamarin，不需要另外授權，您可以使用 Visual Studio 安裝程式來下載和安裝 Xamarin.Android 工具。
 （不再需要舊版 Xamarin 所需的手動安裝和授權步驟。）在本指南中，您將瞭解下列各項：
@@ -37,7 +37,7 @@ _本指南說明在 Windows 上安裝 Xamarin.Android for Visual Studio 的步�
 
 如需在 Windows 上安裝 Xamarin 以便搭配 Visual Studio 使用的詳細資訊，請參閱 [Windows 安裝](~/get-started/installation/windows.md)指南。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>組態
 
 Xamarin.Android 使用 Java Development Kit (JDK) 和 Android SDK 來建置應用程式。 在安裝期間，Visual Studio 安裝程式會將這些工具放在它們的預設位置中，並以適當的路徑組態來設定開發環境。 您可以檢視和變更這些位置，方法是依序按一下 [工具] > [選項] > [Xamarin] > [Android 設定]：
 
@@ -65,15 +65,15 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 
 如需使用 Xamarin Android SDK 管理員的詳細資訊，請參閱 [Android SDK 安裝](~/android/get-started/installation/android-sdk.md)。
 
-### <a name="android-emulator"></a>Android 模擬器
+### <a name="android-emulator"></a>Android Emulator
 
 [Android Emulator](https://developer.android.com/studio/run/emulator) 是開發和測試 Xamarin.Android 應用程式的實用工具。 例如，平板電腦等實體裝置在開發期間可能無法立即使用，或開發人員可能想要先在電腦上執行某些整合測試，再認可程式碼。
 
 在電腦上模擬 Android 裝置包含下列元件：
 
-- **Google Android 模擬器** &ndash; 這是以 [QEMU](https://www.qemu.org/) 為基礎的模擬器，QEMU 會建立在開發人員工作站上執行的虛擬裝置。
-- **模擬器映像** &ndash; _模擬器映像_是應該虛擬化之硬體和作業系統的範本或規格。 例如，一個模擬器映像會識別在已安裝 Google Play 服務之 Android 7.0 上執行的 Nexus 5X 硬體需求。 另一個模擬器映像可能專門針對執行 Android 6.0 的特定 10 吋平板電腦。
-- **Android 虛擬裝置 (AVD)** &ndash; _Android 虛擬裝置_是從模擬器映像建立的模擬 Android 裝置。 執行和測試 Android 應用程式時，Xamarin.Android 會啟動 Android 模擬器 (啟動特定的 AVD)、安裝 APK，然後執行應用程式。
+- **Google Android Emulator** &ndash; 這是以[qemu-img convert](https://www.qemu.org/)為基礎的模擬器，它會建立在開發人員工作站上執行的虛擬化裝置。
+- _模擬器_**映射 &ndash; 模擬器映射是**一種範本，或是要虛擬化之硬體和作業系統的規格。 例如，一個模擬器映像會識別在已安裝 Google Play 服務之 Android 7.0 上執行的 Nexus 5X 硬體需求。 另一個模擬器映像可能專門針對執行 Android 6.0 的特定 10 吋平板電腦。
+- Android**虛擬裝置（AVD）** &ndash; _android 虛擬裝置_是從模擬器映射建立的模擬 Android 裝置。 執行和測試 Android 應用程式時，Xamarin.Android 會啟動 Android 模擬器 (啟動特定的 AVD)、安裝 APK，然後執行應用程式。
 
 使用針對 x86 架構最佳化的特殊模擬器映像以及兩種虛擬化技術其中之一，在 x86 電腦上執行開發工作時可顯著改善效能：
 
@@ -101,9 +101,9 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 
 [![[新增專案] 對話方塊的螢幕擷取畫面，建立空白的 Android 應用程式](windows-images/11-first-app-sml.w157.png)](windows-images/11-first-app.w157.png#lightbox)
 
-就這麼容易！ 現在您已經準備好使用 Xamarin.Android 來建立 Android 應用程式！
+就這麼簡單！ 現在您已經準備好使用 Xamarin.Android 來建立 Android 應用程式！
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本文中，您學到如何在 Windows 上設定和安裝 Xamarin.Android 平台、如何 (選擇性地) 使用自訂 Java JDK 和 Android SDK 安裝位置來設定 Visual Studio、如何啟動 SDK 管理員來安裝其他 Android SDK 元件、如何設定 Android 裝置或模擬器，以及如何開始建置您的第一個應用程式。
 

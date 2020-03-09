@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028481"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917546"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 散發 Xamarin.iOS 應用程式
 
@@ -22,7 +22,7 @@ Beta 測試是軟體開發週期不可或缺的一部分，且有許多跨平台
 
 TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能透過 [iTunes Connect](https://itunesconnect.apple.com/) 存取。 它目前可供 iOS 8.0 應用程式和更新版本使用。 TestFlight 可同時讓內部和外部使用者進行 Beta 測試，且由於會對外部使用者進行 Beta 應用程式審查，因此能在發佈至 App Store 時，使最終審查的程序變得更加輕鬆。
 
-在此之前，二進位檔需在 Visual Studio for Mac 內產生，並上傳至 TestFlightApp 網站以散發給測試人員。 新的程序具有許多改進功能，可讓您在 App Store 中推出高品質並經過充分測試的應用程式。 例如:
+在此之前，二進位檔需在 Visual Studio for Mac 內產生，並上傳至 TestFlightApp 網站以散發給測試人員。 新的程序具有許多改進功能，可讓您在 App Store 中推出高品質並經過充分測試的應用程式。 例如，
 
 - 針對外部測試所進行的 Beta 應用程式審查，可確保最終 App Store 審查的成功機率更高，因為兩者都需要遵循 Apple 的指導方針。
 - 在上傳之前，必須向 iTunes Connect 註冊應用程式。 這可確保佈建設定檔、名稱與憑證皆能完全相符。
@@ -78,10 +78,10 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 [![](testflight-images/infoplist.png "The app's Info.plist")](testflight-images/infoplist.png#lightbox)
 [![](testflight-images/newiosapp.png "The form on iTunes Connect")](testflight-images/newiosapp.png#lightbox)
 
-- **名稱**：設定應用程式套件組合時所使用的描述性名稱。 這必須完全符合您 `Info.plist` 中的**應用程式名稱**項目。
+- **名稱**：設定應用程式套件組合時所使用的描述性名稱。 這必須完全符合您  **中的**應用程式名稱`Info.plist`項目。
 - **主要語言**：應用程式內使用的基礎語言。 這通常是您本身所使用的語言。
 - **套件組合識別碼**：列出您開發人員帳戶上建立之所有應用程式識別碼的下拉式功能表。
-  - **套件組合識別碼尾碼**：如果您已選取萬用字元套件組合識別碼 (亦即結尾為 * 的識別碼，如以上範例所示)，螢幕將會出現額外的方塊，提示您輸入套件組合識別碼尾碼。 在該範例中，[套件組合識別碼] 為 `mobi.chkn.*`，[尾碼] 則為 **PageView**。 這些在 `Info.plist` 中，就會組成 [套件組合識別碼]。
+  - **套件組合識別碼尾碼**：如果您已選取萬用字元套件組合識別碼 (亦即結尾為 * 的識別碼，如以上範例所示)，螢幕將會出現額外的方塊，提示您輸入套件組合識別碼尾碼。 在該範例中，[套件組合識別碼] 為 `mobi.chkn.*`，[尾碼] 則為 **PageView**。 這些在  **中，就會組成 [套件組合識別碼]** `Info.plist`。
 - **版本**：所上傳之應用程式的版本號碼。 這是由開發人員所選擇。
 - **SKU**：SKU 是應用程式的唯一識別碼，使用者將看不到這個識別碼。 它與產品識別碼類似。 在上述範例中，我已經選擇日期，以及該日期的版本號碼。
 
@@ -93,7 +93,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="create-an-archive"></a>建立封存
 
@@ -120,10 +120,10 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
  如需有關這些步驟的詳細資訊，請參閱[向 Apple 提交應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)一節。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="building-your-final-distributable"></a>建置最終可散發項目
- 由於適用於 Visual Studio 的 Xamarin 外掛程式不支援封存 Xamarin.iOS 應用程式以發佈至 App Store，有兩個選項可從 Visual Studio 發佈 iOS 應用程式。 這些是：
+ 由於適用於 Visual Studio 的 Xamarin 外掛程式不支援封存 Xamarin.iOS 應用程式以發佈至 App Store，有兩個選項可從 Visual Studio 發佈 iOS 應用程式。 它們是：
 
 1. 上傳透過「建置臨機操作 IPA」命令所建立的 IPA。
 1. 上傳壓縮的 `.app` 套件組合。
@@ -197,7 +197,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 [![](testflight-images/internal-tester.png "Turn on the Internal Tester switch")](testflight-images/internal-tester.png#lightbox)
 
-若要新增不在清單中的使用者，請選取 [使用者] 旁邊的 **+** 按鈕，並提供 [名字]、[姓氏] 和電子郵件地址以建立帳戶。 該使用者必須確認其電子郵件，才能啟用帳戶：
+若要新增不在清單中的使用者，請選取 [使用者] **+ 旁邊的**  按鈕，並提供 [名字]、[姓氏] 和電子郵件地址以建立帳戶。 該使用者必須確認其電子郵件，才能啟用帳戶：
 
 [![](testflight-images/add-new-user.png "Adding a user")](testflight-images/add-new-user.png#lightbox)
 
@@ -263,7 +263,7 @@ first name, last name, email address
 
 [![](testflight-images/submit-for-review.png "Click the Submit for Review button")](testflight-images/submit-for-review.png#lightbox)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已探討如何透過 iTunes Connect 使用 Apple 的 TestFlight Beta 測試。 其中已涵蓋如何將新組建上傳至 iTunes Connect，以及如何邀請內部和外部 Beta 測試人員使用該應用程式。
 

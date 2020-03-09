@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023411"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918121"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 
@@ -64,7 +64,7 @@ MVC 完全不知道模型的「資料持續性」和「存取」。 換句話說
 
 ## <a name="navigation-controller"></a>瀏覽控制器
 
-在 Phoneword 應用程式中，我們使用「瀏覽控制器」來協助管理多個畫面之間的瀏覽。 瀏覽控制器是由 `UINavigationController` 類別所表示的特製化 `UIViewController`。 瀏覽控制器不會管理單一內容檢視階層，而是會管理其他檢視控制器，並以瀏覽工具列形式來管理它自己特殊的內容檢視階層，工具列中包括標題、[上一頁] 按鈕及其他選擇性功能。
+在 Phoneword 應用程式中，我們使用「瀏覽控制器」來協助管理多個畫面之間的瀏覽。 瀏覽控制器是由 `UIViewController` 類別所表示的特製化 `UINavigationController`。 瀏覽控制器不會管理單一內容檢視階層，而是會管理其他檢視控制器，並以瀏覽工具列形式來管理它自己特殊的內容檢視階層，工具列中包括標題、[上一頁] 按鈕及其他選擇性功能。
 
 瀏覽控制器在 iOS 應用程式中很常見，可提供常見 iOS 應用程式 (例如 [設定] 應用程式) 的瀏覽，如下列螢幕擷取畫面所示：
 
@@ -126,7 +126,7 @@ iOS 會在轉換發生之前先呼叫 `PrepareForSegue`，並將我們在分鏡�
 CallHistoryController callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
-最後，透過將 `CallHistoryController` 的 `PhoneHistory` 屬性設定為已撥號電話號碼清單，將電話號碼清單 (模型) 從 `ViewController` 傳遞到 `CallHistoryController`：
+最後，透過將 `ViewController` 的 `CallHistoryController` 屬性設定為已撥號電話號碼清單，將電話號碼清單 (模型) 從 `PhoneHistory` 傳遞到 `CallHistoryController`：
 
 ```csharp
 callHistoryController.PhoneNumbers = PhoneNumbers;
@@ -166,7 +166,7 @@ this.Storyboard.InstantiateViewController
 ("CallHistoryController") as CallHistoryController;
 ```
 
-最後，透過將 `CallHistoryController` 的 `PhoneHistory` 屬性設定為已撥號電話號碼清單，將電話號碼清單 (模型) 從 `ViewController` 傳遞到 `CallHistoryController`，就像我們使用 Segue 處理轉換時所做的：
+最後，透過將 `ViewController` 的 `CallHistoryController` 屬性設定為已撥號電話號碼清單，將電話號碼清單 (模型) 從 `PhoneHistory` 傳遞到 `CallHistoryController`，就像我們使用 Segue 處理轉換時所做的：
 
 ```csharp
 callHistory.PhoneNumbers = PhoneNumbers;
