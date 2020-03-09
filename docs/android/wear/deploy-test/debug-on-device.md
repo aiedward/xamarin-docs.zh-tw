@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028688"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916616"
 ---
 # <a name="debug-on-a-wear-device"></a>在 Wear 裝置上偵錯
 
 _本文說明如何在磨損裝置上進行 Xamarin. Android 磨損應用程式的偵錯工具。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 如果您有 Android 磨損裝置（例如 Android 磨損 Smartwatch），您可以在裝置上執行應用程式，而不是使用模擬器。 （如果您還不熟悉部署和執行 Android 磨損應用程式的流程，請參閱[Hello，磨損](~/android/wear/get-started/hello-wear.md)）。
 
@@ -148,6 +148,6 @@ Android 磨損應用程式會以隨附的 Android 手機應用程式封裝，以
 
 4. 在裝置上執行並對磨損應用程式進行偵錯工具。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明如何設定 Android 磨損裝置，以透過藍牙從 Visual Studio 進行磨損的調試，以及如何使用隨附的電話應用程式來對磨損應用程式進行程式。 此外，它也提供了常見的偵錯工具，可透過藍牙來對磨損應用程式進行調試。
