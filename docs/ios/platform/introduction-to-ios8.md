@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
 ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489202"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910819"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 簡介
 
@@ -161,7 +161,7 @@ iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合�
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** –這已由 iOS8 中的 UISearchController 所取代。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 在本文中，我們探討了 Apple 在 iOS 8 中引進的一些新功能。
 
 ## <a name="related-links"></a>相關連結

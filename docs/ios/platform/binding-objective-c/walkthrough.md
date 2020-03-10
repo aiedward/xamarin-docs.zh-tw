@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 4ccd22945caa9d81970867e0b037069389538b88
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 67b760a58628950caa33fe9009c5023c8696691c
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292542"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946352"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：系結 iOS 目標-C 程式庫
 
@@ -420,10 +420,13 @@ sdk: watchos2.2      arch: armv7
 在終端機應用程式中輸入下列命令：
 
 ```bash
-sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
+sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] -scope [full-path-to-project]/InfColorPicker/InfColorPicker [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-其中 `[full-path-to-project]` 是電腦上**InfColorPicker** Xcode 專案檔所在目錄的完整路徑，而 [iphone-os] 是我們已安裝的 iOS SDK，如 `sharpie xcode -sdks` 命令所述。 請注意，在此範例中，我們已傳遞 **\*.h**做為參數，其中包含此目錄中的*所有*標頭檔-通常您不應該這麼做，但請仔細閱讀標頭檔，以尋找參考所有其他相關檔案的最上層 **.h**檔案，然後將該檔案傳遞至目標 Sharpie。
+其中 `[full-path-to-project]` 是電腦上**InfColorPicker** Xcode 專案檔所在目錄的完整路徑，而 [iphone-os] 是我們已安裝的 iOS SDK，如 `sharpie xcode -sdks` 命令所述。 請注意，在此範例中，我們已傳遞 **\*.h**做為參數，其中包含此目錄中的*所有*標頭檔-通常您不應該這麼做，但請仔細閱讀標頭檔，以尋找參考所有其他相關檔案的最上層 **.h**檔案，然後將該檔案傳遞至目標 Sharpie。 
+
+> [!TIP] 
+> 針對 `-scope` 引數，傳入包含您要系結之標頭的資料夾。 如果沒有 `-scope` 引數，目標 Sharpie 會嘗試針對匯入的任何 iOS SDK 標頭產生系結，例如 `#import <UIKit.h>`，而產生龐大的定義檔案，可能會在編譯系結專案時產生錯誤。 使用 `-scope` 引數集時，目標 Sharpie 不會針對範圍資料夾以外的任何標頭產生系結。 
 
 系統會在終端機中產生下列[輸出](walkthrough-images/os05.png)：
 

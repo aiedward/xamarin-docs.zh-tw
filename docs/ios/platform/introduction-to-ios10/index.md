@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032220"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910891"
 ---
 # <a name="introduction-to-ios-10"></a>iOS 10 簡介
 
@@ -28,7 +28,7 @@ Apple 在 iOS 10 中新增了數個新的 Api 和服務，以及現有功能的�
 
 Apple 的真正音調顯示技術會使用 iOS 裝置中的環境光線感應器，以動態方式調整顯示器的色彩和濃度，以符合目前的光源狀況。 iOS 10 提供新的[UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31)金鑰，可新增至應用程式的 `Info.plist` 檔，並控制真正的色調如何套用標準色彩轉移。 
 
-可用的值如下：
+有下列可用的值：
 
 - `UIWhitePointAdaptivityStyleStandard`**預設值**-使用標準的點 adaptivity。
 - `UIWhitePointAdaptivityStyleReading`-用於以讀取為主的應用程式。
@@ -52,7 +52,7 @@ Apple 在 iOS 10 中提供了數個新的應用程式擴充點：
 - `UITextDocumentProxy` 類別的新 `DocumentInputMode` 屬性可以決定檔的輸入語言，並允許鍵盤擴充功能與該語言對齊。
 - 新的 `HandleInputModeList` 方法可讓鍵盤擴充功能顯示系統的鍵盤選擇器功能表，以回應所按的地球按鍵。
 
-如需詳細資訊，請參閱我們的[擴充功能簡介](~/ios/platform/extensions.md)、[訊息應用程式整合](~/ios/platform/message-app-integration/index.md)、[主動式建議簡介](~/ios/platform/search/proactive-suggestions.md)、 [SiriKit 簡介](~/ios/platform/sirikit/index.md)、[使用者通知](~/ios/platform/user-notifications/index.md)和 Apple 的[簡介應用程式擴充程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)。
+如需詳細資訊，請參閱我們的[擴充功能簡介](~/ios/platform/extensions.md)、[訊息應用程式整合](~/ios/platform/message-app-integration/index.md)、[主動式建議簡介](~/ios/platform/search/proactive-suggestions.md)、 [SiriKit 簡介](~/ios/platform/sirikit/index.md)、[使用者通知簡介](~/ios/platform/user-notifications/index.md)和 Apple 的[應用程式擴充程式設計指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)。
 
 ## <a name="app-search-enhancements"></a>應用程式搜尋增強功能
 
@@ -168,7 +168,7 @@ SiriKit 支援下列服務網域：
 
 iOS 10 包含新的語音 API，可讓應用程式支援連續語音辨識和轉譯語音（從即時或錄製的音訊串流）到文字。
 
-因為「語音辨識」需要在 Apple 伺服器上傳輸和暫時儲存資料，所以應用程式_必須_在其 `Info.plist` 檔案中包含 `NSSpeechRecognitionUsageDescription` 金鑰，並呼叫 `SFSpeechRecognizer.RequestAutorization`，以要求使用者的執行識別許可權。方法.
+因為「語音辨識」需要在 Apple 伺服器上傳輸和暫時儲存資料，所以應用程式_必須_在其 `Info.plist` 檔案中包含 `NSSpeechRecognitionUsageDescription` 金鑰，並呼叫 `SFSpeechRecognizer.RequestAutorization` 方法，以要求使用者的許可權來執行辨識。
 
 若要深入瞭解，請參閱我們[的語音辨識簡介](~/ios/platform/speech.md)指南。
 

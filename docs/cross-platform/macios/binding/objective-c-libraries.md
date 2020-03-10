@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78915195"
 ---
 # <a name="binding-objective-c-libraries"></a>系結目標-C 程式庫

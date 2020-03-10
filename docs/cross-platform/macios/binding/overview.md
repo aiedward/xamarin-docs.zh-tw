@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
 ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78292179"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目標-C 系結的總覽

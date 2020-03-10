@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
 ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489995"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910682"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin. Forms TabbedPage
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 由索引標籤清單和較大的詳細資料區域所組成，每個索引標籤會將內容載入至詳細資料區域中。 下列螢幕擷取畫面顯示 iOS 和 Android 上的 `TabbedPage`：
+Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 由索引標籤和較大的詳細資料區域清單所組成，每個索引標籤會將內容載入至詳細資料區域中。 下列螢幕擷取畫面顯示 iOS 和 Android 上的 `TabbedPage`：
 
 [![TabbedPage 的螢幕擷取畫面，其中包含三個索引標籤（在 iOS 和 Android 上）](tabbed-page-images/tabbedpage-today.png "具有三個索引標籤的 TabbedPage")](tabbed-page-images/tabbedpage-today-large.png#lightbox "具有三個索引標籤的 TabbedPage")
 
@@ -44,7 +44,7 @@ Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 由索引標籤清�
 使用這兩種方法，[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 即會在使用者選取每個索引標籤時顯示每個頁面。
 
 > [!IMPORTANT]
-> 建議僅以 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 和 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體來填入 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)。 這有助於跨所有平台確保一致的使用者體驗。
+> 建議僅以 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 和 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 執行個體來填入 [`ContentPage`](xref:Xamarin.Forms.ContentPage)。 這有助於跨所有平台確保一致的使用者體驗。
 
 此外， [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)會定義下列屬性：
 

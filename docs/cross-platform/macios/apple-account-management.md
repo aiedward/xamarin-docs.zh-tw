@@ -5,90 +5,71 @@ ms.prod: xamarin
 ms.assetid: 71388B83-699B-4E42-8CBF-8557A4A3CABF
 author: davidortinau
 ms.author: daortin
-ms.date: 05/06/2018
-ms.openlocfilehash: 81f161442b33eee94f32c506947ed029fd40aadb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 03/05/2020
+ms.openlocfilehash: 17607e09a141fd29cd81cde93d812b20e62a9af8
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016349"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946231"
 ---
 # <a name="apple-account-management"></a>Apple 帳戶管理
 
-Apple 帳戶管理介面提供一種方式，可讓您查看與 Apple ID 相關聯的所有開發小組。 此外，它也可讓您藉由顯示電腦上已安裝的_簽署_身分識別和布建_設定檔_清單，來查看每個小組的更多詳細資料。
+Visual Studio 中的 Apple 帳戶管理介面提供了一種方式，可讓您查看與 Apple ID 相關聯之開發團隊的資訊。 它可讓您執行下列動作：
 
-您的 Apple ID 驗證是在命令列上使用[fastlane](https://fastlane.tools/)來執行。 您的電腦上必須安裝 fastlane，才可成功進行驗證。 如需有關 fastlane 和如何安裝的詳細資訊，請見[fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)指南。
+- **新增 Apple 開發人員帳戶**
+- **查看簽署憑證和布建設定檔**
+- **建立新的簽署憑證**
+- **下載現有的布建設定檔**
 
-[Apple 帳戶] 對話方塊可讓您執行下列動作：
-
-- **建立和管理憑證**
-- **建立和管理布建設定檔**
-
-本指南將說明如何執行這項操作的相關資訊。
-
-> [!NOTE]
+> [!IMPORTANT]
 > Xamarin 的 Apple 帳戶管理工具只會顯示付費 Apple 開發人員帳戶的相關資訊。 若要瞭解如何在沒有付費 Apple developer 帳戶的裝置上測試應用程式，請參閱免費布建[的 Xamarin iOS 應用程式](~/ios/get-started/installation/device-provisioning/free-provisioning.md)指南。
-
-您也可以使用 iOS 自動布建工具，自動建立和管理您的簽署身分識別、應用程式識別碼和布建設定檔。 如需使用這些功能的詳細資訊，請參閱[裝置](~/ios/get-started/installation/device-provisioning/index.md)布建指南。
 
 ## <a name="requirements"></a>需求
 
-Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visual Studio 2017 （15.7 版和更高版本）。
+Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visual Studio 2017 （15.7 版和更高版本）。 您也必須擁有付費的 Apple 開發人員帳戶，才能使用這項功能。 有關 Apple developer 帳戶的詳細資訊可在[裝置](~/ios/get-started/installation/device-provisioning/index.md)布建指南中取得。
 
-您必須擁有 Apple 開發人員帳戶，才能使用這項功能。 有關 Apple developer 帳戶的詳細資訊可在[裝置](~/ios/get-started/installation/device-provisioning/index.md)布建指南中取得。
+> [!NOTE]
+> 開始之前，請務必先接受[Apple Developer 入口網站](https://developer.apple.com/account/)中的任何使用者授權合約。
 
-- 請確定您已連線到網際網路。 這是因為 fastlane 會直接與 Apple Developer 入口網站進行通訊。
-- 請確定您已[安裝 fastlane 工具](~/ios/deploy-test/provisioning/fastlane/index.md#Installation)。
-- 請確定您有[https://download.fastlane.tools](https://download.fastlane.tools)的最新 fastlane 工具。
-- 開始之前，請務必接受[開發人員入口網站](https://developer.apple.com/account/)中的任何使用者授權合約。
+## <a name="add-an-apple-developer-account"></a>新增 Apple 開發人員帳戶
 
-## <a name="adding-an-apple-developer-account"></a>新增 Apple 開發人員帳戶
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+1. 移至 [ **Visual Studio > 喜好設定] > [Apple 開發人員帳戶**]，然後按一下 [ **+** ] 按鈕以開啟 [登入] 對話方塊：
 
-1. 若要開啟 [帳戶管理] 對話方塊，請移至**Visual Studio > 喜好設定 > Apple 開發人員帳戶**：
+    ![Visual Studio for Mac 喜好設定中的 [Apple 開發人員帳戶] 頁面 AScreenshot。](apple-account-management-images/add-account-vsm.png)
 
-    ![Apple 開發人員帳戶選項](apple-account-management-images/image1.png)
+2. 輸入您的 Apple ID 和密碼，然後按一下 [登**入**]。 這會將您的認證儲存在這部電腦的安全 Keychain 中。
 
-2. 按 [ **+** ] 按鈕以顯示 [登入] 對話方塊，如下所示： 
-
-    ![fastlane 對話方塊。](apple-account-management-images/image2.png)
-
-3. 輸入您的 Apple ID 和密碼，然後按一下 [登**入**] 按鈕。 這會將您的認證儲存在這部電腦的安全 Keychain 中。 [fastlane](~/ios/deploy-test/provisioning/fastlane/index.md)是用來安全地處理您的認證，並將其傳遞給 Apple 的開發人員入口網站。
-
-4. 選取 [警示] 對話方塊上的 [**永遠允許**]，以允許 Visual Studio 使用您的認證：
+3. 選取 [警示] 對話方塊上的 [**永遠允許**]，以允許 Visual Studio 使用您的認證：
 
     ![[永遠允許警示] 對話方塊](apple-account-management-images/image4.png)
 
-5. 一旦成功新增您的帳戶，您就會看到您的 Apple ID 和您的 Apple ID 所屬的任何小組。
+4. 一旦成功新增您的帳戶，您就會看到您的 Apple ID 和您的 Apple ID 所屬的任何小組：
 
     ![已新增帳戶的 Apple 開發人員帳戶對話方塊](apple-account-management-images/image5.png)
 
-6. 選取任何小組，然後按 [ **View Details （詳細資料**）]。 按鈕。 這會顯示安裝在您電腦上的所有簽署身分識別和布建配置檔案清單：
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-    ![顯示您電腦上的簽署身分識別和布建設定檔的 [查看詳細資料] 畫面](apple-account-management-images/image6.png)
+> [!NOTE]
+> 如果您使用 Visual Studio 2017 或 Visual Studio 2019 （16.4 版和更舊版本），您必須先將其[配對到 Mac 組建主機](~/ios/get-started/installation/windows/connecting-to-mac/index.md)，才能繼續進行。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+1. 移至 [工具] [ **> 選項] [> Xamarin > Apple 帳戶**]，然後按一下 [**新增**]：
 
-1. 開始將您的 Apple ID 新增至 Visual Studio 2019 之前，請確定您的開發環境已與[Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+    ![Visual Studio 選項中 [Apple 帳戶] 頁面的螢幕擷取畫面。](apple-account-management-images/add-account-vsw.png)
 
-1. 若要開啟 [帳戶管理] 視窗，請移至 [工具] [ **> 選項] [> Xamarin > Apple 帳戶**]：
+2. 輸入您的 Apple ID 和密碼，然後按一下 **[登**入]。
 
-    ![Apple 帳戶選項畫面](apple-account-management-images/prov1.png)
+3. 一旦成功新增您的帳戶，您就會看到您的 Apple ID 和您的 Apple ID 所屬的任何小組：
 
-1. 選取 [**新增**] 按鈕，然後輸入您的 Apple ID 和密碼：
-
-    ![使用者名稱和密碼對話方塊](apple-account-management-images/prov1a.png)
-
-1. 一旦成功新增您的帳戶，您就會看到您的 Apple ID 和您的 Apple ID 所屬的任何小組。
-
-1. 選取任何小組，然後按 [ **View Details （詳細資料**）]。 按鈕。 這會顯示安裝在您電腦上的所有簽署身分識別和布建配置檔案清單：
-
-    ![使用者名稱和密碼對話方塊](apple-account-management-images/prov2.png)
+    ![[開發人員帳戶] 頁面的螢幕擷取畫面，其中包含已新增的帳戶。](apple-account-management-images/accounts-vsw.png)
 
 -----
 
-## <a name="managing-signing-identities-and-provisioning-profiles"></a>管理簽署身分識別和布建設定檔
+## <a name="view-signing-certificates-and-provisioning-profiles"></a>查看簽署憑證和布建設定檔
+
+選取小組，然後按一下 [**查看詳細資料**]。 開啟對話方塊，以顯示電腦上已安裝的簽署身分識別和布建配置檔案清單。
 
 [小組詳細資料] 對話方塊會顯示依類型組織的簽署身分識別清單。 [**狀態**] 欄會建議您是否有憑證： 
 
@@ -102,60 +83,26 @@ Apple 帳戶管理適用于 Visual Studio for Mac、Visual Studio 2019 和 Visua
 
   ![小組詳細資料對話方塊資訊](apple-account-management-images/image7.png)
 
-## <a name="create-a-signing-identities"></a>建立簽署身分識別
+## <a name="create-a-signing-certificate"></a>建立簽署憑證
 
-若要建立新的簽署身分識別，請選取 [**建立憑證**] 下拉按鈕，然後選取您需要的類型。 如果您有正確的許可權，將會在幾秒後出現新的簽署身分識別。
+若要建立新的簽署身分識別，請按一下 [**建立憑證**] 以開啟下拉式功能表，然後選取您想要建立的[憑證類型](https://help.apple.com/xcode/mac/current/#/dev80c6204ec)。 如果您有正確的許可權，將會在幾秒後出現新的簽署身分識別。
 
 如果下拉式方塊中的選項呈現灰色且未選取，則表示您沒有正確的小組許可權可以建立這種類型的憑證。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
-
-![建立憑證選項](apple-account-management-images/image8.png)
-
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
-
-![建立憑證選項](apple-account-management-images/prov3.png)
-
------
-
 ## <a name="download-provisioning-profiles"></a>下載布建設定檔
 
-[小組詳細資料] 對話方塊也會顯示所有連接至您開發人員帳戶的布建配置檔案清單。 您可以按 [**下載所有設定檔**] 按鈕，將所有布建設定檔下載到本機電腦
+[小組詳細資料] 對話方塊也會顯示所有連接至您開發人員帳戶的布建配置檔案清單。 您可以按一下 [**下載所有設定檔**]，將所有布建設定檔下載到本機電腦。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-![下載布建設定檔區段](apple-account-management-images/image9.png)
+## <a name="troubleshoot"></a>疑難排解
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+- 可能需要幾個小時的時間，才能核准新的 Apple 開發人員帳戶。 在核准帳戶之前，您將無法啟用自動布建。
 
-![下載布建設定檔區段](apple-account-management-images/prov4.png)
+- 如果新增 Apple 開發人員帳戶失敗並出現訊息 `Authentication Error: Xcode 7.3 or later is required to continue developing with your Apple ID.`，請確定您使用的 Apple ID 具有 Apple 開發人員計畫的有效付費成員資格。 若要使用付費的 Apple 開發人員帳戶，請參閱[免費提供的 Xamarin iOS 應用程式](~/ios/get-started/installation/device-provisioning/free-provisioning.md)指南。
 
------
+- 如果嘗試建立新的簽署憑證失敗，並出現錯誤 `You have reached the limit for certificates of this type`，則會產生允許的憑證數目上限。 若要修正此問題，請流覽至[Apple 開發人員中心](https://developer.apple.com/account/ios/certificate/distribution)，並撤銷其中一個生產環境憑證。
 
-## <a name="ios-bundle-signing"></a>iOS 套件組合簽署
-
-如需將應用程式部署至裝置的相關資訊，請參閱[裝置](~/ios/get-started/installation/device-provisioning/index.md)布建指南。
-
-## <a name="troubleshooting"></a>疑難排解
-
-### <a name="view-details-dialog-is-empty"></a>[View Details] 對話方塊是空的
-
-這是目前與 bug [#53906](https://bugzilla.xamarin.com/show_bug.cgi?id=53906)相關的已知問題。 請確定您使用的是最新穩定版本的 Visual Studio for Mac
-
-### <a name="if-you-are-experiencing-issues-logging-in-your-account-please-try-the-following"></a>如果您在登入帳戶時遇到問題，請嘗試下列步驟：
-
-- 開啟 keychain 應用程式，然後在 [類別] 下選取 [*密碼*]。 搜尋 `deliver.`，並刪除所有專案。
-
-### <a name="error-adding-account-please-sign-in-with-an-app-specific-password"></a>「新增帳戶時發生錯誤。 請使用應用程式特定的密碼登入」
-
-這是因為您的帳戶已啟用2個要素驗證。 請確定您使用的是最新穩定版本的 Visual Studio for Mac
-
-### <a name="failed-to-create-new-certificate"></a>無法建立新的憑證
-「您已達到此類型憑證的限制」
-
-![[憑證限制] 對話方塊](apple-account-management-images/image10.png)
-
-已產生允許的憑證數目上限。 若要修正此問題，請流覽至[Apple 開發人員中心](https://developer.apple.com/account/ios/certificate/distribution)，並撤銷其中一個生產環境憑證。
+- 如果您在 Visual Studio for Mac 上登入您的帳戶時遇到問題，可能的修正方式是開啟 Keychain 應用程式，然後在 [**類別**] 下選取 [**密碼**]。 搜尋 `deliver.` 並刪除所有找到的專案。
 
 ## <a name="known-issues"></a>已知問題
 
