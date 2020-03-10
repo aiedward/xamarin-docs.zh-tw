@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: a26c83565e4cfa64272549e12a35206dff6ec3c0
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78291884"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911545"
 ---
 # <a name="xamarinios-errors"></a>Xamarin iOS 錯誤
 
@@ -583,7 +583,7 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 錯誤訊息中提及的元件有衝突的組建目標。
 
-例如：
+例如，
 
 ```
   --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
@@ -597,7 +597,7 @@ Xamarin 不支援將最低部署目標設定為比這個特定版本的 Xamarin 
 
 錯誤訊息中提及的元件全部都會編譯成單一靜態物件。 這是不允許的，每個元件都必須編譯成不同的靜態物件。
 
-例如：
+例如，
 
 ```
 --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
@@ -2239,7 +2239,7 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 
 當原生連結器找不到某處參考的符號時，就會發生這種情況。 有幾個原因可能會發生這種情況：
 
-- 協力廠商系結需要架構，但系結不會在其 `[LinkWith]` 屬性中指定此項。 解決方式︰
+- 協力廠商系結需要架構，但系結不會在其 `[LinkWith]` 屬性中指定此項。 解決方案：
   - 如果您是協力廠商系結的作者，或具有其來源的存取權，請修改系結的 `[LinkWith]` 屬性，以包含所需的架構：
 
     ```csharp
@@ -2266,7 +2266,7 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 
 當原生連結器找不到在某處參考的目標-C 類別時，就會發生這種情況。 有幾個原因可能會發生這種情況：與[MT5210](#MT5210)和此外：
 
-- 協力廠商系結系結了目標 C 通訊協定，但未使用其 api 定義中的 `[Protocol]` 屬性來標注它。 解決方式︰
+- 協力廠商系結系結了目標 C 通訊協定，但未使用其 api 定義中的 `[Protocol]` 屬性來標注它。 解決方案：
   - 新增遺漏的 `[Protocol]` 屬性：
 
     ```csharp
@@ -2350,7 +2350,7 @@ Xamarin 無法為所述的產生 P/Invoke 包裝函式。
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214：原生連結失敗，未定義的符號： *。 這個符號已參考 managed 成員 *。 請確認已參考所有必要的架構，且已連結原生程式庫。
 
-當 managed 程式碼包含不存在之原生方法的 P/Invoke 時，就會回報此錯誤。 例如：
+當 managed 程式碼包含不存在之原生方法的 P/Invoke 時，就會回報此錯誤。 例如，
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2775,8 +2775,8 @@ Xamarin iOS 專案通常會動態參考原生符號，這表示原生連結器�
 
 其中 * 可以是：
 
-- 字串
-- array
+- string
+- 陣列
 - dict
 - bool
 - real

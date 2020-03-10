@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/28/2019
 ms.openlocfilehash: 64fa15a15468a84ada3a377a9ac85bbf6310099c
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490034"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914549"
 ---
 # <a name="xamarinforms-label"></a>Xamarin. 表單標籤
 
@@ -363,7 +363,7 @@ var label = new Label
 
 ![Span LineHeight 範例](label-images/span-lineheight.png)
 
-## <a name="padding"></a>與邊框距離
+## <a name="padding"></a>填補
 
 填補代表專案和其子專案之間的間距，並用來分隔專案與本身的內容。 將 `Label.Padding` 屬性設定為[`Thickness`](xref:Xamarin.Forms.Thickness)值，即可將填補套用至[`Label`](xref:Xamarin.Forms.Label)實例：
 
@@ -520,7 +520,7 @@ public class HyperlinkSpan : Span
 
 ## <a name="related-links"></a>相關連結
 
-- [文字 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [文字（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [超連結（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [使用 Xamarin 建立 Mobile Apps，第3章](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [Label API](xref:Xamarin.Forms.Label)

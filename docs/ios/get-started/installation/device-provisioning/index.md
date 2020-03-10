@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
 ms.openlocfilehash: bb1ef1e948c796e6b0d91230be3c82c5a8c7d366
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022692"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910851"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Xamarin.iOS 的裝置佈建
 
@@ -51,7 +51,7 @@ ms.locfileid: "73022692"
 
 - **手動** – 可以透過 Apple Developer Portal (Apple 開發人員入口網站) 來建立和管理「簽署身分識別」、「應用程式識別碼」及「佈建設定檔」，如[手動佈建](manual-provisioning.md)指南所述。 您可以依照 [Apple 帳戶管理](~/cross-platform/macios/apple-account-management.md)指南所述，管理這些成品。
 
-## <a name="provisioning-for-application-services"></a>佈建應用程式服務
+## <a name="provisioning-for-application-services"></a>應用程式服務的佈建
 
 Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應用程式服務」(也稱為功能)。 不論是在 iOS Provisioning Portal (iOS 佈建入口網站) 中於建立 **App ID** \(應用程式識別碼\) 時，還是在 Xamarin.iOS 應用程式專案所含的 **Entitlements.plist** 檔案中，都必須設定這些「應用程式服務」。 如需有關將「應用程式服務」新增至您應用程式的資訊，請參閱[功能簡介](~/ios/deploy-test/provisioning/capabilities/index.md)指南和[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
@@ -64,4 +64,4 @@ Apple 提供一組可針對 Xamarin.iOS 應用程式啟用的精選特別「應�
 - [免費佈建](~/ios/get-started/installation/device-provisioning/free-provisioning.md)
 - [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
-- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+- [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) \(英文\)
