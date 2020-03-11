@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
 ms.openlocfilehash: 6d83afa47c459633506736b2497a82c444352c90
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78912443"
 ---
 # <a name="troubleshooting-tips"></a>疑難排解秘訣
@@ -36,7 +36,7 @@ ms.locfileid: "78912443"
 1. 按一下 [**工具] > 選項 ...**
 2. 在左側樹狀檢視中，選取 [**專案和方案] > [建立並執行**]
 3. 在右側面板中，將 [MSBuild 組建輸出詳細資訊] 下拉式清單設定為 [診斷]
-4. 按一下 [確定]。
+4. 按一下 [檔案] &gt; [新增] &gt; [專案]
 5. 清除並重建您的套件。
 6. 診斷輸出會顯示在 [輸出] 面板中。
 
@@ -45,7 +45,7 @@ ms.locfileid: "78912443"
 1. 按一下 [ **Visual Studio for Mac > 喜好**設定 ...]
 2. 在左側樹狀檢視中，選取 [專案] [ **> 組建**]
 3. 在右側面板中，將 [記錄詳細資訊] 下拉式按鈕設定為 [診斷]
-4. 按一下 [確定]。
+4. 按一下 [檔案] &gt; [新增] &gt; [專案]
 5. 重新啟動 Visual Studio for Mac
 6. 清除並重建您的套件。
 7. 按一下 [組建輸出] 按鈕，即可在 [錯誤] 面板中看到診斷輸出（**View > pad > 錯誤**）。

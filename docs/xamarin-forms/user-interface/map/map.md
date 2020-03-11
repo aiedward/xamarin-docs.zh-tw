@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/29/2019
 ms.openlocfilehash: 1cfda90360557af1160d421f18807f8b534967a8
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426227"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78912708"
 ---
 # <a name="xamarinforms-map-control"></a>Xamarin. Forms 地圖控制項
 
@@ -106,15 +106,15 @@ Map map = new Map
 
 下列螢幕擷取畫面顯示[`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)屬性設定為 `Street`時的[`Map`](xref:Xamarin.Forms.Maps.Map) ：
 
-[![在 iOS 和 Android 上具有街道對應類型的地圖控制項螢幕擷取畫面](map-images/maptype-street.png "具有街道 maptype 的地圖控制項")](map-images/maptype-street-large.png#lightbox "Map control with the street map type")
+[![在 iOS 和 Android 上具有街道對應類型的地圖控制項螢幕擷取畫面](map-images/maptype-street.png "具有街道 maptype 的地圖控制項")](map-images/maptype-street-large.png#lightbox "具有街道對應類型的地圖控制項")
 
 下列螢幕擷取畫面顯示[`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)屬性設定為 `Satellite`時的[`Map`](xref:Xamarin.Forms.Maps.Map) ：
 
-[![在 iOS 和 Android 上具有衛星對應類型的地圖控制項螢幕擷取畫面](map-images/maptype-satellite.png "使用附屬 maptype 的地圖控制項")](map-images/maptype-satellite-large.png#lightbox "Map control with the satellite map type")
+[![在 iOS 和 Android 上具有衛星對應類型的地圖控制項螢幕擷取畫面](map-images/maptype-satellite.png "使用附屬 maptype 的地圖控制項")](map-images/maptype-satellite-large.png#lightbox "具有衛星對應類型的地圖控制項")
 
 下列螢幕擷取畫面顯示[`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)屬性設定為 `Hybrid`時的[`Map`](xref:Xamarin.Forms.Maps.Map) ：
 
-[![在 iOS 和 Android 上具有混合式地圖類型的地圖控制項螢幕擷取畫面](map-images/maptype-hybrid.png "使用混合式 maptype 的地圖控制項")](map-images/maptype-hybrid-large.png#lightbox "Map control with the hybrid map type")
+[![在 iOS 和 Android 上具有混合式地圖類型的地圖控制項螢幕擷取畫面](map-images/maptype-hybrid.png "使用混合式 maptype 的地圖控制項")](map-images/maptype-hybrid-large.png#lightbox "具有混合式地圖類型的地圖控制項")
 
 ## <a name="display-a-specific-location-on-a-map"></a>顯示地圖上的特定位置
 

@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/06/2018
 ms.openlocfilehash: 56430f8c4988c16a31f9806b0ffb8b6355d6340b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020005"
 ---
 # <a name="oreo-features"></a>Oreo 功能
@@ -35,7 +35,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 - **Android SDK** &ndash; Android SDK 8.0 （API 26）或更新版本必須透過 Android SDK 管理員進行安裝。
 
-## <a name="getting-started"></a>快速入門
+## <a name="getting-started"></a>開始使用
 
 若要開始使用 Android Oreo 搭配 Xamarin，您必須先下載並安裝最新的工具和 SDK 套件，才能建立 Android Oreo 專案：
 
@@ -55,7 +55,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 - 針對 Visual Studio 2019，請使用[SDK 管理員](~/android/get-started/installation/android-sdk.md)來安裝 API 層級26.0 或更新版本。
 
@@ -65,7 +65,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
     2. 使用[SDK 管理員](~/android/get-started/installation/android-sdk.md)來安裝 API 層級26.0 或更新版本。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 - 更新至最新穩定版本的 Visual Studio for Mac，如[更新 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/update)中所述。
 
@@ -77,7 +77,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 若要使用 Xamarin 8.0 建立專案，您必須先使用 Xamarin Android SDK 管理員來安裝適用于**Android 8.0-Oreo**或更新版本的 SDK 平臺。 您也必須安裝 Android SDK Tools 26.0 或更新版本。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 啟動 SDK 管理員（在 Visual Studio 中，按一下 [**工具] > [Android > Android SDK 管理員**]）。
 
@@ -89,7 +89,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
     [![在 Android SDK 管理員中選取 Android SDK Tools 26](oreo-images/win/02-sdk-tools.png)](oreo-images/win/02-sdk-tools.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 啟動 SDK 管理員（在 Visual Studio for Mac 中，按一下 [**工具] > [SDK 管理員**]）。
 
@@ -113,11 +113,11 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 如果您嘗試在安裝 Android SDK Tools 26.0 或更新版本之後啟動預設的 Google GUI 型 AVD 管理員，您可能會收到下列錯誤對話方塊，指示您改用命令列 AVD 管理員工具**avdmanager** ：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![Android Emulator 管理員警告對話方塊](oreo-images/win/03-avd-warning.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![Android Emulator 管理員警告對話方塊](oreo-images/mac/03-avd-warning.png)
 
@@ -132,7 +132,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 若要使用**avdmanager**來建立新的虛擬裝置，請遵循下列步驟：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 開啟 [命令提示字元] 視窗，並將 `JAVA_HOME` 設定為電腦上 JAVA SDK 的位置。 針對一般的 Xamarin 安裝，您可以使用下列命令：
 
@@ -159,7 +159,7 @@ _如何開始使用 Xamarin 來開發最新 Android 版本的應用程式。_
 
 [![新增至裝置下拉式功能表的新 AVD](oreo-images/win/04-android-o-avd-sml.png)](oreo-images/win/04-android-o-avd.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 開啟**終端**機視窗，並切換至 Mac 上 Android SDK tools 目錄的位置。 針對一般的 Xamarin 安裝，您可以使用下列命令：
 
@@ -200,7 +200,7 @@ Android Oreo 引進各種新特性和功能，例如通知通道、通知徽章�
 
 通知徽章是出現在應用程式圖示上的小點，如下列螢幕擷取畫面所示：
 
-[應用程式圖示上的![範例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
+[應用程式圖示上的 ![範例通知徽章](oreo-images/02-badges-sml.png)](oreo-images/02-badges.png#lightbox)
 
 這些點表示應用程式中有一或多個通知通道的新通知與該應用程式圖示相關聯 &ndash; 這些是使用者尚未關閉或處理的通知。 使用者可以長按圖示來概覽通知徽章的相關通知，從 appeaars 的長按下功能表中關閉通知或採取行動。
 
@@ -250,7 +250,7 @@ Android Oreo 引進了*XML*的字型，讓您可以將自訂字型納入做為�
 
 如需下載字型的詳細資訊，請參閱 Android 開發人員[可下載字型](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html)主題。
 
-### <a name="autofill"></a>自動填滿
+### <a name="autofill"></a>自動填寫
 
 Android Oreo_中新的_自動填滿架構可讓使用者更輕鬆地處理重複的工作，例如登入、帳戶建立和信用卡交易。 使用者會花費較少的時間重新輸入資訊（這可能會導致輸入錯誤）。 在您的應用程式可以使用自動填滿架構之前，必須先在系統設定（使用者可以啟用或停用自動填入）中啟用自動填滿服務。
 
@@ -278,7 +278,7 @@ android:supportsPictureInPicture
 
 ### <a name="other-features"></a>其他功能
 
-Android Oreo 包含許多其他的新功能，例如表情支援程式庫、位置 API、背景限制、適用于應用程式的寬範圍色彩、新的音訊編解碼器、Web 工作增強功能、改良的鍵盤流覽支援，以及適用于的新 AAudio （pro 音訊） API高效能低延遲音訊：如需這些功能的詳細資訊，請參閱 Android 開發人員[Android Oreo 功能與 api](https://developer.android.com/about/versions/oreo/android-8.0.html)主題。
+Android Oreo 包含許多其他的新功能，例如表情支援程式庫、位置 API、背景限制、應用程式的寬範圍色彩、新的音訊編解碼器、流覽增強功能、改良的鍵盤導覽支援，以及適用于高效能低延遲音訊的新 AAudio （pro 音訊） API，如需這些功能的詳細資訊，請參閱 Android Developer [Android Oreo 功能與 api](https://developer.android.com/about/versions/oreo/android-8.0.html)主題
 
 ## <a name="behavior-changes"></a>行為變更
 
@@ -302,7 +302,7 @@ Android Oreo 包含各種系統和 API 行為變更，可能會影響現有應�
 
 - 針對以 Android Oreo 為目標的應用程式，`PendingIntent.GetService()` 因在背景中啟動的服務所放置的新限制而無法運作。 如果您的目標是 Android Oreo，您應該改用[PendingIntent. GetBroadcast](xref:Android.App.PendingIntent.GetBroadcast*) 。  
 
-## <a name="sample-code"></a>程式碼範例
+## <a name="sample-code"></a>範例程式碼
 
 有數個 Xamarin. Android 範例可向您示範如何利用 Android Oreo 功能：
 
@@ -320,13 +320,13 @@ Android Oreo 包含各種系統和 API 行為變更，可能會影響現有應�
 
 - [位置更新前景服務](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice)示範如何使用位置 API，使用系結和啟動的前景服務來取得裝置位置的相關更新。
 
-## <a name="video"></a>視訊
+## <a name="video"></a>影片
 
 > [!VIDEO https://youtube.com/embed/OuvEcaMO-Ho]
 
 **Android 8.0 Oreo 開發C#**
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文介紹了 Android Oreo，並說明如何在 Android Oreo 上安裝及設定最新的 Xamarin Android 開發工具和套件。 其中提供 Android Oreo 中可用的主要功能總覽，其中包含數個新功能的範例原始程式碼連結。 其中包含 API 檔和 Android 開發人員主題的連結，可協助您開始建立 Android Oreo 應用程式。 它也會反白顯示可能影響現有應用程式的最重要 Android Oreo 行為變更。
 

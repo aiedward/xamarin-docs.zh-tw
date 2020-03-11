@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
 ms.openlocfilehash: 7b74f564f2b6e9613874a774258a7e999002e61a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027071"
 ---
 # <a name="launching-the-maps-application"></a>啟動 Maps 應用程式
 
 在 Xamarin 中使用對應的最簡單方式是利用內建的地圖應用程式，如下所示：
 
-[內建的 Google Maps 應用程式的![範例螢幕擷取畫面](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
+[內建的 Google Maps 應用程式的 ![範例螢幕擷取畫面](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
 當您使用 maps 應用程式時，對應將不會是應用程式的一部分。 相反地，您的應用程式會啟動地圖應用程式，並在外部載入對應。 下一節將探討如何使用 Xamarin 來啟動對應，如上所示。
 
@@ -56,7 +56,7 @@ StartActivity (mapIntent);
 
 除了地區配置以外，Android 也支援從意圖載入街道視圖。 從 Xamarin 啟動的街道視圖應用程式範例如下所示：
 
-[街道視圖的![範例螢幕擷取畫面](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
+[街道視圖的 ![範例螢幕擷取畫面](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
 若要啟動街道視圖，只要使用 `google.streetview` URI 配置，如下列程式碼所示：
 

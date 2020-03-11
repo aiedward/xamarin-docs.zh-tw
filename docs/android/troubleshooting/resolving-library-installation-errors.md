@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2018
 ms.openlocfilehash: e99e12aa73374cc8145fad0eb5aad7f3259e0ca2
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78292868"
 ---
 # <a name="resolving-library-installation-errors"></a>解析程式庫安裝錯誤

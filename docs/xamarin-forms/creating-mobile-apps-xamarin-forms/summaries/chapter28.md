@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 5dcd84536cc6d80deb753fc6fe57f9090f6b2dad
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "72697083"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第28章的摘要。 位置和地圖
@@ -21,7 +21,7 @@ ms.locfileid: "72697083"
 > [!NOTE]
 > 此頁面上的附注指出 Xamarin 從書籍中呈現的材料中分歧的區域。
 
-Xamarin 支援衍生自 `View` 的[`Map`](xref:Xamarin.Forms.Maps.Map)元素。 由於使用對應的特殊平臺需求，它們會在不同的元件、 **Xamarin 和對應**中執行，並牽涉到不同的命名空間： `Xamarin.Forms.Maps`。
+Xamarin 支援衍生自 `View`的[`Map`](xref:Xamarin.Forms.Maps.Map)元素。 由於使用對應的特殊平臺需求，它們會在不同的元件、 **Xamarin 和對應**中執行，並牽涉到不同的命名空間： `Xamarin.Forms.Maps`。
 
 ## <a name="the-geographic-coordinate-system"></a>地理座標系統
 
@@ -35,7 +35,7 @@ Xamarin 支援衍生自 `View` 的[`Map`](xref:Xamarin.Forms.Maps.Map)元素。 
 
 ### <a name="longitude-and-meridians"></a>經度和經線
 
-從北極點到南極點的絕佳圓，是一條相等的經度，也稱為*經線*。 這些是相對於英國格林威治的主要經線。 依照慣例，質數經線的經度東部是從0角度到180度的正值，而質數經線的經度西部是從0角度到 &ndash;180 度的負值。
+從北極點到南極點的絕佳圓，是一條相等的經度，也稱為*經線*。 這些是相對於英國格林威治的主要經線。 依照慣例，質數經線的經度東部是從0角度到180度的正值，而質數經線的經度西部是0度到 &ndash;180 度的負值。
 
 ### <a name="the-equirectangular-projection"></a>Equirectangular: 投射
 
@@ -58,7 +58,7 @@ Xamarin `Map` 類別不包含可取得使用者地理位置的功能，但這通
 
 ### <a name="the-location-tracker-api"></a>位置追蹤程式 API
 
-[**FormsBook 平臺**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)解決方案包含位置追蹤器 API 的程式碼。 [@No__t_1](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構會封裝緯度和經度。 [@No__t_1](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種啟動和暫停位置追蹤器的方法，以及可用的新位置的事件。
+[**FormsBook 平臺**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)解決方案包含位置追蹤器 API 的程式碼。 [`GeographicLocation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs)結構會封裝緯度和經度。 [`ILocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs)介面會定義兩種啟動和暫停位置追蹤器的方法，以及可用的新位置的事件。
 
 #### <a name="the-ios-location-manager"></a>IOS 位置管理員
 
@@ -66,11 +66,11 @@ IOS 的 `ILocationTracker` 執行是使用 iOS [`CLLocationManager`](xref:CoreLo
 
 #### <a name="the-android-location-manager"></a>Android 位置管理員
 
-@No__t_0 的 Android 實作為[`LocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs)類別，它會使用 Android [`LocationManager`](xref:Android.Locations.LocationManager)類別。
+`ILocationTracker` 的 Android 實作為[`LocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/LocationTracker.cs)類別，它會使用 Android [`LocationManager`](xref:Android.Locations.LocationManager)類別。
 
 #### <a name="the-uwp-geo-locator"></a>UWP 地理定位程式
 
-@No__t_0 的通用 Windows 平臺執行是利用 UWP [`Geolocator`](/uwp/api/Windows.Devices.Geolocation.Geolocator)的[`LocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs)類別。
+`ILocationTracker` 的通用 Windows 平臺執行是利用 UWP [`Geolocator`](/uwp/api/Windows.Devices.Geolocation.Geolocator)的[`LocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/LocationTracker.cs)類別。
 
 ### <a name="display-the-phones-location"></a>顯示電話的位置
 
@@ -104,7 +104,7 @@ IOS 的 `ILocationTracker` 執行是使用 iOS [`CLLocationManager`](xref:CoreLo
 
 ### <a name="initializing-the-maps-package"></a>初始化對應套件
 
-在呼叫 `Xamarin.Forms.Forms.Init` 之後，應用程式專案必須呼叫 `Xamarin.FormsMaps.Init` 方法。
+在呼叫 `Xamarin.Forms.Forms.Init`之後，應用程式專案必須呼叫 `Xamarin.FormsMaps.Init` 方法。
 
 ### <a name="enabling-map-services"></a>啟用地圖服務
 
@@ -146,9 +146,9 @@ IOS 的 `ILocationTracker` 執行是使用 iOS [`CLLocationManager`](xref:CoreLo
 
 `VisibleRegion` 屬於[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)類型，這是一個具有四個唯讀屬性的類別：
 
-- 類型為 [`Position`](xref:Xamarin.Forms.Maps.Position) 的 [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center)
-- `double` 類型的[`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) ，表示地圖的顯示區域高度
-- `double` 類型的[`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) ，表示地圖的顯示區域寬度
+- 類型為 [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center) 的 [`Position`](xref:Xamarin.Forms.Maps.Position)
+- `double`類型的[`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees) ，表示地圖的顯示區域高度
+- `double`類型的[`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees) ，表示地圖的顯示區域寬度
 - [`Distance`](xref:Xamarin.Forms.Maps.Distance)類型的[`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius) ，指出地圖上可見的最大迴圈區域大小
 
 `Position` 和 `Distance` 都是結構。 `Position` 透過[`Position`](xref:Xamarin.Forms.Maps.Position.%23ctor(System.Double,System.Double))的「函式」來定義兩個唯讀屬性集：
@@ -165,21 +165,21 @@ IOS 的 `ILocationTracker` 執行是使用 iOS [`CLLocationManager`](xref:CoreLo
 
 此值可從三個屬性取得：
 
-- 類型為 `double` 的 [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters)
-- 類型為 `double` 的 [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers)
-- 類型為 `double` 的 [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles)
+- 類型為 [ 的 `Meters`](xref:Xamarin.Forms.Maps.Distance.Meters)`double`
+- 類型為 [ 的 `Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers)`double`
+- 類型為 [ 的 `Miles`](xref:Xamarin.Forms.Maps.Distance.Miles)`double`
 
 [MapCoordinatesPage](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml)包含數個 `Label` 元素，用於顯示 `MapSpan` 資訊。 [MapCoordinatesPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapCoordinatesPage.xaml.cs)程式碼後置檔案會使用計時器，在使用者操作對應時，讓資訊保持更新。
 
 ### <a name="position-extensions"></a>位置延伸模組
 
-這本書的新程式庫，名為[**FormsBook。 Maps**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit.Maps)包含對應特有但與平臺無關的類型。 [@No__t_1](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs)類別具有 `Position` 的 `ToString` 方法，以及用來計算兩個 `Position` 值之間距離的方法。
+這本書的新程式庫，名為[**FormsBook。 Maps**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit.Maps)包含對應特有但與平臺無關的類型。 [`PositionExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs)類別具有 `Position`的 `ToString` 方法，以及用來計算兩個 `Position` 值之間距離的方法。
 
 ### <a name="setting-an-initial-location"></a>設定初始位置
 
 您可以呼叫 `Map` 的[`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan))方法，以程式設計方式設定地圖上的位置和縮放層級。 引數的類型為 `MapSpan`。 您可以使用下列其中一種方式來建立 `MapSpan` 物件：
 
-- 具有 `Position` 的[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double))的處理函式，以及緯度和經度範圍
+- 具有 `Position`的[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double))的處理函式，以及緯度和經度範圍
 - 具有 `Position` 和半徑的[`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance))
 
 您也可以使用[`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double))或[`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double))的方法，從現有的 `MapSpan` 建立新的。
@@ -196,7 +196,7 @@ IOS 的 `ILocationTracker` 執行是使用 iOS [`CLLocationManager`](xref:CoreLo
 
 ### <a name="the-phones-location"></a>電話的位置
 
-@No__t_2 的[`IsShowingUser`](xref:Xamarin.Forms.Maps.Map.IsShowingUser)屬性在每個平臺上的運作方式稍有不同，因為[ShowLocationPage .xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)檔案示範：
+`Map` 的[`IsShowingUser`](xref:Xamarin.Forms.Maps.Map.IsShowingUser)屬性在每個平臺上的運作方式稍有不同，因為[ShowLocationPage .xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ShowLocationPage.xaml)檔案示範：
 
 - 在 iOS 上，藍色點表示電話的位置，但您必須在該處手動流覽
 - 在 Android 上，當推播將地圖移至電話的位置時，會顯示圖示
@@ -208,11 +208,11 @@ IOS 的 `ILocationTracker` 執行是使用 iOS [`CLLocationManager`](xref:CoreLo
 
 ### <a name="pins-and-science-museums"></a>釘選與科學博物館
 
-最後，`Map` 類別會定義 `IList<Pin>` 類型的[`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)屬性。 [@No__t_1](xref:Xamarin.Forms.Maps.Pin)類別會定義四個屬性：
+最後，`Map` 類別會定義 `IList<Pin>`類型的[`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)屬性。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)類別會定義四個屬性：
 
-- 類型 `string` 的[`Label`](xref:Xamarin.Forms.Maps.Pin.Label) ，必要的屬性
-- `string` 類型的[`Address`](xref:Xamarin.Forms.Maps.Pin.Address) ，這是一個選擇性的人類可讀取的位址
-- `Position` 類型的[`Position`](xref:Xamarin.Forms.Maps.Pin.Position) ，表示釘選顯示在地圖上的位置
+- 類型 `string`的[`Label`](xref:Xamarin.Forms.Maps.Pin.Label) ，必要的屬性
+- `string`類型的[`Address`](xref:Xamarin.Forms.Maps.Pin.Address) ，這是一個選擇性的人類可讀取的位址
+- `Position`類型的[`Position`](xref:Xamarin.Forms.Maps.Pin.Position) ，表示釘選顯示在地圖上的位置
 - 類型[`PinType`](xref:Xamarin.Forms.Maps.PinType)的[`Type`](xref:Xamarin.Forms.Maps.Pin.Type) ，未使用的列舉
 
 **MapDemos**專案包含[ScienceMuseums](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml)的檔案，該檔案會列出美國的科學博物館，並[`Locations`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs)和[`Site`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs)類別來還原序列化此資料。
@@ -221,7 +221,7 @@ IOS 的 `ILocationTracker` 執行是使用 iOS [`CLLocationManager`](xref:CoreLo
 
 ### <a name="the-distance-between-two-points"></a>兩個點之間的距離
 
-[@No__t_1](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs)類別包含[`DistanceTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs#L88)的方法，其具有兩個地理位置之間距離的簡化計算。
+[`PositionExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs)類別包含[`DistanceTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs#L88)的方法，其具有兩個地理位置之間距離的簡化計算。
 
 這會在[LocalMuseumsPage](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml)檔案中使用，並[LocalMuseumsPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/LocalMuseumsPage.xaml.cs)程式碼後置檔案，也會顯示從使用者位置到博物館的距離：
 
@@ -231,7 +231,7 @@ IOS 的 `ILocationTracker` 執行是使用 iOS [`CLLocationManager`](xref:CoreLo
 
 ## <a name="geocoding-and-back-again"></a>地理編碼後返回
 
-[**Xamarin**](xref:Xamarin.Forms.Maps)元件也包含具有[`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))方法的[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)類別，可將文字位址轉換成零個或多個可能的地理位置，以及另一個在另一種方式中轉換的方法[`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position))方向.
+[**Xamarin**](xref:Xamarin.Forms.Maps)元件也包含具有[`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String))方法的[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)類別，可將文字位址轉換成零或多個可能的地理位置，以及另一個以另一個方向轉換的方法[`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) 。
 
 [GeocoderRoundTrip .xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml)檔案和[GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs)程式碼後置檔案會示範這種功能。
 

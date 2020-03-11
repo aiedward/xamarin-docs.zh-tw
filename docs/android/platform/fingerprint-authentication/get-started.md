@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/17/2018
 ms.openlocfilehash: 746a096f93036e63b29bc917826259f88426cead
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020286"
 ---
 # <a name="getting-started-with-fingerprint-authentication"></a>具有指紋驗證的消費者入門
@@ -23,13 +23,13 @@ ms.locfileid: "73020286"
 
 ## <a name="requesting-permissions-in-the-application-manifest"></a>在應用程式資訊清單中要求許可權
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Android 應用程式必須要求資訊清單中的 `USE_FINGERPRINT` 許可權。 下列螢幕擷取畫面顯示如何在 Visual Studio 中將此許可權新增至應用程式：
 
 [![啟用 [在 Android 資訊清單中使用\_指紋] 畫面](get-started-images/fingerprint-01-vs.png)](get-started-images/fingerprint-01-vs.png#lightbox) 
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 Android 應用程式必須要求資訊清單中的 `USE_FINGERPRINT` 許可權。 下列螢幕擷取畫面顯示如何在 Visual Studio for Mac 中將此許可權新增至應用程式：
 

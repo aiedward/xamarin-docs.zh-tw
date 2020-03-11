@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
 ms.openlocfilehash: e027d41e98c26ef1659c27ab05df3052e19cc670
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027139"
 ---
 # <a name="location-services-on-android"></a>Android 上的位置服務
@@ -337,15 +337,15 @@ else
 > [!NOTE]
 > 如果使用者已停用所有位置提供者，`GetBestProvider` 將會傳回 `null`。 若要查看此程式碼如何在實際裝置上運作，請務必啟用 Google 設定 下的 GPS、Wi-fi 和行動網路， **> 位置 > 模式**，如下列螢幕擷取畫面所示：
 >
-> [Android 手機上的![設定位置模式畫面](location-images/location-02.png)](location-images/location-02.png#lightbox)
+> [Android 手機上的 ![設定位置模式畫面](location-images/location-02.png)](location-images/location-02.png#lightbox)
 >
 > 下列螢幕擷取畫面示範使用 `GetBestProvider`執行的位置應用程式：
 >
-> [顯示緯度、經度和提供者的![GetBestProvider 應用程式](location-images/location-03.png)](location-images/location-03.png#lightbox)
+> [顯示緯度、經度和提供者的 ![GetBestProvider 應用程式](location-images/location-03.png)](location-images/location-03.png#lightbox)
 >
 > 請記住，`GetBestProvider` 不會動態變更提供者。 相反地，它會在活動生命週期期間決定最適合的提供者一次。 如果提供者狀態在設定之後有所變更，應用程式將需要 `ILocationListener` 方法中的額外程式碼 &ndash; `OnProviderEnabled`、`OnProviderDisabled`和 `OnStatusChanged` &ndash; 處理與提供者參數相關的每個可能性。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南涵蓋從 Google 位置服務 API 使用 Android 定位服務和融合位置提供者來取得使用者的位置。
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 9e36189c771ed0c91a6030fd0ab615ab9af4dd52
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026708"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪些版本的 Xamarin.Android 新增了 Lollipop 支援？
@@ -26,7 +26,7 @@ Xamarin 只會主動支援 Xamarin 工具目前穩定的版本。 較舊版本�
 
 ## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>Android L Preview 中的「缺少 API 層級21的 android .jar」
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 可能會顯示下列錯誤訊息（或類似）：
 
@@ -49,7 +49,7 @@ Error 1 Could not find android.jar for API Level 21.
     1. 刪除 android **\\android-sdk\\平臺的% LOCALAPPDATA%\\\\android-21** 
     2. 將 [1] 解壓縮到**C：\\使用者\\&lt;username&gt;\\AppData\\本機\\android\\android-sdk\\平臺**來建立**android-L**資料夾。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 可能會顯示下列錯誤訊息（或類似）：
 

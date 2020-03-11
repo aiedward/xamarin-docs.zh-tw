@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
 ms.openlocfilehash: aab121ed5f811baf38eed48cf891ccdf076eaf44
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291955"
 ---
 # <a name="android-beam"></a>Android Beam

@@ -9,23 +9,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/29/2018
 ms.openlocfilehash: 2ea7c9b9f900bc339d183c2f5b317792ebec5232
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026837"
 ---
 # <a name="xamarinandroid-and-java-development-kit-9-or-later"></a>Xamarin. Android 和 JAVA 開發工具組9或更新版本
 
 _本文說明如何解決 Xamarin 中的 JAVA 開發工具組（JDK）9或更新版本的錯誤。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Xamarin 會使用 JAVA 開發工具組（JDK）來與建立 Android 應用程式和執行 Android designer 的 Android SDK 整合。 最新版的 Android SDK （API 24 和更新版本）需要 JDK 8 （1.8）或 Microsoft Mobile OpenJDK Preview。 **因為 Google 提供的 Android SDK 工具尚未與 JDK 9 相容，所以 Xamarin 無法搭配 JDK 9 或更新版本使用。**
 
 ## <a name="jdk-errors"></a>JDK 錯誤
 
-如果您嘗試使用 jdk 8 之後的 JDK 版本來建立 Xamarin Android 專案，您會收到明確錯誤，指出不支援這個版本的 JDK。 例如:
+如果您嘗試使用 jdk 8 之後的 JDK 版本來建立 Xamarin Android 專案，您會收到明確錯誤，指出不支援這個版本的 JDK。 例如：
 
 ```shell
 Building with JDK Version `9.0.4` is not supported. Please install JDK version `1.8.0`. See https://aka.ms/xamarin/jdk9-errors

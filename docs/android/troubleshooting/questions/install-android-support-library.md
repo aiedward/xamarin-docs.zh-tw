@@ -8,27 +8,27 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 99571e0b62592597bb1fffdc8d3ed8336fe050b2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026932"
 ---
 # <a name="how-can-i-manually-install-the-android-support-libraries-required-by-the-xamarinandroidsupport-packages"></a>如何手動安裝 Xamarin.Android.Support 套件所需的 Android 支援程式庫？
 
 ## <a name="example-steps-for-xamarinandroidsupportv4"></a>支援 v4 的範例步驟 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 下載所需的 Xamarin 支援 NuGet 套件（例如，使用 NuGet 套件管理員安裝它）。
 
-使用 `ildasm` 來檢查 NuGet 套件所需的**android_m2repository**版本：
+使用 `ildasm` 來檢查 NuGet 套件所需的**android_m2repository .zip**版本：
 
 ```cmd
 ildasm /caverbal /text /item:Xamarin.Android.Support.v4 packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll | findstr SourceUrl
 ```
 
-範例輸出：
+範例輸出︰
 
 ```cmd
 property string 'SourceUrl' = string('https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip')
@@ -49,13 +49,13 @@ $url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zi
 (([System.Security.Cryptography.MD5]::Create()).ComputeHash([System.Text.Encoding]::UTF8.GetBytes($url)) | %{ $_.ToString("X02") }) -join ""
 ```
 
-範例輸出：
+範例輸出︰
 
 ```powershell
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-將**android\_m2repository**複製到 **% LOCALAPPDATA%\\Xamarin\\zips\\** 資料夾。 將檔案重新命名，以使用先前的 MD5 雜湊計算步驟中的 MD5 雜湊。 例如:
+將**android\_m2repository**複製到 **% LOCALAPPDATA%\\Xamarin\\zips\\** 資料夾。 將檔案重新命名，以使用先前的 MD5 雜湊計算步驟中的 MD5 雜湊。 例如：
 
 **% LOCALAPPDATA%\\Xamarin\\zips\\F16A3455987DBAE5783F058F19F7FCDF .zip**
 
@@ -66,7 +66,7 @@ F16A3455987DBAE5783F058F19F7FCDF
 ildasm /caverbal /text /item:Xamarin.Android.Support.v4 packages\Xamarin.Android.Support.v4.23.4.0.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll | findstr /C:"string 'Version'"
 ```
 
-範例輸出：
+範例輸出︰
 
 ```cmd
 property string 'Version' = string('23.4.0.0')}
@@ -74,7 +74,7 @@ property string 'Version' = string('23.4.0.0')}
 property string 'Version' = string('23.4.0.0')}
 ```
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 下載所需的 Xamarin 支援 NuGet 套件（例如，使用 NuGet 套件管理員安裝它）。
 
@@ -103,13 +103,13 @@ echo -n "https://dl-ssl.google.com/android/repository/android_m2repository_r32.z
 csharp -e 'var url = "https://dl-ssl.google.com/android/repository/android_m2repository_r32.zip"; string.Concat((System.Security.Cryptography.MD5.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes(url))).Select(b => b.ToString("X02")))'
 ```
 
-範例輸出：
+範例輸出︰
 
 ```bash
 F16A3455987DBAE5783F058F19F7FCDF
 ```
 
-將**android\_m2repository**複製到 **$HOME/.local/share/xamarin/zips/** 資料夾。 將檔案重新命名，以使用先前的 MD5 雜湊計算步驟中的 MD5 雜湊。 例如:
+將**android\_m2repository**複製到 **$HOME/.local/share/xamarin/zips/** 資料夾。 將檔案重新命名，以使用先前的 MD5 雜湊計算步驟中的 MD5 雜湊。 例如：
 
 **$HOME/.local/share/Xamarin/zips/F16A3455987DBAE5783F058F19F7FCDF.zip**
 
@@ -135,4 +135,4 @@ F16A3455987DBAE5783F058F19F7FCDF
 
 本檔討論2016年8月起的目前行為。 本檔中所述的技術不是適用于 Xamarin 的穩定測試套件的一部分，因此未來可能會中斷。
 
-如需進一步的協助，請洽詢我們，或即使在使用上述資訊之後仍然會發生此問題，請參閱[什麼是適用于 Xamarin 的支援選項？](~/cross-platform/troubleshooting/support-options.md)以取得連絡人選項、建議，以及如何在需要時提出新 bug 的相關資訊.
+如需進一步的協助，請洽詢我們，或即使在使用上述資訊之後仍然會發生此問題，請參閱適用[于 Xamarin 的支援選項？](~/cross-platform/troubleshooting/support-options.md)以取得連絡人選項、建議的相關資訊，以及如何在需要時提出新的 bug。

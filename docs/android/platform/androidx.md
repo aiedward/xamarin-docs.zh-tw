@@ -6,10 +6,10 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
 ms.openlocfilehash: ad6ea2f68fc01183f7ed42e85094f6be5fb3d9f9
-ms.sourcegitcommit: 2836f2003a5b745b042ee6003a3d6a11b9139e44
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291622"
 ---
 # <a name="androidx-with-xamarin"></a>以 Xamarin AndroidX

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
 ms.openlocfilehash: 10d2ae6ac35f02d75ef6e04a0531ec3f5dafd668
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291965"
 ---
 # <a name="android-job-scheduler"></a>Android 工作排程器

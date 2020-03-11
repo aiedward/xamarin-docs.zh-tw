@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 5996cfa3c0a18fc186ea862a2b3d7910594e1281
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027014"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>為何我的 Android 發行組建無法連線到網際網路？

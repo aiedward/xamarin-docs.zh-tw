@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
 ms.openlocfilehash: 884b69b0cdecf4f979cec314b6440974c5bac97d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019801"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript 簡介
 
 _本指南介紹 Renderscript，並說明如何在以 API 層級17或更高版本為目標的 Xamarin 應用程式中使用內部 Renderscript API。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Renderscript 是 Google 所建立的程式設計架構，目的是為了改善需要大量計算資源的 Android 應用程式效能。 這是以[C99](https://en.wikipedia.org/wiki/C99)為基礎的低層級高效能 API。 因為這是將在 Cpu、Gpu 或 Dsp 上執行的低層級 API，所以 Renderscript 非常適用于可能需要執行下列任一項的 Android 應用程式：
 
@@ -49,7 +49,7 @@ Renderscript 常式有兩個元件：
 3. 配置的**記憶體**&ndash; 資料會透過 _[配置](xref:Android.Renderscripts.Allocation)_ 傳遞至核心並從中傳送。 核心可能會有一個輸入和/或一個輸出配置。
 
 [Renderscripts](xref:Android.Renderscripts)命名空間包含用來與 Renderscript 執行時間互動的類別。 特別是， [`Renderscript`](xref:Android.Renderscripts.RenderScript)類別會管理 Renderscript 引擎的生命週期和資源。 Android 應用程式必須初始化一或多個[`Android.Renderscripts.Allocation`](xref:Android.Renderscripts.Allocation)
-物件. 配置是受控 API，負責配置和存取 Android 應用程式與 Renderscript 執行時間之間共用的記憶體。 通常會針對輸入建立一個配置，並選擇性地建立另一個配置來保存核心的輸出。 Renderscript 執行時間引擎和相關聯的 managed 包裝函式類別會管理配置所持有之記憶體的存取權，因此 Android 應用程式開發人員不需要執行任何額外的工作。
+物件。 配置是受控 API，負責配置和存取 Android 應用程式與 Renderscript 執行時間之間共用的記憶體。 通常會針對輸入建立一個配置，並選擇性地建立另一個配置來保存核心的輸出。 Renderscript 執行時間引擎和相關聯的 managed 包裝函式類別會管理配置所持有之記憶體的存取權，因此 Android 應用程式開發人員不需要執行任何額外的工作。
 
 配置會包含一或多個[Renderscripts 元素](xref:Android.Renderscripts.Element)。
 元素是一種專門的類型，可描述每個配置中的資料。
@@ -62,7 +62,7 @@ Renderscript 常式有兩個元件：
 Renderscript 引擎會執行執行時間檢查，以確保每個配置中的元素都與核心所需的專案相容。 如果配置中元素的資料類型不符合核心預期的資料類型，則會擲回例外狀況。
 
 所有 Renderscript 核心都將以屬於[`Android.Renderscripts.Script`](xref:Android.Renderscripts.Script)子系的類型包裝。
-類別的新執行個體。 `Script` 類別是用來設定 Renderscript 的參數、設定適當的 `Allocations`，以及執行 Renderscript。 Android SDK 中有兩個 `Script` 子類別：
+新執行個體。 `Script` 類別是用來設定 Renderscript 的參數、設定適當的 `Allocations`，以及執行 Renderscript。 Android SDK 中有兩個 `Script` 子類別：
 
 - **`Android.Renderscripts.ScriptIntrinsic`** &ndash; 會在 Android SDK 中配套一些較常見的 Renderscript 工作，並可由[ScriptIntrinsic](xref:Android.Renderscripts.ScriptIntrinsic)類別的子類別存取。 開發人員不需要採取任何額外的步驟，就能在應用程式中使用這些腳本，因為它們已經提供。
 
@@ -149,7 +149,7 @@ blurScript.ForEach(outputAllocation);
 
 您可能想要查看[模糊影像與 Renderscript](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript)配方，這是如何在 Xamarin 中使用內部腳本的完整範例。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南介紹了 Renderscript，以及如何在 Xamarin 應用程式中使用它。 它會簡短討論什麼是 Renderscript，以及它在 Android 應用程式中的運作方式。 其中說明了 Renderscript 中的一些主要元件，以及_使用者腳本_與_內部腳本_之間的差異。 最後，本指南討論在 Xamarin Android 應用程式中使用內建腳本的步驟。
 

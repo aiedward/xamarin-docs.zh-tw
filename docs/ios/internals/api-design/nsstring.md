@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: f744f4ed5619e4e7f4a9d85897c4451bf7e5b9bc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73022353"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>在 NSString 中的 iOS 和 Xamarin. Mac

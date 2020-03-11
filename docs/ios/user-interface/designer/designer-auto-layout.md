@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292404"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78919159"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin Designer for iOS 的自動版面配置
 

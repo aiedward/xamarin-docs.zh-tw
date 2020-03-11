@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027234"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
 _Android 4.4 （KitKat）已載入供使用者和開發人員使用的功能多。本指南將重點放在其中幾項功能，並提供程式碼範例和執行詳細資料，以協助您充分利用 KitKat。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Android 4.4 （API 層級19）（也稱為 "KitKat"）已于晚期2013發行。 KitKat 提供各種新功能和改進，包括：
 
@@ -151,11 +151,11 @@ public class MainActivity : Activity
 
 下列螢幕擷取畫面顯示動畫前的應用程式：
 
-[在動畫開始前![應用程式螢幕擷取畫面](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
+[在動畫開始前 ![應用程式螢幕擷取畫面](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
 
 下列螢幕擷取畫面顯示動畫之後的應用程式：
 
-[動畫完成後![應用程式螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
+[動畫完成後 ![應用程式螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 您可以使用幕後取得更多的轉換控制權，如下一節所述。
 
@@ -165,7 +165,7 @@ public class MainActivity : Activity
 
 裝載動態內容的靜態 UI 元素稱為*容器*或*場景基底*。 下列範例會使用 Android Designer 來建立名為 `container`的 `RelativeLayout`：
 
-[使用 Android Designer 建立 RelativeLayout 容器![](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
+[使用 Android Designer 建立 RelativeLayout 容器 ![](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
 
 範例版面配置也會在 `container`之下定義名為 `sceneButton` 的按鈕。 此按鈕將會觸發轉換。
 
@@ -241,11 +241,11 @@ sceneButton.Click += (o, e) => {
 
 下列螢幕擷取畫面說明動畫前面的場景：
 
-[在動畫開始前![應用程式的螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
+[在動畫開始前 ![應用程式的螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
 下列螢幕擷取畫面說明動畫後的場景：
 
-[動畫完成後![應用程式的螢幕擷取畫面](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
+[動畫完成後 ![應用程式的螢幕擷取畫面](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
 > [!NOTE]
 > Android 轉換程式庫中有[已知的 bug](https://code.google.com/p/android/issues/detail?id=62450) ，會導致使用 `GetSceneForLayout` 所建立的場景，在使用者第二次流覽活動時中斷。 [這裡](http://www.doubleencore.com/2013/11/new-transitions-framework/)會說明 java 因應措施。
@@ -254,7 +254,7 @@ sceneButton.Click += (o, e) => {
 
 自訂轉換可以在 `Resources`下的 `transition` 目錄中的 xml 資源檔中定義，如下列螢幕擷取畫面所示：
 
-[資源/轉換目錄下的轉換 .xml 檔案![位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
+[資源/轉換目錄下的轉換 .xml 檔案 ![位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
 下列程式碼範例會定義以動畫呈現5秒的轉換，並使用[下限的插](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html)轉程式：
 
@@ -399,14 +399,14 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 隨著[列印服務](xref:Android.PrintServices)和 `PrintManager`的引進，列印內容在 KitKat 中已簡化。 KitKat 也是第一個 API 版本，可使用[Google 雲端列印應用程式](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)完全利用[Google 的雲端列印服務 api](https://developers.google.com/cloud-print/) 。
 隨附于 KitKat 的大部分裝置會在第一次連線到 WiFi 時，自動下載 Google 雲端列印應用程式和[HP 列印服務外掛程式](https://play.google.com/store/apps/details?id=com.hp.android.printservice)。 使用者可以藉由流覽至 [設定] [>] [**系統 > 列印**] 來檢查其裝置的列印設定：
 
-[[列印設定] 畫面的![範例螢幕擷取畫面](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
+[[列印設定] 畫面的 ![範例螢幕擷取畫面](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
 > [!NOTE]
 > 雖然列印應用程式開發介面預設會設定為使用 Google Cloud 列印，但 Android 仍可讓開發人員使用新的 Api 來準備列印內容，並將它傳送給其他應用程式來處理列印。
 
 #### <a name="printing-html-content"></a>列印 HTML 內容
 
-KitKat 會自動為具有 `WebView.CreatePrintDocumentAdapter`的 web 視圖建立[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter) 。 列印 web 內容是在等候 HTML 內容載入的[`WebViewClient`](xref:Android.Webkit.WebViewClient)之間進行協調的工作，並讓活動知道 [選項] 功能表中的 [列印] 選項，以及 [活動]，這會等候使用者選取 [列印] 選項和 [c]`PrintManager`上的 alls `Print`。 本節涵蓋列印螢幕上 HTML 內容所需的基本設定。
+KitKat 會自動為具有 `WebView.CreatePrintDocumentAdapter`的 web 視圖建立[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter) 。 列印 web 內容是在等候 HTML 內容載入的[`WebViewClient`](xref:Android.Webkit.WebViewClient)之間進行協調的工作，讓活動知道 [選項] 功能表中的 [列印] 選項，以及 [活動]，這會等候使用者選取列印選項，並呼叫 `PrintManager`上的 `Print`。 本節涵蓋列印螢幕上 HTML 內容所需的基本設定。
 
 請注意，載入和列印 web 內容需要「網際網路」許可權：
 
@@ -417,7 +417,7 @@ KitKat 會自動為具有 `WebView.CreatePrintDocumentAdapter`的 web 視圖建�
 [列印] 選項通常會出現在活動的 [[選項] 功能表](https://developer.android.com/guide/topics/ui/menus.html#options-menu)中。
 [選項] 功能表可讓使用者對活動執行動作。 它位於畫面的右上角，看起來像這樣：
 
-[畫面右上角顯示的 [列印] 功能表項目的![範例螢幕擷取畫面](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
+[畫面右上角顯示的 [列印] 功能表項目的 ![範例螢幕擷取畫面](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
 您可以在 [*資源*] 下的 [*功能表*] 目錄中定義其他功能表項目。 下列程式碼會定義名為[Print](xref:Android.Print.PrintManager)的範例功能表項目：
 
@@ -497,13 +497,13 @@ void PrintPage ()
 
 `Print` 接受做為引數：列印工作的名稱（在此範例中為 "MyWebPage"）、 [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)
 這會從內容產生列印檔案，並[`PrintAttributes`](xref:Android.Print.PrintAttributes)
-（在上述範例中 `null`）。 您可以指定 `PrintAttributes` 來協助配置列印頁面上的內容，雖然預設屬性應該處理大部分的案例。
+（在上述範例中`null`）。 您可以指定 `PrintAttributes` 來協助配置列印頁面上的內容，雖然預設屬性應該處理大部分的案例。
 
 呼叫 `Print` 會載入列印 UI，其中會列出列印工作的選項。 UI 可讓使用者選擇將 HTML 內容列印或儲存至 PDF，如下列螢幕擷取畫面所示：
 
-[顯示 [列印] 功能表之 PrintHtmlActivity 的![螢幕擷取畫面](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
+[顯示 [列印] 功能表之 PrintHtmlActivity 的 ![螢幕擷取畫面](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
 
-[顯示 [另存為 PDF] 功能表之 PrintHtmlActivity 的![螢幕擷取畫面](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
+[顯示 [另存為 PDF] 功能表之 PrintHtmlActivity 的 ![螢幕擷取畫面](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
 <a name="hardware" />
 
@@ -525,7 +525,7 @@ HCE 需要同時向應用程式的 `AndroidManifest.xml`註冊 HCE 功能和 `Nf
 <uses-feature android:name="android.hardware.nfc.hce" />
 ```
 
-[在應用程式選項中設定 NFC 許可權![](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
+[在應用程式選項中設定 NFC 許可權 ![](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
 
 若要運作，HCE 必須能夠在背景中執行，而且必須在使用者進行 NFC 交易時啟動，即使使用 HCE 的應用程式不在執行中也一樣。 我們可以撰寫 HCE 程式碼做為 `Service`來完成這項工作。 HCE 服務會執行 `HostApduService` 介面，它會實作為下列方法：
 
@@ -624,7 +624,7 @@ public class MainActivity : Activity, ISensorEventListener
 
 如果當應用程式在前景時更新步驟計數，則會呼叫 `OnSensorChanged`。 如果應用程式進入背景，或裝置處於睡眠狀態，則不會呼叫 `OnSensorChanged`;不過，這些步驟將會繼續計算，直到呼叫 `UnregisterListener` 為止。
 
-請記住，*步驟計數值在註冊感應器的所有應用程式中都是累計*的。 這表示即使您卸載並重新安裝應用程式，以及在應用程式啟動時將 `count` 變數初始化為0，感應器所報告的值仍會保留在註冊感應器時所採取的步驟總數，無論您的應用程式或其他。 您可以藉由呼叫 `SensorManager`上的 `UnregisterListener`，讓應用程式無法加入至步驟計數器，如下列程式碼所示：
+請記住，*步驟計數值在註冊感應器的所有應用程式中都是累計*的。 這表示即使您卸載並重新安裝應用程式，以及在應用程式啟動時將 `count` 變數初始化為0，感應器所報告的值仍會維持在註冊感應器時所採取的步驟總數（不論您的應用程式或其他）。 您可以藉由呼叫 `SensorManager`上的 `UnregisterListener`，讓應用程式無法加入至步驟計數器，如下列程式碼所示：
 
 ```csharp
 protected override void OnPause()
@@ -669,13 +669,13 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 - *使用全螢幕*KitKat 導入了新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))來流覽內容、播放遊戲，以及執行其他可從全螢幕體驗獲益的應用程式。
 
 - *自訂通知*-使用[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)取得系統通知的其他詳細資料
-  執行個體時提供 SQL Server 登入。 這可讓您以不同的方式呈現應用程式內的資訊。
+  。 這可讓您以不同的方式呈現應用程式內的資訊。
 
 - *鏡像的可以繪製資源*-繪製資源具有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
   屬性，告訴系統針對需要從左至右配置翻轉的影像建立鏡像版本。
 
 - *暫停動畫*-暫停和繼續使用[`Animator`](xref:Android.Animation.Animator)建立的動畫
-  類別的新執行個體。
+  新執行個體。
 
 - *閱讀動態變更文字*-代表 UI 的部分，以新的文字動態更新為「即時區域」，新的[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
   屬性，以便在協助工具模式中自動讀取新的文字。
@@ -689,11 +689,11 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 - *區分控制器*-在 KitKat 中，控制器會被指派唯一的整數識別碼，可以透過裝置的 `ControllerNumber` 屬性來存取。 這可讓您更輕鬆地分辨遊戲中的玩家。
 
 - *遠端控制*-在硬體和軟體端上進行一些變更時，KitKat 可讓您使用 `ConsumerIrService`，將具有 IR 發送器的裝置科系轉換成遠端控制，並使用新的[`RemoteController`](xref:Android.Media.RemoteController)與週邊裝置互動
-  Api.
+  API 的 OAuth 2.0 存取。
 
 如需上述 API 變更的詳細資訊，請參閱 Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)總覽。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文介紹 Android 4.4 （API 層級19）中提供的一些新 Api，並涵蓋將應用程式轉換為 KitKat 時的最佳作法。 其中概述影響使用者體驗的 Api 變更，包括*轉換架構*和*主題*的新選項。 接下來，它引進了*儲存體存取架構*和 `DocumentsProvider` 類別，以及新的*列印 api*。 它探索*NFC 主機型卡片模擬*，以及如何使用*低電源感應器*，包括兩個新的感應器來追蹤使用者的步驟。 最後，它會示範如何使用*螢幕錄製*來捕獲應用程式的即時示範，並提供 KitKat API 變更和新增專案的詳細清單。
 

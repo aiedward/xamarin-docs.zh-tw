@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: bda9d5cb323524981bed9c3bb55998513dd69aab
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73032880"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第4章的摘要。 滾動堆疊
@@ -31,11 +31,11 @@ ms.locfileid: "73032880"
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout)衍生自 `Layout<View>`，並繼承 `IList<View>`類型的[`Children`](xref:Xamarin.Forms.Layout`1)屬性。 您可以將多個視圖專案加入此集合中，`StackLayout` 會在水準或垂直堆疊中顯示它們。
 
-將 `StackLayout` 的[`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)屬性設定為[`StackOrientation`](xref:Xamarin.Forms.StackOrientation)列舉的成員，不論是[`Vertical`](xref:Xamarin.Forms.StackOrientation.Vertical)或[`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal)。 預設為 `Vertical`。
+將 `StackLayout` 的[`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)屬性設定為[`StackOrientation`](xref:Xamarin.Forms.StackOrientation)列舉的成員，不論是[`Vertical`](xref:Xamarin.Forms.StackOrientation.Vertical)或[`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal)。 預設值為 `Vertical`。
 
 將 `StackLayout` 的[`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)屬性設定為 `double` 值，以指定子系之間的間距。 預設值為6。
 
-在程式碼中，您可以將專案新增至 `for` 或 `foreach` 迴圈中 `StackLayout` 的 `Children` 集合，如[**ColorLoop**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop)範例中所示，或者您也可以使用個別視圖的清單來初始化 `Children` 集合，如 ColorList 中所示。 [](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList). 子系必須衍生自 `View`，但可以包含其他 `StackLayout` 物件。
+在程式碼中，您可以將專案加入至 `for` 或 `foreach` 迴圈中 `StackLayout` 的 `Children` 集合，如[**ColorLoop**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop)範例中所示，或者您可以使用個別視圖的清單來初始化 `Children` 集合，如[**ColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList)中所示。 子系必須衍生自 `View`，但可以包含其他 `StackLayout` 物件。
 
 ## <a name="scrolling-content"></a>滾動內容
 
@@ -43,7 +43,7 @@ ms.locfileid: "73032880"
 
 將 `ScrollView` 的[`Content`](xref:Xamarin.Forms.ScrollView.Content)屬性設定為您要滾動的視圖。 這通常是 `StackLayout`，但它可以是任何觀點。
 
-將 `ScrollView` 的[`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation)屬性設定為[`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation)屬性、 [`Vertical`](xref:Xamarin.Forms.ScrollOrientation.Vertical)、 [`Horizontal`](xref:Xamarin.Forms.ScrollOrientation.Horizontal)或[`Both`](xref:Xamarin.Forms.ScrollOrientation.Both)的成員。 預設為 `Vertical`。 如果 `ScrollView` 的內容是 `StackLayout`，這兩個方向應該是一致的。
+將 `ScrollView` 的[`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation)屬性設定為[`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation)屬性、 [`Vertical`](xref:Xamarin.Forms.ScrollOrientation.Vertical)、 [`Horizontal`](xref:Xamarin.Forms.ScrollOrientation.Horizontal)或[`Both`](xref:Xamarin.Forms.ScrollOrientation.Both)的成員。 預設值為 `Vertical`。 如果 `ScrollView` 的內容是 `StackLayout`，這兩個方向應該是一致的。
 
 [**ReflectedColors**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors)範例示範如何使用 `ScrollView` 和 `StackLayout` 來顯示可用的色彩。 此範例也會示範如何使用 .NET 反映來取得 `Color` 結構的所有公用靜態屬性和欄位，而不需要明確列出它們。
 
@@ -54,7 +54,7 @@ ms.locfileid: "73032880"
 `LayoutOptions` 結構會定義兩個屬性：
 
 - 具有四個成員、 [`Start`](xref:Xamarin.Forms.LayoutAlignment.Start)、 [`Center`](xref:Xamarin.Forms.LayoutAlignment.Center)、 [`End`](xref:Xamarin.Forms.LayoutAlignment.End)和[`Fill`](xref:Xamarin.Forms.LayoutAlignment.Fill)的列舉類型[`Alignment`](xref:Xamarin.Forms.LayoutOptions.Alignment) [`LayoutAlignment`](xref:Xamarin.Forms.LayoutAlignment)
-- 類型為 `bool` 的 [`Expands`](xref:Xamarin.Forms.LayoutOptions.Expands)
+- 類型為 [ 的 `Expands`](xref:Xamarin.Forms.LayoutOptions.Expands)`bool`
 
 為了方便起見，`LayoutOptions` 結構也會定義 `LayoutOptions` 類型的八個靜態唯讀欄位，其中包含兩個實例屬性的所有組合：
 
@@ -75,7 +75,7 @@ ms.locfileid: "73032880"
 
 如果垂直 `StackLayout` 本身是不受限制的&mdash;也就是，如果其 `VerticalOptions` 設定為 `Start`、`Center`或 `End`，則 `StackLayout` 的高度是其子系的總高度。
 
-不過，如果垂直 `StackLayout` 會受到垂直限制&mdash;如果 `Fill`的 `VerticalOptions` 設定，則 &mdash;的高度會是其容器的高度，其可能大於其子系的總高度。 如果是這種情況，而且至少有一個子系具有 `Expands` 旗標為 `true`的 `VerticalOptions` 設定，則 `StackLayout` 中的額外空間會平均配置給所有子系，且 `Expands` 旗標為 `true`。 子系的總高度會等於 `StackLayout`的高度，而 `VerticalOptions` 設定的 `Alignment` 部分則會決定子系在其位置的垂直定位方式。
+不過，如果垂直 `StackLayout` 會受到垂直限制&mdash;如果 `Fill`的 `VerticalOptions` 設定，則 &mdash;的高度會是其容器的高度，其可能大於其子系的總高度。`StackLayout` 如果是這種情況，而且至少有一個子系具有 `Expands` 旗標為 `true`的 `VerticalOptions` 設定，則 `StackLayout` 中的額外空間會平均配置給所有子系，且 `Expands` 旗標為 `true`。 子系的總高度會等於 `StackLayout`的高度，而 `VerticalOptions` 設定的 `Alignment` 部分則會決定子系在其位置的垂直定位方式。
 
 這會在[**VerticalOptionsDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo)範例中示範。
 
@@ -99,7 +99,7 @@ ms.locfileid: "73032880"
 
 通常，您會設定 `BoxView` 的[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)和[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性，以提供特定的大小。 [**SizedBoxView**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView)範例會說明這一點。
 
-您可以使用數個 `StackLayout` 實例，將 `Frame` 中的 `BoxView` 和數個 `Label` 實例結合，以顯示特定的色彩，然後將這些視圖放在 `StackLayout` 的 `ScrollView` 中，以建立吸引人的色彩清單[**ColorBlocks**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks)範例中所示：
+您可以使用數個 `StackLayout` 實例，將 `Frame` 中的 `BoxView` 和數個 `Label` 實例結合，以顯示特定的色彩，然後將這些視圖放在 `StackLayout` 的 `ScrollView` 中，以建立[**ColorBlocks**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks)範例中所顯示的引人入勝色彩清單：
 
 [![顏色塊的三向螢幕擷取畫面](images/ch04fg11-small.png "色彩清單")](images/ch04fg11-large.png#lightbox "色彩清單")
 

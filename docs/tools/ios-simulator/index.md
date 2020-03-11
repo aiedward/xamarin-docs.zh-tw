@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
 ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
-ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75886589"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>適用於 Windows 的遠端 iOS 模擬器
@@ -19,7 +19,7 @@ ms.locfileid: "75886589"
 
 [![在 Windows 上執行的 iOS 模擬器](images/hero-sml.png "在 Windows 上執行的 iOS 模擬器")](images/hero.png#lightbox)
 
-## <a name="getting-started"></a>入門
+## <a name="getting-started"></a>開始使用
 
 適用于 Windows 的遠端 iOS 模擬器會在 Visual Studio 2019 和 Visual Studio 2017 中自動安裝為 Xamarin 的一部分。 若要使用它，請遵循下列步驟：
 

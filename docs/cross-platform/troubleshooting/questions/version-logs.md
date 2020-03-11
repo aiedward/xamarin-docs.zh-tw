@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 68de58f499788d803aa0af6c68f20e2265b1d6b5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013165"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78912527"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>可以在哪裡找到我的版本資訊和記錄？
 
@@ -70,7 +70,7 @@ ms.locfileid: "73013165"
 
 #### <a name="visual-studio"></a>Visual Studio
 
-**> Android > 的工具開啟 Android SDK 管理員...**
+**> Android > 的工具開啟 Android SDK 管理員 .。。**
 
 ## <a name="a-idide-and-installer-logs-nameide-and-installer-logs-ide-and-installer-logs"></a><a id="ide-and-installer-logs" name="ide-and-installer-logs" />IDE 和安裝程式記錄檔
 
@@ -160,9 +160,9 @@ devenv.exe /log "%USERPROFILE%\Desktop\VisualStudio.log"
 
 **View > 輸出 > 顯示輸出來源： Debug**
 
-### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [`adb`](https://developer.android.com/tools/help/adb.html) logcat 記錄
+### <a name="a-idadb-logcat-nameadb-logcat-android-adb-logcat-logs"></a><a id="adb-logcat" name="adb-logcat" />Android [`adb`](https://developer.android.com/tools/help/adb.html) logcat 記錄
 
-執行 `adb` 命令之後，請從您的桌面附加回**android_logcat。** 這些指示假設您只連接一個裝置。
+執行 `adb` 命令之後，請從您的桌面連結回**android_logcat .txt**檔案。 這些指示假設您只連接一個裝置。
 
 另請參閱[Android Debug 記錄](~/android/deploy-test/debugging/android-debug-log.md)頁面。
 

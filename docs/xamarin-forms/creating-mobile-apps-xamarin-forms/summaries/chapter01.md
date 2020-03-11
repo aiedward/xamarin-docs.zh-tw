@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 6dfa473bdfb4c1dd88ca833dbf5011a0bbdec42a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73032889"
 ---
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第1章的摘要。 Xamarin 如何符合？
@@ -27,11 +27,11 @@ ms.locfileid: "73032889"
 
 以行動平臺為目標時，此問題很常見。 目前有兩個主要的行動平臺： Apple 系列的 Iphone 和 Ipad 執行 iOS 作業系統，以及在各種手機和平板電腦上執行的 Android 作業系統。 另一個重要的平臺是 Microsoft 的通用 Windows 平臺（UWP），可讓單一程式以 Windows 10 為目標。
 
-想要以這些平臺為目標的軟體廠商必須處理不同的使用者介面架構、三種不同的開發環境、三種不同的程式設計介面，&mdash;可能&mdash;三種不同的滑雪程式設計語言：適用于 iPhone 和 iPad 的目標-C、適用于 Android C#的 JAVA，以及 Windows。
+想要以這些平臺為目標的軟體廠商必須處理不同的使用者介面架構、三種不同的開發環境、三種不同的程式設計介面，&mdash;可能&mdash;三種不同的程式設計語言：適用于 iPhone 和 iPad 的目標-C C# 、適用于 Windows 的 JAVA，以及 Windows。
 
 ## <a name="the-c-and-net-solution"></a>C#和 .net 解決方案
 
-雖然目標-C、JAVA 和C#全都衍生自 C 程式設計語言，但它們已經由非常不同的路徑進化。 C#是這些語言的最新版本，並以非常有用的方式成熟。 此外， C#與名為 .net 的整個程式設計基礎結構密切相關，它提供數學、偵錯工具、反映、集合、全球化、檔案 i/o、網路功能、安全性、執行緒、web 服務、資料處理等方面的支援。和 XML 和 JSON 的讀取和寫入。
+雖然目標-C、JAVA 和C#全都衍生自 C 程式設計語言，但它們已經由非常不同的路徑進化。 C#是這些語言的最新版本，並以非常有用的方式成熟。 此外， C#與稱為 .net 的整個程式設計基礎結構密切相關，它提供數學、偵錯工具、反映、集合、全球化、檔案 i/o、網路功能、安全性、執行緒、web 服務、資料處理，以及 XML 和 JSON 讀取和寫入的支援。
 
 Xamarin 目前提供使用C#和 .net 以原生 Mac、IOS 和 Android api 為目標的工具。 這些工具稱為「Xamarin」、「Xamarin」和「xamarin」，統稱為 Xamarin 平臺。 這些程式庫和系結可透過 .NET 慣用語來表達這些平臺的原生 Api。
 
@@ -59,7 +59,7 @@ Xamarin Api 會對應到每個平臺上的原生控制項，讓每個平臺都�
 
 從左至右的螢幕擷取畫面會顯示 iPhone 和 Android 手機：
 
-在每個畫面上，頁面都包含一個 Xamarin. Forms [`Label`](xref:Xamarin.Forms.Label)用於顯示文字、起始動作的[`Button`](xref:Xamarin.Forms.Button) 、用於選擇開啟/關閉值的[`Switch`](xref:Xamarin.Forms.Switch) ，以及在連續範圍內指定值的[`Slider`](xref:Xamarin.Forms.Slider). 這四個視圖都是[`ContentPage`](xref:Xamarin.Forms.ContentPage)上[`StackLayout`](xref:Xamarin.Forms.StackLayout)的子系。
+在每個畫面上，頁面都包含一個 Xamarin. Forms [`Label`](xref:Xamarin.Forms.Label)用於顯示文字、起始動作的[`Button`](xref:Xamarin.Forms.Button) 、用於選擇開啟/關閉值的[`Switch`](xref:Xamarin.Forms.Switch) ，以及在連續範圍內指定值的[`Slider`](xref:Xamarin.Forms.Slider) 。 這四個視圖都是[`ContentPage`](xref:Xamarin.Forms.ContentPage)上[`StackLayout`](xref:Xamarin.Forms.StackLayout)的子系。
 
 附加至頁面的是包含數個[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)物件的 [Xamarin] 表單工具列。 在 iOS 和 Android 畫面頂端和 Windows 10 行動裝置畫面底部，這些圖示會顯示為圖示。
 

@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
 ms.openlocfilehash: ffe88546ff58387865d71268bd64ec05c8aec3c5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026795"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>如何? 解決 PathTooLongException 錯誤？
@@ -22,7 +22,7 @@ ms.locfileid: "73026795"
 在 Xamarin Android 專案中產生的路徑名稱可能相當長。
 例如，在組建期間可能會產生類似下列的路徑：
 
-**C：\\一些\\目錄\\方案\\Project\\obj\\Debug\\__library_projects__\\library_project_imports\\資產**
+**C：\\部分\\目錄\\方案\\Project\\obj\\__Debug\\library_projects\\\\__ 資產 library_project_imports**\\
 
 在 Windows 上（路徑的最大長度為[260 個字元](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx)），如果產生的路徑超過最大長度，則會在建立專案時產生**PathTooLongException** 。 
 
@@ -41,7 +41,7 @@ ms.locfileid: "73026795"
 </PropertyGroup>
 ```
 
-如果設定此旗標無法修正**PathTooLongException**錯誤，另一種方法是在專案 **.csproj**檔案中設定 `IntermediateOutputPath`，為方案中的專案指定[通用的中繼輸出根](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/)。 嘗試使用相對較短的路徑。 例如:
+如果設定此旗標無法修正**PathTooLongException**錯誤，另一種方法是在專案 **.csproj**檔案中設定 `IntermediateOutputPath`，為方案中的專案指定[通用的中繼輸出根](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/)。 嘗試使用相對較短的路徑。 例如：
 
 ```xml
 <PropertyGroup>

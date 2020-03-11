@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 871058d1c128b37a0f2e77b43587139efb433de1
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75487772"
 ---
 # <a name="creating-a-cryptoobject"></a>建立 CryptoObject
@@ -122,7 +122,7 @@ public class CryptoObjectHelper
 
 接下來，會使用 `KeyGenParameterSpec.Builder`建立 `KeyGenParameterSpec`。 `KeyGenParameterSpec.Builder` 會包裝要建立之金鑰的下列相關資訊：
 
-- 金鑰的名稱。
+- 索引鍵名稱。
 - 金鑰必須是有效的加密和解密。
 - 在範例程式碼中，`BLOCK_MODE` 設定為_加密區塊連結_（`KeyProperties.BlockModeCbc`），這表示每個區塊會與前一個區塊進行 xor （在每個區塊之間建立相依性）。 
 - `CryptoObjectHelper` 使用[_公開金鑰加密標準 #7_](https://tools.ietf.org/html/rfc2315) （_PKCS7_）來產生可填補區塊的位元組，以確保它們的大小都相同。

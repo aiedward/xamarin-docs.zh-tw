@@ -6,10 +6,10 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
 ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
-ms.sourcegitcommit: b11dc46a9ba23483195e923de88cbef173730087
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73612274"
 ---
 # <a name="android-10-with-xamarin"></a>使用 Xamarin 的 Android 10
@@ -120,7 +120,7 @@ Android 10 引進了各種新功能。 其中一些新功能的目的是要利�
 
 - [為確保應用程式穩定性和相容性，android 平臺現在會限制您的應用程式可在 Android 10 中使用的非 SDK 介面](https://developer.android.com/about/versions/10/behavior-changes-10#non-sdk-restrictions)。
 - [共用記憶體已變更](https://developer.android.com/about/versions/10/behavior-changes-10#shared-memory)。
-- [Android 執行時間 & AOT 正確性](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat)。
+- [Android 執行時間 &AMP; AOT 正確性](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat)。
 - [全螢幕意圖的許可權必須要求 `USE_FULL_SCREEN_INTENT`](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)。
 - [支援 foldables](https://developer.android.com/about/versions/10/behavior-changes-10#foldables)。
 

@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
 ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
-ms.sourcegitcommit: 5a23c66f81853884480aca666d649a56d68c01cb
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73618541"
 ---
 # <a name="binding-an-aar"></a>繫結 .AAR
 
 _本逐步解說提供逐步指示，說明如何從 Android 建立 Xamarin. Android JAVA 系結程式庫。AAR 檔案。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 *Android 封存（。AAR）* file 是 Android 程式庫的檔案格式。
 ，.AAR 檔案是。ZIP 封存，其中包含下列各項：
@@ -33,7 +33,7 @@ _本逐步解說提供逐步指示，說明如何從 Android 建立 Xamarin. And
 > [!IMPORTANT]
 > 系結專案只能包含一個。AAR 檔案。 如果為。AAR 相依于其他。AAR，這些相依性應該包含在自己的系結專案中，然後加以參考。 請參閱[Bug 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)。
 
-## <a name="walkthrough"></a>逐步解說
+## <a name="walkthrough"></a>逐步介紹
 
 我們將建立在 Android Studio， [textanalyzer. aar](https://github.com/xamarin/monodroid-samples/blob/master/JavaIntegration/AarBinding/Resources/textanalyzer.aar?raw=true)中建立的範例 Android 封存檔案的系結程式庫。 該表.AAR 包含一個 `TextCounter` 類別，其中含有可計算字串中母音和子音數目的靜態方法。 此外， **textanalyzer aar**包含影像資源，可協助顯示計數結果。
 
@@ -106,7 +106,7 @@ public class TextCounter
 
 ### <a name="using-the-bindings-library"></a>使用系結程式庫
 
-以使用此。DLL 在您的 Xamarin Android 應用程式中，必須先加入系結程式庫的參考。 請使用下列步驟：
+以使用此。DLL 在您的 Xamarin Android 應用程式中，必須先加入系結程式庫的參考。 使用下列步驟：
 
 1. 我們會在與系結程式庫相同的解決方案中建立此應用程式，以簡化此逐步解說。 （使用系結程式庫的應用程式也可以位於不同的解決方案中）。建立新的 Xamarin Android 應用程式：以滑鼠右鍵按一下方案，然後選取 [**新增專案**]。 將新專案命名為**bindingtest shoppingcart**：
 
@@ -132,7 +132,7 @@ public class TextCounter
 
 ### <a name="accessing-aar-types"></a>正在.AAR 類型
 
-新增指向系結程式庫之應用程式的參考之後，您可以存取中的 JAVA 類型。AAR，如同您存取C#類型一樣（感謝C#包裝函式）。 C#應用程式程式碼可以呼叫 `TextAnalyzer`方法，如下列範例所示：
+新增指向系結程式庫之應用程式的參考之後，您可以存取中的 JAVA 類型。AAR，如同您存取C#類型一樣（感謝C#包裝函式）。 C#應用程式程式碼可以呼叫 `TextAnalyzer` 方法，如下列範例所示：
 
 ```csharp
 using Com.Xamarin.Textcounter;
@@ -262,7 +262,7 @@ Xamarin 工具會將**R**資料與合併。AAR 至您應用程式的**資源**�
 <ImageView android:src="@drawable/image" ... />
 ```
 
-您也可以存取位於中的資源版面配置。AAR. 若要這樣做，您可以針對內封裝**的版面配置使用配置名稱。** AAR. 例如:
+您也可以存取位於中的資源版面配置。AAR. 若要這樣做，您可以針對內封裝**的版面配置使用配置名稱。** AAR. 例如：
 
 ```csharp
 var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
@@ -288,9 +288,9 @@ var a = new ArrayAdapter<string>(this, Resource.Layout.row_layout, ...);
 
 [顯示輔音計數的 ![Bindingtest shoppingcart](binding-an-aar-images/13-count-consonants.png)](binding-an-aar-images/13-count-consonants.png#lightbox)
 
-恭喜您！ 您已成功地系結 JAVA 程式庫。AAR!
+恭喜！ 您已成功地系結 JAVA 程式庫。AAR!
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本逐步解說中，我們已建立的系結程式庫。AAR 檔案，將系結程式庫新增至最小測試應用程式，並執行應用程式， C#以確認我們的程式碼可以呼叫位於的 JAVA 程式碼。AAR 檔案。
 此外，我們已擴充應用程式來存取和顯示位於的影像資源。AAR 檔案。

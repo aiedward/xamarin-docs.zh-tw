@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: e4746ed94a008d382ce15bb9cd7c52365d9ba574
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78292406"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第13章的摘要。 點陣圖

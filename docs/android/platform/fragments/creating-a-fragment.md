@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/07/2018
 ms.openlocfilehash: 0e8d3748c7ddd337cf2f27f5b272b208e79d503a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027509"
 ---
 # <a name="creating-a-fragment"></a>建立片段
 
-若要建立片段，類別必須繼承自 `Android.App.Fragment`，然後覆寫 `OnCreateView` 方法。 當您將片段放在螢幕上時，主控活動會呼叫 `OnCreateView`，而且會傳回 `View`。 一般 `OnCreateView` 會藉由因而誇大配置檔案，然後將它附加至父容器，來建立此 `View`。 容器的特性很重要，因為 Android 會將父系的版面配置參數套用至片段的 UI。 下面這個範例可說明這點：
+若要建立片段，類別必須繼承自 `Android.App.Fragment`，然後覆寫 `OnCreateView` 方法。 當您將片段放在螢幕上時，主控活動會呼叫 `OnCreateView`，而且會傳回 `View`。 一般 `OnCreateView` 會藉由因而誇大配置檔案，然後將它附加至父容器，來建立此 `View`。 容器的特性很重要，因為 Android 會將父系的版面配置參數套用至片段的 UI。 下列範例會加以說明：
 
 ```csharp
 public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -106,7 +106,7 @@ OR
 片段有自己的生命週期，其與[裝載活動的生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)不相關，但仍受到影響。
 例如，當活動暫停時，其所有關聯的片段都會暫停。 下圖概述片段的生命週期。
 
-[說明片段生命週期的![流程圖](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
+[說明片段生命週期的 ![流程圖](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
 
 ### <a name="fragment-creation-lifecycle-methods"></a>片段建立生命週期方法
 
@@ -230,4 +230,4 @@ public override void OnCreate(Bundle savedState)
 
 下列畫面顯示此功能表的外觀：
 
-[顯示功能表項目的 [我的旅程] 應用程式![範例螢幕擷取畫面](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)
+[顯示功能表項目的 [我的旅程] 應用程式 ![範例螢幕擷取畫面](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)

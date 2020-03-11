@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/02/2018
 ms.openlocfilehash: 6274c75abf229268070d495ced662724f5c16627
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027096"
 ---
 # <a name="nougat-features"></a>Nougat 功能
@@ -20,11 +20,11 @@ _如何開始使用 Xamarin 來開發 Android Nougat 應用程式。_
 
 本文概述 Android Nougat 中引進的功能，說明如何準備 Xamarin 以進行 Android Nougat 開發，並提供範例應用程式的連結，說明如何在中使用 Android Nougat 功能Xamarin Android 應用程式。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 [Android Nougat](https://developer.android.com/about/versions/nougat/android-7.0.html)是 Google 對 Android 6.0 Marshmallow 的後續追蹤。 Xamarin 支援 Xamarin Android 7.0 和更新版本中的**android 7. x**系結。 Android Nougat 新增了許多 Nougat 功能的新 Api，如下所述：當您使用 Xamarin. Android 7.0 時，這些 Api 可供 Xamarin 應用程式使用。
 
-[適用于執行 Android Nougat 的 Android 平板電腦和手機![主圖影像](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
+[適用于執行 Android Nougat 的 Android 平板電腦和手機 ![主圖影像](nougat-images/android-n-hero-sml.png)](nougat-images/android-n-hero.png#lightbox)
 
 如需 Android 7.x Api 的詳細資訊，請參閱[適用于開發人員的 android 7.1](https://developer.android.com/preview/api-overview.html)。
 如需已知的 Xamarin. Android 7.0 問題清單，請參閱[版本](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_7/xamarin.android_7.0/index.md)資訊。
@@ -58,7 +58,7 @@ Android Nougat 為 Xamarin. Android 開發人員提供許多相關的新功能�
 
 請注意，您必須使用 Xamarin C6SR4 或更新版本來重建應用程式，才能與 Android Nougat 可靠地搭配使用。 因為 Android Nougat 只能連結至[NDK 提供的原生程式庫](https://developer.android.com/about/versions/nougat/android-7.0-changes.html)，所以使用程式庫（例如**Mono** ）的現有應用程式可能會在 Android Nougat 上執行時損毀（如果未正確重建）。
 
-## <a name="getting-started"></a>快速入門
+## <a name="getting-started"></a>開始使用
 
 若要開始使用 Android Nougat 搭配 Xamarin，您必須先下載並安裝最新的工具和 SDK 套件，才能建立 Android Nougat 專案：
 
@@ -94,7 +94,7 @@ Android Nougat 為 Xamarin. Android 開發人員提供許多相關的新功能�
 
 4. 確認已針對 JDK 1.8 設定**JAVA 開發工具組位置**：
 
-    [在 [工具] [選項] 底下設定 JDK 8 路徑![](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
+    [在 [工具] [選項] 底下設定 JDK 8 路徑 ![](nougat-images/use-jdk-1.8.png)](nougat-images/use-jdk-1.8.png#lightbox)
 
     若要在 Visual Studio 中查看此設定，請按一下 [**工具] > [選項] > [Xamarin > Android 設定**]。 在 Visual Studio for Mac 中，按一下 [喜好設定] [ **> 專案] > [SDK 位置 > Android**]。
 
@@ -134,7 +134,7 @@ Android Nougat 引進了各種新特性和功能，例如多視窗支援、通�
 
 [![在多視窗模式中以直向和橫向執行的範例應用程式](nougat-images/multi-window-mode.png)](nougat-images/multi-window-mode.png#lightbox)
 
-您可以設定您的 Xamarin Android 應用程式的活動支援多視窗模式的方式。 例如，您可以設定屬性，以在多視窗模式中設定應用程式的最小大小和預設高度和寬度。 您可以使用新的 `Activity.IsInMultiWindowMode` 屬性來判斷您的活動是否處於多視窗模式。 例如:
+您可以設定您的 Xamarin Android 應用程式的活動支援多視窗模式的方式。 例如，您可以設定屬性，以在多視窗模式中設定應用程式的最小大小和預設高度和寬度。 您可以使用新的 `Activity.IsInMultiWindowMode` 屬性來判斷您的活動是否處於多視窗模式。 例如：
 
 ```csharp
 if (!IsInMultiWindowMode) {
@@ -191,7 +191,7 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder (Application
    .AddAction (actionReplyByRemoteInput);
 ```
 
-[訊息服務](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)範例應用程式會C#包含程式碼，示範如何使用`RemoteInput`物件來擴充通知。 如需將內嵌回復動作新增至 Android 7.0 或更新版本之應用程式的詳細資訊，請參閱 Android[回復通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct)主題。
+[訊息服務](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-messagingservice)範例應用程式會C#包含程式碼，示範如何使用 `RemoteInput` 物件來擴充通知。 如需將內嵌回復動作新增至 Android 7.0 或更新版本之應用程式的詳細資訊，請參閱 Android[回復通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html#direct)主題。
 
 #### <a name="bundled-notifications"></a>配套通知
 
@@ -218,12 +218,12 @@ Android 7.1 引進*應用程式快捷方式*功能，讓使用者可以使用您
 若要啟動快捷方式的功能表，使用者可長按一或多個應用程式圖示，以顯示具有快速震動 &ndash; 的功能表。
 放開 [按下] 會導致功能表保持不變：
 
-[訊息應用程式之應用程式快捷方式功能表的![範例畫面](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png#lightbox)
+[訊息應用程式之應用程式快捷方式功能表的 ![範例畫面](nougat-images/app-shortcuts-sml.png)](nougat-images/app-shortcuts.png#lightbox)
 
 這項功能僅適用于 API 層級25或更高版本。
 如需 Android 7.1 中新應用程式快捷方式功能的詳細資訊，請參閱 Android[應用程式快捷方式](https://developer.android.com/guide/topics/ui/shortcuts.html)主題。
 
-### <a name="sample-code"></a>程式碼範例
+### <a name="sample-code"></a>範例程式碼
 
 有數個 Xamarin. Android 範例可向您示範如何利用 Android Nougat 功能：
 
@@ -237,7 +237,7 @@ Android 7.1 引進*應用程式快捷方式*功能，讓使用者可以使用您
 
 - [直接開機](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-n-directboot)說明如何將資料儲存在裝置加密的儲存體中，這在裝置於輸入任何使用者認證（PIN/模式/密碼）前後都開機時一律可使用。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文介紹了 Android Nougat，並說明如何在 Android Nougat 上安裝及設定最新的 Xamarin Android 開發工具和套件。 它也提供了 Android Nougat 中可用的主要功能總覽，其中包含範例原始程式碼的連結，可協助您開始建立 Android Nougat 應用程式。
 

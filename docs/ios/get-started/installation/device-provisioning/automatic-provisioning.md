@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 0947f31700310b7da80dfa412c18585962a337ac
-ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
+ms.openlocfilehash: f0612ca53bc54cf4b15982b7743c64b1997a4455
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/10/2020
-ms.locfileid: "78946303"
+ms.locfileid: "79031073"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自動佈建
 
@@ -118,9 +118,3 @@ _成功安裝 Xamarin 之後，iOS 開發的下一步就是布建您的 iOS 裝�
 - [應用程式散發](~/ios/deploy-test/app-distribution/index.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
 - [Apple - 應用程式散發指南](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html) \(英文\)
-
-## <a name="related-video"></a>相關影片
-
-> [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-Simplified-iOS-Provisioning-in-Visual-Studio-with-fastlane/player]
-
-[!include[](~/essentials/includes/xamarin-show-essentials.md)]

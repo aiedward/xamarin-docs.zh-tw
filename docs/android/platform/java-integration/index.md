@@ -8,23 +8,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/18/2017
 ms.openlocfilehash: ecaa02e036c74074b4fa922ea079355b72ff02e2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020092"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>JAVA 與 Xamarin 整合
 
 _JAVA 生態系統包含各種不同的元件集合。其中許多元件都可以用來減少開發 Android 應用程式所需的時間。本檔將介紹並提供開發人員使用這些現有 JAVA 元件來改善其 Xamarin. Android 應用程式開發體驗的一些方式的高階總覽。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 基於 JAVA 生態系統的範圍，您很有可能是 Xamarin Android 應用程式所需的任何功能都已經以 JAVA 編碼。 因此，在建立 Xamarin. Android 應用程式時，嘗試並重複使用這些現有的程式庫會很有吸引力。
 
 有三種可能的方式可以在 Xamarin Android 應用程式中重複使用 JAVA 程式庫： 
 
-- **建立 java**系結程式庫 &ndash; 使用這項技術時，會使用 Xamarin. Android 專案C#來建立 java 類型的包裝函式。 然後，Xamarin 應用程式可以參考此專案C#所建立的包裝函式，然後使用`.jar`檔案。 
+- **建立 java**系結程式庫 &ndash; 使用這項技術時，會使用 Xamarin. Android 專案C#來建立 java 類型的包裝函式。 然後，Xamarin 應用程式可以參考此專案C#所建立的包裝函式，然後使用 `.jar` 檔案。 
 
 - **JAVA 原**生介面 &ndash; *java 原生* *介面*（JNI）是一種架構，可讓非 JAVA 程式碼C++ （ C#例如或）呼叫或由在 JVM 內執行的 JAVA 程式碼呼叫。 
 
@@ -38,13 +38,13 @@ _JAVA 生態系統包含各種不同的元件集合。其中許多元件都可�
 
 第三個技術與前兩個方法截然不同：將程式碼從 JAVA 移植C#到。 將程式碼從一種語言移植至另一種語言可能是非常費力的過程，但可以透過稱為「*銳化*」的工具來降低這項工作。 「銳化」是一種開放原始碼工具，它是C# JAVA 到轉換器。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本檔提供一些可在 Xamarin Android 應用程式中重複使用 JAVA 程式庫之不同方式的高階總覽。 其中引進了系結和受控可呼叫包裝函式的概念，並討論將 JAVA C#程式碼移植至的選項。 
 
 ## <a name="related-links"></a>相關連結
 
-- [Architecture (架構)](~/android/internals/architecture.md)
+- [架構](~/android/internals/architecture.md)
 - [繫結 Java 程式庫](~/android/platform/binding-java-library/index.md)
 - [使用 JNI](~/android/platform/java-integration/working-with-jni.md)
 - [銳利化](https://github.com/slluis/sharpen)

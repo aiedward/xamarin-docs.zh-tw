@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/02/2018
 ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019760"
 ---
 # <a name="android-speech"></a>Android 語音
@@ -123,7 +123,7 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 }
 ```
 
-## <a name="text-to-speech"></a>文字轉換語音
+## <a name="text-to-speech"></a>文字轉語音
 
 文字轉換語音並不是語音轉換文字的反轉，而是依賴兩個主要元件;要安裝在裝置上的文字轉換語音引擎，以及要安裝的語言。
 
@@ -225,13 +225,13 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 }
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本指南中，我們探討了將文字轉換為語音和語音轉換文字的基本概念，以及如何在您自己的應用程式中包含它們的方法。 雖然它們不涵蓋每個特定案例，但您現在應該已對如何解讀語音、如何安裝新語言，以及如何增加應用程式 inclusivity 的基本瞭解。
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin. Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
+- [Xamarin.Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
 - [文字轉換語音（範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
 - [語音轉換文字（範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
 - [Android. Speech 命名空間](xref:Android.Speech)

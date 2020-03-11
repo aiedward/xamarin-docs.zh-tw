@@ -9,21 +9,21 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68757254"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918007"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>適用于 Xamarin 的 XAML 預覽程式
 
 _查看您的 Xamarin。表單版面配置會在您輸入時呈現_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 XAML 預覽程式會顯示您的 Xamarin. 表單 XAML 頁面在 iOS 和 Android 上的外觀。 當您對 XAML 進行變更時，您會看到它們緊接在您的程式碼旁預覽。 XAML 預覽器適用于 Visual Studio 和 Visual Studio for Mac。
 
-## <a name="getting-started"></a>使用者入門
+## <a name="getting-started"></a>開始使用
 
 ::: zone pivot="windows"
 

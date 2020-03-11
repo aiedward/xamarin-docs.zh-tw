@@ -6,15 +6,15 @@ author: mikeparker104
 ms.author: miparker
 ms.date: 11/07/2019
 ms.openlocfilehash: 42a59570d727657b2f3c23bd9d1f37e1205717d0
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73842811"
 ---
 # <a name="use-cc-libraries-with-xamarin"></a>搭配 Xamarin 使用C++ C/程式庫
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Xamarin 可讓開發人員使用 Visual Studio 建立跨平臺原生行動應用程式。 一般來說， C#系結是用來向開發人員公開現有的平臺元件。 不過，有些時候 Xamarin 應用程式需要使用現有的程式碼基底。 有時候小組不會有時間、預算或資源，無法將大型、經過妥善測試且高度優化的程式碼基底C#移植至。
 
@@ -49,7 +49,7 @@ C/C++被視為跨平臺語言，但必須特別小心，以確保原始程式碼
 
 逐步解說中的程式庫是使用 Visual Studio Code 搭配隨附的 shell 腳本所建立。 此逐步解說的擴充版本可在行動[CAT GitHub 存放庫](https://github.com/xamcat/mobcat-samples/tree/master/cpp_with_xamarin)中找到，其深入探討此部分的範例。 在此情況下，原生程式庫被視為協力廠商相依性，不過這個階段會針對內容進行說明。
 
-為了簡單起見，本逐步解說僅以架構的子集為目標。 針對 iOS，它會使用 lipo 公用程式，從個別架構特定的二進位檔建立單一的 fat 二進位檔。 Android 會搭配使用動態二進位檔。因此，延伸模組和 iOS 會使用靜態的 fat 二進位檔，副檔名為.。 
+為了簡單起見，本逐步解說僅以架構的子集為目標。 針對 iOS，它會使用 lipo 公用程式，從個別架構特定的二進位檔建立單一的 fat 二進位檔。 Android 會搭配使用動態二進位檔。因此，延伸模組和 iOS 會使用靜態的 fat 二進位檔，副檔名為。 
 
 ### <a name="stage-2-wrapping-the-native-libraries-with-a-visual-studio-solution"></a>階段2：使用 Visual Studio 方案包裝原生程式庫
 
@@ -189,7 +189,7 @@ extern "C" {
 
 1. **控制並按一下**[ **MathFuncs** ] 專案，然後從 [**新增**] 功能表中，**選擇 [命名**它**的**程式庫]。
 
-2. 針對每**個 ABI** （應用程式二進位介面），**控制和按一下**[程式庫] 資料夾，然後從 [**加入**] 功能表中選擇 [**新增資料夾**]，在個別**ABI**之後將其命名為。 在此情況下：
+2. 針對每**個 ABI** （應用程式二進位介面），**控制和按一下**[程式庫] 資料夾，然後從 [**加入**] 功能表中選擇 [**新增資料夾**]，在個別**ABI**之後將其命名為。 在此案例中：
 
     - arm64-v8a
     - armeabi-v7a
@@ -480,7 +480,7 @@ extern "C" {
 1. **控制 + 按一下**[方案**MathFuncs**]，然後從 [**新增**] 功能表中選擇 [**新增方案資料夾**]，命名為**SolutionItems**。
 2. **控制 + 按一下**[ **SolutionItems** ] 資料夾，然後從 [**加入**] 功能表選擇 [**新增**檔案]。
 3. 從 [**新增**檔案] 視窗中選擇 [**空的 XML**檔案]，將它命名為**MathFuncs. Nuspec** ，然後按一下 [**新增**]。
-4. 使用要對**NuGet**取用者顯示的基本套件中繼資料來更新**MathFuncs。 nuspec** 。 例如:
+4. 使用要對**NuGet**取用者顯示的基本套件中繼資料來更新**MathFuncs。 nuspec** 。 例如：
 
     ```xml
     <?xml version="1.0"?>
@@ -584,11 +584,11 @@ NuGet 摘要最簡單的形式是本機目錄：
 1. 在搜尋**工具**中，流覽至方便的目錄。 例如， **/Users**。
 2. 從 [檔案 **] 功能表中選擇 [** **新增資料夾**]，提供有意義的名稱，例如**本機-nuget-feed**。
 
-### <a name="creating-the-package"></a>建立封裝
+### <a name="creating-the-package"></a>建立套件
 
 1. 將**組建**設定設為 [**發行**]，然後使用**命令 + B**執行組建。
 2. 開啟 [**終端**機]，並將目錄變更為包含**nuspec**檔案的資料夾。
-3. 在**終端**機中，使用在[上一個步驟](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)中建立的資料夾（也就是**本機-nuget**）來執行**nuget pack**命令，以指定**Nuspec**檔案、**版本**（例如1.0.0）和**OutputDirectory** 。 例如:
+3. 在**終端**機中，使用在[上一個步驟](https://docs.microsoft.com/xamarin/cross-platform/cpp/index#creating-a-local-nuget-feed)中建立的資料夾（也就是**本機-nuget**）來執行**nuget pack**命令，以指定**Nuspec**檔案、**版本**（例如1.0.0）和**OutputDirectory** 。 例如：
 
     ```bash
     nuget pack MathFuncs.nuspec -Version 1.0.0 -OutputDirectory ~/local-nuget-feed
@@ -757,7 +757,7 @@ NuGet 摘要最簡單的形式是本機目錄：
     > [!NOTE]
     > 如果您在 Android 上測試時遇到「*system.dllnotfoundexception*」，或 iOS 上發生組建錯誤，請務必檢查您所使用之裝置/模擬器/模擬器的 CPU 架構是否與我們選擇支援的子集相容。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明如何建立使用原生程式庫的 Xamarin 應用程式，透過 NuGet 套件散發的通用 .NET 包裝函式。 本逐步解說中提供的範例刻意非常簡單，更容易示範方法。 實際的應用程式必須處理複雜性，例如例外狀況處理、回呼、更複雜類型的封送處理，以及與其他相依性程式庫連結。 主要考慮是程式C++代碼演進的協調流程，並與包裝函式和用戶端應用程式同步處理。 此程式可能會根據其中一個或兩個問題是否為單一小組負責而有所不同。 不論是哪種方式，自動化都是真正的優勢。 以下提供進一步閱讀一些重要概念以及相關下載的資源。 
 
@@ -772,6 +772,6 @@ NuGet 摘要最簡單的形式是本機目錄：
 - [Microsoft Pix （C++和 Xamarin）](https://devblogs.microsoft.com/xamarin/microsoft-research-ships-intelligent-apps-with-the-power-of-c-and-ai/)
 - [Mono San 洛杉磯範例埠](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk/)
 
-### <a name="further-reading"></a>進一步閱讀
+### <a name="further-reading"></a>進階閱讀
 
 [與此貼文內容相關的文章](https://github.com/xamcat/mobcat-samples/tree/master/cpp_with_xamarin#wrapping-up)

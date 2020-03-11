@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: fb1ba92be9527d490b3d34bd4c0e454b0a750837
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019980"
 ---
 # <a name="marshmallow-features"></a>Marshmallow 功能
@@ -20,7 +20,7 @@ _這篇文章可協助您開始在使用 Xamarin 來開發 Android 6.0 Marshmall
 
 本文概述 Android 6.0 Marshmallow 的新功能，說明如何準備 Xamarin 以進行 Android Marshmallow 開發，並提供範例應用程式的連結，說明如何利用新的 Android MarshmallowXamarin Android 應用程式中的功能。 
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 [Android 6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)是 android 棒後的下一個主要 android 版本。
 Xamarin 支援 Android Marshmallow，其中包括：
@@ -69,7 +69,7 @@ Xamarin 支援 Android Marshmallow，其中包括：
 
 如果您是特別針對 API 層級23或更早的版本進行開發，您可以繼續使用[JDK 1.7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 。 
 
-## <a name="getting-started"></a>快速入門
+## <a name="getting-started"></a>開始使用
 
 若要開始使用 Android Marshmallow 搭配 Xamarin，您必須先下載並安裝最新的工具和 SDK 套件，才能建立 Android Marshmallow 專案： 
 
@@ -248,7 +248,7 @@ Xamarin 提供範例應用程式，示範在 Xamarin 上的新 Android 設計程
 
 - [Android 穿戴式程式庫](https://www.nuget.org/packages/Xamarin.Android.Wear)&ndash; 此 NuGet 包含 Google Play Services 系結。 最新版的穿戴式程式庫會將新功能（包括自訂應用程式的更容易導覽）帶入 Android 磨損平臺。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文介紹了 Android Marshmallow，並說明如何在 Marshmallow 上安裝及設定適用于 Xamarin 的最新工具和套件開發。 此外，也提供了最令人興奮的新 Android Marshmallow 功能，以進行 Xamarin 的開發。
 
@@ -256,7 +256,7 @@ Xamarin 提供範例應用程式，示範在 Xamarin 上的新 Android 設計程
 
 - [Android 6.0 Marshmallow](https://developer.android.com/about/versions/marshmallow/index.html)
 - [取得 Android SDK](https://developer.android.com/sdk/index.html#Other)
-- [功能總覽](https://developer.android.com/preview/api-overview.html)
+- [功能概觀](https://developer.android.com/preview/api-overview.html)
 - [版本資訊](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1.99/index.md)
 - [RuntimePermissions （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions)
 - [ConfirmCredential （範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)

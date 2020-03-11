@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: a638ccf7810c737faaeded7fcc98fcf657c85288
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027202"
 ---
 # <a name="jelly-bean-features"></a>軟糖 Bean 功能
 
 _本檔將針對 Android 4.1 中引進的開發人員提供新功能的高階總覽。這些功能包括：增強的通知、Android 橫樑更新以共用大型檔案、更新為多媒體、對等網路探索、動畫、新許可權。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Android 4.1 （API 層級16）（也稱為「軟糖 Bean」）已于2012年7月9日發行。 本文將針對使用 Xamarin 的開發人員提供 Android 4.1 中一些新功能的高階簡介。 引進的部分新功能包括啟動活動的動畫、攝影機的新聲音，以及改善應用程式堆疊導覽的支援。 現在可以使用意圖進行剪下和貼上。
 
@@ -81,7 +81,7 @@ Android 4.1 改善了 Android 3.0 中引進的應用程式堆疊導覽。 藉由
 - `FinishAffinity` –呼叫這個方法將會在目前的工作中，完成目前的活動和其底下的所有活動，而此工作具有相同的工作相似性。
 - `OnCreateNavigateUpTaskStack` –當需要完全控制如何建立綜合堆疊時，會覆寫這個方法。
 
-### <a name="camera"></a>觀景窗
+### <a name="camera"></a>相機
 
 有一個新的介面 `Camera.IAutoFocusMoveCallback`，可用來偵測自動焦點已開始或停止移動的時間。 此新介面的範例可在下列程式碼片段中看到：
 
@@ -199,15 +199,15 @@ Android 4.1 可讓應用程式更有彈性和控制顯示通知。 應用程式�
 
 - `Notification.BigPictureStyle` –這是協助程式類別，會產生會在其中包含影像的通知。 下圖顯示具有大影像的通知範例：
 
- [BigPictureStyle 通知的![範例螢幕擷取畫面](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
+ [BigPictureStyle 通知的 ![範例螢幕擷取畫面](jelly-bean-images/image2.png)](jelly-bean-images/image2.png#lightbox)
 
 - `Notification.BigTextStyle` –這是協助程式類別，會產生會有多行文字的通知，例如電子郵件。 此新通知樣式的範例可在下列螢幕擷取畫面中看到：
 
- [BigTextStyle 通知的![範例螢幕擷取畫面](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
+ [BigTextStyle 通知的 ![範例螢幕擷取畫面](jelly-bean-images/image3.png)](jelly-bean-images/image3.png#lightbox)
 
 - `Notification.InboxStyle` –這是 helper 類別，會產生包含字串清單的通知，例如來自電子郵件訊息的程式碼片段，如下列螢幕擷取畫面所示：
 
- [InboxStyle 通知的![範例螢幕擷取畫面。](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
+ [InboxStyle 通知的 ![範例螢幕擷取畫面。](jelly-bean-images/image4.png)](jelly-bean-images/image4.png#lightbox)
 
 當通知使用正常或較大的樣式時，可以在通知訊息底部新增最多兩個動作按鈕。
 您可以在下列螢幕擷取畫面中看到這種情況的範例，其中動作按鈕會顯示在通知的底部：
@@ -228,7 +228,7 @@ Android 4.1 可讓應用程式更有彈性和控制顯示通知。 應用程式�
 
 請注意 `READ_EXTERNAL_STORAGE` 的重要變更– Android 目前會自動授與此許可權。 Android 的未來版本將會要求應用程式在授與許可權之前要求此許可權。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文介紹 Android 4.1 （API 層級16）中提供的一些新 API。 它會反白顯示動畫的一些變更，並以動畫方式啟動活動，並引進新的 API，以使用 Bonjour 或 UPnP 等通訊協定來探索其他裝置的網路。 API 的其他變更也會反白顯示，例如能夠透過意圖來剪下和貼上資料、使用隔離服務或「不穩定」內容提供者的能力。
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: f900cb1532ba4415127c95b07e777881e1d74994
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291823"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第2章的摘要。 應用程式的剖析

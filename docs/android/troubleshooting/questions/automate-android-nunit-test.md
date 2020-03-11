@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2018
 ms.openlocfilehash: 1246eeac63a0ae232396d4c2fd69d8bf516f5e3e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73026994"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何將 Android NUnit 測試專案自動化？
@@ -59,7 +59,7 @@ adb shell am instrument
 
 2. 執行 `TestInstrumentation` 的構造函式和 `AddTests` 方法。 `AddTests` 方法會控制實際執行的測試。
 
-3. 修改 `.csproj` 檔案以新增**TestInstrumentation.cs**。 例如:
+3. 修改 `.csproj` 檔案以新增**TestInstrumentation.cs**。 例如：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -89,10 +89,10 @@ adb shell am instrument
 
     （請注意，不需要使用這個新的目標，可以使用先前的 `adb` 命令，而不是 `msbuild`。）
 
-如需有關使用 `adb shell am instrument` 命令來執行單元測試的詳細資訊，請參閱
+如需有關使用 `adb shell am instrument` 命令來執行單元測試的詳細資訊，請參閱 < 使用[ADB 執行測試](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)的 Android 開發人員主題。
 
 > [!NOTE]
 > 在[5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)版中，android 可呼叫包裝函式的預設封裝名稱會以所匯出類型之元件限定名稱的 check md5sum 為基礎。 這可讓您從兩個不同的元件中提供相同的完整名稱，而不會收到封裝錯誤。 因此，請確定您在 `Instrumentation` 屬性上使用 `Name` 屬性，以產生可讀取的 ACW/類別名稱。
 
 在_上述 `adb` 命令中必須使用 ACW 名稱_。
-重新命名/重構C#類別會因此需要修改`RunTests`命令，以使用正確的 ACW 名稱。
+重新命名/重構C#類別會因此需要修改 `RunTests` 命令，以使用正確的 ACW 名稱。

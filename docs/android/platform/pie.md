@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
 ms.openlocfilehash: 0105b43116df697bc6688becb77298c236dfa601
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019878"
 ---
 # <a name="android-pie-features"></a>Android 圓形圖功能
@@ -39,7 +39,7 @@ Xamarin. Android 9.0 提供 Android 圓形圖的支援。 如需適用于 Androi
 
 - **Android SDK** &ndash; Android SDK API 28 或更新版本必須透過 Android SDK 管理員進行安裝。
 
-## <a name="getting-started"></a>使用者入門
+## <a name="getting-started"></a>開始使用
 
 若要開始使用 Xamarin 開發 Android 圓形圖應用程式，您必須先下載並安裝最新的工具和 SDK 套件，才能建立您的第一個 Android 圓形圖專案：
 
@@ -67,11 +67,11 @@ Xamarin. Android 9.0 提供 Android 圓形圖的支援。 如需適用于 Androi
 
 2. 在右下角，按一下齒輪圖示，然後選取 [存放庫] **> Google （不支援）** ：
 
-    [將儲存機制設定為 Google 的![](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
+    [將儲存機制設定為 Google 的 ![](pie-images/vs/set-repo-sml.png)](pie-images/vs/set-repo.png#lightbox)
 
 3. 安裝**Android 圓形圖**SDK 套件（在 [**平臺**] 索引標籤中列為**Android SDK Platform 28** ）（如需有關使用 SDK 管理員的詳細資訊，請參閱[Android SDK 安裝程式](~/android/get-started/installation/android-sdk.md)）：
 
-    [安裝 Android 圓形圖![](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
+    [安裝 Android 圓形圖 ![](pie-images/vs/sdk-manager-sml.png)](pie-images/vs/sdk-manager.png#lightbox)
 
 4. 如果您使用模擬器，請建立支援**API 層級 28**的虛擬裝置。 如需建立虛擬裝置的詳細資訊，請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md)。
 
@@ -149,7 +149,7 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
 
 下列範例說明如何使用新的 Api 來產生包含影像的通知。 在下列螢幕擷取畫面中，文字通知已張貼，後面接著具有內嵌影像的通知。 當通知展開（如右側所示）時，會顯示第一個通知的文字，並放大第二個通知中內嵌的影像：
 
-[使用影像![範例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
+[使用影像 ![範例通知](pie-images/04-example-notifications-sml.png)](pie-images/04-example-notifications.png#lightbox)
 
 下列範例說明如何在 Android 圓形圖通知中包含影像，並示範如何使用新的 `Person` 類別：
 
@@ -164,7 +164,7 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
     ```
 
 2. 建立包含要傳送之影像的 `Notification.MessagingStyle.Message`，並將該影像傳遞至新的[MessagingStyle](https://developer.android.com/reference/android/app/Notification.MessagingStyle.Message.html#setData%28java.lang.String,%20android.net.Uri)方法。
-   例如:
+   例如：
 
     ```csharp
     Uri imageUri = Uri.Parse("android.resource://com.xamarin.pminidemo/drawable/example_image");
@@ -173,14 +173,14 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
             .SetData("image/", imageUri);
     ```
 
-3. 將訊息新增至 `Notification.MessagingStyle` 物件。 例如:
+3. 將訊息新增至 `Notification.MessagingStyle` 物件。 例如：
 
     ```csharp
     Notification.MessagingStyle style = new Notification.MessagingStyle(fromPerson)
             .AddMessage(message);
     ```
 
-4. 將此樣式插入通知產生器。 例如:
+4. 將此樣式插入通知產生器。 例如：
 
     ```csharp
     builder = new Notification.Builder(this, MY_CHANNEL)
@@ -191,7 +191,7 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
         .SetChannelId(MY_CHANNEL);
     ```
 
-5. 發佈通知。 例如:
+5. 發佈通知。 例如：
 
     ```csharp
     const int notificationId = 1000;
@@ -204,7 +204,7 @@ Android 圓形圖引進下列增強功能，以改善訊息體驗：
 
 Android 圓形圖提供 IEEE 802.11 mc （也稱為_Wifi 來回時間_或_wifi RTT_）的支援，讓應用程式能夠偵測到一個或多個 wi-fi 存取點的距離。 使用這項資訊，您的應用程式可能會利用一到兩個計量的精確度，使用*室內定位*。 在提供 IEEE 801.11 mc 硬體支援的 Android 裝置上，您的應用程式可以提供流覽功能，例如以位置為基礎的方式控制智慧型設備，或透過存放區的輪流指示：
 
-[使用 WiFi RTT![室內導覽的範例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
+[使用 WiFi RTT ![室內導覽的範例](pie-images/05-wifi-rtt-sml.png)](pie-images/05-wifi-rtt.png#lightbox)
 
 新的[WifiRttManager](https://developer.android.com/reference/android/net/wifi/rtt/WifiRttManager)類別和數個 helper 類別提供測量 wi-fi 裝置距離的方法。 如需 Android P 中所引進之室內定位 Api 的詳細資訊，請參閱[android .net. Wifi](https://developer.android.com/reference/android/net/wifi/rtt/package-summary)。
 
@@ -247,7 +247,7 @@ Android 圓形圖也包含新的[SessionConfiguration](https://developer.android
 
 [AndroidPMiniDemo](https://github.com/xamarin/monodroid-samples/tree/master/android-p/AndroidPMiniDemo)是適用于 Android 的 Xamarin android 範例應用程式，可示範如何設定顯示切除模式、如何使用新的 `Person` 類別，以及如何傳送包含影像的通知。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文介紹了 Android 圓形圖，並說明如何安裝和設定最新的 Xamarin Android 開發工具和套件。 其中提供 Android 圓形圖提供的主要功能總覽，以及其中幾項功能的範例原始程式碼。
 其中包含 API 檔和 Android 開發人員主題的連結，可協助您開始建立 Android 的應用程式。 它也會反白顯示可能影響現有應用程式的最重要 Android 圓形圖行為變更。

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: a2435b30b7d5b468fca6c55d295c87b9a0d20652
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291612"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78914628"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin iOS API 設計
 

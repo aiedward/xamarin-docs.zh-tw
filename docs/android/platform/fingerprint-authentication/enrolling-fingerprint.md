@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: c0290dfa3b4aa301a07a589f78577899e8282158
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027587"
 ---
 # <a name="enrolling-a-fingerprint"></a>註冊指紋
@@ -46,7 +46,7 @@ ms.locfileid: "73027587"
 
 4. 從該處，遵循順序，將指紋新增至裝置：
 
-    [將指紋新增至裝置的![螢幕擷取畫面順序](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
+    [將指紋新增至裝置的 ![螢幕擷取畫面順序](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
 
 5. 在最後一個畫面中，系統會提示您將手指放在指紋掃描器上： 
 
@@ -68,6 +68,6 @@ $ adb -e emu finger touch 1
 
 ![顯示已新增指紋的畫面！](enrolling-fingerprint-images/testing-06.png)
 
-## <a name="summary"></a>總結 
+## <a name="summary"></a>摘要 
 
 本指南涵蓋如何設定螢幕鎖定，並在 Android 裝置或 Android 模擬器中註冊指紋。 

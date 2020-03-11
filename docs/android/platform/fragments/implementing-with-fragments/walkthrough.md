@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
 ms.openlocfilehash: 043ad02f9ca9148910364ac82917551ee58d72ba
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027409"
 ---
 # <a name="fragments-walkthrough-ndash-phone"></a>&ndash; 電話的片段逐步解說
@@ -30,11 +30,11 @@ ms.locfileid: "73027409"
 ## <a name="1-create-the-android-project"></a>1. 建立 Android 專案
 
 建立名為**FragmentSample**的新 Xamarin. Android 專案。
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![建立新的 Xamarin Android 專案](./walkthrough-images/01-newproject.w157-sml.png)](./walkthrough-images/01-newproject.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![建立新的 Xamarin Android 專案](./walkthrough-images/01-newproject.m742-sml.png)](./walkthrough-images/01-newproject.m742.png#lightbox)
 
@@ -51,7 +51,7 @@ ms.locfileid: "73027409"
 * `Shakespeare.Titles` &nbsp; 此陣列會保留 William Shakespeare 的播放清單。 這是 `TitlesFragment`的資料來源。
 * `Shakespeare.Dialogue` &nbsp; 此陣列會保存 `Shakespeare.Titles`中包含的其中一個播放的引號清單。 這是 `PlayQuoteFragment`的資料來源。
 
-將新類別C#新增至**FragmentSample**專案，並將其命名為**Shakespeare.cs**。 在此檔案中，使用下列C#內容建立名為`Shakespeare`的新類別
+將新類別C#新增至**FragmentSample**專案，並將其命名為**Shakespeare.cs**。 在此檔案中，使用下列C#內容建立名為 `Shakespeare` 的新類別
 
 ```csharp
 class Shakespeare
@@ -84,11 +84,11 @@ class Shakespeare
 
 `PlayQuoteFragment` 是 Android 片段，會針對使用者在應用程式中稍早選取的 Shakespeare 播放顯示報價，此片段不會使用 Android 版面配置檔案;相反地，它會以動態方式建立其使用者介面。 將名為 `PlayQuoteFragment` 的新 `Fragment` 類別加入至專案：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![新增C#類別](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/02-addclass.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![新增C#類別](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/02-addclass.m742.png#lightbox)
 
@@ -140,11 +140,11 @@ public class PlayQuoteFragment : Fragment
 
 片段必須裝載于活動內部，因此此應用程式需要將主控 `PlayQuoteFragment`的活動。 活動會在執行時間以動態方式將片段加入其版面配置中。 將新活動新增至應用程式，並將其命名為 `PlayQuoteActivity`：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![將 Android 活動新增至專案](./walkthrough-images/03-addactivity.w157-sml.png)](./walkthrough-images/03-addactivity.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![將 Android 活動新增至專案](./walkthrough-images/03-addactivity.m742-sml.png)](./walkthrough-images/03-addactivity.m742.png#lightbox)
 
@@ -178,11 +178,11 @@ public class PlayQuoteActivity : Activity
 
 若要開始使用，請將新的片段新增至專案，並將其命名為**TitlesFragment**：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![將 Android 片段新增至專案](./walkthrough-images/04-addfragment.w157-sml.png)](./walkthrough-images/04-addfragment.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![將 Android 片段新增至專案](./walkthrough-images/04-addfragment.m742-sml.png)](./walkthrough-images/04-addfragment.m742.png#lightbox)
 
@@ -237,7 +237,7 @@ public class TitlesFragment : ListFragment
 
 最後一個步驟是在 `MainActivity`內顯示 `TitlesFragment`。 活動不會動態載入片段。 而是以靜態方式載入片段，方法是使用 `fragment` 元素在活動的配置檔案中宣告。 要載入的片段是藉由將 `android:name` 屬性設定為片段類別（包括類型的命名空間）來識別。 例如，若要使用 `TitlesFragment`，則 `android:name` 會設定為 [`FragmentSample.TitlesFragment`]。
 
-編輯版面配置檔案**activity_main. axml**，以下列內容取代現有的 XML：
+編輯設定檔案**activity_main axml**，以下列內容取代現有的 XML：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

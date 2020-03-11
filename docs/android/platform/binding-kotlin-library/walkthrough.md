@@ -8,10 +8,10 @@ author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
 ms.openlocfilehash: cbd7c796cd13aa45dc107bddf06ca44d6adbdf9d
-ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78291501"
 ---
 # <a name="walkthrough-bind-an-android-kotlin-library"></a>逐步解說：系結 Android Kotlin 程式庫

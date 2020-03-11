@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: HT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75487824"
 ---
 # <a name="app-linking-in-android"></a>Android 中的應用程式連結
@@ -47,7 +47,7 @@ Android 6.0 使用自動連結處理來改善這項操作。 Android 可以自�
 在 Android 6.0 中設定應用程式連結會包含兩個主要步驟：
 
 1. 為**網站 URI 新增一或多個意圖篩選器**&ndash; 在行動瀏覽器中，于 [如何處理 URL] 中按一下 [意圖篩選指南 Android]。
-2. 在 **網站上發佈*數位資產連結 JSON*檔案** &ndash; 這是上傳至網站的檔案，且由 Android 用來驗證行動應用程式與網站網域之間的關聯性。 若沒有這種情況，Android 就無法將應用程式安裝為 URI 的預設控制碼;使用者必須手動執行此動作。
+2. 在**網站上發佈*數位資產連結 JSON*** 檔案 &ndash; 這是上傳至網站的檔案，且由 Android 用來驗證行動應用程式與網站網域之間的關聯性。 若沒有這種情況，Android 就無法將應用程式安裝為 URI 的預設控制碼;使用者必須手動執行此動作。
 
 <a name="configure-intent-filter" />
 
@@ -167,7 +167,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
         -d "http://<domain1>/recipe/scalloped-potato"
     ```
 
-2. 針對安裝在指定裝置上的應用程式顯示現有的連結處理原則。 下列命令會使用下列資訊，傾印裝置上每個使用者的連結原則清單。 請在命令提示字元中輸入下列命令：
+2. 針對安裝在指定裝置上的應用程式顯示現有的連結處理原則。 下列命令會使用下列資訊，傾印裝置上每個使用者的連結原則清單。 在命令提示字元中，輸入下列命令：
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -188,7 +188,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     Status: always : 200000002
     ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南討論應用程式連結在 Android 6.0 中的運作方式。 接著會涵蓋如何設定 Android 6.0 應用程式來支援和回應應用程式連結。 同時也會討論如何在 Android 應用程式中測試應用程式連結。
 

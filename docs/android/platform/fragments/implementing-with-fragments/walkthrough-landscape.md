@@ -8,21 +8,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
 ms.openlocfilehash: 4d9ef88f39914f8fa5e578577ee9f6977c2bc88e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020272"
 ---
 # <a name="fragments-walkthrough-ndash-landscape"></a>片段逐步解說 &ndash; 橫向
 
-[片段逐步解說 &ndash; 第1部分](./walkthrough.md)示範如何在 Android 應用程式中建立及使用以電話上較小螢幕為目標的片段。 本逐步解說的下一個步驟是修改應用程式，以利用 tablet 上的額外水準空間 &ndash; 將會有一個活動一律會是播放清單（`TitlesFragment`），而 `PlayQuoteFragment` 會以動態方式新增至 r 中的活動esponse 至使用者所做的選擇：
+[片段逐步解說 &ndash; 第1部分](./walkthrough.md)示範如何在 Android 應用程式中建立及使用以電話上較小螢幕為目標的片段。 本逐步解說的下一個步驟是修改應用程式，以利用 tablet 上的額外水準空間 &ndash; 將會有一個活動一律會是播放清單（`TitlesFragment`），而 `PlayQuoteFragment` 會動態地新增至活動，以回應使用者所做的選擇：
 
-[在平板電腦上執行![應用程式](./walkthrough-landscape-images/01-tablet-screenshot-sml.png)](./walkthrough-landscape-images/01-tablet-screenshot.png#lightbox)
+[在平板電腦上執行 ![應用程式](./walkthrough-landscape-images/01-tablet-screenshot-sml.png)](./walkthrough-landscape-images/01-tablet-screenshot.png#lightbox)
 
 以橫向模式執行的電話也將受益于這項增強功能：
 
-[以橫向模式在 Android 手機上執行的![應用程式](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
+[以橫向模式在 Android 手機上執行的 ![應用程式](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
 ## <a name="updating-the-app-to-handle-landscape-orientation"></a>更新應用程式以處理橫向方向
 
@@ -34,21 +34,21 @@ ms.locfileid: "73020272"
 
 ## <a name="1-create-an-alternate-layout"></a>1. 建立替代版面配置
 
-在 Android 裝置上建立主要活動時，Android 會根據裝置的方向決定要載入的版面配置。 根據預設，Android 會提供**Resources/layout/activity_main. axml**版面配置檔案。 針對以橫向模式載入的裝置，Android 會提供**Resources/layout-land/activity_main. axml**配置檔案。 [Android 資源](/xamarin/android/app-fundamentals/resources-in-android)指南包含 android 如何決定要為應用程式載入哪些資源檔的詳細資料。
+在 Android 裝置上建立主要活動時，Android 會根據裝置的方向決定要載入的版面配置。 根據預設，Android 會提供**Resources/layout/activity_main 的 axml**設定檔案。 針對以橫向模式載入的裝置，Android 會提供**資源/配置-land/activity_main axml**配置檔案。 [Android 資源](/xamarin/android/app-fundamentals/resources-in-android)指南包含 android 如何決定要為應用程式載入哪些資源檔的詳細資料。
 
-遵循[替代版面](/xamarin/android/user-interface/android-designer/alternative-layout-views)配置指南中所述的步驟，建立以**橫向**方向為目標的替代配置。 這應該會將新的版面配置資源檔加入至專案**Resources/layout/activity_main. axml**：
+遵循[替代版面](/xamarin/android/user-interface/android-designer/alternative-layout-views)配置指南中所述的步驟，建立以**橫向**方向為目標的替代配置。 這應該會將新的版面配置資源檔加入至專案**Resources/layout/activity_main。 axml**：
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[方案總管中![替代版面配置](./walkthrough-landscape-images/02-alternate-layout.w157-sml.png)](./walkthrough-landscape-images/02-alternate-layout.w157.png#lightbox)
+[方案總管中 ![替代版面配置](./walkthrough-landscape-images/02-alternate-layout.w157-sml.png)](./walkthrough-landscape-images/02-alternate-layout.w157.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[Solution Pad 中![替代版面配置](./walkthrough-landscape-images/02-alternate-layout.m743-sml.png)](./walkthrough-landscape-images/02-alternate-layout.m743.png#lightbox)
+[Solution Pad 中 ![替代版面配置](./walkthrough-landscape-images/02-alternate-layout.m743-sml.png)](./walkthrough-landscape-images/02-alternate-layout.m743.png#lightbox)
 
 -----
 
-建立替代版面配置之後，請編輯檔案**Resources/layout-land/activity_main**的來源，使其符合此 XML：
+建立替代配置之後，請編輯檔案**資源/配置-land/activity_main axml**的來源，使其符合此 XML：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -236,6 +236,6 @@ protected override void OnCreate(Bundle savedInstanceState)
 
 這些變更完成後，請執行應用程式，將裝置旋轉為橫向模式（如有必要），然後選取 [播放]。 報價應該會顯示在與播放清單相同的畫面上：
 
-[以橫向模式在 Android 手機上執行的![應用程式](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
+[以橫向模式在 Android 手機上執行的 ![應用程式](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
-[在 Android 平板電腦上執行![應用程式](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
+[在 Android 平板電腦上執行 ![應用程式](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)

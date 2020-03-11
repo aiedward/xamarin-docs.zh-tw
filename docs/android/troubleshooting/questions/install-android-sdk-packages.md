@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2018
 ms.openlocfilehash: 24c70c2e869f59091a1519af6d1165dbea9cc467
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78292472"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>應該安裝哪一個 Android SDK 套件？

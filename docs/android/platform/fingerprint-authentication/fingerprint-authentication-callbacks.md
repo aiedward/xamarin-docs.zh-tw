@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
 ms.openlocfilehash: 8dc06740355bd95828e1a1bd8d9d15a2ef37e6b2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027538"
 ---
 # <a name="responding-to-authentication-callbacks"></a>回應驗證回呼

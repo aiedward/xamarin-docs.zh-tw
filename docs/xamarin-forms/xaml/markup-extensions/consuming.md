@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
 ms.openlocfilehash: 693dd29e59aee73a206398a8a44cc4f15e385d8d
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78293041"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78911403"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 

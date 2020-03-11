@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
 ms.openlocfilehash: 59969abae739db1d9035ec31738c39a3912f47ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027766"
 ---
 # <a name="binding-a-jar"></a>繫結 .JAR
 
 _本逐步解說提供逐步指示，說明如何從 Android 建立 Xamarin. Android JAVA 系結程式庫。JAR 檔案。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Android 社區提供許多您可能想要在應用程式中使用的 JAVA 程式庫。 這些 JAVA 程式庫通常會封裝在中。JAR （JAVA Archive）格式，但您可以封裝。在 JAVA 系結連結*庫*中將其 JAR，讓 Xamarin Android 應用程式可以使用其功能。 JAVA 系結程式庫的目的是要在中建立 Api。JAR 檔案可透過C#自動產生的程式碼包裝函式提供給程式碼。
 
@@ -33,7 +33,7 @@ Xamarin 工具可以從一個或多個輸入產生系結程式庫。JAR 檔案�
 在本指南中，我們將逐步解說建立單一系結程式庫的基本概念。JAR 檔案。 我們將示範一個範例，其中所有專案都是正確的 &ndash; 也就是不需要任何系結的自訂或偵錯工具。 
 [使用中繼資料建立](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)系結提供一個更先進的案例範例，其中系結程式不會完全自動，而且需要一些手動介入。 如需 JAVA 程式庫系結的一般總覽（包含基本程式碼範例），請參閱系結[java 程式庫](~/android/platform/binding-java-library/index.md)。 
 
-## <a name="walkthrough"></a>逐步解說
+## <a name="walkthrough"></a>逐步介紹
 
 在下列逐步解說中，我們將建立適用于[Picasso](https://square.github.io/picasso/)的系結程式庫，這是熱門的 Android。提供影像載入和快取功能的 JAR。 我們將使用下列步驟來系結**picasso-2** ，以建立可在 Xamarin Android 專案中使用的新 .net 元件： 
 
@@ -62,7 +62,7 @@ public class Picasso
 }
 ```
 
-在我們產生**picasso-2**的系結程式庫之後，我們可以從C#呼叫這些方法。 例如:
+在我們產生**picasso-2**的系結程式庫之後，我們可以從C#呼叫這些方法。 例如：
 
 ```csharp
 using Com.Squareup.Picasso;
@@ -91,7 +91,7 @@ Picasso.With (this)
 
 請確認**picasso-2**已成功新增至專案中： 
 
-[已將![Jar 新增至專案](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
+[已將 ![Jar 新增至專案](binding-a-jar-images/04-jar-added-sml.png)](binding-a-jar-images/04-jar-added.png#lightbox)
 
 當您建立 JAVA 系結程式庫專案時，您必須指定。JAR 會內嵌在系結程式庫中，或分別加以封裝。 若要這麼做，請指定下列其中一個*組建動作*： 
 
@@ -183,11 +183,11 @@ public class MainActivity : Activity
 
 編譯並執行**bindingtest shoppingcart**專案。 應用程式將會啟動，並在短暫延遲（視網路狀況而定）之後，下載並顯示類似下列螢幕擷取畫面的影像：
 
-[Bindingtest shoppingcart 執行中的![螢幕擷取畫面](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
+[Bindingtest shoppingcart 執行中的 ![螢幕擷取畫面](binding-a-jar-images/11-result-sml.png)](binding-a-jar-images/11-result.png#lightbox)
 
-恭喜您！ 您已成功地系結 JAVA 程式庫。JAR，並在您的 Xamarin Android 應用程式中使用。
+恭喜！ 您已成功地系結 JAVA 程式庫。JAR，並在您的 Xamarin Android 應用程式中使用。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本逐步解說中，我們建立了協力廠商的系結程式庫。JAR 檔案，將系結程式庫新增至最小的測試應用程式，然後執行應用程式， C#以確認我們的程式碼可以呼叫位於的 JAVA 程式碼。JAR 檔案。 
 

@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: e61be6f0189eb825c15fd75764a16706e588ebc9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020522"
 ---
 # <a name="how-content-providers-work"></a>內容提供者的工作方式
@@ -49,7 +49,7 @@ Android 使用 `ContentProviders`來提供各種系統和使用者資料的存�
 
 使用 `ContentProvider` 時所使用的主要類別如下所示：
 
-[內容提供者應用程式和取用應用程式互動的![類別圖表](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
+[內容提供者應用程式和取用應用程式互動的 ![類別圖表](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
 
 在此圖中，`ContentProvider` 會執行查詢，並註冊其他應用程式用來尋找資料的 URI。 `ContentResolver` 會做為 `ContentProvider` 的「proxy」（查詢、插入、更新和刪除方法）。 `SQLiteOpenHelper` 包含 `ContentProvider`所使用的資料，但不會直接公開給取用應用程式。
 `CursorAdapter` 會傳遞 `ContentResolver` 所傳回的資料指標，以便在 `ListView`中顯示。 `UriMatcher` 是在處理查詢時剖析 Uri 的 helper 類別。

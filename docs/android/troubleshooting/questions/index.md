@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/29/2018
 ms.openlocfilehash: 28b13951a0d681ffdb8e643667e496e0b3606628
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78293028"
 ---
 # <a name="android-frequently-asked-questions"></a>Android 常見問題

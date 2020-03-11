@@ -1,6 +1,6 @@
 ---
-title: 第 17 章的摘要。 掌控格線
-description: 使用 Xamarin 建立 Mobile Apps：第 17 章的摘要。 掌控格線
+title: 第17章的摘要。 主控方格
+description: 使用 Xamarin 建立 Mobile Apps：第17章的摘要。 主控方格
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
@@ -8,42 +8,42 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 37b5e2bbafa816de27390771ae6daa33c74f7651
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "70760633"
 ---
-# <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章的摘要。 掌控格線
+# <a name="summary-of-chapter-17-mastering-the-grid"></a>第17章的摘要。 主控方格
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 
-[ `Grid` ](xref:Xamarin.Forms.Grid)會排列成資料列和資料行的資料格的子系的功能強大的版面配置機制。 不同於類似的 HTML`table`項目，`Grid`僅適用於版面配置，而不是簡報的目的。
+[`Grid`](xref:Xamarin.Forms.Grid)是一種功能強大的版面配置機制，它會將其子系排列到儲存格的資料列和資料行。 不同于類似的 HTML `table` 元素，`Grid` 僅適用于版面配置，而不是簡報的用途。
 
-## <a name="the-basic-grid"></a>基本的方格
+## <a name="the-basic-grid"></a>基本方格
 
-`Grid` 衍生自[ `Layout<View>` ](xref:Xamarin.Forms.Layout`1)，其定義[ `Children` ](xref:Xamarin.Forms.Layout`1.Children)屬性，`Grid`繼承。 您可以填寫此 XAML 或程式碼中的集合。
+`Grid` 衍生自[`Layout<View>`](xref:Xamarin.Forms.Layout`1)，這會定義 `Grid` 繼承的[`Children`](xref:Xamarin.Forms.Layout`1.Children)屬性。 您可以在 XAML 或程式碼中填入此集合。
 
 ### <a name="the-grid-in-xaml"></a>XAML 中的方格
 
-定義`Grid`XAML 中通常開始填滿[ `RowDefinitions` ](xref:Xamarin.Forms.Grid.RowDefinitions)並[ `ColumnDefinitions` ](xref:Xamarin.Forms.Grid.ColumnDefinitions)集合`Grid`使用[ `RowDefinition`](xref:Xamarin.Forms.RowDefinition)並[ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)物件。 這是您建立的資料列數目和資料行`Grid`，及其屬性。
+XAML 中的 `Grid` 定義通常會以[`RowDefinition`](xref:Xamarin.Forms.RowDefinition)和[`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition)物件填入 `Grid` 的[`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions)和[`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions)集合。 這是您建立 `Grid`的資料列和資料行數目及其屬性的方式。
 
-`RowDefinition` 已[ `Height` ](xref:Xamarin.Forms.RowDefinition.Height)屬性並`ColumnDefinition`具有[ `Width` ](xref:Xamarin.Forms.ColumnDefinition.Width)屬性，這兩個類型[ `GridLength` ](xref:Xamarin.Forms.GridLength)，結構。
+`RowDefinition` 具有[`Height`](xref:Xamarin.Forms.RowDefinition.Height)屬性，而且 `ColumnDefinition` 具有[`Width`](xref:Xamarin.Forms.ColumnDefinition.Width)屬性，而這兩種類型都[`GridLength`](xref:Xamarin.Forms.GridLength)結構。
 
-在 XAML 中， [ `GridLengthTypeConverter` ](xref:Xamarin.Forms.GridLengthTypeConverter)轉換成的簡單的文字字串`GridLength`值。 在幕後[`GridLength`建構函式](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType))建立`GridLength`值會根據數字和類型的值[ `GridUnitType` ](xref:Xamarin.Forms.GridUnitType)，含有三個成員的列舉類型：
+在 XAML 中， [`GridLengthTypeConverter`](xref:Xamarin.Forms.GridLengthTypeConverter)會將簡單的文字字串轉換成 `GridLength` 值。 在幕後， [`GridLength`](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType))的函式會根據數位和類型[`GridUnitType`](xref:Xamarin.Forms.GridUnitType)的值（具有三個成員的列舉）來建立 `GridLength` 值：
 
-- [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; 裝置獨立單位 （必須在 XAML 中的數字） 中指定的寬度或高度
-- [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; 高度或寬度是根據儲存格內容 (在 XAML 中為"Auto") 的自動調整大小
-- [`Star`](xref:Xamarin.Forms.GridUnitType.Star) &mdash; 剩餘的高度或寬度會按比例配置 (數字 」\*"，稱為*星狀*，在 XAML 中)
+- [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; 寬度或高度是在與裝置無關的單位（XAML 中的數位）中指定
+- [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; 高度或寬度是根據資料格內容（在 XAML 中為 "Auto"）大小
+- [`Star`](xref:Xamarin.Forms.GridUnitType.Star) &mdash; 剩餘的高度或寬度會按比例分配（在 XAML 中為具有 "\*" 的數位，稱為*星號*）
 
-每一個子系`Grid`也必須要有的資料列和資料行 （明確或隱含）。 跨越資料列和資料行範圍是選擇性的。 這些所有使用指定的可繫結的附加的屬性&mdash;所定義的屬性`Grid`但設定上的子系`Grid`。 `Grid` 會定義四個靜態連結可繫結屬性：
+`Grid` 的每個子系也必須指派一個資料列和資料行（明確或隱含）。 資料列範圍和資料行範圍是選擇性的。 這些全都是使用附加的可系結屬性所指定，&mdash; 屬性是由 `Grid` 定義，但設定在 `Grid`的子系上。 `Grid` 定義四個靜態附加的可系結屬性：
 
-- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty) &mdash; 以零為起始的資料列，預設值為 0
-- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty) &mdash; 以零為起始的資料行;預設值為 0
-- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty) &mdash; 數字的資料列的子系跨越;預設值為 1
-- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) &mdash; 數字資料行的子系跨越;預設值為 1
+- [`RowProperty`](xref:Xamarin.Forms.Grid.RowProperty) &mdash; 以零為基底的資料列;預設值為0
+- [`ColumnProperty`](xref:Xamarin.Forms.Grid.ColumnProperty) &mdash; 以零為基底的資料行;預設值為0
+- [`RowSpanProperty`](xref:Xamarin.Forms.Grid.RowSpanProperty) &mdash; 子系跨越的資料列數目;預設值為1
+- [`ColumnSpanProperty`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) &mdash; 子系跨越的資料行數目;預設值為1
 
-在程式碼中，程式可以使用八個靜態方法，來設定和取得這些值：
+在程式碼中，程式可以使用八個靜態方法來設定和取得這些值：
 
 - [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) 和 [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
 - [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) 和 [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
@@ -57,53 +57,53 @@ ms.locfileid: "70760633"
 - `Grid.RowSpan`
 - `Grid.ColumnSpan`
 
-[ **SimpleGridDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo)範例示範如何建立和初始化`Grid`在 XAML 中。
+[**SimpleGridDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SimpleGridDemo)範例示範如何在 XAML 中建立和初始化 `Grid`。
 
-`Grid`繼承[`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性從`Layout`並定義兩個提供的資料列和資料行之間間距的額外屬性：
+`Grid` 會從 `Layout` 繼承[`Padding`](xref:Xamarin.Forms.Layout.Padding)屬性，並定義兩個額外的屬性，以提供資料列和資料行之間的間距：
 
-- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 預設值為 6
-- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 預設值為 6
+- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing)的預設值為6
+- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing)的預設值為6
 
-`RowDefinitions`和`ColumnDefinitions`集合不是絕對必要。 如果不存在`Grid`建立資料列和資料行`Grid`子系，並提供所有預設值`GridLength`的 「\*"（星號）。
+`RowDefinitions` 和 `ColumnDefinitions` 集合並不是絕對必要的。 如果不存在，`Grid` 會建立 `Grid` 子系的資料列和資料行，並提供所有預設 `GridLength` "\*" （星號）。
 
 ### <a name="the-grid-in-code"></a>程式碼中的方格
 
-[ **GridCodeDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo)範例示範如何建立和填入`Grid`在程式碼中。 您可以設定附加的屬性，針對每個子系，直接或間接呼叫其他`Add`這類方法[ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)所定義[Grid.IGridList<T> ](xref:Xamarin.Forms.Grid.IGridList`1)介面。
+[**GridCodeDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCodeDemo)範例會示範如何在程式碼中建立和填入 `Grid`。 您可以直接設定每個子系的附加屬性，或藉由呼叫其他 `Add` 方法（例如[IGridList<T>](xref:Xamarin.Forms.Grid.IGridList`1)介面所定義的[`Add`](xref:Xamarin.Forms.Grid.IGridList`1.Add*) ）間接設定。
 
-### <a name="the-grid-bar-chart"></a>[方格] 橫條圖
+### <a name="the-grid-bar-chart"></a>方格橫條圖
 
-[ **GridBarChart** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart)範例示範如何新增多個`BoxView`項目`Grid`使用大量[ `AddHorizontal` ](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*)方法。 根據預設，這些`BoxView`元素具有相等的寬度。 每個高度`BoxView`然後您可以控制類似於橫條圖。
+[**GridBarChart**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridBarChart)範例會示範如何使用 bulk [`AddHorizontal`](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*)方法，將多個 `BoxView` 專案新增至 `Grid`。 根據預設，這些 `BoxView` 元素的寬度相同。 然後，可以控制每個 `BoxView` 的高度，以類似橫條圖。
 
-`Grid`中**GridBarChart**範例共用`AbsoluteLayout`父一開始隱形`Frame`。 程式也會設定`TapGestureRecognizer`在每個`BoxView`使用`Frame`顯示點選軸的相關資訊。
+**GridBarChart**範例中的 `Grid` 會與一開始不可見的 `Frame`共用 `AbsoluteLayout` 父系。 此程式也會在每個 `BoxView` 上設定 `TapGestureRecognizer`，以使用 `Frame` 來顯示該攻絲列的相關資訊。
 
-### <a name="alignment-in-the-grid"></a>在方格中的對齊方式
+### <a name="alignment-in-the-grid"></a>貼齊格線
 
-[ **GridAlignment** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridAlignment)範例示範如何使用`VerticalOptions`並`HorizontalOptions`屬性，以對齊中的子系`Grid`資料格。
+[**GridAlignment**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridAlignment)範例會示範如何使用 `VerticalOptions` 和 `HorizontalOptions` 屬性來對齊 `Grid` 資料格中的子系。
 
-[ **SpacingButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SpacingButtons)範例的平均空間`Button`項目置於`Grid`資料格。
+[**SpacingButtons**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/SpacingButtons)範例會 `Button` 以 `Grid` 儲存格為中心的元素，以空格分隔。
 
-### <a name="cell-dividers-and-borders"></a>儲存格分隔和框線
+### <a name="cell-dividers-and-borders"></a>資料格分隔和框線
 
-`Grid`不包含前一頁或檔案櫃儲存格框線的繪製功能。 不過，您可以讓您自己。
+`Grid` 不包含繪製資料格分隔線或框線的功能。 不過，您可以自行建立。
 
-[ **GridCellDividers** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellDividers)示範如何定義額外的資料列和資料行，專為精簡`BoxView`模仿分隔線的項目。
+此[**GridCellDividers**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellDividers)示範如何針對精簡的 `BoxView` 專案，明確定義額外的資料列和資料行，以模仿分行。
 
-[ **GridCellBorders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellBorders)程式不會建立任何額外的資料格，但改為將對齊`BoxView`來模擬的儲存格框線的每個儲存格中的項目。
+[**GridCellBorders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridCellBorders)程式不會建立任何其他資料格，而是會對齊每個資料格中的 `BoxView` 元素，以模擬資料格框線。
 
-## <a name="almost-real-life-grid-examples"></a>幾乎真實格線範例
+## <a name="almost-real-life-grid-examples"></a>幾乎真實生活的方格範例
 
-[ **KeypadGrid** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/KeypadGrid)範例會使用`Grid`顯示數字鍵台：
+[**KeypadGrid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/KeypadGrid)範例會使用 `Grid` 來顯示鍵盤：
 
-[![三重的螢幕擷取畫面的數字鍵台方格](images/ch17fg12-small.png "數字鍵台方格")](images/ch17fg12-large.png#lightbox "字鍵台方格")
+[![鍵盤格線的三向螢幕擷取畫面](images/ch17fg12-small.png "鍵盤方格")](images/ch17fg12-large.png#lightbox "鍵盤方格")
 
 ### <a name="responding-to-orientation-changes"></a>回應方向變更
 
-`Grid`有助於建構回應方向變更程式。 [ **GridRgbSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders)範例會示範一種技術，第二個資料列是直向導向電話與橫向手機的第二個資料行之間移動項目。
+`Grid` 可以協助結構程式來回應方向變更。 [**GridRgbSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders)範例示範一種技術，可在直向電話的第二列與橫向行動電話的第二個數據行之間移動元素。
 
-程式初始化`Slider`一系列的 0 到 255 及十六進位顯示滑桿的值會使用資料繫結項目。 因為`Slider`點，以及.NET 格式字串的十六進位僅適用於具有整數，值則浮動[ `DoubleToIntConvert` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs)類別[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)程式庫可協助。
+程式會將 `Slider` 元素初始化為0到255的範圍，並使用資料系結以十六進位顯示滑杆的值。 因為 `Slider` 值是浮點數，而且十六進位的 .NET 格式化字串僅適用于整數，所以[**FormsBook 工具**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫中的[`DoubleToIntConvert`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs)類別會有説明。
 
 ## <a name="related-links"></a>相關連結
 
-- [第 17 章全文檢索 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)
-- [第 17 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+- [第17章的全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)
+- [第17章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
 - [格線](~/xamarin-forms/user-interface/layouts/grid.md)

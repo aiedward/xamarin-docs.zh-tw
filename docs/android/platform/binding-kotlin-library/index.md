@@ -8,10 +8,10 @@ author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
 ms.openlocfilehash: ec7d154b0d7fcb055bd398089e142fe8b1d9f60e
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78292885"
 ---
 # <a name="bind-android-kotlin-libraries"></a>系結 Android Kotlin 程式庫

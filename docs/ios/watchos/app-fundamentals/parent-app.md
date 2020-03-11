@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487759"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910862"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>在 Xamarin 中使用 watchOS 父應用程式
 

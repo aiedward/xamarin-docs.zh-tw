@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2018
 ms.openlocfilehash: b004fbf121374a2bb3bf5d85f45d8cae293573bf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027307"
 ---
 # <a name="specialized-fragment-classes"></a>特製的片段類別
@@ -27,7 +27,7 @@ ms.locfileid: "73027307"
 
 `ListFragment` 在 `ListActivity`的概念和功能中非常相似;它是在片段中裝載 `ListView` 的包裝函式。 下圖顯示在平板電腦和手機上執行的 `ListFragment`：
 
-[在平板電腦和手機上![ListFragment 螢幕擷取畫面](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
+[在平板電腦和手機上 ![ListFragment 螢幕擷取畫面](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
 
 ### <a name="binding-data-with-the-listadapter"></a>使用 ListAdapter 系結資料
 
@@ -80,7 +80,7 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 *DialogFragment*是用來在片段內顯示對話方塊物件的片段，此片段會浮動在使用中視窗的頂端。 其目的是要取代受控對話 Api （從 Android 3.0 開始）。 下列螢幕擷取畫面顯示 `DialogFragment`的範例：
 
-[顯示 [新增車輛 EditBox] DialogFragment 的![螢幕擷取畫面](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
+[顯示 [新增車輛 EditBox] DialogFragment 的 ![螢幕擷取畫面](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
 
 `DialogFragment` 可確保片段和對話方塊之間的狀態保持一致。 對話物件的所有互動和控制都應該透過 `DialogFragment` API 進行，而不是使用對話方塊物件的直接呼叫來進行。 `DialogFragment` API 會為每個實例提供一個用來顯示片段的 `Show()` 方法。 有兩種方式可以清除片段：
 
@@ -98,7 +98,7 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 
 下列螢幕擷取畫面顯示具有 `TextView` 和兩個 `Button`s 的簡單 `DialogFragment`：
 
-[具有 TextView 和兩個按鈕的![範例 DialogFragment](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
+[具有 TextView 和兩個按鈕的 ![範例 DialogFragment](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
 
 `TextView` 會顯示使用者在 `DialogFragment`中按下一個按鈕的次數，而按一下 [其他] 按鈕將會關閉該片段。 `DialogFragment` 的程式碼為：
 
@@ -180,7 +180,7 @@ public class AlertDialogFragment : DialogFragment
 為了協助管理喜好設定，片段 API 提供了 `PreferenceFragment` 子類別。 `PreferenceFragment` 類似于[PreferenceActivity](xref:Android.Preferences.PreferenceActivity) &ndash; 它會在片段中顯示使用者的喜好設定階層。 當使用者與喜好設定互動時，系統會自動將其儲存至[SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)。
 在 Android 3.0 或更高版本的應用程式中，使用 `PreferenceFragment` 來處理應用程式中的喜好設定。 下圖顯示 `PreferenceFragment`的範例：
 
-[使用內嵌、對話方塊和啟動喜好設定![範例 PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
+[使用內嵌、對話方塊和啟動喜好設定 ![範例 PreferencesFragment](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
 
 ### <a name="create-a-preference-fragment-from-a-resource"></a>從資源建立喜好設定片段
 
@@ -287,4 +287,4 @@ public class MyActivityWithPreferences : Activity
 
 `MetaDataAttribute` 宣告 `PreferenceFragment` 將用來擴大喜好設定階層的 XML 資源檔。 如果未提供 `MetatDataAttribute`，則會在執行時間擲回例外狀況。 當此程式碼執行時，`PreferenceFragment` 會如下列螢幕擷取畫面所示：
 
-[顯示 PreferenceFragment 範例應用程式的![螢幕擷取畫面](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)
+[顯示 PreferenceFragment 範例應用程式的 ![螢幕擷取畫面](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)

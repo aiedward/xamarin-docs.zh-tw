@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: e955d4f96724bd5682e7d0e6db2c36fa1b7810f4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027424"
 ---
 # <a name="fingerprint-authentication-guidance"></a>指紋驗證指引
@@ -27,7 +27,7 @@ ms.locfileid: "73027424"
     
 4. **通知使用者**&ndash; 應用程式應該會向使用者顯示指紋掃描器作用中並等候觸控或滑動的通知。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 指紋驗證是讓 Xamarin Android 應用程式快速驗證使用者的絕佳方式，可讓使用者更輕鬆地與機密功能互動，例如應用程式內購買。 本指南討論在您的 Xamarin. Android 應用程式中納入 Android 6.0 指紋 API 所需的概念和程式碼。
 

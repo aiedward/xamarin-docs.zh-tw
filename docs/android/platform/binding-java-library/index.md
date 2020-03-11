@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/01/2017
 ms.openlocfilehash: d40a23076ec8f405e57ec40de47ec9ad2261d85d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027611"
 ---
 # <a name="binding-a-java-library"></a>繫結 Java 程式庫
 
 _Android 社區有許多您可能想要在應用程式中使用的 JAVA 程式庫;本指南說明如何藉由建立系結程式庫，將 JAVA 程式庫整合到您的 Xamarin Android 應用程式中。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 適用于 Android 的協力廠商程式庫生態系統很龐大。 因此，使用現有的 Android 程式庫通常是合理的，而不是建立新的。 Xamarin 提供兩種使用這些程式庫的方式：
 
@@ -103,7 +103,7 @@ API 檔應該是來自 JAVA8、JAVA7 或 JAVA6 SDK 的預設 doclet （兩者都
 
 在系結 JAVA 程式庫的過程中，可能需要在 Xamarin. Android 系結專案中包含 **。** 當包裝的 JAVA 程式碼執行時，Xamarin 將無法進行 JNI 呼叫，且錯誤訊息_UnsatisfiedLinkError：找不到原生方法：_ 將會出現在應用程式的 logcat 中。
 
-修正此問題的方法是以手動方式載入 **。因此**，您可以呼叫 `Java.Lang.JavaSystem.LoadLibrary`的程式庫。 例如，假設 Xamarin 專案有共用程式庫**libpocketsphinx_jni。因此**包含在系結專案中，且組建動作為**EmbeddedNativeLibrary**，下列程式碼片段（在使用共用程式庫之前執行）會載入 **。因此，** 程式庫：
+修正此問題的方法是以手動方式載入 **。因此**，您可以呼叫 `Java.Lang.JavaSystem.LoadLibrary`的程式庫。 例如，假設 Xamarin Android 專案有共用程式庫**libpocketsphinx_jni。因此**，包含在具有**EmbeddedNativeLibrary**組建動作的系結專案中，下列程式碼片段（在使用共用程式庫之前執行）將會載入 **。因此**，程式庫：
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");

@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 5e36a66949c55a85d84cbbb17fa4d276e3af1eee
-ms.sourcegitcommit: acbaedbcb78bb5629d4a32e3b00f11540c93c216
+ms.openlocfilehash: 2dea16633181d6b1120a5f9a90da685df66e5451
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "78291744"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031007"
 ---
 # <a name="advanced-manual-real-world-example"></a>Advanced （手動）真實世界範例
 
@@ -124,7 +124,10 @@ Done.
 
 您會發現我們已將 `-scope build/Headers` 引數傳遞至目標 Sharpie。 因為 C 和目標 C 程式庫必須 `#import` 或 `#include` 其他的標頭檔，這些是程式庫的執行詳細資料，而不是您想要系結的 API，所以 `-scope` 引數會指示目標 Sharpie 忽略 `-scope` 目錄中某處檔案中未定義的任何 API。
 
-您會發現，`-scope` 引數通常是對完全實作為程式庫而言是選擇性的，但是明確提供它並不會有任何傷害。
+您會發現，`-scope` 引數通常是對完全實作為程式庫而言是選擇性的，但是明確提供它並不會有任何傷害。 
+
+> [!TIP]
+> 如果程式庫的標頭匯入任何 iOS SDK 標頭（例如 `#import <Foundation.h>`），則您必須設定範圍，否則目標 Sharpie 會針對已匯入的 iOS SDK 標頭產生系結定義，因而產生龐大的系結，可能會在編譯系結專案時產生錯誤。 
 
 此外，我們也指定 `-c -Ibuild/headers`。 首先，`-c` 引數會指示目標 Sharpie 停止解讀命令列引數，並將任何後續的引數_直接傳遞給 clang 編譯器_。 因此，`-Ibuild/Headers` 是 clang 編譯器引數，會指示 clang 搜尋包含在 `build/Headers`之下的，也就是 POP 標頭的上線位置。 如果沒有這個引數，clang 就不知道要在哪裡找出 `POP.h` `#import`的位置。 _幾乎所有的「問題」，使用目標 Sharpie 包括向下找出要傳遞至 clang 的內容_。
 

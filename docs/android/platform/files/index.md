@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
 ms.openlocfilehash: 1bb0fae73a1e3647cdc0e3266c7b44ac04fcc1ee
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020419"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78914212"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>使用 Xamarin 的檔案儲存和存取
 
@@ -64,7 +64,7 @@ Android 應用程式的常見需求是操作檔案 &ndash; 儲存圖片、下載
 
 為了充分發揮程式碼共用，Xamarin. Android 應用程式（或以 Xamarin. Android 為目標的表單應用程式）應該使用[`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*)方法。 在 Xamarin 中，這個方法會傳回與 `Android.Content.Context.FilesDir`相同位置之目錄的字串。 這個方法會採用列舉，`System.Environment.SpecialFolder`，用來識別代表作業系統所使用之特殊資料夾路徑的一組列舉常數。 並非所有的 `System.Environment.SpecialFolder` 值都會對應到 Xamarin. Android 上的有效目錄。 下表描述給定的 `System.Environment.SpecialFolder`值可預期的路徑：
 
-| SpecialFolder | 路徑  |
+| System.Environment.SpecialFolder | Path  |
 |----------------------|---|
 | `ApplicationData` | **_內部\_儲存體_/.config** |
 | `Desktop` | **_內部\_儲存體_/Desktop** |

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/02/2018
 ms.openlocfilehash: 9c9b9f5a205a2eef7db9f27e8d09b10ce65a4318
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027048"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>調整適用於 Android Designer 的 JAVA 記憶體參數
@@ -30,9 +30,9 @@ ms.locfileid: "73027048"
 
 - **AndroidDesignerJAVARendererPermSize** -XX： MaxPermSize
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在 Visual Studio 中開啟您的方案。
+1. 在 Visual Studio 中開啟方案。
 
 2. 在方案總管中逐一選取每一個 Android 專案，然後按一下每個專案上的 [[顯示所有](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))檔案] 兩次。 您可以略過不包含任何 `.axml` 設定檔案的專案。 此步驟可確保每個專案目錄都包含一個 `.csproj.user` 檔案。
 
@@ -62,7 +62,7 @@ ms.locfileid: "73027048"
 
 8. 重新開機 Visual Studio，然後重新開啟您的解決方案。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中開啟您的方案，以確保方案目錄包含 `.userprefs` 檔案。
 

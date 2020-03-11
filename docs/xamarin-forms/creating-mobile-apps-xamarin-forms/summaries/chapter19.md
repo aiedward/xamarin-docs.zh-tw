@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: bffbd2dec4a8494723597ba6e0f0af69e57f3718
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73032859"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第19章的摘要。 集合視圖
@@ -99,7 +99,7 @@ MVVM 應用程式通常會使用 `ListView` 來顯示可選取的物件集合。
 
 然後，呼叫 `DataTemplate` 物件上的[`SetValue`](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object))和[`SetBinding`](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) ，將值與 `Cell` 屬性產生關聯，或在參考 `Cell` 集合中專案屬性的 `ItemsSource` 屬性上設定資料系結。 這會在[**TextCellListCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode)範例中示範。
 
-當 `ListView`顯示每個專案時，就會從範本中建立一個小型視覺化樹狀結構，並在專案和此視覺化樹狀結構中元素的屬性之間建立資料系結。 您可以藉由為 `ListView`的[`ItemAppearing`](xref:Xamarin.Forms.ListView.ItemAppearing)和[`ItemDisappearing`](xref:Xamarin.Forms.ListView.ItemDisappearing)事件安裝處理常式，或使用替代的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Func{System.Object}))函式（使用每次專案的視覺化樹狀結構所呼叫的函式），來瞭解此流程建立。
+當 `ListView`顯示每個專案時，就會從範本中建立一個小型視覺化樹狀結構，並在專案和此視覺化樹狀結構中元素的屬性之間建立資料系結。 您可以藉由為 `ListView`的[`ItemAppearing`](xref:Xamarin.Forms.ListView.ItemAppearing)和[`ItemDisappearing`](xref:Xamarin.Forms.ListView.ItemDisappearing)事件安裝處理常式，或使用替代的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Func{System.Object}))函式，以使用每次必須建立專案的視覺化樹狀結構時所呼叫的函數，來瞭解此程式。
 
 [**TextCellListXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListXaml)完全以 XAML 顯示功能完全相同的程式。 `DataTemplate` 標記會設定為 `ListView`的 `ItemTemplate` 屬性，然後 `TextCell` 會設定為 `DataTemplate`。 集合中專案的屬性系結會直接設定在[`Text`](xref:Xamarin.Forms.TextCell.Text)上，並[`Detail`](xref:Xamarin.Forms.TextCell.Detail) `TextCell`的屬性。
 
@@ -151,11 +151,11 @@ MVVM 應用程式通常會使用 `ListView` 來顯示可選取的物件集合。
 
 `MenuItem` 定義五個屬性：
 
-- 類型為 `string` 的 [`Text`](xref:Xamarin.Forms.MenuItem.Text)
-- 類型為 `FileImageSource` 的 [`Icon`](xref:Xamarin.Forms.MenuItem.Icon)
-- 類型為 `bool` 的 [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive)
-- 類型為 `ICommand` 的 [`Command`](xref:Xamarin.Forms.MenuItem.Command)
-- 類型為 `object` 的 [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)
+- 類型為 [ 的 `Text`](xref:Xamarin.Forms.MenuItem.Text)`string`
+- 類型為 [ 的 `Icon`](xref:Xamarin.Forms.MenuItem.Icon)`FileImageSource`
+- 類型為 [ 的 `IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive)`bool`
+- 類型為 [ 的 `Command`](xref:Xamarin.Forms.MenuItem.Command)`ICommand`
+- 類型為 [ 的 `CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)`object`
 
 [`Command`] 和 [`CommandParameter`] 屬性工作表示每個專案的 ViewModel 都包含可執行所需功能表命令的方法。 在非 MVVM 案例中，`MenuItem` 也會定義[`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked)事件。
 
@@ -184,8 +184,8 @@ MVVM 應用程式通常會使用 `ListView` 來顯示可選取的物件集合。
 
 - 類型[`TableIntent`](xref:Xamarin.Forms.TableIntent)的[`Intent`](xref:Xamarin.Forms.TableView.Intent) ，列舉
 - 類型[`TableRoot`](xref:Xamarin.Forms.TableRoot)的[`Root`](xref:Xamarin.Forms.TableView.Root) ，`TableView` 的 content 屬性
-- 類型為 `int` 的 [`RowHeight`](xref:Xamarin.Forms.TableView.RowHeight)
-- 類型為 `bool` 的 [`HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows)
+- 類型為 [ 的 `RowHeight`](xref:Xamarin.Forms.TableView.RowHeight)`int`
+- 類型為 [ 的 `HasUnevenRows`](xref:Xamarin.Forms.TableView.HasUnevenRows)`bool`
 
 `TableIntent` 列舉會指出您想要如何使用 `TableView`：
 

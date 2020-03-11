@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 69415b59bbd376330454302981e3216c236a16bb
-ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/28/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "72980927"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第3章的摘要。 更深入的文字
@@ -36,7 +36,7 @@ ms.locfileid: "72980927"
 
 將 [ [`VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) ] 屬性設定為 [`TextAlignment` 列舉] 的成員，將文字放在 `Label`所佔用區域的頂端、中央或下方。
 
-將[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)屬性設定為[`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)列舉的成員（[`WordWrap`](xref:Xamarin.Forms.LineBreakMode.WordWrap)、 [`CharacterWrap`](xref:Xamarin.Forms.LineBreakMode.CharacterWrap)、 [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap)、 [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode.HeadTruncation)、 [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode.MiddleTruncation)或[`TailTruncation`](xref:Xamarin.Forms.LineBreakMode.TailTruncation)），以控制多個段落中的線條或遭到截斷。
+將 [ [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) ] 屬性設為[`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)列舉的成員（[`WordWrap`](xref:Xamarin.Forms.LineBreakMode.WordWrap)、 [`CharacterWrap`](xref:Xamarin.Forms.LineBreakMode.CharacterWrap)、 [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap)、 [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode.HeadTruncation)、 [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode.MiddleTruncation)或[`TailTruncation`](xref:Xamarin.Forms.LineBreakMode.TailTruncation)），以控制段落中的多行如何中斷或被截斷。
 
 ## <a name="text-and-background-colors"></a>文字和背景色彩
 
@@ -64,7 +64,7 @@ ms.locfileid: "72980927"
 - 具有透明度的整數 RGB 值[`Color.FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32))
 - 使用透明度 `double` HSL 值的[`Color.FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))
 - `uint` 值的[`Color.FromUint`](xref:Xamarin.Forms.Color.FromUint(System.UInt32)) ，計算方式為（B + 256 \* （G + 256 \* （R + 256 \* a）））
-- [`Color.FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String)) ，格式為 "#AARRGGBB" 或 "#RRGGBB" 或 "#ARGB" 或 "#RGB" 的十六進位數位 `string` 格式，其中每個字母都對應到 Alpha、紅色、綠色和藍色聲道的十六進位數位。 這個方法主要用於 XAML 色彩轉換，如 [xaml 與程式碼第7章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md)所述。
+- [`Color.FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String)) ，格式為 "#AARRGGBB" 或 "#RRGGBB" 或 "#ARGB" 或 "#RGB" 的十六進位數位 `string` 格式，其中每個字母都對應到 Alpha、紅色、綠色和藍色聲道的十六進位數位。 這個方法主要用於 XAML 色彩轉換，如 < [xaml 與程式碼第7章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter07.md)所述。
 
 一旦建立之後，`Color` 值就不變。 您可以從下列屬性取得色彩的特性：
 
@@ -119,7 +119,7 @@ ms.locfileid: "72980927"
 
 將 `Label` 的[`FontSize`](xref:Xamarin.Forms.Label.FontSize)屬性設定為 `double`，以指定字型的近似高度。 如需以智慧方式選擇字型大小的詳細資訊，請參閱[第5章，處理大小](chapter05.md)。
 
-或者，您也可以取得數個預設平臺相關字型大小的其中一種。 靜態[`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) [方法和多](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element))載都會根據[`NamedSize`](xref:Xamarin.Forms.NamedSize)列舉的成員（[`Default`](xref:Xamarin.Forms.NamedSize.Default)、 [`Micro`](xref:Xamarin.Forms.NamedSize.Micro)、 [`Small`](xref:Xamarin.Forms.NamedSize.Small)，[傳回適用于平臺的 `double` 字型大小值`Medium`](xref:Xamarin.Forms.NamedSize.Medium)，並[`Large`](xref:Xamarin.Forms.NamedSize.Large)）。 從 `Medium` 成員傳回的值，與 `Default`不一定相同。 [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)範例會顯示具有這些已命名大小的文字。
+或者，您也可以取得數個預設平臺相關字型大小的其中一種。 靜態[`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) [方法和多](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element))載都會根據[`NamedSize`](xref:Xamarin.Forms.NamedSize)列舉的成員（[`Default`](xref:Xamarin.Forms.NamedSize.Default)、 [`Micro`](xref:Xamarin.Forms.NamedSize.Micro)、 [`Small`](xref:Xamarin.Forms.NamedSize.Small)、 [`Medium`](xref:Xamarin.Forms.NamedSize.Medium)和[`Large`](xref:Xamarin.Forms.NamedSize.Large)）傳回適用于平臺的 `double` 字型大小值。 從 `Medium` 成員傳回的值，與 `Default`不一定相同。 [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes)範例會顯示具有這些已命名大小的文字。
 
 將 `Label` 的[`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes)屬性設定為這些[`FontAttributes`](xref:Xamarin.Forms.FontAttributes)列舉、 [`Bold`](xref:Xamarin.Forms.FontAttributes.Bold)、 [`Italic`](xref:Xamarin.Forms.FontAttributes.Italic)或[`None`](xref:Xamarin.Forms.FontAttributes.None)的成員。 您可以使用C#位 or 運算子來結合 `Bold` 和 `Italic` 成員。
 
@@ -140,5 +140,5 @@ ms.locfileid: "72980927"
 - [第3章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)
 - [第3章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
 - [第 3 F#章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/FS)
-- [標籤](~/xamarin-forms/user-interface/text/label.md)
+- [Label](~/xamarin-forms/user-interface/text/label.md)
 - [使用色彩](~/xamarin-forms/user-interface/colors.md)

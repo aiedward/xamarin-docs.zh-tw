@@ -9,29 +9,29 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
 ms.openlocfilehash: b601fc37cc75dcd43c3688de8d302f0a47a06b35
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027412"
 ---
 # <a name="implementing-fragments---walkthrough"></a>執行片段-逐步解說
 
 _片段是獨立的模組化元件，可協助處理以各種螢幕大小為目標裝置之 Android 應用程式的複雜性。本文逐步解說如何在開發 Xamarin Android 應用程式時建立和使用片段。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 在本節中，您將逐步解說如何在 Xamarin Android 應用程式中建立和使用片段。 此應用程式將會在清單中 William Shakespeare，以顯示數個播放的標題。 當使用者按下播放的標題時，應用程式將會顯示在不同活動中播放的報價：
 
-[在 Android 手機上以直向模式執行的![應用程式](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
+[在 Android 手機上以直向模式執行的 ![應用程式](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
 當電話旋轉為橫向模式時，應用程式的外觀將會變更：播放和報價的清單會出現在相同的活動中。 選取 [播放] 時，報價會顯示在相同的活動中：
 
-[以橫向模式在 Android 手機上執行的![應用程式](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
+[以橫向模式在 Android 手機上執行的 ![應用程式](./images/intro-screenshot-phone-land-sml.png)](./images/intro-screenshot-phone-land.png#lightbox)
 
 最後，如果應用程式正在平板電腦上執行：
 
-[在 Android 平板電腦上執行![應用程式](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
+[在 Android 平板電腦上執行 ![應用程式](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
 
 這個範例應用程式可以使用片段和[替代版面](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources)配置，輕鬆地配合不同的外型規格和方向，以最少的程式碼變更來調整。
 

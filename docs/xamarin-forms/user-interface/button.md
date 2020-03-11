@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
 ms.openlocfilehash: f82d590213076f349b21ebdee2832f2bf474d2f2
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78912069"
 ---
 # <a name="xamarinforms-button"></a>[Xamarin] 按鈕

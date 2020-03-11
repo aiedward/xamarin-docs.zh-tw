@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/12/2017
 ms.openlocfilehash: c32d666da1347b947c55209ed7c7ec31a97a70e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027303"
 ---
 # <a name="providing-backwards-compatibility-with-the-android-support-package"></a>提供與 Android 支援套件的回溯相容性
@@ -36,7 +36,7 @@ Android 支援套件不會自動新增至 Xamarin Android 應用程式。 Xamari
 
 - &ndash; 繼承自 `Android.App.Fragment` 的類別**更新命名空間**，現在必須從 `Android.Support.V4.App.Fragment` 繼承。 移除原始程式碼檔案頂端的 using 語句 "`using Android.App;`"，並將它取代為 "`using Android.Support.V4.App`"。 
 
-- **使用 SupportFragmentManager** &ndash; `Android.Support.V4.App.FragmentActivity` 會公開必須用來取得 `FragmentManager` 參考的 `SupportingFragmentManager` 屬性。 例如: 
+- **使用 SupportFragmentManager** &ndash; `Android.Support.V4.App.FragmentActivity` 會公開必須用來取得 `FragmentManager` 參考的 `SupportingFragmentManager` 屬性。 例如： 
 
 ```csharp
 FragmentTransaction fragmentTx = this.SupportingFragmentManager.BeginTransaction();

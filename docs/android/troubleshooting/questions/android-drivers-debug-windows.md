@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 21fd8eff64d374e52e64194524a8c096cdf4d90e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027033"
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>在 Windows 上對 Android 進行偵錯需要哪些 USB 裝置？
@@ -22,9 +22,9 @@ ms.locfileid: "73027033"
 
 其他裝置則需要裝置製造商特別發佈的 USB 驅動程式。 本指南包含一些最常見製造商的連結： [https://developer.android.com/tools/extras/oem-usb.html](https://developer.android.com/tools/extras/oem-usb.html)
 
-## <a name="alternatives"></a>其他
+## <a name="alternatives"></a>替代方案
 
-視 manfacturer 而定，可能很難以追蹤所需的確切 USB 驅動程式。 測試在 Windows 中開發之 Android 應用程式的一些替代方案，包括使用 Android 模擬器或使用外部測試服務。 其中包括：
+視 manfacturer 而定，可能很難以追蹤所需的確切 USB 驅動程式。 測試在 Windows 中開發之 Android 應用程式的一些替代方案，包括使用 Android 模擬器或使用外部測試服務。 其中包含：
 
 - [App Center 測試](https://docs.microsoft.com/appcenter/test-cloud/)-雲端測試服務會在數百個實際的 Android 裝置上執行。
 

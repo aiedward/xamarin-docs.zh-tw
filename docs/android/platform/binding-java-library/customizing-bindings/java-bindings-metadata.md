@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75487785"
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
@@ -269,7 +269,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 請注意，setter 和 getter 方法仍會由系結產生器建立。
 
-### <a name="sender"></a>sender
+### <a name="sender"></a>傳送者
 
 指定當方法對應至事件時，方法的哪一個參數應該是 `sender` 參數。 此值可以是 `true` 或 `false`。 例如：
 
@@ -281,7 +281,7 @@ NavigationManager.2DSignNextManueverEventArgs
     name="sender">true</ attr>
 ```
 
-### <a name="visibility"></a>可視性
+### <a name="visibility"></a>可見性
 
 這個屬性是用來變更類別、方法或屬性的可見度。 例如，您可能需要升級 `protected` JAVA 方法，使其對應C#的包裝函式 `public`：
 
@@ -332,7 +332,7 @@ NavigationManager.2DSignNextManueverEventArgs
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文討論了 Xamarin 如何使用中繼資料來轉換來自*Google* *AOSP 格式*的 API 定義。 在涵蓋可能使用*中繼資料*的變更之後，它會檢查重新命名成員時所遇到的限制，並提供支援的 xml 屬性清單，描述每個屬性的使用時機。
 

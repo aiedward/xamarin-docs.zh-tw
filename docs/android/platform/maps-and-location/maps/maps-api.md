@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2018
 ms.openlocfilehash: adcfb1457742d343f87a602885566107cf327e2d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027156"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>在您的應用程式中使用 Google Maps API
@@ -140,7 +140,7 @@ Android Maps API 是 Google Play Services 的一部分提供。
 </manifest>
 ```
 
-除了要求**androidmanifest.xml**許可權，應用程式也必須針對 `ACCESS_COARSE_LOCATION` 和 `ACCESS_FINE_LOCATION` 許可權執行執行時間許可權檢查。 如需執行執行時間許可權檢查的詳細資訊，請參閱 [Xamarin 許可權](~/android/app-fundamentals/permissions.md)指南。
+除了要求**androidmanifest.xml**許可權，應用程式也必須針對 `ACCESS_COARSE_LOCATION` 和 `ACCESS_FINE_LOCATION` 許可權執行執行時間許可權檢查。 如需執行執行時間許可權檢查的詳細資訊，請參閱 < [Xamarin 許可權](~/android/app-fundamentals/permissions.md)指南。
 
 ### <a name="a-namecreate-emulator-with-google-api-create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />使用 Google Api 建立模擬器
 
@@ -335,7 +335,7 @@ Android 地圖服務 API 提供 API，可在地圖上繪製下列專案：
 
 - **線條、多邊形和圓形**-這些是允許活動將圖形新增至地圖的 api。
 
-#### <a name="markers"></a>Markers
+#### <a name="markers"></a>標記
 
 Maps API 提供一個[標記](https://developers.google.com/android/reference/com/google/android/gms/maps/model/Marker)類別，它會封裝地圖上單一位置的所有相關資料。 根據預設，標記類別會使用 Google Maps 所提供的標準圖示。 您可以自訂標記的外觀，以及回應使用者按下的動作。
 
@@ -450,7 +450,7 @@ rectOptions.Add(new LatLng(37.35, -122.0)); // close the polyline - this makes a
 googleMap.AddPolyline(rectOptions);
 ```
 
-##### <a name="circles"></a>圓圈
+##### <a name="circles"></a>圓形
 
 建立圓形的方式是先具現化[CircleOption](https://developers.google.com/android/reference/com/google/android/gms/maps/model/CircleOptions)物件，它會在 metres 中指定圓形的中心和半徑。 藉由呼叫[GoogleMap AddCircle](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMap.html#addCircle(com.google.android.gms.maps.model.CircleOptions))，在地圖上繪製圓形。
 下列程式碼片段顯示如何繪製圓形：

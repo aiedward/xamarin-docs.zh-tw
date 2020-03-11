@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
 ms.openlocfilehash: 1438c012608b367c21ebcc401c058b186b917f53
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027808"
 ---
 # <a name="working-with-the-android-manifest"></a>使用 Android 資訊清單
@@ -78,7 +78,7 @@ public class MyActivity : Activity
 ### <a name="activity-title-bar"></a>活動標題列
 
 根據預設，Android 會在應用程式執行時提供標題列。 用於此的值為[`/manifest/application/activity/@android:label`](https://developer.android.com/guide/topics/manifest/activity-element.html#label)。 在大部分情況下，此值會與您的類別名稱不同。 若要在標題列上指定應用程式的標籤，請使用[`Label`](xref:Android.App.ActivityAttribute.Label)  屬性。
-例如: 
+例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App")]
@@ -96,7 +96,7 @@ public class MyActivity : Activity
 
 ### <a name="launchable-from-application-chooser"></a>從應用程式選擇器可啟動
 
-根據預設，您的活動不會顯示在 Android 的應用程式啟動器畫面中。 這是因為您的應用程式中可能有多個活動，而且您不想要每個活動都有一個圖示。 若要指定應該從應用程式啟動器可啟動哪一個，請使用[`MainLauncher`](xref:Android.App.ActivityAttribute.MainLauncher)  屬性。 例如: 
+根據預設，您的活動不會顯示在 Android 的應用程式啟動器畫面中。 這是因為您的應用程式中可能有多個活動，而且您不想要每個活動都有一個圖示。 若要指定應該從應用程式啟動器可啟動哪一個，請使用[`MainLauncher`](xref:Android.App.ActivityAttribute.MainLauncher)  屬性。 例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true)] 
@@ -119,7 +119,7 @@ public class MyActivity : Activity
 
 ### <a name="activity-icon"></a>活動圖示
 
-根據預設，系統會為您的活動提供預設的啟動器圖示。 若要使用自訂圖示，請先將您的 **.png**新增至**資源/可繪製**，將其組建動作設定為**AndroidResource**，然後使用[`Icon`](xref:Android.App.ActivityAttribute.Icon)屬性來指定要使用的圖示。 例如: 
+根據預設，系統會為您的活動提供預設的啟動器圖示。 若要使用自訂圖示，請先將您的 **.png**新增至**資源/可繪製**，將其組建動作設定為**AndroidResource**，然後使用[`Icon`](xref:Android.App.ActivityAttribute.Icon)屬性來指定要使用的圖示。 例如： 
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 
@@ -148,7 +148,7 @@ public class MyActivity : Activity
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-Debug build 會自動設定一些許可權，讓您更容易進行 debug （例如 `INTERNET` 和 `READ_EXTERNAL_STORAGE`） &ndash; 這些設定只會在產生的**obj/debug/android/androidmanifest.xml**中設定，而且在必要的中不會顯示為已啟用**許可權**設定。 
+Debug build 會自動設定一些許可權，讓您更輕鬆地進行 debug （例如 `INTERNET` 和 `READ_EXTERNAL_STORAGE`） &ndash; 這些設定只會在產生的**obj/debug/android/androidmanifest.xml**中設定，而且在必要的**許可權**設定中不會顯示為已啟用。 
 
 例如，如果您在**obj/Debug/android/androidmanifest.xml**上檢查產生的資訊清單檔，您可能會看到下列新增的許可權元素： 
 
@@ -157,16 +157,16 @@ Debug build 會自動設定一些許可權，讓您更容易進行 debug （例�
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-在資訊清單的發行組建版本中（在**obj/Debug/android/androidmanifest.xml**），*不*會自動設定這些許可權。 如果您發現切換至發行組建會導致您的應用程式遺失 Debug 組建中可用的許可權，請確認您已在應用程式的**必要許可權**設定中明確設定此許可權（請參閱**build > Android**Visual Studio for Mac 中的應用程式;請參閱 Visual Studio 中 **> Android 資訊清單的屬性**）。 
+在資訊清單的發行組建版本中（在**obj/Debug/android/androidmanifest.xml**），*不*會自動設定這些許可權。 如果您發現切換至發行組建導致您的應用程式失去偵錯工具所提供的許可權，請確認您已在應用程式的**必要許可權**設定中明確設定此許可權（> 請參閱 Visual Studio for Mac Visual Studio 中的 < Android**應用程式**的**屬性 >** ）。 
 
-## <a name="advanced-features"></a>Advanced 功能
+## <a name="advanced-features"></a>進階功能
 
 ### <a name="intent-actions-and-features"></a>意圖動作和功能
 
 Android 資訊清單提供一種方式來描述活動的功能。 這會透過[意圖](https://developer.android.com/guide/topics/manifest/intent-filter-element.html)和[`[IntentFilter]`](xref:Android.App.IntentFilterAttribute)來完成
 自訂屬性。 您可以使用[`IntentFilter`](xref:Android.App.IntentFilterAttribute#ctor*)來指定哪些動作適合您的活動
 和哪些分類適用于[`Categories`](xref:Android.App.IntentFilterAttribute.Categories)
-屬性。 至少必須提供一個活動（這就是在此函式中提供活動的原因）。 `[IntentFilter]` 可以多次提供，而且每個使用都會在 `<activity/>`內產生個別的 `<intent-filter/>` 元素。 例如:
+屬性中找到的值而定。 至少必須提供一個活動（這就是在此函式中提供活動的原因）。 `[IntentFilter]` 可以多次提供，而且每個使用都會在 `<activity/>`內產生個別的 `<intent-filter/>` 元素。 例如：
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

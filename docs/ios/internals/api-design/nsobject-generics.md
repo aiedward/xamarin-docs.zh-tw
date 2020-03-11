@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 279fcac1611038613bf442e1b766fda45dd5a429
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73022369"
 ---
 # <a name="generic-subclasses-of-nsobject-in-xamarinios"></a>在 Xamarin 中 NSObject 的一般子類別
@@ -117,7 +117,7 @@ class Generic<T> : NSObject where T : NSObject
 
 發生這種情況的原因是目標-C 沒有泛型型別的概念，而且無法指定要建立的確切泛型型別。
 
-藉由建立泛型型別的特殊子類別，可以解決這個問題。 例如:
+藉由建立泛型型別的特殊子類別，可以解決這個問題。 例如：
 
 ```csharp
 class Generic<T> : NSObject where T : NSObject

@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: a724a21dfffead307ca3d65d5ff134cf2d7c90db
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "78912326"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)

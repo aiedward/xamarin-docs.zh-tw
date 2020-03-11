@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/05/2016
 ms.openlocfilehash: 8f96fcc4aadcd8f082d55dc568b2517f048edaf2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027199"
 ---
 # <a name="porting-java-to-c-for-xamarinandroid"></a>將 JAVA 移植C#到 Xamarin. Android

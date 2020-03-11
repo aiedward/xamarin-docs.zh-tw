@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
 ms.openlocfilehash: 96b0d6a00c7825939b1f89ed63e3e5559ca4ef59
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020474"
 ---
 # <a name="external-storage"></a>外部儲存體
@@ -50,7 +50,7 @@ ms.locfileid: "73020474"
 
 `GetExternalFilesDir()` 的參數是指定_應用程式目錄_的字串。 這是一個目錄，目的是要為檔案的邏輯組織提供標準位置。 字串值可透過 `Android.OS.Environment` 類別上的常數來取得：
 
-| `Android.OS.Environment` | Directory |
+| `Android.OS.Environment` | 目錄 |
 |-|-|
 | DirectoryAlarms | **_私人\_外部\_儲存體_/Alarms** |
 | DirectoryDcim | **_私人\_外部\_儲存體_/DCIM** |
@@ -137,13 +137,13 @@ Android 會將外部存放裝置視為_危險許可權_，通常會要求使用�
 > [!NOTE]
 > 如果使用者授與 `WRITE_EXTERNAL_STORAGE`，則也會隱含地授與 `READ_EXTERNAL_STORAGE`。 不需要在**androidmanifest.xml**中要求這兩個許可權。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 您也可以使用 [**方案屬性**] 的 [ **Android 資訊清單**] 索引標籤來新增許可權：
 
 ![方案總管-Visual Studio 的必要許可權](./images/required-permissions.w157.png)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 您也可以使用 [**方案屬性] pad**的 [ **Android 資訊清單**] 索引標籤來新增許可權：
 
@@ -169,7 +169,7 @@ $ adb shell pm revoke com.companyname.app android.permission.WRITE_EXTERNAL_STOR
 
 ## <a name="deleting-files"></a>刪除檔案
 
-任何標準C# api 都可以用來從外部存放裝置（例如[`System.IO.File.Delete`](xref:System.IO.File.Delete*)）刪除檔案。 您也可以使用 JAVA Api，而犧牲程式碼可攜性。 例如:
+任何標準C# api 都可以用來從外部存放裝置（例如[`System.IO.File.Delete`](xref:System.IO.File.Delete*)）刪除檔案。 您也可以使用 JAVA Api，而犧牲程式碼可攜性。 例如：
 
 ```csharp
 System.IO.File.Delete("/storage/emulated/0/Android/data/com.companyname.app/files/count.txt");
