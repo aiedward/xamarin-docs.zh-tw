@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 4731be58c1fadae0bba6768570ecfd181b071dd2
-ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
+ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78953361"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79088937"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 使用者介面概觀
 

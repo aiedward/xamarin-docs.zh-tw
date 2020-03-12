@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 13f5c594543934e14295615517e3de01a98a69a5
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 3d9531bbaa38a0a0a9bb42d22c79a63fda75c449
+ms.sourcegitcommit: 926f9a44065b41c7d74794a94bee66b61e903bf2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "78292626"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79134011"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的分鏡腳本簡介
 
@@ -187,6 +187,10 @@ if (callHistoryController != null) {
     [![](images/add-storyboard2.png "Adding storyboard")](images/add-storyboard2.png#lightbox)
 
 2. 以滑鼠右鍵按一下分鏡腳本檔案，然後選取 [**開啟方式] > Xcode Interface Builder**在 Xcode 中開啟它。
+
+    *如果您想要依預設使用 Xcode 介面產生器，您可以在 [**專案 > iOS**] 底下的 [Visual Studio for Mac 喜好設定] 中選擇它：*
+
+![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
 
 3. 在 Xcode 中，開啟 [程式庫] （**透過 View > Show library**或*Shift + Command + L*）來顯示可加入至分鏡腳本的物件清單。 將物件從清單拖曳至分鏡腳本，以將 `Navigation Controller` 新增至分鏡腳本。 根據預設，`Navigation Controller` 會提供兩個畫面;右邊的畫面是以較簡單的視圖取代的 `TableViewController`，因此可以藉由按一下此視圖並按下 Delete 鍵來移除。
 
