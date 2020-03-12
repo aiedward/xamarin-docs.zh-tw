@@ -8,19 +8,19 @@ author: davidortinau
 ms.author: daortin
 ms.date: 11/16/2017
 ms.openlocfilehash: 8685be4bb1cc45ff04dc8d9f7d8e64e7b1483b60
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027031"
 ---
 # <a name="where-can-i-set-my-android-sdk-locations"></a>在哪裡可以設定 Android SDK 的位置？
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中，流覽至 [工具] [ **> 選項] > [Xamarin > Android 設定**]，以查看並設定 Android SDK 位置：
 
-[喜好設定中的![範例位置] 索引標籤](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
+[喜好設定中的 ![範例位置 索引標籤](android-sdk-location-images/win/01-locations-sml.png)](android-sdk-location-images/win/01-locations.png#lightbox)
 
 每個路徑的預設位置如下所示：
 
@@ -39,13 +39,13 @@ ms.locfileid: "73027031"
 請注意，NDK 的版本號碼可能會有所不同。 例如，而不是**android-ndk-r13b**，它可能是較舊的版本，例如**android-ndk-r10e**。
 
 若要設定 Android SDK 位置，請在 [ **Android SDK 位置**] 方塊中輸入 Android SDK 目錄的完整路徑。 您可以流覽至 [檔案瀏覽器] 中的 Android SDK 位置，從網址列複製路徑，並將此路徑貼入 [ **Android SDK 位置**] 方塊中。
-例如，如果您的 Android SDK 位置是在**C：\\使用者\\username\\AppData\\本機\\Android\\SDK**，請清除 [ **Android SDK 位置**] 方塊中的舊路徑，貼上此路徑，然後按一下 **[確定]** 。
+例如，如果您的 Android SDK 位置是在**C：\\使用者\\username\\AppData\\Local\\Android\\SDK**，請清除 [ **Android SDK 位置**] 方塊中的舊路徑，貼上此路徑，然後按一下 **[確定]** 。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，流覽至 [喜好設定] [ **> 專案] > [SDK 位置] > Android**。 在 [ **Android** ] 頁面中，按一下 [**位置**] 索引標籤，以查看並設定 SDK 位置：
 
-[喜好設定中的![範例位置] 索引標籤](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
+[喜好設定中的 ![範例位置 索引標籤](android-sdk-location-images/mac/01-locations-sml.png)](android-sdk-location-images/mac/01-locations.png#lightbox)
 
 每個路徑的預設位置如下所示：
 
