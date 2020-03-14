@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 3ad3661ff50ad7f4be95421de57dc5017392a59f
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 38052eee1b71ace9795f5c16bdf714f9538e353d
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78291743"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303472"
 ---
 # <a name="platform-features"></a>平台功能
 
@@ -41,6 +41,10 @@ Android 3.0 引進了片段，示範如何針對在手機和平板電腦上找�
 ## <a name="app-linking"></a>[應用程式連結](~/android/platform/app-linking.md)
 
 本指南將討論 Android 6.0 如何支援_應用程式連結_，這項技術可讓行動應用程式回應網站上的 url。 它將討論如何在 Android 6.0 應用程式中執行應用連結，以及如何設定網站來授與許可權給行動應用程式，以處理網域的應用程式連結。
+
+## <a name="androidx"></a>[AndroidX](~/android/platform/androidx.md)
+
+本文概述如何在您的 Xamarin Android 專案中使用 AndroidX，並提供檔的連結，說明如何將您的應用程式從 Android 支援程式庫遷移至 AndroidX。
 
 ## <a name="android-10"></a>[Android 10](~/android/platform/android-10.md)
 

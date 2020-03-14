@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: 3c754acc3502d7aa2c47264e734187ffe060c029
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915781"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304720"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>使用 Xamarin 中的 tvOS 導覽和焦點
 

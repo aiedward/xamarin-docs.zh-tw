@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78918830"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304993"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac 中的資料系結和索引鍵-值編碼
 
@@ -70,7 +70,7 @@ namespace MacDatabinding
 
 首先，`[Register("PersonModel")]` 屬性會註冊類別，並將其公開至目標-C。 然後，類別必須繼承自 `NSObject` （或繼承自 `NSObject`的子類別），這會新增數個基底方法，讓類別 KVC 符合規範。 接下來，`[Export("Name")]` 屬性會公開 `Name` 屬性，並定義稍後用來透過 KVC 和 KVO 技術來存取屬性的金鑰值。
 
-最後，若要能夠以索引鍵/值觀察屬性值的變更，存取子必須在 `WillChangeValue` 和 `DidChangeValue` 方法呼叫（指定與 `Export` 屬性相同的索引鍵）中，將變更的值換行。  例如，
+最後，若要能夠以索引鍵/值觀察屬性值的變更，存取子必須在 `WillChangeValue` 和 `DidChangeValue` 方法呼叫（指定與 `Export` 屬性相同的索引鍵）中，將變更的值換行。  例如：
 
 ```csharp
 set {
@@ -159,7 +159,7 @@ Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 
 ### <a name="observing-value-changes"></a>觀察值變更
 
-使用索引鍵/值觀察（KVO），您可以將觀察者附加至 KVC 相容類別的特定索引鍵，並在每次修改該索引鍵的值時收到通知（使用 KVC 技術或直接在程式碼C#中存取指定的屬性）。 例如，
+使用索引鍵/值觀察（KVO），您可以將觀察者附加至 KVC 相容類別的特定索引鍵，並在每次修改該索引鍵的值時收到通知（使用 KVC 技術或直接在程式碼C#中存取指定的屬性）。 例如：
 
 ```csharp
 // Watch for the name value changing

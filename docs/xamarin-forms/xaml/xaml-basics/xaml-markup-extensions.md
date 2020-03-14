@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/27/2018
 ms.openlocfilehash: 89e2026ff16a9614234d6ee4bfa4df620cf58b56
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78917678"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304454"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 標記延伸
 
@@ -105,7 +105,7 @@ _XAML 標記延伸是 XAML 中的一項重要功能，可讓您將屬性設定�
 </ContentPage>
 ```
 
-現在，您可以將各種類型的物件和值加入至資源字典。 這些類型必須是可具現化。 例如，它們不能是抽象類別。 這些類型也必須有公用無參數的函式。 每個專案都需要以 `x:Key` 屬性指定的字典索引鍵。 例如，
+現在，您可以將各種類型的物件和值加入至資源字典。 這些類型必須是可具現化。 例如，它們不能是抽象類別。 這些類型也必須有公用無參數的函式。 每個專案都需要以 `x:Key` 屬性指定的字典索引鍵。 例如：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

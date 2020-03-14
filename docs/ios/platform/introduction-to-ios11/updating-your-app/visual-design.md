@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
 ms.openlocfilehash: e5a61af4cd8a09df3ffddb74658f646aa8edfa1f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032075"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304755"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>IOS 11 中的視覺化設計更新
 
@@ -51,7 +51,7 @@ iOS 11 可讓您更輕鬆地將搜尋控制器直接新增至導覽列。 一旦
 NavigationItem.SearchController = searchController;
 ```
 
-[使用搜尋列![大型導覽標題](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
+[使用搜尋列 ![大型導覽標題](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
 視您應用程式的功能而定，您可能會想要在使用者滾動清單時隱藏搜尋列。 您可以使用 `HidesSearchBarWhenScrolling` 屬性來進行調整。
 

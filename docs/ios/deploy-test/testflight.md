@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78917546"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304202"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 散發 Xamarin.iOS 應用程式
 
@@ -22,7 +22,7 @@ Beta 測試是軟體開發週期不可或缺的一部分，且有許多跨平台
 
 TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能透過 [iTunes Connect](https://itunesconnect.apple.com/) 存取。 它目前可供 iOS 8.0 應用程式和更新版本使用。 TestFlight 可同時讓內部和外部使用者進行 Beta 測試，且由於會對外部使用者進行 Beta 應用程式審查，因此能在發佈至 App Store 時，使最終審查的程序變得更加輕鬆。
 
-在此之前，二進位檔需在 Visual Studio for Mac 內產生，並上傳至 TestFlightApp 網站以散發給測試人員。 新的程序具有許多改進功能，可讓您在 App Store 中推出高品質並經過充分測試的應用程式。 例如，
+在此之前，二進位檔需在 Visual Studio for Mac 內產生，並上傳至 TestFlightApp 網站以散發給測試人員。 新的程序具有許多改進功能，可讓您在 App Store 中推出高品質並經過充分測試的應用程式。 例如：
 
 - 針對外部測試所進行的 Beta 應用程式審查，可確保最終 App Store 審查的成功機率更高，因為兩者都需要遵循 Apple 的指導方針。
 - 在上傳之前，必須向 iTunes Connect 註冊應用程式。 這可確保佈建設定檔、名稱與憑證皆能完全相符。

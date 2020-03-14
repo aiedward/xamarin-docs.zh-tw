@@ -1,5 +1,5 @@
 ---
-title: 驗證與授權
+title: 驗證和授權
 description: 本章說明 eShopOnContainers mobile 應用程式如何對容器化微服務執行驗證和授權。
 ms.prod: xamarin
 ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
@@ -8,13 +8,13 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
 ms.openlocfilehash: 528ccd66cc013f83752d93251cb9714115b29819
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915287"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305182"
 ---
-# <a name="authentication-and-authorization"></a>驗證與授權
+# <a name="authentication-and-authorization"></a>驗證和授權
 
 驗證是從使用者取得身分識別認證（例如名稱和密碼），以及向授權單位驗證那些認證的程式。 如果認證有效，則提交認證的實體會被視為已驗證的身分識別。 驗證身分識別之後，授權程式會判斷該身分識別是否可存取指定的資源。
 
@@ -210,7 +210,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 - 隱含。 此流程已針對以瀏覽器為基礎的應用程式優化，而且應該用於僅供使用者驗證，或用於驗證和存取權杖要求。 所有權杖都是透過瀏覽器傳輸，因此不允許重新整理權杖等 advanced 功能。
 - 授權碼。 此流程可讓您在後通道上抓取權杖，而不是瀏覽器前端通道，同時也支援用戶端驗證。
-- 混合式。 此流程是隱含和授權程式碼授與類型的組合。 身分識別權杖會透過瀏覽器通道傳輸，並包含已簽署的通訊協定回應以及其他成品，例如授權碼。 成功驗證回應之後，應該使用後端通道來抓取存取和重新整理權杖。
+- 混合： 此流程是隱含和授權程式碼授與類型的組合。 身分識別權杖會透過瀏覽器通道傳輸，並包含已簽署的通訊協定回應以及其他成品，例如授權碼。 成功驗證回應之後，應該使用後端通道來抓取存取和重新整理權杖。
 
 > [!TIP]
 > 使用混合式驗證流程。 混合式驗證流程可減少適用于瀏覽器通道的各種攻擊，而且是建議的流程，適用于想要取得存取權杖（且可能會重新整理權杖）的原生應用程式。

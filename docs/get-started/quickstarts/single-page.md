@@ -10,11 +10,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78911742"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304300"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>建立單頁 Xamarin.Forms 應用程式
 
@@ -32,7 +32,7 @@ ms.locfileid: "78911742"
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>Prerequisites
 
 - 已安裝**使用 .NET 進行行動開發**工作負載的 Visual Studio 2019 (最新版本)。
 - C# 知識。
@@ -186,7 +186,7 @@ ms.locfileid: "78911742"
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>Prerequisites
 
 - 已安裝**使用 .NET 進行行動開發**工作負載的 Visual Studio 2017。
 - C# 知識。
@@ -336,7 +336,7 @@ ms.locfileid: "78911742"
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>Prerequisites
 
 - 已安裝 iOS 和 Android 平台支援的 Visual Studio for Mac (最新版本)。
 - Xcode (最新版本)。

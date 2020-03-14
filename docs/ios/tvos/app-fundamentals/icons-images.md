@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915774"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304391"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>在 Xamarin 中使用 tvOS 圖示和影像
 
@@ -38,7 +38,7 @@ ms.locfileid: "78915774"
 
 啟動映射不是 ads 或藝術運算式的機會，它們只是為了讓您的應用程式快速啟動並可供使用的印象。
 
-|啟動影像大小|注意事項|
+|啟動影像大小|注意|
 |---|---|
 |1920x1080px<br>|僅限非多層的 .png 檔案|
 
@@ -187,7 +187,7 @@ Apple 提供下列建議來建立您的應用程式圖示：
 
 您可以將最上層映射當做單一靜態 `.png` 或 `.lsr` 檔案提供（請參閱[建立分層映射](#Creating-Layered-Images)），或在執行時間動態建立為可設定焦點的專案的單一資料列（請參閱下方的[動態主要貨位內容](#Dynamic-Top-Shelf-Content)）。
 
-|主要貨位影像大小|注意事項|
+|主要貨位影像大小|注意|
 |---|---|
 |1920x720px|靜態 .png 或 lsr 檔案|
 
@@ -301,7 +301,7 @@ Apple 針對捲軸的橫幅提供下列建議：
 
 如上所述，所有 tvOS 應用程式都需要[啟動映射](#Launch-Image)和[應用程式圖示](#App-Icons)。 本節涵蓋在資產目錄中設定 tvOS 應用程式專案之後，如何為其選取 [啟動映射] 和 [應用程式] 圖示。
 
-請執行下列動作：
+執行下列動作：
 
 1. 在 **方案總管**中，按兩下 `Info.plist` 將其開啟以進行編輯： 
 

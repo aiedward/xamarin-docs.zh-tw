@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 08fb22627ab6b40c94c17d94321ed0bac60beedd
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915236"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305175"
 ---
 # <a name="dependency-injection"></a>相依性插入
 
@@ -117,7 +117,7 @@ _container.Register<ProfileViewModel>();
 
 <a name="resolution" />
 
-## <a name="resolution"></a>解決方式
+## <a name="resolution"></a>解決方案
 
 註冊型別之後，可以將它解析或插入為相依性。 當類型已解析且容器需要建立新的實例時，它會將任何相依性插入實例。
 
@@ -163,7 +163,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > 當處置容器時，會處置註冊為單次個體的類型。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 相依性插入可將具象的類型與依賴這些類型的程式碼分離。 它通常會使用容器來保存介面與抽象類別型之間的註冊和對應清單，以及用來執行或擴充這些類型的實體類型。
 

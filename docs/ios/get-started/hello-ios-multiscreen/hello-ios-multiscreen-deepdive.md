@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78918121"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304629"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS 多重畫面 – 深度剖析
 
@@ -41,7 +41,7 @@ MVC 模式很實用，因為它提供 GUI 應用程式之不同組件間的邏�
 > [!NOTE]
 > MVC 模式大致上類似於 ASP.NET 網頁或 WPF 應用程式的結構。 在這些範例中，檢視是實際上負責描述 UI 的元件，而且對應至 ASP.NET 中的 ASPX (HTML) 網頁，或對應至 WPF 應用程式中的 XAML。 控制器是負責管理檢視的元件，對應至 ASP.NET 或 WPF 中的程式碼後置。
 
-### <a name="model"></a>型號
+### <a name="model"></a>模型
 
 模型物件通常是要顯示於檢視或輸入到檢視之資料的應用程式專用表示法。 模型通常是鬆散定義的，例如，在 **Phoneword_iOS** 應用程式中，電話號碼的清單 (顯示為字串清單) 即為模型。 如果我們正在建置跨平台應用程式，則可選擇在 iOS 和 Android 應用程式之間共用 **PhonewordTranslator** 程式碼。 我們也可以將該共用程式碼視為模型。
 
@@ -193,7 +193,7 @@ Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包
 - **資料表檢視控制器**：`CallHistoryController` 是一個資料表檢視控制器。 資料表檢視控制器包含資料表檢視，這是 iOS 中最常見的版面配置與資料顯示工具。 資料表已超出本指南的範圍。 如需資料表檢視控制器的詳細資訊，請參閱[使用資料表和資料格](~/ios/user-interface/controls/tables/index.md)指南。
 - **分鏡腳本識別碼**：設定分鏡腳本識別碼會在 Objective-C 中建立檢視控制器類別，其中包含適用於分鏡腳本中檢視控制器的程式碼後置。 我們使用分鏡腳本識別碼來尋找 Objective-C 類別，並將分鏡腳本中的檢視控制器具現化。 如需有關分鏡腳本識別碼的詳細資訊，請參閱[分鏡腳本簡介](~/ios/user-interface/storyboards/index.md)指南。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 恭喜您完成第一個多重畫面的 iOS 應用程式！
 
@@ -205,4 +205,4 @@ Phoneword 應用程式引入本指南未涵蓋的數個概念。 這些概念包
 
 - [Hello, iOS (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) \(英文\)
 - [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) \(英文\)
-- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action) \(英文\)
+- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action)

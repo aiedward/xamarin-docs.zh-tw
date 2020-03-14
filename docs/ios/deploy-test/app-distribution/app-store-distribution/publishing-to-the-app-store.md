@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 3803d7e14b161a7c166bcae37e3d9f46b7637984
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 822f2ae57241cd51f9e9c4eb2b63c75d30867d83
+ms.sourcegitcommit: c83b55f60ece20e9163b3e587130250fdf113a16
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026642"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79190326"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>將 Xamarin.iOS 應用程式發佈到 App Store
 
@@ -54,7 +54,7 @@ ms.locfileid: "73026642"
 若要建立應用程式識別碼，並選取任何所需的權利，請瀏覽 [Apple Developer 入口網站](https://developer.apple.com/account/)，並遵循下列步驟：
 
 1. 在 [憑證、識別碼與設定檔] 區段中選取 [識別碼] > [應用程式識別碼]。
-2. 按一下 [+] 按鈕，並為新應用程式提供**名稱**與**套件組合識別碼**。
+2. 按一下 [ **]+** 按鈕，並為新應用程式提供**名稱**與**套件組合識別碼**。
 3. 捲動至畫面底部並選取您 Xamarin.iOS 應用程式所需的所有**應用程式服務**。 應用程式服務進一步詳述於[使用 Xamarin.iOS 中的功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南。
 4. 按一下 [繼續] 按鈕，並遵循畫面上的指示來建立新的應用程式識別碼。
 
@@ -89,18 +89,18 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 ## <a name="update-the-release-build-configuration"></a>更新發行組建組態
 
-新的 Xamarin.iOS 專案會自動設定 [偵錯] 和 [發行] 組建組態。 若要適當設定 [發行] 組建，請遵循下列步驟：
+新的 Xamarin iOS 專案會自動設定 [ **Debug** ] 和 [**發行**]_組建_設定。 若要適當設定 [發行] 組建，請遵循下列步驟：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 從 [Solution Pad] 中開啟 **Info.plist**。 選取 [手動佈建]。 儲存並關閉檔案。
 2. 以滑鼠右鍵按一下 [Solution Pad] 中的 [專案名稱]，選取 [選項]，然後巡覽至 [iOS 組建] 索引標籤。
 3. 將 [組態] 設定為 [發行]，並將 [平台] 設定為 [iPhone]。
 4. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本] 清單中進行選取。 否則，請將此值保留為 [預設]。
-5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 在某些情況下，例如使用某些協力廠商程式庫時，可能需要將此值設定為 [不要連結]，以確保不會移除所需的程式碼。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
+5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 使用 [**不要連結**] 選項可能會導致 Apple 拒絕應用程式，因為在 Xamarin 中出現非公用的 ios api，而該元件會與 [**僅連結 Framework sdk** ] 選項連結。 **Link all**應謹慎使用，因為它會從專案中的所有元件（包括協力廠商程式庫）中去除程式碼，而且可以去除協力廠商程式庫只能透過反映（因為連結器無法偵測到）所使用的程式碼，因為它會執行靜態程式碼分析，以判斷所使用的是哪個程式庫程式碼。 請小心使用**連結**，因為您可能必須手動保留一些類別和（或）方法，以避免因為遺漏程式碼而導致執行時間失敗。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
 6. 核取 [最佳化 PNG 影像]，進一步減少您的應用程式大小。
 7. 因為偵錯會使組建產生不必要的大小，所以建議「不要」啟用。
-8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 **32/64 位元平台考量**文件中的[啟用 Xamarin.iOS 應用程式的 64 位元組建](~/cross-platform/macios/32-and-64/index.md)一節。
 9. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
 10. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收] 類型與 [國際化] 設定。
 
@@ -121,16 +121,16 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 15. 按一下 [確定] 儲存您對專案屬性進行的變更。
 
-# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
+# <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
 1. 請確定 Visual Studio 2019 已[配對到 Mac 組建主機](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 以滑鼠右鍵按一下 [方案總管] 中的 [專案名稱]，並選取 [屬性]。
 3. 瀏覽至 [iOS 組建] 索引標籤，並將 [組態] 設定為 [發行]，同時將 [平台] 設定為 [iPhone]。
 4. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本] 清單中進行選取。 否則，請將此值保留為 [預設]。
-5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 在某些情況下，例如使用某些協力廠商程式庫時，可能需要將此值設定為 [不要連結]，以確保不會移除所需的程式碼。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
+5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 使用 [**不要連結**] 選項可能會導致 Apple 拒絕應用程式，因為在 Xamarin 中出現非公用的 ios api，而該元件會與 [**僅連結 Framework sdk** ] 選項連結。 **所有連結**都應該謹慎使用，因為它會從專案中的所有元件中去除程式碼、包括協力廠商程式庫，並可去除協力廠商程式庫只能透過反映（因為連結器無法偵測到）所使用的程式碼，因為它會執行靜態程式碼分析，以判斷所使用的是哪個程式庫程式碼。 請小心使用**連結**，因為您可能必須手動保留一些類別和（或）方法，以避免因為遺漏程式碼而導致執行時間失敗。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
 6. 核取 [最佳化 PNG 影像]，進一步減少您的應用程式大小。
 7. 因為偵錯會使組建產生不必要的大小，所以建議不要啟用。
-8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 **32/64 位元平台考量**文件中的[啟用 Xamarin.iOS 應用程式的 64 位元組建](~/cross-platform/macios/32-and-64/index.md)一節。
 9. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
 10. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收] 類型與 [國際化] 設定。
 
@@ -150,16 +150,16 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 14. 儲存組建組態並關閉它。
 
-# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+# <a name="visual-studio-2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
 1. 確定 Visual Studio 2017 已[與 Mac 組建主機配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. 以滑鼠右鍵按一下 [方案總管] 中的 [專案名稱]，並選取 [屬性]。
 3. 瀏覽至 [iOS 組建] 索引標籤，並將 [組態] 設定為 [發行]，同時將 [平台] 設定為 [iPhone]。
 4. 若要使用特定的 iOS SDK 建置，請從 [SDK 版本] 清單中進行選取。 否則，請將此值保留為 [預設]。
-5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 在某些情況下，例如使用某些協力廠商程式庫時，可能需要將此值設定為 [不要連結]，以確保不會移除所需的程式碼。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
+5. 連結可藉由移除未使用的程式碼，減少應用程式的整體大小。 在大部分情況下，[連結器行為] 應該設定為預設值 [僅連結 Framework SDK]。 使用 [**不要連結**] 選項可能會導致 Apple 拒絕應用程式，因為在 Xamarin 中出現非公用的 ios api，而該元件會與 [**僅連結 Framework sdk** ] 選項連結。 **所有連結**都應該謹慎使用，因為它會從專案中的所有元件中去除程式碼、包括協力廠商程式庫，並可去除協力廠商程式庫只能透過反映（因為連結器無法偵測到）所使用的程式碼，因為它會執行靜態程式碼分析，以判斷所使用的是哪個程式庫程式碼。 請小心使用**連結**，因為您可能必須手動保留一些類別和（或）方法，以避免因為遺漏程式碼而導致執行時間失敗。 如需詳細資訊，請參閱[連結 Xamarin.iOS 應用程式](~/ios/deploy-test/linker.md)指南。
 6. 核取 [最佳化 PNG 影像]，進一步減少您的應用程式大小。
 7. 因為偵錯會使組建產生不必要的大小，所以建議不要啟用。
-8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 [32/64 位元平台考量](~/cross-platform/macios/32-and-64/index.md)文件中的**啟用 Xamarin.iOS 應用程式的 64 位元組建**一節。
+8. 針對 iOS 11，請選取支援 **ARM64** 的其中一個裝置架構。 如需為 64 位元 iOS 裝置進行建置的詳細資訊，請參閱 **32/64 位元平台考量**文件中的[啟用 Xamarin.iOS 應用程式的 64 位元組建](~/cross-platform/macios/32-and-64/index.md)一節。
 9. 您可能想要使用 **LLVM** 編譯器來建置較小且更快速的程式碼。 不過，此選項會增加編譯時間。
 10. 根據您的應用程式需求，也可以考慮調整要使用的 [記憶體回收] 類型與 [國際化] 設定。
 
@@ -202,7 +202,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 在正確設定您的組建設定且 iTunes Connect 正在等待您的提交之後，您現在可以建置您的應用程式，並將它提交給 Apple。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在 Visual Studio for Mac 中，選取 [發行] 組建組態及要為其建置的裝置 (不是模擬器)。
 
@@ -216,15 +216,15 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
     > [!NOTE]
     > 根據預設，[封存] 檢視只會顯示已開啟方案的封存。 若要查看所有具有封存的方案，請按一下 [顯示所有封存] 核取方塊。 最好是保留舊的封存，以便在必要時，可以使用它們包含的偵錯資訊將當機報告符號化。
 
-4. 選取 [App Store] 散發通道。 按 [ **下一步**]。
+4. 選取 [App Store] 散發通道。 按 [下一步]。
 
-5. 選取 [**上傳**] 做為目的地。 按 [ **下一步**]。
+5. 選取 [**上傳**] 做為目的地。 按 [下一步]。
 
-6. 在 [佈建設定檔] 視窗中，選取您的簽署身分識別、應用程式和佈建設定檔。 按 [ **下一步**]。
+6. 在 [佈建設定檔] 視窗中，選取您的簽署身分識別、應用程式和佈建設定檔。 按 [下一步]。
 
     ![[布建設定檔] 頁面的螢幕擷取畫面，其中顯示有效的簽署身分識別、應用程式和布建設定檔選取專案。](publishing-to-the-app-store-images/provProfileSelect-mac.png "[布建設定檔嚮導] 頁面的螢幕擷取畫面，其中已選取有效的簽署身分識別、應用程式和布建設定檔。")
 
-7. 在 [ **App Store Connect 資訊**] 視窗中，從功能表中選取 [Apple ID username]，然後輸入[應用程式特定的密碼](https://support.apple.com/ht204397)。 按 [ **下一步**]。
+7. 在 [ **App Store Connect 資訊**] 視窗中，從功能表中選取 [Apple ID username]，然後輸入[應用程式特定的密碼](https://support.apple.com/ht204397)。 按 [下一步]。
 
     ![[App Store] [連線資訊] [wizard] 頁面的螢幕擷取畫面，其中顯示已選取的 Apple ID 使用者名稱。](publishing-to-the-app-store-images/connectInfo-mac.png "[App Store] [連線資訊] [wizard] 頁面的螢幕擷取畫面，其中顯示已選取的 Apple ID 使用者名稱。")
 
@@ -237,7 +237,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
     >
     > 如需這項錯誤的因應措施，請查看 [Xamarin 論壇中的這篇文章](https://forums.xamarin.com/discussion/40388/disallowed-paths-itunesmetadata-plist-found-at-when-submitting-to-app-store/p1)。
 
-# <a name="visual-studio-2019tabwindows"></a>[Visual Studio 2019](#tab/windows)
+# <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/windows)
 
 > [!NOTE]
 > Visual Studio 2019 16.3 版和更新版本中支援發佈至 App Store。
@@ -263,7 +263,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
     ![快顯視窗的螢幕擷取畫面，以輸入您的 Apple ID 和應用程式特定密碼。](publishing-to-the-app-store-images/connectInfo-win.png "快顯視窗的螢幕擷取畫面，以輸入您的 Apple ID 和應用程式特定密碼。")
 
-# <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
+# <a name="visual-studio-2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
 > [!NOTE]
 > Visual Studio 2017 不支援在 Visual Studio for Mac 和 Visual Studio 2019 中找到的完整發行工作流程。
@@ -328,7 +328,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 ![等待審核](publishing-to-the-app-store-images/image21.png "等待審核")
 
-## <a name="tips-and-tricks"></a>秘訣和訣竅
+## <a name="tips-and-tricks"></a>秘訣與技巧
 
 ### <a name="customize-the-ipa-location"></a>自訂 .ipa 位置
 
@@ -336,7 +336,7 @@ iOS 會使用佈建設定檔來控制特定應用程式組建的部署方式。 
 
 新屬性有數個可能的使用方式。 例如，若要將 .ipa 檔案輸出至舊的預設目錄 (如 Xamarin.iOS 9.6 和較舊版本)，您可以使用下列其中一種方法來將 `IpaPackageDir` 屬性設定為 `$(OutputPath)`。 兩種方法都與所有 Unified API Xamarin.iOS 組建相容，包括 IDE 組建以及使用 **msbuild** 或 **mdtool** 的命令列組建：
 
-- 第一種選擇是在 **MSBuild** 檔案的 `<PropertyGroup>` 項目內設定 `IpaPackageDir` 屬性。 例如，您可以將下列 `<PropertyGroup>` 新增至 iOS 應用程式專案 .csproj 檔案的底部 (在結尾的 `</Project>` 標籤之前)：
+- 第一種選擇是在 `IpaPackageDir`MSBuild`<PropertyGroup>` 檔案的 **元素內設定** 屬性。 例如，您可以將下列 `<PropertyGroup>` 新增至 iOS 應用程式專案 .csproj 檔案的底部 (在結尾的 `</Project>` 標籤之前)：
 
     ```xml
     <PropertyGroup>
@@ -381,7 +381,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 建立與封存散發組建後，即可準備將您的應用程式提交至 iTunes Connect。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文描述如何設定組建，並提交 iOS 應用程式以在 App Store 上發行。
 

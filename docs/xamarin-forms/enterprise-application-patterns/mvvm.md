@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: d6c9b74c9abc1a2c493c31699b52969a7d129429
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915271"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305266"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>模型視圖-ViewModel 模式
 
@@ -68,7 +68,7 @@ MVVM 模式中有三個核心元件：模型、視圖和視圖模型。 每個�
 
 針對集合，會提供易記的 `ObservableCollection<T>`。 這個集合會執行集合變更通知，讓開發人員不必在集合上實作為 `INotifyCollectionChanged` 介面。
 
-### <a name="model"></a>型號
+### <a name="model"></a>模型
 
 模型類別是封裝應用程式資料的非視覺類別。 因此，您可以將模型視為代表應用程式的領域模型，這通常會包含資料模型以及商務和驗證邏輯。 模型物件的範例包括資料傳輸物件（Dto）、簡單的 CLR 物件（Poco），以及產生的實體和 proxy 物件。
 
@@ -358,7 +358,7 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 如需行為的詳細資訊，請參閱[行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 模型 ViewModel （MVVM）模式有助於將應用程式的商務和展示邏輯與其使用者介面（UI）完全分開。 維護應用程式邏輯與 UI 之間的清楚分隔，有助於解決許多開發問題，並可讓應用程式更容易測試、維護和發展。 它也可以大幅改善程式碼重複使用的機會，並可讓開發人員和 UI 設計工具在開發應用程式的個別部分時，更輕鬆地共同作業。
 

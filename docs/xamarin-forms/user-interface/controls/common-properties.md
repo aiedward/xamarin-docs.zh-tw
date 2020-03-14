@@ -8,11 +8,11 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/21/2019
 ms.openlocfilehash: 6d10e665c6461655440ddfb2c524cb56a14337f6
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "78911214"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304209"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin. Forms 通用控制項屬性、方法和事件
 

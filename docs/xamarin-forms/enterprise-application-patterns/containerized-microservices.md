@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915227"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305189"
 ---
 # <a name="containerized-microservices"></a>容器化的微服務
 
@@ -56,7 +56,7 @@ ms.locfileid: "78915227"
 - 在生產環境中，部署和管理許多獨立服務的系統遭到入侵時，會有一項操作上的複雜性。
 - 直接用戶端對微服務通訊可能會使微服務的合約難以重構。 例如，經過一段時間之後，系統如何分割成服務可能需要變更。 單一服務可能會分割成兩個或多個服務，而且可能會合並兩個服務。 當用戶端直接與微服務通訊時，這種重構工作可能會中斷與用戶端應用程式的相容性。
 
-## <a name="containerization"></a>容器化
+## <a name="containerization"></a>集裝箱化
 
 容器化是一種軟體發展方法，其中應用程式及其已設定版本的相依性集合，再將其環境設定抽象化為部署資訊清單檔，以容器映射的形式封裝在一起，並測試為一個單位，已部署到主機作業系統。
 
@@ -144,7 +144,7 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 
 如需事件匯流排執行的相關資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 微服務提供應用程式開發和部署的方法，其適用于現代化雲端應用程式的靈活性、規模和可靠性需求。 微服務的主要優點之一，就是可以獨立相應放大，這表示可以調整特定功能區域，而需要更多處理能力或網路頻寬來支援需求，而不需不必要的調整區域應用程式不會遇到增加的需求。
 
