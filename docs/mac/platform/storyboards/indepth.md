@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 06774d13cf053b661dd0b2d24b7df0c0b767b4db
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026406"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79304909"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>在 Xamarin. Mac 中使用分鏡腳本
 
@@ -308,7 +308,7 @@ MacOS 的手勢辨識器與 iOS 中的對應專案幾乎完全相同，可讓開
 5. 將分鏡腳本**參考**從**物件程式庫**拖曳至 Design Surface： 
 
     [![從程式庫選取分鏡腳本參考](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-6. 在 [身分**識別偵測器**] 中，選取腳本的名稱，以及您先前建立之場景的**參考識別碼**（分鏡腳本識別碼）： 
+6. 在 [身分**識別偵測器**] 中，選取腳本的名稱，以及您先前建立之場景的**參考識別碼**（分鏡腳本識別碼）： **Storyboard** 
 
     [![設定參考識別碼](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
 7. 在現有的場景上，以滑鼠右鍵按一下 UI Widget （例如按鈕），然後建立新的 Segue 至您剛才建立的分鏡腳本**參考**。 從快顯功能表選取 [**顯示**] 以完成 Segue： 
