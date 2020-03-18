@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
 ms.openlocfilehash: 280fe11f935db0a364f3342b22bb9544cdda1e6d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020238"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase 工作發送器
@@ -34,7 +34,7 @@ Android 提供下列 Api 來協助在背景中執行工作，但本身並不足�
 有兩個主要功能可有效率地執行背景工作（有時稱為_背景作業_或_作業_）：
 
 1. 以**智慧方式排程工作**&ndash; 在應用程式于背景執行工作時，請務必將其做為良好公民。 在理想情況下，應用程式不應該要求執行作業。 相反地，應用程式應該指定作業可以執行時必須符合的條件，然後排程符合條件時要執行的工作。 這可讓 Android 以智慧方式執行工作。 例如，網路要求可能會批次處理成同時執行，以充分利用網路所涉及的額外負荷。
-2. **封裝工作**&ndash; 要執行背景工作的程式碼，應該封裝在可獨立于使用者介面之外執行的離散元件中，而且如果工作無法完成，則會相對容易重新排定原因.
+2. **封裝工作**&ndash; 要執行背景工作的程式碼，應該封裝在可獨立于使用者介面之外執行的離散元件中，而且如果工作因某些原因而無法完成，則會相對容易重新排定。
 
 Firebase 作業發送器是 Google 的程式庫，提供 Fluent API 來簡化排程背景工作。 其目的是要取代 Google Cloud Manager。 Firebase 作業發送器包含下列 Api：
 

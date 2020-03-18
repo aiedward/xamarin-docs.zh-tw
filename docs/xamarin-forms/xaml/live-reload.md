@@ -8,17 +8,20 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e6c8e7b84ba8e3d0f6e6247798bb9164a3bc994d
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728339"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423898"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload （預覽）
 
 > [!NOTE]
-> Xamarin Live Reload 的預覽已結束，我們想要感謝每個人提供您的意見與意見。 請閱讀我們 Visual Studio 2019 的[藍圖](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap)，以深入瞭解我們在 Xamarin. 表單中使用的新生產力功能。 此延伸模組將繼續提供 Visual Studio 2017，但不會接收未來的更新。
+> Xamarin Live Reload 的預覽已結束，我們想要感謝每個人提供您的意見與意見。 
+>
+> 若要在您的應用程式執行時編輯 XAML，請使用[適用于 Xamarin 的 Xaml 熱重載](~/xamarin-forms/xaml/hot-reload.md)。
+>
 
 Xamarin Live Reload 可讓您**變更 XAML 並查看其即時反映，而不需要另一個編譯和部署**。 對 XAML 所做的任何變更都會在儲存時重新部署，並反映在部署目標上。
 
@@ -160,7 +163,7 @@ No。 事實上，您甚至可以在任意數目的裝置或模擬器/模擬器�
 1. 刪除資料夾**C:\Program Files （x86） \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload** （注意：以您已安裝的版本取代 "Enterprise"，如果您安裝到穩定的 VS，則以 "2017" 取代 "Preview"）
 2. 開啟該 Visual Studio 的**開發人員命令提示**字元，然後執行 `devenv /updateconfiguration`。 
 
-## <a name="tips--tricks"></a>秘訣和竅門
+## <a name="tips--tricks"></a>秘訣 & 訣竅
 
 * 只要即時重載設定不會變更（包括加密金鑰，例如，如果您關閉**自動產生加密金鑰**），而且您是從相同的電腦建立，除非您變更程式碼或相依性，否則您不需要在初始部署之後建立及部署應用程式。 您只要重新開機先前部署的應用程式，它就會連接到最後使用的主機。
 

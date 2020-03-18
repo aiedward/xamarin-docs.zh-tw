@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2019
 ms.openlocfilehash: aa717792bdaefe24d957c9781934933b67aaf92b
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78914526"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305329"
 ---
 # <a name="listview-interactivity"></a>ListView 互動性
 
@@ -37,7 +37,7 @@ ms.locfileid: "78914526"
 > [!NOTE]
 > [`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs)類別，其中包含[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)事件的事件引數、具有[`Group`](xref:Xamarin.Forms.ItemTappedEventArgs.Group)和[`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)屬性，以及一個 `ItemIndex` 屬性，其值代表分專案[`ListView`](xref:Xamarin.Forms.ListView)中的索引。 同樣地， [`SelectedItemChangedEventArgs`](xref:Xamarin.Forms.SelectedItemChangedEventArgs)類別（其中包含[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)事件的事件引數）具有[`SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)屬性，而 `SelectedItemIndex` 屬性的值代表所選項目 `ListView` 中的索引。
 
-當  [`SelectionMode`](xref:Xamarin.Forms.ListView.SelectionMode) 屬性設定為 [ [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single)] 時，可以選取 [ [`ListView`](xref:Xamarin.Forms.ListView)中的專案、將會引發[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)和[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)事件，而  [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem) ] 屬性會設定為所選取專案的值。
+當  [`SelectionMode`](xref:Xamarin.Forms.ListView.SelectionMode)  屬性設定為 [ [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single)] 時，可以選取 [ [`ListView`](xref:Xamarin.Forms.ListView)中的專案、將會引發[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)和[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)事件，而  [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem) ] 屬性會設定為所選取專案的值。
 
 當 [ [`SelectionMode`](xref:Xamarin.Forms.ListView.SelectionMode) ] 屬性設定為 [ [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None)] 時，無法選取[`ListView`](xref:Xamarin.Forms.ListView)中的專案，將不會引發[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)事件，而且[`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)屬性仍會 `null`。 不過， [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)事件仍會引發，而按下點的專案會在點按時短暫反白顯示。
 

@@ -7,13 +7,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
-ms.date: 02/04/2019
-ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 03/16/2020
+ms.openlocfilehash: 465783c0771b666a276d18f47cf5d3d458d52933
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305315"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423924"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>適用于 Xamarin 的 XAML 預覽程式
 
@@ -29,11 +29,11 @@ XAML 預覽程式會顯示您的 Xamarin. 表單 XAML 頁面在 iOS 和 Android 
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-您可以按一下 [分割視圖] 窗格上的箭號來開啟 XAML 預覽程式。 如果您想要變更預設的分割視圖行為，請使用 [**工具] > 選項 > [Xamarin > 表單預覽**器] 對話方塊。 在此對話方塊中，您可以選取 [預設檔] 視圖和 [分割方向]。
+您可以按一下 [分割視圖] 窗格上的箭號來開啟 XAML 預覽程式。 如果您想要變更預設的分割視圖行為，請使用 [**工具] > 選項 > xamarin > [xamarin] [XAML 預覽**工具] 對話方塊。 在此對話方塊中，您可以選取 [預設檔] 視圖和 [分割方向]。
 
 [![Visual Studio 中的 [Xamarin] 表單預覽選項](xaml-previewer-images/xamlp-options-vs-sm.png "Visual Studio 中的 [Xamarin] 表單預覽選項")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
-當您開啟 XAML 檔案時，編輯器會根據 **工具 > 選項 > Xamarin > 表單預覽**器 對話方塊中選取的設定，開啟預覽器的完整大小或旁邊。 不過，您可以在 [編輯器] 視窗中變更每個檔案的分割。
+當您開啟 XAML 檔案時，編輯器會根據 [**工具] > 選項 > xamarin > [xamarin] [XAML 預覽**器] 對話方塊中選取的設定，開啟預覽器的完整大小或旁邊。 不過，您可以在 [編輯器] 視窗中變更每個檔案的分割。
 
 #### <a name="xaml-preview-controls"></a>XAML 預覽控制項
 
@@ -44,6 +44,10 @@ XAML 預覽程式會顯示您的 Xamarin. 表單 XAML 頁面在 iOS 和 Android 
 您可以變更畫面是以垂直或水準方式分割，或是全部折迭一個窗格：
 
 [![[Xamarin] Visual Studio 中的 [表單預覽] 窗格方向控制項](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "[Xamarin] Visual Studio 中的 [表單預覽] 窗格方向控制項")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>啟用或停用 XAML 預覽器
+
+您可以選取 [**預設的 XML 編輯器**] 做為預設的 [ **xaml 編輯器**]，在 [**工具] > 選項 > xamarin > [xamarin] [xaml 預覽**程式] 對話方塊中關閉 XAML 預覽程式。 這也會關閉 [檔大綱]、[屬性面板] 和 [XAML 工具箱]。 若要重新開啟 XAML 預覽程式和這些工具，請將**預設的 XAML 編輯器**變更為 [ **Xamarin]。表單預覽**器。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -56,6 +60,10 @@ XAML 預覽程式會顯示您的 Xamarin. 表單 XAML 頁面在 iOS 和 Android 
 
 > [!NOTE]
 > 在較舊版本的 Visual Studio for Mac 中，[**預覽**] 按鈕位於視窗的右上方。
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>啟用或停用 XAML 預覽器
+
+您可以選取 **預設 XML 編輯器** 做為預設的  **xaml 編輯器**，在  **Visual Studio > 喜好設定 > 文字編輯器 > XAML**  對話方塊中關閉 XAML 預覽程式。 這也會關閉 [檔大綱]、[屬性面板] 和 [XAML 工具箱]。 若要重新開啟 XAML 預覽程式和這些工具，請將**預設的 XAML 編輯器**變更為 [ **Xamarin]。表單預覽**器。
 
 ::: zone-end
 
