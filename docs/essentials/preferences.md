@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: c7d4e4f7ea27e150752b222e3ea4ce2c4256a43a
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
+ms.sourcegitcommit: 98fdc3b4a7ef10d5b45167315dbffe94853af71a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295400"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79497047"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
 
@@ -44,7 +44,7 @@ var myValue = Preferences.Get("my_key", "default_value");
 若要檢查指定的索引_鍵_是否存在於喜好設定中：
 
 ```csharp
-bool hasKey = Preferences.HasKey("my_key");
+bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
 從喜好設定中移除「鍵」：
@@ -72,6 +72,15 @@ Preferences.Clear();
 - **long**
 - **string**
 - **DateTime**
+
+## <a name="integrate-with-system-settings"></a>與系統設定整合
+
+喜好設定會以原生方式儲存，讓您可以將您的設定整合到原生系統設定中。 遵循平臺 documetnation 和範例，與平臺整合：
+
+* Apple：[執行 IOS 設定](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)配套
+* [iOS 應用程式喜好設定範例](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* [watchOS 設定](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
+* Android：[使用設定畫面消費者入門](https://developer.android.com/guide/topics/ui/settings.html)
 
 ## <a name="implementation-details"></a>實作詳細資料
 
