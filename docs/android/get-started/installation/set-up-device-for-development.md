@@ -7,58 +7,131 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: f5b92bc202cbf9765a63219ad653442152c3eb24
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 72e0a2adc79796b3df7b6fb4eca62448f1a1a7a4
+ms.sourcegitcommit: 997f7b6a1a1bc50b98c3ca5bbc75d6875ba2ae9a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020706"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510727"
 ---
 # <a name="set-up-device-for-development"></a>設定裝置以進行開發
 
 _本文說明如何設定 Android 裝置並將其連線至電腦，以便使用該裝置來執行 Xamarin.Android 應用程式並對這些應用程式進行偵錯。_
 
-在 Android 模擬器上測試後，建議您在 Android 裝置上查看並測試您的應用程式。 以下是將裝置連接到電腦以進行偵錯時涉及的步驟：
-
-1. **啟用裝置上的偵錯** - 根據預設，無法在 Android 裝置上進行應用程式偵錯。
-
-2. **安裝 USB 驅動程式** - macOS 電腦不需要這個步驟。 Windows 電腦可能需要安裝 USB 驅動程式。
-
-3. **將裝置連線至電腦** - 最後一個步驟是透過 USB 或 WiFi 將裝置連線至電腦。
+在 Android 模擬器上測試後，建議您在 Android 裝置上查看並測試您的應用程式。 您必須啟用 [偵測]，並將裝置連線到電腦。
 
 這些步驟每一個都會在下列各節中更詳細地說明。
 
 ## <a name="enable-debugging-on-the-device"></a>啟用裝置上的偵錯
 
-您可使用任何 Android 裝置來測試 Android 應用程式。 不過，裝置必須先正確設定，才能進行偵錯。 所需的步驟會稍有不同，視裝置上執行的 Android 版本而定。
+必須啟用裝置的偵錯工具，才能測試 Android 應用程式。 自4.2 版起，預設會隱藏 Android 上的開發人員選項，而且根據 Android 版本而定，啟用它們會有所不同。
 
-### <a name="android-40-to-android-41"></a>Android 4.0 到 Android 4.1
+### <a name="android-90"></a>Android 9.0 +
 
-針對 Android 4.0.x 到 Android 4.1.x，偵錯的啟用步驟如下：
+若為 Android 9.0 和更新版本，請遵循下列步驟來啟用偵錯工具：
 
 1. 移至 [設定] 畫面。
-2. 選取 [開發人員選項]。
-3. 取消核取 [USB 偵錯] 選項。
+2. 選取 [**關於電話**]。
+3. 請使用**組建編號**7 次 **，直到您現在成為開發人員！** 為可見。
 
-這個螢幕擷取畫面顯示執行 Android 4.0.3 的裝置上的 [開發人員選項] 畫面：
+### <a name="android-80-and-android-81"></a>Android 8.0 和 Android 8。1
 
-[![開發人員選項](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png#lightbox)
+1. 移至 [**設定**] 畫面。
+2. 選取 [**系統**]。
+3. 選取 [**關於電話**]
+4. 請使用**組建編號**7 次 **，直到您現在成為開發人員！** 為可見。
 
-### <a name="android-42-and-higher"></a>Android 4.2 和更新版本
+### <a name="android-71-and-lower"></a>Android 7.1 和更低版本
 
-從 Android 4.2 和更高版本開始，[開發人員選項] 預設為隱藏。 若要使用，請移至 [設定] > [關於手機]，然後點選 [版本號碼] 項目七次，以顯示 [開發人員選項] 索引標籤：
+1. 移至 [**設定**] 畫面。
+2. 選取 [**關於電話**]。
+3. 請使用**組建編號**7 次 **，直到您現在成為開發人員！** 為可見。
 
-[![版本號碼項目](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png#lightbox)
+[Android 9.0 上的 ![開發人員選項畫面](set-up-device-for-development-images/build-version-sml.png)](set-up-device-for-development-images/build-version.png#lightbox)
+
+### <a name="verify-that-usb-debugging-is-enabled"></a>確認已啟用 USB 偵錯工具
+
+在您的裝置上啟用開發人員模式之後，您必須確定裝置上已啟用 USB 偵錯工具。 這也會根據 Android 版本而有所不同。
+
+### <a name="android-90"></a>Android 9.0 +
+
+流覽至 [**設定] > [系統 > Advanced > 開發人員選項**]，並啟用 [ **USB 調試**]。
+
+### <a name="android-80-and-android-81"></a>Android 8.0 和 Android 8。1
+
+流覽至 [**設定] > [系統 > 開發人員選項**]，並啟用 [ **USB 調試**]。
+
+### <a name="android-71-and-lower"></a>Android 7.1 和更低版本
+
+流覽至 [**設定] > [開發人員選項**]，並啟用 [ **USB 調試**]。
 
 一旦在 [設定] > [系統] 下可使用 [開發人員選項] 索引標籤，請開啟以顯示開發人員設定：
 
-[![開發人員設定畫面](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png#lightbox)
+[Android 9.0 上的 ![開發人員選項畫面](set-up-device-for-development-images/usb-debugging-sml.png)](set-up-device-for-development-images/usb-debugging.png#lightbox)
 
 這是要啟用開發人員選項的地方，例如 USB 偵錯，以及保持清醒模式。
 
+## <a name="connect-the-device-to-the-computer"></a>將裝置連接到電腦
+
+最後一個步驟是將裝置連接到電腦。 最簡單且最可靠的方法是透過 USB 來執行此動作。
+
+如果您之前未使用電腦來進行前的偵測，將會收到提示，讓您信任裝置上的電腦。 您也可以在每次連線裝置時，核取 [從此**電腦一律允許**]，以避免要求此提示。
+
+![](set-up-device-for-development-images/trust-computer-for-usb-debugging.png "Google USB")
+
+## <a name="alternate-connection-via-wifi"></a>透過 Wifi 的替代連接
+
+您可以透過 WiFi 將 Android 裝置連接到電腦，而不需要使用 USB 纜線。 這項技術需要更多工作，但當裝置太遠而無法透過纜線持續插入時，可能會很有用。 
+
+### <a name="connecting-over-wifi"></a>透過 WiFi 連接
+
+[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) 預設已設定為透過 USB 與 Android 裝置進行通訊。 可以將其重新設定為使用 TCP/IP，而不是 USB。 若要這樣做，裝置和電腦都必須在相同的 WiFi 網路上。 若要設定您的環境以透過 WiFi 進行的偵錯工具，請從命令列完成下列步驟：
+
+1. 判斷 Android 裝置的 IP 位址。 找出 IP 位址的方法之一，就是在**Network & internet > wi-fi 的 [> 設定**] 底下尋找，然後在裝置所連線的 WiFi 網路上按一下，然後按一下 [ **Advanced**]。 這會開啟一個下拉式清單，顯示網路連線的相關資訊，類似于以下螢幕擷取畫面所示：
+
+    [![IP 位址](set-up-device-for-development-images/ip-settings-sml.png)](set-up-device-for-development-images/ip-settings.png#lightbox)
+
+    在某些版本的 Android 上，IP 位址不會在該處列出，但可以改在 [設定] > [關於手機] > [狀態] 下找到。
+
+2. 透過 USB 將 Android 裝置連接到您的電腦。
+
+3. 接下來，重新啟動 ADB 以讓它在連接埠 5555 上使用 TCP。 從命令提示字元中輸入下列命令：
+
+    ```command
+    adb tcpip 5555
+    ```
+
+    發出此命令之後，您的電腦將無法接聽透過 USB 連接的裝置。
+
+4. 拔除將您的裝置連接到電腦的那條 USB 纜線。
+
+5. 設定 ADB，讓它透過您在上述步驟 1 中所指定的連接埠連接到 Android 裝置：
+
+    ```command
+    adb connect 192.168.1.28:5555
+    ```
+
+    此命令完成之後，Android 裝置會透過 WiFi 連線到電腦。
+
+    當您透過 WiFi 完成偵錯工具時，可以使用下列命令將 ADB 重設回 USB 模式：
+    
+    ```command
+    adb usb
+    ```
+    
+    您可以要求 ADB 列出已連線到電腦的裝置。 不論裝置連接的方式為何，您都可以在命令提示字元發出下列命令以查看連接的裝置：
+    
+    ```command
+    adb devices
+    ```
+
+## <a name="troubleshooting"></a>疑難排解
+
+在某些情況下，您可能會發現您的裝置無法連接到電腦。 在此情況下，您可能會想要確認是否已安裝 USB 驅動程式。
+
 ## <a name="install-usb-drivers"></a>安裝 USB 驅動程式
 
-macOS 不需要此步驟，只要使用 USB 傳輸線將裝置連線至 Mac 即可。
+MacOS 不需要這個步驟;只要使用 USB 纜線將裝置連接到 Mac 即可。
 
 可能需要安裝某些額外的驅動程式，Windows 電腦才能辨識透過 USB 連接的 Android 裝置。
 
@@ -76,9 +149,9 @@ Google Nexus 裝置 (不包括 Galaxy Nexus) 需要 Google USB 驅動程式。 G
 
 安裝 **Google USB 驅動程式**套件，方法是啟動 Android SDK 管理員，然後展開 [Extras] 資料夾，如下列螢幕擷取畫面中所見：
 
-[![選取 Google USB 驅動程式套件](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png#lightbox)
+![](set-up-device-for-development-images/google-usb-driver.png "Google USB driver selected")
 
-核取 [Google USB 驅動程式] 方塊，然後按一下 [安裝] 按鈕。
+勾選 [ **GOOGLE USB 驅動程式**] 方塊，然後按一下 [套用**變更**] 按鈕。
 驅動程式檔案會下載到下列位置：
 
 `[Android SDK install path]\extras\google\usb\_driver`
@@ -96,7 +169,7 @@ USB 驅動程式下載之後，就必須安裝它們。
 
 2. 從桌面或是 Windows 檔案總管以滑鼠右鍵按一下 [電腦]，然後選取 [管理]。
 
-3. 選取左窗格的 [裝置]。
+3. 在左側窗格中，選取 [裝置]。
 
 4. 在右窗格找出並展開 [其他裝置]。
 
@@ -109,73 +182,7 @@ USB 驅動程式下載之後，就必須安裝它們。
 
 8. 按一下 [下一步] 以安裝驅動程式。
 
-### <a name="installing-unverified-drivers-in-windows-8"></a>在 Windows 8 中安裝未驗證的驅動程式
-
-若要在 Windows 8 中安裝未驗證的驅動程式，可能需要額外的步驟。 下列步驟描述如何安裝 Google Nexus 的驅動程式：
-
-1. **存取 Windows 8 進階開機選項** - 這個步驟包含重新啟動電腦以存取進階開機選項。 啟動命令列提示字元，並使用下列命令重新啟動電腦：
-
-    ```command
-    shutdown.exe /r /o
-    ```
-
-2. **連接裝置** - 將裝置連接到電腦
-
-3. **啟動裝置管理員** - 執行 **devmgmt.msc**；您應該會看到列出您的裝置，且其上有黃色三角形。
-
-4. **安裝裝置驅動程式** - 安裝裝置驅動程式，如上面所述。
-
-## <a name="connect-the-device-to-the-computer"></a>將裝置連接到電腦
-
-最後一個步驟是將裝置連接到電腦。 執行此作業的方法有兩種：
-
-- **USB 纜線** - 這是最簡單且最常見的方法。 只要將 USB 纜線插入到裝置，然後插入到電腦。
-
-- **WiFi** - 使用 WiFi 可以將 Android 裝置連接到電腦，而不需使用 USB 纜線。 這項技術需要較多工夫，但是當裝置離電腦太遠而無法透過纜線持續保持插入時，會很有幫助。 下一節將討論透過 WiFi 連接。
-
-### <a name="connecting-over-wifi"></a>透過 WiFi 連接
-
-[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) 預設已設定為透過 USB 與 Android 裝置進行通訊。 可以將其重新設定為使用 TCP/IP，而不是 USB。 若要這樣做，裝置和電腦都必須在相同的 WiFi 網路上。 若要設定環境以透過 WiFi 進行偵錯，請從命令列發出下列步驟：
-
-1. 判斷 Android 裝置的 IP 位址。 找出 IP 位址的其中一種方式，是到 [設定] > [Wi-Fi] 下，然後點選裝置連接到的 WiFi 網路。 這樣將會出現設定畫面，顯示網路連線的資訊，類似於以下螢幕擷取畫面中所見：
-
-    ![IP 位址](set-up-device-for-development-images/ip-settings.png)
-
-    在某些版本的 Android 上，IP 位址不會在該處列出，但可以改在 [設定] > [關於手機] > [狀態] 下找到。
-
-2. 透過 USB 將 Android 裝置連接到您的電腦。
-
-3. 接下來，重新啟動 ADB 以讓它在連接埠 5555 上使用 TCP。 從命令提示字元，輸入下列命令：
-
-    ```command
-    adb tcpip 5555
-    ```
-
-    發出此命令之後，您的電腦將無法接聽透過 USB 連接的裝置。
-
-4. 拔除將您的裝置連接到電腦的那條 USB 纜線。
-
-5. 設定 ADB，讓它透過您在上述步驟 1 中所指定的連接埠連接到 Android 裝置：
-
-    ```command
-    adb connect 192.168.1.28:5555
-    ```
-
-    此命令完成後，Android 裝置會透過 WiFi 連接到電腦。
-
-當您完成透過 WiFi 進行偵錯時，可以使用下列命令將 ADB 重設回 USB 模式：
-
-```command
-adb usb
-```
-
-可以要求 ADB 列出連接到電腦的裝置。 不論裝置連接的方式為何，您都可以在命令提示字元發出下列命令以查看連接的裝置：
-
-```command
-adb devices
-```
-
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文討論如何藉由啟用裝置上的偵錯，設定 Android 裝置以進行開發。 它也介紹如何使用 USB 或 WiFi 將裝置連接到電腦。
 
