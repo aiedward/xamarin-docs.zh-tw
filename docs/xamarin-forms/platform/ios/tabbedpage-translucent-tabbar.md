@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/16/2020
-ms.openlocfilehash: c321884039674d3abb1a4b510ddfe2c062c28211
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 55fda0be2e260c5aa4a34ab2dcc1ac3cac33b92a
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "78291571"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070295"
 ---
 # <a name="tabbedpage-translucent-tab-bar-on-ios"></a>在 iOS 上 TabbedPage 半透明索引標籤列
 
@@ -41,7 +41,7 @@ On<iOS>().SetTranslucencyMode(TranslucencyMode.Opaque);
 `TabbedPage.On<iOS>` 方法指定此平臺特定的只會在 iOS 上執行。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間中的 `TabbedPage.SetTranslucencyMode` 方法，會藉由指定下列其中一個 `TranslucencyMode` 列舉值，來設定[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)上索引標籤列的半透明度模式：
 
 - `Default`，將索引標籤列設定為預設半透明度模式。 此為 `TabbedPage.TranslucencyMode` 屬性的預設值。
-- `Transparent`，將索引標籤列設定為半透明。
+- `Translucent`，將索引標籤列設定為半透明。
 - `Opaque`，將索引標籤列設定為不透明。
 
 此外，`GetTranslucencyMode` 方法可以用來抓取套用至[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)之 `TranslucencyMode` 列舉的目前值。

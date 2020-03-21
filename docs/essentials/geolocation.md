@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304321"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070351"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
 
@@ -217,6 +217,24 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 ```
 
 `Location` 建構函式在該順序中具有緯度與經度的引數。 正緯度值位於赤道以北，正經度值位於本初子午線以東。 使用 `CalculateDistance` 的最後引數來指定英里或公里。 `UnitConverters` 類別也會定義在兩個單位之間進行轉換的 `KilometersToMiles` 和 `MilesToKilometers` 方法。
+
+## <a name="platform-differences"></a>平台差異
+
+每個平臺上的高度會以不同的方式計算。
+
+# <a name="android"></a>[Android](#tab/android)
+
+在 Android 上，[高度](https://developer.android.com/reference/android/location/Location#getAltitude())（如果有的話）會在 WGS 84 參考橢圓體上方的計量中傳回。 如果此位置沒有高度，則會傳回0.0。
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+在 iOS 上，[高度](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude)是以計量測量。 正值表示高度高於海平面，而負值則表示高度低於海平面。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+在 UWP 上，高度會以計量傳回。 如需詳細資訊，請參閱[AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem)檔。
+
+-----
 
 ## <a name="api"></a>API
 

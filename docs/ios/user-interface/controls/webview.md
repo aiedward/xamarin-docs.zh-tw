@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 8640800717a88e800503e93c339eeb080707374e
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: a9dce962c35e5f9cfdcd674da9ad71cf8935e7d4
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304853"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070323"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web Views
 
@@ -89,31 +89,71 @@ IOS 9 中的 Apple 引進了應用程式傳輸安全性或*ATS* ，以確保所�
 
 如需 ATS 的詳細資訊，包括如何在您的應用程式中加以執行，請參閱[應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)指南。
 
-## <a name="uiwebview-deprecated"></a>UIWebView （已被取代）
-
-> [!IMPORTANT]
-> `UIWebView` 已被取代。 在2020年4月之前，使用此控制項的應用程式將[不會被接受到 App Store，而現有的應用程式必須在2020年12月將其移除](https://developer.apple.com/news/?id=12232019b)。
->
-> [Apple 的 `UIWebView` 檔](https://developer.apple.com/documentation/uikit/uiwebview)建議應用程式應該改用[`WKWebView`](#wkwebview) 。
-
-> [!IMPORTANT]
-> 如果您要在使用 Xamarin 時尋找 `UIWebView` 取代警告（ITMS-90809）的相關資源，請參閱[Xamarin web](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)工作檔。
+## <a name="uiwebview-deprecation"></a>UIWebView 淘汰
 
 `UIWebView` 是 Apple 在您的應用程式中提供 web 內容的舊版方式。 它是在 iOS 2.0 中發行，並已淘汰8.0。
 
-若要將 UIWebView 新增至您的 Xamarin iOS 應用程式，請使用下列程式碼：
+> [!IMPORTANT]
+> `UIWebView` 已被取代。 [在2020年4月起，使用此控制項的新應用程式將不會接受到 App Store，而且12月2020將不會接受使用此控制項的應用程式更新](https://developer.apple.com/news/?id=12232019b)。
+>
+> [Apple 的 `UIWebView` 檔](https://developer.apple.com/documentation/uikit/uiwebview)建議應用程式應該改用[`WKWebView`](#wkwebview) 。
+>
+> 如果您要在使用 Xamarin 時尋找 `UIWebView` 取代警告（ITMS-90809）的相關資源，請參閱[Xamarin web](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)工作檔。
 
-```csharp
-webView = new UIWebView (View.Bounds);
-View.AddSubview(webView);
+過去六個月（或也就是）提交 iOS 應用程式的開發人員可能收到來自 App Store 的警告，關於 `UIWebView` 即將淘汰。
 
-var url = "https://docs.microsoft.com"; // NOTE: https secure request
-webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
-```
+Api 的棄用功能是常見的。 Xamarin 會使用自訂屬性來通知這些 Api （並在可用時建議替代專案）回到開發人員。 這次的差異很大，而且較不常見，這是 Apple 的 App Store 在提交時將會**強制執行**取代。
 
-這會產生下列 web 視圖：
+可惜的是，從 `Xamarin.iOS.dll` 移除 `UIWebView` 類型是[二進位的重大變更](https://docs.microsoft.com/dotnet/core/compatibility/categories#binary-compatibility)。 這種變更將會中斷現有的協力廠商程式庫，包括可能不再支援或甚至重新編譯的部分（例如，關閉的來源）。 這只會為開發人員建立額外的問題。 因此，我們*還*不會移除型別。
 
-[![ScalesPagesToFit 的效果](webview-images/webview.png)](webview-images/webview.png#lightbox)
+從[Xamarin. iOS 13.16](https://docs.microsoft.com/xamarin/ios/release-notes/13/13.16)開始提供新的偵測和工具，協助您從 `UIWebView`進行遷移。
+
+### <a name="detection"></a>偵測
+
+如果您 have'nt 最近將 iOS 應用程式提交至 Apple App Store，您可能會想知道這種情況是否適用于您的應用程式。
+
+若要找出，您可以將 `--warn-on-type-ref=UIKit.UIWebView` 新增至專案的**其他 mtouch 引數。** 這會警告應用程式內已淘汰之 `UIWebView` 的**任何**參考（及其所有相依性）。 在執行 managed 連結器**之前**和**之後**，會使用不同的警告來報告類型。
+
+您可以使用 `-warnaserror:`，將警告視為錯誤。 如果您想要確保不會在驗證之後加入 `UIWebView` 的新相依性，這項功能就很有用。 例如：
+
+* 如果在預先連結的元件中找到任何參考，`-warnaserror:1502` 將會報告錯誤。
+* 如果在連結後的元件中找到任何參考，`-warnaserror:1503` 將會報告錯誤。
+
+如果前置/後置連結結果不實用，您也可以將警告解除通知。 例如：
+
+* 如果在預先連結的元件中找到任何參考，`-nowarn:1502` 將**不**會報告警告。
+* 如果在連結後的元件中找到任何參考，`-nowarn:1503` 將**不**會報告警告。
+
+### <a name="removal"></a>移除
+
+每個應用程式都是唯一的。 從您的應用程式移除 `UIWebView` 可能需要不同的步驟，視使用的方式和位置而定。 最常見的案例如下：
+
+- 您的應用程式內沒有使用 `UIWebView`。 一切都沒問題。 提交至 AppStore 時，您**不**應該有警告。 您不需要其他任何東西。
+- 應用程式 `UIWebView` 的直接使用。 一開始請先移除您的 `UIWebView`使用方式，例如，將它取代為較新的 `WKWebView` （iOS 8）或 `SFSafariViewController` （iOS 9）類型。 完成此作業之後，managed 連結器應該看不到任何 `UIWebView` 的參考，最後的應用程式二進位檔將不會追蹤它。
+- 間接使用。 `UIWebView` 可以出現在應用程式所使用的某些協力廠商程式庫中（受控或原生）。 開始將您的外部相依性更新為最新版本，因為這種情況可能已經在較新的版本中解決。 如果沒有，請聯絡程式庫的維護人員，並詢問其更新計畫。
+
+或者，您可以嘗試下列方法：
+
+1. 如果您使用的是 [ **Xamarin**]，請閱讀這[篇 blog 文章](https://devblogs.microsoft.com/xamarin/uiwebview-deprecation-xamarin-forms/)。
+1. 啟用 managed 連結器（在整個專案上，或至少使用 `UIWebView`的相依性），以便在未參考的情況下*將它移除*。 這會解決問題，但可能需要額外的工作，才能讓您的程式碼連結器安全。
+1. 如果您無法變更受管理的連結器設定，請參閱以下的特殊案例。
+
+#### <a name="applications-cannot-use-the-linker-or-change-its-settings"></a>應用程式無法使用連結器（或變更其設定）
+
+如果您因為某些原因而**未**使用 managed 連結器（例如 [**不要連結**]），則 `UIWebView` 符號會保留在您提交給 Apple 的二進位應用程式中，而且可能會遭到拒絕。
+
+*強制*性解決方案是將 `--optimization=force-rejected-types-removal` 新增至您專案的**其他 mtouch 引數**。 這會從應用程式移除 `UIWebView` 的追蹤。 不過，參考該類型的任何程式碼都將**無法**正常運作（預期例外狀況或當機）。 只有在您確定程式碼無法在執行時間連線時（即使是透過靜態分析來連線），才應該使用這個方法。
+
+#### <a name="support-for-ios-7x-or-earlier"></a>支援 iOS 7.x （或更早版本）
+
+自 v2.0 以來，`UIWebView` 是 iOS 的一部分。 最常見的替代專案是 `WKWebView` （iOS 8）和 `SFSafariViewController` （iOS 9）。 如果您的應用程式仍然支援舊版的 iOS 版本，您應該考慮下列選項：
+
+* 讓 iOS 8 成為您最小的目標版本（組建時間決策）。
+* 只有當應用程式在 iOS 8 + 上執行（執行時間決策）時，才使用 `WKWebView`。
+
+#### <a name="applications-not-submitted-to-apple"></a>未提交至 Apple 的應用程式
+
+如果您的應用程式未提交至 Apple，您應該計畫離開已淘汰的 API，因為它可以在未來的 iOS 版本中移除。 不過，您可以使用自己的時程表來執行這種轉換。
 
 ## <a name="related-links"></a>相關連結
 

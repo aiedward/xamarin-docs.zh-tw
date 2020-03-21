@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: eb4d3d80fa416f7bb94f3137a0925a9a9807cb10
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
-ms.translationtype: HT
+ms.openlocfilehash: d8a57ac8688a0113ef267ea25fb54cbaaf562957
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480606"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070387"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 雙螢幕設計模式
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 
 本指南介紹我們針對雙螢幕裝置所建議的設計模式，其中包含程式碼和範例，可協助您建立介面來提供吸引人且實用的使用者體驗。
 
@@ -270,5 +270,5 @@ ms.locfileid: "77480606"
 
 ## <a name="related-links"></a>相關連結
 
-- [雙螢幕範例 (GitHub)](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+- [雙螢幕範例 (GitHub)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 - [建立適用於雙螢幕裝置的應用程式](index.md)
