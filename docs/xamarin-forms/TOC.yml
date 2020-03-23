@@ -956,6 +956,8 @@
           href: internals/class-hierarchy.md
         - name: 相依性解析
           href: internals/dependency-resolution.md
+        - name: 實驗性旗標
+          href: internals/experimental-flags.md
         - name: 快速轉譯器
           href: internals/fast-renderers.md
         - name: 來源連結
