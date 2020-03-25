@@ -6,13 +6,13 @@ ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/24/2016
-ms.openlocfilehash: 3c4fa085c9fdf17cdc256d9710c23911bb60d584
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 03/23/2019
+ms.openlocfilehash: 6d3954f44cd769ed02535eb260b9952e81e67c98
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770637"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247622"
 ---
 # <a name="native-views-in-xaml"></a>XAML 中的原生檢視
 
@@ -20,7 +20,7 @@ ms.locfileid: "70770637"
 
 _從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 Xamarin. 表單 XAML 檔案參考。屬性和事件處理常式可以在原生視圖上設定，而且可以與 Xamarin. 表單檢視進行互動。本文示範如何從 Xamarin XAML 檔案使用原生視圖。_
 
-本文討論下列主題：
+本文章討論下列主題：
 
 - [使用原生視圖](#consuming)–從 XAML 使用原生視圖的程式。
 - [使用原生](#native_bindings)系結–原生視圖屬性的資料系結。
@@ -65,7 +65,7 @@ _從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 Xamari
 </ContentPage>
 ```
 
-此外 `targetPlatform`，也必須指定原生視圖命名空間的 `clr-namespace` 和 `assembly`。 這應該設定為[`TargetPlatform`](xref:Xamarin.Forms.TargetPlatform)列舉的其中一個值，而且通常會設定為 `iOS`、`Android`或 `Windows`。 在執行時間，XAML 剖析器會忽略任何 `targetPlatform` 不符合應用程式執行所在平臺的 XML 命名空間前置詞。
+此外 `targetPlatform`，也必須指定原生視圖命名空間的 `clr-namespace` 和 `assembly`。 這應該設定為 `iOS`、`Android`、`UWP`、`Windows` （相當於 `UWP`）、`macOS`、`GTK`、`Tizen`或 `WPF`。 在執行時間，XAML 剖析器會忽略任何 `targetPlatform` 不符合應用程式執行所在平臺的 XML 命名空間前置詞。
 
 每個命名空間宣告都可以用來參考指定之命名空間中的任何類別或結構。 例如，`ios` 命名空間宣告可以用來參考 iOS `UIKit` 命名空間中的任何類別或結構。 原生視圖的屬性可以透過 XAML 設定，但屬性和物件類型必須相符。 例如，`UILabel.TextColor` 屬性會設定為使用 `x:Static` 標記延伸和 `ios` 命名空間 `UIColor.Red`。
 
@@ -119,8 +119,8 @@ Android widget 的函式通常需要 Android `Context` 物件做為引數，而�
 
 此頁面也包含每個平臺的原生參數。 每個原生參數都會使用[`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)系結來更新 `NativeSwitchPageViewModel.IsSwitchOn` 屬性的值。 因此，關閉開關時，會停用 `Entry`，而當參數開啟時，就會啟用 `Entry`。 下列螢幕擷取畫面顯示每個平臺上的這項功能：
 
-![]已(xaml-images/native-switch-disabled.png "停用原生切換")
-![ ](xaml-images/native-switch-enabled.png "原生切換")
+![](xaml-images/native-switch-disabled.png "Native Switch Disabled")
+![](xaml-images/native-switch-enabled.png "Native Switch Enabled")
 
 如果原生屬性會執行 `INotifyPropertyChanged`，或支援 iOS 上的索引鍵/值觀察（KVO），則會自動支援雙向系結，或是 UWP 上的 `DependencyProperty`。 不過，許多原生視圖並不支援屬性變更通知。 針對這些視圖，您可以將[`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName)屬性值指定為系結運算式的一部分。 這個屬性應該設定為原生視圖中的事件名稱，以在目標屬性變更時發出信號。 然後，當原生參數的值變更時，會通知 `Binding` 類別使用者已變更參數值，而且 `NativeSwitchPageViewModel.IsSwitchOn` 屬性值已更新。
 
@@ -193,7 +193,7 @@ Android widget 的函式通常需要 Android `Context` 物件做為引數，而�
 
 下列螢幕擷取畫面顯示指定 factory 方法和函式引數的結果，以在不同的原生視圖上設定字型：
 
-![](xaml-images/passing-arguments.png "在原生視圖上設定字型")
+![](xaml-images/passing-arguments.png "Setting Fonts on Native Views")
 
 如需在 XAML 中傳遞引數的詳細資訊，請參閱[在 xaml 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)。
 
@@ -282,7 +282,7 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 
 IOS 和 Android 原生按鈕會共用相同的 `OnButtonTap` 事件處理常式，因為每個原生按鈕都會取用 `EventHandler` 的委派，以回應觸控事件。 不過，通用 Windows 平臺（UWP）會使用個別的 `RoutedEventHandler`，而這種情況下會耗用此範例中的 `OnButtonTap` 事件處理常式。 因此，按一下 [原生] 按鈕時，`OnButtonTap` 事件處理常式會執行，它會縮放並旋轉包含在名為 `contentViewTextParent`之[`ContentView`](xref:Xamarin.Forms.ContentView)內的原生控制項。 下列螢幕擷取畫面會示範在每個平臺上發生的情況：
 
-![](xaml-images/contentview.png "包含原生控制項的 ContentView")
+![](xaml-images/contentview.png "ContentView Containing a Native Control")
 
 <a name="subclassing" />
 
@@ -325,7 +325,7 @@ IOS 和 Android 原生按鈕會共用相同的 `OnButtonTap` 事件處理常式�
 
 此頁面也包含每個平臺的原生選擇器視圖。 每個原生視圖都會將其 `ItemSource` 屬性系結至 `SubclassedNativeControlsPageViewModel.Fruits` 集合，藉以顯示水果的集合。 這可讓使用者挑選水果，如下列螢幕擷取畫面所示：
 
-![](xaml-images/sub-classed.png "子類別化的原生視圖")
+![](xaml-images/sub-classed.png "Subclassed Native Views")
 
 在 iOS 和 Android 上，原生選擇器會使用方法來設定控制項。 因此，這些選擇器必須子類別化以公開屬性，使其成為 XAML 易記。 在通用 Windows 平臺（UWP）上，`ComboBox` 已經是 XAML 易懂，因此不需要子類別化。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/14/2020
-ms.openlocfilehash: 225b7dc7dc639031b3198a8fb9e7fe9fb9d7ee7f
-ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
+ms.openlocfilehash: a6cb5a0e3573ebf998bb2f81c08ff63c81678b54
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423872"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159804"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms"></a>適用于 Xamarin 的 XAML 熱重載
 
@@ -57,9 +57,9 @@ XAML 熱重載支援在 Visual Studio 和 Visual Studio for Mac 中同時進行�
 * **Windows** how [To：設定多個啟始專案](https://docs.microsoft.com/visualstudio/ide/how-to-set-multiple-startup-projects?view=vs-2019)
 * **Mac** [設定多個啟始專案](https://docs.microsoft.com/visualstudio/mac/set-startup-projects?view=vsmac-2019)
 
-## <a name="known-limitations"></a>已知的限制
+## <a name="known-limitations"></a>已知限制
 
-* 尚*不*支援其他的 Xamarin. Forms 目標，例如 UWP 和 MacOS。 您可以在[這裡](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追蹤 UWP 支援的進度。
+* 尚*不*支援其他的 Xamarin. Forms 目標，例如 UWP 和 macOS。 您可以在[這裡](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追蹤 UWP 支援的進度。
 * 您無法在 XAML 熱重載會話期間加入、移除或重新命名檔案或 NuGet 套件。 如果您新增或移除檔案或 NuGet 套件，請重建並重新部署您的應用程式，以繼續使用 XAML 熱重載。
 * 將您的連結器設定為 [**不要連結**] 或 [**無連結**] 以獲得最佳體驗。 「**僅限連結 SDK** 」設定會在大部分的時間內運作，但在某些情況下可能會失敗。 您可以在 Android 和 iOS 組建選項中找到連結器設定。
 * 在實體 iPhone 上進行偵錯工具時，解譯器必須使用 XAML 熱重載。 若要這麼做，請開啟專案設定，選取 [iOS 組建] 索引標籤，並確定已啟用 **[Mono 解釋**器] 設定。 您可能需要將屬性頁頂端的 [**平臺**] 選項變更為 [ **iPhone**]。

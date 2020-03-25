@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: a9dce962c35e5f9cfdcd674da9ad71cf8935e7d4
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.openlocfilehash: 7c469a011a70840cfe94a7f87ed77f03968a3525
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80070323"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159817"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web Views
 
@@ -146,7 +146,7 @@ Api 的棄用功能是常見的。 Xamarin 會使用自訂屬性來通知這些 
 
 #### <a name="support-for-ios-7x-or-earlier"></a>支援 iOS 7.x （或更早版本）
 
-自 v2.0 以來，`UIWebView` 是 iOS 的一部分。 最常見的替代專案是 `WKWebView` （iOS 8）和 `SFSafariViewController` （iOS 9）。 如果您的應用程式仍然支援舊版的 iOS 版本，您應該考慮下列選項：
+從 v2.0 開始，`UIWebView` 是 iOS 的一部分。 最常見的替代專案是 `WKWebView` （iOS 8）和 `SFSafariViewController` （iOS 9）。 如果您的應用程式仍然支援舊版的 iOS 版本，您應該考慮下列選項：
 
 * 讓 iOS 8 成為您最小的目標版本（組建時間決策）。
 * 只有當應用程式在 iOS 8 + 上執行（執行時間決策）時，才使用 `WKWebView`。

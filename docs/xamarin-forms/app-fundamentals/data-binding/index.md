@@ -6,13 +6,13 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/27/2019
-ms.openlocfilehash: fa92409b33717e528c3cfb83a24148c698836594
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 03/23/2020
+ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697148"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247596"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 資料繫結
 
@@ -28,7 +28,7 @@ Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含
 
 ## <a name="the-data-binding-solution"></a>資料繫結解決方案
 
-資料繫結會自動執行此作業，並轉譯不必要的事件處理常式。 （不過，這些事件仍然是必要的，因為資料系結基礎結構會使用它們）。資料系結可以在程式碼或 XAML 中執行，但它們在 XAML 中更為常見，其有助於減少程式碼後置檔案的大小。 使用宣告式程式碼或標記來取代事件處理常式中的程序性程式碼，可簡化並釐清應用程式。
+資料繫結會自動執行此作業，並轉譯不必要的事件處理常式。 資料繫結可透過程式碼或 XAML 來實作，而 XAML 較為普遍，因其可協助降低程式碼後置檔案的大小。 使用宣告式程式碼或標記來取代事件處理常式中的程序性程式碼，可簡化並釐清應用程式。
 
 涉及資料繫結的兩個物件之一，幾乎都是衍生自 `View` 的元素，並會形成頁面視覺化介面的一部分。 另一個物件是：
 
@@ -39,39 +39,39 @@ Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含
 
 您可以在下列一系列文章中探索資料繫結：
 
-## <a name="basic-bindingsbasic-bindingsmd"></a>[基本繫結](basic-bindings.md)
+## <a name="basic-bindings"></a>[基本繫結](basic-bindings.md)
 
 了解資料繫結目標與來源之間的差異，並查看程式碼和 XAML 中的簡單資料繫結。
 
-## <a name="binding-modebinding-modemd"></a>[繫結模式](binding-mode.md)
+## <a name="binding-mode"></a>[繫結模式](binding-mode.md)
 
 探索繫結模式可如何控制兩個物件之間的資料流程。
 
-## <a name="string-formattingstring-formattingmd"></a>[字串格式化](string-formatting.md)
+## <a name="string-formatting"></a>[字串格式化](string-formatting.md)
 
 使用資料繫結進行格式化，並將物件顯示為字串。
 
-## <a name="binding-pathbinding-pathmd"></a>[繫結路徑](binding-path.md)
+## <a name="binding-path"></a>[繫結路徑](binding-path.md)
 
 深入探索資料繫結的 `Path` 屬性，以存取子屬性和集合成員。
 
-## <a name="binding-value-convertersconvertersmd"></a>[繫結值轉換器](converters.md)
+## <a name="binding-value-converters"></a>[繫結值轉換器](converters.md)
 
 使用繫結值轉換器來改變資料繫結中的值。
 
-## <a name="relative-bindingsrelative-bindingsmd"></a>[相對系結](relative-bindings.md)
+## <a name="relative-bindings"></a>[相對繫結](relative-bindings.md)
 
 使用相對系結，將系結來源設定為相對於系結目標的位置。
 
-## <a name="binding-fallbacksbinding-fallbacksmd"></a>[繫結後援](binding-fallbacks.md)
+## <a name="binding-fallbacks"></a>[繫結後援](binding-fallbacks.md)
 
 定義繫結程序失敗時要使用的後援值，讓資料繫結更穩固。
 
-## <a name="the-command-interfacecommandingmd"></a>[命令介面](commanding.md)
+## <a name="the-command-interface"></a>[命令介面](commanding.md)
 
 以資料繫結實作 `Command` 屬性。
 
-## <a name="compiled-bindingscompiled-bindingsmd"></a>[編譯的繫結](compiled-bindings.md)
+## <a name="compiled-bindings"></a>[編譯的繫結](compiled-bindings.md)
 
 使用編譯的繫結來改善資料繫結效能。
 
