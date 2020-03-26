@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
+ms.sourcegitcommit: 7fd88ada5b44a62390fe1a73ef08014e4d236a2d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303922"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261306"
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
@@ -27,7 +27,7 @@ ms.locfileid: "79303922"
 
 - **[保護應用程式](#protect_app)** &ndash; 防止使用者或攻擊者藉由停用偵錯工具、將 managed 程式碼模糊、新增反編譯和防篡改，以及使用原生編譯，來偵測、篡改或反向工程應用程式。
 
-- **[設定封裝屬性](#Set_Packaging_Properties)** &ndash; 封裝屬性會控制 Android 應用程式套件（APK）的建立。 此步驟可將 APK 最佳化、保護其資產並視需要將套件模組化。
+- **[設定封裝屬性](#Set_Packaging_Properties)** &ndash; 封裝屬性會控制 Android 應用程式套件（APK）的建立。 此步驟可將 APK 最佳化、保護其資產並視需要將套件模組化。 此外，您可以為使用者提供針對其裝置優化的 Android 應用程式套件組合。
 
 - **[編譯](#Compile)** &ndash; 此步驟會編譯器代碼和資產，以確認它是以發行模式建立。
 
@@ -268,6 +268,16 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 應用程式可能不會使用每個參考程式庫中的每個方法，因此像是 ProGuard (請參閱前述) 等工具能夠從程式碼中移除未使用的方法。 最佳做法是只有在絕對必要時，才將 [啟用 Multi-Dex] 啟用，也就是說即使在使用 ProGuard 之後，應用程式仍參考超過 6.5 萬個 Java 方法。
 
 如需 Multi-Dex 的詳細資訊，請參閱[設定應用程式使用超過 6.4 萬個方法](https://developer.android.com/tools/building/multidex.html) \(英文\)。
+
+### <a name="android-app-bundles"></a>Android 應用程式套件組合
+
+應用程式套件組合與 Apk 不同，因為它們無法直接部署到裝置。 相反地，它是一種格式，適合用來上傳所有已編譯的程式碼和資源。 當您上傳已簽署的應用程式套件組合之後，Google Play 將會擁有建立和簽署應用程式 Apk 所需的一切，並使用動態傳遞將其提供給您的使用者。
+
+若要啟用 Android 應用程式套件組合的支援，您必須在 Android 專案選項中，選擇 [ **Android 封裝格式**] 屬性的 `bundle` 值。 執行此動作之前，請確定您將專案變更為 `Release` 設定，因為應用程式套件組合僅適用于發行套件。
+
+您現在可以遵循封存[流程](#archive)來產生應用程式套件組合。 這會為您的應用程式產生應用程式套件組合。
+
+如需 Android 應用程式套件組合的詳細資訊，請參閱[Android 應用程式](https://developer.android.com/guide/app-bundle/)套件組合。
 
 <a name="Compile" />
 
