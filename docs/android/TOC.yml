@@ -513,6 +513,8 @@
       items:
         - name: 應用程式套件大小
           href: deploy-test/app-package-size.md
+        - name: 套用變更
+          href: deploy-test/apply-changes.md
         - name: 建置應用程式
           href: deploy-test/building-apps/index.md
           items:
