@@ -6,31 +6,31 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2019
-ms.openlocfilehash: 46d0b245246d9e93040cd8591dab8ed3a816268d
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 03/23/2020
+ms.openlocfilehash: 712ca4f8f3441e0d3c2aede1b2510b07ca89f829
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487005"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247609"
 ---
 # <a name="customizing-a-webview"></a>自訂 Web 工作
 
 [![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
-_[Xamarin] `WebView` 是在您的應用程式中顯示 web 和 HTML 內容的視圖。本文說明如何建立自訂轉譯器，以擴充 `WebView`，以允許C#從 JavaScript 叫用程式碼。_
+_Xamarin `WebView` 是在您的應用程式中顯示 web 和 HTML 內容的視圖。本文說明如何建立自訂轉譯器，以擴充 `WebView`，以允許C#從 JavaScript 叫用程式碼。_
 
-每個 Xamarin.Forms 檢視都隨附每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 當[`WebView`](xref:Xamarin.Forms.WebView)是由 iOS 上的 Xamarin 應用程式轉譯時，`WkWebViewRenderer` 類別會具現化，然後再具現化原生的 `WkWebView` 控制項。 在 Android 平台上，`WebViewRenderer` 類別會具現化原生 `WebView` 控制項。 在通用 Windows 平台 (UWP) 上，`WebViewRenderer` 類別會具現化原生 `WebView` 控制項。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 檢視都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。 當[`WebView`](xref:Xamarin.Forms.WebView)是由 iOS 上的 Xamarin 應用程式轉譯時，`WkWebViewRenderer` 類別會具現化，然後再具現化原生的 `WkWebView` 控制項。 在 Android 平台上，`WebViewRenderer` 類別會具現化原生的 `WebView` 控制項。 在通用 Windows 平台 (UWP) 上，`WebViewRenderer` 類別會具現化原生 `WebView` 控制項。 如需 Xamarin.Forms 控制項對應之轉譯器和原生控制項類別的詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
-下圖說明 [`View`](xref:Xamarin.Forms.View) 和實作它對應原生控制項間的關聯性：
+下圖說明 [`View`](xref:Xamarin.Forms.View) 和實作它之對應原生控制項間的關聯性：
 
 ![](hybridwebview-images/webview-classes.png "Relationship Between the WebView Class and its Implementing Native Classes")
 
 藉由在每個平臺上建立[`WebView`](xref:Xamarin.Forms.WebView)的自訂轉譯器，可以使用轉譯程式來執行平臺自訂。 執行這項作業的流程如下：
 
-1. [建立](#create-the-hybridwebview)`HybridWebView` 自訂控制項。
+1. [建立](#create-the-hybridwebview) `HybridWebView` 自訂控制項。
 1. [使用](#consume-the-hybridwebview) Xamarin.Forms 的 `HybridWebView`。
-1. 在每個平台上[建立](#create-the-custom-renderer-on-each-platform)`HybridWebView` 的自訂轉譯器。
+1. 在每個平台上[建立](#create-the-custom-renderer-on-each-platform) `HybridWebView` 的自訂轉譯器。
 
 現在會先討論每個專案，然後再執行 `HybridWebView` 轉譯器，以增強 Xamarin. 表單[`WebView`](xref:Xamarin.Forms.WebView)C# ，以允許從 JavaScript 叫用程式碼。 `HybridWebView` 執行個體會用以顯示 HTML 網頁，要求使用者輸入其名稱。 然後，當使用者按一下 HTML 按鈕時，JavaScript 函式會叫用 C# `Action`，其顯示包含使用者名稱的快顯視窗。
 
@@ -141,7 +141,7 @@ public partial class HybridWebViewPage : ContentPage
 
 ## <a name="create-the-custom-renderer-on-each-platform"></a>在每個平臺上建立自訂轉譯器
 
-建立自訂轉譯器類別的流程如下：
+建立自訂轉譯器類別的程序如下：
 
 1. 在 iOS 上建立 `WkWebViewRenderer` 類別的子類別，以及可呈現自訂控制項的 Android 和 UWP 上的 `WebViewRenderer` 類別。
 1. 覆寫呈現[`WebView`](xref:Xamarin.Forms.WebView)的 `OnElementChanged` 方法，並撰寫自訂的邏輯。 建立 `HybridWebView` 物件時，會呼叫這個方法。
@@ -150,7 +150,7 @@ public partial class HybridWebViewPage : ContentPage
 > [!NOTE]
 > 對大部分的 Xamarin.Forms 項目而言，可以選擇是否在每個平台專案中提供自訂轉譯器。 如果自訂轉譯器尚未註冊，則會使用控制項基底類別的預設轉譯器。 不過，轉譯 [View](xref:Xamarin.Forms.View) 項目時，每個平台專案都必須要有自訂轉譯器。
 
-下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
+下圖說明應用程式範例中每個專案的責任，以及這些專案之間的關聯性：
 
 ![](hybridwebview-images/solution-structure.png "HybridWebView Custom Renderer Project Responsibilities")
 
@@ -158,7 +158,7 @@ public partial class HybridWebViewPage : ContentPage
 
 ![](hybridwebview-images/screenshots.png "HybridWebView on each Platform")
 
-`WkWebViewRenderer` 和 `WebViewRenderer` 類別會公開 `OnElementChanged` 方法，這會在建立 Xamarin. form 自訂控制項以轉譯對應的原生 web 控制項時呼叫。 這個方法會採用包含 `OldElement` 和 `NewElement` 屬性的 `VisualElementChangedEventArgs` 參數。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `HybridWebView` 執行個體的參考。
+`WkWebViewRenderer` 和 `WebViewRenderer` 類別會公開 `OnElementChanged` 方法，這會在建立 Xamarin. form 自訂控制項以轉譯對應的原生 web 控制項時呼叫。 這個方法會採用包含 `OldElement` 和 `NewElement` 屬性的 `VisualElementChangedEventArgs` 參數。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `HybridWebView` 執行個體的參考。
 
 在每個平臺轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生 web 控制項自訂的位置。 要轉譯之 Xamarin. form 控制項的參考可透過 `Element` 屬性取得。
 
@@ -268,6 +268,15 @@ namespace CustomRenderer.iOS
         {
             ((HybridWebView)Element).InvokeAction(message.Body.ToString());
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -282,8 +291,8 @@ namespace CustomRenderer.iOS
 - 轉譯器的函式會呼叫[`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String))方法，將名為 `invokeAction` 的腳本訊息處理常式加入至[`WKUserContentController`](xref:WebKit.WKUserContentController)物件，這會導致在使用 `WebView` 物件的所有 `WKUserContentController` 實例的所有框架中定義 JavaScript 函數 `window.webkit.messageHandlers.invokeAction.postMessage(data)`。
 - 假設自訂轉譯器附加於新的 Xamarin.Forms 項目：
   - [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) 方法會載入 `HybridWebView.Uri` 屬性所指定的 HTML 檔案。 程式碼指定該檔案會儲存在專案的 `Content` 資料夾中。 一旦顯示網頁，即將 `invokeCSharpAction` JavaScript 函式插入至網頁。
-- 當轉譯器附加至的項目變更時：
-  - 釋放資源。
+- 當轉譯器附加至的專案變更時，就會釋放資源。
+- 在處置轉譯器時，會清除 Xamarin. form 元素。
 
 > [!NOTE]
 > 僅 iOS 8 和更新版本支援 `WKWebView` 類別。
@@ -332,6 +341,15 @@ namespace CustomRenderer.Droid
                 Control.LoadUrl($"file:///android_asset/Content/{((HybridWebView)Element).Uri}");
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -363,8 +381,8 @@ public class JavascriptWebViewClient : WebViewClient
   - [`WebView.AddJavascriptInterface`](xref:Android.Webkit.WebView.AddJavascriptInterface*) 方法會將新的 `JSBridge` 執行個體插入至 WebView JavaScript 內容的主框架，將它命名為 `jsBridge`。 以便從 JavaScript 存取 `JSBridge` 類別中的方法。
   - [`WebView.LoadUrl`](xref:Android.Webkit.WebView.LoadUrl*) 方法會載入 `HybridWebView.Uri` 屬性所指定的 HTML 檔案。 程式碼指定該檔案會儲存在專案的 `Content` 資料夾中。
   - 在 `JavascriptWebViewClient` 類別中，`invokeCSharpAction` JavaScript 函式會在頁面載入完成後插入至網頁。
-- 當轉譯器附加至的項目變更時：
-  - 釋放資源。
+- 當轉譯器附加至的專案變更時，就會釋放資源。
+- 在處置轉譯器時，會清除 Xamarin. form 元素。
 
 當 `invokeCSharpAction` JavaScript 函式執行時，它會依序叫用 `JSBridge.InvokeAction` 方法，如下列程式碼範例所示：
 
@@ -441,6 +459,15 @@ namespace CustomRenderer.UWP
         {
             ((HybridWebView)Element).InvokeAction(e.Value);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -452,8 +479,8 @@ namespace CustomRenderer.UWP
 - 假設自訂轉譯器附加於新的 Xamarin.Forms 項目：
   - 則會註冊 `NavigationCompleted` 和 `ScriptNotify` 事件的事件處理常式。 當原生 `WebView` 控制項已完成載入目前的內容或導覽失敗時，會引發 `NavigationCompleted` 事件。 當原生 `WebView` 控制項使用 JavaScript 將字串傳遞至應用程式時，會引發 `ScriptNotify` 事件。 網頁在傳遞 `string` 參數時呼叫 `window.external.notify`，藉以引發 `ScriptNotify` 事件。
   - `WebView.Source` 屬性設為 `HybridWebView.Uri` 屬性所指定之 HTML 檔案的 URI。 程式碼假設該檔案會儲存在專案的 `Content` 資料夾中。 一旦顯示網頁，就會引發 `NavigationCompleted` 事件並叫用 `OnWebViewNavigationCompleted` 方法。 然後使用 `WebView.InvokeScriptAsync` 方法將 `invokeCSharpAction` JavaScript 函式插入至網頁，假設導覽已順利完成。
-- 當轉譯器附加至的項目變更時：
-  - 就會由此處取消訂閱事件。
+- 當轉譯器附加至的專案變更時，會取消訂閱事件。
+- 在處置轉譯器時，會清除 Xamarin. form 元素。
 
 ## <a name="related-links"></a>相關連結
 
