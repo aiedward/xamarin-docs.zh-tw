@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 2ad576f10fc0af5d96396d90b3e502e21da1182d
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 0e37e138607fb0e00fbdc463ac7c53facf81395d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728235"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "78292480"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>第 5 部分 - 實用的程式碼共用策略
 
@@ -162,8 +162,8 @@ Console.WriteLine (System.IO.File.ReadAllText (filePath));
 
 ### <a name="windowsstorage-for-windows-8-and-windows-10"></a>Windows 8 和 Windows 10 的儲存空間
 
-*使用 Xamarin
-建立 Mobile Apps* [第](https://developer.xamarin.com/r/xamarin-forms/book/)[20 章。Async 和 File i/o](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)包含[Windows 8.1 和 Windows 10 的範例](https://github.com/xamarin/xamarin-forms-book-preview-2/tree/master/Chapter20)。
+*使用 Xamarin Forms*
+ 建立 Mobile Apps[ 書[第20章。Async 和 File i/o](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 包括 [Windows 8.1 和 Windows 10 的範例](https://github.com/xamarin/xamarin-forms-book-preview-2/tree/master/Chapter20)。
 
 使用[`DependencyService`](~/xamarin-forms/app-fundamentals/dependency-service/index.md)可以使用支援的 api，在這些平臺上讀取和檔案檔案：
 
@@ -262,7 +262,7 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 
  <a name="Reachability" />
 
-### <a name="reachability"></a>Reachability
+### <a name="reachability"></a>達
 
 行動裝置會在各種網路狀況下運作，從快速的 Wi-fi 或4G 連線到不佳的接收區域和緩慢的邊緣資料連結。 因此，在嘗試連線到遠端伺服器之前，最好先偵測網路是否可用，以及是否有可用的網路類型。
 
@@ -271,8 +271,6 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 - 如果網路無法使用，請通知使用者。 如果他們已手動停用它（例如 飛機模式或關閉 Wi-fi）之後，他們就可以解決問題。
 - 如果連接是3G，應用程式可能會有不同的行為（例如，Apple 不允許超過20Mb 的應用程式透過3G 下載）。 應用程式可以使用此資訊，在抓取大型檔案時警告使用者過多的下載時間。
 - 即使網路可用，在起始其他要求之前，最好先確認與目標伺服器之間的連線能力。 這會讓應用程式的網路作業無法重複計時，同時也允許向使用者顯示更具資訊性的錯誤訊息。
-
-有一個可供使用的[Xamarin iOS 範例](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)（以 Apple 的可連線性[範例程式碼](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)為基礎），以協助偵測網路可用性。
 
 ## <a name="webservices"></a>WebServices
 
@@ -300,8 +298,6 @@ RestSharp 在[github](https://github.com/restsharp/RestSharp/)上提供了 Xamar
 不同于 RestSharp，Servicestack.redis 時是裝載 web 服務的伺服器端解決方案，也是可在行動應用程式中執行以存取這些服務的用戶端程式庫。
 
 [Servicestack.redis 時網站](http://servicestack.net/)會說明專案的用途，以及檔和程式碼範例的連結。 這些範例包括 web 服務的完整伺服器端執行，以及可存取它的各種用戶端應用程式。
-
-Servicestack.redis 時網站上有一個[Xamarin iOS 範例](http://www.servicestack.net/monotouch/remote-info/)，而我們的[Web 服務檔](~/cross-platform/data-cloud/web-services/index.md)中有一個程式碼片段。
 
 ### <a name="wcf"></a>WCF
 
