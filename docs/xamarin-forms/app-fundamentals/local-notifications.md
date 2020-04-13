@@ -1,6 +1,6 @@
 ---
-title: Xamarin. 表單本機通知
-description: 本文說明如何在 Xamarin 中傳送和接收本機通知。
+title: Xamarin.表單本地通知
+description: 本文介紹如何在 Xamarin.Forms 中發送和接收本地通知。
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -8,29 +8,29 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 10/10/2019
 ms.openlocfilehash: ef2ef004378212fac593179d7aa38b3688fa82c3
-ms.sourcegitcommit: 49afc8c6484c465bf5c9e1d64a8c9122a0bcf506
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72371568"
 ---
-# <a name="local-notifications-in-xamarinforms"></a>Xamarin 中的本機通知
+# <a name="local-notifications-in-xamarinforms"></a>Xamarin.表單中的本地通知
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
 
-本機通知是安裝在行動裝置上的應用程式所傳送的警示。 本機通知通常用於下列功能：
+本地通知是安裝在行動裝置上的應用程式發送的警報。 本地通知通常用於功能,例如:
 
 - 行事曆事件
-- 提醒
-- 以位置為基礎的觸發程式
+- 提醒事項
+- 基於位置的觸發器
 
-每個平臺都會以不同的方式處理本機通知的建立、顯示和取用。 本文說明如何建立跨平臺抽象概念，以使用 Xamarin 來傳送和接收本機通知。
+每個平臺以不同的方式處理本地通知的創建、顯示和使用。 本文介紹如何創建跨平臺抽象以使用 Xamarin.Forms 發送和接收本地通知。
 
-[在 iOS 和 Android 上 ![本機通知應用程式](local-notifications-images/local-notifications-msg-cropped.png)](local-notifications-images/local-notifications-msg.png#lightbox)
+[![iOS 和安卓上的本地通知應用程式](local-notifications-images/local-notifications-msg-cropped.png)](local-notifications-images/local-notifications-msg.png#lightbox)
 
-## <a name="create-a-cross-platform-interface"></a>建立跨平臺介面
+## <a name="create-a-cross-platform-interface"></a>建立跨平台介面
 
-Xamarin 應用程式應該建立並取用通知，而不需要考慮基礎平臺的執行。 下列 `INotificationManager` 介面是在共用的程式碼程式庫中執行，並定義應用程式可以用來與通知互動的跨平臺 API：
+Xamarin.Forms 應用程式應創建和使用通知,而不考慮基礎平台實現。 以下`INotificationManager`介面在共享程式庫中實現,並定義了應用程式可用於與通知互動的跨平臺 API:
 
 ```csharp
 public interface INotificationManager
@@ -45,11 +45,11 @@ public interface INotificationManager
 }
 ```
 
-這個介面將會在每個平臺專案中執行。 `NotificationReceived` 事件可讓應用程式處理傳入的通知。 `Initialize` 方法應執行準備通知系統所需的任何原生平臺邏輯。 `ScheduleNotification` 方法應傳送通知。 接收訊息時，基礎平臺應呼叫 `ReceiveNotification` 方法。
+此介面將在每個平台項目中實現。 該`NotificationReceived`事件允許應用程式處理傳入通知。 該方法`Initialize`應執行準備通知系統所需的任何本機平臺邏輯。 該方法`ScheduleNotification`應發送通知。 收到`ReceiveNotification`消息時,基礎平台應調用該方法。
 
-## <a name="consume-the-interface-in-xamarinforms"></a>使用 Xamarin 中的介面
+## <a name="consume-the-interface-in-xamarinforms"></a>使用 Xamarin 中的介面。
 
-一旦建立介面之後，就可以在共用的 Xamarin. form 專案中使用它，即使尚未建立平臺程式也是一樣。 範例應用程式包含名為**MainPage**的 `ContentPage`，並具有下列內容：
+創建介面後,即使在尚未創建平台實現時,也可以在共用 Xamarin.Forms 專案中使用它。 範例應用程式包含一個`ContentPage`稱為**MainPage.xaml,** 包含以下內容:
 
 ```xaml
 <StackLayout Margin="0,35,0,0"
@@ -65,9 +65,9 @@ public interface INotificationManager
 </StackLayout>
 ```
 
-版面配置包含一個 `Label` 元素，其中含有使用者的指示，以及應該在點擊時排程通知的 `Button`。
+佈局包含一個`Label`元素,其中包含用戶說明,以及應`Button`在 點擊時安排通知的元素。
 
-`MainPage` 類別程式碼後置會處理通知的傳送和接收：
+`MainPage`類別代碼後面處理通知的傳送與接收:
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -109,17 +109,17 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`MainPage` 類別的函式會使用 Xamarin `DependencyService` 來取出 `INotificationManager`的平臺特定實例。 `OnScheduleClicked` 方法會使用 `INotificationManager` 實例來排程新的通知。 系統會從附加至 `NotificationReceived` 事件的事件處理常式呼叫 `ShowNotification` 方法，並在叫用事件時，將新的 `Label` 插入至頁面。
+類`MainPage`建構函數使用 Xamarin.Forms`DependencyService`檢索`INotificationManager`特定於 平台的實例。 該方法`OnScheduleClicked`使用實`INotificationManager`例 來安排新的通知。 該方法`ShowNotification`從附加`NotificationReceived`到 事件的事件處理程式調用,並在調用事件時`Label`將新 添加到頁中。
 
-如需有關 `DependencyService`的詳細資訊，請參閱[DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)。
+有關 Xamarin.表`DependencyService`單的詳細資訊,請參閱[Xamarin.窗體相依項服務](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)。
 
-## <a name="create-the-android-interface-implementation"></a>建立 Android 介面執行
+## <a name="create-the-android-interface-implementation"></a>建立 Android 介面實作
 
-若要讓 Xamarin 應用程式在 Android 上傳送和接收通知，應用程式必須提供 `INotificationManager` 介面的執行。
+對於 Xamarin.Forms 應用程式要在 Android 上發送和接收通知`INotificationManager`,應用程式必須提供介面的實現。
 
-### <a name="create-the-androidnotificationmanager-class"></a>建立 AndroidNotificationManager 類別
+### <a name="create-the-androidnotificationmanager-class"></a>建立 Android 通知管理員 類別
 
-`AndroidNotificationManager` 類別會實 `INotificationManager` 介面：
+類別`AndroidNotificationManager`的`INotificationManager`介面 :
 
 ```csharp
 using Android.Support.V4.App;
@@ -209,16 +209,16 @@ namespace LocalNotifications.Droid
 }
 ```
 
-命名空間上方的 `assembly` 屬性會向 `DependencyService`註冊 `INotificationManager` 介面執行。
+命名`assembly`空間上方的屬性將`INotificationManager`介面設定註冊`DependencyService`到 。
 
-Android 可讓應用程式為通知定義多個通道。 `Initialize` 方法會建立範例應用程式用來傳送通知的基本通道。 `ScheduleNotification` 方法會定義建立和傳送通知所需的平臺特定邏輯。 最後，在收到訊息時，Android OS 會呼叫 `ReceiveNotification` 方法，並叫用事件處理常式。
+Android 允許應用程式為通知定義多個通道。 該方法`Initialize`創建範例應用程式用於發送通知的基本通道。 該方法`ScheduleNotification`定義創建和發送通知所需的特定於平台的邏輯。 最後,當`ReceiveNotification`收到消息時,Android 操作系統調用該方法,並調用事件處理程式。
 
 > [!NOTE]
-> `Application` 類別定義于 `Xamarin.Forms` 和 `Android.App` 命名空間中，因此 `AndroidApp` 別名定義于 `using` 語句中，以區分兩者。
+> 類`Application``Xamarin.Forms`在`Android.App`與命名空間中定義`AndroidApp`, 因此在語`using`句中 定義別名以區分兩者。
 
-### <a name="handle-incoming-notifications-on-android"></a>處理 Android 上的傳入通知
+### <a name="handle-incoming-notifications-on-android"></a>在 Android 上處理傳入通知
 
-`MainActivity` 類別必須偵測傳入通知，並通知 `AndroidNotificationManager` 實例。 `MainActivity` 類別上的 `Activity` 屬性應該指定 `LaunchMode.SingleTop`的 `LaunchMode` 值：
+類`MainActivity`必須檢測傳入通知並通知`AndroidNotificationManager`實例。 類別`Activity`的`MainActivity`屬性應指定`LaunchMode``LaunchMode.SingleTop`值:
 
 ```csharp
 [Activity(
@@ -230,9 +230,9 @@ Android 可讓應用程式為通知定義多個通道。 `Initialize` 方法會�
     }
 ```
 
-當應用程式在前景時，`SingleTop` 模式可防止 `Activity` 的多個實例啟動。 對於在較複雜的通知案例中啟動多個活動的應用程式而言，此 `LaunchMode` 可能不適用。 如需 `LaunchMode` 列舉值的詳細資訊，請參閱[Android 活動 LaunchMode](https://developer.android.com/guide/topics/manifest/activity-element#lmode)。
+該`SingleTop`模式可防止在應用程序處於前`Activity`台 時啟動 的多個實例。 這可能`LaunchMode`不適用於在更複雜的通知方案中啟動多個活動的應用程式。 有關枚舉值`LaunchMode`的詳細資訊,請參閱 Android[活動啟動模式](https://developer.android.com/guide/topics/manifest/activity-element#lmode)。
 
-在中，已修改 `MainActivity` 類別以接收傳入通知：
+在`MainActivity`類別變更以接收傳入通知:
 
 ```csharp
 protected override void OnCreate(Bundle savedInstanceState)
@@ -260,20 +260,20 @@ void CreateNotificationFromIntent(Intent intent)
 }
 ```
 
-`CreateNotificationFromIntent` 方法會從 `intent` 引數解壓縮通知資料，並使用 `ReceiveNotification` 方法將其提供給 `AndroidNotificationManager`。 從 `OnCreate` 方法和 `OnNewIntent` 方法呼叫 `CreateNotificationFromIntent` 方法：
+該方法`CreateNotificationFromIntent``intent`從 參數中提取通知數據,並將其`AndroidNotificationManager`提供給`ReceiveNotification`使用的方法。 該方法`CreateNotificationFromIntent`從 該`OnCreate``OnNewIntent`方法和 方法中調用:
 
-- 當通知資料啟動應用程式時，`Intent` 的資料會傳遞至 `OnCreate` 方法。
-- 如果應用程式已在前景中，`Intent` 資料將會傳遞至 `OnNewIntent` 方法。
+- 當應用程式由通知數據啟動時,`Intent`數據將傳遞給方法`OnCreate`。
+- 如果應用程式已在前臺,數據`Intent`將傳遞給`OnNewIntent`方法。
 
-Android 提供許多通知的先進選項。 如需詳細資訊，請參閱[在 Xamarin 中的通知](~/android/app-fundamentals/notifications/index.md)。
+Android 為通知提供了許多高級選項。 有關詳細資訊,請參閱[Xamarin.Android 中的通知](~/android/app-fundamentals/notifications/index.md)。
 
-## <a name="create-the-ios-interface-implementation"></a>建立 iOS 介面執行
+## <a name="create-the-ios-interface-implementation"></a>建立 iOS 介面
 
-若要讓 Xamarin 應用程式在 iOS 上傳送和接收通知，應用程式必須提供 `INotificationManager`的執行。
+對於 Xamarin.Forms 應用程式要在 iOS 上發送和接收通知`INotificationManager`,應用程式必須提供的實現。
 
-### <a name="create-the-iosnotificationmanager-class"></a>建立 iOSNotificationManager 類別
+### <a name="create-the-iosnotificationmanager-class"></a>建立 iOS 通知管理員類別
 
-`iOSNotificationManager` 類別會實 `INotificationManager` 介面：
+類別`iOSNotificationManager`的`INotificationManager`介面 :
 
 ```csharp
 [assembly: Dependency(typeof(LocalNotifications.iOS.iOSNotificationManager))]
@@ -343,13 +343,13 @@ namespace LocalNotifications.iOS
 }
 ```
 
-命名空間上方的 `assembly` 屬性會向 `DependencyService`註冊 `INotificationManager` 介面執行。
+命名`assembly`空間上方的屬性將`INotificationManager`介面設定註冊`DependencyService`到 。
 
-在 iOS 上，您必須先要求許可權以使用通知，然後再嘗試排程通知。 `Initialize` 方法會要求授權使用本機通知。 `ScheduleNotification` 方法會定義建立和傳送通知所需的邏輯。 最後，當收到訊息時，iOS 會呼叫 `ReceiveNotification` 方法，並叫用事件處理常式。
+在 iOS 上,您必須請求使用通知的許可權,然後才能嘗試安排通知。 該方法`Initialize`請求使用本地通知的授權。 該方法`ScheduleNotification`定義創建和發送通知所需的邏輯。 最後,iOS 將在收到消息時調`ReceiveNotification`用 該方法,並調用事件處理程式。
 
-### <a name="handle-incoming-notifications-on-ios"></a>處理 iOS 上的傳入通知
+### <a name="handle-incoming-notifications-on-ios"></a>在 iOS 上處理傳入通知
 
-在 iOS 上，您必須建立子類別 `UNUserNotificationCenterDelegate` 的委派，以處理傳入訊息。 範例應用程式會定義 `iOSNotificationReceiver` 類別：
+在 iOS 上,必須創建一`UNUserNotificationCenterDelegate`個委託 ,該子類來處理傳入消息。 範例應用程式定義類別`iOSNotificationReceiver`:
 
 ```csharp
 public class iOSNotificationReceiver : UNUserNotificationCenterDelegate
@@ -365,9 +365,9 @@ public class iOSNotificationReceiver : UNUserNotificationCenterDelegate
 }
 ```
 
-這個類別會使用 `DependencyService` 來取得 `iOSNotificationManager` 類別的實例，並將傳入的通知資料提供給 `ReceiveNotification` 方法。
+類使用`DependencyService``iOSNotificationManager`獲取 類的實例,併`ReceiveNotification`為 方法 提供傳入通知數據。
 
-`AppDelegate` 類別必須在應用程式啟動期間指定自訂委派。 `AppDelegate` 類別必須在應用程式啟動期間，將 `iOSNotificationReceiver` 物件指定為 `UNUserNotificationCenter` 委派。 這會發生在 `FinishedLaunching` 方法中：
+類`AppDelegate`必須在應用程式啟動期間指定自定義委託。 類`AppDelegate`必須在應用程式啟動期間`iOSNotificationReceiver`指定物件`UNUserNotificationCenter`作為 委託。 這一個方法`FinishedLaunching`中 :
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -381,23 +381,23 @@ public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 }
 ```
 
-iOS 提供許多通知的先進選項。 如需詳細資訊，請參閱[在 Xamarin 中的通知](~/ios/platform/user-notifications/index.md)。
+iOS 為通知提供了許多高級選項。 有關詳細資訊,請參閱[Xamarin.iOS 中的通知](~/ios/platform/user-notifications/index.md)。
 
 ## <a name="test-the-application"></a>測試應用程式
 
-一旦平臺專案包含已註冊的 `INotificationManager` 介面執行，就可以在這兩個平臺上測試應用程式。 執行應用程式，然後按一下 [**排程通知**] 按鈕以建立通知。
+一旦平臺專案包含`INotificationManager`介面的註冊實現,可以在兩個平臺上測試應用程式。 運行應用程式並按下**計畫通知按鈕**以建立通知。
 
-在 Android 上，通知會出現在通知區域中。 當您按下通知時，應用程式會收到通知，並在 [**排程通知**] 按鈕下方顯示一則訊息：
+在 Android 上,通知將顯示在通知區域中。 當點擊通知時,應用程式將收到通知並在 **「計劃通知」** 按鈕下方顯示一條訊息:
 
-![Android 上的本機通知](local-notifications-images/local-notifications-android.png)
+![Android 上的本地通知](local-notifications-images/local-notifications-android.png)
 
-在 iOS 上，應用程式會自動接收傳入通知，而不需要使用者輸入。 應用程式會收到通知，並在 [**排程通知**] 按鈕下方顯示一則訊息：
+在 iOS 上,應用程式會自動接收傳入通知,而無需使用者輸入。 應用程式收到通知並在 **「計劃通知」** 按鈕下方顯示一條訊息:
 
-![IOS 上的本機通知](local-notifications-images/local-notifications-ios.png)
+![iOS 上的本地通知](local-notifications-images/local-notifications-ios.png)
 
 ## <a name="related-links"></a>相關連結
 
 - [範例專案](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
-- [Xamarin 中的通知](~/android/app-fundamentals/notifications/index.md)
-- [在 Xamarin 中的通知](~/ios/platform/user-notifications/index.md)
-- [Xamarin. Forms 相依性。服務](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)
+- [Xamarin.安卓中的通知](~/android/app-fundamentals/notifications/index.md)
+- [Xamarin.iOS 中的通知](~/ios/platform/user-notifications/index.md)
+- [Xamarin.表單相依項.服務](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)

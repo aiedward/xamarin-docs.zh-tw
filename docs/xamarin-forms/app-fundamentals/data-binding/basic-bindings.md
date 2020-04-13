@@ -9,26 +9,26 @@ ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
 ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79305035"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本繫結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Xamarin.Forms 資料繫結會連結兩個物件之間的一組屬性，而這兩個物件其中至少一個通常是使用者介面物件。 這兩個物件稱為「目標」和「來源」：
+Xamarin.Forms 資料繫結會連結兩個物件之間的一組屬性，而這兩個物件其中至少一個通常是使用者介面物件。 這兩個物件稱為「目標」** 和「來源」**：
 
-- 「目標」是資料繫結設定所在的物件 (和屬性)。
-- 「來源」是資料繫結參考的物件 (和屬性)。
+- 「目標」** 是資料繫結設定所在的物件 (和屬性)。
+- 「來源」** 是資料繫結參考的物件 (和屬性)。
 
 這項區別有時可能有點令人困惑：在最簡單的情況下，資料會從來源流向目標，這表示目標屬性值會從來源屬性值設定。 不過，在某些情況下，資料可能會從目標流向來源，或是雙向流動。 為了避免混淆，請記住，目標一律是資料繫結設定所在的物件，即使它是提供資料而不是接收資料。
 
 ## <a name="bindings-with-a-binding-context"></a>具有繫結內容的繫結
 
-雖然資料繫結通常會完全以 XAML 指定，但在程式碼中看到資料繫結也很有意義。 [基本程式碼繫結] 頁面包含具有 `Label` 和 `Slider` 的 XAML 檔案：
+雖然資料繫結通常會完全以 XAML 指定，但在程式碼中看到資料繫結也很有意義。 [基本程式碼繫結]**** 頁面包含具有 `Label` 和 `Slider` 的 XAML 檔案：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -53,14 +53,14 @@ Xamarin.Forms 資料繫結會連結兩個物件之間的一組屬性，而這兩
 
 如果沒有資料繫結，您會將 `Slider` 的 `ValueChanged` 事件設定為事件處理常式，以存取 `Slider` 的 `Value` 屬性，並將該值設定為 `Label` 的 `Rotation` 屬性。 資料繫結會自動執行該作業；已不再需要事件處理常式和其內的程式碼。
 
-您可以在衍生自 [`BindableObject`](xref:Xamarin.Forms.BindableObject) 的任何類別執行個體上設定繫結，其中包括 `Element`、`VisualElement`、`View` 和 `View` 衍生項目。  繫結一律會在目標物件上設定。 繫結會參考來源物件。 若要設定資料繫結，請使用目標類別的下列兩個成員：
+您可以對[`BindableObject`](xref:Xamarin.Forms.BindableObject)派生自`Element`的`VisualElement``View``View`包含的和和派生的任何類的實例設置綁定。  繫結一律會在目標物件上設定。 繫結會參考來源物件。 若要設定資料繫結，請使用目標類別的下列兩個成員：
 
-- [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性指定來源物件。
-- [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) 方法指定目標屬性和來源屬性。
+- 屬性[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)指定源物件。
+- 該方法[`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))指定目標屬性和源屬性。
 
 在此範例中，`Label` 是繫結目標，而 `Slider` 是繫結來源。 `Slider` 來源中的變更會影響 `Label` 目標的旋轉。 資料會從來源流向目標。
 
-`BindableObject` 所定義的 `SetBinding` 方法具有 [`BindingBase`](xref:Xamarin.Forms.BindingBase) 類型的引數，而 [`Binding`](xref:Xamarin.Forms.Binding) 類別衍生自該處，但有 [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) 類別定義的其他 `SetBinding` 方法。 **基本程式碼繫結**範例中的程式碼後置檔案，使用來自此類別的較簡單 [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) 延伸模組方法。
+`SetBinding``BindableObject`定義[`BindingBase`](xref:Xamarin.Forms.BindingBase)的方法具有[`Binding`](xref:Xamarin.Forms.Binding)類派生的類型參數,`SetBinding`[`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions)但存在由 類定義的其他方法。 **基本程式碼繫結**範例中的程式碼後置檔案，使用來自此類別的較簡單 [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) 延伸模組方法。
 
 ```csharp
 public partial class BasicCodeBindingPage : ContentPage
@@ -81,7 +81,7 @@ public partial class BasicCodeBindingPage : ContentPage
 
 `SetBinding` 方法顯示其中一個最重要的資料繫結規則：
 
-目標屬性都必須受到可繫結屬性的支援。
+目標屬性都必須受到可繫結屬性的支援。**
 
 此規則暗示，目標物件必須是衍生自 `BindableObject` 的類別執行個體。 請參閱[**可繫結屬性**](~/xamarin-forms/xaml/bindable-properties.md)一文，以了解可繫結物件和可繫結屬性的概觀。
 
@@ -97,9 +97,9 @@ label.SetBinding(RotationProperty, "Value");
 
 在您操作 `Slider` 時，`Label` 會跟著旋轉：
 
-[![Basic 程式碼繫結](basic-bindings-images/basiccodebinding-small.png "Basic 程式碼繫結")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic 程式碼繫結")
+[![基本代碼繫結](basic-bindings-images/basiccodebinding-small.png "基本代碼繫結")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本代碼繫結")
 
-[基本 XAML 繫結] 頁面與 [基本程式碼繫結] 相同，不同之處在於它會在 XAML 中定義整個資料繫結：
+[基本 XAML 繫結]**** 頁面與 [基本程式碼繫結]**** 相同，不同之處在於它會在 XAML 中定義整個資料繫結：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -126,7 +126,7 @@ label.SetBinding(RotationProperty, "Value");
 - 需要 `x:Reference` 標記延伸才能參考來源物件，也就是名為 `slider`的 `Slider`。
 - `Binding` 標記延伸會將 `Label` 的 `Rotation` 屬性連結至 `Slider` 的 `Value` 屬性。
 
-如需 XAML 標記延伸的詳細資訊，請參閱 [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。 `x:Reference` 標記延伸受到 [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) 類別支援；`Binding` 受到 [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) 類別支援。 如 XML 命名空間前置詞所表示，`x:Reference` 是 XAML 2009 規格的一部分，而 `Binding` 是 Xamarin.Forms 的一部分。 請注意，在大括弧內沒有出現引號。
+如需 XAML 標記延伸的詳細資訊，請參閱 [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。 [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)類`x:Reference`支持標記擴展,但標記擴展支援。`Binding`由類[`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension)支援。 如 XML 命名空間前置詞所表示，`x:Reference` 是 XAML 2009 規格的一部分，而 `Binding` 是 Xamarin.Forms 的一部分。 請注意，在大括弧內沒有出現引號。
 
 在設定 `BindingContext` 時，很容易就會忘記 `x:Reference` 標記延伸。 通常會錯誤地將屬性直接設定為如下的繫結來源名稱：
 
@@ -136,9 +136,9 @@ BindingContext="slider"
 
 但那是不對的。 該標記會將 `BindingContext` 屬性設定為 `string` 物件，其字元拼起來是 "slider"！
 
-請注意，來源屬性是使用 `BindingExtension` 的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 屬性所指定，其對應於 [`Binding`](xref:Xamarin.Forms.Binding) 類別的 [`Path`](xref:Xamarin.Forms.Binding.Path) 屬性。
+請注意,源屬性是使用的屬性指定的[`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path)`BindingExtension`[`Path`](xref:Xamarin.Forms.Binding.Path), 該屬性對應[`Binding`](xref:Xamarin.Forms.Binding)於類的屬性。
 
-[基本 XAML 繫結] 頁面上所顯示的標記可以簡化：XAML 標記延伸，例如 `x:Reference` 和 `Binding` 可以定義「內容屬性」屬性，這對於 XAML 標記延伸表示屬性名稱不需要出現。 `Name` 屬性是 `x:Reference` 的內容屬性，而 `Path` 屬性是 `Binding` 的內容屬性，這表示它們可以從運算式排除：
+[基本 XAML 繫結]**** 頁面上所顯示的標記可以簡化：XAML 標記延伸，例如 `x:Reference` 和 `Binding` 可以定義「內容屬性」** 屬性，這對於 XAML 標記延伸表示屬性名稱不需要出現。 `Name` 屬性是 `x:Reference` 的內容屬性，而 `Path` 屬性是 `Binding` 的內容屬性，這表示它們可以從運算式排除：
 
 ```xaml
 <Label Text="TEXT"
@@ -175,7 +175,7 @@ BindingContext="slider"
 </ContentPage>
 ```
 
-程式碼後置檔案會使用 `BindableObject` 定義的 [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) 方法來設定繫結。 引數是 [`Binding`](xref:Xamarin.Forms.Binding) 類別的[建構函式](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object))：
+代碼背後的檔使用[`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))`BindableObject`定義 的方法設置綁定。 引數是 [`Binding`](xref:Xamarin.Forms.Binding) 類別的[建構函式](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object))：
 
 ```csharp
 public partial class AlternativeCodeBindingPage : ContentPage
@@ -193,18 +193,18 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 執行此程式可能會有點令人驚訝：
 
-[![替代程式碼繫結](basic-bindings-images/alternativecodebinding-small.png "替代程式碼繫結")](basic-bindings-images/alternativecodebinding-large.png#lightbox "替代程式碼繫結")
+[![替代代碼繫結](basic-bindings-images/alternativecodebinding-small.png "替代代碼繫結")](basic-bindings-images/alternativecodebinding-large.png#lightbox "替代代碼繫結")
 
 左側的 iOS 畫面會顯示頁面第一次出現時的螢幕外觀。 `Label` 在哪裡？
 
-問題在於 `Slider` 初始值為 0。 這會導致 `Label` 的 `Scale` 屬性也設定為 0，覆寫其預設值 1。 這導致一開始看不到 `Label`。 如 Android 螢幕擷取畫面所示，您可以操作 `Slider`，讓 `Label` 再次出現，但其一開始消失是令人不安。
+問題在於 `Slider` 初始值為 0。 這會導致 `Label` 的 `Scale` 屬性也設定為 0，覆寫其預設值 1。 這導致一開始看不到 `Label`。 正如 Android 螢幕截圖所示,您`Slider`可以操作 以`Label`使 再次出現 ,但其初始消失令人不安。
 
 您將在[下一篇文章](binding-mode.md)中發現如何藉由從 `Scale` 屬性的預設值初始化 `Slider` 來避免這個問題。
 
 > [!NOTE]
-> [`VisualElement`](xref:Xamarin.Forms.VisualElement) 類別也會定義 [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) 和 [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) 屬性，它們可以在水平和垂直方向以不同的方式調整 `VisualElement`。
+> 類[`VisualElement`](xref:Xamarin.Forms.VisualElement)還[`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX)定義[`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY)和 屬性,這些屬性可以在水準`VisualElement`和垂直方向 中縮放不同。
 
-[替代 XAML 繫結] 頁面會顯示完全使用 XAML 的相等繫結：
+[替代 XAML 繫結]**** 頁面會顯示完全使用 XAML 的相等繫結：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -286,7 +286,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 `BindingContext` 屬性有個極重要的特性：
 
-`BindingContext` 屬性的設定會透過視覺化樹狀結構繼承。
+`BindingContext` 屬性的設定會透過視覺化樹狀結構繼承。**
 
 如您所見，這對於簡化繫結運算式可能非常好用，且在某些情況下 &mdash; 特別是在 Model View ViewModel (MVVM) 案例 &mdash; 很重要。
 
@@ -327,7 +327,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 [![繫結內容繼承](basic-bindings-images/bindingcontextinheritance-small.png "繫結內容繼承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "繫結內容繼承")
 
-在[下一篇文章](binding-mode.md)中，您會看到「繫結模式」如何變更目標和來源物件之間的資料流程。
+在[下一篇文章](binding-mode.md)中，您會看到「繫結模式」** 如何變更目標和來源物件之間的資料流程。
 
 ## <a name="related-links"></a>相關連結
 

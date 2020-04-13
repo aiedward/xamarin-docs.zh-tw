@@ -8,21 +8,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: 1f71179ccafc2daf65e792c4538bf47ea2df1e7d
-ms.sourcegitcommit: 0177e06169da621ed9d5fa0f6118a628e8c92bd2
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75663702"
 ---
-# <a name="compiling-for-different-devices-in-xamarinios"></a>針對 Xamarin 中的不同裝置進行編譯
+# <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS 中編譯不同的裝置
 
-可執行檔的組建屬性可從專案的 [iOS 組建] 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建] (在 Visual Studio for Mac 中) 和 [屬性]\(在 Visual Studio 中)：
+可執行檔的組建屬性可從專案的 [iOS 組建]**** 屬性頁面來設定，若要找到此頁面，請在專案名稱上按一下滑鼠右鍵，然後瀏覽至 [選項] > [iOS 組建]**** (在 Visual Studio for Mac 中) 和 [屬性]**** \(在 Visual Studio 中)：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](compiling-for-different-devices-images/image1.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![](compiling-for-different-devices-images/image1a.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1a.png#lightbox)
 
@@ -34,13 +34,13 @@ ms.locfileid: "75663702"
 
 Visual Studio for Mac 可讓您設定兩個與 SDK 相關的重要屬性：iOS SDK 版本 (用來建置軟體) 和部署目標 (或最小的必要 iOS 版本)。
 
-iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會將 Xamarin.iOS 導向至其應該在建置期間參考的編譯器、連結器和程式庫。 以滑鼠右鍵按一下專案，然後在 [選項] 視窗中依序選擇 [**選項**] 和 [ **iOS 組建**]：
+iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會將 Xamarin.iOS 導向至其應該在建置期間參考的編譯器、連結器和程式庫。 右鍵按下項目, 選擇**選項**, 然後選擇**iOS 產生**:
 
-[![選擇 [選項] 視窗上的 [SDK 版本]](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
+[![選擇 SDK 版本](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
 
-**部署目標**設定可用來選取應用程式執行所在之作業系統的最小必要版本。 這會在您專案的**plist**檔案中設定。 請挑選擁有您執行應用程式所需之所有 API 的最小版本。
+**部署目標**設定可用來選取應用程式執行所在之作業系統的最小必要版本。 這在項目的**Info.plist 檔中設定**。 請挑選擁有您執行應用程式所需之所有 API 的最小版本。
 
-[![在 plist 檔案中設定部署目標](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
+[![在 Info.plist 檔中設定部署目標](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
 一般來說，Xamarin.iOS API 會公開最新版 SDK 中的所有可用方法，而且如有必要，我們也會提供可讓您偵測功能是否可在執行階段使用的便利屬性 (例如，`UIDevice.UserInterfaceIdiom` 和 `UIDevice.IsMultitaskingSupported` 隨時都會在 Xamarin.iOS 上運作，我們會執幕後行在所有工作)。
 
@@ -99,18 +99,18 @@ iOS **SDK 版本**選項可讓您使用不同版本的 Apple 發佈 SDK，這會
 
 請注意，提交至 App Store 的任何組建都必須包含 64 位元的支援，這是 [Apple](https://developer.apple.com/news/?id=12172014b) 所設下的需求。 此外，iOS 11 僅支援 64 位元應用程式。
 
-### <a name="arm-thumb-2-support"></a>ARM 拇指2支援
+### <a name="arm-thumb-2-support"></a>ARM 拇指-2 支援
 
 Thumb 是 ARM 處理器所使用、更為精簡的指令集。 藉由啟用 Thumb 支援，您可以減少可執行檔的大小，但代價是執行時間較久。 ARMv7 和 ARMv7s 可支援 Thumb。
 
-## <a name="conditional-framework-usage"></a>條件式架構使用方式
+## <a name="conditional-framework-usage"></a>條件框架使用
 
 如果您的專案想要利用較新版 iOS 的某些功能，您可能需要有條件地依賴某些新架構。 其基本範例是想要在 iOS 4.0 或更新版本上執行時使用 iAd，但又要繼續支援 3.x 裝置。 為了實現此目的，您需要讓 Xamarin.iOS 知道您需要針對 iAd 架構進行「弱式」連結。 弱式繫結可確保系統只會在首次需要架構中的類別時，隨需載入架構。
 
 如果要這麼做，請執行下列步驟：
 
-- 開啟 [專案選項]，然後瀏覽至 [iOS 組建] 窗格。
-- 針對您想要進行弱式連結的每個組態，在 [其他選項] 中新增 `'-gcc_flags "-weak_framework iAd"'`：
+- 開啟 [專案選項]****，然後瀏覽至 [iOS 組建]**** 窗格。
+- 針對您想要進行弱式連結的每個組態，在 [其他選項]**** 中新增 `'-gcc_flags "-weak_framework iAd"'`：
 
 [![](compiling-for-different-devices-images/image3.png "Additional Options")](compiling-for-different-devices-images/image3.png#lightbox)
 

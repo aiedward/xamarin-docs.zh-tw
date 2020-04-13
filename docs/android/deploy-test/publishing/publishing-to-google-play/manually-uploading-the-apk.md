@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: b54296da3f1253b77b63363583c34e1548cd6abc
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724080"
 ---
 # <a name="manually-uploading-the-apk"></a>手動上傳 APK
@@ -20,25 +20,25 @@ ms.locfileid: "76724080"
 
 ## <a name="google-play-developer-console"></a>Google Play 開發人員控制台
 
-編譯完 APK 並備妥宣傳資產之後，必須將應用程式上傳到 Google Play。 做法是登入 [Google Play 開發人員控制台](https://play.google.com/apps/publish)(參見下圖)。 按一下 [在 Google Play 上發佈 Android 應用程式]  按鈕，以起始散發應用程式的程序。
+編譯完 APK 並備妥宣傳資產之後，必須將應用程式上傳到 Google Play。 做法是登入 [Google Play 開發人員控制台](https://play.google.com/apps/publish)(參見下圖)。 按一下 [在 Google Play 上發佈 Android 應用程式]**** 按鈕，以起始散發應用程式的程序。
 
 [![Google Play 開發人員控制台](manually-uploading-the-apk-images/00-google-play-developer-console-sml.png)](manually-uploading-the-apk-images/00-google-play-developer-console.png#lightbox)
 
-如果您已經有向 Google Play 註冊的現有應用程式，請按一下 [新增應用程式]  按鈕：
+如果您已經有向 Google Play 註冊的現有應用程式，請按一下 [新增應用程式]**** 按鈕：
 
-[![[新增應用程式] 按鈕](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png#lightbox)
+[![新增應用程式按鈕](manually-uploading-the-apk-images/01-existing-app-sml.png)](manually-uploading-the-apk-images/01-existing-app.png#lightbox)
 
-顯示 [新增應用程式]  對話方塊時，輸入應用程式的名稱，然後按一下 [上傳 APK]  ：
+顯示 [新增應用程式]**** 對話方塊時，輸入應用程式的名稱，然後按一下 [上傳 APK]****：
 
-[![[上傳 APK] 按鈕](manually-uploading-the-apk-images/02-add-new-application-sml.png)](manually-uploading-the-apk-images/02-add-new-application.png#lightbox)
+[![上傳 APK 按鈕](manually-uploading-the-apk-images/02-add-new-application-sml.png)](manually-uploading-the-apk-images/02-add-new-application.png#lightbox)
 
-下一個畫面會允許發行 Alpha 測試階段、Beta 測試階段或正式發佈階段的應用程式。 在以下範例中，已選取 [Alpha 測試階段]  索引標籤。 由於 **MyApp** 並不使用授權服務，因此針對此範例並不需要按一下 [取得授權金鑰]  按鈕。 在這裡會按一下 [將您的第一個 APK 上傳到 Alpha 測試階段]  按鈕來發行至 Alpha 頻道：
+下一個畫面會允許發行 Alpha 測試階段、Beta 測試階段或正式發佈階段的應用程式。 在以下範例中，已選取 [Alpha 測試階段]**** 索引標籤。 由於 **MyApp** 並不使用授權服務，因此針對此範例並不需要按一下 [取得授權金鑰]**** 按鈕。 在這裡會按一下 [將您的第一個 APK 上傳到 Alpha 測試階段]**** 按鈕來發行至 Alpha 頻道：
 
-[![[將您的第一個 APK 上傳到 Alpha 測試階段] 按鈕](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
+[![將您的第一個 APK 上傳到 Alpha 按鈕](manually-uploading-the-apk-images/03-upload-to-alpha-sml.png)](manually-uploading-the-apk-images/03-upload-to-alpha.png#lightbox)
 
-[將新 APK 上傳到 ALPHA 測試階段]  對話方塊隨即顯示。 您可以按一下 [瀏覽檔案]  按鈕或拖放 APK 來上傳 APK：
+[將新 APK 上傳到 ALPHA 測試階段]**** 對話方塊隨即顯示。 您可以按一下 [瀏覽檔案]**** 按鈕或拖放 APK 來上傳 APK：
 
-[![[將新 APK 上傳到 ALPHA 測試階段] 對話方塊](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
+[![將新的 APK 上載到 Alpha 對話框](manually-uploading-the-apk-images/04-upload-dialog-sml.png)](manually-uploading-the-apk-images/04-upload-dialog.png#lightbox)
 
 請務必上傳已準備好要發行並進行散發的 APK。
 下一個對話方塊會指出 APK 的上傳進度：
@@ -47,7 +47,7 @@ ms.locfileid: "76724080"
 
 上傳 APK 之後，即可選取測試方法：
 
-[![[選擇測試方法] 對話方塊](manually-uploading-the-apk-images/06-select-testing-method-sml.png)](manually-uploading-the-apk-images/06-select-testing-method.png#lightbox)
+[![選擇測試方法對話框](manually-uploading-the-apk-images/06-select-testing-method-sml.png)](manually-uploading-the-apk-images/06-select-testing-method.png#lightbox)
 
 如需有關應用程式測試的詳細資訊，請參閱[設定 Alpha/Beta 版測試環境](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)指南。
 
@@ -55,39 +55,39 @@ ms.locfileid: "76724080"
 
 ## <a name="store-listing"></a>商店資訊
 
-按一下 **Google Play 開發人員控制台**中的 [商店資訊]  ，以輸入Google Play 將向可能的應用程式使用者顯示的資訊：
+按一下 **Google Play 開發人員控制台**中的 [商店資訊]****，以輸入Google Play 將向可能的應用程式使用者顯示的資訊：
 
-[![[商店資訊] 對話方塊](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
+[![儲存清單對話框](manually-uploading-the-apk-images/07-store-listing-sml.png)](manually-uploading-the-apk-images/07-store-listing.png#lightbox)
 
 ### <a name="graphics-assets"></a>圖片資產
 
-向下捲動至 [商店資訊]  頁面的 [圖片資產]  區段：
+向下捲動至 [商店資訊]**** 頁面的 [圖片資產]**** 區段：
 
-[![[圖片資產] 區段](manually-uploading-the-apk-images/08-graphic-assets-sml.png)](manually-uploading-the-apk-images/08-graphic-assets.png#lightbox)
+[![圖形資產部分](manually-uploading-the-apk-images/08-graphic-assets-sml.png)](manually-uploading-the-apk-images/08-graphic-assets.png#lightbox)
 
 所有先前準備的宣傳資產都會在此區段中上傳。 針對必須提供哪些宣傳資產，以及應該以哪種格式提供，都有提供相關指引。
 
 ### <a name="categorization"></a>分類
 
-在 [圖片資產]  區段之後是 [分類]  區段，請選取應用程式類型和類別：
+在 [圖片資產]**** 區段之後是 [分類]**** 區段，請選取應用程式類型和類別：
 
-[![[分類] 區段](manually-uploading-the-apk-images/09-categorization-sml.png)](manually-uploading-the-apk-images/09-categorization.png#lightbox)
+[![分類部分](manually-uploading-the-apk-images/09-categorization-sml.png)](manually-uploading-the-apk-images/09-categorization.png#lightbox)
 
 下一個區段會涵蓋內容分級。
 
 ### <a name="contact-details"></a>聯絡詳細資料
 
-此頁面的最後一個區段式 [聯絡詳細資料]  區段。 此區段可用來收集應用程式開發人員的聯絡資訊：
+此頁面的最後一個區段式 [聯絡詳細資料]**** 區段。 此區段可用來收集應用程式開發人員的聯絡資訊：
 
-[![[聯絡詳細資料] 區段](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
+[![聯絡人詳細資訊部份](manually-uploading-the-apk-images/10-contact-details-sml.png)](manually-uploading-the-apk-images/10-contact-details.png#lightbox)
 
-您可以在 [隱私權政策]  區段提供隱私權政策的 URL，如以上所示。
+您可以在 [隱私權政策]**** 區段提供隱私權政策的 URL，如以上所示。
 
 ## <a name="content-rating"></a>內容分級
 
-按一下 **Google Play 開發人員控制台**中的 [內容分級]  。 在此頁面中，您可以指定應用程式的內容分級。 Google Play 要求所有應用程式都要指定內容分級。 請按一下 [繼續]  按鈕以完成內容分級問卷：
+按一下 **Google Play 開發人員控制台**中的 [內容分級]****。 在此頁面中，您可以指定應用程式的內容分級。 Google Play 要求所有應用程式都要指定內容分級。 請按一下 [繼續]**** 按鈕以完成內容分級問卷：
 
-[![[內容分級] 區段](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
+[![內容分級部分](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
 Google Play 上的所有應用程式都必須根據 Google Play 分級系統進行分級。 除了內容分級之外，所有應用程式也必須遵守 Google 的[開發人員內容政策](https://www.android.com/us/developer-content-policy.html)。
 
@@ -107,34 +107,34 @@ Google Play 上的所有應用程式都必須根據 Google Play 分級系統進�
 
 ## <a name="pricing-amp-distribution"></a>定價與發佈
 
-按一下 **Google Play 開發人員控制台**中的 [定價與發佈]  。 在此頁面中，如果應用程式是付費應用程式，請設定價格。
+按一下 **Google Play 開發人員控制台**中的 [定價與發佈]****。 在此頁面中，如果應用程式是付費應用程式，請設定價格。
 或者，您也可以將應用程式免費散發給所有使用者。 一旦將應用程式指定為免費，它就必須維持免費。
 Google Play 不允許將免費應用程式變更為付費應用程式 (不過，可以在免費應用程式使用應用程式內結帳功能來銷售內容)。 Google Play 允許隨時將付費應用程式變更為免費應用程式。
 
-發行付費應用程式之前，必須先有商家帳戶。若要這麼做，請按一下 [設定商家帳戶]  並依照指示進行操作。
+發行付費應用程式之前，必須先有商家帳戶。若要這麼做，請按一下 [設定商家帳戶]**** 並依照指示進行操作。
 
-[![[定價與發佈] 對話方塊](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
+[![定價和分發對話框](manually-uploading-the-apk-images/12-pricing-sml.png)](manually-uploading-the-apk-images/12-pricing.png#lightbox)
 
 ### <a name="manage-countries"></a>管理國家/地區
 
-下一個區段 [管理國家/地區]  可控制應用程式能發行到哪些國家/地區：
+下一個區段 [管理國家/地區]**** 可控制應用程式能發行到哪些國家/地區：
 
-[![[管理國家/地區] 對話方塊](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
+[![管理國家/地區對話框](manually-uploading-the-apk-images/13-manage-countries-sml.png)](manually-uploading-the-apk-images/13-manage-countries.png#lightbox)
 
 ### <a name="other-information"></a>其他資訊
 
-請進一步向下捲動以指定應用程式是否含廣告內容。 此外，[裝置類別]  區段也提供選項，可讓您視需要發行適用於 Android Wear、Android TV 或 Android Auto 的應用程式：
+請進一步向下捲動以指定應用程式是否含廣告內容。 此外，[裝置類別]**** 區段也提供選項，可讓您視需要發行適用於 Android Wear、Android TV 或 Android Auto 的應用程式：
 
-[![[含廣告內容] 區段](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
+[![包含廣告部份](manually-uploading-the-apk-images/14-contains-ads-sml.png)](manually-uploading-the-apk-images/14-contains-ads.png#lightbox)
 
-此區段之後是一些可選取的額外選項，例如選擇加入 [闔家適用]  計劃，然後透過 Google Play for Education 散發應用程式。
+此區段之後是一些可選取的額外選項，例如選擇加入 [闔家適用]**** 計劃，然後透過 Google Play for Education 散發應用程式。
 
 ### <a name="consent"></a>同意
 
-位於 [定價與發佈]  頁面底部的是 [同意]  區段。
+定價**&amp;配置**頁面的底部是 **「從「 部份**」 。
 這是一個強制性區段，用來宣告應用程式符合 [Android 內容指導方針](https://play.google.com/about/restricted-content/)，並認可應用程式受到美國出口法律約束：
 
-[![[同意] 區段](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
+[![同意部分](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 
 關於發行 Xamarin.Android 應用程式，還有更多本指南無法涵蓋的內容。
 如需有關在 Google Play 中發行應用程式的詳細資訊，請參閱 [歡迎使用 Google Play 開發人員控制台說明中心](https://support.google.com/googleplay/android-developer#topic=3450769)。
@@ -153,7 +153,7 @@ Google Play 不允許將免費應用程式變更為付費應用程式 (不過，
 - [supports-screen](https://developer.android.com/guide/topics/manifest/supports-screens-element.html) &ndash; Google Play 將會使用這些屬性，根據螢幕大小來判斷應用程式是否可以部署到某個裝置。
     Google Play 會假設 Android 可以將較小的版面配置放在較大的螢幕中，但無法將較大的版面配置放在較小的螢幕中。 因此，宣稱可以支援一般螢幕的應用程式會出現在大型螢幕的搜尋結果中，但不會出現在小型螢幕的搜尋結果中。 如果 Xamarin.Android 應用程式並未在資訊清單檔中提供 `<supports-screen>` 元素，Google Play 將會假設所有屬性值都為 true，且應用程式支援所有螢幕大小。 此元素必須以手動方式新增至 **AndroidManifest.xml**。
 
-- [uses-configuration](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html) &ndash; 此資訊清單項目用來要求特定硬體功能，例如鍵盤類型、導航裝置、觸控式螢幕等。此元素必須以手動方式新增至 **AndroidManifest.xml**。
+- [使用配置](https://developer.android.com/guide/topics/manifest/uses-configuration-element.html)&ndash;此清單元素用於請求某些硬體功能,如鍵盤類型、導航設備、觸控螢幕等。必須手動將此元素添加到**AndroidManifest.xml**中。
 
 - [uses-feature](https://developer.android.com/guide/topics/manifest/uses-feature-element.html) &ndash; 此資訊清單項目會宣告應用程式運作所需的裝置必備硬體或軟體功能。 此屬性只用來提供資訊。 Google Play 不會對不符合此篩選條件的裝置顯示此應用程式。 您仍可透過其他方式 (手動或下載) 安裝此應用程式。 此元素必須以手動方式新增至 **AndroidManifest.xml**。
 

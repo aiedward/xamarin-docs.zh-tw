@@ -8,29 +8,29 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2017
 ms.openlocfilehash: 4683bbaa5aa48c7b5de5fb9a87a4cd3fbc0aeada
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73019518"
 ---
 # <a name="my-android-resourcedesignercs-file-will-not-update"></a>我的 Android Resource.designer.cs 檔案不會更新
 
 > [!NOTE]
-> 此問題已在 Xamarin Studio 5.1.4 和更新版本中解決。 不過，如果 Visual Studio for Mac 發生問題，請使用完整版本設定資訊和完整組建記錄檔輸出，提出[新的 bug](~/cross-platform/troubleshooting/questions/howto-file-bug.md) 。
+> 此問題已在 Xamarin Studio 5.1.4 和更高版本中得到解決。 但是,如果問題發生在 Mac 的 Visual Studio 中,請使用您的完整版本控制資訊和完整構建日誌輸出提交[新 Bug。](~/cross-platform/troubleshooting/questions/howto-file-bug.md)
 
-5\.1 Xamarin 中的 bug 先前已損毀 .csproj 檔案中的 xml 程式碼，或在 .csproj 檔案中完全刪除該檔案。 這會導致 Android 組建系統的重要部分（例如，更新 Android Resource.designer.cs）失敗。 從5.1.4 穩定版本于7月15日起，已修正此 bug;但在許多情況下，專案檔必須手動修復，如下所述。
+Xamarin.Studio 5.1 中的一個 Bug 以前通過部分或全部刪除 .csproj 檔中的 xml 代碼而損壞了 .csproj 檔。 這將導致 Android 構建系統的重要部分(如更新 Android Resource.designer.cs)失敗。 截至7月15日5.1.4穩定發佈,此 Bug 已修復;但在許多情況下,專案檔必須手動修復,如下所述。
 
-## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>有兩種可能的方法可以修正專案檔案
+## <a name="two-possible-approaches-to-fixing-up-the-project-file"></a>修復項目檔案的兩種可能方法
 
-**任意**
+**要麼:**
 
-1. 建立全新的 Xamarin Android 應用程式專案，設定所有專案屬性以符合舊專案，並將您的所有資源、原始程式檔等等加入專案。
+1. 創建一個全新的 Xamarin.Android 應用程式專案,設置與舊專案匹配的所有專案屬性,並將所有資源、源檔等重新添加到專案中。
 
    **OR**
 
-2. 建立原始專案 .csproj 檔案的備份複本，然後在文字編輯器中開啟它，然後從完全產生的 .csproj 檔案中，加回遺漏的元素。
+2. 製作原始專案的 .csproj 檔案的備份複本,然後在文字編輯器中打開該檔,然後從乾淨生成的 .csproj 檔中添加回缺少的元素。
 
-### <a name="if-this-does-not-solve-the-problem"></a>如果這樣無法解決問題
+### <a name="if-this-does-not-solve-the-problem"></a>如果這不能解決問題
 
-在試驗這些元素之後，您可能會注意到，在您將專案加回之後，Resource.designer.cs 檔案就會更新，但您可能還是必須關閉並重新開啟方案，才能讓程式碼完成辨識包含在 Resource.designer.cs 中的新類型。 
+試用這些元素後,您可能會注意到,在添加回元素並重建專案後,Resource.designer.cs檔將更新,但隨後您可能仍必須關閉並重新打開解決方案,以獲得代碼完成以識別Resource.designer.cs中包含的新類型。 

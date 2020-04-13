@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940334"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms 繫結路徑
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-在所有先前的資料繫結範例中，`Binding` 類別的 [`Path`](xref:Xamarin.Forms.Binding.Path) 屬性 (或 `Binding` 標記延伸模組的 [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) 屬性) 已設成單一屬性。 將 `Path` 設成「子屬性」  (屬性的屬性) 或集合成員實際上是可行的。
+在之前的所有資料[`Path`](xref:Xamarin.Forms.Binding.Path)綁定範例中`Binding`, 類別的屬性[`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path)`Binding`(或標記擴展的屬性)已設置為單個屬性。 將 `Path` 設成「子屬性」**(屬性的屬性) 或集合成員實際上是可行的。
 
 例如，假設您的頁面包含 `TimePicker`：
 
@@ -35,7 +35,7 @@ ms.locfileid: "76940334"
 
 `Time` 屬性的類型為 `TimeSpan`，其具有 `TotalSeconds` 屬性。 `Time` 和 `TotalSeconds` 屬性只簡單使用句號連接。 `Path` 字串中的項目一律表示屬性，且不是這些屬性的類型。
 
-[Path Variations] \(路徑變化\)  頁面會顯示該範例及其他許多範例：
+[Path Variations] \(路徑變化\)**** 頁面會顯示該範例及其他許多範例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -95,7 +95,7 @@ ms.locfileid: "76940334"
 
 ## <a name="paths-with-indexers"></a>具有索引子的路徑
 
-[Path Variations] \(路徑變化\)  頁面中第三個 `Label` 的繫結會參考 `System.Globalization` 命名空間中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 類別：
+[Path Variations] \(路徑變化\)**** 頁面中第三個 `Label` 的繫結會參考 `System.Globalization` 命名空間中的 [`CultureInfo`](xref:System.Globalization.CultureInfo) 類別：
 
 ```xaml
 <Label Text="{Binding Source={x:Static globe:CultureInfo.CurrentCulture},
@@ -103,7 +103,7 @@ ms.locfileid: "76940334"
                       StringFormat='The middle day of the week is {0}'}" />
 ```
 
-來源設為靜態的 `CultureInfo.CurrentCulture` 屬性，其為類型 `CultureInfo` 的物件。 類別定義的屬性名為 `DateTimeFormat`，其類型為包含 `DayNames` 集合的 [`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo)。 索引會選取第四個項目。
+來源設為靜態的 `CultureInfo.CurrentCulture` 屬性，其為類型 `CultureInfo` 的物件。 該類定義名為`DateTimeFormat`[`DateTimeFormatInfo`](xref:System.Globalization.DateTimeFormatInfo)`DayNames`包含集合的類型的屬性。 索引會選取第四個項目。
 
 第四個 `Label` 作用類似，但適用於與法國建立關聯的文化特性。 繫結的 `Source` 屬性設為具有建構函式的 `CultureInfo` 物件：
 

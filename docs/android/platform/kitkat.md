@@ -1,6 +1,6 @@
 ---
 title: KitKat 功能
-description: Android 4.4 （KitKat）已載入供使用者和開發人員使用的功能多。 本指南將重點放在其中幾項功能，並提供程式碼範例和執行詳細資料，以協助您充分利用 KitKat。
+description: Android 4.4 (KitKat) 為使用者和開發人員配備了一系列功能。 本指南重點介紹了其中幾個功能,並提供了代碼示例和實現詳細資訊,以説明您充分利用 KitKat。
 ms.prod: xamarin
 ms.assetid: D3FDEA1C-F076-406F-BCC3-2A55D2C6ADEE
 ms.technology: xamarin-android
@@ -8,45 +8,45 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027234"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
-_Android 4.4 （KitKat）已載入供使用者和開發人員使用的功能多。本指南將重點放在其中幾項功能，並提供程式碼範例和執行詳細資料，以協助您充分利用 KitKat。_
+_Android 4.4 (KitKat) 為使用者和開發人員配備了一系列功能。本指南重點介紹了其中幾個功能,並提供了代碼示例和實現詳細資訊,以説明您充分利用 KitKat。_
 
 ## <a name="overview"></a>概觀
 
-Android 4.4 （API 層級19）（也稱為 "KitKat"）已于晚期2013發行。 KitKat 提供各種新功能和改進，包括：
+Android 4.4(API 級別 19),也稱為"KitKat",於 2013 年末發佈。 KitKat 提供各種新功能和改進,包括:
 
-- [使用者體驗](#user_experience)&ndash; 簡單的動畫搭配轉換架構、半透明狀態和導覽列，以及全螢幕的沉浸式模式，協助為使用者建立更好的體驗。
+- [用戶體驗](#user_experience)&ndash;輕鬆動畫,具有過渡框架、半透明狀態和導航欄以及全屏沉浸式模式,有助於為使用者提供更好的體驗。
 
-- [使用者內容](#user_content)&ndash; 使用儲存體存取架構簡化使用者檔案管理;使用改良的列印 Api，可以更輕鬆地列印圖片、網站及其他內容。
+- [使用者內容](#user_content)&ndash;使用者檔案管理簡化與存儲存取框架;通過改進的列印 API,列印圖片、網站和其他內容變得更加容易。
 
-- [硬體](#hardware)&ndash; 將任何應用程式轉換成具有 nfc 主機型卡片模擬的 nfc 記憶卡;執行具有 `SensorManager` 的低電源感應器。
+- [硬體](#hardware)&ndash;將任何應用轉換為 NFC 卡,具有基於 NFC 主機的卡模擬功能;使用執行低功耗的`SensorManager`感測器 。
 
-- [開發人員工具](#developer_tools)&ndash; 以 Android Debug Bridge 用戶端的方式來螢幕錄製影片應用程式，並可作為 Android SDK 的一部分。
+- [開發人員工具](#developer_tools)&ndash;篩選應用程式在操作與Android調試橋客戶端,作為Android SDK的一部分提供。
 
-本指南提供將現有的 Xamarin Android 應用程式遷移至 KitKat，以及適用于 Xamarin. Android 開發人員的高階 KitKat 總覽的指引。
+本指南提供了將現有 Xamarin.Android 應用程式遷移到 KitKat 的指導,以及針對 Xamarin.Android 開發人員的 KitKat 的高級概述。
 
 ## <a name="requirements"></a>需求
 
-若要使用 KitKat 開發 Xamarin 應用程式，您需要透過 Android SDK Manager 安裝的*4.11.0*或更高版本，以及 Android 4.4 （API 層級19），如下列螢幕擷取畫面所示：
+要使用 KitKat 開發 Xamarin.Android 應用程式,您需要*Xamarin.Android 4.11.0*或更高版本,以及透過 Android SDK 管理器安裝的 Android 4.4(API 19),如下圖所示:
 
-[![在 Android SDK 管理員中選取 Android 4。4](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
+[![在 Android SDK 管理器中選擇 Android 4.4](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
 <a name="Migrating_Your_App_to_KitKat" />
 
-## <a name="migrating-your-app-to-kitkat"></a>將您的應用程式遷移至 KitKat
+## <a name="migrating-your-app-to-kitkat"></a>將應用移至 KitKat
 
-本節提供一些第一個回應專案，可協助您將現有的應用程式轉換成 Android 4.4。
+本節提供一些第一回應專案,以説明將現有應用程序轉換為 Android 4.4。
 
 ### <a name="check-system-version"></a>檢查系統版本
 
-如果應用程式必須與舊版的 Android 相容，請務必將任何 KitKat 特有的程式碼包裝在系統版本檢查中，如下列程式碼範例所示：
+如果應用程式需要與舊版本的 Android 相容,請確保在系統版本檢查中包裝任何特定於 KitKat 的代碼,如下代碼範例所示:
 
 ```csharp
 if (Build.VERSION.SdkInt >= BuildVersionCodes.Kitkat) {
@@ -54,63 +54,63 @@ if (Build.VERSION.SdkInt >= BuildVersionCodes.Kitkat) {
 }
 ```
 
-### <a name="alarm-batching"></a>鬧鐘批次處理
+### <a name="alarm-batching"></a>報警處理
 
-Android 使用警示服務在指定的時間內，于背景喚醒應用程式。 KitKat 會藉由批次處理警示來繼續執行，以保留電源。 這表示，而不是在確切的時間喚醒每個應用程式，KitKat 偏好將數個已註冊要喚醒的應用程式群組在相同的時間間隔內，並同時喚醒它們。
-若要讓 Android 在指定的時間間隔內喚醒應用程式，請在[`AlarmManager`](xref:Android.App.AlarmManager)上呼叫 `SetWindow`，傳入喚醒應用程式之前所經過的最小和最大時間（以毫秒為單位），以及要在喚醒執行的作業。
-下列程式碼提供的範例是需要在半小時之間喚醒，以及從視窗設定時間開始的一小時：
+Android 使用報警服務在指定時間喚醒後台的應用。 KitKat 通過批處理警報來保留電源,從而更進一步。 這意味著,KitKat 更願意將註冊為在同一時間間隔內喚醒的多個應用程式分組,並同時喚醒它們,而不是準確喚醒每個應用。
+要告訴 Android 在指定的時間間隔內喚醒應用`SetWindow`,請[`AlarmManager`](xref:Android.App.AlarmManager)調用 以最小和最大時間(以毫秒為單位)調用可在喚醒應用之前經過的時間,並在喚醒時執行操作。
+以下代碼提供了一個應用程式的範例,該應用程式需要在設定視窗時半小時後喚醒:
 
 ```csharp
 AlarmManager alarmManager = (AlarmManager)GetSystemService(AlarmService);
 alarmManager.SetWindow (AlarmType.Rtc, AlarmManager.IntervalHalfHour, AlarmManager.IntervalHour, pendingIntent);
 ```
 
-若要在確切的時間繼續喚醒應用程式，請使用 `SetExact`，傳入應用程式應該喚醒的確切時間，以及要執行的作業：
+要在確切的時間繼續喚醒應用,請使用`SetExact`, 傳入應喚醒應用的確切時間,以及執行的操作:
 
 ```csharp
 alarmManager.SetExact (AlarmType.Rtc, AlarmManager.IntervalDay, pendingIntent);
 ```
 
-KitKat 不再讓您設定完全重複的警示。 使用[`SetRepeating`](xref:Android.App.AlarmManager.SetRepeating*)的應用程式
-而且需要確切的警示才能正常工作，現在需要手動觸發每個警示。
+KitKat 不再允許您設置精確的重複報警。 使用的應用程式[`SetRepeating`](xref:Android.App.AlarmManager.SetRepeating*)
+並且需要精確的報警才能工作,現在需要手動觸發每個警報。
 
 ### <a name="external-storage"></a>外部儲存體
 
-外部儲存體現在分成兩種類型：您的應用程式特有的儲存體，以及多個應用程式所共用的資料。 讀取和寫入您的應用程式在外部儲存體上的特定位置不需要任何特殊許可權。 與共享儲存體上的資料互動現在需要 `READ_EXTERNAL_STORAGE` 或 `WRITE_EXTERNAL_STORAGE` 許可權。 這兩種類型可以分類為：
+外部儲存現在分為兩種類型 - 應用程式獨有的存儲和由多個應用程式共享的數據。 讀取和寫入應用在外部存儲上的特定位置不需要特殊許可權。 現在,與共用存儲上的數據交互需要`READ_EXTERNAL_STORAGE``WRITE_EXTERNAL_STORAGE`或許可權。 可以這樣分類這兩種類型:
 
-- 如果您是在 `Context` 上呼叫方法來取得檔案或目錄路徑，例如， [`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
+- 如果您通過調用方法獲取檔或目錄路徑`Context`- 例如,[`GetExternalFilesDir`](xref:Android.Content.Context.GetExternalFilesDir*)
   或[`GetExternalCacheDirs`](xref:Android.Content.Context.GetExternalCacheDirs)
-  - 您的應用程式不需要額外的許可權。
+  - 你的應用不需要額外的許可權。
 
-- 如果您是藉由存取屬性或在 `Environment` 上呼叫方法來取得檔案或目錄路徑，例如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
+- 如果透過存取屬性或在`Environment`上 呼叫方法(如[`GetExternalStorageDirectory`](xref:Android.OS.Environment.ExternalStorageDirectory)
   或[`GetExternalStoragePublicDirectory`](xref:Android.OS.Environment.GetExternalStoragePublicDirectory*)
-  ，您的應用程式需要 `READ_EXTERNAL_STORAGE` 或 `WRITE_EXTERNAL_STORAGE` 許可權。
+  ,你的應用需要`READ_EXTERNAL_STORAGE``WRITE_EXTERNAL_STORAGE`或許可權。
 
 > [!NOTE]
-> `WRITE_EXTERNAL_STORAGE` 意指 `READ_EXTERNAL_STORAGE` 許可權，因此您應該只需要設定一個許可權。
+> `WRITE_EXTERNAL_STORAGE`表示`READ_EXTERNAL_STORAGE`許可權,因此您只需要設置一個許可權。
 
-### <a name="sms-consolidation"></a>SMS 匯總
+### <a name="sms-consolidation"></a>短信整合
 
-KitKat 會將使用者所選取之一個預設應用程式中的所有 SMS 內容匯總在一起，以簡化使用者的訊息處理。 開發人員會負責將應用程式設為預設的訊息應用程式，並在程式碼中適當地運作，如果未選取應用程式，則會在生命中正常運作。 如需將您的 SMS 應用程式轉換為 KitKat 的詳細資訊，請參閱 Google 的[準備好要 KitKat 的 Sms 應用程式](https://android-developers.blogspot.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html)指南。
+KitKat 透過聚合使用者選擇的一個預設應用程式中的所有 SMS 內容來簡化使用者的消息傳遞。 開發人員負責使應用可選擇為預設訊息傳遞應用程式,並在未選擇應用程式時在代碼和生命週期中行為得當。 有關將 SMS 應用轉換為 KitKat 的詳細資訊,請參閱 Google 的「[為 KitKat 做好準備」簡訊應用](https://android-developers.blogspot.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html)指南。
 
-### <a name="webview-apps"></a>Web 視圖應用程式
+### <a name="webview-apps"></a>網頁檢視應用
 
-[Web](xref:Android.Webkit.WebView)工作的 KitKat 中有改造。 最大的變更是將內容載入 `WebView`的安全性。 雖然大部分以舊版 API 為目標的應用程式應該如預期般運作，但強烈建議使用 `WebView` 類別的應用程式進行測試。 如需受影響的 Web 工作應用程式開發介面的詳細資訊，請參閱 android 4.4 檔中的 Android[遷移至 web](https://developer.android.com/guide/webapps/migrating.html)工作。
+[WebView](xref:Android.Webkit.WebView)在 KitKat 中做了一個改造。 最大的更改是增加了將內容載入到的`WebView`安全措施。 雖然大多數面向較舊 API 版本的應用程式應按預期工作,但強烈建議`WebView`使用該 類的測試應用程式。 有關受影響的 WebView API 的詳細資訊,請參閱 Android 4.4 文檔中的 Android[遷移到 WebView。](https://developer.android.com/guide/webapps/migrating.html)
 
 <a name="user_experience" />
 
 ## <a name="user-experience"></a>使用者經驗
 
-KitKat 隨附數個新的 Api 來增強使用者體驗，包括用來處理屬性動畫的新轉換架構，以及主題的透明 UI 選項。 這些變更涵蓋如下。
+KitKat 附帶了幾個新的 API 來增強使用者體驗,包括用於處理屬性動畫的新過渡框架和用於美選的半透明 UI 選項。 這些更改如下所述。
 
-### <a name="transition-framework"></a>轉換架構
+### <a name="transition-framework"></a>過渡框架
 
-轉換架構可讓動畫更容易執行。 KitKat 可讓您只需一行程式碼就能執行簡單的屬性動畫，或使用*場景*來自訂轉換。
+過渡框架使動畫更易於實現。 KitKat 允許您僅使用一行代碼執行簡單的屬性動畫,或使用*場景*自定義過渡。
 
 #### <a name="simple-property-animation"></a>簡單屬性動畫
 
-新的 Android 轉換程式庫簡化了屬性動畫背後的程式碼後置。 此架構可讓您以最少的程式碼執行簡單的動畫。 例如，下列程式碼範例會使用[`TransitionManager.BeginDelayedTransition`](xref:Android.Transitions.TransitionManager.BeginDelayedTransition*)
-以動畫顯示和隱藏 `TextView`：
+新的 Android 轉換庫簡化了屬性動畫背後的代碼。 該框架允許您使用最少的代碼執行簡單的動畫。 例如,以下代碼範例使用[`TransitionManager.BeginDelayedTransition`](xref:Android.Transitions.TransitionManager.BeginDelayedTransition*)
+顯示與隱藏`TextView`設定動畫:
 
 ```csharp
 using Android.Transitions;
@@ -147,32 +147,32 @@ public class MainActivity : Activity
 }
 ```
 
-上述範例使用轉換架構，在變更的屬性值之間建立自動的預設轉換。 因為動畫是由一行程式碼處理，所以您可以輕鬆地將這項功能與舊版 Android 相容，方法是在系統版本檢查中包裝 `BeginDelayedTransition` 呼叫。 如需詳細資訊，請參閱將[您的應用程式遷移至 KitKat](#Migrating_Your_App_to_KitKat)一節。
+上面的範例使用過渡框架在不斷變化的屬性值之間創建自動預設轉換。 由於動畫由一行代碼處理,因此您可以通過在系統版本檢查中`BeginDelayedTransition`包裝調用,輕鬆使此版本與舊版本的 Android 相容。 有關詳細資訊[,請參閱將應用遷移到 KitKat](#Migrating_Your_App_to_KitKat)部分。
 
-下列螢幕擷取畫面顯示動畫前的應用程式：
+下面的螢幕截圖顯示了動畫之前的應用程式:
 
-[在動畫開始前 ![應用程式螢幕擷取畫面](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
+[![動畫啟動前的應用程式螢幕擷取](kitkat-images/trans-before.png)](kitkat-images/trans-before.png#lightbox)
 
-下列螢幕擷取畫面顯示動畫之後的應用程式：
+下面的螢幕截圖顯示了動畫後的應用程式:
 
-[動畫完成後 ![應用程式螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
+[![動畫完成後的應用程式螢幕擷取](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
-您可以使用幕後取得更多的轉換控制權，如下一節所述。
+您可以使用"場景"對過渡進行更多控制,下一節將介紹這些場景。
 
-#### <a name="android-scenes"></a>Android 場景
+#### <a name="android-scenes"></a>安卓場景
 
-[幕後](xref:Android.Transitions.Scene)已引進為轉換架構的一部分，讓開發人員能夠更充分掌控動畫。 場景會在 UI 中建立動態區域：您為容器內的 XML 內容指定一個容器和數個版本或「場景」，而 Android 則會執行其餘工作，以動畫顯示場景之間的轉換。 Android 場景可讓您以最少的開發端工作來建立複雜的動畫。
+[場景](xref:Android.Transitions.Scene)作為過渡框架的一部分引入,以便開發人員對動畫進行更多控制。 場景在 UI 中創建一個動態區域:為容器內的 XML 內容指定一個容器和多個版本或"場景",而 Android 則執行其餘工作,為場景之間的過渡設置動畫。 Android 場景可讓您在開發方面以最少的工作構建複雜的動畫。
 
-裝載動態內容的靜態 UI 元素稱為*容器*或*場景基底*。 下列範例會使用 Android Designer 來建立名為 `container`的 `RelativeLayout`：
+包含動態內容的靜態 UI 元素稱為*容器*或*場景基*。 下面的範例使用 Android 設計器`RelativeLayout`建立`container`一 個稱為 :
 
-[使用 Android Designer 建立 RelativeLayout 容器 ![](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
+[![使用 Android 設計器建立相對佈局容器](kitkat-images/container.png)](kitkat-images/container.png#lightbox)
 
-範例版面配置也會在 `container`之下定義名為 `sceneButton` 的按鈕。 此按鈕將會觸發轉換。
+範例佈局來定義按鈕,`sceneButton``container`這個按鈕在下方稱為 。 此按鈕將觸發轉換。
 
-容器內的動態內容需要兩個新的 Android 版面配置。 這些版面配置只會指定容器*內*的程式碼。
-下面的範例程式碼會定義名為*Scene1*的版面配置，其中包含兩個文字欄位分別讀取「套件」和「Kat」，另一個則稱為*Scene2*的第二個版面配置，其中包含相同的文字欄位反轉。 XML 如下所示：
+容器內的動態內容需要兩個新的 Android 佈局。 這些佈局僅指定容器*內*的代碼。
+下面的範例代碼定義了名為*Scene1*的佈局,該佈局包含兩個分別讀取"Kit"和"Kat"的文本欄位,以及一個稱為*Scene2*的第二個佈局,該佈局包含反轉的相同文本字段。 XML 如下所示:
 
- **Scene1. axml**：
+ **場景1.axml**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -193,7 +193,7 @@ public class MainActivity : Activity
 </merge>
 ```
 
- **Scene2. axml**：
+ **場景2.axml**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -214,9 +214,9 @@ public class MainActivity : Activity
 </merge>
 ```
 
-上述範例使用 `merge` 讓視圖程式碼更短，並簡化視圖階層。 您可以在[這裡](https://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)閱讀更多有關 `merge` 版面配置的資訊。
+上面的範例用於`merge`縮短檢視代碼並簡化視圖層次結構。 您可以在此處閱讀有關`merge`佈局的更多[內容](https://android-developers.blogspot.com/2009/03/android-layout-tricks-3-optimize-by.html)。
 
-場景的建立方式是呼叫[`Scene.GetSceneForLayout`](xref:Android.Transitions.Scene.GetSceneForLayout*)、傳入容器物件、場景配置檔案的資源識別碼，以及目前的 `Context`，如下列程式碼範例所示：
+場景是通過調用[`Scene.GetSceneForLayout`](xref:Android.Transitions.Scene.GetSceneForLayout*)、傳入容器物件、場景佈局檔的資源 ID`Context`和當前 ()創建的,如下代碼示例所示:
 
 ```csharp
 RelativeLayout container = FindViewById<RelativeLayout> (Resource.Id.container);
@@ -227,7 +227,7 @@ Scene scene2 = Scene.GetSceneForLayout(container, Resource.Layout.Scene2, this);
 scene1.Enter();
 ```
 
-按一下按鈕會在兩個場景之間切換，Android 會使用預設轉換值來進行動畫：
+按下按鈕在兩個場景之間翻轉,Android 使用預設過渡值進行動畫處理:
 
 ```csharp
 sceneButton.Click += (o, e) => {
@@ -239,24 +239,24 @@ sceneButton.Click += (o, e) => {
 };
 ```
 
-下列螢幕擷取畫面說明動畫前面的場景：
+下面的螢幕截圖說明瞭動畫之前的場景:
 
-[在動畫開始前 ![應用程式的螢幕擷取畫面](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
+[![動畫啟動前套用螢幕截圖](kitkat-images/trans-after.png)](kitkat-images/trans-after.png#lightbox)
 
-下列螢幕擷取畫面說明動畫後的場景：
+下面的屏幕截圖說明瞭動畫后的場景:
 
-[動畫完成後 ![應用程式的螢幕擷取畫面](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
+[![動畫完成後套用螢幕截圖](kitkat-images/scene.png)](kitkat-images/scene.png#lightbox)
 
 > [!NOTE]
-> Android 轉換程式庫中有[已知的 bug](https://code.google.com/p/android/issues/detail?id=62450) ，會導致使用 `GetSceneForLayout` 所建立的場景，在使用者第二次流覽活動時中斷。 [這裡](http://www.doubleencore.com/2013/11/new-transitions-framework/)會說明 java 因應措施。
+> Android 過渡庫中存在一個[已知 Bug,](https://code.google.com/p/android/issues/detail?id=62450)`GetSceneForLayout`該 Bug 會導致 當使用者第二次瀏覽活動時,使用的場景中斷。 [此處](http://www.doubleencore.com/2013/11/new-transitions-framework/)描述了 java 解決方法。
 
-##### <a name="custom-transitions-in-scenes"></a>場景中的自訂轉換
+##### <a name="custom-transitions-in-scenes"></a>場景中的自訂過渡
 
-自訂轉換可以在 `Resources`下的 `transition` 目錄中的 xml 資源檔中定義，如下列螢幕擷取畫面所示：
+可以在 下面`transition``Resources`的 目錄中的 xml 資源檔中定義自訂轉換,如下圖所示:
 
-[資源/轉換目錄下的轉換 .xml 檔案 ![位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
+[![資源/轉換目錄下的轉換.xml 檔案的位置](kitkat-images/resources.png)](kitkat-images/resources.png#lightbox)
 
-下列程式碼範例會定義以動畫呈現5秒的轉換，並使用[下限的插](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html)轉程式：
+以下代碼範例定義一個過渡,該過渡為 5 秒的動畫設定,並使用[過沖插值器](https://developer.android.com/reference/android/views/animation/OvershootInterpolator.html):
 
 ```xml
 <changeBounds
@@ -265,13 +265,13 @@ sceneButton.Click += (o, e) => {
   android:interpolator="@android:anim/overshoot_interpolator" />
 ```
 
-轉換會使用[TransitionInflater](xref:Android.Transitions.TransitionInflater)在活動中建立，如下列程式碼所示：
+轉換使用[轉換在](xref:Android.Transitions.TransitionInflater)作用中建立,如下代碼所示:
 
 ```csharp
 Transition transition = TransitionInflater.From(this).InflateTransition(Resource.Transition.transition);
 ```
 
-接著，新的轉換會新增至開始動畫的 `Go` 呼叫：
+然後,`Go`新轉換將新增到開始動畫的呼叫中:
 
 ```csharp
 TransitionManager.Go (scene1, transition);
@@ -279,15 +279,15 @@ TransitionManager.Go (scene1, transition);
 
 ### <a name="translucent-ui"></a>半透明 UI
 
-KitKat 可讓您更充分掌控應用程式與選擇性透明狀態和導覽列的主題。 您可以在用來定義 Android 主題的相同 XML 檔案中，變更系統 UI 元素的半透明度。 KitKat 導入了下列屬性：
+KitKat 為您提供了使用可選半透明狀態和導航列對應用進行設置的更多控制。 您可以更改用於定義 Android 主題的同一 XML 檔案中的系統 UI 元素的半透明性。 KitKat 引入以下屬性:
 
-- `windowTranslucentStatus`-設定為 true 時，讓頂端狀態列變成半透明。
+- `windowTranslucentStatus`- 設定為 true 時,使頂部狀態列半透明。
 
-- `windowTranslucentNavigation`-設定為 true 時，讓底部導覽列變成半透明。
+- `windowTranslucentNavigation`- 設定為 true 時,使底部導航欄半透明。
 
-- `fitsSystemWindows`-設定頂端或底部列以 transcluent 預設會在透明 UI 元素下移動內容。 將此屬性設定為 `true` 是防止內容與半透明系統 UI 元素重迭的簡單方式。
+- `fitsSystemWindows`- 預設情況下,將頂部或底部列設置為在透明 UI 元素下轉移內容。 將此屬性設置為`true`防止內容與半透明系統 UI 元素重疊的一種簡單方法。
 
-下列程式碼會定義具有半透明狀態和導覽列的主題：
+以下代碼定義具有半透明狀態和導航列的主題:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -306,30 +306,30 @@ KitKat 可讓您更充分掌控應用程式與選擇性透明狀態和導覽列�
 </resources>
 ```
 
-下列螢幕擷取畫面顯示具有半透明狀態和導覽列的上方主題：
+下面的螢幕截圖顯示了上面帶有半透明狀態和導航列的主題:
 
-[![應用程式的範例螢幕擷取畫面，具有半透明狀態和巡覽列](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
+[![具有半透明狀態和導覽列的應用程式範例螢幕擷取](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
 <a name="user_content" />
 
 ## <a name="user-content"></a>使用者內容
 
-### <a name="storage-access-framework"></a>儲存體-存取架構
+### <a name="storage-access-framework"></a>儲存-存取框架
 
-儲存體存取架構（SAF）是一種新的方式，可讓使用者與影像、影片和檔等儲存的內容進行互動。 KitKat 會開啟新的 UI，讓使用者能夠在一個匯總位置存取其資料，而不是向使用者呈現選擇應用程式來處理內容的對話方塊。 一旦選擇內容之後，使用者會回到要求內容的應用程式，而應用程式體驗會如往常般繼續。
+儲存存取框架 (SAF) 是使用者與儲存的內容(如影像、視訊和文件)進行互動的新方式。 KitKat 不向使用者提供對話方塊來選擇處理內容的應用程式,而是打開一個新的 UI,允許使用者在一個聚合位置訪問其數據。 選擇內容後,使用者將返回到請求內容的應用程式,應用體驗將照常進行。
 
-這項變更在開發人員端需要兩個動作：首先，需要提供者內容的應用程式必須更新為新的要求內容方式。 其次，將資料寫入 `ContentProvider` 的應用程式必須經過修改，才能使用新的架構。 這兩種案例都取決於新的[`DocumentsProvider`](xref:Android.Provider.DocumentsProvider)
+此更改需要在開發人員方面採取兩個操作:首先,需要從供應商處獲得內容的應用需要更新為請求內容的新方式。 其次,`ContentProvider`需要修改將資料寫入應用程式才能使用新框架。 這兩種情況都取決於新的[`DocumentsProvider`](xref:Android.Provider.DocumentsProvider)
 API。
 
-#### <a name="documentsprovider"></a>DocumentsProvider
+#### <a name="documentsprovider"></a>文件提供者
 
-在 KitKat 中，與 `ContentProviders` 的互動會與 `DocumentsProvider` 類別抽象化。 這表示 SAF 不在意資料實際的位置，只要可以透過 `DocumentsProvider` API 存取即可。 本機提供者、雲端服務和外部存放裝置全都使用相同的介面，並以相同的方式處理，提供使用者和開發人員一個可與使用者內容互動的位置。
+在 KitKat`ContentProviders`中, 與`DocumentsProvider`類的交互 被抽象化。 這意味著 SAF 不關心數據的物理位置,只要`DocumentsProvider`數據可以通過 API 訪問。 本地提供者、雲端服務和外部儲存裝置都使用相同的介面,並且以相同的方式對待,為使用者提供和開發人員一個與使用者內容互動的位置。
 
-本節涵蓋如何使用儲存體存取架構來載入和儲存內容。
+本節介紹如何使用存儲存取框架載入和保存內容。
 
-#### <a name="request-content-from-a-provider"></a>從提供者要求內容
+#### <a name="request-content-from-a-provider"></a>提供者要求內容
 
-我們可以告訴 KitKat，我們想要使用 SAF UI 與 `ActionOpenDocument` 意圖來挑選內容，這表示我們想要連接到裝置可用的所有內容提供者。 您可以藉由指定 `CategoryOpenable`，將一些篩選新增至這個意圖，這表示只會傳回可開啟的內容（亦即可存取的可用內容）。 KitKat 也可讓您使用 `MimeType`來篩選內容。 例如，下列程式碼會藉由指定影像 `MimeType`來篩選影像結果：
+我們可以告訴 KitKat,我們希望使用帶`ActionOpenDocument`有 意圖的 SAF UI 來選取內容,這意味著我們希望連接到設備可用的所有內容供應商。 您可以通過`CategoryOpenable`指定 向此意圖添加一些篩選,這意味著僅返回可以打開的內容(即可訪問、可用的內容)。 KitKat 還允許使用`MimeType`篩選內容 。 例如,下面的代碼通過指定圖像`MimeType`來篩選影像結果:
 
 ```csharp
 Intent intent = new Intent (Intent.ActionOpenDocument);
@@ -338,11 +338,11 @@ intent.SetType ("image/*");
 StartActivityForResult (intent, save_request_code);
 ```
 
-呼叫 `StartActivityForResult` 會啟動 SAF UI，然後使用者可以流覽來選擇影像：
+呼叫`StartActivityForResult`將啟動 SAF UI,然後使用者可以瀏覽該 UI 來選擇影像:
 
-[![應用程式的範例螢幕擷取畫面，使用儲存體存取架構流覽至映射](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
+[![使用儲存存取框架瀏覽影像的應用程式範例](kitkat-images/saf-ui.png)](kitkat-images/saf-ui.png#lightbox)
 
-在使用者選擇影像之後，`OnActivityResult` 會傳回所選檔案的 `Android.Net.Uri`。 下列程式碼範例會顯示使用者的影像選取範圍：
+使用者選擇影像後,`OnActivityResult`傳回選取的檔案`Android.Net.Uri`的 。 下面的代碼範例顯示使用者的影像選擇:
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -358,7 +358,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 #### <a name="write-content-to-a-provider"></a>將內容寫入提供者
 
-除了從 SAF UI 載入內容之外，KitKat 也可讓您將內容儲存至任何可執行 `DocumentProvider` API 的 `ContentProvider`。 儲存內容時，會使用具有 `ActionCreateDocument`的 `Intent`：
+除了從 SAF UI 載入內容外,KitKat 還允許您`ContentProvider`將內容`DocumentProvider`保存到 任何實現 API 的內容。 儲存內容使用`Intent` `ActionCreateDocument` :
 
 ```csharp
 Intent intentCreate = new Intent (Intent.ActionCreateDocument);
@@ -368,11 +368,11 @@ intentCreate.PutExtra (Intent.ExtraTitle, "NewDoc");
 StartActivityForResult (intentCreate, write_request_code);
 ```
 
-上述程式碼範例會載入 SAF UI，讓使用者變更檔案名，並選取目錄來存放新檔案：
+上述代碼範例載入 SAF UI,允許使用者更改檔案名稱並選擇目錄來容納新檔案:
 
-[![在下載目錄中將檔案名變更為 NewDoc 的使用者螢幕擷取畫面](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
+[![使用者在下載目錄中將檔案名稱變更為 NewDoc 的螢幕截圖](kitkat-images/saf-save.png)](kitkat-images/saf-save.png#lightbox)
 
-當使用者按下 [**儲存**] 時，`OnActivityResult` 會傳遞新建立之檔案的 `Android.Net.Uri`，而該檔案可透過 `data.Data`來存取。 Uri 可以用來將資料串流至新檔案：
+當使用者按 **「儲存」**`OnActivityResult`時,`Android.Net.Uri`將傳遞新的建立的檔案,該檔案`data.Data`可以使用存取 。 uri 可用於將資料串流式傳輸到新檔案中:
 
 ```csharp
 protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -389,37 +389,37 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 }
 ```
 
-請注意， [`ContentResolver.OpenOutputStream(Android.Net.Uri)`](xref:Android.Content.ContentResolver.OpenOutputStream*)
-會傳回 `System.IO.Stream`，因此可以在 .NET 中撰寫整個串流處理常式。
+請注意,[`ContentResolver.OpenOutputStream(Android.Net.Uri)`](xref:Android.Content.ContentResolver.OpenOutputStream*)
+返回`System.IO.Stream`a ,因此整個流過程可以在 .NET 中寫入。
 
-如需有關使用儲存體存取架構來載入、建立和編輯內容的詳細資訊，請參閱[適用于儲存體存取架構的 Android 檔](https://developer.android.com/guide/topics/providers/document-provider.html)。
+有關使用儲存存取框架載入、建立及編輯內容的詳細資訊,請參閱[儲存存取框架的 Android 文件](https://developer.android.com/guide/topics/providers/document-provider.html)。
 
 ### <a name="printing"></a>列印
 
-隨著[列印服務](xref:Android.PrintServices)和 `PrintManager`的引進，列印內容在 KitKat 中已簡化。 KitKat 也是第一個 API 版本，可使用[Google 雲端列印應用程式](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)完全利用[Google 的雲端列印服務 api](https://developers.google.com/cloud-print/) 。
-隨附于 KitKat 的大部分裝置會在第一次連線到 WiFi 時，自動下載 Google 雲端列印應用程式和[HP 列印服務外掛程式](https://play.google.com/store/apps/details?id=com.hp.android.printservice)。 使用者可以藉由流覽至 [設定] [>] [**系統 > 列印**] 來檢查其裝置的列印設定：
+在 KitKat 中引入了[列印服務和](xref:Android.PrintServices)`PrintManager`,列印內容得到了簡化。 KitKat 也是第一個使用[Google 雲列印應用程式](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)充分利用[Google 雲列印服務 API 的](https://developers.google.com/cloud-print/)API 版本。
+大多數隨套件提供的裝置在首次連接到 WiFi 時會自動下載 Google 雲端列印應用和[HP 列印服務外掛程式](https://play.google.com/store/apps/details?id=com.hp.android.printservice)。 使用者可以通過導航到 **"設置>系統>列印**來檢查其設備的列印設置:
 
-[[列印設定] 畫面的 ![範例螢幕擷取畫面](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
+[![列印設定螢幕的範例螢幕擷取](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
 > [!NOTE]
-> 雖然列印應用程式開發介面預設會設定為使用 Google Cloud 列印，但 Android 仍可讓開發人員使用新的 Api 來準備列印內容，並將它傳送給其他應用程式來處理列印。
+> 儘管默認情況下將列印 API 設定為與 Google 雲端列印配合使用,但 Android 仍允許開發人員使用新的 API 準備列印內容,並將其發送到其他應用程式來處理列印。
 
 #### <a name="printing-html-content"></a>列印 HTML 內容
 
-KitKat 會自動為具有 `WebView.CreatePrintDocumentAdapter`的 web 視圖建立[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter) 。 列印 web 內容是在等候 HTML 內容載入的[`WebViewClient`](xref:Android.Webkit.WebViewClient)之間進行協調的工作，讓活動知道 [選項] 功能表中的 [列印] 選項，以及 [活動]，這會等候使用者選取列印選項，並呼叫 `PrintManager`上的 `Print`。 本節涵蓋列印螢幕上 HTML 內容所需的基本設定。
+KitKat 會自動[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)為`WebView.CreatePrintDocumentAdapter`具有的 Web 檢視建立一個檢視。 列印 Web 內容是等待[`WebViewClient`](xref:Android.Webkit.WebViewClient)載入 HTML 內容並讓活動知道以使列印選項在選項選單中可用的和「活動」(等待使用者選擇」列印選項`Print`並在`PrintManager`上調用 ) 之間的協調工作。 本節介紹列印螢幕上 HTML 內容所需的基本設置。
 
-請注意，載入和列印 web 內容需要「網際網路」許可權：
+請注意,載入與列印 Web 內容需要 Internet 權限:
 
-[![在應用程式選項中設定網際網路許可權](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
+[![在應用程式選項中設定 Internet 權限](kitkat-images/internet.png)](kitkat-images/internet.png#lightbox)
 
-##### <a name="print-menu-item"></a>列印功能表項目
+##### <a name="print-menu-item"></a>列印選單項目
 
-[列印] 選項通常會出現在活動的 [[選項] 功能表](https://developer.android.com/guide/topics/ui/menus.html#options-menu)中。
-[選項] 功能表可讓使用者對活動執行動作。 它位於畫面的右上角，看起來像這樣：
+列印選項通常將顯示在活動[的選項功能表](https://developer.android.com/guide/topics/ui/menus.html#options-menu)中。
+選項功能表允許使用者對活動執行操作。 它位於螢幕的右上角,如下所示:
 
-[畫面右上角顯示的 [列印] 功能表項目的 ![範例螢幕擷取畫面](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
+[![螢幕右上角顯示的列印選單項目的範例螢幕擷圖](kitkat-images/menu.png)](kitkat-images/menu.png#lightbox)
 
-您可以在 [*資源*] 下的 [*功能表*] 目錄中定義其他功能表項目。 下列程式碼會定義名為[Print](xref:Android.Print.PrintManager)的範例功能表項目：
+其他功能表項可以在*參考資料*下的*菜單*目錄中定義。 下面的代碼定義了名為[「列印](xref:Android.Print.PrintManager)」的範例選單項:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -430,9 +430,9 @@ KitKat 會自動為具有 `WebView.CreatePrintDocumentAdapter`的 web 視圖建�
 </menu>
 ```
 
-與活動中 [選項] 功能表的互動會透過 `OnCreateOptionsMenu` 和 `OnOptionsItemSelected` 方法進行。
-`OnCreateOptionsMenu` 是從 [*功能表*資源] 目錄新增功能表項目的位置，例如 [列印] 選項。
-`OnOptionsItemSelected` 會接聽使用者從功能表中選取 [列印] 選項，並開始列印：
+通過`OnCreateOptionsMenu`和`OnOptionsItemSelected`方法與 活動中的選項功能表進行互動。
+`OnCreateOptionsMenu`是從*菜單*資源目錄中添加新功能表項(如"列印"選項)的地方。
+`OnOptionsItemSelected`偵聽使用者從選單中選擇「列印」選項,並開始列印:
 
 ```csharp
 bool dataLoaded;
@@ -456,11 +456,11 @@ public override bool OnOptionsItemSelected (IMenuItem item)
 }
 ```
 
-上述程式碼也會定義名為 `dataLoaded` 的變數，以追蹤 HTML 內容的狀態。 當所有內容都已載入時，`WebViewClient` 會將此變數設定為 true，讓活動知道要將 [列印] 功能表項目新增至 [選項] 功能表。
+上面的代碼還定義了一個變數,用於`dataLoaded`跟蹤 HTML 內容的狀態。 將`WebViewClient`此變數設置為 true,當所有內容都已載入時,因此"活動"知道將"列印"選單項添加到選項功能表中。
 
-##### <a name="webviewclient"></a>來處理
+##### <a name="webviewclient"></a>WebView 用戶端
 
-`WebViewClient` 的工作是要確保 `WebView` 中的資料完全載入，然後才會在功能表中顯示 [列印] 選項，其使用 `OnPageFinished` 方法來執行。 `OnPageFinished` 會接聽 web 內容以完成載入，並告知活動使用 `InvalidateOptionsMenu`重新建立其 [選項] 功能表：
+的作業`WebViewClient`是確保`WebView`在 列印選項顯示在功能表中之前完全載入 中的數據`OnPageFinished`,而使用方法執行該選項。 `OnPageFinished`偵聽 Web 內容以完成載入,並告訴作用使用 重新建立其`InvalidateOptionsMenu`選項選單 :
 
 ```csharp
 class MyWebViewClient : WebViewClient
@@ -480,11 +480,11 @@ class MyWebViewClient : WebViewClient
 }
 ```
 
-`OnPageFinished` 也會將 `dataLoaded` 值設定為 `true`，因此 `OnCreateOptionsMenu` 可以就地重新建立具有列印選項的功能表。
+`OnPageFinished`還將`dataLoaded`該值設定`true`到`OnCreateOptionsMenu`, 因此可以使用「列印」選項重新創建選單。
 
 ##### <a name="printmanager"></a>PrintManager
 
-下列程式碼範例會列印 `WebView`的內容：
+以下代碼範例列印`WebView`: 的內容:
 
 ```csharp
 void PrintPage ()
@@ -495,45 +495,45 @@ void PrintPage ()
 }
 ```
 
-`Print` 接受做為引數：列印工作的名稱（在此範例中為 "MyWebPage"）、 [`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)
-這會從內容產生列印檔案，並[`PrintAttributes`](xref:Android.Print.PrintAttributes)
-（在上述範例中`null`）。 您可以指定 `PrintAttributes` 來協助配置列印頁面上的內容，雖然預設屬性應該處理大部分的案例。
+`Print`用作參數:列印工作的名稱(本範例為"MyWebPage"),一個[`PrintDocumentAdapter`](xref:Android.Print.PrintDocumentAdapter)
+從內容產生列印文件,以及[`PrintAttributes`](xref:Android.Print.PrintAttributes)
+(`null`在上面的示例中)。 您可以指定`PrintAttributes`以説明在列印頁上佈局內容,儘管默認屬性應處理大多數方案。
 
-呼叫 `Print` 會載入列印 UI，其中會列出列印工作的選項。 UI 可讓使用者選擇將 HTML 內容列印或儲存至 PDF，如下列螢幕擷取畫面所示：
+呼叫`Print`載印表 UI,其中列出了列印作業的選項。 UI 為使用者提供列印 HTML 內容或將 HTML 內容儲存到 PDF 的選項,如下圖所示:
 
-[顯示 [列印] 功能表之 PrintHtmlActivity 的 ![螢幕擷取畫面](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
+[![顯示列印選單的列印Html活動螢幕擷取](kitkat-images/print1.png)](kitkat-images/print1.png#lightbox)
 
-[顯示 [另存為 PDF] 功能表之 PrintHtmlActivity 的 ![螢幕擷取畫面](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
+[![顯示「儲存為 PDF」選單的 PrintHtmlActivity 截圖](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
 <a name="hardware" />
 
 ## <a name="hardware"></a>硬體
 
-KitKat 會新增數個 Api 以配合新的裝置功能。 其中最值得注意的是以主機為基礎的卡片模擬和新的 `SensorManager`。
+KitKat 添加了多個 API 以適應新的設備功能。 其中最引人注目的是基於主機的卡模擬和新的`SensorManager`。
 
-### <a name="host-based-card-emulation-in-nfc"></a>NFC 中以主機為基礎的卡片模擬
+### <a name="host-based-card-emulation-in-nfc"></a>NFC 的主機的卡模擬
 
-以主機為基礎的卡片模擬（HCE）可讓應用程式在不依賴電訊廠商專屬安全元素的情況下，行為像是 NFC 卡或 NFC 記憶卡讀卡機。 在設定 HCE 之前，請確定裝置上有使用 `PackageManager.HasSystemFeature`的 HCE：
+基於主機的卡仿真 (HCE) 允許應用像 NFC 卡或 NFC 讀卡機一樣,而無需依賴營運商專有的安全元件。 在設定 HCE 之前,請確保 HCE`PackageManager.HasSystemFeature`在裝置上 可用:
 
 ```csharp
 bool hceSupport = PackageManager.HasSystemFeature(PackageManager.FeatureNfcHostCardEmulation);
 ```
 
-HCE 需要同時向應用程式的 `AndroidManifest.xml`註冊 HCE 功能和 `Nfc` 許可權：
+HCE 要求將 HCE`Nfc`功能與權限`AndroidManifest.xml`註冊到應用程式的 :
 
 ```xml
 <uses-feature android:name="android.hardware.nfc.hce" />
 ```
 
-[在應用程式選項中設定 NFC 許可權 ![](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
+[![在應用程式選項中設定 NFC 權限](kitkat-images/nfc.png)](kitkat-images/nfc.png#lightbox)
 
-若要運作，HCE 必須能夠在背景中執行，而且必須在使用者進行 NFC 交易時啟動，即使使用 HCE 的應用程式不在執行中也一樣。 我們可以撰寫 HCE 程式碼做為 `Service`來完成這項工作。 HCE 服務會執行 `HostApduService` 介面，它會實作為下列方法：
+為了工作,HCE 必須能夠在後台運行,並且必須在使用者進行 NFC 事務時啟動,即使使用 HCE 的應用程式未運行也是如此。 我們可以通過將 HCE 代碼編寫為來`Service`實現此 目的。 HCE 服務實現`HostApduService`介面 ,實現以下方法:
 
-- *ProcessCommandApdu* -應用程式通訊協定資料單位（APDU）是 NFC 讀取器與 HCE 服務之間傳送的內容。 這個方法會使用讀取器中的 ADPU，並傳回資料單位以回應。
+- *ProcessCommandApdu* - 應用程式協定數據單元 (APDU) 是在 NFC 讀取器和 HCE 服務之間發送的內容。 此方法使用讀取器中的 ADPU,並返回回應中的數據單元。
 
-- *OnDeactivated* -當 HCE 服務不再與 NFC 讀取器通訊時，會停用 `HostAdpuService`。
+- *已停用*`HostAdpuService`- 當 HCE 服務不再與 NFC 讀取器通信時,將停用。
 
-HCE 服務也必須向應用程式的資訊清單註冊，並以適當的許可權、意圖篩選和中繼資料裝飾。 下列程式碼範例是使用 `Service` 屬性向 Android 資訊清單註冊的 `HostApduService` （如需有關屬性的詳細資訊，請參閱 Xamarin[使用 Android 資訊清單](~/android/platform/android-manifest.md)指南）：
+HCE 服務還需要在應用程式的清單中註冊,並使用適當的許可權、意圖篩選器和元數據進行修飾。 以下代碼是使用`HostApduService``Service`屬性在 Android 清單中註冊的範例(有關屬性的詳細資訊,請參閱使用 Android[清單的](~/android/platform/android-manifest.md)Xamarin 指南):
 
 ```csharp
 [Service(Exported=true, Permission="android.permissions.BIND_NFC_SERVICE"),
@@ -555,7 +555,7 @@ class HceService : HostApduService
 }
 ```
 
-上述服務提供一種方式讓 NFC 讀取器與應用程式互動，但 NFC 讀取器仍無法得知此服務是否正在模擬需要掃描的 NFC 卡。 為了協助 NFC 讀者識別服務，我們可以為服務指派一個唯一的*應用程式識別碼（輔助）* 。 我們會在以 `MetaData` 屬性（請參閱上述程式碼範例）註冊的 xml 資源檔中，指定協助，以及與 HCE 服務相關的其他中繼資料。 此資源檔會指定一個或多個輔助篩選器，這是十六進位格式的唯一識別碼字串，其對應于一或多個 NFC 讀取器裝置的輔助：
+上述服務為 NFC 讀取器提供了與應用程式交互的方法,但 NFC 讀卡器仍無法知道此服務是否正在類比需要掃描的 NFC 卡。 為了説明 NFC 讀取器識別服務,我們可以為服務分配唯一*的應用程式 ID (AID)。* 我們在與`MetaData`屬性一起註冊的 xml 資源檔中指定 AID 以及有關 HCE 服務的其他元數據(請參閱上面的代碼示例)。 此資源檔案指定一個或多個 AID 篩選器 - 十六進位格式的唯一識別元字串,對應於一個或多個 NFC 讀取器裝置的 AID:
 
 ```xml
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
@@ -570,28 +570,28 @@ class HceService : HostApduService
 </host-apdu-service>
 ```
 
-除了協助篩選之外，xml 資源檔也會提供 HCE 服務的使用者面向描述、指定輔助群組（付款應用程式與「其他」），而在付款應用程式中，會向使用者顯示 260x96 dp 橫幅。
+除了 AID 篩選器外,xml 資源檔還提供面向使用者的 HCE 服務描述,指定 AID 組(付款應用程式與"其他"),在付款應用程式的情況下,還會向使用者顯示要顯示的 260x96 dp 橫幅。
 
-上面所述的設定為模擬 NFC 卡的應用程式提供基本的基礎構件。 NFC 本身需要執行數個步驟，並進一步測試以進行設定。 如需以主機為基礎的卡片模擬的詳細資訊，請參閱[Android 檔入口網站](https://developer.android.com/guide/topics/connectivity/nfc/hce.html)。
-如需使用 NFC 搭配 Xamarin 的詳細資訊，請參閱[XAMARIN NFC 範例](https://github.com/xamarin/monodroid-samples/tree/master/NfcSample)。
+上面概述的設置為類比 NFC 卡的應用程式提供了基本構建基塊。 NFC 本身還需要幾個步驟和進一步測試來配置。 有關基於主機的卡仿真的詳細資訊,請參閱[Android 文件門戶](https://developer.android.com/guide/topics/connectivity/nfc/hce.html)。
+有關將 NFC 與 Xamarin 一起使用的詳細資訊,請檢視[Xamarin NFC 樣品](https://github.com/xamarin/monodroid-samples/tree/master/NfcSample)。
 
 ### <a name="sensors"></a>感應器
 
-KitKat 可讓您透過[`SensorManager`](xref:Android.Hardware.SensorManager)來存取裝置的感應器。
-此 `SensorManager` 可讓 OS 以批次方式排程將感應器資訊傳遞給應用程式，以保留電池壽命。
+KitKat 透過提供裝置偵測器[`SensorManager`](xref:Android.Hardware.SensorManager)的存取 。
+允許`SensorManager`操作系統分批將感測器資訊傳送到應用程式,從而保留電池壽命。
 
-KitKat 也隨附兩個新的感應器類型來追蹤使用者的步驟。 這些是以加速計為基礎，其中包括：
+KitKat 還附帶了兩種新的感測器類型,用於跟蹤使用者的步驟。 這些基於加速度計,包括:
 
-- *StepDetector* -當使用者採取步驟時，應用程式會收到通知/喚醒，而偵測器會提供步驟發生時的時間值。
+- *步進檢測器*- 當使用者執行步驟時,應用程式會收到通知/喚醒,並且探測器為步驟發生的時間值提供時間值。
 
-- *StepCounter* -記錄在*下一次裝置重新開機之前*，使用者從感應器註冊以來所採取的步驟數目。
+- *Step計數器*- 追蹤使用者自註冊感測器以來所採取的步驟數 *,直到下一個裝置重新啟動*。
 
-下列螢幕擷取畫面說明作用中的步驟計數器：
+下面的螢幕截圖描述了操作中的步進計數器:
 
-[![顯示步驟計數器的 SensorsActivity 應用程式螢幕擷取畫面](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
+[![顯示步進計數器的感應器活動應用的螢幕擷圖](kitkat-images/stepcounter.png)](kitkat-images/stepcounter.png#lightbox)
 
-您可以藉由呼叫 `GetSystemService(SensorService)` 並將結果轉換為 `SensorManager`來建立 `SensorManager`。 若要使用 step 計數器，請在 `SensorManager`上呼叫 `GetDefaultSensor`。 您可以透過[`ISensorEventListener`](xref:Android.Hardware.ISensorEventListener)的協助，註冊感應器並接聽步驟計數中的變更。
-介面，如下列程式碼範例所示：
+可以透過呼`SensorManager``GetSystemService(SensorService)`叫 並將結果強制轉換`SensorManager`為, 可以建立 。 要使用步驟計數器,請呼叫`GetDefaultSensor` `SensorManager` 。 您可以註冊感測器,並在[`ISensorEventListener`](xref:Android.Hardware.ISensorEventListener)
+介面,如下代碼示例所示:
 
 ```csharp
 public class MainActivity : Activity, ISensorEventListener
@@ -622,9 +622,9 @@ public class MainActivity : Activity, ISensorEventListener
 }
 ```
 
-如果當應用程式在前景時更新步驟計數，則會呼叫 `OnSensorChanged`。 如果應用程式進入背景，或裝置處於睡眠狀態，則不會呼叫 `OnSensorChanged`;不過，這些步驟將會繼續計算，直到呼叫 `UnregisterListener` 為止。
+`OnSensorChanged`如果步驟計數在應用程式在前臺時更新,則調用。 如果應用程式進入後台,或設備處於睡眠狀態,將不會調用`OnSensorChanged`;否則,將不會調用但是,這些步驟將繼續計數,直到`UnregisterListener`調用。
 
-請記住，*步驟計數值在註冊感應器的所有應用程式中都是累計*的。 這表示即使您卸載並重新安裝應用程式，以及在應用程式啟動時將 `count` 變數初始化為0，感應器所報告的值仍會維持在註冊感應器時所採取的步驟總數（不論您的應用程式或其他）。 您可以藉由呼叫 `SensorManager`上的 `UnregisterListener`，讓應用程式無法加入至步驟計數器，如下列程式碼所示：
+請記住 *,步進計數值是註冊感測器的所有應用程式的累積*值。 這意味著,即使您卸載並重新安裝應用程式,並在應用程式啟動時在 0`count`初始化變數,感測器報告的值仍將是感測器註冊時所執行的步驟總數,無論是應用程式還是其他。 可以通過呼`UnregisterListener`叫 來防止應用程式添加到步驟計數`SensorManager`器, 如下代碼所示:
 
 ```csharp
 protected override void OnPause()
@@ -634,10 +634,10 @@ protected override void OnPause()
 }
 ```
 
-重新開機裝置會將步驟計數重設為0。 您的應用程式將需要額外的程式碼，以確保它會針對應用程式報告精確的計數，而不論使用感應器的其他應用程式或裝置的狀態為何。
+重新啟動設備會將步長數重置為 0。 無論使用感測器或設備的狀態的其他應用程式如何,你的應用都將需要額外的代碼來確保它報告應用程式的準確計數。
 
 > [!NOTE]
-> 雖然步驟偵測和計算的 API 隨附于 KitKat，但並非所有的電話都會與感應器科系。 您可以藉由執行 `PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`來檢查感應器是否可用，或檢查以確定 `GetDefaultSensor` 的傳回值不會 `null`。
+> 雖然用於步進檢測和計數的 API 附帶 KitKat,但並非所有手機都配備感測器。 您可以透過`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);`執行檢查器是否可以檢查, 也可以檢查`GetDefaultSensor`以確保傳`null`回的值不是 。
 
 <a name="developer_tools" />
 
@@ -645,60 +645,60 @@ protected override void OnPause()
 
 ### <a name="screen-recording"></a>螢幕錄製
 
-KitKat 包含新的螢幕錄製功能，讓開發人員可以記錄應用程式的實際運作。 螢幕錄製可透過[Android Debug Bridge （ADB）](https://developer.android.com/tools/help/adb.html)用戶端取得，這可在 Android SDK 中下載。
+KitKat 包括新的螢幕錄製功能,以便開發人員可以記錄應用程式。 屏幕錄製可透過 Android[除錯橋 (ADB)](https://developer.android.com/tools/help/adb.html)客戶端進行,該用戶端可作為 Android SDK 的一部分下載。
 
-若要錄製您的畫面，請連接您的裝置;然後，找出您的 Android SDK 安裝，流覽至 [**平臺工具**] 目錄，然後執行**adb**用戶端：
+要錄製螢幕,請連接您的設備;然後,找到您的 Android SDK 安裝,導航到**平臺工具**目錄並運行**adb**用戶端:
 
 ```shell
 adb shell screenrecord /sdcard/screencast.mp4
 ```
 
-上述命令會將預設的3分鐘影片記錄為預設的4Mbps 解析度。 若要編輯長度，請新增 *--時間限制*旗標。
-若要變更解析度，請新增 *--位速率*旗標。 下列命令會在8Mbps 記錄一段分鐘的影片：
+上述命令將以預設解析度為 4Mbps 的預設解析度錄製預設 3 分鐘影片。 要編輯長度,請添加 *--時間限制*標誌。
+要更改解析度,添加 *-bit 速率*標誌。 以下命令將以 8Mbps 的速度錄製一分鐘長的影片:
 
 ```shell
 adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 ```
 
-您可以在裝置上找到您的影片-錄製完成時，它會出現在您的資源庫中。
+您可以在設備上找到視頻 - 錄製完成後,視頻將顯示在庫中。
 
-## <a name="other-kitkat-additions"></a>其他 KitKat 新增專案
+## <a name="other-kitkat-additions"></a>其他 KitKat 新增功能
 
-除了上面所述的變更之外，KitKat 還可讓您：
+除了上述變更外,KitKat 還允許您:
 
-- *使用全螢幕*KitKat 導入了新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int))來流覽內容、播放遊戲，以及執行其他可從全螢幕體驗獲益的應用程式。
+- *使用全屏*- KitKat 引入了新的[沉浸式模式](https://developer.android.com/reference/android/view/View.html#setSystemUiVisibility(int)),用於瀏覽內容、玩遊戲和運行其他應用程式,這些應用程式可能受益於全屏體驗。
 
-- *自訂通知*-使用[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)取得系統通知的其他詳細資料
-  。 這可讓您以不同的方式呈現應用程式內的資訊。
+- *自訂通知*- 使用[`NotificationListenerService`](xref:Android.Service.Notification.NotificationListenerService)
+  . 這允許您在應用內以不同的方式顯示資訊。
 
-- *鏡像的可以繪製資源*-繪製資源具有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
-  屬性，告訴系統針對需要從左至右配置翻轉的影像建立鏡像版本。
+- *可繪製資源*- 可繪製資源具有新的[`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
+  告訴系統為需要向左向右翻轉佈局的圖像創建鏡像版本的屬性。
 
-- *暫停動畫*-暫停和繼續使用[`Animator`](xref:Android.Animation.Animator)建立的動畫
-  新執行個體。
+- *暫停動畫*─ 暫停與暫停使用[`Animator`](xref:Android.Animation.Animator)
+  類別的新執行個體。
 
-- *閱讀動態變更文字*-代表 UI 的部分，以新的文字動態更新為「即時區域」，新的[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
-  屬性，以便在協助工具模式中自動讀取新的文字。
+- *閱讀動態變更的文字*- 表示使用新文字動態更新的 UI 部份,作為「即時區域」使用新文字[`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
+  屬性,以便新文本將在輔助功能模式下自動讀取。
 
-- *增強音訊體驗*-讓[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)的追蹤更大
-  ，使用[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)尋找音訊串流的尖峰和 RMS
-  類別，並從[音訊時間戳記](xref:Android.Media.AudioTimestamp)取得資訊，以協助進行音訊影片同步處理。
+- *增強音效體驗*─ 使曲目更響亮[`LoudnessEnhancer`](xref:Android.Media.Audiofx.LoudnessEnhancer)
+  ,找到音頻流的峰值和 RMS,[`Visualizer`](xref:Android.Media.Audiofx.Visualizer.MeasurementModePeakRms)
+  類,並從[音訊時間戳](xref:Android.Media.AudioTimestamp)獲取資訊,以幫助進行音訊-視頻同步。
 
-- *在自訂間隔同步處理 ContentResolver* -KitKat 會在執行同步處理要求的時間內新增一些變動性。 藉由呼叫 `ContentResolver.RequestSync` 並傳入 `SyncRequest`，在自訂時間或間隔同步 `ContentResolver`。
+- *自訂間隔處同步內容解析器*- KitKat 為執行同步請求的時間添加了一些可變性。 `ContentResolver`以在自`ContentResolver.RequestSync`訂時間或時間間隔同步 。 `SyncRequest`
 
-- *區分控制器*-在 KitKat 中，控制器會被指派唯一的整數識別碼，可以透過裝置的 `ControllerNumber` 屬性來存取。 這可讓您更輕鬆地分辨遊戲中的玩家。
+- *區分控制器*- 在 KitKat 中,控制器被分配唯一的整數識別`ControllerNumber`符,可以通過設備的屬性訪問。 這使得在遊戲中區分玩家更容易。
 
-- *遠端控制*-在硬體和軟體端上進行一些變更時，KitKat 可讓您使用 `ConsumerIrService`，將具有 IR 發送器的裝置科系轉換成遠端控制，並使用新的[`RemoteController`](xref:Android.Media.RemoteController)與週邊裝置互動
+- *遠端控制*- 在硬體和軟體方面進行了一些更改,KitKat 允許您使用 將配備紅外發射器的設備轉換為`ConsumerIrService`遙控器, 並與週邊設備進行交互。[`RemoteController`](xref:Android.Media.RemoteController)
   API 的 OAuth 2.0 存取。
 
-如需上述 API 變更的詳細資訊，請參閱 Google [Android 4.4 api](https://developer.android.com/about/versions/android-4.4.html)總覽。
+有關上述 API 更改的詳細資訊,請參閱 Google Android [4.4 API](https://developer.android.com/about/versions/android-4.4.html)概述。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
-本文介紹 Android 4.4 （API 層級19）中提供的一些新 Api，並涵蓋將應用程式轉換為 KitKat 時的最佳作法。 其中概述影響使用者體驗的 Api 變更，包括*轉換架構*和*主題*的新選項。 接下來，它引進了*儲存體存取架構*和 `DocumentsProvider` 類別，以及新的*列印 api*。 它探索*NFC 主機型卡片模擬*，以及如何使用*低電源感應器*，包括兩個新的感應器來追蹤使用者的步驟。 最後，它會示範如何使用*螢幕錄製*來捕獲應用程式的即時示範，並提供 KitKat API 變更和新增專案的詳細清單。
+本文介紹了 Android 4.4(API 級別 19)中提供的一些新 API,並介紹了將應用程式轉換為 KitKat 時的最佳做法。 它概述了對影響使用者體驗的 API 的更改,包括*過渡框架*和*用於該選項*的新選項。 接下來,它引入了*儲存存取框架*和`DocumentsProvider`類,以及新的*列印API。* 它探討了*基於NFC主機的卡模擬*以及如何使用*低功耗感測器*,包括兩個新的感測器來跟蹤使用者的步驟。 最後,它演示了通過*螢幕錄製*捕獲應用程式的即時演示,並提供了 KitKat API 更改和添加的詳細清單。
 
 ## <a name="related-links"></a>相關連結
 
-- [KitKat 範例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/kitkat)
-- [Android 4.4 Api](https://developer.android.com/about/versions/android-4.4.html)
-- [Android KitKat](https://developer.android.com/about/versions/kitkat.html)
+- [KitKat 樣品](https://docs.microsoft.com/samples/xamarin/monodroid-samples/kitkat)
+- [安卓 4.4 API](https://developer.android.com/about/versions/android-4.4.html)
+- [安卓凱特](https://developer.android.com/about/versions/kitkat.html)

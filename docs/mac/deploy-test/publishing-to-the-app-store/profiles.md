@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
 ms.openlocfilehash: 00d7610bda3d1b7c9f954df64bb6e3af982b1d06
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725515"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac 應用程式的佈建設定檔
@@ -25,35 +25,35 @@ ms.locfileid: "76725515"
 開發佈建設定檔可讓以 Mac App Store 為目標的應用程式在設定檔中設定的特定電腦上進行測試。 這與使用像是 iCloud 與推播通知等 macOS 功能時特別相關。
 
 > [!NOTE]
-> 開發人員必須已經建立「Mac 開發憑證」，才能建立「開發佈建設定檔」。 完成此螢幕擷取畫面所示的詳細資料，以產生可用於建立組建的**開發佈建設定檔**。 [Certificate (憑證)]  方塊中的選取項目必須是可用的有效 Mac 開發憑證，且至少註冊一個系統以供進行測試。
+> 開發人員必須已經建立「Mac 開發憑證」，才能建立「開發佈建設定檔」。 完成此螢幕擷取畫面所示的詳細資料，以產生可用於建立組建的**開發佈建設定檔**。 [Certificate (憑證)]**** 方塊中的選取項目必須是可用的有效 Mac 開發憑證，且至少註冊一個系統以供進行測試。
 
-請執行下列動作：
+執行下列動作：
 
-1. 選取要建立的佈建設定檔類型，然後按一下 [Continue (繼續)]  按鈕：
+1. 選取要建立的佈建設定檔類型，然後按一下 [Continue (繼續)]**** 按鈕：
 
     [![](profiles-images/certif14.png "Selecting the profile type")](profiles-images/certif14.png#lightbox)
-2. 選取要用於建立設定檔的應用程式識別碼，然後按一下 [Continue (繼續)]  按鈕：
+2. 選取要用於建立設定檔的應用程式識別碼，然後按一下 [Continue (繼續)]**** 按鈕：
 
     [![](profiles-images/certif15.png "Selecting the app ID")](profiles-images/certif15.png#lightbox)
-3. 選取用於簽署設定檔的開發人員識別碼，然後按一下 [Continue (繼續)]  ：
+3. 選取用於簽署設定檔的開發人員識別碼，然後按一下 [Continue (繼續)]****：
 
     [![](profiles-images/certif16.png "Selecting the developer ID")](profiles-images/certif16.png#lightbox)
-4. 選取可使用此設定檔的電腦，然後按一下 [Continue (繼續)]  ：
+4. 選取可使用此設定檔的電腦，然後按一下 [Continue (繼續)]****：
 
     [![](profiles-images/certif17.png "Selecting the allowed computers")](profiles-images/certif17.png#lightbox)
-5. 現在，輸入**設定檔名稱**，然後按一下 [Generate(產生)]  按鈕：
+5. 現在，輸入**設定檔名稱**，然後按一下 [Generate(產生)]**** 按鈕：
 
     [![](profiles-images/certif18.png "Generating the profile")](profiles-images/certif18.png#lightbox)
-6. 按一下 [Download (下載)]  按鈕以下載新的設定檔：
+6. 按一下 [Download (下載)]**** 按鈕以下載新的設定檔：
 
     [![](profiles-images/certif19.png "Downloading the profile")](profiles-images/certif19.png#lightbox)
-7. 開發佈建設定檔會安裝至 Mac [系統偏好設定]  應用程式的設定檔偏好設定窗格：
+7. 開發佈建設定檔會安裝至 Mac [系統偏好設定]**** 應用程式的設定檔偏好設定窗格：
 
     [![](profiles-images/certif20.png "Installing the profile")](profiles-images/certif20.png#lightbox)
 8. 設定檔偏好設定窗格會顯示所有安裝的設定檔：
 
     [![](profiles-images/image47.png "Showing all installed profiles")](profiles-images/image47.png#lightbox)
-9. 該設定檔也會顯示在[Developer Certificate Utility (開發人員憑證公用程式)]  中，以防萬一您需要再次下載：
+9. 該設定檔也會顯示在[Developer Certificate Utility (開發人員憑證公用程式)]**** 中，以防萬一您需要再次下載：
 
     [![](profiles-images/image48.png "The Developer Certificate Utility")](profiles-images/image48.png#lightbox)
 
@@ -63,21 +63,21 @@ ms.locfileid: "76725515"
 
 若要建置可提交至 Mac App Store 的套件，您需要生產佈建設定檔。
 
-請執行下列動作：
+執行下列動作：
 
-1. 選取要建立的設定檔類型，然後按一下 [Continue (繼續)]  按鈕：
+1. 選取要建立的設定檔類型，然後按一下 [Continue (繼續)]**** 按鈕：
 
     [![](profiles-images/certif21.png "Selecting the type of profile")](profiles-images/certif21.png#lightbox)
-2. 選取要用於建立設定檔的應用程式識別碼，然後按一下 [Continue (繼續)]  按鈕：
+2. 選取要用於建立設定檔的應用程式識別碼，然後按一下 [Continue (繼續)]**** 按鈕：
 
     [![](profiles-images/certif15.png "Selecting the app ID")](profiles-images/certif15.png#lightbox)
-3. 選取要簽署設定檔的公司識別碼，然後按一下 [Continue (繼續)]  按鈕：
+3. 選取要簽署設定檔的公司識別碼，然後按一下 [Continue (繼續)]**** 按鈕：
 
     [![](profiles-images/certif23.png "Selecting the company ID")](profiles-images/certif23.png#lightbox)
-4. 輸入**設定檔名稱**，然後按一下 [Generate(產生)]  按鈕：
+4. 輸入**設定檔名稱**，然後按一下 [Generate(產生)]**** 按鈕：
 
     [![](profiles-images/certif24.png "Generating the profile")](profiles-images/certif24.png#lightbox)
-5. 按一下 [Download (下載)]  ，以取得佈建設定檔檔案 (副檔名為 `.provisionprofile`)：
+5. 按一下 [Download (下載)]****，以取得佈建設定檔檔案 (副檔名為 `.provisionprofile`)：
 
     [![](profiles-images/certif25.png "Downloading the profile")](profiles-images/certif25.png#lightbox)
 6. 將檔案拖放到 **Xcode Organizer** 或按兩下以安裝。 接著，設定檔會顯示在 Xcode Organizer 中：
@@ -92,7 +92,7 @@ ms.locfileid: "76725515"
 ## <a name="related-links"></a>相關連結
 
 - [安裝](~//mac/get-started/installation.md)
-- [Hello, Mac 範例](~//mac/get-started/hello-mac.md)
+- [您好,Mac 樣品](~//mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
-- [Tools Guide :Code Signing Your App](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) (工具指南：以程式碼簽署應用程式)
+- [工具指南：對應用程式進行程式碼簽署](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) \(英文\)
 - [開發人員識別碼和 GateKeeper](https://developer.apple.com/developer-id/) \(英文\)

@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70772018"
 ---
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
 
-_ContentPage 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。本文示範如何建立 ContentPage 頁面的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。_
+_ContentPage 是顯示單個檢視並佔據大部分螢幕的可視元素。本文演示如何為 ContentPage 頁建立自定義呈現器,使開發人員能夠使用自己的特定於平臺的自定義來覆蓋預設本機呈現。_
 
-每個 Xamarin.Forms 控制項都隨附每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 當 Xamarin.Forms 應用程式轉譯 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 時，在 iOS 中會先具現化 `PageRenderer` 類別，再由該類別具現化原生 `UIViewController` 控制項。 在 Android 平台上，`PageRenderer` 類別會具現化 `ViewGroup` 控制項。 在通用 Windows 平台 (UWP) 上，`PageRenderer` 類別會具現化 `FrameworkElement` 控制項。 如需 Xamarin.Forms 控制項對應之轉譯器和原生控制項類別的詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每個 Xamarin.Forms 控制項都具有每個平台的轉譯器，這些轉譯器可建立原生控制項的執行個體。 [`ContentPage`](xref:Xamarin.Forms.ContentPage)當 由 Xamarin.Forms 應用程式呈現 時,在`PageRenderer`iOS 中, 類將實例化`UIViewController`,從而實例化本機 控件。 在 Android 平台上，`PageRenderer` 類別會具現化原生的 `ViewGroup` 控制項。 在通用 Windows 平台 (UWP) 上，`PageRenderer` 類別會具現化 `FrameworkElement` 控制項。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
-下圖說明 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 和實作它之對應原生控制項間的關聯性：
+下圖說明了 實現它的[`ContentPage`](xref:Xamarin.Forms.ContentPage)的 和相應的本機控件之間的關係:
 
-![](contentpage-images/contentpage-classes.png "ContentPage 類別與實作原生控制項之間的關聯性")
+![](contentpage-images/contentpage-classes.png "Relationship Between ContentPage Class and Implementing Native Controls")
 
-您可在每個平台上建立 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 的自訂轉譯器，利用轉譯程序實作平台特定的自訂。 執行這項作業的程序如下：
+渲染過程可以通過為每個平臺上的 創建[`ContentPage`](xref:Xamarin.Forms.ContentPage)自定義 呈現器來實現特定於平臺的自定義。 執行這項作業的流程如下：
 
 1. [建立](#Creating_the_Xamarin.Forms_Page) Xamarin.Forms 頁面。
 1. 從 Xamarin.Forms [使用](#Consuming_the_Xamarin.Forms_Page)頁面。
@@ -38,7 +38,7 @@ _ContentPage 是可見的項目，會顯示單一檢視，並佔用螢幕的大�
 
 ## <a name="creating-the-xamarinforms-page"></a>建立 Xamarin.Forms 頁面
 
-您可以將 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 原封不動地新增至共用的 Xamarin.Forms 專案，如下列 XAML 程式碼範例所示：
+可以將未[`ContentPage`](xref:Xamarin.Forms.ContentPage)變更到分享 Xamarin.Forms 專案中,如下 XAML 代碼範例所示:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -49,7 +49,7 @@ _ContentPage 是可見的項目，會顯示單一檢視，並佔用螢幕的大�
 </ContentPage>
 ```
 
-同樣地，[`ContentPage`](xref:Xamarin.Forms.ContentPage) 的程式碼後置檔案也應該保持不變，如下列程式碼範例所示：
+同樣,代碼[`ContentPage`](xref:Xamarin.Forms.ContentPage)背後的檔也應保持不變,如以下代碼示例所示:
 
 ```csharp
 public partial class CameraPage : ContentPage
@@ -98,20 +98,20 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 1. 建立 `PageRenderer` 類別的子類別。
 1. 覆寫轉譯原生頁面的 `OnElementChanged` 方法，並撰寫自訂頁面的邏輯。 `OnElementChanged` 方法是在建立對應的 Xamarin.Forms 控制項時呼叫。
-1. 將 `ExportRenderer` 屬性新增至頁面轉譯器類別，指定用它轉譯 Xamarin.Forms 頁面。 這個屬性用來向 Xamarin.Forms 註冊自訂轉譯器。
+1. 將 `ExportRenderer` 屬性新增至頁面轉譯器類別，指定用它轉譯 Xamarin.Forms 頁面。 這個屬性會用來向 Xamarin.Forms 註冊自訂轉譯器。
 
 > [!NOTE]
 > 您可以選擇每個平台專案是否提供頁面轉譯器。 如果頁面轉譯器未註冊，則會使用頁面的預設轉譯器。
 
 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
-![](contentpage-images/solution-structure.png "CameraPage 自訂轉譯器專案責任")
+![](contentpage-images/solution-structure.png "CameraPage Custom Renderer Project Responsibilities")
 
 `CameraPage` 執行個體是由平台特定 `CameraPageRenderer` 類別轉譯，其全部衍生自平台的 `PageRenderer` 類別。 這會導致每個 `CameraPage` 執行個體都會透過即時相機播放轉譯，如下列螢幕擷取畫面所示：
 
-![](contentpage-images/screenshots.png "每個平台上的 CameraPage")
+![](contentpage-images/screenshots.png "CameraPage on each Platform")
 
-`PageRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 頁面以轉譯對應的原生控制項時，便會呼叫此方法。 這個方法採用 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」所附加的 Xamarin.Forms 項目，以及「現在」所附加的 Xamarin.Forms 項目。 在範例應用程式中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPage` 執行個體的參考。
+`PageRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 頁面以轉譯對應的原生控制項時，便會呼叫此方法。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」** 所附加的 Xamarin.Forms 項目，以及「現在」** 所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CameraPage` 執行個體的參考。
 
 在 `CameraPageRenderer` 類別中，`OnElementChanged` 方法的覆寫版本是執行原生頁面自訂的位置。 所要轉譯 Xamarin.Forms 頁面執行個體的參考可透過 `Element` 屬性取得。
 
@@ -252,7 +252,7 @@ namespace CustomRenderer.UWP
 
 ## <a name="summary"></a>總結
 
-本文示範了如何建立 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 頁面的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。 `ContentPage` 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。
+本文演示了如何為[`ContentPage`](xref:Xamarin.Forms.ContentPage)頁面創建自定義呈現器,使開發人員能夠使用自己的特定於平臺的自定義來覆蓋預設本機呈現。 `ContentPage` 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。
 
 ## <a name="related-links"></a>相關連結
 

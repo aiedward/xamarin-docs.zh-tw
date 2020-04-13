@@ -7,10 +7,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 08/28/2018
 ms.openlocfilehash: 970985e419c5710699b6bdda49da8b59ef3c6cb6
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71119251"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安裝 Xamarin
@@ -23,11 +23,11 @@ ms.locfileid: "71119251"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
-在 Visual Studio 2019 中，按一下 [說明]  功能表，以驗證已安裝 Xamarin。 如果已安裝 Xamarin，您應會看見 [Xamarin]  功能表項目，如此螢幕擷取畫面所示：
+在 Visual Studio 2019 中，按一下 [說明]**** 功能表，以驗證已安裝 Xamarin。 如果已安裝 Xamarin，您應會看見 [Xamarin]**** 功能表項目，如此螢幕擷取畫面所示：
 
 ![[說明] 功能表上的 Xamarin 功能表項目](windows-images/12-xamarin-menu-item.png "[說明] 功能表上的 Xamarin 功能表項目")
 
-您也可以按一下 [說明] > [關於 Microsoft Visual Studio]  ，然後捲動已安裝產品清單，查看是否已安裝 Xamarin：
+您也可以按一下 [說明] > [關於 Microsoft Visual Studio]****，然後捲動已安裝產品清單，查看是否已安裝 Xamarin：
 
 ![Visual Studio 2019 已安裝產品的畫面](windows-images/13-xamarin-is-installed.png "Visual Studio 2019 已安裝產品的畫面")
 
@@ -52,6 +52,6 @@ ms.locfileid: "71119251"
 如需詳細資訊，請參閱[在 Windows 上安裝 Xamarin.Android](~/android/get-started/installation/windows.md) 指南。
 
 1. [Xamarin.Android 組態](~/android/get-started/installation/windows.md#configuration)
-2. [使用 Xamarin Android SDK 管理員](~/android/get-started/installation/android-sdk.md?ide=vs) \(英文\)
-3. [Android SDK 模擬器](~/android/get-started/installation/android-emulator/index.md) \(英文\)
-4. [設定您的裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)
+2. [使用 Xamarin Android SDK 管理員](~/android/get-started/installation/android-sdk.md?ide=vs)
+3. [Android SDK 模擬器](~/android/get-started/installation/android-emulator/index.md)
+4. [設定開發裝置](~/android/get-started/installation/set-up-device-for-development.md)

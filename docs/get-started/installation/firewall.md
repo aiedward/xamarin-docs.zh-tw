@@ -7,15 +7,15 @@ author: conceptdev
 ms.author: crdun
 ms.date: 07/17/2019
 ms.openlocfilehash: 2b52dfd55194ec076f28f8c33e758a39d14f5943
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70291323"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆組態指示
 
-允許 Xamarin 平台在防火牆中為公司提供服務所需的主機清單。 
+允許 Xamarin 平台在防火牆中為公司提供服務所需的主機清單。__
 
 為讓 Xamarin 產品能順利安裝及運作，Xamarin 必須要能夠存取特定端點來下載必要的工具及軟體更新。 若您或您的公司有嚴格的防火牆設定，您可能會遭遇安裝、授權、元件等問題。 本文件概要說明為使 Xamarin 正常運作，您的防火牆需要允許的一些已知端點。 這份清單不包含在下載內容中任何協力廠商工具所需要的端點。 若您在使用這份清單之後仍然遭遇問題，請參閱 Apple 或 Android 安裝疑難排解指南。
 

@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 712322435614966348fc5c10cabf724870c307e4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021286"
 ---
 # <a name="apk-expansion-files"></a>APK 擴充檔
@@ -20,11 +20,11 @@ ms.locfileid: "73021286"
 - APK 的目標如果是 Android 4.0 或更新版本 (API 層級 14 或更高)，則為 100 MB。
 - APK 的目標如果是 Android 3.2 或更舊版本 (API 層級 13 或更高)，則為 50 MB。
 
-為了克服這項限制，Google Play 會隨著 APK 裝載並散發兩個「擴充檔」，讓應用程式能夠間接跨越這項限制。 
+為了克服這項限制，Google Play 會隨著 APK 裝載並散發兩個「擴充檔」**，讓應用程式能夠間接跨越這項限制。 
 
 在大多數裝置上，安裝應用程式時，擴充檔會隨著 APK 一起下載並儲存至裝置上的共用儲存體位置 (SD 記憶卡或 USB 可掛接分割區)。 在一些較舊的裝置上，擴充檔可能不會自動隨著 APK 一起安裝。 在這些情況下，應用程式必須包含會在使用者第一次執行應用程式時下載擴充檔的程式碼。
 
-擴充檔會被視為「不透明二進位 Blob (obb)」，且大小上限可達 2 GB。 在下載這些檔案之後，Android 不會對它們執行任何特殊處理 &ndash; 這些檔案可以採用適合應用程式的任何格式。 在概念上，對擴充檔建議的方法如下：
+擴充檔會被視為「不透明二進位 Blob (obb)」**，且大小上限可達 2 GB。 在下載這些檔案之後，Android 不會對它們執行任何特殊處理 &ndash; 這些檔案可以採用適合應用程式的任何格式。 在概念上，對擴充檔建議的方法如下：
 
 - **主要擴充**  &ndash; 此檔案是 APK 大小限制所無法容納之資源和資產的主要擴充檔。 主要擴充檔應該包含應用程式所需且應該極少更新的主要資產。
 - **修補程式擴充**  &ndash; 這是用於對主要擴充檔的小規模更新。 此檔案可供更新。 應用程式需負責從此檔案執行所有必要的修補或更新。
@@ -34,7 +34,7 @@ Google Play 不允許將擴充檔上傳到現有的 APK，或是更新現有的 
 
 ## <a name="expansion-file-storage"></a>擴充檔儲存體
 
-將檔案下載至裝置時，檔案會儲存在 **_shared-store_/Android/obb/package-name** 中：
+將檔案下載至裝置時，檔案會儲存在 **_shared-store_/Android/obb/__ package-name** 中：
 
 - **_shared-store_** &ndash; 這是 `Android.OS.Environment.ExternalStorageDirectory` 所指定的目錄。
 - **_package-name_** &ndash; 這是應用程式的 Java 式套件名稱。
@@ -57,9 +57,9 @@ Google Play 不允許將擴充檔上傳到現有的 APK，或是更新現有的 
 
 此配置的三個元件為：
 
-- `main` 或 `patch` &ndash; 這會指定此擴充檔是主要擴充檔還是修補擴充檔。 每種擴充檔只能有一個。
-- `<expansion-version>`  &ndash; 這是一個整數，其與檔案第一個建立關聯之 APK 的 `versionCode` 相符。
-- `<package-name>` &ndash; 這是應用程式的 Java 式套件名稱。
+- `main`或`patch`&ndash;這指定這是主擴展檔還是修補程式擴展檔。 每種擴充檔只能有一個。
+- `<expansion-version>`&ndash;這是一個整數,與檔最初`versionCode`關聯的 APK 的整數匹配。
+- `<package-name>`&ndash;這是應用程式的 Java 樣式包名稱。
 
 例如，如果 APK 版本為 21，而套件名稱為 `mono.samples.helloworld`，則主要擴充檔將會命名為 **main.21.mono.samples.helloworld**。
 
@@ -67,12 +67,12 @@ Google Play 不允許將擴充檔上傳到現有的 APK，或是更新現有的 
 
 從 Google Play 安裝應用程式時，擴充檔應該隨著 APK 一起下載並儲存。 在某些情況下，這可能不會發生，或擴充檔可能已被刪除。 為了處理此情況，應用程式必須檢查以了解擴充檔是否存在，然後如有必要，就會下載擴充檔。 以下流程圖顯示此程序的建議工作流程：
 
-[![APK 擴充檔流程圖](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
+[![APK 延伸流程圖](apk-expansion-files-images/apkexpansion.png)](apk-expansion-files-images/apkexpansion.png#lightbox)
 
-當應用程式啟動時，它應該檢查以了解目前的裝置上是否有適當的擴充檔。 如果沒有，應用程式就必須從 Google Play 的[應用程式授權](https://developer.android.com/google/play/licensing/index.html)提出要求。 進行這項檢查時，是藉由使用「授權驗證程式庫」(LVL)來進行，且不論是免費還是授權的應用程式都必須進行此檢查。 LVL 主要是供付費應用程式用來強制執行授權限制。 不過，Google 已將 LVL 延伸，讓它也可以與擴充程式庫搭配使用。 免費應用程式必須執行 LVL 檢查，但可以忽略授權限制。 LVL 要求會負責提供應用程式所需的下列擴充檔相關資訊： 
+當應用程式啟動時，它應該檢查以了解目前的裝置上是否有適當的擴充檔。 如果沒有，應用程式就必須從 Google Play 的[應用程式授權](https://developer.android.com/google/play/licensing/index.html)提出要求。 進行這項檢查時，是藉由使用「授權驗證程式庫」(LVL)** 來進行，且不論是免費還是授權的應用程式都必須進行此檢查。 LVL 主要是供付費應用程式用來強制執行授權限制。 不過，Google 已將 LVL 延伸，讓它也可以與擴充程式庫搭配使用。 免費應用程式必須執行 LVL 檢查，但可以忽略授權限制。 LVL 要求會負責提供應用程式所需的下列擴充檔相關資訊： 
 
-- **檔案大小** &ndash; 擴充檔的檔案大小會作為檢查的一部分，用來判斷是否已經下載正確的擴充檔。
-- **檔案名稱** &ndash; 這是要用來儲存擴充套件的檔案名稱 (目前裝置上)。
+- **檔案大小**  &ndash; 擴充檔的檔案大小會作為檢查的一部分，用來判斷是否已經下載正確的擴充檔。
+- **檔案名稱**  &ndash; 這是要用來儲存擴充套件的檔案名稱 (目前裝置上)。
 - **下載 URL**  &ndash; 應該用來下載擴充套件的 URL。 這是每個下載的獨特 URL，並且會在提供之後很快就失效。
 
 執行 LVL 檢查之後，應用程式應該會下載擴充檔，其中會將下列幾點納入作為執行下載過程中的考量：

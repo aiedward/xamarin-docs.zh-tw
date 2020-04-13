@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
 ms.openlocfilehash: ae32588d75ec3152a1b8b8558d40abbe2e76d1b4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022480"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio 簡介
@@ -67,7 +67,7 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 以下說明每個項目：
 
-- **Mac Agent/連線管理員** – 顯示 [Xamarin Mac Agent] 對話方塊。 正在連線時，此圖示會顯示成「橘色」，已連線時，則會顯示成「綠色」。
+- **Mac Agent/連線管理員** – 顯示 [Xamarin Mac Agent] 對話方塊。 正在連線時，此圖示會顯示成「橘色」**，已連線時，則會顯示成「綠色」**。
 - **顯示 iOS 模擬器** – 將 [iOS 模擬器] 視窗顯示在 Mac 的最上層。
 - **顯示組建伺服器上的 IPA 檔案** – 將 Mac 上的 Finder 開啟在應用程式 IPA 輸出檔的位置。
 
@@ -75,7 +75,7 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 ### <a name="output-window"></a>輸出視窗
 
-[輸出] 窗格中有選項，您可以檢視來探索組建、部署及連線訊息與錯誤。
+[輸出]** 窗格中有選項，您可以檢視來探索組建、部署及連線訊息與錯誤。
 
 下面的螢幕擷取畫面顯示可用的輸出視窗，這些可能會依據您的專案類型而有所不同：
 
@@ -95,39 +95,39 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
   [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugging Output")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
-- **建置**和**建置順序**
+- **產生** & **順序**
 
   [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild Output")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>iOS 專案屬性
 
-若要存取 Visual Studio 的「專案屬性」，請在專案名稱上按一下滑鼠右鍵，然後選取操作功能表中的 [屬性]。 這將可讓您設定 iOS 應用程式，如以下螢幕擷取畫面所示：
+若要存取 Visual Studio 的「專案屬性」，請在專案名稱上按一下滑鼠右鍵，然後選取操作功能表中的 [屬性]**。 這將可讓您設定 iOS 應用程式，如以下螢幕擷取畫面所示：
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Configuring an iOS application")
 
-- iOS 套件組合簽署 – 連線到 Mac 以填入程式碼簽署身分識別和佈建設定檔：
+- iOS 套件組合簽署** – 連線到 Mac 以填入程式碼簽署身分識別和佈建設定檔：
 
   ![填入程式碼簽署身分識別和佈建設定檔](introduction-to-xamarin-ios-for-visual-studio-images/bundlesigning.png)
 
-- iOS IPA 選項 – IPA 檔案將會儲存在 Mac 的檔案系統上：
+- iOS IPA 選項** – IPA 檔案將會儲存在 Mac 的檔案系統上：
 
   ![iOS IPA 選項](introduction-to-xamarin-ios-for-visual-studio-images/ipaoptions.png)
 
-- iOS 執行選項 – 設定額外的參數：
+- iOS 執行選項** – 設定額外的參數：
 
   ![iOS 執行選項](introduction-to-xamarin-ios-for-visual-studio-images/iosrunoptions.png)
 
 ## <a name="creating-a-new-project-for-ios-applications"></a>為 iOS 應用程式建立新專案
 
-從 Visual Studio 內建立新 iOS 專案的方式與建立任何其他專案類型相同。 選取 [檔案] > [新增專案] 將會開啟以下所示的對話方塊，其中顯示一些可供建立新 iOS 專案的專案類型：
+從 Visual Studio 內建立新 iOS 專案的方式與建立任何其他專案類型相同。 選取 [檔案] > [新增專案]**** 將會開啟以下所示的對話方塊，其中顯示一些可供建立新 iOS 專案的專案類型：
 
 ![建立新專案](introduction-to-xamarin-ios-for-visual-studio-images/newproject.w157.png)
 
-選取 [iOS 應用程式 (Xamarin)] 會顯示下列用於建立新 Xamarin.iOS 應用程式的範本：
+選取 [iOS 應用程式 (Xamarin)]**** 會顯示下列用於建立新 Xamarin.iOS 應用程式的範本：
 
 ![選取 iOS 應用程式的範本](introduction-to-xamarin-ios-for-visual-studio-images/newproject-2.w157.png)
 
-您可以在 Visual Studio 中使用「iOS 設計工具」來編輯分鏡腳本和 .xib 檔案。 若要建立「分鏡腳本」，請選擇其中一個「分鏡腳本」範本。 這會在 [方案總管] 中產生一個 **Main.storyboard** 檔案，如以下螢幕擷取畫面所示：
+您可以在 Visual Studio 中使用「iOS 設計工具」來編輯分鏡腳本和 .xib 檔案。 若要建立「分鏡腳本」，請選擇其中一個「分鏡腳本」範本。 這會在 [方案總管]**** 中產生一個 **Main.storyboard** 檔案，如以下螢幕擷取畫面所示：
 
 ![[方案總管] 中的 Main.storyboard 檔案](introduction-to-xamarin-ios-for-visual-studio-images/solution-explorer-new.w157.png)
 
@@ -135,7 +135,7 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "The Main.storyboard in the iOS Designer")
 
-若要將物件新增到您的檢視中，請使用 [工具箱] 窗格將項目拖放到您的「設計介面」上。 您可以選取 [檢視] > [工具箱] 來新增 [工具箱] (如果尚未新增)。 您可以使用 [屬性] 窗格來修改物件屬性、調整其版面配置，以及建立事件，如下所示：
+若要將物件新增到您的檢視中，請使用 [工具箱]**** 窗格將項目拖放到您的「設計介面」上。 您可以選取 [檢視] > [工具箱]**** 來新增 [工具箱] (如果尚未新增)。 您可以使用 [屬性]**** 窗格來修改物件屬性、調整其版面配置，以及建立事件，如下所示：
 
 ![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "The Properties pane")
 
@@ -149,9 +149,9 @@ Visual Studio 中的 iOS 工具列在每個版本的 Visual Studio 中看起來�
 
 Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 iOS 裝置的記錄檔。 透過執行下列任何一個命令，即可顯示此記錄檔：
 
-- [檢視] -> [其他視窗] -> [裝置記錄檔]
-- [工具] > [iOS] > [裝置記錄檔]
-- iOS 工具列 > [裝置記錄檔]
+- [檢視] -> [其他視窗] -> [裝置記錄檔]****
+- [工具] > [iOS] > [裝置記錄檔]****
+- iOS 工具列 > [裝置記錄檔]****
 
 顯示工具視窗之後，使用者便可從裝置下拉式清單中選取實體裝置。 選取某個裝置時，記錄會自動新增到表格中。 在裝置之間切換會將裝置記錄停止後再啟動。
 
@@ -182,6 +182,6 @@ Visual Studio 的新 [裝置記錄檔] 工具視窗可允許顯示 Android 和 i
 ## <a name="related-links"></a>相關連結
 
 - [Xamarin.iOS 安裝](~/ios/get-started/installation/windows/index.md)
-- [裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)
+- [裝置設定](~/ios/get-started/installation/device-provisioning/index.md)
 - [以程式碼建立 iOS UI](~/ios/app-fundamentals/ios-code-only.md)
-- [使用 XMA 將 Mac 連線到您的 Visual Studio 環境 (影片)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent) \(英文\)
+- [使用 XMA 將 Mac 連線到 Visual Studio 環境 (影片)](https://university.xamarin.com/lightninglectures/xamarin-mac-agent)

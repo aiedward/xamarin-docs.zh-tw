@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: dee49d556173ec0b9544820f129eef8a9cce404f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021314"
 ---
 # <a name="publishing-independently"></a>獨立發行
@@ -31,18 +31,18 @@ ms.locfileid: "73021314"
 
 ## <a name="allow-installation-from-unknown-sources"></a>允許從未知來源進行安裝
 
-Android 會防止使用者下載及安裝來自 Google Play.以外位置的應用程式。 若要允許從非市集來源進行安裝，使用者必須先在裝置上啟用 [不明的來源] 設定，才能嘗試安裝應用程式。 這項設定可能位於 [設定] > [系統安全] 底下，如下圖所示：
+Android 會防止使用者下載及安裝來自 Google Play.以外位置的應用程式。 若要允許從非市集來源進行安裝，使用者必須先在裝置上啟用 [不明的來源]** 設定，才能嘗試安裝應用程式。 這項設定可能位於 [設定] > [系統安全]**** 底下，如下圖所示：
 
-[![](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
+[![安全設定螢幕](publishing-independently-images/settings.png)](publishing-independently-images/settings.png#lightbox)
 
 > [!IMPORTANT]
 > 有些網路提供者可能會防止安裝來自不明來源的應用程式，不論此設定為何。
 
 ## <a name="publishing-by-e-mail"></a>透過電子郵件發行
 
-將發行 APK 附加在電子郵件中，是一個將應用程式散發給使用者的快速便利方式。 當使用者在 Android 架構裝置上開啟該電子郵件時，Android 會辨識出該 APK 附件並顯示 [安裝] 按鈕，如下圖所示：
+將發行 APK 附加在電子郵件中，是一個將應用程式散發給使用者的快速便利方式。 當使用者在 Android 架構裝置上開啟該電子郵件時，Android 會辨識出該 APK 附件並顯示 [安裝]**** 按鈕，如下圖所示：
 
-[![附件的 [安裝] 按鈕](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
+[![附件安裝按鈕](publishing-independently-images/publishing-via-email.png)](publishing-independently-images/publishing-via-email.png#lightbox)
 
 雖然透過電子郵件散發相當簡單，但在防範盜版或未經授權散發方面所能提供的防護相當少。 在應用程式的接收者很少，且受信任不會散發該應用程式的情況下，最適合使用此散發方式。
 

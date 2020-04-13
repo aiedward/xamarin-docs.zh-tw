@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Android 效能
-description: 有許多技巧可增加利用 Xamarin.Android 建置之應用程式的效能。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。 本文將描述並討論這些技巧。
+description: 有許多技巧可增加利用 Xamarin.Android 建置之應用程式的效能。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。 本文將描述並討論這些技巧。
 ms.prod: xamarin
 ms.assetid: dc2e27f2-7f71-4d57-9cf9-165528276613
 ms.technology: xamarin-android
@@ -8,21 +8,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 620a7edd4467a5a2bae60bbd82d0e1460c9f0040
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021407"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 效能
 
-_有許多技巧可增加以 Xamarin 建立之應用程式的效能。這些技巧可共同大幅減少 CPU 所執行的工作量，以及應用程式所耗用的記憶體數量。本文描述並討論這些技巧。_
+_有許多技術可以提高使用 Xamarin.Android 構建的應用程式的性能。總之,這些技術可以大大減少 CPU 執行的工作量以及應用程式消耗的內存量。本文介紹並討論了這些技術。_
 
 ## <a name="performance-overview"></a>效能概觀
 
 不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。
 
-有一些技巧可以用來增加利用 Xamarin.Android 建置之應用程式的效能與認知效能。 包括：
+有一些技巧可以用來增加利用 Xamarin.Android 建置之應用程式的效能與認知效能。 其中包括：
 
 - [最佳化配置階層](#optimizelayout)
 - [最佳化清單檢視](#optimizelistviews)
@@ -36,15 +36,15 @@ _有許多技巧可增加以 Xamarin 建立之應用程式的效能。這些技�
 - [關閉對話方塊](#dismissdialogs)
 
 > [!NOTE]
-> 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中探討可改善記憶體使用情況的非平台專用技術，以及使用 Xamarin 平台建置之應用程式的效能。
+>  在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中討論了非平台的特定技術來改善記憶體使用量和使用 Xamarin 平台建置之應用程式的效能。
 
 <a name="optimizelayout" />
 
 ## <a name="optimize-layout-hierarchies"></a>最佳化配置階層
 
-每個新增至應用程式的配置都需要初始化、配置和繪圖。 巢狀使用 `weight` 參數的 [`LinearLayout`](xref:Android.Widget.LinearLayout) 執行個體時，由於每個子系都會測量兩次，因此配置階段可能很耗費資源。 使用巢狀的 `LinearLayout` 執行個體可能會形成深層檢視階層，進而因配置擴大多次 (例如在 [`ListView`](xref:Android.Widget.ListView) 中) 而導致效能不佳。 因此，請務必最佳化這類配置，如此一來才能加倍提升效能。
+每個新增至應用程式的配置都需要初始化、配置和繪圖。 嵌套[`LinearLayout`](xref:Android.Widget.LinearLayout)`weight`使用 參數的實例時,布局傳遞可能非常昂貴,因為每個子級將測量兩次。 使用 嵌`LinearLayout`套 實例可能會導致深度視圖層次結構,這可能導致多次膨脹的佈局([`ListView`](xref:Android.Widget.ListView)如在中)的性能不佳。 因此，請務必最佳化這類配置，如此一來才能加倍提升效能。
 
-例如，假設以 [`LinearLayout`](xref:Android.Widget.LinearLayout) 來表示具有圖示、標題和描述的清單檢視資料列。 `LinearLayout` 會包含 [`ImageView`](xref:Android.Widget.ImageView) 以及含有兩個 [`TextView`](xref:Android.Widget.TextView) 執行個體的垂直 `LinearLayout`：
+例如,請考慮[`LinearLayout`](xref:Android.Widget.LinearLayout)具有圖示、標題和說明的列表視圖行。 包含`LinearLayout`兩[`ImageView`](xref:Android.Widget.ImageView)`LinearLayout`[`TextView`](xref:Android.Widget.TextView)個實體的垂直實體:
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -79,7 +79,7 @@ _有許多技巧可增加以 Xamarin 建立之應用程式的效能。這些技�
 </LinearLayout>
 ```
 
-此配置有 3 層深，當針對每個 [`ListView`](xref:Android.Widget.ListView) 資料列擴大時會很浪費資源。 不過，您可以將配置壓平合併來改善，如下列程式碼範例所示：
+此佈局深度為 3 級[`ListView`](xref:Android.Widget.ListView),每 行充氣時浪費。 不過，您可以將配置壓平合併來改善，如下列程式碼範例所示：
 
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -117,26 +117,26 @@ _有許多技巧可增加以 Xamarin 建立之應用程式的效能。這些技�
 </RelativeLayout>
 ```
 
-先前的 3 層階層已減少為 2 層階層，並由單一 [`RelativeLayout`](xref:Android.Widget.RelativeLayout) 取代兩個 [`LinearLayout`](xref:Android.Widget.LinearLayout) 執行個體。 當針對每個 [`ListView`](xref:Android.Widget.ListView) 資料列擴大此配置時，將會大幅提升效能。
+以前的 3 級層次結構已減少到 2 級層次結構[`RelativeLayout`](xref:Android.Widget.RelativeLayout),並且單個[`LinearLayout`](xref:Android.Widget.LinearLayout)層次結構已替換兩 個實例。 在膨脹每[`ListView`](xref:Android.Widget.ListView)行的佈局時,性能將顯著提高。
 
 <a name="optimizelistviews" />
 
 ## <a name="optimize-list-views"></a>最佳化清單檢視
 
-針對 [`ListView`](xref:Android.Widget.ListView) 執行個體，使用者期望有順暢的捲動和快速載入時間。 不過，當每個清單檢視資料列包含深層巢狀檢視階層，或清單檢視資料列包含複雜配置時，捲動效能可能會受到影響。 不過，有可用來避免 `ListView` 效能不佳的技巧：
+使用者期望[`ListView`](xref:Android.Widget.ListView)實例平滑滾動和快速載入時間。 不過，當每個清單檢視資料列包含深層巢狀檢視階層，或清單檢視資料列包含複雜配置時，捲動效能可能會受到影響。 不過，有可用來避免 `ListView` 效能不佳的技巧：
 
 - 重複使用資料列檢視。如需詳細資訊，請參閱[重複使用資料列檢視](#reuserowviews)。
 - 盡可能將配置壓平合併。
 - 快取擷取自 Web 服務的資料列內容。
 - 避免影像縮放。
 
-這些技巧可共同協助保持 [`ListView`](xref:Android.Widget.ListView) 執行個體捲動順暢。
+總之,這些技術可以説明保持[`ListView`](xref:Android.Widget.ListView)實例平滑滾動。
 
 <a name="reuserowviews" />
 
 ### <a name="reuse-row-views"></a>重複使用資料列檢視
 
-當顯示 [`ListView`](xref:Android.Widget.ListView) 中數百個資料列，畫面上一次僅能顯示少數資料列時，卻建立了數百個 [`View`](xref:Android.Views.View) 物件，是一種浪費記憶體的方式。 反之，僅有畫面上資料列中看見的 `View` 物件可以載入記憶體，且**內容**載入至這些重複使用的物件中。 這可防止具現化數百個額外的物件，進而節省時間與記憶體。
+在 中顯示數百行[`ListView`](xref:Android.Widget.ListView)時 ,如果螢幕上只顯示少量物件,則[`View`](xref:Android.Views.View)創建數 百個對象會浪費記憶體。 反之，僅有畫面上資料列中看見的 `View` 物件可以載入記憶體，且**內容**載入至這些重複使用的物件中。 這可防止具現化數百個額外的物件，進而節省時間與記憶體。
 
 因此，當資料列從畫面消失時，其檢視可以放置在佇列中以供重複使用，如下列程式碼範例所示：
 
@@ -153,7 +153,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 }
 ```
 
-當使用者捲動時，[`ListView`](xref:Android.Widget.ListView) 會呼叫 `GetView` 覆寫來要求顯示新的檢視；如果有的話，則會在 `convertView` 參數中傳遞未使用的檢視。 如果此值為 `null`，則程式碼會建立新的 [`View`](xref:Android.Views.View) 執行個體；否則即可重設和重複使用 `convertView` 屬性。
+當使用者滾動時,[`ListView`](xref:Android.Widget.ListView)調`GetView`用 重寫以請求顯示新檢視 - 如果可用,`convertView`它將傳遞 參數中的未使用的視圖。 如果此值是`null`,則代碼將建立一個[`View`](xref:Android.Views.View)新 實體`convertView`, 否則可以重置和重用屬性。
 
 如需詳細資訊，請參閱[將資料填入 ListView](~/android/user-interface/layouts/list-view/populating.md) 中的[資料列檢視重複使用](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use)。
 
@@ -198,17 +198,17 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ## <a name="release-resources-when-notified"></a>收到通知時釋放資源
 
-在應用程式生命週期期間，[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回呼會在裝置記憶體偏低時提供通知。 此回呼應該實作為接聽下列記憶體等級通知：
+在應用程式生命週期中,當[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*)設備記憶體不足時,回調會提供通知。 此回呼應該實作為接聽下列記憶體等級通知：
 
-- [`TrimMemoryRunningModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningModerate) - 應用程式「可能」想要釋放部分不需要的資源。
-- [`TrimMemoryRunningLow`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningLow) - 應用程式「應該」釋放不需要的資源。
-- [`TrimMemoryRunningCritical`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningCritical) - 應用程式「應該」盡可能釋放許多非關鍵的處理序。
+- [`TrimMemoryRunningModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningModerate)• 應用程式*可能需要*釋放一些不需要的資源。
+- [`TrimMemoryRunningLow`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningLow)• 應用程式*應*釋放不需要的資源。
+- [`TrimMemoryRunningCritical`](xref:Android.Content.ComponentCallbacks2.TrimMemoryRunningCritical)• 應用程式*應*盡可能釋放許多非關鍵進程。
 
-此外，快取應用程式處理序時，[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回呼可能會收到下列記憶體等級通知：
+此外,快取應用程式進程時,[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*)回調可能會收到以下記憶體等級通知:
 
-- [`TrimMemoryBackground`](xref:Android.Content.ComponentCallbacks2.TrimMemoryBackground) - 釋放可在使用者返回應用程式時快速有效率地重建的資源。
-- [`TrimMemoryModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryModerate) - 釋放可協助系統繼續快取其他處理序的資源，以提升整體效能。
-- [`TrimMemoryComplete`](xref:Android.Content.ComponentCallbacks2.TrimMemoryComplete) - 如果沒有盡快復原更多記憶體，會立即終止應用程式處理序。
+- [`TrimMemoryBackground`](xref:Android.Content.ComponentCallbacks2.TrimMemoryBackground)• 釋放資源,如果使用者返回到應用,這些資源可以快速高效地重新生成。
+- [`TrimMemoryModerate`](xref:Android.Content.ComponentCallbacks2.TrimMemoryModerate)• 釋放資源可以幫助系統緩存其他進程,以取得更好的整體性能。
+- [`TrimMemoryComplete`](xref:Android.Content.ComponentCallbacks2.TrimMemoryComplete)• 如果無法很快恢復更多記憶體,應用程式進程將很快終止。
 
 您應該根據收到的等級釋放資源，來回應這些通知。
 
@@ -218,13 +218,13 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 當使用者巡覽至其他應用程式時，請釋放應用程式使用者介面所使用的任何資源，這樣做可大幅增加 Android 用於快取處理序的容量，進而影響使用者體驗品質。
 
-若要在使用者結束 UI 時收到通知，請在 `Activity` 類別實作 [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) 回呼，並接聽 [`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden) 層級 (此層級表示已隱藏 UI)。 只有在使用者看不到應用程式的「所有」UI 元件時，才會收到此通知。 收到此通知即釋放 UI 資源可確保當使用者從應用程式的另一個活動往回巡覽時，這些 UI 資源仍然可供使用，以便快速地繼續活動。
+要在使用者退出 UI 時收到通知,請[`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*)在`Activity`類 中 實現[`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden)回調並偵聽 級別,這表示 UI 隱藏在視圖中。 只有在使用者看不到應用程式的「所有」** UI 元件時，才會收到此通知。 收到此通知即釋放 UI 資源可確保當使用者從應用程式的另一個活動往回巡覽時，這些 UI 資源仍然可供使用，以便快速地繼續活動。
 
 <a name="optimizeimages" />
 
 ## <a name="optimize-image-resources"></a>最佳化影像資源
 
-影像是應用程式所使用之資源中成本最高的一種資源，且經常以高解析度擷取。 因此，當顯示影像時，請以裝置螢幕所需的解析度來顯示。 如果影像解析度比螢幕解析度還要高，則應該將它相應減少。
+影像是一些應用程式所使用成本最高的資源，且經常以高解析度擷取。 因此，當顯示影像時，請以裝置螢幕所需的解析度來顯示。 如果影像解析度比螢幕解析度還要高，則應該將它相應減少。
 
 如需詳細資訊，請參閱[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)指南中的[最佳化影像資源](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)。
 
@@ -258,12 +258,12 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 ## <a name="dismiss-dialogs"></a>關閉對話方塊
 
-使用 [`ProgressDialog`](xref:Android.App.ProgressDialog) 類別 (或是任何對話方塊或警示) 時，不要在對話方塊目的完成時呼叫 [`Hide`](xref:Android.App.Dialog.Hide*) 方法，而是改為呼叫 [`Dismiss`](xref:Android.App.Dialog.Dismiss*) 方法。 否則，對話方塊仍會保持運作，而且會因持有活動的參考而導致活動洩漏。
+使用[`ProgressDialog`](xref:Android.App.ProgressDialog)類(或任何對話框或警報)時,而不是在對話方塊[`Hide`](xref:Android.App.Dialog.Hide*)的用途 完成時調用方法,[`Dismiss`](xref:Android.App.Dialog.Dismiss*)而是調用方法。 否則，對話方塊仍會保持運作，而且會因持有活動的參考而導致活動洩漏。
 
 ## <a name="summary"></a>總結
 
-本文已描述與討論用來增加以 Xamarin.Android 建置之應用程式效能的技巧。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
+本文已描述與討論用來增加以 Xamarin.Android 建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 
 ## <a name="related-links"></a>相關連結
 
-- [跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [跨平臺效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)

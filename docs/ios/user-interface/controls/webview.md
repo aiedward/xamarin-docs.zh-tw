@@ -1,32 +1,32 @@
 ---
-title: Xamarin 中的 Web Views
-description: 本檔說明 Xamarin iOS 應用程式可以用來顯示 web 內容的各種方式。 其中討論 WKWebView、SFSafariViewController、Safari 和應用程式傳輸安全性。
+title: Xamarin.iOS 中的 Web 檢視
+description: 本文件介紹了 Xamarin.iOS 應用顯示 Web 內容的各種方式。 它討論了 WKWebView、SFSafariView控制器、Safari 和應用程式傳輸安全性。
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 7c469a011a70840cfe94a7f87ed77f03968a3525
-ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
+ms.openlocfilehash: cc6c87452bf5312d66e33b7c49d3dc216eceb7d6
+ms.sourcegitcommit: b93754b220fca3d6e3d131341e3cfbe233d10f84
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80159817"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80628302"
 ---
-# <a name="web-views-in-xamarinios"></a>Xamarin 中的 Web Views
+# <a name="web-views-in-xamarinios"></a>Xamarin.iOS 中的 Web 檢視
 
-在 iOS Apple 的存留期內，應用程式開發人員已發行數種方式，以在其應用程式中納入 web view 功能。 大部分的使用者在其 iOS 裝置上使用內建的 Safari web 瀏覽器，因此會預期來自其他應用程式的 web view 功能會與此體驗一致。 它們預期會有相同的手勢來運作、將效能視為同等，以及功能相同。
+在 iOS 的生命週期中,Apple 發布了許多應用開發人員在其應用中集成 Web 視圖功能的方法。 大多數使用者在其 iOS 裝置上使用內建的 Safari Web 瀏覽器,因此希望其他應用的 Web 視圖功能與此體驗一致。 他們期望相同的手勢工作,性能是平和的,功能相同。
 
-iOS 11 引進了 `WKWebView` 和 `SFSafariViewController`的新變更。 如需這些功能的詳細資訊，請參閱[iOS 11 中的 Web 變更指南](~/ios/platform/introduction-to-ios11/web.md)。
+iOS 11 引入了`WKWebView`新的`SFSafariViewController`變更, 對與 。 有關這些的詳細資訊,請參閱[iOS 11 指南中的 Web 更改](~/ios/platform/introduction-to-ios11/web.md)。
 
 ## <a name="wkwebview"></a>WKWebView
 
-`WKWebView` 是在 iOS 8 中引進，可讓應用程式開發人員執行類似于行動 Safari 的 web 流覽介面。 這種情況的原因是，`WKWebView` 使用 Nitro JAVAscript 引擎，這是 mobile Safari 所使用的相同引擎。 `WKWebView` 應該一律在可能的情況下使用於 UIWebView，因為效能增加、內建的使用者易記手勢，以及網頁與應用程式之間的互動輕鬆。
+`WKWebView`iOS 8 中引入了,允許應用開發人員實現類似於移動 Safari 的 Web 瀏覽介面。 部分原因在於`WKWebView`使用 Nitro Javascript 引擎,該引擎與移動 Safari 使用的引擎相同。 `WKWebView`由於性能提高(內置了使用者友好的手勢),以及網頁和應用程式之間交互的便利性,因此應始終在 UIWebView 上使用。
 
-`WKWebView` 可以使用幾乎完全相同的方式新增至您的應用程式，但身為開發人員，您對 UI/UX 和功能有更大的控制權。 建立和顯示 web view 物件將會顯示要求的頁面，不過您可以控制如何呈現視圖、使用者可以流覽的方式，以及使用者如何結束視圖。  
+`WKWebView`可以以與 UIWebView 幾乎相同的方式添加到應用中,但是作為開發人員,您可以對 UI/UX 和功能有更多的控制。 創建和顯示 Web 檢視物件將顯示請求的頁面,但您可以控制檢視的顯示方式、用戶導航方式以及使用者退出檢視的方式。  
 
-下列程式碼可用來啟動您的 Xamarin iOS 應用程式中的 `WKWebView`：
+以下代碼可用於在 Xamarin.iOS 應用中`WKWebView`啟動 :
 
 ```csharp
 WKWebView webView = new WKWebView(View.Frame, new WKWebViewConfiguration());
@@ -37,23 +37,23 @@ var request = new NSUrlRequest(url);
 webView.LoadRequest(request);
 ```
 
-請務必注意，`WKWebView` 是在 `WebKit` 命名空間中，因此您必須將此 using 指示詞新增至類別的頂端。
+請務必注意,`WKWebView`該名稱空間`WebKit`位於 命名空間中,因此您必須使用指令將此指令添加到類的頂部。
 
-`WKWebView` 也可以在 Xamarin. Mac 應用程式中使用，如果您要建立跨平臺的 Mac/iOS 應用程式，則應使用此功能。
+`WKWebView`也可以在 Xamarin.Mac 應用中使用,如果您正在創建跨平臺 Mac/iOS 應用,則應使用它。
 
-「[處理 JAVAscript 警示](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/handle_javascript_alerts)」配方也會提供有關使用 WKWebView 搭配 JavaScript 的資訊。
+[處理 JavaScript 警報](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/web_view/handle_javascript_alerts)配方還提供有關使用 WKWebView 與 Javascript 一起使用的資訊。
 
-## <a name="sfsafariviewcontroller"></a>SFSafariViewController
+## <a name="sfsafariviewcontroller"></a>SFSafariView控制器
 
- `SFSafariViewController` 是從您的應用程式提供 web 內容，並可在 iOS 9 和更新版本中取得的最新方式。 不同于 `UIWebView` 或 `WKWebView`，`SFSafariViewController` 是視圖控制器，因此不能與其他視圖一起使用。 您應該以新的視圖控制器的方式呈現 `SFSafariViewController`，就像使用任何視圖控制器一樣。
+ `SFSafariViewController`是從你的應用提供 Web 內容的最新方式,可在 iOS 9 及更高版本中提供。 與`UIWebView``WKWebView``SFSafariViewController`或 是檢視控制器,因此不能與其他檢視一起使用。 您應該以新的`SFSafariViewController`檢視控制器方式呈現,就像呈現任何檢視控制器一樣。
 
- `SFSafariViewController` 基本上是「迷你 safari」，可以內嵌到您的應用程式中。 如同 WKWebView，它會使用相同的 Nitro JAVAscript 引擎，但也會提供一系列額外的 Safari 功能，例如自動填滿、讀者，以及與 mobile Safari 共用 cookie 和資料的能力。 使用者和 `SFSafariViewController` 之間的互動無法供您的應用程式存取。 您的應用程式將無法存取任何預設的 Safari 功能。
+ `SFSafariViewController`本質上是一個"迷你野生動物園",可以嵌入到你的應用中。 與 WKWebView 一樣,它使用相同的 Nitro Javascript 引擎,但也提供了一系列額外的 Safari 功能,如自動填充、讀取器,以及與移動 Safari 共用 Cookie 和數據的能力。 用戶和之間的`SFSafariViewController`交互對應用是無法訪問的。 你的應用將無法訪問任何預設的 Safari 功能。
 
-根據預設，它也會執行 [**完成**] 按鈕，讓使用者可以輕鬆地返回您的應用程式，以及向前和向後瀏覽按鈕，讓您的使用者可以流覽一堆網頁。 此外，它也會為使用者提供一個網址列，讓他們知道他們是在預期的網頁上。 網址列不允許使用者變更 url。
+默認情況下,它還實現了 **「完成」** 按鈕,允許用戶輕鬆返回到你的應用,以及前進和後退導航按鈕,允許使用者流覽一堆網頁。 此外,它還為使用者提供了一個位址欄,讓他們安心,他們出現在預期的網頁上。 位址列不允許使用者更改 URL。
 
-這些執行無法變更，因此，如果您的應用程式想要呈現不含任何自訂的網頁，則最好使用 `SFSafariViewController` 做為預設瀏覽器。
+無法更改這些實現,因此`SFSafariViewController`,如果應用希望在沒有任何自定義的情況下顯示網頁,則最好用作預設瀏覽器。
 
-下列程式碼可用來啟動您的 Xamarin iOS 應用程式中的 `SFSafariViewController`：
+以下代碼可用於在 Xamarin.iOS 應用中`SFSafariViewController`啟動 :
 
 ```csharp
 var sfViewController = new SFSafariViewController(url);
@@ -61,13 +61,13 @@ var sfViewController = new SFSafariViewController(url);
 PresentViewController(sfViewController, true, null);
 ```
 
-這會產生下列 web 視圖：
+這會產生以下 Web 檢視:
 
-[![使用 SFSafariViewController 的範例 web 視圖](webview-images/sfsafariviewcontroller.png)](webview-images/sfsafariviewcontroller.png#lightbox)
+[![帶有 SFSafariView 控制器的範例 Web 檢視](webview-images/sfsafariviewcontroller.png)](webview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
-您也可以使用下列程式碼，從您的應用程式內開啟 mobile Safari 應用程式：
+還可以使用以下代碼從應用內打開移動 Safari 應用:
 
 ```csharp
 var url = new NSUrl("https://docs.microsoft.com");
@@ -75,86 +75,86 @@ var url = new NSUrl("https://docs.microsoft.com");
 UIApplication.SharedApplication.OpenUrl(url);
 ```
 
-這會產生下列 web 視圖：
+這會產生以下 Web 檢視:
 
-[![Safari 中顯示的網頁](webview-images/safari.png)](webview-images/safari.png#lightbox)
+[![在 Safari 中展示的網頁](webview-images/safari.png)](webview-images/safari.png#lightbox)
 
-通常一律避免將使用者從您的應用程式移至 Safari。 大部分的使用者都不會預期流覽至您的應用程式之外，因此，如果您離開應用程式，使用者可能永遠不會傳回它，基本上是終止 engagement。
+通常應始終避免將使用者從應用導航到 Safari。 大多數使用者不會期望在應用程式外部進行導航,因此,如果您遠離應用導航,使用者可能永遠不會返回它,這實質上會扼殺參與度。
 
-iOS 9 改良功能可讓使用者透過 Safari 頁面左上角提供的 [上一頁] 按鈕，輕鬆地返回您的應用程式。
+iOS 9 的改進允許用戶通過 Safari 頁面左上角提供的後退按鈕輕鬆返回到你的應用。
 
 ## <a name="app-transport-security"></a>應用程式傳輸安全性
 
-IOS 9 中的 Apple 引進了應用程式傳輸安全性或*ATS* ，以確保所有網際網路通訊都符合安全連線的最佳作法。
+應用傳輸安全 *(ATS)* 由 Apple 在 iOS 9 中引入,以確保所有互聯網通信都符合安全連接最佳實踐。
 
-如需 ATS 的詳細資訊，包括如何在您的應用程式中加以執行，請參閱[應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)指南。
+有關 ATS 的詳細資訊(包括如何在應用中實現它),請參閱[應用傳輸安全](~/ios/app-fundamentals/ats.md)指南。
 
-## <a name="uiwebview-deprecation"></a>UIWebView 淘汰
+## <a name="uiwebview-deprecation"></a>UIWebView 棄用
 
-`UIWebView` 是 Apple 在您的應用程式中提供 web 內容的舊版方式。 它是在 iOS 2.0 中發行，並已淘汰8.0。
+`UIWebView`是 Apple 在應用中提供 Web 內容的傳統方式。 它在 iOS 2.0 中發佈,並且自 8.0 起已被棄用。
 
 > [!IMPORTANT]
-> `UIWebView` 已被取代。 [在2020年4月起，使用此控制項的新應用程式將不會接受到 App Store，而且12月2020將不會接受使用此控制項的應用程式更新](https://developer.apple.com/news/?id=12232019b)。
+> `UIWebView` 已被取代。 自 2020 年 4 月起,使用此控制項的新應用[將不接受 App Store,並且在 2020 年 12 月前不接受使用此控制件的應用更新](https://developer.apple.com/news/?id=12232019b)。
 >
-> [Apple 的 `UIWebView` 檔](https://developer.apple.com/documentation/uikit/uiwebview)建議應用程式應該改用[`WKWebView`](#wkwebview) 。
+> [此檔案`UIWebView`顯示](https://developer.apple.com/documentation/uikit/uiwebview),套用應該改[`WKWebView`](#wkwebview)用 。
 >
-> 如果您要在使用 Xamarin 時尋找 `UIWebView` 取代警告（ITMS-90809）的相關資源，請參閱[Xamarin web](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)工作檔。
+> 如果您在使用 Xamarin.Forms`UIWebView`時尋找與棄用警告 (ITMS-90809) 有關的資源,請參閱[Xamarin.Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)文件。
 
-過去六個月（或也就是）提交 iOS 應用程式的開發人員可能收到來自 App Store 的警告，關於 `UIWebView` 即將淘汰。
+在過去六個月(或更長時間)提交 iOS 應用程式的開發人員可能會收到來自 App Store`UIWebView`的警告,警告 他們被棄用。
 
-Api 的棄用功能是常見的。 Xamarin 會使用自訂屬性來通知這些 Api （並在可用時建議替代專案）回到開發人員。 這次的差異很大，而且較不常見，這是 Apple 的 App Store 在提交時將會**強制執行**取代。
+API 的棄用很常見。 Xamarin.iOS 使用自定義屬性向開發人員發出信號(如果可用,建議替換)。 這次不同,更不常見的是,蘋果的App Store將在提交時**強制**棄用。
 
-可惜的是，從 `Xamarin.iOS.dll` 移除 `UIWebView` 類型是[二進位的重大變更](https://docs.microsoft.com/dotnet/core/compatibility/categories#binary-compatibility)。 這種變更將會中斷現有的協力廠商程式庫，包括可能不再支援或甚至重新編譯的部分（例如，關閉的來源）。 這只會為開發人員建立額外的問題。 因此，我們*還*不會移除型別。
+沒有是,`UIWebView``Xamarin.iOS.dll`從中移除類型是[二進制的破壞變更](https://docs.microsoft.com/dotnet/core/compatibility/categories#binary-compatibility)。 此更改將破壞現有的第三方庫,包括一些可能不支援甚至重新編譯的庫(例如,關閉源)。 這隻會給開發人員帶來其他問題。 因此,我們*尚未*刪除類型。
 
-從[Xamarin. iOS 13.16](https://docs.microsoft.com/xamarin/ios/release-notes/13/13.16)開始提供新的偵測和工具，協助您從 `UIWebView`進行遷移。
+從[Xamarin.iOS 13.16](https://docs.microsoft.com/xamarin/ios/release-notes/13/13.16)開始,新的檢測和工具可`UIWebView`説明您從 進行遷移。
 
 ### <a name="detection"></a>偵測
 
-如果您 have'nt 最近將 iOS 應用程式提交至 Apple App Store，您可能會想知道這種情況是否適用于您的應用程式。
+如果您最近沒有向 Apple App Store 提交 iOS 應用程式,您可能會懷疑這種情況是否適用於您的應用程式。
 
-若要找出，您可以將 `--warn-on-type-ref=UIKit.UIWebView` 新增至專案的**其他 mtouch 引數。** 這會警告應用程式內已淘汰之 `UIWebView` 的**任何**參考（及其所有相依性）。 在執行 managed 連結器**之前**和**之後**，會使用不同的警告來報告類型。
+要找出答案,您可以添加到`--warn-on-type-ref=UIKit.UIWebView`專案的 **「附加 mtouch 參數」。。** 這將警告**any**對`UIWebView`應用程式 內部棄用的任何引用(及其所有依賴項)。 不同的警告用於在託管連結器**before**執行**之前和之後**報告類型。
 
-您可以使用 `-warnaserror:`，將警告視為錯誤。 如果您想要確保不會在驗證之後加入 `UIWebView` 的新相依性，這項功能就很有用。 例如：
+警告和其他警告一樣,可以使用 轉換為`-warnaserror:`錯誤 。 如果要確保驗證後不會添加新的依賴項,`UIWebView`這非常有用。 例如：
 
-* 如果在預先連結的元件中找到任何參考，`-warnaserror:1502` 將會報告錯誤。
-* 如果在連結後的元件中找到任何參考，`-warnaserror:1503` 將會報告錯誤。
+* `-warnaserror:1502`如果在預連結程式集中找到任何引用,將報告錯誤。
+* `-warnaserror:1503`將在連結後程式集中找到任何引用時報告錯誤。
 
-如果前置/後置連結結果不實用，您也可以將警告解除通知。 例如：
+如果預/後鏈接結果沒有用,也可以靜默警告。 例如：
 
-* 如果在預先連結的元件中找到任何參考，`-nowarn:1502` 將**不**會報告警告。
-* 如果在連結後的元件中找到任何參考，`-nowarn:1503` 將**不**會報告警告。
+* `-nowarn:1502`如果在預連結程式集中找到任何引用,**將不會**報告警告。
+* `-nowarn:1503`如果在連結後程式集中找到任何引用,**將不會**報告警告。
 
 ### <a name="removal"></a>移除
 
-每個應用程式都是唯一的。 從您的應用程式移除 `UIWebView` 可能需要不同的步驟，視使用的方式和位置而定。 最常見的案例如下：
+每個應用程式都是獨一無二的。 根據`UIWebView`使用方式和位置,從應用程式中刪除可能需要不同的步驟。 最常見的方案如下:
 
-- 您的應用程式內沒有使用 `UIWebView`。 一切都沒問題。 提交至 AppStore 時，您**不**應該有警告。 您不需要其他任何東西。
-- 應用程式 `UIWebView` 的直接使用。 一開始請先移除您的 `UIWebView`使用方式，例如，將它取代為較新的 `WKWebView` （iOS 8）或 `SFSafariViewController` （iOS 9）類型。 完成此作業之後，managed 連結器應該看不到任何 `UIWebView` 的參考，最後的應用程式二進位檔將不會追蹤它。
-- 間接使用。 `UIWebView` 可以出現在應用程式所使用的某些協力廠商程式庫中（受控或原生）。 開始將您的外部相依性更新為最新版本，因為這種情況可能已經在較新的版本中解決。 如果沒有，請聯絡程式庫的維護人員，並詢問其更新計畫。
+- 應用程式`UIWebView`內部沒有用。 一切都很好 提交到 AppStore 時**不應**有警告。 您不需要任何其他內容。
+- 應用程式直接使用`UIWebView`。 首先刪除使用的`UIWebView`,例如,將其替換為較`WKWebView`新的 (iOS`SFSafariViewController`8) 或 (iOS 9) 類型。 完成此項後,託管連結器不應看到任何引用,`UIWebView`最終應用二進位檔將沒有追蹤。
+- 間接使用。 `UIWebView`可以存在於應用程式使用的某些第三方庫中,無論是託管庫還是本機庫。 首先,將外部依賴項更新到其最新版本,因為這種情況可能已經在較新版本中解決。 如果沒有,請與庫的維護者聯繫,詢問其更新計劃。
 
-或者，您可以嘗試下列方法：
+或者,您可以嘗試以下方法:
 
-1. 如果您使用的是 [ **Xamarin**]，請閱讀這[篇 blog 文章](https://devblogs.microsoft.com/xamarin/uiwebview-deprecation-xamarin-forms/)。
-1. 啟用 managed 連結器（在整個專案上，或至少使用 `UIWebView`的相依性），以便在未參考的情況下*將它移除*。 這會解決問題，但可能需要額外的工作，才能讓您的程式碼連結器安全。
-1. 如果您無法變更受管理的連結器設定，請參閱以下的特殊案例。
+1. 如果您使用的是**Xamarin.Forms**,請閱讀此[部落格文章](https://devblogs.microsoft.com/xamarin/uiwebview-deprecation-xamarin-forms/)。
+1. 啟用託管連結器(在整個專案上,或者至少在使用`UIWebView`依賴項上啟用),以便*刪除*它(如果未引用)。 這將解決此問題,但可能需要其他工作來使代碼連結器安全。
+1. 如果無法更改託管連結器設置,請參閱下面的特殊情況。
 
-#### <a name="applications-cannot-use-the-linker-or-change-its-settings"></a>應用程式無法使用連結器（或變更其設定）
+#### <a name="applications-cannot-use-the-linker-or-change-its-settings"></a>應用程式無法使用連結器(或變更其設定)
 
-如果您因為某些原因而**未**使用 managed 連結器（例如 [**不要連結**]），則 `UIWebView` 符號會保留在您提交給 Apple 的二進位應用程式中，而且可能會遭到拒絕。
+如果由於某種原因**您不使用**託管連結器(例如,**不要連結**`UIWebView`),則該符號將保留在您提交給 Apple 的二進位應用程式中,並且可能會被拒絕。
 
-*強制*性解決方案是將 `--optimization=force-rejected-types-removal` 新增至您專案的**其他 mtouch 引數**。 這會從應用程式移除 `UIWebView` 的追蹤。 不過，參考該類型的任何程式碼都將**無法**正常運作（預期例外狀況或當機）。 只有在您確定程式碼無法在執行時間連線時（即使是透過靜態分析來連線），才應該使用這個方法。
+一*個強有力的*解決方案是新增到`--optimize=force-rejected-types-removal`你的項目**的附加 mtouch 論點**。 這會移除到應用程式中移除`UIWebView`追蹤 。 但是,任何引用該類型的**代碼將無法正常工作**(預期出現異常或崩潰)。 僅當確定代碼在運行時無法訪問時(即使可以通過靜態分析訪問代碼),才應使用此方法。
 
-#### <a name="support-for-ios-7x-or-earlier"></a>支援 iOS 7.x （或更早版本）
+#### <a name="support-for-ios-7x-or-earlier"></a>支援 iOS 7.x(或更早版本)
 
-從 v2.0 開始，`UIWebView` 是 iOS 的一部分。 最常見的替代專案是 `WKWebView` （iOS 8）和 `SFSafariViewController` （iOS 9）。 如果您的應用程式仍然支援舊版的 iOS 版本，您應該考慮下列選項：
+`UIWebView`自 v2.0 以來一直是 iOS 的一部分。 最常見的更換是`WKWebView`(iOS 8) 和`SFSafariViewController`(iOS 9)。 如果應用程式仍然支援較舊的 iOS 版本,則應考慮以下選項:
 
-* 讓 iOS 8 成為您最小的目標版本（組建時間決策）。
-* 只有當應用程式在 iOS 8 + 上執行（執行時間決策）時，才使用 `WKWebView`。
+* 使 iOS 8 成為最低目標版本(生成時間決策)。
+* 僅當應用`WKWebView`在 iOS 8+ 上運行時(運行時決策)時才使用。
 
-#### <a name="applications-not-submitted-to-apple"></a>未提交至 Apple 的應用程式
+#### <a name="applications-not-submitted-to-apple"></a>未提交給 Apple 的申請
 
-如果您的應用程式未提交至 Apple，您應該計畫離開已淘汰的 API，因為它可以在未來的 iOS 版本中移除。 不過，您可以使用自己的時程表來執行這種轉換。
+如果您的應用程式未提交到 Apple,則應計劃遠離已棄用的 API,因為可以在將來的 iOS 版本中將其刪除。 但是,您可以使用自己的時程表執行此轉換。
 
 ## <a name="related-links"></a>相關連結
 
-- [網站（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)
+- [網頁檢視(範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/webview)

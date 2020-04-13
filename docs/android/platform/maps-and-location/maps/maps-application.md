@@ -1,6 +1,6 @@
 ---
-title: 啟動 Maps 應用程式
-description: 如何從您的 Xamarin Android 應用程式啟動內建的 Maps 應用程式。
+title: 啟動地圖應用程式
+description: 如何從 Xamarin.Android 應用程式中啟動內建地圖應用程式。
 ms.prod: xamarin
 ms.assetid: 929EACB8-8950-50E1-093C-43FB5F1F1CD5
 ms.technology: xamarin-android
@@ -8,23 +8,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
 ms.openlocfilehash: 7b74f564f2b6e9613874a774258a7e999002e61a
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027071"
 ---
-# <a name="launching-the-maps-application"></a>啟動 Maps 應用程式
+# <a name="launching-the-maps-application"></a>啟動地圖應用程式
 
-在 Xamarin 中使用對應的最簡單方式是利用內建的地圖應用程式，如下所示：
+在 Xamarin.Android 中處理地圖的最簡單方法是利用下面所示的內建地圖應用程式:
 
-[內建的 Google Maps 應用程式的 ![範例螢幕擷取畫面](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
+[![內建 Google 地圖應用的範例螢幕截圖](maps-application-images/01-mapsapplication.png)](maps-application-images/01-mapsapplication.png#lightbox)
 
-當您使用 maps 應用程式時，對應將不會是應用程式的一部分。 相反地，您的應用程式會啟動地圖應用程式，並在外部載入對應。 下一節將探討如何使用 Xamarin 來啟動對應，如上所示。
+使用地圖應用程式時,地圖將不是應用程式的一部分。 相反,應用程式將啟動地圖應用程式並在外部載入地圖。 下一節將探討如何使用 Xamarin.Android 來啟動上述地圖。
 
 ## <a name="creating-the-intent"></a>建立意圖
 
-使用 maps 應用程式就像使用適當的 URI 建立意圖、將動作設定為 ActionView，以及呼叫 StartActivity 方法一樣簡單。 例如，下列程式碼會啟動以指定緯度和經度為中心的地圖應用程式：
+使用地圖應用程式非常簡單,只需使用適當的 URI 創建意圖、將操作設置為 ActionView 以及調用 StartActivity 方法一樣簡單。 例如,以下代碼啟動以給定緯度和經度為中心的地圖應用程式:
 
 ```csharp
 var geoUri = Android.Net.Uri.Parse ("geo:42.374260,-71.120824");
@@ -32,33 +32,33 @@ var mapIntent = new Intent (Intent.ActionView, geoUri);
 StartActivity (mapIntent);
 ```
 
-此程式碼就是啟動上一個螢幕擷取畫面中所示的地圖所需的一切。 除了指定緯度和經度以外，maps 的 URI 配置也支援其他幾個選項。
+此代碼是啟動上一張螢幕截圖中顯示的地圖所需的全部代碼。 除了指定緯度和經度外,地圖的URI方案還支援其他幾個選項。
 
-## <a name="geo-uri-scheme"></a>地理 URI 配置
+## <a name="geo-uri-scheme"></a>地理 URI 專案
 
-上述程式碼使用地理位置配置來建立 URI。 此 URI 配置支援數種格式，如下所示：
+上述代碼使用地理方案創建URI。 此 URI 方案支援多種格式,如下所示:
 
-- `geo:latitude,longitude` &ndash; 會開啟以 lat/lon 為中心的地圖應用程式。 
+- `geo:latitude,longitude`&ndash;打開以 lat/lon 為中心的地圖應用程式。 
 
-- `geo:latitude,longitude?z=zoom` &ndash; 會開啟以 lat/lon 為中心的地圖應用程式，並將其縮放至指定的層級。 縮放層級的範圍可以從1到 23: 1，顯示整個地球，23是最接近的縮放層級。
+- `geo:latitude,longitude?z=zoom`&ndash;打開以 lat/lon 為中心的地圖應用程式,然後縮放到指定級別。 縮放級別的範圍可以從 1 到 23:1 顯示整個地球,23 是最接近的縮放級別。
 
-- `geo:0,0?q=my+street+address` &ndash; 會開啟 [maps] 應用程式至街道位址的位置。 
+- `geo:0,0?q=my+street+address`&ndash;將地圖應用程式打開到街道位址的位置。 
 
-- `geo:0,0?q=business+near+city` &ndash; 會開啟地圖應用程式，並顯示標注的搜尋結果。 
+- `geo:0,0?q=business+near+city`&ndash;打開地圖應用程式並顯示有字的搜尋結果。 
 
-接受查詢的 URI 版本（也就是街道位址或搜尋詞彙）會使用 Google 的 geocoder 服務來抓取顯示在地圖上的位置。 例如，URI `geo:0,0?q=coop+Cambridge` 會產生對應，如下所示：
+採用查詢(即街道位址或搜索詞)的URI版本使用Google的地理編碼器服務來檢索隨後顯示在地圖上的位置。 例如,URI`geo:0,0?q=coop+Cambridge`在下圖中產生:
 
-[![範例螢幕擷取畫面，其中顯示具有搜尋詞彙的 Google Maps](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
+[![顯示有搜尋詞的 Google 地圖的範例螢幕擷圖](maps-application-images/02-mapsearch.png)](maps-application-images/02-mapsearch.png#lightbox)
 
-如需地理 URI 配置的詳細資訊，請參閱在[地圖上顯示位置](https://developer.android.com/guide/components/intents-common.html#Maps)。
+關於地理 URI 專案的詳細資訊,請參閱[在地圖上顯示位置](https://developer.android.com/guide/components/intents-common.html#Maps)。
 
-## <a name="street-view"></a>街道視圖
+## <a name="street-view"></a>街景
 
-除了地區配置以外，Android 也支援從意圖載入街道視圖。 從 Xamarin 啟動的街道視圖應用程式範例如下所示：
+除了地理方案外,Android 還支援從意圖載入街景。 從 Xamarin.Android 啟動的街景應用程式的示例如下所示:
 
-[街道視圖的 ![範例螢幕擷取畫面](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
+[![街道檢視的範例螢幕截圖](maps-application-images/03-streetview.png)](maps-application-images/03-streetview.png#lightbox)
 
-若要啟動街道視圖，只要使用 `google.streetview` URI 配置，如下列程式碼所示：
+要啟動街景視圖,只需使用`google.streetview`URI方案,如下代碼所示:
 
 ```csharp
 var streetViewUri = Android.Net.Uri.Parse (
@@ -67,24 +67,24 @@ var streetViewIntent = new Intent (Intent.ActionView, streetViewUri);
 StartActivity (streetViewIntent);
 ```
 
-上述使用的 streetview URI 配置採用下列形式：
+上面使用的 google.streetview URI 方案採用以下形式:
 
 ```csharp
 google.streetview:cbll=lat,lng&cbp=1,yaw,,pitch,zoom&mz=mapZoom
 ```
 
-如您所見，有數個支援的參數，如下所示：
+如下面所示,支援多個參數:
 
-- `lat` &ndash; 要在 [街道] 視圖中顯示之位置的緯度。
+- `lat`&ndash;要在街景中顯示的位置的緯度。
 
-- `lng` &ndash; 要在 [街道] 視圖中顯示之位置的經度。
+- `lng`&ndash;要在街景中顯示的位置的經度。
 
-- 街道視圖全景的 `pitch` &ndash; 角度，以度為單位，其中90度為正向下，而-90 度是直線。
+- `pitch`&ndash;街景全景的角度,從中心以度為單位測量,其中 90 度是直降的,-90 度是直線上升的。
 
-- `yaw` &ndash; 中間的街道視圖全景，以度為單位，從北部以順時針測量。
+- `yaw`&ndash;街景全景的視圖中心,以北度順時針測量。
 
-- 針對街道視圖全景 `zoom` &ndash; 縮放乘數，其中 1.0 = 一般縮放、2.0 = 縮放的2x、3.0 = 縮放4x 等等。
+- `zoom`&ndash;街景全景的縮放倍增器,其中 1.0 = 正常縮放,2.0 = 縮放 2 倍,3.0 = 縮放 4 倍等。
 
-- `mz` &ndash; 從街道視圖前往地圖應用程式時，將使用的地圖縮放層級。
+- `mz`&ndash;從街景到地圖應用程式時將使用的地圖縮放級別。
 
-使用內建地圖應用程式或街道視圖，是快速新增對應支援的簡單方式。 不過，Android 的地圖服務 API 可讓您更精確地控制對應體驗。
+使用內建地圖應用程式或街景是快速添加映射支援的簡便方法。 但是,Android 的地圖 API 提供了對映射體驗的更精細的控制。

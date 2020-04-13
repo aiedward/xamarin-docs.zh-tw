@@ -1,6 +1,6 @@
 ---
-title: Xamarin. 表單相對系結
-description: 本文說明如何使用 RelativeSource 標記延伸，將系結來源設定為相對於系結目標的位置，以建立相對系結。
+title: Xamarin.Forms 相對繫結
+description: 本文介紹如何使用相對源標記擴展來設置相對於綁定目標位置的綁定源,從而創建相對綁定。
 ms.prod: xamarin
 ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
 ms.technology: xamarin-forms
@@ -8,41 +8,41 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
 ms.openlocfilehash: 63ce27fc871da12eabb1baad568af167c860926f
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75955817"
 ---
-# <a name="xamarinforms-relative-bindings"></a>Xamarin. 表單相對系結
+# <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms 相對繫結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-相對系結提供設定系結來源相對於系結目標位置的功能。 它們是使用 `RelativeSource` 標記延伸來建立，並設定為系結運算式的 `Source` 屬性。
+相對綁定提供了相對於綁定目標的位置設置綁定源的能力。 它們使用`RelativeSource`標記擴展創建,並設置為綁定表達`Source`式 的屬性。
 
-`RelativeSourceExtension` 類別支援 `RelativeSource` 標記延伸，其定義下列屬性：
+類別`RelativeSource`支援標記延伸,`RelativeSourceExtension`這個類別定義以下屬性:
 
-- `RelativeBindingSourceMode`類型的 `Mode`，會描述系結來源相對於系結目標位置的位置。
-- `AncestorLevel`，屬於 `int`類型，這是在 `FindAncestor``Mode` 屬性時要尋找的選擇性上階層級。 `n` 的 `AncestorLevel` 會略過 `AncestorType``n-1` 實例。
-- `AncestorType`，屬於 `Type`的類型，這是 `Mode` 屬性 `FindAncestor`時所要尋找之上階的類型。
+- `Mode`的類型`RelativeBindingSourceMode`, 描述繫結源相對於繫結目標的位置的位置。
+- `AncestorLevel`類型`int`,當屬性`Mode``FindAncestor`為 時要查找的可選祖先級別。 `AncestorLevel`的`n`跳`n-1`過 實`AncestorType`例。
+- `AncestorType`類型`Type`,`Mode`當`FindAncestor`屬性為 時要查找的祖先的類型。
 
 > [!NOTE]
-> XAML 剖析器允許 `RelativeSourceExtension` 類別縮寫為 `RelativeSource`。
+> XAML 解析器允許`RelativeSourceExtension`將 類別縮`RelativeSource`寫為 。
 
-`Mode` 屬性應該設定為其中一個 `RelativeBindingSourceMode` 列舉成員：
+該`Mode`屬性應設定為`RelativeBindingSourceMode`枚 舉成員之一:
 
-- `TemplatedParent` 表示套用繫結項目的範本所在的專案。 如需詳細資訊，請參閱系結[至樣板化父系](#bind-to-a-templated-parent)。
-- `Self` 表示正在設定系結的專案，可讓您將該專案的一個屬性系結至相同元素上的另一個屬性。 如需詳細資訊，請參閱系結[至本身](#bind-to-self)。
-- `FindAncestor` 表示繫結項目之視覺化樹狀結構中的上階。 此模式應該用來系結至 `AncestorType` 屬性所表示的上階控制項。 如需詳細資訊，請參閱[系結至](#bind-to-an-ancestor)上階。
-- `FindAncestorBindingContext` 指出繫結項目之視覺化樹狀結構中上階的 `BindingContext`。 此模式應該用來系結至由 `AncestorType` 屬性所表示之上階的 `BindingContext`。 如需詳細資訊，請參閱[系結至](#bind-to-an-ancestor)上階。
+- `TemplatedParent`指示應用綁定元素的範本的元素。 有關詳細資訊,請參閱[綁定到範本化父級](#bind-to-a-templated-parent)。
+- `Self`指示要設置綁定的元素,允許您將該元素的一個屬性綁定到同一元素上的另一個屬性。 有關詳細資訊,請參閱[綁定到自我](#bind-to-self)。
+- `FindAncestor`指示綁定元素的可視樹中的祖先。 此模式應用於綁定到屬性`AncestorType`表示的祖先控件。 有關詳細資訊,請參閱[綁定到祖先](#bind-to-an-ancestor)。
+- `FindAncestorBindingContext``BindingContext`指示綁定元素的可視樹中祖先的。 此模式應用於綁定到`BindingContext``AncestorType`屬性表示的祖先。 有關詳細資訊,請參閱[綁定到祖先](#bind-to-an-ancestor)。
 
-`Mode` 屬性是 `RelativeSourceExtension` 類別的 content 屬性。 因此，對於以大括弧表示的 XAML 標記運算式，您可以消除運算式的 `Mode=` 部分。
+屬性`Mode``RelativeSourceExtension`是類的內容屬性。 因此,對於用大括弧表示的 XAML 標記表達式,`Mode=`可以消除 表達式的部分。
 
-如需有關 Xamarin 標記延伸的詳細資訊，請參閱[XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。
+有關 Xamarin.表單標記延伸的詳細資訊,請參閱[XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。
 
-## <a name="bind-to-self"></a>系結至自我
+## <a name="bind-to-self"></a>繫結到自我
 
-`Self` 的相對系結模式是用來將專案的屬性系結至相同專案上的另一個屬性：
+相對`Self`繫結模式用於將元素的屬性繫結到同一元素上的另一個屬性:
 
 ```xaml
 <BoxView Color="Red"
@@ -51,14 +51,14 @@ ms.locfileid: "75955817"
          HorizontalOptions="Center" />
 ```
 
-在此範例中， [`BoxView`](xref:Xamarin.Forms.BoxView)會將其 `WidthRequest` 屬性設為固定大小，而 `HeightRequest` 屬性會系結至 `WidthRequest` 屬性。 因此，這兩個屬性相等，因此會繪製正方形：
+[`BoxView`](xref:Xamarin.Forms.BoxView)在此範例中,將`WidthRequest`屬性設定為固定大小,`HeightRequest`並且該屬性綁定到`WidthRequest`該 屬性。 因此,兩個屬性相等,因此繪製一個正方形:
 
-[![IOS 和 Android 上的自我模式相對系結螢幕擷取畫面](relative-bindings-images/self-relative-binding.png "自我相對系結模式")](relative-bindings-images/self-relative-binding-large.png#lightbox "自我相對系結模式")
+[![在 iOS 和 Android 上的自我模式相對綁定的螢幕截圖](relative-bindings-images/self-relative-binding.png "自相對繫結模式")](relative-bindings-images/self-relative-binding-large.png#lightbox "自相對繫結模式")
 
 > [!IMPORTANT]
-> 將元素的屬性系結至相同專案上的另一個屬性時，屬性必須是相同的類型。 或者，您可以在系結上指定轉換器來轉換值。
+> 將元素的屬性綁定到同一元素上的另一個屬性時,該屬性必須為同一類型。 或者,您可以在綁定上指定轉換器以轉換該值。
 
-這個系結模式的常見用法是將物件的 `BindingContext` 設定為本身的屬性。 下列程式碼顯示這種情況的範例：
+此綁定模式的常見用途是將物件的`BindingContext`設置為其自身的屬性。 以下代碼顯示以下範例:
 
 ```xaml
 <ContentPage ...
@@ -71,21 +71,21 @@ ms.locfileid: "75955817"
 </ContentPage>
 ```
 
-在此範例中，頁面的 `BindingContext` 會設定為本身的 `DefaultViewModel` 屬性。 這個屬性定義于頁面的程式碼後置檔案中，並提供 viewmodel 實例。 [`ListView`](xref:Xamarin.Forms.ListView)系結至 viewmodel 的 `Employees` 屬性。
+在此範例中,`BindingContext`頁面的`DefaultViewModel`設定為其屬性。 此屬性在頁面的代碼後面檔中定義,並提供檢視模型實例。 綁定[`ListView`](xref:Xamarin.Forms.ListView)`Employees`到 視圖模型的屬性。
 
-## <a name="bind-to-an-ancestor"></a>系結至上階
+## <a name="bind-to-an-ancestor"></a>繫結到祖先
 
-`FindAncestor` 和 `FindAncestorBindingContext` 相對系結模式是用來系結至視覺化樹狀結構中特定類型的父元素。 `FindAncestor` 模式是用來系結至從[`Element`](xref:Xamarin.Forms.Element)類型衍生的父元素。 `FindAncestorBindingContext` 模式是用來系結至父元素的 `BindingContext`。
+和`FindAncestor``FindAncestorBindingContext`相對綁定模式用於綁定到可視化樹中特定類型的父元素。 該`FindAncestor`模式用於綁定到父元素,該元素派生自[`Element`](xref:Xamarin.Forms.Element)類型。 該`FindAncestorBindingContext`模式用於綁定到父元素`BindingContext`的。
 
 > [!WARNING]
-> 使用 `FindAncestor` 和 `FindAncestorBindingContext` 相對系結模式時，`AncestorType` 屬性必須設定為 `Type`，否則會擲回 `XamlParseException`。
+> `AncestorType``Type`使用`FindAncestor``FindAncestorBindingContext`與相對結合模式時,該屬性必須設定為 a,`XamlParseException`否則會引發 。
 
-如果未明確設定 `Mode` 屬性，將 `AncestorType` 屬性設定為衍生自[`Element`](xref:Xamarin.Forms.Element)的類型，會將 `Mode` 屬性隱含地設定為 [`FindAncestor`]。 同樣地，將 `AncestorType` 屬性設定為不是衍生自 `Element` 的類型，會將 `Mode` 屬性隱含地設定為 `FindAncestorBindingContext`。
+如果未顯示式`Mode`設定該屬性,`AncestorType`則將屬性設定為派生[`Element`](xref:Xamarin.Forms.Element)自的類型將隱式`Mode`設定為`FindAncestor`。 `AncestorType`同樣,將屬性設定為不派生`Element`的類型將隱式將屬性`Mode`設定`FindAncestorBindingContext`為 。
 
 > [!NOTE]
-> 當任何祖系的 `BindingContext` 變更時，會重新套用使用 `FindAncestorBindingContext` 模式的相對系結。
+> 當任何祖先`BindingContext`更改時`FindAncestorBindingContext`, 將重新應用使用該模式的相對綁定。
 
-下列 XAML 會顯示一個範例，其中 `Mode` 屬性會隱含地設定為 `FindAncestorBindingContext`：
+下面的 XAML 顯示了一個`Mode`範例 ,其中屬性`FindAncestorBindingContext`將隱式 設定為 :
 
 ```xaml
 <ContentPage ...
@@ -111,26 +111,26 @@ ms.locfileid: "75955817"
 </ContentPage>
 ```
 
-在此範例中，頁面的 `BindingContext` 會設定為本身的 `DefaultViewModel` 屬性。 這個屬性定義于頁面的程式碼後置檔案中，並提供 viewmodel 實例。 [`ListView`](xref:Xamarin.Forms.ListView)系結至 viewmodel 的 `Employees` 屬性。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，定義 `ListView`中每個專案的外觀，其中包含[`Button`](xref:Xamarin.Forms.Button)。 按鈕的 `Command` 屬性會系結至其父系 viewmodel 中的 `DeleteEmployeeCommand`。 點擊 `Button` 會刪除員工：
+在此範例中,`BindingContext`頁面的`DefaultViewModel`設定為其屬性。 此屬性在頁面的代碼後面檔中定義,並提供檢視模型實例。 綁定[`ListView`](xref:Xamarin.Forms.ListView)`Employees`到 視圖模型的屬性。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)定義`ListView`每個項目的外觀包含[`Button`](xref:Xamarin.Forms.Button)。 按鍵的屬性`Command`繫結`DeleteEmployeeCommand`為 其父檢視模型中 。 點擊刪除`Button`員工:
 
-[![FindAncestor 模式相對系結（在 iOS 和 Android 上）的螢幕擷取畫面](relative-bindings-images/findancestor-relative-binding.png "FindAncestor 相對系結模式")](relative-bindings-images/findancestor-relative-binding-large.png#lightbox "FindAncestor 相對系結模式")
+[![在 iOS 和 Android 上尋找祖先模式相對綁定的螢幕截圖](relative-bindings-images/findancestor-relative-binding.png "尋找祖先相對繫結模式")](relative-bindings-images/findancestor-relative-binding-large.png#lightbox "尋找祖先相對繫結模式")
 
-此外，選擇性的 `AncestorLevel` 屬性可以在視覺樹狀結構中可能有多個該類型的上階時，協助區分上階查閱：
+此外,可選`AncestorLevel`屬性可以説明在可視化樹中可能存在該類型的祖先的方案中消除歧義的祖先查找:
 
 ```xaml
 <Label Text="{Binding Source={RelativeSource AncestorType={x:Type Entry}, AncestorLevel=2}, Path=Text}" />
 ```
 
-在此範例中，`Label.Text` 屬性會系結至在向上路徑上遇到之第二個[`Entry`](xref:Xamarin.Forms.Entry)的 `Text` 屬性，從系結的目標元素開始。
+在此範例中,`Label.Text`屬性結合到向上路徑上遇到的第`Text`二[`Entry`](xref:Xamarin.Forms.Entry)個屬性,從綁定的目標元素開始。
 
 > [!NOTE]
-> `AncestorLevel` 屬性應該設定為1，以尋找最接近系結目標元素的上階。
+> 屬性`AncestorLevel`應設置為 1 以查找最接近綁定目標元素的祖先。
 
-## <a name="bind-to-a-templated-parent"></a>系結至樣板化父系
+## <a name="bind-to-a-templated-parent"></a>繫結為樣本化父級
 
-`TemplatedParent` 的相對系結模式是用來將控制項範本內的系結至套用範本的執行時間物件實例（稱為樣板化父系）。 只有當相對系結在控制項範本內，而且類似于設定 `TemplateBinding`時，才適用此模式。
+相對`TemplatedParent`綁定模式用於從控制項樣本中綁定到應用範本的運行時物件實例(稱為範本化父實例)。 僅當相對綁定位於控件範本中且類似於設置`TemplateBinding`時 ,此模式才適用。
 
-下列 XAML 會顯示 `TemplatedParent` 相對系結模式的範例：
+以下 XAML`TemplatedParent`顯示了 相對綁定模式的範例:
 
 ```xaml
 <ContentPage ...>
@@ -175,14 +175,14 @@ ms.locfileid: "75955817"
 </ContentPage>
 ```
 
-在此範例中， [`Frame`](xref:Xamarin.Forms.Frame)（也就是 `ControlTemplate`的根項目）會將其 `BindingContext` 設定為套用範本的執行時間物件實例。 因此，`Frame` 及其子系會針對每個 `CardView` 物件的屬性，解析其系結運算式：
+在此範例中,作為的[`Frame`](xref:Xamarin.Forms.Frame)根元素的`ControlTemplate`的的將`BindingContext`將其設置為應用範本的運行時物件實例。 因此,`Frame`及其子級針對`CardView`每個 物件的屬性解析其綁定表示式:
 
-[![TemplatedParent 模式相對系結（在 iOS 和 Android 上）的螢幕擷取畫面](relative-bindings-images/templatedparent-relative-binding.png "TemplatedParent 相對系結模式")](relative-bindings-images/templatedparent-relative-binding-large.png#lightbox "TemplatedParent 相對系結模式")
+[![iOS 和 Android 上的樣本父模式相對綁定的螢幕截圖](relative-bindings-images/templatedparent-relative-binding.png "樣本化父級相對繫結模式")](relative-bindings-images/templatedparent-relative-binding-large.png#lightbox "樣本化父級相對繫結模式")
 
-如需控制項範本的詳細資訊，請參閱[Xamarin 控制項範本](~/xamarin-forms/app-fundamentals/templates/control-template.md)。
+有關控制項樣本的詳細資訊,請參閱[Xamarin.窗體控制樣本](~/xamarin-forms/app-fundamentals/templates/control-template.md)。
 
 ## <a name="related-links"></a>相關連結
 
 - [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
 - [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Xamarin. Forms 控制項範本](~/xamarin-forms/app-fundamentals/templates/control-template.md)
+- [Xamarin.表單控制樣本](~/xamarin-forms/app-fundamentals/templates/control-template.md)

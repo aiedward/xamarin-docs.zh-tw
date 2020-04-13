@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
 ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026289"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 搭售 Xamarin.iOS 應用程式
@@ -116,7 +116,7 @@ $ mtouch —sdkroot /Applications/Xcode.app -installdev=MyApp.app
 
 這些步驟通常會由 Visual Studio for Mac 執行。
 
-## <a name="reference"></a>參考資料
+## <a name="reference"></a>參考
 
 請參閱 [mtouch(1)](http://docs.go-mono.com/?link=man%3amtouch(1)) 手冊頁面，以取得其他命令列選項的詳細資料。
 

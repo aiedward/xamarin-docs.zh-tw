@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71674573"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
@@ -27,7 +27,7 @@ Xamarin.Forms Shell 包含 URI 式導覽體驗，可使用路由導覽至應用�
 - `CurrentState`，屬於 `ShellNavigationState` 類型，是 `Shell` 的目前導覽狀態。
 - `Current`，屬於 `Shell` 類型，是 `Application.Current.MainPage` 類型轉換的別名。
 
-`BackButtonBehavior`、`CurrentItem` 和 `CurrentState` 屬性都以 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 物件為後盾，也就是說，這些屬性可以是資料繫結的目標。
+`CurrentItem``BackButtonBehavior`和`CurrentState`屬性[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)由 物件支援,這意味著這些屬性可以是數據綁定的目標。
 
 導覽是透過從 `Shell` 類別叫用 `GoToAsync` 方法執行的。 導覽即將執行時，會引發 `Navigating` 事件，而導覽完成時，則會引發 `Navigated` 事件。
 
@@ -156,10 +156,10 @@ await Shell.Current.GoToAsync("monkeydetails");
 
 此外，支援下列相對路徑格式：
 
-| 格式 | 描述 |
+| [格式] | 描述 |
 | --- | --- |
-| //*route* | 將會從目前顯示的路由向上搜尋路由階層中指定的路由。 |
-| ///*route* | 將會從目前顯示的路由向下搜尋路由階層中指定的路由。 |
+| //*路線* | 將會從目前顯示的路由向上搜尋路由階層中指定的路由。 |
+| ///*路線* | 將會從目前顯示的路由向下搜尋路由階層中指定的路由。 |
 
 #### <a name="contextual-navigation"></a>關聯式導覽
 
@@ -178,7 +178,7 @@ bears
 
 下列路由格式無效：
 
-| 格式 | 說明 |
+| [格式] | 說明 |
 | --- | --- |
 | *route* 或 /*route* | 視覺階層中的路由無法推送到導覽堆疊上。 |
 | //*page* 或 ///*page* | 全域路由目前不得為導覽堆疊上的唯一頁面。 因此，不支援以絕對路由傳送至全域路由。 |
@@ -272,9 +272,9 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 }
 ```
 
-此程式碼範例會在 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 中擷取目前選取的大象，並導覽至 `elephantdetails` 路由，將 `elephantName` 作為查詢參數傳遞。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
+此代碼示例檢索[`CollectionView`](xref:Xamarin.Forms.CollectionView)中 當前選定的大象,並`elephantdetails`導航到 路由,作為查詢`elephantName`參數傳遞。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
 
-若要接收資料，表示導覽至頁面的類別或頁面 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 的類別必須針對每個查詢參數，使用 `QueryPropertyAttribute` 裝飾：
+要接收資料,表示要導航到的頁面的類別或頁面的[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)類別必須為每個查詢參數使用 的修`QueryPropertyAttribute`飾:
 
 ```csharp
 [QueryProperty("Name", "name")]
@@ -291,7 +291,7 @@ public partial class ElephantDetailPage : ContentPage
 }
 ```
 
-`QueryPropertyAttribute` 的第一個引數會指定將接收資料之屬性的名稱，而第二個引數則指定查詢參數 ID。因此，上述範例中的 `QueryPropertyAttribute` 會指定 `Name` 屬性將從 `GoToAsync` 方法呼叫中的 URI，接收 `name` 查詢參數中所傳入的資料。 接著，`Name` 屬性會以 URL 解碼查詢參數值，並使用該值，將頁面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 設定為將顯示的物件。
+的第一個參數`QueryPropertyAttribute`指定將接收數據的屬性的名稱,第二個參數指定查詢參數 ID。因此,`QueryPropertyAttribute`上述範例中`Name`指定`name``GoToAsync`屬性將在方法呼叫中從 URI 接收在查詢參數中傳遞的數據。 然後`Name`URL 對查詢參數值進行解碼,並用它來將頁面[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)設置為 將顯示的物件。
 
 > [!NOTE]
 > 類別可以使用多個 `QueryPropertyAttribute` 物件裝飾。
@@ -302,11 +302,11 @@ public partial class ElephantDetailPage : ContentPage
 
 - `Command`，屬於 `ICommand` 類型，會在按 [上一頁] 按鈕時執行。
 - `CommandParameter`，屬於 `object` 類型，這是傳遞至 `Command` 的參數。
-- `IconOverride`，屬於 [`ImageSource`](xref:Xamarin.Forms.ImageSource) 類型，這是用於上一頁按鈕的圖示。
-- `IsEnabled`，屬於 `boolean` 類型，可指出是否啟用上一頁按鈕。 預設值為 `true`。
+- `IconOverride`的類型[`ImageSource`](xref:Xamarin.Forms.ImageSource),用於後退按鈕的圖示。
+- `IsEnabled`，屬於 `boolean` 類型，可指出是否啟用上一頁按鈕。 預設值是 `true`。
 - `TextOverride`，屬於 `string` 類型，這是用於上一頁按鈕的文字。
 
-所有這些屬性都以 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 物件為後盾，也就是說，這些屬性可以是資料繫結的目標。
+所有這些屬性都由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件支援,這意味著這些屬性可以是數據綁定的目標。
 
 將 `Shell.BackButtonBehavior` 附加屬性設為 `BackButtonBehavior` 物件可以取用 `BackButtonBehavior` 類別：
 
@@ -335,7 +335,7 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 `Command` 屬性會設定要按 [上一頁] 按鈕時執行的 `ICommand`，而 `IconOverride` 屬性則會設定為用於 [上一頁] 按鈕的圖示：
 
-[![Shell 上一頁按鈕圖示覆寫在 iOS 和 Android 上的螢幕擷取畫面](navigation-images/back-button.png "shell 上一頁按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "Shell 上一頁按鈕圖示覆寫")
+[![在 iOS 和 Android 上,外殼後退按鈕圖示覆蓋的螢幕截圖](navigation-images/back-button.png "殼體後退按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "殼體後退按鈕圖示覆寫")
 
 ## <a name="related-links"></a>相關連結
 

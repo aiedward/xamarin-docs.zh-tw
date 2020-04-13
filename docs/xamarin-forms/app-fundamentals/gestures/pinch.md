@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: be7a145e93aa4720b38921efc895ca3f3f33edb3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68656036"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>新增捏合手勢辨識器
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 
-_捏合手勢用於執行互動式縮放，由 PinchGestureRecognizer 類別實作。捏合手勢的常見案例是在捏合位置執行影像的互動式縮放。這可透過在檢視區的內容中調整影像來完成，如本文所示。_
+_捏合手勢用於執行互動式縮放,並與 PinchGesture 識別器類一起實現。捏合手勢的常見方案是在捏合位置執行圖像的互動式縮放。這是通過縮放視口的內容來實現的,本文演示了這一點。_
 
-若要讓使用者介面項目可透過捏合手勢縮放，請建立 [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) 執行個體、處理 [`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) 事件，然後將新手勢辨識器新增至使用者介面項目的 [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) 集合。 下列程式碼範例顯示附加至 [`Image`](xref:Xamarin.Forms.Image) 項目的 `PinchGestureRecognizer`：
+要使用捏合手勢使用戶介面元素可縮放,請建立實例[`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer)、處理[`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated)事件,並將新的手勢識別器添加到[`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers)使用者介面元素的集合中。 以下代碼範例顯示`PinchGestureRecognizer`附加到元素的[`Image`](xref:Xamarin.Forms.Image):
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -72,7 +72,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-您可以在使用者介面項目周圍包裝此類別，讓捏合手勢縮放包裝的使用者介面項目。 下列 XAML 程式碼範例示範 `PinchToZoomContainer` 如何包裝 [`Image`](xref:Xamarin.Forms.Image) 項目：
+您可以在使用者介面項目周圍包裝此類別，讓捏合手勢縮放包裝的使用者介面項目。 下面的 XAML 代碼範例`PinchToZoomContainer`顯示了[`Image`](xref:Xamarin.Forms.Image)換行 元素:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ public class PinchToZoomContainer : ContentView
 </ContentPage>
 ```
 
-下列程式碼範例示範 `PinchToZoomContainer` 如何在 C# 頁面中包裝 [`Image`](xref:Xamarin.Forms.Image) 項目：
+以下代碼範例顯示如何在 C#`PinchToZoomContainer`[`Image`](xref:Xamarin.Forms.Image)頁 中換行元素:
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -110,7 +110,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-當 [`Image`](xref:Xamarin.Forms.Image) 項目接收到捏合手勢時，則會放大或縮小顯示的影像。縮放由 `PinchZoomContainer.OnPinchUpdated` 方法執行，如下列程式碼範例所示：
+當[`Image`](xref:Xamarin.Forms.Image)元素收到捏合手勢時,顯示的圖像將放大或縮小。縮放由`PinchZoomContainer.OnPinchUpdated`方法執行,如下代碼範例所示:
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -160,7 +160,7 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-此方法會根據使用者的捏合手勢，更新包裝使用者介面項目的縮放等級。 這會透過使用 [`PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) 執行個體的 [`Scale`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale)、[`ScaleOrigin`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) 和 [`Status`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) 屬性值，計算要套用至捏合手勢原點的比例因素來完成。 包裝的使用者項目會接著透過將其 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)、[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) 和 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性設定為計算值，在捏合手勢原點進行縮放。
+此方法會根據使用者的捏合手勢，更新包裝使用者介面項目的縮放等級。 這是[`Scale`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale)通過使用[`ScaleOrigin`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin)實例[`Status`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status)[`PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs)的值和 實例的屬性來計算要在捏合手勢的原點應用的比例因子來實現的。 然後,通過將其[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)的和[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性設置為計算值,在捏合手勢的原點縮放已包裝的使用者元素。
 
 ## <a name="related-links"></a>相關連結
 

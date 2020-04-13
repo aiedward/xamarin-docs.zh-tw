@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials:氣壓計
+title: 'Xamarin.Essentials: Barometer'
 description: Xamarin.Essentials 中的 Barometer 類別可讓您監視裝置的氣壓計感應器，其會測量壓力。
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
-ms.sourcegitcommit: 1341f2950b775a4daa7d0548a51fdef759afd6e3
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "69976429"
 ---
-# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials:氣壓計
+# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: Barometer
 
 **Barometer** 類別可讓您監視裝置的氣壓計感應器，其會測量壓力。
 
@@ -75,17 +75,17 @@ public class BarometerTest
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 沒有平台特定實作詳細資料。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 此 API 使用 [CMAltimeter](https://developer.apple.com/documentation/coremotion/cmaltimeter#//apple_ref/occ/cl/CMAltimeter) 來監視壓力變更，這是 iPhone 6 和更新的裝置上加入的硬體功能。 不支援高度計的裝置將會擲回 `FeatureNotSupportedException`。
 
 因為 iOS 不支援 `SensorSpeed`，所以不會加以使用。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 沒有平台特定實作詳細資料。
 

@@ -8,27 +8,27 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2018
 ms.openlocfilehash: 1246eeac63a0ae232396d4c2fd69d8bf516f5e3e
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026994"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>如何將 Android NUnit 測試專案自動化？
 
 > [!NOTE]
-> 本指南說明如何將 Android NUnit 測試專案自動化，而不是 UITest 專案。 您可以在[這裡](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)找到 UITest 指南。
+> 本指南說明如何自動化 Android NUnit 測試專案,而不是 Xamarin.UITest 專案。 Xamarin.UITest 指南[可在此處](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)找到。
 
-當您在 Visual Studio （或 Visual Studio for Mac 中的**Android 單元測試**專案）中建立**單元測試應用程式（android）** 專案時，此專案預設不會自動執行您的測試。
-若要在目標裝置上執行 NUnit 測試，您可以建立使用下列命令啟動的[Android. App. 檢測](xref:Android.App.Instrumentation)子類別： 
+當您在 Visual Studio 中建立**單元測試應用 (Android)** 專案(或 Mac Visual Studio 中的**Android 單元測試**專案)時,默認情況下,此專案不會自動運行您的測試。
+要在目標裝置上運行 NUnit 測試,可以建立一個[Android.App.儀器](xref:Android.App.Instrumentation)子類,該子類使用以下命令啟動: 
 
 ```shell
 adb shell am instrument 
 ```
 
-下列步驟說明此程式：
+以下步驟解釋此過程:
 
-1. 建立名為**TestInstrumentation.cs**的新檔案： 
+1. 建立名為**TestInstrumentation.cs**的新檔案: 
 
     ```cs 
     using System;
@@ -55,11 +55,11 @@ adb shell am instrument
     }
     ```
 
-    在此檔案中，`Xamarin.Android.NUnitLite.TestSuiteInstrumentation` （來自**NUnitLite**）會被子類別化，以建立 `TestInstrumentation`。
+    此檔案中,(`Xamarin.Android.NUnitLite.TestSuiteInstrumentation`來自**Xamarin.Android.NUnitLite.dll)**`TestInstrumentation`被子類別來建立 。
 
-2. 執行 `TestInstrumentation` 的構造函式和 `AddTests` 方法。 `AddTests` 方法會控制實際執行的測試。
+2. 實`TestInstrumentation`作函數與方法`AddTests`。 方法`AddTests`控制實際執行的測試。
 
-3. 修改 `.csproj` 檔案以新增**TestInstrumentation.cs**。 例如：
+3. 變更檔案`.csproj`以新增**TestInstrumentation.cs**。 例如：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -75,24 +75,24 @@ adb shell am instrument
     </Project>
     ```
 
-4. 使用下列命令來執行單元測試。 以應用程式的套件名稱取代 `PACKAGE_NAME` （套件名稱可在應用程式的 `/manifest/@package` 屬性中找到，位於**androidmanifest.xml**中）：
+4. 使用以下命令運行單元測試。 取代為`PACKAGE_NAME`應用程式的套件名稱(程式套件名稱可在`/manifest/@package`在**AndroidManifest.xml**中的應用程式屬性中找到):
 
     ```shell
     adb shell am instrument -w PACKAGE_NAME/app.tests.TestInstrumentation
     ```
 
-5. （選擇性）您可以修改 `.csproj` 檔案，以加入 `RunTests` MSBuild 目標。 這讓您可以使用如下的命令來叫用單元測試：
+5. 或者,您可以修改`.csproj`檔案以`RunTests`添加 MSBuild 目標。 這樣,可以使用如下所示的命令調用單元測試:
 
     ```shell
     msbuild /t:RunTests Project.csproj
     ```
 
-    （請注意，不需要使用這個新的目標，可以使用先前的 `adb` 命令，而不是 `msbuild`。）
+    (請注意,不需要使用此新目標;可以使用較早的命令`adb``msbuild`而不是 .)
 
-如需有關使用 `adb shell am instrument` 命令來執行單元測試的詳細資訊，請參閱 < 使用[ADB 執行測試](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)的 Android 開發人員主題。
+有關使用`adb shell am instrument`指令 執行單元測試的詳細資訊,請參閱使用 ADB 執行測試的 Android 開發人員[執行測試](https://developer.android.com/studio/test/command-line.html#RunTestsDevice)。
 
 > [!NOTE]
-> 在[5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)版中，android 可呼叫包裝函式的預設封裝名稱會以所匯出類型之元件限定名稱的 check md5sum 為基礎。 這可讓您從兩個不同的元件中提供相同的完整名稱，而不會收到封裝錯誤。 因此，請確定您在 `Instrumentation` 屬性上使用 `Name` 屬性，以產生可讀取的 ACW/類別名稱。
+> 使用[Xamarin.Android 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1/index.md#Android_Callable_Wrapper_Naming)版本時,Android 可調用包裝器的預設套件名稱將基於要匯出類型的程式集限定名稱的 MD5SUM。 這允許從兩個不同的程式集提供相同的完全限定的名稱,並且不會收到打包錯誤。 因此,請確保使用`Name``Instrumentation`屬性上的屬性生成可讀的 ACW/類名稱。
 
-在_上述 `adb` 命令中必須使用 ACW 名稱_。
-重新命名/重構C#類別會因此需要修改 `RunTests` 命令，以使用正確的 ACW 名稱。
+_ACW 名稱必須在上述指令中`adb`使用_。
+因此,重新命名/重構 C# 類別將`RunTests`需要修改命令以使用正確的 ACW 名稱。

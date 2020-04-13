@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026361"
 ---
 # <a name="ios-build-mechanics"></a>iOS 組建機制
@@ -26,26 +26,26 @@ Xamarin 建置速度也會受到各種容量和電腦功能所影響，進而影
 
 ## <a name="timing-apps"></a>對應用程式計時
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 若要在 Visual Studio for Mac 內啟用診斷 MSBuild 輸出：
 
-1. 按一下 [Visual Studio for Mac] > [喜好設定...]
-2. 在左側樹狀檢視中，選取 [專案] > [建置]
-3. 在右側面板中，將 [記錄詳細資訊] 下拉式設定設為 [**診斷**]：[![](ios-build-mechanics-images/image2.png "設定記錄詳細資訊")](ios-build-mechanics-images/image2.png#lightbox)
-4. 按一下 [確定]。
+1. 按一下 [Visual Studio for Mac] > [喜好設定...]****
+2. 在左側樹狀檢視中，選取 [專案] > [建置]****
+3. 在右側面板中,將「日誌詳細度」下拉設定為**診斷**:[![](ios-build-mechanics-images/image2.png "設定記錄詳細資訊")](ios-build-mechanics-images/image2.png#lightbox)
+4. 按一下 [確定]****。
 5. 重新啟動 Visual Studio for Mac
 6. 清除並重建您的套件
 7. 按一下 [建置輸出] 按鈕，檢視錯誤板內的診斷輸出 ([檢視] > [板] > [錯誤])
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 內啟用診斷 MSBuild 輸出：
 
-1. 按一下 [工具] > [選項...]
-2. 在左側樹狀檢視中，選取 [專案和方案] > [建置並執行]
-3. 在右側面板中，將 [ *MSBuild 組建輸出詳細資訊] 下拉式清單*設定為 [**診斷**]：[![](ios-build-mechanics-images/image2-vs.png "設定 MSBuild 組建輸出詳細資訊")](ios-build-mechanics-images/image2-vs.png#lightbox)
-4. 按一下 [確定]。
+1. 按一下 [工具] > [選項...]****
+2. 在左側樹狀檢視中，選取 [專案和方案] > [建置並執行]****
+3. 在右邊面板中,將*MSBuild 產生輸出詳細度下拉下設定為***診斷**:[![](ios-build-mechanics-images/image2-vs.png "設定 MSBuild 建置輸出詳細資訊")](ios-build-mechanics-images/image2-vs.png#lightbox)
+4. 按一下 [確定]****。
 5. 清除並重建您的套件。
 6. 診斷輸出會顯示在 [輸出] 面板中。
 
@@ -67,7 +67,7 @@ Total time: 1554 ms
 
 就技術上來說，Xamarin 工具能夠適用於任何可執行 OS X 10.10 Yosemite 或更新版本的 Mac。 不過，開發人員體驗和建置時間可能會因為 Mac 的效能而受到影響。
 
-在中斷連線的狀態下，Windows 上的 Visual Studio 只會執行 C# 編譯階段，而不會嘗試執行連結或 AOT 編譯、將應用程式封裝至  _.app_  套件組合或簽署應用程式套件組合。 （ C#編譯階段很少會造成效能瓶頸）。嘗試在 Visual Studio for Mac 中直接在 Mac 組建主機上建立，以找出組建在管線中的哪個位置變慢。
+在斷開連接狀態下,Windows 上的 Visual Studio 僅執行 C# 編譯階段,不會嘗試執行連結或 AOT 編譯、將應用打包到 _.app_ 捆綁包或對應用捆綁包進行簽名。 (C# 編譯階段很少是性能瓶頸。嘗試透過 Mac Visual Studio 中的 Mac 構建主機直接建構,來精確定位建構在管道中速度的變慢位置。
 
 此外，其中一個更常見會造成速度變慢的位置是 Windows 機器和 Mac 組建主機之間的網路連線。 這可能是因為網路上有實體阻礙，例如使用無線連線，或是必須行經飽和的機器 (例如 Mac-in-the-cloud 服務)。
 
@@ -81,11 +81,11 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 
 在將上述資訊納入考量時，下列清單可提供一些於模擬器上建置和部署應用程式時所需採取之步驟的資訊，以便為您提供最佳效能。
 
-### <a name="tips"></a>祕訣
+### <a name="tips"></a>提示
 
 - 針對組建： 
-  - 在 [專案選項] 中取消選取 [最佳化 PNG 影像] 選項。 模擬器上的組建並不需要此最佳化。
-  - 將連結器設定為 [不要連結]。 停用連結器會提升速度，原因是其需要大量執行時間。
+  - 在 [專案選項] 中取消選取 [最佳化 PNG 影像]**** 選項。 模擬器上的組建並不需要此最佳化。
+  - 將連結器設定為 [不要連結]****。 停用連結器會提升速度，原因是其需要大量執行時間。
   - 使用 `--nofastsim` 旗標停用共用應用程式啟動器會使模擬器組建變得很慢。 不再需要此旗標時，請將其移除。
   - 使用原生程式庫會讓速度變慢，原因是共用的 simlauncher 主要可執行檔無法在此情況下重複使用，因此必須對每個組建編譯應用程式專屬的可執行檔。
 - 針對部署
@@ -119,7 +119,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 > [!NOTE]
 > 根據所使用的 IDE，**連結 SDK** 選項可能會顯示為「僅連結 Framework SDK」或「僅連結 SDK 組件」。
 
-### <a name="tips"></a>祕訣
+### <a name="tips"></a>提示
 
 - 組建： 
   - 建置單一架構 (例如 ARM64) 的速度快過 FAT 二進位檔 (例如 ARMv7 + ARM64)
@@ -156,16 +156,16 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
 
 在使用連結器時，請考慮下列事項：
 
-- 為裝置組建選取 [不要連結] 會花更久的時間，而且也會產生較大的應用程式。 
+- 為裝置組建選取 [不要連結]**** 會花更久的時間，而且也會產生較大的應用程式。 
   - Apple 會拒絕大小超過限制的應用程式。 取決於 `MinimumOSVersion`，此限制可能小到只有 60 MB。 
   - 會包含原生可執行檔。 
   - 對於模擬器組建來說，使用 [不要連結] 的速度會較快，因為它會使用 JIT 編譯 (而非在裝置上使用 AOT)。
 - 連結 SDK 是預設選項。
 - 使用 [全部連結] 可能並不安全，特別是當您使用的並非自有程式碼時，例如 NuGet 或元件。 如果您選擇不要連結組件，來自這些服務的所有程式碼就會隨附於應用程式中，而可能建立更大的應用程式。 
-  - 不過，如果您選擇 [全部連結]，應用程式可能會損毀，特別是使用了外部元件時。 這是因為某些元件會在特定類型上使用反映。
+  - 不過，如果您選擇 [全部連結]****，應用程式可能會損毀，特別是使用了外部元件時。 這是因為某些元件會在特定類型上使用反映。
   - 靜態分析和反映無法一起運作。 
 
-您可以使用 [`[Preserve]` 屬性](~/ios/deploy-test/linker.md)指示工具在應用程式內保留這些項目。 
+可以使用[`[Preserve]`屬性](~/ios/deploy-test/linker.md)可以指示工具將內容保留在應用程式中。 
 
 如果您沒有原始程式碼的存取權，或者原始程式碼是由工具產生且您沒有要加以變更，則仍可藉由建立 XML 檔案來描述需要保留的所有類型和成員來連結原始程式碼。 然後，您可以在專案選項中新增 `--xml={file.name}.xml` 旗標，以利用和使用屬性時相同的方式，來精確地處理程式碼。
 
@@ -192,7 +192,7 @@ Apple 提供模擬器來進行 iOS 開，藉由建立一個較不受限制的程
   - 這可協助原生連結器從您連結時所依據的程式庫消除機器碼。 
   - 請注意，動態查閱符號不適用於此案例。 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本指南探討了要如何對 iOS 應用程式計時，以及取決於專案組建組態和選項的考量選項。 
 
@@ -278,6 +278,6 @@ L3 Cache: 4 MB
 
 ## <a name="related-links"></a>相關連結
 
-- [部落格文章](https://blog.xamarin.com/xamarin-ios-build-improvements/)
+- [博客文章](https://blog.xamarin.com/xamarin-ios-build-improvements/)
 - [在 iOS 上連結](~/ios/deploy-test/linker.md)
 - [自訂連結器設定](~/cross-platform/deploy-test/linker.md)

@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/07/2018
 ms.openlocfilehash: 0e8d3748c7ddd337cf2f27f5b272b208e79d503a
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027509"
 ---
 # <a name="creating-a-fragment"></a>建立片段
 
-若要建立片段，類別必須繼承自 `Android.App.Fragment`，然後覆寫 `OnCreateView` 方法。 當您將片段放在螢幕上時，主控活動會呼叫 `OnCreateView`，而且會傳回 `View`。 一般 `OnCreateView` 會藉由因而誇大配置檔案，然後將它附加至父容器，來建立此 `View`。 容器的特性很重要，因為 Android 會將父系的版面配置參數套用至片段的 UI。 下列範例會加以說明：
+要創建片段,類必須繼承`Android.App.Fragment`,然後重`OnCreateView`寫 該方法。 `OnCreateView`當將片段放在螢幕上時,重新主活動將呼叫 該操作,並將傳`View`回 。 典型`OnCreateView`值將通過膨脹`View`佈局 文件,然後將其附加到父容器來創建此情況。 容器的特徵很重要,因為 Android 將父項的佈局參數應用於片段的 UI。 下列範例會加以說明：
 
 ```csharp
 public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -24,24 +24,24 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 }
 ```
 
-上述程式碼會將 view `Resource.Layout.Example_Fragment`擴大，並將其當做子視圖加入 `ViewGroup` 容器。
+上面的代碼將膨脹檢視`Resource.Layout.Example_Fragment`,並將其作為子視圖添加到`ViewGroup`容器。
 
 > [!NOTE]
-> 片段子類別必須有公用預設無引數的函式。
+> 片段子類必須具有公共預設值,沒有參數構造函數。
 
-## <a name="adding-a-fragment-to-an-activity"></a>將片段新增至活動
+## <a name="adding-a-fragment-to-an-activity"></a>新增片段
 
-有兩種方式可將片段裝載于活動內：
+片段在作用中託管有兩種方式:
 
-- 您可以使用 `<Fragment>` 標記，以宣告方式在 `.axml` 版面配置檔案內**使用 &ndash; 片段**。
+- **聲明性**&ndash;片段可以`.axml``<Fragment>`使用 標記在佈局檔中聲明性使用。
 
-- **以**程式設計方式 &ndash; 片段也可以使用 `FragmentManager` 類別的 API 來動態具現化。
+- **也可以**&ndash;通過使用`FragmentManager`類的 API 動態實例化程式設計片段。
 
-本指南稍後會討論透過 `FragmentManager` 類別的程式設計使用方式。
+本指南稍後將討論通過`FragmentManager`該類程式設計使用。
 
 ### <a name="using-a-fragment-declaratively"></a>以宣告方式使用片段
 
-在配置內加入片段需要使用 `<fragment>` 標記，然後藉由提供 `class` 屬性或 `android:name` 屬性來識別片段。 下列程式碼片段顯示如何使用 `class` 屬性來宣告 `fragment`：
+在佈局中添加片段需要使用標記,`<fragment>`然後透過`class`提供`android:name`屬性或 屬性來識別片段。 以下程式碼段展示如何使用`class`屬性`fragment`的聲明 :
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -51,7 +51,7 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
             android:layout_height="fill_parent" />
 ```
 
-下一個程式碼片段說明如何使用 `android:name` 屬性來識別片段類別，以宣告 `fragment`：
+下一個程式碼段展示如何透過`fragment`使用`android:name`屬性 識別區段來宣告 a:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,16 +61,16 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
             android:layout_height="fill_parent" />
 ```
 
-建立活動時，Android 會將配置檔案中指定的每個片段具現化，並插入從 `OnCreateView` 建立的視圖來取代 `Fragment` 元素。
-以宣告方式加入至活動的片段是靜態的，並且會保留在活動上，直到終結為止;在所附加活動的存留期內，不可能動態地取代或移除這類片段。
+創建活動時,Android 將實例化佈局檔中指定的每個片段,並插入`OnCreateView`從`Fragment`元素處 創建的視圖。
+聲明添加到活動中的片段是靜態的,將保留在活動上,直到銷毀為止;在附加到該活動的生存期內,無法動態替換或刪除此類片段。
 
-每個片段都必須指派一個唯一識別碼：
+必須為每個片段分配唯一識別碼:
 
-- **android： id** &ndash; 與版面配置檔案中的其他 UI 元素相同，這是唯一的識別碼。
+- **android:id**&ndash;與佈局檔中的其他 UI 元素一樣,這是一個唯一的 ID。
 
-- **android：標記**&ndash; 此屬性是唯一的字串。
+- **android:標記**&ndash;此屬性是一個唯一的字串。
 
-如果先前的兩個方法都未使用，則片段會假設容器視圖的識別碼。 在下列範例中，沒有提供 `android:id` 或 `android:tag`，Android 會將識別碼 `fragment_container` 指派給片段：
+如果上述兩種方法均未使用,則片段將假定容器視圖的 ID。 在以下未`android:id`提供`android:tag`或 未提供的情況下,Android`fragment_container`會將 ID 分配給片段:
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -85,11 +85,11 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 </LinearLayout>
 ```
 
-### <a name="package-name-case"></a>封裝名稱案例
+### <a name="package-name-case"></a>套件名稱案例
 
-Android 不允許在封裝名稱中有大寫字元;如果封裝名稱包含大寫字元，則嘗試擴大視圖時，將會擲回例外狀況。 不過，Xamarin 較容許，而且可容忍命名空間中的大寫字元。
+Android 不允許包名稱中的大寫字元;如果包名稱包含大寫字元,則在嘗試膨脹視圖時,將引發異常。 但是,Xamarin.Android 更寬容,並且會容忍命名空間中的大寫字元。
 
-例如，下列兩個程式碼片段都適用于 Xamarin。 不過，第二個程式碼片段會導致以 JAVA 為基礎的純 Android 應用程式擲回 `android.view.InflateException`。
+例如,以下兩個代碼段將適用於 Xamarin.Android。 但是,第二個`android.view.InflateException`代碼段將導致純基於 Java 的 Android 應用程式引發 。
 
 ```xml
 <fragment class="com.example.DetailsFragment" android:id="@+id/fragment_content" android:layout_width="match_parent" android:layout_height="match_parent" />
@@ -103,53 +103,53 @@ OR
 
 ## <a name="fragment-lifecycle"></a>片段生命週期
 
-片段有自己的生命週期，其與[裝載活動的生命週期](~/android/app-fundamentals/activity-lifecycle/index.md)不相關，但仍受到影響。
-例如，當活動暫停時，其所有關聯的片段都會暫停。 下圖概述片段的生命週期。
+片段有自己的生命週期,它在某種程度上與[託管活動的生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)無關,但仍受其影響。
+例如,當活動暫停時,其所有關聯的片段都暫停。 下圖概述了片段的生命週期。
 
-[說明片段生命週期的 ![流程圖](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
+[![顯示片段生命週期的流程圖](creating-a-fragment-images/fragment-lifecycle.png)](creating-a-fragment-images/fragment-lifecycle.png#lightbox)
 
 ### <a name="fragment-creation-lifecycle-methods"></a>片段建立生命週期方法
 
-下列清單顯示建立片段時，其生命週期中各種回呼的流程：
+下面的清單顯示了建立片段時片段生命週期中各種回調的流:
 
-- 將片段建立為視圖配置的一部分時，會呼叫 **`OnInflate()`** &ndash;。 這可能會在從 XML 配置檔案以宣告方式建立片段之後立即呼叫。 此片段尚未與其活動相關聯，但是來自 view 階層的活動 **、組合**和**AttributeSet**會當做參數傳入。 這個方法最適合用來剖析**AttributeSet** ，以及用來儲存片段稍後可能會用到的屬性。
+- **`OnInflate()`**&ndash;當片段作為檢視佈局的一部分創建時調用。 在從 XML 佈局檔以聲明性方式創建片段後,可以立即調用這一點。 片段尚未與其活動關聯,但檢視層次結構中**的活動**、**捆綁包**和**屬性集**作為參數傳入。 此方法最適合用於分析**屬性集**和保存片段以後可能使用的屬性。
 
-- **`OnAttach()`** 在片段與活動相關聯後呼叫 &ndash;。 這是當片段備妥可供使用時，所要執行的第一個方法。 一般來說，片段不應執行一個函式，或覆寫預設的函式。 片段所需的任何元件都應該在這個方法中初始化。
+- **`OnAttach()`**&ndash;在片段與活動關聯後調用。 這是片段準備好使用時運行的第一種方法。 通常,片段不應實現構造函數或重寫預設構造函數。 片段所需的任何元件都應在此方法中初始化。
 
-- **`OnCreate()`** 由活動呼叫 &ndash; 以建立片段。 呼叫這個方法時，裝載活動的視圖階層可能不會完全具現化，因此片段不應依賴活動的視圖階層架構的任何部分，直到稍後在片段的生命週期中。 例如，請勿使用這個方法對應用程式的 UI 進行任何調整或調整。 這是片段可以開始收集所需資料的最早時間。 此時，片段會在 UI 執行緒中執行，因此請避免任何冗長的處理，或在背景執行緒上執行該處理。 如果呼叫**SetRetainInstance （true）** ，則可以略過這個方法。
-    下面將更詳細地說明此替代方案。
+- **`OnCreate()`**&ndash;活動調用以創建片段。 調用此方法時,託管活動的視圖層次結構可能不完全實例化,因此片段不應依賴於活動視圖層次結構的任何部分,直到片段生命週期的後期。 例如,不要使用此方法對應用程式的 UI 執行任何調整或調整。 這是片段開始收集所需數據的最早時間。 此時,片段在 UI 線程中運行,因此請避免任何冗長的處理,或在後台線程上執行該處理。 如果調用**SetRetainInstance(true),** 則可能會跳過此方法。
+    下面將更詳細地介紹此備選方案。
 
-- **`OnCreateView()`** &ndash; 會建立片段的視圖。
-    一旦活動的**OnCreate （）** 方法完成後，就會呼叫這個方法。 此時，可以安全地與活動的視圖階層進行互動。 這個方法應該會傳回片段將使用的 view。
+- **`OnCreateView()`**&ndash;為片段創建檢視。
+    完成活動的**OnCreate()** 方法後,將調用此方法。 此時,可以安全地與活動的視圖層次結構進行交互。 此方法應返回片段將使用的檢視。
 
-- **OnCreate**已由裝載活動完成後呼叫 &ndash;。 **`OnActivityCreated()`**
-    此時應該會對使用者介面進行最後的調整。
+- **`OnActivityCreated()`**&ndash;活動後調用 **.OnCreate**已由託管活動完成。
+    此時應對用戶介面執行最終調整。
 
-- 在包含的活動已繼續後呼叫 **`OnStart()`** &ndash;。 這會讓使用者看到片段。 在許多情況下，片段會包含在活動的**OnStart （）** 方法中的程式碼。
+- **`OnStart()`**&ndash;恢復包含活動後調用。 這使片段對用戶可見。 在許多情況下,片段將包含代碼,否則代碼將位於活動的**OnStart()** 方法中。
 
-- **`OnResume()`** &ndash; 這是在使用者可以與片段互動之前呼叫的最後一個方法。 在此方法中應該執行的程式碼種類範例，會啟用使用者可能與之互動的裝置功能，例如位置服務的相機。 這類服務可能會造成過多的電池耗盡，而應用程式應該將其使用方式降到最低，以維持電池壽命。
+- **`OnResume()`**&ndash;這是使用者與片段交互之前調用的最後一個方法。 在此方法中應執行的代碼類型的一個範例是啟用使用者可以與之互動的裝置的功能,例如定位服務的攝像機。 但是,此類服務可能會導致電池消耗過大,應用程式應盡量減少其使用,以節省電池使用時間。
 
-### <a name="fragment-destruction-lifecycle-methods"></a>片段銷毀生命週期方法
+### <a name="fragment-destruction-lifecycle-methods"></a>磁碟中銷毀生命週期方法
 
-下一份清單說明被終結的生命週期方法，會被終結：
+下一個清單將解釋被銷毀為片段的生命週期方法:
 
-- **`OnPause()`** &ndash; 使用者無法再與片段互動。 這種情況存在的原因是其他片段作業正在修改此片段，或主控活動已暫停。 裝載此片段的活動可能仍然可見，也就是說，焦點的活動是部分透明的，或不會佔用全螢幕。 當此方法變成作用中時，這就是使用者離開片段的第一個指示。 片段應會儲存任何變更。
+- **`OnPause()`**&ndash;使用者不再能夠與片段進行互動。 存在此情況是因為其他一些片段操作正在修改此片段,或者託管活動暫停。 承載此片段的活動可能仍然可見,也就是說,焦點活動部分透明或未佔用全屏。 當此方法變為活動狀態時,它是用戶離開片段的第一個指示。 片段應保存任何更改。
 
-- **`OnStop()`** &ndash; 不會再看到該片段。 主機活動可能已停止，或片段作業正在活動中修改。 此回呼的用途與**活動**的相同。
+- **`OnStop()`**&ndash;片段不再可見。 主機活動可能會停止,或者片段操作正在"活動"中修改它。 此回調的作用與**活動相同。**
 
-- **`OnDestroyView()`** &ndash; 會呼叫這個方法來清除與此視圖相關聯的資源。 當與片段相關聯的視圖已終結時，就會呼叫此。
+- **`OnDestroyView()`**&ndash;調用此方法以清理與檢視關聯的資源。 當與片段關聯的檢視已銷毀時,將調用此選項。
 
-- **`OnDestroy()`** &ndash; 當片段不再使用時，會呼叫這個方法。 它仍與活動相關聯，但該片段已不再運作。 這個方法應該釋放任何由片段使用的資源，例如可能用於攝影機的[**SurfaceView**](xref:Android.Views.SurfaceView) 。 如果呼叫**SetRetainInstance （true）** ，則可以略過這個方法。 下面將更詳細地說明此替代方案。
+- **`OnDestroy()`**&ndash;當片段不再使用時,將調用此方法。 它仍然與活動關聯,但片段不再正常工作。 此方法應釋放片段正在使用的任何資源,例如可用於攝像機的[**SurfaceView。**](xref:Android.Views.SurfaceView) 如果調用**SetRetainInstance(true),** 則可能會跳過此方法。 下面將更詳細地介紹此備選方案。
 
-- **`OnDetach()`** &ndash; 這個方法只會在片段不再與活動相關聯之前呼叫。 片段的視圖階層已不存在，而且該片段使用的所有資源都應該在此時釋放。
+- **`OnDetach()`**&ndash;此方法是在片段不再與活動關聯之前調用的。 片段的檢視層次結構不再存在,此時應釋放片段使用的所有資源。
 
-### <a name="using-setretaininstance"></a>使用 SetRetainInstance
+### <a name="using-setretaininstance"></a>使用設定保留實體
 
-片段可能會指定如果重新建立活動，則不應完全終結它。 `Fragment` 類別會針對此用途提供 `SetRetainInstance` 的方法。 如果將 `true` 傳遞至這個方法，則在重新開機活動時，將會使用相同的片段實例。 如果發生這種情況，則會叫用所有回呼方法，但 `OnCreate` 和 `OnDestroy` 生命週期回呼除外。 上面顯示的生命週期圖表中會說明此程式（以綠色虛線表示）。
+片段可以指定,如果正在重新創建活動,則不應完全銷毀該片段。 類別`Fragment`的服務`SetRetainInstance`。 如果`true`傳遞給此方法,則當活動重新啟動時,將使用片段的相同實例。 如果發生這種情況,則除`OnCreate``OnDestroy`和生命周期回調外,將調用所有回調方法。 此過程在上面所示的生命週期圖中(由綠色虛線)中說明。
 
 ## <a name="fragment-state-management"></a>片段狀態管理
 
-片段可以使用 `Bundle`的實例，在片段生命週期期間儲存和還原其狀態。 配套可讓片段將資料儲存為索引鍵/值組，並適用于不需要太多記憶體的簡單資料。 片段可以透過呼叫 `OnSaveInstanceState`來儲存其狀態：
+片段可以使用`Bundle`的實例在片段生命週期中保存和恢復其狀態。 捆綁包允許片段將數據保存為鍵/值對,並且對於不需要太多記憶體的簡單數據非常有用。 片段可以通過呼`OnSaveInstanceState`叫 來儲存其狀態:
 
 ```csharp
 public override void OnSaveInstanceState(Bundle outState)
@@ -159,8 +159,8 @@ public override void OnSaveInstanceState(Bundle outState)
 }
 ```
 
-建立片段的新實例時，儲存在 `Bundle` 中的狀態會透過新實例的 `OnCreate`、`OnCreateView`和 `OnActivityCreated` 方法，提供給新的實例使用。
-下列範例示範如何從 `Bundle`取出 `current_choice` 的值：
+建立片段`Bundle`的新實例時,保存在 中的狀態`OnCreate`將通過 的新實`OnCreateView`例 的`OnActivityCreated`和, 和新實例的方法對新實例可用。
+以下範例簡報如何從`current_choice``Bundle`中 檢索值:
 
 ```csharp
 public override void OnActivityCreated(Bundle savedInstanceState)
@@ -173,7 +173,7 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 }
 ```
 
-覆寫 `OnSaveInstanceState` 是一種適當的機制，可跨方向變更（例如上述範例中的 `current_choice` 值）儲存片段中的暫時性資料。 不過，`OnSaveInstanceState` 的預設執行會負責針對已指派識別碼的每個視圖，儲存 UI 中的暫時性資料。 例如，查看在 XML 中定義了 `EditText` 元素的應用程式，如下所示：
+重寫`OnSaveInstanceState`是一種適當的機制,用於跨方向更改(如上述示例`current_choice`中的值)在片段中保存瞬態數據。 但是,默認`OnSaveInstanceState`實現 負責為分配 ID 的每個檢視在 UI 中保存瞬態數據。 例如,檢視在 XML`EditText`中定義 元素的應用程式,如下所示:
 
 ```xml
 <EditText android:id="@+id/myText"
@@ -181,23 +181,23 @@ public override void OnActivityCreated(Bundle savedInstanceState)
         android:layout_height="wrap_content"/>
 ```
 
-由於 `EditText` 控制項已指派 `id`，因此當呼叫 `OnSaveInstanceState` 時，片段會自動將資料儲存在 widget 中。
+由於`EditText`控件已`id`分配,因此在調用時`OnSaveInstanceState`,片段會自動將數據保存在小部件中。
 
-### <a name="bundle-limitations"></a>配套限制
+### <a name="bundle-limitations"></a>捆綁限制
 
-雖然使用 `OnSaveInstanceState` 可讓您輕鬆地儲存暫時性資料，但使用此方法有一些限制：
+儘管使用`OnSaveInstanceState`使保存暫態數據變得容易,但使用此方法有一些限制:
 
-- 如果未將片段新增至後端堆疊，則當使用者按下 [**上一頁**] 按鈕時，將不會還原其狀態。
+- 如果未將片段添加到後堆疊中,則當使用者按下 **「後退」** 按鈕時,將不會恢復其狀態。
 
-- 當配套用來儲存資料時，該資料會進行序列化。 這可能會導致處理延遲。
+- 當捆綁包用於保存數據時,該數據將序列化。 這可能導致處理延遲。
 
-## <a name="contributing-to-the-menu"></a>參與功能表
+## <a name="contributing-to-the-menu"></a>對選單的貢獻
 
-片段可能會將專案提供給其裝載活動的功能表。
-活動會先處理功能表項目。 如果活動沒有處理常式，則會將事件傳遞至片段，然後處理它。
+片段可能會向其託管活動的功能表貢獻專案。
+活動首先處理功能表項。 如果活動沒有處理程式,則事件將傳遞給片段,然後該片段將處理它。
 
-若要將專案加入至活動的功能表，片段必須執行兩項動作。
-首先，片段必須執行方法 `OnCreateOptionsMenu` 並將其專案放入功能表中，如下列程式碼所示：
+要將項添加到活動功能表,片段必須執行兩項操作。
+首先,片段必須實現該方法`OnCreateOptionsMenu`並將其項放入菜單中,如以下代碼所示:
 
 ```csharp
 public override void OnCreateOptionsMenu(IMenu menu, MenuInflater menuInflater)
@@ -207,7 +207,7 @@ public override void OnCreateOptionsMenu(IMenu menu, MenuInflater menuInflater)
 }
 ```
 
-先前程式碼片段中的功能表會從下列 XML 擴充，位於檔案 `menu_fragment_vehicle_list.xml`：
+前面的代碼段中的選單從位於檔案中`menu_fragment_vehicle_list.xml`的以下 XML 中膨脹:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -218,7 +218,7 @@ public override void OnCreateOptionsMenu(IMenu menu, MenuInflater menuInflater)
 </menu>
 ```
 
-接下來，此片段必須呼叫 `SetHasOptionsMenu(true)`。 此方法的呼叫會向 Android 公告，而該片段具有可參與 [選項] 功能表的功能表項目。 除非呼叫此方法，否則不會將片段的功能表項目加入至活動的 [選項] 功能表。 這通常會在生命週期方法 `OnCreate()`中完成，如以下的程式碼片段所示：
+接下來,片段必須呼叫`SetHasOptionsMenu(true)`。 對此方法的調用向 Android 宣佈片段具有功能表項,以便貢獻到選項功能表。 除非對此方法進行了調用,否則片段的功能表項將不會添加到活動的選項功能表中。 這通常在生命週期方法`OnCreate()`中完成,如下一個代碼段所示:
 
 ```csharp
 public override void OnCreate(Bundle savedState)
@@ -228,6 +228,6 @@ public override void OnCreate(Bundle savedState)
 }
 ```
 
-下列畫面顯示此功能表的外觀：
+以下螢幕顯示此選單的外觀:
 
-[顯示功能表項目的 [我的旅程] 應用程式 ![範例螢幕擷取畫面](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)
+[![顯示選單項目的「我的行程」應用程式的範例螢幕截圖](creating-a-fragment-images/fragment-menu-example.png)](creating-a-fragment-images/fragment-menu-example.png#lightbox)

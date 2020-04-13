@@ -10,10 +10,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 5dcc37730008e6e39b96128bc1368f022daa2d06
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73023000"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – 快速入門
@@ -27,7 +27,7 @@ ms.locfileid: "73023000"
 使用 Xamarin 進行 iOS 開發需要：
 
 - 執行 macOS High Sierra (10.13) 或更新版本的 Mac。
-- 從 [App Store](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 安裝的最新版 Xcode 和 iOS SDK。
+- 最新版本的 Xcode 和 iOS SDK 從[應用程式商店](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)安裝 。
 
 ::: zone pivot="macos"
 
@@ -56,19 +56,19 @@ Xamarin.iOS 可與下列設定搭配運作：
 
 本逐步解說將說明如何建立名為 Phoneword 且可將英數字元電話號碼轉譯成數字電話號碼的應用程式。
 
-1. 從 [Applications] 資料夾或 [Spotlight]，啟動 Visual Studio for Mac：
+1. 從 [Applications]**** 資料夾或 [Spotlight]****，啟動 Visual Studio for Mac：
 
     ![](hello-ios-quickstart-images/image2new.png "The Launch screen")
 
-    在啟動畫面上，按一下 [新增專案] 以建立新 Xamarin.iOS 方案：
+    在啟動畫面上，按一下 [新增專案]**** 以建立新 Xamarin.iOS 方案：
 
     ![](hello-ios-quickstart-images/image3new.png "iOS solution")
 
-2. 從 [新增方案] 對話方塊，選擇 [iOS] > [應用程式] > [單一檢視應用程式] 範本，並確定已選取 C#。 按一下 [下一步]：
+2. 從 [新增方案]**** 對話方塊，選擇 [iOS] > [應用程式] > [單一檢視應用程式]**** 範本，並確定已選取 C#。 點選 **「下一步**」 :
 
     ![](hello-ios-quickstart-images/image4new.png "Choose Single View Application")
 
-3. 設定應用程式。 在 [名稱] 中指定 `Phoneword_iOS`，並將其他選項維持為預設值。 按一下 [下一步]：
+3. 設定應用程式。 在 [名稱]** 中指定 ** `Phoneword_iOS`，並將其他選項維持為預設值。 點選 **「下一步**」 :
 
     ![](hello-ios-quickstart-images/image5new.png "Enter the app name")
 
@@ -76,7 +76,7 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     ![](hello-ios-quickstart-images/image6new.png "Choose the location of the project")
 
-5. 按一下 [建立] 以產生**方案**。
+5. 按一下 [建立]**** 以產生**方案**。
 
 6. 在 **Solution Pad** 中按兩下 **Main.storyboard** 檔案加以開啟。 這提供以視覺化方式建立 UI 的方式：
 
@@ -84,14 +84,14 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     請注意，預設會啟用_大小類別_。 若要深入了解它們，請參閱[整合的分鏡腳本](~/ios/user-interface/storyboards/unified-storyboards.md)指南。
 
-7. 在 [Toolbox Pad] 中，在搜尋列中輸入「標籤」，然後將**標籤**拖曳至設計介面 (中央區域)：
+7. 在 [Toolbox Pad]**** 中，在搜尋列中輸入「標籤」，然後將**標籤**拖曳至設計介面 (中央區域)：
 
     ![](hello-ios-quickstart-images/image8new.png "Drag a Label onto the design surface the area in the center")
 
     > [!NOTE]
-    > 您隨時都可移至 [檢視] > [面板] 來顯示 **Properties Pad** 或**工具箱**。
+    > 您隨時都可移至 [檢視] > [面板]**** 來顯示 **Properties Pad** 或**工具箱**。
 
-8. 捕捉「拖曳控制項」的控點 (控制項周圍的圓形)，然後將標籤加寬：
+8. 捕捉「拖曳控制項」** 的控點 (控制項周圍的圓形)，然後將標籤加寬：
 
     ![](hello-ios-quickstart-images/image9.png "Make the label wider")
 
@@ -99,19 +99,19 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     ![](hello-ios-quickstart-images/image10.png "Set the label to Enter a Phoneword")
 
-10. 在工具箱內搜尋「文字欄位」，然後將**文字欄位**從**工具箱**拖曳至設計介面，並放置於**標籤**下方。 調整寬度，直到**文字欄位**與**標籤**等寬為止：
+10. 在工具箱內搜尋「文字欄位」，然後將**文字欄位**從**工具箱**拖曳至設計介面，並放置於**標籤**下方。 調整寬度,直到**文字欄位**與**分頁**的寬度相同 :
 
     ![](hello-ios-quickstart-images/image12new.png "Make the Text Field the same width as the Label")
 
-11. 在於設計介面上選取 [文字欄位] 的情況下，將 [文字欄位] 的 [名稱] 屬性 (位於 **Properties Pad** 的 [身分識別] 區段) 變更為 `PhoneNumberText` 並將 [文字] 屬性變更為 "1-855-XAMARIN"：
+11. 在於設計介面上選取 [文字欄位]**** 的情況下，將 [文字欄位]**** 的 [名稱]**** 屬性 (位於 **Properties Pad** 的 [身分識別] 區段) 變更為 `PhoneNumberText` 並將 [文字]**** 屬性變更為 "1-855-XAMARIN"：
 
     ![](hello-ios-quickstart-images/image13new.png "Change the Title property to 1-855-XAMARIN")
 
-12. 將**按鈕**從**工具箱**拖曳至設計介面，並放置於**文字欄位**下方。 調整寬度，使**按鈕**與**文字欄位**和**標籤**等寬：
+12. 將**按鈕**從**工具箱**拖曳至設計介面，並放置於**文字欄位**下方。 調整寬度,讓**按鈕**與**文字欄位**與**標籤**一樣寬:
 
     ![](hello-ios-quickstart-images/image14new.png "Adjust the width so the Button is as wide as the Text Field and Label")
 
-13. 利用設計介面上選取的**按鈕**，在 **Properties Pad** 的 [身分識別] 區段中，將**名稱**屬性變更為 `TranslateButton`。 將**標題**屬性變更為 "Translate"：
+13. 利用設計介面上選取的**按鈕**，在 **Properties Pad** 的 [身分識別]**** 區段中，將**名稱**屬性變更為 `TranslateButton`。 將**標題**屬性變更為 "Translate"：
 
     ![](hello-ios-quickstart-images/image15new.png "Change the Title property to Translate")
 
@@ -119,17 +119,17 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     ![](hello-ios-quickstart-images/image16new.png "Adjust the width so the Button is as wide as the first Button")
 
-15. 利用設計介面上選取的第二個**按鈕**，在 **Properties Pad** 的 [身分識別] 區段中，將**名稱**屬性變更為 `CallButton`。 將**標題**屬性變更為 "Call"：
+15. 利用設計介面上選取的第二個**按鈕**，在 **Properties Pad** 的 [身分識別]**** 區段中，將**名稱**屬性變更為 `CallButton`。 將**標題**屬性變更為 "Call"：
 
     ![](hello-ios-quickstart-images/image17new.png "Change the Title property to Call")
 
-    瀏覽至 [檔案] > [儲存] 或按 **⌘ + s** 來儲存變更。
+    瀏覽至 [檔案] > [儲存]**** 或按 **⌘ + s** 來儲存變更。
 
-16. 您必須將某些邏輯新增至應用程式，才能將電話號碼從英數字元轉譯為數字。 以滑鼠右鍵按一下 **Solution Pad** 中的 **Phoneword_iOS** 專案，然後選擇 [新增] > [新增檔案] 或按 **⌘ + n**，將新檔案新增至專案：
+16. 您必須將某些邏輯新增至應用程式，才能將電話號碼從英數字元轉譯為數字。 以滑鼠右鍵按一下 **Solution Pad** 中的 **Phoneword_iOS** 專案，然後選擇 [新增] > [新增檔案]**** 或按 **⌘ + n**，將新檔案新增至專案：
 
     ![](hello-ios-quickstart-images/image18.png "Add a new file to the Project")
 
-17. 在 [新增檔案] 對話方塊中，選取 [一般] > [空類別] 並將新檔案命名為 `PhoneTranslator`：
+17. 在 [新增檔案]**** 對話方塊中，選取 [一般] > [空類別]**** 並將新檔案命名為 `PhoneTranslator`：
 
     ![](hello-ios-quickstart-images/image19.png "Select Empty Class and name the new file PhoneTranslator")
 
@@ -246,13 +246,13 @@ Xamarin.iOS 可與下列設定搭配運作：
         };
     ```
 
-22. 儲存變更，然後選擇 [組建] > [**全部建立**] 或按**則是⌘ + B**來建立應用程式。 如果應用程式進行編譯，則 IDE 頂端會出現成功訊息：
+22. 保存更改,然後通過選擇**生成>生成全部**或按 **+ B**生成應用程式。 如果應用程式編譯,則 IDE 頂部將顯示一條成功消息:
 
     ![](hello-ios-quickstart-images/image21.png "A success message will appear at the top of the IDE")
 
     如果發生錯誤，請完成上述步驟，並更正任何錯誤，直到應用程式建置成功為止。
 
-23. 最後，在 **iOS 模擬器**中測試應用程式。 在 IDE 的左上角，從第一個下拉式清單中選擇 [偵錯]，並從第二個下拉式清單中選擇 [iPhone XR iOS 12.0] (或其他可用的模擬器)，然後按 [啟動] (類似 [播放] 按鈕的三角形按鈕)：
+23. 最後，在 **iOS 模擬器**中測試應用程式。 在 IDE 的左上角，從第一個下拉式清單中選擇 [偵錯]****，並從第二個下拉式清單中選擇 [iPhone XR iOS 12.0]**** (或其他可用的模擬器)，然後按 [啟動]**** (類似 [播放] 按鈕的三角形按鈕)：
 
     ![](hello-ios-quickstart-images/image27.png "Select a simulator and press start")
 
@@ -280,17 +280,17 @@ Xamarin.iOS 可與下列設定搭配運作：
 > [!NOTE]
 > 繼續進行本逐步解說之前，您必須已經從 Visual Studio 連線到您的 Mac。 這是因為 Xamarin.iOS 依賴 Apple 的工具來建置並啟動 iOS 設計工具和應用程式。 若要進行設定，請遵循[與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南中的步驟。
 
-1. 從 [開始] 功能表啟動 Visual Studio：
+1. 從 [開始]**** 功能表啟動 Visual Studio：
 
     ![](hello-ios-quickstart-images/image001-.png "The Start screen")
 
-    選取 [檔案] > [新增] > [專案] > [Visual C#] > [iPhone 和 iPad] > [iOS 應用程式 (Xamarin)] 來建立新的 Xamarin.iOS 解決方案：
+    選取 [檔案] > [新增] > [專案] > [Visual C#] > [iPhone 和 iPad] > [iOS 應用程式 (Xamarin)]**** 來建立新的 Xamarin.iOS 解決方案：
 
-    ![選取 iOS 應用程式（Xamarin）專案類型](hello-ios-quickstart-images/image002.w157.png "選取 iOS 應用程式（Xamarin）專案類型")
+    ![選擇 iOS 應用程式 (Xamarin) 項目類型](hello-ios-quickstart-images/image002.w157.png "選擇 iOS 應用程式 (Xamarin) 項目類型")
 
-    在下一個出現的對話方塊中，選取 [單一檢視應用程式] 範本，然後按 [確定] 建立專案：
+    在下一個出現的對話方塊中，選取 [單一檢視應用程式]**** 範本，然後按 [確定]**** 建立專案：
 
-    ![選取單一視圖專案範本](hello-ios-quickstart-images/image002-2.w157.png "選取單一視圖專案範本")
+    ![選擇單檢視項目樣本](hello-ios-quickstart-images/image002-2.w157.png "選擇單檢視項目樣本")
 
 1. 確認工具列中的 Xamarin Mac Agent 圖示為綠色。
 
@@ -298,15 +298,15 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     如果它不是這樣，表示沒有任何連線連線到您的 Mac 組建主機，請依照[設定指南](~/ios/get-started/installation/windows/connecting-to-mac/index.md)中的步驟執行以連線。
 
-1. 在 [方案總管] 中按兩下 **Main.storyboard** 檔案，以在 iOS 設計工具中開啟該檔案：
+1. 在 [方案總管]**** 中按兩下 **Main.storyboard** 檔案，以在 iOS 設計工具中開啟該檔案：
 
     ![](hello-ios-quickstart-images/vs-image7.png "The iOS Designer")
 
-1. 開啟 [工具箱] 索引標籤，在搜尋列中輸入「標籤」，然後將**標籤**拖曳至設計介面 (中央區域)：
+1. 開啟 [工具箱]**** 索引標籤，在搜尋列中輸入「標籤」，然後將**標籤**拖曳至設計介面 (中央區域)：
 
     ![](hello-ios-quickstart-images/vs-image8.png "Drag a Label onto the design surface the area in the center")
 
-1. 接著，抓住「拖曳控制項」的控點，然後將標籤加寬：
+1. 接著，抓住「拖曳控制項」** 的控點，然後將標籤加寬：
 
     ![](hello-ios-quickstart-images/vs-image9.png "Make the label wider")
 
@@ -315,9 +315,9 @@ Xamarin.iOS 可與下列設定搭配運作：
     ![](hello-ios-quickstart-images/vs-image10.png "Change the Text property of the Label to `Enter a Phoneword`")
 
     > [!NOTE]
-    > 您隨時都可移至 [檢視] 功能表來顯示 [屬性] 或 [工具箱]。
+    > 您隨時都可移至 [檢視]**** 功能表來顯示 [屬性]**** 或 [工具箱]****。
 
-1. 在工具箱內搜尋「文字欄位」，然後將**文字欄位**從**工具箱**拖曳至設計介面，並放置於**標籤**下方。 調整寬度，直到**文字欄位**與**標籤**等寬為止：
+1. 在工具箱內搜尋「文字欄位」，然後將**文字欄位**從**工具箱**拖曳至設計介面，並放置於**標籤**下方。 調整寬度,直到**文字欄位**與**分頁**的寬度相同 :
 
     ![](hello-ios-quickstart-images/vs-image12.png "Adjust the width until the Text Field is the same width as the Label")
 
@@ -325,11 +325,11 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     ![](hello-ios-quickstart-images/vs-image13.png "Change the Text property to 1-855-XAMARIN")
 
-1. 將**按鈕**從**工具箱**拖曳至設計介面，並放置於**文字欄位**下方。 調整寬度，使**按鈕**與**文字欄位**和**標籤**等寬：
+1. 將**按鈕**從**工具箱**拖曳至設計介面，並放置於**文字欄位**下方。 調整寬度,讓**按鈕**與**文字欄位**與**標籤**一樣寬:
 
     ![](hello-ios-quickstart-images/vs-image14.png "Adjust the width so the Button is as wide as the Text Field and Label")
 
-1. 利用設計介面上選取的**按鈕**，在**屬性**的 [身分識別] 區段中，將**名稱**屬性變更為 `TranslateButton`。 將**標題**屬性變更為 "Translate"：
+1. 利用設計介面上選取的**按鈕**，在**屬性**的 [身分識別]**** 區段中，將**名稱**屬性變更為 `TranslateButton`。 將**標題**屬性變更為 "Translate"：
 
     ![](hello-ios-quickstart-images/vs-image15.png "Change the Title property to Translate")
 
@@ -337,17 +337,17 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     ![](hello-ios-quickstart-images/vs-image16.png "Adjust the width so the Button is as wide as the first Button")
 
-1. 利用設計介面上選取的第二個**按鈕**，在**屬性**的 [身分識別] 區段中，將**名稱**屬性變更為 `CallButton`。 將**標題**屬性變更為 "Call"：
+1. 利用設計介面上選取的第二個**按鈕**，在**屬性**的 [身分識別]**** 區段中，將**名稱**屬性變更為 `CallButton`。 將**標題**屬性變更為 "Call"：
 
     ![](hello-ios-quickstart-images/vs-image17.png "Change the Title property to Call")
 
-    瀏覽至 [檔案] > [全部儲存] 或按 **Ctrl + s** 來儲存變更。
+    瀏覽至 [檔案] > [全部儲存]**** 或按 **Ctrl + s** 來儲存變更。
 
-1. 新增一些將電話號碼從英數字元轉譯為數字的程式碼。 若要執行此作業，先以滑鼠右鍵按一下 [方案總管] 中的 **Phoneword** 專案，然後選擇 [新增] > [新增項目] 或按 **Ctrl + Shift + A**，將新檔案新增至專案：
+1. 新增一些將電話號碼從英數字元轉譯為數字的程式碼。 若要執行此作業，先以滑鼠右鍵按一下 [方案總管]**** 中的 **Phoneword** 專案，然後選擇 [新增] > [新增項目]**** 或按 **Ctrl + Shift + A**，將新檔案新增至專案：
 
     ![](hello-ios-quickstart-images/vs-image18.png "Add some code to translate phone numbers from alphanumeric to numeric")
 
-1. 在 [新增項目] 對話方塊中 (以滑鼠右鍵按一下專案，選擇 [新增] > [新增項目])，選取 [Apple] > [類別] 並命名新的檔案 `PhoneTranslator`：
+1. 在 [新增項目]**** 對話方塊中 (以滑鼠右鍵按一下專案，選擇 [新增] > [新增項目])，選取 [Apple] > [類別]**** 並命名新的檔案 `PhoneTranslator`：
 
     ![](hello-ios-quickstart-images/vs-image19.w157.png "Add a new class named PhoneTranslator")
 
@@ -420,7 +420,7 @@ Xamarin.iOS 可與下列設定搭配運作：
 
     儲存 **PhoneTranslator.cs** 檔案並將它關閉。
 
-1. 在 [方案總管] 中按兩下 **ViewController.cs** 加以開啟，如此就能新增該邏輯來處理與按鈕的互動：
+1. 在 [方案總管]**** 中按兩下 **ViewController.cs** 加以開啟，如此就能新增該邏輯來處理與按鈕的互動：
 
     ![](hello-ios-quickstart-images/vs-image20.png "Logic added to handle interactions with the buttons")
 
@@ -468,13 +468,13 @@ Xamarin.iOS 可與下列設定搭配運作：
     };
     ```
 
-1. 儲存變更，然後選擇 [**組建 > 組建方案**] 或按**Ctrl + Shift + B**來建立應用程式。 如果應用程式編譯，IDE 底部會出現成功訊息：
+1. 保存更改,然後通過選擇**生成>生成解決方案**或按**Ctrl + Shift + B**來生成應用程式。 如果應用程式編譯,則 IDE 底部將顯示一條成功訊息:
 
     ![](hello-ios-quickstart-images/vs-image21.png "A success message will appear at the bottom of the IDE")
 
     如果發生錯誤，請完成上述步驟，並更正任何錯誤，直到應用程式建置成功為止。
 
-1. 最後，在**遠端 iOS 模擬器**中測試應用程式。 在 IDE 工具列中，從下拉式功能表選擇 [偵錯] 和 [iPhone 8 Plus iOS x.x]，然後按 [啟動] \(類似 [播放] 按鈕的綠色三角形\)：
+1. 最後，在**遠端 iOS 模擬器**中測試應用程式。 在 IDE 工具列中，從下拉式功能表選擇 [偵錯]**** 和 [iPhone 8 Plus iOS x.x]****，然後按 [啟動]**** \(類似 [播放] 按鈕的綠色三角形\)：
 
     ![](hello-ios-quickstart-images/vs-image27.png "Press Start")
 
@@ -496,5 +496,5 @@ Xamarin.iOS 可與下列設定搭配運作：
 
 - [Xamarin 應用程式圖示和啟動影像 (範例)](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
 - [Hello, iOS (範例)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) \(英文\)
-- [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html) \(英文\)
-- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action) \(英文\)
+- [iOS 人性化介面指導方針](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
+- [iOS 佈建入口網站](https://developer.apple.com/ios/manage/overview/index.action)

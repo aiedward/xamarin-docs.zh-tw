@@ -1,6 +1,6 @@
 ---
 title: 自訂繫結
-description: 您可以藉由編輯控制系結程式的中繼資料來自訂 Xamarin. Android 系結。 這些手動修改通常需要用來解決組建錯誤，並形成產生的 API，使其與C#/.NET. 更一致 這些指南說明此中繼資料的結構、如何修改中繼資料，以及如何使用 JAVADoc 來復原方法參數的名稱。
+description: 您可以通過編輯控制綁定過程的元數據來自定義 Xamarin.Android 綁定。 這些手動修改通常是解決生成錯誤和塑造生成的 API 以便使其與 C#/.NET 更一致所必需的。 這些指南解釋了此元數據的結構、如何修改元數據以及如何使用 JAvaDoc 恢復方法參數的名稱。
 ms.prod: xamarin
 ms.assetid: 63C5078D-9E42-4F70-AF8C-8CEEA84FB6AF
 ms.technology: xamarin-android
@@ -8,35 +8,35 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
 ms.openlocfilehash: 04f3720d8684129476c955819390e91330a7800a
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020647"
 ---
 # <a name="customizing-bindings"></a>自訂繫結
 
-_您可以藉由編輯控制系結程式的中繼資料來自訂 Xamarin. Android 系結。這些手動修改通常需要用來解決組建錯誤，並形成產生的 API，使其與C#/.NET. 更一致這些指南說明此中繼資料的結構、如何修改中繼資料，以及如何使用 JAVADoc 來復原方法參數的名稱。_
+_您可以通過編輯控制綁定過程的元數據來自定義 Xamarin.Android 綁定。這些手動修改通常是解決生成錯誤和塑造生成的 API 以便使其與 C#/.NET 更一致所必需的。這些指南解釋了此元數據的結構、如何修改元數據以及如何使用 JAvaDoc 恢復方法參數的名稱。_
 
 ## <a name="overview"></a>概觀
 
-Xamarin 會自動化大部分的系結程式;不過，在某些情況下，需要手動修改才能解決下列問題：
+Xamarin.Android 自動執行大部分綁定過程;但是,在某些情況下,需要手動修改才能解決以下問題:
 
-- 解決因遺漏類型、模糊類型、重複名稱、類別可見度問題，以及無法由 Xamarin 工具解決的其他情況而造成的組建錯誤。 
+- 解決因缺少類型、混淆類型、重複名稱、類可見性問題以及 Xamarin.Android 工具無法解決的其他情況而導致的生成錯誤。 
 
-- 變更 Xamarin 用來將 Android API 系結至不同類型的對應C# （例如，許多開發人員偏好將 JAVA `int` 常數對應至C# `enum` 常數）。
+- 更改 Xamarin.Android 用於將 Android API 綁定到 C# 中不同類型的映射(`int`例如,許多開發`enum`人員更願意 將 Java 常量映射到 C# 常量)。
 
-- 移除不需要系結的未使用型別。 
+- 刪除不需要綁定的未使用的類型。 
 
-- 在基礎 JAVA API 中加入沒有對應的類型。 
+- 添加基礎 Java API 中沒有對應的類型。 
 
-您可以藉由修改控制系結程式的中繼資料，來進行部分或全部的變更。
+您可以透過修改控制綁定過程的中繼資料來進行部分或全部更改。
 
 ## <a name="guides"></a>手冊
 
-下列指南說明控制系結程式的中繼資料，並說明如何修改此中繼資料來解決這些問題：
+以下指南描述了控制綁定過程的元數據,並說明如何修改此元數據以解決這些問題:
 
-- [JAVA 系結中繼資料](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)提供進入 JAVA 系結之中繼資料的總覽。
-    其中說明了完成 JAVA 系結程式庫有時需要的各種手動步驟，並說明如何塑造系結所公開的 API，以更密切地遵循 .NET 設計方針。
+- [Java 綁定元數據](~/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata.md)提供了進入 JAVA 綁定的元數據的概述。
+    它描述了完成 JAVA 綁定庫時需要的各種手動步驟,並解釋了如何塑造綁定公開的 API,以便更密切地遵循 .NET 設計指南。
 
-- [使用 JAVAdoc 具名引數](~/android/platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md)說明如何使用系結的 java 專案所產生的 JAVAdoc 來復原 JAVA 系結專案中的參數名稱。
+- [使用 Javadoc 命名參數](~/android/platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md)說明如何使用從綁定 Java 專案生成的 Javadoc 在 Java 綁定專案中恢復參數名稱。

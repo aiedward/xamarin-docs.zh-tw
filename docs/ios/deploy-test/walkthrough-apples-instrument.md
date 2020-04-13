@@ -8,51 +8,51 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 41254fb6aac176cd796fba851478b31f774553d2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73023449"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>逐步解說：使用 Apple 的 Instrument 工具
 
-_本文逐步解說如何使用 Apple 的偵查工具來診斷以 Xamarin 建立的 iOS 應用程式中的記憶體問題。它會示範如何啟動檢測、採用堆積快照集，以及分析記憶體成長。它也會示範如何使用檢測來顯示及找出造成記憶體問題的確切程式程式碼。_
+_本文介紹如何使用 Apple 的儀器工具來診斷使用 Xamarin 構建的 iOS 應用程式中的記憶體問題。它演示如何啟動儀器、拍攝堆快照和分析記憶體增長。它還演示如何使用儀器來顯示和精確定位導致記憶體問題的代碼行。_
 
 此頁面會示範如何使用 **Xcode 的 Instruments 工具**來診斷 iOS 應用程式中的記憶體問題。
 首先，下載 [MemoryDemo 範例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)，並在 Visual Studio for Mac 中開啟 **before** 方案。
 
 ## <a name="diagnosing-the-memory-issues"></a>診斷記憶體問題
 
-1. 在 Visual Studio for Mac 中，從 [工具] > [啟動 Instruments] 功能表項目啟動 **Instruments**。
-2. 選擇 [執行] > [上傳至裝置] 功能表項目，將應用程式上傳至裝置。
-3. 選擇 [Allocations] 範本 (具有白色方塊的橘色圖示)
+1. 在 Visual Studio for Mac 中，從 [工具] > [啟動 Instruments]**** 功能表項目啟動 **Instruments**。
+2. 選擇 [執行] > [上傳至裝置]**** 功能表項目，將應用程式上傳至裝置。
+3. 選擇 [Allocations]**** 範本 (具有白色方塊的橘色圖示)
 
     ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "Choose the Allocations template")
 
-4. 在視窗頂端的 [Choose a profiling template for] \(針對下列項目選擇分析範本\) 清單中，選取 **Memory Demo** 應用程式。 首先在 iOS 裝置上按一下，以展開顯示已安裝應用程式的功能表。
+4. 在視窗頂端的 [Choose a profiling template for]**** \(針對下列項目選擇分析範本\) 清單中，選取 **Memory Demo** 應用程式。 首先在 iOS 裝置上按一下，以展開顯示已安裝應用程式的功能表。
 
     ![](walkthrough-apples-instrument-images/01-mem-demo.png "Select the Memory Demo application")
 
-5. 按下 [Choose] \(選擇\) 按鈕 (視窗右下方) 來啟動 **Instruments**。 此範本將會在上方窗格中顯示兩個項目：分別是 [Allocations] \(配置\) 和 [VM Tracker] \(VM 追蹤器\)。
+5. 按下 [Choose]**** \(選擇\) 按鈕 (視窗右下方) 來啟動 **Instruments**。 此範本將會在上方窗格中顯示兩個項目：分別是 [Allocations] \(配置\) 和 [VM Tracker] \(VM 追蹤器\)。
 
-6. 按下 Instruments 中的 [Record] \(錄製\) 按鈕 (左上方的紅色圓圈)，這將會啟動應用程式。
+6. 按下 Instruments 中的 [Record] \(錄製\)**** 按鈕 (左上方的紅色圓圈)，這將會啟動應用程式。
 
-7. 選取上方窗格中的 [VM Tracker] \(VM 追蹤器\) 列 (既然應用程式正在執行，它將會包含兩個區段：[Dirty] \(有所變更\) 和 [Resident Size] \(駐留大小\))。 在 [Inspector] \(檢查\) 窗格中，選擇 [Show Display Settings] \(顯示顯示設定\) 選項 (齒輪圖示)，然後勾選 [Automatic Snapshotting] \(自動建立快照\) 核取方塊，如此螢幕擷取畫面右下方所示：
+7. 選取上方窗格中的 [VM Tracker] \(VM 追蹤器\)**** 列 (既然應用程式正在執行，它將會包含兩個區段：[Dirty] \(有所變更\) 和 [Resident Size] \(駐留大小\))。 在 [Inspector] \(檢查\)**** 窗格中，選擇 [Show Display Settings] \(顯示顯示設定\)**** 選項 (齒輪圖示)，然後勾選 [Automatic Snapshotting] \(自動建立快照\)**** 核取方塊，如此螢幕擷取畫面右下方所示：
 
     ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "Choose the Show Display Settings option the gear icon then tick the Automatic Snapshotting checkbox")
 
-8. 選取上方窗格中的 [Allocations] \(配置\) 列 (既然應用程式正在執行，它將會顯示 [All Heap and Anonymous VM] \(所有堆積和匿名 VM\))
-9. 在 [Inspector] \(檢查\) 窗格中，選擇 [Show Display Settings] \(顯示顯示設定\) 選項 (齒輪圖示)，然後按一下 [Mark Generation] \(標示世代\) 按鈕來建立基準。 小型紅色旗標將會出現在視窗頂端的時間軸上
-10. 捲動應用程式，然後再次選取 [Mark Generation] \(標示世代\) (重複幾次)
-11. 按一下 [Stop] \(停止\) 按鈕。
-12. 展開具有最大 [Growth] \(成長\) 的 [Generation] \(世代\) 節點，並依 [Growth] \(成長\) 排序 (遞減)。
-13. 將 [Inspector] \(檢查\) 窗格變更為 [Show Extended Detail] \(顯示延伸的詳細資料\) ("E")，如此會顯示 [Stack Trace] \(堆疊追蹤\)。
+8. 選取上方窗格中的 [Allocations] \(配置\)**** 列 (既然應用程式正在執行，它將會顯示 [All Heap and Anonymous VM] \(所有堆積和匿名 VM\)**)
+9. 在 [Inspector] \(檢查\)**** 窗格中，選擇 [Show Display Settings] \(顯示顯示設定\)**** 選項 (齒輪圖示)，然後按一下 [Mark Generation] \(標示世代\)**** 按鈕來建立基準。 小型紅色旗標將會出現在視窗頂端的時間軸上
+10. 捲動應用程式，然後再次選取 [Mark Generation] \(標示世代\)**** (重複幾次)
+11. 按一下 [Stop] \(停止\)**** 按鈕。
+12. 展開具有最大 [Growth] \(成長\)**** 的 [Generation] \(世代\)**** 節點，並依 [Growth] \(成長\)**** 排序 (遞減)。
+13. 將 [Inspector] \(檢查\)**** 窗格變更為 [Show Extended Detail] \(顯示延伸的詳細資料\)**** ("E")，如此會顯示 [Stack Trace] \(堆疊追蹤\)****。
 
-14. 請注意， **&lt;non-object>** 節點會顯示過多的記憶體成長。 按一下此節點旁邊的箭號以查看更多詳細資料：在堆疊追蹤中按一下滑鼠右鍵，將 [Source Location] \(來源位置\) 新增至窗格：
+14. 請注意,**&lt;非物件>** 節點顯示記憶體增長過快。 按一下此節點旁邊的箭號以查看更多詳細資料：在堆疊追蹤中按一下滑鼠右鍵，將 [Source Location] \(來源位置\)**** 新增至窗格：
 
     ![](walkthrough-apples-instrument-images/03-mem-growth.png "Add Source Location to the pane")
 
-15. 依 [Size] \(大小\) 排序，並顯示 [Extended Detail] \(延伸的詳細資料\) 檢視：
+15. 依 [Size] \(大小\)**** 排序，並顯示 [Extended Detail] \(延伸的詳細資料\)**** 檢視：
 
     ![](walkthrough-apples-instrument-images/04-extended-detail.png "Sort by Size and display the  Extended Detail view")
 

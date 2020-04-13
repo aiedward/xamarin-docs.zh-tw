@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
 ms.openlocfilehash: 7d9b7dfc12c27a195e3cb797167690cded348803
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488903"
 ---
 # <a name="custom-linker-configuration"></a>自訂連結器組態
@@ -24,8 +24,8 @@ ms.locfileid: "75488903"
 
 有了這個連結器描述檔之後，請將它新增到您的專案中，然後：
 
-- **針對 Android**將 [建置動作] 設定為 [LinkDescription]
-- **針對 iOS**將 [建置動作] 設定為 [LinkDescription]
+- **針對 Android**將 [建置動作]**** 設定為 [LinkDescription]****
+- **針對 iOS**將 [建置動作]**** 設定為 [LinkDescription]****
 
 下列範例示範 XML 檔案看起來的樣子：
 
@@ -64,4 +64,4 @@ ms.locfileid: "75488903"
 
 - [在 iOS 上連結](~/ios/deploy-test/linker.md)
 - [在 Android 上連結](~/android/deploy-test/linker.md)
-- [連結器 GitHub 存放庫與範例](https://github.com/mono/linker)
+- [連結器 GitHub 儲存函式庫,其中提供範例](https://github.com/mono/linker)

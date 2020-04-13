@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
 ms.openlocfilehash: c428d39911da9abff7d53d478fbe99dbe9a3604e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724830"
 ---
 # <a name="mobile-software-development-lifecycle"></a>行動裝置軟體開發生命週期
@@ -19,7 +19,7 @@ ms.locfileid: "76724830"
 
 在本文件中，我們將詳盡介紹如何建置行動應用程式，包括：
 
-1. **流程** - 軟體開發的流程稱為軟體開發生命週期 (SDLC)。 我們會就行動裝置應用程式開發，檢查 SDLC 的全部階段，包含：發想、設計、開發、穩定、部署和維護。
+1. **流程** - 軟體開發的流程稱為軟體開發生命週期 (SDLC)。 我們將研究 SDLC 與行動應用程式開發有關的所有階段,包括:初始、設計、開發、穩定、部署和維護。
 1. **考量** - 建置行動應用程式時需要考慮許多因素，特別是與傳統的 Web 應用程式或桌面應用程式相比。 我們將介紹這些考量事項以及它們會如何影響行動應用程式開發。
 
 本文件旨在為初學者和有經驗的應用程式開發人員，回答有關行動應用程式開發的基本問題。 採用了相當全面的方法來介紹在整個軟體開發生命週期 (SDLC) 過程中將會遇到的大多數概念。 然而，並不是每一位都適合使用本文件，如果您渴望立刻開始建置應用程式，則我們建議往前跳至[行動裝置應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)指南，並稍後再回來使用本文件。
@@ -40,7 +40,7 @@ ms.locfileid: "76724830"
 
 下列各節會更詳細地說明每一個階段。
 
-### <a name="inception"></a>起始
+### <a name="inception"></a>Inception
 
 人們與行動裝置的互動無所不在且非常緊密，這意味著幾乎每個人都會對行動應用程式有想法。 行動裝置開啟了與電腦計算、Web、甚至是公司基礎結構進行互動的全新方式。
 
@@ -60,7 +60,7 @@ ms.locfileid: "76724830"
 
 為了協助設計應用程式功能，定義執行者和[使用案例](https://en.wikipedia.org/wiki/Use_case)可能會十分有用。 執行者是應用程式中的角色，通常是使用者。 使用案例通常是動作或意向。
 
-比方說，工作追蹤應用程式可能會有兩個動作項目：「使用者」  和「朋友」  。 使用者可以「建立工作」  、與好友「共用工作」  。 在此情況下，建立工作和共用工作是兩個完全不同的案例，這兩個案例與執行者串聯，將會告知哪些畫面需要建置、哪些商務實體和邏輯需要開發。
+比方說，追踪應用程式的一項工作可能會有兩位執行者：「使用者」** 和「好友」**。 使用者可以「建立工作」**、與好友「共用工作」**。 在此情況下，建立工作和共用工作是兩個完全不同的案例，這兩個案例與執行者串聯，將會告知哪些畫面需要建置、哪些商務實體和邏輯需要開發。
 
 一旦擷取了適量的使用案例和執行者之後，開始設計應用程式便會容易許多。 開發即可以專注於如何建立應用程式，而不需專注於應用程式的定位和用途。
 
@@ -76,13 +76,13 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
 建立 UX 原型時，請務必注意應用程式所針對的各種平台介面指導方針。 應用程式應在每種平台上都「有家的感覺」。 每種平台的官方設計指導方針如下：
 
-1. **Apple** -  [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/) (人性化介面指導方針)
+1. **蘋果** -  [人機介面指南](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
 1. **Android** -  [Design Guidelines](https://developer.android.com/design/index.html) (設計指導方針)
 1. **UWP** –  [UWP 設計基本概念](https://docs.microsoft.com/windows/uwp/design/basics/)
 
 例如，每個應用程式都有一個用來在應用程式各區段間進行切換的隱喻。 iOS 使用畫面底部的索引標籤，Android 使用畫面頂部的索引標籤，而 UWP 則使用[樞紐或索引標籤](/windows/uwp/design/controls-and-patterns/pivot)檢視。
 
-此外，硬體本身也會限定 UX 決策。 例如，iOS 裝置沒有實體「返回」  鍵，因此引入了導覽控制器隱喻：
+此外，硬體本身也會限定 UX 決策。 例如，iOS 裝置沒有實體「返回」** 鍵，因此引入了導覽控制器隱喻：
 
  ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS devices have no physical back button, and therefore introduce the Navigation Controller metaphor")
 
@@ -100,7 +100,7 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
  [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "A well-designed application may still look different on each platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
-### <a name="development"></a>開發
+### <a name="development"></a>部署
 
 開發階段通常非常早開始。 事實上，當構想在概念和靈感階段中有了一定的成熟度之後，通常即會開發出一個工作原型，用以驗證功能、假設、協助了解工作範圍。
 
@@ -108,7 +108,7 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
 ### <a name="stabilization"></a>穩定
 
-穩定是解決應用程式中 Bug 的過程。 不僅僅是以功能的角度來考量，例如：「它在我按一下這個按鈕時當機了」，同時也涉及了可用性和效能。 最好在非常早期的開發過程中就開始進行穩定，以便在成本提高之前進行修正。 一般來說，應用程式會進入「原型」  、*Alpha*、*Beta* 及「候選版」  等階段。 不同的人會以不同方式定義這些階段，但通常會遵循下列模式：
+穩定是解決應用程式中 Bug 的過程。 不僅僅是從功能 (例如：「它在我按一下這個按鈕時當機了」) 的角度來看，也涉及了可用性和效能。 最好在非常早期的開發過程中就開始進行穩定，以便在成本提高之前進行修正。 一般來說，應用程式會進入「原型」**、*Alpha*、*Beta* 及「候選版」** 等階段。 不同的人會以不同方式定義這些階段，但通常會遵循下列模式：
 
 1. **原型** – 應用程式仍處於概念證明階段，僅有核心功能或應用程式的特定部分能運作。 存在主要 Bug。
 1. **Alpha** – 核心功能通常已完成程式碼 (已建置但尚未完整測試)。 仍有主要 Bug，外圍功能可能尚不存在。
@@ -117,7 +117,7 @@ UX 通常會透過使用任何一種[設計工具組](https://docs.microsoft.com
 
 愈早開始測試應用程式愈好。 比方說，如果在原型階段中發現主要問題，仍可以修改應用程式的 UX 以便容納。 如果在初始階段中發現效能問題，則可以在大量程式碼建構於錯誤假設上之前，及早修改架構。
 
-一般而言，隨著應用程式在生命週期中進一步發展，會開放給更多人來嘗試、測試、提供意見反應等。例如，原型應用程式只能向關鍵利益關係人顯示或提供，而候選版應用程式可以散發給為搶先體驗而註冊的客戶。
+通常,隨著應用程式在生命週期中走得更遠,它向更多的人開放,以嘗試它、測試它、提供反饋等。例如,原型應用程式只能顯示或提供給關鍵利益幹系人,而發佈候選應用程式可能分發給註冊早期訪問的客戶。
 
 針對早期測試和部署到相對較少的裝置，通常直接從開發電腦進行部署便足夠了。 但是，隨著受眾的擴大，可能很快會變得十分麻煩。 因此，有許多測試部署選項讓您可以邀請他人加入測試集區、透過 Web 發行組建、提供可以進行使用者意見反應的工具，大大降低此流程的難度。
 
@@ -252,5 +252,5 @@ UWP 中的多工也分為兩個部分：頁面與應用程式的生命週期和�
 ## <a name="next-steps"></a>後續步驟
 
 - [什麼是 Xamarin？](~/cross-platform/get-started/introduction-to-mobile-development.md)
-- [Xamarin 使用者入門](~/get-started/index.yml)
+- [開始使用 Xamarin](~/get-started/index.yml)
 - [跨平台共用程式碼](~/cross-platform/app-fundamentals/index.md)

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 5569e10c059dec26137aadb814101992ed7e9f7e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725047"
 ---
 # <a name="upload-to-mac-app-store"></a>上傳至 Mac App Store
@@ -24,7 +24,7 @@ _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac A
 
     [![](uploading-images/image65.png "iTunes Connect")](uploading-images/image65.png#lightbox)
 
-2. 輸入應用程式的名稱與其他詳細資料。 開發人員只能從先前建立的現有 [Bundle ID] \(套件組合識別碼\)  中選擇：
+2. 輸入應用程式的名稱與其他詳細資料。 開發人員只能從先前建立的現有 [Bundle ID] \(套件組合識別碼\)**** 中選擇：
 
     [![](uploading-images/image66.png "Selecting the bundle ID")](uploading-images/image66.png#lightbox)
 
@@ -52,9 +52,9 @@ _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac A
 
     [![](uploading-images/image72.png "Adding the required screenshots")](uploading-images/image72.png#lightbox)
 
-    螢幕擷取畫面的格式應為 JPG、TIF 或 PNG，大小為 1280x800、1440x900、2880x1800 或 2560x1600 像素。 按 [Save] \(儲存\)  以完成。
+    螢幕擷取畫面的格式應為 JPG、TIF 或 PNG，大小為 1280x800、1440x900、2880x1800 或 2560x1600 像素。 按 [Save] \(儲存\)**** 以完成。
 
-5. 應用程式資訊隨即顯示以供檢閱。 按一下 [View Details] \(檢視詳細資料\)  來變更狀態：
+5. 應用程式資訊隨即顯示以供檢閱。 按一下 [View Details] \(檢視詳細資料\)**** 來變更狀態：
 
     [![](uploading-images/image73.png "Viewing the app details")](uploading-images/image73.png#lightbox)
 
@@ -70,7 +70,7 @@ _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac A
 
     [![](uploading-images/image76.png "The acceptance notification")](uploading-images/image76.png#lightbox)
 
-9. 啟動 **Transporter** 並使用您的 Apple ID 登入，然後選擇 [新增應用程式]  ：
+9. 啟動 **Transporter** 並使用您的 Apple ID 登入，然後選擇 [新增應用程式]****：
 
     [![](uploading-images/transporter01-sml.png "The Application Loader interface")](uploading-images/transporter01.png#lightbox)
 
@@ -85,7 +85,7 @@ _本指南將逐步解說如何上傳 Xamarin.Mac 應用程式以發行至 Mac A
 ## <a name="related-links"></a>相關連結
 
 - [安裝](~//mac/get-started/installation.md)
-- [Hello, Mac 範例](~/mac/get-started/hello-mac.md)
+- [您好,Mac 樣品](~/mac/get-started/hello-mac.md)
 - [在 Mac App Store 上散發應用程式](https://developer.apple.com/devcenter/mac/checklist/) \(英文\)
-- [Tools Guide :Code Signing Your App](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) (工具指南：以程式碼簽署應用程式)
+- [工具指南：對應用程式進行程式碼簽署](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html) \(英文\)
 - [開發人員識別碼和 GateKeeper](https://developer.apple.com/developer-id/) \(英文\)

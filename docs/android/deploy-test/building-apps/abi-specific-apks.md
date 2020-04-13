@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940629"
 ---
 # <a name="building-abi-specific-apks"></a>建置特定 ABI 的 APK
 
 _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 在某些情況下，讓應用程式具備多重 APK，其中每個 APK 都使用相同的金鑰儲存區簽署並共用相同的套件名稱，但針對特定裝置或 Android 組態進行編譯，可能會比較有利。 這並非建議的方法 - 只有一個 APK 並讓其支援多個裝置和組態通常會比較簡單。 在某些情況下，建立多重 APK 會很有用，例如：
 
@@ -30,7 +30,7 @@ _本文將討論如何使用 Xamarin.Android 建置瞄準單一 ABI 的 APK。_
 
 本指南會說明如何編寫指令碼為 Xamarin.Android 應用程式建置多重 APK，並使每個 APK 都瞄準特定的 ABI。 它涵蓋了下列主題：
 
-1. 為 APK 建立唯一的「版本代碼」  。
+1. 為 APK 建立唯一的「版本代碼」**。
 1. 建立會用於此 APK 的 **AndroidManifest.XML** 暫存版本。
 1. 使用先前步驟中的 **AndroidManifest.XML** 來建置應用程式。
 1. 透過簽署及 Zipalign 來準備 APK。
@@ -43,9 +43,9 @@ Google 建議針對使用七位數版本代碼的版本代碼使用特定的演�
 藉由將此版本代碼配置展開至八位數，您可以在版本代碼中包含一些 ABI 資訊，以確保 Google Play 將正確的 APK 散發到裝置。 下列清單說明這個八位數版本代碼的格式 (已由左至右編製索引)：
 
 - **索引 0** (下列圖表中的紅色) &ndash; ABI 的整數：
-  - 1 &ndash; `armeabi`
-  - 2 &ndash; `armeabi-v7a`
-  - 6 &ndash; `x86`
+  - 1 &ndash;`armeabi`
+  - 2 &ndash;`armeabi-v7a`
+  - 6 &ndash;`x86`
 
 - **索引 1-2** (下列圖表中的橘色) &ndash; 應用程式支援的最低 API 層級。
 
@@ -60,7 +60,7 @@ Google 建議針對使用七位數版本代碼的版本代碼使用特定的演�
 
 下列圖表說明在上述清單中描述之每一個代碼的位置：
 
-[![八位數版本代碼格式的圖表，以顏色進行編碼](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
+[![八位元版本代碼格式圖,按顏色編碼](abi-specific-apks-images/image00.png)](abi-specific-apks-images/image00.png#lightbox)
 
 Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是正確的 APK。 具有最高版本代碼的 APK 會傳遞到裝置。 例如，應用程式可能會有三個 APK，並具有下列版本代碼：
 
@@ -95,19 +95,19 @@ Google Play 會根據 `versionCode` 及 APK 組態來確保傳遞到裝置的是
 
 下列清單說明每個命令列參數：
 
-- `/t:Package` &ndash; 建立使用偵錯金鑰儲存區簽署的 Android APK
+- `/t:Package`&ndash;建立使用除錯金鑰儲存簽署的 Android APK
 
-- `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; 這是要以其為目標的 ABI。 必須為 `armeabi`、`armeabi-v7a`，或 `x86` 中的其中一個
+- `/p:AndroidSupportedAbis=<TARGET_ABI>`&ndash;這是ABI的目標。 必須為 `armeabi`、`armeabi-v7a`，或 `x86` 中的其中一個
 
-- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/` &ndash; 這是將保存在建置期間建立之中繼檔案的目錄。 若有必要，Xamarin.Android 會根據 ABI 的名稱建立目錄，例如 `obj.armeabi-v7a`。 通常建議針對每個 ABI 各自使用一個資料夾，因為這可以防止發生檔案從其中一個組建「洩漏」到另一個組建的問題。 請注意，這個值會使用目錄分隔符號來終止 (若為 OS X 則為 `/`)。
+- `/p:IntermediateOutputPath=obj.<TARGET_ABI>/`&ndash;這是保存作為生成一部分創建的中間文件的目錄。 若有必要，Xamarin.Android 會根據 ABI 的名稱建立目錄，例如 `obj.armeabi-v7a`。 通常建議針對每個 ABI 各自使用一個資料夾，因為這可以防止發生檔案從其中一個組建「洩漏」到另一個組建的問題。 請注意，這個值會使用目錄分隔符號來終止 (若為 OS X 則為 `/`)。
 
 - `/p:AndroidManifest` &ndash; 此屬性會指定在建置期間將使用的 **AndroidManifest.XML** 檔案路徑。
 
-- `/p:OutputPath=bin.<TARGET_ABI>` &ndash; 這是將存放最終 APK 的目錄。 Xamarin.Android 會根據 ABI 的名稱來建立目錄，例如 `bin.armeabi-v7a`。
+- `/p:OutputPath=bin.<TARGET_ABI>`&ndash;這是將容納最終 APK 的目錄。 Xamarin.Android 會根據 ABI 的名稱來建立目錄，例如 `bin.armeabi-v7a`。
 
-- `/p:Configuration=Release` &ndash; 執行 APK 的發行建置。 偵錯組建無法上傳至 Google Play。
+- `/p:Configuration=Release`&ndash;執行 APK 的發佈版本。 偵錯組建無法上傳至 Google Play。
 
-- `<CS_PROJ FILE>` &ndash; 這是 Xamarin.Android 專案的 `.csproj` 檔案路徑。
+- `<CS_PROJ FILE>`&ndash;這是 Xamarin.Android`.csproj`專案的檔路徑。
 
 ### <a name="sign-and-zipalign-the-apk"></a>針對 APK 進行簽署及 Zipalign
 
@@ -139,9 +139,9 @@ zipalign -f -v 4 <SIGNED_APK_TO_ZIPALIGN> <PATH/TO/ZIP_ALIGNED.APK>
 
 1. [編譯 Xamarin.Android 專案的發行組建](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L63)，瞄準單一目標 ABI，並使用先前步驟中建立的 **AndroidManifest.XML**。
 
-1. 使用生產環境金鑰儲存區[簽署 APK](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66) \(英文\)。
+1. 使用生產金鑰庫[對 APK 簽署 。](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L66)
 
-1. 針對 APK 進行 [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67)。
+1. [Zipalign](https://github.com/xamarin/monodroid-samples/blob/master/OneABIPerAPK/Rakefile.rb#L67) APK。
 
 若要建置應用程式的所有 APK，請從命令列執行 `build` Rake 工作：
 
@@ -154,10 +154,10 @@ $ rake build
 
 Rake 工作完成之後，便會有三個 `bin` 資料夾，以及一個 `xamarin.helloworld.apk` 檔案。 下一個螢幕擷取畫面顯示每個資料夾及其內容：
 
-[![包含 xamarin.helloworld.apk 的特定平台資料夾位置](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
+[![包含 xamarin.helloworld.apk 的平臺特定資料夾的位置](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> 本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們並未預先撰寫範例，但它也可以使用 [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](https://fsharp.github.io/FAKE/) 來進行。
+> 本指南中描述的建置過程可在許多不同建置系統的其中一個內實作。 雖然我們沒有預先寫出的例子,但它也應該有可能與[Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake)或[假](https://fsharp.github.io/FAKE/)。
 
 ## <a name="summary"></a>總結
 

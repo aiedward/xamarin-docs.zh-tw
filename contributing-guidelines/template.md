@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
 ms.openlocfilehash: f26a786f3da909c7d948fe99b4b3a1423352ecbe
-ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77553569"
 ---
 # <a name="metadata-and-markdown-template"></a>中繼資料和 Markdown 範本
@@ -42,12 +42,12 @@ ms.custom: Analytics data, a field that gets imported into SkyEye so you can use
 
 重點提示：
 
-- 請「務必」  在中繼資料項目的值和冒號 (:) 之間加上一個空格。
+- 請「務必」**** 在中繼資料項目的值和冒號 (:) 之間加上一個空格。
 - 選擇性的中繼資料元素沒有值，請將它刪除 (請勿保留空白，或者使用 "na")。
 - 在值中出現冒號 (例如標題) 會中斷中繼資料剖析器。 在此情況下，請使用雙引號括住標題 (例如，`title: "Writing .NET Core console apps: An advanced step-by-step guide"`)。
-- **title**：此標題會出現在搜尋引擎的搜尋結果中。 此標題不需要與 H1 標題中的標題相同，且應包含最多 60 個字元。
+- **title**：此標題會出現在搜尋引擎的搜尋結果。 此標題不需要與 H1 標題中的標題相同，且應包含最多 60 個字元。
 - **author**、**manager**、**ms.reviewer**：author 欄位應包含該作者的 **GitHub 使用者名稱**，而不是別名。  "manager" 和 "ms.reviewer" 欄位則應包含 Microsoft 別名。 ms.reviewer 指定與文章或功能相關的 PM/開發人員。
-- **ms.assetid**：這是文章的 GUID，用於商業智慧 (BI) 等內部追蹤目的。 在建立新的 Markdown 檔案時，請從 [https://www.guidgenerator.com](https://www.guidgenerator.com) 取得 GUID。
+- **ms.assetid**：這是文章的 GUID，用於商業智慧 (BI) 等內部追蹤目的。 建立新的標記檔時,從[https://www.guidgenerator.com](https://www.guidgenerator.com)獲取 GUID。
 
 ## <a name="basic-markdown-gfm-and-special-characters"></a>基本 Markdown、GFM 和特殊字元
 
@@ -67,10 +67,10 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 檔案名稱使用下列規則︰
 
 - 只包含小寫字母、數字和連字號。
-- 不使用空格或標點符號。 使用連字號來分隔檔名中的文字和數字。
-- 使用明確的動作動詞，例如 develop、buy、build、troubleshoot。 不使用 -ing 字詞。
-- 不使用短字詞，例如 a、and、the、in、or 等等。
-- 必須為 Markdown 格式且使用副檔名 .md。
+- 沒有空格或標點符號字元。 檔案名稱中使用連字號來分隔文字和數字。
+- 使用特定的動作動詞，例如 develop、buy、build、troubleshoot。 沒有 -ing 字詞。
+- 不包含 a、and、the、in、or 等短字。
+- 必須是 Markdown 格式且使用 .md 副檔名。
 - 盡可能保持檔名簡短。 它們會是文章 URL 的一部分。
 
 ## <a name="headings"></a>標題
@@ -78,13 +78,13 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 使用句子樣式的大寫。 下列情況一律大寫：
 
 - 標題的第一個字。
-- 標題中冒號後的第一個字 (例如，"How to:Sort an array")。
+- 標題中冒號後的第一個字 (例如，"How to: Sort an array")。
 
 標題應使用 atx 樣式，也就是在行開頭以 1 至 6 個井字號 (#) 來表示標題，這會對應到 HTML 標題層級 H1 至 H6。 上面使用的是第一和第二層級標題的範例。
 
-請「務必」  確定主題中只有一個第一層級標題 (H1)，該標題會顯示為頁面標題。
+請「務必」**** 確定主題中只有一個第一層級標題 (H1)，該標題會顯示為頁面標題。
 
-如果您的標題結尾是 `#` 字元，則您必須在結尾另外加上一個 `#` 以使標題正確轉譯。 例如，`# Async Programming in F# #`。
+如果您的標題結尾是 `#` 字元，則您必須在結尾另外加上一個 `#` 以使標題正確轉譯。 例如： `# Async Programming in F# #` 。
 
 第二層級的標題會產生頁面目錄，並顯示在頁面標題下的 [本文內容] 區段中。
 
@@ -95,37 +95,37 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 
 ## <a name="text-styling"></a>文字樣式
 
-「斜體」  用於檔案、資料夾、路徑 (較長的項目請分割為各行) - 新詞彙 - URL (除非轉譯為連結，這是預設值)。
+_斜體_ 用於檔案、資料夾、路徑 (較長的項目請針對各行設定格式) - 新詞彙 - URL (除非轉譯為連結 (預設設定))。
 
 **粗體** 用於 UI 元素。
 
-## <a name="links"></a>「連結」
+## <a name="links"></a>連結
 
 ### <a name="internal-links"></a>內部連結
 
 若要連結到同一個 Markdown 檔案中的標題 (又稱錨點連結)，您需要找出該標題的識別碼。 若要確認識別碼，請檢視轉譯文章的原始程式碼，以找出該標題的識別碼 (例如，`id="blockquote"`)，然後使用「# + 識別碼」來連結 (例如，`#blockquote`)。
 此識別碼是依據標題文字而自動產生。 舉例來說，若某章節名稱為 `## Step 2`，則識別碼會是 `id="step-2"`。
 
-- 範例：`[Chapter 1](#chapter-1)`
+- 範例： `[Chapter 1](#chapter-1)`
 
 若要連結到同一個存放庫中的 Markdown 檔案，請使用[相對連結](https://www.w3.org/TR/WD-html40-970917/htmlweb.html#h-5.1.2)，且檔案名稱結尾包含 ".md"。
 
-- 範例：`[Readme file](../readme.md)`
-- 範例：`[Welcome to .NET](../docs/welcome.md)`
+- 範例： `[Readme file](../readme.md)`
+- 範例： `[Welcome to .NET](../docs/welcome.md)`
 
 若要連結到相同存放庫中 Markdown 檔案內的標題，請使用「相對連結 + 井字號」來連結。
 
-- 範例：`[.NET Community](../docs/welcome.md#community)`
+- 範例： `[.NET Community](../docs/welcome.md#community)`
 
 ### <a name="external-links"></a>外部連結
 
 若要連結到外部檔案，請使用完整 URL 作為連結。
 
-- 範例：`[GitHub](http://www.github.com)`
+- 範例： `[GitHub](http://www.github.com)`
 
 如果 Markdown 檔案中出現 URL，系統會將它轉換成可點擊的連結。
 
-- 範例：`http://www.github.com`
+- 範例： `http://www.github.com`
 
 ### <a name="links-to-apis"></a>API 的連結
 
@@ -138,8 +138,8 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 2. 自動連結︰`<xref:UID>`
 3. 簡短格式：`@UID`
 
-- 範例：`@System.String`
-- 範例：`[String class](xref:System.String)`
+- 範例： `@System.String`
+- 範例： `[String class](xref:System.String)`
 
 如需使用此標記法的詳細資訊，請參閱[使用交互參照 (英文)](https://dotnet.github.io/docfx/tutorial/links_and_cross_references.html#using-cross-reference)。
 
@@ -154,40 +154,40 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 
 ### <a name="ordered-lists"></a>排序清單
 
-1. 這
-1. 是
+1. 此
+1. Is
 1. 一個
-1. 排序
+1. 訂購時間
 1. 清單
 
 #### <a name="ordered-list-with-an-embedded-list"></a>包含內嵌清單的排序清單
 
 1. 這裡
 1. 有
-1. 一個
+1. an
 1. 內嵌
     1. Miss Scarlett
     1. Professor Plum
 1. 排序
-1. 清單
+1. list
 
 ### <a name="unordered-lists"></a>未排序清單
 
-- 這個
-- 是
-- 一個
+- 此
+- is
+- a
 - 項目符號
-- 清單
+- list
 
 #### <a name="unordered-list-with-an-embedded-list"></a>包含內嵌清單的未排序清單
 
-- 這個
+- 此
 - 項目符號
-- 清單
+- list
   - Mrs. Peacock
   - Mr. Green
-- 包含
-- 另一個
+- contains
+- 其他
     1. Colonel Mustard
     1. Mrs. White
 - 清單
@@ -198,10 +198,10 @@ Markdown 使用 \*、\` 和 \# 等特殊字元來設定格式。 如果要在內
 
 ## <a name="tables"></a>資料表
 
-| 資料表        | 很           | 酷  |
+| 資料表        | 很           | 非經常性存取  |
 | ------------- |:-------------:| -----:|
 | 欄 3 為      | 靠右對齊 | $1600 |
-| 欄 2 為      | 置中      |   $12 |
+| 欄 2 為      | 置中      |   美金 $12 元 |
 | 欄 1 為預設 | 靠左對齊     |    $1 |
 
 您可以使用 [Markdown 表格產生工具 (英文)](http://www.tablesgenerator.com/markdown_tables) 來輕鬆產生表格。
@@ -230,7 +230,7 @@ namespace HelloWorld
 }
 ```
 
-#### <a name="xml"></a>xml
+#### <a name="xml"></a>Xml
 
 ```xml
 <dict>
@@ -296,7 +296,7 @@ function fancyAlert(arg) {
 [![alt text for linked image](images/dotnet.png)](https://dot.net)
 ```
 
-## <a name="videos"></a>視訊
+## <a name="videos"></a>影片
 
 ### <a name="channel-9"></a>Channel 9
 
@@ -326,7 +326,7 @@ docs.microsoft 為 GitHub Flavored Markdown 提供幾個額外的延伸模組。
 
 請務必使用下列的警示樣式，這樣它們才能在文件網站中轉譯為適當的樣式。 不過，GitHub 的轉譯引擎無法分辨這些樣式。
 
-#### <a name="note"></a>注意事項
+#### <a name="note"></a>附註
 
 ```
 > [!NOTE]
@@ -340,7 +340,7 @@ docs.microsoft 為 GitHub Flavored Markdown 提供幾個額外的延伸模組。
 > This is a WARNING
 ```
 
-#### <a name="tip"></a>提示
+#### <a name="tip"></a>秘訣
 
 ```
 > [!TIP]

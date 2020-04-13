@@ -1,23 +1,23 @@
 ---
 ms.topic: include
 ms.openlocfilehash: 9cee898775fd10a924f14abfe913fe4dfff940f5
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70206217"
 ---
-Xamarin 可以隨著「新的」  Visual Studio 2019 安裝一起安裝，步驟如下：
+Xamarin 可以隨著「新的」__ Visual Studio 2019 安裝一起安裝，步驟如下：
 
 1. 從 [Visual Studio](https://visualstudio.microsoft.com/vs/) 頁面下載 Visual Studio 2019 Community、Visual Studio Professional 或 Visual Studio Enterprise (底部提供下載連結)。
 
 2. 按兩下已下載的套件來啟動安裝。
 
-3. 從安裝畫面選取 [使用 .NET 進行行動開發]  工作負載：
+3. 從安裝畫面選取 [使用 .NET 進行行動開發]**** 工作負載：
 
-    [![使用 .NET 進行行動開發選項](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
+    [![移動開發與 .NET 選擇](~/get-started/installation/windows-images/vs2019-mobile-dev-workload-sml.png)](~/get-started/installation/windows-images/vs2019-mobile-dev-workload.png#lightbox)
 
-4. 當您準備好開始 Visual Studio 2019 安裝時，請按一下右下角的 [安裝]  按鈕：
+4. 當您準備好開始 Visual Studio 2019 安裝時，請按一下右下角的 [安裝]**** 按鈕：
 
     ![[安裝] 按鈕](~/get-started/installation/windows-images/vs2019-click-install.png)
 
@@ -25,7 +25,7 @@ Xamarin 可以隨著「新的」  Visual Studio 2019 安裝一起安裝，步驟
 
     ![安裝期間的進度列](~/get-started/installation/windows-images/vs2019-progress-bars.png)
 
-5. Visual Studio 2019 安裝完成之後，請按一下 [啟動]  按鈕來啟動 Visual Studio：
+5. Visual Studio 2019 安裝完成之後，請按一下 [啟動]**** 按鈕來啟動 Visual Studio：
 
     ![[啟動] 按鈕的位置](~/get-started/installation/windows-images/vs2019-launch.png)
 

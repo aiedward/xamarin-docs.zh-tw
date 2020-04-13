@@ -1,5 +1,5 @@
 ---
-title: 內容提供者的工作方式
+title: 內容提供者的工作原理
 ms.prod: xamarin
 ms.assetid: B9E2EF89-7EBE-45F5-1ED9-7D2C70BE792C
 ms.technology: xamarin-android
@@ -7,70 +7,70 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: e61be6f0189eb825c15fd75764a16706e588ebc9
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020522"
 ---
-# <a name="how-content-providers-work"></a>內容提供者的工作方式
+# <a name="how-content-providers-work"></a>內容提供者的工作原理
 
-`ContentProvider` 互動中牽涉到兩個類別：
+互動中涉及兩個`ContentProvider`類:
 
-- **ContentProvider** &ndash; 會執行 API，以標準方式公開一組資料。 主要的方法包括查詢、插入、更新和刪除。
+- **內容提供程式**&ndash;實現以標準方式公開一組數據的 API。 主要方法是查詢、插入、更新和刪除。
 
-- **ContentResolver** &ndash; 與 `ContentProvider` 通訊的靜態 proxy，從相同的應用程式或從另一個應用程式中存取其資料。
+- **ContentResolver**&ndash;一種靜態代理,用於`ContentProvider`與通訊以造訪其資料,來自同一應用程式或其他應用程式。
 
-內容提供者通常會受到 SQLite 資料庫的支援，但 API 表示使用程式碼不需要知道任何關於基礎 SQL 的事項。 查詢是透過使用常數來參考資料行名稱的 Uri 來完成（以減少基礎資料結構的相依性），而且會傳回 `ICursor`，供取用的程式碼反復使用。
+內容提供程式通常由 SQLite 資料庫支援,但 API 意味著使用程式碼不需要瞭解有關基礎 SQL 的任何內容。 查詢透過 Uri 使用常量來引用列名稱(以減少對基礎資料結構的依賴項),並`ICursor`返回用於使用的代碼以反覆運算。
 
-## <a name="consuming-a-contentprovider"></a>使用 ContentProvider
+## <a name="consuming-a-contentprovider"></a>使用內容提供者
 
-`ContentProviders` 會透過在發行資料之應用程式的**androidmanifest.xml**中註冊的 Uri 來公開其功能。 有一個慣例，即公開的 Uri 和資料行應該以常數的形式提供，讓您可以輕鬆地系結至資料。 Android 的內建 `ContentProviders` 全都提供便利的類別，其中包含參考[`Android.Providers`](xref:Android.Provider)命名空間中之資料結構的常數。
+`ContentProviders`通過在發佈數據的應用程式的**AndroidManifest.xml**中註冊的 Uri 公開其功能。 有一種約定,Uri 和公開的數據列應作為常量可用,以便輕鬆綁定到數據。 Android 的內`ContentProviders`建 功能都提供了具有引用命名空間中數據結構的常[`Android.Providers`](xref:Android.Provider)量的便利類。
 
 ### <a name="built-in-providers"></a>內建提供者
 
-Android 使用 `ContentProviders`來提供各種系統和使用者資料的存取權：
+Android 提供存取廣泛的系統與使用者`ContentProviders`資料使用 :
 
-- *瀏覽器*&ndash; 書簽和瀏覽器歷程記錄（需要許可權 `READ_HISTORY_BOOKMARKS` 和/或 `WRITE_HISTORY_BOOKMARKS`）。
+- *瀏覽器*&ndash;書籤和瀏覽器歷史記錄(需要`READ_HISTORY_BOOKMARKS`許可權 和`WRITE_HISTORY_BOOKMARKS`/或 )。
 
-- *CallLog* &ndash; 在裝置上進行或接收的最近呼叫。
+- *呼叫日誌*&ndash;最近隨設備發出或接聽的呼叫。
 
-- *連絡人*&ndash; 使用者連絡人清單中的詳細資訊，包括人員、手機、相片 & 群組。
+- *連絡人*&ndash;從使用者的聯繫人清單中的詳細資訊,包括人員、電話、照片&組。
 
-- *MediaStore*使用者裝置的 &ndash; 內容：音訊（專輯、演出者、內容、播放清單）、影像（包括縮圖） & 影片。
+- *MediaStore*&ndash;用戶設備的內容:音訊(專輯、藝術家、流派、播放清單)、圖像(包括縮略圖)&视频。
 
-- *設定*會 &ndash; 全系統裝置設定和喜好設定。
+- *設定*&ndash;系統範圍的設備設置和首選項。
 
-- *UserDictionary*用於預測文字輸入的使用者定義字典 &ndash; 內容。
+- 使用者定義的字典的使用者*詞典*&ndash;內容用於預測文本輸入。
 
-- *語音信箱 &ndash; 語音*信箱訊息的歷程記錄。
+- *Voicemail*語音郵件郵件的語音郵件歷史&ndash;記錄。
 
-## <a name="classes-overview"></a>類別總覽
+## <a name="classes-overview"></a>類概述
 
-使用 `ContentProvider` 時所使用的主要類別如下所示：
+使用`ContentProvider`時使用 的主類如下所示:
 
-[內容提供者應用程式和取用應用程式互動的 ![類別圖表](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
+[![內容提供應用程式應用程式和使用應用程式互動的類圖](how-it-works-images/classdiagram1.png)](how-it-works-images/classdiagram1.png#lightbox)
 
-在此圖中，`ContentProvider` 會執行查詢，並註冊其他應用程式用來尋找資料的 URI。 `ContentResolver` 會做為 `ContentProvider` 的「proxy」（查詢、插入、更新和刪除方法）。 `SQLiteOpenHelper` 包含 `ContentProvider`所使用的資料，但不會直接公開給取用應用程式。
-`CursorAdapter` 會傳遞 `ContentResolver` 所傳回的資料指標，以便在 `ListView`中顯示。 `UriMatcher` 是在處理查詢時剖析 Uri 的 helper 類別。
+在此圖中,`ContentProvider`實現其他應用程式用於查找資料的查詢和寄存器 URI。 充當`ContentResolver``ContentProvider`的 「代理」(查詢、插入、更新和刪除方法)。 `SQLiteOpenHelper`包含使用的數據`ContentProvider`,但不會直接暴露給正在使用的應用。
+傳遞`CursorAdapter`返回的游標`ContentResolver`以顯示在`ListView`中。 是`UriMatcher`處理查詢時解析URI的幫助器類。
 
-每個類別的用途如下所述：
+下面描述了每個類的目的:
 
-- **ContentProvider** &ndash; 會執行此抽象類別的方法來公開資料。 API 可透過新增至類別定義的 Uri 屬性，提供給其他類別和應用程式使用。
+- **ContentProvider**&ndash;實現此抽象類的方法來公開數據。 API 透過新增為類定義的 Uri 屬性提供給其他類和應用程式。
 
-- **SQLiteOpenHelper** &ndash; 可協助執行 `ContentProvider`所公開的 SQLite 資料存放區。
+- **SQLiteOpenHelper**&ndash;協助存取 由公開的 SQLite 資料儲存`ContentProvider`。
 
-- **UriMatcher** &ndash; 在 `ContentProvider` 的執行中使用 `UriMatcher`，以協助管理用來查詢內容的 uri。
+- **UriMatcher**&ndash;`UriMatcher`在`ContentProvider`您的 實現中使用來説明管理用於查詢內容的 Uris。
 
-- **ContentResolver** &ndash; 取用程式碼會使用 `ContentResolver` 來存取 `ContentProvider` 實例。 這兩個類別會共同處理進程間的通訊問題，讓資料能夠輕鬆地在應用程式之間共用。 使用程式碼絕不會建立 `ContentProvider` 類別明確;相反地，您可以根據 `ContentProvider` 應用程式所公開的 Uri 來建立資料指標，來存取資料。
+- **內容解析器**&ndash;使用代碼`ContentResolver`使用`ContentProvider`訪問 實例。 這兩個類一起處理進程間通信問題,允許數據在應用程序之間輕鬆共用。 使用代碼從不顯式創建`ContentProvider`類;使用代碼從不顯式創建類。相反,通過基於`ContentProvider`應用程式公開的Uri創建遊標來訪問數據。
 
-- **CursorAdapter** &ndash; 使用 `CursorAdapter` 或 `SimpleCursorAdapter` 來顯示透過 `ContentProvider`存取的資料。
+- **游標卡卡使用**&ndash;`CursorAdapter``SimpleCursorAdapter`或顯示透過訪問`ContentProvider`存取的資料。
 
-`ContentProvider` API 可讓取用者對資料執行各種作業，例如：
+API`ContentProvider`允許使用者對資料執行各種操作,例如:
 
-- 查詢資料以傳回清單或個別記錄。
-- 修改個別記錄。
-- 加入新的記錄。
+- 查詢數據以返回清單或單個記錄。
+- 修改單個記錄。
+- 添加新記錄。
 - 刪除記錄。
 
-本檔包含的範例會使用系統提供的 `ContentProvider`，以及可執行自訂 `ContentProvider`的簡單唯讀範例。
+本文檔包含一個使用系統`ContentProvider`提供的範例,以及實現自`ContentProvider`訂的簡單唯讀示例。

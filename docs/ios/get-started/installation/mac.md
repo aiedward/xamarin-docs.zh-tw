@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 4c7ace8f2f1080126d019ed30a647ced98cbde56
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022513"
 ---
 # <a name="installing-and-configuring-xamarinios-on-a-mac"></a>在 Mac 上安裝及設定 Xamarin.iOS
@@ -21,7 +21,7 @@ ms.locfileid: "73022513"
 
 ## <a name="related-links"></a>相關連結
 
-- [行動裝置應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)
+- [行動應用程式開發簡介](~/cross-platform/get-started/introduction-to-mobile-development.md)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [建立開發佈建設定檔](https://developer.apple.com/library/ios/#documentation/ToolsLanguages/Conceptual/DevPortalGuide/CreatingandDownloadingDevelopmentProvisioningProfiles/CreatingandDownloadingDevelopmentProvisioningProfiles.html)
 - [使用組合管理來進行佈建](https://developer.apple.com/library/ios/#recipes/xcode_help-devices_organizer/articles/provision_device_for_development-generic.html)

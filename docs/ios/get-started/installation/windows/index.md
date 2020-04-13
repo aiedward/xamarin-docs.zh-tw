@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/16/2018
 ms.openlocfilehash: d638bf17d2a4ea23134a2d4ed335637f67e46ff7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022458"
 ---
 # <a name="installing-xamarinios-on-windows"></a>在 Windows 上安裝 Xamarin.iOS
@@ -21,13 +21,13 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 
 ::: zone pivot="windows"
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 若要在 Windows 上使用 Visual Studio 2019 建置 Xamarin.iOS 應用程式，您需要：
 
 - 已安裝 Visual Studio 2019 的 Windows 電腦。 這可以是實體或虛擬機器。
 
-  - [Windows 系統需求](~/cross-platform/get-started/requirements.md#windows-requirements)
+  - [Windows 系統要求](~/cross-platform/get-started/requirements.md#windows-requirements)
 
 - 已設定 Apple 組建工具和 Xamarin.iOS 的網路可存取 Mac。 Visual Studio 2019 透過網路連線存取這部電腦，以使用編譯原生 iOS 應用程式所需的 Apple 建置工具。
 
@@ -46,7 +46,7 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 
     Xamarin.iOS 會在獨立或虛擬機器上使用 Visual Studio 2019 Community、Professional 和 Enterprise 版本。
 
-    - [安裝 Visual Studio 2019](~/get-started/installation/windows.md)。
+    - [安裝視覺工作室 2019](~/get-started/installation/windows.md).
 
 2. 設定 Mac (安裝 Xcode 和 Visual Studio for Mac)
 
@@ -68,12 +68,12 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 若要在 Windows 上使用 Visual Studio 2017 建置 Xamarin.iOS 應用程式，則您需要：
 
 - 已安裝 Visual Studio 2017 的 Windows 電腦。 這可以是實體或虛擬機器。
-  - [Windows 系統需求](~/cross-platform/get-started/requirements.md#windows-requirements)
+  - [Windows 系統要求](~/cross-platform/get-started/requirements.md#windows-requirements)
 
 - 已設定 Apple 組建工具和 Xamarin.iOS 的網路可存取 Mac。 Visual Studio 2017 透過網路連線存取這部電腦，以使用用於編譯原生 iOS 應用程式所需的 Apple 組建工具。
   - [Mac 系統需求](~/cross-platform/get-started/requirements.md#macos-requirements)
@@ -86,7 +86,7 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 
     Xamarin.iOS 會在獨立或虛擬機器上使用 Visual Studio 2017 Community、Professional 和 Enterprise Edition。
 
-    - [安裝 Visual Studio 2017](~/get-started/installation/windows.md).
+    - [安裝視覺工作室 2017](~/get-started/installation/windows.md).
 
 2. 設定 Mac (安裝 Xcode 和 Visual Studio for Mac)
 
@@ -114,4 +114,4 @@ _本文說明如何設定 Windows 電腦和 Mac 組建主機來進行 Xamarin.iO
 
 - [Xamarin.iOS for Visual Studio 簡介](introduction-to-xamarin-ios-for-visual-studio.md)
 - [設定 Visual Studio 以進行 iOS 開發](config-options.md)
-- [裝置佈建](~/ios/get-started/installation/device-provisioning/index.md)
+- [裝置設定](~/ios/get-started/installation/device-provisioning/index.md)

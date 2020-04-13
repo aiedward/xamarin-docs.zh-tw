@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
 ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030228"
 ---
 # <a name="linking-xamarinios-apps"></a>連結 Xamarin.iOS 應用程式
 
 在建置應用程式時，Visual Studio for Mac 或 Visual Studio 會呼叫一個稱為 **mtouch**、內含受控碼連結器的工具。 此工具可用來從類別庫中移除應用程式未使用的功能。 其目標是要縮減應用程式的大小，只在其中裝載必要的位元。
 
-連結器會使用靜態分析來決定應用程式可能遵循的不同程式碼路徑。 此作業並不輕鬆，因為它必須仔細檢查每個組件，以確保不會移除任何可探索的項目。 根據預設，模擬器組建並不會啟用連結器，以便能在偵錯時加快建置時間。 不過，由於它能產生較小的應用程式，因此能夠加快 AOT 編譯和上傳至裝置的速度，依預設，所有裝置 (發行) 組建都會使用連結器。
+連結器會使用靜態分析來決定應用程式可能遵循的不同程式碼路徑。 此作業並不輕鬆，因為它必須仔細檢查每個組件，以確保不會移除任何可探索的項目。 根據預設，模擬器組建並不會啟用連結器，以便能在偵錯時加快建置時間。 不過，由於它能產生較小的應用程式，因此能夠加快 AOT 編譯和上傳至裝置的速度，依預設，所有裝置 (發行) 組建** 都會使用連結器。
 
 連結器是靜態工具，因此無法標記為用於透過反映所呼叫的包含類型和方法，也無法以動態方式具現化。 有幾個選項可解決這項限制。
 
@@ -26,22 +26,22 @@ ms.locfileid: "73030228"
 
 ## <a name="linker-behavior"></a>連結器行為
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-您可以透過 [專案選項] 中的 [連結器行為] 下拉式清單自訂連結程序。 若要存取此清單，請對 iOS 專案按兩下，然後瀏覽至 [iOS 組建] > [連結器選項]，如下所示：
+您可以透過 [專案選項]**** 中的 [連結器行為] 下拉式清單自訂連結程序。 若要存取此清單，請對 iOS 專案按兩下，然後瀏覽至 [iOS 組建] > [連結器選項]****，如下所示：
 
 [![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-您可以在 Visual Studio 中，透過 [專案屬性] 中的 [連結器行為] 下拉式清單自訂連結程序。
+您可以在 Visual Studio 中，透過 [專案屬性]**** 中的 [連結器行為] 下拉式清單自訂連結程序。
 
-請執行下列動作：
+執行下列動作：
 
-1. 以滑鼠右鍵按一下 [方案總管] 中的**專案名稱**，然後選取 [屬性]：
+1. 右鍵按一下**解決方案資源管理員**的**項目名稱**並選擇**屬性**:
 
     ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
-2. 在 [專案屬性] 中，選取 [iOS 組建]：
+2. 在 [專案屬性]**** 中，選取 [iOS 組建]****：
 
     ![](linker-images/linking02w.png "Select IOS Build")
 3. 遵循下列指示來變更連結選項。
@@ -52,7 +52,7 @@ ms.locfileid: "73030228"
 
 ### <a name="dont-link"></a>不要連結
 
-停用連結可確保不會有修改過的組件。 基於效能考量，這是 IDE 以 iOS 模擬器作為目標時的預設設定。 若為裝置組建，這只應作為每當連結器包含的錯誤會讓應用程式無法執行時的因應措施。 如果應用程式只能在搭配 -nolink 時運作，請提交[錯誤報告](https://github.com/xamarin/xamarin-macios/issues/new)。
+停用連結可確保不會有修改過的組件。 基於效能考量，這是 IDE 以 iOS 模擬器作為目標時的預設設定。 若為裝置組建，這只應作為每當連結器包含的錯誤會讓應用程式無法執行時的因應措施。 如果應用程式只能在搭配 -nolink** 時運作，請提交[錯誤報告](https://github.com/xamarin/xamarin-macios/issues/new)。
 
 此選項對應至使用命令列工具 mtouch 時的 *-nolink* 選項。
 
@@ -64,7 +64,7 @@ ms.locfileid: "73030228"
 
 這是最簡單的選項，因為不需要變更任何程式碼。 與連結所有項目不同的是，在此模式中連結器無法執行一些最佳化設定，因此您需要在需要連結所有項目的工作以及最終的應用程式大小之間做出取捨。
 
-此選項對應至使用命令列工具 mtouch 時的 -linksdk 選項。
+此選項對應至使用命令列工具 mtouch 時的 -linksdk** 選項。
 
 <a name="Link_all_assemblies" />
 
@@ -72,7 +72,7 @@ ms.locfileid: "73030228"
 
 在連結所有項目時，連結器可以使用其整組最佳化設定讓應用程式盡可能地小。 它會修改使用者程式碼，每當程式碼使用功能的方式無法為連結器的靜態分析所偵測到，就可能導致程式碼損毀。 在這類情況下 (例如 Web 服務、反映或序列化)，應用程式可能需要進行一些調整才能連結所有項目。
 
-此選項對應至使用命令列工具 **mtouch** 時的 -linkall 選項。
+此選項對應至使用命令列工具 **mtouch** 時的 -linkall** 選項。
 
 <a name="Controlling_the_Linker" />
 
@@ -116,7 +116,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 此選項對應至使用命令列工具 mtouch 時的 `--linkskip` 選項。
 
-在使用 [連結所有組件] 選項時，如果您想要告訴連結器略過整個組件，請將下列內容放入最上層組件的 [其他 mtouch 引數] 選項中：
+在使用 [連結所有組件]**** 選項時，如果您想要告訴連結器略過整個組件，請將下列內容放入最上層組件的 [其他 mtouch 引數]**** 選項中：
 
 ```csharp
 --linkskip=NameOfAssemblyToSkipWithoutFileExtension
@@ -128,7 +128,7 @@ public sealed class PreserveAttribute : System.Attribute {
 --linkskip=NameOfFirstAssembly --linkskip=NameOfSecondAssembly
 ```
 
-沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數] 文字欄位內會提供此選項。 (例如， *--linkskip=mscorlib* 不會連結 mscorlib.dll，但會連結解決方案中的其他組件)。
+沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數]**** 文字欄位內會提供此選項。 (例如， *--linkskip=mscorlib* 不會連結 mscorlib.dll，但會連結解決方案中的其他組件)。
 
 <a name="Disabling_Link_Away" />
 
@@ -136,9 +136,9 @@ public sealed class PreserveAttribute : System.Attribute {
 
 連結器會移除裝置上不太可能用到的程式碼，例如不受支援或不允許。 在極少數情況下，應用程式或程式庫可能會相依於這個 (不論是否運作) 的程式碼。 自 Xamarin.iOS 5.0.1 起，即可指示連結器略過此最佳化。
 
-此選項對應至使用命令列工具 mtouch 時的 -nolinkaway 選項。
+此選項對應至使用命令列工具 mtouch 時的 -nolinkaway** 選項。
 
-沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數] 文字欄位內會提供此選項。 (例如， *--nolinkaway* 不會移除額外的程式碼 (大約 100kb))。
+沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數]**** 文字欄位內會提供此選項。 (例如， *--nolinkaway* 不會移除額外的程式碼 (大約 100kb))。
 
 ### <a name="marking-your-assembly-as-linker-ready"></a>將組件標示為已可供連結器使用
 
@@ -146,7 +146,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 這種情況常常發生，因為使用者不想要以手動方式在其程式碼中新增 `[Preserve]` 屬性。  副作用是不會連結第三方程式庫，這通常算是不錯的預設值，因為我們無法知道第三方程式庫是否適合搭配連結器使用。
 
-如果您的專案中有程式庫，或者您是可重複使用之程式庫的開發人員，當您想要讓連結器將您的組件視為可連結時，您只需要新增組件層級的屬性 [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute) 即可，如下所示：
+如果專案中有一個庫,或者您是可重用庫的開發人員,並且希望連結器將程式集視為可連結的,則所有要做的就是添加程式集級屬性[`LinkerSafe`](xref:Foundation.LinkerSafeAttribute),如下所示:
 
 ```csharp
 [assembly:LinkerSafe]
@@ -167,6 +167,6 @@ class LinkerSafeAttribute : System.Attribute {}
 
 ## <a name="related-links"></a>相關連結
 
-- [自訂連結器組態](~/cross-platform/deploy-test/linker.md)
+- [自訂連結器設定](~/cross-platform/deploy-test/linker.md)
 - [在 Mac 上連結](~/mac/deploy-test/linker.md)
 - [在 Android 上連結](~/android/deploy-test/linker.md)

@@ -1,6 +1,6 @@
 ---
-title: 第11章的摘要。 可系結的基礎結構
-description: 使用 Xamarin 建立 Mobile Apps：第11章的摘要。 可系結的基礎結構
+title: 第11章摘要。 可結合基礎架構
+description: 使用 Xamarin.表單創建行動應用程式:第 11 章摘要。 可結合基礎架構
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
@@ -8,91 +8,91 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: f9e3326c0f55469cfa84a019a674679d82dfc007
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "61334296"
 ---
-# <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第11章的摘要。 可系結的基礎結構
+# <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第11章摘要。 可結合基礎架構
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
 
-每C#一位程式設計C#人員都熟悉*屬性*。 屬性包含*set*存取子和（或） *get*存取子。 它們通常稱為 Common Language Runtime 的*CLR 屬性*。
+每個C#程式師都熟悉C#*屬性*。 屬性包含*集*訪問器和/或*獲取*訪問器。 它們通常是通用語言執行時的*CLR 屬性*。
 
-Xamarin 會定義一個增強的屬性定義，稱為可系結的*屬性*，由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)類別封裝，並由[`BindableObject`](xref:Xamarin.Forms.BindableObject)類別支援。 這些類別是相關的，但截然不同： `BindableProperty` 是用來定義屬性本身;`BindableObject` 就像 `object`，因為它是定義可系結屬性之類別的基類。
+Xamarin.Forms 定義了一個增強的屬性定義,稱為[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)由 類封裝[`BindableObject`](xref:Xamarin.Forms.BindableObject)並由 類支援的*可綁定屬性*。 這些類是相關的,但非常不同:`BindableProperty`用於定義屬性本身;`BindableObject`就像在它`object`定義可綁定屬性的類的基類中一樣。
 
-## <a name="the-xamarinforms-class-hierarchy"></a>Xamarin. Forms 類別階層架構
+## <a name="the-xamarinforms-class-hierarchy"></a>Xamarin.Forms 類別結構
 
-[**ClassHierarchy**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy)範例會使用反映來顯示 Xamarin 的類別階層架構，並示範此階層中 `BindableObject` 所扮演的重要角色。 `BindableObject` 衍生自 `Object`，而是[`VisualElement`](xref:Xamarin.Forms.VisualElement)從中衍生[`Element`](xref:Xamarin.Forms.Element)的父類別。 這是要[`Page`](xref:Xamarin.Forms.Page)和[`View`](xref:Xamarin.Forms.View)的父類別，也就是要[`Layout`](xref:Xamarin.Forms.Layout)的父類別：
+[**ClassHierarchy**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy)示例使用反射來顯示 Xamarin.Forms 的類層次結構,並演示此`BindableObject`層次結構中 所扮演的關鍵作用。 `BindableObject`派生自`Object`和[`Element`](xref:Xamarin.Forms.Element)[`VisualElement`](xref:Xamarin.Forms.VisualElement)是 派生到的父類。 這是[`Page`](xref:Xamarin.Forms.Page)到[`View`](xref:Xamarin.Forms.View)和 的父類[`Layout`](xref:Xamarin.Forms.Layout),它是 要 的父類:
 
-[![類別階層共用的三向螢幕擷取畫面](images/ch11fg01-small.png "類別階層共用")](images/ch11fg01-large.png#lightbox "類別階層共用")
+[![類別結構共用的三重螢幕截圖](images/ch11fg01-small.png "類別結構共用")](images/ch11fg01-large.png#lightbox "類別結構共用")
 
-## <a name="a-peek-into-bindableobject-and-bindableproperty"></a>查看 BindableObject 和 BindableProperty
+## <a name="a-peek-into-bindableobject-and-bindableproperty"></a>窺視可結合物件及可結合屬性
 
-在衍生自的類別中 `BindableObject` 許多 CLR 屬性稱為「受支援」可系結屬性。 例如，`Label` 類別的[`Text`](xref:Xamarin.Forms.Label.Text)屬性是 CLR 屬性，但 `Label` 類別也會定義名為[`TextProperty`](xref:Xamarin.Forms.Label.TextProperty)類型為 `BindableProperty`的公用靜態唯讀欄位。
+在派生自`BindableObject`許多 CLR 屬性的類中,表示由可綁定屬性「備份」。。 [`Text`](xref:Xamarin.Forms.Label.Text)例如,`Label`類的屬性是 CLR`Label`屬性, 但類[`TextProperty`](xref:Xamarin.Forms.Label.TextProperty)還定義了名為的公共靜態唯`BindableProperty`讀欄位,
 
-應用程式可以正常設定或取得 `Label` 的 `Text` 屬性，或者應用程式可以藉由呼叫 `BindableObject` 引數所定義的[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))方法，來設定 `Text`。`Label.TextProperty` 同樣地，應用程式可以藉由呼叫[`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty))方法，再次使用 `Label.TextProperty` 引數來取得 `Text` 屬性的值。 這是由[**PropertySettings**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PropertySettings)範例所示範。
+應用程式可以設定或取得`Text`正常的屬性`Label`,或者應用程式可以透過呼`Text`[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object))`BindableObject``Label.TextProperty`叫參數定義的方法來設定 。 同樣,應用程式可以通過調`Text`[`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty))用 方法(`Label.TextProperty`再次使用 參數)來獲取屬性的值。 屬性[**設置**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PropertySettings)範例演示了這一點。
 
-事實上，`Text` CLR 屬性會使用 `BindableObject` 與 `Label.TextProperty` 靜態屬性一起定義的 `SetValue` 和 `GetValue` 方法，完全實作為實。
+實際上`Text`,CLR`SetValue`屬性完全`GetValue``BindableObject``Label.TextProperty`使用與靜態屬性結合定義和 的方法實現。
 
-`BindableObject` 和 `BindableProperty` 提供下列支援：
+`BindableObject`並為`BindableProperty`:
 
 - 提供屬性預設值
-- 儲存其目前的值
+- 儲存目前的目前值
 - 提供驗證屬性值的機制
-- 維護單一類別中相關屬性間的一致性
+- 保持單個類中相關屬性之間的一致性
 - 回應屬性變更
-- 當屬性即將變更或變更時觸發通知
-- 支援資料系結
-- 支援的樣式
+- 當屬性即將變更或已變更時觸發通知
+- 支援資料繫結
+- 支援樣式
 - 支援動態資源
 
-每當可系結屬性所支援的屬性變更時，`BindableObject` 會引發[`PropertyChanged`](xref:Xamarin.Forms.BindableObject.PropertyChanged)事件來識別已變更的屬性。 當屬性設定為相同的值時，不會引發此事件。
+每當由可綁定屬性支援的屬性發生更改時,`BindableObject`將觸發標識[`PropertyChanged`](xref:Xamarin.Forms.BindableObject.PropertyChanged)已更改的屬性的事件。 當屬性設置為相同的值時,不會觸發此事件。
 
-某些屬性不是由可系結屬性所支援，而某些 Xamarin. Forms 類別 &mdash; 例如 `Span` &mdash; 不是衍生自 `BindableObject`。 只有衍生自 `BindableObject` 的類別可以支援可系結屬性，因為 `BindableObject` 會定義 `SetValue` 和 `GetValue` 方法。
+某些屬性&mdash;不由可綁定屬性支援,某些 Xamarin.窗體類`Span`&mdash;(如不派`BindableObject`生自 ) 只有派生`BindableObject`自的類才能支援可綁定屬性`BindableObject`, 因為定義`GetValue``SetValue`和。
 
-因為 `Span` 不是衍生自 `BindableObject`，所以其屬性 &mdash; （例如 `Text` &mdash;）不會受到可系結屬性的支援。 這就是為什麼 `Span` 的 `Text` 屬性 `DynamicResource` 設定在上一章的[**DynamicVsStatic**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic)範例中引發例外狀況的原因。 [**DynamicVsStaticCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode)範例會示範如何使用 `Element`所定義的[`SetDynamicResource`](xref:Xamarin.Forms.Element.SetDynamicResource(Xamarin.Forms.BindableProperty,System.String))方法，在程式碼中設定動態資源。 第一個引數是 `BindableProperty`類型的物件。
+因為`Span``BindableObject`不派生自 ,&mdash;因此其 屬性`Text`&mdash;(如) 都不是由可綁定屬性支援的。 `DynamicResource`這就是為什麼上一章中的`Text` [**DynamicVStatic**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic)示例中`Span`對 屬性 設置引發異常的原因。 [**DynamicVStaticCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode)範例示範如何使用[`SetDynamicResource`](xref:Xamarin.Forms.Element.SetDynamicResource(Xamarin.Forms.BindableProperty,System.String))`Element`定義的方法在代碼中設置動態資源。 第一個參數是類型的`BindableProperty`物件。
 
-同樣地，`BindableObject` 所定義的[`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))方法具有 `BindableProperty`類型的第一個引數。
+同樣,[`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))定義`BindableObject`的方法具有`BindableProperty`type 的第一個參數。
 
-## <a name="defining-bindable-properties"></a>定義可系結屬性
+## <a name="defining-bindable-properties"></a>定義可結合屬性
 
-您可以使用靜態[`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate))方法來定義您自己的可系結屬性，以建立 `BindableProperty`類型的靜態唯讀欄位。
+可以使用靜態[`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate))方法定義自己的可綁定屬性,以創建類型`BindableProperty`的 靜態唯讀欄位。
 
-這會在[**FormsBook 工具**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫的[`AltLabel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AltLabel.cs)類別中示範。 類別衍生自 `Label`，可讓您指定以點為單位的字型大小。 它會在[**PointSizedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PointSizedText)範例中示範。
+這在[`AltLabel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AltLabel.cs)[**Xamarin.FormsBook.工具套件**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫中的類中演示。 該類派生自`Label`,允許您以磅指定字體大小。 它在[**PointSized 文字**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PointSizedText)範例中演示。
 
-需要 `BindableProperty.Create` 方法的四個引數：
+`BindableProperty.Create`該方法需要四個參數:
 
-- `propertyName`：屬性的文字名稱（與 CLR 屬性名稱相同）
-- `returnType`： CLR 屬性的類型
-- `declaringType`：宣告屬性之類別的型別
-- `defaultValue`：屬性的預設值
+- `propertyName`:屬性的文字名稱(與 CLR 屬性名稱相同)
+- `returnType`:CLR 屬性的類型
+- `declaringType`:宣告屬性的類別類型
+- `defaultValue`:屬性的預設值
 
-因為 `defaultValue` 的類型 `object`，所以編譯器必須能夠判斷預設值的類型。 例如，如果 `double``returnType`，則 `defaultValue` 應設定為類似0.0 而不是只有0的專案，否則類型不相符將會在執行時間觸發例外狀況。
+因為`defaultValue``object`是類型,因此編譯器必須能夠確定預設值的類型。 例如,如果`returnType`為`double``defaultValue`, 應設置為 0.0 而不是僅 0 之類的內容,否則類型不匹配將在運行時觸發異常。
 
-可系結的屬性也很常見，包括：
+可結合屬性還包括:
 
-- `propertyChanged`：當屬性變更值時，所呼叫的靜態方法。 第一個引數是類別的實例，其屬性已變更。
+- `propertyChanged`:屬性更改值時調用的靜態方法。 第一個參數是屬性已更改的類的實例。
 
-`BindableProperty.Create` 的其他引數並不常見：
+要的其他參數`BindableProperty.Create`並不常見:
 
-- `defaultBindingMode`：用於與資料系結的連接（如第[**16 章所討論）。資料**](chapter16.md)系結）
-- `validateValue`：用來檢查有效值的回呼
-- `propertyChanging`：回呼，指出屬性即將變更的時間
-- `coerceValue`：將設定值強制轉型為另一個值的回呼
-- `defaultValueCreate`：用來建立預設值的回呼，無法在類別的實例之間共用（例如，集合）
+- `defaultBindingMode`: 用於與資料綁定相關的(如第[**16 章所述)。資料繫結**](chapter16.md))
+- `validateValue`:用於檢查有效值的回調
+- `propertyChanging`: 回檔,指示屬性何時即將更改
+- `coerceValue`:將集值強制為另一個值的回調
+- `defaultValueCreate`:呼叫,以建立無法在類的實體(例如集合)之間共用的預設值
 
-### <a name="the-read-only-bindable-property"></a>唯讀可系結屬性
+### <a name="the-read-only-bindable-property"></a>唯讀可結合屬性
 
-可系結屬性可以是唯讀的。 建立唯讀可系結屬性需要呼叫靜態方法[`BindableProperty.CreateReadOnly`](xref:Xamarin.Forms.BindableProperty.CreateReadOnly(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) ，以定義[`BindablePropertyKey`](xref:Xamarin.Forms.BindablePropertyKey)類型的私用靜態唯讀欄位。
+可綁定屬性可以是唯讀的。 創建唯讀可綁定屬性需要呼叫靜態方法[`BindableProperty.CreateReadOnly`](xref:Xamarin.Forms.BindableProperty.CreateReadOnly(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate))來定義類型[`BindablePropertyKey`](xref:Xamarin.Forms.BindablePropertyKey)的專用靜態唯讀欄位。
 
-然後，將 CLR 屬性 `set` accesor 定義為 `private`，以 `BindablePropertyKey` 物件呼叫[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindablePropertyKey,System.Object))多載。 這可避免將屬性設定在類別之外。
+然後,將`set`CLR 屬性`private`accor[`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindablePropertyKey,System.Object))`BindablePropertyKey`定義為調用 物件重載。 這可以防止在類之外設置該屬性。
 
-這會在[**BaskervillesCount**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/BaskervillesCount)範例中使用的[`CountedLabel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CountedLabel.cs)類別中示範。
+這在[**巴斯克維爾統計**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/BaskervillesCount)示[`CountedLabel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CountedLabel.cs)例 中使用的類中演示。
 
 ## <a name="related-links"></a>相關連結
 
-- [第11章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf)
-- [第11章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
+- [第11章 全文(PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf)
+- [第11章 樣本](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
 - [可繫結的屬性](~/xamarin-forms/xaml/bindable-properties.md)

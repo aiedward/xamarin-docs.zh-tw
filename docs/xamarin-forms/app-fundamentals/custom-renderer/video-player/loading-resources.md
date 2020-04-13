@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 4573d58f80b9c168f5d0a8a3f72beb64c29b1703
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771842"
 ---
 # <a name="loading-application-resource-videos"></a>載入應用程式資源影片
@@ -149,7 +149,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="playing-the-resource-file"></a>播放資源檔
 
-**VideoPlayerDemos** 解決方案中的 [Play Video Resource] \(播放視訊資源\) 頁面會使用 `OnPlatform` 類別指定每個平台的視訊檔案：
+**VideoPlayerDemos** 解決方案中的 [Play Video Resource] \(播放視訊資源\)**** 頁面會使用 `OnPlatform` 類別指定每個平台的視訊檔案：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -177,10 +177,10 @@ namespace FormsVideoLibrary.UWP
 
 以下是正在執行的頁面：
 
-[![播放視訊資源](loading-resources-images/playvideoresource-small.png "播放視訊資源")](loading-resources-images/playvideoresource-large.png#lightbox "播放視訊資源")
+[![播放影片資源](loading-resources-images/playvideoresource-small.png "播放影片資源")](loading-resources-images/playvideoresource-large.png#lightbox "播放影片資源")
 
 您現在已了解如何[從 Web URI 載入影片](web-videos.md)，以及如何播放內嵌的資源。 此外，您可以[從裝置的影片櫃載入影片](accessing-library.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) (視訊播放程式示範 (範例))
+- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

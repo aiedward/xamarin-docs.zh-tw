@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/29/2016
 ms.openlocfilehash: bfa8c2cdcdcd6305618c0cd8e9cb69bde59b4f0b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030196"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 效能
@@ -21,11 +21,11 @@ ms.locfileid: "73030196"
 本文件說明在 Xamarin.iOS 應用程式中用來改善效能和記憶體使用量的技術。
 
 > [!NOTE]
-> 在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中探討可改善記憶體使用情況的非平台專用技術，以及使用 Xamarin 平台建置之應用程式的效能。
+>  在閱讀本文之前，您應該先閱讀[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)，其中討論了非平台的特定技術來改善記憶體使用量和使用 Xamarin 平台建置之應用程式的效能。
 
 ## <a name="avoid-strong-circular-references"></a>避免強式循環參考
 
-在某些情況下，可能會建立強式參考循環，這會防止記憶體回收行程回收物件的記憶體。 例如，假設 [`NSObject`](xref:Foundation.NSObject) 衍生的子類別 (例如繼承自 [`UIView`](xref:UIKit.UIView) 的類別) 新增至 `NSObject` 衍生的容器，並從 Objective-C 進行強式參考，如下列程式碼範例所示：
+在某些情況下，可能會建立強式參考循環，這會防止記憶體回收行程回收物件的記憶體。 例如,假設派生子[`NSObject`](xref:Foundation.NSObject)類(如[`UIView`](xref:UIKit.UIView)從 繼承的類)`NSObject`添加到 派生容器並從 Objective-C 中強引用的情況,如以下代碼範例所示:
 
 ```csharp
 class Container : UIView
@@ -56,7 +56,7 @@ container.AddSubview (new MyView (container));
 
 當此程式碼建立 `Container` 執行個體時，C# 物件將有 Objective-C 物件的強式參考。 同樣地，`MyView` 執行個體也會有 Objective-C 物件的強式參考。
 
-此外，呼叫 `container.AddSubview` 將會增加非受控 `MyView` 執行個體上的參考計數。 當發生這種情況時，Xamarin.iOS 執行階段會建立 `GCHandle` 執行個體以保留受控程式碼中的 `MyView` 運作，因為無法保證任何受控物件會保留其參考。 從受控程式碼的觀點來看，會在 [`AddSubview`](xref:UIKit.UIView.AddSubview(UIKit.UIView)) 呼叫 (若不是針對 `GCHandle`) 之後回收 `MyView` 物件。
+此外，呼叫 `container.AddSubview` 將會增加非受控 `MyView` 執行個體上的參考計數。 當發生這種情況時，Xamarin.iOS 執行階段會建立 `GCHandle` 執行個體以保留受控程式碼中的 `MyView` 運作，因為無法保證任何受控物件會保留其參考。 從託管代碼的角度來看,如果不是`MyView`針對,則物件將在[`AddSubview`](xref:UIKit.UIView.AddSubview(UIKit.UIView))呼叫後回收`GCHandle`。
 
 非受控 `MyView` 物件會有指向受控物件的 `GCHandle`，稱為*強式連結*。 受控物件將包含對 `Container` 執行個體的參考。 接著，`Container` 執行個體會有對 `MyView` 物件的受控參考。
 
@@ -101,11 +101,11 @@ container.AddSubview (new MyView (container));
 
 在此，所包含的物件不讓父項保持運作。 但是，父項透過對 `container.AddSubView` 的呼叫保持子項運作。
 
-這也會發生在使用委派或資料來源模式的 iOS API 中，其中對等類別將包含實作；例如，設定 [`Delegate`](xref:UIKit.UITableView.Delegate*) 時
-屬性或 [`DataSource`](xref:UIKit.UITableView.DataSource*) 時
-在 [`UITableView`](xref:UIKit.UITableView) 類別中。
+這在使用委託或數據源模式的 iOS API 中也發生,其中對等類包含實現;例如,在設定[`Delegate`](xref:UIKit.UITableView.Delegate*)
+屬性或[`DataSource`](xref:UIKit.UITableView.DataSource*)
+在課堂上[`UITableView`](xref:UIKit.UITableView)。
 
-在類別純粹是為了實作通訊協定而建立的情況下 (例如 [`IUITableViewDataSource`](xref:UIKit.IUITableViewDataSource))，您可以僅實作類別中的介面並覆寫方法，然後將 `DataSource` 屬性指派給 `this`，而非建立子類別。
+對於純粹為了實現協議而創建的類,例如[`IUITableViewDataSource`](xref:UIKit.IUITableViewDataSource), 可以做的不是建立子類,只需在類中實現介面並重寫 方法`DataSource`,並將`this`屬性分配給 。
 
 #### <a name="weak-attribute"></a>弱式屬性
 
@@ -219,7 +219,7 @@ class MyChild : UIView
 
 ## <a name="optimize-table-views"></a>最佳化資料表檢視
 
-針對 [`UITableView`](xref:UIKit.UITableView) 執行個體，使用者期望有順暢的捲動和快速載入時間。 不過，當資料格包含深層巢狀檢視階層，或資料格包含複雜配置時，捲動效能可能會受到影響。 不過，有可用來避免 `UITableView` 效能不佳的技巧：
+使用者期望[`UITableView`](xref:UIKit.UITableView)實例平滑滾動和快速載入時間。 不過，當資料格包含深層巢狀檢視階層，或資料格包含複雜配置時，捲動效能可能會受到影響。 不過，有可用來避免 `UITableView` 效能不佳的技巧：
 
 - 重複使用資料格。 如需詳細資訊，請參閱[重複使用資料格](#reuse-cells)。
 - 減少子檢視數目。
@@ -228,11 +228,11 @@ class MyChild : UIView
 - 讓資料格和任何其他檢視不透明。
 - 避免影像縮放和漸層。
 
-這些技巧可共同協助保持 [`UITableView`](xref:UIKit.UITableView) 執行個體捲動順暢。
+總之,這些技術可以説明保持[`UITableView`](xref:UIKit.UITableView)實例平滑滾動。
 
 ### <a name="reuse-cells"></a>重複使用資料格
 
-當顯示 [`UITableView`](xref:UIKit.UITableView) 中數百個資料列，畫面上一次僅能顯示少數資料列時，卻建立了數百個 [`UITableViewCell`](xref:UIKit.UITableViewCell) 物件，是一種浪費記憶體的方式。 反之，僅有畫面上看見的資料格可以載入記憶體，且**內容**載入至這些重複使用的資料格中。 這可防止具現化數百個額外的物件，進而節省時間與記憶體。
+在 中顯示數百行[`UITableView`](xref:UIKit.UITableView)時 ,如果螢幕上只顯示少量物件,則[`UITableViewCell`](xref:UIKit.UITableViewCell)創建數 百個對象會浪費記憶體。 反之，僅有畫面上看見的資料格可以載入記憶體，且**內容**載入至這些重複使用的資料格中。 這可防止具現化數百個額外的物件，進而節省時間與記憶體。
 
 因此，當資料格從畫面消失時，其檢視可以放置在佇列中以供重複使用，如下列程式碼範例所示：
 
@@ -250,13 +250,13 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-當使用者捲動時，[`UITableView`](xref:UIKit.UITableView) 會呼叫 `GetCell` 覆寫，來要求要顯示的新檢視。 此覆寫會接著呼叫 [`DequeueReusableCell`](xref:UIKit.UITableView.DequeueReusableCell(Foundation.NSString)) 方法，且如果有可重複使用的資料格，將會傳回。
+當使用者滾動時,[`UITableView`](xref:UIKit.UITableView)調`GetCell`用 重寫以請求顯示新檢視。 然後,[`DequeueReusableCell`](xref:UIKit.UITableView.DequeueReusableCell(Foundation.NSString))此重寫調用 方法,如果單元格可供重用,則將返回它。
 
 如需詳細資訊，請參閱[使用資料填入資料表](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)中的[資料格重複使用](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)。
 
 ## <a name="use-opaque-views"></a>使用不透明檢視
 
-請確定沒有定義透明度的任何檢視都已設定其 [`Opaque`](xref:UIKit.UIView.Opaque) 屬性。 這可確保檢視由繪製系統以最佳方式呈現。 當檢視內嵌在 [`UIScrollView`](xref:UIKit.UIScrollView) 中，或者是複雜動畫的一部分時，這點非常重要。 否則繪製系統會合成檢視與其他內容，這可能會明顯影響效能。
+確保未定義任何透明度的檢視都設置了其[`Opaque`](xref:UIKit.UIView.Opaque)屬性。 這可確保檢視由繪製系統以最佳方式呈現。 當檢視嵌入在[`UIScrollView`](xref:UIKit.UIScrollView)中或是複雜動畫的一部分時,這一點尤其重要。 否則繪製系統會合成檢視與其他內容，這可能會明顯影響效能。
 
 ## <a name="avoid-fat-xibs"></a>避免 FAT XIB
 
@@ -264,7 +264,7 @@ class MyTableSource : UITableViewSource
 
 ## <a name="optimize-image-resources"></a>最佳化影像資源
 
-影像是應用程式所使用之資源中成本最高的一種資源，且經常以高解析度擷取。 因此，當在 [`UIImageView`](xref:UIKit.UIImageView) 中顯示應用程式套件組合中的影像時，請確定影像和 `UIImageView` 大小相同。 在執行階段縮放影像可以是昂貴的作業，特別是如果 `UIImageView` 內嵌在 [`UIScrollView`](xref:UIKit.UIScrollView) 中時。
+影像是一些應用程式所使用成本最高的資源，且經常以高解析度擷取。 因此,在中從應用的捆綁包[`UIImageView`](xref:UIKit.UIImageView)中顯示圖像時,請確保圖像`UIImageView`和大小相同。 在執行時縮放映像可能是一項昂貴的操作,尤其是在 嵌`UIImageView`入 在[`UIScrollView`](xref:UIKit.UIScrollView)中時 。
 
 如需詳細資訊，請參閱[跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)指南中的[最佳化影像資源](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)。
 
@@ -278,7 +278,7 @@ class MyTableSource : UITableViewSource
 
 遊戲通常具有緊密迴圈，以執行遊戲邏輯和更新畫面。 常見的畫面播放速率，範圍從每秒 30 畫面格數到每秒 60 畫面格數。 有些開發人員會覺得他們每秒應該盡可能更新畫面，結合他們的遊戲模擬與畫面更新，且可能會想要超越每秒 60 畫面格數。
 
-不過，顯示伺服器執行畫面更新的上限為每秒 60 次。 因此，嘗試透過比此限制更快的速度更新畫面，可能會造成畫面撕裂和微間斷的情形。 所以最好先將程式碼結構化，這樣一來畫面更新才能與顯示更新同步處理。 這可以透過使用 [`CoreAnimation.CADisplayLink`](xref:CoreAnimation.CADisplayLink) 類別來完成，這是適合以每秒 60 畫面格數執行之視覺效果和遊戲的計時器。
+不過，顯示伺服器執行畫面更新的上限為每秒 60 次。 因此，嘗試透過比此限制更快的速度更新畫面，可能會造成畫面撕裂和微間斷的情形。 所以最好先將程式碼結構化，這樣一來畫面更新才能與顯示更新同步處理。 這可以通過[`CoreAnimation.CADisplayLink`](xref:CoreAnimation.CADisplayLink)使用 類來實現,該類是適合可視化和以每秒 60 幀運行的遊戲的計時器。
 
 ## <a name="avoid-core-animation-transparency"></a>避免核心動畫透明度
 
@@ -290,8 +290,8 @@ class MyTableSource : UITableViewSource
 
 ## <a name="summary"></a>總結
 
-本文章會說明與討論用來增加以 Xamarin.iOS 建置之應用程式效能的技巧。 這些技巧可共同大幅減少 CPU 所執行的工作量和應用程式所耗用的記憶體數量。
+本文章會說明與討論用來增加以 Xamarin.iOS 建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 
 ## <a name="related-links"></a>相關連結
 
-- [跨平台效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [跨平臺效能](~/cross-platform/deploy-test/memory-perf-best-practices.md)

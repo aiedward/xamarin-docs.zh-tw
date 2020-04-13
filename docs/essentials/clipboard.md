@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Essentials:剪貼簿
+title: Xamarin.Essentials：剪貼簿
 description: 本文件描述 Xamarin.Essentials 中的剪貼簿類別，可讓您複製文字並將其貼至應用程式之間的系統剪貼簿。
 ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
 author: jamesmontemagno
@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 01/06/2020
 ms.custom: video
 ms.openlocfilehash: 0b5eaf3feb608a352f8f9c97bdddac55c89d4f94
-ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77545175"
 ---
-# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials:剪貼簿
+# <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials：剪貼簿
 
 **剪貼簿**類別可讓您在應用程式之間複製文字，並貼到系統剪貼簿。
 
@@ -47,7 +47,7 @@ await Clipboard.SetTextAsync("Hello World");
 var text = await Clipboard.GetTextAsync();
 ```
 
-每當 [剪貼簿] 中的任何內容變更時，都會觸發事件：
+每當剪貼簿的任何內容發生更改時,都會觸發事件:
 
 ```csharp
 public class ClipboardTest

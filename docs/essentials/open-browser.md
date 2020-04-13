@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: fe8730ba6bc664269d79c550fb4e0abef7767fe0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70765005"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials:Browser
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Browser
 
 **Browser** 類別可讓應用程式在最佳化系統偏好瀏覽器或外部瀏覽器中開啟網頁連結。
 
@@ -42,7 +42,7 @@ public class BrowserTest
 }
 ```
 
-當瀏覽器已由使用者「啟動」但未必由其「關閉」後，會傳回此方法。  `bool` 結果會指出是否啟動成功。
+當瀏覽器已由使用者「啟動」__ 但未必由其「關閉」__ 後，會傳回此方法。  `bool` 結果會指出是否啟動成功。
 
 ## <a name="customization"></a>自訂
 
@@ -64,7 +64,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 「啟動模式」決定瀏覽器的啟動方式：
 
@@ -76,7 +76,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 將使用 `Intent` 來要求透過系統一般瀏覽器來開啟 Uri。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 ## <a name="system-preferred"></a>系統偏好
 
@@ -86,7 +86,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 將使用主應用程式上的標準 `OpenUrl` 來在應用程式之外啟動預設瀏覽器。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 一律會啟動使用者的預設瀏覽器，不論 `BrowserLaunchMode` 為何。
 

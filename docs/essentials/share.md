@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Essentials:共用
+title: Xamarin.Essentials：Share
 description: Xamarin.Essentials 中的 Share 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 01/06/2020
 ms.custom: video
 ms.openlocfilehash: f964967dce0dbb7e49d52a7f865b0fe8a9957bbe
-ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77545197"
 ---
-# <a name="xamarinessentials-share"></a>Xamarin.Essentials:共用
+# <a name="xamarinessentials-share"></a>Xamarin.Essentials：Share
 
 **Share** 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
 
@@ -79,7 +79,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ## <a name="presentation-location"></a>展示位置
 
-在 iPadOS 要求共用時，您可以選擇在快顯控制項中展示。 您可以使用 `PresentationSourceBounds` 屬性來指定位置：
+在 iPadOS 上請求共用時,您可以呈現在流行控制件中。 您可以使用 屬性指定`PresentationSourceBounds`位置 :
 
 ```csharp
 await Share.RequestAsync(new ShareFileRequest

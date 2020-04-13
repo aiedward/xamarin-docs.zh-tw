@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials:手電筒
+title: Xamarin.Essentials：手電筒
 description: 本文件描述 Xamarin.Essentials 中的手電筒類別，可以開啟或關閉裝置的相機閃光燈，將其變為手電筒。
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870101"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61075575"
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:手電筒
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials：手電筒
 
 **手電筒**類別可以開啟或關閉裝置相機閃光燈，將其變為手電筒。
 
@@ -22,11 +22,11 @@ ms.locfileid: "58870101"
 
 若要存取**手電筒**功能，需要下列平台特定設定。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 需要手電筒和相機的權限，並且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties]**** 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
@@ -35,14 +35,14 @@ ms.locfileid: "58870101"
 
 或更新 Android 資訊清單：
 
-開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容。
+在 **「屬性」** 資料夾下打開**AndroidManifest.xml**檔,並在**清單**節點內添加以下內容。
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並選取 [手電筒] 和 [相機] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]**** 下，尋找 [必要權限]**** 區域並選取 [手電筒]**** 和 [相機]**** 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
 藉由新增這些權限，[Google Play 會自動篩選掉裝置](https://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features)，不含特定硬體。 您可以透過將下列內容新增至 Android 專案中的 AssemblyInfo.cs 檔案來解決此問題：
 
@@ -51,11 +51,11 @@ ms.locfileid: "58870101"
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 不需要進行額外設定。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 不需要進行額外設定。
 
@@ -96,7 +96,7 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-### <a name="androidtabandroid"></a>[Android](#tab/android)
+### <a name="android"></a>[Android](#tab/android)
 
 手電筒類別已根據裝置的作業系統進行最佳化。
 
@@ -108,11 +108,11 @@ catch (Exception ex)
 
 會建立相機表面紋理，以開啟或關閉相機單位的 `FlashMode`。 
 
-### <a name="iostabios"></a>[iOS](#tab/ios)
+### <a name="ios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](xref:AVFoundation.AVCaptureDevice) 用於開啟或關閉裝置的手電筒或閃光燈模式。
 
-### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+### <a name="uwp"></a>[UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) 用於偵測裝置背面的第一個燈是否開啟或關閉。
 
@@ -120,5 +120,5 @@ catch (Exception ex)
 
 ## <a name="api"></a>API
 
-- [手電筒原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
-- [手電筒 API 文件](xref:Xamarin.Essentials.Flashlight)
+- [Flashlight 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
+- [Flashlight API 文件](xref:Xamarin.Essentials.Flashlight)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Essentials:加速計
+title: Xamarin.Essentials：Accelerometer
 description: Xamarin.Essentials 中的 Accelerometer 類別可讓您監視裝置的加速度感應器，該感應器指出裝置在三維空間中的加速度。
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70765051"
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials:加速計
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：Accelerometer
 
 **Accelerometer** 類別可讓您監視裝置的加速計感應器，此感應器指出裝置在三維空間中的加速度。
 
@@ -78,7 +78,7 @@ Accelerometer 讀數會以 G 為單位回報。G 是一個重力單位，等於�
 
 X 軸是指向右方的水平軸，Y 軸是指向上方的垂直軸，Z 軸則指向螢幕正面的外側。 在這個系統中，螢幕背面的座標會有負的 Z 值。
 
-例如：
+範例：
 
 - 當裝置平放在桌上，然後從裝置左側往右側推時，x 加速度值為正。
 

@@ -1,6 +1,6 @@
 ---
-title: Xamarin. 表單可重複使用的 RoundEffect
-description: RoundEffect 是可重複使用的效果，可以套用至衍生自 VisualElement 的任何控制項，以將控制項轉譯為圓形。
+title: Xamarin.表單可重複的圓效應
+description: RoundEffect 是一種可重用的效果,可應用於從 VisualElement 派生的任何控制項,以將控制件呈現為圓。
 ms.prod: xamarin
 ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
 ms.technology: xamarin-forms
@@ -8,23 +8,23 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 10/25/2019
 ms.openlocfilehash: 851ed7a2ad1c416b4d03d583b9d0aeb7f7774eea
-ms.sourcegitcommit: aa7e9d2c370ba9cbc830f10b94b4cd4221fc5467
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73055957"
 ---
-# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin. 表單可重複使用的 RoundEffect
+# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.表單可重複的圓效應
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
-RoundEffect 會將衍生自 VisualElement 的任何控制項簡化為圓形。 這種效果可以用來建立圓形影像、按鈕和其他控制項：
+RoundEffect 簡化了從 VisualElement 派生為圓的任何控制項的渲染。 這個效果可用於建立圓形影像、按鈕和其他控制項:
 
-[![RoundEffect iOS 和 Android 上的螢幕擷取畫面](example-roundeffect-images/round-effect-cropped.png)](example-roundeffect-images/round-effect.png#lightbox)
+[![iOS 和安卓上的圓形效果螢幕截圖](example-roundeffect-images/round-effect-cropped.png)](example-roundeffect-images/round-effect.png#lightbox)
 
-## <a name="create-a-shared-routingeffect"></a>建立共用 RoutingEffect
+## <a name="create-a-shared-routingeffect"></a>建立分享路由效果
 
-必須在共用的專案中建立效果類別，以建立跨平臺效果。 範例應用程式會建立一個衍生自 `RoutingEffect` 類別的空 `RoundEffect` 類別：
+必須在共用項目中創建效果類才能創建跨平臺效果。 範例應用程式建立派生自類`RoundEffect``RoutingEffect`的空類:
 
 ```csharp
 public class RoundEffect : RoutingEffect
@@ -35,11 +35,11 @@ public class RoundEffect : RoutingEffect
 }
 ```
 
-這個類別可讓共用的專案解析程式代碼或 XAML 中的效果參考，但不提供任何功能。 效果必須具有每個平臺的「執行」。
+此類允許共用專案解析對代碼或 XAML 中效果的引用,但不提供任何功能。 效果必須具有每個平台的實現。
 
-## <a name="implement-the-android-effect"></a>執行 Android 效果
+## <a name="implement-the-android-effect"></a>實現 Android 效果
 
-Android 平臺專案會定義衍生自 `PlatformEffect`的 `RoundEffect` 類別。 這個類別會標記 `assembly` 屬性，以允許 Xamarin 解析效果類別：
+Android 平台項目定義派生`RoundEffect``PlatformEffect`自 的類。 此使用`assembly`允許 Xamarin.Forms 解析效果類別屬性的標籤:
 
 ```csharp
 [assembly: ResolutionGroupName("Xamarin")]
@@ -53,7 +53,7 @@ namespace RoundEffectDemo.Droid
 }
 ```
 
-Android 平臺會使用 `OutlineProvider` 的概念來定義控制項的邊緣。 範例專案包含衍生自 `ViewOutlineProvider` 類別的 `CornerRadiusProvider` 類別：
+Android 平臺使用`OutlineProvider`的概 念來定義控制件的邊緣。 範例專案包括派生自`CornerRadiusProvider`類`ViewOutlineProvider`的 類別:
 
 ```csharp
 class CornerRadiusOutlineProvider : ViewOutlineProvider
@@ -78,9 +78,9 @@ class CornerRadiusOutlineProvider : ViewOutlineProvider
 }
 ```
 
-這個類別會使用 Xamarin `Element` 實例的 `Width` 和 `Height` 屬性，來計算半個最短維度的半徑。
+類使用 Xamarin.Forms`Width``Height``Element`實例的 和 屬性來計算半徑是最短維度的一半。
 
-定義大綱提供者之後，`RoundEffect` 類別就可以取用它來執行效果：
+定義大綱提供者後,`RoundEffect`類別可以使用它來實現效果:
 
 ```csharp
 public class RoundEffect : PlatformEffect
@@ -114,16 +114,16 @@ public class RoundEffect : PlatformEffect
 }
 ```
 
-當效果附加至元素時，會呼叫 `OnAttached` 方法。 會儲存現有的 `OutlineProvider` 物件，以便在中斷連結效果時可以還原。 `CornerRadiusOutlineProvider` 的新實例做為 `OutlineProvider`，`ClipToOutline` 設定為 true，以將溢位的元素裁剪至大綱框線。
+當`OnAttached`效果附加到元素時,將調用該方法。 將保存`OutlineProvider`現有物件,以便在分離效果時還原該物件。 的新實例`CornerRadiusOutlineProvider`用`OutlineProvider`作`ClipToOutline`和 設置為 true,以將溢出元素剪輯到大綱邊框。
 
-從專案中移除效果並還原原始的 `OutlineProvider` 值時，會呼叫 `OnDetatched` 方法。
+當`OnDetatched`元素中刪除效果並還原原始`OutlineProvider`值時,將調用 該方法。
 
 > [!NOTE]
-> 視元素類型而定，`Control` 屬性不一定是 null。 如果 `Control` 屬性不是 null，則圓角可以直接套用至控制項。 不過，如果是 null，則圓角必須套用至 `Container` 物件。 [`effectTarget`] 欄位可讓效果套用至適當的物件。
+> 根據元素類型,該屬性可能`Control`為空,也可能不為空。 如果`Control`屬性不為空,則可以將圓角直接應用於控制項。 但是,如果圓角為空,則必須將圓角應用於`Container`物件。 該`effectTarget`字段允許將效果應用於相應的物件。
 
-## <a name="implement-the-ios-effect"></a>執行 iOS 效果
+## <a name="implement-the-ios-effect"></a>實作 iOS 效果
 
-IOS 平臺專案會定義衍生自 `PlatformEffect`的 `RoundEffect` 類別。 這個類別會標記 `assembly` 屬性，以允許 Xamarin 解析效果類別：
+iOS 平臺項目定義派生`RoundEffect``PlatformEffect`自的類。 此使用`assembly`允許 Xamarin.Forms 解析效果類別屬性的標籤:
 
 ```csharp
 [assembly: ResolutionGroupName("Xamarin")]
@@ -136,7 +136,7 @@ namespace RoundEffectDemo.iOS
     }
 ```
 
-在 iOS 上，控制項具有 `Layer` 屬性，其具有 `CornerRadius` 屬性。 IOS 上的 `RoundEffect` 類別執行會計算適當的圓角半徑，並更新圖層的 `CornerRadius` 屬性：
+在 iOS`Layer`上, 控件具有`CornerRadius`一個屬性 ,該屬性具有屬性。 iOS`RoundEffect`上的 類別的樣數組`CornerRadius`數
 
 ```csharp
 public class RoundEffect : PlatformEffect
@@ -183,14 +183,14 @@ public class RoundEffect : PlatformEffect
 }
 ```
 
-`CalculateRadius` 方法會根據 Xamarin. 表單 `Element`的最小維度來計算 radius。 當效果附加至控制項時，會呼叫 `OnAttached` 方法，並更新圖層的 `CornerRadius` 屬性。 它會將 `ClipToBounds` 屬性設定為 `true` 因此，溢位的元素會裁剪至控制項的框線。 從控制項中移除效果並反轉這些變更時，會呼叫 `OnDetatched` 方法，以還原原始的圓角半徑。
+該方法`CalculateRadius`根據 Xamarin.Forms`Element`的最小尺寸計算半徑。 當`OnAttached`效果附加到控制項時,將呼叫 該方法,並更新圖層`CornerRadius`的屬性 。 它將`ClipToBounds`屬性設定`true`為 ,以便溢出的元素被剪切到控制項的邊界。 當`OnDetatched`從控制項中刪除效果並反轉這些更改,恢復原始角半徑時,將調用該方法。
 
 > [!NOTE]
-> 視元素類型而定，`Control` 屬性不一定是 null。 如果 `Control` 屬性不是 null，則圓角可以直接套用至控制項。 不過，如果是 null，則圓角必須套用至 `Container` 物件。 [`effectTarget`] 欄位可讓效果套用至適當的物件。
+> 根據元素類型,該屬性可能`Control`為空,也可能不為空。 如果`Control`屬性不為空,則可以將圓角直接應用於控制項。 但是,如果圓角為空,則必須將圓角應用於`Container`物件。 該`effectTarget`字段允許將效果應用於相應的物件。
 
-## <a name="consume-the-effect"></a>使用效果
+## <a name="consume-the-effect"></a>消耗效果
 
-在整個平臺上執行效果後，Xamarin 就可以使用它。 `RoundEffect` 的常見應用就是讓 `Image` 物件迴圈。 下列 XAML 會顯示套用至 `Image` 實例的效果：
+一旦在平台中實現效果,Xamarin.Forms 控制件就可以使用它。 的常見應用`RoundEffect`是使對`Image`象成為圓形。 以下 XAML 顯示了`Image`應用於 實體的效果:
 
 ```xaml
 <Image Source=outdoors"
@@ -202,7 +202,7 @@ public class RoundEffect : PlatformEffect
 </Image>
 ```
 
-效果也可以套用在程式碼中：
+該效果也可以應用於代碼:
 
 ```csharp
 var image = new Image
@@ -214,13 +214,13 @@ var image = new Image
 image.Effects.Add(new RoundEffect());
 ```
 
-`RoundEffect` 類別可以套用至衍生自 `VisualElement`的任何控制項。
+該`RoundEffect`類可以應用於派生`VisualElement`自 的任何控件。
 
 > [!NOTE]
-> 為了讓效果計算正確的半徑，其套用的控制項必須有明確的大小。 因此，應該定義 `HeightRequest` 和 `WidthRequest` 屬性。 如果受影響的控制項出現在 `StackLayout`中，其 `HorizontalOptions` 屬性不應使用其中一個**展開**值，例如 `LayoutOptions.CenterAndExpand`，否則將不會有正確的維度。
+> 要計算正確的半徑,它所應用到的控制項必須具有顯式大小調整。 因此,應`HeightRequest`定義`WidthRequest`和屬性。 如果受影響的控制器`StackLayout`出現在中,其`HorizontalOptions`屬性不應使用 **「展開」** 值之一`LayoutOptions.CenterAndExpand`,例如或它將沒有準確的維度。
 
 ## <a name="related-links"></a>相關連結
 
-- [RoundEffect 範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
+- [圓效應範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 - [效果簡介](~/xamarin-forms/app-fundamentals/effects/introduction.md)
 - [建立效果](~/xamarin-forms/app-fundamentals/effects/creating.md)

@@ -9,10 +9,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
 ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79305021"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms App 類別
@@ -20,10 +20,10 @@ ms.locfileid: "79305021"
 `Application` 基底類別提供下列功能，它們公開於您專案的預設 `App` 子類別：
 
 * `MainPage` 屬性，這是要設定應用程式起始頁的位置。
-* 持續性的 [`Properties` 字典](#Properties_Dictionary)，用來跨生命週期狀態變更來儲存簡單值。
+* 以跨生命週期狀態變更儲存簡單值的持久[`Properties`字典](#Properties_Dictionary)。
 * 靜態的 `Current` 屬性，其中包含目前應用程式物件的參考。
 
-它也會公開[生命週期方法](~/xamarin-forms/app-fundamentals/app-lifecycle.md)，例如 `OnStart`、`OnSleep` 和 `OnResume`，以及強制回應巡覽事件。
+它還公開[生命週期方法](~/xamarin-forms/app-fundamentals/app-lifecycle.md)`OnStart`,`OnSleep`如`OnResume`、 以及 模式導航事件。
 
 根據您選擇的範本，`App` 類別可以用兩種方式之一來定義：
 
@@ -54,11 +54,11 @@ public partial class App : Application
 }
 ```
 
-除了設定 [`MainPage`](xref:Xamarin.Forms.Application.MainPage) 屬性之外，程式碼後置還必須呼叫 `InitializeComponent` 方法來載入及剖析相關聯的 XAML。
+除了設置屬性外[`MainPage`](xref:Xamarin.Forms.Application.MainPage),代碼後面還必須調`InitializeComponent`用 方法來載入和分析關聯的 XAML。
 
 ## <a name="mainpage-property"></a>MainPage 屬性
 
-`MainPage` 類別的 `Application` 屬性會設定應用程式的根頁面。
+`Application` 類別的 `MainPage` 屬性會設定應用程式的根頁面。
 
 比方說，您可以在 `App` 類別中建立邏輯，以視使用者登入與否顯示不同的頁面。
 
@@ -112,7 +112,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 
 Xamarin.Forms 1.4 引進了 `Application` 類別的其他方法 - `SavePropertiesAsync()` - 可以呼叫它以主動保存 `Properties` 字典。 這樣可讓您在重要更新之後儲存屬性，而不必冒著它們因為損毀或被 OS 終止 OS 而未序列化的風險。
 
-您可以在`Properties`使用 Xamarin.Forms 建立行動應用程式**書籍的第** 6[、](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)15[ 及 ](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)20[ 章，以及相關聯的](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)範例[，找到使用 ](https://github.com/xamarin/xamarin-forms-book-preview-2) 的參考。
+您可以在**使用 Xamarin.Forms 建立行動應用程式**書籍的第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) 及 [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章，以及相關聯的[範例](https://github.com/xamarin/xamarin-forms-book-preview-2)，找到使用 `Properties` 的參考。
 
 ## <a name="the-application-class"></a>Application 類別
 
@@ -153,7 +153,7 @@ public class App : Xamarin.Forms.Application
 
 iOS `AppDelegate` 類別繼承自 `FormsApplicationDelegate`。 它應該：
 
-* 使用 `LoadApplication` 類別的執行個體呼叫 `App`。
+* 使用 `App` 類別的執行個體呼叫 `LoadApplication`。
 
 * 一律傳回 `base.FinishedLaunching (app, options);`。
 
@@ -175,7 +175,7 @@ public partial class AppDelegate :
 
 ### <a name="android-project"></a>Android 專案
 
-Android `MainActivity` 繼承自 `FormsAppCompatActivity`。 在 `OnCreate` 覆寫中，使用 `LoadApplication` 類別的執行個體呼叫 `App` 方法。
+Android `MainActivity` 繼承自 `FormsAppCompatActivity`。 在 `OnCreate` 覆寫中，使用 `App` 類別的執行個體呼叫 `LoadApplication` 方法。
 
 ```csharp
 [Activity (Label = "App Lifecycle Sample", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true,
@@ -219,7 +219,7 @@ public sealed partial class MainPage
  }
 ```
 
-請注意，必須從 UWP 專案中的 `Forms.Init()`App.xaml.cs**呼叫**。
+請注意，必須從 UWP 專案中的 **App.xaml.cs** 呼叫 `Forms.Init()`。
 
 如需詳細資訊，請參閱[設定 Windows 專案](~/xamarin-forms/platform/windows/installation/index.md)，其中包含將 UWP 專案新增至現有 Xamarin.Forms 解決方案 (不以 UWP 為目標) 的步驟。
 

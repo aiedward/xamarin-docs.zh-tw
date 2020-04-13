@@ -10,15 +10,15 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2019
 ms.openlocfilehash: fd2fcf6ebe11df27444f2ecc1d89955debf56cb4
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75502796"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>建置您的第一個 Xamarin.Forms 應用程式
 
-觀看這段影片，並遵循指示建立第一個使用 Xamarin.Forms 的行動應用程式。 
+觀看這段影片，並遵循指示建立第一個使用 Xamarin.Forms 的行動應用程式。__
 
 ::: zone pivot="windows"
 
@@ -26,45 +26,45 @@ ms.locfileid: "75502796"
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] > [新增] > [專案...]  或按 [建立新專案...]  按鈕：
+1. 選擇 [檔案] > [新增] > [專案...]**** 或按 [建立新專案...]**** 按鈕：
 
-    [![建立新的專案](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
+    [![建立新專案](images/win-2019/01-sml.png)](images/win-2019/01.png#lightbox)
 
-2. 搜尋 "Xamarin"，或從 [專案類型]  功能表中選擇 [行動裝置]  。 選取 [行動裝置應用程式 (Xamarin.Forms)]  專案類型：
+2. 搜尋 "Xamarin"，或從 [專案類型]**** 功能表中選擇 [行動裝置]****。 選取 [行動裝置應用程式 (Xamarin.Forms)]**** 專案類型：
 
-    [![Xamarin 專案篩選](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
+    [![Xamarin 專案的過濾器](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
 3. 選擇專案名稱 &ndash; 此範例使用 "AwesomeApp"：
 
-    [![選擇專案名稱](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
+    [![選擇項目名稱](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. 按一下 [空白]  專案類型，並確定已選取 [**Android**] 及 [**iOS**]：
+4. 按一下 [空白]**** 專案類型，並確定已選取 [**Android**] 及 [**iOS**]：
 
-    [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
+    [![安卓和 iOS,帶 .NET 標準](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
 5. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
-6. 新 Visual Studio 2019 安裝將不包含已設定的 Android Emulator。 按一下 [偵錯]  按鈕上的下拉箭號，然後選擇 [建立 Android Emulator]  以啟動模擬器建立畫面：
+6. 新 Visual Studio 2019 安裝將不包含已設定的 Android Emulator。 按一下 [偵錯]**** 按鈕上的下拉箭號，然後選擇 [建立 Android Emulator]**** 以啟動模擬器建立畫面：
 
     ![建立 Android Emulator 的下拉式清單](images/win-2019/debug-dropdown.png)
 
-7. 在模擬器建立畫面中，使用預設設定，然後按一下 [建立]  按鈕：
+7. 在模擬器建立畫面中，使用預設設定，然後按一下 [建立]**** 按鈕：
 
-    [![Android Emulator 建立畫面](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
+    [![安卓模擬器建立螢幕](images/win-2019/create-emulator-sml.png)](images/win-2019/create-emulator.png#lightbox)
 
-8. 建立模擬器會讓您回到 [裝置管理員] 視窗。 按一下 [開始]  按鈕，以啟動新的模擬器：
+8. 建立模擬器會讓您回到 [裝置管理員] 視窗。 按一下 [開始]**** 按鈕，以啟動新的模擬器：
 
     ![裝置管理員中的 Android Emulator](images/win-2019/start-emulator.png)
 
-9. Visual Studio 2019 現在應該會在 [偵錯]  按鈕上顯示新模擬器的名稱：
+9. Visual Studio 2019 現在應該會在 [偵錯]**** 按鈕上顯示新模擬器的名稱：
 
     ![[偵錯] 按鈕上的 Android Emulator 名稱](images/win-2019/debug-emulator-name.png)
 
-10. 按一下 [偵錯]  按鈕，以建置應用程式並將其部署至 Android Emulator：
+10. 按一下 [偵錯]**** 按鈕，以建置應用程式並將其部署至 Android Emulator：
 
     ![顯示應用程式的 Android Emulator](images/win-2019/android-emulator.png)
 
@@ -111,21 +111,21 @@ ms.locfileid: "75502796"
 
 ## <a name="step-by-step-instructions-for-windows"></a>適用於 Windows 的逐步指示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] > [新增] > [專案...]  或按下 [建立新專案...]  按鈕，然後選取 [Visual C#] > [跨平台] > [行動應用程式 (Xamarin.Forms)]  ：
+1. 選擇 [檔案] > [新增] > [專案...]**** 或按下 [建立新專案...]**** 按鈕，然後選取 [Visual C#] > [跨平台] > [行動應用程式 (Xamarin.Forms)]****：
 
-    [![行動應用程式 (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
+    [![移動應用(Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
-2. 確定已選取 [Android]  和 [iOS]  ，並搭配 [.NET Standard]  程式碼共用：
+2. 確定已選取 [Android]**** 和 [iOS]****，並搭配 [.NET Standard]**** 程式碼共用：
 
-    [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/win/02-sml.png)](images/win/02.png#lightbox)
+    [![安卓和 iOS,帶 .NET 標準](images/win/02-sml.png)](images/win/02.png#lightbox)
 
 3. 等候 NuGet 套件還原完成 (狀態列中將會顯示 [還原完成] 訊息)。
 
-4. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯]  功能表項目) 來啟動 Android Emulator。
+4. 按下偵錯按鈕 (或 [偵錯] > [開始偵錯]**** 功能表項目) 來啟動 Android Emulator。
 
 5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
@@ -158,23 +158,23 @@ ms.locfileid: "75502796"
 
 ## <a name="step-by-step-instructions-for-mac"></a>適用於 Mac 的逐步指示
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 請遵循下列步驟及上面的影片進行：
 
-1. 選擇 [檔案] > [新增方案...]  或按下 [新增專案...]  按鈕，然後選取 [多平台] > [應用程式] > [空白的 Forms App]  ：
+1. 選擇 [檔案] > [新增方案...]**** 或按下 [新增專案...]**** 按鈕，然後選取 [多平台] > [應用程式] > [空白的 Forms App]****：
 
-    [![空白的 Forms App](images/01-sml.png)](images/01.png#lightbox)
+    [![空白表單應用程式](images/01-sml.png)](images/01.png#lightbox)
 
-2. 確定已選取 [Android]  和 [iOS]  ，並搭配 [.NET Standard]  程式碼共用：
+2. 確定已選取 [Android]**** 和 [iOS]****，並搭配 [.NET Standard]**** 程式碼共用：
 
-    [![[Android] 和 [iOS] 搭配 [.NET Standard]](images/02-sml.png)](images/02.png#lightbox)
+    [![安卓和 iOS,帶 .NET 標準](images/02-sml.png)](images/02.png#lightbox)
 
 3. 以滑鼠右鍵按一下方案來還原 NuGet 套件：
 
     ![Android 應用程式](images/03-sml.png)
 
-4. 按下偵錯按鈕 (或 [執行] > [開始偵錯]  ) 來啟動 Android Emulator。
+4. 按下偵錯按鈕 (或 [執行] > [開始偵錯]****) 來啟動 Android Emulator。
 
 5. 編輯 **MainPage.xaml**，並在 `</StackLayout>` 結尾前面新增此 XAML：
 
@@ -197,9 +197,9 @@ ms.locfileid: "75502796"
 
     ![Android 應用程式](images/07-sml.png)
 
-8. 按一下滑鼠右鍵將 iOS 設定為 [啟始專案]  ：
+8. 按一下滑鼠右鍵將 iOS 設定為 [啟始專案]****：
 
-    [![將啟始專案設定為 iOS](images/08-sml.png)](images/08.png#lightbox)
+    [![將啟動項目設定為 iOS](images/08-sml.png)](images/08.png#lightbox)
 
 9. 偵錯 iOS 上的應用程式：
 

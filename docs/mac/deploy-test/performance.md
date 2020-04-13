@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 11/10/2017
 ms.openlocfilehash: a5a759ae9f156eec71706d9681fac2a94995848e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021680"
 ---
 # <a name="xamarinmac-performance"></a>Xamarin.Mac 效能
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Xamarin.Mac 應用程式和 Xamarin.iOS 類似，而且適用許多相同的效能建議：
 

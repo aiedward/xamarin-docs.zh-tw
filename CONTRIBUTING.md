@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 0071fcc72844e4816e707c5828464859e09db68c
-ms.sourcegitcommit: 2503da076966d12a8bdbf7af209662b74913a15c
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78261614"
 ---
 # <a name="contributing"></a>參與
@@ -18,7 +18,7 @@ ms.locfileid: "78261614"
 
 ### <a name="small-changes--edits"></a>少量變更和編輯
 
-若要更正和進行少量更新，您可以按一下任何頁面上的 [編輯] 按鈕並使用 GitHub 網站來投稿，或是遵循下列步驟：
+若要更正和進行少量更新，您可以按一下任何頁面上的 [編輯]**** 按鈕並使用 GitHub 網站來投稿，或是遵循下列步驟：
 
 1. 派生 `MicrosoftDocs/xamarin-docs` 存放庫。
 
@@ -43,7 +43,7 @@ ms.locfileid: "78261614"
 
 如果這是新主題，您可以使用[範本檔案](../contributing-guidelines/template.md)作為起點。 其包含撰寫指導方針，同時也會說明每篇文章所需的中繼資料，例如作者資訊。
 
-針對影像及其他靜態資源，請將其新增至稱為 **\<mypage>-images** 的子資料夾。 如果您要為內容建立新的資料夾，請將 images 資料夾新增至新的資料夾。
+對於圖像和其他靜態資源,將它們添加到名為**\<"mypage> 圖像"的**子資料夾中。 如果您要為內容建立新的資料夾，請將 images 資料夾新增至新的資料夾。
 
 #### <a name="example-structure"></a>範例結構
 
@@ -65,11 +65,11 @@ Xamarin 小組會檢閱您的 PR，並會讓您知道變更是否適合 (透過 
 
 我們會依特定的頻率，將所有認可項目從主要分支推送到即時網站，您如此即可於 https://docs.microsoft.com/xamarin/ 看到您的投稿。
 
-### <a name="contributing-to-international-content"></a>參與國際內容
+### <a name="contributing-to-international-content"></a>為國際內容做出貢獻
 
-目前不接受電腦轉譯（MT）內容的貢獻。 為了改善 MT 內容的品質，我們已轉換成類神經 MT 引擎。 我們接受並鼓勵人為翻譯（HT）內容的貢獻，這是用來訓練類神經 MT 引擎。 過了一段時間，對 HT 內容的貢獻將可改善 HT 和 MT 的品質。 MT 主題會有免責聲明，表示主題的部分可能是 MT，而 [**編輯**] 按鈕則不會顯示為已停用。
+目前不接受對機器翻譯 (MT) 內容的貢獻。 為了提高 MT 內容的質量,我們已過渡到神經 MT 引擎。 我們接受並鼓勵為人類翻譯 (HT) 內容提供貢獻,用於訓練神經 MT 引擎。 因此,隨著時間的推移,對 HT 內容的貢獻將提高 HT 和 MT 的品質。 MT 主題將有一個免責聲明,指出主題的一部分可能是 MT,並且 **「編輯」** 按鈕在禁用時不會顯示。
 
-## <a name="dos-and-donts"></a>可進行及不可進行的事項
+## <a name="dos-and-donts"></a>可進行及避免進行的事項
 
 以下是一份您投稿 .NET 文件時，應謹記在心的指導規則清單。
 

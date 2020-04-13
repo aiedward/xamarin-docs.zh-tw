@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: 42cdfe6c54354f1616606c9b3a40de78446c5c39
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.openlocfilehash: 1d68203e80e0bc28e7060d5873c122db8c2ff960
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910737"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80387201"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -28,7 +28,7 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 
 * [加速計](accelerometer.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的加速度資料。
 * [應用程式資訊](app-information.md?context=xamarin/xamarin-forms)：了解應用程式的相關資訊。
-* [應用程式主題](app-theme.md?context=xamarin/xamarin-forms)–偵測應用程式所要求的目前主題。
+* [應用主題](app-theme.md?context=xamarin/xamarin-forms)– 檢測應用程式請求的當前主題。
 * [氣壓計](barometer.md?context=xamarin/xamarin-forms)：監視氣壓計的壓力變化。
 * [電池](battery.md?context=xamarin/xamarin-forms)：簡單地偵測電池電量、來源和狀態。
 * [剪貼簿](clipboard.md?context=xamarin/xamarin-forms)：輕鬆快速地設定或讀取剪貼簿上的文字。
@@ -50,7 +50,7 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [地圖](maps.md?content=xamarin/xamarin-forms)：開啟地圖應用程式至特定位置。
 * [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms)：輕鬆快速地開啟瀏覽器至特定網站。
 * [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms)：擷取裝置在三維空間中的方向。
-* [許可權](permissions.md?context=xamarin/xamarin-forms)–檢查並要求使用者的許可權。
+* [許可權](permissions.md?context=xamarin/xamarin-forms)= 檢查和請求使用者的許可權。
 * [電話撥號程式](phone-dialer.md?context=xamarin/xamarin-forms)：開啟電話撥號程式。
 * [平台擴充](platform-extensions.md?context=xamarin/xamarin-forms) - 可轉換矩形、大小及點的 Helper 方法。
 * [偏好設定](preferences.md?context=xamarin/xamarin-forms)：輕鬆快速地新增永續性偏好設定。
@@ -61,6 +61,7 @@ Android、iOS 與 UWP 提供獨一無二的作業系統與平台 API，開發人
 * [單位轉換器](unit-converters.md?context=xamarin/xamarin-forms) - 可轉換單位的 Helper 方法。
 * [版本追蹤](version-tracking.md?context=xamarin/xamarin-forms)：追蹤應用程式版本與組建編號。
 * [震動](vibrate.md?context=xamarin/xamarin-forms)：讓裝置震動。
+* [Web 身份驗證器](web-authenticator.md?context=xamarin/xamarin-forms)- 啟動 Web 身份驗證流並偵聽回調。
 
 ## <a name="troubleshooting"></a>[疑難排解](troubleshooting.md?context=xamarin/xamarin-forms)
 

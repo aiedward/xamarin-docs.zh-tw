@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 10bba38de1dc8908ad853d5e4ca2bb845b4ac8c6
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771271"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms 資料範本簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_Xamarin：表單資料範本提供了在支援的控制項上定義資料呈現方式的能力。本文提供資料範本的簡介，檢查為何需要它們。_
+_Xamarin.Forms 數據範本提供了定義受支援控制項上數據的表示功能。本文介紹了數據範本,檢查它們為什麼是必需的。_
 
-假設有一個顯示 `Person` 物件集合的 [`ListView`](xref:Xamarin.Forms.ListView)。 下列程式碼範例顯示 `Person` 類別的定義：
+要顯示[`ListView`](xref:Xamarin.Forms.ListView)物件集合`Person`的 。 下列程式碼範例顯示 `Person` 類別的定義：
 
 ```csharp
 public class Person
@@ -31,7 +31,7 @@ public class Person
 }
 ```
 
-`Person` 類別定義 `Name`、`Age` 和 `Location` 屬性，可在建立 `Person` 物件時進行設定。 [`ListView`](xref:Xamarin.Forms.ListView) 用於顯示 `Person` 物件集合，如下列 XAML 程式碼範例所示：
+`Person` 類別定義 `Name`、`Age` 和 `Location` 屬性，可在建立 `Person` 物件時進行設定。 [`ListView`](xref:Xamarin.Forms.ListView)用於顯示`Person`物件的集合,如以下 XAML 代碼範例所示:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -56,12 +56,12 @@ public class Person
 </ContentPage>
 ```
 
-您可以透過從 `Person` 執行個體陣列初始化 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性，來將項目新增至 XAML 中的 [`ListView`](xref:Xamarin.Forms.ListView)。
+透過從`Person`實體中[`ListView`](xref:Xamarin.Forms.ListView)初始化屬性,[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)項將添加到 XAML 中。
 
 > [!NOTE]
 > 請注意，`x:Array` 項目需要 `Type` 屬性，以指出陣列中的項目類型。
 
-下列程式碼範例顯示對等的 C# 頁面，該頁面會將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性初始化為 `Person` 執行個體的 `List`：
+等效的 C# 頁顯示在以下代碼範例中,該範[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)例將 屬性初始化到`Person``List`實體:
 
 ```csharp
 public WithoutDataTemplatePageCS()
@@ -88,7 +88,7 @@ public WithoutDataTemplatePageCS()
 }
 ```
 
-當顯示集合中的物件時，[`ListView`](xref:Xamarin.Forms.ListView) 會呼叫 `ToString`。 由於沒有 `Person.ToString` 覆寫，因此 `ToString` 會傳回每個物件的類型名稱，如下列螢幕擷取畫面所示：
+在[`ListView`](xref:Xamarin.Forms.ListView)集合`ToString`中顯示物件時的調用。 由於沒有 `Person.ToString` 覆寫，因此 `ToString` 會傳回每個物件的類型名稱，如下列螢幕擷取畫面所示：
 
 ![](introduction-images/no-data-template.png "ListView without a Data Template")
 
@@ -105,32 +105,32 @@ public class Person
 }
 ```
 
-這會導致 [`ListView`](xref:Xamarin.Forms.ListView) 顯示集合中每個物件的 `Person.Name` 屬性值，如下列螢幕擷取畫面所示：
+這將導致[`ListView`](xref:Xamarin.Forms.ListView)顯示集合中每個`Person.Name`物件 的屬性值,如以下螢幕截圖所示:
 
 ![](introduction-images/override-tostring.png "ListView with a Data Template")
 
-`Person.ToString` 覆寫可能會傳回由 `Name`、`Age` 和 `Location` 屬性組成的格式化字串。 不過，此方法只會提供對每個資料項目外觀有限的控制。 若要提高彈性，可建立定義資料外觀的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。
+`Person.ToString` 覆寫可能會傳回由 `Name`、`Age` 和 `Location` 屬性組成的格式化字串。 不過，此方法只會提供對每個資料項目外觀有限的控制。 為了取得更大的靈活性,可以[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)建立定義資料外觀的 。
 
 ## <a name="creating-a-datatemplate"></a>建立 DataTemplate
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 用於指定資料外觀，通常會使用資料繫結來顯示資料。 其常見使用方式情節是在 [`ListView`](xref:Xamarin.Forms.ListView) 中顯示物件集合的資料時。 例如，當 `ListView` 繫結至 `Person` 物件集合時，會將 `ListView.ItemTemplate` 屬性設定為 `DataTemplate`，來定義 `ListView` 中每個 `Person` 物件的外觀。 `DataTemplate` 會包含繫結至每個 `Person` 物件屬性值的項目。 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
+A[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)用於指定數據的外觀,通常使用數據綁定來顯示數據。 為常見使用機制是在 顯示 物件集合中[`ListView`](xref:Xamarin.Forms.ListView)的資料時 。 例如，當 `ListView` 繫結至 `Person` 物件集合時，會將 `ListView.ItemTemplate` 屬性設定為 `DataTemplate`，來定義 `ListView` 中每個 `Person` 物件的外觀。 `DataTemplate` 會包含繫結至每個 `Person` 物件屬性值的項目。 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 可作為下列屬性值使用：
+A[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)可用以下屬性的值:
 
 - [`ListView.HeaderTemplate`](xref:Xamarin.Forms.ListView.HeaderTemplate)
 - [`ListView.FooterTemplate`](xref:Xamarin.Forms.ListView.FooterTemplate)
 - [`ListView.GroupHeaderTemplate`](xref:Xamarin.Forms.ListView.GroupHeaderTemplate)
-- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)，由 [`ListView`](xref:Xamarin.Forms.ListView) 繼承。
-- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1)，由 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 和 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 繼承。
+- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)由繼承,由[`ListView`](xref:Xamarin.Forms.ListView)繼承。
+- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1)由[`CarouselPage`](xref:Xamarin.Forms.CarouselPage)[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)繼承的[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)與 。
 
 > [!NOTE]
-> 請注意，雖然 [`TableView`](xref:Xamarin.Forms.TableView) 會使用 [`Cell`](xref:Xamarin.Forms.Cell) 物件，但不會使用 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)。 這是因為資料繫結一律會在 `Cell` 物件上直接設定。
+> 請注意,雖然[`TableView`](xref:Xamarin.Forms.TableView)[`Cell`](xref:Xamarin.Forms.Cell)使用 物件,但它[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)不使用 。 這是因為資料繫結一律會在 `Cell` 物件上直接設定。
 
-作為上述屬性直接子系的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 稱為「內嵌範本」。 或者，您可以將 `DataTemplate` 定義為控制項層級、頁面層級或應用程式層級資源。 選擇要在何處定義 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 會影響其可使用的位置：
+這個[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)選項的屬性的直接子級放置的 A 稱為*內聯範本*。 或者，您可以將 `DataTemplate` 定義為控制項層級、頁面層級或應用程式層級資源。 選擇在哪裡定義可以使用[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)的影響:
 
-- 在控制項層級定義的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 只能套用至控制項。
-- 在頁面層級定義的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 可套用至頁面上的多個有效控制項。
-- 在應用程式層級定義的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 則可套用至整個應用程式的所有有效控制項。
+- 在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)控件級別定義的只能應用於控制項。
+- 在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)頁面級別定義的控制項可以應用於頁面上的多個有效控制項。
+- 在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)應用程式級別定義的可以應用於整個應用程式的有效控制項。
 
 當資料範本共用 `x:Key` 屬性時，檢視階層架構中較低的資料範本會優先於定義於較高位置的資料範本。 例如，頁面層級資料範本將會覆寫應用程式層級資料範本，而控制項層級資料範本 (或內嵌資料範本) 將會覆寫頁面層級資料範本。
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 2f9de881621b6634b95bdca56a0aa9e7b9f2bb98
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771858"
 ---
 # <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
@@ -40,7 +40,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-video-picker"></a>iOS 影片選擇器
 
-iOS `VideoPicker` 會使用 iOS [`UIImagePickerController`](xref:UIKit.UIImagePickerController) 存取影像庫，指定應限制為 iOS `MediaType` 屬性中的影片 (稱為「電影」)。 請注意，`VideoPicker` 會明確實作 `IVideoPicker` 介面。 另外也請注意 `Dependency` 屬性會將此類別識別為相依性服務。 以下是可讓 Xamarin.Forms 尋找平台專案中相依性服務的兩個需求：
+iOS`VideoPicker`使用[`UIImagePickerController`](xref:UIKit.UIImagePickerController)iOS 訪問圖像庫,指定應將其限制`MediaType`在 iOS 屬性中的視頻(稱為"電影")。 請注意，`VideoPicker` 會明確實作 `IVideoPicker` 介面。 另外也請注意 `Dependency` 屬性會將此類別識別為相依性服務。 以下是可讓 Xamarin.Forms 尋找平台專案中相依性服務的兩個需求：
 
 ```csharp
 using System;
@@ -188,11 +188,11 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-對 `MainActivity` 物件新增的項目是 [**VideoPlayerDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解決方案中，唯一需要改變一般應用程式程式碼才能支援 `FormsVideoLibrary` 類別的程式碼。
+對 `MainActivity` 物件新增的項目是 [**VideoPlayerDemos **](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解決方案中，唯一需要改變一般應用程式程式碼才能支援 `FormsVideoLibrary` 類別的程式碼。
 
 ### <a name="the-uwp-video-picker"></a>UWP 影片選擇器
 
-`IVideoPicker` 介面的 UWP 實作使用 UWP [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/)。 它會先在圖片庫中搜尋檔案，並限制檔案類型為 MP4 和 WMV (Windows Media 視訊)：
+`IVideoPicker`介面的 UWP 使用[`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/)UWP 。 它會先在圖片庫中搜尋檔案，並限制檔案類型為 MP4 和 WMV (Windows Media 視訊)：
 
 ```csharp
 using System;
@@ -388,5 +388,5 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (sample)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) (影片播放程式示範 (範例))
+- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 - [從圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials:SMS
+title: Xamarin.Essentials：SMS
 description: Xamarin.Essentials 中的 Sms 類別可讓應用程式使用傳送到收件者的指定訊息來開啟預設 SMS 應用程式。
 ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: a7b52bac0e9e2061cf9ff277db044ab232b1e9e5
-ms.sourcegitcommit: 6e84adf7358dc05f4d888ab2674de70d88214090
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "53815187"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61347905"
 ---
-# <a name="xamarinessentials-sms"></a>Xamarin.Essentials:SMS
+# <a name="xamarinessentials-sms"></a>Xamarin.Essentials：SMS
 
 **Sms** 類別可讓應用程式使用傳送到收件者的指定訊息來開啟預設 SMS 應用程式。
 

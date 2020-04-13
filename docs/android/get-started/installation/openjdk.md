@@ -8,17 +8,17 @@ author: vyedin
 ms.author: vyedin
 ms.date: 07/22/2018
 ms.openlocfilehash: a24edbc10d529878092b474df7f186d14049d5e0
-ms.sourcegitcommit: f8e22a3b0642179bf44a312e9a2fac0fbad8683c
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57239109"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "60955069"
 ---
 # <a name="microsofts-mobile-openjdk-distribution"></a>Microsoft 的 Mobile OpenJDK 散發
 
-_本指南會描述切換至 OpenJDK 內部散發的步驟。此散發適用於行動開發。_
+_本指南介紹了切換到 OpenJDK 內部分發的步驟。此分發用於移動開發。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 從 Visual Studio 15.9 與 Visual Studio for Mac 7.7 開始，Visual Studio Tools for Xamarin 已從 Oracle 的 JDK 移轉至**僅適用於 Android 開發的輕量型 OpenJDK 版本**。 因為 Oracle 即將於 2019 年停止 JDK 8 商業散發的支援，但 JDK 8 是所有 Android 開發都需要的元件，所以這是有必要的移轉。
 
@@ -51,11 +51,11 @@ _本指南會描述切換至 OpenJDK 內部散發的步驟。此散發適用於�
 
 將 IDE 指向新的 JDK：
 
-- **Mac** &ndash; 按一下 [工具] > [SDK 管理員] > [位置]，並將 [Java SDK (JDK) 的位置] 變更為完整的 OpenJDK 安裝路徑。 在下列範例中，會將此路徑設為 **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9**，但您的版本可能較新。
+- **Mac** &ndash; 按一下 [工具] > [SDK 管理員] > [位置]****，並將 [Java SDK (JDK) 的位置]**** 變更為完整的 OpenJDK 安裝路徑。 在下列範例中，會將此路徑設為 **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9**，但您的版本可能較新。
 
 ![在 Mac 上設定 Microsoft Mobile OpenJDK 散發的 JDK 路徑](openjdk-images/vsm.png)
 
-- **Windows** &ndash; 按一下 [工具] > [選項] > [Xamarin] > [Android 設定]，並將 [Java 開發套件位置] 變更為完整的 OpenJDK 安裝路徑。 在下列範例中，會將此路徑設為 **C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.9**，但您的版本可能較新：
+- **Windows** &ndash; 按一下 [工具] > [選項] > [Xamarin] > [Android 設定]****，並將 [Java 開發套件位置]**** 變更為完整的 OpenJDK 安裝路徑。 在下列範例中，會將此路徑設為 **C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.9**，但您的版本可能較新：
 
 ![在 Windows 上設定 Microsoft Mobile OpenJDK 散發的 JDK 路徑](openjdk-images/vs.png)
 

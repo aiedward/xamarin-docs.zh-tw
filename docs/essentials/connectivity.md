@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Essentials:連線能力
+title: 'Xamarin.Essentials: Connectivity'
 description: Xamarin.Essentials 中的 Connectivity 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
 ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 01/08/2019
 ms.custom: video
 ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
-ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "67855764"
 ---
-# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials:連線能力
+# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Connectivity
 
 **Connectivity** 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
 
@@ -23,11 +23,11 @@ ms.locfileid: "67855764"
 
 若要存取 **Connectivity** 功能，需要下列平台特定設定。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 需要 `AccessNetworkState` 權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties]  資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties]**** 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
@@ -35,19 +35,19 @@ ms.locfileid: "67855764"
 
 或更新 Android 資訊清單：
 
-開啟 [Properties]  資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest]  節點內新增下列內容。
+在 **「屬性」** 資料夾下打開**AndroidManifest.xml**檔,並在**清單**節點內添加以下內容。
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]  下，尋找 [必要權限]  區域並檢查 [存取網路狀態]  權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]**** 下，尋找 [必要權限]**** 區域並檢查 [存取網路狀態]**** 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 不需要進行額外設定。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 不需要進行額外設定。
 

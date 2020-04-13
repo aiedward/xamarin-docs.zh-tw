@@ -10,15 +10,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 9ce02b4c6412eab1f4b1003b262573c59940286c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68653788"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多頁 Xamarin.Forms 應用程式中執行導覽
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
 在本快速入門中，您將了解如何：
 
@@ -31,7 +31,7 @@ ms.locfileid: "68653788"
 [![](multi-page-images/screenshots1-sml.png "Notes Page")](multi-page-images/screenshots1.png#lightbox "Notes Page")
 [![](multi-page-images/screenshots2-sml.png "Note Entry Page")](multi-page-images/screenshots2.png#lightbox "Note Entry Page")
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>Prerequisites
 
 您應該先成功完成[先前的快速入門](single-page.md)，再嘗試本快速入門。 或者，下載[先前的快速入門範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)，並使用此範例作為本快速入門的起點。
 
@@ -39,27 +39,27 @@ ms.locfileid: "68653788"
 
 ## <a name="update-the-app-with-visual-studio"></a>使用 Visual Studio 更新應用程式
 
-1. 啟動 Visual Studio。 在開始視窗中，按一下最近使用的專案/方案清單中的 **Notes** 方案，或按一下 [Open a project or solution] \(開啟專案或方案\)  ，然後在 [開啟專案/方案]  對話方塊中，選取 Notes 專案的方案檔：
+1. 啟動 Visual Studio。 在開始視窗中，按一下最近使用的專案/方案清單中的 **Notes** 方案，或按一下 [Open a project or solution] \(開啟專案或方案\)****，然後在 [開啟專案/方案]**** 對話方塊中，選取 Notes 專案的方案檔：
 
     ![](multi-page-images/vs/open-solution.png "Open Project")
 
-2. 在 [方案總管]  中，以滑鼠右鍵按一下 **Notes** 專案，然後選取 [新增] > [新增資料夾]  ：
+2. 在 [方案總管]**** 中，以滑鼠右鍵按一下 **Notes** 專案，然後選取 [新增] > [新增資料夾]****：
 
     ![](multi-page-images/vs/add-new-item.png "Add New Item")
 
-3. 在 [方案總管]  中，將新資料夾命名為 **Models**：
+3. 在 [方案總管]**** 中，將新資料夾命名為 **Models**：
 
     ![](multi-page-images/vs/name-folder.png "Models Folder")
 
-4. 在 [方案總管]  中，選取 **Models** 資料夾，按一下滑鼠右鍵，然後選取 [新增] > [新增項目]  ：
+4. 在 [方案總管]**** 中，選取 **Models** 資料夾，按一下滑鼠右鍵，然後選取 [新增] > [新增項目]****：
 
     ![](multi-page-images/vs/add-new-models-file.png "Add New File")
 
-5. 在 [新增項目]  對話方塊中，選取 [Visual C# 項目] > [類別]  ，將新檔案命名為 **Note**，然後按一下 [新增]  按鈕：
+5. 在 [新增項目]**** 對話方塊中，選取 [Visual C# 項目] > [類別]****，將新檔案命名為 **Note**，然後按一下 [新增]**** 按鈕：
 
     ![](multi-page-images/vs/add-note-class.png "Add Note Class")
 
-    這會將名為 **Note** 的類別新增至 **Notes** 專案的 **Models** 資料夾。
+    這會將名為 **Note** 的類別新增至 **Notes** 專案 **Models** 資料夾。
 
 6. 在 **Note.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -81,7 +81,7 @@ ms.locfileid: "68653788"
 
     按下 **CTRL+S**，將變更儲存到 **Note.cs**，然後關閉檔案。
 
-7. 在 [方案總管]  中，以滑鼠右鍵按一下 **Notes** 專案，然後選取 [新增] > [新增項目]  。在 [新增項目]  對話方塊中，選取 [Visual C# 項目] > [Xamarin.Forms] > [內容頁面]  ，將新檔案命名為 **NoteEntryPage**，然後按一下 [新增]  按鈕：
+7. 在**解決方案資源管理員**中,右鍵按**下 「註解」** 項目,然後選擇「**新增>新專案」。** 在 **'新增新項目**'對話框中,**選擇"視覺 C# 專案'> Xamarin.窗體>內容頁**,命名新檔案**NoteEntryPage,** 然後按下 **「新增**」按鈕:
 
     ![](multi-page-images/vs/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
 
@@ -114,7 +114,7 @@ ms.locfileid: "68653788"
       </ContentPage>
       ```
 
-      此程式碼以宣告方式定義頁面的使用者介面，包含用於文字輸入的 [`Editor`](xref:Xamarin.Forms.Editor)，以及指示應用程式要儲存或刪除檔案的二個 [`Button`](xref:Xamarin.Forms.Button) 執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 此外，`Editor` 使用資料繫結以繫結至 `Note` 模型的 `Text` 屬性。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[資料繫結](deepdive.md#data-binding)。
+      此代碼聲明性地定義了頁面的使用者介面,該介面由文本輸入的和[`Editor`](xref:Xamarin.Forms.Editor)兩[`Button`](xref:Xamarin.Forms.Button)個實例組成,指示應用程式保存或刪除檔。 這兩`Button`個實體[`Grid`](xref:Xamarin.Forms.Grid)在中水平佈局,`Editor`並`Grid`垂直佈局在中。 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 此外，`Editor` 使用資料繫結以繫結至 `Note` 模型的 `Text` 屬性。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[資料繫結](deepdive.md#data-binding)。
 
       按下 **CTRL+S** 將變更儲存到 **NoteEntryPage.xaml**，然後關閉檔案。
 
@@ -169,14 +169,14 @@ ms.locfileid: "68653788"
       }
       ```
 
-      此程式碼會在頁面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 中，儲存代表單一備註的 `Note` 執行個體。 按下 [儲存]  [`Button`](xref:Xamarin.Forms.Button) 即會執行 `OnSaveButtonClicked` 事件處理常式，這會將 `Editor` 內容儲存至具有隨機產生檔名的新檔案，如果正在更新備註，則會儲存至現有的檔案。 在這兩種情況下，檔案都會儲存在應用程式深入探討本機應用程式資料資料夾中。 然後，方法則巡覽回上一頁。 按下 [刪除]  `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並巡覽回上一頁。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
+      此代碼在頁面`Note`[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)中 存儲一個實例,該實例表示單個註釋。 按下 **「儲存」**[`Button`](xref:Xamarin.Forms.Button)`OnSaveButtonClicked`時, 將執行事件處理程式`Editor`,將事件處理程式的內容儲存到具有隨機產生的檔名的新檔案,或者將事件處理程式儲存到正在更新註釋時的現有檔案。 在這兩種情況下，檔案都會儲存在應用程式深入探討本機應用程式資料資料夾中。 然後，方法則巡覽回上一頁。 按下 [刪除]**** `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並巡覽回上一頁。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
 
       按下 **CTRL+S** 將變更儲存到 **NoteEntryPage.xaml.cs**，然後關閉檔案。
 
       > [!WARNING]
       > 此時若嘗試建置應用程式，將導致會在後續步驟中修正的錯誤。
 
-10. 在 [方案總管]  中，以滑鼠右鍵按一下 **Notes** 專案，然後選取 [新增] > [新增項目]  。在 [新增項目]  對話方塊中，選取 [Visual C# 項目] > [Xamarin.Forms] > [內容頁面]  ，將新檔案命名為 **NotesPage**，然後按一下 [新增]  按鈕。
+10. 在**解決方案資源管理員**中,右鍵按**下 「註解」** 項目,然後選擇「**新增>新專案」。** 在 **'新增新項目**'對話框中,**選擇"視覺 C# 專案"> Xamarin.窗體>內容頁**,命名新檔**NotesPage,** 然後按下 **「 添加**」 按鈕。
 
       這會將名為 **NotesPage** 的頁面新增至專案根資料夾。 此頁面會成為應用程式的根頁面。
 
@@ -205,7 +205,7 @@ ms.locfileid: "68653788"
     </ContentPage>
     ```
 
-    此程式碼會以宣告方式定義頁面的使用者介面，其包含一個 [`ListView`](xref:Xamarin.Forms.ListView) 和一個 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)。 `ListView` 使用資料繫結顯示應用程式擷取的任何備註，而選取備註將會巡覽至可修改備註的 `NoteEntryPage`。 或者，您也可以按下 `ToolbarItem` 建立新的備註。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[資料繫結](deepdive.md#data-binding)。
+    此代碼聲明性地定義了由和[`ListView`](xref:Xamarin.Forms.ListView)組成的頁面的用戶介面。 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) `ListView` 使用資料繫結顯示應用程式擷取的任何備註，而選取備註將會巡覽至可修改備註的 `NoteEntryPage`。 或者，您也可以按下 `ToolbarItem` 來建立新的備註。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[資料繫結](deepdive.md#data-binding)。
 
     按下 **CTRL+S** 將變更儲存到 **NotesPage.xaml**，然後關閉檔案。
 
@@ -272,14 +272,14 @@ ms.locfileid: "68653788"
     }
     ```    
 
-    此程式碼會定義 `NotesPage` 的功能。 當頁面出現時，即會執行 `OnAppearing` 方法，這會將擷取自本機應用程式資料資料夾的任何備註填入 [`ListView`](xref:Xamarin.Forms.ListView)。 按下 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 即會執行 `OnNoteAddedClicked` 事件處理常式。 此方法會巡覽至 `NoteEntryPage`，將 `NoteEntryPage` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 設為新的 `Note` 執行個體。 選取 `ListView` 中的項目即會執行 `OnListViewItemSelected` 事件處理常式。 此方法會巡覽至 `NoteEntryPage`，將 `NoteEntryPage` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 設為選取的 `Note` 執行個體。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
+    此程式碼會定義 `NotesPage` 的功能。 當頁面出現時,將執行`OnAppearing`該方法,該方法[`ListView`](xref:Xamarin.Forms.ListView)使用從本地應用程式資料資料夾中檢索到的任何註解填充 。 按下[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)時`OnNoteAddedClicked`, 將執行事件處理程式。 此方法導航`NoteEntryPage`到[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext),將`NoteEntryPage``Note`設置為 新 實例。 選取 `ListView` 中的項目即會執行 `OnListViewItemSelected` 事件處理常式。 `NoteEntryPage`此方法瀏覽到[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext), 設定`NoteEntryPage``Note`為選取的實體的 。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
 
     按下 **CTRL+S** 將變更儲存到 **NotesPage.xaml.cs**，然後關閉檔案。
 
     > [!WARNING]
     > 此時若嘗試建置應用程式，將導致會在後續步驟中修正的錯誤。
 
-13. 在 [方案總管]  中，按兩下 **App.xaml.cs** 以開啟此檔案。 將現有程式碼取代成下列程式碼：
+13. 在**解決方案資源管理器**中,按兩下**App.xaml.cs**打開它。 將現有程式碼取代成下列程式碼：
 
     ```csharp
     using System;
@@ -303,11 +303,11 @@ ms.locfileid: "68653788"
     }
     ```
 
-    這段程式碼會新增 `System.IO` 命名空間的命名空間宣告，並新增 `string` 類型的靜態 `FolderPath` 屬性宣告。 `FolderPath` 屬性用於儲存裝置路徑，其為儲存備註資料的路徑。 此外，程式碼會初始化 `App` 建構函式中的 `FolderPath` 屬性，並將 [`MainPage`](xref:Xamarin.Forms.Application.MainPage) 屬性初始化為可裝載 `NotesPage` 執行個體的 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
+    這段程式碼會新增 `System.IO` 命名空間的命名空間宣告，並新增 `string` 類型的靜態 `FolderPath` 屬性宣告。 `FolderPath` 屬性用於儲存裝置路徑，其為儲存備註資料的路徑。 `FolderPath`此外,代碼在`App`建構函數中初始化屬性,並將[`MainPage`](xref:Xamarin.Forms.Application.MainPage)該屬性初始化為[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)承載的實例。 `NotesPage` 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
 
     按下 **CTRL+S** 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
 
-14. 在 [方案總管]  的 **Notes** 專案中，以滑鼠右鍵按一下 **MainPage.xaml**，然後選取 [刪除]  。 在出現的對話方塊中，按下 [確定]  按鈕，以從硬碟中移除檔案。
+14. 在 [方案總管]**** 的 **Notes** 專案中，以滑鼠右鍵按一下 **MainPage.xaml**，然後選取 [刪除]****。 在出現的對話方塊中，按下 [確定]**** 按鈕，以從硬碟中移除檔案。
 
     這會移除不再使用的頁面。
 
@@ -322,11 +322,11 @@ ms.locfileid: "68653788"
 
 ## <a name="update-the-app-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 更新應用程式
 
-1. 啟動 Visual Studio for Mac。 在起始視窗中，按一下 [開啟]  ，然後在對話方塊中選取適用於 Notes 專案的方案檔：
+1. 啟動 Visual Studio for Mac。 在起始視窗中，按一下 [開啟]****，然後在對話方塊中選取適用於 Notes 專案的方案檔：
 
     ![](multi-page-images/vsmac/open-solution.png "Open Solution")
 
-2. 在 **Solution Pad** 中，選取 **Notes** 專案，按一下滑鼠右鍵，然後選取 [新增] > [新增資料夾]  ：
+2. 在 **Solution Pad** 中，選取 **Notes** 專案，按一下滑鼠右鍵，然後選取 [新增] > [新增資料夾]****：
 
     ![](multi-page-images/vsmac/add-new-folder.png "Add New Folder")
 
@@ -334,11 +334,11 @@ ms.locfileid: "68653788"
 
     ![](multi-page-images/vsmac/name-folder.png "Models Folder")
 
-4. 在 **Solution Pad** 中，選取 **Models** 資料夾，按一下滑鼠右鍵，然後選取 [新增] > [新增檔案]  ：
+4. 在 **Solution Pad** 中，選取 **Models** 資料夾，按一下滑鼠右鍵，然後選取 [新增] > [新增檔案]****：
 
     ![](multi-page-images/vsmac/add-new-models-file.png "Add New File")
 
-5. 在 [新增檔案]  對話方塊中，選取 [一般] > [空的類別]  ，將新檔案命名為 **Note**，然後按一下 [新增]  按鈕：
+5. 在 [新增檔案]**** 對話方塊中，選取 [一般] > [空的類別]****，將新檔案命名為 **Note**，然後按一下 [新增]**** 按鈕：
 
     ![](multi-page-images/vsmac/add-note-class.png "Add Note Class")
 
@@ -362,9 +362,9 @@ ms.locfileid: "68653788"
 
     此類別會定義 `Note` 模型，以儲存應用程式中每個備註的相關資料。
 
-    選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**)，將變更儲存到 **Note.cs**，然後關閉檔案。
+    選擇 [檔案] > [儲存]**** (或按下 **&#8984; + S**)，將變更儲存到 **Note.cs**，然後關閉檔案。
 
-7. 在 **Solution Pad** 中，選取 **Notes** 專案，按一下滑鼠右鍵，然後選取 [新增] > [新增檔案]  。在 [新增檔案]  對話方塊中，選取 [表單] > [Forms ContentPage XAML] \(建立 ContentPage XAML 表單\)  ，將新檔案命名為 **NoteEntryPage**，然後按一下 [新增]  按鈕：
+7. 在 **"解決方案墊"** 中,選擇 **"備註**"專案,右鍵單擊,然後選擇"**添加>"新檔..."** 在 **'新增檔案**' 對話框中,選擇 **「窗體>內容頁 XAML」,** 命名新檔案**NoteEntryPage,** 然後按下 **「新增**」按鈕:
 
     ![](multi-page-images/vsmac/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
 
@@ -397,9 +397,9 @@ ms.locfileid: "68653788"
       </ContentPage>
       ```
 
-      此程式碼以宣告方式定義頁面的使用者介面，包含用於文字輸入的 [`Editor`](xref:Xamarin.Forms.Editor)，以及指示應用程式要儲存或刪除檔案的二個 [`Button`](xref:Xamarin.Forms.Button) 執行個體。 兩個 `Button` 執行個體以水平方式配置在 [`Grid`](xref:Xamarin.Forms.Grid) 中，而 `Editor` 和 `Grid` 以垂直方式配置在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中。 此外，`Editor` 使用資料繫結以繫結至 `Note` 模型的 `Text` 屬性。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[資料繫結](deepdive.md#data-binding)。
+      此代碼聲明性地定義了頁面的使用者介面,該介面由文本輸入的和[`Editor`](xref:Xamarin.Forms.Editor)兩[`Button`](xref:Xamarin.Forms.Button)個實例組成,指示應用程式保存或刪除檔。 這兩`Button`個實體[`Grid`](xref:Xamarin.Forms.Grid)在中水平佈局,`Editor`並`Grid`垂直佈局在中。 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 此外，`Editor` 使用資料繫結以繫結至 `Note` 模型的 `Text` 屬性。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[資料繫結](deepdive.md#data-binding)。
 
-      選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 將變更儲存到 **NoteEntryPage.xaml**，然後關閉檔案。
+      選擇 [檔案] > [儲存]**** (或按下 **&#8984; + S**) 將變更儲存到 **NoteEntryPage.xaml**，然後關閉檔案。
 
 9. 在 **NoteEntryPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -452,14 +452,14 @@ ms.locfileid: "68653788"
       }
       ```
 
-      此程式碼會在頁面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 中，儲存代表單一備註的 `Note` 執行個體。 按下 [儲存]  [`Button`](xref:Xamarin.Forms.Button) 即會執行 `OnSaveButtonClicked` 事件處理常式，這會將 `Editor` 內容儲存至具有隨機產生檔名的新檔案，如果正在更新備註，則會儲存至現有的檔案。 在這兩種情況下，檔案都會儲存在應用程式深入探討本機應用程式資料資料夾中。 然後，方法則巡覽回上一頁。 按下 [刪除]  `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並巡覽回上一頁。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
+      此代碼在頁面`Note`[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)中 存儲一個實例,該實例表示單個註釋。 按下 **「儲存」**[`Button`](xref:Xamarin.Forms.Button)`OnSaveButtonClicked`時, 將執行事件處理程式`Editor`,將事件處理程式的內容儲存到具有隨機產生的檔名的新檔案,或者將事件處理程式儲存到正在更新註釋時的現有檔案。 在這兩種情況下，檔案都會儲存在應用程式深入探討本機應用程式資料資料夾中。 然後，方法則巡覽回上一頁。 按下 [刪除]**** `Button` 即會執行 `OnDeleteButtonClicked` 事件處理常式，這會刪除檔案 (若檔案存在)，並巡覽回上一頁。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
 
-      選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 將變更儲存到 **NoteEntryPage.xaml.cs**，然後關閉檔案。
+      選擇 [檔案] > [儲存]**** (或按下 **&#8984; + S**) 將變更儲存到 **NoteEntryPage.xaml.cs**，然後關閉檔案。
 
       > [!WARNING]
       > 此時若嘗試建置應用程式，將導致會在後續步驟中修正的錯誤。
 
-10. 在 **Solution Pad** 中，選取 **Notes** 專案，按一下滑鼠右鍵，然後選取 [新增] > [新增檔案]  。在 [新增檔案]  對話方塊中，選取 [表單] > [Forms ContentPage XAML] \(建立 ContentPage XAML 表單\)  ，將新檔案命名為 **NotesPage**，然後按一下 [新增]  按鈕。
+10. 在 **"解決方案墊"** 中,選擇 **"備註**"專案,右鍵單擊,然後選擇"**添加>"新檔..."** 在 **「新建檔案**」對話框中,選擇 **「窗體>內容頁 XAML,** 命名新檔案**NotesPage,** 然後按下 **」新**「按鈕」。
 
       這會將名為 **NotesPage** 的頁面新增至專案根資料夾。 此頁面會成為應用程式的根頁面。
 
@@ -488,9 +488,9 @@ ms.locfileid: "68653788"
     </ContentPage>
     ```
 
-    此程式碼會以宣告方式定義頁面的使用者介面，其包含一個 [`ListView`](xref:Xamarin.Forms.ListView) 和一個 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)。 `ListView` 使用資料繫結顯示應用程式擷取的任何備註，而選取備註將會巡覽至可修改備註的 `NoteEntryPage`。 或者，您也可以按下 `ToolbarItem` 來建立新的備註。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[資料繫結](deepdive.md#data-binding)。
+    此代碼聲明性地定義了由和[`ListView`](xref:Xamarin.Forms.ListView)組成的頁面的用戶介面。 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) `ListView` 使用資料繫結顯示應用程式擷取的任何備註，而選取備註將會巡覽至可修改備註的 `NoteEntryPage`。 或者，您也可以按下 `ToolbarItem` 來建立新的備註。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[資料繫結](deepdive.md#data-binding)。
 
-    選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 將變更儲存到 **NotesPage.xaml**，然後關閉檔案。
+    選擇 [檔案] > [儲存]**** (或按下 **&#8984; + S**) 將變更儲存到 **NotesPage.xaml**，然後關閉檔案。
 
 12. 在 **NotesPage.xaml.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -555,9 +555,9 @@ ms.locfileid: "68653788"
     }
     ```    
 
-    此程式碼會定義 `NotesPage` 的功能。 當頁面出現時，即會執行 `OnAppearing` 方法，這會將擷取自本機應用程式資料資料夾的任何備註填入 [`ListView`](xref:Xamarin.Forms.ListView)。 按下 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 即會執行 `OnNoteAddedClicked` 事件處理常式。 此方法會巡覽至 `NoteEntryPage`，將 `NoteEntryPage` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 設為新的 `Note` 執行個體。 選取 `ListView` 中的項目即會執行 `OnListViewItemSelected` 事件處理常式。 此方法會巡覽至 `NoteEntryPage`，將 `NoteEntryPage` 的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 設為選取的 `Note` 執行個體。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
+    此程式碼會定義 `NotesPage` 的功能。 當頁面出現時,將執行`OnAppearing`該方法,該方法[`ListView`](xref:Xamarin.Forms.ListView)使用從本地應用程式資料資料夾中檢索到的任何註解填充 。 按下[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)時`OnNoteAddedClicked`, 將執行事件處理程式。 此方法導航`NoteEntryPage`到[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext),將`NoteEntryPage``Note`設置為 新 實例。 選取 `ListView` 中的項目即會執行 `OnListViewItemSelected` 事件處理常式。 `NoteEntryPage`此方法瀏覽到[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext), 設定`NoteEntryPage``Note`為選取的實體的 。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
 
-    選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 將變更儲存到 **NotesPage.xaml.cs**，然後關閉檔案。
+    選擇 [檔案] > [儲存]**** (或按下 **&#8984; + S**) 將變更儲存到 **NotesPage.xaml.cs**，然後關閉檔案。
 
     > [!WARNING]
     > 此時若嘗試建置應用程式，將導致會在後續步驟中修正的錯誤。
@@ -586,11 +586,11 @@ ms.locfileid: "68653788"
     }
     ```
 
-    這段程式碼會新增 `System.IO` 命名空間的命名空間宣告，並新增 `string` 類型的靜態 `FolderPath` 屬性宣告。 `FolderPath` 屬性用於儲存裝置路徑，其為儲存備註資料的路徑。 此外，程式碼會初始化 `App` 建構函式中的 `FolderPath` 屬性，並將 [`MainPage`](xref:Xamarin.Forms.Application.MainPage) 屬性初始化為可裝載 `NotesPage` 執行個體的 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)。 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
+    這段程式碼會新增 `System.IO` 命名空間的命名空間宣告，並新增 `string` 類型的靜態 `FolderPath` 屬性宣告。 `FolderPath` 屬性用於儲存裝置路徑，其為儲存備註資料的路徑。 `FolderPath`此外,代碼在`App`建構函數中初始化屬性,並將[`MainPage`](xref:Xamarin.Forms.Application.MainPage)該屬性初始化為[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)承載的實例。 `NotesPage` 如需導覽的詳細資訊，請參閱 [Xamarin.Forms 快速入門深入探討](deepdive.md)中的[導覽](deepdive.md#navigation)。
 
-    選擇 [檔案] > [儲存]  (或按下 **&#8984; + S**) 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
+    選擇 [檔案] > [儲存]**** (或按下 **&#8984; + S**) 以將變更儲存到 **App.xaml.cs**，然後關閉檔案。
 
-14. 在 **Solution Pad** 的 **Notes** 專案中，以滑鼠右鍵按一下 **MainPage.xaml**，然後選取 [移除]  。 在出現的對話方塊中，按下 [刪除]  按鈕，以從硬碟中移除檔案。
+14. 在 **Solution Pad** 的 **Notes** 專案中，以滑鼠右鍵按一下 **MainPage.xaml**，然後選取 [移除]****。 在出現的對話方塊中，按下 [刪除]**** 按鈕，以從硬碟中移除檔案。
 
     這會移除不再使用的頁面。
 
@@ -604,7 +604,7 @@ ms.locfileid: "68653788"
 
 ## <a name="next-steps"></a>後續步驟
 
-在本快速入門中，您已了解如何：
+在此快速入門中，您已了解如何：
 
 - 將其他頁面新增至 Xamarin.Forms 方案。
 - 執行頁面與頁面間的導覽。

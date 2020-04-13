@@ -8,16 +8,16 @@ ms.author: daortin
 ms.custom: video
 ms.date: 08/08/2018
 ms.openlocfilehash: 81a40b9a21bdb9b33173416aed335ac75af9f388
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73006320"
 ---
 # <a name="deploy-to-the-remoted-ios-simulator"></a>部署到遠端 iOS 模擬器
 
-觀看這段影片，以取得在 Windows 上使用 Visual Studio 2017，以透過遠端 iOS 模擬器測試 iOS 應用程式的逐步指示。
+觀看此視頻,瞭解有關在 Windows 上使用 Visual Studio 2017 使用遠端 iOS 模擬器測試 iOS 應用的分步說明。
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Deploying--Debugging-NET-iOS-apps-with-Visual-Studio-2017/player]
 
-深入瞭解[遠端 iOS 模擬器功能](index.md)。
+瞭解有關[遠端 iOS 模擬器功能](index.md)的更多。

@@ -8,49 +8,49 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: c74cac6a6d669385855999a565711a3fdc85f3b7
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73019534"
 ---
 # <a name="smarter-xamarin-android-support-v4--v13-nuget-packages"></a>更聰明的 Xamarin Android 支援 v4 / v13 NuGet 套件
 
-## <a name="about-the-android-support-libraries"></a>關於 Android 支援程式庫
+## <a name="about-the-android-support-libraries"></a>關於 Android 支援庫
 
-Google 已建立支援程式庫，以將新功能提供給舊版 Android。 一般來說，支援程式庫會以其名稱提供版本號碼，這是與相容的最低 Android API 層級（例如：支援-v4 只能在 API 層級4和更新版本上使用）。 如需詳細資訊，請[Stack Overflow 討論](https://stackoverflow.com/questions/9926403/android-support-package-compatibility-library-use-v4-or-v13)）。 
+谷歌已經創建了支援庫,使新功能提供給舊版本的Android。 通常,支援庫的名稱中給出一個版本號,這是它們相容的最低 Android API 級別(例如:支援 v4 只能在 API 級別 4 及以上上使用。 在此[堆疊溢出討論中](https://stackoverflow.com/questions/9926403/android-support-package-compatibility-library-use-v4-or-v13)的詳細資訊。 
 
-其中兩個支援程式庫： `Support-v4` 和 `Support-v13` 不能在相同的應用程式中一起使用，也就是說，它們是互斥的。 這是因為 `Support-v13` 實際上包含 `Support-v4`的所有類型和實作為。 如果您嘗試同時在相同的專案中參考，則會遇到重複的類型錯誤。
+兩個支援庫:`Support-v4``Support-v13`不能 在同一應用中一起使用,也就是說它們是互斥的。 這是因為`Support-v13`實際上`Support-v4`包含的所有類型和實現。 如果在同一項目中嘗試並引用兩者,則會遇到重複的類型錯誤。
 
-## <a name="problems-with-referencing"></a>參考的問題
+## <a name="problems-with-referencing"></a>引言問題
 
-由於 `Support-v4` 已經變得很熱門，因此有許多協力廠商程式庫現在會依賴它。 他們可能已選擇依賴支援 v13，但更常見的方式是依賴_v4_ ，因為這會讓使用這些協力廠商程式庫的任何應用程式都能選擇支援 API 層級，直到到4為止。
+由於`Support-v4`已經變得如此受歡迎,許多第三方圖書館現在依賴於它。 他們本可以選擇轉而依賴 Support-v13,但更常依賴_v4,_ 因為這使使用這些第三方庫的任何應用可以選擇支援 API 級別,一直支援到 4。
 
-如果 Xamarin 協力廠商程式庫參考 `Support-v4`的 `Xamarin.Android.Support.v4.dll` 系結，則任何使用此程式庫的應用程式也必須參考 `Xamarin.Android.Support.v4.dll`。 當同一個應用程式也想要使用 `Xamarin.Android.Support.v13.dll` 系結的某些功能來 `Support-v13`時，這會變成問題。 如果您參考這兩個系結，您將會遇到重複的類型錯誤。
+如果 Xamarin 第三方`Xamarin.Android.Support.v4.dll`庫引用`Support-v4`繫結到 ,則使用此函式庫`Xamarin.Android.Support.v4.dll`的任何應用程式也必須參考 。 當同一應用還希望使用綁定到`Xamarin.Android.Support.v13.dll``Support-v13`的一些功能時,這將成為問題。 如果引用這兩個綁定,則會遇到重複的類型錯誤。
 
-## <a name="type-forwarded-v4-binding-assembly"></a>類型轉送的 v4 系結元件
+## <a name="type-forwarded-v4-binding-assembly"></a>型態轉發 v4 系統執行程式集
 
-為了解決這個問題，我們建立了一個特殊的 `Xamarin.Android.Support.v4.dll` 元件，其中沒有執行，而只是 `[assembly: TypeForwardedTo (..)]` 屬性，將所有 `Support-v4` 類型轉送到 `Xamarin.Android.Support.v13.dll` 元件中的實作為。
+為了解決這個問題,我們創建了一`Xamarin.Android.Support.v4.dll`個沒有實現的特殊程式集,而只是`[assembly: TypeForwardedTo (..)]`將所有`Support-v4`類型轉發到`Xamarin.Android.Support.v13.dll`程式集中的實現的屬性。
 
-這表示開發人員可以在其應用程式中參考這個_類型轉送_的元件，以滿足任何協力廠商程式庫 `Xamarin.Android.Support.v4.dll` 的參考，同時仍然允許在應用程式中使用 `Xamarin.Android.Support.v13.dll`。
+這意味著開發人員可以在其應用中引用此_類型轉發_程式集,這將滿足任何第三方庫`Xamarin.Android.Support.v4.dll`對的引用,同時仍`Xamarin.Android.Support.v13.dll`允許在應用中使用。
 
-## <a name="nuget-assistance"></a>NuGet 協助
+## <a name="nuget-assistance"></a>NuGet 援助
 
-開發人員可以手動新增必要的正確參考，但在安裝 NuGet 套件時，我們可以使用 NuGet 協助選擇正確的元件（一般_v4_系結或類型轉送的_v4_元件）。
+雖然開發人員可以手動添加所需的正確引用,但我們可以在安裝 NuGet 包時使用 NuGet 幫助選擇正確的程式集(正常_v4_綁定或類型轉發_v4_程式集)。
 
-因此，`Xamarin.Android.Support.v4` NuGet 套件現在包含下列邏輯：
+因此,NuGet`Xamarin.Android.Support.v4`套件現在包含以下邏輯:
 
-如果您的應用程式是以 API 層級13（Gingerbread 3.2）或更高版本為目標：
+如果應用的目標是 API 級別 13(金餅 3.2)或更高版本:
 
-* `Xamarin.Android.Support.v13` NuGet 會自動新增為相依性
-* 專案中將參考_類型轉送_的 `Xamarin.Android.Support.v4.dll`
+* `Xamarin.Android.Support.v13`NuGet 將自動新增為相依項
+* 在項目中參考_已輸入的型態轉寄_`Xamarin.Android.Support.v4.dll`
 
-如果您的應用程式是以低於 API 層級13的任何專案為目標，則會取得您的專案中所參考的一般 `Xamarin.Android.Support.v4.dll` 系結。
+如果應用的目標是低於 API 級別 13 的任何內容,您將`Xamarin.Android.Support.v4.dll`獲得專案中引用的正常綁定。
 
-## <a name="do-i-have-to-use-support-v13"></a>我是否必須使用支援-v13？
+## <a name="do-i-have-to-use-support-v13"></a>我必須使用支援 v13 嗎?
 
-如果您的應用程式是以 API 層級13或更高版本為目標，而且您選擇使用 `Xamarin Android Support-v4` NuGet 套件，則 `Xamarin Android Support v13` NuGet 套件是必要的相依性。
+如果應用的目標是 API 級別 13 或更高`Xamarin Android Support-v4`版本,並且選擇`Xamarin Android Support v13`使用 NuGet 包 ,則 NuGet 包是必需的依賴項。
 
-我們覺得應用程式大小的大幅增加（兩個 .jar 檔案不同于17kb）值得一提的是相容性，也是較少的麻煩。
+我們覺得應用程式大小的非常小的增加(兩個 .jar 檔相差 17kb)非常值得相容性和更少的麻煩,它導致。
 
-如果您要 adamant 有關在以 API 層級13或更高版本為目標的應用程式中使用 `Support-v4`，您一律可以手動下載 `.nupkg`、將其解壓縮，以及參考元件。
+如果您堅持在針對 API`Support-v4`級別 13 或更高的應用中使用,則始終`.nupkg`可以手動下載 ,提取它並引用程式集。

@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials:檔案系統協助程式
+title: Xamarin.Essentials：檔案系統協助程式
 description: Xamarin.Essentials 中的 FileSystem 類別包含一系列協助程式，用於尋找應用程式的快取和資料目錄，並開啟應用程式套件內的檔案。
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 5b155e4976a67bda36e66d2ca3565c9237fde3c6
-ms.sourcegitcommit: c6e56545eafd8ff9e540d56aba32aa6232c5315f
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68738870"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials:檔案系統協助程式
+# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials：檔案系統協助程式
 
 **FileSystem** 類別包含一系列協助程式，用於尋找應用程式的快取和資料目錄，並開啟應用程式套件內的檔案。
 
@@ -54,21 +54,21 @@ var mainDir = FileSystem.AppDataDirectory;
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 - **CacheDirectory** – 傳回目前內容的 [CacheDir](https://developer.android.com/reference/android/content/Context.html#getCacheDir)。
 - **AppDataDirectory** – 傳回目前內容的 [FilesDir](https://developer.android.com/reference/android/content/Context.html#getFilesDir)，並使用從 API 23 及更新版本開始的[自動備份](https://developer.android.com/guide/topics/data/autobackup.html)來進行備份。
 
-將任何檔案新增至 Android 專案的 [資產]  資料夾中，並將建置動作標記為 **AndroidAsset**，以將其與 `OpenAppPackageFileAsync` 搭配使用。
+將任何檔案新增至 Android 專案的 [資產]**** 資料夾中，並將建置動作標記為 **AndroidAsset**，以將其與 `OpenAppPackageFileAsync` 搭配使用。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - **CacheDirectory** – 傳回[程式庫/快取](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)目錄。
 - **AppDataDirectory** – 傳回透過 iTunes 與 iCloud 備份的[程式庫](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)目錄。
 
-將任何檔案新增至 iOS 專案的 [資源]  資料夾中，並將建置動作標記為 **BundledResource**，以將其與 `OpenAppPackageFileAsync` 搭配使用。
+將任何檔案新增至 iOS 專案的 [資源]**** 資料夾中，並將建置動作標記為 **BundledResource**，以將其與 `OpenAppPackageFileAsync` 搭配使用。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 - **CacheDirectory** – 傳回 [LocalCacheFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) 目錄...
 - **AppDataDirectory** – 傳回備份至雲端的 [LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) 目錄。

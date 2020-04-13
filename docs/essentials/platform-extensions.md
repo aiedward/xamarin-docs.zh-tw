@@ -6,13 +6,13 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
 ms.openlocfilehash: 4e43159fb9cae6646be54d8efc24c334bc071477
-ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77545157"
 ---
-# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials:平台擴充
+# <a name="xamarinessentials-platform-extensions"></a>Xamarin.要點:平台擴展
 
 當必須使用像是矩形、大小、點等平台類型時，Xamarin.Essentials 可提供數種平台擴充方法。 這代表您可在 `System` 版的這些類型 (其 iOS、Android 及 UWP 特定類型) 間轉換。 
 
@@ -30,13 +30,13 @@ using Xamarin.Essentials;
 
 全部的平台擴充模組皆僅可從 iOS、Android 或 UWP 專案呼叫。
 
-## <a name="android-extensions"></a>Android 擴充
+## <a name="android-extensions"></a>安卓擴展
 
-這些擴充只能從 Android 專案存取。
+這些擴展只能從 Android 項目訪問。
 
-### <a name="application-context--activity"></a>應用程式內容與活動
+### <a name="application-context--activity"></a>應用程式內容文&活動
 
-透過使用 `Platform` 類別中的平台擴充，您可以存取執行中應用程式目前的 `Context` 或 `Activity`。
+使用類中的`Platform`平台擴展,您可以訪問`Context`當前`Activity`應用或 正在運行的應用。
 
 ```csharp
 
@@ -46,7 +46,7 @@ var context = Platform.AppContext;
 var activity = Platform.CurrentActivity;
 ```
 
-如果有需要 `Activity` 的情況，但應用程式尚未完全啟動，則應該使用 `WaitForActivityAsync` 方法。
+如果出現需要`Activity`的情況 ,但應用程式尚未完全`WaitForActivityAsync`啟動, 則應使用該方法。
 
 ```csharp
 var activity = await Platform.WaitForActivityAsync();
@@ -54,7 +54,7 @@ var activity = await Platform.WaitForActivityAsync();
 
 ### <a name="activity-lifecycle"></a>活動開發週期
 
-除了取得目前的 Activity 之外，您也可以註冊生命週期事件。
+除了獲取當前活動外,您還可以註冊生命週期事件。
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -76,37 +76,37 @@ void Platform_ActivityStateChanged(object sender, Xamarin.Essentials.ActivitySta
     Toast.MakeText(this, e.State.ToString(), ToastLength.Short).Show();
 ```
 
-Activity 的狀態如下：
+活動狀態如下:
 
 * 建立時間
 * 已繼續
 * 已暫停
 * 終結
-* SaveInstanceState
-* 自
+* 儲存實體狀態
+* Started
 * 已停止
 
-請參閱[活動生命週期](https://docs.microsoft.com/xamarin/android/app-fundamentals/activity-lifecycle/) \(部分機器翻譯\) 文件以深入了解。
+閱讀[活動生命周期](https://docs.microsoft.com/xamarin/android/app-fundamentals/activity-lifecycle/)文件以瞭解更多資訊。
 
 ## <a name="ios-extensions"></a>iOS 延伸模組
 
-這些擴充只能從 iOS 專案存取。
+這些擴展只能從 iOS 項目訪問。
 
-### <a name="current-uiviewcontroller"></a>目前的 UIViewController
+### <a name="current-uiviewcontroller"></a>目前 UIView 控制器
 
-取得目前可見 `UIViewController` 的存取權：
+存取目前可見`UIViewController`的 :
 
 ```csharp
 var vc = Platform.GetCurrentUIViewController();
 ```
 
-如果無法偵測到 `UIViewController`，此方法將會傳回 `null`。
+如果無法偵測`null`到`UIViewController`, 則此方法將傳回。
 
-## <a name="cross-platform-extensions"></a>跨平台擴充
+## <a name="cross-platform-extensions"></a>跨平台延伸
 
-這些擴充存在於每一個平台。
+這些擴展存在於每個平臺中。
 
-### <a name="point"></a>點
+### <a name="point"></a>Point
 
 ```csharp
 var system = new System.Drawing.Point(x, y);

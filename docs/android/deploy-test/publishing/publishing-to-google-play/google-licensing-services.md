@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/20/2017
 ms.openlocfilehash: 4cc7f3b36c43d9c9bb611b7d669f8304aab05820
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021271"
 ---
 # <a name="google-licensing-services"></a>Google 授權服務
@@ -26,7 +26,7 @@ ms.locfileid: "73021271"
 
 已實作「Google 授權」的應用程式會向裝置上 Google Play 應用程式所主控的服務提出要求。 Google Play 會接著將此要求傳送給「Google 授權」伺服器，由該伺服器回應授權狀態： 
 
-[![授權伺服器工作流程圖](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
+[![授權伺服器工作流圖](google-licensing-services-images/gp-licensing-service-overview.png)](google-licensing-services-images/gp-licensing-service-overview.png#lightbox)
 
 上圖說明以下工作流程： 
 

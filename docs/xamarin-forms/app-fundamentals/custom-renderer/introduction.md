@@ -1,6 +1,6 @@
 ---
 title: 自訂轉譯器簡介
-description: 本文簡介自訂轉譯器，並概述建立自訂轉譯器的程序。
+description: 本文簡介如何自訂轉譯器，並概述建立自訂轉譯器的程序。
 ms.prod: xamarin
 ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
 ms.technology: xamarin-forms
@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
 ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771873"
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 
-_自訂轉譯器提供了一種強大的方法，可自訂 Xamarin 控制項的外觀和行為。它們可用於小型樣式變更或複雜的平臺特定版面配置和行為自訂。本文提供自訂轉譯器的簡介，並概述建立自訂轉譯器的程式。_
+_自定義呈現器為自定義 Xamarin.Forms 控制件的外觀和行為提供了一種強大的方法。它們可用於小型樣式更改或複雜的特定於平臺的佈局和行為自定義。本文介紹了自定義呈現器,並概述了創建自定義呈現器的過程。_
 
 Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/controls/index.md)提供通用 API，描述跨平台行動裝置的使用者介面。 系統會在每個平台上使用 `Renderer` 類別，以不同的方式轉譯每個頁面、配置和控制項，進而建立原生控制項 (對應至 Xamarin.Forms 表示方式)、將其排列在畫面上，然後新增在共用程式碼中指定的行為。
 
@@ -52,7 +52,7 @@ public class MyEntry : Entry
 `local` 命名空間前置詞可以使用任何內容。 不過，`namespace` 和 `assembly` 值必須符合自訂控制項的詳細資料。 一旦宣告命名空間，即會使用前置詞來參考自訂控制項。
 
 > [!NOTE]
-> 在 .NET Standard 程式庫專案中定義 `xmlns` 比使用共用專案更簡單。 .NET Standard 程式庫會編譯成組件，因此很容易判斷 `assembly=CustomRenderer` 值應為何。 使用共用專案時，所有共用的資產 (包括 XAML) 都會編譯成每個參考專案；這表示，如果 iOS、Android 和 UWP 專案有自己的「組件名稱」，就無法寫入 `xmlns` 宣告，因為每個應用程式必須有不同的值。 共用專案的 XAML 自訂控制項需要使用相同的組件名稱來設定每個應用程式專案。
+> 在 .NET Standard 程式庫專案中定義 `xmlns` 比使用共用專案更簡單。 .NET Standard 程式庫會編譯成組件，因此很容易判斷 `assembly=CustomRenderer` 值應為何。 使用共用專案時，所有共用的資產 (包括 XAML) 都會編譯成每個參考專案；這表示，如果 iOS、Android 和 UWP 專案有自己的「組件名稱」**，就無法寫入 `xmlns` 宣告，因為每個應用程式必須有不同的值。 共用專案的 XAML 自訂控制項需要使用相同的組件名稱來設定每個應用程式專案。
 
 然後，使用灰色背景在每個平台中轉譯 `MyEntry` 自訂控制項，如下列螢幕擷取畫面所示：
 
@@ -91,8 +91,8 @@ var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere
 
 ## <a name="summary"></a>總結
 
-本文已簡介自訂轉譯器，並概述建立自訂轉譯器的程序。 自訂轉譯器提供自訂 Xamarin.Forms 控制項外觀和行為的有效方法。 它們可用於小型樣式變更或複雜的平台特定配置及行為自訂。
+本文已簡介自訂轉譯器，並概述建立自訂轉譯器的程序。 自訂轉譯器提供自訂 Xamarin.Forms 控制項外觀和行為的有力方法。 自訂轉譯器可用於小型樣式變更或複雜的平台特定版面配置，以及行為自訂。
 
 ## <a name="related-links"></a>相關連結
 
-- [Effects](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [影響](~/xamarin-forms/app-fundamentals/effects/index.md)

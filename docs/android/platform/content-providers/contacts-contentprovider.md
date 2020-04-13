@@ -7,42 +7,42 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/22/2018
 ms.openlocfilehash: fca57b7af34ae2b28dda9bf20a95183138cbc641
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020537"
 ---
 # <a name="using-the-contacts-contentprovider"></a>使用連絡人 ContentProvider
 
-使用 `ContentProvider` 所公開之存取資料的程式碼，完全不需要 `ContentProvider` 類別的參考。 取而代之的是，Uri 是用來在 `ContentProvider`所公開的資料上建立游標。 Android 使用 Uri 在系統中搜尋公開具有該識別碼之 `ContentProvider` 的應用程式。 Uri 是一個字串，通常會以反向 DNS 格式（例如 `com.android.contacts/data`）。
+使用`ContentProvider`透過存取的資料的代碼根本不需要參考類別`ContentProvider`。 相反,Uri 用於在公開的資料上建立`ContentProvider`游標 。 Android 使用Uri 搜索系統,查找使用該標識`ContentProvider`符公開 的 應用程式。 Uri 是一個字串,通常採用反向 DNS`com.android.contacts/data`格式, 如 。
 
-Android*連絡人*提供者會在 `android.provider.ContactsContract` 類別中公開其中繼資料，而不是讓開發人員記住此字串。 這個類別是用來判斷 `ContentProvider` 的 Uri，以及可查詢之資料表和資料行的名稱。
+Android*聯繫人*提供程式不是讓開發人員記住此字串,而是`android.provider.ContactsContract`在類中公開其元數據。 此類用於確定的`ContentProvider`Uri以及可查詢的表和列的名稱。
 
-某些資料類型也需要特殊許可權才能存取。 內建的 [連絡人] 清單需要**androidmanifest.xml**檔案中的 [`android.permission.READ_CONTACTS`] 許可權。
+某些數據類型還需要特殊的訪問許可權。 內建連絡人清單`android.permission.READ_CONTACTS`需要**AndroidManifest.xml**檔中的許可權。
 
-有三種方式可從 Uri 建立資料指標：
+從 Uri 建立游標有三種方法:
 
-1. **ManagedQuery （）** &ndash; Android 2.3 （API 層級10）和更早版本中的慣用方法，`ManagedQuery` 會傳回資料指標，並自動管理重新整理資料和關閉資料指標。 這個方法在 Android 3.0 （API 層級11）中已被取代。
+1. **託管查詢()** &ndash; Android 2.3(API 級別 10)和更早版本`ManagedQuery`的首選 方法返回游標,並自動管理刷新數據和關閉游標。 此方法在 Android 3.0(API 級別 11)中被棄用。
 
-1. **ContentResolver （）** &ndash; 會傳回非受控資料指標，這表示必須在程式碼中明確地重新整理和關閉它。
+1. **ContentResolver.query()**&ndash;傳回非託管游標,這意味著必須在代碼中顯式刷新和關閉它。
 
-1. **CursorLoader （）。LoadInBackground （）** &ndash; 在 Android 3.0 （API 層級11）中引進，`CursorLoader` 現在是取用 `ContentProvider` 的慣用方式。 `CursorLoader` 會在背景執行緒上查詢 `ContentResolver`，因此不會封鎖 UI。
-   您可以使用 v4 相容性程式庫，在較舊版本的 Android 中存取此類別。
+1. **游標載入器()。在**&ndash;Android 3.0(API 級別 11)中引入`CursorLoader`的 LoadIn背景()`ContentProvider`現在是使用 的首選方式。 `CursorLoader`查詢後台線程`ContentResolver`上的 a,以便不會阻止 UI。
+   此類可以使用 v4 相容性庫在舊版本的 Android 中訪問。
 
-每一個方法都有相同的基本輸入集合：
+這些方法中的每一個都有相同的基本輸入集:
 
-- **Uri** &ndash; `ContentProvider` 的完整名稱。
-- **投射**&ndash; 指定資料指標所要選取的資料行。
-- **選取**&ndash; 類似 SQL `WHERE` 子句。
-- **SelectionArgs** &ndash; 要在選取範圍中取代的參數。
-- 排序依據**的 &ndash; 資料**行。
+- **Uri**&ndash;的完全限定`ContentProvider`名稱 。
+- **要**&ndash;為游標選擇哪些列的投影規範。
+- **選擇**&ndash;類似於 SQL`WHERE`子句。
+- **要**&ndash;選擇中取代的選擇參數。
+- **排序按**&ndash;排序的列。
 
-## <a name="creating-inputs-for-a-query"></a>建立查詢的輸入
+## <a name="creating-inputs-for-a-query"></a>建立查詢建立輸入
 
-`ContactsProvider` 範例程式碼會對 Android 的內建連絡人提供者執行非常簡單的查詢。 您不需要知道實際的 Uri 或資料行名稱-查詢連絡人 `ContentProvider` 所需的所有資訊，都可以當做 `ContactsContract` 類別所公開的常數。
+示例`ContactsProvider`代碼對 Android 的內建聯繫人提供程式執行非常簡單的查詢。 您不需要知道實際的 Uri 或列名稱 -`ContentProvider`查詢聯絡人`ContactsContract`所需的所有資訊都作為 類公開的常量提供。
 
-不論使用哪一個方法來抓取資料指標，這些相同的物件都會當做參數使用，如*ContactsProvider/ContactsAdapter*檔案中所示：
+無論使用哪種方法檢索游標,這些相同的物件都用作參數,如*聯繫人提供程式/聯繫人適配器.cs*檔中所示:
 
 ```csharp
 var uri = ContactsContract.Contacts.ContentUri;
@@ -53,57 +53,57 @@ string[] projection = {
 };
 ```
 
-在此範例中，將會藉由將 `selection`、`selectionArgs` 和 `sortOrder` 設定為 `null`來予以忽略。
+這個範例中`selection`, 將透過`selectionArgs``sortOrder``null`設定為來忽略 。
 
-## <a name="creating-a-cursor-from-a-content-provider-uri"></a>從內容提供者 Uri 建立資料指標
+## <a name="creating-a-cursor-from-a-content-provider-uri"></a>從內容提供者 Uri 建立游標
 
-一旦建立參數物件之後，就可以使用下列三種方式的其中一種：
+建立參數物件後,可透過以下三種方式之一使用它們:
 
-### <a name="using-a-managed-query"></a>使用 Managed 查詢
+### <a name="using-a-managed-query"></a>使用託管查詢
 
-以 Android 2.3 （API 層級10）或更早版本為目標的應用程式應該使用下列方法：
+適合 Android 2.3(API 等級 10)或更早版本的應用程式應使用此方法:
 
 ```csharp
 var cursor = activity.ManagedQuery(uri, projection, null, null, null);
 ```
 
-此資料指標將由 Android 管理，因此您不需要將它關閉。
+此游標將由 Android 管理,因此您無需關閉它。
 
-### <a name="using-contentresolver"></a>使用 ContentResolver
+### <a name="using-contentresolver"></a>使用內容解析器
 
-直接存取 `ContentResolver` 以取得 `ContentProvider` 的游標，可以如下所示：
+`ContentResolver`直接訪問以獲取針對`ContentProvider`的遊標可以執行,如下所示:
 
 ```csharp
 var cursor = activity.ContentResolver(uri, projection, null, null, null);
 ```
 
-這個資料指標不受管理，因此必須在不再需要時關閉它。
-請確認程式碼會關閉已開啟的資料指標，否則會發生錯誤。
+此遊標是非託管的,因此在不再需要時必須關閉它。
+確保代碼關閉打開的游標,否則將發生錯誤。
 
 ```csharp
 cursor.Close();
 ```
 
-或者，您可以呼叫 `StartManagingCursor()`，並 `StopManagingCursor()` 至資料指標的「管理」。 停止並重新啟動活動時，會自動停用並重新查詢 Managed 資料指標。
+或者,您可以調用`StartManagingCursor()``StopManagingCursor()`並 「管理」游標。 當活動停止並重新啟動時,託管游標將自動停用並重新查詢。
 
-### <a name="using-cursorloader"></a>使用 CursorLoader
+### <a name="using-cursorloader"></a>使用游標載入器
 
-針對 Android 3.0 （API 層級11）或更新版本所建立的應用程式應該使用此方法：
+為 Android 3.0(API 級別 11)或較新的應用程式應使用此方法:
 
 ```csharp
 var loader = new CursorLoader (activity, uri, projection, null, null, null);
 var cursor = (ICursor)loader.LoadInBackground();
 ```
 
-此 `CursorLoader` 可確保所有資料指標作業都是在背景執行緒上完成，而且可以在活動重新開機時，以智慧方式在活動實例之間重複使用現有的資料指標（例如，因為設定變更），而不是重新載入資料。
+`CursorLoader`確保所有遊標操作都在後台線程上完成,並且可以在活動重新啟動時(例如由於配置更改)在活動實例中智慧重用現有游標,而不是重新載入數據。
 
-較舊的 Android 版本也可以使用「 [v4 支援程式庫](https://developer.android.com/tools/support-library/index.html)」（`CursorLoader` class）。
+早期的 Android 版本`CursorLoader`也可以使用[v4 支援函式庫](https://developer.android.com/tools/support-library/index.html)。
 
-## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>使用自訂介面卡顯示游標資料
+## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>使用自訂介面
 
-為了顯示連絡人影像，我們將使用自訂介面卡，讓我們可以手動將 `PhotoId` 參考解析成影像檔案路徑。
+要顯示連絡人映像,我們將使用自定義適配器,以便我們可以手動解析`PhotoId`對 圖像檔路徑的引用。
 
-為了顯示具有自訂介面卡的資料，此範例會使用 `CursorLoader`，從**ContactsProvider/ContactsAdapter**的**FillContacts**方法中，將所有連絡人資料取出至本機集合：
+若要使用自訂介面卡顯示資料,該範例使用 從`CursorLoader`**聯絡人提供程式/連絡人適配器.cs**的**FillContact**方法中檢索所有聯絡人資料到本地集合中:
 
 ```csharp
 void FillContacts ()
@@ -130,7 +130,7 @@ void FillContacts ()
 }
 ```
 
-然後使用 `contactList` 集合來執行 BaseAdapter 的方法。 介面卡的執行方式就如同使用任何其他集合一樣 &ndash; 在這裡沒有特別的處理，因為資料來自 `ContentProvider`：
+然後使用`contactList`集合實現 BaseAdapter 的方法。 適配器的實現與任何其他集合&ndash;一樣,這裡沒有特殊處理,因為資料來自`ContentProvider`:
 
 ```csharp
 Activity activity;
@@ -168,16 +168,16 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 }
 ```
 
-使用裝置上影像檔案的 Uri，顯示影像（如果有的話）。 應用程式看起來像這樣：
+使用Uri顯示圖像(如果存在)。 應用程式如下所示:
 
-[![在 ListView 中顯示連絡人之應用程式的螢幕擷取畫面;影像會顯示在一個專案的左邊](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png#lightbox)
+[![在 ListView 中顯示聯繫人的應用屏幕截圖;影像顯示在一個條目的左側](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png#lightbox)
 
-您的應用程式可以使用類似的程式碼模式來存取各種不同的系統資料，包括使用者的相片、影片和音樂。
-某些資料類型需要在專案的**androidmanifest.xml**中要求特殊許可權。
+使用類似的代碼模式,應用程式可以訪問各種系統數據,包括使用者的照片、視頻和音樂。
+某些資料類型要求在專案的**AndroidManifest.xml**中請求特殊許可權。
 
-## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>使用 SimpleCursorAdapter 顯示資料指標
+## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>使用 SimpleCursor 配接器顯示游標資料
 
-游標也可以顯示 `SimpleCursorAdapter` （雖然只會顯示名稱，而不是相片）。 此程式碼示範如何搭配 `SimpleCursorAdapter` 使用 `ContentProvider` （此程式碼不會出現在範例中）：
+游標也可以用`SimpleCursorAdapter`顯示 (儘管只顯示名稱,而不是照片)。 此程式碼展示如何`ContentProvider`使用`SimpleCursorAdapter`與 (此代碼不顯示在範例中):
 
 ```csharp
 var uri = ContactsContract.Contacts.ContentUri;
@@ -193,8 +193,8 @@ adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.SimpleListItem1
 listView.Adapter = adapter;
 ```
 
-如需有關執行 `SimpleCursorAdapter`的進一步資訊，請參閱[listview 和介面卡](~/android/user-interface/layouts/list-view/index.md)。
+有關實`SimpleCursorAdapter`作的詳細資訊[,請參閱清單檢視和適接器](~/android/user-interface/layouts/list-view/index.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [ContactsAdapter 示範（範例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
+- [連絡人配接器示範(範例)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)

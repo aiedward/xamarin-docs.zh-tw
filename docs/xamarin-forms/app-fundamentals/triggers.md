@@ -8,21 +8,21 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/21/2020
 ms.openlocfilehash: bf9c06dae0df7da1cc69a85d8436376494039959
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79305126"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms 觸發程序
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
-觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。 此外，狀態觸發程式是一組特殊的觸發程式，它會定義何時應套用[`VisualState`](xref:Xamarin.Forms.VisualState) 。
+觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。 此外,狀態觸發器(是一組專門的觸發器)定義何時應用[`VisualState`](xref:Xamarin.Forms.VisualState)。
 
 您可以將觸發程序直接指派給控制項，或將它新增至頁面層級或應用程式層級的資源字典，以套用至多個控制項。
 
-## <a name="property-triggers"></a>屬性觸發程式
+## <a name="property-triggers"></a>屬性觸發器
 
 簡單的觸發程序完全以 XAML 表達，新增 `Trigger` 項目至控制項的觸發程序集合。
 此範例示範在 `Entry` 收到焦點時，變更其背景色彩的觸發程序：
@@ -51,9 +51,9 @@ ms.locfileid: "79305126"
 
 - **EnterActions 和 ExitActions** (未顯示) - 以程式碼撰寫，且可以和 `Setter` 項目一起使用，或是用來代替它。 其[描述如下](#enteractions-and-exitactions)。
 
-### <a name="applying-a-trigger-using-a-style"></a>使用樣式套用觸發程式
+### <a name="applying-a-trigger-using-a-style"></a>使用樣式應用觸發器
 
-觸發程序也可以新增至控制項的 `Style` 宣告、頁面上或應用程式 `ResourceDictionary`。 這個範例會宣告隱含樣式（也就是未設定 `Key`），這表示它會套用至頁面上的所有 `Entry` 控制項。
+觸發程序也可以新增至控制項的 `Style` 宣告、頁面上或應用程式 `ResourceDictionary`。 此示例聲明隱式樣式(即設置否`Key`),這意味著它將應用於頁面上`Entry`的所有控件。
 
 ```xaml
 <ContentPage.Resources>
@@ -71,9 +71,9 @@ ms.locfileid: "79305126"
 </ContentPage.Resources>
 ```
 
-## <a name="data-triggers"></a>資料觸發程式
+## <a name="data-triggers"></a>資料觸發器
 
-資料觸發程序使用資料繫結來監視另一個控制項，導致呼叫 `Setter`。 請設定 `Property` 屬性來監視指定的值，而不是屬性觸發程序中的 `Binding` 屬性。
+資料觸發程序使用資料繫結來監視另一個控制項，導致呼叫 `Setter`。 請設定 `Binding` 屬性來監視指定的值，而不是屬性觸發程序中的 `Property` 屬性。
 
 下列範例使用資料繫結語法 `{Binding Source={x:Reference entry}, Path=Text.Length}`
 這是我們指稱另一個控制項屬性的方法。 當 `entry` 的長度為零時，會啟動觸發程序。 在此範例中，觸發程序會在輸入為空時停用按鈕。
@@ -103,7 +103,7 @@ ms.locfileid: "79305126"
 > [!TIP]
 > 在評估 `Path=Text.Length` 時，一律為目標屬性提供預設值 (例如， `Text=""`)，否則它將會是 `null` 且觸發程序將無法如您預期運作。
 
-除了指定 `Setter` 之外，您也可以提供 [`EnterActions` 和 `ExitActions`](#enteractions-and-exitactions)。
+除了指定`Setter`s 外,您[`EnterActions``ExitActions`](#enteractions-and-exitactions)還可以提供 和 。
 
 ## <a name="event-triggers"></a>事件觸發程序
 
@@ -155,9 +155,9 @@ public class NumericValidationTriggerAction : TriggerAction<Entry>
 
 在 `ResourceDictionary` 中共用觸發程序時請小心，將會在控制項之間共用一個執行個體，因此設定一次的任何狀態將會適用於全部。
 
-請注意，事件觸發程序不支援 `EnterActions` 和 `ExitActions`，[如下所述](#enteractions-and-exitactions)。
+請注意，事件觸發程序不支援 `EnterActions` 和 ，`ExitActions`    [如下所述](#enteractions-and-exitactions)。
 
-## <a name="multi-triggers"></a>多個觸發程式
+## <a name="multi-triggers"></a>多觸發器
 
 `MultiTrigger` 看起來類似於 `Trigger` 或 `DataTrigger`，但它可以有多個條件。 所有條件必須都為 true 才會觸發 `Setter`。
 
@@ -251,8 +251,8 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 </Button>
 ```
 
-這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入，只需要有一個 `Entry` 即可啟用 [儲存] 按鈕。
-在畫面底部，[登入] 按鈕保持非使用中，直到兩個欄位都包含資料為止。
+這些螢幕擷取畫面顯示上述兩個多重觸發程序範例之間的差異。 在畫面頂端的文字輸入，只需要有一個 `Entry` 即可啟用 [儲存]**** 按鈕。
+在畫面底部，[登入]**** 按鈕保持非使用中，直到兩個欄位都包含資料為止。
 
 ![](triggers-images/multi-requireall.png "MultiTrigger Examples")
 
@@ -260,12 +260,12 @@ XAML 如下所示。 請注意第一個多重觸發程序範例的下列差異�
 
 另一種在觸發程序發生時實作變更的方法，是藉由新增 `EnterActions` 和 `ExitActions` 集合，並指定 `TriggerAction<T>` 實作。
 
-[`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions) 集合可用來定義符合觸發條件時所叫用 `IList`[`TriggerAction` 物件的 ](xref:Xamarin.Forms.TriggerAction)。 [`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions) 集合可用來定義觸發條件不再符合之後所叫用 `IList` 物件的 `TriggerAction`。
+集合[`EnterActions`](xref:Xamarin.Forms.TriggerBase.EnterActions)用於定義`IList`在滿足觸發器條件[`TriggerAction`](xref:Xamarin.Forms.TriggerAction)時 將調用的物件。 集合[`ExitActions`](xref:Xamarin.Forms.TriggerBase.ExitActions)用於定義`IList`在 不再滿足觸發`TriggerAction`器條件 后將調用的物件。
 
 > [!NOTE]
-> [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) 類別會忽略 `EnterActions` 和 `ExitActions` 集合中定義的 [`EventTrigger`](xref:Xamarin.Forms.EventTrigger) 物件。    
+> 類[`TriggerAction`](xref:Xamarin.Forms.TriggerAction)將忽略[`EventTrigger`](xref:Xamarin.Forms.EventTrigger)和`EnterActions``ExitActions`集合中定義的物件。    
 
-您可以「同時」在觸發程序中提供 `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，會立即呼叫 `Setter` (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
+您可以「同時」*在觸發程序中提供 * `EnterActions` 和 `ExitActions`，以及 `Setter`；但請注意，會立即呼叫 `Setter` (其不會等待 `EnterAction` 或 `ExitAction` 完成)。 或者，您可以在程式碼中執行一切，完全不使用 `Setter`。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -314,39 +314,39 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 }
 ```
 
-## <a name="state-triggers"></a>狀態觸發程式
+## <a name="state-triggers"></a>狀態觸發器
 
-狀態觸發程式已引進于 Xamarin. 表單4.5 中，而且是一組特殊的觸發程式，定義應該套用[`VisualState`](xref:Xamarin.Forms.VisualState)的條件。 不過，它們目前為實驗性，而且只能透過將下列程式程式碼新增至您的*App.xaml.cs*檔案來使用：
+狀態觸發器已在 Xamarin.Forms 4.5 中引入,是定義[`VisualState`](xref:Xamarin.Forms.VisualState)應用 的條件 的專用觸發器組。 但是,它們目前是實驗性的,只能通過將以下代碼行添加到*App.xaml.cs*檔來使用:
 
 ```csharp
 Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
 ```
 
-狀態觸發程式會加入至[`VisualState`](xref:Xamarin.Forms.VisualState)的[`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers)集合。 這個集合可以包含單一狀態觸發程式或多個狀態觸發程式。 當集合中的任何狀態觸發程式為作用中時，將會套用[`VisualState`](xref:Xamarin.Forms.VisualState) 。
+狀態觸發器將添加到集合[`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers)[`VisualState`](xref:Xamarin.Forms.VisualState)中。 此集合可以包含單個狀態觸發器或多個狀態觸發器。 當[`VisualState`](xref:Xamarin.Forms.VisualState)集合中的任何狀態觸發器處於活動狀態時,將應用 。
 
-當使用狀態觸發程式來控制視覺狀態時，Xamarin 會使用下列優先順序規則來判斷哪個觸發程式（和對應的[`VisualState`](xref:Xamarin.Forms.VisualState)）將會作用：
+當使用狀態觸發器來控制視覺狀態時,Xamarin.Forms 使用以下優先順序規則來確定哪個觸發器(和相應的[`VisualState`](xref:Xamarin.Forms.VisualState))將處於活動狀態:
 
-1. 衍生自[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)的任何觸發程式。
-1. [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)因為符合[`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth)條件而啟動。
-1. [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)因為符合[`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)條件而啟動。
+1. 派生自[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)的任何觸發器。
+1. 由於[`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)滿足[`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth)條件而啟動。
+1. 由於[`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)滿足[`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)條件而啟動。
 
-如果多個觸發程式同時處於作用中狀態（例如，兩個自訂觸發程式），則標記中宣告的第一個觸發程式會優先使用。
+如果多個觸發器同時處於活動狀態(例如,兩個自定義觸發器),則標記中聲明的第一個觸發器優先。
 
 > [!NOTE]
-> 狀態觸發程式可以在[`Style`](xref:Xamarin.Forms.Style)或直接在專案上設定。
+> 狀態觸發器可以在[`Style`](xref:Xamarin.Forms.Style)中 設置,也可以直接設置在元素上。
 
-如需視覺狀態的詳細資訊，請參閱 [ [Xamarin] 視覺狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)。
+有關視覺狀態的詳細資訊,請參閱[Xamarin.Forms 視覺化狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
-### <a name="state-trigger"></a>狀態觸發程式
+### <a name="state-trigger"></a>狀態觸發器
 
-衍生自[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)類別的[`StateTrigger`](xref:Xamarin.Forms.StateTrigger)類別具有[`IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive)可系結屬性。 當 `IsActive` 屬性變更值時，`StateTrigger` 會觸發[`VisualState`](xref:Xamarin.Forms.VisualState)變更。
+派生[`StateTrigger`](xref:Xamarin.Forms.StateTrigger)自類[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)的 類[`IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive)具有可 綁定屬性。 當`StateTrigger`屬性變更[`VisualState`](xref:Xamarin.Forms.VisualState)值`IsActive`時, 將觸發變更。
 
-[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)類別，也就是所有狀態觸發程式的基類，都具有[`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive)屬性和[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件。 每當發生[`VisualState`](xref:Xamarin.Forms.VisualState)變更時，就會引發這個事件。
+類[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)是所有狀態觸發器的基類,具有[`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive)屬性[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)和事件。 每當發生變更時,[`VisualState`](xref:Xamarin.Forms.VisualState)此事件都會觸發。
 
 > [!IMPORTANT]
-> [`StateTrigger.IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive)可系結屬性會隱藏繼承的[`StateTriggerBase.IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive)屬性。
+> 可[`StateTrigger.IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive)綁定屬性隱藏繼承[`StateTriggerBase.IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive)的屬性。
 
-下列 XAML 範例顯示包含[`StateTrigger`](xref:Xamarin.Forms.StateTrigger)物件的[`Style`](xref:Xamarin.Forms.Style) ：
+下面的 XAML 範例[`Style`](xref:Xamarin.Forms.Style)顯示[`StateTrigger`](xref:Xamarin.Forms.StateTrigger)包含 物件的:
 
 ```xaml
 <Style TargetType="Grid">
@@ -379,9 +379,9 @@ Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
 </Style>
 ```
 
-在此範例中，隱含[`Style`](xref:Xamarin.Forms.Style)會以[`Grid`](xref:Xamarin.Forms.Grid)物件為目標。 當系結物件的 `IsToggled` 屬性 `true`時，`Grid` 的背景色彩會設定為黑色。 當系結物件的 `IsToggled` 屬性變成 `false`時，就會觸發[`VisualState`](xref:Xamarin.Forms.VisualState)變更，而 `Grid` 的背景色彩會變成白色。
+在此示例中,隱式[`Style`](xref:Xamarin.Forms.Style)目標物件[`Grid`](xref:Xamarin.Forms.Grid)。 當繫結`IsToggled`物件的屬性為`true`時,背景`Grid`顏色設置為黑色。 當綁定`IsToggled`物件的屬性變`false`為 時,將[`VisualState`](xref:Xamarin.Forms.VisualState)觸發 更改,`Grid`並將的背景 顏色變為白色。
 
-此外，每次發生[`VisualState`](xref:Xamarin.Forms.VisualState)變更時，都會引發 `VisualState` 的[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件。 每個 `VisualState` 都會註冊此事件的事件處理常式：
+此外,每次發生[`VisualState`](xref:Xamarin.Forms.VisualState)更改時[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged), 都會觸發`VisualState`的事件。 每個`VisualState`事件註冊一個事件處理程式:
 
 ```csharp
 void OnCheckedStateIsActiveChanged(object sender, EventArgs e)
@@ -397,7 +397,7 @@ void OnUncheckedStateIsActiveChanged(object sender, EventArgs e)
 }
 ```
 
-在此範例中，當引發[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件的處理常式時，處理常式會輸出[`VisualState`](xref:Xamarin.Forms.VisualState)是否為使用中。 例如，從 [`Checked`] 視覺狀態變更為 [`Unchecked`] 視覺狀態時，會將下列訊息輸出至主控台視窗：
+在此示例中,當觸發[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件的處理程式時,處理程式將輸出[`VisualState`](xref:Xamarin.Forms.VisualState)是否處於活動狀態。 例如,從`Checked`可視狀態更改`Unchecked`為 可視狀態時,將以下消息輸出到主控台視窗:
 
 ```
 Checked state active: False
@@ -405,19 +405,19 @@ Unchecked state active: True
 ```
 
 > [!NOTE]
-> 自訂狀態觸發程式可以藉由從[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)類別衍生來建立。
+> 可以通過派生[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)類 創建自定義狀態觸發器。
 
-### <a name="adaptive-trigger"></a>適應性觸發程式
+### <a name="adaptive-trigger"></a>自適應觸發器
 
-當視窗為指定的高度或寬度時， [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)會觸發[`VisualState`](xref:Xamarin.Forms.VisualState)變更。 此觸發程式有兩個可系結屬性：
+當[`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)視窗指定[`VisualState`](xref:Xamarin.Forms.VisualState)高度 或寬度時,將觸發更改。 此觸發器具有兩個可綁定屬性:
 
-- [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)，屬於 `double`類型，表示應套用[`VisualState`](xref:Xamarin.Forms.VisualState)的最小視窗高度。
-- [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)，屬於 `double`類型，表示應套用[`VisualState`](xref:Xamarin.Forms.VisualState)的最小視窗寬度。
+- [`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)的類型`double`, 指示[`VisualState`](xref:Xamarin.Forms.VisualState)應用 的最小視窗高度。
+- [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)的類型`double`, 指示[`VisualState`](xref:Xamarin.Forms.VisualState)應用 的最小視窗寬度。
 
 > [!NOTE]
-> [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)衍生自[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)類別，因此可將事件處理常式附加至[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件。
+> [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)衍生的自類別,[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)因此可以將事件處理程式附加到[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件 。
 
-下列 XAML 範例顯示包含[`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)物件的[`Style`](xref:Xamarin.Forms.Style) ：
+下面的 XAML 範例[`Style`](xref:Xamarin.Forms.Style)顯示[`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)包含 物件的:
 
 ```xaml
 <Style TargetType="StackLayout">
@@ -448,31 +448,31 @@ Unchecked state active: True
 </Style>
 ```
 
-在此範例中，隱含[`Style`](xref:Xamarin.Forms.Style)會以[`StackLayout`](xref:Xamarin.Forms.StackLayout)物件為目標。 當視窗寬度介於0和800裝置獨立單位之間時，套用 `Style` 的 `StackLayout` 物件將會有垂直方向。 當視窗寬度 > = 800 裝置獨立單位時，會觸發[`VisualState`](xref:Xamarin.Forms.VisualState)變更，而 `StackLayout` 方向會變更為水準：
+在此示例中,隱式[`Style`](xref:Xamarin.Forms.Style)目標物件[`StackLayout`](xref:Xamarin.Forms.StackLayout)。 當視窗寬度介於 0 和 800`StackLayout`個與設備`Style`無關的單位之間時 ,應用的物件將具有垂直方向。 當視窗寬度>= 800 個與裝置[`VisualState`](xref:Xamarin.Forms.VisualState)無關的單位 時,將`StackLayout`觸發更改, 方向更改為水準:
 
-![垂直 StackLayout VisualState](triggers-images/adaptivetrigger-vertical.png "AdaptiveTrigger 範例")
-![水準 StackLayout VisualState](triggers-images/adaptivetrigger-horizontal.png "AdaptiveTrigger 範例")
+![垂直堆疊佈局視覺狀態](triggers-images/adaptivetrigger-vertical.png "自適應觸發器範例")
+![水平堆疊佈局視覺狀態](triggers-images/adaptivetrigger-horizontal.png "自適應觸發器範例")
 
-[`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)和[`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)屬性可以獨立使用或彼此配合。 下列 XAML 顯示設定這兩個屬性的範例：
+和[`MinWindowHeight`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)[`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowHeight)屬性可以單獨使用,也可以相互結合使用。 以下 XAML 顯示了設定這兩個屬性的範例:
 
 ```xaml
 <AdaptiveTrigger MinWindowWidth="800"
                  MinWindowHeight="1200"/>
 ```
 
-在此範例中， [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)表示當目前的視窗寬度 > = 800 裝置獨立單位，且目前的視窗高度 > = 1200 裝置獨立單位時，將會套用對應的[`VisualState`](xref:Xamarin.Forms.VisualState) 。
+這個樣本,[`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)指示當目前的視窗寬度>[`VisualState`](xref:Xamarin.Forms.VisualState) = 800 個與設備無關的單位,並且目前的視窗高度為 >= 1200 個與設備無關的單位時,將應用相應的值。
 
-### <a name="compare-state-trigger"></a>比較狀態觸發程式
+### <a name="compare-state-trigger"></a>比較狀態觸發器
 
-當屬性等於特定值時， [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger)會觸發[`VisualState`](xref:Xamarin.Forms.VisualState)變更。 此觸發程式有兩個可系結屬性：
+當[`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger)屬性等於[`VisualState`](xref:Xamarin.Forms.VisualState)特定值時,將觸發更改。 此觸發器具有兩個可綁定屬性:
 
-- [`Property`](xref:Xamarin.Forms.CompareStateTrigger.Property)，屬於 `object`類型，表示由觸發程式比較的屬性。
-- [`Value`](xref:Xamarin.Forms.CompareStateTrigger.Value)，屬於 `object`類型，表示應套用[`VisualState`](xref:Xamarin.Forms.VisualState)的值。
+- [`Property`](xref:Xamarin.Forms.CompareStateTrigger.Property)的類型`object`, 指示被觸發器比較的屬性。
+- [`Value`](xref:Xamarin.Forms.CompareStateTrigger.Value)的`object`,[`VisualState`](xref:Xamarin.Forms.VisualState)指示 應用的值。
 
 > [!NOTE]
-> [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger)衍生自[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)類別，因此可將事件處理常式附加至[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件。
+> [`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger)衍生的自類別,[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)因此可以將事件處理程式附加到[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件 。
 
-下列 XAML 範例顯示包含[`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger)物件的[`Style`](xref:Xamarin.Forms.Style) ：
+下面的 XAML 範例[`Style`](xref:Xamarin.Forms.Style)顯示[`CompareStateTrigger`](xref:Xamarin.Forms.CompareStateTrigger)包含 物件的:
 
 ```xaml
 <Style TargetType="Grid">
@@ -520,21 +520,21 @@ Unchecked state active: True
 </Grid>
 ```
 
-在此範例中，隱含[`Style`](xref:Xamarin.Forms.Style)會以[`Grid`](xref:Xamarin.Forms.Grid)物件為目標。 `false`[`CheckBox`](xref:Xamarin.Forms.CheckBox)的 [ [`IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) ] 屬性時，`Grid` 的背景色彩會設定為白色。 當 [`CheckBox.IsChecked`] 屬性變成 [`true`] 時，就會觸發[`VisualState`](xref:Xamarin.Forms.VisualState)變更，而 `Grid` 的背景色彩會變成黑色：
+在此示例中,隱式[`Style`](xref:Xamarin.Forms.Style)目標物件[`Grid`](xref:Xamarin.Forms.Grid)。 當[`IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked)的屬性[`CheckBox`](xref:Xamarin.Forms.CheckBox)`false`為 時,`Grid`背景顏色設置為白色。 當`CheckBox.IsChecked`屬性變`true`為[`VisualState`](xref:Xamarin.Forms.VisualState),將 觸發更改,`Grid`並且的背景 顏色變為黑色:
 
-[![Ios 和 android 上觸發之視覺狀態變更的螢幕擷取畫面](triggers-images/comparestatetrigger-unchecked.png "CompareStateTrigger 範例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "CompareStateTrigger 範例")
-[ ![ios 和 android 上觸發的視覺狀態變更的螢幕擷取畫面](triggers-images/comparestatetrigger-checked.png "CompareStateTrigger 範例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "CompareStateTrigger 範例")
+[![在 iOS 和 Android 上觸發的視覺狀態更改的螢幕截圖,在 iOS 和 Android](triggers-images/comparestatetrigger-unchecked.png "比較狀態觸發示例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "比較狀態觸發示例")
+[![上觸發的視覺狀態更改](triggers-images/comparestatetrigger-checked.png "比較狀態觸發示例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "比較狀態觸發示例")
 
-### <a name="device-state-trigger"></a>裝置狀態觸發程式
+### <a name="device-state-trigger"></a>裝置狀態觸發器
 
-[`DeviceStateTrigger`](xref:Xamarin.Forms.DeviceStateTrigger)會根據應用程式執行所在的裝置平臺，觸發[`VisualState`](xref:Xamarin.Forms.VisualState)變更。 此觸發程式有一個可系結屬性：
+根據[`DeviceStateTrigger`](xref:Xamarin.Forms.DeviceStateTrigger)應用運行的設備[`VisualState`](xref:Xamarin.Forms.VisualState)平臺觸發更改。 此觸發器具有單個可綁定屬性:
 
-- [`Device`](xref:Xamarin.Forms.DeviceStateTrigger.Device)，屬於 `string`類型，表示應該在其上套用[`VisualState`](xref:Xamarin.Forms.VisualState)的裝置平臺。
+- [`Device`](xref:Xamarin.Forms.DeviceStateTrigger.Device)的類型`string`,指示應應用[`VisualState`](xref:Xamarin.Forms.VisualState)的設備 平臺。
 
 > [!NOTE]
-> [`DeviceStateTrigger`](xref:Xamarin.Forms.DeviceStateTrigger)衍生自[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)類別，因此可將事件處理常式附加至[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件。
+> [`DeviceStateTrigger`](xref:Xamarin.Forms.DeviceStateTrigger)衍生的自類別,[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)因此可以將事件處理程式附加到[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件 。
 
-下列 XAML 範例顯示包含 `DeviceStateTrigger` 物件的[`Style`](xref:Xamarin.Forms.Style) ：
+下面的 XAML 範例[`Style`](xref:Xamarin.Forms.Style)顯示`DeviceStateTrigger`包含 物件的:
 
 ```xaml
 <Style x:Key="DeviceStateTriggerPageStyle"
@@ -575,20 +575,20 @@ Unchecked state active: True
 </Style>
 ```
 
-在此範例中，明確[`Style`](xref:Xamarin.Forms.Style)會以[`ContentPage`](xref:Xamarin.Forms.ContentPage)物件為目標。 `ContentPage` 使用樣式的物件，將其背景色彩設為 iOS 上的銀級，在 Android 上為淺藍色，並在 UWP 上青綠色。 下列螢幕擷取畫面顯示 iOS 和 Android 上產生的頁面：
+在此示例中,顯式[`Style`](xref:Xamarin.Forms.Style)目標[`ContentPage`](xref:Xamarin.Forms.ContentPage)物件。 `ContentPage`使用樣式的物件在 iOS 上將其背景顏色設置為銀色,在 Android 上設置為淡藍色,在 UWP 上設置為海藍寶石。 以下螢幕截圖顯示了 iOS 和 Android 上生成的頁面:
 
-[![在 iOS 和 Android 上觸發之視覺狀態變更的螢幕擷取畫面](triggers-images/devicestatetrigger.png "DeviceStateTrigger 範例")](triggers-images/devicestatetrigger-large.png#lightbox "DeviceStateTrigger 範例")
+[![iOS 和 Android 上觸發的視覺狀態更改的螢幕截圖](triggers-images/devicestatetrigger.png "裝置狀態觸發範例")](triggers-images/devicestatetrigger-large.png#lightbox "裝置狀態觸發範例")
 
-### <a name="orientation-state-trigger"></a>方向狀態觸發程式
+### <a name="orientation-state-trigger"></a>方向狀態觸發器
 
-當裝置的方向變更時， [`OrientationStateTrigger`](xref:Xamarin.Forms.OrientationStateTrigger)會觸發[`VisualState`](xref:Xamarin.Forms.VisualState)變更。 此觸發程式有一個可系結屬性：
+當[`OrientationStateTrigger`](xref:Xamarin.Forms.OrientationStateTrigger)設備方向更改[`VisualState`](xref:Xamarin.Forms.VisualState)時,將觸發更改。 此觸發器具有單個可綁定屬性:
 
-- [`Orientation`](xref:Xamarin.Forms.OrientationStateTrigger.Orientation)，屬於[`DeviceOrientation`](xref:Xamarin.Forms.Internals.DeviceOrientation)類型，表示應套用[`VisualState`](xref:Xamarin.Forms.VisualState)的方向。
+- [`Orientation`](xref:Xamarin.Forms.OrientationStateTrigger.Orientation)的類型[`DeviceOrientation`](xref:Xamarin.Forms.Internals.DeviceOrientation),指示 應[`VisualState`](xref:Xamarin.Forms.VisualState)套用的方向 。
 
 > [!NOTE]
-> [`OrientationStateTrigger`](xref:Xamarin.Forms.OrientationStateTrigger)衍生自[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)類別，因此可將事件處理常式附加至[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件。
+> [`OrientationStateTrigger`](xref:Xamarin.Forms.OrientationStateTrigger)衍生的自類別,[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase)因此可以將事件處理程式附加到[`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged)事件 。
 
-下列 XAML 範例顯示包含 `OrientationStateTrigger` 物件的[`Style`](xref:Xamarin.Forms.Style) ：
+下面的 XAML 範例[`Style`](xref:Xamarin.Forms.Style)顯示`OrientationStateTrigger`包含 物件的:
 
 ```xaml
 <Style x:Key="OrientationStateTriggerPageStyle"
@@ -620,10 +620,10 @@ Unchecked state active: True
 </Style>
 ```
 
-在此範例中，明確[`Style`](xref:Xamarin.Forms.Style)會以[`ContentPage`](xref:Xamarin.Forms.ContentPage)物件為目標。 `ContentPage` 使用樣式的物件會在方向為直向時，將其背景色彩設為銀，並在方向為橫向時，將其背景色彩設定為白色。
+在此示例中,顯式[`Style`](xref:Xamarin.Forms.Style)目標[`ContentPage`](xref:Xamarin.Forms.ContentPage)物件。 `ContentPage`當方向為縱向時,使用樣式的物件將其背景顏色設置為銀色,並在方向為橫向時將其背景顏色設置為白色。
 
 ## <a name="related-links"></a>相關連結
 
 - [觸發程序範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
-- [Xamarin. 表單視覺狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)
-- [Xamarin. 表單觸發程式 API](xref:Xamarin.Forms.TriggerAction`1)
+- [Xamarin.表單可視化狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.表單觸發器 API](xref:Xamarin.Forms.TriggerAction`1)

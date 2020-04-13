@@ -8,21 +8,21 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2020
 ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
-ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "80247596"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms 資料繫結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-_資料系結是連結兩個物件屬性的技術，因此某個屬性中的變更會自動反映在另一個屬性中。資料系結是模型 ViewModel （MVVM）應用程式架構不可或缺的一部分。_
+_數據綁定是連結兩個對象的屬性的技術,以便一個屬性中的更改自動反映在另一個屬性中。數據綁定是模型檢視-視圖模型 (MVVM) 應用程式體系結構的組成部分。_
 
 ## <a name="the-data-linking-problem"></a>資料連結問題
 
-Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含多個稱為「檢視」的使用者介面物件。 程式的主要工作之一是讓這些檢視保持同步，並追蹤其所代表的不同值或選取項目。 檢視通常代表來自基礎資料來源的值，而使用者操作這些檢視來變更該資料。 檢視變更時，基礎資料必須反映該變更；同樣地，當基礎資料變更時，該變更必須反映在檢視中。
+Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含多個稱為「檢視」** 的使用者介面物件。 程式的主要工作之一是讓這些檢視保持同步，並追蹤其所代表的不同值或選取項目。 檢視通常代表來自基礎資料來源的值，而使用者操作這些檢視來變更該資料。 檢視變更時，基礎資料必須反映該變更；同樣地，當基礎資料變更時，該變更必須反映在檢視中。
 
 若要成功處理這項作業，程式必須收到在這些檢視或基礎資料中進行變更的通知。 定義在變更發生時發出訊號的事件，是常見的解決方案。 因此可安裝會收到這些變更通知的事件處理常式。 事件處理常式藉由將資料從某個物件傳輸到另一個來回應。 不過，當存在許多檢視時，也必須要有許多事件處理常式，會牽涉到大量程式碼。
 
@@ -35,7 +35,7 @@ Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含
 - 另一個 `View` 的衍生項目，通常在相同頁面上。
 - 或是程式碼檔案中的物件。
 
-在示範程式 (例如在 [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) 範例中的程式) 中，為清楚和簡單起見，通常會顯示兩個 `View` 衍生項目之間的資料繫結。 不過，相同準則也可以套用至 `View` 和其他物件之間的資料繫結。 使用模型 ViewModel （MVVM）架構來建立應用程式時，具有基礎資料的類別通常稱為「ViewModel」。
+在示範程式 (例如在 [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) 範例中的程式) 中，為清楚和簡單起見，通常會顯示兩個 `View` 衍生項目之間的資料繫結。 不過，相同準則也可以套用至 `View` 和其他物件之間的資料繫結。 使用模型檢視-檢視模型 (MVVM) 體系結構生成應用程式時,具有基礎數據的類通常稱為視圖模型。
 
 您可以在下列一系列文章中探索資料繫結：
 
@@ -61,7 +61,7 @@ Xamarin.Forms 應用程式包含一或多個頁面，通常每個頁面都包含
 
 ## <a name="relative-bindings"></a>[相對繫結](relative-bindings.md)
 
-使用相對系結，將系結來源設定為相對於系結目標的位置。
+使用相對綁定設置與綁定目標位置相關的綁定源。
 
 ## <a name="binding-fallbacks"></a>[繫結後援](binding-fallbacks.md)
 

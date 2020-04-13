@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724616"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 應用程式中的 iTunesMetadata.plist 檔案
@@ -284,7 +284,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 ## <a name="creating-an-itunesmetadataplist-file"></a>建立 iTunesMetadata.plist 檔案
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  在 Visual Studio for Mac 中處理 `iTunesMetadata.plist` 檔案時，您有兩個選項：
 
@@ -295,29 +295,29 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 ### <a name="using-the-visual-plist-editor"></a>使用 Visual Plist 編輯器
 
-請執行下列動作：
+執行下列動作：
 
-1. 在 [方案總管]  中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增]   > [新增檔案] 
-2. 從 [新增檔案] 對話方塊中，選取 [iOS]   > [屬性清單]  ：
+1. 在 [方案總管]**** 中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增]**** > [新增檔案]****
+2. 從「新增檔案」對話框中,選擇**iOS** > **屬性清單**:
 
     ![](itunesmetadata-images/image01.png "Select iOS Property List")
-3. 輸入 `iTunesMetadata` 作為 [名稱]  ，然後按一下 [新增]  按鈕。
-4. 在 [方案總管]  中，按兩下 `iTunesMetadata.plist` 檔案來開啟它以進行編輯：
+3. 輸入 `iTunesMetadata` 作為 [名稱]****，然後按一下 [新增]**** 按鈕。
+4. 在 [方案總管]**** 中，按兩下 `iTunesMetadata.plist` 檔案來開啟它以進行編輯：
 
     ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
-5. 按一下綠色的 **+** 來建立新的項目，並輸入 `UIRequiredDeviceCapabilities` 作為索引鍵名稱：
+5. 按下綠色**+** 以建立新項目並輸入`UIRequiredDeviceCapabilities`作為鍵名稱:
 
     ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
-6. 按一下 [字串]  值類型，然後從快顯清單中選取 [字典]  ：
+6. 按一下 [字串]**** 值類型，然後從快顯清單中選取 [字典]****：
 
     ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
 7. 按一下屬性名稱左邊的向下箭頭以顯示字典的項目：
 
     ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
-8. 按一下 [新增項目]  文字，然後按一下綠色的 **+** 來將項目新增至字典：
+8. 按一下 [新增項目]**** 文字，然後按一下綠色的 **+** 來將項目新增至字典：
 
     ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
-9. 輸入 `armv7` 作為索引鍵名稱、選取一種 [布林值]  類型，然後輸入 **Yes** 作為值：
+9. 輸入 `armv7` 作為索引鍵名稱、選取一種 [布林值]**** 類型，然後輸入 **Yes** 作為值：
 
     ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
 10. 重複上述步驟，直到您已在 `iTunesMetadata.plist` 檔案中填入所需的所有索引鍵/值組為止 (如需詳細資料，請參閱 [iTunesMetadata.plist 內容](#iTunesMetadata_contents)一節)。
@@ -326,29 +326,29 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 ### <a name="using-a-plain-text-editor"></a>使用純文字編輯器
 
-請執行下列動作：
+執行下列動作：
 
 1. 在純文字編輯器中，建立新的文字檔，並將其命名為 `iTunesMetadata.plist`。
 2. 從上方的 [iTunesMetadata.plist 內容](#iTunesMetadata_contents)小節，複製範例內容。
 3. 將內容貼到檔案中，並視需要加以編輯。
 4. 儲存檔案，並返回 Visual Studio for Mac。
-5. 在 [方案總管]  中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增]   > [現有的檔案]  。
-6. 在 [開啟檔案] 對話方塊中，選取上面所建立的 `iTunesMetadata.plist` 檔案，然後按一下 [確定]  按鈕。
-7. 將此檔案的 [建置動作]  保持設定為 [無]  。
+5. 在 [方案總管]**** 中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增]**** > [現有的檔案]****。
+6. 在 [開啟檔案] 對話方塊中，選取上面所建立的 `iTunesMetadata.plist` 檔案，然後按一下 [確定]**** 按鈕。
+7. 將此檔案的 [建置動作]**** 保持設定為 [無]****。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 適用於 Visual Studio 的 Xamarin 外掛程式僅支援 `Info.plist` 和 `Entitlement.plist` 檔案的視覺化編輯器，因此您必須在標準文字編輯器中建立 `iTunesMetadata.plist` 檔案，並將它手動包含到 Xamarin.iOS 專案中。
 
-請執行下列動作：
+執行下列動作：
 
 1. 在純文字編輯器中，建立新的文字檔，並將其命名為 `iTunesMetadata.plist`。
 2. 從上方的 [iTunesMetadata.plist 內容](#iTunesMetadata_contents)小節，複製範例內容。
 3. 將內容貼到檔案中，並視需要加以編輯。
 4. 儲存檔案，並返回 Visual Studio。
-5. 在 [方案總管]  中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增]   > [現有的檔案]  。
-6. 在 [開啟檔案] 對話方塊中，選取您在上面建立的 `iTunesMetadata.plist` 檔案，然後按一下 [開啟]  按鈕。
-7. 將此檔案的 [建置動作]  保持設定為 [無]  。
+5. 在 [方案總管]**** 中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增]**** > [現有的檔案]****。
+6. 在 [開啟檔案] 對話方塊中，選取您在上面建立的 `iTunesMetadata.plist` 檔案，然後按一下 [開啟]**** 按鈕。
+7. 將此檔案的 [建置動作]**** 保持設定為 [無]****。
 
 -----
 
@@ -360,7 +360,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 ## <a name="related-links"></a>相關連結
 
-- [散發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [應用商店分發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [發行至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [內部作業散發](~/ios/deploy-test/app-distribution/in-house-distribution.md)

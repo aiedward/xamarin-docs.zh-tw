@@ -8,25 +8,25 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
 ms.openlocfilehash: c07848b808d023439c88117924e69c336984630b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771505"
 ---
 # <a name="creating-an-effect"></a>建立效果
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
 
-_效果會簡化控制項的自訂。本文示範如何在控制項取得焦點時，建立變更 Entry 控制項背景色彩的效果。_
+_效果簡化了控件的自定義。本文演示如何創建效果,當控件獲得焦點時,更改 Entry 控件的背景顏色。_
 
 在每個平台特定專案中建立效果的程序如下：
 
 1. 建立 `PlatformEffect` 類別的子類別。
 1. 覆寫 `OnAttached` 方法，並撰寫自訂控制項的邏輯。
 1. 覆寫 `OnDetached` 方法，並撰寫清除控制項自訂的邏輯 (如有必要)。
-1. 將 [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 屬性新增至效果類別。 這個屬性會設定效果的全公司命名空間，防止與其他同名效果發生衝突。 請注意，每個專案只能套用一次這個屬性。
-1. 將 [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 屬性新增至效果類別。 這個屬性會註冊 Xamarin.Forms 使用的效果唯一識別碼以及群組名稱，先找到效果，再將它套用至控制項。 屬性會採用兩個參數 – 效果的類型名稱，以及用來找出效果再將它套用至控制項的唯一字串。
+1. 向[`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)效果類添加屬性。 這個屬性會設定效果的全公司命名空間，防止與其他同名效果發生衝突。 請注意，每個專案只能套用一次這個屬性。
+1. 向[`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)效果類添加屬性。 這個屬性會註冊 Xamarin.Forms 使用的效果唯一識別碼以及群組名稱，先找到效果，再將它套用至控制項。 屬性會採用兩個參數 – 效果的類型名稱，以及用來找出效果再將它套用至控制項的唯一字串。
 
 然後就可以將效果附加至適當控制項來使用效果。
 
@@ -35,12 +35,12 @@ _效果會簡化控制項的自訂。本文示範如何在控制項取得焦點�
 
 範例應用程式示範 `FocusEffect`，在控制項獲得焦點時變更控制項的背景色彩。 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
-![](creating-images/focus-effect.png "焦點效果專案責任")
+![](creating-images/focus-effect.png "Focus Effect Project Responsibilities")
 
-[ 上的 `Entry`](xref:Xamarin.Forms.Entry)`HomePage` 控制項是由每個平台特定專案中的 `FocusEffect` 類別自訂。 每個 `FocusEffect` 類別都衍生自每個平台的 `PlatformEffect` 類別。 這會導致以平台特定背景色彩轉譯 `Entry` 控制項，在控制項取得焦點時變更，如下列螢幕擷取畫面所示：
+上的[`Entry`](xref:Xamarin.Forms.Entry)`HomePage`控制件由每個特定於平臺的專案`FocusEffect`中的 類自定義。 每個 `FocusEffect` 類別都衍生自每個平台的 `PlatformEffect` 類別。 這會導致以平台特定背景色彩轉譯 `Entry` 控制項，在控制項取得焦點時變更，如下列螢幕擷取畫面所示：
 
-![](creating-images/screenshots-1.png "每個平台上的焦點效果")
-![](creating-images/screenshots-2.png "每個平台上的焦點效果")
+![](creating-images/screenshots-1.png "Focus Effect on each Platform")
+![](creating-images/screenshots-2.png "Focus Effect on each Platform")
 
 ## <a name="creating-the-effect-on-each-platform"></a>在每個平台上建立效果
 
@@ -95,9 +95,9 @@ namespace EffectsDemo.iOS
 }
 ```
 
-`OnAttached` 方法會使用 `BackgroundColor` 方法將控制項的 `UIColor.FromRGB` 屬性設為淺紫色，並將這個色彩也儲存在欄位中。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `BackgroundColor` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
+`OnAttached` 方法會使用 `UIColor.FromRGB` 方法將控制項的 `BackgroundColor` 屬性設為淺紫色，並將這個色彩也儲存在欄位中。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `BackgroundColor` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
 
-`OnElementPropertyChanged` 覆寫會回應 Xamarin.Forms 控制項上可繫結屬性的變更。 當 [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused) 屬性變更時，如果控制項有焦點，則控制項的 `BackgroundColor` 屬性會變更為白色，否則會變更為淺紫色。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `BackgroundColor` 屬性。
+`OnElementPropertyChanged` 覆寫會回應 Xamarin.Forms 控制項上可繫結屬性的變更。 當[`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)屬性更改時`BackgroundColor`, 如果控件具有焦點,則控件的屬性將更改為白色,否則將更改為淺紫色。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `BackgroundColor` 屬性。
 
 ## <a name="android-project"></a>Android 專案
 
@@ -162,7 +162,7 @@ namespace EffectsDemo.Droid
 
 `OnAttached` 方法呼叫 `SetBackgroundColor` 方法將控制項的背景色彩設定為淺綠色，並將這個色彩也儲存在欄位中。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `SetBackgroundColor` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
 
-`OnElementPropertyChanged` 覆寫會回應 Xamarin.Forms 控制項上可繫結屬性的變更。 當 [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused) 屬性變更時，如果控制項有焦點，則控制項的背景色彩會變更為白色，否則會變更為淺綠色。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `BackgroundColor` 屬性。
+`OnElementPropertyChanged` 覆寫會回應 Xamarin.Forms 控制項上可繫結屬性的變更。 當[`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)屬性更改時,如果控件具有焦點,則控件的背景顏色將更改為白色,否則將更改為淺綠色。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `BackgroundColor` 屬性。
 
 ## <a name="universal-windows-platform-projects"></a>通用 Windows 平台專案
 
@@ -205,14 +205,14 @@ namespace EffectsDemo.UWP
 使用 Xamarin.Forms .NET Standard 程式庫或共用程式庫專案效果的程序如下：
 
 1. 宣告效果將要使用的控制項。
-1. 藉由將效果新增至控制項的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合，來將效果附加至控制項。
+1. 通過將效果添加到控制項的集合[`Effects`](xref:Xamarin.Forms.Element.Effects),將效果附加到控制項。
 
 > [!NOTE]
 > 效果執行個體只能附加至單一控制項。 因此，效果必須解析兩次，才能用於兩個控制項。
 
 ## <a name="consuming-the-effect-in-xaml"></a>在 XAML 中使用效果
 
-下列 XAML 程式碼範例示範 [ 附加至的 `Entry`](xref:Xamarin.Forms.Entry)`FocusEffect` 控制項：
+以下 XAML 代碼範例[`Entry`](xref:Xamarin.Forms.Entry)顯示了`FocusEffect`附加到 的 控制項:
 
 ```xaml
 <Entry Text="Effect attached to an Entry" ...>
@@ -234,13 +234,13 @@ public class FocusEffect : RoutingEffect
 }
 ```
 
-`FocusEffect` 類別子類別化 [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 類別，其代表包裝內部效果的平台獨立效果通常是平台特定效果。 `FocusEffect` 類別會呼叫基底類別建構函式，傳入解析群組名稱串連構成的參數 (使用效果類別上的 [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 屬性指定)，和使用效果類別上的 [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 屬性指定的唯一識別碼。 因此，當 [`Entry`](xref:Xamarin.Forms.Entry) 在執行階段初始化後，`MyCompany.FocusEffect` 的新執行個體就會新增至控制項的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合。
+類`FocusEffect`[`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect)對 類進行類類,該類表示獨立於平臺的效果,該效果包裝的內部效果通常是特定於平臺的。 類`FocusEffect`調用基類構造函數,傳入由解析組名稱串聯(使用效果類[`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)上的屬性指定)和使用效果類[`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)上 的屬性指定的唯一 ID 組成的參數。 因此,在[`Entry`](xref:Xamarin.Forms.Entry)執行時初始化 時`MyCompany.FocusEffect`, 將新實例添加到控制項[`Effects`](xref:Xamarin.Forms.Element.Effects)的集合中。
 
 使用行為或使用附加屬性，也可以將效果附加至控制項。 如需使用行為將效果附加至控制項的詳細資訊，請參閱[可重複使用的 EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md)。 如需使用附加屬性將效果附加至控制項的詳細資訊，請參閱[將參數傳遞至效果](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md)。
 
 ## <a name="consuming-the-effect-in-cnum"></a>在 C&num; 中使用效果
 
-下列程式碼範例顯示 C# 中的對等 [`Entry`](xref:Xamarin.Forms.Entry)：
+C#[`Entry`](xref:Xamarin.Forms.Entry)中的等效項目顯示在以下代碼範例中:
 
 ```csharp
 var entry = new Entry {
@@ -249,7 +249,7 @@ var entry = new Entry {
 };
 ```
 
-藉由將效果新增至控制項的 `FocusEffect``Entry`[ 集合，來將 `Effects` 附加至 ](xref:Xamarin.Forms.Element.Effects) 執行個體，如下列程式碼範例所示：
+以將`FocusEffect`效果新增到控制[`Effects`](xref:Xamarin.Forms.Element.Effects)項的`Entry`集合 ,附加到實體,如以下代碼範例所示:
 
 ```csharp
 public HomePageCS ()
@@ -260,16 +260,16 @@ public HomePageCS ()
 }
 ```
 
-[`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) 傳回指定名稱的 [`Effect`](xref:Xamarin.Forms.Effect)，它是解析群組名稱的串連 (使用效果類別上的 [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 屬性指定)，和使用效果類別上的 [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 屬性指定的唯一識別碼。 如果某個平台不提供效果，則 `Effect.Resolve` 方法會傳回非 `null` 值。
+傳[`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String))回[`Effect`](xref:Xamarin.Forms.Effect)指定名稱的傳回 ,該名稱是解析度名稱的串聯([`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute)使用效果類上的屬性指定)和[`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute)使用效果類上 的屬性指定的唯一 ID。 如果某個平台不提供效果，則 `Effect.Resolve` 方法會傳回非 `null` 值。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
-本文示範如何在控制項取得焦點時，建立變更 [`Entry`](xref:Xamarin.Forms.Entry) 控制項背景色彩的效果。
+本文演示如何創建效果,當控件獲得焦點時更改[`Entry`](xref:Xamarin.Forms.Entry)控件的背景顏色。
 
 ## <a name="related-links"></a>相關連結
 
 - [自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [Effect](xref:Xamarin.Forms.Effect)
+- [效果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [Background Color Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect) (背景色彩效果 (範例))
 - [Focus Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect) (焦點效果 (範例))

@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: e9325c34c645b75f28c7e2070f6bb095780ddb02
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771454"
 ---
 # <a name="introduction-to-effects"></a>效果簡介
 
-_效果可讓您自訂每個平臺上的原生控制項，通常用於小型的樣式變更。本文提供效果簡介、概述效果與自訂轉譯器之間的界限，並描述 PlatformEffect 類別。_
+_效果允許自定義每個平臺上的本機控件,通常用於小型樣式更改。本文介紹了效果,概述了效果和自定義呈現器之間的邊界,並介紹了 PlatformEffects 類。_
 
 Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/controls/index.md)提供一個通用 API 來描述跨平台行動裝置使用者介面。 系統會在每個平台上使用 `Renderer` 類別，以不同的方式轉譯每個頁面、配置和控制項，進而建立原生控制項 (對應至 Xamarin.Forms 表示方式)、將其排列在畫面上，然後新增在共用程式碼中指定的行為。
 
@@ -38,7 +38,7 @@ Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/contr
 
 下表列出每個平台上 `PlatformEffect` 類別的命名空間，以及其屬性的類型：
 
-|Platform|命名空間|容器|控制項|
+|平台|命名空間|容器|控制|
 |--- |--- |--- |--- |
 |iOS|Xamarin.Forms.Platform.iOS|UIView|UIView|
 |Android|Xamarin.Forms.Platform.Android|ViewGroup|檢視|
@@ -54,10 +54,10 @@ Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/contr
 
 每個平台特定的 `PlatformEffect` 類別會公開下列方法，必須加以覆寫才能實作效果：
 
-- [`OnAttached`](xref:Xamarin.Forms.Effect.OnAttached) – 當效果附加至 Xamarin.Forms 控制項時呼叫。 在每個平台專屬的效果類別中，這個方法覆寫的版本就是執行控制項自訂的位置，也可以用來處理無法將效果套用至指定 Xamarin.Forms 控制項時的例外狀況。
-- [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached) – 當效果從 Xamarin.Forms 控制項中斷連結時呼叫。 在每個平台特定的效果類別中，此方法的覆寫版本是執行任何效果清除 (例如取消註冊事件處理常式) 的位置。
+- [`OnAttached`](xref:Xamarin.Forms.Effect.OnAttached)• 當效果附加到 Xamarin 時調用。 在每個平台專屬的效果類別中，這個方法覆寫的版本就是執行控制項自訂的位置，也可以用來處理無法將效果套用至指定 Xamarin.Forms 控制項時的例外狀況。
+- [`OnDetached`](xref:Xamarin.Forms.Effect.OnDetached)• 當效果與 Xamarin.Forms 控件分離時調用。 在每個平台特定的效果類別中，此方法的覆寫版本是執行任何效果清除 (例如取消註冊事件處理常式) 的位置。
 
-此外，`PlatformEffect` 會公開 [`OnElementPropertyChanged`](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)) 方法，該方法也可能會遭到覆寫。 當項目的屬性變更時，就會呼叫此方法。 在每個平台特定的效果類別中，此方法的覆寫版本是回應 Xamarin.Forms 控制項上可繫結屬性變更的位置。 因為此覆寫會呼叫多次，所以請一律檢查變更的屬性。
+此外,`PlatformEffect`公開的方法[`OnElementPropertyChanged`](xref:Xamarin.Forms.PlatformEffect`2.OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)), 也可以重寫. 當項目的屬性變更時，就會呼叫此方法。 在每個平台特定的效果類別中，此方法的覆寫版本是回應 Xamarin.Forms 控制項上可繫結屬性變更的位置。 因為此覆寫會呼叫多次，所以請一律檢查變更的屬性。
 
 ## <a name="related-links"></a>相關連結
 

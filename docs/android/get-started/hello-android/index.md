@@ -9,21 +9,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
 ms.openlocfilehash: 2cb2e90355cf93903c7a3b7e1beb65528d09d82d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027977"
 ---
 # <a name="hello-android"></a>Hello, Android
 
-_在這份含有兩部分的指南中，您將使用 Visual Studio for Mac 或 Visual Studio，建立您的第一個 Xamarin. Android 應用程式，並瞭解使用 Xamarin 進行 Android 應用程式開發的基本概念。在過程中，將會引進建立和部署 Xamarin 應用程式所需的工具、概念和步驟。_
+_在此兩部分指南中,您將使用 Mac 或 Visual Studio 的 Visual Studio 構建您的第一個 Xamarin.Android 應用程式,並使用 Xamarin 開發 Android 應用程式的基本原理。在此過程中,將介紹構建和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。_
 
-## <a name="part-1-quickstartandroidget-startedhello-androidhello-android-quickstartmd"></a>[第一部分：快速入門](~/android/get-started/hello-android/hello-android-quickstart.md)
+## <a name="part-1-quickstart"></a>[第 1 部分：快速入門](~/android/get-started/hello-android/hello-android-quickstart.md)
 
 在本指南的第一部分中，您將會建立可將使用者輸入的英數字元電話號碼轉譯成數字電話號碼，然後再撥打該號碼的應用程式。
 
-## <a name="part-2-deep-diveandroidget-startedhello-androidhello-android-deepdivemd"></a>[第二部分：深度剖析](~/android/get-started/hello-android/hello-android-deepdive.md)
+## <a name="part-2-deep-dive"></a>[第 2 部分：深度剖析](~/android/get-started/hello-android/hello-android-deepdive.md)
 
 在本文件的第二部分中，您將檢閱建置內容，並對 Android 應用程式的運作方式有基本了解。
 
@@ -31,4 +31,4 @@ _在這份含有兩部分的指南中，您將使用 Visual Studio for Mac 或 V
 
 - [Android 使用者入門](https://developer.android.com/training/index.html)
 - [Visual Studio 偵錯](https://docs.microsoft.com/visualstudio/debugger/)
-- [Visual Studio for Mac 配方 - 偵錯](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging) \(英文\)
+- [Visual Studio for Mac 配方 - 偵錯](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging)

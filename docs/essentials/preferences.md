@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
 ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
-ms.sourcegitcommit: 98fdc3b4a7ef10d5b45167315dbffe94853af71a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79497047"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
@@ -29,7 +29,7 @@ ms.locfileid: "79497047"
 using Xamarin.Essentials;
 ```
 
-將指定「鍵」的值儲存在喜好設定中：
+將指定「鍵」__ 的值儲存在喜好設定中：
 
 ```csharp
 Preferences.Set("my_key", "my_value");
@@ -41,13 +41,13 @@ Preferences.Set("my_key", "my_value");
 var myValue = Preferences.Get("my_key", "default_value");
 ```
 
-若要檢查指定的索引_鍵_是否存在於喜好設定中：
+要檢查設定中是否存在給定_鍵_,請進行以下操作:
 
 ```csharp
 bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
-從喜好設定中移除「鍵」：
+從喜好設定中移除「鍵」__：
 
 ```csharp
 Preferences.Remove("my_key");
@@ -68,23 +68,23 @@ Preferences.Clear();
 - **bool**
 - **double**
 - **int**
-- **float**
-- **long**
+- **浮動**
+- **長**
 - **string**
-- **DateTime**
+- **Datetime**
 
 ## <a name="integrate-with-system-settings"></a>與系統設定整合
 
-喜好設定會以原生方式儲存，讓您可以將您的設定整合到原生系統設定中。 遵循平臺 documetnation 和範例，與平臺整合：
+設定以本機方式儲存,允許您將設定整合到本機系統設定中。 按照平臺整理和範例與平臺整合:
 
-* Apple：[執行 IOS 設定](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)配套
-* [iOS 應用程式喜好設定範例](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* 蘋果:[實施 iOS 設置捆綁包](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
+* [iOS 應用偏好設定範例](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
 * [watchOS 設定](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
-* Android：[使用設定畫面消費者入門](https://developer.android.com/guide/topics/ui/settings.html)
+* 安卓系統:[開始使用設定螢幕](https://developer.android.com/guide/topics/ui/settings.html)
 
 ## <a name="implementation-details"></a>實作詳細資料
 
-`DateTime` 值使用 `DateTime` 類別所定義的兩種方法，以 64 位元二進位 (長整數) 格式儲存：[`ToBinary`](xref:System.DateTime.ToBinary) 方法用於編碼 `DateTime` 值，而 [`FromBinary`](xref:System.DateTime.FromBinary(System.Int64)) 方法會對值進行解碼。 請參閱這些方法的文件，以便在已儲存的 `DateTime` 並非國際標準時間 (UTC) 值時，對解碼值進行調整。
+的值`DateTime``DateTime`使用類定義的兩種方法以 64 位元二進制(長整[`ToBinary`](xref:System.DateTime.ToBinary)數)格式存儲`DateTime`:該方法用於對[`FromBinary`](xref:System.DateTime.FromBinary(System.Int64))值進行編碼, 方法對值進行解碼。 請參閱這些方法的文件，以便在已儲存的 `DateTime` 並非國際標準時間 (UTC) 值時，對解碼值進行調整。
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
@@ -94,19 +94,19 @@ Preferences.Clear();
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-[KeyChain](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) 用於在 iOS 裝置上儲存值。 如果未指定 `sharedName`，則會使用 `StandardUserDefaults`；否則該名稱會用於建立具有用於 `NSUserDefaults` 之指定名稱的新 `NSUserDefaultsType.SuiteName`。
+[KeyChain](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) 用於在 iOS 裝置上儲存值。 如果未指定 `sharedName`，則會使用 `StandardUserDefaults`；否則該名稱會用於建立具有用於 `NSUserDefaultsType.SuiteName` 之指定名稱的新 `NSUserDefaults`。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 用於將值儲存在裝置上。 如果未指定 `sharedName`，則會使用 `LocalSettings`否則該名稱會用於建立 `LocalSettings` 內的容器。 
 
-`LocalSettings` 也具有下列限制，每個設定的名稱最多可以是255個字元。 每個設定的大小最多可達8K 位元組，而且每個複合設定的大小最多可達64K 位元組。
+`LocalSettings`還有以下限制,即每個設置的名稱的長度最多只能為 255 個字元。 每個設置的大小可以高達 8K 位元組,每個複合設置的大小可以高達 64K 位元組。
 
 --------------
 
 ## <a name="persistence"></a>持續性
 
-解除安裝應用程式會移除所有「喜好設定」。 但針對使用 [「自動備份」](https://developer.android.com/guide/topics/data/autobackup) 的 Android 6.0 (API 層級 23) 或更新版，並在其上執行的應用程式除外。 根據預設，此功能為啟用並保留應用程式資料，包括「共用喜好設定」，這是**喜好設定** API 使用的內容。 您可以透過下列 Google [文件](https://developer.android.com/guide/topics/data/autobackup) 來停用此項目。
+解除安裝應用程式會移除所有「喜好設定」__。 但針對使用 [「自動備份」](https://developer.android.com/guide/topics/data/autobackup)____ 的 Android 6.0 (API 層級 23) 或更新版，並在其上執行的應用程式除外。 根據預設，此功能為啟用並保留應用程式資料，包括「共用喜好設定」____，這是**喜好設定** API 使用的內容。 您可以透過下列 Google [文件](https://developer.android.com/guide/topics/data/autobackup) 來停用此項目。
 
 ## <a name="limitations"></a>限制
 

@@ -8,32 +8,32 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 1fe2611e26d357d910cc85800355b42d11e1104b
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72697175"
 ---
 # <a name="highlighting-a-circular-area-on-a-map"></a>醒目提示地圖上的循環區域
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-circle)
 
 _本文說明如何將循環重疊新增至地圖中，以醒目提示地圖的循環區域。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 重疊是地圖上的多層次圖形。 重疊支援繪製隨地圖縮放比例的圖形內容。 下列螢幕擷取畫面顯示將循環重疊新增至地圖的結果：
 
 ![](circle-map-overlay-images/screenshots.png)
 
-當 Xamarin.Forms 應用程式轉譯 [`Map`](xref:Xamarin.Forms.Maps.Map) 控制項時，在 iOS 中會先具現化 `MapRenderer` 類別，再由該類別具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生的 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 您可在每個平台上建立適用於 `Map` 的自訂轉譯器，利用轉譯程序實作平台特定的地圖自訂。 執行這項作業的流程如下：
+當[`Map`](xref:Xamarin.Forms.Maps.Map)控件由 Xamarin.Forms 應用程式呈現時,`MapRenderer`在 iOS 中,類將實例化,從而`MKMapView`實例化本機 控制件。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 您可在每個平台上建立適用於 `Map` 的自訂轉譯器，利用轉譯程序實作平台特定的地圖自訂。 執行這項作業的流程如下：
 
 1. [建立](#Creating_the_Custom_Map) Xamarin.Forms 自訂地圖。
 1. [使用](#Consuming_the_Custom_Map) Xamarin.Forms 的自訂地圖。
 1. 在每個平台上建立地圖自訂轉譯器以[自訂](#Customizing_the_Map)地圖。
 
 > [!NOTE]
-> 您必須先初始化及設定 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)，才能使用。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map/index.md)
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)在使用前必須初始化並配置。 有關詳細資訊,請參閱[`Maps Control`](~/xamarin-forms/user-interface/map/index.md)
 
 如需使用自訂轉譯器自訂地圖的資訊，請參閱[自訂地圖釘選](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)。
 
@@ -51,7 +51,7 @@ public class CustomCircle
 }
 ```
 
-接著，建立 [`Map`](xref:Xamarin.Forms.Maps.Map) 類別的子類別，這會新增類型 `CustomCircle` 的屬性：
+然後,建立類別的[`Map`](xref:Xamarin.Forms.Maps.Map)子類別,該類添加類型的屬性`CustomCircle`:
 
 ```csharp
 public class CustomMap : Map
@@ -122,7 +122,7 @@ public partial class MapPage : ContentPage
 }
 ```
 
-此初始化會將 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 和 `CustomCircle` 執行個體新增至自訂地圖，並使用 [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) 方法定位地圖的檢視，從 [`Position`](xref:Xamarin.Forms.Maps.Position) 和 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 建立 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)，變更地圖的位置和縮放比例。
+此初始化將[`Pin`](xref:Xamarin.Forms.Maps.Pin)`CustomCircle`[`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*)和 實例添加到自定義映射中,並使用方法定位地圖的檢視,該方法[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)通過[`Position`](xref:Xamarin.Forms.Maps.Position)從和創建來更改地圖的位置和縮放級別[`Distance`](xref:Xamarin.Forms.Maps.Distance)。
 
 <a name="Customizing_the_Map" />
 
@@ -249,7 +249,7 @@ namespace MapOverlay.Droid
 }
 ```
 
-如果自訂轉譯器已附加至新的 Xamarin. form 元素，則 `OnElementChanged` 方法會抓取自訂的 circle 資料。 一旦 `GoogleMap` 執行個體可用，就會叫用 `OnMapReady` 方法，透過具現化會指定圓形中心和圓半徑 (以公尺為單位) 的 `CircleOptions` 物件來建立圓形。 然後，會呼叫 `NativeMap.AddCircle` 方法將圓形新增至地圖。
+該方法`OnElementChanged`檢索自定義圓數據,前提是自定義呈現器附加到新的 Xamarin.Forms 元素。 一旦 `GoogleMap` 執行個體可用，就會叫用 `OnMapReady` 方法，透過具現化會指定圓形中心和圓半徑 (以公尺為單位) 的 `CircleOptions` 物件來建立圓形。 然後，會呼叫 `NativeMap.AddCircle` 方法將圓形新增至地圖。
 
 #### <a name="creating-the-custom-renderer-on-the-universal-windows-platform"></a>在通用 Windows 平台上建立自訂轉譯器
 
@@ -302,7 +302,7 @@ namespace MapOverlay.UWP
 - 圓形位置和半徑會從 `CustomMap.Circle` 屬性擷取並傳遞至 `GenerateCircleCoordinates` 方法，該方法會產生圓形周長的緯度和經度座標。 此協助程式方法的程式碼如下所示。
 - 圓形周長座標會轉換成 `BasicGeoposition` 座標的 `List`。
 - 圓形可透過具現化 `MapPolygon` 物件來建立。 將其 `Path` 屬性設為包含圖形座標的 `Geopath` 物件，使用 `MapPolygon` 類別顯示地圖上的多點圖形。
-- 將多邊形新增至 `MapControl.MapElements` 集合，轉譯在地圖上。
+- 將多邊形新增至 `MapControl.MapElements` 集合以將其轉譯在地圖上。
 
 ```
 List<Position> GenerateCircleCoordinates(Position position, double radius)

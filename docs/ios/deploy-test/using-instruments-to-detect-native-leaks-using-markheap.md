@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 66d832f624bdd942f53c5f6d890457958969b1b7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028427"
 ---
 # <a name="profiling-xamarinios-applications-with-instruments"></a>使用 Instruments 分析 Xamarin.iOS 應用程式
@@ -28,16 +28,16 @@ Xcode Instruments 只能在 Mac 上執行。
 選取裝置，並執行 Instruments 應用程式：
 
 1. 在 Visual Studio for Mac 中開啟 Xamarin.iOS 專案。
-2. 選取 [偵錯|iPhone] 設定。
+2. 選取 [偵錯|iPhone]**** 設定。
 3. 將 iOS 裝置連接到電腦。
-4. 在 [執行] 功能表中，選取 [上傳至裝置]。 現在將會建置應用程式，並上傳至裝置。
-5. 在 [工具] 功能表中，選取 [啟動 Instruments]。
+4. 在 [執行]**** 功能表中，選取 [上傳至裝置]****。 現在將會建置應用程式，並上傳至裝置。
+5. 在 [工具]**** 功能表中，選取 [啟動 Instruments]****。
 
 Instruments 現在將會開啟，並顯示下列對話方塊：
 
  [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png "Choosing a profiling template")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments1.png#lightbox)
 
-按一下以選取 [配置] 範本。 其他範本也有效，但是本文僅討論 [配置] 分析範本。
+按一下以選取 [配置]**** 範本。 其他範本也有效，但是本文僅討論 [配置]**** 分析範本。
 
 接下來，使用視窗頂端的功能表選取裝置和應用程式：
 
@@ -45,9 +45,9 @@ Instruments 現在將會開啟，並顯示下列對話方塊：
 
 在視窗頂端的功能表中，應該選取了 iOS 裝置，而且旁邊應該選取了要分析的應用程式 (上方螢幕擷取畫面中的 **MemoryDemo**)。
 
-如果裝置未列在功能表底下，請檢查 Visual Studio for Mac 中的 [主控台] 上是否有應用程式部署至裝置時可能會顯示的錯誤訊息。 此外，請確定已經透過 Xcode Organizer 佈建用於開發的裝置。
+如果裝置未列在功能表底下，請檢查 Visual Studio for Mac 中的 [主控台]**** 上是否有應用程式部署至裝置時可能會顯示的錯誤訊息。 此外，請確定已經透過 Xcode Organizer 佈建用於開發的裝置。
 
-按一下 [選擇] 按鈕，下一個畫面應該就會出現：
+按一下 [選擇]**** 按鈕，下一個畫面應該就會出現：
 
 [![](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png "The profiling interface")](using-instruments-to-detect-native-leaks-using-markheap-images/instruments3.png#lightbox)
 

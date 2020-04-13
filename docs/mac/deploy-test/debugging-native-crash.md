@@ -8,21 +8,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
 ms.openlocfilehash: 40d849ad403f2f47c00be9d3da7b59fc27ce8002
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725489"
 ---
 # <a name="debugging-a-native-crash-in-a-xamarinmac-app"></a>在 Xamarin.Mac 應用程式中偵錯原生損毀
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 有時程式設計錯誤會造成原生 Objective-C 執行階段發生損毀。 不同於 C# 例外狀況，這些並不會指向可供您查看來修正的特定程式碼行。 有時它們可能太過瑣細而不易找出並修正，或是極難以追蹤。
 
 我們將逐步解說幾個真實的原生損毀範例來探究一下。
 
-## <a name="example-1-assertion-failure"></a>範例 1：宣告失敗
+## <a name="example-1-assertion-failure"></a>範例 1：判斷提示失敗
 
 以下是一個簡單測試應用程式中的前幾行損毀程式碼 (此資訊將會在**應用程式輸出**面板中)：
 
@@ -61,7 +61,7 @@ public override nfloat GetRowHeight (NSTableView tableView, nint row)
 }
 ```
 
-## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>範例 2：回呼跳到不知名的位置
+## <a name="example-2-callback-jumped-into-middle-of-nowhere"></a>範例 2：回呼不知跳到哪裡去
 
 ```csharp
 Stacktrace:
@@ -202,7 +202,7 @@ GitHub 問題全都是公開的。 無法隱藏意見或附件。
 
 ### <a name="working-around"></a>解決問題
 
-追蹤到問題之後，採用因應措施來修補問題，直到修正繫結為止，可以是一個相當簡單的過程。 目標是要藉由保留一個開啟的參考，防止將遭到以錯誤方式處理的物件 (**View** **Delegate** **DataSource**) 自記憶體中移除。
+追蹤到問題之後，採用因應措施來修補問題，直到修正繫結為止，可以是一個相當簡單的過程。 目標是要藉由保留一個開啟的參考，防止將遭到以錯誤方式處理的物件 (**View****Delegate****DataSource**) 自記憶體中移除。
 
 針對只有單一物件執行個體的簡單案例，請將程式碼從這樣：
 
@@ -248,6 +248,6 @@ void AddObject ()
 
 您應該一律不允許 C# 例外狀況將受控碼「逸出」至呼叫端 Objective-C 方法。 如果您這麼做，結果並不明確，但通常會涉及損毀。 一般而言，我們會竭盡所能提供實用的原生和受控損毀資訊，來協助您快速解決問題。
 
-如果不過於深究技術原因，設定基礎結構以在每個受控/原生界限攔截受控例外狀況，不僅成本非常高昂，而且還會有「許多」  發生在眾多常見作業中的轉換。 許多作業 (特別是涉及 UI 執行緒的作業) 必須快速完成，否則您的應用程式執行將會斷斷續續，或是效能讓人難以接受。 這些回呼中有許多都是執行不太可能擲回例外狀況的非常簡單工作，所以在這些案例中，這個額外負荷不僅成本太高，也沒有必要性。
+如果不過於深究技術原因，設定基礎結構以在每個受控/原生界限攔截受控例外狀況，不僅成本非常高昂，而且還會有「許多」__ 發生在眾多常見作業中的轉換。 許多作業 (特別是涉及 UI 執行緒的作業) 必須快速完成，否則您的應用程式執行將會斷斷續續，或是效能讓人難以接受。 這些回呼中有許多都是執行不太可能擲回例外狀況的非常簡單工作，所以在這些案例中，這個額外負荷不僅成本太高，也沒有必要性。
 
 因此，我們不會為您設定這些 try/catch。 針對程式碼執行非瑣碎工作 (例如不僅僅只是傳回布林值或執行簡單比對) 的情況，您可以自行嘗試 try catch。

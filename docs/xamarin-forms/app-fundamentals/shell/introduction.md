@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
 ms.openlocfilehash: cb2ae3afe9db86d4db603d499ef0e75e7cbbf552
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940408"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms Shell 簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms Shell 會提供大部分行動應用程式需要的基本功能，藉此降低行動應用程式開發的複雜度，這些基本功能包括：
 
@@ -53,11 +53,11 @@ Shell 會根據飛出視窗和索引標籤，提供固定的導覽體驗。 Shel
 > [!NOTE]
 > 未開啟飛出視窗時，底部的索引標籤列可視為應用程式中導覽的最上層。
 
-每個索引標籤都會顯示一個 [`ContentPage`](xref:Xamarin.Forms.ContentPage)。 不過，如果底部索引標籤包含多個頁面，則可透過頂端索引標籤列導覽頁面：
+每個選項卡顯示一[`ContentPage`](xref:Xamarin.Forms.ContentPage)個 。 不過，如果底部索引標籤包含多個頁面，則可透過頂端索引標籤列導覽頁面：
 
 [![iOS 與 Android 上的 Shell 頂端索引標籤螢幕擷取畫面](introduction-images/cats.png "Shell 頂端索引標籤")](introduction-images/cats-large.png#lightbox "Shell 頂端索引標籤")
 
-在每個索引標籤中，都可以導覽至其他 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件：
+在每個選項卡中,可以將[`ContentPage`](xref:Xamarin.Forms.ContentPage)其他物件導航到:
 
 [![iOS 與 Android 上的 Shell 頁面巡覽螢幕擷取畫面](introduction-images/cat-details.png "Shell 應用程式導覽")](introduction-images/cat-details-large.png#lightbox "Shell 應用程式導覽")
 

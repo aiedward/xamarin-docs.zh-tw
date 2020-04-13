@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
 ms.openlocfilehash: 4b7d3d19ce8766ccdbfc41163fcad44074e832b8
-ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "80159755"
 ---
 # <a name="deployment-and-testing"></a>部署及測試
@@ -20,13 +20,13 @@ ms.locfileid: "80159755"
 
 ## <a name="application-package-sizes"></a>[應用程式的套件大小](app-package-size.md)
 
-這篇文章將探討 Xamarin.Android 應用程式套件的組成組件，以及在開發過程的偵錯和發行階段所能進行有效率套件部署的相關策略。
+本文將探討 Xamarin.Android 應用程式套件的組成組件，以及在開發過程的偵錯和發行階段所能進行有效率套件部署的相關策略。
 
 ## <a name="apply-changes"></a>[套用變更](apply-changes.md)
 
-本指南涵蓋 [套用變更] 功能，可讓您將資源變更推送至執行中的應用程式，而不需要重新開機應用程式。
+本指南介紹了"應用更改"功能,該功能允許您在不重新啟動應用的情況下將資源更改推送到正在運行的應用。
 
-## <a name="building-apps"></a>[建置應用程式](building-apps/index.md)
+## <a name="building-apps"></a>[編譯應用](building-apps/index.md)
 
 此小節描述建置流程的運作方式，並說明如何建置 ABI 特定 APK。
 
@@ -72,7 +72,7 @@ ms.locfileid: "80159755"
 
 ## <a name="signing-the-android-application-package"></a>[簽署 Android 應用程式套件](~/android/deploy-test/signing/index.md)
 
-了解如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並使用此簽署憑證來簽署應用程式。 此外，本主題還說明如何將應用程式匯出至磁碟，以進行「臨機操作」散發。 產生的 APK 可以側載到 Android 裝置，而不需透過 App Store。
+了解如何建立 Android 簽署身分識別、建立適用於 Android 應用程式的新簽署憑證，並使用此簽署憑證來簽署應用程式。 此外，本主題還說明如何將應用程式匯出至磁碟，以進行「臨機操作」** 散發。 產生的 APK 可以側載到 Android 裝置，而不需透過應用程式市集 。
 
 ## <a name="publishing-an-application"></a>[發行應用程式](~/android/deploy-test/publishing/index.md)
 

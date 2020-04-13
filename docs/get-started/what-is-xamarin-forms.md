@@ -7,19 +7,19 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/18/2019
 ms.openlocfilehash: aaceb6089a5b7e5f0551dafe9ef1fe50d01433d9
-ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/17/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77374019"
 ---
 # <a name="what-is-xamarinforms"></a>什麼是 Xamarin.Forms？
 
-[![iOS 和 Android 中範例 Xamarin.Forms 應用程式的螢幕擷取畫面](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
+[![範例 Xamarin.Forms 應用程式在 iOS 和 Android 中的螢幕截圖](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
 
 Xamarin.Forms 是一種開放原始碼 UI 架構。 Xamarin.Forms 可讓開發人員從單一的共用程式碼基底建置 Android、iOS，以及 Windows 應用程式。
 
-Xamarin.Forms 可以讓開發人員使用 C# 中的程式碼後置，在 XAML 中建立使用者介面。 這些介面會於每個平台上轉譯為高效能的原生控制項。
+Xamarin 可以讓開發人員使用 C# 中的程式碼後置，在 XAML 中建立使用者介面。 這些介面會於每個平台上轉譯為高效能的原生控制項。
 
 ## <a name="who-xamarinforms-is-for"></a>Xamarin.Forms 的適用對象
 
@@ -58,7 +58,7 @@ Xamarin.Essentials 是一種程式庫，可為原生裝置功能提供跨平台 
 
 如需詳細資訊，請參閱 [Xamarin.Essentials](~/essentials/index.md)。
 
-### <a name="shell"></a>Shell
+### <a name="shell"></a>殼層
 
 Xamarin.Forms Shell 會提供大部分應用程式需要的基本功能，藉此降低行動應用程式開發的複雜度。 Shell 提供的一些功能範例包括：
 
@@ -72,7 +72,7 @@ Xamarin.Forms Shell 會提供大部分應用程式需要的基本功能，藉此
 
 Xamarin 提供通用的 API，可跨平台轉譯原生控制項，但特定平台的功能可能無法於其他平台上使用。 例如，Android 平台具有原生功能，可在 `ListView` 中使用快速捲動，但 iOS 中則無此功能。 Xamarin.Forms 平台特定功能可讓您利用僅在特定平台上提供的功能，而不需建立自訂轉譯器或效果。
 
-Xamarin.Forms 包含預先建置的方案，適用於各種平台特定功能。 如需詳細資訊，請參閱:
+Xamarin.Forms 包含預先建置的方案，適用於各種平台特定功能。 如需詳細資訊，請參閱
 
 - [Xamarin.Forms 平台特定功能](~/xamarin-forms/platform/platform-specifics/index.md)
 - [Android 平台特定功能](~/xamarin-forms/platform/android/index.md)

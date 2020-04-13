@@ -1,6 +1,6 @@
 ---
-title: 第22章的摘要。 動畫
-description: 使用 Xamarin 建立 Mobile Apps：第22章的摘要。 動畫
+title: 第22章摘要。 動畫
+description: 使用 Xamarin.表單創建行動應用程式:第 22 章摘要。 動畫
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
@@ -8,198 +8,198 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 935be5bd6696600644463eb4ec26410b546f42a0
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771001"
 ---
-# <a name="summary-of-chapter-22-animation"></a>第22章的摘要。 動畫
+# <a name="summary-of-chapter-22-animation"></a>第22章摘要。 動畫
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
 
-您已瞭解您可以使用 [Xamarin] 或 [`Task.Delay`] 來建立自己的動畫，但是使用由 Xamarin 所提供的動畫設備，通常會比較容易。 有三個類別會執行這些動畫：
+您已經看到可以使用 Xamarin.Forms 計時`Task.Delay`器或 創建自己的動畫,但通常使用 Xamarin.Forms 提供的動畫工具更容易。 三個類別實現以下動畫:
 
-- [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)，高階方法
-- [`Animation`](xref:Xamarin.Forms.Animation)，更多功能但更困難
-- [`AnimationExtension`](xref:Xamarin.Forms.AnimationExtensions)，這是最具彈性、最低等級的方法
+- [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions),高級方法
+- [`Animation`](xref:Xamarin.Forms.Animation),功能更豐富,但更困難
+- [`AnimationExtension`](xref:Xamarin.Forms.AnimationExtensions),最通用、最底層的方法
 
-通常，動畫的目標屬性是由可系結屬性所支援。 這不是必要條件，但這些是動態回應變更的唯一屬性。
+通常,動畫以可綁定屬性支援的屬性為目標。 這不是要求,但這些是唯一對更改動態反應的屬性。
 
-這些動畫沒有 XAML 介面，但是您可以使用第23章所討論的技巧，將動畫整合到 XAML 中[ **。觸發程式和行為**](chapter23.md)。
+這些動畫沒有 XAML 介面,但您可以使用第 23 章中討論的技術將動畫整合到 XAML 中[**。觸發器與行為**](chapter23.md)。
 
 ## <a name="exploring-basic-animations"></a>探索基本動畫
 
-基本動畫函數是在[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)類別中找到的擴充方法。 這些方法適用于衍生自 `VisualElement`的任何物件。 最簡單的動畫會以[`Chapter 21. Transforms`](chapter21.md)所討論的轉換屬性為目標。
+基本動畫函數是在類中找到的[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)擴展方法。 這些方法應用於派生自`VisualElement`的任何物件。 最簡單的動畫以[`Chapter 21. Transforms`](chapter21.md)中的 轉換屬性為目標。
 
-[**AnimationTryout**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/AnimationTryout)會示範 `Button` 的 `Clicked` 事件處理常式如何呼叫[`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))擴充方法，以在圓形中微調按鈕。
+[**動畫 Tryout**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/AnimationTryout)`Clicked`演示`Button`了 a 的事件處理[`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))程式如何調用 擴充方法以旋轉圓圈中的按鈕。
 
-`RotateTo` 方法會在一季秒的期間內，將 `Button` 的 `Rotation` 屬性從0變更為360（預設值）。 不過，如果 `Button` 再次按下，則不會執行任何操作，因為 `Rotation` 屬性已經是360度。
+該方法`RotateTo``Rotation`在四分之一秒`Button`( 預設情況下)將的屬性從 0 更改為 360。 但是,`Button`如果再次點擊 ,則它不起`Rotation`作用, 因為屬性已經是 360 度。
 
-### <a name="setting-the-animation-duration"></a>設定動畫持續時間
+### <a name="setting-the-animation-duration"></a>設定動畫期間
 
-`RotateTo` 的第二個引數是持續時間（以毫秒為單位）。 如果設定為較大的值，則在動畫期間點擊 `Button` 會啟動從目前角度開始的新動畫。
+的第二個參數`RotateTo`是持續時間(以毫秒為單位)。 如果設置為較大值,則在動畫`Button`期間點擊 啟動從當前角度開始的新動畫。
 
 ### <a name="relative-animations"></a>相對動畫
 
-`RelRotateTo` 方法會將指定的值加入至現有的值，藉以執行相對的旋轉。 這個方法可讓 `Button` 多次使用，而且每次都會將 `Rotation` 屬性增加360度。
+該方法`RelRotateTo`通過將指定值添加到現有值來執行相對旋轉。 此方法允許多次點擊`Button`,每次`Rotation`將 屬性增加 360 度。
 
 ### <a name="awaiting-animations"></a>等候動畫
 
-`ViewExtensions` 中的所有動畫方法都會傳回 `Task<bool>` 物件。 這表示您可以使用 `ContinueWith` 或 `await`來定義一連串的連續動畫。 如果動畫完成 `true` 但[`CancelAnimation`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement))方法已取消，則會 `false` `bool` 完成的傳回值，這會取消在相同專案上設定之 `ViewExtensions` 中其他方法所起始的所有動畫。
+返回`ViewExtensions``Task<bool>`物件中的所有動畫方法。 這意味著您可以使用`ContinueWith``await`或 定義一系列順序動畫。 `bool`完成`false`返回值是動畫完成而不中斷,或者`true`如果[`CancelAnimation`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement))該方法 已取消,該方法將取消`ViewExtensions`由在同 一元素上設置的其他方法啟動的所有動畫。
 
 ### <a name="composite-animations"></a>複合動畫
 
-您可以混合等候和未等待的動畫，以建立複合動畫。 這些是 `ViewExtensions` 中以 `TranslationX`、`TranslationY`和 `Scale` 轉換屬性為目標的動畫：
+您可以混合等待的動畫和非等待動畫來創建復合動畫。 `ViewExtensions`這些是目標 中的`TranslationX`動畫`TranslationY`,`Scale`並轉換屬性:
 
 - [`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))
 - [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))
 - [`RelScaleTo`](xref:Xamarin.Forms.ViewExtensions.RelScaleTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))
 
-請注意，`TranslateTo` 可能會同時影響 `TranslationX` 和 `TranslationY` 屬性。
+請注意,`TranslateTo`這可能會影響`TranslationX``TranslationY`和屬性。
 
-### <a name="taskwhenall-and-taskwhenany"></a>System.threading.tasks.task.whenall 和 System.threading.tasks.task.whenany
+### <a name="taskwhenall-and-taskwhenany"></a>任務.當所有和任務。當任何
 
-您也可以使用[`Task.WhenAll`](xref:System.Threading.Tasks.Task.WhenAll*)來管理同時的動畫，這會在多個工作全部結束時發出信號，並[`Task.WhenAny`](xref:System.Threading.Tasks.Task.WhenAny*)，這會在數個工作中的第一個作業結束時發出信號。
+也可以使用管理同步動畫,[`Task.WhenAll`](xref:System.Threading.Tasks.Task.WhenAll*)當多個任務全部完成時發出信號,[`Task.WhenAny`](xref:System.Threading.Tasks.Task.WhenAny*)以及 ,當多個任務中的第一個任務完成時,該動畫會發出信號。
 
 ### <a name="rotation-and-anchors"></a>旋轉和錨點
 
-呼叫 `ScaleTo`、`RelScaleTo`、`RotateTo`和 `RelRotateTo` 方法時，您可以設定 [ [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX) ] 和 [ [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY) ] 屬性來指示縮放和旋轉的中心。
+呼叫、`ScaleTo``RelScaleTo``RotateTo`與`RelRotateTo`時,可以[`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)設定[`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)和屬性以指示縮放和旋轉的中心。
 
-[**CircleButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CircleButton)會藉由繞著頁面中央的 `Button` 來示範這項技術。
+[**CircleButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CircleButton)透過頁面中心旋轉一個`Button`來展示此技術。
 
-### <a name="easing-functions"></a>緩動函式
+### <a name="easing-functions"></a>Easing 函式
 
-通常動畫是從開始值到結束值的線性。 簡化函數可能會導致動畫在其課程中加速或變慢。 動畫方法的最後一個選擇性引數是[`Easing`](xref:Xamarin.Forms.Easing)類型，這是一個類別，它會定義 `Easing`類型的11個靜態唯讀欄位：
+通常,動畫是從起始值到結束值的線性。 緩動函數可能會導致動畫在其過程中加速或減慢。 動畫方法的最後一個可選參數是類型[`Easing`](xref:Xamarin.Forms.Easing),一個定義`Easing`類型 11 個靜態隻讀欄位的類:
 
-- [`Linear`](xref:Xamarin.Forms.Easing.Linear)，預設值
-- [`SinIn`](xref:Xamarin.Forms.Easing.SinIn)、 [`SinOut`](xref:Xamarin.Forms.Easing.SinOut)和[`SinInOut`](xref:Xamarin.Forms.Easing.SinInOut)
-- [`CubicIn`](xref:Xamarin.Forms.Easing.CubicIn)、 [`CubicOut`](xref:Xamarin.Forms.Easing.CubicOut)和[`CubicInOut`](xref:Xamarin.Forms.Easing.CubicInOut)
-- [`BounceIn`](xref:Xamarin.Forms.Easing.BounceIn) 和 [`BounceOut`](xref:Xamarin.Forms.Easing.BounceOut)
-- [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) 和 [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)
+- [`Linear`](xref:Xamarin.Forms.Easing.Linear),預設值
+- [`SinIn`](xref:Xamarin.Forms.Easing.SinIn)、[`SinOut`](xref:Xamarin.Forms.Easing.SinOut)和[`SinInOut`](xref:Xamarin.Forms.Easing.SinInOut)
+- [`CubicIn`](xref:Xamarin.Forms.Easing.CubicIn)、[`CubicOut`](xref:Xamarin.Forms.Easing.CubicOut)和[`CubicInOut`](xref:Xamarin.Forms.Easing.CubicInOut)
+- [`BounceIn`](xref:Xamarin.Forms.Easing.BounceIn)和[`BounceOut`](xref:Xamarin.Forms.Easing.BounceOut)
+- [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn)和[`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)
 
-`In` 尾碼表示效果是在動畫的開頭，`Out` 表示在結尾，而 `InOut` 表示它是在動畫的開頭和結尾。
+後`In`綴表示效果位於動畫的開頭`Out`, 表示在動畫的結尾`InOut`,並且 表示效果位於動畫的開頭和結尾。
 
-[**BounceButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BounceButton)範例示範如何使用緩時函數。
+[**"反彈按鈕"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BounceButton)範例展示了緩動功能的使用。
 
-### <a name="your-own-easing-functions"></a>您自己的緩動函數
+### <a name="your-own-easing-functions"></a>您自己的緩動功能
 
-您也可以藉由將[`Func<double, double>`](xref:System.Func`2)傳遞至[`Easing`](xref:Xamarin.Forms.Easing.%23ctor(System.Func{System.Double,System.Double}))的「函式」，來定義您自己的緩時函數。 `Easing` 也會定義從 `Func<double, double>` 到 `Easing`的隱含轉換。 當動畫從開始到結束時，緩時變函數的引數一律會在0到1的範圍內。 函式*通常*會傳回0到1範圍內的值，但可能會短暫否定或大於1（如同 `SpringIn` 和 `SpringOut` 函式的情況），或者如果您知道您所執行的動作，可能會中斷規則。
+還可以通過將[`Func<double, double>`](xref:System.Func`2)[`Easing`](xref:Xamarin.Forms.Easing.%23ctor(System.Func{System.Double,System.Double}))的 來定義自己的緩動函數。 `Easing`還定義了從`Func<double, double>``Easing`到的隱式轉換。 緩動函數的參數始終在 0 到 1 的範圍內,因為動畫從頭到尾線性進行。 該函數*通常*返回 0 到 1 範圍內的值,但可以短暫負數或`SpringIn`大`SpringOut`於 1(與和 函數的情況一樣),或者如果您知道正在執行的操作,則可能會違反規則。
 
-[**UneasyScale**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/UneasyScale)範例會示範自訂的緩動函式，而[**CustomCubicEase**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CustomCubicEase)會示範另一個功能。
+[**"不安縮放"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/UneasyScale)範例示範了自訂緩動功能,[**自定義CubicEase**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CustomCubicEase)演示了另一個函數。
 
-[**SwingButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingButton)範例也會示範自訂的緩動函式，以及在旋轉動畫序列中變更 `AnchorX` 和 `AnchorY` 屬性的技巧。
+[**SwingButton**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingButton)示例還演示了自定義緩動函數,以及更改旋轉動畫序列`AnchorX``AnchorY`中和 屬性的技術。
 
-[**FormsBook 工具**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫有一個[`JiggleButton`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/JiggleButton.cs)類別，它會使用自訂的緩動函式，在按一下按鈕時加以 jiggle。 [**JiggleButtonDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/JiggleButtonDemo)範例會示範它。
+[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫具有[`JiggleButton`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/JiggleButton.cs)一 個類,該類使用自定義緩動函數在單擊按鈕時晃動按鈕。 [**JiggleButtonDemo 示例**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/JiggleButtonDemo)演示了它。
 
 ### <a name="entrance-animations"></a>進入動畫
 
-當頁面第一次出現時，就會出現一種常用的動畫類型。 這類動畫可以在頁面的[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)覆寫中啟動。 針對這些動畫，最好是設定 XAML，讓您在動畫*之後*顯示頁面，然後從程式碼初始化和建立版面配置的動畫。
+首次出現頁面時,會發生一種流行的動畫類型。 可以在[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)頁面重寫中啟動此類動畫。 對於這些動畫,最好設置 XAML,以便希望頁面在動畫*之後*顯示,然後從代碼初始化和動畫化佈局。
 
-[**FadingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingEntrance)範例會使用[`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))擴充方法來淡化頁面的內容。
+[**"淡入淡出"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingEntrance)範[`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))例 使用擴充方法淡入頁面內容。
 
-[**SlidingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SlidingEntrance)範例會使用[`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))的擴充方法，從側邊滑入頁面的內容。
+[**滑動入口**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SlidingEntrance)示例[`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))使用 擴展方法從側面滑動頁面內容。
 
-[**SwingingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingingEntrance)範例會使用[`RotateYTo`](xref:Xamarin.Forms.ViewExtensions.RotateYTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))擴充方法，以動畫顯示 `RotationY` 屬性。 也可以使用[`RotateXTo`](xref:Xamarin.Forms.ViewExtensions.RotateXTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))方法。
+[**擺動入口**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SwingingEntrance)示例[`RotateYTo`](xref:Xamarin.Forms.ViewExtensions.RotateYTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))使用 擴展`RotationY`方法為 屬性設置動畫。 方法[`RotateXTo`](xref:Xamarin.Forms.ViewExtensions.RotateXTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))也可用。
 
-### <a name="forever-animations"></a>永久動畫
+### <a name="forever-animations"></a>永遠的動畫
 
-另一方面，「永遠」動畫會一直執行，直到程式終止為止。 這些通常是供示範之用。
+另一個極端,"永遠"動畫運行,直到程序終止。 這些通常用於演示目的。
 
-[**FadingTextAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingTextAnimation)範例會使用[`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))動畫，將兩段文字淡入和放大。
+[**"淡入文字動畫"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/FadingTextAnimation)範例[`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))使用 動畫淡入淡出兩段文字。
 
-[**PalindromeAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/PalindromeAnimation)會顯示 palindrome，然後依序將個別字母旋轉180度，讓它們全部顛倒。 然後，整個字串會翻轉180度，以讀取與原始字串相同的字元。
+[**Palindrome動畫**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/PalindromeAnimation)顯示一個迴廊,然後按順序旋轉單個字母 180 度,以便它們全部顛倒。 然後,整個字串翻轉 180 度,讀取與原始字串相同。
 
-[**CopterAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CopterAnimation)範例會旋轉簡單的 `BoxView` 直升機，同時將其繞著螢幕中央。
+[**Copter動畫**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/CopterAnimation)示例旋轉一個`BoxView`簡單的 直升機,同時旋轉它圍繞螢幕中心。
 
-[**RotatingSpokes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes)會繞著螢幕中央的 `BoxView` 輪輻，然後旋轉每個輪輻本身來建立有趣的模式：
+[**旋轉分支**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotatingSpokes)圍繞螢幕`BoxView`中心 旋轉輻條,然後旋轉每個輻條本身以創建有趣的模式:
 
-[![旋轉輪輻的三向螢幕擷取畫面](images/ch22fg21-small.png "旋轉輪輻")](images/ch22fg21-large.png#lightbox "旋轉輪輻")
+[![旋轉輻條的三重螢幕截圖](images/ch22fg21-small.png "旋轉輻條")](images/ch22fg21-large.png#lightbox "旋轉輻條")
 
-不過，逐漸增加元素的 `Rotation` 屬性可能無法在長期中正常執行，如[**RotationBreakdown**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown)範例所示。
+但是,如`Rotation`[**旋轉細分**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/RotationBreakdown)示例所示,逐步增加元素的屬性可能長期不起作用。
 
-[**SpinningImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpinningImage)範例會使用[`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))、 [`RotateXTo`](xref:Xamarin.Forms.ViewExtensions.RotateXTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))和[`RotateYTo`](xref:Xamarin.Forms.ViewExtensions.RotateYTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) ，讓它看起來就像是在3d 空間中旋轉點陣圖一樣。
+[**旋轉影像**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpinningImage)範例[`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))使用[`RotateXTo`](xref:Xamarin.Forms.ViewExtensions.RotateXTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)),[`RotateYTo`](xref:Xamarin.Forms.ViewExtensions.RotateYTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))並使 它看起來像點陣圖在 3D 空間中旋轉。
 
-### <a name="animating-the-bounds-property"></a>以動畫顯示界限屬性
+### <a name="animating-the-bounds-property"></a>為邊界屬性設定動畫
 
-`ViewExtensions` 尚未示範的擴充方法[`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing))，它會藉由呼叫[`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))方法，有效率地以動畫方式繪製唯讀[`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)屬性。 這個方法通常是由 `Layout` 的衍生項所呼叫，如第[**26 章所討論。CustomLayouts**](chapter26.md)。
+尚未演示`ViewExtensions`的唯一擴展方法[`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing))是 ,該方法通過[`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)[`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))調用 方法有效地為唯讀屬性設置動畫。 該方法通常由`Layout`導數調用,如[**第26章所述。自訂佈局**](chapter26.md)。
 
-`LayoutTo` 的方法應該限制為特殊用途。 [**BouncingBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BouncingBox)程式會使用它來壓縮和展開 `BoxView`，因為它會在頁面的側邊。
+該方法`LayoutTo`應限於特殊用途。 [**BounceBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BouncingBox)程式使用它來壓縮和擴展`BoxView`, 因為它從頁面的側面反彈。
 
-[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)範例會使用 `LayoutTo` 在傳統15-16 謎題的執行中移動磚，以顯示已加密的影像，而不是編號的磚：
+[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)範例`LayoutTo`用於 在經典 15-16 謎題的實現中移動切片,該謎題顯示一個雜亂的圖像,而不是編號的切片:
 
-[![Xamarin Xuzzle 的三重螢幕擷取畫面](images/ch22fg26-small.png "Xuzzle 謎題遊戲")](images/ch22fg26-large.png#lightbox "Xuzzle 謎題遊戲")
+[![夏馬林·許茲爾的三重截圖](images/ch22fg26-small.png "徐茲爾益智遊戲")](images/ch22fg26-large.png#lightbox "徐茲爾益智遊戲")
 
-### <a name="your-own-awaitable-animations"></a>您自己的可等候動畫
+### <a name="your-own-awaitable-animations"></a>您您您可以等待動畫
 
-[**TryAwaitableAnimation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/TryAwaitableAnimation)範例會建立可等候動畫。 可以從方法傳回 `Task` 物件，並在完成動畫時發出信號的重要類別[`TaskCompletionSource`](xref:System.Threading.Tasks.TaskCompletionSource`1)。
+[**"試用動畫"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/TryAwaitableAnimation)範例可建立可等待的動畫。 在動畫完成時,可以從方法和`Task`訊號傳回物件[`TaskCompletionSource`](xref:System.Threading.Tasks.TaskCompletionSource`1)的關鍵類別是 。
 
-## <a name="deeper-into-animations"></a>更深入的動畫
+## <a name="deeper-into-animations"></a>更深入動畫
 
-Xamarin 動畫系統可能有點令人困惑。 除了 `Easing` 類別之外，動畫系統還包含 `ViewExtensions`、`Animation`和 `AnimationExtension` 類別。
+Xamarin.Forms 動畫系統可能有點令人困惑。 `Easing`除了類之外,動畫系統還包括`ViewExtensions`、`Animation``AnimationExtension`類。
 
-### <a name="viewextensions-class"></a>ViewExtensions 類別
+### <a name="viewextensions-class"></a>檢視延伸類別
 
-您已經看過[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)。 它定義了九種傳回 `Task<bool>` 和[`CancelAnimations`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement))的方法。 九種方法中的七個目標是轉換屬性。 另外兩個是[`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing))，以[`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity)屬性為目標，而[`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing))則會呼叫[`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))方法。
+你已經看過[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)了。 它定義了返回`Task<bool>`[`CancelAnimations`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement))和 的九種方法。 九種方法中有七個針對轉換屬性。 另外兩個是[`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)),它[`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity)針對[`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing))屬性,[`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle))和調用 方法。
 
-### <a name="animation-class"></a>動畫類別
+### <a name="animation-class"></a>動畫類
 
-[`Animation`](xref:Xamarin.Forms.AnimationExtensions)類別有一個具有五個自[變數的函](xref:Xamarin.Forms.Animation.%23ctor(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Action))式，可定義回呼和完成的方法，以及動畫的參數。
+類[`Animation`](xref:Xamarin.Forms.AnimationExtensions)具有一個[建構函數](xref:Xamarin.Forms.Animation.%23ctor(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Action)),具有五個參數來定義回調和完成方法以及動畫的參數。
 
-您可以使用[`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))、 [`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))、 [`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))和多載的[`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double))來加入子動畫。
+子動畫可以使用[`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))、、[`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))[`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))和重載添加。 [`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double))
 
-然後，動畫物件會透過呼叫[`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))方法來啟動。
+然後,動畫物件從對 方法的呼叫[`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean}))開始 。
 
-### <a name="animationextensions-class"></a>Petzold.animationextensions 類別
+### <a name="animationextensions-class"></a>動畫延伸類
 
-[`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions)類別包含大部分的擴充方法。 有數個版本的 `Animate` 方法，泛型[`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*)方法很多，因為它其實是您所需要的唯一動畫功能。
+類[`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions)主要包含擴充方法。 方法有多個版本,泛型`Animate`[`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*)方法用途廣泛,因此實際上是唯一您需要的動畫函數。
 
-## <a name="working-with-the-animation-class"></a>使用動畫類別
+## <a name="working-with-the-animation-class"></a>使用動畫類
 
-[**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)範例會示範具有數個不同動畫的[`Animation`](xref:Xamarin.Forms.Animation)類別。
+[**併發動畫**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)示例演示具有[`Animation`](xref:Xamarin.Forms.Animation)多個 不同動畫的類。
 
 ### <a name="child-animations"></a>子動畫
 
-[**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)範例也會示範子動畫，這會利用（非常類似） [`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))和[`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))方法。
+[**併發動畫示例**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)還演示了子動畫,它們使用 (非常[`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))相似)[`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))和方法。
 
-### <a name="beyond-the-high-level-animation-methods"></a>超越高階動畫方法
+### <a name="beyond-the-high-level-animation-methods"></a>超越進階動畫方法
 
-[**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)範例也會示範如何執行超出 `ViewExtensions` 方法目標之屬性的動畫。 在其中一個範例中，一連串的期間會變長;在另一個範例中，`BackgroundColor` 屬性會以動畫顯示。
+[**併發動畫示例**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations)還演示如何執行超出方法目標屬性`ViewExtensions`的 動畫。 在一個示例中,一系列週期變長;在另一個範例中,`BackgroundColor`對屬性進行動畫處理。
 
-### <a name="more-of-your-own-awaitable-methods"></a>您自己的可等候方法更多
+### <a name="more-of-your-own-awaitable-methods"></a>更多您自己的等待方法
 
-`ViewExtensions` 的[`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))方法無法與[`Easing.SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)函數搭配使用。 當緩動輸出超過1時，它就會停止。
+的方法[`TranslateTo`](xref:Xamarin.Forms.ViewExtensions.TranslateTo(Xamarin.Forms.VisualElement,System.Double,System.Double,System.UInt32,Xamarin.Forms.Easing))`ViewExtensions`不[`Easing.SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)與 函數配合使用。 當緩動輸出高於 1 時,它停止。
 
-[**FormsBook 工具**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫包含具有[`TranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L12)的[`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs)類別，以及沒有此問題的[`TranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L49)擴充方法，以及用來取消這些動畫的[`CancelTranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L44)和[`CancelTranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L71)方法。
+[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)[`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs)庫包含[`TranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L12)包含 沒有此問題[`TranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L49)的類 和擴展[`CancelTranslateXTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L44)方法,以及[`CancelTranslateYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L71)取消這些動畫 的方法。
 
-[**SpringSlidingEntrance**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpringSlidingEntrance)會示範 `TranslateXTo` 方法。
+[**彈簧滑動入口**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/SpringSlidingEntrance)演示`TranslateXTo`了 該方法。
 
-`MoreExtensions` 類別也包含結合 X 和 Y 轉譯的[`TranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L76)擴充方法，以及[`CancelTranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L113)方法。
+該`MoreExtensions`類還包含一[`TranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L76)個結合 X 和[`CancelTranslateXYTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L113)Y 轉換的擴充方法以及一個方法。
 
-### <a name="implementing-a-bezier-animation"></a>執行貝塞爾動畫
+### <a name="implementing-a-bezier-animation"></a>實現貝氏曲線
 
-您也可以開發動畫，沿著貝茲曲線的路徑移動元素。 [**FormsBook 工具**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫包含[`BezierSpline`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierSpline.cs)結構，可封裝貝茲曲線和[`BezierTangent`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierTangent.cs)列舉以控制方向。
+還可以開發一個動畫,該動畫沿貝塞爾樣條線的路徑移動元素。 [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫包含一[`BezierSpline`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierSpline.cs)個 結構,該結構封裝了貝塞爾樣條[`BezierTangent`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BezierTangent.cs)線和 用於控制方向的枚舉。
 
-[`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs)類別包含[`BezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L118)擴充方法和[`CancelBezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L161)方法。
+類別[`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs)包含擴[`BezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L118)充方法與[`CancelBezierPathTo`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L161)方法 。
 
-[**BezierLoop**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BezierLoop)範例示範如何沿著 Beizer 路徑建立元素的動畫。
+[**BezierLoop**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BezierLoop)範例展示沿 Beizer 路徑為元素設定動畫。
 
-## <a name="working-with-animationextensions"></a>使用 Petzold.animationextensions
+## <a name="working-with-animationextensions"></a>使用動畫延伸
 
-標準集合中遺漏的一種動畫類型是色彩動畫。 問題在於，沒有適當的方法可以在兩個 `Color` 值之間插補。 您可以插補個別的 RGB 值，但就像有效的會插入 HSL 值一樣。
+標準集合中缺少的一種動畫類型是顏色動畫。 問題是,在兩`Color`個值之間沒有正確的插值方法。 可以插值單個 RGB 值,但同樣有效插入 HSL 值。
 
-因此， [**FormsBook 工具**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫中的[`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs)類別包含兩個 `Color` 動畫方法： [`RgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L166)和[`HslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L188)。 （還有兩種取消方法： [`CancelRgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L183)和[`CancelHslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L206)）。
+因此[`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs)[**,Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫中的類別包含`Color`兩種[`RgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L166)動畫[`HslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L188)方法: 和 。 (還有兩種取消方法:[`CancelRgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L183)[`CancelHslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L206)和 。
 
-這兩種方法都會使用[`ColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L211)，藉由在[`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions)中呼叫廣泛的泛型[`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*)方法來執行動畫。
+這兩種方法都使用[`ColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L211), 通過[`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*)[`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions)在 中調用廣泛的泛型方法來執行動畫。
 
-[**ColorAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ColorAnimations)範例會示範如何使用這兩種類型的色彩動畫。
+[**"顏色動畫"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ColorAnimations)範例展示使用這兩種類型的顏色動畫。
 
-## <a name="structuring-your-animations"></a>結構化您的動畫
+## <a name="structuring-your-animations"></a>建構動畫
 
-在 XAML 中表示動畫，並搭配 MVVM 使用它們，有時會很有用。 這會在下一章第[**23 章中討論。觸發程式和行為**](chapter23.md)。
+有時在 XAML 中表達動畫並將其與 MVVM 結合使用非常有用。 下一章第23章將對此進行介紹[**。觸發器與行為**](chapter23.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [第22章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)
-- [第22章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
+- [第22章 全文(PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)
+- [第22章 樣本](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
 - [動畫](~/xamarin-forms/user-interface/animation/index.md)

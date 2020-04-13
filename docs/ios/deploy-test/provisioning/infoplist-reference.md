@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/18/2017
 ms.openlocfilehash: d94a647583539ac6af603a9074e1966c1c41d587
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028454"
 ---
 # <a name="infoplist-reference-for-xamarinios"></a>Xamarin.iOS 的 Info.plist 參考
 
 如需有關使用 Info.Plist 機碼的詳細資訊，請參閱[使用安全性與隱私權](~/ios/app-fundamentals/security-privacy.md)指南。 
 
-## <a name="location"></a>位置 
+## <a name="location"></a>Location 
 
 存取使用者的位置也需要修改 Info.plist。 以下是應該設定的位置資料相關機碼： 
 
@@ -33,7 +33,7 @@ NSPhotoLibraryUsageDescription
 
 NSContactsUsageDescription 
 
-## <a name="calendar-data"></a>日曆資料 
+## <a name="calendar-data"></a>行事曆資料 
     
 NSCalendarsUsageDescription 
 
@@ -49,7 +49,7 @@ NSBluetoothPeripheralUsageDescription
 
 NSMicrophoneUsageDescription 
 
-## <a name="camera"></a>觀景窗 
+## <a name="camera"></a>相機 
     
 NSCameraUsageDescription 
 

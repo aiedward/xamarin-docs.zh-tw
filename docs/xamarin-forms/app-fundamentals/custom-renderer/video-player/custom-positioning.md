@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650650"
 ---
 # <a name="custom-video-positioning"></a>自訂影片定位
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 每個平台實作的傳輸控制項都包括位置列。 此列類似於滑桿或捲軸，而且會顯示影片在其總持續時間內的目前位置。 此外，使用者可以操作位置列，向前或向後移至影片中的新位置。
 
@@ -70,7 +70,7 @@ namespace FormsVideoLibrary
 
 另請注意呼叫 `SetTimeToEnd` 方法的屬性變更處理常式，本文稍後將加以描述。
 
-在設定 `VideoPlayer` 的 `Source` 屬性之後，「無法」  立即取得影片的持續時間。 必須下載一部分的影片檔案，基礎影片播放程式才能判斷其持續時間。
+在設定 `VideoPlayer` 的 `Source` 屬性之後，「無法」** 立即取得影片的持續時間。 必須下載一部分的影片檔案，基礎影片播放程式才能判斷其持續時間。
 
 以下說明每個平台轉譯器如何取得影片的持續時間：
 
@@ -174,7 +174,7 @@ namespace FormsVideoLibrary
 
 在 iOS 和 Android 中，取得目前位置的屬性只有 `get` 存取子，並有 `Seek` 方法可用來執行上述第二項工作。 如果您仔細想一下，個別 `Seek` 方法似乎是比單一 `Position` 屬性更明智的做法。 單一 `Position` 屬性的固有問題是：當影片播放時，`Position` 屬性必須持續更新以反映新位置。 但您不想要大部分的 `Position` 屬性變更使得影片播放程式移至影片中新位置。 如果發生這種情況，影片播放程式會搜尋 `Position` 屬性的最後一個值來回應，因此影片不會前進。
 
-儘管使用 `set` 和 `get` 存取子實作 `Position` 屬性有困難，但選擇此方法是因為它與 UWP `MediaElement` 一致，並且它在資料繫結方面具有很大優勢：`VideoPlayer` 的 `Position` 屬性可以繫結到滑桿，該滑桿同時用來顯示位置與搜尋新位置。 不過，實作這個 `Position` 屬性時需要幾個預防措施，以避免回饋迴圈。
+除了難以實作具有 `set` 和 `get` 存取子的 `Position` 屬性之外，選擇這個方法的原因還包括它與 UWP `MediaElement` 一致，而且在資料繫結方面有很大的優勢：`VideoPlayer` 的 `Position` 屬性可以繫結至用來顯示位置和搜尋新位置的滑桿。 不過，實作這個 `Position` 屬性時需要幾個預防措施，以避免回饋迴圈。
 
 ### <a name="setting-and-getting-ios-position"></a>設定和取得 iOS 位置
 
@@ -414,11 +414,11 @@ if (newPosition.Seconds != Position.Seconds)
 
 ## <a name="using-the-positionslider"></a>使用 PositionSlider
 
-UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文件針對繫結至 `Position` 屬性提出警告，因為該屬性經常更新。 文件建議使用計時器來查詢 `Position` 屬性。
+UWP[`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/)的文件警告有關綁定到屬性`Position`, 因為屬性經常更新。 文件建議使用計時器來查詢 `Position` 屬性。
 
 這是很好的建議，但已有三個 `VideoPlayerRenderer` 類別間接使用計時器來更新 `Position` 屬性。 若發生 `UpdateStatus` 事件 (每秒僅引發 10 次)，則會變更處理常式中的 `Position` 屬性。
 
-因此，`VideoPlayer` 的 `Position` 屬性可以繫結至 `PositionSlider` 的 `Position` 屬性，而不會有效能問題，如 [Custom Position Bar] \(自訂位置列\)  頁面所示：
+因此，`VideoPlayer` 的 `Position` 屬性可以繫結至 `PositionSlider` 的 `Position` 屬性，而不會有效能問題，如 [Custom Position Bar] \(自訂位置列\)**** 頁面所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -473,7 +473,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文件�
 </ContentPage>
 ```
 
-第一個省略符號 (···) 會隱藏 `ActivityIndicator`，這與上一頁 [Custom Transport] \(自訂傳輸\)  相同。 注意顯示 `Position` 和 `TimeToEnd` 屬性的兩個 `Label` 項目。 這兩個 `Label` 項目之間的省略符號會隱藏 [Custom Transport] \(自訂傳輸\)  頁面中所顯示兩個 `Button` 項目 (用於播放、暫停和停止)。 程式碼後置邏輯也與 [Custom Transport] \(自訂傳輸\)  頁面相同。
+第一個省略符號 (···) 會隱藏 `ActivityIndicator`，這與上一頁 [Custom Transport] \(自訂傳輸\)**** 相同。 注意顯示 `Position` 和 `TimeToEnd` 屬性的兩個 `Label` 項目。 這兩個 `Label` 項目之間的省略符號會隱藏 [Custom Transport] \(自訂傳輸\)**** 頁面中所顯示兩個 `Button` 項目 (用於播放、暫停和停止)。 程式碼後置邏輯也與 [Custom Transport] \(自訂傳輸\)**** 頁面相同。
 
 [![自訂定位](custom-positioning-images/custompositioning-small.png "自訂定位")](custom-positioning-images/custompositioning-large.png#lightbox "自訂定位")
 
@@ -481,4 +481,4 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文件�
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) (視訊播放程式示範 (範例))
+- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

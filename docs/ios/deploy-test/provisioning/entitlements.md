@@ -8,19 +8,19 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/13/2018
 ms.openlocfilehash: f6a38aea1e46e1165bb36d83e75e24769de0a1e2
-ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75655326"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>使用 Xamarin.iOS 中的權利
 
 _權利是特殊的應用程式功能和安全性權限，其授與對象是已正確設定來使用這些功能和權限的應用程式。_
 
-在 iOS 中，應用程式會在「沙箱」中執行，沙箱會提供一組規則，可限制應用程式與特定系統資源或使用者資料之間的存取權。 「權利」可用來要求系統擴充沙箱，以便為您的應用程式提供額外的功能。
+在 iOS 中，應用程式會在「沙箱」__ 中執行，沙箱會提供一組規則，可限制應用程式與特定系統資源或使用者資料之間的存取權。 「權利」__ 可用來要求系統擴充沙箱，以便為您的應用程式提供額外的功能。
 
-若要延伸您應用程式的功能，必須在應用程式的 Entitlements.plist 檔案中提供權利。 您只能延伸特定功能，這些功能都列在[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南中，並且會在[下方](#entitlement-key-reference)提供說明。 權利會以成對的「機碼/值」形式傳遞給系統，且通常每個功能只需要一對。 特定「機碼」和「值」會在本指南稍後的[權利機碼參考](#entitlement-key-reference)一節中描述。
+若要延伸您應用程式的功能，必須在應用程式的 Entitlements.plist 檔案中提供權利。 您只能延伸特定功能，這些功能都列在[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南中，並且會在[下方](#entitlement-key-reference)提供說明。 權利會以成對的「機碼/值」形式傳遞給系統，且通常每個功能只需要一對。 本指南後面的[「授權金鑰參考](#entitlement-key-reference)部分」中介紹了特定的鍵和值。
 Visual Studio for Mac 和 Visual Studio 提供一個清楚的介面，可透過 Entitlements.plist 編輯器在 Xamarin.iOS 應用程式中新增權利。
 本指南將介紹 Entitlements.plist 編輯器及其用法。 此外，本指南也提供可針對每項功能新增至 iOS 專案中的所有權利參考。
 
@@ -37,38 +37,38 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 定義「應用程式識別碼」時，除了選取並設定必要的應用程式服務之外，也必須藉由編輯 **Info.plist** 和 **Entitlements.plist** 檔案，在 Xamarin.iOS 專案中設定權利。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 若要在 Visual Studio for Mac 中設定權利，請執行下列動作：
 
-1. 在 [ **Solution pad**] 中，按兩下**plist**檔案以開啟它。
-2. 在 [身分**識別**] 區段中，填入應用程式的名稱，然後輸入定義應用程式識別碼時所建立的套件組合**識別碼**：
+1. 在 **「解決方案」鍵盤**中,按兩下**Info.plist**檔以將其打開。
+2. 在 **「識別」** 部分中,填寫應用程式的名稱,並輸入在訂用應用程式 ID 時建立的**捆綁識別碼**:
 
     ![輸入套件組合識別碼](entitlements-images/servicexs01-sml.png)
 
 3. 儲存對 **Info.plist** 檔案所做的變更。
-4. 在 [ **Solution pad**] 中，按兩下**plist**檔案以開啟它進行編輯：
+4. 在 **「解決方案」鍵盤**中,按兩下 **「權利.plist」** 檔以將其開啟以進行編輯:
 
     ![編輯權利](entitlements-images/servicexs02-sml.png)
 
 5. 選取並設定 Xamarin.iOS 應用程式所需的一切權利，使其與建立「應用程式識別碼」時所定義的設定相符。
 6. 儲存對 **Entitlements.plist** 檔案所做的變更。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中設定權利，請執行下列動作：
 
-1. 在 **方案總管**中，按兩下**plist** ，將其開啟以供編輯。
-2. 在 [iOS 應用程式目標] 區段中，填入應用程式的名稱，然後輸入定義「應用程式識別碼」時所建立的**套件組合識別碼**：
+1. 在**解決方案資源管理器**中,按兩下**Info.plist**以將其打開以進行編輯。
+2. 在 [iOS 應用程式目標]**** 區段中，填入應用程式的名稱，然後輸入定義「應用程式識別碼」時所建立的**套件組合識別碼**：
 
     ![設定套件組合識別碼](entitlements-images/servicevs01-sml.png)
 
 3. 儲存對 **Info.plist** 檔案所做的變更。
-4. 在 **方案總管**中，按兩下**plist**檔案以開啟它：
+4. 在**解決方案資源管理員**中,按兩下 **「權利.plist」** 檔以開啟它:
 
     ![編輯權利](entitlements-images/servicevs02-sml.png)
 
-    您也可以用滑鼠右鍵按一下**Plist**檔案，然後選擇 [**開啟方式 ...** ] [XML 來源編輯器]，這可讓您設定權利屬性和金鑰值，如下列[權利金鑰參考](#entitlement-key-reference)一節中所述。
+    您還可以右鍵按下 **「權利.plist」** 檔,並選擇 **「使用...打開 XML**源編輯器」,該編輯器將允許您設定權利屬性和鍵值,詳見下文[「權利金鑰參考」](#entitlement-key-reference)部分。
 
 5. 選取並設定 Xamarin.iOS 應用程式所需的一切權利，使其與建立「應用程式識別碼」時所定義的設定相符。
 6. 儲存對 **Entitlements.plist** 檔案所做的變更。
@@ -81,10 +81,10 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 若要將 Entitlements.plist 檔案新增至您的 Xamarin.iOS，請執行下列動作：
 
-1. 在專案檔上按一下滑鼠右鍵，然後瀏覽至 [新增] > [新增檔案]：
+1. 在專案檔上按一下滑鼠右鍵，然後瀏覽至 [新增] > [新增檔案]****：
 
     ![[新增檔案] 操作功能表](entitlements-images/image1-sml.png)
-2. 在 [新增檔案] 對話方塊中，選取 [iOS] > [屬性清單]，然後將它命名為 Entitlements：
+2. 在 [新增檔案] 對話方塊中，選取 [iOS] > [屬性清單]****，然後將它命名為 Entitlements：
 
     ![[新增檔案] 對話方塊](entitlements-images/image2-sml.png)
 
@@ -98,9 +98,9 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
   - **票卡類型識別碼**
     - **機碼**：com.apple.developer.pass-type-identifiers
-    - **字串**：`$(TeamIdentifierPrefix)*`
+    - **字串**:`$(TeamIdentifierPrefix)*`
 
-- **附註**：
+- **注意**：
   - 這可讓您的應用程式允許所有票卡類型。 若要限制您的應用程式而只允許部分小組票卡類型，請將字串值設定為：`$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)`
 
   其中 pass.$(CFBundleIdentifier) 是[上述](~/ios/platform/passkit.md)建立的「票卡識別碼」
@@ -111,13 +111,13 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
   - **iCloud 文件和 CloudKit**
     - **機碼**：com.apple.developer.ubiquity-container-identifiers
-    - **字串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+    - **字串**:`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
   - **iCloud KeyValue 儲存體**
     - **機碼**：com.apple.developer.ubiquity-kvstore-identifier
-    - **字串**：`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
+    - **字串**:`$(TeamIdentifierPrefix)$(CFBundleIdentifier)`
 
-- **附註**：
-  - 若要尋找 `$(TeamIdentifierPrefix)` 字串，請登入 developer.apple.com，然後瀏覽 [Member Center] \(會員中心\) > [Your Account] \(您的帳戶\) > [Developer Account Summary] \(開發人員帳戶摘要\) 以取得您的 Team ID (小組識別碼) (如果是單一開發人員，則為 Individual ID (個人識別碼))。 它將是一個 10 個字元的字串 (例如 A93A5CM278)。
+- **注意**：
+  - 若要尋找 `$(TeamIdentifierPrefix)` 字串，請登入 developer.apple.com，然後瀏覽 [Member Center] \(會員中心\) > [Your Account] \(您的帳戶\) > [Developer Account Summary] \(開發人員帳戶摘要\)**** 以取得您的 Team ID (小組識別碼) (如果是單一開發人員，則為 Individual ID (個人識別碼))。 它將是一個 10 個字元的字串 (例如 A93A5CM278)。
   - `$(CFBundleIdentifier)` 字串的開頭為 `iCloud`，在建立 iCloud 容器 (依據[使用功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)指南中的步驟) 時，會設定此字串。
   - 可以使用 $`(TeamIdentifierPrefix)` 和 `$(CFBundleIdentifier)` 預留位置，在建置階段將會以正確的值取代這些預留位置。
 
@@ -140,11 +140,11 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 ### <a name="push-notifications"></a>推播通知
 
 - **機碼**：aps-environment
-- **字串**：`development` 或 `production`
+- **字串**`development`: 或`production`
 
 ### <a name="siri"></a>Siri
 
-- **描述**：SiriKit 可讓 iOS 應用程式使用 App 延伸模組及新的「意圖和意圖 UI」架構，提供 iOS 裝置上 Siri 和「地圖」應用程式可存取的服務。 如需詳細資訊，請參閱《SiriKit 簡介》指南。
+- **描述**：SiriKit 可讓 iOS 應用程式使用「應用程式擴充功能」(App Extensions) 及新的「意圖和意圖」(Intents and Intents) UI 架構，提供 iOS 裝置上 Siri 和「地圖」應用程式可存取的服務。 如需詳細資訊，請參閱《SiriKit 簡介》指南。
   - **機碼**：com.apple.developer.siri
 
 ### <a name="personal-vpn"></a>個人 VPN
@@ -152,7 +152,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 - **機碼**：com.apple.developer.networking.vpn.api
 - **字串**：allow-vpn
 
-### <a name="keychain-sharing"></a>Keychain Sharing
+### <a name="keychain-sharing"></a>Keychain 共用
 
 - **描述**：Keychain 共用可讓應用程式開發人員將儲存在裝置 Keychain 中的密碼，與相同小組的其他應用程式開發人員共用。 藉由在字串中傳遞 Keychain 存取群組識別碼，即可限制存取權。
   - **機碼**：keychain-access-groups
@@ -198,7 +198,7 @@ Entitlements.plist 檔案可用來指定權利，以及用來簽署應用程式�
 
 - **描述**：ClassKit 可讓教師在應用程式中檢視學生的指派活動進度。
   - **機碼**：com.apple.developer.ClassKit-environment
-  - **字串**：`development` 或 `production`
+  - **字串**`development`: 或`production`
 
 ## <a name="summary"></a>總結
 

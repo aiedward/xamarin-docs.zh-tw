@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Essentials:地理編碼
+title: Xamarin.Essentials：地理編碼
 description: Xamarin.Essentials 中的地理編碼類別會提供 API，既可以將地標進行地理編碼為位置座標，也可以將地理編碼座標反轉為地標。
 ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66354101"
 ---
-# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:地理編碼
+# <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials：地理編碼
 
 **地理編碼**類別會提供 API，可以將地標進行地理編碼為位置座標，也可以將地理編碼座標反轉為地標。
 
@@ -23,17 +23,17 @@ ms.locfileid: "66354101"
 
 若要存取**地理編碼**功能，需要下列平台特定設定。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 不需要進行額外設定。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 不需要進行額外設定。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
-需要 Bing 地圖服務 API 金鑰，才能使用地理編碼功能。 註冊免費的 [Bing 地圖服務](https://www.bingmapsportal.com/)帳戶。 在 [我的帳戶 > 我的金鑰]  下方建立一個新金鑰，並根據您的應用程式類型填寫資訊 (針對 UWP 應用程式，應該是**公開 Windows 應用程式 (UWP、8.x 及更早版本)** )。
+需要 Bing 地圖服務 API 金鑰，才能使用地理編碼功能。 註冊免費的 [Bing 地圖服務](https://www.bingmapsportal.com/)帳戶。 在 [我的帳戶 > 我的金鑰]**** 下方建立一個新金鑰，並根據您的應用程式類型填寫資訊 (針對 UWP 應用程式，應該是**公開 Windows 應用程式 (UWP、8.x 及更早版本)**)。
 
 在呼叫任何 **Geocoding** 方法前，請在應用程式生命週期的早期設定 API 金鑰 (僅適用於 UWP)：
 
@@ -119,7 +119,7 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>兩個位置之間的距離
 
-[`Location`](xref:Xamarin.Essentials.Location) 和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 類別會定義方法，以計算兩個位置之間的距離。 如需範例，請參閱文章 [**Xamarin.Essentials：地理位置**](geolocation.md#calculate-distance)。
+[`Location`](xref:Xamarin.Essentials.Location)和[`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions)類定義計算兩個位置之間的距離的方法。 如需範例，請參閱 [**Xamarin.Essentials：地理位置**](geolocation.md#calculate-distance)一文。
 
 ## <a name="api"></a>API
 

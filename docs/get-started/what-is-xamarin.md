@@ -8,15 +8,15 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/16/2019
 ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75607876"
 ---
 # <a name="what-is-xamarin"></a>什麼是 Xamarin？
 
-[![ 和 Android 中範例 Xamarin 應用程式的螢幕擷取畫面](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
+[![iOS 和 Android 中 Xamarin 應用程式範例螢幕截圖](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
 
 Xamarin 是一個開放原始碼平台，可使用 .NET 建立適用於 iOS、Android 和 Windows 的現代化且高效能應用程式。 Xamarin 是一種抽象層，用來管理共用程式碼與基礎平台程式碼之間的通訊。 Xamarin 可在擁有便利功能 (例如記憶體配置和記憶體回收) 的受控環境中執行作業。
 
@@ -57,17 +57,17 @@ Xamarin 除了結合原生平台的所有功能之外，也新增了一些功能
 
 ### <a name="xamarinandroid"></a>Xamarin.Android
 
-[![Xamarin. Android 架構圖表](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
+[![Xamarin.安卓架構圖](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
 
-Xamarin.Android 應用程式會將程式碼從 C# 編譯為**中繼語言 (IL)** ，並接著在應用程式啟動時透過 **Just-in-Time (JIT)** 編譯為原生組譯碼。 Xamarin.Android 應用程式會在 Mono 執行環境中執行，並與 Android Runtime (ART) 虛擬機器並存。 Xamarin 提供對 Android.* 與 JAVA.* 命名空間的 .NET 繫結。 Mono 執行環境會透過**受控可呼叫包裝函式 (MCW)** ，呼叫這些名稱空間，並提供 **Android 可呼叫包裝函式 (ACW)** 至 ART，讓這兩種環境都可以相互叫用程式碼。
+Xamarin.Android 應用程式會將程式碼從 C# 編譯為**中繼語言 (IL)**，並接著在應用程式啟動時透過 **Just-in-Time (JIT)** 編譯為原生組譯碼。 Xamarin.Android 應用程式會在 Mono 執行環境中執行，並與 Android Runtime (ART) 虛擬機器並存。 Xamarin 提供對 Android.* 與 JAVA.* 命名空間的 .NET 繫結。 Mono 執行環境會透過**受控可呼叫包裝函式 (MCW)**，呼叫這些名稱空間，並提供 ** Android 可呼叫包裝函式 (ACW) ** 至 ART，讓這兩種環境都可以相互叫用程式碼。
 
 如需詳細資訊，請參閱 [Xamarin.Android 架構](~/android/internals/architecture.md)。
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
-[![Xamarin.iOS 架構圖表](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
+[![Xamarin.iOS 架構圖](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
 
-Xamarin.iOS 應用程式為完全透過**預先編譯 (AOT)** ，將程式碼從 C# 編譯為 ARM 原生組譯碼。 Xamarin 會使用**選取器**將 Objective-C 公開給受控 C#，並使用**登錄器**將受控 C# 程式碼公開給 Objective-C。 選取器與登錄器統稱為「繫結」，可允許 Objective-C 與 C# 進行通訊。
+Xamarin.iOS 應用程式為完全透過**預先編譯 (AOT)**，將程式碼從 C# 編譯為 ARM 原生組譯碼。 Xamarin 會使用**選取器**將 Objective-C 公開給受控 C#，並使用**登錄器**將受控 C# 程式碼公開給 Objective-C。 選取器與登錄器統稱為「繫結」，可允許 Objective-C 與 C# 進行通訊。
 
 如需詳細資訊，請參閱 [Xamarin.iOS 架構](~/ios/internals/architecture.md)。
 

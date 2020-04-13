@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: c0875534d88ea5b66b3072c35b9d38894fe98934
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870023"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61354567"
 ---
-# <a name="xamarinessentials-map"></a>Xamarin.Essentials:對應
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials：Map
 
 **Maps** 類別可讓應用程式將已安裝的地圖應用程式開啟至特定位置或地標。
 
@@ -103,15 +103,15 @@ public class MapTest
 
 ## <a name="platform-differences"></a>平台差異
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 - `NavigationMode` 支援腳踏車、開車與走路。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - `NavigationMode` 支援開車、大眾運輸與走路。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 - `NavigationMode` 支援開車、大眾運輸與走路。
 
@@ -119,15 +119,15 @@ public class MapTest
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Android 使用 `geo:` Uri 配置以啟動裝置上的地圖應用程式。 這可能會提示使用者從支援此 Uri 配置的現有應用程式中選取。  Xamarin.Essentials 已使用 Google 地圖測試，可支援此配置。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 沒有平台特定實作詳細資料。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 沒有平台特定實作詳細資料。
 

@@ -8,23 +8,23 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/27/2019
 ms.openlocfilehash: 3cd7979a3e244866b190c9534c472ea44b9f9c30
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75502916"
 ---
 # <a name="xamarinforms-samples"></a>Xamarin.Forms 範例
 
 Xamarin.Forms 範例應用程式和程式碼示範可協助您開始使用與了解 Xamarin.Forms 中的概念。
 
-[所有的 Xamarin 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+[所有 Xamarin.表單樣本](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 
 :::row:::
     :::column:::
 [![Todo](images/todo.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
 
-### <a name="todo"></a>[多](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
+### <a name="todo"></a>[Todo](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo/)
 
 此範例示範待辦事項清單應用程式，資料將儲存在本機 SQLite 資料庫並從其中存取。
     :::column-end:::
@@ -64,10 +64,10 @@ XAML (eXtensible Application Markup Language) 讓開發人員可以在 Xamarin.F
 
 ### <a name="xuzzle"></a>[Xuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/)
 
-這項遊戲是傳統14-15 謎題的變化，您可以透過將磚滑成正確的順序來解決此問題。
+這個遊戲是經典的14-15謎題的變體,你可以通過滑動瓷磚到正確的順序來解決。
     :::column-end:::
 :::row-end:::
 
 ## <a name="all-samples"></a>所有範例
 
-如需一組完整的 Xamarin 範例應用程式和程式碼示範，請參閱[所有的 xamarin 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)。
+有關完整的 Xamarin.Forms 範例應用程式和程式碼示範集,請參閱[所有 Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)。

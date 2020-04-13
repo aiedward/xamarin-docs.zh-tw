@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488487"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Secure Storage
@@ -23,7 +23,7 @@ ms.locfileid: "75488487"
 
 若要存取 **SecureStorage** 功能，需要下列平台特定設定：
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
 > [應用程式自動備份 (Auto Backup for Apps)](https://developer.android.com/guide/topics/data/autobackup) 是 Android 6.0 (API 層級 23) 與更新版本中的功能，可備份使用者的應用程式資料 (共用喜好設定、應用程式內部存放區中的檔案，以及其他特定檔案)。 當重新安裝應用程式或在新裝置上安裝應用程式時，會還原資料。 這會對 `SecureStorage` 造成影響，它利用備份的共用喜好設定，而且在進行還原時無法解密。 Xamarin.Essentials 會自動處理此案例，方式是移除機碼以便可以重設，但您可以透過停用自動備份以採取額外的步驟。
@@ -61,18 +61,18 @@ ms.locfileid: "75488487"
     </full-backup-content>
     ```
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 當您在 **iOS 模擬器** 上開發時，請啟用 **Keychain** 權利並為應用程式的套件組合識別碼新增金鑰鏈存取群組。 
 
 開啟 iOS 專案中的 **Entitlements.plist**，並尋找 **Keychain** 權利並予以啟用。 這會自動將應用程式的識別碼新增為群組。
 
-在專案屬性中的 [iOS 套件組合簽署] 下，將 [自訂權利] 設定為 **Entitlements.plist**。
+在專案屬性中的 [iOS 套件組合簽署]**** 下，將 [自訂權利]**** 設定為 **Entitlements.plist**。
 
 > [!TIP]
 > 當部署到 iOS 裝置時，不需要此權利且應該移除。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 不需要進行額外設定。
 
@@ -86,7 +86,7 @@ ms.locfileid: "75488487"
 using Xamarin.Essentials;
 ```
 
-若要將給定「機碼」的值儲存在安全的存放區中：
+若要將給定「機碼」__ 的值儲存在安全的存放區中：
 
 ```csharp
 try
@@ -129,9 +129,9 @@ SecureStorage.RemoveAll();
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
-[Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰 (不是密碼編譯金鑰，適用於「值」的「金鑰」) 是傳遞到 `SecureStorage` API 之金鑰的「MD5 雜湊」。
+[Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰 (不是密碼編譯金鑰，適用於「值」__ 的「金鑰」__) 是傳遞到 `SecureStorage` API 之金鑰的「MD5 雜湊」__。
 
 ## <a name="api-level-23-and-higher"></a>API 層級 23 與更高版本
 
@@ -143,19 +143,19 @@ SecureStorage.RemoveAll();
 
 **SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 若裝置從 API 層級 22 或較低的層級升級到 API 層級 23 與更高版本，將會繼續使用此類型的加密，除非將應用程式解除安裝或呼叫 **RemoveAll**。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 [KeyChain](xref:Security.SecKeyChain) 是用來安全地在 iOS 裝置上存放值。  `SecRecord` 是用來存放 `Service` 值設定為 **[YOUR-APP-BUNDLE-ID].xamarinessentials** 的值。
 
 在某些案例中，KeyChain 資料會與 iCloud 同步，而且解除安裝應用程式可能不會將安全值從 iCloud 與使用者的其他裝置移除。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 [DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 可用來安全地在 UWP 裝置上為值加密。
 
 加密值會存放在 `ApplicationData.Current.LocalSettings` 中名為 **[YOUR-APP-ID].xamarinessentials** 的容器內。
 
-**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 它也會使用 `LocalSettings`，其限制是每個設定的名稱最多可以是255個字元的長度。 每個設定的大小最多可達8K 位元組，而且每個複合設定的大小最多可達64K 位元組。
+**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 它還使用`LocalSettings`具有限制,即每個設置的名稱最多只能長度為 255 個字元。 每個設置的大小可以高達 8K 位元組,每個複合設置的大小可以高達 64K 位元組。
 
 -----
 

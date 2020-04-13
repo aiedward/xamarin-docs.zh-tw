@@ -7,24 +7,24 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/07/2018
 ms.openlocfilehash: 3733ed37abe9604e77529db4864f601d2b473280
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027324"
 ---
 # <a name="managing-fragments"></a>管理片段
 
-為了協助管理片段，Android 提供了 `FragmentManager` 類別。 每個活動都有 `Android.App.FragmentManager` 的實例，會尋找或動態變更其片段。 這些變更的每一組稱為「交易」（ *transaction*），其執行方式是使用類別所包含的其中一個 api `Android.App.FragmentTransation`（由 `FragmentManager`所管理）。 活動可能會啟動如下所示的交易：
+為了説明管理片段,Android 提供了`FragmentManager`類 。 每個活動都有一個實例`Android.App.FragmentManager`,該實例將查找或動態更改其片段。 這些更改的每一組稱為*事務*,並且使用`Android.App.FragmentTransation`類 中包含的其中一個 API 執行,該`FragmentManager`API 由管理。 作用可能會啟動的事件:
 
 ```csharp
 FragmentTransaction fragmentTx = this.FragmentManager.BeginTransaction();
 ```
 
-這些片段的變更會使用 `Add()`之類的方法在 `FragmentTransaction` 實例中執行，`Remove(),` 和 `Replace().` 接著會使用 `Commit()`來套用變更。 交易中的變更不會立即執行。
-相反地，它們會排程在活動的 UI 執行緒上儘快執行。
+這些對片段的`FragmentTransaction`變更在實體中使用,使用這些方法(如`Add()`,`Remove(),``Replace().`然後`Commit()`使用套用) 事務中的更改不會立即執行。
+相反,它們計劃儘快在活動的 UI 線程上運行。
 
-下列範例顯示如何將片段新增至現有的容器：
+下面的範例簡報如何向現有容器加入片段:
 
 ```csharp
 // Create a new fragment and a transaction.
@@ -38,11 +38,11 @@ fragmentTx.Add(Resource.Id.fragment_container, aDifferentDetailsFrag);
 fragmentTx.Commit();
 ```
 
-如果在呼叫 `Activity.OnSaveInstanceState()` 之後認可交易，則會擲回例外狀況。 發生這種情況的原因是，當活動儲存其狀態時，Android 也會儲存任何託管片段的狀態。 如果在此時間點之後認可任何片段交易，則在還原活動時，這些交易的狀態將會遺失。
+如果在調用后`Activity.OnSaveInstanceState()`提交事務,將引發異常。 這是因為當活動保存其狀態時,Android 還會保存任何託管片段的狀態。 如果在此點之後提交任何片段事務,則還原活動時,這些事務的狀態將丟失。
 
-藉由呼叫 `FragmentTransaction.AddToBackStack()`，可以將片段交易儲存至活動的[後端堆疊](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)。 這可讓使用者在按下 [**上一頁**] 按鈕時，透過片段變更來回溯導覽。 如果沒有呼叫這個方法，移除的片段將會被終結，而且如果使用者導覽回到活動中，將無法使用。
+可以通過呼叫 將片段事務儲存到作用[的後面堆疊](https://developer.android.com/guide/topics/fundamentals/tasks-and-back-stack.html)`FragmentTransaction.AddToBackStack()`。 這允許使用者在按下 **「後退」** 按鈕時向後導航" 片段" 如果不調用此方法,將銷毀刪除的片段,如果用戶通過活動導航回來,將不可用。
 
-下列範例顯示如何使用 `FragmentTransaction` 的 `AddToBackStack` 方法來取代一個片段，同時保留後端堆疊上第一個片段的狀態：
+下面的範例展示如何使用`AddToBackStack``FragmentTransaction`a 的方法取代一個片段,同時保留後堆疊上第一個片段的狀態:
 
 ```csharp
 // Create a new fragment and a transaction.
@@ -61,24 +61,24 @@ fragmentTx.Commit();
 
 ## <a name="communicating-with-fragments"></a>與片段通訊
 
-*FragmentManager*知道附加至活動的所有片段，並提供兩種方法來協助尋找這些片段：
+*片段管理員*知道附加到活動的所有片段,並提供兩種方法來説明查找這些片段:
 
-- **FindFragmentById** &ndash; 此方法會使用配置檔案中所指定的識別碼，或當片段加入為交易一部分時的容器識別碼，來尋找片段。
+- **FindFragmentById**&ndash;此方法將使用在將片段作為事務的一部分添加時在佈局檔中指定的 ID 或容器 ID 來查找片段。
 
-- **FindFragmentByTag** &ndash; 此方法可用來尋找具有配置檔案中所提供之標記或在交易中加入的片段。
+- **FindFragmentByTag**&ndash;此方法用於查找具有佈局檔中提供或在事務中添加的標記的片段。
 
-片段和活動都會參考 `FragmentManager`，因此會使用相同的技巧，在兩者之間來回通訊。 應用程式可以使用這兩種方法的其中一個來尋找參考片段，將該參考轉換為適當的類型，然後直接在片段上呼叫方法。 下列程式碼片段提供範例：
+片段和活動都引用`FragmentManager`, 因此相同的技術用於在它們之間來回通訊。 應用程式可以使用這兩種方法之一查找引用片段,強制對適當的類型進行強制轉換,然後直接調用片段上的方法。 以下代碼段提供範例:
 
-活動也可能會使用 `FragmentManager` 來尋找片段：
+活動也可以使用`FragmentManager`搜尋片段:
 
 ```csharp
 var emailList = FragmentManager.FindFragmentById<EmailListFragment>(Resource.Id.email_list_fragment);
 emailList.SomeCustomMethod(parameter1, parameter2);
 ```
 
-### <a name="communicating-with-the-activity"></a>與活動通訊
+### <a name="communicating-with-the-activity"></a>與活動溝通
 
-片段可能會使用 `Fragment.Activity` 屬性來參考其主機。 藉由將活動轉換成更特定的類型，活動可以呼叫其主機上的方法和屬性，如下列範例所示：
+片段可以使用`Fragment.Activity`該 屬性引用其主機。 通過將活動強制轉換到更具體的類型,活動可以調用其主機上的方法和屬性,如以下示例所示:
 
 ```csharp
 var myActivity = (MyActivity) this.Activity;

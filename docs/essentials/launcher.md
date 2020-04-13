@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
 ms.openlocfilehash: 88c1450d28b4c94fe8079b8915503cf5de118644
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488513"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Launcher
@@ -54,15 +54,15 @@ public class LauncherTest
 }
 ```
 
-### <a name="additional-platform-setup"></a>其他平臺設定
+### <a name="additional-platform-setup"></a>其他平台設定
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
-不需額外的設定。
+沒有其他設置。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS 9 和更新版本中，Apple 會強制執行應用程式可以查詢的配置。 若要指定您想要使用的配置，您必須在 `Info.plist` 檔案中指定 `LSApplicationQueriesSchemes`。
+在 iOS 9 及更高部分,Apple 強制執行應用程式可以查詢的方案。 要指定要使用的方案,必須在檔中`LSApplicationQueriesSchemes``Info.plist`指定。
 
 ```
 <key>LSApplicationQueriesSchemes</key>
@@ -72,9 +72,9 @@ public class LauncherTest
 </array>
 ```
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
-不需額外的設定。
+沒有其他設置。
 
 -----
 
@@ -82,7 +82,7 @@ public class LauncherTest
 
 此功能可讓應用程式要求其他應用程式開啟及檢視檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求開啟檔案。
 
-以下範例說明如何將文字寫入磁片，並要求將它開啟：
+下面是將文字寫入磁碟並要求開啟的範例:
 
 ```csharp
 var fn = "File.txt";
@@ -97,11 +97,11 @@ await Launcher.OpenAsync(new OpenFileRequest
 
 ## <a name="platform-differences"></a>平台差異
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 從 `CanOpenAsync` 傳回的工作會立即完成。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 若此裝置上的目的地應用程式先前從未由 `OpenAsync` 從您的應用程式開啟，iOS 將會提示一次使用者允許您的應用程式開啟它。
 
@@ -109,7 +109,7 @@ await Launcher.OpenAsync(new OpenFileRequest
 
 您可以在[這裡](xref:UIKit.UIApplication.CanOpenUrl*)找到有關 iOS 實作的詳細資訊
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 無平台差異。
 

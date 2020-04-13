@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724692"
 ---
 # <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
@@ -31,60 +31,60 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 當您準備好開始針對您的應用程式進行偵錯時，第一步就是[設定應用程式的中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 這可以透過按一下編輯器的邊界區域來完成，就在您想要中斷的程式碼行號旁邊：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging1.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging1a.png "Setting Breakpoints")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
-您可以移至 [中斷點]  面板來檢視程式碼中已設定的所有中斷點：
+您可以移至 [中斷點]**** 面板來檢視程式碼中已設定的所有中斷點：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/image0a.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
- 如果 [中斷點] 面板未自動顯示，您可以選取 [檢視] > [偵錯 Windows] > [中斷點]  來顯示它
+ 如果 [中斷點] 面板未自動顯示，您可以選取 [檢視] > [偵錯 Windows] > [中斷點]__ 來顯示它
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/image0.png "The Breakpoints pad")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
- 如果 [中斷點] 面板未自動顯示，您可以選取 [偵錯] > [Windows] > [中斷點]  來顯示它
+ 如果 [中斷點] 面板未自動顯示，您可以選取 [偵錯] > [Windows] > [中斷點]__ 來顯示它
 
 -----
 
-在開始針對任何應用程式進行偵錯之前，請一律確定組態設定為 [偵錯]  ，因為這包含了一組支援偵錯的實用工具，例如中斷點、使用資料視覺化檢視，以及檢視呼叫堆疊：
+在開始針對任何應用程式進行偵錯之前，請一律確定組態設定為 [偵錯]****，因為這包含了一組支援偵錯的實用工具，例如中斷點、使用資料視覺化檢視，以及檢視呼叫堆疊：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging7.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
 [![](debugging-in-xamarin-ios-images/debugging7a.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging7c.png "Debugging on simulator")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
 [![](debugging-in-xamarin-ios-images/debugging7d.png "Debugging on a physical device")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
-## <a name="start-debugging"></a>開始偵錯
+## <a name="start-debugging"></a>[偵錯]
 若要開始偵錯，請在 IDE 選取目標裝置或類似：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![](debugging-in-xamarin-ios-images/debugging7b.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![](debugging-in-xamarin-ios-images/debugging7e.png "Select the target device")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
-然後按 [執行]  按鈕部署您的應用程式。
+然後按 [執行]**** 按鈕部署您的應用程式。
 
 當您到達中斷點時，程式碼反白顯示為黃色：
 
@@ -96,17 +96,17 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 ## <a name="conditional-breakpoints"></a>條件中斷點
 
-您也可以設定規則，指出應該發生中斷點的情況，這就是新增「條件式中斷點」  。
+您也可以設定規則，指出應該發生中斷點的情況，這就是新增「條件式中斷點」**。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-若要設定條件中斷點，請存取 [中斷點屬性] 視窗  ，這可以透過兩種方式進行：
+若要設定條件中斷點，請存取 [中斷點屬性] 視窗****，這可以透過兩種方式進行：
 
 - 若要新增條件中斷點，請在您想要設定中斷點的程式碼行號左邊，以滑鼠右鍵按一下編輯器邊界，然後選取 [新增中斷點]：
 
   [![](debugging-in-xamarin-ios-images/image4.png "Select New Breakpoint")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
-- 若要為現有中斷點新增條件，請以滑鼠右鍵按一下中斷點，然後選取 [中斷點屬性]  ，或在 [中斷點]  面板中選取 [屬性] 按鈕，如下所示：
+- 若要為現有中斷點新增條件，請以滑鼠右鍵按一下中斷點，然後選取 [中斷點屬性]****，或在 [中斷點]**** 面板中選取 [屬性] 按鈕，如下所示：
 
   [![](debugging-in-xamarin-ios-images/image5.png "The Breakpoints Pad")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
@@ -114,13 +114,13 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 [![](debugging-in-xamarin-ios-images/image6.png "Enter the condition for the breakpoint to occur")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 若要在 Visual Studio 中設定條件式中斷點，請先[設定一般中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)。 以滑鼠右鍵按一下中斷點，以顯示其快顯功能表：
 
  [![](debugging-in-xamarin-ios-images/image4vs.png "The breakpoint context menu")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
-選取 [條件]  以顯示 [中斷點設定]  功能表：
+選取 [條件]**** 以顯示 [中斷點設定]__ 功能表：
 
  [![](debugging-in-xamarin-ios-images/image6vs.png "The Breakpoint Settings menu")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
@@ -134,30 +134,30 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 當已到達中斷點時，偵錯工具可讓您控制程式的執行。 IDE 會顯示四個按鈕，可讓您執行與逐步執行程式碼。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 在 Visual Studio for Mac 中，它們看起來像下面這樣：
 
  [![](debugging-in-xamarin-ios-images/image7.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
-這些是：
+它們是：
 
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
-- **不進入函式**：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行該函式，並在函式「之後」  的下一行程式碼停止。
-- **逐步執行**：這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
+- **不進入函式**：這會執行下一行程式碼。 如果下一行是函數調用,則單步執行函數,並在函數_之後的_下一行代碼處停止。
+- **進入**= 這還將執行下一行代碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
 - **跳離函式**：這會回到呼叫目前函式的行。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 在 Visual Studio 中，它們看起來像下面這樣：
 
 [![](debugging-in-xamarin-ios-images/image7vs.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
-這些是：
+它們是：
 
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
-- **不進入函式 (F11)** ：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行該函式，並在函式「之後」  的下一行程式碼停止。
-- **逐步執行 (F10)** ：這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
+- **不進入函式 (F11)**：這會執行下一行程式碼。 如果下一行是函數調用,則單步執行函數,並在函數_之後的_下一行代碼處停止。
+- **逐步執行 (F10)**：這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
 - **跳離函式 (Shift + F11)** 這會回到呼叫目前函式的行。
 
 如需更多關於偵錯的深入文件，請參閱[使用 Visual Studio 偵錯工具巡覽程式碼](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)。
@@ -210,17 +210,17 @@ Xamarin.iOS 使用新的 Mono 軟偵錯工具。 標準 Mono 偵錯工具是一�
 
 Xamarin.iOS 隨附 Mono 類別庫的原始程式碼，您可以使用它從偵錯工具逐步查看一切背後運作的情況。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 因為此功能會在偵錯期間消耗較多的記憶體，所以預設會關閉。
 
-若要啟用此功能，請確定 [Visual Studio for Mac] > [喜好設定] > [偵錯工具]  功能表下的 [只偵錯專案程式碼; 不涉及架構程式碼]  選項已取消選取，如下所示：
+若要啟用此功能，請確定 [Visual Studio for Mac] > [喜好設定] > [偵錯工具]__ 功能表下的 [只偵錯專案程式碼; 不涉及架構程式碼]**** 選項已取消選取，如下所示：
 
 [![](debugging-in-xamarin-ios-images/debugging6.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-若要針對 Visual Studio 中的類別庫進行偵錯，您必須停用 [偵錯] > [選項]  功能表下的 [Just My Code]  。 在 [偵錯] > [一般]  節點中，清除 [啟用 Just My Code]  核取方塊：
+若要針對 Visual Studio 中的類別庫進行偵錯，您必須停用 [偵錯] > [選項]__ 功能表下的 [Just My Code]****。 在 [偵錯] > [一般]__ 節點中，清除 [啟用 Just My Code]**** 核取方塊：
 
 [![](debugging-in-xamarin-ios-images/debugging6vs.png "Debugging Mono's Class Libraries")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
@@ -232,6 +232,6 @@ Xamarin.iOS 隨附 Mono 類別庫的原始程式碼，您可以使用它從偵�
 
 - [以 Xamarin 偵錯](/visualstudio/mac/debugging/)
 - [資料視覺效果](/visualstudio/mac/data-visualizations/)
-- [設定中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
+- [設定斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
 - [逐步執行程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)
 - [輸出資訊至記錄視窗](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)

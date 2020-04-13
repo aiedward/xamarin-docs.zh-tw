@@ -1,132 +1,132 @@
 ---
-title: Android 10 功能
-description: 如何開始使用 Xamarin 開發適用于 Android 10 的應用程式。
+title: 安卓 10 功能
+description: 如何使用 Xamarin.Android 開始開發 Android 10 的應用程式。
 ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
 ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73612274"
 ---
-# <a name="android-10-with-xamarin"></a>使用 Xamarin 的 Android 10
+# <a name="android-10-with-xamarin"></a>安卓 10 與 Xamarin
 
-_如何開始使用 Xamarin 開發適用于 Android 10 的應用程式。_
+_如何使用 Xamarin.Android 開始開發 Android 10 的應用程式。_
 
-Android 10 現在可從 Google 取得。 此版本提供一些新功能和 Api，而且其中有許多都需要在最新的 Android 裝置上利用新的硬體功能。
+Android 10 現已從 Google 獲得。 此版本中提供了許多新功能和 API,其中許多功能和 API 都是利用最新 Android 設備中的新硬體功能所必需的。
 
-![Android 10 標誌](~/android/platform/android-10-images/android10_black.png)
+![安卓 10 徽標](~/android/platform/android-10-images/android10_black.png)
 
-本文的結構是協助您開始開發適用于 Android 10 的 Xamarin Android 應用程式。 其中說明如何安裝必要的更新、設定 SDK，以及準備模擬器或裝置進行測試。 它也提供 Android 10 的新功能概述，並提供範例原始程式碼，說明如何使用一些重要的 Android 10 功能。
+本文的結構是説明您開始開發 Xamarin.Android 應用程式,用於 Android 10。 它說明瞭如何安裝必要的更新、配置 SDK 以及準備模擬器或設備進行測試。 它還概述了 Android 10 中的新功能,並提供了示例原始程式碼,說明如何使用一些關鍵的 Android 10 功能。
 
-Xamarin. Android 10.0 提供 Android 10 的支援。 如需 Android 10 的 Xamarin Android 支援的詳細資訊，請參閱《 [android 10.0 版本資訊》](https://docs.microsoft.com/xamarin/android/release-notes/10/10.0)。
+Xamarin.Android 10.0 為安卓 10 提供支援。 有關 Xamarin.Android 支援 Android 10 的更多資訊,請參閱[Xamarin.Android 10.0 發行說明](https://docs.microsoft.com/xamarin/android/release-notes/10/10.0)。
 
 ## <a name="requirements"></a>需求
 
-下列清單是在以 Xamarin 為基礎的應用程式中使用 Android 10 功能的必要條件：
+在基於 Xamarin 的應用中使用 Android 10 功能需要以下清單:
 
-- 建議使用**Visual Studio** Visual Studio 2019。 在 [Windows update] 上，Visual Studio 2019 16.3 版或更新版本。 在 macOS 上，更新為 Visual Studio 2019 （適用于 Mac 8.3 版或更新版本）。
-- **Xamarin** . android 10.0 或更新版本必須與 Visual Studio 一起安裝（Xamarin. android 會在 Windows 上自動安裝為**使用 .net**的行動裝置開發工作負載，並安裝為**Visual Studio for Mac 安裝程式**的一部分）
-- **JAVA 開發人員套件**-Xamarin. Android 10.0 開發需要 JDK 8。 Microsoft 的 OpenJDK 散發會自動安裝為 Visual Studio 的一部分。
-- **Android SDK** Android SDK API 29 必須透過 Android SDK 管理員進行安裝。
+- **視覺工作室**- 視覺工作室2019是推薦。 在 Windows 上更新到 Visual Studio 2019 版本 16.3 或更高版本。 在 macOS 上,更新至 Visual Studio 2019 的 Mac 版本 8.3 或更高版本。
+- **Xamarin.Android** - Xamarin.Android 10.0 或更高版本必須安裝到 Visual Studio(Xamarin.Android 自動安裝為**Windows 上的行動開發.NET**工作負載的一部分,並作為**Mac 安裝程式的視覺化工作室**的一部分安裝)
+- **Java 開發人員工具組**- Xamarin.Android 10.0 開發需要 JDK 8。 微軟的 OpenJDK 的分發會自動作為可視化工作室的一部分安裝。
+- **Android SDK** - Android SDK API 29 必須透過 Android SDK 管理器安裝。
 
 ## <a name="get-started"></a>開始使用
 
-若要開始使用 Xamarin 開發 Android 10 應用程式，您必須先下載並安裝最新的工具和 SDK 套件，才能建立您的第一個 Android 10 專案：
+要開始使用 Xamarin.Android 開發 Android 10 應用,您必須下載並安裝最新的工具和 SDK 套件,然後才能建立第一個 Android 10 專案:
 
-1. **建議使用 Visual Studio 2019**。 更新為 Visual Studio 2019 16.3 或更新版本。 如果您使用 Visual Studio for Mac 2019，請更新為 Visual Studio 2019 （適用于 Mac 8.3 或更新版本）。
-2. 透過 SDK 管理員安裝**Android 10 （API 29）** 套件和工具。
-    - Android 10 （API 29） SDK 平臺
-    - Android 10 （API 29）系統映射
-    - Android SDK 組建工具 29.0.0 +
-    - Android SDK 平臺工具 29.0.0 +
-    - Android Emulator 29.0.0 +
-3. 建立以 Android 10.0 為目標的新 Xamarin Android 專案。
-4. 設定用於測試 Android 10 應用程式的模擬器或裝置。
+1. **視覺工作室 2019 是建議**. 更新至 Visual Studio 2019 版本 16.3 或更高版本。 如果您使用的是 Mac 2019 的 Visual Studio,請更新至 Visual Studio 2019 的 Mac 版本 8.3 或更高版本。
+2. 通過 SDK 管理器安裝**Android 10 (API 29)** 套件和工具。
+    - Android 10 (API 29) SDK 平台
+    - 安卓 10 (API 29) 系統映射
+    - Android SDK 建譯工具 29.0.0*
+    - Android SDK 平臺工具 29.0.0+
+    - 安卓模擬器 29.0.0+
+3. 創建一個新的 Xamarin.Android 專案,目標是 Android 10.0。
+4. 配置用於測試 Android 10 應用的模擬器或設備。
 
-以下說明每個步驟：
+這些步驟如下:
 
 ### <a name="update-visual-studio"></a>更新 Visual Studio 2017
 
-建議您使用 Visual Studio 2019 來建立使用 Xamarin 的 Android 10 應用程式。
+Visual Studio 2019 建議使用 Xamarin 構建 Android 10 應用程式。
 
-如果您使用 Visual Studio 2019，請更新為 Visual Studio 2019 16.3 或更新版本（如需指示，請參閱[將 Visual Studio 2019 更新為最新版本](https://docs.microsoft.com/visualstudio/install/update-visual-studio)）。 在 macOS 上，更新為 Mac 8.3 或更新版本 Visual Studio 2019 （如需指示，請參閱將[Visual Studio 2019 For Mac 更新為最新版本](https://docs.microsoft.com/visualstudio/mac/update)）。
+如果您使用的是 Visual Studio 2019,請更新至 Visual Studio 2019 版本 16.3 或更高版本(有關說明,請參閱[將 Visual Studio 2019 更新到最新版本](https://docs.microsoft.com/visualstudio/install/update-visual-studio))。 在 macOS 上,針對 Mac 8.3 或更高版本更新至 Visual Studio 2019(有關說明,請參閱[將 Mac 的 2019 更新 Visual Studio 2019 到最新版本](https://docs.microsoft.com/visualstudio/mac/update))。
 
 ### <a name="install-the-android-sdk"></a>安裝 Android SDK
 
-若要使用 Xamarin 10.0 建立專案，您必須先使用 Android SDK 管理員來安裝適用于 Android 10 的 SDK 平臺 **（API 層級29）** 。
+要使用 Xamarin.Android 10.0 創建項目,必須首先使用 Android SDK 管理器安裝 Android 10 的 SDK 平臺 **(API 級別 29)。**
 
-1. 啟動 SDK 管理員。 在 Visual Studio 中，按一下 **工具 > Android > Android SDK 管理員。** 在 Visual Studio for Mac 中，按一下 [**工具] > [SDK 管理員]。**
-2. 在右下角，按一下齒輪圖示，然後選取 [存放庫] **> Google （不支援）：**
+1. 啟動 SDK 管理員。 在可視化工作室中,按一下 **「工具> Android > Android SDK 管理器。** 在 Mac 可視化工作室中,按一下 **「工具> SDK 管理器。**
+2. 在右下角,按下齒輪圖示並選擇**Google >存储库(不支援):**
 
-    ![Android SDK Manager 存放庫選取範圍](~/android/platform/android-10-images/sdkrepository.png)
+    ![Android SDK 管理員儲存函式庫選擇](~/android/platform/android-10-images/sdkrepository.png)
 
-3. 安裝**Android 10 SDK 平臺**套件（在 [**平臺**] 索引標籤中列為**Android SDK Platform 29** ）（如需有關使用 SDK 管理員的詳細資訊，請參閱[Android SDK 設定](https://docs.microsoft.com/xamarin/android/get-started/installation/android-sdk)）：
+3. 安裝**Android 10 SDK 平台**包,這些包在**平台**選項卡中列為 Android SDK**平臺 29(** 有關使用 SDK 管理員的詳細資訊,請參閱[Android SDK 設定](https://docs.microsoft.com/xamarin/android/get-started/installation/android-sdk)):
 
-    ![Android SDK Manager 平臺 索引標籤](~/android/platform/android-10-images/sdkplatforms.png)
+    ![Android SDK 管理員平台選項卡](~/android/platform/android-10-images/sdkplatforms.png)
 
-### <a name="create-a-xamarinandroid-project"></a>建立 Xamarin Android 專案
+### <a name="create-a-xamarinandroid-project"></a>建立 Xamarin.Android 專案
 
-建立新的 Xamarin Android 專案。 如果您不熟悉使用 Xamarin 進行 Android 開發的新手，請參閱[Hello，Android](https://docs.microsoft.com/xamarin/android/get-started/hello-android/index)以瞭解如何建立 Xamarin. android 專案。
+創建新的 Xamarin.安卓專案。 如果您是使用 Xamarin 的 Android 開發的新使用者,請參閱[Hello,Android,](https://docs.microsoft.com/xamarin/android/get-started/hello-android/index)瞭解如何創建 Xamarin.Android 專案。
 
-當您建立 Android 專案時，您必須將版本設定設定為以 Android 10.0 或更新版本為目標。 例如，若要以 Android 10 的專案為目標，您必須將專案的目標 Android API 層級設定為**android 10.0 （API 29）** 。 這包括您的**目標 Framework 版本**和**目標 ANDROID SDK 版本**到 API 29 或更新版本。 如需設定 Android API 層級的詳細資訊，請參閱[瞭解 ANDROID Api 層級。](https://docs.microsoft.com/xamarin/android/app-fundamentals/android-api-levels)
+創建 Android 專案時,必須將版本設置配置為以 Android 10.0 或更高版本為目標。 例如,要針對 Android 10 的項目,必須將專案的目標 Android API 級別配置為**Android 10.0 (API 29)。** 這包括**目標框架版本**和目標 Android **SDK 版本**到 API 29 或更高版本。 有關配置 Android API 級別的詳細資訊,請參閱[瞭解 Android API 級別。](https://docs.microsoft.com/xamarin/android/app-fundamentals/android-api-levels)
 
-![Xamarin. Android 目標架構](~/android/platform/android-10-images/targetframework.png)
+![Xamarin.安卓目標框架](~/android/platform/android-10-images/targetframework.png)
 
 ### <a name="configure-a-device-or-emulator"></a>設定裝置或模擬器
 
-如果您使用的是實體裝置（例如圖元），您可以前往電話設定中的 `System` > `System update` > `Check for update` 下載 Android 10 更新。 如果您想要將裝置閃爍，請參閱將[原廠映射](https://developers.google.com/android/images)或[OTA 影像](https://developers.google.com/android/ota)閃爍至您的裝置的指示。
+如果您正在使用物理設備(如圖元),`System` > `System update` > `Check for update`則可以通過轉到手機設置下載 Android 10 更新。 如果您希望快閃記憶體設備,請參閱有關向設備閃爍[出廠映射](https://developers.google.com/android/images)或[OTA 映射](https://developers.google.com/android/ota)的說明。
 
-如果您使用模擬器，請建立 API 層級29的虛擬裝置，並選取 x86 型映射。 如需使用 Android Device Manager 來建立和管理虛擬裝置的詳細資訊，請參閱[使用 Android Device Manager 管理虛擬裝置。](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager) 如需使用 Android Emulator 進行測試和偵測的詳細資訊，請參閱[Android Emulator 上的偵錯工具。](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)
+如果使用模擬器,請為 API 級別 29 創建虛擬裝置,然後選擇基於 x86 的圖像。 有關使用 Android 裝置管理員創建和管理虛擬裝置的資訊,請參閱使用[Android 設備管理員管理虛擬設備。](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager) 有關使用 Android 模擬器進行測試和調試的資訊,請參閱 Android[模擬器上的調試。](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)
 
 ## <a name="new-features"></a>新功能
 
-Android 10 引進了各種新功能。 其中一些新功能的目的是要利用最新的 Android 裝置所提供的新硬體功能，而有些則是設計來進一步增強 Android 使用者體驗：
+Android 10 引入了多種新功能。 其中一些新功能旨在利用最新的 Android 裝置提供的新硬體功能,而其他功能旨在進一步增強 Android 用戶體驗:
 
-## <a name="enhance-your-app-with-android-10-features-and-apis"></a>使用 Android 10 功能和 Api 增強您的應用程式
+## <a name="enhance-your-app-with-android-10-features-and-apis"></a>使用 Android 10 功能與 API 增強你的應用程式
 
-接下來，當您準備好時，請深入探索 Android 10，並瞭解您可以使用的 [新功能和 api](https://developer.android.com/preview/api-overview.html) 。 以下是一些要開始使用的熱門功能。
+接下來,當您準備好時,深入瞭解 Android 10 並瞭解您可以使用的 [新功能和 API。](https://developer.android.com/preview/api-overview.html)   以下是一些需要開始使用的頂級功能。
 
-以下是每個應用程式的建議功能：
+每個應用都推薦使用這些功能:
 
-- **深色主題：**  透過新增 [深色主題](https://developer.android.com/preview/features/darktheme) 或啟用 [強制深色](https://developer.android.com/preview/features/darktheme#force_dark)，為啟用全系統暗色調主題的使用者確保一致的體驗。
+- **黑暗主題:** 透過新增 [深色主題](https://developer.android.com/preview/features/darktheme) 或啟用 [「力黑暗」](https://developer.android.com/preview/features/darktheme#force_dark)確保支援系統範圍的黑暗主題的用戶獲得一致的體驗。
 
 ![深色佈景主題](~/android/platform/android-10-images/darktheme.png)
 
-- **在 [您的應用程式中支援 ](https://developer.android.com/preview/features/gesturalnav)gestural 導覽** ，方法是繼續邊緣對邊緣，並確定您的自訂手勢是系統導覽手勢的互補功能。
+- **透過 [gestural navigation](https://developer.android.com/preview/features/gesturalnav)** 邊緣到邊緣並確保自訂手勢與系統導航手勢相輔相成,支援應用中的手勢導航 。
 
-![手勢導覽](~/android/platform/android-10-images/gesturenavigation.png)
+![手勢導航](~/android/platform/android-10-images/gesturenavigation.png)
 
-- **針對 Foldables 優化：**  藉由 [優化 foldables](https://developer.android.com/preview/features/foldables)，在現今的創新裝置上提供順暢的邊緣對邊緣體驗。
+- **優化可摺疊功能:** 透過 [最佳式可摺疊裝置](https://developer.android.com/preview/features/foldables),在當今的創新裝置上提供無縫、邊緣到邊緣的體驗。
 
-![式](~/android/platform/android-10-images/foldable.png)
+![折疊](~/android/platform/android-10-images/foldable.png)
 
-如果您的應用程式相關，建議使用下列功能：
+如果與您的應用相關,建議使用這些功能:
 
-- **更多互動式通知：**  如果您的通知包含訊息，請 [在通知中啟用建議的回復和動作](https://developer.android.com/preview/features#smart-suggestions) 以與使用者互動，並讓他們立即採取行動。
-- **更好的生物識別：**  如果您使用生物識別驗證，請移至 [BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt)，這是在新式裝置上支援指紋驗證的慣用方式。
-- 擴充**錄製：**  以支援字幕或遊戲錄製，請啟用 [音訊播放捕捉](https://developer.android.com/preview/features/playback-capture)。 這是觸及更多使用者並讓您的應用程式更容易存取的絕佳方式。
-- **更好的編解碼器：** 媒體應用程式 ，請嘗試 [AV1](https://en.wikipedia.org/wiki/AV1) 以取得影片串流和 [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) ，以取得高動態範圍的影片。 針對語音和音樂串流，您可以使用 [Opus](http://opus-codec.org/)編碼，而針對 musicians，則會提供 [原生的 MIDI API](https://developer.android.com/preview/features/midi) 。
-- **更好的網路 api：**  如果您的應用程式透過 Wi-fi 管理 IoT 裝置，請嘗試新的 [網路連線 api](https://developer.android.com/preview/features#peer2peer) 以進行設定、下載或列印等功能。
+- **更多互動式通知:** 如果通知包含消息,請 在 [通知中啟用建議的答覆和操作](https://developer.android.com/preview/features#smart-suggestions),以吸引使用者,並讓他們立即採取行動。
+- **更好的生物識別技術:** 如果您使用生物識別技術,則轉到 [生物識別提示](https://developer.android.com/reference/androidx/biometric/BiometricPrompt),這是在現代設備上支援指紋識別的首選方法。
+- **豐富錄製:** 要支援字幕或遊戲錄製,啟用 [音效播放捕捉](https://developer.android.com/preview/features/playback-capture)。 這是聯繫更多使用者並使應用更易於訪問的好方法。
+- **更好的編解碼器:** 對於媒體應用,請嘗試 [AV1](https://en.wikipedia.org/wiki/AV1) 視頻流和 [HDR10+](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) 用於高動態範圍視頻。 對於語音和音樂流,您可以使用 [Opus](http://opus-codec.org/)編碼,對於音樂家,可以使用 [本機 MIDI API。](https://developer.android.com/preview/features/midi)  
+- **更好的網路 API:** 如果應用透過 Wi-Fi 管理 IoT 裝置,請嘗試新的 [網路連接 API](https://developer.android.com/preview/features#peer2peer) 以執行配置、下載或列印等功能。
 
-這些只是 Android 10 中許多新功能和 Api 的其中幾個。 若要查看所有專案，請造訪 [適用于開發人員的 Android 10 網站](https://developer.android.com/about/versions/10/highlights)。
+這些只是Android 10中許多新功能和API中的一些。 要查看所有這些,請造 [訪 Android 10 網站為開發人員](https://developer.android.com/about/versions/10/highlights)。
 
 ## <a name="behavior-changes"></a>行為變更
 
-當目標 Android 版本設定為 API 層級29時，有數個平臺變更 cann 會影響應用程式的行為，即使您未執行上述的新功能也一樣。 下列清單是這些變更的簡短摘要：
+當目標 Android 版本設置為 API 級別 29 時,即使您未實現上述新功能,也會影響應用的行為。 以下清單是這些變更的簡要摘要:
 
-- [為確保應用程式穩定性和相容性，android 平臺現在會限制您的應用程式可在 Android 10 中使用的非 SDK 介面](https://developer.android.com/about/versions/10/behavior-changes-10#non-sdk-restrictions)。
-- [共用記憶體已變更](https://developer.android.com/about/versions/10/behavior-changes-10#shared-memory)。
-- [Android 執行時間 &AMP; AOT 正確性](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat)。
-- [全螢幕意圖的許可權必須要求 `USE_FULL_SCREEN_INTENT`](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)。
-- [支援 foldables](https://developer.android.com/about/versions/10/behavior-changes-10#foldables)。
+- [為了確保應用的穩定性和相容性,Android 平台現在限制你的應用程式在 Android 10 中可以使用的非 SDK 介面](https://developer.android.com/about/versions/10/behavior-changes-10#non-sdk-restrictions)。
+- [分享記憶體已變更](https://developer.android.com/about/versions/10/behavior-changes-10#shared-memory)。
+- [Android 執行時& AOT 正確性](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat)。
+- [全螢幕意圖的權限必須`USE_FULL_SCREEN_INTENT`請求](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)。
+- [支援可折疊性](https://developer.android.com/about/versions/10/behavior-changes-10#foldables)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
-本文介紹了 Android 10，並說明如何安裝和設定最新的 Xamarin android 開發工具和套件。 其中提供 Android 10 中可用的主要功能總覽。 其中包含 API 檔和 Android 開發人員主題的連結，可協助您開始建立適用于 Android 10 的應用程式。 它也會反白顯示可能影響現有應用程式的最重要 Android 10 行為變更。
+本文介紹了Android 10,並解釋了如何使用Android 10安裝和配置Xamarin.Android開發的最新工具和軟體包。 它提供了 Android 10 中提供的主要功能的概述。 它包括指向 API 文件和 Android 開發人員主題的連結,可説明您開始為 Android 10 創建應用。 它還強調了可能影響現有應用的最重要 Android 10 行為更改。
 
 ## <a name="related-links"></a>相關連結
 

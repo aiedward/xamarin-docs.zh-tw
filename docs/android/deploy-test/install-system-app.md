@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 72cddde86708b5573dc578165354d137c4dc35b6
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76723896"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>將 Xamarin.Android 安裝為系統應用程式
 
-_本指南會討論系統應用程式與使用者應用程式的差異，以及如何將 Xamarin.Android 應用程式安裝為系統應用程式。本指南適用於自訂 Android ROM 映像的作者。它不會說明如何建立自訂 ROM。_
+_本指南將討論系統應用和使用者應用之間的區別,以及如何將 Xamarin.Android 應用程式作為系統應用程式安裝。本指南適用於自訂 Android ROM 圖像的作者。它無法解釋如何創建自定義 ROM。_
 
 ## <a name="system-app"></a>系統應用程式
 
@@ -28,7 +28,7 @@ _本指南會討論系統應用程式與使用者應用程式的差異，以及�
 
 - 系統應用程式可進行升級，與一般_使用者應用程式_相同。 然而，由於應用程式的複本一律會儲存在 **/system/app/** 中，因此可一律將應用程式復原至原始版本。
 
-- 系統應用程式可獲得授與特定僅限系統但無法由使用者應用程式取得的權限。 僅限系統的權限範例是 [`BLUETOOTH_PRIVILEGED`](https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_PRIVILEGED)，該權限可允許應用程式與藍牙裝置進行配對，而無須任何使用者互動。
+- 系統應用程式可獲得授與特定僅限系統但無法由使用者應用程式取得的權限。 僅系統許可權的一個示例是[`BLUETOOTH_PRIVILEGED`](https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_PRIVILEGED),它允許應用程式與藍牙設備配對,而無需任何使用者交互。
 
 您可以將 Xamarin.Android 應用程式作為系統應用程式散發。 除了提供 APK 給自訂 ROM 之外，還有兩個共用程式庫必須手動從 APK 複製到 ROM 映像的檔案系統：**libmonodroid.so** 及 **libmonosgen-2.0.so**。 本指南會說明相關步驟。
 
@@ -42,7 +42,7 @@ _本指南會討論系統應用程式與使用者應用程式的差異，以及�
 
 下列步驟描述了如何將 Xamarin.Android 應用程式安裝為系統應用程式。
 
-1. **封裝 Xamarin.Android 應用程式的發行 APK** &ndash; [發佈應用程式](~/android/deploy-test/publishing/index.md)指南中提供關於這個主題的詳細資料。
+1. **封裝 Xamarin.Android 應用程式的發行 APK** &ndash;[發佈應用程式](~/android/deploy-test/publishing/index.md)指南中提供關於這個主題的詳細資料。
 
 2. **從 APK 擷取共用程式庫** &ndash; 使用任何 ZIP 公用程式，開啟 APK 檔案並檢查 **/lib/** 資料夾中的內容。 這個資料夾針對每個應用程式支援的_應用程式二進位介面_ (ABI) 都會具有一個子目錄，資料夾中的內容包含所有該特定 ABI 上應用程式所需的共用程式庫：
 
@@ -50,7 +50,7 @@ _本指南會討論系統應用程式與使用者應用程式的差異，以及�
 
    在先前的螢幕擷取畫面中，只有一個受支援的 ABI (**armeabi-v7a**) 保有兩個應用程式需要的 **.so** 檔案。 請注意，只需要擷取適用於裝置或裝置 ROM 目標架構的 ABI 檔案，也就是請不要將 **x86** 資料夾中的 **.so** 檔案複製到 **armeabi-v7a** 裝置或 ROM。
 
-3. **將 .so 檔案複製到 /system/lib** &ndash; 將在先前步驟中從 APK 擷取的 **.so** 檔案，複製到自訂 ROM 上的 **/system/lib/** 。
+3. **將 .so 檔案複製到 /system/lib** &ndash; 將在先前步驟中從 APK 擷取的 **.so** 檔案，複製到自訂 ROM 上的 **/system/lib/**。
 
 4. **將 APK 檔案複製到 /system/app** &ndash; 最後一個步驟是將 APK 檔案複製到 ROM 上的 **/system/app** 資料夾。
 

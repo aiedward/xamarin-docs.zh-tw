@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Essentials:電池
+title: Xamarin.Essentials：電池
 description: 本文件描述 Xamarin.Essentials 中的電池類別，可讓您檢查裝置的電池資訊並監視變更。
 ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 01/22/2019
 ms.custom: video
 ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70756928"
 ---
-# <a name="xamarinessentials-battery"></a>Xamarin.Essentials:電池
+# <a name="xamarinessentials-battery"></a>Xamarin.Essentials：電池
 
 **Battery** 類別可讓您檢查裝置的電池資訊和監視變更，並提供裝置的省電狀態資訊，這說明裝置是否正在低耗電模式中執行。 若裝置已開啟低電源狀態，應用程式應該避免背景處理。
 
@@ -23,11 +23,11 @@ ms.locfileid: "70756928"
 
 若要存取**電池**功能，需要下列平台特定設定。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 需要 `Battery` 權限，而且必須在 Android 專案中設定。 能以下列方式新增：
 
-開啟 [Properties] 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
+開啟 [Properties]**** 資料夾下的 **AssemblyInfo.cs** 檔案並新增：
 
 ```csharp
 [assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
@@ -35,19 +35,19 @@ ms.locfileid: "70756928"
 
 或更新 Android 資訊清單：
 
-開啟 [Properties] 資料夾下的 **AndroidManifest.xml** 檔案並在 [manifest] 節點內新增下列內容。
+在 **「屬性」** 資料夾下打開**AndroidManifest.xml**檔,並在**清單**節點內添加以下內容。
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單] 下，尋找 [必要權限] 區域並選取 [電池] 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+禍以滑鼠右鍵按一 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]**** 下，尋找 [必要權限]**** 區域並選取 [電池]**** 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 不需要進行額外設定。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 不需要進行額外設定。
 
@@ -164,16 +164,16 @@ public class EnergySaverTest
 
 ## <a name="platform-differences"></a>平台差異
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 無平台差異。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - 裝置必須用來測試 API。 
 - 針對 `PowerSource`，只會傳回 `AC` 或 `Battery`。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 - 針對 `PowerSource`，只會傳回 `AC` 或 `Battery`。
 

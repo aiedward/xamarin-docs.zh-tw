@@ -1,6 +1,6 @@
 ---
 title: Xamarin.iOS 應用程式的程式碼簽署和佈建
-description: 本檔連結的指南會描述裝置布建、使用功能、使用權利，以及 plist 檔案。
+description: 本文件連結到描述設備預配、使用功能、使用授權以及 Info.plist 檔案的指南。
 ms.prod: xamarin
 ms.assetid: 92B35AB1-7AB7-3D3B-DB31-CC971E0B43AE
 ms.technology: xamarin-ios
@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/18/2017
 ms.openlocfilehash: 3f228441ff7be93b5b84f11e73b8410370c29406
-ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78946278"
 ---
 # <a name="code-signing-and-provisioning-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的程式碼簽署和佈建

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030419"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支援
@@ -43,9 +43,9 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 若要指定 iTunes 插圖，請執行下列動作：
 
-1. 在 [方案總管] 中，按兩下 [Info.plist] 檔案以開啟它進行編輯。
-2. 捲動到編輯器的 [iTunes 插圖] 區段。
-3. 針對任何缺少的影像，按一下編輯器中的縮圖，從 [開啟檔案] 對話方塊中選取所需 iTunes 插圖的影像檔案，然後按一下 [確定] 或 [開啟] 按鈕。
+1. 在 [方案總管]**** 中，按兩下 [Info.plist]**** 檔案以開啟它進行編輯。
+2. 捲動到編輯器的 [iTunes 插圖]**** 區段。
+3. 針對任何缺少的影像，按一下編輯器中的縮圖，從 [開啟檔案]**** 對話方塊中選取所需 iTunes 插圖的影像檔案，然後按一下 [確定]**** 或 [開啟]**** 按鈕。
 4. 重複上述步驟，直到為應用程式指定所有必要的影像為止。
 
 如需詳細資訊，請參閱 [iTunes 插圖](~/ios/app-fundamentals/images-icons/app-icons.md)文件。
@@ -54,7 +54,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 ## <a name="creating-an-ipa"></a>建立 IPA
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 建立 IPA 現在內建於新的發行工作流程。 若要執行此動作，請依照下列指示來封存、簽署應用程式以及儲存 IPA。
 
@@ -64,23 +64,23 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 ### <a name="build-your-archive"></a>建置封存
 
-若要建置 IPA，必須建立應用程式發行組建的「封存」。 此封存包含應用程式和相關的識別資訊。
+若要建置 IPA，必須建立應用程式發行組建的「封存」__。 此封存包含應用程式和相關的識別資訊。
 
-1. 在 Visual Studio for Mac 中選取 [發行] | [裝置] 組態：  !
+1. 在 Visual Studio for Mac 中選取 [發行] | [裝置]**** 組態：  !
 
     ![](ipa-support-images/buildxs01new.png "Select the Release | Device configuration")
 
-1. 從 [建置] 功能表選取 [Archive for Publishing] (封存以供發行)：
+1. 從 [建置]**** 功能表選取 [Archive for Publishing] (封存以供發行)****：
 
     ![](ipa-support-images/buildxs02new.png "Select Archive for Publishing")
 
-1. 建立封存後，[封存] 檢視會隨即顯示：
+1. 建立封存後，[封存]**** 檢視會隨即顯示：
 
     ![](ipa-support-images/buildxs03new.png "The Archives view will be displayed")
 
 ### <a name="sign-and-distribute-your-app"></a>簽署並散發應用程式
 
-每次建置應用程式進行封存，都會自動開啟**封存檢視**，顯示依解決方案分組的所有已封存專案。 根據預設，此檢視只會顯示目前開啟的解決方案。 若要查看有封存的所有解決方案，請按一下 [顯示所有封存] 按鈕。
+每次建置應用程式進行封存，都會自動開啟**封存檢視**，顯示依解決方案分組的所有已封存專案。 根據預設，此檢視只會顯示目前開啟的解決方案。 若要查看所有具有封存的解決方案，請按一下 [Show all archives] (顯示所有封存)**** 選項。
 
 建議您保留部署至客戶的封存 (臨機操作或內部作業部署)，以便日後代表所產生的任何偵錯資訊。
 
@@ -88,11 +88,11 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 若要簽署應用程式並準備散發：
 
-1. 選取 [簽署並散發] 按鈕，如下所示：
+1. 選取 [簽署並散發]**** 按鈕，如下所示：
 
     ![](ipa-support-images/buildxs04new.png "Select Sign and Distribute...")
 
-1. 這會開啟發佈精靈。 選取 [臨機操作] 或 [企業] \(內部作業\) 散發通道以建立套件：
+1. 如此將開啟發行精靈。 選取 [臨機操作]**** 或 [企業]**** \(內部作業\) 散發通道以建立套件：
 
     ![](ipa-support-images/distribute01.png "Select the Ad-Hoc or Enterprise In-House distribution")
 
@@ -100,7 +100,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
     ![](ipa-support-images/distribute02.png "Select the signing identity and corresponding provisioning profile")
 
-1. 請確認套件的詳細資料，然後按一下 [發行]：
+1. 請確認套件的詳細資料，然後按一下 [發行]****：
 
     ![](ipa-support-images/distribute03.png "Verify the package details")
 
@@ -112,7 +112,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 在某些特定案例中 (例如在 CI 環境中)，您可能需要透過命令列來建置 IPA。 請遵循下列步驟來進行這項作業：
 
-1. 確定已選取 [專案選項] > [iOS IPA 選項] > [包含 iTunesArtwork 影像] 和已選取 [建置臨機操作/企業版套件 (IPA)]：
+1. 確定已選取 [專案選項] > [iOS IPA 選項] > [包含 iTunesArtwork 影像]**** 和已選取 [建置臨機操作/企業版套件 (IPA)]****：
 
     ![](ipa-support-images/imagexs04.png "Include iTunesArtwork images and Build ad-hoc/enterprise package IPA is checked")
 
@@ -123,7 +123,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
     <IpaIncludeArtwork>false</IpaIncludeArtwork>
     ```
 
-1. 如果您要納入選擇性的 **iTunesMetadata.plist** 檔案，請按一下 [...] 按鈕，從清單中選取該檔案，然後按一下 [確定] 按鈕：
+1. 如果您要納入選擇性的 **iTunesMetadata.plist** 檔案，請按一下 [...]**** 按鈕，從清單中選取該檔案，然後按一下 [確定]**** 按鈕：
 
      ![](ipa-support-images/imagexs03.png "Select iTunesMetadata.plist from the list")
 
@@ -133,32 +133,32 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 中，建立並選取佈建設定檔，建立選擇性的 **iTunesMetadata.plist** 和設定 iTunes 插圖之後，即可建置 IPA 以進行散發。 接著，您必須設定專案。 請執行下列動作：
+在 Visual Studio 中，建立並選取佈建設定檔，建立選擇性的 **iTunesMetadata.plist** 和設定 iTunes 插圖之後，即可建置 IPA 以進行散發。 接著，您必須設定專案。 執行下列動作：
 
-1. 在方案總管中，於 Xamarin.iOS 專案名稱上按一下滑鼠右鍵，然後選取 [屬性] 將其開啟進行編輯：
+1. 在方案總管**** 中，於 Xamarin.iOS 專案名稱上按一下滑鼠右鍵，然後選取 [屬性]**** 將其開啟進行編輯：
 
     ![](ipa-support-images/imagevs01.png "Select Properties")
 
-2. 選取 [iOS IPA 選項]，然後從 [組態] 下拉式清單中選取 [臨機操作]：
+2. 選取 [iOS IPA 選項]****，然後從 [組態]**** 下拉式清單中選取 [臨機操作]****：
 
     ![](ipa-support-images/imagevs02.png "Select Ad-Hoc from the Configuration dropdown list")
 
     > [!NOTE]
-    > 較新的 Xamarin.iOS 專案可能無法使用臨機操作組態。 如果無法使用，請選取 [發行] 組態。
+    > 較新的 Xamarin.iOS 專案可能無法使用臨機操作組態。 如果無法使用，請選取 [發行]**** 組態。
 
-3. 如果您要納入選擇性的 **iTunesMetadata.plist** 檔案，請按一下 [...] 按鈕，從清單中選取該檔案，然後按一下 [開啟] 按鈕：
+3. 如果您要納入選擇性的 **iTunesMetadata.plist** 檔案，請按一下 [...]**** 按鈕，從清單中選取該檔案，然後按一下 [開啟]**** 按鈕：
 
     ![](ipa-support-images/imagevs03.png "Select iTunesMetadata.plist from the list")
 
-4. 您可以選擇性地指定 IPA 的 [套件名稱]，如未指定，則會使用和 Xamarin.iOS 專案相同的名稱。
+4. 您可以選擇性地指定 IPA 的 [套件名稱]****，如未指定，則會使用和 Xamarin.iOS 專案相同的名稱。
 5. 將您的變更儲存至專案屬性。
-6. 如果可用的話，從 [組建組態] 下拉式清單中選取 [臨機操作]。 否則，請選取 [發行]：
+6. 如果可用的話，從 [組建組態]**** 下拉式清單中選取 [臨機操作]****。 否則，請選取 [發行]****：
 
     ![](ipa-support-images/imagevs05.png "Select Ad Hoc from the Build Configuration dropdown")
 
-7. 建置專案來建立 IPA 套件。
+7. 建置專案以建立 IPA 套件。
 8. IPA 會建置在 **Bin > iOS 裝置 > 臨機操作 (或發行)** 資料夾中：
 
     ![](ipa-support-images/imagevs06.png "The IPA in the file explorer")
@@ -169,13 +169,13 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 ## <a name="customizing-the-ipa-location"></a>自訂 IPA 位置
 
-已新增的 **MSBuild** 屬性 `IpaPackageDir` 可讓您輕鬆自訂 **.ipa** 檔案輸出位置。 如果將 `IpaPackageDir` 設定為自訂位置， **.ipa** 檔案將會置於其中，而不是放在預設時間戳記子目錄。 建立須仰賴特定目錄路徑才能正常運作的自動組建 (例如用於持續整合 (CI) 組建) 時，這會很有用。
+已新增的 **MSBuild** 屬性 `IpaPackageDir` 可讓您輕鬆自訂 **.ipa** 檔案輸出位置。 如果將 `IpaPackageDir` 設定為自訂位置，**.ipa** 檔案將會置於其中，而不是放在預設時間戳記子目錄。 建立須仰賴特定目錄路徑才能正常運作的自動組建 (例如用於持續整合 (CI) 組建) 時，這會很有用。
 
 新屬性有數個可能的使用方式：
 
 例如，若要將 **.ipa** 檔案輸出至舊的預設目錄 (如 Xamarin.iOS 9.6 和較舊版本)，您可以使用下列其中一種方法來將 `IpaPackageDir` 屬性設定為 `$(OutputPath)`。 兩種方法都與所有 Unified API Xamarin.iOS 組建相容，包括 IDE 組建以及使用 **msbuild**、**xbuild** 或 **mdtool** 的命令列組建：
 
-- 第一種選擇是在 **MSBuild** 檔案的 `<PropertyGroup>` 項目內設定 `IpaPackageDir` 屬性。 例如，您可以將下列 `<PropertyGroup>` 新增至 iOS 應用程式專案 **.csproj** 檔案的底部 (在結尾的 `</Project>` 標記之前)：
+- 第一種選擇是在 **MSBuild** 檔案的 `<PropertyGroup>` 元素內設定 `IpaPackageDir` 屬性。 例如，您可以將下列 `<PropertyGroup>` 新增至 iOS 應用程式專案 **.csproj** 檔案的底部 (在結尾的 `</Project>` 標記之前)：
 
     ```xml
     <PropertyGroup>
@@ -227,13 +227,13 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 產生的 IPA 套件可以傳遞給測試使用者在其 iOS 裝置上安裝，或可發行以供企業部署。 不論選擇哪種方法，使用者都要按兩下 IPA 檔案 (或拖曳至開啟的 iTunes 視窗)，在其 Mac 或 Windows 電腦上的 iTunes 應用程式中安裝套件。
 
-新的 iOS 應用程式會顯示在 [我的應用程式] 區段，您可以在應用程式上按一下滑鼠右鍵並取得相關資訊：
+新的 iOS 應用程式會顯示在 [我的應用程式]**** 區段，您可以在應用程式上按一下滑鼠右鍵並取得相關資訊：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
 
@@ -249,7 +249,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 ## <a name="related-links"></a>相關連結
 
-- [散發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [應用商店分發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
 - [發行至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [內部作業散發](~/ios/deploy-test/app-distribution/in-house-distribution.md)

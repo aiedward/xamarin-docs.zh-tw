@@ -1,6 +1,6 @@
 ---
-title: 第4章的摘要。 滾動堆疊
-description: 使用 Xamarin 建立 Mobile Apps：第4章的摘要。 滾動堆疊
+title: 第4章摘要。 捲動堆疊
+description: 使用 Xamarin.表單創建行動應用程式:第 4 章摘要。 捲動堆疊
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
@@ -8,55 +8,55 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: bda9d5cb323524981bed9c3bb55998513dd69aab
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73032880"
 ---
-# <a name="summary-of-chapter-4-scrolling-the-stack"></a>第4章的摘要。 滾動堆疊
+# <a name="summary-of-chapter-4-scrolling-the-stack"></a>第4章摘要。 捲動堆疊
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
-本章主要著重于引進*版面*配置概念，這是 Xamarin. Forms 用來組織頁面上多個視圖視覺顯示的整體詞彙。
+本章主要介紹*佈局*的概念,這是 Xamarin. Forms 用於組織頁面上多個視圖的可視化顯示的類和技術的總術語。
 
-版面配置牽涉到數個衍生自[`Layout`](xref:Xamarin.Forms.Layout)和[`Layout<T>`](xref:Xamarin.Forms.Layout`1)的類別。 本章著重于[`StackLayout`](xref:Xamarin.Forms.StackLayout)。
+佈局涉及派生自[`Layout`](xref:Xamarin.Forms.Layout)[`Layout<T>`](xref:Xamarin.Forms.Layout`1)和的多個類。 本章重點介紹[`StackLayout`](xref:Xamarin.Forms.StackLayout)。
 
 > [!NOTE]
-> 在 3.0 Xamarin 中引進的[`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md)可以用類似 `StackLayout` 但具有更大彈性的方式來使用。
+> Xamarin.forms [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md) 3.0 中引入的方法`StackLayout`與類似 但具有更大的靈活性類似。
 
-本章也介紹了[`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`Frame`](xref:Xamarin.Forms.Frame)和[`BoxView`](xref:Xamarin.Forms.BoxView)類別。
+本章中還介紹了[`ScrollView`](xref:Xamarin.Forms.ScrollView)[`Frame`](xref:Xamarin.Forms.Frame)、[`BoxView`](xref:Xamarin.Forms.BoxView)和 類。
 
-## <a name="stacks-of-views"></a>視圖堆疊
+## <a name="stacks-of-views"></a>檢視堆疊
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)衍生自 `Layout<View>`，並繼承 `IList<View>`類型的[`Children`](xref:Xamarin.Forms.Layout`1)屬性。 您可以將多個視圖專案加入此集合中，`StackLayout` 會在水準或垂直堆疊中顯示它們。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout)衍生的`Layout<View>`類型 屬性[`Children`](xref:Xamarin.Forms.Layout`1)並繼承`IList<View>`。 向此集合添加多個檢視項,並在`StackLayout`水準或垂直堆疊中顯示它們。
 
-將 `StackLayout` 的[`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)屬性設定為[`StackOrientation`](xref:Xamarin.Forms.StackOrientation)列舉的成員，不論是[`Vertical`](xref:Xamarin.Forms.StackOrientation.Vertical)或[`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal)。 預設值為 `Vertical`。
+[`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)將 的`StackLayout`屬性[`StackOrientation`](xref:Xamarin.Forms.StackOrientation)設定為 枚舉的[`Vertical`](xref:Xamarin.Forms.StackOrientation.Vertical)[`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal)成員,或 。 預設值為 `Vertical`。
 
-將 `StackLayout` 的[`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)屬性設定為 `double` 值，以指定子系之間的間距。 預設值為6。
+將[`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)的屬性`StackLayout`設置為`double`值 以指定子級之間的間距。 默認值為 6。
 
-在程式碼中，您可以將專案加入至 `for` 或 `foreach` 迴圈中 `StackLayout` 的 `Children` 集合，如[**ColorLoop**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop)範例中所示，或者您可以使用個別視圖的清單來初始化 `Children` 集合，如[**ColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList)中所示。 子系必須衍生自 `View`，但可以包含其他 `StackLayout` 物件。
+在代碼中,可以將項添加到`Children``StackLayout``for``foreach`或迴圈中的集合中,如[**ColorLoop**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorLoop)範例所示,也可以使用單個檢視的`Children`清單初始 化集合,如[**ColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorList)所示。 子級必須派生,`View`但可以包括`StackLayout`其他 物件。
 
-## <a name="scrolling-content"></a>滾動內容
+## <a name="scrolling-content"></a>捲動內容
 
-如果 `StackLayout` 包含太多要顯示在頁面上的子系，您可以將 `StackLayout` 放在[`ScrollView`](xref:Xamarin.Forms.ScrollView)中以允許滾動。
+如果`StackLayout`包含太多子項無法顯示在頁面上,則可以將`StackLayout`[`ScrollView`](xref:Xamarin.Forms.ScrollView)中的放在中以允許滾動。
 
-將 `ScrollView` 的[`Content`](xref:Xamarin.Forms.ScrollView.Content)屬性設定為您要滾動的視圖。 這通常是 `StackLayout`，但它可以是任何觀點。
+將[`Content`](xref:Xamarin.Forms.ScrollView.Content)的屬性`ScrollView`設置為要滾動的視圖。 這通常是一個`StackLayout`,但它可以是任何視圖。
 
-將 `ScrollView` 的[`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation)屬性設定為[`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation)屬性、 [`Vertical`](xref:Xamarin.Forms.ScrollOrientation.Vertical)、 [`Horizontal`](xref:Xamarin.Forms.ScrollOrientation.Horizontal)或[`Both`](xref:Xamarin.Forms.ScrollOrientation.Both)的成員。 預設值為 `Vertical`。 如果 `ScrollView` 的內容是 `StackLayout`，這兩個方向應該是一致的。
+將[`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation)`ScrollView`的屬性設定為[`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation)屬性的[`Vertical`](xref:Xamarin.Forms.ScrollOrientation.Vertical)成員[`Horizontal`](xref:Xamarin.Forms.ScrollOrientation.Horizontal),[`Both`](xref:Xamarin.Forms.ScrollOrientation.Both)或 。 預設值為 `Vertical`。 如果`ScrollView`的內容`StackLayout`為 , 則兩個方向應一致。
 
-[**ReflectedColors**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors)範例示範如何使用 `ScrollView` 和 `StackLayout` 來顯示可用的色彩。 此範例也會示範如何使用 .NET 反映來取得 `Color` 結構的所有公用靜態屬性和欄位，而不需要明確列出它們。
+[**「反射顏色」**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ReflectedColors)範例展示`ScrollView`了`StackLayout`和顯示可用顏色的使用。 該示例還演示如何使用 .NET 反射`Color`來獲取 結構的所有公共靜態屬性和欄位,而無需顯式列出它們。
 
-## <a name="the-expands-option"></a>展開選項
+## <a name="the-expands-option"></a>展開「選項」
 
-當 `StackLayout` 堆疊其子系時，每個子系都會佔用相依于 `StackLayout` 總高度的特定位置，而這是根據子系的大小和其 `HorizontalOptions` 和 `VerticalOptions` 屬性的設定而定。 這些屬性會指派[`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions)類型的值。
+當堆`StackLayout`棧其子級時,每個子級佔用的特定插槽`StackLayout`, 該槽位於 的總高度內,具體取決於子級`HorizontalOptions`的`VerticalOptions`大小及其 和 屬性的設置。 這些屬性為類型[`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions)分配了 值。
 
-`LayoutOptions` 結構會定義兩個屬性：
+結構`LayoutOptions`定義兩個屬性:
 
-- 具有四個成員、 [`Start`](xref:Xamarin.Forms.LayoutAlignment.Start)、 [`Center`](xref:Xamarin.Forms.LayoutAlignment.Center)、 [`End`](xref:Xamarin.Forms.LayoutAlignment.End)和[`Fill`](xref:Xamarin.Forms.LayoutAlignment.Fill)的列舉類型[`Alignment`](xref:Xamarin.Forms.LayoutOptions.Alignment) [`LayoutAlignment`](xref:Xamarin.Forms.LayoutAlignment)
-- 類型為 [ 的 `Expands`](xref:Xamarin.Forms.LayoutOptions.Expands)`bool`
+- [`Alignment`](xref:Xamarin.Forms.LayoutOptions.Alignment)具有四個成員的枚舉[`LayoutAlignment`](xref:Xamarin.Forms.LayoutAlignment)[`Start`](xref:Xamarin.Forms.LayoutAlignment.Start)類型[`Center`](xref:Xamarin.Forms.LayoutAlignment.Center),[`End`](xref:Xamarin.Forms.LayoutAlignment.End)、 和[`Fill`](xref:Xamarin.Forms.LayoutAlignment.Fill)
+- [`Expands`](xref:Xamarin.Forms.LayoutOptions.Expands)類型`bool`
 
-為了方便起見，`LayoutOptions` 結構也會定義 `LayoutOptions` 類型的八個靜態唯讀欄位，其中包含兩個實例屬性的所有組合：
+為方便起見,該`LayoutOptions`結構還定義了八個類型`LayoutOptions`的 靜態唯讀欄位,這些欄位包含兩個實例屬性的所有組合:
 
 - [`LayoutOptions.Start`](xref:Xamarin.Forms.LayoutOptions.Start)
 - [`LayoutOptions.Center`](xref:Xamarin.Forms.LayoutOptions.Center)
@@ -67,55 +67,55 @@ ms.locfileid: "73032880"
 - [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-下列討論牽涉到具有預設垂直方向的 `StackLayout`。 水準 `StackLayout` 類似。
+以下討論包含有預設`StackLayout`垂直方向的 。 水平`StackLayout`類似。
 
-對於垂直 `StackLayout`，`HorizontalOptions` 設定會決定子系在 `StackLayout`寬度的水準位置。 `Start`、`Center`或 `End` 的 `Alignment` 設定，會使子系成為不受限制的。 子系會決定其本身的寬度，並定位在 `StackLayout`的左邊、中央或右方。 `Fill` 選項會使子系受到水準限制，並填滿 `StackLayout`的寬度。
+對於垂直`StackLayout``HorizontalOptions`, 設置確定子級在`StackLayout`寬度 中的水準定位方式。 的`Alignment``Start`設定,`Center``End`或使子級水準不受限制。 子項確定其自己的寬度,並位於`StackLayout`的左側、中心或右側。 該`Fill`選項會導致子級被水準約束並填充`StackLayout`的寬度。
 
-針對垂直 `StackLayout`，每個子系會垂直地受到限制，並根據子系的高度取得垂直位置，在此情況下，`VerticalOptions` 設定無關。
+對於垂直`StackLayout`,每個子級垂直不受約束,並根據子級的高度獲得垂直槽,在這種情況下`VerticalOptions`, 設置不相關。
 
-如果垂直 `StackLayout` 本身是不受限制的&mdash;也就是，如果其 `VerticalOptions` 設定為 `Start`、`Center`或 `End`，則 `StackLayout` 的高度是其子系的總高度。
+如果`StackLayout`垂直本身不受&mdash;約束 ,即`VerticalOptions`如果其`Start``Center`設置`End`為 、`StackLayout`或 ,則的高度 是其子級的總高度。
 
-不過，如果垂直 `StackLayout` 會受到垂直限制&mdash;如果 `Fill`的 `VerticalOptions` 設定，則 &mdash;的高度會是其容器的高度，其可能大於其子系的總高度。`StackLayout` 如果是這種情況，而且至少有一個子系具有 `Expands` 旗標為 `true`的 `VerticalOptions` 設定，則 `StackLayout` 中的額外空間會平均配置給所有子系，且 `Expands` 旗標為 `true`。 子系的總高度會等於 `StackLayout`的高度，而 `VerticalOptions` 設定的 `Alignment` 部分則會決定子系在其位置的垂直定位方式。
+但是`StackLayout`,如果垂直是垂直&mdash;約束 的,`VerticalOptions`如果其`Fill`&mdash;設置是`StackLayout`,則的高度 將是其容器的高度,該高度可能大於其子級的總高度。 `VerticalOptions`如果是這種情況,並且如果至少有一個子具有具有`Expands`標誌`true`的 設置,`StackLayout`則`Expands``true`在具有標誌的所有子級中,將平均分配中的額外空間。 然後,子級的總高度將等於的高度`StackLayout``Alignment``VerticalOptions`, 設置部分確定子級在其插槽中的垂直位置。
 
-這會在[**VerticalOptionsDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo)範例中示範。
+垂直[**選項演示**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/VerticalOptionsDemo)範例展示這一點。
 
-## <a name="frame-and-boxview"></a>Frame 和 BoxView
+## <a name="frame-and-boxview"></a>框架與框檢視
 
-這兩個矩形視圖通常用於展示用途。
+這兩個矩形視圖通常用於表示目的。
 
-[ [`Frame`](xref:Xamarin.Forms.Frame) ] 視圖會在另一個視圖周圍顯示矩形框架，這可以是像是 `StackLayout`的版面配置。 `Frame` 會從您設定的[`ContentView`](xref:Xamarin.Forms.ContentView)繼承[`Content`](xref:Xamarin.Forms.ContentView.Content)屬性，以顯示在 `Frame`中。 `Frame` 預設是透明的。 設定下列三個屬性來自訂框架的外觀：
+檢視[`Frame`](xref:Xamarin.Forms.Frame)顯示環繞另一個檢視的矩形框架,該檢視可以是佈局,如`StackLayout`。 `Frame`繼承從您[`Content`](xref:Xamarin.Forms.ContentView.Content)設定為[`ContentView`](xref:Xamarin.Forms.ContentView)要 顯示在中的檢視中的`Frame`屬性 。 默認情況下`Frame`是透明的。 設定以下三個屬性以自訂幀的外觀:
 
-- 要使其可見的[`OutlineColor`](xref:Xamarin.Forms.Frame.OutlineColor)屬性。 當您不知道基礎色彩配置時，通常會將 `OutlineColor` 設定為 `Color.Accent`。
-- [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)屬性可以設定為 `true`，以在 iOS 裝置上顯示黑色陰影。
-- 將 [ [`Padding`](xref:Xamarin.Forms.Layout.Padding) ] 屬性設定為 `Thickness` 值，以在框架和框架的內容之間保留一個空格。 預設值是所有邊的20個單位。
+- 使其[`OutlineColor`](xref:Xamarin.Forms.Frame.OutlineColor)可見的屬性。 當您不知道基礎配色`OutlineColor``Color.Accent`配置 時,通常要設置為。
+- 可以將[`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)該屬性設置`true`為 在 iOS 設備上顯示黑色陰影。
+- 將[`Padding`](xref:Xamarin.Forms.Layout.Padding)屬性設定為`Thickness`值 ,在框架和框架的內容之間留出空格。 默認值為20個單位。"
 
-`Frame` 具有 `LayoutOptions.Fill`的預設 `HorizontalOptions` 和 `VerticalOptions` 值，這表示 `Frame` 會填入其容器。 使用其他設定，`Frame` 的大小取決於其內容的大小。
+`Frame`的 預設`HorizontalOptions`值`VerticalOptions``LayoutOptions.Fill`和`Frame`值 ,這意味著將填充其容器。 對於其他設置,的大小`Frame`取決於其內容的大小。
 
-`Frame` 會在[**FramedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText)範例中示範。
+在`Frame`[**框架文字**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FramedText)範例中展示 。
 
-[`BoxView`](xref:Xamarin.Forms.BoxView)會顯示其[`Color`](xref:Xamarin.Forms.BoxView.Color)屬性所指定之色彩的矩形區域。
+將顯示[`BoxView`](xref:Xamarin.Forms.BoxView)由[`Color`](xref:Xamarin.Forms.BoxView.Color)其 屬性指定的矩形顏色區域。
 
-如果 `BoxView` 受到限制（其 `HorizontalOptions` 和 `VerticalOptions` 屬性具有 `LayoutOptions.Fill`的預設設定），則 `BoxView` 會填滿它的可用空間。 如果 `BoxView` 不受限制（具有 `Start`、`Center`或 `End`的 `HorizontalOptions` 和 `LayoutOptions` 設定），則其預設維度為40單位正方形。 `BoxView` 可以在一個維度中受到限制，而不受限制。
+如果`BoxView`受約束(`HorizontalOptions`其`VerticalOptions`和`LayoutOptions.Fill`屬性具有 其預設`BoxView`設置),則填充可用於它的空間。 如果`BoxView`不受約束(`HorizontalOptions``LayoutOptions``Start`與`Center`和`End`的 設置 , 或 ), 它的預設維度為 40 個單位平方。 A`BoxView`可以在一個維度中約束,另一個維度可以不受約束。
 
-通常，您會設定 `BoxView` 的[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)和[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)屬性，以提供特定的大小。 [**SizedBoxView**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView)範例會說明這一點。
+通常,您將設置[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)`BoxView`和 屬性,以賦予其特定大小。 「[**大小框檢視」**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/SizedBoxView)範例說明瞭這一點。
 
-您可以使用數個 `StackLayout` 實例，將 `Frame` 中的 `BoxView` 和數個 `Label` 實例結合，以顯示特定的色彩，然後將這些視圖放在 `StackLayout` 的 `ScrollView` 中，以建立[**ColorBlocks**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks)範例中所顯示的引人入勝色彩清單：
+可以使用`StackLayout`多個實體將 a`BoxView`與`Label`多個實體組合在`Frame`中 以顯示特定顏色,然後將每個檢視放在`StackLayout``ScrollView`中,以建立[**ColorBlock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/ColorBlocks)範例中顯示的有吸引力的顏色清單:
 
-[![顏色塊的三向螢幕擷取畫面](images/ch04fg11-small.png "色彩清單")](images/ch04fg11-large.png#lightbox "色彩清單")
+[![顏色塊的三重螢幕截圖](images/ch04fg11-small.png "顏色清單")](images/ch04fg11-large.png#lightbox "顏色清單")
 
-## <a name="a-scrollview-in-a-stacklayout"></a>StackLayout 中的 ScrollView？
+## <a name="a-scrollview-in-a-stacklayout"></a>堆疊佈局中的滾動視圖?
 
-將 `StackLayout` 放在 `ScrollView` 中是很常見的，但在 `StackLayout` 中放置 `ScrollView` 有時也很方便。 理論上，這不是可行的，因為垂直 `StackLayout` 的子系會垂直地受到限制。 但是 `ScrollView` 必須是垂直限制的。 它必須具有特定的高度，才能判斷其子系的大小以進行滾動。
+將`StackLayout`放入`ScrollView`中很常見,但`ScrollView`放入`StackLayout`中 有時也很方便。 從理論上講,這應該是不可能的,因為垂直`StackLayout`的子級是垂直無約束的。 但是,`ScrollView`必須垂直約束。 必須為其指定特定高度,以便確定其子級用於滾動的大小。
 
-秘訣是將 `StackLayout` 的 `ScrollView` 子系授與 `FillAndExpand`的 `VerticalOptions` 設定。 這會在[**BlackCat**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat)範例中示範。
+訣竅是`ScrollView`給`StackLayout`孩子`VerticalOptions`一個`FillAndExpand`設置。 這一點在[**BlackCat**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCat)示例中進行了演示。
 
-**BlackCat**範例也會示範如何定義和存取內嵌在共用程式庫中的程式資源。 這也可以透過共用資產專案（Sap）來達成，但此程式有點棘手，因為[**BlackCatSap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap)範例會示範。
+**BlackCat**示例還演示如何定義和訪問嵌入在共用庫中的程序資源。 這也可以通過共享資產專案 (SAP) 來實現,但該過程有點棘手,如[**BlackCatSap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/BlackCatSap)示例所示。
 
 ## <a name="related-links"></a>相關連結
 
-- [第4章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf)
-- [第4章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
-- [第 4 F#章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
+- [第四章 全文(PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf)
+- [第四章 樣本](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
+- [第四章 F# 樣品](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
 - [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
 - [BoxView](~/xamarin-forms/user-interface/boxview.md)

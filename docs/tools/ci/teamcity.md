@@ -1,214 +1,213 @@
 ---
-title: 搭配 Xamarin 使用小組城市
-description: 本指南將討論使用 TeamCity 來編譯行動應用程式，然後將其提交至 Xamarin Test Cloud 的相關步驟。
+title: 使用團隊城與薩馬林
+description: 本指南將討論使用 TeamCity 編譯移動應用程式,然後將其提交到應用中心測試所涉及的步驟。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
-ms.date: 03/23/2017
-ms.openlocfilehash: 94bc775366d832e0994b8d3c74a45123ff56c13b
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.date: 04/01/2020
+ms.openlocfilehash: 6ecd453180e8c392ba7d7527778617eb40950a9e
+ms.sourcegitcommit: 6f3281a32017cfcebadde8a2d6e10651a277828f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78293036"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80587457"
 ---
-# <a name="using-team-city-with-xamarin"></a>搭配 Xamarin 使用小組城市
+# <a name="using-team-city-with-xamarin"></a>使用團隊城與薩馬林
 
-_本指南將討論使用 TeamCity 來編譯行動應用程式，然後將其提交至 Xamarin Test Cloud 的相關步驟。_
+_本指南將討論使用 TeamCity 編譯移動應用程式,然後將其提交到應用中心測試所涉及的步驟。_
 
-如[持續整合簡介](~/tools/ci/intro-to-ci.md)指南中所述，持續整合（CI）是開發高品質行動應用程式時的實用做法。 持續整合伺服器軟體有許多可行的選項;本指南將著重于從 JetBrains [TeamCity](https://www.jetbrains.com/teamcity/) 。
+如[《持續集成入門指南》](~/tools/ci/intro-to-ci.md)所述,在開發高質量的移動應用程式時,持續集成 (CI) 是一種有用的實踐。 連續集成伺服器軟體有許多可行的選項;本指南將重點介紹捷腦團隊[城](https://www.jetbrains.com/teamcity/)。
 
-TeamCity 安裝有數個不同的排列。 以下是其中一部分的清單：
+TeamCity 安裝有幾個不同的排列。 下面的清單描述了其中一些排列:
 
-- **Windows 服務**–在此案例中，TeamCity 會在 windows 開機為 windows 服務時啟動。 它必須與 Mac 組建主機配對，才能編譯任何 iOS 應用程式。
+- **Windows 服務**– 在此方案中,團隊城在 Windows 作為 Windows 服務啟動時啟動。 它必須與 Mac 構建主機配對才能編譯任何 iOS 應用程式。
 
-- **在 OS X 上啟動 Daemon** –在概念上，這非常類似于以 Windows 服務的形式執行，如上一個步驟所述。 根據預設，組建會在根帳號下執行。
+- **在 OS X 上啟動守護進程**– 從概念上講,這類似於在上一步中描述的 Windows 服務中所述的運行。 默認情況下,生成將在根帳戶下運行。
 
-- **OS X 上的使用者帳戶**–您可以在每次使用者登入時啟動的使用者帳戶下執行 TeamCity。
+- **OS X 上的使用者帳戶**– 可以在每次使用者登錄時啟動的使用者帳戶下運行 TeamCity。
 
-在先前的案例中，在 OS X 上的使用者帳戶下執行 TeamCity 是最簡單且最容易設定的。
+在前面的方案中,在 OS X 上的使用者帳戶下運行 TeamCity 是最簡單、最簡單的設置。
 
-設定 TeamCity 有幾個步驟：
+設定團隊城涉及幾個步驟:
 
-- **安裝 TeamCity** –本指南未涵蓋 TeamCity 的安裝。 本指南假設 TeamCity 已安裝並在使用者帳戶下執行。 如需[安裝 TeamCity](https://confluence.jetbrains.com/display/TCD8/Installation)的指示，請參閱 JetBrains 的[TeamCity 8 檔](https://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation)。
+- **安裝團隊城**– 本指南中未涵蓋 TeamCity 的安裝。 本指南假定 TeamCity 是在使用者帳戶下安裝和運行的。 有關安裝[TeamCity](https://confluence.jetbrains.com/display/TCD8/Installation)的說明,請參閱 JetBrains 的[TeamCity 8 文檔](https://confluence.jetbrains.com/display/TCD8/TeamCity+Documentation)。
 
-- **準備組建伺服器**–此步驟牽涉到安裝建立行動應用程式所需的必要軟體、工具和憑證，並準備好散發。
+- **準備生成伺服器**– 此步驟涉及安裝構建移動應用程式並準備分發所需的軟體、工具和證書。
 
-- 建立**組建腳本**–此步驟並非絕對必要，但組建腳本是用來自動建立應用程式的實用輔助工具。 使用組建腳本有助於疑難排解可能發生的組建問題，並提供一致、可重複的方式來建立要散發的二進位檔，即使不是練習持續整合也一樣。
+- **創建生成腳本**– 此步驟並非絕對必要,但生成腳本是構建無人值守的應用程式的有用説明。 使用生成腳本將有助於解決可能出現的生成問題,並提供一種一致、可重複的方式創建分發二進位檔案,即使未實踐連續整合也是如此。
 
-- **建立 TeamCity 專案**：在前三個步驟完成後，我們必須建立 TeamCity 專案，其中包含取出原始程式碼、編譯專案及提交測試以 Xamarin Test Cloud 所需的所有中繼資料。
+- **創建團隊城專案**– 完成前三個步驟後,我們必須創建一個團隊城專案,該專案將包含檢索原始程式碼、編譯專案並將測試提交到應用中心測試所需的所有元資料。
 
 ## <a name="requirements"></a>需求
 
-需要具備[App Center 測試](https://docs.microsoft.com/appcenter/test-cloud/)的經驗。
+需要使用[應用中心測試](https://docs.microsoft.com/appcenter/test-cloud/)的經驗。
 
-必須熟悉 TeamCity 8.1。 TeamCity 的安裝已超出本檔的範圍。 假設 TeamCity 是安裝在 OS X Mavericks 上，而且是在一般使用者帳戶下執行，而不是使用根帳號。
+需要熟悉團隊城 8.1。 TeamCity 的安裝超出了本文檔的範圍。 假定 TeamCity 安裝在 OS X 小牛上,並且在常規使用者帳戶下運行,而不是根帳戶。
 
-組建伺服器應該是獨立電腦，執行 OS X，專門用於持續整合。 在理想的情況下，組建伺服器不會負責任何其他角色，例如資料庫伺服器、網頁伺服器或開發人員工作站。
+生成伺服器應該是一台獨立計算機,運行 OS X,專用於持續集成。 理想情況下,生成伺服器不負責任何其他角色,如資料庫伺服器、Web 伺服器或開發人員工作站。
 
 > [!IMPORTANT]
-> 本指南並未涵蓋 Xamarin 的「無周邊」安裝。
+> 本指南不包括 Xamarin 的「無頭」安裝。
 
 [!include[](~/tools/ci/includes/firewall-information.md)]
 
-## <a name="preparing-the-build-server"></a>準備組建伺服器
+## <a name="preparing-the-build-server"></a>準備產生伺服器
 
-設定組建伺服器的重要步驟是安裝所有必要的工具、軟體和憑證，以建立行動應用程式。 請務必讓組建伺服器能夠編譯行動解決方案並執行任何測試。 若要將設定問題降至最低，應將軟體和工具安裝在裝載 TeamCity 的相同使用者帳戶中。 以下是必要功能的清單：
+配置生成伺服器的一個關鍵步驟是安裝構建移動應用程式所需的所有工具、軟體和證書。 生成伺服器可以編譯行動解決方案並運行任何測試,這一點很重要。 為了盡量減少配置問題,軟體和工具應安裝在託管 TeamCity 的同一使用者帳戶中。 以下清單詳細說明了需要的內容:
 
-1. **Visual Studio for Mac** –這包括 [xamarin] 和 [Xamarin. Android]。
-2. **登入 Xamarin 元件存放區**–這是選擇性步驟，只有在您的應用程式使用 Xamarin 元件存放區中的元件時才需要。 此時主動登入元件存放區，將會在 TeamCity 組建嘗試編譯應用程式時，避免發生任何問題。
-3. **Xcode** –編譯和簽署 iOS 應用程式時需要 Xcode。
-4. **Xcode 命令列工具**–在[更新 Ruby 與 Rbenv ruby-build](https://github.com/calabash/calabash-ios/wiki)指南的安裝一節的步驟1中會說明這一點。
-5. **簽署身分識別 & 布建設定檔**–透過 XCode 匯入憑證和布建設定檔。 如需詳細資訊，請參閱 Apple 的匯出簽署身分識別和布建[設定檔](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)指南。
-6. **Android 金鑰庫**–將所需的 Android 金鑰庫複製到 TeamCity 使用者可存取的目錄，亦即 `~/Documents/keystores/MyAndroidApp1`。
-7. **Calabash** –如果您的應用程式具有使用 Calabash 撰寫的測試，這是選擇性步驟。 如需詳細資訊，請參閱在[OS X Mavericks 上安裝 Calabash](https://github.com/calabash/calabash-ios/wiki)指南和[使用 rbenv ruby-build 更新 Ruby](https://github.com/calabash/calabash-ios/wiki)指南。
+1. **適用於 Mac 的視覺工作室**– 這包括 Xamarin.iOS 和 Xamarin.安卓。
+2. **登錄到 Xamarin 元件存儲**– 此步驟是可選的,僅當應用程式使用 Xamarin 元件存儲中的元件時才是必需的。 此時主動登錄到元件存儲將防止 TeamCity 生成嘗試編譯應用程式時出現任何問題。
+3. **Xcode** = Xcode 需要編譯和簽名 iOS 應用程式。
+4. **Xcode 命令列工具**– 這在[使用 rbenv 指南的「更新 Ruby」](https://github.com/calabash/calabash-ios/wiki)安裝部分的步驟 1 中對此進行了介紹。
+5. **簽署識別&預配設定檔**- 透過 XCode 匯入憑證和預配設定檔。 有關詳細資訊,請參閱 Apple 有關[匯出簽名標識和預配配置檔的](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)指南。
+6. **Android 金鑰儲存**- 將所需的 Android 金鑰儲存複製到 TeamCity 使用者`~/Documents/keystores/MyAndroidApp1`有權存取的目錄,即 。
+7. **卡拉巴什**– 如果您的應用程式使用 Calabash 編寫測試,則這是可選步驟。 有關詳細資訊,請參閱[在 OS X 小牛指南上安裝卡拉巴什](https://github.com/calabash/calabash-ios/wiki)指南和使用[rbenv 更新 Ruby](https://github.com/calabash/calabash-ios/wiki)指南。
 
-下圖說明所有這些元件：
+下圖說明了所有這些元件:
 
 ![](teamcity-images/image1.png "This diagram illustrates all of these components")
 
-安裝完所有軟體之後，請登入使用者帳戶，並確認所有軟體都已正確安裝且正常運作。 這應該包括編譯解決方案，並將應用程式提交至測試雲端。 執行組建腳本可大幅簡化這項工作，如下一節所述。
+安裝所有軟體後,登錄到使用者帳戶並確認所有軟體都已正確安裝並正常工作。 這應該涉及編譯解決方案並將應用程式提交到應用中心測試。 這可以通過運行生成腳本來簡化,如下一節所述。
 
-## <a name="create-a-build-script"></a>建立組建腳本
+## <a name="create-a-build-script"></a>建立建立文稿
 
-雖然 TeamCity 可以處理編譯和提交行動應用程式的所有層面，以自行測試雲端，但強烈建議您建立組建腳本。 組建腳本提供下列優點：
+儘管 TeamCity 可以自行處理編譯移動應用程式並將其提交到應用中心測試的所有方面;建議創建生成腳本。 產生文稿具有以下優點:
 
-1. **檔**–組建腳本可做為檔的形式，以瞭解如何建立軟體。 這會移除一些與部署應用程式相關聯的「魔術」，並可讓開發人員專注于功能。
-1. **可重複性**–組建腳本可確保每次編譯和部署應用程式時，都會以完全相同的方式執行，不論工作的物件或作業為何。 這種可重複的一致性會移除可能因為組建或人為錯誤而在中蔓延的任何問題或錯誤。
-1. **版本**控制–組建腳本可以包含在原始檔控制系統中。 這表示如果發現錯誤或不正確，可以追蹤、監視和更正組建腳本的變更。
-1. **準備環境**–組建腳本可以包含安裝任何必要的協力廠商相依性的邏輯。 這可確保應用程式是以適當的元件建立。
+1. **文件**– 生成腳本用作有關如何構建軟體的文檔形式。 這將刪除與部署應用程式相關的一些"魔力",並允許開發人員專注於功能。
+1. **可重複性**– 生成腳本可確保每次編譯和部署應用程式時,無論工作由誰或做什麼,它都會以相同的方式發生。 這種可重複的一致性可消除由於執行不正確的生成或人為錯誤而可能出現的任何問題或錯誤。
+1. **版本控制**– 生成文稿可以包含在原始程式碼管理系統中。 這意味著,如果發現錯誤或不準確,可以跟蹤、監視和更正對生成腳本的更改。
+1. **準備環境**– 生成腳本可以包含安裝任何必需的第三方依賴項的邏輯。 這將確保應用程式使用適當的元件構建。
 
-組建腳本可以簡單到 Powershell 檔案（在 Windows 上）或 bash 腳本（在 OS X 上）。 建立組建腳本時，指令碼語言有幾個選擇：
+生成文稿可以像 PowerShell 檔(在 Windows 上)或 bash 腳本(在 OS X 上)一樣簡單。 建立產生文稿時,文稿語言有多種選擇:
 
-- [**Rake**](https://github.com/jimweirich/rake) –這是用來根據 Ruby 建立專案的特定領域語言（DSL）。 Rake 具有熱門和豐富的程式庫生態系統優勢。
+- [**Rake**](https://github.com/jimweirich/rake) – 這是一種基於 Ruby 構建專案的域特定語言 (DSL)。 Rake 具有普及和豐富的圖書館生態系統的優勢。
 
-- [**psake**](https://github.com/psake/psake) –這是用來建立軟體的 Windows Powershell 程式庫
+- [**psake**](https://github.com/psake/psake) – 這是用於建構軟體的 Windows PowerShell 函式庫
 
-- [**假**](https://fsharp.github.io/FAKE/)–這是以 DSL 為基礎F#的，可讓您在必要時利用現有的 .net 程式庫。
+- [**FAKE**](https://fsharp.github.io/FAKE/) – 這是基於 F# 中的 DSL,因此在必要時可以使用現有的 .NET 庫。
 
-所使用的指令碼語言取決於您的喜好設定和需求。
+使用哪種腳本語言取決於您的首選項和要求。
 
 > [!NOTE]
-> 您可以使用以 XML 為基礎的組建系統（例如 MSBuild 或 NAnt），但這些都缺乏專門用來建立軟體的 DSL 表達和可維護性。
+> 可以使用基於 XML 的建構系統(如 MSBuild 或 NAnt),但這些系統缺乏專用於建構軟體的 DSL 的表達性和可維護性。
 
-### <a name="parameterizing-the-build-script"></a>參數化組建腳本
+### <a name="parameterizing-the-build-script"></a>參數化產生文稿
 
-建立和測試軟體的程式需要保密的資訊。 特別是，建立 APK 可能需要金鑰儲存區的密碼和/或金鑰存放區中的金鑰別名。 同樣地，測試雲端需要開發人員特有的 API 金鑰。 這些類型的值不應該在組建腳本中硬式編碼。 相反地，它們應該以變數的形式傳遞至組建腳本。
+構建和測試軟體的過程需要應保密的資訊。 創建 APK 可能需要金鑰儲存和 /或金鑰存儲中的密鑰別名的密碼。 同樣,應用程式中心測試需要開發人員獨有的[API 金鑰](/appcenter/api-docs/)。 這些類型的值不應在生成腳本中硬編碼。 相反,它們應該作為變數傳遞給生成腳本。
 
-較不敏感的是 iOS 裝置識別碼或 Android 裝置識別碼之類的值，其可識別測試雲端應用於測試回合的裝置。 這些不是需要保護的值，但它們可能會從組建變更為組建。
+不太敏感的是識別應用中心應用於測試運行的設備的值,如 iOS 設備 ID 或 Android 設備 ID。 這些值不是需要保護的值,但它們可能會從生成更改為生成。
 
-將這些類型的變數儲存在組建腳本之外，也可以讓開發人員更輕鬆地在組織內共用組建腳本，例如。 開發人員可以使用與組建伺服器完全相同的腳本，但可以使用自己的金鑰庫和 API 金鑰。
+在生成腳本之外存儲這些類型的變數還便於在組織內與開發人員共用生成腳本,例如。 開發人員可以使用與產生伺服器完全相同的文稿,但可以使用自己的金鑰庫和[API 金鑰](/appcenter/api-docs/)。
 
-有兩個可能的選項可儲存這些敏感值：
+儲存這些敏感值有兩種可能的選項:
 
-- **設定檔**-若要保護測試雲端 API 金鑰，此值不應簽入版本控制中。 您可以為每部電腦建立檔案。 從這個檔案讀取值的方式，取決於所使用的指令碼語言。
+- **設定檔**– 為了保護[API 金鑰](/appcenter/api-docs/),不應將此值簽入版本控制項。 可以為每台電腦創建該檔。 如何從該檔讀取值取決於所使用的腳本語言。
 
-- **環境變數**–這些都可以輕鬆地針對個別電腦設定，並共用與基礎指令碼語言無關。
+- **環境變數**– 這些變數可以輕鬆地基於每台計算機設置,並且獨立於基礎腳本語言。
 
-這些選擇各有其優點和缺點。 TeamCity 適用于環境變數，因此在建立組建腳本時，本指南會建議使用這項技術。
+每個選項都有優缺點。 TeamCity 很好地處理環境變數,因此本指南將在創建生成腳本時推薦此技術。
 
-### <a name="build-steps"></a>組建步驟
+### <a name="build-steps"></a>產生步驟
 
-組建腳本必須能夠執行下列步驟：
+產生文稿必須執行以下步驟:
 
-- **編譯應用程式**–這包括使用正確的布建設定檔簽署應用程式。
+- **編譯應用程式**– 這包括使用正確的預配配置檔對應用程式進行簽名。
 
-- 將**應用程式提交至 Xamarin Test Cloud** –這包括使用適當的金鑰存放區將 APK 的簽署和 zip 對齊。
+- **將應用程式提交到 Xamarin 測試雲**– 這包括簽名和壓縮 APK 與相應的密鑰庫對齊。
 
-下面將更詳細說明這兩個步驟。
+下面將更詳細地解釋這兩個步驟。
 
-#### <a name="compiling-a-xamarinios-application"></a>編譯 Xamarin iOS 應用程式
+#### <a name="compiling-a-xamarinios-application"></a>編譯 Xamarin.iOS 應用程式
 
 [!include[](~/tools/ci/includes/commandline-compile-of-xamarin-ios-ipa.md)]
 
-#### <a name="compiling-a-xamarinandroid-application"></a>編譯 Xamarin Android 應用程式
+#### <a name="compiling-a-xamarinandroid-application"></a>編譯 Xamarin.安卓應用程式
 
-若要編譯 Android 應用程式，請使用**xbuild** （或 Windows 上的**msbuild** ）：
+要編譯 Android 應用程式,請使用**xbuild(** 或 Windows 上的**msbuild):**
 
 ```bash
 /Library/Frameworks/Mono.framework/Commands/xbuild /t:SignAndroidPackage /p:Configuration=Release /path/to/android.csproj
 ```
+編譯 Android 應用程式**xbuild**使用專案,而 iOS 應用程式**xbuild**使用解決方案。
 
-請注意，若要編譯 Xamarin Android 應用程式**xbuild** ，會使用專案，而若要建立 iOS 應用程式**xbuild** ，則需要解決方案。
+#### <a name="submitting-xamarinuitests-to-app-center"></a>向應用程式中心提交 Xamarin.UI 測試
 
-#### <a name="submitting-xamarinuitests-to-test-cloud"></a>將 Uitest 提交至測試雲端
-
-Uitest 是使用 `test-cloud.exe` 應用程式提交的，如下列程式碼片段所示：
-
-```bash
-test-cloud.exe <path-to-apk-or-ipa-file> <test-cloud-team-api-key> --devices <device-selection-id> --assembly-dir <path-to-tests-containing-test-assemblies> --nunit-xml report.xml --user <email>
-```
-
-執行測試時，會**以名為**NUNIT 的 xml 檔案格式傳回測試結果。 TeamCity 將會在組建記錄檔中顯示資訊。
-
-如需如何將 Uitest 提交至測試雲端的詳細資訊，請參閱[準備 Xamarin Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)或[準備 xamarin 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)。
-
-#### <a name="submitting-calabash-tests-to-test-cloud"></a>將 Calabash 測試提交至測試雲端
-
-Calabash 測試會使用 `test-cloud` gem 來提交，如下列程式碼片段所示：
+UI測試使用[應用中心 CLI](https://github.com/microsoft/appcenter-cli)提交,如以下代碼段所示:
 
 ```bash
-test-cloud submit /path/to/APK-or-IPA <test-cloud-team-api-key> --devices <device-id> --user <email>
+appcenter test run uitest --app <TEAM-NAME/APP-NAME> --devices <DEVICE_SET> --token <API_KEY> --app-path <appname.APK-or-appname.IPA> --merge-nunit-xml report.xml --build-dir pathToUITestBuildDir
 ```
 
-若要將 Android 應用程式提交至測試雲端，必須先使用 calabash-Android 重建 APK 測試伺服器：
+運行測試時,測試結果將以 NUnit 樣式 XML 檔(稱為**report.xml)** 的形式返回。 TeamCity 將在生成日誌中顯示資訊。
+
+有關如何向應用中心提交 UI 測試的詳細資訊,請參閱準備[Xamarin.Android 應用](/appcenter/test-cloud/uitest/preparing-for-upload-android)或[準備 Xamarin.iOS 應用](/appcenter/test-cloud/uitest/preparing-for-upload-ios)。
+
+#### <a name="submitting-calabash-tests-to-app-center"></a>向應用中心提交卡拉巴什測試
+
+卡拉巴什測試使用[應用中心 CLI](https://github.com/microsoft/appcenter-cli)提交,如以下代碼段所示:
+
+```bash
+appcenter test run calabash --app <TEAM-NAME/APP-NAME> --devices <DEVICE_SET> --token <API_KEY> --app-path <appname.APK-or-appname.IPA> --project-dir pathToProjectDir
+```
+
+要將 Android 應用程式提交到應用中心測試,必須首先使用 calabash-android 重建 APK 測試伺服器:
 
 ```bash
 $ calabash-android build </path/to/signed/APK>
-$ test-cloud submit /path/to/APK <test-cloud-team-api-key> --devices <ANDROID_DEVICE_ID> --profile=android --config=config/cucumber.yml --pretty
+$ appcenter test run calabash --app <TEAM-NAME/APP-NAME> --devices <DEVICE_SET> --token <API_KEY> --app-path <appname.APK> --project-dir pathToProjectDir
 ```
 
-如需提交 Calabash 測試的詳細資訊，請參閱[將 Calabash 測試提交至測試雲端](https://github.com/calabash/calabash-ios/wiki)的 Xamarin 指南。
+有關提交卡拉巴什測試的更多資訊,請參閱 Xamarin 的關於[將卡拉巴什測試提交測試雲](https://github.com/calabash/calabash-ios/wiki)的指南。
 
-## <a name="creating-a-teamcity-project"></a>建立 TeamCity 專案
+## <a name="creating-a-teamcity-project"></a>建立團隊城市項目
 
-安裝 TeamCity 並 Visual Studio for Mac 可以建立您的專案之後，即可在 TeamCity 中建立專案，以建立專案並將其提交至測試雲端。
+安裝 TeamCity 和 Mac 的可視化工作室可以構建您的專案後,是時候在 TeamCity 中創建專案來生成專案並將其提交到應用中心。
 
-1. 透過網頁瀏覽器登入 TeamCity 來啟動。 流覽至根專案：
+1. 首先通過 Web 瀏覽器登錄到 TeamCity。 導覽到根專案:
 
-    ![流覽至根專案](teamcity-images/image2.png "流覽至根專案")在根專案底下，建立新的子專案：
+    ![瀏覽到根項目](teamcity-images/image2.png "瀏覽到根項目")在根專案下方,建立新的子專案:
 
-    ![流覽至根專案底下的根專案，建立新的子專案](teamcity-images/image3.png "流覽至根專案底下的根專案，建立新的子專案")
-2. 建立子專案之後，請加入新的組建設定：
+    ![瀏覽到根項目下面的根項目建立新的子專案](teamcity-images/image3.png "瀏覽到根項目下面的根項目建立新的子專案")
+2. 建立子項目後,新增新的產生配置:
 
-    ![建立子專案之後，新增組建設定](teamcity-images/image5.png "建立子專案之後，新增組建設定")
-3. 將 VCS 專案附加至組建設定。 這是透過 [版本控制設定] 畫面來完成：
+    ![建立子項目後,新增新的產生配置](teamcity-images/image5.png "建立子項目後,新增新的產生配置")
+3. 將 VCS 專案附加到生成配置。 這通過版本控制設定螢幕完成:
 
-    ![這是透過 [版本控制設定] 畫面來完成](teamcity-images/image6.png "這是透過 [版本控制設定] 畫面來完成")
+    ![這是透過版本控制設定螢幕完成的](teamcity-images/image6.png "這是透過版本控制設定螢幕完成的")
 
-    如果沒有建立任何 VCS 專案，您可以選擇從新的 VCS 根頁面建立一個，如下所示：
+    如果沒有創建 VCS 專案,則可以從下面的「新 VCS 根」頁創建一個專案:
 
-    ![如果沒有建立任何 VCS 專案，您可以選擇從新的 [VCS 根] 頁面建立一個](teamcity-images/image7.png "如果沒有建立任何 VCS 專案，您可以選擇從新的 [VCS 根] 頁面建立一個")
+    ![如果沒有創建 VCS 專案,則可以從「新 VCS 根」頁建立一個專案](teamcity-images/image7.png "如果沒有建立 VCS 專案,則可以選擇從「新 VCS 根」頁建立一個專案")
 
-    附加了 VCS 根之後，TeamCity 將會簽出項目，並嘗試自動偵測組建步驟。 如果您熟悉 TeamCity，則可以選取其中一個偵測到的組建步驟。 現在您可以放心地忽略偵測到的組建步驟。
+    附加 VCS 根後,TeamCity 將簽出專案並嘗試自動檢測生成步驟。 如果您熟悉 TeamCity,則可以選擇檢測到的生成步驟之一。 現在可以安全地忽略檢測到的生成步驟。
 
-4. 接下來，設定組建觸發程式。 這會在符合特定條件時將組建排入佇列，例如當使用者將程式碼認可至存放庫時。 下列螢幕擷取畫面顯示如何新增組建觸發程式：
+4. 接下來,配置生成觸發器。 這將在滿足某些條件(例如使用者將代碼提交到存儲庫時)對生成進行排隊。 以下螢幕擷取如何新增產生觸發器:
 
-    ![此螢幕擷取畫面顯示如何新增組建觸發](teamcity-images/image8.png "此螢幕擷取畫面顯示如何新增組建觸發程式")程式您可以在下列螢幕擷取畫面中，看到設定組建觸發程式的範例：
+    ![此螢幕擷取如何新增產生觸發器](teamcity-images/image8.png "此螢幕擷取如何新增產生觸發器")設定產生觸發器的範例可在以下螢幕截圖中看到:
 
-    ![在此螢幕擷取畫面中，可以看到設定組建觸發程式的範例](teamcity-images/image9.png "在此螢幕擷取畫面中，可以看到設定組建觸發程式的範例")
+    ![在這裡螢幕擷取設定產生觸發器的範例](teamcity-images/image9.png "在這裡螢幕擷取設定產生觸發器的範例")
 
-5. 上一節會將組建腳本參數化，建議您將一些值儲存為環境變數。 這些變數可以透過 [參數] 畫面新增至組建設定。 新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數，如下列螢幕擷取畫面所示：
+5. 上一節"參數化生成腳本"建議將某些值存儲為環境變數。 這些變數可以通過"參數"螢幕添加到生成配置中。 新增應用中心[API 金鑰](/appcenter/api-docs/)、iOS 設備 ID 和 Android 設備 ID 的變數,如下圖所示:
 
-    ![新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數](teamcity-images/image11.png "新增測試雲端 API 金鑰、iOS 裝置識別碼和 Android 裝置識別碼的變數")
+    ![新增應用中心測試 API 金鑰、iOS 裝置 ID 和 Android 裝置 ID 的變數](teamcity-images/image11.png "新增測試雲 API 金鑰、iOS 裝置 ID 和 Android 裝置 ID 的變數")
 
-6. 最後一個步驟是新增一個會叫用組建腳本的組建步驟，以編譯應用程式，並將應用程式加入至測試雲端。 下列螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例：
+6. 最後一步是添加一個生成步驟,該步驟將調用生成腳本來編譯應用程式並將應用程式排隊到應用中心測試。 以下螢幕擷取 Rakefile 產生應用程式的產生步驟的範例:
 
-    ![這個螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例](teamcity-images/image12.png "這個螢幕擷取畫面是使用 Rakefile 建立應用程式的組建步驟範例")
+    ![此螢幕擷取 Rakefile 建構應用程式的產生步驟的範例](teamcity-images/image12.png "此螢幕擷取 Rakefile 建構應用程式的產生步驟的範例")
 
-7. 此時，組建設定已完成。 建議您觸發組建，以確認專案已正確設定。 執行此動作的好方法是，對存放庫認可少量且不重要的變更。 TeamCity 應該會偵測到認可並啟動組建。
+7. 此時,生成配置已完成。 最好觸發生成以確認專案配置正確。 執行此操作的一個好方法是對存儲庫提交一個小的、微不足道的更改。 TeamCity 應檢測提交並啟動生成。
 
-8. 組建完成後，請檢查組建記錄檔，並查看是否有任何需要注意的組建發生問題或警告。
+8. 生成完成後,檢查生成日誌,並查看生成是否有任何問題或警告需要注意。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
-本指南涵蓋如何使用 TeamCity 來建立 Xamarin 行動應用程式，然後將其提交至測試雲端。 我們已討論如何建立組建腳本，以將組建程式自動化。 組建腳本會負責編譯應用程式、提交至測試雲端，以及等待結果
+本指南介紹了如何使用 TeamCity 構建 Xamarin 行動應用程式,然後將其提交到應用中心測試。 我們討論了創建生成腳本以自動執行生成過程。 生成腳本負責編譯應用程式、提交到應用中心測試以及等待結果。
 
-接著，我們討論了如何在 TeamCity 中建立專案，每次開發人員認可程式碼並呼叫組建腳本時，都會將組建排入佇列。
+然後,我們介紹了如何在 TeamCity 中創建一個專案,該專案將在開發人員提交代碼並調用生成腳本時對生成進行排隊。
 
 ## <a name="related-links"></a>相關連結
 
-- [準備 Xamarin Android 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)
-- [準備 Xamarin iOS 應用程式](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)
-- [安裝和設定 TeamCity](https://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)
+- [準備 Xamarin.安卓應用程式](/appcenter/test-cloud/uitest/preparing-for-upload-android)
+- [準備 Xamarin.iOS 應用程式](/appcenter/test-cloud/uitest/preparing-for-upload-ios)
+- [安裝與設定團隊城](https://confluence.jetbrains.com/display/TCD8/Installing+and+Configuring+the+TeamCity+Server)

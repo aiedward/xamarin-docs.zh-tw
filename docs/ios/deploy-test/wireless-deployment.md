@@ -9,10 +9,10 @@ ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: b0eb471bd41bb38d62ced38ed66cfa0dfee37bbf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73023415"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
@@ -27,14 +27,14 @@ Visual Studio for Mac 和 Visual Studio 皆提供無線部署功能。
 
 您必須擁有下列項目才能使用無線部署：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 - macOS 10.12.4
 - 最新版本的 Visual Studio for Mac
 - Xcode 9.0 或更新版本
 - 具有 iOS 11.0 或 tvOS 11.0 和更新版本的裝置
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 - 最新版本的 Visual Studio
 - 具有 iOS 11.0 或 tvOS 11.0 和更新版本的裝置
@@ -57,21 +57,21 @@ Mac 組建主機上應該安裝下列元件：
 
 ### <a name="pairing-an-ios-device-with-xcode"></a>讓 iOS 裝置與 Xcode 配對
 
-1. 開啟 Xcode，然後移至 [視窗] > [裝置和模擬器]。
-2. 使用 Lightning 纜線將 iOS 裝置插入 Mac。 您可能需要在裝置上選取 [信任這台電腦]。
-3. 選取您的裝置，然後選取 [透過網路連線] 核取方塊來為裝置配對：![顯示 [透過網路連線] 選項的 [裝置和模擬器] 視窗](wireless-deployment-images/image2.png)
+1. 開啟 Xcode，然後移至 [視窗] > [裝置和模擬器]****。
+2. 使用 Lightning 纜線將 iOS 裝置插入 Mac。 您可能需要在裝置上選取 [信任這台電腦]****。
+3. 選取您的裝置，然後選取 [透過網路連線]**** 核取方塊來為裝置配對：![顯示 [透過網路連線] 選項的 [裝置和模擬器] 視窗](wireless-deployment-images/image2.png)
 
 ### <a name="pairing-an-apple-tv-with-xcode"></a>讓 Apple TV 與 Xcode 配對
 
 1. 確定 Mac 和 Apple TV 已連線至相同網路。
 
-2. 開啟 Xcode，然後移至 [視窗] > [裝置和模擬器]。
+2. 開啟 Xcode，然後移至 [視窗] > [裝置和模擬器]****。
 
-3. 在 Apple TV 中，移至 [設定] > [遙控器和裝置] > [遠端應用程式和裝置]。
+3. 在 Apple TV 中，移至 [設定] > [遙控器和裝置] > [遠端應用程式和裝置]****。
 
-4. 在 Xcode 的 [找到的項目] 區域中選取 Apple TV，然後輸入 Apple TV 上顯示的驗證碼。
+4. 在 Xcode 的 [找到的項目]**** 區域中選取 Apple TV，然後輸入 Apple TV 上顯示的驗證碼。
 
-5. 按一下 [連線] 按鈕。 成功配對時，Apple TV 旁邊會出現網路連線圖示。
+5. 按一下 [連接]**** 按鈕。 成功配對時，Apple TV 旁邊會出現網路連線圖示。
 
 ## <a name="deploy-to-a-device"></a>部署到裝置
 
@@ -93,7 +93,7 @@ Mac 組建主機上應該安裝下列元件：
 
 1. 一律要確定 iOS 裝置或 Apple TV 已連線至和 Mac 相同的網路。
 
-2. 如果 Visual Studio 中未顯示裝置，請檢查 Xcode 的 [裝置和模擬器] 視窗。 
+2. 如果 Visual Studio 中未顯示裝置，請檢查 Xcode 的 [裝置和模擬器]**** 視窗。 
 
     - 如果 Xcode **未**顯示裝置為已連線狀態，請試著再次[配對](#pair)裝置。
 

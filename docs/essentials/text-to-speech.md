@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials:文字轉換語音
+title: 'Xamarin.Essentials: Text-to-Speech'
 description: Xamarin.Essentials 中的 TextToSpeech 類別可讓應用程式利用內建的文字轉換語音引擎將裝置的文字說出來，也可以查詢引擎可支援的可用語言。
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 6d89f70a8b7f6229297f86deb3cb83cf940fa7df
-ms.sourcegitcommit: 4f8dc5298a95d591a59e97cdd347fd82858a1019
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66469470"
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:文字轉換語音
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Text-to-Speech
 
 **TextToSpeech** 類別可讓應用程式利用內建的文字轉換語音引擎將裝置的文字說出來，也可以查詢引擎可支援的可用語言。
 
@@ -113,10 +113,10 @@ public async Task SpeakNow()
 
 以下是這些參數支援的值：
 
-| 參數 | 最低 | 最大值 |
+| 參數 | 最小值 | 最大值 |
 | --- | :---: | :---: |
 | 音調 | 0 | 2.0 |
-| 音量 | 0 | 1.0 |
+| 磁碟區 | 0 | 1.0 |
 
 ### <a name="speech-locales"></a>語音地區設定
 

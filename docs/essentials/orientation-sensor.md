@@ -1,23 +1,23 @@
 ---
-title: Xamarin.Essentials:OrientationSensor
+title: 'Xamarin.Essentials: OrientationSensor'
 description: OrientationSensor 類別可讓您監視裝置在三維空間中的方向。
 ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 5423872da7966bc7e4bb88e278d76b709f114158
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70120707"
 ---
-# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials:OrientationSensor
+# <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials: OrientationSensor
 
 **OrientationSensor** 類別可讓您監視裝置在三維空間中的方向。
 
 > [!NOTE]
-> 此類別可用來判斷裝置在 3D 空間中的方向。 若需要判斷裝置的影片顯示器是直向或橫向模式，請使用 `ScreenMetrics` 物件 (位於 [`DeviceDisplay`](device-display.md) 類別) 中的 `Orientation` 屬性。
+> 此類別可用來判斷裝置在 3D 空間中的方向。 如果需要確定設備的視頻顯示是處於縱向或橫向模式,請使用`Orientation``ScreenMetrics`[`DeviceDisplay`](device-display.md)類中可用的物件的屬性。
 
 ## <a name="get-started"></a>開始使用
 
@@ -74,7 +74,7 @@ public class OrientationSensorTest
 }
 ```
 
-`OrientationSensor` 讀數是以 [`Quaternion`](xref:System.Numerics.Quaternion) 的形式回報，它以兩個 3D 座標系統為基礎來描述裝置的方向：
+`OrientationSensor`讀數以[`Quaternion`](xref:System.Numerics.Quaternion)描述 基於兩個 3D 座標系的裝置方向的 讀數的形式報告回來:
 
 裝置 (通常是手機或平板電腦) 具有含有下列座標軸的 3D 座標系統：
 
@@ -96,7 +96,7 @@ public class OrientationSensorTest
 
 這些是右手座標系統，因此右手的拇指指向旋轉軸的正方向，食指的曲線指出正角度的旋轉方向。
 
-例如：
+範例：
 
 - 當裝置平放在桌上且螢幕朝上，且裝置頂端 (直向模式) 指向北邊時，兩個座標系統相對齊。 `Quaternion` 值代表識別四元數 (0, 0, 0, 1)。 所有旋轉都能以相對於此位置的方式來分析。
 

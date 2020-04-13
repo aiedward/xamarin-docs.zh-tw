@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 107b2a970041c70bb021b03dd98f8c91eaea8d34
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771752"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 視訊
@@ -54,7 +54,7 @@ namespace FormsVideoLibrary
 }
 ```
 
-`Source` 屬性的類型為 `VideoSource`，其模式是根據 Xamarin.Forms [`ImageSource`](xref:Xamarin.Forms.ImageSource) 抽象類別建立，且具有三個衍生類別：[`UriImageSource`](xref:Xamarin.Forms.UriImageSource)、[`FileImageSource`](xref:Xamarin.Forms.FileImageSource)，及 [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource)。 但是，`VideoPlayer` 沒有任何可用的串流選項，因為 iOS 和 Android 不支援播放來自串流的視訊。
+屬性`Source`的類型`VideoSource`為 ,其[`ImageSource`](xref:Xamarin.Forms.ImageSource)模式以 Xamarin.forms 抽象類別及其[`UriImageSource`](xref:Xamarin.Forms.UriImageSource)三[`FileImageSource`](xref:Xamarin.Forms.FileImageSource)個[`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource)導數, 和 。 但是，`VideoPlayer` 沒有任何可用的串流選項，因為 iOS 和 Android 不支援播放來自串流的視訊。
 
 ## <a name="video-sources"></a>視訊來源
 
@@ -225,7 +225,7 @@ namespace FormsVideoLibrary.iOS
 
 之後，當 `Source` 屬性變更時，便會使用 "Source" 的 `PropertyName` 屬性呼叫 `OnElementPropertyChanged` 方法，並再次呼叫 `SetSource`。
 
-若要在 iOS 上播放視訊檔案，會先建立 [`AVAsset`](xref:AVFoundation.AVAsset) 類型的物件來封裝視訊檔案，然後用它來建立 [`AVPlayerItem`](xref:AVFoundation.AVPlayerItem)，之後再交給 `AVPlayer` 物件。 以下是 `SetSource` 方法處理 `Source` 屬性的方式 (當其類型為 `UriVideoSource` 時)：
+要在 iOS 中播放影片檔,[`AVAsset`](xref:AVFoundation.AVAsset)首先建立類型物件以封裝影片檔,該物件用於[`AVPlayerItem`](xref:AVFoundation.AVPlayerItem)創建`AVPlayer`, 然後交給 物件。 以下是 `SetSource` 方法處理 `Source` 屬性的方式 (當其類型為 `UriVideoSource` 時)：
 
 ```csharp
 namespace FormsVideoLibrary.iOS
@@ -449,7 +449,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>設定 URL 來源
 
-使用在三個轉譯器中這些屬性的實作，便可以播放來自 URL 來源的視訊。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程式中的 [Play Web Video] \(播放 Web 視訊\) 頁面會由下列 XAML 檔案定義：
+使用在三個轉譯器中這些屬性的實作，便可以播放來自 URL 來源的視訊。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程式中的 [Play Web Video] \(播放 Web 視訊\)**** 頁面會由下列 XAML 檔案定義：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -463,7 +463,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-`VideoSourceConverter` 類別會將字串轉換成 `UriVideoSource`。 當您巡覽到 [Play Web Video] \(播放 Web 視訊\) 頁面時，便會開始載入視訊，並在下載及緩衝的資料數量足夠時開始播放。 視訊的長度約 10 分鐘：
+`VideoSourceConverter` 類別會將字串轉換成 `UriVideoSource`。 當您巡覽到 [Play Web Video] \(播放 Web 視訊\)**** 頁面時，便會開始載入視訊，並在下載及緩衝的資料數量足夠時開始播放。 視訊的長度約 10 分鐘：
 
 [![播放 Web 視訊](web-videos-images/playwebvideo-small.png "播放 Web 視訊")](web-videos-images/playwebvideo-large.png#lightbox "播放 Web 視訊")
 
@@ -476,7 +476,7 @@ namespace FormsVideoLibrary.UWP
                    AutoPlay="false" />
 ```
 
-您將需要按下 [播放] 按鈕來開始播放視訊。
+您將需要按下 [播放]**** 按鈕來開始播放視訊。
 
 同樣地，您可以透過將 `AreTransportControlsEnabled` 屬性設為 `false`，來隱藏顯示傳輸控制項：
 
@@ -521,4 +521,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相關連結
 
-- [Video Player Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) (視訊播放程式示範 (範例))
+- [影片播放程式示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

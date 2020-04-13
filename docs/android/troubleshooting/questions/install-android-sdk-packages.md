@@ -8,43 +8,43 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2018
 ms.openlocfilehash: 24c70c2e869f59091a1519af6d1165dbea9cc467
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "78292472"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>應該安裝哪一個 Android SDK 套件？
 
-安裝 Android SDK 不會自動包含開發所需的所有必要套件。 雖然個別的開發人員需要不同，但一般會需要下列套件，才能使用 Xamarin 進行開發：
+安裝 Android SDK 不會自動包含開發所需的所有軟體包。 雖然各個開發人員的需求各不相同,但使用 Xamarin.Android 進行開發通常需要以下套件:
 
 ## <a name="tools"></a>工具
 
-從 SDK 管理員中的 [工具] 資料夾安裝最新的工具：
+在 SDK 管理員中從「工具」資料夾中安裝最新工具:
 
-- Android SDK Tools
-- Android SDK 平臺-工具
-- Android SDK 組建工具
+- Android SDK 工具
+- Android SDK 平台工具
+- Android SDK 建置工具
 
-## <a name="android-platforms"></a>Android 平臺
+## <a name="android-platforms"></a>安卓平臺
 
-針對您已設定為最小 & 目標的 Android 版本，安裝「SDK 平臺」。
+安裝"SDK 平臺",適用於已設置為最低&目標的 Android 版本。
 
 範例：
 
 - 目標 API 23
-- 最低 API 23
+- 最小 API 23
 
-只需要安裝適用于 API 23 的 SDK 平臺
+只需為 API 23 安裝 SDK 平台
 
 - 目標 API 23
 - 最小 API 15
 
-需要安裝適用于 API 15 和23的 SDK 平臺。 請注意，您不需要在最小和目標之間安裝 API 層級（即使您後期才考慮至這些 API 層級）。
+需要為 API 15 和 23 安裝 SDK 平臺。 請注意,您不需要在最小值和目標級別之間安裝 API 級別(即使您正在回移植到這些 API 級別)。
 
-## <a name="system-images"></a>系統映射
+## <a name="system-images"></a>系統映像
 
-只有當您想要使用 Google 的現成 Android 模擬器時，才需要這些元件。 如需詳細資訊，請參閱[Android Emulator 安裝程式](~/android/get-started/installation/android-emulator/index.md)
+只有當您想要使用 Google 的開箱即用的 Android 模擬器時,才需要這些模擬器。 有關詳細資訊,請參閱[Android 模擬器設定](~/android/get-started/installation/android-emulator/index.md)
 
 ## <a name="extras"></a>額外項目
-通常不需要 Android SDK 額外專案;但請注意，因為它們可能需要視您的使用案例而定。
+通常不需要 Android SDK 附加功能;但是了解它們很有用,因為根據您的用例,可能需要它們。

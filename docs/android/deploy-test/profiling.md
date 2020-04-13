@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 04/03/2018
 ms.openlocfilehash: fbd9fff6e7b63e86f0bba38f22025c5ea288f7c2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027994"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 應用程式
@@ -39,7 +39,7 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 
 下列步驟說明如何在 Android Studio 的 Android Profiler 工具中啟動 Xamarin Android 應用程式。 在下面的範例螢幕擷取畫面中，Xamarin Forms [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) 應用程式已建立，且使用 Android Profiler 分析：
 
-1. 在 Android 專案建置選項中，停用 [使用共用執行階段]。 這可確保在不依賴共用的開發階段 Mono 執行階段的情況下，建置 Android 應用程式套件 (APK)。
+1. 在 Android 專案建置選項中，停用 [使用共用執行階段]****。 這可確保在不依賴共用的開發階段 Mono 執行階段的情況下，建置 Android 應用程式套件 (APK)。
 
     ![停用 [使用共用執行階段]](profiling-images/vswin/01-turn-off-shared-runtime.png)
 
@@ -48,13 +48,13 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 
 3. 開啟專案資料夾並巡覽至 **bin/Debug**。 在這個資料夾中，找到應用程式的 **Signed.apk** 版本，並將它複製到方便存取的位置 (例如桌面)。 在下列螢幕擷取畫面中，找到 APK **com.companyname.XamagonXuzzle Signed.apk** 並複製到桌面：
 
-    [![偵錯已簽署 APK 檔案的位置](profiling-images/vswin/02-locating-the-debug-apk-sml.png)](profiling-images/vswin/02-locating-the-debug-apk.png#lightbox)
+    [![除錯簽章 APK 檔的位置](profiling-images/vswin/02-locating-the-debug-apk-sml.png)](profiling-images/vswin/02-locating-the-debug-apk.png#lightbox)
 
 4. 啓動 Android Studio 並選取**設定檔或偵錯 APK**：
 
     ![從 Android Studio 啟動畫面啓動分析工具](profiling-images/vswin/03-android-studio.png)
 
-5. 在 選取 APK 檔案 對話方塊中，巡覽至您之前建立並複製的 APK。 選取 APK 然後按一下 [確定]： 
+5. 在 [選取 APK 檔案]****] 對話方塊中，巡覽至您之前建立並複製的 APK。 選取 APK 然後按一下 [確定]****： 
     
     ![在 [選取 APK 檔案] 對話方塊中選取 APK](profiling-images/vswin/04-select-apk-dialog.png)
 
@@ -62,43 +62,43 @@ Android Studio 3.0 和更新版本包含 Android Profiler 工具。 您可以使
 
     ![設定 APK](profiling-images/vswin/05-setting-up-the-apk.png)
 
-7. 載入 APK 後，Android Studio 會顯示以下 APK 專案畫面。 以滑鼠右鍵按一下左側樹狀檢視中的應用程式名稱，然後選取 [Open Module Settings] \(開啟模組設定\)：
+7. 載入 APK 後，Android Studio 會顯示以下 APK 專案畫面。 以滑鼠右鍵按一下左側樹狀檢視中的應用程式名稱，然後選取 [Open Module Settings] \(開啟模組設定\)****：
 
-    [![[Open Module Settings] \(開啟模組設定\) 功能表項目的位置](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
+    [![開啟模組設定選單項目的位置](profiling-images/vswin/06-open-module-settings-sml.png)](profiling-images/vswin/06-open-module-settings.png#lightbox)
 
-8. 巡覽至 [專案設定] > [模組]，選取應用程式的 **-Signed** 節點，然後按一下 [&lt;無 SDK&gt;]：
+8. 巡覽至 [專案設定] > [模組]****，選取應用程式的 **-Signed** 節點，然後按一下 [&lt;無 SDK&gt;]****：
 
-    [![巡覽至 SDK 設定](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
+    [![瀏覽到 SDK 設定](profiling-images/vswin/07-project-settings-modules-sml.png)](profiling-images/vswin/07-project-settings-modules.png#lightbox)
 
-9. 在 [Module SDK] \(模組 SDK\) 下拉式功能表中，選取用來建置應用程式的 Android SDK 層級 (本範例使用 API 層級 26 建置 **XamagonXuzzle**)：
+9. 在 [Module SDK] \(模組 SDK\)**** 下拉式功能表中，選取用來建置應用程式的 Android SDK 層級 (本範例使用 API 層級 26 建置 **XamagonXuzzle**)：
 
-    [![設定專案 SDK 層級](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
+    [![設定專案 SDK 等級](profiling-images/vswin/08-project-sdk-level-sml.png)](profiling-images/vswin/08-project-sdk-level.png#lightbox)
 
-    按一下 [套用] 和 [確定] 儲存這個設定。
+    按一下 [套用]**** 和 [確定]**** 儲存這個設定。
 
 10. 從工具列圖示啟動分析工具：
 
-    [![分析工具工具列圖示的位置](profiling-images/vswin/09-launch-profiler-sml.png)](profiling-images/vswin/09-launch-profiler.png#lightbox)
+    [![探查工具列圖示的位置](profiling-images/vswin/09-launch-profiler-sml.png)](profiling-images/vswin/09-launch-profiler.png#lightbox)
 
-11. 選取執行/分析應用程式的部署目標，然後按一下 [確定]。 部署目標可以是在模擬器中執行的實體裝置或虛擬裝置。 本範例中使用 Nexus 5X 裝置：
+11. 選取執行/分析應用程式的部署目標，然後按一下 [確定]****。 部署目標可以是在模擬器中執行的實體裝置或虛擬裝置。 本範例中使用 Nexus 5X 裝置：
 
     ![選取部署目標](profiling-images/vswin/10-select-deployment-target.png)
 
 12. 分析工具啟動後，會花數秒鐘連接到部署裝置和應用程式處理序。 在安裝 APK 時，Android Profiler 會報告**無連接的裝置**和**無可偵錯的處理序**。
 
-    [![分析工具安裝 APK](profiling-images/vswin/11-no-connected-devices-sml.png)](profiling-images/vswin/11-no-connected-devices.png#lightbox)
+    [![探查器安裝 APK](profiling-images/vswin/11-no-connected-devices-sml.png)](profiling-images/vswin/11-no-connected-devices.png#lightbox)
 
 13. 幾秒之後，Android Profiler 會完成 APK 安裝並啟動 APK，報告裝置名稱以及正在分析的應用程式處理序名稱 (在本範例中分別是 **LGE Nexus 5X** 和 **com.companyname.XamagonXuzzle**)：
 
-    [![啓動後的分析工具視窗](profiling-images/vswin/12-profiler-starts-sml.png)](profiling-images/vswin/12-profiler-starts.png#lightbox)
+    [![啟動後探查器視窗](profiling-images/vswin/12-profiler-starts-sml.png)](profiling-images/vswin/12-profiler-starts.png#lightbox)
 
 14. 找到裝置和可偵錯的處理程序之後，Android Profiler 就會開始分析應用程式：
 
-    [![正在執行的應用程式分析工具顯示畫面](profiling-images/vswin/13-profiler-running-sml.png)](profiling-images/vswin/13-profiler-running.png#lightbox)
+    [![顯示正在執行的應用程式的探查器](profiling-images/vswin/13-profiler-running-sml.png)](profiling-images/vswin/13-profiler-running.png#lightbox)
 
-15. 如果您點選 **XamagonXuzzle** 上的 [RANDOMIZE] 按鈕 (這會造成它移位並隨機化磚)，就會看到 CPU 使用量在應用程式隨機間隔期間增加：
+15. 如果您點選 **XamagonXuzzle** 上的 [RANDOMIZE]**** 按鈕 (這會造成它移位並隨機化磚)，就會看到 CPU 使用量在應用程式隨機間隔期間增加：
 
-    [![點選 [RANDOMIZE] 按鈕後的 CPU 使用量](profiling-images/vswin/14-tap-randomize-sml.png)](profiling-images/vswin/14-tap-randomize.png#lightbox)
+    [![點擊隨機按鍵時的 CPU 使用率](profiling-images/vswin/14-tap-randomize-sml.png)](profiling-images/vswin/14-tap-randomize.png#lightbox)
 
 ### <a name="using-the-android-profiler"></a>使用 Android Profiler
 

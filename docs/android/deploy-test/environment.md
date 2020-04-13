@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028064"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android 環境
@@ -30,7 +30,7 @@ adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
 Android 系統屬性會針對目標裝置上所有的處理序進行設定。
 
-從 Xamarin.Android 4.6 開始，系統屬性和環境變數都可藉由將「環境檔案」新增至專案，以每個應用程式為基礎來進行設定或覆寫。 環境檔案是一個帶有 [`AndroidEnvironment` **建置動作**](~/android/deploy-test/building-apps/build-process.md)的 UNIX 格式純文字檔案。
+從 Xamarin.Android 4.6 開始，系統屬性和環境變數都可藉由將「環境檔案」** 新增至專案，以每個應用程式為基礎來進行設定或覆寫。 環境檔案是一個帶有 [`AndroidEnvironment`**建置動作**](~/android/deploy-test/building-apps/build-process.md)的 UNIX 格式純文字檔案。
 環境檔案包含以此格式撰寫的行：*key=value*。
 註解是開頭為 `#` 的行。 空白行會遭到忽略。
 
@@ -48,8 +48,8 @@ Xamarin.Android 支援 `XA_HTTP_CLIENT_HANDLER_TYPE` 變數，可透過 `adb she
 
 在 Xamarin.Android 6.1 中，預設不會設定環境變數，並且會使用 [HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1)。
 
-或者，`Xamarin.Android.Net.AndroidClientHandler` 的值可以指定為針對網路存取使用 [`java.net.URLConnection`](xref:Java.Net.URLConnection)，
-「可」允許使用 TLS 1.2 (若 Android 支援它的話)。
+或者,可以指定`Xamarin.Android.Net.AndroidClientHandler`該值以使用[`java.net.URLConnection`](xref:Java.Net.URLConnection)
+「可」** 允許使用 TLS 1.2 (若 Android 支援它的話)。
 
 已在 Xamarin.Android 6.1 中新增。
 
@@ -89,24 +89,24 @@ Xamarin.Android 支援下列系統屬性，可透過 `adb shell setprop` 或 `$(
 控制 Xamarin.Android 記錄到 `adb logcat` 的額外資訊。
 它是一個逗號分隔的字串 (`,`)，包含下列值中的其中一個：
 
-- `all`：印出「所有」訊息。 這通常不是一個好主意，因為其包含了 `lref` 訊息。
+- `all`：印出「所有」** 訊息。 這通常不是一個好主意，因為其包含了 `lref` 訊息。
 - `assembly`：印出 `.apk` 和組件剖析訊息。
 - `gc`：印出與 GC 相關的訊息。
 - `gref`：印出 JNI 全域參考訊息。
 - `lref`：印出 JNI 區域參考訊息。
   > [!NOTE]
-  > 這*真的*會 `adb logcat`垃圾郵件。
-  > 在 Xamarin.Android 5.1 中，這也會建立一個 `.__override__/lrefs.txt` 檔案，該檔案可能會變得「非常大」。
+  > 這「真的」** 會讓 `adb logcat` 充斥許多垃圾訊息。
+  > 在 Xamarin.Android 5.1 中，這也會建立一個 `.__override__/lrefs.txt` 檔案，該檔案可能會變得「非常大」**。
   > 請避免。
 - `timing`：印出某些方法計時資訊。 這也會建立 `.__override__/methods.txt` 及 `.__override__/counters.txt` 檔案。
 
 ### `debug.mono.max_grefc`
 
 `debug.mono.max_grefc` 系統屬性的值為一個整數。
-它的值會「覆寫」針對目標裝置預設偵測到的最大 GRF 計數。
+它的值會「覆寫」** 針對目標裝置預設偵測到的最大 GRF 計數。
 
-注意：這僅在使用 `adb shell setprop
-debug.mono.max_grefc` 時可用，因為該值在使用 **environment.txt** 檔案時將無法及時可用。
+*請注意:* 這僅可用於,`adb shell setprop
+debug.mono.max_grefc`因為該值在**環境.txt**檔中不能及時使用。
 
 ### `debug.mono.profile`
 
@@ -122,21 +122,21 @@ debug.mono.max_grefc` 時可用，因為該值在使用 **environment.txt** 檔�
 `debug.mono.trace` 系統屬性會啟用追蹤。
 它相當於 `mono --trace` 選項，並且使用相同的值。 (請參閱 [**mono**(1)](http://docs.go-mono.com/?link=man%3amono(1)) 手冊頁面以取得詳細資訊。)
 
-一般情況下，「請勿使用」。 使用追蹤會讓 `adb logcat` 輸出充斥垃圾訊息，嚴重降低程式行為的速度，並會改變程式的行為 (最高並會包含導致其他錯誤狀況)。
+一般情況下，「請勿使用」**。 使用追蹤會讓 `adb logcat` 輸出充斥垃圾訊息，嚴重降低程式行為的速度，並會改變程式的行為 (最高並會包含導致其他錯誤狀況)。
 
-然而，「有時候」，它可讓您執行一些額外的調查...
+然而，「有時候」**，它可讓您執行一些額外的調查...
 
 ### `debug.mono.wref`
 
 `debug.mono.wref` 系統屬性會允許覆寫預設偵測到的 JNI 弱式參考機制。 有兩個支援的值：
 
 - `jni`：使用 JNI 弱式參考，由 `JNIEnv::NewWeakGlobalRef()` 建立並由 `JNIEnv::DeleteWeakGlobalREf()` 終結。
-- `java`：使用參考 `java.lang.WeakReference` 實例的 JNI 全域參考。
+- `java`:使用引用`java.lang.WeakReference`實例的 JNI 全域引用。
 
 直到 API-7 及啟用 ART 的 API-19 (Kit Kat) 都會預設使用 `java`。 (API-8 新增 `jni` 參考，ART 會*破壞* `jni` 參考。)
 
 此系統屬性在測試及特定形式的調查時很有用。
-「一般情況下」，您不應變更它。
+「一般情況下」**，您不應變更它。
 
 ### <a name="xa_http_client_handler_type"></a>XA\_HTTP\_CLIENT\_HANDLER\_TYPE
 

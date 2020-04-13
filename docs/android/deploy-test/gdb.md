@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
 ms.openlocfilehash: 51ebb8932f4b1ef8f10ba699e59ce53c98a38a50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021478"
 ---
 # <a name="gdb"></a>GDB
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 Xamarin.Android 4.10 引進了透過 `_Gdb` MSBuild 目標來使用 `gdb` 的部分支援。 
 
@@ -57,7 +57,7 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 `_Gdb` 目標會建立一個 `gdb-symbols` 目錄，並將您目標 `/system/lib` 及 `$APPDIR/lib` 目錄中的內容複製到該目錄。
 
 > [!NOTE]
-> `gdb-symbols` 目錄中的內容會繫結至您部署到的 Android 目標，並且不會在您變更目標時自動取代。 （請將此視為錯誤）。如果您變更 Android 目標裝置，就必須手動刪除此目錄。
+> `gdb-symbols` 目錄中的內容會繫結至您部署到的 Android 目標，並且不會在您變更目標時自動取代。 (將此視為一個錯誤。如果您更改 Android 目標設備,則需要手動刪除此目錄。
 
 最後，複製產生的 `gdb` 命令並在您的殼層中執行它：
 

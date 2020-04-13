@@ -1,5 +1,5 @@
 ---
-title: 適用于 Xamarin 的 android 可呼叫包裝函式
+title: Xamarin.安卓的安卓可調用包裝器
 ms.prod: xamarin
 ms.assetid: C33E15FA-1E2B-819A-C656-CA588D611492
 ms.technology: xamarin-android
@@ -7,38 +7,38 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 7278fd624bb3147c2e1a1a1a79adde68813a9888
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020158"
 ---
-# <a name="android-callable-wrappers-for-xamarinandroid"></a>適用于 Xamarin 的 android 可呼叫包裝函式
+# <a name="android-callable-wrappers-for-xamarinandroid"></a>Xamarin.安卓的安卓可調用包裝器
 
-每當 Android 執行時間叫用 managed 程式碼時，都需要 android 可呼叫包裝函式（ACWs）。 這些包裝函式是必要的，因為沒有任何方法可以在執行時間以美工（Android 執行時間）註冊類別。 （具體而言，Android 執行時間不支援[JNI DefineClass （）函數](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp15986)。} 因此，Android 可呼叫包裝函式會產生不足的執行時間類型註冊支援。 
+每當 Android 執行時調用託管代碼時,都需要 Android 可呼叫包裝器 (ACWs)。 這些包裝器是必需的,因為無法在運行時向 ART(Android 運行時)註冊類。 (具體來說,Android 運行時不支援[JNI 定義類() 功能](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/functions.html#wp15986)。 因此,Android 可調用包裝器彌補運行時類型註冊支援的不足。 
 
-*每次*Android 程式碼必須執行 `overridden` 或在 managed 程式碼中執行的 `virtual` 或介面方法，Xamarin。 Android 必須提供 JAVA proxy，才能將此方法分派至適當的 managed 類型。 這些 JAVA proxy 類型是 JAVA 程式碼，其具有「相同」基類和 JAVA 介面清單做為 managed 類型，它會執行相同的函式，並宣告任何覆寫的基類和介面方法。 
+*每次*Android 代碼需要執行`virtual`在託管代碼中`overridden`實現或實現的或介面方法,Xamarin.Android 必須提供 JAVA 代理,以便將此方法發送到相應的託管類型。 這些 Java 代理類型是 JAVA 代碼,具有與託管類型相同的基類和 Java 介面清單,實現相同的構造函數並聲明任何重寫的基類和介面方法。 
 
-Android 可呼叫包裝函式會在[建立](~/android/deploy-test/building-apps/build-process.md)程式期間由**monodroid**所產生：它們會針對（直接或間接）繼承[JAVA. lang.ini 物件](xref:Java.Lang.Object)的所有類型產生。 
+Android 可呼叫包裝器由**單體.exe**程式[在生成過程中](~/android/deploy-test/building-apps/build-process.md)生成:它們為(直接或間接)繼承[JAva.Lang.Object.](xref:Java.Lang.Object). 
 
-## <a name="android-callable-wrapper-naming"></a>Android 可呼叫包裝函式命名
+## <a name="android-callable-wrapper-naming"></a>安卓可呼叫包裝器命名
 
-Android 可呼叫包裝函式的封裝名稱是根據所匯出之類型的元件限定名稱的 CHECK MD5SUM。 這種命名技巧可以讓相同的完整型別名稱提供給不同的元件，而不會產生封裝錯誤。 
+Android 可調用包裝器的包名稱基於要匯出類型的程式集限定名稱的 MD5SUM。 這種命名技術使不同的程式集能夠使用相同的完全限定類型名稱,而不會引入打包錯誤。 
 
-由於此 CHECK MD5SUM 命名配置，您無法依名稱直接存取您的類型。 例如，下列 `adb` 命令將無法使用，因為預設不會產生類型名稱 `my.ActivityType`： 
+由於此 MD5SUM 命名方案,因此您不能按名稱直接存取類型。 例如,以下`adb`指令將不起作用,因為預設情況下不會產生類型`my.ActivityType`名稱 : 
 
 ```shell
 adb shell am start -n My.Package.Name/my.ActivityType
 ```
 
-此外，如果您嘗試依名稱參考類型，您可能會看到類似下面的錯誤：
+此外,如果您嘗試按名稱引用類型,則可能會看到如下所示的錯誤:
 
 ```shell
 java.lang.ClassNotFoundException: Didn't find class "com.company.app.MainActivity"
 on path: DexPathList[[zip file "/data/app/com.company.App-1.apk"] ...
 ```
 
-如果您*需要依*名稱存取類型，您可以在屬性宣告中宣告該類型的名稱。 例如，以下程式碼會宣告具有完整名稱 `My.ActivityType`的活動：
+如果*確實需要*按名稱訪問類型,則可以在屬性聲明中聲明該類型的名稱。 例如,下面是宣告具有完全限定名稱`My.ActivityType`的活動的代碼:
 
 ```csharp
 namespace My {
@@ -49,7 +49,7 @@ namespace My {
 }
 ```
 
-您可以設定 `ActivityAttribute.Name` 屬性，以明確宣告此活動的名稱： 
+可以將`ActivityAttribute.Name`該屬性設定為顯式宣告此活動的名稱: 
 
 ```csharp
 namespace My {
@@ -60,7 +60,7 @@ namespace My {
 }
 ```
 
-加入這個屬性設定之後，就可以從外部程式碼和 `adb` 的腳本，以名稱來存取 `my.ActivityType`。 您可以針對許多不同的類型（包括 `Activity`、`Application`、`Service`、`BroadcastReceiver`和 `ContentProvider`）來設定 `Name` 屬性： 
+新增此屬性設定後,`my.ActivityType`可以透過外部`adb`代碼和文稿的名稱進行訪問。 可以為`Name`許多不同類型的屬性`Activity`設定,包括、、、`Application``Service``BroadcastReceiver`與`ContentProvider`: 
 
 - [ActivityAttribute.Name](xref:Android.App.ActivityAttribute.Name)
 - [ApplicationAttribute.Name](xref:Android.App.ApplicationAttribute.Name)
@@ -68,13 +68,13 @@ namespace My {
 - [BroadcastReceiverAttribute.Name](xref:Android.Content.BroadcastReceiverAttribute.Name)
 - [ContentProviderAttribute.Name](xref:Android.Content.ContentProviderAttribute.Name)
 
-CHECK MD5SUM 為基礎的 ACW 命名是在 Xamarin. Android 5.0 中引進。 如需屬性命名的詳細資訊，請參閱[RegisterAttribute](xref:Android.Runtime.RegisterAttribute)。 
+基於MD5SUM的ACW命名在Xamarin.Android 5.0中引入。 有關屬性命名的詳細資訊,請參閱[註冊屬性](xref:Android.Runtime.RegisterAttribute)。 
 
 ## <a name="implementing-interfaces"></a>實作介面
 
-有時候，您可能需要實作為 android 介面，例如[IComponentCallbacks](xref:Android.Content.IComponentCallbacks)。 由於所有 Android 類別和介面都會擴充[IJAVAObject](xref:Android.Runtime.IJavaObject)介面，因此會發生問題：我們要如何執行 `IJavaObject`？ 
+有時您可能需要實現 Android 介面,如[Android.Content.I 元件回撥](xref:Android.Content.IComponentCallbacks)。 由於所有Android類和介面都擴展了[Android.Runtime.IJavaObject](xref:Android.Runtime.IJavaObject)介面,問題就出現了:我們如何實現`IJavaObject`? 
 
-上述問題已獲得解答：所有 Android 型別都需要實作為 `IJavaObject` 的原因是為了讓 Xamarin 擁有可提供給 Android 的 Android 可呼叫包裝函式，亦即指定類型的 JAVA proxy。 由於**monodroid**只會尋找 `Java.Lang.Object` 子類別，而 `Java.Lang.Object` 會實作為答案 `IJavaObject,`：子類別 `Java.Lang.Object`： 
+上面回答了這個問題:所有 Android 類型`IJavaObject`都需要實現 的原因是使 Xamarin.Android 具有一個 Android 可調用包裝器提供給 Android,即給定類型的 Java 代理。 由於**單體.exe**`Java.Lang.Object`只查找子`Java.Lang.Object`類,`IJavaObject,`並且實現 答案是顯而易見的`Java.Lang.Object`:子類: 
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -93,9 +93,9 @@ class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbac
 
 ## <a name="implementation-details"></a>實作詳細資料
 
-*此頁面的其餘部分提供可能變更的執行詳細資料，恕不另行通知*（而且只會在此顯示，因為開發人員會想知道發生什麼情況）。 
+*本頁的其餘部分提供實現詳細資訊,恕不另行通知即可更改*(此處僅介紹,因為開發人員會對正在發生的事情感到好奇)。 
 
-例如，假設有下列C#來源：
+例如,給定以下 C# 源:
 
 ```csharp
 using System;
@@ -115,7 +115,7 @@ namespace Mono.Samples.HelloWorld
 }
 ```
 
-**Mandroid**程式將會產生下列 Android 可呼叫包裝函式： 
+**mandroid.exe**程式將生成以下 Android 可呼叫包裝器: 
 
 ```java
 package mono.samples.helloWorld;
@@ -150,4 +150,4 @@ public class HelloAndroid
 }
 ```
 
-請注意，會保留基類，並針對在 managed 程式碼中覆寫的每個方法提供 `native` 的方法宣告。 
+請注意,基類已保留,並且為`native`託管代碼中重寫的每個方法提供方法聲明。 

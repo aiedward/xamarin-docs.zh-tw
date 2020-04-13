@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/25/2019
 ms.openlocfilehash: 2ed51763b5866c15e91d88a6a1a58c7285fb5973
-ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72749772"
 ---
 # <a name="xamarinforms-shell-lifecycle"></a>Xamarin.Forms Shell 生命週期
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-Shell 應用程式採用 Xamarin.Forms 生命週期，在頁面即將出現在螢幕上時引發 `Appearing` 事件，在頁面即將從螢幕中消失時引發 `Disappearing` 事件。 這些事件會傳播至頁面，並可藉由覆寫頁面的 [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 或 [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) 方法來處理。
+Shell 應用程式採用 Xamarin.Forms 生命週期，在頁面即將出現在螢幕上時引發 `Appearing` 事件，在頁面即將從螢幕中消失時引發 `Disappearing` 事件。 這些事件傳播到頁面,可以通過重寫頁面上[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)[`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing)的 或 方法來處理。
 
 > [!NOTE]
 > 在 Shell 應用程式中，在平台程式碼顯示頁面或從螢幕中移除頁面之前，即會從跨平台程式碼引發 `Appearing` 和 `Disappearing` 事件。

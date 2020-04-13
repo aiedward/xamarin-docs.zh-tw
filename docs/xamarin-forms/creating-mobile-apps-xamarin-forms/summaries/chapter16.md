@@ -1,6 +1,6 @@
 ---
-title: 第16章的摘要。 資料繫結
-description: 使用 Xamarin 建立 Mobile Apps：第16章的摘要。 資料繫結
+title: 第16章摘要。 資料繫結
+description: 使用 Xamarin.表單創建行動應用程式:第 16 章摘要。 資料繫結
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
@@ -8,139 +8,139 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771096"
 ---
-# <a name="summary-of-chapter-16-data-binding"></a>第16章的摘要。 資料繫結
+# <a name="summary-of-chapter-16-data-binding"></a>第16章摘要。 資料繫結
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
 
 > [!NOTE] 
-> 此頁面上的附注指出 Xamarin 從書籍中呈現的材料中分歧的區域。
+> 本頁的註釋指示 Xamarin.Forms 與本書中介紹的材料有分歧的領域。
 
-程式設計人員通常會發現自己撰寫的事件處理常式，會偵測到某個物件的屬性何時變更，並使用它來變更另一個物件中的屬性值。 此程式可以使用*資料*系結的技術來自動化。 資料系結通常是在 XAML 中定義，並成為使用者介面定義的一部分。
+程式師經常發現自己正在編寫事件處理程式,以檢測一個物件的屬性何時發生更改,並使用它更改另一個對象中屬性的值。 這個過程可以通過*數據綁定*技術實現自動化。 數據綁定通常在 XAML 中定義,並成為使用者介面定義的一部分。
 
-這些資料系結通常會將使用者介面物件連接到基礎資料。 這是在第18章中更深入探討的技術[ **。MVVM**](chapter18.md)。 不過，資料系結也可以連接兩個或多個使用者介面元素。 本章中大部分的資料系結早期範例都會示範這項技術。
+通常,這些數據綁定將使用者介面物件連接到基礎數據。 這是第 18 章中本文中本文中本文本文中本文本文中本文本文對此進行深入探討的技術[**。MVVM**](chapter18.md). 但是,數據綁定還可以連接兩個或多個用戶介面元素。 本章中的大部分早期數據綁定範例演示了此技術。
 
-## <a name="binding-basics"></a>系結基本概念
+## <a name="binding-basics"></a>繫結基礎知識
 
-資料系結牽涉到數個屬性、方法和類別：
+資料繫結涉及多個屬性、方法和類別:
 
-- [`Binding`](xref:Xamarin.Forms.Binding)類別衍生自[`BindingBase`](xref:Xamarin.Forms.BindingBase) ，並封裝資料系結的許多特性
-- [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)屬性是由[`BindableObject`](xref:Xamarin.Forms.BindableObject)類別所定義
-- [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))方法也是由[`BindableObject`](xref:Xamarin.Forms.BindableObject)類別所定義
-- [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions)類別會定義三個額外的 `SetBinding` 方法
+- 該[`Binding`](xref:Xamarin.Forms.Binding)類派生[`BindingBase`](xref:Xamarin.Forms.BindingBase)自 並封裝了數據綁定的許多特徵
+- 屬性[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)由[`BindableObject`](xref:Xamarin.Forms.BindableObject)類別定義
+- 該方法[`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))也由[`BindableObject`](xref:Xamarin.Forms.BindableObject)類別定義
+- 該[`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions)類別定義了三種`SetBinding`其他 方法
 
-下列兩個類別支援系結的 XAML 標記延伸：
+以下兩個類別支援器 XAML 標籤延伸:
 
-- [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension)支援 `Binding` 標記延伸
-- [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)支援 `x:Reference` 標記延伸
+- [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension)支援`Binding`標籤延伸
+- [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension)支援`x:Reference`標籤延伸
 
-資料系結牽涉到兩個介面：
+資料繫結涉及兩個介面:
 
-- `System.ComponentModel` 命名空間中的[`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)是在屬性變更時用來執行通知
-- [`IValueConverter`](xref:Xamarin.Forms.IValueConverter)可用來定義在資料系結中，將值從一個類型轉換成另一種的小型類別
+- [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)命名`System.ComponentModel`空間中用於在屬性變更時執行通知
+- [`IValueConverter`](xref:Xamarin.Forms.IValueConverter)定義在資料繫結中將值從一種類型轉換為另一種類型的小類別
 
-資料系結會連接相同物件的兩個屬性，或（更常見）兩個不同的物件。 這兩個屬性稱為「*來源*」和「*目標*」。 一般來說，source 屬性中的變更會導致目標屬性發生變更，但有時方向會相反。 忽略
+數據繫結連接同一物件的兩個屬性,或(更常見)兩個不同的物件。 這兩個屬性稱為*源**和目標。* 通常,源屬性的更改會導致目標屬性中發生更改,但有時方向將反轉。 無論:
 
-- *目標*屬性必須受到[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)的支援
-- *來源*屬性通常是可執行之類別的成員[`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)
+- *目標*屬性必須由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)
+- *來源*屬性通常是實作[`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)
 
-當屬性變更值時，執行的類別會引發[`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged)事件 `INotifyPropertyChanged`。 `BindableObject` 會在 `BindableProperty` 所支援的屬性變更值時，執行 `INotifyPropertyChanged` 並自動引發 `PropertyChanged` 事件，但您可以撰寫自己的類別來實 `INotifyPropertyChanged`，而不需要從 `BindableObject`衍生。
+在屬性更改值`INotifyPropertyChanged`時[`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged)實現 事件的類。 `BindableObject`當`INotifyPropertyChanged``PropertyChanged``BindableProperty`由 值支援的屬性時實現並自動觸發事件,但您可以編寫`INotifyPropertyChanged`自己的實作類別,而無需`BindableObject`派生自 。
 
-## <a name="code-and-xaml"></a>程式碼和 XAML
+## <a name="code-and-xaml"></a>代碼與 XAML
 
-[**OpacityBindingCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingCode)範例會示範如何在程式碼中設定資料系結：
+[**不一部份繫結程式的程式**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingCode)範例如何在代碼中設定資料繫結:
 
-- 來源是 `Slider` 的 `Value` 屬性
-- 目標是 `Label` 的 `Opacity` 屬性
+- 源是`Value``Slider`
+- 目標是`Opacity``Label`
 
-這兩個物件會藉由將 `Label` 物件的 `BindingContext` 設定為 `Slider` 物件來進行連接。 這兩個屬性的連接方式是在參考 `OpacityProperty` 可系結屬性的 `Label` 上呼叫[`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*)擴充方法，以及以字串表示之 `Slider` 的 `Value` 屬性。
+通過將物件的物件`BindingContext`設置`Label``Slider`為 物件,將兩個對象連接。 這兩個[`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*)`Label`屬性通過在引用`OpacityProperty`可 綁定`Value`屬性和 作為字串表示`Slider`的屬性 上調用擴展方法進行連接。
 
-操作 `Slider` 會導致 `Label` 淡入和移出畫面。
+操作`Slider``Label`然後會導致淡入和淡出視圖。
 
-[**OpacityBindingXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingXaml)是與 XAML 中的資料系結集相同的程式。 `Label` 的 `BindingContext` 會設定為參考 `Slider`的 `x:Reference` 標記延伸，而 `Opacity` 的 `Label` 屬性會設定為 `Binding` 標記延伸，其[`Path`](xref:Xamarin.Forms.Binding.Path)屬性會參考 `Value` 的 `Slider`屬性。
+[**不一致 BindingXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingXaml)與 XAML 中的數據綁定集是同一程式。 的`BindingContext``Label`設定為參考`x:Reference`的`Slider`標記延伸,並將`Opacity`的屬性`Label`設定`Binding`為 標記延伸[`Path`](xref:Xamarin.Forms.Binding.Path),屬性`Value`參考的屬性參考的`Slider`屬性 。
 
-## <a name="source-and-bindingcontext"></a>來源和 BindingCoNtext
+## <a name="source-and-bindingcontext"></a>來源與繫結上下文
 
-[**BindingSourceCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode)範例顯示程式碼中的替代方法。 `Binding` 物件的建立方式是將[`Source`](xref:Xamarin.Forms.Binding.Source)屬性設為 `Slider` 物件，並將[`Path`](xref:Xamarin.Forms.Binding.Path)屬性設定為 "Value"。 然後在 `Label` 物件上呼叫 `BindableObject` 的[`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))方法。
+[**綁定原始程式碼**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode)範例在代碼中顯示了替代方法。 通過將`Binding`[`Source`](xref:Xamarin.Forms.Binding.Source)屬性設置`Slider`為 物件[`Path`](xref:Xamarin.Forms.Binding.Path),將 屬性設置為"值"來創建物件。 然後在[`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))`Label`物件`BindableObject`上 調用 方法。
 
-[`Binding`](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object))的函式也可以用來定義 `Binding` 物件。
+構造函數 也可用於`Binding`定義 物件。 [ `Binding`](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object))
 
-[**BindingSourceXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml)範例顯示 XAML 中可比較的技術。 `Label` 的 `Opacity` 屬性會設定為 `Binding` 標記延伸， [`Path`](xref:Xamarin.Forms.Binding.Path)設定為 `Value` 屬性， [`Source`](xref:Xamarin.Forms.Binding.Source)設定為內嵌的 `x:Reference` 標記延伸。
+[**綁定SourceXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml)示例顯示了 XAML 中的可比技術。 `Label`的屬性`Opacity`設置`Binding`為 標記[`Path`](xref:Xamarin.Forms.Binding.Path)擴展,`Value`將設置為[`Source`](xref:Xamarin.Forms.Binding.Source)屬性,並`x:Reference`設置為嵌入 標記擴展。
 
-總而言之，有兩種方式可以參考系結來源物件：
+總之,有兩種方法可以引用綁定源物件:
 
-- 透過目標的 `BindingContext` 屬性
-- 透過 `Binding` 物件本身的 `Source` 屬性
+- 以目標`BindingContext`屬性
+- `Source`透過物件本身的屬性`Binding`
 
-如果同時指定這兩者，則會優先使用第二個。 `BindingContext` 的優點是它會透過視覺化樹狀結構傳播。 如果多個目標屬性系結至相同的來源物件，這就*很*方便。
+如果兩者均指定,則第二個優先。 的優點`BindingContext`是它通過可視化樹傳播。 如果多個目標屬性綁定到同一源物件,則此功能*非常*方便。
 
-[**WebViewDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WebViewDemo)程式會使用[`WebView`](xref:Xamarin.Forms.WebView)元素來示範這項技術。 向後導覽的兩個 `Button` 元素會繼承其父系中參考 `WebView`的 `BindingContext`。 這兩個按鈕的 `IsEnabled` 屬性接著會有簡單的 `Binding` 標記延伸，其會根據[`CanGoBack`](xref:Xamarin.Forms.WebView.CanGoBack)的設定以及`CanGoForward`的唯讀屬性[，以](xref:Xamarin.Forms.WebView.CanGoForward)按鈕 `IsEnabled` 屬性為目標。`WebView`
+[**WebViewDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WebViewDemo)程式[`WebView`](xref:Xamarin.Forms.WebView)使用 元素展示此技術。 向`Button`後與向前瀏覽的兩個元素`BindingContext`從參考的父元素`WebView`繼承 。 然後`IsEnabled`,兩個按鈕的屬性具有`Binding`簡單的 標記擴展,這些擴展`IsEnabled`[`CanGoBack`](xref:Xamarin.Forms.WebView.CanGoBack)基於 按鈕[`CanGoForward`](xref:Xamarin.Forms.WebView.CanGoForward)`WebView`屬性的設置 和唯讀屬性。
 
-## <a name="the-binding-mode"></a>系結模式
+## <a name="the-binding-mode"></a>繫結模式
 
-將 `Binding` 的[`Mode`](xref:Xamarin.Forms.BindingBase.Mode)屬性設定為[`BindingMode`](xref:Xamarin.Forms.BindingMode)列舉的成員：
+設定[`Mode`](xref:Xamarin.Forms.BindingBase.Mode)為`Binding`枚舉的成員: [`BindingMode`](xref:Xamarin.Forms.BindingMode)
 
-- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) ，讓 source 屬性中的變更影響目標
-- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) ，以便目標屬性中的變更會影響來源
-- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) ，以讓來源和目標中的變更彼此影響
-- [`Default`](xref:Xamarin.Forms.BindingMode.Default)在建立目標 `BindableProperty` 時，使用指定的[`DefaultBindingMode`](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) 。 如果未指定任何，則一般可系結屬性的預設值為 `OneWay`，而 `OneWayToSource` 適用于唯讀的可系結屬性。
+- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay)以便來源屬性中的變更影響目標
+- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource)以目標屬性中改變影響來源
+- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)以便源和目標的變化相互影響
+- [`Default`](xref:Xamarin.Forms.BindingMode.Default)使用創建目標[`DefaultBindingMode`](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode)時指定的`BindableProperty`。 如果未指定,則預設值為`OneWay`普通可綁定屬性和`OneWayToSource`唯讀可綁定屬性。
 
 > [!NOTE]
-> `BindingMode` 列舉現在也包含只有在系結內容變更時才套用系結的 `OnTime`，而當來源屬性變更時，則不會套用。
+> 現在`BindingMode`,枚舉還`OnTime`包括 僅在綁定上下文更改時而不是在源屬性更改時應用綁定。
 
-在 MVVM 案例中，可能是資料系結目標的屬性通常會有 `TwoWay`的 `DefaultBindingMode`。 它們是：
+在 MVVM 專案中可能成為資料連結的目標的屬性通常具有`DefaultBindingMode``TwoWay`的 。 它們是：
 
-- `Value`和 `Slider` 的 `Stepper` 屬性
-- `IsToggled` 的 `Switch` 屬性
-- `Entry`、`Editor`和 `SearchBar` 的 `Text` 屬性
-- `Date` 的 `DatePicker` 屬性
-- `Time` 的 `TimePicker` 屬性
+- `Slider`和 `Stepper` 的 `Value` 屬性
+- `Switch` 的 `IsToggled` 屬性
+- `Text`屬性`Entry``Editor`, 與`SearchBar`
+- `DatePicker` 的 `Date` 屬性
+- `TimePicker` 的 `Time` 屬性
 
-[**BindingModes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingModes)範例會示範具有資料系結的四個系結模式，其中目標是 `Label` 的 `FontSize` 屬性，而來源是 `Slider`的 `Value` 屬性。 這可讓每個 `Slider` 控制對應 `Label`的字型大小。 但是 `Slider` 的元素不會初始化，因為 `FontSize` 屬性的 `DefaultBindingMode` 是 `OneWay`的。
+[**綁定模式**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingModes)範`FontSize`例 演示了具有資料綁定的四種綁定模式,其中目標`Label`為 屬性`Value``Slider`,源是的屬性。 這允許每個`Slider`控制件相應的`Label`字型大小。 但是,`Slider`元素沒有初始化`DefaultBindingMode`,`FontSize`因為屬性`OneWay`的是 。
 
-[**ReverseBinding**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ReverseBinding)範例會在 `Slider` 參考每個 `Label`之 `FontSize` 屬性的 `Value` 屬性（property）上設定系結。 這似乎是回溯的，但在查閱 `Slider` 元素時效果更好，因為 `Slider` 的 `Value` 屬性有 `TwoWay`的 `DefaultBindingMode`。
+[**反向繫結**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ReverseBinding)定`Value`範`Slider`例設定`FontSize``Label`引用每個 屬性的屬性上的綁定。 這似乎是`Slider`向後的,但它在初始化元素時效果更好`Value`, 因為`Slider`的屬性`DefaultBindingMode``TwoWay`具有 。
 
-[![反向系結的三向螢幕擷取畫面](images/ch16fg06-small.png "反向系結")](images/ch16fg06-large.png#lightbox "反向系結")
+[![反向繫結的三重螢幕截圖](images/ch16fg06-small.png "反向繫結")](images/ch16fg06-large.png#lightbox "反向繫結")
 
-這類似于在 MVVM 中定義系結的方式，而您會經常使用這種類型的系結。
+這類似於在 MVVM 中定義綁定的方式,您將經常使用這種類型的綁定。
 
 ## <a name="string-formatting"></a>字串格式
 
-當目標屬性的類型是 `string`時，您可以使用 `BindingBase` 所定義的[`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat)屬性，將來源轉換成 `string`。 將 [`StringFormat`] 屬性設定為您要搭配靜態[`String.Format`](xref:System.String.Format(System.String,System.Object))格式使用的 .net 格式字串，以顯示物件。 在標記延伸中使用此格式化字串時，請使用單引號括住，讓大括弧不會被視為內嵌標記延伸。
+當目標屬性`string`為類型時,可以使用[`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat)`BindingBase`定義的 屬性將源`string`轉換為 。 將`StringFormat`屬性設定為 .NET 格式字串,用於[`String.Format`](xref:System.String.Format(System.String,System.Object))靜態 格式以顯示物件。 在標記擴展中使用此格式字串時,使用單個引弧括起來,這樣大括弧就不會被誤認為是嵌入的標記擴展。
 
-[**ShowViewValues**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues)範例會示範如何在 XAML 中使用 `StringFormat`。
+[**"ShowViewValue"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues)範例展示`StringFormat`如何 在 XAML 中使用。
 
-[**WhatSizeBindings**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WhatSizeBindings)範例會示範如何使用系結至 `Width` 的 `Height` 和 `ContentPage`的屬性，來顯示頁面的大小。
+[**WhatSizeBindings**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WhatSizeBindings)範例展示具有 綁`Width``Height`定的頁面大小`ContentPage`。
 
-## <a name="why-is-it-called-path"></a>為什麼稱之為「Path」？
+## <a name="why-is-it-called-path"></a>為什麼它被稱為「路徑」?
 
-`Binding` 的[`Path`](xref:Xamarin.Forms.Binding.Path)屬性會呼叫，因為它可以是以句點分隔的一系列屬性和索引子。 [**BindingPathDemos**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingPathDemos)範例會顯示數個範例。
+[`Path`](xref:Xamarin.Forms.Binding.Path)屬性`Binding`之所以如此調用,是因為它可以是一系列屬性和索引器,由句點分隔。 [**綁定路徑演示範例**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingPathDemos)顯示了幾個範例。
 
-## <a name="binding-value-converters"></a>系結值轉換器
+## <a name="binding-value-converters"></a>繫結值轉換器
 
-當系結的來源和目標屬性是不同類型時，您可以使用系結轉換器在類型之間進行轉換。 這是一個類別，它會執行[`IValueConverter`](xref:Xamarin.Forms.IValueConverter)介面並包含兩個方法： [`Convert`](xref:Xamarin.Forms.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo))將來源轉換成目標，並[`ConvertBack`](xref:Xamarin.Forms.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo))將目標轉換成來源。
+當綁定的源屬性和目標屬性不同時,可以使用綁定轉換器在類型之間進行轉換。 這是一個實現介面的[`IValueConverter`](xref:Xamarin.Forms.IValueConverter)類,包含兩種方法:[`Convert`](xref:Xamarin.Forms.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo))將源轉換為目標,[`ConvertBack`](xref:Xamarin.Forms.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo))並將目標轉換為源。
 
-[**FormsBook 工具**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫中的[`IntToBoolConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs)類別，是將 `int` 轉換為 `bool`的範例。 它是由[**ButtonEnabler**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler)範例所示範，只有在至少有一個字元輸入 `Entry`時，才會啟用 `Button`。
+[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫[`IntToBoolConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs)中的 類是將`int``bool`轉換為 的範例。 它由[**ButtonEnabler**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler)範例範例,此選項`Button`時只會啟用 如果至少一個字元已`Entry`鍵入到中 。
 
-[`BoolToStringConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToStringConverter.cs)類別會將 `bool` 轉換成 `string`，並定義兩個屬性，以指定要針對 `false` 和 `true` 值傳回的文字。
-[`BoolToColorConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToColorConverter.cs)類似。 [**SwitchText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/SwitchText)範例會示範如何使用這兩個轉換器，根據 `Switch` 設定以不同的色彩來顯示不同的文字。
+類[`BoolToStringConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToStringConverter.cs)將轉換為`bool``string`a 並定義兩個屬性以指定應`false`為其返回的`true`文本和 值。
+是[`BoolToColorConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToColorConverter.cs)類似的。 [**SwitchText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/SwitchText)範例展示使用這兩個轉換器根據`Switch`設定以不同顏色顯示不同文本。
 
-泛型[`BoolToObjectConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToObjectConverter.cs)可以取代 `BoolToStringConverter` 和 `BoolToColorConverter`，並做為任何類型的一般化 `bool`對物件轉換器。
+泛型[`BoolToObjectConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToObjectConverter.cs)可以`BoolToStringConverter`替換`BoolToColorConverter`和 ,並用作任何類型的`bool`廣義 到物件轉換器。
 
-## <a name="bindings-and-custom-views"></a>系結和自訂視圖
+## <a name="bindings-and-custom-views"></a>繫結與自訂檢視
 
-您可以使用資料系結來簡化自訂控制項。 [`NewCheckBox.cs`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml.cs)程式碼檔案會定義 `Text`、`TextColor`、`FontSize`、`FontAttributes`和 `IsChecked` 屬性，但沒有任何邏輯適用于控制項的視覺效果。
-相反地， [`NewCheckBox.cs.xaml`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml)檔案會根據程式碼後置檔案中定義的屬性，在 `Label` 元素的資料系結中包含控制項視覺效果的所有標記。
+您可以使用資料綁定簡化自訂控制項。 代碼[`NewCheckBox.cs`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml.cs)`Text`檔案定義`TextColor``FontSize``FontAttributes`、、 和`IsChecked`屬性,但對於控制項的可視物件,沒有任何邏輯。
+相反,[`NewCheckBox.cs.xaml`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml)該檔包含控制式視覺物件的所有標記,透過基於代碼後面檔中定義的屬性的元素`Label`上 的數據綁定進行資料綁定。
 
-[**NewCheckBoxDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo)範例會示範 `NewCheckBox` 的自訂控制項。
+[**NewCheckBoxDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo)範例展示`NewCheckBox`自訂控制項。
 
 ## <a name="related-links"></a>相關連結
 
-- [第16章的全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
-- [第16章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [第16章 全文(PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
+- [第16章 樣本](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
 - [資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)

@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
 ms.openlocfilehash: c4eaebc8d5f184b1108815c37e992fa97e67aa8f
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79304587"
 ---
 # <a name="system-requirements"></a>系統需求
@@ -78,7 +78,7 @@ Visual Studio 2019 和 Visual Studio 2017 安裝程式包括自動安裝 Xamarin
 
 - [Xamarin.iOS](~/ios/get-started/installation/index.md)
 - [Xamarin.Android](~/android/get-started/installation/index.md)
-- [Xamarin.Mac](~/mac/get-started/installation.md)
+- [薩馬林.麥克](~/mac/get-started/installation.md)
 
 這裡也提供 [Xamarin.Forms 支援平台](~/get-started/supported-platforms.md)的其他資訊。
 

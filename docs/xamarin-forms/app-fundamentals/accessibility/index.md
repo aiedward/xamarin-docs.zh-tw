@@ -9,10 +9,10 @@ ms.author: dabritch
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: 2aaa61400d3775c4d622b805d24ff0b338017de5
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
-ms.translationtype: HT
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66354048"
 ---
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms 協助工具
@@ -23,7 +23,7 @@ _建置無障礙應用程式，可確保應用程式便於對使用者介面具�
 
 [Android 的協助工具](~/android/app-fundamentals/accessibility.md)和 [iOS 協助工具](~/ios/app-fundamentals/accessibility.md)指南包含 Xamarin 所公開之原生 API 的詳細資料，並且 [MSDN 上的 UWP 協助工具指南](https://msdn.microsoft.com/windows/uwp/accessibility/basic-accessibility-information)會說明該平台的原生方法。 這些 API 會用於在每個平台上完整實作無障礙應用程式。
 
-Xamarin.Forms 目前不具備對每個基礎平台上所有可用協助工具 API 的「內建」  支援。 不過，Xamarin.Forms 支援在使用者介面元素上設定自動化屬性，以支援螢幕閱讀程式與瀏覽協助工具，也就是建置無障礙應用程式最重要的一部分。 如需詳細資訊，請參閱[自動化屬性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)。
+Xamarin.Forms 目前不具備對每個基礎平台上所有可用協助工具 API 的「內建」** 支援。 不過，Xamarin.Forms 支援在使用者介面元素上設定自動化屬性，以支援螢幕閱讀程式與瀏覽協助工具，也就是建置無障礙應用程式最重要的一部分。 如需詳細資訊，請參閱[自動化屬性](~/xamarin-forms/app-fundamentals/accessibility/automation-properties.md)。
 
 Xamarin.Forms 應用程式也可以指定控制項的定位順序，以改善可用性和協助工具。 如需詳細資訊，請參閱[鍵盤協助工具](~/xamarin-forms/app-fundamentals/accessibility/keyboard.md)。
 
@@ -35,7 +35,7 @@ Xamarin.Forms 應用程式通常以多個平台為目標，意即會根據平台
 
 - [**iOS 測試**](~/ios/app-fundamentals/accessibility.md)
 - [**Android 測試**](~/android/app-fundamentals/accessibility.md)
-- [**Windows AccScope (MSDN)** ](https://msdn.microsoft.com/library/windows/desktop/dn433239)
+- [**Windows AccScope (MSDN)**](https://msdn.microsoft.com/library/windows/desktop/dn433239)
 
 ## <a name="related-links"></a>相關連結
 
