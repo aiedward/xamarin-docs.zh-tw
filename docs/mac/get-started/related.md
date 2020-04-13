@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 12/02/2016
 ms.openlocfilehash: 10450bbb87ed974475001102920ec6fb90cf7976
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73029983"
 ---
 # <a name="xamarinmac-related-documentation"></a>Xamarin.Mac – 相關文件
@@ -33,7 +33,7 @@ ms.locfileid: "73029983"
 - [Windows](~/mac/user-interface/window.md)
 - [對話方塊](~/mac/user-interface/dialog.md)
 - [警示](~/mac/user-interface/alert.md)
-- [Menus](~/mac/user-interface/menu.md)
+- [功能表](~/mac/user-interface/menu.md)
 - [工具列](~/mac/user-interface/toolbar.md)
 - [資料表檢視](~/mac/user-interface/table-view.md)
 - [大綱檢視](~/mac/user-interface/outline-view.md)

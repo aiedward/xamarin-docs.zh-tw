@@ -1,6 +1,6 @@
 ---
 title: 鍵盤協助工具
-description: 有時必須藉由使用 TabIndex 和 IsTabStop 屬性的組合來指定索引標籤序列，以微調 UI 的存取範圍，而不是使用預設的定位順序。
+description: 有時需要使用 TabIndex 和 IsTabStop 屬性的組合來指定選項卡序列,而不是使用預設選項卡序列來調整 UI 的可存取性。
 ms.prod: xamarin
 ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
 ms.technology: xamarin-forms
@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
 ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71997117"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms 中的鍵盤協助工具
@@ -53,22 +53,22 @@ ms.locfileid: "71997117"
 
 下列螢幕擷取畫面顯示此程式碼範例的預設定位順序：
 
-![](keyboard-images/default-tab-order.png "預設的資料列式定位順序")
+![](keyboard-images/default-tab-order.png "Default Row-based Tab Order")
 
-此處的定位順序是以資料列為主，即為 XAML 中列出的控制項順序。 因此，按下 Tab 鍵時會從名字 [`Entry`](xref:Xamarin.Forms.Entry) 執行個體，接著巡覽至姓氏 `Entry` 執行個體。 不過，更直覺式的體驗就是使用資料行優先的定位導覽，以便在按下 Tab 鍵時巡覽名字與姓氏組合。 這可藉由指定輸入控制項的定位順序來完成。
+此處的定位順序是以資料列為主，即為 XAML 中列出的控制項順序。 因此,按 Tab 鍵將流[`Entry`](xref:Xamarin.Forms.Entry)覽前名 實例,`Entry`後跟姓氏 實例。 不過，更直覺式的體驗就是使用資料行優先的定位導覽，以便在按下 Tab 鍵時巡覽名字與姓氏組合。 這可藉由指定輸入控制項的定位順序來完成。
 
 > [!NOTE]
 > 您可以定義通用 Windows 平台上的鍵盤快速鍵，以提供一種直覺的方式，讓使用者透過鍵盤而非觸控或滑鼠，來快速巡覽應用程式的可見 UI 並與其互動。 如需詳細資訊，請參閱[設定 VisualElement 便捷鍵](~/xamarin-forms/platform/windows/visualelement-access-keys.md)。
 
 ## <a name="setting-the-tab-order"></a>設定定位順序
 
-`VisualElement.TabIndex` 屬性可用來指定當使用者按下 Tab 鍵巡覽控制項時，[`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體接收焦點的順序。 屬性的預設值為 0，而且可以設定為任何 `int` 值。
+該`VisualElement.TabIndex`屬性用於指示當用戶通過按[`VisualElement`](xref:Xamarin.Forms.VisualElement)Tab 鍵流覽控制件時實例接收焦點的順序。 屬性的預設值為 0，而且可以設定為任何 `int` 值。
 
 在使用預設定位順序或設定 `TabIndex` 屬性時，會套用下列規則：
 
-- `TabIndex` 等於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體會根據其在 XAML 或子集合中的宣告順序新增至定位順序。
-- `TabIndex` 大於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體則會根據其 `TabIndex` 值新增至定位順序。
-- `TabIndex` 小於 0 的 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 執行個體會新增至定位順序並顯示在任何零值之前。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)等於`TabIndex`0 的實例根據 XAML 或子集合中的聲明順序添加到選項卡順序中。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)大於`TabIndex`0 的實例將`TabIndex`根據其值添加到選項卡訂單中。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)小於`TabIndex`0 的實例將添加到選項卡順序中,並顯示在任何零值之前。
 - `TabIndex` 的衝突由宣告順序來解決。
 
 在您定義定位順序之後，按下 Tab 鍵時即會以遞增 `TabIndex` 順序循環控制項的焦點，從開頭一直循環到最後一個控制項。
@@ -110,18 +110,18 @@ ms.locfileid: "71997117"
 
 下列螢幕擷取畫面顯示此程式碼範例的定位順序：
 
-![](keyboard-images/correct-tab-order.png "資料行式定位順序")
+![](keyboard-images/correct-tab-order.png "Column-based Tab Order")
 
-此處的定位順序是以資料行為基礎。 因此，按下 Tab 鍵時會巡覽名字與姓氏 [`Entry`](xref:Xamarin.Forms.Entry) 組合。
+此處的定位順序是以資料行為基礎。 因此,按 Tab 鍵將流覽前[`Entry`](xref:Xamarin.Forms.Entry)名姓氏 對。
 
 > [!IMPORTANT]
-> iOS 和 Android 上的螢幕閱讀程式在朗讀畫面上的無障礙元素時，將會接受 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 的 `TabIndex`。
+> 在 iOS 和`TabIndex`Android[`VisualElement`](xref:Xamarin.Forms.VisualElement)上 ,螢幕閱讀器在讀取螢幕上可存取的元素時會尊重的 。
 
 ## <a name="excluding-controls-from-the-tab-order"></a>從定位順序中排除控制項
 
-除了設定控制項的定位順序，您可能也需要從定位順序中排除控制項。 其中一種完成上述作業的方式，是將控制項的 [`IsEnabled`](xref:Xamarin.Forms.VisualElement) 屬性設為 `false`，因為已停用的控制項會從定位順序中排除。
+除了設定控制項的定位順序，您可能也需要從定位順序中排除控制項。 實現此目標的一種方法是將[`IsEnabled`](xref:Xamarin.Forms.VisualElement)控制件的屬性設置`false`為 ,因為禁用的控制項從選項卡順序中排除。
 
-不過，有時候即使未停用控制項，可能也需要將其從定位順序中排除。 上述作業可透過 `VisualElement.IsTabStop` 屬性來完成，其可指出定位導覽中是否包含 [`VisualElement`](xref:Xamarin.Forms.VisualElement)。 其預設值為 `true`；當其值為 `false` 時，不論是否設定 `TabIndex`，定位導覽基礎結構均會略過控制項。
+不過，有時候即使未停用控制項，可能也需要將其從定位順序中排除。 這可以`VisualElement.IsTabStop`通過 屬性來實現,該屬性指示選項卡[`VisualElement`](xref:Xamarin.Forms.VisualElement)導航中 是否包括 。 其預設值為 `true`；當其值為 `false` 時，不論是否設定 `TabIndex`，定位導覽基礎結構均會略過控制項。
 
 ## <a name="supported-controls"></a>支援的控制項
 
