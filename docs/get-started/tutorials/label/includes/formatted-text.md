@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 841dac9486097e27923ccfe582803b4ec50371cf
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "60896650"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中，修改 [`Label`](xref:Xamarin.Forms.Label) 宣告以在單一 `Label` 中呈現使用多種格式的文字。
 
@@ -34,9 +34,9 @@ ms.locfileid: "60896650"
 
     [![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")
 
-    如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md#formatted-text)。
+    如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md#formatted-text)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 **MainPage.xaml** 中，修改 [`Label`](xref:Xamarin.Forms.Label) 宣告以在單一 `Label` 中呈現使用多種格式的文字。
 
@@ -64,4 +64,4 @@ ms.locfileid: "60896650"
 
     [![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")
 
-    如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md#formatted-text)。
+    如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md#formatted-text)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md)。

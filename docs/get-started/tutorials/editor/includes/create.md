@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: fe7e11f37f303c2ec1f5bc58e98953449694191c
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135032"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 若要完成此教學課程，您應該有 Visual Studio 2019 (最新版本)，並已安裝 [使用 .NET 進行行動開發]  工作負載。 此外，您還需要配對的 Mac 才能在 iOS 上建置教學課程應用程式。 如需安裝 Xamarin 平台的相關資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
@@ -31,7 +31,7 @@ ms.locfileid: "77135032"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Editor`](xref:Xamarin.Forms.Editor)。 [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Editor` 第一次顯示時呈現的預留位置文字。 此外，[`HeightRequest`](xref:Xamarin.Forms.VisualElement) 屬性可指定 `Editor` 的高度 (採用與裝置無關的單位)。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Editor`](xref:Xamarin.Forms.Editor) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Editor` 第一次顯示時呈現的預留位置文字。 此外，[`HeightRequest`](xref:Xamarin.Forms.VisualElement) 屬性可指定 `Editor` 的高度 (採用與裝置無關的單位)。
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
@@ -40,7 +40,7 @@ ms.locfileid: "77135032"
     > [!NOTE]
     > Android 會指示 [`Editor`](xref:Xamarin.Forms.Editor) 的高度，但 iOS 不會。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 若要完成本教學課程，您應該具備 Visual Studio for Mac (最新版本)，並已安裝 iOS 和 Android 平台支援。 此外，您還需要 Xcode (最新版本)。 如需安裝 Xamarin 平台的詳細資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。
 
@@ -65,7 +65,7 @@ ms.locfileid: "77135032"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Editor`](xref:Xamarin.Forms.Editor)。 [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Editor` 第一次顯示時呈現的預留位置文字。 此外，[`HeightRequest`](xref:Xamarin.Forms.VisualElement) 屬性可指定 `Editor` 的高度 (採用與裝置無關的單位)。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Editor`](xref:Xamarin.Forms.Editor) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Editor.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Editor` 第一次顯示時呈現的預留位置文字。 此外，[`HeightRequest`](xref:Xamarin.Forms.VisualElement) 屬性可指定 `Editor` 的高度 (採用與裝置無關的單位)。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 

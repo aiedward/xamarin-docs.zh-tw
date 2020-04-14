@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: caee3eeda90a560f032c17657072ae5ba5023a69
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135116"
 ---
 在此練習中，您將建立使用者介面來使用先前建立的資料存取類別。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 [方案總管]  的 **LocalDatabaseTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -36,7 +36,7 @@ ms.locfileid: "77135116"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含兩個 [`Entry`](xref:Xamarin.Forms.Entry) 執行個體，[`Button`](xref:Xamarin.Forms.Button) 和 [`StackLayout`](xref:Xamarin.Forms.StackLayout)中的 [`ListView`](xref:Xamarin.Forms.ListView)。 每個 `Entry` 都有其 [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性集，用來指定在使用者輸入之前顯示的預留位置文字。 `Button` 會將其 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件設定為名為 `OnButtonClicked` 的事件處理常式 (將在下一個步驟中建立)。 `ListView` 會將其 [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，以使用 [`TextCell`](xref:Xamarin.Forms.TextCell) 來定義 [`ListView`](xref:Xamarin.Forms.ListView) 中每列的外觀。 `TextCell` 資料會將其 [`Text`](xref:Xamarin.Forms.TextCell.Text) 和 [`Detail`](xref:Xamarin.Forms.TextCell.Detail) 屬性各別繫結到每個 `Person` 物件的 `Name` 和 `Age` 屬性。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含兩個 [`Entry`](xref:Xamarin.Forms.Entry) 執行個體，[`Button`](xref:Xamarin.Forms.Button) 和 [`ListView`](xref:Xamarin.Forms.ListView)中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 每個 `Entry` 都有其 [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性集，用來指定在使用者輸入之前顯示的預留位置文字。 `Button` 會將其 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件設定為名為 `OnButtonClicked` 的事件處理常式 (將在下一個步驟中建立)。 `ListView` 會將其 [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，以使用 [`TextCell`](xref:Xamarin.Forms.TextCell) 來定義 [`ListView`](xref:Xamarin.Forms.ListView) 中每列的外觀。 `TextCell` 資料會將其 [`Text`](xref:Xamarin.Forms.TextCell.Text) 和 [`Detail`](xref:Xamarin.Forms.TextCell.Detail) 屬性各別繫結到每個 `Name` 物件的 `Age` 和 `Person` 屬性。
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 執行個體和 [`ListView`](xref:Xamarin.Forms.ListView) 會有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用指派的名稱來存取這些物件。
 
@@ -78,7 +78,7 @@ ms.locfileid: "77135116"
 
     如需 Xamarin.Forms 中有關本機資料庫的詳細資訊，請參閱 [Xamarin.Forms 本機資料庫 (指南)](~/xamarin-forms/data-cloud/data/databases.md)
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 [Solution Pad]  的 **LocalDatabaseTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -106,7 +106,7 @@ ms.locfileid: "77135116"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含兩個 [`Entry`](xref:Xamarin.Forms.Entry) 執行個體，[`Button`](xref:Xamarin.Forms.Button) 和 [`StackLayout`](xref:Xamarin.Forms.StackLayout)中的 [`ListView`](xref:Xamarin.Forms.ListView)。 每個 `Entry` 都有其 [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性集，用來指定在使用者輸入之前顯示的預留位置文字。 `Button` 會將其 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件設定為名為 `OnButtonClicked` 的事件處理常式 (將在下一個步驟中建立)。 `ListView` 會將其 [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，以使用 [`TextCell`](xref:Xamarin.Forms.TextCell) 來定義 [`ListView`](xref:Xamarin.Forms.ListView) 中每列的外觀。 `TextCell` 資料會將其 [`Text`](xref:Xamarin.Forms.TextCell.Text) 和 [`Detail`](xref:Xamarin.Forms.TextCell.Detail) 屬性各別繫結到每個 `Person` 物件的 `Name` 和 `Age` 屬性。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含兩個 [`Entry`](xref:Xamarin.Forms.Entry) 執行個體，[`Button`](xref:Xamarin.Forms.Button) 和 [`ListView`](xref:Xamarin.Forms.ListView)中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 每個 `Entry` 都有其 [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性集，用來指定在使用者輸入之前顯示的預留位置文字。 `Button` 會將其 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件設定為名為 `OnButtonClicked` 的事件處理常式 (將在下一個步驟中建立)。 `ListView` 會將其 [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 屬性設定為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，以使用 [`TextCell`](xref:Xamarin.Forms.TextCell) 來定義 [`ListView`](xref:Xamarin.Forms.ListView) 中每列的外觀。 `TextCell` 資料會將其 [`Text`](xref:Xamarin.Forms.TextCell.Text) 和 [`Detail`](xref:Xamarin.Forms.TextCell.Detail) 屬性各別繫結到每個 `Name` 物件的 `Age` 和 `Person` 屬性。
 
     此外，[`Entry`](xref:Xamarin.Forms.Entry) 執行個體和 [`ListView`](xref:Xamarin.Forms.ListView) 會有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用指派的名稱來存取這些物件。
 

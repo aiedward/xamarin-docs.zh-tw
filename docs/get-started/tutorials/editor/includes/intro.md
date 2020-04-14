@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 4416eddfab4bfcf2b3274054db9bcfc60ed8fdec
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71059603"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -11,7 +11,7 @@ ms.locfileid: "71059603"
 - [建置您的第一個 Xamarin.Forms 應用程式](~/get-started/first-app/index.md)快速入門。
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml) 教學課程。
 
-在本教學課程中，您將了解如何：
+在本教學課程中，您會了解如何：
 
 > [!div class="checklist"]
 >

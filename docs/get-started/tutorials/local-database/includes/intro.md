@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 8f379e8639846d9a6424c4aaadf83ff89d7a8684
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71107195"
 ---
 在嘗試此教學課程之前，您應該已成功完成：
@@ -14,7 +14,7 @@ ms.locfileid: "71107195"
 - [項目](~/get-started/tutorials/entry/index.yml)教學課程。
 - [ListView](~/get-started/tutorials/listview/index.yml) 教學課程。
 
-在本教學課程中，您將了解如何：
+在本教學課程中，您會了解如何：
 
 > [!div class="checklist"]
 >

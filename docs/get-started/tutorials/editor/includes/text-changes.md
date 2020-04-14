@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 653d3677f96d7da78af61531c535b1b7db684e7e
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135110"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中修改 [`Editor`](xref:Xamarin.Forms.Editor) 宣告，以便其設定 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Editor.Completed) 事件的處理常式：
 
@@ -34,9 +34,9 @@ ms.locfileid: "77135110"
     }
     ```
 
-    `OnEditorTextChanged` 方法會在 [`Editor`](xref:Xamarin.Forms.Editor) 中的文字發生變更時執行。 `sender` 引數是負責引發 `TextChanged` 事件的 `Editor` 物件，並且可用來存取 `Editor` 物件。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引數會在文字變更之前和之後提供舊的和新的文字值。
+    [ 方法會在 `Editor`](xref:Xamarin.Forms.Editor)`OnEditorTextChanged` 中的文字發生變更時執行。 `sender` 引數是負責引發 `Editor` 事件的 `TextChanged` 物件，並且可用來存取 `Editor` 物件。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引數會在文字變更之前和之後提供舊的和新的文字值。
 
-    完成編輯之後，`OnEditorCompleted` 方法會隨即執行。 這可藉由從 [`Editor`](xref:Xamarin.Forms.Editor) 上移開焦點來完成，或另外按下 iOS 上的「完成」按鈕來完成。 `sender` 引數是負責引發 `TextChanged` 事件的 `Editor` 物件，並且可用來存取 `Editor` 物件。
+    完成編輯之後，`OnEditorCompleted` 方法會隨即執行。 這可藉由從 [`Editor`](xref:Xamarin.Forms.Editor) 上移開焦點來完成，或另外按下 iOS 上的「完成」按鈕來完成。 `sender` 引數是負責引發 `Editor` 事件的 `TextChanged` 物件，並且可用來存取 `Editor` 物件。
 
     > [!IMPORTANT]
     > 輸入到 [`Editor`](xref:Xamarin.Forms.Editor) 的任何文字都會儲存到 [`Text`](xref:Xamarin.Forms.InputView.Text) 屬性。
@@ -47,9 +47,9 @@ ms.locfileid: "77135110"
 
     在兩個事件處理常式中設定中斷點、將文字輸入 [`Editor`](xref:Xamarin.Forms.Editor)，並觀察 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 事件的引發。 從 `Editor` 上移開焦點，即可看到 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件引發。
 
-    如需有關 [`Editor`](xref:Xamarin.Forms.Editor) 事件的詳細資訊，請參閱 [Xamarin.Forms 編輯器](~/xamarin-forms/user-interface/text/editor.md)指南中的[互動功能](~/xamarin-forms/user-interface/text/editor.md#interactivity)。
+    如需有關 [`Editor`](xref:Xamarin.Forms.Editor) 事件的詳細資訊，請參閱 [Xamarin.Forms 編輯器](~/xamarin-forms/user-interface/text/editor.md#interactivity)指南中的[互動功能](~/xamarin-forms/user-interface/text/editor.md)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 **MainPage.xaml** 中修改 [`Editor`](xref:Xamarin.Forms.Editor) 宣告，以便其設定 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Editor.Completed) 事件的處理常式：
 
@@ -77,9 +77,9 @@ ms.locfileid: "77135110"
     }
     ```
 
-    `OnEditorTextChanged` 方法會在 [`Editor`](xref:Xamarin.Forms.Editor) 中的文字發生變更時執行。 `sender` 引數是負責引發 `TextChanged` 事件的 `Editor` 物件，並且可用來存取 `Editor` 物件。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引數會在文字變更之前和之後提供舊的和新的文字值。
+    [ 方法會在 `Editor`](xref:Xamarin.Forms.Editor)`OnEditorTextChanged` 中的文字發生變更時執行。 `sender` 引數是負責引發 `Editor` 事件的 `TextChanged` 物件，並且可用來存取 `Editor` 物件。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引數會在文字變更之前和之後提供舊的和新的文字值。
 
-    完成編輯之後，`OnEditorCompleted` 方法會隨即執行。 這可藉由從 [`Editor`](xref:Xamarin.Forms.Editor) 上移開焦點來完成，或另外按下 iOS 上的「完成」按鈕來完成。 `sender` 引數是負責引發 `TextChanged` 事件的 `Editor` 物件，並且可用來存取 `Editor` 物件。
+    完成編輯之後，`OnEditorCompleted` 方法會隨即執行。 這可藉由從 [`Editor`](xref:Xamarin.Forms.Editor) 上移開焦點來完成，或另外按下 iOS 上的「完成」按鈕來完成。 `sender` 引數是負責引發 `Editor` 事件的 `TextChanged` 物件，並且可用來存取 `Editor` 物件。
 
     > [!IMPORTANT]
     > 輸入到 [`Editor`](xref:Xamarin.Forms.Editor) 的任何文字都會儲存到 [`Text`](xref:Xamarin.Forms.InputView.Text) 屬性。
@@ -90,4 +90,4 @@ ms.locfileid: "77135110"
 
     在兩個事件處理常式中設定中斷點、將文字輸入 [`Editor`](xref:Xamarin.Forms.Editor)，並觀察 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 事件的引發。 從 `Editor` 上移開焦點，即可看到 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件引發。
 
-    如需有關 [`Editor`](xref:Xamarin.Forms.Editor) 事件的詳細資訊，請參閱 [Xamarin.Forms 編輯器](~/xamarin-forms/user-interface/text/editor.md)指南中的[互動功能](~/xamarin-forms/user-interface/text/editor.md#interactivity)。
+    如需有關 [`Editor`](xref:Xamarin.Forms.Editor) 事件的詳細資訊，請參閱 [Xamarin.Forms 編輯器](~/xamarin-forms/user-interface/text/editor.md#interactivity)指南中的[互動功能](~/xamarin-forms/user-interface/text/editor.md)。

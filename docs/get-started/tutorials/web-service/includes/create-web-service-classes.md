@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "68669572"
 ---
 REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺服器的相同 HTTP 指令動詞，並透過 HTTP 提出。 在此練習中，您會建立一個類別，該類別會使用 GET 指令動詞從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取資料。 此 Web API 可用來擷取指定位置的天氣預報資料。 您需要註冊 API 金鑰，才能使用此 Web API。
@@ -11,7 +11,7 @@ REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺
 > [!div class="nextstepaction"]
 > [註冊 API 金鑰](https://home.openweathermap.org/users/sign_up)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 [方案總管]  的 **WebServiceTutorial** 專案中，將名為 `Constants` 的新類別新增到此專案。 然後在 **Constants.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -127,11 +127,11 @@ REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺
     }
     ```
 
-    此程式碼會定義單一方法 `GetWeatherDataAsync`，該方法可從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取指定位置的天氣資料。 這個方法會使用 `HttpClient.GetAsync` 方法，將 GET 要求傳送至 `uri` 引數所指定的 Web API。 Web API 會傳送儲存在 `HttpResponseMessage` 物件中的回應。 此回應包括 HTTP 狀態碼，這表示 HTTP 要求成功或失敗。 假設要求成功，Web API 就會回應 HTTP 狀態碼 200 (確定) 和 JSON 回應 (其位於 `HttpResponseMessage.Content` 屬性中)。 此 JSON 資料會先讀取到使用 `HttpContent.ReadAsStringAsync` 方法的 `string`，再使用 `JsonConvert.DeserializeObject` 方法還原序列化為 `WeatherData` 物件。 此方法會使用 JSON 欄位名稱與 CLR 屬性之間的對應 (定義於 `WeatherData` 類別中) 來執行還原序列化。
+    此程式碼會定義單一方法 `GetWeatherDataAsync`，該方法可從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取指定位置的天氣資料。 這個方法會使用 `HttpClient.GetAsync` 方法，將 GET 要求傳送至 `uri` 引數所指定的 Web API。 Web API 會傳送儲存在 `HttpResponseMessage` 物件中的回應。 此回應包括 HTTP 狀態碼，這表示 HTTP 要求成功或失敗。 假設要求成功，Web API 就會回應 HTTP 狀態碼 200 (確定) 和 JSON 回應 (其位於 `HttpResponseMessage.Content` 屬性中)。 此 JSON 資料會先讀取到使用 `string` 方法的 `HttpContent.ReadAsStringAsync`，再使用 `WeatherData` 方法還原序列化為 `JsonConvert.DeserializeObject` 物件。 此方法會使用 JSON 欄位名稱與 CLR 屬性之間的對應 (定義於 `WeatherData` 類別中) 來執行還原序列化。
 
 1. 建置解決方案以確定沒有任何錯誤。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 [Solution Pad]  的 **WebServiceTutorial** 專案中，將名為 `Constants` 的新類別新增到此專案。 然後在 **Constants.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -247,6 +247,6 @@ REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺
     }
     ```
 
-    此程式碼會定義單一方法 `GetWeatherDataAsync`，該方法可從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取指定位置的天氣資料。 這個方法會使用 `HttpClient.GetAsync` 方法，將 GET 要求傳送至 `uri` 引數所指定的 Web API。 Web API 會傳送儲存在 `HttpResponseMessage` 物件中的回應。 此回應包括 HTTP 狀態碼，這表示 HTTP 要求成功或失敗。 假設要求成功，Web API 就會回應 HTTP 狀態碼 200 (確定) 和 JSON 回應 (其位於 `HttpResponseMessage.Content` 屬性中)。 此 JSON 資料會先讀取到使用 `HttpContent.ReadAsStringAsync` 方法的 `string`，再使用 `JsonConvert.DeserializeObject` 方法還原序列化為 `WeatherData` 物件。 此方法會使用 JSON 欄位名稱與 CLR 屬性之間的對應 (定義於 `WeatherData` 類別中) 來執行還原序列化。
+    此程式碼會定義單一方法 `GetWeatherDataAsync`，該方法可從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取指定位置的天氣資料。 這個方法會使用 `HttpClient.GetAsync` 方法，將 GET 要求傳送至 `uri` 引數所指定的 Web API。 Web API 會傳送儲存在 `HttpResponseMessage` 物件中的回應。 此回應包括 HTTP 狀態碼，這表示 HTTP 要求成功或失敗。 假設要求成功，Web API 就會回應 HTTP 狀態碼 200 (確定) 和 JSON 回應 (其位於 `HttpResponseMessage.Content` 屬性中)。 此 JSON 資料會先讀取到使用 `string` 方法的 `HttpContent.ReadAsStringAsync`，再使用 `WeatherData` 方法還原序列化為 `JsonConvert.DeserializeObject` 物件。 此方法會使用 JSON 欄位名稱與 CLR 屬性之間的對應 (定義於 `WeatherData` 類別中) 來執行還原序列化。
 
 1. 建置解決方案以確定沒有任何錯誤。

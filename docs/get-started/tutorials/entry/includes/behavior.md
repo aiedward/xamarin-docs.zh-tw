@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 48af50d31013f696879174a5cf108ab9fde92d0b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61343409"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中修改 [`Entry`](xref:Xamarin.Forms.Entry) 宣告，以自訂其行為：
 
@@ -29,7 +29,7 @@ ms.locfileid: "61343409"
 
     如需有關自訂 [`Entry`](xref:Xamarin.Forms.Entry) 行為的詳細資訊，請參閱 [Xamarin.Forms 輸入](~/xamarin-forms/user-interface/text/entry.md)指南。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 **MainPage.xaml** 中修改 [`Entry`](xref:Xamarin.Forms.Entry) 宣告，以自訂其行為：
 

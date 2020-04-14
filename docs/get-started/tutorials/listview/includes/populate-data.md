@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "69541436"
 ---
-[`ListView`](xref:Xamarin.Forms.ListView) 會使用類型為 `IEnumerable` 的 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性來填入資料。 上一個步驟已使用字串陣列填入 XAML 中的 `ListView`。 不過，一般而言，`ListView` 會從程式碼後置中所定義且實作 `IEnumerable` 的集合填入資料。
+[`ListView`](xref:Xamarin.Forms.ListView) 會使用類型為 [ 的 `ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)`IEnumerable` 屬性來填入資料。 上一個步驟已使用字串陣列填入 XAML 中的 `ListView`。 不過，一般而言，`ListView` 會從程式碼後置中所定義且實作 `IEnumerable` 的集合填入資料。
 
-在此練習中，您將修改 **ListViewTutorial** 專案，將資料從 `List` 中儲存的物件集合填入 [`ListView`](xref:Xamarin.Forms.ListView)。
+在此練習中，您將修改 **ListViewTutorial** 專案，將資料從 [ 中儲存的物件集合填入 `ListView`](xref:Xamarin.Forms.ListView)`List`。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 [方案總管]  的 **ListViewTutorial** 專案中，新增包含下列程式碼且名為 `Monkey` 的類別：
 
@@ -172,7 +172,7 @@ ms.locfileid: "69541436"
     }
     ```
 
-    此程式碼會定義 `IList<Monkey>` 類型的 `Monkeys` 屬性，並且將其初始化為類別建構函式中的空白清單。 接著，`Monkey` 物件會新增至 `Monkeys` 集合，而頁面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 會設為 `MainPage` 物件。 如需 `BindingContext` 屬性的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)指南中[具有繫結內容的繫結](~/xamarin-forms/app-fundamentals/data-binding/basic-bindings.md#bindings-with-a-binding-context)一節。
+    此程式碼會定義 `Monkeys` 類型的 `IList<Monkey>` 屬性，並且將其初始化為類別建構函式中的空白清單。 接著，`Monkey` 物件會新增至 `Monkeys` 集合，而頁面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 會設為 `MainPage` 物件。 如需 `BindingContext` 屬性的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/basic-bindings.md#bindings-with-a-binding-context)指南中[具有繫結內容的繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)一節。
 
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性會透過視覺化樹狀結構繼承。 因此，由於其已設定於 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，所以 `ContentPage` 的子物件會繼承其值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
@@ -183,15 +183,15 @@ ms.locfileid: "69541436"
     <ListView ItemsSource="{Binding Monkeys}" />
     ```
 
-    此程式碼資料會將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性繫結到 `Monkeys` 集合。 在執行階段中，[`ListView`](xref:Xamarin.Forms.ListView) 會針對 `Monkeys` 集合查看其 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，並且從此集合填入資料。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+    此程式碼資料會將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性繫結到 `Monkeys` 集合。 在執行階段中，[`ListView`](xref:Xamarin.Forms.ListView) 會針對 [ 集合查看其 `BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)`Monkeys`，並且從此集合填入資料。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：iOS 和 Android 上從集合填入資料的 ListView](../images/populate-data.png "顯示來自集合之資料的 ListView")](../images/populate-data-large.png#lightbox "顯示來自集合之資料的 ListView")
 
-    [`ListView`](xref:Xamarin.Forms.ListView) 會顯示 `Monkeys` 集合中每個 `Monkey` 的 `Name` 屬性。 這是因為從集合顯示物件時，`ListView` 預設會呼叫 `ToString` 方法 (已在 `Monkey` 類別中進行覆寫，進而傳回 `Name` 屬性值)。
+    [`ListView`](xref:Xamarin.Forms.ListView) 會顯示 `Name` 集合中每個 `Monkey` 的 `Monkeys` 屬性。 這是因為從集合顯示物件時，`ListView` 預設會呼叫 `ToString` 方法 (已在 `Monkey` 類別中進行覆寫，進而傳回 `Name` 屬性值)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 [Solution Pad]  的 **ListViewTutorial** 專案中，新增包含下列程式碼且名為 `Monkey` 的類別：
 
@@ -353,7 +353,7 @@ ms.locfileid: "69541436"
     }
     ```
 
-    此程式碼會定義 `IList<Monkey>` 類型的 `Monkeys` 屬性，並且將其初始化為類別建構函式中的空白清單。 接著，`Monkey` 物件會新增至 `Monkeys` 集合，而頁面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 會設為 `MainPage` 物件。 如需 `BindingContext` 屬性的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)指南中[具有繫結內容的繫結](~/xamarin-forms/app-fundamentals/data-binding/basic-bindings.md#bindings-with-a-binding-context)一節。
+    此程式碼會定義 `Monkeys` 類型的 `IList<Monkey>` 屬性，並且將其初始化為類別建構函式中的空白清單。 接著，`Monkey` 物件會新增至 `Monkeys` 集合，而頁面的 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 會設為 `MainPage` 物件。 如需 `BindingContext` 屬性的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/basic-bindings.md#bindings-with-a-binding-context)指南中[具有繫結內容的繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)一節。
 
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性會透過視覺化樹狀結構繼承。 因此，由於其已設定於 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，所以 `ContentPage` 的子物件會繼承其值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
@@ -364,10 +364,10 @@ ms.locfileid: "69541436"
     <ListView ItemsSource="{Binding Monkeys}" />
     ```
 
-    此程式碼資料會將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性繫結到 `Monkeys` 集合。 在執行階段中，[`ListView`](xref:Xamarin.Forms.ListView) 會針對 `Monkeys` 集合查看其 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，並且從此集合填入資料。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+    此程式碼資料會將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性繫結到 `Monkeys` 集合。 在執行階段中，[`ListView`](xref:Xamarin.Forms.ListView) 會針對 [ 集合查看其 `BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)`Monkeys`，並且從此集合填入資料。 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：iOS 和 Android 上從集合填入資料的 ListView](../images/populate-data.png "顯示來自集合之資料的 ListView")](../images/populate-data-large.png#lightbox "顯示來自集合之資料的 ListView")
 
-    [`ListView`](xref:Xamarin.Forms.ListView) 會顯示 `Monkeys` 集合中每個 `Monkey` 的 `Name` 屬性。 這是因為從集合顯示物件時，`ListView` 預設會呼叫 `ToString` 方法 (已在 `Monkey` 類別中進行覆寫，進而傳回 `Name` 屬性值)。
+    [`ListView`](xref:Xamarin.Forms.ListView) 會顯示 `Name` 集合中每個 `Monkey` 的 `Monkeys` 屬性。 這是因為從集合顯示物件時，`ListView` 預設會呼叫 `ToString` 方法 (已在 `Monkey` 類別中進行覆寫，進而傳回 `Name` 屬性值)。

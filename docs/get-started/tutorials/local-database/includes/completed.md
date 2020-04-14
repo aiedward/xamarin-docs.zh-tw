@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: a0f2e909d4c7003ba1314b848fd01e604d190a1b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71107196"
 ---
 恭喜您完成此教學課程，您已學會如何：

@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: b1a041f1a2baae9b06de023f6eae9c6598b80061
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "72678711"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 若要完成此教學課程，您應該有 Visual Studio 2019 (最新版本)，並已安裝 [使用 .NET 進行行動開發]  工作負載。 此外，您還需要配對的 Mac 才能在 iOS 上建置教學課程應用程式。 如需安裝 Xamarin 平台的相關資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
@@ -30,7 +30,7 @@ ms.locfileid: "72678711"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Grid`](xref:Xamarin.Forms.Grid) 中的 [`Label`](xref:Xamarin.Forms.Label)。 根據預設，`Grid` 會將其子檢視放在單一位置中。 因此，包含多個子系的 `Grid` 應該指定資料行和資料列，下一個練習會有相關說明。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 `Grid` 之中的呈現位置。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`Grid`](xref:Xamarin.Forms.Grid)。 根據預設，`Grid` 會將其子檢視放在單一位置中。 因此，包含多個子系的 `Grid` 應該指定資料行和資料列，下一個練習會有相關說明。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 `Grid`[`ContentPage` 在 ](xref:Xamarin.Forms.ContentPage) 之中的呈現位置。
 
     > [!NOTE]
     > 除了 [`Margin`](xref:Xamarin.Forms.View.Margin) 屬性之外，[`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性也可在 [`Grid`](xref:Xamarin.Forms.Grid) 上設定。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性值會指定 `Grid` 界限及其子系之間的距離。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
@@ -41,7 +41,7 @@ ms.locfileid: "72678711"
 
     如需有關 [`Grid`](xref:Xamarin.Forms.Grid) 的詳細資訊，請參閱 [Xamarin.Forms 格線](~/xamarin-forms/user-interface/layouts/grid.md)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 若要完成本教學課程，您應該具備 Visual Studio for Mac (最新版本)，並已安裝 iOS 和 Android 平台支援。 此外，您還需要 Xcode (最新版本)。 如需安裝 Xamarin 平台的詳細資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。
 
@@ -65,7 +65,7 @@ ms.locfileid: "72678711"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Grid`](xref:Xamarin.Forms.Grid) 中的 [`Label`](xref:Xamarin.Forms.Label)。 根據預設，`Grid` 會將其子檢視放在單一位置中。 因此，包含多個子系的 `Grid` 應該指定資料行和資料列，下一個練習會有相關說明。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 `Grid` 之中的呈現位置。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`Grid`](xref:Xamarin.Forms.Grid)。 根據預設，`Grid` 會將其子檢視放在單一位置中。 因此，包含多個子系的 `Grid` 應該指定資料行和資料列，下一個練習會有相關說明。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 `Grid`[`ContentPage` 在 ](xref:Xamarin.Forms.ContentPage) 之中的呈現位置。
 
     > [!NOTE]
     > 除了 [`Margin`](xref:Xamarin.Forms.View.Margin) 屬性之外，[`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性也可在 [`Grid`](xref:Xamarin.Forms.Grid) 上設定。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性值會在 `Grid` 中指定檢視之間的距離。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。

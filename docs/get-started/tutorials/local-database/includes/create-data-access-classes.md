@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: b11a5972c2aabace8a6991a82f5719f34450297d
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67841535"
 ---
 在此練習中，您會將資料存取類別新增至 **LocalDatabaseTutorial** 專案，該專案用於將人員相關資料保存到資料庫。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 [方案總管]  的 **LocalDatabaseTutorial** 專案中，將名為 `Person` 的新類別新增到此專案。 然後在 **Person.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -120,7 +120,7 @@ ms.locfileid: "67841535"
 
 1. 建置解決方案以確定沒有任何錯誤。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 [Solution Pad]  的 **LocalDatabaseTutorial** 專案中，將名為 `Person` 的新類別新增到此專案。 然後在 **Person.cs** 中，移除所有範本程式碼，並取代為下列程式碼：
 

@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: deb3516cc134a8b2eecba8460931003de8bb312f
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135048"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中修改 [`Entry`](xref:Xamarin.Forms.Entry) 宣告，以便其設定 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件的處理常式：
 
@@ -33,9 +33,9 @@ ms.locfileid: "77135048"
     }
     ```
 
-    `OnEntryTextChanged` 方法會在 [`Entry`](xref:Xamarin.Forms.Entry) 中的文字發生變更時執行。 `sender` 引數是負責引發 `TextChanged` 事件的 `Entry` 物件，並且可用來存取 `Entry` 物件。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引數會在文字變更之前和之後提供舊的和新的文字值。
+    [ 方法會在 `Entry`](xref:Xamarin.Forms.Entry)`OnEntryTextChanged` 中的文字發生變更時執行。 `sender` 引數是負責引發 `Entry` 事件的 `TextChanged` 物件，並且可用來存取 `Entry` 物件。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引數會在文字變更之前和之後提供舊的和新的文字值。
 
-    當您按下 Return 鍵來完成 [`Entry`](xref:Xamarin.Forms.Entry) 中的文字時，`OnEntryCompleted` 方法便會執行。 `sender` 引數是負責引發 `TextChanged` 事件的 `Entry` 物件，並且可用來存取 `Entry` 物件。
+    當您按下 Return 鍵來完成 [`Entry`](xref:Xamarin.Forms.Entry) 中的文字時，`OnEntryCompleted` 方法便會執行。 `sender` 引數是負責引發 `Entry` 事件的 `TextChanged` 物件，並且可用來存取 `Entry` 物件。
 
     > [!IMPORTANT]
     > 輸入到 [`Entry`](xref:Xamarin.Forms.Entry) 的任何文字都會儲存到 [`Text`](xref:Xamarin.Forms.InputView.Text) 屬性。
@@ -46,9 +46,9 @@ ms.locfileid: "77135048"
 
     在兩個事件處理常式中設定中斷點，並將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，然後觀察 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件的引發。
 
-    如需有關 [`Entry`](xref:Xamarin.Forms.Entry) 事件的詳細資訊，請參閱 [Xamarin.Forms 項目](~/xamarin-forms/user-interface/text/entry.md)指南中的[事件和互動功能](~/xamarin-forms/user-interface/text/entry.md#events-and-interactivity)。
+    如需有關 [`Entry`](xref:Xamarin.Forms.Entry) 事件的詳細資訊，請參閱 [Xamarin.Forms 項目](~/xamarin-forms/user-interface/text/entry.md#events-and-interactivity)指南中的[事件和互動功能](~/xamarin-forms/user-interface/text/entry.md)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 **MainPage.xaml** 中修改 [`Entry`](xref:Xamarin.Forms.Entry) 宣告，以便其設定 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件的處理常式：
 
@@ -75,9 +75,9 @@ ms.locfileid: "77135048"
     }
     ```
 
-    `OnEntryTextChanged` 方法會在 [`Entry`](xref:Xamarin.Forms.Entry) 中的文字發生變更時執行。 `sender` 引數是負責引發 `TextChanged` 事件的 `Entry` 物件，並且可用來存取 `Entry` 物件。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引數會在文字變更之前和之後提供舊的和新的文字值。
+    [ 方法會在 `Entry`](xref:Xamarin.Forms.Entry)`OnEntryTextChanged` 中的文字發生變更時執行。 `sender` 引數是負責引發 `Entry` 事件的 `TextChanged` 物件，並且可用來存取 `Entry` 物件。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引數會在文字變更之前和之後提供舊的和新的文字值。
 
-    當您按下 Return 鍵來完成 [`Entry`](xref:Xamarin.Forms.Entry) 中的文字時，`OnEntryCompleted` 方法便會執行。 `sender` 引數是負責引發 `TextChanged` 事件的 `Entry` 物件，並且可用來存取 `Entry` 物件。
+    當您按下 Return 鍵來完成 [`Entry`](xref:Xamarin.Forms.Entry) 中的文字時，`OnEntryCompleted` 方法便會執行。 `sender` 引數是負責引發 `Entry` 事件的 `TextChanged` 物件，並且可用來存取 `Entry` 物件。
 
     > [!IMPORTANT]
     > 輸入到 [`Entry`](xref:Xamarin.Forms.Entry) 的任何文字都會儲存到 [`Text`](xref:Xamarin.Forms.InputView.Text) 屬性。
@@ -88,4 +88,4 @@ ms.locfileid: "77135048"
 
     在兩個事件處理常式中設定中斷點，並將文字輸入 [`Entry`](xref:Xamarin.Forms.Entry)，然後觀察 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) 和 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件的引發。
 
-    如需有關 [`Entry`](xref:Xamarin.Forms.Entry) 事件的詳細資訊，請參閱 [Xamarin.Forms 項目](~/xamarin-forms/user-interface/text/entry.md)指南中的[事件和互動功能](~/xamarin-forms/user-interface/text/entry.md#events-and-interactivity)。
+    如需有關 [`Entry`](xref:Xamarin.Forms.Entry) 事件的詳細資訊，請參閱 [Xamarin.Forms 項目](~/xamarin-forms/user-interface/text/entry.md#events-and-interactivity)指南中的[事件和互動功能](~/xamarin-forms/user-interface/text/entry.md)。

@@ -11,10 +11,10 @@ metadata:
   ms.author: dabritch
   ms.date: 01/27/2020
   ms.openlocfilehash: 394812b5150f7bbea46dff476bd2f896083b9a74
-  ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 02/17/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "77374080"
 landingContent:
 - title: 開始使用
@@ -23,7 +23,7 @@ landingContent:
     links:
     - text: Xamarin.Android 使用者入門
       url: ~/android/get-started/index.md
-    - text: 設定與安裝
+    - text: 設定及安裝
       url: ~/android/get-started/installation/index.md
     - text: 建置您的第一個應用程式
       url: ~/android/get-started/hello-android/index.md
@@ -35,7 +35,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: 協助工具選項
+    - text: Accessibility
       url: ~/android/app-fundamentals/accessibility.md
     - text: Android API 層級
       url: ~/android/app-fundamentals/android-api-levels.md
@@ -53,7 +53,7 @@ landingContent:
       url: ~/android/app-fundamentals/permissions.md
     - text: 觸控與手勢
       url: ~/android/app-fundamentals/touch/index.md
-    - text: 查看更多項目 >
+    - text: 更多資訊 >
       url: ~/android/app-fundamentals/index.md
 - title: 使用者介面
   linkLists:
@@ -69,7 +69,7 @@ landingContent:
       url: ~/android/user-interface/splash-screen.md
     - text: 版面配置
       url: ~/android/user-interface/layouts/index.md
-    - text: 控制項
+    - text: 控制
       url: ~/android/user-interface/controls/index.md
 - title: 平台功能
   linkLists:
@@ -93,7 +93,7 @@ landingContent:
       url: ~/android/platform/android-job-scheduler.md
     - text: 地圖與位置
       url: ~/android/platform/maps-and-location/index.md
-    - text: 查看更多項目 >
+    - text: 更多資訊 >
       url: ~/android/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
@@ -137,7 +137,7 @@ landingContent:
       url: ~/android/deploy-test/multicore-devices.md
     - text: 效能
       url: ~/android/deploy-test/performance.md
-    - text: 程式碼剖析
+    - text: 分析
       url: ~/android/deploy-test/profiling.md
     - text: 為發行做好準備
       url: ~/android/deploy-test/release-prep/index.md
@@ -145,7 +145,7 @@ landingContent:
       url: ~/android/deploy-test/signing/index.md
     - text: 發佈應用程式
       url: ~/android/deploy-test/publishing/index.md
-    - text: 查看更多項目 >
+    - text: 更多資訊 >
       url: ~/android/deploy-test/index.md
 - title: 進階概念與內部項目
   linkLists:

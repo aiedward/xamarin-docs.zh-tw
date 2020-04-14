@@ -14,15 +14,15 @@
       href: dependency-injection.md
     - name: 在偶合程度低的元件之間通訊
       href: communicating-between-loosely-coupled-components.md
-    - name: 巡覽
+    - name: 導覽
       href: navigation.md
     - name: 驗證
       href: validation.md
-    - name: 設定管理
+    - name: 組態管理
       href: configuration-management.md
     - name: 容器化的微服務
       href: containerized-microservices.md
-    - name: 驗證與授權
+    - name: 驗證和授權
       href: authentication-and-authorization.md
     - name: 存取遠端資料
       href: accessing-remote-data.md

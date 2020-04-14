@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: c826ee87c006b05322af8c9312bdf3120df8b357
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61375363"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中修改 [`Grid`](xref:Xamarin.Forms.Grid) 宣告，以定義資料行和資料列，並放置跨越資料行和資料列的內容：
 
@@ -35,9 +35,9 @@ ms.locfileid: "61375363"
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，內容跨越多個欄和列的 Grid](../images/span-columns-rows.png "內容跨越欄和列的 Grid")](../images/span-columns-rows-large.png#lightbox "內容跨越欄和列的 Grid")
 
-    如需如何跨越資料行和資料列的詳細資訊，請參閱 [Xamarin.Forms 格線](~/xamarin-forms/user-interface/layouts/grid.md)指南中的[跨越](~/xamarin-forms/user-interface/layouts/grid.md#spans)。
+    如需如何跨越資料行和資料列的詳細資訊，請參閱 [Xamarin.Forms 格線](~/xamarin-forms/user-interface/layouts/grid.md#spans)指南中的[跨越](~/xamarin-forms/user-interface/layouts/grid.md)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 **MainPage.xaml** 中修改 [`Grid`](xref:Xamarin.Forms.Grid) 宣告，以定義資料行和資料列，並放置跨越資料行和資料列的內容：
 
@@ -66,4 +66,4 @@ ms.locfileid: "61375363"
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，內容跨越多個欄和列的 Grid](../images/span-columns-rows.png "內容跨越欄和列的 Grid")](../images/span-columns-rows-large.png#lightbox "內容跨越欄和列的 Grid")
 
-    如需如何跨越資料行和資料列的詳細資訊，請參閱 [Xamarin.Forms 格線](~/xamarin-forms/user-interface/layouts/grid.md)指南中的[跨越](~/xamarin-forms/user-interface/layouts/grid.md#spans)。
+    如需如何跨越資料行和資料列的詳細資訊，請參閱 [Xamarin.Forms 格線](~/xamarin-forms/user-interface/layouts/grid.md#spans)指南中的[跨越](~/xamarin-forms/user-interface/layouts/grid.md)。

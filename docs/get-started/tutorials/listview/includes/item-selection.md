@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "74062863"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.ListView) 宣告，以便其設定 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 和 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 事件的處理常式：
 
@@ -45,7 +45,7 @@ ms.locfileid: "74062863"
 
     如需有關項目選取及點選的詳細資訊，請參閱 [ListView 互動功能](~/xamarin-forms/user-interface/listview/interactivity.md)指南中的[選取與點選](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.ListView) 宣告，以便其設定 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 和 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 事件的處理常式：
 

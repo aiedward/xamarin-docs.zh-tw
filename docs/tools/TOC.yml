@@ -9,7 +9,7 @@
           href: ios-simulator/deploy.md
         - name: 版本資訊
           href: /xamarin/tools/ios-simulator/release-notes/?context=xamarin/tools
-    - name: 檢查程式
+    - name: Inspector
       href: inspector/index.md
       items:
         - name: 安裝與需求
@@ -22,13 +22,13 @@
       items:
         - name: 關於 Xamarin Live Player 預覽
           href: live-player/index.md
-        - name: Visual Studio 組態
+        - name: Visual Studio 設定
           href: live-player/install.md
         - name: Xamarin Live Player 應用程式
           href: live-player/player.md
         - name: 疑難排解
           href: live-player/troubleshooting.md
-    - name: 程式碼剖析工具
+    - name: 分析工具
       href: profiler/index.md
       items:
         - name: 疑難排解
@@ -69,7 +69,7 @@
     - name: .NET 內嵌
       href: dotnet-embedding/index.md
       items:
-        - name: 快速入門
+        - name: 開始使用
           href: dotnet-embedding/get-started/index.md
           items:
             - name: 安裝
@@ -96,7 +96,7 @@
         - name: Objective-C
           href: dotnet-embedding/objective-c/index.md
           items:
-            - name: 最佳作法
+            - name: 最佳做法
               href: dotnet-embedding/objective-c/best-practices.md
             - name: 平台
               href: dotnet-embedding/objective-c/platforms.md
@@ -104,7 +104,7 @@
           href: dotnet-embedding/limitations.md
         - name: 版本資訊
           href: /xamarin/tools/dotnet-embedding/release-notes/
-    - name: 連續整合
+    - name: 持續整合
       href: ci/index.md
       items:
         - name: 連續整合簡介

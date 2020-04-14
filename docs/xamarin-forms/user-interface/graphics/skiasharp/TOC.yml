@@ -123,5 +123,5 @@
       items:
         - name: 平台專屬的注意事項
           href: ~/graphics-games/skiasharp/platform.md
-    - name: 應用程式開發介面參考
+    - name: API 參考資料
       href: /dotnet/api/skiasharp/

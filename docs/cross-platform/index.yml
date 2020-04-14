@@ -9,10 +9,10 @@ metadata:
   ms.date: 12/23/2019
   ms.topic: landing-page
   ms.openlocfilehash: 624228746f3212b0c8b237dcb9694daea037e89f
-  ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 01/07/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "75718711"
 landingContent:
 - title: 建置跨平台應用程式
@@ -29,13 +29,13 @@ landingContent:
     links:
     - text: 應用程式開發週期
       url: ~/cross-platform/get-started/introduction-to-mobile-sdlc.md
-    - text: 逐步解說
+    - text: 逐步介紹
       url: ~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md
 - title: 語言支援
   linkLists:
   - linkListType: concept
     links:
-    - text: 總覽
+    - text: 概觀
       url: ~/cross-platform/platform/index.md
     - text: C#
       url: ~/cross-platform/platform/csharp-six.md

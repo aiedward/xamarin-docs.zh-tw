@@ -11,17 +11,17 @@ metadata:
   ms.author: dabritch
   ms.date: 12/30/2019
   ms.openlocfilehash: bbe7fd52581cd77ed7e7d910dd16264641c15abf
-  ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 02/20/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "77480600"
 landingContent:
 - title: 控制項參考
   linkLists:
   - linkListType: concept
     links:
-    - text: 總覽
+    - text: 概觀
       url: controls/index.md
     - text: 頁面
       url: controls/pages.md
@@ -41,7 +41,7 @@ landingContent:
     links:
     - text: BoxView
       url: boxview.md
-    - text: Image
+    - text: 影像
       url: images.md
     - text: 標籤
       url: text/label.md
@@ -69,7 +69,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: 核取方塊
+    - text: CheckBox
       url: checkbox.md
     - text: DatePicker
       url: datepicker.md
@@ -77,7 +77,7 @@ landingContent:
       url: slider.md
     - text: Stepper
       url: stepper.md
-    - text: 參數
+    - text: Switch
       url: switch.md
     - text: TimePicker
       url: timepicker.md
@@ -87,7 +87,7 @@ landingContent:
     links:
     - text: 編輯器
       url: text/editor.md
-    - text: 進入
+    - text: 項目
       url: text/entry.md
 - title: 表示活動的檢視
   linkLists:
@@ -159,7 +159,7 @@ landingContent:
       url: layouts/flex-layout.md
     - text: Frame
       url: layouts/frame.md
-    - text: Grid
+    - text: 方格
       url: layouts/grid.md
     - text: RelativeLayout
       url: layouts/relative-layout.md

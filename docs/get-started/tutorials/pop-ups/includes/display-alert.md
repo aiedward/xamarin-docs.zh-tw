@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 875f00b379879aa131d37018f89e475170e5320e
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67277160"
 ---
 Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是詢問簡易問題。 在本練習中，您會使用 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 方法 (來自 [`Page`](xref:Xamarin.Forms.Page) 類別) 向使用者顯示警示，以及詢問簡易問題。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 若要完成此教學課程，您應該有 Visual Studio 2019 (最新版本)，並已安裝 [使用 .NET 進行行動開發]  工作負載。 此外，您還需要配對的 Mac 才能在 iOS 上建置教學課程應用程式。 如需安裝 Xamarin 平台的相關資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
@@ -35,7 +35,7 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的兩個 [`Button`](xref:Xamarin.Forms.Button) 物件。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定出現在每個 `Button` 中的文字，而且 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件會設定為會在下一個步驟中建立的事件處理常式。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Button`](xref:Xamarin.Forms.Button) 中的兩個 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 物件。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定出現在每個 `Button` 中的文字，而且 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件會設定為會在下一個步驟中建立的事件處理常式。
 
 1. 在 [方案總管]  的 **PopupsTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnDisplayAlertButtonClicked` 和 `OnDisplayAlertQuestionButtonClicked` 事件處理常式新增至類別：
 
@@ -69,9 +69,9 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
 
     請觀察一下，在選取問題的回應之後，回應便會輸出到 Visual Studio 的 [輸出]  視窗。
 
-    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)。
+    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md)。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 若要完成本教學課程，您應該具備 Visual Studio for Mac (最新版本)，並已安裝 iOS 和 Android 平台支援。 此外，您還需要 Xcode (最新版本)。 如需安裝 Xamarin 平台的詳細資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。
 
@@ -98,7 +98,7 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的兩個 [`Button`](xref:Xamarin.Forms.Button) 物件。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定出現在每個 `Button` 中的文字，而且 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件會設定為會在下一個步驟中建立的事件處理常式。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Button`](xref:Xamarin.Forms.Button) 中的兩個 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 物件。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定出現在每個 `Button` 中的文字，而且 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件會設定為會在下一個步驟中建立的事件處理常式。
 
 1. 在 [Solution Pad]  的 **PopupsTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnDisplayAlertButtonClicked` 和 `OnDisplayAlertQuestionButtonClicked` 事件處理常式新增至類別：
 
@@ -132,4 +132,4 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
 
     請觀察一下，在選取問題的回應之後，回應便會輸出到 Visual Studio for Mac 的 [應用程式輸出]  視窗。
 
-    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)。
+    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md)。

@@ -11,10 +11,10 @@ metadata:
   ms.author: dabritch
   ms.date: 12/30/2019
   ms.openlocfilehash: c95416d35a54dfd5954318ea068a4c70622dc1a1
-  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 01/06/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "75679645"
 landingContent:
 - title: Android
@@ -29,7 +29,7 @@ landingContent:
       url: android/appcompat-material-design.md
     - text: VisualElement 上移
       url: android/visualelement-elevation.md
-    - text: 查看更多項目 >
+    - text: 更多資訊 >
       url: android/index.md
 - title: iOS
   linkLists:
@@ -43,7 +43,7 @@ landingContent:
       url: ios/page-home-indicator.md
     - text: 滑桿指標點選
       url: ios/slider-thumb.md
-    - text: 查看更多項目 >
+    - text: 更多資訊 >
       url: ios/index.md
 - title: Windows
   linkLists:
@@ -57,7 +57,7 @@ landingContent:
       url: windows/searchbar-spell-check.md
     - text: TabbedPage 索引標籤圖示
       url: windows/tabbedpage-icons.md
-    - text: 查看更多項目 >
+    - text: 更多資訊 >
       url: windows/index.md
 - title: 平台功能
   linkLists:
