@@ -143,6 +143,8 @@
               href: user-interface/android-designer/material-design-features.md
             - name: Android 版面配置診斷
               href: user-interface/android-designer/diagnostics.md
+            - name: Android Designer 診斷分析器
+              href: user-interface/android-designer/diagnostic-analyzers.md
         - name: 材質佈景主題
           href: user-interface/material-theme.md
         - name: 使用者設定檔
@@ -463,6 +465,8 @@
           href: ~/essentials/version-tracking.md?context=xamarin/android
         - name: 震動
           href: ~/essentials/vibrate.md?context=xamarin/android
+        - name: Web 驗證器
+          href: ~/essentials/web-authenticator.md?context=xamarin/android
         - name: Xamarin.Essentials 版本資訊
           href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
         - name: 疑難排解

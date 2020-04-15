@@ -860,6 +860,8 @@
           href: ~/essentials/version-tracking.md?context=xamarin/xamarin-forms
         - name: 震動
           href: ~/essentials/vibrate.md?context=xamarin/xamarin-forms
+        - name: Web 驗證器
+          href: ~/essentials/web-authenticator.md?context=xamarin/xamarin-forms
         - name: Xamarin.Essentials 版本資訊
           href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
         - name: 疑難排解
@@ -924,8 +926,6 @@
               href: data-cloud/authentication/index.md
             - name: REST
               href: data-cloud/authentication/rest.md
-            - name: OAuth
-              href: data-cloud/authentication/oauth.md
             - name: Azure Active Directory B2C
               href: data-cloud/authentication/azure-ad-b2c.md
             - name: Azure Cosmos DB 驗證
