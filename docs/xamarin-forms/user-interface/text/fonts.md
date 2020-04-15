@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2020
-ms.openlocfilehash: 4f14d66e5321a0fb19078be4d97ae4df69f688c9
-ms.sourcegitcommit: 6f3281a32017cfcebadde8a2d6e10651a277828f
+ms.openlocfilehash: ca4d3b242fcc73bb73e8d6ab1f817eefcc2ade4d
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80587439"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81388809"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin 中的字型。
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
-本文介紹了 Xamarin.Forms 如何允許您在顯示文本的控制項上指定字型屬性(包括粗細和大小)。 字型資訊可以在[代碼中指定](#Setting_Font_in_Code)或[XAML 中指定](#Setting_Font_in_Xaml)。 使用[自訂字型](#Using_a_Custom_Font)與[顯示字型圖示](#display-font-icons)。
+本文介紹了 Xamarin.Forms 如何允許您在顯示文本的控制項上指定字型屬性(包括粗細和大小)。 字型資訊可以在[代碼中指定](#Setting_Font_in_Code)或[XAML 中指定](#Setting_Font_in_Xaml)。 使用[自訂字型](#use-a-custom-font)與[顯示字型圖示](#display-font-icons)。
 
 <a name="Setting_Font_in_Code" />
 
@@ -145,84 +145,14 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 > [!NOTE]
 > 在 iOS 和 Android 上,命名字體大小將根據作業系統輔助功能選項自動縮放。 此行為可以在 iOS 上使用特定於平臺的 iOS 禁用。 有關詳細資訊,請參閱[iOS 上命名字體大小的輔助功能縮放](~/xamarin-forms/platform/ios/named-font-size-scaling.md)。
 
-<a name="Using_a_Custom_Font" />
-
 ## <a name="use-a-custom-font"></a>使用自訂字型
-
-使用內建字體以外的字體需要一些特定於平臺的編碼。 此螢幕截圖顯示了使用 Xamarin.Forms 呈現[的 Google 開源字型中的自訂字型](https://www.google.com/fonts)**龍蝦**。
-
- [![iOS 和 Android 上的自訂字型](fonts-images/custom-sml.png "自訂字型範例")](fonts-images/custom.png#lightbox "自訂字型範例")
-
-下面概述了每個平臺所需的步驟。 將自訂字型檔與應用程式一起包含時,請確保驗證該字體的許可證是否允許分發。
-
-### <a name="ios"></a>iOS
-
-可以通過首先確保載入自訂字型,然後使用 Xamarin.Forms`Font`方法按名稱引用自訂字體來顯示它。
-依[此部落格文章](https://devblogs.microsoft.com/xamarin/custom-fonts-in-ios/)的說明:
-
-1. 使用產生操作新增字型檔案 **:捆綁資源**,以及
-2. 更新**Info.plist**檔案(**應用程式的字型**或`UIAppFonts`, 鍵), 然後
-3. 在 Xamarin 中定義字型時,請按名稱引用它。
-
-```csharp
-new Label
-{
-    Text = "Hello, Forms!",
-    FontFamily = Device.RuntimePlatform == Device.iOS ? "Lobster-Regular" : null // set only for iOS
-}
-```
-
-### <a name="android"></a>Android
-
-適用於 Android 的 Xamarin.Forms 可以引用已添加到專案的自訂字體,該自訂字體遵循特定的命名標準。 首先將字型檔案加入應用程式項目**中的資產**資料夾,並設定*產生操作:AndroidAsset*。 然後使用完整路徑與*字型名稱*分隔以哈希 (#) 作為 Xamarin.Forms 中的字型名稱,如下代碼段所示:
-
-```csharp
-new Label
-{
-  Text = "Hello, Forms!",
-  FontFamily = Device.RuntimePlatform == Device.Android ? "Lobster-Regular.ttf#Lobster-Regular" : null // set only for Android
-}
-```
-
-### <a name="windows"></a>Windows
-
-適用於 Windows 平臺的 Xamarin.窗體可以引用已添加到專案的自訂字型,該自訂字體遵循特定的命名標準。 首先將字型檔案加入到應用程式項目中的 **/Assets/Fonts/** 資料夾,然後設定**產生操作:內容**。 然後使用完整路徑和字型檔名,後跟哈希 (#) 和**字型名稱**,如下代碼段所示:
-
-```csharp
-new Label
-{
-    Text = "Hello, Forms!",
-    FontFamily = Device.RuntimePlatform == Device.UWP ? "Assets/Fonts/Lobster-Regular.ttf#Lobster" : null // set only for UWP apps
-}
-```
-
-> [!NOTE]
-> 請注意,字體檔名和字體名稱可能不同。 要在 Windows 上發現字型名稱,請右鍵單擊 .ttf 檔並選擇 **「預覽**」。。 然後可以從預覽視窗中確定字體名稱。
-
-### <a name="xaml"></a>XAML
-
-您還可以使用[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads)XAML 來呈現自訂字型:
-
-```xaml
-<Label Text="Hello Forms with XAML">
-    <Label.FontFamily>
-        <OnPlatform x:TypeArguments="x:String">
-                <On Platform="iOS" Value="Lobster-Regular" />
-                <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
-                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
-        </OnPlatform>
-    </Label.FontFamily>
-</Label>
-```
-
-## <a name="use-a-custom-font-preview"></a>使用自訂字型 (預覽)
 
 自定義字體可以添加到 Xamarin.Forms 共用專案中,並由平臺專案使用,而無需任何其他工作。 完成此動作的程序如下所示：
 
 1. 將字型添加到 Xamarin.Forms 共用專案中作為嵌入式資源(**生成操作:嵌入式資源**)。
 1. 使用`ExportFont`屬性在**AssemblyInfo.cs**等檔中向程式集註冊字體檔。 也可以指定可選別名。
 
-> [!NOTE]
+> [!IMPORTANT]
 > 嵌入字體需要使用 Xamarin.窗體 4.5.0.530 或更高版本。
 
 下面的範例顯示了在程式集中註冊的龍蝦常規字體以及別名:
@@ -273,6 +203,9 @@ Label label2 = new Label
 以下螢幕截圖顯示自訂字型:
 
 [![iOS 和 Android 上的自訂字型](fonts-images/custom-sml.png "自訂字型範例")](fonts-images/custom.png#lightbox "自訂字型範例")
+
+> [!IMPORTANT]
+> 在 Windows 上,字體檔名和字體名稱可能不同。 要在 Windows 上發現字型名稱,請右鍵單擊 .ttf 檔並選擇 **「預覽**」。。 然後可以從預覽視窗中確定字體名稱。
 
 ## <a name="display-font-icons"></a>顯示字型圖示
 
