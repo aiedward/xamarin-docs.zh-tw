@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9d78f0e9bf3b8d6d227f76b2729be849e5cdd3a6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1bcd808221ee319fa2818563418d2362b146e354
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "72678710"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389915"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -31,7 +31,7 @@ ms.locfileid: "72678710"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Label.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定顯示的文字，而 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性會指定將 `Label` 水平置中。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 屬性會指定顯示的文字，而 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性會指定將 `Label` 水平置中。
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
@@ -62,7 +62,7 @@ ms.locfileid: "72678710"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Label.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定顯示的文字，而 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性會指定將文字水平置中。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 屬性會指定顯示的文字，而 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性會指定將文字水平置中。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 

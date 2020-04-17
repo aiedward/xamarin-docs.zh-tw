@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 04d2a244482c92a615c3eec2130cec1df8aaaf1f
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61037505"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389989"
 ---
 先前，已使用資料繫結在 [`ListView`](xref:Xamarin.Forms.ListView) 中填入資料。 不過，儘管將資料繫結至集合，而集合中的每個物件已定義多個資料項目，但每個物件只會顯示單一資料項目 (`Name` 物件的 `Monkey` 屬性)。
 
@@ -12,7 +12,7 @@ ms.locfileid: "61037505"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.Image) 宣告，以自訂每個資料列的外觀：
+1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.ListView) 宣告，以自訂每個資料列的外觀：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"
@@ -62,7 +62,7 @@ ms.locfileid: "61037505"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.Image) 宣告，以自訂每個資料列的外觀：
+1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.ListView) 宣告，以自訂每個資料列的外觀：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"

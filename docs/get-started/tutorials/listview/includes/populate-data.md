@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c1eeece93d5da3092f1bd46c82c98e2304d25139
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "69541436"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389931"
 ---
 [`ListView`](xref:Xamarin.Forms.ListView) 會使用類型為 [ 的 `ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)`IEnumerable` 屬性來填入資料。 上一個步驟已使用字串陣列填入 XAML 中的 `ListView`。 不過，一般而言，`ListView` 會從程式碼後置中所定義且實作 `IEnumerable` 的集合填入資料。
 
@@ -177,7 +177,7 @@ ms.locfileid: "69541436"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性會透過視覺化樹狀結構繼承。 因此，由於其已設定於 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，所以 `ContentPage` 的子物件會繼承其值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.Image) 宣告，以將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為 `Monkeys` 集合：
+1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.ListView) 宣告，以將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為 `Monkeys` 集合：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -358,7 +358,7 @@ ms.locfileid: "69541436"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 屬性會透過視覺化樹狀結構繼承。 因此，由於其已設定於 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，所以 `ContentPage` 的子物件會繼承其值，包括 [`ListView`](xref:Xamarin.Forms.ListView)。
 
-1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.Image) 宣告，以將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為 `Monkeys` 集合：
+1. 在 **MainPage.xaml** 中修改 [`ListView`](xref:Xamarin.Forms.ListView) 宣告，以將 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為 `Monkeys` 集合：
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
