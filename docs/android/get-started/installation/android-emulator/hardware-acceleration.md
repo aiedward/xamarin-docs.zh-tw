@@ -5,15 +5,15 @@ zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 915874C3-2F0F-4D83-9C39-ED6B90BB2C8E
 ms.technology: xamarin-android
-author: davidortinau
-ms.author: daortin
-ms.date: 08/27/2018
-ms.openlocfilehash: a724a21dfffead307ca3d65d5ff134cf2d7c90db
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+author: jondouglas
+ms.author: jodou
+ms.date: 02/13/2020
+ms.openlocfilehash: faab613d88a7f59d1095021d2b21faf9223ae33b
+ms.sourcegitcommit: 3fb407841dbe46b8b23573f08591228b7c0e2726
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304076"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81488906"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 
