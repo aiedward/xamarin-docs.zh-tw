@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 7278fd624bb3147c2e1a1a1a79adde68813a9888
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ef2f8e0375786ba7b627fdf75545cbb48318c1aa
+ms.sourcegitcommit: 854798de42566750d9c70b6d0539b7ee73ff6ddc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020158"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646594"
 ---
 # <a name="android-callable-wrappers-for-xamarinandroid"></a>Xamarin.安卓的安卓可調用包裝器
 
@@ -74,7 +74,7 @@ namespace My {
 
 有時您可能需要實現 Android 介面,如[Android.Content.I 元件回撥](xref:Android.Content.IComponentCallbacks)。 由於所有Android類和介面都擴展了[Android.Runtime.IJavaObject](xref:Android.Runtime.IJavaObject)介面,問題就出現了:我們如何實現`IJavaObject`? 
 
-上面回答了這個問題:所有 Android 類型`IJavaObject`都需要實現 的原因是使 Xamarin.Android 具有一個 Android 可調用包裝器提供給 Android,即給定類型的 Java 代理。 由於**單體.exe**`Java.Lang.Object`只查找子`Java.Lang.Object`類,`IJavaObject,`並且實現 答案是顯而易見的`Java.Lang.Object`:子類: 
+上面回答了這個問題:所有 Android 類型`IJavaObject`都需要實現 的原因是使 Xamarin.Android 具有一個 Android 可調用包裝器提供給 Android,即給定類型的 Java 代理。 由於**單體.exe**只`Java.Lang.Object`查`Java.Lang.Object`找子`IJavaObject`類 和實現 ,因此答案顯而易`Java.Lang.Object`見:子類: 
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
