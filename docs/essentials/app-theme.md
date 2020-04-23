@@ -5,12 +5,12 @@ ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: e31cae6ff639dbe261599a7cf78ae31fc09318b3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f322855f26d7a57acc06e97e0c97ab201c3fa586
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79190320"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047396"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin.要點:應用主題
 
@@ -62,7 +62,7 @@ Android 使用配置模式指定要向使用者請求的主題類型。 根據 A
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-預設情況下,你的應用使用使用者在 Windows 設置中設置的主題運行(**設置>個人化>顏色>選擇預設應用模式**)。 您可以設置應用的「請求主題」屬性以覆蓋使用者預設值並指定使用的主題。
+UWP 應用程式將尊重您在 UWP App.xaml 下 **"請求主題**"中的設置。 如果它設置為特定主題,Xamarin.基本將始終返回此設置。 要使用作業系統的動態主題從應用程式中刪除此節點,然後當應用運行時,它將返回使用者在 Windows 設置中設置的主題(**設置>個人化>顏色>選擇預設應用模式**)。
 
 您可以閱讀更多關於[UWP 要求的主題文件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme)。
 

@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b26d99c131e9759da3077a767476de38712bcb18
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73612274"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047569"
 ---
 # <a name="android-10-with-xamarin"></a>安卓 10 與 Xamarin
 
@@ -78,7 +78,7 @@ Visual Studio 2019 建議使用 Xamarin 構建 Android 10 應用程式。
 
 ### <a name="configure-a-device-or-emulator"></a>設定裝置或模擬器
 
-如果您正在使用物理設備(如圖元),`System` > `System update` > `Check for update`則可以通過轉到手機設置下載 Android 10 更新。 如果您希望快閃記憶體設備,請參閱有關向設備閃爍[出廠映射](https://developers.google.com/android/images)或[OTA 映射](https://developers.google.com/android/ota)的說明。
+如果您正在使用物理設備(如圖元),則可以通過轉到系統>系統更新>檢查手機設置中的更新來下載 Android 10 更新。 如果您希望快閃記憶體設備,請參閱有關向設備閃爍[出廠映射](https://developers.google.com/android/images)或[OTA 映射](https://developers.google.com/android/ota)的說明。
 
 如果使用模擬器,請為 API 級別 29 創建虛擬裝置,然後選擇基於 x86 的圖像。 有關使用 Android 裝置管理員創建和管理虛擬裝置的資訊,請參閱使用[Android 設備管理員管理虛擬設備。](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager) 有關使用 Android 模擬器進行測試和調試的資訊,請參閱 Android[模擬器上的調試。](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)
 
@@ -124,7 +124,7 @@ Android 10 引入了多種新功能。 其中一些新功能旨在利用最新�
 - [全螢幕意圖的權限必須`USE_FULL_SCREEN_INTENT`請求](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)。
 - [支援可折疊性](https://developer.android.com/about/versions/10/behavior-changes-10#foldables)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文介紹了Android 10,並解釋了如何使用Android 10安裝和配置Xamarin.Android開發的最新工具和軟體包。 它提供了 Android 10 中提供的主要功能的概述。 它包括指向 API 文件和 Android 開發人員主題的連結,可説明您開始為 Android 10 創建應用。 它還強調了可能影響現有應用的最重要 Android 10 行為更改。
 
