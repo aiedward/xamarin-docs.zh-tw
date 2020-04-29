@@ -7,47 +7,47 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/28/2020
-ms.openlocfilehash: 2e3d3ccd42907ef3678ccfb634c036930800a145
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 3242148fa97e6b3795b57b2fed86f3643a5ecdf6
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "78292805"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517413"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin. Forms CarouselView 版面配置
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)定義下列控制配置的屬性：
 
-- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)，屬於 `LinearItemsLayout`類型，可指定要使用的版面配置。
-- `PeekAreaInsets`，屬於[`Thickness`](xref:Xamarin.Forms.Thickness)類型，可指定要讓相鄰專案部分可見的程度。
+- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)，屬於類型`LinearItemsLayout`，可指定要使用的版面配置。
+- `PeekAreaInsets`，屬於類型[`Thickness`](xref:Xamarin.Forms.Thickness)，指定要讓相鄰專案部分可見的程度。
 
-這些屬性是以[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件為後盾，也就是說，這些屬性可以是資料系結的目標。
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示屬性可以是資料系結的目標。
 
-根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會以水準方向顯示其專案。 螢幕上會顯示單一專案，而滑動手勢會導致向前和向後流覽專案的集合。 不過，垂直方向也是可行的。 這是因為[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)屬性的類型是 `LinearItemsLayout`，它會繼承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)類別。 `ItemsLayout` 類別會定義下列屬性：
+根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會以水準方向顯示其專案。 螢幕上會顯示單一專案，而滑動手勢會導致向前和向後流覽專案的集合。 不過，垂直方向也是可行的。 這是因為[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)屬性的類型`LinearItemsLayout`是，它繼承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)類別。 `ItemsLayout`類別會定義下列屬性：
 
-- [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)，屬於[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)類型，會指定[`CarouselView`](xref:Xamarin.Forms.CarouselView)在加入專案時展開的方向。
-- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)，屬於[`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)類型，可指定對齊點與專案對齊的方式。
-- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)，屬於[`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)類型，會在滾動時指定貼齊點的行為。
+- [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)，屬於類型[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)，可指定要在其中加入[`CarouselView`](xref:Xamarin.Forms.CarouselView)做為專案展開的方向。
+- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)，屬於類型[`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)，指定對齊點與專案對齊的方式。
+- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)，屬於類型[`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)，會在滾動時指定貼齊點的行為。
 
-這些屬性是以[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件為後盾，也就是說，這些屬性可以是資料系結的目標。 如需有關貼齊點的詳細資訊，請參閱[CollectionView 滾動](scrolling.md)指南中的[貼齊點](scrolling.md#snap-points)。
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示屬性可以是資料系結的目標。 如需有關貼齊點的詳細資訊，請參閱[CollectionView 滾動](scrolling.md)指南中的[貼齊點](scrolling.md#snap-points)。
 
 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉會定義下列成員：
 
-- `Vertical` 表示在加入專案時， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會以垂直方式展開。
-- `Horizontal` 表示[`CarouselView`](xref:Xamarin.Forms.CarouselView)會在加入專案時以水準方式展開。
+- `Vertical`表示將會[`CarouselView`](xref:Xamarin.Forms.CarouselView)在加入專案時垂直展開。
+- `Horizontal`表示將會[`CarouselView`](xref:Xamarin.Forms.CarouselView)在加入專案時，以水準方式展開。
 
-`LinearItemsLayout` 類別會繼承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)類別，並定義類型 `double`的 `ItemSpacing` 屬性，代表每個專案周圍的空白空間。 這個屬性的預設值為0，且其值必須一律大於或等於0。 `LinearItemsLayout` 類別也會定義靜態 `Vertical` 和 `Horizontal` 成員。 這些成員可以分別用來建立垂直或水準清單。 或者，也可以建立 `LinearItemsLayout` 物件，指定[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員做為引數。
+`LinearItemsLayout`類別繼承自[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)類別，並定義類型`double`為的`ItemSpacing`屬性，代表每個專案周圍的空白空間。 這個屬性的預設值為0，且其值必須一律大於或等於0。 `LinearItemsLayout`類別也會定義靜態`Vertical`和`Horizontal`成員。 這些成員可以分別用來建立垂直或水準清單。 或者，也`LinearItemsLayout`可以建立物件，並指定[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員做為引數。
 
 > [!NOTE]
-> [`CarouselView`](xref:Xamarin.Forms.CarouselView)會使用原生版面配置引擎來執行版面配置。
+> [`CarouselView`](xref:Xamarin.Forms.CarouselView)使用原生版面配置引擎來執行版面配置。
 
-## <a name="horizontal-layout"></a>水準配置
+## <a name="horizontal-layout"></a>水平的版面配置
 
-根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會水準顯示其專案。 因此，不需要將[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為使用此配置：
+根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會以水準方式顯示其專案。 因此，不需要將[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為使用此配置：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -87,7 +87,7 @@ ms.locfileid: "78292805"
 </CarouselView>
 ```
 
-或者，也可以藉由將[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件，將 `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定為 `Orientation` 屬性值，來完成此配置：
+或者，也可以[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)藉由將屬性設定為`LinearItemsLayout`物件，將`Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定為`Orientation`屬性值，來完成此配置：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -114,7 +114,7 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="vertical-layout"></a>垂直版面配置
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以將[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件，並將 `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定為 `Orientation` 屬性值，以垂直方式顯示其專案：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)可以將屬性設定為`LinearItemsLayout`物件，並將`Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列舉成員指定為`Orientation`屬性值，以垂直方式顯示其專案：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -173,7 +173,7 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="partially-visible-adjacent-items"></a>部分可見的相鄰專案
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)預設會一次顯示完整的專案。 不過，您可以將 `PeekAreaInsets` 屬性設定為 `Thickness` 值，指定要讓相鄰專案部分可見的程度，藉此變更此行為。 這對於向使用者指出有其他專案可供查看時非常有用。 下列 XAML 顯示設定此屬性的範例：
+根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會一次顯示完整的專案。 不過，您可以將`PeekAreaInsets`屬性設定為`Thickness`值，指定要讓相鄰專案部分可見的程度，藉此變更此行為。 這對於向使用者指出有其他專案可供查看時非常有用。 下列 XAML 顯示設定此屬性的範例：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -198,9 +198,9 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="item-spacing"></a>專案間距
 
-根據預設， [`CarouselView`](xref:Xamarin.Forms.CarouselView)中的每個專案在其周圍不會有任何空白空間。 藉由設定 `CarouselView`所使用之專案配置的屬性，即可變更此行為。
+根據預設，中的每個專案之間沒有空格[`CarouselView`](xref:Xamarin.Forms.CarouselView)。 藉由在所使用的專案配置`ItemSpacing`上設定屬性，即可變更此行為`CarouselView`。
 
-當[`CarouselView`](xref:Xamarin.Forms.CarouselView)將其[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為 `LinearItemsLayout` 物件時，`LinearItemsLayout.ItemSpacing` 屬性可以設定為 `double` 值，表示每個專案周圍的空白空間：
+當將[`CarouselView`](xref:Xamarin.Forms.CarouselView)其[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)屬性設定為`LinearItemsLayout`物件時，可以`LinearItemsLayout.ItemSpacing`將屬性設定為代表專案`double`之間間距的值：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -213,7 +213,7 @@ CarouselView carouselView = new CarouselView
 ```
 
 > [!NOTE]
-> `LinearItemsLayout.ItemSpacing` 屬性具有驗證回呼集，可確保屬性的值一律大於或等於0。
+> `LinearItemsLayout.ItemSpacing`屬性具有驗證回呼集，可確保屬性的值一律大於或等於0。
 
 對等的 C# 程式碼為：
 
@@ -228,11 +228,11 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-這段程式碼會產生垂直版面配置，每個專案周圍的間距為20。
+這段程式碼會產生垂直版面配置，專案之間的間距為20。
 
 ## <a name="dynamic-resizing-of-items"></a>動態調整專案大小
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)中的專案可以在執行時間以動態方式調整大小，方法是變更[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)內元素的版面配置相關屬性。 例如，下列程式碼範例會變更[`Image`](xref:Xamarin.Forms.Image)物件的[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)和[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)屬性，以及其父系[`Frame`](xref:Xamarin.Forms.Frame)的 `HeightRequest` 屬性：
+中的專案[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以在執行時間以動態方式調整大小， [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)方法是在中變更元素的版面配置相關屬性。 例如，下列程式碼範例會[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)變更[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) [`Image`](xref:Xamarin.Forms.Image)物件的和屬性，以及其父系`HeightRequest` [`Frame`](xref:Xamarin.Forms.Frame)的屬性：
 
 ```csharp
 void OnImageTapped(object sender, EventArgs e)
@@ -244,13 +244,13 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-系統會執行 `OnImageTapped` 事件處理常式，以回應所按下的[`Image`](xref:Xamarin.Forms.Image)物件，並變更影像的維度（及其父 `Frame`），以便更輕鬆地查看：
+系統`OnImageTapped`會執行事件處理常式，以回應[`Image`](xref:Xamarin.Forms.Image)所按下的物件，並變更影像的維度（及其父系`Frame`），以便更輕鬆地查看：
 
 [![在 iOS 和 Android 上具有動態專案大小的 CarouselView 螢幕擷取畫面](layout-images/runtime-resizing.png "CarouselView 動態專案大小")](layout-images/runtime-resizing-large.png#lightbox "CarouselView 動態專案大小")
 
 ## <a name="right-to-left-layout"></a>由右至左的版面配置
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以藉由將其 [ [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) ] 屬性設定為 [ [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)]，以由右至左的流程方向來配置其內容。 不過，`FlowDirection` 屬性最好是在頁面或根配置上設定，使頁面或根配置中的所有專案都能回應流程方向：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以將其內容設定為[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)，以由右至左的流程方向來配置其內容。 不過，在`FlowDirection`理想的情況下，屬性應該設定在頁面或根配置上，這會導致頁面或根配置中的所有元素回應流程方向：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -264,7 +264,7 @@ void OnImageTapped(object sender, EventArgs e)
 </ContentPage>
 ```
 
-具有父系之元素的預設[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)為[`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)。 因此， [`CarouselView`](xref:Xamarin.Forms.CarouselView)會從[`ContentPage`](xref:Xamarin.Forms.ContentPage)繼承 `FlowDirection` 屬性值。
+具有父系[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)之元素的預設值為[`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)。 因此，會[`CarouselView`](xref:Xamarin.Forms.CarouselView)從繼承`FlowDirection`屬性值[`ContentPage`](xref:Xamarin.Forms.ContentPage)。
 
 如需流程方向的詳細資訊，請參閱由[右至左當地語系化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 

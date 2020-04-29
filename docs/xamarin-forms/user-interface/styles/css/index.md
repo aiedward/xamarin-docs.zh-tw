@@ -7,13 +7,13 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/04/2019
-ms.openlocfilehash: 6813b29718d26b592631dd43b8fbd03fe479101e
-ms.sourcegitcommit: 1fb87ff74560d4d7c89f80018cc010c07646461c
+ms.date: 04/17/2020
+ms.openlocfilehash: 182bd088ba169dad6bdbbb4315a033925964f64e
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82139053"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517556"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>使用階層式樣式表（CSS）設定 Xamarin 應用程式的樣式
 
@@ -92,6 +92,9 @@ stacklayout>image {
 ### <a name="loading-a-style-sheet"></a>載入樣式表單
 
 有數種方法可以用來載入樣式表單。
+
+> [!NOTE]
+> 目前不能在執行時間變更樣式表單，並已套用新的樣式表單。
 
 ### <a name="xaml"></a>XAML
 
@@ -358,23 +361,23 @@ stacklayout>image {
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
-|`background-color`|`VisualElement`|_color_ \| `initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_字串_ \| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`, `Frame`, `ImageButton`|_color_ \| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \|`initial` |`border-radius: 10;`|
+|`background-color`|`VisualElement`|_色彩_ \|`initial` |`background-color: springgreen;`|
+|`background-image`|`Page`|_字串_ \|`initial` |`background-image: bg.png;`|
+|`border-color`|`Button`, `Frame`, `ImageButton`|_色彩_ \|`initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
 |`border-width`|`Button`, `ImageButton`|_double_ \|`initial` |`border-width: .5;`|
-|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_color_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
-|`column-gap`|`Grid`|_double_ \|`initial`|`column-gap: 9;`|
+|`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_色彩_ \|`initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
 |`flex-basis`|`VisualElement`|_float_ \| float `auto` 。 \| `initial` 此外，範圍0% 到100% 的百分比可以使用`%`正負號來指定。|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_float_ \| `initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_float_ \| `initial`|`flex-shrink: 1;`|
+|`flex-grow`|`VisualElement`|_FLOAT_ \| `initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_FLOAT_ \| `initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字串_ \| `initial` |`font-family: Consolas;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_字串_ \|`initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_雙重_\| _namedsize_ namedsize \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_double_ \|`initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
 |`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \|`initial`|`letter-spacing: 2.5;`|
 |`line-height`|`Label`, `Span`|_double_ \|`initial` |`line-height: 1.8;`|
@@ -389,7 +392,7 @@ stacklayout>image {
 |`opacity`|`VisualElement`|_double_ \|`initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_粗細_ \|`initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \|`initial`|`padding-left: 3;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
 |`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-top: 4;`|
 |`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-right: 2;`|
 |`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-bottom: 6;`|
@@ -422,20 +425,20 @@ stacklayout>image {
 
 |屬性|適用對象|值|範例|
 |---|---|---|---|
-|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-background-color: teal;`|
-|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_color_ \| `initial` |`-xf-bar-text-color: gray`|
+|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_色彩_ \|`initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_色彩_ \|`initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
-|`-xf-max-track-color`|`Slider`|_color_ \| `initial` |`-xf-max-track-color: red;`|
-|`-xf-min-track-color`|`Slider`|_color_ \| `initial` |`-xf-min-track-color: yellow;`|
+|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \| `initial` |`-xf-max-length: 20;`|
+|`-xf-max-track-color`|`Slider`|_色彩_ \|`initial` |`-xf-max-track-color: red;`|
+|`-xf-min-track-color`|`Slider`|_色彩_ \|`initial` |`-xf-min-track-color: yellow;`|
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`只有在上才支援`ScrollView`。 |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_加上引號的文字_ \|`initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_color_ \| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_色彩_ \|`initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_double_ \|`initial` |`-xf-spacing: 8;`|
-|`-xf-thumb-color`|`Slider`, `Switch`|_color_ \| `initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-thumb-color`|`Slider`, `Switch`|_色彩_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_字串_ \| `initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_字串_ \|`initial` |`-xf-visual: material;`|
 
 ### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms Shell 特定屬性
 
@@ -443,17 +446,17 @@ stacklayout>image {
 
 |屬性|適用對象|值|範例|
 |---|---|---|---|
-|`-xf-flyout-background`|`Shell`|_color_ \| `initial` |`-xf-flyout-background: red;`|
-|`-xf-shell-background`|`Element`|_color_ \| `initial` |`-xf-shell-background: green;`|
-|`-xf-shell-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-disabled: blue;`|
-|`-xf-shell-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-foreground: yellow;`|
-|`-xf-shell-tabbar-background`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-background: white;`|
-|`-xf-shell-tabbar-disabled`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-disabled: black;`|
-|`-xf-shell-tabbar-foreground`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-foreground: gray;`|
-|`-xf-shell-tabbar-title`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-title: lightgray;`|
-|`-xf-shell-tabbar-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-tabbar-unselected: cyan;`|
-|`-xf-shell-title`|`Element`|_color_ \| `initial` |`-xf-shell-title: teal;`|
-|`-xf-shell-unselected`|`Element`|_color_ \| `initial` |`-xf-shell-unselected: limegreen;`|
+|`-xf-flyout-background`|`Shell`|_色彩_ \|`initial` |`-xf-flyout-background: red;`|
+|`-xf-shell-background`|`Element`|_色彩_ \|`initial` |`-xf-shell-background: green;`|
+|`-xf-shell-disabled`|`Element`|_色彩_ \|`initial` |`-xf-shell-disabled: blue;`|
+|`-xf-shell-foreground`|`Element`|_色彩_ \|`initial` |`-xf-shell-foreground: yellow;`|
+|`-xf-shell-tabbar-background`|`Element`|_色彩_ \|`initial` |`-xf-shell-tabbar-background: white;`|
+|`-xf-shell-tabbar-disabled`|`Element`|_色彩_ \|`initial` |`-xf-shell-tabbar-disabled: black;`|
+|`-xf-shell-tabbar-foreground`|`Element`|_色彩_ \|`initial` |`-xf-shell-tabbar-foreground: gray;`|
+|`-xf-shell-tabbar-title`|`Element`|_色彩_ \|`initial` |`-xf-shell-tabbar-title: lightgray;`|
+|`-xf-shell-tabbar-unselected`|`Element`|_色彩_ \|`initial` |`-xf-shell-tabbar-unselected: cyan;`|
+|`-xf-shell-title`|`Element`|_色彩_ \|`initial` |`-xf-shell-title: teal;`|
+|`-xf-shell-unselected`|`Element`|_色彩_ \|`initial` |`-xf-shell-unselected: limegreen;`|
 
 ### <a name="color"></a>Color
 

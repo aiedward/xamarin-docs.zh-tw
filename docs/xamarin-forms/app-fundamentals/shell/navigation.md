@@ -6,13 +6,13 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/02/2020
+ms.openlocfilehash: a40a2dc01c37773539089287d561f4c52ef7f6de
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71674573"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516522"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 導覽
 
@@ -27,7 +27,7 @@ Xamarin.Forms Shell 包含 URI 式導覽體驗，可使用路由導覽至應用�
 - `CurrentState`，屬於 `ShellNavigationState` 類型，是 `Shell` 的目前導覽狀態。
 - `Current`，屬於 `Shell` 類型，是 `Application.Current.MainPage` 類型轉換的別名。
 
-`CurrentItem``BackButtonBehavior`和`CurrentState`屬性[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)由 物件支援,這意味著這些屬性可以是數據綁定的目標。
+`BackButtonBehavior`、 `CurrentItem`和`CurrentState`屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示這些屬性可以是資料系結的目標。
 
 導覽是透過從 `Shell` 類別叫用 `GoToAsync` 方法執行的。 導覽即將執行時，會引發 `Navigating` 事件，而導覽完成時，則會引發 `Navigated` 事件。
 
@@ -158,8 +158,8 @@ await Shell.Current.GoToAsync("monkeydetails");
 
 | [格式] | 描述 |
 | --- | --- |
-| //*路線* | 將會從目前顯示的路由向上搜尋路由階層中指定的路由。 |
-| ///*路線* | 將會從目前顯示的路由向下搜尋路由階層中指定的路由。 |
+| //*料* | 將會從目前顯示的路由向上搜尋路由階層中指定的路由。 |
+| ///*料* | 將會從目前顯示的路由向下搜尋路由階層中指定的路由。 |
 
 #### <a name="contextual-navigation"></a>關聯式導覽
 
@@ -174,11 +174,41 @@ bears
 
 顯示 `monkeys` 路由已註冊的頁面時，導覽至 `details` 路由將會顯示 `monkeys/details` 路由已註冊的頁面。 同樣地，顯示 `bears` 路由已註冊的頁面時，導覽至 `details` 路由將會顯示 `bears/details` 路由已註冊的頁面。 如需如何在此範例中註冊路由的相關資訊，請參閱[註冊頁面路由](#register-page-routes)。
 
+### <a name="backwards-navigation"></a>向後瀏覽
+
+您可以藉由指定 ".." 做為`GotoAsync`方法的引數來執行回溯導覽：
+
+```csharp
+await Shell.Current.GoToAsync("..");
+```
+
+具有 ".." 的向後導覽也可以與路由結合，如下所示：
+
+```csharp
+await Shell.Current.GoToAsync("../route");
+```
+
+在此範例中，整體效果是向後導覽，然後流覽至指定的路由。
+
+> [!IMPORTANT]
+> 只有在回溯導覽將您放在路由階層中的目前位置，才能流覽至指定的路由時，才可以回溯和到指定的路由。
+
+同樣地，可以回溯多次流覽，然後流覽至指定的路由：
+
+```csharp
+await Shell.Current.GoToAsync("../../route");
+```
+
+在此範例中，整體效果是向後導覽兩次，然後流覽至指定的路由。
+
+> [!NOTE]
+> 使用 "..." 導覽時，也可以傳遞資料。 如需詳細資訊，請參閱[傳遞資料](#pass-data)。
+
 ### <a name="invalid-routes"></a>無效的路由
 
 下列路由格式無效：
 
-| [格式] | 說明 |
+| 格式 | 說明 |
 | --- | --- |
 | *route* 或 /*route* | 視覺階層中的路由無法推送到導覽堆疊上。 |
 | //*page* 或 ///*page* | 全域路由目前不得為導覽堆疊上的唯一頁面。 因此，不支援以絕對路由傳送至全域路由。 |
@@ -272,9 +302,9 @@ async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEvent
 }
 ```
 
-此代碼示例檢索[`CollectionView`](xref:Xamarin.Forms.CollectionView)中 當前選定的大象,並`elephantdetails`導航到 路由,作為查詢`elephantName`參數傳遞。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
+這個程式碼範例會抓取中目前選取的[`CollectionView`](xref:Xamarin.Forms.CollectionView)大象，並導覽至`elephantdetails`路由，以`elephantName`查詢參數的形式傳遞。 請注意，查詢參數將會是針對導覽編碼的 URL，因此 "Indian Elephant" 將會變成 "Indian%20Elephant"。
 
-要接收資料,表示要導航到的頁面的類別或頁面的[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)類別必須為每個查詢參數使用 的修`QueryPropertyAttribute`飾:
+若要接收資料，代表所流覽之頁面的類別，或頁面的類別[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)，必須使用`QueryPropertyAttribute` for each 查詢參數來裝飾：
 
 ```csharp
 [QueryProperty("Name", "name")]
@@ -291,7 +321,7 @@ public partial class ElephantDetailPage : ContentPage
 }
 ```
 
-的第一個參數`QueryPropertyAttribute`指定將接收數據的屬性的名稱,第二個參數指定查詢參數 ID。因此,`QueryPropertyAttribute`上述範例中`Name`指定`name``GoToAsync`屬性將在方法呼叫中從 URI 接收在查詢參數中傳遞的數據。 然後`Name`URL 對查詢參數值進行解碼,並用它來將頁面[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)設置為 將顯示的物件。
+的第一個引數`QueryPropertyAttribute`會指定將接收資料之屬性的名稱，而第二個引數會指定查詢參數識別碼。因此，上述`QueryPropertyAttribute`範例中的會指定`Name`屬性將會接收在`name` `GoToAsync`方法呼叫中，從 URI 傳入查詢參數的資料。 接著`Name` ，屬性 URL 會將查詢參數值解碼，並使用它將頁面[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)的設定為將顯示的物件。
 
 > [!NOTE]
 > 類別可以使用多個 `QueryPropertyAttribute` 物件裝飾。
@@ -302,11 +332,11 @@ public partial class ElephantDetailPage : ContentPage
 
 - `Command`，屬於 `ICommand` 類型，會在按 [上一頁] 按鈕時執行。
 - `CommandParameter`，屬於 `object` 類型，這是傳遞至 `Command` 的參數。
-- `IconOverride`的類型[`ImageSource`](xref:Xamarin.Forms.ImageSource),用於後退按鈕的圖示。
+- `IconOverride`，屬於類型[`ImageSource`](xref:Xamarin.Forms.ImageSource)，這是用於 [上一頁] 按鈕的圖示。
 - `IsEnabled`，屬於 `boolean` 類型，可指出是否啟用上一頁按鈕。 預設值是 `true`。
 - `TextOverride`，屬於 `string` 類型，這是用於上一頁按鈕的文字。
 
-所有這些屬性都由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件支援,這意味著這些屬性可以是數據綁定的目標。
+所有這些屬性都是以[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件為後盾，也就是說，這些屬性可以是資料系結的目標。
 
 將 `Shell.BackButtonBehavior` 附加屬性設為 `BackButtonBehavior` 物件可以取用 `BackButtonBehavior` 類別：
 
@@ -335,7 +365,7 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 `Command` 屬性會設定要按 [上一頁] 按鈕時執行的 `ICommand`，而 `IconOverride` 屬性則會設定為用於 [上一頁] 按鈕的圖示：
 
-[![在 iOS 和 Android 上,外殼後退按鈕圖示覆蓋的螢幕截圖](navigation-images/back-button.png "殼體後退按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "殼體後退按鈕圖示覆寫")
+[![在 iOS 和 Android 上 Shell 上一頁按鈕圖示覆寫的螢幕擷取畫面](navigation-images/back-button.png "Shell 上一頁按鈕圖示覆寫")](navigation-images/back-button-large.png#lightbox "Shell 上一頁按鈕圖示覆寫")
 
 ## <a name="related-links"></a>相關連結
 

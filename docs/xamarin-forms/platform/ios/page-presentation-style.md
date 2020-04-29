@@ -1,24 +1,24 @@
 ---
 title: IOS 上的強制回應頁面呈現樣式
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定設定模式頁面的呈現樣式。
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定設定模式頁面的呈現樣式。
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 3b1a88968334bed42be53119c26de43ef9cd1419
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.date: 04/02/2020
+ms.openlocfilehash: 5078b280499929e0e2e3691539cf1927b4c79fe7
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72171050"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517531"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS 上的強制回應頁面呈現樣式
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-這個 iOS 平臺特定是用來設定強制回應頁面的呈現樣式。 它由在 XAML 中設定`Page.ModalPresentationStyle`可繫結的屬性，以`UIModalPresentationStyle`列舉值：
+這個 iOS 平臺特定是用來設定強制回應頁面的呈現樣式。 它會在 XAML 中使用，方法`Page.ModalPresentationStyle`是將可系`UIModalPresentationStyle`結屬性設定為列舉值：
 
 ```xaml
 <ContentPage ...
@@ -28,7 +28,7 @@ ms.locfileid: "72171050"
 </ContentPage>
 ```
 
-或者，它可以取用從 C# 使用 fluent API:
+或者，您也可以使用 Fluent API，從 c # 取用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -45,19 +45,22 @@ public class iOSModalFormSheetPageCS : ContentPage
 }
 ```
 
-`Page.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 `Page.SetModalPresentationStyle`方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，用來設定強制回應的展示樣式[ `Page` ](xref:Xamarin.Forms.Page)藉由指定下列其中一種`UIModalPresentationStyle`列舉值：
+`Page.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 命名空間中的`Page.SetModalPresentationStyle`方法是藉[`Page`](xref:Xamarin.Forms.Page)由指定下列`UIModalPresentationStyle`其中一個列舉值，用來設定上的強制回應呈現樣式： [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
 
-- `FullScreen`可設定以涵蓋整個畫面的強制回應的呈現樣式。 根據預設，強制回應頁面會顯示使用此簡報樣式。
-- `FormSheet`其中設定上置中並小於螢幕的強制回應的呈現樣式。
+- `FullScreen`，這會將強制回應呈現樣式設定為包含整個螢幕。 根據預設，會使用此呈現樣式來顯示強制回應頁面。
+- `FormSheet`，這會將強制回應展示樣式設定為置中和小於螢幕。
+- `Automatic`，這會將強制回應呈現樣式設定為系統所選擇的預設值。 對於大部分的視圖控制器`UIKit`而言，會`UIModalPresentationStyle.PageSheet`將此對應至，但某些系統檢視控制器可能會將其對應至不同的樣式。
+- `OverFullScreen`，這會設定強制回應呈現樣式以涵蓋螢幕。
+- `PageSheet`，它會設定強制回應呈現樣式以涵蓋基礎內容。
 
-颾魤 ㄛ`GetModalPresentationStyle`方法可用來擷取目前的值`UIModalPresentationStyle`套用至列舉型別[ `Page` ](xref:Xamarin.Forms.Page)。
+此外， `GetModalPresentationStyle`方法可以用來抓取套用至之`UIModalPresentationStyle`列舉的目前值。 [`Page`](xref:Xamarin.Forms.Page)
 
-結果是強制回應的展示樣式[ `Page` ](xref:Xamarin.Forms.Page)可以設定：
+結果是[`Page`](xref:Xamarin.Forms.Page)可以設定上的強制回應呈現樣式：
 
-[![](page-presentation-style-images/modal-presentation-style-small.png "IPad 上的強制回應呈現樣式")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "IPad 上的強制回應呈現樣式")
+[![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
 
 > [!NOTE]
-> 使用此平台特定設定的強制回應的展示樣式的網頁都必須使用強制回應導覽。 如需詳細資訊，請參閱 < [Xamarin.Forms 強制回應頁面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。
+> 使用此平臺特定設定強制回應呈現樣式的頁面，必須使用強制回應導覽。 如需詳細資訊，請參閱[Xamarin。表單](~/xamarin-forms/app-fundamentals/navigation/modal.md)強制回應頁面。
 
 ## <a name="related-links"></a>相關連結
 

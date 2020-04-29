@@ -7,37 +7,37 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
-ms.openlocfilehash: 197c48a7a3486d7161d351a6b06101daaa389256
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 3df78a7c8eaf12306ade182f134f8d294d203af5
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305483"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517590"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. 表單地圖釘選
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)控制項的 Xamarin 可以讓位置以[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件標記。 `Pin` 是一種地圖示記，會在攻絲時開啟資訊視窗：
+[Xamarin] [`Map`](xref:Xamarin.Forms.Maps.Map)控制項允許以[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件標記位置。 `Pin`是一種地圖示記，會在點擊時開啟資訊視窗：
 
 [![在 iOS 和 Android 上的地圖釘選和其資訊視窗的螢幕擷取畫面](pins-images/pin-and-information-window.png "地圖釘選與資訊視窗")](pins-images/pin-and-information-window-large.png#lightbox "地圖釘選與資訊視窗")
 
-當[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件加入至[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合時，會在地圖上轉譯該釘選。
+將[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件新增至[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合時，會在地圖上轉譯該釘選。
 
 [`Pin`](xref:Xamarin.Forms.Maps.Pin)類別具有下列屬性：
 
-- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address)，屬於 `string`類型，通常代表 pin 位置的位址。 不過，它可以是任何 `string` 內容，而不只是位址。
-- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label)，屬於 `string`類型，通常代表釘選標題。
-- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)，屬於[`Position`](xref:Xamarin.Forms.Maps.Position)類型，表示釘選的緯度和經度。
-- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)，屬於[`PinType`](xref:Xamarin.Forms.Maps.PinType)類型，表示 pin 類型。
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address)，屬於類型`string`，通常代表釘選位置的位址。 不過，它可以是任何`string`內容，而不只是位址。
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label)，屬於類型`string`，通常代表釘選標題。
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)，屬於類型[`Position`](xref:Xamarin.Forms.Maps.Position)，表示釘選的緯度和經度。
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)，屬於類型[`PinType`](xref:Xamarin.Forms.Maps.PinType)，表示 pin 類型。
 
-這些屬性是以[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件為後盾，也就是說，`Pin` 可以是資料系結的目標。 如需資料系結 `Pin` 物件的詳細資訊，請參閱[顯示 pin 集合](#display-a-pin-collection)。
+這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示`Pin`可以是資料系結的目標。 如需資料系結`Pin`物件的詳細資訊，請參閱[顯示 pin 集合](#display-a-pin-collection)。
 
-此外， [`Pin`](xref:Xamarin.Forms.Maps.Pin)類別會定義 `MarkerClicked` 和 `InfoWindowClicked` 事件。 當按下釘選時，就會引發 `MarkerClicked` 事件，而 `InfoWindowClicked` 事件則會在使用資訊視窗時引發。 伴隨兩個事件的 `PinClickedEventArgs` 物件都有 `bool`類型的單一 `HideInfoWindow` 屬性。
+此外， [`Pin`](xref:Xamarin.Forms.Maps.Pin)類別會定義`MarkerClicked`和`InfoWindowClicked`事件。 當`MarkerClicked`按下釘選時，就會引發事件， `InfoWindowClicked`而當您點擊資訊視窗時，就會引發事件。 伴隨`PinClickedEventArgs`兩個事件的物件都具有單一`HideInfoWindow`屬性，其類型`bool`為。
 
 ## <a name="display-a-pin"></a>顯示 pin
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)可以新增至 XAML 中的[`Map`](xref:Xamarin.Forms.Maps.Map) ：
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)可以[`Map`](xref:Xamarin.Forms.Maps.Map)在 XAML 中新增至：
 
 ```xaml
 <ContentPage ...
@@ -77,7 +77,7 @@ ms.locfileid: "79305483"
 </ContentPage>
 ```
 
-此 XAML 會建立[`Map`](xref:Xamarin.Forms.Maps.Map)物件，以顯示[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)物件所指定的區域。 `MapSpan` 物件是以[`Position`](xref:Xamarin.Forms.Maps.Position)物件所代表的緯度和經度為中心，這會擴充0.01 緯度和經度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)物件會加入至[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合，並在 `Map` 的[`Position`](xref:Xamarin.Forms.Maps.Pin.Position)屬性所指定的位置上繪製。 如需[`Position`](xref:Xamarin.Forms.Maps.Position)結構的詳細資訊，請參閱[地圖位置和距離](position-distance.md)。 如需將 XAML 中的引數傳遞給缺少預設的函式之物件的詳細資訊，請參閱[在 xaml 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)
+此 XAML 會建立[`Map`](xref:Xamarin.Forms.Maps.Map)物件，以顯示[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)物件所指定的區域。 `MapSpan`物件是以[`Position`](xref:Xamarin.Forms.Maps.Position)物件所代表的緯度和經度為中心，它會擴充0.01 緯度和經度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)物件會加入至[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)集合，並在其[`Position`](xref:Xamarin.Forms.Maps.Pin.Position)屬性所指定`Map`的位置上繪製。 如需[`Position`](xref:Xamarin.Forms.Maps.Position)結構的詳細資訊，請參閱[地圖位置和距離](position-distance.md)。 如需將 XAML 中的引數傳遞給缺少預設的函式之物件的詳細資訊，請參閱[在 xaml 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)
 
 對等的 C# 程式碼為：
 
@@ -99,7 +99,7 @@ map.Pins.Add(pin);
 ```
 
 > [!WARNING]
-> 當[`Pin`](xref:Xamarin.Forms.Maps.Pin)新增至[`Map`](xref:Xamarin.Forms.Maps.Map)時，無法設定[`Pin.Label`](xref:Xamarin.Forms.Maps.Pin.Label)屬性會導致 `ArgumentException` 擲回。
+> 當[`Pin`](xref:Xamarin.Forms.Maps.Pin)加入時， [`Pin.Label`](xref:Xamarin.Forms.Maps.Pin.Label)無法設定屬性會導致`ArgumentException`擲回。 [`Map`](xref:Xamarin.Forms.Maps.Map)
 
 此範例程式碼會產生一個在地圖上轉譯的單一圖釘：
 
@@ -107,15 +107,15 @@ map.Pins.Add(pin);
 
 ## <a name="interact-with-a-pin"></a>與 pin 互動
 
-根據預設，當[`Pin`](xref:Xamarin.Forms.Maps.Pin)時，會顯示其資訊視窗：
+根據預設，當按[`Pin`](xref:Xamarin.Forms.Maps.Pin)下時，會顯示其資訊視窗：
 
 [![在 iOS 和 Android 上的地圖釘選和其資訊視窗的螢幕擷取畫面](pins-images/pin-and-information-window.png "地圖釘選與資訊視窗")](pins-images/pin-and-information-window-large.png#lightbox "地圖釘選與資訊視窗")
 
 在地圖上的其他地方，會關閉 [資訊] 視窗。
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)類別會定義 `MarkerClicked` 事件，這會在按下 `Pin` 時引發。 不需要處理此事件，即可顯示 [資訊] 視窗。 相反地，當需要通知特定的 pin 時，就應該處理這個事件。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)類別會定義`MarkerClicked`事件，這會在按下時`Pin`引發。 不需要處理此事件，即可顯示 [資訊] 視窗。 相反地，當需要通知特定的 pin 時，就應該處理這個事件。
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)類別也會定義在使用資訊視窗時所引發的 `InfoWindowClicked` 事件。 當需要通知特定資訊視窗已按下時，應該處理這個事件。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)類別也會定義在`InfoWindowClicked`使用資訊視窗時所引發的事件。 當需要通知特定資訊視窗已按下時，應該處理這個事件。
 
 下列程式碼顯示處理這些事件的範例：
 
@@ -150,31 +150,31 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 };
 ```
 
-伴隨兩個事件的 `PinClickedEventArgs` 物件都有 `bool`類型的單一 `HideInfoWindow` 屬性。 當此屬性設定為事件處理常式內的 `true` 時，將會隱藏資訊視窗。
+伴隨`PinClickedEventArgs`兩個事件的物件都具有單一`HideInfoWindow`屬性，其類型`bool`為。 當這個屬性在事件處理`true`程式內設定為時，資訊視窗將會隱藏。
 
 ## <a name="pin-types"></a>Pin 類型
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件包括[`Type`](xref:Xamarin.Forms.Maps.Pin.Type)屬性，其類型為[`PinType`](xref:Xamarin.Forms.Maps.PinType)，表示 pin 類型。 `PinType` 列舉會定義下列成員：
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件包含型[`Type`](xref:Xamarin.Forms.Maps.Pin.Type) [`PinType`](xref:Xamarin.Forms.Maps.PinType)別為的屬性，表示 pin 型別。 `PinType` 列舉會定義下列成員：
 
-- `Generic`，代表泛型的 pin。
-- `Place`，代表某個位置的 pin。
+- `Generic`代表泛型 pin。
+- `Place`，代表地點的 pin。
 - `SavedPin`，代表儲存位置的 pin。
-- `SearchResult`，代表搜尋結果的 pin。
+- `SearchResult`代表搜尋結果的 pin。
 
-不過，將[`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type)屬性設定為任何[`PinType`](xref:Xamarin.Forms.Maps.PinType)成員並不會變更轉譯之釘選的外觀。 相反地，您必須建立自訂轉譯器來自訂釘選外觀。 如需詳細資訊，請參閱[自訂地圖釘](~/xamarin-forms/app-fundamentals/custom-renderer/map/customized-pin.md)選。
+不過，將[`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type)屬性設定為任何[`PinType`](xref:Xamarin.Forms.Maps.PinType)成員並不會變更呈現之釘選的外觀。 相反地，您必須建立自訂轉譯器來自訂釘選外觀。 如需詳細資訊，請參閱[自訂地圖釘](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)選。
 
-## <a name="display-a-pin-collection"></a>顯示 pin 集合
+## <a name="display-a-pin-collection"></a>顯示 PIN 集合
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)類別會定義下列屬性：
 
-- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)，屬於 `IEnumerable`類型，指定要顯示 `IEnumerable` 專案的集合。
-- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)，屬於[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)類型，它會指定要套用至所顯示專案集合中每個專案的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
-- `ItemTemplateSelector`，屬於[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)類型，它會指定在執行時間用來選擇專案[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)的[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 。
+- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)，屬於類型`IEnumerable`，指定要顯示的`IEnumerable`專案集合。
+- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)，屬於類型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)，指定[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)要套用至所顯示專案集合中的每個專案。
+- `ItemTemplateSelector`，屬於型[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)別，它會[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)指定將用來在執行時間[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)為專案選擇的。
 
 > [!IMPORTANT]
-> 當同時設定 `ItemTemplate` 和 `ItemTemplateSelector` 屬性時， [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)屬性會優先使用。
+> 當[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)同時設定`ItemTemplate`和`ItemTemplateSelector`屬性時，會優先使用屬性。
 
-您可以使用資料系結將其[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)屬性系結至 `IEnumerable` 集合，以使用釘選來填入[`Map`](xref:Xamarin.Forms.Maps.Map) ：
+[`Map`](xref:Xamarin.Forms.Maps.Map)可以使用資料系結將其[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)屬性系結至`IEnumerable`集合，以填入 pin：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -198,17 +198,17 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 </ContentPage>
 ```
 
-[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)的屬性資料會系結至已連線 viewmodel 的 `Locations` 屬性，它會傳回 `Location` 物件的 `ObservableCollection`，也就是自訂類型。 每個 `Location` 物件會定義 `string`類型的 `Address` 和 `Description` 屬性，[以及 `Position` 類型](xref:Xamarin.Forms.Maps.Position)的`Position`屬性。
+[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)屬性資料會系結至`Locations`已連接之 viewmodel 的屬性，它會`ObservableCollection`傳回`Location`物件的，這是自訂類型。 每`Location`個物件`Address`都會`Description`定義類型的和`string`屬性，以及`Position`類型[`Position`](xref:Xamarin.Forms.Maps.Position)的屬性。
 
-`IEnumerable` 集合中每個專案的外觀都是藉由將[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)屬性設定為包含[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件的[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)來定義，而資料會系結至適當的屬性。
+集合中每個專案的外觀定義方式是將[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)屬性設定為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，其中包含資料系[`Pin`](xref:Xamarin.Forms.Maps.Pin)結至適當屬性的物件。 `IEnumerable`
 
-下列螢幕擷取畫面顯示使用資料系結顯示[`Pin`](xref:Xamarin.Forms.Maps.Pin)集合的[`Map`](xref:Xamarin.Forms.Maps.Map) ：
+下列螢幕擷取畫面顯示使用[`Map`](xref:Xamarin.Forms.Maps.Map)資料系[`Pin`](xref:Xamarin.Forms.Maps.Pin)結顯示集合：
 
 [![IOS 和 Android 上具有資料系結圖釘的對應螢幕擷取畫面](pins-images/pins-itemsource.png "具有資料系結圖釘的對應")](pins-images/pins-itemsource-large.png#lightbox "具有資料系結圖釘的對應")
 
 ### <a name="choose-item-appearance-at-runtime"></a>在執行時間選擇專案外觀
 
-藉由將 `ItemTemplateSelector` 屬性設定為[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)，可以在執行時間根據專案值選擇 `IEnumerable` 集合中每個專案的外觀：
+藉由將`IEnumerable` `ItemTemplateSelector`屬性設定為，您可以在執行時間根據專案值選擇集合中每個專案的外觀[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)：
 
 ```xaml
 <ContentPage ...
@@ -244,7 +244,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 </ContentPage>
 ```
 
-下列範例顯示 `MapItemTemplateSelector` 類別：
+下列範例顯示`MapItemTemplateSelector`類別：
 
 ```csharp
 public class MapItemTemplateSelector : DataTemplateSelector
@@ -259,16 +259,16 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MapItemTemplateSelector` 類別會定義設定為不同資料範本的 `DefaultTemplate` 和 `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 `OnSelectTemplate` 方法會傳回 `XamarinTemplate`，當您按下 `Pin` 時，會將 "Xamarin" 顯示為標籤，而當專案具有包含「三藩市」的位址時。 當專案沒有包含「三藩市」的位址時，`OnSelectTemplate` 方法會傳回 `DefaultTemplate`。
+`MapItemTemplateSelector`類別會定義`DefaultTemplate`設定`XamarinTemplate`為不同資料範本的和[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)屬性。 當`OnSelectTemplate`專案具有包含`XamarinTemplate`「三藩市」的位址時，此方法`Pin`會傳回，當按下時，會將 "Xamarin" 顯示為標籤。 當專案沒有包含「三藩市」的位址時，此`OnSelectTemplate`方法會傳回。 `DefaultTemplate`
 
 > [!NOTE]
-> 這項功能的使用案例是根據 `Pin` 子類型，將子歸類[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件的屬性系結至不同的屬性。
+> 此功能的使用案例是根據子類型，將子歸類[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件的屬性系結至不同的`Pin`屬性。
 
 如需資料範本選取器的詳細資訊，請參閱[建立 Xamarin DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="related-links"></a>相關連結
 
 - [Maps 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [對應自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [對應自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [在 XAML 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)
-- [建立 Xamarin 表單 DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [建立 Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
