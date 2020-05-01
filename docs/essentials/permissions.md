@@ -5,12 +5,12 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: e31a45a060356b372b9da62a667f5d68e06c73c9
-ms.sourcegitcommit: 1b3ef8178370dac377519c16de8a2ec7a26cda3d
+ms.openlocfilehash: 3d61267ae78a4b84907a2bcf6e944eb286b113dd
+ms.sourcegitcommit: 8b94b2af2ac69e4a60e210ddc764f4d276c8d88d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82127112"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605442"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin. Essentials：許可權
 
@@ -37,6 +37,8 @@ var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>()
 ```
 
 如果`PermissionException`未宣告所需的許可權，就會擲回。
+
+在要求許可權之前，最好先檢查其狀態。 如果使用者從未收到提示，則每個作業系統都會傳回不同的預設狀態。 iOS 會`Unknown`傳回，而其他`Denied`則會返回。
 
 ## <a name="requesting-permissions"></a>要求權限
 
