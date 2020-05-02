@@ -5,6 +5,8 @@
     - name: 2020
       expanded: true
       items:
+        - name: 四月
+          href: 2020-04.md
         - name: 二月
           href: 2020-02.md
     - name: 2019
@@ -12,7 +14,7 @@
       items:
         - name: 12 月
           href: 2019-12.md
-        - name: 十月
+        - name: 10 月
           href: 2019-10.md
         - name: 8 月
           href: 2019-08.md
@@ -20,5 +22,5 @@
           href: 2019-07.md
         - name: 6 月
           href: 2019-06.md
-        - name: 三月
+        - name: 3 月
           href: 2019-03.md
