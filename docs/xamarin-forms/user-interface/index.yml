@@ -9,19 +9,19 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 12/30/2019
-  ms.openlocfilehash: bbe7fd52581cd77ed7e7d910dd16264641c15abf
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.date: 03/19/2020
+  ms.openlocfilehash: 334c6afaffdec3ccc99d251bfc021edaa0cd9d2a
+  ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77480600"
+  ms.lasthandoff: 04/29/2020
+  ms.locfileid: "82517426"
 landingContent:
 - title: 控制項參考
   linkLists:
   - linkListType: concept
     links:
-    - text: 概觀
+    - text: 總覽
       url: controls/index.md
     - text: 頁面
       url: controls/pages.md
@@ -35,13 +35,21 @@ landingContent:
       url: controls/common-properties.md
     - text: 第三方控制項
       url: controls/thirdparty.md
+- title: C# 中的宣告式 UI
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: C# 標記
+      url: csharp-markup.md
 - title: 簡報的檢視
   linkLists:
   - linkListType: concept
     links:
     - text: BoxView
       url: boxview.md
-    - text: 影像
+    - text: 展開工具
+      url: expander.md
+    - text: Image
       url: images.md
     - text: 標籤
       url: text/label.md
@@ -59,6 +67,8 @@ landingContent:
       url: button.md
     - text: ImageButton
       url: imagebutton.md
+    - text: RadioButton
+      url: radiobutton.md
     - text: RefreshView
       url: refreshview.md
     - text: 搜尋列
@@ -69,7 +79,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: CheckBox
+    - text: 核取方塊
       url: checkbox.md
     - text: DatePicker
       url: datepicker.md
@@ -77,7 +87,7 @@ landingContent:
       url: slider.md
     - text: Stepper
       url: stepper.md
-    - text: Switch
+    - text: 參數
       url: switch.md
     - text: TimePicker
       url: timepicker.md
@@ -87,7 +97,7 @@ landingContent:
     links:
     - text: 編輯器
       url: text/editor.md
-    - text: 項目
+    - text: 進入
       url: text/entry.md
 - title: 表示活動的檢視
   linkLists:
@@ -159,7 +169,7 @@ landingContent:
       url: layouts/flex-layout.md
     - text: Frame
       url: layouts/frame.md
-    - text: 方格
+    - text: Grid
       url: layouts/grid.md
     - text: RelativeLayout
       url: layouts/relative-layout.md
