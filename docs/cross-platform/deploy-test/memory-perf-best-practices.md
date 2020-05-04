@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
+ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016519"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82738799"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
@@ -265,6 +265,8 @@ SGen 會利用三個堆積中的其中一個來為物件配置空間：
 
 SGen 的其中一個優點便是執行次要記憶體回收所需要的時間與自上一次次要記憶體回收之後建立的新作用中物件之數量成比例。 這可減少記憶體回收對應用程式效能造成的影響，因為通常這些次要記憶體回收所需要耗費的時間比主要記憶體回收少。 主要記憶體回收仍會發生，只是頻率較低。
 
+SGen 垃圾收集行程是9.2.1 和更新版本中的預設值，因此會自動使用。 請注意，變更垃圾收集行程的功能已從較新版本的 Visual Studio 中移除。 如需詳細資訊，請參閱[新的參考計數系統](~/ios/internals/newrefcount.md)。
+
 ### <a name="reducing-pressure-on-the-garbage-collector"></a>降低記憶體回收行程的壓力
 
 當 SGen 啟動記憶體回收時，它會在回收記憶體時停止應用程式的執行緒。 當記憶體獲得回收時，應用程式可能會出現短暫的暫停或在 UI 中出現間斷。 此暫停能夠被察覺到的程度取決於兩個因素：
@@ -365,7 +367,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 從 Web 服務擷取的資料應在本機進行快取，並使用快取後的資料，而非重複從 Web 服務擷取資料。 然而，當採用這個方法時，您應實作適當的快取策略，來在 Web 服務上的資料變更時更新本機快取內的資料。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已描述與討論用來增加以 Xamarin 平台建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 
@@ -375,5 +377,5 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 - [Xamarin.Android 效能](~/android/deploy-test/performance.md)
 - [Xamarin Profiler 簡介](~/tools/profiler/index.md)
 - [Xamarin.Forms 效能](~/xamarin-forms/deploy-test/performance.md)
-- [非同步支援概述](~/cross-platform/platform/async.md)
+- [非同步支援總覽](~/cross-platform/platform/async.md)
 - [IDisposable](xref:System.IDisposable)
