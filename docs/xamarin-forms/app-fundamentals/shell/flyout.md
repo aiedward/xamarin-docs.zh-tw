@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2020
-ms.openlocfilehash: cd5ee471385761cad9f99c4b78103b9773415ddb
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 5e5c50a9195ceb2716e3ca5306b72654fedc46e8
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517076"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852466"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms Shell 飛出視窗
 
@@ -223,7 +223,7 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 `FlyoutItem` 類別包含下列屬性來控制飛出視窗項目的外觀和行為：
 
-- `FlyoutDisplayOptions`，屬於 `FlyoutDisplayOptions` 類型，可定義項目及其子項目如何顯示在飛出視窗中。 預設值是 `AsSingleItem`。
+- `FlyoutDisplayOptions`，屬於 `FlyoutDisplayOptions` 類型，可定義項目及其子項目如何顯示在飛出視窗中。 預設值為 `AsSingleItem`。
 - `CurrentItem`，屬於 `Tab` 類型，這是選取的項目。
 - 型別為 `IList<Tab>` 的 `Items` 會在 `FlyoutItem` 內定義所有索引標籤。
 - 型別為 `ImageSource` 的 `FlyoutIcon`，這是要針對項目使用的圖示。 如果未設定這個屬性，它將轉而使用 `Icon` 屬性值。
@@ -480,7 +480,13 @@ Shell 具有隱含的轉換運算子，可簡化 Shell 視覺階層，而不需�
 
 此程式碼會設定名為 `aboutItem` 的 `ShellContent` 物件作為 `CurrentItem` 屬性，從而顯示它。 在此範例中，隱含的轉換會用來將 `ShellContent` 物件包裝於 `Tab` 物件中，其包裝於 `FlyoutItem` 物件中。
 
-對等的 C# 程式碼為：
+對等的 c # 程式碼`ShellContent` ，假設`aboutItem`名為的物件為：
+
+```csharp
+CurrentItem = aboutItem;
+```
+
+在此範例中， `CurrentItem`屬性是在子`Shell`類別化的類別中設定。 或者，您`CurrentItem`可以透過`Shell.Current`靜態屬性，在任何類別中設定屬性：
 
 ```csharp
 Shell.Current.CurrentItem = aboutItem;

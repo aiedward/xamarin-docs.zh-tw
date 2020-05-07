@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/26/2020
-ms.openlocfilehash: da6dbe63b7151ef0f9a1defca66fbb3abb25ad1d
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 992e4dd1a2b2a1d1a4f0b76dadf4704241486415
+ms.sourcegitcommit: 520ea9d52266f745d2c09642bac21f64a56f8c31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517545"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82859103"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin. Forms SwipeView
 

@@ -1,36 +1,36 @@
 ---
-title: Xamarin.表單標籤
-description: 本文介紹如何使用 Xamarin.Forms 標籤類在應用程式中顯示單行和多行文本。
+title: Xamarin. 表單標籤
+description: 本文說明如何使用 [Xamarin] 標籤類別，在應用程式中顯示單一和多行文字。
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/09/2020
-ms.openlocfilehash: bed6b8a774ecb352427f16b78d10e50821f92701
-ms.sourcegitcommit: 765b69ed451a0f48625ea597c3f39de95f3ae693
+ms.openlocfilehash: 6ce4e39986afb7444e7d126e9789760d9311ca45
+ms.sourcegitcommit: 737c7fbbe8aed1f33110a5217d7e6d6ef3e5b785
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80987591"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82793218"
 ---
-# <a name="xamarinforms-label"></a>Xamarin.表單標籤
+# <a name="xamarinforms-label"></a>Xamarin. 表單標籤
 
 [![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_在 Xamarin.表單顯示文字_
+_在 [Xamarin] 表單中顯示文字_
 
-該[`Label`](xref:Xamarin.Forms.Label)檢視用於顯示單行和多行文本。 標籤可以具有文本裝飾、彩色文本和使用自定義字體(族、大小和選項)。
+此[`Label`](xref:Xamarin.Forms.Label)視圖會用於顯示文字，包括單行和多行。 標籤可以具有文字裝飾、彩色文字，並使用自訂字型（系列、大小和選項）。
 
 ## <a name="text-decorations"></a>文字裝飾
 
-通過將屬性設置為一個或多個[`Label`](xref:Xamarin.Forms.Label)`Label.TextDecorations``TextDecorations`枚舉成員,可以將下劃線和擊線文本修飾應用於實例:
+將`Label.TextDecorations`屬性設定為一個或多個`TextDecorations`列舉[`Label`](xref:Xamarin.Forms.Label)成員，即可將底線和刪除線的文字裝飾套用至實例：
 
 - `None`
 - `Underline`
 - `Strikethrough`
 
-以下 XAML 範例`Label.TextDecorations`展示設定屬性:
+下列 XAML 範例將示範如何設定`Label.TextDecorations`屬性：
 
 ```xaml
 <Label Text="This is underlined text." TextDecorations="Underline"  />
@@ -46,16 +46,16 @@ var strikethroughLabel = new Label { Text = "This is text with strikethrough.", 
 var bothLabel = new Label { Text = "This is underlined text with strikethrough.", TextDecorations = TextDecorations.Underline | TextDecorations.Strikethrough };
 ```
 
-以下螢幕截圖顯示了應用於`TextDecorations`[`Label`](xref:Xamarin.Forms.Label)實例的枚舉成員:
+下列螢幕擷取畫面顯示套用`TextDecorations`至[`Label`](xref:Xamarin.Forms.Label)實例的列舉成員：
 
-![以文字裝飾的標籤](label-images/label-textdecorations.png)
+![具有文字裝飾的標籤](label-images/label-textdecorations.png)
 
 > [!NOTE]
-> 文本修飾也可以應用於[`Span`](xref:Xamarin.Forms.Span)實例。 關於此類別的詳細資訊,`Span`請參考[格式化文字](#Formatted_Text)。
+> 文字裝飾也可以套用至[`Span`](xref:Xamarin.Forms.Span)實例。 如需類別的`Span`詳細資訊，請參閱[格式化文字](#Formatted_Text)。
 
 ## <a name="character-spacing"></a>字元間距
 
-字元間距可以通過[`Label`](xref:Xamarin.Forms.Label)`Label.CharacterSpacing`將 屬性`double`設定為 值應用於實體:
+將`Label.CharacterSpacing`屬性設定為`double`值， [`Label`](xref:Xamarin.Forms.Label)即可將字元間距套用至實例：
 
 ```xaml
 <Label Text="Character spaced text"
@@ -68,16 +68,16 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 };
 ```
 
-結果是,文本[`Label`](xref:Xamarin.Forms.Label)中顯示的字元與間隔`CharacterSpacing`設備無關的單位。
+結果是所顯示文字中的字元[`Label`](xref:Xamarin.Forms.Label)會與`CharacterSpacing`裝置獨立單位分開。
 
 ## <a name="new-lines"></a>新行
 
-從 XAML[`Label`](xref:Xamarin.Forms.Label)將文字 強制到新行有兩種主要技術:
+有兩個主要的技術可將中的[`Label`](xref:Xamarin.Forms.Label)文字強制執行至新行，從 XAML：
 
-1. 使用單碼換行符,即"&#10;"。
-1. 使用*屬性元素*語法指定文本。
+1. 使用 unicode 換行字元，也就是 "&amp;#10;"。
+1. 使用*屬性元素*語法指定文字。
 
-以下代碼顯示了這兩種技術的範例:
+下列程式碼顯示這兩種技術的範例：
 
 ```xaml
 <!-- Unicode line feed character -->
@@ -92,7 +92,7 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 </Label>
 ```
 
-在 C# 中,文字可以強制到具有「\n」字元的新行上:
+在 c # 中，文字可以強制放在具有 "\n" 字元的新行上：
 
 ```csharp
 Label label = new Label { Text = "First line\nSecond line" };
@@ -100,11 +100,11 @@ Label label = new Label { Text = "First line\nSecond line" };
 
 ## <a name="colors"></a>色彩
 
-標籤可以通過[`TextColor`](xref:Xamarin.Forms.Label.TextColor)可綁定屬性設置為使用自定義文本顏色。
+標籤可以透過可系結[`TextColor`](xref:Xamarin.Forms.Label.TextColor)屬性設定為使用自訂文字色彩。
 
-為確保每個平臺上的顏色可用,需要特別注意。 由於每個平台的文本和背景顏色都有不同的預設值,因此您需要小心選擇適用於每個平台的預設值。
+必須特別小心，以確保每個平臺都能使用色彩。 由於每個平臺的文字和背景色彩都有不同的預設值，因此您必須小心挑選預設值，以在每個平臺上運作。
 
-以下 XAML 範例設定`Label`的文字 顏色:
+下列 XAML 範例會設定的文字色彩`Label`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -134,39 +134,39 @@ public partial class LabelPage : ContentPage
 }
 ```
 
-以下螢幕截圖顯示了設定`TextColor`屬性的結果:
+下列螢幕擷取畫面顯示設定`TextColor`屬性的結果：
 
-![標籤文字顏色範例](label-images/textcolor.png)
+![標籤 TextColor 範例](label-images/textcolor.png)
 
-有關顏色的詳細資訊,請參閱[顏色](~/xamarin-forms/user-interface/colors.md)。
+如需色彩的詳細資訊，請參閱[色彩](~/xamarin-forms/user-interface/colors.md)。
 
 ## <a name="fonts"></a>字型
 
-有關在 上指定字型的詳細`Label`資訊 ,請參閱[字型](~/xamarin-forms/user-interface/text/fonts.md)。
+如需在上指定字型的詳細`Label`資訊，[請參閱字型](~/xamarin-forms/user-interface/text/fonts.md)。
 
 <a name="Truncation_and_Wrapping" />
 
-## <a name="truncation-and-wrapping"></a>截斷和包裝
+## <a name="truncation-and-wrapping"></a>截斷和換行
 
-可以設置標籤以處理無法以多種方式之一(由`LineBreakMode`屬性公開)在一行上擬合的文本。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)是具有以下值的枚舉:
+標籤可以設定為以數種方式的其中一行來處理無法容納的文字（由屬性`LineBreakMode`所公開）。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)是具有下列值的列舉：
 
-- **頭截**&ndash;斷截斷文本的頭部,顯示結尾。
-- **字元包裝**&ndash;在字元邊界處將文本包裝到新行上。
-- **中間截圖**&ndash;顯示文本的開頭和結尾,中間以省略號替換。
-- **NoWrap**&ndash;不會換行文本,只顯示一行可以容納的文本。
-- **尾截條**&ndash;顯示文本的開頭,截斷末尾。
-- **WordWrap**&ndash;在單詞邊界處包裝文本。
+- **HeadTruncation** &ndash;會截斷文字的標頭，並顯示結尾。
+- **CharacterWrap** &ndash;會將文字包裝在字元界限的新行上。
+- **MiddleTruncation** &ndash;會顯示文字的開頭和結尾，並以省略號取代中間的。
+- **NoWrap** &ndash;不會將文字換行，只會顯示一行中的最多文字。
+- **TailTruncation** &ndash;會顯示文字的開頭，並截斷結尾。
+- **自動換行** &ndash;會將文字包裝在字邊界上。
 
-## <a name="display-a-specific-number-of-lines"></a>顯示特定數量的列
+## <a name="display-a-specific-number-of-lines"></a>顯示特定數目的行
 
-使用屬性`Label.MaxLines`設定為`int`值,可以指定[`Label`](xref:Xamarin.Forms.Label)由顯示的行數:
+藉由將`Label.MaxLines`屬性設定為`int`值[`Label`](xref:Xamarin.Forms.Label) ，即可指定所顯示的行數：
 
-- 當`MaxLines`為 -1(其預設值)時`Label`, 屬性的[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)值僅 顯示一行(可能截斷)或包含所有文本的所有行。
-- 當`MaxLines`為`Label`0 時,不顯示。
-- 當`MaxLines`為 1 時,結果[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)與設定為[`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode)時[`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode)相同[`TailTruncation`](xref:Xamarin.Forms.LineBreakMode), 或 。 但是,如果`Label`適用,將尊重[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)財產在放置橢圓時的價值。
-- 當`MaxLines`大於 1`Label`時, 將顯示最多為指定數量的行[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)數,同時尊重 屬性相對於橢圓線放置的值(如果適用)。 但是,`MaxLines`[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)如果 屬性[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)設置為 ,則將屬性設置為 大於 1 的值不起作用。
+- 當`MaxLines`是-1 （這是其預設值）時`Label` ，會將[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)屬性的值接受為只顯示一行、可能被截斷，或包含所有文字的所有行。
+- 當`MaxLines`為0時， `Label`不會顯示。
+- 當`MaxLines`是1時，結果等同于將[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)屬性設定為[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)、 [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode)、 [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode)或。 [`TailTruncation`](xref:Xamarin.Forms.LineBreakMode) 不過， `Label`將會遵循[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)屬性的值（如果適用的話）。
+- 當`MaxLines`大於1時， `Label`將會顯示到指定的行數，同時採用[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)屬性的值（如果適用的話）。 不過，如果`MaxLines` [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)屬性設定為[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)，則將屬性設定為大於1的值將不會有任何作用。
 
-下面的 XAML 範例`MaxLines`展示在[`Label`](xref:Xamarin.Forms.Label)上設定 屬性:
+下列 XAML 範例示範如何在上`MaxLines`設定屬性[`Label`](xref:Xamarin.Forms.Label)：
 
 ```xaml
 <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis nulla eu felis fringilla vulputate. Nullam porta eleifend lacinia. Donec at iaculis tellus."
@@ -184,18 +184,18 @@ var label =
 };
 ```
 
-以下螢幕截圖顯示將`MaxLines`屬性設定為 2 的結果,當文字足夠長到超過 2 行時:
+下列螢幕擷取畫面顯示將`MaxLines`屬性設定為2的結果（當文字長度足以佔用2行以上）時：
 
-![標籤最大值線範例](label-images/label-maxlines.png)
+![標籤 MaxLines 範例](label-images/label-maxlines.png)
 
 ## <a name="display-html"></a>顯示 HTML
 
-類別[`Label`](xref:Xamarin.Forms.Label)具有屬性`TextType`,該屬性確定`Label`實體應顯示純文字還是 HTML 文本。 此屬性應設定為`TextType`枚舉的成員之一:
+[`Label`](xref:Xamarin.Forms.Label)類別具有`TextType`屬性，可決定`Label`實例是否應顯示純文字或 HTML 文字。 這個屬性應該設定為`TextType`列舉的其中一個成員：
 
-- `Text`表示 將`Label`顯示 純文本,並且是`Label.TextType`屬性的 預設值。
-- `Html`表示將顯示`Label`HTML 文本。
+- `Text`表示`Label`將會顯示純文字，而則是`Label.TextType`屬性的預設值。
+- `Html`表示`Label`將會顯示 HTML 文字。
 
-因此,[`Label`](xref:Xamarin.Forms.Label)實體可以透過`Label.TextType`屬性設定為與`Html``Label.Text`屬性設定為 HTML 字串來顯示 HTML:
+因此， [`Label`](xref:Xamarin.Forms.Label)實例可以將`Label.TextType`屬性設為`Html`，並將`Label.Text`屬性設定為 html 字串，藉以顯示 html：
 
 ```csharp
 Label label = new Label
@@ -205,16 +205,16 @@ Label label = new Label
 };
 ```
 
-在上面的範例中,必須使用`\`符號轉義 HTML 中的雙引號字元。
+在上述範例中，必須使用`\`符號來轉義 HTML 中的雙引號字元。
 
-在 XAML 中,由於額外轉`<``>`義 與符號,HTML 字串可能會變得不可讀:
+在 XAML 中，HTML 字串可能會因為額外的`<`轉義和符號`>`而變成無法讀取：
 
 ```xaml
 <Label Text="This is &lt;strong style=&quot;color:red&quot;&gt;HTML&lt;/strong&gt; text."
        TextType="Html"  />
 ```
 
-或者,為了獲得更高的可讀性,可以在`CDATA`一節中內聯 HTML:
+或者，為了提高可讀性，HTML 可以內嵌在`CDATA`區段中：
 
 ```xaml
 <Label TextType="Html">
@@ -224,44 +224,44 @@ Label label = new Label
 </Label>
 ```
 
-這個屬性`Label.Text`設定為`CDATA`節中內聯的 HTML 字串。 這之所以有效,`Text`因為屬性`ContentProperty`是`Label`類別的 。
+在此範例中， `Label.Text`屬性會設定為在`CDATA`區段中內嵌的 HTML 字串。 這是可行的`Text` ，因為屬性`ContentProperty`是`Label`類別的。
 
-以下螢幕截圖顯示[`Label`](xref:Xamarin.Forms.Label)HTML:
+下列螢幕擷取畫面顯示 HTML [`Label`](xref:Xamarin.Forms.Label)的顯示：
 
-![在 iOS 與 Android 上顯示 HTML 的分頁螢幕擷取](label-images/label-html.png)
+![在 iOS 和 Android 上顯示 HTML 的標籤螢幕擷取畫面](label-images/label-html.png)
 
 > [!IMPORTANT]
-> 在[`Label`](xref:Xamarin.Forms.Label)中 顯示 HTML 僅限於基礎平台支援的 HTML 標記。
+> 在中[`Label`](xref:Xamarin.Forms.Label)顯示 html 僅限於基礎平臺支援的 html 標記。
 
 <a name="Formatted_Text" />
 
 ## <a name="formatted-text"></a>格式化文字
 
-標籤公開允許[`FormattedText`](xref:Xamarin.Forms.Label.FormattedText)在同一視圖中顯示具有多種字體和顏色的文本的屬性。
+標籤會[`FormattedText`](xref:Xamarin.Forms.Label.FormattedText)公開屬性，以允許在相同的視圖中呈現具有多個字型和色彩的文字。
 
-屬性`FormattedText`的類型為[`FormattedString`](xref:Xamarin.Forms.FormattedString),它包括一個或[`Span`](xref:Xamarin.Forms.Span)多個 實例,[`Spans`](xref:Xamarin.Forms.FormattedString.Spans)通過 屬性設置。 以下`Span`屬性可用於設定可視外觀:
+`FormattedText`屬性的類型[`FormattedString`](xref:Xamarin.Forms.FormattedString)是，其中包含一或多個[`Span`](xref:Xamarin.Forms.Span)透過[`Spans`](xref:Xamarin.Forms.FormattedString.Spans)屬性設定的實例。 下列`Span`屬性可用於設定視覺外觀：
 
-- [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor)• 跨距背景的顏色。
-- `CharacterSpacing`類型`double`,`Span`是文字字元之間的間距。
-- [`Font`](xref:Xamarin.Forms.Span.Font)• 範圍中文字的字體。
-- [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes)• 範圍中文字的字體屬性。
-- [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily)• 範圍中文字的字體所屬的字體系列。
-- [`FontSize`](xref:Xamarin.Forms.Span.FontSize)• 範圍中文字的字體大小。
-- [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor)• 範圍中文字的顏色。 此屬性已過時,已替換為該`TextColor`屬性。
-- [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight)- 應用於跨度的預設線高度的乘數。 有關詳細資訊,請參閱[線高度](#line-height)。
-- [`Style`](xref:Xamarin.Forms.Span.Style)• 要應用於範圍的樣式。
-- [`Text`](xref:Xamarin.Forms.Span.Text)• 範圍的文本。
-- [`TextColor`](xref:Xamarin.Forms.Span.TextColor)• 範圍中文字的顏色。
-- `TextDecorations`- 要應用於範圍中文字的裝飾。 有關詳細資訊,請參考[文字裝飾](#text-decorations)。
+- [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor)–範圍背景的色彩。
+- `CharacterSpacing`，屬於類型`double`，這是`Span`文字字元之間的間距。
+- [`Font`](xref:Xamarin.Forms.Span.Font)–範圍中文字的字型。
+- [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes)–範圍中文字的字型屬性。
+- [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily)–範圍中文字的字型所屬的字型系列。
+- [`FontSize`](xref:Xamarin.Forms.Span.FontSize)–範圍中文字的字型大小。
+- [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor)–範圍中文字的色彩。 這個屬性已經過時，並已由`TextColor`屬性取代。
+- [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight)-要套用至範圍的預設行高的乘數。 如需詳細資訊，請參閱[行高](#line-height)。
+- [`Style`](xref:Xamarin.Forms.Span.Style)–要套用至範圍的樣式。
+- [`Text`](xref:Xamarin.Forms.Span.Text)–範圍的文字。
+- [`TextColor`](xref:Xamarin.Forms.Span.TextColor)–範圍中文字的色彩。
+- `TextDecorations`-要套用至範圍中文字的裝飾。 如需詳細資訊，請參閱[文字裝飾](#text-decorations)。
 
-和[`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor)[`Text`](xref:Xamarin.Forms.Span.Text)可[`Text`](xref:Xamarin.Forms.Span.Text)綁定屬性具有[`OneWay`](xref:Xamarin.Forms.BindingMode)預設綁定模式。 有關此繫結模式的詳細資訊,請參閱[連結模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)指南中的[預設結合模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)。
+[`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) [`Text`](xref:Xamarin.Forms.Span.Text)、 [`Text`](xref:Xamarin.Forms.Span.Text)和可系結屬性的預設系結模式為[`OneWay`](xref:Xamarin.Forms.BindingMode)。 如需此系結模式的詳細資訊，請參閱系結[模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)指南中[的預設](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)系結模式。
 
-此外,該[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)屬性可用於定義將回應上手勢的手勢辨識器的[`Span`](xref:Xamarin.Forms.Span)集合 。
+此外， [`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)屬性也可以用來定義筆勢辨識器的集合，這些辨識器會回應中的[`Span`](xref:Xamarin.Forms.Span)手勢。
 
 > [!NOTE]
-> 無法在中[`Span`](xref:Xamarin.Forms.Span)顯示 HTML。
+> 不可能在中顯示 HTML [`Span`](xref:Xamarin.Forms.Span)。
 
-下面的 XAML 範`FormattedText`例展示由[`Span`](xref:Xamarin.Forms.Span)三個實體組成的屬性:
+下列 XAML 範例示範包含三`FormattedText`個[`Span`](xref:Xamarin.Forms.Span)實例的屬性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -311,25 +311,25 @@ public class LabelPageCode : ContentPage
 ```
 
 > [!IMPORTANT]
-> 可透過[`Text`](xref:Xamarin.Forms.Span.Text)數據綁定設置`Span`屬性。 如需詳細資訊，請參閱[資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
+> 的[`Text`](xref:Xamarin.Forms.Span.Text)屬性`Span`可以透過資料系結來設定。 如需詳細資訊，請參閱[資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
-請注意,還可以[`Span`](xref:Xamarin.Forms.Span)回應添加到 span[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)集合的任何手勢。 例如,在上述[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)代碼示例中,已添加到第`Span`二個代碼示例中。 因此,當點擊`Span`時`TapGestureRecognizer`, 將`ICommand`[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)通過執行 屬性定義的將回應。 有關手勢辨識器的詳細資訊,請參閱[Xamarin.窗體手勢](~/xamarin-forms/app-fundamentals/gestures/index.md)。
+請注意， [`Span`](xref:Xamarin.Forms.Span)也可以回應任何加入至範圍[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)集合的手勢。 例如，在上述[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)程式碼範例中，已`Span`新增至第二個。 因此，在此`Span`情況下， `TapGestureRecognizer`會藉由執行`ICommand` [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)屬性所定義的來回應。 如需筆勢辨識器的詳細資訊，請參閱「 [Xamarin」手勢](~/xamarin-forms/app-fundamentals/gestures/index.md)。
 
-以下螢幕截圖顯示了將`FormattedString`屬性設定為三`Span`個 實體的結果:
+下列螢幕擷取畫面顯示將`FormattedString`屬性設定為三個`Span`實例的結果：
 
-![標籤格式化文字範例](label-images/formattedtext.png)
+![標籤 FormattedText 範例](label-images/formattedtext.png)
 
 ## <a name="line-height"></a>行高
 
-可以[`Label`](xref:Xamarin.Forms.Label)通過[`Span`](xref:Xamarin.Forms.Span)[`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)設定[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)`double`屬性或 值來自定義和的垂直高度。 在 iOS 和 Android 上,這些值是原始行高度的乘數,在`Label.LineHeight`通用 Windows 平臺 (UWP) 上,屬性值是標籤字體大小的乘數。
+[`Label`](xref:Xamarin.Forms.Label)您[`Span`](xref:Xamarin.Forms.Span)可以藉由設定[`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)屬性或[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight) `double`值來自訂和的垂直高度。 在 iOS 和 Android 上，這些值是原始行高的乘數，而在通用 Windows 平臺（UWP）上， `Label.LineHeight`屬性值是標籤字型大小的乘數。
 
 > [!NOTE]
 >
-> - 在[`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)iOS[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)上 ,和 屬性更改適合單行的文本的行高度,以及環繞到多行的文本。
-> - 在[`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)Android[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)上 , 和 屬性僅更改環繞到多行的文本的行高。
-> - 在 UWP[`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)上,該屬性更改環繞到多行的文本的行[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)高度, 並且該屬性不起作用。
+> - 在 iOS 上， [`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)和[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)屬性會變更符合單一線條的文字行高，以及換行至多行的文字。
+> - 在 Android 上， [`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)和[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)屬性只會變更包裝到多行文字的線條高度。
+> - 在 UWP 上， [`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)屬性會變更包裝到多行的文字行高，而屬性則[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)不會有任何作用。
 
-下面的 XAML 範例[`LineHeight`](xref:Xamarin.Forms.Label.LineHeight)展示在[`Label`](xref:Xamarin.Forms.Label)上設定 屬性:
+下列 XAML 範例示範如何在上[`LineHeight`](xref:Xamarin.Forms.Label.LineHeight)設定屬性[`Label`](xref:Xamarin.Forms.Label)：
 
 ```xaml
 <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis nulla eu felis fringilla vulputate. Nullam porta eleifend lacinia. Donec at iaculis tellus."
@@ -347,11 +347,11 @@ var label =
 };
 ```
 
-以下螢幕截圖顯示了將[`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)屬性設定為 1.8 的結果:
+下列螢幕擷取畫面顯示將[`Label.LineHeight`](xref:Xamarin.Forms.Label.LineHeight)屬性設定為1.8 的結果：
 
-![標籤線高度範例](label-images/label-lineheight.png)
+![標籤 LineHeight 範例](label-images/label-lineheight.png)
 
-下面的 XAML 範例[`LineHeight`](xref:Xamarin.Forms.Span.LineHeight)展示在[`Span`](xref:Xamarin.Forms.Span)上設定 屬性:
+下列 XAML 範例示範如何在上[`LineHeight`](xref:Xamarin.Forms.Span.LineHeight)設定屬性[`Span`](xref:Xamarin.Forms.Span)：
 
 ```xaml
 <Label LineBreakMode="WordWrap">
@@ -387,13 +387,13 @@ var label = new Label
 };
 ```
 
-以下螢幕截圖顯示了將[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)屬性設定為 1.8 的結果:
+下列螢幕擷取畫面顯示將[`Span.LineHeight`](xref:Xamarin.Forms.Span.LineHeight)屬性設定為1.8 的結果：
 
-![跨線高度範例](label-images/span-lineheight.png)
+![Span LineHeight 範例](label-images/span-lineheight.png)
 
 ## <a name="padding"></a>填補
 
-填充表示元素與其子元素之間的空間,用於將元素與其自己的內容分開。 可以通過`Label.Padding`屬性設定為[`Thickness`](xref:Xamarin.Forms.Thickness)值應用[`Label`](xref:Xamarin.Forms.Label)於 實體:
+填補代表專案和其子專案之間的間距，並用來分隔專案與本身的內容。 將`Label.Padding`屬性設定為[`Thickness`](xref:Xamarin.Forms.Thickness)值[`Label`](xref:Xamarin.Forms.Label) ，即可將填補套用至實例：
 
 ```xaml
 <Label Padding="10">
@@ -426,22 +426,22 @@ Label label = new Label
 ```
 
 > [!IMPORTANT]
-> 在 iOS[`Label`](xref:Xamarin.Forms.Label)上 ,當`Padding`創建設置屬性 的 時,將應用填充,以後可以更新填充值。 但是,當創建`Label`未`Padding`設置 該屬性的 時,嘗試以後設置該屬性將不起作用。
+> 在 iOS 上，當[`Label`](xref:Xamarin.Forms.Label)建立設定`Padding`屬性的時，將會套用填補，並于稍後更新填補值。 不過，建立未`Label`設定`Padding`屬性的時，稍後嘗試設定它將不會有任何作用。
 >
-> 在 Android 和通用`Padding`Windows 平臺上,`Label`可以在創建或更高 版本時指定屬性值。
+> 在 Android 和通用 Windows 平臺上，當`Padding`建立或更新版本時`Label` ，可以指定屬性值。
 
-有關填充的詳細資訊,請參閱[邊距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
+如需填補的詳細資訊，請參閱[邊界和填補](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
 ## <a name="hyperlinks"></a>超連結
 
-使用以下方法,[`Label`](xref:Xamarin.Forms.Label)[`Span`](xref:Xamarin.Forms.Span)顯示與實體的文字可以轉換為超連結:
+[`Label`](xref:Xamarin.Forms.Label)和[`Span`](xref:Xamarin.Forms.Span)實例所顯示的文字，可以使用下列方法轉換成超連結：
 
-1. 設置`TextColor``TextDecoration`[`Label`](xref:Xamarin.Forms.Label)[`Span`](xref:Xamarin.Forms.Span)或的和 屬性。
-1. 新增[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers)[`Label`](xref:Xamarin.Forms.Label)到的[`Span`](xref:Xamarin.Forms.Span)集合中,[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)的屬性繫結到`ICommand`,[`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)其屬性包含要開啟的網址。
+1. 設定[`Label`](xref:Xamarin.Forms.Label)或`TextColor` [`Span`](xref:Xamarin.Forms.Span)的`TextDecoration`和屬性。
+1. 將加入[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)至[`GestureRecognizers`](xref:Xamarin.Forms.GestureElement.GestureRecognizers) [`Label`](xref:Xamarin.Forms.Label)或[`Span`](xref:Xamarin.Forms.Span)的集合，其[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)屬性系結至`ICommand`，而其[`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性包含要開啟的 URL。
 1. `ICommand`定義將由執行的[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)。
-1. 編寫將由 執行的`ICommand`代碼 。
+1. 撰寫將由執行的程式碼`ICommand`。
 
-以下代碼範例取自[超連結示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)範例,顯示了其內容從[`Label`](xref:Xamarin.Forms.Label)[`Span`](xref:Xamarin.Forms.Span)多個 實體設定的 。
+下列取自[超連結](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)示範範例的程式碼範例會顯示， [`Label`](xref:Xamarin.Forms.Label)其內容是從多個[`Span`](xref:Xamarin.Forms.Span)實例所設定：
 
 ```xaml
 <Label>
@@ -462,13 +462,13 @@ Label label = new Label
 </Label>
 ```
 
-在此示例中,第一個和第三[`Span`](xref:Xamarin.Forms.Span)個實例包括文本,而第`Span`二 個實例表示可評估的超連結。 它的文本顏色設置為藍色,並且具有下劃線文本修飾。 這將建立超連結的外觀,如以下螢幕截圖所示:
+在此範例中，第一個和[`Span`](xref:Xamarin.Forms.Span)第三個實例會包含文字`Span` ，第二個則代表 tappable 超連結。 其文字色彩設為藍色，且具有底線文字裝飾。 這會建立超連結的外觀，如下列螢幕擷取畫面所示：
 
 [![超連結](label-images/hyperlinks-small.png "超連結")](label-images/hyperlinks-large.png#lightbox)
 
-當點擊超連結時,[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)將透過執行`ICommand`[`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)其 屬性定義的來回應。 此外,[`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性指定的網址會作為參數傳遞`ICommand`給 。
+當您按下超連結時[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) ，會執行其`ICommand` [`Command`](xref:Xamarin.Forms.TapGestureRecognizer.Command)屬性所定義的來回應。 此外， [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性所指定的 URL 將會傳遞至`ICommand`做為參數。
 
-XAML 頁面的代碼後面包含`TapCommand`:
+XAML 頁面的程式碼後置包含`TapCommand`執行：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -484,13 +484,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`TapCommand`執行`Launcher.OpenAsync`方法,將[`TapGestureRecognizer.CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性值作為參數傳遞。 該方法`Launcher.OpenAsync`由 Xamarin.Essentials 提供,並在 Web 瀏覽器中打開 URL。 因此,總體效果是,當在頁面上點擊超連結時,將顯示一個 Web 瀏覽器,並將與超連結關聯的 URL 導航到。
+會`TapCommand`執行`Launcher.OpenAsync`方法，並傳遞[`TapGestureRecognizer.CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)屬性值做為參數。 `Launcher.OpenAsync`方法是由 Xamarin 提供，並在網頁瀏覽器中開啟 URL。 因此，整體效果是在頁面上按下超連結時，網頁瀏覽器會出現，且會導覽與超連結相關聯的 URL。
 
-### <a name="creating-a-reusable-hyperlink-class"></a>建立可重用的超連結類別
+### <a name="creating-a-reusable-hyperlink-class"></a>建立可重複使用的超連結類別
 
-創建超連結的上一種方法要求每次應用程式中需要超連結時編寫重複代碼。 但是,可以對[`Label`](xref:Xamarin.Forms.Label)[`Span`](xref:Xamarin.Forms.Span)和類進行子類化以創建`HyperlinkLabel`和`HyperlinkSpan`類,並添加手勢識別器和文本格式代碼。
+先前建立超連結的方法需要在您的應用程式中要求超連結時，撰寫重複的程式碼。 不過， [`Label`](xref:Xamarin.Forms.Label)和[`Span`](xref:Xamarin.Forms.Span)類別都可以子類別化，以`HyperlinkLabel`建立`HyperlinkSpan`和類別，並在該處加入手勢辨識器和文字格式設定程式碼。
 
-以下代碼範例取自[超連結示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)範例,顯示了`HyperlinkSpan`一個 類:
+下列程式碼範例取自「[超連結示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)」範例，其中顯示`HyperlinkSpan`一個類別：
 
 ```csharp
 public class HyperlinkSpan : Span
@@ -517,9 +517,9 @@ public class HyperlinkSpan : Span
 }
 ```
 
-類別`HyperlinkSpan`定義屬性`Url`與關聯的[`BindableProperty`](xref:Xamarin.Forms.BindableProperty),建構函數設定超連結外觀,並在點擊超連結時將回應的[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)。 `HyperlinkSpan`當被點擊時,`TapGestureRecognizer`將透過`Launcher.OpenAsync`執行方法來回應在 Web`Url`瀏覽器中打開 由屬性指定的網址。
+類別會定義`Url`屬性和相關聯[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)的，而此函式會設定超連結的[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)外觀，以及在按下超連結時回應的。 `HyperlinkSpan` `HyperlinkSpan`當按下時， `TapGestureRecognizer`會執行`Launcher.OpenAsync`方法以在網頁瀏覽器中開啟由`Url`屬性所指定的 URL 來回應。
 
-可以`HyperlinkSpan`通過 將類的實體加入 XAML 來使用該類:
+藉`HyperlinkSpan`由將類別的實例加入至 XAML，即可取用類別：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -542,14 +542,14 @@ public class HyperlinkSpan : Span
 </ContentPage>
 ```
 
-## <a name="styling-labels"></a>樣式標籤
+## <a name="styling-labels"></a>設定標籤的樣式
 
-前面的各節按實例[`Label`](xref:Xamarin.Forms.Label)[`Span`](xref:Xamarin.Forms.Span)介紹 設置和屬性。 但是,屬性集可以分組到一個樣式中,該樣式始終應用於一個或多個視圖。 這可以提高代碼的可讀性,並使設計更改更易於實現。 有關詳細資訊,請參閱[樣式](~/xamarin-forms/user-interface/text/styles.md)。
+前面幾節涵蓋了[`Label`](xref:Xamarin.Forms.Label)每[`Span`](xref:Xamarin.Forms.Span)個實例的設定和屬性。 不過，您可以將屬性集分成一種樣式，以一致的方式套用至一或多個視圖。 這會增加程式碼的可讀性，並讓設計變得更容易執行。 如需詳細資訊，請參閱[樣式](~/xamarin-forms/user-interface/text/styles.md)。
 
 ## <a name="related-links"></a>相關連結
 
-- [文字(範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [超連結(範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
-- [使用 Xamarin.表單建立移動應用程式,第 3 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
+- [文字（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [超連結（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
+- [使用 Xamarin 建立 Mobile Apps，第3章](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [Label API](xref:Xamarin.Forms.Label)
-- [跨 API](xref:Xamarin.Forms.Span)
+- [Span API](xref:Xamarin.Forms.Span)

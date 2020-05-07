@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2020
-ms.openlocfilehash: f47dc08d11a97598966ba7af620cfc81e5fe284f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: b1e573a6070a637ef2fdfa65bb0fc1375522fc3c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532622"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852501"
 ---
 # <a name="xamarinforms-expander"></a>Xamarin. 表單展開器
 
@@ -26,6 +26,8 @@ ms.locfileid: "82532622"
 
 > [!IMPORTANT]
 > `Expander`目前為實驗性，而且只能透過設定`Expander_Experimental`旗標來使用。 如需詳細資訊，請參閱[實驗性旗標](~/xamarin-forms/internals/experimental-flags.md)。
+>
+> 此外，也會`Expander`在`Xamarin.Forms`命名空間中完全實作為控制項。 因此，它可以在 Xamarin 支援的所有平臺上使用。
 
 `Expander`控制項會定義下列屬性：
 
