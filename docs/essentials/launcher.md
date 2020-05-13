@@ -3,14 +3,15 @@ title: Xamarin.Essentials Launcher
 description: Xamarin.Essentials 中的 Launcher 類別可讓應用程式依系統開啟 URI。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 88c1450d28b4c94fe8079b8915503cf5de118644
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f84d3bf379562c8ddd96a32dfb9f15b03b0a6827
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488513"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149792"
 ---
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Launcher
 
@@ -54,15 +55,15 @@ public class LauncherTest
 }
 ```
 
-### <a name="additional-platform-setup"></a>其他平台設定
+### <a name="additional-platform-setup"></a>其他平臺設定
 
 # <a name="android"></a>[Android](#tab/android)
 
-沒有其他設置。
+不需額外的設定。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS 9 及更高部分,Apple 強制執行應用程式可以查詢的方案。 要指定要使用的方案,必須在檔中`LSApplicationQueriesSchemes``Info.plist`指定。
+在 iOS 9 和更新版本中，Apple 會強制執行應用程式可以查詢的配置。 若要指定您想要使用的配置，您必須 `LSApplicationQueriesSchemes` 在檔案中指定 `Info.plist` 。
 
 ```
 <key>LSApplicationQueriesSchemes</key>
@@ -74,7 +75,7 @@ public class LauncherTest
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-沒有其他設置。
+不需額外的設定。
 
 -----
 
@@ -82,7 +83,7 @@ public class LauncherTest
 
 此功能可讓應用程式要求其他應用程式開啟及檢視檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求開啟檔案。
 
-下面是將文字寫入磁碟並要求開啟的範例:
+以下範例說明如何將文字寫入磁片，並要求將它開啟：
 
 ```csharp
 var fn = "File.txt";
@@ -119,3 +120,9 @@ await Launcher.OpenAsync(new OpenFileRequest
 
 - [Launcher 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
 - [Launcher API 文件](xref:Xamarin.Essentials.Launcher)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Launcher-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

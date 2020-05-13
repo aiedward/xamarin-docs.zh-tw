@@ -3,14 +3,15 @@ title: Xamarin.Essentials：電子郵件
 description: Xamarin.Essentials 中的電子郵件類別使應用程式能夠開啟包含主題、本文和收件者 (收件者、副本、密件副本) 等指定資訊的預設電子郵件應用程式。
 ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 77fcadf3ec58a38acac5eca14b43d937414a4a60
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70060089"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150101"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials：電子郵件
 
@@ -64,7 +65,7 @@ public class EmailTest
 
 ## <a name="file-attachments"></a>檔案附件
 
-這項功能讓您可以在應用程式中，以裝置的電子郵件用戶端寄送檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求將檔案新增為附件。 每個電子郵件用戶端都不同，可能只支援特定的副檔名，也可能完全都不支援。
+這項功能可讓應用程式在裝置上的電子郵件客戶程式中以電子郵件傳送檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求將檔案新增為附件。 每個電子郵件用戶端都不同，而且可能只支援特定的副檔名，或完全沒有。
 
 下列範例示範如何將文字寫入磁碟，並將它新增為電子郵件附件：
 
@@ -106,3 +107,9 @@ await Email.ComposeAsync(message);
 
 - [電子郵件原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
 - [電子郵件 API 文件](xref:Xamarin.Essentials.Email)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Email-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

@@ -3,14 +3,15 @@ title: Xamarin.Essentials：羅盤
 description: 本文件描述 Xamarin.Essentials 中的羅盤類別，可讓您監視裝置的磁北方位。
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 55dd10bff21b7d082b225277d0100232d5efd4f3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 54ce725a319e0222179945ece558338c8a152653
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61356873"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150119"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials：羅盤
 
@@ -76,15 +77,15 @@ public class CompassTest
 
 # <a name="android"></a>[Android](#tab/android)
 
-Android 不會提供用於擷取羅盤方位的 API。 我們利用加速計和磁力計來計算磁北方位，這個方法由 Google 推薦。
+Android 不會提供用來抓取羅盤標題的 API。 我們利用加速計和磁力計來計算磁北方位，這個方法由 Google 推薦。
 
 在罕見情況下，您可能會看到不一致的結果，代表感應器需要校正，這涉及以 8 字形移動您的裝置。 最佳方法是開啟 Google 地圖、點選您所在位置的點，然後選取 [校正羅盤]****。
 
-請注意，同時從應用程式執行多個感應器可能會調整感應器速度。
+同時從您的應用程式執行多個感應器可能會調整感應器速度。
 
 ## <a name="low-pass-filter"></a>低通濾器
 
-由於 Android 羅盤值的更新和計算方式，可能需要將值平滑。 可以套用「低通濾器」__ 來平均角度的正弦和餘弦值，並且可以透過使用接受 `bool applyLowPassFilter` 參數的 `Start` 方法多載來開啟：
+由於 Android 羅盤值的更新和計算方式，可能需要將值平滑。 可以套用_低度傳遞篩選準則_，以平均角度的正弦和余弦值，而且可以使用可接受參數的方法多載來開啟 `Start` `bool applyLowPassFilter` ：
 
 ```csharp
 Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
@@ -98,3 +99,9 @@ Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
 
 - [羅盤原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
 - [羅盤 API 文件](xref:Xamarin.Essentials.Compass)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Compass-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

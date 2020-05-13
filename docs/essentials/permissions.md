@@ -4,13 +4,14 @@ description: 本檔說明 Xamarin 中的許可權類別，其可提供檢查和�
 ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
+ms.custom: video
 ms.date: 01/06/2020
-ms.openlocfilehash: 3d61267ae78a4b84907a2bcf6e944eb286b113dd
-ms.sourcegitcommit: 8b94b2af2ac69e4a60e210ddc764f4d276c8d88d
+ms.openlocfilehash: fbce02300363c3ec68c35c11afb25342f06f4be1
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605442"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150075"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin. Essentials：許可權
 
@@ -19,6 +20,8 @@ ms.locfileid: "82605442"
 ## <a name="get-started"></a>開始使用
 
 [!include[](~/essentials/includes/get-started.md)]
+
+[!include[](~/essentials/includes/android-permissions.md)]
 
 ## <a name="using-permissions"></a>使用許可權
 
@@ -30,31 +33,31 @@ using Xamarin.Essentials;
 
 ## <a name="checking-permissions"></a>檢查權限
 
-若要檢查許可權的目前狀態，請使用`CheckStatusAsync`方法以及特定許可權，以取得的狀態。
+若要檢查許可權的目前狀態，請使用 `CheckStatusAsync` 方法以及特定許可權，以取得的狀態。
 
 ```csharp
 var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
 ```
 
-如果`PermissionException`未宣告所需的許可權，就會擲回。
+`PermissionException`如果未宣告所需的許可權，就會擲回。
 
-在要求許可權之前，最好先檢查其狀態。 如果使用者從未收到提示，則每個作業系統都會傳回不同的預設狀態。 iOS 會`Unknown`傳回，而其他`Denied`則會返回。
+建議您最好先檢查許可權的狀態，再提出要求。 如果使用者從未收到提示，則每個作業系統都會傳回不同的預設狀態。 iOS 會傳回 `Unknown` ，而其他則會返回 `Denied` 。
 
 ## <a name="requesting-permissions"></a>要求權限
 
-若要向使用者要求許可權，請使用`RequestAsync`方法以及要求的特定許可權。 如果使用者先前已授與許可權，但尚未撤銷，則此方法會傳回`Granted` immediatelly，而不會顯示對話方塊。 
+若要向使用者要求許可權，請使用 `RequestAsync` 方法以及要求的特定許可權。 如果使用者先前已授與許可權，但尚未撤銷，則這個方法會 `Granted` 立即傳回，而不會顯示對話方塊。
 
 ```csharp
 var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 ```
 
-如果`PermissionException`未宣告所需的許可權，就會擲回。 
+`PermissionException`如果未宣告所需的許可權，就會擲回。
 
-請注意，在某些平臺上，許可權要求只能在單一時間啟用。 開發人員必須處理進一步的提示，以檢查許可權是否處於`Denied`狀態，並要求使用者以手動方式開啟它。
+請注意，在某些平臺上，許可權要求只能在單一時間啟用。 開發人員必須處理進一步的提示，以檢查許可權是否處於 `Denied` 狀態，並要求使用者以手動方式開啟它。
 
 ## <a name="permission-status"></a>許可權狀態
 
-使用`CheckStatusAsync`或`RequestAsync`時， `PermissionStatus`將會傳回用來決定後續步驟的。
+使用 `CheckStatusAsync` 或時 `RequestAsync` `PermissionStatus` ，將會傳回可用來決定後續步驟的：
 
 * 不明-許可權處於不明狀態
 * 已拒絕-使用者已拒絕許可權要求
@@ -64,7 +67,7 @@ var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
 ## <a name="available-permissions"></a>可用的許可權
 
-Xamarin 會嘗試盡可能抽象化最多的許可權，但每個作業系統都有一組不同的執行時間許可權。 此外，針對某些許可權提供單一 API 的差異也有所不同。 以下是目前可用許可權的指南：
+Xamarin 會嘗試盡可能抽象化最多的許可權。 不過，每個作業系統都有一組不同的執行時間許可權。 此外，針對某些許可權提供單一 API 時，會有一些差異。 以下是目前可用許可權的指南：
 
 圖示指南：
 
@@ -72,7 +75,7 @@ Xamarin 會嘗試盡可能抽象化最多的許可權，但每個作業系統都
 * ![不支援](~/media/shared/no.png "不支援或不需要")-不支援/不需要
 
 | 權限 | Android | iOS | UWP | watchOS | tvOS | Tizen |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: 
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---:
 | CalendarRead   | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | CalendarWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | 相機 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
@@ -88,11 +91,11 @@ Xamarin 會嘗試盡可能抽象化最多的許可權，但每個作業系統都
 | 提醒事項 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | 感應器 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | Sms | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| 語音 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| Speech | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | StorageRead | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | StorageWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 
-如果許可權標記為![不支援](~/media/shared/no.png "不支援")，則會`Granted`在核取或要求時一律傳回。
+如果許可權標記為![不支援](~/media/shared/no.png "不支援")，則會 `Granted` 在核取或要求時一律傳回。
 
 ## <a name="general-usage"></a>一般使用方式
 以下是用來處理許可權的一般使用模式。
@@ -142,7 +145,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>擴充許可權
 
-針對需要不包含在 Xamarin 中的其他驗證或許可權的應用程式，已建立許可權 API 以提供彈性且可擴充。 建立繼承自`BasePermission`的新類別，並執行所需的抽象方法。 結果為 
+針對需要不包含在 Xamarin 中的其他驗證或許可權的應用程式，已建立許可權 API 以提供彈性且可擴充。 建立繼承自的新類別， `BasePermission` 並執行所需的抽象方法。 結果為
 
 ```csharp
 public class MyPermission : BasePermission
@@ -167,7 +170,35 @@ public class MyPermission : BasePermission
 }
 ```
 
-在特定平臺中執行許可權時，可以從`BasePlatformPermission`繼承類別。 這會提供額外的平臺協助程式方法，以自動檢查宣告。
+在特定平臺中執行許可權時， `BasePlatformPermission` 可以從繼承類別。 這會提供額外的平臺協助程式方法，以自動檢查宣告。 建立自訂許可權以進行群組時，這會很有説明。 例如，您可以使用下列自訂許可權要求對 Android 上的儲存體進行讀取和寫入存取。
+
+在您要從中呼叫許可權的專案中，建立新的許可權。
+
+```csharp
+public partial class ReadWriteStoragePermission  : Xamarin.Essentials.Permissions.BasePlatformPermission
+{
+
+}
+```
+
+在您的 Android 專案中，使用您想要要求的許可權來擴充許可權。
+
+```csharp
+public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
+{
+    public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
+    {
+        (Android.Manifest.Permission.ReadExternalStorage, true),
+        (Android.Manifest.Permission.WriteExternalStorage, true)
+    }.ToArray();
+}
+```
+
+然後，您可以從共用邏輯呼叫您的新許可權。
+
+```csharp
+await Permissions.RequestAsync<ReadWriteStoragePermission>();
+```
 
 ## <a name="platform-implementation-specifics"></a>平台實作特性
 
@@ -179,7 +210,7 @@ public class MyPermission : BasePermission
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-許可權在檔案中`Info.plist`必須有相符的字串。 要求和拒絕許可權後，如果您第二次要求許可權，就不會再出現快顯。 您必須提示使用者手動調整 iOS 中 [應用程式設定] 畫面中的設定。
+許可權在檔案中必須有相符的字串 `Info.plist` 。 要求和拒絕許可權後，如果您第二次要求許可權，就不會再出現快顯視窗。 您必須提示使用者手動調整 iOS 中 [應用程式設定] 畫面中的設定。
 
 如需詳細資訊，請參閱[IOS 安全性和隱私權功能](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy)檔。
 
@@ -196,3 +227,9 @@ public class MyPermission : BasePermission
 - [許可權原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Permissions)
 - [許可權 API 檔](xref:Xamarin.Essentials.Permissions)
 
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Permissions-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

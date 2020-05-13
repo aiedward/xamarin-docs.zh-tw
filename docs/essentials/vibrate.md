@@ -3,14 +3,15 @@ title: Xamarin.Essentials：震動
 description: 本文件描述 Xamarin.Essentials 中的震動類別，可讓您在所需的時間內啟動和停止震動功能。
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: a002cd6ed183ffeafef92cb40d48b2792347714d
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70120107"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149844"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials：震動
 
@@ -34,7 +35,7 @@ ms.locfileid: "70120107"
 
 或更新 Android 資訊清單：
 
-在 **「屬性」** 資料夾下打開**AndroidManifest.xml**檔,並在**清單**節點內添加以下內容。
+開啟**Properties**資料夾底下的**androidmanifest.xml** ，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />
@@ -121,3 +122,9 @@ catch (Exception ex)
 
 - [震動原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
 - [震動 API 文件](xref:Xamarin.Essentials.Vibration)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Vibration-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

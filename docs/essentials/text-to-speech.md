@@ -3,14 +3,15 @@ title: 'Xamarin.Essentials: Text-to-Speech'
 description: Xamarin.Essentials 中的 TextToSpeech 類別可讓應用程式利用內建的文字轉換語音引擎將裝置的文字說出來，也可以查詢引擎可支援的可用語言。
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 6d89f70a8b7f6229297f86deb3cb83cf940fa7df
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: abe591d67ea749de4ae9a2f8dadf4df07712691a
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66469470"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149717"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Text-to-Speech
 
@@ -150,3 +151,9 @@ public async Task SpeakNow()
 
 - [TextToSpeech 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
 - [TextToSpeech API 文件](xref:Xamarin.Essentials.TextToSpeech)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Text-to-Speech-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

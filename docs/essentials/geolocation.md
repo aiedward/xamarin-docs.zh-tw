@@ -3,14 +3,15 @@ title: Xamarin.Essentials：地理位置
 description: 本文件描述 Xamarin.Essentials 中的地理位置類別，可提供用於擷取裝置目前地理位置座標的 API。
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 99b439e70038d27ed8bffcf20b908c52a10ede82
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80070351"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149754"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
 
@@ -49,6 +50,8 @@ ms.locfileid: "80070351"
 ```
 
 或以滑鼠右鍵按一下 Android 專案並開啟專案的屬性。 在 [Android 資訊清單]**** 下，尋找 [必要權限]**** 區域並選取 **ACCESS_COARSE_LOCATION** 和 **ACCESS_FINE_LOCATION** 權限。 這將會自動更新 **AndroidManifest.xml** 檔案。
+
+[!include[](~/essentials/includes/android-permissions.md)]
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -189,7 +192,7 @@ catch (Exception ex)
 <a name="calculate-distance" />
 
 ## <a name="detecting-mock-locations"></a>偵測模擬位置
-某些裝置可能會從提供者，或透過可提供模擬位置的應用程式傳回模擬位置。 您可以使用 任何`IsFromMockProvider`上的[`Location`](xref:Xamarin.Essentials.Location)來檢測這 一點。
+某些裝置可能會從提供者，或透過可提供模擬位置的應用程式傳回模擬位置。 您可以在任何上使用來偵測這種情況 `IsFromMockProvider` [`Location`](xref:Xamarin.Essentials.Location) 。
 
 ```csharp
 var request = new GeolocationRequest(GeolocationAccuracy.Medium);
@@ -206,7 +209,7 @@ if (location != null)
 
 ## <a name="distance-between-two-locations"></a>兩個位置之間的距離
 
-[`Location`](xref:Xamarin.Essentials.Location)和[`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions)類`CalculateDistance`定義 允許您計算兩個地理位置之間的距離的方法。 此計算出的距離不會考慮道路或其他路徑，而僅僅是沿著地球表面兩個點之間的最短距離，也稱為「大圓距離」__；或口語化說法：「直線」的距離。
+[`Location`](xref:Xamarin.Essentials.Location)和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 類別會定義 `CalculateDistance` 方法，可讓您計算兩個地理位置之間的距離。 此計算出的距離不會考慮道路或其他路徑，而僅僅是沿著地球表面兩個點之間的最短距離，也稱為「大圓距離」__；或口語化說法：「直線」的距離。
 
 以下是範例：
 
@@ -220,19 +223,19 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 
 ## <a name="platform-differences"></a>平台差異
 
-在每個平台上計算高度的方式不同。
+每個平臺上的高度會以不同的方式計算。
 
 # <a name="android"></a>[Android](#tab/android)
 
-在 Android 上,[高度](https://developer.android.com/reference/android/location/Location#getAltitude())(如果可用) 傳回以高於 WGS 84 參考橢圓體米為單位。 如果此位置沒有海拔,則返回 0.0。
+在 Android 上，[高度](https://developer.android.com/reference/android/location/Location#getAltitude())（如果有的話）會在 WGS 84 參考橢圓體上方的計量中傳回。 如果此位置沒有高度，則會傳回0.0。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS 上,[高度](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude)以米為單位進行測量。 正值表示海拔以上海拔,負值表示海平面以下的高度。
+在 iOS 上，[高度](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude)是以計量測量。 正值表示高度高於海平面，而負值則表示高度低於海平面。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-在 UWP 上,高度以米為單位返回。 有關詳細資訊,請參閱[海拔參考系統](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem)文檔。
+在 UWP 上，高度會以計量傳回。 如需詳細資訊，請參閱[AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem)檔。
 
 -----
 
@@ -240,3 +243,9 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 
 - [地理位置原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
 - [地理位置 API 文件](xref:Xamarin.Essentials.Geolocation)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Geolocation-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

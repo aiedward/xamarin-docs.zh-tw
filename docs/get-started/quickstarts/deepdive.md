@@ -10,12 +10,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: c0e8ec27898cc842d485967e525c2936d7a0f56d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: def54534d30b92b3d6ea8b5a0e7cac2c93293710
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131055"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83149820"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入門深入探討
 
@@ -25,7 +25,7 @@ Notes 應用程式已建置於 [Xamarin.Forms 快速入門](~/get-started/index.
 
 ## <a name="introduction-to-visual-studio"></a>Visual Studio 簡介
 
-視覺化工作室將程式碼組織到*解決方案*與*專案中*。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含四項專案的方案所組成，如下列螢幕擷取畫面所示：
+Visual Studio 會將程式碼組織成*方案*和*專案*。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含四項專案的方案所組成，如下列螢幕擷取畫面所示：
 
 ![](deepdive-images/vs/solution.png "Visual Studio Solution Explorer")
 
@@ -42,7 +42,7 @@ Notes 應用程式已建置於 [Xamarin.Forms 快速入門](~/get-started/index.
 
 ![](deepdive-images/vs/net-standard-project.png "Phoneword .NET Standard Project Contents")
 
-專案具有包含**NuGet**和**SDK**節點**的相依項**節點:
+專案具有 [相依性 **]** 節點，其中包含**NuGet**和**SDK**節點：
 
 - **NuGet** &ndash; 已新增至專案的 Xamarin.Forms 與 sqlite-net-pcl NuGet 套件。
 - **SDK** &ndash;`NETStandard.Library` 中繼套件，其參考定義 .NET Standard 的一組完整 NuGet 套件。
@@ -52,7 +52,7 @@ Notes 應用程式已建置於 [Xamarin.Forms 快速入門](~/get-started/index.
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac 簡介
 
-[Mac 的可視化工作室](/visualstudio/mac/)遵循將代碼組織到*解決方案*和*專案中*的視覺工作室實踐。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含三項專案的方案所組成，如下列螢幕擷取畫面所示：
+[Visual Studio for Mac](/visualstudio/mac/)遵循將程式碼組織成*方案*和*專案*的 Visual Studio 實務。 方案是可以容納一或多個專案的容器。 專案可以是應用程式、支援程式庫、測試應用程式等等。 Notes 應用程式是由一個包含三項專案的方案所組成，如下列螢幕擷取畫面所示：
 
 ![](deepdive-images/vsmac/solution.png "Visual Studio for Mac Solution Pane")
 
@@ -68,7 +68,7 @@ Notes 應用程式已建置於 [Xamarin.Forms 快速入門](~/get-started/index.
 
 ![](deepdive-images/vsmac/net-standard-project.png "Phoneword .NET Standard Library Project Contents")
 
-專案具有包含**NuGet**和**SDK**節點**的相依項**節點:
+專案具有 [相依性 **]** 節點，其中包含**NuGet**和**SDK**節點：
 
 - **NuGet** &ndash; 已新增至專案的 Xamarin.Forms 與 sqlite-net-pcl NuGet 套件。
 - **SDK** &ndash;`NETStandard.Library` 中繼套件，其參考定義 .NET Standard 的一組完整 NuGet 套件。
@@ -123,7 +123,7 @@ namespace Notes
 }
 ```
 
-此`MainPage`代碼將`App`類的屬性設置到其內容[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)`NotesPage`為 實例的實例。
+此 `MainPage` 程式碼會將類別的屬性設定 `App` 為 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 實例，其內容為 `NotesPage` 實例。
 
 此外，**AssemblyInfo.cs** 檔案還包含適用於組件層級的單一應用程式屬性：
 
@@ -133,7 +133,7 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 ```
 
-該[`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)屬性將打開 XAML 編譯器,以便 XAML 直接編譯為中間語言。 如需詳細資訊，請參閱 [XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
+[`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)屬性會開啟 xaml 編譯器，以便將 xaml 直接編譯成中繼語言。 如需詳細資訊，請參閱 [XAML 編譯](~/xamarin-forms/xaml/xamlc.md)。
 
 ## <a name="launching-the-application-on-each-platform"></a>在每個平台上啟動應用程式
 
@@ -230,18 +230,18 @@ Xamarin.Forms 應用程式是以 `LoadApplication` 方法來載入。
 
 您可以使用四個主要的控制項群組，以建立 Xamarin.Forms 應用程式的使用者介面：
 
-1. **頁面** - Xamarin.Forms 頁面代表跨平台行動應用程式畫面。 Notes 應用程式[`ContentPage`](xref:Xamarin.Forms.ContentPage)使用 類來顯示單個螢幕。 如需有關頁面的詳細資訊，請參閱 [Xamarin.Forms 頁面](~/xamarin-forms/user-interface/controls/pages.md)。
-1. **檢視** - Xamarin.Forms 檢視是顯示在使用者介面上的控制項，例如標籤、按鈕和文字輸入方塊。 已完成的 Notes[`ListView`](xref:Xamarin.Forms.ListView)[`Editor`](xref:Xamarin.Forms.Editor)應用程式[`Button`](xref:Xamarin.Forms.Button)使用 、 和 檢視。 如需有關檢視的詳細資訊，請參閱 [Xamarin.Forms 檢視](~/xamarin-forms/user-interface/controls/views.md)。
-1. **版面配置** - Xamarin.Forms 版面配置是將檢視構成邏輯結構所使用的容器。 Notes 應用程式[`StackLayout`](xref:Xamarin.Forms.StackLayout)使用 類在垂直堆疊中排列檢視[`Grid`](xref:Xamarin.Forms.Grid), 使用類水準排列按鈕。 如需有關版面配置的詳細資訊，請參閱 [Xamarin.Forms 版面配置](~/xamarin-forms/user-interface/controls/layouts.md)。
-1. **資料格** - Xamarin.Forms 資料格是在清單中用於項目的特定元素，並描述如何在清單中繪製每個項目。 Notes 應用程式[`TextCell`](xref:Xamarin.Forms.TextCell)使用 顯示清單中每行的兩個專案。 如需有關資料格的詳細資訊，請參閱 [Xamarin.Forms 資料格](~/xamarin-forms/user-interface/controls/cells.md)。
+1. **頁面** - Xamarin.Forms 頁面代表跨平台行動應用程式畫面。 Notes 應用程式會使用 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 類別來顯示單一畫面。 如需有關頁面的詳細資訊，請參閱 [Xamarin.Forms 頁面](~/xamarin-forms/user-interface/controls/pages.md)。
+1. **檢視** - Xamarin.Forms 檢視是顯示在使用者介面上的控制項，例如標籤、按鈕和文字輸入方塊。 完成的 Notes 應用程式會使用 [`ListView`](xref:Xamarin.Forms.ListView) 、 [`Editor`](xref:Xamarin.Forms.Editor) 和 [`Button`](xref:Xamarin.Forms.Button) views。 如需有關檢視的詳細資訊，請參閱 [Xamarin.Forms 檢視](~/xamarin-forms/user-interface/controls/views.md)。
+1. **版面配置** - Xamarin.Forms 版面配置是將檢視構成邏輯結構所使用的容器。 Notes 應用程式會使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 類別，以垂直堆疊排列檢視，而類別則會 [`Grid`](xref:Xamarin.Forms.Grid) 以水準方式排列按鈕。 如需有關版面配置的詳細資訊，請參閱 [Xamarin.Forms 版面配置](~/xamarin-forms/user-interface/controls/layouts.md)。
+1. **資料格** - Xamarin.Forms 資料格是在清單中用於項目的特定元素，並描述如何在清單中繪製每個項目。 Notes 應用程式會使用 [`TextCell`](xref:Xamarin.Forms.TextCell) 來顯示清單中每個資料列的兩個專案。 如需有關資料格的詳細資訊，請參閱 [Xamarin.Forms 資料格](~/xamarin-forms/user-interface/controls/cells.md)。
 
 在執行階段，每個控制項將會對應到其原生對等項目，也就是將呈現的項目。
 
-### <a name="layout"></a>配置
+### <a name="layout"></a>版面配置
 
-Notes 應用程式[`StackLayout`](xref:Xamarin.Forms.StackLayout)使用 通過自動排列螢幕上的檢視來簡化跨平臺應用程式開發,而不考慮螢幕大小。 每個子項目都是以加入這些子項目的順序，一個接著一個地水平或垂直放置。 `StackLayout`將使用的空間取決於[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)設定[`VerticalOptions`](xref:Xamarin.Forms.View.HorizontalOptions)和 屬性的方式,但預設`StackLayout`情況下, 將嘗試使用整個螢幕。
+Notes 應用程式會使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 來簡化跨平臺應用程式開發，方法是在螢幕上自動排文視圖，而不論螢幕大小為何。 每個子項目都是以加入這些子項目的順序，一個接著一個地水平或垂直放置。 將使用多少空間 `StackLayout` 取決於 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 設定和屬性的方式 [`VerticalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) ，但根據預設， `StackLayout` 會嘗試使用整個畫面。
 
-以下 XAML 代碼顯示使用[`StackLayout`](xref:Xamarin.Forms.StackLayout)佈局 的範`NoteEntryPage`例:
+下列 XAML 程式碼顯示使用來配置的範例 [`StackLayout`](xref:Xamarin.Forms.StackLayout) `NoteEntryPage` ：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -261,16 +261,16 @@ Notes 應用程式[`StackLayout`](xref:Xamarin.Forms.StackLayout)使用 通過�
 </ContentPage>
 ```
 
-預設情況下,[`StackLayout`](xref:Xamarin.Forms.StackLayout)假定垂直方向。 但是,通過將屬性設置為[`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)[`StackOrientation.Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal)枚舉成員,可以將其更改為水準方向。
+根據預設，會 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 假設為垂直方向。 不過，您可以藉由將 [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) 屬性設定為列舉成員，將它變更為水準方向 [`StackOrientation.Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal) 。
 
 > [!NOTE]
 > 您可以透過 `HeightRequest` 和 `WidthRequest` 屬性來設定檢視的大小。
 
-關於類別的詳細資訊,[`StackLayout`](xref:Xamarin.Forms.StackLayout)請參考[堆疊佈局](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
+如需類別的詳細資訊 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，請參閱[StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)。
 
 ### <a name="responding-to-user-interaction"></a>回應使用者互動
 
-在 XAML 中定義的物件可以引發程式碼後置檔案中處理的事件。 `OnSaveButtonClicked`下面的代碼示例顯示了`NoteEntryPage`類的代碼後面中的方法,該方法是為了[`Clicked`](xref:Xamarin.Forms.Button.Clicked)回應 *"保存"* 按鈕上的事件觸發而執行的。
+在 XAML 中定義的物件可以引發程式碼後置檔案中處理的事件。 下列程式碼範例顯示 `OnSaveButtonClicked` 類別程式碼後置中的方法 `NoteEntryPage` ，其會執行以回應 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) [*儲存*] 按鈕上引發的事件。
 
 ```csharp
 async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -296,9 +296,9 @@ async void OnSaveButtonClicked(object sender, EventArgs e)
 
 ### <a name="lists"></a>清單
 
-[`ListView`](xref:Xamarin.Forms.ListView)負責在清單中垂直顯示項的集合。 `ListView` 中的每個項目都會被包含在單一資料格中。
+[`ListView`](xref:Xamarin.Forms.ListView)負責以垂直方式顯示清單中的專案集合。 `ListView` 中的每個項目都會被包含在單一資料格中。
 
-以下代碼範例顯示[`ListView`](xref:Xamarin.Forms.ListView)的`NotesPage`。
+下列程式碼範例顯示 [`ListView`](xref:Xamarin.Forms.ListView) 來自的 `NotesPage` ：
 
 ```xaml
 <ListView x:Name="listView"
@@ -313,7 +313,7 @@ async void OnSaveButtonClicked(object sender, EventArgs e)
 </ListView>
 ```
 
-中每行的佈局[`ListView`](xref:Xamarin.Forms.ListView)[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)在 元素中定義,並使用數據綁定顯示應用程式檢索的任何註釋。 屬性[`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)設定為資料來源,在`NotesPage.xaml.cs`中 :
+中每個資料列的配置 [`ListView`](xref:Xamarin.Forms.ListView) 都是在專案中定義 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) ，並使用資料系結來顯示應用程式所取出的任何附注。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)在中，屬性會設定為數據源 `NotesPage.xaml.cs` ：
 
 ```csharp
 protected override async void OnAppearing()
@@ -324,9 +324,9 @@ protected override async void OnAppearing()
 }
 ```    
 
-此程式碼使用資料庫中[`ListView`](xref:Xamarin.Forms.ListView)儲存的任何註解填滿 。
+此程式碼會將 [`ListView`](xref:Xamarin.Forms.ListView) 儲存在資料庫中的任何附注填入其中。
 
-在 中選擇行[`ListView`](xref:Xamarin.Forms.ListView)時[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected), 將觸發事件。 當事件引發時，就會執行名為 `OnListViewItemSelected` 的事件處理常式：
+在中選取資料列時 [`ListView`](xref:Xamarin.Forms.ListView) ，就會 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 引發事件。 當事件引發時，就會執行名為 `OnListViewItemSelected` 的事件處理常式：
 
 ```csharp
 async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -338,18 +338,18 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-事件[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)[`e.SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)可以通過 屬性訪問與單元格關聯的物件。
+[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)事件可以透過屬性存取與儲存格相關聯的物件 [`e.SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) 。
 
-關於此類別的詳細資訊,[`ListView`](xref:Xamarin.Forms.ListView)請參考[ListView](~/xamarin-forms/user-interface/listview/index.md)。
+如需類別的詳細資訊 [`ListView`](xref:Xamarin.Forms.ListView) ，請參閱[ListView](~/xamarin-forms/user-interface/listview/index.md)。
 
-## <a name="navigation"></a>導覽
+## <a name="navigation"></a>瀏覽
 
-Xamarin.Forms 提供了許多不同的頁面導航體驗,具體取決於所[`Page`](xref:Xamarin.Forms.Page)使用的 類型。 例如[`ContentPage`](xref:Xamarin.Forms.ContentPage),導航可以是分層的,也可以是模式的。 如需強制回應導覽的資訊，請參閱 [Xamarin.Forms 強制回應頁面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。
+Xamarin 會根據所使用的類型，提供許多不同的頁面流覽體驗 [`Page`](xref:Xamarin.Forms.Page) 。 若為 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 實例導覽，則可以是階層式或模式。 如需強制回應導覽的資訊，請參閱 [Xamarin.Forms 強制回應頁面](~/xamarin-forms/app-fundamentals/navigation/modal.md)。
 
 > [!NOTE]
-> [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)[`CarouselPage`](xref:Xamarin.Forms.CarouselPage)和[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)類提供替代導航體驗。 如需詳細資訊，請參閱[導覽](~/xamarin-forms/app-fundamentals/navigation/index.md)。
+> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 和 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 類別提供替代的導覽體驗。 如需詳細資訊，請參閱[導覽](~/xamarin-forms/app-fundamentals/navigation/index.md)。
 
-在分層導航中,[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)類用於根據需要向前和向後流覽[`ContentPage`](xref:Xamarin.Forms.ContentPage)一堆 物件。 該類實現導航作為[`Page`](xref:Xamarin.Forms.Page)最後一個入出(LIFO)物件堆疊。 若要將一頁移到另一頁，應用程式會將新的頁面推送到導覽堆疊上，該頁面就會變成使用中的頁面。 若要返回到上一頁，應用程式將會從導覽堆疊中快顯目前的頁面，新的最上層頁面就會變成使用中的頁面。
+在階層式導覽中， [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 會使用類別 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ，視需要向前和向後流覽物件堆疊。 類別會將導覽實作為物件的後進先出（LIFO）堆疊 [`Page`](xref:Xamarin.Forms.Page) 。 若要將一頁移到另一頁，應用程式會將新的頁面推送到導覽堆疊上，該頁面就會變成使用中的頁面。 若要返回到上一頁，應用程式將會從導覽堆疊中快顯目前的頁面，新的最上層頁面就會變成使用中的頁面。
 
 `NavigationPage` 類別也會將巡覽列新增到顯示標題，以及返回上一頁之平台相應 [上一頁]**** 按鈕的頁面頂端。
 
@@ -363,7 +363,7 @@ public App ()
 }
 ```
 
-所有[`ContentPage`](xref:Xamarin.Forms.ContentPage)實例都有一[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation)個 屬性,該屬性公開用於修改頁面堆疊的方法。 只使用應用程式包含時,才應呼叫這些方法[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)。 要導覽`NoteEntryPage`到 ,必須[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page))呼叫 如下代碼範例的範示的方法:
+所有 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 實例都有一個 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 屬性，可公開修改頁面堆疊的方法。 只有在應用程式包含時，才應該叫用這些方法 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。 若要流覽至 `NoteEntryPage` ，您必須叫用方法， [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) 如下列程式碼範例所示：
 
 ```csharp
 await Navigation.PushAsync(new NoteEntryPage());
@@ -371,7 +371,7 @@ await Navigation.PushAsync(new NoteEntryPage());
 
 這會使新的 `NoteEntryPage` 物件推送至導覽堆疊上，從而變成使用中的頁面。
 
-無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁]** 按鈕都可以從導覽堆疊快顯使用中的頁面。 要以程式設計方式傳回到原始頁`NoteEntryPage`, 物件必須[`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync)呼叫 方法,如下代碼範例所示:
+無論是裝置上的實體按鈕還是螢幕上的按鈕，按下裝置上的 [上一頁]** 按鈕都可以從導覽堆疊快顯使用中的頁面。 若要以程式設計方式回到原始頁面， `NoteEntryPage` 物件必須叫用 [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) 方法，如下列程式碼範例所示：
 
 ```csharp
 await Navigation.PopAsync();
@@ -381,9 +381,9 @@ await Navigation.PopAsync();
 
 ## <a name="data-binding"></a>資料繫結
 
-資料繫結用來簡化 Xamarin.Forms 應用程式顯示其資料以及與之互動的方式。 它會在使用者介面與基礎應用程式之間建立連線。 該[`BindableObject`](xref:Xamarin.Forms.BindableObject)類包含支援數據綁定的大部分基礎結構。
+資料繫結用來簡化 Xamarin.Forms 應用程式顯示其資料以及與之互動的方式。 它會在使用者介面與基礎應用程式之間建立連線。 [`BindableObject`](xref:Xamarin.Forms.BindableObject)類別包含許多可支援資料系結的基礎結構。
 
-資料繫結會連接兩個物件，稱為*來源*和*目標*。 *來源*物件會提供資料。 *目標*物件將會取用 (而且通常會顯示) 來源物件中的資料。 例如[`Editor`](xref:Xamarin.Forms.Editor),(*目標*物件)通常[`Text`](xref:Xamarin.Forms.InputView.Text)會將其 屬性`string`綁定到*源*物件中的公共屬性。 下圖說明繫結關聯性：
+資料繫結會連接兩個物件，稱為*來源*和*目標*。 *來源*物件會提供資料。 *目標*物件將會取用 (而且通常會顯示) 來源物件中的資料。 例如， [`Editor`](xref:Xamarin.Forms.Editor) （*目標*物件）通常會將其屬性系結 [`Text`](xref:Xamarin.Forms.InputView.Text) 至 `string` *來源*物件中的公用屬性。 下圖說明繫結關聯性：
 
 ![](deepdive-images/data-binding.png "Data Binding")
 
@@ -391,10 +391,10 @@ await Navigation.PopAsync();
 
 建立資料繫結需要進行兩項步驟：
 
-- 目標[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)物件的屬性*target*必須 設定為*來源*。
-- *目標*和*來源*之間必須建立繫結。 在 XAML 中,這是[`Binding`](xref:Xamarin.Forms.Xaml.BindingExtension)通過使用 標記擴展實現的。
+- [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)*目標*物件的屬性必須設定為*來源*。
+- *目標*和*來源*之間必須建立繫結。 在 XAML 中，這是藉由使用 [`Binding`](xref:Xamarin.Forms.Xaml.BindingExtension) 標記延伸來達成。
 
-在 Notes 應用程式中,綁定目標是顯示[`Editor`](xref:Xamarin.Forms.Editor)註釋 的,而`Note`[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)設置為`NoteEntryPage`的實例 是綁定源。
+在 Notes 應用程式中，系結目標是 [`Editor`](xref:Xamarin.Forms.Editor) 顯示附注的，而 `Note` 實例設定為 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 的是系結 `NoteEntryPage` 來源。
 
 `NoteEntryPage` 的 `BindingContext` 會於頁面導覽期間設定，如下列程式碼範例所示：
 
@@ -419,12 +419,12 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 }
 ```
 
-在`OnNoteAddedClicked`方法中,當向應用程式添加新註釋時執行 ,[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)中,`NoteEntryPage``Note`設置為新實例。 在`OnListViewItemSelected`[`ListView`](xref:Xamarin.Forms.ListView)方法中,當在中選擇的現有註釋時,將`BindingContext`執行該`NoteEntryPage`方法的,該實`Note`例將設置為所選實例,該實例[`e.SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem)通過 屬性訪問。
+在將 `OnNoteAddedClicked` 新的附注加入至應用程式時所執行的方法中， [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 的 `NoteEntryPage` 會設定為新的 `Note` 實例。 在 `OnListViewItemSelected` 方法中，當您在中選取了現有的附注時，會將的 [`ListView`](xref:Xamarin.Forms.ListView) `BindingContext` `NoteEntryPage` 設定為選取的 `Note` 實例（透過屬性存取） [`e.SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) 。
 
 > [!IMPORTANT]
-> 雖然可以[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)單獨設置每個*目標*物件的屬性,但這不是必要的。 `BindingContext` 為其所有子系繼承的特殊屬性。 因此,當`BindingContext`[`ContentPage`](xref:Xamarin.Forms.ContentPage)on 設置為`Note`實例 時,`ContentPage`的所有子級`BindingContext`具有相同的 ,`Note`並且可以綁定到 物件的公共屬性。
+> 雖然 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 可以個別設定每個*目標*物件的屬性，但這並不是必要的。 `BindingContext` 為其所有子系繼承的特殊屬性。 因此，當 `BindingContext` 上的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 設定為實例時，的 `Note` 所有子系 `ContentPage` 都具有相同的 `BindingContext` ，而且可以系結至物件的公用屬性 `Note` 。
 
-然後`Text``Note`結合物件的屬性: [`Editor`](xref:Xamarin.Forms.Editor) `NoteEntryPage`
+中的會系結 [`Editor`](xref:Xamarin.Forms.Editor) `NoteEntryPage` 至 `Text` 物件的屬性 `Note` ：
 
 ```xaml
 <Editor Placeholder="Enter your note"
@@ -432,7 +432,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         ... />
 ```
 
-在[`Editor.Text`](xref:Xamarin.Forms.InputView.Text)屬性`Text`和*源*物件的屬性之間建立綁定。 在 `Editor` 中所做的變更將會自動傳播到 `Note` 物件。 同樣地，如果對 `Note.Text` 屬性進行變更，則 Xamarin.Forms 繫結引擎也會更新 `Editor` 的內容。 這稱為*雙向繫結*。
+在 [`Editor.Text`](xref:Xamarin.Forms.InputView.Text) 來源物件的屬性和屬性之間建立系結 `Text` 。 *source* 在 `Editor` 中所做的變更將會自動傳播到 `Note` 物件。 同樣地，如果對 `Note.Text` 屬性進行變更，則 Xamarin.Forms 繫結引擎也會更新 `Editor` 的內容。 這稱為*雙向繫結*。
 
 如需資料繫結的詳細資訊，請參閱 [Xamarin.Forms 資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
@@ -440,16 +440,16 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 
 Xamarin.Forms 應用程式通常包含多個具有相同外觀的視覺元素。 在設定每個視覺元素的外觀時，可能產生重複且容易出錯。 作為替代，您可以建立定義外觀的樣式，然後套用至必要的視覺元素。
 
-類[`Style`](xref:Xamarin.Forms.Style)將屬性值的集合分組到一個物件中,然後可以應用於多個可視元素實例。 樣式儲存在、[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中,無論是在應用程式級別、頁面級別還是檢視級別。 選擇要在何處定義 `Style` 會影響其可使用的位置：
+[`Style`](xref:Xamarin.Forms.Style)類別會將屬性值的集合分組成一個物件，然後再套用到多個視覺元素實例。 樣式會儲存在中 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，不論是在應用層級、頁面層級或視圖層級。 選擇要在何處定義 `Style` 會影響其可使用的位置：
 
-- [`Style`](xref:Xamarin.Forms.Style)在應用程式級別定義的實例可以應用於整個應用程式。
-- [`Style`](xref:Xamarin.Forms.Style)在頁面級別定義的實例可以應用於頁面及其子級。
-- [`Style`](xref:Xamarin.Forms.Style)在視圖級別定義的實例可以應用於視圖及其子級。
+- [`Style`](xref:Xamarin.Forms.Style)在應用層級定義的實例可以在整個應用程式中套用。
+- [`Style`](xref:Xamarin.Forms.Style)在頁面層級定義的實例可以套用至頁面和其子系。
+- [`Style`](xref:Xamarin.Forms.Style)在 view 層級定義的實例可以套用至視圖和其子系。
 
 > [!IMPORTANT]
 > 應用程式中所使用任何樣式都儲存於應用程式的資源字典中，以避免重複。 不過，頁面特有的 XAML 不應包含於應用程式的資源字典中，因為資源接著將在應用程式啟動時 (而非在頁面要求時) 進行剖析。
 
-每個[`Style`](xref:Xamarin.Forms.Style)實體包含一[`Setter`](xref:Xamarin.Forms.Setter)個或多個物件的集合,每個`Setter`物件都有[`Property`](xref:Xamarin.Forms.Setter.Property)與[`Value`](xref:Xamarin.Forms.Setter.Value)。 `Property` 為樣式所套用元素的可繫結屬性名稱，且 `Value` 為套用至屬性的值。 下列程式碼範例示範 `NoteEntryPage` 的樣式：
+每個 [`Style`](xref:Xamarin.Forms.Style) 實例都包含一或多個 [`Setter`](xref:Xamarin.Forms.Setter) 物件的集合，每個都具有 `Setter` [`Property`](xref:Xamarin.Forms.Setter.Property) 和 [`Value`](xref:Xamarin.Forms.Setter.Value) 。 `Property` 為樣式所套用元素的可繫結屬性名稱，且 `Value` 為套用至屬性的值。 下列程式碼範例示範 `NoteEntryPage` 的樣式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -468,9 +468,9 @@ Xamarin.Forms 應用程式通常包含多個具有相同外觀的視覺元素。
 </ContentPage>
 ```
 
-此樣式應用於頁面上的任何[`Editor`](xref:Xamarin.Forms.Editor)實例。
+此樣式適用于 [`Editor`](xref:Xamarin.Forms.Editor) 頁面上的任何實例。
 
-創建[`Style`](xref:Xamarin.Forms.Style)時[`TargetType`](xref:Xamarin.Forms.Style.TargetType),始終需要該屬性。
+建立時 [`Style`](xref:Xamarin.Forms.Style) ， [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 一律需要屬性。
 
 > [!NOTE]
 > 傳統上，設定 Xamarin.Forms 應用程式的樣式時，都是使用 XAML 樣式來完成。 不過，Xamarin.Forms 也支援使用階層式樣式表 (CSS) 來設定視覺元素的樣式。 如需詳細資訊，請參閱[使用階層式樣式表 (CSS) 設定 Xamarin.Forms 應用程式的樣式](~/xamarin-forms/user-interface/styles/css/index.md)。
@@ -505,7 +505,7 @@ Xamarin.Forms 應用程式通常包含多個具有相同外觀的視覺元素。
 </Application>
 ```
 
-這將[`Style`](xref:Xamarin.Forms.Style)根據所使用的[`Color`](xref:Xamarin.Forms.Color)平臺[`BarBackgroundColor`](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)為[`BarTextColor`](xref:Xamarin.Forms.NavigationPage.BarTextColor)[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)和設置不同的值和 屬性。
+這會 [`Style`](xref:Xamarin.Forms.Style) [`Color`](xref:Xamarin.Forms.Color) 根據所 [`BarBackgroundColor`](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) [`BarTextColor`](xref:Xamarin.Forms.NavigationPage.BarTextColor) [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 使用的平臺，為和屬性設定不同的值。
 
 如需有關 XAML 標記延伸的詳細資訊，請參閱 [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。 如需 `OnPlatform` 標記延伸的資訊，請參閱 [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
@@ -526,19 +526,19 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 - XAML 標記延伸可讓您從常值文字字串以外的來源設定項目屬性，以增強 XAML 的功能和彈性。 如需詳細資訊，請參閱 [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)。
 - 資料範本可以針對支援的檢視，定義資料的呈現方式。 如需詳細資訊，請參閱[資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 - 系統會在每個平台上使用 `Renderer` 類別，以不同的方式呈現每個頁面、版面配置和檢視，進而建立原生控制項、將其排列在畫面上，然後加入在共用程式碼中指定的行為。 開發人員可以實作自己的自訂 `Renderer` 類別，以自訂控制項的外觀及/或行為。 如需詳細資訊，請參閱[自訂呈現方式](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)。
-- 效果也可以允許在每個平台上自訂原生控制項。 效果是通過對[`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2)類的子類在特定於平臺的項目中創建的,並通過將它們附加到相應的 Xamarin.Forms 控制件來使用。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
-- 共用代碼可以[`DependencyService`](xref:Xamarin.Forms.DependencyService)通過 類訪問本機功能。 如需有關詳細資訊，請參閱[透過 DependencyService 存取原生功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
+- 效果也可以允許在每個平台上自訂原生控制項。 在平臺特定專案中，會藉由將類別子類別化來建立效果 [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) ，並將其附加至適當的 [Xamarin] 控制項來使用。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+- 共用程式碼可以透過類別存取原生功能 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 如需有關詳細資訊，請參閱[透過 DependencyService 存取原生功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
 
 或者，Charles Petzold 的書籍[_使用 Xamarin.Forms 建立行動應用程式_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)是深入了解 Xamarin.Forms 的絕佳選擇。 此書籍以 PDF 形式或多種電子書格式提供。
 
 ## <a name="related-links"></a>相關連結
 
 - [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml)
-- [資料繫結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [資料系結](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [控制項參考](~/xamarin-forms/user-interface/controls/index.md)
 - [XAML 標記延伸](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [抓取入門示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started)
+- [消費者入門範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started)
 - [Xamarin.Forms API 參考](xref:Xamarin.Forms)
 - [免費的自我引導式學習 (影片)](https://university.xamarin.com/self-guided/) \(英文\)
 

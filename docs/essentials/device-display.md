@@ -3,14 +3,15 @@ title: Xamarin.Essentials：裝置顯示資訊
 description: 本文件描述 Xamarin.Essentials 中的 DeviceDisplay 類別，可提供執行應用程式之裝置的畫面計量。
 ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 77af173bc3297ac9ccdef22dccbeab054895f772
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1d72458fa32db58d0c5da278dbb424aa2b1714d1
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756896"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150115"
 ---
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials：裝置顯示資訊
 
@@ -91,7 +92,7 @@ public class KeepScreenOnTest
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-- 必須在 UI 執行緒上存取 `DeviceDisplay`，否則將擲回例外狀況。 可以使用方法[`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md)在 UI 線程上運行該代碼。
+- 必須在 UI 執行緒上存取 `DeviceDisplay`，否則將擲回例外狀況。 您可以使用 [`MainThread.BeginInvokeOnMainThread`](~/essentials/main-thread.md) 方法，在 UI 執行緒上執行該程式碼。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
@@ -103,3 +104,9 @@ public class KeepScreenOnTest
 
 - [DeviceDisplay 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
 - [DeviceDisplay API 文件](xref:Xamarin.Essentials.DeviceDisplay)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Device-Display-Information-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

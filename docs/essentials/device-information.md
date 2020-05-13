@@ -3,14 +3,15 @@ title: Xamarin.Essentials：裝置資訊
 description: 本文件描述 Xamarin.Essentials 中的 DeviceInfo 類別，可提供執行應用程式的裝置相關資訊。
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 1cab4ea8ea3f98def4830e101783db1554efa69c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1790e950dfccddcca84adf97bcff64f905ee59f6
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78295413"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150081"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials：裝置資訊
 
@@ -55,7 +56,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="platforms"></a>平台
 
-[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform)與映射到作業系統的常量字串相關。 可以使用 `DevicePlatform` 結構來檢查值：
+[`DeviceInfo.Platform`](xref:Xamarin.Essentials.DeviceInfo.Platform)與對應至作業系統的常數位串相互關聯。 可以使用 `DevicePlatform` 結構來檢查值：
 
 - **DevicePlatform.iOS**：iOS
 - **DevicePlatform.Android**：Android
@@ -64,7 +65,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="idioms"></a>慣用語
 
-[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom)關聯一個常量字串,該字串映射到應用程式正在運行的設備類型。 可以使用 `DeviceIdiom` 結構來檢查值：
+[`DeviceInfo.Idiom`](xref:Xamarin.Essentials.DeviceInfo.Idiom)將對應至執行應用程式之裝置類型的常數位串相互關聯。 可以使用 `DeviceIdiom` 結構來檢查值：
 
 - **DeviceIdiom.Phone**：手機
 - **DeviceIdiom.Tablet**：平板電腦
@@ -81,7 +82,7 @@ var deviceType = DeviceInfo.DeviceType;
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-iOS 不會公開開發人員獲取特定 iOS 設備的模型的 API。 相反,硬體標識符返回,如_iPhone10,6,_ 它指的是 iPhone X。這些標識符的映射不是由蘋果提供的,但可以在這些(非官方來源[)iPhone Wiki](https://www.theiphonewiki.com/wiki/Models)和[獲取iOS模型](https://github.com/dannycabrera/Get-iOS-Model)上找到。
+iOS 不會為開發人員公開 API 以取得特定 iOS 裝置的型號。 相反地，會傳回硬體識別碼（例如_代表 iphone10，6），_ 這是指 iPhone X。Apple 不會提供這些識別碼的對應，但可以在[IPhone Wiki 的](https://www.theiphonewiki.com/wiki/Models)這些（非官方來源）上找到，並[取得 iOS 模型](https://github.com/dannycabrera/Get-iOS-Model)。
 
 --------------
 
@@ -89,3 +90,9 @@ iOS 不會公開開發人員獲取特定 iOS 設備的模型的 API。 相反,�
 
 - [DeviceInfo 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
 - [DeviceInfo API 文件](xref:Xamarin.Essentials.DeviceInfo)
+
+## <a name="related-video"></a>相關影片
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Device-Information-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
