@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b2e1f11579e8647593e20e7d56936e8e75661e78
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 45a387690792074af6a18fe3c639692863cdf4be
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80634706"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83343402"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -15,7 +15,7 @@ ms.locfileid: "80634706"
     > [!IMPORTANT]
     > 本教學課程中的 C# 和 XAML 程式碼片段會要求將解決方案命名為 **StackLayoutTutorial**。 當您從本教學課程將程式碼複製到解決方案時，使用不同的名稱會導致建置錯誤。
 
-    如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/quickstarts/deepdive.md#anatomy-of-a-xamarinforms-application)中的 [Xamarin.Forms 應用程式的結構](~/get-started/quickstarts/deepdive.md)。
+    如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/quickstarts/deepdive.md)中的 [Xamarin.Forms 應用程式的結構](~/get-started/quickstarts/deepdive.md#anatomy-of-a-xamarinforms-application)。
 
 1. 在 [方案總管]  的 **StackLayoutTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -32,7 +32,7 @@ ms.locfileid: "80634706"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的三個 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 執行個體。 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 會將其子檢視 (`Label` 執行個體) 放在單一資料行中，而預設方向為垂直。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 `StackLayout`[`ContentPage` 在 ](xref:Xamarin.Forms.ContentPage) 之中的呈現位置。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的三個 [`Label`](xref:Xamarin.Forms.Label) 執行個體。 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 會將其子檢視 (`Label` 執行個體) 放在單一資料行中，而預設方向為垂直。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 `StackLayout` 之中的呈現位置。
 
     > [!NOTE]
     > 除了 [`Margin`](xref:Xamarin.Forms.View.Margin) 屬性之外，[`Padding`](xref:Xamarin.Forms.Layout.Padding) 和 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) 屬性也可在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 上設定。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性值會指定 `StackLayout` 中各檢視之間的距離，而 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) 屬性值會指定 `StackLayout` 中每個子項目之間的空間量。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
@@ -41,7 +41,7 @@ ms.locfileid: "80634706"
 
     [![iOS 和 Android 上 StackLayout 中子檢視的螢幕擷取畫面](../images/create-stacklayout.png "包含標籤執行個體的 StackLayout")](../images/create-stacklayout-large.png#lightbox "包含標籤執行個體的 StackLayout")
 
-    如需有關 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的詳細資訊，請參閱 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
+    如需有關 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的詳細資訊，請參閱 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -69,7 +69,7 @@ ms.locfileid: "80634706"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的三個 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 執行個體。 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 會將其子檢視 (`Label` 執行個體) 放在單一資料行中，而預設方向為垂直。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 `StackLayout`[`ContentPage` 在 ](xref:Xamarin.Forms.ContentPage) 之中的呈現位置。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的三個 [`Label`](xref:Xamarin.Forms.Label) 執行個體。 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 會將其子檢視 (`Label` 執行個體) 放在單一資料行中，而預設方向為垂直。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 `StackLayout` 之中的呈現位置。
 
     > [!NOTE]
     > 除了 [`Margin`](xref:Xamarin.Forms.View.Margin) 屬性之外，[`Padding`](xref:Xamarin.Forms.Layout.Padding) 和 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) 屬性也可在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 上設定。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性值會指定 `StackLayout` 中各檢視之間的距離，而 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) 屬性值會指定 `StackLayout` 中每個子項目之間的空間量。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
@@ -78,4 +78,4 @@ ms.locfileid: "80634706"
 
     [![iOS 和 Android 上 StackLayout 中子檢視的螢幕擷取畫面](../images/create-stacklayout.png "包含標籤執行個體的 StackLayout")](../images/create-stacklayout-large.png#lightbox "包含標籤執行個體的 StackLayout")
 
-    如需有關 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的詳細資訊，請參閱 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)。
+    如需有關 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 的詳細資訊，請參閱 [Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)。

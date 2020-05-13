@@ -140,6 +140,8 @@
               href: xaml/resource-dictionaries.md
             - name: 傳遞引數
               href: xaml/passing-arguments.md
+            - name: 泛型
+              href: xaml/generics.md
             - name: 欄位修飾詞
               href: xaml/field-modifiers.md
             - name: 在執行階段載入 XAML
@@ -188,13 +190,8 @@
               href: app-fundamentals/custom-renderer/entry.md
             - name: 自訂 ContentPage
               href: app-fundamentals/custom-renderer/contentpage.md
-            - name: 自訂地圖
-              href: app-fundamentals/custom-renderer/map/index.md
-              items:
-                - name: 自訂地圖釘選
-                  href: app-fundamentals/custom-renderer/map/customized-pin.md
-                - name: 醒目提示地圖上的循環區域
-                  href: app-fundamentals/custom-renderer/map/circle-map-overlay.md
+            - name: 自訂地圖釘選
+              href: app-fundamentals/custom-renderer/map-pin.md
             - name: 自訂 ListView
               href: app-fundamentals/custom-renderer/listview.md
             - name: 自訂 ViewCell
@@ -358,6 +355,8 @@
       items:
         - name: 總覽
           href: user-interface/index.yml
+        - name: 'C# 標記'
+          href: user-interface/csharp-markup.md
         - name: 控制項參考
           items:
             - name: 總覽
@@ -378,6 +377,8 @@
           items:
             - name: BoxView
               href: user-interface/boxview.md
+            - name: 展開工具
+              href: user-interface/expander.md
             - name: Image
               href: user-interface/images.md
             - name: 標籤
@@ -394,7 +395,7 @@
                   href: user-interface/map/position-distance.md
                 - name: 釘選
                   href: user-interface/map/pins.md
-                - name: 多邊形和聚合線條
+                - name: '多邊形, 聚合線條及圓形'
                   href: user-interface/map/polygons.md
                 - name: 地理編碼
                   href: user-interface/map/geocoder.md
@@ -410,6 +411,8 @@
               href: user-interface/button.md
             - name: ImageButton
               href: user-interface/imagebutton.md
+            - name: RadioButton
+              href: user-interface/radiobutton.md
             - name: RefreshView
               href: user-interface/refreshview.md
             - name: 搜尋列
@@ -563,8 +566,8 @@
               items:
                 - name: 為應用程式設定佈景主題
                   href: user-interface/theming/theming.md
-                - name: 偵測深色模式
-                  href: user-interface/theming/dark-mode.md
+                - name: 回應系統佈景主題的變更
+                  href: user-interface/theming/system-theme-changes.md
             - name: 視覺效果
               href: user-interface/visual/index.md
               items:
@@ -591,7 +594,7 @@
                 - name: RelativeLayout
                   href: user-interface/layouts/relative-layout.md
                 - name: StackLayout
-                  href: user-interface/layouts/stack-layout.md
+                  href: user-interface/layouts/stacklayout.md
             - name: 其他版面配置
               items:
                 - name: ContentView
@@ -688,6 +691,8 @@
               href: platform/ios/listview-separator-style.md
             - name: 主要執行緒控制項更新
               href: platform/ios/main-thread-updates-ui.md
+            - name: MasterDetailPage 陰影
+              href: platform/ios/masterdetailpage-shadow.md
             - name: NavigationPage 列分隔符號
               href: platform/ios/navigation-bar-separator.md
             - name: NavigationPage 列文字色彩模式
@@ -704,6 +709,8 @@
               href: platform/ios/page-safe-area-layout.md
             - name: ScrollView 內容觸控
               href: platform/ios/scrollview-content-touches.md
+            - name: 搜尋列樣式
+              href: platform/ios/searchbar-style.md
             - name: 同時移動瀏覽手勢辨識
               href: platform/ios/application-pan-gesture.md
             - name: 滑桿指標點選
