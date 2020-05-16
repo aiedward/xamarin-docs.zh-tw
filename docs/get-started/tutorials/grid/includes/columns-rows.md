@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e1705e9311d4875a5b866ac5acb7d20aa107a2bb
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61375384"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83435413"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -42,7 +42,7 @@ ms.locfileid: "61375384"
     [`Label`](xref:Xamarin.Forms.Label) 中每個 [`Grid`](xref:Xamarin.Forms.Grid) 的位置都是以 [`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) 和 [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) 附加屬性指定，並使用以零為起始的索引。 因此，第一個資料行是資料行 0，而第一個資料列是資料列 0。 第一個 `Label` 缺少這些附加屬性，因為未設定這些屬性的所有子檢視都會自動呈現於資料行 0、資料列 0。
 
     > [!NOTE]
-    > 您可使用 [`Grid`](xref:Xamarin.Forms.Grid) 和 [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 屬性設定 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 中資料行與資料列之間的間距。 如需詳細資訊，請參閱 [Xamarin.Forms 方格](~/xamarin-forms/user-interface/layouts/grid.md#spacing)指南中的[間距](~/xamarin-forms/user-interface/layouts/grid.md)。
+    > 您可使用 [`Grid`](xref:Xamarin.Forms.Grid) 和 [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 屬性設定 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 中資料行與資料列之間的間距。 如需詳細資訊，請參閱 [Xamarin.Forms 方格](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns)指南中的[間距](~/xamarin-forms/user-interface/layouts/grid.md)。
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
@@ -84,7 +84,7 @@ ms.locfileid: "61375384"
     [`Label`](xref:Xamarin.Forms.Label) 中每個 [`Grid`](xref:Xamarin.Forms.Grid) 的位置都是以 [`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) 和 [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) 附加屬性指定，並使用以零為起始的索引。 因此，第一個資料行是資料行 0，而第一個資料列是資料列 0。 第一個 `Label` 缺少這些附加屬性，因為未設定這些屬性的所有子檢視都會自動呈現於資料行 0、資料列 0。
 
     > [!NOTE]
-    > 您可使用 [`Grid`](xref:Xamarin.Forms.Grid) 和 [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 屬性設定 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 中資料行與資料列之間的間距。 如需詳細資訊，請參閱 [Xamarin.Forms 方格](~/xamarin-forms/user-interface/layouts/grid.md#spacing)指南中的[間距](~/xamarin-forms/user-interface/layouts/grid.md)。
+    > 您可使用 [`Grid`](xref:Xamarin.Forms.Grid) 和 [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) 屬性設定 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) 中資料行與資料列之間的間距。 如需詳細資訊，請參閱 [Xamarin.Forms 方格](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns)指南中的[間距](~/xamarin-forms/user-interface/layouts/grid.md)。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
