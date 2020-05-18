@@ -346,7 +346,11 @@
         - name: EventKit
           href: platform/eventkit.md
         - name: iOS 延伸模組
-          href: platform/extensions.md
+          items:
+            - name: Xamarin.iOS 中的 iOS 延伸模組
+              href: platform/extensions.md
+            - name: iOS 延伸模組中的 Xamarin.Forms
+              href: platform/extensions-with-xamarinforms.md
         - name: 內嵌的架構
           href: platform/embedded-frameworks.md
         - name: 檔案壓縮
