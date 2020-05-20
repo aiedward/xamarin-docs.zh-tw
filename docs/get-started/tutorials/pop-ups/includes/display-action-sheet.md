@@ -30,18 +30,18 @@ Xamarin.Forms 具有強制回應快顯視窗 (也稱為動作表)，可用來引
     }
     ```
 
-    [方法會在點選 `Button`](xref:Xamarin.Forms.Button)`OnDisplayActionSheetButtonClicked` 時執行。 這個方法會呼叫 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法，向使用者呈現如何繼續執行工作的一組替代項目。 使用者選取其中一個替代項目後，系統便會以 `string` 傳回選取項目。
+    `OnDisplayActionSheetButtonClicked`方法會在點選 [`Button`](xref:Xamarin.Forms.Button) 時執行。 這個方法會呼叫 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法，向使用者呈現如何繼續執行工作的一組替代項目。 使用者選取其中一個替代項目後，系統便會以 `string` 傳回選取項目。
 
     > [!IMPORTANT]
     > [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 是非同步的方法，因此請一律使用 `await` 關鍵字來等候。
 
-1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 然後，點選您新增至 [`Button`](xref:Xamarin.Forms.Button) 的 [`ContentPage`](xref:Xamarin.Forms.ContentPage)：
+1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 然後，點選您新增至 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 的 [`Button`](xref:Xamarin.Forms.Button)：
 
     [![螢幕擷取畫面：iOS 和 Android 上的動作表](../images/actionsheet.png "引導使用者執行工作的動作表")](../images/actionsheet-large.png#lightbox "引導使用者執行工作的動作表")
 
     請觀察一下，在選取動作表對話方塊中的替代項目之後，選取項目便會輸出到 Visual Studio 的 [輸出]  視窗。
 
-    如需如何顯示動作表的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)指南中的[引導使用者執行工作](~/xamarin-forms/user-interface/pop-ups.md)。
+    如需如何顯示動作表的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[引導使用者執行工作](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -64,15 +64,15 @@ Xamarin.Forms 具有強制回應快顯視窗 (也稱為動作表)，可用來引
     }
     ```
 
-    [方法會在點選 `Button`](xref:Xamarin.Forms.Button)`OnDisplayActionSheetButtonClicked` 時執行。 這個方法會呼叫 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法，向使用者呈現如何繼續執行工作的一組替代項目。 使用者選取其中一個替代項目後，系統便會以 `string` 傳回選取項目。
+    `OnDisplayActionSheetButtonClicked`方法會在點選 [`Button`](xref:Xamarin.Forms.Button) 時執行。 這個方法會呼叫 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 方法，向使用者呈現如何繼續執行工作的一組替代項目。 使用者選取其中一個替代項目後，系統便會以 `string` 傳回選取項目。
 
     > [!IMPORTANT]
     > [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 是非同步的方法，因此請一律使用 `await` 關鍵字來等候。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 然後，點選您新增至 [`Button`](xref:Xamarin.Forms.Button) 的 [`ContentPage`](xref:Xamarin.Forms.ContentPage)：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 然後，點選您新增至 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 的 [`Button`](xref:Xamarin.Forms.Button)：
 
     [![螢幕擷取畫面：iOS 和 Android 上的動作表](../images/actionsheet.png "引導使用者執行工作的動作表")](../images/actionsheet-large.png#lightbox "引導使用者執行工作的動作表")
 
     請觀察一下，在選取動作表對話方塊中的替代項目之後，選取項目便會輸出到 Visual Studio for Mac 的 [輸出]  視窗。
 
-    如需如何顯示動作表的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)指南中的[引導使用者執行工作](~/xamarin-forms/user-interface/pop-ups.md)。
+    如需如何顯示動作表的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[引導使用者執行工作](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)。

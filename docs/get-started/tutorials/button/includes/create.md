@@ -30,7 +30,7 @@ ms.locfileid: "67277151"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Button`](xref:Xamarin.Forms.Button) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性可指定出現在 `Button` 中的文字。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Button`](xref:Xamarin.Forms.Button)。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性可指定出現在 `Button` 中的文字。
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
@@ -62,7 +62,7 @@ ms.locfileid: "67277151"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Button`](xref:Xamarin.Forms.Button) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性可指定出現在 `Button` 中的文字。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Button`](xref:Xamarin.Forms.Button)。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性可指定出現在 `Button` 中的文字。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 

@@ -34,7 +34,7 @@ ms.locfileid: "60896650"
 
     [![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")
 
-    如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md#formatted-text)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md)。
+    如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md#formatted-text)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -64,4 +64,4 @@ ms.locfileid: "60896650"
 
     [![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")
 
-    如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md#formatted-text)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md)。
+    如需如何設定 [`Span`](xref:Xamarin.Forms.Span) 外觀的詳細資訊，請參閱 [Xamarin.Forms 標籤](~/xamarin-forms/user-interface/text/label.md)指南中的[格式化文字](~/xamarin-forms/user-interface/text/label.md#formatted-text)。

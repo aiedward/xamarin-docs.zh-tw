@@ -26,16 +26,16 @@ ms.locfileid: "61372911"
     }
     ```
 
-    [方法會在點選 `Button`](xref:Xamarin.Forms.Button)`OnButtonClicked` 時執行。 `sender` 引數是負責引發 `Button` 事件的 `Clicked` 物件，並且可用來存取 `Button` 物件。 此事件處理常式可藉由 `Button` 來更新所顯示的文字。
+    `OnButtonClicked`方法會在點選 [`Button`](xref:Xamarin.Forms.Button) 時執行。 `sender` 引數是負責引發 `Clicked` 事件的 `Button` 物件，並且可用來存取 `Button` 物件。 此事件處理常式可藉由 `Button` 來更新所顯示的文字。
 
     > [!NOTE]
-    > 除了 `Clicked` 事件，`Button` 也會定義 [`Pressed`](xref:Xamarin.Forms.Button.Pressed) 和 [`Released`](xref:Xamarin.Forms.Button.Released) 事件。 如需詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md#pressing-and-releasing-the-button)指南中的[按下與放開按鈕](~/xamarin-forms/user-interface/button.md)。
+    > 除了 `Clicked` 事件，`Button` 也會定義 [`Pressed`](xref:Xamarin.Forms.Button.Pressed) 和 [`Released`](xref:Xamarin.Forms.Button.Released) 事件。 如需詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md)指南中的[按下與放開按鈕](~/xamarin-forms/user-interface/button.md#pressing-and-releasing-the-button)。
 
 1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 按一下 [`Button`](xref:Xamarin.Forms.Button)，可看到顯示的文字發生變更：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，Button 的文字接收到點選後變更](../images/handle-button-click.png "處理按鈕點選")](../images/handle-button-click-large.png#lightbox "處理按鈕點選")
 
-    如需有關處理按鈕點按的詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md#handling-button-clicks)指南中的[處理按鈕點按](~/xamarin-forms/user-interface/button.md)。
+    如需有關處理按鈕點按的詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md)指南中的[處理按鈕點按](~/xamarin-forms/user-interface/button.md#handling-button-clicks)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -57,13 +57,13 @@ ms.locfileid: "61372911"
     }
     ```
 
-    [方法會在點選 `Button`](xref:Xamarin.Forms.Button)`OnButtonClicked` 時執行。 `sender` 引數是負責引發 `Button` 事件的 `Clicked` 物件，並且可用來存取 `Button` 物件。 此事件處理常式可藉由 `Button` 來更新所顯示的文字。
+    `OnButtonClicked`方法會在點選 [`Button`](xref:Xamarin.Forms.Button) 時執行。 `sender` 引數是負責引發 `Clicked` 事件的 `Button` 物件，並且可用來存取 `Button` 物件。 此事件處理常式可藉由 `Button` 來更新所顯示的文字。
 
     > [!NOTE]
-    > 除了 `Clicked` 事件，`Button` 也會定義 [`Pressed`](xref:Xamarin.Forms.Button.Pressed) 和 [`Released`](xref:Xamarin.Forms.Button.Released) 事件。 如需詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md#pressing-and-releasing-the-button)指南中的[按下與放開按鈕](~/xamarin-forms/user-interface/button.md)。
+    > 除了 `Clicked` 事件，`Button` 也會定義 [`Pressed`](xref:Xamarin.Forms.Button.Pressed) 和 [`Released`](xref:Xamarin.Forms.Button.Released) 事件。 如需詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md)指南中的[按下與放開按鈕](~/xamarin-forms/user-interface/button.md#pressing-and-releasing-the-button)。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 按一下 [`Button`](xref:Xamarin.Forms.Button)，可看到顯示的文字發生變更：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，Button 的文字接收到點選後變更](../images/handle-button-click.png "處理按鈕點選")](../images/handle-button-click-large.png#lightbox "處理按鈕點選")
 
-    如需有關處理按鈕點按的詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md#handling-button-clicks)指南中的[處理按鈕點按](~/xamarin-forms/user-interface/button.md)。
+    如需有關處理按鈕點按的詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md)指南中的[處理按鈕點按](~/xamarin-forms/user-interface/button.md#handling-button-clicks)。

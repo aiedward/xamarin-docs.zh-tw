@@ -30,7 +30,7 @@ ms.locfileid: "72678711"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`Grid`](xref:Xamarin.Forms.Grid)。 根據預設，`Grid` 會將其子檢視放在單一位置中。 因此，包含多個子系的 `Grid` 應該指定資料行和資料列，下一個練習會有相關說明。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 `Grid`[`ContentPage` 在 ](xref:Xamarin.Forms.ContentPage) 之中的呈現位置。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Grid`](xref:Xamarin.Forms.Grid) 中的 [`Label`](xref:Xamarin.Forms.Label)。 根據預設，`Grid` 會將其子檢視放在單一位置中。 因此，包含多個子系的 `Grid` 應該指定資料行和資料列，下一個練習會有相關說明。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 `Grid` 之中的呈現位置。
 
     > [!NOTE]
     > 除了 [`Margin`](xref:Xamarin.Forms.View.Margin) 屬性之外，[`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性也可在 [`Grid`](xref:Xamarin.Forms.Grid) 上設定。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性值會指定 `Grid` 界限及其子系之間的距離。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
@@ -65,7 +65,7 @@ ms.locfileid: "72678711"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`Grid`](xref:Xamarin.Forms.Grid)。 根據預設，`Grid` 會將其子檢視放在單一位置中。 因此，包含多個子系的 `Grid` 應該指定資料行和資料列，下一個練習會有相關說明。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 `Grid`[`ContentPage` 在 ](xref:Xamarin.Forms.ContentPage) 之中的呈現位置。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Grid`](xref:Xamarin.Forms.Grid) 中的 [`Label`](xref:Xamarin.Forms.Label)。 根據預設，`Grid` 會將其子檢視放在單一位置中。 因此，包含多個子系的 `Grid` 應該指定資料行和資料列，下一個練習會有相關說明。 此外，[`Margin`](xref:Xamarin.Forms.View.Margin) 屬性會指出 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 `Grid` 之中的呈現位置。
 
     > [!NOTE]
     > 除了 [`Margin`](xref:Xamarin.Forms.View.Margin) 屬性之外，[`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性也可在 [`Grid`](xref:Xamarin.Forms.Grid) 上設定。 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 屬性值會在 `Grid` 中指定檢視之間的距離。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。

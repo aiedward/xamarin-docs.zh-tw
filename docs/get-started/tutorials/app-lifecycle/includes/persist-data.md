@@ -65,7 +65,7 @@ ms.locfileid: "77135128"
     > [!IMPORTANT]
     > 請務必先檢查 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典是否有索引鍵，再進行存取，以避免發生意外的錯誤。
 
-    在 [ 方法多載中，您不需要從 `Properties`](xref:Xamarin.Forms.Application.Properties)`OnResume` 字典還原資料。 這是因為應用程式在背景執行時，應用程式和其狀態仍在記憶體中。
+    在 `OnResume` 方法多載中，您不需要從 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典還原資料。 這是因為應用程式在背景執行時，應用程式和其狀態仍在記憶體中。
 
 1. 在 [方案總管]  的 **AppLifecycleTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -82,7 +82,7 @@ ms.locfileid: "77135128"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Entry`](xref:Xamarin.Forms.Entry) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Entry` 第一次顯示時呈現的預留位置文字，而名為 `OnEntryCompleted` 的事件處理常式會向 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件登記。 此外，`Entry` 具有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用其獲派的名稱來存取 `Entry` 物件。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Entry`](xref:Xamarin.Forms.Entry)。 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Entry` 第一次顯示時呈現的預留位置文字，而名為 `OnEntryCompleted` 的事件處理常式會向 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件登記。 此外，`Entry` 具有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用其獲派的名稱來存取 `Entry` 物件。
 
 1. 在 [方案總管]  的 **AppLifecycleTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnAppearing` 方法的覆寫和 `OnEntryCompleted` 事件處理常式新增至類別：
 
@@ -100,7 +100,7 @@ ms.locfileid: "77135128"
     }
     ```
 
-    `OnAppearing` 方法擷取 `App.DisplayText` 屬性的值，並將其設定為 [`Text`](xref:Xamarin.Forms.InputView.Text) 的 [`Entry`](xref:Xamarin.Forms.Entry) 屬性值。
+    `OnAppearing` 方法擷取 `App.DisplayText` 屬性的值，並將其設定為 [`Entry`](xref:Xamarin.Forms.Entry) 的 [`Text`](xref:Xamarin.Forms.InputView.Text) 屬性值。
 
     > [!NOTE]
     > `OnAppearing` 方法覆寫會在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 配置完成後 (但在變成可見狀態之前) 執行。 因此，這是設定 Xamarin.Forms 檢視內容的好地方。
@@ -115,7 +115,7 @@ ms.locfileid: "77135128"
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，Entry 的 Text 屬性跨生命週期狀態變更保留](../images/persist-data.png "Text 屬性會跨生命週期狀態變更保留的 Entry")](../images/persist-data-large.png#lightbox "Text 屬性會跨生命週期狀態變更保留的 Entry")
 
-    如需有關將資料保存到屬性字典的詳細資訊，請參閱 [Xamarin.Forms 應用程式類別](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)指南中的[屬性字典](~/xamarin-forms/app-fundamentals/application-class.md)。
+    如需有關將資料保存到屬性字典的詳細資訊，請參閱 [Xamarin.Forms 應用程式類別](~/xamarin-forms/app-fundamentals/application-class.md)指南中的[屬性字典](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -169,7 +169,7 @@ ms.locfileid: "77135128"
     > [!IMPORTANT]
     > 請務必先檢查 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典是否有索引鍵，再進行存取，以避免發生意外的錯誤。
 
-    在 [ 方法多載中，您不需要從 `Properties`](xref:Xamarin.Forms.Application.Properties)`OnResume` 字典還原資料。 這是因為應用程式在背景執行時，應用程式和其狀態仍在記憶體中。
+    在 `OnResume` 方法多載中，您不需要從 [`Properties`](xref:Xamarin.Forms.Application.Properties) 字典還原資料。 這是因為應用程式在背景執行時，應用程式和其狀態仍在記憶體中。
 
 1. 在 [Solution Pad]  的 **AppLifecycleTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
@@ -186,7 +186,7 @@ ms.locfileid: "77135128"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Entry`](xref:Xamarin.Forms.Entry) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Entry` 第一次顯示時呈現的預留位置文字，而名為 `OnEntryCompleted` 的事件處理常式會向 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件登記。 此外，`Entry` 具有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用其獲派的名稱來存取 `Entry` 物件。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Entry`](xref:Xamarin.Forms.Entry)。 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 屬性會指定 `Entry` 第一次顯示時呈現的預留位置文字，而名為 `OnEntryCompleted` 的事件處理常式會向 [`Completed`](xref:Xamarin.Forms.Entry.Completed) 事件登記。 此外，`Entry` 具有以 `x:Name` 屬性指定的名稱。 這可讓程式碼後置檔案使用其獲派的名稱來存取 `Entry` 物件。
 
 1. 在 [Solution Pad]  中的 [AppLifecycleTutorial]  專案中，展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs**將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnAppearing` 方法的覆寫和 `OnEntryCompleted` 事件處理常式新增至類別：
 
@@ -204,7 +204,7 @@ ms.locfileid: "77135128"
     }
     ```
 
-    `OnAppearing` 方法擷取 `App.DisplayText` 屬性的值，並將其設定為 [`Text`](xref:Xamarin.Forms.InputView.Text) 的 [`Entry`](xref:Xamarin.Forms.Entry) 屬性值。
+    `OnAppearing` 方法擷取 `App.DisplayText` 屬性的值，並將其設定為 [`Entry`](xref:Xamarin.Forms.Entry) 的 [`Text`](xref:Xamarin.Forms.InputView.Text) 屬性值。
 
     > [!NOTE]
     > `OnAppearing` 方法覆寫會在 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 配置完成後 (但在變成可見狀態之前) 執行。 因此，這是設定 Xamarin.Forms 檢視內容的好地方。
@@ -219,4 +219,4 @@ ms.locfileid: "77135128"
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，Entry 的 Text 屬性跨生命週期狀態變更保留](../images/persist-data.png "Text 屬性會跨生命週期狀態變更保留的 Entry")](../images/persist-data-large.png#lightbox "Text 屬性會跨生命週期狀態變更保留的 Entry")
 
-    如需有關將資料保存到屬性字典的詳細資訊，請參閱 [Xamarin.Forms 應用程式類別](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)指南中的[屬性字典](~/xamarin-forms/app-fundamentals/application-class.md)。
+    如需有關將資料保存到屬性字典的詳細資訊，請參閱 [Xamarin.Forms 應用程式類別](~/xamarin-forms/app-fundamentals/application-class.md)指南中的[屬性字典](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)。

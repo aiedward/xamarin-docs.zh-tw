@@ -26,7 +26,7 @@ ms.locfileid: "61384409"
 
     ![螢幕擷取畫面：Visual Studio 資產目錄中的新影像集](../images/vs/new-image-set-editor.png "資產目錄影像集編輯器")
 
-1. 將 [XamarinLogo.png]  從檔案系統拖曳至 [通用]  類別的 [1x]  方塊：
+1. 將 [XamarinLogo.png] 從檔案系統拖曳至 [通用] 類別的 [1x] 方塊：
 
     ![螢幕擷取畫面：Visual Studio 中包含影像的影像集](../images/vs/image-set-with-image.png "包含影像的影像集")
 
@@ -54,13 +54,13 @@ ms.locfileid: "61384409"
     此程式碼會將 [`Source`](xref:Xamarin.Forms.Image.Source) 屬性設定為要顯示的本機檔案。 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 屬性會設定為 300 個裝置獨立單位 (在 iOS 上) 和 250 個裝置獨立單位 (在 Android 上)。 此外，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性可指定將影像水平置中。
 
     > [!NOTE]
-    > 對於 iOS 上的 PNG 影像，在  [ 屬性中指定的檔案名稱內可省略 `Source`.png](xref:Xamarin.Forms.Image.Source) 副檔名。 若為其他影像格式，則必須有副檔名。
+    > 對於 iOS 上的 PNG 影像，在 [`Source`](xref:Xamarin.Forms.Image.Source) 屬性中指定的檔案名稱內可省略 **.png** 副檔名。 若為其他影像格式，則必須有副檔名。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，顯示本機影像的 Image 檢視](../images/local-file.png "顯示本機影像的 Image 檢視")](../images/local-file-large.png#lightbox "顯示本機影像的 Image 檢視")
 
-    如需本機影像的詳細資訊，請參閱 [Xamarin.Forms 中的影像](~/xamarin-forms/user-interface/images.md#local-images)指南中的[本機影像](~/xamarin-forms/user-interface/images.md)。
+    如需本機影像的詳細資訊，請參閱 [Xamarin.Forms 中的影像](~/xamarin-forms/user-interface/images.md)指南中的[本機影像](~/xamarin-forms/user-interface/images.md#local-images)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -72,7 +72,7 @@ ms.locfileid: "61384409"
 
     ![螢幕擷取畫面：Visual Studio for Mac 資產目錄中的新影像集](../images/vsmac/new-image-set-editor.png "資產目錄影像集編輯器")
 
-1. 將 [XamarinLogo.png]  從檔案系統拖曳至 [通用]  類別的 [1x]  方塊：
+1. 將 [XamarinLogo.png] 從檔案系統拖曳至 [通用] 類別的 [1x] 方塊：
 
     ![螢幕擷取畫面：Visual Studio for Mac 中包含影像的影像集](../images/vsmac/image-set-with-image.png "包含影像的影像集")
 
@@ -100,10 +100,10 @@ ms.locfileid: "61384409"
     此程式碼會將 [`Source`](xref:Xamarin.Forms.Image.Source) 屬性設定為要顯示的本機檔案。 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 屬性會設定為 300 個裝置獨立單位 (在 iOS 上) 和 250 個裝置獨立單位 (在 Android 上)。 此外，[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性可指定將影像水平置中。
 
     > [!NOTE]
-    > 對於 iOS 上的 PNG 影像，在  [ 屬性中指定的檔案名稱內可省略 `Source`.png](xref:Xamarin.Forms.Image.Source) 副檔名。 若為其他影像格式，則必須有副檔名。
+    > 對於 iOS 上的 PNG 影像，在 [`Source`](xref:Xamarin.Forms.Image.Source) 屬性中指定的檔案名稱內可省略 **.png** 副檔名。 若為其他影像格式，則必須有副檔名。
 
 1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，顯示本機影像的 Image 檢視](../images/local-file.png "顯示本機影像的 Image 檢視")](../images/local-file-large.png#lightbox "顯示本機影像的 Image 檢視")
 
-    如需本機影像的詳細資訊，請參閱 [Xamarin.Forms 中的影像](~/xamarin-forms/user-interface/images.md#local-images)指南中的[本機影像](~/xamarin-forms/user-interface/images.md)。
+    如需本機影像的詳細資訊，請參閱 [Xamarin.Forms 中的影像](~/xamarin-forms/user-interface/images.md)指南中的[本機影像](~/xamarin-forms/user-interface/images.md#local-images)。

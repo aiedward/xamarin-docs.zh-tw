@@ -25,7 +25,7 @@ ms.locfileid: "67559984"
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，StackLayout 中的水平方向子檢視](../images/orientation.png "包含水平方向 Label 執行個體的 StackLayout")](../images/orientation-large.png#lightbox "包含水平方向 Label 執行個體的 StackLayout")
 
-    請注意，[`Label`](xref:Xamarin.Forms.Label) 內的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 執行個體現在會以水平方向對齊，不是以垂直方向。
+    請注意，[`StackLayout`](xref:Xamarin.Forms.StackLayout) 內的 [`Label`](xref:Xamarin.Forms.Label) 執行個體現在會以水平方向對齊，不是以垂直方向。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -46,4 +46,4 @@ ms.locfileid: "67559984"
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，StackLayout 中的水平方向子檢視](../images/orientation.png "包含水平方向 Label 執行個體的 StackLayout")](../images/orientation-large.png#lightbox "包含水平方向 Label 執行個體的 StackLayout")
 
-    請注意，[`Label`](xref:Xamarin.Forms.Label) 內的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 執行個體現在會以水平方向對齊，不是以垂直方向。
+    請注意，[`StackLayout`](xref:Xamarin.Forms.StackLayout) 內的 [`Label`](xref:Xamarin.Forms.Label) 執行個體現在會以水平方向對齊，不是以垂直方向。

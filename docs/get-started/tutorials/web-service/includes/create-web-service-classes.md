@@ -127,7 +127,7 @@ REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺
     }
     ```
 
-    此程式碼會定義單一方法 `GetWeatherDataAsync`，該方法可從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取指定位置的天氣資料。 這個方法會使用 `HttpClient.GetAsync` 方法，將 GET 要求傳送至 `uri` 引數所指定的 Web API。 Web API 會傳送儲存在 `HttpResponseMessage` 物件中的回應。 此回應包括 HTTP 狀態碼，這表示 HTTP 要求成功或失敗。 假設要求成功，Web API 就會回應 HTTP 狀態碼 200 (確定) 和 JSON 回應 (其位於 `HttpResponseMessage.Content` 屬性中)。 此 JSON 資料會先讀取到使用 `string` 方法的 `HttpContent.ReadAsStringAsync`，再使用 `WeatherData` 方法還原序列化為 `JsonConvert.DeserializeObject` 物件。 此方法會使用 JSON 欄位名稱與 CLR 屬性之間的對應 (定義於 `WeatherData` 類別中) 來執行還原序列化。
+    此程式碼會定義單一方法 `GetWeatherDataAsync`，該方法可從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取指定位置的天氣資料。 這個方法會使用 `HttpClient.GetAsync` 方法，將 GET 要求傳送至 `uri` 引數所指定的 Web API。 Web API 會傳送儲存在 `HttpResponseMessage` 物件中的回應。 此回應包括 HTTP 狀態碼，這表示 HTTP 要求成功或失敗。 假設要求成功，Web API 就會回應 HTTP 狀態碼 200 (確定) 和 JSON 回應 (其位於 `HttpResponseMessage.Content` 屬性中)。 此 JSON 資料會先讀取到使用 `HttpContent.ReadAsStringAsync` 方法的 `string`，再使用 `JsonConvert.DeserializeObject` 方法還原序列化為 `WeatherData` 物件。 此方法會使用 JSON 欄位名稱與 CLR 屬性之間的對應 (定義於 `WeatherData` 類別中) 來執行還原序列化。
 
 1. 建置解決方案以確定沒有任何錯誤。
 
@@ -247,6 +247,6 @@ REST 要求是使用網頁瀏覽器用來擷取頁面以及將資料傳送到伺
     }
     ```
 
-    此程式碼會定義單一方法 `GetWeatherDataAsync`，該方法可從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取指定位置的天氣資料。 這個方法會使用 `HttpClient.GetAsync` 方法，將 GET 要求傳送至 `uri` 引數所指定的 Web API。 Web API 會傳送儲存在 `HttpResponseMessage` 物件中的回應。 此回應包括 HTTP 狀態碼，這表示 HTTP 要求成功或失敗。 假設要求成功，Web API 就會回應 HTTP 狀態碼 200 (確定) 和 JSON 回應 (其位於 `HttpResponseMessage.Content` 屬性中)。 此 JSON 資料會先讀取到使用 `string` 方法的 `HttpContent.ReadAsStringAsync`，再使用 `WeatherData` 方法還原序列化為 `JsonConvert.DeserializeObject` 物件。 此方法會使用 JSON 欄位名稱與 CLR 屬性之間的對應 (定義於 `WeatherData` 類別中) 來執行還原序列化。
+    此程式碼會定義單一方法 `GetWeatherDataAsync`，該方法可從 [OpenWeatherMap](https://openweathermap.org/) Web API 擷取指定位置的天氣資料。 這個方法會使用 `HttpClient.GetAsync` 方法，將 GET 要求傳送至 `uri` 引數所指定的 Web API。 Web API 會傳送儲存在 `HttpResponseMessage` 物件中的回應。 此回應包括 HTTP 狀態碼，這表示 HTTP 要求成功或失敗。 假設要求成功，Web API 就會回應 HTTP 狀態碼 200 (確定) 和 JSON 回應 (其位於 `HttpResponseMessage.Content` 屬性中)。 此 JSON 資料會先讀取到使用 `HttpContent.ReadAsStringAsync` 方法的 `string`，再使用 `JsonConvert.DeserializeObject` 方法還原序列化為 `WeatherData` 物件。 此方法會使用 JSON 欄位名稱與 CLR 屬性之間的對應 (定義於 `WeatherData` 類別中) 來執行還原序列化。
 
 1. 建置解決方案以確定沒有任何錯誤。

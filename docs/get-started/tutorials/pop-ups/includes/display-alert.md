@@ -35,7 +35,7 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Button`](xref:Xamarin.Forms.Button) 中的兩個 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 物件。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定出現在每個 `Button` 中的文字，而且 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件會設定為會在下一個步驟中建立的事件處理常式。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的兩個 [`Button`](xref:Xamarin.Forms.Button) 物件。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定出現在每個 `Button` 中的文字，而且 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件會設定為會在下一個步驟中建立的事件處理常式。
 
 1. 在 [方案總管]  的 **PopupsTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnDisplayAlertButtonClicked` 和 `OnDisplayAlertQuestionButtonClicked` 事件處理常式新增至類別：
 
@@ -69,7 +69,7 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
 
     請觀察一下，在選取問題的回應之後，回應便會輸出到 Visual Studio 的 [輸出]  視窗。
 
-    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md)。
+    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -98,7 +98,7 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Button`](xref:Xamarin.Forms.Button) 中的兩個 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 物件。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定出現在每個 `Button` 中的文字，而且 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件會設定為會在下一個步驟中建立的事件處理常式。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的兩個 [`Button`](xref:Xamarin.Forms.Button) 物件。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) 屬性會指定出現在每個 `Button` 中的文字，而且 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 事件會設定為會在下一個步驟中建立的事件處理常式。
 
 1. 在 [Solution Pad]  的 **PopupsTutorial** 專案中展開 **MainPage.xaml**，然後按兩下 **MainPage.xaml.cs** 將其開啟。 然後，在 **MainPage.xaml.cs** 中，將 `OnDisplayAlertButtonClicked` 和 `OnDisplayAlertQuestionButtonClicked` 事件處理常式新增至類別：
 
@@ -132,4 +132,4 @@ Xamarin.Forms 具有強制回應快顯 (稱為警示)，可警示使用者或是
 
     請觀察一下，在選取問題的回應之後，回應便會輸出到 Visual Studio for Mac 的 [應用程式輸出]  視窗。
 
-    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md)。
+    如需如何顯示警示的詳細資訊，請參閱[顯示快顯視窗](~/xamarin-forms/user-interface/pop-ups.md)指南中的[顯示警示](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)。

@@ -28,7 +28,7 @@ ms.locfileid: "61372910"
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，視覺外觀已變更的 Button](../images/change-button-appearance.png "外觀已變更的 Button")](../images/change-button-appearance-large.png#lightbox "外觀已變更的 Button")
 
-    如需如何設定 [`Button`](xref:Xamarin.Forms.Button) 外觀的詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md#button-appearance)指南中的[按鈕外觀](~/xamarin-forms/user-interface/button.md)。
+    如需如何設定 [`Button`](xref:Xamarin.Forms.Button) 外觀的詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md)指南中的[按鈕外觀](~/xamarin-forms/user-interface/button.md#button-appearance)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -52,4 +52,4 @@ ms.locfileid: "61372910"
 
     [![螢幕擷取畫面：在 iOS 和 Android 上，視覺外觀已變更的 Button](../images/change-button-appearance.png "外觀已變更的 Button")](../images/change-button-appearance-large.png#lightbox "外觀已變更的 Button")
 
-    如需如何設定 [`Button`](xref:Xamarin.Forms.Button) 外觀的詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md#button-appearance)指南中的[按鈕外觀](~/xamarin-forms/user-interface/button.md)。
+    如需如何設定 [`Button`](xref:Xamarin.Forms.Button) 外觀的詳細資訊，請參閱 [Xamarin.Forms 按鈕](~/xamarin-forms/user-interface/button.md)指南中的[按鈕外觀](~/xamarin-forms/user-interface/button.md#button-appearance)。
