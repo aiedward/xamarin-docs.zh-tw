@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
+ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488487"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550896"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Secure Storage
 
@@ -133,11 +133,11 @@ SecureStorage.RemoveAll();
 
 [Android KeyStore](https://developer.android.com/training/articles/keystore.html) 是用來存放在將值以檔案名稱 **[YOUR-APP-PACKAGE-ID].xamarinessentials** 儲存到[共用喜好設定](https://developer.android.com/training/data-storage/shared-preferences.html)之前用於加密值的密碼編譯金鑰。  在共用喜好設定檔案中使用的金鑰 (不是密碼編譯金鑰，適用於「值」__ 的「金鑰」__) 是傳遞到 `SecureStorage` API 之金鑰的「MD5 雜湊」__。
 
-## <a name="api-level-23-and-higher"></a>API 層級 23 與更高版本
+**API 層級 23 與更高版本**
 
 在較新的 API 層級上，會從 Android KeyStore 取得 **AES** 金鑰並搭配 **AES/GCM/NoPadding** 密碼編譯使用，以在將值存放在共用喜好設定檔案中之前加密值。
 
-## <a name="api-level-22-and-lower"></a>API 層級22 與更低版本
+**API 層級22 與更低版本**
 
 在較舊的 API 層級上，Android KeyStore 只支援存放 **RSA** 金鑰，此金鑰會搭配 **RSA/ECB/PKCS1Padding** 密碼編譯使用以加密 **AES** 金鑰 (在執行階段隨機產生) 並存放在機碼 _SecureStorageKey_ 下的共用喜好設定檔案中 (若尚未產生)。
 
@@ -155,7 +155,7 @@ SecureStorage.RemoveAll();
 
 加密值會存放在 `ApplicationData.Current.LocalSettings` 中名為 **[YOUR-APP-ID].xamarinessentials** 的容器內。
 
-**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 它還使用`LocalSettings`具有限制,即每個設置的名稱最多只能長度為 255 個字元。 每個設置的大小可以高達 8K 位元組,每個複合設置的大小可以高達 64K 位元組。
+**SecureStorage** 使用 [Preferences](preferences.md) API 並遵循 [Preferences](preferences.md#persistence) 文件中概述的相同資料持續性原則。 它也會使用， `LocalSettings` 其限制是每個設定的名稱最多可以是255個字元的長度。 每個設定的大小最多可達8K 位元組，而且每個複合設定的大小最多可達64K 位元組。
 
 -----
 

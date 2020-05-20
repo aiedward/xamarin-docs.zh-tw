@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
-ms.openlocfilehash: 2fcfbfa8a1780a9da4e9bfe187dc99a5172e95f0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: cc33bc7eef68e5d6cb0a1b717da5e9d9f49338b2
+ms.sourcegitcommit: 05ba8ffb8b34ec881b89e442323f3edd8de18f2e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771488"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546020"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>將效果參數傳遞為附加屬性
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
-_附加屬性可用於定義回應運行時屬性更改的效果參數。本文演示使用附加屬性傳遞參數以達到效果,並在運行時更改參數。_
+_附加屬性可以用來定義會回應執行時間屬性變更的效果參數。本文示範如何使用附加屬性將參數傳遞至效果，以及在執行時間變更參數。_
 
 建立會回應執行階段屬性變更之效果參數的程序如下：
 
@@ -33,11 +33,11 @@ _附加屬性可用於定義回應運行時屬性更改的效果參數。本文�
 > [!NOTE]
 > 附加屬性是可繫結屬性的特殊類型，定義於一個類別但附加至其他物件，而且在 XAML 中會識別為包含類別和屬性名稱並以句號分隔的屬性。 如需詳細資訊，請參閱[附加屬性](~/xamarin-forms/xaml/attached-properties.md)。
 
-範例應用程式展示到控制器`ShadowEffect`的文字加入陰影的[`Label`](xref:Xamarin.Forms.Label)。 此外，陰影的色彩可以在執行階段變更。 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
+範例應用程式會示範 `ShadowEffect` ，它會將陰影新增至控制項所顯示的文字 [`Label`](xref:Xamarin.Forms.Label) 。 此外，陰影的色彩可以在執行階段變更。 下圖說明範例應用程式中每個專案的責任，以及它們之間的關聯性：
 
 ![](attached-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
 
-上的[`Label`](xref:Xamarin.Forms.Label)`HomePage`控制件`LabelShadowEffect`由每個特定於平臺的專案自定義。 透過 `ShadowEffect` 類別中的附加屬性，將參數傳遞至每個 `LabelShadowEffect`。 每個 `LabelShadowEffect` 類別都衍生自每個平台的 `PlatformEffect` 類別。 這會導致將陰影新增至 `Label` 控制項所顯示的文字，如下列螢幕擷取畫面所示：
+[`Label`](xref:Xamarin.Forms.Label)上的控制項 `HomePage` 是由 `LabelShadowEffect` 每個平臺特定專案中的所自訂。 透過 `ShadowEffect` 類別中的附加屬性，將參數傳遞至每個 `LabelShadowEffect`。 每個 `LabelShadowEffect` 類別都衍生自每個平台的 `PlatformEffect` 類別。 這會導致將陰影新增至 `Label` 控制項所顯示的文字，如下列螢幕擷取畫面所示：
 
 ![](attached-properties-images/screenshots.png "Shadow Effect on each Platform")
 
@@ -99,14 +99,14 @@ public static class ShadowEffect
 
 `ShadowEffect` 包含五個附加屬性，每個附加屬性都具有 `static` getter 和 setter。 其中四個屬性代表要傳遞至每個平台特定 `LabelShadowEffect` 的參數。 `ShadowEffect` 類別也會定義 `HasShadow` 附加屬性，該附加屬性會用於控制附加至控制項之 `ShadowEffect` 類別效果的新增或移除。 此附加屬性會註冊 `OnHasShadowChanged` 方法；當屬性的值變更時，就會執行此方法。 此方法會根據 `HasShadow` 附加屬性的值來新增或移除效果。
 
-嵌套`LabelShadowEffect`類(對類進行數類[`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect)類)支援效果添加和刪除。 `RoutingEffect` 類別代表包裝通常是平台特定之內部效果的平台獨立效果。 這可簡化效果移除程序，因為對於平台特定效果，並不存在對類型資訊的編譯時間資訊存取。 `LabelShadowEffect` 建構函式會呼叫基底類別建構函式，並傳入由解析群組名稱串連組成的參數，以及每個平台特定效果類別所指定的唯一識別碼。 這會在 `OnHasShadowChanged` 方法中提供效果的新增和移除，如下所示：
+類別子類別的嵌套 `LabelShadowEffect` 類別 [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 支援新增和移除效果。 `RoutingEffect` 類別代表包裝通常是平台特定之內部效果的平台獨立效果。 這可簡化效果移除程序，因為對於平台特定效果，並不存在對類型資訊的編譯時間資訊存取。 `LabelShadowEffect` 建構函式會呼叫基底類別建構函式，並傳入由解析群組名稱串連組成的參數，以及每個平台特定效果類別所指定的唯一識別碼。 這會在 `OnHasShadowChanged` 方法中提供效果的新增和移除，如下所示：
 
-- **效果新增** – `LabelShadowEffect` 的新執行個體會新增至控制項的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合。 這將使用方法[`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String))替換添加效果。
+- **效果新增** – `LabelShadowEffect` 的新執行個體會新增至控制項的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合。 這會取代使用 [`Effect.Resolve`](xref:Xamarin.Forms.Effect.Resolve(System.String)) 方法來新增效果。
 - **效果移除** – 會擷取和移除 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合中 `LabelShadowEffect` 控制項的第一個執行個體。
 
 ## <a name="consuming-the-effect"></a>使用效果
 
-每個特定於`LabelShadowEffect`平台的都可以通過將附加的屬性添加[`Label`](xref:Xamarin.Forms.Label)到 控制項來使用,如下 XAML 代碼範例所示:
+您 `LabelShadowEffect` 可以藉由將附加屬性新增至控制項來使用每個平臺特定 [`Label`](xref:Xamarin.Forms.Label) ，如下列 XAML 程式碼範例所示：
 
 ```xaml
 <Label Text="Label Shadow Effect" ...
@@ -122,7 +122,7 @@ public static class ShadowEffect
 </Label>
 ```
 
-C#[`Label`](xref:Xamarin.Forms.Label)中的等效項目顯示在以下代碼範例中:
+[`Label`](xref:Xamarin.Forms.Label)下列程式碼範例顯示 c # 中的對等用法：
 
 ```csharp
 var label = new Label {
@@ -151,9 +151,9 @@ ShadowEffect.SetDistanceY (label, 5);
 ShadowEffect.SetColor (label, color));
 ```
 
-將`ShadowEffect.HasShadow``true`附加屬性設定為執行向`ShadowEffect.OnHasShadowChanged``LabelShadowEffect`[`Label`](xref:Xamarin.Forms.Label)控制項添加或刪除的方法。 在這兩個程式碼範例中，`ShadowEffect.Color` 附加屬性會提供平台特定的色彩值。 如需詳細資訊，請參閱[裝置類別](~/xamarin-forms/platform/device.md)。
+將 `ShadowEffect.HasShadow` 附加屬性設為 `true` 會執行 `ShadowEffect.OnHasShadowChanged` 方法，以將加入或移除 `LabelShadowEffect` 至 [`Label`](xref:Xamarin.Forms.Label) 控制項。 在這兩個程式碼範例中，`ShadowEffect.Color` 附加屬性會提供平台特定的色彩值。 如需詳細資訊，請參閱[裝置類別](~/xamarin-forms/platform/device.md)。
 
-此外,還[`Button`](xref:Xamarin.Forms.Button)允許在運行時更改陰影顏色。 按一下 `Button` 時，下列程式碼會藉由設定 `ShadowEffect.Color` 附加屬性來變更陰影色彩：
+此外， [`Button`](xref:Xamarin.Forms.Button) 允許在執行時間變更陰影色彩。 按一下 `Button` 時，下列程式碼會藉由設定 `ShadowEffect.Color` 附加屬性來變更陰影色彩：
 
 ```csharp
 ShadowEffect.SetColor (label, Color.Teal);
@@ -174,7 +174,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 </Style>
 ```
 
-[`Style`](xref:Xamarin.Forms.Style)可以透過[`Label`](xref:Xamarin.Forms.Label)`StaticResource`用 標籤延伸[`Style`](xref:Xamarin.Forms.NavigableElement.Style)的屬性設定`Style`為 實體應用於 。
+[`Style`](xref:Xamarin.Forms.Style)可以套用至 [`Label`](xref:Xamarin.Forms.Label) ，方法是 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 使用標記延伸將其屬性設為 `Style` 實例 `StaticResource` ，如下列程式碼範例所示：
 
 ```xaml
 <Label Text="Label Shadow Effect" ... Style="{StaticResource ShadowEffectStyle}" />
@@ -216,7 +216,7 @@ namespace EffectsDemo.iOS
 
         void UpdateRadius ()
         {
-            Control.Layer.CornerRadius = (nfloat)ShadowEffect.GetRadius (Element);
+            Control.Layer.ShadowRadius = (nfloat)ShadowEffect.GetRadius (Element);
         }
 
         void UpdateColor ()
@@ -318,7 +318,7 @@ namespace EffectsDemo.Droid
     }
 ```
 
-方法`OnAttached`調用`ShadowEffect`使用 getter 檢索附加屬性值的方法,並調[`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*)用調用 方法以使用屬性值創建陰影的方法。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `Control.Layer` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
+`OnAttached`方法會呼叫使用 getter 來抓取附加屬性值的方法 `ShadowEffect` ，並呼叫方法來呼叫 [`TextView.SetShadowLayer`](xref:Android.Widget.TextView.SetShadowLayer*) 方法，以使用屬性值來建立陰影。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `Control.Layer` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
 
 #### <a name="responding-to-property-changes"></a>回應屬性變更
 
@@ -404,7 +404,7 @@ namespace EffectsDemo.UWP
 }
 ```
 
-通用 Windows 平臺不提供陰影效果,因此,兩個`LabelShadowEffect`平臺上 的實現[`Label`](xref:Xamarin.Forms.Label)`Label`通過在主 平台後面添加第二個偏移量來類比一個。 `OnAttached` 方法會建立新的 `Label`，並在 `Label` 上設定一些配置屬性。 然後,它調用使用`ShadowEffect`getter 檢索附加屬性值的方法,並[`TextColor`](xref:Xamarin.Forms.Label.TextColor)通過[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)設置和 屬性來創建陰影來`Label`控制的顏色和位置。 `shadowLabel` 會接著偏移插入在主要 `Label` 的後方。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `Control.Layer` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
+通用 Windows 平臺不會提供陰影效果，因此 `LabelShadowEffect` 這兩個平臺上的執行會藉由在主要複本後面新增第二個位移來模擬一個 [`Label`](xref:Xamarin.Forms.Label) `Label` 。 `OnAttached` 方法會建立新的 `Label`，並在 `Label` 上設定一些配置屬性。 接著，它會使用 getter 呼叫抓取附加屬性值的方法 `ShadowEffect` ，並藉由設定 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 、 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 和 [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) 屬性來控制的色彩和位置，藉以建立陰影 `Label` 。 `shadowLabel` 會接著偏移插入在主要 `Label` 的後方。 這項功能會包裝在 `try`/`catch` 區塊中，以免效果附加至的控制項沒有 `Control.Layer` 屬性。 因為沒有必要的清除，所以 `OnDetached` 方法不提供實作。
 
 #### <a name="responding-to-property-changes"></a>回應屬性變更
 
@@ -429,7 +429,7 @@ public class LabelShadowEffect : PlatformEffect
 
 `OnElementPropertyChanged` 方法會更新陰影的色彩或位移，前提是已變更適當的 `ShadowEffect` 附加屬性值。 因為此覆寫會呼叫多次，所以請一律檢查變更的屬性。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何使用附加屬性將參數傳遞給效果，並在執行階段變更參數。 附加屬性可用來定義會回應執行階段屬性變更的效果參數。
 

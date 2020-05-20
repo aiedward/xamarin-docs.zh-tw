@@ -1,34 +1,34 @@
 ---
-title: SkiaSharp 混合模式
-description: 使用 blend 來定義圖形物件堆疊在另一個時，會發生什麼情況的模式。
+title: SkiaSharp blend 模式
+description: 使用 blend 模式定義當繪圖物件堆疊在另一個上時，會發生什麼事。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 8071f310e899575699e1d0b925541f2863b00676
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 829d764f03dd77c6126c2f4bced750ae570a3bc6
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645183"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425688"
 ---
-# <a name="skiasharp-blend-modes"></a>SkiaSharp 混合模式
+# <a name="skiasharp-blend-modes"></a>SkiaSharp blend 模式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-這些文章著重[ `BlendMode` ](xref:SkiaSharp.SKPaint.BlendMode)屬性[ `SKPaint` ](xref:SkiaSharp.SKPaint)。 `BlendMode`屬性的類型是[ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode)，列舉型別與 29 的成員。
+這些文章著重于的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 屬性 [`SKPaint`](xref:SkiaSharp.SKPaint) 。 `BlendMode`屬性的類型是 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) ，具有29個成員的列舉。
 
-`BlendMode`屬性會決定圖形化的物件時，會發生什麼事 (通常稱為_來源_) 會呈現在現有的圖形物件上 (稱為_目的地_)。 一般來說，我們會預期要遮蔽的物件，其下的新圖形化物件。 但只是預設的 blend 模式是因為發生此情形`SKBlendMode.SrcOver`，這表示，要繪製之來源_透過_目的地。 其他 28 成員`SKBlendMode`造成其他的副作用。 在圖形程式設計中，結合各種方式的圖形物件的技巧即所謂_複合 （compositing)_ 。
+`BlendMode`屬性會決定當繪圖物件（通常稱為「_來源_」）呈現在現有繪圖物件（稱為「_目的地_」）之上時，會發生什麼事。 一般來說，我們預期新的繪圖物件會遮蔽其底下的物件。 但只有在預設 blend 模式為時才會發生， `SKBlendMode.SrcOver` 這表示來源是在目的地_上_繪製。 其他28個成員 `SKBlendMode` 會造成其他效果。 在圖形程式設計中，以各種方式結合繪圖物件的技巧稱為「_合成_」。
 
 ## <a name="the-skblendmodes-enumeration"></a>SKBlendModes 列舉
 
-SkiaSharp blend 模式緊密對應至 W3C 中所述[**複合 （compositing） 和混合層級 1** ](https://www.w3.org/TR/compositing-1/)規格。 Skia [ **SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)也會提供有用的背景資訊。 混合模式的一般簡介[**混合模式**](https://en.wikipedia.org/wiki/Blend_modes)在維基百科的文章是不錯的起點。 這樣就很多其他線上資訊在該內容中的混合模式中 Adobe Photoshop 支援混合模式。
+SkiaSharp blend 模式與 W3C 撰寫[**和混合層級 1**](https://www.w3.org/TR/compositing-1/)規格中所述的類似。 Skia [**SkBlendMode 總覽**](https://skia.org/user/api/SkBlendMode_Overview)也提供有用的背景資訊。 如需 blend 模式的一般簡介，維琪百科中的[**blend 模式**](https://en.wikipedia.org/wiki/Blend_modes)一文是不錯的開端。 Adobe Photoshop 支援 blend 模式，因此在該內容中有其他有關 blend 模式的線上資訊。
 
-29 成員`SKBlendMode`列舉型別可以分為三類：
+列舉的29個成員 `SKBlendMode` 可以分成三個類別：
 
-| Porter Duff | 可加以分隔    | 非可加以分隔 |
+| Porter-Duff | 分離    | 不可分離 |
 | ----------- | ------------ | ------------- |
 | `Clear`     | `Modulate`   | `Hue`         |
 | `Src`       | `Screen`     | `Saturation`  |
@@ -44,51 +44,51 @@ SkiaSharp blend 模式緊密對應至 W3C 中所述[**複合 （compositing） �
 | `Xor`       | `Multiply`   |               |
 | `Plus`      |              |               |
 
-在討論中旁聽遵循更有意義上需要這三個類別的名稱。 這裡列出的成員的順序會定義相同`SKBlendMode`列舉型別。 13 列舉成員的第一個資料行中有 0 到 12 的整數值。 第二個資料行對應至整數 13 到 24，列舉成員，而第三個資料行中的成員擁有 25 至 28 的值。
+這三個類別的名稱在後續討論中會採用更多意義。 成員在此列出的順序與列舉的定義相同 `SKBlendMode` 。 第一個資料行中的13個列舉成員，其整數值為0到12。 第二個數據行是對應到整數13到24的列舉成員，而第三個數據行中的成員具有25到28的值。
 
-在 W3C 撰寫**和混合層級 1**檔中, 會以_大致_相同的順序討論這些 blend 模式, 但有幾項差異:此`Src`模式在 W3C 檔中稱為「_複製_」, `Plus`並稱為「_較淺_」。 W3C 文件會定義_Normal_不包含在混合模式`SKBlendModes`因為它會與相同`SrcOver`。 `Modulate` （在第一個資料行頂端） 的混合模式不包含在 W3C 文件，並討論`Multiply`模式之前`Screen`。
+在 W3C 撰寫**和混合層級 1**檔中，這些 blend 模式的討論方式_大致_相同，但有一些差異：在 `Src` W3C 檔中稱為「_複製_」模式，並稱為「 `Plus` _較淺_」。 W3C 檔會定義不包含在中的_一般_blend 模式， `SKBlendModes` 因為它會與相同 `SrcOver` 。 `Modulate`Blend 模式（在第一個資料行的頂端）並未包含在 W3C 檔中，而模式的討論則在 `Multiply` 前面 `Screen` 。
 
-因為`Modulate`專屬於 Skia 混合模式，將會討論為額外的 Porter Duff 模式，以及可分隔模式。
+因為 `Modulate` blend 模式對 Skia 而言是唯一的，所以會將其視為額外的 Porter Duff 模式，並作為可分離的模式加以討論。
 
-## <a name="the-importance-of-transparency"></a>重要性的透明度
+## <a name="the-importance-of-transparency"></a>透明度的重要性
 
-在過去，複合 （compositing） 所開發的概念搭配_alpha 色頻_。 在顯示介面 (例如`SKCanvas`物件和全彩色點陣圖) 中, 每個圖元都包含4個位元組:每個紅色、綠色和藍色元件各有1個位元組, 而針對透明度則為一個額外的位元組。 完整的透明度為 0 而完全不透明，具有不同的層級的那些值之間的透明的 0xFF 此 alpha 元件。
+在過去，複合是與_Alpha_色板的概念一起開發。 在 `SKCanvas` 物件和全彩色點陣圖之類的顯示介面中，每個圖元都包含4個位元組：每個紅色、綠色和藍色元件各有1個位元組，另一個則用於透明度。 此 Alpha 元件為0代表完整透明度，而若為完全不透明度，則為0xFF，而這些值之間有不同的透明度層級。
 
-混合模式的許多依賴透明度。 通常，當`SKCanvas`中第一次取得`PaintSurface`處理常式，或當`SKCanvas`建立若要繪製的點陣圖，第一個步驟是此呼叫：
+許多 blend 模式都依賴透明度。 通常，當 `SKCanvas` 第一次取得 `PaintSurface` 處理常式，或 `SKCanvas` 建立以在點陣圖上繪製時，第一個步驟就是這個呼叫：
 
 ```csharp
 canvas.Clear();
 ```
 
-這個方法會以透明黑色像素為單位，相當於取代的畫布上的所有像素`new SKColor(0, 0, 0, 0)`或整數 0x00000000。 所有像素的所有位元組會都初始化為零。
+這個方法會將畫布的所有圖元以透明黑色圖元取代，相當於 `new SKColor(0, 0, 0, 0)` 或整數0x00000000。 所有圖元的所有位元組都會初始化為零。
 
-之繪圖介面的`SKCanvas`中取得`PaintSurface`處理常式可能會顯示具有白色背景上，但這只是因為`SKCanvasView`本身有透明背景，以及頁面具有白色背景。 您可以對自己示範這項事實，藉由設定 Xamarin.Forms`BackgroundColor`屬性`SKCanvasView`Xamarin.Forms 色彩：
+`SKCanvas`在處理常式中取得的繪圖介面 `PaintSurface` 可能看起來有白色背景，但這只是因為 `SKCanvasView` 本身具有透明背景，而且頁面具有白色背景。 您可以藉由將的 [Xamarin] 屬性設定為 [Xamarin]，來示範這個事實 `BackgroundColor` `SKCanvasView` ：
 
 ```csharp
 canvasView.BackgroundColor = Color.Red;
 ```
 
-或衍生自的類別中`ContentPage`，您可以設定網頁的背景色彩：
+或者，在衍生自的類別中 `ContentPage` ，您可以設定頁面背景色彩：
 
 ```csharp
 BackgroundColor = Color.Red;
 ```
 
-您會看到這個 SkiaSharp 圖形背後的紅色背景因為 SkiaSharp 畫布本身是透明的。
+您會在 SkiaSharp 圖形背後看到這個紅色背景，因為 SkiaSharp 畫布本身是透明的。
 
-發行項[ **SkiaSharp 透明度**](../../basics/transparency.md)中使用透明度來排列複合映像中的多個圖形顯示一些基本技術。 混合模式介紹其他東西，但透明度會保留重要的混合模式。 
+[**SkiaSharp 透明度**](../../basics/transparency.md)一文顯示在複合影像中使用透明度來排列多個圖形的一些基本技巧。 Blend 模式超越了，但是對 blend 模式而言，透明度仍然很重要。
 
-## <a name="skiasharp-porter-duff-blend-modesporter-duffmd"></a>[SkiaSharp Porter Duff 混合模式](porter-duff.md)
+## <a name="skiasharp-porter-duff-blend-modes"></a>[SkiaSharp Porter-Duff blend 模式](porter-duff.md)
 
-您可以使用 Porter Duff 混合模式來撰寫來源和目的地的映像為基礎的場景。
+使用 Porter-Duff blend 模式，根據來源和目的地影像來撰寫場景。
 
-## <a name="skiasharp-separable-blend-modesseparablemd"></a>[SkiaSharp 分隔的混合模式](separable.md)
+## <a name="skiasharp-separable-blend-modes"></a>[SkiaSharp 能分離的 blend 模式](separable.md)
 
-您可以使用分隔的混合模式 alter 紅色、 綠色和藍色色彩。
+使用可分離的 blend 模式來改變紅色、綠色和藍色色彩。
 
-## <a name="skiasharp-non-separable-blend-modesnon-separablemd"></a>[SkiaSharp 非可加以分隔的混合模式](non-separable.md)
+## <a name="skiasharp-non-separable-blend-modes"></a>[SkiaSharp 不可分離的 blend 模式](non-separable.md)
 
-使用非分隔混合模式來變更色調、 飽和度或亮度。
+使用不可分離的 blend 模式來改變色調、飽和度或亮度。
 
 ## <a name="related-links"></a>相關連結
 

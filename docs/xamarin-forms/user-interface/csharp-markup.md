@@ -6,21 +6,21 @@ ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/25/2020
-ms.openlocfilehash: fa758b1240570f90ebf8a723401176f6be9dd6ac
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.date: 05/15/2020
+ms.openlocfilehash: 4fa8397dafbbdd836f88193081720b4960f1ce5d
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532608"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425812"
 ---
 # <a name="xamarinforms-c-markup"></a>Xamarin. 表單 c # 標記
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
-C # 標記是一組可加入宣告的流暢 helper 方法和類別，以簡化建立宣告式 Xamarin 的程式。在 c # 中使用表單使用者介面。 C # 標記提供的 Fluent API 可在`Xamarin.Forms.Markup`命名空間中取得。
+C # 標記是一組可加入宣告的流暢 helper 方法和類別，以簡化建立宣告式 Xamarin 的程式。在 c # 中使用表單使用者介面。 C # 標記提供的 Fluent API 可在 `Xamarin.Forms.Markup` 命名空間中取得。
 
 就像使用 XAML 一樣，c # 標記可讓 UI 標記和 UI 邏輯之間有清楚的分隔。 將 UI 標記和 UI 邏輯分隔成不同的部分類別檔案，即可達成此目的。 例如，登入頁面上的 UI 標記會位於名為*LoginPage.cs*的檔案中，而 ui 邏輯則會位於名為*LoginPage.logic.cs*的檔案中。
 
@@ -35,9 +35,14 @@ Device.SetFlags(new string[]{ "Markup_Experimental" });
 
 ## <a name="basic-example"></a>基本範例
 
-下列範例示範如何在 c [`Entry`](xref:Xamarin.Forms.Entry) # 中建立物件：
+下列範例示範如何 [`Grid`](xref:Xamarin.Forms.Grid) [`Label`](xref:Xamarin.Forms.Label) [`Entry`](xref:Xamarin.Forms.Entry) 在 c # 中，將頁面內容設定為包含和的新：
 
 ```csharp
+Grid grid = new Grid();
+
+Label label = new Label { Text = "Code: " };
+grid.Children.Add(label, 0, 1);
+
 Entry entry = new Entry
 {
     Placeholder = "Enter number",
@@ -48,12 +53,14 @@ Entry entry = new Entry
     HeightRequest = 44,
     Margin = fieldMargin
 };
-entry.SetBinding(Entry.TextProperty, new Binding("RegistrationCode", BindingMode.TwoWay));
 grid.Children.Add(entry, 0, 2);
 Grid.SetColumnSpan(entry, 2);
+entry.SetBinding(Entry.TextProperty, new Binding("RegistrationCode"));
+
+Content = grid;
 ```
 
-這個範例會使用[`Entry`](xref:Xamarin.Forms.Entry) `TwoWay`系結，建立資料系`RegistrationCode`結至 viewmodel 之屬性的物件。 它會設定為出現在的特定資料列中[`Grid`](xref:Xamarin.Forms.Grid)，並跨越中的所有資料行`Grid`。 此外， `Entry`也會設定的高度，以及其文字的字型大小和`Margin`。
+這個範例會建立 [`Grid`](xref:Xamarin.Forms.Grid) 物件，其中包含子系 [`Label`](xref:Xamarin.Forms.Label) 和 [`Entry`](xref:Xamarin.Forms.Entry) 物件。 會 `Label` 顯示文字，且資料會系結 `Entry` 至 `RegistrationCode` viewmodel 的屬性。 每個子視圖都會設定為出現在中的特定資料 `Grid` 列，而且會 `Entry` 跨越中的所有資料行 `Grid` 。 此外，的高度 `Entry` 也會隨著其鍵盤、色彩、文字的字型大小和其而設定 `Margin` 。 最後， `Page.Content` 屬性會設定為 `Grid` 物件。
 
 C # 標記可讓此程式碼使用其 Fluent API 重新撰寫：
 
@@ -61,9 +68,18 @@ C # 標記可讓此程式碼使用其 Fluent API 重新撰寫：
 using Xamarin.Forms.Markup;
 using static Xamarin.Forms.Markup.GridRowsColumns;
 
-Entry entry = new Entry { Placeholder = "Enter number", Keyboard = Keyboard.Numeric, BackgroundColor = Color.AliceBlue, TextColor = Color.Black } .Font (15)
-                         .Row (BodyRow.CodeEntry) .ColumnSpan (All<BodyCol>()) .Margin (fieldMargin) .Height (44)
-                         .Bind (nameof(vm.RegistrationCode), BindingMode.TwoWay);
+Content = new Grid
+{
+  Children =
+  {
+    new Label { Text = "Code:" }
+               .Row (BodyRow.CodeHeader) .Column (BodyCol.Header),
+
+    new Entry { Placeholder = "Enter number", Keyboard = Keyboard.Numeric, BackgroundColor = Color.AliceBlue, TextColor = Color.Black } .Font (15)
+               .Row (BodyRow.CodeEntry) .ColumnSpan (All<BodyCol>()) .Margin (fieldMargin) .Height (44)
+               .Bind (nameof(vm.RegistrationCode))
+  }
+}};
 ```
 
 這個範例與前一個範例相同，但 c # 標記 Fluent API 可簡化在 c # 中建立 UI 的程式。
@@ -73,7 +89,7 @@ Entry entry = new Entry { Placeholder = "Enter number", Keyboard = Keyboard.Nume
 
 ## <a name="data-binding"></a>資料繫結
 
-C # 標記包含`Bind`擴充方法以及多載，可在 view 可系結屬性和指定的屬性之間建立資料系結。 `Bind`方法知道 Xamarin 所包含的大多數控制項的預設可系結屬性。 因此，使用這個方法時，通常不需要指定目標屬性。 不過，您也可以註冊其他控制項的預設可系結屬性：
+C # 標記包含擴充方法以及多載，可在 view 可系結 `Bind` 屬性和指定的屬性之間建立資料系結。 `Bind`方法知道 Xamarin 所包含的大多數控制項的預設可系結屬性。 因此，使用這個方法時，通常不需要指定目標屬性。 不過，您也可以註冊其他控制項的預設可系結屬性：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -82,7 +98,7 @@ using Xamarin.Forms.Markup;
 DefaultBindableProperties.Register(HoverButton.CommandProperty, RadialGauge.ValueProperty);
 ```
 
-方法`Bind`可以用來系結至任何可系結的屬性：
+`Bind`方法可以用來系結至任何可系結的屬性：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -92,7 +108,7 @@ new Label { Text = "No data available" }
            .Bind (Label.IsVisibleProperty, nameof(vm.Empty))
 ```
 
-此外， `BindCommand`擴充方法可以在單一方法呼叫中系結至`Command`控制項`CommandParameter`的預設和屬性：
+此外， `BindCommand` 擴充方法可以 `Command` `CommandParameter` 在單一方法呼叫中系結至控制項的預設和屬性：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -102,7 +118,7 @@ new TextCell { Text = "Tap me" }
               .BindCommand (nameof(vm.TapCommand))
 ```
 
-根據預設， `CommandParameter`會系結至系結內容。 您也可以指定`Command`和`CommandParameter`系結的系結路徑和來源：
+根據預設，會系結至系結 `CommandParameter` 內容。 您也可以指定和系結的系結路徑和來源 `Command` `CommandParameter` ：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -112,11 +128,11 @@ new TextCell { Text = "Tap Me" }
               .BindCommand (nameof(vm.TapCommand), vm, nameof(Item.Id))
 ```
 
-在此範例中，系結內容是`Item`一個實例，因此您不需要指定系結的來源`Id` `CommandParameter` 。
+在此範例中，系結內容是一個 `Item` 實例，因此您不需要指定系結的來源 `Id` `CommandParameter` 。
 
-如果您只需要系結至`Command`，則可以傳遞`null`至`BindCommand`方法`parameterPath`的引數。 或者，請使用`Bind`方法。
+如果您只需要系結至 `Command` ，則可以傳遞 `null` 至 `parameterPath` 方法的引數 `BindCommand` 。 或者，請使用 `Bind` 方法。
 
-您也可以註冊其他控制項`Command`的`CommandParameter`預設和屬性：
+您也可以註冊 `Command` 其他控制項的預設和 `CommandParameter` 屬性：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -128,7 +144,7 @@ DefaultBindableProperties.RegisterCommand(
 );
 ```
 
-您可以使用`convert`和`convertBack`參數，將內嵌`Bind`轉換器程式碼傳遞至方法：
+您可以使用和參數，將內嵌轉換器程式碼傳遞至 `Bind` 方法 `convert` `convertBack` ：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -150,7 +166,7 @@ new Label { }
                   convert: (string text, int repeat) => string.Concat(Enumerable.Repeat(text, repeat)))
 ```
 
-此外，轉換器程式碼和實例可以與`FuncConverter`類別一起重複使用：
+此外，轉換器程式碼和實例可以與類別一起重複使用 `FuncConverter` ：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -161,7 +177,7 @@ new Label { Text = "Tree" }
            .Bind (Label.MarginProperty, nameof(TreeNode.TreeDepth), converter: treeMarginConverter),
 ```
 
-`FuncConverter`類別也支援`CultureInfo`物件：
+`FuncConverter`類別也支援 `CultureInfo` 物件：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -172,7 +188,7 @@ cultureAwareConverter = new FuncConverter<DateTimeOffset, string, int>(
 );
 ```
 
-您也可以將資料系結至`Span`使用`FormattedText`屬性所指定的物件：
+您也可以將資料系結至 `Span` 使用屬性所指定的物件 `FormattedText` ：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -188,7 +204,7 @@ new Label { } .FormattedText (
 
 ### <a name="gesture-recognizers"></a>手勢辨識器
 
-`Command`和`CommandParameter`屬性可以使用`GestureElement` 、和`BindTapGesture`擴充方法`View` ， `BindSwipeGesture`系結`BindClickGesture`至和類型的資料：
+`Command`和 `CommandParameter` 屬性可以 `GestureElement` `View` 使用 `BindClickGesture` 、 `BindSwipeGesture` 和 `BindTapGesture` 擴充方法，系結至和類型的資料：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -198,9 +214,9 @@ new Label { Text = "Tap Me" }
            .BindTapGesture (nameof(vm.TapCommand))
 ```
 
-這個範例會建立指定類型的手勢辨識器，並將其新增至[`Label`](xref:Xamarin.Forms.Label)。 `Bind*Gesture`擴充方法提供與`BindCommand`擴充方法相同的參數。 不過，根據預設`Bind*Gesture` ，並不`CommandParameter`會系`BindCommand`結，而是。
+這個範例會建立指定類型的手勢辨識器，並將其新增至 [`Label`](xref:Xamarin.Forms.Label) 。 `Bind*Gesture`擴充方法提供與擴充方法相同的參數 `BindCommand` 。 不過，根據預設，並 `Bind*Gesture` 不會系結 `CommandParameter` ，而是 `BindCommand` 。
 
-若要初始化具有參數的手勢辨識器， `ClickGesture`請`PanGesture`使用`PinchGesture`、 `SwipeGesture`、、 `TapGesture`和擴充方法：
+若要初始化具有參數的手勢辨識器，請使用、、、 `ClickGesture` `PanGesture` `PinchGesture` `SwipeGesture` 和 `TapGesture` 擴充方法：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -210,9 +226,9 @@ new Label { Text = "Tap Me" }
            .TapGesture (g => g.Bind(nameof(vm.DoubleTapCommand)).NumberOfTapsRequired = 2)
 ```
 
-因為手勢辨識器是`BindableObject`，所以您可以在初始化`Bind`時`BindCommand`使用和擴充方法。 您也可以使用`Gesture<TGestureElement, TGestureRecognizer>`擴充方法來初始化自訂手勢辨識器類型。
+因為手勢辨識器是 `BindableObject` ，所以您可以在 `Bind` 初始化時使用和 `BindCommand` 擴充方法。 您也可以使用擴充方法來初始化自訂手勢辨識器類型 `Gesture<TGestureElement, TGestureRecognizer>` 。
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>Layout
 
 C # 標記包含一系列的版面配置擴充方法，可支援版面配置中的定位視圖，以及 views 中的內容：
 
@@ -228,9 +244,9 @@ C # 標記包含一系列的版面配置擴充方法，可支援版面配置中�
 
 ### <a name="left-to-right-and-right-to-left-support"></a>由左至右和由右至左支援
 
-針對支援由左至右（LTR）或由右至左（RTL）流程方向設計的 c # 標記，以上所列的擴充方法提供最具直覺性的名稱集合`Left`：、 `Right` `Top`和。 `Bottom`
+針對支援由左至右（LTR）或由右至左（RTL）流程方向設計的 c # 標記，以上所列的擴充方法提供最具直覺性的名稱集合： `Left` 、 `Right` `Top` 和 `Bottom` 。
 
-若要提供正確的左和右擴充方法集合，並在程式中明確地決定標記的設計流程方向，請包含下列兩個`using`指示詞的其中一個： `using Xamarin.Forms.Markup.LeftToRight;`、或`using Xamarin.Forms.Markup.RightToLeft;`。
+若要提供正確的左和右擴充方法集合，並在程式中明確地決定標記的設計流程方向，請包含下列兩個指示詞的其中一個 `using` ： `using Xamarin.Forms.Markup.LeftToRight;` 、或 `using Xamarin.Forms.Markup.RightToLeft;` 。
 
 針對設計為支援由左至右和由右至左流動方向的 c # 標記，建議使用下表中的擴充方法，而不是上述任何一個命名空間：
 
@@ -261,12 +277,12 @@ new Label { }
 
 ## <a name="grid-rows-and-columns"></a>格線資料列和資料行
 
-列舉可以用來定義[`Grid`](xref:Xamarin.Forms.Grid)資料列和資料行，而不是使用數位。 這可提供在加入或移除資料列或資料行時，不需要重新編號的優點。
+列舉可以用來定義 [`Grid`](xref:Xamarin.Forms.Grid) 資料列和資料行，而不是使用數位。 這可提供在加入或移除資料列或資料行時，不需要重新編號的優點。
 
 > [!IMPORTANT]
-> 使用[`Grid`](xref:Xamarin.Forms.Grid)列舉定義資料列和資料行需要`using`下列指示詞：`using static Xamarin.Forms.Markup.GridRowsColumns;`
+> 使用列舉定義資料 [`Grid`](xref:Xamarin.Forms.Grid) 列和資料行需要下列指示詞 `using` ：`using static Xamarin.Forms.Markup.GridRowsColumns;`
 
-下列程式碼顯示如何使用列舉定義和取用資料列[`Grid`](xref:Xamarin.Forms.Grid)和資料行的範例：
+下列程式碼顯示如何使用列舉定義和取用資料 [`Grid`](xref:Xamarin.Forms.Grid) 列和資料行的範例：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -340,7 +356,7 @@ new Grid
 
 ## <a name="fonts"></a>字型
 
-下列清單`FontSize`中的控制項可以呼叫、、 `Bold` `Italic`和`Font`擴充方法，以設定控制項所顯示之文字的外觀：
+下列清單中的控制項可以呼叫 `FontSize` 、 `Bold` 、 `Italic` 和 `Font` 擴充方法，以設定控制項所顯示之文字的外觀：
 
 - `Button`
 - `DatePicker`
@@ -354,7 +370,7 @@ new Grid
 
 ## <a name="effects"></a>效果
 
-您可以使用`Effect`擴充方法，將效果附加至控制項：
+您可以使用擴充方法，將效果附加至控制項 `Effect` ：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -375,7 +391,7 @@ using Xamarin.Forms.Markup;
 new ListView { } .Invoke (l => l.ItemTapped += OnListViewItemTapped)
 ```
 
-此外，您可以使用`Assign`擴充方法，從 ui 標記外部存取控制項（在 ui 邏輯檔案中）：
+此外，您可以使用 `Assign` 擴充方法，從 ui 標記外部存取控制項（在 ui 邏輯檔案中）：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -446,7 +462,7 @@ public App()
 }
 ```
 
-明確樣式可以與`Style`擴充方法一起使用。
+明確樣式可以與 `Style` 擴充方法一起使用。
 
 ```csharp
 using static CSharpForMarkupExample.Styles;
@@ -456,7 +472,7 @@ new Button { Text = "Tap Me" } .Style (FilledButton),
 ```
 
 > [!NOTE]
-> 除了`Style` `ApplyToDerivedTypes`擴充方法之外，也有、 `BasedOn` `Add`、和`CanCascade`擴充方法。
+> 除了 `Style` 擴充方法之外，也有 `ApplyToDerivedTypes` 、、 `BasedOn` `Add` 和 `CanCascade` 擴充方法。
 
 或者，您也可以建立自己的樣式延伸方法：
 
@@ -470,7 +486,7 @@ public static TButton Filled<TButton>(this TButton button) where TButton : Butto
 }
 ```
 
-接著`Filled` ，您可以使用擴充方法，如下所示：
+接著，您 `Filled` 可以使用擴充方法，如下所示：
 
 ```csharp
 new Button { Text = "Tap Me" } .Filled ()
@@ -478,7 +494,7 @@ new Button { Text = "Tap Me" } .Filled ()
 
 ## <a name="platform-specifics"></a>平台特定功能
 
-`Invoke`擴充方法可以用來套用平臺特定。 不過，若要避免不明確的`using` `Xamarin.Forms.PlatformConfiguration.*Specific`錯誤，請不要直接包含命名空間的指示詞。 相反地，請建立命名空間別名，並透過別名使用平臺特定：
+`Invoke`擴充方法可以用來套用平臺特定。 不過，若要避免不明確的錯誤，請不要 `using` 直接包含命名空間的指示詞 `Xamarin.Forms.PlatformConfiguration.*Specific` 。 相反地，請建立命名空間別名，並透過別名使用平臺特定：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -510,7 +526,7 @@ new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 
 建議的順序和屬性和 helper 方法的群組如下：
 
-- **目的**：任何屬性或 helper 方法，其值可識別控制項的目的（例如`Text`， `Placeholder`、、`Assign`）。
+- **目的**：任何屬性或 helper 方法，其值可識別控制項的目的（例如 `Text` ，、 `Placeholder` 、 `Assign` ）。
 - **其他**：不是版面配置或系結的所有屬性或 helper 方法，位於同一行或多行。
 - **版面**配置：版面配置會向外排序：資料列和資料行、版面配置選項、邊界、大小、填補和內容對齊。
 - **Bind**：資料系結會在方法鏈的結尾執行，每一行有一個系結屬性。 如果 [*預設*可系結] 屬性已系結，則應該位於方法鏈的結尾。
