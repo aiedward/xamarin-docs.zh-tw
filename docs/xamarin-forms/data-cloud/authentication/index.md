@@ -1,29 +1,32 @@
 ---
-title: Xamarin.表單網頁 服務身份驗證
-description: 本指南介紹如何將身份驗證服務集成到 Xamarin.Forms 應用程式中,使用戶能夠共用後端,同時僅有權訪問自己的數據。
-ms.prod: xamarin
-ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/27/2019
-ms.openlocfilehash: c3ad061953b08ef12bea7b6a63b7c39bbd89a5f6
-ms.sourcegitcommit: 2a8eb8bce427e72d4e7edd06ce432e19f17dcdd7
+title: Xamarin.FormsWeb 服務驗證
+description: 本指南說明如何將驗證服務整合到 Xamarin.Forms 應用程式中，讓使用者能夠共用後端，而只能存取自己的資料。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 59130739617f38ce32e0d241f8e068cf077997ac
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80388573"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136080"
 ---
-# <a name="xamarinforms-web-service-authentication"></a>Xamarin.表單網頁 服務身份驗證
+# <a name="xamarinforms-web-service-authentication"></a>Xamarin.FormsWeb 服務驗證
 
 ## <a name="authenticate-a-restful-web-service"></a>[驗證 RESTful Web 服務](rest.md)
 
-HTTP 支援使用多種身份驗證機制來控制對資源的訪問。 基本身份驗證僅向具有正確憑據的用戶端提供對資源的訪問許可權。 本文介紹如何使用基本身份驗證來保護對 RESTful Web 服務資源的訪問。
+HTTP 支援使用數個驗證機制來控制資源的存取權。 基本驗證僅提供資源的存取權給具有正確認證的用戶端。 本文說明如何使用基本驗證來保護 RESTful web 服務資源的存取。
 
 ## <a name="authenticate-users-with-azure-active-directory-b2c"></a>[使用 Azure Active Directory B2C 驗證使用者](azure-ad-b2c.md)
 
-Azure Active Directory B2C 是適用於取用者導向 Web 與行動應用程式的雲端身分識別管理解決方案。 本文介紹如何使用 Microsoft 身份驗證庫 (MSAL) 和 Azure 活動目錄 B2C 將消費者識別管理整合到 Xamarin.Forms 應用程式中。
+Azure Active Directory B2C 是適用於取用者導向 Web 與行動應用程式的雲端身分識別管理解決方案。 本文說明如何使用 Microsoft 驗證程式庫（MSAL）和 Azure Active Directory B2C，將取用者身分識別管理整合到 Xamarin.Forms 應用程式中。
 
-## <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>[使用 Azure Cosmos DB 文件資料庫和 Xamarin 驗證使用者。](azure-cosmosdb-auth.md)
+## <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinformsazure-cosmosdb-authmd"></a>[使用 Azure Cosmos DB 檔資料庫來驗證使用者，以及Xamarin.Forms](azure-cosmosdb-auth.md)
 
-Azure Cosmos DB 文件資料庫支援分區集合,該集合可以跨多個伺服器和分區,同時支援無限的存儲和輸送量。 本文介紹如何將訪問控制與分區集合相結合,以便使用者只能在 Xamarin.Forms 應用程式中訪問自己的文檔。
+Azure Cosmos DB 檔資料庫支援分割的集合，可以跨越多個伺服器和資料分割，同時支援無限制的儲存體和輸送量。 本文說明如何結合存取控制與分割的集合，讓使用者只能在應用程式中存取自己的檔 Xamarin.Forms 。

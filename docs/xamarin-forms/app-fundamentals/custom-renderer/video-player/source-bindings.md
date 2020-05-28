@@ -1,22 +1,25 @@
 ---
-title: 將影片來源繫結至播放程式
-description: 本文說明如何使用 Xamarin.Forms 將影片來源繫結至影片播放程式。
-ms.prod: xamarin
-ms.assetid: 504E0C7E-051A-4AF2-B654-BAB4D0957928
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 3dfdb83f99e7b15866abcc4980473ddf075dff69
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: 本文說明如何使用將影片來源系結至影片播放機 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771773"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133727"
 ---
 # <a name="binding-video-sources-to-the-player"></a>將影片來源繫結至播放程式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 當 `VideoPlayer` 檢視的 `Source` 屬性設定為新影片檔案時，會停止播放現有的影片並開始播放新影片。 如 [**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 範例的 [Select Web Video] \(選取網路影片\)**** 頁面所示。 此頁面包含 `ListView`，以及從 **App.XAML** 檔案參考的三部影片標題：
 
@@ -75,7 +78,7 @@ namespace VideoPlayerDemos
 
 當頁面第一次載入時，不會在 `ListView` 中選取任何項目，因此您必須選取一個才能開始播放影片：
 
-[![選擇網路視訊](source-bindings-images/selectwebvideo-small.png "選擇網路視訊")](source-bindings-images/selectwebvideo-large.png#lightbox "選擇網路視訊")
+[![選取網路影片](source-bindings-images/selectwebvideo-small.png "選取網路影片")](source-bindings-images/selectwebvideo-large.png#lightbox "選取網路影片")
 
 `VideoPlayer` 的 `Source` 屬性受到可繫結屬性的支援，這表示它可以是資料繫結的目標。 如 [Bind to VideoPlayer] \(繫結至 VideoPlayer\)**** 頁面所示。 **BindToVideoPlayer.XAML** 檔案中的標記支援下列類別，其中封裝影片標題和對應的 `VideoSource` 物件：
 

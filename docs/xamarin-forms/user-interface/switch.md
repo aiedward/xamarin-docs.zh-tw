@@ -1,48 +1,51 @@
 ---
-title: Xamarin. Forms 參數
-description: '[Xamarin] 參數是一種按鈕類型，可由使用者操作以在 [開啟] 和 [關閉] 狀態之間切換。 本文說明如何使用 Switch 類別來顯示切換的 UI 元素。'
-ms.prod: xamarin
-ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 07/18/2019
-ms.openlocfilehash: 88655aabdbd32db63aaf3330a18b0ad8105ea26c
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+title: Xamarin.Forms參數
+description: Xamarin.Forms參數是一種按鈕類型，可由使用者操作以在 [開啟] 和 [關閉] 狀態之間切換。 本文說明如何使用 Switch 類別來顯示切換的 UI 元素。
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a5c2583b7632acdfa7d8439dc96b3964fa3cfcab
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "78291892"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136236"
 ---
-# <a name="xamarinforms-switch"></a>Xamarin. Forms 參數
+# <a name="xamarinforms-switch"></a>Xamarin.Forms參數
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-[Xamarin] [`Switch`](xref:Xamarin.Forms.Switch)控制項是水準切換按鈕，可由使用者操作以切換 [開啟] 和 [關閉] 狀態（以 `boolean` 值表示）。 `Switch` 類別繼承自[`View`](xref:Xamarin.Forms.View)。
+Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) 控制項是水準切換按鈕，可由使用者操作以在開啟和關閉狀態之間切換，這會以 `boolean` 值表示。 `Switch`類別繼承自 [`View`](xref:Xamarin.Forms.View) 。
 
-下列螢幕擷取畫面顯示 iOS 和 Android 上的 [**開啟**] 和 [**關閉**] 切換狀態中的 `Switch` 控制項：
+下列螢幕擷取畫面會在 `Switch` iOS 和 Android 上的 [**開啟**] 和 [**關閉**] 切換狀態中顯示控制項：
 
 ![IOS 和 Android 上開啟和關閉狀態的切換畫面快照](switch-images/switch-states-default.png "IOS 和 Android 上的交換器")
 
-`Switch` 控制項會定義下列屬性：
+`Switch`控制項會定義下列屬性：
 
-* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)是指出 `Switch` 是否**開啟**的 `boolean` 值。
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是一種 `Color`，會影響在**切換或狀態**下呈現 `Switch` 的方式。
-* `ThumbColor` 是切換捲動方塊的 `Color`。
+* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)這是 `boolean` 指出是否開啟的值 `Switch` 。 **on**
+* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是 `Color` ，它會影響 `Switch` 在切換或狀態下呈現的方式**on**。
+* `ThumbColor`是 `Color` 切換捲動方塊的。
 
-這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示可以將 `Switch` 樣式化，並成為資料系結的目標。
+這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示 `Switch` 可以設定樣式，並作為資料系結的目標。
 
-`Switch` 控制項會定義當 `IsToggled` 屬性變更時（不論是透過使用者操作，還是當應用程式設定 `IsToggled` 屬性時，所引發的 `Toggled` 事件）。 隨附 `Toggled` 事件的 `ToggledEventArgs` 物件具有名為 `Value`的單一屬性，其類型為 `bool`。 當引發事件時，`Value` 屬性的值會反映 `IsToggled` 屬性的新值。
+`Switch`控制項會定義 `Toggled` 當 `IsToggled` 屬性變更時（不論是透過使用者操作，還是當應用程式設定屬性時，所引發的事件） `IsToggled` 。 `ToggledEventArgs`伴隨事件的物件 `Toggled` 具有名為的單一屬性 `Value` ，其類型為 `bool` 。 當引發事件時，屬性的值會 `Value` 反映屬性的新值 `IsToggled` 。
 
 ## <a name="create-a-switch"></a>建立交換器
 
-`Switch` 可以在 XAML 中具現化。 其 `IsToggled` 屬性可以設定為切換 `Switch`。 根據預設，`IsToggled` 屬性會 `false`。 下列範例顯示如何使用選擇性的 `IsToggled` 屬性集，在 XAML 中具現化 `Switch`：
+`Switch`可以在 XAML 中具現化。 其 `IsToggled` 屬性可以設定為切換 `Switch` 。 根據預設， `IsToggled` 屬性為 `false` 。 下列範例顯示如何 `Switch` 在 XAML 中使用選擇性屬性集來具現化 `IsToggled` ：
 
 ```xaml
 <Switch IsToggled="true"/>
 ```
 
-您也可以在程式碼中建立 `Switch`：
+`Switch`也可以在程式碼中建立：
 
 ```csharp
 Switch switchControl = new Switch { IsToggled = true };
@@ -50,32 +53,32 @@ Switch switchControl = new Switch { IsToggled = true };
 
 ## <a name="switch-appearance"></a>切換外觀
 
-除了[`Switch`](xref:Xamarin.Forms.Switch)繼承自[`View`](xref:Xamarin.Forms.View)類別的屬性之外，`Switch` 也會定義 `OnColor` 和 `ThumbColor` 屬性。 `OnColor` 屬性可以設定為在切換至其 [**開啟**] 狀態時定義 `Switch` 色彩，而且可以設定 [`ThumbColor`] 屬性來定義切換捲動方塊的 `Color`。 下列範例示範如何使用下列屬性設定，在 XAML 中具現化 `Switch`：
+除了 [`Switch`](xref:Xamarin.Forms.Switch) 繼承自類別的屬性之外 [`View`](xref:Xamarin.Forms.View) ，也會 `Switch` 定義 `OnColor` 和 `ThumbColor` 屬性。 `OnColor`屬性可以設定為 `Switch` 在切換到其 [**開啟**] 狀態時定義色彩，而 `ThumbColor` 屬性可以設定為定義 `Color` 參數捲動方塊的。 下列範例示範如何 `Switch` 在 XAML 中使用這些屬性集來具現化：
 
 ```xaml
 <Switch OnColor="Orange"
         ThumbColor="Green" />
 ```
 
-在程式碼中建立 `Switch` 時，也可以設定屬性：
+在程式碼中建立時，也可以設定屬性 `Switch` ：
 
 ```csharp
 Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 ```
 
-下列螢幕擷取畫面顯示其 [**開啟**] 和 [**關閉**] 切換狀態中的 `Switch`，並已設定 `OnColor` 和 `ThumbColor` 屬性：
+下列螢幕擷取畫面顯示在 `Switch` 其 [**開啟**] 和 [**關閉**] 切換狀態中， `OnColor` 並設定了和 `ThumbColor` 屬性：
 
 ![IOS 和 Android 上開啟和關閉狀態的切換畫面快照](switch-images/switch-states-colors.png "IOS 和 Android 上的交換器")
 
 ## <a name="respond-to-a-switch-state-change"></a>回應交換器狀態變更
 
-當 `IsToggled` 屬性變更時（不論是透過使用者操作，或當應用程式設定 `IsToggled` 屬性時），都會引發 `Toggled` 事件。 您可以註冊此事件的事件處理常式，以回應變更：
+當 `IsToggled` 屬性變更時，不論是透過使用者操作，或當應用程式設定 `IsToggled` 屬性時，都會 `Toggled` 引發事件。 您可以註冊此事件的事件處理常式，以回應變更：
 
 ```xaml
 <Switch Toggled="OnToggled" />
 ```
 
-程式碼後置檔案包含 `Toggled` 事件的處理常式：
+程式碼後置檔案包含事件的處理常式 `Toggled` ：
 
 ```csharp
 void OnToggled(object sender, ToggledEventArgs e)
@@ -84,9 +87,9 @@ void OnToggled(object sender, ToggledEventArgs e)
 }
 ```
 
-事件處理常式中的 `sender` 引數是負責引發此事件的 `Switch`。 您可以使用 `sender` 屬性來存取 `Switch` 物件，或區分多個共用相同 `Toggled` 事件處理常式的 `Switch` 物件。
+`sender`事件處理常式中的引數是 `Switch` 負責引發此事件。 您可以使用 `sender` 屬性來存取 `Switch` 物件，或區別 `Switch` 共用同一個事件處理常式的多個物件 `Toggled` 。
 
-您也可以在程式碼中指派 `Toggled` 事件處理常式：
+`Toggled`事件處理常式也可以在程式碼中指派：
 
 ```csharp
 Switch switchControl = new Switch {...};
@@ -98,7 +101,7 @@ switchControl.Toggled += (sender, e) =>
 
 ## <a name="data-bind-a-switch"></a>資料系結參數
 
-您可以使用資料系結和觸發程式來回應 `Switch` 變更切換狀態，以消除 `Toggled` 事件處理常式。
+您 `Toggled` 可以使用資料系結和觸發程式來回應變更的切換狀態，以消除事件處理常式 `Switch` 。
 
 ```xaml
 <Switch x:Name="styleSwitch" />
@@ -116,15 +119,15 @@ switchControl.Toggled += (sender, e) =>
 </Label>
 ```
 
-在此範例中， [`Label`](xref:Xamarin.Forms.Label)會使用 `DataTrigger` 中的系結運算式來監視名為 `styleSwitch`之 `Switch` 的 `IsToggled` 屬性。 當這個屬性變成 `true`時，`Label` 的 `FontAttributes` 和 `FontSize` 屬性會變更。 當 `IsToggled` 屬性回到 `false`時，`Label` 的 `FontAttributes` 和 `FontSize` 屬性會重設為其初始狀態。
+在此範例中，會使用中的系結 [`Label`](xref:Xamarin.Forms.Label) 運算式 `DataTrigger` 來監視 `IsToggled` 名為之的屬性 `Switch` `styleSwitch` 。 當這個屬性變成時 `true` ，的 `FontAttributes` 和 `FontSize` 屬性 `Label` 就會變更。 當 `IsToggled` 屬性回到時 `false` ，的 `FontAttributes` 和 `FontSize` 屬性 `Label` 會重設為其初始狀態。
 
-如需觸發程式的詳細資訊，請參閱[Xamarin。](~/xamarin-forms/app-fundamentals/triggers.md)
+如需觸發程式的詳細資訊，請參閱[ Xamarin.Forms 觸發](~/xamarin-forms/app-fundamentals/triggers.md)程式。
 
 ## <a name="disable-a-switch"></a>停用交換器
 
-應用程式可能會進入狀態，其中切換的 `Switch` 不是有效的作業。 在這種情況下，`Switch` 可以藉由將其 `IsEnabled` 屬性設定為 `false`來停用。 這會讓使用者無法操作 `Switch`。
+應用程式可能會進入正在切換的狀態，而 `Switch` 這不是有效的作業。 在這種情況下， `Switch` 可以藉由將其 `IsEnabled` 屬性設為來停用 `false` 。 這會讓使用者無法操作 `Switch` 。
 
 ## <a name="related-links"></a>相關連結
 
 * [切換示範](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-* [Xamarin. 表單觸發程式](~/xamarin-forms/app-fundamentals/triggers.md)
+* [Xamarin.Forms導致](~/xamarin-forms/app-fundamentals/triggers.md)
