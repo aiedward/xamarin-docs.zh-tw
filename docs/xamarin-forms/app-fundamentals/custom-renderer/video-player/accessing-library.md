@@ -1,22 +1,14 @@
 ---
-title: 存取裝置的影片庫
-description: 本文說明如何使用 Xamarin.Forms 存取裝置影片播放程式應用程式中的影片庫。
-ms.prod: xamarin
-ms.assetid: 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 2f9de881621b6634b95bdca56a0aa9e7b9f2bb98
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771858"
+標題：描述： ' 本文說明如何使用，在影片播放機應用程式中存取裝置的影片庫 Xamarin.Forms 。
+assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 現今多數行動裝置和桌上型電腦都能使用裝置的相機錄影。 然後使用者建立的影片會以檔案的形式儲存在裝置上。 這些檔案可以從影像庫中擷取，並透過 `VideoPlayer` 類別進行播放，與其他影片無異。
 
@@ -40,7 +32,7 @@ namespace FormsVideoLibrary
 
 ### <a name="the-ios-video-picker"></a>iOS 影片選擇器
 
-iOS`VideoPicker`使用[`UIImagePickerController`](xref:UIKit.UIImagePickerController)iOS 訪問圖像庫,指定應將其限制`MediaType`在 iOS 屬性中的視頻(稱為"電影")。 請注意，`VideoPicker` 會明確實作 `IVideoPicker` 介面。 另外也請注意 `Dependency` 屬性會將此類別識別為相依性服務。 以下是可讓 Xamarin.Forms 尋找平台專案中相依性服務的兩個需求：
+IOS 會 `VideoPicker` 使用 ios [`UIImagePickerController`](xref:UIKit.UIImagePickerController) 來存取影像庫，並指定應該限制為 iOS 屬性中的影片（稱為「電影」） `MediaType` 。 請注意，`VideoPicker` 會明確實作 `IVideoPicker` 介面。 另外也請注意 `Dependency` 屬性會將此類別識別為相依性服務。 以下是允許 Xamarin.Forms 在平臺專案中尋找相依性服務的兩項需求：
 
 ```csharp
 using System;
@@ -192,7 +184,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-video-picker"></a>UWP 影片選擇器
 
-`IVideoPicker`介面的 UWP 使用[`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/)UWP 。 它會先在圖片庫中搜尋檔案，並限制檔案類型為 MP4 和 WMV (Windows Media 視訊)：
+UWP 的介面執行會 `IVideoPicker` 使用 uwp [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) 。 它會先在圖片庫中搜尋檔案，並限制檔案類型為 MP4 和 WMV (Windows Media 視訊)：
 
 ```csharp
 using System;

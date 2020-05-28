@@ -1,32 +1,35 @@
 ---
-title: 使用路徑和區域裁剪
-description: 本文說明如何使用 SkiaSharp 剪輯圖形路徑特定區域，以及如何建立區域，並示範此範例程式碼。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/16/2017
-ms.openlocfilehash: 1daf4822dd7debe98aabd58d42cb6ed29f95b90d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a4bb6c30ada13691146d00d2094df8f13ca453b9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759350"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140253"
 ---
 # <a name="clipping-with-paths-and-regions"></a>使用路徑和區域裁剪
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_使用路徑來剪輯圖形，以特定的區域，並建立區域_
+_使用路徑將圖形裁剪到特定區域，以及建立區域_
 
-它有時候是必要的圖形轉譯限於特定區域。 這就所謂*裁剪*。 您可以使用 裁剪的特殊效果，例如透過 keyhole 看到 monkey 的這個映像：
+有時必須將圖形的呈現限制在特定區域。 這就是所謂的*裁剪*。 您可以使用裁剪來取得特殊效果，例如透過鑰匙孔所看到的猴子影像：
 
 ![透過鑰匙孔的猴子](clipping-images/clippingsample.png)
 
-*裁剪區域*是在其中呈現圖形在螢幕的區域。 顯示裁剪區域之外的任何項目不會呈現。 的裁剪區域通常會定義由矩形或[ `SKPath` ](xref:SkiaSharp.SKPath)物件，但您可以另外定義裁剪區域，使用[ `SKRegion` ](xref:SkiaSharp.SKRegion)物件。 這兩種類型的物件在第一次會看似相關，因為您可以建立區域路徑中。 不過，您無法從區域建立路徑，而且它們在內部非常不同：路徑是由一連串的線條和曲線組成，而區域則是由一系列的水準掃描線條所定義。
+[*剪切] 區域*是用來呈現圖形的螢幕區域。 不會轉譯在裁剪區域外部顯示的任何內容。 裁剪區域通常是由矩形或物件所定義 [`SKPath`](xref:SkiaSharp.SKPath) ，但是您也可以使用物件來定義裁剪區域 [`SKRegion`](xref:SkiaSharp.SKRegion) 。 這兩種類型的物件一開始看起來是相關的，因為您可以從路徑建立區域。 不過，您無法從區域建立路徑，而且它們在內部非常不同：路徑是由一連串的線條和曲線組成，而區域則是由一系列的水準掃描行所定義。
 
-藉由建立上圖**Monkey 透過 Keyhole**頁面。 [ `MonkeyThroughKeyholePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)類別會定義使用 SVG 資料的路徑，並使用建構函式，從程式資源載入點陣圖：
+上圖是**透過鑰匙孔**頁面建立的猴子。 [`MonkeyThroughKeyholePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)類別會使用 SVG 資料定義路徑，並使用此函式從程式資源載入點陣圖：
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -55,7 +58,7 @@ public class MonkeyThroughKeyholePage : ContentPage
 }
 ```
 
-雖然`keyholePath`物件描述 keyhole 的外框、 完全是任意的座標，以及反映路徑資料已設計時，項目很方便。 基於這個理由，`PaintSurface`處理常式會取得此路徑和呼叫界限`Translate`和`Scale`將路徑移至螢幕的中央，且能夠幾乎一樣高的畫面：
+雖然 `keyholePath` 物件描述的是鑰匙孔的外框，但座標完全是任意的，而且會反映設計路徑資料時的便利。 基於這個理由， `PaintSurface` 處理常式會取得此路徑的界限，並呼叫 `Translate` 和 `Scale` 以將路徑移動到畫面中央，讓它與螢幕的高度相同：
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -91,35 +94,35 @@ public class MonkeyThroughKeyholePage : ContentPage
 }
 ```
 
-但不是會轉譯路徑。 相反地，下列轉換，路徑用來設定與這個陳述式的裁剪區域：
+但不會呈現路徑。 相反地，在轉換之後，會使用路徑來設定含有下列語句的裁剪區域：
 
 ```csharp
 canvas.ClipPath(keyholePath);
 ```
 
-`PaintSurface`處理常式接著會重設的轉換，藉由呼叫`ResetMatrix`及繪製點陣圖，以延伸至全螢幕的高度。 這段程式碼會假設點陣圖是方形，也就是這個特定的點陣圖。 點陣圖為只在裁剪路徑所定義的區域內呈現：
+`PaintSurface`然後，處理常式會使用的呼叫來重設轉換 `ResetMatrix` ，並繪製點陣圖以擴充到螢幕的完整高度。 此程式碼假設點陣圖為方形，此點陣圖為。 點陣圖只會在裁剪路徑所定義的區域內轉譯：
 
 [![透過 [鑰匙孔] 頁面的三重螢幕擷取畫面](clipping-images/monkeythroughkeyhole-small.png)](clipping-images/monkeythroughkeyhole-large.png#lightbox)
 
-裁剪路徑適用於進行轉換時`ClipPath`呼叫方法，而不轉換至作用中的圖形化的物件 （例如點陣圖） 顯示時。 裁剪路徑是以儲存畫布狀態的一部分`Save`方法和還原與`Restore`方法。
+當呼叫方法時，裁剪路徑會受到作用中的轉換 `ClipPath` ，而不是在顯示繪圖物件（例如點陣圖）時生效的轉換。 裁剪路徑是畫布狀態的一部分，會與方法一起儲存 `Save` 並使用 `Restore` 方法還原。
 
-## <a name="combining-clipping-paths"></a>結合裁剪路徑
+## <a name="combining-clipping-paths"></a>合併裁剪路徑
 
-嚴格來說，裁剪區域不會 」 設定 「`ClipPath`方法。 相反地，它被結合現有的裁剪路徑開頭為畫布的大小相等的矩形。 您可以取得的裁剪區域中使用的矩形界限[ `ClipBounds` ](xref:SkiaSharp.SKCanvas.ClipBounds)屬性或有[ `ClipDeviceBounds` ](xref:SkiaSharp.SKCanvas.ClipDeviceBounds)屬性。 `ClipBounds`屬性會傳回`SKRect`值，以反映任何轉換，可能是作用中。 `ClipDeviceBounds`屬性會傳回`RectI`值。 這是整數維度的矩形，並描述在實際的像素尺寸的裁剪區域。
+嚴格來說，方法不會「設定」裁剪區域 `ClipPath` 。 相反地，它會與現有的裁剪路徑結合，其開頭為與畫布大小相等的矩形。 您可以使用屬性或屬性，取得裁剪區域的矩形界限 [`ClipBounds`](xref:SkiaSharp.SKCanvas.ClipBounds) [`ClipDeviceBounds`](xref:SkiaSharp.SKCanvas.ClipDeviceBounds) 。 `ClipBounds`屬性 `SKRect` 會傳回值，以反映任何可能作用中的轉換。 屬性會傳回 `ClipDeviceBounds` `RectI` 值。 這是具有整數維度的矩形，並描述實際圖元維度中的裁剪區域。
 
-呼叫`ClipPath`減少藉由結合新的區域的裁剪區域的裁剪區域。 完整語法[ `ClipPath` ](xref:SkiaSharp.SKCanvas.ClipPath(SkiaSharp.SKPath,SkiaSharp.SKClipOperation,System.Boolean))方法是：
+任何呼叫都會 `ClipPath` 合併裁剪區域與新區域，以減少裁剪區域。 方法的完整語法 [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath(SkiaSharp.SKPath,SkiaSharp.SKClipOperation,System.Boolean)) 為：
 
 ```csharp
 public void ClipPath(SKPath path, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-另外還有[ `ClipRect` ](xref:SkiaSharp.SKCanvas.ClipRect(SkiaSharp.SKRect,SkiaSharp.SKClipOperation,System.Boolean))結合矩形中的裁剪區域的方法：
+另外還有一個 [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect(SkiaSharp.SKRect,SkiaSharp.SKClipOperation,System.Boolean)) 結合裁剪區域與一個矩形的方法：
 
 ```csharp
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-根據預設，結果的裁剪區域是現有的裁剪區域的交集，`SKPath`或是`SKRect`中指定`ClipPath`或`ClipRect`方法。 這示範於**四個圓形交集剪輯**頁面。 `PaintSurface`中的處理常式[ `FourCircleInteresectClipPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs)類別會重複使用相同`SKPath`物件來建立四個重疊圓形，其中每一個可減少透過後續呼叫的裁剪區域`ClipPath`:
+根據預設，產生的裁剪區域是現有裁剪區域和 `SKPath` `SKRect` 或方法中所指定或的交集 `ClipPath` `ClipRect` 。 這會在**四個圓圈相交剪輯**頁面中進行示範。 `PaintSurface`類別中的處理常式會 [`FourCircleInteresectClipPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) 重複使用相同的 `SKPath` 物件來建立四個重迭的圓形，每一個都會透過後續呼叫來減少裁剪區域 `ClipPath` ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -164,27 +167,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-剩下的是下列四個社交圈的交集：
+左邊是這四個圓形的交集：
 
 [![四個 Circle 相交剪輯頁面的三向螢幕擷取畫面](clipping-images//fourcircleintersectclip-small.png)](clipping-images/fourcircleintersectclip-large.png#lightbox)
 
-[ `SKClipOperation` ](xref:SkiaSharp.SKClipOperation)列舉型別有只有兩個成員：
+[`SKClipOperation`](xref:SkiaSharp.SKClipOperation)列舉只有兩個成員：
 
-- `Difference` 從現有的裁剪區域中移除指定的路徑或矩形
+- `Difference`從現有的裁剪區域移除指定的路徑或矩形
 
-- `Intersect` 與指定的路徑或使用現有的裁剪區域的矩形的交集
+- `Intersect`將指定的路徑或矩形與現有的裁剪區域交集
 
-如果您將四個`SKClipOperation.Intersect`中的引數`FourCircleIntersectClipPage`類別`SKClipOperation.Difference`，您會看到下列訊息：
+如果您將類別中的四個 `SKClipOperation.Intersect` 引數取代 `FourCircleIntersectClipPage` 為 `SKClipOperation.Difference` ，則會看到下列內容：
 
 [![四個圓圈相交剪輯頁面與差異作業的三向螢幕擷取畫面](clipping-images//fourcircledifferenceclip-small.png)](clipping-images/fourcircledifferenceclip-large.png#lightbox)
 
-已從裁剪區域設定了四個重疊圓形。
+已從裁剪區域中移除四個重迭的圓形。
 
-**剪輯作業**頁面說明這兩項作業只是一組的圓形之間的差異。 在左側的第一個圓圈會新增至預設剪輯作業的裁剪區域`Intersect`，而右邊的第二個圓圈會新增至裁剪區域的文字標籤所指定的裁剪作業：
+[**剪輯作業**] 頁面說明這兩個作業之間只有一對圓形的差異。 左側的第一個圓圈會加入至具有預設剪輯作業的裁剪區域 `Intersect` ，而右側的第二個圓形則會加入至含有文字標籤所指示之剪輯作業的裁剪區域：
 
 [![[剪輯作業] 頁面的三重螢幕擷取畫面](clipping-images//clipoperations-small.png)](clipping-images/clipoperations-large.png#lightbox)
 
-[ `ClipOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs)類別會定義兩個`SKPaint`物件做為欄位，並再將螢幕分成兩個矩形區域。 這些區域是行動電話是否處於直向或橫向模式而有所不同。 `DisplayClipOp`類別，然後顯示的文字和呼叫`ClipPath`來說明每一個剪輯作業的兩個圓形路徑：
+類別會將 [`ClipOperationsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClipOperationsPage.cs) 兩個 `SKPaint` 物件定義為欄位，然後將螢幕分割成兩個矩形區域。 根據電話是直向或橫向模式，這些區域會有所不同。 `DisplayClipOp`類別接著會顯示文字，並 `ClipPath` 使用兩個圓形路徑呼叫來說明每個剪輯作業：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -245,21 +248,21 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKClipOperation clipOp)
 }
 ```
 
-呼叫`DrawPaint`通常會導致的填滿整個畫布`SKPaint`物件，但在此情況下，方法就會繪製的裁剪區域中。
+呼叫 `DrawPaint` 通常會使整個畫布填滿該 `SKPaint` 物件，但在此情況下，方法只會在裁剪區域內繪製。
 
-## <a name="exploring-regions"></a>瀏覽區域
+## <a name="exploring-regions"></a>探索區域
 
-您也可以定義的裁剪區域[ `SKRegion` ](xref:SkiaSharp.SKRegion)物件。
+您也可以根據物件來定義裁剪區域 [`SKRegion`](xref:SkiaSharp.SKRegion) 。
 
-新建立`SKRegion`物件描述的空白區域。 通常是第一個物件上的呼叫[ `SetRect` ](xref:SkiaSharp.SKRegion.SetRect(SkiaSharp.SKRectI))以便區域描述矩形的區域。 參數`SetRect`已`SKRectI`值&mdash;整數的矩形座標，因為它會指定以像素的矩形。 您可以接著呼叫[ `SetPath` ](xref:SkiaSharp.SKRegion.SetPath(SkiaSharp.SKPath,SkiaSharp.SKRegion))使用`SKPath`物件。 這會建立內部的路徑相同，但裁剪到初始的矩形區域的區域。
+新建立的 `SKRegion` 物件描述空白區域。 通常，第一次呼叫物件是， [`SetRect`](xref:SkiaSharp.SKRegion.SetRect(SkiaSharp.SKRectI)) 區域會描述矩形區域。 的參數 `SetRect` 是 `SKRectI` &mdash; 具有整數座標的矩形值，因為它會指定矩形（以圖元為單位）。 然後，您可以 [`SetPath`](xref:SkiaSharp.SKRegion.SetPath(SkiaSharp.SKPath,SkiaSharp.SKRegion)) 使用 `SKPath` 物件呼叫。 這會建立與路徑內部相同的區域，但會裁剪到初始的矩形區域。
 
-區域也可以藉由呼叫其中修改[ `Op` ](xref:SkiaSharp.SKRegion.Op*)方法多載，這類：
+您也可以呼叫其中一個方法多載來修改該區域 [`Op`](xref:SkiaSharp.SKRegion.Op*) ，如下所示：
 
 ```csharp
 public Boolean Op(SKRegion region, SKRegionOperation op)
 ```
 
-[ `SKRegionOperation` ](xref:SkiaSharp.SKRegionOperation)列舉型別是類似於`SKClipOperation`但有更多成員：
+[`SKRegionOperation`](xref:SkiaSharp.SKRegionOperation)列舉類似于， `SKClipOperation` 但有更多成員：
 
 - `Difference`
 
@@ -273,19 +276,19 @@ public Boolean Op(SKRegion region, SKRegionOperation op)
 
 - `Replace`
 
-您正在使用的區域`Op`上的呼叫會結合為根據參數所指定的地區`SKRegionOperation`成員。 當您最後取得區域適用於裁剪時，則您可以設定為畫布使用裁剪區域[ `ClipRegion` ](xref:SkiaSharp.SKCanvas.ClipRegion(SkiaSharp.SKRegion,SkiaSharp.SKClipOperation))方法`SKCanvas`:
+您要進行呼叫的區域， `Op` 會與根據成員指定為參數的區域結合 `SKRegionOperation` 。 當您最後取得適合用於裁剪的區域時，您可以使用的方法，將其設定為畫布的裁剪區域 [`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion(SkiaSharp.SKRegion,SkiaSharp.SKClipOperation)) `SKCanvas` ：
 
 ```csharp
 public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperation.Intersect)
 ```
 
-下列螢幕擷取畫面顯示六個區域的作業為基礎的裁剪區域。 左邊的圓形是區域所`Op`上，呼叫方法，而正確的圓形是傳遞至的區域`Op`方法：
+下列螢幕擷取畫面顯示以六個區域作業為基礎的裁剪區域。 左圓圈是 `Op` 呼叫方法的區域，而右 circle 則是傳遞給方法的區域 `Op` ：
 
 [![[區域作業] 頁面的三重螢幕擷取畫面](clipping-images//regionoperations-small.png)](clipping-images/regionoperations-large.png#lightbox)
 
-是這些所有結合這些兩個圓形的可能性？ 產生的映像視為其本身中的三個元件，組合`Difference`， `Intersect`，和`ReverseDifference`作業。 組合的總數是兩到三次方，或是 8 個。 遺失的兩個是原始區域 (這會促使不呼叫`Op`完全) 和完全空白的區域。
+這些是結合這兩個圓形的可能性嗎？ 將產生的映射視為三個元件的組合，其本身會出現在 `Difference` 、 `Intersect` 和 `ReverseDifference` 作業中。 總組合數是第三個乘冪，或八個。 遺漏的兩個是原始區域（不會呼叫全部的結果 `Op` ）和完全空白的區域。
 
-是很難用於因為您必須先從該路徑中，建立 路徑，然後按一下 區域，然後再結合多個區域的裁剪區域。 整體結構**區域操作**頁面是非常類似於**剪輯作業**但[ `RegionOperationsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs)類別將畫面，分成六個區域和顯示額外的工作，才能使用此工作的區域：
+使用區域進行裁剪會比較困難，因為您需要先建立路徑，然後再從該路徑中移除區域，再結合多個區域。 [**區域作業**] 頁面的整體結構與**剪輯作業**非常類似，但類別會將 [`RegionOperationsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) 螢幕分割成六個區域，並顯示針對此作業使用區域所需的額外工作量：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -356,20 +359,20 @@ void DisplayClipOp(SKCanvas canvas, SKRect rect, SKRegionOperation regionOp)
 }
 ```
 
-以下是 最大的差別`ClipPath`方法和`ClipRegion`方法：
+方法與方法之間有很大的差異 `ClipPath` `ClipRegion` ：
 
 > [!IMPORTANT]
-> 不同於`ClipPath`方法，`ClipRegion`方法不會受到轉換。
+> 不同于 `ClipPath` 方法， `ClipRegion` 方法不會受到轉換的影響。
 
-若要了解這項差異的基本原理，最好先了解哪些區域。 如果您考慮如何剪輯作業或區域操作可能會在內部實作，它可能看起來很複雜。 正在合併數個可能非常複雜的路徑，以及外框的結果的路徑可能是演算法的夢魘。
+若要瞭解這種差異的基本原理，請務必瞭解什麼是區域。 如果您已考慮剪輯作業或區域作業在內部的執行方式，可能會很複雜。 結合了數個可能非常複雜的路徑，而結果路徑的外框可能會有極大的演算法。
 
-如果每個路徑會縮減為一系列的水平的掃描線，例如舊式真空 tube Tv 中，已大幅簡化此作業。 每一條掃描線是只要一條水平線起始點與結束點。 比方說，圓形半徑為 10 個像素能分解成 20 的水平的掃描行，其中每一個位於圓形的左側部分在開始和結束的右側部分。 結合兩個圓形區域中的任何作業變成非常簡單，因為它是簡單的檢查對應的掃描線的每個組的開始和結束座標。
+如果每個路徑都縮減成一系列的水準掃描線（例如，在舊式的清理電子管電視中），這項作業就會大幅簡化。 每個掃描行只是一個具有起點和一個結束點的水平線。 例如，半徑為10圖元的圓形可以分解成20個水準掃描線條，其中每個都是從圓形的左邊部分開始，並在右邊結束。 結合兩個圓形與任何區域作業會變得非常簡單，因為它只是檢查每一對對應掃描線的開始和結束座標。
 
-這是區域的意義：定義區域的一系列水準掃描線條。
+這是區域的意義：一系列定義區域的水準掃描線條。
 
-不過，當區域會縮減為一系列的掃描程式行，這些線條根據特定的像素尺寸的掃描。 嚴格來說，區域不是向量圖形物件。 很接近在本質上比路徑壓縮單色點陣圖。 因此，區域無法縮放或旋轉而不會遺失精確度，並因此不會轉換時用來裁剪區域。
+不過，當區域縮小為一系列的掃描線時，這些掃描線條會以特定圖元維度為基礎。 嚴格來說，此區域不是向量繪圖物件。 比起路徑，其本質上與壓縮的單色點陣圖更接近。 因此，區域無法縮放或旋轉，而不會失去精確度，因此在用於裁剪區域時，不會轉換它們。
 
-不過，您可以將轉換套用到進行繪製的區域。 **區域小畫家**程式生動示範的區域內部的本質。 [ `RegionPaintPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs)類別會建立`SKRegion`物件根據`SKPath`10 單位 radius 圓形。 轉換，然後展開該圓形來填滿頁面：
+不過，您可以將轉換套用到區域以供繪製之用。 **區域繪製**程式生動會示範區域的內部本質。 [`RegionPaintPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionPaintPage.cs)類別會 `SKRegion` 根據 `SKPath` 10 單位半徑圓形的來建立物件。 然後，轉換會展開該圓形以填滿頁面：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -420,13 +423,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`DrawRegion`呼叫會填滿的區域以橘色表示，雖然`DrawPath`呼叫以進行比較的藍色 strokes 的原始路徑：
+此 `DrawRegion` 呼叫會以橙色填滿區域，而 `DrawPath` 呼叫會將原始路徑以藍色表示以進行比較：
 
 [![[區域繪製] 頁面的三重螢幕擷取畫面](clipping-images//regionpaint-small.png)](clipping-images/regionpaint-large.png#lightbox)
 
-區域是一系列的不連續的座標。
+區域顯然是一系列的離散座標。
 
-如果您不需要使用與您的裁剪區域的轉換，您可以為剪輯，使用區域**四個-很**頁面會示範。 [ `FourLeafCloverPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs)類別建構的複合區域從四個循環的區域、 裁剪區域中，以設定該複合的區域，然後繪製以一系列的 360 動畫從頁面中央的直線，線條：
+如果您不需要在與裁剪區域連接時使用轉換，可以使用區域進行裁剪，如**四分葉四葉草**頁面所示。 [`FourLeafCloverPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs)類別會從四個迴圈區域來建立複合區域、將該複合區域設定為裁剪區域，然後從頁面中央繪製一連串的360直線 mouseleave：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -506,7 +509,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-它真的看起來不像四個-很，但可能難以呈現而不裁剪的影像：
+它看起來不像四個分葉的四葉草，但它是一個可能難以轉譯而不需要裁剪的影像：
 
 [![四個分葉四葉草頁面的三向螢幕擷取畫面](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
 

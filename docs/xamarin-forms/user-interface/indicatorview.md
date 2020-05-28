@@ -1,30 +1,33 @@
 ---
-title: Xamarin. Forms IndicatorView
-description: IndicatorView 是一個控制項，它會在 CarouselView 中顯示表示專案數目和目前位置的指標。
-ms.prod: xamarin
-ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/27/2020
-ms.openlocfilehash: e76cf6e766a95994fa2862deb9eb73928f4769a2
-ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
+title: Xamarin.FormsIndicatorView
+description: ''
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a6bf11fd80dd5226ae26dd392e80f784a9b296bf
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "78291754"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131977"
 ---
-# <a name="xamarinforms-indicatorview"></a>Xamarin. Forms IndicatorView
+# <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
-`IndicatorView` 是一種控制項，它會在 `CarouselView`中顯示表示專案數目和目前位置的指標：
+`IndicatorView`是一個控制項，它會在中顯示表示專案數和目前位置的指標 `CarouselView` ：
 
 [![CarouselView 和 IndicatorView （在 iOS 和 Android 上）的螢幕擷取畫面](indicatorview-images/circles.png "IndicatorView 圓形")](indicatorview-images/circles-large.png#lightbox "IndicatorView 圓形")
 
-`IndicatorView` 適用于 iOS 和 Android 平臺上的 Xamarin. Forms 4.4，以及4.5 的通用 Windows 平臺。 不過，它目前是實驗性，而且只能透過將下列程式程式碼新增至 iOS 上的 `AppDelegate` 類別，或在 Android 上的 `MainActivity` 類別中使用，然後再呼叫 `Forms.Init`：
+`IndicatorView`適用于 Xamarin.Forms iOS 和 Android 平臺上的4.4，以及4.5 的通用 Windows 平臺。 不過，它目前是實驗性，而且只能透過將下列程式程式碼新增至您的 `AppDelegate` iOS 或 `MainActivity` Android 上的類別，然後再呼叫 `Forms.Init` ：
 
 ```csharp
 Forms.SetFlags("IndicatorView_Experimental");
@@ -32,23 +35,23 @@ Forms.SetFlags("IndicatorView_Experimental");
 
 `IndicatorView` 會定義下列屬性：
 
-- `Count`，屬於 `int`類型的指標數目。
-- `HideSingle`，屬於 `bool`類型，指出指標是否應在只有一個存在時隱藏。 預設值是 `true`。
-- `IndicatorColor`，屬於 `Color`的型別，也就是指標的色彩。
-- `IndicatorSize`，屬於 `double`的類型，也就是指標的大小。 預設值為6.0。
-- `Layout<View>`類型的 `IndicatorLayout`，會定義用來呈現 `IndicatorView`的版面配置類別。 這個屬性是由 Xamarin 所設定，而且通常不需要由開發人員設定。
-- `IndicatorTemplate`，屬於 `DataTemplate`類型，這是定義每個指標外觀的範本。
-- `IndicatorsShape`，屬於 `IndicatorShape`類型，每個指標的形狀。
-- `ItemsSource`，屬於 `IEnumerable`類型，這是將顯示指標的集合。 設定 [`CarouselView.IndicatorView`] 屬性時，將會自動設定此屬性。
-- `MaximumVisible`，屬於 `int`類型，這是可見指標的最大數目。 預設值是 `int.MaxValue`。
-- `Position`，屬於 `int`的類型，這是目前選取的指標索引。 這個屬性會使用 `TwoWay` 系結。 設定 [`CarouselView.IndicatorView`] 屬性時，將會自動設定此屬性。
-- `SelectedIndicatorColor`，屬於 `Color`類型的指標色彩，表示 `CarouselView`中目前的專案。
+- `Count`，屬於類型 `int` ，指標數目。
+- `HideSingle`，屬於類型 `bool` ，表示當指標只有一個存在時是否應該隱藏。 預設值是 `true`。
+- `IndicatorColor`，屬於類型 `Color` ，指標的色彩。
+- `IndicatorSize`，屬於類型 `double` ，指標的大小。 預設值為6.0。
+- `IndicatorLayout`，屬於類型 `Layout<View>` ，可定義用來呈現的版面配置類別 `IndicatorView` 。 這個屬性是由所設定 Xamarin.Forms ，而且通常不需要由開發人員設定。
+- `IndicatorTemplate`，屬於類型 `DataTemplate` ，這是定義每個指標外觀的範本。
+- `IndicatorsShape`，屬於類型 `IndicatorShape` ，每個指標的形狀。
+- `ItemsSource`，屬於類型 `IEnumerable` ，將顯示指標的集合。 當設定屬性時，將會自動設定此屬性 `CarouselView.IndicatorView` 。
+- `MaximumVisible`，屬於類型 `int` ，這是可見指標的最大數目。 預設值是 `int.MaxValue`。
+- `Position`，屬於類型 `int` ，這是目前選取的指標索引。 這個屬性會使用系結 `TwoWay` 。 當設定屬性時，將會自動設定此屬性 `CarouselView.IndicatorView` 。
+- `SelectedIndicatorColor`，屬於類型 `Color` ，表示中目前專案的指標色彩 `CarouselView` 。
 
-這些屬性是由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件所支援，這表示它們可以是資料系結的目標，以及樣式化的。
+這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標，以及樣式化的。
 
 ## <a name="create-an-indicatorview"></a>建立 IndicatorView
 
-下列範例顯示如何在 XAML 中具現化 `IndicatorView`：
+下列範例顯示如何 `IndicatorView` 在 XAML 中具現化：
 
 ```xaml
 <StackLayout>
@@ -65,19 +68,19 @@ Forms.SetFlags("IndicatorView_Experimental");
 </StackLayout>
 ```
 
-在此範例中，`IndicatorView` 會在 `CarouselView`之下轉譯，而 `CarouselView`中的每個專案都有一個指標。 `IndicatorView` 會藉由將 `CarouselView.IndicatorView` 屬性設定為 `IndicatorView` 物件來填入資料。 每個指標都是淺灰色圓圈，而表示 `CarouselView` 中目前專案的指標是暗灰色。
+在此範例中， `IndicatorView` 會在底下呈現 `CarouselView` ，其中每個專案都有一個指標 `CarouselView` 。 `IndicatorView`會藉由將屬性設定為物件，來填入資料 `CarouselView.IndicatorView` `IndicatorView` 。 每個指標都是淺灰色圓形，而表示中目前專案的指標 `CarouselView` 是暗灰色。
 
 > [!IMPORTANT]
-> 設定 `CarouselView.IndicatorView` 屬性會導致 `IndicatorView.Position` 屬性系結至 `CarouselView.Position` 屬性，而 `IndicatorView.ItemsSource` 屬性系結至 `CarouselView.ItemsSource` 屬性。
+> 設定 `CarouselView.IndicatorView` 屬性會導致屬性系結 `IndicatorView.Position` 至 `CarouselView.Position` 屬性，並將 `IndicatorView.ItemsSource` 屬性系結至屬性 `CarouselView.ItemsSource` 。
 
 ## <a name="change-indicator-shape"></a>變更指標圖形
 
-`IndicatorView` 類別具有 `IndicatorsShape` 屬性，可決定指標的形狀。 這個屬性可以設定為其中一個 `IndicatorShape` 列舉成員：
+`IndicatorView`類別具有 `IndicatorsShape` 屬性，可決定指標的形狀。 這個屬性可以設定為其中一個 `IndicatorShape` 列舉成員：
 
-- `Circle` 指定指標形狀將會迴圈。 此為 `IndicatorView.IndicatorsShape` 屬性的預設值。
-- `Square` 表示指標形狀將會是正方形。
+- `Circle`指定指標形狀將會迴圈。 此為 `IndicatorView.IndicatorsShape` 屬性的預設值。
+- `Square`表示指標圖形將為正方形。
 
-下列範例顯示設定為使用方形指標的 `IndicatorView`：
+下列範例顯示 `IndicatorView` 設定為使用方形指標的：
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -88,9 +91,9 @@ Forms.SetFlags("IndicatorView_Experimental");
 
 ## <a name="change-indicator-size"></a>變更指標大小
 
-`IndicatorView` 類別具有類型為 `double`的 `IndicatorSize` 屬性，可判斷指標在裝置獨立單位中的大小。 這個屬性的預設值為6.0。
+`IndicatorView`類別具有 `IndicatorSize` 類型的屬性 `double` ，可判斷指標的大小（以與裝置無關的單位表示）。 這個屬性的預設值為6.0。
 
-下列範例顯示設定為顯示較大指標的 `IndicatorView`：
+下列範例顯示 `IndicatorView` 設定為顯示較大指標的：
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -99,9 +102,9 @@ Forms.SetFlags("IndicatorView_Experimental");
 
 ## <a name="limit-the-number-of-indicators-displayed"></a>限制顯示的指示器數目
 
-`IndicatorView` 類別具有類型 `int`的 `MaximumVisible` 屬性，可決定可見指標的最大數目。
+`IndicatorView`類別具有 `MaximumVisible` 類型的屬性 `int` ，可決定可見指標的最大數目。
 
-下列範例顯示設定為最多顯示六個指標的 `IndicatorView`：
+下列範例顯示 `IndicatorView` 設定為顯示最多六個指標的：
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -110,7 +113,7 @@ Forms.SetFlags("IndicatorView_Experimental");
 
 ## <a name="define-indicator-appearance"></a>定義指標外觀
 
-將 [`IndicatorView.IndicatorTemplate`] 屬性設定為 [ [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)]，即可定義每個指標的外觀：
+將屬性設定為，即可定義每個指標的外觀 `IndicatorView.IndicatorTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
 
 ```xaml
 <StackLayout>
@@ -133,13 +136,13 @@ Forms.SetFlags("IndicatorView_Experimental");
 </StackLayout>
 ```
 
-在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)中指定的元素會定義每個指標的外觀。 在此範例中，每個指標都是使用 `FontImage` 標記延伸顯示字型圖示的[`Image`](xref:Xamarin.Forms.Image) 。
+在中指定的元素會 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義每個指標的外觀。 在此範例中，每個指標都是 [`Image`](xref:Xamarin.Forms.Image) ，它會使用標記延伸顯示字型圖示 `FontImage` 。
 
 下列螢幕擷取畫面顯示使用字型圖示呈現的指標：
 
 [![IOS 和 Android 上樣板化 IndicatorView 的螢幕擷取畫面](indicatorview-images/templated.png "樣板化 IndicatorView")](indicatorview-images/templated-large.png#lightbox "樣板化 IndicatorView")
 
-如需 `FontImage` 標記延伸的詳細資訊，請參閱[FontImage 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension)。
+如需標記延伸的詳細資訊 `FontImage` ，請參閱[FontImage 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension)。
 
 ## <a name="related-links"></a>相關連結
 

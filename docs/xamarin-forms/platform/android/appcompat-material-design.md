@@ -1,37 +1,41 @@
 ---
-title: 新增 AppCompat 和材質設計
-description: 本文說明如何轉換現有的 Xamarin Android 應用程式，以使用 AppCompat 和材質設計。
-ms.prod: xamarin
-ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/27/2017
-ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+title: ''
+description: 本文說明如何轉換現有的 Xamarin.Forms Android 應用程式，以使用 AppCompat 和材質設計。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728326"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135703"
 ---
 # <a name="adding-appcompat-and-material-design"></a>新增 AppCompat 和材質設計
 
-_請遵循下列步驟來轉換現有的 Xamarin Android 應用程式，以使用 AppCompat 和材質設計_
+_請遵循下列步驟來轉換現有的 Xamarin.Forms Android 應用程式，以使用 AppCompat 和材質設計_
 
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
 ## <a name="overview"></a>概觀
 
-這些指示說明如何更新現有的 Xamarin Android 應用程式，以使用 AppCompat 程式庫，並在 Android 版本的 Xamarin. Forms 應用程式中啟用材質設計。
+這些指示說明如何更新您現有 Xamarin.Forms 的 android 應用程式，以使用 AppCompat 程式庫，並在 Android 版本的應用程式中啟用材質設計 Xamarin.Forms 。
 
-### <a name="1-update-xamarinforms"></a>1. 更新 Xamarin. 表單
+### <a name="1-update-xamarinforms"></a>1. 更新Xamarin.Forms
 
-請確定解決方案使用的是 Xamarin 2.0 或更新版本。 如有需要，請將 [Xamarin] NuGet 套件更新為2.0。
+請確定解決方案使用 Xamarin.Forms 2.0 或更新版本。 更新Xamarin.Forms
+  NuGet 封裝至2.0 （如有需要）。
 
 ### <a name="2-check-android-version"></a>2. 檢查 Android 版本
 
-確定 Android 專案的目標架構是 Android 6.0 （Marshmallow）。 檢查**Android 專案 > 選項 > 組建 > 一般**設定，以確保已選取 corrent 架構：
+確定 Android 專案的目標架構是 Android 6.0 （Marshmallow）。 檢查**Android 專案 > 選項 > 組建 > 一般**設定]，以確保已選取 corrent 架構：
 
  ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
 
@@ -82,7 +86,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 ### <a name="4-update-androidmanifestxml"></a>4. 更新 Androidmanifest.xml .xml
 
-若要確保使用這個新的主題資訊，請在**androidmanifest.xml**檔案中設定主題，方法是加入 `android:theme="@style/MyTheme"` （保留其餘的 XML）。
+若要確保使用這個新的主題資訊，請在**androidmanifest.xml**檔案中設定主題，方法是新增 `android:theme="@style/MyTheme"` （保留其餘的 XML）。
 
 **Properties/Androidmanifest.xml .xml**
 
@@ -113,7 +117,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
     app:tabMode="fixed" />
 ```
 
-已設定索引標籤的幾個屬性，包括索引標籤的重心，`fill` 和 `fixed`的模式。
+已設定索引標籤的幾個屬性，包括索引標籤對 `fill` 和模式的重心 `fixed` 。
 如果您有很多索引標籤，您可能會想要將其切換為可滾動-閱讀透過 Android [TabLayout 檔](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)深入瞭解。
 
 **資源/版面配置/工具列。 axml**
@@ -135,9 +139,9 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 在這些檔案中，我們會針對您的應用程式建立不同的工具列主題。
 若要深入瞭解，請參閱[Hello 工具列](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)的 blog 文章。
 
-### <a name="6-update-the-mainactivity"></a>6. 更新 `MainActivity`
+### <a name="6-update-the-mainactivity"></a>6. 更新`MainActivity`
 
-在現有的 Xamarin 應用程式中， **MainActivity.cs**類別會繼承自 `FormsApplicationActivity`。 這必須取代為 `FormsAppCompatActivity` 以啟用新功能。
+在現有 Xamarin.Forms 的應用程式中， **MainActivity.cs**類別會繼承自 `FormsApplicationActivity` 。 這必須取代成 `FormsAppCompatActivity` 以啟用新功能。
 
 **MainActivity.cs**
 
@@ -145,7 +149,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
-最後，在 `OnCreate` 方法中，「連接」步驟5的新版面配置，如下所示：
+最後，從方法中的步驟5「連線到」新的版面配置 `OnCreate` ，如下所示：
 
 ```csharp
 protected override void OnCreate(Bundle bundle)

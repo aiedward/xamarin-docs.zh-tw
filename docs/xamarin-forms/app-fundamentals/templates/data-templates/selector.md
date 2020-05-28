@@ -1,30 +1,33 @@
 ---
 title: 建立 Xamarin.Forms DataTemplateSelector
-description: 本文示範如何建立和使用 DataTemplateSelector，您可以在執行階段使用它根據資料繫結屬性值來選擇 DataTemplate。
-ms.prod: xamarin
-ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: e9a17bff9bd0a23d59faf7602544b25c7ec05a86
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 74650eb2c52f1da9d0c539b711784896267ed183
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771248"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135950"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>建立 Xamarin.Forms DataTemplateSelector
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)
 
-_DataTemplate 選擇器可用於根據資料綁定屬性的值在運行時選擇DataTemplate。這使得多個 DataTemplate 能夠應用於同一類型的物件,從而自定義特定物件的外觀。本文演示如何創建和使用數據範本選擇器。_
+_DataTemplateSelector 可以用來根據資料系結屬性的值，在執行時間選擇 DataTemplate。這可讓多個 DataTemplates 套用至相同類型的物件，以自訂特定物件的外觀。本文示範如何建立和使用 DataTemplateSelector。_
 
-數據範本選擇器支援一些方案,例如[`ListView`](xref:Xamarin.Forms.ListView)綁定到物件集合,其中每個物件的外觀`ListView`可以在運行時由返回[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)特定 的數據範本選擇器選擇。
+資料範本選取器可讓您將系結 [`ListView`](xref:Xamarin.Forms.ListView) 至物件集合的案例，其中每個物件的外觀 `ListView` 都可以在執行時間由傳回特定的資料範本選取器來選擇 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
 
 ## <a name="creating-a-datatemplateselector"></a>建立 DataTemplateSelector
 
-通過創建從[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)繼承的類實現數據範本選擇器。 然後`OnSelectTemplate`重寫該方法以返回[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)特定 ,如以下代碼示例所示:
+藉由建立繼承自的類別，即可實作為資料範本選取器 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 。 `OnSelectTemplate`然後會覆寫方法以傳回特定的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，如下列程式碼範例所示：
 
 ```csharp
 public class PersonDataTemplateSelector : DataTemplateSelector
@@ -41,11 +44,11 @@ public class PersonDataTemplateSelector : DataTemplateSelector
 
 `OnSelectTemplate` 方法會根據 `DateOfBirth` 屬性值傳回適當的範本。 所要傳回範本是 `ValidTemplate` 屬性或 `InvalidTemplate` 屬性的值，這會在使用 `PersonDataTemplateSelector` 時設定。
 
-然後,可以將數據範本選擇器類的實例分配給 Xamarin. Forms 控制件[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)屬性(如 )。 如需有效屬性清單，請參閱[建立 DataTemplate](~/xamarin-forms/app-fundamentals/templates/data-templates/creating.md)。
+然後，您可以將資料範本選取器類別的實例指派給 Xamarin.Forms 控制項屬性（例如） [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) 。 如需有效屬性清單，請參閱[建立 DataTemplate](~/xamarin-forms/app-fundamentals/templates/data-templates/creating.md)。
 
 ### <a name="limitations"></a>限制
 
-[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)實體有以下限制:
+[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)實例有下列限制：
 
 - 如果多次查詢相同的資料，針對該資料，`DataTemplateSelector` 子類別必須一律傳回相同的範本。
 - `DataTemplateSelector` 子類別不得傳回另一個 `DataTemplateSelector` 子類別。
@@ -79,17 +82,17 @@ public class PersonDataTemplateSelector : DataTemplateSelector
 </ContentPage>
 ```
 
-此頁級別[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)定義[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)兩 個實例和`PersonDataTemplateSelector`一個 實例。 `PersonDataTemplateSelector` 執行個體會使用 `StaticResource` 標記延伸，將其 `ValidTemplate` 和 `InvalidTemplate` 屬性設定為適當的 `DataTemplate` 執行個體。 請注意,雖然資源在頁面[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)中定義,但它們也可以在控件級別或應用程式級別定義。
+此頁面層級 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 定義兩個 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 實例和一個 `PersonDataTemplateSelector` 實例。 `PersonDataTemplateSelector` 執行個體會使用 `StaticResource` 標記延伸，將其 `ValidTemplate` 和 `InvalidTemplate` 屬性設定為適當的 `DataTemplate` 執行個體。 請注意，雖然資源是在頁面的中定義 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，但也可以在控制項層級或應用層級定義。
 
-實體以`PersonDataTemplateSelector`將實體分配給[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)屬性來使用,如以下代碼範例所示:
+`PersonDataTemplateSelector`實例會藉由將它指派給屬性來使用 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) ，如下列程式碼範例所示：
 
 ```xaml
 <ListView x:Name="listView" ItemTemplate="{StaticResource personDataTemplateSelector}" />
 ```
 
-在執行時,[`ListView`](xref:Xamarin.Forms.ListView)調用基礎集合`PersonDataTemplateSelector.OnSelectTemplate`中 每個項的方法,調用傳遞數據`item`物件作為 參數。 然後[`DataTemplate`](xref:Xamarin.Forms.DataTemplate),該方法返回的 。
+在執行時間，會 [`ListView`](xref:Xamarin.Forms.ListView) `PersonDataTemplateSelector.OnSelectTemplate` 針對基礎集合中的每個專案呼叫方法，並以呼叫傳遞資料物件做為 `item` 參數。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)然後，方法所傳回的會套用至該物件。
 
-以下螢幕截圖顯示了[`ListView`](xref:Xamarin.Forms.ListView)將`PersonDataTemplateSelector`應用於 基礎集合中的每個物件的結果:
+下列螢幕擷取畫面顯示將套用 [`ListView`](xref:Xamarin.Forms.ListView) `PersonDataTemplateSelector` 至基礎集合中每個物件的結果：
 
 ![](selector-images/data-template-selector.png "ListView with a Data Template Selector")
 
@@ -97,7 +100,7 @@ public class PersonDataTemplateSelector : DataTemplateSelector
 
 ## <a name="consuming-a-datatemplateselector-in-cnum"></a>在 C&num; 中使用 DataTemplateSelector
 
-在 C#`PersonDataTemplateSelector`中,可以實體化並分配[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)給 屬性,如以下代碼範例所示:
+在 c # 中，可以具現 `PersonDataTemplateSelector` 化並指派給 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) 屬性，如下列程式碼範例所示：
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -128,11 +131,11 @@ public class HomePageCS : ContentPage
 }
 ```
 
-實例`PersonDataTemplateSelector``ValidTemplate`將其`InvalidTemplate`和 屬性[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)`SetupDataTemplates`設置到 方法創建的相應實例。 在執行時,[`ListView`](xref:Xamarin.Forms.ListView)調用基礎集合`PersonDataTemplateSelector.OnSelectTemplate`中 每個項的方法,調用傳遞數據`item`物件作為 參數。 由方法所傳回的 `DataTemplate` 接著會套用到該物件。
+`PersonDataTemplateSelector`實例會將其 `ValidTemplate` 和 `InvalidTemplate` 屬性設定為方法所建立的適當 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 實例 `SetupDataTemplates` 。 在執行時間，會 [`ListView`](xref:Xamarin.Forms.ListView) `PersonDataTemplateSelector.OnSelectTemplate` 針對基礎集合中的每個專案呼叫方法，並以呼叫傳遞資料物件做為 `item` 參數。 由方法所傳回的 `DataTemplate` 接著會套用到該物件。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-此專案簡寫此內容建立[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)如何建立與使用 。 `DataTemplateSelector`可用於根據資料繫結屬性的值在[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)執行時選擇 。 這可將多個 `DataTemplate` 執行個體套用至相同類型的物件，以自訂特定物件的外觀。
+本文已示範如何建立和使用 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 。 `DataTemplateSelector`可以用來根據資料系結 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 屬性的值，在執行時間選擇。 這可將多個 `DataTemplate` 執行個體套用至相同類型的物件，以自訂特定物件的外觀。
 
 ## <a name="related-links"></a>相關連結
 

@@ -1,22 +1,25 @@
 ---
-title: 自訂影片定位
-description: 本文說明如何使用 Xamarin.Forms 在影片播放程式應用程式中實作自訂位置列。
-ms.prod: xamarin
-ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: 本文說明如何使用，在影片播放機應用程式中執行自訂位置列 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 97d32a03ee10e2f3b0a7442d1d70dab9236059b4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650650"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135079"
 ---
 # <a name="custom-video-positioning"></a>自訂影片定位
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 每個平台實作的傳輸控制項都包括位置列。 此列類似於滑桿或捲軸，而且會顯示影片在其總持續時間內的目前位置。 此外，使用者可以操作位置列，向前或向後移至影片中的新位置。
 
@@ -342,7 +345,7 @@ namespace FormsVideoLibrary
 
 ## <a name="a-custom-slider-for-video"></a>影片的自訂滑桿
 
-您可以撰寫位置列的自訂控制項，或是使用 Xamarin.Forms `Slider` 或衍生自 `Slider` 的類別，例如下列 `PositionSlider` 類別。 此類別會定義 `TimeSpan` 類型的兩個新屬性 `Duration` 和 `Position`，旨在將資料繫結至 `VideoPlayer` 中同名的兩個屬性。 請注意，`Position` 屬性的預設繫結模式為雙向：
+您可以撰寫位置列的自訂控制項，或使用 Xamarin.Forms `Slider` 或衍生自的類別 `Slider` ，例如下列 `PositionSlider` 類別。 此類別會定義 `TimeSpan` 類型的兩個新屬性 `Duration` 和 `Position`，旨在將資料繫結至 `VideoPlayer` 中同名的兩個屬性。 請注意，`Position` 屬性的預設繫結模式為雙向：
 
 ```csharp
 namespace FormsVideoLibrary
@@ -414,7 +417,7 @@ if (newPosition.Seconds != Position.Seconds)
 
 ## <a name="using-the-positionslider"></a>使用 PositionSlider
 
-UWP[`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/)的文件警告有關綁定到屬性`Position`, 因為屬性經常更新。 文件建議使用計時器來查詢 `Position` 屬性。
+UWP 的檔會警告您系結 [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 至 `Position` 屬性，因為屬性經常會更新。 文件建議使用計時器來查詢 `Position` 屬性。
 
 這是很好的建議，但已有三個 `VideoPlayerRenderer` 類別間接使用計時器來更新 `Position` 屬性。 若發生 `UpdateStatus` 事件 (每秒僅引發 10 次)，則會變更處理常式中的 `Position` 屬性。
 

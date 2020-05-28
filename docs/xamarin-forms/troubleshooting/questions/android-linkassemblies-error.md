@@ -1,22 +1,25 @@
 ---
-title: Android 組建錯誤– LinkAssemblies 工作意外失敗
-ms.topic: troubleshooting
-ms.prod: xamarin
-ms.assetid: EB3BE685-CB72-48E3-89D7-C845E76B9FA2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/07/2019
-ms.openlocfilehash: a90c56102f77e3f64d9333eec03b025d24888977
-ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
+title: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9c0403203345ed78fae9f30c623c3e501f24ea0e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "78292953"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135898"
 ---
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android 組建錯誤– LinkAssemblies 工作意外失敗
 
-當您建立使用表單的 Xamarin. Android 專案時，可能會看到 `The "LinkAssemblies" task failed unexpectedly` 的錯誤訊息。 當連結器作用中（通常是在*發行*組建以縮減應用程式套件的大小時）時，就會發生這種情況;而且會發生這種情況，是因為 Android 目標並未更新為最新的架構。 （詳細資訊： [Xamarin. 表單支援的平臺](~/get-started/supported-platforms.md#android-platform-support)）
+`The "LinkAssemblies" task failed unexpectedly`當您建立使用表單的 Xamarin. Android 專案時，可能會看到錯誤訊息。 當連結器作用中（通常是在*發行*組建以縮減應用程式套件的大小時）時，就會發生這種情況;而且會發生這種情況，是因為 Android 目標並未更新為最新的架構。 （詳細資訊： [ Xamarin.Forms 支援的平臺](~/get-started/supported-platforms.md#android-platform-support)）
 
 此問題的解決方法是確定您有最新的受支援 Android SDK 版本，並將**目標 Framework**設定為最新安裝的平臺。 此外，也建議您將 [**目標 Android 版本**] 設定為 [最新安裝的平臺]，並將 [**最低 android 版本**] 設為 API 19 或更高版本。 這會被視為支援的設定。
 

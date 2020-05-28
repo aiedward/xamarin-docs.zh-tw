@@ -1,26 +1,29 @@
 ---
-title: Xamarin.Forms 繫結值轉換器
-description: 本文說明如何藉由實作值轉換器來轉換 Xamarin.Forms 資料繫結內的值 (即所謂的繫結轉換器或繫結值轉換器)。
-ms.prod: xamarin
-ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms系結值轉換器
+description: 本文說明如何藉 Xamarin.Forms 由實值轉換器（也稱為系結轉換器或系結值轉換器），來轉換或轉換資料系結內的值。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771614"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139753"
 ---
-# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms 繫結值轉換器
+# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms系結值轉換器
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 資料繫結通常會將資料從來源屬性傳輸至目標屬性，並在某些情況下從目標屬性傳輸至來源屬性。 當來源和目標屬性都屬於相同類型，或其中一種類型可以透過隱含轉換來轉換成其他類型時，傳輸即會簡單明瞭。 若非此情況，則必須採取類型轉換。
 
-在[**字串格式化**](string-formatting.md)一文中，您已看到可如何使用資料繫結的 `StringFormat` 屬性，將任何類型轉換為字串。 對於其他類型的轉換,您需要在實現[`IValueConverter`](xref:Xamarin.Forms.IValueConverter)介面的類中編寫一些專用代碼。 (通用 Windows[`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/)平臺包含`Windows.UI.Xaml.Data`命名空間中 命名的類似`IValueConverter``Xamarin.Forms`類,但位於命名空間中。為`IValueConverter`類別為*值轉換器*,但它們通常也稱為*繫結轉換器*或*繫結器轉換器*。
+在[**字串格式化**](string-formatting.md)一文中，您已看到可如何使用資料繫結的 `StringFormat` 屬性，將任何類型轉換為字串。 針對其他類型的轉換，您需要在執行介面的類別中撰寫一些特製化程式碼 [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 。 （通用 Windows 平臺包含命名空間中名為的類似類別 [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) `Windows.UI.Xaml.Data` ，但這 `IValueConverter` 是在 `Xamarin.Forms` 命名空間中）。執行的類別 `IValueConverter` 稱為「*值轉換器*」，但它們通常也稱為「系結轉換器」或「系結*值轉換器*」（ *binding* ）。
 
 ## <a name="the-ivalueconverter-interface"></a>IValueConverter 介面
 
@@ -43,7 +46,7 @@ public class IntToBoolConverter : IValueConverter
 }
 ```
 
-[`Converter`](xref:Xamarin.Forms.Binding.Converter)將此類的實例設置為`Binding`類的屬性[`Converter`](xref:Xamarin.Forms.Xaml.BindingExtension.Converter)或 標記擴展的`Binding`屬性。 此類別會成為資料繫結的一部分。
+您可以將這個類別的實例設定為 [`Converter`](xref:Xamarin.Forms.Binding.Converter) 類別的屬性， `Binding` 或設為 [`Converter`](xref:Xamarin.Forms.Xaml.BindingExtension.Converter) `Binding` 標記延伸的屬性。 此類別會成為資料繫結的一部分。
 
 當資料在 `OneWay` 或 `TwoWay` 繫結從來源移到目標時，會呼叫 `Convert` 方法。 `value` 參數是資料繫結來源的物件或值。 此方法必須傳回資料繫結目標類型的值。 這裡示範的方法會將 `value` 參數轉換為 `int`，然後將其與 0 比較，以取得 `bool` 傳回值。
 
@@ -97,7 +100,7 @@ public class IntToBoolConverter : IValueConverter
 
 [啟用按鈕]**** 頁面示範當 `Button` 根據使用者鍵入 `Entry` 檢視的文字而執行作業時，會出現的常見需求。 如果 `Entry` 中未鍵入任何內容，則應該停用 `Button`。 每個 `Button` 都會在其 `IsEnabled` 屬性中包含資料繫結。 資料繫結來源是對應 `Entry` 之 `Text` 屬性的 `Length` 屬性。 如果該 `Length` 屬性不為 0，則值轉換器會傳回 `true` 並啟用 `Button`：
 
-[![開啟按鈕](converters-images/enablebuttons-small.png "開啟按鈕")](converters-images/enablebuttons-large.png#lightbox "開啟按鈕")
+[![啟用按鈕](converters-images/enablebuttons-small.png "啟用按鈕")](converters-images/enablebuttons-large.png#lightbox "啟用按鈕")
 
 請注意，每個 `Entry` 中的 `Text` 屬性會初始化為空白字串。 根據預設，`Text` 屬性為 `null`，資料繫結在此情況下將無法運作。
 
@@ -238,13 +241,13 @@ public class BoolToObjectConverter<T> : IValueConverter
 
 在最後三個 `Switch` 和 `Label` 配對中，泛型引數設定為 `Style`，並會為 `TrueObject` 和 `FalseObject` 的值提供完整 `Style` 物件。 這些會覆寫設定於資源字典中 `Label` 的隱含樣式，因此該樣式中的屬性會明確指派給 `Label`。 切換 `Switch` 會導致對應的 `Label` 反映變更：
 
-[![開關指示器](converters-images/switchindicators-small.png "開關指示器")](converters-images/switchindicators-large.png#lightbox "開關指示器")
+[![切換指示器](converters-images/switchindicators-small.png "切換指示器")](converters-images/switchindicators-large.png#lightbox "切換指示器")
 
-也可以用於[`Triggers`](~/xamarin-forms/app-fundamentals/triggers.md)基於其他檢視在使用者介面中實現類似的更改。
+您也可以使用 [`Triggers`](~/xamarin-forms/app-fundamentals/triggers.md) ，根據其他視圖，在使用者介面中執行類似的變更。
 
 ## <a name="binding-converter-parameters"></a>繫結轉換器參數
 
-類`Binding`定義[`ConverterParameter`](xref:Xamarin.Forms.Binding.ConverterParameter)屬性`Binding`, 標記[`ConverterParameter`](xref:Xamarin.Forms.Xaml.BindingExtension.ConverterParameter)擴展也定義 屬性。 如果設定此屬性，則值會傳遞至 `Convert` 和 `ConvertBack` 方法作為 `parameter` 引數。 即使值轉換器的執行個體在數個資料繫結中共用，在執行稍有不同的轉換時，`ConverterParameter` 也可能會不同。
+`Binding`類別會定義 [`ConverterParameter`](xref:Xamarin.Forms.Binding.ConverterParameter) 屬性，而 `Binding` 標記延伸也會定義 [`ConverterParameter`](xref:Xamarin.Forms.Xaml.BindingExtension.ConverterParameter) 屬性。 如果設定此屬性，則值會傳遞至 `Convert` 和 `ConvertBack` 方法作為 `parameter` 引數。 即使值轉換器的執行個體在數個資料繫結中共用，在執行稍有不同的轉換時，`ConverterParameter` 也可能會不同。
 
 `ConverterParameter` 的使用方式會以色彩選取程式來示範。 在此情況下，`RgbColorViewModel` 具有 `double` 類別的三個屬性，名為 `Red`、`Green` 和 `Blue`，用於建構 `Color` 值：
 
@@ -462,9 +465,9 @@ binding.ConverterParameter = 255;
 
 結果如下︰
 
-[![RGB 顏色選擇器](converters-images/rgbcolorselector-small.png "RGB 顏色選擇器")](converters-images/rgbcolorselector-large.png#lightbox "RGB 顏色選擇器")
+[![RGB 色彩選取器](converters-images/rgbcolorselector-small.png "RGB 色彩選取器")](converters-images/rgbcolorselector-large.png#lightbox "RGB 色彩選取器")
 
 ## <a name="related-links"></a>相關連結
 
 - [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
-- [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [書籍中的資料系結章節 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

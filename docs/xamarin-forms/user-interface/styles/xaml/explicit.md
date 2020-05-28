@@ -1,30 +1,33 @@
 ---
-title: 在 Xamarin.Forms 中的明確樣式
-description: 明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。 這篇文章說明如何使用 Xamarin.Forms 應用程式中的明確樣式。
-ms.prod: xamarin
-ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: b7888ea29dd02733059346bca21fec0a4c510c2e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: 中的明確樣式Xamarin.Forms
+description: 明確樣式是藉由設定樣式屬性，選擇性地套用至控制項。 本文說明如何在應用程式中使用明確樣式 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228005"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136262"
 ---
-# <a name="explicit-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的明確樣式
+# <a name="explicit-styles-in-xamarinforms"></a>中的明確樣式Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
+_明確樣式是藉由設定樣式屬性，選擇性地套用至控制項。_
 
 ## <a name="create-an-explicit-style-in-xaml"></a>在 XAML 中建立明確樣式
 
-若要宣告[ `Style` ](xref:Xamarin.Forms.Style)在頁面層級[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)必須加入至頁面並再一或多個`Style`宣告可以包含在`ResourceDictionary`。 A`Style`更為*明確*藉由提供其宣告`x:Key`屬性，讓它的描述性的索引鍵中`ResourceDictionary`。 *明確*樣式必須再套用到特定的視覺項目設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性。
+若要 [`Style`](xref:Xamarin.Forms.Style) 在頁面層級宣告， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 必須將加入至頁面，然後一或多個宣告 `Style` 可以包含在中 `ResourceDictionary` 。 `Style`會藉由*explicit*將 `x:Key` 屬性（attribute）提供給它，讓它成為明確的，藉此將它設為明確的索引鍵 `ResourceDictionary` 。 然後，*明確*樣式必須藉由設定其屬性，套用至特定的視覺效果元素 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。
 
-下列程式碼範例所示*明確*樣式在 XAML 中宣告中的頁面`ResourceDictionary`並套用至頁面的[ `Label` ](xref:Xamarin.Forms.Label)執行個體：
+下列程式碼範例顯示在頁面的 XAML 中宣告的*明確*樣式 `ResourceDictionary` ，並套用至頁面的 [`Label`](xref:Xamarin.Forms.Label) 實例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
@@ -64,15 +67,15 @@ _明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義三個*明確*套用至頁面的樣式[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 每個`Style`用來以不同的色彩顯示文字，也可以將字型的大小和水平及垂直版面配置選項。 每個`Style`套用至不同`Label`藉由設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性使用`StaticResource`標記延伸。 這會導致下列螢幕擷取畫面中顯示的外觀：
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)會定義套用至頁面實例的三個*明確*樣式 [`Label`](xref:Xamarin.Forms.Label) 。 每個 `Style` 都會用來以不同的色彩顯示文字，同時也會設定字型大小和水準和垂直版面配置選項。 每個 `Style` 都會套用至不同的， `Label` 方法是 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 使用標記延伸來設定其屬性 `StaticResource` 。 這會導致下列螢幕擷取畫面中顯示的外觀：
 
 [![明確樣式範例](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
-此外，最終[ `Label` ](xref:Xamarin.Forms.Label)具有[ `Style` ](xref:Xamarin.Forms.Style)套用至其中，但也會覆寫[ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)屬性，以不同`Color`值。
+此外，最後會套用 [`Label`](xref:Xamarin.Forms.Label) [`Style`](xref:Xamarin.Forms.Style) 至它，但也會將屬性覆寫 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 為不同的 `Color` 值。
 
 ### <a name="create-an-explicit-style-at-the-control-level"></a>在控制項層級建立明確樣式
 
-除了建立*明確*頁面層級的樣式，它們也可以建立在控制層級，如下列程式碼範例所示：
+除了在頁面層級建立*明確*樣式之外，也可以在控制項層級建立，如下列程式碼範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
@@ -93,13 +96,13 @@ _明確樣式是藉由設定其樣式屬性選擇性地套用到控制項。_
 </ContentPage>
 ```
 
-在此範例中，*明確* [ `Style` ](xref:Xamarin.Forms.Style)執行個體指派給[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)集合[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)控制項。 控制項和其子系時，可以再套用樣式。
+在此範例中，會將*明確*的 [`Style`](xref:Xamarin.Forms.Style) 實例指派給控制項的 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 集合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 然後，樣式可以套用至控制項及其子系。
 
-如需建立應用程式中的樣式[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，請參閱[全域樣式](~/xamarin-forms/user-interface/styles/application.md)。
+如需在應用程式中建立樣式的詳細資訊 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，請參閱[全域樣式](~/xamarin-forms/user-interface/styles/application.md)。
 
-## <a name="create-an-explicit-style-in-c35"></a>在 C 中建立明確樣式&#35;
+## <a name="create-an-explicit-style-in-c35"></a>在 C&#35; 中建立明確樣式
 
-[`Style`](xref:Xamarin.Forms.Style) 執行個體可以加入至網頁[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources) C# 中建立新的集合[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)，再以新增`Style`執行個體`ResourceDictionary`，如下所示下列程式碼範例：
+[`Style`](xref:Xamarin.Forms.Style)藉由建立新的，然後將實例新增至，即可將實例加入至頁面的 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 集合 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `Style` `ResourceDictionary` ，如下列程式碼範例所示：
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -147,9 +150,9 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-建構函式會定義三個*明確*套用至頁面的樣式[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 每個*明確* [ `Style` ](xref:Xamarin.Forms.Style)新增至[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)使用[ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object))方法中，指定`key`字串以指向`Style`執行個體。 每個`Style`套用至不同`Label`藉由設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性。
+此函式會定義套用至頁面實例的三個*明確*樣式 [`Label`](xref:Xamarin.Forms.Label) 。 每個*明確* [`Style`](xref:Xamarin.Forms.Style) 都會 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 使用方法加入至 [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) ，並指定 `key` 要參考實例的字串 `Style` 。 藉 `Style` `Label` 由設定其屬性，每個都會套用至不同的 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。
 
-不過，沒有使用任何優勢[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)這裡。 相反地， [ `Style` ](xref:Xamarin.Forms.Style)執行個體可以直接指派給[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)必要的視覺元素的屬性和`ResourceDictionary`可加以移除，如下列所示程式碼範例：
+不過，在這裡使用沒有任何好處 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 相反地，您 [`Style`](xref:Xamarin.Forms.Style) 可以將實例直接指派給 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 所需視覺效果元素的屬性，而且 `ResourceDictionary` 可以移除，如下列程式碼範例所示：
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -179,13 +182,13 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-建構函式會定義三個*明確*套用至頁面的樣式[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 每個`Style`用來以不同的色彩顯示文字，也可以將字型的大小和水平及垂直版面配置選項。 每個`Style`套用至不同`Label`藉由設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性。 此外，最終`Label`已經`Style`套用至其中，但也會覆寫`TextColor`到不同的屬性`Color`值。
+此函式會定義套用至頁面實例的三個*明確*樣式 [`Label`](xref:Xamarin.Forms.Label) 。 每個 `Style` 都會用來以不同的色彩顯示文字，同時也會設定字型大小和水準和垂直版面配置選項。 每個 `Style` 都會透過 `Label` 設定其屬性來套用至不同的 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。 此外，最後會套用 `Label` `Style` 至它，但也會將屬性覆寫 `TextColor` 為不同的 `Color` 值。
 
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
-- [使用樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
-- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [基本樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary) \(英文\)
 - [樣式](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

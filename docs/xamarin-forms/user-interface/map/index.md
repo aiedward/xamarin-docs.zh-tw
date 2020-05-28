@@ -1,24 +1,27 @@
 ---
-title: Xamarin. 表單地圖
-description: 地圖控制項會顯示地圖，而且需要有 [Xamarin] NuGet 套件。
-ms.prod: xamarin
-ms.assetid: B669B5EE-D24C-4C69-93E1-2CA5CC9108B5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/29/2019
-ms.openlocfilehash: ffd8f7cc31707d09bb3442c180a867d31afcef0f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Xamarin.Forms地圖
+description: 地圖控制項會顯示對應，而且需要 Xamarin.Forms 。對應 NuGet 套件。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2461ffa8168207e6a57fae005f752be48772a34a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517499"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139824"
 ---
-# <a name="xamarinforms-map"></a>Xamarin. 表單地圖
+# <a name="xamarinforms-map"></a>Xamarin.Forms地圖
 
 ## <a name="initialization-and-configuration"></a>[初始化和設定](setup.md)
 
-在應用程式中使用對應功能時，需要有[Xamarin](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet 套件。 此外，存取使用者的位置需要已授與應用程式的「位置」許可權。
+[ Xamarin.Forms 。需要 maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet 封裝，才能在應用程式中使用對應功能。 此外，存取使用者的位置需要已授與應用程式的「位置」許可權。
 
 ## <a name="map-control"></a>[地圖控制項](map.md)
 
@@ -26,20 +29,20 @@ ms.locfileid: "82517499"
 
 ## <a name="position-and-distance"></a>[位置和距離](position-distance.md)
 
-[`Position`](xref:Xamarin.Forms.Maps.Position)結構通常會在定位地圖和其釘選時使用，以及可[`Distance`](xref:Xamarin.Forms.Maps.Distance)選擇性地在定位對應時使用的結構。
+[`Position`](xref:Xamarin.Forms.Maps.Position)結構通常會在定位地圖和其釘選時使用，以及 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 可選擇性地在定位對應時使用的結構。
 
-## <a name="pins"></a>[釘選](pins.md)
+## <a name="pins"></a>[圖釘](pins.md)
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)控制項允許以[`Pin`](xref:Xamarin.Forms.Maps.Pin)物件標記位置。 `Pin`是一種地圖示記，會在攻絲時開啟資訊視窗。
+[`Map`](xref:Xamarin.Forms.Maps.Map)控制項允許以物件標記位置 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 。 `Pin`是一種地圖示記，會在攻絲時開啟資訊視窗。
 
-## <a name="polygons-polylines-and-circles"></a>[多邊形、折線和圓形](polygons.md)
+## <a name="polygons-polylines-and-circles"></a>[多邊形, 聚合線條及圓形](polygons.md)
 
-`Polygon`、 `Polyline`和`Circle`元素可讓您反白顯示地圖上的特定區域。 `Polygon`是一個完全封閉的圖形，可以有筆觸和填滿色彩。 `Polyline`是不會完全括住區域的線條。 會`Circle`反白顯示地圖的迴圈區域。
+`Polygon`、 `Polyline` 和 `Circle` 元素可讓您反白顯示地圖上的特定區域。 `Polygon`是一個完全封閉的圖形，可以有筆觸和填滿色彩。 `Polyline`是不會完全括住區域的線條。 會反白 `Circle` 顯示地圖的迴圈區域。
 
 ## <a name="geocoding"></a>[地理編碼](geocoder.md)
 
-[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)類別會在儲存于物件中[`Position`](xref:Xamarin.Forms.Maps.Position)的字串位址與緯度和經度座標之間進行轉換。
+[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)類別會在儲存于物件中的字串位址與緯度和經度座標之間進行轉換 [`Position`](xref:Xamarin.Forms.Maps.Position) 。
 
 ## <a name="launch-the-native-map-app"></a>[啟動原生地圖應用程式](native-map-app.md)
 
-每個平臺上的原生對應應用程式都可以透過 Xamarin `Launcher`類別從 Xamarin. Forms 應用程式啟動。
+每個平臺上的原生對應應用程式都可以 Xamarin.Forms 由類別從應用程式啟動 Xamarin.Essentials `Launcher` 。

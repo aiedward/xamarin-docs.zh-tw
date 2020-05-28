@@ -1,18 +1,21 @@
 ---
-title: 容器化的微服務
-description: 本章說明如何使用微服務和容器來建立敏捷式、可調整且可靠的現代化雲端應用程式。
-ms.prod: xamarin
-ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: dc71da512519cdd7fcc56df1ff987ffbc1354663
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a05090c18039f9d3a7f9376285ce2863e0482903
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305189"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139252"
 ---
 # <a name="containerized-microservices"></a>容器化的微服務
 
@@ -56,9 +59,9 @@ ms.locfileid: "79305189"
 - 在生產環境中，部署和管理許多獨立服務的系統遭到入侵時，會有一項操作上的複雜性。
 - 直接用戶端對微服務通訊可能會使微服務的合約難以重構。 例如，經過一段時間之後，系統如何分割成服務可能需要變更。 單一服務可能會分割成兩個或多個服務，而且可能會合並兩個服務。 當用戶端直接與微服務通訊時，這種重構工作可能會中斷與用戶端應用程式的相容性。
 
-## <a name="containerization"></a>集裝箱化
+## <a name="containerization"></a>容器化
 
-容器化是一種軟體發展方法，其中應用程式及其已設定版本的相依性集合，再將其環境設定抽象化為部署資訊清單檔，以容器映射的形式封裝在一起，並測試為一個單位，已部署到主機作業系統。
+容器化是一種軟體發展方法，其中應用程式及其已設定版本的相依性集合，再將其環境設定抽象化為部署資訊清單檔案，封裝在一起做為容器映射、以一個單位進行測試，並部署到主機作業系統。
 
 容器是隔離、受資源控制且可移植的作業環境，其中應用程式可以執行，而不需要觸及其他容器或主機的資源。 因此，容器的外觀和作用就像是新安裝的實體電腦或虛擬機器。
 
@@ -146,7 +149,7 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 
 ## <a name="summary"></a>摘要
 
-微服務提供應用程式開發和部署的方法，其適用于現代化雲端應用程式的靈活性、規模和可靠性需求。 微服務的主要優點之一，就是可以獨立相應放大，這表示可以調整特定功能區域，而需要更多處理能力或網路頻寬來支援需求，而不需不必要的調整區域應用程式不會遇到增加的需求。
+微服務提供應用程式開發和部署的方法，其適用于現代化雲端應用程式的靈活性、規模和可靠性需求。 微服務的主要優點之一，就是可以獨立地相應放大，這表示可以調整特定功能區域，而需要更多處理能力或網路頻寬來支援需求，而不需在不需要增加需求的情況下調整應用程式的區域。
 
 容器是隔離、受資源控制且可移植的作業環境，其中應用程式可以執行，而不需要觸及其他容器或主機的資源。 企業在實行以微服務為基礎的應用程式時，逐漸採用容器，而 Docker 已成為大部分軟體平臺和雲端廠商採用的標準容器執行。
 

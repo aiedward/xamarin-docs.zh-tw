@@ -1,97 +1,101 @@
 ---
-title: 第 1 章摘要。 Xamarin.Forms 如何適應？
-description: 使用 Xamarin.表單創建行動應用程式:第 1 章摘要。 Xamarin.Forms 如何適應？
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 6dfa473bdfb4c1dd88ca833dbf5011a0bbdec42a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: 第1章的摘要。 如何 Xamarin.Forms 融入？
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 1. How does Xamarin.Forms fit in?''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 48b2fb429d206f6582886c94d4d99839d790dc8d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73032889"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136922"
 ---
-# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章摘要。 Xamarin.Forms 如何適應？
+# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第1章的摘要。 如何 Xamarin.Forms 融入？
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
 
 > [!NOTE]
-> 本頁的註釋指示 Xamarin.Forms 與本書中介紹的材料有分歧的領域。
+> 此頁面上的附注指出 Xamarin.Forms 從書籍中所呈現之材質分歧的區域。
 
-程式設計中最令人不快的工作之一是從一個平臺移植到另一個平台的代碼庫,特別是如果該平臺涉及不同的程式設計語言。 移植代碼來重構代碼時也會有一種誘惑,但如果兩個平台必須並行維護,那麼兩個代碼庫之間的差異將使將來的維護更加困難。
+程式設計中最不令人不快的作業之一，就是從一個平臺移植程式碼基底，特別是當該平臺牽涉到不同的程式設計語言時。 移植程式碼以重構它時，有一個誘惑，但如果兩個平臺都必須平行維護，則這兩個程式碼基底之間的差異會使未來的維護變得更棘手。
 
 ## <a name="cross-platform-mobile-development"></a>跨平台行動裝置程式開發
 
-在定位移動平臺時,此問題很常見。 目前,有兩個主要的移動平臺,蘋果的iPhone和iPad系列運行iOS操作系統,和Android操作系統運行在各種手機和平板電腦上。 另一個重要的平臺是微軟的通用Windows平臺(UWP),它允許單個程序同時針對Windows 10。
+以行動平臺為目標時，此問題很常見。 目前有兩個主要的行動平臺： Apple 系列的 Iphone 和 Ipad 執行 iOS 作業系統，以及在各種手機和平板電腦上執行的 Android 作業系統。 另一個重要的平臺是 Microsoft 的通用 Windows 平臺（UWP），可讓單一程式以 Windows 10 為目標。
 
-希望針對這些平臺的軟體供應商必須處理不同的使用者介面模式、三種不同的開發環境、三種不同的程式設計介面,&mdash;或許還有&mdash;三種不同的程式設計語言:iPhone和iPad的Objective-C、用於Android的Java和適用於Windows的C#。
+想要以這些平臺為目標的軟體廠商必須處理不同的使用者介面架構、三種不同的開發環境、三種不同的程式設計介面，而且 &mdash; 可能大部分滑雪 &mdash; 三種不同的程式設計語言：適用于 IPhone 和 IPad 的目標-C、適用于 Android 的 JAVA，以及適用于 Windows 的 c #。
 
-## <a name="the-c-and-net-solution"></a>C# 與 .NET 解決方案
+## <a name="the-c-and-net-solution"></a>C # 和 .NET 方案
 
-儘管目標 C、JAVA 和 C# 都源自 C 程式設計語言,但它們是由非常不同的路徑演變而來的。 C# 是這些語言中最新的,並且一直以非常有用的方式成熟。 此外,C# 與稱為 .NET 的整個程式設計基礎結構密切相關,它支援數學、調試、反射、集合、全球化、檔 I/O、網路、安全、線程、Web 服務、數據處理以及 XML 和 JSON 讀取和寫入。
+雖然目標-C、JAVA 和 c # 都是衍生自 C 程式設計語言，但它們已經由非常不同的路徑進化。 C # 是這些語言的最新版本，並以非常有用的方式成熟。 此外，c # 與稱為 .NET 的整個程式設計基礎結構密切相關，它提供數學、偵錯工具、反映、集合、全球化、檔案 i/o、網路功能、安全性、執行緒、web 服務、資料處理，以及 XML 和 JSON 讀取和寫入的支援。
 
-Xamarin 目前提供的工具使用 C# 和 .NET 定位本機 Mac、iOS 和 Android API。 這些工具稱為 Xamarin.Mac、Xamarin.iOS 和 Xamarin.Android,統稱為 Xamarin 平臺。 這些是使用 .NET 習慣用表示這些平臺的本機 API 的庫和綁定。
+Xamarin 目前提供使用 c # 和 .NET 以原生 Mac、iOS 和 Android Api 為目標的工具。 這些工具稱為「Xamarin」、「Xamarin」和「xamarin」，統稱為 Xamarin 平臺。 這些程式庫和系結可透過 .NET 慣用語來表達這些平臺的原生 Api。
 
-開發人員可以使用 Xamarin 平臺在 C# 中編寫面向 Mac、iOS 或 Android 的應用程式。 但是,當定位到多個平臺時,在目標平台之間共用一些代碼是很有意義的。 這涉及到將程式分離到與平台相關的代碼(通常涉及使用者介面)和獨立於平臺的代碼,這通常只需要基 .NET 框架。 此獨立於平臺的代碼可以駐留在便攜式類庫 (PCL) 中,也可以駐留在通常稱為共用資產專案或 SAP 的共享專案中。
-
-> [!NOTE]
-> 便攜式類庫已被 .NET 標準庫替換。 書中的所有範例代碼已轉換為使用 .NET 標準庫。
-
-## <a name="introducing-xamarinforms"></a>介紹 Xamarin.表單
-
-當定位多個移動平臺時,Xamarin.Forms 允許更多的代碼共用。 為 Xamarin.Forms 撰寫的單個程式可以針對以下平臺:
-
-- iOS 用於在 iPhone、iPad 和 iPod 觸控上執行的程式
-- 適用於在 Android 手機和平板電腦上運行的程式的 Android
-- Windows 10 的通用 Windows 平台
+開發人員可以使用 Xamarin 平臺，以 c # 撰寫以 Mac、iOS 或 Android 為目標的應用程式。 但是當以多個平臺為目標時，在目標平臺之間共用一些程式碼會很有意義。 這牽涉到將程式分成平臺相依的程式碼（通常牽涉到使用者介面），以及與平臺無關的程式碼，這通常只需要基底 .NET framework。 這個與平臺無關的程式碼可以位於可移植的類別庫（PCL）或共用的專案，通常稱為共用的資產專案或 SAP。
 
 > [!NOTE]
-> Xamarin.Forms 不再支援 Windows 8.1、Windows Phone 8.1 或 Windows 10 移動版,但 Xamarin.Forms 應用程式確實在 Windows 10 桌面上運行。 此外,[還有對](~/xamarin-forms/platform/other/mac.md)Mac、WPF、GTK+ 和[Tizen](~/xamarin-forms/platform/other/tizen.md)平台[WPF](~/xamarin-forms/platform/other/wpf.md)[GTK#](~/xamarin-forms/platform/other/gtk.md)的預覽支援。
+> 可移植的類別庫已由 .NET Standard 程式庫取代。 本書中的所有範例程式碼都已轉換成使用 .NET standard 程式庫。
 
-Xamarin.Forms 程式的大部分存在於庫或 SAP 中。 每個平臺都由一個小型應用程式存根組成,用於調用此共享代碼。
+## <a name="introducing-xamarinforms"></a>正在推出Xamarin.Forms
 
-Xamarin.Forms API 映射到每個平臺上的本機控制項,以便每個平臺保持其特性外觀:
+以多個行動平臺為目標時， Xamarin.Forms 可讓更多的程式碼共用。 針對撰寫的單一程式 Xamarin.Forms 可將目標設為下列平臺：
 
-[![平台視覺物件共用的三重螢幕截圖](images/ch01fg03-small.png "Xamarin.每個平臺上的表單控制元件")](images/ch01fg03-large.png#lightbox "Xamarin.每個平臺上的表單控制元件")
+- iOS，適用于 iPhone、iPad 和 iPod touch 上執行的程式
+- Android，適用于在 Android 手機和平板電腦上執行的程式
+- 以 Windows 10 為目標的通用 Windows 平臺
 
-從左到右的螢幕截圖顯示了 iPhone 和 Android 手機:
+> [!NOTE]
+> Xamarin.Forms不再支援 Windows 8.1、Windows Phone 8.1 或 Windows 10 行動裝置版，但 Xamarin.Forms 應用程式會在 Windows 10 桌面上執行。 另外還有適用于[Mac](~/xamarin-forms/platform/other/mac.md)、 [WPF](~/xamarin-forms/platform/other/wpf.md)、 [GTK #](~/xamarin-forms/platform/other/gtk.md)和[Tizen](~/xamarin-forms/platform/other/tizen.md)平臺的預覽支援。
 
-在每個螢幕上,頁面包含用於顯示文本[`Label`](xref:Xamarin.Forms.Label)的 Xamarin. 窗體、用於啟動[`Button`](xref:Xamarin.Forms.Button)操作的窗[`Switch`](xref:Xamarin.Forms.Switch)體、 用於選擇開/關值的表單以及用於[`Slider`](xref:Xamarin.Forms.Slider)在連續範圍內 指定值的表單。 這四種觀點都是[`StackLayout`](xref:Xamarin.Forms.StackLayout)a[`ContentPage`](xref:Xamarin.Forms.ContentPage)上的子 視圖。
+大部分的 Xamarin.Forms 程式都存在於程式庫或 SAP 中。 每個平臺都包含一個小型的應用程式存根，其會呼叫此共用程式碼。
 
-附加到頁面的還有 Xamarin.Forms 工具列,該工具列[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)由多個 物件組成。 這些圖示在 iOS 和 Android 螢幕的頂部以及 Windows 10 移動螢幕的底部可見。
+Xamarin.FormsApi 會對應到每個平臺上的原生控制項，讓每個平臺都能維持其特性的外觀與風格：
 
-Xamarin.Forms 還支援 XAML,這是 Microsoft 為多個應用程式平台開發的可擴展應用程式標記語言。 如[**平台視覺示例**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals)所示,上述程式的所有視覺物件均以 XAML 形式定義。
+[![平臺視覺效果共用的三向螢幕擷取畫面](images/ch01fg03-small.png "[!OP.每個平臺上的無 LOC （Xamarin）控制項")](images/ch01fg03-large.png#lightbox "[!OP.每個平臺上的無 LOC （Xamarin）控制項")
 
-Xamarin.Forms 程式可以確定它在什麼平台上運行,並相應地執行不同的代碼。 更有力地,開發人員可以為各種平台編寫自定義代碼,並基於獨立於平臺的方式從 Xamarin.Forms 程式運行該代碼。 開發人員還可以通過為每個平台編寫呈現器來創建其他控制項。
+從左至右的螢幕擷取畫面會顯示 iPhone 和 Android 手機：
 
-雖然 Xamarin.Forms 是業務線應用程式、原型設計或快速概念驗證演示的良好解決方案,但對於需要向量圖形或複雜觸摸交互的應用程式而言,它不太理想。
+在每個畫面上，頁面包含 Xamarin.Forms [`Label`](xref:Xamarin.Forms.Label) 用於顯示文字的、用於 [`Button`](xref:Xamarin.Forms.Button) 起始動作的、用於 [`Switch`](xref:Xamarin.Forms.Switch) 選擇開啟/關閉值的，以及用 [`Slider`](xref:Xamarin.Forms.Slider) 來指定連續範圍內的值。 這四個視圖都是上的子系 [`StackLayout`](xref:Xamarin.Forms.StackLayout) [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。
+
+同時附加至頁面是由數 Xamarin.Forms 個物件所組成的工具列 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) 。 在 iOS 和 Android 畫面頂端和 Windows 10 行動裝置畫面底部，這些圖示會顯示為圖示。
+
+Xamarin.Forms也支援 XAML，這是在 Microsoft 針對數個應用程式平臺開發的 Extensible Application Markup Language。 上述程式的所有視覺效果都是在 XAML 中定義，如[**PlatformVisuals**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals)範例中所示。
+
+Xamarin.Forms程式可以判斷其執行所在的平臺，並據此執行不同的程式碼。 更強大且的是，開發人員可以撰寫各種平臺的自訂程式碼，並 Xamarin.Forms 以與平臺無關的方式從程式執行該程式碼。 開發人員也可以藉由撰寫每個平臺的轉譯器來建立其他控制項。
+
+雖然 Xamarin.Forms 是適用于企業營運應用程式或原型設計的絕佳解決方案，或是快速的概念證明示範，但較不適合需要向量圖形或複雜觸控互動的應用程式。
 
 ## <a name="your-development-environment"></a>您的開發環境
 
-您的開發環境取決於要定位哪些平臺以及要使用的計算機。
+您的開發環境取決於您想要做為目標的平臺，以及您想要使用的機器。
 
-如果要定位 iOS,則需要安裝帶有 Xcode 和 Xamarin 平臺的 Mac。 支援 Android 還需要安裝 Java 和所需的 SDK。 然後,您可以使用 Mac 的可視化工作室定位 iOS 和 Android。
+如果您想要以 iOS 為目標，您將需要已安裝 Xcode 和 Xamarin 平臺的 Mac。 同時支援 Android 也需要安裝 JAVA 和必要的 Sdk。 然後，您可以使用 Visual Studio for Mac 以 iOS 和 Android 為目標。
 
-安裝可視化工作室允許在 PC 上定位 iOS、Android 和所有 Windows 平臺。 但是,從 Visual Studio 定位 iOS 仍然需要安裝帶有 Xcode 和 Xamarin 平臺的 Mac。
+安裝 Visual Studio 可讓您在電腦上以 iOS、Android 和所有 Windows 平臺為目標。 不過，以 Visual Studio 為目標的 iOS 仍然需要安裝具有 Xcode 和 Xamarin 平臺的 Mac。
 
-您可以在透過 USB 連接到電腦的實際裝置上或模擬器上測試程式。
+您可以在透過 USB 連接到電腦的實際裝置上，或在模擬器上測試程式。
 
 ## <a name="installation"></a>安裝
 
-在創建和建構 Xamarin.Forms 應用程式之前,應嘗試根據要定位的平臺和開發環境分別建立和建構 iOS 應用程式、Android 應用程式和 UWP 應用程式。
+建立和建立 Xamarin.Forms 應用程式之前，您應該嘗試分別建立和建立 iOS 應用程式、Android 應用程式和 UWP 應用程式，視您想要作為目標的平臺和您的開發環境而定。
 
-Xamarin 和 Microsoft 網站包含有關如何執行此操作的資訊:
+Xamarin 和 Microsoft 網站包含如何執行此動作的資訊：
 
 - [開始使用 iOS](~/ios/get-started/index.md)
 - [開始使用 Android](~/android/get-started/index.md)
 - [Windows 開發人員中心](https://dev.windows.com)
 
-為這些單獨的平台創建和運行專案後,創建和運行 Xamarin.Forms 應用程式時,應該沒有問題。
+一旦您可以為這些個別平臺建立及執行專案，您應該不會在建立和執行應用程式時遇到任何問題 Xamarin.Forms 。
 
 ## <a name="related-links"></a>相關連結
 
-- [第一章 全文(PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf)
-- [第 1 章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
+- [第1章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf)
+- [第1章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)

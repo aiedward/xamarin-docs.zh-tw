@@ -1,24 +1,27 @@
 ---
-title: Xamarin.Forms Master-Detail Page
-description: Xamarin.Forms MasterDetailPage 是管理兩個相關資訊頁面的頁面 – 顯示項目的主版頁面，和顯示主版頁面上項目相關詳細資料的詳細資料頁面。 本文說明如何使用 MasterDetailPage 及在其資訊頁面之間巡覽。
-ms.prod: xamarin
-ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 702ec35bca051f7255c5c9d67d2dc68d4f89ca52
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms主版-詳細資料頁面
+description: Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯示專案的主版頁面，以及顯示主版頁面上專案相關詳細資料的詳細資料頁面。 本文說明如何使用 MasterDetailPage 及在其資訊頁面之間巡覽。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 89b1dedcb6219a32332641550018405abd4b6870
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68645961"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137809"
 ---
-# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms Master-Detail Page
+# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms主版-詳細資料頁面
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 
-_Xamarin.Forms MasterDetailPage 是一個管理兩個相關資訊頁的頁面 , 一個是顯示項的母版頁,另一個是顯示母版頁上有關專案的詳細資訊的詳細資訊頁。本文介紹如何使用 MasterDetailPage 並在其資訊頁之間導航。_
+_Xamarin.FormsMasterDetailPage 是管理兩個相關資訊頁面的頁面–顯示專案的主版頁面，以及顯示主版頁面上專案相關詳細資料的詳細資料頁面。本文說明如何使用 MasterDetailPage，並在其資訊頁面之間流覽。_
 
 ## <a name="overview"></a>概觀
 
@@ -38,7 +41,7 @@ _Xamarin.Forms MasterDetailPage 是一個管理兩個相關資訊頁的頁面 , 
 
 詳細資料頁面包含導覽列，其內容會因平台而不同：
 
-- 在 iOS 上,導航欄位於頁面頂部並顯示標題,並且具有返回到母版頁的按鈕,前提是詳細資訊頁實[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)例在 實例中包裝。 此外，可以藉由將詳細資料頁面撥動至右側，回到主版頁面。
+- 在 iOS 上，導覽列會出現在頁面頂端並顯示標題，而且有一個按鈕會回到主版頁面，前提是詳細資料頁面實例包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 實例中。 此外，可以藉由將詳細資料頁面撥動至右側，回到主版頁面。
 - 在 Android 上，導覽列出現在頁面頂端並顯示標題、圖示，以及可返回主版頁面的按鈕。 該圖示是在 `[Activity]` 屬性中定義，以裝飾 Android 平台特定專案中的 `MainActivity` 類別。
 - 在 UWP 上，導覽列出現在頁面頂端並顯示標題，並具有可返回主版頁面的按鈕。
 
@@ -48,7 +51,7 @@ _Xamarin.Forms MasterDetailPage 是一個管理兩個相關資訊頁的頁面 , 
 
 - 在 iOS 上，當主版頁面從左邊滑動時，詳細資料頁面會「滑」** 向右邊，詳細資料頁面的左邊部分仍然可見。
 - 在 Android 上，詳細資料頁面和主版頁面會彼此「重疊」**。
-- 在 UWP 上,母版頁從詳細資訊頁左側的左側滑動,前提[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior)是該`Popover`屬性設定為 。 如需詳細資訊，請參閱[控制詳細資料頁面顯示行為](#Controlling_the_Detail_Page_Display_Behavior)。
+- 在 UWP 上，如果屬性設定為，則主版頁面會從詳細資料頁面的左邊滑出 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) `Popover` 。 如需詳細資訊，請參閱[控制詳細資料頁面顯示行為](#Controlling_the_Detail_Page_Display_Behavior)。
 
 在橫向模式中會觀察到類似的行為，只除了 iOS 和 Android 上的主版頁面，會具有與直向模式主版頁面類似的寬度，因此會顯示更多詳細資料頁面。
 
@@ -56,12 +59,12 @@ _Xamarin.Forms MasterDetailPage 是一個管理兩個相關資訊頁的頁面 , 
 
 ## <a name="creating-a-masterdetailpage"></a>建立 MasterDetailPage
 
-包含[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)[`Master`](xref:Xamarin.Forms.MasterDetailPage.Master)和[`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)屬性都是類型[`Page`](xref:Xamarin.Forms.Page)的 ,分別用於獲取和設置母版和詳細資訊頁。
+[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)包含 [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 和屬性，兩者都 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 是型別 [`Page`](xref:Xamarin.Forms.Page) ，分別用來取得和設定主版和詳細資料頁面。
 
 > [!IMPORTANT]
-> A[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)設計為根頁,在其他頁面類型中將其用作子頁可能會導致意外和不一致的行為。 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)此外,建議的母版頁應始終是實例[`ContentPage`](xref:Xamarin.Forms.ContentPage),並且詳細資訊頁應僅填[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)充[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)`ContentPage`, 和 實例。 這有助於跨所有平台確保一致的使用者體驗。
+> [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)是設計成根頁面，而使用它做為其他頁面類型的子頁面，可能會導致非預期且不一致的行為。 此外，建議的主版頁面 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 應一律為 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 實例，而且詳細資料頁面只能填入 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 和 `ContentPage` 實例。 這有助於跨所有平台確保一致的使用者體驗。
 
-下面的 XAML 代碼範例[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)顯示[`Master`](xref:Xamarin.Forms.MasterDetailPage.Master)了[`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)設定與 屬性的 a:
+下列 XAML 程式碼範例顯示 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 設定 [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 和 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 屬性的：
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -81,7 +84,7 @@ _Xamarin.Forms MasterDetailPage 是一個管理兩個相關資訊頁的頁面 , 
 </MasterDetailPage>
 ```
 
-以下代碼範例顯示 C# 中建立的等效項目[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage):
+下列程式碼範例顯示 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 以 c # 建立的對等：
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -99,11 +102,11 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-屬性[`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master)設置為[`ContentPage`](xref:Xamarin.Forms.ContentPage)實例。 屬性[`MasterDetailPage.Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)設定[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)為包含實體的`ContentPage`。
+[`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master)屬性會設定為 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 實例。 [`MasterDetailPage.Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)屬性會設定為 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 包含 `ContentPage` 實例的。
 
 ### <a name="creating-the-master-page"></a>建立主版頁面
 
-下面的 XAML 代碼範例`MasterPage`顯示了 物件的聲明,[`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master)該聲明透過屬性引用:
+下列 XAML 程式碼範例會顯示物件的宣告 `MasterPage` ，這個宣告會透過屬性來參考 [`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master) ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -141,14 +144,14 @@ public class MainPageCS : MasterDetailPage
 </ContentPage>
 ```
 
-該頁由一個[`ListView`](xref:Xamarin.Forms.ListView)通過在 XAML 中填充[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)數據,將其`MasterPageItem`屬性設置為 實例陣列。 每個 `MasterPageItem` 會定義 `Title`、`IconSource` 和 `TargetType` 屬性。
+此頁面包含 [`ListView`](xref:Xamarin.Forms.ListView) ，其會將其 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 屬性設定為實例陣列，以在 XAML 中填入資料 `MasterPageItem` 。 每個 `MasterPageItem` 會定義 `Title`、`IconSource` 和 `TargetType` 屬性。
 
-將[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)配置到[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate)屬性,以顯示`MasterPageItem`每個 。 `DataTemplate`包含[`ViewCell`](xref:Xamarin.Forms.ViewCell)[`Image`](xref:Xamarin.Forms.Image)由[`Label`](xref:Xamarin.Forms.Label)與的 將顯示[`Image`](xref:Xamarin.Forms.Image)`IconSource`屬性值,[`Label`](xref:Xamarin.Forms.Label)並顯示`Title``MasterPageItem`每個的屬性值。
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)會指派給 [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 屬性，以顯示每個 `MasterPageItem` 。 `DataTemplate`包含 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 由和組成的 [`Image`](xref:Xamarin.Forms.Image) [`Label`](xref:Xamarin.Forms.Label) 。 會 [`Image`](xref:Xamarin.Forms.Image) 顯示 `IconSource` 屬性值，而會 [`Label`](xref:Xamarin.Forms.Label) 顯示 `Title` 每個的屬性值 `MasterPageItem` 。
 
-頁面已設置其[`Title`](xref:Xamarin.Forms.Page.Title)[`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource)和 屬性。 圖示會出現在詳細資料頁面上，前提是詳細資料頁面有標題列。 必須在 iOS 上通過在實例中包裝詳細資訊頁實[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)例來 啟用此功能。
+頁面已設定其 [`Title`](xref:Xamarin.Forms.Page.Title) 和 [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) 屬性。 圖示會出現在詳細資料頁面上，前提是詳細資料頁面有標題列。 您必須將詳細資料頁面實例包裝在實例中，才能在 iOS 上啟用此功能 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。
 
 > [!NOTE]
-> 頁面[`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master)必須設置[`Title`](xref:Xamarin.Forms.Page.Title)其 屬性,否則將發生異常。
+> [`MasterDetailPage.Master`](xref:Xamarin.Forms.MasterDetailPage.Master)頁面必須 [`Title`](xref:Xamarin.Forms.Page.Title) 設定其屬性，否則會發生例外狀況。
 
 下列程式碼範例示範以 C# 建立的相等頁面：
 
@@ -214,7 +217,7 @@ public class MasterPageCS : ContentPage
 
 ### <a name="creating-and-displaying-the-detail-page"></a>建立和顯示詳細資料頁面
 
-實體包含`MasterPage``ListView`屬性,該[`ListView`](xref:Xamarin.Forms.ListView)屬性公開其實體,`MainPage`[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)以便實體可以註冊事件處理程式來處理該[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)事件。 這使`MainPage`實例能夠[`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)將 屬性設置為表示`ListView`所選項的頁面。 下列程式碼範例示範事件處理常式：
+`MasterPage`實例包含 `ListView` 會公開其實例的屬性， [`ListView`](xref:Xamarin.Forms.ListView) 讓 `MainPage` [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 實例可以註冊事件處理常式來處理 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件。 這可讓 `MainPage` 實例將屬性設定 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 為代表所選取專案的頁面 `ListView` 。 下列程式碼範例示範事件處理常式：
 
 ```csharp
 public partial class MainPage : MasterDetailPage
@@ -239,9 +242,9 @@ public partial class MainPage : MasterDetailPage
 
 `OnItemSelected` 方法會執行下列動作：
 
-- 它將[`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem)從[`ListView`](xref:Xamarin.Forms.ListView)實例中檢索 ,`null`前提是 它不是,則將詳細資訊頁設置到`TargetType``MasterPageItem`存儲在 屬性 中的頁類型的新實例。 頁面類型包裝在[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)實例中,以確保通過 inon 上[`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource)`MasterPage`的屬性引用的圖示顯示在 iOS 中的詳細資訊頁上。
-- [`ListView`](xref:Xamarin.Forms.ListView)中的選定項`null`設置為,以確保下次顯示`ListView``MasterPage`時 不會選擇任何專案。
-- 通過將[`MasterDetailPage.IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented)屬性設置`false`為 ,向使用者顯示詳細資訊頁。 此屬性控制要顯示主版頁面還是詳細資料頁面。 如果要顯示主版頁面，它應該設定為 `true`，若要顯示詳細資料頁面，則設定為 `false`。
+- 它會 [`SelectedItem`](xref:Xamarin.Forms.ListView.SelectedItem) 從實例中抓取， [`ListView`](xref:Xamarin.Forms.ListView) 並假設它不是，會 `null` 將詳細資料頁面設定為儲存在之屬性中的頁面類型的新實例 `TargetType` `MasterPageItem` 。 頁面類型會包裝在實例中 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，以確保透過中的屬性所參考的圖示 [`IconImageSource`](xref:Xamarin.Forms.Page.IconImageSource) `MasterPage` 會顯示在 iOS 的詳細資料頁面上。
+- 中選取的專案 [`ListView`](xref:Xamarin.Forms.ListView) 會設為， `null` 以確保 `ListView` 下一次出現時，不會選取任何專案 `MasterPage` 。
+- 詳細資料頁面會藉由將屬性設定為來呈現給使用者 [`MasterDetailPage.IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) `false` 。 此屬性控制要顯示主版頁面還是詳細資料頁面。 如果要顯示主版頁面，它應該設定為 `true`，若要顯示詳細資料頁面，則設定為 `false`。
 
 下列螢幕擷取畫面顯示 `ContactPage` 詳細資料頁面，在主版頁面上選取它之後便會加以顯示：
 
@@ -251,7 +254,7 @@ public partial class MainPage : MasterDetailPage
 
 ### <a name="controlling-the-detail-page-display-behavior"></a>控制詳細資料頁面顯示行為
 
-如何[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)管理母版和詳細資訊頁取決於應用程式是否在手機或平板電腦上運行、設備方向[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior)以及 屬性的值。 此屬性會決定詳細資料頁面的顯示方式。 可能值如下：
+如何 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 管理主版和詳細資料頁面，取決於應用程式是在手機或平板電腦上執行、裝置的方向，以及屬性的值 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 。 此屬性會決定詳細資料頁面的顯示方式。 可能值如下：
 
 - **預設** – 會使用平台預設來顯示頁面。
 - **Popover** – 詳細資料頁面會蓋住或部分蓋住主版頁面。
@@ -259,7 +262,7 @@ public partial class MainPage : MasterDetailPage
 - **SplitOnLandscape** – 裝置處於橫向時，會使用分割畫面。
 - **SplitOnPortrait** – 裝置處於直向時，會使用分割畫面。
 
-以下 XAML 代碼範例展示如何[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior)在[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)上設定 屬性 :
+下列 XAML 程式碼範例示範如何 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 在上設定屬性 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -271,7 +274,7 @@ public partial class MainPage : MasterDetailPage
 </MasterDetailPage>
 ```
 
-以下代碼範例顯示 C# 中建立的等效項目[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage):
+下列程式碼範例顯示 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 以 c # 建立的對等：
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -286,14 +289,14 @@ public class MainPageCS : MasterDetailPage
 }
 ```
 
-但是,[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior)屬性的值僅影響在平板電腦或桌面上運行的應用程式。 在手機上執行的應用程式一律為 *Popover* 行為。
+不過，屬性的值 [`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 只會影響在平板電腦或桌面上執行的應用程式。 在手機上執行的應用程式一律為 *Popover* 行為。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文演示了如何使用[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)和 導航在其信息頁之間。 Xamarin.Forms `MasterDetailPage` 是管理兩個相關資訊頁面的頁面 – 顯示項目的主版頁面，和顯示主版頁面上項目相關詳細資料的詳細資料頁面。
+本文示範如何使用 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ，並在其資訊頁面之間流覽。 Xamarin.Forms `MasterDetailPage` 是管理兩個相關資訊頁面的頁面–顯示專案的主版頁面，以及顯示主版頁面上專案相關詳細資料的詳細資料頁面。
 
 ## <a name="related-links"></a>相關連結
 
-- [頁面品種](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [頁面種類](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [MasterDetailPage (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 - [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

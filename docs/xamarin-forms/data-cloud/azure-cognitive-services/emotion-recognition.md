@@ -1,22 +1,25 @@
 ---
-title: 使用臉部 API 的認知表情辨識
-description: 臉部 API 會以影像中的臉部運算式做為輸入，並傳回在影像中每個臉部的一組表情上包含信賴等級的資料。 本文說明如何使用臉部 API 來辨識表情，以評分 Xamarin. Forms 應用程式。
-ms.prod: xamarin
-ms.assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/10/2018
-ms.openlocfilehash: 4dedcb0869c1e965679812239b1de09f07efa875
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: 臉部 API 會以影像中的臉部運算式做為輸入，並傳回在影像中每個臉部的一組表情上包含信賴等級的資料。 本文說明如何使用臉部 API 來辨識表情，以對應用程式進行評分 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487616"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136054"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>使用臉部 API 的認知表情辨識
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 臉部 API 可執行表情偵測，以根據人類半截所認知的注釋，在臉部運算式中偵測生氣、藐視、厭惡、恐懼、快樂、中性、悲傷和驚喜。 不過，請務必注意，臉部運算式本身可能不一定代表人員的內部狀態。
 
@@ -33,9 +36,9 @@ ms.locfileid: "75487616"
 
 如需臉部 API 的詳細資訊，請參閱[臉部 api](/azure/cognitive-services/face/overview/)。
 
-## <a name="authentication"></a>驗證  (可能為英文網頁)
+## <a name="authentication"></a>驗證
 
-對臉部 API 提出的每個要求都需要 API 金鑰，且應指定為 `Ocp-Apim-Subscription-Key` 標頭的值。 下列程式碼範例顯示如何將 API 金鑰新增至要求的 `Ocp-Apim-Subscription-Key` 標頭：
+對臉部 API 所提出的每個要求，都需要一個應該指定為標頭值的 API 金鑰 `Ocp-Apim-Subscription-Key` 。 下列程式碼範例顯示如何將 API 金鑰新增至要求的 `Ocp-Apim-Subscription-Key` 標頭：
 
 ```csharp
 public FaceRecognitionService()
@@ -49,24 +52,24 @@ public FaceRecognitionService()
 
 ## <a name="perform-emotion-recognition"></a>執行表情辨識
 
-表情辨識的執行方式是將包含影像的 POST 要求放在 `https://[location].api.cognitive.microsoft.com/face/v1.0`的 `detect` API，其中 `[location]]` 是您用來取得 API 金鑰的區域。 選擇性的要求參數為：
+表情辨識的執行方式是將包含影像的 POST 要求放到 `detect` API `https://[location].api.cognitive.microsoft.com/face/v1.0` （位於），其中 `[location]]` 是您用來取得 api 金鑰的區域。 選擇性的要求參數為：
 
-- `returnFaceId` –是否要傳回偵測到之臉部的 faceIds。 預設值為 `true`。
-- `returnFaceLandmarks` –是否要傳回偵測到臉部的臉部地標。 預設值為 `false`。
-- `returnFaceAttributes` –是否要分析並傳回一或多個指定的臉部屬性。 支援的臉部屬性包括 `age`、`gender`、`headPose`、`smile`、`facialHair`、`glasses`、`emotion`、`hair`、`makeup`、`occlusion`、`accessories`、`blur`、`exposure`和 `noise`。 請注意，臉部屬性分析有額外的計算和時間成本。
+- `returnFaceId`–是否要傳回偵測到之臉部的 faceIds。 預設值是 `true`。
+- `returnFaceLandmarks`–是否要傳回所偵測到臉部的臉部地標。 預設值是 `false`。
+- `returnFaceAttributes`–是否要分析並傳回一或多個指定的臉部屬性。 支援的臉部屬性包括 `age` 、、、、、、、、、、、、 `gender` `headPose` `smile` `facialHair` `glasses` `emotion` `hair` `makeup` `occlusion` `accessories` `blur` `exposure` 和 `noise` 。 請注意，臉部屬性分析有額外的計算和時間成本。
 
 影像內容必須放在 POST 要求的主體中，做為 URL 或二進位資料。
 
 > [!NOTE]
 > 支援的影像檔案格式為 JPEG、PNG、GIF 和 BMP，而允許的檔案大小為1KB 到4MB。
 
-在範例應用程式中，表情辨識程式是藉由呼叫 `DetectAsync` 方法來叫用：
+在範例應用程式中，表情辨識程式是藉由呼叫方法來叫用 `DetectAsync` ：
 
 ```csharp
 Face[] faces = await _faceRecognitionService.DetectAsync(photoStream, true, false, new FaceAttributeType[] { FaceAttributeType.Emotion });
 ```
 
-這個方法呼叫會指定包含影像資料的資料流程、應傳回的 faceIds、不應傳回臉部地標，以及應該分析影像的表情。 它也會指定將結果當做 `Face` 物件的陣列傳回。 接著，`DetectAsync` 方法會叫用執行表情辨識的 `detect` REST API：
+這個方法呼叫會指定包含影像資料的資料流程、應傳回的 faceIds、不應傳回臉部地標，以及應該分析影像的表情。 它也會指定以物件陣列的形式傳回結果 `Face` 。 接著， `DetectAsync` 方法會叫用 `detect` 執行表情辨識的 REST API：
 
 ```csharp
 public async Task<Face[]> DetectAsync(Stream imageStream, bool returnFaceId, bool returnFaceLandmarks, IEnumerable<FaceAttributeType> returnFaceAttributes)
@@ -79,14 +82,14 @@ public async Task<Face[]> DetectAsync(Stream imageStream, bool returnFaceId, boo
 }
 ```
 
-這個方法會產生要求 URI，然後透過 `SendRequestAsync` 方法，將要求傳送至 `detect` API。
+這個方法會產生要求 URI，然後透過方法將要求傳送至 `detect` API `SendRequestAsync` 。
 
 > [!NOTE]
-> 當您用來取得訂用帳戶金鑰時，您必須在臉部 API 呼叫中使用相同的區域。 例如，如果您從 `westus` 區域取得訂用帳戶金鑰，將會 `https://westus.api.cognitive.microsoft.com/face/v1.0/detect`臉部偵測端點。
+> 當您用來取得訂用帳戶金鑰時，您必須在臉部 API 呼叫中使用相同的區域。 例如，如果您從區域取得訂用帳戶金鑰 `westus` ，臉部偵測端點會是 `https://westus.api.cognitive.microsoft.com/face/v1.0/detect` 。
 
 ### <a name="send-the-request"></a>傳送要求
 
-`SendRequestAsync` 方法會對臉部 API 發出 POST 要求，並以 `Face` 陣列的形式傳回結果：
+`SendRequestAsync`方法會對臉部 API 發出 POST 要求，並以陣列的形式傳回結果 `Face` ：
 
 ```csharp
 async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMethod, string requestUrl, TRequest requestBody)
@@ -129,11 +132,11 @@ async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMetho
 }
 ```
 
-如果透過資料流程提供影像，方法會將影像資料流程包裝在 `StreamContent` 實例中，以提供以資料流程為基礎的 HTTP 內容，藉以建立 POST 要求。 或者，如果透過 URL 提供影像，方法會將 URL 包裝在 `StringContent` 實例中，以提供以字串為基礎的 HTTP 內容，藉以建立 POST 要求。
+如果透過資料流程提供影像，方法會將影像資料流程包裝在實例中，藉此建立 POST 要求 `StreamContent` ，以提供以資料流程為基礎的 HTTP 內容。 或者，如果透過 URL 提供影像，方法就會將 URL 包裝在實例中，以提供以字串為 `StringContent` 基礎的 HTTP 內容，藉以建立 POST 要求。
 
 然後，POST 要求會傳送至 `detect` API。 回應會讀取、還原序列化，並傳回給呼叫方法。
 
-`detect` API 會在回應中傳送 HTTP 狀態碼200（確定），前提是該要求是有效的，這表示要求成功，且要求的資訊在回應中。 如需可能的錯誤回應清單，請參閱[臉部 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
+`detect`如果要求有效，此 API 會在回應中傳送 HTTP 狀態碼200（確定），這表示要求成功，且要求的資訊在回應中。 如需可能的錯誤回應清單，請參閱[臉部 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
 
 ### <a name="process-the-response"></a>處理回應
 
@@ -165,9 +168,9 @@ API 回應會以 JSON 格式傳回。 下列 JSON 資料顯示一般成功的回
 ]
 ```
 
-成功的回應訊息包含以臉部矩形大小以遞減順序排序的臉部專案陣列，而空的回應則表示未偵測到臉部。 每個辨識的臉部都包含一系列的選擇性臉部屬性，由 `DetectAsync` 方法的 `returnFaceAttributes` 引數所指定。
+成功的回應訊息包含以臉部矩形大小以遞減順序排序的臉部專案陣列，而空的回應則表示未偵測到臉部。 每個辨識的臉部都包含一系列的選擇性臉部屬性，由 `returnFaceAttributes` 方法的引數所指定 `DetectAsync` 。
 
-在範例應用程式中，JSON 回應會還原序列化為 `Face` 物件的陣列。 當您從臉部 API 解讀結果時，偵測到的表情應該會以最高分的表情來解讀，因為分數會正規化為加總為1。 因此，範例應用程式會針對影像中最大偵測到的臉部，顯示具有最高分數的可辨識表情。 使用下列程式碼即可達成：
+在範例應用程式中，JSON 回應會還原序列化為物件的陣列 `Face` 。 當您從臉部 API 解讀結果時，偵測到的表情應該會以最高分的表情來解讀，因為分數會正規化為加總為1。 因此，範例應用程式會針對影像中最大偵測到的臉部，顯示具有最高分數的可辨識表情。 使用下列程式碼即可達成：
 
 ```csharp
 emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRankedList().FirstOrDefault().Key;

@@ -1,60 +1,63 @@
 ---
-title: Xamarin.Forms BoxView
-description: 這篇文章說明如何使用彩色的矩形裝飾、 圖形和 Xamarin.Forms 應用程式中的互動。
-ms.prod: xamarin
-ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/26/2018
-ms.openlocfilehash: 2da2af2a57fb0ec737927024d497530c2a3aac5b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: Xamarin.FormsBoxView
+description: 本文說明如何在應用程式中使用色彩矩形來裝飾、圖形和互動 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5f915955bff969ef38cdb7a89bf9cecf05401131
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759875"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136353"
 ---
-# <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
+# <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxView
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
-[`BoxView`](xref:Xamarin.Forms.BoxView) 呈現指定的寬度、 高度和色彩的簡單矩形。 您可以使用`BoxView`裝飾，基本圖形，以及透過觸控使用者互動。
+[`BoxView`](xref:Xamarin.Forms.BoxView)呈現指定寬度、高度和色彩的簡單矩形。 您可以使用做 `BoxView` 為裝飾、基本圖形，以及透過觸控與使用者互動。
 
-Xamarin.Forms 沒有內建的向量圖形系統，因為`BoxView`補償的協助。 本文章使用中所述的範例程式的一些`BoxView`轉譯圖形。 `BoxView`可以調整大小，以類似於特定的寬度和粗細的線條和再利用任何角度旋轉`Rotation`屬性。
+因為沒有 Xamarin.Forms 內建向量圖形系統，所以 `BoxView` 有助於補償。 本文所述的部分範例程式會使用 `BoxView` 來轉譯圖形。 `BoxView`可以調整大小，以類似特定寬度和粗細的線條，然後使用屬性以任何角度旋轉 `Rotation` 。
 
-雖然`BoxView`可以模擬簡單的圖形，您可能想要調查[Xamarin.Forms 中的使用 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)更複雜的圖形需求。
+雖然 `BoxView` 可以模擬簡單的圖形，但您可能會想要[使用 Xamarin.Forms 中的 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)進行調查，以取得更複雜的圖形需求。
 
-這篇文章討論下列主題：
+本文章討論下列主題：
 
-- **[設定 BoxView 色彩和大小](#colorandsize)** &ndash;設定`BoxView`屬性。
-- **[轉譯文字裝飾](#textdecorations)** &ndash;使用`BoxView`轉譯線條。
-- **[列出色彩 BoxView](#listingcolors)**  &ndash;顯示所有的系統色彩中`ListView`。
-- **[玩遊戲生命週期由子類別化 BoxView](#subclassing)**  &ndash;實作著名的行動電話通訊自動化。
-- **[建立數位時鐘](#digitalclock)** &ndash;模擬以點矩陣顯示。
-- **[建立類比時鐘](#analogclock)** &ndash;轉換和製作動畫`BoxView`項目。
+- **[設定 BoxView 色彩和大小](#colorandsize)** &ndash;設定 `BoxView` 屬性。
+- 轉譯**[文字裝飾](#textdecorations)** &ndash;使用 `BoxView` 來呈現線條。
+- **[使用 BoxView](#listingcolors)** &ndash; 來列出色彩顯示中的所有系統色彩 `ListView` 。
+- 藉由子類別化**[BoxView](#subclassing)** &ndash; 來玩生活遊戲實行著名的行動自動化。
+- **[建立數位時鐘](#digitalclock)** &ndash;模擬點矩陣顯示。
+- **[建立類比時鐘](#analogclock)** &ndash;轉換和建立 `BoxView` 元素的動畫。
 
 <a name="colorandsize" />
 
 ## <a name="setting-boxview-color-and-size"></a>設定 BoxView 色彩和大小
 
-通常您會設定下列屬性`BoxView`:
+通常您會設定下列屬性 `BoxView` ：
 
-- [`Color`](xref:Xamarin.Forms.BoxView.Color) 若要設定其色彩。
-- [`CornerRadius`](xref:Xamarin.Forms.BoxView.CornerRadius) 若要設定其邊角半徑。
-- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 若要設定的寬度`BoxView`以與裝置無關單位。
-- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 若要設定的高度`BoxView`。
+- [`Color`](xref:Xamarin.Forms.BoxView.Color)以設定其色彩。
+- [`CornerRadius`](xref:Xamarin.Forms.BoxView.CornerRadius)設定其圓角半徑。
+- [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)設定的寬度（以與 `BoxView` 裝置無關的單位）。
+- [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)設定的高度 `BoxView` 。
 
-`Color`屬性的類型是`Color`; 的屬性可以設定為任何`Color`的值，包括 141 靜態唯讀欄位的命名色彩範圍是依字母順序，從`AliceBlue`到`YellowGreen`。
+`Color`屬性的類型為 `Color` ，而屬性可以設定為任何 `Color` 值，包括命名色彩的141靜態唯讀欄位，範圍從 `AliceBlue` 到 `YellowGreen` 。
 
-`CornerRadius`屬性的類型是[ `CornerRadius` ](xref:Xamarin.Forms.CornerRadius); 的屬性可以設定為單一`double`統一角半徑值，或有`CornerRadius`由四個定義的結構`double`會套用至的值左上方，右上方，左下方，以及右下方的`BoxView`。
+`CornerRadius`屬性的類型為， [`CornerRadius`](xref:Xamarin.Forms.CornerRadius) 屬性可以設定為單一的 `double` 統一圓角半徑值，或 `CornerRadius` 由四個值所定義的結構（套用 `double` 至左上方、右上方、左下方和右下方） `BoxView` 。
 
-`WidthRequest`並`HeightRequest`屬性只扮演的角色，如果`BoxView`是*未受限制*配置中。 這種狀況時，版面配置容器必須知道子系的大小，比方說，當`BoxView`子系中的自動調整大小的資料格`Grid`版面配置。 A`BoxView`時，也不受限制其`HorizontalOptions`並`VerticalOptions`以外的其他屬性設定為值`LayoutOptions.Fill`。 如果`BoxView`是 未受限制，但`WidthRequest`和`HeightRequest`沒有設定屬性，則寬度或高度設定為 40 的單位或大約在行動裝置上的 1/4 英吋的預設值。
+`WidthRequest`只有在 `HeightRequest` `BoxView` 不受*限制*的版面配置中，和屬性才會播放角色。 當版面配置容器需要知道子系的大小時（例如，當 `BoxView` 是版面配置中自動調整大小的儲存格的子系）時，就會發生這種情況 `Grid` 。 `BoxView`當其 `HorizontalOptions` 和 `VerticalOptions` 屬性設定為以外的值時，也不受限制 `LayoutOptions.Fill` 。 如果不 `BoxView` 受限制，但 `WidthRequest` `HeightRequest` 未設定和屬性，則寬度或高度會設定為預設值40單位，或在行動裝置上為大約1/4 英寸。
 
-`WidthRequest`並`HeightRequest`屬性會被忽略，如果`BoxView`是*限制*在配置中，在其中案例版面配置容器本身的大小會安排`BoxView`。
+如果在配置 `WidthRequest` `HeightRequest` `BoxView` 中*受到限制*，則會忽略和屬性，在此情況下，版面配置容器會在上施加自己的大小 `BoxView` 。
 
-A`BoxView`可以限制在一個維度中，並在其他未受限制。 比方說，如果`BoxView`子系的垂直`StackLayout`，以垂直維度的`BoxView`是未受限制，而且其水平維度一般條件約束。 但是該水準維度有一些例外狀況：如果將`BoxView`其`HorizontalOptions`屬性`LayoutOptions.Fill`設定為以外的某個專案，則水準維度也不受限制。 此外，也可以針對`StackLayout`本身在此情況下有不受限制的水平維度，`BoxView`也會以水平方式不受限制。
+`BoxView`可以在一個維度中受到限制，而不受限制。 例如，如果 `BoxView` 是垂直的子系 `StackLayout` ，的垂直維度 `BoxView` 就是不受限制的，而且其水準維度通常會受到限制。 但是，該水準維度有一些例外狀況：如果將 `BoxView` 其 `HorizontalOptions` 屬性設定為以外的某個專案 `LayoutOptions.Fill` ，則水準維度也不受限制。 本身也可能 `StackLayout` 有未受限制的水準維度，在此情況下也會以 `BoxView` 水準方式來限制。
 
-[ **BasicBoxView** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)範例會顯示未受限制一英吋-正方形`BoxView`在其頁面的中心：
+[**BasicBoxView**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)範例會 `BoxView` 在其頁面的中央顯示一個不受限制的正方形：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -72,21 +75,21 @@ A`BoxView`可以限制在一個維度中，並在其他未受限制。 比方說
 </ContentPage>
 ```
 
-結果如下：
+結果如下︰
 
 [![基本 BoxView](boxview-images/basicboxview-small.png "基本 BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
-如果`VerticalOptions`並`HorizontalOptions`屬性會從`BoxView`標記，或者設定`Fill`，則`BoxView`變成受限於頁面的大小，並展開以填滿頁面。
+如果 `VerticalOptions` 和 `HorizontalOptions` 屬性已從標記中移除， `BoxView` 或設定為 `Fill` ，則會受到 `BoxView` 頁面大小的限制，並展開以填滿頁面。
 
-A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大小`BoxView`都是使用設定`LayoutBounds`附加可繫結的屬性。 `AbsoluteLayout`一文所述[ **AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)。
+`BoxView`也可以是的子系 `AbsoluteLayout` 。 在這種情況下，的位置和大小 `BoxView` 都是使用附加的可系結屬性來設定 `LayoutBounds` 。 `AbsoluteLayout` [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)一文中會討論。
 
-您會看到範例程式，請依照下列中的所有這些案例的範例。
+您會在接下來的範例程式中，看到所有這些案例的範例。
 
 <a name="textdecorations" />
 
 ## <a name="rendering-text-decorations"></a>轉譯文字裝飾
 
-您可以使用`BoxView`頁面的水平和垂直線條形式加入一些簡單的裝飾。 [ **TextDecoration** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)為範例。 中所定義的所有程式的視覺效果**MainPage.xaml**檔案，其中包含數個`Label`並`BoxView`中的項目`StackLayout`如下所示：
+您可以使用， `BoxView` 以水準和垂直線的形式，在您的頁面上新增一些簡單的裝飾。 [**TextDecoration**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)範例會示範這種情況。 所有程式的視覺效果都是在**MainPage**檔案中定義，其中包含 `Label` 中的數個和元素， `BoxView` `StackLayout` 如下所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -117,11 +120,11 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
 </ContentPage>
 ```
 
-接下來的標記都的子系`StackLayout`。 此標記包含數種類型的裝飾`BoxView`搭配使用的項目`Label`項目：
+後面的所有標記都是的子系 `StackLayout` 。 此標記是由與專案搭配使用的數種裝飾元素所組成 `BoxView` `Label` ：
 
 [![文字裝飾](boxview-images/textdecoration-small.png "文字裝飾")](boxview-images/textdecoration-large.png#lightbox "文字裝飾")
 
-達成流行的標頭，在頁面頂端`AbsoluteLayout`其子系有四個`BoxView`項目和`Label`，則所有的這是指派特定的位置和大小：
+頁面頂端的「時尚」標頭是使用的子系 `AbsoluteLayout` 是四個元素，而「全部」則 `BoxView` `Label` 是指派特定位置和大小：
 
 ```xaml
 <AbsoluteLayout>
@@ -135,9 +138,9 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
 </AbsoluteLayout>
 ```
 
-在 XAML 檔案中，`AbsoluteLayout`後面接著`Label`使用的格式描述文字`AbsoluteLayout`。
+在 XAML 檔案中， `AbsoluteLayout` 後面接著， `Label` 其中包含描述的格式化文字 `AbsoluteLayout` 。
 
-您可以藉由封閉兩者加底線的文字字串`Label`並`BoxView`中`StackLayout`具有其`HorizontalOptions`值以外的其他設定項目為`Fill`。 寬度`StackLayout`然後受到寬度`Label`，然後上套用該寬度`BoxView`。 `BoxView`指派只明確高度：
+您可以 `Label` `BoxView` 在將 `StackLayout` 其 `HorizontalOptions` 值設定為以外之 `Fill` 專案的中，將和都括住，以加上文字字串的底線。 的寬度 `StackLayout` 接著會受到的寬度控管 `Label` ，然後將該寬度強加于上 `BoxView` 。 `BoxView`只會指派一個明確的高度：
 
 ```xaml
 <StackLayout HorizontalOptions="Center">
@@ -147,15 +150,15 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
 </StackLayout>
 ```
 
-您無法使用這項技術，加上底線較長的文字字串或段落內的個別文字。
+您不能使用這項技術，在較長的文字字串或段落中為個別文字加上底線。
 
-您也可使用`BoxView`類似於 HTML `hr` （水平尺規） 項目。 直接讓寬度`BoxView`取決於其父容器，在此情況下是`StackLayout`:
+也可以使用 `BoxView` 來類似 HTML `hr` （水準規則）元素。 只要讓的寬度由 `BoxView` 其父容器決定，在此案例中為 `StackLayout` ：
 
 ```xaml
 <BoxView HeightRequest="3" />
 ```
 
-最後，封入同時在一段文字的一邊繪製一條垂直線`BoxView`而`Label`水平`StackLayout`。 在此案例中的高度`BoxView`相同的高度`StackLayout`，其受到高度`Label`:
+最後，您可以在文欄位落的某一端繪製垂直線，方法是 `BoxView` 以水準方式將和括住 `Label` `StackLayout` 。 在此情況下，的高度與的高度 `BoxView` 相同 `StackLayout` ，其受高度的規範 `Label` ：
 
 ```xaml
 <StackLayout Orientation="Horizontal">
@@ -171,13 +174,13 @@ A`BoxView`也可以是子系`AbsoluteLayout`。 在此情況下，位置和大�
 
 <a name="listingcolors" />
 
-## <a name="listing-colors-with-boxview"></a>列出使用 BoxView 色彩
+## <a name="listing-colors-with-boxview"></a>使用 BoxView 來列出色彩
 
-`BoxView`是方便顯示色彩。 此程式會使用`ListView`若要列出所有的公用靜態唯讀欄位的 Xamarin.Forms`Color`結構：
+`BoxView`方便顯示色彩。 此程式會使用 `ListView` 來列出結構的所有公用靜態唯讀欄位 Xamarin.Forms `Color` ：
 
 [![ListView 色彩](boxview-images/listviewcolors-small.png "ListView 色彩")](boxview-images/listviewcolors-large.png#lightbox "ListView 色彩")
 
-[ **ListViewColors** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors)計畫包含類別，名為`NamedColor`。 靜態建構函式會使用反映來存取的所有欄位`Color`結構，並建立`NamedColor`針對每個物件。 這些儲存在靜態`All`屬性：
+[**ListViewColors**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors)套裝程式含名為的類別 `NamedColor` 。 靜態的函式會使用反映來存取結構的所有欄位 `Color` ，並 `NamedColor` 為每個欄位建立一個物件。 這些會儲存在靜態 `All` 屬性中：
 
 ```csharp
 public class NamedColor
@@ -249,7 +252,7 @@ public class NamedColor
 }
 ```
 
-程式視覺效果所述的 XAML 檔案。 `ItemsSource`的屬性`ListView`設定為靜態`NamedColor.All`屬性，這表示`ListView`顯示所有個別`NamedColor`物件：
+程式視覺效果如 XAML 檔案中所述。 的 `ItemsSource` 屬性 `ListView` 會設定為靜態 `NamedColor.All` 屬性，這表示會 `ListView` 顯示所有個別 `NamedColor` 物件：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -300,15 +303,15 @@ public class NamedColor
 </ContentPage>
 ```
 
-`NamedColor`來格式化的物件`ViewCell`做為資料範本的設定物件`ListView`。 此範本包括`BoxView`其`Color`屬性的繫結至`Color`屬性`NamedColor`物件。
+物件 `NamedColor` 會由 `ViewCell` 設定為資料範本的物件進行格式化 `ListView` 。 此範本包含， `BoxView` 其 `Color` 屬性系結至 `Color` 物件的屬性 `NamedColor` 。
 
 <a name="subclassing" />
 
-## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>依子類別化 BoxView 生命遊戲玩法
+## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>藉由子類別化 BoxView 來玩生活遊戲
 
-遊戲生命週期是首創數學家 John Conway 和普及化的頁面中的行動電話通訊 automaton*科學 American*在 1970 年代。 維基百科文章提供了絕佳的簡介[生命週期 Conway 遊戲](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)。
+生活的遊戲是依照數學家 John Conway 定律和普及化在1970年代的*科學美國*的頁面中所創造的行動電話自動化。 這是維琪百科文章[conway 定律的生活遊戲](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)所提供的絕佳簡介。
 
-Xamarin.Forms [ **GameOfLife** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)程式還定義了一個名為類別`LifeCell`衍生自`BoxView`。 這個類別會封裝生命週期的遊戲中個別資料格的邏輯：
+Xamarin.Forms [**GameOfLife**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)程式 `LifeCell` 會定義衍生自的類別，名為 `BoxView` 。 這個類別會將個別資料格的邏輯封裝在生活的遊戲中：
 
 ```csharp
 class LifeCell : BoxView
@@ -351,23 +354,23 @@ class LifeCell : BoxView
 }
 ```
 
-`LifeCell` 新增三個屬性，以`BoxView`:`Col`並`Row`屬性儲存的資料格在方格中，位置和`IsAlive`屬性會指出其狀態。 `IsAlive`屬性也會設定`Color`屬性`BoxView`設成黑色，如果儲存格已保持運作，而且白色如果儲存格不保持運作。
+`LifeCell`將其他三個屬性加入至 `BoxView` ： `Col` 和 `Row` 屬性會儲存資料格在方格中的位置，而 `IsAlive` 屬性則表示其狀態。 如果資料格在運作 `IsAlive` 中，屬性也會將的 `Color` 屬性設定 `BoxView` 為黑色，如果資料格不在運作中，則將設為白色。
 
-`LifeCell` 也會安裝`TapGestureRecognizer`以允許使用者藉由點選它們切換資料格的狀態。 類別會將轉譯`Tapped`筆勢辨識器到它自己的事件`Tapped`事件。
+`LifeCell`也會安裝 `TapGestureRecognizer` ，以允許使用者藉由使用來切換資料格的狀態。 類別會將 `Tapped` 筆勢辨識器的事件轉譯為它自己的 `Tapped` 事件。
 
-**GameOfLife**程式也包含`LifeGrid`類別，將封裝很多，遊戲邏輯和`MainPage`類別會處理程式的視覺效果。 這些包括描述的遊戲規則的覆疊。 以下是顯示幾個數百的作用中的 程式`LifeCell`頁面上的物件：
+**GameOfLife**程式也包含類別， `LifeGrid` 它會封裝許多遊戲邏輯，以及 `MainPage` 處理常式視覺效果的類別。 其中包括描述遊戲規則的重迭。 此處的程式會在 `LifeCell` 頁面上顯示數百個物件：
 
-[![遊戲的生命循環](boxview-images/gameoflife-small.png "生命週期的遊戲")](boxview-images/gameoflife-large.png#lightbox "生命週期的遊戲")
+[![生活遊戲](boxview-images/gameoflife-small.png "生活遊戲")](boxview-images/gameoflife-large.png#lightbox "生活遊戲")
 
 <a name="digitalclock" />
 
 ## <a name="creating-a-digital-clock"></a>建立數位時鐘
 
-[ **DotMatrixClock** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)程式會建立 210`BoxView`模擬的舊式的 5-7 點矩陣顯示點的項目。 您可以讀取的時間，以直向或橫向模式中，但較大型架構中：
+[**DotMatrixClock**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)程式會建立 210 `BoxView` 元素，以模擬舊式的 5 x 7 點矩陣顯示的點。 您可以閱讀直向或橫向模式的時間，但它的橫向範圍較大：
 
-[![點陣時鐘](boxview-images/dotmatrixclock-small.png "點陣時鐘")](boxview-images/dotmatrixclock-large.png#lightbox "點陣時鐘")
+[![點矩陣時鐘](boxview-images/dotmatrixclock-small.png "點矩陣時鐘")](boxview-images/dotmatrixclock-large.png#lightbox "點矩陣時鐘")
 
-XAML 檔案未稍微超過執行個體化`AbsoluteLayout`用於時鐘：
+XAML 檔案除了具現化 `AbsoluteLayout` 用於時鐘的：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -382,7 +385,7 @@ XAML 檔案未稍微超過執行個體化`AbsoluteLayout`用於時鐘：
 </ContentPage>
 ```
 
-所有其他項目就會發生在程式碼後置檔案中。 點陣顯示邏輯已大幅簡化數個陣列，描述對應至每 10 個數字和冒號的點定義：
+所有其他專案都會出現在程式碼後置檔案中。 點矩陣顯示邏輯已由數個數組的定義大幅簡化，其中描述每個10位數和冒號的對應點：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -454,9 +457,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-這些欄位都以此的三維陣列`BoxView`儲存點的模式的六個數字的項目。
+這些欄位會以三維陣列的元素結束， `BoxView` 用於儲存六位數的點模式。
 
-建構函式會建立所有`BoxView`數字和冒號，以及初始化的項目`Color`屬性`BoxView`冒號的項目：
+此函式會建立 `BoxView` 數位和冒號的所有元素，同時初始化冒號的 `Color` `BoxView` 元素屬性：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -535,9 +538,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-此程式會使用的相對位置和大小功能`AbsoluteLayout`。 每個的高度與寬度`BoxView`設小數值，特別是 85%的 1 除以水平和垂直點的數目。 位置也都設為小數值。
+此程式會使用的相對定位和調整大小功能 `AbsoluteLayout` 。 每個的寬度和高度 `BoxView` 都會設定為小數值，特別是85% 的1除以水準和垂直點的數目。 這些位置也會設定為「小數值」。
 
-因為所有的位置和大小是相對於總大小`AbsoluteLayout`，則`SizeChanged`只需要設定頁面的處理常式`HeightRequest`的`AbsoluteLayout`:
+由於所有位置和大小都是相對於的總大小，因此 `AbsoluteLayout` 頁面的 `SizeChanged` 處理常式只需要設定的 `HeightRequest` `AbsoluteLayout` ：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -556,9 +559,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-寬度`AbsoluteLayout`會自動設定，因為它會自動縮放以完整頁面的寬度。
+的寬度會 `AbsoluteLayout` 自動設定，因為它會延伸到頁面的完整寬度。
 
-在最後的程式碼`MainPage`類別處理計時器回撥和色彩的每一個數字的點。 多維陣列，在程式碼後置檔案開頭的定義中，可協助進行此邏輯程式的最簡單的一部分：
+類別中的最後一個程式碼會 `MainPage` 處理計時器回呼，並將每個數位的點色彩。 在程式碼後置檔案的開頭，多維陣列的定義有助於讓這個邏輯成為程式最簡單的部分：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -600,13 +603,13 @@ public partial class MainPage : ContentPage
 
 ## <a name="creating-an-analog-clock"></a>建立類比時鐘
 
-點陣時鐘可能不按照的應用程式明顯`BoxView`，但`BoxView`項目也不能實現類比時鐘：
+點矩陣時鐘似乎是的明顯應用 `BoxView` ，但 `BoxView` 元素也能夠實現類比時鐘：
 
 [![BoxView 時鐘](boxview-images/boxviewclock-small.png "BoxView 時鐘")](boxview-images/boxviewclock-large.png#lightbox "BoxView 時鐘")
 
-中的所有視覺效果[ **BoxViewClock** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)計劃是子系`AbsoluteLayout`。 這些項目會使用調整大小`LayoutBounds`附加屬性，而使用旋轉`Rotation`屬性。
+[**BoxViewClock**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)程式中的所有視覺效果都是的子系 `AbsoluteLayout` 。 這些元素會使用 `LayoutBounds` 附加屬性進行調整大小，並使用 `Rotation` 屬性來旋轉。
 
-三個`BoxView`時鐘指針的項目在 XAML 檔案中，具現化但未定位或調整大小：
+這三個 `BoxView` 用於時鐘的元素會在 XAML 檔案中具現化，但不會定位或調整大小：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -634,7 +637,7 @@ public partial class MainPage : ContentPage
 </ContentPage>
 ```
 
-程式碼後置檔案的建構函式具現化 60`BoxView`時鐘的圓周刻度標記的項目：
+程式碼後置檔案的函式會將60元素具現化， `BoxView` 以用於時鐘圓周周圍的刻度：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -663,7 +666,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-大小及位置的所有`BoxView`項目中，就會發生`SizeChanged`處理常式`AbsoluteLayout`。 內部類別的小型結構稱為`HandParams`描述每三個相對於總大小時鐘指針的大小：
+所有元素的大小和位置 `BoxView` 都會出現在的 `SizeChanged` 處理常式中 `AbsoluteLayout` 。 類別內部的小型結構， `HandParams` 描述與時鐘總大小相關的三個手中每一個的大小：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -692,7 +695,7 @@ public partial class MainPage : ContentPage
  }
 ```
 
-`SizeChanged`處理常式可判斷的置中與半徑`AbsoluteLayout`，然後調整大小和位置 60`BoxView`做為刻度標記的項目。 `for`迴圈結束時，會設定`Rotation`屬性的每一種`BoxView`項目。 在結尾`SizeChanged`處理常式，`LayoutHand`大小和位置的三個時鐘指針呼叫方法：
+此 `SizeChanged` 處理常式會決定的中心和半徑 `AbsoluteLayout` ，然後再將 `BoxView` 用來做為刻度的60元素大小和位置放在一起。 迴圈會藉 `for` 由設定每個專案的屬性來結束 `Rotation` `BoxView` 。 在處理常式的結尾 `SizeChanged` ， `LayoutHand` 會呼叫方法來調整時鐘的大小和位置：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -743,9 +746,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LayoutHand`方法調整大小，並將每一個指針點直接到 12:00 位置。 方法的結尾`AnchorY`屬性設定為對應至時鐘的中心位置。 這表示旋轉的中心點。
+`LayoutHand`方法的大小和位置分別指向12:00 位置。 在方法的結尾， `AnchorY` 屬性會設定為相對於時鐘中心的位置。 這表示旋轉的中心。
 
-指針會循環使用中計時器回撥函式：
+手會在計時器回呼函式中旋轉：
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -778,18 +781,18 @@ public partial class MainPage : ContentPage
 }
 ```
 
-第二個動作的處理方式稍有不同：會套用動畫緩動函式，讓移動看起來像是機械，而不是平滑。 每個刻度，秒針會提取回有點，然後超過其目的地。 這一小段的程式碼將許多移動的真實性。
+第二個動作的處理方式稍有不同：會套用動畫緩動函式，讓移動看起來像是機械，而不是平滑。 在每個刻度上，第二部會取回一小部分，然後超出情形及其目的地。 這小段的程式碼增加了許多動作的真實性。
 
 ## <a name="conclusion"></a>結論
 
-`BoxView`看起來可能會在簡單的第一次，但如您所見，它可以很多功能，而且可以幾乎重現的視覺效果通常可能只能使用向量圖形。 更複雜的圖形，請參閱[Xamarin.Forms 中的使用 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。
+`BoxView`一開始看起來可能很簡單，但如您所見，它可以非常靈活，而且幾乎可以重現通常只有向量圖形才可行的視覺效果。 如需更複雜的圖形，請參閱[在中 Xamarin.Forms 使用 SkiaSharp ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。
 
 ## <a name="related-links"></a>相關連結
 
 - [基本 BoxView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
-- [文字裝飾 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
+- [文字裝飾（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)
 - [ListView 色彩（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)
-- [遊戲的生命週期 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)
-- [點陣時鐘 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)
-- [BoxView 時鐘 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)
+- [生活遊戲（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)
+- [點矩陣時鐘（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)
+- [BoxView 時鐘（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock)
 - [BoxView](xref:Xamarin.Forms.BoxView)

@@ -1,19 +1,22 @@
 ---
-title: 安裝 Xamarin
-description: 本節提供可用於在 Visual Studio 上設定 Xamarin 之安裝及設定做法的概觀。
-zone_pivot_groups: platform-dev16
-ms.prod: xamarin
-ms.assetid: 0f813a14-2f0c-415d-8667-4563f3dc06e8
-author: conceptdev
-ms.author: crdun
-ms.custom: video
-ms.date: 05/23/2019
-ms.openlocfilehash: cf54d4a6d8cdedc4ddde0beedeaadd361356990a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.custom: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 928a8f9ca1792fa79f3c5995959e6407c23649f4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66252311"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133051"
 ---
 # <a name="installing-xamarin"></a>安裝 Xamarin
 
@@ -56,4 +59,4 @@ ms.locfileid: "66252311"
 ## <a name="related-links"></a>相關連結
 
 - [解除安裝 Xamarin](~/get-started/installation/uninstalling-xamarin.md)
-- [Xamarin 防火牆配置標題](firewall.md)
+- [Xamarin 防火牆組態指示](firewall.md)

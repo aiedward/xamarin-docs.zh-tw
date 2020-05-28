@@ -1,50 +1,53 @@
 ---
-title: SkiaSharp 效果
-description: 了解如何改變使用漸層的圖形的正常顯示、 並排顯示的點陣圖，混合模式、 模糊和其他效果。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/22/2018
-ms.openlocfilehash: da923a3542a57b6150e536ecb6649140e57c81e1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655348"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136301"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp 效果
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp [ `SKPaint` ](xref:SkiaSharp.SKPaint)類別會定義可以分類底下的一般詞彙的六個屬性_效果_。 這些是改變正常的圖形以某種方式顯示的屬性。 SkiaSharp 效果分為六個類別：
+SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 類別會定義六個屬性，可在_效果_的一般詞彙底下加以分類。 這些屬性會以某種方式更改圖形的一般顯示。 SkiaSharp 效果分成六個類別：
 
-## <a name="path-effectscurveseffectsmd"></a>[路徑效果](../curves/effects.md)
+## <a name="path-effects"></a>[路徑效果](../curves/effects.md)
 
-設定[ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)屬性`SKPaint`物件的型別[ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)顯示虛線，或如何繪製，或使用路徑從建立的圖樣填滿區域。 路徑效果稍早在本系列文章中涵蓋[ **SkiaSharp 路徑效果**](../curves/effects.md)。
+將的 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) 屬性設定為 `SKPaint` 類型的物件， [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 以顯示虛線，或使用從路徑建立的模式來筆劃或填滿區域。 此系列的路徑效果稍早在 SkiaSharp 中的[**路徑效果**](../curves/effects.md)一文中討論。
 
-## <a name="shadersshadersindexmd"></a>[著色器](shaders/index.md)
+## <a name="shaders"></a>[著色器](shaders/index.md)
 
-設定[ `Shader` ](xref:SkiaSharp.SKPaint.Shader)屬性`SKPaint`物件的型別[ `SKShader` ](xref:SkiaSharp.SKShader)顯示線性或循環的漸層、 並排顯示的點陣圖和 Perlin 雜訊模式。
+將的 [`Shader`](xref:SkiaSharp.SKPaint.Shader) 屬性設定 `SKPaint` 為類型的物件 [`SKShader`](xref:SkiaSharp.SKShader) ，以顯示線性或圓形漸層、磚點陣圖和 Perlin 雜訊模式。
 
-## <a name="blend-modesblend-modesindexmd"></a>[混合模式](blend-modes/index.md)
+## <a name="blend-modes"></a>[混合模式](blend-modes/index.md)
 
-設定[ `BlendMode` ](xref:SkiaSharp.SKPaint.BlendMode)屬性`SKPaint`成員[ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode)列舉，來控管的來源圖形會顯示在目的地上時，會發生什麼事。 SkiaSharp 支援所有 CSS 複合 （compositing） 和混合模式中，包括 Porter Duff 模式、 分隔的混合模式，以及非可加以分隔的混合模式。
+將的 [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) 屬性設定 `SKPaint` 為列舉的成員， [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) 以管理在目的地上顯示來源圖形時所發生的情況。 SkiaSharp 支援所有 CSS 複合和 blend 模式，包括 Porter Duff 模式、可分離的 blend 模式和不可分離的 blend 模式。
 
-## <a name="mask-filtersmask-filtersmd"></a>[遮罩篩選器](mask-filters.md)
+## <a name="mask-filters"></a>[遮罩濾鏡](mask-filters.md)
 
-設定[ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter)屬性`SKPaint`物件的型別[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)模糊和其他 alpha 的效果。
+將的屬性設定為類型的物件，以 [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) `SKPaint` [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) 取得模糊和其他 Alpha 效果。
 
-## <a name="image-filtersimage-filtersmd"></a>[映像篩選器](image-filters.md)
+## <a name="image-filters"></a>[影像濾鏡](image-filters.md)
 
-設定[ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter)屬性`SKPaint`物件的型別[ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)模糊的點陣圖，並建立延伸陰影，浮凸、 或是 engraving 效果。
+將的屬性設定為類型的物件，以 [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) `SKPaint` [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) 進行模糊點陣圖和建立投影、浮雕或 engraving 效果。
 
-## <a name="color-filterscolor-filtersmd"></a>[色彩篩選器](color-filters.md)
+## <a name="color-filters"></a>[色彩濾鏡](color-filters.md)
 
-設定[`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter)屬性`SKPaint`物件的型別[`SKColorFilter`](xref:SkiaSharp.SKColorFilter)改變色彩使用資料表或矩陣轉換。
+將的 [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) 屬性設定 `SKPaint` 為類型的物件 [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) ，以使用資料表或矩陣轉換來改變色彩。
 
-這些文章是在所有範例程式都碼[ **SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)。 從 [首頁] 頁面中，選取**SkiaSharp 效果**。
+這些文章的所有範例程式碼都位於[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中。 從首頁選取 [ **SkiaSharp 效果**]。
 
 ## <a name="related-links"></a>相關連結
 

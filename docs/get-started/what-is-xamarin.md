@@ -1,22 +1,25 @@
 ---
-title: 什麼是 Xamarin？
-description: 本文介紹 Xamarin 及相關程式庫。
-ms.prod: xamarin
-ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
-ms.custom: video
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 09/16/2019
-ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a9a25cff30b9dfbed44e60faeae2f577d07940fc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607876"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139213"
 ---
 # <a name="what-is-xamarin"></a>什麼是 Xamarin？
 
-[![iOS 和 Android 中 Xamarin 應用程式範例螢幕截圖](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
+[![IOS 和 Android 中範例 Xamarin 應用程式的螢幕擷取畫面](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
 
 Xamarin 是一個開放原始碼平台，可使用 .NET 建立適用於 iOS、Android 和 Windows 的現代化且高效能應用程式。 Xamarin 是一種抽象層，用來管理共用程式碼與基礎平台程式碼之間的通訊。 Xamarin 可在擁有便利功能 (例如記憶體配置和記憶體回收) 的受控環境中執行作業。
 
@@ -53,11 +56,11 @@ Xamarin 除了結合原生平台的所有功能之外，也新增了一些功能
 1. **現代化語言建構** – Xamarin 應用程式是使用 C# 所撰寫，相較於 Objective-C 與 Java ，C# 為擁有顯著改善的現代化語言，例如動態語言功能，以及例如 Lambda、LINQ、平行程式設計、泛型等功能建構。
 1. **健全的基底類別庫 (BCL)** – Xamarin 應用程式使用 .NET BCL，其為包含完整且簡化功能的大型類別集合，例如強大的 XML、資料庫、序列化、IO、字串以及網路支援等。 現有的 C# 程式碼也能編譯並在應用程式中使用，其提供上千個程式庫的存取權，這些程式庫包含 BCL 未涵蓋的新增功能。
 1. **現代化整合式開發環境 (IDE)** – Xamarin 使用 Visual Studio，其為現代化的 IDE，包含例如程式碼自動完成、複雜的專案及解決方案管理系統、完整的專案範本程式庫、整合式原始檔控制等功能。
-1. **行動裝置跨平台支援** – Xamarin 針對三個主要平台 (iOS、Android，以及 Windows) 提供複雜的跨平台支援。 可撰寫應用程式來共用高達 90% 的程式碼，而 Xamarin.Essentials 程式庫更提供統一的 API 以存取三個平台中常見資源。 共用程式碼可以大幅降低行動裝置開發人員的開發成本以及上市所需時間。
+1. **行動裝置跨平台支援** – Xamarin 針對三個主要平台 (iOS、Android，以及 Windows) 提供複雜的跨平台支援。 應用程式可以撰寫成共用最多90% 的程式碼，並 Xamarin.Essentials 提供統一的 API 來存取所有三個平臺上的一般資源。 共用程式碼可以大幅降低行動裝置開發人員的開發成本以及上市所需時間。
 
 ### <a name="xamarinandroid"></a>Xamarin.Android
 
-[![Xamarin.安卓架構圖](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
+[![Xamarin. Android 架構圖](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
 
 Xamarin.Android 應用程式會將程式碼從 C# 編譯為**中繼語言 (IL)**，並接著在應用程式啟動時透過 **Just-in-Time (JIT)** 編譯為原生組譯碼。 Xamarin.Android 應用程式會在 Mono 執行環境中執行，並與 Android Runtime (ART) 虛擬機器並存。 Xamarin 提供對 Android.* 與 JAVA.* 命名空間的 .NET 繫結。 Mono 執行環境會透過**受控可呼叫包裝函式 (MCW)**，呼叫這些名稱空間，並提供 ** Android 可呼叫包裝函式 (ACW) ** 至 ART，讓這兩種環境都可以相互叫用程式碼。
 
@@ -65,15 +68,15 @@ Xamarin.Android 應用程式會將程式碼從 C# 編譯為**中繼語言 (IL)**
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
-[![Xamarin.iOS 架構圖](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
+[![Xamarin. iOS 架構圖表](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
 
 Xamarin.iOS 應用程式為完全透過**預先編譯 (AOT)**，將程式碼從 C# 編譯為 ARM 原生組譯碼。 Xamarin 會使用**選取器**將 Objective-C 公開給受控 C#，並使用**登錄器**將受控 C# 程式碼公開給 Objective-C。 選取器與登錄器統稱為「繫結」，可允許 Objective-C 與 C# 進行通訊。
 
 如需詳細資訊，請參閱 [Xamarin.iOS 架構](~/ios/internals/architecture.md)。
 
-### <a name="xamarinessentials"></a>Xamarin.Essentials
+### Xamarin.Essentials
 
-Xamarin.Essentials 是一種程式庫，可為原生裝置功能提供跨平台 API。 如同 Xamarin 本身，Xamarin.Essentials 也是簡化存取原生功能程序的抽象概念。 Xamarin.Essentials 提供的一些功能範例包括：
+Xamarin.Essentials是一種程式庫，可提供原生裝置功能的跨平臺 Api。 就像 Xamarin 本身一樣， Xamarin.Essentials 是簡化存取原生功能的程式的抽象概念。 提供的一些功能範例 Xamarin.Essentials 包括：
 
 - 裝置資訊
 - 檔案系統
@@ -82,11 +85,11 @@ Xamarin.Essentials 是一種程式庫，可為原生裝置功能提供跨平台 
 - 文字轉換語音
 - 螢幕鎖定
 
-如需詳細資訊，請參閱 [Xamarin.Essentials](~/essentials/index.md)。
+如需詳細資訊，請參閱 [Xamarin.Essentials](~/essentials/index.md) \(英文\)。
 
-### <a name="xamarinforms"></a>Xamarin.Forms
+### Xamarin.Forms
 
-Xamarin.Forms 是一種開放原始碼 UI 架構。 Xamarin.Forms 可讓開發人員從單一的共用程式碼基底建置 iOS、Android，以及 Windows 應用程式。 Xamarin 可以讓開發人員使用 C# 中的程式碼後置，在 XAML 中建立使用者介面。 這些使用者介面會於每個平台上轉譯為高效能的原生控制項。 Xamarin.Forms 提供的一些功能範例包括：
+Xamarin.Forms是一個開放原始碼 UI 架構。 Xamarin.Forms可讓開發人員從單一共用程式碼基底建立 iOS、Android 和 Windows 應用程式。 Xamarin.Forms可讓開發人員在 XAML 中使用 c # 的程式碼後置來建立使用者介面。 這些使用者介面會於每個平台上轉譯為高效能的原生控制項。 所提供的一些功能範例 Xamarin.Forms 包括：
 
 - XAML 使用者介面語言
 - 資料繫結
@@ -94,13 +97,13 @@ Xamarin.Forms 是一種開放原始碼 UI 架構。 Xamarin.Forms 可讓開發�
 - 效果
 - 樣式
 
-如需詳細資訊，請參閱 [Xamarin.Forms](~/xamarin-forms/index.yml)。
+如需詳細資訊，請參閱 [Xamarin.Forms](~/xamarin-forms/index.yml) \(英文\)。
 
 ## <a name="get-started"></a>開始使用
 
 下列指南可協助您使用 Xamarin 建置第一個應用程式：
 
-- [Xamarin.Forms 使用者入門](~/xamarin-forms/index.yml)
+- [開始使用Xamarin.Forms](~/xamarin-forms/index.yml)
 - [Xamarin.Android 使用者入門](~/android/index.yml)
 - [Xamarin.iOS 使用者入門](~/ios/index.yml)
 - [Xamarin.Mac 使用者入門](~/mac/index.yml)

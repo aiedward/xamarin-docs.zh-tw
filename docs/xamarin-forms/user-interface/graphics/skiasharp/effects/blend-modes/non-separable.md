@@ -1,57 +1,174 @@
 ---
-title: 非可加以分隔的混合模式
-description: 使用非分隔混合模式來變更色調、 飽和度或亮度。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 9054539b08da89c0f7d8a93150866fb1b41e63f1
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642787"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130178"
 ---
-# <a name="the-non-separable-blend-modes"></a>非可加以分隔的混合模式
+# <a name="the-non-separable-blend-modes"></a>不可分離的 blend 模式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-如您所見文中所[ **SkiaSharp 分隔混合模式**](separable.md)，可加以分隔的 blend 模式分開執行的紅色、 綠色和藍色的通道上的作業。 非可加以分隔的 blend 模式則否。 操作在色彩的色調、 飽和度和亮度層級時，非可加以分隔的 blend 模式就可以將色彩改變以有趣的方式：
+如您在[**SkiaSharp 可分離 blend 模式**](separable.md)一文中所見，可分離的 blend 模式會分別針對紅色、綠色和藍色的通道執行作業。 不可分離的 blend 模式不會。 藉由操作色彩的色調、飽和度和亮度層級，無法分離的 blend 模式可能會以有趣的方式改變色彩：
 
-![非可加以分隔的範例](non-separable-images/NonSeparableSample.png "非可加以分隔的範例")
+![不可分離的範例](non-separable-images/NonSeparableSample.png "不可分離的範例")
 
-## <a name="the-hue-saturation-luminosity-model"></a>色相-彩度-亮度模型
+## <a name="the-hue-saturation-luminosity-model"></a>色調-飽和度-亮度模型
 
-若要了解非可加以分隔的混合模式，就必須將目的地和來源的像素視為色相-彩度-亮度模型中的色彩。 （明暗度也稱為亮度。）
+若要瞭解無法分離的 blend 模式，必須將目的地和來源圖元視為色調-飽和度-亮度模型中的色彩。 （亮度也稱為亮度）。
 
-一文中討論的 HSL 色彩模型[**整合 Xamarin.Forms** ](../../basics/integration.md) ，並在該文章中的範例程式允許實驗 HSL 色彩。 您可以建立`SKColor`值使用色調、 飽和度和亮度值搭配靜態[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl*)方法。
+此檔中的 [[**與 Xamarin.Forms 整合**](../../basics/integration.md)] 和 [範例程式] 中所討論的 hsl 色彩模型，可讓您使用 HSL 色彩進行實驗。 您可以 `SKColor` 使用 [色調]、[飽和度] 和 [亮度] 值搭配靜態方法來建立值 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl*) 。
 
-色調表示主控項的 wavelength 的色彩。 色調值的範圍是從0到 360, 並會迴圈執行加法和 subtractive 主要複本:紅色為 0, 黃色為 60, 綠色為 120, 青色為 180, 藍色為 240, 洋紅色為 300, 而週期在360回到紅色。
+色調代表色彩的主要波長。 色調值的範圍從0到360，並會迴圈顯示加總和 subtractive 的主要複本：紅色為值0，黃色為60，綠色為120，青色為180，藍色為240，洋紅色為300，而迴圈在360回到紅色。
 
-如果沒有任何主要色彩&mdash;例如，色彩是白色或黑色或灰色陰影&mdash;色調會未定義，且通常設定為 0。 
+例如，如果沒有主要色彩 &mdash; ，則色彩是白色或黑色， &mdash; 而色調則是未定義的，而且通常會設定為0。 
 
-飽和度的值可以範圍從 0 到 100，並指出色彩的純度。 100 的飽和度值是血統純正的色彩，而值低於 100 會導致變成更灰的色彩。 飽和度值為 0 會導致淺灰色。
+飽和度值的範圍可以從0到100，並指出色彩的純度。 飽和度值100是 purest 色彩，而低於100的值會導致色彩變得更 grayish。 飽和度值為0會產生灰色的陰影。
 
-亮度 （或亮度） 值會指出如何亮的色彩就是。 亮度值為 0 是黑色，不論其他設定。 同樣地，100 的亮度值為白色。 
+亮度（或亮度）值表示色彩的明亮程度。 亮度值為0時，不論其他設定為何，都是黑色。 同樣地，亮度值100是白色。 
 
-HSL 值 （0、 100、 50） 是 RGB 值 (FF、 00、 00)，也就是純紅色。 RGB 值 (從 00，FF，FF)，純青色 （180、 100、 50） 的 HSL 值。 飽和度就會減少，就會減少主要色彩元件和其他元件會增加。 在飽和度層級為 0，所有的元件相同，而且色彩為灰階。 減少黑色; 要前往的明暗度增加前往空白的明暗度。
+HSL 值（0，100，50）是 RGB 值（FF，00，00），這是純紅色。 HSL 值（180、100、50）是 RGB 值（00、FF、FF）、純青色。 當飽和度減少時，主要色彩元件會減少，而其他元件也會增加。 在飽和度層級0，所有元件都相同，而且色彩為灰色網底。 降低亮度以轉為黑色;將亮度增加至白色。
 
-## <a name="the-blend-modes-in-detail"></a>混合模式，在 詳細資料
+## <a name="the-blend-modes-in-detail"></a>Blend 模式詳細資料
 
-像其他混合模式 （這通常是點陣圖影像） 的目的地和來源，通常是單色或漸層，牽涉到四個非可加以分隔的混合模式。 混合模式結合目的地和來源的色調、 飽和度和亮度值：
+就像其他 blend 模式一樣，四個不可分離的 blend 模式牽涉到一個目的地（這通常是點陣圖影像）和一個來源，這通常是單一色彩或漸層。 Blend 模式結合了目的地和來源的色調、飽和度和亮度值：
 
-| 混合模式   | 從來源元件 | 從目的地元件 |
-| ------------ | ---------------------- | --------------------------- |
-| `Hue`        | 色調                    | 飽和度和亮度   |
-| `Saturation` | 飽和度             | 色調] 和 [亮度          |
-| `Color`      | 色調及彩     | 亮度                  | 
-| `Luminosity` | 亮度             | 色調及彩          | 
+| Blend 模式   | 來源中的元件 | 目的地的元件 |
+| ---
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-請參閱 W3C [**複合 （compositing） 和混合層級 1** ](https://www.w3.org/TR/compositing-1/)演算法的規格。
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-**非分隔的混合模式**頁面包含`Picker`以選取其中一種混合模式和三個`Slider`檢視，以選取 HSL 色彩：
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+----------- |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-------------- | |`Hue`        |色調 |飽和度和亮度 | |`Saturation` |飽和度 |色調和亮度 | |`Color`      |色調和飽和度 |亮度 | |`Luminosity` |亮度 |色調和飽和度 | 
+
+請參閱 W3C 撰寫[**和混合層級 1**](https://www.w3.org/TR/compositing-1/)規格以取得演算法。
+
+[**不可分離的 Blend 模式**] 頁面包含 `Picker` ，以選取其中一個 Blend 模式，以及三個 `Slider` 視圖來選取 HSL 色彩：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -111,9 +228,9 @@ HSL 值 （0、 100、 50） 是 RGB 值 (FF、 00、 00)，也就是純紅色�
 </ContentPage>
 ```
 
-為了節省空間，其中三個`Slider`檢視不會在使用者介面的程式識別。 您必須記住的順序是色調、 飽和度和亮度。 兩個`Label`在頁面底部的檢視會顯示 HSL 和 RGB 色彩值。
+為節省空間，程式的 `Slider` 使用者介面中不會識別這三個視圖。 您必須記住，順序是色調、飽和度和亮度。 頁面底部的兩個 `Label` 視圖會顯示 HSL 和 RGB 色彩值。
 
-程式碼後置檔案會載入其中一個點陣圖資源時，會顯示，盡可能在畫布上，並接著說明如何包含矩形的畫布。 矩形的色彩根據三`Slider`檢視和混合模式是在中選取一個`Picker`:
+程式碼後置檔案會載入其中一個點陣圖資源，在畫布上顯示越大，然後在畫布上包含一個矩形。 矩形色彩是以三個視圖為基礎 `Slider` ，而 blend 模式則是在中選取的一種 `Picker` ：
 
 ```csharp
 public partial class NonSeparableBlendModesPage : ContentPage
@@ -176,51 +293,51 @@ public partial class NonSeparableBlendModesPage : ContentPage
 }
 ```
 
-請注意程式不會為已選取三個滑桿所顯示的 HSL 色彩值。 相反地，建立這些滑桿色彩值，並接著會使用[ `ToHsl` ](xref:SkiaSharp.SKColor.ToHsl*)方法，以取得色調、 飽和度和亮度值。 這是因為`FromHsl`方法會將 HSL 色彩轉換為 RGB 色彩，它會在內部儲存`SKColor`結構。 `ToHsl`方法會將轉換 rgb HSL，但是結果不一定會將原始值。 
+請注意，此程式不會顯示 [HSL 色彩] 值，如三個滑杆所選。 相反地，它會從這些滑杆建立色彩值，然後使用 [`ToHsl`](xref:SkiaSharp.SKColor.ToHsl*) 方法來取得色調、飽和度和亮度值。 這是因為 `FromHsl` 方法會將 HSL 色彩轉換成 RGB 色彩，這會儲存在 `SKColor` 結構內部。 `ToHsl`方法會從 RGB 轉換成 HSL，但結果不一定是原始值。 
 
-例如， `FromHsl` HSL 值 （180，50，0） 將 RGB 色彩 （0，0，0），因為`Luminosity`為零。 `ToHsl`方法會轉換成 （0，0，0） 的 HSL 色彩的 RGB 色彩 （0，0，0） 因為色調及彩度值無關。 當使用此程式，最好是，您會看到程式正在使用而不您指定使用滑桿的 HSL 色彩的表示法。
+例如， `FromHsl` 會將 HSL 值（180、50、0）轉換成 RGB 色彩（0，0，0），因為 `Luminosity` 是零。 `ToHsl`方法會將 RGB 色彩（0，0，0）轉換成 HSL 色彩（0，0，0），因為色調和飽和度值無關。 使用此程式時，您可以查看程式所使用的 HSL 色彩標記法，而不是您使用滑杆所指定的類型。
 
-`SKBlendModes.Hue`混合模式會使用 Hue 層級之來源的同時保留目的地的飽和度和亮度層級。 當您測試此混合模式時，飽和度和亮度滑桿必須設定為 0 或 100 以外因為在這些情況下，Hue 不唯一定義。
+`SKBlendModes.Hue`Blend 模式會使用來源的色調層級，同時保留目的地的飽和度和亮度層級。 當您測試這個 blend 模式時，飽和度和亮度滑杆必須設定為0或100以外的某個專案，因為在這些情況下，不會以唯一的方式定義色調。
 
-[![非可加以分隔的混合模式-色調](non-separable-images/NonSeparableBlendModes-Hue.png "非可加以分隔的混合模式-Hue")](non-separable-images/NonSeparableBlendModes-Hue-Large.png#lightbox)
+[![不可分離的 Blend 模式-色調](non-separable-images/NonSeparableBlendModes-Hue.png "不可分離的 Blend 模式-色調")](non-separable-images/NonSeparableBlendModes-Hue-Large.png#lightbox)
 
-當您使用 （如同 iOS 螢幕擷取畫面左邊） 將滑桿設為 0，所有項目會變成紅。 但這不表示該影像是完全不存在的綠色和藍色。 很顯然有仍然灰階出現在結果中。 比方說，RGB 色彩 （40，40，C0） 就相當於 HSL 色彩 （240、 50，50）。 色調是藍色，但為 50 的彩度值會指出有紅色和綠色元件時，也。 如果色調設為 0 的`SKBlendModes.Hue`，HSL 色彩是 （0、 50，50），這是 RGB 色彩 (C0，40，40)。 還是藍色與綠色元件，但現在主要元件是紅色。
+當您使用將滑杆設為0（如左側的 iOS 螢幕擷取畫面）時，所有專案都會變成 reddish。 但這並不表示影像完全不存在綠色和藍色。 這顯然會出現在結果中的灰色陰影。 例如，RGB 色彩（40、40、C0）相當於 HSL 色彩（240、50、50）。 色調為藍色，但飽和度值為50表示也有紅色和綠色的元件。 如果將色調設定為 0 `SKBlendModes.Hue` ，則 HSL 色彩會是（0，50，50），這是 RGB 色彩（c0，40，40）。 仍然有藍色和綠色的元件，但現在主要元件是紅色。
 
-`SKBlendModes.Saturation`混合模式會結合飽和度的層級來源的 Hue 和目的地的亮度。 像是色調、 飽和度不是妥善定義如果亮度是 0 或 100。 在理論上，應可使用任何這些兩個極端之間的亮度設定。 不過，亮度設定似乎會影響結果超過預期。 設定為 50，亮度，您可以看到您可以設定飽和度的層級圖片的方式：
+`SKBlendModes.Saturation`Blend 模式會將來源的飽和度層級與目的地的色調和亮度結合。 如同色調，如果亮度為0或100，則不會妥善定義飽和度。 理論上，這兩個極端值之間的任何亮度設定都應該可行。 不過，亮度設定似乎不會影響結果。 將亮度設定為50，您可以瞭解如何設定圖片的飽和度層級：
 
-[![非可加以分隔的混合模式-飽和度](non-separable-images/NonSeparableBlendModes-Saturation.png "非可加以分隔的混合模式-飽和度")](non-separable-images/NonSeparableBlendModes-Saturation-Large.png#lightbox)
+[![不可分離的 Blend 模式-飽和度](non-separable-images/NonSeparableBlendModes-Saturation.png "不可分離的 Blend 模式-飽和度")](non-separable-images/NonSeparableBlendModes-Saturation-Large.png#lightbox)
 
-您可以使用此混合模式增加的色彩飽和度的鈍的映像，或您可以減少至零 （例如 iOS 螢幕擷取畫面左邊） 飽和度僅灰階所組成的結果映像。
+您可以使用這個 blend 模式來增加較暗影像的色彩飽和度，也可以將飽和度降到零（如左側的 iOS 螢幕擷取畫面所示），以取得僅包含灰色網底的結果影像。
 
-`SKBlendModes.Color`混合模式會保留目的地的亮度，但使用色調及彩的來源。 同樣地，這表示應該使用 亮度滑桿極端之間的任何設定。 
+`SKBlendModes.Color`Blend 模式會保留目的地的亮度，但會使用來源的色調和飽和度。 同樣地，這表示極端值之間的亮度滑杆設定應可正常執行。 
 
-[![非可加以分隔的混合模式-色彩](non-separable-images/NonSeparableBlendModes-Color.png "非可加以分隔的混合模式-色彩")](non-separable-images/NonSeparableBlendModes-Color-Large.png#lightbox)
+[![不可分離的 Blend 模式-色彩](non-separable-images/NonSeparableBlendModes-Color.png "不可分離的 Blend 模式-色彩")](non-separable-images/NonSeparableBlendModes-Color-Large.png#lightbox)
 
-您很快會看到此混合模式應用程式。
+您很快就會看到此 blend 模式的應用程式。
 
-最後， `SKBlendModes.Luminosity` blend 模式是相對於`SKBlendModes.Color`。 它會保留色調及彩的目的地，但使用的來源的明暗度。 `Luminosity` Blend 模式是批次中最神秘的一種:色調和飽和度滑杆會影響影像, 但即使是中度亮度, 影像也不會相異:
+最後， `SKBlendModes.Luminosity` blend 模式與相反 `SKBlendModes.Color` 。 它會保留目的地的色調和飽和度，但會使用來源的亮度。 `Luminosity`Blend 模式是批次中最具神秘的： [色調] 和 [飽和度] 滑杆會影響影像，但即使是 [中亮度]，影像也不是相異的：
 
-[![非可加以分隔的混合模式-亮度](non-separable-images/NonSeparableBlendModes-Luminosity.png "非可加以分隔的混合模式-亮度")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
+[![不可分離的 Blend 模式-亮度](non-separable-images/NonSeparableBlendModes-Luminosity.png "不可分離的 Blend 模式-亮度")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
-理論上，增加或減少的影像亮度變得較淺或較深。 有趣的是，[亮度範例 Skia **SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference#Luminosity)相當類似。
+理論上，增加或減少影像的亮度應使其變淡或變暗。 有趣的是， [Skia **SkBlendMode 參考**中的亮度範例](https://skia.org/user/api/SkBlendMode_Reference#Luminosity)相當類似。
 
-它通常不是您會想要使用其中一種非可加以分隔的混合模式與組成單一色彩套用至整個的目的端影像的來源。 效果就只是太大。 您會想要限制效果映像的一部分。 在此情況下，來源可能會納入透明度，或可能是來源會受限於較小的圖形。
+一般來說，您會想要使用其中一個不可分離的 blend 模式，其中包含一個套用至整個目的地影像的單一色彩。 效果就太大了。 您會想要將效果限制為影像的其中一個部分。 在這種情況下，來源可能會納入 transparancy，或者來源會限制為較小的圖形。
 
-## <a name="a-matte-for-a-separable-mode"></a>分隔模式草蓆
+## <a name="a-matte-for-a-separable-mode"></a>可分離模式的遮罩
 
-以下是其中一個包含做為資源中的點陣圖[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例。 檔名**Banana.jpg**:
+以下是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中包含做為資源的其中一個點陣圖。 檔案名為**香蕉 .jpg**：
 
-![Banana Monkey](non-separable-images/Banana.jpg "Banana Monkey")
+![香蕉的猴子](non-separable-images/Banana.jpg "香蕉的猴子")
 
-可以建立包含只 banana 草蓆。 這也是中的資源[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例。 檔名**BananaMatte.png**:
+您可以建立只包含香蕉的遮罩。 這也是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的資源。 檔案名為**BananaMatte .png**：
 
-![Banana 草蓆](non-separable-images/BananaMatte.png "Banana 草蓆")
+![香蕉亞光](non-separable-images/BananaMatte.png "香蕉亞光")
 
-除了黑色 banana 圖形、 點陣圖的其餘部分都是透明的。
+除了黑色香蕉圖形之外，點陣圖的其餘部分也是透明的。
 
-**藍色 Banana**頁面會使用該草蓆變更色調及彩持有 monkey，香蕉的但變更映像中的其他任何項目。 
+**藍色香蕉**頁面會使用該亞光來改變猴子所持有的香蕉色調和飽和度，但不變更影像中的任何其他東西。 
 
-在下列`BlueBananaPage`類別， **Banana.jpg**載入點陣圖做為欄位。 建構函式載入**BananaMatte.png**點陣圖為`matteBitmap`物件，但它不會保留該建構函式之外的物件。 相反地，第三個點陣圖的名為`blueBananaBitmap`建立。 `matteBitmap`上繪製`blueBananaBitmap`後面`SKPaint`具有其`Color`設定為藍色並將其`BlendMode`設為`SKBlendMode.SrcIn`。 `blueBananaBitmap`大致保持透明的但使用的純色純藍色映像 banana:
+在下列 `BlueBananaPage` 類別中，**香蕉**會載入為欄位。 此函式會將**BananaMatte**當做 `matteBitmap` 物件載入，但不會將該物件保留在函式之外。 相反地，會建立名為的第三個位圖 `blueBananaBitmap` 。 `matteBitmap`會在後面繪製， `blueBananaBitmap` `SKPaint` `Color` 並將其設定為藍色，並 `BlendMode` 將其設定為 `SKBlendMode.SrcIn` 。 會 `blueBananaBitmap` 一直保持透明，但具有香蕉的純虛擬藍色影像：
 
 ```csharp
 public class BlueBananaPage : ContentPage
@@ -283,11 +400,11 @@ public class BlueBananaPage : ContentPage
 }
 ```
 
-`PaintSurface`處理常式與保留 banana monkey 繪製點陣圖。 此程式碼後面的顯示`blueBananaBitmap`與`SKBlendMode.Color`。 透過香蕉的介面，每個像素色調及彩度會由藍色實線，這會對應至 240 的色調值和 100 的飽和度值取代。 亮度，不過，維持不變，這表示 banana，繼續讓實際的紋理，儘管其新的色彩：
+`PaintSurface`處理常式會以保存香蕉的猴子來繪製點陣圖。 此程式碼後面會接著的顯示 `blueBananaBitmap` `SKBlendMode.Color` 。 在香蕉的表面上，每個圖元的色調和飽和度都會取代為實心藍色，其對應于色調值240和飽和度值100。 不過，亮度會維持不變，這表示香蕉會繼續具有實際材質，而不論其新色彩：
 
-[![藍色 Banana](non-separable-images/BlueBanana.png "藍色 Banana")](non-separable-images/BlueBanana-Large.png#lightbox)
+[![藍色香蕉](non-separable-images/BlueBanana.png "藍色香蕉")](non-separable-images/BlueBanana-Large.png#lightbox)
 
-請嘗試變更至混合模式`SKBlendMode.Saturation`。 黃色香蕉，維持但愈深黃色。 在實際應用程式中，這可能是更好的效果比開啟 banana 藍色。
+嘗試將 blend 模式變更為 `SKBlendMode.Saturation` 。 香蕉會保持為黃色，但較明顯的是黃色。 在實際的應用程式中，這種效果可能比開啟香蕉藍色更理想。
 
 ## <a name="related-links"></a>相關連結
 

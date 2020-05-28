@@ -1,20 +1,20 @@
 ---
-title: 使用 Azure 通知中樞和 Xamarin 來傳送和接收推播通知
-description: 本文說明如何使用 Azure 通知中樞，將跨平臺推播通知傳送至 Xamarin. Forms 應用程式。
-ms.prod: xamarin
-ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 11/27/2019
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
 no-loc:
 - Firebase
-ms.openlocfilehash: 88926fe2c132ac03a07a7a2e18ee64b61fde43ad
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+ms.openlocfilehash: 6b91884124f6c6dac366e30b8437a5f6e06ee162
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425844"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133324"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中樞和 Xamarin 來傳送和接收推播通知
 
@@ -362,7 +362,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 1. 在檔案中設定套件組合**識別碼** `Info.plist` ，以符合布建設定檔中所使用的值。
 1. 將 [**啟用推播通知**] 選項新增至檔案 `Entitlements.plist` 。
-1. 將 `Xamarin.Azure.NotificationHubs.iOS` NuGet 封裝新增至您的專案。
+1. 將 `Xamarin.Azure.NotificationHubs.iOS` NuGet 套件新增至您的專案。
 1. [向 APNS 註冊](#register-for-notifications-with-apns)通知。
 1. 向 Azure 通知中樞[註冊](#register-with-azure-notification-hub-and-subscribe-to-tags)應用程式並訂閱標記。
 1. [新增](#add-apns-notifications-to-xamarinforms-ui)對 Xamarin 的 APNS 通知。表單 UI。

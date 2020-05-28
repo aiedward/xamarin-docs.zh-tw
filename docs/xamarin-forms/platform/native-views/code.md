@@ -1,51 +1,54 @@
 ---
-title: 在 C# 中的原生檢視
-description: 從使用 C# 建立的 Xamarin.Forms 頁面，可直接參考原生 iOS、 Android 和 UWP 的檢視。 這篇文章會示範如何將原生檢視新增至 Xamarin.Forms 版面配置建立使用 C# 中，以及如何覆寫的自訂檢視，以更正其度量 API 使用方式配置。
-ms.prod: xamarin
-ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/27/2016
-ms.openlocfilehash: a759569f9faf7c8e13768a68b203a8221d3b31cb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: 'IOS、Android 和 UWP 的原生視圖可以直接從 Xamarin.Forms 使用 c # 建立的頁面參考。 本文示範如何將原生視圖加入 Xamarin.Forms 使用 c # 建立的配置，以及如何覆寫自訂視圖的配置以更正其測量 API 的使用方式。'
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770720"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139590"
 ---
 # <a name="native-views-in-c"></a>C 中的原生視圖\#
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
-_從使用 C# 建立的 Xamarin.Forms 頁面，可直接參考原生 iOS、 Android 和 UWP 的檢視。這篇文章會示範如何將原生檢視新增至 Xamarin.Forms 版面配置建立使用 C# 中，以及如何覆寫的自訂檢視，以更正其度量 API 使用方式配置。_
+_IOS、Android 和 UWP 的原生視圖可以直接從 Xamarin.Forms 使用 c # 建立的頁面參考。本文示範如何將原生視圖加入 Xamarin.Forms 使用 c # 建立的配置，以及如何覆寫自訂視圖的配置以更正其測量 API 的使用方式。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-可讓任何 Xamarin.Forms 控制項`Content`若要設定，或具有`Children`集合中，可以加入平台專用的檢視。 例如，iOS`UILabel`可以直接加入至[ `ContentView.Content` ](xref:Xamarin.Forms.ContentView.Content)屬性，或[ `StackLayout.Children` ](xref:Xamarin.Forms.Layout`1.Children)集合。 不過，請注意，這項功能需要使用`#if`定義 Xamarin.Forms 共用專案方案中，且無法使用從 Xamarin.Forms.NET Standard 程式庫的方案。
+Xamarin.Forms允許 `Content` 設定或具有集合的任何控制項， `Children` 都可以加入平臺特定的視圖。 例如，iOS `UILabel` 可以直接加入至 [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content) 屬性或 [`StackLayout.Children`](xref:Xamarin.Forms.Layout`1.Children) 集合。 不過，請注意，這項功能需要在 `#if` Xamarin.Forms 共用專案解決方案中使用定義，而且無法從 Xamarin.Forms .NET Standard 程式庫方案取得。
 
-下列螢幕擷取畫面示範特定平台可讓您檢視具有已新增至 Xamarin.Forms [ `StackLayout` ](xref:Xamarin.Forms.StackLayout):
+下列螢幕擷取畫面示範已新增至的平臺特定視圖 Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 
-[![](code-images/screenshots-sml.png "包含平台專用的檢視 StackLayout")](code-images/screenshots.png#lightbox "StackLayout 包含平台專用的檢視")
+[![](code-images/screenshots-sml.png "StackLayout Containing Platform-Specific Views")](code-images/screenshots.png#lightbox "StackLayout Containing Platform-Specific Views")
 
-將平台專用的檢視新增至 Xamarin.Forms 版面配置功能會啟用每個平台上的兩個擴充方法：
+將平臺特定的視圖加入至版面配置的功能 Xamarin.Forms ，是由每個平臺上的兩個擴充方法所啟用：
 
-- `Add` -將平台專屬的檢視，來加入[ `Children` ](xref:Xamarin.Forms.Layout`1.Children)版面配置的集合。
-- `ToView` – 會採用平台專屬檢視，並將它包裝成 Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View)可以設定為`Content`控制項的屬性。
+- `Add`–將平臺特定的視圖加入至配置的 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 集合。
+- `ToView`–採用平臺特定的視圖，並將其包裝為 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) 可設定為 `Content` 控制項屬性的。
 
-Xamarin.Forms 的共用專案中使用這些方法需要匯入適當的特定平台 Xamarin.Forms 命名空間：
+在共用專案中使用這些方法 Xamarin.Forms 需要匯入適當的平臺特定 Xamarin.Forms 命名空間：
 
-- **iOS** – Xamarin.Forms.Platform.iOS
-- **Android** – Xamarin.Forms.Platform.Android
-- **通用 Windows 平台 (UWP)** – Xamarin.Forms.Platform.UWP
+- **iOS** – Xamarin.Forms 。平臺 iOS
+- **Android** – Xamarin.Forms 。Platform. Android
+- **通用 Windows 平臺（UWP）** – Xamarin.Forms 。平臺. UWP
 
-## <a name="adding-platform-specific-views-on-each-platform"></a>新增平台專用的檢視，每個平台
+## <a name="adding-platform-specific-views-on-each-platform"></a>在每個平臺上新增平臺特定的視圖
 
-下列各節示範如何將平台專用的檢視加入至每個平台 Xamarin.Forms 版面配置。
+下列各節示範如何 Xamarin.Forms 在每個平臺上的版面配置中新增平臺特定的視圖。
 
 ### <a name="ios"></a>iOS
 
-下列程式碼範例示範如何新增`UILabel`要[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)並[ `ContentView` ](xref:Xamarin.Forms.ContentView):
+下列程式碼範例示範如何將新增 `UILabel` 至 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 和 [`ContentView`](xref:Xamarin.Forms.ContentView) ：
 
 ```csharp
 var uiLabel = new UILabel {
@@ -58,11 +61,11 @@ stackLayout.Children.Add (uiLabel);
 contentView.Content = uiLabel.ToView();
 ```
 
-此範例假設`stackLayout`和`contentView`先前在 XAML 或 C# 中建立執行個體。
+此範例假設 `stackLayout` `contentView` 先前已使用 XAML 或 c # 建立和實例。
 
 ### <a name="android"></a>Android
 
-下列程式碼範例示範如何新增`TextView`要[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)並[ `ContentView` ](xref:Xamarin.Forms.ContentView):
+下列程式碼範例示範如何將新增 `TextView` 至 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 和 [`ContentView`](xref:Xamarin.Forms.ContentView) ：
 
 ```csharp
 var textView = new TextView (MainActivity.Instance) { Text = originalText, TextSize = 14 };
@@ -70,11 +73,11 @@ stackLayout.Children.Add (textView);
 contentView.Content = textView.ToView();
 ```
 
-此範例假設`stackLayout`和`contentView`先前在 XAML 或 C# 中建立執行個體。
+此範例假設 `stackLayout` `contentView` 先前已使用 XAML 或 c # 建立和實例。
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-下列程式碼範例示範如何新增`TextBlock`要[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)並[ `ContentView` ](xref:Xamarin.Forms.ContentView):
+下列程式碼範例示範如何將新增 `TextBlock` 至 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 和 [`ContentView`](xref:Xamarin.Forms.ContentView) ：
 
 ```csharp
 var textBlock = new TextBlock
@@ -88,17 +91,17 @@ stackLayout.Children.Add(textBlock);
 contentView.Content = textBlock.ToView();
 ```
 
-此範例假設`stackLayout`和`contentView`先前在 XAML 或 C# 中建立執行個體。
+此範例假設 `stackLayout` `contentView` 先前已使用 XAML 或 c # 建立和實例。
 
-## <a name="overriding-platform-measurements-for-custom-views"></a>覆寫自訂檢視的平台測量
+## <a name="overriding-platform-measurements-for-custom-views"></a>覆寫自訂視圖的平臺測量
 
-每個平台上的自訂檢視通常只會正確實作它們的設計版面配置情節的度量。 比方說，自訂檢視可能已設計為只佔用裝置的可用寬度的一半。 不過之後要與其他使用者共用, 自訂檢視可能需要佔用裝置的完整可用寬度。 因此，它可以是必要時重複使用 Xamarin.Forms 版面配置中，覆寫的自訂檢視度量的實作。 基於這個理由，`Add`和`ToView`擴充方法可提供可測量的委派，指定可以覆寫的自訂檢視版面配置，當它新增至 Xamarin.Forms 版面配置覆寫。
+每個平臺上的自訂視圖通常只會正確地針對其設計的版面配置案例執行測量。 例如，自訂視圖可能已設計成隻佔用一半的裝置可用寬度。 不過，在與其他使用者共用之後，自訂視圖可能需要佔用裝置的完整可用寬度。 因此，在版面配置中重複使用時，可能需要覆寫自訂視圖量測實 Xamarin.Forms 。 基於這個理由， `Add` 和 `ToView` 擴充方法會提供允許指定測量委派的覆寫，這可在將自訂視圖配置新增至版面配置時，予以覆寫 Xamarin.Forms 。
 
-下列各節示範如何覆寫的自訂檢視，更正其度量 API 使用方式配置。
+下列各節示範如何覆寫自訂視圖的配置，以更正其測量 API 的使用方式。
 
 ### <a name="ios"></a>iOS
 
-下列程式碼範例所示`CustomControl`類別，繼承自`UILabel`:
+下列程式碼範例顯示 `CustomControl` 類別，其繼承自 `UILabel` ：
 
 ```csharp
 public class CustomControl : UILabel
@@ -115,7 +118,7 @@ public class CustomControl : UILabel
 }
 ```
 
-此檢視的執行個體加入至[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)，如下列程式碼範例所示：
+此視圖的實例會新增至 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，如下列程式碼範例所示：
 
 ```csharp
 var customControl = new CustomControl {
@@ -127,11 +130,11 @@ var customControl = new CustomControl {
 stackLayout.Children.Add (customControl);
 ```
 
-不過，因為`CustomControl.SizeThatFits`覆寫一律會傳回高度為 150，檢視會顯示空白空間之上和之下，如下列螢幕擷取畫面所示：
+不過，因為覆 `CustomControl.SizeThatFits` 寫一律會傳回高度150，所以此視圖會顯示在其上方和下方的空格，如下列螢幕擷取畫面所示：
 
-![](code-images/ios-bad-measurement.png "iOS CustomControl 與 SizeThatFits 實作不正確")
+![](code-images/ios-bad-measurement.png "iOS CustomControl with Bad SizeThatFits Implementation")
 
-此問題的解決方案是要提供`GetDesiredSizeDelegate`實作，如下列程式碼範例所示：
+此問題的解決方法是提供 `GetDesiredSizeDelegate` 執行，如下列程式碼範例所示：
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double height)
@@ -152,19 +155,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, double width, double h
 }
 ```
 
-這個方法會使用所提供的寬度`CustomControl.SizeThatFits`方法，但會以替代的高度為 70 的 150 的高度。 當`CustomControl`執行個體新增至[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)，則`FixSize`方法可以指定為`GetDesiredSizeDelegate`若要修正錯誤所提供的度量`CustomControl`類別：
+這個方法會使用方法所提供的寬度 `CustomControl.SizeThatFits` ，但會將高度的150高度替換為70。 將 `CustomControl` 實例加入至時 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ， `FixSize` 可以將方法指定為， `GetDesiredSizeDelegate` 以修正類別所提供的錯誤測量 `CustomControl` ：
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-這會導致空白空間之上和之下，不正確，顯示自訂檢視，如下列螢幕擷取畫面所示：
+這會導致正確顯示自訂視圖，而不含其上方和下方的空白空間，如下列螢幕擷取畫面所示：
 
-![](code-images/ios-good-measurement.png "iOS CustomControl 使用 GetDesiredSize 覆寫")
+![](code-images/ios-good-measurement.png "iOS CustomControl with GetDesiredSize Override")
 
 ### <a name="android"></a>Android
 
-下列程式碼範例所示`CustomControl`類別，繼承自`TextView`:
+下列程式碼範例顯示 `CustomControl` 類別，其繼承自 `TextView` ：
 
 ```csharp
 public class CustomControl : TextView
@@ -186,7 +189,7 @@ public class CustomControl : TextView
 }
 ```
 
-此檢視的執行個體加入至[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)，如下列程式碼範例所示：
+此視圖的實例會新增至 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，如下列程式碼範例所示：
 
 ```csharp
 var customControl = new CustomControl (MainActivity.Instance) {
@@ -196,11 +199,11 @@ var customControl = new CustomControl (MainActivity.Instance) {
 stackLayout.Children.Add (customControl);
 ```
 
-不過，因為`CustomControl.OnMeasure`覆寫一律會傳回所要求的寬度的一半，檢視就會顯示佔用一半可用寬度的裝置，如下列螢幕擷取畫面所示：
+不過，因為覆 `CustomControl.OnMeasure` 寫一律會傳回所要求寬度的一半，所以會顯示只佔用一半的裝置寬度，如下列螢幕擷取畫面所示：
 
-![](code-images/android-bad-measurement.png "Android CustomControl 錯誤 OnMeasure 實作")
+![](code-images/android-bad-measurement.png "Android CustomControl with Bad OnMeasure Implementation")
 
-此問題的解決方案是要提供`GetDesiredSizeDelegate`實作，如下列程式碼範例所示：
+此問題的解決方法是提供 `GetDesiredSizeDelegate` 執行，如下列程式碼範例所示：
 
 ```csharp
 SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, int heightConstraint)
@@ -219,19 +222,19 @@ SizeRequest? FixSize (NativeViewWrapperRenderer renderer, int widthConstraint, i
 }
 ```
 
-這個方法會使用所提供的寬度`CustomControl.OnMeasure`方法，但將它乘以兩個。 當`CustomControl`執行個體新增至[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)，則`FixSize`方法可以指定為`GetDesiredSizeDelegate`若要修正錯誤所提供的度量`CustomControl`類別：
+這個方法會使用方法所提供的寬度 `CustomControl.OnMeasure` ，但會將它乘以二。 將 `CustomControl` 實例加入至時 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ， `FixSize` 可以將方法指定為， `GetDesiredSizeDelegate` 以修正類別所提供的錯誤測量 `CustomControl` ：
 
 ```csharp
 stackLayout.Children.Add (customControl, FixSize);
 ```
 
-這會導致自訂檢視所顯示正確、 佔用寬度的裝置，如下列螢幕擷取畫面所示：
+這會導致正確顯示自訂視圖，佔用裝置的寬度，如下列螢幕擷取畫面所示：
 
-![](code-images/android-good-measurement.png "Android CustomControl 與自訂 GetDesiredSize 委派")
+![](code-images/android-good-measurement.png "Android CustomControl with Custom GetDesiredSize Delegate")
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-下列程式碼範例所示`CustomControl`類別，繼承自`Panel`:
+下列程式碼範例顯示 `CustomControl` 類別，其繼承自 `Panel` ：
 
 ```csharp
 public class CustomControl : Panel
@@ -284,7 +287,7 @@ public class CustomControl : Panel
 }
 ```
 
-此檢視的執行個體加入至[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)，如下列程式碼範例所示：
+此視圖的實例會新增至 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，如下列程式碼範例所示：
 
 ```csharp
 var brokenControl = new CustomControl {
@@ -293,11 +296,11 @@ var brokenControl = new CustomControl {
 stackLayout.Children.Add(brokenControl);
 ```
 
-不過，因為`CustomControl.ArrangeOverride`覆寫一律會傳回所要求的寬度的一半，檢視會裁剪為可用寬度的一半的裝置，如下列螢幕擷取畫面所示：
+不過，因為覆 `CustomControl.ArrangeOverride` 寫一律會傳回所要求寬度的一半，所以此視圖會裁剪成裝置可用寬度的一半，如下列螢幕擷取畫面所示：
 
-![](code-images/winrt-bad-measurement.png "UWP CustomControl 錯誤 ArrangeOverride 實作")
+![](code-images/winrt-bad-measurement.png "UWP CustomControl with Bad ArrangeOverride Implementation")
 
-此問題的解決方案是要提供`ArrangeOverrideDelegate`實作中，新增至檢視時[ `StackLayout` ](xref:Xamarin.Forms.StackLayout)，如下列程式碼範例所示：
+這個問題的解決方法是在 `ArrangeOverrideDelegate` 將視圖加入至時提供一個實作為， [`StackLayout`](xref:Xamarin.Forms.StackLayout) 如下列程式碼範例所示：
 
 ```csharp
 stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, finalSize) =>
@@ -312,15 +315,15 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 });
 ```
 
-這個方法會使用所提供的寬度`CustomControl.ArrangeOverride`方法，但將它乘以兩個。 這會導致自訂檢視所顯示正確、 佔用寬度的裝置，如下列螢幕擷取畫面所示：
+這個方法會使用方法所提供的寬度 `CustomControl.ArrangeOverride` ，但會將它乘以二。 這會導致正確顯示自訂視圖，佔用裝置的寬度，如下列螢幕擷取畫面所示：
 
-![](code-images/winrt-good-measurement.png "UWP CustomControl ArrangeOverride 委派")
+![](code-images/winrt-good-measurement.png "UWP CustomControl with ArrangeOverride Delegate")
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-這篇文章說明如何將原生檢視新增至 Xamarin.Forms 版面配置建立使用 C# 中，以及如何覆寫的自訂檢視，以更正其度量 API 使用方式配置。
+本文說明如何將原生視圖加入 Xamarin.Forms 使用 c # 建立的配置，以及如何覆寫自訂視圖的配置以更正其測量 API 的使用方式。
 
 ## <a name="related-links"></a>相關連結
 
 - [NativeEmbedding （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
-- [原生格式](~/xamarin-forms/platform/native-forms.md)
+- [原生表單](~/xamarin-forms/platform/native-forms.md)

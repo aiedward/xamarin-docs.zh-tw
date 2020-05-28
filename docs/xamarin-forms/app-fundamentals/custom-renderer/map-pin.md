@@ -1,47 +1,50 @@
 ---
-title: 自訂地圖釘選
-description: 本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在每個平台上以釘選資料的自訂釘選和自訂檢視來顯示原生地圖。
-ms.prod: xamarin
-ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 513ba16f0cb74e330cc3b681e0880b685f0c226c
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 30fcc8304d32d8ebdef38df8550bcd8c26514701
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532769"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135313"
 ---
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
 
 _本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在每個平台上以釘選資料的自訂釘選和自訂檢視來顯示原生地圖。_
 
-每個 Xamarin.Forms 檢視都隨附每個平台的轉譯器，這些平台可建立原生控制項的執行個體。 [`Map`](xref:Xamarin.Forms.Maps.Map)當由 iOS 中的 Xamarin 應用程式轉譯時，會具現`MapRenderer`化類別，然後再具現化原生`MKMapView`控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 如需 Xamarin.Forms 控制項對應的轉譯器和原生控制項類別詳細資訊，請參閱[轉譯器基底類別和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
+每 Xamarin.Forms 個視圖都會針對每個建立原生控制項實例的平臺，隨附一個轉譯器。 當 [`Map`](xref:Xamarin.Forms.Maps.Map) Xamarin.Forms 應用程式在 iOS 中呈現時， `MapRenderer` 類別會具現化，然後再具現化原生 `MKMapView` 控制項。 在 Android 平台上，`MapRenderer` 類別會具現化原生 `MapView` 控制項。 在通用 Windows 平台 (UWP) 上，`MapRenderer` 類別會具現化原生的 `MapControl`。 如需控制項對應之轉譯器和原生控制項類別的詳細資訊 Xamarin.Forms ，請參閱轉譯器[基類和原生控制項](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)。
 
-下圖說明[`Map`](xref:Xamarin.Forms.Maps.Map)和執行它的對應原生控制項之間的關聯性：
+下圖說明 [`Map`](xref:Xamarin.Forms.Maps.Map) 和執行它的對應原生控制項之間的關聯性：
 
 ![](map-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
 
-轉譯程式可以[`Map`](xref:Xamarin.Forms.Maps.Map)在每個平臺上建立的自訂轉譯器，用來執行平臺特定的自訂。 執行這項作業的流程如下：
+轉譯程式可以 [`Map`](xref:Xamarin.Forms.Maps.Map) 在每個平臺上建立的自訂轉譯器，用來執行平臺特定的自訂。 執行這項作業的流程如下：
 
 1. [建立](#Creating_the_Custom_Map) Xamarin.Forms 自訂地圖。
-1. [使用](#Consuming_the_Custom_Map) Xamarin.Forms 的自訂地圖。
+1. [使用](#Consuming_the_Custom_Map)自訂地圖 Xamarin.Forms 。
 1. 在每個平台上[建立](#Creating_the_Custom_Renderer_on_each_Platform)地圖的自訂轉譯器。
 
 每個項目現在會依序進行討論，以實作在每個平台上顯示自訂釘選及釘選資料自定檢視的 `CustomMap` 轉譯器。
 
 > [!NOTE]
-> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)必須先初始化並設定，才能使用。 如需詳細資訊， [`Maps Control`](~/xamarin-forms/user-interface/map/index.md)請參閱。
+> [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)必須先初始化並設定，才能使用。 如需詳細資訊，請參閱 [`Maps Control`](~/xamarin-forms/user-interface/map/index.md) \(英文\)。
 
 <a name="Creating_the_Custom_Map" />
 
 ## <a name="creating-the-custom-map"></a>建立自訂地圖
 
-您可以子[`Map`](xref:Xamarin.Forms.Maps.Map)類別化類別來建立自訂地圖控制項，如下列程式碼範例所示：
+您可以子類別化類別來建立自訂地圖控制項 [`Map`](xref:Xamarin.Forms.Maps.Map) ，如下列程式碼範例所示：
 
 ```csharp
 public class CustomMap : Map
@@ -60,7 +63,7 @@ public class CustomPin : Pin
 }
 ```
 
-這個類別會將`CustomPin`定義為繼承[`Pin`](xref:Xamarin.Forms.Maps.Pin)類別的屬性，以及加入`Name`和`Url`屬性。
+這個類別會將定義 `CustomPin` 為繼承類別的屬性 [`Pin`](xref:Xamarin.Forms.Maps.Pin) ，以及加入 `Name` 和 `Url` 屬性。
 
 <a name="Consuming_the_Custom_Map" />
 
@@ -96,7 +99,7 @@ public class MapPageCS : ContentPage
 }
 ```
 
-`CustomMap` 執行個體會用來在每個平台上顯示原生地圖。 它的[`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)屬性會設定的顯示樣式[`Map`](xref:Xamarin.Forms.Maps.Map)，並在[`MapType`](xref:Xamarin.Forms.Maps.MapType)列舉中定義可能的值。
+`CustomMap` 執行個體會用來在每個平台上顯示原生地圖。 它的 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) 屬性會設定的顯示樣式 [`Map`](xref:Xamarin.Forms.Maps.Map) ，並在列舉中定義可能的值 [`MapType`](xref:Xamarin.Forms.Maps.MapType) 。
 
 地圖的位置以及其包含的釘選會進行初始化，如下列程式碼範例所示：
 
@@ -119,7 +122,7 @@ public MapPage()
 }
 ```
 
-此初始化會加入自訂的釘選，並[`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*)使用方法定位地圖的視圖，這會藉由[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)從[`Position`](xref:Xamarin.Forms.Maps.Position)和建立來變更地圖的位置和縮放層[`Distance`](xref:Xamarin.Forms.Maps.Distance)級。
+此初始化會加入自訂的釘選，並使用方法定位地圖的視圖 [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) ，這會藉由從和建立來變更地圖的位置和縮放層級 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) [`Position`](xref:Xamarin.Forms.Maps.Position) [`Distance`](xref:Xamarin.Forms.Maps.Distance) 。
 
 自訂轉譯器現在可以新增至每個應用程式專案，來自訂原生地圖控制項。
 
@@ -130,8 +133,8 @@ public MapPage()
 建立自訂轉譯器類別的程序如下：
 
 1. 建立轉譯自訂地圖 `MapRenderer` 類別的子類別。
-1. 覆寫轉譯自訂地圖的 `OnElementChanged` 方法，並撰寫自訂它的邏輯。 此方法會在建立對應 Xamarin.Forms 自訂地圖時呼叫。
-1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，指定用它轉譯 Xamarin.Forms 自訂地圖。 這個屬性會用來向 Xamarin.Forms 註冊自訂轉譯器。
+1. 覆寫轉譯自訂地圖的 `OnElementChanged` 方法，並撰寫自訂它的邏輯。 建立對應的自訂地圖時，會呼叫這個方法 Xamarin.Forms 。
+1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，以指定它將用來呈現 Xamarin.Forms 自訂地圖。 這個屬性是用來向註冊自訂轉譯器 Xamarin.Forms 。
 
 > [!NOTE]
 > 您可以選擇在每個平台專案中提供自訂轉譯器。 如果自訂轉譯器尚未註冊，則會使用控制項基底類別的預設轉譯器。
@@ -144,9 +147,9 @@ public MapPage()
 
 ![](map-pin-images/screenshots.png "CustomMap on each Platform")
 
-`MapRenderer` 類別會公開 `OnElementChanged` 方法，在建立 Xamarin.Forms 自訂地圖以轉譯對應原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性分別代表轉譯器「過去」** 所附加的 Xamarin.Forms 項目，以及「現在」** 所附加的 Xamarin.Forms 項目。 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
+`MapRenderer`類別 `OnElementChanged` 會公開方法，這會在 Xamarin.Forms 建立自訂地圖以轉譯對應的原生控制項時呼叫。 此方法會接受 `ElementChangedEventArgs` 參數，其中包含 `OldElement` 和 `NewElement` 屬性。 這些屬性代表轉譯器 Xamarin.Forms 附加到的*was*專案，以及轉譯器 Xamarin.Forms 附加至的元素。 *is* 在應用程式範例中，`OldElement` 屬性會是 `null`，而 `NewElement` 屬性會包含 `CustomMap` 執行個體的參考。
 
-在每個平台特定轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，所要轉譯 Xamarin.Forms 控制項的參考可透過 `Element` 屬性取得。
+在每個平台特定轉譯器類別中，`OnElementChanged` 方法的覆寫版本是執行原生控制項自訂的位置。 平台上所使用的原生控制項具型別參考可透過 `Control` 屬性存取。 此外，您 Xamarin.Forms 可以透過屬性取得所要轉譯之控制項的參考 `Element` 。
 
 在 `OnElementChanged` 方法中訂閱事件處理常式時必須留意，如下列程式碼範例中所示：
 
@@ -167,9 +170,9 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-您應該只在自訂轉譯器附加於新的 Xamarin.Forms 項目時，才設定原生控制項並訂閱事件處理常式。 同樣地，您應該只在轉譯器附加到的項目變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立不會發生記憶體流失的自訂轉譯器。
+只有在自訂轉譯器附加至新的專案時，才會設定原生控制項並訂閱事件處理常式 Xamarin.Forms 。 同樣地，您應該只在轉譯器附加到的項目變更時，才取消訂閱任何已訂閱的事件處理常式。 採用這個方法將有助於建立不會發生記憶體流失的自訂轉譯器。
 
-每個自訂轉譯器類別都裝飾了向 Xamarin.Forms 註冊轉譯器的 `ExportRenderer` 屬性。 此屬性接受兩個參數：正在轉譯的 Xamarin.Forms 自訂控制項類型名稱，以及自訂轉譯器的類型名稱。 屬性的 `assembly` 前置詞會指定套用至整個組件的屬性。
+每個自訂轉譯器類別都會以向註冊轉譯器的 `ExportRenderer` 屬性裝飾 Xamarin.Forms 。 屬性會採用兩個參數– Xamarin.Forms 所呈現之自訂控制項的類型名稱，以及自訂轉譯器的類型名稱。 屬性的 `assembly` 前置詞會指定套用至整個組件的屬性。
 
 下列各節會討論每個平台特定自訂轉譯器類別的實作。
 
@@ -226,9 +229,9 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`OnElementChanged`方法會執行[`MKMapView`](xref:MapKit.MKMapView)實例的下列設定，前提是自訂轉譯器已附加至新的 Xamarin. Forms 元素：
+`OnElementChanged`方法會執行實例的下列設定 [`MKMapView`](xref:MapKit.MKMapView) ，前提是自訂轉譯器已附加至新的 Xamarin.Forms 元素：
 
-- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*)屬性會設定為`GetViewForAnnotation`方法。 此方法會在[註釋位置於地圖上可見時](#Displaying_the_Annotation)呼叫，且會用於在顯示前自訂註釋。
+- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*)屬性會設定為 `GetViewForAnnotation` 方法。 此方法會在[註釋位置於地圖上可見時](#Displaying_the_Annotation)呼叫，且會用於在顯示前自訂註釋。
 - `CalloutAccessoryControlTapped`、`DidSelectAnnotationView` 和 `DidDeselectAnnotationView` 的事件處理常式會進行註冊。 這些事件分別會在使用者[點選圖說文字中的右側裝飾](#Tapping_on_the_Right_Callout_Accessory_View)，以及使用者[選取](#Selecting_the_Annotation)和[取消選取](#Deselecting_the_Annotation)註釋時引發。 只有在轉譯器附加到的項目變更時，才會取消訂閱事件。
 
 <a name="Displaying_the_Annotation" />
@@ -276,7 +279,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 此方法可確保將註釋顯示為自訂影像，而非系統定義的圖釘，且在註釋受到點選時，顯示在註釋標題和地址左側和右側包含額外內容的圖說文字。 執行此作業的流程如下：
 
 1. 呼叫 `GetCustomPin` 方法傳回註釋的自訂釘選資料。
-1. 為了節省記憶體，批註的視圖會共用，以便在呼叫時重複使用[`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*)。
+1. 為了節省記憶體，批註的視圖會共用，以便在呼叫時重複使用 [`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*) 。
 1. `CustomMKAnnotationView` 類別會使用對應到 `CustomPin` 執行個體中相同屬性的 `Name` 和 `Url` 屬性來擴充 `MKAnnotationView` 類別。 若註釋為 `null`，則建立 `CustomMKAnnotationView` 的新執行個體：
     - `CustomMKAnnotationView.Image` 屬性會設為表示地圖上註釋的影像。
     - `CustomMKAnnotationView.CalloutOffset` 屬性會設為 `CGPoint`，其指定圖說文字置中並位於註釋上方。
@@ -284,7 +287,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.RightCalloutAccessoryView` 屬性會設為「資訊」** 按鈕，顯示在註釋標題和地址的右側。
     - `CustomMKAnnotationView.Name` 屬性會設為 `GetCustomPin` 方法傳回的 `CustomPin.Name` 屬性。 這可以用來識別註釋，使其圖說文字[能供進一步自訂](#Selecting_the_Annotation) (若需要的話)。
     - `CustomMKAnnotationView.Url` 屬性會設為 `GetCustomPin` 方法傳回的 `CustomPin.Url` 屬性。 當使用者[點選顯示在右側圖說文字裝飾檢視中的按鈕](#Tapping_on_the_Right_Callout_Accessory_View)時，便會巡覽至該 URL。
-1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*)屬性會設定為`true` ，以便在按注釋時，顯示標注。
+1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*)屬性會設定為， `true` 以便在按注釋時，顯示標注。
 1. 註釋接著便會傳回，以供在地圖上顯示。
 
 <a name="Selecting_the_Annotation" />
@@ -404,7 +407,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-假設自訂轉譯器已附加至新的 Xamarin form 元素，則此`OnElementChanged`方法會從控制項抓取自訂釘選清單。 一旦 `GoogleMap` 可供使用，便會叫用 `OnMapReady` 覆寫。 此方法會註冊 `InfoWindowClick` 事件的事件處理常式，該事件會在使用者[按一下資訊視窗](#Clicking_on_the_Info_Window)時引發，且只會在轉譯器附加到的項目變更時取消訂閱。 `OnMapReady` 覆寫也會呼叫 `SetInfoWindowAdapter` 方法來指定 `CustomMapRenderer` 類別執行個體提供自訂資訊視窗的方法。
+假設自訂轉譯器已附加至新的專案 Xamarin.Forms ，則此 `OnElementChanged` 方法會從控制項抓取自訂釘選清單。 一旦 `GoogleMap` 可供使用，便會叫用 `OnMapReady` 覆寫。 此方法會註冊 `InfoWindowClick` 事件的事件處理常式，該事件會在使用者[按一下資訊視窗](#Clicking_on_the_Info_Window)時引發，且只會在轉譯器附加到的項目變更時取消訂閱。 `OnMapReady` 覆寫也會呼叫 `SetInfoWindowAdapter` 方法來指定 `CustomMapRenderer` 類別執行個體提供自訂資訊視窗的方法。
 
 `CustomMapRenderer` 類別會實作 `GoogleMap.IInfoWindowAdapter` 介面，來[自訂資訊視窗](#Customizing_the_Info_Window)。 此介面會指定必須實作下列方法：
 
@@ -583,7 +586,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-若自訂轉譯器已附加於新的 Xamarin.Forms 項目，`OnElementChanged` 方法便會執行下列作業：
+`OnElementChanged`方法會執行下列作業，前提是自訂轉譯器已附加至新的 Xamarin.Forms 元素：
 
 - 清除 `MapControl.Children` 集合以從地圖移除任何現有的使用者介面項目，再註冊 `MapElementClick` 事件的事件處理常式。 此事件會在使用者點選或按一下 `MapControl` 上的 `MapElement` 時引發，且只會在轉譯器附加到的項目變更時取消訂閱。
 - 透過下列方式，將每個 `customPins` 集合中的釘選顯示在地圖上的正確的地理位置：

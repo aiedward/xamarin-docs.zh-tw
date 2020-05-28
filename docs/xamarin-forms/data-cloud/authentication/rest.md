@@ -1,56 +1,59 @@
 ---
-title: 驗證 RESTful Web 服務
-description: 基本身份驗證僅向具有正確憑據的用戶端提供對資源的訪問許可權。 本文介紹如何使用基本身份驗證來保護對 RESTful Web 服務資源的訪問。
-ms.prod: xamarin
-ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/22/2018
-ms.openlocfilehash: 65606b72c3944809a09b8c70b9cdbb5524e0f856
-ms.sourcegitcommit: 2a8eb8bce427e72d4e7edd06ce432e19f17dcdd7
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80388586"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135716"
 ---
 # <a name="authenticate-a-restful-web-service"></a>驗證 RESTful Web 服務
 
-_HTTP 支援使用多種身份驗證機制來控制對資源的訪問。基本身份驗證僅向具有正確憑據的用戶端提供對資源的訪問許可權。本文演示如何使用基本身份驗證來保護對 RESTful Web 服務資源的訪問。_
+_HTTP 支援使用數個驗證機制來控制資源的存取權。基本驗證僅提供資源的存取權給具有正確認證的用戶端。本文示範如何使用基本驗證來保護 RESTful web 服務資源的存取。_
 
 > [!NOTE]
-> 在 iOS 9 及更高級別中,應用傳輸安全 (ATS) 強制 Internet 資源(如應用的後端伺服器)與應用之間的安全連接,從而防止敏感資訊意外洩露。 由於默認情況下,在為 iOS 9 構建的應用中啟用了 ATS,因此所有連接都必須遵守 ATS 安全要求。 如果連接不符合這些要求,它們將失敗,但有一個例外。
-> 如果無法使用該協定和安全通信來獲取互聯網資源,`HTTPS`則可以選擇退出 ATS。 這可以通過更新應用的**Info.plist**檔來實現。 有關詳細資訊,請參閱[應用傳輸安全](~/ios/app-fundamentals/ats.md)。
+> 在 iOS 9 和更新版本中，應用程式傳輸安全性（ATS）會強制執行網際網路資源（例如應用程式的後端伺服器）與應用程式之間的安全連線，藉此防止意外洩漏機密資訊。 由於預設會在針對 iOS 9 建立的應用程式中啟用 ATS，因此所有連線都將受限於 ATS 安全性需求。 如果連線不符合這些需求，則會失敗並產生例外狀況。
+> 如果無法 `HTTPS` 針對網際網路資源使用通訊協定和安全通訊，可以退出宣告 ATS。 這可以藉由更新應用程式的**plist**檔案來達成。 如需詳細資訊，請參閱[應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)。
 
-## <a name="authenticating-users-over-http"></a>透過 HTTP 對使用者進行身份驗證
+## <a name="authenticating-users-over-http"></a>透過 HTTP 驗證使用者
 
-基本身份驗證是 HTTP 支援的最簡單的身份驗證機制,涉及用戶端將使用者名和密碼作為未加密的 base64 編碼文字發送。 其運作如下：
+基本驗證是 HTTP 所支援的最簡單驗證機制，其牽涉到用戶端傳送使用者名稱和密碼為未加密的 base64 編碼文字。 其運作如下：
 
-- 如果 Web 服務收到受保護資源的請求,它將使用 HTTP 狀態代碼 401(訪問被拒絕)拒絕請求,並設置 WWW-身份驗證回應標頭,如下圖所示:
+- 如果 web 服務收到受保護資源的要求，它會拒絕要求，HTTP 狀態碼為401（拒絕存取），並設定 WWW 驗證回應標頭，如下圖所示：
 
 ![](rest-images/basic-authentication-fail.png "Basic Authentication Failing")
 
-- 如果 Web 服務收到受保護資源的請求`Authorization`,並且標頭設置正確,則 Web 服務會使用 HTTP 狀態代碼 200 進行回應,該狀態代碼 200 指示請求成功,並且請求的資訊在回應中。 此方案顯示在下圖中:
+- 如果 web 服務收到受保護資源的要求，且 `Authorization` 標頭已正確設定，則 web 服務會以 HTTP 狀態碼200回應，這表示要求成功，且要求的資訊在回應中。 下圖顯示此案例：
 
 ![](rest-images/basic-authentication-success.png "Basic Authentication Succeeding")
 
 > [!NOTE]
-> 基本身份驗證應僅在 HTTPS 連接上使用。 當通過 HTTP 連接`Authorization`使用時 ,如果攻擊者捕獲了 HTTP 流量,則可以輕鬆解碼標頭。
+> 基本驗證只能透過 HTTPS 連接使用。 在 HTTP 連線上使用時， `Authorization` 如果 HTTP 流量是由攻擊者所捕捉，則可以輕鬆地將標頭解碼。
 
-## <a name="specifying-basic-authentication-in-a-web-request"></a>在 Web 要求中指定基本認證
+## <a name="specifying-basic-authentication-in-a-web-request"></a>在 Web 要求中指定基本驗證
 
-基本身份驗證的使用指定如下:
+基本驗證的使用方式指定如下：
 
-1. 字串"基本"將添加到請求的`Authorization`標頭中。
-1. 使用者名和密碼合併到格式為"使用者名:密碼"的字串中,然後對 base64 進行編碼並添加到`Authorization`請求的標頭中。
+1. 字串 "Basic" 會新增至要求的 `Authorization` 標頭。
+1. 使用者名稱和密碼會合並成格式為 "username： password" 的字串，然後以 base64 編碼並新增至 `Authorization` 要求的標頭。
 
-因此,使用「XamarinUser」的使用者名稱和「XamarinPassword」的密碼,標頭變為:
+因此，如果使用者名稱為 ' XamarinUser ' 且密碼為 ' XamarinPassword '，則標頭會變成：
 
 ```csharp
 Authorization: Basic WGFtYXJpblVzZXI6WGFtYXJpblBhc3N3b3Jk
 ```
 
-類`HttpClient``Authorization``HttpClient.DefaultRequestHeaders.Authorization`可以在 屬性上設置標頭值。 由於`HttpClient`實體存在於多個要求中,`Authorization`因此標頭只需設定一次,而不是在發出每個請求時設定一次,如以下代碼範例所示:
+`HttpClient`類別可以 `Authorization` 在屬性上設定標頭值 `HttpClient.DefaultRequestHeaders.Authorization` 。 因為 `HttpClient` 實例存在於多個要求中，所以 `Authorization` 標頭只需要設定一次，而不是在提出每個要求時，如下列程式碼範例所示：
 
 ```csharp
 public class RestService : IRestService
@@ -70,21 +73,21 @@ public class RestService : IRestService
 }
 ```
 
-然後,當請求 Web 服務操作時,`Authorization`請求用 標頭簽名,指示使用者是否具有調用該操作的許可權。
+接著，在對 web 服務作業提出要求時，會以標頭簽署要求 `Authorization` ，指出使用者是否有叫用作業的許可權。
 
 > [!IMPORTANT]
-> 雖然此代碼將憑據存儲為常量,但它們不應以不安全的格式存儲在已發佈的應用程式中。
+> 雖然此程式碼會將認證儲存為常數，但不應以不安全的格式儲存在已發行的應用程式中。
 
 ## <a name="processing-the-authorization-header-server-side"></a>處理授權標頭伺服器端
 
-REST 服務應使用`[BasicAuthentication]`屬性 修飾每個操作。 此屬性用於分析`Authorization`標頭,並通過將 base64 編碼認證與儲存在*Web.config*中的值進行比較來確定其是否有效。雖然此方法適用於示例服務,但它需要擴展面向公眾的 Web 服務。
+REST 服務應使用屬性來裝飾每個動作 `[BasicAuthentication]` 。 這個屬性是用來剖析 `Authorization` 標頭，並藉由比較它們與儲存在*web.config*中的值來判斷 base64 編碼的認證是否有效。雖然此方法適用于範例服務，但它需要針對公開的 web 服務進行擴充。
 
-在IIS使用的基本身份驗證模組中,使用者會根據Windows認證。 因此,用戶必須在伺服器的域上具有帳戶。 但是,基本身份驗證模型可以配置為允許自定義身份驗證,其中使用者帳戶對外部源(如資料庫)進行身份驗證。 有關詳細資訊,請參閱ASP.NET網站上[ASP.NET Web API 中的基本身份驗證](https://www.asp.net/web-api/overview/security/basic-authentication)。
+在 IIS 所使用的基本驗證模組中，使用者會根據其 Windows 認證進行驗證。 因此，使用者必須在伺服器的網域上擁有帳戶。 不過，基本驗證模型可以設定為允許自訂驗證，其中使用者帳戶會針對外部來源（例如資料庫）進行驗證。 如需詳細資訊，請參閱 ASP.NET 網站上[ASP.NET Web API 中的基本驗證](https://www.asp.net/web-api/overview/security/basic-authentication)。
 
 > [!NOTE]
-> 基本身份驗證不是用於管理註銷。因此,註銷的標準基本身份驗證方法是結束會話。
+> 基本驗證並非設計來管理登出。因此，用於登出的標準基本驗證方法是結束會話。
 
 ## <a name="related-links"></a>相關連結
 
-- [使用 RESTful Web 服務](~/xamarin-forms/data-cloud/web-services/rest.md)
+- [使用 RESTful web 服務](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)

@@ -1,34 +1,37 @@
 ---
-title: 非仿射轉換
-description: 本文說明如何使用轉換矩陣的第三個資料行建立檢視方塊和錐形的效果，並示範此範例程式碼。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/14/2017
-ms.openlocfilehash: eb7057d40e6ff0c48c6dc1b5dc38af2eb92de2e0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772772"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131751"
 ---
 # <a name="non-affine-transforms"></a>非仿射轉換
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_使用轉換矩陣的第三個資料行建立檢視方塊和錐形效果_
+_使用轉換矩陣的第三個數據行來建立透視圖和錐度效果_
 
-平移、 縮放、 旋轉、 和扭曲全都歸類為*仿射*轉換。 仿射轉換保留平行的行。 如果兩行平行轉換之前，它們都是平行後轉換。 Parallelograms 一律被轉換矩形。
+轉譯、縮放、旋轉和扭曲全都分類為*仿射*轉換。 仿射轉換會保留平行線條。 如果兩行在轉換之前平行處理，它們會在轉換後保持平行。 矩形一律會轉換成 parallelograms。
 
-不過，也是支援的非仿射轉換，有能力將矩形轉換成任何凸方形 SkiaSharp:
+不過，SkiaSharp 也能夠進行非仿射轉換，其能夠將矩形轉換成任何凸四邊形：
 
-![](non-affine-images/nonaffinetransformexample.png "點陣圖，轉換成凸方形")
+![](non-affine-images/nonaffinetransformexample.png "A bitmap transformed into a convex quadrilateral")
 
-凸方形是四邊內部角度永遠大於或等於 180 度和沒有彼此相交的側邊。
+凸四邊形是四邊的圖形，內部角度一律小於180度，而邊則不會彼此相交。
 
-非仿射轉換的轉換矩陣的第三個資料列設為 0、 0 和 1 以外的值時的結果。 完整`SKMatrix`乘法則是：
+非仿射轉換會在轉換矩陣的第三個數據列設定為0、0和1以外的值時產生。 完整的 `SKMatrix` 乘法是：
 
 <pre>
               │ ScaleX  SkewY   Persp0 │
@@ -36,41 +39,41 @@ _使用轉換矩陣的第三個資料行建立檢視方塊和錐形效果_
               │ TransX  TransY  Persp2 │
 </pre>
 
-結果的轉換公式如下：
+結果轉換公式如下：
 
-x' = ScaleX·x + SkewX·y + TransX
+x ' = ScaleX · x + SkewX · y + TransX
 
-y' = SkewY·x + ScaleY·y + TransY
+y ' = SkewY · x + ScaleY · y + TransY
 
-z' = Persp0·x + Persp1·y + Persp2
+z ' = Persp0 · x + Persp1 · y + Persp2
 
-使用 3-3 矩陣之二維轉換的基本規則是，所有項目仍會在平面上其中 Z 等於 1。 除非`Persp0`並`Persp1`為 0，及`Persp2`等於 1，轉換已移關閉該平面的 Z 座標。
+針對二維轉換使用 3 x 3 矩陣的基本規則，就是所有專案都會保留在 Z 等於1的平面上。 除非 `Persp0` 和 `Persp1` 為0，且 `Persp2` 等於1，否則轉換已將 Z 座標從該平面移動。
 
-若要還原這二維的轉換，座標必須移回至該平面。 另一個步驟是必要的。 X'，y'，與 z '值必須除以 z':
+若要將此還原為二維轉換，必須將座標移回該平面。 另一個步驟是必要的。 X '、y ' 和 z ' 值必須除以 z '：
 
-x" = x' / z'
+x "= x '/z '
 
-y"= y' / z'
+y "= y '/z '
 
-z"= z' / z' = 1
+z "= z '/z ' = 1
 
-這些值稱為*homogeneous coordinate*和開發時的數學家年 8 月斐迪南 Möbius，更好已知為他的拓撲很奇怪，Möbius 帶狀。
+這些就是所謂的*同質座標*，而且是由依照數學家8月 Ferdinand Möbius 所開發，更知名的是他的拓撲件怪事，也就是 Möbius 帶狀。
 
-如果 z' 為 0，分區會導致無限的座標。 事實上，開發 homogeneous coordinate Möbius 的動機之一是能夠代表有限的數字的無限值。
+如果 z ' 為0，則除法會產生無限座標。 事實上，用於開發同一個座標的 Möbius's 動機之一，就是能夠以有限的數位來表示無限值。
 
-當顯示 [圖形]，不過，您想要避免轉譯項目轉換為無限值的座標。 不會轉譯這些座標。 Pe-15 這些座標的所有項目將會非常大，可能不會以視覺化方式一致。
+不過，在顯示圖形時，您會想要避免呈現轉換成無限值的座標。 這些座標不會呈現。 這些座標周圍的所有內容都非常大，而且可能不會以視覺化方式呈現。
 
-這個方程式中，您不想 z 值，而 ' 變成零：
+在此方程式中，您不希望 z ' 的值變成零：
 
-z' = Persp0·x + Persp1·y + Persp2
+z ' = Persp0 · x + Persp1 · y + Persp2
 
-因此，這些值會有一些實用的限制： 
+因此，這些值有一些實際的限制： 
 
-`Persp2`資料格可以是零或不為零。 如果`Persp2`是零，則 z' 為零 （0，0） 的點，而這通常就不需要因為該點是在二維圖形中很常見。 如果`Persp2`不等於零，則不會遺失的一般性如果`Persp2`固定為 1。 例如，如果您判斷`Persp2`應該是 5，則您可以只是除以矩陣中的所有資料格 5，使得`Persp2`等於 1，而且結果會相同。
+資料 `Persp2` 格可以是零或不是零。 如果 `Persp2` 為零，則 z ' 對於點（0，0）為零，而且通常不需要，因為該點在二維圖形中非常常見。 如果不 `Persp2` 等於零，則如果 `Persp2` 在1處固定，則不會遺失一般性。 例如，如果您判斷 `Persp2` 應該是5，則可以只將矩陣中的所有資料格除以5，使其 `Persp2` 等於1，而結果會相同。
 
-基於這些理由，`Persp2`通常固定為 1，這是身分識別矩陣中的相同值。
+基於這些理由， `Persp2` 通常會固定在1，這在身分識別矩陣中是相同的值。
 
-一般而言，`Persp0`和`Persp1`是小型的數字。 例如，假設您開始使用的身分識別矩陣但集`Persp0`為 0.01:
+一般來說， `Persp0` 和 `Persp1` 是小型數位。 例如，假設您以身分識別矩陣開頭，但設定 `Persp0` 為0.01：
 
 <pre>
 | 1  0   0.01 |
@@ -78,29 +81,29 @@ z' = Persp0·x + Persp1·y + Persp2
 | 0  0    1   |
 </pre>
 
-轉換公式如下：
+轉換公式為：
 
-x' = x / （0.01·x + 1）
+x ' = x/（0.01 · x + 1）
 
-y' = y / （0.01·x + 1）
+y ' = y/（0.01 · x + 1）
 
-現在使用這項轉換來轉譯 100 像素的方形方塊，位於原點。 以下是四角轉換的方式：
+現在使用此轉換來轉譯位於原點的100圖元方塊。 以下是四個角落的轉換方式：
 
-（0，0） → （0，0）
+（0，0）→（0，0）
 
-（0，100） → （0，100）
+（0，100）→（0，100）
 
-（100，0） → （50，0）
+（100，0）→（50，0）
 
-（100，100） → （50，50）
+（100，100）→（50，50）
 
-當 x 是 100，則 z' 分母為 2，因此 x 和 y 座標會有效減半。 方塊的右邊會變成短於左側項目：
+當 x 為100時，z ' 分母為2，因此 x 和 y 座標實際上是減半。 方塊右側會比左邊更短：
 
-![](non-affine-images/nonaffinetransform.png "非仿射轉換會受限於方塊")
+![](non-affine-images/nonaffinetransform.png "A box subjected to a non-affine transform")
 
-`Persp`因為縮短建議方塊現在傾斜的右側，檢視器更，「 檢視方塊 」 指的這些資料格名稱的組件。
+`Persp`這些儲存格名稱的部分指的是「透視圖」，因為透視量會建議方塊現在會向檢視器的右邊傾斜。
 
-**測試透視圖**頁面可讓您試驗值`Persp0`和`Pers1`來瞭解其運作方式。 這些矩陣資料格的合理的值為很小，`Slider`在通用 Windows 平台無法正確處理它們。 若要容納 UWP 問題，這兩個`Slider`中的項目[ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml)必須初始化為範圍從-1，1:
+[**測試透視圖**] 頁面可讓您使用和的值進行實驗， `Persp0` `Pers1` 以瞭解其使用方式。 這些矩陣資料格的合理值很小， `Slider` 通用 Windows 平臺無法正確處理它們。 為了配合 UWP 問題，TestPerspective 中的兩個 `Slider` 元素[**TestPerspective.xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml)必須初始化為範圍從–1到1：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -154,7 +157,7 @@ y' = y / （0.01·x + 1）
 </ContentPage>
 ```
 
-事件處理常式中的滑桿[ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs)程式碼後置檔案會將 100 的值，讓它們 –0.01 和 0.01 之間的範圍。 此外，建構函式會載入點陣圖：
+程式碼後置檔案中滑杆的事件處理常式 [`TestPerspectivePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) 會將值除以100，使其範圍介於–0.01 與0.01 之間。 此外，也會在點陣圖中載入此函式：
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -191,7 +194,7 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-`PaintSurface`處理常式會計算`SKMatrix`值並命名為`perspectiveMatrix`除以 100 這些兩個滑桿的值為基礎。 這會結合兩個轉譯置於中央的點陣圖中的這項轉換的中心的轉換：
+`PaintSurface`處理常式會 `SKMatrix` `perspectiveMatrix` 根據這兩個滑杆的值除以100，計算名為的值。 這會結合兩個轉譯轉換，將此轉換的中心放在點陣圖的中央：
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -228,30 +231,30 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-以下是一些範例映像：
+以下是一些範例影像：
 
-[![](non-affine-images/testperspective-small.png "[測試] 檢視方塊頁面上的三個螢幕擷取畫面")](non-affine-images/testperspective-large.png#lightbox "的 [測試] 檢視方塊頁面上的三個螢幕擷取畫面")
+[![](non-affine-images/testperspective-small.png "Triple screenshot of the Test Perspective page")](non-affine-images/testperspective-large.png#lightbox "Triple screenshot of the Test Perspective page")
 
-實驗使用滑桿時，您會發現超過 0.0066 或 –0.0066 如下的值會導致要突然 fractured 和不一致的映像。 要進行轉換的點陣圖是 300 像素的正方形。 它會轉換相對於其中心，因此點陣圖的座標範圍從 –150 150。 請記得，z 值，而 ' 是：
+當您嘗試使用滑杆時，您會發現超過0.0066 或以下的值–0.0066 會導致映射突然被破裂並一致。 要轉換的點陣圖是 300-圖元正方形。 它會相對於其中心進行轉換，因此點陣圖的座標範圍從–150到150。 回想一下，z ' 的值是：
 
-z' = Persp0·x + Persp1·y + 1
+z ' = Persp0 · x + Persp1 · y + 1
 
-如果`Persp0`或`Persp1`大於 0.0066 或以下 –0.0066，就一律點陣圖 z 所導致的部分座標 ' 值為零。 導致除數為零，並呈現變得混亂。 當使用非仿射轉換，您會想要避免轉譯任何項目使用這些座標會導致除數為零。
+如果 `Persp0` 或 `Persp1` 大於0.0066 或低於-0.0066，則一定會有點陣圖的某種座標會導致 z ' 值為零。 這會導致除數為零，而呈現會變得混亂。 使用非仿射轉換時，您會想要避免以零除的座標呈現任何專案。
 
-一般而言，您將不會設定`Persp0`和`Persp1`在隔離狀態。 您還有通常需要設定其他資料格，以達到特定類型的非仿射轉換矩陣中。
+一般來說，您不會設定 `Persp0` 和 `Persp1` 隔離。 您通常也必須設定矩陣中的其他資料格，以達成特定類型的非仿射轉換。
 
-是一個這類非仿射轉換*錐形轉換*。 這種類型的非仿射轉換會保留一個矩形的整體維度，但 tapers 一端：
+其中一個這類非仿射轉換是一個*錐度轉換*。 這種類型的非仿射轉換會保留矩形的整體維度，但 tapers 一側：
 
-![](non-affine-images/tapertransform.png "錐形轉換會受限於方塊")
+![](non-affine-images/tapertransform.png "A box subjected to a taper transform")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)類別來執行非仿射轉換，以根據這些參數的一般化的計算：
+[`TaperTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)類別會根據這些參數來執行非仿射轉換的一般化計算：
 
-- 要進行轉換之影像的矩形的大小
-- 列舉，指出 tapers，矩形的側邊
-- 另一個的列舉，指出 tapers 如何和
-- 錐度的範圍。
+- 要轉換之影像的矩形大小，
+- 列舉，表示 tapers 之矩形的側邊。
+- 另一個列舉，指出它的 tapers 方式，以及
+- tapering 的範圍。
 
-程式碼如下：
+此程式碼如下：
 
 ```csharp
 enum TaperSide { Left, Top, Right, Bottom }
@@ -353,7 +356,7 @@ static class TaperTransform
 }
 ```
 
-這個類別用於**錐形轉換**頁面。 XAML 檔案具現化兩個`Picker`項目選取列舉值，和`Slider`選擇錐形分數。 [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)處理常式結合錐形轉換具有兩個轉譯進行相對於點陣圖左上角的轉換的轉換：
+這個類別會在 [**錐度轉換**] 頁面中使用。 XAML 檔案會具現化兩個 `Picker` 元素，以選取列舉值，並將 `Slider` 用於選擇錐度分數。 [`PaintSurface`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)處理常式結合了錐度轉換與兩個轉譯轉換，使轉換相對於點陣圖的左上角：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -394,15 +397,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 以下是一些範例：
 
-[![](non-affine-images/tapertransform-small.png "錐形轉換 頁面的三個螢幕擷取畫面")](non-affine-images/tapertransform-large.png#lightbox "錐形轉換 頁面的三個螢幕擷取畫面")
+[![](non-affine-images/tapertransform-small.png "Triple screenshot of the Taper Transform page")](non-affine-images/tapertransform-large.png#lightbox "Triple screenshot of the Taper Transform page")
 
-一般化的非仿射轉換的另一種是會示範在下一篇文章中的 3D 旋轉[ **3D 旋轉**](3d-rotation.md)。
+另一種一般化非仿射轉換是3D 旋轉，在下一篇文章中會示範[**3d**](3d-rotation.md)旋轉。
 
-非仿射轉換可以將矩形轉換成任何凸面的方形。 最好的證明**顯示非仿射矩陣**頁面。 它是非常類似**顯示仿射矩陣**頁面上，從[**矩陣轉換**](matrix.md)發行項之處在於它有第四個`TouchPoint`物件來管理第四個討論的點陣圖：
+非仿射轉換可以將矩形轉換成任何凸四邊形。 這是由 [**顯示非仿射矩陣**] 頁面所示範。 它與 [[**矩陣轉換**](matrix.md)] 文章中的 [**顯示仿射矩陣**] 頁面非常類似，不同之處在于它有第四個 `TouchPoint` 物件來操作點陣圖的第四個角落：
 
-[![](non-affine-images/shownonaffinematrix-small.png "顯示非仿射矩陣頁面的三個螢幕擷取畫面")](non-affine-images/shownonaffinematrix-large.png#lightbox "的 [顯示非仿射矩陣] 頁面上的三個螢幕擷取畫面")
+[![](non-affine-images/shownonaffinematrix-small.png "Triple screenshot of the Show Non-Affine Matrix page")](non-affine-images/shownonaffinematrix-large.png#lightbox "Triple screenshot of the Show Non-Affine Matrix page")
 
-只要您不要嘗試進行的其中一個角落的點陣圖內部角度大於 180 度，或是對兩邊彼此相交，程式成功地計算轉換使用這個方法從[ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)類別：
+只要您未嘗試讓點陣圖的其中一個角落大於180度，或讓兩個邊彼此相交，程式就會使用這個方法，從類別成功計算轉換 [`ShowNonAffineMatrixPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) ：
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -451,23 +454,23 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 }
 ```
 
-為了方便計算，這個方法會當做三個不同的轉換，來表示這裡，以顯示這些轉換如何修改點陣圖的四個邊角的箭號產品取得總轉換：
+為了方便計算，此方法會以三個不同轉換的乘積來取得總轉換，這會在這裡日後代表，其中有箭號顯示這些轉換如何修改點陣圖的四個角落：
 
-（0，0） （0，0） 的 → → （0，0） → (x，0，y0) （左上方）
+（0，0）→（0，0）→（0，0）→（x0，y0）（左上方）
 
-(0、 H) → （0，1） （0，1） 的 → → (x1，y1) （左下方）
+（0，H）→（0，1）→（0，1）→（x1，y1）（左下方）
 
-(W，0) （1，0） 的 → → （1，0） → (x2 y2) （右上方）
+（W，0）→（1，0）→（1，0）→（x2，y2）（右上方）
 
-（W、 H） （1，1） 的 → → (a、 b) → (x 3，y3) （右下方）
+（W，H）→（1，1）→（a，b）→（x3，y3）（右下方）
 
-右邊的最後一個座標是四個觸控點相關聯的四個點。 這些是點陣圖的邊角的最後一個座標。
+右邊的最後座標是四個與四個觸控點關聯的點。 這些是點陣圖角落的最終座標。
 
-W 和 H 表示點陣圖的高度與寬度。 第一個轉換`S`只會調整的點陣圖，以 1 像素的正方形。 第二個轉換為非仿射轉換`N`，和第三個是仿射轉換`A`。 該仿射轉換基於三個點，因此它只是像先前仿射[ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68)方法並不需要用到的第四個資料列 (a、 b） 點。
+W 和 H 代表點陣圖的寬度和高度。 第一個轉換 `S` 只會將點陣圖調整為1圖元的正方形。 第二個轉換是非仿射轉換 `N` ，而第三個則是仿射轉換 `A` 。 該仿射轉換是以三個點為基礎，因此就像先前的仿射方法一樣， [`ComputeMatrix`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) 而且不會牽涉到第四個具有（a，b）點的資料列。
 
-`a`和`b`值的計算方式，以便第三個轉換為仿射。 程式碼取得仿射轉換的反向，並接著使用該值來對應右下角。 這就是重點 (a、 b)。
+`a` `b` 會計算和值，因此第三個轉換為仿射。 此程式碼會取得仿射轉換的反向，然後使用它來對應右下角。 這就是重點（a、b）。
 
-非仿射轉換的另一個用法是模擬 3d 圖形。 在下一步 文章中， [ **3D 旋轉**](3d-rotation.md)您了解如何旋轉 3D 空間中的二維圖形。
+非仿射轉換的另一種用法是模仿3d 圖形。 在下一篇文章中， [**3D 旋轉**](3d-rotation.md)您會看到如何在3d 空間中旋轉二維圖形。
 
 ## <a name="related-links"></a>相關連結
 

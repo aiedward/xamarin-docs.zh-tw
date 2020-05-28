@@ -1,30 +1,33 @@
 ---
-title: 自訂轉譯器簡介
-description: 本文簡介如何自訂轉譯器，並概述建立自訂轉譯器的程序。
-ms.prod: xamarin
-ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/19/2016
-ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771873"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135317"
 ---
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 
-_自定義呈現器為自定義 Xamarin.Forms 控制件的外觀和行為提供了一種強大的方法。它們可用於小型樣式更改或複雜的特定於平臺的佈局和行為自定義。本文介紹了自定義呈現器,並概述了創建自定義呈現器的過程。_
+_自訂轉譯器提供了一種強大的方法，可自訂控制項的外觀和行為 Xamarin.Forms 。它們可用於小型樣式變更或複雜的平臺特定版面配置和行為自訂。本文提供自訂轉譯器的簡介，並概述建立自訂轉譯器的程式。_
 
-Xamarin.Forms [頁面、配置和控制項](~/xamarin-forms/user-interface/controls/index.md)提供通用 API，描述跨平台行動裝置的使用者介面。 系統會在每個平台上使用 `Renderer` 類別，以不同的方式轉譯每個頁面、配置和控制項，進而建立原生控制項 (對應至 Xamarin.Forms 表示方式)、將其排列在畫面上，然後新增在共用程式碼中指定的行為。
+Xamarin.Forms[頁面、版面配置和控制項](~/xamarin-forms/user-interface/controls/index.md)呈現通用 API 來描述跨平臺行動使用者介面。 每個頁面、版面配置和控制項在每個平臺上都以不同的方式轉譯，方法是使用 `Renderer` 類別來建立原生控制項（對應于 Xamarin.Forms 標記法）、將它排列在畫面上，然後加入在共用程式碼中指定的行為。
 
 開發人員可以實作自己的自訂 `Renderer` 類別，以自訂控制項的外觀及/或行為。 您可將指定類型的自訂轉譯器新增至某個應用程式專案，在某處自訂控制項，同時允許其他平台的預設行為；或者，將不同的自訂轉譯器新增至每個應用程式專案，在 iOS、Android 和通用 Windows 平台 (UWP) 上建立不同的外觀與風格。 不過，實作自訂轉譯器類別來執行簡單的控制項自訂通常是繁重的回應方式。 效果會簡化這個程序，且通常用於小型的樣式變更。 如需詳細資訊，請參閱[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 ## <a name="examining-why-custom-renderers-are-necessary"></a>檢查自訂轉譯器為何必要的原因
 
-變更 Xamarin.Forms 控制項的外觀，但不使用自訂轉譯器，是兩步驟的程序，包括透過子類別化建立自訂控制項，然後以此自訂控制項取代原始控制項。 下列程式碼範例會示範 `Entry` 控制項子類別化的範例：
+變更控制項的外觀 Xamarin.Forms ，而不使用自訂轉譯器，是一個包含兩個步驟的程式，其中牽涉到透過子類別化來建立自訂控制項，然後使用自訂控制項來取代原始控制項。 下列程式碼範例會示範 `Entry` 控制項子類別化的範例：
 
 ```csharp
 public class MyEntry : Entry
@@ -65,17 +68,17 @@ public class MyEntry : Entry
 建立自訂轉譯器類別的程序如下：
 
 1. 建立轉譯原生控制項之轉譯器類別的子類別。
-1. 覆寫轉譯原生控制項的方法，並撰寫自訂控制項的邏輯。 `OnElementChanged` 方法常用於轉譯原生控制項，會在建立對應的 Xamarin.Forms 控制項時呼叫。
-1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，指定用它轉譯 Xamarin.Forms 控制項。 這個屬性會用來向 Xamarin.Forms 註冊自訂轉譯器。
+1. 覆寫轉譯原生控制項的方法，並撰寫自訂控制項的邏輯。 通常， `OnElementChanged` 方法是用來呈現原生控制項，這會在建立對應控制項時呼叫 Xamarin.Forms 。
+1. 將 `ExportRenderer` 屬性新增至自訂轉譯器類別，以指定將用來呈現 Xamarin.Forms 控制項。 這個屬性是用來向註冊自訂轉譯器 Xamarin.Forms 。
 
 > [!NOTE]
-> 對大部分的 Xamarin.Forms 項目而言，可以選擇是否在每個平台專案中提供自訂轉譯器。 如果自訂轉譯器尚未註冊，則會使用控制項基底類別的預設轉譯器。 不過，轉譯 [View](xref:Xamarin.Forms.View) 或 [ViewCell](xref:Xamarin.Forms.ViewCell) 項目時，每個平台專案都必須要有自訂轉譯器。
+> 對於大部分的 Xamarin.Forms 元素而言，在每個平臺專案中提供自訂轉譯器是選擇性的。 如果自訂轉譯器尚未註冊，則會使用控制項基底類別的預設轉譯器。 不過，轉譯 [View](xref:Xamarin.Forms.View) 或 [ViewCell](xref:Xamarin.Forms.ViewCell) 項目時，每個平台專案都必須要有自訂轉譯器。
 
-本系列的主題都會提供不同 Xamarin.Forms 項目的此程序示範和說明。
+本系列中的主題將針對不同元素提供此程式的示範和說明 Xamarin.Forms 。
 
 ## <a name="troubleshooting"></a>疑難排解
 
-如果自訂控制項包含在已新增至解決方案的 .NET Standard 程式庫專案中 (即非 Visual Studio for Mac/Visual Studio Xamarin.Forms 應用程式專案範本建立的 .NET Standard 程式庫)，在 iOS 中，嘗試存取自訂控制項時可能會發生例外狀況。 如果發生此問題，從 `AppDelegate` 類別建立自訂控制項參考可予以解決：
+如果自訂控制項包含在已新增至方案的 .NET Standard 程式庫專案中（亦即，不是 Visual Studio for Mac/Visual Studio 應用程式專案範本所建立的 .NET Standard 程式庫 Xamarin.Forms ），則在嘗試存取自訂控制項時，iOS 可能會發生例外狀況。 如果發生此問題，從 `AppDelegate` 類別建立自訂控制項參考可予以解決：
 
 ```csharp
 var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere
@@ -89,10 +92,10 @@ var temp = new ClassInPCL(); // in AppDelegate, but temp not used anywhere
 
 這會建立 `ClassInPCL` 類型的參考，指出它在執行階段為必要。 如需詳細資訊，請參閱[保留程式碼](~/ios/deploy-test/linker.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文已簡介自訂轉譯器，並概述建立自訂轉譯器的程序。 自訂轉譯器提供自訂 Xamarin.Forms 控制項外觀和行為的有力方法。 自訂轉譯器可用於小型樣式變更或複雜的平台特定版面配置，以及行為自訂。
+本文已簡介自訂轉譯器，並概述建立自訂轉譯器的程序。 自訂轉譯器提供了一種強大的方法，可自訂控制項的外觀和行為 Xamarin.Forms 。 自訂轉譯器可用於小型樣式變更或複雜的平台特定版面配置，以及行為自訂。
 
 ## <a name="related-links"></a>相關連結
 
-- [影響](~/xamarin-forms/app-fundamentals/effects/index.md)
+- [效應](~/xamarin-forms/app-fundamentals/effects/index.md)

@@ -1,30 +1,33 @@
 ---
-title: Xamarin.Forms 字串格式化
-description: 本文說明如何使用 Xamarin.FOrms 資料繫結來將物件作為字串格式化和顯示。 這可透過將 Binding 的 StringFormat 設定為具有預留位置的標準 .NET 格式化字串來達成。
-ms.prod: xamarin
-ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms字串格式
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940385"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135755"
 ---
-# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字串格式化
+# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms字串格式
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 有時候，使用資料繫結來顯示物件或值的字串表示相當方便。 例如，您可能想要使用 `Label` 來顯示目前 `Slider` 的值。 在此資料繫結中，`Slider` 是來源，而目標則是 `Label` 的 `Text` 屬性。
 
-在代碼中顯示字串時,最強大的工具是靜態[`String.Format`](xref:System.String.Format(System.String,System.Object))方法。 格式化字串包含各種類型物件特定的格式化程式碼，且您可在要格式化的值外包含其他文字。 如需關於字串格式化的詳細資訊，請參閱[在 .NET 中將類型格式化](/dotnet/standard/base-types/formatting-types/)。
+在程式碼中顯示字串時，最強大的工具是靜態 [`String.Format`](xref:System.String.Format(System.String,System.Object)) 方法。 格式化字串包含各種類型物件特定的格式化程式碼，且您可在要格式化的值外包含其他文字。 如需關於字串格式化的詳細資訊，請參閱[在 .NET 中將類型格式化](/dotnet/standard/base-types/formatting-types/)。
 
 ## <a name="the-stringformat-property"></a>StringFormat 屬性
 
-此功能被帶入資料連結[`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat):您將(`Binding`[`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat)`Binding`或標記延伸的屬性)的屬性設定為具有一個佔位元的標準 .NET 格式字串:
+這項功能會帶入資料系結：您會將的 [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) 屬性 `Binding` （或 [`StringFormat`](xref:Xamarin.Forms.Xaml.BindingExtension.StringFormat) 標記延伸的屬性 `Binding` ）設定為具有一個預留位置的標準 .net 格式化字串：
 
 ```xaml
 <Slider x:Name="slider" />
@@ -123,7 +126,7 @@ XAML 檔案中的下一個區段是 `StackLayout`，其 `BindingContext` 已設�
 
 以下是程式執行情況：
 
-[![字串格式](string-formatting-images/stringformatting-small.png "字串格式化")](string-formatting-images/stringformatting-large.png#lightbox "字串格式化")
+[![字串格式化](string-formatting-images/stringformatting-small.png "字串格式化")](string-formatting-images/stringformatting-large.png#lightbox "字串格式化")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModel 和字串格式化
 
@@ -187,4 +190,4 @@ XAML 檔案中的下一個區段是 `StackLayout`，其 `BindingContext` 已設�
 ## <a name="related-links"></a>相關連結
 
 - [Data Binding Demos (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (資料繫結示範 (範例))
-- [來自 Xamarin.Forms 書籍的資料繫結章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [書籍中的資料系結章節 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

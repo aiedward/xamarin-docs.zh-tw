@@ -1,24 +1,27 @@
 ---
-title: Android 上的 ImageButton 投影
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Android 平臺特定的, 以在 ImageButton 上啟用陰影。
-ms.prod: xamarin
-ms.assetid: D3604D87-9F9F-4FE2-8B10-DF3B143C0734
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 567216171dd289e849ee0164452e4b876953f2a3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e2ad97eb5e7db3b832e8fb4340c86904b766b9a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653589"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139995"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>Android 上的 ImageButton 投影
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平臺特定是用來在上`ImageButton`啟用投影。 它由在 XAML 中設定`ImageButton.IsShadowEnabled`可繫結的屬性，以`true`，以及數個控制陰影的其他選擇性可繫結屬性：
+此 Android 平臺特定是用來在上啟用投影 `ImageButton` 。 它會在 XAML 中使用，方法是將可系結 `ImageButton.IsShadowEnabled` 屬性設定為 `true` ，以及一些可控制投影的其他選擇性可系結屬性：
 
 ```xaml
 <ContentPage ...
@@ -44,7 +47,7 @@ ms.locfileid: "68653589"
 </ContentPage>
 ```
 
-或者，它可以取用從 C# 使用 fluent API:
+或者，您也可以使用 Fluent API，從 c # 取用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -60,20 +63,20 @@ imageButton.On<Android>()
 ```
 
 > [!IMPORTANT]
-> 做為一部分繪製陰影`ImageButton`背景，以及背景只繪製如果`BackgroundColor`屬性設定。 因此，陰影就不會繪製如果`ImageButton.BackgroundColor`屬性未設定。
+> 陰影會繪製為背景的一部分 `ImageButton` ，而且只有在設定屬性時才會繪製背景 `BackgroundColor` 。 因此，如果未設定屬性，就不會繪製投影 `ImageButton.BackgroundColor` 。
 
-`ImageButton.On<Android>`方法可讓您指定這個平台專屬只會在 Android 上執行。 `ImageButton.SetIsShadowEnabled`方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空間，可用來控制是否已啟用下拉式陰影`ImageButton`。 此外，下列方法可以叫用來控制陰影：
+`ImageButton.On<Android>`方法會指定此平臺特定僅在 Android 上執行。 `ImageButton.SetIsShadowEnabled`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 是用來控制是否已在上啟用投影 `ImageButton` 。 此外，您可以叫用下列方法來控制陰影：
 
-- `SetShadowColor` – 設定延伸陰影的色彩。 預設色彩是[ `Color.Default` ](xref:Xamarin.Forms.Color.Default*)。
-- `SetShadowOffset` – 設定延伸陰影的位移。 位移會變更陰影轉換，並指定為方向[ `Size` ](xref:Xamarin.Forms.Size)值。 `Size`結構的值會以裝置獨立單位，與正在向左 （負值） 或向右 （正值），距離的第一個值和第二個值在上述的距離 （負值） 或下方 （正值）. 這個屬性的預設值是 （0.0，0.0），這會導致陰影正在轉換周圍每一端`ImageButton`。
-- `SetShadowRadius`– 設定柔化半徑，用來呈現下拉式陰影。 預設半徑值為 10.0。
+- `SetShadowColor`-設定陰影的色彩。 預設色彩為 [`Color.Default`](xref:Xamarin.Forms.Color.Default*) 。
+- `SetShadowOffset`-設定陰影的位移。 位移會變更陰影的轉換方向，並指定為 [`Size`](xref:Xamarin.Forms.Size) 值。 `Size`結構值是以與裝置無關的單位來表示，第一個值是左邊的距離（負值）或右邊（正值），而第二個值是上方的距離（負值）或下方（正數值）。 這個屬性的預設值為（0.0，0.0），這會導致在的每一側轉換陰影 `ImageButton` 。
+- `SetShadowRadius`–設定用來呈現投影的模糊半徑。 預設半徑值為10.0。
 
 > [!NOTE]
-> 可查詢下拉式陰影的狀態，藉由呼叫`GetIsShadowEnabled`， `GetShadowColor`， `GetShadowOffset`，和`GetShadowRadius`方法。
+> 您可以藉由呼叫 `GetIsShadowEnabled` 、 `GetShadowColor` 、 `GetShadowOffset` 和方法來查詢陰影的狀態 `GetShadowRadius` 。
 
-結果是，您可以上啟用下拉式陰影`ImageButton`:
+結果是可以在上啟用投影 `ImageButton` ：
 
-![](imagebutton-drop-shadow-images/imagebutton-drop-shadow.png "使用下拉式陰影的 ImageButton")
+![](imagebutton-drop-shadow-images/imagebutton-drop-shadow.png "ImageButton with drop shadow")
 
 ## <a name="related-links"></a>相關連結
 

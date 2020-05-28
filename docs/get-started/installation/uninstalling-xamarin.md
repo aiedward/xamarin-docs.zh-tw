@@ -1,17 +1,20 @@
 ---
-title: 解除安裝 Xamarin
-description: 本文件描述如何在 Windows 上從 Visual Studio 解除安裝 Xamarin。
-ms.prod: xamarin
-ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
-author: conceptdev
-ms.author: crdun
-ms.date: 01/22/2020
-ms.openlocfilehash: 4c9096edddeb00070aaabc3e93b283f2d55c1bfa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3e194e92e6e9b9067e40928bf9766e987bfe472c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304314"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136366"
 ---
 # <a name="uninstall-xamarin-from-visual-studio"></a>從 Visual Studio 解除安裝 Xamarin 
 
@@ -39,7 +42,7 @@ ms.locfileid: "79304314"
 
     [![](uninstalling-xamarin-images/vs2017-04-sml.png "Press the Modify button")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
 
-切換到步驟 3 中的 **「單個元件」** 選項卡並取消檢查特定元件,可以卸載單個 Xamarin 元件(如探查器或工作簿):
+藉由切換至步驟3中的 [**個別元件**] 索引標籤，並取消核取特定元件，可以卸載個別的 Xamarin 元件（例如 Profiler 或活頁簿）：
 
 [![](uninstalling-xamarin-images/vs2017-components-sml.png "Uninstall individual components")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
 

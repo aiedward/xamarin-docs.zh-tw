@@ -1,30 +1,33 @@
 ---
-title: 旋轉轉換
-description: 本文將探討的效果和動畫設有 SkiaSharp 旋轉轉換，並示範此範例程式碼。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/23/2017
-ms.openlocfilehash: 1ec5c5fb1a81873d88a59eefba7652a86fc1ba4e
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657208"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132180"
 ---
 # <a name="the-rotate-transform"></a>旋轉轉換
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_瀏覽的效果和動畫設有 SkiaSharp 旋轉轉換_
+_探索 SkiaSharp 旋轉轉換的可能效果和動畫_
 
-旋轉轉換中，使用 SkiaSharp 圖形物件具有水平和垂直軸則會中斷免費的對齊方式的條件約束：
+有了旋轉轉換，SkiaSharp 繪圖物件就不會有與水準和垂直軸對齊的條件約束：
 
-![](rotate-images/rotateexample.png "旋轉中心周圍的文字")
+![](rotate-images/rotateexample.png "Text rotated around a center")
 
-輪替 SkiaSharp 同時支援點 （0，0），周圍的圖形物件[ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single))方法和[ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single))方法：
+針對圍繞點（0，0）的繪圖物件旋轉，SkiaSharp 同時支援 [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) 方法和 [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) 方法：
 
 ```csharp
 public void RotateDegrees (Single degrees)
@@ -32,17 +35,17 @@ public void RotateDegrees (Single degrees)
 public Void RotateRadians (Single radians)
 ```
 
-360 度的圓形等同於 twoπ 弧度為單位，因此很容易的兩個單位之間轉換。 使用兩者中較方便。 在.NET 中的所有三角函數[ `Math` ](xref:System.Math)類別都使用弧度為單位的單位。
+360度的圓形與 twoπ弧度相同，因此在兩個單位之間進行轉換很容易。 使用任何方便的。 .NET 類別中的所有三角函數函式都 [`Math`](xref:System.Math) 使用弧度單位。
 
-輪替是增加角度的順時針旋轉。 （雖然在笛卡兒座標系統是依照慣例以逆時針方向，順時針旋轉，是配合 SkiaSharp 與向下遞增的 Y 座標）。負的角度及大於允許 360 度的角度。
+旋轉會順時針以增加角度。 （雖然笛卡兒座標系統上的旋轉是依慣例順時針的，但順時針旋轉與 Y 座標一致，如 SkiaSharp 中所增加）。允許負角和大於360度的角度。
 
-旋轉轉換公式是更複雜，比翻譯和小數位數。 Α 的角度，轉換公式是：
+用於旋轉的轉換公式比轉譯和縮放時更複雜。 針對α的角度，轉換公式為：
 
-x' = x•cos(α) – y•sin(α)   
+x ' = x • cos （α）– y • sin （α）   
 
-y` = x•sin(α) + y•cos(α)
+y ' = x • sin （α） + y • cos （α）
 
-**基本旋轉**頁面會示範`RotateDegrees`方法。 [ **BasicRotate.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)檔案會置於頁面與其基準線顯示一些文字，並且將它根據旋轉`Slider`–360 到 360 的範圍。 以下是相關的部分`PaintSurface`處理常式：
+[**基本旋轉**] 頁面會示範 `RotateDegrees` 方法。 [**BasicRotate.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)檔案會顯示一些文字，其基準會置中在頁面上，並根據 `Slider` 範圍為–360到360的來進行旋轉。 以下是處理常式的相關部分 `PaintSurface` ：
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -58,11 +61,11 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-因為的畫布，在本電腦程式中設定的大部分角度的左上角為中心旋轉文字的旋轉螢幕：
+由於旋轉是以畫布左上角為中心，因此，針對此程式中設定的大部分角度，文字會從螢幕旋轉：
 
-[![](rotate-images/basicrotate-small.png "基本旋轉頁面的三個螢幕擷取畫面")](rotate-images/basicrotate-large.png#lightbox "基本旋轉頁面的三個螢幕擷取畫面")
+[![](rotate-images/basicrotate-small.png "Triple screenshot of the Basic Rotate page")](rotate-images/basicrotate-large.png#lightbox "Triple screenshot of the Basic Rotate page")
 
-通常您會想要旋轉項目集中使用這些版本的指定的樞紐分析點周圍[ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single))並[ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single))方法：
+通常，您會想要使用這些版本的和方法，在指定的資料透視點周圍旋轉某個專案 [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) ：
 
 ```csharp
 public void RotateDegrees (Single degrees, Single px, Single py)
@@ -70,7 +73,7 @@ public void RotateDegrees (Single degrees, Single px, Single py)
 public void RotateRadians (Single radians, Single px, Single py)
 ```
 
-**置中對齊旋轉**頁面是如同**基本旋轉**不同之處在於的展開的版本`RotateDegrees`用來設定旋轉中心的相同的點，用來將文字定位：
+**中央旋轉**頁面與**基本旋轉**相似，不同之處在于的擴充版本 `RotateDegrees` 是用來將旋轉中心設定為用來放置文字的相同點：
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -86,17 +89,17 @@ using (SKPaint textPaint = new SKPaint
 }
 ```
 
-現在文字就會用來將文字，也就是水平置中文字的基準的定位點沿著旋轉：
+現在文字會繞著用來放置文字的點旋轉，這是文字基線的水準中心：
 
-[![](rotate-images/centeredrotate-small.png "置中對齊旋轉頁面的三個螢幕擷取畫面")](rotate-images/centeredrotate-large.png#lightbox "置中對齊旋轉頁面的三個螢幕擷取畫面")
+[![](rotate-images/centeredrotate-small.png "Triple screenshot of the Centered Rotate page")](rotate-images/centeredrotate-large.png#lightbox "Triple screenshot of the Centered Rotate page")
 
-如同的置中新版`Scale`方法、 置中對齊的`RotateDegrees`呼叫是捷徑。 以下是方法：
+如同方法的中央版本 `Scale` ，呼叫的中央版本 `RotateDegrees` 是快捷方式。 方法如下：
 
 ```csharp
 RotateDegrees (degrees, px, py);
 ```
 
-該呼叫就相當於下列各項：
+該呼叫相當於下列內容：
 
 ```csharp
 canvas.Translate(px, py);
@@ -104,14 +107,14 @@ canvas.RotateDegrees(degrees);
 canvas.Translate(-px, -py);
 ```
 
-您會發現，您有時可以結合`Translate`呼叫`Rotate`呼叫。 例如，以下是`RotateDegrees`並`DrawText`呼叫中**置中對齊旋轉**頁面;
+您會發現，有時可以 `Translate` 使用呼叫來結合呼叫 `Rotate` 。 例如，以下是 `RotateDegrees` 和 `DrawText` 呼叫**中央旋轉**頁面中的：
 
 ```csharp
 canvas.RotateDegrees((float)rotateSlider.Value, info.Width / 2, info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-`RotateDegrees`呼叫就相當於兩個`Translate`呼叫和非集中`RotateDegrees`:
+`RotateDegrees`呼叫相當於兩個 `Translate` 呼叫，而非中心 `RotateDegrees` ：
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -120,7 +123,7 @@ canvas.Translate(-info.Width / 2, -info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-`DrawText`呼叫顯示在特定位置的文字相當於`Translate`後面加上該位置的呼叫`DrawText`在點 （0，0）：
+在 `DrawText` 特定位置顯示文字的呼叫相當於對 `Translate` 該位置的呼叫，後面接著 `DrawText` 點（0，0）：
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -130,7 +133,7 @@ canvas.Translate(info.Width / 2, info.Height / 2);
 canvas.DrawText(Title, 0, 0, textPaint);
 ```
 
-兩個連續`Translate`呼叫相互抵銷：
+兩個連續的呼叫會彼此 `Translate` 取消：
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -138,13 +141,13 @@ canvas.RotateDegrees((float)rotateSlider.Value);
 canvas.DrawText(Title, 0, 0, textPaint);
 ```
 
-就概念而言，兩種轉換會套用的順序，相對於容量出現在程式碼的方式。 `DrawText`呼叫畫布左上角顯示的文字。 `RotateDegrees`呼叫旋轉文字的左上角相對位置。 則`Translate`呼叫文字移到畫布的正中央。
+在概念上，這兩項轉換會依照其在程式碼中出現的順序來套用。 `DrawText`呼叫會顯示畫布左上角的文字。 此 `RotateDegrees` 呼叫會旋轉相對於左上角的文字。 然後 `Translate` 通話會將文字移到畫布的中央。
 
-通常，有數種方式可合併旋轉和平移。 **旋轉文字**頁面會建立下列畫面：
+通常有數種方式可以結合旋轉和轉譯。 [**旋轉的文字**] 頁面會建立下列顯示：
 
-[![](rotate-images/rotatedtext-small.png "旋轉的文字頁面的三個螢幕擷取畫面")](rotate-images/rotatedtext-large.png#lightbox "旋轉的文字頁面的三個螢幕擷取畫面")
+[![](rotate-images/rotatedtext-small.png "Triple screenshot of the Rotated Text page")](rotate-images/rotatedtext-large.png#lightbox "Triple screenshot of the Rotated Text page")
 
-以下是`PaintSurface`處理常式[ `RotatedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs)類別：
+以下是 `PaintSurface` 類別的處理常式 [`RotatedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) ：
 
 ```csharp
 static readonly string text = "    ROTATE";
@@ -182,9 +185,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-`xCenter`和`yCenter`值，表示畫布的正中央。 `yText`值是有點自的位移。 這個值是必要，因此它是真正垂直置中對齊頁面上放置文字的 Y 座標。 `for`迴圈，然後將根據畫布的正中央的旋轉。 輪替是以 30 度的遞增量。 使用來繪製文字`yText`值。 在詞彙之前的空格數目"旋轉"`text`值已確定廣為人知之間建立連線這些 12 的文字字串看起來似乎 dodecagon。
+`xCenter`和 `yCenter` 值表示畫布的中心。 `yText`值是來自的小位移。 這個值是放置文字所需的 Y 座標，因此它真正垂直地置中在頁面上。 `for`然後，迴圈會根據畫布的中心來設定旋轉。 旋轉以30度為增量。 使用值繪製文字 `yText` 。 值中「旋轉」文字之前的空白數目 `text` 已決定廣為人知且實證，讓這12個文字字串之間的連接看起來就像是 dodecagon。
 
-若要簡化此程式碼之一是將執行迴圈之後, 每次增加 30 度的旋轉角度`DrawText`呼叫。 這就不需要呼叫`Save`和`Restore`。 請注意，`degrees`主體內不再使用變數`for`區塊：
+簡化此程式碼的方法之一，就是在呼叫之後，每次透過迴圈來遞增旋轉角度30度 `DrawText` 。 這樣就不需要呼叫 `Save` 和 `Restore` 。 請注意，此 `degrees` 變數不再用於區塊的主體內 `for` ：
 
 ```csharp
 for (int degrees = 0; degrees < 360; degrees += 30)
@@ -195,7 +198,7 @@ for (int degrees = 0; degrees < 360; degrees += 30)
 
 ```
 
-它也可使用的簡單形式`RotateDegrees`前面引用藉由呼叫迴圈`Translate`將一切移至畫布的正中央：
+您也可以使用的簡單形式， `RotateDegrees` 方法是在迴圈前面加上呼叫， `Translate` 將所有專案移至畫布中央：
 
 ```csharp
 float yText = -textBounds.Height / 2 - textBounds.Top;
@@ -209,15 +212,15 @@ for (int degrees = 0; degrees < 360; degrees += 30)
 }
 ```
 
-已修改`yText`計算不會再包含`yCenter`。 現在`DrawText`呼叫置中以垂直方式在畫布頂端的文字。
+修改過的 `yText` 計算不再納入 `yCenter` 。 現在， `DrawText` 呼叫會在畫布頂端垂直置中文字。
 
-相對於容量出現在程式碼的方式在概念上套用轉換，因為通常很可能一開始更通用的轉換，後面接著更多的本機轉換。 這通常是最簡單的方式結合旋轉和平移。
+由於轉換在概念上與它們在程式碼中的顯示方式相反，因此通常可以從更多的全域轉換開始，然後再進行更多的本機轉換。 這通常是結合旋轉和轉譯的最簡單方式。
 
-例如，假設您想要如同憑藉其軸上旋轉中心周圍繪製旋轉圖形物件。 但您也想這個物件，以如同全球各地項 sun 上方螢幕的中心為中心。
+例如，假設您想要繪製圍繞其中心的繪圖物件，就像是在其軸上旋轉的地球。 但是您也想要讓這個物件繞著螢幕的中央旋轉，就像是在 sun 周圍的地球。
 
-定位畫布左上角的物件，然後再使用旋轉該角的 動畫，您可以執行這項操作。 接下來，將轉譯的物件，以水平方式像是軌道的半徑。 現在適用於第二個動畫的旋轉，則也原點為中心。 這可讓角為中心的物件。 現在會轉譯為畫布的正中央。
+若要這麼做，您可以將物件放在畫布的左上角，然後使用動畫來圍繞該角落旋轉。 接下來，以水準方式轉譯物件，就像 orbital 的半徑一樣。 現在套用第二個動畫旋轉，同時也在原點周圍。 這會讓物件繞著角落旋轉。 現在轉譯成畫布的中心。
 
-以下是`PaintSurface`包含這些的處理常式以相反順序轉換呼叫：
+以下是 `PaintSurface` 以相反順序包含這些轉換呼叫的處理常式：
 
 ```csharp
 float revolveDegrees, rotateDegrees;
@@ -255,7 +258,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees`和`rotateDegrees`欄位有動畫效果。 此程式會使用不同的動畫技術以 Xamarin.Forms 為基礎[ `Animation` ](xref:Xamarin.Forms.Animation)類別。 (這個類別所述[第 22 章*使用 Xamarin.Forms 建立行動應用程式*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf))`OnAppearing`覆寫會建立兩個`Animation`物件使用回呼方法，然後再呼叫`Commit`對其動畫持續時間：
+`revolveDegrees`和 `rotateDegrees` 欄位會以動畫顯示。 此程式會根據類別使用不同的動畫技術 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) 。 （在[*使用 Xamarin.Forms 建立 Mobile Apps*的第22章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)中會描述此類別） `OnAppearing` 。覆寫會建立兩個 `Animation` 具有回呼方法的物件，然後 `Commit` 在其上呼叫以取得動畫持續時間：
 
 ```csharp
 protected override void OnAppearing()
@@ -273,7 +276,7 @@ protected override void OnAppearing()
 }
 ```
 
-第一個`Animation`物件以動畫顯示`revolveDegrees`從 0 到 360 度超過 10 秒的角度。 第二個動畫`rotateDegrees`從 0 到 360 度的角度每隔 1 秒，也介面失效產生另一個呼叫`PaintSurface`處理常式。 `OnDisappearing`覆寫會取消這些兩個動畫：
+第一個 `Animation` 物件在 `revolveDegrees` 10 秒內從0度到360度的動畫。 第二個是 `rotateDegrees` 每1秒從0度到360度的動畫，也會使表面失效，以產生另一個呼叫 `PaintSurface` 處理常式。 覆 `OnDisappearing` 寫會取消這兩個動畫：
 
 ```csharp
 protected override void OnDisappearing()
@@ -284,9 +287,9 @@ protected override void OnDisappearing()
 }
 ```
 
-**醜陋的類比時鐘**（因此稱為因為更吸引人的類比時鐘會更新版本的文章中所述） 的程式會使用循環，來繪製時鐘的小時和分鐘標記，以及旋轉指針。 程式繪製使用任意的座標系統，根據圓形的中心點 （0，0） 半徑為 100 的時鐘。 它會使用平移和縮放，以展開和置中該頁面上的圓形。
+不太好的**類比時鐘**程式（因為後續的文章將會說明更吸引人的類比時鐘），會使用旋轉來繪製時鐘的分鐘和小時標記，並旋轉手。 此程式會使用任意座標系統繪製時鐘，此角度是以半徑為100的點（0，0）為中心的圓角。 它會使用平移和縮放比例，在頁面上展開並置中該圓形。
 
-`Translate`並`Scale`呼叫全域套用的時鐘，因此這些會初始化之後呼叫的第一個項目`SKPaint`物件：
+`Translate`和 `Scale` 呼叫會全域套用至時鐘，因此這些是在物件初始化之後所呼叫的第一個 `SKPaint` ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -315,7 +318,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-有一些必須全天候繪製圓形中的兩個不同大小的 60 標記。 `DrawCircle`呼叫繪製該圓點 （0，一來-90），其相對於時鐘的中心對應至 12:00。 `RotateDegrees`呼叫之後每個刻度遞增 6 度的旋轉角度。 `angle`變數僅用來判斷是否繪製大圓形或小圓圈：
+有兩個不同大小的60標記必須在時鐘周圍以圓形繪製。 此 `DrawCircle` 呼叫會在點（0，–90）繪製該圓形，相對於時鐘中心，其對應于12:00。 `RotateDegrees`呼叫會以每個刻度後的6度遞增旋轉角度。 `angle`變數僅用於判斷是否繪製大型圓形或小圓形：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -332,7 +335,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-最後，`PaintSurface`處理常式會取得目前的時間，並計算小時、 分鐘和第二個實際操作的旋轉度數。 如此的旋轉角度是相對於，每一個指針繪製 12:00 位置：
+最後， `PaintSurface` 處理常式會取得目前的時間，並計算小時、分鐘和第二個手的旋轉度數。 每個手勢都會在12:00 位置繪製，讓旋轉角度相對於：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -364,11 +367,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-雖然手粗糙，時鐘是肯定的功能：
+雖然實際操作相當粗糙，但時鐘仍可正常運作：
 
-[![](rotate-images/uglyanalogclock-small.png "三倍不美觀的類比時鐘文字頁面的螢幕擷取畫面")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[![](rotate-images/uglyanalogclock-small.png "Triple screenshot of the Ugly Analog Clock Text page")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
-在更吸引人的時鐘，請參閱文章[ **SVG 路徑資料在 SkiaSharp**](../curves/path-data.md)。
+如需更具吸引力的時鐘，請參閱[**SkiaSharp 中的 SVG 路徑資料**](../curves/path-data.md)一文。
 
 ## <a name="related-links"></a>相關連結
 

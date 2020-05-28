@@ -1,22 +1,25 @@
 ---
-title: 平板電腦和桌面應用程式的版面配置
-description: 本文說明如何優化適用于平板電腦的 Xamarin 應用程式版面配置，而不是手機。
-ms.prod: xamarin
-ms.assetid: D62F472B-4345-4983-8403-659A538B591F
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/01/2016
-ms.openlocfilehash: f91d0127d0f2ffe37e3e0ff016dee551a679ad84
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: 本文說明如何優化平板電腦的 Xamarin.Forms 應用程式版面配置，而不是手機。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8ce5ba09f89c2bc84b7f6ba722f724ae39c0222e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72273121"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137919"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板電腦和桌面應用程式的版面配置
 
-Xamarin 支援支援的平臺上所有可用的裝置類型，因此除了電話以外，應用程式也可以在上執行：
+Xamarin.Forms支援在支援的平臺上使用的所有裝置類型，因此除了電話以外，應用程式也可以在上執行：
 
 - Ipad
 - Android 平板電腦、
@@ -31,16 +34,16 @@ Xamarin 支援支援的平臺上所有可用的裝置類型，因此除了電話
 
 ## <a name="device-types"></a>裝置類型
 
-較大的螢幕裝置適用于 Xamarin 所支援的所有平臺。
+較大的螢幕裝置適用于支援的所有平臺 Xamarin.Forms 。
 
 ### <a name="ipads-ios"></a>Ipad （iOS）
 
-[Xamarin] 範本會將**plist > [裝置**] 設定設為 [**通用**] （這表示支援 iPhone 和 iPad），藉此自動包含 iPad 支援。
+此 Xamarin.Forms 範本會將**Plist > 裝置**設定設為**通用**（這表示支援 iPhone 和 iPad），藉此自動包含 iPad 支援。
 
 若要提供愉快的啟動體驗，並確保在所有裝置上都使用全螢幕解析度，您應該確定提供了[iPad 特定的啟動畫面](~/ios/app-fundamentals/images-icons/launch-screens.md)（使用分鏡腳本）。 這可確保在 iPad 迷你、iPad 和 iPad Pro 裝置上正確呈現應用程式。
 
 在 iOS 9 之前，所有應用程式都會在裝置上佔用全螢幕，但有些 Ipad 現在可以執行[分割畫面的多工](~/ios/platform/multitasking.md)作業。
-這表示您的應用程式可能只佔用畫面側邊的超薄資料行、畫面寬度的 50% 或整個畫面。
+這表示您的應用程式可能只佔用畫面側邊的超薄資料行、畫面寬度的50% 或整個畫面。
 
 [![](tablet-images/ipad-sml.png "iPad Split Screen Example")](tablet-images/ipad.png#lightbox "iPad Split Screen Example")
 
@@ -48,10 +51,10 @@ Xamarin 支援支援的平臺上所有可用的裝置類型，因此除了電話
 
 ### <a name="android-tablets"></a>Android 平板電腦
 
-Android 生態系統有多種支援的螢幕大小，從小型手機到大型平板電腦。 Xamarin 可以支援所有螢幕大小，但如同其他平臺，您可能會想要針對較大的裝置調整使用者介面。
+Android 生態系統有多種支援的螢幕大小，從小型手機到大型平板電腦。 Xamarin.Forms可以支援所有螢幕大小，但如同其他平臺，您可能會想要針對較大的裝置調整使用者介面。
 
 支援許多不同的螢幕解析度時，您可以提供不同大小的原生映射資源，以優化使用者體驗。
-請參閱[android 資源](~/android/app-fundamentals/resources-in-android/index.md)檔（尤其是[建立不同螢幕大小的資源](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)），以取得有關如何在 Android 應用程式專案中將資料夾和檔案名結構為包含優化影像資源的詳細資訊。您的應用程式。
+請參閱[android 資源](~/android/app-fundamentals/resources-in-android/index.md)檔（尤其是[建立不同螢幕大小的資源](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)），以取得如何在 android 應用程式專案中將資料夾和檔案名結構在應用程式中包含優化影像資源的詳細資訊。
 
 ### <a name="windows-tablets-and-desktops"></a>Windows 平板電腦和桌上型電腦
 
@@ -65,11 +68,11 @@ Android 生態系統有多種支援的螢幕大小，從小型手機到大型平
 
 ## <a name="optimizing-for-tablet-and-desktop"></a>為平板電腦和桌面優化
 
-您可以根據電話或平板電腦/桌面裝置是否正在使用，調整您的 Xamarin。表單使用者介面。 這表示您可以將大型螢幕裝置（如平板電腦和桌上型電腦）的使用者體驗優化。
+您可以根據 Xamarin.Forms 電話或平板電腦/桌面裝置是否正在使用，調整您的使用者介面。 這表示您可以將大型螢幕裝置（如平板電腦和桌上型電腦）的使用者體驗優化。
 
 ### <a name="deviceidiom"></a>Device. 用法
 
-您可以使用[`Device`](~/xamarin-forms/platform/device.md)類別來變更應用程式或使用者介面的行為。 您可以使用 `Device.Idiom` 列舉
+您可以使用 [`Device`](~/xamarin-forms/platform/device.md) 類別來變更應用程式或使用者介面的行為。 `Device.Idiom`您可以使用列舉型別
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone)
@@ -84,9 +87,9 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 ### <a name="leveraging-masterdetailpage"></a>運用 MasterDetailPage
 
-[@No__t_1](xref:Xamarin.Forms.MasterDetailPage)適用于較大的螢幕，特別是在 iPad 上使用[`UISplitViewController`](xref:UIKit.UISplitViewController)來提供原生 iOS 體驗。
+適用 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 于較大的螢幕，特別是在 iPad 上，它會使用 [`UISplitViewController`](xref:UIKit.UISplitViewController) 來提供原生 iOS 體驗。
 
-請參閱[這篇 Xamarin blog 文章](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)，瞭解如何調整您的使用者介面，讓手機使用一個版面配置，而較大的螢幕則可以使用另一個（與 `MasterDetailPage`）。
+請參閱[這篇 Xamarin blog 文章](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)，以瞭解如何調整您的使用者介面，讓手機使用一個版面配置，而較大的螢幕則可以使用另一個（與 `MasterDetailPage` ）。
 
 ## <a name="related-links"></a>相關連結
 

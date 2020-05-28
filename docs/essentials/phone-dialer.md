@@ -1,18 +1,10 @@
 ---
-title: Xamarin.Essentials：電話撥號程式
-description: Xamarin.Essentials 中的 PhoneDialer 類別可讓應用程式在撥號程式中開啟電話號碼
-ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 07/02/2019
-ms.openlocfilehash: a955399b40f26d4a03a4047d56f7bebe3ad5b5c4
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150053"
+標題： ' ' Xamarin.Essentials ：電話撥號程式 ' ' 描述： ' 中的命名為 phonedialer 類別 Xamarin.Essentials 可讓應用程式在撥號程式中開啟電話號碼。 assetid： author： ms. custom： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials：電話撥號程式
 
 **PhoneDialer** 類別可讓應用程式在撥號程式中開啟電話號碼。
@@ -23,7 +15,7 @@ ms.locfileid: "83150053"
 
 ## <a name="using-phone-dialer"></a>使用電話撥號程式
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

@@ -1,25 +1,28 @@
 ---
-title: 使用 Xamarin 的 Azure SignalR Service
-description: 利用 Xamarin Azure SignalR Service 和 Azure Functions 入門
-ms.prod: xamarin
-ms.assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 06/07/2019
-ms.openlocfilehash: 7b5cb6a93e5dcb958fcb30f0469b8300b169ee86
-ms.sourcegitcommit: cead6f989860331777b0502a5e56269958046517
+title: Azure SignalR Service 與Xamarin.Forms
+description: 開始使用 Azure SignalR Service 和 Azure FunctionsXamarin.Forms
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ffa44beb68dc845a64d8bf2a9f86f6d7e56df8f9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75687423"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139434"
 ---
-# <a name="azure-signalr-service-with-xamarinforms"></a>使用 Xamarin 的 Azure SignalR Service
+# <a name="azure-signalr-service-with-xamarinforms"></a>Azure SignalR Service 與Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
 
 ASP.NET Core SignalR 是一種應用程式模型，可簡化將即時通訊新增至應用程式的過程。 Azure SignalR Service 可讓您快速開發及部署可擴充的 SignalR 應用程式。 Azure Functions 是短期、無伺服器的程式碼方法，可以合併以形成事件驅動、可擴充的應用程式。
 
-本文和範例示範如何結合 Azure SignalR Service 和 Azure Functions 與 Xamarin. 表單，將即時訊息傳遞給連線的用戶端。
+本文和範例示範如何將 Azure SignalR Service 和 Azure Functions 結合 Xamarin.Forms ，以將即時訊息傳遞給已連線的用戶端。
 
 > [!NOTE]
 > 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
@@ -55,7 +58,7 @@ ASP.NET Core SignalR 是一種應用程式模型，可簡化將即時通訊新�
 
 若要測試範例應用程式，您應該在 Azure 入口網站中建立新的 Azure Functions 應用程式。 請記下應用程式**名稱**，因為範例應用程式**Constants.cs**檔中使用此 URL。 下列螢幕擷取畫面顯示建立名為 "xdocsfunctions" 的新 Azure Functions 應用程式：
 
-[![Azure Functions 應用程式建立的螢幕擷取畫面](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
+[![建立 Azure Functions 應用程式的螢幕擷取畫面](azure-signalr-images/azure-functions-app-cropped.png)](azure-signalr-images/azure-functions-app-full.png#lightbox)
 
 Azure 函式可以部署至 Visual Studio 2019 的 Azure Functions 應用程式實例。 下列各節說明如何將範例應用程式中的兩個函式部署到 Azure Functions 應用程式實例。
 
@@ -63,7 +66,7 @@ Azure 函式可以部署至 Visual Studio 2019 的 Azure Functions 應用程式�
 
 範例應用程式包含名為**ChatServer**的類別庫，其中包含兩個無伺服器 Azure Functions，位於名為**Negotiate.cs**和**Talk.cs**的檔案中。
 
-`Negotiate` 函式會使用包含 `AccessToken` 屬性和 `Url` 屬性的 `SignalRConnectionInfo` 物件來回應 web 要求。 行動應用程式會使用這些值，向 SignalR 中樞註冊其本身。 下列程式碼顯示 `Negotiate` 函式：
+函 `Negotiate` `SignalRConnectionInfo` 式會使用包含 `AccessToken` 屬性和屬性的物件來回應 web 要求 `Url` 。 行動應用程式會使用這些值，向 SignalR 中樞註冊其本身。 下列程式碼顯示 `Negotiate` 函數：
 
 ```csharp
 [FunctionName("Negotiate")]
@@ -77,7 +80,7 @@ public static SignalRConnectionInfo GetSignalRInfo(
 }
 ```
 
-`Talk` 函式會回應在 POST 主體中提供訊息物件的 HTTP POST 要求。 POST 主體會轉換成 `SignalRMessage` 並轉送到 SignalR 中樞。 下列程式碼顯示 `Talk` 函式：
+函式 `Talk` 會回應在 post 主體中提供訊息物件的 HTTP POST 要求。 POST 主體會轉換成 `SignalRMessage` ，並轉送至 SignalR 中樞。 下列程式碼顯示 `Talk` 函數：
 
 ```csharp
 [FunctionName("Talk")]
@@ -133,17 +136,17 @@ Visual Studio 2019 可讓您將函式部署至 Azure Functions 應用程式。 A
 
 ![[Visual Studio 2019 發行] 對話方塊中的 Azure Functions 應用程式](azure-signalr-images/vs-app-selection.png "Visual Studio 2019 發行對話方塊中的 Azure Functions 應用程式")
 
-選取 Azure Functions 應用程式實例之後，就會顯示 網站 URL、設定 和 目標 Azure Functions 應用程式的其他相關資訊。 選擇 **編輯 Azure App Service 設定**，然後在 **遠端** 欄位中輸入您的連接字串。 此連接字串是由**Negotiate**和**交談**函式用來連接到 Azure SignalR Service，而且可在 Azure 入口網站中 Azure SignalR Service 的 [**金鑰**] 區段中取得。 如需連接字串的詳細資訊，請參閱[建立 Azure SignalR Service](#create-an-azure-signalr-service)。
+選取 Azure Functions 應用程式實例之後，就會顯示 [網站 URL]、[設定] 和 [目標 Azure Functions 應用程式的其他相關資訊。 選擇 [**編輯] Azure App Service 設定**]，然後在 [**遠端**] 欄位中輸入您的連接字串。 此連接字串是由**Negotiate**和**交談**函式用來連接到 Azure SignalR Service，而且可在 Azure 入口網站中 Azure SignalR Service 的 [**金鑰**] 區段中取得。 如需連接字串的詳細資訊，請參閱[建立 Azure SignalR Service](#create-an-azure-signalr-service)。
 
 輸入連接字串之後，您可以按一下 [**發佈**]，將您的函式部署到 Azure Functions 應用程式。 完成後，函式會列在 Azure 入口網站的 Azure Functions 應用程式中。 下列螢幕擷取畫面顯示 Azure 入口網站中已發佈的函式：
 
 ![Azure Functions 應用程式中發佈的函式](azure-signalr-images/azure-functions-deployed.png "Azure Functions 應用程式中發佈的函式")
 
-## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>整合 Azure SignalR Service 與 Xamarin. 表單
+## <a name="integrate-azure-signalr-service-with-xamarinforms"></a>整合 Azure SignalR Service 與Xamarin.Forms
 
-Azure SignalR Service 與 Xamarin. Forms 應用程式之間的整合是 SignalR 服務類別，在 `MainPage` 類別中具現化，並將事件處理常式指派給三個事件。 如需這些事件處理常式的詳細資訊，請參閱[在 Xamarin 中使用 SignalR 服務類別](#use-the-signalr-service-class-in-xamarinforms)。
+Azure SignalR Service 與應用程式之間的整合 Xamarin.Forms 是 SignalR 服務類別，在類別中具現化， `MainPage` 並將事件處理常式指派給三個事件。 如需這些事件處理常式的詳細資訊，請參閱[使用中 Xamarin.Forms 的 SignalR 服務類別](#use-the-signalr-service-class-in-xamarinforms)。
 
-範例應用程式包含必須使用 Azure Functions 應用程式的 URL 端點自訂的**Constants.cs**類別。 將 [`HostName`] 屬性的值設定為您的 Azure Functions 應用程式位址。 下列程式碼顯示**Constants.cs**屬性，其中包含 `HostName` 值的範例：
+範例應用程式包含必須使用 Azure Functions 應用程式的 URL 端點自訂的**Constants.cs**類別。 將屬性的值設定 `HostName` 為您 Azure Functions 的應用程式位址。 下列程式碼顯示具有範例值的**Constants.cs**屬性 `HostName` ：
 
 ```csharp
 public static class Constants
@@ -165,13 +168,13 @@ public static class Constants
 ```
 
 > [!NOTE]
-> 範例應用程式**Constants.cs**檔中的 `Username` 屬性會使用裝置的 `RuntimePlatform` 值做為使用者名稱。 這可讓您輕鬆測試跨平臺的裝置，並識別要傳送訊息的裝置。 在真實世界的應用程式中，此值可能是在註冊或登入處理期間所收集的唯一使用者名稱。
+> `Username`範例應用程式**Constants.cs**檔中的屬性會使用裝置的 `RuntimePlatform` 值做為使用者名稱。 這可讓您輕鬆測試跨平臺的裝置，並識別要傳送訊息的裝置。 在真實世界的應用程式中，此值可能是在註冊或登入處理期間所收集的唯一使用者名稱。
 
 ### <a name="the-signalr-service-class"></a>SignalR 服務類別
 
-範例應用程式中**ChatClient**專案中的 `SignalRService` 類別，會顯示在 Azure Functions 應用程式中叫用函式以連接至 Azure SignalR Service 的實作用。
+`SignalRService`範例應用程式中**ChatClient**專案中的類別會顯示在 Azure Functions 應用程式中叫用函式以連接至 Azure SignalR Service 的實作用。
 
-`SignalRService` 類別中的 `SendMessageAsync` 方法是用來傳送訊息給連接至 Azure SignalR Service 的用戶端。 這個方法會對裝載于 Azure Functions 應用程式中的**交談**函式執行 HTTP POST 要求，包括以 JSON 序列化的 `Message` 物件作為 POST 承載。 **交談**函式會將訊息傳遞至 Azure SignalR Service，以供廣播到所有已連線的用戶端。 下列程式碼顯示 `SendMessageAsync` 方法：
+`SendMessageAsync`類別中的方法 `SignalRService` 是用來將訊息傳送給連接到 Azure SignalR Service 的用戶端。 這個方法會對裝載于 Azure Functions 應用程式中的**交談**函式執行 HTTP POST 要求，包括以 JSON 序列化的 `Message` 物件做為 POST 承載。 **交談**函式會將訊息傳遞至 Azure SignalR Service，以供廣播到所有已連線的用戶端。 下列程式碼顯示 `SendMessageAsync` 方法：
 
 ```csharp
 public async Task SendMessageAsync(string username, string message)
@@ -192,9 +195,9 @@ public async Task SendMessageAsync(string username, string message)
 }
 ```
 
-`SignalRService` 類別中的 `ConnectAsync` 方法會對裝載于 Azure Functions 應用程式中的**Negotiate**函數執行 HTTP GET 要求。 **Negotiate**函式會傳回已還原序列化為 `NegotiateInfo` 類別之實例的 JSON。 一旦抓取 `NegotiateInfo` 物件之後，就會使用 `HubConnection` 類別的實例，直接向 Azure SignalR Service 註冊。
+`ConnectAsync`類別中的方法會 `SignalRService` 對 Azure Functions 應用程式中所裝載的**Negotiate**函式執行 HTTP GET 要求。 **Negotiate**函式會傳回已還原序列化為類別實例的 JSON `NegotiateInfo` 。 一旦抓取 `NegotiateInfo` 物件之後，就會使用類別的實例，直接向 Azure SignalR Service 註冊 `HubConnection` 。
 
-ASP.NET Core SignalR 會將開啟連接的傳入資料轉譯成訊息，並可讓開發人員定義訊息類型，並依類型將事件處理常式系結至傳入訊息。 `ConnectAsync` 方法會為範例應用程式的**Constants.cs**檔中定義的訊息名稱註冊事件處理常式，預設為 "newMessage"。
+ASP.NET Core SignalR 會將開啟連接的傳入資料轉譯成訊息，並可讓開發人員定義訊息類型，並依類型將事件處理常式系結至傳入訊息。 `ConnectAsync`方法會為範例應用程式的**Constants.cs**檔中定義的訊息名稱註冊事件處理常式，預設為 "newMessage"。
 
 下列程式碼顯示 `ConnectAsync` 方法：
 
@@ -231,9 +234,9 @@ public async Task ConnectAsync()
 ```
 
 > [!NOTE]
-> 根據預設，SignalR 服務會使用 `System.Text.Json` 來序列化和還原序列化 JSON。 與其他程式庫（例如 Newtonsoft）序列化的資料可能無法由 SignalR 服務還原序列化。 範例專案中的 `HubConnection` 實例包含呼叫 `AddNewtonsoftJsonProtocol` 以指定 JSON 序列化程式。 這個方法是在名為**AspNetCore SignalR**的特殊 NuGet 套件中定義，必須包含在專案中。 如果您使用 `System.Text.Json` 來序列化/還原序列化 JSON 資料，則不應使用此方法和 NuGet 套件。
+> 根據預設，SignalR 服務會使用 `System.Text.Json` 來序列化和還原序列化 JSON。 與其他程式庫（例如 Newtonsoft）序列化的資料可能無法由 SignalR 服務還原序列化。 `HubConnection`範例專案中的實例包含呼叫來 `AddNewtonsoftJsonProtocol` 指定 JSON 序列化程式。 這個方法是在名為**AspNetCore SignalR**的特殊 NuGet 套件中定義，必須包含在專案中。 如果您使用 `System.Text.Json` 來序列化/還原序列化 JSON 資料，則不應使用此方法和 NuGet 套件。
 
-`AddNewMessage` 方法會系結為 `ConnectAsync` 訊息中的事件處理常式，如先前的程式碼所示。 當收到訊息時，會使用以 `JObject`提供的訊息資料來呼叫 `AddNewMessage` 方法。 `AddNewMessage` 方法會將 `JObject` 轉換為 `Message` 類別的實例，然後叫用 `NewMessageReceived` 的處理常式（如果已系結）。 下列程式碼顯示 `AddNewMessage` 方法：
+`AddNewMessage`方法會系結為訊息中的事件處理常式， `ConnectAsync` 如先前的程式碼所示。 當收到訊息時， `AddNewMessage` 會使用提供的訊息資料來呼叫方法 `JObject` 。 `AddNewMessage`方法會將轉換 `JObject` 成類別的實例 `Message` ，然後叫用的處理常式（ `NewMessageReceived` 如果已系結的話）。 下列程式碼顯示 `AddNewMessage` 方法：
 
 ```csharp
 public void AddNewMessage(JObject message)
@@ -249,11 +252,11 @@ public void AddNewMessage(JObject message)
 }
 ```
 
-### <a name="use-the-signalr-service-class-in-xamarinforms"></a>使用 Xamarin 中的 SignalR 服務類別
+### <a name="use-the-signalr-service-class-in-xamarinforms"></a>使用中的 SignalR 服務類別Xamarin.Forms
 
-藉由在 `MainPage` 程式碼後置類別中系結 `SignalRService` 類別事件，即可完成在 Xamarin 中使用 SignalR 服務類別。
+在中使用 SignalR 服務類別 Xamarin.Forms ，是藉由系結程式 `SignalRService` 代碼後置類別中的類別事件來完成 `MainPage` 。
 
-當 SignalR 連接成功完成時，就會引發 `SignalRService` 類別中的 `Connected` 事件。 當 SignalR 連接失敗時，會引發 `SignalRService` 類別中的 `ConnectionFailed` 事件。 `SignalR_ConnectionChanged` 事件處理常式方法會系結至 `MainPage` 的函式中的兩個事件。 這個事件處理常式會根據連接 `success` 引數來更新 [連接] 和 [傳送] 按鈕狀態，然後使用 `AddMessage` 方法，將事件提供的訊息加入至聊天佇列。 下列程式碼顯示 `SignalR_ConnectionChanged` 事件處理常式方法：
+`Connected` `SignalRService` 成功完成 SignalR 連接時，就會引發類別中的事件。 `ConnectionFailed` `SignalRService` 當 SignalR 連接失敗時，會引發類別中的事件。 `SignalR_ConnectionChanged`事件處理常式方法會系結至函式中的兩個事件 `MainPage` 。 這個事件處理常式會根據連接引數來更新 [連接] 和 [傳送] 按鈕狀態 `success` ，並使用方法將事件提供的訊息加入至聊天佇列 `AddMessage` 。 以下程式碼顯示 `SignalR_ConnectionChanged` 事件處理常式方法：
 
 ```csharp
 void SignalR_ConnectionChanged(object sender, bool success, string message)
@@ -266,7 +269,7 @@ void SignalR_ConnectionChanged(object sender, bool success, string message)
 }
 ```
 
-從 Azure SignalR Service 收到新的訊息時，就會引發 `SignalRService` 類別中的 `NewMessageReceived` 事件。 `SignalR_NewMessageReceived` 事件處理常式方法會系結至 `MainPage` 的函式中的 `NewMessageReceived` 事件。 這個事件處理常式會將傳入的 `Message` 物件轉換成字串，然後使用 `AddMessage` 方法將它新增到聊天佇列中。 下列程式碼顯示 `SignalR_NewMessageReceived` 事件處理常式方法：
+`NewMessageReceived` `SignalRService` 從 Azure SignalR Service 收到新的訊息時，就會引發類別中的事件。 `SignalR_NewMessageReceived`事件處理常式方法會系結至函式 `NewMessageReceived` 中的事件 `MainPage` 。 這個事件處理常式會將傳入的 `Message` 物件轉換成字串，並使用方法將其新增至聊天佇列 `AddMessage` 。 以下程式碼顯示 `SignalR_NewMessageReceived` 事件處理常式方法：
 
 ```csharp
 void SignalR_NewMessageReceived(object sender, Model.Message message)
@@ -276,7 +279,7 @@ void SignalR_NewMessageReceived(object sender, Model.Message message)
 }
 ```
 
-`AddMessage` 方法會將新的訊息當做 `Label` 物件新增至聊天佇列。 `AddMessage` 方法通常是由主要 UI 執行緒以外的事件處理常式所呼叫，因此它會強制在主執行緒上進行 UI 更新，以避免發生例外狀況。 下列程式碼顯示 `AddMessage` 方法：
+`AddMessage`方法會將新的訊息當做 `Label` 物件新增至聊天佇列。 `AddMessage`方法通常是由主要 UI 執行緒外部的事件處理常式所呼叫，因此它會強制在主執行緒上進行 UI 更新，以避免發生例外狀況。 下列程式碼顯示 `AddMessage` 方法：
 
 ```csharp
 void AddMessage(string message)

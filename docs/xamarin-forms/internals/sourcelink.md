@@ -1,23 +1,26 @@
 ---
-title: 使用 Xamarin 的來源連結
-description: 本文說明如何使用來源連結來進行 Xamarin 的 debug。
-zone_pivot_groups: platform
-ms.prod: xamarin
-ms.assetId: 1E13FCD9-5607-46E8-80E4-87A58B389BEB
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 09/26/2019
-ms.openlocfilehash: 7a3fe70c8ac29f9e84b5d071a0ba1ef73afbbe11
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+title: 來源連結與Xamarin.Forms
+description: 本文說明如何使用 [來源] 連結來進行 debug Xamarin.Forms 。
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57db314538c42ef9d58691ba16ab68371ff092b7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697497"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138289"
 ---
-# <a name="source-link-with-xamarinforms"></a>使用 Xamarin 的來源連結
+# <a name="source-link-with-xamarinforms"></a>來源連結與Xamarin.Forms
 
-Xamarin： NuGet 套件包含來源連結對應。 來源連結會將 NuGet 套件中包含的已編譯程式庫對應至原始程式碼存放庫。 Visual Studio 會在進行偵錯工具期間下載原始程式碼檔案，並允許開發人員逐步執行程式碼，而不需要從來源建立即可進行封裝的偵錯工具。
+Xamarin.FormsNuGet 套件包含來源連結對應。 來源連結會將 NuGet 套件中包含的已編譯程式庫對應至原始程式碼存放庫。 Visual Studio 會在進行偵錯工具期間下載原始程式碼檔案，並允許開發人員逐步執行程式碼，而不需要從來源建立即可進行封裝的偵錯工具。
 
 如需有關使用來源連結的詳細資訊，請參閱[來源連結檔](/dotnet/standard/library-guidance/sourcelink)。
 
@@ -30,7 +33,7 @@ Xamarin： NuGet 套件包含來源連結對應。 來源連結會將 NuGet 套�
 
 使用來源連結必須啟用外部程式碼的偵錯工具，否則偵錯工具會對目前方案中未包含的程式碼執行先前的呼叫。 在 Visual Studio 2019 中，這可以在 [**調試**] 區段的 [**選項**] 功能表中找到：
 
-[Visual Studio 2019 中的 ![Enable 來源連結](sourcelink-images/sourcelink-enable-pc-cropped.png)](sourcelink-images/sourcelink-enable-pc.png#lightbox)
+[![啟用 Visual Studio 2019 中的來源連結](sourcelink-images/sourcelink-enable-pc-cropped.png)](sourcelink-images/sourcelink-enable-pc.png#lightbox)
 
 確定 [**僅啟用我**的程式碼] 已停用，而且已啟用 [**啟用來源連結支援**]。
 
@@ -41,17 +44,17 @@ Xamarin： NuGet 套件包含來源連結對應。 來源連結會將 NuGet 套�
 
 使用來源連結必須啟用外部程式碼的偵錯工具，否則偵錯工具會對目前方案中未包含的程式碼執行先前的呼叫。 此選項可以在 [**偵錯工具**] 區段的 [**喜好**設定] 視窗中找到：
 
-[Visual Studio for Mac 中的 ![Enable 來源連結](sourcelink-images/sourcelink-enable-mac-cropped.png)](sourcelink-images/sourcelink-enable-mac.png#lightbox)
+[![啟用 Visual Studio for Mac 中的來源連結](sourcelink-images/sourcelink-enable-mac-cropped.png)](sourcelink-images/sourcelink-enable-mac.png#lightbox)
 
 請確定已啟用 [**逐步執行至外部程式碼**]。
 
 ::: zone-end
 
-## <a name="debug-xamarinforms-using-source-link"></a>使用來源連結進行 Xamarin 的 Debug
+## <a name="debug-xamarinforms-using-source-link"></a>Xamarin.Forms使用來源連結進行 Debug
 
-如果已啟用對外部封裝的偵錯工具，Visual Studio 將會使用 NuGet 套件中包含的來源連結對應來下載並逐步執行外部原始程式碼。 這可以藉由在對 Xamarin 所提供的方法呼叫上設定中斷點來進行測試：
+如果已啟用對外部封裝的偵錯工具，Visual Studio 將會使用 NuGet 套件中包含的來源連結對應來下載並逐步執行外部原始程式碼。 這可以透過在所提供的方法呼叫上設定中斷點來進行測試 Xamarin.Forms ：
 
-[在 Xamarin. Forms 方法上設定 ![Breakpoint](sourcelink-images/breakpoint-cropped.png)](sourcelink-images/external-code-available.png#lightbox)
+[![方法上設定的中斷點 Xamarin.Forms](sourcelink-images/breakpoint-cropped.png)](sourcelink-images/external-code-available.png#lightbox)
 
 根據您在**偵錯工具**選項中指定的設定，Visual Studio 會警告您它正在下載來源檔案：
 
@@ -74,7 +77,7 @@ Xamarin： NuGet 套件包含來源連結對應。 來源連結會將 NuGet 套�
 
 ## <a name="source-link-caching"></a>來源連結快取
 
-來源連結會使用快取來取得效能。 MacOS 上的來源連結快取目錄是 `/Users/<username>/Library/Caches/VisualStudio/8.0/Symbols`。 此資料夾包含的子資料夾會儲存用來下載來源檔案的儲存機制。 如果 NuGet 封裝的支援儲存機制已變更，您可能需要手動刪除這些資料夾以重新整理快取。
+來源連結會使用快取來取得效能。 MacOS 上的來源連結快取目錄是 `/Users/<username>/Library/Caches/VisualStudio/8.0/Symbols` 。 此資料夾包含的子資料夾會儲存用來下載來源檔案的儲存機制。 如果 NuGet 封裝的支援儲存機制已變更，您可能需要手動刪除這些資料夾以重新整理快取。
 
 ::: zone-end
 

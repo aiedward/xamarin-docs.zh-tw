@@ -1,26 +1,29 @@
 ---
-title: 在 Xamarin.Forms 中的裝置樣式
-description: Xamarin.Forms 包含六個動態的樣式，稱為裝置樣式，Device.Styles 類別中。 這篇文章說明如何使用 Xamarin.Forms 應用程式中的裝置樣式。
-ms.prod: xamarin
-ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/17/2016
-ms.openlocfilehash: 4131844d49d7fdad4c97d07fb699b96db2020ec4
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: 中的裝置樣式Xamarin.Forms
+description: Xamarin.Forms在 Device. Styles 類別中包含六個動態樣式（稱為裝置樣式）。 本文說明如何在應用程式中使用裝置樣式 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647290"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140097"
 ---
-# <a name="device-styles-in-xamarinforms"></a>在 Xamarin.Forms 中的裝置樣式
+# <a name="device-styles-in-xamarinforms"></a>中的裝置樣式Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_Xamarin.Forms 包含六個動態的樣式，稱為裝置樣式，Device.Styles 類別中。_
+_在裝置中，Xamarin 包含六個動態樣式（稱為裝置樣式）。_
 
-*裝置*樣式：
+*裝置*樣式如下：
 
 - [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)
 - [`CaptionStyle`](xref:Xamarin.Forms.Device.Styles.CaptionStyle)
@@ -29,9 +32,9 @@ _Xamarin.Forms 包含六個動態的樣式，稱為裝置樣式，Device.Styles 
 - [`SubtitleStyle`](xref:Xamarin.Forms.Device.Styles.SubtitleStyle)
 - [`TitleStyle`](xref:Xamarin.Forms.Device.Styles.TitleStyle)
 
-所有六個樣式只套用至[ `Label` ](xref:Xamarin.Forms.Label)執行個體。 例如， `Label` ，顯示一個段落的本文可能會設定其[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性設[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)。
+這六種樣式都只能套用至 [`Label`](xref:Xamarin.Forms.Label) 實例。 例如， `Label` 顯示段落主體的會將其 [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 屬性設定為 [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) 。
 
-下列程式碼範例示範如何使用*裝置*XAML 頁面中的樣式：
+下列程式碼範例示範如何在 XAML 頁面中使用*裝置*樣式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DeviceStylesPage" Title="Device" IconImageSource="xaml.png">
@@ -65,13 +68,13 @@ _Xamarin.Forms 包含六個動態的樣式，稱為裝置樣式，Device.Styles 
 </ContentPage>
 ```
 
-裝置樣式會繫結至使用`DynamicResource`標記延伸。 可以藉由變更在 iOS 中看到樣式的動態本質**協助工具**設定文字大小。 外觀*裝置*樣式是每個平台，而不同，如下列螢幕擷取畫面所示：
+裝置樣式會使用標記延伸系結至 `DynamicResource` 。 您可以變更文字大小的**協助工具**設定，在 iOS 中看到樣式的動態性質。 在每個平臺上，*裝置*樣式的外觀會不同，如下列螢幕擷取畫面所示：
 
-![](device-images/device-styles.png "每個平台上的裝置樣式")
+![](device-images/device-styles.png "Device Styles on Each Platform")
 
-*裝置*樣式可以也衍生自 splittunneling [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)裝置樣式的索引鍵名稱的屬性。 在上述程式碼範例`myBodyStyle`繼承自[ `BodyStyle` ](xref:Xamarin.Forms.Device.Styles.BodyStyle)並設定重音符號的文字色彩。 如需有關動態樣式繼承的詳細資訊，請參閱[動態樣式繼承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)。
+您也可以將屬性設定為裝置樣式的索引鍵名稱，衍生自*裝置*樣式 [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) 。 在上述程式碼範例中， `myBodyStyle` 繼承自 [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) 並設定重音文字色彩。 如需動態樣式繼承的詳細資訊，請參閱[動態樣式繼承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)。
 
-下列程式碼範例示範如何在 C# 中的對等頁面：
+下列程式碼範例示範 c # 中的對等頁面：
 
 ```csharp
 public class DeviceStylesPageCS : ContentPage
@@ -109,27 +112,27 @@ public class DeviceStylesPageCS : ContentPage
 }
 ```
 
-[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)屬性的每個[ `Label` ](xref:Xamarin.Forms.Label)執行個體設定為適當的屬性，從[ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)類別。
+[`Style`](xref:Xamarin.Forms.NavigableElement.Style)每個實例的屬性 [`Label`](xref:Xamarin.Forms.Label) 會從類別設定為適當的屬性 [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) 。
 
-## <a name="accessibility"></a>協助工具選項
+## <a name="accessibility"></a>Accessibility
 
-*裝置*樣式會採用協助工具偏好設定，因此當每個平台上變更協助工具偏好設定，將會變更字型大小。 因此，若要支援可存取的文字，請確認*裝置*樣式來做為基礎的應用程式內的任何文字樣式。
+*裝置*樣式會遵循協助工具喜好設定，因此當每個平臺上的協助工具喜好設定改變時，字型大小也會隨之變更。 因此，若要支援可存取的文字，請確定*裝置*樣式是用來作為應用程式內任何文字樣式的基礎。
 
-下列螢幕擷取畫面示範裝置上的樣式，請在每個平台，具有最小的可存取字型：
+下列螢幕擷取畫面會示範每個平臺上的裝置樣式，以及可存取的最小字型大小：
 
-[![](device-images/minimum-size.png "每個平台上的可存取的小型裝置樣式")](device-images/minimum-size-large.png#lightbox "每個平台上的可存取的小型裝置樣式")
+[![](device-images/minimum-size.png "Accessible Small Device Styles on Each Platform")](device-images/minimum-size-large.png#lightbox "Accessible Small Device Styles on Each Platform")
 
-下列螢幕擷取畫面示範裝置上的樣式，請在每個平台，具有最大可存取的字型大小：
+下列螢幕擷取畫面會示範每個平臺上具有最大可存取字型大小的裝置樣式：
 
-![](device-images/maximum-size.png "每個平台上的可存取的大型裝置樣式")
+![](device-images/maximum-size.png "Accessible Large Device Styles on Each Platform")
 
 ## <a name="related-links"></a>相關連結
 
 - [文字樣式](~/xamarin-forms/user-interface/text/styles.md)
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [動態樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
-- [使用樣式 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
-- [Device.Styles](xref:Xamarin.Forms.Device.Styles)
-- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [動態樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+- [使用樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [裝置。樣式](xref:Xamarin.Forms.Device.Styles)
+- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary) \(英文\)
 - [樣式](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

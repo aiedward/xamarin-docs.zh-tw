@@ -1,24 +1,27 @@
 ---
-title: 使用適用于 Xamarin 的 Apple 登入表單
-description: 瞭解如何在您的 Xamarin 中使用 Apple 執行登入。表單行動應用程式。
-ms.prod: xamarin
-ms.assetid: 2E47E7F2-93D4-4CA3-9E66-247466D25E4D
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-ms.openlocfilehash: df011a6eb72b6eb30af0a197d4be48b0f2494384
-ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
+title: 使用 [使用 Apple 登入]Xamarin.Forms
+description: 瞭解如何在您的行動應用程式中使用 Apple 執行登入 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb37f8fb2d01154bf2e749e685c4e96c12d6bc5e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319513"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139486"
 ---
-# <a name="use-sign-in-with-apple-in-xamarinforms"></a>在 Xamarin 中使用以 Apple 登入
+# <a name="use-sign-in-with-apple-in-xamarinforms"></a>使用 [使用 Apple 登入]Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)
 
-使用 Apple 登入適用于 iOS 13 上所有使用協力廠商驗證服務的新應用程式。 IOS 和 Android 之間的執行詳細資料非常不同。 本指南會逐步解說如何在 Xamarin 中執行此操作。
+使用 Apple 登入適用于 iOS 13 上所有使用協力廠商驗證服務的新應用程式。 IOS 和 Android 之間的執行詳細資料非常不同。 本指南會逐步解說如何在中執行這項操作 Xamarin.Forms 。
 
 在本指南和範例中，會使用特定的平臺服務來處理 Apple 的登入：
 
@@ -27,25 +30,25 @@ ms.locfileid: "71319513"
 
 ## <a name="a-sample-apple-sign-in-flow"></a>範例 Apple 登入流程
 
-這個範例會提供固定的執行方式，讓 Apple 登入在您的 Xamarin. Forms 應用程式中工作。
+這個範例會提供固定的執行方式，讓 Apple 登入在您的 Xamarin.Forms 應用程式中工作。
 
 我們會使用兩個 Azure Functions 來協助驗證流程：
 
-1. `applesignin_auth`-產生 Apple Sign In 授權 URL，並重新導向至它。  我們會在伺服器端執行此動作，而不是行動裝置應用程式，因此我們`state`可以快取，並在 Apple 的伺服器傳送回呼時加以驗證。
+1. `applesignin_auth`-產生 Apple Sign In 授權 URL，並重新導向至它。  我們會在伺服器端執行此動作，而不是行動裝置應用程式，因此我們可以快取， `state` 並在 Apple 的伺服器傳送回呼時加以驗證。
 2. `applesignin_callback`-處理來自 Apple 的 POST 回呼，並安全地交換存取權杖和識別碼權杖的授權碼。  最後，它會重新導向回應用程式的 URI 配置，並傳回 URL 片段中的權杖。
 
-行動應用程式會自行註冊，以處理我們選取的自訂 URI 配置（在`xamarinformsapplesignin://`此案例中`applesignin_callback`為），讓函式可以將權杖轉送回它。
+行動應用程式會自行註冊，以處理我們選取的自訂 URI 配置（在此案例中為 `xamarinformsapplesignin://` ），讓函式 `applesignin_callback` 可以將權杖轉送回它。
 
 當使用者啟動驗證時，會發生下列步驟：
 
-1. 行動應用程式會產生`nonce`和`state`值`applesignin_auth` ，並將它們傳遞至 Azure 函式。
-2. Azure 函式會產生 Apple Sign In 授權 URL （使用提供`state`的和`nonce`），並將行動裝置應用程式瀏覽器重新導向至其中。 `applesignin_auth`
+1. 行動應用程式會產生 `nonce` 和 `state` 值，並將它們傳遞至 Azure 函式 `applesignin_auth` 。
+2. `applesignin_auth`Azure 函式會產生 Apple Sign In 授權 URL （使用提供的 `state` 和 `nonce` ），並將行動裝置應用程式瀏覽器重新導向至其中。
 3. 使用者安全地在裝載于 Apple 伺服器上的 Apple 登入授權頁面中輸入其認證。
-4. Apple 登入流程在 apple 的伺服器上完成後，apple 會重新導向`redirect_uri`至，而這`applesignin_callback`將會是 Azure 函式。
-5. 已驗證從 Apple 傳送至`applesignin_callback`函式的要求，以確保傳回正確`state`的，而且識別碼權杖宣告是有效的。
-6. `code`Azure 函式會針對存取權杖、重新整理權杖和識別碼權杖（其中包含有關使用者識別碼、名稱和電子郵件的宣告），交換 Apple 張貼的資料。 `applesignin_callback`
-7. Azure 函式最後會重新導向回到應用程式的 uri 配置`xamarinformsapplesignin://`（），並`xamarinformsapplesignin://#access_token=...&refresh_token=...&id_token=...`將 URI 片段附加至權杖（例如）。 `applesignin_callback`
-8. 行動應用程式會將 URI 片段剖析成`AppleAccount` ，並驗證所`nonce`收到的宣告是否符合流程開始時所產生的。 `nonce`
+4. Apple 登入流程在 Apple 的伺服器上完成後，Apple 會重新導向至， `redirect_uri` 而這將會是 Azure 函式 `applesignin_callback` 。
+5. 已驗證從 Apple 傳送至函式的要求 `applesignin_callback` ，以確保傳回正確的 `state` ，而且識別碼權杖宣告是有效的。
+6. `applesignin_callback`Azure 函 `code` 式會針對_存取權杖_、重新整理_權杖_和_識別碼權杖_（其中包含有關使用者識別碼、名稱和電子郵件的宣告），交換 Apple 張貼的資料。
+7. Azure 函式 `applesignin_callback` 最後會重新導向回到應用程式的 uri 配置（ `xamarinformsapplesignin://` ），並將 URI 片段附加至權杖（例如 `xamarinformsapplesignin://#access_token=...&refresh_token=...&id_token=...` ）。
+8. 行動應用程式會將 URI 片段剖析成 `AppleAccount` ，並驗證所收到的宣告是否 `nonce` 符合 `nonce` 流程開始時所產生的。
 9. 行動應用程式現在已通過驗證！
 
 ## <a name="azure-functions"></a>Azure Functions
@@ -56,22 +59,22 @@ ms.locfileid: "71319513"
 
 使用 Azure Functions 時，需要設定數個應用程式設定：
 
-- `APPLE_SIGNIN_KEY_ID`-這是您`KeyId`稍早的。
+- `APPLE_SIGNIN_KEY_ID`-這是您稍 `KeyId` 早的。
 - `APPLE_SIGNIN_TEAM_ID`-這通常是您在[成員資格設定檔](https://developer.apple.com/account/#/membership)中找到的_小組識別碼_
-- `APPLE_SIGNIN_SERVER_ID`:這是先前`ServerId`的。  這*不*是您的_應用程式套件組合識別碼，_ 而是您所建立之*服務 ID*的*識別碼*。
-- `APPLE_SIGNIN_APP_CALLBACK_URI`-這是您想要使用重新導向至應用程式的自訂 URI 配置。  在此範例`xamarinformsapplesignin://`中，會使用。
+- `APPLE_SIGNIN_SERVER_ID`：這是 `ServerId` 先前的。  這*不*是您的_應用程式套件組合識別碼，_ 而是您所建立之*服務 ID*的*識別碼*。
+- `APPLE_SIGNIN_APP_CALLBACK_URI`-這是您想要使用重新導向至應用程式的自訂 URI 配置。  在此範例中 `xamarinformsapplesignin://` ，會使用。
 - `APPLE_SIGNIN_REDIRECT_URI`-您在*Apple 登入*設定一節中建立*服務識別碼*時，所安裝的重新*導向 URL* 。  若要進行測試，它可能看起來像這樣：`http://local.test:7071/api/applesignin_callback`
-- `APPLE_SIGNIN_P8_KEY`-檔案的文字內容`.p8` ，其中所有的`\n`分行符號都已移除，因此它是一個長字串
+- `APPLE_SIGNIN_P8_KEY`-檔案的文字內容 `.p8` ，其中所有的分行符號都 `\n` 已移除，因此它是一個長字串
 
 ### <a name="security-considerations"></a>安全性考量
 
 **絕對不要**將您的 P8 金鑰儲存在應用程式的程式碼中。 應用程式代碼很容易下載和拆解。 
 
-它也被視為不正確的作法，使用`WebView`來裝載驗證流程，以及攔截 URL 導覽事件以取得授權碼。 目前沒有任何完全安全的方式可處理非 iOS13 + 裝置上的 Apple 登入，而不需要在伺服器上裝載一些程式碼來處理權杖交換。 建議您在伺服器上裝載授權 url 產生程式碼，以便在 Apple 發出 POST 回呼給您的伺服器時，快取狀態並加以驗證。
+它也被視為不正確的作法，使用 `WebView` 來裝載驗證流程，以及攔截 URL 導覽事件以取得授權碼。 目前沒有任何完全安全的方式可處理非 iOS13 + 裝置上的 Apple 登入，而不需要在伺服器上裝載一些程式碼來處理權杖交換。 建議您在伺服器上裝載授權 url 產生程式碼，以便在 Apple 發出 POST 回呼給您的伺服器時，快取狀態並加以驗證。
 
 ## <a name="a-cross-platform-sign-in-service"></a>跨平臺登入服務
 
-使用 DependencyService，您可以建立不同的驗證服務，以使用 iOS 上的平臺服務，以及適用于 Android 的一般 web 服務和以共用介面為基礎的其他非 iOS 平臺。
+使用 Xamarin.Forms DependencyService，您可以建立不同的驗證服務，以使用 iOS 上的平臺服務，以及適用于 Android 的一般 web 服務和以共用介面為基礎的其他非 iOS 平臺。
 
 ```csharp
 public interface IAppleSignInService
@@ -174,7 +177,7 @@ class AuthManager : NSObject, IASAuthorizationControllerDelegate, IASAuthorizati
 #endif
 ```
 
-編譯旗`__IOS__13`標是用來提供 iOS 13 的支援，以及回溯至一般 web 服務的舊版版本。
+編譯旗標 `__IOS__13` 是用來提供 iOS 13 的支援，以及回溯至一般 web 服務的舊版版本。
 
 在 Android 上，會使用具有 Azure Functions 的一般 web 服務：
 
@@ -241,9 +244,9 @@ public class WebAppleSignInService : IAppleSignInService
 }
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文說明使用 Apple 登入以用於 Xamarin. Forms 應用程式的必要步驟。
+本文說明設定以 Apple 登入以用於應用程式的必要步驟 Xamarin.Forms 。
 
 ## <a name="related-links"></a>相關連結
 
