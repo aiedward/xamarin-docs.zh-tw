@@ -1,88 +1,92 @@
 ---
-title: 第7章摘要。 XAML 與程式碼
-description: 使用 Xamarin.表單創建行動應用程式:第 7 章摘要。 XAML 與程式碼
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: ce4dde3716176daf826678809339afb84c25d84a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 7. XAML vs. code''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0b92988e1e838072fca0d8a284455a62db05e757
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334727"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136852"
 ---
-# <a name="summary-of-chapter-7-xaml-vs-code"></a>第7章摘要。 XAML 與程式碼
+# <a name="summary-of-chapter-7-xaml-vs-code"></a>第7章的摘要。 XAML 與程式碼
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 
 > [!NOTE]
-> 本頁的註釋指示 Xamarin.Forms 與本書中介紹的材料有分歧的領域。
+> 此頁面上的附注指出 Xamarin.Forms 從書籍中所呈現之材質分歧的區域。
 
-Xamarin.Forms 支援一種基於 XML 的標記語言,稱為可擴展應用程式標記語言或 XAML(發音為"zammel")。 在定義 Xamarin.Forms 應用程式的使用者介面佈局以及定義使用者介面元素和基礎數據之間的綁定時,XAML 提供了 C# 的替代方法。
+Xamarin.Forms支援稱為 Extensible Application Markup Language 或 XAML 的 XML 標記語言（發音為 "zammel"）。 XAML 提供 c # 的替代方法，以定義應用程式使用者介面的配置 Xamarin.Forms ，以及定義使用者介面專案與基礎資料之間的系結。
 
-## <a name="properties-and-attributes"></a>屬性與屬性
+## <a name="properties-and-attributes"></a>屬性和屬性
 
-Xamarin.Forms 類和結構成為 XAML 中的 XML 元素,這些類和結構的屬性成為 XML 屬性。 要在 XAML 中實例化,類通常必須具有公共無參數構造函數。 在 XAML 中設置的`set`任何屬性 都必須具有公共訪問器。
+Xamarin.Forms類別和結構會變成 XAML 中的 XML 元素，而這些類別和結構的屬性會變成 XML 屬性。 若要在 XAML 中具現化，類別通常必須有公用無參數的函式。 在 XAML 中設定的任何屬性都必須具有公用 `set` 存取子。
 
-對於基本資料類型 (、、、`string``double``bool`依此類推)的屬性,XAML 解析`TryParse`器使用標準方法將屬性設置轉換為這些類型。 XAML 解析器還可以輕鬆地處理枚舉類型,並且如果枚舉類型`Flags`與 屬性一起標記,則可以合併枚舉成員。
+對於基本資料類型（ `string` 、 `double` 、等）的屬性，XAML 剖析器會 `bool` 使用標準 `TryParse` 方法，將屬性設定轉換成這些類型。 XAML 剖析器也可以輕鬆地處理列舉類型，如果列舉類型是以屬性加上旗標，它可以結合列舉成員 `Flags` 。
 
-為了説明 XAML 解析器,更複雜的類型(或這些類型的屬性)可以[`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute)包括標識[`TypeConverter`](xref:Xamarin.Forms.TypeConverter)派生的 類的類,該類支援從字串值轉換為這些類型。 例如,[`ColorTypeConverter`](xref:Xamarin.Forms.ColorTypeConverter)將顏色名稱和字串(如"#rrggbb")轉換為`Color`值。
+為了協助 XAML 剖析器，更複雜的型別（或這些型別的屬性）可以包含 [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute) ，以識別衍生自的類別，它 [`TypeConverter`](xref:Xamarin.Forms.TypeConverter) 支援從字串值轉換成這些型別。 例如，會 [`ColorTypeConverter`](xref:Xamarin.Forms.ColorTypeConverter) 將色彩名稱和字串（例如 "#rrggbb"）轉換成 `Color` 值。
 
 ## <a name="property-element-syntax"></a>屬性元素語法
 
-在 XAML 中,類和從它們創建的物件表示為 XML 元素。 這些稱為*物件元素*。 這些物件的大多數屬性表示為 XML 屬性。 這些稱為*屬性屬性*。
+在 XAML 中，類別和從它們建立的物件會以 XML 元素表示。 這些稱為*物件元素*。 這些物件的大部分屬性都會表示為 XML 屬性。 這些稱為*屬性屬性*。
 
-有時,屬性必須設置為無法表示為簡單字串的物件。 在這種情況下,XAML 支援稱為*屬性元素*的標記,該標記由由句點分隔的類名稱和屬性名稱組成。 然後,物件元素可以出現在一對屬性元素標記中。
+有時，屬性必須設定為無法以簡單字串表示的物件。 在這種情況下，XAML 支援稱為*property*專案的標記，其中包含以句點分隔的類別名稱和屬性名稱。 然後，物件專案可以出現在一對屬性元素標記內。
 
-## <a name="adding-a-xaml-page-to-your-project"></a>新增 XAML 頁面
+## <a name="adding-a-xaml-page-to-your-project"></a>將 XAML 頁面加入至您的專案
 
-Xamarin.Forms便攜式類庫在首次創建時可以包含 XAML 頁,也可以將 XAML 頁添加到現有專案。 在添加新項的對話框中,選擇引用 XAML`ContentPage`頁或 XAML 的專案。 (不是`ContentView`.)
+可 Xamarin.Forms 移植的類別庫在第一次建立時可以包含 xaml 頁面，或者您也可以將 xaml 頁面加入至現有的專案。 在加入新專案的對話方塊中，選擇參考 XAML 頁面的專案，或 `ContentPage` 和 xaml。 （不是 `ContentView` ）。
 
 > [!NOTE]
-> 自撰寫本章以來,可視化工作室選項已更改。
+> 在撰寫這一章之後，Visual Studio 選項已變更。
 
-創建兩個檔:具有檔案名副檔名 .xaml 的 XAML 檔案以及副檔名 .xaml.cs的 C# 檔。 C# 檔案通常是 XAML 檔案*的代碼後面*。 代碼後面檔案是從 衍生的部份類別`ContentPage`定義 。 在生成時,將分析 XAML,並為同一類生成另一個部分類定義。 此生成的類包括從代碼背後的`InitializeComponent`文件的構造函數調用名為的方法。
+會建立兩個檔案：副檔名為 .xaml 的 XAML 檔案，以及副檔名為 xaml.cs 的 c # 檔案。 C # 檔案通常稱為 XAML 檔案的*程式碼後*置。 程式碼後置檔案是衍生自的部分類別定義 `ContentPage` 。 在建立時，會剖析 XAML，並針對相同的類別產生另一個部分類別定義。 這個產生的類別包含名為 `InitializeComponent` 的方法，它是從程式碼後置檔案的「函式」呼叫。
 
-在運行時,在`InitializeComponent`調用結束時,XAML 檔的所有元素都已實例化並初始化,就像它們是在 C# 代碼中創建的一樣。
+在執行時間期間，在通話結束時 `InitializeComponent` ，XAML 檔案的所有元素都已經具現化並初始化，就像是在 c # 程式碼中建立一樣。
 
-XAML 檔案中的根元素`ContentPage`是 。 根標記至少包含兩個 XML 命名空間聲明,一個用於 Xamarin.Forms 元素`x`,另一個 定義所有 XAML 實現所固有的元素和屬性的前置碼。 根標記還包含一個`x:Class`屬性,指示派生`ContentPage`自 的類的命名空間和名稱。 這與代碼背後的檔中的命名空間和類名稱匹配。
+XAML 檔案中的根項目為 `ContentPage` 。 根標記包含至少兩個 XML 命名空間宣告，一個用於專案，另一個則定義所有 XAML 實作為內建之 Xamarin.Forms `x` 元素和屬性的前置詞。 根標籤也包含 `x:Class` 屬性，指出衍生自之類別的命名空間和名稱 `ContentPage` 。 這會符合程式碼後置檔案中的命名空間和類別名稱。
 
-[**CodePlusXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)範例展示 XAML 和代碼的組合。
+XAML 和程式碼的組合是由[**CodePlusXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)範例所示範。
 
 ## <a name="the-xaml-compiler"></a>XAML 編譯器
 
-Xamarin.forms 具有 XAML 編譯器,但其使用使用以使用[`XamlCompilationAttribute`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute)可選的 。 如果未編譯 XAML,則在生成時分析 XAML,並將 XAML 檔嵌入 PCL 中,在 PCL 中也會在運行時對其進行解析。 如果編譯了 XAML,則生成過程將 XAML 轉換為二進位窗體,並且運行時處理效率更高。
+Xamarin.Forms具有 XAML 編譯器，但根據使用，其使用是選擇性的 [`XamlCompilationAttribute`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 。 如果未編譯 XAML，XAML 會在組建階段進行剖析，並將 XAML 檔案內嵌在 PCL 中，也就是在執行時間進行剖析。 如果 XAML 已編譯，則組建程式會將 XAML 轉換成二進位格式，而執行時間處理會更有效率。
 
-## <a name="platform-specificity-in-the-xaml-file"></a>XAML 檔案中的平台專用性
+## <a name="platform-specificity-in-the-xaml-file"></a>XAML 檔案中的平臺具體
 
-在 XAML[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)中,該類可用於選擇與平台相關的標記。 這是一個泛型類,必須使用與目標類型匹配`x:TypeArguments`的屬性實例化。 類[`OnIdiom`](xref:Xamarin.Forms.OnIdiom`1)相似,但使用頻率要低得多。
+在 XAML 中， [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) 類別可以用來選取平臺相依標記。 這是泛型類別，而且必須使用 `x:TypeArguments` 符合目標型別的屬性具現化。 [`OnIdiom`](xref:Xamarin.Forms.OnIdiom`1)類別很類似，但使用的頻率較少。
 
-自從這本書出版`OnPlatform`以來,其使用方式發生了變化。 它最初與名為`iOS`、`Android``WinPhone`和的屬性結合使用。 它現在與子[`On`](xref:Xamarin.Forms.On)物件一起使用。 將[`Platform`](xref:Xamarin.Forms.On.Platform)屬性設置為`const`[`Device`](xref:Xamarin.Forms.Device)與 類的公共欄位一致的字串。 將[`Value`](xref:Xamarin.Forms.On.Value)屬性設置為`x:TypeArguments``OnPlatform`與 標記的屬性一致的值。
+在 `OnPlatform` 發行書籍之後，使用已經變更。 它原本是與名為、和的屬性搭配使用 `iOS` `Android` `WinPhone` 。 它現在會與子物件搭配使用 [`On`](xref:Xamarin.Forms.On) 。 將 [`Platform`](xref:Xamarin.Forms.On.Platform) 屬性設定為與類別的公用欄位一致的字串 `const` [`Device`](xref:Xamarin.Forms.Device) 。 將 [`Value`](xref:Xamarin.Forms.On.Value) 屬性設定為與標記的屬性一致的值 `x:TypeArguments` `OnPlatform` 。
 
-`OnPlatform`在[**「可怕顏色清單」**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/ScaryColorList)範例中演示,因此之所以稱為"可怕"範例,是因為它包含幾乎相同的 XAML 塊。 這種重複標記的存在表明,應該提供減少這種標記的技術。
+`OnPlatform`會在[**ScaryColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/ScaryColorList)範例中示範，因此會呼叫，因為它包含幾乎完全相同的 XAML 區塊。 這個重複性標記的存在，表示應該可以使用技術來減少。
 
-## <a name="the-content-property-attributes"></a>內容屬性屬性
+## <a name="the-content-property-attributes"></a>Content 屬性屬性
 
-某些屬性元素經常發生`<ContentPage.Content>`,`ContentPage`例如 , 的根元素上的標記`<StackLayout.Children>`或包含`StackLayout`的子元素的 標記。
+有些屬性專案經常會發生，例如的 `<ContentPage.Content>` 根項目上的標記 `ContentPage` ，或是括住子系 `<StackLayout.Children>` 的標記 `StackLayout` 。
 
-允許每個類標識一個屬性,該屬性[`ContentPropertyAttribute`](xref:Xamarin.Forms.ContentPropertyAttribute)具有類上的 a。 對於此屬性,不需要屬性元素標記。 `ContentPage`將屬性`Content`屬性定義為`Layout<T>`與 (`StackLayout`指定的類別)的屬性定義為`Children`。 這些屬性元素標記不是必需的。
+每個類別都可以使用類別上的來識別一個具有的屬性 [`ContentPropertyAttribute`](xref:Xamarin.Forms.ContentPropertyAttribute) 。 針對這個屬性，不需要屬性專案標記。 `ContentPage`將其 content 屬性定義為 `Content` ，並 `Layout<T>` （衍生的類別 `StackLayout` ）將其內容屬性定義為 `Children` 。 不需要這些屬性元素標記。
 
-的屬性元素`Label`是`Text`。
+的屬性元素 `Label` 為 `Text` 。
 
 ## <a name="formatted-text"></a>格式化文字
 
-[**Text變體**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/TextVariations)範例包含設定`Text``FormattedText`和 屬性`Label`的幾個 範例。 在 XAML`Span`中,對`FormattedString`象顯示為 物件的子級。
+[**TextVariations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/TextVariations)範例包含幾個設定 `Text` 和 `FormattedText` 屬性的範例 `Label` 。 在 XAML 中， `Span` 物件會顯示為物件的子系 `FormattedString` 。
 
- 將多行字串設定為`Text`屬性時,行尾字元將轉換為空格字元,但當多行字串顯示為`Label`或`Label.Text`標記的內容時,將保留行尾字元:
+ 當多行字串設定為屬性時 `Text` ，會將行尾字元轉換成空白字元，但當多行字串顯示為或標記的內容時，會保留行尾字元 `Label` `Label.Text` ：
 
- [![文字變體共用的三重螢幕截圖](images/ch07fg03-small.png "格式化文字變體")](images/ch07fg03-large.png#lightbox "格式化文字變體")
+ [![文字變化共用的三向螢幕擷取畫面](images/ch07fg03-small.png "格式化的文字變化")](images/ch07fg03-large.png#lightbox "格式化的文字變化")
 
 ## <a name="related-links"></a>相關連結
 
-- [第七章 全文(PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
-- [第七章 樣本](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
-- [第七章 F# 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
+- [第7章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)
+- [第7章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
+- [第7章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07/FS/CodePlusXaml)
 - [XAML 基本知識](~/xamarin-forms/xaml/xaml-basics/index.md)

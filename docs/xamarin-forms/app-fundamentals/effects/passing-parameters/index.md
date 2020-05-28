@@ -1,22 +1,25 @@
 ---
-title: 傳遞參數給效果
-description: 效果參數可以由屬性定義,從而可以重複使用效果。 然後在具現化效果時，透過指定每個屬性的值來將參數傳遞至效果。
-ms.prod: xamarin
-ms.assetid: F6429859-6EF7-48BE-A0CB-8F42B8A75215
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: f7d8c8f7d3a3778afdae64039a9614c02c261156
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 42d3943b00fc2ae5385343f946d9d96743e955cd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771429"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138836"
 ---
 # <a name="passing-parameters-to-an-effect"></a>傳遞參數給效果
 
-_效果參數可以由屬性定義,從而可以重複使用效果。然後,通過在實例化效果時為每個屬性指定值,可以將參數傳遞給效果。_
+_效果參數可以由屬性定義，讓效果能夠重複使用。然後，可以在具現化效果時，指定每個屬性的值，將參數傳遞至效果。_
 
 ## <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>[將效果參數當作 Common Language Runtime 屬性傳遞](clr-properties.md)
 

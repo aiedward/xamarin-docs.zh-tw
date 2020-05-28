@@ -1,19 +1,12 @@
 ---
-title: 'Xamarin.Essentials: Text-to-Speech'
-description: Xamarin.Essentials 中的 TextToSpeech 類別可讓應用程式利用內建的文字轉換語音引擎將裝置的文字說出來，也可以查詢引擎可支援的可用語言。
-ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: abe591d67ea749de4ae9a2f8dadf4df07712691a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149717"
+標題： ' ' Xamarin.Essentials ：文字轉換語音 ' ' 描述： ' 中的 TextToSpeech 類別 Xamarin.Essentials 可讓應用程式利用內建的文字轉換語音引擎，從裝置上說出文字，也可以查詢引擎可支援的可用語言。」
+assetid： author： ms. custom： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials: Text-to-Speech
+
+# <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials：文字轉換語音
 
 **TextToSpeech** 類別可讓應用程式利用內建的文字轉換語音引擎將裝置的文字說出來，也可以查詢引擎可支援的可用語言。
 
@@ -23,7 +16,7 @@ ms.locfileid: "83149717"
 
 ## <a name="using-text-to-speech"></a>使用文字轉換語音
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -121,7 +114,7 @@ public async Task SpeakNow()
 
 ### <a name="speech-locales"></a>語音地區設定
 
-每個平台都支援不同的地區設定，以便以不同語言和重音符號來唸出文字。 平台擁有不同的代碼和指定地區設定的方式，因此 Xamarin.Essentials 提供了跨平台的 `Locale` 類別，和使用 `GetLocalesAsync` 來查詢它們的方法。
+每個平台都支援不同的地區設定，以便以不同語言和重音符號來唸出文字。 平臺有不同的程式碼和方法來指定地區設定，這也是為什麼 Xamarin.Essentials 提供跨平臺 `Locale` 類別，以及用來查詢它們的方法 `GetLocalesAsync` 。
 
 ```csharp
 public async Task SpeakNow()

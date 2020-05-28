@@ -1,34 +1,38 @@
 ---
-title: 第8章摘要。 程式碼和 XAML 搭配
-description: 使用 Xamarin.表單創建行動應用程式:第 8 章摘要。 程式碼和 XAML 搭配
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 75f153499edb6d979f9a0269a1439eaf8ca53878
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 8. Code and XAML in harmony''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 90db8b4f11095a2a56c82c3f563844efbcf7e2b1
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334233"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136821"
 ---
-# <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第8章摘要。 程式碼和 XAML 搭配
+# <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第8章的摘要。 程式碼和 XAML 搭配
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
 
-本章更深入地探討 XAML,特別是代碼和 XAML 的交互方式。
+本章深入探索 XAML，特別是程式碼和 XAML 的互動方式。
 
 ## <a name="passing-arguments"></a>傳遞引數
 
-在一般情況下,在 XAML 中實例化的類必須具有公共無參數構造函數;結果的物件通過屬性設置初始化。 但是,還可以通過兩種其他方式實例化並初始化物件。
+在一般情況下，在 XAML 中具現化的類別必須有公用無參數的函式;結果物件會透過屬性設定進行初始化。 不過，有兩種方法可以具現化並初始化物件。
 
-儘管這些是通用技術,但它們主要用於與 MVVM 視圖模型相關的技術。
+雖然這些是一般用途的技術，但大部分都是用來與 MVVM View 模型連接。
 
-### <a name="constructors-with-arguments"></a>具有參數的建構函式
+### <a name="constructors-with-arguments"></a>具有引數的函式
 
-[**參數建構函數演示**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo)範例展示如何`x:Arguments`使用 標記指定構造函數參數。 這些參數必須按指示參數類型的元素標記分隔。 對於基本的 .NET 資料類型,可以使用以下標記:
+[**ParameteredConstructorDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo)範例會示範如何使用 `x:Arguments` 標記來指定函數引數。 這些引數必須以指示引數類型的元素標記來分隔。 針對基本 .NET 資料類型，可以使用下列標記：
 
 - `x:Object`
 - `x:Boolean`
@@ -45,41 +49,41 @@ ms.locfileid: "61334233"
 - `x:Array`
 - `x:DateTime`
 
-### <a name="can-i-call-methods-from-xaml"></a>我可以從 XAML 調用方法嗎?
+### <a name="can-i-call-methods-from-xaml"></a>我可以從 XAML 呼叫方法嗎？
 
-[**FactoryMethodDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo)範例示範如何使用`x:FactoryMethod`元素 指定呼叫以建立物件的工廠方法。 這種工廠方法必須是公共的和靜態的,並且必須創建定義該方法的類型的物件。 (例如,[`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double))此方法符合條件,因為它是公共的與靜態的,並傳`Color`回類型的值 。工廠方法的參數在標記中`x:Arguments`指定。
+[**FactoryMethodDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo)範例會示範如何使用 `x:FactoryMethod` 元素來指定用來建立物件的 factory 方法。 這種 factory 方法必須是公用和靜態的，而且必須建立其定義所在之類型的物件。 （例如， [`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double)) 方法有資格，因為它是公用和靜態，並會傳回類型的值 `Color` ）。Factory 方法的引數會指定于 `x:Arguments` 標記內。
 
-## <a name="the-xname-attribute"></a>x:名稱屬性
+## <a name="the-xname-attribute"></a>X：Name 屬性
 
-該`x:Name`屬性允許為在 XAML 中實例化的物件指定一個名稱。 這些名稱的規則與 C# 變數名稱的規則相同。 在建構函數中`InitializeComponent`返回調用後,代碼後面檔可以引用這些名稱來訪問相應的 XAML 元素。 名稱實際上由 XAML 解析器轉換為生成的部分類中的私有欄位。
+`x:Name`屬性可讓在 XAML 中具現化的物件獲得名稱。 這些名稱的規則與 c # 變數名稱相同。 在函 `InitializeComponent` 式中傳回呼叫之後，程式碼後置檔案可以參考這些名稱，以存取對應的 XAML 元素。 XAML 剖析器實際上會將名稱轉換成產生的部分類別中的私用欄位。
 
-[**XamlClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock)範例展示了`x:Name`允許代碼背後的檔案使用時,使用當前日期和時間`Label`更新 XAML 中定義的兩個元素。
+[**XamlClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock)範例會示範 `x:Name` 如何使用來允許程式碼後置檔案保留 XAML 中定義的兩個元素，並以 `Label` 目前的日期和時間更新。
 
-同一名稱不能用於同一頁面上的多個元素。 如果使用為每個`OnPlatform`平台創建並行命名物件,則這是一個特殊問題。 [**Platform特例標籤**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels)範例示範了執行類似操作的更好方法。
+相同的名稱不能用於相同頁面上的多個元素。 如果您使用 `OnPlatform` 來為每個平臺建立平行命名物件，這就是特別的問題。 [**PlatformSpecificLabele**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels)範例會示範更好的方法來執行類似的動作。
 
-## <a name="custom-xaml-based-views"></a>基於 XAML 的自訂檢視
+## <a name="custom-xaml-based-views"></a>以 XAML 為基礎的自訂視圖
 
-有幾種方法可以避免重複 XAML 中的標記。 一種常見的方法是建立一個基於 XAML 的新類別,[`ContentView`](xref:Xamarin.Forms.ContentView)該類 派生自 。 此技術在[**ColorViewList 範例中**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList)進行了演示。 類`ColorView`派`ContentView`生 用於顯示特定顏色及其名稱`ColorViewListPage`,而`ContentPage`類則 像往常一樣派生,並顯式`ColorView`創建 17 個 實例。
+有數種方式可避免在 XAML 中重複標記。 其中一個常見的方法是建立一個衍生自的新 XAML 型類別 [`ContentView`](xref:Xamarin.Forms.ContentView) 。 這項技術會在[**ColorViewList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList)範例中示範。 `ColorView`類別衍生自 `ContentView` ，以顯示特定的色彩和其名稱，而 `ColorViewListPage` 類別衍生自一般， `ContentPage` 並明確建立17個實例 `ColorView` 。
 
-在 XAML`ColorView`中存取 類別需要另一`local`個 XML 命名 空間聲明,通常為同一程式集中的類命名。
+存取 `ColorView` XAML 中的類別需要另一個 XML 命名空間宣告，通常會 `local` 針對相同元件中的類別命名。
 
-## <a name="events-and-handlers"></a>事件與處理程式
+## <a name="events-and-handlers"></a>事件和處理常式
 
-事件可以分配給 XAML 中的事件處理程式,但事件處理程式本身必須在代碼後面的檔中實現。 [**XamlKeypad**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad)展示如何在 XAML 中建構鍵盤使用者介面以及如何在代碼`Clicked`背後檔中實現 處理程式。
+事件可以指派給 XAML 中的事件處理常式，但事件處理常式本身必須在程式碼後置檔案中執行。 此[**XamlKeypad**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad)示範如何在 XAML 中建立鍵盤使用者介面，以及如何 `Clicked` 在程式碼後置檔案中執行處理常式。
 
-## <a name="tap-gestures"></a>點擊手勢
+## <a name="tap-gestures"></a>點一下手勢
 
-任何`View`物件都可以獲取觸摸輸入並從該輸入生成事件。 類`View`定義[`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers)集合 屬性,該屬性可以包含派[`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer)生自 的類的一個或多個實例。
+任何 `View` 物件都可以取得觸控輸入，並從該輸入產生事件。 `View`類別定義的 [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) 集合屬性可以包含一個或多個衍生自之類別的實例 [`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) 。
 
-生成[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)[`Tapped`](xref:Xamarin.Forms.TapGestureRecognizer.Tapped)事件。 [**MonkeyTap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap)程式展示如何將物件附加`TapGestureRecognizer`到`BoxView`四個元素以建立仿遊戲:
+會 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 產生 [`Tapped`](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) 事件。 [**MonkeyTap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap)程式會示範如何將 `TapGestureRecognizer` 物件附加至四 `BoxView` 個元素，以建立仿造遊戲：
 
-[![猴子水龍頭的三重截圖](images/ch08fg07-small.png "模仿遊戲")](images/ch08fg07-large.png#lightbox "模仿遊戲")
+[![猴子的三向螢幕擷取畫面](images/ch08fg07-small.png "仿造遊戲")](images/ch08fg07-large.png#lightbox "仿造遊戲")
 
-但**猴子Tap**程式確實需要聲音。 ( 請參閱[下一章](chapter09.md)。
+但是**MonkeyTap**程式真的需要音效。 （請參閱[下一章](chapter09.md)）。
 
 ## <a name="related-links"></a>相關連結
 
-- [第八章 全文(PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
-- [第八章 樣本](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
-- [第八章 F# 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
-- [XAML 的傳遞參數](~/xamarin-forms/xaml/passing-arguments.md)
+- [第8章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
+- [第8章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
+- [第8章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
+- [在 XAML 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)

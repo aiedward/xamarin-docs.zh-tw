@@ -1,24 +1,27 @@
 ---
-title: IOS 上的專案游標色彩
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的來設定專案的游標色彩。
-ms.prod: xamarin
-ms.assetid: 867D70BA-53F9-4434-8094-85D71DCECC2D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 8bd282002ec85350d7a0c413225d35754991e460
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4d934fd2155a6a088dd543658555bf104b38f302
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70197942"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138537"
 ---
 # <a name="entry-cursor-color-on-ios"></a>IOS 上的專案游標色彩
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平臺特定會將的游標色彩[`Entry`](xref:Xamarin.Forms.Entry)設為指定的色彩。 它由在 XAML 中設定[ `Entry.CursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty)可繫結的屬性，以[ `Color` ](xref:Xamarin.Forms.Color):
+此 iOS 平臺特定會將的游標色彩設 [`Entry`](xref:Xamarin.Forms.Entry) 為指定的色彩。 將可系結屬性設定為，即可在 XAML 中使用它 [`Entry.CursorColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty) [`Color`](xref:Xamarin.Forms.Color) ：
 
 ```xaml
 <ContentPage ...
@@ -29,7 +32,7 @@ ms.locfileid: "70197942"
 </ContentPage>
 ```
 
-或者，它可以取用從 C# 使用 fluent API:
+或者，您也可以使用 Fluent API，從 c # 取用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -40,11 +43,11 @@ var entry = new Xamarin.Forms.Entry();
 entry.On<iOS>().SetCursorColor(Color.LimeGreen);
 ```
 
-`Entry.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 [ `Entry.SetCursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.SetCursorColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry},Xamarin.Forms.Color))方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，設定與指定的資料指標色彩[ `Color` ](xref:Xamarin.Forms.Color)。 颾魤 ㄛ [ `Entry.GetCursorColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.GetCursorColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.Entry}))方法可用來擷取目前的資料指標色彩。
+`Entry.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 [ `Entry.SetCursorColor` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetCursorColor （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。Entry}、 Xamarin.Forms 。Color））方法，在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空間中，將游標色彩設為指定的 [`Color`](xref:Xamarin.Forms.Color) 。 此外，[ `Entry.GetCursorColor` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. GetCursorColor （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。Entry}））方法可以用來抓取目前的資料指標色彩。
 
-結果是中的資料指標色彩[ `Entry` ](xref:Xamarin.Forms.Entry)可以設定為特定[ `Color` ](xref:Xamarin.Forms.Color):
+結果是，中的游標色彩 [`Entry`](xref:Xamarin.Forms.Entry) 可以設定為特定的 [`Color`](xref:Xamarin.Forms.Color) ：
 
-![](entry-cursor-color-images/entry-cursorcolor.png "項目資料指標色彩")
+![](entry-cursor-color-images/entry-cursorcolor.png "Entry Cursor Color")
 
 ## <a name="related-links"></a>相關連結
 

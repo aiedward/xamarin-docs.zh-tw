@@ -1,30 +1,33 @@
 ---
-title: 路徑填滿類型
-description: 本文將探討 SkiaSharp 路徑填滿類型的各種可能效果，並以範例程式碼示範這種情況。
-ms.prod: xamarin
-ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291962"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139044"
 ---
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用 SkiaSharp 路徑填滿類型探索可能的不同效果_
 
-路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下是範例：
+路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下為範例：
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-您對此有一些控制。 填入演算法是由 `SKPath`的[`SKFillType`](xref:SkiaSharp.SKPath.FillType)屬性所控制，您可以將其設定為[`SKPathFillType`](xref:SkiaSharp.SKPathFillType)列舉的成員：
+您對此有一些控制。 填入演算法是由的屬性所控制 [`SKFillType`](xref:SkiaSharp.SKPath.FillType) `SKPath` ，您可以將它設定為列舉的成員 [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) ：
 
 - `Winding`，預設值
 - `EvenOdd`
@@ -168,18 +171,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-一般來說，路徑填滿型別只會影響填滿，而不是筆劃，但兩種 `Inverse` 模式會影響填滿和筆劃。 針對填滿，這兩個 `Inverse` 類型會填滿區域 oppositely，讓星星外的區域填滿。 就筆劃而言，這兩個 `Inverse` 類型會對筆劃以外的所有專案進行色彩。 使用這些反填滿類型可能會產生一些奇怪的效果，如 iOS 螢幕擷取畫面所示：
+一般來說，路徑填滿型別只會影響填滿，而不是筆劃，但這兩種 `Inverse` 模式會影響填滿和筆劃。 針對填滿，這兩個 `Inverse` 類型的填滿區域會 oppositely，讓星星外的區域填滿。 就筆劃而言，這兩個類型會對 `Inverse` 筆劃以外的所有專案進行色彩。 使用這些反填滿類型可能會產生一些奇怪的效果，如 iOS 螢幕擷取畫面所示：
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 Android 螢幕擷取畫面顯示一般的奇數和纏繞效果，但是筆劃和填滿的順序也會影響結果。
 
-纏繞演算法是根據繪製線條的方向而定。 通常當您建立路徑時，您可以在指定從某個點繪製線條至另一個位置時，控制該方向。 不過，`SKPath` 類別也會定義繪製整個輪廓的 `AddRect` 和 `AddCircle` 等方法。 為了控制這些物件的繪製方式，方法包含[`SKPathDirection`](xref:SkiaSharp.SKPathDirection)類型的參數，其中包含兩個成員：
+纏繞演算法是根據繪製線條的方向而定。 通常當您建立路徑時，您可以在指定從某個點繪製線條至另一個位置時，控制該方向。 不過， `SKPath` 類別也 `AddRect` 會定義 `AddCircle` 繪製整個輪廓的方法（例如和）。 為了控制這些物件的繪製方式，方法包含型別為的參數 [`SKPathDirection`](xref:SkiaSharp.SKPathDirection) ，其中有兩個成員：
 
 - `Clockwise`
 - `CounterClockwise`
 
-`SKPath` 中包含 `SKPathDirection` 參數的方法，會提供預設值 [`Clockwise`]。
+中 `SKPath` 包含參數的方法 `SKPathDirection` 會提供其預設值 `Clockwise` 。
 
 [重**迭的圓形**] 頁面會建立具有四個重迭圓形的路徑，其中包含奇數路徑填滿類型：
 

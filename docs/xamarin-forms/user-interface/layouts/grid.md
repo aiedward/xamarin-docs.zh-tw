@@ -1,24 +1,27 @@
 ---
-title: Xamarin. 表單方格
-description: '[Xamarin] 方格是將其子系組織成資料列和資料行的版面配置。'
-ms.prod: xamarin
-ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4f1d9d0f2d597018b9832d918bbec3f0b2594773
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Forms格
+description: Xamarin.Forms方格是將其子系組織成資料列和資料行的版面配置。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426012"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138069"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin. 表單方格
+# <a name="xamarinforms-grid"></a>Xamarin.Forms格
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[![Xamarin. 表單方格](grid-images/layouts.png "Xamarin. 表單方格")](grid-images/layouts-large.png#lightbox "Xamarin. 表單方格")
+[![Xamarin.Forms格](grid-images/layouts.png "[!OP.無-LOC （Xamarin）] 方格")](grid-images/layouts-large.png#lightbox "[!OP.無-LOC （Xamarin）] 方格")
 
 [`Grid`](xref:Xamarin.Forms.Grid)是將其子系組織成資料列和資料行的版面配置，其可具有比例或絕對大小。 根據預設，會 `Grid` 包含一個資料列和一個資料行。 此外， `Grid` 也可以當做包含其他子版面配置的父配置使用。
 
@@ -735,6 +738,6 @@ public class ColorSlidersGridPageCS : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [方格示範（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
-- [Xamarin 中的版面配置選項](layout-options.md)
-- [選擇 Xamarin. 表單版面配置](choose-layout.md)
+- [中的版面配置選項Xamarin.Forms](layout-options.md)
+- [選擇 Xamarin.Forms 版面配置](choose-layout.md)
 - [改善 Xamarin.Forms 應用程式效能](~/xamarin-forms/deploy-test/performance.md)

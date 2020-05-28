@@ -1,94 +1,97 @@
 ---
-title: Xamarin.Forms AbsoluteLayout
-description: 這篇文章說明如何使用 Xamarin.Forms AbsoluteLayout 類別來建立像素完美的 Ui。 此類別會定位和調整大小成正比，其本身的大小和位置，或由絕對值的子項目。
-ms.prod: xamarin
-ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/25/2015
-ms.openlocfilehash: 0389587b2abffa751349a66eedc4a3800aa2a99d
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+title: Xamarin.FormsAbsoluteLayout
+description: 本文說明如何使用 Xamarin.Forms AbsoluteLayout 類別來建立最適合圖元的 ui。 這個類別會以其本身的大小和位置或絕對值為子項目的位置和大小。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d81a80e1f1190cbdffd578024cf9c6db1e7737e1
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888537"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139239"
 ---
-# <a name="xamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
+# <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 位置，和大小成正比，其本身的大小和位置，或由絕對值的子項目。 子檢視可能會定位和調整大小按比例的值或靜態值，使用依比例，並可以混合使用靜態值。
+[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)將子專案的位置和大小與其本身的大小和位置或絕對值成正比。 子視圖可能會使用比例值或靜態值來定位和調整大小，而且可以混用比例和靜態值。
 
-[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms 版面配置")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
+[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
-本文將介紹：
+此文章將涵蓋︰
 
-- **[用途](#Purpose)** &ndash;的常見用法`AbsoluteLayout`。
-- **[使用方式](#Usage)** &ndash;如何使用`AbsoluteLayout`以達到您所需的設計。
-  - **[按比例配置](#Proportional_Layouts)** &ndash;了解如何按比例的值用於`AbsoluteLayout`。
-  - **[指定值](#Specifying_Values)** &ndash;了解如何指定比例和絕對值。
-  - **[調和間距值](#Proportional_Values)** &ndash;了解如何按比例的值運作。
-    - **[絕對值](#Absolute_Values)** &ndash;了解絕對值的運作方式。
+- **[用途](#Purpose)** &ndash;的常見用法 `AbsoluteLayout` 。
+- **[使用](#Usage)** &ndash; 方式如何使用 `AbsoluteLayout` 來達到您想要的設計。
+  - **[比例配置](#Proportional_Layouts)** &ndash;瞭解比例值在中的使用方式 `AbsoluteLayout` 。
+  - **[指定值](#Specifying_Values)** &ndash;瞭解如何指定比例和絕對值。
+  - **[比例值](#Proportional_Values)** &ndash;瞭解比例值的工作方式。
+    - **[絕對值](#Absolute_Values)** &ndash;瞭解絕對值的工作方式。
 
 <a name="Purpose" />
 
-## <a name="purpose"></a>用途
+## <a name="purpose"></a>目的
 
-因為定位模型`AbsoluteLayout`，版面配置會變得相對簡單，讓它們使用的版面配置時，任何一側排清或置中定位項目。 調和間距大小和位置中的項目`AbsoluteLayout`可自動調整為任何檢視大小。 只有位置，但不是大小應該調整其中的項目，可以混合使用絕對和比例的值。
+因為的定位模型，配置 `AbsoluteLayout` 會使元素的位置相對直接，使其與版面配置的任一側或置中對齊。 有比例的大小和位置，中的元素 `AbsoluteLayout` 可以自動調整為任何視圖大小。 對於僅限位置但大小不應調整的專案，可以混合具有絕對和比例的值。
 
-`AbsoluteLayout` 您可以使用任何位置項目必須放置在檢視和對齊邊緣的項目時就特別有用。
+`AbsoluteLayout`可以在任何地方使用，而元素必須位於視圖內，而且在對齊元素與邊緣時特別有用。
 
 <a name="Usage" />
 
-## <a name="usage"></a>使用量
+## <a name="usage"></a>使用方式
 
 <a name="Proportional_Layouts" />
 
-### <a name="proportional-layouts"></a>按比例配置
+### <a name="proportional-layouts"></a>比例配置
 
-`AbsoluteLayout` 具有唯一的錨點模型，讓錨點的項目相對於其項目，該項目位置相對於配置所使用的比例定位時。 使用絕對位置時，錨點會在 (0，0) 位於檢視。 這有兩個重要的結果：
+`AbsoluteLayout`具有唯一錨定模型，其中專案的錨點會相對於其專案定位，因為使用比例位置時，專案是相對於版面配置的位置。 使用絕對位置時，錨點會在此視圖內的（0，0）。 這有兩個重要的結果：
 
-- 項目無法放置螢幕使用依比例的值。
-- 可以可靠地放置項目，一起配置的或在管理中心中，無論規模大小的版面配置或裝置。
+- 無法使用比例值將元素置於關閉畫面。
+- 無論配置或裝置的大小為何，專案都可以可靠地放置在版面配置或中央的任何一邊。
 
-`AbsoluteLayout`例如`RelativeLayout`，能夠放置項目，使它們的重疊。
+`AbsoluteLayout`（例如 `RelativeLayout` ）能夠放置專案，使其重迭。
 
-請注意，在下列螢幕擷取畫面，方塊的錨點是白色的點。 在配置的移動，請注意，錨點與方塊之間的關聯性：
+請注意，在下列螢幕擷取畫面中，方塊的錨點是一個空白字元。 請注意，錨點和方塊在版面配置上移動時的關聯性：
 
-![](absolute-layout-images/anchor-start.png "在開頭的錨點")
-![](absolute-layout-images/anchor-center.png "錨點中心")
-![](absolute-layout-images/anchor-end.png "結尾的錨點")
+![](absolute-layout-images/anchor-start.png "Anchor at Start")
+![](absolute-layout-images/anchor-center.png "Anchor at Center")
+![](absolute-layout-images/anchor-end.png "Anchor at End")
 
 <a name="Specifying_Values" />
 
-### <a name="specifying-values"></a>指定的值
+### <a name="specifying-values"></a>指定值
 
-檢視內`AbsoluteLayout`位於使用四個值：
+中的 Views `AbsoluteLayout` 會使用四個值來定位：
 
-- **X** &ndash;檢視的錨定的 x （水平） 位置
-- **Y** &ndash;檢視的錨定的 y （垂直） 位置
-- **寬度**&ndash;檢視的寬度
-- **高度**&ndash;檢視的高度
+- **X** &ndash; 視圖錨點的 x （水準）位置
+- **Y** &ndash; 視圖錨點的 y （垂直）位置
+- **寬度** &ndash;視圖的寬度
+- **高度** &ndash;視圖的高度
 
-每個這些值可以設定為[調和間距](#Proportional_Values)值，或有[絕對](#Absolute_Values)值。
+每個值都可以設定為[比例](#Proportional_Values)值或[絕對值](#Absolute_Values)。
 
-值會指定為繫結和旗標的組合。 `LayoutBounds` 已[ `Rectangle` ](xref:Xamarin.Forms.Rectangle)四個值所組成： `x`， `y`， `width`， `height`。
+值會指定為界限和旗標的組合。 `LayoutBounds`是由 [`Rectangle`](xref:Xamarin.Forms.Rectangle) 四個值所組成： `x` 、 `y` 、 `width` 、 `height` 。
 
 ### <a name="absolutelayoutflags"></a>AbsoluteLayoutFlags
 
-[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags) 指定值解譯的方式，並具有下列預先定義的選項：
+[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags)指定值的解讀方式，並具有下列預先定義的選項：
 
-- **無**&ndash;解譯為絕對值的所有值。 如果不指定了任何版面配置的旗標，這是預設值。
-- **所有**&ndash;會解譯成比例的所有值。
-- **WidthProportional** &ndash;解譯`Width`依比例和所有其他值的值為絕對值。
-- **HeightProportional** &ndash;只高度會將該值解譯為調和間距與所有其他絕對的值。
-- **XProportional** &ndash;解譯`X`值成比例，同時將所有其他值視為絕對。
-- **YProportional** &ndash;解譯`Y`值成比例，同時將所有其他值視為絕對。
-- **PositionProportional** &ndash;解譯`X`和`Y`值做為成正比，而大小值會解譯為絕對值。
-- **SizeProportional** &ndash;解譯`Width`和`Height`絕對位置的值時，為調和間距值。
+- **無** &ndash;將所有值解讀為絕對。 如果未指定任何版面配置旗標，這就是預設值。
+- **全部** &ndash;將所有值以比例方式轉譯。
+- **WidthProportional** &ndash;將 `Width` 值解讀為比例，並將所有其他值視為絕對值。
+- **HeightProportional** &ndash;僅將高度值轉譯為與所有其他值為絕對值的正比。
+- **XProportional** &ndash;將 `X` 值以比例解讀，同時將所有其他值視為絕對。
+- **YProportional** &ndash;將 `Y` 值以比例解讀，同時將所有其他值視為絕對。
+- **PositionProportional** &ndash;將 `X` 和 `Y` 值解讀為比例，而大小值會解讀為絕對。
+- **SizeProportional** &ndash;將 `Width` 和 `Height` 值解讀為比例，而位置值是絕對的。
 
-在 XAML 中，繫結和旗標設定為版面配置中的檢視定義的一部分使用`AbsoluteLayout.LayoutBounds`屬性。 範圍設定為值的逗號分隔的清單`X`， `Y`， `Width`，和`Height`，依此順序。 旗標也會在版面配置中使用檢視的宣告中指定`AbsoluteLayout.LayoutFlags`屬性。 請注意，可以在 XAML 使用逗號分隔的清單中合併旗標。 參考下列範例：
+在 XAML 中，會使用屬性，將界限和旗標設定為配置內的視圖定義的一部分 `AbsoluteLayout.LayoutBounds` 。 界限會設定為以逗號分隔的值清單，分別為、、 `X` `Y` `Width` 和 `Height` （依此順序）。 您也可以使用屬性，在版面配置中的觀點宣告中指定旗標 `AbsoluteLayout.LayoutFlags` 。 請注意，您可以使用逗號分隔的清單，在 XAML 中結合旗標。 請考慮下列範例：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -114,15 +117,15 @@ Title="Absolute Layout Exploration">
 </ContentPage>
 ```
 
-![](absolute-layout-images/exploration.png "AbsoluteLayout 範例")
+![](absolute-layout-images/exploration.png "AbsoluteLayout Examples")
 
-請注意下列事項：
+請注意：
 
-- 在管理中心的標籤會位於使用絕對大小和位置的值。 因此，它會顯示在 iPhone 4 秒置中和低，但不是置中較大的裝置上。
-- 底部的版面配置的文字會位於使用調和間距大小和位置的值。 它一定會出現在底端中央的版面配置，但其大小會隨著較大的配置大小。
-- 三個彩色`BoxView`s 置放於使用依比例的位置和絕對大小在畫面上、 左和右邊緣。
+- 中心的標籤是使用絕對大小和位置值來定位。 因此，它會以 iPhone 4S 和較低的方式呈現，但不會在較大的裝置上置中。
+- 版面配置底部的文字會使用比例大小和位置值來定位。 它一律會出現在版面配置的底部，但其大小會隨著較大的版面配置大小而增加。
+- 三個彩色的 `BoxView` 會使用比例位置和絕對大小，放在畫面的頂端、左邊和右邊緣。
 
-下列項目達到相同的配置，在 C# 中：
+下列步驟會在 c # 中達到相同的版面配置：
 
 ```csharp
 public class AbsoluteLayoutExplorationCode : ContentPage
@@ -168,13 +171,13 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 
 <a name="Proportional_Values" />
 
-### <a name="proportional-values"></a>調和間距的值
+### <a name="proportional-values"></a>比例值
 
-調和間距的值會定義版面配置和檢視之間的關聯性。 此關聯性定義的子檢視的位置或小數位數值為父系版面配置的對應值的比例。 這些值會表示為`double`秒，介於 0 和 1 之間的值。
+比例值會定義版面配置和視圖之間的關聯性。 此關聯性會將子視圖的位置或小數位數值定義為父配置對應值的比例。 這些值會以 `double` 介於0和1之間的值表示。
 
-位置和配置內的大小檢視會使用依比例的值。 因此，當檢視表的寬度設定為所佔百分比時，產生的寬度值會是乘以比例`AbsoluteLayout`的寬度。 例如，使用`AbsoluteLayout`寬度的`500`會 250 (500 x.5 上檢視，設為 有.5，呈現檢視的寬度比例寬度。
+比例值是用來定位和調整版面配置內的視圖。 因此，當視圖的寬度設定為比例時，結果的寬度值會乘以的 `AbsoluteLayout` 寬度。 例如，如果 `AbsoluteLayout` width 的 `500` 和 view 設定為的比例寬度為 .5，則此視圖的呈現寬度會是250（500 x. 5）。
 
-若要使用依比例的值，請設定`LayoutBounds`使用 （x，y） 比例和調和間距大小，然後設定`LayoutFlags`至`All`。
+若要使用比例值，請 `LayoutBounds` 使用（x，y）比例和比例大小來設定，然後將設定 `LayoutFlags` 為 `All` 。
 
 在 XAML 中：
 
@@ -195,11 +198,11 @@ AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 
 ### <a name="absolute-values"></a>絕對值
 
-絕對值明確定義檢視的配置中的所在。 不同於成比例的值，絕對值則是能夠定位和調整大小不符的版面配置的範圍內的檢視項目。
+絕對值明確定義在版面配置內應放置視圖的位置。 與比例值不同的是，絕對值可以定位並調整不符合版面配置範圍的視圖大小。
 
-使用絕對值來定位可能會造成危險，當配置的大小未知。 當使用絕對位置，在一個大小螢幕的中央中的項目可以位移任何其他大小。 請務必測試您的應用程式跨各種螢幕大小的支援的裝置。
+當配置的大小未知時，使用絕對值進行定位可能會有危險。 當使用絕對位置時，畫面中央的某個元素可能會以任何其他大小位移。 請務必在支援裝置的各種螢幕大小中測試您的應用程式。
 
-若要使用絕對版面配置的值，請設定`LayoutBounds`使用 （x，y） 座標和明確的大小，然後設定`LayoutFlags`至`None`。
+若要使用絕對版面配置值，請 `LayoutBounds` 使用（x，y）座標和明確大小來設定，然後將設定 `LayoutFlags` 為 `None` 。
 
 在 XAML 中：
 
@@ -215,11 +218,11 @@ var label = new Label {Text = "I'm centered on iPhone 4 but no other device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(115,150,100,100));
 ```
 
-## <a name="exploring-a-complex-layout"></a>瀏覽複雜的配置
+## <a name="exploring-a-complex-layout"></a>探索複雜的版面配置
 
-每個配置有優點和缺點，用於建立特定的配置。 在此系列的版面配置的文章中，已建立範例應用程式以使用三個不同的版面配置實作相同的頁面配置。
+每個版面配置都有建立特定版面配置的優點和缺點。 在這一系列的版面配置文章中，已建立範例應用程式，並使用三種不同的版面配置來執行相同的頁面配置。
 
-請考慮下列 XAML:
+請考慮下列 XAML：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -282,15 +285,15 @@ Title="AbsoluteLayout">
 </ContentPage>
 ```
 
-上述程式碼會產生下列配置：
+上述程式碼會產生下列版面配置：
 
-![](absolute-layout-images/abs.png "複雜 AbsoluteLayout")
+![](absolute-layout-images/abs.png "Complex AbsoluteLayout")
 
-請注意， `AbsoluteLayout`s 為巢狀，因為在某些情況下建立巢狀版面配置可能很容易呈現在相同的版面配置內的所有項目。
+請注意， `AbsoluteLayout` 會進行嵌套，因為在某些情況下，相較于在相同的版面配置中呈現所有元素，嵌套配置可能會比較容易。
 
 ## <a name="related-links"></a>相關連結
 
-- [使用 Xamarin.Forms 時，第 14 章建立行動應用程式](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
+- [建立 Mobile Apps Xamarin.Forms ，第14章](https://developer.xamarin.com/r/xamarin-forms/book/chapter14.pdf)
 - [AbsoluteLayout](xref:Xamarin.Forms.AbsoluteLayout)
-- [版面配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble 範例 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [版面配置（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 範例（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

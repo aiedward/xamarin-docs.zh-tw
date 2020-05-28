@@ -1,24 +1,27 @@
 ---
-title: IOS 上的 VisualElement 投影
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的, 以在 VisualElement 上啟用陰影。
-ms.prod: xamarin
-ms.assetid: 2147FD66-058E-4BE5-840A-369842B26EC4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 9d58576e67e6e8129b15f4935986c494bb093538
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7410386e10f605fdeed452fe37755c1e48e6b9b9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649553"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136990"
 ---
 # <a name="visualelement-drop-shadows-on-ios"></a>IOS 上的 VisualElement 投影
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-這個 iOS 平臺特定是用來啟用上[`VisualElement`](xref:Xamarin.Forms.VisualElement)的投影。 它由在 XAML 中設定[ `VisualElement.IsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) ; 附加屬性`true`，以及數個其他選擇性附加控制陰影的屬性：
+這個 iOS 平臺特定是用來啟用上的投影 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。 它會在 XAML 中使用，方法是將 [`VisualElement.IsShadowEnabled`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) 附加屬性設定為 `true` ，並使用一些額外的選擇性附加屬性來控制陰影：
 
 ```xaml
 <ContentPage ...
@@ -43,7 +46,7 @@ ms.locfileid: "68649553"
 </ContentPage>
 ```
 
-或者，它可以取用從 C# 使用 fluent API:
+或者，您也可以使用 Fluent API，從 c # 取用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -59,19 +62,19 @@ boxView.On<iOS>()
        .SetShadowRadius(12);
 ```
 
-`VisualElement.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 [ `VisualElement.SetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Boolean))方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，可用來控制是否已啟用下拉式陰影`VisualElement`。 此外，下列方法可以叫用來控制陰影：
+`VisualElement.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 [ `VisualElement.SetIsShadowEnabled` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetIsShadowEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}，system.string）方法，在命名空間中， [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 是用來控制是否已在上啟用投影 `VisualElement` 。 此外，您可以叫用下列方法來控制陰影：
 
-- [`SetShadowColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Color)) – 設定延伸陰影的色彩。 預設色彩是[ `Color.Default` ](xref:Xamarin.Forms.Color.Default*)。
-- [`SetShadowOffset`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},Xamarin.Forms.Size)) – 設定延伸陰影的位移。 位移會變更陰影轉換，並指定為方向[ `Size` ](xref:Xamarin.Forms.Size)值。 `Size`結構的值會以裝置獨立單位，與正在向左 （負值） 或向右 （正值），距離的第一個值和第二個值在上述的距離 （負值） 或下方 （正值）. 這個屬性的預設值是 （0.0，0.0），這會導致陰影正在轉換周圍每一端`VisualElement`。
-- [`SetShadowOpacity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) – 會出現在範圍 0.0 （透明） 到 1.0 （不透明） 的值設定延伸陰影的不透明度。 預設不透明度值為 0.5。
-- [`SetShadowRadius`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.SetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement},System.Double)) – 設定柔化半徑，用來呈現下拉式陰影。 預設半徑值為 10.0。
+- [ `SetShadowColor` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowColor （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}、 Xamarin.Forms 。色彩）–設定陰影的色彩。 預設色彩為 [`Color.Default`](xref:Xamarin.Forms.Color.Default*) 。
+- [ `SetShadowOffset` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowOffset （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}、 Xamarin.Forms 。[大小]）–設定陰影的位移。 位移會變更陰影的轉換方向，並指定為 [`Size`](xref:Xamarin.Forms.Size) 值。 `Size`結構值是以與裝置無關的單位來表示，第一個值是左邊的距離（負值）或右邊（正值），而第二個值是上方的距離（負值）或下方（正數值）。 這個屬性的預設值為（0.0，0.0），這會導致在的每一側轉換陰影 `VisualElement` 。
+- [ `SetShadowOpacity` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowOpacity （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}，system.string）–設定陰影的不透明度，其值在0.0 （透明）到1.0 （不透明）範圍內。 預設的不透明度值為0.5。
+- [ `SetShadowRadius` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowRadius （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}，System.object）–設定用來呈現陰影的模糊半徑。 預設半徑值為10.0。
 
 > [!NOTE]
-> 可查詢下拉式陰影的狀態，藉由呼叫[ `GetIsShadowEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetIsShadowEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))， [ `GetShadowColor` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowColor(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))， [ `GetShadowOffset` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))， [ `GetShadowOpacity` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowOpacity(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))，並[ `GetShadowRadius` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.GetShadowRadius(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.VisualElement}))方法。
+> 您可以藉由呼叫 [ `GetIsShadowEnabled` ] （x：，來查詢陰影的狀態 Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetIsShadowEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}）），[ `GetShadowColor` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowColor （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}）），[ `GetShadowOffset` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowOffset （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}）），[ `GetShadowOpacity` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowOpacity （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}））和 [ `GetShadowRadius` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowRadius （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. iOS、 Xamarin.Forms 。VisualElement}））方法。
 
-結果是，您可以上啟用下拉式陰影[ `VisualElement` ](xref:Xamarin.Forms.VisualElement):
+結果是可以在上啟用投影 [`VisualElement`](xref:Xamarin.Forms.VisualElement) ：
 
-![](drop-shadow-images/drop-shadow.png "已啟用下拉式陰影")
+![](drop-shadow-images/drop-shadow.png "Drop shadow enabled")
 
 ## <a name="related-links"></a>相關連結
 

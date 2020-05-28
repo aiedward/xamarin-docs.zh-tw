@@ -1,28 +1,20 @@
 ---
-title: 從圖片媒體櫃挑選相片
-description: 本文說明如何使用 Xamarin.Forms DependencyService 類別從手機的圖片媒體櫃挑選相片。
-ms.prod: xamarin
-ms.assetid: 4F51B0E7-6A63-403C-B488-500CCBCE75DD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 6669dbaff3cfb5b929261352b8db046b35ec5b4f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76020698"
+title：描述： ' 本文說明如何使用 Xamarin.Forms DependencyService 類別從手機的圖片庫挑選相片。
+assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="picking-a-photo-from-the-picture-library"></a>從圖片媒體櫃挑選相片
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
-本文會逐步說明如何建立可讓使用者從手機圖片媒體櫃挑選相片的應用程式。 由於 Xamarin.Forms 不包括此功能,因此[`DependencyService`](xref:Xamarin.Forms.DependencyService)有必要使用 訪問每個平臺上的本機 API。
+本文會逐步說明如何建立可讓使用者從手機圖片媒體櫃挑選相片的應用程式。 因為不 Xamarin.Forms 包含這項功能，所以必須使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 來存取每個平臺上的原生 api。
 
 ## <a name="creating-the-interface"></a>建立介面
 
-首先，在共用程式碼中建立介面以表示所需的功能。 如果是相片挑選應用程式，則只有一個方法是必要的。 這在範例代碼的[`IPhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos/Services/IPhotoPickerService.cs).NET 標準函式庫中的介面中定義:
+首先，在共用程式碼中建立介面以表示所需的功能。 如果是相片挑選應用程式，則只有一個方法是必要的。 這是在範例程式 [`IPhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos/Services/IPhotoPickerService.cs) 代碼之 .NET Standard 程式庫的介面中定義的：
 
 ```csharp
 namespace DependencyServiceDemos
@@ -40,9 +32,9 @@ namespace DependencyServiceDemos
 
 ## <a name="ios-implementation"></a>iOS 實作
 
-介面的`IPhotoPickerService`iOS[`UIImagePickerController`](xref:UIKit.UIImagePickerController)實現使用圖[**庫**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)配方和[範例代碼](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)中所述。
+介面的 iOS 執行會 `IPhotoPickerService` 使用， [`UIImagePickerController`](xref:UIKit.UIImagePickerController) 如[**從圖庫中選擇相片**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)配方和[範例程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)中所述。
 
-iOS 實現包含在示例代碼[`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.iOS/Services/PhotoPickerService.cs)的 iOS 專案中的類中。 若要讓 `DependencyService` 管理員看得見此類別，該類別必須使用 `Dependency` 類型的 [`assembly`] 屬性來識別，且該類別必須為公用且明確地實作 `IPhotoPickerService` 介面：
+IOS 實作為包含在範例程式 [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.iOS/Services/PhotoPickerService.cs) 代碼的 ios 專案中的類別。 若要讓 `DependencyService` 管理員看得見此類別，該類別必須使用 `Dependency` 類型的 [`assembly`] 屬性來識別，且該類別必須為公用且明確地實作 `IPhotoPickerService` 介面：
 
 ```csharp
 [assembly: Dependency (typeof (PhotoPickerService))]
@@ -83,9 +75,9 @@ namespace DependencyServiceDemos.iOS
 
 `GetImageStreamAsync` 方法會建立 `UIImagePickerController` 並將其初始化，以從相片媒體櫃選取影像。 需要兩個事件處理常式：一個在使用者選取相片時使用；另一個在使用者取消顯示相片媒體櫃時使用。 接著，`PresentModalViewController` 即會向使用者顯示相片媒體櫃。
 
-此時，`GetImageStreamAsync` 方法必須將 `Task<Stream>` 物件傳回給呼叫它的程式碼。 這項工作只有在使用者完成與相片媒體櫃的互動，並呼叫其中一個事件處理常式時才會完成。 對於這樣的情況,[`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx)類是必不可少的。 這個類別會提供適當泛型型別的 `Task` 物件以從 `GetImageStreamAsync` 方法傳回，該類別即可稍後於工作完成時收到通知。
+此時，`GetImageStreamAsync` 方法必須將 `Task<Stream>` 物件傳回給呼叫它的程式碼。 這項工作只有在使用者完成與相片媒體櫃的互動，並呼叫其中一個事件處理常式時才會完成。 就這種情況而言， [`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) 類別是不可或缺的。 這個類別會提供適當泛型型別的 `Task` 物件以從 `GetImageStreamAsync` 方法傳回，該類別即可稍後於工作完成時收到通知。
 
-當使用者選取圖片時，即會呼叫 `FinishedPickingMedia` 事件處理常式。 不過，處理常式會提供 `UIImage` 物件，且 `Task` 必須傳回 .NET `Stream` 物件。 這分兩個步驟完成:首先將`UIImage`物件轉換為存儲在記憶體中的 PNG 或 JPEG 檔,`NSData`然後將`NSData`物件轉換為 .NET`Stream`物件。 呼叫 `TaskCompletionSource` 物件的 `SetResult` 方法時，其可提供 `Stream` 物件以完成工作：
+當使用者選取圖片時，即會呼叫 `FinishedPickingMedia` 事件處理常式。 不過，處理常式會提供 `UIImage` 物件，且 `Task` 必須傳回 .NET `Stream` 物件。 這會透過兩個步驟來完成： `UIImage` 物件會先轉換為儲存在物件中的記憶體中 PNG 或 JPEG 檔案 `NSData` ，然後 `NSData` 物件會轉換成 .net `Stream` 物件。 呼叫 `TaskCompletionSource` 物件的 `SetResult` 方法時，其可提供 `Stream` 物件以完成工作：
 
 ```csharp
 namespace DependencyServiceDemos.iOS
@@ -151,7 +143,7 @@ iOS 應用程式需要使用者的權限，以存取手機上的相片媒體櫃�
 
 ## <a name="android-implementation"></a>Android 實作
 
-Android 實作會使用 [**Select an Image**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) (選取影像) 配方和[程式碼範例](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)中所述的技巧。 不過，當使用者從圖片媒體櫃選取影像時，所呼叫的方法是衍生自 `Activity` 之類別中的 `OnActivityResult` 覆寫。 因此,Android 專案中的[`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs)正常 類已輔以欄位、`OnActivityResult`屬性和重寫方法:
+Android 實作會使用 [**Select an Image**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) (選取影像) 配方和[程式碼範例](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)中所述的技巧。 不過，當使用者從圖片媒體櫃選取影像時，所呼叫的方法是衍生自 `Activity` 之類別中的 `OnActivityResult` 覆寫。 基於這個理由， [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) Android 專案中的一般類別已經使用欄位、屬性和方法的覆寫進行補充 `OnActivityResult` ：
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -194,7 +186,7 @@ public class MainActivity : FormsAppCompatActivity
 
 `OnActivityResult` 覆寫表示選取的圖片檔案具有 Android `Uri` 物件，但其可藉由呼叫 `ContentResolver` 物件 (擷取自活動的 `ContentResolver` 屬性) 的 `OpenInputStream` 方法來轉換成 .NET `Stream` 物件。
 
-如同 iOS 實作，Android 實作會使用 `TaskCompletionSource` 以在工作完成時發出通知。 這個 `TaskCompletionSource` 物件會定義為 `MainActivity` 類別中的公用屬性。 這允許在 Android[`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/Services/PhotoPickerService.cs)專案中的 類中引用該屬性。 這是搭配 `GetImageStreamAsync` 方法的類別：
+如同 iOS 實作，Android 實作會使用 `TaskCompletionSource` 以在工作完成時發出通知。 這個 `TaskCompletionSource` 物件會定義為 `MainActivity` 類別中的公用屬性。 這可讓您在 Android 專案的類別中參考該屬性 [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/Services/PhotoPickerService.cs) 。 這是搭配 `GetImageStreamAsync` 方法的類別：
 
 ```csharp
 [assembly: Dependency(typeof(PhotoPickerService))]
@@ -228,7 +220,7 @@ namespace DependencyServiceDemos.Droid
 
 ## <a name="uwp-implementation"></a>UWP 實作
 
-不同於 iOS 和 Android 實作，通用 Windows 平台的相片選擇器實作不需要 `TaskCompletionSource` 類別。 類[`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.UWP/Services/PhotoPickerService.cs)使用[`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/)類來訪問照片庫。 因為 `FileOpenPicker` 的 `PickSingleFileAsync` 方法本身為非同步，所以 `GetImageStreamAsync` 方法可以直接使用 `await` 搭配該方法 (和其他非同步方法)，並傳回 `Stream` 物件：
+不同於 iOS 和 Android 實作，通用 Windows 平台的相片選擇器實作不需要 `TaskCompletionSource` 類別。 [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.UWP/Services/PhotoPickerService.cs)類別會使用 [`FileOpenPicker`](/uwp/api/Windows.Storage.Pickers.FileOpenPicker/) 類別來取得相片媒體櫃的存取權。 因為 `FileOpenPicker` 的 `PickSingleFileAsync` 方法本身為非同步，所以 `GetImageStreamAsync` 方法可以直接使用 `await` 搭配該方法 (和其他非同步方法)，並傳回 `Stream` 物件：
 
 ```csharp
 [assembly: Dependency(typeof(PhotoPickerService))]
@@ -268,7 +260,7 @@ namespace DependencyServiceDemos.UWP
 
 現在，每個平台均已實作介面，.NET Standard 程式庫中的共用程式碼即可加以利用。
 
-UI 包含[`Button`](xref:Xamarin.Forms.Button)可以 按下以選擇照片的 UI:
+UI 包含 [`Button`](xref:Xamarin.Forms.Button) 可按一下以選擇相片的：
 
 ```xaml
 <Button Text="Pick Photo"

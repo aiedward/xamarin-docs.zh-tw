@@ -1,19 +1,12 @@
 ---
-title: Xamarin.Essentials：Accelerometer
-description: Xamarin.Essentials 中的 Accelerometer 類別可讓您監視裝置的加速度感應器，該感應器指出裝置在三維空間中的加速度。
-ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70765051"
+標題： ' ' Xamarin.Essentials ：加速計 ' ' 描述： ' 中的加速計類別 Xamarin.Essentials 可讓您監視裝置的加速計感應器，這表示裝置在三維空間中的加速度。
+assetid： author： ms-chap： ms. date： ms. custom： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：Accelerometer
+
+# <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials：加速計
 
 **Accelerometer** 類別可讓您監視裝置的加速計感應器，此感應器指出裝置在三維空間中的加速度。
 
@@ -23,7 +16,7 @@ ms.locfileid: "70765051"
 
 ## <a name="using-accelerometer"></a>使用 Accelerometer
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

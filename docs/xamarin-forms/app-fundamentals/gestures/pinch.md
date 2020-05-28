@@ -1,26 +1,29 @@
 ---
-title: 新增捏合手勢辨識器
-description: 本文說明如何使用捏合手勢，在捏合位置執行影像的互動式縮放。
-ms.prod: xamarin
-ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/21/2016
-ms.openlocfilehash: be7a145e93aa4720b38921efc895ca3f3f33edb3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: da4a8bc66a7986efd3683de6dce1f6af618b85cc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68656036"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137848"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>新增捏合手勢辨識器
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 
-_捏合手勢用於執行互動式縮放,並與 PinchGesture 識別器類一起實現。捏合手勢的常見方案是在捏合位置執行圖像的互動式縮放。這是通過縮放視口的內容來實現的,本文演示了這一點。_
+_縮小手勢是用來執行互動式縮放，並使用 PinchGestureRecognizer 類別實作為。縮小手勢的常見案例是在縮小位置執行影像的互動式縮放。這是藉由調整視口的內容來完成，並在本文中示範。_
 
-要使用捏合手勢使用戶介面元素可縮放,請建立實例[`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer)、處理[`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated)事件,並將新的手勢識別器添加到[`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers)使用者介面元素的集合中。 以下代碼範例顯示`PinchGestureRecognizer`附加到元素的[`Image`](xref:Xamarin.Forms.Image):
+若要讓使用者介面專案以縮小手勢可縮放，請建立 [`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) 實例、處理 [`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) 事件，並將新的手勢辨識器新增至 [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) 使用者介面專案上的集合。 下列程式碼範例顯示 `PinchGestureRecognizer` 附加至元素的 [`Image`](xref:Xamarin.Forms.Image) ：
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();
@@ -72,7 +75,7 @@ public class PinchToZoomContainer : ContentView
 }
 ```
 
-您可以在使用者介面項目周圍包裝此類別，讓捏合手勢縮放包裝的使用者介面項目。 下面的 XAML 代碼範例`PinchToZoomContainer`顯示了[`Image`](xref:Xamarin.Forms.Image)換行 元素:
+您可以在使用者介面項目周圍包裝此類別，讓捏合手勢縮放包裝的使用者介面項目。 下列 XAML 程式碼範例示範如何 `PinchToZoomContainer` 包裝 [`Image`](xref:Xamarin.Forms.Image) 元素：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +94,7 @@ public class PinchToZoomContainer : ContentView
 </ContentPage>
 ```
 
-以下代碼範例顯示如何在 C#`PinchToZoomContainer`[`Image`](xref:Xamarin.Forms.Image)頁 中換行元素:
+下列程式碼範例顯示如何 `PinchToZoomContainer` [`Image`](xref:Xamarin.Forms.Image) 在 c # 頁面中包裝專案：
 
 ```csharp
 public class HomePageCS : ContentPage
@@ -110,7 +113,7 @@ public class HomePageCS : ContentPage
 }
 ```
 
-當[`Image`](xref:Xamarin.Forms.Image)元素收到捏合手勢時,顯示的圖像將放大或縮小。縮放由`PinchZoomContainer.OnPinchUpdated`方法執行,如下代碼範例所示:
+當 [`Image`](xref:Xamarin.Forms.Image) 元素收到縮小的手勢時，顯示的影像將會放大或縮小。縮放是由 `PinchZoomContainer.OnPinchUpdated` 方法執行，如下列程式碼範例所示：
 
 ```csharp
 void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
@@ -160,7 +163,7 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 }
 ```
 
-此方法會根據使用者的捏合手勢，更新包裝使用者介面項目的縮放等級。 這是[`Scale`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale)通過使用[`ScaleOrigin`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin)實例[`Status`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status)[`PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs)的值和 實例的屬性來計算要在捏合手勢的原點應用的比例因子來實現的。 然後,通過將其[`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)的和[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)屬性設置為計算值,在捏合手勢的原點縮放已包裝的使用者元素。
+此方法會根據使用者的捏合手勢，更新包裝使用者介面項目的縮放等級。 這是藉由使用 [`Scale`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale) 實例的、 [`ScaleOrigin`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) 和屬性值 [`Status`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) [`PinchGestureUpdatedEventArgs`](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) 來計算要在縮小手勢原點套用的縮放因數。 包裝的使用者專案接著會將其 [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) 、 [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) 和 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) 屬性設定為計算值，藉此在縮小手勢的原點縮放。
 
 ## <a name="related-links"></a>相關連結
 

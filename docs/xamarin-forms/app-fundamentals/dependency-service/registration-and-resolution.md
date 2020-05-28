@@ -1,39 +1,42 @@
 ---
-title: Xamarin.Forms DependencyService 登錄與解析
-description: 此文章說明如何使用 Xamarin.Forms DependencyService 類別叫用原生平台的功能。
-ms.prod: xamarin
-ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/05/2019
-ms.openlocfilehash: 6e666c16c9b1afc3478f524cae2f84d6704319c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsDependencyService 註冊與解決
+description: 本文說明如何使用 Xamarin.Forms DependencyService 類別來叫用原生平臺功能。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70199218"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138768"
 ---
-# <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms DependencyService 登錄與解析
+# <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.FormsDependencyService 註冊與解決
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
-使用 Xamarin.Forms[`DependencyService`](xref:Xamarin.Forms.DependencyService)呼叫本機平臺功能時,`DependencyService`必須向註冊平台實現,然後從共享代碼解析以調用它們。
+使用來叫用 Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) 原生平臺功能時，必須向註冊平臺執行 `DependencyService` ，然後從共用程式碼加以解析，以叫用它們。
 
 ## <a name="register-platform-implementations"></a>登錄平台實作
 
-平台實現必須註冊到[`DependencyService`](xref:Xamarin.Forms.DependencyService), 以便 Xamarin.Forms 可以在執行時找到它們。
+平臺程式必須向註冊， [`DependencyService`](xref:Xamarin.Forms.DependencyService) Xamarin.Forms 才能在執行時間找到它們。
 
-可以使用 或[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)[`Register`](xref:Xamarin.Forms.DependencyService.Register*)方法 執行註冊。
+您可以使用或方法來執行註冊 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 。
 
 > [!IMPORTANT]
-> 使用 .NET 本機編譯的 UWP 專案的[`Register`](xref:Xamarin.Forms.DependencyService.Register*)發佈版本應使用 方法註冊平台實現。
+> 使用 .NET native 編譯的 UWP 專案發行組建，應該使用方法來註冊平臺的執行 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 。
 
 ### <a name="registration-by-attribute"></a>透過屬性登錄
 
-[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)可用於將平台取得註冊到[`DependencyService`](xref:Xamarin.Forms.DependencyService)。 該屬性表示所指定型別會提供介面的具體實作。
+[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)可以用來向註冊平臺執行 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 該屬性表示所指定型別會提供介面的具體實作。
 
-下面的範例顯示了使用[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)`IDeviceOrientationService`註冊介面的 iOS 實現:
+下列範例顯示 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 如何使用來註冊介面的 iOS 執行 `IDeviceOrientationService` ：
 
 ```csharp
 using Xamarin.Forms;
@@ -51,18 +54,18 @@ namespace DependencyServiceDemos.iOS
 }
 ```
 
-這個範例中,註冊[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)到`DeviceOrientationService` [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 這會導致具象型別向它所實作的介面登錄。
+在此範例中，會 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) `DeviceOrientationService` 向註冊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 這會導致具象型別向它所實作的介面登錄。
 
-同樣,其他平台上介面`IDeviceOrientationService`的實現也應註冊到[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)。
+同樣地， `IDeviceOrientationService` 其他平臺上的介面的執行應該會向註冊 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 。
 
 > [!NOTE]
-> 在命名空間[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)級別對執行與的註冊。
+> 向註冊， [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) 會在命名空間層級執行。
 
 ### <a name="registration-by-method"></a>透過方法登錄
 
-這些方法[`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*)可用於將平台實現註冊到[`DependencyService`](xref:Xamarin.Forms.DependencyService)。
+[`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*)方法可以用來向註冊平臺的執行 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。
 
-下面的範例顯示了使用方法[`Register`](xref:Xamarin.Forms.DependencyService.Register*)`IDeviceOrientationService`註冊 介面的 iOS 實現:
+下列範例顯示 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 如何使用方法來註冊介面的 iOS 執行 `IDeviceOrientationService` ：
 
 ```csharp
 [Register("AppDelegate")]
@@ -78,33 +81,33 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 }
 ```
 
-這個方法[`Register`](xref:Xamarin.Forms.DependencyService.Register*)根據介面註冊具體類型,`DeviceOrientationService``IDeviceOrientationService`該方法根據介面註冊具體類型。 或,[`Register`](xref:Xamarin.Forms.DependencyService.Register*)該方法的重載可用於將平台取得註冊[`DependencyService`](xref:Xamarin.Forms.DependencyService)到 :
+在此範例中， [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法會針對介面註冊實體類型 `DeviceOrientationService` `IDeviceOrientationService` 。 或者，您也可以使用方法的多載， [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 向註冊平臺執行 [`DependencyService`](xref:Xamarin.Forms.DependencyService) ：
 
 ```csharp
 DependencyService.Register<DeviceOrientationService>();
 ```
 
-這個選項,[`Register`](xref:Xamarin.Forms.DependencyService.Register*)方法`DeviceOrientationService`將註冊到 。 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 這會導致具象型別向它所實作的介面登錄。
+在此範例中， [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 方法會 `DeviceOrientationService` 向註冊 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 這會導致具象型別向它所實作的介面登錄。
 
-同樣,可以在其他平台上實現`IDeviceOrientationService`介面,也可以向這些[`Register`](xref:Xamarin.Forms.DependencyService.Register*)方法 註冊。
+同樣地，您 `IDeviceOrientationService` 可以使用方法來註冊其他平臺上介面的執行 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 。
 
 > [!IMPORTANT]
-> 在從共享[`Register`](xref:Xamarin.Forms.DependencyService.Register*)代碼調用平臺實現提供的功能之前,必須在平臺專案中執行與方法的註冊。
+> 使用方法註冊 [`Register`](xref:Xamarin.Forms.DependencyService.Register*) 必須在平臺專案中執行，然後才能從共用程式碼叫用平臺執行所提供的功能。
 
 ## <a name="resolve-the-platform-implementations"></a>解析平台實作
 
-必須先解析平台實作，才能叫用它。 這通常在使用方法[`DependencyService.Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)的共享代碼中執行。 但是,也可以使用方法[`DependencyService.Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)完成。
+必須先解析平台實作，才能叫用它。 這通常是使用方法在共用程式碼中執行 [`DependencyService.Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 。 不過，它也可以使用方法來完成 [`DependencyService.Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 。
 
-預設情況下,[`DependencyService`](xref:Xamarin.Forms.DependencyService)將僅解析具有無參數建構函數的平台實現。 不過，您可以將相依性解析方法插入 Xamarin.Forms，其會使用相依性插入容器或 Factory 方法來解析平台實作。 這種方法可用來解析具有參數建構函式的平台實作。 如需詳細資訊，請參閱 [Xamarin.Forms 中的相依性解析](~/xamarin-forms/internals/dependency-resolution.md)。
+根據預設， [`DependencyService`](xref:Xamarin.Forms.DependencyService) 只會解析具有無參數的函式的平臺執行。 不過，您可以在中插入相依性解析方法， Xamarin.Forms 以使用相依性插入容器或 factory 方法來解析平臺的執行。 這種方法可用來解析具有參數建構函式的平台實作。 如需詳細資訊，請參閱[中 Xamarin.Forms ](~/xamarin-forms/internals/dependency-resolution.md)的相依性解析。
 
 > [!IMPORTANT]
-> 調用尚未向[`DependencyService`](xref:Xamarin.Forms.DependencyService)中註冊的平台實現將導致引發`NullReferenceException`。
+> 叫用尚未向註冊的平臺執行時， [`DependencyService`](xref:Xamarin.Forms.DependencyService) 會導致擲回 `NullReferenceException` 。
 
 ### <a name="resolve-using-the-getlttgt-method"></a>使用 Get&lt;T&gt; 方法來解析
 
-該方法[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)在運行時檢索`T`介面 的平台實現,並將其實例創建為單例。 此執行個體會在應用程式的存留期內存留，任何解析相同平台實作的後續呼叫，都會擷取相同執行個體。
+[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)方法會在執行時間抓取介面的平臺實 `T` 作為，並將其實例建立為 singleton。 此執行個體會在應用程式的存留期內存留，任何解析相同平台實作的後續呼叫，都會擷取相同執行個體。
 
-以下代碼顯示了呼叫[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)方法`IDeviceOrientationService`解析 介面,然後呼`GetOrientation`叫其 方法的範例:
+下列程式碼顯示呼叫 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法以解析 `IDeviceOrientationService` 介面，然後叫用其方法的範例 `GetOrientation` ：
 
 ```csharp
 IDeviceOrientationService service = DependencyService.Get<IDeviceOrientationService>();
@@ -118,13 +121,13 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 ```
 
 > [!NOTE]
-> 默認情況下[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*),該方法將創建介面`T`的平台實現實例。 不過，可以變更此行為。 如需詳細資訊，請參閱[管理已解析物件的存留期](#manage-the-lifetime-of-resolved-objects)。
+> [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)根據預設，方法會將介面的平臺實作為單一實例來建立 `T` 。 不過，可以變更此行為。 如需詳細資訊，請參閱[管理已解析物件的存留期](#manage-the-lifetime-of-resolved-objects)。
 
 ### <a name="resolve-using-the-resolvelttgt-method"></a>使用 Resolve&lt;T&gt; 方法來解析
 
-該方法[`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)使用注入到 Xamarin.Forms`T`[`DependencyResolver`](xref:Xamarin.Forms.Internals.DependencyResolver)的依賴項解析方法在運行時檢索介面的平台實現。 如果依賴項解析方法尚未注入 Xamarin.Forms,`Resolve<T>`則該方法將回退到[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)調用 方法來檢索平台實現。 如需將相依性解析方法插入 Xamarin.Forms 的詳細資訊，請參閱 [Xamarin.Forms 中的相依性解析](~/xamarin-forms/internals/dependency-resolution.md)。
+[`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)方法 `T` 會在執行時間使用已插入至類別的相依性解析方法，來抓取介面的平臺執行 Xamarin.Forms [`DependencyResolver`](xref:Xamarin.Forms.Internals.DependencyResolver) 。 如果尚未將相依性解析方法插入 Xamarin.Forms ，此 `Resolve<T>` 方法將會回到呼叫 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法來抓取平臺的執行。 如需在中插入相依性解析方法的詳細資訊 Xamarin.Forms ，請參閱[中 Xamarin.Forms ](~/xamarin-forms/internals/dependency-resolution.md)的相依性解析。
 
-以下代碼顯示了呼叫[`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)方法`IDeviceOrientationService`解析 介面,然後呼`GetOrientation`叫其 方法的範例:
+下列程式碼顯示呼叫 [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 方法以解析 `IDeviceOrientationService` 介面，然後叫用其方法的範例 `GetOrientation` ：
 
 ```csharp
 IDeviceOrientationService service = DependencyService.Resolve<IDeviceOrientationService>();
@@ -138,24 +141,24 @@ DeviceOrientation orientation = DependencyService.Resolve<IDeviceOrientationServ
 ```
 
 > [!NOTE]
-> 當[`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)該方法回退到調用方法[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)時 ,默認情況下,它`T`創建介面 的平台實現實例作為單個實例。 不過，可以變更此行為。 如需詳細資訊，請參閱[管理已解析物件的存留期](#manage-the-lifetime-of-resolved-objects)。
+> 當 [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 方法回到呼叫 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) 方法時，它預設會建立介面的平臺實 `T` 作為單一實例。 不過，可以變更此行為。 如需詳細資訊，請參閱[管理已解析物件的存留期](#manage-the-lifetime-of-resolved-objects)。
 
 ## <a name="manage-the-lifetime-of-resolved-objects"></a>管理已解析物件的存留期
 
-類的[`DependencyService`](xref:Xamarin.Forms.DependencyService)默認行為是將平臺實現解析為單例。 因此，平台實作會在應用程式存留期內存留。
+類別的預設行為 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 是將平臺實作為解析為單次個體。 因此，平台實作會在應用程式存留期內存留。
 
-此行為使用和[`DependencyFetchTarget`](xref:Xamarin.Forms.DependencyFetchTarget)[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)[`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)上的可選參數指定。 Entat[`DependencyFetchTarget`](xref:Xamarin.Forms.DependencyFetchTarget)
+這個行為是使用 [`DependencyFetchTarget`](xref:Xamarin.Forms.DependencyFetchTarget) 和方法上的選擇性引數所指定 [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 。 [`DependencyFetchTarget`](xref:Xamarin.Forms.DependencyFetchTarget)列舉會定義兩個成員：
 
 - `GlobalInstance`，此成員會將平台實作以 Singleton 傳回。
 - `NewInstance`，此成員會傳回平台實作的新執行個體。 平台執行個體的存留期接著會由應用程式負責管理。
 
-和 方法都將其可選參數設置[`DependencyFetchTarget.GlobalInstance`](xref:Xamarin.Forms.DependencyFetchTarget)為 ,因此平台實現始終以 singletons[`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*)[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)身份解析。 可以更改此行為,以便透過將與[`DependencyFetchTarget.NewInstance`](xref:Xamarin.Forms.DependencyFetchTarget)`Get<T>``Resolve<T>`方法指定為 參數來建立新的平台實現實例:
+[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*)和 [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 方法都會將其選擇性引數設定為 [`DependencyFetchTarget.GlobalInstance`](xref:Xamarin.Forms.DependencyFetchTarget) ，因此平臺實作為一律會解析為單次個體。 您可以變更此行為，藉由指定 [`DependencyFetchTarget.NewInstance`](xref:Xamarin.Forms.DependencyFetchTarget) 作為和方法的引數來建立平臺實例的新實例 `Get<T>` `Resolve<T>` ：
 
 ```csharp
 ITextToSpeechService service = DependencyService.Get<ITextToSpeechService>(DependencyFetchTarget.NewInstance);
 ```
 
-在此範例中,為[`DependencyService`](xref:Xamarin.Forms.DependencyService)`ITextToSpeechService`介面創建平臺實現的新實例。 解析 `ITextToSpeechService` 的任何後續呼叫，都會建立新執行個體。
+在此範例中，會 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 為介面建立平臺執行的新實例 `ITextToSpeechService` 。 解析 `ITextToSpeechService` 的任何後續呼叫，都會建立新執行個體。
 
 一律建立平台實作的新執行個體，會使應用程式變得必須負責管理執行個體的存留期。 這表示如果您訂閱平台實作中定義的事件，當不再需要平台實作時，您應該取消訂閱事件。 此外，這表示平台實作可能需要實作 `IDisposable`，並在 `Dispose` 方法中清除其資源。 範例應用程式在其 `TextToSpeechService` 平台實作中示範此案例。
 
@@ -176,4 +179,4 @@ using (service as IDisposable)
 ## <a name="related-links"></a>相關連結
 
 - [DependencyService 示範 (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
-- [Xamarin.Forms 中的相依性解析](~/xamarin-forms/internals/dependency-resolution.md)
+- [中的相依性解析Xamarin.Forms](~/xamarin-forms/internals/dependency-resolution.md)

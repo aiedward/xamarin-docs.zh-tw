@@ -1,28 +1,31 @@
 ---
-title: 將資料加入選擇器的項目集合
-description: 選擇器 檢視是從資料的清單中選取的文字項目控制項。 這篇文章說明如何藉由將它加入項目集合中，填入資料的選擇器，以及如何回應使用者的項目選取。
-ms.prod: xamarin
-ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/26/2019
-ms.openlocfilehash: 6363f84cb9c947fe8035b51c9f7aed05be6be9e0
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8872c6748ba778a2622d82803d580c781bd282cd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649200"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139629"
 ---
-# <a name="adding-data-to-a-pickers-items-collection"></a>將資料加入選擇器的項目集合
+# <a name="adding-data-to-a-pickers-items-collection"></a>將資料新增到 Picker 的項目集合
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 
-_選擇器 檢視是從資料的清單中選取的文字項目控制項。這篇文章說明如何藉由將它加入項目集合中，填入資料的選擇器，以及如何回應使用者的項目選取。_
+_[選擇器] 視圖是從資料清單中選取文字專案的控制項。本文說明如何在選擇器中填入資料，方法是將它加入至 Items 集合，以及如何回應使用者選取的專案。_
 
 ## <a name="populating-a-picker-with-data"></a>以資料填入選擇器
 
-Xamarin.Forms 2.3.4，填入的程序之前[ `Picker` ](xref:Xamarin.Forms.Picker)的資料已加入的資料顯示為唯讀[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合，其中的型別`IList<string>`. 集合中的每個項目必須是型別`string`。 可以在 XAML 中加入項目，初始化`Items`屬性的清單`x:String`項目：
+Xamarin.Forms在2.3.4 之前，用來填入資料的程式， [`Picker`](xref:Xamarin.Forms.Picker) 是將要顯示的資料加入至唯讀 [`Items`](xref:Xamarin.Forms.Picker.Items) 集合，其類型為 `IList<string>` 。 集合中的每個專案都必須是類型 `string` 。 藉由初始化 `Items` 具有專案清單的屬性，可以在 XAML 中加入專案 `x:String` ：
 
 ```xaml
 <Picker Title="Select a monkey"
@@ -39,7 +42,7 @@ Xamarin.Forms 2.3.4，填入的程序之前[ `Picker` ](xref:Xamarin.Forms.Picke
 </Picker>
 ```
 
-對等的 C# 程式碼如下所示：
+對等的 c # 程式碼如下所示：
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
@@ -52,16 +55,16 @@ picker.Items.Add("Howler Monkey");
 picker.Items.Add("Japanese Macaque");
 ```
 
-除了新增使用資料`Items.Add`方法，可以也將資料插入集合使用`Items.Insert`方法。
+除了使用方法加入資料之外 `Items.Add` ，也可以使用方法，將資料插入集合中 `Items.Insert` 。
 
 ## <a name="responding-to-item-selection"></a>回應專案選取
 
-A [ `Picker` ](xref:Xamarin.Forms.Picker)支援一次選取一個項目。 當使用者選取項目， [ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)引發事件，而[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性更新為整數，代表選取清單中項目的索引。 `SelectedIndex`屬性是以零為起始的數字，指出使用者已選取的項目。 如果未不選取任何項目，則這是當`Picker`先建立並初始化，`SelectedIndex`會是-1。
+[`Picker`](xref:Xamarin.Forms.Picker)支援一次選取一個專案。 當使用者選取專案時， [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) 就會引發事件，並將 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) 屬性更新為整數，代表清單中所選取專案的索引。 `SelectedIndex`屬性是以零為基底的數位，表示使用者選取的專案。 如果未選取任何專案，這是 `Picker` 第一次建立並初始化時的情況， `SelectedIndex` 將會是-1。
 
 > [!NOTE]
-> 項目中的選取行為[ `Picker` ](xref:Xamarin.Forms.Picker)可以自訂與特定平台在 iOS 上。 如需詳細資訊，請參閱 <<c0> [ 控制選擇器項目選取](~/xamarin-forms/platform/ios/picker-selection.md)。
+> 中的專案選取行為 [`Picker`](xref:Xamarin.Forms.Picker) 可以使用平臺特定，在 iOS 上進行自訂。 如需詳細資訊，請參閱[控制選擇器專案選擇](~/xamarin-forms/platform/ios/picker-selection.md)。
 
-下列程式碼範例示範`OnPickerSelectedIndexChanged`事件處理常式方法，也就是執行的時機[ `SelectedIndexChanged` ](xref:Xamarin.Forms.Picker.SelectedIndexChanged)引發事件：
+下列程式碼範例示範 `OnPickerSelectedIndexChanged` 事件處理常式方法，它會在 [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) 事件引發時執行：
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs e)
@@ -76,12 +79,12 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 }
 ```
 
-這個方法會取得[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性值，並使用值來擷取選取的項目，從[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合。 因為每個項目`Items`集集`string`，可以藉由顯示[ `Label` ](xref:Xamarin.Forms.Label)而不需要轉型。
+這個方法會 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) 取得屬性值，並使用值來抓取集合中選取的專案 [`Items`](xref:Xamarin.Forms.Picker.Items) 。 因為集合中的每個專案 `Items` 都是 `string` ，所以可以顯示， [`Label`](xref:Xamarin.Forms.Label) 而不需要轉換。
 
 > [!NOTE]
-> A [ `Picker` ](xref:Xamarin.Forms.Picker)可以藉由設定顯示特定的項目初始化[ `SelectedIndex` ](xref:Xamarin.Forms.Picker.SelectedIndex)屬性。 不過，`SelectedIndex`屬性必須設定在初始化之後[ `Items` ](xref:Xamarin.Forms.Picker.Items)集合。
+> [`Picker`](xref:Xamarin.Forms.Picker)可以初始化，藉由設定屬性來顯示特定專案 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) 。 不過，在 `SelectedIndex` 初始化集合之後，必須設定屬性 [`Items`](xref:Xamarin.Forms.Picker.Items) 。
 
 ## <a name="related-links"></a>相關連結
 
-- [選擇器示範 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
-- [選擇器](xref:Xamarin.Forms.Picker)
+- [選擇器示範（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+- [Picker](xref:Xamarin.Forms.Picker)

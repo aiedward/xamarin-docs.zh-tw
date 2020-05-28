@@ -1,38 +1,41 @@
 ---
-title: Xamarin 中的泛型。表單 XAML
-description: Xamarin。表單 XAML 藉由將泛型條件約束指定為型別引數，來提供取用泛型 CLR 型別的支援。
-ms.prod: xamarin
-ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/28/2020
-ms.openlocfilehash: 9cda08a3bab0e25db2315c9795721e25d47d2429
-ms.sourcegitcommit: 154a3e7aec775327565bb54eda1a610976af1d6f
+title: XAML 中的泛型 Xamarin.Forms
+description: Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供取用泛型 CLR 類型的支援。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 814e622a822e2eb1cf07f71bfb1da1d6eac5631f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624705"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138108"
 ---
-# <a name="generics-in-xamarinforms-xaml"></a>Xamarin 中的泛型。表單 XAML
+# <a name="generics-in-xamarinforms-xaml"></a>XAML 中的泛型 Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 
-Xamarin。表單 XAML 藉由將泛型條件約束指定為型別引數，來提供取用泛型 CLR 型別的支援。 這項支援是由`x:TypeArguments`指示詞所提供，該指示詞會將泛型的條件約束類型引數傳遞至泛型型別的函式。
+Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供取用泛型 CLR 類型的支援。 這項支援是由指示詞所提供，該指示詞會將 `x:TypeArguments` 泛型的條件約束類型引數傳遞至泛型型別的函式。
 
 > [!IMPORTANT]
-> 不支援使用`x:TypeArguments`指示詞來定義 Xamarin 中的泛型類別。
+> 不支援使用指示詞在 XAML 中定義泛型類別 Xamarin.Forms `x:TypeArguments` 。
 
-型別引數會指定為字串，而且通常會加上前置`sys:String`詞`sys:Int32`，例如和。 必須加上前置項，因為一般的 CLR 泛型條件約束類型來自未對應至預設 Xamarin. Forms 命名空間的程式庫。 不過，XAML 2009 內建類型（例如`x:String`和`x:Int32`）也可以指定為類型引數，其中`x`是 xaml 2009 的 xaml 語言命名空間。 如需 XAML 2009 內建類型的詳細資訊，請參閱[xaml 2009 語言基本](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)專案。
+型別引數會指定為字串，而且通常會加上前置詞，例如 `sys:String` 和 `sys:Int32` 。 必須加上前置項，因為一般的 CLR 泛型條件約束類型來自未對應至預設命名空間的程式庫 Xamarin.Forms 。 不過，XAML 2009 內建類型（例如 `x:String` 和 `x:Int32` ）也可以指定為類型引數，其中 `x` 是 XAML 2009 的 xaml 語言命名空間。 如需 XAML 2009 內建類型的詳細資訊，請參閱[xaml 2009 語言基本](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)專案。
 
 您可以使用逗號分隔符號來指定多個類型引數。 此外，如果泛型條件約束使用泛型型別，則嵌套的條件約束類型引數應該包含在括弧中。
 
 > [!NOTE]
-> `x:Type`標記延伸模組會提供泛型型別的 CLR 類型參考，並在 c # 中具有與`typeof`運算子類似的功能。 如需詳細資訊，請參閱[x:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
+> `x:Type`標記延伸模組會提供泛型型別的 CLR 類型參考，並 `typeof` 在 c # 中具有與運算子類似的功能。 如需詳細資訊，請參閱[x:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
 
 ## <a name="single-primitive-type-argument"></a>單一基本類型引數
 
-您可以使用`x:TypeArguments`指示詞，將單一基本類型引數指定為前置字串引數：
+您可以使用指示詞，將單一基本類型引數指定為前置字串引數 `x:TypeArguments` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -55,9 +58,9 @@ Xamarin。表單 XAML 藉由將泛型條件約束指定為型別引數，來提�
 </ContentPage>
 ```
 
-在此範例中`System.Collections.Generic` ，會定義為`scg` XAML 命名空間。 `CollectionView.ItemsSource`屬性會使用 XAML 2009 內`List<T>` `x:String`建類型，設定為`string`以類型引數具現化的。 `List<string>`集合會使用多個`string`專案進行初始化。
+在此範例中， `System.Collections.Generic` 會定義為 `scg` XAML 命名空間。 `CollectionView.ItemsSource`屬性會 `List<T>` `string` 使用 XAML 2009 內建類型，設定為以類型引數具現化的 `x:String` 。 `List<string>`集合會使用多個專案進行初始化 `string` 。
 
-或者，您也可以使用`List<T>` CLR `String`類型來具現化集合：
+或者，您也 `List<T>` 可以使用 CLR 類型來具現化集合 `String` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -83,7 +86,7 @@ Xamarin。表單 XAML 藉由將泛型條件約束指定為型別引數，來提�
 
 ## <a name="single-object-type-argument"></a>單一物件類型引數
 
-您可以使用`x:TypeArguments`指示詞，將單一物件類型引數指定為前置字串引數：
+您可以使用指示詞，將單一物件類型引數指定為前置字串引數 `x:TypeArguments` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -136,11 +139,11 @@ Xamarin。表單 XAML 藉由將泛型條件約束指定為型別引數，來提�
 </ContentPage>
 ```
 
-在此範例中`GenericsDemo.Models` ，會定義為`models` xaml 命名空間， `System.Collections.Generic`並定義為`scg` xaml 命名空間。 `CollectionView.ItemsSource`屬性會設定為`List<T>`以`Monkey`類型引數具現化的。 `List<Monkey>`集合`Monkey`會使用多個專案進行初始化，而[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)定義每個`Monkey`物件外觀的會設定為`ItemTemplate`的。 [`CollectionView`](xref:Xamarin.Forms.CollectionView)
+在此範例中， `GenericsDemo.Models` 會定義為 `models` xaml 命名空間，並 `System.Collections.Generic` 定義為 `scg` xaml 命名空間。 `CollectionView.ItemsSource`屬性會設定為以 `List<T>` 類型引數具現化的 `Monkey` 。 `List<Monkey>`集合會使用多個專案進行初始化 `Monkey` ，而 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義每個物件外觀的會 `Monkey` 設定為 `ItemTemplate` 的 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。
 
 ## <a name="multiple-type-arguments"></a>多個類型引數
 
-您可以使用`x:TypeArguments`指示詞，將多個類型引數指定為加上前置詞的字串引數（以逗號分隔）。 當泛型條件約束使用泛型型別時，嵌套的條件約束類型引數會包含在括弧內：
+您可以使用指示詞，將多個類型引數指定為加上前置詞的字串引數（以逗號分隔） `x:TypeArguments` 。 當泛型條件約束使用泛型型別時，嵌套的條件約束類型引數會包含在括弧內：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -205,7 +208,7 @@ Xamarin。表單 XAML 藉由將泛型條件約束指定為型別引數，來提�
 </ContentPage    
 ```
 
-在此範例中`GenericsDemo.Models` ，會定義為`models` xaml 命名空間， `System.Collections.Generic`並定義為`scg` xaml 命名空間。 `CollectionView.ItemsSource`屬性會設定`List<T>`為使用`KeyValuePair<TKey, TValue>`條件約束具現化的，並具有內部條件約束類型自`string`變數`Monkey`和。 `List<KeyValuePair<string,Monkey>>`集合會`KeyValuePair`使用非預設`KeyValuePair`的處理常式，以多個專案進行初始化，而[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)定義每個`Monkey`物件外觀的會設定為`ItemTemplate`的。 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 如需將引數傳遞至非預設的函式的詳細資訊，請參閱[傳遞函數引數](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)。
+在此範例中， `GenericsDemo.Models` 會定義為 `models` xaml 命名空間，並 `System.Collections.Generic` 定義為 `scg` xaml 命名空間。 `CollectionView.ItemsSource`屬性會設定為 `List<T>` 使用條件約束具現化的 `KeyValuePair<TKey, TValue>` ，並具有內部條件約束類型引數 `string` 和 `Monkey` 。 `List<KeyValuePair<string,Monkey>>`集合會使用非預設的處理常式，以多個專案進行初始化 `KeyValuePair` ， `KeyValuePair` 而 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 定義每個物件外觀的會 `Monkey` 設定為 `ItemTemplate` 的 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 如需將引數傳遞至非預設的函式的詳細資訊，請參閱[傳遞函數引數](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)。
 
 ## <a name="related-links"></a>相關連結
 

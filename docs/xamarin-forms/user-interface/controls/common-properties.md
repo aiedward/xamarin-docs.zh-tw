@@ -1,22 +1,25 @@
 ---
-title: Xamarin. Forms 通用控制項屬性、方法和事件
-description: 本文說明在 VisualElement 類別上定義的通用屬性、方法和事件，通常用於衍生類別中。
-ms.prod: xamarin
-ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 08/21/2019
-ms.openlocfilehash: 7d8f5309d14c2a99afff0998a7013a9ebec338c1
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Forms通用控制項屬性、方法和事件
+description: ''
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425841"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136418"
 ---
-# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin. Forms 通用控制項屬性、方法和事件
+# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms通用控制項屬性、方法和事件
 
-在 `VisualElement` xamarin. forms 應用程式中，xamarin 類別是大部分控制項所使用的基類。 `VisualElement`類別會定義在衍生類別中使用的許多[屬性](#properties)、[方法](#methods)和[事件](#events)。
+Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使用的基類 Xamarin.Forms 。 `VisualElement`類別會定義在衍生類別中使用的許多[屬性](#properties)、[方法](#methods)和[事件](#events)。
 
 ## <a name="properties"></a>屬性
 
@@ -36,15 +39,15 @@ ms.locfileid: "83425841"
 
 ### [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)
 
-`Behaviors`屬性是 `List` `Behavior` 物件的。 行為可讓您將可重複使用的功能加入至清單，藉此將它們附加至元素 `Behaviors` 。 如需類別的詳細資訊 `Behavior` ，請參閱[Xamarin. 表單行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
+`Behaviors`屬性是 `List` `Behavior` 物件的。 行為可讓您將可重複使用的功能加入至清單，藉此將它們附加至元素 `Behaviors` 。 如需類別的詳細資訊 `Behavior` ，請參閱[ Xamarin.Forms 行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
 
 ### [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)
 
-`Bounds`屬性是唯讀 `Rectangle` 物件，代表控制項所佔用的空間。 `Bounds`屬性值會在版面配置週期期間指派。 `Rectangle` `struct` 包含有用的屬性和方法，可用於測試矩形的交集和內含專案。 如需詳細資訊，請參閱[Xamarin 矩形 API](xref:Xamarin.Forms.Rectangle)。
+`Bounds`屬性是唯讀 `Rectangle` 物件，代表控制項所佔用的空間。 `Bounds`屬性值會在版面配置週期期間指派。 `Rectangle` `struct` 包含有用的屬性和方法，可用於測試矩形的交集和內含專案。 如需詳細資訊，請參閱[ Xamarin.Forms 矩形 API](xref:Xamarin.Forms.Rectangle)。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
-`Effects`屬性是物件的 `List` `Effect` ，繼承自 `Element` （x： Xamarin. form. Element）類別。 效果可讓您自訂原生控制項，而且通常用於小型的樣式變更。 如需類別的詳細資訊 `Effect` ，請參閱[Xamarin 效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
+`Effects`屬性是物件的 `List` `Effect` ，繼承自 `Element` （x： Xamarin.Forms 。元素）類別。 效果可讓您自訂原生控制項，而且通常用於小型的樣式變更。 如需類別的詳細資訊 `Effect` ，請參閱[ Xamarin.Forms 效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 ### [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)
 
@@ -130,11 +133,11 @@ ms.locfileid: "83425841"
 
 ### [`Style`](xref:Xamarin.Forms.NavigableElement.Style)
 
-`Style` 屬性繼承自 `NavigableElement` 類別。 這個屬性是類別的實例 `Style` 。 `Style`類別包含觸發程式、setter 和行為，可定義視覺專案的外觀和行為。 如需詳細資訊，請參閱[Xamarin. 表單 XAML 樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
+`Style` 屬性繼承自 `NavigableElement` 類別。 這個屬性是類別的實例 `Style` 。 `Style`類別包含觸發程式、setter 和行為，可定義視覺專案的外觀和行為。 如需詳細資訊，請參閱[ Xamarin.Forms XAML 樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)。
 
 ### [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)
 
-`StyleClass`屬性是 `string` 代表類別名稱的物件清單 `Style` 。 這個屬性繼承自 `NavigableElement` 類別。 `StyleClass`屬性可讓您將多個樣式屬性套用至 `VisualElement` 實例。 如需詳細資訊，請參閱[Xamarin. 表單樣式類別](~/xamarin-forms/user-interface/styles/xaml/style-class.md)。
+`StyleClass`屬性是 `string` 代表類別名稱的物件清單 `Style` 。 這個屬性繼承自 `NavigableElement` 類別。 `StyleClass`屬性可讓您將多個樣式屬性套用至 `VisualElement` 實例。 如需詳細資訊，請參閱[ Xamarin.Forms 樣式類別](~/xamarin-forms/user-interface/styles/xaml/style-class.md)。
 
 ### [`TabIndex`](xref:Xamarin.Forms.VisualElement.TabIndex)
 
@@ -144,21 +147,21 @@ ms.locfileid: "83425841"
 
 `TranslationX`屬性是一個 `double` 值，可定義要在 X 軸上套用的差異轉譯。 轉譯會在版面配置之後套用，而且通常用於套用動畫。 將專案轉換為其父容器的界限時，我會避免輸入無法運作。
 
-如需詳細資訊，請參閱[在 Xamarin 中的動畫](~/xamarin-forms/user-interface/animation/index.md)。
+如需詳細資訊，請參閱[中 Xamarin.Forms 的動畫](~/xamarin-forms/user-interface/animation/index.md)。
 
 ### [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
 
 `TranslationY`屬性是一個 `double` 值，可定義要套用在 Y 軸上的差異轉譯。 轉譯會在版面配置之後套用，而且通常用於套用動畫。 將專案轉換為其父容器的界限時，我會避免輸入無法運作。
 
-如需詳細資訊，請參閱[在 Xamarin 中的動畫](~/xamarin-forms/user-interface/animation/index.md)。
+如需詳細資訊，請參閱[中 Xamarin.Forms 的動畫](~/xamarin-forms/user-interface/animation/index.md)。
 
 ### [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers)
 
-`Triggers`屬性是物件的唯讀 `List` `TriggerBase` 。 觸發程式可讓應用程式開發人員在 XAML 中表達動作，以變更控制項的視覺外觀，以回應事件或屬性變更。 如需詳細資訊，請參閱[Xamarin. Forms 觸發](~/xamarin-forms/app-fundamentals/triggers.md)程式。
+`Triggers`屬性是物件的唯讀 `List` `TriggerBase` 。 觸發程式可讓應用程式開發人員在 XAML 中表達動作，以變更控制項的視覺外觀，以回應事件或屬性變更。 如需詳細資訊，請參閱[ Xamarin.Forms 觸發](~/xamarin-forms/app-fundamentals/triggers.md)程式。
 
 ### [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)
 
-`Visual`屬性是一個 `IVisual` 實例，可讓轉譯器建立並選擇性地套用至 `VisualElement` 實例。 `Visual`屬性會設定為符合其父系，因此在元件上定義轉譯器也會套用至該元件的任何子系。 如果控制項或其祖系上未設定任何自訂轉譯器，則會使用預設的 Xamarin。 如需詳細資訊，請參閱[Xamarin. Forms 視覺效果](~/xamarin-forms/user-interface/visual/index.md)。
+`Visual`屬性是一個 `IVisual` 實例，可讓轉譯器建立並選擇性地套用至 `VisualElement` 實例。 `Visual`屬性會設定為符合其父系，因此在元件上定義轉譯器也會套用至該元件的任何子系。 如果控制項或其祖系上未設定任何自訂轉譯器，則會使用預設轉譯器 Xamarin.Forms 。 如需詳細資訊，請參閱[ Xamarin.Forms 視覺效果](~/xamarin-forms/user-interface/visual/index.md)。
 
 ### [`Width`](xref:Xamarin.Forms.VisualElement.Width)
 
@@ -212,11 +215,11 @@ public void Unfocus ()
 
 ## <a name="events"></a>事件
 
-下列事件可在類別上取得 `VisualElement` 。 如需完整清單，請參閱[VisualElement 事件](xref:Xamarin.Forms.VisualElement#events)。
+下列事件可在類別上取得 `VisualElement` 。 如需完整清單，請參閱[ Xamarin.Forms VisualElement 事件](xref:Xamarin.Forms.VisualElement#events)。
 
 ### [`Focused`](xref:Xamarin.Forms.VisualElement.Focused)
 
-`Focused`每當實例收到焦點時，就會引發事件 `VisualElement` 。 這個事件不會透過 Xamarin. Forms 堆疊來進行，而是直接從原生控制項接收。 這個事件是由 [`IsFocused`](#isfocused) 屬性 setter 發出。
+`Focused`每當實例收到焦點時，就會引發事件 `VisualElement` 。 這個事件不會透過堆疊進行反升，而是 Xamarin.Forms 直接從原生控制項接收。 這個事件是由 [`IsFocused`](#isfocused) 屬性 setter 發出。
 
 ### [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
@@ -224,11 +227,11 @@ public void Unfocus ()
 
 ### [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)
 
-`Unfocused`每當實例失去焦點時，就會引發事件 `VisualElement` 。 這個事件不會透過 Xamarin. Forms 堆疊來進行，而是直接從原生控制項接收。 這個事件是由 [`IsFocused`](#isfocused) 屬性 setter 發出。
+`Unfocused`每當實例失去焦點時，就會引發事件 `VisualElement` 。 這個事件不會透過堆疊進行反升，而是 Xamarin.Forms 直接從原生控制項接收。 這個事件是由 [`IsFocused`](#isfocused) 屬性 setter 發出。
 
 ## <a name="units-of-measurement"></a>測量單位
 
-Android、iOS 和 UWP 平臺各有不同的度量單位，可能會因裝置而異。 Xamarin 會使用平臺獨立的測量單位，在裝置和平臺上標準化單位。 在 Xamarin 中，每英寸有160個單位，或每釐米64個單位。
+Android、iOS 和 UWP 平臺各有不同的度量單位，可能會因裝置而異。 Xamarin.Forms使用與平臺無關的測量單位，在裝置和平臺上標準化單位。 中的每英寸160單位或每釐米64個單位 Xamarin.Forms 。
 
 ## <a name="request-properties"></a>要求屬性
 
@@ -261,7 +264,7 @@ Android、iOS 和 UWP 平臺各有不同的度量單位，可能會因裝置而�
 
 ### <a name="minimum-properties-within-a-grid"></a>方格中的最小屬性
 
-`Grid`版面配置有自己的系統，可用於資料列和資料行的相對大小調整。 `MinimumWidthRequest` `MinimumHeightRequest` 在版面配置中使用或 `Grid` 不會有效果。 如需詳細資訊，請參閱[Xamarin. 表單方格](~/xamarin-forms/user-interface/layouts/grid.md)。
+`Grid`版面配置有自己的系統，可用於資料列和資料行的相對大小調整。 `MinimumWidthRequest` `MinimumHeightRequest` 在版面配置中使用或 `Grid` 不會有效果。 如需詳細資訊，請參閱[ Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)。
 
 ## <a name="related-links"></a>相關連結
 

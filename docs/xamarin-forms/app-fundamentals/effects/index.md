@@ -1,22 +1,25 @@
 ---
-title: Xamarin.Forms 效果
-description: 效果可讓每個平台的原生控制項不需使用自訂轉譯器實作，即可進行自訂。
-ms.prod: xamarin
-ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/01/2017
-ms.openlocfilehash: 2de1d1dd065a01bb457ebf03acdc0c01529abf7b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms效應
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a6206d2c561df74a01b7d7408e8d542f1e2189d3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73083828"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139330"
 ---
-# <a name="xamarinforms-effects"></a>Xamarin.Forms 效果
+# <a name="xamarinforms-effects"></a>Xamarin.Forms效應
 
-_Xamarin.Forms 使用者介面使用目標平臺的本機控制件呈現,允許 Xamarin.Forms 應用程式為每個平臺保留適當的外觀。效果允許自定義每個平臺上的本機控件,而無需採用自定義呈現器實現。_
+_Xamarin：表單使用者介面是使用目標平臺的原生控制項來轉譯，讓 Xamarin.Forms 應用程式可以為每個平臺保留適當的外觀與風格。效果可讓您自訂每個平臺上的原生控制項，而不需要使用自訂轉譯器的執行。_
 
 ## <a name="introduction-to-effects"></a>[效果簡介](introduction.md)
 
@@ -24,7 +27,7 @@ _Xamarin.Forms 使用者介面使用目標平臺的本機控制件呈現,允許 
 
 ## <a name="creating-an-effect"></a>[建立效果](creating.md)
 
-效果會簡化控制項的自訂。 本文演示如何創建效果,當控件獲得焦點時更改[`Entry`](xref:Xamarin.Forms.Entry)控件的背景顏色。
+效果會簡化控制項的自訂。 本文示範如何 [`Entry`](xref:Xamarin.Forms.Entry) 在控制項取得焦點時，建立變更控制項背景色彩的效果。
 
 ## <a name="passing-parameters-to-an-effect"></a>[傳遞參數給效果](passing-parameters/index.md)
 
@@ -36,4 +39,4 @@ _Xamarin.Forms 使用者介面使用目標平臺的本機控制件呈現,允許 
 
 ## <a name="reusable-roundeffect"></a>[可重複使用的 RoundEffect](reusable-roundeffect.md)
 
-RoundEffect 是一種可重用的效果,可應用於從 VisualElement 派生的任何控制項,以將控制件呈現為圓。 此效果可用於創建圓形圖像、圓形按鈕或其他圓形控制件。
+RoundEffect 是可重複使用的效果，可以套用至衍生自 VisualElement 的任何控制項，以將控制項轉譯為圓形。 這種效果可以用來建立圓形影像、圓形按鈕或其他迴圈控制項。

@@ -1,24 +1,27 @@
 ---
-title: Xamarin. Forms StackLayout
-description: StackLayout 會以水準或垂直方式組織一維堆疊中的子視圖。
-ms.prod: xamarin
-ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/11/2020
-ms.openlocfilehash: 2535a92814181c5039256ea1e42b06419ed427aa
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsStackLayout
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426025"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137965"
 ---
-# <a name="xamarinforms-stacklayout"></a>Xamarin. Forms StackLayout
+# <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
-[![Xamarin. Forms StackLayout](stacklayout-images/layouts.png "Xamarin. Forms StackLayout")](stacklayout-images/layouts-large.png#lightbox "Xamarin. Forms StackLayout")
+[![Xamarin.FormsStackLayout](stacklayout-images/layouts.png "[!OP.無-LOC （Xamarin）] StackLayout")](stacklayout-images/layouts-large.png#lightbox "[!OP.無-LOC （Xamarin）] StackLayout")
 
 會 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 以水準或垂直方式組織一維堆疊中的子視圖。 根據預設， `StackLayout` 會垂直導向。 此外， `StackLayout` 也可以當做包含其他子版面配置的父配置使用。
 
@@ -343,7 +346,7 @@ public ExpansionPageCS()
 > [!IMPORTANT]
 > 如果 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的所有空間都已使用，則延展喜好設定不會有作用。
 
-如需對齊和延展的詳細資訊，請參閱 [Xamarin.Forms 中的版面配置選項](layout-options.md)。
+如需對齊和擴充的詳細資訊，請參閱[中 Xamarin.Forms 的版面配置選項](layout-options.md)。
 
 ## <a name="nested-stacklayout-objects"></a>Nested StackLayout 物件
 
@@ -469,6 +472,6 @@ public class CombinedStackLayoutPageCS : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [StackLayout 示範（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
-- [Xamarin 中的版面配置選項](layout-options.md)
-- [選擇 Xamarin. 表單版面配置](choose-layout.md)
+- [中的版面配置選項Xamarin.Forms](layout-options.md)
+- [選擇 Xamarin.Forms 版面配置](choose-layout.md)
 - [改善 Xamarin.Forms 應用程式效能](~/xamarin-forms/deploy-test/performance.md)

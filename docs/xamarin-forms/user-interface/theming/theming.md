@@ -1,26 +1,29 @@
 ---
-title: 為 Xamarin. Forms 應用程式建立主題
-description: 主題可以在 Xamarin 中實作為應用程式，方法是為每個主題建立 ResourceDictionary，然後載入具有 DynamicResource 標記延伸的資源。
-ms.prod: xamarin
-ms.assetId: B7B17F66-4E37-4B50-9A57-351B62BE4FED
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2019
-ms.openlocfilehash: 2f751549bdbd54b920a99b04d0068ab726600336
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: 主題 Xamarin.Forms 應用程式
+description: 藉 Xamarin.Forms 由建立每個主題的 ResourceDictionary，然後載入具有 DynamicResource 標記延伸的資源，即可在應用程式中執行主題。
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425799"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138199"
 ---
-# <a name="theme-a-xamarinforms-application"></a>為 Xamarin. Forms 應用程式建立主題
+# <a name="theme-a-xamarinforms-application"></a>主題 Xamarin.Forms 應用程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
-Xamarin： Forms 應用程式可以使用標記延伸，在執行時間動態回應樣式變更 `DynamicResource` 。 此標記延伸類似于 `StaticResource` 標記延伸，這兩者都使用字典索引鍵從提取值 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 不過，當 `StaticResource` 標記延伸執行單一字典查閱時， `DynamicResource` 標記延伸會維護字典索引鍵的連結。 因此，如果已取代與索引鍵相關聯的值，變更就會套用至 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。 這可讓執行時間主題在 Xamarin. Forms 應用程式中執行。
+Xamarin.Forms應用程式可以使用標記延伸，在執行時間動態回應樣式變更 `DynamicResource` 。 此標記延伸類似于 `StaticResource` 標記延伸，這兩者都使用字典索引鍵從提取值 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 不過，當 `StaticResource` 標記延伸執行單一字典查閱時， `DynamicResource` 標記延伸會維護字典索引鍵的連結。 因此，如果已取代與索引鍵相關聯的值，變更就會套用至 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。 這可讓執行時間主題在 Xamarin.Forms 應用程式中執行。
 
-在 Xamarin. Forms 應用程式中執行執行時間主題的流程如下所示：
+在應用程式中執行執行時間主題的流程如下所示 Xamarin.Forms ：
 
 1. 在中定義每個主題的資源 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。
 1. 使用標記延伸，在應用程式中取用主題資源 `DynamicResource` 。
@@ -182,7 +185,7 @@ Xamarin： Forms 應用程式可以使用標記延伸，在執行時間動態回
 
 當主題資源直接取用時，應該搭配 `DynamicResource` 標記延伸來使用。 不過，使用標記延伸的樣式時 `DynamicResource` ，應該搭配 `StaticResource` 標記延伸來使用。
 
-如需樣式的詳細資訊，請參閱[使用 XAML 樣式設定 Xamarin 應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)。 如需標記延伸的詳細資訊 `DynamicResource` ，請參閱[Xamarin 中的動態樣式](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)。
+如需樣式的詳細資訊，請參閱[ Xamarin.Forms 使用 XAML 樣式設定應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)。 如需標記延伸的詳細資訊 `DynamicResource` ，請參閱[中 Xamarin.Forms 的動態樣式](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)。
 
 ## <a name="load-a-theme-at-runtime"></a>在執行時間載入主題
 
@@ -225,5 +228,5 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 - [主題（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [回應系統主題變更](system-theme-changes.md)
 - [資源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Xamarin 中的動態樣式](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [使用 XAML 樣式設定 Xamarin.Forms 應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [中的動態樣式Xamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
+- [Xamarin.Forms使用 XAML 樣式設定應用程式的樣式](~/xamarin-forms/user-interface/styles/xaml/index.md)

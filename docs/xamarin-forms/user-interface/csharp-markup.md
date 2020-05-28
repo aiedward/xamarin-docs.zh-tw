@@ -1,37 +1,40 @@
 ---
-title: 'Xamarin. 表單 c # 標記'
-description: 'C # 標記是一組可加入宣告的流暢 helper 方法和類別，以簡化建立宣告式 Xamarin 的程式。在 c # 中使用表單使用者介面。'
-ms.prod: xamarin
-ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4fa8397dafbbdd836f88193081720b4960f1ce5d
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: 'Xamarin.FormsC # 標記'
+description: 'C # 標記是一組可加入宣告的流暢 helper 方法和類別，以簡化 Xamarin.Forms 在 c # 中建立宣告式使用者介面的程式。'
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425812"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137742"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin. 表單 c # 標記
+# <a name="xamarinforms-c-markup"></a>Xamarin.FormsC # 標記
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
-C # 標記是一組可加入宣告的流暢 helper 方法和類別，以簡化建立宣告式 Xamarin 的程式。在 c # 中使用表單使用者介面。 C # 標記提供的 Fluent API 可在 `Xamarin.Forms.Markup` 命名空間中取得。
+C # 標記是一組可加入宣告的流暢 helper 方法和類別，以簡化 Xamarin.Forms 在 c # 中建立宣告式使用者介面的程式。 C # 標記提供的 Fluent API 可在 `Xamarin.Forms.Markup` 命名空間中取得。
 
 就像使用 XAML 一樣，c # 標記可讓 UI 標記和 UI 邏輯之間有清楚的分隔。 將 UI 標記和 UI 邏輯分隔成不同的部分類別檔案，即可達成此目的。 例如，登入頁面上的 UI 標記會位於名為*LoginPage.cs*的檔案中，而 ui 邏輯則會位於名為*LoginPage.logic.cs*的檔案中。
 
-C # 標記可從 Xamarin. 表單4.6 中取得。 不過，它目前是實驗性，而且只能透過將下列程式程式碼新增至*App.cs*檔案來使用：
+C # 標記可從 Xamarin.Forms 4.6 取得。 不過，它目前是實驗性，而且只能透過將下列程式程式碼新增至*App.cs*檔案來使用：
 
 ```csharp
 Device.SetFlags(new string[]{ "Markup_Experimental" });
 ```
 
 > [!NOTE]
-> C # 標記適用于 Xamarin 所支援的所有平臺。
+> C # 標記適用于支援的所有平臺 Xamarin.Forms 。
 
 ## <a name="basic-example"></a>基本範例
 
@@ -89,7 +92,7 @@ Content = new Grid
 
 ## <a name="data-binding"></a>資料繫結
 
-C # 標記包含擴充方法以及多載，可在 view 可系結 `Bind` 屬性和指定的屬性之間建立資料系結。 `Bind`方法知道 Xamarin 所包含的大多數控制項的預設可系結屬性。 因此，使用這個方法時，通常不需要指定目標屬性。 不過，您也可以註冊其他控制項的預設可系結屬性：
+C # 標記包含擴充方法以及多載，可在 view 可系結 `Bind` 屬性和指定的屬性之間建立資料系結。 `Bind`方法知道所包含的大多數控制項的預設可系結屬性 Xamarin.Forms 。 因此，使用這個方法時，通常不需要指定目標屬性。 不過，您也可以註冊其他控制項的預設可系結屬性：
 
 ```csharp
 using Xamarin.Forms.Markup;

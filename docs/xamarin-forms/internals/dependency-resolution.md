@@ -1,37 +1,29 @@
 ---
-title: 在 Xamarin.Forms 中的相依性解析
-description: 這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建立和自訂轉譯器、 效果及 DependencyService 實作的存留期。
-ms.prod: xamarin
-ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/27/2018
-ms.openlocfilehash: 6df393d59207cea9c316189059f8d0e08a5e5137
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290073"
+標題： ' 描述中的相依性解析 Xamarin.Forms ：本文說明如何將相依性解析方法插入至 Xamarin.Forms ，讓應用程式的相依性插入容器可以控制自訂轉譯器、效果和 DependencyService 的建立與存留期。
+assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="dependency-resolution-in-xamarinforms"></a>在 Xamarin.Forms 中的相依性解析
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
+# <a name="dependency-resolution-in-xamarinforms"></a>中的相依性解析Xamarin.Forms
 
-_這篇文章說明如何將 Xamarin.Forms 插入的相依性解析方法，使應用程式的相依性插入容器具有控制建立和自訂轉譯器、 效果及 DependencyService 實作的存留期。這篇文章中的程式碼範例取自[使用容器的相依性解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)範例。_
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
-在內容中使用的 Model View ViewModel (MVVM) 模式的 Xamarin.Forms 應用程式，來註冊及解析檢視模型，以及註冊服務和插入檢視模型可以使用相依性插入容器。 檢視模型在建立期間，容器會插入任何所需的相依性。 如果尚未建立這些相依性，會建立容器，並先解析相依性。 如需相依性插入，包括範例相依性插入檢視模型的詳細資訊，請參閱[相依性插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
+_本文說明如何在中插入相依性解析方法， Xamarin.Forms 讓應用程式的相依性插入容器可以控制自訂轉譯器、效果和 DependencyService 的建立與存留期。本文中的程式碼範例取自[使用容器](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)的相依性解析範例。_
 
-建立和 Xamarin.Forms，它會使用傳統上執行的平台專案中類型的存留期`Activator.CreateInstance`方法用來建立執行個體的自訂轉譯器的效果，並[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)實作。 不幸的是，這會限制開發人員控制建立和存留期的這些型別，並將它們插入的相依性的能力。 至 Xamarin.Forms 應用程式的相依性插入容器，或透過 Xamarin.Forms，控制如何將會建立類型 – 插入相依性解析方法，就可以變更此行為。 不過請注意沒有將 Xamarin.Forms 中插入相依性解析方法的需求。 Xamarin.Forms 會繼續建立和管理的平台專案中的型別存留期，如果不插入相依性解析方法。
+在 Xamarin.Forms 使用 ViewModel （MVVM）模式的應用程式內容中，相依性插入容器可以用來註冊和解析視圖模型，以及註冊服務並將其插入視圖模型。 在建立視圖模型期間，容器會插入所需的任何相依性。 如果尚未建立這些相依性，則容器會先建立並解析相依性。 如需相依性插入的詳細資訊，包括將相依性插入視圖模型的範例，請參閱相依性[插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
+
+傳統上會透過來執行平臺專案中類型的建立和存留期控制 Xamarin.Forms ，其使用 `Activator.CreateInstance` 方法來建立自訂轉譯器、效果和實作為實例 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 可惜的是，這會限制開發人員控制這些類型的建立和存留期，以及將相依性插入其中的能力。 藉由將相依性解析方法插入 Xamarin.Forms ，以控制建立類型的方式（透過應用程式的相依性插入容器，或），即可變更此行為 Xamarin.Forms 。 不過，請注意，不需要將相依性解析方法插入 Xamarin.Forms 。 Xamarin.Forms如果未插入相依性解析方法，將會繼續建立和管理平臺專案中類型的存留期。
 
 > [!NOTE]
-> 雖然這篇文章著重於解決使用相依性插入容器的已註冊的類型的 Xamarin.Forms 中插入相依性解析方法，您也可將使用 factory 方法來解析的相依性解析方法已註冊的型別。 如需詳細資訊，請參閱 <<c0> [ 使用 Factory 方法的相依性解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo)範例。
+> 雖然本文著重于將相依性解析方法插入，以使用相依性 Xamarin.Forms 插入容器來解析已註冊的型別，但也可以插入使用 factory 方法的相依性解析方法來解析已註冊的型別。 如需詳細資訊，請參閱[使用 Factory 方法](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo)的相依性解析範例。
 
 ## <a name="injecting-a-dependency-resolution-method"></a>插入相依性解析方法
 
-[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver)類別提供的功能，將相依性解析方法插入 Xamarin.Forms，使用[ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)方法。 然後，當 Xamarin.Forms 需要特定類型的執行個體時，相依性解析方法有機會提供執行個體。 如果相依性解析方法傳回`null`要求的型別，如 Xamarin.Forms 改回嘗試建立類型執行個體本身使用`Activator.CreateInstance`方法。
+[`DependencyResolver`](xref:Xamarin.Forms.Internals.DependencyResolver)類別 Xamarin.Forms 使用方法，提供將相依性解析方法插入中的功能 [`ResolveUsing`](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) 。 然後，當 Xamarin.Forms 需要特定類型的實例時，會給予相依性解析方法提供實例的機會。 如果相依性解析方法 `null` 針對要求的型別傳回，會回到 Xamarin.Forms 嘗試使用方法來建立型別實例本身 `Activator.CreateInstance` 。
 
-下列範例示範如何設定具有的相依性解析方法[ `ResolveUsing` ](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*)方法：
+下列範例顯示如何使用方法來設定相依性解析方法 [`ResolveUsing`](xref:Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) ：
 
 ```csharp
 using Autofac;
@@ -54,19 +46,19 @@ public partial class App : Application
 }
 ```
 
-在此範例中，相依性解析方法設為 lambda 運算式來解決任何已註冊容器的類型使用 Autofac 相依性插入容器。 否則，`null`會傳回，從而導致 Xamarin.Forms 嘗試解析的型別。
+在此範例中，相依性解析方法會設定為使用 Autofac 相依性插入容器來解析已向容器註冊之任何類型的 lambda 運算式。 否則會 `null` 傳回，這會導致 Xamarin.Forms 嘗試解析類型。
 
 > [!NOTE]
-> 容器的特定相依性插入容器所使用的 API。 這篇文章中的程式碼範例會使用 Autofac 作為相依性插入容器，可提供`IContainer`和`ContainerBuilder`型別。 替代的相依性插入容器同樣無法使用，但會使用不同的 Api，比此處所提供。
+> 相依性插入容器所使用的 API 是容器特有的。 本文中的程式碼範例會使用 Autofac 做為相依性插入容器，以提供 `IContainer` 和 `ContainerBuilder` 類型。 您也可以使用替代的相依性插入容器，但會使用與此處所示不同的 Api。
 
-請注意，不需要應用程式啟動期間設定相依性解析方法。 它可以在任何時間設定。 唯一的條件約束是 Xamarin.Forms 需要知道相依性解析方法，應用程式會嘗試使用類型儲存在相依性插入容器中的時間。 因此，如果應用程式將需要在啟動期間的相依性插入容器中沒有服務，相依性解析方法必須在應用程式的生命週期中及早設定。 同樣地，如果相依性插入容器管理建立的特定存留期[ `Effect` ](xref:Xamarin.Forms.Effect)，Xamarin.Forms 必須了解相依性解析方法，嘗試建立檢視之前，會使用該`Effect`。
+請注意，在應用程式啟動期間，不需要設定相依性解析方法。 可以隨時設定。 唯一的條件約束是，在 Xamarin.Forms 應用程式嘗試使用儲存在相依性插入容器中的類型時，必須知道相依性解析方法的相關資訊。 因此，如果應用程式在啟動時所需的相依性插入容器中有服務，則相依性解析方法將必須在應用程式的生命週期早期設定。 同樣地，如果相依性插入容器負責管理特定的建立與存留期 [`Effect`](xref:Xamarin.Forms.Effect) ， Xamarin.Forms 就必須知道相依性解析方法，才會嘗試建立使用該物件的視圖 `Effect` 。
 
 > [!WARNING]
-> 註冊和解析的相依性插入容器的型別具有效能的容器使用反映來建立每個類型，因為成本，尤其是相依性會為每個應用程式中的頁面巡覽重新建構。 如果有許多或深層相依性，可以大幅增加成本的建立。
+> 使用相依性插入容器來註冊和解析類型的效能成本，因為容器使用反映來建立每種類型，特別是在應用程式中針對每個頁面導覽重建相依性時。 如果有許多或深度相依性，則建立的成本可能會大幅增加。
 
 ## <a name="registering-types"></a>註冊類型
 
-類型必須向相依性插入容器之前它可透過相依性解析方法加以解決。 下列程式碼範例顯示註冊方法的範例應用程式會顯示，在`App`Autofac 容器類別：
+類型必須先向相依性插入容器註冊，才能透過相依性解析方法加以解析。 下列程式碼範例顯示範例應用程式在 `App` 類別中針對 Autofac 容器公開的註冊方法：
 
 ```csharp
 using Autofac;
@@ -121,15 +113,15 @@ public partial class App : Application
 }
 ```
 
-當應用程式會使用相依性解析方法，來解決從容器的類型時，型別註冊通常會執行從平台專案中。 這可讓平台專案中自訂轉譯器的效果，註冊類型以及[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)實作。
+當應用程式使用相依性解析方法來解析容器中的類型時，通常會從平臺專案執行類型註冊。 這可讓平臺專案註冊自訂轉譯器、效果和實作為類型 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。
 
-從平台專案中，下列型別註冊`IContainer`物件必須先建置，這透過呼叫`BuildContainer`方法。 這個方法會叫用的 Autofac`Build`方法`ContainerBuilder`執行個體，建立新的相依性插入容器，其中包含已註冊。
+從平臺專案註冊型別之後， `IContainer` 必須建立物件，這是藉由呼叫方法來完成 `BuildContainer` 。 這個方法會在實例上叫用 Autofac 的 `Build` 方法 `ContainerBuilder` ，它會建立新的相依性插入容器，其中包含已建立的註冊。
 
-下列各節，在`Logger`可實作類別`ILogger`介面插入類別建構函式。 `Logger`類別會實作簡單的記錄功能使用`Debug.WriteLine`方法，以及用來示範服務如何插入自訂轉譯器，效果並[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)實作。
+在接下來的各節中，會將實 `Logger` 作為介面的類別 `ILogger` 插入至類別的函式。 `Logger`類別會使用方法來執行簡單的記錄功能 `Debug.WriteLine` ，並用來示範如何將服務插入自訂轉譯器、效果和實作為 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。
 
 ### <a name="registering-custom-renderers"></a>註冊自訂轉譯器
 
-範例應用程式包含播放網頁視訊，下列範例所示的 XAML 來源的頁面：
+範例應用程式包含一個播放 web 影片的頁面，其 XAML 來源如下列範例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -140,9 +132,9 @@ public partial class App : Application
 </ContentPage>
 ```
 
-`VideoPlayer`檢視由每個平台上實作`VideoPlayerRenderer`類別，可播放視訊時，提供的功能。 如需有關這些自訂轉譯器類別的詳細資訊，請參閱 <<c0> [ 實作視訊播放程式](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)。
+此 `VideoPlayer` 視圖會透過類別在每個平臺上執行 `VideoPlayerRenderer` ，以提供播放影片的功能。 如需這些自訂轉譯器類別的詳細資訊，請參閱[執行影片播放](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)程式。
 
-在 iOS 和通用 Windows 平台 (UWP) 上`VideoPlayerRenderer`類別擁有下列建構函式，這需要`ILogger`引數：
+在 iOS 和通用 Windows 平臺（UWP）上， `VideoPlayerRenderer` 類別具有下列需要引數的函式 `ILogger` ：
 
 ```csharp
 public VideoPlayerRenderer(ILogger logger)
@@ -151,7 +143,7 @@ public VideoPlayerRenderer(ILogger logger)
 }
 ```
 
-在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`iOS 平台上的方法：
+在所有平臺上，具有相依性插入容器的類型註冊是由 `RegisterTypes` 方法執行，在平臺使用方法載入應用程式之前會叫用 `LoadApplication(new App())` 。 下列範例顯示 `RegisterTypes` iOS 平臺上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -162,9 +154,9 @@ void RegisterTypes()
 }
 ```
 
-在此範例中，`Logger`具象型別透過其介面型別中，針對對應註冊和`VideoPlayerRenderer`的介面對應不直接註冊型別。 當使用者導覽到包含的頁面`VideoPlayer`檢視中，會叫用相依性解析方法，來解決`VideoPlayerRenderer`類型從相依性插入容器，這也會解決並插入`Logger`輸入`VideoPlayerRenderer`建構函式。
+在此範例中，具象 `Logger` 型別是透過對應對其介面型別進行註冊，而 `VideoPlayerRenderer` 型別則直接註冊，而不需要介面對應。 當使用者流覽至包含此視圖的頁面時，將會叫用相依性 `VideoPlayer` 解析方法來解析相依性 `VideoPlayerRenderer` 插入容器中的類型，這也會解析該類型，並將其插入 `Logger` 至此函式 `VideoPlayerRenderer` 。
 
-`VideoPlayerRenderer`建構函式的 Android 平台而言稍嫌複雜，因為它需要`Context`引數，除了`ILogger`引數：
+`VideoPlayerRenderer`Android 平臺上的函式會稍微複雜一點，因為 `Context` 除了引數之外，它還需要引數 `ILogger` ：
 
 ```csharp
 public VideoPlayerRenderer(Context context, ILogger logger) : base(context)
@@ -173,7 +165,7 @@ public VideoPlayerRenderer(Context context, ILogger logger) : base(context)
 }
 ```
 
-下列範例所示`RegisterTypes`Android 平台上的方法：
+下列範例顯示 `RegisterTypes` Android 平臺上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -184,11 +176,11 @@ void RegisterTypes()
 }
 ```
 
-在此範例中，`App.RegisterTypeWithParameters`方法會註冊`VideoPlayerRenderer`與相依性插入容器。 註冊方法可確保`MainActivity`執行個體將會插入做為`Context`引數，且`Logger`型別將會插入做為`ILogger`引數。
+在此範例中， `App.RegisterTypeWithParameters` 方法會向相依性 `VideoPlayerRenderer` 插入容器註冊。 註冊方法可確保 `MainActivity` 實例會插入做為 `Context` 引數，而且該 `Logger` 類型將會插入做為 `ILogger` 引數。
 
-### <a name="registering-effects"></a>註冊效果
+### <a name="registering-effects"></a>正在註冊效果
 
-範例應用程式包含將使用觸控追蹤效果的頁面[ `BoxView` ](xref:Xamarin.Forms.BoxView)周圍頁面的執行個體。 [ `Effect` ](xref:Xamarin.Forms.Effect)新增至`BoxView`使用下列程式碼：
+範例應用程式包含的頁面會使用觸控追蹤效果， [`BoxView`](xref:Xamarin.Forms.BoxView) 在頁面周圍拖曳實例。 [`Effect`](xref:Xamarin.Forms.Effect)會 `BoxView` 使用下列程式碼新增至：
 
 ```csharp
 var boxView = new BoxView { ... };
@@ -196,9 +188,9 @@ var touchEffect = new TouchEffect();
 boxView.Effects.Add(touchEffect);
 ```
 
-`TouchEffect`類別是[ `RoutingEffect` ](xref:Xamarin.Forms.RoutingEffect)的每個平台上實作`TouchEffect`類別，具有`PlatformEffect`。 平台`TouchEffect`類別提供的拖曳功能`BoxView`周圍的頁面。 如需有關這些效果類別的詳細資訊，請參閱[叫用事件效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。
+`TouchEffect`類別是 [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) ，它是由的類別在每個平臺上執行 `TouchEffect` `PlatformEffect` 。 Platform `TouchEffect` 類別提供在頁面周圍拖曳的功能 `BoxView` 。 如需這些效果類別的詳細資訊，請參閱[從效果叫用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。
 
-在所有平台，`TouchEffect`類別具有下列建構函式，這需要`ILogger`引數：
+在所有平臺上， `TouchEffect` 類別具有下列需要引數的函式 `ILogger` ：
 
 ```csharp
 public TouchEffect(ILogger logger)
@@ -207,7 +199,7 @@ public TouchEffect(ILogger logger)
 }
 ```
 
-在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`Android 平台上的方法：
+在所有平臺上，具有相依性插入容器的類型註冊是由 `RegisterTypes` 方法執行，在平臺使用方法載入應用程式之前會叫用 `LoadApplication(new App())` 。 下列範例顯示 `RegisterTypes` Android 平臺上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -218,11 +210,11 @@ void RegisterTypes()
 }
 ```
 
-在此範例中，`Logger`具象型別透過其介面型別中，針對對應註冊和`TouchEffect`的介面對應不直接註冊型別。 當使用者導覽到包含的頁面[ `BoxView` ](xref:Xamarin.Forms.BoxView)具有執行個體`TouchEffect`附加到它，相依性解析方法也會叫用解決平台`TouchEffect`類型從相依性插入容器，這也會解決並插入`Logger`輸入`TouchEffect`建構函式。
+在此範例中，具象 `Logger` 型別是透過對應對其介面型別進行註冊，而 `TouchEffect` 型別則直接註冊，而不需要介面對應。 當使用者流覽至包含已附加之實例的頁面時，將會叫用相依性 [`BoxView`](xref:Xamarin.Forms.BoxView) `TouchEffect` 解析方法來解析相依性 `TouchEffect` 插入容器中的平臺類型，這也會解析該類型，並將其插入至函式 `Logger` `TouchEffect` 。
 
-### <a name="registering-dependencyservice-implementations"></a>註冊 DependencyService 實作
+### <a name="registering-dependencyservice-implementations"></a>註冊 DependencyService 的實現
 
-範例應用程式包含使用的網頁[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)上每個平台，以允許使用者從裝置的圖片庫中挑選相片的實作。 `IPhotoPicker`介面會定義所實作的功能`DependencyService`實作中，與下列範例所示：
+範例應用程式包含的頁面會使用 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 每個平臺上的「執行」，讓使用者從裝置的圖片庫中挑選相片。 介面會定義由執行程式所實作為的 `IPhotoPicker` 功能 `DependencyService` ，如下列範例所示：
 
 ```csharp
 public interface IPhotoPicker
@@ -231,9 +223,9 @@ public interface IPhotoPicker
 }
 ```
 
-在每個平台專案中，`PhotoPicker`類別會實作`IPhotoPicker`使用平台 Api 介面。 如需有關這些相依性服務的詳細資訊，請參閱 <<c0> [ 挑選相片圖片庫從](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)。
+在每個平臺專案中， `PhotoPicker` 類別都會 `IPhotoPicker` 使用平臺 api 來執行介面。 如需這些相依性服務的詳細資訊，請參閱[從圖片庫中挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)。
 
-在 iOS 和 UWP`PhotoPicker`類別擁有下列建構函式，這需要`ILogger`引數：
+在 iOS 和 UWP 上， `PhotoPicker` 類別具有下列需要引數的函式 `ILogger` ：
 
 ```csharp
 public PhotoPicker(ILogger logger)
@@ -242,7 +234,7 @@ public PhotoPicker(ILogger logger)
 }
 ```
 
-在所有平台，以執行與相依性插入容器的型別註冊`RegisterTypes`方法之前載入的應用程式的平台叫用`LoadApplication(new App())`方法。 下列範例所示`RegisterTypes`UWP 上的方法：
+在所有平臺上，具有相依性插入容器的類型註冊是由 `RegisterTypes` 方法執行，在平臺使用方法載入應用程式之前會叫用 `LoadApplication(new App())` 。 下列範例顯示 `RegisterTypes` UWP 上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -253,9 +245,9 @@ void RegisterTypes()
 }
 ```
 
-在此範例中，`Logger`具象型別透過其介面型別中，針對對應註冊和`PhotoPicker`透過的介面對應，也會登錄型別。
+在此範例中，具象 `Logger` 型別是透過對應針對其介面型別來註冊，而且 `PhotoPicker` 型別也會透過介面對應進行註冊。
 
-`PhotoPicker`建構函式的 Android 平台而言稍嫌複雜，因為它需要`Context`引數，除了`ILogger`引數：
+`PhotoPicker`Android 平臺上的函式會稍微複雜一點，因為 `Context` 除了引數之外，它還需要引數 `ILogger` ：
 
 ```csharp
 public PhotoPicker(Context context, ILogger logger)
@@ -265,7 +257,7 @@ public PhotoPicker(Context context, ILogger logger)
 }
 ```
 
-下列範例所示`RegisterTypes`Android 平台上的方法：
+下列範例顯示 `RegisterTypes` Android 平臺上的方法：
 
 ```csharp
 void RegisterTypes()
@@ -276,9 +268,9 @@ void RegisterTypes()
 }
 ```
 
-在此範例中，`App.RegisterTypeWithParameters`方法會註冊`PhotoPicker`與相依性插入容器。 註冊方法可確保`MainActivity`執行個體將會插入做為`Context`引數，且`Logger`型別將會插入做為`ILogger`引數。
+在此範例中， `App.RegisterTypeWithParameters` 方法會向相依性 `PhotoPicker` 插入容器註冊。 註冊方法可確保 `MainActivity` 實例會插入做為 `Context` 引數，而且該 `Logger` 類型將會插入做為 `ILogger` 引數。
 
-當使用者瀏覽至相片挑選頁面，並選擇要選取一張照片，`OnSelectPhotoButtonClicked`處理常式會執行：
+當使用者流覽至 [相片領料] 頁面並選擇選取相片時， `OnSelectPhotoButtonClicked` 會執行處理常式：
 
 ```csharp
 async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
@@ -294,15 +286,15 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 }
 ```
 
-當[ `DependencyService.Resolve<T>` ](xref:Xamarin.Forms.DependencyService.Resolve*)叫用方法時，會叫用來解析的相依性解析方法`PhotoPicker`類型從相依性插入容器，這也會解決並插入`Logger`類型到`PhotoPicker`建構函式。
+叫用方法時，將會叫用相依性 [`DependencyService.Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 解析方法來解析相依性 `PhotoPicker` 插入容器中的類型，這也會解析該類型，並將其插入至此函式 `Logger` `PhotoPicker` 。
 
 > [!NOTE]
-> [ `Resolve<T>` ](xref:Xamarin.Forms.DependencyService.Resolve*)解析來自透過應用程式的相依性插入容器的型別時，就必須使用方法[ `DependencyService` ](xref:Xamarin.Forms.DependencyService)。
+> 透過 [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) 從應用程式的相依性插入容器解析型別時，必須使用方法 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。
 
 ## <a name="related-links"></a>相關連結
 
-- [使用容器 （範例） 的相依性解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
+- [使用容器的相依性解析（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 - [相依性插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
-- [實作影片播放程式](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
-- [叫用事件的效果](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
-- [從 圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
+- [執行影片播放機](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
+- [從效果叫用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
+- [從圖片庫挑選相片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

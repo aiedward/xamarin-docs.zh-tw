@@ -1,24 +1,27 @@
 ---
-title: IOS 上的選擇器專案選擇
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的來控制選擇器中發生專案選取時的情況。
-ms.prod: xamarin
-ms.assetid: 26B0604A-BD30-49FD-83A6-F0EDFBB0524B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 57420921100c99db1e2c3a5259ece30cfda719f2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 75ef118b642a8c6a66205c6f7e3bc03089c6593c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651849"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127890"
 ---
 # <a name="picker-item-selection-on-ios"></a>IOS 上的選擇器專案選擇
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-當專案選取發生在[`Picker`](xref:Xamarin.Forms.Picker)時, 此 iOS 平臺特定的控制項可讓使用者指定在流覽控制項中的專案時, 或只在按下 [**完成**] 按鈕時, 才會發生選取專案。 它由在 XAML 中設定`Picker.UpdateMode`附加屬性的值`UpdateMode`列舉型別：
+當專案選取發生在時，此 iOS 平臺特定的控制項 [`Picker`](xref:Xamarin.Forms.Picker) 可讓使用者指定在流覽控制項中的專案時，或只在按下 [**完成**] 按鈕時，才會發生選取專案。 它會在 XAML 中使用，方法是將 `Picker.UpdateMode` 附加屬性設為列舉的值 `UpdateMode` ：
 
 ```xaml
 <ContentPage ...
@@ -32,7 +35,7 @@ ms.locfileid: "68651849"
 </ContentPage>
 ```
 
-或者，它可以取用從 C# 使用 fluent API:
+或者，您也可以使用 Fluent API，從 c # 取用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -42,12 +45,12 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
 ```
 
-`Picker.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 `Picker.SetUpdateMode`方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，用來控制何時發生的項目選取，請使用`UpdateMode`提供兩個可能值的列舉型別：
+`Picker.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 `Picker.SetUpdateMode`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 可用來控制何時會選取專案，而 `UpdateMode` 列舉會提供兩個可能的值：
 
-- `Immediately` – 使用者瀏覽中的項目，就會發生的項目選取[ `Picker` ](xref:Xamarin.Forms.Picker)。 這是在 Xamarin.Forms 中的預設行為。
-- `WhenFinished` – 使用者已按下之後，才會發生的項目選取**完成**按鈕[ `Picker` ](xref:Xamarin.Forms.Picker)。
+- `Immediately`–當使用者流覽中的專案時，就會發生專案選取 [`Picker`](xref:Xamarin.Forms.Picker) 。 這是中的預設行為 Xamarin.Forms 。
+- `WhenFinished`–只有在使用者按下中的 [**完成**] 按鈕之後，才會進行專案選取 [`Picker`](xref:Xamarin.Forms.Picker) 。
 
-颾魤 ㄛ`SetUpdateMode`方法可用來切換列舉值，藉由呼叫`UpdateMode`方法，以傳回目前`UpdateMode`:
+此外， `SetUpdateMode` 方法可以藉由呼叫方法來切換列舉值，這會傳回 `UpdateMode` 目前的 `UpdateMode` ：
 
 ```csharp
 switch (picker.On<iOS>().UpdateMode())
@@ -61,9 +64,9 @@ switch (picker.On<iOS>().UpdateMode())
 }
 ```
 
-結果是，指定`UpdateMode`套用至[ `Picker` ](xref:Xamarin.Forms.Picker)，這會控制當項目選取項目，就會發生：
+結果是會將指定的套用 `UpdateMode` 至，以 [`Picker`](xref:Xamarin.Forms.Picker) 控制專案選取的時機：
 
-[![](picker-selection-images/picker-updatemode.png "選擇器 UpdateMode 平台專屬")](picker-selection-images/picker-updatemode-large.png#lightbox "選擇器 UpdateMode 平台專屬")
+[![](picker-selection-images/picker-updatemode.png "Picker UpdateMode Platform-Specific")](picker-selection-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Platform-Specific")
 
 ## <a name="related-links"></a>相關連結
 

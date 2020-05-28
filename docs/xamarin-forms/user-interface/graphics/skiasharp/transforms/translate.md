@@ -1,22 +1,25 @@
 ---
-title: 平移轉換
-description: 本文將探討如何在 Xamarin 中使用「轉譯」轉換來移位 SkiaSharp 圖形，並以範例程式碼示範這項功能。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: f1efd7610b32e6a3903d34fc2f8b5a6e20c9da8a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: ''
+description: 本文將探討如何在應用程式中使用「轉譯」轉換來移位 SkiaSharp 圖形 Xamarin.Forms ，並使用範例程式碼示範這項功能。
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291963"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138251"
 ---
 # <a name="the-translate-transform"></a>平移轉換
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _瞭解如何使用轉譯轉換來移位 SkiaSharp 圖形_
 
@@ -26,19 +29,19 @@ SkiaSharp 中最簡單的轉換類型是「*轉譯*」或「*轉譯*」轉換。
 
 ![](translate-images/translateexample.png "Text shadow, engraving, and embossing with translation")
 
-`SKCanvas` 中的[`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single))方法有兩個參數，會導致後續繪製的繪圖物件以水準和垂直方式移動：
+[`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single))中的方法 `SKCanvas` 有兩個參數，會導致後續繪製的繪圖物件以水準和垂直方式移動：
 
 ```csharp
 public void Translate (Single dx, Single dy)
 ```
 
-這些引數可能是負值。 第二個[`Translate`](xref:SkiaSharp.SKCanvas.Translate(SkiaSharp.SKPoint))方法會將這兩個轉譯值結合成單一 `SKPoint` 值：
+這些引數可能是負值。 第二種方法會將 [`Translate`](xref:SkiaSharp.SKCanvas.Translate(SkiaSharp.SKPoint)) 這兩個轉譯值結合成單一 `SKPoint` 值：
 
 ```csharp
 public void Translate (SKPoint point)
 ```
 
-[**SkiaSharpForms**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例程式的 [**累積的翻譯**] 頁面會示範 `Translate` 方法的多個呼叫是累計的。 [`AccumulatedTranslatePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同矩形的20個版本，每一個矩形的位移就夠大，使其沿著對角線延展。 以下是 `PaintSurface` 事件處理常式：
+[**SkiaSharpForms**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例程式的 [**累積的翻譯**] 頁面會示範多個 `Translate` 方法呼叫是累計的。 [`AccumulatedTranslatePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs)類別會顯示相同矩形的20個版本，每一個矩形的位移就夠大，使其沿著對角線延展。 以下是 `PaintSurface` 事件處理常式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -73,15 +76,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](translate-images/accumulatedtranslate-small.png "Triple screenshot of the Accumulated Translate page")](translate-images/accumulatedtranslate-large.png#lightbox "Triple screenshot of the Accumulated Translate page")
 
-如果累積的轉譯因數是 `dx` 並 `dy`，而您在繪圖函式中指定的點是（`x`，`y`），則繪圖物件會在點（`x'`，`y'`）呈現，其中：
+如果累積的轉譯因數是 `dx` 和 `dy` ，而且您在繪圖函式中指定的點是（ `x` ， `y` ），則繪圖物件會在點（ `x'` ，）上轉譯 `y'` ，其中：
 
 x ' = x + dx
 
 y ' = y + dy
 
-這些稱為轉譯的*轉換公式*。 新 `SKCanvas` 的預設值 `dx` 和 `dy` 為0。
+這些稱為轉譯的*轉換公式*。 新的和的預設值為 `dx` `dy` `SKCanvas` 0。
 
-通常會使用翻譯轉換來進行陰影效果和類似的技術，如同 [**翻譯文字效果**] 頁面所示。 以下是[`TranslateTextEffectsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs)類別中 `PaintSurface` 處理常式的相關部分：
+通常會使用翻譯轉換來進行陰影效果和類似的技術，如同 [**翻譯文字效果**] 頁面所示。 以下是 `PaintSurface` 類別中處理常式的相關部分 [`TranslateTextEffectsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) ：
 
 ```csharp
 float textSize = 150;
@@ -126,23 +129,23 @@ using (SKPaint textPaint = new SKPaint())
 }
 ```
 
-在這三個範例中，會呼叫 `Translate` 來顯示文字，以從 `x` 和 `y` 變數所指定的位置位移。 然後再以另一種色彩顯示文字，而不會有任何轉譯效果：
+在這三個範例中， `Translate` 會呼叫來顯示文字，以從和變數所指定的位置位移 `x` `y` 。 然後再以另一種色彩顯示文字，而不會有任何轉譯效果：
 
 [![](translate-images/translatetexteffects-small.png "Triple screenshot of the Translate Text Effects page")](translate-images/translatetexteffects-large.png#lightbox "Triple screenshot of the Translate Text Effects page")
 
-這三個範例中的每一個都會顯示否定 `Translate` 呼叫的不同方式：
+這三個範例中的每一個都會顯示否定呼叫的不同方式 `Translate` ：
 
-第一個範例只是再次呼叫 `Translate`，但使用負值。 因為 `Translate` 呼叫是累計的，所以此呼叫順序只會將轉譯總計還原為預設值零。
+第一個範例是 `Translate` 再次呼叫，但使用負值。 由於 `Translate` 呼叫是累計的，因此這個呼叫順序只會將轉譯總計還原為預設值零。
 
-第二個範例會呼叫[`ResetMatrix`](xref:SkiaSharp.SKCanvas.ResetMatrix)。 這會使所有轉換回到其預設狀態。
+第二個範例會呼叫 [`ResetMatrix`](xref:SkiaSharp.SKCanvas.ResetMatrix) 。 這會使所有轉換回到其預設狀態。
 
-第三個範例會使用[`Save`](xref:SkiaSharp.SKCanvas.Save)的呼叫來儲存 `SKCanvas` 物件的狀態，然後使用[`Restore`](xref:SkiaSharp.SKCanvas.Restore)的呼叫來還原狀態。 這是操作一系列繪製作業轉換的最具彈性方式。 這些 `Save` 和 `Restore` 呼叫的運作方式類似堆疊：您可以多次呼叫 `Save`，然後以反向順序呼叫 `Restore`，以回到先前的狀態。 `Save` 方法會傳回整數，您可以將該整數傳遞給[`RestoreToCount`](xref:SkiaSharp.SKCanvas.RestoreToCount*) ，以有效率地多次呼叫 `Restore`。 [`SaveCount`](xref:SkiaSharp.SKCanvas.SaveCount)屬性會傳回目前已儲存在堆疊上的狀態數目。
+第三個範例會 `SKCanvas` 使用的呼叫來儲存物件的狀態 [`Save`](xref:SkiaSharp.SKCanvas.Save) ，然後使用的呼叫來還原狀態 [`Restore`](xref:SkiaSharp.SKCanvas.Restore) 。 這是操作一系列繪製作業轉換的最具彈性方式。 這些 `Save` 和會呼叫函式，就 `Restore` 像堆疊一樣：您可以呼叫 `Save` 多次，然後以 `Restore` 反向順序呼叫來回到先前的狀態。 `Save`方法會傳回整數，您可以將該整數傳遞給， [`RestoreToCount`](xref:SkiaSharp.SKCanvas.RestoreToCount*) 以有效地呼叫 `Restore` 多次。 屬性會傳回 [`SaveCount`](xref:SkiaSharp.SKCanvas.SaveCount) 目前已儲存在堆疊上的狀態數目。
 
-您也可以使用[`SKAutoCanvasRestore`](xref:SkiaSharp.SKAutoCanvasRestore)類別來還原畫布狀態。 這個類別的函式是要在 `using` 語句中呼叫;畫布狀態會在 `using` 區塊的結尾自動還原。
+您也可以使用 [`SKAutoCanvasRestore`](xref:SkiaSharp.SKAutoCanvasRestore) 類別來還原畫布狀態。 這個類別的函式是要在語句中呼叫 `using` ; 畫布狀態會在區塊結尾自動還原 `using` 。
 
-不過，您不需要擔心從 `PaintSurface` 處理常式的一次呼叫到下一個的轉換。 `PaintSurface` 的每個新呼叫都會以預設轉換傳遞全新的 `SKCanvas` 物件。
+不過，您不需要擔心從一個處理常式呼叫到下一個的轉換 `PaintSurface` 。 每個新的呼叫都會以 `PaintSurface` 預設轉換傳遞全新的 `SKCanvas` 物件。
 
-`Translate` 轉換的另一個常見用法，是用來呈現原本使用可方便繪製的座標來建立的視覺物件。 例如，您可能會想要指定類比時鐘的座標，並在點（0，0）上置中。 然後，您可以使用 [轉換] 來顯示您想要的時鐘。 這項技術會在 [**Hendecagram Array**] 頁面中示範。 [`HendecagramArrayPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs)類別一開始會建立11個指向星形的 `SKPath` 物件。 `HendecagramPath` 物件會定義為 [公用]、[靜態] 和 [唯讀]，讓它可以從其他示範程式存取。 它是在靜態的函式中建立的：
+轉換的另一個常見用法， `Translate` 是用來呈現原本使用可方便繪製的座標來建立的視覺物件。 例如，您可能會想要指定類比時鐘的座標，並在點（0，0）上置中。 然後，您可以使用 [轉換] 來顯示您想要的時鐘。 這項技術會在 [**Hendecagram Array**] 頁面中示範。 [`HendecagramArrayPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs)類別一開始會建立 `SKPath` 11 個指向星形的物件。 `HendecagramPath`物件會定義為公用、靜態和唯讀，讓它可以從其他示範程式存取。 它是在靜態的函式中建立的：
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -175,7 +178,7 @@ public class HendecagramArrayPage : ContentPage
 
 如果星形的中心是點（0，0），則星形的所有點都在該點周圍的圓圈上。 每個點都是一個角度的正弦和余弦值的組合，會增加 5/11ths 的360度。 （您也可以將角度增加 2/11、3/11ths，或圓形的 4/11），以建立11個指向的星形。該圓形的半徑設定為100。
 
-如果轉譯此路徑時沒有任何轉換，則中心會定位在 `SKCanvas`的左上角，而且只會顯示其中的季。 `HendecagramPage` 的 `PaintSurface` 處理常式會改為使用 `Translate` 來以星形的多個複本並排顯示畫布，每一個都是隨機著色的：
+如果轉譯此路徑時沒有任何轉換，則中心將會定位於的左上角 `SKCanvas` ，而且只會顯示其中的季。 的 `PaintSurface` 處理常式 `HendecagramPage` 改 `Translate` 為使用來並排顯示具有多個星星複本的畫布，每一個都是隨機著色的：
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -216,7 +219,7 @@ public class HendecagramArrayPage : ContentPage
 
 [![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
 
-動畫通常包含轉換。 [ **Hendecagram 動畫**] 頁面會將圓形中的11個星形向周圍移動。 [`HendecagramAnimationPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs)類別的開頭為一些欄位，並會覆寫 `OnAppearing` 和 `OnDisappearing` 方法來啟動和停止 Xamarin。表單計時器：
+動畫通常包含轉換。 [ **Hendecagram 動畫**] 頁面會將圓形中的11個星形向周圍移動。 類別會以 [`HendecagramAnimationPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) 一些欄位開始，並覆寫 `OnAppearing` 和 `OnDisappearing` 方法來啟動和停止 Xamarin.Forms 計時器：
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage
@@ -267,7 +270,7 @@ public class HendecagramAnimationPage : ContentPage
 }
 ```
 
-[`angle`] 欄位會每5秒從0度到360度的動畫。 `PaintSurface` 處理常式會以兩種方式使用 [`angle`] 屬性：指定 `SKColor.FromHsl` 方法中色彩的色調，以及做為 `Math.Sin` 的引數，以及用來管理星星位置的 `Math.Cos` 方法：
+`angle`欄位會每5秒從0度到360度的動畫。 `PaintSurface`處理常式會 `angle` 以兩種方式使用屬性：指定方法中色彩的色調 `SKColor.FromHsl` ，以及做為和方法的引數， `Math.Sin` `Math.Cos` 以管理星星的位置：
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage
@@ -297,7 +300,7 @@ public class HendecagramAnimationPage : ContentPage
 }
 ```
 
-`PaintSurface` 處理常式會呼叫 `Translate` 方法兩次，先轉譯成畫布的中心，然後轉譯成以（0，0）為中心的圓形圓周。 圓形的半徑設定為盡可能大，同時仍然保留頁面範圍內的星號：
+`PaintSurface`處理常式會呼叫 `Translate` 方法兩次，先轉譯成畫布的中央，然後轉譯成以（0，0）為中心的圓形圓周。 圓形的半徑設定為盡可能大，同時仍然保留頁面範圍內的星號：
 
 [![](translate-images/hendecagramanimation-small.png "Triple screenshot of the Hendecagram Animation page")](translate-images/hendecagramanimation-large.png#lightbox "Triple screenshot of the Hendecagram Animation page")
 

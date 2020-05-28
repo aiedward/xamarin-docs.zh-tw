@@ -1,26 +1,29 @@
 ---
-title: Xamarin. Forms Web 服務簡介
-description: 本指南提供示範如何與不同 web 服務通訊的 Xamarin 範例應用程式的逐步解說。 雖然每個 web 服務都使用個別的範例應用程式，但它們的功能類似，而且共用一般類別。
-ms.prod: xamarin
-ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/28/2017
-ms.openlocfilehash: bbeab6a6ab0d4a9d0e3a962240317fc0d54f9e25
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: Xamarin.FormsWeb 服務簡介
+description: 本指南提供 Xamarin.Forms 範例應用程式的逐步解說，示範如何與不同的 web 服務通訊。 雖然每個 web 服務都使用個別的範例應用程式，但它們的功能類似，而且共用一般類別。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68656647"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139174"
 ---
-# <a name="xamarinforms-web-services-introduction"></a>Xamarin. Forms Web 服務簡介
+# <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb 服務簡介
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
-_本主題提供 Xamarin 範例應用程式的逐步解說，以示範如何與不同的 web 服務通訊。雖然每個 web 服務都使用個別的範例應用程式，但它們的功能類似，而且共用一般類別。_
+_本主題提供 Xamarin.Forms 範例應用程式的逐步解說，示範如何與不同的 web 服務通訊。雖然每個 web 服務都使用個別的範例應用程式，但它們的功能類似，而且共用一般類別。_
 
-下面所述的範例待辦事項清單應用程式，是用來示範如何以 Xamarin 來存取不同類型的 web 服務後端。 它提供下列功能：
+下面所述的範例待辦事項清單應用程式是用來示範如何使用來存取不同類型的 web 服務後端 Xamarin.Forms 。 它提供下列功能：
 
 - 查看工作清單。
 - 新增、編輯和刪除工作。
@@ -40,32 +43,32 @@ _本主題提供 Xamarin 範例應用程式的逐步解說，以示範如何與�
 
 每個範例應用程式的共用程式碼專案都包含三個主要資料夾：
 
-|資料夾|用途|
+|資料夾|目的|
 |--- |--- |
-|資料|包含用來管理資料項目和與 web 服務通訊的類別和介面。 其中至少會包含 `TodoItemManager` 類別，這會透過 `App` 類別中的屬性公開，以叫用 web 服務作業。|
-|模型|包含應用程式的資料模型類別。 這至少包含 `TodoItem` 類別，這會為應用程式所使用的單一資料項目目建立模型。 資料夾也可以包含用來建立使用者資料模型的任何其他類別。|
-|檢視|包含應用程式的頁面。 這通常是由 `TodoListPage` 和 `TodoItemPage` 類別，以及用於驗證的任何其他類別所組成。|
+|資料|包含用來管理資料項目和與 web 服務通訊的類別和介面。 這至少 `TodoItemManager` 會包含類別，這會透過類別中的屬性公開，以叫用 `App` web 服務作業。|
+|模型|包含應用程式的資料模型類別。 這至少會包含類別，這會將 `TodoItem` 應用程式所使用的單一資料項目目模型化。 資料夾也可以包含用來建立使用者資料模型的任何其他類別。|
+|檢視|包含應用程式的頁面。 這通常是由 `TodoListPage` 和 `TodoItemPage` 類別，以及用於驗證之任何其他類別所組成。|
 
 每個應用程式的共用程式碼專案也包含一些重要的檔案：
 
-|檔案|用途|
+|檔案|目的|
 |--- |--- |
-|Constants.cs|@No__t_0 類別，指定應用程式用來與 web 服務進行通訊的任何常數。 這些常數需要更新，才能存取在提供者上建立的個人後端服務。|
-|ITextToSpeech.cs|@No__t_0 介面，指定 `Speak` 方法必須由任何實作為類別所提供。|
-|Todo.cs|負責具現化每個平臺上應用程式將顯示之第一頁的 `App` 類別，以及用來叫用 web 服務作業的 `TodoItemManager` 類別。|
+|Constants.cs|`Constants`類別，指定應用程式用來與 web 服務通訊的任何常數。 這些常數需要更新，才能存取在提供者上建立的個人後端服務。|
+|ITextToSpeech.cs|`ITextToSpeech`介面，指定 `Speak` 方法必須由任何實作為類別所提供。|
+|Todo.cs|`App`負責具現化每個平臺上應用程式將顯示之第一頁的類別，以及 `TodoItemManager` 用來叫用 web 服務作業的類別。|
 
 ### <a name="view-pages"></a>View 頁面
 
 大部分的範例應用程式都包含至少兩個頁面：
 
-- **TodoListPage** –此頁面會顯示 `TodoItem` 實例清單，以及 `TodoItem.Done` 屬性 `true` 時的刻度圖示。 按一下專案會流覽至 [`TodoItemPage`]。 此外，您可以按一下 [ *+* ] 符號來建立新的專案。
-- **TodoItemPage** –此頁面會顯示所選 `TodoItem` 的詳細資料，並可供編輯、儲存、刪除和讀出。
+- **TodoListPage** –此頁面會顯示實例的清單 `TodoItem` ，如果屬性為，則為滴答圖示 `TodoItem.Done` `true` 。 按一下專案會流覽至 `TodoItemPage` 。 此外，您可以按一下符號來建立新的專案 *+* 。
+- **TodoItemPage** –此頁面會顯示所選的詳細資料， `TodoItem` 並允許進行編輯、儲存、刪除和讀出。
 
 此外，某些範例應用程式包含用來管理使用者驗證進程的其他頁面。
 
-### <a name="model-the-data"></a>建立資料模型
+### <a name="model-the-data"></a>將資料模型化
 
-每個範例應用程式都會使用 `TodoItem` 類別來建立顯示的資料模型，並將其傳送至 web 服務以供儲存。 下列程式碼範例顯示 `TodoItem` 類別：
+每個範例應用程式 `TodoItem` 都會使用類別來建立顯示的資料模型，並將其傳送至 web 服務進行儲存。 下列程式碼範例顯示 `TodoItem` 類別：
 
 ```csharp
 public class TodoItem
@@ -77,19 +80,19 @@ public class TodoItem
 }
 ```
 
-@No__t_0 屬性是用來唯一識別每個 `TodoItem` 實例，而每個 web 服務會使用此屬性來識別要更新或刪除的資料。
+`ID`屬性會用來唯一識別每個 `TodoItem` 實例，而每個 web 服務會使用此屬性來識別要更新或刪除的資料。
 
 ### <a name="invoke-web-service-operations"></a>叫用 web 服務作業
 
-Web 服務作業是透過 `TodoItemManager` 類別來存取，而且可以透過 `App.TodoManager` 屬性來存取類別的實例。 @No__t_0 類別提供下列方法來叫用 web 服務作業：
+Web 服務作業是透過類別來存取 `TodoItemManager` ，而類別的實例則可透過 `App.TodoManager` 屬性存取。 `TodoItemManager`類別提供下列方法來叫用 web 服務作業：
 
-- **GetTasksAsync** –這個方法是用來在 `TodoListPage` 上填入 `ListView` 控制項，其中包含從 web 服務取得的 `TodoItem` 實例。
-- **SaveTaskAsync** –這個方法用來建立或更新 web 服務上的 `TodoItem` 實例。
-- **DeleteTaskAsync** –這個方法用來刪除 web 服務上的 `TodoItem` 實例。
+- **GetTasksAsync** –這個方法是用來在 `ListView` 上填入控制項， `TodoListPage` 其中包含 `TodoItem` 從 web 服務取得的實例。
+- **SaveTaskAsync** –這個方法是用來建立或更新 `TodoItem` web 服務上的實例。
+- **DeleteTaskAsync** –這個方法用來刪除 `TodoItem` web 服務上的實例。
 
-此外，某些範例應用程式包含 `TodoItemManager` 類別中的其他方法，可用來管理使用者驗證程式。
+此外，某些範例應用程式包含類別中的其他方法 `TodoItemManager` ，可用來管理使用者驗證程式。
 
-@No__t_0 方法不會直接叫用 web 服務作業，而是會在插入 `TodoItemManager` 的函式的相依類別上叫用方法。 例如，其中一個範例應用程式會將 `RestService` 類別插入 `TodoItemManager` 的函式，以提供使用 REST Api 來存取資料的執行。
+方法不會直接叫用 web 服務作業，而是 `TodoItemManager` 會在插入至此函式的相依類別上叫用方法 `TodoItemManager` 。 例如，其中一個範例應用程式會將類別插入至函式， `RestService` `TodoItemManager` 以提供使用 REST api 來存取資料的執行。
 
 ## <a name="related-links"></a>相關連結
 

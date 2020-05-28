@@ -1,28 +1,31 @@
 ---
-title: Xamarin.Forms 版面配置
-description: Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺化結構。 本文列出包含在 Xamarin 中的版面配置。
-ms.prod: xamarin
-ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/21/2018
-ms.openlocfilehash: fa08c5012adf74a17852a72b8faf2c0311d16cfa
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.Forms大綱
+description: Xamarin.Forms版面配置是用來將使用者介面控制群組成視覺化結構。 本文列出中包含的版面配置 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c39bf29feceaf598ac8fd38e6af3d227b6deddc0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83150028"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137302"
 ---
-# <a name="xamarinforms-layouts"></a>Xamarin.Forms 版面配置
+# <a name="xamarinforms-layouts"></a>Xamarin.Forms大綱
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺化結構。_
 
-[`Layout`](xref:Xamarin.Forms.Layout) [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 在 Xamarin 中，和類別是可作為視圖和其他版面配置容器之視圖的特製化子類型。 `Layout`類別本身衍生自 [`View`](views.md) 。 `Layout`衍生通常包含在 Xamarin. Forms 應用程式中設定子項目位置和大小的邏輯。
+[`Layout`](xref:Xamarin.Forms.Layout)中的和 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 類別 Xamarin.Forms 是流覽的特製化子類型，可作為視圖和其他版面配置的容器。 `Layout`類別本身衍生自 [`View`](views.md) 。 `Layout`衍生通常包含在應用程式中設定子項目位置和大小的邏輯 Xamarin.Forms 。
 
-[![Xamarin. 表單版面配置類型](layouts-images/layouts-sml.png "Xamarin. 表單版面配置類型")](layouts-images/layouts.png#lightbox "Xamarin. 表單版面配置類型")
+[![Xamarin.Forms版面配置類型](layouts-images/layouts-sml.png "[!OP.無 LOC （Xamarin）] 版面配置類型")](layouts-images/layouts.png#lightbox "[!OP.無 LOC （Xamarin）] 版面配置類型")
 
 衍生自的類別 `Layout` 可以分成兩個類別：
 
@@ -86,7 +89,7 @@ _Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺�
 
 <a name="grid" />
 
-### <a name="grid"></a>Grid
+### <a name="grid"></a>方格
 
 |     |     |
 | --- | --- |
@@ -116,6 +119,6 @@ _Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺�
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin. Forms FormsGallery 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms 範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [Xamarin.Forms API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
+- [Xamarin.FormsFormsGallery 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Xamarin.Forms範例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.FormsAPI 檔](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

@@ -1,74 +1,77 @@
 ---
-title: 將 SkiaSharp 點陣圖儲存至檔案
-description: 探索支援 SkiaSharp 將點陣圖儲存使用者的相片媒體櫃中的各種檔案格式。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 2431c19ceac08db8cb9fef3834695514e714f68f
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228035"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138654"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp 應用程式已建立或修改點陣圖之後，應用程式可能會想要將點陣圖儲存到使用者的相片媒體櫃：
+在 SkiaSharp 應用程式建立或修改點陣圖之後，應用程式可能會想要將點陣圖儲存至使用者的相片圖庫：
 
-![將點陣圖儲存](saving-images/SavingSample.png "將點陣圖儲存")
+![儲存點陣圖](saving-images/SavingSample.png "儲存點陣圖")
 
 這項工作包含兩個步驟：
 
-- 將 SkiaSharp 點陣圖轉換成特定檔案格式，例如 JPEG 或 PNG 的資料。
-- 將結果儲存到使用平台特定程式碼的相片媒體櫃。
+- 將 SkiaSharp 點陣圖轉換成特定檔案格式的資料，例如 JPEG 或 PNG。
+- 使用平臺專屬的程式碼，將結果儲存至相片媒體櫃。
 
-## <a name="file-formats-and-codecs"></a>檔案格式和轉碼器
+## <a name="file-formats-and-codecs"></a>檔案格式和編解碼器
 
-大部分的現今熱門的點陣圖檔案格式使用壓縮來減少儲存體空間。 壓縮技術兩大類統稱_失真_並_不失真_。 這些詞彙表示的壓縮演算法會導致資料遺失。
+現今大多數常用的點陣圖檔案格式都使用壓縮來減少儲存空間。 這兩個廣泛的壓縮技術類別稱為「_損_組 _」和「_ 不失真」。 這些詞彙指出壓縮演算法是否會導致資料遺失。
 
-最受歡迎的失真格式由 Joint Photographic Experts Group 開發，並呼叫 JPEG。 JPEG 壓縮演算法會分析使用稱為數學工具的映像_離散的餘弦函數轉換_，並嘗試移除並不重要保留影像的視覺化精確度的資料。 壓縮程度可以控制與設定一般會簡稱_品質_。 較高的品質設定會導致較大的檔案。
+最受歡迎的損失真格式是由「聯合攝影專家」群組所開發，稱為「JPEG」。 JPEG 壓縮演算法會使用稱為_離散余弦轉換_的數學工具來分析影像，並嘗試移除不重要的資料來保留影像的視覺效果精確度。 您可以使用通常稱為「_品質_」的設定來控制壓縮的程度。 品質較高的設定會產生較大的檔案。
 
-相反地，不失真的壓縮演算法會分析重複和模式，可以減少資料，但不會導致遺失任何資訊的方式編碼的像素的影像。 可以完全從壓縮的檔案還原原始的點陣圖資料。 目前使用中的主要不失真的壓縮的檔格式會是可攜式網路圖形 (PNG)。
+相反地，不失真的壓縮演算法會分析影像中是否有重複和圖元的模式，這些可以用來減少資料的方式進行編碼，但不會導致遺失任何資訊。 原始的點陣圖資料可以完全從壓縮檔案還原。 今日使用的主要無失真壓縮檔案格式是可移植的網狀圖形（PNG）。
 
-一般而言，JPEG 會用於相片，而 PNG 用於手動或以演算法產生的映像。 減少某些檔案大小的任何不失真的壓縮演算法必須一定會增加其他項目的大小。 幸運的是，這種增加量的大小通常只發生在包含許多隨機 （或隨機） 資訊的資料。
+一般來說，JPEG 會用於相片，而 PNG 則用於已手動或以演算法方式產生的影像。 可減少某些檔案大小的任何不失真壓縮演算法，都必須增加其他檔案的大小。 幸好，這種大小的增加通常僅適用于包含大量隨機（或看似隨機）資訊的資料。
 
-壓縮演算法都不夠複雜，無法保證兩個詞彙，描述的壓縮和解壓縮程序：
+壓縮演算法的複雜性足以保證兩個描述壓縮和解壓縮程式的詞彙：
 
-- _解碼_&mdash;讀取點陣圖的檔案格式，並將其解壓縮
-- _編碼_&mdash;壓縮點陣圖，並寫入點陣圖檔案格式
+- _decode_解碼 &mdash;讀取點陣圖檔案格式並將它解壓縮
+- _編碼_ &mdash;壓縮點陣圖並寫入點陣圖檔案格式
 
-[ `SKBitmap` ](xref:SkiaSharp.SKBitmap)類別包含數個方法，名為`Decode`，建立`SKBitmap`從壓縮的來源。 只需要是提供檔案名稱、 資料流或位元組陣列。 可以判斷檔案格式解碼器，並將它遞交給適當的內部解碼函式。
+[`SKBitmap`](xref:SkiaSharp.SKBitmap)類別包含數個名為 `Decode` 的方法，可 `SKBitmap` 從壓縮的來源建立。 所有必要的都是提供檔案名、資料流程或位元組陣列。 此解碼器可以判斷檔案格式，並將其交給適當的內部解碼函式。
 
-颾魤 ㄛ [ `SKCodec` ](xref:SkiaSharp.SKCodec)類別有兩個方法，名為`Create`，可以建立`SKCodec`從壓縮的來源物件，並允許應用程式在解密程序中取得更複雜。 (`SKCodec`類別會顯示在 發行項[**動畫 SkiaSharp 點陣圖**](animating.md#gif-animation)與解碼的動畫的 GIF 檔案。)
+此外， [`SKCodec`](xref:SkiaSharp.SKCodec) 類別有兩個名為 `Create` 的方法，可以 `SKCodec` 從壓縮的來源建立物件，並允許應用程式更深入地參與解碼進程。 （此 `SKCodec` 類別會顯示在以解碼動畫 GIF 檔案的方式建立[**SkiaSharp 點陣圖的動畫**](animating.md#gif-animation)文章中）。
 
-對點陣圖進行編碼時, 需要詳細資訊:編碼器必須知道應用程式想要使用的特定檔案格式 (JPEG 或 PNG 或其他內容)。 如果需要失真格式，則編碼也必須知道所需的等級的品質。
+為點陣圖編碼時，需要更多資訊：編碼器必須知道應用程式想要使用的特定檔案格式（JPEG 或 PNG 或其他專案）。 如果需要損失真格式，編碼也必須知道所需的品質等級。
 
-`SKBitmap`類別會定義其中一個[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法，使用下列語法：
+`SKBitmap`類別會 [`Encode`](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32)) 使用下列語法來定義一個方法：
 
 ```csharp
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
 ```
 
-這個方法會更詳細描述短時間內。 寫入的資料流寫入編碼的點陣圖。 (在 'W'`SKWStream`代表 「 寫入 」。)第二個和第三個引數指定的檔案格式並 （適用於失真格式） 所需的品質，範圍從 0 到 100。
+這個方法會在稍後更詳細地說明。 編碼的點陣圖會寫入至可寫入的資料流程。 （中的 ' W ' `SKWStream` 代表「可寫入」）。第二個和第三個引數指定檔案格式和（適用于損失真格式）所需的品質，範圍介於0到100之間。
 
-颾魤 ㄛ [ `SKImage` ](xref:SkiaSharp.SKImage)並[ `SKPixmap` ](xref:SkiaSharp.SKPixmap)類別也定義`Encode`稍微更具彈性，而且這可能會偏好的方法。 您可以輕鬆地建立`SKImage`物件從`SKBitmap`物件使用靜態[ `SKImage.FromBitmap` ](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap))方法。 您可以取得`SKPixmap`物件從`SKBitmap`物件使用[ `PeekPixels` ](xref:SkiaSharp.SKBitmap.PeekPixels)方法。
+此外， [`SKImage`](xref:SkiaSharp.SKImage) 和 [`SKPixmap`](xref:SkiaSharp.SKPixmap) 類別也會定義 `Encode` 更多用途的方法，而且您可能會偏好使用。 您可以使用靜態方法，輕鬆地 `SKImage` 從 `SKBitmap` 物件建立物件 [`SKImage.FromBitmap`](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap)) 。 您可以 `SKPixmap` 使用方法，從物件取得物件 `SKBitmap` [`PeekPixels`](xref:SkiaSharp.SKBitmap.PeekPixels) 。
 
-其中一個[ `Encode` ](xref:SkiaSharp.SKImage.Encode)所定義的方法`SKImage`沒有參數並會自動儲存成 PNG 格式。 無參數的方法是非常好用。
+所定義的其中一個 [`Encode`](xref:SkiaSharp.SKImage.Encode) 方法 `SKImage` 沒有參數，而且會自動儲存為 PNG 格式。 該無參數方法很容易使用。
 
-## <a name="platform-specific-code-for-saving-bitmap-files"></a>平台特定程式碼，來儲存點陣圖檔
+## <a name="platform-specific-code-for-saving-bitmap-files"></a>儲存點陣圖檔案的平臺特定程式碼
 
-當您想要編碼`SKBitmap`物件至特定檔案格式，通常您會得到一些排序的資料流物件或資料的陣列。 部份`Encode`方法 (包括不含任何參數所定義的一個`SKImage`) 會傳回[ `SKData` ](xref:SkiaSharp.SKData)物件，它可以轉換成使用的位元組陣列[ `ToArray` ](xref:SkiaSharp.SKData.ToArray)方法。 此資料必須儲存至檔案。
+當您將 `SKBitmap` 物件編碼成特定的檔案格式時，通常會留下某種類型的資料流程物件或資料的陣列。 某些 `Encode` 方法（包括沒有所定義之參數的方法 `SKImage` ） [`SKData`](xref:SkiaSharp.SKData) 會傳回物件，而這個物件可以使用方法轉換成位元組陣列 [`ToArray`](xref:SkiaSharp.SKData.ToArray) 。 然後必須將此資料儲存至檔案。
 
-正在儲存至應用程式的本機儲存體中的檔案是相當簡單，因為您可以使用標準`System.IO`類別和方法，這項工作。 本文會示範這項技術[**動畫 SkiaSharp 點陣圖**](animating.md#bitmap-animation)與以動畫顯示一連串點陣圖的 Mandelbrot 集合。
+儲存至應用程式本機儲存體中的檔案相當簡單，因為您可以針對這項工作使用標準 `System.IO` 類別和方法。 這項技術會在以動畫顯示 Mandelbrot 集的一系列點陣圖建立動畫中的[**SkiaSharp 點陣圖**](animating.md#bitmap-animation)文章中示範。
 
-如果您想要由其他應用程式共用的檔案時，它必須儲存到使用者的相片媒體櫃中。 這項工作需要平台特定程式碼並使用 Xamarin.Forms [ `DependencyService` ](xref:Xamarin.Forms.DependencyService)。
+如果您想要讓其他應用程式共用檔案，必須將檔案儲存到使用者的相片媒體櫃。 這項工作需要平臺特定的程式碼和使用 Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。
 
-**SkiaSharpFormsDemo**專案中[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式會定義`IPhotoLibrary`搭配使用的介面`DependencyService`類別。 這會定義的語法`SavePhotoAsync`方法：
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式中的**SkiaSharpFormsDemo**專案會定義 `IPhotoLibrary` 與類別搭配使用的介面 `DependencyService` 。 這會定義方法的語法 `SavePhotoAsync` ：
 
 ```csharp
 public interface IPhotoLibrary
@@ -79,15 +82,15 @@ public interface IPhotoLibrary
 }
 ```
 
-此介面也會定義`PickPhotoAsync`方法，用來開啟裝置的相片媒體櫃的平台專屬檔案選擇器。
+這個介面也會定義 `PickPhotoAsync` 方法，用來開啟裝置相片媒體櫃的平臺特定檔案選擇器。
 
-針對`SavePhotoAsync`，第一個引數是位元組陣列，包含已編碼為特定檔案格式，例如 JPEG 或 PNG 的點陣圖。 就可以應用程式可能會想要找出它的下一個參數，後面接著檔案名稱中指定的特定資料夾中建立的所有點陣圖。 方法會傳回布林值，指出成功與否。
+針對 `SavePhotoAsync` ，第一個引數是位元組陣列，其中包含已編碼為特定檔案格式的點陣圖，例如 JPEG 或 PNG。 應用程式可能會想要將它所建立的所有點陣圖隔離到特定的資料夾中，這是在下一個參數中指定，後面加上檔案名。 方法會傳回表示成功的布林值。
 
-下列各節將討論如何`SavePhotoAsync`實作每個平台。
+下列各節將討論如何 `SavePhotoAsync` 在每個平臺上執行。
 
-### <a name="the-ios-implementation"></a>IOS 實作
+### <a name="the-ios-implementation"></a>IOS 執行
 
-IOS 實作`SavePhotoAsync`會使用[ `SaveToPhotosAlbum` ](xref:UIKit.UIImage.SaveToPhotosAlbum*)方法`UIImage`:
+的 iOS 執行會 `SavePhotoAsync` 使用的 [`SaveToPhotosAlbum`](xref:UIKit.UIImage.SaveToPhotosAlbum*) 方法 `UIImage` ：
 
 ```csharp
 public class PhotoLibrary : IPhotoLibrary
@@ -109,25 +112,25 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-不幸的是，沒有辦法指定檔案名稱或映像的資料夾。
+可惜的是，沒有辦法指定映射的檔案名或資料夾。
 
-**Info.plist** iOS 專案中的檔案需要索引鍵，以指定它將映像新增至相片媒體櫃：
+IOS 專案中的**plist**檔案需要一個金鑰，指出它會將影像新增至相片媒體櫃：
 
 ```xml
 <key>NSPhotoLibraryAddUsageDescription</key>
 <string>SkiaSharp Forms Demos adds images to your photo library</string>
 ```
 
-請留意 ！ 直接存取的相片媒體櫃的權限索引鍵是非常類似但不同：
+小心！ 只存取相片媒體櫃的許可權金鑰非常類似，但並不相同：
 
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>
 <string>SkiaSharp Forms Demos accesses your photo library</string>
 ```
 
-### <a name="the-android-implementation"></a>Android 的實作
+### <a name="the-android-implementation"></a>Android 的執行
 
-Android 的實作`SavePhotoAsync`先檢查是否有`folder`引數是`null`或空字串。 如果是這樣，點陣圖會儲存相片庫的根目錄。 否則，取得資料夾時，，而且如果不存在，則會建立：
+Android 的 `SavePhotoAsync` 第一次執行會檢查 `folder` 引數為 `null` 或空字串。 若是如此，點陣圖就會儲存在相片媒體櫃的根目錄中。 否則，會取得資料夾，如果不存在，則會建立：
 
 ```csharp
 public class PhotoLibrary : IPhotoLibrary
@@ -171,17 +174,17 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-若要呼叫`MediaScannerConnection.ScanFile`不是絕對必要，但如果您要測試您的程式立即檢查相片媒體櫃，就可以協助更藉由更新程式庫的 [資源庫] 檢視。
+對的呼叫 `MediaScannerConnection.ScanFile` 並不是絕對必要的，但如果您是藉由立即檢查相片媒體櫃來測試程式，則更新程式庫資源庫視圖會有很大的説明。
 
-**AndroidManifest.xml**檔案需要下列權限標記：
+**Androidmanifest.xml**需要下列許可權標記：
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-### <a name="the-uwp-implementation"></a>UWP 實作
+### <a name="the-uwp-implementation"></a>UWP 的執行
 
-UWP 實作`SavePhotoAsync`結構中的 Android 的實作非常類似：
+UWP 的執行 `SavePhotoAsync` 在結構上非常類似于 Android 的執行：
 
 ```csharp
 public class PhotoLibrary : IPhotoLibrary
@@ -235,33 +238,33 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-**能力**一節**Package.appxmanifest**檔案需要**圖片媒體櫃**。
+**Package.appxmanifest.xml**檔案的 [**功能**] 區段需要圖片文檔**庫**。
 
-## <a name="exploring-the-image-formats"></a>探索映像格式
+## <a name="exploring-the-image-formats"></a>探索影像格式
 
-以下是[ `Encode` ](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32))方法`SKImage`一次：
+以下是再次提供的 [`Encode`](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32)) 方法 `SKImage` ：
 
 ```csharp
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
 ```
 
-[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat) 是列舉型別參考為 11 個點陣圖檔案格式，其中有些是相當晦澀難懂的成員：
+[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat)是一個列舉，其中包含參考11個位圖檔案格式的成員，其中有些是模糊的：
 
-- `Astc` &mdash; 自適性調整紋理壓縮
-- `Bmp` &mdash; Windows 點陣圖
-- `Dng` &mdash; Adobe Digital Negative
-- `Gif` &mdash; 圖形交換格式
-- `Ico` &mdash; Windows 圖示影像
-- `Jpeg` &mdash; Joint Photographic Experts Group
-- `Ktx` &mdash; OpenGL 的 Khronos 紋理格式
-- `Pkm` &mdash; 將檔案儲存 Pokémon
-- `Png` &mdash; 可攜式網路圖形
-- `Wbmp` &mdash; 無線應用通訊協定的點陣圖格式 （每像素 1 位元）
-- `Webp` &mdash; Google WebP 格式
+- `Astc`&mdash;彈性可擴充材質壓縮
+- `Bmp`&mdash;Windows 點陣圖
+- `Dng`&mdash;Adobe 數位負值
+- `Gif`&mdash;圖形交換格式
+- `Ico`&mdash;Windows 圖示影像
+- `Jpeg`&mdash;聯合攝影專家群組
+- `Ktx`&mdash;OpenGL 的 Khronos 材質格式
+- `Pkm`&mdash;Pokémon 儲存檔案
+- `Png`&mdash;可移植的網狀圖形
+- `Wbmp`&mdash;無線應用程式協定點陣圖格式（每圖元1位）
+- `Webp`&mdash;Google WebP 格式
 
-如您所見，只有三種檔案格式 (`Jpeg`， `Png`，和`Webp`) SkiaSharp 實際上支援。
+您很快就會看到，SkiaSharp 實際上會支援其中三種檔案格式（ `Jpeg` 、 `Png` 和 `Webp` ）。
 
-若要儲存`SKBitmap`名為物件`bitmap`到使用者的相片媒體櫃，您也需要的成員`SKEncodedImageFormat`列舉具名`imageFormat`並 （適用於失真格式） 整數`quality`變數。 您可以使用下列程式碼，將該點陣圖儲存到具有名稱的檔案`filename`在`folder`資料夾：
+若要將 `SKBitmap` 名為 `bitmap` 的物件儲存至使用者的相片媒體櫃，您也需要一個 `SKEncodedImageFormat` 名為的列舉成員， `imageFormat` 以及一個整數變數（適用于有損的格式） `quality` 。 您可以使用下列程式碼，將該點陣圖儲存到資料夾中名稱為的檔案 `filename` `folder` ：
 
 ```csharp
 using (MemoryStream memStream = new MemoryStream())
@@ -278,11 +281,11 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 }
 ```
 
-`SKManagedWStream`類別衍生自`SKWStream`（這代表 「 可寫入資料流 」）。 `Encode`方法會寫入該資料流中的編碼的點陣圖檔案。 該程式碼中的註解，請參閱檢查可能需要執行一些錯誤。
+`SKManagedWStream`類別衍生自 `SKWStream` （代表「可寫入資料流程」）。 `Encode`方法會將編碼的點陣圖檔案寫入該資料流程中。 該程式碼中的批註會參考您可能需要執行的一些錯誤檢查。
 
-**儲存的檔案格式**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式會使用類似的程式碼可讓您試驗不同的格式儲存點陣圖。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)應用程式中的 [**儲存檔案格式**] 頁面會使用類似的程式碼，讓您能夠試驗以各種格式儲存點陣圖。
 
-XAML 檔案中包含`SKCanvasView`顯示點陣圖、 應用程式頁面的其餘部分包含的所有項目時要呼叫`Encode`方法`SKBitmap`。 它有`Picker`成員的`SKEncodedImageFormat`列舉型別`Slider`失真的點陣圖格式的品質引數的兩個`Entry`檔案名稱和資料夾名稱時，請檢視和`Button`以儲存檔案。
+XAML 檔案包含 `SKCanvasView` 會顯示點陣圖的，而頁面的其餘部分則包含應用程式呼叫方法時所需的所有專案 `Encode` `SKBitmap` 。 它有一個 `Picker` 用於列舉的成員 `SKEncodedImageFormat` 、一個適用于 `Slider` 損失真點陣圖格式的品質引數、兩個用於 `Entry` 檔案名和資料夾名稱的視圖，以及 `Button` 用於儲存檔案的。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -369,7 +372,7 @@ XAML 檔案中包含`SKCanvasView`顯示點陣圖、 應用程式頁面的其餘
 </ContentPage>
 ```
 
-程式碼後置檔案載入點陣圖資源，並使用`SKCanvasView`來顯示它。 點陣圖永遠不會變更。 `SelectedIndexChanged`處理常式`Picker`修改延伸模組已列舉成員相同的檔案名稱：
+程式碼後置檔案會載入點陣圖資源，並使用 `SKCanvasView` 來顯示它。 該點陣圖永遠不會變更。 的 `SelectedIndexChanged` 處理常式 `Picker` 會使用與列舉成員相同的副檔名來修改檔案名：
 
 ```csharp
 public partial class SaveFileFormatsPage : ContentPage
@@ -435,45 +438,47 @@ public partial class SaveFileFormatsPage : ContentPage
 }
 ```
 
-`Clicked`處理常式`Button`所有的實際運作。 它會取得兩個引數`Encode`從`Picker`並`Slider`，然後使用 建立稍早所示的程式碼`SKManagedWStream`如`Encode`方法。 這兩個`Entry`檢視提供資料夾和檔案名稱`SavePhotoAsync`方法。
+的 `Clicked` 處理常式 `Button` 會執行所有的實際工作。 它會從和取得的兩個引數 `Encode` `Picker` `Slider` ，然後使用稍早所示的程式碼，為 `SKManagedWStream` `Encode` 方法建立。 這兩個 `Entry` views 會提供方法的資料夾和檔案名 `SavePhotoAsync` 。
 
-這個方法大部分被用來處理問題或發生錯誤。 如果`Encode`會建立空的陣列，這表示，不支援的特定檔案格式。 如果`SavePhotoAsync`傳回`false`，則檔案不成功儲存。
+此方法大多是專門用來處理問題或錯誤。 如果 `Encode` 建立空陣列，則表示不支援特定的檔案格式。 如果傳回，則不會 `SavePhotoAsync` `false` 成功儲存檔案。
 
-以下是執行的程式：
+以下是正在執行的程式：
 
 [![儲存檔案格式](saving-images/SaveFileFormats.png "儲存檔案格式")](saving-images/SaveFileFormats-Large.png#lightbox)
 
-該螢幕擷取畫面顯示在這些平台支援的只有三個格式：
+該螢幕擷取畫面顯示這些平臺上唯一支援的三種格式：
 
 - JPEG
 - PNG
 - WebP
 
-對於所有其他的格式，`Encode`方法會將執行任何動作寫入資料流，並產生的位元組陣列是空的。
+對於所有其他的格式， `Encode` 方法會將任何內容寫入資料流程，而結果位元組陣列則是空的。
 
-點陣圖所**儲存的檔案格式**頁面儲存為 600 像素的正方形。 使用每像素的 4 個位元組，這是 1,440,000 記憶體中的位元組總計。 下表顯示各種組合的檔案格式和品質的檔案大小：
+儲存檔案**格式**頁面所節省的點陣圖是 600-圖元正方形。 每圖元4個位元組，在記憶體中總計1440000個位元組。 下表顯示各種檔案格式和品質組合的檔案大小：
 
-|格式|品質|大小|
-|------|------:|---:|
-| PNG | N/A | 492 K |
-| JPEG | 0 | 2.95 K |
-|      | 50 | 22.1 K |
-|      | 100 | 206 K |
-| WebP | 0 | 2.71 K |
-|      | 50 | 11.9 K |
-|      | 100 | 101 K |
+|格式|品質|Size|
+|---
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-您可以試驗不同的品質設定，並檢查結果。
+---|---標題：描述： ms-chap： assetid： author： ms. author： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-## <a name="saving-finger-paint-art"></a>正在儲存 finger-paint 美工圖案
+---:|---:| |PNG |N/A |492K | |JPEG |0 |2.95 k | |     |50 |22.1 k | |     |100 |206K | |WebP |0 |2.71 k | |     |50 |11.9 k | |     |100 |101K |
 
-點陣圖的常見用法是以繪圖程式，它可在此函數，稱為 項目_陰影點陣圖_。 點陣圖，然後顯示該程式上不會保留所有繪圖。 點陣圖也派上用場儲存繪圖。
+您可以試驗各種品質設定並檢查結果。
 
-[**手指繪製在 SkiaSharp** ](../paths/finger-paint.md)文章示範如何使用追蹤來實作基本的手指繪製程式的觸控。 程式支援只有一個色彩] 和 [只有一個筆觸寬度，但保留集合中的整個繪圖`SKPath`物件。
+## <a name="saving-finger-paint-art"></a>儲存手指繪製美工圖案
 
-**使用手指繪製儲存**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例也會保留整個集合中的繪圖`SKPath`物件，但它也呈現的點陣圖，它可以將它儲存到您的相片媒體櫃中的繪圖。
+點陣圖的其中一個常見用法是在繪圖程式中，它的功能就像所謂的_陰影點陣圖_。 所有繪圖都會保留在點陣圖上，然後由程式顯示。 點陣圖也可以方便儲存繪圖。
 
-此程式大多是類似於原始**手指繪製**程式。 加強的部分是，XAML 檔案現在會具現化標示的按鈕**清楚**並**儲存**:
+[**SkiaSharp 文章中的手指繪製**](../paths/finger-paint.md)示範如何使用觸控追蹤來執行基本的手指繪製程式。 此程式只支援一種色彩，而只有一個筆觸寬度，但它會將整個繪圖保留在物件的集合中 `SKPath` 。
+
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的**手指繪製與儲存**頁面也會將整個繪圖保留在物件集合中 `SKPath` ，但它也會將繪圖轉譯成點陣圖，它可以儲存到您的相片媒體櫃。
+
+此程式大部分與原始的**手指繪製**程式類似。 其中一個增強功能是 XAML 檔案現在會具現化標示為**Clear**和**Save**的按鈕：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -516,7 +521,7 @@ public partial class SaveFileFormatsPage : ContentPage
 </ContentPage>
 ```
 
-程式碼後置檔案中會保留類型的欄位`SKBitmap`名為`saveBitmap`。 建立或在重新建立此點陣圖`PaintSurface`處理常式時顯示的大小呈現的變更。 如果需要重新建立點陣圖，現有的點陣圖的內容複製到新的點陣圖，因此不論在顯示介面的大小變更的方式保留的所有項目：
+程式碼後置檔案會維護名為之類型的欄位 `SKBitmap` `saveBitmap` 。 每當顯示介面的大小變更時，就會在處理常式中建立或重建這個點陣圖 `PaintSurface` 。 如果必須重新建立點陣圖，則會將現有點陣圖的內容複寫到新的點陣圖，讓所有專案都能保留，無論顯示介面的大小變化為何：
 
 ```csharp
 public partial class FingerPaintSavePage : ContentPage
@@ -563,9 +568,9 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-繪製由`PaintSurface`處理常式就會發生在結尾處，且僅包含轉譯點陣圖。
+處理常式所完成的繪製 `PaintSurface` 會在結尾進行，而且只包含呈現點陣圖。
 
-觸控處理將會類似於舊版的程式。 程式會維護兩個集合`inProgressPaths`和`completedPaths`，包含自前次已清除顯示畫了條使用者的所有項目。 每個觸控事件，如`OnTouchEffectAction`處理常式會呼叫`UpdateBitmap`:
+觸控處理類似于先前的程式。 程式會維護兩個集合： `inProgressPaths` 和 `completedPaths` ，其中包含使用者自從上次清除顯示之後所繪製的所有專案。 針對每個觸控事件， `OnTouchEffectAction` 處理常式會呼叫 `UpdateBitmap` ：
 
 ```csharp
 public partial class FingerPaintSavePage : ContentPage
@@ -653,9 +658,9 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-`UpdateBitmap`方法會重繪`saveBitmap`藉由建立新`SKCanvas`，清除它，然後轉譯點陣圖上的所有路徑。 它結束時，會使失效`canvasView`，以便顯示畫面上，可以繪製點陣圖。
+`UpdateBitmap`方法會藉 `saveBitmap` 由建立新的 `SKCanvas` 、清除它，然後呈現點陣圖上的所有路徑來重新繪製。 其結束的結論是 `canvasView` 讓點陣圖可以繪製在顯示上。
 
-以下是兩個按鈕的處理常式。 **清楚** 按鈕會清除這兩個路徑的集合，更新`saveBitmap`（這會導致清除點陣圖），則`SKCanvasView`:
+以下是這兩個按鈕的處理常式。 [**清除**] 按鈕會同時清除路徑集合、更新 `saveBitmap` （這會導致清除點陣圖），並使失效 `SKCanvasView` ：
 
 ```csharp
 public partial class FingerPaintSavePage : ContentPage
@@ -690,19 +695,19 @@ public partial class FingerPaintSavePage : ContentPage
 }
 ```
 
-**儲存** 按鈕處理常式會使用簡化[ `Encode` ](xref:SkiaSharp.SKImage.Encode)方法從`SKImage`。 這個方法會將編碼使用 PNG 格式。 `SKImage`物件會根據建立`saveBitmap`，和`SKData`物件包含已編碼的 PNG 檔案。
+[**儲存**] 按鈕處理常式會使用的簡化 [`Encode`](xref:SkiaSharp.SKImage.Encode) 方法 `SKImage` 。 這個方法會使用 PNG 格式進行編碼。 `SKImage`物件是根據所建立 `saveBitmap` ，而 `SKData` 物件包含已編碼的 PNG 檔案。
 
-`ToArray`方法的`SKData`取得位元組陣列。 這是傳遞至`SavePhotoAsync`方法中，固定的資料夾名稱，以及唯一的檔名，建構自目前的日期和時間。
+的 `ToArray` 方法會取得 `SKData` 位元組陣列。 這是傳遞給方法的內容 `SavePhotoAsync` ，以及固定的資料夾名稱，以及從目前的日期和時間所建立的唯一檔案名。
 
-以下是作用中的程式：
+以下是運作中的程式：
 
-[![手指儲存的小畫家](saving-images/FingerPaintSave.png "手指繪製儲存")](saving-images/FingerPaintSave-Large.png#lightbox)
+[![手指繪製儲存](saving-images/FingerPaintSave.png "手指繪製儲存")](saving-images/FingerPaintSave-Large.png#lightbox)
 
-用於非常類似的技巧[ **SpinPaint** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)範例。 這也是手指繪製程式不同之處在於使用者繪製然後重現上其其他四個象限的設計轉動式磁碟上。 旋轉的手指繪製變更色彩的磁碟：
+[**SpinPaint**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)範例中使用非常類似的技巧。 這也是一種手指繪製程式，不同之處在于使用者會繪製旋轉的磁片，然後在其他四個象限重現設計。 當磁片旋轉時，手指繪製的色彩會改變：
 
-[![啟動 小畫家](saving-images/SpinPaint.png "微調 [小畫家]")](saving-images/SpinPaint-Large.png#lightbox)
+[![微調繪製](saving-images/SpinPaint.png "微調繪製")](saving-images/SpinPaint-Large.png#lightbox)
 
-**儲存**按鈕`SpinPaint`就如同**手指繪製**，因為它會將影像儲存為固定的資料夾名稱 (**SpainPaint**) 和從建構檔案名稱日期和時間。
+類別的 [**儲存**] 按鈕類似于 [ `SpinPaint` **手指繪製**]，它會將影像儲存到固定資料夾名稱（**SpainPaint**），以及從日期和時間所結構化的檔案名。
 
 ## <a name="related-links"></a>相關連結
 

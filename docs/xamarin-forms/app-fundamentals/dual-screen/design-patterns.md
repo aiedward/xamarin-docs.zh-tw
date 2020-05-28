@@ -1,24 +1,27 @@
 ---
-title: Xamarin.Forms 雙螢幕設計模式
-description: 本指南說明 Xamarin.Forms 如何支援針對雙螢幕裝置最佳化的各種不同設計模式。
-ms.prod: xamarin
-ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 02/08/2020
-ms.openlocfilehash: ab83869a4e865d1ce3b1fee83e84ce4e2fd913c6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms雙畫面設計模式
+description: 本指南說明如何 Xamarin.Forms 支援針對雙螢幕裝置優化的各種不同設計模式。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 277fb67eeea465239d9340e755240288286d2359
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80628326"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138784"
 ---
-# <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms 雙螢幕設計模式
+# <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms雙畫面設計模式
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 本指南介紹我們針對雙螢幕裝置所建議的設計模式，其中包含程式碼和範例，可協助您建立介面來提供吸引人且實用的使用者體驗。
 
@@ -117,7 +120,7 @@ ms.locfileid: "80628326"
 </Grid>
 ```
 
-具有[`CollectionView`](xref:Xamarin.Forms.CollectionView)在鉸鏈寬度上拆分的網格佈局,是提供這種雙屏體驗的理想方法。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)，具有根據轉軸寬度分割的格線版面配置，可提供絕佳的方法來傳遞這種雙重螢幕體驗。
 
 ## <a name="dual-view-pattern"></a>雙檢視模式
 

@@ -1,40 +1,44 @@
 ---
-title: 第25章摘要。 頁面變化
-description: 使用 Xamarin.表單創建行動應用程式:第 25 章摘要。 頁面變化
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: b86f2d7216a6344b14fc4d8c538ea68871eda5ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 25. Page varieties''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e66fb50b8d537ee0267457d5b0ab0f417813e676
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760540"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136613"
 ---
-# <a name="summary-of-chapter-25-page-varieties"></a>第25章摘要。 頁面變化
+# <a name="summary-of-chapter-25-page-varieties"></a>第25章的摘要。 頁面變化
 
-[![下載範例](~/media/shared/download.png)下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
 
-到目前為止,您已經看到兩個來自 的`Page`類`ContentPage`派`NavigationPage`生 自 : 和 。 本章介紹另外兩章:
+到目前為止，您已看到兩個衍生自的類別 `Page` ： `ContentPage` 和 `NavigationPage` 。 這一章提供兩個其他專案：
 
-- [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)管理兩頁,一個母版和一個細節
-- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)管理通過選項卡存取的多個子頁
+- [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)管理兩個頁面，主要和詳細資料
+- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)管理透過索引標籤存取的多個子頁面
 
-與第 24 章中討論`NavagationPage`的頁面 類型相比,這些頁面類型提供了更複雜的導航選項[。頁面導覽](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md)
+這些頁面類型提供比第24章所討論更複雜的導覽選項 `NavagationPage` [。頁面導覽](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter24.md)。
 
-## <a name="master-and-detail"></a>母版和詳細資訊
+## <a name="master-and-detail"></a>主要和詳細資料
 
-定義[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)類型`Page`[`Master`](xref:Xamarin.Forms.MasterDetailPage.Master):[`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail)與的兩個屬性。 通常,將每個屬性設定為`ContentPage`。 這`MasterDetailPage`兩個頁面之間的顯示和切換。
+會 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 定義類型的兩個屬性 `Page` ： [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) 和 [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) 。 一般來說，您會將每個屬性設定為 `ContentPage` 。 會在 `MasterDetailPage` 這兩個頁面之間顯示和切換。
 
-在這兩頁之間切換有兩種基本方法:
+有兩個基本的方法可以在這兩個頁面之間切換：
 
-- *分割*與細節並排的位置
-- 詳細資訊頁覆蓋或部分覆寫母版頁的*彈出器*
+- 主要和詳細資料並存的*分割*
+- 詳細資料頁面涵蓋或部分涵蓋主版頁面的*popover*
 
-*彈出方法*(*幻燈片*、*重疊*和*交換*)有幾個變體,但這些變體通常依賴於平臺。 您可以將 的[`MasterDetailBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior)`MasterDetailPage`屬性 設定為枚舉[`MasterBehavior`](xref:Xamarin.Forms.MasterBehavior)的成員 :
+*Popover*方法有數種變化（投影*片*、重*迭*和*交換*），但它們通常是平臺相依的。 您可以將的 [`MasterDetailBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) 屬性設定 `MasterDetailPage` 為列舉的成員 [`MasterBehavior`](xref:Xamarin.Forms.MasterBehavior) ：
 
 - [`Default`](xref:Xamarin.Forms.MasterBehavior.Default)
 - [`Split`](xref:Xamarin.Forms.MasterBehavior.Split)
@@ -42,79 +46,79 @@ ms.locfileid: "70760540"
 - [`SplitOnPortrait`](xref:Xamarin.Forms.MasterBehavior.SplitOnPortrait)
 - [`Popover`](xref:Xamarin.Forms.MasterBehavior.Popover)
 
-但是,此屬性對手機沒有影響。 手機總是有彈出行為。 只有平板電腦和桌面視窗可以具有拆分行為。
+不過，此屬性不會對手機造成任何影響。 電話一律會有 popover 的行為。 只有平板電腦和桌面視窗可以有分割行為。
 
 ### <a name="exploring-the-behaviors"></a>探索行為
 
-[**MasterDetail行為**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MasterDetailBehaviors)範例允許您嘗試不同裝置上的默認行為。 程式包含兩個單獨的`ContentPage`母版和細節導數(兩者都設置`Title`了 屬性),另一個類派`MasterDetailPage`生自 它們。 詳細資訊頁包含在 中`NavigationPage`, 因為沒有 UWP 程式將無法工作。
+[**MasterDetailBehaviors**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MasterDetailBehaviors)範例可讓您試驗不同裝置上的預設行為。 此套裝程式含 `ContentPage` 主要和詳細資料的兩個不同衍生專案（ `Title` 同時設定兩者的屬性），以及另一個衍生自 `MasterDetailPage` 的類別（結合它們）。 詳細資料頁面會包含在中， `NavigationPage` 因為 UWP 程式不會有任何作用。
 
-Windows 8.1 和 Windows Phone 8.1 平臺要求`Icon`將位圖設置為母 版頁的屬性。
+Windows 8.1 和 Windows Phone 8.1 平臺需要將點陣圖設定為 `Icon` 主版頁面的屬性。
 
 ### <a name="back-to-school"></a>重回學校
 
-[**"學校與細節"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/SchoolAndDetail)範例採用一種略有不同的方法構建程式,以顯示來自[**學校美術**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt)圖書館的學生。
+[**SchoolAndDetail**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/SchoolAndDetail)範例會使用稍微不同的方法來設計程式，以顯示[**SchoolOfFineArt**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/SchoolOfFineArt)程式庫中的學生。
 
-和`Master``Detail`屬性使用從`MasterDetailPage`派生的[SchoolAndDetailPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml)檔中的視覺樹定義。 這種排列允許在主頁和詳細資訊頁之間設置數據綁定。
+`Master`和 `Detail` 屬性是以衍生自的[SchoolAndDetailPage xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml)檔案中的視覺化樹狀結構來定義 `MasterDetailPage` 。 這種相片順序可讓您在主要和詳細資料頁面之間設定資料系結。
 
-這個 XAML[`IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented)檔案中`MasterDetailPage`設定`True`的屬性設定到 。 這將導致母版頁在啟動時顯示;因此,在啟動時,母版頁將顯示出來。預設情況下,將顯示詳細資訊頁。 [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs)檔`IsPresented`集`false`從母`ListView`版頁 中選擇項時。 然後顯示詳細資訊頁:
+該 XAML 檔案也會將的 [`IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) 屬性設定 `MasterDetailPage` 為 `True` 。 這會導致主版頁面在啟動時顯示;預設會顯示詳細資料頁面。 [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) `IsPresented` `false` 從 `ListView` 主版頁面中的選取專案時，SchoolAndDetailPage.xaml.cs 檔案會將設為。 [詳細資料] 頁面隨即顯示：
 
-[![學校和細節的三重截圖](images/ch25fg09-small.png "從母版詳細資訊頁面的詳細資訊頁面")](images/ch25fg09-large.png#lightbox "從母版詳細資訊頁面的詳細資訊頁面")
+[![學校和詳細資料的三重螢幕擷取畫面](images/ch25fg09-small.png "MasterDetailPage 的詳細資料頁面")](images/ch25fg09-large.png#lightbox "MasterDetailPage 的詳細資料頁面")
 
 ### <a name="your-own-user-interface"></a>您自己的使用者介面
 
-儘管 Xamarin.Forms 提供了一個使用者介面,用於在主檢視和詳細資訊視圖之間切換,但您可以提供您自己的使用者介面。 若要這樣做：
+雖然 Xamarin.Forms 提供使用者介面來切換主要和詳細資料檢視，但是您可以提供自己的。 操作方法：
 
-- 將[`IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled)屬性設定`false`為關閉輕掃
-- 重寫該方法[`ShouldShowToolbarButton`](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton)並`false`返回 以隱藏 Windows 8.1 和 Windows Phone 8.1 上的工具列按鈕。
+- 將 [`IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) 屬性設定為 `false` 以停用輕刷
+- 覆寫 [`ShouldShowToolbarButton`](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) 方法，並返回 `false` 以隱藏 Windows 8.1 和 Windows Phone 8.1 上的工具列按鈕。
 
-然後,必須提供在母版頁和詳細資訊頁之間切換的方法,例如[**「顏色詳細資訊」**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails)範例演示。
+接著，您必須提供在主版和詳細資料頁面之間切換的方法，例如[**ColorsDetail**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails)範例所示範的。
 
-[**MasterDetailTaps**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MasterDetailTaps)範例示範使用主`TapGestureRecognizer`版和詳細資訊頁上的另一種方法。
+[**MasterDetailTaps**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MasterDetailTaps)範例會示範 `TapGestureRecognizer` 在主版和詳細資料頁面上使用的另一種方法。
 
 ## <a name="tabbedpage"></a>TabbedPage
 
-是[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)可以使用選項卡在其中切換的頁面的集合。 它派生自`MultiPage<Page>`並定義其自身的公共屬性或方法。 [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1)但是,定義屬性:
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)是頁面的集合，您可以在使用索引標籤之間切換。 它衍生自 `MultiPage<Page>` ，而且不會定義其本身的公用屬性或方法。 [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1)不過，會定義屬性：
 
 - [`Children`](xref:Xamarin.Forms.MultiPage`1.Children)類型的屬性`IList<T>`
 
-使用頁面物件`Children`填充此集合。
+您會在此 `Children` 集合中填入頁面物件。
 
-另一種方法允許您定義`TabbedPage`子級,就像使用這`ListView`兩個屬性自動產生選項卡式頁面一樣:
+另一種方法可讓您 `TabbedPage` 使用這兩個屬性來定義子系，以自動產生索引標籤 `ListView` 式頁面：
 
-- [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)類型`IEnumerable`
-- [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)類型`DataTemplate`
+- [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)類型為`IEnumerable`
+- [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)類型為`DataTemplate`
 
-但是,當集合包含多個項時,此方法在 iOS 上不起作用。
+不過，當集合包含多個專案時，此方法不會在 iOS 上正常運作。
 
-`MultiPage<T>`定義另外兩個屬性,以便追蹤目前檢視的頁面:
+`MultiPage<T>`會定義兩個屬性，讓您追蹤目前觀看的頁面：
 
-- [`CurrentPage`](xref:Xamarin.Forms.MultiPage`1.CurrentPage)型`T`態 ,參考頁面
-- [`SelectedItem`](xref:Xamarin.Forms.MultiPage`1.SelectedItem)型`Object`態 ,引用`ItemsSource`集合中的物件
+- [`CurrentPage`](xref:Xamarin.Forms.MultiPage`1.CurrentPage)類型的 `T` ，參考頁面
+- [`SelectedItem`](xref:Xamarin.Forms.MultiPage`1.SelectedItem)類型的 `Object` ，參考集合中的物件 `ItemsSource`
 
-`MultiPage<T>`還定義了兩個事件:
+`MultiPage<T>`也會定義兩個事件：
 
-- [`PagesChanged`](xref:Xamarin.Forms.MultiPage`1.PagesChanged)當`ItemsSource`集合變更時
-- [`CurrentPageChanged`](xref:Xamarin.Forms.MultiPage`1.CurrentPageChanged)檢視的頁面變更時
+- [`PagesChanged`](xref:Xamarin.Forms.MultiPage`1.PagesChanged)當 `ItemsSource` 集合變更時
+- [`CurrentPageChanged`](xref:Xamarin.Forms.MultiPage`1.CurrentPageChanged)當已查看的頁面變更時
 
-### <a name="discrete-tab-pages"></a>離散選項卡頁
+### <a name="discrete-tab-pages"></a>離散索引標籤頁
 
-[**離散標籤顏色**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/DiscreteTabbedColors)示例由三個選項卡式頁面組成,這些頁面以三種不同的方式顯示顏色。 每個選項卡都是一`ContentPage`個衍生物,`TabbedPage`然後 衍生的[離散標籤顏色頁面.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/DiscreteTabbedColors/DiscreteTabbedColors/DiscreteTabbedColors/DiscreteTabbedColorsPage.xaml)合併了三個頁面。
+[**DiscreteTabbedColors**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/DiscreteTabbedColors)範例包含三個索引標籤式頁面，會以三種不同的方式顯示色彩。 每個索引標籤都是 `ContentPage` 衍生的，然後是 `TabbedPage` 衍生[DiscreteTabbedColorsPage。 xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/DiscreteTabbedColors/DiscreteTabbedColors/DiscreteTabbedColors/DiscreteTabbedColorsPage.xaml)結合了三個頁面。
 
-對於中顯示的`TabbedPage``Title`每個頁面,屬性都需要在選項卡中指定文本,並且 Apple 應用商店也要求使用圖示`Icon`,因此該 屬性設置為 iOS:
+針對出現在中的每個頁面 `TabbedPage` ， `Title` 必須要有屬性才能指定索引標籤中的文字，而 Apple Store 也需要使用圖示，因此 `Icon` 會針對 iOS 設定此屬性：
 
-[![離散標籤顏色的三重螢幕截圖](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
+[![離散索引標籤式色彩的三向螢幕擷取畫面](images/ch25fg13-small.png "TabbedPage")](images/ch25fg13-large.png#lightbox "TabbedPage")
 
-[**"學生筆記"**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes)範例有一個主頁,其中列出了所有學生。 當一個學生被點擊時,這將導航到一`TabbedPage`個[`StudentNotesDataPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml)衍生 物,該`ContentPage`導數 在其可視化樹中包含三個物件,其中一個允許為該學生輸入一些註釋。
+[**StudentNotes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/StudentNotes)範例有一個首頁，其中列出所有學生。 當學生按下時，這會流覽至衍生的，將 `TabbedPage` [`StudentNotesDataPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/StudentNotes/StudentNotes/StudentNotes/StudentNotesDataPage.xaml) 三個 `ContentPage` 物件併入其視覺化樹狀結構中，其中一個會允許輸入該學生的一些附注。
 
-### <a name="using-an-itemtemplate"></a>使用項目樣本
+### <a name="using-an-itemtemplate"></a>使用 ItemTemplate
 
-[**多選項卡顏色**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors)示例[`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs)使用[**Xamarin.FormsBook.工具包**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)庫中的類。 [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml)檔`DataTemplate`將`TabbedPage`的屬性 設置到可`ContentPage`視化樹 ,開`NamedColor`頭包含對 屬性`Title`(包括對屬性的 綁定)的綁定。
+[**MultiTabbedColor**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors)範例會使用 [`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) [**FormsBook**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)程式庫中的類別。 [MultiTabbedColorsPage](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml)會將的 `DataTemplate` 屬性設定 `TabbedPage` 為開頭為的視覺化樹狀結構 `ContentPage` ，其中包含屬性的系結 `NamedColor` （包括屬性的系結 `Title` ）。
 
-但是,這在 iOS 上存在問題。 只能顯示幾個項目,並且沒有好的方法來給他們圖示。
+不過，這在 iOS 上會有問題。 只有幾個專案可以顯示，而且沒有適當的方式可以提供圖示。
 
 ## <a name="related-links"></a>相關連結
 
-- [第25章 全文(PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf)
-- [第25章 樣本](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
-- [母版詳細資訊頁面](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md)
-- [選項卡式頁面](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
+- [第25章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf)
+- [第25章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
+- [主版-詳細資料頁面](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md)
+- [索引標籤式頁面](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)

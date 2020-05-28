@@ -1,24 +1,27 @@
 ---
-title: 將資料儲存在本機 SQLite.NET 資料庫中
-description: 本文說明如何將資料儲存在本機 SQLite.NET 資料庫中。
-zone_pivot_groups: platform
-ms.topic: quickstart
-ms.prod: xamarin
-ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/01/2019
-ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+zone_pivot_groups: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71249684"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139798"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>將資料儲存在本機 SQLite.NET 資料庫中
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
 在本快速入門中，您將了解如何：
 
@@ -50,7 +53,7 @@ ms.locfileid: "71249684"
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
-    > - **作者:** 弗蘭克·克魯格
+    > - **作者：** Frank Krueger
     > - **識別碼：** sqlite-net-pcl
     > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
@@ -214,7 +217,7 @@ ms.locfileid: "71249684"
     }
     ```    
 
-    此程式碼使用資料庫中[`ListView`](xref:Xamarin.Forms.ListView)儲存的任何註解填滿 。
+    此程式碼會將 [`ListView`](xref:Xamarin.Forms.ListView) 儲存在資料庫中的任何附注填入其中。
 
     按下 **CTRL+S** 將變更儲存到 **NotesPage.xaml.cs**，然後關閉檔案。
 
@@ -240,7 +243,7 @@ ms.locfileid: "71249684"
       }
       ```    
 
-      在`NoteEntryPage`頁面`Note`[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)中 存儲一個實例,該實例表示單個註釋。 執行 `OnSaveButtonClicked` 事件處理常式，即會將 `Note` 執行個體儲存至資料庫，且應用程式會巡覽回上一頁。 執行 `OnDeleteButtonClicked` 事件處理常式，即會從資料庫刪除 `Note` 執行個體，且應用程式會巡覽回上一頁。
+      會 `NoteEntryPage` `Note` 在頁面的中，儲存代表單一便箋的實例 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 。 執行 `OnSaveButtonClicked` 事件處理常式，即會將 `Note` 執行個體儲存至資料庫，且應用程式會巡覽回上一頁。 執行 `OnDeleteButtonClicked` 事件處理常式，即會從資料庫刪除 `Note` 執行個體，且應用程式會巡覽回上一頁。
 
       按下 **CTRL+S** 將變更儲存到 **NoteEntryPage.xaml.cs**，然後關閉檔案。
 
@@ -267,7 +270,7 @@ ms.locfileid: "71249684"
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
-    > - **作者:** 弗蘭克·克魯格
+    > - **作者：** Frank Krueger
     > - **識別碼：** sqlite-net-pcl
     > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
@@ -431,7 +434,7 @@ ms.locfileid: "71249684"
     }
     ```    
 
-    此程式碼使用資料庫中[`ListView`](xref:Xamarin.Forms.ListView)儲存的任何註解填滿 。
+    此程式碼會將 [`ListView`](xref:Xamarin.Forms.ListView) 儲存在資料庫中的任何附注填入其中。
 
     選擇 [檔案] > [儲存]**** (或按下 **&#8984; + S**) 將變更儲存到 **NotesPage.xaml.cs**，然後關閉檔案。
 
@@ -457,7 +460,7 @@ ms.locfileid: "71249684"
       }
       ```    
 
-      在`NoteEntryPage`頁面`Note`[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)中 存儲一個實例,該實例表示單個註釋。 執行 `OnSaveButtonClicked` 事件處理常式，即會將 `Note` 執行個體儲存至資料庫，且應用程式會巡覽回上一頁。 執行 `OnDeleteButtonClicked` 事件處理常式，即會從資料庫刪除 `Note` 執行個體，且應用程式會巡覽回上一頁。
+      會 `NoteEntryPage` `Note` 在頁面的中，儲存代表單一便箋的實例 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 。 執行 `OnSaveButtonClicked` 事件處理常式，即會將 `Note` 執行個體儲存至資料庫，且應用程式會巡覽回上一頁。 執行 `OnDeleteButtonClicked` 事件處理常式，即會從資料庫刪除 `Note` 執行個體，且應用程式會巡覽回上一頁。
 
       選擇 [檔案] > [儲存]**** (或按下 **&#8984; + S**) 將變更儲存到 **NoteEntryPage.xaml.cs**，然後關閉檔案。
 
@@ -484,4 +487,4 @@ ms.locfileid: "71249684"
 ## <a name="related-links"></a>相關連結
 
 - [Notes (範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
-- [Xamarin.Forms 快速入門深入探討](deepdive.md)
+- [Xamarin.Forms快速入門深入探討](deepdive.md)

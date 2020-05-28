@@ -1,22 +1,25 @@
 ---
-title: SkiaSharp 中的 SVG 路徑資料
-description: 本文說明如何使用可調整向量圖形格式的文字字串來定義 SkiaSharp 路徑，並以範例程式碼示範這項功能。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/24/2017
-ms.openlocfilehash: 809bcd8288c4c4205b3110418aeae0e08bf21dd6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 680c924280f8f3a6080b2fcc1968ecaf308f33a0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029457"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138056"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp 中的 SVG 路徑資料
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用可調整向量圖形格式的文字字串來定義路徑_
 
@@ -28,7 +31,7 @@ SVG 是以 XML 為基礎的 web 程式設計語言，適用于網頁。 因為 S
 
 在 SkiaSharp 中，此格式稱為「SVG 路徑-資料」。 Windows XAML 架構程式設計環境中也支援格式，包括 Windows Presentation Foundation 和通用 Windows 平臺，其中稱為[路徑標記語法](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax)或[Move 和 draw 命令語法](/windows/uwp/xaml-platform/move-draw-commands-syntax/)。 它也可以做為向量圖形影像的交換格式，特別是在以文字為基礎的檔案（例如 XML）。
 
-[`SKPath`](xref:SkiaSharp.SKPath)類別會定義兩個方法，其中包含名稱中的單字 `SvgPathData`：
+[`SKPath`](xref:SkiaSharp.SKPath)類別會定義兩個方法，其中包含 `SvgPathData` 名稱中的單字：
 
 ```csharp
 public static SKPath ParseSvgPathData(string svgPath)
@@ -36,7 +39,7 @@ public static SKPath ParseSvgPathData(string svgPath)
 public string ToSvgPathData()
 ```
 
-靜態[`ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String))方法會將字串轉換成 `SKPath` 物件，而[`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData)會將 `SKPath` 物件轉換成字串。
+靜態 [`ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) 方法會將字串轉換成 `SKPath` 物件，並 [`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData) 將物件轉換 `SKPath` 成字串。
 
 以下是以點（0，0）為中心的五顆星的 SVG 字串，半徑為100：
 
@@ -44,7 +47,7 @@ public string ToSvgPathData()
 "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"
 ```
 
-字母是用來建立 `SKPath` 物件的命令： `M` 表示 `MoveTo` 呼叫、`L` `LineTo`，以及 `Z` `Close` 關閉輪廓。 每個數位配對都會提供某個點的 X 和 Y 座標。 請注意，`L` 命令後面會接著以逗號分隔的多個點。 在一系列的座標和點中，逗號和空白字元的處理方式相同。 有些程式設計人員偏好在 X 和 Y 座標之間加上逗號，而不是在點之間，但只需要逗號或空格來避免不明確。 這是完全合法的：
+字母是建立物件的命令 `SKPath` ： `M` 表示 `MoveTo` 呼叫、 `L` 是 `LineTo` ，而 `Z` 是 `Close` 關閉輪廓。 每個數位配對都會提供某個點的 X 和 Y 座標。 請注意，此 `L` 命令後面會接著以逗號分隔的多個點。 在一系列的座標和點中，逗號和空白字元的處理方式相同。 有些程式設計人員偏好在 X 和 Y 座標之間加上逗號，而不是在點之間，但只需要逗號或空格來避免不明確。 這是完全合法的：
 
 ```
 "M0-100L58.8 90.9-95.1-30.9 95.1-30.9-58.8 80.9Z"
@@ -58,7 +61,7 @@ SVG 路徑資料的語法在[svg 規格的8.3 節](https://www.w3.org/TR/SVG11/p
 M x y
 ```
 
-這會藉由設定目前的位置，在路徑中開始新的輪廓。 路徑資料應一律以 `M` 命令開頭。
+這會藉由設定目前的位置，在路徑中開始新的輪廓。 路徑資料的開頭應該一律是 `M` 命令。
 
 ## <a name="lineto"></a>**LineTo**
 
@@ -74,7 +77,7 @@ L x y ...
 H x ...
 ```
 
-此命令會將水平線加入至路徑，並將新的目前位置設為行尾。 您可以遵循具有多個*x*座標的 `H` 命令，但它並沒有太大意義。
+此命令會將水平線加入至路徑，並將新的目前位置設為行尾。 您可以 `H` 使用多個*x*座標來執行命令，但它並沒有太大意義。
 
 ## <a name="vertical-line"></a>**垂直線**
 
@@ -90,7 +93,7 @@ V y ...
 Z
 ```
 
-`C` 命令會從目前位置到輪廓開頭處加入直線，以關閉輪廓。
+此 `C` 命令會從目前位置到輪廓的開頭新增直線，以關閉輪廓。
 
 ## <a name="arcto"></a>**ArcTo**
 
@@ -116,7 +119,7 @@ C x1 y1 x2 y2 x3 y3 ...
 
 此命令會將從目前位置到（*x3*， *y3*）的三次方貝茲曲線加入至新的目前位置。 點（*x1*、 *y1*）和（*x2*， *y2*）是控制點。
 
-單一 `C` 命令可以指定多個貝茲曲線。 點數目必須是3的倍數。
+單一命令可以指定多個貝茲曲線 `C` 。 點數目必須是3的倍數。
 
 另外還有一個「平滑」的貝茲曲線命令：
 
@@ -142,15 +145,15 @@ T x2 y2 ...
 
 控制點是根據前二次曲線的控制點來計算。
 
-所有這些命令也會在「相對」版本中提供，其中的座標點會相對於目前的位置。 這些相對命令是以小寫字母開頭，例如 `c`，而不是 `C` 的三次方貝塞爾命令的相對版本。
+所有這些命令也會在「相對」版本中提供，其中的座標點會相對於目前的位置。 這些相對命令是以小寫字母開頭，例如， `c` 而不是 `C` 以協力廠商 bezier 命令的相對版本來表示。
 
-這是 SVG 路徑資料定義的範圍。 沒有任何設備可用於重複的命令群組，或用於執行任何類型的計算。 `ConicTo` 的命令或其他類型的弧線規格無法使用。
+這是 SVG 路徑資料定義的範圍。 沒有任何設備可用於重複的命令群組，或用於執行任何類型的計算。 `ConicTo`或其他類型的弧線規格的命令無法使用。
 
-靜態[`SKPath.ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String))方法需要 SVG 命令的有效字串。 如果偵測到任何語法錯誤，則方法會傳回 `null`。 這是唯一的錯誤指示。
+靜態 [`SKPath.ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) 方法預期 SVG 命令的有效字串。 如果偵測到任何語法錯誤，則方法會傳回 `null` 。 這是唯一的錯誤指示。
 
-[`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData)方法可讓您從現有的 `SKPath` 物件取得 SVG 路徑資料，以傳送至另一個程式，或儲存成以文字為基礎的檔案格式（例如 XML）。 （本文的範例程式碼不會示範 `ToSvgPathData` 方法）。不預期 `ToSvgPathData`*會*傳回與建立路徑之方法呼叫完全對應的字串。 特別是，您會發現弧形會轉換成多個 `QuadTo` 命令，而這就是它們出現在從 `ToSvgPathData`傳回的路徑資料中的方式。
+[`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData)方法很方便從現有的物件取得 SVG 路徑資料 `SKPath` ，以傳送至另一個程式，或以文字檔案格式（例如 XML）儲存。 （ `ToSvgPathData` 此方法不會在本文的範例程式碼中示範）。*不預期會*傳回與 `ToSvgPathData` 建立路徑之方法呼叫完全對應的字串。 特別是，您會發現弧形會轉換成多個 `QuadTo` 命令，而這就是它們在所傳回之路徑資料中的顯示方式 `ToSvgPathData` 。
 
-**Path Data Hello**頁面會使用 SVG 路徑資料來將 "hello" 這個字拼寫出來。 `SKPath` 和 `SKPaint` 物件都會定義為[`PathDataHelloPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs)類別中的欄位：
+**Path Data Hello**頁面會使用 SVG 路徑資料來將 "hello" 這個字拼寫出來。 `SKPath`和 `SKPaint` 物件都定義為類別中的欄位 [`PathDataHelloPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) ：
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -176,9 +179,9 @@ public class PathDataHelloPage : ContentPage
 
 定義文字字串的路徑是從點（0，0）的左上角開始。 每個字母都是50單位寬和100單位高，而字母以另25個單位分隔，這表示整個路徑是350個單位。
 
-"Hello" 的 ' H ' 是由 3 1 行輪廓組成，而 ' E ' 則是兩個連接的三次方貝茲曲線。 請注意，`C` 命令後面會加上六個點，而其中兩個控制點具有–10和110的 Y 座標，這會將它們放在其他字母的 Y 座標範圍外。 ' L ' 是兩條連接的線條，而 ' O ' 則是以 `A` 命令呈現的橢圓形。
+"Hello" 的 ' H ' 是由 3 1 行輪廓組成，而 ' E ' 則是兩個連接的三次方貝茲曲線。 請注意， `C` 命令後面會加上六個點，而其中兩個控制點具有–10和110的 y 座標，這會將它們放在其他字母的 y 座標範圍外。 ' L ' 是兩條連接的線條，而 ' O ' 則是以命令呈現的橢圓形 `A` 。
 
-請注意，開始最後一個等高線的 `M` 命令會將位置設定為點（350，50），這是 ' O ' 左側的垂直中心。 如 `A` 命令後面的第一個數位所指出，橢圓形的水準半徑為25，而垂直半徑為50。 結束點是由 `A` 命令中的最後一組數位所表示，這代表點（300，49.9）。 這只是與起點稍有不同的地方。 如果端點設定為等於起點，將不會轉譯弧線。 若要繪製完整的橢圓形，您必須將端點設定為接近（但不等於）起點，或者您必須使用兩個或多個 `A` 命令，每個都是完整橢圓形的一部分。
+請注意， `M` 開始最後一個等高線的命令會將位置設定為點（350，50），這是 ' O ' 左側的垂直中心。 如命令後面的第一個數位所指示 `A` ，橢圓形的水準半徑為25，而垂直半徑為50。 結束點是由命令中的最後一組數位所 `A` 表示，這代表點（300，49.9）。 這只是與起點稍有不同的地方。 如果端點設定為等於起點，將不會轉譯弧線。 若要繪製完整的橢圓形，您必須將端點設定為接近（但不等於）起點，或者您必須使用兩個或多個 `A` 命令，每個都是完整橢圓形的一部分。
 
 您可能想要將下列語句加入至頁面的程式集，然後設定中斷點來檢查結果字串：
 
@@ -186,9 +189,9 @@ public class PathDataHelloPage : ContentPage
 string str = helloPath.ToSvgPathData();
 ```
 
-您會發現 arc 已被使用二次方貝茲曲線的一長串 `Q` 命令所取代。
+您會發現 arc 已被 `Q` 使用二次方貝茲曲線的一段長串命令所取代。
 
-`PaintSurface` 處理常式會取得路徑的緊密界限，而不包含 ' E ' 和 ' O ' 曲線的控制點。 這三個轉換會將路徑的中心移至點（0，0），將路徑縮放至畫布大小（但同時將筆觸寬度納入考慮），然後將路徑的中心移至畫布的中央：
+`PaintSurface`處理常式會取得路徑的緊密界限，而不包含 ' E ' 和 ' O ' 曲線的控制點。 這三個轉換會將路徑的中心移至點（0，0），將路徑縮放至畫布大小（但同時將筆觸寬度納入考慮），然後將路徑的中心移至畫布的中央：
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -221,7 +224,7 @@ public class PathDataHelloPage : ContentPage
 
 [![](path-data-images/pathdatahello-small.png "Triple screenshot of the Path Data Hello page")](path-data-images/pathdatahello-large.png#lightbox "Triple screenshot of the Path Data Hello page")
 
-[**路徑資料 Cat** ] 頁面類似。 Path 和 paint 物件都定義為[`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs)類別中的欄位：
+[**路徑資料 Cat** ] 頁面類似。 Path 和 paint 物件都定義為類別中的欄位 [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) ：
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -257,9 +260,9 @@ public class PathDataCatPage : ContentPage
 
 貓的標頭是圓形，在此會以兩個 `A` 命令轉譯，其中每一個都繪製一個半圓。 標頭的兩個 `A` 命令都會定義100的水準和垂直半徑。 第一個弧線從（240，100）開始，並于（240，300）結束，這會變成第二個 arc 的起點（以（240，100）為結尾）。
 
-這兩個眼睛也會以兩個 `A` 命令轉譯，如同 cat 的 head，第二個 `A` 命令會在第一個 `A` 命令開頭的相同點結束。 不過，這兩組 `A` 命令不會定義橢圓形。 具有每個弧線的是40單位，而半徑也是40單位，這表示這些弧形不是完整 semicircles。
+這兩個眼睛也會以兩個 `A` 命令轉譯，如同 cat 的標頭，第二個 `A` 命令會在第一個命令開頭的相同點結束 `A` 。 不過，這組 `A` 命令不會定義橢圓形。 具有每個弧線的是40單位，而半徑也是40單位，這表示這些弧形不是完整 semicircles。
 
-`PaintSurface` 處理常式會執行與上一個範例類似的轉換，但會設定單一 `Scale` 因素來維持外觀比例並提供一些邊界，讓貓的須線不會觸及螢幕的側邊：
+`PaintSurface`處理常式會執行與上一個範例類似的轉換，但會設定一個 `Scale` 因素來維持外觀比例並提供一些邊界，讓貓的須線不會觸及螢幕的側邊：
 
 ```csharp
 public class PathDataCatPage : ContentPage
@@ -294,7 +297,7 @@ public class PathDataCatPage : ContentPage
 
 一般來說，將 `SKPath` 物件定義為欄位時，必須在此函式或其他方法中定義路徑的輪廓。 不過，使用 SVG 路徑資料時，您已看到路徑可以完全在欄位定義中指定。
 
-[[**旋轉轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)] 文章中較早的不美觀**類比時鐘**範例，會以簡單的線條顯示時鐘的手。 下列良好的**類比時鐘**程式會使用定義為[`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs)類別中欄位的 `SKPath` 物件，以及 `SKPaint` 物件來取代這些行：
+[[**旋轉轉換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)] 文章中較早的不美觀**類比時鐘**範例，會以簡單的線條顯示時鐘的手。 下面的「**類比時鐘**」程式會以 `SKPath` 類別中的欄位和物件來取代這些行 [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ：
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -332,9 +335,9 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-小時和分鐘的手中現在有封閉的區域。 為了讓這些人彼此不同，會使用 `handStrokePaint` 和 `handFillPaint` 物件繪製黑色外框和灰色填滿。
+小時和分鐘的手中現在有封閉的區域。 為了讓這些人彼此不同，會使用和物件繪製黑色外框和灰色填滿 `handStrokePaint` `handFillPaint` 。
 
-在較舊的不美觀的**類比時鐘**範例中，標記為小時和分鐘的小圓圈會在迴圈中繪製。 在這個**非常類比的時鐘**範例中，會使用完全不同的方法：小時和分鐘標記是以 `minuteMarkPaint` 和 `hourMarkPaint` 物件繪製的虛線：
+在較舊的不美觀的**類比時鐘**範例中，標記為小時和分鐘的小圓圈會在迴圈中繪製。 在這個**非常類比的時鐘**範例中，會使用完全不同的方法：小時和分鐘標記是以和物件繪製的虛線 `minuteMarkPaint` `hourMarkPaint` ：
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -361,11 +364,11 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-[**點和虛線**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)一文會討論如何使用[`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash*)方法來建立虛線。 第一個引數是一個 `float` 陣列，通常有兩個專案：第一個元素是虛線的長度，而第二個元素是虛線之間的間距。 當 [`StrokeCap`] 屬性設定為 [`SKStrokeCap.Round`] 時，虛線的圓角端會以虛線的兩邊的筆劃寬度有效地延長虛線長度。 因此，將第一個陣列元素設定為0會建立虛線。
+[**點和虛線**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md)一文會討論如何使用 [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash*) 方法來建立虛線。 第一個引數是 `float` 通常有兩個元素的陣列：第一個元素是虛線的長度，而第二個元素是虛線之間的間距。 當 `StrokeCap` 屬性設定為時 `SKStrokeCap.Round` ，虛線的圓角端點實際上會以虛線兩側的筆劃寬度來延長虛線長度。 因此，將第一個陣列元素設定為0會建立虛線。
 
-這些點之間的距離是由第二個陣列元素所控制。 您很快就會看到這兩個 `SKPaint` 物件用來繪製半徑為90單位的圓形。 此圓形的圓周是180π，這表示60分鐘標記必須出現在每個3π單位，也就是 `minuteMarkPaint`中 `float` 陣列的第二個值。 12小時標記必須出現在每個15π單位，也就是第二個 `float` 陣列中的值。
+這些點之間的距離是由第二個陣列元素所控制。 您很快就會看到這兩個 `SKPaint` 物件用來繪製半徑為90單位的圓形。 此圓形的圓周是180π，這表示60分鐘標記必須出現在每個3π單位，也就是陣列中的第二個值 `float` `minuteMarkPaint` 。 12小時標記必須出現在每個15π單位，也就是第二個數組中的值 `float` 。
 
-`PrettyAnalogClockPage` 類別會將計時器設定為每16毫秒使介面失效，並以該速率呼叫 `PaintSurface` 處理常式。 先前的 `SKPath` 和 `SKPaint` 物件定義允許非常清楚的繪製程式碼：
+`PrettyAnalogClockPage`類別會將計時器設定為每16毫秒使介面失效，並以 `PaintSurface` 該速率呼叫處理常式。 舊版和物件的定義 `SKPath` `SKPaint` 允許非常清楚的繪製程式碼：
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -425,7 +428,7 @@ public class PrettyAnalogClockPage : ContentPage
 }
 ```
 
-不過，第二個東西是特別的。 由於時鐘會每隔16毫秒更新一次，因此 `DateTime` 值的 `Millisecond` 屬性可能會用來以動畫顯示清除的第二筆，而不是在第二個和第二個的離散跳躍中移動的。 但此程式碼不允許移動順暢。 相反地，它會使用[`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn)的 Xamarin，並[`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)動畫來緩動函式，以進行不同類型的移動。 這些緩動函式會導致第二個手以 jerkier 的方式移動，&mdash; 在移動前先回頭一小部分，然後稍微過度轉移其目的地，這是可惜無法在這些靜態螢幕擷取畫面中重現的效果：
+不過，第二個東西是特別的。 由於時鐘會每隔16毫秒更新一次，因此 `Millisecond` 值的屬性 `DateTime` 可能會用來以動畫顯示清除的第二個手勢，而不是在第二個和第二個的離散跳躍中移動的。 但此程式碼不允許移動順暢。 相反地，它會使用 Xamarin.Forms [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) 和 [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) 動畫緩動函式來進行不同類型的移動。 這些緩動函式會導致第二個手以 jerkier 的方式移動，然後再進行 &mdash; 移動，然後稍微過度轉移其目的地，這種效果在下列靜態螢幕擷取畫面中很難重現：
 
 [![](path-data-images/prettyanalogclock-small.png "Triple screenshot of the Pretty Analog Clock page")](path-data-images/prettyanalogclock-large.png#lightbox "Triple screenshot of the Pretty Analog Clock page")
 

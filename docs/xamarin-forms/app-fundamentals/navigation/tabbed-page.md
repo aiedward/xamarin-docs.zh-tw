@@ -1,66 +1,69 @@
 ---
-title: Xamarin.表格分頁
-description: Xamarin.Forms TabbedPage 由索引標籤清單和較大的詳細資料區域所組成，每個索引標籤會將內容載入至詳細資料區域中。 本文示範如何使用 TabbedPage 來巡覽頁面集合。
-ms.prod: xamarin
-ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2019
-ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.FormsTabbedPage
+description: Xamarin.FormsTabbedPage 是由索引標籤清單和較大的詳細資料區域所組成，每個索引標籤都會將內容載入至詳細資料區域。 本文示範如何使用 TabbedPage 來巡覽頁面集合。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79305084"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137510"
 ---
-# <a name="xamarinforms-tabbedpage"></a>Xamarin.表格分頁
+# <a name="xamarinforms-tabbedpage"></a>Xamarin.FormsTabbedPage
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-Xamarin.Forms[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)由選項卡清單和更大的詳細資訊區域組成,每個選項卡將內容載入到詳細資訊區域中。 以下屏幕截圖顯示了 iOS`TabbedPage`和安卓上的屏幕截圖:
+包含索引標籤 Xamarin.Forms [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 清單和較大的詳細資料區域，每個索引標籤都會將內容載入至詳細資料區域。 下列螢幕擷取畫面顯示 `TabbedPage` iOS 和 Android 上的：
 
-[![在 iOS 和 Android 上包含三個選項卡的 TabbedPage 的螢幕截圖](tabbed-page-images/tabbedpage-today.png "帶三個選項卡的選項卡頁")](tabbed-page-images/tabbedpage-today-large.png#lightbox "帶三個選項卡的選項卡頁")
+[![TabbedPage 的螢幕擷取畫面，其中包含三個索引標籤（在 iOS 和 Android 上）](tabbed-page-images/tabbedpage-today.png "具有三個索引標籤的 TabbedPage")](tabbed-page-images/tabbedpage-today-large.png#lightbox "具有三個索引標籤的 TabbedPage")
 
-在 iOS 上，索引標籤清單會出現在畫面的底部，詳細資料區域則出現在上方。 每個選項卡由標題和圖示組成,該圖示應為具有 Alpha 通道的 PNG 檔。 在縱向方向中,選項卡欄圖示顯示在選項卡標題上方。 在橫向中,圖示和標題並排顯示。 此外,可能會顯示常規或緊湊的選項卡欄,具體取決於設備和方向。 若有超過五個索引標籤，則會出現 [更多]**** 索引標籤，可用於存取其他索引標籤。 有關圖示要求的資訊,請參閱developer.apple.com上的[選項卡欄圖示大小](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size)。
-
-> [!TIP]
-> for `TabbedRenderer` iOS 具有一`GetIcon`種可 重寫的方法,可用於從指定源載入選項卡圖示。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示。 此外，也可以提供圖示的選取及未選取版本。
-
-在 Android 上,選項卡清單顯示在螢幕頂部,詳細資訊區域如下。 每個選項卡由標題和圖示組成,該圖示應為具有 Alpha 通道的 PNG 檔。 但是,選項卡可以使用特定於平台的選項卡移動到螢幕底部。 如果選項卡超過五個,並且選項卡列表位於螢幕底部,則會出現可用於訪問其他選項卡的 *「更多*」選項卡。 有關圖示要求的資訊,請參閱material.io[上的選項卡](https://material.io/components/tabs/#),並支援developer.android.com[上的不同圖元密度](https://developer.android.com/training/multiscreen/screendensities)。 有關將選項卡移至螢幕底部的資訊,請參考[設定 TabbedPage 工具列來放置與顏色](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
+在 iOS 上，索引標籤清單會出現在畫面的底部，詳細資料區域則出現在上方。 每個索引標籤都是由一個標題和一個圖示組成，這應該是具有 Alpha 色板的 PNG 檔案。 在直向方向中，索引標籤列圖示會出現在索引標籤標題上方。 在橫向，圖示和標題並排顯示。 此外，視裝置和方向而定，可能會顯示一般或精簡索引標籤欄。 若有超過五個索引標籤，則會出現 [更多]**** 索引標籤，可用於存取其他索引標籤。 如需圖示需求的相關資訊，請參閱 developer.apple.com 上的索引標籤[欄圖示大小](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size)。
 
 > [!TIP]
-> 為`TabbedPageRenderer`Android AppCompat 有`GetIconDrawable`一個可 重寫的方法,可`Drawable`用於從自訂 載入選項卡圖示。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示，且可使用頂端與底部索引標籤列。 或者，可覆寫的 `SetTabIcon` 方法能用來從自訂 `Drawable` 載入頂端索引標籤列的索引標籤圖示。
+> `TabbedRenderer`IOS 的具有可覆寫的 `GetIcon` 方法，可以用來從指定的來源載入索引標籤圖示。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示。 此外，也可以提供圖示的選取及未選取版本。
 
-在通用 Windows 平臺 (UWP) 上,選項卡清單顯示在螢幕頂部,詳細資訊區域如下。 每個選項卡由標題組成。 但是,圖示可以添加到每個選項卡與平臺特定的。 有關詳細資訊,請參閱[Windows 上的 TabbedPage 圖示](~/xamarin-forms/platform/windows/tabbedpage-icons.md)。
+在 Android 上，索引標籤清單會出現在畫面頂端，而詳細資料區域如下。 每個索引標籤都是由一個標題和一個圖示組成，這應該是具有 Alpha 色板的 PNG 檔案。 不過，您可以使用平臺特定，將索引標籤移至畫面底部。 如果有五個以上的索引標籤，而且索引標籤清單位於畫面底部，則會出現 [*更多*] 索引標籤，可用來存取其他索引標籤。 如需圖示需求的相關資訊，[請參閱 material.io 上的索引](https://material.io/components/tabs/#)標籤和在 Developer.android.com 上[支援不同的圖元密度](https://developer.android.com/training/multiscreen/screendensities)。 如需將索引標籤移到畫面底部的詳細資訊，請參閱[設定 TabbedPage 工具列位置和色彩](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)。
+
+> [!TIP]
+> `TabbedPageRenderer`適用于 Android AppCompat 的可覆寫 `GetIconDrawable` 方法，可以用來從自訂載入索引標籤圖示 `Drawable` 。 此覆寫可使用 SVG 影像作為 `TabbedPage` 上的圖示，且可使用頂端與底部索引標籤列。 或者，可覆寫的 `SetTabIcon` 方法能用來從自訂 `Drawable` 載入頂端索引標籤列的索引標籤圖示。
+
+在 [通用 Windows 平臺（UWP）上，索引標籤清單會出現在畫面頂端，而 [詳細資料] 區域如下所示。 每個索引標籤都是由一個標題所組成。 不過，您可以將圖示新增至具有平臺特定的每個索引標籤。 如需詳細資訊，請參閱[TabbedPage Windows 上的圖示](~/xamarin-forms/platform/windows/tabbedpage-icons.md)。
 
 ## <a name="create-a-tabbedpage"></a>建立 TabbedPage
 
-兩種方法可建立 : [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)
+有兩種方法可以用來建立 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ：
 
-- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)使用子[`Page`](xref:Xamarin.Forms.Page)物件的集合填[`ContentPage`](xref:Xamarin.Forms.ContentPage)充 ,例如物件集合。 有關詳細資訊,請參閱[使用頁面集合填充 TabbedPage。](#populate-a-tabbedpage-with-a-page-collection)
-- 將集合指派給 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 屬性，並將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指派給 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 屬性，以傳回集合中物件的頁面。 有關詳細資訊,請參閱[使用範本填充 TabbedPage。](#populate-a-tabbedpage-with-a-template)
+- 在中填入 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 子物件的集合 [`Page`](xref:Xamarin.Forms.Page) ，例如物件的集合 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。 如需詳細資訊，請參閱在[TabbedPage 中填入頁面集合](#populate-a-tabbedpage-with-a-page-collection)。
+- 將集合指派給 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 屬性，並將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指派給 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 屬性，以傳回集合中物件的頁面。 如需詳細資訊，請參閱[使用範本填入 TabbedPage](#populate-a-tabbedpage-with-a-template)。
 
-使用這兩種方法,當用戶[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)選擇每個選項卡時,將顯示每個頁面。
+使用這兩種方法時， [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 將會在使用者選取每個索引標籤時顯示每個頁面。
 
 > [!IMPORTANT]
-> 建議只有填充[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)與[`ContentPage`](xref:Xamarin.Forms.ContentPage)[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)實體 。 這有助於跨所有平台確保一致的使用者體驗。
+> 建議您 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 只填入和 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 實例。 這有助於跨所有平台確保一致的使用者體驗。
 
-此外,[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)定義以下屬性:
+此外，會 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 定義下列屬性：
 
-- [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor)的類型[`Color`](xref:Xamarin.Forms.Color),選項卡欄的背景顏色。
-- [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor)類型[`Color`](xref:Xamarin.Forms.Color),選項卡欄上的文字顏色。
-- [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor)類型[`Color`](xref:Xamarin.Forms.Color),選擇選項卡時的顏色。
-- [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor)的類型[`Color`](xref:Xamarin.Forms.Color),未選擇選項卡時的標籤的顏色。
+- [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor)，屬於類型 [`Color`](xref:Xamarin.Forms.Color) ，索引標籤列的背景色彩。
+- [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor)，屬於類型 [`Color`](xref:Xamarin.Forms.Color) ，索引標籤欄的文字色彩。
+- [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor)，屬於類型 [`Color`](xref:Xamarin.Forms.Color) ，選取此選項時的索引標籤色彩。
+- [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor)，屬於類型，這是未選取的索引卷 [`Color`](xref:Xamarin.Forms.Color) 標色彩。
 
-所有這些屬性都由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件支援,這意味著它們可以設置樣式,並且這些屬性可以是數據綁定的目標。
+所有這些屬性都是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以樣式化，而屬性可以是資料系結的目標。
 
 > [!WARNING]
-> 在[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)中[`Page`](xref:Xamarin.Forms.Page), 每個物件在`TabbedPage`建構 時建立。 這可能導致用戶體驗不佳,特別是如果`TabbedPage`是 應用程式的根頁。 但是,Xamarin.Forms Shell 允許按需創建通過選項卡欄訪問的頁面,以響應導航。 有關詳細資訊,請參閱[Xamarin.Forms 外殼](~/xamarin-forms/app-fundamentals/shell/index.md)。
+> 在中 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ，每個 [`Page`](xref:Xamarin.Forms.Page) 物件都是在結構化時建立的 `TabbedPage` 。 這可能會導致使用者體驗不佳，特別是如果 `TabbedPage` 是應用程式的根頁面。 不過，Shell 可讓您依需求建立透過索引標籤列 Xamarin.Forms 來存取的頁面，以回應導覽。 如需詳細資訊，請參閱[ Xamarin.Forms Shell](~/xamarin-forms/app-fundamentals/shell/index.md)。
 
-## <a name="populate-a-tabbedpage-with-a-page-collection"></a>使用頁面集合填充 TabbedPage
+## <a name="populate-a-tabbedpage-with-a-page-collection"></a>在 TabbedPage 中填入頁面集合
 
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)可以使用子[`Page`](xref:Xamarin.Forms.Page)物件的集合(如物件集合[`ContentPage`](xref:Xamarin.Forms.ContentPage)) 填充。 這是透過物件`Page`加入到集合來實現的[`TabbedPage.Children`](xref:Xamarin.Forms.MultiPage`1.Children*)。 這在 XAML 中完成如下:
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)可以填入子物件的集合 [`Page`](xref:Xamarin.Forms.Page) ，例如物件的集合 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。 這是藉由將 `Page` 物件新增至集合來達成 [`TabbedPage.Children`](xref:Xamarin.Forms.MultiPage`1.Children*) 。 這會在 XAML 中完成，如下所示：
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -77,7 +80,7 @@ Xamarin.Forms[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)由選項卡清單和�
 ```
 
 > [!NOTE]
-> [`Children`](xref:Xamarin.Forms.MultiPage`1.Children*)衍生的[`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1)[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)類別屬性是`ContentProperty``MultiPage<T>` 因此,在 XAML 中,不必顯[`Page`](xref:Xamarin.Forms.Page)式將 物件分配`Children`給屬性。
+> [`Children`](xref:Xamarin.Forms.MultiPage`1.Children*)衍生的類別的屬性 [`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1) [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 是 `ContentProperty` 的 `MultiPage<T>` 。 因此，在 XAML 中，不需要明確地將 [`Page`](xref:Xamarin.Forms.Page) 物件指派給 `Children` 屬性。
 
 對等的 C# 程式碼為：
 
@@ -96,38 +99,38 @@ public class MainPageCS : TabbedPage
 }
 ```
 
-這個選項, 使用兩[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)[`Page`](xref:Xamarin.Forms.ContentPage)個物件填滿 。 第一個子級[`ContentPage`](xref:Xamarin.Forms.ContentPage)是物件,第二個子[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)級`ContentPage`是包含 物件的。
+在此範例中， [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 會以兩個 [`Page`](xref:Xamarin.Forms.ContentPage) 物件填入。 第一個子系是 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，而第二個子系是 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 包含 `ContentPage` 物件的。
 
-以下螢幕截圖顯示了[`ContentPage`](xref:Xamarin.Forms.ContentPage)[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)的 物件:
+下列螢幕擷取畫面顯示 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 中的物件 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ：
 
-[![在 iOS 和 Android 上包含三個選項卡的 TabbedPage 的螢幕截圖](tabbed-page-images/tabbedpage-today.png "帶三個選項卡的選項卡頁")](tabbed-page-images/tabbedpage-today-large.png#lightbox "帶三個選項卡的選項卡頁")
+[![TabbedPage 的螢幕擷取畫面，其中包含三個索引標籤（在 iOS 和 Android 上）](tabbed-page-images/tabbedpage-today.png "具有三個索引標籤的 TabbedPage")](tabbed-page-images/tabbedpage-today-large.png#lightbox "具有三個索引標籤的 TabbedPage")
 
-選擇另一個選項卡[`ContentPage`](xref:Xamarin.Forms.ContentPage)將顯示表示選項卡的物件:
+選取另一個索引標籤會顯示代表索引標籤的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件：
 
-[![iOS 和 Android 上包含選項卡的 TabbedPage 的螢幕截圖](tabbed-page-images/tabbedpage-week.png "帶選項卡的選項卡頁")](tabbed-page-images/tabbedpage-week-large.png#lightbox "帶選項卡的選項卡頁")
+[![IOS 和 Android 上包含索引標籤的 TabbedPage 螢幕擷取畫面](tabbed-page-images/tabbedpage-week.png "具有索引標籤的 TabbedPage")](tabbed-page-images/tabbedpage-week-large.png#lightbox "具有索引標籤的 TabbedPage")
 
-在「**計劃」** 選項卡[`ContentPage`](xref:Xamarin.Forms.ContentPage)上 ,物件將[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)包裹在 物件中。
+在 [**排程**] 索引標籤上， [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件會包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 物件中。
 
 > [!WARNING]
-> 雖然[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)可以放置在[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)中 ,但不建議`TabbedPage``NavigationPage`將 。 這是因為在 iOS 上，`UITabBarController` 一律會作為 `UINavigationController` 的包裝函式。 如需詳細資訊，請參閱 iOS Developer Library 中的 [Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) (合併檢視控制器介面)。
+> 雖然 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 可以放在中 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ，但不建議將放 `TabbedPage` 入中 `NavigationPage` 。 這是因為在 iOS 上，`UITabBarController` 一律會作為 `UINavigationController` 的包裝函式。 如需詳細資訊，請參閱 iOS Developer Library 中的 [Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html) (合併檢視控制器介面)。
 
-## <a name="navigate-within-a-tab"></a>在選項卡內導覽
+## <a name="navigate-within-a-tab"></a>在索引標籤內流覽
 
-導航可以在選項卡中執行,前提是[`ContentPage`](xref:Xamarin.Forms.ContentPage)物件包裝[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)在 物件中。 這是透過在物件[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation)的屬性上調用方法來實現的[`ContentPage`](xref:Xamarin.Forms.ContentPage):
+導覽可以在索引標籤中執行，前提 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 是物件會包裝在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 物件中。 這是藉由在 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 物件的屬性上叫用方法來完成的 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
 ```csharp
 await Navigation.PushAsync (new UpcomingAppointmentsPage ());
 ```
 
-要導航到的頁面被指定為方法的[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*)參數。 在此範例中,`UpcomingAppointmentsPage`頁面推送到導覽堆疊上,該堆疊將成為活動頁:
+所流覽至的頁面會指定為方法的引數 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) 。 在此範例中， `UpcomingAppointmentsPage` 頁面會被推送到導覽堆疊上，而它會變成使用中的頁面：
 
-[![在 iOS 和 Android 上選項卡內導航的螢幕截圖](tabbed-page-images/tabbedpage-upcoming.png "選項卡的選項卡頁導覽")](tabbed-page-images/tabbedpage-upcoming-large.png#lightbox "選項卡的選項卡頁導覽")
+[![在 iOS 和 Android 上的索引標籤內導覽的螢幕擷取畫面](tabbed-page-images/tabbedpage-upcoming.png "TabbedPage 索引標籤中的導覽")](tabbed-page-images/tabbedpage-upcoming-large.png#lightbox "TabbedPage 索引標籤中的導覽")
 
-有關使用 類別的資訊,[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)請參考[分層導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)。
+如需使用類別執行導覽的詳細資訊 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，請參閱[階層式導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)。
 
-## <a name="populate-a-tabbedpage-with-a-template"></a>使用樣本填充選項卡式頁面
+## <a name="populate-a-tabbedpage-with-a-template"></a>使用範本填入 TabbedPage
 
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)可以通過[`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource)為 屬性分配數據集合,以及將[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)分配 為 物件[`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate)[`Page`](xref:Xamarin.Forms.Page)範本化數據 的屬性來填充頁。 這在 XAML 中完成如下:
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage)可以藉由將資料的集合指派給屬性來填入頁面 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) ，並將指派 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 給將 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 資料當做物件範本的屬性 [`Page`](xref:Xamarin.Forms.Page) 。 這會在 XAML 中完成，如下所示：
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -227,16 +230,16 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-此選項,每個選項卡由一個[`ContentPage`](xref:Xamarin.Forms.ContentPage)物件組成,該物件[`Image`](xref:Xamarin.Forms.Image)使用[`Label`](xref:Xamarin.Forms.Label)與物件來顯示選項卡的資料:
+在此範例中，每個索引標籤都包含一個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，該物件會使用 [`Image`](xref:Xamarin.Forms.Image) 和 [`Label`](xref:Xamarin.Forms.Label) 物件來顯示索引標籤的資料：
 
-[![iOS 和 Android 上樣本化 TabbedPage 的螢幕截圖](tabbed-page-images/tabbedpage-template.png "樣本化選項卡頁")](tabbed-page-images/tabbedpage-template-large.png#lightbox "樣本化選項卡頁")
+[![IOS 和 Android 上樣板化 TabbedPage 的螢幕擷取畫面](tabbed-page-images/tabbedpage-template.png "樣板化 TabbedPage")](tabbed-page-images/tabbedpage-template-large.png#lightbox "樣板化 TabbedPage")
 
-選擇另一個選項卡[`ContentPage`](xref:Xamarin.Forms.ContentPage)將顯示表示選項卡的物件。
+選取另一個索引標籤會顯示代表索引標籤的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件。
 
 ## <a name="related-links"></a>相關連結
 
 - [TabbedPageWithNavigationPage (Sampls)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 - [TabbedPage (Sampls)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
 - [階層式導覽](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
-- [頁面品種](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [選項卡頁 API](xref:Xamarin.Forms.TabbedPage)
+- [頁面種類](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [TabbedPage API](xref:Xamarin.Forms.TabbedPage)

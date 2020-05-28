@@ -1,29 +1,32 @@
 ---
-title: Xamarin FlexLayout
-description: 使用 FlexLayout 來堆疊或包裝子視圖的集合。
-ms.prod: xamarin
-ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/07/2018
-ms.openlocfilehash: 507f78bf887d8d11e93a5a6a1f7d074c55e69360
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.FormsFlexLayout
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 031a846b7546c204d45c7437acd829d6cb49bfbb
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83149975"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137203"
 ---
-# <a name="the-xamarinforms-flexlayout"></a>Xamarin FlexLayout
+# <a name="the-xamarinforms-flexlayout"></a>Xamarin.FormsFlexLayout
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
 
 _使用 FlexLayout 來堆疊或包裝子視圖的集合。_
 
-Xamarin [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 是 xamarin. 表單版本3.0 中的新功能。 它是以 [CSS 彈性方塊配置][模組](https://www.w3.org/TR/css-flexbox-1/)為基礎，通常稱為 [_彈性版面_配置] 或 [_彈性箱_]，因為它包含許多彈性選項，可在版面配置中排列子系。
+Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 3.0 版的新功能 Xamarin.Forms 。 它是以 [CSS 彈性方塊配置][模組](https://www.w3.org/TR/css-flexbox-1/)為基礎，通常稱為 [_彈性版面_配置] 或 [_彈性箱_]，因為它包含許多彈性選項，可在版面配置中排列子系。
 
-`FlexLayout`與 Xamarin 相似 [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) 之處在于，它可以在堆疊中水準和垂直排列其子系。 不過， `FlexLayout` 如果單一資料列或資料行中有太多要容納的子系，也可以包裝其子系，而且也有許多方向、對齊和適應各種螢幕大小的選項。
+`FlexLayout`與相似之處在于 Xamarin.Forms [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) ，它可以在堆疊中水準和垂直排列其子系。 不過， `FlexLayout` 如果單一資料列或資料行中有太多要容納的子系，也可以包裝其子系，而且也有許多方向、對齊和適應各種螢幕大小的選項。
 
 `FlexLayout`衍生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1) ，並繼承 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 類型的屬性 `IList<View>` 。
 
@@ -609,11 +612,11 @@ FlexLayout.SetBasis(label, new FlexBasis(0.25f, true));
 
 ## <a name="css-styling-with-flexlayout"></a>使用 FlexLayout 的 CSS 樣式
 
-您可以使用與建立的 Xamarin. Forms 3.0 中所引進的[CSS 樣式](~/xamarin-forms/user-interface/styles/css/index.md)功能 `FlexLayout` 。 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例的 [ **CSS 類別目錄專案**] 頁面會複製 [**類別目錄專案**] 頁面的版面配置，但有許多樣式的 css 樣式表單：
+您可以使用與連接的3.0 中所引進的[CSS 樣式](~/xamarin-forms/user-interface/styles/css/index.md)設定功能 Xamarin.Forms `FlexLayout` 。 **[FlexLayoutDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** 範例的 [ **CSS 類別目錄專案**] 頁面會複製 [**類別目錄專案**] 頁面的版面配置，但有許多樣式的 css 樣式表單：
 
 [![[CSS 類別目錄專案] 頁面](flex-layout-images/CssCatalogItems.png "[CSS 類別目錄專案] 頁面")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-原始**CatalogItemsPage**檔的區段中有五個 `Style` 定義 `Resources` ，其中有15個 `Setter` 物件。 在**CssCatalogItemsPage**中，已縮減為只有四個物件的兩個 `Style` 定義 `Setter` 。 這些樣式會針對 [Xamarin form CSS 樣式] 功能目前不支援的屬性補充 CSS 樣式表單：
+原始**CatalogItemsPage**檔的區段中有五個 `Style` 定義 `Resources` ，其中有15個 `Setter` 物件。 在**CssCatalogItemsPage**中，已縮減為只有四個物件的兩個 `Style` 定義 `Setter` 。 這些樣式會針對 css 樣式設定 Xamarin.Forms 功能目前不支援的屬性補充 css 樣式表單：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -738,7 +741,7 @@ button {
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin. 表單 3.0 Flex 版面配置影片**
+**Xamarin.Forms3.0 Flex 版面配置影片**
 
 ## <a name="related-links"></a>相關連結
 

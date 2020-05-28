@@ -1,29 +1,33 @@
 ---
-title: 第4章的摘要。 捲動堆疊
-description: 使用 Xamarin 建立 Mobile Apps：第4章的摘要。 捲動堆疊
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 5313dd34839d6a5d21432161b9fd3a0ffce6e816
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 4. Scrolling the stack''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9890ecdf286ee33d7af28fd20847788b063df8f5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83149945"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136886"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第4章的摘要。 捲動堆疊
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
-本章主要著重于引進*版面*配置概念，這是 Xamarin. Forms 用來組織頁面上多個視圖視覺顯示的整體詞彙。
+本章主要著重于引進*版面*配置概念，這是 Xamarin.Forms 用來組織頁面上多個視圖視覺顯示的類別和技術的整體詞彙。
 
 版面配置牽涉到數個衍生自和的類別 [`Layout`](xref:Xamarin.Forms.Layout) [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 。 本章著重于 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 
 > [!NOTE]
-> 在 [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md) 3.0 Xamarin 中引進的會以類似 `StackLayout` 但具有更大彈性的方式來使用。
+> [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md)3.0 中引進的會以 Xamarin.Forms 類似 `StackLayout` 但具有更大彈性的方式來使用。
 
 本章也引進了 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 、 [`Frame`](xref:Xamarin.Forms.Frame) 和 [`BoxView`](xref:Xamarin.Forms.BoxView) 類別。
 

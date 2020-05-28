@@ -1,25 +1,28 @@
 ---
-title: Mac 平台設定
-description: 這篇文章說明如何將 Mac 專案新增至 Xamarin.Forms 專案，將會產生能夠在 macOS Sierra 和 macOS El Capitan 上執行的應用程式。
-ms.prod: xamarin
-ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/03/2017
-ms.openlocfilehash: 7ed2cb66524ab3380f65d6d0be74a66c7d01226b
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+title: ''
+description: 本文說明如何將 Mac 專案新增至 Xamarin.Forms 專案，以產生能夠在 macOS Sierra 和 MacOS El Capitan 上執行的應用程式。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 11897d2d3b8b7ba0a62956f1dbe4d8b873352e7a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978022"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139551"
 ---
-# <a name="mac-platform-setup"></a>Mac 平台設定
+# <a name="mac-platform-setup"></a>Mac 平臺設定
 
 ![預覽](~/media/shared/preview.png)
 
-在開始之前，建立 （或使用現有的） 的 Xamarin.Forms 專案。 您只能新增 Visual Studio for mac 中使用的 Mac 應用程式
+開始之前，請先建立（或使用現有的） Xamarin.Forms 專案。 您只能使用 Visual Studio for Mac 新增 Mac 應用程式。
 
 > [!VIDEO https://youtube.com/embed/mvQ7jzaNseM]
 
@@ -27,25 +30,25 @@ ms.locfileid: "64978022"
 
 ## <a name="adding-a-mac-app"></a>新增 Mac 應用程式
 
-請遵循下列指示來將 Mac 應用程式將在 macOS Sierra 和 macOS El Capitan 上執行：
+遵循這些指示，新增將在 macOS Sierra 和 macOS El Capitan 上執行的 Mac 應用程式：
 
-1. 在 Visual Studio for Mac，以滑鼠右鍵按一下現有的 Xamarin.Forms 方案，然後選擇 **新增 > 新增專案...**
+1. 在 Visual Studio for Mac 中，以滑鼠右鍵按一下現有的 Xamarin.Forms 方案，然後選擇 [新增] **> [加入新專案**]。
 
-2. 在 [**新的專案**視窗中選擇**Mac > 應用程式 > Cocoa 應用程式**按**下一步]**。
+2. 在 [**新增專案**] 視窗中，選擇**Mac > App > Cocoa 應用程式**，然後按 **[下一步]**。
 
-3. 型別**應用程式名稱**（並選擇性地選擇 [停駐項目不同的名稱），然後按**下一步]**。
+3. 輸入**應用程式名稱**（並選擇性地為 Dock 專案選擇不同的名稱），然後按 **[下一步]**。
 
-4. 檢閱設定然後按**建立**。 這些步驟如下所示：
+4. 檢查設定，然後按 [**建立**]。 這些步驟如下所示：
 
-    ![動畫的指示，說明如何新增 Cocoa 應用程式](mac-images/add-macos-proj.gif)
+    ![顯示如何新增 Cocoa 應用程式的動畫指示](mac-images/add-macos-proj.gif)
 
-5. 在 Mac 專案中，以滑鼠右鍵按一下**封裝 > 新增套件...** 來新增[Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) NuGet。 您也應該更新為使用相同版本的 Xamarin.Forms NuGet 套件的其他專案。
+5. 在 Mac 專案中，以滑鼠右鍵按一下 [**套件] > 新增套件 ...** ] 以新增 [Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) NuGet。 您也應該將其他專案更新為使用相同版本的 Xamarin.Forms NuGet 套件。
 
-6. 在 Mac 專案中，以滑鼠右鍵按一下**參考**並新增至 Xamarin.Forms 專案 （共用專案或.NET Standard 程式庫專案） 的參考。
+6. 在 Mac 專案中，以滑鼠右鍵按一下 [**參考**]，並加入專案的參考 Xamarin.Forms （[共用專案] 或 [.NET Standard 程式庫] 專案）。
 
-    ![新增 Xamarin.Forms 共用程式碼專案的參考](mac-images/references-sml.png)
+    ![加入 Xamarin.Forms 共用程式碼專案的參考](mac-images/references-sml.png)
 
-7. 更新**Main.cs**初始化`AppDelegate`:
+7. 更新**Main.cs**以初始化 `AppDelegate` ：
 
     ```csharp
     static class MainClass
@@ -59,7 +62,7 @@ ms.locfileid: "64978022"
     }
     ```
 
-8. 更新`AppDelegate`初始化 Xamarin.Forms，建立視窗，以及載入 Xamarin.Forms 應用程式 (記住設定適當`Title`)。 _如果您需要初始化其他相依性，請執行，這裡也。_
+8. 更新 `AppDelegate` 以初始化 Xamarin.Forms 、建立視窗，以及載入 Xamarin.Forms 應用程式（請記得設定適當的 `Title` ）。 _如果您有其他需要初始化的相依性，也請在這裡執行此動作。_
 
     ```csharp
     using Xamarin.Forms;
@@ -94,21 +97,21 @@ ms.locfileid: "64978022"
     }
     ```
 
-9. 按兩下**Main.storyboard**在 Xcode 中編輯。 選取 [ **] 視窗**並_取消核取_**是初始的控制器**核取方塊 （這是因為上述程式碼會建立一個視窗）：
+9. 按兩下 [ **Main.** 腳本] 以在 Xcode 中編輯。 選取**視窗**並_取消_核取 [**是初始控制器**] 核取方塊（這是因為上述程式碼會建立視窗）：
 
-    [![取消核取 在 Xcode 中是初始的控制器核取方塊](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
+    [![取消核取 Xcode 中的 [是初始控制器] 核取方塊](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
-    您可以編輯功能表系統中移除不必要的項目分鏡腳本。
+    您可以編輯分鏡腳本中的功能表系統，以移除不必要的專案。
 
-10. 最後，新增任何本機資源 （例如。 影像檔） 從現有的平台專案所需。
+10. 最後，新增任何本機資源（例如， 影像檔案），從所需的現有平臺專案。
 
-11. Mac 專案現在應在 macOS 上執行您的 Xamarin.Forms 程式碼 ！
+11. Mac 專案現在應該會在 macOS 上執行您的程式 Xamarin.Forms 代碼！
 
 ## <a name="next-steps"></a>後續步驟
 
 ### <a name="styling"></a>樣式
 
-最近所做的變更至`OnPlatform`您現在可以將目標平台的任何數字。 這包括 macOS。
+透過最近的變更， `OnPlatform` 您現在可以將目標設為任何數目的平臺。 其中包括 macOS。
 
 ```xml
 <Button.TextColor>
@@ -120,11 +123,11 @@ ms.locfileid: "64978022"
 </Button.TextColor>
 ```
 
-請注意，您可能也加倍像這樣的平台上： `<On Platform="iOS, macOS" ...>`。
+請注意，您可能也會在這類平臺上加倍： `<On Platform="iOS, macOS" ...>` 。
 
 ### <a name="window-size-and-position"></a>視窗大小和位置
 
-您可以調整的初始大小和位置中的視窗`AppDelegate`:
+您可以在中調整視窗的初始大小和位置 `AppDelegate` ：
 
 ```csharp
 var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, height
@@ -132,16 +135,16 @@ var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, heigh
 
 ## <a name="known-issues"></a>已知問題
 
-這會是預覽，因此，您應該預期不是所有項目是用於生產環境。 以下是您在將 macOS 新增至您的專案可能會遇到的幾件事：
+這是預覽版，因此您應該預期並非所有專案都是生產環境就緒。 以下是您在專案中新增 macOS 時可能會遇到的一些事項：
 
-### <a name="not-all-nugets-are-ready-for-macos"></a>並非所有的 Nuget 已可供 macOS
+### <a name="not-all-nugets-are-ready-for-macos"></a>並非所有 Nuget 都已準備好進行 macOS
 
-您可能會發現，您使用的程式庫的一些尚不支援 macOS。 在此情況下，您必須將要求傳送至專案的維護程式用來將它加入。 沒有支援，您可能需要尋找替代項目。
+您可能會發現，您所使用的部分程式庫尚未支援 macOS。 在此情況下，您必須將要求傳送至專案的維護程式，才能將它加入。 在支援之前，您可能需要尋找替代方案。
 
 ### <a name="missing-xamarinforms-features"></a>遺漏的 Xamarin.Forms 功能
 
-並非所有的 Xamarin.Forms 功能都已在此預覽版中完成的。 如需詳細資訊，請參閱 <<c0> [ 平台支援 macOS 狀態](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support-macOS-Status)中[Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms) GitHub 存放庫。
+並非所有 Xamarin.Forms 功能都已在此預覽版中完成。 如需詳細資訊，請參閱 GitHub 存放庫中的[平臺支援 MacOS 狀態](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support-macOS-Status) [Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms) 。
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin.Mac](~/mac/index.yml)
+- [Xamarin. Mac](~/mac/index.yml)

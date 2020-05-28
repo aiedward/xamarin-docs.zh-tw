@@ -1,83 +1,86 @@
 ---
-title: Xamarin 中的字串和圖像當地語系化。
-description: Xamarin.Forms 應用可以使用 .NET 資源檔進行當地語系化。
-zone_pivot_groups: platform
-ms.prod: xamarin
-ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 11/01/2019
-ms.openlocfilehash: bf99873d88a69a715cdf7969ad94afd66372b5e3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: 中的字串和影像當地語系化Xamarin.Forms
+description: Xamarin.Forms應用程式可以使用 .NET 資源檔來當地語系化。
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74135390"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137598"
 ---
-# <a name="xamarinforms-string-and-image-localization"></a>Xamarin.表單字串和影像當地語系化
+# <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms字串和影像當地語系化
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
-當地語系化是調整應用程式以滿足目標市場的特定語言或文化要求的過程。 要完成當地語系化,可能需要將應用程式中的文本和圖像翻譯成多種語言。 本地化應用程式根據行動裝置的區域性設定自動顯示翻譯的文字:
+當地語系化是指將應用程式調整為符合目標市場的特定語言或文化需求的流程。 若要完成當地語系化，應用程式中的文字和影像可能需要轉譯成多種語言。 當地語系化的應用程式會根據行動裝置的文化特性設定，自動顯示翻譯的文字：
 
-![iOS 和 Android 上的當地語系化應用程式的螢幕截圖](text-images/localizationdemo-screenshots.png)
+![IOS 和 Android 上當地語系化應用程式的螢幕擷取畫面](text-images/localizationdemo-screenshots.png)
 
-.NET 框架包括一個內建機制,用於使用[Resx 資源檔](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)對應用程式進行當地語系化。 資源檔將文本和其他內容存儲為名稱/值對,允許應用程式檢索提供的密鑰的內容。 資源文件允許將當地語系化的內容與應用程式代碼分開。
+.NET framework 包含內建機制，可使用[Resx 資源檔](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)來當地語系化應用程式。 資源檔會將文字和其他內容儲存為名稱/值組，以允許應用程式抓取所提供金鑰的內容。 資源檔可讓當地語系化的內容與應用程式代碼分開。
 
-使用資源檔案當地語系化 Xamarin.Forms 應用程式需要執行以下步驟:
+使用資源檔來當地語系化 Xamarin.Forms 應用程式時，您需要執行下列步驟：
 
-1. 建立包含翻譯文字[的 Resx 檔案](#create-resx-files)。
-1. [在分享項目中指定預設區域性](#specify-the-default-culture)。
-1. [本地化 Xamarin.forms 中的文字](#localize-text-in-xamarinforms)。
-1. 以每個平台的區域性設定[對影像進行當地語系化](#localize-images)。
-1. [本地化每個平臺上的應用程式名稱](#localize-the-application-name)。
+1. [建立](#create-resx-files)包含翻譯文字的 Resx 檔案。
+1. 指定共用專案中[的預設文化](#specify-the-default-culture)特性。
+1. [當地語系化中的 Xamarin.Forms 文字](#localize-text-in-xamarinforms)。
+1. 根據每個平臺的文化特性設定來[當地語系化影像](#localize-images)。
+1. 將每個平臺上[的應用程式名稱當地語系化](#localize-the-application-name)。
 1. [測試](#test-localization)每個平臺上的當地語系化。
 
 ## <a name="create-resx-files"></a>建立 Resx 檔案
 
-資源檔是 XML 檔,**其副檔名**在生成過程中編譯為二進位資源 (.resource) 檔案。 Visual Studio 2019 生成一個類,該類提供用於檢索資源的 API。 當地語系化應用程式通常包含包含應用程式中使用的所有字串的預設資源檔,以及每種受支援語言的資源檔。 範例應用程式在包含資源檔案的分享專案中有一個**Resx**資料夾,其預設資源檔案稱為**AppResources.resx**。
+資源檔是具有 **.resx**副檔名的 XML 檔案，會在建立程式期間編譯成二進位資源（.resources）檔案。 Visual Studio 2019 產生的類別會提供用來捕獲資源的 API。 當地語系化的應用程式通常會包含預設資源檔，其中含有應用程式中使用的所有字串，以及每個支援語言的資源檔。 範例應用程式在共用專案中有一個**Resx**資料夾，其中包含資源檔和其預設資源檔，稱為**appresources.resx properties .resx**。
 
-資源檔包含每個項目的以下資訊:
+資源檔包含每個專案的下列資訊：
 
-- **名稱**指定用於存取代碼中文字的鍵。
+- **名稱**指定用來存取程式碼中文字的索引鍵。
 - **值**指定翻譯的文字。
-- **註釋**是包含其他資訊的可選欄位。
+- [**批註**] 是包含其他資訊的選擇性欄位。
 
 ::: zone pivot="windows"
 
-從 Visual Studio 2019 中新增新增**新項目「** 對話框的資源檔案:
+在 Visual Studio 2019 中，會使用 [新增**專案**] 對話方塊來新增資源檔：
 
-![在視覺工作室 2019 中添加新資源](text-images/pc-add-resource-file.png)
+![在 Visual Studio 2019 中新增資源](text-images/pc-add-resource-file.png)
 
-新增檔案後,可以為每個文字資源加入行:
+新增檔案之後，就可以為每個文字資源新增資料列：
 
-![在 .resx 檔案中指定預設文字資源](text-images/pc-default-strings.png)
+![指定 .resx 檔案中的預設文字資源](text-images/pc-default-strings.png)
 
-**"存取修改器**"下拉設置確定 Visual Studio 如何生成用於存取資源的類。 將「訪問修改器」設置為**公共**或**內部**,在具有指定可存取層級的生成類中生成。 將「存取修改器」設定為 **「無代碼產生**」不會生成類檔。 預設資源檔應配置為生成類檔,這將導致將**具有 .designer.cs**副檔名的檔案添加到專案中。
+[**存取修飾**詞] 下拉式設定會決定 Visual Studio 如何產生用來存取資源的類別。 將存取修飾詞設定為 [**公用**] 或 [**內部**]，會產生具有指定之存取範圍層級的產生類別。 將存取修飾詞設定為 [**無程式碼產生**] 並不會產生類別檔案。 預設資源檔應設定為產生類別檔案，這會導致檔案的副檔名為**designer.cs**的檔案新增至專案。
 
-建立預設資源檔後,可以為應用程式支援的每個區域性創建其他檔。 每個附加資源檔都應在檔名中包括翻譯區域性,並且應將**Access 修改器**設置為 **「無代碼產生**」。 
+建立預設資源檔之後，即可為應用程式支援的每個文化特性建立額外的檔案。 每個額外的資源檔都應該在檔案名中包含翻譯文化特性，且**存取修飾**詞應設定為**不產生程式碼**。 
 
-在運行時,應用程序嘗試按特定性的順序解析資源請求。 例如,如果裝置區域性為**en-US,** 則應用程式按以下順序搜尋資源檔:
+在執行時間，應用程式會嘗試依照明確的順序來解析資源要求。 例如，如果裝置文化特性為**en-us** ，應用程式會依此順序尋找資源檔：
 
-1. 應用程式資源.en-US.resx
-1. 應用程式資源.en.resx
-1. AppResources.resx(預設)
+1. Appresources.resx properties. en-us .resx
+1. Appresources.resx properties. en .resx
+1. Appresources.resx properties .resx （預設值）
 
-以下螢幕截圖顯示了**一個 AppResources.es.cs**的西班牙語翻譯檔:
+下列螢幕擷取畫面顯示名為**AppResources.es.cs**的西班牙文翻譯檔案：
 
-![在 .resx 檔案中指定預設文字資源](text-images/pc-spanish-strings.png)
+![指定 .resx 檔案中的預設文字資源](text-images/pc-spanish-strings.png)
 
-翻譯檔案使用預設檔案中指定的相同**Name**值,但在 **「值」** 欄中包含西班牙文字串。 此外,**訪問修改器**設置為 **「無代碼產生**」。
+翻譯檔案會使用預設檔案中指定的相同**名稱**值，但在 [**值**] 資料行中包含西班牙文語言字串。 此外，**存取修飾**詞設定為**不產生程式碼**。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-從 Visual Studio 2019 中為 Mac**添加「新增新檔案**」 對話框,將新增資源檔:
+資源檔會使用 Visual Studio 2019 for Mac 中**的 [新增**檔案] 對話方塊來新增：
 
-![在 Visual Studio 2019 中為 Mac 添加新資源](text-images/mac-add-resource-file.png)
+![在 Visual Studio 2019 for Mac 中新增資源](text-images/mac-add-resource-file.png)
 
-建立預設資源檔案後,可以透過資源檔案中`data``root`的元素中建立元素來新增文字:
+建立預設資源檔之後，您可以在 `data` 資源檔的專案內建立元素，藉以新增文字 `root` ：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -95,21 +98,21 @@ ms.locfileid: "74135390"
 </root>
 ```
 
-可以透過在資源檔案選項中設定**自訂工具**屬性來建立 **.designer.cs**類別檔案:
+您可以在資源檔選項中設定**自訂工具**屬性來建立**designer.cs**類別檔案：
 
-![在資源檔案的屬性中指定的自訂工具](text-images/mac-resx-properties.png)
+![在資源檔的屬性中指定的自訂工具](text-images/mac-resx-properties.png)
 
-將**自訂工具**設置為**公共ResXFileCodeGenerator**將導致生成`public`具有存取權限的類。 將**自訂工具**設置為**內部ResXFileCodeGenerator**`internal`將導致生成具有訪問許可權的類。 空**自定義工具**值不會生成類。 生成的類名稱將與資源檔名匹配。 例如 **,AppResources.resx**檔將導致在名為**AppResources.designer.cs**的檔中`AppResources`創建類。
+將**自訂工具**設定為**publicresxfilecodegenerator]** 會產生具有 `public` 存取權的類別。 將**自訂工具**設定為**InternalResXFileCodeGenerator**會產生具有 `internal` 存取權的類別。 空白的**自訂工具**值不會產生類別。 產生的類別名稱會符合資源檔名稱。 例如， **appresources.resx properties .resx**檔案會導致在 `AppResources` 名為**AppResources.designer.cs**的檔案中建立類別。
 
-可以為每個受支援的區域性創建其他資源檔。 每個語言檔都應在檔案名中包含翻譯區域性,以便針對**es-MX**的檔案應命名為**AppResources.es-MX.resx**。
+可以為每個支援的文化特性建立額外的資源檔。 每個語言檔案都應該在檔案名中包含翻譯文化特性，以便將目標為**ES mx**的檔案命名為**AppResources.es**。
 
-在運行時,應用程序嘗試按特定性的順序解析資源請求。 例如,如果裝置區域性為**en-US,** 則應用程式按以下順序搜尋資源檔:
+在執行時間，應用程式會嘗試依照明確的順序來解析資源要求。 例如，如果裝置文化特性為**en-us** ，應用程式會依此順序尋找資源檔：
 
-1. 應用程式資源.en-US.resx
-1. 應用程式資源.en.resx
-1. AppResources.resx(預設)
+1. Appresources.resx properties. en-us .resx
+1. Appresources.resx properties. en .resx
+1. Appresources.resx properties .resx （預設值）
 
-語言翻譯檔案應具有與預設檔案相同的**Name**值。 以下 XML 顯示名為**AppResources.es.resx**的西班牙語翻譯檔:
+語言轉譯檔案的**名稱**值應指定為預設檔案。 下列 XML 顯示名為**appresources.resx properties**的西班牙文翻譯檔案：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -129,9 +132,9 @@ ms.locfileid: "74135390"
 
 ::: zone-end
 
-## <a name="specify-the-default-culture"></a>指定預設區域性
+## <a name="specify-the-default-culture"></a>指定預設文化特性
 
-要使資源檔正常工作,應用程式必須指定。 `NeutralResourcesLanguage` 在共用專案中,應自定義**AssemblyInfo.cs**檔以指定預設區域性。 以下代碼展示如何在**AssemblyInfo.cs**檔`NeutralResourcesLanguage`中設定到**en-US:**
+若要讓資源檔正常運作，應用程式必須具有 `NeutralResourcesLanguage` 指定的。 在共用的專案中，應自訂**AssemblyInfo.cs**檔案以指定預設的文化特性。 下列程式碼顯示如何 `NeutralResourcesLanguage` 在**AssemblyInfo.cs**檔案中將設定為**en-us** ：
 
 ```csharp
 using System.Resources;
@@ -140,21 +143,21 @@ using System.Resources;
 ```
 
 > [!WARNING]
-> 如果不指定屬性,`NeutralResourcesLanguage``ResourceManager`類別將`null`傳回 沒有特定資源檔的任何區域性的值。 指定預設區域性時,`ResourceManager`傳回來自不支援區域性的預設 Resx 檔。 因此,建議您始終指定,`NeutralResourcesLanguage`以便為不支援的區域性顯示文本。
+> 如果您未指定 `NeutralResourcesLanguage` 屬性， `ResourceManager` 類別 `null` 會傳回任何不含特定資源檔之文化特性的值。 指定預設文化特性時，會 `ResourceManager` 從預設的 Resx 檔案傳回不支援文化特性的結果。 因此，建議您一律指定， `NeutralResourcesLanguage` 以顯示不支援文化特性的文字。
 
-建立預設資源檔並在**AssemblyInfo.cs**檔案中指定的預設區域性後,應用程式可以在運行時檢索本地化字串。
+建立預設資源檔並在**AssemblyInfo.cs**檔中指定預設文化特性之後，應用程式就可以在執行時間捕獲當地語系化的字串。
 
-關於資源檔的詳細資訊,請參閱為[.NET 應用建立資源檔](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)。
+如需資源檔的詳細資訊，請參閱[建立 .net 應用程式的資源檔](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)。
 
-## <a name="localize-text-in-xamarinforms"></a>當地語系化 Xamarin 中的文字。
+## <a name="localize-text-in-xamarinforms"></a>當地語系化中的文字Xamarin.Forms
 
-文字在 Xamarin 中當地`AppResources`語系化。 此類是根據預設資源檔名命名的。 由於範例專案資源檔名為**AppResources.cs,Visual**Studio 將`AppResources`生成名為的匹配類。 靜態屬性在資源檔中每`AppResources`行的類中生成。 以下靜態屬性在範例應用程式的`AppResources`類別產生:
+中的文字會 Xamarin.Forms 使用產生的 `AppResources` 類別來當地語系化。 這個類別是根據預設資源檔名稱來命名。 由於範例專案資源檔的名稱為**AppResources.cs**，Visual Studio 會產生一個名為的相符類別 `AppResources` 。 系統會 `AppResources` 針對資源檔中的每個資料列，在類別中產生靜態屬性。 下列靜態屬性會在範例應用程式的類別中產生 `AppResources` ：
 
 - AddButton
-- 註解標籤
-- 註解位置持有人
+- NotesLabel
+- NotesPlaceholder
 
-將這些值存取為[x:靜態](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md#the-xstatic-markup-extension)屬性允許在 XAML 中顯示本地化文字:
+將這些值當做[x:Static](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md#the-xstatic-markup-extension)屬性存取，可讓當地語系化的文字在 XAML 中顯示：
 
 ```xaml
 <ContentPage ...
@@ -165,7 +168,7 @@ using System.Resources;
 </ContentPage>
 ```
 
-也可以在代碼中檢索本地化文字:
+您也可以在程式碼中取出當地語系化的文字：
 
 ```csharp
 public LocalizedCodePage()
@@ -199,46 +202,46 @@ public LocalizedCodePage()
 }
 ```
 
-類中`AppResources`的屬性使用`System.Globalization.CultureInfo.CurrentUICulture`的 當前值來確定要從中檢索值的區域性資源檔。
+類別中的屬性會 `AppResources` 使用的目前值， `System.Globalization.CultureInfo.CurrentUICulture` 來決定要從哪一個文化特性資源檔中取得值。
 
-## <a name="localize-images"></a>本地化影像
+## <a name="localize-images"></a>當地語系化影像
 
-除了存儲文本之外,Resx 檔案還能夠存儲不僅僅是文本,還可以存儲圖像和二進位資料。 但是,行動裝置具有一系列螢幕大小和密度,每個行動平臺都有用於顯示與密度相關的圖像的功能。 因此,應使用平臺映像當地語系化功能,而不是將映像存儲在資源檔中。
+除了儲存文字之外，Resx 檔案還能夠儲存不只是文字，也可以儲存影像和二進位資料。 不過，行動裝置具有各種螢幕大小和密度，而每個行動平臺都有功能可顯示密度相依影像。 因此，應使用平臺映射當地語系化功能，而不是將影像儲存在資源檔中。
 
-### <a name="localize-images-on-android"></a>在 Android 上本地化影像
+### <a name="localize-images-on-android"></a>在 Android 上將影像當地語系化
 
-在 Android 上,使用**參考資料**目錄中的資料夾的命名約定儲存當地化的可繪製(圖像)。 資料夾被命名為**可繪製**,後綴為目標語言。 例如,西班牙文資料夾名為 **「可繪製」。**
+在 Android 上，當地語系化的可繪製資源（影像）會使用**資源**目錄中資料夾的命名慣例來儲存。 資料夾會以目的語言的尾碼命名為可**繪製**。 例如，西班牙文語言資料夾名為「可**繪製-es**」。
 
-當需要四個字母的區域設置代碼時,Android 需要額外的**r。** 例如,墨西哥區域設定 (es-MX) 資料夾應命名為**可繪製的 es-rMX**。 每個區域設定資料夾中的影像檔名應相同:
+當需要四個字母的地區設定代碼時，Android 會在破折號之後需要額外的**r** 。 例如，墨西哥地區設定（es MX）資料夾應該命名為可**繪製-es-rMX**。 每個地區設定資料夾中的影像檔案名稱應該相同：
 
-![Android 專案中的本地化影像](text-images/pc-android-images.png)
+![Android 專案中的當地語系化影像](text-images/pc-android-images.png)
 
-有關詳細資訊,請參閱[Android 當地語系化](~/android/app-fundamentals/localization.md)。
+如需詳細資訊，請參閱[Android 當地語系化](~/android/app-fundamentals/localization.md)。
 
-### <a name="localize-images-on-ios"></a>在 iOS 上本地化影像
+### <a name="localize-images-on-ios"></a>在 iOS 上將影像當地語系化
 
-在 iOS 上,使用**參考資料**目錄中的資料夾的命名約定存儲當地語系化圖像。 預設資料夾名為**Base.lproj**。 特定於語言的資料夾使用語言或區域設定名稱命名,後跟 **.lproj**。 例如,西班牙文資料夾名為**es.lproj**。
+在 iOS 上，當地語系化的影像會使用**Resources**目錄中資料夾的命名慣例來儲存。 預設資料夾的名稱是 **.lproj**。 語言特定資料夾是以語言或地區設定名稱命名，後面接著 **. .lproj**。 例如，西班牙文語言資料夾的名稱是 **.lproj**。
 
-四個字母的本地碼的工作方式與兩個字母的語言代碼類似。 例如,墨西哥區域設定 (es-MX) 資料夾應命名為**es-MX.lproj**。 每個區域設定資料夾中的影像檔名應相同:
+四個字母的本機代碼的作用就像兩個字母的語言代碼。 例如，墨西哥地區設定（es MX）資料夾應該命名為**es-mx. .lproj**。 每個地區設定資料夾中的影像檔案名稱應該相同：
 
-![iOS 專案中的本地化影像](text-images/pc-ios-images.png)
+![IOS 專案中的當地語系化映射](text-images/pc-ios-images.png)
 
 > [!NOTE]
-> iOS 支援創建當地語系化的資產目錄,而不是使用 .lproj 資料夾結構。 但是,必須在 Xcode 中創建和管理這些。
+> iOS 支援建立當地語系化的資產目錄，而不是使用 .lproj 資料夾結構。 不過，這些必須在 Xcode 中建立和管理。
 
-有關詳細資訊,請參閱[iOS 當地語系化](~/ios/app-fundamentals/localization/index.md)。
+如需詳細資訊，請參閱[IOS 當地語系化](~/ios/app-fundamentals/localization/index.md)。
 
-### <a name="localize-images-on-uwp"></a>在 UWP 上本地化影像
+### <a name="localize-images-on-uwp"></a>在 UWP 上將影像當地語系化
 
-在 UWP 上,使用 **「資產/圖像**」目錄中的資料夾的命名約定存儲當地語系化圖像。 資料夾使用語言或區域設定命名。 例如,西班牙文資料夾名為**es,** 墨西哥區域設定資料夾應命名為**es-MX**。 每個區域設定資料夾中的影像檔名應相同:
+在 UWP 上，當地語系化的影像會使用 [**資產/影像**] 目錄中資料夾的命名慣例來儲存。 資料夾是以語言或地區設定來命名。 例如，西班牙文語言資料夾的名稱為**es** ，而墨西哥地區設定資料夾應命名為**es-MX**。 每個地區設定資料夾中的影像檔案名稱應該相同：
 
-![UWP 專案中的本地化影像](text-images/pc-uwp-images.png)
+![UWP 專案中的當地語系化影像](text-images/pc-uwp-images.png)
 
 如需詳細資訊，請參閱 [UWP 當地語系化](/windows/uwp/design/globalizing/globalizing-portal/)。
 
-### <a name="consume-localized-images"></a>使用本地端影像
+### <a name="consume-localized-images"></a>使用當地語系化的影像
 
-由於每個平台都儲存具有唯一檔結構的影像,因此 XAML`OnPlatform``ImageSource`使用 類別 根據當前平台設定屬性:
+由於每個平臺都使用唯一的檔案結構來儲存影像，因此 XAML 會使用類別，根據 `OnPlatform` `ImageSource` 目前的平臺來設定屬性：
 
 ```xaml
 <Image>
@@ -252,9 +255,9 @@ public LocalizedCodePage()
 ```
 
 > [!NOTE]
-> 標記`OnPlatform`擴展提供了一種更簡潔的方法來指定特定於平臺的值。 有關詳細資訊,請參閱[平台上標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
+> `OnPlatform`標記延伸提供更精確的方法來指定平臺特定的值。 如需詳細資訊，請參閱[OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
-可以基於代碼中`Device.RuntimePlatform`的屬性設定影像來源:
+可以根據程式碼中的屬性來設定映射來源 `Device.RuntimePlatform` ：
 
 ```csharp
 string imgSrc = Device.RuntimePlatform == Device.UWP ? "Assets/Images/flag.png" : "flag.png";
@@ -265,21 +268,21 @@ Image flag = new Image
 };
 ```
 
-## <a name="localize-the-application-name"></a>本地化應用程式名稱
+## <a name="localize-the-application-name"></a>將應用程式名稱當地語系化
 
-應用程式名稱是按平臺指定的,不使用 Resx 資源檔。 在 Android 上本地化應用程式名稱,請參閱[在 Android 上本地化應用程式名稱](~/android/app-fundamentals/localization.md#stringsxml-file-format)。 在 iOS 上本地化應用程式名稱,請參閱[在 iOS 上本地化應用程式名稱](~/ios/app-fundamentals/localization/index.md#app-name)。 要本地化 UWP 上的應用程式名稱,請參閱[UWP 套件清單中的本地化字串](https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest)。
+應用程式名稱是在每個平臺上指定，並不會使用 Resx 資源檔。 若要在 Android 上將應用程式名稱當地語系化，請參閱[在 android 上](~/android/app-fundamentals/localization.md#stringsxml-file-format)將應用程式名稱當地語系化。 若要將 iOS 上的應用程式名稱當地語系化，請參閱[在 ios 上當地語系化應用程式名稱](~/ios/app-fundamentals/localization/index.md#app-name)。 若要將 UWP 上的應用程式名稱當地語系化，請參閱[在 uwp 套件資訊清單中將字串當地語系化](https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest)。
 
-## <a name="test-localization"></a>測試本地化
+## <a name="test-localization"></a>測試當地語系化
 
-測試當地語系化最好透過更改設備語言來實現。 可以在代碼中設置`System.Globalization.CultureInfo.CurrentUICulture`值 ,但跨平台的行為不一致,因此不建議測試。
+您可以藉由變更您的裝置語言，來測試當地語系化的效果。 您可以在程式碼中設定的值， `System.Globalization.CultureInfo.CurrentUICulture` 但行為在不同平臺之間不一致，因此不建議用於測試。
 
-在 iOS 上,在設置應用中,您可以專門設置每個應用的語言,而無需更改設備語言。
+在 iOS 的 [設定] 應用程式中，您可以明確設定每個應用程式的語言，而不需要變更您的裝置語言。
 
-在 Android 上,應用程式啟動時將檢測並緩存語言設置。 如果更改語言,則可能需要退出並重新啟動應用程式以查看應用的更改。
+在 Android 上，系統會在應用程式啟動時偵測到語言設定並加以快取。 如果您變更語言，可能需要結束並重新啟動應用程式，才能看到所套用的變更。
 
 ## <a name="related-links"></a>相關連結
 
-- [本地化範例專案](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [當地語系化範例專案](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 - [建立 .NET 應用程式的資源檔](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
 - [跨平台當地語系化](~/cross-platform/app-fundamentals/localization.md)
 - [使用 CultureInfo 類別 (MSDN)](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo)

@@ -1,21 +1,24 @@
 ---
-title: Xamarin.Essentials Unit Converters (Xamarin.Essentials 單位轉換器)
-description: Xamarin.Essentials 中的 UnitConverters 類別可提供數種單位轉換器，協助開發人員使用 Xamarin.Essentials。
-ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 866842cbed9f97dc957e3631c037fa8d27d20076
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.Essentials單位轉換器
+description: 中的 UnitConverters 類別 Xamarin.Essentials 提供數個單位轉換器，可協助開發人員使用 Xamarin.Essentials 。
+ms.assetid: ''
+author: ''
+ms.custom: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deff6997ff921e6048ccb2497a0747c770501a04
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149776"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137133"
 ---
-# <a name="xamarinessentials-unit-converters"></a>Xamarin. Essentials：單位轉換器
+# <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials：單位轉換器
 
-**UnitConverters** 類別可提供數種單位轉換器，協助開發人員使用 Xamarin.Essentials。
+**UnitConverters**類別提供數個單位轉換器，可協助開發人員使用 Xamarin.Essentials 。
 
 ## <a name="get-started"></a>開始使用
 
@@ -23,13 +26,13 @@ ms.locfileid: "83149776"
 
 ## <a name="using-unit-converters"></a>使用單位轉換器
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-可利用 Xamarin.Essentials 中的靜態 `UnitConverters` 類別，使用全部的單位轉換器。 比方說，您可輕易地將華氏轉換為攝氏。
+您可以使用中的靜態類別，取得所有單位轉換器 `UnitConverters` Xamarin.Essentials 。 比方說，您可輕易地將華氏轉換為攝氏。
 
 ```csharp
 var celsius = UnitConverters.FahrenheitToCelsius(32.0);

@@ -1,24 +1,27 @@
 ---
-title: Xamarin.Forms雙屏裝置功能
-description: 本指南說明如何使用 Xamarin.Forms DualScreenInfo 類別，將雙螢幕裝置 (例如 Surface Duo 和 Surface Neo) 的應用程式體驗最佳化。
-ms.prod: xamarin
-ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 02/08/2020
-ms.openlocfilehash: 3393f8f4468b58289443af3d2eea558cca4588d2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms雙畫面裝置功能
+description: 本指南說明如何使用 Xamarin.Forms DualScreenInfo 類別，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 59575823a9ec29847a60209e846ba244e51ca0c0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80628264"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138927"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms雙屏裝置功能
+# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms雙畫面裝置功能
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `DualScreenInfo` 類別可讓您決定檢視所在的窗格、窗格大小、裝置方向、鉸鏈角度等。
 

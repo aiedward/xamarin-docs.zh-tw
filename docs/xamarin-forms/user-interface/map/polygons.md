@@ -1,20 +1,23 @@
 ---
-title: Xamarin. 表單地圖多邊形、折線和圓形
-description: 本文說明如何在 Xamarin. Forms map 實例上建立多邊形、折線和圓形。
-ms.prod: xamarin
-ms.assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2020
-ms.openlocfilehash: 3a7c31f7d9c30e812e955a164404c357fe9aa340
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Forms對應多邊形、折線和圓形
+description: 本文說明如何在地圖實例上建立多邊形、折線和圓形 Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca813f9f0f75aeaf4a2502faa7cb96d1fbead471
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425817"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138407"
 ---
-# <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin. 表單地圖多邊形和折線
+# <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms對應多邊形和折線
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

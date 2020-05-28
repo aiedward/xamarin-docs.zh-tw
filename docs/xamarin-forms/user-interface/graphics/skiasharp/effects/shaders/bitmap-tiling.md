@@ -1,48 +1,51 @@
 ---
-title: SkiaSharp 點陣圖並排顯示
-description: 圖格使用點陣圖重複水平和垂直區域。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: f019b6e031774d7bcdf593015394d0c73c96949b
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198654"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137419"
 ---
-# <a name="skiasharp-bitmap-tiling"></a>SkiaSharp 點陣圖並排顯示
+# <a name="skiasharp-bitmap-tiling"></a>SkiaSharp 點陣圖並排
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
-當您在兩個先前的文章中所見[ `SKShader` ](xref:SkiaSharp.SKShader)類別可以建立線性或循環的漸層。 本文著重於`SKShader`利用點陣圖來並排顯示區域的物件。 可重複的點陣圖，水平及垂直，在其原始的方向或或者翻轉水平和垂直大小。 開關，可避免磚之間的不連續：
+如您在前兩篇文章中所見， [`SKShader`](xref:SkiaSharp.SKShader) 類別可以建立線性或圓形漸層。 本文著重于 `SKShader` 使用點陣圖來並排顯示區域的物件。 點陣圖可以水準和垂直方式重複，不論其原始方向或水準和垂直翻轉。 翻轉會避免磚之間的不連續：
 
-![Bitmap 並排顯示範例](bitmap-tiling-images/BitmapTilingSample.png "Bitmap 並排顯示範例")
+![點陣圖並排取樣](bitmap-tiling-images/BitmapTilingSample.png "點陣圖並排取樣")
 
-靜態[ `SKShader.CreateBitmap` ](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode))方法，以建立此著色器有`SKBitmap`參數，有兩個成員[ `SKShaderTileMode` ](xref:SkiaSharp.SKShaderTileMode)列舉型別：
+[`SKShader.CreateBitmap`](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode))建立此著色器的靜態方法具有 `SKBitmap` 參數和列舉的兩個成員 [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) ：
 
 ```csharp
 public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShaderTileMode tmy)
 ```
 
-兩個參數指出用來水平並排和垂直並排顯示模式。 這是相同`SKShaderTileMode`列舉型別，也會使用漸層停駐的方法。
+這兩個參數表示用於水準並排顯示和垂直並排顯示的模式。 這是 `SKShaderTileMode` 也與漸層方法一起使用的相同列舉。
 
-A [ `CreateBitmap` ](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))多載包含`SKMatrix`引數來執行轉換上的並排顯示的點陣圖：
+多載 [`CreateBitmap`](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) 包含在 `SKMatrix` 磚點陣圖上執行轉換的引數：
 
 ```csharp
 public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShaderTileMode tmy, SKMatrix localMatrix)
 ```
 
-這篇文章包含數個範例使用並排顯示的點陣圖中的這個矩陣轉換。
+本文包含幾個範例，說明如何使用此矩陣轉換與磚點陣圖。
 
-## <a name="exploring-the-tile-modes"></a>瀏覽的並排顯示模式
+## <a name="exploring-the-tile-modes"></a>探索磚模式
 
-中的第一個程式**點陣圖並排**一節**著色器和其他效果**頁面[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例示範兩個效果`SKShaderTileMode`引數。 **點陣圖的並排顯示翻轉模式**XAML 檔案會具現化`SKCanvasView`並將兩個`Picker`可讓您選取的檢視`SKShaderTilerMode`水平和垂直並排顯示的值。 請注意，陣列`SKShaderTileMode`中所定義的成員`Resources`區段：
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的 [**著色器和其他效果**] 頁面之 [**點陣圖**並排顯示] 區段中的第一個程式會示範這兩個 `SKShaderTileMode` 引數的效果。 **點陣圖磚翻轉模式**XAML 檔案會具現化 `SKCanvasView` ，以及兩個可 `Picker` 讓您選取 `SKShaderTilerMode` 水準和垂直並排顯示值的視圖。 請注意，成員的陣列 `SKShaderTileMode` 定義于 `Resources` 區段中：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -85,7 +88,7 @@ public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShade
 </ContentPage>
 ```
 
-建構函式的程式碼後置檔案載入至顯示坐 monkey 點陣圖資源。 第一次裁切影像使用[ `ExtractSubset` ](xref:SkiaSharp.SKBitmap.ExtractSubset(SkiaSharp.SKBitmap,SkiaSharp.SKRectI))方法`SKBitmap`，讓前端和英呎會觸碰點陣圖的邊緣。 接著會使用建構函式[ `Resize` ](xref:SkiaSharp.SKBitmap.Resize(SkiaSharp.SKImageInfo,SkiaSharp.SKBitmapResizeMethod))方法用來建立另一個點陣圖的大小。 這些變更會讓更適用於並排顯示的點陣圖：
+程式碼後置檔案的函式會載入點陣圖資源，以顯示所坐的猴子。 它會先使用的方法裁剪影像， [`ExtractSubset`](xref:SkiaSharp.SKBitmap.ExtractSubset(SkiaSharp.SKBitmap,SkiaSharp.SKRectI)) `SKBitmap` 讓前端和腳觸及點陣圖的邊緣。 然後，此函式會使用 [`Resize`](xref:SkiaSharp.SKBitmap.Resize(SkiaSharp.SKImageInfo,SkiaSharp.SKBitmapResizeMethod)) 方法來建立大小為一半的另一個點陣圖。 這些變更讓點陣圖更適合用於並排：
 
 ```csharp
 public partial class BitmapTileFlipModesPage : ContentPage
@@ -141,21 +144,21 @@ public partial class BitmapTileFlipModesPage : ContentPage
 }
 ```
 
-`PaintSurface`處理常式會取得`SKShaderTileMode`這兩個設定`Picker`檢視，並建立`SKShader`物件根據點陣圖和這兩個值。 這個著色器用來填滿畫布：
+`PaintSurface`處理常式會 `SKShaderTileMode` 從兩個 views 取得設定 `Picker` ，並根據 `SKShader` 點陣圖和這兩個值建立物件。 此著色器是用來填滿畫布：
 
-[![點陣圖的並排顯示翻頁動畫模式](bitmap-tiling-images/BitmapTileFlipModes.png "點陣圖 圖格翻頁動畫模式")](bitmap-tiling-images/BitmapTileFlipModes-Large.png#lightbox)
+[![點陣圖磚翻轉模式](bitmap-tiling-images/BitmapTileFlipModes.png "點陣圖磚翻轉模式")](bitmap-tiling-images/BitmapTileFlipModes-Large.png#lightbox)
 
-在左側的 [iOS] 畫面會顯示的預設值的效果`SKShaderTileMode.Clamp`。 點陣圖位於左上角。 點陣圖，如下個像素的底端列會重複一路向下。 點陣圖的右邊，以像素為單位的最右側資料行是一直跨重複。 深棕色像素點陣圖的右下角的畫布的其餘部分著色。 很明顯，`Clamp`選項幾乎不會搭配點陣圖並排顯示 ！
+左側的 iOS 畫面會顯示預設值的效果 `SKShaderTileMode.Clamp` 。 點陣圖位於左上角。 在點陣圖底下，圖元的底部資料列會一直向下重複。 在點陣圖的右邊，圖元最右邊的資料行會在之間重複。 畫布的其餘部分會以點陣圖右下角的深棕色圖元彩色。 應該很明顯地，此 `Clamp` 選項幾乎不會搭配點陣圖並排使用！
 
-在管理中心的 Android 畫面顯示的結果`SKShaderTileMode.Repeat`這兩個引數。 [] 圖格會重複水平和垂直大小。 通用 Windows 平台畫面示`SKShaderTileMode.Mirror`。 圖格會重複，但或者翻轉水平和垂直大小。 這個選項的優點是磚之間有任何不連續。
+中央的 Android 螢幕會顯示 `SKShaderTileMode.Repeat` 兩個引數的結果。 此圖格會以水準和垂直方式重複。 [通用 Windows 平臺] 畫面會顯示 `SKShaderTileMode.Mirror` 。 磚會重複，但會以水準和垂直方式翻轉。 此選項的優點是磚之間沒有任何不連續。
 
-請記住，您可以使用不同的選項水平和垂直重複。 您可以指定`SKShaderTileMode.Mirror`做為第二個引數`CreateBitmap`但`SKShaderTileMode.Repeat`做為第三個引數。 在每個資料列中，一般的映像和鏡像映像，但不包括猴仔之間仍然替代猴仔會顛倒。
+請記住，您可以針對水準和垂直重複使用不同的選項。 您可以將指定 `SKShaderTileMode.Mirror` 為的第二個引數， `CreateBitmap` 但 `SKShaderTileMode.Repeat` 做為第三個引數。 在每個資料列上，猴仔仍會在一般映射和鏡像映射之間交替，但沒有任何猴仔會反轉。
 
-## <a name="patterned-backgrounds"></a>圖樣的背景
+## <a name="patterned-backgrounds"></a>已有圖案的背景
 
-點陣圖的並排顯示常用來從相對較小的點陣圖建立圖樣的背景執行。 典型的例子是阻礙。
+點陣圖並排通常是用來從相對較小的點陣圖建立帶圖案的背景。 傳統範例是基礎構件的牆。
 
-**演算法磚牆**頁面建立整個基礎構件和這兩半的磚，以分隔的實體，類似於一個小型點陣圖。 此磚會在下一個範例，它有靜態建構函式建立，所做的公用靜態屬性：
+[**演算法**基礎構件牆] 頁面會建立一個類似整個基礎構件的小型點陣圖，以及兩個以實體分隔的基礎構件。 因為此基礎構件也會用於下一個範例中，所以它是由靜態的函式所建立，並使用靜態屬性進行公用：
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -206,11 +209,11 @@ public class AlgorithmicBrickWallPage : ContentPage
 }
 ```
 
-點陣圖是 70 個像素寬和高 60 像素：
+結果點陣圖為70圖元寬，60圖元高：
 
-![演算法的基礎構件背景牆 圖格](bitmap-tiling-images/AlgorithmicBrickWallTile.png "演算法的基礎構件背景牆 圖格")
+![演算法基礎構件牆磚](bitmap-tiling-images/AlgorithmicBrickWallTile.png "演算法基礎構件牆磚")
 
-其餘**演算法磚牆**頁面會建立`SKShader`水平和垂直重複此映像的物件：
+[演算法基礎構件**牆**] 頁面的其餘部分 `SKShader` 會建立物件，以水準和垂直方式重複此影像：
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -247,15 +250,15 @@ public class AlgorithmicBrickWallPage : ContentPage
 }
 ```
 
-結果如下：
+結果如下︰
 
-[![演算法磚牆](bitmap-tiling-images/AlgorithmicBrickWall.png "演算法的阻礙")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
+[![演算法基礎構件牆](bitmap-tiling-images/AlgorithmicBrickWall.png "演算法基礎構件牆")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
 
-您可能會偏好更實際的項目。 在此情況下，您可以取得實際的基礎構件牆的相片，並再將其裁剪。 這個點陣圖是 300 像素寬和高 150 個像素：
+您可能會偏好一些更實際的東西。 在這種情況下，您可以拍攝實際的基礎構件牆的相片，然後裁剪該磚。 這個點陣圖是300圖元寬，150圖元高：
 
-![磚背景牆 圖格](bitmap-tiling-images/BrickWallTile.jpg "磚背景牆 圖格")
+![基礎構件牆磚](bitmap-tiling-images/BrickWallTile.jpg "基礎構件牆磚")
 
-用於此點陣圖**Photographic 磚牆**頁面：
+這個點陣圖用於 [攝影基礎構件**牆**] 頁面：
 
 ```csharp
 public class PhotographicBrickWallPage : ContentPage
@@ -294,17 +297,17 @@ public class PhotographicBrickWallPage : ContentPage
 }
 ```
 
-請注意，`SKShaderTileMode`引數`CreateBitmap`兩者都是`Mirror`。 使用真實世界的映像建立的圖格時，通常會需要此選項。 鏡像圖格時，可避免不連續：
+請注意，的 `SKShaderTileMode` 引數 `CreateBitmap` 都是 `Mirror` 。 當您使用從真實世界影像建立的磚時，通常需要此選項。 鏡像磚可避免不連續：
 
-[![相片磚牆](bitmap-tiling-images/PhotographicBrickWall.png "相片的阻礙")](bitmap-tiling-images/PhotographicBrickWall-Large.png#lightbox)
+[![攝影基礎構件牆](bitmap-tiling-images/PhotographicBrickWall.png "攝影基礎構件牆")](bitmap-tiling-images/PhotographicBrickWall-Large.png#lightbox)
 
-某些工作，才能取得適當的點陣圖，圖格。 此不能很深的基礎構件凸顯出來，因為太多。 定期出現內重複的映像，並揭露此磚牆從較小的點陣圖建構的事實。
+需要一些工作，才能為磚取得適當的點陣圖。 這種方式並不可行，因為較暗的基礎構件會有太多的表現。 它會定期出現在重複的影像中，以縮小從較小的點陣圖中建造此基礎構件的一面。
 
-**媒體**的資料夾[ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例也包含石刀牆上的這個映像：
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例的**Media**資料夾也包含此石頭牆的影像：
 
-![如此背景牆 圖格](bitmap-tiling-images/StoneWallTile.jpg "石背景牆 圖格")
+![石頭牆磚](bitmap-tiling-images/StoneWallTile.jpg "石頭牆磚")
 
-不過，原始點陣圖是有點太大的磚。 它可以調整大小，但`SKShader.CreateBitmap`方法也可以藉由將轉換套用至該調整圖格。 此選項所示**石牆**頁面：
+不過，對於磚而言，原始點陣圖會變得太大。 它可以調整大小，但 `SKShader.CreateBitmap` 方法也可以藉由套用轉換來調整磚的大小。 此選項會在 [**石頭牆**] 頁面中示範：
 
 ```csharp
 public class StoneWallPage : ContentPage
@@ -347,42 +350,42 @@ public class StoneWallPage : ContentPage
 }
 ```
 
-`SKMatrix`值用來調整回其原始的一半大小的映像：
+`SKMatrix`系統會建立一個值，將影像調整為其原始大小的一半：
 
-[![極 Wall](bitmap-tiling-images/StoneWall.png "石牆")](bitmap-tiling-images/StoneWall-Large.png#lightbox)
+[![石頭牆](bitmap-tiling-images/StoneWall.png "石頭牆")](bitmap-tiling-images/StoneWall-Large.png#lightbox)
 
-轉換運作上用於原始點陣圖`CreateBitmap`方法？ 或未轉換圖格的結果陣列嗎？ 
+轉換會在方法中使用的原始點陣圖上運作 `CreateBitmap` 嗎？ 或者，它是否轉換磚的結果陣列？ 
 
-回答這個問題的簡單方法是加入的旋轉轉換的一部分：
+回答這個問題的簡單方法是在轉換過程中包含旋轉：
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeScale(0.5f, 0.5f);
 SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 ```
 
-如果轉換套用至個別的圖格，然後應旋轉圖格的每個重複的映像，和結果會包含許多不連續。 但很明顯地，此圖格的複合的陣列會轉換的螢幕擷取畫面：
+如果將轉換套用到個別的磚，則應該旋轉磚的每個重複影像，而結果會包含許多不連續。 但是從這個螢幕擷取畫面看出，磚的複合陣列會被轉換：
 
-[![極旋轉的牆](bitmap-tiling-images/StoneWallRotated.png "石牆旋轉")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
+[![石頭牆旋轉](bitmap-tiling-images/StoneWallRotated.png "石頭牆旋轉")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
 
-一節[**圖格對齊**](#tile-alignment)，您會看到範例平移轉換套用至著色器。
+在圖格[**對齊**](#tile-alignment)的區段中，您會看到套用至著色器的轉譯轉換範例。
 
-獨立[ **Cat 時鐘**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)範例 (不屬於**SkiaSharpFormsDemos**) 會模擬使用點陣圖並排顯示依據此 240 像素的正方形點陣圖 wood 資料粒度背景：
+獨立的[**Cat 時鐘**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)範例（不是**SkiaSharpFormsDemos**的一部分）會根據這個240圖元的正方形點陣圖，使用點陣圖並排來模擬木頭的背景：
 
-![木資料粒度](bitmap-tiling-images/WoodGrain.png "木資料粒度")
+![木材顆粒](bitmap-tiling-images/WoodGrain.png "木材顆粒")
 
-這是木地板的相片。 `SKShaderTileMode.Mirror`選項可讓它顯示為 wood 的更大的空間：
+這是木材樓層的相片。 `SKShaderTileMode.Mirror`選項可讓它顯示成更大的木材區域：
 
-[![Cat 時鐘](bitmap-tiling-images/CatClock.png "Cat 時鐘")](bitmap-tiling-images/CatClock-Large.png#lightbox)
+[![貓時鐘](bitmap-tiling-images/CatClock.png "貓時鐘")](bitmap-tiling-images/CatClock-Large.png#lightbox)
 
-## <a name="tile-alignment"></a>圖格的對齊方式
+## <a name="tile-alignment"></a>磚對齊
 
-所有顯示到目前為止的範例已使用著色器所建立`SKShader.CreateBitmap`以涵蓋整個畫布。 在大部分情況下，您將使用點陣圖並排顯示來提出較小的區域，或 （更多很少） 來填滿內部的粗線。 以下是使用較小的矩形相片磚牆 圖格：
+到目前為止所顯示的所有範例，都使用了所建立的著色器 `SKShader.CreateBitmap` 來涵蓋整個畫布。 在大部分情況下，您會使用點陣圖並排來將較小的區域或（較少）用來填滿粗線的內部。 以下是用於較小矩形的影像基礎構件-牆磚：
 
-[![圖格對齊](bitmap-tiling-images/TileAlignment.png "圖格的對齊方式")](bitmap-tiling-images/TileAlignment-Large.png#lightbox)
+[![磚對齊](bitmap-tiling-images/TileAlignment.png "磚對齊")](bitmap-tiling-images/TileAlignment-Large.png#lightbox)
 
-這可能會看起來沒問題，或也許不是。 也許您是打擾的並排顯示模式不是以完整的基礎構件在左上角矩形的開頭。 這是因為著色器會對齊畫布並不是它們所裝飾的圖形化物件。
+這可能會對您很有問題，或也許不會。 也許您已經干擾磚模式不是以矩形左上角的完整基礎構件開頭。 這是因為著色器會與畫布對齊，而不是其所裝飾的繪圖物件。
 
-修正很簡單。 建立`SKMatrix`轉移變形為基礎的值。 轉換實際上會移到想對齊 圖格的左上角之點的並排顯示的圖樣。 這種方法所示**圖格的對齊方式**頁面上，建立映像未對齊的圖格，如上所示：
+修正程式很簡單。 `SKMatrix`根據轉譯轉換來建立值。 轉換可有效地將並排顯示的模式移至您要對齊磚左上角的點。 這個方法會在 [**磚對齊**] 頁面中示範，其會建立上面顯示的未對齊磚影像：
 
 ```csharp
 public class TileAlignmentPage : ContentPage
@@ -450,11 +453,11 @@ public class TileAlignmentPage : ContentPage
 }
 ```
 
-**圖格對齊**頁面包含`TapGestureRecognizer`。 請點選或按一下畫面中，而程式回到`SKShader.CreateBitmap`方法使用`SKMatrix`引數。 這項轉換會轉移的模式，使左上角包含完整的基礎構件：
+[**磚對齊**] 頁面包含 `TapGestureRecognizer` 。 請點一下或按一下畫面，程式會切換至 `SKShader.CreateBitmap` 具有 `SKMatrix` 引數的方法。 這種轉換會將模式移位，讓左上角包含完整的基礎構件：
 
-[![圖格點選對齊](bitmap-tiling-images/TileAlignmentTapped.png "圖格點選的對齊方式")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
+[![並排顯示圖格對齊](bitmap-tiling-images/TileAlignmentTapped.png "並排顯示圖格對齊")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
 
-您也可以使用這項技術，以確保並排顯示的點陣圖模式會置中繪製它的區域內。 在 **置中的圖格**頁面上，`PaintSurface`處理常式先計算座標，如同它便會顯示單一點陣圖畫布的中央。 它會使用這些座標來建立針對平移轉換`SKShader.CreateBitmap`。 如此圖格會置中，這項轉換會轉移與整個模式：
+您也可以使用這項技術來確保磚點陣圖模式在繪製的區域內置中。 在**中央磚**頁面中， `PaintSurface` 處理常式會先計算座標，就好像它會在畫布中央顯示單一點陣圖一樣。 然後，它會使用這些座標來建立的轉譯轉換 `SKShader.CreateBitmap` 。 這種轉換會移動整個模式，讓磚的中心置中：
 
 ```csharp
 public class CenteredTilesPage : ContentPage
@@ -502,35 +505,35 @@ public class CenteredTilesPage : ContentPage
 }
 ```
 
-`PaintSurface`處理常式結束時，會在畫布的正中央繪製圓形。 果然，其中一個圖格處於完全的圓圈，中心及其他會排列在對稱式模式：
+`PaintSurface`處理常式會在畫布中央繪製一個圓圈來結束。 請確定有足夠的磚，其中一個圖格剛好位於圓形的中央，而其他則以對稱模式排列：
 
-[![置中的磚](bitmap-tiling-images/CenteredTiles.png "磚置中對齊")](bitmap-tiling-images/CenteredTiles-Large.png#lightbox)
+[![中央磚](bitmap-tiling-images/CenteredTiles.png "中央磚")](bitmap-tiling-images/CenteredTiles-Large.png#lightbox)
 
-中間的另一種方法是實際稍微更容易。 而不是建構在管理中心中放置的圖格平移轉換，您可以置邊角的並排顯示圖樣。 在 `SKMatrix.MakeTranslation`呼叫，請使用畫布的正中央的引數：
+另一個中心的方法其實比較簡單。 不是建立將磚放在中央的轉譯轉換，而是置中並排顯示的圖樣。 在 `SKMatrix.MakeTranslation` 呼叫中，使用畫布中央的引數：
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeTranslation(info.Rect.MidX, info.Rect.MidY);
 ```
 
-模式還是置中，也是對稱的但是沒有磚是位在中心：
+模式仍會置中且對稱，但中央沒有磚：
 
-[![置中的圖格替代](bitmap-tiling-images/CenteredTilesAlternate.png "磚替代置中對齊")](bitmap-tiling-images/CenteredTilesAlternate-Large.png#lightbox)
+[![中間磚替代](bitmap-tiling-images/CenteredTilesAlternate.png "中間磚替代")](bitmap-tiling-images/CenteredTilesAlternate-Large.png#lightbox)
 
-## <a name="simplification-through-rotation"></a>簡化透過旋轉
+## <a name="simplification-through-rotation"></a>透過旋轉簡化
 
-有時候，使用中的旋轉轉換`SKShader.CreateBitmap`方法可以簡化 [點陣圖] 圖格。 當您嘗試定義鏈結連結圍欄的圖格時，這將成為很明顯。 **ChainLinkTile.cs**檔案會建立如下所示 （具有為了加以釐清粉紅色背景） 的圖格：
+有時在方法中使用「旋轉」轉換 `SKShader.CreateBitmap` 可以簡化點陣圖磚。 當您嘗試定義連鎖鏈接範圍的磚時，這會變得很明顯。 **ChainLinkTile.cs**檔案會建立如下所示的圖格（有一個粉紅色的背景供您清楚明瞭）：
 
-![硬式鏈結-連結 圖格](bitmap-tiling-images/HardChainLinkTile.png "硬式鏈結-連結 圖格")
+![硬鏈連結磚](bitmap-tiling-images/HardChainLinkTile.png "硬鏈連結磚")
 
-[] 圖格必須包含兩個連結，使程式碼會分成四個象限中的圖格。 左上角和右下方象限都相同，但並不完整。 線路擁有一些其他的繪製在右上方和左下方象限中必須處理一些的色塊。 沒有這項工作的檔案是 174 行長度。
+磚需要包含兩個連結，以便讓程式碼將磚分割成四個象限。 左上角和右下方象限相同，但不完整。 線路的凹槽必須以右上角和左下象限的一些額外繪圖來處理。 執行所有此工作的檔案長度為174行。
 
-它其實更輕鬆地建立此圖格：
+建立此磚會變得更容易：
 
-![更容易鏈結-[連結] 圖格](bitmap-tiling-images/EasierChainLinkTile.png "更容易鏈結-[連結] 圖格")
+![更輕鬆的連鎖鏈接磚](bitmap-tiling-images/EasierChainLinkTile.png "更輕鬆的連鎖鏈接磚")
 
-如果點陣圖 圖格著色器會旋轉 90 度，視覺效果為幾乎完全相同。
+如果點陣圖磚著色器旋轉90度，則視覺效果幾乎相同。
 
-程式碼以建立更容易鏈結-連結 圖格會是一部分**鏈結連結圖格**頁面。 建構函式決定的程式執行所在的裝置，然後呼叫類型為基礎的圖格大小`CreateChainLinkTile`，其中繪製線條、 路徑和漸層著色器所使用的點陣圖：
+建立更簡單的連鎖鏈接磚的程式碼是 [**連鎖鏈接] 磚**頁面的一部分。 此函式會根據程式執行所在的裝置類型來決定磚大小，然後 `CreateChainLinkTile` 使用線條、路徑和漸層著色器呼叫，這會在點陣圖上繪製：
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -618,7 +621,7 @@ public class ChainLinkFencePage : ContentPage
 }
 ```
 
-除了線、 [] 圖格是透明的這表示，您可以將它顯示在其他項目之上。 程式會載入其中一個點陣圖資源、 顯示以填滿畫布，然後繪製在最上層的 著色器：
+除了線路以外，磚是透明的，這表示您可以將它顯示在其他東西上。 程式會載入其中一個點陣圖資源、顯示它以填滿畫布，然後在上方繪製著色器：
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -650,17 +653,17 @@ public class ChainLinkFencePage : ContentPage
 }
 ```
 
-請注意著色器也旋轉 45 度，因此很像真正的鏈結連結範圍導向：
+請注意，著色器會旋轉45度，因此它的方向就像是真正的連鎖鏈接範圍：
 
-[![鏈結連結圍欄](bitmap-tiling-images/ChainLinkFence.png "鏈結連結範圍")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
+[![連鎖鏈接的範圍](bitmap-tiling-images/ChainLinkFence.png "連鎖鏈接的範圍")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
 
-## <a name="animating-bitmap-tiles"></a>動畫點陣圖圖格
+## <a name="animating-bitmap-tiles"></a>製作點陣圖磚的動畫
 
-您可以建立動畫矩陣轉換，以動畫顯示整個點陣圖並排顯示模式。 也許您想要水平或垂直移動的模式，或兩者。 您可以藉由建立多變的座標為基礎的轉譯轉換來這麼做。
+您可以製作矩陣轉換的動畫，以建立整個點陣圖磚模式的動畫。 也許您想要以水準或垂直方式或兩者來移動模式。 您可以根據變換座標建立轉譯轉換來執行此動作。
 
-它也是一個小型的點陣圖上繪製，或在操作點陣圖的像素的位元速率為 60 次秒。 該點陣圖就用於並排顯示，而且整個的並排顯示的圖樣似乎會以動畫顯示。 
+您也可以在小型點陣圖上繪製，或以每秒60倍的速率操作點陣圖的圖元位。 然後，該點陣圖可以用於並排顯示，整個並排顯示的圖樣看起來就像是動畫。 
 
-**動畫點陣圖 圖格**頁面會示範這種方法。 點陣圖是做為欄位是 64 像素正方形具現化。 建構函式呼叫`DrawBitmap`，賦予其初始的外觀。 如果`angle`欄位是零 （因為它是第一次呼叫方法時），點陣圖會包含為 X 跨越兩行。線條都夠長，一律都能到達無關的點陣圖邊緣`angle`值： 
+**動畫點陣圖磚**頁面會示範這種方法。 點陣圖會具現化為 64-圖元正方形的欄位。 此函 `DrawBitmap` 式會呼叫，以提供其初始外觀。 如果 `angle` 欄位為零（就如同第一次呼叫方法時），則點陣圖會包含兩個以 X 為單位的行。這幾行的長度夠長，可以隨時到達點陣圖邊緣，而不論其 `angle` 值為何： 
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -705,7 +708,7 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-中發生的動畫額外負荷`OnAppearing`和`OnDisappearing`會覆寫。 `OnTimerTick`方法以動畫顯示`angle`值從 0 度到 360 度每隔 10 秒旋轉點陣圖內 X 圖：
+動畫的額外負荷會出現在 `OnAppearing` 和 `OnDisappearing` 覆寫中。 `OnTimerTick`方法會 `angle` 每隔10秒將值從0度動畫到360度，以旋轉點陣圖中的 X 圖形：
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -746,9 +749,9 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-因為 X 圖的對稱，這等同於旋轉`angle`從 0 度到 90 度每隔 2.5 秒值。
+由於 X 圖的對稱性，這與 `angle` 每2.5 秒從0度旋轉到90度的值相同。
 
-`PaintSurface`從點陣圖建立著色器處理常式，並使用小畫家物件來色彩整個畫布：
+`PaintSurface`處理常式會從點陣圖建立著色器，並使用 paint 物件來為整個畫布上色：
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -773,9 +776,9 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-`SKShaderTileMode.Mirror`選項可讓您確保，在每個點陣圖中 X 的庇護下的加入相鄰的點陣圖中的 X，以建立似乎大部分整體動畫的模式更為複雜，比簡單的動畫會建議：
+這些 `SKShaderTileMode.Mirror` 選項可確保每個點陣圖中 x 的臂會與相鄰點陣圖中的 x 聯結，以建立比簡單動畫所建議更複雜的整體動畫模式：
 
-[![動畫點陣圖 圖格](bitmap-tiling-images/AnimatedBitmapTile.png "動畫點陣圖 圖格")](bitmap-tiling-images/AnimatedBitmapTile-Large.png#lightbox)
+[![動畫點陣圖磚](bitmap-tiling-images/AnimatedBitmapTile.png "動畫點陣圖磚")](bitmap-tiling-images/AnimatedBitmapTile-Large.png#lightbox)
 
 ## <a name="related-links"></a>相關連結
 

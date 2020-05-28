@@ -1,18 +1,21 @@
 ---
-title: 在 XAML 預覽器中轉譯自訂控制項
-description: 本文說明如何在 XAML 預覽程式中顯示您的自訂控制項。
-ms.prod: xamarin
-ms.assetid: 4D795372-CB8F-48F4-B63D-845E44B261F7
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/27/2019
-ms.openlocfilehash: 57c0fd540ef42c18462b4f989b21bac5ed05dc04
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4f20a0586aee998c10372c60c96577321e697aad
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105991"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137263"
 ---
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>在 XAML 預覽器中轉譯自訂控制項
 
@@ -20,11 +23,11 @@ _自訂控制項有時不會如預期般在 XAML 預覽器中運作。請使用�
 
 ## <a name="basic-preview-mode"></a>基本預覽模式
 
-即使您尚未建立專案，XAML 預覽程式也會轉譯您的頁面。 在您建立之前，任何依賴程式碼後置的控制項都會顯示其基底 Xamarin. 表單類型。 當您建立專案時，XAML 預覽程式會嘗試顯示已啟用設計階段轉譯的自訂控制項。 如果轉譯失敗，則會顯示基底 Xamarin. 表單類型。
+即使您尚未建立專案，XAML 預覽程式也會轉譯您的頁面。 在您建立之前，任何依賴程式碼後置的控制項都會顯示其基底 Xamarin.Forms 類型。 當您建立專案時，XAML 預覽程式會嘗試顯示已啟用設計階段轉譯的自訂控制項。 如果轉譯失敗，則會顯示基底 Xamarin.Forms 類型。
 
 ## <a name="enable-design-time-rendering-for-custom-controls"></a>啟用自訂控制項的設計階段轉譯
 
-如果您自行建立自訂控制項，或使用協力廠商程式庫中的控制項，預覽程式可能會不正確地顯示它們。 不論您是從程式庫撰寫控制項或將它匯入，自訂控制項都必須選擇將時間轉譯設計成出現在預覽器中。 使用您已建立的控制項，將[`[DesignTimeVisible(true)]`](xref:System.ComponentModel.DesignTimeVisibleAttribute)新增至控制項的類別，以在預覽程式中顯示它：
+如果您自行建立自訂控制項，或使用協力廠商程式庫中的控制項，預覽程式可能會不正確地顯示它們。 不論您是從程式庫撰寫控制項或將它匯入，自訂控制項都必須選擇將時間轉譯設計成出現在預覽器中。 使用您已建立的控制項，將新增 [`[DesignTimeVisible(true)]`](xref:System.ComponentModel.DesignTimeVisibleAttribute) 至控制項的類別，以在預覽程式中顯示它：
 
 ```csharp
 namespace MyProject
@@ -46,10 +49,10 @@ namespace MyProject
 
 ## <a name="troubleshooting"></a>疑難排解
 
-### <a name="check-your-xamarinforms-version"></a>檢查您的 Xamarin. 表單版本
-請確定您至少已安裝 Xamarin. Forms 3.6。 您可以在 NuGet 上更新您的 Xamarin. Forms 版本。
+### <a name="check-your-xamarinforms-version"></a>檢查您的 Xamarin.Forms 版本
+請確定您至少已 Xamarin.Forms 安裝3.6。 您可以 Xamarin.Forms 在 NuGet 上更新您的版本。
 
-### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>即使是`[DesignTimeVisible(true)]`，我的自訂控制項也不會正確轉譯。
+### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>即使 `[DesignTimeVisible(true)]` 是，我的自訂控制項也不會正確轉譯。
 嚴格依賴程式碼後置或後端資料的自訂控制項，不一定會在 XAML 預覽程式中運作。 您可以嘗試：
 
 * 移動控制項，使其在[設計模式已啟用](index.md#detect-design-mode)時不會初始化

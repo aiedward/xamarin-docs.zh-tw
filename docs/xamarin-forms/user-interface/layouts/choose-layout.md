@@ -1,28 +1,31 @@
 ---
-title: 選擇 Xamarin. 表單版面配置
-description: Xamarin：表單版面配置類別可讓您排列和分組應用程式中的 UI 控制項。
-ms.prod: xamarin
-ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/21/2018
-ms.openlocfilehash: 14e48d04696bb758a2010bd1d56ecaa125bbd30a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: 選擇 Xamarin.Forms 版面配置
+description: Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控制項。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83150004"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138498"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>選擇 Xamarin. 表單版面配置
+# <a name="choose-a-xamarinforms-layout"></a>選擇 Xamarin.Forms 版面配置
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-Xamarin：表單版面配置類別可讓您排列和分組應用程式中的 UI 控制項。 選擇版面配置類別需要知道版面配置如何放置其子專案，以及版面配置如何調整其子項目的大小。 此外，您可能需要嵌套配置，以建立您所需的版面配置。
+Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控制項。 選擇版面配置類別需要知道版面配置如何放置其子專案，以及版面配置如何調整其子項目的大小。 此外，您可能需要嵌套配置，以建立您所需的版面配置。
 
-下圖顯示使用主要 Xamarin 時可以達成的一般版面配置。表單版面配置類別：
+下圖顯示可使用主要版面配置類別來達成的一般配置 Xamarin.Forms ：
 
-[![Xamarin 中的主要版面配置類別](images/layouts.png "Xamarin. 表單版面配置類別")](images/layouts-large.png#lightbox "Xamarin. 表單版面配置類別")
+[![中的主要版面配置類別Xamarin.Forms](images/layouts.png "[!OP.無 LOC （Xamarin）] 版面配置類別")](images/layouts-large.png#lightbox "[!OP.無 LOC （Xamarin）] 版面配置類別")
 
 ## <a name="stacklayout"></a>StackLayout
 
@@ -73,9 +76,9 @@ Xamarin：表單版面配置類別可讓您排列和分組應用程式中的 UI 
 > [!TIP]
 > 使用時 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，請確定只有一個子專案設定為 [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) 。 此屬性可確保指定的子系會佔用 `StackLayout` 所能提供的最大空間，重複執行這些計算將會浪費資源。
 
-如需詳細資訊，請參閱[StackLayout](stacklayout.md)。
+如需詳細資訊，請參閱[ Xamarin.Forms StackLayout](stacklayout.md)。
 
-## <a name="grid"></a>Grid
+## <a name="grid"></a>方格
 
 [`Grid`](xref:Xamarin.Forms.Grid)是用來在資料列和資料行中顯示專案，這些專案可以有比例或絕對大小。 方格的資料列和資料行會使用 [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) 和屬性來指定 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) 。
 
@@ -118,7 +121,7 @@ Xamarin：表單版面配置類別可讓您排列和分組應用程式中的 UI 
 > [!CAUTION]
 > 請嘗試確保最少的資料列和資料行設定為 [ [`Auto`](xref:Xamarin.Forms.GridLength.Auto) 大小]。 每個自動調整大小的資料列或資料行都會導致版面配置引擎執行額外的版面配置計算。 可能的話，請改用固定大小的資料列和資料行。 或者，使用列舉值來設定資料列和資料行，以佔用比例的空間量 [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) 。
 
-如需詳細資訊，請參閱[Xamarin. 表單方格](grid.md)。
+如需詳細資訊，請參閱[ Xamarin.Forms Grid](grid.md)。
 
 ## <a name="flexlayout"></a>FlexLayout
 
@@ -142,7 +145,7 @@ Xamarin：表單版面配置類別可讓您排列和分組應用程式中的 UI 
 - [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)屬性會設定為 `Center` ，這會使每個專案水準置中。
 - [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent)屬性會設定為 `SpaceEvenly` ，這會在所有專案之間，以及在第一個專案和最後一個專案的上方，平均配置所有剩餘的垂直空間。
 
-如需詳細資訊，請參閱[FlexLayout](flex-layout.md)。
+如需詳細資訊，請參閱[ Xamarin.Forms FlexLayout](flex-layout.md)。
 
 ## <a name="relativelayout"></a>RelativeLayout
 
@@ -191,7 +194,7 @@ Xamarin：表單版面配置類別可讓您排列和分組應用程式中的 UI 
 > [!WARNING]
 > 盡量避免使用 `RelativeLayout`。 它會導致 CPU 必須執行更多工作。
 
-如需詳細資訊，請參閱[RelativeLayout](relative-layout.md)。
+如需詳細資訊，請參閱[ Xamarin.Forms RelativeLayout](relative-layout.md)。
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -231,7 +234,7 @@ Xamarin：表單版面配置類別可讓您排列和分組應用程式中的 UI 
 > [!CAUTION]
 > 盡可能避免使用 [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize) 屬性，因為這會導致版面配置引擎執行其他版面配置計算。
 
-如需詳細資訊，請參閱[AbsoluteLayout](absolute-layout.md)。
+如需詳細資訊，請參閱[ Xamarin.Forms AbsoluteLayout](absolute-layout.md)。
 
 ## <a name="input-transparency"></a>輸入透明度
 
@@ -248,11 +251,11 @@ Xamarin：表單版面配置類別可讓您排列和分組應用程式中的 UI 
 ## <a name="related-links"></a>相關連結
 
 - [版面配置（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin. 表單版面配置（影片）](https://youtu.be/4HlLjTZQzjM)
-- [Xamarin. Forms StackLayout](stacklayout.md)
-- [Xamarin. 表單方格](grid.md)
-- [Xamarin. Forms FlexLayout](flex-layout.md)
-- [Xamarin. Forms AbsoluteLayout](absolute-layout.md)
-- [Xamarin. Forms RelativeLayout](relative-layout.md)
+- [Xamarin.Forms版面配置（影片）](https://youtu.be/4HlLjTZQzjM)
+- [Xamarin.FormsStackLayout](stacklayout.md)
+- [Xamarin.Forms格](grid.md)
+- [Xamarin.FormsFlexLayout](flex-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [優化版面配置效能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [版面配置壓縮](layout-compression.md)

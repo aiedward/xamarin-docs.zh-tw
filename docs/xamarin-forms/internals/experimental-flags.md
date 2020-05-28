@@ -1,24 +1,27 @@
 ---
-title: Xamarin。表單實驗性旗標
-description: '[Xamarin] 實驗旗標可讓工程小組更快速地將新功能交付給使用者，同時仍然能夠在移到穩定版本之前，先變更功能 Api。'
-ms.prod: xamarin
-ms.assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/14/2020
-ms.openlocfilehash: cca377a7a88599bc34fd66695ad303162e6be200
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Xamarin.Forms實驗性旗標
+description: Xamarin.Forms實驗性旗標可讓工程小組更快速地將新功能交付給使用者，同時仍然能夠在移到穩定版本之前變更功能 Api。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b548323330ccdce6fb01e83c7e8ab7c2d5307125
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516541"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139057"
 ---
-# <a name="xamarinforms-experimental-flags"></a>Xamarin。表單實驗性旗標
+# <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms實驗性旗標
 
-當新的 [Xamarin] 表單功能執行時，有時會放在實驗旗標後方。 這可讓工程小組更快速地為您提供新功能，同時仍可在將功能 Api 移至穩定版本之前加以變更。 一旦將功能移至穩定版本之後，就會移除實驗旗標。
+當新 Xamarin.Forms 功能執行時，有時會放在實驗旗標後方。 這可讓工程小組更快速地為您提供新功能，同時仍可在將功能 Api 移至穩定版本之前加以變更。 一旦將功能移至穩定版本之後，就會移除實驗旗標。
 
-Xamarin 包含下列實驗旗標：
+Xamarin.Forms包含下列實驗旗標：
 
 - `AppTheme_Experimental`
 - `CarouselView_Experimental`
@@ -34,7 +37,7 @@ Xamarin 包含下列實驗旗標：
 使用實驗旗標後方的功能時，您必須在應用程式中啟用旗標或旗標。 有兩種方法可以啟用實驗旗標：
 
 - 在您的平臺專案中啟用實驗旗標或旗標。
-- 在您`App`的類別中啟用實驗旗標或旗標。
+- 在您的類別中啟用實驗旗標或旗標 `App` 。
 
 > [!WARNING]
 > 使用實驗性旗標後方的功能，而不啟用旗標，會導致應用程式擲回例外狀況，指出必須啟用的旗標。
@@ -47,33 +50,33 @@ Xamarin 包含下列實驗旗標：
 Xamarin.Forms.Forms.SetFlags("CarouselView_Experimental");
 ```
 
-在`SetFlags` IOS、Android 上的`AppDelegate` `MainActivity`類別中，以及您`App`在 UWP 的類別中，應在您的類別中叫用方法。
+在 `SetFlags` `AppDelegate` IOS、Android 上的 `MainActivity` 類別中，以及您在 UWP 的類別中，應在您的類別中叫用方法 `App` 。
 
 > [!IMPORTANT]
-> 在您的`Forms.Init`平臺專案中啟用實驗旗標必須在叫用方法之前發生。
+> 在您的平臺專案中啟用實驗旗標必須在叫用方法之前發生 `Forms.Init` 。
 
-`Xamarin.Forms.Forms.SetFlags`方法會接受`string`陣列引數，讓您可以在單一方法呼叫中啟用多個實驗旗標：
+`Xamarin.Forms.Forms.SetFlags`方法 `string` 會接受陣列引數，讓您可以在單一方法呼叫中啟用多個實驗旗標：
 
 ```csharp
 Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "IndicatorView_Experimental", "SwipeView_Experimental" });
 ```
 
 > [!WARNING]
-> 請勿多次呼叫`SetFlags`方法，因為後續呼叫將會覆寫先前呼叫的結果。
+> 請勿多次呼叫 `SetFlags` 方法，因為後續呼叫將會覆寫先前呼叫的結果。
 
 ## <a name="enable-flags-in-your-app-class"></a>啟用應用程式類別中的旗標
 
-`Device.SetFlags`方法可以用來在您的`App`共用程式碼專案中啟用類別中的實驗旗標：
+`Device.SetFlags`方法可以用來在 `App` 您的共用程式碼專案中啟用類別中的實驗旗標：
 
 ```csharp
 Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 ```
 
-`Device.SetFlags`方法會接受`IReadOnlyList<string>`引數，讓您可以在單一方法呼叫中啟用多個實驗旗標：
+`Device.SetFlags`方法 `IReadOnlyList<string>` 會接受引數，讓您可以在單一方法呼叫中啟用多個實驗旗標：
 
 ```csharp
 Device.SetFlags(new string[]{ "CarouselView_Experimental", "MediaElement_Experimental", "SwipeView_Experimental" });
 ```
 
 > [!WARNING]
-> 請勿多次呼叫`SetFlags`方法，因為後續呼叫將會覆寫先前呼叫的結果。
+> 請勿多次呼叫 `SetFlags` 方法，因為後續呼叫將會覆寫先前呼叫的結果。

@@ -1,29 +1,32 @@
 ---
-title: Xamarin.Forms App 類別
-description: 本文說明預設 App 類別的功能，此類別包含要設定為應用程式初始頁面的屬性，以及用來跨生命週期狀態變更來儲存簡單值的持續性字典。
-ms.prod: xamarin
-ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
-ms.technology: xamarin-forms
-ms.custom: video
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/19/2016
-ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms應用程式類別
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2f4b568809f949d813de86ae88cbe621cfa3161c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79305021"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129684"
 ---
-# <a name="xamarinforms-app-class"></a>Xamarin.Forms App 類別
+# <a name="xamarinforms-app-class"></a>Xamarin.Forms應用程式類別
 
 `Application` 基底類別提供下列功能，它們公開於您專案的預設 `App` 子類別：
 
 * `MainPage` 屬性，這是要設定應用程式起始頁的位置。
-* 以跨生命週期狀態變更儲存簡單值的持久[`Properties`字典](#Properties_Dictionary)。
+* 用來儲存生命週期狀態變更之間簡單值的持續性[ `Properties` 字典](#Properties_Dictionary)。
 * 靜態的 `Current` 屬性，其中包含目前應用程式物件的參考。
 
-它還公開[生命週期方法](~/xamarin-forms/app-fundamentals/app-lifecycle.md)`OnStart`,`OnSleep`如`OnResume`、 以及 模式導航事件。
+它也會公開[生命週期方法](~/xamarin-forms/app-fundamentals/app-lifecycle.md)，例如、和，以及強制回應 `OnStart` `OnSleep` `OnResume` 導覽事件。
 
 根據您選擇的範本，`App` 類別可以用兩種方式之一來定義：
 
@@ -54,7 +57,7 @@ public partial class App : Application
 }
 ```
 
-除了設置屬性外[`MainPage`](xref:Xamarin.Forms.Application.MainPage),代碼後面還必須調`InitializeComponent`用 方法來載入和分析關聯的 XAML。
+除了設定 [`MainPage`](xref:Xamarin.Forms.Application.MainPage) 屬性之外，程式碼後置還必須呼叫 `InitializeComponent` 方法來載入及剖析相關聯的 XAML。
 
 ## <a name="mainpage-property"></a>MainPage 屬性
 
@@ -78,7 +81,7 @@ public class App : Xamarin.Forms.Application
 
 ## <a name="properties-dictionary"></a>Properties 字典
 
-`Application` 子類別有靜態的 `Properties` 字典可以用來儲存資料，特別是用於 `OnStart`、`OnSleep` 和 `OnResume` 方法。 這可從 Xamarin.Forms 程式碼中任何地方使用 `Application.Current.Properties` 存取。
+`Application` 子類別有靜態的 `Properties` 字典可以用來儲存資料，特別是用於 `OnStart`、`OnSleep` 和 `OnResume` 方法。 您可以使用，從程式碼中的任何位置存取這項功能 Xamarin.Forms `Application.Current.Properties` 。
 
 `Properties` 字典使用 `string` 索引鍵並儲存 `object` 值。
 
@@ -110,9 +113,9 @@ if (Application.Current.Properties.ContainsKey("id"))
 `Properties` 字典會自動儲存至裝置。
 新增至字典的資料將在應用程式從背景返回時可用，或甚至在它重新啟動之後才可使用。
 
-Xamarin.Forms 1.4 引進了 `Application` 類別的其他方法 - `SavePropertiesAsync()` - 可以呼叫它以主動保存 `Properties` 字典。 這樣可讓您在重要更新之後儲存屬性，而不必冒著它們因為損毀或被 OS 終止 OS 而未序列化的風險。
+Xamarin.Forms1.4 在類別上引進了其他方法 `Application` - `SavePropertiesAsync()` -可以呼叫它來主動保存 `Properties` 字典。 這樣可讓您在重要更新之後儲存屬性，而不必冒著它們因為損毀或被 OS 終止 OS 而未序列化的風險。
 
-您可以在**使用 Xamarin.Forms 建立行動應用程式**書籍的第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf) 及 [20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章，以及相關聯的[範例](https://github.com/xamarin/xamarin-forms-book-preview-2)，找到使用 `Properties` 的參考。
+在 `Properties` ** Xamarin.Forms 建立 Mobile Apps**中，您可以使用書籍[第 6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、 [15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)和[20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)，以及相關聯的[範例](https://github.com/xamarin/xamarin-forms-book-preview-2)中的字典來尋找參考。
 
 ## <a name="the-application-class"></a>Application 類別
 
@@ -147,7 +150,7 @@ public class App : Xamarin.Forms.Application
 ```
 
 這個類別接著便會在每個平台特定專案中具現化，並傳遞至 `LoadApplication` 方法，在這裡會載入 `MainPage` 並顯示給使用者。
-每個平台的程式碼顯示在下列各節。 最新的 Xamarin.Forms 解決方案範本已經包含此全部程式碼，並針對您的應用程式預先設定。
+每個平台的程式碼顯示在下列各節。 最新的 Xamarin.Forms 解決方案範本已包含所有此程式碼，預先設定了您的應用程式。
 
 ### <a name="ios-project"></a>iOS 專案
 
@@ -205,7 +208,7 @@ public class MainActivity : FormsAppCompatActivity
 </forms:WindowsPage>
 ```
 
-C# 程式碼後置建構必須呼叫 `LoadApplication` 以建立 Xamarin.Forms `App` 的執行個體。 請注意，明確地使用應用程式命名空間來限定 `App` 是很好的做法，因為 UWP 應用程式自己也有與 Xamarin.Forms 不相關的 `App` 類別。
+C # 程式碼後置結構必須呼叫 `LoadApplication` ，才能建立的實例 Xamarin.Forms `App` 。 請注意，明確地使用應用程式命名空間來限定，是很好的作法， `App` 因為 UWP 應用程式也有自己的 `App` 類別與無關 Xamarin.Forms 。
 
 ```csharp
 public sealed partial class MainPage
@@ -221,7 +224,7 @@ public sealed partial class MainPage
 
 請注意，必須從 UWP 專案中的 **App.xaml.cs** 呼叫 `Forms.Init()`。
 
-如需詳細資訊，請參閱[設定 Windows 專案](~/xamarin-forms/platform/windows/installation/index.md)，其中包含將 UWP 專案新增至現有 Xamarin.Forms 解決方案 (不以 UWP 為目標) 的步驟。
+如需詳細資訊，請參閱[設定 Windows 專案](~/xamarin-forms/platform/windows/installation/index.md)，其中包含將 uwp 專案新增至不以 UWP 為目標之現有解決方案的步驟 Xamarin.Forms 。
 
 ## <a name="related-video"></a>相關影片
 

@@ -1,56 +1,59 @@
 ---
-title: Xamarin.表單檢視群組
-description: CollectionView 可以通過將其 IsGroups 屬性設置為 true 來正確顯示正確分組的數據。
-ms.prod: xamarin
-ms.assetid: 7E494245-FDBD-49D6-B7FA-CEF976EB59BB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/17/2019
-ms.openlocfilehash: 8360123b01f36bde084b4dc315109e6bdaef2207
-ms.sourcegitcommit: 99aa05bd9b5e3f66d134066b860f41b54fa2d850
+title: Xamarin.FormsCollectionView 群組
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82103278"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136457"
 ---
-# <a name="xamarinforms-collectionview-grouping"></a>Xamarin.表單檢視群組
+# <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView 群組
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-大型數據集在不斷滾動清單中顯示時通常會變得笨拙。 在這種情況下,將數據組織成組可以更輕鬆地瀏覽數據來改善用戶體驗。
+大型資料集通常會在持續滾動清單中出現時變得難以使用。 在此案例中，將資料組織成群組可以藉由更輕鬆地流覽資料來改善使用者體驗。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)支援顯示群組資料,並定義以下屬性來控制資料的顯示方式:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)支援顯示群組資料，並定義下列屬性來控制其呈現方式：
 
-- `IsGrouped`的類型`bool`, 指示基礎資料是否應以組形式顯示。 此屬性的預設值為 `false`。
-- `GroupHeaderTemplate`的類型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate),用於每個組標頭的範本。
-- `GroupFooterTemplate`的類型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate),用於每個組腳腳的範本。
+- `IsGrouped`，屬於類型 `bool` ，表示基礎資料是否應該顯示在群組中。 此屬性的預設值為 `false`。
+- `GroupHeaderTemplate`，屬於類型 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，用於每個群組之標頭的範本。
+- `GroupFooterTemplate`，屬於類型 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，用於每個群組頁尾的範本。
 
-這些屬性由[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)物件支援,這意味著這些屬性可以是數據綁定的目標。
+這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示屬性可以是資料系結的目標。
 
-以下螢幕截圖顯示[`CollectionView`](xref:Xamarin.Forms.CollectionView)群組資料:
+下列螢幕擷取畫面顯示 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 顯示群組的資料：
 
-[![在 iOS 和 Android 上的 CollectionView 中群組資料的螢幕截圖](grouping-images/grouped-data.png "具有群組資料的集合檢視")](grouping-images/grouped-data-large.png#lightbox "具有群組資料的集合檢視")
+[![在 iOS 和 Android 上 CollectionView 中群組資料的螢幕擷取畫面](grouping-images/grouped-data.png "具有群組資料的 CollectionView")](grouping-images/grouped-data-large.png#lightbox "具有群組資料的 CollectionView")
 
-如需資料範本的詳細資訊，請參閱 [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
+如需資料範本的詳細資訊，請參閱[ Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)。
 
 ## <a name="group-data"></a>群組資料
 
-必須先對數據進行分組,然後才能顯示數據。 這可以通過創建組清單來實現,其中每個組都是項清單。 群組清單應為`IEnumerable<T>`集合,其中`T`定義兩個資料段:
+資料必須先分組，才能顯示。 這可以藉由建立群組清單來完成，其中每個群組都是專案清單。 群組清單應為 `IEnumerable<T>` 集合，其中會 `T` 定義兩個數據片段：
 
-- 組名稱。
-- 定義`IEnumerable`屬於組項的集合。
+- 組名。
+- `IEnumerable`定義屬於群組之專案的集合。
 
-因此,對數據進行分組的過程是:
+因此，將資料分組的程式是：
 
-- 創建對單個項建模的類型。
-- 創建對單個項組建模的類型。
-- 創建集合`IEnumerable<T>`,`T`其中 為單個項組建模的類型。 因此,此集合是組的集合,用於存儲分組數據。
-- 將數據添加到`IEnumerable<T>`集合中。
+- 建立模型單一專案的類型。
+- 建立一種類型，以模型專案的單一群組。
+- 建立 `IEnumerable<T>` 集合，其中 `T` 是用來建立單一專案群組模型的類型。 因此，此集合是群組的集合，其中儲存了分組的資料。
+- 將資料新增至 `IEnumerable<T>` 集合。
 
 ### <a name="example"></a>範例
 
-對數據進行分組時,第一步是創建對單個項建模的類型。 下面的範例顯示了範例應用程式中`Animal`的類:
+群組資料時，第一個步驟是建立模型單一專案的型別。 下列範例顯示 `Animal` 範例應用程式中的類別：
 
 ```csharp
 public class Animal
@@ -62,7 +65,7 @@ public class Animal
 }
 ```
 
-類`Animal`對單個項建模。 然後可以創建對一組項建模的類型。 下面的範例顯示了範例應用程式中`AnimalGroup`的類:
+`Animal`類別會建立單一專案的模型。 接著，可以建立模型群組專案的類型。 下列範例顯示 `AnimalGroup` 範例應用程式中的類別：
 
 ```csharp
 public class AnimalGroup : List<Animal>
@@ -76,17 +79,17 @@ public class AnimalGroup : List<Animal>
 }
 ```
 
-類`AnimalGroup``List<T>`從 類繼承並添加表示`Name`組名稱 的屬性。
+`AnimalGroup`類別繼承自 `List<T>` 類別，並加入 `Name` 代表組名的屬性。
 
-然後`IEnumerable<T>`可以建立群組的集合:
+`IEnumerable<T>`接著可以建立群組的集合：
 
 ```csharp
 public List<AnimalGroup> Animals { get; private set; } = new List<AnimalGroup>();
 ```
 
-此代碼定義名為的集合`Animals`,其中集合中的每個項都是一`AnimalGroup`個 物件。 每個`AnimalGroup`物件包括一個名稱和一`List<Animal>`個 定義`Animal`組中 的物件的集合。
+此程式碼會定義名為的集合 `Animals` ，其中集合中的每個專案都是 `AnimalGroup` 物件。 每個 `AnimalGroup` 物件都包含一個名稱，以及一個 `List<Animal>` 定義 `Animal` 群組中物件的集合。
 
-然後,可以將群組資料加入到集合中`Animals`:
+然後，群組的資料可以新增至 `Animals` 集合：
 
 ```csharp
 Animals.Add(new AnimalGroup("Bears", new List<Animal>
@@ -135,11 +138,11 @@ Animals.Add(new AnimalGroup("Monkeys", new List<Animal>
 }));
 ```
 
-此代碼在`Animals`集合中創建兩個組。 第一`AnimalGroup``List<Animal>`個命名`Bears`為 ,並包含熊詳細資訊的集合。 第二`AnimalGroup`個命名`Monkeys`為 ,包含`List<Animal>`猴子細節的集合。
+此程式碼會在集合中建立兩個群組 `Animals` 。 第一個 `AnimalGroup` 名為 `Bears` ，並包含一 `List<Animal>` 組使用的資料。 第二個 `AnimalGroup` 名為 `Monkeys` ，其中包含一 `List<Animal>` 組猴子詳細資料。
 
 ## <a name="display-grouped-data"></a>顯示群組資料
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)將顯示分組資料,前提是資料已正確群組,透過設定`IsGrouped`為`true`:
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)會顯示群組資料，前提是資料已正確地分組，方法是將 `IsGrouped` 屬性設定為 `true` ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -178,14 +181,14 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 // ...
 ```
 
-中每個項[`CollectionView`](xref:Xamarin.Forms.CollectionView)的外觀都通過[`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)將 屬性[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)設置為 來定義。 有關詳細資訊,請參閱[定義項外觀](~/xamarin-forms/user-interface/collectionview/populate-data.md#define-item-appearance)。
+將 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 屬性設定為，即可定義中每個專案的外觀 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 如需詳細資訊，請參閱[定義專案外觀](~/xamarin-forms/user-interface/collectionview/populate-data.md#define-item-appearance)。
 
 > [!NOTE]
-> 預設情況下,[`CollectionView`](xref:Xamarin.Forms.CollectionView)將在組標題和頁腳中顯示組名稱。 可以通過自定義組標頭和組頁腳來更改此行為。
+> 根據預設， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 將會在群組首和頁尾中顯示組名。 您可以藉由自訂群組首和群組尾來變更此行為。
 
 ## <a name="customize-the-group-header"></a>自訂群組標頭
 
-可以透過`CollectionView.GroupHeaderTemplate`設定屬性設定為 來自訂每個組標頭[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)的外觀 :
+將屬性設定為，即可自訂每個群組標頭的外觀 `CollectionView.GroupHeaderTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -202,13 +205,13 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 </CollectionView>
 ```
 
-在此範例中,每個組標頭都設置為 顯示組[`Label`](xref:Xamarin.Forms.Label)名稱的 ,並且具有其他外觀屬性集。 以下螢幕截圖顯示了自訂的組標頭:
+在此範例中，每個群組標頭都會設定為 [`Label`](xref:Xamarin.Forms.Label) ，其中會顯示組名，以及已設定其他外觀屬性的。 下列螢幕擷取畫面顯示自訂的群組標頭：
 
-[![在 iOS 和 Android 上的集合檢視中自訂組標題的螢幕截圖](grouping-images/customized-header.png "具有自訂群組標題的集合檢視")](grouping-images/customized-header-large.png#lightbox "具有自訂群組標題的集合檢視")
+[![CollectionView （在 iOS 和 Android 上）中自訂群組標頭的螢幕擷取畫面](grouping-images/customized-header.png "具有自訂群組標頭的 CollectionView")](grouping-images/customized-header-large.png#lightbox "具有自訂群組標頭的 CollectionView")
 
-## <a name="customize-the-group-footer"></a>自訂群組註腳
+## <a name="customize-the-group-footer"></a>自訂群組尾
 
-可以通過`CollectionView.GroupFooterTemplate`屬性設定為[`DataTemplate`](xref:Xamarin.Forms.DataTemplate):
+將屬性設定為，即可自訂每個群組尾的外觀 `CollectionView.GroupFooterTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -223,31 +226,31 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 </CollectionView>
 ```
 
-在此範例中,每個組頁腳設置為 顯示組中的項目[`Label`](xref:Xamarin.Forms.Label)數 的頁腳。 以下螢幕截圖顯示了自訂組頁腳:
+在此範例中，每個群組尾都會設定為 [`Label`](xref:Xamarin.Forms.Label) ，以顯示群組中的專案數。 下列螢幕擷取畫面顯示自訂的群組尾：
 
-[![在 iOS 和 Android 上的集合檢視中自訂組頁腳的螢幕截圖](grouping-images/customized-footer.png "具有自訂群組註腳的收集檢視")](grouping-images/customized-footer-large.png#lightbox "具有自訂群組註腳的收集檢視")
+[![CollectionView （在 iOS 和 Android 上）中自訂群組尾的螢幕擷取畫面](grouping-images/customized-footer.png "具有自訂群組尾的 CollectionView")](grouping-images/customized-footer-large.png#lightbox "具有自訂群組尾的 CollectionView")
 
-## <a name="empty-groups"></a>空組
+## <a name="empty-groups"></a>空白群組
 
-當[`CollectionView`](xref:Xamarin.Forms.CollectionView)顯示分組數據時,它將顯示任何空組。 此類組將顯示一個組標題和頁腳,指示該組為空。 以下螢幕截圖顯示空列:
+當 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 顯示群組資料時，它會顯示任何空白的群組。 這類群組會以群組頁首和頁尾顯示，表示群組是空的。 下列螢幕擷取畫面顯示空的群組：
 
-[![在 iOS 和 Android 上的集合檢視中顯示空組的螢幕截圖](grouping-images/empty-group.png "具有空列的集合檢視")](grouping-images/empty-group-large.png#lightbox "具有空列的集合檢視")
+[![在 iOS 和 Android 上 CollectionView 中的空白群組螢幕擷取畫面](grouping-images/empty-group.png "具有空白群組的 CollectionView")](grouping-images/empty-group-large.png#lightbox "具有空白群組的 CollectionView")
 
 > [!NOTE]
-> 在 iOS 10 和更低等級上,空組的組標題和頁腳可能全部`CollectionView`顯示在頂部 。
+> 在 iOS 10 和更低版本中，空白群組的群組標頭和頁尾可能會顯示在頂端 `CollectionView` 。
 
-## <a name="group-without-templates"></a>無樣本的群組
+## <a name="group-without-templates"></a>沒有範本的群組
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)無需將[`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)屬性設定為:可以正確顯示已分組[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)的資料 ,
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以顯示正確群組的資料，而不將 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) 屬性設為 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
                 IsGrouped="true" />
 ```
 
-在這種情況下,可以通過重寫對單個項建`ToString`模 的類型中的方法以及對單個項組建模的類型來顯示有意義的數據。
+在此案例中，您可以覆寫 `ToString` 模型單一專案的型別中的方法，以及模型單一專案群組的型別，藉以顯示有意義的資料。
 
 ## <a name="related-links"></a>相關連結
 
-- [集合檢視(範例)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.Forms 資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [CollectionView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin.Forms資料範本](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)

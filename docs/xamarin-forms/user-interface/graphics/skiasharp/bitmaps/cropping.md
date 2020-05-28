@@ -1,40 +1,43 @@
 ---
-title: 裁剪 SkiaSharp 點陣圖
-description: 了解如何使用 SkiaSharp 設計以互動方式 desribing 裁剪矩形的使用者介面。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: e9ba34dfcbdf041cb9bce7f277da3987acf9fec8
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6c5e340818b702d79a1157f29c1ecec19bf1db76
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228227"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139941"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>裁剪 SkiaSharp 點陣圖
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[**建立和繪製 SkiaSharp 點陣圖**](drawing.md)一文所述方式`SKBitmap`物件可以傳遞至`SKCanvas`建構函式。 要呈現在點陣圖上該畫布原因圖形上呼叫任何繪製方法。 這些繪製方法包括`DrawBitmap`，這表示，這項技術可讓傳送部分或全部的一個點陣圖到另一個點陣圖，可能與套用的轉換。
+[**建立和繪製 SkiaSharp 點陣圖**](drawing.md)一文會說明如何 `SKBitmap` 將物件傳遞至函式 `SKCanvas` 。 在該畫布上呼叫的任何繪圖方法都會使圖形呈現在點陣圖上。 這些繪圖方法包括 `DrawBitmap` ，這表示這項技術允許將部分或所有點陣圖傳送至另一個點陣圖，可能會套用轉換。
 
-您可以使用該技術，藉由呼叫裁剪點陣圖[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))與來源和目的地矩形的方法：
+藉由呼叫 [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) 具有來源和目的地矩形的方法，您可以使用這項技術來裁剪點陣圖：
 
 ```csharp
 canvas.DrawBitmap(bitmap, sourceRect, destRect);
 ```
 
-不過，實作通常裁剪的應用程式提供使用者以互動方式選取裁剪矩形的介面：
+不過，執行裁剪的應用程式通常會提供介面，讓使用者以互動方式選取裁剪矩形：
 
 ![裁剪範例](cropping-images/CroppingSample.png "裁剪範例")
 
-本文著重於該介面。
+本文著重于該介面。
 
-## <a name="encapsulating-the-cropping-rectangle"></a>封裝的裁剪矩形
+## <a name="encapsulating-the-cropping-rectangle"></a>封裝裁剪矩形
 
-最好先找出一些類別，名為中的裁剪邏輯`CroppingRectangle`。 建構函式參數會包含一個最大的矩形，這通常是點陣圖兩邊被裁切的大小和選擇性的長寬比。 建構函式會先定義初始的裁剪矩形，它可在公用`Rect`型別的屬性`SKRect`。 這個初始的裁剪矩形是 80%的寬度和高度的點陣圖矩形中，但再調整如果指定的外觀比例：
+在名為的類別中隔離部分裁剪邏輯會很有説明 `CroppingRectangle` 。 此函式參數包含最大矩形，這通常是要裁剪的點陣圖大小，以及選擇性的長寬比。 此函式會先定義初始裁剪矩形，它會在類型的 `Rect` 屬性中公開 `SKRect` 。 這個初始裁剪矩形是點陣圖矩形寬度和高度的80%，但是如果指定外觀比例，則會調整它：
 
 ```csharp
 class CroppingRectangle
@@ -82,7 +85,7 @@ class CroppingRectangle
 }
 ```
 
-一個有用的資訊片段，`CroppingRectangle`就會提供也是陣列`SKPoint`值對應至四個角落的裁剪矩形左上角、 右上方、 右下方和左下方的順序：
+另一個有用的資訊片段， `CroppingRectangle` 就是 `SKPoint` 對應到裁剪矩形四個角落的值陣列，順序是左上角、右上角、右下方和左下方：
 
 ```csharp
 class CroppingRectangle
@@ -105,7 +108,7 @@ class CroppingRectangle
 }
 ```
 
-這個陣列用在下列的方法中，稱為`HitTest`。 `SKPoint`參數是對應到手指觸控點，或按一下滑鼠。 此方法會傳回索引 （0、 1、 2 或 3） 對應至手指或滑鼠指標接觸到，在指定距離內的角`radius`參數： 
+這個陣列用於下列方法中，稱為 `HitTest` 。 `SKPoint`參數是對應至手指觸控或滑鼠點擊的點。 方法會傳回索引（0、1、2或3），其對應到手指或滑鼠指標觸及的角落，在參數所指定的距離內 `radius` ： 
 
 ```csharp
 class CroppingRectangle
@@ -131,9 +134,9 @@ class CroppingRectangle
 }
 ```
 
-如果觸控或滑鼠點沒有內`radius`的任何一角的單位，則方法會傳回&ndash;1。
+如果觸控或滑鼠點不在 `radius` 任何角落的單位內，此方法會傳回 &ndash; 1。
 
-中的最後一個方法`CroppingRectangle`稱為`MoveCorner`，稱為以回應觸控動作，或將滑鼠移動。 兩個參數指出要移動的角落和該角落的新位置的索引。 方法的第一個部分會調整裁剪矩形的邊角中，但一定範圍內的新位置為基礎`maxRect`，這是點陣圖的大小。 此邏輯也會考慮`MINIMUM`以避免摺疊成 nothing 的裁剪矩形的欄位：
+中的最後一個方法 `CroppingRectangle` 會被呼叫 `MoveCorner` ，它會在回應觸控或滑鼠移動時呼叫。 這兩個參數表示要移動之角落的索引，以及該角落的新位置。 方法的前半部會根據角落的新位置來調整裁剪矩形，但一定會在的界限內 `maxRect` （這是點陣圖的大小）。 此邏輯也會將 `MINIMUM` 欄位納入考慮，以避免將裁剪矩形折迭為任何內容：
 
 ```csharp
 class CroppingRectangle
@@ -203,15 +206,15 @@ class CroppingRectangle
 }
 ```
 
-方法的第二個部分會調整為選擇性的長寬比。
+方法的後半部會針對選擇性的外觀比例進行調整。
 
-請記住，這個類別中的所有項目是以像素為單位。
+請記住，此類別中的所有專案都是以圖元為單位。
 
-## <a name="a-canvas-view-just-for-cropping"></a>僅供裁剪畫布檢視
+## <a name="a-canvas-view-just-for-cropping"></a>僅供裁剪的畫布視圖
 
-`CroppingRectangle`會使用您剛看到的類別`PhotoCropperCanvasView`類別，衍生自`SKCanvasView`。 這個類別是負責顯示點陣圖和裁剪矩形中，以及處理變更的裁剪矩形的觸控或滑鼠事件。
+`CroppingRectangle`您剛才看到的類別是由 `PhotoCropperCanvasView` 衍生自的類別使用 `SKCanvasView` 。 這個類別負責顯示點陣圖和裁剪矩形，以及處理觸控或滑鼠事件來變更裁剪矩形。
 
-`PhotoCropperCanvasView`建構函式需要點陣圖。 外觀比例是選擇性的。 建構函式具現化型別的物件`CroppingRectangle`根據此點陣圖及長寬比，並將它儲存為欄位：
+此 `PhotoCropperCanvasView` 構造函式需要點陣圖。 外觀比例是選擇性的。 此函式會根據這個點陣圖和外觀比例，將類型的物件具現化 `CroppingRectangle` ，並將其儲存為欄位：
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -232,7 +235,7 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-因為這個類別衍生自`SKCanvasView`，它並不需要安裝的處理常式`PaintSurface`事件。 它可以改為覆寫其`OnPaintSurface`方法。 方法會顯示點陣圖，並採用了幾種`SKPaint`儲存為欄位，以繪製目前的裁剪矩形的物件：
+因為此類別衍生自 `SKCanvasView` ，所以不需要安裝事件的處理常式 `PaintSurface` 。 它可以改為覆寫其 `OnPaintSurface` 方法。 方法會顯示點陣圖，並使用 `SKPaint` 儲存為欄位的幾個物件來繪製目前的裁剪矩形：
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -312,11 +315,11 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-中的程式碼`CroppingRectangle`類別為基礎的裁剪矩形點陣圖的像素大小。 不過，顯示的點陣圖`PhotoCropperCanvasView`類別上的顯示區域的大小調整依據。 `bitmapScaleMatrix`計算中`OnPaintSurface`覆寫中的點陣圖像素的點陣圖位置和大小的對應，因為它會顯示。 這個矩陣接著用於轉換的裁剪矩形，使它可以顯示相對於點陣圖。
+類別中的程式碼會以 `CroppingRectangle` 點陣圖的圖元大小作為裁剪矩形的基礎。 不過，類別的點陣圖顯示 `PhotoCropperCanvasView` 會根據顯示區域的大小進行縮放。 `bitmapScaleMatrix`在覆寫中計算的 `OnPaintSurface` 會從點陣圖圖元對應到顯示的點陣圖大小和位置。 然後，這個矩陣會用來轉換裁剪矩形，使其可以相對於點陣圖來顯示。
 
-最後一行`OnPaintSurface`覆寫會接受的反向`bitmapScaleMatrix`並將它儲存為`inverseBitmapMatrix`欄位。 這用於觸控處理。
+覆寫的最後一行 `OnPaintSurface` 會使用的反向 `bitmapScaleMatrix` ，並將它儲存為 `inverseBitmapMatrix` 欄位。 這是用於觸控處理。
 
-A`TouchEffect`物件具現化做為欄位，並建構函式會將附加的處理常式`TouchAction`事件，但`TouchEffect`必須要加入至`Effects`集合_父_的`SKCanvasView`衍生，以便完成`OnParentSet`覆寫：
+`TouchEffect`物件會具現化為欄位，而此函式會將處理常式附加至 `TouchAction` 事件，但必須 `TouchEffect` 加入至 `Effects` 衍生_父系_的集合 `SKCanvasView` ，以便在覆寫中完成 `OnParentSet` ：
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -405,13 +408,13 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-觸控事件處理`TouchAction`處理常式是以與裝置無關單位。 這些必須先轉換成使用像素`ConvertToPixel`方法底部的類別，然後轉換為`CroppingRectangle`使用的單位`inverseBitmapMatrix`。
+處理常式所處理的觸控事件 `TouchAction` 是以與裝置無關的單位。 您必須先使用類別底部的方法，將這些轉換成圖元 `ConvertToPixel` ，然後使用將轉換成 `CroppingRectangle` 單位 `inverseBitmapMatrix` 。
 
-針對`Pressed`事件，`TouchAction`處理常式會呼叫`HitTest`方法`CroppingRectangle`。 如果此命令傳回索引以外&ndash;1，然後裁剪矩形的邊角的其中一個受管理。 從角實際的觸控點的位移和索引會儲存在`TouchPoint`物件，並新增至`touchPoints`字典。
+對於 `Pressed` 事件， `TouchAction` 處理常式會呼叫的 `HitTest` 方法 `CroppingRectangle` 。 如果這個傳回的索引不是 &ndash; 1，則會操控裁剪矩形的其中一個角落。 該索引和角落中實際觸控點的位移會儲存在 `TouchPoint` 物件中，並加入 `touchPoints` 字典中。
 
-針對`Moved`事件，`MoveCorner`方法`CroppingRectangle`呼叫以移動的角，並進行的外觀比例的可能調整。
+針對 `Moved` 事件， `MoveCorner` 會呼叫的方法 `CroppingRectangle` 來移動角落，並具有長寬比的可能調整。
 
-在任何時候程式，使用`PhotoCropperCanvasView`可以存取`CroppedBitmap`屬性。 這個屬性會使用`Rect`屬性`CroppingRectangle`來建立新的點陣圖的裁剪後的大小。 版本`DrawBitmap`目的地與來源矩形再擷取原始點陣圖的子集：
+在任何時候，使用的程式 `PhotoCropperCanvasView` 都可以存取 `CroppedBitmap` 屬性。 這個屬性會使用的 `Rect` 屬性 `CroppingRectangle` 來建立裁剪大小的新點陣圖。 `DrawBitmap`具有目的地和來源矩形的版本，接著會解壓縮原始點陣圖的子集：
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -443,9 +446,9 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-## <a name="hosting-the-photo-cropper-canvas-view"></a>裝載相片 cropper 畫布檢視
+## <a name="hosting-the-photo-cropper-canvas-view"></a>主控相片 cropper 畫布視圖
 
-與處理裁剪的邏輯，這兩個類別**裁剪相片**頁面 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式有很少的工作来執行。 XAML 檔案會具現化`Grid`主機`PhotoCropperCanvasView`並**完成**按鈕：
+使用這兩個處理裁剪邏輯的類別時， **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中的**相片裁剪**頁面的工作量非常少。 XAML 檔案會具現化， `Grid` 以裝載 `PhotoCropperCanvasView` 和 [**完成**] 按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -472,9 +475,9 @@ class PhotoCropperCanvasView : SKCanvasView
 </ContentPage>
 ```
 
-`PhotoCropperCanvasView`無法執行個體化，XAML 檔案中因為它需要的型別參數`SKBitmap`。
+`PhotoCropperCanvasView`無法在 XAML 檔案中具現化，因為它需要型別為的參數 `SKBitmap` 。
 
-相反地，`PhotoCropperCanvasView`具現化中使用其中一種資源點陣圖的程式碼後置檔案的建構函式：
+相反地， `PhotoCropperCanvasView` 會在程式碼後置檔案的函式中，使用其中一個資源點陣圖來具現化：
 
 ```csharp
 public partial class PhotoCroppingPage : ContentPage
@@ -514,31 +517,31 @@ public partial class PhotoCroppingPage : ContentPage
 }
 ```
 
-然後，使用者可以操作的裁剪矩形：
+然後，使用者可以操作裁剪矩形：
 
 [![相片 Cropper 1](cropping-images/PhotoCropping1.png "相片 Cropper 1")](cropping-images/PhotoCropping1-Large.png#lightbox)
 
-已定義好的裁剪矩形，按一下**完成** 按鈕。 `Clicked`處理常式會取得從裁剪後的點陣圖`CroppedBitmap`屬性`PhotoCropperCanvasView`，並取代所有頁面的內容與新`SKCanvasView`物件，會顯示此裁剪後的點陣圖：
+定義好的裁剪矩形之後，請按一下 [**完成**] 按鈕。 `Clicked`處理常式會從的屬性取得裁剪點陣圖 `CroppedBitmap` `PhotoCropperCanvasView` ，並以 `SKCanvasView` 顯示此裁剪點陣圖的新物件取代頁面的所有內容：
 
 [![相片 Cropper 2](cropping-images/PhotoCropping2.png "相片 Cropper 2")](cropping-images/PhotoCropping2-Large.png#lightbox)
 
-嘗試設定的第二個引數`PhotoCropperCanvasView`1.78f （例如） 來：
+嘗試將的第二個引數設定 `PhotoCropperCanvasView` 為 1.78 f （例如）：
 
 ```csharp
 photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 ```
 
-您會看到限制為 16-9 外觀比例特性高畫質電視的裁剪矩形。
+您會看到裁剪矩形受限於高清晰度電視的16至9外觀比例特性。
 
 <a name="tile-division" />
 
-## <a name="dividing-a-bitmap-into-tiles"></a>將點陣圖分割成圖格
+## <a name="dividing-a-bitmap-into-tiles"></a>將點陣圖分割成磚
 
-知名的 Xamarin.Forms 版本 14 或 15 謎題出現在本書第 22 章[_使用 Xamarin.Forms 建立行動應用程式_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)而且可以下載作為[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 不過，拼圖會變得更多樂趣 （且通常更具挑戰性） 當它根據您自己的相片媒體櫃中的影像。
+一 Xamarin.Forms 版著名的14-15 謎題會出現在[_使用 XamagonXuzzle 建立 Mobile Apps_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)一書的第22章，而且可以下載成[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 不過，當它是以您自己的相片媒體櫃中的影像為基礎時，謎題會變得更有趣（而且通常更具挑戰性）。
 
-這個版本的 14-15 個謎題是一部分 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式中，組成一連串的頁面標題為**相片拼圖**。
+這一版的14-15 謎題是**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 應用程式的一部分，由一系列標題為**相片謎題**的頁面所組成。
 
-**PhotoPuzzlePage1.xaml**檔案的組成`Button`:
+**PhotoPuzzlePage1**是由下列各項所組成 `Button` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -554,7 +557,7 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 </ContentPage>
 ```
 
-程式碼後置檔案會實作`Clicked`使用的處理常式`IPhotoLibrary`，讓使用者從相片庫挑選相片的相依性服務：
+程式碼後置檔案 `Clicked` 會使用相依性服務， `IPhotoLibrary` 讓使用者從相片媒體櫃挑選相片，來執行處理常式：
 
 ```csharp
 public partial class PhotoPuzzlePage1 : ContentPage
@@ -580,11 +583,11 @@ public partial class PhotoPuzzlePage1 : ContentPage
 }
 ```
 
-方法接著會巡覽到`PhotoPuzzlePage2`，傳遞至建構函式所選的點陣圖。
+方法接著會導覽至 `PhotoPuzzlePage2` ，並將選取的點陣圖傳遞至建構。
 
-您可從程式庫中選取的照片不導向，因為它出現在相片媒體櫃中，但會旋轉或上下。 （這是特別的 iOS 裝置的問題）。基於這個理由，`PhotoPuzzlePage2`可讓您將影像旋轉成所需的方向。 XAML 檔案中包含三個按鈕，分別為**90&#x00B0;權限**（依順時針方向表示）， **90&#x00B0;左側**（逆時針算起），以及**完成**。
+從媒體櫃選取的相片可能不會顯示在相片媒體櫃中，但會旋轉或上下顛倒。 （這特別是 iOS 裝置的問題）。基於這個理由，可 `PhotoPuzzlePage2` 讓您將影像旋轉到所需的方向。 XAML 檔案包含三個標示為**90&#x00B0; Right** （表示順時針）、 **90&#x00B0; 左**（逆時針）和**完成**的按鈕。
 
-程式碼後置檔案會實作一文中顯示的點陣圖旋轉邏輯 **[建立和上 SkiaSharp 點陣圖繪製](drawing.md#rotating-bitmaps)** 。 使用者可以將影像旋轉 90 度順時針或逆時針旋轉任意數目的時間： 
+程式碼後置檔案會執行在**[SkiaSharp 點陣圖上建立和繪製](drawing.md#rotating-bitmaps)** 一文中所顯示的點陣圖旋轉邏輯。 使用者可以順時針或逆時針旋轉90影像的任意次數： 
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage
@@ -647,11 +650,11 @@ public partial class PhotoPuzzlePage2 : ContentPage
 }
 ```
 
-當使用者按一下**完成** 按鈕，`Clicked`處理常式會瀏覽至`PhotoPuzzlePage3`，傳入網頁的建構函式中的最後一個旋轉的點陣圖。
+當使用者按一下 [**完成**] 按鈕時， `Clicked` 處理常式會導覽至 `PhotoPuzzlePage3` ，並在頁面的「函式」中傳遞最終的旋轉點陣圖。
 
-`PhotoPuzzlePage3` 允許將影片裁剪相片。 程式需要將分成 4 x 4 方格的 tile 的方形點陣圖。
+`PhotoPuzzlePage3`允許裁剪相片。 程式需要正方形點陣圖來分割成磚的4到4方格。
 
-**PhotoPuzzlePage3.xaml**檔案包含`Label`，則`Grid`主機`PhotoCropperCanvasView`，和另一個**完成**按鈕：
+**PhotoPuzzlePage3**包含 `Label` 、 `Grid` 裝載的， `PhotoCropperCanvasView` 以及另一個 [**完成**] 按鈕：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -685,7 +688,7 @@ public partial class PhotoPuzzlePage2 : ContentPage
 </ContentPage>
 ```
 
-程式碼後置檔案會具現化`PhotoCropperCanvasView`與傳遞至其建構函式的點陣圖。 請注意，傳遞做為第二個引數 1 `PhotoCropperCanvasView`。 這個的外觀比例為 1 會強制正方形的裁剪矩形：
+程式碼後置檔案會具現化， `PhotoCropperCanvasView` 並將點陣圖傳遞至其函式。 請注意，1會當做第二個引數傳遞至 `PhotoCropperCanvasView` 。 這個外觀比例1會強制裁剪矩形成為正方形：
 
 ```csharp
 public partial class PhotoPuzzlePage3 : ContentPage
@@ -736,31 +739,31 @@ public partial class PhotoPuzzlePage3 : ContentPage
 }
 ```
 
-**完成**按鈕處理常式取得裁剪 （這兩個值應該是相同） 的點陣圖的高度與寬度，並再將它分成 15 的個別點陣圖，每個都是 1/4 之原始的高度與寬度。 （可能 16 點陣圖的最後一個不會建立。）`DrawBitmap`來源和目的地矩形的方法可讓點陣圖，以根據較大的點陣圖的子集來建立。
+[**完成**] 按鈕處理常式會取得裁剪點陣圖的寬度和高度（這兩個值應該相同），然後將它分割成15個不同的點陣圖，其中每個都是1/4 的原始寬度和高度。 （最後一個可能的16個位圖不會建立）。`DrawBitmap`具有來源和目的地矩形的方法，可讓您根據較大點陣圖的子集來建立點陣圖。
 
-## <a name="converting-to-xamarinforms-bitmaps"></a>Xamarin.Forms 的點陣圖轉換
+## <a name="converting-to-xamarinforms-bitmaps"></a>轉換成 Xamarin.Forms 點陣圖
 
-在 `OnDoneButtonClicked`方法，為 15 的點陣圖建立陣列屬於類型[ `ImageSource` ](xref:Xamarin.Forms.ImageSource):
+在 `OnDoneButtonClicked` 方法中，為15個位圖建立的陣列屬於以下類型 [`ImageSource`](xref:Xamarin.Forms.ImageSource) ：
 
 ```csharp
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource` 是封裝點陣圖 Xamarin.Forms 基底類型。 幸運的是，可讓 SkiaSharp，從 SkiaSharp 點陣圖轉換成 Xamarin.Forms 點陣圖。 **SkiaSharp.Views.Forms**組件定義[ `SKBitmapImageSource` ](xref:SkiaSharp.Views.Forms.SKBitmapImageSource)類別衍生自`ImageSource`但可以建立根據 SkiaSharp`SKBitmap`物件。 `SKBitmapImageSource` 甚至定義之間的轉換`SKBitmapImageSource`和`SKBitmap`，以及這如何`SKBitmap`物件會儲存在陣列作為 Xamarin.Forms 點陣圖：
+`ImageSource`是 Xamarin.Forms 封裝點陣圖的基底類型。 幸好，SkiaSharp 允許從 SkiaSharp 點陣圖轉換成 Xamarin.Forms 點陣圖。 **SkiaSharp**元件 [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) 會定義衍生自的類別， `ImageSource` 但是可以根據 SkiaSharp 物件來建立 `SKBitmap` 。 `SKBitmapImageSource`甚至會定義和之間的轉換 `SKBitmapImageSource` `SKBitmap` ，也就是 `SKBitmap` 物件在陣列中儲存為 Xamarin.Forms 點陣圖的方式：
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 ```
 
-點陣圖這個陣列會傳遞的建構函式為`PhotoPuzzlePage4`。 該頁面完全是透過 Xamarin.Forms，但未使用任何 SkiaSharp。 它是非常類似[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)，因此它不此處所述，但它會顯示您所選的相片，分成 15 的正方形圖格：
+這個點陣圖陣列會當做的函式傳遞給 `PhotoPuzzlePage4` 。 該頁面完全不會 Xamarin.Forms 使用任何 SkiaSharp。 這非常類似于[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)，因此不會在此說明，但會顯示您選取的相片分成15個正方形磚：
 
-[![相片謎題 1](cropping-images/PhotoPuzzle1.png "相片謎題 1")](cropping-images/PhotoPuzzle1-Large.png#lightbox)
+[![相片謎題1](cropping-images/PhotoPuzzle1.png "相片謎題1")](cropping-images/PhotoPuzzle1-Large.png#lightbox)
 
-按下**Randomize**按鈕混合組成的所有圖格：
+按 [**隨機化**] 按鈕會混合所有磚：
 
-[![相片謎題 2](cropping-images/PhotoPuzzle2.png "相片謎題 2")](cropping-images/PhotoPuzzle2-Large.png#lightbox)
+[![相片謎題2](cropping-images/PhotoPuzzle2.png "相片謎題2")](cropping-images/PhotoPuzzle2-Large.png#lightbox)
 
-現在您可以將它們放回正確的順序。 將其移到空正方形，可以點選相同的資料列或以空白的方形的形式的資料行中的任何圖格。 
+現在您可以將它們放回正確的順序。 與空白正方形相同的資料列或資料行中的任何磚，都可以用來將它們移至空白正方形。 
 
 ## <a name="related-links"></a>相關連結
 
