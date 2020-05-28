@@ -1,17 +1,20 @@
 ---
-title: Xamarin 防火牆組態指示
-description: 您的防火牆必須允許本文件所提供主機清單，Xamarin 才能在公司環境中運作。
-ms.prod: xamarin
-ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
-author: conceptdev
-ms.author: crdun
-ms.date: 07/17/2019
-ms.openlocfilehash: 2b52dfd55194ec076f28f8c33e758a39d14f5943
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 71b2754d19d00b7bf4860acd96bfb7ad8dec4ce5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70291323"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132987"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆組態指示
 
@@ -35,13 +38,13 @@ ms.locfileid: "70291323"
 
 若您使用的是 Mac 並且遭遇到 Xamarin.Android 安裝問題，請確認 macOS 可以下載 Java。
 
-### <a name="nuget-including-xamarinforms"></a>NuGet (包括 Xamarin.Forms)
+### <a name="nuget-including-xamarinforms"></a>NuGet （包括 Xamarin.Forms ）
 
-您必須新增下列位址，才能存取 NuGet (Xamarin.Forms 已封裝為 NuGet)：
+您必須新增下列位址，才能存取 NuGet （ Xamarin.Forms 已封裝為 nuget）：
 
 - www.nuget.org (以存取 NuGet)
 - globalcdn.nuget.org (NuGet 下載)
-- dl-ssl.google.com (適用於 Android 和 Xamarin.Forms 的 Google 元件)
+- dl-ssl.google.com （適用于 Android 和的 Google 元件 Xamarin.Forms ）
 
 ### <a name="software-updates"></a>軟體更新
 

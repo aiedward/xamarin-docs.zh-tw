@@ -1,27 +1,30 @@
 ---
-title: 從 Xamarin 啟動原生對應應用程式
-description: 在每個平臺上的原生地圖應用程式，都可以透過 Xamarin 的啟動者類別，從 Xamarin. Forms 應用程式啟動。
-ms.prod: xamarin
-ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/30/2019
-ms.openlocfilehash: 54776d28bb75b152a6402e4d531d1baa4f724cba
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+title: 從啟動原生對應應用程式Xamarin.Forms
+description: 在每個平臺上的原生地圖應用程式，都可以 Xamarin.Forms 由啟動器類別從應用程式啟動 Xamarin.Essentials 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426199"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129333"
 ---
-# <a name="launch-the-native-map-app-from-xamarinforms"></a>從 Xamarin 啟動原生對應應用程式
+# <a name="launch-the-native-map-app-from-xamarinforms"></a>從啟動原生對應應用程式Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-在每個平臺上的原生對應應用程式，都可以由 Xamarin. Essentials `Launcher` 類別，從 Xamarin. Forms 應用程式中啟動。 此類別可讓應用程式透過其自訂 URI 配置來開啟另一個應用程式。 您可以使用 `OpenAsync` 方法來叫用啟動器功能，傳入 `string` 或 `Uri` 引數，表示要開啟的自訂 URL 配置。 如需有關 Xamarin 的詳細資訊，請參閱[xamarin. essentials](~/essentials/index.md?context=xamarin/xamarin-forms)。
+每個平臺上的原生對應應用程式都可以 Xamarin.Forms 由類別從應用程式啟動 Xamarin.Essentials `Launcher` 。 此類別可讓應用程式透過其自訂 URI 配置來開啟另一個應用程式。 啟動器功能可以使用方法叫用 `OpenAsync` ，傳入 `string` `Uri` 代表要開啟之自訂 URL 配置的或引數。 如需的詳細資訊 Xamarin.Essentials ，請參閱 [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms) 。
 
 > [!NOTE]
-> 使用 Xamarin. Essentials `Launcher` 類別的替代方法是使用其 `Map` 類別。 如需詳細資訊，請參閱[Xamarin. Essentials： Map](~/essentials/maps.md?context=xamarin/xamarin-forms)。
+> 使用類別的替代方法 Xamarin.Essentials `Launcher` 是使用其 `Map` 類別。 如需詳細資訊，請參閱[ Xamarin.Essentials ： Map](~/essentials/maps.md?context=xamarin/xamarin-forms)。
 
 每個平臺上的 maps 應用程式會使用唯一的自訂 URI 配置。 如需有關 iOS 上對應 URI 配置的詳細資訊，請參閱 developer.apple.com 上的[對應連結](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html)。 如需有關在 Android 上對應 URI 配置的詳細資訊，請參閱[Maps 開發人員指南](https://developer.android.com/guide/components/intents-common.html#Maps)和[適用于 android On Developers.android.com 的 Google maps 意圖](https://developers.google.com/maps/documentation/urls/android-intents)。 如需通用 Windows 平臺（UWP）上對應 URI 配置的詳細資訊，請參閱[啟動 Windows maps 應用程式](/windows/uwp/launch-resume/launch-maps-app)。
 
@@ -82,4 +85,4 @@ else if (Device.RuntimePlatform == Device.UWP)
 - [對應連結](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html)
 - [Maps 開發人員指南](https://developer.android.com/guide/components/intents-common.html#Maps)
 - [適用于 Android 的 Google Maps 意圖](https://developers.google.com/maps/documentation/)
-- [啟動 Windows Maps 應用程式](/windows/uwp/launch-resume/launch-maps-app)
+- [啟動 Windows 地圖應用程式](/windows/uwp/launch-resume/launch-maps-app)

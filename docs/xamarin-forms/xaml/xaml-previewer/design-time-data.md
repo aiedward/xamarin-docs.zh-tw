@@ -1,18 +1,21 @@
 ---
-title: 將設計階段資料與 XAML 預覽器搭配使用
-description: 本文說明如何使用設計階段資料，在 XAML 預覽程式中顯示資料繁重的配置，而不需要執行您的應用程式。
-ms.prod: xamarin
-ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/27/2019
-ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72303251"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127343"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>將設計階段資料與 XAML 預覽器搭配使用
 
@@ -28,7 +31,7 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-加入命名空間之後，您可以將 `d:` 放在任何屬性或控制項前面，以便在 XAML 預覽器中顯示。 具有 `d:` 的元素不會在執行時間顯示。
+加入命名空間之後，您可以將 `d:` 它放在任何屬性或控制項的前方，以在 XAML 預覽中顯示它。 具有的專案 `d:` 不會在執行時間顯示。
 
 例如，您可以將文字新增至通常已系結資料的標籤。
 
@@ -38,9 +41,9 @@ mc:Ignorable="d"
 
 [![以標籤中的文字設計階段資料](xaml-previewer-images/designtimedata-label-sm.png "以文字加上標籤的設計階段資料")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-在此範例中，如果沒有 `d:Text`，XAML 預覽程式將不會對標籤顯示任何內容。 相反地，它會顯示「Name！」 其中的標籤在執行時間會有實際資料。
+在此範例中，如果沒有 `d:Text` ，XAML 預覽程式將不會對標籤顯示任何內容。 相反地，它會顯示「Name！」 其中的標籤在執行時間會有實際資料。
 
-您可以使用 `d:` 搭配 Xamarin. Forms 控制項的任何屬性，例如色彩、字型大小和間距。 您甚至可以將它新增至控制項本身：
+您可以使用 `d:` 與控制項的任何屬性 Xamarin.Forms （例如色彩、字型大小和間距）。 您甚至可以將它新增至控制項本身：
 
 ```xaml
 <d:Button Text="Design Time Button" />
@@ -86,9 +89,9 @@ Listview 是在行動裝置應用程式中顯示資料的熱門方式。 不過�
 
 [![使用 ListView 設計階段資料](xaml-previewer-images/designtimedata-itemssource-sm.png "使用 ListView 設計階段資料")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-這個範例會在 XAML 預覽器中顯示 ListView 的三個 TextCells。 您可以將 `x:String` 變更為專案中現有的資料模型。
+這個範例會在 XAML 預覽器中顯示 ListView 的三個 TextCells。 您可以變更 `x:String` 為專案中現有的資料模型。
 
-您也可以建立資料物件的陣列。 例如，`Monkey` 資料物件的公用屬性可以結構化為設計階段資料：
+您也可以建立資料物件的陣列。 例如，資料物件的公用屬性 `Monkey` 可以結構化為設計階段資料：
 
 ```csharp
 namespace Monkeys.Models
@@ -137,7 +140,7 @@ xmlns:models="clr-namespace:Monkeys.Models"
 
 ### <a name="requirements"></a>需求
 
-設計階段資料需要最小版本的 Xamarin. 表單3.6。
+設計階段資料所需的最低版本為 Xamarin.Forms 3.6。
 
 ### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense 在 [我的設計階段資料] 底下顯示波浪線
 

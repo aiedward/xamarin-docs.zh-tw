@@ -1,26 +1,18 @@
 ---
-title: Windows 上的 VisualElement 舊版色彩模式
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Windows 平臺特定的來停用 [Xamarin] 舊版色彩模式。
-ms.prod: xamarin
-ms.assetid: B8759309-07C7-4DCA-A18A-C1A198A7951B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 7319b0886476ea502b7b9c450416cb4fe69e01fa
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656916"
+標題：「平臺-詳細資訊」可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用停用舊版色彩模式的 Windows 平臺特定 Xamarin.Forms 。
+assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="visualelement-legacy-color-mode-on-windows"></a>Windows 上的 VisualElement 舊版色彩模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-Xamarin.Forms 檢視的一些功能的舊版的色彩模式。 在此模式中，當[ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)檢視的屬性設定為`false`，檢視將會覆寫設定的使用者停用狀態的預設原生色彩的色彩。 針對回溯相容性，這個舊版的色彩模式仍受支援的檢視表的預設行為。
+有些 Xamarin.Forms views 功能是舊版色彩模式。 在此模式中，當 [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) 視圖的屬性設定為時 `false` ，此視圖會覆寫使用者所設定的色彩，其預設原生色彩為停用狀態。 為了回溯相容性，這種舊版色彩模式仍然是支援的視圖的預設行為。
 
-此通用 Windows 平臺平臺特定的會停用此舊版色彩模式, 讓使用者在視圖上設定的色彩即使在停用視圖時仍會保留。 它由在 XAML 中設定[ `VisualElement.IsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.IsLegacyColorModeEnabledProperty) ; 附加屬性`false`:
+此通用 Windows 平臺平臺特定的會停用此舊版色彩模式，讓使用者在視圖上設定的色彩即使在停用視圖時仍會保留。 它會在 XAML 中使用，方法是將 [`VisualElement.IsLegacyColorModeEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.IsLegacyColorModeEnabledProperty) 附加屬性設定為 `false` ：
 
 ```xaml
 <ContentPage ...
@@ -36,7 +28,7 @@ Xamarin.Forms 檢視的一些功能的舊版的色彩模式。 在此模式中�
 </ContentPage>
 ```
 
-或者，它可以取用從 C# 使用 fluent API:
+或者，您也可以使用 Fluent API，從 c # 取用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -46,14 +38,14 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 _legacyColorModeDisabledEditor.On<Windows>().SetIsLegacyColorModeEnabled(false);
 ```
 
-`VisualElement.On<Windows>`方法可讓您指定這個平台專屬只會在 Windows 上執行。 [ `VisualElement.SetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Boolean))方法，請在[ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)命名空間，可用來控制是否已停用舊版的色彩模式。 颾魤 ㄛ [ `VisualElement.GetIsLegacyColorModeEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetIsLegacyColorModeEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))方法可以用來傳回是否要停用舊版的色彩模式。
+`VisualElement.On<Windows>`方法會指定這個平臺特定的只會在 Windows 上執行。 [ `VisualElement.SetIsLegacyColorModeEnabled` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetIsLegacyColorModeEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration。 Windows， Xamarin.Forms 。VisualElement}，system.string）方法，在命名空間中， [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 可用來控制是否停用舊版色彩模式。 此外，[ `VisualElement.GetIsLegacyColorModeEnabled` ] （x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetIsLegacyColorModeEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration。 Windows， Xamarin.Forms 。VisualElement}））方法可用來傳回舊版色彩模式是否已停用。
 
-結果是，就可以停用舊版的色彩模式，以便使用者在檢視上所設定的色彩甚至保持停用檢視時：
+結果是可以停用舊版色彩模式，讓使用者在視圖上設定的色彩即使停用視圖也會保留：
 
-![](legacy-color-mode-images/legacy-color-mode-disabled.png "已停用舊版的色彩模式")
+![](legacy-color-mode-images/legacy-color-mode-disabled.png "Legacy color mode disabled")
 
 > [!NOTE]
-> 設定時[ `VisualStateGroup` ](xref:Xamarin.Forms.VisualStateGroup)檢視上的舊版的色彩模式會完全忽略。 如需有關視覺狀態的詳細資訊，請參閱[Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)。
+> 在 [`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup) 視圖上設定時，會完全忽略舊版色彩模式。 如需視覺狀態的詳細資訊，請參閱[ Xamarin.Forms 視覺狀態管理員](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="related-links"></a>相關連結
 

@@ -1,46 +1,49 @@
 ---
-title: Xamarin.Forms RelativeLayout
-description: 這篇文章說明如何使用 Xamarin.Forms RelativeLayout 類別來建立可調整以符合任何畫面大小的 Ui。
-ms.prod: xamarin
-ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/25/2015
-ms.openlocfilehash: d8c2cc4f31b148ee3181629e5b3b5faf01016617
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: Xamarin.FormsRelativeLayout
+description: 本文說明如何使用 Xamarin.Forms RelativeLayout 類別來建立可調整為符合任何螢幕大小的 ui。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772530"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127186"
 ---
-# <a name="xamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
+# <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-`RelativeLayout` 用來位置和大小檢視相對於檢視版面配置] 或 [同層級的內容。 不同於`AbsoluteLayout`，`RelativeLayout`沒有移動錨點的概念，且沒有定位項目相對於底部或版面配置的右邊緣的功能。 `RelativeLayout` 支援它自己的範圍之外的定位項目。
+`RelativeLayout`是用來相對於版面配置或同級視圖的屬性來定位和調整視圖大小。 與不同的是 `AbsoluteLayout` ，沒有 `RelativeLayout` 移動錨點的概念，而且沒有功能可以相對於版面配置的底部或右邊邊緣來定位元素。 `RelativeLayout`支援將專案置於其本身的界限之外。
 
-[![](relative-layout-images/layouts-sml.png "Xamarin.Forms 版面配置")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms 版面配置")
+[![](relative-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
-## <a name="purpose"></a>用途
+## <a name="purpose"></a>目的
 
-`RelativeLayout` 可用來檢視在相對於整體的版面配置，或至其他檢視 畫面上的位置。
+`RelativeLayout`可以用來將螢幕上的視圖放在相對於整體版面配置或其他視圖的畫面上。
 
-![](relative-layout-images/flag.png "RelativeLayout 探勘")
+![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>使用量
+## <a name="usage"></a>使用方式
 
-### <a name="understanding-constraints"></a>了解條件約束
+### <a name="understanding-constraints"></a>瞭解條件約束
 
-定位和調整大小內檢視`RelativeLayout`是使用條件約束。 條件約束運算式可以包含下列資訊：
+使用條件約束來定位和調整中的視圖大小 `RelativeLayout` 。 條件約束運算式可以包含下列資訊：
 
-- **型別**&ndash;條件約束是否相對於父代或另一個檢視。
-- **屬性**&ndash;將做為基礎的條件約束的屬性。
-- **係數**&ndash;来套用至屬性值的因數。
-- **常數**&ndash;来做為值的位移的值。
-- **ElementName** &ndash;條件約束是相對於檢視的名稱。
+- **類型** &ndash;條件約束是否相對於父系或另一個視圖。
+- **屬性** &ndash;要當做條件約束基礎使用的屬性。
+- **因素** &ndash;要套用至屬性值的因素。
+- **常數** &ndash;要用來做為值位移的值。
+- **ElementName** &ndash;條件約束相對於的視圖名稱。
 
-在 XAML 中，以表示條件約束`ConstraintExpression`s。 參考下列範例：
+在 XAML 中，條件約束會以 `ConstraintExpression` s 表示。 請考慮下列範例：
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"
@@ -56,7 +59,7 @@ ms.locfileid: "70772530"
                              Constant=-100}" />
 ```
 
-在C#，條件約束表示不太一樣，使用 在檢視上的 函式，而不是運算式。 條件約束指定做為引數的配置`Add`方法：
+在 c # 中，條件約束的表示方式有點不同，使用函式，而不是視圖上的運算式。 條件約束會指定為配置方法的引數 `Add` ：
 
 ```csharp
 layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
@@ -70,19 +73,19 @@ layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
     Constraint.Constant(50), Constraint.Constant(50));
 ```
 
-請注意上述的版面配置的下列層面：
+請注意上述版面配置的下列層面：
 
-- `x`和`y`條件約束指定其自己的條件約束。
-- 在C#，做為函式定義相對的條件約束。 概念，例如`Factor`不存在，但可以手動實作。
-- 方塊的`x`座標會定義為寬度的一半的父項、-100。
-- 方塊的`y`座標會定義為高度的一半的父項、-100。
+- `x`和 `y` 條件約束會使用自己的條件約束來指定。
+- 在 c # 中，相對條件約束會定義為函數。 之類 `Factor` 的概念並不存在，但可以手動執行。
+- 方塊的 `x` 座標會定義為父系的一半寬度，-100。
+- 方塊的 `y` 座標會定義為父系的一半（-100）。
 
 > [!NOTE]
-> 由於條件約束的定義的方式，就能夠進行更複雜的版面配置中C#不可以使用 XAML 來指定。
+> 由於定義條件約束的方式，因此可以在 c # 中進行更複雜的版面配置，而不是使用 XAML 來指定。
 
-這兩個上述範例中的定義做為條件約束`RelativeToParent`&ndash;亦即，其值是相對於父項目。 它也可定義相對於另一個檢視的條件約束。 這可讓 （向開發人員） 更具直覺性的版面配置，並且可以讓您的版面配置程式碼的目的更明顯。
+上述兩個範例都會定義條件約束 `RelativeToParent` &ndash; ，也就是它們的值是相對於父元素。 您也可以將條件約束定義為相對於另一個 view。 這可讓您以更直覺的方式（對開發人員）進行配置，並可讓您的版面配置程式碼意圖更容易看出。
 
-請考慮的其中一個項目必須是小於另一個 20 個像素的版面配置。 如果這兩個項目會定義具有常數值，可能會有較其`Y`條件約束定義為常數，它是 20 像素大於`Y`條件約束的較高的項目。 該方法會簡短如果較高的項目位於使用的比例，使不已知的像素大小。 在此情況下，限制根據另一個項目位置的項目是更強固的：
+假設某個元素的版面配置必須小於另一個專案的20圖元。 如果這兩個專案都是以常數值定義，則較低的 `Y` 條件約束定義為大於 `Y` 較高專案之條件約束的20圖元常數。 如果較高的元素是使用比例來定位，而不知道圖元大小，則該方法會很短。 在這種情況下，根據另一個專案的位置來限制元素會更健全：
 
 ```xaml
 <RelativeLayout>
@@ -105,7 +108,7 @@ layout.Children.Add(box, Constraint.RelativeToParent((parent) =>
 </RelativeLayout>
 ```
 
-若要完成相同的配置中C#:
+若要在 c # 中完成相同的版面配置：
 
 ```csharp
 layout.Children.Add (redBox, Constraint.RelativeToParent ((parent) => {
@@ -128,23 +131,23 @@ layout.Children.Add (blueBox, Constraint.RelativeToView (redBox, (Parent, siblin
     }));
 ```
 
-這會產生下列輸出，藍色方塊的位置決定_相對_紅色方塊的位置：
+這會產生下列輸出，_並根據紅色_方塊的位置決定藍色方塊的位置：
 
-![](relative-layout-images/red-blue-box.png "具有紅色和藍色 BoxViews RelativeLayout")
+![](relative-layout-images/red-blue-box.png "RelativeLayout with Red and Blue BoxViews")
 
 ### <a name="sizing"></a>調整大小
 
-檢視由配置`RelativeLayout`有兩個選項來指定其大小：
+所配置的 Views `RelativeLayout` 有兩個選項可指定其大小：
 
 - `HeightRequest & WidthRequest`
 - `RelativeLayout.WidthConstraint` & `RelativeLayout.HeightConstraint`
 
-`HeightRequest` 和`WidthRequest`指定預定的高度和寬度的檢視，但可能會覆寫配置所需。 `WidthConstraint` 和`HeightConstraint`支援設定的高度和寬度為相對於的版面配置或另一個檢視的屬性值，或以常值。
+`HeightRequest`並 `WidthRequest` 指定視圖的預期高度和寬度，但可能會視需要覆寫版面配置。 `WidthConstraint`和 `HeightConstraint` 支援將 [高度] 和 [寬度] 設定為相對於版面配置或其他視圖屬性的值，或做為常數值。
 
-## <a name="exploring-a-complex-layout"></a>瀏覽複雜的配置
-每個配置有優點和缺點，用於建立特定的配置。 在此系列的版面配置的文章中，已建立範例應用程式以使用三個不同的版面配置實作相同的頁面配置。
+## <a name="exploring-a-complex-layout"></a>探索複雜的版面配置
+每個版面配置都有建立特定版面配置的優點和缺點。 在這一系列的版面配置文章中，已建立範例應用程式，並使用三種不同的版面配置來執行相同的頁面配置。
 
-請考慮下列 XAML:
+請考慮下列 XAML：
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -221,13 +224,13 @@ Title="RelativeLayout">
 </ContentPage>
 ```
 
-上述程式碼會產生下列配置：
+上述程式碼會產生下列版面配置：
 
-![](relative-layout-images/relative.png "複雜 RelativeLayout")
+![](relative-layout-images/relative.png "Complex RelativeLayout")
 
-請注意， `RelativeLayouts`s 為巢狀，因為在某些情況下建立巢狀版面配置可能很容易呈現在相同的版面配置內的所有項目。 也請注意，某些元素`RelativeToView`，因為，可讓您更輕鬆且更直覺的版面配置時檢視之間的關聯性可讓您引導定位。
+請注意， `RelativeLayouts` 會進行嵌套，因為在某些情況下，相較于在相同的版面配置中呈現所有元素，嵌套配置可能會比較容易。 另請注意，某些專案是 `RelativeToView` ，因為這可讓您在 views guide 定位的關聯性時，提供更簡單且更直覺的版面配置。
 
 ## <a name="related-links"></a>相關連結
 
-- [版面配置 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble 範例 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [版面配置（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 範例（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

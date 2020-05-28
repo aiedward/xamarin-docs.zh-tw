@@ -1,24 +1,27 @@
 ---
-title: IOS 上的大型頁面標題
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 iOS 平臺特定的, 在 NavigationPage 的導覽列上將頁面標題顯示為大型標題。
-ms.prod: xamarin
-ms.assetid: 45FD9145-8319-452C-9AE6-624431A4D43C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: ab9becf2f7363674346abf004c1748cb06eb0d31
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0db20620870340386ccd0cedf7f98cb2975527ba
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655416"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128028"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS 上的大型頁面標題
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平臺特定是用來在的導覽[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)列上, 將頁面標題顯示為大型標題, 適用于使用 iOS 11 或更新版本的裝置。 大型標題靠左對齊，而使用較大的字型，且會轉換成標準的標題使用者一開始捲動的內容，以便有效率地使用螢幕面積。 但是，在橫向模式下，標題將返回到導航欄的中心以優化內容佈局。 它由在 XAML 中設定`NavigationPage.PrefersLargeTitles`附加屬性`boolean`值：
+此 iOS 平臺特定是用來在的導覽列上，將頁面標題顯示為大型標題 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，適用于使用 iOS 11 或更新版本的裝置。 較大的標題會靠左對齊，並使用較大的字型，並在使用者開始滾動內容時轉換成標準標題，以便有效率地使用畫面的房地產。 不過，在橫向方向，標題會回到導覽列的中央，以優化內容配置。 它會在 XAML 中使用，方法是將 `NavigationPage.PrefersLargeTitles` 附加屬性設定為 `boolean` 值：
 
 ```xaml
 <NavigationPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -30,7 +33,7 @@ ms.locfileid: "68655416"
 </NavigationPage>
 ```
 
-或者可以取用從 C# 使用 fluent API:
+或者，也可以使用 Fluent API 從 c # 取用：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -41,9 +44,9 @@ var navigationPage = new Xamarin.Forms.NavigationPage(new iOSLargeTitlePageCS())
 navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 ```
 
-`NavigationPage.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 `NavigationPage.SetPrefersLargeTitle`方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間，可讓您控制是否要啟用大型標題。
+`NavigationPage.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 `NavigationPage.SetPrefersLargeTitle`命名空間中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 會控制是否要啟用大型標題。
 
-前提是大型的項目上啟用[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)，在巡覽堆疊中的所有頁面會都顯示大型的標題。 此行為可覆寫頁面上設定`Page.LargeTitleDisplay`附加屬性的值`LargeTitleDisplayMode`列舉型別：
+如果已在上啟用大型標題 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，則導覽堆疊中的所有頁面都會顯示大型標題。 將 `Page.LargeTitleDisplay` 附加屬性設為列舉的值，即可在頁面上覆寫這個行為 `LargeTitleDisplayMode` ：
 
 ```xaml
 <ContentPage ...
@@ -54,7 +57,7 @@ navigationPage.On<iOS>().SetPrefersLargeTitles(true);
 </ContentPage>
 ```
 
-從 C# 使用 fluent API 或者，覆寫頁面行為：
+或者，您可以使用 Fluent API，從 c # 覆寫頁面行為：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -72,13 +75,13 @@ public class iOSLargeTitlePageCS : ContentPage
 }
 ```
 
-`Page.On<iOS>`方法可讓您指定這個平台專屬只會在 iOS 上執行。 `Page.SetLargeTitleDisplay`方法，請在[ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)命名空間上控制項的大型標題行為[ `Page` ](xref:Xamarin.Forms.Page)，與`LargeTitleDisplayMode`提供三個可能的列舉型別值：
+`Page.On<iOS>`方法會指定此平臺特定只會在 iOS 上執行。 `Page.SetLargeTitleDisplay`命名空間中的方法會 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 控制上的大型標題列為，而 [`Page`](xref:Xamarin.Forms.Page) 列舉會 `LargeTitleDisplayMode` 提供三個可能的值：
 
-- `Always` – 強制字型與導覽列中使用大型的格式大小。
-- `Automatic` – 為上一個項目，在巡覽堆疊中使用相同的樣式 （大型或小型）。
-- `Never` -強制執行規則、 小型格式導覽列的使用。
+- `Always`-強制導覽列和字型大小使用大型格式。
+- `Automatic`–使用與導覽堆疊中的上一個專案相同的樣式（大型或小型）。
+- `Never`-強制使用一般、小型的格式導覽列。
 
-颾魤 ㄛ`SetLargeTitleDisplay`方法可用來切換列舉值，藉由呼叫`LargeTitleDisplay`方法，以傳回目前`LargeTitleDisplayMode`:
+此外， `SetLargeTitleDisplay` 方法可以藉由呼叫方法來切換列舉值，這會傳回 `LargeTitleDisplay` 目前的 `LargeTitleDisplayMode` ：
 
 ```csharp
 switch (On<iOS>().LargeTitleDisplay())
@@ -95,9 +98,9 @@ switch (On<iOS>().LargeTitleDisplay())
 }
 ```
 
-結果是，指定`LargeTitleDisplayMode`套用至[ `Page` ](xref:Xamarin.Forms.Page)，大型標題行為：
+結果是指定的會套用 `LargeTitleDisplayMode` 至 [`Page`](xref:Xamarin.Forms.Page) ，以控制大型標題列為：
 
-![](page-large-title-images/large-title.png "模糊效果平台專屬")
+![](page-large-title-images/large-title.png "Blur Effect Platform-Specific")
 
 ## <a name="related-links"></a>相關連結
 

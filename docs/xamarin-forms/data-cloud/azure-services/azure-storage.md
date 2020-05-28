@@ -1,24 +1,27 @@
 ---
-title: 從 Xamarin 的 Azure 儲存體中儲存及存取資料
-description: Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。 本文說明如何使用 Xamarin 將文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。
-ms.prod: xamarin
-ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/28/2018
-ms.openlocfilehash: 8d773abbca348d09d3359f09cbded22f6521fb7f
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: 儲存和存取 Azure 儲存體中的資料Xamarin.Forms
+description: Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。 本文說明如何使用，將 Xamarin.Forms 文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4df14ef4d3eb72b92e4201e57103780801ca2d2f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487317"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131023"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>從 Xamarin 的 Azure 儲存體中儲存及存取資料
+# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>儲存和存取 Azure 儲存體中的資料Xamarin.Forms
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
-_Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。本文示範如何使用 Xamarin 將文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。_
+_Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。本文示範如何使用，將 Xamarin.Forms 文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。_
 
 Azure 儲存體提供四種儲存體服務：
 
@@ -58,22 +61,22 @@ Blob 是任何類型和大小的檔案。 Azure 儲存體支援三種不同的 b
 
 Blob 會上傳至 Azure 儲存體，並以位元組資料流程的形式從 Azure 儲存體下載。 因此，檔案必須先轉換成位元組資料流程，然後再上傳，並在下載後轉換回其原始表示。
 
-儲存在 Azure 儲存體中的每個物件都有唯一的 URL 位址。 儲存體帳戶名稱會形成該位址的子域，而子域和功能變數名稱的組合會形成儲存體帳戶的*端點*。 例如，如果您的儲存體帳戶名為*mystorageaccount*，則儲存體帳戶的預設 blob 端點會是 `https://mystorageaccount.blob.core.windows.net`。
+儲存在 Azure 儲存體中的每個物件都有唯一的 URL 位址。 儲存體帳戶名稱會形成該位址的子域，而子域和功能變數名稱的組合會形成儲存體帳戶的*端點*。 例如，如果您的儲存體帳戶名為*mystorageaccount*，則儲存體帳戶的預設 blob 端點會是 `https://mystorageaccount.blob.core.windows.net` 。
 
-用以存取儲存體帳戶中某物件的 URL，可藉由在端點後附加該物件在儲存體帳戶中的位置來建置。 例如，blob 位址的格式會是 `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob`。
+用以存取儲存體帳戶中某物件的 URL，可藉由在端點後附加該物件在儲存體帳戶中的位置來建置。 例如，blob 位址的格式會是 `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` 。
 
 ## <a name="setup"></a>安裝程式
 
-將 Azure 儲存體帳戶整合到 Xamarin. Forms 應用程式的流程如下所示：
+將 Azure 儲存體帳戶整合到應用程式的流程如下所示 Xamarin.Forms ：
 
 1. 建立儲存體帳戶。 如需詳細資訊，請參閱[建立儲存體帳戶](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
-1. 將[Azure 儲存體用戶端程式庫](https://www.nuget.org/packages/WindowsAzure.Storage/)新增至 Xamarin. Forms 應用程式。
+1. 將[Azure 儲存體用戶端程式庫](https://www.nuget.org/packages/WindowsAzure.Storage/)新增至 Xamarin.Forms 應用程式。
 1. 設定儲存體連接字串。 如需詳細資訊，請參閱[連接到 Azure 儲存體](#connecting)。
-1. 將 `Microsoft.WindowsAzure.Storage` 和 `Microsoft.WindowsAzure.Storage.Blob` 命名空間的 `using` 指示詞加入至將會存取 Azure 儲存體的類別。
+1. 將 `using` 和命名空間的指示詞加入 `Microsoft.WindowsAzure.Storage` `Microsoft.WindowsAzure.Storage.Blob` 至將會存取 Azure 儲存體的類別。
 
 <a name="connecting" />
 
-## <a name="connecting-to-azure-storage"></a>連接到 Azure 儲存體
+## <a name="connecting-to-azure-storage"></a>連線到 Azure 儲存體
 
 針對儲存體帳戶資源提出的每個要求都必須經過驗證。 雖然可以將 blob 設定為支援匿名驗證，但應用程式可以使用兩種主要方法來向儲存體帳戶進行驗證：
 
@@ -105,7 +108,7 @@ UseDevelopmentStorage=true
 DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 ```
 
-`myAccountName` 應取代為您的儲存體帳戶名稱，`myAccountKey` 應取代為您的兩個帳戶存取金鑰的其中一個。
+`myAccountName`應取代為您的儲存體帳戶名稱，並 `myAccountKey` 應取代為您的兩個帳戶存取金鑰的其中一個。
 
 > [!NOTE]
 > 使用共用金鑰驗證時，您的帳戶名稱和帳戶金鑰會散發給每個使用您應用程式的人員，這會提供儲存體帳戶的完整讀取/寫入存取權。 因此，使用共用金鑰驗證僅供測試之用，而且永遠不會將金鑰散發給其他使用者。
@@ -116,7 +119,7 @@ DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAcc
 
 `BlobEndpoint=myBlobEndpoint;SharedAccessSignature=mySharedAccessSignature`
 
-`myBlobEndpoint` 應取代為 blob 端點的 URL，而 `mySharedAccessSignature` 應取代為您的 SAS。 SAS 會提供通訊協定、服務端點，以及用來存取資源的認證。
+`myBlobEndpoint`應取代為 blob 端點的 URL，並 `mySharedAccessSignature` 應取代為您的 SAS。 SAS 會提供通訊協定、服務端點，以及用來存取資源的認證。
 
 > [!NOTE]
 > 建議針對生產環境應用程式使用 SAS 驗證。 不過，在生產應用程式中，應該視需要從後端服務取出 SAS，而不是與應用程式配套。
@@ -125,7 +128,7 @@ DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAcc
 
 ## <a name="creating-a-container"></a>建立容器
 
-`GetContainer` 方法是用來抓取命名容器的參考，然後用來從容器中抓取 blob，或將 blob 新增至容器。 下列程式碼範例示範 `GetContainer` 方法：
+`GetContainer`方法是用來抓取命名容器的參考，然後用來從容器中取出 blob，或將 blob 新增至容器。 下列程式碼範例示範 `GetContainer` 方法：
 
 ```csharp
 static CloudBlobContainer GetContainer(ContainerType containerType)
@@ -136,18 +139,18 @@ static CloudBlobContainer GetContainer(ContainerType containerType)
 }
 ```
 
-`CloudStorageAccount.Parse` 方法會剖析連接字串，並傳回代表儲存體帳戶的 `CloudStorageAccount` 實例。 `CloudBlobClient` 實例（用來取得容器和 blob）接著會由 `CreateCloudBlobClient` 方法建立。 `GetContainerReference` 方法會先將指定的容器當做 `CloudBlobContainer` 實例來抓取，然後才會傳回給呼叫方法。 在此範例中，容器名稱是 `ContainerType` 的列舉值，轉換成小寫字串。
+`CloudStorageAccount.Parse`方法會剖析連接字串，並傳回 `CloudStorageAccount` 代表儲存體帳戶的實例。 `CloudBlobClient`接著，方法會建立用來取得容器和 blob 的實例 `CreateCloudBlobClient` 。 `GetContainerReference`方法會先將指定的容器當做 `CloudBlobContainer` 實例來抓取，然後再傳回給呼叫方法。 在此範例中，容器名稱是 `ContainerType` 列舉值，轉換成小寫字串。
 
 > [!NOTE]
 > 容器名稱必須是小寫，而且必須以字母或數位開頭。 此外，它們只能包含字母、數位和虛線字元，且長度必須介於3到63個字元之間。
 
-會叫用 `GetContainer` 方法，如下所示：
+`GetContainer`會叫用方法，如下所示：
 
 ```csharp
 var container = GetContainer(containerType);
 ```
 
-然後，`CloudBlobContainer` 實例可以用來建立容器（如果尚未存在）：
+`CloudBlobContainer`然後，實例可以用來建立容器（如果尚未存在）：
 
 ```csharp
 await container.CreateIfNotExistsAsync();
@@ -157,7 +160,7 @@ await container.CreateIfNotExistsAsync();
 
 ## <a name="uploading-data-to-a-container"></a>將資料上傳至容器
 
-`UploadFileAsync` 方法是用來將位元組資料串流上傳至 blob 儲存體，如下列程式碼範例所示：
+`UploadFileAsync`方法是用來將位元組資料串流上傳至 blob 儲存體，如下列程式碼範例所示：
 
 ```csharp
 public static async Task<string> UploadFileAsync(ContainerType containerType, Stream stream)
@@ -173,7 +176,7 @@ public static async Task<string> UploadFileAsync(ContainerType containerType, St
 }
 ```
 
-在抓取容器參考之後，方法會建立容器（如果尚未存在的話）。 接著會建立新的 `Guid` 做為唯一的 blob 名稱，並將 blob 區塊參考抓取為 `CloudBlockBlob` 實例。 接著會使用 `UploadFromStreamAsync` 方法將資料串流上傳至 blob，如果 blob 不存在，則會加以覆寫，如果存在，則會加以覆寫。
+在抓取容器參考之後，方法會建立容器（如果尚未存在的話）。 接著會建立新的，做為 `Guid` 唯一的 blob 名稱，並將 blob 區塊參考抓取為 `CloudBlockBlob` 實例。 然後使用方法將資料串流上傳至 blob `UploadFromStreamAsync` ，如果 blob 不存在，則會加以建立，如果存在，則會加以覆寫。
 
 您必須先將檔案轉換成位元組資料流程，才能使用此方法將檔案上傳到 blob 儲存體。 這會在下列程式碼範例中示範：
 
@@ -182,11 +185,11 @@ var byteData = Encoding.UTF8.GetBytes(text);
 uploadedFilename = await AzureStorage.UploadFileAsync(ContainerType.Text, new MemoryStream(byteData));
 ```
 
-`text` 的資料會轉換成位元組陣列，然後包裝為傳遞給 `UploadFileAsync` 方法的資料流程。
+`text`資料會轉換成位元組陣列，然後包裝為傳遞至方法的資料流程 `UploadFileAsync` 。
 
 ## <a name="downloading-data-from-a-container"></a>從容器下載資料
 
-`GetFileAsync` 方法是用來從 Azure 儲存體下載 blob 資料，如下列程式碼範例所示：
+`GetFileAsync`方法是用來從 Azure 儲存體下載 blob 資料，如下列程式碼範例所示：
 
 ```csharp
 public static async Task<byte[]> GetFileAsync(ContainerType containerType, string name)
@@ -206,7 +209,7 @@ public static async Task<byte[]> GetFileAsync(ContainerType containerType, strin
 }
 ```
 
-在取得容器參考之後，方法會抓取所儲存資料的 blob 參考。 如果 blob 存在，則 `FetchAttributesAsync` 方法會抓取其屬性。 系統會建立正確大小的位元組陣列，並下載 blob 做為傳回給呼叫方法的位元組陣列。
+在取得容器參考之後，方法會抓取所儲存資料的 blob 參考。 如果 blob 存在，則方法會抓取其屬性 `FetchAttributesAsync` 。 系統會建立正確大小的位元組陣列，並下載 blob 做為傳回給呼叫方法的位元組陣列。
 
 下載 blob 位元組資料之後，必須將它轉換成其原始表示。 這會在下列程式碼範例中示範：
 
@@ -215,11 +218,11 @@ var byteData = await AzureStorage.GetFileAsync(ContainerType.Text, uploadedFilen
 string text = Encoding.UTF8.GetString(byteData);
 ```
 
-在轉換回 UTF8 編碼的字串之前，`GetFileAsync` 方法會從 Azure 儲存體中抓取位元組陣列。
+在 `GetFileAsync` 轉換回 UTF8 編碼的字串之前，會先從方法 Azure 儲存體取得位元組陣列。
 
 ## <a name="listing-data-in-a-container"></a>列出容器中的資料
 
-`GetFilesListAsync` 方法是用來抓取容器中所儲存的 blob 清單，如下列程式碼範例所示：
+`GetFilesListAsync`方法是用來抓取儲存在容器中的 blob 清單，如下列程式碼範例所示：
 
 ```csharp
 public static async Task<IList<string>> GetFilesListAsync(ContainerType containerType)
@@ -244,11 +247,11 @@ public static async Task<IList<string>> GetFilesListAsync(ContainerType containe
 }
 ```
 
-在取得容器參考之後，方法會使用容器的 `ListBlobsSegmentedAsync` 方法來抓取容器中 blob 的參考。 不 `null``BlobContinuationToken` 實例時，會列舉 `ListBlobsSegmentedAsync` 方法所傳回的結果。 每個 blob 會從傳回的 `IListBlobItem` 轉換成 `CloudBlockBlob`，以便在將其值新增至 `allBlobsList` 集合之前，存取 blob 的 `Name` 屬性。 一旦 `null``BlobContinuationToken` 實例之後，最後一個 blob 名稱就會傳回，而執行則會結束迴圈。
+在取得容器參考之後，方法會使用容器的 `ListBlobsSegmentedAsync` 方法來抓取容器內 blob 的參考。 `ListBlobsSegmentedAsync`當實例不是時，會列舉方法所傳回的結果 `BlobContinuationToken` `null` 。 每個 blob 會從傳回的轉換成， `IListBlobItem` `CloudBlockBlob` 以便在將 `Name` 其值新增至集合之前，存取 blob 的屬性 `allBlobsList` 。 一旦 `BlobContinuationToken` 實例為，就會 `null` 傳回最後一個 blob 名稱，而執行則會結束迴圈。
 
 ## <a name="deleting-data-from-a-container"></a>刪除容器中的資料
 
-`DeleteFileAsync` 方法是用來從容器中刪除 blob，如下列程式碼範例所示：
+`DeleteFileAsync`方法是用來從容器中刪除 blob，如下列程式碼範例所示：
 
 ```csharp
 public static async Task<bool> DeleteFileAsync(ContainerType containerType, string name)
@@ -259,7 +262,7 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 }
 ```
 
-在取得容器參考之後，方法會抓取所指定 blob 的 blob 參考。 然後會使用 `DeleteIfExistsAsync` 方法來刪除 blob。
+在取得容器參考之後，方法會抓取所指定 blob 的 blob 參考。 接著，會使用方法刪除 blob `DeleteIfExistsAsync` 。
 
 ## <a name="related-links"></a>相關連結
 

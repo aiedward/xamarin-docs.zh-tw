@@ -1,34 +1,37 @@
 ---
-title: 建立 XAML 標記延伸
-description: 這篇文章說明如何定義您自己自訂的 Xamarin.Forms XAML 標記延伸模組。 XAML 標記延伸是一種可執行 IMarkupExtension 或 IMarkupExtension<T>介面的類別。
-ms.prod: xamarin
-ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 4d26713f258a8c97abd4b4e9970ebdd4d490f485
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: 本文說明如何定義您自己的自訂 Xamarin.Forms XAML 標記延伸。 XAML 標記延伸是一種可執行 IMarkupExtension 或 IMarkupExtension 介面的類別 <T> 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 878ebcaa5249261afac2776a9e7cf47c0c047135
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655855"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130529"
 ---
 # <a name="creating-xaml-markup-extensions"></a>建立 XAML 標記延伸
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
-以程式設計方式層級中，XAML 標記延伸是實作的類別[ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension)或是[ `IMarkupExtension<T>` ](xref:Xamarin.Forms.Xaml.IMarkupExtension`1)介面。 您可以瀏覽原始程式碼，如下所述的標準標記延伸[ **Markupextension** directory](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) Xamarin.Forms GitHub 存放庫。
+在程式設計層級上，XAML 標記延伸是一種可實作為 [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) 或介面的類別 [`IMarkupExtension<T>`](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) 。 您可以在 GitHub 存放庫的[ **MarkupExtensions**目錄](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)中，流覽下面所述標準標記延伸的原始程式碼 Xamarin.Forms 。
 
-您也可定義您自己自訂的 XAML 標記延伸模組，藉由衍生自`IMarkupExtension`或`IMarkupExtension<T>`。 如果標記延伸取得特定類型的值，請使用一般格式。 這是使用 Xamarin.Forms 標記延伸的數個案例：
+您也可以衍生自或，以定義您自己的自訂 XAML 標記延伸 `IMarkupExtension` `IMarkupExtension<T>` 。 如果標記延伸取得特定類型的值，請使用一般表單。 以下是數個標記延伸的情況 Xamarin.Forms ：
 
-- `TypeExtension` 衍生自 `IMarkupExtension<Type>`
-- `ArrayExtension` 衍生自 `IMarkupExtension<Array>`
-- `DynamicResourceExtension` 衍生自 `IMarkupExtension<DynamicResource>`
-- `BindingExtension` 衍生自 `IMarkupExtension<BindingBase>`
-- `ConstraintExpression` 衍生自 `IMarkupExtension<Constraint>`
+- `TypeExtension`衍生自`IMarkupExtension<Type>`
+- `ArrayExtension`衍生自`IMarkupExtension<Array>`
+- `DynamicResourceExtension`衍生自`IMarkupExtension<DynamicResource>`
+- `BindingExtension`衍生自`IMarkupExtension<BindingBase>`
+- `ConstraintExpression`衍生自`IMarkupExtension<Constraint>`
 
-這兩個`IMarkupExtension`介面定義只有一個方法，名為`ProvideValue`:
+這兩個 `IMarkupExtension` 介面只會定義一個方法，名為 `ProvideValue` ：
 
 ```csharp
 public interface IMarkupExtension
@@ -42,13 +45,13 @@ public interface IMarkupExtension<out T> : IMarkupExtension
 }
 ```
 
-由於`IMarkupExtension<T>`衍生自`IMarkupExtension`，並包含`new`關鍵字`ProvideValue`，它同時包含`ProvideValue`方法。
+由於 `IMarkupExtension<T>` 衍生自 `IMarkupExtension` 並 `new` 在上包含關鍵字 `ProvideValue` ，因此它包含兩種 `ProvideValue` 方法。
 
-非常頻繁且 XAML 標記延伸模組會定義參與的屬性至傳回值。 (明顯的例外狀況`NullExtension`，在其中`ProvideValue`只會傳回`null`。)`ProvideValue`方法具有單一引數的型別`IServiceProvider`，將在本文稍後討論。
+通常，XAML 標記延伸會定義有助於傳回值的屬性。 （明顯的例外狀況是 `NullExtension` ，只會傳回 `ProvideValue` `null` ）。`ProvideValue`方法具有類型的單一引數 `IServiceProvider` ，將在本文稍後討論。
 
-## <a name="a-markup-extension-for-specifying-color"></a>指定色彩之標記延伸模組
+## <a name="a-markup-extension-for-specifying-color"></a>用於指定色彩的標記延伸
 
-下列 XAML 標記延伸可讓您建構`Color`值使用色調、 飽和度和亮度的元件。 它會定義四個屬性的色彩，包括會初始化為 1 的 alpha 元件的四個元件。 類別衍生自`IMarkupExtension<Color>`表示`Color`傳回值：
+下列 XAML 標記延伸可讓您 `Color` 使用色調、飽和度和亮度元件來建立值。 它會針對色彩的四個元件定義四個屬性，包括初始化為1的 Alpha 元件。 類別衍生自 `IMarkupExtension<Color>` ，表示傳回 `Color` 值：
 
 ```csharp
 public class HslColorExtension : IMarkupExtension<Color>
@@ -73,9 +76,9 @@ public class HslColorExtension : IMarkupExtension<Color>
 }
 ```
 
-因為`IMarkupExtension<T>`衍生自`IMarkupExtension`，此類別必須包含兩個`ProvideValue`方法，傳回對應到一個`Color`另一個則會傳回`object`，但第二個方法可以直接呼叫第一個方法。
+因為 `IMarkupExtension<T>` 衍生自 `IMarkupExtension` ，所以類別必須包含兩個 `ProvideValue` 方法，一個會傳回， `Color` 另一個 `object` 則會傳回，但第二個方法可以直接呼叫第一個方法。
 
-**HSL 色彩 Demo**頁面會顯示各種`HslColorExtension`可以出現在 XAML 檔案，以指定的色彩`BoxView`:
+[ **HSL 色彩示範**] 頁面會顯示 `HslColorExtension` 可在 XAML 檔案中顯示的各種方式，以指定的色彩 `BoxView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -117,15 +120,15 @@ public class HslColorExtension : IMarkupExtension<Color>
 </ContentPage>
 ```
 
-請注意，當`HslColorExtension`XML 標記，四個屬性會設為屬性，但當它大括號之間出現時，會以不含引號的逗號分隔的四個屬性。 預設值`H`， `S`，並`L`0，且預設值`A`為 1，因此可以省略這些屬性，如果要將它們設為預設值。 最後一個範例顯示的範例，其中的明暗度為 0，這通常會導致黑色，但 alpha 色板為 0.5，因此是半透明的且會出現灰色以白色為背景的頁面：
+請注意，當 `HslColorExtension` 是 XML 標記時，會將四個屬性設定為屬性，但當它出現在大括弧之間時，四個屬性會以逗號分隔，不加引號。 、和的預設值為 `H` `S` `L` 0，而的預設值 `A` 為1，因此如果您想要將它們設定為預設值，則可以省略這些屬性。 最後一個範例顯示亮度為0的範例，通常會產生黑色，但 Alpha 色板為0.5，因此為半透明，並針對頁面的白色背景顯示為灰色：
 
 [![HSL 色彩示範](creating-images/hslcolordemo-small.png "HSL 色彩示範")](creating-images/hslcolordemo-large.png#lightbox "HSL 色彩示範")
 
-## <a name="a-markup-extension-for-accessing-bitmaps"></a>標記延伸來存取的點陣圖
+## <a name="a-markup-extension-for-accessing-bitmaps"></a>用於存取點陣圖的標記延伸
 
-引數`ProvideValue`是實作的物件[ `IServiceProvider` ](xref:System.IServiceProvider)介面，其定義於.NET`System`命名空間。 這個介面具有一個成員，名為的方法`GetService`與`Type`引數。
+的引數 `ProvideValue` 是一個物件，它會執行 [`IServiceProvider`](xref:System.IServiceProvider) .net 命名空間中定義的介面 `System` 。 這個介面有一個成員，這是一個名為 `GetService` 且具有 `Type` 引數的方法。
 
-`ImageResourceExtension`如下所示的類別顯示的可能用法之一`IServiceProvider`並`GetService`若要取得`IXmlLineInfoProvider`可以提供行與字元表示已在偵測到的特定錯誤的資訊的物件。 在此情況下，會引發例外狀況時`Source`屬性尚未設定：
+`ImageResourceExtension`下面所示的類別顯示一個可能的使用 `IServiceProvider` 和， `GetService` 以取得 `IXmlLineInfoProvider` 可提供行和字元資訊的物件，指出偵測到特定錯誤的位置。 在此情況下，當尚未設定屬性時，就會引發例外狀況 `Source` ：
 
 ```csharp
 [ContentProperty("Source")]
@@ -153,9 +156,9 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` 當需要存取影像檔儲存為.NET Standard 程式庫專案中的內嵌資源 XAML 檔案時，則會有幫助。 它會使用`Source`屬性，以呼叫靜態`ImageSource.FromResource`方法。 此方法需要完整的資源名稱，其中包含組件名稱、 資料夾名稱，並以句號分隔的檔案名稱。 第二個引數`ImageSource.FromResource`方法提供組件名稱，並只需要此屬性的 UWP 上的發行組建。 不論如何，`ImageSource.FromResource`必須從包含點陣圖，這表示此 XAML 資源延伸模組無法為外部程式庫的一部分，除非影像是該程式庫中的組件呼叫。 (請參閱[**內嵌影像**](~/xamarin-forms/user-interface/images.md#embedded-images)存取點陣圖儲存為內嵌資源的更多有關的文章。)
+`ImageResourceExtension`當 XAML 檔案需要存取儲存為 .NET Standard 程式庫專案中之內嵌資源的影像檔時，會很有説明。 它會使用 `Source` 屬性來呼叫靜態 `ImageSource.FromResource` 方法。 這個方法需要完整的資源名稱，其中包含元件名稱、資料夾名稱，以及以句點分隔的檔案名。 方法的第二個引數 `ImageSource.FromResource` 會提供元件名稱，而且只有 UWP 上的發行組建才需要。 不論 `ImageSource.FromResource` 是否必須從包含點陣圖的元件呼叫，這表示此 XAML 資源延伸模組不可以是外部程式庫的一部分，除非映射也在該程式庫中。 （如需存取儲存為內嵌資源之點陣圖的詳細資訊，請參閱[**內嵌影像**](~/xamarin-forms/user-interface/images.md#embedded-images)文章。）
 
-雖然`ImageResourceExtension`需要`Source`屬性設定，`Source`屬性做為類別的內容屬性所示的屬性。 這表示`Source=`括孤括住之運算式的一部分，則可以省略。 在 **映像資源示範**頁面上，`Image`項目擷取使用資料夾名稱和檔案名稱以句號分隔的兩個映像：
+雖然 `ImageResourceExtension` 需要 `Source` 設定屬性，但 `Source` 屬性會在屬性中表示為類別的 content 屬性。 這表示 `Source=` 可以省略運算式中的部分（大括弧）。 在 [**影像資源示範**] 頁面中， `Image` 元素會使用資料夾名稱和檔案名（以句點分隔）提取兩個影像：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,29 +182,29 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 </ContentPage>
 ```
 
-以下是執行的程式：
+以下是程式執行情況：
 
-[![映像資源示範](creating-images/imageresourcedemo-small.png "映像資源示範")](creating-images/imageresourcedemo-large.png#lightbox "映像資源示範")
+[![影像資源示範](creating-images/imageresourcedemo-small.png "影像資源示範")](creating-images/imageresourcedemo-large.png#lightbox "影像資源示範")
 
 ## <a name="service-providers"></a>服務提供者
 
-藉由使用`IServiceProvider`引數`ProvideValue`，XAML 標記延伸可讓 XAML 檔案中使用的實用資訊的存取。 不過，利用`IServiceProvider`引數成功，您需要知道何種服務可在特定內容中。 若要了解這項功能的最佳方式是藉由研究中的現有 XAML 標記延伸模組的原始程式碼[ **Markupextension**資料夾](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)在 GitHub 上的 Xamarin.Forms 存放庫中。 請注意，服務的某些類型的 Xamarin.Forms 內部。
+藉由使用的 `IServiceProvider` 引數 `ProvideValue` ，xaml 標記延伸可存取其所使用之 XAML 檔案的實用資訊。 但若要 `IServiceProvider` 順利使用引數，您必須知道特定內容中有何種服務可用。 瞭解這項功能的最佳方式，就是在 GitHub 上的存放庫中，研究[ **MarkupExtensions**資料夾](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)內的現有 XAML 標記延伸的原始程式碼 Xamarin.Forms 。 請注意，某些類型的服務是內部的 Xamarin.Forms 。
 
-在某些 XAML 標記延伸模組，這項服務可能很有用：
+在某些 XAML 標記延伸中，此服務可能很有用：
 
 ```csharp
  IProvideValueTarget provideValueTarget = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
 ```
 
-`IProvideValueTarget`介面會定義兩個屬性：`TargetObject`和`TargetProperty`。 中取得這項資訊的時機`ImageResourceExtension`類別，`TargetObject`是`Image`並`TargetProperty`是`BindableProperty`物件`Source`屬性`Image`。 這是在其已設定 XAML 標記延伸的屬性。
+`IProvideValueTarget`介面會定義兩個屬性： `TargetObject` 和 `TargetProperty` 。 當在類別中取得這項資訊時 `ImageResourceExtension` ， `TargetObject` 會是， `Image` 而 `TargetProperty` 則是 `BindableProperty` `Source` 之屬性的物件 `Image` 。 這是已設定 XAML 標記延伸的屬性。
 
-`GetService`呼叫的引數`typeof(IProvideValueTarget)`實際上會傳回型別的物件`SimpleValueTargetProvider`，其定義於`Xamarin.Forms.Xaml.Internals`命名空間。 如果您轉型的傳回值`GetService`成該類型，您也可以存取`ParentObjects`屬性，這是陣列，其中包含`Image`項目，`Grid`父代，而`ImageResourceDemoPage`父代`Grid`。
+`GetService`具有之引數的呼叫 `typeof(IProvideValueTarget)` 實際上會傳回類型為的物件 `SimpleValueTargetProvider` ，其定義于 `Xamarin.Forms.Xaml.Internals` 命名空間中。 如果您將的傳回值轉換 `GetService` 成該類型，您也可以存取 `ParentObjects` 屬性，這是一個陣列，其中包含專案 `Image` 、 `Grid` 父系和的 `ImageResourceDemoPage` 父系 `Grid` 。
 
 ## <a name="conclusion"></a>結論
 
-XAML 標記延伸在 XAML 中扮演重要的角色，藉由擴充，能夠從各種來源中設定屬性。 此外，如果現有的 XAML 標記延伸模組未提供真正需要您也可以撰寫您自己。
+XAML 標記延伸可讓您從各種來源擴充設定屬性的能力，以在 XAML 中扮演重要的角色。 此外，如果現有的 XAML 標記延伸並未提供您所需的確切功能，您也可以自行撰寫。
 
 ## <a name="related-links"></a>相關連結
 
-- [標記延伸模組 （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
-- [Xamarin.Forms 通訊錄中的 XAML 標記延伸模組的章節](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [標記延伸（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [書籍中的 XAML 標記延伸章節 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)

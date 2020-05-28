@@ -1,22 +1,25 @@
 ---
-title: Porter-Duff blend 模式
-description: 使用 Porter-Duff blend 模式，根據來源和目的地影像來撰寫場景。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: c15dd4606a75cc3cdffbad71f15299568157213a
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305420"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131049"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter-Duff blend 模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 Porter-Duff blend 模式的命名方式為 Thomas Porter 和 Tom Duff，其在處理 Lucasfilm 時開發了合成的代數。 其紙張[_組合數位影像_](https://graphics.pixar.com/library/Compositing/paper.pdf)已發行于1984年7月的_電腦圖形_，第 259 253 頁的問題。 這些 blend 模式對於組合很重要，它會將各種影像組合成複合場景：
 
@@ -40,17 +43,17 @@ Porter-Duff blend 模式的命名方式為 Thomas Porter 和 Tom Duff，其在�
 
 ![Porter-Duff 來源](porter-duff-images/PorterDuffSrcOver.png "Porter-Duff 來源")
 
-來源的透明圖元允許背景顯示，而 bluish 來源圖元則會遮蔽背景。 這是正常情況，在 SkiaSharp 中稱為 `SKBlendMode.SrcOver`。 第一次具現化 `SKPaint` 物件時，該值是 `BlendMode` 屬性的預設設定。
+來源的透明圖元允許背景顯示，而 bluish 來源圖元則會遮蔽背景。 這是正常情況，在 SkiaSharp 中稱為 `SKBlendMode.SrcOver` 。 `BlendMode` `SKPaint` 第一次具現化物件時，該值是屬性的預設設定。
 
-不過，您可以為不同的效果指定不同的 blend 模式。 如果您指定 `SKBlendMode.DstOver`，則在來源和目的地交集的區域中，會出現目的地，而不是來源：
+不過，您可以為不同的效果指定不同的 blend 模式。 如果您指定 `SKBlendMode.DstOver` ，則在來源與目的地相交的區域中，會顯示目的地，而不是來源：
 
 ![Porter-Duff 目的地](porter-duff-images/PorterDuffDstOver.png "Porter-Duff 目的地")
 
-`SKBlendMode.DstIn` blend 模式只會顯示目的地和來源使用目的地色彩交集的區域：
+`SKBlendMode.DstIn`Blend 模式只會顯示目的地和來源使用目的地色彩交集的區域：
 
 ![Porter-Duff 目的地于](porter-duff-images/PorterDuffDstIn.png "Porter-Duff 目的地于")
 
-`SKBlendMode.Xor` 的 blend 模式（[排除] 或 []）會導致兩個區域重迭時不會出現任何內容：
+Blend 模式（[ `SKBlendMode.Xor` 排除] 或 []）會導致兩個區域重迭時不會出現任何內容：
 
 ![Porter-Duff 獨佔 Or](porter-duff-images/PorterDuffXor.png "Porter-Duff 獨佔 Or")
 
@@ -62,28 +65,66 @@ Porter-Duff blend 模式的命名方式為 Thomas Porter 和 Tom Duff，其在�
 
 組合總數為2（左上方）次2（適用于右下角）3（代表中心）或12。 這些是12個基本的 Porter-Duff 合成模式。
 
-在撰寫_數位影像_（頁面256）的結尾，Porter 和 Duff 會新增名為_加號_的第13個模式（對應至 SKIASHARP `SKBlendMode.Plus` 成員和 w3c_較淡_的模式（這不會與 w3c_淡化_模式混淆）。此 `Plus` 模式會加入目的地和來源色彩，這是稍後將更詳細說明的進程。
+在撰寫_數位影像_（頁面256）的結尾，Porter 和 Duff 會新增名為_加號_的第13個模式（對應至 SkiaSharp `SKBlendMode.Plus` 成員和 w3c_較淡_的模式（這不會與 w3c_淡化_模式混淆）。此 `Plus` 模式會加入目的地和來源色彩，這是稍後將更詳細說明的程式。
 
-Skia 會新增名為 `Modulate` 的第14個模式，其與 `Plus` 非常相似，不同之處在于目的地和來源色彩會相乘。 它可以被視為額外的 Porter Duff blend 模式。
+Skia 會新增名 `Modulate` 為的第14個模式，其非常類似， `Plus` 不同之處在于目的地和來源色彩會相乘。 它可以被視為額外的 Porter Duff blend 模式。
 
 以下是 SkiaSharp 中所定義的14個 Porter Duff 模式。 此表格顯示其如何為上圖中三個非空白區域的色彩著色：
 
-| [模式]       | Destination | 處 | 來源 |
-| ---------- |:-----------:|:------------:|:------:|
-| `Clear`    |             |              |        |
-| `Src`      |             | 來源       | X      |
-| `Dst`      | X           | Destination  |        |
-| `SrcOver`  | X           | 來源       | X      |
-| `DstOver`  | X           | Destination  | X      |
-| `SrcIn`    |             | 來源       |        |
-| `DstIn`    |             | Destination  |        |
-| `SrcOut`   |             |              | X      |
-| `DstOut`   | X           |              |        |
-| `SrcATop`  | X           | 來源       |        |
-| `DstATop`  |             | Destination  | X      |
-| `Xor`      | X           |              | X      |
-| `Plus`     | X           | Sum          | X      |
-| `Modulate` |             | Products      |        | 
+| 模式       | Destination | 處 | 來源 |
+| ---
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-----|：---標題：描述： ms-chap： assetid： author： ms. author： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------：（|）---標題：描述： ms-chap： assetid： author： ms. 作者： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------：（|）---標題：描述： ms-chap： assetid： author： ms. 作者： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+---:| |`Clear`    |            |             |       | |`Src`      |            |來源 |X | |`Dst`      |X |目的地 |       | |`SrcOver`  |X |來源 |X | |`DstOver`  |X |目的地 |X | |`SrcIn`    |            |來源 |       | |`DstIn`    |            |目的地 |       | |`SrcOut`   |            |             |X | |`DstOut`   |X |             |       | |`SrcATop`  |X |來源 |       | |`DstATop`  |            |目的地 |X | |`Xor`      |X |             |X | |`Plus`     |X |Sum |X | |`Modulate` |            |產品 |       | 
 
 這些 blend 模式是對稱的。 可以交換來源和目的地，而且所有模式仍然可供使用。
 
@@ -95,9 +136,9 @@ Skia 會新增名為 `Modulate` 的第14個模式，其與 `Plus` 非常相似�
 - **Out**尾碼表示交集不是彩色的。 輸出只是來源或目的地的部分，屬於交集的「out」。
 - 上方**的尾碼是** **In**和**Out**的聯集。其中包含來源或目的地「位於」另一個位置的區域。
 
-請注意 `Plus` 和 `Modulate` 模式的差異。 這些模式會針對來源和目的地圖元執行不同類型的計算。 很快就會詳細說明這些功能。
+請注意 `Plus` 和模式的差異 `Modulate` 。 這些模式會針對來源和目的地圖元執行不同類型的計算。 很快就會詳細說明這些功能。
 
-[ **Porter-Duff] 格線**頁會以方格的形式，在一個畫面上顯示所有14個模式。 每個模式都是個別的 `SKCanvasView`實例。 基於這個理由，類別衍生自名為 `PorterDuffCanvasView``SKCanvasView`。 靜態的函式會建立兩個大小相同的點陣圖，一個在其左上角區域中具有 brownish 矩形，另一個則具有 bluish 矩形：
+[ **Porter-Duff] 格線**頁會以方格的形式，在一個畫面上顯示所有14個模式。 每個模式都是個別的實例 `SKCanvasView` 。 基於這個理由，類別衍生自 `SKCanvasView` 名為的 `PorterDuffCanvasView` 。 靜態的函式會建立兩個大小相同的點陣圖，一個在其左上角區域中具有 brownish 矩形，另一個則具有 bluish 矩形：
 
 ```csharp
 class PorterDuffCanvasView : SKCanvasView
@@ -129,7 +170,7 @@ class PorterDuffCanvasView : SKCanvasView
 }
 ```
 
-實例的函式具有 `SKBlendMode`類型的參數。 它會將此參數儲存在欄位中。 
+實例的函式具有類型的參數 `SKBlendMode` 。 它會將此參數儲存在欄位中。 
 
 ```csharp
 class PorterDuffCanvasView : SKCanvasView
@@ -179,13 +220,13 @@ class PorterDuffCanvasView : SKCanvasView
 }
 ```
 
-`OnPaintSurface` 覆寫會繪製兩個位圖。 第一個是以一般方式繪製：
+覆 `OnPaintSurface` 寫會繪製兩個位圖。 第一個是以一般方式繪製：
 
 ```csharp
 canvas.DrawBitmap(dstBitmap, rect);
 ```
 
-第二個是以 `SKPaint` 物件繪製，其中 `BlendMode` 屬性已設定為函式引數：
+第二個是以物件繪製， `SKPaint` 其中 `BlendMode` 屬性已設定為函式引數：
 
 ```csharp
 using (SKPaint paint = new SKPaint())
@@ -195,9 +236,9 @@ using (SKPaint paint = new SKPaint())
 }
 ```
 
-`OnPaintSurface` 覆寫的其餘部分會在點陣圖周圍繪製一個矩形，以指出其大小。
+覆寫的其餘部分會在 `OnPaintSurface` 點陣圖周圍繪製一個矩形，以指出其大小。
 
-`PorterDuffGridPage` 類別會建立 `PorterDurffCanvasView`的十四個實例，一個用於 `blendModes` 陣列的每個成員。 陣列中 `SKBlendModes` 成員的順序與資料表稍有不同，以定位彼此連續的類似模式。 `PorterDuffCanvasView` 的14個實例會與 `Grid`中的標籤一起組織：
+`PorterDuffGridPage`類別會建立十四個實例 `PorterDurffCanvasView` ，一個用於陣列的每個成員 `blendModes` 。 陣列中的成員順序與 `SKBlendModes` 資料表稍有不同，以定位彼此連續的類似模式。 的14個實例 `PorterDuffCanvasView` 會與中的標籤一起組織 `Grid` ：
 
 ```csharp
 public class PorterDuffGridPage : ContentPage
@@ -261,7 +302,7 @@ public class PorterDuffGridPage : ContentPage
 
 [![Porter-Duff 方格](porter-duff-images/PorterDuffGrid.png "Porter-Duff 方格")](porter-duff-images/PorterDuffGrid-Large.png#lightbox)
 
-您會想要說服自己的透明度對於 Porter-Duff blend 模式正常運作而言非常重要。 `PorterDuffCanvasView` 類別總共包含三個 `Canvas.Clear` 方法的呼叫。 它們全都使用無參數方法，將所有圖元設定為透明：
+您會想要說服自己的透明度對於 Porter-Duff blend 模式正常運作而言非常重要。 `PorterDuffCanvasView`類別總共包含三個對方法的呼叫 `Canvas.Clear` 。 它們全都使用無參數方法，將所有圖元設定為透明：
 
 ```csharp
 canvas.Clear();
@@ -273,9 +314,9 @@ canvas.Clear();
 canvas.Clear(SKColors.White);
 ```
 
-在這項變更之後，部分 blend 模式看起來會很有作用，但有些則不會。 如果您將來源點陣圖的背景設定為白色，則 `SrcOver` 模式無法使用，因為來源點陣圖中沒有任何透明圖元可讓目的地顯示。 如果您將目的地點陣圖或畫布的背景設定為白色，則 `DstOver` 無法使用，因為目的地沒有任何透明的圖元。
+在這項變更之後，部分 blend 模式看起來會很有作用，但有些則不會。 如果您將來源點陣圖的背景設定為白色，則 `SrcOver` 模式無法使用，因為來源點陣圖中沒有透明圖元可讓目的地顯示。 如果您將目的地點陣圖或畫布的背景設定為白色，則 `DstOver` 無法使用，因為目的地不會有任何透明圖元。
 
-在 [ **Porter-Duff] 格線**頁中，使用較簡單的 `DrawRect` 呼叫來取代點陣圖可能會有一些誘惑。 這適用于目的地矩形，但不適用於來源矩形。 來源矩形必須包含的不只是 bluish 彩色區域。 來源矩形必須包含對應至目的地之彩色區域的透明區域。 只有這樣的 blend 模式才會生效。
+在 [ **Porter-Duff] 格線**頁中，使用較簡單的呼叫來取代點陣圖可能會有一個誘惑 `DrawRect` 。 這適用于目的地矩形，但不適用於來源矩形。 來源矩形必須包含的不只是 bluish 彩色區域。 來源矩形必須包含對應至目的地之彩色區域的透明區域。 只有這樣的 blend 模式才會生效。
 
 ## <a name="using-mattes-with-porter-duff"></a>搭配 Porter 使用遮罩-Duff
 
@@ -289,7 +330,7 @@ canvas.Clear(SKColors.White);
 
 這_不_是建立專家的遮罩。 最理想的情況是，遮罩應包含黑色圖元邊緣周圍的部分透明圖元，而此遮罩則不會。
 
-[基礎構件 **-牆合成**] 頁面的 XAML 檔案會具現化 `SKCanvasView`，而 `Button` 會引導使用者完成組成最終影像的程式：
+[基礎構件 **-牆合成**] 頁面的 XAML 檔案會具現化 `SKCanvasView` 和 `Button` ，以引導使用者完成組成最終影像的程式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -312,7 +353,7 @@ canvas.Clear(SKColors.White);
 </ContentPage>
 ```
 
-程式碼後置檔案會載入所需的兩個位圖，並處理 `Button`的 `Clicked` 事件。 針對每個 `Button` 按一下 [`step`] 欄位會遞增，而且會為 `Button`設定新的 `Text` 屬性。 當 `step` 達到5時，會將它設回0：
+程式碼後置檔案會載入所需的兩個位圖，並處理的 `Clicked` 事件 `Button` 。 每次 `Button` 按下 `step` 時，欄位都會遞增，而且 `Text` 會針對設定新的屬性 `Button` 。 當 `step` 到達5時，它會設回0：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -361,11 +402,11 @@ public partial class BrickWallCompositingPage : ContentPage
 }
 ```
 
-當程式第一次執行時，除了 `Button`以外，看不到任何內容：
+當程式第一次執行時，不會顯示任何內容，除了 `Button` ：
 
 [![基礎構件-牆合成步驟0](porter-duff-images/BrickWallCompositing0.png "基礎構件-牆合成步驟0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-一旦按下 `Button` 會導致 `step` 遞增為1，而 `PaintSurface` 處理常式現在會顯示**SeatedMonkey**：
+按 `Button` 一次會導致 `step` 遞增為1，且 `PaintSurface` 處理常式現在會顯示**SeatedMonkey**：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -391,7 +432,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![基礎構件-牆合成步驟1](porter-duff-images/BrickWallCompositing1.png "基礎構件-牆合成步驟1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
-再次按下 `Button`，`step` 遞增為2。 這是顯示**SeatedMonkeyMatte .png**檔案的重要步驟：
+再按 `Button` 一次，並 `step` 將增加為2。 這是顯示**SeatedMonkeyMatte .png**檔案的重要步驟：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -414,7 +455,7 @@ public partial class BrickWallCompositingPage : ContentPage
 }
 ```
 
-Blend 模式是 `SKBlendMode.DstIn`的，這表示目的地將會保留在對應至來源非透明區域的區域中。 對應至原始點陣圖之目的地矩形的其餘部分會變成透明：
+Blend 模式是 `SKBlendMode.DstIn` ，這表示目的地將會保留在對應至來源非透明區域的區域中。 對應至原始點陣圖之目的地矩形的其餘部分會變成透明：
 
 [![基礎構件-牆合成步驟2](porter-duff-images/BrickWallCompositing2.png "基礎構件-牆合成步驟2")](porter-duff-images/BrickWallCompositing2-Large.png#lightbox)
 
@@ -451,11 +492,11 @@ public partial class BrickWallCompositingPage : ContentPage
 }
 ```
 
-因為此人行道必須在猴子背後，所以 blend 模式是 `DstOver`。 目的地只會出現在背景為透明的位置：
+因為此人行道必須在猴子背後，所以 blend 模式是 `DstOver` 。 目的地只會出現在背景為透明的位置：
 
 [![基礎構件-牆合成步驟3](porter-duff-images/BrickWallCompositing3.png "基礎構件-牆合成步驟3")](porter-duff-images/BrickWallCompositing3-Large.png#lightbox)
 
-最後一個步驟是加入基礎構件牆。 程式會使用 [基礎構件-牆點陣圖] 磚，做為 `AlgorithmicBrickWallPage` 類別中 `BrickWallTile` 的靜態屬性。 轉譯轉換會加入至 `SKShader.CreateBitmap` 呼叫來將磚移位，讓底部的資料列成為完整的磚：
+最後一個步驟是加入基礎構件牆。 程式會使用可做為類別中靜態屬性的基礎構件-牆點陣圖磚 `BrickWallTile` `AlgorithmicBrickWallPage` 。 轉譯轉換會加入至 `SKShader.CreateBitmap` 呼叫中，以將磚移位，讓底部的資料列成為完整的磚：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -484,17 +525,17 @@ public partial class BrickWallCompositingPage : ContentPage
 }
 ```
 
-為了方便起見，`DrawRect` 呼叫會在整個畫布上顯示此著色器，但 `DstOver` 模式會將輸出限制為只有畫布的區域仍然是透明的：
+為了方便起見， `DrawRect` 此呼叫會在整個畫布上顯示此著色器，但 `DstOver` 模式會將輸出限制為只有畫布的區域仍然是透明的：
 
 [![基礎構件-牆合成步驟4](porter-duff-images/BrickWallCompositing4.png "基礎構件-牆合成步驟4")](porter-duff-images/BrickWallCompositing4-Large.png#lightbox)
 
 顯然有其他方法可以撰寫這個場景。 它可以從背景開始，並在前景前進。 但使用 blend 模式可讓您擁有更大的彈性。 特別是，使用遮罩可讓點陣圖的背景從組成的場景中排除。
 
-如同您在[使用路徑和區域裁剪](../../curves/clipping.md)文章中所學到的，`SKCanvas` 類別會定義三種類型的裁剪，其對應于[`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect*)、 [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath*)和[`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion*)方法。 Porter-Duff blend 模式會加入另一種裁剪類型，這可讓您將影像限制為您可以繪製的任何專案，包括點陣圖。 基礎構件 **-牆複合**中使用的遮罩基本上會定義裁剪區域。
+如同您在[使用路徑和區域裁剪](../../curves/clipping.md)文章中所學到的， `SKCanvas` 類別會定義三種類型的裁剪，其對應于 [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect*) 、 [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath*) 和 [`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion*) 方法。 Porter-Duff blend 模式會加入另一種裁剪類型，這可讓您將影像限制為您可以繪製的任何專案，包括點陣圖。 基礎構件 **-牆複合**中使用的遮罩基本上會定義裁剪區域。
 
 ## <a name="gradient-transparency-and-transitions"></a>梯度透明度和轉換
 
-本文稍早所示的 Porter-Duff blend 模式範例包含不透明圖元和透明圖元的所有相關影像，但不含部分透明圖元。 Blend 模式函數也會針對這些圖元進行定義。 下表是 Porter-Duff blend 模式的更正式定義，其使用在 Skia [**SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)中找到的標記法。 （因為**SkBlendMode 參考**是 Skia 參考， C++所以會使用語法）。
+本文稍早所示的 Porter-Duff blend 模式範例包含不透明圖元和透明圖元的所有相關影像，但不含部分透明圖元。 Blend 模式函數也會針對這些圖元進行定義。 下表是 Porter-Duff blend 模式的更正式定義，其使用在 Skia [**SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)中找到的標記法。 （因為**SkBlendMode 參考**是 Skia 參考，所以會使用 c + + 語法）。
 
 在概念上，每個圖元的紅色、綠色、藍色和 Alpha 元件都會從位元組轉換為0到1範圍內的浮點數。 針對 Alpha 色板，0是完全透明，1是完全不透明
 
@@ -505,34 +546,44 @@ public partial class BrickWallCompositingPage : ContentPage
 - **Sa**是來源 Alpha 色板
 - **Sc**是來源 RGB 色彩
 
-RGB 色彩會以 Alpha 值乘以。 例如，如果**Sc**代表純紅色，但**Sa**是0x80，則 RGB 色彩會是 **（0x80，0，0）** 。 如果**Sa**為0，則所有 RGB 元件也都是零。
+RGB 色彩會以 Alpha 值乘以。 例如，如果**Sc**代表純紅色，但**Sa**是0x80，則 RGB 色彩會是 **（0x80，0，0）**。 如果**Sa**為0，則所有 RGB 元件也都是零。
 
-結果會以括弧括住，並以逗號分隔 RGB 色彩： **[Alpha，color]** 。 針對色彩，會分別針對紅色、綠色和藍色元件執行計算：
+結果會以括弧括住，並以逗號分隔 RGB 色彩： **[Alpha，color]**。 針對色彩，會分別針對紅色、綠色和藍色元件執行計算：
 
-| [模式]       | 作業 |
-| ---------- | --------- |
-| `Clear`    | [0，0]    |
-| `Src`      | [Sa，Sc]  |
-| `Dst`      | [Da，Dc]  |
-| `SrcOver`  | [Sa + Da ·（1-Sa），Sc + Dc ·（1-Sa） | 
-| `DstOver`  | [Da + Sa ·（1– Da），Dc + Sc ·（1– Da） |
-| `SrcIn`    | SaDa，Sc ·特裡斯坦 |
-| `DstIn`    | 特裡斯坦Sa、Dc ·Sa |
-| `SrcOut`   | Sa（1– Da），Sc ·（1– Da）] |
-| `DstOut`   | 特裡斯坦（1-Sa），Dc ·（1-Sa）] |
-| `SrcATop`  | [Da，Sc ·Da + Dc ·（1-Sa）] |
-| `DstATop`  | [Sa，Dc ·Sa + Sc ·（1– Da）] |
-| `Xor`      | [Sa + Da –2·SaDa，Sc ·（1– Da） + Dc ·（1-Sa）] |
-| `Plus`     | [Sa + Da，Sc + Dc] |
-| `Modulate` | SaDa，Sc ·Dc | 
+| 模式       | 作業 |
+| ---
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-當**Da**和**Sa**為0或1時，這些作業比較容易分析。 例如，如果是預設的 `SrcOver` 模式，則如果**Sa**為0，則**Sc**也是0，而結果會是 **[Da，Dc]** 、目的地 Alpha 和色彩。 如果**Sa**是1，則結果為 **[sa，Sc]** 、來源 Alpha 和色彩，或 **[1，Sc]** 。
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-[`Plus`] 和 [`Modulate`] 模式有點不同，因為來源和目的地的組合可能會產生新的色彩。 您可以使用位元組元件或浮點元件來解讀 `Plus` 模式。 在稍早所示的**Porter-Duff Grid**頁面中，目的地色彩為 **（0xC0，0x80，0x00）** ，而來源色彩為 **（0x00，0x80，0xC0）** 。 會新增每一對元件，但總和會壓制為0xFF。 其結果為 color **（0xC0，0xff，0xC0）** 。 這是交集中所顯示的色彩。
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-在 `Modulate` 模式中，RGB 值必須轉換成浮點。 目的地色彩為 **（0.75、0.5、0）** ，而來源為 **（0，0.5，0.75）** 。 RGB 元件會彼此相乘，結果會是 **（0，0.25，0）** 。 這是此模式的 [ **Porter-Duff] 格線**頁交集中所顯示的色彩。
+----- |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-[ **Porter-Duff 透明度**] 頁面可讓您檢查 Porter Duff blend 模式在部分透明的繪圖物件上的運作方式。 XAML 檔案包含具有 Porter Duff 模式的 `Picker`：
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+----- | |`Clear`    |[0，0] | |`Src`      |[Sa，Sc] | |`Dst`      |[Da，Dc] | |`SrcOver`  |[Sa + Da ·（1-Sa），Sc + Dc ·（1-Sa） | |`DstOver`  |[Da + Sa ·（1– Da），Dc + Sc ·（1– Da） | |`SrcIn`    |SaDa，Sc ·Da] | |`DstIn`    |特裡斯坦Sa、Dc ·Sa] | |`SrcOut`   |Sa（1– Da），Sc ·（1– Da）]| |`DstOut`   |特裡斯坦（1-Sa），Dc ·（1-Sa）]| |`SrcATop`  |[Da，Sc ·Da + Dc ·（1-Sa）]| |`DstATop`  |[Sa，Dc ·Sa + Sc ·（1– Da）]| |`Xor`      |[Sa + Da –2·SaDa，Sc ·（1– Da） + Dc ·（1-Sa）]| |`Plus`     |[Sa + Da，Sc + Dc] | |`Modulate` |SaDa，Sc ·Dc] | 
+
+當**Da**和**Sa**為0或1時，這些作業比較容易分析。 例如，針對預設 `SrcOver` 模式，如果**Sa**為0，則**Sc**也是0，而結果為 **[Da，Dc]**，目的地 Alpha 和色彩。 如果**Sa**是1，則結果為 **[sa，Sc]**、來源 Alpha 和色彩，或 **[1，Sc]**。
+
+`Plus`和 `Modulate` 模式有點不同，因為來源和目的地的組合可能會產生新的色彩。 您 `Plus` 可以使用位元組元件或浮點元件來解讀模式。 在稍早所示的**Porter-Duff Grid**頁面中，目的地色彩為 **（0xC0，0x80，0x00）** ，而來源色彩為 **（0x00，0x80，0xC0）**。 會新增每一對元件，但總和會壓制為0xFF。 其結果為 color **（0xC0，0xff，0xC0）**。 這是交集中所顯示的色彩。
+
+針對 `Modulate` 模式，RGB 值必須轉換成浮點。 目的地色彩為 **（0.75、0.5、0）** ，而來源為 **（0，0.5，0.75）**。 RGB 元件會彼此相乘，結果會是 **（0，0.25，0）**。 這是此模式的 [ **Porter-Duff] 格線**頁交集中所顯示的色彩。
+
+[ **Porter-Duff 透明度**] 頁面可讓您檢查 Porter Duff blend 模式在部分透明的繪圖物件上的運作方式。 XAML 檔案包含 `Picker` 具有 Porter Duff 模式的：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -657,7 +708,7 @@ public partial class PorterDuffTransparencyPage : ContentPage
 
 目的地和來源的設定與原始 Porter-Duff[_複合數位影像_](https://graphics.pixar.com/library/Compositing/paper.pdf)紙張的頁面255中所顯示的圖表非常類似，但此頁面會示範 blend 模式在部分透明度的區域中是正常運作的。
 
-您可以使用透明漸層來進行一些不同的效果。 其中一個可能是遮罩，類似于 [ **SkiaSharp 迴圈**漸層] 頁面的 [星形漸層[ **] 區段中**](../shaders/circular-gradients.md#radial-gradients-for-masking)所示的技術。 大部分的 [**組合遮罩**] 頁面與先前的程式類似。 它會載入點陣圖資源，並決定要在其中顯示的矩形。 放射狀漸層是根據預先決定的中心和半徑而建立：
+您可以使用透明漸層來進行一些不同的效果。 其中一個可能是遮罩，類似于 [ **SkiaSharp 迴圈**漸層] 頁面的 [星形漸層[**] 區段中**](../shaders/circular-gradients.md#radial-gradients-for-masking)所示的技術。 大部分的 [**組合遮罩**] 頁面與先前的程式類似。 它會載入點陣圖資源，並決定要在其中顯示的矩形。 放射狀漸層是根據預先決定的中心和半徑而建立：
 
 ```csharp
 public class CompositingMaskPage : ContentPage
@@ -725,9 +776,9 @@ public class CompositingMaskPage : ContentPage
 }
 ```
 
-與這個程式的差異在於，漸層的開頭為黑色，並以透明結束。 它會以 `DstIn`的 blend 模式顯示在點陣圖上，只會在來源不是透明的區域顯示目的地。
+與這個程式的差異在於，漸層的開頭為黑色，並以透明結束。 它會顯示在具有 blend 模式的點陣圖上 `DstIn` ，這只會在來源不是透明的區域中顯示目的地。
 
-在 `DrawRect` 呼叫之後，畫布的整個表面都是透明的，但放射狀漸層所定義的圓形除外。 最後進行的呼叫如下：
+呼叫之後 `DrawRect` ，畫布的整個表面都是透明的，但放射狀漸層所定義的圓形除外。 最後進行的呼叫如下：
 
 ```csharp
 canvas.DrawColor(SKColors.Pink, SKBlendMode.DstOver);
@@ -737,7 +788,7 @@ canvas.DrawColor(SKColors.Pink, SKBlendMode.DstOver);
 
 [![合成 Mask](porter-duff-images/CompositingMask.png "合成 Mask")](porter-duff-images/CompositingMask-Large.png#lightbox)
 
-您也可以使用 Porter-Duff 模式和部分透明的漸層，從一個影像轉換成另一個。 [漸層**轉換**] 頁面包含一個 `Slider`，表示在從0到1的轉換中的進度等級，而 `Picker` 選擇您想要的轉換類型：
+您也可以使用 Porter-Duff 模式和部分透明的漸層，從一個影像轉換成另一個。 [漸層**轉換**] 頁面包含， `Slider` 以表示從0轉換到1的進度等級，以及 `Picker` 選擇您想要的轉換類型：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -769,7 +820,7 @@ canvas.DrawColor(SKColors.Pink, SKBlendMode.DstOver);
 </ContentPage>
 ```
 
-程式碼後置檔案會載入兩個位圖資源，以示範轉換。 這些是本文稍早的**點陣圖溶解**頁面中使用的兩個影像。 此程式碼也會定義具有三個成員的列舉，而這三個類型會對應至 &mdash; 線性、放射星形和清除。 這些值會載入 `Picker`：
+程式碼後置檔案會載入兩個位圖資源，以示範轉換。 這些是本文稍早的**點陣圖溶解**頁面中使用的兩個影像。 程式碼也會定義具有三個成員的列舉，其對應至線性、星形和清除的三種漸層類型 &mdash; 。 這些值會載入至 `Picker` ：
 
 ```csharp
 public partial class GradientTransitionsPage : ContentPage
@@ -814,11 +865,11 @@ public partial class GradientTransitionsPage : ContentPage
 }
 ```
 
-程式碼後置檔案會建立三個 `SKPaint` 物件。 `paint0` 物件不會使用 blend 模式。 這個油漆物件是用來繪製一個矩形，其漸層是從黑色到透明，如 `colors` 陣列中所示。 `positions` 陣列是以 `Slider`的位置為基礎，但在某些情況下會進行調整。 如果 `Slider` 是最小或最大值，則 `progress` 值為0或1，而且兩個位圖中的其中一個應該是完全可見的。 必須針對那些值設定 `positions` 陣列。
+程式碼後置檔案會建立三個 `SKPaint` 物件。 `paint0`物件不會使用 blend 模式。 這個油漆物件是用來繪製一個矩形，其中的漸層會從黑色變成透明，如陣列中所示 `colors` 。 `positions`陣列是以的位置為基礎 `Slider` ，但在某些情況下會進行調整。 如果 `Slider` 是最小或最大值，則 `progress` 值為0或1，而且兩個位圖中的其中一個應該是完整可見的。 `positions`必須針對那些值設定陣列。
 
-如果 `progress` 值為0，則 `positions` 陣列會包含值-0.1 和0。 SkiaSharp 會將第一個值調整為等於0，這表示漸層僅在0且為透明，否則為透明化。 當 `progress` 為0.5 時，陣列會包含值0.45 和0.55。 漸層是從0到0.45 的黑色，然後轉換成透明，而從0.55 到1的效果完全透明。 當 `progress` 為1時，`positions` 陣列是1和1.1，這表示漸層是從0到1的黑色。
+如果 `progress` 值為0，則 `positions` 陣列包含值-0.1 和0。 SkiaSharp 會將第一個值調整為等於0，這表示漸層僅在0且為透明，否則為透明化。 當 `progress` 為0.5 時，陣列會包含值0.45 和0.55。 漸層是從0到0.45 的黑色，然後轉換成透明，而從0.55 到1的效果完全透明。 當 `progress` 是1時， `positions` 陣列是1和1.1，這表示漸層是從0到1的黑色。
 
-`colors` 和 `position` 陣列都用於建立漸層 `SKShader` 的三種方法。 根據 `Picker` 選取專案，只會建立其中一個著色器： 
+`colors`和 `position` 陣列同時用於建立漸層的三種方法 `SKShader` 。 根據選取專案，只會建立其中一個著色器 `Picker` ： 
 
 ```csharp
 public partial class GradientTransitionsPage : ContentPage
@@ -892,9 +943,9 @@ public partial class GradientTransitionsPage : ContentPage
 }
 ```
 
-該漸層會在沒有 blend 模式的矩形中顯示。 在該 `DrawRect` 呼叫之後，畫布只會包含從黑色到透明的漸層。 使用較高 `Slider` 值的黑色增加量。
+該漸層會在沒有 blend 模式的矩形中顯示。 在該 `DrawRect` 呼叫之後，畫布只會包含從黑色到透明的漸層。 以較高的值增加的黑色量 `Slider` 。
 
-在 `PaintSurface` 處理常式的最後四個語句中，會顯示兩個位圖。 `SrcOut` blend 模式表示第一個點陣圖只會顯示在背景的透明區域中。 第二個位圖的 `DstOver` 模式表示第二個位圖只會顯示在第一個點陣圖未顯示的區域中。
+在處理常式的最後四個語句中 `PaintSurface` ，會顯示兩個位圖。 `SrcOut`Blend 模式表示第一個點陣圖只會顯示在背景的透明區域中。 `DstOver`第二個位圖的模式表示第二個位圖只會顯示在第一個點陣圖未顯示的區域中。
 
 下列螢幕擷取畫面顯示三種不同的轉換類型，每個都在 50% mark：
 

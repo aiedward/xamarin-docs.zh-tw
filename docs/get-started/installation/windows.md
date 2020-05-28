@@ -1,17 +1,20 @@
 ---
-title: 在 Visual Studio 2019 中安裝 Xamarin
-description: 本文件描述如何在 Visual Studio 2019 中安裝 Xamarin。 討論需求、安裝程序以及驗證安裝。
-ms.prod: xamarin
-ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
-author: conceptdev
-ms.author: crdun
-ms.date: 08/28/2018
-ms.openlocfilehash: 970985e419c5710699b6bdda49da8b59ef3c6cb6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 39cf115ad80dd8cdd3ddb298ce87c065663d6cb2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71119251"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132674"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安裝 Xamarin
 
@@ -39,7 +42,7 @@ ms.locfileid: "71119251"
 
 ### <a name="ios"></a>iOS
 
-如需詳細資訊，請參閱[在 Windows 上安裝 Xamarin.iOS](~/ios/get-started/installation/windows/index.md) 指南。 
+如需詳細資訊，請參閱[在 Windows 上安裝 Xamarin.iOS](~/ios/get-started/installation/windows/index.md) 指南。
 
 1. [安裝 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
 2. [將 Visual Studio 連線至 Mac 組建主機](~/ios/get-started/installation/windows/connecting-to-mac/index.md)
@@ -54,4 +57,4 @@ ms.locfileid: "71119251"
 1. [Xamarin.Android 組態](~/android/get-started/installation/windows.md#configuration)
 2. [使用 Xamarin Android SDK 管理員](~/android/get-started/installation/android-sdk.md?ide=vs)
 3. [Android SDK 模擬器](~/android/get-started/installation/android-emulator/index.md)
-4. [設定開發裝置](~/android/get-started/installation/set-up-device-for-development.md)
+4. [設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)

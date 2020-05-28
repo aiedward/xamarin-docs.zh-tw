@@ -1,17 +1,10 @@
 ---
-title: Xamarin.Essentials：陀螺儀
-description: Xamarin.Essentials 中的陀螺儀類別可讓您監視裝置的陀螺儀感應器，該感應器會測量裝置三個主軸周圍的旋轉。
-ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1e19585e238d66568364be7ccdbdb52d22b04066
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61259472"
+標題： ' ' Xamarin.Essentials ：陀螺儀 ' ' 描述： assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials：陀螺儀
 
 **陀螺儀**類別可讓您監視裝置的陀螺儀感應器，該感應器是裝置三個主軸周圍的旋轉。
@@ -22,7 +15,7 @@ ms.locfileid: "61259472"
 
 ## <a name="using-gyroscope"></a>使用陀螺儀
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

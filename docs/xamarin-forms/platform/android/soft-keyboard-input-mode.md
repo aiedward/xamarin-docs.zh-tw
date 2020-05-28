@@ -1,24 +1,27 @@
 ---
-title: Android 上的螢幕小鍵盤輸入模式
-description: 平台特性可讓您使用的功能只可在特定的平台，而不需要實作自訂轉譯器或影響。 本文說明如何使用 Android 平臺特定的來設定軟鍵盤輸入區域的操作模式。
-ms.prod: xamarin
-ms.assetid: AFCDC92F-F61E-42F6-904B-50B5C4949970
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/10/2018
-ms.openlocfilehash: 835f75b473fe966b5e92e7cb599f7675a7a459dd
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c62d09c7d7848d9f62c018caa1698bb53a2a39a8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655663"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128709"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Android 上的螢幕小鍵盤輸入模式
 
-[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 Android 平臺特定是用來設定軟鍵盤輸入區域的作業模式, 並將[`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty)附加屬性設為[`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust)列舉的值, 以在 XAML 中使用:
+此 Android 平臺特定是用來設定軟鍵盤輸入區域的作業模式，並將 [`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) 附加屬性設為列舉的值，以在 XAML 中使用 [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) ：
 
 ```xaml
 <Application ...
@@ -28,7 +31,7 @@ ms.locfileid: "68655663"
 </Application>
 ```
 
-或者，它可以取用從 C# 使用 fluent API:
+或者，您也可以使用 Fluent API，從 c # 取用它：
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -38,11 +41,11 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 ```
 
-`Application.On<Android>`方法可讓您指定這個平台專屬只會在 Android 上執行。 [ `Application.UseWindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.UseWindowSoftInputModeAdjust(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Application},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust))方法，請在[ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)命名空間，用來設定螢幕小鍵盤輸入的區作業模式，與[ `WindowSoftInputModeAdjust` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust)提供兩個值的列舉型別： [ `Pan` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan)並[ `Resize` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize)。 `Pan`值使用[ `AdjustPan` ](xref:Android.Views.SoftInput.AdjustPan)調整選項，不會調整視窗大小的輸入的控制項具有焦點時。 相反地，使目前的焦點不會遮住螢幕小鍵盤，便會上下移動視窗的內容。 `Resize`值使用[ `AdjustResize` ](xref:Android.Views.SoftInput.AdjustResize)輸入的控制項具有焦點，以騰出供螢幕小鍵盤時調整視窗的調整選項。
+`Application.On<Android>`方法會指定此平臺特定僅在 Android 上執行。 [ `Application.UseWindowSoftInputModeAdjust` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. UseWindowSoftInputModeAdjust （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration. Android、 Xamarin.Forms 。應用程式}、 Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. WindowSoftInputModeAdjust））方法（在 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 命名空間中）是用來設定軟鍵盤輸入區域作業模式， [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) 列舉提供兩個值： [`Pan`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan) 和 [`Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) 。 `Pan`值使用 [ [`AdjustPan`](xref:Android.Views.SoftInput.AdjustPan) 調整] 選項，當輸入控制項有焦點時，不會調整視窗大小。 相反地，視窗的內容會移動流覽，如此一來，最新的焦點就不會被軟鍵盤遮蔽。 `Resize`值使用 [ [`AdjustResize`](xref:Android.Views.SoftInput.AdjustResize) 調整] 選項，這會在輸入控制項有焦點時調整視窗大小，以騰出空間給螢幕小鍵盤。
 
-結果是螢幕小鍵盤輸入的區域輸入的控制項具有焦點時，就可以設定作業模式：
+結果是當輸入控制項有焦點時，可以設定螢幕小鍵盤輸入區域的作業模式：
 
-[![](soft-keyboard-input-mode-images/pan-resize.png "虛鍵盤作業模式平台專屬")](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "運作模式特定的平台的螢幕小鍵盤")
+[![](soft-keyboard-input-mode-images/pan-resize.png "Soft Keyboard Operating Mode Platform-Specific")](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "Soft Keyboard Operating Mode Platform-Specific")
 
 ## <a name="related-links"></a>相關連結
 

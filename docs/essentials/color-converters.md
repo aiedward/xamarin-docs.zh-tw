@@ -1,21 +1,24 @@
 ---
-title: Xamarin.Essentials Color Converters (Xamarin.Essentials 色彩轉換器)
-description: Xamarin.Essentials 中的 ColorConverters 類別，會提供數種 Helper 方法及擴充方法來使用 System.Drawing.Color。
-ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: 159add7ee83f3c65d791fc49ee3a85ddaaabae1d
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.Essentials色彩轉換器
+description: 中的 ColorConverters 類別 Xamarin.Essentials 提供數個 helper 方法和擴充方法，以處理 system.web. Color。
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+ms.custom: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57b85a909855594c70bfd529d7a794b4bd7bca7e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150132"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130217"
 ---
-# <a name="xamarinessentials-color-converters"></a>Xamarin. Essentials：色彩轉換器
+# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials：色彩轉換器
 
-Xamarin.Essentials 中的 **ColorConverters** 類別，會為 System.Drawing.Color 提供數種 Helper 方法。
+中的**ColorConverters**類別會 Xamarin.Essentials 針對 system.web. Color 提供數個 helper 方法。
 
 ## <a name="get-started"></a>開始使用
 
@@ -23,13 +26,13 @@ Xamarin.Essentials 中的 **ColorConverters** 類別，會為 System.Drawing.Col
 
 ## <a name="using-color-converters"></a>使用色彩轉換器
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-使用 `System.Drawing.Color` 時，您可使用 Xamarin.Forms 的內建轉換器，從 Hsl、Hex 或 UInt 建立色彩。
+使用時， `System.Drawing.Color` 您可以使用的內建轉換器 Xamarin.Forms ，從 Hsl、Hex 或 UInt 建立色彩。
 
 ```csharp
 var blueHex = ColorConverters.FromHex("#3498db");

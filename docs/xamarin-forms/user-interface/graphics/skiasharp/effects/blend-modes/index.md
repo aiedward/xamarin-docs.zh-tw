@@ -1,18 +1,21 @@
 ---
-title: SkiaSharp blend 模式
-description: 使用 blend 模式定義當繪圖物件堆疊在另一個上時，會發生什麼事。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 829d764f03dd77c6126c2f4bced750ae570a3bc6
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425688"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131699"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend 模式
 
@@ -29,20 +32,60 @@ SkiaSharp blend 模式與 W3C 撰寫[**和混合層級 1**](https://www.w3.org/T
 列舉的29個成員 `SKBlendMode` 可以分成三個類別：
 
 | Porter-Duff | 分離    | 不可分離 |
-| ----------- | ------------ | ------------- |
-| `Clear`     | `Modulate`   | `Hue`         |
-| `Src`       | `Screen`     | `Saturation`  |
-| `Dst`       | `Overlay`    | `Color`       |
-| `SrcOver`   | `Darken`     | `Luminosity`  |
-| `DstOver`   | `Lighten`    |               |
-| `SrcIn`     | `ColorDodge` |               |
-| `DstIn`     | `ColorBurn`  |               |
-| `SrcOut`    | `HardLight`  |               |
-| `DstOut`    | `SoftLight`  |               |
-| `SrcATop`   | `Difference` |               |
-| `DstATop`   | `Exclusion`  |               |
-| `Xor`       | `Multiply`   |               |
-| `Plus`      |              |               |
+| ---
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------- | | `Clear`     | `Modulate`   | `Hue`         | | `Src`       | `Screen`     | `Saturation`  | | `Dst`       | `Overlay`    | `Color`       | | `SrcOver`   | `Darken`     | `Luminosity`  | | `DstOver`   | `Lighten`    |               | | `SrcIn`     | `ColorDodge` |               | | `DstIn`     | `ColorBurn`  |               | | `SrcOut`    | `HardLight`  |               | | `DstOut`    | `SoftLight`  |               | | `SrcATop`   | `Difference` |               | | `DstATop`   | `Exclusion`  |               | | `Xor`       | `Multiply`   |               | | `Plus`      |              |               |
 
 這三個類別的名稱在後續討論中會採用更多意義。 成員在此列出的順序與列舉的定義相同 `SKBlendMode` 。 第一個資料行中的13個列舉成員，其整數值為0到12。 第二個數據行是對應到整數13到24的列舉成員，而第三個數據行中的成員具有25到28的值。
 
@@ -62,7 +105,7 @@ canvas.Clear();
 
 這個方法會將畫布的所有圖元以透明黑色圖元取代，相當於 `new SKColor(0, 0, 0, 0)` 或整數0x00000000。 所有圖元的所有位元組都會初始化為零。
 
-`SKCanvas`在處理常式中取得的繪圖介面 `PaintSurface` 可能看起來有白色背景，但這只是因為 `SKCanvasView` 本身具有透明背景，而且頁面具有白色背景。 您可以藉由將的 [Xamarin] 屬性設定為 [Xamarin]，來示範這個事實 `BackgroundColor` `SKCanvasView` ：
+`SKCanvas`在處理常式中取得的繪圖介面 `PaintSurface` 可能看起來有白色背景，但這只是因為 `SKCanvasView` 本身具有透明背景，而且頁面具有白色背景。 您可以藉由將的 Xamarin.Forms `BackgroundColor` 屬性設定 `SKCanvasView` 為色彩來示範這個事實 Xamarin.Forms ：
 
 ```csharp
 canvasView.BackgroundColor = Color.Red;
