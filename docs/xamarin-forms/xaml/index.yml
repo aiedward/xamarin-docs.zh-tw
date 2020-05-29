@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/27/2019
-  ms.openlocfilehash: 5f01b3ecf914d6c7c5c36378511c0fd7e30c952c
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 6e40cb17a6ea852d5bc5e3ae31b0983773105d5a
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75679684"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84138381"
 landingContent:
 - title: 開始使用
   linkLists:
@@ -23,7 +26,7 @@ landingContent:
     links:
     - text: 基本概念
       url: xaml-basics/index.md
-    - text: 控制
+    - text: 控制項
       url: xaml-controls.md
     - text: 編譯
       url: xamlc.md
@@ -61,6 +64,8 @@ landingContent:
       url: resource-dictionaries.md
     - text: 傳遞引數
       url: passing-arguments.md
+    - text: 泛型
+      url: generics.md
     - text: 欄位修飾詞
       url: field-modifiers.md
     - text: 在執行階段載入 XAML

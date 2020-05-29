@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/27/2019
-  ms.openlocfilehash: 5eb567466b13b8baaa731bc1b37197336fac99bd
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: eed87cca333da2459e3a03f1bc2da6e10e32c9fd
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75680259"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84127007"
 landingContent:
 - title: 本機資料儲存體
   linkLists:

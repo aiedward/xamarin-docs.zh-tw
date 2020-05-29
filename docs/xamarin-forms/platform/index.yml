@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/30/2019
-  ms.openlocfilehash: c95416d35a54dfd5954318ea068a4c70622dc1a1
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 7575022a50bc5a16d4da80a6be2ae63691836d94
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "75679645"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84138602"
 landingContent:
 - title: Android
   linkLists:
@@ -29,7 +32,7 @@ landingContent:
       url: android/appcompat-material-design.md
     - text: VisualElement 上移
       url: android/visualelement-elevation.md
-    - text: 更多資訊 >
+    - text: 查看更多項目 >
       url: android/index.md
 - title: iOS
   linkLists:
@@ -43,7 +46,7 @@ landingContent:
       url: ios/page-home-indicator.md
     - text: 滑桿指標點選
       url: ios/slider-thumb.md
-    - text: 更多資訊 >
+    - text: 查看更多項目 >
       url: ios/index.md
 - title: Windows
   linkLists:
@@ -57,7 +60,7 @@ landingContent:
       url: windows/searchbar-spell-check.md
     - text: TabbedPage 索引標籤圖示
       url: windows/tabbedpage-icons.md
-    - text: 更多資訊 >
+    - text: 查看更多項目 >
       url: windows/index.md
 - title: 平台功能
   linkLists:

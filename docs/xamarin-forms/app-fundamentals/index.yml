@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/30/2019
-  ms.openlocfilehash: f02b2744dab2700bc1ac680b134e42000d5d21ff
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 692974defc7307e63692f2b6497903fae569d0d6
+  ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77480469"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84137575"
 landingContent:
 - title: 核心概念
   linkLists:
@@ -33,9 +36,9 @@ landingContent:
       url: localization/index.md
     - text: MessagingCenter
       url: messaging-center.md
-    - text: 導覽
+    - text: 巡覽
       url: navigation/index.md
-    - text: 殼層
+    - text: Shell
       url: shell/index.md
     - text: 範本
       url: templates/index.md
@@ -45,7 +48,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: 行為
+    - text: 「行為」
       url: behaviors/index.md
     - text: 自訂轉譯器
       url: custom-renderer/index.md
@@ -57,7 +60,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Accessibility
+    - text: 協助工具選項
       url: accessibility/index.md
     - text: 應用程式索引和深層連結
       url: deep-linking.md
