@@ -1,19 +1,9 @@
 ---
-title: Xamarin.Essentials：Share
-description: Xamarin.Essentials 中的 Share 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
-ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: f964967dce0dbb7e49d52a7f865b0fe8a9957bbe
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545197"
+標題： " Xamarin.Essentials ： Share" 描述： "中的共用類別 Xamarin.Essentials 可讓應用程式共用資料（例如文字和 web 連結）到裝置上的其他應用程式。
+assetid： B7B01D55-0129-4C87-B515-89F8F4E94665 author： jamesmontemagno ms-chap： jamont ms. date： 01/06/2020 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-share"></a>Xamarin.Essentials：Share
+
+# <a name="xamarinessentials-share"></a>Xamarin.Essentials：共用
 
 **Share** 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
 
@@ -23,7 +13,7 @@ ms.locfileid: "77545197"
 
 ## <a name="using-share"></a>使用 Share
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -59,9 +49,9 @@ public class ShareTest
 
 ![共用](images/share.png)
 
-## <a name="files"></a>檔案
+## <a name="files"></a>檔案儲存體
 
-這項功能可讓應用程式與裝置上的其他應用程式共用檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求共用。 每個平台可能只支援特定的副檔名。
+這項功能可讓應用程式與裝置上的其他應用程式共用檔案。 Xamarin.Essentials會自動偵測檔案類型（MIME）並要求共用。 每個平台可能只支援特定的副檔名。
 
 下列範例示範如何將文字寫入磁碟，並共用到其他應用程式：
 
@@ -79,7 +69,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ## <a name="presentation-location"></a>展示位置
 
-在 iPadOS 上請求共用時,您可以呈現在流行控制件中。 您可以使用 屬性指定`PresentationSourceBounds`位置 :
+在 iPadOS 上要求共用時，您可以在快顯視窗控制項中顯示。 您可以使用屬性來指定位置 `PresentationSourceBounds` ：
 
 ```csharp
 await Share.RequestAsync(new ShareFileRequest

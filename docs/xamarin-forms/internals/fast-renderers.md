@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms快速轉譯器
-description: 本文介紹快速轉譯器，藉由簡維 Xamarin.Forms 產生的原生控制項階層，減少 Android 上控制項的擴大和呈現成本。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3f25f4c2da5b2a426673b49045b5d2d05b0c6ac4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139070"
+標題：「快速轉譯器」 Xamarin.Forms 描述：「這篇文章介紹快速轉譯器，藉由簡維 Xamarin.Forms 產生的原生控制項階層，減少 Android 上控制項的擴大和呈現成本。」
+assetid： 097f87f2-d891-4f3c-be02-fb7d195a481a ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/28/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms快速轉譯器
 
 傳統上，大部分的 Android 原始控制項轉譯器都是由兩個視圖所組成：
@@ -31,9 +17,10 @@ ms.locfileid: "84139070"
 快速轉譯器適用于 Android 上的下列控制項 Xamarin.Forms ：
 
 - [`Button`](xref:Xamarin.Forms.Button)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
-- [`Frame`](xref:Xamarin.Forms.Frame)
+- [`MediaElement`](xref:Xamarin.Forms.MediaElement)
 
 就功能而言，這些快速轉譯器與舊版轉譯器並無不同。 從 Xamarin.Forms 4.0 開始，所有以為目標的應用程式 `FormsAppCompatActivity` 預設都會使用這些快速轉譯器。 所有新控制項的轉譯器（包括 [`ImageButton`](xref:Xamarin.Forms.ImageButton) 和 [`CollectionView`](xref:Xamarin.Forms.CollectionView) ）都會使用快速轉譯器方法。
 

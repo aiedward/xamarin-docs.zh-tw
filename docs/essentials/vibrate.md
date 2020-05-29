@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：震動
-description: 本文件描述 Xamarin.Essentials 中的震動類別，可讓您在所需的時間內啟動和停止震動功能。
-ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: a002cd6ed183ffeafef92cb40d48b2792347714d
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149844"
+title： " Xamarin.Essentials ：震動" 描述： "本檔描述中的震動類別 Xamarin.Essentials ，可讓您在所需的時間量內啟動和停止震動功能。"
+assetid： 7E8B24C4-2625-4DAE-A129-383542D34F1E author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials：震動
 
 **震動**類別可讓您在所需的時間內啟動和停止震動功能。
@@ -55,7 +45,7 @@ ms.locfileid: "83149844"
 
 ## <a name="using-vibration"></a>使用震動
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

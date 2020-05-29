@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms本機資料庫
-description: Xamarin.Forms使用 SQLite 資料庫引擎來支援資料庫驅動的應用程式，讓您可以在共用程式碼中載入和儲存物件。 本文說明 Xamarin.Forms 應用程式如何使用 SQLite.Net 來讀取和寫入資料至本機 SQLite 資料庫。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 04d813baae5796da68ea27389df33738af5cde3e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130997"
+標題：「 Xamarin.Forms 本機資料庫」描述：「 Xamarin.Forms 使用 SQLite 資料庫引擎來支援資料庫驅動的應用程式，讓您可以在共用程式碼中載入和儲存物件。 本文說明 Xamarin.Forms 應用程式如何使用 SQLite.Net 來讀取和寫入資料至本機 SQLite 資料庫。
+assetid： F687B24B-7DF0-4F8E-A21A-A9BB507480EB ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：12/05/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms本機資料庫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
@@ -39,7 +25,7 @@ SQLite 資料庫引擎可讓 Xamarin.Forms 應用程式將資料物件載入和�
 
 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
 
-- **建立者：** Frank A. Krueger
+- **建立者：** Frank Krueger （praeclarum）
 - **識別碼：** sqlite-net-pcl
 - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 

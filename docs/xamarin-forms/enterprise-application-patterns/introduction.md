@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 12582c567a439cf4e0236724bd373c3508f18748
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139349"
+標題：「企業應用程式開發簡介」描述：「本章提供企業應用程式開發的簡介，並介紹 eShopOnContainers 的行動應用程式。」
+ms-chap： xamarin assetid： cbce0659-fa03-447a-86ec-140438143230 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date： 08/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-enterprise-app-development"></a>企業應用程式開發簡介
 
 無論平臺為何，企業應用程式的開發人員都面臨幾項挑戰：
@@ -107,14 +93,14 @@ EShopOnContainers 行動應用程式會演練下列 Xamarin.Forms 功能：
 - 樣式
 - 動畫
 - 命令
-- 行為
+- 「行為」
 - 觸發程序
 - 效果
 - 自訂轉譯器
 - MessagingCenter
 - 自訂控制項
 
-如需此功能的詳細資訊，請參閱[ Xamarin.Forms 檔](~/xamarin-forms/index.yml)，以及[ Xamarin.Forms 使用建立 Mobile Apps ](https://aka.ms/xamebook)。
+如需此功能的詳細資訊，請參閱[ Xamarin.Forms 檔](~/xamarin-forms/index.yml)，以及[ Xamarin.Forms 使用建立 Mobile Apps ](https://aka.ms/xamformsebook)。
 
 此外，也會針對 eShopOnContainers 行動應用程式中的某些類別提供單元測試。
 
@@ -142,7 +128,7 @@ EShopOnContainers PCL 專案包含下列資料夾：
 |資料夾|描述|
 |--- |--- |
 |動畫|包含可讓動畫在 XAML 中使用的類別。|
-|行為|包含對 view 類別公開的行為。|
+|「行為」|包含對 view 類別公開的行為。|
 |控制項|包含應用程式所使用的自訂控制項。|
 |而言|包含將自訂邏輯套用至系結的值轉換器。|
 |效果|包含 `EntryLineColorEffect` 類別，用來變更特定控制項的框線色彩 `Entry` 。|

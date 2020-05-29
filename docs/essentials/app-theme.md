@@ -1,19 +1,9 @@
 ---
-title: Xamarin. Essentials：應用程式主題
-description: 本檔說明 Xamarin. Essentials 中要求的應用程式主題 API，它會提供針對執行中應用程式所要求的主題樣式資訊。
-ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 84c246eb60f4ee561bbf2bcfee6eb587ce601a4a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150157"
+title： " Xamarin.Essentials ：應用程式主題" 描述： "本檔描述中要求的應用程式主題 API Xamarin.Essentials ，其提供針對執行中應用程式要求的主題樣式資訊。
+assetid： F6F6D496-A8A9-4B9A-AF1A-370D937E5073 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 01/06/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-app-theme"></a>Xamarin. Essentials：應用程式主題
+
+# <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials：應用程式主題
 
 **Application.requestedtheme** API 是類別的一部分 [`AppInfo`](app-information.md) ，並提供系統為執行中的應用程式要求的主題的相關資訊。
 
@@ -23,7 +13,7 @@ ms.locfileid: "83150157"
 
 ## <a name="using-requestedtheme"></a>使用 Application.requestedtheme
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -58,14 +48,14 @@ Android 使用設定模式來指定要向使用者要求的主題類型。 根�
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在13.0 之前的版本上，一律會傳回未指定的 
+在13.0 之前的版本上，一律會傳回未指定的
 
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 呼叫 `RequestedTheme` 必須在 UI 執行緒上呼叫，否則會擲回例外狀況。
 
-UWP 應用程式會遵循您在 UWP 應用程式中的設定。 xaml 下的**application.requestedtheme**。 如果設定為特定主題，Xamarin. Essentials 一律會傳回此設定。 若要使用作業系統的動態主題，請從您的應用程式中移除此節點，然後在執行應用程式時，將會傳回使用者在 Windows [設定] 中設定的主題（**[設定] [> 個人化 > 色彩] > 選擇您的預設應用程式模式**）。
+UWP 應用程式會遵循您在 UWP 應用程式中的設定。 xaml 下的**application.requestedtheme**。 如果設定為特定主題， Xamarin.Essentials 一律會傳回此設定。 若要使用作業系統的動態主題，請從您的應用程式中移除此節點，然後在執行應用程式時，將會傳回使用者在 Windows [設定] 中設定的主題（**[設定] [> 個人化 > 色彩] > 選擇您的預設應用程式模式**）。
 
 您可以在[UWP 要求的主題檔](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme)中閱讀更多。
 

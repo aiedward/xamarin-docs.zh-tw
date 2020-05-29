@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：裝置顯示資訊
-description: 本文件描述 Xamarin.Essentials 中的 DeviceDisplay 類別，可提供執行應用程式之裝置的畫面計量。
-ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1d72458fa32db58d0c5da278dbb424aa2b1714d1
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150115"
+標題：「 Xamarin.Essentials ：裝置顯示資訊」描述：「本檔描述中的 DeviceDisplay 類別 Xamarin.Essentials ，其提供執行應用程式之裝置的畫面計量。」
+assetid： 2821C908-C613-490D-8E8C-1BD3269FCEEA author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials：裝置顯示資訊
 
 **DeviceDisplay** 類別提供應用程式執行所在的裝置畫面計量資訊，並可要求防止畫面在應用程式正在執行時休眠。
@@ -23,7 +13,7 @@ ms.locfileid: "83150115"
 
 ## <a name="using-devicedisplay"></a>使用 DeviceDisplay
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

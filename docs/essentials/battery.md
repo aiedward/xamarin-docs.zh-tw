@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：電池
-description: 本文件描述 Xamarin.Essentials 中的電池類別，可讓您檢查裝置的電池資訊並監視變更。
-ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/22/2019
-ms.custom: video
-ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756928"
+title： " Xamarin.Essentials ：電池" 描述： "本檔描述中的電池類別 Xamarin.Essentials ，可讓您檢查裝置的電池資訊並監視變更。"
+assetid： 47EB26D8-8C62-477B-A13C-6977F74E6E43 author： jamesmontemagno ms-chap： jamont ms. date： 01/22/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials：電池
 
 **Battery** 類別可讓您檢查裝置的電池資訊和監視變更，並提供裝置的省電狀態資訊，這說明裝置是否正在低耗電模式中執行。 若裝置已開啟低電源狀態，應用程式應該避免背景處理。
@@ -35,7 +25,7 @@ ms.locfileid: "70756928"
 
 或更新 Android 資訊清單：
 
-在 **「屬性」** 資料夾下打開**AndroidManifest.xml**檔,並在**清單**節點內添加以下內容。
+開啟**Properties**資料夾底下的**androidmanifest.xml** ，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY_STATS" />
@@ -55,7 +45,7 @@ ms.locfileid: "70756928"
 
 ## <a name="using-battery"></a>使用電池
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -170,7 +160,7 @@ public class EnergySaverTest
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-- 裝置必須用來測試 API。 
+- 裝置必須用來測試 API。
 - 針對 `PowerSource`，只會傳回 `AC` 或 `Battery`。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)

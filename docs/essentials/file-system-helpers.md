@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：檔案系統協助程式
-description: Xamarin.Essentials 中的 FileSystem 類別包含一系列協助程式，用於尋找應用程式的快取和資料目錄，並開啟應用程式套件內的檔案。
-ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: e42cb3764e993ecd6063aab6f38b1cdf5e870a58
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149993"
+title： " Xamarin.Essentials ：檔案系統協助程式" 描述： "中的 FileSystem 類別 Xamarin.Essentials 包含一系列協助程式，可尋找應用程式的快取和資料目錄，並開啟應用程式套件內的檔案。
+assetid： B3EC2DE0-EFC0-410C-AF71-7410AE84CF84 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials：檔案系統協助程式
 
 **FileSystem** 類別包含一系列協助程式，用於尋找應用程式的快取和資料目錄，並開啟應用程式套件內的檔案。
@@ -23,7 +13,7 @@ ms.locfileid: "83149993"
 
 ## <a name="using-file-system-helpers"></a>使用檔案系統協助程式
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

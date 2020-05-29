@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：電子郵件
-description: Xamarin.Essentials 中的電子郵件類別使應用程式能夠開啟包含主題、本文和收件者 (收件者、副本、密件副本) 等指定資訊的預設電子郵件應用程式。
-ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 08/20/2019
-ms.openlocfilehash: 77fcadf3ec58a38acac5eca14b43d937414a4a60
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150101"
+title： " Xamarin.Essentials ： email" 描述： "中的電子郵件類別 Xamarin.Essentials 可讓應用程式以指定的資訊開啟預設電子郵件應用程式，包括主旨、本文和收件者（收件者、副本、密件副本）。
+assetid： 5FBB6FF0-0E7B-4C29-8F06-91642AF12629 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 08/20/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials：電子郵件
 
 **電子郵件**類別使應用程式能夠開啟包含主題、本文和收件者 (收件者、副本、密件副本) 等指定資訊的預設電子郵件應用程式。
@@ -26,7 +16,7 @@ ms.locfileid: "83150101"
 
 ## <a name="using-email"></a>使用電子郵件
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -65,7 +55,7 @@ public class EmailTest
 
 ## <a name="file-attachments"></a>檔案附件
 
-這項功能可讓應用程式在裝置上的電子郵件客戶程式中以電子郵件傳送檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求將檔案新增為附件。 每個電子郵件用戶端都不同，而且可能只支援特定的副檔名，或完全沒有。
+這項功能可讓應用程式在裝置上的電子郵件客戶程式中以電子郵件傳送檔案。 Xamarin.Essentials會自動偵測檔案類型（MIME），並要求將檔案新增為附件。 每個電子郵件用戶端都不同，而且可能只支援特定的副檔名，或完全沒有。
 
 下列範例示範如何將文字寫入磁碟，並將它新增為電子郵件附件：
 

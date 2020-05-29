@@ -1,19 +1,9 @@
 ---
-title: Xamarin.Essentials 開啟瀏覽器
-description: Xamarin.Essentials 中的 Browser 類別可讓應用程式在最佳化系統偏好瀏覽器或外部瀏覽器中開啟網頁連結。
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 715b9872642dfa8d5426c2967c62e82643def34d
-ms.sourcegitcommit: 9ca07644710e5919c7bc684c1ce144471611d5df
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82974472"
+標題：「 Xamarin.Essentials 開啟瀏覽器」描述：「中的瀏覽器類別 Xamarin.Essentials 可讓應用程式在優化系統偏好瀏覽器或外部瀏覽器中開啟 web 連結。」
+assetid： BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author： jamesmontemagno ms-chap： jamont ms. date： 04/02/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials: Browser
+
+# <a name="xamarinessentials-browser"></a>Xamarin.Essentials：瀏覽器
 
 **Browser** 類別可讓應用程式在最佳化系統偏好瀏覽器或外部瀏覽器中開啟網頁連結。
 
@@ -23,7 +13,7 @@ ms.locfileid: "82974472"
 
 ## <a name="using-browser"></a>使用 Browser
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -46,7 +36,7 @@ public class BrowserTest
 
 ## <a name="customization"></a>自訂
 
-使用系統慣用的瀏覽器時，有數種自訂選項可供 iOS 及 Android 使用。 這包含會顯示的 `TitleMode` (僅限 Android)，以及 `Toolbar` (iOS 及 Android) 和 `Controls` (僅限 iOS) 慣用色彩選項。 
+使用系統慣用的瀏覽器時，有數種自訂選項可供 iOS 及 Android 使用。 這包含會顯示的 `TitleMode` (僅限 Android)，以及 `Toolbar` (iOS 及 Android) 和 `Controls` (僅限 iOS) 慣用色彩選項。
 
 呼叫 `OpenAsync` 時，會使用 `BrowserLaunchOptions` 指定這些選項。
 

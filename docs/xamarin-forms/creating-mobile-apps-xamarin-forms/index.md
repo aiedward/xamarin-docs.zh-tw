@@ -1,22 +1,8 @@
 ---
-title: 使用書籍建立 Mobile Apps Xamarin.Forms
-description: 透過 Xamarin.Forms Charles Petzold 的《建立 Mobile Apps 的電子版本來學習應用程式開發 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 77880cd69dd7b8efae0904fa5348d056dba69c2e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136938"
+標題：「使用書籍建立 Mobile Apps」 Xamarin.Forms 描述：「透過 Xamarin.Forms Charles Petzold，使用建立 Mobile Apps 的電子版本學習應用程式開發」 Xamarin.Forms 。
+assetid： CDE99818-689B-4376-9DC4-C4102AC0F931 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/19/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>使用書籍建立 Mobile Apps Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples)
@@ -29,7 +15,7 @@ ms.locfileid: "84136938"
 
 從 Microsoft Virtual 院校下載您慣用的電子書格式：
 
-- [**PDF （56Mb）**](https://aka.ms/xamebook)
+- [**PDF （56Mb）**](https://aka.ms/xamformsebook)
 
 - [**ePub （151Mb）**](https://aka.ms/xamebook/epub)
 
@@ -56,41 +42,35 @@ ms.locfileid: "84136938"
 ## <a name="download-chapters-and-summaries"></a>下載章節和摘要
 
 | 章節 | 完成文字 | 摘要 |
-| ---
-標題：「使用書籍建立 Mobile Apps」 Xamarin.Forms 描述：「透過 Xamarin.Forms Charles Petzold，使用建立 Mobile Apps 的電子版本學習應用程式開發 Xamarin.Forms 。」
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----- |---標題：「使用書籍建立 Mobile Apps」 Xamarin.Forms 描述：「透過 Xamarin.Forms Charles Petzold 的建立 Mobile Apps 的電子版本學習應用程式開發 Xamarin.Forms 。」
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：「使用書籍建立 Mobile Apps」 Xamarin.Forms 描述：「透過 Xamarin.Forms Charles Petzold，使用建立 Mobile Apps 的電子版本學習應用程式開發 Xamarin.Forms 。」
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：「使用書籍建立 Mobile Apps」 Xamarin.Forms 描述：「透過 Xamarin.Forms Charles Petzold，使用建立 Mobile Apps 的電子版本學習應用程式開發 Xamarin.Forms 。」
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：「使用書籍建立 Mobile Apps」 Xamarin.Forms 描述：「透過 Xamarin.Forms Charles Petzold，使用建立 Mobile Apps 的電子版本學習應用程式開發 Xamarin.Forms 。」
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------- |---標題：「使用書籍建立 Mobile Apps」 Xamarin.Forms 描述：「透過 Xamarin.Forms Charles Petzold 的建立 Mobile Apps 的電子版本學習應用程式開發 Xamarin.Forms 。」
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----- | |第1章。 如何 Xamarin.Forms 融入？ | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf)  | [摘要](summaries/chapter01.md)| |第2章。 應用程式的剖析 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf)  | [摘要](summaries/chapter02.md)| |第3章。 更深入的文字 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf)  | [摘要](summaries/chapter03.md)| |第4章。 滾動堆疊 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf)  | [摘要](summaries/chapter04.md)| |第5章。 處理大小 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf)  | [摘要](summaries/chapter05.md)| |第6章。 按一下按鈕 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)  | [摘要](summaries/chapter06.md)| |第7章。 XAML 與程式碼的比較 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf)  | [摘要](summaries/chapter07.md)| |第8章。 程式碼和 XAML 的協調 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)  | [摘要](summaries/chapter08.md)| |第9章。 平臺特定 API 呼叫 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch09-Apr2016.pdf)  | [摘要](summaries/chapter09.md)| |第10章。 XAML 標記延伸 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf)  | [摘要](summaries/chapter10.md)| |第11章。 可系結的基礎結構 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf)  | [摘要](summaries/chapter11.md)| |第12章。 樣式 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch12-Apr2016.pdf)  | [摘要](summaries/chapter12.md)| |第13章。 點陣圖 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)  | [摘要](summaries/chapter13.md)| |第14章。 絕對版面配置 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf)  | [摘要](summaries/chapter14.md)| |第15章。 互動式介面 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)  | [摘要](summaries/chapter15.md)| |第16章。 資料系結 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)  | [摘要](summaries/chapter16.md)| |第17章。 主控方格 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf)  | [摘要](summaries/chapter17.md)| |第18章。 MVVM |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf)  | [摘要](summaries/chapter18.md)| |第19章。 集合視圖 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf)  | [摘要](summaries/chapter19.md)| |第20章。 Async 和 File i/o |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)  | [摘要](summaries/chapter20.md)| |第21章。 轉換 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch21-Apr2016.pdf)  | [摘要](summaries/chapter21.md)| |第22章。 動畫 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)  | [摘要](summaries/chapter22.md)| |第23章。 觸發程式和行為 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf)  | [摘要](summaries/chapter23.md)| |第24章。 頁面流覽 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch24-Apr2016.pdf)  | [摘要](summaries/chapter24.md)| |第25章。 頁面種類 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf)  | [摘要](summaries/chapter25.md)| |第26章。 自訂版面配置 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf)  | [摘要](summaries/chapter26.md)| |第27章。 自訂轉譯器 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)  | [摘要](summaries/chapter27.md)| |第28章。 位置和地圖 |[下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf)  | [摘要](summaries/chapter28.md) |
+| ------- | ------------- | ------- |
+| 第1章。 如何 Xamarin.Forms 融入？ | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf) | [摘要](summaries/chapter01.md) |
+| 第2章。 應用程式的剖析 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf) | [摘要](summaries/chapter02.md) |
+| 第3章。 更深入的文字 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf) | [摘要](summaries/chapter03.md) |
+| 第4章。 滾動堆疊 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf) | [摘要](summaries/chapter04.md) |
+| 第5章。 處理大小 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf) | [摘要](summaries/chapter05.md) |
+| 第6章。 按一下按鈕 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf) | [摘要](summaries/chapter06.md) |
+| 第7章。 XAML 與程式碼的比較 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf) | [摘要](summaries/chapter07.md) |
+| 第8章。 程式碼和 XAML 的協調 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf) | [摘要](summaries/chapter08.md) |
+| 第9章。 平臺特定 API 呼叫 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch09-Apr2016.pdf) | [摘要](summaries/chapter09.md) |
+| 第10章。 XAML 標記延伸 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf) | [摘要](summaries/chapter10.md) |
+| 第11章。 可系結的基礎結構 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf) | [摘要](summaries/chapter11.md) |
+| 第12章。 樣式 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch12-Apr2016.pdf) | [摘要](summaries/chapter12.md) |
+| 第13章。 點陣圖 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf) | [摘要](summaries/chapter13.md) |
+| 第14章。 絕對版面配置 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf) | [摘要](summaries/chapter14.md) |
+| 第15章。 互動式介面 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf) | [摘要](summaries/chapter15.md) |
+| 第16章。 資料繫結 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf) | [摘要](summaries/chapter16.md) |
+| 第17章。 掌控格線 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf) | [摘要](summaries/chapter17.md) |
+| 第18章。 MVVM | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf) | [摘要](summaries/chapter18.md) |
+| 第19章。 集合檢視 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf) | [摘要](summaries/chapter19.md) |
+| 第20章。 Async 和 File i/o | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) | [摘要](summaries/chapter20.md) |
+| 第21章。 轉換 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch21-Apr2016.pdf) | [摘要](summaries/chapter21.md) |
+| 第22章。 動畫 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) | [摘要](summaries/chapter22.md) |
+| 第23章。 觸發程式和行為 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf) | [摘要](summaries/chapter23.md) |
+| 第24章。 頁面導覽 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch24-Apr2016.pdf) | [摘要](summaries/chapter24.md) |
+| 第25章。 頁面種類 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf) | [摘要](summaries/chapter25.md) |
+| 第26章。 自訂配置 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf) | [摘要](summaries/chapter26.md) |
+| 第27章。 自訂轉譯器 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) | [摘要](summaries/chapter27.md) |
+| 第28章。 位置和地圖 | [下載 PDF](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf) | [摘要](summaries/chapter28.md) |
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>本書過期的方式
 

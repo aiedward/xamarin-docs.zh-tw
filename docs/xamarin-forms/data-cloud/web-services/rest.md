@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 將 web 服務整合到應用程式是常見的案例。 本文示範如何從應用程式使用 RESTful web 服務 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ecfcede22e96a4a91f5367dae49b0d837ca2416f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139161"
+標題：「取用 RESTful Web 服務」描述：「將 web 服務整合到應用程式」是常見的案例。 本文示範如何從應用程式使用 RESTful web 服務。」 Xamarin.Forms
+assetid： B540910C-9C51-416A-AAB9-057BF76489C3 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/28/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服務
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
@@ -92,12 +78,12 @@ REST 服務會使用基本驗證。 如需詳細資訊，請參閱[驗證 RESTfu
 ```csharp
 public class RestService : IRestService
 {
-  HttpClient _client;
+  HttpClient client;
   ...
 
   public RestService ()
   {
-    _client = new HttpClient ();
+    client = new HttpClient ();
   }
   ...
 }
@@ -111,12 +97,12 @@ public class RestService : IRestService
 public async Task<List<TodoItem>> RefreshDataAsync ()
 {
   ...
-  var uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
+  Uri uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
   ...
-  var response = await _client.GetAsync (uri);
+  HttpResponseMessage response = await client.GetAsync (uri);
   if (response.IsSuccessStatusCode)
   {
-      var content = await response.Content.ReadAsStringAsync ();
+      string content = await response.Content.ReadAsStringAsync ();
       Items = JsonConvert.DeserializeObject <List<TodoItem>> (content);
   }
   ...
@@ -127,6 +113,9 @@ REST 服務會在屬性中傳送 HTTP 狀態碼 `HttpResponseMessage.IsSuccessSt
 
 如果 HTTP 作業成功，則會讀取回應的內容，以供顯示。 `HttpResponseMessage.Content`屬性代表 HTTP 回應的內容，而方法會以 `HttpContent.ReadAsStringAsync` 非同步方式將 HTTP 內容寫入字串。 然後，此內容會從 JSON 轉換成 `List` `TodoItem` 實例的。
 
+> [!WARNING]
+> 使用 `ReadAsStringAsync` 方法來抓取大型回應可能會對效能造成負面影響。 在這種情況下，回應應該直接還原序列化，以免必須完全緩衝。
+
 ### <a name="creating-data"></a>建立資料
 
 `HttpClient.PostAsync`方法是用來將 POST 要求傳送至 URI 所指定的 web 服務，然後接收來自 web 服務的回應，如下列程式碼範例所示：
@@ -134,23 +123,22 @@ REST 服務會在屬性中傳送 HTTP 狀態碼 `HttpResponseMessage.IsSuccessSt
 ```csharp
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
-  var uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
+  Uri uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
 
   ...
-  var json = JsonConvert.SerializeObject (item);
-  var content = new StringContent (json, Encoding.UTF8, "application/json");
+  string json = JsonConvert.SerializeObject (item);
+  StringContent content = new StringContent (json, Encoding.UTF8, "application/json");
 
   HttpResponseMessage response = null;
   if (isNewItem)
   {
-    response = await _client.PostAsync (uri, content);
+    response = await client.PostAsync (uri, content);
   }
   ...
 
   if (response.IsSuccessStatusCode)
   {
     Debug.WriteLine (@"\tTodoItem successfully saved.");
-
   }
   ...
 }
@@ -172,7 +160,7 @@ REST 服務會在屬性中傳送 HTTP 狀態碼 `HttpResponseMessage.IsSuccessSt
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
   ...
-  response = await _client.PutAsync (uri, content);
+  response = await client.PutAsync (uri, content);
   ...
 }
 ```
@@ -192,9 +180,9 @@ REST 服務會在屬性中傳送 HTTP 狀態碼 `HttpResponseMessage.IsSuccessSt
 ```csharp
 public async Task DeleteTodoItemAsync (string id)
 {
-  var uri = new Uri (string.Format (Constants.TodoItemsUrl, id));
+  Uri uri = new Uri (string.Format (Constants.TodoItemsUrl, id));
   ...
-  var response = await _client.DeleteAsync (uri);
+  HttpResponseMessage response = await client.DeleteAsync (uri);
   if (response.IsSuccessStatusCode)
   {
     Debug.WriteLine (@"\tTodoItem successfully deleted.");

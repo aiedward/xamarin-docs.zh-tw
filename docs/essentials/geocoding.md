@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：地理編碼
-description: Xamarin.Essentials 中的地理編碼類別會提供 API，既可以將地標進行地理編碼為位置座標，也可以將地理編碼座標反轉為地標。
-ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/28/2019
-ms.custom: video
-ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66354101"
+title： " Xamarin.Essentials ：地理編碼" description： "中的地理編碼類別 Xamarin.Essentials 提供 api，可將地標地理編碼至位置座標，並將地理編碼座標反轉至地標。」
+assetid： 3ADC440C-B000-4708-A2CC-296F5160AF90 author： jamesmontemagno ms-chap： jamont ms. date： 05/28/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials：地理編碼
 
 **地理編碼**類別會提供 API，可以將地標進行地理編碼為位置座標，也可以將地理編碼座標反轉為地標。
@@ -45,7 +35,7 @@ Platform.MapServiceToken = "YOUR-KEY-HERE";
 
 ## <a name="using-geocoding"></a>使用地理編碼
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -119,7 +109,7 @@ catch (Exception ex)
 
 ## <a name="distance-between-two-locations"></a>兩個位置之間的距離
 
-[`Location`](xref:Xamarin.Essentials.Location)和[`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions)類定義計算兩個位置之間的距離的方法。 如需範例，請參閱 [**Xamarin.Essentials：地理位置**](geolocation.md#calculate-distance)一文。
+[`Location`](xref:Xamarin.Essentials.Location)和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 類別會定義方法，以計算兩個位置之間的距離。 如需範例，請參閱文章[** Xamarin.Essentials ：地理位置**](geolocation.md#calculate-distance)。
 
 ## <a name="api"></a>API
 

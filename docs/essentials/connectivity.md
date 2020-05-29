@@ -1,19 +1,9 @@
 ---
-title: 'Xamarin.Essentials: Connectivity'
-description: Xamarin.Essentials 中的 Connectivity 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
-ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/08/2019
-ms.custom: video
-ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67855764"
+title： " Xamarin.Essentials ： connectivity" 描述： "中的 connectivity 類別 Xamarin.Essentials 可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線的方式。
+assetid： E1B1F152-B1D5-4227-965E-C0AEBF528F49 author： jamesmontemagno ms-chap： jamont ms. date： 01/08/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: Connectivity
+
+# <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials：連線能力
 
 **Connectivity** 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
 
@@ -35,7 +25,7 @@ ms.locfileid: "67855764"
 
 或更新 Android 資訊清單：
 
-在 **「屬性」** 資料夾下打開**AndroidManifest.xml**檔,並在**清單**節點內添加以下內容。
+開啟**Properties**資料夾底下的**androidmanifest.xml** ，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -55,7 +45,7 @@ ms.locfileid: "67855764"
 
 ## <a name="using-connectivity"></a>使用 Connectivity
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

@@ -1,18 +1,9 @@
 ---
-title: 'Xamarin.Essentials: Barometer'
-description: Xamarin.Essentials 中的 Barometer 類別可讓您監視裝置的氣壓計感應器，其會測量壓力。
-ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "69976429"
+title： " Xamarin.Essentials ：氣壓計" 描述： "中的氣壓計類別 Xamarin.Essentials 可讓您監視裝置的氣壓計感應器，以測量壓力。
+assetid： DA4F968A-D988-41F5-8745-1BEE693660A1 author： jamesmontemagno ms-chap： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials: Barometer
+
+# <a name="xamarinessentials-barometer"></a>Xamarin.Essentials：氣壓計
 
 **Barometer** 類別可讓您監視裝置的氣壓計感應器，其會測量壓力。
 
@@ -22,7 +13,7 @@ ms.locfileid: "69976429"
 
 ## <a name="using-barometer"></a>使用 Barometer
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

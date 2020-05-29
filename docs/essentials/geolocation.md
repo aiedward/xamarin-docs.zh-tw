@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：地理位置
-description: 本文件描述 Xamarin.Essentials 中的地理位置類別，可提供用於擷取裝置目前地理位置座標的 API。
-ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: 99b439e70038d27ed8bffcf20b908c52a10ede82
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149754"
+title： " Xamarin.Essentials ：地理位置" 描述： "本檔描述中的地理位置類別 Xamarin.Essentials ，它會提供 api 來抓取裝置的目前地理位置座標。
+assetid： 8F66092C-13F0-4FEE-8AA5-901D5F79B357 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 03/13/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
 
 **地理位置**類別會提供 API 來擷取裝置的目前地理位置座標。
@@ -74,7 +64,7 @@ ms.locfileid: "83149754"
 
 ## <a name="using-geolocation"></a>使用地理位置
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -112,7 +102,7 @@ catch (Exception ex)
 }
 ```
 
-高度不一定可用。 如果不可用，則 `Altitude` 屬性可能為 `null`，或值可能為零。 如可使用高度，此值 (公尺) 會高於海平面。 
+高度不一定可用。 如果不可用，則 `Altitude` 屬性可能為 `null`，或值可能為零。 如可使用高度，此值 (公尺) 會高於海平面。
 
 若要查詢目前裝置的[位置](xref:Xamarin.Essentials.Location)座標，可以使用 `GetLocationAsync`。 建議您傳入完整的 `GeolocationRequest` 和 `CancellationToken`，因為可能需要一些時間才能取得裝置的位置。
 

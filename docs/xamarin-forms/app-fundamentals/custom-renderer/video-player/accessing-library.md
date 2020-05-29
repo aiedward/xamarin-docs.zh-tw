@@ -1,9 +1,6 @@
 ---
-標題：描述： ' 本文說明如何使用，在影片播放機應用程式中存取裝置的影片庫 Xamarin.Forms 。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+標題：「存取裝置的影片庫」描述：「本文說明如何使用，在影片播放機應用程式中存取裝置的影片庫 Xamarin.Forms 。」
+assetid： 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/12/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="accessing-the-devices-video-library"></a>存取裝置的影片庫
@@ -65,7 +62,7 @@ namespace FormsVideoLibrary.iOS
             // Present UIImagePickerController;
             UIWindow window = UIApplication.SharedApplication.KeyWindow;
             var viewController = window.RootViewController;
-            viewController.PresentModalViewController(imagePicker, true);
+            viewController.PresentViewController(imagePicker, true, null);
 
             // Return Task object
             taskCompletionSource = new TaskCompletionSource<string>();

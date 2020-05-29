@@ -1,19 +1,9 @@
 ---
-title: Xamarin.Essentials：手電筒
-description: 本文件描述 Xamarin.Essentials 中的手電筒類別，可以開啟或關閉裝置的相機閃光燈，將其變為手電筒。
-ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1a8601860afaf033c9bdb62c187fe228d2e83435
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149962"
+title： " Xamarin.Essentials ：閃光燈" 描述： "本檔描述中的閃光燈類別 Xamarin.Essentials ，它能夠開啟或關閉裝置的相機閃光燈，使其變成閃光燈。」
+assetid： 06A03553-D212-43A2-9E6E-C2D2D93EB136 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials：手電筒
+
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials：上個
 
 **手電筒**類別可以開啟或關閉裝置相機閃光燈，將其變為手電筒。
 
@@ -66,7 +56,7 @@ ms.locfileid: "83149962"
 
 ## <a name="using-flashlight"></a>使用手電筒
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -109,7 +99,7 @@ catch (Exception ex)
 
 #### <a name="api-level-22-and-lower"></a>API 層級22 與更低版本
 
-會建立相機表面紋理，以開啟或關閉相機單位的 `FlashMode`。 
+會建立相機表面紋理，以開啟或關閉相機單位的 `FlashMode`。
 
 ### <a name="ios"></a>[iOS](#tab/ios)
 

@@ -1,19 +1,9 @@
 ---
-title: Xamarin.Essentials Map
-description: Xamarin.Essentials 中的 Maps 類別可讓應用程式將已安裝的地圖應用程式開啟至特定位置或地標。
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/26/2020
-ms.custom: video
-ms.openlocfilehash: 16f4a69e2d9216bb2e03fbcb663403d198b42c98
-ms.sourcegitcommit: 6a6cbb62bcf149f9515ee8868679a8a07ce17956
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862712"
+title： " Xamarin.Essentials map" 描述： "中的 map 類別 Xamarin.Essentials 可讓應用程式將已安裝的地圖應用程式開啟至特定位置或地標。
+assetid： BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author： jamesmontemagno ms-chap： jamont ms. date： 05/26/2020 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-map"></a>Xamarin.Essentials：Map
+
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials： Map
 
 **Maps** 類別可讓應用程式將已安裝的地圖應用程式開啟至特定位置或地標。
 
@@ -23,7 +13,7 @@ ms.locfileid: "83862712"
 
 ## <a name="using-map"></a>使用 Map
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -142,7 +132,7 @@ public class MapTest
 
 # <a name="android"></a>[Android](#tab/android)
 
-Android 使用 `geo:` Uri 配置以啟動裝置上的地圖應用程式。 這可能會提示使用者從支援此 Uri 配置的現有應用程式中選取。  Xamarin.Essentials 已使用 Google 地圖測試，可支援此配置。
+Android 使用 `geo:` Uri 配置以啟動裝置上的地圖應用程式。 這可能會提示使用者從支援此 Uri 配置的現有應用程式中選取。  Xamarin.Essentials會使用支援此配置的 Google Maps 進行測試。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 

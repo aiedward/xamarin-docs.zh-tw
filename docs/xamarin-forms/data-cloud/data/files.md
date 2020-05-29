@@ -1,28 +1,17 @@
 ---
-title: Xamarin.Forms 中的檔案處理
-description: 使用 .NET Standard 程式庫的程式碼或使用內嵌的資源，可以使用 Xamarin.Forms 處理檔案。
-ms.prod: xamarin
-ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/21/2018
-ms.openlocfilehash: fb3bbda3caee9fdbd490aaea7e119baf470eedd1
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71997164"
+標題：「中的檔案處理」描述：「使用 .NET Standard 程式庫中的 Xamarin.Forms Xamarin.Forms 程式碼，或使用內嵌的資源，即可達成的檔案處理。」
+assetid： 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/21/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="file-handling-in-xamarinforms"></a>Xamarin.Forms 中的檔案處理
 
-[![下載範例](~/media/shared/download.png)下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+# <a name="file-handling-in-xamarinforms"></a>中的檔案處理Xamarin.Forms
 
-_使用 .NET Standard 程式庫的程式碼或使用內嵌的資源，可以使用 Xamarin.Forms 處理檔案。_
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
-## <a name="overview"></a>總覽
+_您 Xamarin.Forms 可以使用 .NET Standard 程式庫中的程式碼，或使用內嵌的資源來達成檔案處理。_
 
-Xamarin.Forms 程式碼會在多個平台上執行 - 每一個都有自己的檔案系統。 在過去，這表示在每個平台上使用原生檔案 API 最容易執行讀取和寫入檔案。 或者，內嵌的資源是更簡單的散發資料檔案與應用程式解決方案。 不過，使用 .NET Standard 2.0 就可以在 .NET Standard 程式庫中共用檔案存取碼。
+## <a name="overview"></a>概觀
+
+Xamarin.Forms程式碼會在多個平臺上執行-其中每一個都有自己的檔案系統。 在過去，這表示在每個平台上使用原生檔案 API 最容易執行讀取和寫入檔案。 或者，內嵌的資源是更簡單的散發資料檔案與應用程式解決方案。 不過，使用 .NET Standard 2.0 就可以在 .NET Standard 程式庫中共用檔案存取碼。
 
 如需處理影像檔的相關資訊，請參閱[處理影像](~/xamarin-forms/user-interface/images.md)頁面。
 
@@ -50,7 +39,7 @@ string text = File.ReadAllText(fileName);
 bool doesExist = File.Exists(fileName);
 ```
 
-使用 [`Environment.SpecialFolder`](xref:System.Environment.SpecialFolder) 列舉的值作為 `Environment.GetFolderPath` 方法的第一個引數，就可以從 .NET Standard 程式庫判斷每個平台的檔案路徑。 然後使用 `Path.Combine` 方法與檔案名稱相結合：
+您可以使用列舉的值 [`Environment.SpecialFolder`](xref:System.Environment.SpecialFolder) 做為方法的第一個引數，從 .NET Standard 程式庫判斷每個平臺上的檔案路徑 `Environment.GetFolderPath` 。 然後使用 `Path.Combine` 方法與檔案名稱相結合：
 
 ```csharp
 string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "temp.txt");
@@ -58,7 +47,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 這些作業會在範例應用程式中示範，包括儲存及載入文字的頁面：
 
-[![儲存和載入文字](files-images/saveandload-sml.png "儲存和載入應用程式中的")檔案](files-images/saveandload.png#lightbox "在應用程式中儲存及載入檔案")
+[![儲存和載入文字](files-images/saveandload-sml.png "在應用程式中儲存及載入檔案")](files-images/saveandload.png#lightbox "在應用程式中儲存及載入檔案")
 
 <a name="Loading_Files_Embedded_as_Resources" />
 
@@ -66,17 +55,17 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 若要將檔案內嵌至 **.NET Standard** 組件，請建立或新增檔案，並確保**建置動作：EmbeddedResource**。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![正在設定內嵌資源組建動作](files-images/vs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/vs-embeddedresource.png#lightbox "設定 EmbeddedResource BuildAction")
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![內嵌在 .net standard 程式庫中的文字檔，設定內嵌資源組建動作](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "設定 EmbeddedResource BuildAction")
+[![內嵌在 .NET standard 程式庫中的文字檔，設定內嵌資源建立動作](files-images/xs-embeddedresource-sml.png "設定 EmbeddedResource BuildAction")](files-images/xs-embeddedresource.png#lightbox "設定 EmbeddedResource BuildAction")
 
 -----
 
-`GetManifestResourceStream` 用以存取使用其**資源識別碼**的內嵌檔案。 根據預設，資源識別碼是以內嵌之專案的預設命名空間做為前置詞的前置詞，在此情況下，元件是**WorkingWithFiles** ，而 Filename 是**LibTextResource**，因此資源識別碼 `WorkingWithFiles.LibTextResource.txt`。
+`GetManifestResourceStream` 用以存取使用其**資源識別碼**的內嵌檔案。 根據預設，資源識別碼是以內嵌所在專案的預設命名空間做為前置詞的檔案名-在此情況下，元件為**WorkingWithFiles** ，檔案名為**LibTextResource**，因此資源識別碼為 `WorkingWithFiles.LibTextResource.txt` 。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -90,7 +79,7 @@ using (var reader = new System.IO.StreamReader (stream))
 
 然後就可以使用 `text` 變數顯示文字，或在程式碼中使用它。 [範例應用程式](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)的這個螢幕擷取畫面顯示使用 `Label` 控制項轉譯的文字。
 
- [![內嵌在 .net standard 程式庫中的文字檔內嵌于](files-images/pcltext-sml.png "應用程式中 .NET Standard 程式庫中的文字檔")](files-images/pcltext.png#lightbox "應用程式中顯示 .NET Standard 程式庫中的內嵌文字檔")
+ [![內嵌在 .NET standard 程式庫中的文字檔](files-images/pcltext-sml.png "應用程式中顯示 .NET Standard 程式庫中的內嵌文字檔")](files-images/pcltext.png#lightbox "應用程式中顯示 .NET Standard 程式庫中的內嵌文字檔")
 
 載入和還原序列化 XML 一樣簡單。 下列程式碼示範從資源載入並還原序列化 XML 檔案，然後繫結至 `ListView` 以顯示。 XML 檔案包含 `Monkey` 物件的陣列 (已使用範例程式碼定義類別)。
 
@@ -106,7 +95,7 @@ var listView = new ListView ();
 listView.ItemsSource = monkeys;
 ```
 
- [![內嵌在 .net standard 程式庫中的 Xml 檔案，會顯示在]listview 中所(files-images/pclxml-sml.png "顯示的 .net standard 程式庫")中的 listview 內嵌 Xml 檔案中](files-images/pclxml.png#lightbox "ListView 中顯示的 .NET standard 程式庫中的內嵌 XML 檔案")
+ [![內嵌在 .NET standard 程式庫中的 Xml 檔案，顯示在 ListView 中](files-images/pclxml-sml.png "ListView 中顯示的 .NET standard 程式庫中的內嵌 XML 檔案")](files-images/pclxml.png#lightbox "ListView 中顯示的 .NET standard 程式庫中的內嵌 XML 檔案")
 
 <a name="Embedding_in_Shared_Projects" />
 
@@ -148,7 +137,7 @@ Stream stream = assembly.GetManifestResourceStream
 
 ### <a name="debugging-embedded-resources"></a>偵錯內嵌資源
 
-因為有時很難了解為什麼未載入特定的資源，所以下列偵錯程式碼會暫時新增至應用程式，協助確認已正確設定資源。 它會將內嵌在指定組件中的所有已知資源輸出到 [錯誤] 板，協助偵錯資源載入問題。
+因為有時很難了解為什麼未載入特定的資源，所以下列偵錯程式碼會暫時新增至應用程式，協助確認已正確設定資源。 它會將內嵌在指定組件中的所有已知資源輸出到 [錯誤]**** 板，協助偵錯資源載入問題。
 
 ```csharp
 using System.Reflection;
@@ -160,12 +149,12 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已示範在裝置上儲存及載入文字，以及載入內嵌資源等一些簡單的檔案作業。 使用 .NET Standard 2.0 就可以在 .NET Standard 程式庫中共用檔案存取碼。
 
 ## <a name="related-links"></a>相關連結
 
 - [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
-- [Xamarin.Forms 範例](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms範例](https://github.com/xamarin/xamarin-forms-samples)
 - [使用 Xamarin.iOS 的檔案系統](~/ios/app-fundamentals/file-system.md)

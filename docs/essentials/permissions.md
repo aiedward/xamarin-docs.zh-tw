@@ -1,19 +1,9 @@
 ---
-title: Xamarin. Essentials：許可權
-description: 本檔說明 Xamarin 中的許可權類別，其可提供檢查和要求執行時間許可權的功能。
-ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
-author: jamesmontemagno
-ms.author: jamont
-ms.custom: video
-ms.date: 01/06/2020
-ms.openlocfilehash: fbce02300363c3ec68c35c11afb25342f06f4be1
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150075"
+title： " Xamarin.Essentials ：許可權" 描述： "本檔描述中的許可權類別 Xamarin.Essentials ，這可提供檢查和要求執行時間許可權的功能。"
+assetid： 34062D84-3E55-4AF7-A688-8551068B1E57 author： jamesmontemagno ms-chap： jamont ms. custom： video ms. date： 01/06/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-permissions"></a>Xamarin. Essentials：許可權
+
+# <a name="xamarinessentials-permissions"></a>Xamarin.Essentials：許可權
 
 **許可權**類別提供檢查和要求執行時間許可權的功能。
 
@@ -25,7 +15,7 @@ ms.locfileid: "83150075"
 
 ## <a name="using-permissions"></a>使用許可權
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -67,7 +57,7 @@ var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
 ## <a name="available-permissions"></a>可用的許可權
 
-Xamarin 會嘗試盡可能抽象化最多的許可權。 不過，每個作業系統都有一組不同的執行時間許可權。 此外，針對某些許可權提供單一 API 時，會有一些差異。 以下是目前可用許可權的指南：
+Xamarin.Essentials嘗試盡可能抽象化許可權。 不過，每個作業系統都有一組不同的執行時間許可權。 此外，針對某些許可權提供單一 API 時，會有一些差異。 以下是目前可用許可權的指南：
 
 圖示指南：
 
@@ -91,7 +81,7 @@ Xamarin 會嘗試盡可能抽象化最多的許可權。 不過，每個作業�
 | 提醒事項 | ![不支援 Android](~/media/shared/no.png "不支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | 感應器 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | Sms | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
-| Speech | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
+| 語音 | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | StorageRead | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 | StorageWrite | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![不支援 iOS](~/media/shared/no.png "不支援 iOS") | ![不支援 UWP](~/media/shared/no.png "不支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![不支援 Tizen](~/media/shared/no.png "不支援 Tizen") |
 
@@ -145,7 +135,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>擴充許可權
 
-針對需要不包含在 Xamarin 中的其他驗證或許可權的應用程式，已建立許可權 API 以提供彈性且可擴充。 建立繼承自的新類別， `BasePermission` 並執行所需的抽象方法。 結果為
+針對需要不包含在中的其他驗證或許可權的應用程式，已建立許可權 API 以提供彈性且可擴充 Xamarin.Essentials 。 建立繼承自的新類別， `BasePermission` 並執行所需的抽象方法。 結果為
 
 ```csharp
 public class MyPermission : BasePermission

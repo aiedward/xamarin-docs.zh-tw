@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：應用程式資訊
-description: 本文件描述 Xamarin.Essentials 中的 AppInfo 類別，可提供應用程式的相關資訊。 例如，會公開應用程式名稱和版本。
-ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/29/2019
-ms.custom: video
-ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756984"
+title： " Xamarin.Essentials ：應用程式資訊" 描述： "本檔描述中的 AppInfo 類別 Xamarin.Essentials ，它會提供您應用程式的相關資訊。 例如，它會公開應用程式名稱和版本。」
+assetid： 15924FCB-19E0-45B2-944E-E94FD7AE12FA author： jamesmontemagno ms-chap： jamont ms. date： 01/29/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials：應用程式資訊
 
 **AppInfo** 類別會提供您應用程式的相關資訊。
@@ -23,7 +13,7 @@ ms.locfileid: "70756984"
 
 ## <a name="using-appinfo"></a>使用 AppInfo
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -64,28 +54,28 @@ AppInfo.ShowSettingsUI();
 
 應用程式資訊會依據下列欄位，從 `AndroidManifest.xml` 中取得：
 
-- **在**節點`android:versionCode`中`manifest`產生 =
-- **Name** - 節點`android:label`中`application`的名稱
-- **套件名稱**`package``manifest`: 在節點中
-- **版本String** `android:versionName` `application`= 在節點中
+- **組建**- `android:versionCode` 在 `manifest` 節點中
+- **Name**  -  名稱 `android:label`在 `application` 節點中
+- **PackageName**： `package` 在 `manifest` 節點中
+- **VersionString** – `android:versionName` 在 `application` 節點中
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
 應用程式資訊會依據下列欄位，從 `Info.plist` 中取得：
 
-- **生成**|`CFBundleVersion`
-- **Name**名稱`CFBundleDisplayName`(如果已設定), - 否則`CFBundleName`
-- **套件名稱**:`CFBundleIdentifier`
-- **版本字串**|`CFBundleShortVersionString`
+- **組建**–`CFBundleVersion`
+- **Name**  -  名稱 `CFBundleDisplayName`如果設定，則為，否則為`CFBundleName`
+- **PackageName**：`CFBundleIdentifier`
+- **VersionString** –`CFBundleShortVersionString`
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 應用程式資訊會依據下列欄位，從 `Package.appxmanifest` 中取得：
 
 - **組建** - 使用 `Identity` 節點上 `Version` 中的 `Build`
-- **Name**節點上`Properties`的名稱 - `DisplayName`
-- **套件名稱**`Name``Identity`: 在節點上
-- **版本字串**`Version`=`Identity`節點上
+- **Name**  -  名稱 `DisplayName`在 `Properties` 節點上
+- **PackageName**： `Name` 在 `Identity` 節點上
+- **VersionString** – `Version` 在 `Identity` 節點上
 
 --------------
 

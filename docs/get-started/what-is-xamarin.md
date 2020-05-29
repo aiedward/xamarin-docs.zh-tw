@@ -1,22 +1,9 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a9a25cff30b9dfbed44e60faeae2f577d07940fc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139213"
+標題：「什麼是 Xamarin？」
+描述：「本文介紹 Xamarin 平臺和相關連結庫。」
+assetid： 33C83E13-F3E5-17B4-6512-207F3D3C5AB6 ms. custom： video author： profexorgeek ms-chap： jusjohns ms. date： 05/28/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="what-is-xamarin"></a>什麼是 Xamarin？
 
 [![IOS 和 Android 中範例 Xamarin 應用程式的螢幕擷取畫面](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
@@ -43,7 +30,7 @@ Xamarin 適用於具有下列目標的開發人員：
 
 此圖表顯示跨平台 Xamarin 應用程式的整體架構。 Xamarin 可讓您在每個平台上建立原生 UI，並於 C# 中撰寫跨平台共用的商務邏輯。 在大部分情況下，80% 應用程式的程式碼可透過 Xamarin 來共用。
 
-Xamarin 是以 **Mono** 為基礎所建置，其為基於 .NET ECMA 標準的 .NET Framework 開放原始碼版本 。 Mono 存在的時間幾乎跟 .NET Framework 一樣長，且可在大部分的平台上執行，包含 Linux、Unix、FreeBSD，以及 macOS。 Mono 執行環境會自動處理工作，例如記憶體配置、記憶體回收，以及與基礎平台的互通性。
+Xamarin 建置於 .NET 之上，它會自動處理工作，例如記憶體配置、垃圾收集，以及與基礎平臺的互通性。
 
 如需平台特定架構的詳細資訊，請參閱 [Xamarin.Android](#xamarinandroid) 與 [Xamarin.iOS](#xamarinios)。
 
@@ -89,7 +76,7 @@ Xamarin.Essentials是一種程式庫，可提供原生裝置功能的跨平臺 A
 
 ### Xamarin.Forms
 
-Xamarin.Forms是一個開放原始碼 UI 架構。 Xamarin.Forms可讓開發人員從單一共用程式碼基底建立 iOS、Android 和 Windows 應用程式。 Xamarin.Forms可讓開發人員在 XAML 中使用 c # 的程式碼後置來建立使用者介面。 這些使用者介面會於每個平台上轉譯為高效能的原生控制項。 所提供的一些功能範例 Xamarin.Forms 包括：
+Xamarin.Forms是一個開放原始碼 UI 架構。 Xamarin.Forms可讓開發人員從單一共用程式碼基底建立 Xamarin. iOS、Xamarin 和 Windows 應用程式。 Xamarin.Forms可讓開發人員在 XAML 中使用 c # 的程式碼後置來建立使用者介面。 這些使用者介面會於每個平台上轉譯為高效能的原生控制項。 所提供的一些功能範例 Xamarin.Forms 包括：
 
 - XAML 使用者介面語言
 - 資料繫結

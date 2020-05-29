@@ -1,19 +1,9 @@
 ---
-title: 'Xamarin.Essentials: Secure Storage'
-description: 此文件說明 Xamarin.Essentials 中的 SecureStorage 類別，它有助於安全地存放簡單的機碼/值組。 此文件討論如何使用該類別、平台實作特性與限制。
-ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
-ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550896"
+title： " Xamarin.Essentials ：安全儲存體" 描述： "本檔描述中的 SecureStorage 類別 Xamarin.Essentials ，這有助於安全地儲存簡單的索引鍵/值組。 它討論如何使用類別、平臺執行細節和限制。」
+assetid： 78856C0D-76BB-406E-A880-D5A3987B7D64 author： jamesmontemagno ms-chap： jamont ms. date： 04/02/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Secure Storage
+
+# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials：安全存放裝置
 
 **SecureStorage** 類別有助於安全地存放簡單的機碼/值組。
 
@@ -26,7 +16,7 @@ ms.locfileid: "83550896"
 # <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
-> [應用程式自動備份 (Auto Backup for Apps)](https://developer.android.com/guide/topics/data/autobackup) 是 Android 6.0 (API 層級 23) 與更新版本中的功能，可備份使用者的應用程式資料 (共用喜好設定、應用程式內部存放區中的檔案，以及其他特定檔案)。 當重新安裝應用程式或在新裝置上安裝應用程式時，會還原資料。 這會對 `SecureStorage` 造成影響，它利用備份的共用喜好設定，而且在進行還原時無法解密。 Xamarin.Essentials 會自動處理此案例，方式是移除機碼以便可以重設，但您可以透過停用自動備份以採取額外的步驟。
+> [應用程式自動備份 (Auto Backup for Apps)](https://developer.android.com/guide/topics/data/autobackup) 是 Android 6.0 (API 層級 23) 與更新版本中的功能，可備份使用者的應用程式資料 (共用喜好設定、應用程式內部存放區中的檔案，以及其他特定檔案)。 當重新安裝應用程式或在新裝置上安裝應用程式時，會還原資料。 這會對 `SecureStorage` 造成影響，它利用備份的共用喜好設定，而且在進行還原時無法解密。 Xamarin.Essentials會藉由移除金鑰來自動處理這種情況，使其可以重設，但是您可以藉由停用自動備份來採取額外的步驟。
 
 ### <a name="enable-or-disable-backup"></a>啟用或停用備份
 您可以透過將 `AndroidManifest.xml` 檔案中的 `android:allowBackup` 設定設定為 false，以選擇停用整個應用程式的自動備份。 只有當您計畫以其他方式還原資料時，才建議使用此方式。
@@ -63,7 +53,7 @@ ms.locfileid: "83550896"
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-當您在 **iOS 模擬器** 上開發時，請啟用 **Keychain** 權利並為應用程式的套件組合識別碼新增金鑰鏈存取群組。 
+當您在 **iOS 模擬器** 上開發時，請啟用 **Keychain** 權利並為應用程式的套件組合識別碼新增金鑰鏈存取群組。
 
 開啟 iOS 專案中的 **Entitlements.plist**，並尋找 **Keychain** 權利並予以啟用。 這會自動將應用程式的識別碼新增為群組。
 
@@ -80,7 +70,7 @@ ms.locfileid: "83550896"
 
 ## <a name="using-secure-storage"></a>使用 Secure Storage
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -161,7 +151,7 @@ SecureStorage.RemoveAll();
 
 ## <a name="limitations"></a>限制
 
-此 API 旨在存放少量文字。  若嘗試使用它來存放大量文字，效能會變差。 
+此 API 旨在存放少量文字。  若嘗試使用它來存放大量文字，效能會變差。
 
 ## <a name="api"></a>API
 

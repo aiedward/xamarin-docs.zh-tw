@@ -1,50 +1,41 @@
 ---
-title: Xamarin.要點:網路認證器
-description: 本文件介紹 Xamarin.Essentials 中的 Web 身份驗證器類,它允許您啟動基於瀏覽器的身份驗證流,這些身份驗證流偵聽對應用的回調。
-ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
-author: redth
-ms.author: jodick
-ms.date: 03/26/2020
-ms.openlocfilehash: b090ea8491afccb7078de8333a44a4888819a46a
-ms.sourcegitcommit: ddd2cb3a102df339bb269380cb2c0617dbb1acb7
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81688275"
+title： " Xamarin.Essentials ： Web 驗證器" 描述： "本檔描述中的 WebAuthenticator 類別 Xamarin.Essentials ，可讓您啟動以瀏覽器為基礎的驗證流程，以接聽應用程式的回呼。
+assetid： 3D95371E-5D59-440E-8D31-F3C04E493DC1 author： redth ms-chap： jodick ms. date： 03/26/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-web-authenticator"></a>Xamarin.要點:網路認證器
 
-**Web 身份驗證器**類允許您啟動基於瀏覽器的流,這些流偵聽對註冊到應用的特定 URL 的回調。
+# <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
-## <a name="overview"></a>總覽
+**WebAuthenticator**類別可讓您起始以瀏覽器為基礎的流程，以接聽向應用程式註冊之特定 URL 的回呼。
 
-許多應用需要添加使用者身份驗證,這通常意味著允許使用者登錄其現有的 Microsoft、Facebook、Google 和現在的 Apple 登錄帳戶。
+## <a name="overview"></a>概觀
 
-[Microsoft 身份驗證庫 (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)為向應用添加身份驗證提供了出色的交鑰匙解決方案。 甚至支援 Xamarin 應用程式在其用戶端 NuGet 包中。
+許多應用程式都需要新增使用者驗證，這通常表示讓您的使用者能夠登入其現有的 Microsoft、Facebook、Google 和現在的 Apple 登入帳戶。
 
-如果您有興趣使用自己的 Web 服務進行身份驗證,則可以使用**Web 身份驗證器**來實現用戶端功能。
+[Microsoft 驗證程式庫（MSAL）](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)提供絕佳的轉型解決方案，可將驗證新增至您的應用程式。 在用戶端 NuGet 套件中甚至支援 Xamarin 應用程式。
 
-## <a name="why-use-a-server-back-end"></a>為什麼要使用伺服器後端?
+如果您想要使用自己的 web 服務進行驗證，則可以使用**WebAuthenticator**來執行用戶端功能。
 
-許多身份驗證提供者已轉向僅提供顯式或雙腿身份驗證流,以確保更好的安全性。 這意味著您需要來自提供程式的 _「用戶端機密」_ 來完成身份驗證流。 遺憾的是,移動應用不是儲存機密的好地方,存儲在移動應用代碼、二進位檔或其他內容中的任何內容通常被認為是不安全的。
+## <a name="why-use-a-server-back-end"></a>為何要使用伺服器後端？
 
-此處的最佳做法是使用 Web 後端作為行動應用程式和身份驗證供應商之間的中間層。
+許多驗證提供者已移至只提供明確或雙腳的驗證流程，以確保更高的安全性。 這表示您將需要提供者的「_用戶端密碼_」，才能完成驗證流程。 可惜的是，行動裝置應用程式並不是儲存秘密和儲存在行動裝置應用程式代碼二進位檔中之任何專案的絕佳位置，否則通常會被視為不安全。
+
+這裡的最佳作法是使用 web 後端作為您的行動應用程式與驗證提供者之間的中介層。
 
 > [!IMPORTANT]
-> 我們強烈建議不要使用較舊的僅移動身份驗證庫和模式,這些庫和模式由於存儲用戶端機密固有的安全性而在身份驗證流中不使用 Web 後端介面。
+> 我們強烈建議您不要使用舊版僅限行動裝置的驗證程式庫，以及在驗證流程中不會運用 web 後端的模式，因為其固有的安全性是用來儲存用戶端密碼。
 
 ## <a name="get-started"></a>開始使用
 
 [!include[](~/essentials/includes/get-started.md)]
 
-要造**訪 Web 身份驗證器**功能,需要以下特定於平台的設置。
+若要存取**WebAuthenticator**功能，需要下列平臺特定設定。
 
 # <a name="android"></a>[Android](#tab/android)
 
-Android 需要意向篩選器設置來處理回調 URI。 這可以通過對類`WebAuthenticatorCallbackActivity`進行 子類化來輕鬆完成:
+Android 需要意圖篩選器設定來處理您的回呼 URI。 藉由子類別化類別，即可輕鬆完成此動作 `WebAuthenticatorCallbackActivity` ：
 
 > [!NOTE]
-> 應考慮實現[Android 應用連結](https://developer.android.com/training/app-links/)來處理回調 URI,並確保您的應用程式是唯一可以註冊以處理回調 URI 的應用程式。
+> 您應該考慮採用[Android 應用程式連結](https://developer.android.com/training/app-links/)來處理回呼 uri，並確保您的應用程式是唯一可以註冊來處理回呼 uri 的帳戶。
 
 ```csharp
 const string CALLBACK_SCHEME = "myapp";
@@ -58,7 +49,7 @@ public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthentic
 }
 ```
 
-您還需要從`OnResume`中的重寫呼叫到基本要素`MainActivity`:
+您也必須從您的覆寫回呼至 Essentials `OnResume` `MainActivity` ：
 
 ```csharp
 protected override void OnResume()
@@ -71,12 +62,12 @@ protected override void OnResume()
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS 上,您需要將應用的回調 URI 模式添加到 Info.plist 中。
+在 iOS 上，您必須將應用程式的回呼 URI 模式新增至您的 plist。
 
 > [!NOTE]
-> 應考慮使用[通用應用連結](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content)註冊應用的回調 URI,作為最佳做法。
+> 您應該考慮使用[通用應用程式連結](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content)來註冊應用程式的回呼 URI，做為最佳作法。
 
-您還需要重寫您的`AppDelegate``OpenUrl`方法才能呼叫基本要素:
+您也需要覆寫 `AppDelegate` 的 `OpenUrl` 方法以呼叫 Essentials：
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -90,7 +81,7 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-對於 UWP,您需要在檔案`Package.appxmanifest`中 宣告回檔 URI:
+針對 UWP，您必須在您的檔案中宣告回呼 URI `Package.appxmanifest` ：
 
 ```xml
     <Extensions>
@@ -104,17 +95,17 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
 
 -----
 
-## <a name="using-webauthenticator"></a>使用 Web 身份驗證器
+## <a name="using-webauthenticator"></a>使用 WebAuthenticator
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-API 主要由一`AuthenticateAsync`個 方法組成,該方法採用兩個參數:應用於啟動 Web 瀏覽器流的 URL,以及您希望該流最終調用的 Uri 以及註冊到哪個應用能夠處理的 Uri。
+此 API 主要是由採用兩個參數的單一方法所組成 `AuthenticateAsync` ：應該用來啟動網頁瀏覽器流程的 url，以及您希望流程最後回呼的 Uri，以及您的應用程式已註冊為能夠處理的 Uri。
 
-結果是`WebAuthenticatorResult`包含從回調 URI 分析的任何查詢參數:
+結果是， `WebAuthenticatorResult` 其中包含從回呼 URI 剖析的任何查詢參數：
 
 ```csharp
 var authResult = await WebAuthenticator.AuthenticateAsync(
@@ -124,35 +115,35 @@ var authResult = await WebAuthenticator.AuthenticateAsync(
 var accessToken = authResult?.AccessToken;
 ```
 
-`WebAuthenticator` API 負責在瀏覽器中啟動網址 並等待收到回調:
+此 `WebAuthenticator` API 會負責在瀏覽器中啟動 url，並等候直到收到回呼為止：
 
-![典型的 Web 身份驗證串流](images/web-authenticator.png)
+![一般 Web 驗證流程](images/web-authenticator.png)
 
-如果使用者在任何時候取消流,則傳回`null`結果 。
+如果使用者在任何時間點取消流程， `null` 則會傳回結果。
 
-## <a name="platform-differences"></a>平台差異
+## <a name="platform-differences"></a>平臺差異
 
 # <a name="android"></a>[Android](#tab/android)
 
-自定義選項卡在可用時使用,否則將啟動 URL 的意圖。
+您可以使用自訂索引標籤，否則會針對 URL 啟動意圖。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-在 iOS`ASWebAuthenticationSession`12 或更高版本上,使用。  在 iOS`SFAuthenticationSession`11 上,使用。  在較舊的 iOS`SFSafariViewController`版本上,如果可用,則使用 Safari,否則將使用 Safari。
+在 iOS 12 或更高版本上， `ASWebAuthenticationSession` 會使用。  在 iOS 11 上， `SFAuthenticationSession` 會使用。  在較舊的 iOS 版本上， `SFSafariViewController` 會使用（如果有的話），否則會使用 Safari。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-在 UWP`WebAuthenticationBroker`上,如果支援,則使用 。
+在 UWP 上， `WebAuthenticationBroker` 如果支援，則會使用，否則會使用系統瀏覽器。
 
 -----
 
-## <a name="apple-sign-in"></a>蘋果登錄
+## <a name="apple-sign-in"></a>Apple 登入
 
-根據[蘋果的審查準則](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple),如果你的應用程式使用任何社交登錄服務進行身份驗證,它還必須提供蘋果登錄作為一個選項。
+根據[Apple 的仲裁者針](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple)，如果您的應用程式使用任何社交登入服務進行驗證，則也必須提供 Apple Sign In 選項。
 
-要將 Apple 登入到應用,首先您需要[將應用設定為使用 Apple 登入](https://docs.microsoft.com/xamarin/ios/platform/ios13/sign-in)。
+若要將 Apple 登入新增至您的應用程式，您必須先將[應用程式設定為使用 Apple 登入](https://docs.microsoft.com/xamarin/ios/platform/ios13/sign-in)。
 
-對於 iOS 13 及更高版本,您`AppleSignInAuthenticator.AuthenticateAsync()`需要調用 該方法。 這將使用原生 Apple Sign 在 API 的引擎蓋下,以便您的使用者在這些設備上獲得最佳體驗。 您可以編寫共享代碼,以便在執行時使用正確的 API,如下所示:
+針對 iOS 13 和更新版本，您會想要呼叫 `AppleSignInAuthenticator.AuthenticateAsync()` 方法。 這會在幕後使用原生 Apple 登入 API，讓您的使用者能夠在這些裝置上獲得最佳體驗。 您可以在執行時間撰寫共用程式碼，以使用正確的 API，如下所示：
 
 ```csharp
 var scheme = "..."; // Apple, Microsoft, Google, Facebook, etc.
@@ -178,28 +169,28 @@ var accessToken = r?.AccessToken;
 ```
 
 > [!TIP]
-> 對於非 iOS 13 設備,這將啟動 Web 身份驗證流,該流還可用於在 Android 和 UWP 設備上啟用 Apple 登錄。
-> 您可以在 iOS 模擬器上登入 iCloud 帳戶以測試 Apple 登錄。
+> 針對非 iOS 13 裝置，這會啟動 web 驗證流程，也可用來在您的 Android 和 UWP 裝置上啟用 Apple 登入。
+> 您可以在 iOS 模擬器上登入您的 iCloud 帳戶，以測試 Apple 登入。
 
 -----
 
-## <a name="aspnet-core-server-back-end"></a>ASP.NET核心伺服器後端介面
+## <a name="aspnet-core-server-back-end"></a>ASP.NET 核心伺服器後端
 
-可以將`WebAuthenticator`API 與任何 Web 後端服務一起使用。  要將其與ASP.NET核心應用一起使用,首先需要使用以下步驟配置 Web 應用:
+您可以使用 `WebAuthenticator` API 搭配任何 web 後端服務。  若要將它與 ASP.NET core 應用程式搭配使用，您必須先使用下列步驟來設定 web 應用程式：
 
-1. 在 ASP.NET 核心 Web 應用中設定所需的[外部社交身份驗證提供者](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio)。
-2. 將預設身份驗證方案設置為`CookieAuthenticationDefaults.AuthenticationScheme`呼叫`.AddAuthentication()`中。
-3. 在`.AddCookies()`Startup.cs`.AddAuthentication()`呼叫中使用。
-4. 必須配置`.SaveTokens = true;`所有提供程式。
+1. 在 ASP.NET Core web 應用程式中設定您想要的[外部社交驗證提供者](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio)。
+2. 在您的呼叫中，將預設的驗證配置設定為 `CookieAuthenticationDefaults.AuthenticationScheme` `.AddAuthentication()` 。
+3. `.AddCookies()`在您的 Startup.cs `.AddAuthentication()` 呼叫中使用。
+4. 所有提供者都必須使用進行設定 `.SaveTokens = true;` 。
 
 > [!TIP]
-> 如果您想包括 Apple 登錄,`AspNet.Security.OAuth.Apple`可以使用 NuGet 套件。  您可以在 Essentials GitHub 儲存函式庫中查看完整的[Startup.cs 範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60)。
+> 如果您想要包含 Apple 登入，您可以使用 `AspNet.Security.OAuth.Apple` NuGet 套件。  您可以在 Essentials GitHub 存放庫中查看完整的[Startup.cs 範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60)。
 
-### <a name="add-a-custom-mobile-auth-controller"></a>新增自訂移動 auth 控制器
+### <a name="add-a-custom-mobile-auth-controller"></a>新增自訂的行動驗證控制器
 
-使用移動身份驗證流時,通常需要直接啟動流向用戶選擇的提供程式(例如,按一下應用登錄螢幕上的"Microsoft"按鈕)。  能夠在特定回調URI將相關資訊返回給應用以結束身份驗證流也很重要。
+使用行動驗證流程時，通常會想要將流程直接起始至使用者所選擇的提供者（例如，在應用程式的 [登入] 畫面上按一下 [Microsoft] 按鈕）。  也很重要的是，您可以在特定的回呼 URI，將相關資訊傳回至您的應用程式，以結束驗證流程。
 
-為此,請使用自訂 API 控制器:
+若要達到此目的，請使用自訂 API 控制器：
 
 ```csharp
 [Route("mobileauth")]
@@ -220,15 +211,15 @@ public class AuthController : ControllerBase
 }
 ```
 
-此控制器的目的是推斷應用請求的方案(提供程式),並與社交提供程式啟動身份驗證流。 當提供程式回調到 Web 後端時,控制器會分析結果,並重定向到應用的回調 URI,並帶有參數。
+此控制器的目的是要推斷應用程式要求的配置（提供者），並向社交提供者起始驗證流程。 當提供者回呼至 web 後端時，控制器會剖析結果，並將參數重新導向至應用程式的回呼 URI。
 
-有時,您可能希望將數據(如提供程式的`access_token`返回到應用)返回,您可以通過回調 URI 的查詢參數執行該操作。 或者,您可能希望在伺服器上創建自己的標識,並將自己的令牌傳回應用。 你做什麼和如何做這部分由你決定!
+有時候，您可能會想要將提供者之類的資料 `access_token` 傳回給應用程式，您可以透過回呼 URI 的查詢參數來執行此動作。 或者，您可能會想要改為在伺服器上建立自己的身分識別，並將您自己的權杖傳回給應用程式。 您可以自行決定如何執行此元件！
 
-檢視基本基本的儲存庫中[的完整控制器範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Controllers/MobileAuthController.cs)。
+查看 Essentials 存放庫中的[完整控制器範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Controllers/MobileAuthController.cs)。
 
 -----
 ## <a name="api"></a>API
 
-- [Web 認證器源碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/WebAuthenticator)
-- [Web 認證器 API 文件](xref:Xamarin.Essentials.WebAuthenticator)
-- [ASP.NET核心伺服器範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)
+- [WebAuthenticator 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/WebAuthenticator)
+- [WebAuthenticator API 檔](xref:Xamarin.Essentials.WebAuthenticator)
+- [ASP.NET Core Server 範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)

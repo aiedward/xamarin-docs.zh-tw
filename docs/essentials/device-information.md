@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：裝置資訊
-description: 本文件描述 Xamarin.Essentials 中的 DeviceInfo 類別，可提供執行應用程式的裝置相關資訊。
-ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1790e950dfccddcca84adf97bcff64f905ee59f6
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150081"
+title： " Xamarin.Essentials ：裝置資訊" 描述： "本檔描述中的 DeviceInfo 類別 Xamarin.Essentials ，其中提供應用程式執行所在裝置的相關資訊。
+assetid： A1AC5373-926A-4FB6-8D7D-4B87EB8EB522 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials：裝置資訊
 
 **DeviceInfo** 類別可提供執行應用程式的裝置相關資訊。
@@ -23,7 +13,7 @@ ms.locfileid: "83150081"
 
 ## <a name="using-deviceinfo"></a>使用 deviceInfo
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;

@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 4. Scrolling the stack''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9890ecdf286ee33d7af28fd20847788b063df8f5
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136886"
+title： "第4章的摘要。 滾動堆疊「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第4章的摘要。 將堆疊 "ms-chap： xamarin ms. 技術： assetid： 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44 author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第4章的摘要。 捲動堆疊
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
@@ -121,5 +105,5 @@ ms.locfileid: "84136886"
 - [第4章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 - [第4章 F # 範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
 - [StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)
-- [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [ScrollView](~/xamarin-forms/user-interface/layouts/scrollview.md)
 - [BoxView](~/xamarin-forms/user-interface/boxview.md)

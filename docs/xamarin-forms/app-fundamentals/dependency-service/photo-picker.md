@@ -1,9 +1,6 @@
 ---
-title：描述： ' 本文說明如何使用 Xamarin.Forms DependencyService 類別從手機的圖片庫挑選相片。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+標題：「從圖片庫挑選相片」描述：「本文將說明如何使用 Xamarin.Forms DependencyService 類別從手機的圖片庫挑選相片。」
+assetid： 4F51B0E7-6A63-403C-B488-500CCBCE75DD ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/06/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="picking-a-photo-from-the-picture-library"></a>從圖片媒體櫃挑選相片
@@ -61,7 +58,7 @@ namespace DependencyServiceDemos.iOS
             // Present UIImagePickerController;
             UIWindow window = UIApplication.SharedApplication.KeyWindow;
             var viewController = window.RootViewController;
-            viewController.PresentModalViewController(imagePicker, true);
+            viewController.PresentViewController(imagePicker, true, null);
 
             // Return Task object
             taskCompletionSource = new TaskCompletionSource<Stream>();
@@ -73,7 +70,7 @@ namespace DependencyServiceDemos.iOS
 
 ```
 
-`GetImageStreamAsync` 方法會建立 `UIImagePickerController` 並將其初始化，以從相片媒體櫃選取影像。 需要兩個事件處理常式：一個在使用者選取相片時使用；另一個在使用者取消顯示相片媒體櫃時使用。 接著，`PresentModalViewController` 即會向使用者顯示相片媒體櫃。
+`GetImageStreamAsync` 方法會建立 `UIImagePickerController` 並將其初始化，以從相片媒體櫃選取影像。 需要兩個事件處理常式：一個在使用者選取相片時使用；另一個在使用者取消顯示相片媒體櫃時使用。 `PresentViewController`方法接著會向使用者顯示相片媒體櫃。
 
 此時，`GetImageStreamAsync` 方法必須將 `Task<Stream>` 物件傳回給呼叫它的程式碼。 這項工作只有在使用者完成與相片媒體櫃的互動，並呼叫其中一個事件處理常式時才會完成。 就這種情況而言， [`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) 類別是不可或缺的。 這個類別會提供適當泛型型別的 `Task` 物件以從 `GetImageStreamAsync` 方法傳回，該類別即可稍後於工作完成時收到通知。
 
@@ -152,7 +149,7 @@ public class MainActivity : FormsAppCompatActivity
 
     protected override void OnCreate(Bundle savedInstanceState)
     {
-        // ... 
+        // ...
         Instance = this;
     }
     // ...

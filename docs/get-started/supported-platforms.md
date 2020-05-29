@@ -1,44 +1,33 @@
 ---
-title: Xamarin.Forms 支援的平台
-description: Xamarin.Forms 的平台和開發系統需求。
-ms.prod: xamarin
-ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/22/2020
-ms.openlocfilehash: 5751983bf4a818e8ee91af98b0c05658efaca8b2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304272"
+標題：「 Xamarin.Forms 支援的平臺」描述：「的平臺和開發系統需求」 Xamarin.Forms 。
+assetid： eecaf6a5-567c-49b2-ac83-2a195596c5bf ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/22/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms 支援的平台
 
-您可以針對下列作業系統撰寫 Xamarin.Forms 應用程式：
+# <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms支援的平臺
+
+Xamarin.Forms應用程式可以針對下列作業系統撰寫：
 
 - iOS 9 或更高版本。
 - Android 4.4 (API 19) 或更高版本 ([更多詳細資料](#android-platform-support))。 不過，建議至少使用 Android 5.0 (API 21) 以上的 API 版本。 這可確保與所有 Android 支援程式庫完全相容，且其仍為大部分 Android 裝置所用的版本。
 - Windows 10 通用 Windows 平台。
 
-可以在 Visual Studio 中建置適用於 iOS、Android 和通用 Windows 平台 (UWP) 的 Xamarin.Forms 應用程式。 不過，使用 Apple 所指定最新版本 Xcode 與最舊版本 macOS 進行 iOS 開發時，需要有網路連線的 Mac。 如需詳細資訊，請參閱 [Windows 需求](~/cross-platform/get-started/requirements.md#windows-requirements)。
+Xamarin.Forms適用于 iOS、Android 和通用 Windows 平臺（UWP）的應用程式可以 Visual Studio 內建。 不過，使用 Apple 所指定最新版本 Xcode 與最舊版本 macOS 進行 iOS 開發時，需要有網路連線的 Mac。 如需詳細資訊，請參閱 [Windows 需求](~/cross-platform/get-started/requirements.md#windows-requirements)。
 
-可以在 Visual Studio for Mac 中建置適用於 iOS 和 Android 的 Xamarin.Forms 應用程式。 如需詳細資訊，請參閱 [macOS 需求](~/cross-platform/get-started/requirements.md#macos-requirements)。
+Xamarin.Forms適用于 iOS 和 Android 的應用程式可以 Visual Studio for Mac 內建。 如需詳細資訊，請參閱 [macOS 需求](~/cross-platform/get-started/requirements.md#macos-requirements)。
 
 > [!NOTE]
-> 使用 Xamarin.Forms 開發應用程式需要熟悉 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)。
+> 使用開發應用程式 Xamarin.Forms 時，必須熟悉[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)。
 
 ## <a name="additional-platform-support"></a>其他平台支援
 
-Xamarin.Forms 可支援 iOS、Android 和 Windows 以外的其他平台：
+Xamarin.Forms支援 iOS、Android 和 Windows 以外的其他平臺：
 
 - Samsung Tizen
-- macOS
+- macOS 10.13 或更高版本
 - GTK#
 - WPF
 
-這些平台的狀態可在 [Xamarin.Forms GitHub platform support wiki](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support) (Xamarin.Forms GitHub 平台支援 Wiki) 上取得。
+這些平臺的狀態可在[ Xamarin.Forms GitHub 平臺支援 wiki](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support)上取得。
 
 ## <a name="android-platform-support"></a>Android 平台支援
 
@@ -66,7 +55,7 @@ Xamarin.Forms 可支援 iOS、Android 和 Windows 以外的其他平台：
 
 ## <a name="deprecated-platforms"></a>已淘汰的平台
 
-使用 Xamarin.Forms 3.0 或更新版本時不支援這些平台：
+使用3.0 或更新版本時，不支援這些平臺 Xamarin.Forms ：
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*

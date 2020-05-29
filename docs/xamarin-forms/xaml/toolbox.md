@@ -1,50 +1,38 @@
 ---
-title: 編輯使用工具箱 中的 Xamarin.Forms XAML
-description: XAML [工具箱] 包含所有內建的版面配置和控制項，可以直接在開啟的 XAML 檔案拖曳。
-ms.prod: xamarin
-ms.assetid: 513D1247-8AD0-4611-8660-1D277CD369E1
-ms.technology: xamarin-forms
-author: conceptdev
-ms.author: crdun
-ms.date: 08/29/2018
-ms.openlocfilehash: 4e5f306d45cccaa34df2a3472e9d36f8b0badcd7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61173830"
+title： " Xamarin.Forms 使用工具箱編輯 xaml" 描述： "XAML 工具箱包含所有內建的版面配置和控制項，這些都可以直接拖曳到 OPEN XAML 檔案中。」
+assetid： 513D1247-8AD0-4611-8660-1D277CD369E1 ms. 技術： xamarin-表單作者： conceptdev ms. author： crdun ms. 日期：08/29/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-xaml-toolbox"></a>Xamarin.Forms XAML 工具箱
+# <a name="xamarinforms-xaml-toolbox"></a>Xamarin.FormsXAML 工具箱
 
-Visual Studio 2017 版本 15.8 和 Visual Studio for Mac 7.6 現在有編輯 Xamarin.Forms XAML 檔案時，使用 [工具箱]。 [工具箱] 包含所有內建的 Xamarin.Forms 控制項和版面配置，可以將其拖曳到 XAML 編輯器。
+Visual Studio 2017 版本15.8 和 Visual Studio for Mac 7.6 現在在編輯 XAML 檔案時，可以使用 [工具箱] Xamarin.Forms 。 [工具箱] 包含所有內建 Xamarin.Forms 控制項和版面配置，可以拖曳到 XAML 編輯器中。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 2017 中，開啟 Xamarin.Forms XAML 檔案進行編輯。 可顯示工具箱 中，按下**Ctrl + W、 X**在鍵盤上，或選擇**檢視 > 工具箱**功能表項目。
+在 Visual Studio 2017 中，開啟 Xamarin.Forms XAML 檔案進行編輯。 在鍵盤上按**Ctrl + W、X** ，或選擇 [ **View > 工具箱**] 功能表項目，即可顯示 [工具箱]。
 
-![檢視表-[工具箱] 功能表](toolbox-images/win-view-menu.png)
+![View-工具箱功能表](toolbox-images/win-view-menu.png)
 
-可以隱藏工具箱 中，而且類似 Visual Studio 2017 中，使用右上方或操作功能表中的圖示中的其他窗格停駐。 Xamarin.Forms XAML 工具箱的自訂檢視選項，以滑鼠右鍵按一下每個區段，可以變更。 切換**清單檢視**選項清單和精簡檢視之間切換：
+您可以使用右上方或操作功能表中的圖示，隱藏和停駐 [工具箱]，如同 Visual Studio 2017 中的其他窗格。 [ Xamarin.Forms XAML 工具箱] 具有自訂視圖選項，只要以滑鼠右鍵按一下每個區段即可加以變更。 切換**清單視圖**選項，以在清單和 compact views 之間切換：
 
-[![工具箱清單檢視](toolbox-images/win-full-display-sml.png)](toolbox-images/win-full-display.png#lightbox)![工具箱精簡顯示](toolbox-images/win-compact-display.png)
+[ ![ 工具箱清單視圖](toolbox-images/win-full-display-sml.png)](toolbox-images/win-full-display.png#lightbox) ![工具箱 compact 顯示](toolbox-images/win-compact-display.png)
 
-Xamarin.Forms XAML 檔案開啟時進行編輯，將任何控制項或版面配置從 [工具箱] 拖曳至該檔案，然後利用自訂使用者介面的 Intellisense。
+當 Xamarin.Forms 開啟 XAML 檔案進行編輯時，請將任何控制項或版面配置從 [工具箱] 拖曳到檔案中，然後利用 Intellisense 來自訂使用者介面。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 中，選擇**檢視 > 板 > 工具箱**以顯示工具箱 中的功能表項目：
+在 Visual Studio for Mac 中，選擇 [ **View > pad] > 工具箱**] 功能表項目來顯示 [工具箱]：
 
-![檢視-面板-[工具箱] 功能表](toolbox-images/mac-view-menu.png)
+![View-Pad-工具箱功能表](toolbox-images/mac-view-menu.png)
 
-工具箱] 中可以隱藏，而且類似 Visual Studio 中的其他填補固定 for Mac，在右上方的 [[] 面板中使用的圖示。 Xamarin.Forms XAML 工具箱具有可以使用 [搜尋] 方塊旁的按鈕變更的自訂檢視選項：
+您可以使用面板右上角的圖示來隱藏和釘選 [工具箱]，如同 Visual Studio for Mac 中的其他板。 [ Xamarin.Forms XAML 工具箱] 具有自訂視圖選項，可以使用 [搜尋] 方塊旁邊的按鈕進行變更：
 
-- 顯示類別目錄
-- 使用精簡顯示
+- 顯示類別
+- 使用 compact 顯示
 
-完整和精簡選項如下所示：
+完整和精簡的選項如下所示：
 
-[![[工具箱] 的完整顯示](toolbox-images/mac-full-display-sml.png)](toolbox-images/mac-full-display.png#lightbox)![工具箱精簡顯示](toolbox-images/mac-compact-display.png)
+[ ![ 工具箱完整顯示](toolbox-images/mac-full-display-sml.png)](toolbox-images/mac-full-display.png#lightbox) ![工具箱 compact 顯示](toolbox-images/mac-compact-display.png)
 
-Xamarin.Forms XAML 檔案開啟時進行編輯，將任何控制項或版面配置從 [工具箱] 拖曳至該檔案，然後利用自訂使用者介面的 Intellisense。
+當 Xamarin.Forms 開啟 XAML 檔案進行編輯時，請將任何控制項或版面配置從 [工具箱] 拖曳到檔案中，然後利用 Intellisense 來自訂使用者介面。
 
 -----

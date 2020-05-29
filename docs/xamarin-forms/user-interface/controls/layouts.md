@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms大綱
-description: Xamarin.Forms版面配置是用來將使用者介面控制群組成視覺化結構。 本文列出中包含的版面配置 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c39bf29feceaf598ac8fd38e6af3d227b6deddc0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137302"
+title： " Xamarin.Forms 版面配置" 描述： " Xamarin.Forms 版面配置是用來將使用者介面控制群組成視覺化結構。 本文列出包含在中的版面配置 Xamarin.Forms 。」
+ms-chap： xamarin assetid： F4180997-BA21-453A-9958-D1E2940DF050 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date： 05/21/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-layouts"></a>Xamarin.Forms大綱
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -57,7 +43,7 @@ _Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺�
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView)能夠滾動其內容。 將 [`Content`](xref:Xamarin.Forms.ScrollView.Content) 屬性設定為一個或多個版面配置，使其無法在螢幕上顯示。 （的內容 `ScrollView` 通常是 [`StackLayout`](#stackLayout) ）。設定 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 屬性，指出滾動是否應為垂直、水準或兩者。<br /><br />[API 檔](xref:Xamarin.Forms.ScrollView)  / [指南](~/xamarin-forms/user-interface/layouts/scroll-view.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView 範例](layouts-images/ScrollView.png "ScrollView 範例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView)能夠滾動其內容。 將 [`Content`](xref:Xamarin.Forms.ScrollView.Content) 屬性設定為一個或多個版面配置，使其無法在螢幕上顯示。 （的內容 `ScrollView` 通常是 [`StackLayout`](#stackLayout) ）。設定 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 屬性，指出滾動是否應為垂直、水準或兩者。<br /><br />[API 檔](xref:Xamarin.Forms.ScrollView)  / [指南](~/xamarin-forms/user-interface/layouts/scrollview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView 範例](layouts-images/ScrollView.png "ScrollView 範例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView
@@ -89,7 +75,7 @@ _Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺�
 
 <a name="grid" />
 
-### <a name="grid"></a>方格
+### <a name="grid"></a>Grid
 
 |     |     |
 | --- | --- |

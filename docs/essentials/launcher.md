@@ -1,19 +1,9 @@
 ---
-title: Xamarin.Essentials Launcher
-description: Xamarin.Essentials 中的 Launcher 類別可讓應用程式依系統開啟 URI。
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 08/20/2019
-ms.openlocfilehash: f84d3bf379562c8ddd96a32dfb9f15b03b0a6827
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149792"
+title： " Xamarin.Essentials 啟動器" 描述： "中的啟動器類別 Xamarin.Essentials 可讓應用程式依系統開啟 URI。"
+assetid： BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 08/20/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials: Launcher
+
+# <a name="xamarinessentials-launcher"></a>Xamarin.Essentials：啟動器
 
 **Launcher** 類別可讓應用程式依系統開啟 URI。 當深層連結到其他應用程式的自訂 URI 配置時，通常會使用它。 若您要開啟瀏覽器並瀏覽網站，您應該參考 **[瀏覽器](open-browser.md)** API。
 
@@ -23,7 +13,7 @@ ms.locfileid: "83149792"
 
 ## <a name="using-launcher"></a>使用 Launcher
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
@@ -79,9 +69,9 @@ public class LauncherTest
 
 -----
 
-## <a name="files"></a>檔案
+## <a name="files"></a>檔案儲存體
 
-此功能可讓應用程式要求其他應用程式開啟及檢視檔案。 Xamarin.Essentials 會自動偵測檔案類型 (MIME)，並要求開啟檔案。
+此功能可讓應用程式要求其他應用程式開啟及檢視檔案。 Xamarin.Essentials會自動偵測檔案類型（MIME），並要求要開啟的檔案。
 
 以下範例說明如何將文字寫入磁片，並要求將它開啟：
 

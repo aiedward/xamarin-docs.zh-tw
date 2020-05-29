@@ -1,20 +1,9 @@
 ---
-title: 設定步驟-使用 Apple 登入 Xamarin. 表單
-description: 使用 Apple 安裝程式登入會根據您的行動應用程式目標的不同平臺而有所不同。
-ms.prod: xamarin
-ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-ms.openlocfilehash: c1f75f4872d787e261ab6bbac3624e31538c6ff0
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206536"
+標題：「安裝步驟-使用 Apple 登入」「 Xamarin.Forms 描述：」根據您的行動應用程式目標不同的平臺，使用 apple 安裝登入會有所不同。」
+assetid： 8F712802-395B-469B-B5BE-C927AD1A8391 ms. 技術： xamarin-表單作者： davidortinau ms. author： daortin ms. 日期：09/10/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>使用 Apple for Xamarin 的安裝程式登入
+
+# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>使用 Apple 的安裝程式登入Xamarin.Forms
 
 本指南涵蓋了一系列的步驟，讓您設定跨平臺應用程式以使用 Apple 進行登入。 Apple 安裝程式在 Apple 開發人員入口網站中是直接的，但必須執行其他步驟，才能在您的 Android 和 Apple 之間建立安全的關係。 
 
@@ -33,14 +22,14 @@ ms.locfileid: "71206536"
 ![註冊網域表單](sign-in-images/readme-signin-domain-more.png)
 
 > [!NOTE]
-> 如果您看到有關您的網域未與 SPF 相容的錯誤，您必須將 SPF DNS TXT 記錄新增至您的網域，並等候它傳播，再繼續進行：SPF TXT 看起來可能像這樣：`v=spf1 a a:myapp.com -all`
+> 如果您看到有關您的網域未與 SPF 相容的錯誤，您必須將 SPF DNS TXT 記錄新增至您的網域，並等待它傳播後再繼續： SPF TXT 可能如下所示：`v=spf1 a a:myapp.com -all`
 
-接下來，您必須按一下 [**下載**] 來取出`apple-developer-domain-association.txt`該檔案，然後將它上傳至您網域網站`.well-known`的資料夾，以驗證網域的擁有權。
+接下來，您必須按一下 [**下載**] 來取出該檔案 `apple-developer-domain-association.txt` ，然後將它上傳至您網域網站的資料夾，以驗證網域的擁有權 `.well-known` 。
 
-檔案上`.well-known/apple-developer-domain-association.txt`傳並可供連線之後，您可以按一下 [**驗證**]，讓 Apple 驗證您的網域擁有權。
+檔案 `.well-known/apple-developer-domain-association.txt` 上傳並可供連線之後，您可以按一下 [**驗證**]，讓 Apple 驗證您的網域擁有權。
 
 > [!NOTE]
-> Apple 會使用`https://`來驗證擁有權。 請確定您已設定 SSL，而且可以透過安全的 URL 存取該檔案。
+> Apple 會使用來驗證擁有權 `https://` 。 請確定您已設定 SSL，而且可以透過安全的 URL 存取該檔案。
 
 請先成功完成此程式，再繼續進行。
 
@@ -62,7 +51,7 @@ ms.locfileid: "71206536"
 
 ![建立新的服務識別碼](sign-in-images/readme-serviceid-create.png)
 
-為您的服務識別碼提供描述和識別碼。  此識別碼將會是`ServerId`您的。  請務必啟用 [**使用 Apple 登入**]。
+為您的服務識別碼提供描述和識別碼。  此識別碼將會是您的 `ServerId` 。  請務必啟用 [**使用 Apple 登入**]。
 
 在繼續之前，請在啟用的 [_使用 Apple 登入_] 選項旁按一下 [**設定**]。
 
@@ -70,10 +59,10 @@ ms.locfileid: "71206536"
 
 接下來，選擇您先前設定的**Web 網域**。
 
-最後，新增一或多個傳回**url**。  您`redirect_uri`稍後使用的任何都必須完全依照您的使用方式註冊。  當您輸入時， `http://`請`https://`確定您在 URL 中包含或。
+最後，新增一或多個傳回**url**。  `redirect_uri`您稍後使用的任何都必須完全依照您的使用方式註冊。  當您輸入時，請確定您在 `http://` `https://` URL 中包含或。
 
 > [!NOTE]
-> 基於測試目的，您不能`127.0.0.1`使用`localhost`或，但是您可以`local.test`使用其他網域（例如）。  如果您選擇這樣做，您可以編輯電腦的`hosts`檔案，將此虛構網域解析為本機 IP 位址。
+> 基於測試目的，您不能使用 `127.0.0.1` 或 `localhost` ，但是您可以使用其他網域（例如） `local.test` 。  如果您選擇這樣做，您可以編輯電腦的檔案， `hosts` 將此虛構網域解析為本機 IP 位址。
 
 ![設定您的 Apple 登入](sign-in-images/readme-serviceid-configure.png)
 
@@ -93,13 +82,13 @@ ms.locfileid: "71206536"
 
 按一下 [**繼續**]，然後按 [**註冊**] 來建立新的金鑰。
 
-接下來，您只需要下載您剛產生的金鑰一次。  按一下 [ **下載**]。
+接下來，您只需要下載您剛產生的金鑰一次。  按一下 [下載]  。
 
 ![下載金鑰](sign-in-images/readme-key-download.png)
 
-此外，請記下您在此步驟中的**金鑰識別碼**。 這將用於您`KeyId`稍後的。
+此外，請記下您在此步驟中的**金鑰識別碼**。 這將用於您稍後的 `KeyId` 。
 
-您將下載`.p8`金鑰檔案。  您可以在 [記事本] 中開啟此檔案，或 VSCode 以查看文字內容。  它們看起來應該像這樣：
+您將下載金鑰檔案 `.p8` 。  您可以在 [記事本] 中開啟此檔案，或 VSCode 以查看文字內容。  它們看起來應該像這樣：
 
 ```
 -----BEGIN PRIVATE KEY-----
@@ -110,11 +99,11 @@ DHF5Svq0
 -----END PRIVATE KEY-----
 ```
 
-將此金鑰`P8FileContents`命名為，並將它保存在安全的地方。 將此服務整合到您的行動應用程式時，您將會用到它。
+將此金鑰命名 `P8FileContents` 為，並將它保存在安全的地方。 將此服務整合到您的行動應用程式時，您將會用到它。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文說明使用 Apple 登入以用於 Xamarin. Forms 應用程式的必要步驟。
+本文說明設定以 Apple 登入以用於應用程式的必要步驟 Xamarin.Forms 。
 
 ## <a name="related-links"></a>相關連結
 

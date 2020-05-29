@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials：羅盤
-description: 本文件描述 Xamarin.Essentials 中的羅盤類別，可讓您監視裝置的磁北方位。
-ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 54ce725a319e0222179945ece558338c8a152653
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150119"
+title： " Xamarin.Essentials ：羅盤" 描述： "本檔說明中的羅盤類別 Xamarin.Essentials ，可讓您監視裝置的磁北部標題。"
+assetid： BF85B0C3-C686-43D9-811A-07DCAF8CDD86 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials：羅盤
 
 **羅盤**類別可讓您監視裝置的磁北方位。
@@ -23,7 +13,7 @@ ms.locfileid: "83150119"
 
 ## <a name="using-compass"></a>使用羅盤
 
-在類別中新增對 Xamarin.Essentials 的參考：
+Xamarin.Essentials在您的類別中新增的參考：
 
 ```csharp
 using Xamarin.Essentials;
