@@ -282,8 +282,8 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 
 - [PlatformSpecifics （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [ShadowPlatformSpecific （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)
-- [iOS 平臺-細節](~/xamarin-forms/platform/ios/index.md)
-- [Android 平臺-細節](~/xamarin-forms/platform/android/index.md)
+- [iOS 平台專用](~/xamarin-forms/platform/ios/index.md)
+- [Android 平台專用](~/xamarin-forms/platform/android/index.md)
 - [Windows 平臺-細節](~/xamarin-forms/platform/windows/index.md)
 - [使用效果自訂控制項](~/xamarin-forms/app-fundamentals/effects/index.md)
 - [附加屬性](~/xamarin-forms/xaml/attached-properties.md)
