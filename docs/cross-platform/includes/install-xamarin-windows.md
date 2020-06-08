@@ -1,10 +1,10 @@
 ---
 ms.topic: include
 ms.openlocfilehash: fedf918a2217a5fd1d5863ee5926057317fd3294
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.sourcegitcommit: 2105091f2eeb7844b19ae94708a6ab07e3e79bce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 06/08/2020
 ms.locfileid: "70206216"
 ---
 Xamarin 可以隨著新的__ Visual Studio 2017 安裝一起安裝，步驟如下：
@@ -23,7 +23,7 @@ Xamarin 可以隨著新的__ Visual Studio 2017 安裝一起安裝，步驟如�
 
 5. 當您準備好開始 Visual Studio 2017 安裝時，請按一下右下角的 [安裝]**** 按鈕：
 
-    ![[安裝] 按鈕](~/get-started/installation/windows-images/03-click-install.png)
+    ![安裝按鈕](~/get-started/installation/windows-images/03-click-install.png)
 
    根據您安裝的 Visual Studio 2017 版本，安裝程序可能需要很長一段時間才能完成。 您可以使用進度列來監視安裝：
 
