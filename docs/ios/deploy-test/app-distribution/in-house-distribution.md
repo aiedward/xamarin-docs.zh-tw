@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 854fecd7945c1090b475b3571678388b8e1cf127
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026539"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573231"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS 應用程式的內部作業散發
 
@@ -31,13 +31,13 @@ _本文件針對 Apple Enterprise Developer Program 的成員，提供散發內�
 
 所有應用程式仍然必須由 Apple 簽署。
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-your-application"></a>測試應用程式
 
 測試應用程式會透過使用臨機操作散發來執行。 如需關於測試的詳細資訊，請遵循[臨機操作散發](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)指南中的步驟。 請注意，您最多只能測試 100 個裝置。
 
-<a name="setup" />
+<a name="setup"></a>
 
 ## <a name="getting-set-up-for-distribution"></a>著手設定散發
 
@@ -47,13 +47,13 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 請務必注意，過期的憑證無法更新，而是必須使用新憑證來取代過期的憑證，如[下列](#certificate)詳述。
 
-<a name="certificate" />
+<a name="certificate"></a>
 
 ## <a name="creating-a-distribution-certificate"></a>建立散發憑證
 
 1. 瀏覽至 Apple Developer Member Center 的「憑證、識別碼與設定檔」** 區段。
 2. 在 [憑證]** 下，選取 [生產環境]****。
-3. 按下這個**+** 按鈕可建立新憑證。
+3. 按一下 **+** 按鈕以建立新的憑證。
 4. 在 [生產環境] ** 標題下，選取 [內部作業和臨機操作]****：
 
    [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
@@ -84,29 +84,29 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
    [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
-<a name="profile" />
+<a name="profile"></a>
 
 ## <a name="creating-a-distribution-provisioning-profile"></a>建立散發佈建設定檔
 
-<a name="appid" />
+<a name="appid"></a>
 
 ### <a name="creating-an-app-id"></a>建立應用程式識別碼
 
 如同您所建立的其他任何佈建設定檔，此處也需要應用程式識別碼才能識別您要散發給使用者裝置的應用程式。 如果您尚未建立應用程式識別碼，請遵循下列步驟來建立：
 
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」** 區段。 選取 [識別碼]**** 下的 [應用程式識別碼]****。
-2. 按下該**+** 按鈕並提供一個**名稱**,該名稱將在門戶中標識它。
+2. 按一下 [] **+** 按鈕，並提供可在入口網站中識別它的**名稱**。
 3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取 [明確應用程式識別碼] 或 [萬用字元應用程式識別碼]，並以反向 DNS 格式輸入套件組合識別碼，例如：**明確**：com.[DomainName].[AppName] **萬用字元**：com.[DomainName].*
 4. 選取您的應用程式所需要的任何[應用程式服務](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)。
 5. 按一下 [繼續]**** 按鈕，並遵循畫面指示來建立新的應用程式識別碼。
 
 一旦您有建立散發設定檔所需的元件之後，請遵循下列步驟來建立散發設定檔：
 
-1. 傳回 Apple 預先設定的門戶 , 並選擇**預先** > **分發**:
+1. 返回 Apple 布建入口網站，然後**選取 [** 布建] [  >  **散發**]：
 
    [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
 
-2. 點選這個**+** 按鈕並選擇要建立的分轉設定檔的類型作為**內部**:
+2. 按一下 [] **+** 按鈕，然後選取您想要建立為**內部**的散發配置檔案類型：
 
    [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
 
@@ -130,11 +130,11 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-您可能需要退出可視化工作室,讓 Xcode(在建構主機的 Mac 上)刷新其可用簽名標識和預配配置檔的清單(按照[請求簽名標識](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)部分中的說明),然後才能在 Visual Studio 中提供新的分發配置檔。
+您可能必須結束 Visual Studio，並讓 Xcode （在組建主機的 Mac 上）重新整理其可用的簽署身分識別和布建配置檔案清單（遵循[要求籤署](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)身分識別一節中的指示），之後才能在 Visual Studio 中使用新的散發設定檔。
 
 -----
 
-<a name="inhouse" />
+<a name="inhouse"></a>
 
 ## <a name="distributing-your-app-in-house"></a>散發內部作業應用程式
 
@@ -161,7 +161,7 @@ Apple Developer Enterprise Program 憑證將持續三年，而佈建設定檔將
 
 ## <a name="related-links"></a>相關連結
 
-- [應用商店分發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [App Store 散發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [臨機操作散發](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [iTunesMetadata.plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)
-- [IPA 支援](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [Itunesmetadata.plist. plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)
+- [.IPA 支援](~/ios/deploy-test/app-distribution/ipa-support.md)

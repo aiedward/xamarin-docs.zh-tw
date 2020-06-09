@@ -1,34 +1,18 @@
 ---
-title: ''
-description: 本文說明如何設定 iOS 特有的外觀，而不需要使用 Xamarin.Forms 自訂轉譯器。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: eb44b7d756fee4fa4f452b79292effb45ab98154
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138511"
+標題：「新增 iOS 特定格式」描述：「本文說明如何設定 iOS 特有的外觀，而不需要使用 Xamarin.Forms 自訂轉譯器。」
+assetid： CE50E207-D092-4D88-8439-1B51F178E7ED ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/29/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="adding-ios-specific-formatting"></a>新增 iOS 特定格式
 
 設定 iOS 特定格式的其中一種方式是建立控制項的[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器，並設定每個平臺的平臺特定樣式和色彩。
 
 控制 Xamarin.Forms iOS 應用程式外觀方式的其他選項包括：
 
-- 設定[ **Info. plist**中的顯示選項](#info-plist)
-- 透過[ `UIAppearance` API](#uiappearance)設定控制項樣式
+- 設定[ **Info. plist**中的顯示選項](#customizing-infoplist)
+- 透過[ `UIAppearance` API](#uiappearance-api)設定控制項樣式
 
 以下將討論這些替代方案。
-
-<a name="info-plist"/>
 
 ## <a name="customizing-infoplist"></a>自訂資訊。 plist
 
@@ -62,8 +46,6 @@ nav.BarTextColor = Color.White;
 現在，當應用程式執行時，導覽列會是綠色且其文字為白色（由於 Xamarin.Forms 格式） *，而且*狀態列文字也會因為 iOS 專屬設定而呈白色：
 
 ![](theme-images/status-white-sml.png "iOS Theming")
-
-<a name="uiappearance"/>
 
 ## <a name="uiappearance-api"></a>UIAppearance API
 

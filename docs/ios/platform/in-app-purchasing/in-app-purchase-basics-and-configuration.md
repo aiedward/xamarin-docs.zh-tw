@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 786afa6967731fb1bd508fa3c835b980639eb282
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 45b7c1081571b52bb8760b4207e3a05a4ffa77ae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032374"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572308"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin 中的應用程式內購買基本概念和設定
 
@@ -43,7 +43,7 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 
 您不能選擇產品的任何價格–您只能選取在 Apple 支援的每個國家/地區具有特定值的「價格層」。 不同市場中不能有不同的定價層。
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>組態
 
 在撰寫任何應用程式內購買程式碼之前，您必須先在 iTunes Connect （ [itunesconnect.apple.com](https://itunesconnect.apple.com)）和 iOS 布建入口網站（ [developer.apple.com/iOS](https://developer.apple.com/iOS)）中進行一些設定工作。
 
@@ -79,7 +79,7 @@ Apple 必須先核准每個產品，才會上線–需要「產品」的名稱�
 
 #### <a name="bundle-identifierapp-id-suffix-format"></a>套件組合識別碼/應用程式識別碼尾碼格式
 
-您可以使用您喜歡的任何字串作為套件組合**識別碼**（只要它在您的帳戶中是唯一的），不過 Apple 建議您遵循反向 DNS 格式，而不要使用任何任一字元串。 本文隨附的範例應用程式會使用 storekit 來測試套件組合識別碼，不過，使用類似 my_store_example 的識別碼（即使 Apple 不建議它）也會同樣有效。
+您可以使用您喜歡的任何字串作為套件組合**識別碼**（只要它在您的帳戶中是唯一的），不過 Apple 建議您遵循反向 DNS 格式，而不要使用任何任一字元串。 本文隨附的範例應用程式會使用 storekit 來進行套件組合識別碼的測試，不過，使用類似 my_store_example 的識別碼（即使 Apple 不建議）也是一樣有效。
 
 > [!IMPORTANT]
 > Apple 也允許將萬用字元星號新增至組合**識別碼**的結尾，讓單一應用程式 id 可以用於多個應用程式，但_萬用字元應用程式識別碼無法用於 AppPurchase_。 例如，萬用字元套件組合識別碼可能是 .com. *
@@ -130,7 +130,7 @@ com.xamarin.storekit.testing.sepia
 com.xamarin.storekit.testing.greyscale
 ```
 
-此命名慣例不會強制執行，只是協助您管理產品的建議。 此外，儘管遵循相同的反向 DNS 慣例，產品識別碼並不會與套件組合識別碼*相關*，而且也不需要以相同的字串開頭。 使用識別碼（例如 photo_product_greyscale）仍然有效（即使 Apple 不建議這麼做）。
+此命名慣例不會強制執行，只是協助您管理產品的建議。 此外，儘管遵循相同的反向 DNS 慣例，產品識別碼並不會與套件組合識別碼*相關*，而且也不需要以相同的字串開頭。 使用類似 photo_product_greyscale 的識別碼仍然有效（即使 Apple 不建議這麼做）。
 
 產品識別碼不會顯示給您的使用者，但會用來參考應用程式代碼中的產品。
 
@@ -146,7 +146,7 @@ com.xamarin.storekit.testing.greyscale
 
  *本檔目前僅涵蓋前兩個產品類型（可耗用和非可耗用）。*
 
- <a name="Price_Tiers" />
+ <a name="Price_Tiers"></a>
 
 ### <a name="price-tiers"></a>定價層
 
@@ -156,7 +156,7 @@ Apple 提供價格對照表，協助您針對所需的貨幣/價格選取正確�
 
  [![](in-app-purchase-basics-and-configuration-images/image10.png "An excerpt of the price matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-在撰寫本文時（2013年6月），有87層從美元0.99 到美元的999.99。 定價矩陣會顯示您的客戶將支付的價格，以及您將從 Apple 收到的金額–這少於30% 的費用，也會收取任何需要收集的當地稅金（請注意，美國和加拿大賣方接收 70c 99c p 的範例產品，而澳大利亞銷售人員只會收到63c，因為「貨物 &amp; 服務稅務」會收取售價。
+在撰寫本文時（2013年6月），有87層從美元0.99 到美元的999.99。 定價矩陣會顯示您的客戶將支付的價格，以及您將從 Apple 收到的金額–這少於30% 的費用，也會收取所需的任何當地稅金（請注意，美國和加拿大銷售人員接收70c 的99c 產品，而澳大利亞賣方僅收到63c，因為購物價的「貨物 &amp; 服務稅」已徵收）。
 
 您產品的定價可以隨時更新，包括在未來日期生效的排程價格變更。 此螢幕擷取畫面顯示如何新增未來的價格變更–從第1層到第3層的價格暫時變更為9月份：
 
@@ -166,7 +166,7 @@ Apple 提供價格對照表，協助您針對所需的貨幣/價格選取正確�
 
 雖然 Apple 已為 Newsstand apps 提供特殊的免費訂用帳戶選項，但不可能為任何其他應用程式內購買類型設定零（免費）的價格。 雖然您可以編輯（如較低）銷售促銷的價格，但無法透過 iTunes Connect 讓應用程式內購買「免費」。
 
-### <a name="localization"></a>當地語系化
+### <a name="localization"></a>Localization
 
 在 iTunes Connect 中，您可以為任何數目的支援語言輸入不同的名稱和描述文字。 在中，您可以透過快顯來新增/編輯每種語言：
 

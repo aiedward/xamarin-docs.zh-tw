@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: davidortinau
 ms.author: daortin
 ms.date: 10/27/2017
-ms.openlocfilehash: 915f7df80e3ae29ab3c598ea95fabbc054e916dd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b4b4bdf85ec79a46a4e4c06504eb8b9b85af329
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019206"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566953"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler 疑難排解
 
@@ -25,19 +25,19 @@ ms.locfileid: "73019206"
 
 ### <a name="getting-log-outputs"></a>取得記錄輸出
 
-Mac 記錄檔上的會儲存到 `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`。
+Mac 記錄檔上的會儲存到 `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log` 。
 
-在 Windows 上，這些會儲存到 `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` 請在每次提交問題時包含最新的記錄檔。
+在 Windows 上，這些會儲存到， `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` 請在每次提交問題時包含最新的記錄檔。
 
 我們會加入更多記錄，因此，此輸出應該隨著時間成長而變得更有用。
 
-<a name="gen_mlpd" />
+<a name="gen_mlpd"></a>
 
 ### <a name="generating-mlpd-files"></a>產生 mlpd 檔案
 
 **Mlpd**檔案是 mono 執行時間分析工具的壓縮輸出。 Xamarin Profiler GUI 會從**mlpd**讀取資料，並將它顯示給使用者。 **Mlpd**檔案是適用于 Xamarin 的偵錯工具，因為它們可協助我們的工程師診斷分析工具可能與您的資料有關的問題。
 
-目前會話的**mlpd**會自動儲存在 Mac 的 `/tmp` 目錄中，並可由時間戳記識別。 如果您開啟記錄功能，第一個輸出將會是**mlpd**檔案的路徑。 **Mlpd**檔案通常會儲存在目錄中，從 ~/var/folders。
+目前會話的**mlpd**會自動儲存在 Mac 的 `/tmp` 目錄中，並可由時間戳記識別。 如果您開啟記錄功能，第一個輸出將會是**mlpd**檔案的路徑。 **Mlpd**檔案通常會儲存在目錄中，從 ~/var/folders.。。
 
 您也可以選擇 [檔案] **> [另存**新檔 ...]，來儲存目前會話的**mlpd** 。 從 Profiler 的功能表：
 
@@ -79,7 +79,7 @@ Mac 記錄檔上的會儲存到 `~/Library/Logs/Xamarin.Profiler/Profiler.<date>
 
 #### <a name="to-watch-a-specific-thread"></a>監看特定執行緒
 
-如果您有想要特別監看的執行緒，最好在其建立的開頭命名執行緒，以取得 `ThreadName` 而不是 `0x0`。 例如，若要將執行緒名稱設定為 `UI`，您可以使用下列程式碼：
+如果您有想要特別監看的執行緒，最好是在其建立的開頭，將執行緒命名為 get， `ThreadName` 而不是 `0x0` 。 例如，若要將執行緒名稱設定為 `UI` ，您可以使用下列程式碼：
 
 ```csharp
 RunOnUiThread (() => {

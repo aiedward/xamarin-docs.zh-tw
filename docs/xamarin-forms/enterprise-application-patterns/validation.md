@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4a9af91e2d48ba7ef7fdcdb4f8472e0aaafb7854
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138706"
+標題：「企業應用程式中的驗證」描述：「本章節說明 eShopOnContainers 行動應用程式如何執行使用者輸入的驗證。 這包括指定驗證規則、觸發驗證，以及顯示驗證錯誤。」
+assetid： 56e4f0fc-48d9-4033-91ec-173bb46a5e4d ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="validation-in-enterprise-apps"></a>企業應用程式中的驗證
 
 任何接受使用者輸入的應用程式都應確保輸入有效。 例如，應用程式可以檢查僅包含特定範圍中的字元、是否為特定長度，或符合特定格式的輸入。 如果沒有驗證，使用者可以提供會導致應用程式失敗的資料。 驗證會強制執行商務規則，並防止攻擊者插入惡意資料。
@@ -209,9 +195,7 @@ public bool Validate()
 
 控制項系結 [`Entry`](xref:Xamarin.Forms.Entry) 至 `UserName.Value` 實例的屬性 `ValidatableObject<T>` ，而控制項的 `Behaviors` 集合已 `EventToCommandBehavior` 加入實例。 這個行為會執行 `ValidateUserNameCommand` ，以回應中的 [ `TextChanged` ] 事件引發 `Entry` ，這會在變更中的文字時引發 `Entry` 。 接著，委派會 `ValidateUserNameCommand` 執行 `ValidateUserName` 方法，這會在 `Validate` 實例上執行方法 `ValidatableObject<T>` 。 因此，每次使用者在控制項中輸入使用者名稱的字元時 `Entry` ，都會執行輸入資料的驗證。
 
-如需行為的詳細資訊，請參閱[執行行為](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)。
-
-<a name="displaying_validation_errors" />
+如需行為的詳細資訊，請參閱[執行行為](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)。
 
 ## <a name="displaying-validation-errors"></a>顯示驗證錯誤
 
@@ -286,7 +270,7 @@ public static class LineColorBehavior
 }
 ```
 
-這個方法的參數會提供行為所附加的控制項實例，以及附加屬性的舊值和新值 `ApplyLineColor` 。 `EntryLineColorEffect`如果附加屬性為，則類別會加入至控制項的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合 `ApplyLineColor` `true` ，否則會從控制項的集合中移除 `Effects` 。 如需行為的詳細資訊，請參閱[執行行為](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)。
+這個方法的參數會提供行為所附加的控制項實例，以及附加屬性的舊值和新值 `ApplyLineColor` 。 `EntryLineColorEffect`如果附加屬性為，則類別會加入至控制項的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合 `ApplyLineColor` `true` ，否則會從控制項的集合中移除 `Effects` 。 如需行為的詳細資訊，請參閱[執行行為](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)。
 
 `EntryLineColorEffect`會將類別子類別化，如 [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 下列程式碼範例所示：
 
@@ -423,7 +407,7 @@ UI 會在其資料驗證失敗的每個控制項底下的標籤控制項中顯�
 
 每個都會系結 [`Label`](xref:Xamarin.Forms.Label) 至要 `Errors` 驗證之視圖模型物件的屬性。 `Errors`屬性是由 `ValidatableObject<T>` 類別提供，而且屬於型別 `List<string>` 。 因為 `Errors` 屬性可以包含多個驗證錯誤，所以 `FirstValidationErrorConverter` 會使用實例來抓取集合中的第一個錯誤，以供顯示。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 EShopOnContainers 行動應用程式會執行 view model 屬性的同步用戶端驗證，並藉由反白顯示包含無效資料的控制項來通知使用者任何驗證錯誤，以及顯示通知使用者資料為何不正確錯誤訊息。
 

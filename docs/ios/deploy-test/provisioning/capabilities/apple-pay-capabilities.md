@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 54fcc3bb683f6ca4515d807da5c3345cf71a2df3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4f8e45aab8b6c92cb72a5d7cde35458c7b64b816
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304657"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573205"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS 的 Apple Pay 功能
 
-_向應用程式添加功能通常需要額外的預配設置。本指南介紹了 Apple Pay 功能所需的設置。_
+_將功能新增至應用程式通常需要額外的布建設定。本指南說明 Apple Pay 功能所需的設定。_
 
 Apple Pay 可讓使用者透過其 iOS 裝置支付實體產品的費用。 本節說明如何在 Apple Developer Center (Apple 開發人員中心) 中建立 Apple Pay 所需的一切必要元件。
 
@@ -28,7 +28,7 @@ Apple Pay 可讓使用者透過其 iOS 裝置支付實體產品的費用。 本�
 
 下列步驟將引導您完成建立上述項目的程序：
 
-<a name="merchantid" />
+<a name="merchantid"></a>
 
 ## <a name="create-merchant-id"></a>建立商家識別碼
 
@@ -44,19 +44,19 @@ Merchant ID (商家識別碼) 可用來讓 Apple Pay 知道您可以接受付款
 
     ![新的 Merchant ID (商家識別碼) 詳細資料](apple-pay-capabilities-images/image58.png)
 
-4. 確認詳細資訊並 **註冊** 您的 ID: 
+4. 確認詳細資料，並 **註冊**   您的識別碼： 
 
     ![Merchant ID (商家識別碼) 確認](apple-pay-capabilities-images/image59.png)
 
-<a name="appid" />
+<a name="appid"></a>
 
 ## <a name="create-an-app-id-with-the-apple-pay-capability-that-includes-the-merchant-id"></a>建立具有 Apply Pay 功能且含有商家識別碼的應用程式識別碼
 
-1. 在[開發人員中心](https://developer.apple.com/account/)中,按一下**識別子****下的應用程式 ID:**
+1. 在[開發人員中心](https://developer.apple.com/account/)，按一下 [識別碼] 底下的 [**應用程式****識別碼**]：
 
     ![在 Developer Center (開發人員中心) 中選取 [App ID] \(應用程式識別碼\)](apple-pay-capabilities-images/image6.png)
 
-2. 選擇按鈕**+** 以新增新的應用程式代碼:
+2. 選取 **+** 按鈕以加入新的應用程式識別碼：
 
     ![[Add new App ID] \(新增應用程式識別碼\) 按鈕](apple-pay-capabilities-images/image27.png)
 
@@ -76,7 +76,7 @@ Merchant ID (商家識別碼) 可用來讓 Apple Pay 知道您可以接受付款
 
     ![編輯 App ID (應用程式識別碼)](apple-pay-capabilities-images/image38.png)
 
-7. 向下滾動到此展開部分的底部,然後按**一下編輯**"
+7. 向下滾動到展開的區段底部，然後按一下 [**編輯**]。
 8. 將清單向下捲動到 Apple Pay，然後按一下 [Edit] \(編輯\)**** 按鈕：  
 
     ![編輯 Apple Pay App ID (應用程式識別碼) 詳細資料](apple-pay-capabilities-images/image39.png)
@@ -89,9 +89,9 @@ Merchant ID (商家識別碼) 可用來讓 Apple Pay 知道您可以接受付款
 
     ![確認畫面](apple-pay-capabilities-images/image41.png)
 
-此應用 ID 現在可用於生成或重新生成新的預配設定檔,如[「使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南」中所述。
+此應用程式識別碼現在可以用來產生或重新產生新的布建設定檔，如[使用功能](~/ios/deploy-test/provisioning/capabilities/index.md)指南中所述。
 
-<a name="certificate" />
+<a name="certificate"></a>
 
 ## <a name="create-a-certificate-for-your-merchant-id"></a>為您的商家識別碼產生憑證
 
@@ -154,6 +154,6 @@ Apple 需要使用憑證來加密與交易關聯的敏感性資料。 每個建�
 
 * 在您的應用程式中使用架構命名空間。
 * 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
-* 在應用程式的 [ **iOS 套件組合簽署**] 中，確定 [ **自訂權利**] 已設定為 **Entitlements.plist**。 _這不是_ 調試和 iOS 模擬器生成的預設設置。
+* 在應用程式的 [ **iOS 套件組合簽署**] 中，確定 [ **自訂權利**] 已設定為 **Entitlements.plist**。這 _不_是「Debug」和「iOS 模擬器」   組建的預設設定。
 
 如果您在應用程式服務方面遇到問題，請參閱主要指南的[疑難排解](~/ios/deploy-test/provisioning/capabilities/index.md)一節。

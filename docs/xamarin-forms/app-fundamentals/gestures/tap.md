@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何在應用程式中使用點按手勢來偵測 Xamarin.Forms 。 點選偵測是使用 TapGestureRecognizer 類別實作。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0470419dd5070424c362dec8d4b1978507985783
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137614"
+標題：「新增點手勢辨識器」描述：「本文將說明如何在應用程式中使用點按手勢來進行分攻點偵測 Xamarin.Forms 。 利用 TapGestureRecognizer 類別來執行點偵測。」
+assetid： 1D150BAF-4157-49BC-90A0-153323B8EBCF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/21/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="adding-a-tap-gesture-recognizer"></a>新增點選手勢辨識器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
@@ -40,8 +26,6 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
 當 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) 設定在一個以上時，只有在按下一段時間（這段期間無法設定）時，才會執行事件處理常式。 如果在該期間內未點第二下 (或後續幾下)，則會有效忽略並重新開始「點選計數」。
-
-<a name="Using_Xaml" />
 
 ## <a name="using-xaml"></a>使用 XAML
 

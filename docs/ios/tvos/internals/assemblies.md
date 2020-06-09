@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 371440f2e1ab28e802bf2d184b3e17d073a0c774
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2fde84441eeb9342d1a86e4dc565faf51d08c57b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030677"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573556"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>Xamarin for tvOS 支援的元件
 
 ## <a name="supported-assemblies"></a>支援的元件
 
-這是 Xamarin 針對您的 tvOS 應用程式所支援的元件清單。詳細清單如下所示。  一些值得注意的遺漏，包括 `System.EnterpriseServices`、ASP.NET 堆疊和 Windows Forms。
+這是 Xamarin 針對您的 tvOS 應用程式所支援的元件清單。詳細清單如下所示。  一些值得注意 `System.EnterpriseServices` 的遺漏，包括 ASP.NET 堆疊和 Windows Forms。
 
-|Assembly|Added|API 相容性|
+|組件|已新增|API 相容性|
 |---|---|---|
 |Mono.CompilerServices.SymbolWriter.dll|1.0|適用于編譯器寫入器。|
 |Mono.Data.Sqlite.dll|1.2|SQLite 的 ADO.NET 提供者;請參閱[限制](~/ios/data-cloud/system.data.md)。|
 |Mono.Data.Tds.dll|1.2|TDS 通訊協定支援;用於[SqlClient](xref:System.Data.SqlClient) [中的資料。](~/ios/data-cloud/system.data.md)|
 |Mono.Security.dll|1.0|密碼編譯 Api。|
-|monotouch.dll|1.0|此元件包含[ C# CocoaTouch API](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)的系結。|
+|monotouch.dll|1.0|此元件包含[COCOATOUCH API 的 c #](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)系結。|
 |mscorlib.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
 |OpenTK.dll|1.0|OpenGL/OpenAL 物件導向 Api，已[擴充以提供 iPhone 裝置支援](xref:OpenGLES)。|
 |System.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)，再加上下列命名空間中的類型： <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.workflow.componentmodel.activity. 設計</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>系統 .Net。快取</li> <li>System.Net.Mail</li> <li>系統 .Net. Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>系統. 計時器</li></ul>|
@@ -43,7 +43,7 @@ ms.locfileid: "73030677"
 |System.Xml.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
 |System.Xml.Linq.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="portable-class-libraries"></a>可攜式類別庫
 

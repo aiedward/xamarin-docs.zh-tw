@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文介紹 DataPages NuGet 套件中提供的控制項 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 093ef4b9b3ae7bde25da276330894bcf4e399145
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134442"
+title： "DataPages 控制項參考" 描述： "本文介紹 DataPages NuGet 套件中提供的控制項 Xamarin.Forms 。
+assetid： 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/01/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="datapages-controls-reference"></a>DataPages 控制項參考
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -36,20 +22,18 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
     x:Class="DataPagesDemo.Detail">
 ```
 
-下列範例包含 `DynamicResource` 必須存在於專案資源字典中才能正常執行的參考。 另外還有如何建立[自訂控制項](#custom)的範例
+下列範例包含 `DynamicResource` 必須存在於專案資源字典中才能正常執行的參考。 另外還有如何建立[自訂控制項](#custom-control-example)的範例。
 
 ## <a name="built-in-controls"></a>內建控制項
 
 * [HeroImage](#heroimage)
 * [ListItem](#listitem)
 
-<a name="heroimage" />
-
 ### <a name="heroimage"></a>HeroImage
 
 `HeroImage`控制項有四個屬性：
 
-* 文字
+* Text
 * 詳細資料
 * ImageSource
 * 層面
@@ -69,8 +53,6 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
 **iOS**
 
 ![](controls-images/heroimage-light-ios.png "IOS 上的 HeroImage 控制項") ![](controls-images/heroimage-dark-ios.png "IOS 上的 HeroImage 控制項")
-
-<a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
@@ -110,7 +92,7 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
 
 它會包含三個屬性：
 
-* 文字
+* Text
 * 詳細資料
 * ImageSource
 
@@ -134,19 +116,15 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
 
 ![](controls-images/cardview-light-ios.png "IOS 上的 CardView 自訂控制項") ![](controls-images/cardview-dark-ios.png "IOS 上的 CardView 自訂控制項")
 
-<a name="custom" />
-
 ### <a name="building-the-custom-cardview"></a>建立自訂 CardView
 
-1. [DataView 子類別](#1)
-2. [定義字型、版面配置和邊界](#2)
-3. [建立控制項子系的樣式](#3)
-4. [建立控制項版面配置範本](#4)
-5. [新增主題特定資源](#5)
-6. [設定 CardView 類別的 ControlTemplate](#6)
-7. [將控制項新增至頁面](#7)
-
-<a name="1" />
+1. [DataView 子類別](#1-dataview-subclass)
+2. [定義字型、版面配置和邊界](#2-define-font-layout-and-margins)
+3. [建立控制項子系的樣式](#3-create-styles-for-the-controls-children)
+4. [建立控制項版面配置範本](#4-create-the-control-layout-template)
+5. [新增主題特定資源](#5-add-the-theme-specific-resources)
+6. [設定 CardView 類別的 ControlTemplate](#6-set-the-controltemplate-for-the-cardview-class)
+7. [將控制項新增至頁面](#7-add-the-control-to-a-page)
 
 #### <a name="1-dataview-subclass"></a>1. DataView 子類別
 
@@ -188,13 +166,11 @@ public class CardView : DataView
 }
 ```
 
-<a name="2" />
-
 #### <a name="2-define-font-layout-and-margins"></a>2. 定義字型、版面配置和邊界
 
 控制項設計工具會在自訂控制項的使用者介面設計中，找出這些值。 需要平臺特定規格時， `OnPlatform` 會使用元素。
 
-請注意，有些值參考 `StaticResource` s –這些會在[步驟 5](#5)中定義。
+請注意，有些值參考 `StaticResource` s –這些會在[步驟 5](#5-add-the-theme-specific-resources)中定義。
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -246,8 +222,6 @@ public class CardView : DataView
 </OnPlatform>
 ```
 
-<a name="3" />
-
 #### <a name="3-create-styles-for-the-controls-children"></a>3. 建立控制項子系的樣式
 
 參考所有定義的元素，以建立將在自訂控制項中使用的子系：
@@ -277,8 +251,6 @@ public class CardView : DataView
     <Setter Property="HeightRequest" Value="165"/>
 </Style>
 ```
-
-<a name="4" />
 
 #### <a name="4-create-the-control-layout-template"></a>4. 建立控制項版面配置範本
 
@@ -321,8 +293,6 @@ public class CardView : DataView
 </ControlTemplate>
 ```
 
-<a name="5" />
-
 #### <a name="5-add-the-theme-specific-resources"></a>5. 新增主題特定資源
 
 因為這是自訂控制項，所以請新增符合您使用資源字典之主題的資源：
@@ -354,11 +324,9 @@ public class CardView : DataView
             <Color x:Key="iOSCardViewDetailTextColor">#B5B4B9</Color>
 ```
 
-<a name="6" />
-
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. 設定 CardView 類別的 ControlTemplate
 
-最後，請確定在[步驟 1](#1)中建立的 c # 類別使用在[步驟 4](#4)中使用 `Style` `Setter` 元素定義的控制項範本
+最後，請確定在[步驟 1](#1-dataview-subclass)中建立的 c # 類別使用在[步驟 4](#4-create-the-control-layout-template)中使用 `Style` `Setter` 元素定義的控制項範本
 
 ```xml
 <Style TargetType="local:CardView">
@@ -367,8 +335,6 @@ public class CardView : DataView
   <Setter Property="BackgroundColor" Value="{ StaticResource CardViewBackgroundColor }" />
 </Style>
 ```
-
-<a name="7" />
 
 #### <a name="7-add-the-control-to-a-page"></a>7. 將控制項加入至頁面
 

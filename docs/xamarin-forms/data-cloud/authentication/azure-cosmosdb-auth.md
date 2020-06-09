@@ -1,22 +1,8 @@
 ---
-title: 使用 Azure Cosmos DB 檔資料庫來驗證使用者，以及Xamarin.Forms
-description: 本文說明如何結合存取控制與 Azure Cosmos DB 分割的集合，讓使用者只能在應用程式中存取自己的檔 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0322db5ebcc70347bf35157e3dc7c057e58cf18
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136093"
+標題：「使用 Azure Cosmos DB 檔資料庫來驗證使用者」和「 Xamarin.Forms 描述：」本文說明如何結合存取控制與 Azure Cosmos DB 分割的集合，讓使用者只能在應用程式中存取自己的檔 Xamarin.Forms 。」
+assetid： 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/16/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 檔資料庫來驗證使用者，以及Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
@@ -55,16 +41,14 @@ _Azure Cosmos DB 檔資料庫支援分割的集合，可以跨越多個伺服器
 
 將資源權杖代理人整合到應用程式的流程如下所示 Xamarin.Forms ：
 
-1. 建立將會使用存取控制的 Cosmos DB 帳戶。 如需詳細資訊，請參閱[Cosmos DB](#cosmosdb_configuration)設定。
-1. 建立 Azure App Service 來裝載資源權杖訊息代理程式。 如需詳細資訊，請參閱[Azure App Service](#app_service_configuration)設定。
-1. 建立 Facebook 應用程式以執行驗證。 如需詳細資訊，請參閱[Facebook 應用程式組態](#facebook_configuration)。
-1. 設定 Azure App Service 以使用 Facebook 執行簡單的驗證。 如需詳細資訊，請參閱[Azure App Service 驗證](#app_service_authentication_configuration)設定。
-1. 設定 Xamarin.Forms 範例應用程式以與 Azure App Service 和 Cosmos DB 通訊。 如需詳細資訊，請參閱[ Xamarin.Forms 應用程式](#forms_application_configuration)設定。
+1. 建立將會使用存取控制的 Cosmos DB 帳戶。 如需詳細資訊，請參閱[Azure Cosmos DB](#azure-cosmos-db-configuration)設定。
+1. 建立 Azure App Service 來裝載資源權杖訊息代理程式。 如需詳細資訊，請參閱[Azure App Service](#azure-app-service-configuration)設定。
+1. 建立 Facebook 應用程式以執行驗證。 如需詳細資訊，請參閱[Facebook 應用程式組態](#facebook-app-configuration)。
+1. 設定 Azure App Service 以使用 Facebook 執行簡單的驗證。 如需詳細資訊，請參閱[Azure App Service 驗證](#azure-app-service-authentication-configuration)設定。
+1. 設定 Xamarin.Forms 範例應用程式以與 Azure App Service 和 Cosmos DB 通訊。 如需詳細資訊，請參閱[ Xamarin.Forms 應用程式](#xamarinforms-application-configuration)設定。
 
 > [!NOTE]
 > 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
-
-<a name="cosmosdb_configuration" />
 
 ### <a name="azure-cosmos-db-configuration"></a>Azure Cosmos DB 設定
 
@@ -72,8 +56,6 @@ _Azure Cosmos DB 檔資料庫支援分割的集合，可以跨越多個伺服器
 
 1. 建立 Cosmos DB 帳戶。 如需詳細資訊，請參閱[建立 Azure Cosmos DB 帳戶](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)。
 1. 在 Cosmos DB 帳戶中，建立名為的新集合，並指定的資料 `UserItems` 分割索引鍵 `/userid` 。
-
-<a name="app_service_configuration" />
 
 ### <a name="azure-app-service-configuration"></a>Azure App Service 設定
 
@@ -93,8 +75,6 @@ _Azure Cosmos DB 檔資料庫支援分割的集合，可以跨越多個伺服器
 
 1. 將資源權杖代理人解決方案發佈至 Azure App Service web 應用程式。
 
-<a name="facebook_configuration" />
-
 ### <a name="facebook-app-configuration"></a>Facebook 應用程式組態
 
 建立 Facebook 應用程式以執行驗證的流程如下所示：
@@ -112,8 +92,6 @@ _Azure Cosmos DB 檔資料庫支援分割的集合，可以跨越多個伺服器
 
 如需詳細資訊，請參閱[使用 Facebook 註冊您的應用程式](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook)。
 
-<a name="app_service_authentication_configuration" />
-
 ### <a name="azure-app-service-authentication-configuration"></a>Azure App Service 驗證設定
 
 設定 App Service 簡單驗證的程式如下所示：
@@ -128,8 +106,6 @@ _Azure Cosmos DB 檔資料庫支援分割的集合，可以跨越多個伺服器
     [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
 
 App Service web 應用程式也應該設定為與 Facebook 應用程式通訊，以啟用驗證流程。 這可以藉由選取 Facebook 識別提供者，並在 Facebook 開發人員中心的 Facebook 應用程式設定中輸入**應用程式識別碼**和**應用程式秘密**值來完成。 如需詳細資訊，請參閱[將 Facebook 資訊新增至您的應用程式](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)。
-
-<a name="forms_application_configuration" />
 
 ### <a name="xamarinforms-application-configuration"></a>Xamarin.Forms應用程式設定
 
@@ -237,7 +213,7 @@ while (query.HasMoreResults)
 > [!NOTE]
 > 請注意，資源權杖代理人所建立的許可權檔會儲存在與應用程式所建立檔相同的檔集合中 Xamarin.Forms 。 因此，檔查詢所包含的 `Where` 子句會將篩選述詞套用至檔集合的查詢。 此子句可確保不會從檔集合傳回許可權檔。
 
-如需從檔集合中抓取檔的詳細資訊，請參閱抓取[檔集合檔](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#document_query)。
+如需從檔集合中抓取檔的詳細資訊，請參閱抓取[檔集合檔](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#retrieving-document-collection-documents)。
 
 ## <a name="inserting-documents"></a>插入檔
 
@@ -250,7 +226,7 @@ await client.CreateDocumentAsync(collectionLink, item);
 
 這可確保檔會插入使用者的資料分割集合中。
 
-如需將檔插入檔集合的詳細資訊，請參閱將[檔插入檔集合](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#inserting_document)。
+如需將檔插入檔集合的詳細資訊，請參閱將[檔插入檔集合](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#inserting-a-document-into-a-document-collection)。
 
 ## <a name="deleting-documents"></a>刪除檔
 
@@ -266,9 +242,9 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 這可確保 Cosmos DB 知道要刪除檔的資料分割集合。
 
-如需有關從檔集合中刪除檔的詳細資訊，請參閱[從檔集合中刪除檔](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting_document)。
+如需有關從檔集合中刪除檔的詳細資訊，請參閱[從檔集合中刪除檔](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting-a-document-from-a-document-collection)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何結合存取控制與分割的集合，讓使用者只能在應用程式中存取自己的檔資料庫檔案 Xamarin.Forms 。 將使用者的身分識別指定為分割區索引鍵，可確保分割的集合只能儲存該使用者的檔。
 

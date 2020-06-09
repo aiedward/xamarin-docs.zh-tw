@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 8714297c4948dbb65c521d6a32bac3e437b40733
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 683915d238f6c8aee10957285ad4438316e1e037
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292715"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567107"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin. Mac 疑難排解秘訣
 
@@ -35,7 +35,7 @@ ms.locfileid: "78292715"
 
 ### <a name="what-to-do-when-your-app-crashes-with-no-output"></a>當您的應用程式損毀但沒有輸出時該怎麼辦
 
-在大部分情況下，Visual Studio for Mac 中的偵錯工具將會攔截例外狀況，並在您的應用程式中損毀，並協助您追蹤根本原因。 不過，在某些情況下，您的應用程式會在 dock 上彈，然後在很少或沒有輸出的情況下結束。 這些可能包括：
+在大部分情況下，Visual Studio for Mac 中的偵錯工具將會攔截例外狀況，並在您的應用程式中損毀，並協助您追蹤根本原因。 不過，在某些情況下，您的應用程式會在 dock 上彈，然後在很少或沒有輸出的情況下結束。 這些包括：
 
 - 程式碼簽署問題。
 - 特定 mono 執行時間損毀。
@@ -47,20 +47,20 @@ ms.locfileid: "78292715"
 對這些程式進行調試可能會令人沮喪，因為尋找所需的資訊可能會很難。 以下是一些可能有説明的方法：
 
 - 請確定**plist**中所列的 macOS 版本與目前安裝在電腦上的 macOS 版本相同。
-- 檢查堆疊追蹤的 Visual Studio for Mac 應用程式輸出（**View** -> **Pad** -> **應用程式輸出**），或從可能描述輸出的 Cocoa 輸出（以紅色表示）。
+- 檢查堆疊追蹤的 Visual Studio for Mac 應用程式輸出（**View**  ->  **pad**  ->  **應用程式輸出**），或從可能描述輸出的 Cocoa 輸出（以紅色表示）。
 - 從命令列執行您的應用程式，並使用來查看輸出（在**終端**機應用程式中）：
 
-  `MyApp.app/Contents/MacOS/MyApp` （其中 `MyApp` 是應用程式的名稱）
+  `MyApp.app/Contents/MacOS/MyApp`（其中 `MyApp` 是您的應用程式名稱）
 - 您可以在命令列上將 "MONO_LOG_LEVEL" 新增至命令，以增加輸出，例如：
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- 您可以將原生偵錯工具（`lldb`）附加至您的進程，以查看是否有提供任何更多資訊（這需要付費授權）。 例如，請執行下列作業：
+- 您可以將原生偵錯工具（ `lldb` ）附加至您的進程，以查看是否有提供任何更多資訊（這需要付費授權）。 例如，請執行下列作業：
 
-  1. 在終端機中輸入 `lldb MyApp.app/Contents/MacOS/MyApp`。
-  2. 在終端機中輸入 `run`。
-  3. 在終端機中輸入 `c`。
+  1. `lldb MyApp.app/Contents/MacOS/MyApp`在終端機中輸入。
+  2. `run`在終端機中輸入。
+  3. `c`在終端機中輸入。
   4. 完成調試時結束。
-- 做為最後的手段，在呼叫 `Main` 方法（或其他位置中的 `NSApplication.Init`）之前，您可以將文字寫入已知位置中的檔案，以追蹤遇到問題的啟動步驟。
+- 做為最後的手段，在 `NSApplication.Init` 您的 `Main` 方法中呼叫（或在其他地方視需要）時，您可以將文字寫入已知位置中的檔案，以追蹤遇到問題的啟動步驟。
 
 ## <a name="known-issues"></a>已知問題
 
@@ -72,13 +72,13 @@ ms.locfileid: "78292715"
 
 [![編輯權利](troubleshooting-images/debug01.png "編輯權利")](troubleshooting-images/debug01-large.png#lightbox)
 
-「**允許外寄網路連線（用戶端）** 」許可權就是偵錯工具所需的許可權，讓這種連線能夠正常進行偵測。 由於您無法在沒有此程式的情況下進行調試，因此我們已更新 `msbuild` 的 `CompileEntitlements` 目標，以便將該許可權自動新增至任何已針對 debug build 進行沙箱化之應用程式的權利。 發行組建應使用權利檔案中所指定的權利（未經修改）。
+「**允許外寄網路連線（用戶端）** 」許可權就是偵錯工具所需的許可權，讓這種連線能夠正常進行偵測。 因為您無法在沒有此程式的情況下進行 debug，所以我們已更新的 `CompileEntitlements` 目標， `msbuild` 以便將該許可權自動新增至任何已針對 debug build 進行沙箱化之應用程式的權利。 發行組建應使用權利檔案中所指定的權利（未經修改）。
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException：沒有可供編碼437使用的資料
 
-在您的 Xamarin. Mac 應用程式中包含協力廠商程式庫時，在嘗試編譯和執行應用程式時，可能會收到「NotSupportedException：沒有資料可供編碼437」形式的錯誤。 例如，程式庫（例如 `Ionic.Zip.ZipFile`）可能會在操作期間擲回此例外狀況。
+在您的 Xamarin. Mac 應用程式中包含協力廠商程式庫時，在嘗試編譯和執行應用程式時，可能會收到「NotSupportedException：沒有資料可供編碼437」形式的錯誤。 例如，程式庫（例如 `Ionic.Zip.ZipFile` ）可能會在操作期間擲回此例外狀況。
 
-這可以藉由開啟 Xamarin 專案的選項來解決，前往**Mac Build** > **國際化**並檢查**West**國際化：
+這可以藉由開啟 Xamarin 專案的選項，前往**mac 組建**  >  **國際化**並檢查**West**國際化來解決：
 
 [![編輯建置選項](troubleshooting-images/issue01.png "編輯建置選項")](troubleshooting-images/issue01-large.png#lightbox)
 
@@ -102,11 +102,11 @@ ms.locfileid: "78292715"
 
 [![編輯權利](troubleshooting-images/entitlements02.png "編輯權利")](troubleshooting-images/entitlements02-large.png#lightbox)
 
-針對現有的 Xamarin 專案，您必須以滑鼠右鍵按一下  **Solution Pad**中的專案，然後選取 **加入** > **新增**檔案 ...，以手動方式建立**plist**檔案。接下來，選取  **Xamarin** > **空的屬性清單**：
+針對現有的 Xamarin 專案，您必須以滑鼠右鍵按一下 [ **Solution Pad**中的專案，**然後選取 [** 新增檔案 ...]，以手動方式建立**plist**檔案。  >  **New File...** 接下來，選取 [ **Xamarin**] [  >  **空白屬性清單**]：
 
 ![加入新的屬性清單](troubleshooting-images/entitlements03.png "加入新的屬性清單")
 
-在 [名稱] 中輸入 `Entitlements`，然後按一下 [**新增**] 按鈕。 如果您的專案先前已包含權利檔案，系統會提示您將其新增至專案，而不是建立新的檔案：
+輸入 `Entitlements` 作為名稱，然後按一下 [**新增**] 按鈕。 如果您的專案先前已包含權利檔案，系統會提示您將其新增至專案，而不是建立新的檔案：
 
 [![驗證檔案的覆寫](troubleshooting-images/entitlements04.png "驗證檔案的覆寫")](troubleshooting-images/entitlements04-large.png#lightbox)
 
@@ -114,7 +114,7 @@ ms.locfileid: "78292715"
 
 使用 Xamarin 產品的開發人員群很驚人，而且有許多人可以造訪我們的[xamarin 論壇](https://forums.xamarin.com/categories/xamarin-mac)，分享經驗和其專長。 此外，Xamarin 工程師會定期流覽論壇以提供協助。
 
-<a name="filing-a-bug"/>
+<a name="filing-a-bug"></a>
 
 ## <a name="filing-a-bug"></a>提出 bug
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 154cb6004bad5a12c98a22fa7522a9cc7a7c757a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026289"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567472"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>使用 mtouch 搭售 Xamarin.iOS 應用程式
 
@@ -67,7 +67,7 @@ $ mtouch -dev -c "iPhone Developer: Miguel de Icaza" foo.exe
 
 在此特殊案例中，我們會使用 "iPhone Developer: Miguel de Icaza" 憑證來簽署應用程式。 這個步驟很重要，否則實體裝置會拒絕載入應用程式。
 
- <a name="Running_your_Application" />
+ <a name="Running_your_Application"></a>
 
 ## <a name="running-your-application"></a>執行應用程式
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 65a89afb3f301fd88ac4819bb8c3658a2be5e29d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724616"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573192"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS 應用程式中的 iTunesMetadata.plist 檔案
 
@@ -22,7 +22,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 若要將缺少的資訊提供給臨機操作散發，可以建立選擇性的 `iTunesMetadata.plist` 檔案，並將其包含在應用程式 IPA 檔案中。 此 plist 檔案為特定格式的 XML 檔案 (如需詳細資訊，請參閱 Apple 的[屬性清單程式設計指南](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html))，其包含多組定義指定之 iOS 應用程式的索引鍵與值。
 
-<a name="iTunesMetadata_contents" />
+<a name="iTunesMetadata_contents"></a>
 
 ## <a name="the-itunesmetadataplist-contents"></a>iTunesMetadata.plist 內容
 
@@ -169,7 +169,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 <string>com.company.appid</string>
 ```
 
-### <a name="copyright"></a>Copyright
+### <a name="copyright"></a>著作權
 
 使用 `copyright` 索引鍵來定義會顯示在 iTunes 中的著作權聲明。 範例：
 
@@ -280,7 +280,7 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 <integer>16843008</integer>
 ```
 
-<a name="iTunesMetadata_creating" />
+<a name="iTunesMetadata_creating"></a>
 
 ## <a name="creating-an-itunesmetadataplist-file"></a>建立 iTunesMetadata.plist 檔案
 
@@ -298,14 +298,14 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 執行下列動作：
 
 1. 在 [方案總管]**** 中，以滑鼠右鍵按一下 Xamarin.iOS 專案檔，然後選取 [新增]**** > [新增檔案]****
-2. 從「新增檔案」對話框中,選擇**iOS** > **屬性清單**:
+2. 從 [新增檔案] 對話方塊中，選取 [ **iOS**  >  **屬性清單**]：
 
     ![](itunesmetadata-images/image01.png "Select iOS Property List")
 3. 輸入 `iTunesMetadata` 作為 [名稱]****，然後按一下 [新增]**** 按鈕。
 4. 在 [方案總管]**** 中，按兩下 `iTunesMetadata.plist` 檔案來開啟它以進行編輯：
 
     ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
-5. 按下綠色**+** 以建立新項目並輸入`UIRequiredDeviceCapabilities`作為鍵名稱:
+5. 按一下綠色 **+** 以建立新的專案，並輸入 `UIRequiredDeviceCapabilities` 作為索引鍵名稱：
 
     ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
 6. 按一下 [字串]**** 值類型，然後從快顯清單中選取 [字典]****：
@@ -360,10 +360,10 @@ _本文所涵蓋的 iTunesMetadata.plist 檔案，可為 iTunes 提供針對測�
 
 ## <a name="related-links"></a>相關連結
 
-- [應用商店分發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [App Store 散發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [發行至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [發佈至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [內部作業散發](~/ios/deploy-test/app-distribution/in-house-distribution.md)
 - [臨機操作散發](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [IPA 支援](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [.IPA 支援](~/ios/deploy-test/app-distribution/ipa-support.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)

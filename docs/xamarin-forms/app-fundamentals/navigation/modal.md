@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms強制回應頁面
-description: Xamarin.Forms提供模式頁面的支援。 強制回應頁面鼓勵使用者完成各自獨立且無法離開的工作，直到完成或取消工作為止。 本文示範如何巡覽至強制回應頁面。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4f6547049f2801e5d15115c0ae80af9a07034731
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137822"
+標題：「強制回應 Xamarin.Forms 頁面」描述：「提供強制回應 Xamarin.Forms 頁面的支援。 強制回應頁面鼓勵使用者完成各自獨立且無法離開的工作，直到完成或取消工作為止。 本文示範如何流覽至模式頁面。」
+assetid： 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/01/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms強制回應頁面
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
@@ -25,8 +11,8 @@ _Xamarin 會提供模式頁面的支援。強制回應頁面會鼓勵使用者�
 
 本文章討論下列主題：
 
-- [執行導覽](#Performing_Navigation) – 將頁面推送到強制回應堆疊、從強制回應堆疊中快顯頁面、停用 [上一頁] 按鈕及以動畫顯示頁面轉換。
-- [巡覽時傳遞資料](#Passing_Data_when_Navigating) – 透過頁面建構函式及透過 `BindingContext` 傳遞資料。
+- [執行導覽](#performing-navigation) – 將頁面推送到強制回應堆疊、從強制回應堆疊中快顯頁面、停用 [上一頁] 按鈕及以動畫顯示頁面轉換。
+- [巡覽時傳遞資料](#passing-data-when-navigating) – 透過頁面建構函式及透過 `BindingContext` 傳遞資料。
 
 ## <a name="overview"></a>概觀
 
@@ -38,18 +24,14 @@ _Xamarin 會提供模式頁面的支援。強制回應頁面會鼓勵使用者�
 
 ![](modal-images/popping.png "Popping a Page from the Modal Stack")
 
-<a name="Performing_Navigation" />
-
 ## <a name="performing-navigation"></a>執行導覽
 
-強制回應導覽方法是由任何衍生型別上的屬性所公開 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) [`Page`](xref:Xamarin.Forms.Page) 。 這些方法可讓您[推送強制回應頁面](#Pushing_Pages_to_the_Modal_Stack)到強制回應堆疊上，以及從強制回應堆疊中[快顯強制回應頁面](#Popping_Pages_from_the_Modal_Stack)。
+強制回應導覽方法是由任何衍生型別上的屬性所公開 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) [`Page`](xref:Xamarin.Forms.Page) 。 這些方法可讓您[推送強制回應頁面](#pushing-pages-to-the-modal-stack)到強制回應堆疊上，以及從強制回應堆疊中[快顯強制回應頁面](#popping-pages-from-the-modal-stack)。
 
 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation)屬性也會公開可從中取得強制回應 [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) 堆疊中模式頁面的屬性。 不過，沒有執行強制回應堆疊操作，或快顯至強制回應導覽中根目錄的概念。 這是因為基礎平台上普遍不支援這些作業。
 
 > [!NOTE]
 > [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)不需要實例就能執行強制回應頁面導覽。
-
-<a name="Pushing_Pages_to_the_Modal_Stack" />
 
 ### <a name="pushing-pages-to-the-modal-stack"></a>將頁面推送到強制回應堆疊
 
@@ -80,8 +62,6 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 > [!NOTE]
 > [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) 無法將和覆寫的呼叫視為頁面導覽的保證指示。 例如，在 iOS 上，當應用程式終止時，會在使用中頁面上呼叫 `OnDisappearing` 覆寫。
-
-<a name="Popping_Pages_from_the_Modal_Stack" />
 
 ### <a name="popping-pages-from-the-modal-stack"></a>從強制回應堆疊中快顯頁面
 
@@ -127,8 +107,6 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 ```
 
 只要基礎平台支援，將 `boolean` 參數設定為 `false` 會停用頁面轉換動畫，將此參數設定為 `true` 會啟用頁面轉換動畫。 不過，缺少此參數的 push 和 pop 方法預設會啟用動畫。
-
-<a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>巡覽時傳遞資料
 
@@ -257,7 +235,7 @@ public class DetailPageCS : ContentPage
 
 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/index.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何巡覽至強制回應頁面。 強制回應頁面鼓勵使用者完成各自獨立且無法離開的工作，直到完成或取消工作為止。
 

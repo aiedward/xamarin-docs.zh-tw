@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 4319d9ab07682795e8890779a65a0e2289f4501c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 572ba31a1f19ab099765cc92bb1b389ba1115d1b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032206"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564689"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin 中的 CoreML 簡介
 
@@ -23,7 +23,7 @@ CoreML 將機器學習服務帶入 iOS –應用程式可以利用經過訓練�
 - [使用 CoreML 消費者入門](#coreml)
 - [搭配使用 CoreML 與視覺架構](#coremlvision)
 
-<a name="coreml" />
+<a name="coreml"></a>
 
 ## <a name="getting-started-with-coreml"></a>使用 CoreML 消費者入門
 
@@ -39,7 +39,7 @@ CoreML 將機器學習服務帶入 iOS –應用程式可以利用經過訓練�
 
 ### <a name="2-load-the-model"></a>2. 載入模型
 
-使用 `MLModel.Create` 的靜態方法載入模型：
+使用靜態方法載入模型 `MLModel.Create` ：
 
 ```csharp
 var assetPath = NSBundle.MainBundle.GetUrlForResource("NameOfModel", "mlmodelc");
@@ -48,9 +48,9 @@ model = MLModel.Create(assetPath, out NSError error1);
 
 ### <a name="3-set-the-parameters"></a>3. 設定參數
 
-模型參數會使用可執行 `IMLFeatureProvider`的容器類別來傳入和傳出。
+模型參數會使用所執行的容器類別來傳入和傳出 `IMLFeatureProvider` 。
 
-功能提供者類別的行為就像是字串和 `MLFeatureValue`s 的字典，其中每個功能值可以是簡單字串或數位、陣列或資料，或包含影像的圖元緩衝區。
+功能提供者類別的行為就像是字串和的字典 `MLFeatureValue` ，其中每個功能值可以是簡單字串或數位、陣列或資料，或包含影像的圖元緩衝區。
 
 單一值功能提供者的程式碼如下所示：
 
@@ -67,11 +67,11 @@ public class MyInput : NSObject, IMLFeatureProvider
   }
 ```
 
-使用像這樣的類別，可以透過 CoreML 瞭解的方式來提供輸入參數。 功能的名稱（例如程式碼範例中的 `myParam`）必須符合模型預期的內容。
+使用像這樣的類別，可以透過 CoreML 瞭解的方式來提供輸入參數。 功能的名稱（例如程式 `myParam` 代碼範例中的）必須符合模型預期的內容。
 
 ### <a name="4-run-the-model"></a>4. 執行模型
 
-使用模型時，會要求將功能提供者具現化並設定參數，然後呼叫 `GetPrediction` 方法：
+使用模型時，會要求將功能提供者具現化並設定參數，然後 `GetPrediction` 呼叫方法：
 
 ```csharp
 var input = new MyInput {MyParam = 13};
@@ -80,13 +80,13 @@ var outFeatures = model.GetPrediction(inputFeatures, out NSError error2);
 
 ### <a name="5-extract-the-results"></a>5. 將結果解壓縮
 
-預測結果 `outFeatures` 也是 `IMLFeatureProvider`的實例。您可以使用 `GetFeatureValue` 與每個輸出參數的名稱（例如 `theResult`）來存取輸出值，如下列範例所示：
+預測結果 `outFeatures` 也是的實例 `IMLFeatureProvider` ; 您可以使用 `GetFeatureValue` 和每個輸出參數的名稱（例如）來存取輸出值 `theResult` ，如下列範例所示：
 
 ```csharp
 var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 6227020800
 ```
 
-<a name="coremlvision" />
+<a name="coremlvision"></a>
 
 ## <a name="using-coreml-with-the-vision-framework"></a>搭配使用 CoreML 與視覺架構
 
@@ -98,7 +98,7 @@ CoreML 也可以搭配使用視覺架構來執行影像上的作業，例如圖�
 
 ### <a name="1-create-a-vision-coreml-model"></a>1. 建立願景 CoreML 模型
 
-CoreML 模型_MNISTClassifier_會載入，然後包裝在 `VNCoreMLModel` 中，讓模型可供視覺工作使用。 此程式碼也會建立兩個視覺要求：第一個用於尋找影像中的矩形，然後用來處理 CoreML 模型的矩形：
+CoreML 模型_MNISTClassifier_會載入，然後包裝在中， `VNCoreMLModel` 讓模型可供視覺工作使用。 此程式碼也會建立兩個視覺要求：第一個用於尋找影像中的矩形，然後用來處理 CoreML 模型的矩形：
 
 ```csharp
 // Load the ML model
@@ -113,7 +113,7 @@ RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
 ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 ```
 
-類別仍然需要為願景要求實作為 `HandleRectangles` 和 `HandleClassification` 方法，如以下步驟3和4所示。
+類別仍然需要實作為 `HandleRectangles` `HandleClassification` 願景要求的和方法，如下面的步驟3和4所示。
 
 ### <a name="2-start-the-vision-processing"></a>2. 開始視覺處理
 
@@ -127,13 +127,13 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-此處理程式會將 `ciImage` 傳遞至在步驟1中建立的視覺架構 `VNDetectRectanglesRequest`。
+此處理程式會將傳遞 `ciImage` 至 `VNDetectRectanglesRequest` 在步驟1中建立的願景架構。
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. 處理視覺處理的結果
 
 完成矩形偵測之後，它會執行 `HandleRectangles` 方法，這會裁剪影像以解壓縮第一個矩形，將矩形影像轉換成灰階，並將它傳遞至 CoreML 模型以進行分類。
 
-傳遞至這個方法的 `request` 參數包含願景要求的詳細資料，並使用 `GetResults<VNRectangleObservation>()` 方法，它會傳回在影像中找到的矩形清單。 第一個 `observations[0]` 的矩形會被解壓縮並傳遞至 CoreML 模型：
+`request`傳遞至這個方法的參數包含願景要求的詳細資料，並使用 `GetResults<VNRectangleObservation>()` 方法，它會傳回在影像中找到的矩形清單。 第一個矩形 `observations[0]` 會解壓縮並傳遞至 CoreML 模型：
 
 ```csharp
 void HandleRectangles(VNRequest request, NSError error) {
@@ -149,11 +149,11 @@ void HandleRectangles(VNRequest request, NSError error) {
 }
 ```
 
-`ClassificationRequest` 已在步驟1中初始化，以使用下一個步驟中定義的 `HandleClassification` 方法。
+`ClassificationRequest`已在步驟1中初始化，以使用 `HandleClassification` 下一個步驟中定義的方法。
 
 ### <a name="4-handle-the-coreml"></a>4. 處理 CoreML
 
-傳遞至這個方法的 `request` 參數包含 CoreML 要求的詳細資料，並使用 `GetResults<VNClassificationObservation>()` 方法，它會傳回以信賴方式排序的可能結果清單（首先是最高的信賴度）：
+`request`傳遞至這個方法的參數包含 CoreML 要求的詳細資料，並使用 `GetResults<VNClassificationObservation>()` 方法，它會傳回依信心排序的可能結果清單（最高的信賴度）：
 
 ```csharp
 void HandleClassification(VNRequest request, NSError error){

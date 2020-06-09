@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/05/2017
-ms.openlocfilehash: f986099011dbccb0eb43c62d253ee497d46ca08e
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 5908d8493821eed54f5adee09eee1341bf458609
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304902"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564884"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>在 Xamarin 中安裝和使用 watchOS
 
@@ -52,7 +52,7 @@ watchOS 1 原本需要使用 Xcode 7 的 OS X Yosemite （10.10）。
 
 您無法建立新的「監看式解決方案」 .。。相反地，您可以將 Watch 應用程式新增至現有的 iOS 應用程式。 請遵循下列步驟來建立監看式應用程式：
 
-1. 如果您沒有現有的專案，請先選擇 檔案 **> 新方案**，然後建立 iOS 應用程式（例如，**單一 View 應用程式**）：
+1. 如果您沒有現有的專案，請先選擇 [檔案] **> 新方案**]，然後建立 iOS 應用程式（例如，**單一 View 應用程式**）：
 
     [![](installation-images/cycle8-2-sml.png "Choose File > New Solution and create an iOS app")](installation-images/cycle8-2.png#lightbox)
 
@@ -72,7 +72,7 @@ watchOS 1 原本需要使用 Xcode 7 的 OS X Yosemite （10.10）。
 
 ## <a name="creating-the-watch-user-interface"></a>建立監看式使用者介面
 
-<a name="designer" />
+<a name="designer"></a>
 
 ### <a name="using-the-xamarin-ios-designer"></a>使用 Xamarin iOS 設計工具
 
@@ -88,7 +88,7 @@ watchOS 1 原本需要使用 Xcode 7 的 OS X Yosemite （10.10）。
 
 -----
 
-您應該選取一個類別，然後在**Properties** pad 中輸入名稱（這會自動建立必要C#的程式碼後置檔案），為每個新介面控制器提供一個**類別**：
+您應該選取一個類別，然後在**Properties** pad 中輸入名稱（這會自動建立所需的 c # 程式碼後置檔案），為每個新介面控制器提供一個**類別**：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -119,11 +119,11 @@ Visual Studio 使用者也可以使用 Xcode 來建立使用者介面，方法�
 
 如果使用 Xcode，您應該遵循針對一般[iOS 應用程式](~/ios/user-interface/storyboards/index.md)分鏡腳本監看應用程式的相同步驟（例如，藉由**Ctrl + 拖曳**至 **.h**標頭檔來建立輸出和動作）。
 
-當您在 Xcode 中儲存腳本時 Interface Builder 它會自動將您建立的輸出和動作新增C#至 watch 擴充功能專案中的**designer.cs**檔案。
+當您在 Xcode 中儲存腳本時 Interface Builder 它會自動將您建立的輸出和動作新增至監看式擴充功能專案中的**designer.cs**檔案。
 
 ### <a name="adding-additional-screens-in-xcode"></a>在 Xcode 中新增其他畫面
 
-當您使用 Interface Builder Xcode 將其他畫面新增至您的分鏡腳本時（預設為超過範本中包含的內容），**您必須手動C#** 新增每個新介面控制器的程式碼檔案。
+當您使用 Interface Builder Xcode 將其他畫面（預設包含範本中的內容）新增至您的分鏡腳本時，您必須手動新增每個新介面控制器**的 c # 程式碼**檔案。
 
 請參閱[Advanced 指示，以瞭解如何將新的介面控制器加入至分](~/ios/watchos/troubleshooting.md#add)鏡腳本。
 
@@ -133,7 +133,7 @@ Visual Studio 使用者也可以使用 Xcode 來建立使用者介面，方法�
 
 包含監看式應用程式組建的專案，與其他 iOS 專案類似。 建立程式會產生一個包含監看式擴充功能（. appex）的 iPhone 應用程式（. app），而此延伸模組又包含無程式碼監看式應用程式（. app）。
 
-## <a name="launching"></a>正在
+## <a name="launching"></a>啟動
 
 您可以使用 Visual Studio for Mac 或 Visual Studio （在 Mac 組建主機上啟動），啟動模擬器中的監看式應用程式。
 
@@ -162,7 +162,7 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 
 如需設定模擬器的指示，請參閱[Apple 的論壇](https://forums.developer.apple.com/thread/7783)（如果預設值不適用）。
 
-<a name="xcode6" />
+<a name="xcode6"></a>
 
 ### <a name="xcode-6-and-watchos-1"></a>Xcode 6 和 watchOS 1
 
@@ -176,7 +176,7 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 > 請記住，使用 Xcode 6 時，[監看式] 畫面不會自動出現在 iOS 模擬器中。
 > 使用 [**硬體 > 外部顯示**] 功能表來顯示 [監看式] 畫面。
 
-<a name="custommodes" />
+<a name="custommodes"></a>
 
 ## <a name="launching-notification-mode"></a>正在啟動通知模式
 
@@ -199,8 +199,8 @@ Visual Studio for Mac 和 Visual Studio 都支援調試。
 
 ![](installation-images/debug-sml.png "This screenshot shows a debug breakpoint being hit in a watch app")
 
-遵循啟動指示之後，您會得到在 IOS 模擬器上執行的監看式應用程式 **（watch）** 。
-在 [通知模式] 中，您可以選取 [ **Debug] > 開啟 [系統記錄**檔（**CMD +/** ）]，然後在程式碼中使用 `Console.WriteLine`。
+遵循啟動指示之後，您會得到在 IOS 模擬器上執行的監看式應用程式 **（watch）**。
+在通知模式中，您可以選取 [ **Debug] > 開啟 [系統記錄**] （**CMD +/**），然後 `Console.WriteLine` 在您的程式碼中使用。
 
 ### <a name="debugging-lifecycle-event-handlers"></a>偵錯工具生命週期事件處理常式
 
@@ -212,7 +212,7 @@ To test the functionality in your  and
   which triggers the `WillActivate` method of the watch app.
 -->
 
-WatchOS 範本檔案（例如 `InterfaceController`、`ExtensionDelegate`、`NotificationController`和 `ComplicationController`）隨附已實作為其所需的生命週期方法。 新增 `Console.WriteLine` 呼叫，並讀取**應用程式輸出**，以進一步瞭解事件生命週期。
+WatchOS 範本檔案（例如 `InterfaceController` 、 `ExtensionDelegate` 、 `NotificationController` 和 `ComplicationController` ）隨附已實作為其所需的生命週期方法。 新增 `Console.WriteLine` 呼叫並讀取**應用程式輸出**，以進一步瞭解事件生命週期。
 
 ## <a name="related-links"></a>相關連結
 

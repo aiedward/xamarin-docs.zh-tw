@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030228"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567771"
 ---
 # <a name="linking-xamarinios-apps"></a>連結 Xamarin.iOS 應用程式
 
@@ -22,7 +22,7 @@ ms.locfileid: "73030228"
 
 連結器是靜態工具，因此無法標記為用於透過反映所呼叫的包含類型和方法，也無法以動態方式具現化。 有幾個選項可解決這項限制。
 
-<a name="Linker_Behavior" />
+<a name="Linker_Behavior"></a>
 
 ## <a name="linker-behavior"></a>連結器行為
 
@@ -38,7 +38,7 @@ ms.locfileid: "73030228"
 
 執行下列動作：
 
-1. 右鍵按一下**解決方案資源管理員**的**項目名稱**並選擇**屬性**:
+1. 以滑鼠右鍵按一下 [**方案總管**中的**專案名稱**，然後選取 [**屬性**]：
 
     ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
 2. 在 [專案屬性]**** 中，選取 [iOS 組建]****：
@@ -56,7 +56,7 @@ ms.locfileid: "73030228"
 
 此選項對應至使用命令列工具 mtouch 時的 *-nolink* 選項。
 
-<a name="Link_SDK_assemblies_only" />
+<a name="Link_SDK_assemblies_only"></a>
 
 ### <a name="link-sdk-assemblies-only"></a>僅連結 SDK 組件
 
@@ -66,7 +66,7 @@ ms.locfileid: "73030228"
 
 此選項對應至使用命令列工具 mtouch 時的 -linksdk** 選項。
 
-<a name="Link_all_assemblies" />
+<a name="Link_all_assemblies"></a>
 
 ### <a name="link-all-assemblies"></a>連結所有組件
 
@@ -74,13 +74,13 @@ ms.locfileid: "73030228"
 
 此選項對應至使用命令列工具 **mtouch** 時的 -linkall** 選項。
 
-<a name="Controlling_the_Linker" />
+<a name="Controlling_the_Linker"></a>
 
 ## <a name="controlling-the-linker"></a>控制連結器
 
 當您使用連結器時，它有時會移除您可能是以動態方式呼叫的程式碼，甚至是間接移除。 為了涵蓋這些案例，連結器提供了一些功能和選項供您加強對其動作的控制力。
 
-<a name="Preserving_Code" />
+<a name="Preserving_Code"></a>
 
 ### <a name="preserving-code"></a>保留程式碼
 
@@ -108,7 +108,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 其定義所在的命名空間真的不是很重要，連結器會依類型名稱尋找此屬性。
 
- <a name="Skipping_Assemblies" />
+ <a name="Skipping_Assemblies"></a>
 
 ### <a name="skipping-assemblies"></a>略過組件
 
@@ -130,7 +130,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 沒有可供使用這個選項的使用者介面，但 Visual Studio for Mac [專案選項] 對話方塊或 Visual Studio [專案屬性] 窗格中的 [其他 mtouch 引數]**** 文字欄位內會提供此選項。 (例如， *--linkskip=mscorlib* 不會連結 mscorlib.dll，但會連結解決方案中的其他組件)。
 
-<a name="Disabling_Link_Away" />
+<a name="Disabling_Link_Away"></a>
 
 ### <a name="disabling-link-away"></a>停用「連結到別處」
 
@@ -146,7 +146,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 這種情況常常發生，因為使用者不想要以手動方式在其程式碼中新增 `[Preserve]` 屬性。  副作用是不會連結第三方程式庫，這通常算是不錯的預設值，因為我們無法知道第三方程式庫是否適合搭配連結器使用。
 
-如果專案中有一個庫,或者您是可重用庫的開發人員,並且希望連結器將程式集視為可連結的,則所有要做的就是添加程式集級屬性[`LinkerSafe`](xref:Foundation.LinkerSafeAttribute),如下所示:
+如果您的專案中有一個程式庫，或者您是可重複使用之程式庫的開發人員，而且想要將元件視為可連結，您只需要新增元件層級屬性 [`LinkerSafe`](xref:Foundation.LinkerSafeAttribute) ，如下所示：
 
 ```csharp
 [assembly:LinkerSafe]

@@ -1,39 +1,13 @@
 ---
-title: ''
-description: 從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 XAML 檔案參考 Xamarin.Forms 。 屬性和事件處理常式可以在原生視圖上設定，而且可以與 Xamarin.Forms views 互動。 本文示範如何使用 XAML 檔案中的原生視圖 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 67994371d3042100503eb3a7c3bc7d117b1c590c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139577"
+標題：「XAML 中的原生視圖」描述：「從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 Xamarin.Forms XAML 檔案參考。 屬性和事件處理常式可以在原生視圖上設定，而且可以與 Xamarin.Forms views 互動。 本文示範如何使用 XAML 檔案中的原生視圖 Xamarin.Forms 。」
+assetid： 7A856D31-B300-409E-9AEB-F8A4DB99B37E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/23/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="native-views-in-xaml"></a>XAML 中的原生檢視
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 XAML 檔案參考 Xamarin.Forms 。屬性和事件處理常式可以在原生視圖上設定，而且可以與 Xamarin.Forms views 互動。本文示範如何使用 XAML 檔案中的原生視圖 Xamarin.Forms 。_
-
-本文章討論下列主題：
-
-- [使用原生視圖](#consuming)–從 XAML 使用原生視圖的程式。
-- [使用原生](#native_bindings)系結–原生視圖屬性的資料系結。
-- [將引數傳遞至原生](#passing_arguments)視圖–將引數傳遞至原生視圖的函式，以及呼叫原生視圖 factory 方法。
-- [從程式碼參考原生視圖](#native_view_code)–從程式碼後置檔案中，抓取 XAML 檔案中宣告的原生視圖實例。
-- 子類別化[原生視圖](#subclassing)–子類別化原生視圖以定義 XAML 易懂的 API。  
-
-<a name="overview" />
-
-## <a name="overview"></a>概觀
 
 若要將原生視圖內嵌至 Xamarin.Forms XAML 檔案：
 
@@ -43,11 +17,9 @@ _從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 XAML �
 > [!IMPORTANT]
 > 針對任何使用原生視圖的 XAML 頁面，必須停用編譯的 XAML。 這可以藉由使用屬性來裝飾 XAML 頁面的程式碼後置類別來完成 `[XamlCompilation(XamlCompilationOptions.Skip)]` 。 如需 XAML 編譯的詳細資訊，請參閱[中 Xamarin.Forms 的 xaml 編譯](~/xamarin-forms/xaml/xamlc.md)。
 
-若要從程式碼後置檔案參考原生視圖，您必須使用共用的資產專案（SAP），並使用條件式編譯指示詞包裝平臺特定的程式碼。 如需詳細資訊，請參閱[從程式碼參考原生視圖](#native_view_code)。
+若要從程式碼後置檔案參考原生視圖，您必須使用共用的資產專案（SAP），並使用條件式編譯指示詞包裝平臺特定的程式碼。 如需詳細資訊，請參閱[從程式碼參考原生視圖](#refer-to-native-views-from-code)。
 
-<a name="consuming" />
-
-## <a name="consuming-native-views"></a>使用原生視圖
+## <a name="consume-native-views"></a>使用原生視圖
 
 下列程式碼範例示範如何將每個平臺的原生視圖使用到 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) ：
 
@@ -77,12 +49,10 @@ _從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 XAML �
 > [!NOTE]
 > 請注意，樣式無法搭配原生視圖使用，因為樣式只能以物件支援的屬性為目標 `BindableProperty` 。
 
-Android widget 的函式通常需要 Android `Context` 物件做為引數，而這可透過類別中的靜態屬性來提供 `MainActivity` 。 因此，在 XAML 中建立 Android widget 時， `Context` 物件通常必須使用 `x:Arguments` 具有標記延伸的屬性，傳遞至 widget 的函式 `x:Static` 。 如需詳細資訊，請參閱[將引數傳遞至原生視圖](#passing_arguments)。
+Android widget 的函式通常需要 Android `Context` 物件做為引數，而這可透過類別中的靜態屬性來提供 `MainActivity` 。 因此，在 XAML 中建立 Android widget 時， `Context` 物件通常必須使用 `x:Arguments` 具有標記延伸的屬性，傳遞至 widget 的函式 `x:Static` 。 如需詳細資訊，請參閱[將引數傳遞至原生視圖](#pass-arguments-to-native-views)。
 
 > [!NOTE]
-> 請注意， `x:Name` 在 .NET Standard 程式庫專案或共用資產專案（SAP）中，不可能使用命名原生視圖。 這麼做會產生原生類型的變數，這將會造成編譯錯誤。 不過，原生視圖可以包裝在 `ContentView` 實例中，並在程式碼後置檔案中取出，前提是已使用 SAP。 如需詳細資訊，請參閱[從程式碼參考原生視圖](#native_view_code)。
-
-<a name="native_bindings" />
+> 請注意， `x:Name` 在 .NET Standard 程式庫專案或共用資產專案（SAP）中，不可能使用命名原生視圖。 這麼做會產生原生類型的變數，這將會造成編譯錯誤。 不過，原生視圖可以包裝在 `ContentView` 實例中，並在程式碼後置檔案中取出，前提是已使用 SAP。 如需詳細資訊，請參閱[從程式碼參考原生視圖](#refer-to-native-views-from-code)。
 
 ## <a name="native-bindings"></a>原生系結
 
@@ -127,9 +97,7 @@ Android widget 的函式通常需要 Android `Context` 物件做為引數，而�
 
 如果原生屬性會在 `INotifyPropertyChanged` iOS 上執行或支援索引鍵/值觀察（KVO），或在 UWP 上，則會自動支援雙向系結 `DependencyProperty` 。 不過，許多原生視圖並不支援屬性變更通知。 針對這些視圖，您可以將 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) 屬性值指定為系結運算式的一部分。 這個屬性應該設定為原生視圖中的事件名稱，以在目標屬性變更時發出信號。 然後，當原生參數的值變更時， `Binding` 類別會收到通知，指出使用者已變更參數值，且 `NativeSwitchPageViewModel.IsSwitchOn` 屬性值已更新。
 
-<a name="passing_arguments" />
-
-## <a name="passing-arguments-to-native-views"></a>將引數傳遞至原生視圖
+## <a name="pass-arguments-to-native-views"></a>將引數傳遞至原生視圖
 
 您可以使用 `x:Arguments` 具有標記延伸的屬性，將函式引數傳遞至原生視圖 `x:Static` 。 此外，您 `public static` 可以使用屬性來指定方法的名稱，並使用屬性（ `x:FactoryMethod` attribute）和其引數，藉以呼叫原生視圖 factory 方法（傳回物件的方法或與定義方法的類別或結構相同的值） `x:Arguments` 。
 
@@ -200,9 +168,7 @@ Android widget 的函式通常需要 Android `Context` 物件做為引數，而�
 
 如需在 XAML 中傳遞引數的詳細資訊，請參閱[在 xaml 中傳遞引數](~/xamarin-forms/xaml/passing-arguments.md)。
 
-<a name="native_view_code" />
-
-## <a name="referring-to-native-views-from-code"></a>從程式碼參考原生視圖
+## <a name="refer-to-native-views-from-code"></a>從程式碼參考原生視圖
 
 雖然不可能使用屬性來命名原生視圖，但是您可以 `x:Name` 從共用存取專案中的程式碼後置檔案，抓取 XAML 檔案中宣告的原生視圖實例，前提是原生視圖是 [`ContentView`](xref:Xamarin.Forms.ContentView) 指定屬性值之的子系 `x:Name` 。 然後，在程式碼後置檔案中的條件式編譯指示詞內部，您應該：
 
@@ -287,9 +253,7 @@ IOS 和 Android 原生按鈕會共用相同的 `OnButtonTap` 事件處理常式�
 
 ![](xaml-images/contentview.png "ContentView Containing a Native Control")
 
-<a name="subclassing" />
-
-## <a name="subclassing-native-views"></a>子類別化原生視圖
+## <a name="subclass-native-views"></a>子類別化原生視圖
 
 許多 iOS 和 Android 原生視圖並不適合在 XAML 中具現化，因為它們使用方法（而非屬性）來設定控制項。 這個問題的解決方法是在包裝函式中建立原生 views 的子類別，以定義更多 XAML 易懂的 API，以使用屬性來設定控制項，並使用與平臺無關的事件。 包裝的原生視圖可以放在共用的資產專案（SAP）中，並以條件式編譯指示詞括住，或放在平臺特定專案中，並從 XAML 中的 .NET Standard 程式庫專案參考。
 
@@ -485,10 +449,6 @@ class MySpinner : Spinner
 ```
 
 `MySpinner`類別會公開 `ItemsSource` 和 `SelectedObject` 屬性，以及 `ItemSelected` 事件。 類別所顯示的專案 `MySpinner` 是由 [`Adapter`](xref:Android.Widget.Adapter) 與視圖相關聯的所提供，而 `Adapter` 當 `ItemsSource` 第一次設定屬性時，會將專案填入。 每當類別中選取的專案 `MySpinner` 變更時， `OnBindableSpinnerItemSelected` 事件處理常式就會更新 `SelectedObject` 屬性。
-
-## <a name="summary"></a>摘要
-
-本文示範了如何使用 XAML 檔案的原生視圖 Xamarin.Forms 。 屬性和事件處理常式可以在原生視圖上設定，而且可以與 Xamarin.Forms views 互動。
 
 ## <a name="related-links"></a>相關連結
 

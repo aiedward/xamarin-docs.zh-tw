@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0bedd898232b39898e6079a204bd7409587cde82
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a31b0bcf3a61b5a1ea7e84f35131e6ceca1eef82
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030399"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569877"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>在 Xamarin 中使用 tvOS 分段的控制項
 
@@ -28,7 +28,7 @@ Apple 具有下列使用分段控制項的建議：
 - **使用一致的區段內容大小**-所有區段都具有相同的寬度，而且可能的話，您應該嘗試將每個區段中的內容保持相同大小。 這不僅讓區段控制項變得更美觀，更容易閱讀。
 - **避免混用圖示和文字**-每個個別區段都可以包含圖示或文字，但不能同時包含兩者。 雖然您可以在相同的分割控制項中混用圖示和文字，但應該避免這種情況。
 
-<a name="About-Segment-Icons" />
+<a name="About-Segment-Icons"></a>
 
 ## <a name="about-segment-icons"></a>關於區段圖示
 
@@ -36,7 +36,7 @@ Apple 建議您使用簡單、可辨識的影像來進行區段圖示，例如�
 
 您不能在指定的區段上混合文字和圖示，而且應該避免在單一分割的控制項中混用圖示和文字。 它應該是所有圖示或所有文字。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="segment-text"></a>區段文字
 
@@ -48,15 +48,15 @@ Apple 會針對使用區段文字提供下列建議：
 
 同樣地，您不能在指定的區段上混合文字和圖示，而且應該避免在單一分割的控制項中混用圖示和文字。
 
-<a name="Segment-Controls-and-Storyboards" />
+<a name="Segment-Controls-and-Storyboards"></a>
 
 ## <a name="segment-controls-and-storyboards"></a>區段控制項和分鏡腳本
 
 在 tvOS 應用程式中使用區段控制項最簡單的方式，就是使用 iOS 設計工具將它們新增至應用程式的 UI。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在  **Solution Pad**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
+1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳**區段控制項**並放在視圖上： 
 
     [![](segmented-controls-images/segment02.png "A Segment Control")](segmented-controls-images/segment02.png#lightbox)
@@ -65,14 +65,14 @@ Apple 會針對使用區段文字提供下列建議：
     [![](segmented-controls-images/segment03.png "The Widget Tab")](segmented-controls-images/segment03.png#lightbox)
 1. 使用 [**區段**] 欄位可控制控制器中的區段數目。
 1. 從 [**區段] 下拉式清單**中選取指定的區段，以調整其個別屬性（例如**標題**或**影像**），以及控制是否要在顯示控制項時**啟用**或**選取**特定區段。
-1. 最後，將**名稱**指派給控制項，以便您可以在程式碼中C#對其進行回應。 例如: 
+1. 最後，將**名稱**指派給控制項，以便您可以在 c # 程式碼中對其進行回應。 例如： 
 
     [![](segmented-controls-images/segment04.png "Assign a Name")](segmented-controls-images/segment04.png#lightbox)
 1. 儲存您的變更。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在 **方案總管**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
+1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳**區段控制項**並放在視圖上： 
 
     [![](segmented-controls-images/segment02-vs.png "A Segment Control")](segmented-controls-images/segment02-vs.png#lightbox)
@@ -81,7 +81,7 @@ Apple 會針對使用區段文字提供下列建議：
     [![](segmented-controls-images/segment03-vs.png "The Widget Tab")](segmented-controls-images/segment03-vs.png#lightbox)
 1. 使用 [**區段**] 欄位可控制控制器中的區段數目。
 1. 從 [**區段] 下拉式清單**中選取指定的區段，以調整其個別屬性（例如**標題**或**影像**），以及控制是否要在顯示控制項時**啟用**或**選取**特定區段。
-1. 最後，將**名稱**指派給控制項，以便您可以在程式碼中C#對其進行回應。 例如: 
+1. 最後，將**名稱**指派給控制項，以便您可以在 c # 程式碼中對其進行回應。 例如： 
 
     [![](segmented-controls-images/segment04-vs.png "Assign a Name")](segmented-controls-images/segment04-vs.png#lightbox)
 1. 儲存您的變更。
@@ -90,7 +90,7 @@ Apple 會針對使用區段文字提供下列建議：
 
 如需使用分鏡腳本的詳細資訊，請參閱我們的[Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。 
 
-<a name="Working-with-Segmented-Controls" />
+<a name="Working-with-Segmented-Controls"></a>
 
 ## <a name="working-with-segmented-controls"></a>使用分段的控制項
 
@@ -98,7 +98,7 @@ Apple 會針對使用區段文字提供下列建議：
 
 有幾種不同的方式可讓您在 tvOS 應用程式中使用分割的控制項。
 
-<a name="Exposed-as-Outlets-and-Actions" />
+<a name="Exposed-as-Outlets-and-Actions"></a>
 
 ## <a name="exposed-as-names-and-events"></a>以名稱和事件的形式公開
 
@@ -127,9 +127,9 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 在上述範例的案例中，區段控制項已公開為 `PlayerCount` 名稱和 `PlayerCountChanged` 事件動作。 如需使用動作和輸出的詳細資訊，請參閱我們的[Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)的[以輸出和動作撰寫程式碼](~/ios/tvos/get-started/hello-tvos.md#Writing-the-Code)一節。
 
-`SelectedSegment` 屬性會取得或設定目前選取的區段，做為以零（0）為基底的索引。 因此，如果您有五個（5）區段，第一個區段的索引為零（0），最後一個索引為四（4）。
+`SelectedSegment`屬性會取得或設定目前選取的區段，做為以零（0）為基底的索引。 因此，如果您有五個（5）區段，第一個區段的索引為零（0），最後一個索引為四（4）。
 
-<a name="Modifying-Segments" />
+<a name="Modifying-Segments"></a>
 
 ## <a name="modifying-segments"></a>修改區段
 
@@ -143,7 +143,7 @@ SegmentedControl.InsertSegment(UIImage.FromFile("icon.png"), 0, true);
 SegmentedControl.InsertSegment("New Segment", 0, true);
 ```
 
-第二個參數會定義使用以零（0）為基底的索引來插入區段的位置。 如果最後一個參數是 `true` 則會以動畫顯示插入。
+第二個參數會定義使用以零（0）為基底的索引來插入區段的位置。 如果最後一個參數是，則會以 `true` 動畫顯示插入。
 
 若要移除指定的區段，請使用下列各項：
 
@@ -157,7 +157,7 @@ SegmentedControl.RemoveSegmentAtIndex(0, true);
 SegmentedControl.RemoveAllSegments();
 ```
 
-同樣地，如果最後一個參數是 `true`，則移除動作會以動畫顯示。 使用 `NumberOfSegments` 屬性來傳回目前的區段數目。
+同樣地，如果最後一個參數是 `true` ，則移除動作會以動畫顯示。 使用 `NumberOfSegments` 屬性來傳回目前的區段數目。
 
 若要取得指定區段的**標題**或**圖示**，請使用下列專案：
 
@@ -194,7 +194,7 @@ if (SegmentedControl.IsEnabled(0)) {
 SegmentedControl.SetEnabled(false, 0);
 ```
 
-<a name="Modifying-the-Segmented-Controls-Appearance" />
+<a name="Modifying-the-Segmented-Controls-Appearance"></a>
 
 ## <a name="modifying-the-segmented-controls-appearance"></a>修改分段控制項的外觀
 
@@ -204,18 +204,18 @@ SegmentedControl.SetEnabled(false, 0);
 SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-其中 `UIControlState` 會指定您要將影像設定為的控制項狀態：
+其中 `UIControlState` 指定您要將影像設定為的控制項狀態：
 
-- 一般
-- 重點
-- Disabled
+- 正常
+- 強調顯示
+- 已停用
 - 已選取
 - 已取得焦點
 
-和 `UIBarMetrics` 會指定要使用的計量：
+和會 `UIBarMetrics` 指定要用來做為的計量：
 
 - Default
-- 小巧
+- 精簡
 - DefaultPrompt
 - CompactPrompt
 
@@ -225,9 +225,9 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 SegmentedControl.SetDividerImage (UIImage.FromFile("divider.png"), UIControlState.Normal, UIControlState.Normal, UIBarMetrics.Default);
 ```
 
-其中，第一個 `UIControlState` 指定分割左邊的區段狀態，而第二個 `UIControlState` 指定右邊區段的狀態。
+其中，第一個 `UIControlState` 指定分割區左邊的區段狀態，第二個指定區段在 `UIControlState` 右邊的狀態。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 

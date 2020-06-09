@@ -8,16 +8,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ff68666d9f0385b159b9ac9908ff997f53715308
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304048"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571931"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator 疑難排解
 
-_本文介紹了配置和運行 Android 模擬器時發生的最常見的警告消息和問題。此外,它還介紹了解決這些錯誤的解決方案以及各種故障排除提示,以説明您診斷模擬程序問題。_
+_本文說明設定和執行 Android Emulator 時最常見的警告訊息和問題。此外，它也會說明解決這些錯誤的解決方案，以及各種疑難排解秘訣，以協助您診斷模擬器的問題。_
 
 ::: zone pivot="windows"
 
@@ -31,7 +31,7 @@ _本文介紹了配置和運行 Android 模擬器時發生的最常見的警告�
 
 1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動]****)。
 
-2. 開啟命令提示符並轉到安裝**adb**的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
+2. 開啟命令提示字元，並移至安裝**adb**的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
 
 3. 輸入以下命令：
 
@@ -52,7 +52,7 @@ _本文介紹了配置和運行 Android 模擬器時發生的最常見的警告�
 
 若顯示 [發生 MMIO 存取錯誤]**** 訊息，請重新啟動模擬器。
 
-<a name="gps-win" />
+<a name="gps-win"></a>
 
 ## <a name="missing-google-play-services"></a>遺漏 Google Play Services
 
@@ -63,12 +63,12 @@ _本文介紹了配置和運行 Android 模擬器時發生的最常見的警告�
 
 例如，此虛擬裝置將會包含 Google Play Services 和 Google Play 商店：
 
-[![支援 Google 播放服務和 Google Play 商店的範例 AVD](troubleshooting-images/win/00-add-gps-w158-sml.png)](troubleshooting-images/win/00-add-gps-w158.png#lightbox)
+[![已啟用 Google Play Services 和 Google Play 商店的範例 AVD](troubleshooting-images/win/00-add-gps-w158-sml.png)](troubleshooting-images/win/00-add-gps-w158.png#lightbox)
 
 > [!NOTE]
 > Google Play 商店影像僅適用於某些基底裝置類型，例如 Pixel、Pixel 2、Nexus 5 和 Nexus 5X。
 
-<a name="perf-win" />
+<a name="perf-win"></a>
 
 ## <a name="performance-issues"></a>效能問題
 
@@ -92,9 +92,9 @@ _本文介紹了配置和運行 Android 模擬器時發生的最常見的警告�
 
 此問題的常見原因是未在您的虛擬裝置 (AVD) 中使用 x86 型映像。 當您建立虛擬裝置時 (請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md))，請務必選取 x86 型系統映像：
 
-[![為虛擬裝置選擇 x86 系統映像](troubleshooting-images/win/02-x86-virtual-device-w158-sml.png)](troubleshooting-images/win/02-x86-virtual-device-w158.png#lightbox)
+[![為虛擬裝置選取 x86 系統映射](troubleshooting-images/win/02-x86-virtual-device-w158-sml.png)](troubleshooting-images/win/02-x86-virtual-device-w158.png#lightbox)
 
-<a name="accel-issues-win" />
+<a name="accel-issues-win"></a>
 
 ## <a name="hardware-acceleration-issues"></a>硬體加速問題
 
@@ -224,7 +224,7 @@ SERVICE_NAME: intelhaxm
 
 如果 `STATE` 不是設定為 `RUNNING`，請參閱 [How to Use the Intel Hardware Accelerated Execution Manager](https://software.intel.com/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator) (如何使用 Intel Hardware Accelerated Execution Manager) 來解決問題。
 
-<a name="virt-conflicts" />
+<a name="virt-conflicts"></a>
 
 #### <a name="haxm-virtualization-conflicts"></a>HAXM 虛擬化衝突
 
@@ -244,7 +244,7 @@ HAXM 可能與其他使用虛擬化的技術發生衝突，例如 Hyper-V、Wind
 
 若要修正此錯誤，請讓電腦開機進入 BIOS，同時啟用 VT-x 和 SLAT (第二層位址轉譯)，然後讓電腦重新啟動回到 Windows。
 
-<a name="disable-hyperv" />
+<a name="disable-hyperv"></a>
 
 #### <a name="disabling-hyper-v"></a>停用 Hyper-V
 
@@ -268,7 +268,7 @@ Intel HAXM 和 Microsoft Hyper-V 不可同時啟動。 不幸的是，不重新�
 
 如果已啟用 Device Guard 和 Credential Guard，在某些情況下使用上述步驟將無法成功停用 Hyper-V。 如果您無法停用 Hyper-V (或是在停用後仍然無法安裝 HAXM)，請使用下一節的步驟來停用 Device Guard 和 Credential Guard。
 
-<a name="disable-devguard" />
+<a name="disable-devguard"></a>
 
 #### <a name="disabling-device-guard"></a>停用 Device Guard
 
@@ -278,7 +278,7 @@ Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyp
 
 2. 在 [系統摘要]**** 中，查看 [Device Guard 虛擬化型安全性]**** 是否存在且處於 [執行中]**** 狀態：
 
-   [![裝置防護存在且正在執行](troubleshooting-images/win/04-device-guard-sml.png)](troubleshooting-images/win/04-device-guard.png#lightbox)
+   [![Device Guard 存在且正在執行](troubleshooting-images/win/04-device-guard-sml.png)](troubleshooting-images/win/04-device-guard.png#lightbox)
 
 如果已啟用 Device Guard，請使用下列步驟來停用它：
 
@@ -288,7 +288,7 @@ Device Guard 和 Credential Guard 可能會防止在 Windows 電腦上停用 Hyp
 
 3. 在 [本機群組原則編輯器]**** 中，瀏覽至 [電腦設定] > [系統管理範本] > [系統] > [Device Guard]****：
 
-   [![本地群組策略編輯器中的裝置防護](troubleshooting-images/win/05-group-policy-editor-sml.png)](troubleshooting-images/win/05-group-policy-editor.png#lightbox)
+   [![本機群組原則編輯器中的 Device Guard](troubleshooting-images/win/05-group-policy-editor-sml.png)](troubleshooting-images/win/05-group-policy-editor.png#lightbox)
 
 4. 將 [開啟虛擬化型安全性]**** 變更為 [已停用]**** (如上所示)，然後結束 [本機群組原則編輯器]****。
 
@@ -367,7 +367,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 1. 從 **Android Device Manager**啟動模擬器 (選取您的虛擬裝置並按一下 [啟動]****)。
 
-2. 開啟命令提示符並轉到安裝**adb**的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
+2. 開啟命令提示字元，並移至安裝**adb**的資料夾。 如果 Android SDK 安裝在其預設位置，則 **adb** 會位於 **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb**；如果不是，請將此路徑修改為您電腦上的 Android SDK 位置。
 
 3. 輸入以下命令：
 
@@ -388,7 +388,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 如果顯示 [發生 MMIO 存取錯誤]****，請重新啟動模擬器。
 
-<a name="gps-mac" />
+<a name="gps-mac"></a>
 
 ## <a name="missing-google-play-services"></a>遺漏 Google Play Services
 
@@ -399,12 +399,12 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 例如，此虛擬裝置將會包含 Google Play Services 和 Google Play 商店：
 
-[![支援 Google 播放服務和 Google Play 商店的範例 AVD](troubleshooting-images/mac/01-google-play-services-m75-sml.png)](troubleshooting-images/mac/01-google-play-services-m75.png#lightbox)
+[![已啟用 Google Play Services 和 Google Play 商店的範例 AVD](troubleshooting-images/mac/01-google-play-services-m75-sml.png)](troubleshooting-images/mac/01-google-play-services-m75.png#lightbox)
 
 > [!NOTE]
 > Google Play 商店影像僅適用於某些基底裝置類型，例如 Pixel、Pixel 2、Nexus 5 和 Nexus 5X。
 
-<a name="perf-mac" />
+<a name="perf-mac"></a>
 
 ## <a name="performance-issues"></a>效能問題
 
@@ -424,15 +424,15 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 此問題的常見原因是未在虛擬裝置中使用 x86 型映像。 當您建立虛擬裝置時 (請參閱[使用 Android Device Manager 管理虛擬裝置](~/android/get-started/installation/android-emulator/device-manager.md))，請務必選取 x86 型系統映像：
 
-[![為虛擬裝置選擇 x86 系統映像](troubleshooting-images/mac/02-x86-virtual-device-m75-sml.png)](troubleshooting-images/mac/02-x86-virtual-device-m75.png#lightbox)
+[![為虛擬裝置選取 x86 系統映射](troubleshooting-images/mac/02-x86-virtual-device-m75-sml.png)](troubleshooting-images/mac/02-x86-virtual-device-m75.png#lightbox)
 
-<a name="accel-issues-mac" />
+<a name="accel-issues-mac"></a>
 
 ## <a name="hardware-acceleration-issues"></a>硬體加速問題
 
 無論您使用 Hypervisor 架構或 HAXM 進行模擬器的硬體加速，都可能會遇到由於安裝問題或 macOS 版本已過期所造成的問題。 下列各節可協助您解決此問題。
 
-<a name="hypervisor-issues" />
+<a name="hypervisor-issues"></a>
 
 ### <a name="hypervisor-framework-issues"></a>Hypervisor 架構問題
 

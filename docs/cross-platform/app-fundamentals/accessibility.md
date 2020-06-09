@@ -6,18 +6,18 @@ ms.assetid: E587F0CF-7C1D-41F8-B5A8-DA3E738EDA81
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 23ef499005994c33586e1918ac3b2a9d28640d04
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: df042521d4e9852d6e23c2bbdf24484f9068250d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030282"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571255"
 ---
 # <a name="accessibility-in-xamarin-apps"></a>Xamarin 應用程式中的協助工具
 
 _確保您的應用程式可供最廣泛的可能物件使用_
 
-協助工具是設計應用程式使用者介面的概念，可運作良好的作業系統顯示和輸入協助功能，例如大型類型、高對比、放大、螢幕閱讀（文字轉換語音）、視覺效果或 haptic 意見反應提示，以及替代的輸入法。
+協助工具指的是設計應用程式使用者介面的概念，可運作良好的作業系統顯示和輸入協助功能，例如大型類型、高對比、放大、螢幕閱讀（文字轉換語音）、視覺效果或 haptic 意見反應提示，以及替代的輸入法。
 
 IOS、Android 和 Windows 等桌面和行動平臺提供內建的 Api，可協助開發人員建立可存取的應用程式，例如[Google TalkBack](https://play.google.com/store/apps/details?id=com.google.android.marvin.talkback)和[Apple 的 VoiceOver](https://www.apple.com/accessibility/ios/voiceover/)。
 
@@ -28,9 +28,9 @@ IOS、Android 和 Windows 等桌面和行動平臺提供內建的 Api，可協�
 - [**Android 協助工具**](~/android/app-fundamentals/accessibility.md)
 - [**iOS 協助工具**](~/ios/app-fundamentals/accessibility.md)
 - [**OS X 協助工具**](~/mac/app-fundamentals/accessibility.md)
-- [**Xamarin. 表單**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
+- [**Xamarin.Forms**](~/xamarin-forms/app-fundamentals/accessibility/index.md)
 
-<a name="checklist" />
+<a name="checklist"></a>
 
 ## <a name="accessibility-checklist"></a>協助工具檢查清單
 
@@ -74,4 +74,4 @@ IOS、Android 和 Windows 等桌面和行動平臺提供內建的 Api，可協�
 - [Android 協助工具](~/android/app-fundamentals/accessibility.md)
 - [iOS 協助工具](~/ios/app-fundamentals/accessibility.md)
 - [OS X 協助工具](~/mac/app-fundamentals/accessibility.md)
-- [Xamarin. 表單協助工具](~/xamarin-forms/app-fundamentals/accessibility/index.md)
+- [Xamarin.Forms 協助工具](~/xamarin-forms/app-fundamentals/accessibility/index.md)

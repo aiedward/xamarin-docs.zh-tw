@@ -6,18 +6,18 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
-ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
+ms.openlocfilehash: d21394b3c33b3f415cbe45ae13c84cabab1ec30b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82738799"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571034"
 ---
 # <a name="cross-platform-performance"></a>跨平台效能
 
 不佳的應用程式效能會以許多方式表現。 它可能會讓應用程式看起來沒有回應、造成捲動緩慢，以及減少電池壽命。 不過，最佳化效能不僅僅只牽涉到實作有效率的程式碼而已。 同時也必須考量使用者對於應用程式效能的體驗。 例如，確保作業能在不封鎖使用者執行其他活動的情況下執行，將可以協助改善使用者體驗。
 
-<a name="profiler" />
+<a name="profiler"></a>
 
 ## <a name="use-the-profiler"></a>使用分析工具
 
@@ -31,7 +31,7 @@ Xamarin Profiler 會測量、評估及協助尋找應用程式中與效能相關
 - 在理想情況下，分析應在不同的裝置上分別執行，因為在一種裝置上測量效能不會總是顯示其他裝置的效能特性。 然而，以最低需求來說，分析應在擁有最低預期規格的裝置上執行。
 - 關閉所有其他的應用程式，以確保欲分析之應用程式的完整影響都會獲得測量，而非其他應用程式。
 
-<a name="idisposable" />
+<a name="idisposable"></a>
 
 ## <a name="release-idisposable-resources"></a>釋放 IDisposable 資源
 
@@ -89,7 +89,7 @@ public void ReadText (string filename)
 
 如需詳細資訊，請參閱 [IDisposable 介面](xref:System.IDisposable)。
 
-<a name="events" />
+<a name="events"></a>
 
 ## <a name="unsubscribe-from-events"></a>取消訂閱事件
 
@@ -160,14 +160,14 @@ public class Subscriber : IDisposable
 
 `handler` 欄位保有匿名方法的參考，並會用於訂閱事件及取消訂閱事件。
 
-<a name="weakreferences" />
+<a name="weakreferences"></a>
 
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>使用弱式參考以防止 Immortal 物件
 
 > [!NOTE]
 > iOS 開發人員應檢閱有關[在 iOS 中避免循環參考](~/ios/deploy-test/performance.md#avoid-strong-circular-references)的文件，以確保其應用程式有效率地使用記憶體。
 
-<a name="lazy" />
+<a name="lazy"></a>
 
 ## <a name="delay-the-cost-of-creating-objects"></a>延遲建立物件的成本
 
@@ -209,7 +209,7 @@ double Compute(double x)
 
 如需延遲初始化的詳細資訊，請參閱[延遲初始設定](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx)。
 
-<a name="async" />
+<a name="async"></a>
 
 ## <a name="implement-asynchronous-operations"></a>實作非同步作業
 
@@ -248,7 +248,7 @@ public class FaceDetection
 
 如需詳細資訊，請參閱[非同步支援概觀](~/cross-platform/platform/async.md)。
 
-<a name="sgen" />
+<a name="sgen"></a>
 
 ## <a name="use-the-sgen-garbage-collector"></a>使用 SGen 記憶體回收行程
 
@@ -282,7 +282,7 @@ SGen 垃圾收集行程是9.2.1 和更新版本中的預設值，因此會自動
 - 當不再需要時明確的釋放資源，例如：串流、網路連線、大型記憶體區塊及檔案。 如需詳細資訊，請參閱[釋放 IDisposable 資源](#idisposable)。
 - 當不再需要時取消註冊事件處理常式，使物件可供收集。 如需詳細資訊，請參閱[取消訂閱事件](#events)。
 
-<a name="linker" />
+<a name="linker"></a>
 
 ## <a name="reduce-the-size-of-the-application"></a>減少應用程式的大小
 
@@ -335,7 +335,7 @@ SGen 垃圾收集行程是9.2.1 和更新版本中的預設值，因此會自動
 Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK。
 在此部落格文章中進一步了解：[How To Keep Your Android App Size Down](https://montemagno.com/how-to-keep-your-android-app-size-down/) (如何降低您的 Android 應用程式大小)。
 
-<a name="optimizeimages" />
+<a name="optimizeimages"></a>
 
 ## <a name="optimize-image-resources"></a>最佳化影像資源
 
@@ -343,7 +343,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 與影像解析度無關，顯示影像資源可能會大幅增加應用程式的記憶體使用量。 因此應該只有在必要時才建立它們，且應在應用程式不再需要它們時應立即釋出。
 
-<a name="activationperiod" />
+<a name="activationperiod"></a>
 
 ## <a name="reduce-the-application-activation-period"></a>減少應用程式的啟用期間
 
@@ -353,7 +353,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 在啟用期間，應用程式會執行啟用邏輯，通常包含載入及處理資源。 啟用期間可透過確認必要的資源已和應用程式一同封裝，而非從遠端擷取來減少。 例如，在某些情況下，在啟用期間載入本機儲存的預留位置資料可能會是合適的選擇。 然後，當初始 UI 顯示時，使用者便可以與應用程式互動，並且預留位置資料也能從遠端來源逐漸取代。 此外，應用程式的啟用邏輯應僅執行足以讓使用者開始使用應用程式的必要工作。 延遲載入其他組件可能會有幫助，因為組件會在第一次使用時才進行載入。
 
-<a name="webservicecommunication" />
+<a name="webservicecommunication"></a>
 
 ## <a name="reduce-web-service-communication"></a>減少 Web 服務通訊
 
@@ -367,7 +367,7 @@ Android 應用程式也可以將每個 ABI (「架構」) 分割成個別的 APK
 
 從 Web 服務擷取的資料應在本機進行快取，並使用快取後的資料，而非重複從 Web 服務擷取資料。 然而，當採用這個方法時，您應實作適當的快取策略，來在 Web 服務上的資料變更時更新本機快取內的資料。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已描述與討論用來增加以 Xamarin 平台建置之應用程式效能的技巧。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b9254afdcb6286edcffc67a1a69af8b049f08b6b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030419"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573218"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS 中的 IPA 支援
 
@@ -25,7 +25,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 在任一情況下，都要以正確的散發佈建設定檔來建立和數位簽署 IPA 套件 (特殊的 zip 檔案類型)。 本文涵蓋建置 IPA 套件，以及在 Mac 或 Windows 電腦上使用 iTunes 於 iOS 裝置安裝套件所需的步驟。
 
-<a name="iTunesMetadata" />
+<a name="iTunesMetadata"></a>
 
 ## <a name="the-itunesmetadataplist-file"></a>iTunesMetadata.plist 檔案
 
@@ -35,7 +35,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 您也可以建立自訂 **iTunesMetadata.plist** 以提供散發的其他資訊。 若要深入了解此檔案內容和如何建立，請參閱 [iTunesMetadata.plist 內容](~/ios/deploy-test/app-distribution/itunesmetadata.md#iTunesMetadata_contents)與[建立 iTunesMetadata.plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md#iTunesMetadata_creating)文件。
 
-<a name="iTunesArtwork" />
+<a name="iTunesArtwork"></a>
 
 ## <a name="itunes-artwork"></a>iTunes 插圖
 
@@ -50,7 +50,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 如需詳細資訊，請參閱 [iTunes 插圖](~/ios/app-fundamentals/images-icons/app-icons.md)文件。
 
-<a name="createipa" />
+<a name="createipa"></a>
 
 ## <a name="creating-an-ipa"></a>建立 IPA
 
@@ -165,7 +165,7 @@ _本文涵蓋如何使用臨機操作散發建立可用來部署應用程式的 
 
 -----
 
-<a name="Customizing-the-IPA-Location" />
+<a name="Customizing-the-IPA-Location"></a>
 
 ## <a name="customizing-the-ipa-location"></a>自訂 IPA 位置
 
@@ -221,7 +221,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:ServerAddress="192.16
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
-<a name="installipa" />
+<a name="installipa"></a>
 
 ## <a name="installing-an-ipa-using-itunes"></a>使用 iTunes 安裝 IPA
 
@@ -241,7 +241,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 使用者現在可以將 iTunes 與其裝置同步來安裝新的 iOS 應用程式。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 
@@ -249,12 +249,12 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 ## <a name="related-links"></a>相關連結
 
-- [應用商店分發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
+- [App Store 散發](~/ios/deploy-test/app-distribution/app-store-distribution/index.md)
 - [在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [發行至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [發佈至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [內部作業散發](~/ios/deploy-test/app-distribution/in-house-distribution.md)
 - [臨機操作散發](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [iTunesMetadata.plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)
+- [Itunesmetadata.plist. plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)
 - [疑難排解](~/ios/deploy-test/troubleshooting.md)
 - [iTunes 插圖](~/ios/app-fundamentals/images-icons/app-icons.md#itunes)
 - [Develop and distribute enterprise apps (Apple)](https://help.apple.com/xcode/mac/current/#/devba5e7054d) (開發與散發企業應用程式 (Apple))

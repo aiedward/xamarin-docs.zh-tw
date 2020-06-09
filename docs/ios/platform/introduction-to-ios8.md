@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 1fae83f60f819da9767e14612a7f778dc49ddf52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304881"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564625"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 簡介
 
@@ -26,7 +26,7 @@ iOS 7 會以視覺化方式，從第一個 iPhone OS 直接變更整個 iOS 使�
 
 在 iOS 8 中也有幾個已淘汰的 Api，這在本檔的結尾有詳細說明。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 在 Visual Studio for Mac 中建立 iOS 8 應用程式需要下列各項：
 
@@ -50,7 +50,7 @@ iOS 8 已透過使用 HomeKit 和 HealthKit，協助您將 Apple 和 iOS 裝置�
 
 ![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-若要開始使用 HomeKit，開發人員必須確認其布建設定檔已選取 HomeKit 服務。 Apple 也為開發人員提供了適用于 Xcode 的 HomeKit 模擬器增益集。 這可以在[Apple 開發人員中心](https://developer.apple.com/downloads/index.action)的 [`Hardware IO Tools for Xcode`] 底下找到。 
+若要開始使用 HomeKit，開發人員必須確認其布建設定檔已選取 HomeKit 服務。 Apple 也為開發人員提供了適用于 Xcode 的 HomeKit 模擬器增益集。 這可以在[Apple 開發人員中心](https://developer.apple.com/downloads/index.action)的底下找到 `Hardware IO Tools for Xcode` 。 
 
 如需詳細資訊，請參閱我們的[HomeKit](~/ios/platform/homekit.md)指南。
 
@@ -68,7 +68,7 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 
 建立應用程式延伸模組的第一個步驟是定義正確的擴充點，這對於確保正確 Api 的行為和可用性很重要。 若要在 Visual Studio for Mac 中建立應用程式延伸模組，請將新專案新增至您的方案，以將它加入至現有的應用程式。
 
-在 [**新增專案**] 對話方塊中**C#** ，流覽至 > **iOS** > **Unified API** > **延伸**模組，如下列螢幕擷取畫面所示：
+在 [**新增專案**] 對話方塊中，流覽至**c #**  >  **iOS**  >  **Unified API**  >  **延伸**模組，如下列螢幕擷取畫面所示：
 
 ![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
@@ -91,7 +91,7 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 
 首先，它會透過使用新的 Keychain 存取控制清單（Acl）來協助現有的 Keychain 服務。 Keychain 資料可透過使用者指紋的成功驗證來解除鎖定。
 
-其次，LocalAuthentication 提供兩種方法，在本機驗證您的應用程式。 開發人員應該使用 `CanEvaluatePolicy` 來判斷裝置是否能夠接受 Touch ID，然後 `EvaluatePolicy` 啟動驗證作業。
+其次，LocalAuthentication 提供兩種方法，在本機驗證您的應用程式。 開發人員應該使用 `CanEvaluatePolicy` 來判斷裝置是否能夠接受 TOUCH ID，然後再 `EvaluatePolicy` 啟動驗證作業。
 
 如需 Touch ID 的詳細資訊，以及瞭解如何將它整合到 Xamarin iOS 應用程式中，請參閱[在 xamarin 中的觸控識別碼和臉部識別碼](~/ios/platform/touch-id-face-id.md)指南。
 
@@ -112,7 +112,7 @@ HealthKit 是 iOS 8 中引進的一種架構，可為健康相關的資訊提供
 ## <a name="unified-storyboards"></a>整合的 Storyboard
 iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合的分鏡腳本。 透過單一分鏡腳本來涵蓋各種不同的硬體螢幕大小，您可以在真正的「設計一次，使用許多」樣式中建立快速且回應迅速的觀點。
 
-在 iOS8 之前，開發人員使用 `UIInterfaceOrientation` 來區分直向和橫向模式，並 `UIInterfaceIdiom` 來區別 iOS 裝置。 在 iOS8 中，您不再需要為 iPhone 和 iPad 裝置建立個別的分鏡腳本—方向和裝置是使用*大小類別*來決定。
+在 iOS8 之前，開發人員用 `UIInterfaceOrientation` 來區別直向和橫向模式，以及 `UIInterfaceIdiom` 區別 iOS 裝置。 在 iOS8 中，您不再需要為 iPhone 和 iPad 裝置建立個別的分鏡腳本—方向和裝置是使用*大小類別*來決定。
 
 每個裝置都是由大小類別在垂直和水準軸中定義，而 iOS 8 中有兩種大小類別：
 
@@ -132,7 +132,7 @@ iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合�
 
 ## <a name="games"></a>遊戲
 
-<a name="scenekit" />
+<a name="scenekit"></a>
 
 ### <a name="scene-kit"></a>場景套件
 
@@ -140,7 +140,7 @@ iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合�
 
 如需詳細資訊，請參閱我們的[SceneKit](~/ios/platform/gaming/scenekit.md)檔。
 
-<a name="spritekit" />
+<a name="spritekit"></a>
 
 ### <a name="sprite-kit"></a>Sprite 套件
 
@@ -151,7 +151,7 @@ iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合�
 ## <a name="other-changes"></a>其他變更
 除了上述 iOS 8 中所述的主要變更之外，Apple 還進一步更新了許多現有的架構。 以下詳細說明如下：
 
-- **[核心映射](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple 已擴充其影像處理架構，方法是新增對偵測矩形區域的更佳支援，以及影像內的 QR 代碼。 Mike Bluestein 在他的 blog 文章中探討了[iOS 8 的影像偵測](https://blog.xamarin.com/image-detection-in-ios-8/)
+- **[核心映射](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)**– Apple 已擴充其影像處理架構，方法是新增對偵測矩形區域的更佳支援，以及影像內的 QR 代碼。 Mike Bluestein 在他的 blog 文章中探討了[iOS 8 的影像偵測](https://blog.xamarin.com/image-detection-in-ios-8/)
 
 ## <a name="deprecated-apis"></a>已被取代的 API
 在 iOS 8 中的所有改良功能，已淘汰一些 Api。 以下詳述其中的部分。
@@ -161,7 +161,7 @@ iOS 8 包含新的簡單易用機制來建立使用者介面，也就是整合�
 
 - **[UISearchDisplayController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** –這已由 iOS8 中的 UISearchController 所取代。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 在本文中，我們探討了 Apple 在 iOS 8 中引進的一些新功能。
 
 ## <a name="related-links"></a>相關連結

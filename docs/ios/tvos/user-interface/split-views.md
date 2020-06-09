@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: e42912add9dd94b9cce16d725a456b1b4da30e35
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 98cedb1cf02f9688581946fa21a2cb40379f606f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022214"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566171"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>使用 Xamarin 中的 tvOS 分割視圖控制器
 
@@ -20,7 +20,7 @@ ms.locfileid: "73022214"
 
 [![](split-views-images/intro01.png "Sample Split View")](split-views-images/intro01.png#lightbox)
 
-<a name="About-Split-View-Controllers" />
+<a name="About-Split-View-Controllers"></a>
 
 ## <a name="about-split-view-controllers"></a>關於分割視圖控制器
 
@@ -40,15 +40,15 @@ Apple 對於使用分割視圖控制器有下列建議：
 - **保存主要選取範圍**：當詳細資料檢視上的內容可以變更為主視圖中使用者選取的回應時，主要視圖內容應該是固定的。 此外，您應該清楚地在主視圖中顯示目前選取的專案。
 - **使用單一、統一的標題**-一般而言，您會想要在詳細資料檢視中使用單一的中央標題，而不是詳細資料和主視圖中的標題。
 
-<a name="Split-View-Controllers-and-Storyboards" />
+<a name="Split-View-Controllers-and-Storyboards"></a>
 
 ## <a name="split-view-controllers-and-storyboards"></a>分割視圖控制器和分鏡腳本
 
 在 tvOS 應用程式中使用分割視圖控制器最簡單的方式，就是使用 iOS 設計工具將它們新增至應用程式的 UI。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在  **Solution Pad**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
+1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳 [**分割視圖控制器**]，並將它放在視圖上： 
 
     [![](split-views-images/activity01.png "A Split View Controller")](split-views-images/activity01.png#lightbox)
@@ -63,12 +63,12 @@ Apple 對於使用分割視圖控制器有下列建議：
 1. 設計主要和詳細資料檢視的內容： 
 
     [![](split-views-images/activity04.png "Example layout")](split-views-images/activity04.png#lightbox)
-1. 在**Properties Pad**的 [ **Widget]** 索引標籤中指派**名稱**，以在程式C#代碼中使用您的 UI 控制項。
+1. 在**Properties Pad**的 [ **Widget]** 索引標籤中指派**名稱**，以在 c # 程式碼中使用您的 UI 控制項。
 1. 儲存您的變更，並返回 Visual Studio for Mac。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在 **方案總管**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
+1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 從 [**工具箱**] 拖曳 [**分割視圖控制器**]，並將它放在視圖上： 
 
     [![](split-views-images/activity01-vs.png "A Split View Controller")](split-views-images/activity01-vs.png#lightbox)
@@ -83,24 +83,24 @@ Apple 對於使用分割視圖控制器有下列建議：
 1. 設計主要和詳細資料檢視的內容： 
 
     [![](split-views-images/activity04.png "Content layout")](split-views-images/activity04.png#lightbox)
-1. 在 [**屬性] 瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**， C#以在程式碼中使用您的 UI 控制項。
+1. 在**屬性瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**，以在 c # 程式碼中使用您的 UI 控制項。
 1. 儲存您的變更。
 
 -----
 
 如需使用分鏡腳本的詳細資訊，請參閱我們的[Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 
-<a name="Working-with-Split-View-Controllers" />
+<a name="Working-with-Split-View-Controllers"></a>
 
 ## <a name="working-with-split-view-controllers"></a>使用分割視圖控制器
 
 如上所述，分割視圖控制器通常用於您向使用者顯示已篩選內容的情況。 主要的類別會顯示在主視圖的左側，而詳細資料檢視中的篩選結果會根據使用者的選取專案。
 
-<a name="Accessing-Master-and-Detail" />
+<a name="Accessing-Master-and-Detail"></a>
 
 ### <a name="accessing-master-and-detail"></a>存取主版和詳細資料
 
-如果您需要以程式設計方式存取主要和詳細資料檢視控制器，請使用分割視圖控制器的 [`ViewControllers`] 屬性。 例如:
+如果您需要以程式設計方式存取主要和詳細資料檢視控制器，請使用 `ViewControllers` 分割視圖控制器的屬性。 例如：
 
 ```csharp
 // Gain access to master and detail view controllers
@@ -110,7 +110,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 
 它會呈現為數組，其中主要視圖控制器中的第一個元素（0）和第二個元素（1）是詳細資料。
 
-<a name="Accessing-Detail-from-Master" />
+<a name="Accessing-Detail-from-Master"></a>
 
 ### <a name="accessing-detail-from-master"></a>從 Master 存取詳細資料
 
@@ -122,7 +122,7 @@ var detailController = ViewControllers [1] as DetailViewController;
 public DetailViewController DetailController { get; set;}
 ```
 
-在分割視圖控制器中，覆寫 `ViewDidLoad` 方法，並將兩個視圖結合在一起。 例如:
+在分割視圖控制器中，覆寫 `ViewDidLoad` 方法，並將兩個視圖結合在一起。 例如：
 
 ```csharp
 public override void ViewDidLoad ()
@@ -142,11 +142,11 @@ public override void ViewDidLoad ()
 
 您可以在詳細資料檢視控制器上公開屬性和方法，主要可以視需要使用它來呈現新的資料。
 
-<a name="Showing-and-Hiding-Master" />
+<a name="Showing-and-Hiding-Master"></a>
 
 ### <a name="showing-and-hiding-master"></a>顯示和隱藏主要
 
-（選擇性）您可以使用分割視圖控制器的 [`PreferredDisplayMode`] 屬性來顯示和隱藏主要視圖控制器。 例如:
+（選擇性）您可以使用分割視圖控制器的屬性來顯示和隱藏主要視圖控制器 `PreferredDisplayMode` 。 例如：
 
 ```csharp
 // Show hide split view
@@ -157,16 +157,16 @@ if (SplitViewController.DisplayMode == UISplitViewControllerDisplayMode.PrimaryH
 }
 ```
 
-`UISplitViewControllerDisplayMode` 列舉會定義主視圖控制器如何呈現為下列其中一項：
+`UISplitViewControllerDisplayMode`列舉會定義主視圖控制器如何呈現為下列其中一項：
 
 - **自動**tvOS 會控制主要和詳細資料檢視的呈現方式。
 - **PrimaryHidden** -這會隱藏主要視圖控制器。
 - **AllVisible** -並排顯示主要和詳細資料檢視控制器。 這是一般的預設簡報。
 - **PrimaryOverlay** -詳細資料檢視控制器會在底下延伸，並由主要複本所涵蓋。
 
-若要取得目前的呈現狀態，請使用分割視圖控制器的 [`DisplayMode`] 屬性。
+若要取得目前的呈現狀態，請使用 `DisplayMode` 分割視圖控制器的屬性。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 

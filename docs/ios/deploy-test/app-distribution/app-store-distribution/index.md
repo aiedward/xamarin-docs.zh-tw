@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 73c4e992fae1a2d525670604d98f277fe4fde794
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ee8ff58566732c6a86a339d3080c7243be4b4a4e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304230"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572191"
 ---
 # <a name="app-store-distribution"></a>App Store 散發
 
@@ -23,14 +23,14 @@ ms.locfileid: "79304230"
 > 應用程式也應支援 iPhone XS 及 12.9" iPad Pro 的螢幕大小。
 
 > [!IMPORTANT]
-> 如果您在使用 Xamarin.Forms`UIWebView`時尋找與棄用警告 (ITMS-90809) 有關的資源,請參閱[Xamarin.Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)文件。
+> 如果您要在 `UIWebView` 使用 xamarin 時尋找取代警告（ITMS-90809）的相關資源，請參閱[Xamarin web](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)工作檔。
 
 如同開發應用程式，散發應用程式需使用適當的「佈建設定檔」** 來佈建應用程式。 佈建設定檔是一種檔案，其包含程式碼簽署資訊、應用程式身分識別及預期的散發機制。 對於非 App Store 的散發，佈建設定檔也包含可用來部署應用程式之裝置的相關資訊。
 
 > [!IMPORTANT]
 > 您**必須**是 Apple Developer Program 的個人或組織成員身分，才能使用 iTunes Connect 並將應用程式發佈至 App Store。 如果您是 Apple Developer **Enterprise** Program 的成員，將無法執行此頁面的操作步驟。
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="provisioning-an-app-for-app-store-distribution"></a>佈建適用於 App Store 散發的應用程式
 
@@ -44,47 +44,47 @@ ms.locfileid: "79304230"
 > [!NOTE]
 > 只有小組代理人和管理員可以建立散發憑證和佈建設定檔。
 
-<a name="creatingcertificate" />
+<a name="creatingcertificate"></a>
 
 ## <a name="creating-a-distribution-certificate"></a>建立散發憑證
 
 1. 瀏覽至 Apple Developer Member Center 的「憑證、識別碼與設定檔」** 區段。
 2. 在 [憑證]** 下，選取 [生產環境]****。
-3. 按下這個**+** 按鈕可建立新憑證。
+3. 按一下 **+** 按鈕以建立新的憑證。
 4. 在「生產環境」** 標題下，選取 [App Store and Ad Hoc] (App Store 和臨機操作)****：
 
     [![](images/createcertmanually01.png "Select App Store and Ad Hoc")](images/createcertmanually01.png#lightbox)
-5. 按一下 [繼續]****，並遵循指示以透過 Keychain 存取來建立憑證簽署要求：
+5. 按一下 [**繼續**]，並遵循指示以透過 Keychain 存取來建立憑證簽署要求：
 
     [![](images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](images/createcertmanually02.png#lightbox)
-6. 按照指示創建 CSR 後,按一下「**繼續」** 並將 CSR 上載到會員中心:
+6. 依照指示建立 CSR 之後，請按一下 [**繼續**]，並將 CSR 上傳到成員中心：
 
     [![](images/createcertmanually03.png "Upload the CSR to the Member Center")](images/createcertmanually03.png#lightbox)
 
 7. 按一下 [產生]**** 以建立您的憑證。
-8. 最後,**下載**已完成的證書,並按兩下檔以安裝它。
-9. 此時,證書應安裝在電腦上,但您可能需要[刷新設定檔](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download),以確保它們在 Xcode 中可見。
+8. 最後，**下載**完成的憑證，並按兩下檔案以進行安裝。
+9. 此時，憑證應該安裝在電腦上，但您可能需要重新整理[設定檔](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)，以確保它們可以在 Xcode 中顯示。
 
 或者，也可以透過 Xcode 中的 [喜好設定] 對話方塊來要求憑證。 若要這樣做，請遵循下面的步驟：
 
-1. 選擇您的團隊,然後單擊 **"管理證書..."**[![](images/selectteam.png "選取小組並檢視詳細資料")](images/selectteam.png#lightbox)
+1. 選取您的小組，然後按一下 [**管理憑證 ...**]：[![](images/selectteam.png "選取小組並檢視詳細資料")](images/selectteam.png#lightbox)
 
-2. 接下來,按一下**iOS 分發證書**旁邊的 **「創建**」按鈕:[![](images/selectcert.png "建立 iOS 散發憑證")](images/selectcert.png#lightbox)
+2. 接下來，按一下 [ **IOS 散發憑證**] 旁的 [**建立**] 按鈕：[![](images/selectcert.png "建立 iOS 散發憑證")](images/selectcert.png#lightbox)
 
-3. 根據您的團隊許可權,將生成簽名標識,如下所示,或者您可能需要等待團隊代理或管理員批准:[![](images/generated.png "將產生簽署識別和顯示對話方塊")](images/generated.png#lightbox)
+3. 根據您的小組許可權而定，將會產生簽署識別（如下所示），或者您可能必須等到小組代理程式或管理員核准它為止：[![](images/generated.png "將產生簽署識別和顯示對話方塊")](images/generated.png#lightbox)
 
-<a name="creatingprofile" />
+<a name="creatingprofile"></a>
 
 ## <a name="creating-a-distribution-profile"></a>建立散發設定檔
 
-<a name="creatingappid" />
+<a name="creatingappid"></a>
 
 ### <a name="creating-an-app-id"></a>建立應用程式識別碼
 
 如同您所建立的其他任何佈建設定檔，此處也需要應用程式識別碼才能識別您要散發給使用者裝置的應用程式。 如果您尚未建立應用程式識別碼，請遵循下列步驟來建立：
 
 1. 在 [Apple Developer Center](https://developer.apple.com/account/overview.action) 中，瀏覽到「憑證、識別碼與設定檔」** 區段。 選取 [識別碼]**** 下的 [應用程式識別碼]****。
-2. 按下該**+** 按鈕並提供一個**名稱**,該名稱將在門戶中標識它。
+2. 按一下 [] **+** 按鈕，並提供可在入口網站中識別它的**名稱**。
 3. 應用程式前置詞應該已設定為您的小組識別碼，且無法變更。 選取「明確」或「萬用字元」應用程式識別碼，並以反向 DNS 格式輸入套件組合識別碼，例如：
     - **明確**com.[網域名稱].[應用程式名稱]
     - **萬用字元**com.[網域名稱].*
@@ -95,11 +95,11 @@ ms.locfileid: "79304230"
 
 一旦您有建立散發設定檔所需的元件之後，請遵循下列步驟來建立散發設定檔：
 
-1. 傳回 Apple 預先設定的門戶 , 並選擇**預先** > **分發**:
+1. 返回 Apple 布建入口網站，然後**選取 [** 布建] [  >  **散發**]：
 
     [![](images/distribute01.png "RSelect Provisioning > Distribution")](images/distribute01.png#lightbox)
 
-2. 點選此**+** 按鍵並**選擇要建立的應用程式商店**的分發設定檔的類型:
+2. 按一下 [] **+** 按鈕，然後選取您想要建立為**App Store**的散發配置檔案類型：
 
     [![](images/distribute02.png "Create an App Store distribution profile")](images/distribute02.png#lightbox)
 
@@ -131,7 +131,7 @@ ms.locfileid: "79304230"
 
 -----
 
-<a name="selectprofile" />
+<a name="selectprofile"></a>
 
 ## <a name="selecting-a-distribution-profile-in-a-xamarinios-project"></a>在 Xamarin.iOS 專案中選取散發設定檔
 
@@ -171,7 +171,7 @@ ms.locfileid: "79304230"
 
 -----
 
-<a name="itunesconnect" />
+<a name="itunesconnect"></a>
 
 ## <a name="configuring-your-application-in-itunes-connect"></a>在 iTunes Connect 中設定應用程式
 
@@ -181,7 +181,7 @@ ms.locfileid: "79304230"
 
 如需更多詳細資料，請參閱我們的[在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)文件。
 
-<a name="submitting" />
+<a name="submitting"></a>
 
 ## <a name="submitting-an-app-to-itunes-connect"></a>將 iTunes Connect 提交至應用程式
 
@@ -189,7 +189,7 @@ ms.locfileid: "79304230"
 
 如需如何將應用程式發佈至 App Store 的詳細資訊，請參閱[發佈至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)。
 
-<a name="windows" />
+<a name="windows"></a>
 
 ## <a name="automatically-copy-app-bundles-back-to-windows"></a>自動將 .app 套件組合複製回 Windows
 
@@ -202,8 +202,8 @@ ms.locfileid: "79304230"
 ## <a name="related-links"></a>相關連結
 
 - [在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [發行至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [發佈至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [內部作業散發](~/ios/deploy-test/app-distribution/in-house-distribution.md)
 - [臨機操作散發](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)
-- [iTunesMetadata.plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)
-- [IPA 支援](~/ios/deploy-test/app-distribution/ipa-support.md)
+- [Itunesmetadata.plist. plist 檔案](~/ios/deploy-test/app-distribution/itunesmetadata.md)
+- [.IPA 支援](~/ios/deploy-test/app-distribution/ipa-support.md)

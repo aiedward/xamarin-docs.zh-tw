@@ -1,31 +1,15 @@
 ---
-title: Xamarin.Forms應用程式生命週期
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3793a54f04b2c028752e18e2a5a238c275c2958a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129671"
+標題：「 Xamarin.Forms 應用程式生命週期」描述：「本文將說明如何回應應用程式生命週期，包括生命週期方法、頁面通知事件和強制回應導覽事件。」
+assetid： 69B416CF-B243-4790-AB29-F030B32465BE ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/31/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms應用程式生命週期
 
 [`Application`](xref:Xamarin.Forms.Application)基類提供下列功能：
 
-- [生命週期方法](#Lifecycle_Methods) `OnStart` 、 `OnSleep` 和 `OnResume` 。
-- [頁面導覽事件](#page) [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing) 、 [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing) 。
-- 強制回應[導覽事件](#modal) `ModalPushing` 、、 `ModalPushed` `ModalPopping` 和 `ModalPopped` 。
-
-<a name="Lifecycle_Methods" />
+- [生命週期方法](#lifecycle-methods) `OnStart` 、 `OnSleep` 和 `OnResume` 。
+- [頁面導覽事件](#page-navigation-events) [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing) 、 [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing) 。
+- 強制回應[導覽事件](#modal-navigation-events) `ModalPushing` 、、 `ModalPushed` `ModalPopping` 和 `ModalPopped` 。
 
 ## <a name="lifecycle-methods"></a>生命週期方法
 
@@ -58,9 +42,7 @@ protected override void OnResume()
 > [!IMPORTANT]
 > 在 Android 上，`OnStart` 方法將會被輪流呼叫，同時也會在應用程式首次啟動時被呼叫，前提是主要活動在 `[Activity()]` 屬性中缺少 `ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation`。
 
-<a name="page" />
-
-## <a name="page-notification-events"></a>頁面通知事件
+## <a name="page-navigation-events"></a>頁面導覽事件
 
 類別上有兩個事件 [`Application`](xref:Xamarin.Forms.Application) ，可提供顯示和消失頁面的通知：
 
@@ -71,8 +53,6 @@ protected override void OnResume()
 
 > [!NOTE]
 > [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing)和 [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing) 事件會 [`Page`](xref:Xamarin.Forms.Page) 分別在和事件之後，從基類引發 [`Page.Appearing`](xref:Xamarin.Forms.Page.Appearing) [`Page.Disappearing`](xref:Xamarin.Forms.Page.Disappearing) 。
-
-<a name="modal" />
 
 ## <a name="modal-navigation-events"></a>強制回應導覽事件
 

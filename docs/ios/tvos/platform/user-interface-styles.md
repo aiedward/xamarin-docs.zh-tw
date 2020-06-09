@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8d9facdd35a9048a93c17f1194d5e672edd9d798
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1d64a212dae055d6a7a5ff1005b25dc48a10d52e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030572"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566197"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>在 Xamarin 中 tvOS 使用者介面樣式
 
@@ -20,13 +20,13 @@ _本文涵蓋 Apple 已新增至 tvOS 10 的 Light 和深色 UI 主題，以及�
 
 tvOS 10 現在支援深色和淺色使用者介面主題，所有的內建 UIKit 控制項都會根據使用者的喜好設定自動調整。 此外，開發人員也可以根據使用者選取的主題，手動調整 UI 元素，而且可以覆寫指定的主題。
 
-<a name="About-the-New-User-Interface-Styles" />
+<a name="About-the-New-User-Interface-Styles"></a>
 
 ## <a name="about-the-new-user-interface-styles"></a>關於新的使用者介面樣式
 
 如上所述，tvOS 10 現在支援深色和淺色使用者介面主題，所有的內建 UIKit 控制項都會根據使用者的喜好設定自動調整。
 
-使用者可以移至 **設定** > **一般** > **外觀**，並在**淺色**與**深色**之間切換，來切換此主題：
+使用者可以移至 [**設定**]  >  **[一般] [**  >  **外觀**]，並切換 [**淺色**] 和 [**深色**] 來切換此主題：
 
 [![](user-interface-styles-images/theme01.png "The Settings app")](user-interface-styles-images/theme01.png#lightbox)
 
@@ -38,57 +38,57 @@ tvOS 10 現在支援深色和淺色使用者介面主題，所有的內建 UIKit
 
 Light UI 主題是預設主題，而且任何現有的 tvOS 應用程式仍會使用淺色主題，而不論使用者的喜好設定為何，除非已針對 tvOS 10 進行修改，才能利用深色主題。 TvOS 10 應用程式也能夠覆寫目前的主題，並一律針對其部分或所有 UI 使用淺色或深色主題。
 
-<a name="Adopting-the-Light-and-Dark-Themes" />
+<a name="Adopting-the-Light-and-Dark-Themes"></a>
 
 ## <a name="adopting-the-light-and-dark-themes"></a>採用淺色與深色主題
 
-為了支援這項功能，Apple 已將新的 API 新增至 `UITraitCollection` 類別，而 tvOS 應用程式必須加入宣告以支援深色外觀（透過其 `Info.plist` 檔案中的設定）。
+為了支援這項功能，Apple 已將新的 API 新增至 `UITraitCollection` 類別，而 tvOS 應用程式必須加入宣告以支援深色外觀（透過其檔案中的設定 `Info.plist` ）。
 
 若要加入淺色與深色主題支援，請執行下列動作：
 
-1. 在方案總管中按兩下 `Info.plist` 檔案將其開啟以進行編輯。
+1. 在方案總管**** 中按兩下 `Info.plist` 檔案將其開啟以進行編輯。
 2. 選取 [**來源**] 視圖（從編輯器的底部）。
-3. 新增新的金鑰，並將它呼叫 `UIUserInterfaceStyle`：
+3. 新增金鑰並呼叫它 `UIUserInterfaceStyle` ：
 
     [![](user-interface-styles-images/theme03.png "The UIUserInterfaceStyle key")](user-interface-styles-images/theme03.png#lightbox)
-4. 將 類型 設定為 `String` 並輸入 `Automatic`的值：
+4. 將 [類型] 保留設定為 `String` ，並輸入 `Automatic` 下列值：
 
     [![](user-interface-styles-images/theme04.png "Enter Automatic")](user-interface-styles-images/theme04.png#lightbox)
 5. 將變更儲存到檔案。
 
-`UIUserInterfaceStyle` 索引鍵有三個可能的值：
+索引鍵有三個可能的值 `UIUserInterfaceStyle` ：
 
 - **Light** -強制 tvOS 應用程式的 UI 一律使用淺色主題。
 - **深色**-強制 tvOS 應用程式的 UI 一律使用深色主題。
 - **自動**-根據使用者在 [設定] 中的喜好設定，在淺色與深色主題之間切換。 這是慣用的設定。
 
-<a name="UIKit-Theme-Support" />
+<a name="UIKit-Theme-Support"></a>
 
 ### <a name="uikit-theme-support"></a>UIKit 主題支援
 
-如果 tvOS 應用程式使用標準的內建 `UIView` 型控制項，則會自動回應 UI 主題，而不需要開發人員介入。
+如果 tvOS 應用程式使用的是以標準為基礎的內建 `UIView` 控制項，則會自動回應 UI 主題，而不需要開發人員介入。
 
-此外，`UILabel` 和 `UITextView` 會根據 [選取 UI 主題] 自動變更其色彩：
+此外， `UILabel` 和 `UITextView` 會根據 [選取 UI 主題] 自動變更其色彩：
 
 - 淺色主題中的文字將會是黑色。
 - 深色主題中的文字將會是白色。
 
 如果開發人員是以手動方式變更文字色彩（在腳本或程式碼中），他們會負責根據 UI 主題來處理色彩變更。
 
-<a name="New-Blur-Effects" />
+<a name="New-Blur-Effects"></a>
 
 ### <a name="new-blur-effects"></a>新的模糊效果
 
 為了支援 tvOS 10 應用程式中的淺色和深色主題，Apple 已新增兩個新的模糊效果。 這些新效果將會根據使用者選取的 UI 主題自動調整模糊，如下所示：
 
-- `UIBlurEffectStyleRegular`-在淺色主題中使用淺模糊，暗色調主題的暗模糊。
-- `UIBlurEffectStyleProminent`-在淺色主題中使用額外的淺模糊，暗色調主題則會有額外暗的模糊。
+- `UIBlurEffectStyleRegular`-在淺色主題中使用淺模糊，暗色調主題中則為暗模糊。
+- `UIBlurEffectStyleProminent`-在淺色主題中使用額外的淺模糊，暗色調主題則會有額外的模糊效果。
 
-<a name="Working-with-Trait-Collections" />
+<a name="Working-with-Trait-Collections"></a>
 
 ## <a name="working-with-trait-collections"></a>使用特性集合
 
-`UITraitCollection` 類別的新 `UserInterfaceStyle` 屬性可以用來取得目前選取的 UI 主題，而且將會是下列其中一個值的 `UIUserInterfaceStyle` 列舉：
+類別的新 `UserInterfaceStyle` 屬性 `UITraitCollection` 可以用來取得目前選取的 UI 主題，而且將會是 `UIUserInterfaceStyle` 下列其中一個值的列舉：
 
 - **Light** -已選取 light UI 主題。
 - **深色**-已選取深色 UI 主題。
@@ -96,13 +96,13 @@ Light UI 主題是預設主題，而且任何現有的 tvOS 應用程式仍會�
 
 此外，特徵集合在 tvOS 10 中具有下列功能：
 
-- 外觀 proxy 可以根據指定 `UITraitCollection` 的 `UserInterfaceStyle` 加以自訂，以根據主題變更影像或專案色彩之類的事物。
-- TvOS 應用程式可以藉由覆寫 `UIView` 或 `UIViewController` 類別的 `TraitCollectionDidChange` 方法，來處理特性集合變更。
+- 外觀 proxy 可以根據指定的來自訂， `UserInterfaceStyle` 以根據 `UITraitCollection` 主題變更影像或專案色彩之類的事物。
+- TvOS 應用程式可以藉由覆寫或類別的方法，來處理特性集合變更 `TraitCollectionDidChange` `UIView` `UIViewController` 。
 
 > [!IMPORTANT]
-> TvOS 10 的 tvOS 早期預覽尚未完全支援 `UITraitCollection` 的 `UIUserInterfaceStyle`。 在未來的版本中將會新增完整支援。
+> TvOS 10 的 tvOS 早期預覽版本尚不完整支援 `UIUserInterfaceStyle` `UITraitCollection` 。 在未來的版本中將會新增完整支援。
 
-<a name="Customizing-Appearance-Based-on-Theme" />
+<a name="Customizing-Appearance-Based-on-Theme"></a>
 
 ### <a name="customizing-appearance-based-on-theme"></a>根據主題自訂外觀
 
@@ -120,15 +120,15 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> 可惜的是，tvOS 10 的 tvOS Preview 並不完全支援 `UITraitCollection`的 `UIUserInterfaceStyle`，因此這種自訂功能尚無法使用。 在未來的版本中將會新增完整支援。
+> 可惜的是，適用于 tvOS 10 的 tvOS Preview 並不完全支援 `UIUserInterfaceStyle` `UITraitCollection` ，因此這種類型的自訂功能尚無法使用。 在未來的版本中將會新增完整支援。
 
-<a name="Responding-to-Theme-Changes-Directly" />
+<a name="Responding-to-Theme-Changes-Directly"></a>
 
 ### <a name="responding-to-theme-changes-directly"></a>直接回應主題變更
 
-在開發人員中，需要根據選取的 UI 主題，更深入地控制 UI 元素的外觀，他們可以覆寫 `UIView` 或 `UIViewController` 類別的 `TraitCollectionDidChange` 方法。
+在開發人員中，需要根據選取的 UI 主題，更深入地控制 UI 元素的外觀，他們可以覆寫 `TraitCollectionDidChange` `UIView` 或類別的方法 `UIViewController` 。
 
-例如:
+例如：
 
 ```csharp
 public override void TraitCollectionDidChange (UITraitCollection previousTraitCollection)
@@ -140,13 +140,13 @@ public override void TraitCollectionDidChange (UITraitCollection previousTraitCo
 }
 ```
 
-<a name="Responding-to-Theme-Changes-Directly" />
+<a name="Responding-to-Theme-Changes-Directly"></a>
 
 ### <a name="overriding-a-trait-collection"></a>覆寫特性集合
 
 根據 tvOS 應用程式的設計，開發人員有時可能需要覆寫指定使用者介面專案的特性集合，並讓它一律使用特定的 UI 主題。
 
-這可以使用 `UIViewController` 類別上的 `SetOverrideTraitCollection` 方法來完成。 例如:
+這可以在 `SetOverrideTraitCollection` 類別上使用方法來完成 `UIViewController` 。 例如：
 
 ```csharp
 // Create new trait and configure it
@@ -159,7 +159,7 @@ SetOverrideTraitCollection (trait, this);
 
 如需詳細資訊，請參閱整合分鏡指令檔[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)的[特性](~/ios/user-interface/storyboards/unified-storyboards.md)和覆[寫特性](~/ios/user-interface/storyboards/unified-storyboards.md)章節。
 
-<a name="Trait-Collections-and-Storyboards" />
+<a name="Trait-Collections-and-Storyboards"></a>
 
 ### <a name="trait-collections-and-storyboards"></a>特性集合和分鏡腳本
 
@@ -167,7 +167,7 @@ SetOverrideTraitCollection (trait, this);
 
 若要啟用特性集合支援，請執行下列動作：
 
-1. 以滑鼠右鍵按一下**方案總管**中的分鏡腳本檔案，然後選取 [**開啟方式**]， > **Xcode Interface Builder**：
+1. 以滑鼠右鍵按一下**方案總管**中的分鏡腳本檔案，然後選取 [**開啟方式**  >  **Xcode Interface Builder**：
 
     [![](user-interface-styles-images/theme05.png "Open With Xcode Interface Builder")](user-interface-styles-images/theme05.png#lightbox)
 2. 若要啟用特性集合支援，請切換至 [檔案偵測**器**]，並選取 [ **Interface Builder**檔] 區段中的 [**使用特性變化**] 屬性：
@@ -182,7 +182,7 @@ SetOverrideTraitCollection (trait, this);
 
 - 開發人員可以根據**屬性偵測器**中的 UI 主題，指定不同的使用者介面元素變化：
 
-  - 現在 **+** 有數個屬性（property），可以按一下以新增 UI 主題特定版本：
+  - 現在有數個屬性 **+** 可供按一下以新增 UI 主題特定版本：
 
     [![](user-interface-styles-images/theme08.png "Add a UI theme specific version")](user-interface-styles-images/theme08.png#lightbox)
 
@@ -201,7 +201,7 @@ SetOverrideTraitCollection (trait, this);
 
 此外，tvOS 模擬器現在具有鍵盤快速鍵，可讓開發人員在 tvOS 應用程式時，快速切換淺色和深色主題。 使用**命令-Shift-D**鍵盤順序，在淺色與深色之間切換。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 

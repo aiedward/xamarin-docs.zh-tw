@@ -1,21 +1,6 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e565a2bcddf292d37bc3dd07a8edbbabec709d8a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133558"
+title： "實行視圖" 描述： "本文說明如何建立自訂控制項的自訂轉譯器 Xamarin.Forms ，以用來從裝置相機顯示預覽影片串流。
+assetid： 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/10/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 # <a name="implementing-a-view"></a>實作檢視
 
@@ -31,13 +16,11 @@ _Xamarin。表單自訂使用者介面控制項應從 View 類別衍生，用來
 
 轉譯程式可以 [`View`](xref:Xamarin.Forms.View) 在每個平臺上建立的自訂轉譯器，用來執行平臺特定的自訂。 執行這項作業的流程如下：
 
-1. [建立](#Creating_the_Custom_Control) Xamarin.Forms 自訂控制項。
-1. [使用](#Consuming_the_Custom_Control)來自的自訂控制項 Xamarin.Forms 。
-1. 在每個平台上[建立](#Creating_the_Custom_Renderer_on_each_Platform)控制項的自訂轉譯器。
+1. [建立](#creating-the-custom-control) Xamarin.Forms 自訂控制項。
+1. [使用](#consuming-the-custom-control)來自的自訂控制項 Xamarin.Forms 。
+1. 在每個平台上[建立](#creating-the-custom-renderer-on-each-platform)控制項的自訂轉譯器。
 
 現在將依序討論每個項目，以實作 `CameraPreview` 轉譯器從裝置相機顯示預覽視訊資料流。 只要加以點選，就會停止和啟動視訊資料流。
-
-<a name="Creating_the_Custom_Control" />
 
 ## <a name="creating-the-custom-control"></a>建立自訂控制項
 
@@ -60,8 +43,6 @@ public class CameraPreview : View
 ```
 
 `CameraPreview` 自訂控制項是在 .NET Standard 程式庫專案中建立，並能定義控制項的 API。 此自訂控制項會公開 `Camera` 屬性，用來控制應該從裝置的前方或後方相機顯示視訊資料流。 如果在建立控制項時未指定 `Camera` 屬性的值，則預設會指定為後方相機。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自訂控制項
 
@@ -108,8 +89,6 @@ public class MainPageCS : ContentPage
 `CameraPreview` 自訂控制項執行個體將用來從裝置相機顯示預覽視訊資料流。 除了可選擇性指定 `Camera` 屬性的值，控制項的自訂作業會在自訂轉譯器中完成。
 
 自訂轉譯器現在可以新增至每個應用程式專案，來建立平台特定的相機預覽控制項。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每個平台上建立自訂轉譯器
 
@@ -331,7 +310,7 @@ namespace CustomRenderer.UWP
 > [!NOTE]
 > 請務必停止並處置提供 UWP 應用程式中相機存取權的物件。 若未這樣做，則可能會干擾嘗試存取裝置相機的其他應用程式。 如需詳細資訊，請參閱[顯示相機預覽](/windows/uwp/audio-video-camera/simple-camera-preview-access/)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範如何建立自訂控制項的自訂轉譯器 Xamarin.Forms ，以用來從裝置相機顯示預覽影片串流。 Xamarin.Forms自訂使用者介面控制項應該衍生自 [`View`](xref:Xamarin.Forms.View) 類別，用來在螢幕上放置版面配置和控制項。
 

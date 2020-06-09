@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/09/2018
-ms.openlocfilehash: 91513936a0223af0e4220154d0fe65ee0a599a4f
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 003ea31c765bd2610e93e0f85fe995606d55022f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304398"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567394"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin 的限制
 
@@ -20,7 +20,7 @@ ms.locfileid: "79304398"
 
 相較于桌面 Mono，這些是 Xamarin 的限制：
 
- <a name="Limited_Generics_Support" />
+ <a name="Limited_Generics_Support"></a>
 
 ## <a name="limited-generics-support"></a>有限的泛型支援
 
@@ -30,7 +30,7 @@ Mono 的[完整 AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot)�
 
 開發人員遇到的一些常見問題包括：
 
- <a name="Generic_Subclasses_of_NSObjects_are_limited" />
+ <a name="Generic_Subclasses_of_NSObjects_are_limited"></a>
 
 ### <a name="generic-subclasses-of-nsobjects-are-limited"></a>NSObjects 的一般子類別受到限制
 
@@ -45,18 +45,18 @@ class Foo<T> : UIView {
 > [!NOTE]
 > 雖然可以使用 NSObjects 的一般子類別，但還是有一些限制。 如需詳細資訊，請閱讀 NSObject 檔的[一般子類別](~/ios/internals/api-design/nsobject-generics.md)
 
- <a name="No_Dynamic_Code_Generation" />
+ <a name="No_Dynamic_Code_Generation"></a>
 
 ## <a name="no-dynamic-code-generation"></a>不產生動態程式碼
 
-由於 iOS 核心會防止應用程式動態產生程式碼，因此 Xamarin 不支援任何形式的動態程式碼產生。 其中包括：
+由於 iOS 核心會防止應用程式動態產生程式碼，因此 Xamarin 不支援任何形式的動態程式碼產生。 它們包括：
 
 - 無法使用 [System.object]。
 - 不支援 System.web. Remoting。
 - 不支援動態建立類型（沒有類型. GetType （"MyType ' 1"）），不過，雖然查閱現有的類型（例如，類型. GetType （"System.string"））也沒問題。
 - 反向回呼必須在編譯時期向執行時間註冊。
 
- <a name="System.Reflection.Emit" />
+ <a name="System.Reflection.Emit"></a>
 
 ### <a name="systemreflectionemit"></a>System.Reflection.Emit
 
@@ -73,7 +73,7 @@ class Foo<T> : UIView {
 
 ### <a name="using-delegates-to-call-native-functions"></a>使用委派呼叫原生函式
 
-若要透過C#委派呼叫原生函式，委派的宣告必須以下列其中一個屬性裝飾：
+若要透過 c # 委派呼叫原生函式，委派的宣告必須以下列其中一個屬性裝飾：
 
 - [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) （偏好，因為它是跨平臺且與 .NET Standard 1.1 + 相容）
 - [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
@@ -84,24 +84,24 @@ class Foo<T> : UIView {
 System.ExecutionEngineException: Attempting to JIT compile method '(wrapper managed-to-native) YourClass/YourDelegate:wrapper_aot_native(object,intptr,intptr)' while running in aot-only mode.
 ```
 
- <a name="Reverse_Callbacks" />
+ <a name="Reverse_Callbacks"></a>
 
 ### <a name="reverse-callbacks"></a>反向回呼
 
-在標準 Mono 中，可以將委派C#實例傳遞給非受控程式碼，代替函式指標。 執行時間通常會將這些函式指標轉換成可讓非受控碼回呼 managed 程式碼的小型 Thunk。
+在標準 Mono 中，可以不使用函式指標，將 c # 委派實例傳遞給非受控碼。 執行時間通常會將這些函式指標轉換成可讓非受控碼回呼 managed 程式碼的小型 Thunk。
 
 在 Mono 中，這些橋接器是由即時編譯器所執行。 當使用 iPhone 所需的預先編譯器時，此時有兩個重要的限制：
 
 - 您必須使用[MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)來標示所有的回呼方法。
 - 這些方法必須是靜態方法，不支援實例方法。
 
-<a name="No_Remoting" />
+<a name="No_Remoting"></a>
 
 ## <a name="no-remoting"></a>無遠端處理
 
 在 Xamarin. iOS 上無法使用遠端堆疊。
 
- <a name="Runtime_Disabled_Features" />
+ <a name="Runtime_Disabled_Features"></a>
 
 ## <a name="runtime-disabled-features"></a>執行時間停用的功能
 
@@ -114,7 +114,7 @@ Mono 的 iOS 執行時間已停用下列功能：
 - JIT 引擎
 - 中繼資料驗證器（因為沒有 JIT）
 
- <a name=".NET_API_Limitations" />
+ <a name=".NET_API_Limitations"></a>
 
 ## <a name="net-api-limitations"></a>.NET API 限制
 

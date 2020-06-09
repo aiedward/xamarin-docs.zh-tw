@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 32beda28cb4db961abcbe74c26d38c70c8188a45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139226"
+title：「相依性插入」描述：」本章節說明 eShopOnContainers 行動應用程式如何使用相依性插入，以根據這些類型的程式碼分離具體類型。」
+assetid： a150f2d1-06f8-4aed-ab4e-7a847d69f103 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="dependency-injection"></a>相依性插入
 
 一般而言，當具現化物件時，會叫用類別的函式，而且物件所需的任何值都會當做引數傳遞至函式。 這是相依性插入的範例，特別是所謂的「程式性*插入*」。 物件所需的相依性會插入至此函式中。
@@ -24,8 +10,6 @@ ms.locfileid: "84139226"
 藉由將相依性指定為介面類別型，相依性插入可將具象的類型與依賴這些類型的程式碼分離。 它通常會使用容器來保存介面與抽象類別型之間的註冊和對應清單，以及用來執行或擴充這些類型的實體類型。
 
 另外還有其他類型的相依性插入，例如*屬性 setter 插入*和*方法呼叫插入*，但較不常看到。 因此，本章僅著重于使用相依性插入容器來執行函式插入。
-
-<a name="introduction_to_dependency_injection" />
 
 ## <a name="introduction-to-dependency-injection"></a>相依性插入簡介
 
@@ -118,8 +102,6 @@ _container.Register<ProfileViewModel>();
 
 根據預設，每個具體的類別註冊都會設定為多重實例，因此每個相依物件都會收到新的實例。 因此，當 `ProfileViewModel` 解決時，將會建立新的實例，而且容器會插入其所需的相依性。
 
-<a name="resolution" />
-
 ## <a name="resolution"></a>解決方案
 
 註冊型別之後，可以將它解析或插入為相依性。 當類型已解析且容器需要建立新的實例時，它會將任何相依性插入實例。
@@ -136,7 +118,7 @@ _container.Register<ProfileViewModel>();
 var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-在此範例中，會要求 TinyIoC 解析 `IRequestProvider` 類型的具象類型，以及任何相依性。 一般而言， `Resolve` 當需要特定類型的實例時，會呼叫方法。 如需控制已解析物件之存留期的詳細資訊，請參閱[管理已解析物件的存留期](#managing_the_lifetime_of_resolved_objects)。
+在此範例中，會要求 TinyIoC 解析 `IRequestProvider` 類型的具象類型，以及任何相依性。 一般而言， `Resolve` 當需要特定類型的實例時，會呼叫方法。 如需控制已解析物件之存留期的詳細資訊，請參閱[管理已解析物件的存留期](#managing-the-lifetime-of-resolved-objects)。
 
 下列程式碼範例顯示 eShopOnContainers 行動應用程式如何具現化視圖模型類型及其相依性：
 
@@ -144,12 +126,10 @@ var requestProvider = _container.Resolve<IRequestProvider>();
 var viewModel = _container.Resolve(viewModelType);
 ```
 
-在此範例中，系統會要求 TinyIoC 為要求的視圖模型解析視圖模型類型，而且容器也會解析任何相依性。 解析類型時 `ProfileViewModel` ，要解析的相依性是 `ISettingsService` 物件和 `IOrderService` 物件。 因為註冊和類別時使用了介面 `SettingsService` 註冊 `OrderService` ，所以 TinyIoC 會傳回和類別的單一實例， `SettingsService` 然後將 `OrderService` 它們傳遞給 `ProfileViewModel` 類別的函式。 如需 eShopOnContainers 行動應用程式如何建立視圖模型並將其與視圖產生關聯的詳細資訊，請參閱[使用視圖模型定位器自動建立視圖模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
+在此範例中，系統會要求 TinyIoC 為要求的視圖模型解析視圖模型類型，而且容器也會解析任何相依性。 解析類型時 `ProfileViewModel` ，要解析的相依性是 `ISettingsService` 物件和 `IOrderService` 物件。 因為註冊和類別時使用了介面 `SettingsService` 註冊 `OrderService` ，所以 TinyIoC 會傳回和類別的單一實例， `SettingsService` 然後將 `OrderService` 它們傳遞給 `ProfileViewModel` 類別的函式。 如需 eShopOnContainers 行動應用程式如何建立視圖模型並將其與視圖產生關聯的詳細資訊，請參閱[使用視圖模型定位器自動建立視圖模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)。
 
 > [!NOTE]
 > 使用容器來登錄和解析類型具有效能成本，因為容器會使用反映來建立每種類型，特別是在針對應用程式中的每個頁面巡覽重建相依性時。 如果有許多或深度相依性，則建立的成本可能會大幅增加。
-
-<a name="managing_the_lifetime_of_resolved_objects" />
 
 ## <a name="managing-the-lifetime-of-resolved-objects"></a>管理已解析物件的存留期
 
@@ -166,7 +146,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > 當處置容器時，會處置註冊為單次個體的類型。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 相依性插入可將具象的類型與依賴這些類型的程式碼分離。 它通常會使用容器來保存介面與抽象類別型之間的註冊和對應清單，以及用來執行或擴充這些類型的實體類型。
 

@@ -19,8 +19,6 @@ _Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺�
 
 這些類別衍生自 [`Layout`](xref:Xamarin.Forms.Layout) ，其定義 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 和 [`IsClippedToBounds`](xref:Xamarin.Forms.Layout.IsClippedToBounds) 屬性。
 
-<a name="contentView" />
-
 ### <a name="contentview"></a>ContentView
 
 |     |     |
@@ -28,29 +26,25 @@ _Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺�
 | [`ContentView`](xref:Xamarin.Forms.ContentView)包含使用屬性設定的單一子系 [`Content`](xref:Xamarin.Forms.ContentView.Content) 。 `Content`屬性可以設定為任何 `View` 衍生，包括其他衍生的 `Layout` 。 `ContentView`主要是用來做為結構化專案，並做為的基類 [`Frame`](#frame) 。<br /><br />[API 檔](xref:Xamarin.Forms.ContentView)  / [指南](~/xamarin-forms/user-interface/layouts/contentview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/) | [![ContentView 範例](layouts-images/ContentView.png "ContentView 範例")](layouts-images/ContentView-Large.png#lightbox "ContentView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
-<a named="frame" />
-
 ### <a name="frame"></a>Frame
 
 |     |     |
 | --- | --- |
-| [`Frame`](xref:Xamarin.Forms.Frame)類別衍生自 [`ContentView`](#contentView) ，並在其子系周圍顯示框線或框架。 `Frame`類別的預設 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 值為20，而且也會定義 [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) 、 [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius) 和 [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) 屬性。<br /><br />[API 檔](xref:Xamarin.Forms.Frame)  / [指南](~/xamarin-forms/user-interface/layouts/frame.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![框架範例](layouts-images/Frame.png "框架範例")](layouts-images/Frame-Large.png#lightbox "框架範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| [`Frame`](xref:Xamarin.Forms.Frame)類別衍生自 [`ContentView`](#contentview) ，並在其子系周圍顯示框線或框架。 `Frame`類別的預設 [`Padding`](xref:Xamarin.Forms.Layout.Padding) 值為20，而且也會定義 [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) 、 [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius) 和 [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) 屬性。<br /><br />[API 檔](xref:Xamarin.Forms.Frame)  / [指南](~/xamarin-forms/user-interface/layouts/frame.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![框架範例](layouts-images/Frame.png "框架範例")](layouts-images/Frame-Large.png#lightbox "框架範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
-
-<a name="scrollView" />
 
 ### <a name="scrollview"></a>ScrollView
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView)能夠滾動其內容。 將 [`Content`](xref:Xamarin.Forms.ScrollView.Content) 屬性設定為一個或多個版面配置，使其無法在螢幕上顯示。 （的內容 `ScrollView` 通常是 [`StackLayout`](#stackLayout) ）。設定 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 屬性，指出滾動是否應為垂直、水準或兩者。<br /><br />[API 檔](xref:Xamarin.Forms.ScrollView)  / [指南](~/xamarin-forms/user-interface/layouts/scrollview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView 範例](layouts-images/ScrollView.png "ScrollView 範例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView)能夠滾動其內容。 將 [`Content`](xref:Xamarin.Forms.ScrollView.Content) 屬性設定為一個或多個版面配置，使其無法在螢幕上顯示。 （的內容 `ScrollView` 通常是 [`StackLayout`](#stacklayout) ）。設定 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 屬性，指出滾動是否應為垂直、水準或兩者。<br /><br />[API 檔](xref:Xamarin.Forms.ScrollView)  / [指南](~/xamarin-forms/user-interface/layouts/scrollview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView 範例](layouts-images/ScrollView.png "ScrollView 範例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView
 
 |     |     |
 | --- | --- |
-| [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)使用控制項範本顯示內容，而是的基類 [`ContentView`](#contentView) 。<br /><br />[API 檔](xref:Xamarin.Forms.TemplatedView)  / [指南](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![TemplatedView 範例](layouts-images/TemplatedView.png "TemplatedView 範例")](layouts-images/TemplatedView.png#lightbox "TemplatedView 範例") |
+| [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)使用控制項範本顯示內容，而是的基類 [`ContentView`](#contentview) 。<br /><br />[API 檔](xref:Xamarin.Forms.TemplatedView)  / [指南](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![TemplatedView 範例](layouts-images/TemplatedView.png "TemplatedView 範例")](layouts-images/TemplatedView.png#lightbox "TemplatedView 範例") |
 |     |     |
 
 ### <a name="contentpresenter"></a>ContentPresenter
@@ -64,16 +58,12 @@ _Xamarin. 表單版面配置可用來將使用者介面控制項撰寫成視覺�
 
 這些類別衍生自 [`Layout<View>`](xref:Xamarin.Forms.Layout`1) 。
 
-<a name="stackLayout" />
-
 ### <a name="stacklayout"></a>StackLayout
 
 |     |     |
 | --- | --- |
 | [`StackLayout`](xref:Xamarin.Forms.StackLayout)根據屬性，以水準或垂直方式將子專案置於堆疊中 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) 。 屬性會控 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) 管子系之間的間距，預設值為6。<br /><br />[API 檔](xref:Xamarin.Forms.StackLayout)  / [指南](~/xamarin-forms/user-interface/layouts/stacklayout.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)| [![StackLayout 範例](layouts-images/StackLayout.png "StackLayout 範例")](layouts-images/StackLayout-Large.png#lightbox "StackLayout 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml) |
 |     |     |
-
-<a name="grid" />
 
 ### <a name="grid"></a>Grid
 

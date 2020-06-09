@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 41272e25570d9346751d7130ee8b52c6056f7f35
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304258"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565222"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的應用程式圖示
 
@@ -22,7 +22,7 @@ ms.locfileid: "79304258"
 - [以資產目錄管理圖示](#managing)-使用資產目錄管理應用程式圖示。
 - [Itunes 插圖](#itunes)-針對傳遞應用程式的臨機操作方法提供必要的 iTunes 插圖。
 
-<a name="icon-types" />
+<a name="icon-types"></a>
 
 ## <a name="application-spotlight-and-settings-icons"></a>應用程式、焦點和設定圖示
 
@@ -101,27 +101,27 @@ ms.locfileid: "79304258"
 
  如需圖示的詳細資訊，請參閱 Apple 的[圖示和影像大小](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)檔。
 
-<a name="managing" />
+<a name="managing"></a>
 
 ## <a name="managing-icons-with-asset-catalogs"></a>使用資產目錄管理圖示
 
-針對圖示，可以將特殊的 `AppIcon` 映射集新增至應用程式專案中的 `Assets.xcassets` 檔案。 支援所有解析度所需的映射的所有版本都包含在_xcasset_中，並群組在一起。 Visual Studio for Mac 中的特殊編輯器可讓開發人員以圖形方式包含和設定這些影像。
+針對圖示， `AppIcon` 可以將特殊映射集新增至 `Assets.xcassets` 應用程式專案中的檔案。 支援所有解析度所需的映射的所有版本都包含在_xcasset_中，並群組在一起。 Visual Studio for Mac 中的特殊編輯器可讓開發人員以圖形方式包含和設定這些影像。
 
 若要使用資產目錄，請遵循下列步驟：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
+1. 按兩下 `Info.plist` [**方案總管**中的檔案以開啟它進行編輯。
 2. 向下卷到 [ **IPhone 圖示**] 區段。
 3. 按一下 [**遷移至資產目錄**] 按鈕：
 
     ![](app-icons-images/migrate01.png "Ensure AppIcon is selected")
 
-4. 在 **方案總管**中，按兩下 `Assets.xcassets` 檔案以開啟它進行編輯： 
+4. 在 [**方案總管**中，按兩下檔案 `Assets.xcassets` 以開啟它進行編輯： 
 
     ![](app-icons-images/asset01.png "The Assets.xcassets file in the Solution Explorer")
 
-5. 從資產清單中選取 [`AppIcon`]，以顯示 `Icon Editor`：
+5. `AppIcon`從要顯示的資產清單中選取 `Icon Editor` ：
 
     ![](app-icons-images/asset02.png "The AppIcon editor")
 
@@ -131,7 +131,7 @@ ms.locfileid: "79304258"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 按兩下 [資訊]。  \* ***方案總管**中的檔案：
+1. 按兩下 [資訊]。  * ***方案總管**中的檔案：
 
     ![](app-icons-images/icon01w.png "Select Info.plist")
 
@@ -158,7 +158,7 @@ ms.locfileid: "79304258"
 
 這是慣用的方法，包括和管理將用來提供應用程式、焦點和設定圖示的影像資產。
 
-<a name="itunes" />
+<a name="itunes"></a>
 
 ## <a name="itunes-artwork"></a>iTunes 插圖
 
@@ -168,7 +168,7 @@ ms.locfileid: "79304258"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
+1. 按兩下 `Info.plist` [**方案總管**中的檔案以開啟它進行編輯。
 2. 流覽至編輯器的**ITunes 藝術品**區段： 
 
     ![](app-icons-images/itunes01.png "Scroll to the iTunes Artwork section of the editor")
@@ -177,7 +177,7 @@ ms.locfileid: "79304258"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
+1. 按兩下 `Info.plist` [**方案總管**中的檔案以開啟它進行編輯。
 
 2. 按一下 [**視覺資產**] 索引標籤，然後展開**iTunes 插圖**： 
 

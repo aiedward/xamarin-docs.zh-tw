@@ -1,23 +1,8 @@
 ---
-title: ''
-description: 本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d93f9bbcfafc3cb71d6b71159f6d3368f50c08be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135729"
+標題：「應用程式索引和深層連結」描述：「本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。」
+assetid： 410C5D19-AA3C-4E0D-B799-E288C5803226 ms. 技術： xamarin-表單 ms. custom： xamu-影片作者： davidbritch ms-chap： dabritch ms. date： 11/28/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="application-indexing-and-deep-linking"></a>應用程式索引和深層連結
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
@@ -156,8 +141,6 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 > [!NOTE]
 > 在 Android 上，無法從搜尋結果中移除已編製索引的內容。
 
-<a name="responding" />
-
 ## <a name="responding-to-a-deep-link"></a>回應深層連結
 
 當已編製索引的內容顯示在搜尋內容中，而且使用者加以選取時，應用程式的 `App` 類別會收到要求，處理已編製索引的內容中包含的 `Uri`。 此要求可在覆寫中進行處理 [`OnAppLinkRequestReceived`](xref:Xamarin.Forms.Application.OnAppLinkRequestReceived(System.Uri)) ，如下列程式碼範例所示：
@@ -247,7 +230,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 如需遞交的詳細資訊，請參閱 [Handoff 簡介](~/ios/platform/handoff.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。 應用程式索引讓經過少數幾次使用就遺忘的應用程式能出現在搜尋結果中，藉此保有關聯性。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 72c10d10e65194171479d66845d597e313281cdf
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304391"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573777"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>在 Xamarin 中使用 tvOS 圖示和影像
 
@@ -26,9 +26,9 @@ ms.locfileid: "79304391"
 - [設定 TvOS 專案映射](#Setting-Xamarin.tvOS-Project-Images)-涵蓋為 tvOS 應用程式設定啟動映射和應用程式圖示所需的步驟。
 
 > [!IMPORTANT]
-> Apple TV 上的所有影像都是1x 解析度（`@1x`），您應該_只_使用此大小的影像。 包括較大型、較高解析度的圖形，不僅需要時間下載和使用更多的記憶體和儲存空間，還必須在執行時間動態重新調整，並且會對繪圖效能造成負面影響。
+> Apple TV 上的所有影像都是1x 解析度（ `@1x` ），您應該_只_使用此大小的影像。 包括較大型、較高解析度的圖形，不僅需要時間下載和使用更多的記憶體和儲存空間，還必須在執行時間動態重新調整，並且會對繪圖效能造成負面影響。
 
-<a name="Launch-Image" />
+<a name="Launch-Image"></a>
 
 ## <a name="launch-image"></a>啟動映射
 
@@ -49,16 +49,16 @@ Apple 會針對設計應用程式的啟動映射提供下列建議：
 - **把發行**-因為 Apple 電視使用者經常切換應用程式，所以您不應該將注意力放在應用程式啟動流程。
 - **無廣告或商標**-您的啟動映射不應用來作為 [關於] 畫面或包含任何商標，除非它是應用程式第一個畫面的靜態部分。 廣告是嚴格禁止的。
 
-<a name="Setting-the-Launch-Image" />
+<a name="Setting-the-Launch-Image"></a>
 
 ### <a name="setting-the-launch-image"></a>設定啟動映射
 
 若要為您的 tvOS 專案設定啟動映射，請執行下列動作：
 
-1. 在 **方案總管**中，按兩下 `Assets.xcassets` 將其開啟以進行編輯： 
+1. 在 [**方案總管**中，按兩下 `Assets.xcassets` 以開啟它進行編輯： 
 
     [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
-2. 在 **資產編輯器** 中，按一下 `LaunchImages` 資產： 
+2. 在 [**資產編輯器**] 中，按一下 `LaunchImages` 資產： 
 
     [![](icons-images-images/asset02.png "The LaunchImages asset")](icons-images-images/asset02.png#lightbox)
 3. 按一下 [ **1X APPLE TV** ] 專案，然後選取 [啟動] 影像，或選擇性地從檔案系統中拖曳新的影像： 
@@ -66,7 +66,7 @@ Apple 會針對設計應用程式的啟動映射提供下列建議：
     [![](icons-images-images/asset03.png "Select a Launch Image")](icons-images-images/asset03.png#lightbox)
 4. 儲存您的變更。
 
-<a name="Layered-Images" />
+<a name="Layered-Images"></a>
 
 ## <a name="layered-images"></a>分層影像
 
@@ -88,9 +88,9 @@ Apple 會針對設計您的分層影像提供下列建議：
 - **包含安全區域**-因為在視差效果期間可以裁剪較高層級，所以您必須在每個圖層中建立一個安全區域框線。 如果您的內容太接近圖層邊緣，可能會遭到修剪。 較低層級的縮放和裁剪層級將會更高。 請參閱下方的重設[大小影像圖層](#Sizing-Image-Layers)一節。
 - 通常應該**預覽**分層影像，以確保所需的3d 效果，並不會裁剪個別圖層上的任何內容。 您應該在實際的 Apple TV 硬體上預覽多層式影像，以確保它們會如預期般呈現。
 
-可能的話，您應該一律使用內建的 `UIKit` 控制項來顯示階層式影像，因為它們會在焦點出現時自動取得視差效果。
+可能的話，您應該一律使用內建 `UIKit` 控制項來顯示分層影像，因為它們會在焦點出現時自動取得視差效果。
 
-<a name="Sizing-Image-Layers" />
+<a name="Sizing-Image-Layers"></a>
 
 ### <a name="sizing-image-layers"></a>調整大小影像圖層
 
@@ -98,7 +98,7 @@ Apple 會針對設計您的分層影像提供下列建議：
 
 [![](icons-images-images/layered02.png "35 pixel border")](icons-images-images/layered02.png#lightbox)
 
-<a name="Creating-Layered-Images" />
+<a name="Creating-Layered-Images"></a>
 
 ### <a name="creating-layered-images"></a>建立多層式映射
 
@@ -106,10 +106,10 @@ tvOS 適用于下列格式的多層式映射：
 
 - **車輛**檔案-這是 Apple 所建立的專屬資產目錄格式。 您不會直接建立汽車檔案，而是在編譯時期從任何 LSR 檔案建立，並包含在應用程式套件組合中。
 - **LSR 影像**-這是 Apple 所建立的專屬影像格式。 使用[視差匯出工具 Adobe Photoshop 外掛程式](https://itunespartner.apple.com/assets/downloads/ParallaxExporter_Apps.zip)或[視差預覽](https://itunespartner.apple.com/assets/downloads/Parallax%20Previewer.dmg)程式，以 LSR 格式來建立及預覽分層影像。
-- **Assets.xcassets** -從兩個（2）到五（5）標準 `.png` 包含在資產目錄中的已格式化影像，這些映射會在編譯時期編譯成汽車或 LSR 格式化的分層影像。
-- **LCR**檔案-這是 Apple 所建立的專屬檔案格式。 LCR 檔案主要是用來作為從您的其中一個內容伺服器下載的其他內容。 LCR 檔案永遠不會包含在您的應用程式套件組合中。 LCR 檔案是使用 Xcode 隨附的 `layerutil` 命令列工具，從 LSR 或 Photoshop 檔案產生。
+- **Assets.xcassets** -包含在資產目錄中的兩個（2）到五個（5）標準 `.png` 格式化影像，會在編譯時期編譯成汽車或 LSR 格式化的分層影像。
+- **LCR**檔案-這是 Apple 所建立的專屬檔案格式。 LCR 檔案主要是用來作為從您的其中一個內容伺服器下載的其他內容。 LCR 檔案永遠不會包含在您的應用程式套件組合中。 LCR 檔案是使用 `layerutil` Xcode 隨附的命令列工具，從 LSR 或 Photoshop 檔案產生。
 
-<a name="The-Parallax-Previewer" />
+<a name="The-Parallax-Previewer"></a>
 
 ### <a name="the-parallax-previewer"></a>視差預覽器
 
@@ -117,13 +117,13 @@ Apple 已建立[視差](https://itunespartner.apple.com/assets/downloads/Paralla
 
 [![](icons-images-images/layered03.png "The Parallax Previewer")](icons-images-images/layered03.png#lightbox)
 
-預覽分層影像時，您可以使用滑鼠來旋轉影像並預覽視差效果。 使用 [ **+** （加號）] 和 [ **-** （減號）] 按鈕來新增和移除圖層。
+預覽分層影像時，您可以使用滑鼠來旋轉影像並預覽視差效果。 使用 **+** （加號）和 **-** （減號）按鈕來新增和移除圖層。
 
 建立新的多層式映射時，可以使用 LSR 格式匯出，並包含在您的應用程式組合中。
 
 如需有關建立及預覽分層影像的詳細資訊，請參閱[TvOS 應用程式](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)開發人員指南的 Apple[建立視差藝術品](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/CreatingParallaxArtwork.html#//apple_ref/doc/uid/TP40015241-CH19-SW1)一節。
 
-<a name="App-Icons" />
+<a name="App-Icons"></a>
 
 ## <a name="app-icons"></a>應用程式圖示
 
@@ -154,30 +154,30 @@ Apple 提供下列建議來建立您的應用程式圖示：
 - **小心使用漸層和陰影**–漸層和陰影可能會與視差效果產生衝突，因此應該謹慎使用。 簡單的由上而下、淺到暗漸層樣式的效果最佳。 陰影通常最適合做為銳利的硬式邊緣色調。
 - **差異圖層透明度**–在應用程式圖示的上層使用不同的透明度層級，以增加3d 效果。 背景層必須是不透明的，否則會產生錯誤。
 
-<a name="Setting-the-App-Icons" />
+<a name="Setting-the-App-Icons"></a>
 
 ### <a name="setting-the-app-icons"></a>設定應用程式圖示
 
 若要設定 tvOS 專案所需的應用程式圖示，請執行下列動作：
 
-1. 在 **方案總管**中，按兩下 `Assets.xcassets` 將其開啟以進行編輯： 
+1. 在 [**方案總管**中，按兩下 `Assets.xcassets` 以開啟它進行編輯： 
 
     [![](icons-images-images/asset01.png "The Assets.xcassets fileg")](icons-images-images/asset01.png#lightbox)
-2. 在 **資產編輯器** 中，展開 `App Icon & Top Shelf Image` 資產： 
+2. 在 [**資產編輯器**] 中，展開 `App Icon & Top Shelf Image` 資產： 
 
     [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
 3. 接下來，展開 `App Icon - Small` 資產： 
 
     [![](icons-images-images/asset05.png "Expand the App Icon - Small asset")](icons-images-images/asset05.png#lightbox)
-4. 然後展開 [`Back` 資產]，並按一下 [`Contents`] 專案： 
+4. 然後展開 `Back` 資產，並按一下該 `Contents` 專案： 
 
     [![](icons-images-images/asset06.png "Then expand the Back asset")](icons-images-images/asset06.png#lightbox)
 5. 按一下 [ **1X APPLE TV] 專案**，然後選取影像檔案。
-6. 針對 `Front` 和 `Middle` 資產，重複上述步驟。
+6. 針對和資產重複上述步驟 `Front` `Middle` 。
 7. 然後重複相同的步驟來定義 `App Icon - Large` 資產。
 8. 儲存您的變更。
 
-<a name="Top-Shelf-Image" />
+<a name="Top-Shelf-Image"></a>
 
 ## <a name="top-shelf-image"></a>主要貨位影像
 
@@ -185,7 +185,7 @@ Apple 提供下列建議來建立您的應用程式圖示：
 
 [![](icons-images-images/topshelf01.png "Top Shelf Image example")](icons-images-images/topshelf01.png#lightbox)
 
-您可以將最上層映射當做單一靜態 `.png` 或 `.lsr` 檔案提供（請參閱[建立分層映射](#Creating-Layered-Images)），或在執行時間動態建立為可設定焦點的專案的單一資料列（請參閱下方的[動態主要貨位內容](#Dynamic-Top-Shelf-Content)）。
+您可以將最上層映射當做單一靜態或檔案提供 `.png` `.lsr` （請參閱[建立分層映射](#Creating-Layered-Images)），或在執行時間動態建立為可設定焦點的專案的單一資料列（請參閱下面的[動態主要貨位內容](#Dynamic-Top-Shelf-Content)）。
 
 |主要貨位影像大小|注意|
 |---|---|
@@ -203,10 +203,10 @@ Apple 提供下列建議來建立您的最上層映射：
 
 若要設定 tvOS 專案所需的前幾個貨位映射，請執行下列動作：
 
-1. 在 **方案總管**中，按兩下 `Assets.xcassets` 將其開啟以進行編輯： 
+1. 在 [**方案總管**中，按兩下 `Assets.xcassets` 以開啟它進行編輯： 
 
     [![](icons-images-images/asset01.png "The Assets.xcassets file")](icons-images-images/asset01.png#lightbox)
-2. 在 **資產編輯器** 中，展開 `App Icon & Top Shelf Image` 資產： 
+2. 在 [**資產編輯器**] 中，展開 `App Icon & Top Shelf Image` 資產： 
 
     [![](icons-images-images/asset04.png "Expand the Top Shelf Image asset")](icons-images-images/asset04.png#lightbox)
 3. 按一下 `Top Shelf Image` 資產： 
@@ -215,13 +215,13 @@ Apple 提供下列建議來建立您的最上層映射：
 4. 按一下 [ **1X APPLE TV] 專案**，然後選取影像檔案。
 5. 儲存您的變更。
 
-<a name="Dynamic-Top-Shelf-Content" />
+<a name="Dynamic-Top-Shelf-Content"></a>
 
 ### <a name="dynamic-top-shelf-content"></a>動態的主要貨位內容
 
 最上層的貨位可以包含可[設定焦點專案](~/ios/tvos/app-fundamentals/navigation-focus.md#Focus-and-Selection)的動態資料列，或動態的一組滾動橫幅，而不是顯示靜態的主要貨位影像。 這兩種動態樣式都可讓您醒目提示應用程式所提供的內容，或跳到其最常使用的功能。
 
-<a name="Sectioned-Content-Row" />
+<a name="Sectioned-Content-Row"></a>
 
 #### <a name="sectioned-content-row"></a>分節內容資料列
 
@@ -243,7 +243,7 @@ Apple 針對分節內容資料列提供下列建議：
 - **完成資料列**–您應該提供足夠的內容，以跨越螢幕的完整寬度。
 - **調整混合影像**–分節的內容資料列是設計來混合影像大小（從上面提供的清單中）。 不過，如果您混合影像大小，請注意，將會套用額外的調整，以將內容顯示標準化。
 
-<a name="Scrolling-Inset-Banners" />
+<a name="Scrolling-Inset-Banners"></a>
 
 #### <a name="scrolling-inset-banners"></a>滾動內凹橫幅
 
@@ -260,7 +260,7 @@ Apple 針對分節內容資料列提供下列建議：
 |未取得焦點大小|1740x560px|
 |焦點大小|1740x620px|
 
-滾動內凹橫幅可以當做靜態 `.png` 或多層式 `.lsr` 檔案來提供。
+您可以使用靜態或分層檔案的方式，來提供滾動內凹的橫幅 `.png` `.lsr` 。
 
 Apple 針對捲軸的橫幅提供下列建議：
 
@@ -269,7 +269,7 @@ Apple 針對捲軸的橫幅提供下列建議：
 
 請參閱 Apple 的[TVServices 架構參考](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412)，以深入瞭解如何將最上層延伸模組新增至您的應用程式，以提供動態的主要貨位內容。
 
-<a name="Game-Center-Images" />
+<a name="Game-Center-Images"></a>
 
 ## <a name="game-center-images"></a>Game Center 影像
 
@@ -277,7 +277,7 @@ Apple 針對捲軸的橫幅提供下列建議：
 
 - **成就圖示**-將自動裁剪成圓形的每個成就都需要不透明的影像。 成就是不可設定焦點的專案。
 - **儀表板插圖**-可以提供選擇性的影像，以顯示在 Game Center 內應用程式儀表板的頂端。 這些映射是不可設定焦點的。
-- **排行榜圖案**-您必須為應用程式支援的每個排行榜，提供一（1）到三（3）16:9 的外觀比例影像。 這些可能是靜態 `.png` 或多層式 `.lsr` 檔案。 排行榜的作品可獲得焦點。
+- **排行榜圖案**-您必須為應用程式支援的每個排行榜，提供一（1）到三（3）16:9 的外觀比例影像。 這些可能是靜態 `.png` 或多層檔案 `.lsr` 。 排行榜的作品可獲得焦點。
 
 ||成就圖示|儀表板插圖|排行榜插圖|
 |---|---|---|---|
@@ -289,13 +289,13 @@ Apple 針對捲軸的橫幅提供下列建議：
 
 如需有關使用 Game Center 的詳細資訊，請參閱 Apple 的[Game Center 程式設計指南](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)。
 
-<a name="Working-with-Images" />
+<a name="Working-with-Images"></a>
 
-## <a name="working-with-images"></a>使用映像
+## <a name="working-with-images"></a>使用影像
 
 由於 tvOS 9 是 iOS 9 的子集，用來在 Xamarin iOS 應用程式中包含和顯示影像的相同技術也適用于 tvOS 應用程式。 如需詳細資訊，請參閱我們的[顯示影像](~/ios/app-fundamentals/images-icons/displaying-an-image.md)檔。
 
-<a name="Setting-Xamarin.tvOS-Project-Images" />
+<a name="Setting-Xamarin.tvOS-Project-Images"></a>
 
 ## <a name="setting-xamarintvos-project-images"></a>設定 tvOS 專案映射
 
@@ -303,7 +303,7 @@ Apple 針對捲軸的橫幅提供下列建議：
 
 執行下列動作：
 
-1. 在 **方案總管**中，按兩下 `Info.plist` 將其開啟以進行編輯： 
+1. 在 [**方案總管**中，按兩下 `Info.plist` 以開啟它進行編輯： 
 
     [![](icons-images-images/info01.png "The Info.plist file")](icons-images-images/info01.png#lightbox)
 2. 在 [ **Plist 編輯器**] 中，選取**應用程式圖示**的 [資產] 類別目錄（在 [[設定應用程式圖示](#Setting-the-App-Icons)] 區段中為上方所設定）： 
@@ -312,9 +312,9 @@ Apple 針對捲軸的橫幅提供下列建議：
 3. 接下來，在**啟動**映射的 [[設定啟動映射](#Setting-the-Launch-Image)] 區段中，選取 [資產] 目錄（如上方所設定）。
 4. 儲存您的變更。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文涵蓋了 tvOS 應用程式中使用的所有映射類型和大小。 首先，it 涵蓋啟動影像、分層影像、應用程式圖示、最上層影像和 Game Center 影像。 接著，它涵蓋了使用 tvOS 應用程式中的影像。
 

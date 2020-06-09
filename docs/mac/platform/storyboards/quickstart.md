@@ -7,20 +7,20 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 2b8fede37354fd8a899a14c0710bf46e5a82b86a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 007d835b71c16a51cf5f6aca3c9fe1edd5be0034
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026209"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572386"
 ---
 # <a name="storyboards-in-xamarinmac-quick-start"></a>Xamarin 中的分鏡腳本-快速入門
 
-為了快速介紹如何使用分鏡腳本來定義 Xamarin 應用程式的使用者介面，讓我們開始新的 Xamarin. Mac 專案。 選取 [Mac] > [應用程式][Cocoa 應用程式] > ，然後按一下 [下一步] 按鈕：
+為了快速介紹如何使用分鏡腳本來定義 Xamarin 應用程式的使用者介面，讓我們開始新的 Xamarin. Mac 專案。 選取 [ **Mac**  >  **app**  >  **Cocoa 應用程式**]，然後按 [**下一步]** 按鈕：
 
 [![](quickstart-images/qs01.png "Adding a new Cocoa App")](quickstart-images/qs01.png#lightbox)
 
-使用 `MacStoryboard` 的**應用程式名稱**，然後按 [**下一步]** 按鈕：
+使用的 [**應用程式名稱** `MacStoryboard` ]，然後按 [**下一步]** 按鈕：
 
 [![](quickstart-images/qs02.png "Setting the App Name")](quickstart-images/qs02.png#lightbox)
 
@@ -28,7 +28,7 @@ ms.locfileid: "73026209"
 
 [![](quickstart-images/qs03.png "The project and solution names")](quickstart-images/qs03.png#lightbox)
 
-在 **方案總管**中，按兩下 `Main.storyboard` 檔案，將它開啟，以在 Xcode 的 Interface Builder 中進行編輯：
+在 [**方案總管**中，按兩下檔案以開啟檔案，以 `Main.storyboard` 在 Xcode 的 Interface Builder 中進行編輯：
 
 [![](quickstart-images/qs04.png "Editing the storyboard in Xcode")](quickstart-images/qs04.png#lightbox)
 
@@ -38,7 +38,7 @@ ms.locfileid: "73026209"
 
 [![](quickstart-images/qs05.png "Removing the default view controller")](quickstart-images/qs05.png#lightbox)
 
-接下來，在**篩選**區域中輸入 `split`，選取垂直分割視圖控制器並將它拖曳至  _Design Surface_：
+接下來， `split` 在**篩選**區域中輸入，選取垂直分割視圖控制器並將它拖曳至 [ _Design Surface_：
 
 [![](quickstart-images/qs06.png "Searching for the split view controller")](quickstart-images/qs06.png#lightbox)
 
@@ -60,7 +60,7 @@ ms.locfileid: "73026209"
 
 [![](quickstart-images/qs10.png "An example of the app running")](quickstart-images/qs10.png#lightbox)
 
-因為我們要使用分割視圖的右手邊做為偵測器區域，所以我們想要讓它具有較小的大小，並允許折迭。 返回 Xcode，然後在 Design Surface 中選取並按一下 大小 偵測**器**，以編輯右側的視圖。 從這裡輸入 `250`的**寬度**：
+因為我們要使用分割視圖的右手邊做為偵測器區域，所以我們想要讓它具有較小的大小，並允許折迭。 返回 [Xcode]，然後在 [Design Surface 中選取並按一下 [大小] 偵測**器**，以編輯右側的視圖。 從這裡輸入**寬度** `250` ：
 
 [![](quickstart-images/qs11.png "Setting the width")](quickstart-images/qs11.png#lightbox)
 
@@ -72,7 +72,7 @@ ms.locfileid: "73026209"
 
 [![](quickstart-images/qs13.png "An example of the app running")](quickstart-images/qs13.png#lightbox)
 
-<a name="Defining-a-Presentation-Segue" />
+<a name="Defining-a-Presentation-Segue"></a>
 
 ## <a name="defining-a-presentation-segue"></a>定義簡報 Segue
 
@@ -94,13 +94,13 @@ ms.locfileid: "73026209"
 
 [![](quickstart-images/qs17.png "An example of the segue running")](quickstart-images/qs17.png#lightbox)
 
-<a name="Creating-App-Preferences" />
+<a name="Creating-App-Preferences"></a>
 
 ## <a name="creating-app-preferences"></a>建立應用程式喜好設定
 
 大部分標準 macOS 應用程式都會提供_喜好設定對話方塊_，讓使用者定義數個選項來控制應用程式的各個層面，例如外觀或使用者帳戶。
 
-若要定義標準喜好設定對話方塊視窗，請先將 索引標籤視圖控制器 拖曳至 Design Surface：
+若要定義標準喜好設定對話方塊視窗，請先將 [索引標籤視圖控制器] 拖曳至 [Design Surface：
 
 [![](quickstart-images/qs18.png "Editing the storyboard in Xcode")](quickstart-images/qs18.png#lightbox)
 
@@ -120,7 +120,7 @@ ms.locfileid: "73026209"
 
 [![](quickstart-images/qs22.png "An example of the segue running")](quickstart-images/qs22.png#lightbox)
 
-您可能會注意到，這看起來不像標準的 macOS 應用程式喜好設定交談視窗。 若要修正此問題，請在**方案總管**的 Xamarin 應用程式的 `Resources` 資料夾中包含兩個影像檔，然後返回 Xcode 的 Interface Builder。
+您可能會注意到，這看起來不像標準的 macOS 應用程式喜好設定交談視窗。 若要修正此問題，請在方案總管的 Xamarin 應用程式資料夾中包含兩個影像檔 `Resources` ，然後返回 Xcode 的 Interface Builder。 **Solution Explorer**
 
 選取 [索引標籤視圖控制器]，並將其**樣式**切換至**工具列**： 
 
@@ -140,5 +140,5 @@ ms.locfileid: "73026209"
 
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [使用 Windows](~/mac/user-interface/window.md)
-- [macOS 人性化介面指導方針](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/) \(英文\)
+- [macOS Human Interface Guidelines (人性化介面指導方針)](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)
 - [Windows 簡介](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

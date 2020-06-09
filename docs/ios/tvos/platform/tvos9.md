@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 34f332eb712f479f9f9565a3894212e3cdd5aaf6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 99565d7e61e8e8c1d28b67a6a6d25979c79fa387
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030538"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566158"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 簡介
 
@@ -20,13 +20,13 @@ _本文介紹 tvOS 9 for Xamarin. tvOS 開發人員所提供的所有新的和�
 
 Apple 已發行第4代的 Apple TV 硬體，其中包含重新設計的觸控式遠端，並執行新的 tvOS 作業系統（以 iOS 9 為基礎）。
 
-第一次，tvOS 會為開發人員開啟 Apple TV 平臺，讓您可以建立豐富的沉浸式應用程式，並透過 Apple TV 內建的 App Store，在類似于使用 iTunes 應用程式撰寫和發行 iOS 應用程式的體驗存放區.
+第一次，tvOS 會為開發人員開啟 Apple TV 平臺，讓您可以建立豐富的沉浸式應用程式，並透過 Apple TV 內建的 App Store 來發行它們，這類似于使用 iTunes App Store 撰寫和發行 iOS 應用程式的體驗。
 
 如果您熟悉 Xamarin iOS 開發，您應該會發現轉換到 tvOS 相當簡單。 大部分的 Api 和功能都相同，不過，許多常見的 Api 無法使用（例如 WebKit）。 此外，使用 Siri 遠端時，會造成在以觸控式 iOS 裝置中不存在的一些設計挑戰。
 
 本指南將介紹 tvOS 9 for Xamarin. tvOS 開發人員所提供的所有新的和已修改的 Api 和功能。 如需 tvOS 的詳細資訊，請參閱 Apple[針對新的 APPLE TV 開發](https://developer.apple.com/tvos/)檔。
 
-<a name="Supported-and-Unsupported-Capabilities" />
+<a name="Supported-and-Unsupported-Capabilities"></a>
 
 ## <a name="supported-and-unsupported-capabilities"></a>支援和不支援的功能
 
@@ -49,7 +49,7 @@ Apple 已發行第4代的 Apple TV 硬體，其中包含重新設計的觸控式
 - HealthKit
 - HomeKit
 - Inter-App 音訊
-- 地圖
+- 地圖服務
 - 個人 VPN
 - 推播通知
 - 電子錢包
@@ -57,7 +57,7 @@ Apple 已發行第4代的 Apple TV 硬體，其中包含重新設計的觸控式
 
 如需詳細資訊，請參閱[支援的元件](~/ios/tvos/internals/assemblies.md)和[支援](~/ios/tvos/internals/frameworks.md)的架構檔。
 
-<a name="Apple-TV-Hardware" />
+<a name="Apple-TV-Hardware"></a>
 
 ## <a name="apple-tv-hardware"></a>Apple TV 硬體
 
@@ -79,8 +79,8 @@ Apple 已發行第4代的 Apple TV 硬體，其中包含重新設計的觸控式
 
 Siri 遠端目前適用于下列國家/地區：
 
-- 澳大利亞
-- Canada
+- 澳洲
+- 加拿大
 - 法國
 - 德國
 - 日本
@@ -94,7 +94,7 @@ Siri 遠端目前適用于下列國家/地區：
 
 如需詳細資訊，請參閱我們的[Siri 遠端和藍牙控制器](~/ios/tvos/platform/remote-bluetooth.md)檔。
 
-<a name="Apple-TV-Provisioning" />
+<a name="Apple-TV-Provisioning"></a>
 
 ## <a name="apple-tv-provisioning"></a>Apple 電視布建
 
@@ -104,13 +104,13 @@ Siri 遠端目前適用于下列國家/地區：
 
 建立和安裝布建設定檔的方式與使用 Xamarin iOS 應用程式相同。 如需詳細資訊，請參閱 iOS[裝置](~/ios/get-started/installation/device-provisioning/index.md)布建檔。
 
-<a name="Apple-TV-Apps" />
+<a name="Apple-TV-Apps"></a>
 
 ## <a name="apple-tv-apps"></a>Apple 電視應用程式
 
 新的 Apple TV 硬體和 tvOS 9 支援兩種類型的應用程式：傳統和用戶端伺服器應用程式。
 
-<a name="Traditional-Apps" />
+<a name="Traditional-Apps"></a>
 
 ### <a name="traditional-apps"></a>傳統應用程式
 
@@ -120,15 +120,15 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 請參閱我們[的 Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)，讓您熟悉使用 tvOS 開發 tvOS 應用程式所需的工具和概念。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ### <a name="client-server-apps"></a>用戶端-伺服器應用程式
 
 除了已安裝的傳統應用程式之外，Apple TV 還可讓您輕鬆地使用 web 技術（HTTPS、XML 和 JavaScript）建立 web 型的用戶端伺服器媒體串流應用程式。 您將使用 Apple 的 TVML 標記語言設計使用者介面，並使用 JavaScript 來定義使用 TVMLKit 的應用程式行為。
 
-如需詳細資訊，請參閱 Apple 的[APPLE Tv 標記語言參考](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064)、 [TVJS framework 參考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076)、 [TVMLKit 架構參考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429)，[關於](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978) [Apple TV 的 HTTP 即時串流和 HLS 撰寫規格](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf)附帶.
+如需詳細資訊，請參閱 Apple 的[APPLE Tv 標記語言參考](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064)、 [TVJS framework 參考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076)、 [TVMLKit 架構參考](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429)，關於 Apple TV 檔的[HTTP 即時串流](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978)和[HLS 撰寫規格](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf)。
 
-<a name="User-Interface-Challenges" />
+<a name="User-Interface-Challenges"></a>
 
 ## <a name="user-interface-challenges"></a>使用者介面挑戰
 
@@ -136,7 +136,7 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 此外，整體使用者經驗與 iOS 或 Mac 應用程式的差異，通常是單一使用者體驗。 使用 Apple 電視，使用者體驗傾向于本質上的社交，而許多人可能會坐在沙發上，並與單一應用程式互動。 若要設計成功的 Apple TV 應用程式體驗（新的應用程式或移植現有的 app），必須將這些變更納入考慮。 
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ### <a name="working-with-focus-and-parallax-images"></a>使用焦點和視差影像
 
@@ -148,7 +148,7 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 如需詳細資訊，請參閱我們[使用導覽和焦點](~/ios/tvos/app-fundamentals/navigation-focus.md)和[使用圖示和影像](~/ios/tvos/app-fundamentals/icons-images.md)檔。
 
-<a name="The-Home-Screen" />
+<a name="The-Home-Screen"></a>
 
 ### <a name="the-home-screen"></a>主畫面
 
@@ -162,7 +162,7 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 如需詳細資訊，請參閱我們[的使用圖示和影像](~/ios/tvos/app-fundamentals/icons-images.md)檔。
 
-<a name="The-Top-Shelf" />
+<a name="The-Top-Shelf"></a>
 
 ### <a name="the-top-shelf"></a>頂尖貨位
 
@@ -170,7 +170,7 @@ Apple TV 應用程式的大小上限為 200 MB，且可以使用隨選資源下�
 
 [![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
 
-最上層的貨位映射可以當做單一靜態 `.png` 或 `.lsr` 檔案提供，也可以在執行時間動態建立，做為可設定焦點專案的單一資料列。
+最上層的貨位映射可以當做單一靜態或檔案提供 `.png` ， `.lsr` 也可以在執行時間動態建立，做為可設定焦點專案的單一資料列。
 
 它可以包含動態資料列或可設定焦點的專案，或動態的一組滾動橫幅，而不是顯示靜態的最大貨位影像。 這兩種動態樣式都可讓您醒目提示應用程式所提供的內容，或跳到其最常使用的功能。
 

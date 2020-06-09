@@ -1,29 +1,13 @@
 ---
-title: 中的字型Xamarin.Forms
-description: 本文說明如何指定在應用程式中顯示文字之控制項的字型資訊 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3201340c8056fb1a7e36240eb329df14bd960ca3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136210"
+標題：「中的字型」 Xamarin.Forms 描述：「本文將說明如何在顯示應用程式文字的控制項上指定字型資訊」 Xamarin.Forms 。
+assetid： 49DD2249-C575-41AE-AE06-08F890FD6031 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/01/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="fonts-in-xamarinforms"></a>中的字型Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
-本文說明如何 Xamarin.Forms 讓您在顯示文字的控制項上指定字型屬性（包括權數和大小）。 字型資訊可以[在程式碼中指定](#Setting_Font_in_Code)，或[在 XAML 中指定](#Setting_Font_in_Xaml)。 也可以使用[自訂字型](#use-a-custom-font)，並[顯示字型圖示](#display-font-icons)。
-
-<a name="Setting_Font_in_Code" />
+本文說明如何 Xamarin.Forms 讓您在顯示文字的控制項上指定字型屬性（包括權數和大小）。 字型資訊可以[在程式碼中指定](#set-the-font-in-code)，或[在 XAML 中指定](#set-the-font-in-xaml)。 也可以使用[自訂字型](#use-a-custom-font)，並[顯示字型圖示](#display-font-icons)。
 
 ## <a name="set-the-font-in-code"></a>在程式碼中設定字型
 
@@ -44,8 +28,6 @@ var about = new Label
 };
 ```
 
-<a name="FontSize" />
-
 ### <a name="font-size"></a>字型大小
 
 `FontSize`屬性可以設定為 double 值，例如：
@@ -58,13 +40,11 @@ label.FontSize = 24;
 
 Xamarin.Forms也會定義列舉中的欄位 [`NamedSize`](xref:Xamarin.Forms.NamedSize) ，以代表特定字型大小。 如需有關命名的字型大小的詳細資訊，請參閱[命名字型大小](#named-font-sizes)。
 
-<a name="FontAttributes" />
-
 ### <a name="font-attributes"></a>字型屬性
 
 您可以在屬性上設定字型樣式（例如**粗體**和*斜體*） `FontAttributes` 。 目前支援下列值：
 
-- **None**
+- **無**
 - **黑**
 - **斜體**
 
@@ -86,8 +66,6 @@ label.FontSize = Device.RuntimePlatform == Device.iOS ? 24 :
 ```
 
 適用于 iOS 的字型資訊來源是[iosfonts.com](http://iosfonts.com)。
-
-<a name="Setting_Font_in_Xaml" />
 
 ## <a name="set-the-font-in-xaml"></a>在 XAML 中設定字型
 
@@ -257,4 +235,4 @@ image.Source = new FontImageSource
 - [FontsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 - [文字（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [可系結版面配置（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
-- [可系結的版面配置](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
+- [可繫結的版面配置](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

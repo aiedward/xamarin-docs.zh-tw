@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 4e2ff46174d9dbb9171a470c389ffe301f6d0d60
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304916"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569643"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>使用 Xamarin 部署和測試 watchOS 應用程式
 
@@ -36,7 +36,7 @@ ms.locfileid: "79304916"
   - [部署到 Apple Watch 進行測試](~/ios/watchos/deploy-test/device.md)，或
   - [上傳至 App Store](~/ios/watchos/deploy-test/appstore.md)。
 
-<a name="App_IDs"/>
+<a name="App_IDs"></a>
 
 ## <a name="app-ids"></a>應用程式識別碼
 
@@ -60,13 +60,13 @@ ms.locfileid: "79304916"
 
 ### <a name="wildcard-app-id"></a>萬用字元應用程式識別碼
 
-或者，您可以建立一個萬用字元**應用程式識別碼**，以符合這三個專案，例如 `com.xamarin.*`。
+或者，您可以建立一個萬用字元**應用程式識別碼**，以符合所有三個專案（例如） `com.xamarin.*` 。
 
 請注意，某些功能無法與萬用字元應用程式識別碼（例如推播通知）搭配使用。 如果您的應用程式需要這些功能，您應該建立明確的應用程式識別碼。
 
 針對散發，您只需要為萬用字元應用程式識別碼建立一個發佈布建設定檔。
 
-<a name="App_Groups" />
+<a name="App_Groups"></a>
 
 ## <a name="app-groups"></a>應用程式群組
 
@@ -78,7 +78,7 @@ ms.locfileid: "79304916"
 
 ### <a name="certificates-identifiers--profiles"></a>憑證、識別碼 & 設定檔
 
-若要使用應用程式群組，請在 [**應用程式群組**] 畫面中建立專案。 在下面的範例中，群組是使用與應用程式識別碼常用的相同反向 DNS 樣式來命名，但使用 `group.` 前置詞（這是必要的）：
+若要使用應用程式群組，請在 [**應用程式群組**] 畫面中建立專案。 在下面的範例中，群組是使用與應用程式識別碼常用的相同反向 DNS 樣式來命名，但使用前置詞 `group.` （這是必要的）：
 
 ![識別碼](images/appgroups-new-sml.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "79304916"
 
 建立群組之後，即可在您的**應用程式識別碼**設定中加以參考。 請記得同時包含 iOS 應用程式和監看式擴充功能**應用程式識別碼**。
 
-![可用的設定](images/appgroups-sml.png)
+![可用設定](images/appgroups-sml.png)
 
 請勿在 Apple Watch 應用程式識別碼**中啟用應用**程式群組。 不需要在監看式本身上啟用。
 
@@ -100,7 +100,7 @@ ms.locfileid: "79304916"
 - iOS 應用程式專案
 - 監看延伸模組專案
 
-。![Plist 編輯器](images/entitlements-plist-sml.png)
+.![Plist 編輯器](images/entitlements-plist-sml.png)
 
 請勿在監看式應用程式專案**中啟用權利**。 不需要在監看式本身上啟用。
 

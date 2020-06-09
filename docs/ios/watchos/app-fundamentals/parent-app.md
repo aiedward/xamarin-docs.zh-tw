@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 49f2bdf63c286464073308cd1f17239692aa2395
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304958"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567329"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>在 Xamarin 中使用 watchOS 父應用程式
 
@@ -39,7 +39,7 @@ ms.locfileid: "79304958"
 
 ### <a name="nsuserdefaults"></a>使用 nsuserdefaults
 
-下列程式碼可以同時以 watch 應用程式延伸模組和父 iPhone 應用程式撰寫，讓它們可以參考一組通用的 `NSUserDefaults`：
+下列程式碼可以同時以 watch 應用程式延伸模組和父 iPhone 應用程式撰寫，讓它們可以參考一組通用的 `NSUserDefaults` ：
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -55,7 +55,7 @@ shared.Synchronize ();
 var count = shared.IntForKey ("count");
 ```
 
-<a name="files" />
+<a name="files"></a>
 
 ### <a name="files"></a>檔案
 
@@ -70,7 +70,7 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-注意：如果路徑是 `null` 則請檢查[應用程式群組](~/ios/watchos/app-fundamentals/app-groups.md)設定，以確定布建設定檔已正確設定，並已下載/安裝在開發電腦上。
+注意：如果路徑為，請 `null` 檢查[應用程式群組](~/ios/watchos/app-fundamentals/app-groups.md)設定，以確定布建設定檔已正確設定，並已下載/安裝在開發電腦上。
 
 如需詳細資訊，請參閱[應用程式群組功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)檔。
 

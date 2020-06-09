@@ -1,23 +1,8 @@
 ---
-title: 使用中的 Azure Cosmos DB 檔資料庫Xamarin.Forms
-description: 本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合到 Xamarin.Forms 應用程式中。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 47b35d394eab339a8e9a1f81880e6de4233f29b6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127080"
+標題：在「描述：」中使用 Azure Cosmos DB 檔資料庫， Xamarin.Forms 本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合到 Xamarin.Forms 應用程式中。」
+assetid： 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C ms. 技術： xamarin-表單 ms. custom： xamu-影片作者： davidbritch ms-chap： dabritch ms. date： 06/16/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>使用中的 Azure Cosmos DB 檔資料庫Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
@@ -120,8 +105,6 @@ public async Task CreateDocumentCollection(string databaseName, string collectio
 > [!IMPORTANT]
 > 請注意，此 `CreateDocumentCollectionIfNotExistsAsync` 方法會使用保留的輸送量來建立新的集合，這會影響價格。
 
-<a name="document_query" />
-
 ### <a name="retrieving-document-collection-documents"></a>正在抓取檔集合檔
 
 您可以藉由建立和執行檔查詢來抓取檔集合的內容。 使用方法建立檔查詢 `DocumentClient.CreateDocumentQuery` ：
@@ -160,8 +143,6 @@ var query = client.CreateDocumentQuery<TodoItem>(collectionLink)
 
 此查詢會從其屬性等於的集合中抓取所有檔 `Done` `false` 。
 
-<a name="inserting_document" />
-
 ### <a name="inserting-a-document-into-a-document-collection"></a>將檔插入檔集合
 
 檔是使用者定義的 JSON 內容，可以使用方法插入檔集合 `DocumentClient.CreateDocumentAsync` ：
@@ -191,8 +172,6 @@ public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
 ```
 
 `ReplaceDocumentAsync`方法會指定 `Uri` 引數，表示應取代之集合中的檔，以及 `object` 表示已更新檔資料的引數。
-
-<a name="deleting_document" />
 
 ### <a name="deleting-a-document-from-a-document-collection"></a>從檔集合中刪除檔
 
@@ -229,13 +208,13 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 `DeleteDatabaseAsync`方法 `Uri` 會指定引數，表示要刪除的資料庫。 請注意，叫用這個方法也會刪除儲存在資料庫中的檔集合，以及儲存在檔集合中的檔。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合到 Xamarin.Forms 應用程式中。 Azure Cosmos DB 檔資料庫是一種 NoSQL 資料庫，可提供對 JSON 檔的低延遲存取，為需要順暢調整和全域複寫的應用程式提供快速、高可用性、可擴充的資料庫服務。
 
 ## <a name="related-links"></a>相關連結
 
 - [Todo Azure Cosmos DB （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
-- [Azure Cosmos DB 文件](/azure/cosmos-db/)
+- [Azure Cosmos DB 檔](/azure/cosmos-db/)
 - [Azure Cosmos DB .NET Standard 用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Azure Cosmos DB API](https://docs.microsoft.com/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

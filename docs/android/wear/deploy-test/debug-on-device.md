@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e6be5d5d42abf7d99c5bd305d6e303ef770e5a04
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304531"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567709"
 ---
 # <a name="debug-on-a-wear-device"></a>在 Wear 裝置上偵錯
 
@@ -86,7 +86,7 @@ _本文說明如何在磨損裝置上進行 Xamarin. Android 磨損應用程式�
     Target: connected
     ```
 
-6. 完成上述步驟之後，執行 `adb devices` 會顯示電話和 Android 磨損裝置的狀態：
+6. 完成上述步驟之後， `adb devices` 執行會顯示電話和 Android 磨損裝置的狀態：
 
     ```
     List of devices attached
@@ -96,7 +96,7 @@ _本文說明如何在磨損裝置上進行 Xamarin. Android 磨損應用程式�
 
 此時，您可以將應用程式部署至磨損裝置。
 
-<a name="screenshots" />
+<a name="screenshots"></a>
 
 ### <a name="taking-screenshots"></a>拍攝螢幕擷取畫面
 
@@ -126,7 +126,7 @@ adb -s 127.0.0.1:4444 shell rm /sdcard/DCIM/screencap.png
 adb -s 127.0.0.1:4444 uninstall <package name>
 ```
 
-例如，若要移除封裝名稱 `com.xamarin.weartest`的應用程式，請輸入下列命令：
+例如，若要使用套件名稱移除應用程式 `com.xamarin.weartest` ，請輸入下列命令：
 
 ```shell
 adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest
@@ -148,6 +148,6 @@ Android 磨損應用程式會以隨附的 Android 手機應用程式封裝，以
 
 4. 在裝置上執行並對磨損應用程式進行偵錯工具。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文說明如何設定 Android 磨損裝置，以透過藍牙從 Visual Studio 進行磨損的調試，以及如何使用隨附的電話應用程式來對磨損應用程式進行程式。 此外，它也提供了常見的偵錯工具，可透過藍牙來對磨損應用程式進行調試。

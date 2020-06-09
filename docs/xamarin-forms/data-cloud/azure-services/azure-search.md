@@ -1,22 +1,8 @@
 ---
-title: 使用 Azure 搜尋服務和來搜尋資料Xamarin.Forms
-description: 本文示範如何使用 Microsoft Azure 搜尋程式庫，將 Azure 搜尋服務整合到 Xamarin.Forms 應用程式中。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 69962bbb51a493ba2bcaed5d3c9407c5aafe471c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133285"
+標題：「使用 Azure 搜尋服務搜尋資料和「 Xamarin.Forms 描述：」本文示範如何使用 Microsoft Azure 搜尋程式庫，將 Azure 搜尋服務整合到 Xamarin.Forms 應用程式中。」
+assetid： A4AEF233-3672-4174-9DBA-15BEE3030C0B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/05/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>使用 Azure 搜尋服務和來搜尋資料Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
@@ -39,7 +25,7 @@ _Azure 搜尋服務是一種雲端服務，可為上傳的資料提供索引編�
 
 搜尋查詢和篩選查詢可以單獨或一起使用。 搭配使用時，篩選查詢會先套用至整個索引，然後在篩選查詢的結果上執行搜尋查詢。
 
-Azure 搜尋服務也支援根據搜尋輸入來抓取建議。 如需詳細資訊，請參閱[建議查詢](#suggestions)。
+Azure 搜尋服務也支援根據搜尋輸入來抓取建議。 如需詳細資訊，請參閱[建議查詢](#suggestion-queries)。
 
 > [!NOTE]
 > 如果您沒有 [Azure 訂用帳戶](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，請在開始前建立[免費帳戶](https://aka.ms/azfree-docs-mobileapps)。
@@ -97,11 +83,11 @@ static void CreateSearchIndex()
 `Index.Name`屬性應該設定為索引的名稱，而 `Index.Fields` 屬性應設定為物件的陣列 `Field` 。 每個 `Field` 實例都會指定名稱、類型和任何屬性，以指定欄位的使用方式。 這些屬性包括：
 
 - `IsKey`–指出欄位是否為索引的索引鍵。 索引中只有一個欄位（類型為 `DataType.String` ）必須指定為索引鍵欄位。
-- `IsFacetable`–指出是否可以在此欄位上執行多面向導覽。 預設值是 `false`。
-- `IsFilterable`–指出欄位是否可用於篩選查詢中。 預設值是 `false`。
-- `IsRetrievable`–指出是否可以在搜尋結果中抓取欄位。 預設值是 `true`。
-- `IsSearchable`–指出欄位是否包含在全文檢索搜尋中。 預設值是 `false`。
-- `IsSortable`–指出欄位是否可用於 `OrderBy` 運算式中。 預設值是 `false`。
+- `IsFacetable`–指出是否可以在此欄位上執行多面向導覽。 預設值為 `false`。
+- `IsFilterable`–指出欄位是否可用於篩選查詢中。 預設值為 `false`。
+- `IsRetrievable`–指出是否可以在搜尋結果中抓取欄位。 預設值為 `true`。
+- `IsSearchable`–指出欄位是否包含在全文檢索搜尋中。 預設值為 `false`。
+- `IsSortable`–指出欄位是否可用於 `OrderBy` 運算式中。 預設值為 `false`。
 
 > [!NOTE]
 > 在其部署之後變更索引，需要重建和重載資料。
@@ -226,8 +212,6 @@ var searchResults = await indexClient.Documents.SearchAsync<Monkey>(text, parame
 
 如需搜尋和篩選的詳細資訊，請參閱[使用 .NET SDK 查詢您的 Azure 搜尋服務索引](/azure/search/search-query-dotnet/)。
 
-<a name="suggestions" />
-
 ### <a name="suggestion-queries"></a>建議查詢
 
 Azure 搜尋服務可在實例上呼叫方法，以根據搜尋查詢來要求建議 `Documents.SuggestAsync` `SearchIndexClient` 。 這會在下列程式碼範例中示範：
@@ -278,7 +262,7 @@ async Task AzureSuggestions(string text)
 
 請注意，在範例應用程式中， `SuggestAsync` 只有在使用者完成輸入搜尋字詞時，才會叫用方法。 不過，它也可以藉由在每個按鍵上執行，來支援自動完成搜尋查詢。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用 Microsoft Azure 搜尋程式庫，將 Azure 搜尋服務整合到 Xamarin.Forms 應用程式中。 Azure 搜尋服務是一種雲端服務，可為上傳的資料提供索引編制和查詢功能。 這會移除傳統上與在應用程式中執行搜尋功能相關聯的基礎結構需求和搜尋演算法複雜性。
 

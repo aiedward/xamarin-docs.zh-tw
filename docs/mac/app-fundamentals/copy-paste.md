@@ -7,20 +7,20 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 446006b89b82a1f5070a45d7e296e0563d74dbe4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 002b6ced319bf7e7b1c5b9b7cc472c43eefcc450
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032629"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574250"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>在 Xamarin. Mac 中複製並貼上
 
 _本文說明如何使用貼夾，以在 Xamarin. Mac 應用程式中提供複製和貼上。它會示範如何使用可在多個應用程式之間共用的標準資料類型，以及如何在指定的應用程式中支援自訂資料。_
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-在 Xamarin. C# Mac 應用程式中使用和 .net 時，您可以存取相同的貼上（複製和貼上）支援，而開發人員在目標中運作。
+在 Xamarin. Mac 應用程式中使用 c # 和 .NET 時，您可以存取相同的貼上（複製和貼上）支援，而開發人員在目標中運作。
 
 在本文中，我們將討論在 Xamarin 應用程式中使用此夾的兩個主要方式：
 
@@ -29,9 +29,9 @@ _本文說明如何使用貼夾，以在 Xamarin. Mac 應用程式中提供複�
 
 [![執行中應用程式的範例](copy-paste-images/intro01.png "執行中應用程式的範例")](copy-paste-images/intro01-large.png#lightbox)
 
-在本文中，我們將討論在 Xamarin. Mac 應用程式中使用剪貼簿的基本概念，以支援複製和貼上作業。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。本文。
+在本文中，我們將討論在 Xamarin. Mac 應用程式中使用剪貼簿的基本概念，以支援複製和貼上作業。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在本文中使用的重要概念和技巧。
 
-您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的「 C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將類別連線到目標-c 的 `Register` 和 `Export` 屬性物件和 UI 元素。
+您可能想要查看[Xamarin 內部](~/mac/internals/how-it-works.md)檔的將[c # 類別/方法公開至目標-C](~/mac/internals/how-it-works.md)一節，它會說明 `Register` `Export` 用來將 C # 類別連接至目標 c 物件和 UI 元素的和屬性。
 
 ## <a name="getting-started-with-the-pasteboard"></a>開始使用入門板
 
@@ -45,13 +45,13 @@ _本文說明如何使用貼夾，以在 Xamarin. Mac 應用程式中提供複�
 
 首先，我們將建立以新檔為基礎的 Xamarin. Mac 應用程式，我們將在其中新增的複製和貼上支援。
 
-請執行下列動作：
+執行下列動作：
 
 1. 啟動 Visual Studio for Mac，然後按一下 [**新增專案 ...** ] 連結。
-2. 選取 [ **Mac**  > **應用程式** > **Cocoa 應用程式**]，然後按 [**下一步]** 按鈕： 
+2. 選取 [ **Mac**  >  **app**  >  **Cocoa 應用程式**]，然後按 [**下一步]** 按鈕： 
 
     [![建立新的 Cocoa 應用程式專案](copy-paste-images/sample01.png "建立新的 Cocoa 應用程式專案")](copy-paste-images/sample01-large.png#lightbox)
-3. 輸入 `MacCopyPaste` 做為**專案名稱**，並將其他內容保留為預設值。 按 [下一步]： 
+3. `MacCopyPaste`針對 [**專案名稱**] 輸入，並保留其他所有內容做為預設值。 按 [下一步:  
 
     [![設定專案的名稱](copy-paste-images/sample01a.png "設定專案的名稱")](copy-paste-images/sample01a-large.png#lightbox)
 
@@ -63,11 +63,11 @@ _本文說明如何使用貼夾，以在 Xamarin. Mac 應用程式中提供複�
 
 接下來，我們將新增自訂 `NSDocument` 類別，以作為應用程式使用者介面的背景儲存體。 它會包含單一影像視圖，並知道如何將影像從視圖複製到預設的貼夾，以及如何從預設的貼上取出影像，並將其顯示在影像視圖中。
 
-以滑鼠右鍵按一下  **Solution Pad**中的 Xamarin 專案，然後選取 **加入** > **新增**檔案：
+以滑鼠右鍵按一下**Solution Pad**中的 [Xamarin] 專案，然後選取 [**加入**  >  **新**檔案]：
 
 ![將 NSDocument 新增至專案](copy-paste-images/sample03.png "將 NSDocument 新增至專案")
 
-輸入 `ImageDocument` 作為 [名稱]，然後按一下 [新增] 按鈕。 編輯**ImageDocument.cs**類別，使其看起來如下所示：
+輸入 `ImageDocument` 作為 [名稱]****，然後按一下 [新增]**** 按鈕。 編輯**ImageDocument.cs**類別，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -174,7 +174,7 @@ namespace MacCopyPaste
 
 我們將在下面詳細說明一些程式碼。
 
-下列程式碼會提供屬性，以測試預設的剪貼簿上是否存在影像資料，如果有可用的影像，則會傳回 `true`，否則 `false`：
+下列程式碼會提供屬性，以測試預設的剪貼簿上是否存在影像資料，如果有可用的影像， `true` 則會傳回其他 `false` ：
 
 ```csharp
 public bool ImageAvailableOnPasteboard {
@@ -397,7 +397,7 @@ namespace MacCopyPaste
 
 我們將在下面詳細說明此程式碼。
 
-首先，我們會公開上述所建立 `ImageDocument` 類別的實例：
+首先，我們會公開先前建立之 `ImageDocument` 類別的實例：
 
 ```csharp
 private ImageDocument _document;
@@ -414,7 +414,7 @@ public ImageDocument Document {
 }
 ```
 
-藉由使用 `Export`、`WillChangeValue` 和 `DidChangeValue`，我們已設定 `Document` 屬性，以允許 Xcode 中的索引鍵/值編碼和資料系結。
+藉由使用 `Export` 、 `WillChangeValue` 和 `DidChangeValue` ，我們已設定 `Document` 屬性以允許 Xcode 中的索引鍵/值編碼和資料系結。
 
 我們也會從影像中公開影像，我們在 Xcode 中使用下列屬性新增至 UI：
 
@@ -433,7 +433,7 @@ public NSImage Image {
 }
 ```
 
-載入並顯示主視窗時，我們會建立 `ImageDocument` 類別的實例，並使用下列程式碼將 UI 的影像附加至它：
+載入並顯示主視窗時，我們會建立類別的實例 `ImageDocument` ，並使用下列程式碼將 UI 的影像附加至它：
 
 ```csharp
 public override void AwakeFromNib ()
@@ -448,7 +448,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-最後，為了回應使用者按一下 [複製] 和 [貼上] 工具列專案，我們會呼叫 `ImageDocument` 類別的實例來執行實際工作：
+最後，為了回應使用者按一下 [複製] 和 [貼上] 工具列專案，我們會呼叫類別的實例 `ImageDocument` 來執行實際工作：
 
 ```csharp
 partial void CopyImage (NSObject sender) {
@@ -535,13 +535,13 @@ void PasteImage (NSObject sender)
 }
 ```
 
-針對每個功能表項目，我們會取得最新的最上層索引鍵視窗，並將它轉換為 `ImageWindow` 類別：
+針對每個功能表項目，我們會取得最新、最上層的索引鍵視窗，並將其轉換為 `ImageWindow` 類別：
 
 ```csharp
 var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 ```
 
-我們會從該處呼叫該視窗的 `ImageDocument` 類別實例，以處理複製和貼上動作。 例如: 
+我們會從該處呼叫 `ImageDocument` 該視窗的類別實例，以處理複製和貼上動作。 例如： 
 
 ```csharp
 window.Document.CopyImage (sender);
@@ -613,7 +613,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-首先，我們會停用 [編輯] 功能表中的 [自動啟用] 和 [停用] 功能表項目。 接下來，我們會附加上述所建立 `EditMenuDelegate` 類別的實例。
+首先，我們會停用 [編輯] 功能表中的 [自動啟用] 和 [停用] 功能表項目。 接下來，我們會附加先前建立之類別的實例 `EditMenuDelegate` 。
 
 如需詳細資訊，請參閱我們的[功能表](~/mac/user-interface/menu.md)檔。
 
@@ -639,11 +639,11 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ## <a name="about-the-pasteboard"></a>關於粘貼板
 
-在 macOS （先前稱為 OS X）中，貼夾（`NSPasteboard`）可支援數個伺服器進程，例如複製 & 貼入、拖曳 & 卸載和應用程式服務。 在下列各節中，我們將進一步探討幾個主要的「上轉夾」概念。
+在 macOS （先前稱為 OS X）中，貼夾（ `NSPasteboard` ）提供數個伺服器進程的支援，例如複製 & 貼入、拖曳 & 卸載和應用程式服務。 在下列各節中，我們將進一步探討幾個主要的「上轉夾」概念。
 
 ### <a name="what-is-a-pasteboard"></a>什麼是粘貼板？
 
-`NSPasteboard` 類別提供標準化的機制，可在應用程式之間或在指定的應用程式中交換資訊。 剪貼夾的主要功能是用來處理複製和貼上作業：
+`NSPasteboard`類別提供標準化的機制，可在應用程式之間或在指定的應用程式中交換資訊。 剪貼夾的主要功能是用來處理複製和貼上作業：
 
 1. 當使用者選取應用程式中的專案，並使用 [**剪**下] 或 [**複製**] 功能表項目時，會將所選項目的一個或多個表示放在剪貼簿上。
 2. 當使用者使用 [貼上] 功能表項目（在同一個應用程式內或不同的專案）時，它可以處理的資料版本會從**剪貼**板複製並新增至應用程式。
@@ -661,13 +661,13 @@ public override void DidFinishLaunching (NSNotification notification)
 
 - `NSGeneralPboard`-**剪**下、**複製**和**貼**上作業的預設貼夾。
 - `NSRulerPboard`-支援**尺規**上的**剪**下、**複製**和**貼**上作業。
-- `NSFontPboard`-支援 `NSFont` 物件上的**剪**下、**複製**和**貼**上作業。
-- `NSFindPboard`-支援可共用搜尋文字的應用程式特定的尋找面板。
+- `NSFontPboard`-支持對象的**剪**下、**複製**和**貼**上作業 `NSFont` 。
+- `NSFindPboard`-支援可共用搜尋文字的應用程式特定 [尋找] 面板。
 - `NSDragPboard`-支援**拖曳 & Drop**作業。
 
-在大多數情況下，您會使用其中一個系統定義的 pasteboards。 但在某些情況下，您可能需要建立自己的 pasteboards。 在這些情況下，您可以使用 `NSPasteboard` 類別的 `FromName (string name)` 方法，以指定的名稱建立自訂的粘貼夾。
+在大多數情況下，您會使用其中一個系統定義的 pasteboards。 但在某些情況下，您可能需要建立自己的 pasteboards。 在這些情況下，您可以使用 `FromName (string name)` 類別的方法， `NSPasteboard` 以指定的名稱來建立自訂的粘貼夾。
 
-（選擇性）您可以呼叫 `NSPasteboard` 類別的 `CreateWithUniqueName` 方法，以建立唯一命名的「上夾」。
+（選擇性）您可以呼叫 `CreateWithUniqueName` 類別的方法， `NSPasteboard` 以建立唯一命名的「上夾」。
 
 ### <a name="pasteboard-items"></a>粘貼板專案
 
@@ -683,7 +683,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 當應用程式準備要貼上從剪貼簿複製的資料時，它必須找出最適合其功能的標記法（如果有的話）。 這通常會是最豐富的類型（例如文字處理應用程式的格式化文字），會回到所需的最簡單表單（簡單文字編輯器的純文字）。
 
-<a name="Promised_Data" />
+<a name="Promised_Data"></a>
 
 ### <a name="promised-data"></a>承諾的資料
 
@@ -691,19 +691,19 @@ public override void DidFinishLaunching (NSNotification notification)
 
 在這種情況下，您可以將第一個資料表示放在貼上，而接收應用程式可以要求不同的標記法，這可在貼上作業之前立即產生。
 
-當您將初始專案放在貼上時，您會指定一個或多個可用的標記法，是由符合 `NSPasteboardItemDataProvider` 介面的物件所提供。 根據接收應用程式的要求，這些物件會依需求提供額外的標記法。
+當您將初始專案放在貼上時，您會指定一個或多個可用的標記法是由符合介面的物件所提供 `NSPasteboardItemDataProvider` 。 根據接收應用程式的要求，這些物件會依需求提供額外的標記法。
 
 ### <a name="change-count"></a>變更計數
 
 每個粘貼夾都會維護每次宣告新的擁有者時，都會遞增的_變更計數_。 應用程式可以藉由檢查變更計數的值，來判斷在上一次檢查後，檔案夾的內容是否已經變更。
 
-使用 `NSPasteboard` 類別的 `ChangeCount` 和 `ClearContents` 方法，來修改給定的上板的變更計數。
+使用 `ChangeCount` 類別的和 `ClearContents` 方法， `NSPasteboard` 以修改指定的粘貼器變更計數。
 
 ## <a name="copying-data-to-a-pasteboard"></a>將資料複製到粘貼夾
 
 執行複製作業的方式，是先存取一個夾，清除任何現有的內容，並視需要將資料的標記法寫入至粘貼器所需的數量。
 
-例如:
+例如：
 
 ```csharp
 // Get the standard pasteboard
@@ -716,9 +716,9 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new NSImage[] {image});
 ```
 
-一般來說，您只會寫入一般的「夾」，如同我們在上述範例中所做的一樣。 您傳送至 `WriteObjects` 方法的任何物件都*必須*符合 `INSPasteboardWriting` 介面。 有數個內建類別（例如 `NSString`、`NSImage`、`NSURL`、`NSColor`、`NSAttributedString` 和 `NSPasteboardItem`）會自動符合此介面。
+一般來說，您只會寫入一般的「夾」，如同我們在上述範例中所做的一樣。 您傳送至方法的任何物件 `WriteObjects` 都*必須*符合 `INSPasteboardWriting` 介面。 有數個內建類別（例如 `NSString` 、、 `NSImage` 、 `NSURL` 、 `NSColor` `NSAttributedString` 和 `NSPasteboardItem` ）會自動符合此介面。
 
-如果您要將自訂資料類別寫入至粘貼夾，它必須符合 `INSPasteboardWriting` 介面，或包裝在 `NSPasteboardItem` 類別的實例中（請參閱下面的[自訂資料類型](#Custom_Data_Types)一節）。
+如果您要將自訂資料類別寫入至檔案夾，它必須符合 `INSPasteboardWriting` 介面，或包裝在類別的實例中 `NSPasteboardItem` （請參閱下面的[自訂資料類型](#Custom_Data_Types)一節）。
 
 ## <a name="reading-data-from-a-pasteboard"></a>從粘貼夾讀取資料
 
@@ -726,14 +726,14 @@ pasteboard.WriteObjects (new NSImage[] {image});
 
 ### <a name="simple-paste-operation"></a>簡單貼上作業
 
-您可以使用 `ReadObjectsForClasses` 方法，從剪貼簿讀取資料。 它需要兩個參數：
+您可以使用方法，從剪貼簿讀取資料 `ReadObjectsForClasses` 。 它需要兩個參數：
 
-1. 您想要從剪貼簿讀取之以 `NSObject` 為基礎的類別類型陣列。 您應該先使用最需要的資料類型來排序，並以遞減的喜好設定來進行任何剩餘的類型。
+1. `NSObject`您想要從粘貼夾讀取之型類別類型的陣列。 您應該先使用最需要的資料類型來排序，並以遞減的喜好設定來進行任何剩餘的類型。
 2. 包含其他條件約束（例如限制特定 URL 內容類型）的字典，如果不需要進一步的條件約束，則為空的字典。
 
 方法會傳回符合我們傳入之準則的專案陣列，因此最多隻會包含所要求的相同資料類型數目。 也可能沒有任何要求的型別存在，而且會傳回空陣列。
 
-例如，下列程式碼會檢查是否有 `NSImage` 存在於一般的夾裡，如果有的話，會將它顯示在影像中：
+例如，下列程式碼會檢查是否 `NSImage` 存在於一般的夾裡，並在影像中顯示它（如果有的話）：
 
 ```csharp
 [Export("PasteImage:")]
@@ -767,8 +767,8 @@ public void PasteImage(NSObject sender) {
 
 根據所建立之 Xamarin. Mac 應用程式的類型，它可能可以處理要貼上之資料的多種標記法。 在這種情況下，有兩種方式可從 [粘貼] 抓取資料：
 
-1. 對 `ReadObjectsForClasses` 方法進行單一呼叫，並提供您想要的所有標記法的陣列（以慣用的順序）。
-2. 多次呼叫 `ReadObjectsForClasses` 方法，每次都會要求不同的類型陣列。
+1. 對方法進行單一呼叫 `ReadObjectsForClasses` ，並提供您想要的所有標記法的陣列（以慣用的順序）。
+2. 對方法多次呼叫， `ReadObjectsForClasses` 每次要求一個不同的類型陣列。
 
 如需從貼上抓取資料的詳細資訊，請參閱上方的**簡單貼**上作業一節。
 
@@ -776,7 +776,7 @@ public void PasteImage(NSObject sender) {
 
 有時候，您可能會想要檢查貼上是否包含指定的資料標記法，而不會實際讀取貼夾中的資料（例如，只有在有效資料存在時才啟用 [**貼入**] 功能表項目）。
 
-呼叫粘貼夾的 `CanReadObjectForClasses` 方法，以查看它是否包含指定的類型。
+呼叫 `CanReadObjectForClasses` 粘貼夾的方法，以查看它是否包含指定的類型。
 
 例如，下列程式碼會判斷一般的上夾是否包含 `NSImage` 實例：
 
@@ -795,15 +795,15 @@ public bool ImageAvailableOnPasteboard {
 
 ### <a name="reading-urls-from-the-pasteboard"></a>從剪貼簿讀取 url
 
-根據指定的 Xamarin 應用程式的功能，可能需要從檔案夾讀取 Url，但必須符合一組指定的準則（例如指向特定資料類型的檔案或 Url）。 在這種情況下，您可以使用 `CanReadObjectForClasses` 或 `ReadObjectsForClasses` 方法的第二個參數來指定其他搜尋條件。
+根據指定的 Xamarin 應用程式的功能，可能需要從檔案夾讀取 Url，但必須符合一組指定的準則（例如指向特定資料類型的檔案或 Url）。 在這種情況下，您可以使用或方法的第二個參數來指定其他搜尋條件 `CanReadObjectForClasses` `ReadObjectsForClasses` 。
 
-<a name="Custom_Data_Types" />
+<a name="Custom_Data_Types"></a>
 
 ## <a name="custom-data-types"></a>自訂資料類型
 
 有時候，您需要將自己的自訂類型儲存到 Xamarin. Mac 應用程式中的 [粘貼]。 例如，可讓使用者複製並貼上繪圖物件的向量繪圖應用程式。
 
-在這種情況下，您必須設計您的資料自訂類別，使其繼承自 `NSObject`，而且它會符合幾個介面（`INSCoding`、`INSPasteboardWriting` 和 `INSPasteboardReading`）。 （選擇性）您可以使用 `NSPasteboardItem` 來封裝要複製或貼上的資料。
+在這種情況下，您必須設計您的資料自訂類別，使其繼承自， `NSObject` 而且它會符合幾個介面（ `INSCoding` 、 `INSPasteboardWriting` 和 `INSPasteboardReading` ）。 （選擇性）您可以使用 `NSPasteboardItem` 來封裝要複製或貼上的資料。
 
 下面將詳細說明這兩個選項。
 
@@ -929,7 +929,7 @@ namespace MacCopyPaste
 
 #### <a name="inheritance-and-interfaces"></a>繼承和介面
 
-您必須先符合 `INSPastebaordWriting` 和 `INSPasteboardReading` 介面，才能將自訂資料類別寫入或讀取。 此外，它必須繼承自 `NSObject` 並且也符合 `INSCoding` 介面：
+您必須先符合和介面，才能在自訂資料類別中寫入或讀取該檔案 `INSPastebaordWriting` `INSPasteboardReading` 。 此外，它必須繼承自 `NSObject` ，而且也會符合 `INSCoding` 介面：
 
 ```csharp
 [Register("ImageInfo")]
@@ -937,7 +937,7 @@ public class ImageInfo : NSObject, INSCoding, INSPasteboardWriting, INSPasteboar
 ...
 ```
 
-類別也必須使用 `Register` 指示詞公開至目標-C，而且必須使用 `Export` 公開任何必要的屬性或方法。 例如:
+類別也必須使用指示詞公開至目標-C `Register` ，而且必須使用來公開任何必要的屬性或方法 `Export` 。 例如：
 
 ```csharp
 [Export("name")]
@@ -949,7 +949,7 @@ public string ImageType { get; set; }
 
 我們會公開此類別將包含的兩個資料欄位，也就是影像的名稱及其類型（jpg、png 等等）。 
 
-如需詳細資訊，請參閱[Xamarin 內部](~/mac/internals/how-it-works.md)檔的將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md)一節，它會說明用來將C#類別連線到目標的 `Register` 和 `Export` 屬性-c物件和 UI 元素。
+如需詳細資訊，請參閱[Xamarin 內部](~/mac/internals/how-it-works.md)檔的將[c # 類別/方法公開至目標-C](~/mac/internals/how-it-works.md)一節，它會 `Register` 說明 `Export` 用來將 c # 類別連接至目標-c 物件和 UI 元素的和屬性。
 
 #### <a name="constructors"></a>建構函式
 
@@ -974,15 +974,15 @@ public ImageInfo(NSCoder decoder) {
 }
 ```
 
-首先，我們會在 `init` 的預設目標-C 方法下公開_空_的函式。
+首先，我們會在的預設目標-C 方法下公開_空_的函式 `init` 。
 
-接下來，我們會公開一個 `NSCoding` 相容的函式，此函式會在貼入 `initWithCoder` 的匯出名稱時，用來從貼夾建立物件的新實例。
+接下來，我們會公開相容的函式，此函式會在貼上 `NSCoding` 匯出的名稱下時，用來從貼夾建立物件的新實例 `initWithCoder` 。
 
-此函式會採用 `NSCoder` （在寫入到儲存夾時由 `NSKeyedArchiver` 所建立）、解壓縮索引鍵/值配對的資料，並將其儲存至資料類別的屬性欄位。
+此函式會採用 `NSCoder` （ `NSKeyedArchiver` 當寫入到儲存夾時所建立）、解壓縮索引鍵/值配對的資料，並將它儲存至資料類別的屬性欄位。
 
 #### <a name="writing-to-the-pasteboard"></a>寫入到粘貼夾
 
-藉由符合 `INSPasteboardWriting` 介面，我們需要公開兩個方法，並選擇性地提供第三個方法，以便將類別寫入至粘貼夾。
+藉由符合此 `INSPasteboardWriting` 介面，我們需要公開兩個方法，並選擇性地提供第三個方法，以便將類別寫入至粘貼夾。
 
 首先，我們需要告訴剪貼簿，自訂類別可以寫入哪些資料類型表示：
 
@@ -994,9 +994,9 @@ public virtual string[] GetWritableTypesForPasteboard (NSPasteboard pasteboard) 
 }
 ```
 
-每個表示都是透過統一的類型識別碼（UTI）來識別，這只是一個簡單的字串，可唯一識別所呈現的資料類型（如需詳細資訊，請參閱 Apple 的[統一類型識別碼總覽](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319)檔）。
+每個表示都是透過統一的類型識別碼（UTI）來識別，這只是一個簡單的字串，可唯一識別呈現的資料類型（如需詳細資訊，請參閱 Apple 的[統一類型識別碼總覽](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319)檔）。
 
-針對我們的自訂格式，我們會建立自己的 UTI： ".com. image-info" （請注意，正如應用程式識別碼）。 我們的類別也能夠將標準字串寫入到上夾（`public.text`）。 
+針對我們的自訂格式，我們會建立自己的 UTI： ".com. image-info" （請注意，正如應用程式識別碼）。 我們的類別也能夠將標準字串寫入到上夾（ `public.text` ）。 
 
 接下來，我們需要以要求的格式建立物件，以實際寫入至資料夾：
 
@@ -1017,7 +1017,7 @@ public virtual NSObject GetPasteboardPropertyListForType (string type) {
 }
 ```
 
-針對 `public.text` 類型，我們會傳回簡單、格式化的 `NSString` 物件。 針對自訂的 `com.xamarin.image-info` 類型，我們會使用 `NSKeyedArchiver` 和 `NSCoder` 介面，將自訂資料類別編碼成索引鍵/值配對的封存。 我們必須執行下列方法，才能實際處理編碼：
+針對 `public.text` 類型，我們會傳回簡單的格式化 `NSString` 物件。 針對自訂 `com.xamarin.image-info` 類型，我們會使用 `NSKeyedArchiver` 和介面，將 `NSCoder` 自訂資料類別編碼成索引鍵/值配對的封存。 我們必須執行下列方法，才能實際處理編碼：
 
 ```csharp
 [Export ("encodeWithCoder:")]
@@ -1040,7 +1040,7 @@ public virtual NSPasteboardWritingOptions GetWritingOptionsForType (string type,
 }
 ```
 
-目前只有 [`WritingPromised`] 選項可供使用，而且應該在指定的型別為 [僅承諾]，而不是實際寫入至 [粘貼] 時使用。 如需詳細資訊，請參閱上述的[承諾資料](#Promised_Data)一節。
+目前只有 `WritingPromised` 選項可供使用，而且應該在指定的型別只承諾，而不是實際寫入到「上」的情況時使用。 如需詳細資訊，請參閱上述的[承諾資料](#Promised_Data)一節。
 
 這些方法都備妥之後，您可以使用下列程式碼，將我們的自訂類別寫入至貼夾：
 
@@ -1057,7 +1057,7 @@ pasteboard.WriteObjects (new ImageInfo[] { Info });
 
 #### <a name="reading-from-the-pasteboard"></a>從剪貼簿讀取
 
-藉由符合 `INSPasteboardReading` 介面，我們需要公開三種方法，讓自訂資料類別可以從「夾」中讀取。
+藉由符合此 `INSPasteboardReading` 介面，我們需要公開三種方法，才能從「夾」中讀取自訂資料類別。
 
 首先，我們需要告訴貼夾自訂類別可以從剪貼簿讀取哪些資料類型表示：
 
@@ -1090,7 +1090,7 @@ public static NSPasteboardReadingOptions GetReadingOptionsForType (string type, 
 }
 ```
 
-針對 `com.xamarin.image-info` 類型，我們會指示在將類別寫入至夾結器時，將使用 `NSKeyedArchiver` 所建立的索引鍵/值組解碼，方法是呼叫我們新增至類別的 `initWithCoder:` 函式。
+針對此 `com.xamarin.image-info` 類型，我們會指示在將類別寫入至 [粘貼器] 時，將使用所建立的索引鍵/值組解碼， `NSKeyedArchiver` 方法是呼叫 `initWithCoder:` 我們新增至類別的函式。
 
 最後，我們需要新增下列方法，以從 [粘貼] 讀取其他 UTI 資料表示：
 
@@ -1131,13 +1131,13 @@ if (ok) {
 
 ### <a name="using-a-nspasteboarditem"></a>使用 NSPasteboardItem
 
-有時候，您可能需要將自訂專案寫入不一定要建立自訂類別的檔，或者您想要以通用格式提供資料，只需視需要。 在這些情況下，您可以使用 `NSPasteboardItem`。
+有時候，您可能需要將自訂專案寫入不一定要建立自訂類別的檔，或者您想要以通用格式提供資料，只需視需要。 在這些情況下，您可以使用 `NSPasteboardItem` 。
 
-`NSPasteboardItem` 可讓您更精細地控制寫入到「夾」的資料，並專為暫時存取而設計-在將其寫入至「夾」之後，應該將其處置。
+`NSPasteboardItem`可讓您更精細地控制寫入到「夾」的資料，並專為暫時存取而設計-在將其寫入至「檔案夾」之後，應該將它處置。
 
 #### <a name="writing-data"></a>寫入資料
 
-若要將自訂資料寫入 `NSPasteboardItem`，您必須提供自訂 `NSPasteboardItemDataProvider`。 將新類別新增至專案，並將其命名為**ImageInfoDataProvider.cs**。 編輯檔案，使其看起來如下所示：
+若要將自訂資料寫入至 `NSPasteboardItem` ，您必須提供自訂的 `NSPasteboardItemDataProvider` 。 將新類別新增至專案，並將其命名為**ImageInfoDataProvider.cs**。 編輯檔案，使其看起來如下所示：
 
 ```csharp
 using System;
@@ -1200,9 +1200,9 @@ namespace MacCopyPaste
 }
 ```
 
-如同我們對自訂資料類別所做的一樣，我們必須使用 `Register` 和 `Export` 指示詞將它公開給目標-C。 類別必須繼承自 `NSPasteboardItemDataProvider`，而且必須執行 `FinishedWithDataProvider` 和 `ProvideDataForType` 方法。
+如同我們對自訂資料類別所做的一樣，我們必須使用和指示詞 `Register` `Export` 將它公開給目標-C。 類別必須繼承自 `NSPasteboardItemDataProvider` ，而且必須執行 `FinishedWithDataProvider` 和 `ProvideDataForType` 方法。
 
-使用 `ProvideDataForType` 方法，提供將包裝在 `NSPasteboardItem` 中的資料，如下所示：
+使用 `ProvideDataForType` 方法來提供將包裝在中的資料，如下所示 `NSPasteboardItem` ：
 
 ```csharp
 [Export ("pasteboard:item:provideDataForType:")]
@@ -1220,7 +1220,7 @@ public override void ProvideDataForType (NSPasteboard pasteboard, NSPasteboardIt
 }
 ```
 
-在此情況下，我們會儲存影像的兩個資訊（Name 和 ImageType），並將它們寫入至簡單的字串（`public.text`）。
+在此情況下，我們會儲存影像的兩個資訊（Name 和 ImageType），並將它們寫入至簡單的字串（ `public.text` ）。
 
 輸入 [將資料寫入至] 夾，使用下列程式碼：
 
@@ -1281,4 +1281,4 @@ if (ok) {
 - [MacCopyPaste （範例）](https://docs.microsoft.com/samples/xamarin/mac-samples/maccopypaste)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [剪貼簿程式設計指南](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
-- [macOS 人性化介面指導方針](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/) \(英文\)
+- [macOS Human Interface Guidelines (人性化介面指導方針)](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)
