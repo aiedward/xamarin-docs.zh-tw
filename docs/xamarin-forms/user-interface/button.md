@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsButton
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f7309794768c01d4978aa369cd1950d4986938db
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137458"
+title： " Xamarin.Forms button" 描述： "按鈕會回應點按，或按一下以引導應用程式執行特定工作。
+assetid： 62CAEB63-0800-44F4-9B8C-EE632138C2F5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-button"></a>Xamarin.FormsButton
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
@@ -414,8 +400,6 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 這種行為有適用于遊戲的應用程式：在上保留的手指 `Button` 可能會使螢幕上物件以特定方向移動。
 
-<a name="button-appearance" />
-
 ## <a name="button-appearance"></a>按鈕外觀
 
 `Button`會繼承或定義數個會影響其外觀的屬性：
@@ -433,7 +417,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 > [!NOTE]
 > `Button`類別也具有 [`Margin`](xref:Xamarin.Forms.View.Margin) 可控制配置行為的和 [`Padding`](xref:Xamarin.Forms.Button.Padding) 屬性 `Button` 。 如需詳細資訊，請參閱[邊界和邊框距離](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
-這六個屬性的效果（不包括 `FontFamily` 和 `FontAttributes` ）會在 [**按鈕外觀**] 頁面中示範。 另一個屬性（ [`Image`](xref:Xamarin.Forms.Button.ImageSource) ）將在[**使用點陣圖搭配按鈕**](#image-button)一節中討論。
+這六個屬性的效果（不包括 `FontFamily` 和 `FontAttributes` ）會在 [**按鈕外觀**] 頁面中示範。 另一個屬性（ [`Image`](xref:Xamarin.Forms.Button.ImageSource) ）將在[**使用點陣圖搭配按鈕**](#using-bitmaps-with-buttons)一節中討論。
 
 [**按鈕外觀**] 頁面中的所有視圖和資料系結都會定義于 XAML 檔案中：
 
@@ -747,8 +731,6 @@ public partial class ToggleButtonDemoPage : ContentPage
 以下是在 iOS、Android 和 UWP 上執行的程式：
 
 [![切換按鈕示範](button-images/ToggleButtonDemo.png "切換按鈕示範")](button-images/ToggleButtonDemo-Large.png#lightbox)
-
-<a name="image-button" />
 
 ## <a name="using-bitmaps-with-buttons"></a>使用具有按鈕的點陣圖
 

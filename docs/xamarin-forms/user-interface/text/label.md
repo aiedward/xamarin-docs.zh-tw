@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms標誌
-description: 本文說明如何使用 Xamarin.Forms 標籤類別，在應用程式中顯示單一和多行文字。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46ea0afd3df0490837eb00b837158a26c1e4e479
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136158"
+title： " Xamarin.Forms 標籤" 描述： "本文說明如何使用 Xamarin.Forms 標籤類別，在應用程式中顯示單一和多行文字。
+assetid： 02E6C553-5670-49A0-8EE9-5153ED21EA91 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/09/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-label"></a>Xamarin.Forms標誌
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -54,7 +40,7 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 ![具有文字裝飾的標籤](label-images/label-textdecorations.png)
 
 > [!NOTE]
-> 文字裝飾也可以套用至 [`Span`](xref:Xamarin.Forms.Span) 實例。 如需類別的詳細資訊 `Span` ，請參閱[格式化文字](#Formatted_Text)。
+> 文字裝飾也可以套用至 [`Span`](xref:Xamarin.Forms.Span) 實例。 如需類別的詳細資訊 `Span` ，請參閱[格式化文字](#formatted-text)。
 
 ## <a name="character-spacing"></a>字元間距
 
@@ -147,8 +133,6 @@ public partial class LabelPage : ContentPage
 
 如需在上指定字型的詳細資訊 `Label` ， [Fonts](~/xamarin-forms/user-interface/text/fonts.md)請參閱字型。
 
-<a name="Truncation_and_Wrapping" />
-
 ## <a name="truncation-and-wrapping"></a>截斷和換行
 
 標籤可以設定為以數種方式的其中一行來處理無法容納的文字（由屬性所公開） `LineBreakMode` 。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)是具有下列值的列舉：
@@ -235,8 +219,6 @@ Label label = new Label
 
 > [!IMPORTANT]
 > 在中顯示 HTML [`Label`](xref:Xamarin.Forms.Label) 僅限於基礎平臺支援的 html 標記。
-
-<a name="Formatted_Text" />
 
 ## <a name="formatted-text"></a>格式化文字
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: d8c9d6fe36b457a000e96d1ad8990debad8ac915
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b311f3121ea6a58975d41b9690e31a44daa0951e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030754"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573699"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS 應用程式散發總覽
 
@@ -25,12 +25,12 @@ _本檔概述 tvOS 應用程式可用的散發技術，並作為主題中更詳�
 Apple 提供下列方法來散發 tvOS 應用程式，其支援 tvOS：
 
 1. [**App Store**](#Apple-TV-App-Store-Distribution)
-2. [**內部 (Enterprise)** ](#In-House-Distribution) 
+2. [**內部 (Enterprise)**](#In-House-Distribution) 
 3. [**臨機操作**](#Ad_Hoc_Distribution) 
 
 上述每樣方式都要求使用適當的*佈建設定檔*來佈建應用程式。 佈建設定檔是一種檔案，其包含程式碼簽署資訊、應用程式身分識別及預期的散發機制。 對於非 App Store 的散發，佈建設定檔也包含可用來部署應用程式之裝置的相關資訊。
 
-<a name="Apple-TV-App-Store-Distribution" />
+<a name="Apple-TV-App-Store-Distribution"></a>
 
 ## <a name="apple-tv-app-store-distribution"></a>Apple TV App Store 散發
 
@@ -59,15 +59,15 @@ Apple 提供下列方法來散發 tvOS 應用程式，其支援 tvOS：
 
 如需詳細資訊，請流覽[發行至 APPLE 電視 App Store](~/ios/tvos/deploy-test/app-distribution/app-store-publishing.md)指南。
 
-<a name="In-House-Distribution" />
+<a name="In-House-Distribution"></a>
 
-## <a name="in-house-distribution"></a>內部散發
+## <a name="in-house-distribution"></a>內部作業散發
 
-內部散發 (有時稱為「企業散發」) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
+內部散發 (有時稱為「企業散發」**) 允許 **Apple Developer Enterprise Program** 成員在組織內部散發應用程式給同組織的其他成員。 內部散發的優勢在於不需要應用程式市集審查，且不限制可安裝應用程式的裝置數量。 但是請注意，**Apple Developer Enterprise Program** 成員**沒有權限**存取 iTunes Connect，因此被授權者需負責散發應用程式。
 
 如需有關如何進行設定，以及如何在內部散發應用程式的詳細資訊，請參閱[內部散發指南](~/ios/deploy-test/app-distribution/in-house-distribution.md)。 本檔僅適用于 iOS，但 tvOS 應用程式使用相同的技術。
 
-<a name="Ad_Hoc_Distribution"/>
+<a name="Ad_Hoc_Distribution"></a>
 
 ## <a name="ad-hoc-distribution"></a>臨機操作散發
 
@@ -75,7 +75,7 @@ TvOS 應用程式可透過臨機操作散發來進行使用者測試，這可在
 
 如需有關如何進行設定，以及如何在內部散發應用程式的詳細資訊，請參閱臨機操作[散發指南](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)。 同樣地，這份檔僅適用于 iOS，但 tvOS 應用程式使用相同的技術。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 

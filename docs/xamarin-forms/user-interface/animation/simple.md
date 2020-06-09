@@ -1,22 +1,8 @@
 ---
-title: 中的簡單動畫Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a4644094de9c0fcad8f38b7014426a30263dc66f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137445"
+title： "description：" 中的簡單動畫 " Xamarin.Forms ViewExtensions 類別提供可用來建立簡單動畫的擴充方法。 本文示範如何使用 ViewExtensions 類別來建立和取消動畫。」
+assetid： 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/05/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="simple-animations-in-xamarinforms"></a>中的簡單動畫Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
@@ -43,9 +29,9 @@ _ViewExtensions 類別提供可用來建立簡單動畫的擴充方法。本文�
 > [!NOTE]
 > [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)類別提供 [ `LayoutTo` ] （x： Xamarin.Forms 。ViewExtensions. LayoutTo （ Xamarin.Forms 。VisualElement， Xamarin.Forms 。矩形，System.object， Xamarin.Forms 。緩動））擴充方法。 不過，此方法的目的是要供版面配置使用，以在包含大小和位置變更的版面配置狀態之間建立動畫轉換。 因此，它應該僅供子 [`Layout`](xref:Xamarin.Forms.Layout) 類別使用。
 
-類別中的動畫擴充方法 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 全都是非同步，而且會傳回 `Task<bool>` 物件。 `false`如果動畫完成，則傳回值為， `true` 如果動畫已取消，則為。 因此，動畫方法通常應該與運算子搭配使用 `await` ，讓您可以輕鬆地判斷動畫何時完成。 此外，它也可以在先前的方法完成之後，使用後續的動畫方法來建立順序動畫。 如需詳細資訊，請參閱[複合動畫](#compound)。
+類別中的動畫擴充方法 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 全都是非同步，而且會傳回 `Task<bool>` 物件。 `false`如果動畫完成，則傳回值為， `true` 如果動畫已取消，則為。 因此，動畫方法通常應該與運算子搭配使用 `await` ，讓您可以輕鬆地判斷動畫何時完成。 此外，它也可以在先前的方法完成之後，使用後續的動畫方法來建立順序動畫。 如需詳細資訊，請參閱[複合動畫](#compound-animations)。
 
-如果需要讓動畫在背景中完成，則 `await` 可以省略運算子。 在此案例中，動畫擴充方法會在起始動畫之後快速傳回，動畫會在背景中發生。 建立複合動畫時，可以利用這項作業。 如需詳細資訊，請參閱[複合動畫](#composite)。
+如果需要讓動畫在背景中完成，則 `await` 可以省略運算子。 在此案例中，動畫擴充方法會在起始動畫之後快速傳回，動畫會在背景中發生。 建立複合動畫時，可以利用這項作業。 如需詳細資訊，請參閱[複合動畫](#composite-animations)。
 
 如需運算子的詳細資訊 `await` ，請參閱[非同步支援總覽](~/cross-platform/platform/async.md)。
 
@@ -160,8 +146,6 @@ await image.FadeTo (1, 4000);
 
 ![](simple-images/fadeto.png "Fading Animation")
 
-<a name="compound" />
-
 ## <a name="compound-animations"></a>複合動畫
 
 複合動畫是動畫的連續組合，可以使用運算子來建立 `await` ，如下列程式碼範例所示：
@@ -175,8 +159,6 @@ await image.TranslateTo (0, 0, 1000);       // Move image up
 ```
 
 在此範例中， [`Image`](xref:Xamarin.Forms.Image) 會轉譯超過6秒（6000毫秒）。 的轉譯 `Image` 會使用五個動畫，並使用 `await` 運算子來指示每個動畫循序執行。 因此，在先前的方法完成之後，會執行後續的動畫方法。
-
-<a name="composite" />
 
 ## <a name="composite-animations"></a>複合動畫
 
@@ -234,7 +216,7 @@ ViewExtensions.CancelAnimations (image);
 
 這會立即取消目前正在實例上執行的所有動畫 [`Image`](xref:Xamarin.Forms.Image) 。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用類別來建立和取消動畫 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 。 這個類別提供擴充方法，可用於建立旋轉、縮放、轉譯和淡化實例的簡單動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 

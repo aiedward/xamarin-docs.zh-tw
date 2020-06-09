@@ -9,16 +9,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 10a46c916654f8421dc5a9af93de3abbbae5e934
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2f8c6a80b00a4a91c40c70af05ac0ebe18daaed3
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304034"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571437"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深度剖析
 
-_在此兩部分指南中,您將構建第一個 Xamarin.Android 應用程式,並與 Xamarin 一起開發 Android 應用程式開發的基本原理。在此過程中,您將介紹構建和部署 Xamarin.Android 應用程式所需的工具、概念和步驟。_
+_在這份含有兩部分的指南中，您將建立您的第一個 Xamarin. Android 應用程式，並瞭解使用 Xamarin 進行 Android 應用程式開發的基本概念。在過程中，您將會引進建立和部署 Xamarin Android 應用程式所需的工具、概念和步驟。_
 
 在 [Hello, Android 快速入門](~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md)中，您已建置並執行您的第一個 Xamarin.Android 應用程式。 現在是時候更深入了解 Android 應用程式的運作方式，讓您能夠建置更複雜的程式。 本指南會檢閱您在 Hello, Android 逐步解說中所採取的步驟，讓您可以了解所執行的作業，並開始對 Android 應用程式開發有基本了解。
 
@@ -45,13 +45,13 @@ _在此兩部分指南中,您將構建第一個 Xamarin.Android 應用程式,並
 
 - **Xamarin.Android 應用程式的結構** &ndash; 導覽 Xamarin.Android 應用程式的基本組件。
 
-- **應用基礎知識和體系結構基礎知識**&ndash;活動簡介、Android 清單和 Android 開發的總體風格。
+- **應用程式基礎與架構基本概念** &ndash;介紹活動、Android 資訊清單，以及 Android 開發的一般類別。
 
 - **使用者介面 (UI)** &ndash; 使用 Android Designer 來建立使用者介面。
 
-- **活動與活動生命週期**&ndash;活動生命週期活動生命週期簡介,並在代碼中連接用戶介面。
+- **活動和活動生命週期** &ndash;活動生命週期的簡介，以及如何在程式碼中連接使用者介面。
 
-- **測試、部署和完成觸摸**&ndash;通過測試、部署、生成圖稿等建議完成應用程式。
+- **測試、部署和最後的潤色** &ndash;透過測試、部署、產生作品等等的建議來完成您的應用程式。
 
 ::: zone-end
 
@@ -63,7 +63,7 @@ _在此兩部分指南中,您將構建第一個 Xamarin.Android 應用程式,並
 
 Visual Studio 是 Microsoft 所提供之功能強大的 IDE。 其中包含完全整合的視覺化設計工具、含有重構工具的文字編輯器、組件瀏覽器、原始程式碼整合等。 在本指南中，您將了解如何搭配 Xamarin 外掛程式使用一些基本的 Visual Studio 功能。
 
-視覺化工作室將程式碼組織到_解決方案_與_專案中_。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
+Visual Studio 會將程式碼組織成_方案_和_專案_。 方案是可以容納一或多個專案的容器。 專案可以是應用程式 (例如 iOS 或 Android 應用程式)、支援程式庫、測試應用程式等。 在 **Phoneword** 應用程式中，您已使用 **Android 應用程式**範本新增 Android 專案至在 [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) 指南中建立的 **Phoneword** 方案。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -76,7 +76,7 @@ Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「�
 
 ::: zone-end
 
-<a name="anatomy" />
+<a name="anatomy"></a>
 
 ## <a name="anatomy-of-a-xamarinandroid-application"></a>Xamarin.Android 應用程式的結構
 
@@ -91,7 +91,7 @@ Visual Studio for Mac 遵循 Visual Studio 的做法，將程式碼組織成「�
 
 下列螢幕擷取畫面會列出方案的內容。 這是 Solution Pad，其中包含目錄結構以及與方案建立關聯的所有檔案：
 
-[![解決方案墊](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
+[![Solution Pad](hello-android-deepdive-images/xs/02-solution-structure-sml.png)](hello-android-deepdive-images/xs/02-solution-structure.png#lightbox)
 
 ::: zone-end
 
@@ -146,7 +146,7 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 由於不是直線通過 Android 應用程式 (您可以從數個點啟動應用程式)，因此 Android 提供獨特的方法來追蹤組成應用程式的類別和檔案。 在 **Phoneword** 範例中，組成應用程式的所有組件都會向特殊的 XML 檔案 (稱為 **Android 資訊清單**) 註冊。 **Android 資訊清單**的角色在於追蹤應用程式的內容、屬性和權限，並公開給 Android 作業系統。 您可以將 **Phoneword** 應用程式想成是單一活動 (畫面)，以及透過 Android 資訊清單檔案繫結在一起的資源和協助程式檔案集合，如下圖所示：
 
-[![資源説明者](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png#lightbox)
+[![資源協助程式](hello-android-deepdive-images/02-resources-helpers-sml.png)](hello-android-deepdive-images/02-resources-helpers.png#lightbox)
 
 接下來的章節將探索 **Phoneword** 應用程式各組件之間的關聯性，這應該可讓您進一步了解上圖。 此探索從使用者介面開始，並討論 Android Designer 和配置檔案。
 
@@ -161,7 +161,7 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 **activity_main.axml** 是應用程式中第一個畫面的使用者介面配置檔案。 .axml 表示這是 Android Designer 檔案 (AXML 代表 *Android XML*)。 名稱 *Main* 從 Android 的觀點來看是任意名稱 &ndash; 配置檔案可能已有其他名稱。 當您在 IDE 中開啟 **activity_main.axml** 時，會顯示 Android 配置檔案的視覺化編輯器，稱為 *Android Designer*：
 
-[![安卓設計師](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android 設計工具")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
+[![Android 設計工具](hello-android-deepdive-images/vs/03-android-designer-sml.png "Android 設計工具")](hello-android-deepdive-images/vs/03-android-designer.png#lightbox)
 
 在 **Phoneword** 應用程式中，**TranslateButton** 的識別碼會設定為 `@+id/TranslateButton`：
 
@@ -172,11 +172,11 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 
 **Main.axml** 是應用程式中第一個畫面的使用者介面配置檔案。 .axml 表示這是 Android Designer 檔案 (AXML 代表 *Android XML*)。 名稱 *Main* 從 Android 的觀點來看是任意名稱 &ndash; 配置檔案可能已有其他名稱。 當您在 IDE 中開啟 **Main.axml** 時，會顯示 Android 配置檔案的視覺化編輯器，稱為 *Android Designer*：
 
-[![安卓設計師](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
+[![Android 設計工具](hello-android-deepdive-images/xs/03-android-designer-sml.png)](hello-android-deepdive-images/xs/03-android-designer.png#lightbox)
 
 在 **Phoneword** 應用程式中，**TranslateButton** 的識別碼會設定為 `@+id/TranslateButton`：
 
-[![翻譯按鈕識別碼設定](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png#lightbox)
+[![TranslateButton 識別碼設定](hello-android-deepdive-images/xs/04-translatebutton-sml.png)](hello-android-deepdive-images/xs/04-translatebutton.png#lightbox)
 
 ::: zone-end
 
@@ -193,11 +193,11 @@ Android 應用程式沒有單一進入點；換句話說，作業系統不會在
 ::: zone-end
 ::: zone pivot="macos"
 
-[![設計器來源檢視](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png#lightbox)
+[![設計工具來源視圖](hello-android-deepdive-images/xs/05-source-view-sml.png)](hello-android-deepdive-images/xs/05-source-view.png#lightbox)
 
 ::: zone-end
 
-此 XML 原始碼應包含四個控制項元素:兩個**TextView、** 一個**EditText**和一個**按鈕**元素。 如需 Android Designer 的更深入導覽，請參閱 Xamarin Android [Designer 概觀](~/android/user-interface/android-designer/index.md)指南。
+這個 XML 原始程式碼應該包含四個控制項元素：兩個**TextView**s、一個**EditText**和一個**Button**元素。 如需 Android Designer 的更深入導覽，請參閱 Xamarin Android [Designer 概觀](~/android/user-interface/android-designer/index.md)指南。
 
 現在您已了解使用者介面之視覺部分背後的工具和概念。 接下來，您可以跳到提供使用者介面的程式碼，並探索活動與活動開發週期。
 
@@ -345,7 +345,7 @@ Visual Studio for Mac 和 Visual Studio 都會提供許多選項來測試和部�
 
 這會啟動裝置上的應用程式：
 
-[![輸入電話字](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png#lightbox)
+[![輸入 Phoneword](hello-android-deepdive-images/05-enter-phoneword-sml.png)](hello-android-deepdive-images/05-enter-phoneword.png#lightbox)
 
 ### <a name="set-icons-for-different-screen-densities"></a>設定不同螢幕密度的圖示
 
@@ -372,7 +372,7 @@ Android 會選擇具有適當密度的圖示：
 
 ### <a name="generate-custom-icons"></a>產生自訂圖示
 
-並非每個人都有一個設計器可用於創建自定義圖示和啟動應用需要脫穎而出的圖像。以下是生成自訂應用圖稿的幾種替代方法:
+並非每個人都有設計工具可用來建立自訂圖示，以及啟動應用程式需要執行的影像。以下是一些產生自訂應用程式插圖的替代方法：
 
 ::: zone pivot="windows"
 
@@ -404,11 +404,11 @@ _Google Play 服務_是一組附加元件程式庫，可讓 Android 開發人員
 
 若要新增一或多個 Google Play 服務程式庫，請以滑鼠右鍵按一下您專案樹狀目錄中的 [套件]**** 節點，然後按一下 [Add Google Play Service...] (新增 Google Play 服務...)****：
 
-[![新增谷歌播放服務](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
+[![新增 Google Play 服務](hello-android-deepdive-images/xs/08-add-google-play-services-sml.png)](hello-android-deepdive-images/xs/08-add-google-play-services.png#lightbox)
 
 當 [Add Google Play Services] (新增 Google Play 服務)**** 對話方塊出現時，選取您想要新增至專案的套件 (Nuget)：
 
-[![選擇套件](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
+[![選取套件](hello-android-deepdive-images/xs/09-add-dialog-sml.png)](hello-android-deepdive-images/xs/09-add-dialog.png#lightbox)
 
 當您選取服務並按一下 [新增套件]**** 時，Visual Studio for Mac 會下載並安裝您選取的套件及其所需的任何相依 Google Play 服務套件。 在某些情況下，您可能會看到 [接受授權]**** 對話方塊，您必須按一下 [接受]**** 才能安裝套件：
 

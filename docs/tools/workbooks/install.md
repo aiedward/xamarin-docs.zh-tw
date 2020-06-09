@@ -6,16 +6,16 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: a044169f86b46abff4158011e99320c528180ffc
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305042"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573881"
 ---
 # <a name="workbooks-installation-and-requirements"></a>活頁簿安裝和需求
 
-<a name="install" />
+<a name="install"></a>
 
 ## <a name="download-and-install"></a>下載並安裝
 
@@ -35,7 +35,7 @@ ms.locfileid: "79305042"
 
 -----
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 #### <a name="supported-operating-systems"></a>支援的作業系統
 
@@ -48,7 +48,7 @@ ms.locfileid: "79305042"
 |--- |--- |--- |
 |Mac|僅在 Mac 上支援|
 |iOS|在 Mac 和 Windows 上支援|您必須在 Mac 上安裝 Xamarin. iOS 11.0 和 Xcode 9.0 或更新版本。 在 Windows 上執行 iOS 活頁簿需要 Mac 組建主機，並在 Windows 上安裝上述所有和[遠端 iOS](~/tools/ios-simulator/index.md)模擬器。|
-|Android|在 Mac 和 Windows 上支援|必須搭配虛擬裝置使用 Google、Visual Studio 或 Xamarin Android 模擬器 > = 5。0|
+|Android|在 Mac 和 Windows 上支援|必須搭配虛擬裝置使用 Google、Visual Studio 或 Xamarin Android 模擬器 >= 5。0|
 |WPF|只有在 Windows 上才支援|
 |主控台（.NET Framework）|在 Mac 和 Windows 上支援|
 |主控台（.NET Core）|在 Mac 和 Windows 上支援|
@@ -132,7 +132,7 @@ Visual Studio
 
 **您仍應遵循 Visual Studio 安裝程式的程式，以確保活頁簿不會在您不知情的情況下重新安裝。**
 
-<a name="uninstall-macos" />
+<a name="uninstall-macos"></a>
 
 ### <a name="macos"></a>macOS
 
@@ -155,7 +155,7 @@ sudo /Library/Frameworks/Xamarin.Interactive.framework/Versions/Current/uninstal
 
 ## <a name="downgrading"></a>降級
 
-/Applications/Xamarin 活頁簿的套件組合識別碼 **。應用程式**已從 `com.xamarin.Inspector` 變更為1.4 版本中的 `com.xamarin.Workbooks`，因為活頁簿和偵測器現在已完全分割。
+/Applications/Xamarin 活頁簿的套件組合識別碼 **。應用程式** `com.xamarin.Inspector` `com.xamarin.Workbooks` 在1.4 版本中已從變更為，因為活頁簿和偵測器現在已完全分割。
 
 由於舊版安裝程式中有錯誤，因此無法使用1.3.2 或舊版安裝程式降級1.4 或更新版本。
 

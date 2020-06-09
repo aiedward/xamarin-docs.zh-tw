@@ -7,23 +7,23 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 0094a496ce99addb08648431d993bd4afddca2f4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 51b28ec05af91dea21b1291956de30c549b1868e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032252"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571671"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin 中的 ARKit 簡介
 
 _IOS 11 的增強現實_
 
-ARKit 可提供各種增強的現實應用程式和遊戲。 本章節涵蓋下列主題：
+ARKit 可提供各種增強的現實應用程式和遊戲。 本節包含下列主題：
 
 - [使用 ARKit 消費者入門](#gettingstarted)
 - [搭配使用 ARKit 與 UrhoSharp](urhosharp.md)
 
-<a name="gettingstarted" />
+<a name="gettingstarted"></a>
 
 ## <a name="getting-started-with-arkit"></a>使用 ARKit 消費者入門
 
@@ -39,7 +39,7 @@ ARKit 可提供各種增強的現實應用程式和遊戲。 本章節涵蓋下�
 
 ### <a name="2-configure-the-view"></a>2. 設定視圖
 
-在 view controller 的 `ViewDidLoad` 方法中，載入場景資產，並在此視圖上設定 [`Scene`] 屬性：
+在 view 控制器的 `ViewDidLoad` 方法中，載入場景資產，並 `Scene` 在此視圖上設定屬性：
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -66,7 +66,7 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-在 `ViewDidLoad` 方法中，指派中的委派：
+在方法的中，指派委派 `ViewDidLoad` ：
 
 ```csharp
 // Track changes to the session
@@ -75,7 +75,7 @@ SceneView.Session.Delegate = new SessionDelegate();
 
 ### <a name="4-position-the-3d-model-in-the-world"></a>4. 將3D 模型放在世界中
 
-在 `ViewWillAppear`中，下列程式碼會建立 ARKit 會話，並將3D 模型的位置設定為相對於裝置相機的空間：
+在中 `ViewWillAppear` ，下列程式碼會建立 ARKit 會話，並將3d 模型的位置設定為相對於裝置相機的空間：
 
 ```csharp
 // Create a session configuration
@@ -97,7 +97,7 @@ ship.Position = new SCNVector3(2f, -2f, -9f);
 
 ### <a name="5-pause-the-augmented-reality-session"></a>5. 暫停增強的現實會話
 
-當看不到視圖控制器時（在 `ViewWillDisappear` 方法中，就是暫停 ARKit 會話的最佳做法：
+當看不到視圖控制器時（在方法中），是暫停 ARKit 會話的最佳做法 `ViewWillDisappear` ：
 
 ```csharp
 SceneView.Session.Pause();
@@ -105,7 +105,7 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>總結
 
-上述程式碼會產生簡單的 ARKit 應用程式。 更複雜的範例會預期裝載增強的現實會話的 view controller 會執行 `IARSCNViewDelegate`，並執行其他方法。
+上述程式碼會產生簡單的 ARKit 應用程式。 更複雜的範例會預期裝載增強型現實會話的 view controller 會執行 `IARSCNViewDelegate` ，並執行其他方法。
 
 ARKit 提供許多更複雜的功能，例如 surface 追蹤和使用者互動。 如需結合 ARKit 追蹤與 UrhoSharp 的範例，請參閱[UrhoSharp 示範](urhosharp.md)。
 

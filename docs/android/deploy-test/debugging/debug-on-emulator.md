@@ -7,14 +7,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 36538435066bc94a81f6449774718afe9a5ce7d7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75556518"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571983"
 ---
-# <a name="debug-on-the-android-emulator"></a>在 Android 模擬器上調試
+# <a name="debug-on-the-android-emulator"></a>Android Emulator 上的 Debug
 
 _在本指南中，您將了解如何在 Android Emulator 中啟動虛擬裝置來偵錯和測試您的應用程式。_
 
@@ -63,7 +63,7 @@ Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示�
 
 若要修改虛擬裝置 (或建立新的)，您必須使用 [Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md)。
 
-<a name="launching" />
+<a name="launching"></a>
 
 ## <a name="launching-the-emulator"></a>啟動模擬器
 
@@ -71,11 +71,11 @@ Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示�
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![除錯和釋放模式,播放按鈕](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
+[![[調試] 和 [發行] 模式，[播放] 按鈕](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![除錯和釋放模式,播放按鈕](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
+[![[調試] 和 [發行] 模式，[播放] 按鈕](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
 
 -----
 
@@ -85,7 +85,7 @@ Visual Studio for Mac 包含預先設定的虛擬裝置，這些裝置會顯示�
 
 您可以讓模擬器保持執行：無須在每次啓動執行應用程式時關閉它再重新啟動。 第一次在模擬器中執行 Xamarin.Android 應用程式時，會安裝目標 API 層級的 Xamarin.Android 共用執行階段，接著再安裝應用程式。 安裝執行階段可能需要一些時間，因此請耐心等候。 只有在將第一個 Xamarin.Android 應用程式部署至模擬器時，才會安裝執行階段 &ndash; 後續部署速度會較快，因為要複製到模擬器的只有應用程式。
 
-<a name="quick-boot" />
+<a name="quick-boot"></a>
 
 ## <a name="quick-boot"></a>快速開機
 

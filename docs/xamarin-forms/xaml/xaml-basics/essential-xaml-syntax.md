@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 788df5f27066d0d8d1f672d82e94a06ddf5e0916
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139811"
+title： "第2部分。 基本的 XAML 語法「描述：」此文章說明屬性專案和附加屬性的基本 XAML 語法功能。」
+assetid： 4022F1DC-3802-4635-A553-688ABD3F0D5A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 10/25/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分： 基本 XAML 語法
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -526,9 +512,9 @@ if (Device.RuntimePlatform == Device.iOS)
 ```
 
 > [!NOTE]
-> `OnPlatform`標記延伸也可以在 XAML 中用來自訂以每個平臺為基礎的 UI 外觀。 它提供與和類別相同的 `OnPlatform` 功能 `On` ，但具有更精確的標記法。 如需詳細資訊，請參閱[OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+> `OnPlatform`標記延伸也可以在 XAML 中用來自訂以每個平臺為基礎的 UI 外觀。 它提供與和類別相同的 `OnPlatform` 功能 `On` ，但具有更精確的標記法。 如需詳細資訊，請參閱[OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 在屬性專案和附加屬性中，已建立許多基本 XAML 語法。 不過，有時候您需要以間接方式（例如從資源字典）將屬性設定為物件。 這種方法在下一個部分（第3部分）中涵蓋[。XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
 

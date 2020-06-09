@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f314f3145b3573184cb8cdf7370394c975c66859
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127071"
+標題：「在 XAML 中傳遞引數」描述：「本文將示範如何使用 XAML 屬性，這些屬性可用來將引數傳遞至非預設的函式、呼叫 factory 方法，以及指定泛型引數的型別。」
+assetid： 8F3B267F-499E-4D79-9193-FCA99F199519 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/25/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中傳遞引數
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
@@ -27,12 +13,10 @@ _本文示範如何使用 XAML 屬性，這些屬性可用來將引數傳遞至�
 
 通常必須使用需要引數的函式，或藉由呼叫靜態建立方法來具現化物件。 您可以使用和屬性，在 XAML 中達成這個目的 `x:Arguments` `x:FactoryMethod` ：
 
-- `x:Arguments`屬性是用來指定非預設的函式或 factory 方法物件宣告的函數引數。 如需詳細資訊，請參閱傳遞函式[引數](#constructor_arguments)。
-- `x:FactoryMethod`屬性是用來指定可用來初始化物件的 factory 方法。 如需詳細資訊，請參閱[呼叫 Factory 方法](#factory_methods)。
+- `x:Arguments`屬性是用來指定非預設的函式或 factory 方法物件宣告的函數引數。 如需詳細資訊，請參閱傳遞函式[引數](#passing-constructor-arguments)。
+- `x:FactoryMethod`屬性是用來指定可用來初始化物件的 factory 方法。 如需詳細資訊，請參閱[呼叫 Factory 方法](#calling-factory-methods)。
 
-此外， `x:TypeArguments` 屬性可以用來指定泛型型別之函式的泛型型別引數。 如需詳細資訊，請參閱[指定泛型型別引數](#generic_type_arguments)。
-
-<a name="constructor_arguments" />
+此外， `x:TypeArguments` 屬性可以用來指定泛型型別之函式的泛型型別引數。 如需詳細資訊，請參閱[指定泛型型別引數](#specifying-a-generic-type-argument)。
 
 ## <a name="passing-constructor-arguments"></a>傳遞函數引數
 
@@ -96,8 +80,6 @@ _本文示範如何使用 XAML 屬性，這些屬性可用來將引數傳遞至�
 
 ![BoxView 使用 x:Arguments 指定的色彩](passing-arguments-images/passing-arguments.png)
 
-<a name="factory_methods" />
-
 ## <a name="calling-factory-methods"></a>呼叫 Factory 方法
 
 可以在 XAML 中呼叫 Factory 方法，方法是使用屬性來指定方法的名稱 `x:FactoryMethod` ，以及使用屬性（attribute）的引數 `x:Arguments` 。 Factory 方法是一種 `public static` 方法，它會傳回與定義方法的類別或結構相同類型的物件或值。
@@ -145,8 +127,6 @@ _本文示範如何使用 XAML 屬性，這些屬性可用來將引數傳遞至�
 下列螢幕擷取畫面顯示 [`Color`](xref:Xamarin.Forms.Color) 使用指定的引數值呼叫每個 factory 方法的結果：
 
 ![BoxView 使用 x:FactoryMethod 和 x:Arguments 指定的色彩](passing-arguments-images/factory-methods.png)
-
-<a name="generic_type_arguments" />
 
 ## <a name="specifying-a-generic-type-argument"></a>指定泛型型別引數
 

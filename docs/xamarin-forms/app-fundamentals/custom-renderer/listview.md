@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Xamarin.FormsListView 是將資料集合顯示為垂直清單的視圖。 本文示範如何建立自訂轉譯器，其會封裝平台特定清單控制項和原生資料格配置，讓您對原生清單控制效能擁有更多掌控權。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3403948c2853289610a73bb36073f09c0c86137d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135300"
+title： "自訂 ListView" 描述： " Xamarin.Forms ListView 是將資料集合顯示為垂直清單的視圖。 本文示範如何建立自訂轉譯器，以封裝平臺特定清單控制項和原生資料格配置，讓您對原生清單控制效能有更大的控制權。」
+assetid： 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/29/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="customizing-a-listview"></a>自訂 ListView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
@@ -31,13 +17,11 @@ _Xamarin.FormsListView 是將資料集合顯示為垂直清單的視圖。本文
 
 您可以 [`ListView`](xref:Xamarin.Forms.ListView) 在每個平臺上建立的自訂轉譯器，利用呈現程式來執行平臺特定的自訂。 執行這項作業的流程如下：
 
-1. [建立](#Creating_the_Custom_ListView_Control) Xamarin.Forms 自訂控制項。
-1. [使用](#Consuming_the_Custom_Control)來自的自訂控制項 Xamarin.Forms 。
-1. 在每個平台上[建立](#Creating_the_Custom_Renderer_on_each_Platform)控制項的自訂轉譯器。
+1. [建立](#creating-the-custom-listview-control) Xamarin.Forms 自訂控制項。
+1. [使用](#consuming-the-custom-control)來自的自訂控制項 Xamarin.Forms 。
+1. 在每個平台上[建立](#creating-the-custom-renderer-on-each-platform)控制項的自訂轉譯器。
 
 現在可以依次討論每個項目，以實作利用平台特定清單控制項和原生資料格配置的 `NativeListView` 轉譯器。 在移植包含清單和可重複使用之資料格程式碼的現有原生應用程式時，此案例可提供協助。 此外，也允許您精細自訂可能會影響效能的清單控制項功能，例如資料虛擬化。
-
-<a name="Creating_the_Custom_ListView_Control" />
 
 ## <a name="creating-the-custom-listview-control"></a>建立自訂 ListView 控制項
 
@@ -66,8 +50,6 @@ public class NativeListView : ListView
 ```
 
 `NativeListView` 會在 .NET Standard 程式庫專案中建立，並定義自訂控制項的 API。 此控制項會公開 `Items` 屬性用於將資料填入 `ListView`，且可以是用於顯示用途的資料繫結。 其也會公開 `ItemSelected` 事件；在平台特定的原生清單控制項中選取項目時，就會觸發該事件。 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自訂控制項
 
@@ -142,8 +124,6 @@ public class MainPageCS : ContentPage
 > 由於 `NativeListView` 自訂控制項將會使用包含滾動功能的平臺特定清單控制項來呈現，因此自訂控制項不應裝載在可滾動的版面配置控制項中，例如 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 。
 
 自訂轉譯器現在可以新增至每個應用程式專案，來建立平台特定的清單控制項和原生資料格配置。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每個平台上建立自訂轉譯器
 
@@ -563,7 +543,7 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 
 方法會使用變更的資料重新填入原生 `ListView` 控制項，前提是可繫結的 `NativeListView.Items` 屬性已變更。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範了如何建立自訂轉譯器，其會封裝平台特定清單控制項和原生資料格配置，讓您對原生清單控制效能擁有更多掌控權。
 

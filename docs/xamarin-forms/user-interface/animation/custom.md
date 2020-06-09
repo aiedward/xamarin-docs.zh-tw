@@ -1,29 +1,15 @@
 ---
-title: 中的自訂動畫Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4fb9c94c39823e4ce6d60be6b9dbef1294321a63
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137224"
+title： "說明中的自訂動畫" Xamarin.Forms 描述： "本文示範如何使用 Xamarin 動畫類別來建立和取消動畫、同步處理多個動畫，以及建立自訂動畫，以動畫顯示現有動畫方法不是動畫的屬性。」
+assetid： 03B2E3FC-E720-4D45-B9A0-711081FC1907 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/10/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="custom-animations-in-xamarinforms"></a>中的自訂動畫Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _動畫類別是所有動畫的建立區塊 Xamarin.Forms ，而 ViewExtensions 類別中的擴充方法會建立一或多個動畫物件。本文示範如何使用動畫類別來建立和取消動畫、同步處理多個動畫，以及建立自訂動畫，以動畫顯示現有動畫方法不會產生動畫的屬性。_
 
-建立物件時，必須指定一些參數 `Animation` ，包括正在動畫之屬性的開始和結束值，以及變更屬性值的回呼。 `Animation`物件也可以維護可執行及同步處理的子動畫集合。 如需詳細資訊，請參閱[子動畫](#child)。
+建立物件時，必須指定一些參數 `Animation` ，包括正在動畫之屬性的開始和結束值，以及變更屬性值的回呼。 `Animation`物件也可以維護可執行及同步處理的子動畫集合。 如需詳細資訊，請參閱[子動畫](#child-animations)。
 
 藉 [`Animation`](xref:Xamarin.Forms.Animation) 由呼叫 [ `Commit` ] （x： Xamarin.Forms . 動畫. Commit （）來執行以類別建立的動畫（不一定會包含子動畫）。 Xamarin.FormsSystem.windows.media.animation.ianimatable>、System.string、system.object、system.string、 Xamarin.Forms 。緩動，system.string {system.string，system.string}，system.string {system.string}）方法的值。 這個方法會指定動畫的持續時間，以及其他專案之間，控制是否要重複動畫的回呼。
 
@@ -61,8 +47,6 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 
 > [!NOTE]
 > 並行的動畫（彼此獨立執行）可以藉由 `Animation` 為每個動畫建立一個物件，然後 `Commit` 在每個動畫上呼叫方法來加以構建。
-
-<a name="child" />
 
 ### <a name="child-animations"></a>子動畫
 

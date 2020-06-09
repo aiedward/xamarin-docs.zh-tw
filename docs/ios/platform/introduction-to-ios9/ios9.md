@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: e12bac1f65981776a7bd650cbc840cc0cdf72892
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 429b15b8e0f2b66b8a0edcdf386ef7778cf4a9ca
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78292048"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574115"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 相容性
 
@@ -44,9 +44,9 @@ _即使您不打算立即使用 iOS 9 功能更新您的應用程式，我們仍
 您**不**需要等候您所使用之任何元件或 nuget 的新版本，來解決上述的兩個問題。
 只要使用最新穩定版本的 Xamarin 來重新建立應用程式，就可以解決這些問題。
 
-同樣地，元件廠商和 NuGet 作者**不**需要提交新組建，就能修正上述兩個問題。 不過，如果有任何元件或 NuGet 使用來自**Xib**檔案的 `UICollectionView` 或載入視圖，則*可能*需要進行更新，才能解決下列所述的 iOS 9 相容性問題。
+同樣地，元件廠商和 NuGet 作者**不**需要提交新組建，就能修正上述兩個問題。 不過，如果有任何元件或 NuGet 使用 `UICollectionView` 或從**Xib**檔案載入 views，則*可能*需要進行更新，才能解決下列所述的 iOS 9 相容性問題。
 
-<a name="compat" />
+<a name="compat"></a>
 
 ## <a name="improving-compatibility-in-your-code"></a>改善程式碼中的相容性
 
@@ -54,9 +54,9 @@ _即使您不打算立即使用 iOS 9 功能更新您的應用程式，我們仍
 
 ### <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell 中的 ContentView 是 null。
 
-**原因：** 在 iOS 9 中，由於 iOS 9 中的行為變更是[UICollectionView 檔的狀態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)，因此現在需要 `initWithFrame:` 的函式。 如果您註冊了指定識別碼的類別，而且必須建立新的資料格，則現在會藉由呼叫其 `initWithFrame:` 方法來初始化資料格。
+**原因：** 在 iOS 9 中 `initWithFrame:` ，由於 ios 9 中的行為變更是[UICollectionView 檔的狀態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)，因此現在需要有此函式。 如果您註冊了指定識別碼的類別，而且必須建立新的資料格，則現在會藉由呼叫其方法來初始化資料格 `initWithFrame:` 。
 
-**修正：** 新增 `initWithFrame:` 的函數，如下所示：
+**修正：** 新增如下所示的函式 `initWithFrame:` ：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -70,9 +70,9 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>從 Xib/筆尖載入視圖時，UIView 無法從當中初始化
 
-**原因：** `initWithCoder:` 的函式是從 Interface Builder Xib 檔載入視圖時所呼叫的函式。 如果此函式不是匯出的，非受控碼就無法呼叫其受管理的版本。 先前（例如 在 iOS 8 中）已叫用 `IntPtr` 的「檢查程式」來初始化 view。
+**原因：**`initWithCoder:`從 Interface Builder Xib 檔載入視圖時，會呼叫此函式。 如果此函式不是匯出的，非受控碼就無法呼叫其受管理的版本。 先前（例如 在 iOS 8 中）已叫用此函式 `IntPtr` 來初始化 view。
 
-**修正：** 建立並匯出 `initWithCoder:` 的函式，如下所示：
+**修正：** 建立和匯出此函式， `initWithCoder:` 如下所示：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -84,7 +84,7 @@ public YourClassName (NSCoder coder) : base (coder)
 
 相關範例：[聊天](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-### <a name="dyld-message-no-cache-image-with-name"></a>Dyld 訊息：沒有名稱為的快取映射 。
+### <a name="dyld-message-no-cache-image-with-name"></a>Dyld 訊息：沒有名稱為的快取映射 .。。
 
 在記錄檔中，您可能會遇到下列資訊的損毀：
 

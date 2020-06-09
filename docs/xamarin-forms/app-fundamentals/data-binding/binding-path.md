@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms系結路徑
-description: 本文說明如何使用資料系結，以系結 Xamarin.Forms 類別的 Path 屬性來存取子屬性和集合成員。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139735"
+title：「系結 Xamarin.Forms 路徑」描述：「本文將說明如何使用資料系結，以系結 Xamarin.Forms 類別的 Path 屬性來存取子屬性和集合成員。」
+assetid： 3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/05/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms系結路徑
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
@@ -127,7 +113,7 @@ ms.locfileid: "84139735"
 </Label>
 ```
 
-如需在 XAML 中指定建構函式引數的詳細資料，請參閱[傳遞建構函式引數](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)。
+如需在 XAML 中指定建構函式引數的詳細資料，請參閱[傳遞建構函式引數](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)。
 
 最後，最後一個範例類似第二個，不同之處在於它參考的是 `StackLayout` 子系的其中之一：
 

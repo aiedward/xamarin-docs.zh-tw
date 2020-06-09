@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Xamarin.Forms專案控制項可讓您編輯一行文字。 本文示範如何建立 Entry 控制項的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 61bd66fd25b7aea3e5be346f79e63d410164b002
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138979"
+title： "自訂專案" 描述： " Xamarin.Forms 輸入控制項允許單一行文字進行編輯。 本文示範如何建立 Entry 控制項的自訂轉譯器，讓開發人員以自己的平臺特定自訂來覆寫預設原生轉譯。
+assetid： 7B5DD10D-0411-424F-88D8-8A474DF16D8D ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/26/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="customizing-an-entry"></a>自訂 Entry
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
@@ -31,16 +17,14 @@ _Xamarin.Forms專案控制項可讓您編輯一行文字。本文示範如何建
 
 藉由在 [`Entry`](xref:Xamarin.Forms.Entry) 每個平臺上建立控制項的自訂轉譯器，即可利用呈現程式來執行平臺特定的自訂。 執行這項作業的流程如下：
 
-1. [建立](#Creating_the_Custom_Entry_Control) Xamarin.Forms 自訂控制項。
-1. [使用](#Consuming_the_Custom_Control)來自的自訂控制項 Xamarin.Forms 。
-1. 在每個平台上[建立](#Creating_the_Custom_Renderer_on_each_Platform)控制項的自訂轉譯器。
+1. [建立](#creating-the-custom-entry-control) Xamarin.Forms 自訂控制項。
+1. [使用](#consuming-the-custom-control)來自的自訂控制項 Xamarin.Forms 。
+1. 在每個平台上[建立](#creating-the-custom-renderer-on-each-platform)控制項的自訂轉譯器。
 
 現在會逐一討論每個專案，以在 [`Entry`](xref:Xamarin.Forms.Entry) 每個平臺上執行具有不同背景色彩的控制項。
 
 > [!IMPORTANT]
 > 本文說明如何建立簡易的自訂轉譯器。 但是，建立自訂轉譯器並非實作在每個平台上有不同背景色彩 `Entry` 的必要流程。 使用 [`Device`](xref:Xamarin.Forms.Device) 類別或 `OnPlatform` 標記延伸來提供平臺特定的值，可以更輕鬆地完成這項作業。 如需詳細資訊，請參閱[提供平台特定值](~/xamarin-forms/platform/device.md#provide-platform-specific-values)和 [OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
-
-<a name="Creating_the_Custom_Entry_Control" />
 
 ## <a name="creating-the-custom-entry-control"></a>建立自訂 Entry 控制項
 
@@ -53,8 +37,6 @@ public class MyEntry : Entry
 ```
 
 `MyEntry`控制項會在 .NET Standard 程式庫專案中建立，而且只是一個 [`Entry`](xref:Xamarin.Forms.Entry) 控制項。 控制項的自訂作業會在自訂轉譯器中完成，因此不需要在 `MyEntry` 控制項中進行其它實作。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>使用自訂控制項
 
@@ -98,8 +80,6 @@ public class MainPage : ContentPage
 此程式碼會具現化新的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 物件，以在 [`Label`](xref:Xamarin.Forms.Label) `MyEntry` 頁面上以垂直和水準的方式顯示和控制項。
 
 自訂轉譯器現在可以新增至每個應用程式專案，來自訂控制項在每個平台上的外觀。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每個平台上建立自訂轉譯器
 
@@ -212,7 +192,7 @@ namespace CustomRenderer.UWP
 
 呼叫基底類別的 `OnElementChanged` 方法會具現化 `TextBox` 控制項，且控制項的參考會指派給轉譯器的 `Control` 屬性。 背景色彩則會透過建立 `SolidColorBrush` 執行個體設為青色。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範如何建立控制項的自訂控制項轉譯器 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) ，讓開發人員以自己的平臺特定轉譯來覆寫預設原生轉譯。 自訂轉譯器提供自訂控制面板的強大方法 Xamarin.Forms 。 自訂轉譯器可用於小型樣式變更或複雜的平台特定版面配置，以及行為自訂。
 

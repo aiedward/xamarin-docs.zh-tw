@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7a7482754653e2aecb069afa215b68306ade8a99
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129576"
+標題：「存取遠端資料」描述：「本章說明 eShopOnContainers 的行動應用程式如何從容器化微服務存取資料。」
+assetid： 42eba6f5-9784-4e1a-9943-5c1fbeea7452 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="accessing-remote-data"></a>存取遠端資料
 
 許多現代化的 web 解決方案都會使用 web 伺服器所裝載的 web 服務，以提供遠端用戶端應用程式的功能。 Web 服務開放的作業構成 Web API。
@@ -48,11 +34,9 @@ EShopOnContainers 行動應用程式會使用模型 ViewModel （MVVM）模式�
 
 EShopOnContainers 行動應用程式會使用 `HttpClient` 類別，透過 HTTP 提出要求，並使用 JSON 做為媒體類型。 這個類別會提供以非同步方式傳送 HTTP 要求，以及從 URI 識別的資源接收 HTTP 回應的功能。 `HttpResponseMessage`類別代表在發出 HTTP 要求之後從 REST API 接收的 HTTP 回應訊息。 其中包含回應的相關資訊，包括狀態碼、標頭和任何主體。 `HttpContent`類別代表 HTTP 主體和內容標頭，例如 `Content-Type` 和 `Content-Encoding` 。 您可以使用任何 `ReadAs` 方法（例如和）來讀取內容， `ReadAsStringAsync` `ReadAsByteArrayAsync` 視資料的格式而定。
 
-<a name="making_a_get_request" />
-
 #### <a name="making-a-get-request"></a>提出 GET 要求
 
-`CatalogService`類別是用來從目錄微服務管理資料抓取程式。 在 `RegisterDependencies` 類別的方法中 `ViewModelLocator` ， `CatalogService` 類別會註冊為具有 Autofac 相依性插入容器之類型的類型對應 `ICatalogService` 。 然後，在建立類別的實例時 `CatalogViewModel` ，其函式會接受 `ICatalogService` Autofac 解析的類型，以傳回類別的實例 `CatalogService` 。 如需相依性插入的詳細資訊，請參閱相依性[插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
+`CatalogService`類別是用來從目錄微服務管理資料抓取程式。 在 `RegisterDependencies` 類別的方法中 `ViewModelLocator` ， `CatalogService` 類別會註冊為具有 Autofac 相依性插入容器之類型的類型對應 `ICatalogService` 。 然後，在建立類別的實例時 `CatalogViewModel` ，其函式會接受 `ICatalogService` Autofac 解析的類型，以傳回類別的實例 `CatalogService` 。 如需相依性插入的詳細資訊，請參閱相依性[插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)。
 
 圖10-1 顯示從目錄微服務讀取目錄資料以供顯示的類別互動 `CatalogView` 。
 
@@ -86,7 +70,7 @@ public async Task<ObservableCollection<CatalogItem>> GetCatalogAsync()
 }
 ```
 
-這個方法會建立 URI，以識別要求將傳送至的資源，並使用 `RequestProvider` 類別來叫用資源上的 GET HTTP 方法，然後再將結果傳回給 `CatalogViewModel` 。 `RequestProvider`類別所包含的功能會以識別資源的 URI 形式提交要求、指定要在該資源上執行之作業的 HTTP 方法，以及包含執行作業所需之任何資料的主體。 如需如何將類別插入中的詳細資訊 `RequestProvider` `CatalogService class` ，請參閱相依性[插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
+這個方法會建立 URI，以識別要求將傳送至的資源，並使用 `RequestProvider` 類別來叫用資源上的 GET HTTP 方法，然後再將結果傳回給 `CatalogViewModel` 。 `RequestProvider`類別所包含的功能會以識別資源的 URI 形式提交要求、指定要在該資源上執行之作業的 HTTP 方法，以及包含執行作業所需之任何資料的主體。 如需如何將類別插入中的詳細資訊 `RequestProvider` `CatalogService class` ，請參閱相依性[插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)。
 
 下列程式碼範例顯示 `GetAsync` 類別中的方法 `RequestProvider` ：
 
@@ -157,7 +141,7 @@ public async Task<IActionResult> Items(
 
 #### <a name="making-a-post-request"></a>提出 POST 要求
 
-`BasketService`類別是用來管理購物籃微服務的資料抓取和更新程式。 在 `RegisterDependencies` 類別的方法中 `ViewModelLocator` ， `BasketService` 類別會註冊為具有 Autofac 相依性插入容器之類型的類型對應 `IBasketService` 。 然後，在建立類別的實例時 `BasketViewModel` ，其函式會接受 `IBasketService` Autofac 解析的類型，以傳回類別的實例 `BasketService` 。 如需相依性插入的詳細資訊，請參閱相依性[插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
+`BasketService`類別是用來管理購物籃微服務的資料抓取和更新程式。 在 `RegisterDependencies` 類別的方法中 `ViewModelLocator` ， `BasketService` 類別會註冊為具有 Autofac 相依性插入容器之類型的類型對應 `IBasketService` 。 然後，在建立類別的實例時 `BasketViewModel` ，其函式會接受 `IBasketService` Autofac 解析的類型，以傳回類別的實例 `BasketService` 。 如需相依性插入的詳細資訊，請參閱相依性[插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)。
 
 圖10-2 顯示將所顯示的購物籃資料傳送 `BasketView` 至購物籃微服務的類別互動。
 
@@ -215,7 +199,7 @@ public async Task<TResult> PostAsync<TResult>(
 }
 ```
 
-這個方法會呼叫 `CreateHttpClient` 方法，它會傳回已 `HttpClient` 設定適當標頭之類別的實例。 然後，它會將非同步 POST 要求提交至 URI 所識別的資源，並以 JSON 格式傳送序列化購物籃資料，並將回應儲存在實例中 `HttpResponseMessage` 。 `HandleResponse`接著會叫用方法，如果回應未包含成功的 HTTP 狀態碼，則會擲回例外狀況。 然後，回應會讀取為字串，從 JSON 轉換成 `CustomerBasket` 物件，並傳回給 `BasketService` 。 如需方法的詳細資訊 `CreateHttpClient` ，請參閱[提出 GET 要求](#making_a_get_request)。
+這個方法會呼叫 `CreateHttpClient` 方法，它會傳回已 `HttpClient` 設定適當標頭之類別的實例。 然後，它會將非同步 POST 要求提交至 URI 所識別的資源，並以 JSON 格式傳送序列化購物籃資料，並將回應儲存在實例中 `HttpResponseMessage` 。 `HandleResponse`接著會叫用方法，如果回應未包含成功的 HTTP 狀態碼，則會擲回例外狀況。 然後，回應會讀取為字串，從 JSON 轉換成 `CustomerBasket` 物件，並傳回給 `BasketService` 。 如需方法的詳細資訊 `CreateHttpClient` ，請參閱[提出 GET 要求](#making-a-get-request)。
 
 當類別中的 `PostAsync` 方法 `RequestProvider` 呼叫時 `HttpClient.PostAsync` ，會叫用 `Post` `BasketController` 購物籃中類別的方法，如下列程式碼範例所示：
 
@@ -273,7 +257,7 @@ public async Task DeleteAsync(string uri, string token = "")
 }
 ```
 
-這個方法會呼叫 `CreateHttpClient` 方法，它會傳回已 `HttpClient` 設定適當標頭之類別的實例。 然後，它會將非同步刪除要求提交給 URI 所識別的資源。 如需方法的詳細資訊 `CreateHttpClient` ，請參閱[提出 GET 要求](#making_a_get_request)。
+這個方法會呼叫 `CreateHttpClient` 方法，它會傳回已 `HttpClient` 設定適當標頭之類別的實例。 然後，它會將非同步刪除要求提交給 URI 所識別的資源。 如需方法的詳細資訊 `CreateHttpClient` ，請參閱[提出 GET 要求](#making-a-get-request)。
 
 當類別中的 `DeleteAsync` 方法 `RequestProvider` 呼叫時 `HttpClient.DeleteAsync` ，會叫用 `Delete` `BasketController` 購物籃中類別的方法，如下列程式碼範例所示：
 
@@ -316,8 +300,6 @@ EShopOnContainers 行動應用程式會使用私人快取，其中的資料會�
 當快取的資料過期時，應從快取中移除，而且應用程式必須從原始資料存放區抓取資料，並將其放回快取中。
 
 如果允許資料保留太長一段時間，可能也會填滿快取。 因此，將新專案加入至快取的要求可能需要移除進程中的某些專案 *，稱為收回。* 快取服務通常會以最不常使用的方式來收回資料。 不過，還有其他收回原則，包括最常使用和先進先出。如需詳細資訊，請參閱快取[指引](/azure/architecture/best-practices/caching/)。
-
-<a name="caching_images" />
 
 ### <a name="caching-images"></a>快取影像
 
@@ -376,18 +358,16 @@ FFImageLoading 的 `CachedImage` 控制項是控制項的替代方案 Xamarin.Fo
 > [!NOTE]
 > 一種積極的重試策略，每次嘗試之間的延遲最少，以及大量重試，可能會降低執行接近或容量的遠端服務。 此外，這類重試策略也會影響應用程式的回應能力（如果持續嘗試執行失敗的作業）。
 
-如果要求在重試次數之後仍然失敗，應用程式最好避免進一步要求進入相同的資源，並報告失敗。 然後，應用程式可以在一段時間之後，對資源提出一或多個要求，以查看是否成功。 如需詳細資訊，請參閱[斷路器模式](#circuit_breaker_pattern)。
+如果要求在重試次數之後仍然失敗，應用程式最好避免進一步要求進入相同的資源，並報告失敗。 然後，應用程式可以在一段時間之後，對資源提出一或多個要求，以查看是否成功。 如需詳細資訊，請參閱[斷路器模式](#circuit-breaker-pattern)。
 
 > [!TIP]
 > 永遠不要實作無盡的重試機制。 使用有限的重試次數，或執行[斷路](/azure/architecture/patterns/circuit-breaker/)器模式以允許服務復原。
 
-EShopOnContainers 行動應用程式目前不會在提出 RESTful web 要求時，執行重試模式。 不過， `CachedImage` [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)程式庫提供的控制項可透過重試影像載入來支援暫時性錯誤處理。 如果映射載入失敗，將會進行進一步的嘗試。 嘗試次數是由屬性所指定 `RetryCount` ，而重試會在屬性所指定的延遲之後發生 `RetryDelay` 。 如果未明確設定這些屬性值，則會套用其預設值– 3 `RetryCount` （屬性）和250毫秒（代表 `RetryDelay` 屬性）。 如需控制項的詳細資訊 `CachedImage` ，請參閱快取[影像](#caching_images)。
+EShopOnContainers 行動應用程式目前不會在提出 RESTful web 要求時，執行重試模式。 不過， `CachedImage` [FFImageLoading](https://www.nuget.org/packages/Xamarin.FFImageLoading.Forms/)程式庫提供的控制項可透過重試影像載入來支援暫時性錯誤處理。 如果映射載入失敗，將會進行進一步的嘗試。 嘗試次數是由屬性所指定 `RetryCount` ，而重試會在屬性所指定的延遲之後發生 `RetryDelay` 。 如果未明確設定這些屬性值，則會套用其預設值– 3 `RetryCount` （屬性）和250毫秒（代表 `RetryDelay` 屬性）。 如需控制項的詳細資訊 `CachedImage` ，請參閱快取[影像](#caching-images)。
 
 EShopOnContainers reference 應用程式會執行重試模式。 如需詳細資訊，包括如何將重試模式與類別結合的討論 `HttpClient` ，請參閱[.net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
 如需重試模式的詳細資訊，請參閱[重試](/azure/architecture/patterns/retry/)模式。
-
-<a name="circuit_breaker_pattern" />
 
 ### <a name="circuit-breaker-pattern"></a>斷路器模式
 
@@ -407,7 +387,7 @@ EShopOnContainers 行動應用程式目前不會執行斷路器模式。 不過�
 
 如需斷路器模式的詳細資訊，請參閱[斷路器模式。](/azure/architecture/patterns/circuit-breaker/)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 許多現代化的 web 解決方案都會使用 web 伺服器所裝載的 web 服務，以提供遠端用戶端應用程式的功能。 Web 服務所公開的作業會構成 Web API，而且用戶端應用程式應該能夠利用 Web API，而不需要知道 API 所公開的資料或作業如何執行。
 

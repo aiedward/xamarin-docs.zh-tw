@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms裝置類別
-description: 本文說明如何使用 Xamarin.Forms 裝置類別，針對每個平臺上的功能和配置進行精細的控制。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7ee7b2f1bb9d34b0c0e8bdc4ae606d98423c64a9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138589"
+標題：「 Xamarin.Forms 裝置類別」描述：「本文將說明如何使用 Xamarin.Forms 裝置類別，以對每個平臺上的功能和配置進行精細的控制。」
+assetid： 2F304AEC-8612-4833-81E5-B2F3F469B2DF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/17/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms裝置類別
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
@@ -68,7 +54,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 > [!IMPORTANT]
 > 在類別中提供不正確的 `Platform` 屬性值 `On` 不會產生錯誤。 相反地，程式碼會執行，而不會套用平臺特定的值。
 
-或者，您也 `OnPlatform` 可以在 XAML 中使用標記延伸，自訂每個平臺的 UI 外觀。 如需詳細資訊，請參閱[OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)。
+或者，您也 `OnPlatform` 可以在 XAML 中使用標記延伸，自訂每個平臺的 UI 外觀。 如需詳細資訊，請參閱[OnPlatform 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
 ## <a name="deviceidiom"></a>Device. 用法
 
@@ -110,7 +96,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 
 [`OnIdiom`](xref:Xamarin.Forms.OnPlatform`1)類別是泛型類別，必須使用 `x:TypeArguments` 符合目標型別的屬性具現化。
 
-或者，您也 `OnIdiom` 可以在 XAML 中使用標記延伸，根據應用程式執行所在裝置的用法來自訂 UI 外觀。 如需詳細資訊，請參閱[OnIdiom 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)。
+或者，您也 `OnIdiom` 可以在 XAML 中使用標記延伸，根據應用程式執行所在裝置的用法來自訂 UI 外觀。 如需詳細資訊，請參閱[OnIdiom 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom-markup-extension)。
 
 ## <a name="deviceflowdirection"></a>Device. System.windows.frameworkelement.flowdirection
 
@@ -228,7 +214,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 
 `Device`類別包含下列 `static` 方法，可以用來與背景執行緒中的使用者介面專案互動：
 
-| 方法 | 引數 | 傳回 | 目的 |
+| 方法 | 引數 | 傳回值 | 目的 |
 |---|---|---|---|
 | `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主執行緒上叫用，並不等待它完成。 |
 | `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主要執行緒上叫用 `Func<T>`，並等候其完成。 |

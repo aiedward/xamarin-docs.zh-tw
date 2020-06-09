@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何使用 DataPages 開始建立簡單的資料驅動頁面 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 17cc67c7fcc89454ff8dcac9926617b4ed1f4b77
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134390"
+title： "消費者入門 with DataPages" 描述： "本文說明如何使用 DataPages 開始建立簡單的資料驅動頁面 Xamarin.Forms 。"
+assetid： 6416E5FA-6384-4298-BAA1-A89381E47210 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 12/01/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="getting-started-with-datapages"></a>使用 DataPages 消費者入門
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
@@ -54,7 +40,7 @@ ms.locfileid: "84134390"
 ```
 
 > [!IMPORTANT]
-> 您也應該遵循步驟來[載入主題元件（如下）](#loadtheme) ，方法是將一些未定案的程式碼新增至 IOS `AppDelegate` 和 Android `MainActivity` 。 這將在未來的預覽版本中改善。
+> 您也應該遵循步驟來[載入主題元件（如下）](#troubleshooting) ，方法是將一些未定案的程式碼新增至 IOS `AppDelegate` 和 Android `MainActivity` 。 這將在未來的預覽版本中改善。
 
 ## <a name="3-add-a-xaml-page"></a>3. 新增 XAML 頁面
 
@@ -180,8 +166,6 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 從頭開始建立主題還有更多工作，但未來的預覽版本可讓您更輕鬆地完成這件事。
 
 ## <a name="troubleshooting"></a>疑難排解
-
-<a name="loadtheme" />
 
 ## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>無法載入檔案或元件 ' Xamarin.Forms 。主題 Light 或其相依性的其中之一
 

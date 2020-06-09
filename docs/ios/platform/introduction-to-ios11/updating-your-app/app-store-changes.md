@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2aee2a8dc37d6a1a73569322a97cdd0aebfbfa1c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032128"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574206"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 中的 App Store 變更
 
@@ -50,7 +50,7 @@ Apple 已在 App Store 中更容易找到應用程式內購買專案。 您現�
 
 ![ITune Connect 中的 App Store 升級區段](app-store-changes-images/image4.png)
 
-您也需要在應用程式中將 `ShouldAddStorePayment` 方法新增至 `SKPaymentTransactionObserver` 通訊協定。
+您也需要將方法新增 `ShouldAddStorePayment` 至 `SKPaymentTransactionObserver` 應用程式中的通訊協定。
 
 如需有關應用程式內購買升級的詳細資訊，請參閱 Apple 的[推廣您的應用程式內購買](https://developer.apple.com/app-store/promoting-in-app-purchases/)頁面。
 
@@ -84,7 +84,7 @@ Apple 已在 App Store 中更容易找到應用程式內購買專案。 您現�
 
 如需詳細資訊，請參閱 Apple 的[回應評論](https://developer.apple.com/app-store/responding-to-reviews/)頁面。
 
-<a name="Phased_Release"/>
+<a name="Phased_Release"></a>
 
 ## <a name="phased-release"></a>階段式發行
 

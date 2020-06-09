@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: e0f6d9ed1028cd825d9fd8e40fe99c4ea250612f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b9b8d1dbaf7872ab629392e15d906540ae491db4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032425"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572594"
 ---
 # <a name="homekit-in-xamarinios"></a>在 Xamarin 中 HomeKit
 
@@ -30,7 +30,7 @@ Apple 在 iOS 8 中引進了 HomeKit，可將多個家庭自動化裝置從不�
 
 除了在 Home 設定資料庫中提供裝置以 HomeKit 啟用的應用程式之外，HomeKit 還提供 Siri 語音命令的存取權。 假設有適當設定的 HomeKit 設定，使用者可以發出語音命令，例如「Siri、開啟聊天室中的燈。」
 
-<a name="Home-Configuration-Database" />
+<a name="Home-Configuration-Database"></a>
 
 ## <a name="the-home-configuration-database"></a>首頁設定資料庫
 
@@ -38,28 +38,28 @@ HomeKit 會將指定位置中的所有自動化裝置組織成一個主集合。
 
 首頁集合儲存在家庭設定資料庫中，會自動在所有使用者的 iOS 裝置上進行備份及同步處理。 HomeKit 提供下列用來處理 Home 設定資料庫的類別：
 
-- `HMHome`-這是最上層的容器，可保留單一實體位置中所有家用自動化裝置的所有資訊和設定（例如 單一家族的居民）。 使用者可能會有一個以上的居住，例如其主要家庭和假房屋。 或者，在相同的屬性上可能會有不同的「房屋」，例如主要房子和車庫上的來賓房子。 不論是哪一種情況，都_必須_先設定並儲存一個 `HMHome` 物件，才能輸入任何其他 HomeKit 資訊。
-- `HMRoom`-雖然是選擇性的，但 `HMRoom` 可讓使用者定義家中的特定會議室（`HMHome`），例如：廚房、衛生間、車庫或起居室。 使用者可以將其所在的特定位置中的所有家庭自動化裝置分組到 `HMRoom` 中，並作為一個單位來處理。 例如，要求 Siri 關閉車庫燈。
-- `HMAccessory`-這代表已安裝在使用者居住中的個別實體 HomeKit 啟用自動化裝置（例如智慧型控溫器）。 每個 `HMAccessory` 都會指派給 `HMRoom`。 如果使用者尚未設定任何會議室，HomeKit 會將附件指派給特殊的預設房間。
-- `HMService`-代表指定 `HMAccessory`所提供的服務，例如光源或其色彩的開啟/關閉狀態（如果支援色彩變更）。 每個 `HMAccessory` 都可以有一個以上的服務，例如也包含光線的車庫門開啟工具。 此外，指定的 `HMAccessory` 可能會有使用者控制項以外的服務（例如，固件更新）。
-- `HMZone`-允許使用者將 `HMRoom` 物件的集合組成邏輯區域，例如樓上、樓下或「中」。 雖然是選擇性的，但這可以讓互動，例如要求 Siri 將所有輕量樓下關閉。
+- `HMHome`-這是最上層的容器，可保留單一實體位置中所有家用自動化裝置的所有資訊和設定（例如 單一家族的居民）。 使用者可能會有一個以上的居住，例如其主要家庭和假房屋。 或者，在相同的屬性上可能會有不同的「房屋」，例如主要房子和車庫上的來賓房子。 不論是哪一種方式，都 `HMHome` _必須_先設定並儲存一個物件，然後才能輸入任何其他 HomeKit 資訊。
+- `HMRoom`-雖然是選擇性的，但 `HMRoom` 可讓使用者定義家中的特定會議室（ `HMHome` ），例如：廚房、衛生間、車庫或聊天室。 使用者可以將其所在的特定位置中的所有家庭自動化裝置組成群組 `HMRoom` ，並將其當作一個單位來處理。 例如，要求 Siri 關閉車庫燈。
+- `HMAccessory`-這代表已安裝在使用者居住中的個別實體 HomeKit 啟用自動化裝置（例如智慧型控溫器）。 每個 `HMAccessory` 都會指派給 `HMRoom` 。 如果使用者尚未設定任何會議室，HomeKit 會將附件指派給特殊的預設房間。
+- `HMService`-表示指定的所提供的服務 `HMAccessory` ，例如淺色或其色彩的開啟/關閉狀態（如果支援色彩變更）。 每個 `HMAccessory` 可以有一個以上的服務，例如也包含光線的車庫門開啟工具。 此外，指定的 `HMAccessory` 可能會有使用者控制項以外的服務（例如，「固件更新」）。
+- `HMZone`-可讓使用者將物件集合分組 `HMRoom` 到邏輯區域中，例如樓上、樓下或「中」。 雖然是選擇性的，但這可以讓互動，例如要求 Siri 將所有輕量樓下關閉。
 
-<a name="Provisioning-a-HomeKit-App" />
+<a name="Provisioning-a-HomeKit-App"></a>
 
 ## <a name="provisioning-a-homekit-app"></a>布建 HomeKit 應用程式
 
 基於 HomeKit 所加諸的安全性需求，使用 HomeKit 架構的 Xamarin iOS 應用程式必須在 Apple 開發人員入口網站和 Xamarin 專案檔中正確設定。
 
-請執行下列動作：
+執行下列動作：
 
 1. 登入[Apple Developer 入口網站](https://developer.apple.com)。
 2. 按一下 [**憑證]、[識別碼] & 設定檔**。
-3. 如果您尚未這麼做，請按一下 [**識別碼**]，然後為您的應用程式建立識別碼（例如 `com.company.appname`），或者編輯現有的識別碼。
+3. 如果您尚未這麼做，請按一下 [**識別碼**]，然後為您的應用程式建立識別碼（例如 `com.company.appname` ），或者編輯您現有的識別碼。
 4. 確定已檢查指定識別碼的**HomeKit**服務： 
 
     [![](homekit-images/provision01.png "Enable the HomeKit service for the given ID")](homekit-images/provision01.png#lightbox)
 5. 儲存您的變更。
-6. 按一下 [布建**設定檔** > **開發**]，然後為您的應用程式建立新的開發布建設定檔： 
+6. 按一下 [布建**設定檔**  >  **開發**]，然後為您的應用程式建立新的開發布建設定檔： 
 
     [![](homekit-images/provision02.png "Create a new development provisioning profile for the app")](homekit-images/provision02.png#lightbox)
 7. 請下載並安裝新的布建設定檔，或使用 Xcode 來下載並安裝設定檔。
@@ -87,7 +87,7 @@ HomeKit 會將指定位置中的所有自動化裝置組織成一個主集合。
 
 Apple 提供 HomeKit 配件模擬器作為 Xcode 的個別下載，因此您必須先安裝它，才能繼續進行。
 
-請執行下列動作：
+執行下列動作：
 
 1. 在網頁瀏覽器中，造訪[Apple 開發人員的下載](https://developer.apple.com/download/more/?name=for%20Xcode)
 2. 下載**Xcode xxx 的其他工具**（其中 xxx 是您已安裝的 Xcode 版本）： 
@@ -104,7 +104,7 @@ Apple 提供 HomeKit 配件模擬器作為 Xcode 的個別下載，因此您必�
 1. 從 [應用程式] 資料夾，啟動 HomeKit 附屬模擬器： 
 
     [![](homekit-images/simulator02.png "The HomeKit Accessory Simulator")](homekit-images/simulator02.png#lightbox)
-2. 按一下 [ **+** ] 按鈕，然後選取 [**新增附件**...]： 
+2. 按一下 **+** 按鈕，然後選取 [**新增附件**...]： 
 
     [![](homekit-images/simulator03.png "Add a new accessory")](homekit-images/simulator03.png#lightbox)
 3. 填寫新附件的相關資訊，然後按一下 [**完成]** 按鈕： 
@@ -125,13 +125,13 @@ Apple 提供 HomeKit 配件模擬器作為 Xcode 的個別下載，因此您必�
 
 ## <a name="configuring-the-infoplist-file"></a>設定 plist 檔案
 
-IOS 10 （和更新版本）的新工作，開發人員必須將 `NSHomeKitUsageDescription` 金鑰新增至應用程式的 `Info.plist` 檔案，並提供字串來宣告應用程式要存取使用者 HomeKit 資料庫的原因。 第一次執行應用程式時，會向使用者顯示這個字串：
+IOS 10 （和更新版本）的新工作，開發人員必須將 `NSHomeKitUsageDescription` 金鑰新增至應用程式的檔案 `Info.plist` ，並提供字串來宣告應用程式為何想要存取使用者的 HomeKit 資料庫。 第一次執行應用程式時，會向使用者顯示這個字串：
 
 [![](homekit-images/info01.png "The HomeKit permission dialog")](homekit-images/info01.png#lightbox)
 
 若要設定此機碼，請執行下列動作：
 
-1. 按兩下**方案總管**中的 `Info.plist` 檔案，將它開啟以供編輯。
+1. 按兩下 `Info.plist` [**方案總管**中的檔案以開啟它進行編輯。
 2. 在畫面底部，切換至 [**來源**] 視圖。
 3. 將新**專案**新增至清單。
 4. 從下拉式清單中選取 [**隱私權-HomeKit 使用方式描述**]： 
@@ -143,13 +143,13 @@ IOS 10 （和更新版本）的新工作，開發人員必須將 `NSHomeKitUsage
 6. 將變更儲存到檔案。
 
 > [!IMPORTANT]
-> 無法在 `Info.plist` 檔案中設定 `NSHomeKitUsageDescription` 金鑰，會導致應用程式以無訊息方式_失敗_（在執行時間由系統關閉），而在 iOS 10 （或更新版本）中執行時，不會發生錯誤。
+> 如果無法在檔案 `NSHomeKitUsageDescription` 中設定金鑰， `Info.plist` 會導致應用程式以_無_訊息方式失敗（在執行時間由系統關閉），而在 iOS 10 （或更新版本）中執行時，不會發生錯誤。
 
 ## <a name="connecting-to-homekit"></a>連接到 HomeKit
 
-若要與 HomeKit 通訊，您的 Xamarin iOS 應用程式必須先具現化 `HMHomeManager` 類別的實例。 Home Manager 是 HomeKit 的中心進入點，負責提供可用家庭的清單、更新和維護該清單，以及傳回使用者的_主要家庭_。
+若要與 HomeKit 通訊，您的 Xamarin iOS 應用程式必須先具現化類別的實例 `HMHomeManager` 。 Home Manager 是 HomeKit 的中心進入點，負責提供可用家庭的清單、更新和維護該清單，以及傳回使用者的_主要家庭_。
 
-「`HMHome`」物件包含「提供家」的所有相關資訊，包括任何可能包含的會議室、群組或區域，以及任何已安裝的「家庭自動化」附屬應用程式。 在 HomeKit 中執行任何作業之前，必須先建立至少一個 `HMHome`，並將其指派為主要首頁。
+`HMHome`物件包含「提供」的所有相關資訊，包括任何可能包含的房間、群組或區域，以及任何已安裝的「家庭自動化」附屬應用程式。 在 HomeKit 中執行任何作業之前，必須先建立至少一個， `HMHome` 並將其指派為主要首頁。
 
 您的應用程式會負責檢查主要首頁是否存在，並建立並指派一個（如果沒有的話）。
 
@@ -191,7 +191,7 @@ public override void FinishedLaunching (UIApplication application)
 
 [![](homekit-images/home01.png "The user will be asked if they want to allow it to access their HomeKit information")](homekit-images/home01.png#lightbox)
 
-如果使用者回答 **[確定]** ，則應用程式將能夠使用其 HomeKit 的配件，否則將不會發生錯誤，而且任何對 HomeKit 的呼叫都會失敗並產生錯誤。
+如果使用者回答 **[確定]**，則應用程式將能夠使用其 HomeKit 的配件，否則將不會發生錯誤，而且任何對 HomeKit 的呼叫都會失敗並產生錯誤。
 
 有了 Home Manager 之後，應用程式就必須查看是否已設定主要家庭，如果沒有，則提供一種方法讓使用者建立和指派一個。
 
@@ -199,7 +199,7 @@ public override void FinishedLaunching (UIApplication application)
 
 如上所述，必須先建立並設定主要家庭，才能使用 HomeKit，而應用程式會負責提供一種方式，讓使用者建立和指派主要家庭（如果尚未存在的話）。
 
-當您的應用程式第一次啟動或從背景傳回時，它需要監視 `HMHomeManager` 類別的 `DidUpdateHomes` 事件，以檢查主要首頁是否存在。 如果不存在，則應該提供介面讓使用者建立一個。
+當您的應用程式第一次啟動或從背景傳回時，它需要監視 `DidUpdateHomes` 類別的事件， `HMHomeManager` 以檢查主要首頁是否存在。 如果不存在，則應該提供介面讓使用者建立一個。
 
 您可以將下列程式碼新增至視圖控制器，以檢查主要首頁：
 
@@ -223,11 +223,11 @@ ThisApp.HomeManager.DidUpdateHomes += (sender, e) => {
 };
 ```
 
-當 Home Manager 建立 HomeKit 的連線時，將會引發 `DidUpdateHomes` 事件，任何現有的家庭將會載入至經理的家庭集合，而主要家庭則會載入（如果有的話）。
+當「主要管理員」建立 HomeKit 的連線時， `DidUpdateHomes` 將會引發事件，任何現有的家庭將會載入至經理的家庭集合，而主要家庭則會載入（如果有的話）。
 
 ### <a name="adding-a-primary-home"></a>新增主要首頁
 
-如果在 `DidUpdateHomes` 事件之後 `null` `HMHomeManager` 的 `PrimaryHome` 屬性，您必須提供方法讓使用者建立和指派主要家庭，再繼續進行。
+如果的 `PrimaryHome` 屬性是在 `HMHomeManager` `null` `DidUpdateHomes` 事件之後，您必須提供方法讓使用者建立和指派主要家庭，再繼續進行。
 
 應用程式通常會顯示一個表單，讓使用者為新的家裡命名，然後將它傳遞給 Home Manager，以作為主要家所設定。 針對**HomeKitIntro**範例應用程式，會在 IOS 設計工具中建立模式視圖，並由 `AddHomeSegue` segue 從應用程式的主要介面呼叫。
 
@@ -258,33 +258,33 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 });
 ```
 
-`AddHome` 方法會嘗試建立新的 home，並將它傳回給指定的回呼常式。 如果未 `null`[`error`] 屬性，就會發生錯誤，而且應該會向使用者顯示。 最常見的錯誤是由非唯一的家庭名稱或主管理員無法與 HomeKit 通訊所造成。
+`AddHome`方法會嘗試建立新的 home，並將它傳回給指定的回呼常式。 如果 `error` 屬性不是，就會 `null` 發生錯誤，而且應該會向使用者顯示。 最常見的錯誤是由非唯一的家庭名稱或主管理員無法與 HomeKit 通訊所造成。
 
-如果已成功建立家庭，您必須呼叫 `UpdatePrimaryHome` 方法，將新家裡設定為主要家庭。 同樣地，如果未 `null``error` 屬性，就會發生錯誤，並向使用者顯示。
+如果已成功建立家庭，您必須呼叫方法，將 `UpdatePrimaryHome` 新家裡設定為主要家庭。 同樣地，如果 `error` 屬性不是 `null` ，就會發生錯誤，而且應該向使用者呈現。
 
-您也應該監視 Home Manager 的 `DidAddHome` 並 `DidRemoveHome` 事件，並視需要更新應用程式的使用者介面。
+您也應該監視主管理員 `DidAddHome` 和 `DidRemoveHome` 事件，並視需要更新應用程式的使用者介面。
 
 > [!IMPORTANT]
-> 上述範例程式碼中所使用的 `AlertView.PresentOKAlert` 方法是 HomeKitIntro 應用程式中的 helper 類別，可讓您更輕鬆地使用 iOS 警示。
+> `AlertView.PresentOKAlert`上述範例程式碼中所使用的方法，是 HomeKitIntro 應用程式中可讓您更輕鬆地使用 IOS 警示的 helper 類別。
 
 ## <a name="finding-new-accessories"></a>尋找新的配件
 
-從 Home Manager 定義或載入主要家裡之後，您的 Xamarin iOS 應用程式就可以呼叫 `HMAccessoryBrowser` 來尋找任何新的家庭自動化配件，並將其新增至家中。
+從 Home Manager 定義或載入主要家裡之後，您的 Xamarin iOS 應用程式就可以呼叫 `HMAccessoryBrowser` 來尋找任何新的家庭自動化附屬專案，並將其新增至首頁。
 
 呼叫 `StartSearchingForNewAccessories` 方法，以在完成時開始尋找新的附屬應用程式和 `StopSearchingForNewAccessories` 方法。
 
 > [!IMPORTANT]
-> `StartSearchingForNewAccessories` 不應長時間執行，因為它會對 iOS 裝置的電池壽命和效能造成負面影響。 Apple 建議在一分鐘後呼叫 `StopSearchingForNewAccessories`，或只在尋找附件 UI 呈現給使用者時進行搜尋。
+> `StartSearchingForNewAccessories`不應長時間執行，因為它會對 iOS 裝置的電池壽命和效能造成負面影響。 Apple 建議在 `StopSearchingForNewAccessories` 一分鐘後呼叫，或只在尋找附件 UI 呈現給使用者時進行搜尋。
 
-系統會在探索到新的配件時呼叫 `DidFindNewAccessory` 事件，並將它們新增至附件瀏覽器中的 `DiscoveredAccessories` 清單。
+`DidFindNewAccessory`系統會在探索到新的配件時呼叫此事件，並將它們新增至 `DiscoveredAccessories` [附屬瀏覽器] 中的清單。
 
-`DiscoveredAccessories` 清單會包含 `HMAccessory` 物件的集合，這些物件定義提供 HomeKit 啟用的家用自動化裝置和其可用的服務，例如光源或車庫門控制項。
+此 `DiscoveredAccessories` 清單會包含物件的集合 `HMAccessory` ，這些物件定義提供已啟用 HomeKit 的家用自動化裝置和其可用的服務，例如光源或車庫門控制項。
 
 一旦找到新的附件之後，應該會向使用者顯示，因此他們可以選取它並將它新增至首頁。 範例：
 
 [![](homekit-images/accessory01.png "Finding a new accessory")](homekit-images/accessory01.png#lightbox)
 
-呼叫 `AddAccessory` 方法，將選取的附件新增至首頁的集合。 例如:
+呼叫 `AddAccessory` 方法，將選取的附件加入至首頁的集合。 例如：
 
 ```csharp
 // Add the requested accessory to the home
@@ -297,7 +297,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 });
 ```
 
-如果未 `null`[`err`] 屬性，就會發生錯誤，而且應該會向使用者顯示。 否則，系統會要求使用者輸入裝置的安裝程式碼以新增：
+如果 `err` 屬性不是，就會 `null` 發生錯誤，而且應該會向使用者顯示。 否則，系統會要求使用者輸入裝置的安裝程式碼以新增：
 
 [![](homekit-images/accessory02.png "Enter the setup code for the device to add")](homekit-images/accessory02.png#lightbox)
 
@@ -307,17 +307,17 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 對於實際 HomeKit 的配件，安裝程式碼會列印在裝置本身的標籤、產品方塊或附件的使用者手冊中。
 
-當使用者將附件新增至其主集合之後，您應該監視該附件瀏覽器的 `DidRemoveNewAccessory` 事件，並更新使用者介面，以從可用清單中移除該附件。
+當使用者將附件新增至其主集合之後，您應該監視此附件瀏覽器的 `DidRemoveNewAccessory` 事件，並更新使用者介面，以從可用清單中移除該附件。
 
 ## <a name="working-with-accessories"></a>使用配件
 
 一旦主要家庭和已建立，且已將配件加入其中，您就可以顯示要供使用者使用的附屬配件清單（以及會議室）。
 
-`HMRoom` 物件包含指定房間的所有相關資訊，以及屬於該會議室的任何附屬應用程式。 會議室可以選擇性地組織成一或多個區域。 `HMZone` 包含指定區域及其所有所屬房間的所有相關資訊。
+`HMRoom`物件包含指定房間的所有相關資訊，以及屬於該會議室的任何附屬應用程式。 會議室可以選擇性地組織成一或多個區域。 `HMZone`包含指定區域及其所屬房間的所有相關資訊。
 
 就此範例而言，我們會將專案保持簡單，並直接使用家庭的配件，而不是將它們組織成房間或區域。
 
-`HMHome` 物件包含指派的附件清單，可以在其 `Accessories` 屬性中向使用者呈現。 例如:
+`HMHome`物件包含指派的附件清單，可在其屬性中向使用者顯示 `Accessories` 。 例如：
 
 [![](homekit-images/accessory04.png "An example accessory")](homekit-images/accessory04.png#lightbox)
 
@@ -325,15 +325,15 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 ## <a name="working-with-services"></a>使用服務
 
-當使用者與指定的 HomeKit 啟用的家用自動化裝置互動時，通常會透過它所提供的服務。 `HMAccessory` 類別的 `Services` 屬性包含 `HMService` 物件的集合，這些物件會定義裝置所提供的服務。
+當使用者與指定的 HomeKit 啟用的家用自動化裝置互動時，通常會透過它所提供的服務。 `Services`類別的屬性 `HMAccessory` 包含物件的集合 `HMService` ，這些物件會定義裝置所提供的服務。
 
 服務包括光源、恒溫器、、車庫門 openers、交換器或鎖定等。 有些裝置（例如車庫門開啟工具）將會提供一項以上的服務，例如光線和開啟或關閉門的能力。
 
-除了給定的附件所提供的特定服務以外，每個附件都會包含定義屬性（例如其名稱、製造商、型號和序號）的 `Information Service`。
+除了給定的附件所提供的特定服務以外，每個附件都會包含 `Information Service` 定義屬性的，例如其名稱、製造商、型號和序號。
 
 ### <a name="accessory-service-types"></a>裝飾服務類型
 
-下列服務類型可透過 `HMServiceType` 列舉來取得：
+以下是透過列舉提供的服務類型 `HMServiceType` ：
 
 - **AccessoryInformation** -提供指定的家用自動化裝置（配件）的相關資訊。
 - **AirQualitySensor** -定義空氣品質感應器。
@@ -365,23 +365,23 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 ### <a name="displaying-service-information"></a>顯示服務資訊
 
-載入 `HMAccessory` 之後，您可以查詢它所提供的個別 `HNService` 物件，並向使用者顯示該資訊：
+載入之後， `HMAccessory` 您可以查詢它所提供的個別 `HNService` 物件，並向使用者顯示該資訊：
 
 [![](homekit-images/accessory05.png "Displaying Service Information")](homekit-images/accessory05.png#lightbox)
 
-您應該一律先檢查 `HMAccessory` 的 `Reachable` 屬性，再嘗試使用它。 無法連線到某個附件，但該使用者不在裝置的範圍內，或已被拔掉。
+您應該一律先檢查的 `Reachable` 屬性， `HMAccessory` 然後再嘗試使用它。 無法連線到某個附件，但該使用者不在裝置的範圍內，或已被拔掉。
 
 一旦選取服務，使用者就可以查看或修改該服務的一或多個特性，以監視或控制指定的家用自動化裝置。
 
-<a name="Working-with-Characteristics" />
+<a name="Working-with-Characteristics"></a>
 
 ## <a name="working-with-characteristics"></a>使用特性
 
-每個 `HMService` 物件都可以包含 `HMCharacteristic` 物件的集合，這些物件可以提供服務狀態的相關資訊（例如，要開啟或關閉的門），或允許使用者調整狀態（例如設定光源的色彩）。
+每個 `HMService` 物件都可以包含物件的集合 `HMCharacteristic` ，這些物件可以提供服務狀態的相關資訊（例如，要開啟或關閉的門），或允許使用者調整狀態（例如設定光源的色彩）。
 
-`HMCharacteristic` 不僅會提供特性和其狀態的相關資訊，也會提供透過_特性中繼資料_（`HMCharacteristisMetadata`）處理狀態的方法。 此中繼資料可以提供向使用者顯示資訊或允許他們修改狀態時很有用的屬性（例如最小和最大值範圍）。
+`HMCharacteristic`不僅提供特性和其狀態的相關資訊，還提供透過_特性中繼資料_（）處理狀態的方法 `HMCharacteristisMetadata` 。 此中繼資料可以提供向使用者顯示資訊或允許他們修改狀態時很有用的屬性（例如最小和最大值範圍）。
 
-`HMCharacteristicType` 列舉會提供一組特性中繼資料值，可依下列方式定義或修改：
+`HMCharacteristicType`列舉會提供一組特性中繼資料值，您可以如下所示加以定義或修改：
 
 - AdminOnlyAccess
 - AirParticulateDensity
@@ -421,11 +421,11 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - LockManagementAutoSecureTimeout
 - LockManagementControlPoint
 - LockMechanismLastKnownAction
-- 記錄檔
+- 記錄
 - 製造商
 - 型號
 - MotionDetected
-- [屬性]
+- 名稱
 - ObstructionDetected
 - OccupancyDetected
 - OutletInUse
@@ -435,7 +435,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - RotationDirection
 - RotationSpeed
 - 飽和度
-- serialNumber
+- SerialNumber
 - SmokeDetected
 - SoftwareVersion
 - StatusActive
@@ -457,9 +457,9 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 ### <a name="working-with-a-characteristics-value"></a>使用特性的值
 
-為確保您的應用程式具有給定特性的最新狀態，請呼叫 `HMCharacteristic` 類別的 `ReadValue` 方法。 如果未 `null`[`err`] 屬性，則會發生錯誤，且不一定會向使用者顯示。
+為確保您的應用程式具有給定特性的最新狀態，請呼叫 `ReadValue` 類別的方法 `HMCharacteristic` 。 如果 `err` 屬性不是 `null` ，就會發生錯誤，而且不一定會向使用者呈現。
 
-特性的 `Value` 屬性包含給定特性的目前狀態當做 `NSObject`，因此無法直接在中C#使用。
+特性的 `Value` 屬性包含給定特性的目前狀態做為 `NSObject` ，因此無法直接在 c # 中使用。
 
 若要讀取值，下列 helper 類別已新增至**HomeKitIntro**範例應用程式：
 
@@ -629,15 +629,15 @@ namespace HomeKitIntro
 }
 ```
 
-每當應用程式需要讀取特性的目前狀態時，就會使用 `NSObjectConverter`。 例如：
+`NSObjectConverter`每當應用程式需要讀取特性的目前狀態時，就會使用。 例如：
 
 ```csharp
 var value = NSObjectConverter.ToFloat (characteristic.Value);
 ```
 
-上述行會將值轉換成可在 Xamarin C#程式碼中使用的 `float`。
+上述行會將值轉換為 `float` ，然後在 Xamarin c # 程式碼中使用。
 
-若要修改 `HMCharacteristic`，請呼叫其 `WriteValue` 方法，並在 `NSObject.FromObject` 呼叫中包裝新的值。 例如：
+若要修改 `HMCharacteristic` ，請呼叫其 `WriteValue` 方法，並在呼叫中包裝新的值 `NSObject.FromObject` 。 例如：
 
 ```csharp
 Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
@@ -649,11 +649,11 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 });
 ```
 
-如果未 `null`[`err`] 屬性，則會發生錯誤，並應向使用者呈現。
+如果 `err` 屬性不是，就會 `null` 發生錯誤，應該向使用者呈現。
 
 ### <a name="testing-characteristic-value-changes"></a>測試特性值變更
 
-使用 `HMCharacteristics` 和模擬的配件時，可以在 HomeKit 的配件模擬器內監視 `Value` 屬性的修改。
+使用 `HMCharacteristics` 和模擬的配件時， `Value` 可以在 HomeKit 的配件模擬器內監視對屬性的修改。
 
 在實際的 iOS 裝置硬體上執行**HomeKitIntro**應用程式時，您應該幾乎可以立即在 HomeKit 的配件模擬器中看到特性值的變更。 例如，變更 iOS 應用程式中光線的狀態：
 
@@ -686,8 +686,8 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 
 Apple 已對 iOS 9 的 HomeKit 進行下列變更和新增：
 
-- **維護現有的物件**-如果已修改現有的附件，則主管理員（`HMHomeManager`）會通知您已修改的特定專案。
-- **持續性識別碼**-所有相關的 HomeKit 類別現在都包含 `UniqueIdentifier` 屬性，可在已啟用 HomeKit 的應用程式（或相同應用程式的實例）上唯一識別指定的專案。
+- **維護現有的物件**-如果已修改現有的附件，則主管理員（ `HMHomeManager` ）會通知您已修改的特定專案。
+- **持續性識別碼**-所有相關的 HomeKit 類別現在都包含一個 `UniqueIdentifier` 屬性，可在已啟用 HomeKit 的應用程式（或相同應用程式的實例）上唯一識別指定的專案。
 - **使用者管理**-新增內建視圖控制器，以提供使用者管理功能，讓使用者可以存取主要使用者首頁中的 HomeKit 裝置。
 - **使用者功能**-HomeKit 使用者現在有一組許可權，可控制他們可以在 HomeKit 和 HomeKit 啟用的配件中使用哪些功能。 您的應用程式應該只會顯示與目前使用者相關的功能。 例如，只有系統管理員才能維護其他使用者。
 - **預先定義的場景**-預先定義的場景已針對平均 HomeKit 使用者所發生的四個常見事件而建立： [取得]、[離開]、[返回]、[移至平臺]。 這些預先定義的場景無法從家中刪除。

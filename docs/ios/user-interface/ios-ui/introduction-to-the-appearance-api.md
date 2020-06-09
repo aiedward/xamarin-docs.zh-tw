@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/15/2018
-ms.openlocfilehash: 7a7f0fe9d0dc07d892686e6596f3cc09a2587513
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6366a51f18ae2af8a94cf60a82e31ff413180e2d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003385"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573946"
 ---
 # <a name="appearance-api-in-xamarinios"></a>Xamarin 中的外觀 API
 
 _iOS 可讓您在靜態類別層級（而不是個別物件）套用視覺屬性設定，如此一來，變更就會套用到應用程式中該控制項的所有實例。_
 
-這項功能會透過所有支援它的 UIKit 控制項上的靜態 `Appearance` 屬性，在 Xamarin 中公開。 因此，可以輕鬆地自訂視覺外觀（像是色調色彩和背景影像等屬性），讓您的應用程式具有一致的外觀。 外觀 API 是在 iOS 5 中引進，而其中某些部分在 iOS 9 中已被取代，但仍是在 Xamarin iOS 應用程式中達成一些樣式和主題效果的好方法。
+這項功能會透過 `Appearance` 所有支援它的 UIKit 控制項上的靜態屬性，在 Xamarin 中公開。 因此，可以輕鬆地自訂視覺外觀（像是色調色彩和背景影像等屬性），讓您的應用程式具有一致的外觀。 外觀 API 是在 iOS 5 中引進，而其中某些部分在 iOS 9 中已被取代，但仍是在 Xamarin iOS 應用程式中達成一些樣式和主題效果的好方法。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 iOS 可讓您自訂許多 UIKit 控制項的外觀，使標準控制項符合您想要套用至應用程式的商標。
 
@@ -28,14 +28,14 @@ iOS 可讓您自訂許多 UIKit 控制項的外觀，使標準控制項符合您
 
 - **直接在控制項實例上**–您可以在許多控制項上設定色調色彩、背景影像和標題位置（以及其他屬性），包括工具列、導覽列、按鈕和滑杆。
 
-- 在**外觀靜態屬性上設定預設值**：每個控制項可自訂的屬性會透過 `Appearance` 靜態屬性公開。 您套用至這些屬性的任何自訂，都會當做在設定屬性之後所建立之該類型的任何控制項的預設值使用。
+- 在**外觀靜態屬性上設定預設值**–每個控制項的可自訂屬性會透過 `Appearance` 靜態屬性公開。 您套用至這些屬性的任何自訂，都會當做在設定屬性之後所建立之該類型的任何控制項的預設值使用。
 
 外觀範例應用程式會示範這三個方法，如下列螢幕擷取畫面所示：
 
 [![](introduction-to-the-appearance-api-images/appearance01-sml.png "The Appearance sample application demonstrates all three methods")](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 從 iOS 8，外觀 proxy 已擴充至 TraitCollections。
- `AppearanceForTraitCollection` 可以用來設定特定特性集合的預設面板。 您可以在分鏡腳本[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)指南中閱讀更多相關資訊。
+ `AppearanceForTraitCollection`可以用來設定特定特性集合的預設面板。 您可以在分鏡腳本[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)指南中閱讀更多相關資訊。
 
 ## <a name="setting-appearance-properties"></a>設定外觀屬性
 
@@ -54,7 +54,7 @@ UIProgressView.Appearance.ProgressTintColor = UIColor.Yellow;
 UIProgressView.Appearance.TrackTintColor = UIColor.Orange;
 ```
 
-在覆寫預設值和*外觀*靜態類別的 `ViewDidLoad` 方法中，綠色元素樣式的設定如下：
+在 `ViewDidLoad` 覆寫預設值和*外觀*靜態類別的方法中，綠色元素樣式的設定如下：
 
 ```csharp
 slider2.ThumbTintColor = UIColor.FromRGB (0,127,70); // dark green
@@ -69,15 +69,15 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 ## <a name="using-uiappearance-in-xamarinforms"></a>在 Xamarin 中使用 UIAppearance
 
-在 Xamarin. Forms 解決方案中設定[iOS 應用程式的樣式](~/xamarin-forms/platform/ios/formatting.md#uiappearance)時，外觀 API 會很有用。 `AppDelegate` 類別中有幾行可以協助執行特定的色彩配置，而不需要建立[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器。
+在 Xamarin. Forms 解決方案中設定[iOS 應用程式的樣式](~/xamarin-forms/platform/ios/formatting.md#uiappearance-api)時，外觀 API 會很有用。 類別中有幾行 `AppDelegate` 可以協助您執行特定的色彩配置，而不需要建立[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器。
 
 ### <a name="custom-themes-and-uiappearance"></a>自訂主題和 UIAppearance
 
-iOS 可讓使用者介面控制項的許多視覺化屬性「主題」使用*UIAppearance* api，以強制特定控制項的所有實例都具有相同的外觀。 這會公開為許多使用者介面控制項類別上的外觀屬性，而不是控制項的個別實例。 在 [靜態 `Appearance`] 屬性上設定顯示內容會影響應用程式中該類型的所有控制項。
+iOS 可讓使用者介面控制項的許多視覺化屬性「主題」使用*UIAppearance* api，以強制特定控制項的所有實例都具有相同的外觀。 這會公開為許多使用者介面控制項類別上的外觀屬性，而不是控制項的個別實例。 在靜態屬性上設定顯示內容 `Appearance` 會影響應用程式中該類型的所有控制項。
 
 若要進一步瞭解此概念，請考慮範例。
 
-若要將特定 `UISegmentedControl` 變更為具有洋紅色色調，我們會在 `ViewDidLoad`中參考畫面上的特定控制項，如下所示：
+若要將特定的 `UISegmentedControl` 設為具有洋紅色色調，我們會參考螢幕上的特定控制項，如下所示 `ViewDidLoad` ：
 
 ```csharp
 sg1.TintColor = UIColor.Magenta;
@@ -91,7 +91,7 @@ sg1.TintColor = UIColor.Magenta;
 
 [![](introduction-to-the-appearance-api-images/image53.png "Setting the individual control tint")](introduction-to-the-appearance-api-images/image53.png#lightbox)
 
-若要以這種方式設定許多控制項會完全沒有效率，我們可以改為在類別本身設定靜態 `Appearance` 屬性。 這會顯示在下列程式碼中：
+若要以這種方式設定許多控制項，會完全沒有效率，因此我們可以改為在 `Appearance` 類別本身設定靜態屬性。 這會顯示在下列程式碼中：
 
 ```csharp
 UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
@@ -101,7 +101,7 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 [![](introduction-to-the-appearance-api-images/image54.png "Setting the Appearance control tint")](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
-`Appearance` 屬性應該在應用程式生命週期的早期設定，例如在 AppDelegate 的 `FinishedLaunching` 事件中，或在顯示受影響控制項之前的 ViewController 中。
+`Appearance`屬性應該在應用程式生命週期的早期設定，例如在 AppDelegate 的 `FinishedLaunching` 事件中，或在顯示受影響控制項之前的 ViewController 中。
 
 如需詳細資訊，請參閱[外觀 API 簡介](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)。
 
@@ -109,4 +109,4 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 - [外觀（範例）](https://docs.microsoft.com/samples/xamarin/ios-samples/appearance)
 - [UIAppearance 通訊協定參考](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
-- [Xamarin 中的外觀](~/xamarin-forms/platform/ios/formatting.md#uiappearance)
+- [Xamarin 中的外觀](~/xamarin-forms/platform/ios/formatting.md#uiappearance-api)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 943148a642a1dec7e84f74ae96983c21f30319ab
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139265"
+標題：「設定管理」描述：「本章說明 eShopOnContainers 行動應用程式如何實行設定管理，以提供應用程式設定和使用者設定。」
+assetid： 50d6e780-e768-47f8-9361-3af11e56b87b ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="configuration-management"></a>組態管理
 
 設定可讓您從程式碼中區隔的資料，來設定應用程式的行為，以在不重建應用程式的情況下變更行為。 設定有兩種類型： [應用程式設定] 和 [使用者設定]。
@@ -25,7 +11,7 @@ ms.locfileid: "84139265"
 
 使用者設定是應用程式的可自訂設定，會影響應用程式的行為，而不需要經常重新調整。 例如，應用程式可能會讓使用者指定要從何處取得資料，以及如何在螢幕上顯示資料。
 
-Xamarin.Forms包含可用於儲存設定資料的持續性字典。 這個字典可以使用屬性來存取 [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) ，而放入其中的任何資料都會在應用程式進入睡眠狀態時儲存，並在應用程式繼續或重新開機時還原。 此外， [`Application`](xref:Xamarin.Forms.Application) 類別也有一 [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) 種方法，可讓應用程式在需要時儲存其設定。 如需此字典的詳細資訊，請參閱[屬性字典](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary)。
+Xamarin.Forms包含可用於儲存設定資料的持續性字典。 這個字典可以使用屬性來存取 [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) ，而放入其中的任何資料都會在應用程式進入睡眠狀態時儲存，並在應用程式繼續或重新開機時還原。 此外， [`Application`](xref:Xamarin.Forms.Application) 類別也有一 [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) 種方法，可讓應用程式在需要時儲存其設定。 如需此字典的詳細資訊，請參閱[屬性字典](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)。
 
 使用持續性字典來儲存資料的缺點 Xamarin.Forms 是，資料不容易系結至。 因此，eShopOnContainers 行動應用程式會使用[NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/)的 [設定] 程式庫。 此程式庫提供一致、型別安全、跨平臺的方式來保存和取得應用程式和使用者設定，同時使用每個平臺提供的原生設定管理。 此外，您也可以直接使用資料系結來存取程式庫所公開的設定資料。
 
@@ -128,7 +114,7 @@ public class GlobalSetting
 
 **圖 7-1**： eShopOnContainers 行動應用程式所公開的使用者設定
 
-資料系結可用於抓取和設定類別所公開的設定 `Settings` 。 這是由 view 系結上的控制項所達成，以查看模型屬性（後者會接著存取類別中的屬性 `Settings` ），並在設定值變更時引發屬性變更通知。 如需 eShopOnContainers 行動應用程式如何建立視圖模型並將其與視圖產生關聯的詳細資訊，請參閱[使用視圖模型定位器自動建立視圖模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
+資料系結可用於抓取和設定類別所公開的設定 `Settings` 。 這是由 view 系結上的控制項所達成，以查看模型屬性（後者會接著存取類別中的屬性 `Settings` ），並在設定值變更時引發屬性變更通知。 如需 eShopOnContainers 行動應用程式如何建立視圖模型並將其與視圖產生關聯的詳細資訊，請參閱[使用視圖模型定位器自動建立視圖模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)。
 
 下列程式碼範例顯示的 [`Entry`](xref:Xamarin.Forms.Entry) 控制項，可 `SettingsView` 讓使用者輸入容器化微服務的基底端點 URL：
 
@@ -178,11 +164,11 @@ public override Task InitializeAsync(object navigationData)
 }
 ```
 
-方法會將 `Endpoint` 屬性設定為 `UrlBase` 類別中的屬性值 `Settings` 。 存取 `UrlBase` 屬性會使 [，設定程式庫] 從平臺特定的儲存區抓取設定值。 如需如何叫用方法的詳細資訊 `InitializeAsync` ，請參閱[導覽期間傳遞參數](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)。
+方法會將 `Endpoint` 屬性設定為 `UrlBase` 類別中的屬性值 `Settings` 。 存取 `UrlBase` 屬性會使 [，設定程式庫] 從平臺特定的儲存區抓取設定值。 如需如何叫用方法的詳細資訊 `InitializeAsync` ，請參閱[導覽期間傳遞參數](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)。
 
 此機制可確保每當使用者流覽至 SettingsView 時，就會從平臺特定的儲存體抓取使用者設定，並透過資料系結來呈現。 然後，如果使用者變更設定值，資料系結可確保它們會立即保存回平臺特定的儲存體。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 設定可讓您從程式碼中區隔的資料，來設定應用程式的行為，以在不重建應用程式的情況下變更行為。 應用程式設定是應用程式所建立及管理的資料，而使用者設定則是應用程式的可自訂設定，會影響應用程式的行為，而不需要經常重新調整。
 

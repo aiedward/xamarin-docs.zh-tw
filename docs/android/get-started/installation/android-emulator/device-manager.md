@@ -9,16 +9,16 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 64e637648b03dff81468f2d7ad072c7acc50868b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: fd1361f00bf10089f7a9dead5a5adaa1e7c29727
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021160"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571580"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>使用 Android Device Manager 管理虛擬裝置
 
-_本文介紹如何使用 Android 設備管理器創建和配置類比物理 Android 設備的 Android 虛擬裝置 (AvD)。您可以使用這些虛擬設備來運行和測試應用,而無需依賴物理設備。_
+_本文說明如何使用 Android Device Manager 來建立和設定可模擬實體 Android 裝置的 Android 虛擬裝置（Avd）。您可以使用這些虛擬裝置來執行和測試應用程式，而不需要依賴實體裝置。_
 
 當您確認已啟用硬體加速之後 (如[硬體加速以提升模擬器效能](~/android/get-started/installation/android-emulator/hardware-acceleration.md)中所述)，下一個步驟是使用 _Android Device Manager_ (另請參閱 _Xamarin Android Device Manager_) 建立可用於測試和偵錯應用程式的虛擬裝置。
 
@@ -28,12 +28,12 @@ _本文介紹如何使用 Android 設備管理器創建和配置類比物理 And
 
 本指南會說明如何使用 Android Device Manager 建立、複製、自訂和啟動 Android 虛擬裝置。
 
-[![裝置「選項卡中 Android 裝置管理員的螢幕截圖](device-manager-images/win/01-devices-dialog-sml.png)](device-manager-images/win/01-devices-dialog.png#lightbox)
+[![[裝置] 索引標籤中 Android Device Manager 的螢幕擷取畫面](device-manager-images/win/01-devices-dialog-sml.png)](device-manager-images/win/01-devices-dialog.png#lightbox)
 
 您會使用 Android Device Manager，來建立和設定在 [Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) 中執行的 _Android 虛擬裝置_ (AVD)。
 每個 AVD 都是可模擬實體 Android 裝置的模擬器組態。 這讓您能夠在模擬不同實體 Android 裝置的各種組態中，執行並測試應用程式。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 若要使用 Android Device Manager，您需要下列項目：
 
@@ -47,20 +47,20 @@ _本文介紹如何使用 Android 設備管理器創建和配置類比物理 And
   確定會將 Android SDK 安裝於其預設位置 (若尚未安裝)：**C:\\Program Files (x86)\\Android\\android-sdk**。
 
 - 必須安裝下列套件 (透過 [Android SDK 管理員](~/android/get-started/installation/android-sdk.md))： 
-  - **Android SDK 工具版本 26.1.1**或更高版本
+  - **Android SDK Tools 26.1.1 版**或更新版本
   - **Android SDK 平台工具 27.0.1** 或更新版本
   - **Android SDK 建置工具 27.0.3** 或更新版本 
   - **Android Emulator 27.2.7** 或更新版本。 
 
   這些套件應該會以 [已安裝]**** 狀態顯示，如下列螢幕擷取畫面所示：
 
-  [![安裝 Android SDK 工具](device-manager-images/win/02-sdk-tools-sml.png)](device-manager-images/win/02-sdk-tools.png#lightbox)
+  [![安裝 Android SDK Tools](device-manager-images/win/02-sdk-tools-sml.png)](device-manager-images/win/02-sdk-tools.png#lightbox)
 
 ## <a name="launching-the-device-manager"></a>啟動裝置管理員
 
 按一下 [工具] > [Android] > [Android Device Manager]****，從 [工具]**** 功能表啟動 Android Device Manager：
 
-[![從「工具」選單啟動裝置管理員](device-manager-images/win/03-tools-menu-sml.png)](device-manager-images/win/03-tools-menu.png#lightbox)
+[![從 [工具] 功能表啟動 [裝置管理員]](device-manager-images/win/03-tools-menu-sml.png)](device-manager-images/win/03-tools-menu.png#lightbox)
 
 如果啟動時出現下列錯誤對話方塊，請參閱[疑難排解](#troubleshooting)一節來取得因應措施的指示：
 
@@ -70,44 +70,44 @@ _本文介紹如何使用 Android 設備管理器創建和配置類比物理 And
 
 當您第一次啟動 Android 裝置管理員時，它所呈現的畫面會顯示所有目前設定的虛擬裝置。 針對每部虛擬裝置，都會顯示**名稱**、**OS** (Android 版本)、**處理器**、**記憶體**大小及螢幕**解析度**：
 
-[![安裝裝置及其參數清單](device-manager-images/win/05-installed-list-sml.png)](device-manager-images/win/05-installed-list.png#lightbox)
+[![已安裝的裝置及其參數的清單](device-manager-images/win/05-installed-list-sml.png)](device-manager-images/win/05-installed-list.png#lightbox)
 
 當您選取清單中的裝置時，會在右邊出現 [啟動]**** 按鈕。 您可以按一下 [啟動]**** 按鈕，使用此虛擬裝置來啟動模擬器：
 
-[![裝置映像的啟動按鈕](device-manager-images/win/06-start-button-sml.png)](device-manager-images/win/06-start-button.png#lightbox)
+[![裝置影像的 [開始] 按鈕](device-manager-images/win/06-start-button-sml.png)](device-manager-images/win/06-start-button.png#lightbox)
 
 當模擬器使用所選取的虛擬裝置啟動之後，[啟動]**** 按鈕就會變成 [停止]**** 按鈕，讓您可用來暫止模擬器：
 
-[![執行裝置的停止按鈕](device-manager-images/win/07-stop-button-sml.png)](device-manager-images/win/07-stop-button.png#lightbox)
+[![執行中裝置的 [停止] 按鈕](device-manager-images/win/07-stop-button-sml.png)](device-manager-images/win/07-stop-button.png#lightbox)
 
 ### <a name="new-device"></a>新裝置
 
 若要建立新裝置，按一下 [新增]**** 按鈕 (位於畫面的右上方區域)：
 
-[![建立新裝置的新按鈕](device-manager-images/win/08-new-button-sml.png)](device-manager-images/win/08-new-button.png#lightbox)
+[![建立新裝置的 [新增] 按鈕](device-manager-images/win/08-new-button-sml.png)](device-manager-images/win/08-new-button.png#lightbox)
 
 按一下 [新增]**** 會啟動 [新裝置]**** 畫面：
 
-[![裝置管理員的新裝置螢幕](device-manager-images/win/09-new-device-editor-sml.png)](device-manager-images/win/09-new-device-editor.png#lightbox)
+[![Device Manager 的 [新增裝置] 畫面](device-manager-images/win/09-new-device-editor-sml.png)](device-manager-images/win/09-new-device-editor.png#lightbox)
 
 若要在 [新裝置]**** 畫面中設定新裝置，請使用下列步驟：
 
 1. 指定裝置的新名稱。 在下列範例中，會將新裝置命名為 **Pixel_API_27**：
 
-   [![具新裝置](device-manager-images/win/10-device-name-sml.png)](device-manager-images/win/10-device-name.png#lightbox)
+   [![為新裝置命名](device-manager-images/win/10-device-name-sml.png)](device-manager-images/win/10-device-name.png#lightbox)
 
 2. 按一下 [基底裝置]**** 下拉式功能表來選取要模擬的實體裝置：
 
-   [![選擇要模擬的實體裝置](device-manager-images/win/11-device-menu-sml.png)](device-manager-images/win/11-device-menu.png#lightbox)
+   [![選取要模擬的實體裝置](device-manager-images/win/11-device-menu-sml.png)](device-manager-images/win/11-device-menu.png#lightbox)
 
 3. 按一下 [處理器]**** 下拉式功能表來選取此虛擬裝置的處理器類型。 選取 **x86** 會提供最佳效能，因為該選項可讓模擬器利用[硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)功能。
    **x86_64** 選項也會使用硬體加速功能，但執行速度比 **x86** 稍微慢一點 (**x86_64** 通常用於測試 64 位元應用程式)：
 
-   [![選擇處理器類型](device-manager-images/win/12-processor-type-menu-sml.png)](device-manager-images/win/12-processor-type-menu.png#lightbox)
+   [![選取處理器類型](device-manager-images/win/12-processor-type-menu-sml.png)](device-manager-images/win/12-processor-type-menu.png#lightbox)
 
 4. 按一下 [OS]**** 下拉式功能表來選取 Android 版本 (API 層級)。 例如，選取 **Oreo 8.1 - API 27** 以建立適用於 API 層級 27 的虛擬裝置：
 
-   [![選擇 Android 版本](device-manager-images/win/13-android-version-w158-sml.png)](device-manager-images/win/13-android-version-w158.png#lightbox)
+   [![選取 Android 版本](device-manager-images/win/13-android-version-w158-sml.png)](device-manager-images/win/13-android-version-w158.png#lightbox)
 
    如果您選取尚未安裝的 Android API 層級，Device Manager 會在畫面底部顯示 [A new device image will be downloaded] \(即將下載新的裝置映像\)**** 訊息 &ndash; 它會在建立新的虛擬裝置時下載並安裝必要檔案：
 
@@ -115,7 +115,7 @@ _本文介紹如何使用 Android 設備管理器創建和配置類比物理 And
 
 5. 如果您想要在虛擬裝置中包含 Google Play Services API，請啟用 [Google API]**** 選項。 若要包含 Google Play 商店應用程式，請啟用 [Google Play 商店]**** 選項：
 
-   [![選擇谷歌播放服務和谷歌Play商店](device-manager-images/win/15-google-play-services-sml.png)](device-manager-images/win/15-google-play-services.png#lightbox)
+   [![選取 Google Play Services 和 Google Play 商店](device-manager-images/win/15-google-play-services-sml.png)](device-manager-images/win/15-google-play-services.png#lightbox)
 
    請注意，Google Play 商店影像僅適用於某些基底裝置類型，例如 Pixel、Pixel 2、Nexus 5 和 Nexus 5X。
 
@@ -123,7 +123,7 @@ _本文介紹如何使用 Android 設備管理器創建和配置類比物理 And
 
 7. 新增您需要明確設定的任何其他屬性。 [新裝置]**** 畫面只會列出最常修改的屬性，但您可以按一下 [新增屬性]**** 下拉式功能表 (位於底部) 來新增其他屬性：
 
-   [![新增屬性下拉選單](device-manager-images/win/16-add-property-menu-sml.png)](device-manager-images/win/16-add-property-menu.png#lightbox)
+   [![[新增屬性] 下拉式功能表](device-manager-images/win/16-add-property-menu-sml.png)](device-manager-images/win/16-add-property-menu.png#lightbox)
 
     您也可以選取屬性清單頂端的 [自訂...]**** 來定義自訂屬性。
 
@@ -131,27 +131,27 @@ _本文介紹如何使用 Android 設備管理器創建和配置類比物理 And
 
    [![建立按鈕](device-manager-images/win/17-create-button-sml.png)](device-manager-images/win/17-create-button.png#lightbox)
 
-9. 您可能會看見 [接受授權]**** 畫面。 如果您同意授權條款,請按下 **「接受**」:
+9. 您可能會看見 [接受授權]**** 畫面。 如果您同意授權條款，請按一下 [**接受**]：
 
-   [![許可證驗收螢幕](device-manager-images/win/18-license-acceptance-sml.png)](device-manager-images/win/18-license-acceptance.png#lightbox)
+   [![[接受授權] 畫面](device-manager-images/win/18-license-acceptance-sml.png)](device-manager-images/win/18-license-acceptance.png#lightbox)
 
 10. Android Device Manager 會將新裝置新增至已安裝的虛擬裝置清單中，並在建立裝置期間顯示 [正在建立]**** 進度列指示器：
 
-    [![建立進度指示器](device-manager-images/win/19-creating-the-device-sml.png)](device-manager-images/win/19-creating-the-device.png#lightbox)
+    [![建立進度列指示器](device-manager-images/win/19-creating-the-device-sml.png)](device-manager-images/win/19-creating-the-device.png#lightbox)
 
 11. 當建立程序完成時，即會在已安裝的虛擬裝置清單中顯示新裝置，並具有 [啟動]**** 按鈕，準備好可供啟動：
 
-    [![新增建立的裝置準備啟動](device-manager-images/win/20-created-device-sml.png)](device-manager-images/win/20-created-device.png#lightbox)
+    [![已準備好啟動新建立的裝置](device-manager-images/win/20-created-device-sml.png)](device-manager-images/win/20-created-device.png#lightbox)
 
 ### <a name="edit-device"></a>編輯裝置
 
 若要編輯現有的虛擬裝置，選取裝置，然後按一下 [編輯]**** 按鈕 (位於畫面右上角)：
 
-[![變更裝置的編輯按鈕](device-manager-images/win/21-edit-button-sml.png)](device-manager-images/win/21-edit-button.png#lightbox)
+[![修改裝置的 [編輯] 按鈕](device-manager-images/win/21-edit-button-sml.png)](device-manager-images/win/21-edit-button.png#lightbox)
 
 按一下 [編輯]****，會啟動適用於所選取虛擬裝置的裝置編輯器：
 
-[![裝置編輯器螢幕](device-manager-images/win/22-device-editor-sml.png)](device-manager-images/win/22-device-editor.png#lightbox)
+[![[裝置編輯器] 畫面](device-manager-images/win/22-device-editor-sml.png)](device-manager-images/win/22-device-editor.png#lightbox)
 
 [裝置編輯器]**** 畫面會在 [屬性]**** 欄下方列出虛擬裝置的屬性，其中包含 [值]**** 欄中每個屬性的對應值。 當您選取屬性時，該屬性的詳細描述就會顯示在右邊。
 
@@ -165,21 +165,21 @@ _本文介紹如何使用 Android 設備管理器創建和配置類比物理 And
 
 ### <a name="additional-options"></a>其他選項
 
-使用裝置的其他選項可從右上角的附加**Additional Options**選項&hellip;( ) 下拉選單取得:
+使用裝置的其他選項可從右上角的 [**其他選項**] （ &hellip; ）下拉式功能表中取得：
 
-[![其他選項選單的位置](device-manager-images/win/24-overflow-menu-sml.png)](device-manager-images/win/24-overflow-menu.png#lightbox)
+[![[其他選項] 功能表的位置](device-manager-images/win/24-overflow-menu-sml.png)](device-manager-images/win/24-overflow-menu.png#lightbox)
 
 [其他選項] 功能表包含下列項目：
 
 - **複製和編輯** &ndash; 複製目前選取的裝置，並使用不同的唯一名稱，在 [新裝置]**** 畫面中開啟它。 例如，選取 **Pixel_API_27** 並按一下 [複製和編輯]****，會將計數器附加到名稱：
 
-  [![複製並編輯螢幕](device-manager-images/win/25-dupe-and-edit-sml.png)](device-manager-images/win/25-dupe-and-edit.png#lightbox)
+  [![複製和編輯畫面](device-manager-images/win/25-dupe-and-edit-sml.png)](device-manager-images/win/25-dupe-and-edit.png#lightbox)
 
 - **在檔案總管中顯示** &ndash; 在保存適用於虛擬裝置之檔案的資料夾中開啟 [Windows 檔案總管] 視窗。 例如，選取 **Pixel_API_27** 並按一下 [在檔案總管中顯示]****，會開啟類似下列範例的視窗：
 
-  [![點選資源管理員中顯示結果](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
+  [![按一下 [在 Explorer 中顯示] 的結果](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
 
-- **重設為原廠設定** &ndash; 當裝置正在執行時，將選取的裝置重設為其預設設定，清除對其內部狀態所做的任何使用者變更 (這也會清除目前的[快速開機](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)快照集，如果有的話)。 這項變更不會改變您在建立和編輯期間對虛擬裝置所做的修改。 隨即會出現一個對話方塊，提醒您此重設是無法復原的。 按下 **「出廠重置**」以確認重置:
+- **重設為原廠設定** &ndash; 當裝置正在執行時，將選取的裝置重設為其預設設定，清除對其內部狀態所做的任何使用者變更 (這也會清除目前的[快速開機](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)快照集，如果有的話)。 這項變更不會改變您在建立和編輯期間對虛擬裝置所做的修改。 隨即會出現一個對話方塊，提醒您此重設是無法復原的。 按一下 [**恢復出廠**預設值] 以確認重設：
 
   ![恢復出廠預設值對話方塊](device-manager-images/win/27-factory-reset.png)
 
@@ -194,7 +194,7 @@ _本文介紹如何使用 Android 設備管理器創建和配置類比物理 And
 
 本指南會說明如何使用 Android Device Manager 建立、複製、自訂和啟動 Android 虛擬裝置。
 
-[![裝置「選項卡中 Android 裝置管理員的螢幕截圖](device-manager-images/mac/01-devices-dialog-sml.png)](device-manager-images/mac/01-devices-dialog.png#lightbox)
+[![[裝置] 索引標籤中 Android Device Manager 的螢幕擷取畫面](device-manager-images/mac/01-devices-dialog-sml.png)](device-manager-images/mac/01-devices-dialog.png#lightbox)
 
 > [!NOTE]
 > 本指南僅適用於 Visual Studio for Mac。
@@ -203,7 +203,7 @@ Xamarin Studio 與 Android Device Manager 不相容。
 您會使用 Android Device Manager，來建立和設定在 [Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) 中執行的 *Android 虛擬裝置* (AVD)。
 每個 AVD 都是可模擬實體 Android 裝置的模擬器組態。 這讓您能夠在模擬不同實體 Android 裝置的各種組態中，執行並測試應用程式。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 若要使用 Android Device Manager，您需要下列項目：
 
@@ -218,13 +218,13 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
   這些套件應該會以 [已安裝]**** 狀態顯示，如下列螢幕擷取畫面所示：
 
-  [![安裝 Android SDK 工具](device-manager-images/mac/02-sdk-tools-sml.png)](device-manager-images/mac/02-sdk-tools.png#lightbox)
+  [![安裝 Android SDK Tools](device-manager-images/mac/02-sdk-tools-sml.png)](device-manager-images/mac/02-sdk-tools.png#lightbox)
 
 ## <a name="launching-the-device-manager"></a>啟動裝置管理員
 
 按一下 [工具] > [Device Manager]**** 啟動 Android Device Manager：
 
-[![從「工具」選單啟動裝置管理員](device-manager-images/mac/03-tools-menu-sml.png)](device-manager-images/mac/03-tools-menu.png#lightbox)
+[![從 [工具] 功能表啟動 [裝置管理員]](device-manager-images/mac/03-tools-menu-sml.png)](device-manager-images/mac/03-tools-menu.png#lightbox)
 
 如果啟動時出現下列錯誤對話方塊，請參閱[疑難排解](#troubleshooting)一節來取得因應措施的指示：
 
@@ -234,15 +234,15 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 當您第一次啟動 Android 裝置管理員時，它所呈現的畫面會顯示所有目前設定的虛擬裝置。 針對每部虛擬裝置，都會顯示**名稱**、**OS** (Android 版本)、**處理器**、**記憶體**大小及螢幕**解析度**：
 
-[![安裝裝置及其參數清單](device-manager-images/mac/05-devices-list-sml.png)](device-manager-images/mac/05-devices-list.png#lightbox)
+[![已安裝的裝置及其參數的清單](device-manager-images/mac/05-devices-list-sml.png)](device-manager-images/mac/05-devices-list.png#lightbox)
 
 當您選取清單中的裝置時，會在右邊出現 [播放]**** 按鈕。 您可以按一下 [播放]**** 按鈕，使用此虛擬裝置來啟動模擬器：
 
-[![播放裝置映像按鈕](device-manager-images/mac/06-start-button-sml.png)](device-manager-images/mac/06-start-button.png#lightbox)
+[![裝置影像的 [播放] 按鈕](device-manager-images/mac/06-start-button-sml.png)](device-manager-images/mac/06-start-button.png#lightbox)
 
 當模擬器使用所選取的虛擬裝置啟動之後，[播放]**** 按鈕就會變成 [停止]**** 按鈕，讓您可用來暫止模擬器：
 
-[![執行裝置的停止按鈕](device-manager-images/mac/07-stop-button-sml.png)](device-manager-images/mac/07-stop-button.png#lightbox)
+[![執行中裝置的 [停止] 按鈕](device-manager-images/mac/07-stop-button-sml.png)](device-manager-images/mac/07-stop-button.png#lightbox)
 
 當您停止模擬器時，您可能會收到提示，詢問您是否要儲存目前狀態以供下次快速開機使用：
 
@@ -254,30 +254,30 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 若要建立新的裝置，請按一下 [新增裝置]**** 按鈕 (位於畫面的左上方區域)：
 
-[![建立新裝置的新按鈕](device-manager-images/mac/09-new-button-sml.png)](device-manager-images/mac/09-new-button.png#lightbox)
+[![建立新裝置的 [新增] 按鈕](device-manager-images/mac/09-new-button-sml.png)](device-manager-images/mac/09-new-button.png#lightbox)
 
 按一下 [新裝置]**** 會啟動 [新裝置]**** 畫面：
 
-[![裝置管理員的新裝置螢幕](device-manager-images/mac/10-new-device-editor-sml.png)](device-manager-images/mac/10-new-device-editor.png#lightbox)
+[![Device Manager 的 [新增裝置] 畫面](device-manager-images/mac/10-new-device-editor-sml.png)](device-manager-images/mac/10-new-device-editor.png#lightbox)
 
 使用下列步驟，在 [新裝置]**** 畫面中設定新裝置：
 
 1. 指定裝置的新名稱。 在下列範例中，會將新裝置命名為 **Pixel_API_27**：
 
-   [![具新裝置](device-manager-images/mac/11-device-name-m76-sml.png)](device-manager-images/mac/11-device-name-m76.png#lightbox)
+   [![為新裝置命名](device-manager-images/mac/11-device-name-m76-sml.png)](device-manager-images/mac/11-device-name-m76.png#lightbox)
 
 2. 按一下 [基底裝置]**** 下拉式功能表來選取要模擬的實體裝置：
 
-   [![選擇要模擬的實體裝置](device-manager-images/mac/12-device-menu-m76-sml.png)](device-manager-images/mac/12-device-menu-m76.png#lightbox)
+   [![選取要模擬的實體裝置](device-manager-images/mac/12-device-menu-m76-sml.png)](device-manager-images/mac/12-device-menu-m76.png#lightbox)
 
 3. 按一下 [處理器]**** 下拉式功能表來選取此虛擬裝置的處理器類型。 選取 **x86** 會提供最佳效能，因為該選項可讓模擬器利用[硬體加速](~/android/get-started/installation/android-emulator/hardware-acceleration.md)功能。
    **x86_64** 選項也會使用硬體加速功能，但執行速度比 **x86** 稍微慢一點 (**x86_64** 通常用於測試 64 位元應用程式)：
 
-   [![選擇處理器類型](device-manager-images/mac/13-processor-type-menu-m76-sml.png)](device-manager-images/mac/13-processor-type-menu-m76.png#lightbox)
+   [![選取處理器類型](device-manager-images/mac/13-processor-type-menu-m76-sml.png)](device-manager-images/mac/13-processor-type-menu-m76.png#lightbox)
 
 4. 按一下 [OS]**** 下拉式功能表來選取 Android 版本 (API 層級)。 例如，選取 **Oreo 8.1 - API 27** 以建立適用於 API 層級 27 的虛擬裝置：
 
-   [![選擇 Android 版本](device-manager-images/mac/14-android-screenshot-m76-sml.png)](device-manager-images/mac/14-android-screenshot-m76.png#lightbox)
+   [![選取 Android 版本](device-manager-images/mac/14-android-screenshot-m76-sml.png)](device-manager-images/mac/14-android-screenshot-m76.png#lightbox)
 
    如果您選取尚未安裝的 Android API 層級，Device Manager 會在畫面底部顯示 [A new device image will be downloaded] \(即將下載新的裝置映像\)**** 訊息 &ndash; 它會在建立新的虛擬裝置時下載並安裝必要檔案：
 
@@ -285,7 +285,7 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 5. 如果您想要在虛擬裝置中包含 Google Play Services API，請啟用 [Google API]**** 選項。 若要包含 Google Play 商店應用程式，請啟用 [Google Play 商店]**** 選項：
 
-   [![選擇谷歌播放服務和谷歌Play商店](device-manager-images/mac/16-google-play-services-m76-sml.png)](device-manager-images/mac/16-google-play-services-m76.png#lightbox)
+   [![選取 Google Play Services 和 Google Play 商店](device-manager-images/mac/16-google-play-services-m76-sml.png)](device-manager-images/mac/16-google-play-services-m76.png#lightbox)
 
    請注意，Google Play 商店影像僅適用於某些基底裝置類型，例如 Pixel、Pixel 2、Nexus 5 和 Nexus 5X。
 
@@ -293,7 +293,7 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 7. 新增您需要明確設定的任何其他屬性。 [新裝置]**** 畫面只會列出最常修改的屬性，但您可以按一下 [新增屬性]**** 下拉式功能表 (位於底部) 來新增其他屬性：
 
-   [![新增屬性下拉選單](device-manager-images/mac/17-add-property-menu-m76-sml.png)](device-manager-images/mac/17-add-property-menu-m76.png#lightbox)
+   [![[新增屬性] 下拉式功能表](device-manager-images/mac/17-add-property-menu-m76-sml.png)](device-manager-images/mac/17-add-property-menu-m76.png#lightbox)
 
    您也可以按一下此屬性清單頂端的 [自訂...]**** 來定義自訂屬性。
 
@@ -303,21 +303,21 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 9. Android Device Manager 會將新裝置新增至已安裝的虛擬裝置清單中，並在建立裝置期間顯示 [正在建立]**** 進度列指示器：
 
-   [![建立進度指示器](device-manager-images/mac/19-creating-the-device-m76-sml.png)](device-manager-images/mac/19-creating-the-device-m76.png#lightbox)
+   [![建立進度列指示器](device-manager-images/mac/19-creating-the-device-m76-sml.png)](device-manager-images/mac/19-creating-the-device-m76.png#lightbox)
 
 10. 當建立程序完成時，即會在已安裝的虛擬裝置清單中顯示新裝置，並具有 [啟動]**** 按鈕，準備好可供啟動：
 
-    [![新增建立的裝置準備啟動](device-manager-images/mac/20-created-device-m76-sml.png)](device-manager-images/mac/20-created-device-m76.png#lightbox)
+    [![已準備好啟動新建立的裝置](device-manager-images/mac/20-created-device-m76-sml.png)](device-manager-images/mac/20-created-device-m76.png#lightbox)
 
 ### <a name="edit-device"></a>編輯裝置
 
 若要編輯現有的虛擬裝置，選取 [其他選項]**** 下拉式功能表 (齒輪圖示)，然後選取 [編輯]****：
 
-[![編輯選單選擇以變更新裝置](device-manager-images/mac/21-edit-button-m76-sml.png)](device-manager-images/mac/21-edit-button-m76.png#lightbox)
+[![編輯功能表選取以修改新裝置](device-manager-images/mac/21-edit-button-m76-sml.png)](device-manager-images/mac/21-edit-button-m76.png#lightbox)
 
 按一下 [編輯]****，會啟動適用於所選取虛擬裝置的裝置編輯器：
 
-[![裝置編輯器螢幕](device-manager-images/mac/22-device-editor-sml.png)](device-manager-images/mac/22-device-editor.png#lightbox)
+[![[裝置編輯器] 畫面](device-manager-images/mac/22-device-editor-sml.png)](device-manager-images/mac/22-device-editor.png#lightbox)
 
 [裝置編輯器]**** 畫面會在 [屬性]**** 欄下方列出虛擬裝置的屬性，其中包含 [值]**** 欄中每個屬性的對應值。 當您選取屬性時，該屬性的詳細描述就會顯示在右邊。
 
@@ -333,7 +333,7 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 搭配裝置運作的其他選項都可從位於 [播放]**** 按鈕左邊的下拉式功能表中取得：
 
-[![其他選項選單的位置](device-manager-images/mac/24-overflow-menu-sml.png)](device-manager-images/mac/24-overflow-menu.png#lightbox)
+[![[其他選項] 功能表的位置](device-manager-images/mac/24-overflow-menu-sml.png)](device-manager-images/mac/24-overflow-menu.png#lightbox)
 
 [其他選項] 功能表包含下列項目：
 
@@ -341,11 +341,11 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 - **複製和編輯** &ndash; 複製目前選取的裝置，並使用不同的唯一名稱，在 [新裝置]**** 畫面中開啟它。 例如，選取 **Pixel 2 API 28** 並按一下 [複製和編輯]****，會將計數器附加到名稱：
 
-  [![複製並編輯螢幕](device-manager-images/mac/25-dupe-and-edit-sml.png)](device-manager-images/mac/25-dupe-and-edit.png#lightbox)
+  [![複製和編輯畫面](device-manager-images/mac/25-dupe-and-edit-sml.png)](device-manager-images/mac/25-dupe-and-edit.png#lightbox)
 
 - **在 Finder 中顯示** &ndash; 在保存適用於虛擬裝置之檔案的資料夾中開啟 macOS Finder 視窗。 例如，選取 **Pixel 2 API 28** 並按一下 [在 Finder 中顯示]****，會開啟類似下列範例的視窗：
 
-  [![點選「尋找器中顯示」的結果](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
+  [![按一下 [在 Finder 中顯示] 的結果](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
 
 - **重設為原廠設定** &ndash; 當裝置正在執行時，將選取的裝置重設為其預設設定，清除對其內部狀態所做的任何使用者變更 (這也會清除目前的[快速開機](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)快照集，如果有的話)。 這項變更不會改變您在建立和編輯期間對虛擬裝置所做的修改。 隨即會出現一個對話方塊，提醒您此重設是無法復原的。 按一下 [恢復出廠預設值]**** 以確認重設。
 
@@ -357,7 +357,7 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 -----
 
-<a name="troubleshooting" />
+<a name="troubleshooting"></a>
 
 ## <a name="troubleshooting"></a>疑難排解
 
@@ -371,7 +371,7 @@ Xamarin Studio 與 Android Device Manager 不相容。
 
 Android SDK 通常會安裝於下列位置：
 
-**C:\\程式檔案 (x86)\\安卓\\機器人-sdk**
+**C： \\ Program Files （x86） \\ android \\ android-sdk**
 
 如果 SDK 不是安裝在此位置，您在啟動 Android Device Manager 時可能會收到這個錯誤：
 
@@ -385,7 +385,7 @@ Android SDK 通常會安裝於下列位置：
 
 2. 按兩下以開啟其中一個記錄檔，並找出 **Config file path**。 例如：
 
-   [![在紀錄檔中設定檔案路徑](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
+   [![記錄檔中的設定檔案路徑](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
 3. 瀏覽至此位置，然後按兩下 **user.config** 加以開啟。
 
@@ -457,7 +457,7 @@ Android SDK 通常會安裝於下列位置：
 
 4. 刪除 **snapshot.pb** 檔案：
 
-   [![快照.pb 檔案的位置](device-manager-images/mac/30-delete-snapshot-sml.png)](device-manager-images/mac/30-delete-snapshot.png#lightbox)
+   [![快照集 pb 檔案的位置](device-manager-images/mac/30-delete-snapshot-sml.png)](device-manager-images/mac/30-delete-snapshot.png#lightbox)
 
 5. 重新啟動 AVD。
 

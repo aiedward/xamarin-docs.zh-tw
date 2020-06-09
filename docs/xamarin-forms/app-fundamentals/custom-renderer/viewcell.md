@@ -1,9 +1,6 @@
 ---
-title：描述： ' A Xamarin.Forms ViewCell 是可以加入至 ListView 或 TableView 的資料格，其中包含開發人員定義的視圖。 本文示範如何為裝載于 ListView 控制項內的 ViewCell 建立自訂轉譯器 Xamarin.Forms 。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： "自訂 ViewCell" 描述： " Xamarin.Forms ViewCell 是可新增至 ListView 或 TableView 的資料格，其中包含開發人員定義的視圖。 本文示範如何為裝載于 ListView 控制項內的 ViewCell 建立自訂轉譯器 Xamarin.Forms 。
+assetid： 61F378C9-6DEF-436B-ACC3-2324B25D404E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/07/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
@@ -20,13 +17,11 @@ _Xamarin.FormsViewCell 是可以加入至 ListView 或 TableView 的資料格，
 
 您可以 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 在每個平臺上建立的自訂轉譯器，利用呈現程式來執行平臺特定的自訂。 執行這項作業的流程如下：
 
-1. [建立](#Creating_the_Custom_Cell) Xamarin.Forms 自訂資料格。
-1. 從[使用](#Consuming_the_Custom_Cell)自訂資料格 Xamarin.Forms 。
-1. 在每個平台上[建立](#Creating_the_Custom_Renderer_on_each_Platform)資料格的自訂轉譯器。
+1. [建立](#creating-the-custom-cell) Xamarin.Forms 自訂資料格。
+1. 從[使用](#consuming-the-custom-cell)自訂資料格 Xamarin.Forms 。
+1. 在每個平台上[建立](#creating-the-custom-renderer-on-each-platform)資料格的自訂轉譯器。
 
 現在會逐一討論每個專案，以執行轉譯器 `NativeCell` ，針對控制項內裝載的每個資料格，利用平臺特定的版面配置 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 。 這會停止在 Xamarin.Forms 滾動期間重複呼叫版面配置計算 `ListView` 。
-
-<a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>建立自訂資料格
 
@@ -62,8 +57,6 @@ public class NativeCell : ViewCell
 ```
 
 在 .NET Standard 程式庫專案中建立的 `NativeCell` 類別，會為自訂資料格定義 API。 自訂資料格會公開可透過資料繫結顯示的 `Name`、`Category` 和 `ImageFilename` 屬性。 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
-
-<a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>使用自訂的資料格
 
@@ -143,8 +136,6 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 控制項是用來顯示
 清單中的每個資料列都包含三個資料項目 – 名稱、類別和影像檔案名稱。 清單中每個資料列的配置都是透過可系結屬性所參考的來定義 `DataTemplate` [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 。 `DataTemplate` 將清單中的每個資料列定義為 `NativeCell`，透過資料繫結顯示其 `Name`、`Category` 和 `ImageFilename` 屬性。 如需 `ListView` 控制項的詳細資訊，請參閱 [ListView](~/xamarin-forms/user-interface/listview/index.md)。
 
 自訂轉譯器現在可以新增至每個應用程式專案，為每個資料格自訂平台特定的配置。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>在每個平台上建立自訂轉譯器
 
@@ -562,7 +553,7 @@ namespace CustomRenderer.UWP
 
 `DataTemplate` 指定顯示資料格內容及其配置和外觀所用的控制項。 透過資料繫結使用兩個 `TextBlock` 控制項和一個 `Image` 控制項來顯示資料格的內容。 此外，使用 `ConcatImageExtensionConverter` 的執行個體將 `.jpg` 副檔名串連到每個影像檔案名稱。 這可確保 `Image` 控制項在設定了 `Source` 屬性後，可以載入及轉譯影像。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何為裝載于控制項內的建立自訂轉譯器 [`ViewCell`](xref:Xamarin.Forms.ViewCell) Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 。 這會停止在 Xamarin.Forms 滾動期間重複呼叫版面配置計算 `ListView` 。
 

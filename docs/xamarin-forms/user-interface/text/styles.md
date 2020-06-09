@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms文字樣式
-description: 本文說明如何在應用程式中設定文字的樣式 Xamarin.Forms 。 樣式可以定義一次，並供許多視圖使用，但樣式只能搭配一種類型的視圖使用。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 79a86fd7a2c0f5b82ca4b3e22b3ecedf42c5a0ba
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136145"
+title： " Xamarin.Forms 文字樣式" 描述： "本文說明如何設定應用程式中文字的樣式 Xamarin.Forms 。 樣式可以定義一次，並供許多視圖使用，但樣式只能搭配一個類型的視圖使用。」
+assetid： 57C0CFD6-A568-46B8-ADA1-BF25681893CF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/22/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-text-styles"></a>Xamarin.Forms文字樣式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -25,8 +11,6 @@ _在 Xamarin 中設定文本的樣式_
 
 樣式可以用來調整標籤、專案和編輯器的外觀。 樣式可以定義一次，並供許多視圖使用，但樣式只能搭配一種類型的視圖使用。
 您可以指定樣式 `Key` ，並選擇性地使用特定控制項的屬性加以套用 `Style` 。
-
-<a name="Built-In_Styles" />
 
 ## <a name="built-in-styles"></a>內建樣式
 
@@ -52,8 +36,6 @@ label.Style = Device.Styles.TitleStyle;
 ```
 
 ![裝置樣式範例](styles-images/builtinstyles.png)
-
-<a name="Custom_Styles" />
 
 ## <a name="custom-styles"></a>自訂樣式
 
@@ -95,8 +77,6 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 
 ![自訂樣式範例](styles-images/customstyle.png)
 
-<a name="Applying_Styles" />
-
 ## <a name="applying-styles"></a>套用樣式
 
 建立樣式之後，即可將它套用至任何符合其的視圖 `TargetType` 。
@@ -132,7 +112,7 @@ label.Style = (Style)Resources["LabelStyle"];
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>Accessibility
+## <a name="accessibility"></a>協助工具選項
 
 有內建樣式可讓您更輕鬆地遵循協助工具喜好設定。 使用任何內建樣式時，如果使用者據以設定其協助工具喜好設定，字型大小會自動增加。
 
@@ -153,4 +133,4 @@ label.Style = Device.Styles.TitleStyle;
 - [建立 Mobile Apps Xamarin.Forms ，第12章](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [樣式](~/xamarin-forms/user-interface/styles/index.md)
 - [文字（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [樣式](xref:Xamarin.Forms.Style)
+- [Style](xref:Xamarin.Forms.Style)

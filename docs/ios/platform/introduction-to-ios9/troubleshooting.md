@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 437698fcda6e85090cd7bdce90959300436e0bc2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d554fa2f967a966195007ea67c48506eaac1e79
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031750"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570878"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin. iOS 9-疑難排解
 
@@ -24,13 +24,13 @@ Xamarin iOS 設計工具尚不支援 Xcode 7 功能。 嘗試使用新的 iOS 9 
 
 iOS Designer 對 Xcode 7 功能的支援是以即將推出的週期6功能版本為目標。 週期6的預覽版本目前適用于 Alpha 色板，而且對新的 Xcode 7 功能的支援有限。
 
-Visual Studio for Mac 的部分因應措施：以滑鼠右鍵按一下腳本，然後選擇 [**開啟方式**] > **Xcode Interface Builder**。
+Visual Studio for Mac 的部分因應措施：以滑鼠右鍵按一下腳本，然後選擇 [**以**  >  **Xcode Interface Builder**開啟]。
 
 ## <a name="where-are-the-ios-8-simulators"></a>IOS 8 模擬器在哪裡？
 
 如果您已安裝 Xcode 7 （或更新版本），則預設會自動將所有 iOS 8 模擬器取代為 iOS 9 模擬器。 如果您仍然需要在 iOS 8 上進行測試，您可以啟動 Xcode，然後下載並安裝 iOS 8 模擬器。
 
-在 [Xcode] 中，依序選取 [ **Xcode** ] 功能表和 [**喜好**設定] > **下載**：
+在 Xcode 中，依序選取 [ **Xcode** ] 功能表和 [**喜好**  >  設定]。**下載**：
 
 [![](troubleshooting-images/ios8.png "iOS 8 Simulators Downloads")](troubleshooting-images/ios8.png#lightbox)
 
@@ -38,13 +38,13 @@ Visual Studio for Mac 的部分因應措施：以滑鼠右鍵按一下腳本，�
 
 ## <a name="layout-constraint-with-leftright-attribute-errors"></a>具有左/右屬性錯誤的版面配置條件約束
 
-在 iOS 8 （和之前的版本）中，分鏡腳本中的 UI 元素可以混合使用**右** & **Left** **屬性（** `NSLayoutAttributeRight` & `NSLayoutAttributeLeft`） &  **，並在**相同的版面配置。
+在 iOS 8 （和之前的版本）中，分鏡腳本中的 UI 元素可以混合使用**右**  &  **向左**屬性（ `NSLayoutAttributeRight`  &  `NSLayoutAttributeLeft` ）和**Leading**  &  **Trailing** `NSLayoutAttributeLeading`  &  在相同版面配置中的前置尾端屬性（ `NSLayoutAttributeTrailing` ）。
 
 如果在 iOS 9 中執行相同的腳本，它會產生下列格式的例外狀況：
 
-> 因為無法攔截的例外狀況 ' NSInvalidArgumentException ' 而終止應用程式，原因： ' * * * + [NSLayoutConstraint constraintWithItem： attribute： relatedBy： toItem： attribute：乘數：常數：]：不能在前置/尾端之間建立條件約束屬性和右/左屬性。 同時使用開頭/尾端，或兩者皆非。 '
+> 因為無法攔截的例外狀況 ' NSInvalidArgumentException ' 而終止應用程式，原因： ' * * * + [NSLayoutConstraint constraintWithItem： attribute： relatedBy： toItem： attribute：乘數：常數：]：不能在前置/尾端屬性與右/左屬性之間建立條件約束。 同時使用開頭/尾端，或兩者皆非。 '
 
-iOS 9 會強制執行配置，以使用**右邊** & **Left** _或_**前置** & **尾端**屬性，但*不*能同時使用兩者。 若要修正此問題，請變更所有版面配置條件約束，以在您的分鏡腳本檔案中使用相同的屬性集。
+iOS 9 會強制配置使用**右**  &  **向左**_或_**前置**  &  **尾端**屬性，但*不*是兩者。 若要修正此問題，請變更所有版面配置條件約束，以在您的分鏡腳本檔案中使用相同的屬性集。
 
 如需詳細資訊，請參閱[iOS 9 條件約束錯誤](https://stackoverflow.com/questions/32692841/ios-9-constraint-error)Stack Overflow 討論。
 
@@ -52,9 +52,9 @@ iOS 9 會強制執行配置，以使用**右邊** & **Left** _或_**前置** & *
 
 在切換至 iOS 9 之後，應用程式會使用在 iOS 8 （或更早版本）上編譯並執行的協力廠商元件（尤其是我們現有的 Google Maps 元件），在嘗試將新的組建提交至 iTunes Connect 時，您可以在下列表單中取得錯誤：
 
-> 錯誤 ITMS-90535：未預期的 CFBundleExecutable 金鑰。 ' 承載/app-name. app/component. 配套 ' 的配套未包含配套可執行檔 。
+> 錯誤 ITMS-90535：未預期的 CFBundleExecutable 金鑰。 ' 承載/app-name. app/component. 配套 ' 的配套未包含配套可執行檔 .。。
 
-此問題通常可以藉由在專案中尋找指定的組合來解決，如同錯誤訊息所建議-藉由移除 `CFBundleExecutable` 金鑰來編輯配套中的 `Info.plist`。 `CFBundlePackageType` 索引鍵也應該設定為 `BNDL`。
+此問題通常可以藉由在專案中尋找已命名的配套來解決，就如同錯誤訊息建議-藉由 `Info.plist` 移除金鑰來編輯配套中的 `CFBundleExecutable` 。 `CFBundlePackageType`金鑰也應該設定為 `BNDL` 。
 
 進行這些變更之後，請清除並重建整個專案。 在進行這些變更之後，您應該能夠提交至 iTunes Connect 而不會發生問題。
 
@@ -76,9 +76,9 @@ iOS 9 會強制執行配置，以使用**右邊** & **Left** _或_**前置** & *
 Temporary exceptions can be configured via your app's Info.plist file.
 ```
 
-在 iOS9 中，應用程式傳輸安全性（ATS）會在網際網路資源（例如應用程式的後端伺服器）和您的應用程式之間強制執行安全的連線。 此外，ATS 需要使用 `HTTPS` 通訊協定和高階 API 通訊，透過具有轉寄密碼的 TLS 1.2 版進行加密。
+在 iOS9 中，應用程式傳輸安全性（ATS）會在網際網路資源（例如應用程式的後端伺服器）和您的應用程式之間強制執行安全的連線。 此外，ATS 需要使用通訊 `HTTPS` 協定和高階 API 通訊，以使用具有轉寄密碼的 TLS 1.2 版進行加密。
 
-由於預設會在針對 iOS 9 和 OS X 10.11 （El Capitan）建立的應用程式中啟用 ATS，因此使用 `NSURLConnection`、`CFURL` 或 `NSURLSession` 的所有連線都會受到 ATS 的安全性需求。 如果您的連線不符合這些需求，則會失敗並產生例外狀況。
+由於預設會在針對 iOS 9 和 OS X 10.11 （El Capitan）建立的應用程式中啟用 ATS，因此使用或的所有連線 `NSURLConnection` `CFURL` `NSURLSession` 都會受到 ATS 的安全性需求。 如果您的連線不符合這些需求，則會失敗並產生例外狀況。
 
 如需如何解決此問題的相關資訊，請參閱我們的[應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)指南中的選擇[退出 ATS](~/ios/app-fundamentals/ats.md)一節。
 
@@ -86,13 +86,13 @@ Temporary exceptions can be configured via your app's Info.plist file.
 
 如需重新建立及重新部署現有應用程式以在 iOS 9 上執行的指示，請參閱我們的[iOS 9 相容性資訊](~/ios/platform/introduction-to-ios9/ios9.md)。
 
-<a name="UICollectionViewCell.ContentView-is-null-in-constructors" />
+<a name="UICollectionViewCell.ContentView-is-null-in-constructors"></a>
 
 ## <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>UICollectionViewCell 中的 ContentView 是 Null。
 
-**原因：** 在 iOS 9 中，由於 iOS 9 中的行為變更是[UICollectionView 檔的狀態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)，因此現在需要 `initWithFrame:` 的函式。 如果您註冊了指定識別碼的類別，而且必須建立新的資料格，則現在會藉由呼叫其 `initWithFrame:` 方法來初始化資料格。
+**原因：** 在 iOS 9 中 `initWithFrame:` ，由於 ios 9 中的行為變更是[UICollectionView 檔的狀態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)，因此現在需要有此函式。 如果您註冊了指定識別碼的類別，而且必須建立新的資料格，則現在會藉由呼叫其方法來初始化資料格 `initWithFrame:` 。
 
-**修正：** 新增 `initWithFrame:` 的函數，如下所示：
+**修正：** 新增如下所示的函式 `initWithFrame:` ：
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -104,13 +104,13 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 相關範例： [MotionGraph](https://github.com/xamarin/monotouch-samples/commit/3c1b7a4170c001e7290db9babb2b7a6dddeb8bcb)、 [TextKitDemo](https://github.com/xamarin/monotouch-samples/commit/23ea01b37326963b5ebf68bbcc1edd51c66a28d6)
 
-<a name="UIView-fails-to-Init-with-Coder-when-Loading-a-View-from-a-Xib/Nib" />
+<a name="UIView-fails-to-Init-with-Coder-when-Loading-a-View-from-a-Xib/Nib"></a>
 
 ## <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>從 Xib/筆尖載入視圖時，UIView 無法從當中初始化
 
-**原因：** `initWithCoder:` 的函式是從 Interface Builder Xib 檔載入視圖時所呼叫的函式。 如果此函式不是匯出的，非受控碼就無法呼叫其受管理的版本。 先前（例如 在 iOS 8 中）已叫用 `IntPtr` 的「檢查程式」來初始化 view。
+**原因：**`initWithCoder:`從 Interface Builder Xib 檔載入視圖時，會呼叫此函式。 如果此函式不是匯出的，非受控碼就無法呼叫其受管理的版本。 先前（例如 在 iOS 8 中）已叫用此函式 `IntPtr` 來初始化 view。
 
-**修正：** 建立並匯出 `initWithCoder:` 的函式，如下所示：
+**修正：** 建立和匯出此函式， `initWithCoder:` 如下所示：
 
 ```csharp
 [Export ("initWithCoder:")]
@@ -122,7 +122,7 @@ public YourClassName (NSCoder coder) : base (coder)
 
 相關範例：[聊天](https://github.com/xamarin/monotouch-samples/commit/7b81138d52e5f3f1aa3769fcb08f46122e9b6a88)
 
-## <a name="dyld-message-no-cache-image-with-name"></a>Dyld 訊息：沒有名稱為的快取映射 。
+## <a name="dyld-message-no-cache-image-with-name"></a>Dyld 訊息：沒有名稱為的快取映射 .。。
 
 在記錄檔中，您可能會遇到下列資訊的損毀：
 
@@ -137,7 +137,7 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 ## <a name="untrusted-enterprise-developer"></a>不受信任的企業開發人員
 
-嘗試在實際的 iOS 硬體上執行您的 Xamarin iOS 應用程式 iOS 9 版本時，您可能會收到一則訊息，指出您的開發人員帳戶在裝置上未受信任。 例如:
+嘗試在實際的 iOS 硬體上執行您的 Xamarin iOS 應用程式 iOS 9 版本時，您可能會收到一則訊息，指出您的開發人員帳戶在裝置上未受信任。 例如：
 
 [![](troubleshooting-images/untrusted01.png "Untrusted Enterprise Developer alert")](troubleshooting-images/untrusted01.png#lightbox)
 
@@ -147,10 +147,10 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 2. 從 [**視窗]** 功能表中選取 [**裝置**] 以開啟 [裝置] 視窗： 
 
     [![](troubleshooting-images/untrusted02.png "The Devices Window")](troubleshooting-images/untrusted02.png#lightbox)
-3. 在 [**裝置**] 側邊面板中，選取您的裝置，按一下滑鼠右鍵，然後選取 [顯示布建**設定檔 ...** ]： 
+3. 在 [**裝置**] 側邊面板中，選取您的裝置，按一下滑鼠右鍵，然後選取 [顯示布建**設定檔 ...**]： 
 
     [![](troubleshooting-images/untrusted03.png "SShow Provisioning Profiles")](troubleshooting-images/untrusted03.png#lightbox)
-4. 選取目前裝置上的每個布建設定檔，然後按一下 [ **-** ] 按鈕將其刪除： 
+4. 選取目前裝置上的每個布建設定檔，然後按一下 **-** 按鈕將它刪除： 
 
     [![](troubleshooting-images/untrusted04.png "Deleting a provisioning profile")](troubleshooting-images/untrusted04.png#lightbox)
 5. 從 [ **Xcode** ] 功能表中，選取 [**喜好**設定] 和 [**帳戶**]： 
@@ -183,8 +183,8 @@ iOS 9 現在會強制執行啟動畫面需求，因此不會再重複使用相�
 
 此問題至少有兩個可能的因應措施：
 
-1. 將應用程式更新為使用分鏡腳本檔案，而不是 `xib` 檔案，以定義其使用者介面。 這種情況需要很多時間，視您應用程式的大小而定，並瞭解如何使用 iOS 設計工具（或 Xcode 的 Interface Builder）來配置分鏡腳本。 如需詳細資訊，請參閱我們的整合分鏡指令檔[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)。
-2. 在 `AppDelegate` 類別的 `FinishedLaunching` 方法中，設定 `RootViewController` 應用程式視窗的屬性，以指向應用程式 UI 中的視圖控制器。
+1. 將應用程式更新為使用分鏡腳本檔案（而非檔案） `xib` 來定義其使用者介面。 這種情況需要很多時間，視您應用程式的大小而定，並瞭解如何使用 iOS 設計工具（或 Xcode 的 Interface Builder）來配置分鏡腳本。 如需詳細資訊，請參閱我們的整合分鏡指令檔[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)。
+2. `RootViewController`在類別的方法中，設定應用程式視窗的屬性 `FinishedLaunching` `AppDelegate` ，以指向應用程式 UI 中的視圖控制器。
 
 ## <a name="when-to-initialize-views-and-view-controllers"></a>初始化 Views 和 View 控制器的時機
 

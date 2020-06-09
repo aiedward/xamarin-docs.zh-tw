@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 7cf18934c70acf59213a697ab57b6c5e308e7b2a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: d7491af1ced4e8e0309bb3e22298d33ee5a042be
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291883"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571541"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 中對 StoreKit 所做的變更
 
@@ -25,7 +25,7 @@ _iOS 6 對商店套件 API 引進了兩項變更：從您的應用程式中顯�
 
 如需 StoreKit Api 的詳細涵蓋範圍，請參閱[應用程式內購買](~/ios/platform/in-app-purchasing/index.md)指南。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 本檔中討論的商店套件功能需要 iOS 6 和 Xcode 4.5，以及 Xamarin. iOS 6.0。
 
@@ -42,27 +42,27 @@ IOS 中新的應用程式內購買功能可讓使用者從您的應用程式中�
 - **交叉推廣應用程式**–允許使用者查看您發佈的其他應用程式，並能夠立即購買/下載。
 - **協助使用者尋找及下載內容**–協助使用者購買您的應用程式所尋找、管理或匯總的內容（例如 音樂相關應用程式可以提供歌曲的播放清單，並允許從應用程式內購買每一首歌曲）。
 
-一旦顯示 `SKStoreProductViewController` 之後，使用者就可以像在 iTunes、App Store 或 iBookstore 中一樣，與產品資訊互動。 使用者可以：
+一旦顯示之後， `SKStoreProductViewController` 使用者即可與產品資訊互動，就像是在 iTunes、App Store 或 iBookstore 中。 使用者可以：
 
 - 查看螢幕擷取畫面（適用于應用程式）、
 - 範例歌曲或影片（適用于音樂、電視節目和電影）、
 - 閱讀（及寫入）評論，
 - 購買 & 下載，這完全是在 view controller 和 Store 套件中進行。
 
-`SKStoreProductViewController` 中的某些選項仍然會強制使用者離開您的應用程式，並開啟相關的存放區應用程式，例如按一下 [**相關產品**] 或應用程式的**支援**連結。
+中的某些選項 `SKStoreProductViewController` 仍然會強制使用者離開您的應用程式，並開啟相關的存放區應用程式，例如按一下 [**相關產品**] 或應用程式的**支援**連結。
 
 ### <a name="skstoreproductviewcontroller"></a>SKStoreProductViewController
 
-在任何應用程式中顯示產品的 API 很簡單：只需要您建立和顯示 `SKStoreProductViewController`。 請遵循下列步驟來建立並顯示產品：
+在任何應用程式中顯示產品的 API 很簡單：只需要您建立並顯示 `SKStoreProductViewController` 。 請遵循下列步驟來建立並顯示產品：
 
-1. 建立 `StoreProductParameters` 物件，以將參數傳遞至視圖控制器，包括在此函式中的 `productId`。
-1. 具現化 `SKProductViewController`。 將它指派給類別層級欄位。
+1. 建立 `StoreProductParameters` 物件以將參數傳遞至 view controller，包括 `productId` 在此函式中。
+1. 具現化 `SKProductViewController` 。 將它指派給類別層級欄位。
 1. 將處理常式指派給視圖控制器的 `Finished` 事件，這應該會關閉視圖控制器。 當使用者按下 [取消] 時，就會呼叫此事件。或以其他方式在 view controller 內完成交易。
-1. 呼叫傳入 `StoreProductParameters` 和完成處理常式的 `LoadProduct` 方法。 完成處理常式應該檢查產品要求是否成功，如果是，則會以強制回應方式呈現 `SKProductViewController`。 應新增適當的錯誤處理，以防無法抓取產品。
+1. 呼叫 `LoadProduct` 傳入 `StoreProductParameters` 和完成處理常式的方法。 完成處理常式應該檢查產品要求是否成功，如果是，則會以強制回應方式呈現 `SKProductViewController` 。 應新增適當的錯誤處理，以防無法抓取產品。
 
 ### <a name="example"></a>範例
 
-本文的*StoreKit*範例程式碼中的*ProductView*專案會執行可接受任何產品的 Apple ID 並顯示 `SKStoreProductViewController`的 `Buy` 方法。 下列程式碼會顯示任何指定 Apple ID 的產品資訊：
+本文的*StoreKit*範例程式碼中的*ProductView*專案 `Buy` 會執行可接受任何產品之 Apple ID 的方法，並顯示 `SKStoreProductViewController` 。 下列程式碼會顯示任何指定 Apple ID 的產品資訊：
 
 ```csharp
 void Buy (int productId)
@@ -86,13 +86,13 @@ void Buy (int productId)
 }
 ```
 
-應用程式在執行時看起來像下面的螢幕擷取畫面–下載或購買完全在 `SKStoreProductViewController`內進行：
+應用程式在執行時看起來會像下面的螢幕擷取畫面：完全在中進行下載或購買 `SKStoreProductViewController` 。
 
 [![](changes-to-storekit-images/image2.png "The app looks like this when running")](changes-to-storekit-images/image2.png#lightbox)
 
 ### <a name="supporting-older-operating-systems"></a>支援舊版作業系統
 
-範例應用程式包含的程式碼會示範如何在舊版 iOS 中開啟 App Store、iTunes 或 iBookstore。 使用 `OpenUrl` 方法來開啟適當製作的**Itunes.com** URL。
+範例應用程式包含的程式碼會示範如何在舊版 iOS 中開啟 App Store、iTunes 或 iBookstore。 使用 `OpenUrl` 方法來開啟適當製作的**itunes.com** URL。
 
 您可以執行版本檢查來判斷要執行的程式碼，如下所示：
 
@@ -115,11 +115,11 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 
 ### <a name="reading-objective-c-documentation"></a>讀取目標-C 檔
 
-在 Apple 開發人員入口網站上閱讀存放套件的開發人員，會看到與這項新功能相關的通訊協定– [SKStoreProductViewControllerDelegate](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKITunesProductViewControllerDelegate_ProtocolRef/Reference/Reference.html) –討論。 委派通訊協定只有一個方法– productViewControllerDidFinish –已公開為 Xamarin 中 `SKStoreProductViewController` 的 `Finished` 事件。
+在 Apple 開發人員入口網站上閱讀存放套件的開發人員，會看到與這項新功能相關的通訊協定– [SKStoreProductViewControllerDelegate](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKITunesProductViewControllerDelegate_ProtocolRef/Reference/Reference.html) –討論。 委派通訊協定只有一個方法– productViewControllerDidFinish –已公開為 `Finished` `SKStoreProductViewController` Xamarin 中的事件。
 
 ## <a name="determining-apple-ids"></a>判斷 Apple Id
 
-`SKStoreProductViewController` 所需的 Apple ID 是*數位*（不會與 "mwc2012" 之類的配套識別碼混淆）。 有幾種不同的方式可讓您找出您想要顯示之產品的 Apple ID，如下所示：
+所需的 Apple ID `SKStoreProductViewController` 是*數位*（不會與 "mwc2012" 之類的配套識別碼混淆）。 有幾種不同的方式可讓您找出您想要顯示之產品的 Apple ID，如下所示：
 
 ### <a name="itunesconnect"></a>iTunesConnect
 
@@ -127,29 +127,29 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
 
 [![](changes-to-storekit-images/image3.png "Finding the Apple ID in iTunes Connect")](changes-to-storekit-images/image3.png#lightbox)
 
- <a name="Search_API" />
+ <a name="Search_API"></a>
 
 ### <a name="search-api"></a>搜尋 API
 
-Apple 提供動態搜尋 API 來查詢 App Store、iTunes 和 iBookstore 中的所有產品。 如需如何存取搜尋 API 的資訊，請參閱 Apple 的分支機搆資源，雖然 API 會公開給任何人（而不只是註冊的關係企業）。 您可以剖析產生的 JSON，以探索要搭配 `SKStoreProductViewController`使用的 Apple ID `trackId`。
+Apple 提供動態搜尋 API 來查詢 App Store、iTunes 和 iBookstore 中的所有產品。 如需如何存取搜尋 API 的資訊，請參閱 Apple 的分支機搆資源，雖然 API 會公開給任何人（而不只是註冊的關係企業）。 可以剖析產生的 JSON，以探索 `trackId` 要搭配使用的 APPLE ID `SKStoreProductViewController` 。
 
 結果也會包含其他中繼資料，包括可在應用程式中用來呈現產品的顯示資訊和插圖 Url。
 
 以下是一些範例：
 
-- **iBooks 應用程式**– [https://itunes.apple.com/search?term=ibooks&amp; 實體 = 軟體&amp;國家/地區 = 美國](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
-- **點和 Kangaroo ibook store** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; entity = 電子書&amp;country = us](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
+- **iBooks 應用程式**– [ https://itunes.apple.com/search?term=ibooks&amp ; 實體 = 軟體 &amp; 國家/地區 = us](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
+- **點和 Kangaroo ibook store** – [ https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; entity = 電子書 &amp; country = us](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
 
 ### <a name="enterprise-partner-feed"></a>企業合作夥伴摘要
 
 Apple 為核准合作夥伴提供所有產品的完整資料傾印，其形式為可下載資料庫的一般檔案。 如果您有資格存取企業合作夥伴摘要，則可以在該資料集中找到任何產品的 Apple ID。
 
-企業合作夥伴摘要的許多使用者都是「[分支機搆計畫](https://www.apple.com/itunes/affiliates)」的成員，可讓您贏得「產品銷售」的傭金。 `SKStoreProductViewController` 不支援分支機搆識別碼（在撰寫本文時）。
+企業合作夥伴摘要的許多使用者都是「[分支機搆計畫](https://www.apple.com/itunes/affiliates)」的成員，可讓您贏得「產品銷售」的傭金。 `SKStoreProductViewController`不支援分支機搆識別碼（在撰寫本文時）。
 
 ### <a name="direct-product-links"></a>直接產品連結
 
 您可以從其 iTunes Preview URL 連結推斷產品的 Apple ID。
-在任何 iTunes 產品連結（適用于應用程式、音樂或書籍）中，尋找開頭為 `id` 的 URL 部分，並使用後面的數位。
+在任何 iTunes 產品連結（適用于應用程式、音樂或書籍）中，尋找開頭為的 URL 部分 `id` ，並使用後面的數位。
 
 例如，iBooks 的直接連結是
 
@@ -167,7 +167,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 ## <a name="in-app-purchase-hosted-content"></a>應用程式內購買裝載的內容
 
-如果您的應用程式內購買包含可下載的內容（例如書籍或其他媒體、遊戲層級的美工和設定，或其他大型檔案），則這些檔案會裝載在您的 web 伺服器上，而應用程式必須納入程式碼，以便在之後安全地下載購. 從 iOS 6 開始，Apple 會在其伺服器上裝載您的檔案，而不需要個別的伺服器。 此功能僅適用于非使用中的產品（不是可取用或訂用帳戶）。 使用 Apple 主控服務的優點包括：
+如果您的應用程式內購買包含可下載的內容（例如書籍或其他媒體、遊戲層級的美工和設定，或其他大型檔案），則這些檔案會裝載在您的 web 伺服器上，而應用程式必須納入程式碼，才能在購買後安全地下載這些檔案。 從 iOS 6 開始，Apple 會在其伺服器上裝載您的檔案，而不需要個別的伺服器。 此功能僅適用于非使用中的產品（不是可取用或訂用帳戶）。 使用 Apple 主控服務的優點包括：
 
 - 節省裝載 & 頻寬成本。
 - 可能比您目前使用的任何伺服器主機更具擴充性。
@@ -192,7 +192,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 - **ITunes Connect** –您*必須*已提供您的銀行和稅務資訊給 Apple，才能代表您收取所收集的資金。 接著，您可以將產品設定為銷售，並設定沙箱使用者帳戶來測試購買。  _您也必須針對您想要與 Apple 一起裝載的非使用中產品，設定主控的內容_。
 - **iOS 布建入口網站**–建立套件組合識別碼，並啟用應用程式的 app Store 存取權，就像任何支援應用程式內購買的應用程式一樣。
 - **商店套件**–將程式碼新增至您的應用程式，以顯示產品、購買產品和還原交易。  _在 iOS 6 商店套件中，也會在背景中使用進度更新來管理您的產品內容下載。_
-- **自訂程式碼**–用來追蹤客戶所進行的購買，並提供他們所購買的產品或服務。 利用新的 iOS 6 存放套件類別（例如 `SKDownload`）來抓取 Apple 主控的內容。
+- **自訂程式碼**–用來追蹤客戶所進行的購買，並提供他們所購買的產品或服務。 利用新的 iOS 6 存放套件類別 `SKDownload` 來取得 Apple 主控的內容。
 
 下列各節說明如何使用本文的範例程式碼，從建立和上傳封裝到管理購買和下載程式，以執行裝載的內容。
 
@@ -224,9 +224,9 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
  [![](changes-to-storekit-images/image9.png "The product will enter Waiting for Upload status and show this message")](changes-to-storekit-images/image9.png#lightbox)
 
-內容套件應該使用 Xcode 建立，並使用封存工具來上傳。 建立內容套件的指示會在下一節的**建立中提供.PKG**檔案。
+內容套件應該使用 Xcode 建立，並使用封存工具來上傳。 建立內容套件的指示會在下一節的**建立中提供。.PKG**檔案。
 
-## <a name="creating-pkg-files"></a>製作.PKG 檔案
+## <a name="creating-pkg-files"></a>製作..PKG 檔案
 
 您上傳至 Apple 的內容檔案必須符合下列限制：
 
@@ -236,7 +236,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 您可以新增許多不同的檔案和檔案類型，只要它們符合這些限制即可。 在您的程式碼存取之前，會先壓縮內容，再傳遞至您的應用程式並由存放套件解壓縮。
 
-上傳內容套件之後，您可以使用較新的內容來取代它。 必須上傳並提交新的內容，才能透過正常程式進行審核/核准。 遞增更新內容套件中的 `ContentVersion` 欄位，表示它是較新的。
+上傳內容套件之後，您可以使用較新的內容來取代它。 必須上傳並提交新的內容，才能透過正常程式進行審核/核准。 將 `ContentVersion` 更新的內容套件中的欄位遞增，以指出它是較新的。
 
 ### <a name="xcode-in-app-purchase-content-projects"></a>Xcode 應用程式內購買內容專案
 
@@ -263,7 +263,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 新增所有內容檔案之後，您可以儲存此專案，稍後再重新編輯，或開始上傳程式。
 
-## <a name="uploading-pkg-files"></a>上傳.PKG 檔案
+## <a name="uploading-pkg-files"></a>上傳..PKG 檔案
 
 上傳內容套件最簡單的方式是使用**Xcode Archive Tool**。 從功能表選擇 [**產品 >** 封存] 以開始：
 
@@ -322,7 +322,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 [![](changes-to-storekit-images/image24.png "The plist file in the root and the product files in a Contents subdirectory")](changes-to-storekit-images/image24.png#lightbox)
 
-請注意套件的目錄結構（尤其是檔案在 `Contents` 子目錄中的位置），因為您必須瞭解這項資訊，才能從裝置上的套件解壓縮檔案。
+請注意套件的目錄結構（尤其是子目錄中的檔案位置）， `Contents` 因為您必須瞭解這項資訊，才能從裝置上的套件解壓縮檔案。
 
 ### <a name="updating-package-content"></a>更新套件內容
 
@@ -361,17 +361,17 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 已新增或更改下列類別，以支援 iOS 6 中的託管內容：
 
 - **SKDownload** –代表下載進行中的新類別。 API 允許一個以上的每個產品，但一開始只會執行一個。
-- **SKProduct** –新增的屬性： `Downloadable`、`ContentVersion``ContentLengths` 陣列。
-- **SKPaymentTransaction** –新增的屬性： `Downloads`，其中包含 `SKDownload` 物件的集合（如果此產品有可供下載的內容）。
-- **SKPaymentQueue** –新增的方法： `StartDownloads`。 請使用 `SKDownload` 物件來呼叫這個方法，以提取其裝載的內容。 下載可能會在背景中發生。
-- **SKPaymentTransactionObserver** –新的方法： `UpdateDownloads`。 Store 套件會呼叫此方法，其中包含目前下載作業的相關進度資訊。
+- **SKProduct** –新增的屬性： `Downloadable` 、 `ContentVersion` 、 `ContentLengths` array。
+- **SKPaymentTransaction** –新增的屬性： `Downloads` ， `SKDownload` 如果此產品有可供下載的託管內容，則包含物件的集合。
+- **SKPaymentQueue** –新增的方法： `StartDownloads` 。 以物件呼叫此方法 `SKDownload` ，以提取其主控的內容。 下載可能會在背景中發生。
+- **SKPaymentTransactionObserver** –新的方法： `UpdateDownloads` 。 Store 套件會呼叫此方法，其中包含目前下載作業的相關進度資訊。
 
-新 `SKDownload` 類別的詳細資料：
+新類別的詳細資料 `SKDownload` ：
 
 - **進度**–0-1 之間的值，可讓您用來向使用者顯示百分比完整的指標。 請勿使用 [進度 = = 1] 來偵測下載是否已完成，請檢查 [狀態 = = 已完成]。
 - **TimeRemaining** –估計剩餘的下載時間（以秒為單位）。 -1 表示它仍在計算估計值。
 - **狀態**–作用中、等待中、已完成、失敗、已暫停、已取消。
-- **ContentURL** –內容放在磁片上的檔案位置，位於 `Cache` 目錄中。 只有在下載完成後才會填入。
+- **ContentURL** –內容放在磁片上的檔案位置，在目錄中 `Cache` 。 只有在下載完成後才會填入。
 - **錯誤**–如果狀態為 [失敗]，請檢查此屬性。
 
 範例程式碼中的類別之間的互動會顯示在此圖中（裝載的內容購買的程式碼以綠色顯示）：
@@ -382,7 +382,7 @@ http://itunes.apple.com/us/app/mwc-2012-unofficial/id496963922?mt=8
 
 ### <a name="custompaymentobserver-skpaymenttransactionobserver"></a>CustomPaymentObserver (SKPaymentTransactionObserver)
 
-變更現有的 `UpdatedTransactions` 覆寫以檢查可下載的內容，並視需要呼叫 `StartDownloads`：
+變更現有的覆 `UpdatedTransactions` 寫以檢查可下載的內容，並 `StartDownloads` 在必要時呼叫：
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -415,7 +415,7 @@ public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransac
 }
 ```
 
-新的覆寫方法 `UpdatedDownloads` 如下所示。 儲存套件會在 `UpdatedTransactions`中觸發 `StartDownloads` 之後，呼叫這個方法。 這個方法會以不定的間隔多次呼叫，以提供您下載進度，然後在下載完成時再進行一*次*。 請注意，方法會接受 `SKDownload` 物件的陣列，因此，每個方法呼叫都可提供佇列中多個下載的狀態。 如以下的執行所示，每次都會檢查下載狀態，並採取適當的動作。
+新的覆寫方法 `UpdatedDownloads` 如下所示。 儲存套件 `StartDownloads` 會在中觸發之後，呼叫這個方法 `UpdatedTransactions` 。 這個方法會以不定的間隔多次呼叫，以提供您下載進度，然後在下載完成時再進行一*次*。 請注意，方法會接受物件的陣列 `SKDownload` ，因此，每個方法呼叫都可提供佇列中多個下載的狀態。 如以下的執行所示，每次都會檢查下載狀態，並採取適當的動作。
 
 ```csharp
 // ENTIRELY NEW METHOD IN iOS6
@@ -455,11 +455,11 @@ public override void PaymentQueueUpdatedDownloads (SKPaymentQueue queue, SKDownl
 
 ### <a name="inapppurchasemanager-skproductsrequestdelegate"></a>InAppPurchaseManager (SKProductsRequestDelegate)
 
-這個類別包含新的方法 `SaveDownload`，會在每次下載成功完成後呼叫。
+這個類別包含新的方法 `SaveDownload` ，會在每次下載成功完成後呼叫。
 
-已成功下載託管內容，並將其解壓縮到 `Cache` 目錄。 的結構.PKG 檔案需要將所有檔案儲存在 `Contents` 子目錄中，因此下列程式碼會從 `Contents` 子目錄中解壓縮檔案。
+已成功下載託管內容，並將其解壓縮到 `Cache` 目錄中。 的結構。.PKG 檔案需要將所有檔案儲存在子目錄中 `Contents` ，因此下列程式碼會從子目錄內解壓縮檔案 `Contents` 。
 
-程式碼會逐一查看內容套件中的所有檔案，並將這些檔案複製到 `Documents` 目錄中，並在名為的子資料夾中進行 `ProductIdentifier`。 最後，它會呼叫 `CompleteTransaction`，這會呼叫 `FinishTransaction` 以從付款佇列中移除交易。
+此程式碼會逐一查看內容套件中的所有檔案，並將它們複製到 `Documents` 目錄中，其名稱為的子資料夾中 `ProductIdentifier` 。 最後，它會呼叫 `CompleteTransaction` ， `FinishTransaction` 以從付款佇列中移除交易。
 
 ```csharp
 // ENTIRELY NEW METHOD IN iOS 6
@@ -483,7 +483,7 @@ public void SaveDownload (SKDownload download)
 }
 ```
 
-呼叫 `FinishTransaction` 時，下載的檔案將不再保證會在 `Cache` 目錄中。 在呼叫 `FinishTransaction`之前，應該先複製所有檔案。
+當 `FinishTransaction` 呼叫時，下載的檔案將不再保證會在 `Cache` 目錄中。 在呼叫之前，應該先複製所有檔案 `FinishTransaction` 。
 
 ## <a name="other-considerations"></a>其他考量
 
@@ -491,31 +491,31 @@ public void SaveDownload (SKDownload download)
 
 ### <a name="detecting-updated-content"></a>偵測更新的內容
 
-雖然您可以更新託管的內容套件，但商店套件並不提供任何機制，將這些更新推送給已下載並購買產品的使用者。 若要執行此功能，您的程式碼可能會定期檢查新的 `SKProduct.ContentVersion` 屬性（如果 `SKProduct` `Downloadable`），並偵測值是否遞增。 或者，您也可以建立推播通知系統。
+雖然您可以更新託管的內容套件，但商店套件並不提供任何機制，將這些更新推送給已下載並購買產品的使用者。 若要執行此功能，您的程式碼可能會定期檢查新的 `SKProduct.ContentVersion` 屬性（如果 `SKProduct` 是 `Downloadable` ），並偵測值是否遞增。 或者，您也可以建立推播通知系統。
 
 ### <a name="installing-updated-content-versions"></a>安裝更新的內容版本
 
 上述範例程式碼會在檔案已經存在時，略過檔案複製。 如果您想要支援下載的較新版本內容，這不是個好主意。
 
-另一個替代方式可能是將內容複寫到名為的資料夾中，並追蹤哪一個是最新版本（例如， 在 `NSUserDefaults` 或您儲存已完成之採購記錄的任何位置。
+另一個替代方式可能是將內容複寫到名為的資料夾中，並追蹤哪一個是最新版本（例如， 在 `NSUserDefaults` 或儲存已完成之購買記錄的位置。
 
 ### <a name="restoring-transactions"></a>還原交易
 
-呼叫 `SKPaymentQueue.DefaultQueue.RestoreCompletedTransactions` 時，商店套件會傳回使用者先前所有的交易。 如果他們購買了大量的專案，或者每個購買都有大型的內容套件，則還原可能會導致大量的網路流量，因為所有內容會一次排入佇列以供下載。
+當 `SKPaymentQueue.DefaultQueue.RestoreCompletedTransactions` 呼叫時，儲存套件會傳回使用者所有先前的交易。 如果他們購買了大量的專案，或者每個購買都有大型的內容套件，則還原可能會導致大量的網路流量，因為所有內容會一次排入佇列以供下載。
 
 請考慮追蹤產品是否與實際下載的相關內容套件分開購買。
 
 ### <a name="pausing-restarting-and-canceling-downloads"></a>暫停、重新開機和取消下載
 
-雖然範例程式碼不會示範這項功能，但您可以暫停和重新開機主控的內容下載。 `SKPaymentQueue.DefaultQueue` 具有 `PauseDownloads`、`ResumeDownloads` 和 `CancelDownloads`的方法。
+雖然範例程式碼不會示範這項功能，但您可以暫停和重新開機主控的內容下載。 `SKPaymentQueue.DefaultQueue`具有 `PauseDownloads` 、和的方法 `ResumeDownloads` `CancelDownloads` 。
 
-如果在下載 `Finished` 之前，程式碼會在付款佇列上呼叫 `FinishTransaction`，則會自動取消該下載。
+如果程式碼在 `FinishTransaction` 下載之前于付款佇列上呼叫 `Finished` ，則會自動取消下載。
 
 ### <a name="setting-the-skip-backup-flag-on-the-downloaded-content"></a>在下載的內容上設定略過備份旗標
 
 Apple 的 iCloud 備份指導方針會建議您不應該備份從伺服器輕鬆還原的非使用者內容（因為它*不*需要使用 iCloud 存放裝置）。 如需設定 backup 屬性的詳細資訊，請參閱[檔案系統檔](~/ios/app-fundamentals/file-system.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文在 iOS6 中引進了兩項新功能：在您的應用程式中購買 iTunes 和其他內容，以及利用 Apple 的伺服器來裝載您自己的應用程式內購買。 本簡介應與現有的[應用程式內購買檔](~/ios/platform/in-app-purchasing/index.md)一起閱讀，以取得完整的商店套件功能涵蓋範圍。
 

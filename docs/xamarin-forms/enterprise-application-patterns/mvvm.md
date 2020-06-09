@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d2e335535b508a6cd5e2f497e2c681152a7e5cda
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130945"
+標題：「模型-視圖 ViewModel 模式」描述：「本章說明 eShopOnContainers 行動應用程式如何使用 MVVM 模式，將應用程式的商務和展示邏輯與使用者介面明確隔開。」
+assetid： dd8c1813-df44-4947-bcee-1a1ff2334b87 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="the-model-view-viewmodel-pattern"></a>模型視圖-ViewModel 模式
 
 Xamarin.Forms開發人員體驗通常牽涉到在 XAML 中建立使用者介面，然後加入在使用者介面上運作的程式碼後置。 隨著應用程式的修改，以及大小和範圍的成長，可能會發生複雜的維護問題。 這些問題包括 UI 控制項與商務邏輯之間的緊密結合，這會增加進行 UI 修改的成本，以及對這類程式碼進行單元測試的困難。
@@ -124,8 +110,6 @@ public LoginView()
 ### <a name="creating-a-view-defined-as-a-data-template"></a>建立定義為資料範本的視圖
 
 View 可以定義為資料範本，並與視圖模型類型建立關聯。 資料範本可以定義為資源，也可以在將顯示視圖模型的控制項內以內嵌方式定義。 控制項的內容是 view model 實例，而資料範本則用來以視覺方式表示。 這項技術是一種情況的範例，其中會先具現化視圖模型，然後再建立視圖。
-
-<a name="automatically_creating_a_view_model_with_a_view_model_locator" />
 
 ### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>使用視圖模型定位器自動建立視圖模型
 
@@ -279,13 +263,11 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 您也可以使用屬性，選擇性地定義命令參數 [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) 。 預期的引數類型是在 `Execute` 和 `CanExecute` 目標方法中指定。 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)當使用者與附加的控制項互動時，將會自動叫用目標命令。 命令參數（如果有提供的話）會當做引數傳遞給命令的 `Execute` 委派。
 
-<a name="implementing_behaviors" />
-
 ### <a name="implementing-behaviors"></a>執行行為
 
 行為可讓您將功能新增至 UI 控制項，而不需要將其設為子類別。 相反地，功能會在行為類別中實作並附加至控制項，如同控制項本身的一部分。 行為可讓您實作為程式碼後置來執行程式碼，因為它會直接與控制項的 API 互動，使其可以精確附加至控制項，並封裝在多個視圖或應用程式之間重複使用。 在 MVVM 的內容中，行為是將控制項連接至命令的實用方法。
 
-透過附加屬性附加至控制項的行為，稱為*附加的行為*。 然後，行為可以使用其附加之專案的公開 API，在視圖的視覺化樹狀結構中加入該控制項的功能，或其他控制項。 EShopOnContainers 行動應用程式包含 `LineColorBehavior` 類別，這是附加的行為。 如需此行為的詳細資訊，請參閱[顯示驗證錯誤](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)。
+透過附加屬性附加至控制項的行為，稱為*附加的行為*。 然後，行為可以使用其附加之專案的公開 API，在視圖的視覺化樹狀結構中加入該控制項的功能，或其他控制項。 EShopOnContainers 行動應用程式包含 `LineColorBehavior` 類別，這是附加的行為。 如需此行為的詳細資訊，請參閱[顯示驗證錯誤](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying-validation-errors)。
 
 「 Xamarin.Forms 行為」（behavior）是衍生自 [`Behavior`](xref:Xamarin.Forms.Behavior) 或 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 類別的類別，其中 `T` 是應該套用行為的控制項類型。 這些類別 `OnAttachedTo` 會提供和 `OnDetachingFrom` 方法，這些都應該加以覆寫，以提供當行為附加至控制項並中斷連結時，將會執行的邏輯。
 
@@ -361,7 +343,7 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 如需行為的詳細資訊，請參閱[行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 模型 ViewModel （MVVM）模式有助於將應用程式的商務和展示邏輯與其使用者介面（UI）完全分開。 維護應用程式邏輯與 UI 之間的清楚分隔，有助於解決許多開發問題，並可讓應用程式更容易測試、維護和發展。 它也可以大幅改善程式碼重複使用的機會，並可讓開發人員和 UI 設計工具在開發應用程式的個別部分時，更輕鬆地共同作業。
 

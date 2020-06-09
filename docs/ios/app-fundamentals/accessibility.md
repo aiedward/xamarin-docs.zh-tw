@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 31cae6d6770b4c8fc4ff722e67f4ddce8ffdd7c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011294"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574154"
 ---
 # <a name="accessibility-on-ios"></a>IOS 上的協助工具
 
@@ -21,9 +21,9 @@ ms.locfileid: "73011294"
 
 ## <a name="describing-ui-elements"></a>描述 UI 元素
 
-iOS 提供 `AccessibilityLabel` 和 `AccessibilityHint` 的屬性，讓開發人員新增描述性文字，以供 VoiceOver 螢幕讀取器用來使控制項更容易存取。 控制項也可以使用一或多個特性來標記，以在可存取的模式中提供其他內容。
+iOS 提供 `AccessibilityLabel` 和 `AccessibilityHint` 屬性，讓開發人員新增描述性文字，可供 VoiceOver 螢幕讀取器用來使控制項更容易存取。 控制項也可以使用一或多個特性來標記，以在可存取的模式中提供其他內容。
 
-有些控制項可能不需要存取（例如，文字輸入上的標籤或純粹裝飾的影像）–提供 `IsAccessibilityElement` 在這些情況下停用存取範圍。
+有些控制項可能不需要存取（例如，文字輸入上的標籤或純裝飾的影像）– `IsAccessibilityElement` 提供在這些情況下停用存取範圍。
 
 **UI 設計工具**
 
@@ -44,17 +44,17 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>什麼是 AccessibilityIdentifier？
 
-`AccessibilityIdentifier` 是用來設定唯一索引鍵，可用來透過 UIAutomation API 來參考使用者介面專案。
+`AccessibilityIdentifier`是用來設定唯一索引鍵，可用來透過 UIAUTOMATION API 來參考使用者介面元素。
 
-`AccessibilityIdentifier` 的值永遠不會讀出或向使用者顯示。
+的值永遠不會 `AccessibilityIdentifier` 讀出或向使用者顯示。
 
-<a name="postnotification" />
+<a name="postnotification"></a>
 
 ## <a name="postnotification"></a>PostNotification
 
-`UIAccessibility.PostNotification` 方法允許事件在直接互動以外的地方引發（例如，當使用者與特定控制項互動時）。
+`UIAccessibility.PostNotification`方法可讓事件在直接互動以外的地方引發（例如，當使用者與特定控制項互動時）。
 
-### <a name="announcement"></a>公告
+### <a name="announcement"></a>通知
 
 您可以從程式碼傳送公告，通知使用者某個狀態已變更（例如背景作業已完成）。 這可能會伴隨使用者介面中的視覺指示：
 
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>LayoutChanged
 
-當螢幕版面配置時，會使用 `LayoutChanged` 公告：
+`LayoutChanged`當螢幕版面配置時，會使用此公告：
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -80,7 +80,7 @@ UIAccessibility.PostNotification (
 
 **Mainstoryboard.storyboard 字串**
 
-如果使用者介面配置於分鏡腳本中，您可以使用與其他屬性相同的方式提供協助工具屬性的翻譯。 在下列範例中，`UITextField` 具有 `Pqa-aa-ury` 的**當地語系化識別碼**，以及以西班牙文設定的兩個協助工具屬性：
+如果使用者介面配置於分鏡腳本中，您可以使用與其他屬性相同的方式提供協助工具屬性的翻譯。 在下列範例中， `UITextField` 具有的**當地語系化識別碼** `Pqa-aa-ury` ，以及在西班牙文中設定兩個協助工具屬性：
 
 ```csharp
 /* Accessibility */
@@ -100,7 +100,7 @@ UIAccessibility.PostNotification (
 "Provide more information" = "escriba más información";
 ```
 
-您可以透過 `LocalizedString` 方法， C#在中使用這些翻譯：
+這些翻譯可以透過方法在 c # 中使用 `LocalizedString` ：
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
@@ -109,7 +109,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 如需當地語系化內容的詳細資訊，請參閱[iOS 當地語系化指南](~/ios/app-fundamentals/localization/index.md)。
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-accessibility"></a>測試協助工具
 
@@ -117,7 +117,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 ![](accessibility-images/settings-sml.png "Setting the speaking rate")
 
-**協助工具** 畫面也提供 縮放、文字大小、色彩 & 對比選項、語音設定 和其他設定選項的設定。
+[**協助工具**] 畫面也提供 [縮放]、[文字大小]、[色彩] & 對比選項]、[語音設定] 和其他設定選項的設定。
 
 請遵循這些[VoiceOver 指示](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)來測試 iOS 裝置上的協助工具。
 

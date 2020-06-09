@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms資料格
-description: Xamarin.Forms資料格可以加入至 Listview 和 TableViews。 本文列出包含在中的資料格 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bd1a2398787fe39c0b4cbd08ccd5c5793775d5cf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137276"
+title：「資料 Xamarin.Forms 格」描述：「 Xamarin.Forms 可以將資料格加入至 Listview 和 TableViews。 本文列出包含在中的資料格 Xamarin.Forms 。」
+assetid： 77DA0C89-35D6-4C09-A072-3ADE53FD56CF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/12/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-cells"></a>Xamarin.Forms資料格
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -31,8 +17,6 @@ _可以將 [Xamarin] 資料格加入至 Listview 和 TableViews。_
 
 Xamarin.Forms支援下列資料格類型：
 
-<a name="textCell" />
-
 ### <a name="textcell"></a>TextCell
 
 |     |     |
@@ -44,7 +28,7 @@ Xamarin.Forms支援下列資料格類型：
 
 |     |     |
 | --- | --- |
-| [`ImageCell`](xref:Xamarin.Forms.ImageCell)會顯示與相同的資訊， [`TextCell`](#textCell) 但包含以屬性設定的點陣圖 [`Source`](xref:Xamarin.Forms.Image.Source) 。<br /><br />[API 檔](xref:Xamarin.Forms.ImageCell)  / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell 範例](cells-images/ImageCell.png "ImageCell 範例")](cells-images/ImageCell-Large.png#lightbox "ImageCell 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
+| [`ImageCell`](xref:Xamarin.Forms.ImageCell)會顯示與相同的資訊， [`TextCell`](#textcell) 但包含以屬性設定的點陣圖 [`Source`](xref:Xamarin.Forms.Image.Source) 。<br /><br />[API 檔](xref:Xamarin.Forms.ImageCell)  / [指南](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell 範例](cells-images/ImageCell.png "ImageCell 範例")](cells-images/ImageCell-Large.png#lightbox "ImageCell 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="switchcell"></a>SwitchCell

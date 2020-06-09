@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a05090c18039f9d3a7f9376285ce2863e0482903
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139252"
+title： "容器化微服務" 描述： "本章節說明如何使用微服務和容器來建立敏捷式、可調整且可靠的現代化雲端應用程式。」
+assetid： 5872ad92-04e0-4f1a-9691-79d5602f5683 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="containerized-microservices"></a>容器化的微服務
 
 開發用戶端伺服器應用程式的重點是要在每一層中建立使用特定技術的分層式應用程式。 這類應用程式通常稱為整合*型應用程式*，並封裝到預先調整的硬體以進行尖峰負載。 這種開發方法的主要缺點是每一層內的元件緊密結合，個別元件無法輕鬆調整，而且測試成本也很高。 簡單的更新可能會對其餘的階層造成未預期的影響，因此應用程式元件的變更需要重新測試和重新部署整個層。
@@ -93,11 +79,9 @@ EShopOnContainers reference 應用程式會使用 Docker 來裝載四個容器�
 
 參考應用程式中的後端服務架構會分解成多個自主子系統，其形式為共同微服務和容器。 每個微服務都提供單一功能區域：身分識別服務、目錄服務、訂購服務和購物籃服務。
 
-每個微服務都有自己的資料庫，讓它能夠與其他微服務完全分離。 在必要時，會使用應用層級事件來達成來自不同微服務的資料庫之間的一致性。 如需詳細資訊，請參閱[微服務之間的通訊](#communication_between_microservices)。
+每個微服務都有自己的資料庫，讓它能夠與其他微服務完全分離。 在必要時，會使用應用層級事件來達成來自不同微服務的資料庫之間的一致性。 如需詳細資訊，請參閱[微服務之間的通訊](#communication-between-microservices)。
 
 如需參考應用程式的詳細資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
-
-<a name="communication_between_client_and_microservices" />
 
 ## <a name="communication-between-client-and-microservices"></a>用戶端和微服務之間的通訊
 
@@ -111,8 +95,6 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 
 > [!TIP]
 > 請考慮使用 API 閘道通訊。 當您建立大型且複雜的微服務型應用程式時，直接用戶端對微服務通訊可能會有缺點，但對於小型應用程式而言，它就夠多了。 設計具有數十個微服務的大型微服務型應用程式時，請考慮使用 API 閘道通訊。 如需詳細資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
-
-<a name="communication_between_microservices" />
 
 ## <a name="communication-between-microservices"></a>微服務之間的通訊
 
@@ -147,7 +129,7 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 
 如需事件匯流排執行的相關資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 微服務提供應用程式開發和部署的方法，其適用于現代化雲端應用程式的靈活性、規模和可靠性需求。 微服務的主要優點之一，就是可以獨立地相應放大，這表示可以調整特定功能區域，而需要更多處理能力或網路頻寬來支援需求，而不需在不需要增加需求的情況下調整應用程式的區域。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: 2d204aeac18fc08bf6eb2221b6f64ecbbded8121
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 78c048d793fd792576e2482491ebf11460d5b511
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009997"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571801"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin 中的國際化編碼
 
@@ -35,7 +35,7 @@ ms.locfileid: "73009997"
 - 西部：拉丁語言、復活節和西歐
 - all
 
- <a name="cjk" />
+ <a name="cjk"></a>
 
 ## <a name="cjk"></a>cjk
 
@@ -46,7 +46,7 @@ ms.locfileid: "73009997"
 - CP950
 - CP54936
 
- <a name="mideast" />
+ <a name="mideast"></a>
 
 ## <a name="mideast"></a>務必
 
@@ -58,9 +58,9 @@ ms.locfileid: "73009997"
 - CP28599
 - CP38598
 
- <a name="other" />
+ <a name="other"></a>
 
-## <a name="other"></a>另一個
+## <a name="other"></a>其他
 
 - CP1251
 - CP1257
@@ -72,7 +72,7 @@ ms.locfileid: "73009997"
 - CP57002
 - CP874
 
- <a name="rare" />
+ <a name="rare"></a>
 
 ## <a name="rare"></a>比較
 
@@ -114,9 +114,9 @@ ms.locfileid: "73009997"
 - CP870
 - CP875
 
- <a name="west" />
+ <a name="west"></a>
 
-## <a name="west"></a>west
+## <a name="west"></a>西部
 
 - CP10000
 - CP10079

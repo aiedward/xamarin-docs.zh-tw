@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 02bd25c4b4e251536dfdabdef109eb659fe3be37
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bddab35044c2b85b69146a03babd9884784baceb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032162"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574583"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 上 MapKit 的新功能
 
@@ -25,17 +25,17 @@ iOS 11 將下列新功能新增至 MapKit：
 
 ![顯示叢集標記和羅盤按鈕的地圖](mapkit-images/cyclemap-heading.png)
 
-<a name="clustering" />
+<a name="clustering"></a>
 
 ## <a name="automatically-grouping-markers-while-zooming"></a>在縮放時自動分組標記
 
 範例[MapKit 範例「Tandm](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample) 」顯示如何執行新的 iOS 11 注釋叢集功能。
 
-### <a name="1-create-an-mkpointannotation-subclass"></a>1. 建立 `MKPointAnnotation` 子類別
+### <a name="1-create-an-mkpointannotation-subclass"></a>1. 建立子 `MKPointAnnotation` 類別
 
-點批註類別代表地圖上的每個標記。 您可以使用 `MapView.AddAnnotation()` 或從使用 `MapView.AddAnnotations()`的陣列來個別新增它們。
+點批註類別代表地圖上的每個標記。 您可以使用 `MapView.AddAnnotation()` 或從陣列個別新增它們 `MapView.AddAnnotations()` 。
 
-點注釋類別沒有視覺標記法，只需要代表與標記相關聯的資料（最重要的是，`Coordinate` 屬性是地圖上的緯度和經度），以及任何自訂屬性：
+點注釋類別沒有視覺標記法，只需要代表與標記相關聯的資料（最重要的 `Coordinate` 是，屬性是地圖上的緯度和經度），以及任何自訂屬性：
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,14 +57,14 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. 建立單一標記的 `MKMarkerAnnotationView` 子類別
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. 建立 `MKMarkerAnnotationView` 單一標記的子類別
 
 標記批註視圖是每個注釋的視覺標記法，而且是使用屬性（例如）來設計樣式：
 
 - **MarkerTintColor** –標記的色彩。
 - **GlyphText** –標記中顯示的文字。
 - **GlyphImage** –設定標記中顯示的影像。
-- **DisplayPriority** –當對應與標記擁擠時，決定迭置順序（堆疊行為）。 使用其中一個 `Required`、`DefaultHigh`或 `DefaultLow`。
+- **DisplayPriority** –當對應與標記擁擠時，決定迭置順序（堆疊行為）。 使用 `Required` 、或其中一個 `DefaultHigh` `DefaultLow` 。
 
 若要支援自動叢集，您也必須設定：
 
@@ -104,7 +104,7 @@ public class BikeView : MKMarkerAnnotationView
   }
 ```
 
-### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. 建立 `MKAnnotationView` 來代表標記的群集
+### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. 建立 `MKAnnotationView` 以代表標記的群集
 
 雖然代表標記叢集的注釋視圖可以是簡單的影像，但是使用者預期應用_程式會提供_有關已群組在一起的標記的視覺提示。
 
@@ -112,8 +112,8 @@ public class BikeView : MKMarkerAnnotationView
 
 您也應該設定：
 
-- **DisplayPriority** –當對應與標記擁擠時，決定迭置順序（堆疊行為）。 使用其中一個 `Required`、`DefaultHigh`或 `DefaultLow`。
-- **CollisionMode** – `Circle` 或 `Rectangle`。
+- **DisplayPriority** –當對應與標記擁擠時，決定迭置順序（堆疊行為）。 使用 `Required` 、或其中一個 `DefaultHigh` `DefaultLow` 。
+- **CollisionMode** – `Circle` 或 `Rectangle` 。
 
 ```csharp
 [Register("ClusterView")]
@@ -196,7 +196,7 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 如需使用 MapKit 顯示資料的詳細資訊，請參閱[Maps 一節](~/ios/user-interface/controls/ios-maps/index.md)。
 
-<a name="compass" />
+<a name="compass"></a>
 
 ## <a name="compass-button"></a>羅盤按鈕
 
@@ -215,13 +215,13 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-`ShowsCompass` 屬性可以用來控制地圖視圖內預設羅盤的可見度。
+`ShowsCompass`屬性可以用來控制地圖視圖內預設羅盤的可見度。
 
-<a name="scale" />
+<a name="scale"></a>
 
 ## <a name="scale-view"></a>調整視圖
 
-使用 `MKScaleView.FromMapView()` 方法，在視圖的其他位置新增尺規，以取得要在視圖階層中其他位置加入的尺規視圖實例。
+使用方法，在視圖的其他位置新增尺規 `MKScaleView.FromMapView()` ，以取得要在視圖階層中其他位置加入的尺規視圖實例。
 
 ![地圖上重迭的縮放視圖](mapkit-images/scale-sml.png)
 
@@ -233,9 +233,9 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-`ShowsScale` 屬性可以用來控制地圖視圖內預設羅盤的可見度。
+`ShowsScale`屬性可以用來控制地圖視圖內預設羅盤的可見度。
 
-<a name="user-tracking" />
+<a name="user-tracking"></a>
 
 ## <a name="user-tracking-button"></a>[使用者追蹤] 按鈕
 

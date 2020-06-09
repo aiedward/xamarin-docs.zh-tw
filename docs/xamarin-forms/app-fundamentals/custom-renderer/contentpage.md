@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50e28291d72550264e3806c0911f59a57c6d8bf0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136327"
+title： "自訂 ContentPage" 描述： "ContentPage 是一種視覺元素，會顯示單一視圖並佔用大部分的畫面。 本文示範如何建立 ContentPage 頁面的自訂轉譯器，讓開發人員以自己的平臺特定自訂來覆寫預設原生轉譯。
+assetid： A4E61D93-73D9-4668-8D1C-DB6FC2491822 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/29/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
@@ -31,13 +17,11 @@ _ContentPage 是視覺元素，會顯示單一視圖並佔用大部分的畫面�
 
 您可以 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在每個平臺上建立的自訂轉譯器，利用呈現程式來執行平臺特定的自訂。 執行這項作業的流程如下：
 
-1. [建立](#Creating_the_Xamarin.Forms_Page) Xamarin.Forms 頁面。
-1. [使用](#Consuming_the_Xamarin.Forms_Page)來自的頁面 Xamarin.Forms 。
-1. 在每個平台上[建立](#Creating_the_Page_Renderer_on_each_Platform)頁面的自訂轉譯器。
+1. [建立](#creating-the-xamarinforms-page) Xamarin.Forms 頁面。
+1. [使用](#consuming-the-xamarinforms-page)來自的頁面 Xamarin.Forms 。
+1. 在每個平台上[建立](#creating-the-page-renderer-on-each-platform)頁面的自訂轉譯器。
 
 現在將依序討論每個項目，以實作 `CameraPage` 提供即時相機播放和拍照功能。
-
-<a name="Creating_the_Xamarin.Forms_Page" />
 
 ## <a name="creating-the-xamarinforms-page"></a>建立 Xamarin.Forms 頁面
 
@@ -78,8 +62,6 @@ public class CameraPageCS : ContentPage
 
 每個平台上都會使用 `CameraPage` 執行個體來顯示即時相機播放。 控制項的自訂作業會在自訂轉譯器中完成，因此不需要在 `CameraPage` 類別中進行其他實作。
 
-<a name="Consuming_the_Xamarin.Forms_Page" />
-
 ## <a name="consuming-the-xamarinforms-page"></a>使用 Xamarin.Forms 頁面
 
 `CameraPage`應用程式必須顯示空的 Xamarin.Forms 。 此動作發生於點選 `MainPage` 執行個體上的按鈕時，並會接著執行 `OnTakePhotoButtonClicked` 方法，如下列程式碼範例所示：
@@ -92,8 +74,6 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 ```
 
 此程式碼只會巡覽至 `CameraPage`，自訂轉譯器會在上方自訂每個平台上的頁面外觀。
-
-<a name="Creating_the_Page_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-page-renderer-on-each-platform"></a>在每個平台上建立頁面轉譯器
 
@@ -253,7 +233,7 @@ namespace CustomRenderer.UWP
 > [!NOTE]
 > 請務必停止並處置提供 UWP 應用程式中相機存取權的物件。 若未這樣做，則可能會干擾嘗試存取裝置相機的其他應用程式。 如需詳細資訊，請參閱[顯示相機預覽](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範如何建立頁面的自訂轉譯器 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ，讓開發人員能夠以自己的平臺特定自訂來覆寫預設原生轉譯。 `ContentPage` 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。
 

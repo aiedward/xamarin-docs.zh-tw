@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何在應用程式中使用 AutomationProperties 類別 Xamarin.Forms ，讓螢幕閱讀者可以讀出頁面上的元素。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ad6d315ccc5be0a7709164d40685c842b61b90b4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129957"
+title： "Automation Properties" 描述： "本文說明如何在應用程式中使用 AutomationProperties 類別 Xamarin.Forms ，讓螢幕閱讀者可以說出頁面上的元素。」
+assetid： c0bb6893-fd26-47e7-88e5-3c333c9f786c ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/18/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="automation-properties-in-xamarinforms"></a>中的自動化屬性Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
@@ -25,10 +11,10 @@ _Xamarin 會使用 AutomationProperties 類別中的附加屬性來設定使用�
 
 Xamarin.Forms允許透過下列附加屬性，在使用者介面元素上設定 automation 屬性：
 
-- `AutomationProperties.IsInAccessibleTree` – 表示項目是否可供可存取的應用程式使用。 如需詳細資訊，請參閱 [AutomationProperties.IsInAccessibleTree](#isinaccessibletree)。
-- `AutomationProperties.Name` – 作為項目可朗讀識別碼的項目簡短描述。 如需詳細資訊，請參閱 [AutomationProperties.Name](#name)。
-- `AutomationProperties.HelpText` – 項目的較長描述，可視為與項目建立關聯的工具提示文字。 如需詳細資訊，請參閱 [AutomationProperties.HelpText](#helptext)。
-- `AutomationProperties.LabeledBy` – 可讓另一個項目定義目前項目的協助工具資訊。 如需詳細資訊，請參閱 [AutomationProperties.LabeledBy](#labeledby)。
+- `AutomationProperties.IsInAccessibleTree` – 表示項目是否可供可存取的應用程式使用。 如需詳細資訊，請參閱 [AutomationProperties.IsInAccessibleTree](#automationpropertiesisinaccessibletree)。
+- `AutomationProperties.Name` – 作為項目可朗讀識別碼的項目簡短描述。 如需詳細資訊，請參閱 [AutomationProperties.Name](#automationpropertiesname)。
+- `AutomationProperties.HelpText` – 項目的較長描述，可視為與項目建立關聯的工具提示文字。 如需詳細資訊，請參閱 [AutomationProperties.HelpText](#automationpropertieshelptext)。
+- `AutomationProperties.LabeledBy` – 可讓另一個項目定義目前項目的協助工具資訊。 如需詳細資訊，請參閱 [AutomationProperties.LabeledBy](#automationpropertieslabeledby)。
 
 這些附加屬性會設定原生協助工具值，讓螢幕助讀程式可以讀出項目。 如需附加屬性的詳細資訊，請參閱[附加屬性](~/xamarin-forms/xaml/attached-properties.md)。
 
@@ -51,8 +37,6 @@ Xamarin.Forms允許透過下列附加屬性，在使用者介面元素上設定 
 
 此外，朗讀程式會依序優先處理 `AutomationProperties.Name`、`AutomationProperties.LabeledBy`，然後處理 `AutomationProperties.HelpText`。 在 Android 上，TalkBack 可以結合 `AutomationProperties.Name` 和 `AutomationProperties.HelpText` 值。 因此，建議在每個平台上進行徹底的協助工具測試，以確保獲得最佳的體驗。
 
-<a name="isinaccessibletree" />
-
 ## <a name="automationpropertiesisinaccessibletree"></a>AutomationProperties.IsInAccessibleTree
 
 `AutomationProperties.IsInAccessibleTree` 附加屬性是 `boolean`，它決定項目是否可供螢幕助讀程式存取，並因此可見。 它必須設定為 `true` 才能使用其他協助工具附加屬性。 執行下列工作即可用 XAML 來達成這點：
@@ -70,8 +54,6 @@ AutomationProperties.SetIsInAccessibleTree(entry, true);
 
 > [!NOTE]
 > 請注意，[ `SetValue` ] （x： Xamarin.Forms 。BindableObject. SetValue （ Xamarin.Forms 。BindableProperty，System.object）方法也可以用來設定 `AutomationProperties.IsInAccessibleTree` 附加屬性–`entry.SetValue(AutomationProperties.IsInAccessibleTreeProperty, true);`
-
-<a name="name" />
 
 ## <a name="automationpropertiesname"></a>AutomationProperties.Name
 
@@ -92,8 +74,6 @@ AutomationProperties.SetName(activityIndicator, "Progress indicator");
 
 > [!NOTE]
 > 請注意，[ `SetValue` ] （x： Xamarin.Forms 。BindableObject. SetValue （ Xamarin.Forms 。BindableProperty，System.object）方法也可以用來設定 `AutomationProperties.Name` 附加屬性–`activityIndicator.SetValue(AutomationProperties.NameProperty, "Progress indicator");`
-
-<a name="helptext" />
 
 ## <a name="automationpropertieshelptext"></a>AutomationProperties.HelpText
 
@@ -117,8 +97,6 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 > 請注意，[ `SetValue` ] （x： Xamarin.Forms 。BindableObject. SetValue （ Xamarin.Forms 。BindableProperty，System.object）方法也可以用來設定 `AutomationProperties.HelpText` 附加屬性–`button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
 在某些平臺上，針對之類的編輯控制項 [`Entry`](xref:Xamarin.Forms.Entry) ， `HelpText` 有時會省略屬性，並以預留位置文字取代。 例如，「在這裡輸入您的名稱」是屬性的理想候選，它會將 [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) 文字放在控制項中的使用者實際輸入之前。
-
-<a name="labeledby" />
 
 ## <a name="automationpropertieslabeledby"></a>AutomationProperties.LabeledBy
 

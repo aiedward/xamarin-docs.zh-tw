@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: b646893d8bbe63aa537c973c90552e0367735e47
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c6a606bf326d1e59398ab77c51b1de5ed3e497e0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303901"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571528"
 ---
 # <a name="signing-the-android-application-package"></a>簽署 Android 應用程式套件
 
@@ -20,21 +20,21 @@ ms.locfileid: "79303901"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在[「存檔以供發佈](~/android/deploy-test/release-prep/index.md#archive)」中,「**分發管道」** 對話方塊提供了兩個分發選項。 選取 [臨機操作]****：
+在 [封存[以供發佈](~/android/deploy-test/release-prep/index.md#archive)] 中，[**散發通道**] 對話方塊會顯示兩個散發選項。 選取 [臨機操作]****：
 
-[![分發通路對話框](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
+[![[散發通道] 對話方塊](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 在[封存以供發行](~/android/deploy-test/release-prep/index.md#archive)中，[簽署並散發]**** 對話方塊顯示了兩個用於散發的選項。 選取 [臨機操作]****，然後按一下 [下一步]****：
 
-[![簽署與分發對話框](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
+[![[簽署並散發] 對話方塊](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
 
 -----
 
-<a name="newcertvs" />
-<a name="newcert" />
-<a name="newcertxs" />
+<a name="newcertvs"></a>
+<a name="newcert"></a>
+<a name="newcertxs"></a>
 
 ## <a name="create-a-new-certificate"></a>建立新的憑證
 
@@ -42,13 +42,13 @@ ms.locfileid: "79303901"
 
 選取 [臨機操作]**** 之後，Visual Studio 會開啟對話方塊的 [簽署身分識別]**** 頁面，如下一個螢幕擷取畫面所示。 若要發行 .APK，必須先使用簽署金鑰 (也稱為憑證) 來簽署它。
 
-您可以按一下 [匯入]**** 按鈕，然後繼續[簽署 APK](#sign-the-apk)，以使用現有的憑證。 否則,按下這個**+** 按鈕建立新憑證:
+您可以按一下 [匯入]**** 按鈕，然後繼續[簽署 APK](#sign-the-apk)，以使用現有的憑證。 否則，請按一下 **+** 按鈕以建立新的憑證：
 
-[![暫存章識別](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
+[![特定簽署身分識別](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
 [Create Android Key Store] \(建立 Android 金鑰儲存區\)**** 對話方塊隨即顯示；使用此對話方塊來建立可用於簽署 Android 應用程式的新簽署憑證。 輸入所需的資訊，如此對話方塊中所示 (以紅色標示之處)：
 
-[![建立 Android 金鑰儲存對話框](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
+[![建立 Android 金鑰存放區對話方塊](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
 
 下列範例說明必須提供的資訊種類。 按一下 [建立]**** 來建立新的憑證：
 
@@ -71,11 +71,11 @@ ms.locfileid: "79303901"
 
 按一下 [臨機操作]**** 之後，Visual Studio for Mac 即會開啟 [Android 簽署識別]**** 對話方塊，如下一個螢幕擷取畫面所示。 若要發行 .APK，必須先使用簽署金鑰 (也稱為憑證) 來簽署它。 如果憑證已經存在，按一下 [匯入現有的金鑰]**** 按鈕來匯入它，然後繼續[簽署 APK](#sign-the-apk)；否則，按一下 [建立新的金鑰]**** 按鈕來建立新的憑證：
 
-[![安卓簽名標識對話方塊](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
+[![[Android 簽署識別] 對話方塊](images/xs/02-android-signing-identity-sml.png)](images/xs/02-android-signing-identity.png#lightbox)
 
 [建立新的憑證]**** 對話方塊會用來建立可用於簽署 Android 應用程式的新簽署憑證。 輸入必要資訊之後，按一下 [確定]****：
 
-[![建立新憑證對話框](images/xs/03-create-new-certificate-sml.png)](images/xs/03-create-new-certificate.png#lightbox)
+[![[建立新憑證] 對話方塊](images/xs/03-create-new-certificate-sml.png)](images/xs/03-create-new-certificate.png#lightbox)
 
 產生的金鑰儲存區位於下列位置：
 
@@ -99,37 +99,37 @@ ms.locfileid: "79303901"
 按一下 [建立]**** 時，新的金鑰儲存區 (包含新的憑證) 將會儲存並列於 [簽署身分識別]**** 下方，如下一個螢幕擷取畫面所示。 若要在 Google Play 上發行應用程式，按一下[取消]****，然後移至[發行至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)。
 若要透過「臨機操作」** 發行，請選取要用來簽署的簽署身分識別，然後按一下 [另存新檔]**** 以發行要獨立散發的應用程式。 例如，此螢幕擷取畫面中已選取 **chimp** 簽署身分識別 (先前建立的)：
 
-[![簽章識別範例](images/vs/05-save-as-vs-sml.png)](images/vs/05-save-as-vs.png#lightbox)
+[![簽署身分識別範例](images/vs/05-save-as-vs-sml.png)](images/vs/05-save-as-vs.png#lightbox)
 
 接著，[封存管理員]**** 會顯示發行進度。 當發行程序完成時，[另存新檔]**** 對話方塊隨即開啟，要求提供儲存所產生 .APK 檔案的位置：
 
-[![儲存為對話框](images/vs/06-save-as-dialog-vs-sml.png)](images/vs/06-save-as-dialog-vs.png#lightbox)
+[![另存新檔對話方塊](images/vs/06-save-as-dialog-vs-sml.png)](images/vs/06-save-as-dialog-vs.png#lightbox)
 
 瀏覽至想要的位置，然後按一下 [儲存]****。 如果金鑰密碼是未知的，[簽署密碼]**** 對話方塊隨即出現，提示您提供所選取憑證的密碼：
 
-[![簽署密碼對話框](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
+[![[簽署密碼] 對話方塊](images/vs/07-signing-password-vs-sml.png)](images/vs/07-signing-password-vs.png#lightbox)
 
 簽署程序完成之後，按一下 [開啟散發]****：
 
-[![開啟分發按鈕](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
+[![開啟 [散發] 按鈕](images/vs/08-open-distribution-sml.png)](images/vs/08-open-distribution.png#lightbox)
 
 這會導致 Windows 檔案總管開啟包含所產生 APK 檔案的資料夾。 此時，Visual Studio 已將 Xamarin.Android 應用程式編譯為已完成散發準備的 APK。
 下列螢幕擷取畫面會顯示已完成發行準備的應用程式 **MyApp.MyApp.apk** 範例：
 
-[![Windows 資源管理員中顯示的 APK](images/vs/09-generated-app-vs-sml.png)](images/vs/09-generated-app-vs.png#lightbox)
+[![Windows Explorer 中顯示的 APK](images/vs/09-generated-app-vs-sml.png)](images/vs/09-generated-app-vs.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 如此處所示，已將新的憑證新增至金鑰儲存區。 若要在 Google Play 上發行應用程式，按一下[取消]****，然後移至[發行至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)。
 否則，按一下 [下一步]****，透過「臨機操作」** 發行應用程式 (適用於獨立散發)，如此範例所示：
 
-[![簽署與分發對話框](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
+[![[簽署並散發] 對話方塊](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
 
 [發行為臨機操作]**** 對話方塊會在發行已簽署的應用程式之前，提供它的摘要。 如果此資訊正確，按一下 [發行]****。
 
-[![為臨時對話框發佈](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
+[![發行為特定對話](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
 
-[輸出 APK 檔案]**** 對話方塊會將 APK 儲存至指定的路徑。 按一下 [檔案]  。
+[輸出 APK 檔案]**** 對話方塊會將 APK 儲存至指定的路徑。 按一下 [檔案] 。
 
 ![[輸出 APK 檔案] 對話方塊](images/xs/06-output-apk-file.png)
 
@@ -139,11 +139,11 @@ ms.locfileid: "79303901"
 
 系統會使用該憑證來簽署 APK，並將它儲存到指定的位置。 按一下 [在 Finder 中顯示]****：
 
-[![發佈成功對話框](images/xs/08-app-is-ready-sml.png)](images/xs/08-app-is-ready.png#lightbox)
+[![發行成功對話方塊](images/xs/08-app-is-ready-sml.png)](images/xs/08-app-is-ready.png#lightbox)
 
 這樣會將 Finder 開啟至已簽署 APK 檔案的位置：
 
-[![尋找器中顯示的 APK](images/xs/09-show-in-finder-sml.png)](images/xs/09-show-in-finder.png#lightbox)
+[![搜尋工具中顯示的 APK](images/xs/09-show-in-finder-sml.png)](images/xs/09-show-in-finder.png#lightbox)
 
 APK 已準備好從 Finder 複製並傳送到其最終目的地。 理想的作法是在 Android 裝置上安裝 APK，並在散發前加以試用。 如需發行「臨機操作」** APK 的詳細資訊，請參閱[獨立發行](~/android/deploy-test/publishing/publishing-independently.md)。
 

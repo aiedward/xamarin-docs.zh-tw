@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304692"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569825"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>使用 Xamarin Designer for iOS 的自動版面配置
 
@@ -20,7 +20,7 @@ ms.locfileid: "79304692"
 
 在本指南中，我們引進了條件約束，以及如何在 Xamarin iOS 設計工具中使用它們。 本指南未涵蓋以程式設計方式使用條件約束。 如需以程式設計方式使用自動設定的詳細資訊，請參閱[Apple 檔](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 Xamarin Designer for iOS 適用于 Windows 上 Visual Studio 2017 和更新版本中的 Visual Studio for Mac。
 
@@ -30,7 +30,7 @@ Xamarin Designer for iOS 適用于 Windows 上 Visual Studio 2017 和更新版�
 
 「條件約束」（constraint）是螢幕上兩個元素之間關聯性的數學標記法。 將 UI 專案的位置表示為數學關聯性，可解決許多與硬式編碼 UI 元素位置相關的問題。 例如，如果我們要在直向模式下將按鈕從畫面底部20px，按鈕的位置會在橫向模式中關閉螢幕。 若要避免這種情況，我們可以設定一個條件約束，將按鈕20px 的下邊緣放在視圖的底部。 然後按鈕邊緣的位置會計算為*button. 底端 = view. 底端-20px*，這會將按鈕20px 從視圖底部的直向和橫向模式。 根據數學關聯性計算位置的能力，是讓條件約束在 UI 設計中很有用的功能。
 
-當我們設定條件約束時，我們會建立一個 `NSLayoutConstraint` 物件，它會採用要限制的物件以及條件約束將作用的屬性（ *attribute），* 做為引數。 在 iOS 設計工具中，屬性包括邊緣，例如元素的*左邊*、*右邊*、*上方*和*底部*。 它們也包括大小屬性，例如*height*和*width*，以及中心點位置*system.windows.media.rotatetransform.centerx*和*centerY*。 例如，當我們在兩個按鈕的左邊界位置加入條件約束時，設計工具會在幕後產生下列程式碼：
+當我們設定條件約束時，我們會建立 `NSLayoutConstraint` 物件，它會接受要限制的物件以及條件約束將作用的屬性（attribute）（ *attribute）* 做為引數。 在 iOS 設計工具中，屬性包括邊緣，例如元素的*左邊*、*右邊*、*上方*和*底部*。 它們也包括大小屬性，例如*height*和*width*，以及中心點位置*system.windows.media.rotatetransform.centerx*和*centerY*。 例如，當我們在兩個按鈕的左邊界位置加入條件約束時，設計工具會在幕後產生下列程式碼：
 
 ```csharp
 View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, NSLayoutRelation.Equal, Button2, NSLayoutAttribute.Left, 1, 10));
@@ -67,7 +67,7 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
 [條件約束編輯器] 快顯視窗可讓我們針對選取視圖，一次加入和更新多個條件約束。 我們可以建立多個間距、外觀比例和對齊條件約束，例如將視圖對齊兩個視圖的左邊緣。
 
-若要在選取的視圖上編輯條件約束，請按一下省略號以顯示 [popover： ![條件約束編輯 popover]](designer-auto-layout-images/constraints-popup.png)
+針對選取之視圖上的編輯條件約束，按一下省略號以顯示 [popover： ![ 條件約束編輯] popover](designer-auto-layout-images/constraints-popup.png)
 
 開啟 [條件約束] popover 時，它會在此視圖上顯示任何預設的條件約束。 我們**可以從右上**角的下拉式方塊中選取所有的間距條件約束，然後選取 [**全部清除**] 將它們移除。
 
@@ -170,7 +170,7 @@ Underconstrained 專案會以橙色顯示，並在 [view controller] 物件列�
 
 這會自動調整元素框架，使其符合控制項所定義的位置。
 
-<a name="modifying-in-code" />
+<a name="modifying-in-code"></a>
 
 ## <a name="modifying-constraints-in-code"></a>修改程式碼中的條件約束
 
@@ -201,12 +201,12 @@ ViewInfoHeight.Constant = 0;
 
 自動設定引擎不會立即更新附加的視圖以回應條件約束變更，而是會在不久的未來排程延遲的配置_傳遞_。 在此延後行程期間，不僅會更新指定的視圖條件約束，也會重新計算階層中每個視圖的條件約束，並更新以調整新的版面配置。
 
-在任何時間點，您都可以藉由呼叫父視圖的 `SetNeedsLayout` 或 `SetNeedsUpdateConstraints` 方法，來排程自己的延後配置傳遞。
+在任何時間點，您都可以藉由呼叫 `SetNeedsLayout` 父視圖的或方法，來排程您自己的延遲版面配置傳遞 `SetNeedsUpdateConstraints` 。
 
 延遲的版面配置傳遞是由兩個透過 view 階層的唯一階段所組成：
 
-- **更新傳遞**-在此階段中，自動設定引擎會遍歷視圖階層，並在所有視圖控制器上叫用 `UpdateViewConstraints` 方法，並在所有視圖上叫用 `UpdateConstraints` 方法。
-- **版面**配置會再次傳遞，自動版面配置引擎會遍歷視圖階層，但這次會在所有視圖控制器上叫用 `ViewWillLayoutSubviews` 方法，並在所有視圖上叫用 `LayoutSubviews` 方法。 `LayoutSubviews` 方法會使用自動設定引擎所計算的矩形，來更新每個子視圖的 `Frame` 屬性。
+- **更新傳遞**-在此階段中，自動版面配置引擎會遍歷視圖階層，並在所有視圖控制器上叫用 `UpdateViewConstraints` 方法，並在 `UpdateConstraints` 所有視圖上叫用方法。
+- **版面**配置會再次傳遞，自動版面配置引擎會遍歷視圖階層，但這次會在所有視圖控制器上叫用 `ViewWillLayoutSubviews` 方法，並在 `LayoutSubviews` 所有視圖上叫用方法。 `LayoutSubviews`方法會 `Frame` 使用自動設定引擎所計算的矩形，來更新每個子視圖的屬性。
 
 ### <a name="animating-constraint-changes"></a>動畫條件約束變更
 
@@ -222,9 +222,9 @@ View.LayoutIfNeeded();
 UIView.CommitAnimations();
 ```
 
-此處的索引鍵是在動畫區塊內呼叫父視圖的 `LayoutIfNeeded` 方法。 這會告訴此視圖繪製動畫位置或大小變更的每個「框架」。 如果沒有這一行，此視圖只會貼齊最終版本，而不會產生動畫。
+此處的索引鍵是在 `LayoutIfNeeded` 動畫區塊內呼叫父視圖的方法。 這會告訴此視圖繪製動畫位置或大小變更的每個「框架」。 如果沒有這一行，此視圖只會貼齊最終版本，而不會產生動畫。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本指南引進 iOS 自動（或「調適型」）配置，以及在設計介面上專案之間的關聯性數學標記法的條件約束概念。 本文說明如何在 iOS 設計工具中啟用自動版面配置、使用**條件約束工具列**，以及在設計介面上個別編輯條件約束。 接下來，它會說明如何針對三個常見的條件約束問題進行疑難排解。 最後，它會示範如何修改程式碼中的條件約束。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 1c8eddcf16c8513852c21babf34d81c9a3290406
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b27608642ed04216b10767d37d26699a0aef7f3e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028429"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573764"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS 測試及部署 - 疑難排解
 
@@ -28,7 +28,7 @@ ms.locfileid: "73028429"
 
 - 保持「鑰匙圈存取」井然有序，並刪除過期的憑證和設定檔。 企業憑證可持續使用三年，其他憑證則僅能持續使用一年。 您無法更新憑證，因此需要在舊的憑證到期之前建立新的憑證。 請務必撤銷並刪除舊的憑證，並使用新的憑證重新簽署應用程式。
 
-- 安裝新的佈建設定檔時，移除舊的佈建設定檔。 這表示 Visual Studio for Mac 不需要決定要使用哪個設定檔。 為此,請確保刪除 Apple 開發人員中心的個人資料,然後流覽到 *"首選項>您的帳戶>查看詳細資訊..."* 選擇預配設定檔,然後按下 **「尋找器」 中的「 顯示**」 。 這將顯示設定檔在 Mac 檔案系統中的位置，之後就可以使用 Finder 刪除該位置。
+- 安裝新的佈建設定檔時，移除舊的佈建設定檔。 這表示 Visual Studio for Mac 不需要決定要使用哪個設定檔。 若要達到此目的，請先確定刪除 Apple 開發人員中心內的設定檔，然後流覽至*您帳戶的喜好設定 > > View Details*...]。選取 [布建設定檔]，然後按一下 [**在 Finder 中顯示**]。 這將顯示設定檔在 Mac 檔案系統中的位置，之後就可以使用 Finder 刪除該位置。
 
 - 請確認所有必要的憑證和對應的私密金鑰都可以使用。 因為每個小組都需要一個開發人員憑證 (以便在自己的裝置上安裝應用程式)，以及一個散發憑證 (以安裝在其他裝置上)
 
@@ -60,7 +60,7 @@ ms.locfileid: "73028429"
 
 - 每天只能提交兩個組建以供審查。 因為變更版本會強制進行審查，這表示每天只能變更版本號碼兩次。
 
-<a name="Automatically_copy_app_bundles_back_to_Windows" />
+<a name="Automatically_copy_app_bundles_back_to_Windows"></a>
 
 ## <a name="automatically-copy-app-bundles-back-to-windows"></a>自動將 .app 套件組合複製回 Windows
 

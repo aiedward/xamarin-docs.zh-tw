@@ -1,9 +1,6 @@
 ---
-title： ' 在 ' description 中緩動函 Xamarin.Forms 式： ' Xamarin.Forms 包含一個緩動類別，可讓您指定傳送函式，以控制動畫在執行時的速度或緩慢。 本文示範如何使用預先定義的緩動函式，以及如何建立自訂的緩動函數。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： "在 Xamarin.Forms " description： "中簡化函 Xamarin.Forms 式包含一個緩動類別，可讓您指定傳送函式，以控制動畫在執行時的速度或緩慢。 本文示範如何使用預先定義的緩動函式，以及如何建立自訂的緩動函數。」
+assetid： E6F124C7-A161-4C1F-AF40-52F0935E54DE ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/14/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="easing-functions-in-xamarinforms"></a>中的緩動函數Xamarin.Forms
@@ -28,7 +25,7 @@ _Xamarin 包含一個緩動類別，可讓您指定傳送函式，以控制動�
 
 和後置詞 `In` `Out` 表示緩動函式所提供的效果在動畫開頭、結尾，或兩者都很明顯。
 
-此外，也可以建立自訂的緩接函式。 如需詳細資訊，請參閱[自訂緩時函數](#customeasing)。
+此外，也可以建立自訂的緩接函式。 如需詳細資訊，請參閱[自訂緩時函數](#custom-easing-functions)。
 
 ## <a name="consuming-an-easing-function"></a>使用緩動函數
 
@@ -45,8 +42,6 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 藉由為動畫指定緩動函式，動畫速度就會變成非線性，並產生緩動函數所提供的效果。 在建立動畫時省略緩動函式會導致動畫使用預設的 [`Linear`](xref:Xamarin.Forms.Easing.Linear) 緩動函式，此功能會產生線性速度。
 
 如需在類別中使用動畫擴充方法的詳細資訊 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) ，請參閱[簡單動畫](~/xamarin-forms/user-interface/animation/simple.md)。 簡化函式也可以由類別使用 [`Animation`](xref:Xamarin.Forms.Animation) 。 如需詳細資訊，請參閱[自訂動畫](~/xamarin-forms/user-interface/animation/custom.md)。
-
-<a name="customeasing" />
 
 ## <a name="custom-easing-functions"></a>自訂緩動函式
 
@@ -94,7 +89,7 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 
 自訂的緩時函式會指定為此函式的 lambda 函數引數 [`Easing`](xref:Xamarin.Forms.Easing) ，並使用 `Math.Cos` 方法來建立方法所抑制的緩慢卸載效果 `Math.Exp` 。 因此，會 [`Image`](xref:Xamarin.Forms.Image) 轉譯實例，讓它看起來會放到其最終的放置位置。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文示範如何使用預先定義的緩動函式，以及如何建立自訂的緩動函數。 Xamarin.Forms包含 [`Easing`](xref:Xamarin.Forms.Easing) 類別，可讓您指定傳送函式，以控制動畫在執行時的速度或緩慢。
 

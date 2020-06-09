@@ -1,17 +1,17 @@
 ---
 title: 建立跨平臺應用程式總覽
-description: 本檔提供建立跨平臺應用程式的高階總覽。 它討論的值C#、設計模式（例如 MVC/MVVM）和原生 ui。
+description: '本檔提供建立跨平臺應用程式的高階總覽。 它討論 c # 的價值、設計模式（例如 MVC/MVVM）和原生 Ui。'
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 7d839e0141f14f4ba86897b128bf2a8c0a79548d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: de8c66e6a89f035b8370a2139361d3e942aa9c09
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016918"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571203"
 ---
 # <a name="building-cross-platform-applications-overview"></a>建立跨平臺應用程式總覽
 
@@ -25,9 +25,9 @@ Xamarin 不只是「寫入一次，隨處執行」平臺，因為其中一個優
 
 以下是建立 Xamarin 跨平臺應用程式的重點摘要：
 
-- 在中C#**使用C#**  -撰寫您的應用程式。 在中撰寫的C#現有程式碼可以非常輕鬆地使用 Xamarin 移植到 IOS 和 Android，而且很明顯在 Windows 應用程式中使用。
+- **使用 c #** -以 c # 撰寫您的應用程式。 以 c # 撰寫的現有程式碼可以非常輕鬆地使用 Xamarin 移植到 iOS 和 Android，而且很明顯在 Windows 應用程式中使用。
 - **利用 MVC 或 MVVM 設計模式**-使用模型/視圖/控制器模式來開發應用程式的使用者介面。 使用模型/視圖/控制器方法，或是模型/視圖/ViewModel 方法，讓「模型」和其餘部分清楚區隔，來架構您的應用程式。 判斷應用程式的哪些部分會使用每個平臺的原生使用者介面專案（iOS、Android、Windows、Mac），並使用此做為將應用程式分割成兩個元件的指導方針：「核心」和「使用者介面」。
-- **建立原生 ui** -每個作業系統特定的應用程式都會提供不同的使用者介面層C# （實作為原生 UI 設計工具的協助）：
+- **建立原生 ui** -每個作業系統特定的應用程式都會提供不同的使用者介面層（在 c # 中以原生 UI 設計工具的協助來執行）：
 
 1. 在 iOS 上，使用 UIKit Api 來建立原生外觀的應用程式，並選擇性地利用 Xamarin 的 iOS 設計工具，以視覺化方式建立 UI。
 1. 在 Android 上，使用 [Android. Views] 建立原生外觀的應用程式，利用 Xamarin 的 UI 設計工具。
@@ -47,15 +47,15 @@ Xamarin 不只是「寫入一次，隨處執行」平臺，因為其中一個優
 
 其中一些元件會在*Tasky*案例研究中執行。
 
- <a name="Separate_Reusable_Code_into_a_Core_Library" />
+ <a name="Separate_Reusable_Code_into_a_Core_Library"></a>
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>將可重複使用的程式碼分隔成核心程式庫
 
-藉由將您的應用程式架構分層，然後將平臺中立的核心功能移至可重複使用的核心程式庫，將責任分離的原則納入考慮，您可以將跨平臺的程式碼共用最大化，如下圖所示闡述
+藉由將您的應用程式架構分層，然後將平臺中立的核心功能移至可重複使用的核心程式庫，將責任分離的原則納入考慮，您可以將跨平臺的程式碼共用最大化，如下圖所示：
 
  ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
 
- <a name="Case_Studies" />
+ <a name="Case_Studies"></a>
 
 ## <a name="case-studies"></a>個案研究
 

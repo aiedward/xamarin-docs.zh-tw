@@ -1,23 +1,8 @@
 ---
-title: Xamarin.Forms視覺狀態管理員
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 13dd0a3f5d665e2232e7e6e12edac7cf117dd0ca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127279"
+標題：「 Xamarin.Forms 視覺狀態管理員」描述：「使用視覺狀態管理員，根據從程式碼設定的視覺狀態來變更 XAML 元素」。
+assetid： 17296F14-640D-484B-A24C-A4E9B7013E4F ms. 技術： xamarin-表單 ms. custom： xamu-影片作者： davidbritch ms-chap： dabritch ms. date： 02/21/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-visual-state-manager"></a>Xamarin.Forms視覺狀態管理員
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
@@ -409,41 +394,13 @@ VSM 標記的其餘部分與之前相同。
 下表列出在中定義的視覺狀態 Xamarin.Forms ：
 
 | 類別 | 狀態 | 相關資訊 |
-| ----- | ---
-標題： ' Xamarin.Forms 視覺狀態管理員 ' 描述： ms-chap： ms. assetid： ms-chap： ms. custom： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
---- |---標題： ' Xamarin.Forms 視覺狀態管理員 ' 描述： ms-chap： assetid： ms. technical： ms. custom： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' Xamarin.Forms 視覺狀態管理員 ' 描述： ms-chap： ms. assetid： ms-chap： ms. custom： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' Xamarin.Forms 視覺狀態管理員 ' 描述： ms-chap： ms. assetid： ms-chap： ms. custom： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' Xamarin.Forms 視覺狀態管理員 ' 描述： ms-chap： ms. assetid： ms-chap： ms. custom： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' Xamarin.Forms 視覺狀態管理員 ' 描述： ms-chap： ms. assetid： ms-chap： ms. custom： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' Xamarin.Forms 視覺狀態管理員 ' 描述： ms-chap： ms. assetid： ms-chap： ms. custom： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--------- | |`Button` | `Pressed` | [按鈕視覺狀態](~/xamarin-forms/user-interface/button.md#button-visual-states)| |`CheckBox` | `IsChecked` | [核取方塊視覺狀態](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states)| |`CarouselView`  |  `DefaultItem` 、 `CurrentItem` 、 `PreviousItem` 、 `NextItem`  |  [CarouselView 視覺狀態](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states)| `ImageButton` |  |  `Pressed`  | [ImageButton 視覺狀態](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states)| |`RadioButton` | `IsChecked` | [選項按鈕視覺狀態](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states)| |`VisualElement`  |  `Normal` 、 `Disabled` 、 `Focused` 、 `Selected`  |  [常見狀態](#common-states) |
+| ----- | ------ | ---------------- |
+| `Button` | `Pressed` | [按鈕視覺狀態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
+| `CheckBox` | `IsChecked` | [核取方塊視覺狀態](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
+| `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [CarouselView 視覺狀態](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
+| `ImageButton` | `Pressed` | [ImageButton 視覺狀態](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
+| `RadioButton` | `IsChecked` | [選項按鈕視覺狀態](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
+| `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [常見狀態](#common-states) |
 
 每個狀態都可以透過名為的視覺狀態群組來存取 `CommonStates` 。
 
@@ -635,8 +592,6 @@ public partial class VsmValidationPage : ContentPage
 如果多個觸發程式同時處於作用中狀態（例如，兩個自訂觸發程式），則標記中宣告的第一個觸發程式會優先使用。
 
 如需狀態觸發程式的詳細資訊，請參閱[狀態觸發](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers)程式。
-
-<a name="adaptive-layout" />
 
 ## <a name="use-the-visual-state-manager-for-adaptive-layout"></a>使用視覺狀態管理員進行自我調整版面配置
 

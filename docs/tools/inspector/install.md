@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305063"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573413"
 ---
 # <a name="inspector-installation-and-requirements"></a>Inspector 安裝和需求
 
@@ -31,7 +31,7 @@ ms.locfileid: "79305063"
 
 -----
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 ### <a name="supported-operating-systems"></a>支援的作業系統
 
@@ -45,7 +45,7 @@ ms.locfileid: "79305063"
 
 即時應用程式檢查適用于企業客戶。
 
-<a name="supported-platforms" />
+<a name="supported-platforms"></a>
 
 ### <a name="supported-app-platforms"></a>支援的應用程式平臺
 
@@ -53,10 +53,10 @@ ms.locfileid: "79305063"
 |--- |--- |--- |
 |Mac|僅 Visual Studio for Mac 中支援|
 |iOS|支援 Visual Studio 2017 和 Visual Studio for Mac| 連結器行為必須設定為 [**不要連結**] （在 [ **iOS 組建**專案] 選項底下） |
-|Android|支援 Visual Studio 2017 和 Visual Studio for Mac|必須以 Android > = 4.0.3 為目標，且已啟用**fastdev** 。<br />必須使用 Google、Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器目前可能不允許檢查。|
+|Android|支援 Visual Studio 2017 和 Visual Studio for Mac|必須以 Android >= 4.0.3 為目標，且已啟用**fastdev** 。<br />必須使用 Google、Visual Studio 或 Xamarin Android 模擬器。 Android 7 模擬器目前可能不允許檢查。|
 |WPF|僅 Visual Studio 2017 中支援|
 
-<a name="reporting-bugs" />
+<a name="reporting-bugs"></a>
 
 ## <a name="reporting-bugs"></a>報告錯誤 (Bug)
 

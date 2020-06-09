@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms浮動切換頁面
-description: Xamarin.FormsCarouselPage 是一種頁面，使用者可以從端對端滑動以流覽內容頁面，例如圖庫。 本文示範如何使用 CarouselPage 來巡覽頁面集合。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4d0cebe98b66f3596e72624efed90e965b942bfc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137523"
+標題：「浮動切換 Xamarin.Forms 頁面」描述：「 Xamarin.Forms CarouselPage 是一種頁面，使用者可以從側邊滑動以流覽內容頁面，例如圖庫。 本文示範如何使用 CarouselPage 來流覽一組頁面。」
+assetid： 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/01/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms浮動切換頁面
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)
@@ -51,15 +37,13 @@ _Xamarin.FormsCarouselPage 是一種頁面，使用者可以從端對端滑動�
 
 有兩種方法可以用來建立 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) ：
 
-- 以 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體之子系的集合來[填入](#Populating_a_CarouselPage_with_a_Page_Collection)`CarouselPage`。
-- 將集合[指派](#Populating_a_CarouselPage_with_a_Template)至 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 屬性，並將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指派至 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 屬性，以傳回集合中物件的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體。
+- 以 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體之子系的集合來[填入](#populate-a-carouselpage-with-a-page-collection)`CarouselPage`。
+- 將集合[指派](#populate-a-carouselpage-with-a-template)至 [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) 屬性，並將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指派至 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) 屬性，以傳回集合中物件的 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 執行個體。
 
 使用這兩種方法，`CarouselPage` 將會依序顯示每一頁，並顯示前往下一頁的撥動互動。
 
 > [!NOTE]
 > 只能 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) 填入 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 實例或 `ContentPage` 衍生。
-
-<a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
 ### <a name="populate-a-carouselpage-with-a-page-collection"></a>以頁面集合填入 CarouselPage
 
@@ -148,8 +132,6 @@ public class MainPageCS : CarouselPage
 ```
 
 每個 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 只 [`Label`](xref:Xamarin.Forms.Label) 會顯示特定色彩的，以及 [`BoxView`](xref:Xamarin.Forms.BoxView) 該色彩的。
-
-<a name="Populating_a_CarouselPage_with_a_Template" />
 
 ### <a name="populate-a-carouselpage-with-a-template"></a>以範本填入 CarouselPage
 

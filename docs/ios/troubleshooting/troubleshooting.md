@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 6368c3a4b128c06687b23b965b308ad6a788188b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304734"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574483"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>適用于 Xamarin 的疑難排解秘訣
 
@@ -45,7 +45,7 @@ ms.locfileid: "79304734"
 
 連結器可能已移除該成員，因此在執行時間並不存在於元件中。  有幾個解決辦法：
 
-- 將[`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)屬性加入至成員。  這會讓連結器無法移除它。
+- 將 [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute) 屬性加入至成員。  這會讓連結器無法移除它。
 - 叫用[**mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)時，請使用 **-nolink**或 **-linksdkonly**選項：
   - **-nolink**會停用所有連結。
   - **-linksdkonly**只會連結 xamarin ios 提供的元件（例如**xamarin**），同時保留使用者建立元件（即您的應用程式專案）中的所有類型。
@@ -72,7 +72,7 @@ TypeName XXXX {
 }
 ```
 
-上述定義會針對您新增至 `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` 檔案中 Visual Studio for Mac 的任何 XIB 檔案 Visual Studio for Mac 自動產生。
+針對您新增至檔案中 Visual Studio for Mac 的任何 XIB 檔案，Visual Studio for Mac 會自動產生上述定義 `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` 。
 
 此外，包含上述程式碼的類型必須是[NSObject](xref:Foundation.NSObject)的子類別。  如果包含類型是在命名空間內，它也應該有一個[[Register]](xref:Foundation.RegisterAttribute)屬性，它會提供不含命名空間的類型名稱（因為 Interface Builder 不支援類型中的命名空間）：
 
@@ -88,7 +88,7 @@ namespace Samples.GLPaint {
 
 ## <a name="unknown-class-xxxx-in-interface-builder-file"></a>Interface Builder 檔案中有未知的類別 XXXX
 
-如果您在介面產生器檔案中定義類別，但未在程式C#代碼中提供它的實際執行，則會產生此錯誤。
+如果您在介面產生器檔案中定義類別，但未在 c # 程式碼中提供它的實際執行，則會產生此錯誤。
 
 您需要新增一些程式碼，如下所示：
 
@@ -110,19 +110,19 @@ public partial class MyImageView : UIView {
 public Bar (IntPtr handle) : base (handle) { }
 ```
 
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>類型 {Foo} 不包含 `GetNativeField` 的定義，而且找不到任何類型 {Foo} 的擴充方法 `GetNativeField`
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>類型 {Foo} 不包含的定義 `GetNativeField` ，而且找不到 `GetNativeField` 類型 {Foo} 的擴充方法
 
 如果您在設計工具產生的檔案（*. xib.designer.cs）中收到此錯誤，則表示這兩個專案的其中一項：
 
  **1）遺漏部分類別或基類**
 
-設計工具產生的部分類別必須在使用者程式碼中有對應的部分類別，而這些類別是繼承自 `NSObject`的某個子類別，通常是 `UIViewController`。 請確定您有提供錯誤之類型的類別。
+設計工具所產生的部分類別必須有使用者程式碼中的對應部分類別，而這些類別會繼承自的某些子類別 `NSObject` ，通常是 `UIViewController` 。 請確定您有提供錯誤之類型的類別。
 
  **2）已變更預設命名空間**
 
 設計工具檔案是使用您專案的預設命名空間設定產生的。 如果您變更了這些設定，或重新命名了專案，則產生的部分類別可能不再與其使用者程式碼對應的命名空間相同。
 
-命名空間設定可以在 [專案選項] 對話方塊中找到。 預設的命名空間位於**一般 > 的 [主要設定**] 區段中。 如果它是空白的，您的專案名稱會當做預設值使用。 您可以在**原始程式碼-> .Net 命名原則**一節中找到更多的 advanced namespace 設定。
+命名空間設定可以在 [專案選項] 對話方塊中找到。 預設的命名空間位於**一般 >的 [主要設定**] 區段中。 如果它是空白的，您的專案名稱會當做預設值使用。 您可以在**原始程式碼-> .Net 命名原則**一節中找到更多的 advanced namespace 設定。
 
 ## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>動作的警告：絕對不會使用私用方法 ' Foo '。 CS0169
 
@@ -142,11 +142,11 @@ public Bar (IntPtr handle) : base (handle) { }
 1. 使用 Mac OS X Leopard （10.5）
 1. 在模擬器中執行您的應用程式。
 
-問題在於 Mono 會挑選 OS X `libsqlite3.dylib`，而不是 Iphonesimulator; 的 `libsqlite3.dylib` 檔案。 您的應用程式*會*在裝置上工作，而不是您的模擬器。
+問題在於 Mono 會挑選 OS X `libsqlite3.dylib` ，而不是 iphonesimulator; 的檔案 `libsqlite3.dylib` 。 您的應用程式*會*在裝置上工作，而不是您的模擬器。
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>使用系統部署至裝置失敗。例外狀況： AMDeviceInstallApplication 傳回3892346901
 
-此錯誤表示憑證/套件組合識別碼的程式碼簽署設定與裝置上安裝的布建設定檔不相符。  確認您已在 [專案選項-> iPhone 配套簽署] 中選取適當的憑證，並在 [專案選項-> iPhone 應用程式] 中指定正確的配套識別碼
+此錯誤表示憑證/套件組合識別碼的程式碼簽署設定與裝置上安裝的布建設定檔不相符。  確認您已在 [專案選項->iPhone 配套簽署] 中選取適當的憑證，並在 [專案選項->iPhone 應用程式] 中指定正確的配套識別碼
 
 ## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>程式碼完成無法在 Visual Studio for Mac 中運作
 
@@ -188,7 +188,7 @@ Stacktrace:
 
 ## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>ExecutionEngineException：正在嘗試 JIT 編譯方法（包裝函式 managed） Foo []： system.string ' 1. get_Count （）
 
-[] 尾碼表示您或類別庫正透過泛型集合在陣列上呼叫方法，例如 IEnumerable < >、ICollection < > 或 IList < >。 因應措施是，您可以明確地強制 AOT 編譯器藉由呼叫方法來包含這類方法，並確保在觸發例外狀況的呼叫之前執行此程式碼。 在此情況下，您可以撰寫：
+[] 尾碼表示您或類別庫正透過泛型集合（例如 IEnumerable<>、ICollection<> 或 IList<>）在陣列上呼叫方法。 因應措施是，您可以明確地強制 AOT 編譯器藉由呼叫方法來包含這類方法，並確保在觸發例外狀況的呼叫之前執行此程式碼。 在此情況下，您可以撰寫：
 
 ```csharp
 Foo [] array = null;
@@ -227,7 +227,7 @@ int count = ((ICollection<Foo>) array).Count;
 
 請確定您已結束 iPhone 模擬器，然後再試一次安裝。
 
-<a name="trampolines" />
+<a name="trampolines"></a>
 
 ## <a name="ran-out-of-trampolines-of-type-0"></a>已用盡 trampolines 類型0
 
@@ -287,7 +287,7 @@ Visual Studio for Mac 2.2 有一個 bug，導致它不會偵測到包含逗號�
 ## <a name="error-mtouch-failed-with-no-output"></a>「Mtouch 失敗，沒有輸出」錯誤
 
 當儲存方案或專案的專案名稱或目錄包含空格時，目前的 Xamarin. iOS 和 Visual Studio for Mac 版本會失敗。
-若要修正此問題：
+修正方法：
 
 - 請確定您的專案或其儲存所在的目錄都不包含空格。
 - 在您的專案「主要設定」中，請確定專案名稱不包含任何空格。
@@ -353,16 +353,16 @@ actionSheet.Clicked += delegate (sender, args){
 
 IPhone SDK 4.0 安裝程式會安裝2個 Sdk-3.2 SDK，用於建立僅限 iPad 的應用程式，以及 4.0 SDK，用於建立 iPhone 和通用應用程式。 它也會安裝3.2 模擬器，此模擬器只會模擬一個 iPad，以及一個模擬 iPhone 或 iPhone 4 的4.0 模擬器。 所有舊版的 Sdk 和模擬器都會被移除。
 
-Visual Studio for Mac iPhone 專案組建選項包含將用來建立應用程式之 SDK 版本的設定。 這項設定可以在 [**專案選項->] [組建-> IPhone 組建**] 中找到。
+Visual Studio for Mac iPhone 專案組建選項包含將用來建立應用程式之 SDK 版本的設定。 這項設定可以在 [**專案選項->] [組建->IPhone 組建**] 中找到。
 
 Visual Studio for Mac 中的新專案會使用最舊的已安裝 SDK 做為其預設 SDK 設定，而且如果指定的 SDK 不存在，Visual Studio for Mac 會使用最接近的功能來建立您的應用程式。 這麼做是為了讓專案不一定需要最新的 SDK。 不過，這目前會導致使用 3.2 SDK-這會導致使用 iPad 模擬器。
 
-若要使用 4.0 SDK 修正此問題，請移至 **專案選項-> > IPhone 組建** >，然後使用下拉式方塊將 SDK 值變更為 "4.0"。 您必須針對每個設定和平臺組合執行此動作，使用面板頂端的下拉式清單來存取。
+若要使用 4.0 SDK 修正此問題，請移至 [**專案選項]->] [>IPhone 組建**]>，然後使用下拉式方塊將 [SDK] 值變更為 "4.0"。 您必須針對每個設定和平臺組合執行此動作，使用面板頂端的下拉式清單來存取。
 
 SDK 版本不應與「最低 OS 版本」設定混淆。
-此值不需要符合 SDK 版本值-它會影響您的應用程式將安裝的 OS 最低版本（可以比 SDK 舊），只要您只使用舊版 OS 中存在的 Api，或使用執行時間作業系統版本簽來保護較新功能的使用ks. 您應該將它設定為您在其中測試應用程式的最舊 OS 版本。
+此值不需要符合 SDK 版本值-它會影響您的應用程式將安裝的 OS 最低版本（可以比 SDK 舊），只要您只使用舊版 OS 中存在的 Api，或使用執行時間作業系統版本檢查來保護較新功能的使用。 您應該將它設定為您在其中測試應用程式的最舊 OS 版本。
 
-另請注意，**專案 > iPhone 模擬器目標**> 功能表可用來挑選在執行/偵錯工具時預設使用的模擬器。 此外，使用 > 功能表執行 **>** 執行，可以選擇要執行的特定模擬器
+另請注意，**專案 >iPhone 模擬器目標**>] 功能表可用來挑選在執行/偵錯工具時預設使用的模擬器。 此外，使用> 功能表執行 **>** 執行，可以選擇要執行的特定模擬器
 
 ## <a name="ibtool-returns-error-133"></a>ibtool 傳回錯誤133
 
@@ -400,7 +400,7 @@ SDK 版本不應與「最低 OS 版本」設定混淆。
 
 這是因為當環境變數設定不正確時，嘗試開啟 xib 檔案所造成的。 這應該不會在 Visual Studio for Mac/Xamarin 的正常使用方式下發生，而且從/Applications 重新開啟 Visual Studio for Mac 應該會修正問題。
 
-嘗試更新軟體並出現此錯誤訊息時，請寄電子郵件 *support@xamarin.com*
+嘗試更新軟體並出現此錯誤訊息時，請寄電子郵件*support@xamarin.com*
 
 ## <a name="application-runs-on-simulator-but-fails-on-device"></a>應用程式在模擬器上執行，但在裝置上失敗
 
@@ -410,6 +410,6 @@ SDK 版本不應與「最低 OS 版本」設定混淆。
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException：沒有可供編碼437使用的資料
 
-在您的 Xamarin iOS 應用程式中包含協力廠商程式庫時，在嘗試編譯和執行應用程式時，您可能會收到「NotSupportedException：沒有資料可供編碼437」形式的錯誤。 例如，程式庫（例如 `Ionic.Zip.ZipFile`）可能會在操作期間擲回此例外狀況。
+在您的 Xamarin iOS 應用程式中包含協力廠商程式庫時，在嘗試編譯和執行應用程式時，您可能會收到「NotSupportedException：沒有資料可供編碼437」形式的錯誤。 例如，程式庫（例如 `Ionic.Zip.ZipFile` ）可能會在操作期間擲回此例外狀況。
 
-這可以藉由開啟 Xamarin 專案的選項來解決，前往**Ios Build** > **國際化**並檢查**West**國際化。
+這可以藉由開啟 Xamarin 專案的選項，前往**ios 組建**  >  **國際化**並檢查**West**國際化來解決。

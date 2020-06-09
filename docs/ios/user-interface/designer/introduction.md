@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: 6b02a0f8476cf47ca6df279653095fe0845b36c9
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e5cbbc10f189abb6d0d0b2ef99b50ae53d1103c2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79304699"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572282"
 ---
 # <a name="ios-designer-basics"></a>iOS 設計工具基本概念
 
@@ -20,13 +20,13 @@ _本指南介紹 Xamarin Designer for iOS。它會示範如何使用 iOS 設計�
 
 Xamarin Designer for iOS 是視覺化介面設計工具，類似于 Xcode 的 Interface Builder 和 Android Designer。 其中一些功能包括與 Windows 和 Mac 的 Visual Studio 緊密整合、拖放編輯、用於設定事件處理常式的介面，以及呈現自訂控制項的能力。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 IOS 設計工具可在 Windows 上的 Visual Studio for Mac 和 Visual Studio 2017 和更新版本中取得。 在適用于 Windows 的 Visual Studio 中，iOS 設計工具需要連線至正確設定的 Mac 組建主機，但 Xcode 不需要執行。
 
 本指南假設您已熟悉[消費者入門指南](~/ios/get-started/index.md)中所涵蓋的內容。
 
-<a name="how-it-works" />
+<a name="how-it-works"></a>
 
 ## <a name="how-the-ios-designer-works"></a>IOS 設計工具的運作方式
 
@@ -34,7 +34,7 @@ IOS 設計工具可在 Windows 上的 Visual Studio for Mac 和 Visual Studio 20
 
 IOS 設計工具可讓開發人員以視覺化方式設計應用程式的使用者介面。 如分鏡腳本[簡介](~/ios/user-interface/storyboards/index.md)指南中所述，分鏡腳本說明組成應用程式的畫面（視圖控制器）、放置在這些視圖控制器上的介面專案（views），以及應用程式的整體導覽流程。 
 
-View 控制器有兩個部分： iOS 設計工具中的視覺標記法和相關C#聯的類別：
+View 控制器有兩個部分： iOS 設計工具中的視覺標記法和相關聯的 c # 類別：
 
 <!-- markdownlint-disable MD001 -->
 
@@ -96,9 +96,9 @@ View 控制器有兩個部分： iOS 設計工具中的視覺標記法和相關C
 
 -----
 
-- **ViewController.cs**應該填入與 `ViewController` 類別相關的自訂程式碼。 在此檔案中，`ViewController` 類別可以回應各種 iOS 視圖控制器生命週期方法、自訂 UI，以及回應使用者輸入，例如按鈕點擊。
+- **ViewController.cs**應該填入與類別相關的自訂程式碼 `ViewController` 。 在此檔案中， `ViewController` 類別可以回應各種 iOS 視圖控制器生命週期方法、自訂 UI，以及回應使用者輸入，例如按鈕點擊。
 
-- **ViewController.designer.cs**是產生的檔案，由 iOS 設計工具所建立，可將以視覺化方式呈現的介面對應至程式碼。 因為此檔案的變更將會遭到覆寫，所以不應該修改。 此檔案中的屬性宣告，可以讓 `ViewController` 類別中的程式碼依**名稱**存取 iOS 設計工具中所設定的控制項。 開啟**ViewController.designer.cs**會顯示下列程式碼：
+- **ViewController.designer.cs**是產生的檔案，由 iOS 設計工具所建立，可將以視覺化方式呈現的介面對應至程式碼。 因為此檔案的變更將會遭到覆寫，所以不應該修改。 此檔案中的屬性宣告可以讓類別中的程式碼 `ViewController` 依**名稱**存取 iOS 設計工具中設定的控制項。 開啟**ViewController.designer.cs**會顯示下列程式碼：
 
 ```csharp
 namespace Designer
@@ -121,9 +121,9 @@ namespace Designer
 }
 ```
 
-`SubmitButton` 屬性宣告會將整個 `ViewController` 類別（而不只是**ViewController.designer.cs**檔案）連接到分鏡腳本中定義的按鈕。 由於**ViewController.cs**會定義 `ViewController` 類別的一部分，因此它可以存取 `SubmitButton`。
+`SubmitButton`屬性宣告會將整個 `ViewController` 類別（而不只是**ViewController.designer.cs**檔案）連接到分鏡腳本中定義的按鈕。 由於**ViewController.cs**會定義類別的一部分 `ViewController` ，因此它可以存取 `SubmitButton` 。
 
-下列螢幕擷取畫面說明 IntelliSense 現在會辨識**ViewController.cs**中的 `SubmitButton` 參考：
+下列螢幕擷取畫面說明 IntelliSense 現在會辨識 `SubmitButton` **ViewController.cs**中的參考：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -147,19 +147,19 @@ namespace Designer
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-以 Visual Studio for Mac 建立的 Xamarin 專案包含分鏡腳本。 若要查看分鏡腳本的內容，請按兩下  **Solution Pad**中的 分鏡腳本 檔案：
+以 Visual Studio for Mac 建立的 Xamarin 專案包含分鏡腳本。 若要查看分鏡腳本的內容，請按兩下 [ **Solution Pad**中的 [分鏡腳本] 檔案：
 
 [![在 iOS 設計工具中開啟的分鏡腳本](introduction-images/7-storyboardopen-vsmac.png "在 iOS 設計工具中開啟的分鏡腳本")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-大部分以 Visual Studio 建立的 Xamarin 專案都包含分鏡腳本。 若要查看分鏡腳本的內容，請按兩下 **方案總管**中的 分鏡腳本 檔案：
+大部分以 Visual Studio 建立的 Xamarin 專案都包含分鏡腳本。 若要查看分鏡腳本的內容，請按兩下 [**方案總管**中的 [分鏡腳本] 檔案：
 
 [![在 iOS 設計工具中開啟的分鏡腳本](introduction-images/7-storyboardopen-vs.png "在 iOS 設計工具中開啟的分鏡腳本")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
 -----
 
-<a name="iOS_Designer_features"/>
+<a name="iOS_Designer_features"></a>
 
 ### <a name="ios-designer-features"></a>iOS 設計工具功能
 
@@ -298,10 +298,10 @@ IOS 設計工具有六個主要區段：
 
 請注意，選取裝置和方向只會變更 iOS 設計工具預覽設計的方式。 不論目前的選取範圍為何，新加入的條件約束都會套用到所有裝置和方向，除非已使用 [**編輯特性**] 按鈕來指定其他專案。
 
-[啟用](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)[[大小] 類別](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)時，[**編輯特性**] 按鈕會出現在展開的底部工具列中。  按一下 [**編輯特性**] 按鈕會顯示根據所選裝置和方向所代表的大小類別來建立介面變化的選項。 請思考一下以下範例：
+[啟用](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)[[大小] 類別](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)時，[**編輯特性**] 按鈕會出現在展開的底部工具列中。  按一下 [**編輯特性**] 按鈕會顯示根據所選裝置和方向所代表的大小類別來建立介面變化的選項。 請考慮以下範例：
 
-- 如果選取 [ **IPHONE SE** ** / 直向]，則**popover 會提供選項來為精簡寬度、一般高度大小類別建立介面變化。 
-- 若已選取**IPad Pro 9.7 "**  / **橫向** / **全螢幕**，則 popover 會提供選項，以建立一般寬度、一般高度大小類別的介面變化。
+- 如果選取 [ **iPhone SE**直向]，則  /  ** **popover 會提供選項來為精簡寬度、一般高度大小類別建立介面變化。 
+- 若已選取**iPad Pro 9.7**「  /  **橫向**  /  **全螢幕**」，則 popover 會提供選項來建立一般寬度、一般高度大小類別的介面變化。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -406,19 +406,19 @@ IOS 設計工具有六個主要區段：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-若要指定各種事件的自訂事件處理常式，請使用**Properties Pad**的 [**事件**] 索引標籤。 例如，在下面的螢幕擷取畫面中，`HandleClick` 方法會處理按鈕**在事件內的觸控**：
+若要指定各種事件的自訂事件處理常式，請使用**Properties Pad**的 [**事件**] 索引標籤。 例如，在下列螢幕擷取畫面中， `HandleClick` 方法會處理按鈕在事件**內的觸控**：
 
 [![Properties Pad，其中包含為按鈕設定的事件處理常式](introduction-images/19-buttonpropertiespadevents-vsmac.png "Properties Pad，其中包含為按鈕設定的事件處理常式")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-若要指定各種事件的自訂事件處理常式，請使用 [**屬性] 視窗**的 [**事件**] 索引標籤。 例如，在下面的螢幕擷取畫面中，`HandleClick` 方法會處理按鈕**在事件內的觸控**：
+若要指定各種事件的自訂事件處理常式，請使用 [**屬性] 視窗**的 [**事件**] 索引標籤。 例如，在下列螢幕擷取畫面中， `HandleClick` 方法會處理按鈕在事件**內的觸控**：
 
 [![[屬性] 視窗，其中包含為按鈕設定的事件處理常式](introduction-images/19-buttonpropertieswindowevents-vs.png "[屬性] 視窗，其中包含為按鈕設定的事件處理常式")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
-一旦指定了事件處理常式，就必須將相同名稱的方法加入對應的 view controller 類別。 否則，當您按下按鈕時，就會發生 `unrecognized selector` 例外狀況：
+一旦指定了事件處理常式，就必須將相同名稱的方法加入對應的 view controller 類別。 否則，當您按下按鈕時，就會 `unrecognized selector` 發生例外狀況：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -488,7 +488,7 @@ IOS 設計工具支援建立、編輯和管理 xib 檔案。 這些是 respresen
 
 這和其他 iOS 設計工具相關指南會將分鏡腳本當做建立使用者介面的標準方法，因為大部分的 Xamarin。 iOS 新專案範本預設會提供分鏡腳本。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本指南提供 iOS 設計工具簡介、描述其功能，並概述它為設計美觀的使用者介面所提供的工具。
 

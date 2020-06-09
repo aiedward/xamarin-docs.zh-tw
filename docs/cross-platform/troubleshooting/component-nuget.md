@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: 4a5aa13a197e885b074b07eae3594abd4992ee71
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728248"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571515"
 ---
 # <a name="updating-component-references-to-nuget"></a>正在更新 NuGet 的元件參考
 
@@ -29,7 +29,7 @@ ms.locfileid: "75728248"
 
 15.6 版的 Visual Studio 和7.4 版的 Visual Studio for Mac 不再支援您專案中的元件。 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 如果您將專案載入 Visual Studio，就會顯示下列對話方塊，說明您必須手動從專案中移除任何元件：
 
@@ -37,11 +37,11 @@ ms.locfileid: "75728248"
 
 若要從專案中移除元件：
 
-1. 開啟 .csproj 檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 **[卸載專案**]。 
+1. 開啟 .csproj  檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 **[卸載專案**]。 
 
 2. 在卸載的專案上再次以滑鼠右鍵按一下，然後選取 [**編輯 {您的專案名稱} .csproj**]。
 
-3. 尋找要 `XamarinComponentReference`之檔案中的任何參考。 看起來應該類似下列範例：
+3. 尋找檔案中的任何參考 `XamarinComponentReference` 。 看起來應該類似下列範例：
 
     ```xml
     <ItemGroup>
@@ -60,13 +60,13 @@ ms.locfileid: "75728248"
     </ItemGroup>
     ```
 
-4. 移除 `XamarinComponentReference` 的參考，並儲存檔案。 在上述範例中，移除整個 `ItemGroup`是安全的。
+4. 移除的參考 `XamarinComponentReference` ，並儲存檔案。 在上述範例中，您可以放心地移除整個 `ItemGroup` 。
 
 5. 儲存檔案之後，以滑鼠右鍵按一下專案名稱，然後選取 [**重載專案**]。
 
 6. 針對方案中的每個專案重複上述步驟。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 如果您將專案載入 Visual Studio for Mac，就會顯示下列對話方塊，說明您必須手動從專案中移除任何元件：
 
@@ -74,9 +74,9 @@ ms.locfileid: "75728248"
 
 若要從專案中移除元件：
 
-1. 開啟 .csproj 檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 [**工具] > [編輯**檔案]。
+1. 開啟 .csproj  檔案。 若要這麼做，請在專案名稱上按一下滑鼠右鍵，然後選取 [**工具] > [編輯**檔案]。
 
-2. 尋找要 `XamarinComponentReference`之檔案中的任何參考。 看起來應該類似下列範例：
+2. 尋找檔案中的任何參考 `XamarinComponentReference` 。 看起來應該類似下列範例：
 
     ```xml
     <ItemGroup>
@@ -95,7 +95,7 @@ ms.locfileid: "75728248"
     </ItemGroup>
     ```
 
-3. 移除 `XamarinComponentReference` 的參考，並儲存檔案。 在上述範例中，您可以放心地移除整個 `ItemGroup`
+3. 移除的參考 `XamarinComponentReference` ，並儲存檔案。 在上述範例中，您可以放心地移除整個`ItemGroup`
 
 4. 針對方案中的每個專案重複上述步驟。
 
@@ -113,7 +113,7 @@ ms.locfileid: "75728248"
 大部分的元件都屬於上述類別的其中一個。
 如果您使用的元件似乎沒有對等的 NuGet 套件，請閱讀下面的「[沒有 NuGet 遷移路徑的元件](#require-update)」一節。
 
-<a name="contain" />
+<a name="contain"></a>
 
 ## <a name="components-that-contain-nuget-packages"></a>包含 NuGet 套件的元件
 
@@ -141,7 +141,7 @@ NuGet 套件會繼續列在 [**套件**] 節點中，且您的應用程式會如
 
 ![更新 NuGet 套件](component-nuget-images/nuget-update-sml.png)
 
-<a name="replace" />
+<a name="replace"></a>
 
 ## <a name="components-with-nuget-replacements"></a>包含 NuGet 更換的元件
 
@@ -159,8 +159,8 @@ _它可能包含 NuGet 相依性，但可以忽略這些相依性。_
 
 例如，您可以藉由搜尋下列內容來尋找熱門的**sqlite 網路-pcl**套件：
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) –產品名稱。
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) –作者的設定檔。
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)–產品名稱。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)–作者的設定檔。
 
 ### <a name="updating-the-solution"></a>更新方案
 
@@ -186,7 +186,7 @@ _它可能包含 NuGet 相依性，但可以忽略這些相依性。_
 NuGet 套件會連同任何相依性新增至您的專案。
 這應該會修正組建。 如果組建持續失敗，請調查每個錯誤，以查看元件和 NuGet 套件之間是否有 API 差異。
 
-<a name="require-update" />
+<a name="require-update"></a>
 
 ## <a name="components-without-a-nuget-migration-path"></a>沒有 NuGet 遷移路徑的元件
 

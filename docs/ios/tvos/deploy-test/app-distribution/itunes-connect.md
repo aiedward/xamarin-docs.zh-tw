@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 01ab48f68656dcabdf2a6cfc286dfcd8850454f8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 68c0fb9e034f432c619bc188553996bd7bacdee8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030756"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573686"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>在 iTunes Connect 中設定您的 tvOS 應用程式
 
 _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以取得 tvOS 特定設定。_
 
-除了在[ITunes Connect 指南中設定您的應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)所需進行的設定和設定之外，本檔還涵蓋了在 Apple 電視應用程式中發行 tvOS 應用程式所需的特定設定。存放區.
+除了在[ITunes Connect 指南中設定您的應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)所需進行的設定和設定之外，本檔還涵蓋了在 Apple 電視 app Store 中發行 tvOS 應用程式所需的特定設定。
 
-<a name="Adding-a-tvOS-Release-Version" />
+<a name="Adding-a-tvOS-Release-Version"></a>
 
 ## <a name="adding-a-tvos-release-version"></a>新增 tvOS 發行版本
 
@@ -28,7 +28,7 @@ _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以�
 
 - [建立 iTunes Connect Record](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md#creating)
 - [管理應用程式的影片和螢幕擷取畫面](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md#managing)
-- [管理名稱、描述、新增功能、關鍵和 URL](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md#metadata)
+- [管理名稱、描述、新增功能、關鍵字和URL](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md#metadata)
 - [維護一般資訊](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md#general)
 
 （選擇性）您可能也需要：
@@ -44,7 +44,7 @@ _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以�
 
 [![](itunes-connect-images/connect02.png "The tvOS specific information screen")](itunes-connect-images/connect02.png#lightbox)
 
-<a name="tvOS-Version-Information" />
+<a name="tvOS-Version-Information"></a>
 
 ## <a name="tvos-version-information"></a>tvOS 版本資訊
 
@@ -64,7 +64,7 @@ _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以�
 
 [![](itunes-connect-images/connect04.png "tvOS Version Information ready for submission")](itunes-connect-images/connect04.png#lightbox)
 
-<a name="Submitting-for-Review" />
+<a name="Submitting-for-Review"></a>
 
 ## <a name="preparing-to-submit-for-review"></a>準備提交以供審查
 
@@ -72,7 +72,7 @@ _本文提供 iOS 在 iTunes Connect 中設定應用程式的補充指南，以�
 
 [![](itunes-connect-images/connect05.png "Submit for Review")](itunes-connect-images/connect05.png#lightbox)
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 

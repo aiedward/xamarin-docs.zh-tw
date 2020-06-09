@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: a622684461bfe2e4a57b910288ee1f9afb54c694
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: f42c4a6dd2f4408d7b0ccf65e60851ebd29b76f6
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "78291751"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574534"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>將 watchOS 應用程式部署至 App Store
 
@@ -21,7 +21,7 @@ ms.locfileid: "78291751"
 
 - 請確定您有：
   - 為您的專案建立的發佈布建[**設定檔**](#provisioning)。
-  - IOS 父系應用程式的**部署目標**（`MinimumOSVersion`）已設定為**8.2**或更早版本（不支援8.3）。
+  - IOS 父系應用程式的**部署目標**（ `MinimumOSVersion` ）已設定為**8.2**或更早版本（不支援8.3）。
 
 - 在[**ITunes Connect**](#iTunes_Connect)中：
 
@@ -43,7 +43,7 @@ ms.locfileid: "78291751"
 
 閱讀下列與下列專案相關的特定提示。 如果您有任何問題，請參閱[疑難排解](#troubleshooting)一節。
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="distribution-provisioning-profiles"></a>發佈布建設定檔
 
@@ -57,20 +57,20 @@ ms.locfileid: "78291751"
 
 ![](appstore-images/provisioningprofiles-sml.png "The list of available profiles")
 
-您可以選取 **組建 > iOS**套件組合簽署 畫面，然後選取  **AppStore | iPhone**設定，以確認**專案選項**中的布建設定檔。
+您可以選取 [**組建 > [iOS**套件組合簽署] 畫面，然後選取 [ **AppStore | iPhone**設定]，以確認**專案選項**中的布建設定檔。
 
 [布建**設定檔**] 清單會顯示所有相符的設定檔，您應該會看到您在此下拉式清單中建立的相符設定檔。
 
 ![](appstore-images/options-selectprofile-sml.png "The iOS Bundle Signing dialog")
 
-<a name="iTunes_Connect"/>
+<a name="iTunes_Connect"></a>
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
 請遵循[應用程式散發總覽](~/ios/deploy-test/app-distribution/index.md)，特別是：
 
 - [在 iTunes Connect 中設定應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)
-- [發行至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [發佈至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 
 在 iTunes Connect 中設定應用程式時，別忘了新增監看式圖示和螢幕擷取畫面：
 
@@ -82,7 +82,7 @@ ms.locfileid: "78291751"
 它們應該是312x390 圖元，並示範監看式應用程式的實際運作。
 您可以使用 42mm watch 模擬器，以這種大小來拍螢幕擷取畫面。
 
-<a name="xamarin_studio" />
+<a name="xamarin_studio"></a>
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
@@ -102,13 +102,13 @@ ms.locfileid: "78291751"
 
   ![](appstore-images/xs-archives-sml.png "The Archives view")
 
-<a name="xcode" />
+<a name="xcode"></a>
 
 ## <a name="xcode"></a>Xcode
 
 Xcode 會自動顯示 Visual Studio for Mac 中建立的封存。
 
-1. 啟動 Xcode，然後選擇 [ **Window > 召集人]** ：
+1. 啟動 Xcode，然後選擇 [ **Window > 召集人]**：
 
    ![](appstore-images/xc-organizer.png "The Window menu")
 
@@ -175,7 +175,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 請確定您有最新版本的 Visual Studio for Mac，而且您的**appicons.appiconset**包含一組完整的影像。 如果您仍然看到此錯誤，請查看**內容**的來源，以確認它包含所有必要映射的專案。 或者，一旦確定您使用的是最新版本的 Xamarin，請刪除並重新建立**appicons.appiconset**。
 
 > [!IMPORTANT]
-> Visual Studio for Mac 的監看式圖示支援中有已知的錯誤：它需要 **29x29@3x** 影像的88x88 圖元影像（應該是87x87 圖元）。
+> Visual Studio for Mac 的監看式圖示支援有已知的錯誤：它預期影像的88x88 圖元影像 **29x29@3x** （應該是87x87 圖元）。
 
 您無法在 Visual Studio for Mac 中修正此問題-請在 Xcode 中編輯映射資產，或手動編輯**內容. json**檔案。
 

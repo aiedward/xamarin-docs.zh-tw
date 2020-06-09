@@ -179,7 +179,7 @@ catch (Exception ex)
 | iOS | ~0 |
 | UWP | <= 10 |
 
-<a name="calculate-distance" />
+<a name="calculate-distance"></a>
 
 ## <a name="detecting-mock-locations"></a>偵測模擬位置
 某些裝置可能會從提供者，或透過可提供模擬位置的應用程式傳回模擬位置。 您可以在任何上使用來偵測這種情況 `IsFromMockProvider` [`Location`](xref:Xamarin.Essentials.Location) 。
@@ -201,7 +201,7 @@ if (location != null)
 
 [`Location`](xref:Xamarin.Essentials.Location)和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 類別會定義 `CalculateDistance` 方法，可讓您計算兩個地理位置之間的距離。 此計算出的距離不會考慮道路或其他路徑，而僅僅是沿著地球表面兩個點之間的最短距離，也稱為「大圓距離」__；或口語化說法：「直線」的距離。
 
-以下是範例：
+範例如下：
 
 ```csharp
 Location boston = new Location(42.358056, -71.063611);

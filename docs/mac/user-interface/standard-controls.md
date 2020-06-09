@@ -7,34 +7,34 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fe887d837930ebc75fed0fb7c163a3f30ad83af9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9a6e302885570f35bb8323a5504cc9a4d8256ac1
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008372"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572100"
 ---
 # <a name="standard-controls-in-xamarinmac"></a>Xamarin 中的標準控制項
 
 _本文涵蓋在 Xamarin. Mac 應用程式中使用標準的 AppKit 控制項，例如按鈕、標籤、文字欄位、核取方塊和分割的控制項。其中描述如何將這些專案新增至具有 Interface Builder 的介面，並在程式碼中與其互動。_
 
-在 Xamarin. C# Mac 應用程式中使用和 .net 時，您可以存取開發人員在*目標-C*和*Xcode*中運作的相同 AppKit 控制項。 因為 Xamarin 會直接與 Xcode 整合，所以您可以使用 Xcode 的_Interface Builder_來建立和維護 Appkit 控制項（或選擇直接在程式碼中C#建立它們）。
+在 Xamarin. Mac 應用程式中使用 c # 和 .NET 時，您可以存取開發人員在*目標-C*和*Xcode*中運作的相同 AppKit 控制項。 因為 Xamarin 會直接與 Xcode 整合，所以您可以使用 Xcode 的_Interface Builder_來建立和維護 Appkit 控制項（或選擇直接在 c # 程式碼中建立它們）。
 
 AppKit 控制項是用來建立 Xamarin. Mac 應用程式使用者介面的 UI 元素。 這些專案是由按鈕、標籤、文字欄位、核取方塊和分割的控制項等元素組成，並會在使用者操作時造成立即動作或可見結果。
 
 [![](standard-controls-images/intro01.png "The example app main screen")](standard-controls-images/intro01.png#lightbox)
 
-在本文中，我們將討論在 Xamarin. Mac 應用程式中使用 AppKit 控制項的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在中使用的重要概念和技巧。本文。
+在本文中，我們將討論在 Xamarin. Mac 應用程式中使用 AppKit 控制項的基本概念。 強烈建議您先流覽[Hello，Mac](~/mac/get-started/hello-mac.md)文章，特別是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)和「[輸出」和「動作](~/mac/get-started/hello-mac.md#outlets-and-actions)」區段的簡介，其中涵蓋了我們將在本文中使用的重要概念和技巧。
 
-您可能想要看一下[Xamarin 內部](~/mac/internals/how-it-works.md)檔的「 C# [公開C#類別/方法到目標-C](~/mac/internals/how-it-works.md) 」一節，它會說明用來將類別連線到目標-c 的`Register`和`Export`命令物件和 UI 元素。
+您可能想要查看[Xamarin 內部](~/mac/internals/how-it-works.md)檔的將[c # 類別/方法公開至目標-C](~/mac/internals/how-it-works.md)一節，它會說明 `Register` `Export` 用來將 C # 類別連接至目標 C 物件和 UI 元素的和命令。
 
-<a name="Introduction_to_Controls_and_Views" />
+<a name="Introduction_to_Controls_and_Views"></a>
 
 ## <a name="introduction-to-controls-and-views"></a>控制項和視圖簡介
 
 macOS （先前稱為 Mac OS X）會透過 AppKit 架構提供一組標準的使用者介面控制項。 這些專案是由按鈕、標籤、文字欄位、核取方塊和分割的控制項等元素組成，並會在使用者操作時造成立即動作或可見結果。
 
-所有的 AppKit 控制項都有一個適用于大部分用途的標準內建外觀，有些則指定要在視窗框架區域或_Vibrance 效果_內容中使用的替代外觀，例如在提要欄位或通知中心中機械.
+所有的 AppKit 控制項都有一個適用于大部分用途的標準內建外觀，有些則指定要在視窗框架區域或在_Vibrance 效果_內容中使用的替代外觀，例如在提要欄位或通知中心 widget 中。
 
 使用 AppKit 控制項時，Apple 建議下列指導方針：
 
@@ -45,7 +45,7 @@ macOS （先前稱為 Mac OS X）會透過 AppKit 架構提供一組標準的使
 
 如需詳細資訊，請 pleas 參閱 Apple [OS X 人體介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[關於控制項和 Views](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsAll.html#//apple_ref/doc/uid/20000957-CH46-SW1)一節。
 
-<a name="Using_Controls_in_a_Window_Frame" />
+<a name="Using_Controls_in_a_Window_Frame"></a>
 
 ### <a name="using-controls-in-a-window-frame"></a>在視窗框架中使用控制項
 
@@ -53,12 +53,12 @@ macOS （先前稱為 Mac OS X）會透過 AppKit 架構提供一組標準的使
 
 [![](standard-controls-images/mailapp.png "A Mac Window frame")](standard-controls-images/mailapp.png#lightbox)
 
-- **圓形紋理按鈕**-具有 `NSTexturedRoundedBezelStyle`樣式的 `NSButton`。
-- **紋理的圓角分割控制項**-具有 `NSSegmentStyleTexturedRounded`樣式的 `NSSegmentedControl`。
-- **紋理的圓角分割控制項**-具有 `NSSegmentStyleSeparated`樣式的 `NSSegmentedControl`。
-- **圓形紋理快顯功能表**-具有 `NSTexturedRoundedBezelStyle`樣式的 `NSPopUpButton`。
-- **圓形紋理下拉式功能表**-具有 `NSTexturedRoundedBezelStyle`樣式的 `NSPopUpButton`。
-- **搜尋**列-`NSSearchField`。
+- **圓形按鈕**- `NSButton` 具有樣式的 `NSTexturedRoundedBezelStyle` 。
+- **紋理的圓角分割控制項**- `NSSegmentedControl` 具有樣式的 `NSSegmentStyleTexturedRounded` 。
+- **紋理的圓角分割控制項**- `NSSegmentedControl` 具有樣式的 `NSSegmentStyleSeparated` 。
+- **圓形紋理快顯功能表**- `NSPopUpButton` 具有樣式的 `NSTexturedRoundedBezelStyle` 。
+- **圓形的向下拖曳功能表**- `NSPopUpButton` 具有樣式的 `NSTexturedRoundedBezelStyle` 。
+- **搜尋**列-A `NSSearchField` 。
 
 在視窗框架中使用 AppKit 控制項時，Apple 建議下列指導方針：
 
@@ -67,11 +67,11 @@ macOS （先前稱為 Mac OS X）會透過 AppKit 架構提供一組標準的使
 
 如需詳細資訊，請 pleas 參閱 Apple [OS X 人體介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)的[關於控制項和 Views](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsAll.html#//apple_ref/doc/uid/20000957-CH46-SW1)一節。
 
-<a name="Creating_a_User_Interface_in_Interface_Builder" />
+<a name="Creating_a_User_Interface_in_Interface_Builder"></a>
 
 ## <a name="creating-a-user-interface-in-interface-builder"></a>在 Interface Builder 中建立使用者介面
 
-當您建立新的 Xamarin Cocoa 應用程式時，預設會取得標準的空白視窗。 此視窗會在專案中自動包含的 `.storyboard` 檔案中定義。 若要編輯您的 windows 設計，請在 **方案總管**中，按兩下 `Main.storyboard` 檔案：
+當您建立新的 Xamarin Cocoa 應用程式時，預設會取得標準的空白視窗。 此視窗會在專案中自動包含的檔案中定義 `.storyboard` 。 若要編輯您的 windows 設計，請在 [**方案總管**中按兩下該檔案 `Main.storyboard` ：
 
 [![](standard-controls-images/edit01.png "Selecting the Main Storyboard in the Solution Explorer")](standard-controls-images/edit01.png#lightbox)
 
@@ -85,7 +85,7 @@ macOS （先前稱為 Mac OS X）會透過 AppKit 架構提供一組標準的使
 
 如需有關在 Interface Builder 中建立使用者介面的詳細資訊，請參閱我們的[Xcode 和 Interface Builder 檔簡介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)。
 
-<a name="Sizing_and_Positioning" />
+<a name="Sizing_and_Positioning"></a>
 
 ### <a name="sizing-and-positioning"></a>調整大小和位置
 
@@ -93,11 +93,11 @@ macOS （先前稱為 Mac OS X）會透過 AppKit 架構提供一組標準的使
 
 [![](standard-controls-images/edit04.png "Setting the constraints")](standard-controls-images/edit04.png#lightbox)
 
-使用 [ **Autoresizing** ] 方塊外的**紅色字形狀**，將控制項放在_指定的（_ x，y）位置。 例如: 
+使用 [ **Autoresizing** ] 方塊外的**紅色字形狀**，將控制項放在_指定的（_ x，y）位置。 例如： 
 
 [![](standard-controls-images/edit05.png "Editing a constraint")](standard-controls-images/edit05.png#lightbox)
 
-指定選取的控制項（在 [階層]**視圖** & **介面編輯器**）會在調整大小或移動時卡在視窗或視圖的頂端和右側位置。 
+指定選取的控制項（在 [階層**視圖**  &  **介面編輯器**] 中）會在調整大小或移動時卡在視窗或視圖的頂端和右側位置。 
 
 編輯器控制項屬性的其他元素，例如 Height 和 Width：
 
@@ -110,7 +110,7 @@ macOS （先前稱為 Mac OS X）會透過 AppKit 架構提供一組標準的使
 > [!IMPORTANT]
 > 不同于 iOS，其中（0，0）是螢幕的左上角，在 macOS （0，0）是左下角。 這是因為 macOS 會使用數學座標系統，數值的數值會向上和向右增加。 將 AppKit 控制項放在使用者介面時，您必須將這一點納入考慮。
 
-<a name="Setting_a_Custom_Class" />
+<a name="Setting_a_Custom_Class"></a>
 
 ### <a name="setting-a-custom-class"></a>設定自訂類別
 
@@ -193,21 +193,21 @@ namespace AppKit
 }
 ```
 
-其中，`[Register("SourceListView")]` 指令會向目標-C 公開 `SourceListView` 類別，以便在 Interface Builder 中使用。 如需詳細資訊，請參閱[Xamarin 內部](~/mac/internals/how-it-works.md)檔的將[類別/方法公開C#至目標-C](~/mac/internals/how-it-works.md)一節，其中說明用來將C#類別連線到目標-c 的`Register`和`Export`命令物件和 UI 元素。
+其中， `[Register("SourceListView")]` 指令會將 `SourceListView` 類別公開至目標-C，以便在 Interface Builder 中使用。 如需詳細資訊，請參閱[Xamarin 內部](~/mac/internals/how-it-works.md)檔的將[c # 類別/方法公開至目標-C](~/mac/internals/how-it-works.md)一節，它會說明 `Register` `Export` 用來將 C # 類別連接至目標 C 物件和 UI 元素的和命令。
 
-在上述程式碼準備就緒之後，您可以將所擴充之基底類型的 AppKit 控制項拖曳到設計介面（在下列範例中為**來源清單**），切換到身分**識別偵測器**，並將**自訂類別**設定為以下的名稱：您已公開至目標-C （範例 `SourceListView`）：
+在上述程式碼準備就緒之後，您可以將所擴充之基底類型的 AppKit 控制項拖曳到設計介面（在下列範例中為**來源清單**），切換到身分**識別偵測器**，並將**自訂類別**設定為您公開給目標-C 的名稱（例如 `SourceListView` ）：
 
 [![](standard-controls-images/edit10.png "Setting a custom class in Xcode")](standard-controls-images/edit10.png#lightbox)
 
-<a name="Exposing_Outlets_and_Actions" />
+<a name="Exposing_Outlets_and_Actions"></a>
 
 ### <a name="exposing-outlets-and-actions"></a>公開輸出和動作
 
-在程式碼中C#存取 AppKit 控制項之前，必須先將它公開為「**輸出**」或「**動作**」。 若要這麼做，請在**介面**階層或**介面編輯器**中選取指定的控制項，並切換至 [**助理] 視圖**（確定您已選取要編輯的視窗 `.h`）：
+在 c # 程式碼中存取 AppKit 控制項之前，必須先將它公開為「**輸出**」或「**動作**」。 若要這麼做，請在**介面**階層或**介面編輯器**中選取指定的控制項，並切換至 [**助理] 視圖**（確定您已 `.h` 選取要編輯之視窗的）：
 
 [![](standard-controls-images/edit11.png "Selecting the correct file to edit")](standard-controls-images/edit11.png#lightbox)
 
-從 [AppKit] 控制項拖曳至 [提供 `.h`] 檔案，以開始建立**輸出**或**動作**：
+從 [AppKit] 控制項拖曳至 [提供檔案] `.h` ，以開始建立**輸出**或**動作**：
 
 [![](standard-controls-images/edit12.png "Dragging to create an Outlet or Action")](standard-controls-images/edit12.png#lightbox)
 
@@ -217,17 +217,17 @@ namespace AppKit
 
 如需使用**輸出**和**動作**的詳細資訊，請參閱[Xcode 和 Interface Builder 檔簡介](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)的[輸出和動作](~/mac/get-started/hello-mac.md#outlets-and-actions)一節。
 
-<a name="Synchronizing_Changes_with_Xcode" />
+<a name="Synchronizing_Changes_with_Xcode"></a>
 
 ### <a name="synchronizing-changes-with-xcode"></a>與 Xcode 同步處理變更
 
 當您從 Xcode 切換回 Visual Studio for Mac 時，您在 Xcode 中所做的任何變更都會自動與您的 Xamarin. Mac 專案同步處理。
 
-如果您選取**方案總管**中的 `SplitViewController.designer.cs`，就可以在我們C#的程式碼中看到您的**輸出口**和**動作**如何連接：
+如果您在 `SplitViewController.designer.cs` **方案總管**中選取，您可以在 c # 程式碼中看到您的**輸出**和**動作**如何連接：
 
 [![](standard-controls-images/sync01.png "Synchronizing Changes with Xcode")](standard-controls-images/sync01.png#lightbox)
 
-請注意 `SplitViewController.designer.cs` 檔案中的定義：
+請注意檔案中的定義 `SplitViewController.designer.cs` ：
 
 ```csharp
 [Outlet]
@@ -240,7 +240,7 @@ AppKit.NSSplitViewItem RightController { get; set; }
 AppKit.NSSplitView SplitView { get; set; }
 ```
 
-在 Xcode 中，使用 `MainWindow.h` 檔案中的定義來對齊：
+在 Xcode 中，使用檔案中的定義來對齊 `MainWindow.h` ：
 
 ```csharp
 @interface SplitViewController : NSSplitViewController {
@@ -256,14 +256,14 @@ AppKit.NSSplitView SplitView { get; set; }
 @property (nonatomic, retain) IBOutlet NSSplitView *SplitView;
 ```
 
-如您所見，Visual Studio for Mac 會接聽 `.h` 檔案的變更，然後自動同步處理個別 `.designer.cs` 檔案中的變更，以將它們公開到您的應用程式。 您可能也會注意到 `SplitViewController.designer.cs` 是部分類別，因此 Visual Studio for Mac 不需要修改 `SplitViewController.cs` 這會覆寫對類別所做的任何變更。
+如您所見，Visual Studio for Mac 會接聽檔案的變更 `.h` ，然後自動同步處理個別檔案中的變更， `.designer.cs` 以將它們公開給您的應用程式。 您可能也會注意到， `SplitViewController.designer.cs` 是部分類別，因此 Visual Studio for Mac 不需要進行修改， `SplitViewController.cs` 這會覆寫對類別所做的任何變更。
 
-您通常不需要自行開啟 `SplitViewController.designer.cs`，而只是為了教育目的而在此呈現。
+您通常不需要 `SplitViewController.designer.cs` 自行開啟，只是為了教育目的而在此呈現。
 
 > [!IMPORTANT]
 > 在大多數情況下，Visual Studio for Mac 會自動查看在 Xcode 中所做的任何變更，並將它們同步處理至您的 Xamarin. Mac 專案。 在關閉的情況下，同步處理不會自動發生，請切換回 Xcode，然後再次回到 Visual Studio for Mac。 這通常會啟動同步處理週期。
 
-<a name="Working_with_Buttons" />
+<a name="Working_with_Buttons"></a>
 
 ## <a name="working-with-buttons"></a>使用按鈕
 
@@ -279,7 +279,7 @@ ButtonOutlet.Activated += (sender, e) => {
 };
 ```
 
-針對透過**動作**公開的按鈕，系統會使用您在 Xcode 中選擇的名稱，自動為您建立 `public partial` 方法。 若要回應**動作**，請在定義**動作**的類別中，完成部分方法。 例如:
+針對透過**動作**公開的按鈕， `public partial` 系統會使用您在 Xcode 中選擇的名稱，自動為您建立方法。 若要回應**動作**，請在定義**動作**的類別中，完成部分方法。 例如：
 
 ```csharp
 partial void ButtonAction (Foundation.NSObject sender) {
@@ -288,7 +288,7 @@ partial void ButtonAction (Foundation.NSObject sender) {
 }
 ```
 
-針對具有狀態的按鈕（例如**On**和**Off**），可以針對 `NSCellStateValue` 列舉，使用 `State` 屬性來檢查或設定狀態。 例如:
+針對具有狀態的按鈕（例如**On**和**Off**），可以使用 `State` 屬性對列舉進行檢查或設定狀態 `NSCellStateValue` 。 例如：
 
 ```csharp
 DisclosureButton.Activated += (sender, e) => {
@@ -302,7 +302,7 @@ DisclosureButton.Activated += (sender, e) => {
 - **Off** -不會推送按鈕，或未選取控制項。
 - **混合**-**開啟**和**關閉**狀態的混合。
 
-<a name="Mark-a-Button-as-Default-and-Set-Key-Equivalent" />
+<a name="Mark-a-Button-as-Default-and-Set-Key-Equivalent"></a>
 
 ### <a name="mark-a-button-as-default-and-set-key-equivalent"></a>將按鈕標示為預設值，並設定對等的金鑰
 
@@ -316,7 +316,7 @@ DisclosureButton.Activated += (sender, e) => {
 
 當應用程式執行時，如果使用者按下命令-C，則會啟動按鈕的動作（如同使用者已按一下按鈕的情況），而該視窗的按鈕為 [按鍵且焦點]。
 
-<a name="Working_with_Checkboxes_and_Radio_Buttons" />
+<a name="Working_with_Checkboxes_and_Radio_Buttons"></a>
 
 ## <a name="working-with-checkboxes-and-radio-buttons"></a>使用核取方塊和選項按鈕
 
@@ -324,7 +324,7 @@ AppKit 提供數種類型的核取方塊和選項按鈕群組，可用於您的�
 
 [![](standard-controls-images/buttons02.png "An example of the available checkbox types")](standard-controls-images/buttons02.png#lightbox)
 
-核取方塊和選項按鈕（透過**輸出**公開）具有狀態（例如**On**和**Off**），可以針對 `NSCellStateValue` 列舉，使用 `State` 屬性來檢查或設定狀態。 例如:
+核取方塊和選項按鈕（透過**輸出**公開）具有狀態（例如**On**和**Off**），可以使用 `State` 屬性對列舉進行檢查或設定狀態 `NSCellStateValue` 。 例如：
 
 ```csharp
 AdjustTime.Activated += (sender, e) => {
@@ -338,7 +338,7 @@ AdjustTime.Activated += (sender, e) => {
 - **Off** -不會推送按鈕，或未選取控制項。
 - **混合**-**開啟**和**關閉**狀態的混合。
 
-若要選取選項按鈕群組中的按鈕，請公開選項按鈕以選取作為**插座**，並設定其 [`State`] 屬性。 例如：
+若要選取選項按鈕群組中的按鈕，請公開選項按鈕以選取做為**輸出**，並設定其 `State` 屬性。 例如：
 
 ```csharp
 partial void SelectCar (Foundation.NSObject sender) {
@@ -351,7 +351,7 @@ partial void SelectCar (Foundation.NSObject sender) {
 
 ![](standard-controls-images/buttons04.png "Creating a new Action")
 
-接下來，在**屬性偵測器**中，為每個選項按鈕指派唯一的 `Tag`：
+接下來， `Tag` 在**屬性偵測器**中，為每個選項按鈕指派唯一的：
 
 ![](standard-controls-images/buttons05.png "Editing a radio button tag")
 
@@ -365,9 +365,9 @@ partial void NumberChanged(Foundation.NSObject sender)
 }
 ```
 
-您可以使用 [`Tag`] 屬性來查看已選取的選項按鈕。
+您可以使用 `Tag` 屬性來查看所選取的選項按鈕。
 
-<a name="Working_with_Menu_Controls" />
+<a name="Working_with_Menu_Controls"></a>
 
 ## <a name="working-with-menu-controls"></a>使用功能表控制項
 
@@ -375,57 +375,57 @@ AppKit 提供數種類型的功能表控制項，可用於您的使用者介面�
 
 [![](standard-controls-images/menu01.png "Example menu controls")](standard-controls-images/menu01.png#lightbox)
 
-<a name="Providing-Menu-Control-Data" />
+<a name="Providing-Menu-Control-Data"></a>
 
 ### <a name="providing-menu-control-data"></a>提供功能表控制項資料
 
 可供 macOS 使用的功能表控制項可以設定為從內部清單填入下拉式清單（可以在 Interface Builder 中預先定義或透過程式碼填入），或提供您自己的自訂外部資料源。
 
-<a name="Working-with-Internal-Data" />
+<a name="Working-with-Internal-Data"></a>
 
 #### <a name="working-with-internal-data"></a>使用內部資料
 
-除了在 Interface Builder 中定義專案之外，Menu 控制項（例如 `NSComboBox`）還提供一組完整的方法，可讓您加入、編輯或刪除所維護之內部清單中的專案：
+除了在 Interface Builder 中定義專案之外，Menu 控制項（例如 `NSComboBox` ）還提供一組完整的方法，可讓您新增、編輯或刪除所維護之內部清單中的專案：
 
-- `Add`-將新專案新增至清單結尾。
+- `Add`-將新的專案加入至清單的結尾。
 - `GetItem`-傳回指定索引處的專案。
 - `Insert`-在清單中的指定位置插入新專案。
 - `IndexOf`-傳回指定專案的索引。
 - `Remove`-從清單中移除指定的專案。
-- `RemoveAll`-從清單中移除所有專案。
+- `RemoveAll`-移除清單中的所有專案。
 - `RemoveAt`-移除指定索引處的專案。
 - `Count`-傳回清單中的專案數。
 
 > [!IMPORTANT]
-> 如果您使用外部資料源（`UsesDataSource = true`），呼叫上述任何方法將會擲回例外狀況。
+> 如果您使用外部資料源（ `UsesDataSource = true` ），則呼叫上述任何方法將會擲回例外狀況。
 
-<a name="Working-with-an-External-Data-Source" />
+<a name="Working-with-an-External-Data-Source"></a>
 
 #### <a name="working-with-an-external-data-source"></a>使用外部資料源
 
 您可以選擇性地使用外部資料源，並為專案（例如 SQLite 資料庫）提供您自己的備份存放區，而不是使用內建的內部資料來提供功能表控制項的列。
 
-若要使用外部資料源，您將建立功能表控制項的資料來源（例如`NSComboBoxDataSource`）實例，並覆寫數個方法來提供必要的資料：
+若要使用外部資料源，您將建立功能表控制項的資料來源實例（ `NSComboBoxDataSource` 例如），並覆寫數個方法來提供必要的資料：
 
 - `ItemCount`-傳回清單中的專案數。
 - `ObjectValueForItem`-傳回指定之索引的專案值。
 - `IndexOfItem`-傳回提供專案值的索引。
-- `CompletedString`-傳回部分具類型的專案值的第一個相符專案值。 只有在已啟用自動完成（`Completes = true`）時，才會呼叫這個方法。
+- `CompletedString`-傳回部分具類型專案值的第一個相符專案值。 只有在已啟用自動完成（）時，才會呼叫這個方法 `Completes = true` 。
 
 如需詳細資訊，請參閱[使用資料庫](~/mac/app-fundamentals/databases.md)檔中的[資料庫和下拉式方塊](~/mac/app-fundamentals/databases.md#Databases-and-ComboBoxes)一節。
 
-<a name="Adjusting-the-Lists-Appearance" />
+<a name="Adjusting-the-Lists-Appearance"></a>
 
 ### <a name="adjusting-the-lists-appearance"></a>調整清單的外觀
 
 下列方法可用來調整功能表控制項的外觀：
 
-- `HasVerticalScroller`-如果 `true`，控制項將會顯示垂直捲動條。 
+- `HasVerticalScroller`-如果 `true` 為，控制項將會顯示垂直捲動條。 
 - `VisibleItems`-調整開啟控制項時顯示的專案數。 預設值為五（5）。
-- `IntercellSpacing`-藉由提供 `NSSize`，其中 `Width` 指定左邊和右邊界，而 `Height` 指定專案前後的空格，以調整指定專案周圍的空間量。
+- `IntercellSpacing`-藉由提供 `NSSize` ，其中 `Width` 指定了左邊和右邊的邊界，並 `Height` 指定專案前後的空格，來調整指定專案周圍的空間量。
 - `ItemHeight`-指定清單中每個專案的高度。
 
-針對 `NSPopupButtons`的下拉式類型，第一個功能表項目會提供控制項的標題。 例如： 
+針對的下拉式類型 `NSPopupButtons` ，第一個功能表項目會提供控制項的標題。 例如： 
 
 [![](standard-controls-images/menu02.png "An example menu control")](standard-controls-images/menu02.png#lightbox)
 
@@ -435,7 +435,7 @@ AppKit 提供數種類型的功能表控制項，可用於您的使用者介面�
 DropDownSelected.Title = "Item 1";
 ```
 
-<a name="Manipulating-the-Selected-Items" />
+<a name="Manipulating-the-Selected-Items"></a>
 
 ### <a name="manipulating-the-selected-items"></a>操作選取的專案
 
@@ -447,20 +447,20 @@ DropDownSelected.Title = "Item 1";
 - `SelectedIndex`-傳回目前選取專案的索引。
 - `SelectedValue`-傳回目前所選取專案的值。
 
-使用 [`ScrollItemAtIndexToTop`]，將專案顯示在清單頂端的指定索引處，而 `ScrollItemAtIndexToVisible` 要滾動到清單，直到指定索引處的專案可見為止。
+使用 `ScrollItemAtIndexToTop` ，即可將專案顯示在清單頂端的指定索引處，並在 `ScrollItemAtIndexToVisible` 顯示指定索引的專案之前，將它向清單。
 
-<a name="Responding to Events" />
+<a name="Responding to Events"></a>
 
 ### <a name="responding-to-events"></a>回應事件
 
 Menu 控制項提供下列事件來回應使用者互動：
 
-- `SelectionChanged`-當使用者從清單中選取值時呼叫。
-- `SelectionIsChanging`-在新的使用者選取的專案變成作用中的選取範圍之前呼叫。
+- `SelectionChanged`-當使用者從清單中選取一個值時，就會呼叫。
+- `SelectionIsChanging`-在新的使用者選取的專案變成使用中的選取範圍之前呼叫。
 - `WillPopup`-在顯示專案的下拉式清單之前呼叫。
-- `WillDismiss`-是在關閉專案的下拉式清單之前呼叫。
+- `WillDismiss`-在關閉專案的下拉式清單之前呼叫。
 
-針對 `NSComboBox` 控制項，它們包含與 `NSTextField`相同的所有事件，例如每次使用者編輯下拉式方塊中的文字值時所呼叫的 `Changed` 事件。
+針對 `NSComboBox` 控制項，它們包含與相同的所有事件 `NSTextField` ，例如 `Changed` 每次使用者編輯下拉式方塊中的文字值時所呼叫的事件。
 
 （選擇性）您可以將專案附加至**動作**，並使用如下所示的程式碼來回應使用者所觸發的**動作**，以回應所選取 Interface Builder 中所定義的內部資料功能表項目：
 
@@ -473,7 +473,7 @@ partial void ItemOne (Foundation.NSObject sender) {
 
 如需使用功能表和功能表控制項的詳細資訊，請參閱[功能表](~/mac/user-interface/menu.md)和快顯[按鈕和下拉式清單](~/mac/user-interface/menu.md)檔。
 
-<a name="Working_with_Selection_Controls" />
+<a name="Working_with_Selection_Controls"></a>
 
 ## <a name="working-with-selection-controls"></a>使用選取控制項
 
@@ -481,7 +481,7 @@ AppKit 提供數種類型的選取控制項，可用於您的使用者介面設�
 
 [![](standard-controls-images/select01.png "Example selection controls")](standard-controls-images/select01.png#lightbox)
 
-有兩種方式可以追蹤選取控制項何時具有使用者互動，方法是將其公開為**動作**。 例如:
+有兩種方式可以追蹤選取控制項何時具有使用者互動，方法是將其公開為**動作**。 例如：
 
 ```csharp
 partial void SegmentButtonPressed (Foundation.NSObject sender) {
@@ -489,7 +489,7 @@ partial void SegmentButtonPressed (Foundation.NSObject sender) {
 }
 ```
 
-或藉由將**委派**附加至 `Activated` 事件。 例如:
+或藉由將**委派**附加至 `Activated` 事件。 例如：
 
 ```csharp
 TickedSlider.Activated += (sender, e) => {
@@ -497,7 +497,7 @@ TickedSlider.Activated += (sender, e) => {
 };
 ```
 
-若要設定或讀取選取控制項的值，請使用 [`IntValue`] 屬性。 例如:
+若要設定或讀取選取控制項的值，請使用 `IntValue` 屬性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Stepper Value: {0:###}",TickedSlider.IntValue);
@@ -511,14 +511,14 @@ ImageWell.Image = NSImage.ImageNamed ("tag.png");
 
 ```
 
-`NSDatePicker` 具有下列屬性，可直接處理日期和時間：
+`NSDatePicker`具有下列屬性，可直接處理日期和時間：
 
-- **DateValue** -目前的日期和時間值，做為 `NSDate`。
-- [**本機**]-使用者的位置，做為 `NSLocal`。
-- **TimeInterval** -時間值，`Double`。
-- [**時區**]-使用者的時區，做為 `NSTimeZone`。
+- **DateValue** -目前的日期和時間值，其為 `NSDate` 。
+- [**本機**]-使用者的位置，做為 `NSLocal` 。
+- **TimeInterval** -時間值，其為 `Double` 。
+- [**時區**]-使用者的時區，做為 `NSTimeZone` 。
 
-<a name="Working_with_Indicator_Controls" />
+<a name="Working_with_Indicator_Controls"></a>
 
 ## <a name="working-with-indicator-controls"></a>使用指標控制項
 
@@ -526,7 +526,7 @@ AppKit 提供數種類型的指標控制項，可用於您的使用者介面設�
 
 [![](standard-controls-images/level01.png "Example indicator controls")](standard-controls-images/level01.png#lightbox)
 
-有兩種方式可以追蹤指標控制項何時具有使用者互動，方法是將它公開為**動作**或**輸出**，然後將**委派**附加至 `Activated` 事件。 例如:
+有兩種方式可以追蹤指標控制項何時具有使用者互動，方法是將它公開為**動作**或**輸出**，然後將**委派**附加至 `Activated` 事件。 例如：
 
 ```csharp
 LevelIndicator.Activated += (sender, e) => {
@@ -534,13 +534,13 @@ LevelIndicator.Activated += (sender, e) => {
 };
 ```
 
-若要讀取或設定指標控制項的值，請使用 `DoubleValue` 屬性。 例如:
+若要讀取或設定指標控制項的值，請使用 `DoubleValue` 屬性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Rating: {0:###}",Rating.DoubleValue);
 ```
 
-顯示時，不應將不定和非同步進度指標繪製成動畫。 當動畫顯示時，使用 `StartAnimation` 方法來啟動它。 例如:
+顯示時，不應將不定和非同步進度指標繪製成動畫。 使用 `StartAnimation` 方法可在動畫顯示時啟動。 例如：
 
 ```csharp
 Indeterminate.StartAnimation (this);
@@ -549,7 +549,7 @@ AsyncProgress.StartAnimation (this);
 
 呼叫 `StopAnimation` 方法將會停止動畫。
 
-<a name="Working_with_Text_Controls" />
+<a name="Working_with_Text_Controls"></a>
 
 ## <a name="working-with-text-controls"></a>使用文字控制項
 
@@ -557,31 +557,31 @@ AppKit 提供數種類型的文字控制項，可用於您的使用者介面設�
 
 [![](standard-controls-images/text01.png "Example text controls")](standard-controls-images/text01.png#lightbox)
 
-針對文字欄位（`NSTextField`），可以使用下列事件來追蹤使用者互動：
+針對文字欄位（ `NSTextField` ），可以使用下列事件來追蹤使用者互動：
 
 - **已變更**-每當使用者變更欄位的值時，就會引發。 例如，在每個輸入的字元上。
 - **EditingBegan** -當使用者選取要編輯的欄位時，就會引發。
 - **EditingEnded** -當使用者在欄位中按下 Enter 鍵或離開欄位時。
 
-使用 `StringValue` 屬性來讀取或設定欄位的值。 例如:
+使用 `StringValue` 屬性來讀取或設定欄位的值。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("User ID: {0}",UserField.StringValue);
 ```
 
-對於顯示或編輯數值的欄位，您可以使用 [`IntValue`] 屬性。 例如:
+對於顯示或編輯數值的欄位，您可以使用 `IntValue` 屬性。 例如：
 
 ```csharp
 FeedbackLabel.StringValue = string.Format("Number: {0}",NumberField.IntValue);
 ```
 
-`NSTextView` 提供具有內建格式的完整功能文本編輯和顯示區域。 如同 `NSTextField`，請使用 `StringValue` 屬性來讀取或設定區域的值。
+`NSTextView`提供具有內建格式的完整功能文本編輯和顯示區域。 如同 `NSTextField` ，使用 `StringValue` 屬性來讀取或設定區域的值。
 
 如需在 Xamarin. Mac 應用程式中使用文字流覽的複雜範例範例，請參閱[SourceWriter 範例應用程式](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter)。 SourceWriter 是簡單的原始程式碼編輯器，可支援程式碼完成功能和簡單的語法反白顯示。
 
 SourceWriter 程式碼有完整註解，在適當的情況下會提供從關鍵技術或方法到 Xamarin.Mac 指南文件中相關資訊的連結。
 
-<a name="Working_with_Content_Views" />
+<a name="Working_with_Content_Views"></a>
 
 ## <a name="working-with-content-views"></a>使用內容視圖
 
@@ -589,7 +589,7 @@ AppKit 提供數種類型的內容視圖，可用於您的使用者介面設計�
 
 [![](standard-controls-images/content01.png "An example content view")](standard-controls-images/content01.png#lightbox)
 
-<a name="Popovers" />
+<a name="Popovers"></a>
 
 ### <a name="popovers"></a>Popovers
 
@@ -597,7 +597,7 @@ Popover 是暫時性的 UI 元素，可提供與特定控制項或螢幕區域�
 
 若要建立 popover，請執行下列動作：
 
-1. 開啟您想要新增 popover 的視窗 `.storyboard` 檔案，方法是在**方案總管**中按兩下該檔案
+1. 開啟 `.storyboard` 您想要新增 popover 的視窗檔案，方法是在 [**方案總管**] 中按兩下該檔案
 2. 將**View Controller**從連結**庫偵測器**拖曳至**介面編輯器**： 
 
     [![](standard-controls-images/content02.png "Selecting a View Controller from the Library")](standard-controls-images/content02.png#lightbox)
@@ -612,7 +612,7 @@ Popover 是暫時性的 UI 元素，可提供與特定控制項或螢幕區域�
     [![](standard-controls-images/content06.png "Setting the segue type")](standard-controls-images/content06.png#lightbox)
 6. 儲存您的變更，並返回 Visual Studio for Mac 以與 Xcode 同步。
 
-<a name="Tab_Views" />
+<a name="Tab_Views"></a>
 
 ### <a name="tab-views"></a>索引標籤視圖
 
@@ -626,27 +626,27 @@ Popover 是暫時性的 UI 元素，可提供與特定控制項或螢幕區域�
 
 [![](standard-controls-images/content09.png "Editing the tabs in Xcode")](standard-controls-images/content09.png#lightbox)
 
-<a name="Data_Binding_AppKit_Controls" />
+<a name="Data_Binding_AppKit_Controls"></a>
 
 ## <a name="data-binding-appkit-controls"></a>資料系結 AppKit 控制項
 
 藉由在 Xamarin. Mac 應用程式中使用索引鍵/值編碼和資料系結技術，您可以大幅減少必須撰寫和維護的程式碼數量，以填入和使用 UI 元素。 您也可以進一步將您的支援資料（_資料模型_）與您的前端使用者介面（_模型視圖控制器_）分離，讓您更容易維護、更有彈性的應用程式設計。
 
-索引鍵/值編碼（KVC）是一種機制，可使用索引鍵（特殊格式的字串）來識別屬性，而不是透過執行個體變數或存取子方法（`get/set`）來存取物件的屬性。 藉由在您的 Xamarin. Mac 應用程式中執行符合索引鍵/值的存取子，您可以存取其他 macOS 功能，例如索引鍵/值觀察（KVO）、資料系結、核心資料、Cocoa 系結和 scriptability。
+索引鍵/值編碼（KVC）是一種機制，可讓您間接存取物件的屬性，使用索引鍵（特殊格式的字串）來識別屬性，而不是透過執行個體變數或存取子方法（）來存取它們 `get/set` 。 藉由在您的 Xamarin. Mac 應用程式中執行符合索引鍵/值的存取子，您可以存取其他 macOS 功能，例如索引鍵/值觀察（KVO）、資料系結、核心資料、Cocoa 系結和 scriptability。
 
 如需詳細資訊，請參閱資料系結[和索引鍵-值編碼](~/mac/app-fundamentals/databinding.md)檔的[簡單資料](~/mac/app-fundamentals/databinding.md#Simple_Data_Binding)系結一節。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 
-本文已詳細說明如何使用標準的 AppKit 控制項，例如，在 Xamarin 應用程式中使用按鈕、標籤、文字欄位、核取方塊和分割的控制項。 其中涵蓋將它們新增至 Xcode Interface Builder 中的使用者介面設計，透過輸出和動作將其公開至程式碼，並在程式C#代碼中使用 AppKit 控制項。
+本文已詳細說明如何使用標準的 AppKit 控制項，例如，在 Xamarin 應用程式中使用按鈕、標籤、文字欄位、核取方塊和分割的控制項。 其中涵蓋將這些專案新增至 Xcode Interface Builder 中的使用者介面設計，透過輸出和動作將其公開至程式碼，並在 c # 程式碼中使用 AppKit 控制項。
 
 ## <a name="related-links"></a>相關連結
 
 - [MacControls （範例）](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
 - [Windows](~/mac/user-interface/window.md)
-- [資料繫結和鍵值編碼](~/mac/app-fundamentals/databinding.md)
+- [資料繫結和機碼值編碼](~/mac/app-fundamentals/databinding.md)
 - [OS X 人性化介面指導方針](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/) \(英文\)
 - [關於控制項和視圖](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/ControlsAll.html#//apple_ref/doc/uid/20000957-CH46-SW1)

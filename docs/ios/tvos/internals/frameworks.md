@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ab89d6e05b42157ededa3bb01cf22d5cdca130ce
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 729c8918230b7fe28b98357b101d935e1ec752ef
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030665"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573530"
 ---
 # <a name="supported-and-unsupported-frameworks-in-tvos"></a>TvOS 中支援和不支援的架構
 
-<a name="Supported-Frameworks" />
+<a name="Supported-Frameworks"></a>
 
 ## <a name="supported-frameworks"></a>支援的架構
 
@@ -40,7 +40,7 @@ ms.locfileid: "73030665"
 - CoreText
 - CoreVideo
 - 達爾文
-- 打下
+- Foundation
 - GameController
 - GameKit
 - 遊戲
@@ -66,7 +66,7 @@ ms.locfileid: "73030665"
 - TVServices （已新增）
 - UIKit
 
-<a name="Unsupported-Frameworks" />
+<a name="Unsupported-Frameworks"></a>
 
 ## <a name="unsupported-frameworks"></a>不支援的架構
 

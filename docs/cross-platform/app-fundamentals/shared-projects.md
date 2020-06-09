@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016688"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571089"
 ---
 # <a name="shared-projects-code-sharing"></a>共用的專案程式碼共用
 
@@ -35,7 +35,7 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 請注意，Android 應用程式專案無法參考其他 Android 應用程式專案-例如，Android 單元測試專案無法參考 Android 應用程式專案。 如需這項限制的詳細資訊，請參閱此[論壇討論](https://forums.xamarin.com/discussion/comment/98092/)。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac 逐步解說
 
@@ -69,7 +69,7 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 ![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-walkthrough"></a>Visual Studio 逐步解說
 
@@ -77,9 +77,9 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 ### <a name="creating-a-shared-project"></a>建立共用專案
 
-若要建立新的共用專案，請**流覽至 [** 檔案]  >  [**新增** > **專案**]。
+若要建立新的共用專案，請**流覽至 [** 檔案] [  >  **新增**  >  **專案**]。
 
-在 Visual Studio 2019 的 [**建立新專案**] 頁面上，于搜尋方塊中輸入**shared** 。 選取 [**共用專案**] 範本，然後選取 **[下一步]** 。 輸入專案的名稱，然後選取 [**建立**]。
+在 Visual Studio 2019 的 [**建立新專案**] 頁面上，于搜尋方塊中輸入**shared** 。 選取 [**共用專案**] 範本，然後選取 **[下一步]**。 輸入專案的名稱，然後選取 [**建立**]。
 
 在 Visual Studio 2017 中，選取 [**共用專案**] 範本，然後選擇專案的 [名稱]。
 
@@ -107,19 +107,19 @@ _共用的專案可讓您撰寫一些不同應用程式專案所參考的通用�
 
 -----
 
-<a name="Shared_Project_Example"/>
+<a name="Shared_Project_Example"></a>
 
 ## <a name="shared-project-example"></a>共用的專案範例
 
-[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)範例會使用共用專案來包含 IOS、Android 和 Windows Phone 應用程式所使用的通用程式碼。 `SQLite.cs` 和 `TaskRepository.cs` 的原始程式碼檔都利用編譯器指示詞（例如 `#if __ANDROID__`）為參考它們的每個應用程式產生不同的輸出。
+[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)範例會使用共用專案來包含 IOS、Android 和 Windows Phone 應用程式所使用的通用程式碼。 `SQLite.cs`和原始程式碼檔都 `TaskRepository.cs` 利用編譯器指示詞（例如 `#if __ANDROID__`），為每個參考它們的應用程式產生不同的輸出。
 
 完整的解決方案結構如下所示（分別在 Visual Studio for Mac 和 Visual Studio 中）：
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
 

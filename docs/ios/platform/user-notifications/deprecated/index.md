@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2016
-ms.openlocfilehash: de9a46587a5d1de6f12dd54122b27e53694cdeb8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a97885518c0646d2d8315b5da5eb12c71d693cf6
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031396"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574076"
 ---
 # <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin 中已淘汰的通知技術
 
@@ -23,21 +23,21 @@ ms.locfileid: "73031396"
 
 ## <a name="sections"></a>章節
 
-<a name="Local Notifications In iOS" />
+<a name="Local Notifications In iOS"></a>
 
-## <a name="local-notifications-in-ioslocal-notifications-in-iosmd"></a>[IOS 中的本機通知](local-notifications-in-ios.md)
+## <a name="local-notifications-in-ios"></a>[IOS 中的本機通知](local-notifications-in-ios.md)
 
 本節將討論如何在 Xamarin 中執行本機通知。 其中將說明 iOS 通知的各種 UI 元素，並討論與建立和顯示通知相關的 API。
 
-<a name="Local Notifications Walkthrough" />
+<a name="Local Notifications Walkthrough"></a>
 
-## <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[逐步解說 - 在 Xamarin.iOS 中使用本機通知](local-notifications-in-ios-walkthrough.md)
+## <a name="walkthrough---using-local-notifications-in-xamarinios"></a>[逐步解說-在 Xamarin 中使用本機通知](local-notifications-in-ios-walkthrough.md)
 
 在本節中，我們將逐步解說如何在 Xamarin iOS 應用程式中使用本機通知。 它會示範建立和發佈通知的基本概念，而當應用程式收到警示時，將會顯示警示。
 
-<a name="Remote Notifications In iOS" />
+<a name="Remote Notifications In iOS"></a>
 
-## <a name="remote-notifications-in-iosremote-notifications-in-iosmd"></a>[IOS 中的遠端通知](remote-notifications-in-ios.md)
+## <a name="remote-notifications-in-ios"></a>[IOS 中的遠端通知](remote-notifications-in-ios.md)
 
 本節將涵蓋 iOS 中的推播通知。 其中引進了 Apple Push 通知閘道服務（APNS），以及它在對 iOS 應用程式發佈通知時所扮演的角色。 其中將說明如何建立啟用推播通知和討論所需的安全性憑證。 最後，本節將討論一些應用程式伺服器為了追蹤用戶端行動裝置而必須執行的日常作業。
 

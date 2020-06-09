@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 86b887b7aa913572d5fb6093fe682cd2933b282e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304202"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573179"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 散發 Xamarin.iOS 應用程式
 
-_TestFlight 現在歸 Apple 所有,是測試 Xamarin.iOS 應用的主要方式。本文將指導您完成測試飛行流程的所有步驟 - 從上傳應用到使用 iTunes Connect。_
+_TestFlight 現在由 Apple 所擁有，而且是 Beta 測試您的 Xamarin iOS 應用程式的主要方式。本文將引導您完成 TestFlight 程式的所有步驟–從上傳您的應用程式到使用 iTunes Connect。_
 
 Beta 測試是軟體開發週期不可或缺的一部分，且有許多跨平台應用程式供應項目皆可以簡化這個程序，例如 [HockeyApp](https://hockeyapp.net/features/) \(英文\)、[Applause](https://www.applause.com/mobile-app-testing) \(英文\)，以及適用於 Android 應用程式的 Google Play 原生應用程式「Beta 版測試」。 本文內容將著重於 Apple 的 TestFlight。
 
@@ -29,7 +29,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 - TestFlight 應用程式現在是實際的 iOS 應用程式，因此運作速度更快。
 - 一旦 Beta 測試完成之後，將應用程式移至審查階段的程序將既快速又有效率，只需按一下按鈕便能完成。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 只有 iOS 8.0 或更新版本的應用程式才可以透過 TestFlight 進行測試。
 
@@ -61,7 +61,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 ## <a name="create-an-itunes-connect-record"></a>建立 iTunes Connect 記錄
 
 1. 使用 Apple 開發人員認證登入 [iTunes Connect 入口網站](https://itunesconnect.apple.com/)。
-2. 選擇**我的應用程式**:
+2. 選取 [**我的應用程式**：
 
     [![](testflight-images/my-apps.png "Select My Apps")](testflight-images/my-apps.png#lightbox)
 
@@ -165,7 +165,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 請注意，內部測試人員並**不**需要此中繼資料，但您**必須**將它提供給外部測試人員。
 
-<a name="beta-testing" />
+<a name="beta-testing"></a>
 
 ### <a name="enable-beta-testing"></a>啟用 Beta 測試
 
@@ -197,7 +197,7 @@ TestFlight 是 Apple 供 iOS 應用程式使用的 Beta 測試服務，並只能
 
 [![](testflight-images/internal-tester.png "Turn on the Internal Tester switch")](testflight-images/internal-tester.png#lightbox)
 
-要添加不在清單中的使用者,請選擇**+***「使用者」* 旁邊的按鈕,並提供名字、姓氏和電子郵件地址以創建帳戶。 該使用者必須確認其電子郵件，才能啟用帳戶：
+若要新增不在清單上的使用者，請選取 [ **+** *使用者*] 旁的按鈕，並提供 [名字]、[姓氏] 和 [電子郵件地址] 來建立帳戶。 該使用者必須確認其電子郵件，才能啟用帳戶：
 
 [![](testflight-images/add-new-user.png "Adding a user")](testflight-images/add-new-user.png#lightbox)
 
@@ -270,6 +270,6 @@ first name, last name, email address
 ## <a name="related-links"></a>相關連結
 
 - [建立 iTunes Connect Record](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md#creating)
-- [發行至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
+- [發佈至 App Store](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)
 - [佈建適用於 App Store 散發的應用程式](~/ios/deploy-test/app-distribution/app-store-distribution/index.md#provisioning)
 - [使用 Apple TestFlight Beta](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/BetaTestingTheApp.html#//apple_ref/doc/uid/TP40011225-CH35-SW2)

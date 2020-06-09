@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488942"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574128"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 簡介
 
@@ -42,7 +42,7 @@ IOS 9 和 iPhone 6s 和 iPhone 6s Plus 的新手，3D Touch 將壓力機密手�
 
 若要深入瞭解 ATS，請參閱我們的[應用程式傳輸安全性](~/ios/app-fundamentals/ats.md)指南。
 
-<a name="multitasking" />
+<a name="multitasking"></a>
 
 ## <a name="multitasking-for-ipad"></a>適用於 iPad 的多工
 
@@ -109,7 +109,7 @@ IOS 8 中引進的[HomeKit](xref:HomeKit)架構可讓您從 Xamarin iOS 應用�
 
 ## <a name="handoff-framework-changes"></a>提交架構變更
 
-IOS 8 和 OS X Yosemite （10.10）中的 Apple 引進了遞交（也稱為持續性），這種方式可讓使用者在其中一個裝置（iOS 或 Mac）上啟動活動，並在其裝置上繼續該相同的活動（如使用者的 iClou 所識別d 帳戶）。
+IOS 8 和 OS X Yosemite （10.10）中的 Apple 引進了遞交（也稱為持續性），這種方式可讓使用者在其中一個裝置（iOS 或 Mac）上啟動活動，並在其裝置上繼續該相同的活動（如使用者的 iCloud 帳戶所識別）。
 
 IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳細資訊，請參閱我們的[搜尋增強功能](~/ios/platform/search/index.md)檔。 如需有關使用遞交的詳細資訊，請參閱我們的[遞交簡介](~/ios/platform/handoff.md)檔。
 
@@ -137,9 +137,9 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 
 - 當修改指紋資料庫時，會使 Keychain 專案失效的新 Touch ID 條件約束。
 - 新的條件約束，允許只使用 Touch ID 或密碼建立存取控制清單專案。
-- 新的驗證內容，可讓您叫用獨立于 `SecItem` 呼叫的驗證。
+- 新的驗證內容，可讓您叫用與呼叫不同的驗證 `SecItem` 。
 - 存取控制列出應用程式提供之 keychain 專案加密的熵（使用 [應用程式密碼] 選項）。
-- 支援在安全記憶體保護區（透過 `kSecAttrTokenIDSecureEnclave` 屬性）內產生和使用金鑰。
+- 支援在安全記憶體保護區（透過屬性）內產生和使用金鑰 `kSecAttrTokenIDSecureEnclave` 。
 
 如需詳細資訊，請參閱[在 Xamarin 中的 TOUCH id 和臉部識別碼](~/ios/platform/touch-id-face-id.md)。
 
@@ -177,8 +177,8 @@ IOS 9 中的遞交已擴大，也支援新的增強型搜尋功能。 如需詳�
 Apple 已淘汰 iOS 9 中的下列 Api 和功能：
 
 - **通訊錄 & 通訊錄 ui** -這些 api 已由 Contact 和 contact ui 架構取代。 如需詳細資訊，請參閱我們的[連絡人和連絡人 UI](~/ios/platform/contacts.md)檔。
-- **CBCentralManager** -iOS 9 中已移除 `CBCentralManager` 類別的 `RetrievePeripherals` 和 `RetrieveConnectedPeripherals` 方法。 呼叫這些方法會導致應用程式在配對附件或應用程式啟動時損毀。
-- **FetchAllChanges** -`CKFetchRecordChangesOperation` 類別的 `FetchAllChanges` 已進行過折舊，將在 iOS 9 中移除。
+- **CBCentralManager** - `RetrievePeripherals` `RetrieveConnectedPeripherals` `CBCentralManager` iOS 9 中已移除類別的和方法。 呼叫這些方法會導致應用程式在配對附件或應用程式啟動時損毀。
+- **FetchAllChanges** - `FetchAllChanges` 類別的 `CKFetchRecordChangesOperation` 已折舊，將在 iOS 9 中移除。
 - **媒體播放機**-iOS 9 中的媒體播放機架構已被取代。 請改用 AVKit 或 AV Foundation Api。
 
 如需特定 API 棄用功能的完整清單，請參閱 Apple 的[iOS 9.0 API 差異](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222)檔。

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsBoxView
-description: 本文說明如何在應用程式中使用色彩矩形來裝飾、圖形和互動 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5f915955bff969ef38cdb7a89bf9cecf05401131
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136353"
+title： " Xamarin.Forms BoxView" 描述： "本文說明如何在應用程式中使用彩色矩形來裝飾、圖形和互動 Xamarin.Forms 。
+assetid： 4CBF703D-84A0-4CDF-A433-5926B587782A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/26/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
@@ -26,17 +12,6 @@ ms.locfileid: "84136353"
 因為沒有 Xamarin.Forms 內建向量圖形系統，所以 `BoxView` 有助於補償。 本文所述的部分範例程式會使用 `BoxView` 來轉譯圖形。 `BoxView`可以調整大小，以類似特定寬度和粗細的線條，然後使用屬性以任何角度旋轉 `Rotation` 。
 
 雖然 `BoxView` 可以模擬簡單的圖形，但您可能會想要[使用 Xamarin.Forms 中的 SkiaSharp](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)進行調查，以取得更複雜的圖形需求。
-
-本文章討論下列主題：
-
-- **[設定 BoxView 色彩和大小](#colorandsize)** &ndash;設定 `BoxView` 屬性。
-- 轉譯**[文字裝飾](#textdecorations)** &ndash;使用 `BoxView` 來呈現線條。
-- **[使用 BoxView](#listingcolors)** &ndash; 來列出色彩顯示中的所有系統色彩 `ListView` 。
-- 藉由子類別化**[BoxView](#subclassing)** &ndash; 來玩生活遊戲實行著名的行動自動化。
-- **[建立數位時鐘](#digitalclock)** &ndash;模擬點矩陣顯示。
-- **[建立類比時鐘](#analogclock)** &ndash;轉換和建立 `BoxView` 元素的動畫。
-
-<a name="colorandsize" />
 
 ## <a name="setting-boxview-color-and-size"></a>設定 BoxView 色彩和大小
 
@@ -84,8 +59,6 @@ ms.locfileid: "84136353"
 `BoxView`也可以是的子系 `AbsoluteLayout` 。 在這種情況下，的位置和大小 `BoxView` 都是使用附加的可系結屬性來設定 `LayoutBounds` 。 `AbsoluteLayout` [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)一文中會討論。
 
 您會在接下來的範例程式中，看到所有這些案例的範例。
-
-<a name="textdecorations" />
 
 ## <a name="rendering-text-decorations"></a>轉譯文字裝飾
 
@@ -171,8 +144,6 @@ ms.locfileid: "84136353"
     </Label>
 </StackLayout>
 ```
-
-<a name="listingcolors" />
 
 ## <a name="listing-colors-with-boxview"></a>使用 BoxView 來列出色彩
 
@@ -305,8 +276,6 @@ public class NamedColor
 
 物件 `NamedColor` 會由 `ViewCell` 設定為資料範本的物件進行格式化 `ListView` 。 此範本包含， `BoxView` 其 `Color` 屬性系結至 `Color` 物件的屬性 `NamedColor` 。
 
-<a name="subclassing" />
-
 ## <a name="playing-the-game-of-life-by-subclassing-boxview"></a>藉由子類別化 BoxView 來玩生活遊戲
 
 生活的遊戲是依照數學家 John Conway 定律和普及化在1970年代的*科學美國*的頁面中所創造的行動電話自動化。 這是維琪百科文章[conway 定律的生活遊戲](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)所提供的絕佳簡介。
@@ -361,8 +330,6 @@ class LifeCell : BoxView
 **GameOfLife**程式也包含類別， `LifeGrid` 它會封裝許多遊戲邏輯，以及 `MainPage` 處理常式視覺效果的類別。 其中包括描述遊戲規則的重迭。 此處的程式會在 `LifeCell` 頁面上顯示數百個物件：
 
 [![生活遊戲](boxview-images/gameoflife-small.png "生活遊戲")](boxview-images/gameoflife-large.png#lightbox "生活遊戲")
-
-<a name="digitalclock" />
 
 ## <a name="creating-a-digital-clock"></a>建立數位時鐘
 
@@ -599,8 +566,6 @@ public partial class MainPage : ContentPage
 }
 ```
 
-<a name="analogclock" />
-
 ## <a name="creating-an-analog-clock"></a>建立類比時鐘
 
 點矩陣時鐘似乎是的明顯應用 `BoxView` ，但 `BoxView` 元素也能夠實現類比時鐘：
@@ -782,10 +747,6 @@ public partial class MainPage : ContentPage
 ```
 
 第二個動作的處理方式稍有不同：會套用動畫緩動函式，讓移動看起來像是機械，而不是平滑。 在每個刻度上，第二部會取回一小部分，然後超出情形及其目的地。 這小段的程式碼增加了許多動作的真實性。
-
-## <a name="conclusion"></a>結論
-
-`BoxView`一開始看起來可能很簡單，但如您所見，它可以非常靈活，而且幾乎可以重現通常只有向量圖形才可行的視覺效果。 如需更複雜的圖形，請參閱[在中 Xamarin.Forms 使用 SkiaSharp ](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)。
 
 ## <a name="related-links"></a>相關連結
 

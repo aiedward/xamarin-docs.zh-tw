@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: aeb3d01a3d0f7edbe92c9959073d859fc63486a6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e166f513a75faaa082e8557dc6f610f014547a25
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031647"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574139"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin 中 iPad 的多工作業
 
@@ -41,7 +41,7 @@ iOS 9 增加了多工支援，可在特定 iPad 硬體上同時執行兩個應�
 
 **IPad 影片的多工作業**
 
-<a name="Multitasking-QuickStart" />
+<a name="Multitasking-QuickStart"></a>
 
 ## <a name="multitasking-quickstart"></a>多工快速入門
 
@@ -52,13 +52,13 @@ iOS 9 增加了多工支援，可在特定 iPad 硬體上同時執行兩個應�
 - 針對其 UI 使用具有自動調整和大小類別的分鏡腳本。
 - 支援所有4個 iOS 裝置方向（直向、上下顛倒、橫向 & 橫向）。
 
-<a name="Multitasking" />
+<a name="Multitasking"></a>
 
 ## <a name="about-multitasking-for-ipad"></a>關於 iPad 的多工作業
 
 iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_（ipad Air 2、ipad 迷你4和 ipad Pro）和圖片。 我們將在下列各節中進一步瞭解這些功能。
 
-<a name="Slide-Over" />
+<a name="Slide-Over"></a>
 
 ### <a name="slide-over"></a>滑過
 
@@ -73,7 +73,7 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 滑過僅適用于 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4。 若要深入瞭解如何準備您的應用程式以進行滑動，請參閱 Apple[在 iPad 上採用多工增強功能](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)檔。
 
-<a name="Split-View" />
+<a name="Split-View"></a>
 
 ### <a name="split-view"></a>分割檢視
 
@@ -88,7 +88,7 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 若要深入瞭解如何針對分割視圖準備您的應用程式，請參閱 Apple[在 iPad 上採用多工增強功能](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)檔。
 
-<a name="Picture-in-Picture" />
+<a name="Picture-in-Picture"></a>
 
 ### <a name="picture-in-picture"></a>圖片圖片
 
@@ -102,17 +102,17 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 圖片中的圖片僅適用于 iPad Pro、iPad Air、iPad Air 2、iPad 迷你2、iPad 迷你3或 iPad 迷你4。 如需詳細資訊，請參閱我們的[PictureInPicture 範例應用程式](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)和[圖片快速入門檔中](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14)的 Apple 圖片。
 
-<a name="Supporting-Multitasking-in-your-App" />
+<a name="Supporting-Multitasking-in-your-App"></a>
 
 ## <a name="supporting-multitasking-in-your-app"></a>在您的應用程式中支援多工作業
 
 針對任何現有的 Xamarin iOS 應用程式，只要您的應用程式已遵循 Apple 的設計指南和 iOS 8 的最佳作法，支援多工作業就是一項透明的工作。 這表示應用程式應該使用包含自動調整和大小類別的分鏡腳本來進行使用者介面配置（如需詳細資訊，請參閱我們的整合分鏡腳本[簡介](~/ios/user-interface/storyboards/unified-storyboards.md)）。
 
-對於這些應用程式，不需要進行任何變更，即可支援多工，並在其中進行良好的行為。 如果您的應用程式 UI 是使用其他方法所建立，例如直接在程式碼中C#定位和調整大小 UI 元素，或者它依賴特定裝置螢幕大小或方向，則需要進行大量修改才能正確支援 iOS 9 的工作。
+對於這些應用程式，不需要進行任何變更，即可支援多工，並在其中進行良好的行為。 如果您的應用程式 UI 是使用其他方法（例如直接在 c # 程式碼中定位和調整 UI 元素的位置）所建立，或者它依賴特定的裝置螢幕大小或方向，則需要進行大量修改，才能正確支援 iOS 9 的多工。
 
 若要在任何新的 Xamarin iOS 應用程式上支援 iOS 9 多工作業，請針對所有應用程式的使用者介面配置，再次使用包含自動調整和大小類別的分鏡腳本，並執行下列各節中的指示。
 
-<a name="Screen-Size-Considerations" />
+<a name="Screen-Size-Considerations"></a>
 
 ### <a name="screen-size-and-orientation-considerations"></a>螢幕大小和方向考慮
 
@@ -124,11 +124,11 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 在支援 [滑過] 和 [分割] 視圖的 Ipad 上，您可以使用下列組合：
 
-| **方向** | **主要應用程式** | **次要應用程式** |
+| **旋轉** | **主要應用程式** | **次要應用程式** |
 |--- |--- |--- |
-| **直向** |75% 的畫面<br />水準壓縮<br />一般垂直|25% 的畫面<br />水準壓縮<br />一般垂直|
-| **Sap** |75% 的畫面<br />一般水準<br />一般垂直|25% 的畫面<br />水準壓縮<br />一般垂直|
-| **Sap** |50% 的畫面<br />水準壓縮<br />一般垂直|50% 的畫面<br />水準壓縮<br />一般垂直|
+| **縱向** |75% 的畫面<br />水準壓縮<br />一般垂直|25% 的畫面<br />水準壓縮<br />一般垂直|
+| **橫向** |75% 的畫面<br />一般水準<br />一般垂直|25% 的畫面<br />水準壓縮<br />一般垂直|
+| **橫向** |50% 的畫面<br />水準壓縮<br />一般垂直|50% 的畫面<br />水準壓縮<br />一般垂直|
 
 在範例[MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)應用程式中，如果在 [橫向] 模式的 iPad 上以全螢幕方式執行，則會同時顯示清單和詳細資料檢視：
 
@@ -142,9 +142,9 @@ iOS _9 在 iPad_上提供新的多工功能，包含_投影片_、_分割視圖_
 
 此外，您不能再依賴 [裝置] 螢幕界限來定義應用程式的可見區域，而必須改用應用程式的視窗界限。 由於視窗界限完全由使用者控制，因此您無法以程式設計方式調整它們，或防止使用者變更這些界限。
 
-最後，您的應用程式必須使用分鏡腳本檔案來呈現其啟動畫面，而不是使用一組 **.png**影像檔，並支援全部四個介面方向（直向、向下、向左和向右、橫向和橫向），以視為在滑過面板或分割視圖模式中執行。
+最後，您的應用程式必須使用分鏡腳本檔案來呈現其啟動畫面，而不是使用一組 **.png**影像檔，並支援全部四個介面方向（直向、向下、向左和向右、橫向和橫向），以考慮在滑動面板或分割視圖模式中執行。
 
-<a name="Custom-Hardware-Keyboard-Shortcuts" />
+<a name="Custom-Hardware-Keyboard-Shortcuts"></a>
 
 ### <a name="custom-hardware-keyboard-shortcuts"></a>自訂硬體鍵盤快速鍵
 
@@ -188,9 +188,9 @@ public void NewEntry() {
 #endregion
 ```
 
-首先，我們會覆寫 `CanBecomeFirstResponder` 屬性並傳回 `true`，讓 View 或 View 控制器可以接收鍵盤輸入。 
+首先，我們會覆寫 `CanBecomeFirstResponder` 屬性並傳回， `true` 讓 View 或 view 控制器可以接收鍵盤輸入。 
 
-接下來，我們會覆寫 `KeyCommands` 屬性，並建立**命令-N**按鍵的新 `UIKeyCommand`。 當擊鍵啟動時，我們會呼叫 `NewEntry` 方法（使用 `Export` 命令向 iOS 9 公開）來執行要求的動作。
+接下來，我們會覆寫 `KeyCommands` 屬性，並 `UIKeyCommand` 為**命令-N**按鍵建立新的。 啟用擊鍵時，我們 `NewEntry` 會呼叫方法（我們會使用命令向 iOS 9 公開 `Export` ）來執行要求的動作。
 
 如果我們在已連接硬體鍵盤的 iPad 上執行此應用程式，且使用者輸入**Command-N**，則會將新的專案新增至清單。 如果使用者按住**命令**鍵，將會顯示快捷方式清單：
 
@@ -198,7 +198,7 @@ public void NewEntry() {
 
 如需範例的執行方式，請參閱範例工作[應用程式](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)。
 
-<a name="Resource-Management-Considerations" />
+<a name="Resource-Management-Considerations"></a>
 
 ### <a name="resource-management-considerations"></a>資源管理考慮
 
@@ -220,7 +220,7 @@ public void NewEntry() {
 
 如需資源管理的詳細資訊，請參閱適用于[IOS 應用程式的 Apple 能源效率指南](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243)。
 
-<a name="Opting-Out-of-Multitasking" />
+<a name="Opting-Out-of-Multitasking"></a>
 
 ## <a name="opting-out-of-multitasking"></a>退出多工作業
 
@@ -233,7 +233,7 @@ public void NewEntry() {
 > [!IMPORTANT]
 > 雖然選擇不執行多工作業可防止您的應用程式在 [滑出] 或 [分割] 視圖中執行，但它不會防止另一個應用程式在投影片中執行，也不會使圖片影片中的圖片與應用程式一起顯示。
 
-<a name="Disabling-PIP-Video-Playback" />
+<a name="Disabling-PIP-Video-Playback"></a>
 
 ### <a name="disabling-pip-video-playback"></a>停用 PIP 影片播放
 
@@ -241,11 +241,11 @@ public void NewEntry() {
 
 若要退出宣告 PIP 影片播放，請在您的應用程式中執行下列動作：
 
-- 如果您使用 `AVPlayerViewController` 來顯示影片，請將 `AllowsPictureInPicturePlayback` 屬性設定為 [`false`]。
-- 如果您使用 `AVPlayerLayer` 顯示影片，請勿將 `AVPictureInPictureController`具現化。
-- 如果您使用 `WKWebView` 來顯示影片，請將 `AllowsPictureInPictureMediaPlayback` 屬性設定為 [`false`]。
+- 如果您使用 `AVPlayerViewController` 來顯示影片，請將屬性設定 `AllowsPictureInPicturePlayback` 為 `false` 。
+- 如果您使用 `AVPlayerLayer` 來顯示影片，請不要具現化 `AVPictureInPictureController` 。
+- 如果您使用 `WKWebView` 來顯示影片，請將屬性設定 `AllowsPictureInPictureMediaPlayback` 為 `false` 。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 
@@ -259,4 +259,4 @@ public void NewEntry() {
 - [iOS 9 開發人員](https://developer.apple.com/ios/pre-release/)
 - [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [在 iPad 上採用多工增強功能](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)
-- [Blog 文章](https://blog.xamarin.com/using-auto-layouts-for-ios-9-splitview/)
+- [部落格文章](https://blog.xamarin.com/using-auto-layouts-for-ios-9-splitview/)

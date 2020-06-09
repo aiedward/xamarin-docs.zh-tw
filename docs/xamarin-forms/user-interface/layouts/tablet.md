@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何優化平板電腦的 Xamarin.Forms 應用程式版面配置，而不是手機。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8ce5ba09f89c2bc84b7f6ba722f724ae39c0222e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137919"
+title： "平板電腦和桌面應用程式的配置" 描述： "本文說明如何優化 Xamarin.Forms 平板電腦的應用程式版面配置，而不是手機。
+assetid： D62F472B-4345-4983-8403-659A538B591F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/01/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板電腦和桌面應用程式的版面配置
 
 Xamarin.Forms支援在支援的平臺上使用的所有裝置類型，因此除了電話以外，應用程式也可以在上執行：
@@ -27,10 +13,8 @@ Xamarin.Forms支援在支援的平臺上使用的所有裝置類型，因此除�
 
 本頁簡要討論：
 
-- 支援的[裝置類型](#Device_Types)，以及
-- 如何[優化](#optimize)平板電腦與手機的版面配置。
-
-<a name="Device_Types" />
+- 支援的[裝置類型](#device-types)，以及
+- 如何[優化](#optimize-for-tablet-and-desktop)平板電腦與手機的版面配置。
 
 ## <a name="device-types"></a>裝置類型
 
@@ -64,9 +48,7 @@ Android 生態系統有多種支援的螢幕大小，從小型手機到大型平
 
 [![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
 
-<a name="optimize" />
-
-## <a name="optimizing-for-tablet-and-desktop"></a>為平板電腦和桌面優化
+## <a name="optimize-for-tablet-and-desktop"></a>為平板電腦和桌面優化
 
 您可以根據 Xamarin.Forms 電話或平板電腦/桌面裝置是否正在使用，調整您的使用者介面。 這表示您可以將大型螢幕裝置（如平板電腦和桌上型電腦）的使用者體驗優化。
 
@@ -85,7 +67,7 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 這種方法可以擴充以對個別頁面配置進行重大變更，甚至是在較大的螢幕上呈現完全不同的頁面。
 
-### <a name="leveraging-masterdetailpage"></a>運用 MasterDetailPage
+### <a name="leverage-masterdetailpage"></a>運用 MasterDetailPage
 
 適用 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 于較大的螢幕，特別是在 iPad 上，它會使用 [`UISplitViewController`](xref:UIKit.UISplitViewController) 來提供原生 iOS 體驗。
 

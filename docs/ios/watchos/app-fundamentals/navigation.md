@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: d3565e359ccbad9f7b779969f4273a8cbae4d438
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1ad4ecad90238436f8d2a02727596186c6205eeb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021740"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572087"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>在 Xamarin 中使用 watchOS 導覽
 
@@ -23,11 +23,11 @@ ms.locfileid: "73021740"
 - [階層式導覽](#Hierarchical_Navigation)
 - [以頁面為基礎的介面](#Page-Based_Interfaces)
 
-<a name="modal"/>
+<a name="modal"></a>
 
 ## <a name="modal-interfaces"></a>強制回應介面
 
-使用 `PresentController` 方法，以模式開啟介面控制器。 介面控制器必須已在介面中定義 **。** 分鏡腳本。
+使用 `PresentController` 方法來以模式開啟介面控制器。 介面控制器必須已在介面中定義 **。** 分鏡腳本。
 
 ```csharp
 PresentController ("pageController","some context info");
@@ -35,7 +35,7 @@ PresentController ("pageController","some context info");
 
 以模式顯示的控制器會使用整個畫面（涵蓋前一個場景）。 標題預設會設定為 [**取消**]，並將其關閉。
 
-若要以程式設計方式關閉已強制回應的控制器，請呼叫 `DismissController`。
+若要以程式設計方式關閉已強制回應的控制器，請呼叫 `DismissController` 。
 
 ```csharp
 DismissController();
@@ -43,11 +43,11 @@ DismissController();
 
 模式畫面可以是單一場景，或使用以頁面為基礎的版面配置。
 
-<a name="Hierarchical_Navigation"/>
+<a name="Hierarchical_Navigation"></a>
 
 ## <a name="hierarchical-navigation"></a>階層式導覽
 
-呈現可以流覽的堆疊，類似于在 iOS 上運作的 `UINavigationController` 方式。 場景可以推送到導覽堆疊上，並將其關閉（以程式設計方式或由使用者選擇）。
+呈現可以流覽回到堆疊的場景，類似于在 `UINavigationController` iOS 上運作的方式。 場景可以推送到導覽堆疊上，並將其關閉（以程式設計方式或由使用者選擇）。
 
 ![](navigation-images/hierarchy-1.png "場景可以推送至導覽堆疊") ![](navigation-images/hierarchy-2.png "可以從導覽堆疊中取出場景")
 
@@ -57,19 +57,19 @@ DismissController();
 
 ### <a name="pushing-and-popping-in-code"></a>在程式碼中推送和彈出
 
-監看套件不需要像 iOS 一樣建立 arching 的「流覽控制器」-只要使用 `PushController` 方法來推送控制器，就會自動建立導覽堆疊。
+監看套件不需要像 iOS 一樣建立 arching 的「流覽控制器」，只要使用方法推送控制器 `PushController` ，就會自動建立導覽堆疊。
 
 ```csharp
 PushController("secondPageController","some context info");
 ```
 
-監看式的畫面會在左上方包含 [**上一頁**] 按鈕，但您也可以使用 `PopController`，以程式設計方式從導覽堆疊中移除場景。
+監看式的畫面會在左上方包含 [**上一頁**] 按鈕，但您也可以使用，以程式設計方式從導覽堆疊中移除場景 `PopController` 。
 
 ```csharp
 PopController();
 ```
 
-如同 iOS，也可以使用 `PopToRootController`返回導覽堆疊的根目錄。
+如同 iOS，您也可以使用來返回流覽堆疊的根目錄 `PopToRootController` 。
 
 ```csharp
 PopToRootController();
@@ -89,15 +89,15 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 }
 ```
 
-<a name="Page-Based_Interfaces"/>
+<a name="Page-Based_Interfaces"></a>
 
 ## <a name="page-based-interfaces"></a>以頁面為基礎的介面
 
-以頁面為基礎的介面從左至右滑動，類似于 `UIPageViewController` 在 iOS 上運作的方式。 指標點會沿著畫面底部顯示，以顯示目前顯示的頁面。
+以頁面為基礎的介面從左至右滑動，類似于 `UIPageViewController` iOS 的運作方式。 指標點會沿著畫面底部顯示，以顯示目前顯示的頁面。
 
-![](navigation-images/paged-1.png "範例第一頁")![](navigation-images/paged-2.png "範例第二頁")![](navigation-images/paged-5.png "第五頁範例")
+![](navigation-images/paged-1.png "範例第一頁") ![](navigation-images/paged-2.png "範例第二頁") ![](navigation-images/paged-5.png "第五頁範例")
 
-若要讓以頁面為基礎的介面成為監看式應用程式的主要 UI，請使用 `ReloadRootControllers` 搭配介面控制器和內容的陣列：
+若要讓以頁面為基礎的介面成為監看式應用程式的主要 UI，請搭配 `ReloadRootControllers` 介面控制器和內容的陣列使用：
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };
@@ -105,7 +105,7 @@ var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 ReloadRootControllers (controllerNames, contexts);
 ```
 
-您也可以使用 `PresentController` 從應用程式中的另一個場景，呈現不是根目錄的頁面型控制器。
+您也可以 `PresentController` 從應用程式中的另一個場景，呈現不是根目錄的頁面型控制器。
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };

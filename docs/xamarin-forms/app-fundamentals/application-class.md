@@ -1,29 +1,14 @@
 ---
-title: Xamarin.Forms應用程式類別
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2f4b568809f949d813de86ae88cbe621cfa3161c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129684"
+title： " Xamarin.Forms 應用程式類別" 描述： "本文說明預設應用程式類別的功能，其中包括要設定為應用程式初始頁面的屬性，以及用於儲存生命週期狀態變更之間簡單值的持續性字典。
+assetid： 421F8294-1944-46A4-8459-D2BD5AAABC9D ms. 技術： xamarin-表單 ms。自訂：影片作者： davidbritch ms. 作者： dabritch ms。日期：02/19/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms應用程式類別
 
 `Application` 基底類別提供下列功能，它們公開於您專案的預設 `App` 子類別：
 
 * `MainPage` 屬性，這是要設定應用程式起始頁的位置。
-* 用來儲存生命週期狀態變更之間簡單值的持續性[ `Properties` 字典](#Properties_Dictionary)。
+* 用來儲存生命週期狀態變更之間簡單值的持續性[ `Properties` 字典](#properties-dictionary)。
 * 靜態的 `Current` 屬性，其中包含目前應用程式物件的參考。
 
 它也會公開[生命週期方法](~/xamarin-forms/app-fundamentals/app-lifecycle.md)，例如、和，以及強制回應 `OnStart` `OnSleep` `OnResume` 導覽事件。
@@ -76,8 +61,6 @@ public class App : Xamarin.Forms.Application
     }
 }
 ```
-
-<a name="Properties_Dictionary" />
 
 ## <a name="properties-dictionary"></a>Properties 字典
 

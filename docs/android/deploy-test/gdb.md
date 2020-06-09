@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
-ms.openlocfilehash: 51ebb8932f4b1ef8f10ba699e59ce53c98a38a50
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 85516800b2fcc410a9eba3abd0c12fd040cee3da
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021478"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571944"
 ---
 # <a name="gdb"></a>GDB
 
@@ -30,7 +30,7 @@ Xamarin.Android 4.10 引進了透過 `_Gdb` MSBuild 目標來使用 `gdb` 的部
 
 當發生錯誤時，請參閱[疑難排解](#Troubleshooting)一節。
 
-<a name="Debug_Builds_with_Fast_Deployment" />
+<a name="Debug_Builds_with_Fast_Deployment"></a>
 
 ### <a name="debug-builds-with-fast-deployment"></a>啟用 Fast Deployment 的偵錯組建
 
@@ -57,7 +57,7 @@ $ /Library/Frameworks/Mono.framework/Commands/xbuild /t:_Gdb *.csproj
 `_Gdb` 目標會建立一個 `gdb-symbols` 目錄，並將您目標 `/system/lib` 及 `$APPDIR/lib` 目錄中的內容複製到該目錄。
 
 > [!NOTE]
-> `gdb-symbols` 目錄中的內容會繫結至您部署到的 Android 目標，並且不會在您變更目標時自動取代。 (將此視為一個錯誤。如果您更改 Android 目標設備,則需要手動刪除此目錄。
+> `gdb-symbols` 目錄中的內容會繫結至您部署到的 Android 目標，並且不會在您變更目標時自動取代。 （請將此視為錯誤）。如果您變更 Android 目標裝置，就必須手動刪除此目錄。
 
 最後，複製產生的 `gdb` 命令並在您的殼層中執行它：
 
@@ -73,7 +73,7 @@ GNU gdb (GDB) 7.3.1-gg2
 (gdb) c
 ```
 
-<a name="Debug_Builds_without_Fast_Deployment" />
+<a name="Debug_Builds_without_Fast_Deployment"></a>
 
 ## <a name="debug-builds-without-fast-deployment"></a>停用 Fast Deployment 的偵錯組建
 
@@ -132,7 +132,7 @@ GNU gdb (GDB) 7.3.1-gg2
 (gdb) c
 ```
 
-<a name="Release_Builds" />
+<a name="Release_Builds"></a>
 
 ## <a name="release-builds"></a>發行的組建
 
@@ -154,7 +154,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 一個缺點：`_Gdb` MSBuild 目標會終止任何先前執行中的應用程式執行個體。 這在 Android v4.0 之前的目標上無法運作。
 
-<a name="Troubleshooting" />
+<a name="Troubleshooting"></a>
 
 ## <a name="troubleshooting"></a>疑難排解
 

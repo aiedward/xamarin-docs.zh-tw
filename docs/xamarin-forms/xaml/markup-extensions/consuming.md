@@ -1,35 +1,21 @@
 ---
-title: ''
-description: 本文說明如何使用 Xamarin.Forms xaml 標記延伸，藉由允許從各種來源設定元素屬性，來增強 xaml 的能力和彈性。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7cd3a9d275919240fcaa7315d5043854df5529bb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127311"
+title：「使用 XAML 標記延伸」描述：「本文將說明如何使用 Xamarin.Forms xaml 標記延伸，藉由允許從各種來源設定元素屬性，來增強 xaml 的能力和彈性。」
+assetid： CE686893-609C-4EC3-9225-6C68D2A9F79C ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/21/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML 標記延伸可讓您從各種來源設定元素屬性，以增強 XAML 的強大功能和彈性。 數個 XAML 標記延伸是 XAML 2009 規格的一部分。 這些會以慣用的命名空間前置詞出現在 XAML 檔案中 `x` ，而且通常會使用此前置詞來參考。 本文討論下列標記延伸：
 
-- [`x:Static`](#static)–參考靜態屬性、欄位或列舉成員。
-- [`x:Reference`](#reference)–參考頁面上的命名元素。
-- [`x:Type`](#type)–將屬性設定為 `System.Type` 物件。
-- [`x:Array`](#array)–建立特定類型之物件的陣列。
-- [`x:Null`](#null)–將屬性設定為 `null` 值。
-- [`OnPlatform`](#onplatform)–自訂以每個平臺為基礎的 UI 外觀。
-- [`OnIdiom`](#onidiom)–根據應用程式執行所在裝置的用法來自訂 UI 外觀。
+- [`x:Static`](#xstatic-markup-extension)–參考靜態屬性、欄位或列舉成員。
+- [`x:Reference`](#xreference-markup-extension)–參考頁面上的命名元素。
+- [`x:Type`](#xtype-markup-extension)–將屬性設定為 `System.Type` 物件。
+- [`x:Array`](#xarray-markup-extension)–建立特定類型之物件的陣列。
+- [`x:Null`](#xnull-markup-extension)–將屬性設定為 `null` 值。
+- [`OnPlatform`](#onplatform-markup-extension)–自訂以每個平臺為基礎的 UI 外觀。
+- [`OnIdiom`](#onidiom-markup-extension)–根據應用程式執行所在裝置的用法來自訂 UI 外觀。
 - [`DataTemplate`](#datatemplate-markup-extension)–將類型轉換成 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
 - [`FontImage`](#fontimage-markup-extension)–在可顯示的任何視圖中顯示字型圖示 `ImageSource` 。
 - [`OnAppTheme`](#onapptheme-markup-extension)–根據目前的系統主題來使用資源。
@@ -43,8 +29,6 @@ XAML 標記延伸可讓您從各種來源設定元素屬性，以增強 XAML 的
 - `RelativeSource`-設定相對於系結目標之位置的系結來源，如[相關](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)系結一文所述。
 
 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)版面配置會使用自訂標記延伸模組 [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) 。 此標記延伸會在[**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)一文中說明。
-
-<a name="static" />
 
 ## <a name="xstatic-markup-extension"></a>x:Static 標記延伸
 
@@ -150,8 +134,6 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 [![x:Static 示範](consuming-images/staticdemo-small.png "x:Static 示範")](consuming-images/staticdemo-large.png#lightbox "x:Static 示範")
 
-<a name="reference" />
-
 ## <a name="xreference-markup-extension"></a>x:Reference 標記延伸
 
 `x:Reference`類別支援標記延伸 [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) 。 類別具有名為的單一屬性 [`Name`](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) ，其類型為 `string` ，您將其設定為頁面上已指定名稱的專案名稱 `x:Name` 。 這個 `Name` 屬性是的 content 屬性 `ReferenceExtension` ，因此 `Name=` 當 `x:Reference` 出現在大括弧時，不需要這樣做。
@@ -194,15 +176,13 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 [![x:Reference 示範](consuming-images/referencedemo-small.png "x:Reference 示範")](consuming-images/referencedemo-large.png#lightbox "x:Reference 示範")
 
-<a name="type" />
-
 ## <a name="xtype-markup-extension"></a>x:Type 標記延伸
 
 `x:Type`標記延伸是 c # 關鍵字的 XAML 對等用法 [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) 。 類別支援它，它會 [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) 定義一個名為且類型為的屬性，而 [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) 此型別 `string` 會設定為類別或結構名稱。 `x:Type`標記延伸 [`System.Type`](xref:System.Type) 會傳回該類別或結構的物件。 `TypeName`是的 content 屬性 `TypeExtension` ，因此 `TypeName=` 當 `x:Type` 以大括弧顯示時，不需要這麼做。
 
-在中 Xamarin.Forms ，有數個屬性具有類型的引數 `Type` 。 範例包括的 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 屬性 `Style` ，以及用來在泛型類別中指定引數的[x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#generic_type_arguments)屬性。 不過，XAML 剖析器 `typeof` 會自動執行作業，而且在 `x:Type` 這些情況下不會使用標記延伸。
+在中 Xamarin.Forms ，有數個屬性具有類型的引數 `Type` 。 範例包括的 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 屬性 `Style` ，以及用來在泛型類別中指定引數的[x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument)屬性。 不過，XAML 剖析器 `typeof` 會自動執行作業，而且在 `x:Type` 這些情況下不會使用標記延伸。
 
-需要一個位置 `x:Type` *，其中*包含 `x:Array` 標記延伸，如下一[節](#array)所述。
+需要一個位置 `x:Type` *，其中*包含 `x:Array` 標記延伸，如下一[節](#xarray-markup-extension)所述。
 
 當您在 `x:Type` 建立功能表，其中每個功能表項目都對應到特定類型的物件時，標記延伸也很有用。 您可以將 `Type` 物件與每個功能表項目建立關聯，然後在選取功能表項目時，具現化物件。
 
@@ -332,8 +312,6 @@ public partial class TypeDemoPage : ContentPage
 
 [![x:Type 示範](consuming-images/typedemo-small.png "x:Type 示範")](consuming-images/typedemo-large.png#lightbox "x:Type 示範")
 
-<a name="array" />
-
 ## <a name="xarray-markup-extension"></a>x:Array 標記延伸
 
 `x:Array`標記延伸可讓您在標記中定義陣列。 類別支援它，它會 [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension) 定義兩個屬性：
@@ -407,9 +385,7 @@ public partial class TypeDemoPage : ContentPage
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-定義一般類型的陣列（例如字串或數位）時，請使用傳遞的函式[**引數**](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)一文中所列的標記來分隔值。
-
-<a name="null" />
+定義一般類型的陣列（例如字串或數位）時，請使用傳遞的函式[**引數**](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)一文中所列的標記來分隔值。
 
 ## <a name="xnull-markup-extension"></a>x:Null 標記延伸
 
@@ -464,8 +440,6 @@ public partial class TypeDemoPage : ContentPage
 
 請注意，有四個 `Label` 元素具有 serif 字型，但中心 `Label` 具有預設的 sans-serif 字型。
 
-<a name="onplatform" />
-
 ## <a name="onplatform-markup-extension"></a>OnPlatform 標記延伸
 
 `OnPlatform` 標記延伸可讓您自訂每個平台的 UI 外觀。 它提供與和類別相同的 [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) 功能 [`On`](xref:Xamarin.Forms.On) ，但具有更精確的標記法。
@@ -505,8 +479,6 @@ public partial class TypeDemoPage : ContentPage
 以下是程式執行情況：
 
 [![OnPlatform 示範](consuming-images/onplatformdemo-small.png "OnPlatform 示範")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform 示範")
-
-<a name="onidiom" />
 
 ## <a name="onidiom-markup-extension"></a>OnIdiom 標記延伸
 

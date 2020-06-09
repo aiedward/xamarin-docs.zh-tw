@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8d5bf1d7821187924adc58582a5139f81235e6a0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139096"
+標題：「驗證和授權」描述：「本章節說明 eShopOnContainers 行動應用程式如何對容器化微服務執行驗證和授權。」
+assetid： e3f27b4c-f7f5-4839-a48c-30bcb919c59e ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/08/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="authentication-and-authorization"></a>驗證和授權
 
 驗證是從使用者取得身分識別認證（例如名稱和密碼），以及向授權單位驗證那些認證的程式。 如果認證有效，則提交認證的實體會被視為已驗證的身分識別。 驗證身分識別之後，授權程式會判斷該身分識別是否可存取指定的資源。
@@ -40,7 +26,7 @@ OpenID Connect 是 OAuth 2.0 通訊協定之上的驗證層。 OAuth 2 是一種
 
 OpenID Connect 和 OAuth 2.0 的組合結合了驗證和 API 存取的兩個基本安全性考慮，而 IdentityServer 4 則是這些通訊協定的執行。
 
-在使用直接用戶端對微服務通訊的應用程式（例如 eShopOnContainers 參考應用程式）中，可使用專用的驗證微服務做為安全性權杖服務（STS）來驗證使用者，如圖9-1 所示。 如需直接用戶端對微服務通訊的詳細資訊，請參閱[用戶端與微服務之間的通訊](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices)。
+在使用直接用戶端對微服務通訊的應用程式（例如 eShopOnContainers 參考應用程式）中，可使用專用的驗證微服務做為安全性權杖服務（STS）來驗證使用者，如圖9-1 所示。 如需直接用戶端對微服務通訊的詳細資訊，請參閱[用戶端與微服務之間的通訊](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices)。
 
 ![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
 
@@ -195,7 +181,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 - `ClientId`：用戶端的唯一識別碼。
 - `ClientName`：用戶端顯示名稱，用於記錄和同意畫面。
-- `AllowedGrantTypes`：指定用戶端想要與 IdentityServer 互動的方式。 如需詳細資訊，請參閱設定[驗證流程](#configuring_the_authentication_flow)。
+- `AllowedGrantTypes`：指定用戶端想要與 IdentityServer 互動的方式。 如需詳細資訊，請參閱設定[驗證流程](#configuring-the-authentication-flow)。
 - `ClientSecrets`：指定從權杖端點要求權杖時所使用的用戶端密碼認證。
 - `RedirectUris`：指定允許的 Uri，以傳回權杖或授權碼。
 - `RequireConsent`：指定是否需要同意畫面。
@@ -204,8 +190,6 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 - `AllowedCorsOrigins`：指定用戶端的原點，讓 IdentityServer 可以允許來自來源的跨原始來源呼叫。
 - `AllowedScopes`：指定用戶端可存取的資源。 根據預設，用戶端無法存取任何資源。
 - `AllowOfflineAccess`：指定用戶端是否可以要求重新整理權杖。
-
-<a name="configuring_the_authentication_flow" />
 
 #### <a name="configuring-the-authentication-flow"></a>設定驗證流程
 
@@ -326,14 +310,14 @@ private async Task NavigateAsync(string url)
 
 如果權杖端點收到有效的授權碼和 PKCE 密碼驗證器，則會以存取權杖、身分識別權杖和重新整理權杖來回應。 存取權杖（允許存取 API 資源）和身分識別權杖會儲存為應用程式設定，並執行頁面導覽。 因此，eShopOnContainers 行動應用程式中的整體效果如下：假設使用者能夠成功地向 IdentityServer 進行驗證，他們會流覽至 `MainView` 頁面，也就是 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 顯示為其選取索引標籤的 `CatalogView` 。
 
-如需頁面導覽的詳細資訊，請參閱[導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 如 [`WebView`](xref:Xamarin.Forms.WebView) 需導覽如何讓視圖模型方法執行的詳細資訊，請參閱[使用行為叫用導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)。 如需應用程式設定的詳細資訊，請參閱設定[管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
+如需頁面導覽的詳細資訊，請參閱[導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 如 [`WebView`](xref:Xamarin.Forms.WebView) 需導覽如何讓視圖模型方法執行的詳細資訊，請參閱[使用行為叫用導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors)。 如需應用程式設定的詳細資訊，請參閱設定[管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
 > [!NOTE]
 > 當應用程式設定為使用中的模擬服務時，eShopOnContainers 也會允許 mock 登入 `SettingsView` 。 在此模式中，應用程式不會與 IdentityServer 通訊，而是允許使用者使用任何認證進行登入。
 
 #### <a name="signing-out"></a>登出
 
-當使用者在中按下 [**登出**] 按鈕時 `ProfileView` ， `LogoutCommand` `ProfileViewModel` 就會執行類別中的，然後再執行 `LogoutAsync` 方法。 這個方法會執行頁面導覽 `LoginView` ，並將 `LogoutParameter` 實例設定為做為 `true` 參數。 如需在頁面導覽期間傳遞參數的詳細資訊，請參閱[導覽期間傳遞參數](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)。
+當使用者在中按下 [**登出**] 按鈕時 `ProfileView` ， `LogoutCommand` `ProfileViewModel` 就會執行類別中的，然後再執行 `LogoutAsync` 方法。 這個方法會執行頁面導覽 `LoginView` ，並將 `LogoutParameter` 實例設定為做為 `true` 參數。 如需在頁面導覽期間傳遞參數的詳細資訊，請參閱[導覽期間傳遞參數](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)。
 
 建立並流覽至視圖時， `InitializeAsync` 會執行視圖相關聯視圖模型的方法，然後執行 `Logout` 類別的方法 `LoginViewModel` ，如下列程式碼範例所示：
 
@@ -385,12 +369,10 @@ private async Task NavigateAsync(string url)
 
 這個方法會從應用程式設定中清除識別權杖和存取權杖，並將 `IsLogin` 屬性設定為 `false` ，這會導致 [`WebView`](xref:Xamarin.Forms.WebView) 頁面上的 `LoginView` 無法被隱藏。 最後， `LoginUrl` 屬性會設定為 IdentityServer[授權端點](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)的 URI （具有必要參數），以準備下一次使用者起始登入。
 
-如需頁面導覽的詳細資訊，請參閱[導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 如 [`WebView`](xref:Xamarin.Forms.WebView) 需導覽如何讓視圖模型方法執行的詳細資訊，請參閱[使用行為叫用導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)。 如需應用程式設定的詳細資訊，請參閱設定[管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
+如需頁面導覽的詳細資訊，請參閱[導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md)。 如 [`WebView`](xref:Xamarin.Forms.WebView) 需導覽如何讓視圖模型方法執行的詳細資訊，請參閱[使用行為叫用導覽](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors)。 如需應用程式設定的詳細資訊，請參閱設定[管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)。
 
 > [!NOTE]
 > 當應用程式設定為使用 SettingsView 中的模擬服務時，eShopOnContainers 也會允許模擬登出。 在此模式中，應用程式不會與 IdentityServer 通訊，而是會從應用程式設定中清除任何已儲存的權杖。
-
-<a name="authorization" />
 
 ## <a name="authorization"></a>授權
 
@@ -475,7 +457,7 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValu
 
 如需 eShopOnContainers mobile 應用程式如何提出 web 要求的詳細資訊，請參閱[存取遠端資料](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 有許多方法可以將驗證和授權整合到 Xamarin.Forms 與 ASP.NET MVC web 應用程式通訊的應用程式中。 EShopOnContainers 行動應用程式會透過使用 IdentityServer 4 的容器化身分識別微服務來執行驗證和授權。 IdentityServer 是開放原始碼 OpenID Connect 和 OAuth 2.0 架構，適用于與 ASP.NET Core 身分識別整合以執行持有人權杖驗證的 ASP.NET Core。
 

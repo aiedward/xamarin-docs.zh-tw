@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 5f0b72772a386aa71d4ceec25b88546930b06f4f
-ms.sourcegitcommit: 51006a4eed7bf99b563df6fc1cea9074d0218448
+ms.openlocfilehash: 2676565a62b4b9d4414e9a69737b287bcc992c0b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166335"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572009"
 ---
 # <a name="preparing-an-application-for-release"></a>準備可供發行的應用程式
 
@@ -35,7 +35,7 @@ ms.locfileid: "82166335"
 
 每個步驟在下方均會詳細說明。
 
-<a name="Specify_the_Application_Icon" />
+<a name="Specify_the_Application_Icon"></a>
 
 ## <a name="specify-the-application-icon"></a>指定應用程式圖示
 
@@ -65,7 +65,7 @@ ms.locfileid: "82166335"
 
 一般來說，`using Android.App` 會在 **AssemblyInfo.cs** 的上方宣告 (`Application` 屬性的命名空間為 `Android.App`)，不過若 `using` 陳述式不存在，您可能需要新增它。
 
-<a name="Versioning" />
+<a name="Versioning"></a>
 
 ## <a name="version-the-application"></a>控制應用程式版本
 
@@ -89,7 +89,7 @@ ms.locfileid: "82166335"
 
 -----
 
-<a name="shrink_apk" />
+<a name="shrink_apk"></a>
 
 ## <a name="shrink-the-apk"></a>壓縮 APK
 
@@ -130,7 +130,7 @@ ms.locfileid: "82166335"
 
 - **僅連結 SDK 組件** &ndash; 這只會連結 [Xamarin.Android 所需](~/cross-platform/internals/available-assemblies.md)的組件。 不會連結其他組件。
 
-- **連結所有元件** &ndash; ：這會連結應用程式所需的所有元件，而不只是 Xamarin 所需的元件。
+- **連結所有元件** &ndash;這會連結應用程式所需的所有元件，而不只是 Xamarin 所需的元件。
 
 -----
 
@@ -158,11 +158,11 @@ ProGuard 預設為停用。 只有將專案設定為 [發行]**** 模式時，�
 
 如需詳細使用 ProGuard 工具的相關資訊，請參閱 [ProGuard](~/android/deploy-test/release-prep/proguard.md)。
 
-<a name="protect_app" />
+<a name="protect_app"></a>
 
 ## <a name="protect-the-application"></a>保護應用程式
 
-<a name="Disable_Debugging" />
+<a name="Disable_Debugging"></a>
 
 ### <a name="disable-debugging"></a>停用偵錯
 
@@ -183,7 +183,7 @@ Android 資訊清單包含 `android:debuggable` 屬性，可控制是否能對�
 
 請注意，偵錯組件會自動設定一些權限以方便偵錯 (例如 **Internet** 與 **ReadExternalStorage**)。 然而，發行組建只會使用您明確設定的權限。 如果您發現切換至發行組建造成應用程式失去偵錯組建中可用的權限，請確認您已在 [需要的權限]**** 中明確啟用此權限，如[權限](~/android/app-fundamentals/permissions.md)所述。 
 
-<a name="dotfuscator" id="dotfuscator" />
+<a name="dotfuscator" id="dotfuscator"></a>
 
 ### <a name="application-protection-with-dotfuscator"></a>使用 Dotfuscator 保護應用程式
 
@@ -208,17 +208,17 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 -----
 
-<a name="bundle" />
+<a name="bundle"></a>
 
 ### <a name="bundle-assemblies-into-native-code"></a>將組譯碼組合成機器碼
 
-啟用此選項時，系統會將組件組合成原生共用程式庫。 這可讓元件壓縮，允許較小`.apk`的檔案。 元件壓縮也會授*最小*的混淆形式;這類混淆不應依賴。
+啟用此選項時，系統會將組件組合成原生共用程式庫。 這可讓元件壓縮，允許較小的檔案 `.apk` 。 元件壓縮也會授*最小*的混淆形式;這類混淆不應依賴。
 
 此選項需要企業授權，並只有在停用 [使用 Fast Deployment]**** 時才能使用。 [將組件組合成機器碼]**** 預設為停用。
 
 請注意，[組合成機器碼]**** 選項「不」** 代表會將組件編譯成機器碼。 不可能使用[**AOT 編譯**](#aot)將元件編譯成機器碼。
 
-<a name="aot" />
+<a name="aot"></a>
 
 ### <a name="aot-compilation"></a>AOT 編譯
 
@@ -233,7 +233,7 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 > [!NOTE]
 > [LLVM 最佳化編譯器]**** 選項需要企業授權。  
 
-<a name="Set_Packaging_Properties" />
+<a name="Set_Packaging_Properties"></a>
 
 ## <a name="set-packaging-properties"></a>設定封裝屬性
 
@@ -273,13 +273,13 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 應用程式套件組合與 Apk 不同，因為它們無法直接部署到裝置。 相反地，它是一種格式，適合用來上傳所有已編譯的程式碼和資源。 當您上傳已簽署的應用程式套件組合之後，Google Play 將會擁有建立和簽署應用程式 Apk 所需的一切，並使用動態傳遞將其提供給您的使用者。
 
-若要啟用 Android 應用程式套件組合的支援，您必須在 Android 專案選項`bundle`內選擇 [ **android 封裝格式**] 屬性的值。 執行此動作之前，請確定您已將專案`Release`變更為設定，因為應用程式套件組合僅適用于發行套件。
+若要啟用 Android 應用程式套件組合的支援，您必須在 `bundle` android 專案選項內選擇 [ **Android 封裝格式**] 屬性的值。 執行此動作之前，請確定您已將專案變更為設定， `Release` 因為應用程式套件組合僅適用于發行套件。
 
 您現在可以遵循封存[流程](#archive)來產生應用程式套件組合。 這會為您的應用程式產生應用程式套件組合。
 
 如需 Android 應用程式套件組合的詳細資訊，請參閱[Android 應用程式](https://developer.android.com/guide/app-bundle/)套件組合。
 
-<a name="Compile" />
+<a name="Compile"></a>
 
 ## <a name="compile"></a>編譯
 
@@ -295,7 +295,7 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 -----
 
-<a name="archive" />
+<a name="archive"></a>
 
 ## <a name="archive-for-publishing"></a>封存以供發行
 
@@ -373,7 +373,7 @@ Dotfuscator CE 隨附於 Visual Studio 2017 中。
 
 您可以從這裡選擇散發通道：
 
-- 臨機操作會將已簽署的 APK 儲存至磁片，以便側載至 Android 裝置。 **Ad-Hoc** &ndash; 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」&ldquo;&rdquo;版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
+- 臨機操作**Ad-Hoc** &ndash;將已簽署的 APK 儲存至磁片，使其可側載至 Android 裝置。 繼續前往[簽署應用程式套件](~/android/deploy-test/signing/index.md)，了解如何建立 Android 簽署識別、建立適用於 Android 應用程式的新簽署憑證，並將應用程式的「臨機操作」&ldquo;&rdquo;版本發佈至磁碟。 這是建立 APK 進行測試的好方法。
 
 - **Google Play** &ndash; 可將簽署的 APK 發佈至 Google Play。
     繼續前往[發佈至 Google Play](~/android/deploy-test/publishing/publishing-to-google-play/index.md)，了解如何在 Google Play 商店中簽署和發佈 APK。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 141d268e7a5670f9ba8002ae9edda828538a01a4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724692"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571788"
 ---
 # <a name="debugging-xamarinios-apps"></a>偵錯 Xamarin.iOS 應用程式
 
@@ -143,8 +143,8 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 它們是：
 
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
-- **不進入函式**：這會執行下一行程式碼。 如果下一行是函數調用,則單步執行函數,並在函數_之後的_下一行代碼處停止。
-- **進入**= 這還將執行下一行代碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
+- **不進入函式**：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行函式，並會在函式_之後_的下一行程式碼停止。
+- **逐步**執行–這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
 - **跳離函式**：這會回到呼叫目前函式的行。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -156,7 +156,7 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 它們是：
 
 - **執行/停止**：這會開始/停止執行程式碼，直到下一個中斷點。
-- **不進入函式 (F11)**：這會執行下一行程式碼。 如果下一行是函數調用,則單步執行函數,並在函數_之後的_下一行代碼處停止。
+- **不進入函式 (F11)**：這會執行下一行程式碼。 如果下一行是函式呼叫，不進入函式會執行函式，並會在函式_之後_的下一行程式碼停止。
 - **逐步執行 (F10)**：這也會執行下一行程式碼。 如果下一行是函式呼叫，逐步執行會停止在函式的第一行，讓您繼續一行一行地進行函式的偵錯。 如果下一行不是函式，它的行為與「不進入函式」相同。
 - **跳離函式 (Shift + F11)** 這會回到呼叫目前函式的行。
 
@@ -174,7 +174,7 @@ Xamarin.iOS 偵錯工具會使用 [Mono 軟偵錯工具](https://www.mono-projec
 
 如果設定偵錯工具時發生錯誤，您可以在您的 [專案選項] 中將 "-v -v -v" 新增至其他 mtouch 引數以啟用詳細診斷。 這會將詳細錯誤訊息列印到裝置主控台。
 
- <a name="WiFi_Debugging" />
+ <a name="WiFi_Debugging"></a>
 
 ## <a name="wireless-debugging"></a>無線偵錯
 
@@ -182,7 +182,7 @@ Xamarin.iOS 中的預設值是透過 USB 連線針對您裝置上的應用程式
 
 如需無線部署和偵錯的詳細資訊，請參閱[無線部署](~/ios/deploy-test/wireless-deployment.md)指南。
 
-<a name="Technical_Details" />
+<a name="Technical_Details"></a>
 
 ## <a name="technical-details"></a>技術詳細資料
 
@@ -192,7 +192,7 @@ Xamarin.iOS 使用新的 Mono 軟偵錯工具。 標準 Mono 偵錯工具是一�
 
 在裝置上執行時，此軟偵錯工具會需要合作式的偵錯配置。 這表示偵錯時您的二進位組建會較大，因為程式碼已通過檢測，可在每個序列點包含額外的程式碼以支援偵錯。
 
-<a name="Accessing_the_Console" />
+<a name="Accessing_the_Console"></a>
 
 ## <a name="accessing-the-console"></a>存取主控台
 
@@ -204,7 +204,7 @@ Xamarin.iOS 使用新的 Mono 軟偵錯工具。 標準 Mono 偵錯工具是一�
 
 -----
 
-<a name="Debugging_Mono's_Class_Libraries" />
+<a name="Debugging_Mono's_Class_Libraries"></a>
 
 ## <a name="debugging-monos-class-libraries"></a>針對 Mono 類別庫進行偵錯
 
@@ -232,6 +232,6 @@ Xamarin.iOS 隨附 Mono 類別庫的原始程式碼，您可以使用它從偵�
 
 - [以 Xamarin 偵錯](/visualstudio/mac/debugging/)
 - [資料視覺效果](/visualstudio/mac/data-visualizations/)
-- [設定斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
+- [設定中斷點](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
 - [逐步執行程式碼](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)
 - [輸出資訊至記錄視窗](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)

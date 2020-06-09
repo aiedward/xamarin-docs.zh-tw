@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 763165f1e09f847745b820987f8dbbae8f834fd7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f7b27c9f1010be313810b4b0f289ef792efd47a3
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021955"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568642"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>在 Xamarin 中的滑杆、切換和分段控制項
 
-<a name="Sliders" />
+<a name="Sliders"></a>
 
-## <a name="sliders"></a>滑杆
+## <a name="sliders"></a>滑桿
 
 滑杆控制項可讓您簡單選擇範圍內的數值。 控制項預設為0到1之間的值，但可以自訂這些限制。
 
@@ -28,7 +28,7 @@ ms.locfileid: "73021955"
 
  [![](slider-switch-segmented-controls-images/image26a.png "Slider Properties")](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
-您可以在程式碼中設定這些值，如下所示，包括連接處理常式以顯示 `UILabel` 控制項中目前選取的值：
+您可以在程式碼中設定這些值，如下所示，包括連接處理常式以顯示控制項中目前選取的值 `UILabel` ：
 
 ```csharp
 slider1.MinValue = -1;
@@ -50,13 +50,13 @@ slider1.MaximumTrackTintColor = UIColor.Green;
  [![](slider-switch-segmented-controls-images/image27a.png "Custom Slider")](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 目前有一個[bug](https://stackoverflow.com/a/19496179)導致 `ThumbTint` 在執行時間不會如預期般呈現。 您可以在上述程式碼**之前**加入下列程式程式碼，以作為因應措施。 [[來源](https://stackoverflow.com/a/21396794)]：
+> 目前有一個[bug](https://stackoverflow.com/a/19496179)導致不會 `ThumbTint` 如預期般在執行時間轉譯。 您可以在上述程式碼**之前**加入下列程式程式碼，以作為因應措施。 [[來源](https://stackoverflow.com/a/21396794)]：
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
 > 您可以使用任何影像，因為它會遭到覆寫，但請務必將它放在 Resources 目錄_中_，並在您的程式碼中呼叫。
 
-<a name="Switch" />
+<a name="Switch"></a>
 
 ## <a name="switch"></a>參數
 
@@ -68,13 +68,13 @@ iOS 會使用 `UISwitch` 做為布林值輸入，在其他平臺上可以用選�
 
  [![](slider-switch-segmented-controls-images/image29a.png "Switch Properties")](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
-參數的屬性也可以在程式碼中設定，例如，下列程式碼會顯示預設值為 `On`的參數：
+參數的屬性也可以在程式碼中設定，例如，下列程式碼會顯示參數的預設值 `On` ：
 
 ```csharp
 switch1.On = true;
 ```
 
- <a name="Segmented_Controls" />
+ <a name="Segmented_Controls"></a>
 
 ## <a name="segmented-controls"></a>區段控制項
 

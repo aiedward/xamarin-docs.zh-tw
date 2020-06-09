@@ -9,8 +9,6 @@ assetid： 11A1D327-2DF3-4F3B-810D-6C95B71D27B2 ms. 技術： xamarin-表單作�
 
 請務必考慮您的應用程式的使用方式，以及如何併入橫向方向以改善使用者體驗。 個別的版面配置可以設計成容納多個方向，並充分利用可用的空間。 在應用層級，可以停用或啟用旋轉。
 
-<a name="Controlling_Orientation" />
-
 ## <a name="controlling-orientation"></a>控制方向
 
 使用時 Xamarin.Forms ，控制裝置方向的支援方法是使用每個個別專案的設定。
@@ -74,8 +72,6 @@ Xamarin 支援數個指定方向的選項：
 
 在通用 Windows 平臺（UWP）上，會在**package.appxmanifest.xml**檔案中設定支援的方向。 開啟資訊清單將會顯示 [設定] 面板，其中可選取支援的方向。
 
-<a name="Reacting_to_Changes_in_Orientation" />
-
 ## <a name="reacting-to-changes-in-orientation"></a>回應方向變更
 
 Xamarin.Forms不提供任何原生事件來通知您的應用程式在共用程式碼中的方向變更。 不過， [Xamarin.Essentials](~/essentials/index.md) 包含一個 `DeviceDisplay` 提供方向變更通知的 [] 類別。
@@ -120,8 +116,6 @@ protected override void OnSizeAllocated(double width, double height)
 ![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
 
 請注意，應用程式會藉由在橫向新增更多功能來利用可用的空間。
-
-<a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>回應式版面配置
 

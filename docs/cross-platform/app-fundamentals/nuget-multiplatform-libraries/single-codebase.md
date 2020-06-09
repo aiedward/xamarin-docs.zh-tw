@@ -6,12 +6,12 @@ ms.assetid: E7B55354-9BBE-4122-BCE3-3506B79090DD
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 7dabb420aa094e67fae689f47b3b64a8fe1a6ed4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e63e6470a7dac0f9148147a0303d35cf33adb1b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016712"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571127"
 ---
 # <a name="creating-a-new-multiplatform-library-for-nuget"></a>建立適用于 NuGet 的新多平臺程式庫
 
@@ -58,7 +58,7 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 
 ![](single-codebase-images/nuget-output.png "Files contained in the NuGet package")
 
-<a name="add-platforms" />
+<a name="add-platforms"></a>
 
 ## <a name="adding-platform-specific-code"></a>加入平臺特定程式碼
 
@@ -72,8 +72,8 @@ NuGet 套件也是 ZIP 檔案，因此可以檢查所產生套件的內部結構
 
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
-轉換為共用專案之後，請造訪 **> NuGet 套件 > 參考元件**
-[一節](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)中的專案選項，並確定已選取所有必要的設定檔（讓 NuGet 繼續與先前用於的專案相容）。
+轉換為共用專案之後，請造訪 **> NuGet 套件 > 參考元件**] 區段中的專案選項， 
+ [section](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)並確定已選取所有必要的設定檔（讓 NuGet 繼續與先前用於的專案相容）。
 
 ## <a name="related-links"></a>相關連結
 

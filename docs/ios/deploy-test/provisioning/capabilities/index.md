@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bff3b2a7c1e273c7a03ae341dd663ebc722791eb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028560"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571736"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>使用 Xamarin.iOS 中的功能
 
-_向應用程式添加功能通常需要額外的預配設置。本指南介紹了所有功能所需的設置。_
+_將功能新增至應用程式通常需要額外的布建設定。本指南說明所有功能所需的設定。_
 
 Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)__ 來延伸 iOS 應用程式的功能及擴大其用途範圍。 這些功能可讓開發人員在其應用程式中加入更深的平台功能整合，例如：能夠從應用程式、額外的裝置服務 (例如 Siri) 等起始金錢交易。
 這些功能可以與 Xamarin.iOS 專案搭配使用。 以下提供完整的服務清單說明：
@@ -36,7 +36,7 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 - 推播通知
 - 個人 VPN
 - Siri
-- 地圖
+- 地圖服務
 - 背景模式
 - Keychain 共用
 - 網路延伸
@@ -80,7 +80,7 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
     ![[自動管理簽署] 選項](images/manage-signing.png)
 
-2. 開啟 **'權利.plist'** 檔案並選擇要新增的功能:
+2. 開啟**plist**檔案，然後選取您想要新增的功能：
 
     ![將功能新增至 entitlements.plist 檔案](images/image17.png)
 
@@ -113,7 +113,7 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
 -----
 
-<a name="devcenter" />
+<a name="devcenter"></a>
 
 ## <a name="using-the-developer-center"></a>使用開發人員中心
 
@@ -130,7 +130,7 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
     ![在 Developer Center (開發人員中心) 中選取 [App ID] \(應用程式識別碼\)](images/image6.png)
 
-4. 按**+** 右上角的按鈕創建新的應用 ID。
+4. 按 **+** 右上角的按鈕，以建立新的應用程式識別碼。
 5. 輸入 App ID (應用程式識別碼) 描述、選取 [Explicit App ID] \(明確的應用程式識別碼\)，然後以 `com.domain.appname` 格式輸入 [Bundle ID] \(套件組合識別碼\)。 這個 Bundle ID (套件組合識別碼) 應該與您專案中的套件組合識別碼相符：
 
     ![新增 App ID (應用程式識別碼) 詳細資料](images/image7.png)
@@ -146,17 +146,17 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 
 9. 按一下 [Register] \(註冊\)****，然後按一下 [Done] \(完成\)****。 新建立的 App ID (應用程式識別碼) 應該會顯示在 [iOS App IDs] \(iOS 應用程式識別碼\) 清單中。
 
-<a name="provisioningprofile" />
+<a name="provisioningprofile"></a>
 
 ### <a name="creating-a-provisioning-profile"></a>建立佈建設定檔
 
-現在，請建立包含此 App ID (應用程式識別碼) 的佈建設定檔。 請依照下列步驟執行：
+現在，請建立包含此 App ID (應用程式識別碼) 的佈建設定檔。 遵循下列步驟：
 
 1. 在 Apple Developer Center (Apple 開發人員中心) 中，瀏覽至 [Provisioning Profiles] \(佈建設定檔\) > [All] \(全部\)****：
 
     ![[Provisioning Profile] \(佈建設定檔\) 區段](images/image10.png)
 
-2. 按**+** 右上角的按鈕以創建新的預配配置檔。
+2. 按 **+** 右上角的按鈕，以建立新的布建設定檔。
 3. 選取所需的佈建設定檔類型，然後按一下 [Continue] \(繼續\)****：
 
     ![選取 Provisioning Profile (佈建設定檔)](images/image11.png)
@@ -188,7 +188,7 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 > [!IMPORTANT]
 > 您可能也需要在 Entitlement.plist 檔案中設定權利金鑰，以及在 Info.plist 檔案中設定隱私金鑰。 如需有關這些權利的詳細資訊，請參閱[使用權利](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
-<a name="nextsteps" />
+<a name="nextsteps"></a>
 
 ## <a name="next-steps"></a>後續步驟
 
@@ -197,7 +197,7 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 - 在您的應用程式中使用架構命名空間。
 - 為您的應用程式新增必要的權利。 如需有關所需權利及如何新增這些權利的詳細資訊，請參閱[權利簡介](~/ios/deploy-test/provisioning/entitlements.md)指南。
 
-<a name="troubleshooting" />
+<a name="troubleshooting"></a>
 
 ## <a name="troubleshooting-capabilities"></a>針對功能進行疑難排解
 
@@ -210,7 +210,7 @@ Apple 為開發人員提供「功能」__(通常稱為「應用程式服務」)_
 - 確定 info.plist 中已設定正確的隱私機碼
 - 在應用程式的 [iOS 套件組合簽署]**** 中，確定 [自訂權利]**** 已設定為 **Entitlements.plist**。 這「不是」__「偵錯」和「iOS 模擬器」組建的預設設定。
 
-<a name="summary" />
+<a name="summary"></a>
 
 ## <a name="summary"></a>總結
 

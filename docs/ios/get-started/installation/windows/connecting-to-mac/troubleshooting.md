@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 40f99fb4e7e44e0a3dc499dc603e66620b890eaa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 311e0a84cfc71421c0992ffcecde975429eb7d3a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75886563"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572165"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 組建主機的連線疑難排解
 
@@ -20,8 +20,8 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 ## <a name="log-file-location"></a>記錄檔位置
 
-- **Mac** |`~/Library/Logs/Xamarin-[MAJOR.MINOR]`
-- **視窗**|`%LOCALAPPDATA%\Xamarin\Logs`
+- **Mac** –`~/Library/Logs/Xamarin-[MAJOR.MINOR]`
+- **Windows** –`%LOCALAPPDATA%\Xamarin\Logs`
 
 您可以在 Visual Studio 中瀏覽至 [說明] &gt; [Xamarin] &gt; [Zip 記錄檔]**** 來找出記錄檔。
 
@@ -35,7 +35,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 > 這些疑難排解步驟主要是針對在新系統初始設定時發生的問題。  若您先前曾經在特定環境中使用連線，但連線突然或間歇性停止運作，您可以 (在大部分的情況下) 跳過並直接檢查下列資訊是否有幫助： 
 >
 > - 刪除剩餘的處理序，如下面的[由於現有建置主機處理序所發生的錯誤](#errors)。 
-> - 清除代理,如[清除代理、IDB、Build 和設計器代理](#clearing),然後使用有線互聯網連接,並透過 IP 位址直接連接,如[「無法連接到 MacBuildHost.local」下所述。請重試。](#tryagain)  
+> - 如清除[Broker、.idb、組建和設計工具代理](#clearing)程式底下所述清除代理程式，然後使用有線網際網路連線並直接透過 IP 位址連接，如[無法連線至 macbuildhost.local。請再試一次](#tryagain)。  
 > 如果那些選項都沒有幫助，則請依照[步驟 9](#stepnine) 中的指示，提出新的錯誤 (Bug) 報告。
 
 1. 確認您的 Mac 上已安裝相容的 Xamarin.iOS 版本。 若要使用 Visual Studio 2017 來執行此操作，請確定您位於 Visual Studio for Mac 中的**穩定**散發通道上。 在 Visual Studio 2015 和更早的版本中，請確定您在兩個 IDE 上都是位於相同的散發通道上。
@@ -82,7 +82,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
     ssh amyb@10.1.8.95
     ```
 
-    <a name="stepnine" />
+    <a name="stepnine"></a>
 
 9. 如果**步驟 8 成功**，您便可以嘗試透過連線執行簡單的命令 (例如 `ls`)：
 
@@ -112,7 +112,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 12. 如果步驟 8 失敗且**步驟 10 也失敗**，則問題可能是 Mac 上的 SSH 伺服器處理序未執行，或未設定為允許目前的使用者登入。 在此情況下，請務必先仔細檢查來自步驟 2 的 [遠端登入] 設定，然後再調查任何更複雜的可能情況。
 
-<a name="knownissues" />
+<a name="knownissues"></a>
 
 ### <a name="known-issues-and-limitations"></a>已知問題與限制
 
@@ -133,21 +133,21 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 #### <a name="trying-to-connect-never-completes"></a>「正在嘗試連線...」永遠無法完成
 
-- **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264) ** - 如果 **「系統首選項&gt;&amp;使用者」** 中的 Mac 使用者的高級**選項**上下文選單中的**登入外殼**設定為 **/bin/bash**以外的值,則此問題可能發生在 Xamarin 4.1 上。 (從 Xamarin 4.2 開始,此方案反而會導致"無法連接"錯誤消息。**解決方法**:將**登入外殼**變更回原始預設**值 /bin/bash**。
+- **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264) ** -如果 [系統喜好設定] [ ** &gt; 使用者 &amp; 群組**] 中 Mac 使用者的 [ **Advanced Options** ] 操作功能表中的 [ **/bin/bash**] 以外的**值，則**此問題可能會發生在 Xamarin 4.1 上。 （從 Xamarin 4.2 開始，此案例會改為導致「無法連線」錯誤訊息）。因應**措施：將****登入命令**介面變更回 **/bin/bash**的原始預設值。
 
-<a name="tryagain" />
+<a name="tryagain"></a>
 
 #### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>「無法連線到 MacBuildHost.local。 請再試一次」。
 
 回報的原因：
 
-- **Bug** – 一些使用者看到此錯誤訊息,以及紀錄檔中的更詳細的錯誤"在為使用者設定 SSH 時發生了意外錯誤...嘗試使用 Active Directory 或其他目錄服務域使用者帳戶登錄到生成主機時,會話操作超時" **因應措施：** 改用本機使用者帳戶來登入組建主機。
+- **Bug** –少數使用者已看到此錯誤訊息，並在記錄檔中顯示更詳細的錯誤：「為使用者設定 SSH 時發生未預期的錯誤 .。。當嘗試使用 Active Directory 或其他目錄服務網域使用者帳戶登入組建主機時，會話作業已超時。 **因應措施：** 改用本機使用者帳戶來登入組建主機。
 
 - **Bug** – 一些使用者在嘗試於連線對話方塊中按兩下 Mac 名稱來連線到組建主機時看到此錯誤。 **可能的因應措施**使用 IP 位址來[手動新增 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#manually-add-a-mac)。
 
 - **Bug [#35971](https://bugzilla.xamarin.com/show_bug.cgi?id=35971)** – 一些使用者在於 Mac 組建主機與 Windows 之間使用無線網路連線遇到此錯誤。 **可能的因應措施**將兩部電腦都移至有線網路連線。
 
-- **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 上，只要 Mac 上的 **$HOME/.bashrc** 檔案中包含錯誤，就會出現此訊息。 (從 Xamarin 4.1 開始 **,.bashrc**檔中的錯誤將不再影響連接過程。**解決方法**:將 **.bashrc**檔案移動到備份位置(如果知道不需要,請將其刪除)。
+- **Bug [#36642](https://bugzilla.xamarin.com/show_bug.cgi?id=36642)** – 在 Xamarin 4.0 上，只要 Mac 上的 **$HOME/.bashrc** 檔案中包含錯誤，就會出現此訊息。 （從 Xamarin 4.1 開始， **.bashrc**檔案中的錯誤將不再影響連接程式）。因應**措施：將** **.bashrc**檔案移至備份位置（或如果您知道不需要，請將其刪除）。
 
 - **Bug [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – 如果在 [系統偏好設定] > [使用者與群組]**** 中，Mac 使用者 [進階選項]**** 操作功能表中的 [登入 Shell]**** 設定為 **/bin/bash** 以外的值，就可能出現此錯誤。 **因應措施**：將 [登入 Shell]**** 變更回原始預設值 **/bin/bash**。
 
@@ -179,7 +179,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
     8. 在 [系統偏好設定] &gt; [共享] &gt; [遠端登入]**** 底下，將 [遠端登入]**** 停用後再啟用，以重新啟動 SSH 伺服器。
 
-<a name="clearing" />
+<a name="clearing"></a>
 
 #### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>清除 Mac 上的 Broker、IDB、組建及 Designer 代理程式
 
@@ -246,11 +246,11 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 2. 嘗試連線到組建主機。
 
-3. 在 Visual Studio 命中連接錯誤後,從**説明> Xamarin > Zip 紀錄**中收集日誌:
+3. Visual Studio 遇到連線錯誤之後，請從 [說明] **> Xamarin > Zip 記錄**檔收集記錄檔：
 
     [![](troubleshooting-images/troubleshooting-image12.png "Collect the logs from Help > Xamarin > Zip Logs")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
-4. 當您開啟 .zip 檔案時，將會看到類似以下範例的檔案清單。 對於連接錯誤,最重要的檔是**\*Ide.log**和**\*Ide.svclog**檔。 這些檔案以兩種略為不同的格式包含相同的資訊。 **.svclog** 是 XML，如果您想要瀏覽訊息，此檔案會相當有用。 **.log** 是純文字，如果您想要使用命令列工具來篩選訊息，此檔案會相當有用。
+4. 當您開啟 .zip 檔案時，將會看到類似以下範例的檔案清單。 針對連接錯誤，最重要的檔案是** \* .svclog**檔案** \* ** 。 這些檔案以兩種略為不同的格式包含相同的資訊。 **.svclog** 是 XML，如果您想要瀏覽訊息，此檔案會相當有用。 **.log** 是純文字，如果您想要使用命令列工具來篩選訊息，此檔案會相當有用。
 
     若要瀏覽所有訊息，請選取並開啟 **.svclog** 檔案：
 
@@ -260,7 +260,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
     [![](troubleshooting-images/troubleshooting-image14.png "Click the Layout Mode drop-down menu and select Thread")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
-<a name="verboselogs" />
+<a name="verboselogs"></a>
 
 #### <a name="verbose-log-files"></a>詳細資訊記錄檔
 
@@ -292,7 +292,7 @@ _本指南提供使用新連線管理員時可能遇到之問題 (包括連線�
 
 ### <a name="ide-log-files"></a>IDE 記錄檔
 
-如果您在使用自動 Mac[預先](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)時遇到任何問題,請查看 Visual Studio 2017 IDE 紀錄,紀錄儲存在 **%LOCALAPPDATA%_Xamarin_Logs_15.0**。
+如果您在使用[自動 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)布建時遇到任何問題，請查看儲存在**于%localappdata%\xamarin\logs\15.0**中的 Visual Studio 2017 IDE 記錄。
 
 ## <a name="troubleshooting-build-and-deployment-errors"></a>針對組建與部署錯誤進行疑難排解
 
@@ -336,11 +336,11 @@ error : Building from a network share path is not supported at the moment. Pleas
 
 相關的 Bug [#40781](https://bugzilla.xamarin.com/show_bug.cgi?id=40781)。
 
-當 Visual Studio 無法重新整理 MEF 元件快取時，就可能發生此問題。 如果是這種情況,安裝此可視化 Studio 擴充可能會有所説明:[https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
+當 Visual Studio 無法重新整理 MEF 元件快取時，就可能發生此問題。 如果是這種情況，安裝此 Visual Studio 延伸模組可能會有説明：[https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd](https://visualstudiogallery.msdn.microsoft.com/22b94661-70c7-4a93-9ca3-8b6dd45f47cd)
 
 這會清除 Visual Studio MEF 元件快取來修正快取損毀的問題。
 
-<a name="errors" />
+<a name="errors"></a>
 
 ### <a name="errors-due-to-existing-build-host-processes-on-the-mac"></a>因 Mac 上有現有的組建主機處理序而發生錯誤
 

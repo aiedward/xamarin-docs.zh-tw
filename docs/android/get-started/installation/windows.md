@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 20e75914699a60496860d906c74046f9057dd78f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79304111"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568278"
 ---
 # <a name="windows-installation"></a>Windows 安裝
 
@@ -21,7 +21,7 @@ _本指南說明在 Windows 上安裝 Xamarin.Android for Visual Studio 的步�
 ## <a name="overview"></a>概觀
 
 因為所有 Visual Studio 版本現在都免費隨附 Xamarin，不需要另外授權，您可以使用 Visual Studio 安裝程式來下載和安裝 Xamarin.Android 工具。
-(不再需要早期版本的 Xamarin.Android 所需的手動安裝和許可步驟。在本指南中,您將學習以下內容:
+（不再需要舊版 Xamarin 所需的手動安裝和授權步驟。）在本指南中，您將瞭解下列各項：
 
 - 如何設定 Java Development Kit、Android SDK 以及 Android NDK 的自訂位置。
 
@@ -85,7 +85,7 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 > [!NOTE]
 > 在 Windows 10 2018 年 4 月更新以前的 Windows 版本上，HAXM 與 Hyper-V 不相容。 在本例中，需要[停用 Hyper-V](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv) 或使用沒有最佳化 x86 的較慢模擬器映像。
 
-<a name="device" />
+<a name="device"></a>
 
 ### <a name="android-device"></a>Android 裝置
 
@@ -99,9 +99,9 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 
 在 [新增專案]**** 對話方塊中，選取 [範本]**** 下的 [Android]****，然後在右窗格中按一下 [Android 應用程式]****。 輸入您的應用程式名稱 (在以下的螢幕擷取畫面中，應用程式稱為 **MyApp**)，然後按一下 [確定]****：
 
-[![新項目對話框的螢幕截圖,建立空白的 Android 應用程式](windows-images/11-first-app-sml.w157.png)](windows-images/11-first-app.w157.png#lightbox)
+[![[新增專案] 對話方塊的螢幕擷取畫面，建立空白的 Android 應用程式](windows-images/11-first-app-sml.w157.png)](windows-images/11-first-app.w157.png#lightbox)
 
-就這麼簡單！ 現在您已經準備好使用 Xamarin.Android 來建立 Android 應用程式！
+完成了！ 現在您已經準備好使用 Xamarin.Android 來建立 Android 應用程式！
 
 ## <a name="summary"></a>總結
 
@@ -113,7 +113,7 @@ Visual Studio 預設會安裝 Google Android SDK 管理員：
 
 - [下載 Visual Studio](https://visualstudio.microsoft.com/vs/)
 - [安裝 Visual Studio Tools for Xamarin](~/get-started/installation/windows.md)
-- [系統要求](~/cross-platform/get-started/requirements.md)
+- [系統需求](~/cross-platform/get-started/requirements.md)
 - [Android SDK 安裝](~/android/get-started/installation/android-sdk.md)
 - [Android Emulator 安裝](~/android/get-started/installation/android-emulator/index.md)
 - [設定裝置以進行開發](~/android/get-started/installation/set-up-device-for-development.md)

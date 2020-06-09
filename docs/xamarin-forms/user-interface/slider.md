@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms一直
-description: Xamarin.Forms滑杆是一個水準橫條，可由使用者操作以從連續範圍選取雙精度值。 本文說明如何使用滑杆類別，從連續值的範圍中選取值。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1cde999e6781f019b6abceee82caf259e1e5a710
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140149"
+title： " Xamarin.Forms 滑杆" 描述： " Xamarin.Forms 滑杆是可由使用者操作以從連續範圍選取 double 值的水準橫條。 本文說明如何使用滑杆類別，從連續值的範圍中選取值。
+assetid： 36B1C645-26E0-4874-B6B6-BDBF77662878 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-slider"></a>Xamarin.Forms一直
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
@@ -116,7 +102,7 @@ public class BasicSliderCodePage : ContentPage
 
 [![基本滑杆程式碼](slider-images/BasicSliderCode.png "基本滑杆程式碼")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-第二個 `Label` 會顯示 "（未初始化）" 文字 `Slider` ，直到操作為止，這會導致引發第一個 `ValueChanged` 事件。 請注意，每個平臺所顯示的小數位數是不同的。 這些差異與的平臺 `Slider` 執行相關，稍後將在本文章中的「平臺」的[差異](#implementations)一節中討論。
+第二個 `Label` 會顯示 "（未初始化）" 文字 `Slider` ，直到操作為止，這會導致引發第一個 `ValueChanged` 事件。 請注意，每個平臺所顯示的小數位數是不同的。 這些差異與的平臺 `Slider` 執行相關，稍後將在本文章中的「平臺」的[差異](#platform-implementation-differences)一節中討論。
 
 ### <a name="creating-a-slider-in-xaml"></a>在 XAML 中建立滑杆
 
@@ -210,8 +196,6 @@ double value = slider.Value;
 
 `Rotation`第一個的屬性會系結 `Label` 至的 `Value` 屬性 `Slider` ，如同 `Text` 第二個 `Label` 具有規格的屬性 `StringFormat` 。 **基本滑杆**系結頁面的運作方式稍有不同：第一頁出現時，第二頁會以 `Label` 值顯示文字字串。 這是使用資料系結的優點。 若要顯示沒有資料系結的文字，您必須明確地初始化的 `Text` 屬性， `Label` 或從類別的函式 `ValueChanged` 呼叫事件處理常式，以模擬事件的引發。
 
-<a name="precautions" />
-
 ## <a name="precautions"></a>措施
 
 屬性的值 `Minimum` 必須一律小於屬性的值 `Maximum` 。 下列程式碼片段會導致 `Slider` 引發例外狀況：
@@ -283,8 +267,6 @@ Slider slider = new Slider
 ```
 
 當 `Minimum` 設定為10時， `Value` 也會設定為10，並 `ValueChanged` 引發事件。 這可能會在已建立其餘頁面之前發生，而且處理常式可能會嘗試參考尚未建立之頁面上的其他元素。 您可能會想要將一些程式碼加入至 `ValueChanged` 處理常式，以檢查 `null` 頁面上其他元素的值。 或者，您可以在 `ValueChanged` 值初始化之後，設定事件處理常式 `Slider` 。
-
-<a name="implementations" />
 
 ## <a name="platform-implementation-differences"></a>平臺執行差異
 
@@ -508,7 +490,7 @@ Viewmodel 和 `INotifyPropertyChanged` 介面會在[資料](~/xamarin-forms/app-
 
 [![HSL 色彩滑杆](slider-images/HslColorSliders.png "HSL 色彩滑杆")](slider-images/HslColorSliders-Large.png#lightbox)
 
-`StringFormat`標記延伸的元件 `Binding` 會設定為 "F2" 格式，以顯示兩個小數位數。 （資料系結中的字串格式會在[字串格式](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)一文中討論）。不過，程式的 UWP 版本限制為0、0.1、0.2、... 的值0.9 和1.0。 這是執行 UWP 的直接結果， `Slider` 如上述「[平臺執行差異](#implementations)」一節中所述。
+`StringFormat`標記延伸的元件 `Binding` 會設定為 "F2" 格式，以顯示兩個小數位數。 （資料系結中的字串格式會在[字串格式](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)一文中討論）。不過，程式的 UWP 版本限制為0、0.1、0.2、... 的值0.9 和1.0。 這是執行 UWP 的直接結果， `Slider` 如上述「[平臺執行差異](#platform-implementation-differences)」一節中所述。
 
 ## <a name="related-links"></a>相關連結
 

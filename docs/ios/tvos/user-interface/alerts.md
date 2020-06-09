@@ -7,24 +7,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 76a9af2a3d845ce3f93b02358901cda8d9d02294
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ed58694073f8d04d16cf19840a07f5210f0afb91
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030508"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574063"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>在 Xamarin 中使用 tvOS 警示
 
 _本文涵蓋如何使用 UIAlertController，在 tvOS 中向使用者顯示警示訊息。_
 
-如果您需要 tvOS 使用者的注意，或要求執行破壞性動作（例如刪除檔案）的許可權，您可以使用 `UIAlertViewController`來呈現警示訊息：
+如果您需要 tvOS 使用者的注意，或要求執行破壞性動作（例如刪除檔案）的許可權，您可以使用來顯示警示訊息 `UIAlertViewController` ：
 
 [![](alerts-images/alert01.png "An example UIAlertViewController")](alerts-images/alert01.png#lightbox)
 
 如果除了顯示訊息以外，您可以將按鈕和文字欄位新增至警示，讓使用者能夠回應動作並提供意見反應。
 
-<a name="About-Alerts" />
+<a name="About-Alerts"></a>
 
 ## <a name="about-alerts"></a>關於警示
 
@@ -37,7 +37,7 @@ Apple 具有下列使用警示的建議：
 - **謹慎使用警示**-警示會中斷使用者與應用程式的流程，並中斷使用者體驗，因此，應該只用于重要的情況，例如錯誤通知、應用程式內購買和破壞性動作。
 - **提供有用的選擇**-如果警示向使用者顯示選項，您應該確保每個選項都提供重要的資訊，並提供實用的動作供使用者採取。
 
-<a name="Alert-Titles-and-Messages" />
+<a name="Alert-Titles-and-Messages"></a>
 
 ### <a name="alert-titles-and-messages"></a>警示標題和訊息
 
@@ -47,7 +47,7 @@ Apple 提供下列建議來呈現警示的標題和選擇性的訊息：
 - **使用不需要訊息的描述性標題**-任何可能的情況下，請考慮讓警示的標題具有足夠的描述，而不需要選擇性的郵件內文。
 - 將**訊息設為簡短、完整的句子**-如果需要選擇性的訊息以取得整個警示點，請盡可能保持簡單，並以適當的大小寫和標點符號做為完整的句子。
 
-<a name="Alert-Buttons" />
+<a name="Alert-Buttons"></a>
 
 ### <a name="alert-buttons"></a>警示按鈕
 
@@ -55,13 +55,13 @@ Apple 具有將按鈕新增至警示的下列建議：
 
 - **限制為兩個按鈕**-任何可能的情況下，將警示限制為最多兩個按鈕。 單一按鈕警示會提供資訊，但沒有動作。 兩個按鈕警示提供簡單的 [是/否] 動作。
 - **使用簡潔的邏輯按鈕標題**-簡單的一到兩個單字按鈕標題，清楚地描述按鈕的動作效果。 如需詳細資訊，請參閱我們[的使用按鈕](~/ios/tvos/user-interface/buttons.md)檔。
-- **清楚標示破壞性按鈕**-對於執行破壞性動作（例如刪除檔案）的按鈕，請將其清楚地標示為 `UIAlertActionStyle.Destructive` 樣式。
+- **清楚標示破壞性按鈕**-對於執行破壞性動作（例如刪除檔案）的按鈕，請將其清楚地標記為 `UIAlertActionStyle.Destructive` 樣式。
 
-<a name="Displaying-an-Alert" />
+<a name="Displaying-an-Alert"></a>
 
 ## <a name="displaying-an-alert"></a>顯示警示
 
-若要顯示警示，您可以建立 `UIAlertViewController` 的實例，並藉由新增動作（按鈕）並選取警示的樣式來設定它。 例如，下列程式碼會顯示 [確定]/[取消] 警示：
+若要顯示警示，請建立的實例 `UIAlertViewController` ，並藉由新增動作（按鈕）並選取警示的樣式來設定它。 例如，下列程式碼會顯示 [確定]/[取消] 警示：
 
 ```csharp
 const string title = "A Short Title is Best";
@@ -103,15 +103,15 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 );
 ```
 
-`UIAlertActionStyle` 列舉可讓您將按鈕的樣式設定為下列其中一項：
+`UIAlertActionStyle`列舉可讓您將按鈕的樣式設定為下列其中一項：
 
 - **預設值**-當顯示警示時，按鈕會是已選取的預設按鈕。
 - **取消**-按鈕是警示的 [取消] 按鈕。
 - **破壞性**-將按鈕反白顯示為破壞性動作，例如刪除檔案。 目前，tvOS 會呈現具有紅色背景的破壞性按鈕。
 
-`AddAction` 方法會將指定的動作加入至 `UIAlertViewController`，最後，`PresentViewController (alertController, true, null)` 方法會向使用者顯示指定的警示。
+`AddAction`方法會將指定的動作加入至 `UIAlertViewController` ，最後， `PresentViewController (alertController, true, null)` 方法會向使用者顯示指定的警示。
 
-<a name="Adding-Text-Fields" />
+<a name="Adding-Text-Fields"></a>
 
 ## <a name="adding-text-fields"></a>加入文字欄位
 
@@ -160,7 +160,7 @@ alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default,(actionOK) 
 controller.PresentViewController(alert,true,null);
 ```
 
-`AddTextField` 方法會將新的文字欄位新增至警示，您可以設定這些屬性，例如預留位置文字（欄位為空白時所顯示的文字）、預設文字值和鍵盤類型。 例如:
+`AddTextField`方法會將新的文字欄位新增至警示，您可以設定屬性，例如預留位置文字（欄位為空白時所顯示的文字）、預設文字值和鍵盤類型。 例如：
 
 ```csharp
 // Initialize field
@@ -186,13 +186,13 @@ alert.AddTextField ((textField) => {
 });
 ```
 
-當使用者在文字欄位中輸入值之後，就可以使用 `field` 變數來存取該值。
+當使用者在文字欄位中輸入值之後，就可以使用該 `field` 變數來存取該值。
 
-<a name="Alert-View-Controller-Helper-Class" />
+<a name="Alert-View-Controller-Helper-Class"></a>
 
 ## <a name="alert-view-controller-helper-class"></a>警示視圖控制器 Helper 類別
 
-由於使用 `UIAlertViewController` 來顯示簡單的常見警示類型可能會產生相當多的重複程式碼，因此您可以使用 helper 類別來減少重複的程式碼數量。 例如:
+由於使用來顯示簡單的常見警示類型 `UIAlertViewController` 可能會產生相當多的重複程式碼，因此您可以使用 helper 類別來減少重複的程式碼數量。 例如：
 
 ```csharp
 using System;
@@ -361,11 +361,11 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 #endregion
 ```
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 
-本文涵蓋了如何使用 `UIAlertController`，在 tvOS 中向使用者顯示警示訊息。 首先，它會示範如何顯示簡單的警示並新增按鈕。 接下來，它會示範如何將文字欄位新增至警示。 最後，它會示範如何使用 helper 類別來減少顯示警示所需的重複程式碼數量。
+本文涵蓋了 `UIAlertController` 如何使用，在 tvOS 中向使用者顯示警示訊息。 首先，它會示範如何顯示簡單的警示並新增按鈕。 接下來，它會示範如何將文字欄位新增至警示。 最後，它會示範如何使用 helper 類別來減少顯示警示所需的重複程式碼數量。
 
 ## <a name="related-links"></a>相關連結
 

@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f2c8fb235603c5dac37fc0c25be2f070d7df98e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 321ea87bfa4f460c4eaab31ef2ede6f3eb1b927f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022153"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573569"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆疊視圖
 
-Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的強大功能來管理子檢視堆疊（不論是水準或垂直），這會動態回應 Apple TV 裝置的內容變更和螢幕大小。
+Stack 視圖控制項（ `UIStackView` ）會利用自動設定和大小類別的功能，來管理子檢視的堆疊（不論是水準或垂直），這會動態回應內容變更和 APPLE TV 裝置的螢幕大小。
 
 附加至堆疊視圖的所有子檢視的配置，都是由它以開發人員定義的屬性（例如軸、分佈、對齊和間距）為基礎來管理：
 
 [![](stacked-views-images/stacked01.png "Subview layout diagram")](stacked-views-images/stacked01.png#lightbox)
 
-在 tvOS 應用程式中使用 `UIStackView` 時，開發人員可以在 iOS 設計工具中的分鏡腳本內定義子檢視，或是在C#程式碼中新增和移除子檢視。
+`UIStackView`在 tvOS 應用程式中使用時，開發人員可以在 IOS 設計工具中的分鏡腳本內定義子檢視，或在 c # 程式碼中新增和移除子檢視。
 
 ## <a name="about-stacked-view-controls"></a>關於堆疊視圖控制項
 
-`UIStackView` 是設計為非轉譯的容器視圖，因此不會繪製到畫布上，如 `UIView`的其他子類別。 設定屬性（例如 `BackgroundColor` 或覆寫 `DrawRect`）將不會有任何視覺效果。
+`UIStackView`是設計為非轉譯容器視圖，因此不會繪製到畫布上，如的其他子類別 `UIView` 。 設定屬性（例如 `BackgroundColor` 或覆寫） `DrawRect` 不會有任何視覺效果。
 
 有數個屬性可以控制堆疊視圖如何排列其子檢視的集合：
 
@@ -34,40 +34,40 @@ Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的強�
 - **對齊**–控制子檢視在堆疊視圖中的對齊方式。
 - **散發**–控制如何在堆疊視圖內調整子檢視大小。
 - **間距**–控制堆疊視圖中每個子視圖之間的最小空間。
-- **基準相對**–如果 `true`，則每個子視圖的垂直間距會衍生自其基準。
+- **基準相對**-如果為 `true` ，則每個子視圖的垂直間距會從它的基準衍生。
 - **相對於版面配置邊界**：將子檢視相對於標準版面配置邊界。
 
 通常您會使用堆疊視圖來排列少量的子檢視。 更複雜的使用者介面可以藉由在彼此之間嵌套一個或多個堆疊視圖來建立。
 
 您可以藉由在子檢視中新增額外的條件約束（例如，控制高度或寬度），進一步微調 Ui 外觀。 不過，請小心不要將衝突的條件約束納入堆疊視圖本身所引進的限制式。
 
-<a name="Auto-Layout-and-Size-Classes" />
+<a name="Auto-Layout-and-Size-Classes"></a>
 
 ## <a name="auto-layout-and-size-classes"></a>自動版面配置和大小類別
 
 當子視圖加入至堆疊時，其配置完全受到該堆疊視圖的控制，使用自動版面配置和大小類別來定位和調整排列的視圖大小。
 
-堆疊視圖會將其集合中的第一個和最後一個子視圖_釘_選到垂直堆疊視圖的**上**和**下**邊緣，或水準堆疊視圖的**左邊**和**右邊**邊緣。 如果您將 [`LayoutMarginsRelativeArrangement`] 屬性設定為 [`true`]，則此視圖會將子檢視釘選到相關的邊界，而不是邊緣。
+堆疊視圖會將其集合中的第一個和最後一個子視圖_釘_選到垂直堆疊視圖的**上**和**下**邊緣，或水準堆疊視圖的**左邊**和**右邊**邊緣。 如果您將 `LayoutMarginsRelativeArrangement` 屬性設定為 `true` ，則此視圖會將子檢視釘選到相關的邊界，而不是邊緣。
 
-堆疊視圖會在以定義的 `Axis` 計運算元檢視大小時，使用子視圖的 `IntrinsicContentSize` 屬性（`FillEqually Distribution`除外）。 `FillEqually Distribution` 會將所有子檢視的大小調整成相同的大小，因此沿著 `Axis`填滿堆疊視圖。
+堆疊視圖會 `IntrinsicContentSize` 在計算已定義的子檢視大小 `Axis` （除外）時，使用子視圖的屬性 `FillEqually Distribution` 。 `FillEqually Distribution`會調整所有子檢視的大小，使其具有相同的大小，因此會沿著來填滿堆疊視圖 `Axis` 。
 
-除了 `Fill Alignment`以外，堆疊視圖會使用子視圖的 `IntrinsicContentSize` 屬性來計算與給定 `Axis`垂直的視圖大小。 針對 `Fill Alignment`，所有子檢視都會調整大小，使其填滿垂直于指定 `Axis`的堆疊視圖。
+除了的例外狀況之外 `Fill Alignment` ，堆疊視圖會使用子視圖的 `IntrinsicContentSize` 屬性來計算與指定的垂直的視圖大小 `Axis` 。 針對 `Fill Alignment` ，所有子檢視都會調整大小，使其填滿垂直于指定之的堆疊視圖 `Axis` 。
 
-<a name="Positioning-and-Sizing-the-Stack-View" />
+<a name="Positioning-and-Sizing-the-Stack-View"></a>
 
 ## <a name="positioning-and-sizing-the-stack-view"></a>定位和調整堆疊視圖的大小
 
-雖然堆疊視圖對於任何子視圖的版面配置（根據 `Axis` 和 `Distribution`等屬性）有完全控制權，但您仍然需要使用自動設定和大小類別，將堆疊視圖（`UIStackView`）放在其父視圖內。
+雖然堆疊視圖對於任何子視圖的版面配置（根據和之類的屬性）有完全 `Axis` 控制權 `Distribution` ，但您仍然需要 `UIStackView` 使用自動設定和大小類別，在其父視圖內放置堆疊視圖（）。
 
 一般來說，這表示至少要釘選堆疊視圖的兩個邊緣，以擴充和合約，進而定義其位置。 如果沒有任何額外的條件約束，則會自動調整堆疊視圖的大小，以符合其所有的子檢視，如下所示：
 
-- 沿著其 `Axis` 的大小會是所有子視圖大小的總和，加上每個子視圖之間已定義的任何空間。
-- 如果 `LayoutMarginsRelativeArrangement` 屬性是 `true`，則堆疊 Views 大小也會包含邊界的空間。
-- 垂直于 `Axis` 的大小會設定為集合中最大的子視圖。
+- 連同所有子視圖大小的 `Axis` 總和，以及每個子視圖之間已定義的任何空間，都是大小。
+- 如果 `LayoutMarginsRelativeArrangement` 屬性為 `true` ，則堆疊 Views 大小也會包含邊界的空間。
+- 垂直于的大小 `Axis` 會設定為集合中最大的子視圖。
 
-此外，您可以指定堆疊視圖的**高度**和**寬度**的條件約束。 在此情況下，子檢視會配置（調整大小），以填滿堆疊視圖所指定的空間，如 `Distribution` 和 `Alignment` 屬性所決定。
+此外，您可以指定堆疊視圖的**高度**和**寬度**的條件約束。 在此情況下，子檢視會配置（調整大小），以填滿堆疊視圖所指定的空間（由和屬性所決定） `Distribution` `Alignment` 。
 
-如果 `true`[`BaselineRelativeArrangement`] 屬性，則會根據第一個或最後一個子視圖的基準來配置子檢視，而不是使用**上**、**下**或 **置*中- **Y**位置。 這些是在堆疊視圖的內容上計算，如下所示：
+如果 `BaselineRelativeArrangement` 屬性為 `true` ，則會根據第一個或最後一個子視圖的基準來配置子檢視，而不是使用**上**、**下**或 **置*中 -  **Y**位置。 這些是在堆疊視圖的內容上計算，如下所示：
 
 - 垂直堆疊視圖會傳回第一個基準的第一個子視圖，最後一個是最後一個。 如果其中一個子檢視本身是堆疊視圖，則會使用其第一個或最後一個基準。
 - 水準堆疊視圖會針對第一個和最後一個基準使用其最高的子視圖。 如果最高的視圖也是堆疊視圖，它會使用其最高的子視圖作為基準。
@@ -75,26 +75,26 @@ Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的強�
 > [!IMPORTANT]
 > 基準對齊不適用於延伸或壓縮的子視圖大小，因為基準會計算到錯誤的位置。 針對 [基準對齊]，請確定子視圖的**高度**符合內建內容視圖的**高度**。
 
-<a name="Common-Stack-View-Uses" />
+<a name="Common-Stack-View-Uses"></a>
 
 ## <a name="common-stack-view-uses"></a>一般堆疊視圖使用
 
 有數種版面配置類型可搭配堆疊視圖控制項運作。 根據 Apple，以下是幾個較常見的用法：
 
-- **定義沿著軸的大小**–藉由將兩個邊緣沿著堆疊視圖的 `Axis`，以及其中一個相鄰邊緣來設定位置，堆疊視圖會沿著軸成長，以符合其子檢視所定義的空間。
+- **定義沿著軸的大小**–藉由將兩個邊緣沿著堆疊視圖 `Axis` 和其中一個相鄰邊緣釘選來設定位置，堆疊視圖會沿著軸成長，以符合其子檢視所定義的空間。
 - **定義子視圖的位置**–藉由釘選到堆疊視圖的相鄰邊緣與其父視圖，堆疊視圖會同時在這兩個維度中成長，以符合其包含的子檢視。
 - **定義堆疊的大小和位置**–藉由將堆疊視圖的全部四個邊緣釘選到父視圖，堆疊視圖會根據堆疊視圖內定義的空間來排列子檢視。
-- **定義垂直軸的大小**–藉由將兩個邊緣固定于堆疊視圖的 `Axis`，以及軸上的其中一個邊緣來設定位置，堆疊視圖會以垂直方式成長到軸，以符合其子檢視所定義的空間。
+- **定義垂直軸的大小**–藉由將邊緣垂直放在堆疊視圖 `Axis` 和軸上的其中一個邊緣來設定位置，堆疊視圖會沿著軸垂直成長，以符合其子檢視所定義的空間。
 
-<a name="Stack-Views-and-Storyboards" />
+<a name="Stack-Views-and-Storyboards"></a>
 
 ## <a name="stack-views-and-storyboards"></a>堆疊視圖和分鏡腳本
 
 在 tvOS 應用程式中使用堆疊視圖的最簡單方式，是使用 iOS 設計工具將它們新增至應用程式的 UI。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在  **Solution Pad**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
+1. 在 [ **Solution Pad**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 設計您要加入至堆疊視圖之個別元素的版面配置：
 
     [![](stacked-views-images/layout01.png "Element layout example")](stacked-views-images/layout01.png#lightbox)
@@ -105,7 +105,7 @@ Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的強�
 1. 從 [**工具箱**] 拖曳 [**堆疊視圖**]，並將它放在視圖上：
 
     [![](stacked-views-images/layout03.png "A Stack View")](stacked-views-images/layout03.png#lightbox)
-1. 選取 [堆疊] 視圖，在**Properties Pad**的 [ **Widget]** 索引標籤中，選取 [**填滿** **對齊**]，針對 [**分佈**] 按 [**平均填滿**]，然後輸入 `25` 做為**間距**：
+1. 選取 [堆疊] 視圖，在**Properties Pad**的 [ **Widget]** 索引標籤中，選取 [**填滿****對齊**]，並針對 [**分佈**] 按 [**填滿**]，並輸入 `25` **間距**：
 
     [![](stacked-views-images/layout04.png "The Widget Tab")](stacked-views-images/layout04.png#lightbox)
 1. 將堆疊視圖放在您想要的畫面上，並加入條件約束以將其保留在所需的位置。
@@ -113,12 +113,12 @@ Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的強�
 
     [![](stacked-views-images/layout05.png "The individual elements in the Stack View")](stacked-views-images/layout05.png#lightbox)
 1. 系統會調整配置，並根據您在上面設定的屬性，將元素排列在堆疊視圖中。
-1. 在 [**屬性] 瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**， C#以在程式碼中使用您的 UI 控制項。
+1. 在**屬性瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**，以在 c # 程式碼中使用您的 UI 控制項。
 1. 儲存您的變更。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在 **方案總管**中，按兩下 `Main.storyboard` 檔案，然後將它開啟以供編輯。
+1. 在 [**方案總管**中，按兩下檔案 `Main.storyboard` ，然後開啟檔案進行編輯。
 1. 設計您要加入至堆疊視圖之個別元素的版面配置：
 
     [![](stacked-views-images/layout01.png "Example element layout")](stacked-views-images/layout01.png#lightbox)
@@ -129,7 +129,7 @@ Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的強�
 1. 從 [**工具箱**] 拖曳 [**堆疊視圖**]，並將它放在視圖上：
 
     [![](stacked-views-images/layout03-vs.png "A Stack View")](stacked-views-images/layout03-vs.png#lightbox)
-1. 選取 [堆疊] 視圖，在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中選取 [**填入** **對齊方式**]、[針對**分佈** **平均填滿**]，然後輸入 `25` 做為**間距**：
+1. 選取 [堆疊] 視圖，在 [**屬性] Explorer**的 [ **Widget]** 索引標籤中選取 [**填入****對齊方式**]、[針對**分佈****平均填滿**]，然後輸入 `25` 作為**間距**：
 
     [![](stacked-views-images/layout04-vs.png "The Widget Tab")](stacked-views-images/layout04-vs.png#lightbox)
 1. 將堆疊視圖放在您想要的畫面上，並加入條件約束以將其保留在所需的位置。
@@ -137,17 +137,17 @@ Stack 視圖控制項（`UIStackView`）利用自動設定和大小類別的強�
 
     [![](stacked-views-images/layout05-vs.png "The individual elements in the Stack View")](stacked-views-images/layout05-vs.png#lightbox)
 1. 系統會調整配置，並根據您在上面設定的屬性，將元素排列在堆疊視圖中。
-1. 在 [**屬性] 瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**， C#以在程式碼中使用您的 UI 控制項。
+1. 在**屬性瀏覽器**的 [ **Widget]** 索引標籤中指派**名稱**，以在 c # 程式碼中使用您的 UI 控制項。
 1. 儲存您的變更。
 
 -----
 
 > [!IMPORTANT]
-> 雖然您可以在建立事件處理常式時，將 `TouchUpInside` 之類的動作指派給 iOS 設計工具中的 UI 專案（例如 `UIButton`），但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 建立 tvOS 使用者介面元素的動作時，您應該一律使用預設 `Action Type`。
+> 雖然您可以 `TouchUpInside` `UIButton` 在建立事件處理常式時，將動作（例如）指派給 iOS 設計工具中的 UI 專案（例如），但永遠不會呼叫它，因為 Apple TV 沒有觸控式螢幕或支援觸控事件。 `Action Type`建立 tvOS 使用者介面元素的動作時，您應該一律使用預設值。
 
 如需使用分鏡腳本的詳細資訊，請參閱我們的[Hello，tvOS 快速入門手冊](~/ios/tvos/get-started/hello-tvos.md)。
 
-在我們的範例中，我們已公開區段控制項的輸出和動作，以及每個「玩家卡片」的輸出。 在程式碼中，我們會根據目前的區段來隱藏和顯示播放程式。 例如:
+在我們的範例中，我們已公開區段控制項的輸出和動作，以及每個「玩家卡片」的輸出。 在程式碼中，我們會根據目前的區段來隱藏和顯示播放程式。 例如：
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {
@@ -190,11 +190,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 [![](stacked-views-images/layout07.png "If the number of players is decreased, the unused views are hidden and the Stack View adjust the layout to fit")](stacked-views-images/layout07.png#lightbox)
 
-<a name="Populate-a-Stack-View-from-Code" />
+<a name="Populate-a-Stack-View-from-Code"></a>
 
 ### <a name="populate-a-stack-view-from-code"></a>從程式碼填入堆疊視圖
 
-除了在 iOS 設計工具中完全定義堆疊視圖的內容和配置之外，您還可以從C#程式碼動態建立和移除它。
+除了在 iOS 設計工具中完全定義堆疊視圖的內容和配置之外，您還可以從 c # 程式碼動態建立和移除它。
 
 採用下列範例，使用堆疊視圖來處理評論中的「星星」（1到5）：
 
@@ -248,7 +248,7 @@ partial void DecreaseRating (Foundation.NSObject sender) {
 }
 ```
 
-讓我們詳細探討這段程式碼的幾個部分。 首先，我們會使用 `if` 語句來檢查是否有五個以上的「星星」或小於零。
+讓我們詳細探討這段程式碼的幾個部分。 首先，我們使用 `if` 語句來檢查是否有五個以上的「星星」或小於零。
 
 若要加入新的「星星」，我們會載入其影像，並將其**內容模式**設定為**適合調整外觀**：
 
@@ -265,7 +265,7 @@ icon.ContentMode = UIViewContentMode.ScaleAspectFit;
 RatingView.AddArrangedSubview(icon);
 ```
 
-您會注意到，我們已將 `UIImageView` 新增至 `UIStackView`的 `ArrangedSubviews` 屬性，而不是 `SubView`。 您想要讓堆疊視圖控制其版面配置的任何視圖，都必須加入至 `ArrangedSubviews` 屬性。
+您會注意到，我們已將新增 `UIImageView` 至 `UIStackView` 的 `ArrangedSubviews` 屬性，而不是 `SubView` 。 您想要讓堆疊視圖控制其版面配置的任何視圖，都必須加入至 `ArrangedSubviews` 屬性。
 
 若要從堆疊視圖中移除子視圖，請先取得子視圖以移除：
 
@@ -281,13 +281,13 @@ RatingView.RemoveArrangedSubview(icon);
 icon.RemoveFromSuperview();
 ```
 
-只從 `ArrangedSubviews` 集合中移除子視圖，會將它移出堆疊視圖的控制項，但不會將它從畫面中移除。
+只從集合中移除子視圖 `ArrangedSubviews` ，會將它移出堆疊視圖的控制項，但不會將它從畫面中移除。
 
-<a name="Dynamically-Changing-Content" />
+<a name="Dynamically-Changing-Content"></a>
 
 ## <a name="dynamically-changing-content"></a>動態變更內容
 
-每當加入、移除或隱藏子視圖時，堆疊視圖就會自動調整子檢視的版面配置。 如果堆疊視圖的任何屬性已調整（例如其 `Axis`），則也會調整版面配置。
+每當加入、移除或隱藏子視圖時，堆疊視圖就會自動調整子檢視的版面配置。 如果堆疊視圖的任何屬性已調整（例如其），則也會調整版面配置 `Axis` 。
 
 您可以將版面配置變更放在動畫區塊內來進行動畫處理，例如：
 
@@ -301,7 +301,7 @@ UIView.Animate(0.25, ()=>{
 
 許多堆疊視圖的屬性都可以使用分鏡腳本中的大小類別來指定。 這些屬性會自動以動畫顯示大小或方向變更的回應。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 

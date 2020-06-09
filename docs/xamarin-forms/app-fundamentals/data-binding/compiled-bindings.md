@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms編譯的系結
-description: 本文說明如何使用編譯的系結來改善應用程式中的資料系結效能 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1f811de95009900016bb8b442265a9a079e0f612
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139736"
+title： " Xamarin.Forms 已編譯的系結" 描述： "本文說明如何使用編譯的系結來改善應用程式中的資料系結效能 Xamarin.Forms 。
+assetid： ABE6B7F7-875E-4402-A1D2-845CE374402B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 09/18/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms編譯的系結
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
@@ -73,7 +59,7 @@ _編譯的系結比傳統系結更快速解析，因此可改善應用程式中�
 </ContentPage>
 ```
 
-根會具現化，並初始化屬性的屬性專案 [`StackLayout`](xref:Xamarin.Forms.StackLayout) `HslColorViewModel` `Color` 標記中的屬性 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 。 這個根目錄 `StackLayout` 也會將 `x:DataType` 屬性定義為 viewmodel 類型，表示將會編譯根視圖階層架構中的任何系結運算式 `StackLayout` 。 這可以藉由將任何系結運算式變更為系結至不存在的 viewmodel 屬性來進行驗證，這會導致建立錯誤。 雖然這個範例會將 `x:DataType` 屬性設定為字串常值，但也可以設定為具有 `x:Type` 標記延伸的類型。 如需標記延伸的詳細資訊 `x:Type` ，請參閱[X:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
+根會具現化，並初始化屬性的屬性專案 [`StackLayout`](xref:Xamarin.Forms.StackLayout) `HslColorViewModel` `Color` 標記中的屬性 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 。 這個根目錄 `StackLayout` 也會將 `x:DataType` 屬性定義為 viewmodel 類型，表示將會編譯根視圖階層架構中的任何系結運算式 `StackLayout` 。 這可以藉由將任何系結運算式變更為系結至不存在的 viewmodel 屬性來進行驗證，這會導致建立錯誤。 雖然這個範例會將 `x:DataType` 屬性設定為字串常值，但也可以設定為具有 `x:Type` 標記延伸的類型。 如需標記延伸的詳細資訊 `x:Type` ，請參閱[X:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)。
 
 > [!IMPORTANT]
 > 您可以在檢視階層架構中的任何位置重新定義 `x:DataType` 屬性。
@@ -127,7 +113,7 @@ _編譯的系結比傳統系結更快速解析，因此可改善應用程式中�
 
 [`ListView.ItemsSource`](xref:Xamarin.Forms.ListView)屬性會設定為靜態 `NamedColor.All` 屬性。 `NamedColor`類別會使用 .net 反映來列舉結構中所有的靜態公用欄位 [`Color`](xref:Xamarin.Forms.Color) ，並將其名稱儲存在可從靜態屬性存取的集合中 `All` 。 因此，`ListView` 會填入所有的 `NamedColor` 執行個體。 針對 `ListView` 中的每個項目，項目的繫結內容會設定為 `NamedColor` 物件。 [`BoxView`](xref:Xamarin.Forms.BoxView)中的和 [`Label`](xref:Xamarin.Forms.Label) 元素會系結 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 至 `NamedColor` 屬性。
 
-請注意，會將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `x:DataType` 屬性定義為 `NamedColor` 類型，表示將會編譯 view 階層架構中的任何系結運算式 `DataTemplate` 。 若要進行驗證，請將任何繫結運算式變更為繫結至不存在的 `NamedColor` 屬性，這會導致建置錯誤。  雖然這個範例會將 `x:DataType` 屬性設定為字串常值，但也可以設定為具有 `x:Type` 標記延伸的類型。 如需標記延伸的詳細資訊 `x:Type` ，請參閱[X:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)。
+請注意，會將 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `x:DataType` 屬性定義為 `NamedColor` 類型，表示將會編譯 view 階層架構中的任何系結運算式 `DataTemplate` 。 若要進行驗證，請將任何繫結運算式變更為繫結至不存在的 `NamedColor` 屬性，這會導致建置錯誤。  雖然這個範例會將 `x:DataType` 屬性設定為字串常值，但也可以設定為具有 `x:Type` 標記延伸的類型。 如需標記延伸的詳細資訊 `x:Type` ，請參閱[X:Type 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)。
 
 第一次執行應用程式時， [`ListView`](xref:Xamarin.Forms.ListView) 會填入 `NamedColor` 實例。 當選取中的專案時 `ListView` ， [`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) 屬性會設定為中所選項目的色彩 `ListView` ：
 
@@ -163,7 +149,7 @@ _編譯的系結比傳統系結更快速解析，因此可改善應用程式中�
 
 根會將 [`StackLayout`](xref:Xamarin.Forms.StackLayout) `x:DataType` 屬性設定為 `HslColorViewModel` 類型，表示將會編譯根視圖階層架構中的任何系結運算式 `StackLayout` 。 不過，內部 `StackLayout` 會使用 `x:Null` 標記延伸將 `x:DataType` 屬性重新定義為 `null`。 因此，內部 `StackLayout` 中的繫結運算式會使用傳統繫結。 只有在 [`BoxView`](xref:Xamarin.Forms.BoxView) 根視圖階層中的才會 `StackLayout` 使用編譯的系結。
 
-如需 `x:Null` 標記延伸的詳細資訊，請參閱 [x:Null 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#null)。
+如需 `x:Null` 標記延伸的詳細資訊，請參閱 [x:Null 標記延伸](~/xamarin-forms/xaml/markup-extensions/consuming.md#xnull-markup-extension)。
 
 ## <a name="performance"></a>效能
 

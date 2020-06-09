@@ -15,8 +15,6 @@ Xamarin.Forms程式碼會在多個平臺上執行-其中每一個都有自己的
 
 如需處理影像檔的相關資訊，請參閱[處理影像](~/xamarin-forms/user-interface/images.md)頁面。
 
-<a name="Loading_and_Saving_Files" />
-
 ## <a name="saving-and-loading-files"></a>儲存及載入檔案
 
 `System.IO` 類別可用來存取每個平台上的檔案系統。 `File` 類別可讓您建立、刪除和讀取檔案，而 `Directory` 類別可讓您建立、刪除或列舉目錄內容。 您也可以使用 `Stream` 子類別，其可提供更高的檔案作業控制權 (例如壓縮或在檔案中搜尋位置)。
@@ -48,8 +46,6 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 這些作業會在範例應用程式中示範，包括儲存及載入文字的頁面：
 
 [![儲存和載入文字](files-images/saveandload-sml.png "在應用程式中儲存及載入檔案")](files-images/saveandload.png#lightbox "在應用程式中儲存及載入檔案")
-
-<a name="Loading_Files_Embedded_as_Resources" />
 
 ## <a name="loading-files-embedded-as-resources"></a>載入內嵌為資源的檔案
 
@@ -97,8 +93,6 @@ listView.ItemsSource = monkeys;
 
  [![內嵌在 .NET standard 程式庫中的 Xml 檔案，顯示在 ListView 中](files-images/pclxml-sml.png "ListView 中顯示的 .NET standard 程式庫中的內嵌 XML 檔案")](files-images/pclxml.png#lightbox "ListView 中顯示的 .NET standard 程式庫中的內嵌 XML 檔案")
 
-<a name="Embedding_in_Shared_Projects" />
-
 ## <a name="embedding-in-shared-projects"></a>在共用專案中內嵌
 
 共用專案也可以將檔案包含為內嵌資源，但因為共用專案的內容會編譯到參考專案，所以用於內嵌檔案資源識別碼的前置詞會變更。 這表示每個平台的每個內嵌檔案資源識別碼可能不相同。
@@ -125,15 +119,11 @@ Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
 
-<a name="Organizing_Resources" />
-
 ### <a name="organizing-resources"></a>組織資源
 
 上述範例假設該檔案內嵌在 .NET Standard 程式庫專案的根目錄中；在這種情況下，資源識別碼就是表單 **Namespace.Filename.Extension** 的資源識別碼，例如 `WorkingWithFiles.LibTextResource.txt` 和 `WorkingWithFiles.iOS.SharedTextResource.txt`。
 
 您可以使用資料夾組織內嵌的資源。 當內嵌的資源放置在某個資料夾中時，資料夾名稱會成為資源識別碼的一部分 (以句點分隔)，以致資源識別碼格式變成 **Namespace.Folder.Filename.Extension**。 將範例應用程式所用的檔案放到資料夾 **MyFolder** 中，對應的資源識別碼就會變成 `WorkingWithFiles.MyFolder.LibTextResource.txt` 和 `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt`。
-
-<a name="Debugging_Embedded_Resources" />
 
 ### <a name="debugging-embedded-resources"></a>偵錯內嵌資源
 
@@ -149,7 +139,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本文已示範在裝置上儲存及載入文字，以及載入內嵌資源等一些簡單的檔案作業。 使用 .NET Standard 2.0 就可以在 .NET Standard 程式庫中共用檔案存取碼。
 

@@ -1,75 +1,75 @@
 ---
-title: Alternate App Icons in Xamarin.iOS
-description: This document describes how to use alternate app icons in Xamarin.iOS. It discusses how to add these icons to a Xamarin.iOS project, how to modify the Info.plist file, and how to manage the app's icon programmatically.
+title: Xamarin 中的替代應用程式圖示
+description: 本檔說明如何在 Xamarin 中使用替代的應用程式圖示。 它討論如何將這些圖示新增至 Xamarin 專案、如何修改 plist 檔案，以及如何以程式設計方式管理應用程式的圖示。
 ms.prod: xamarin
 ms.assetid: 302fa818-33b9-4ea1-ab63-0b2cb312299a
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: ed31f1dca3f823ccd0374b4fcbac1bbd9e80e022
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e90ee165073dbbe792e4ca1916463517ad86255d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73004309"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572295"
 ---
-# <a name="alternate-app-icons-in-xamarinios"></a>Alternate App Icons in Xamarin.iOS
+# <a name="alternate-app-icons-in-xamarinios"></a>Xamarin 中的替代應用程式圖示
 
-_This article covers using alternate app icons in Xamarin.iOS._
+_本文說明如何在 Xamarin 中使用替代的應用程式圖示。_
 
-Apple has added several enhancements to iOS 10.3 that allow an app to manage its icon:
+Apple 已將數個增強功能新增至 iOS 10.3，讓應用程式可以管理其圖示：
 
-- `ApplicationIconBadgeNumber` - Gets or sets the badge of the app icon in the Springboard.
-- `SupportsAlternateIcons` - If `true` the app has an alternate set of icons.
-- `AlternateIconName` - Returns the name of the alternate icon currently selected or `null` if using the primary icon.
-- `SetAlternameIconName` - Use this method to switch the app's icon to the given alternate icon.
+- `ApplicationIconBadgeNumber`-取得或設定跳板中應用程式圖示的徽章。
+- `SupportsAlternateIcons`-如果 `true` 應用程式有替代的圖示集。
+- `AlternateIconName`-傳回目前選取的替代圖示或 `null` 使用主要圖示的名稱。
+- `SetAlternameIconName`-使用此方法可將應用程式的圖示切換至指定的替代圖示。
 
 ![](alternate-app-icons-images/icons04.png "A sample alert when an app changes its icon")
 
-<a name="Adding-Alternate-Icons" />
+<a name="Adding-Alternate-Icons"></a>
 
-## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>Adding Alternate Icons to a Xamarin.iOS Project
+## <a name="adding-alternate-icons-to-a-xamarinios-project"></a>將替代圖示新增至 Xamarin iOS 專案
 
-To allow an app to switch to an alternate icon, a collection of icon images will need to be included in the Xamarin.iOS app project. These images cannot be added to the project using the typical `Assets.xcassets` method, they must be added to the **Resources** folder directly.
+若要允許應用程式切換至替代圖示，必須將圖示影像的集合包含在 Xamarin iOS 應用程式專案中。 這些映射無法使用一般方法加入至專案 `Assets.xcassets` ，必須直接新增至**Resources**資料夾。
 
-請執行下列動作：
+執行下列動作：
 
-1. Select the required icon images in a folder, select all and drag them to the **Resources** folder in the **Solution Explorer**:
+1. 選取資料夾中的必要圖示影像，選取 [全部]，並將其拖曳至 [**方案總管**中的 [**資源**] 資料夾：
 
     ![](alternate-app-icons-images/icons00.png "Select the icons images from a folder")
 
-2. When prompted, select **Copy**, **Use the same action for all selected files** and click the **OK** button:
+2. 出現提示時，選取 [**複製**]，**對所有選取的檔案使用相同的動作**，然後按一下 [**確定]** 按鈕：
 
     ![](alternate-app-icons-images/icons02.png "The Add File to Folder dialog box")
 
-3. The **Resources** folder should look like the following when completed:
+3. 完成時， **Resources**資料夾應如下所示：
 
     ![](alternate-app-icons-images/icons01.png "The Resources folder should look like this")
 
-<a name="Modifying-the-Info.plist-File" />
+<a name="Modifying-the-Info.plist-File"></a>
 
-## <a name="modifying-the-infoplist-file"></a>Modifying the Info.plist File
+## <a name="modifying-the-infoplist-file"></a>修改 plist 檔案
 
-With the required images added to the **Resources** folder, the [CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13) key will need to be added to the project's **Info.plist** file. This key will define the name of the new icon and the images that compose it.
+將必要的映射新增至**Resources**資料夾之後，必須將[CFBundleAlternateIcons](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/TP40009249-SW13)索引鍵新增至專案的**plist**檔案。 此機碼會定義新圖示的名稱，以及構成它的影像。
 
-請執行下列動作：
+執行下列動作：
 
-1. 在 [方案總管]中，按兩下 [Info.plist] 檔案以開啟它進行編輯。
-2. Switch to the **Source** view.
-3. Add a **Bundle icons** key and leave the **Type** set to **Dictionary**.
-4. Add a `CFBundleAlternateIcons` key and set the **Type** to **Dictionary**.
-5. Add a `AppIcon2` key and set the **Type** to **Dictionary**. This will be the name of the new alternate app icon set.
-6. Add a `CFBundleIconFiles` key and set the **Type** to **Array**
-7. Add a new string to the `CFBundleIconFiles` array for each icon file leaving out the extension and the `@2x`, `@3x`, etc. suffixes (example `100_icon`). Repeat this step for every file that makes up the alternate icon set.
-8. Add a `UIPrerenderedIcon` key to the `AppIcon2` dictionary, set the **Type** to **Boolean** and the value to **No**.
+1. 在 [方案總管]**** 中，按兩下 [Info.plist]**** 檔案以開啟它進行編輯。
+2. 切換至 [**來源**] 視圖。
+3. 新增配套**圖示**金鑰，並將**類型**設定為 [**字典**]。
+4. 新增 `CFBundleAlternateIcons` 金鑰，並將**類型**設定為 [**字典**]。
+5. 新增 `AppIcon2` 金鑰，並將**類型**設定為 [**字典**]。 這會是新的替代應用程式圖示集的名稱。
+6. 加入索引 `CFBundleIconFiles` 鍵，並將**類型**設定為**陣列**
+7. 針對每個圖示檔，將新字串新增至 `CFBundleIconFiles` 陣列，以省略副檔名以及 `@2x` 、 `@3x` 等等尾碼（範例 `100_icon` ）。 針對組成替代圖示集的每個檔案重複此步驟。
+8. 將索引 `UIPrerenderedIcon` 鍵加入 `AppIcon2` 字典中，將**類型**設定為**布林**值，並將值設為 [**否**]。
 9. 將變更儲存到檔案。
 
-The resulting **Info.plist** file should look like the following when completed:
+完成時，產生的**plist**檔案看起來應該如下所示：
 
 ![](alternate-app-icons-images/icons03.png "The completed Info.plist file")
 
-Or like this if opened in a text editor:
+或者，如果在文字編輯器中開啟，就像這樣：
 
 ```xml
 <key>CFBundleIcons</key>
@@ -105,13 +105,13 @@ Or like this if opened in a text editor:
 </dict>
 ```
 
-<a name="Managing-the-Apps-Icon" />
+<a name="Managing-the-Apps-Icon"></a>
 
-## <a name="managing-the-apps-icon"></a>Managing the App's Icon 
+## <a name="managing-the-apps-icon"></a>管理應用程式的圖示 
 
-With the icon images included in the Xamarin.iOS project and the **Info.plist** file correctly configured, the developer can use one of many new features added to iOS 10.3 to control the app's icon.
+使用包含在**plist**檔案中的圖示影像正確設定後，開發人員可以使用新增至 ios 10.3 的眾多新功能之一來控制應用程式的圖示。
 
-The `SupportsAlternateIcons` property of the `UIApplication` class allows the developer to see if an app supports alternate icons. 例如:
+`SupportsAlternateIcons`類別的屬性 `UIApplication` 可讓開發人員查看應用程式是否支援其他圖示。 例如：
 
 ```csharp
 // Can the app select a different icon?
@@ -119,14 +119,14 @@ PrimaryIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIco
 AlternateIconButton.Enabled = UIApplication.SharedApplication.SupportsAlternateIcons;
 ```
 
-The `ApplicationIconBadgeNumber` property of the `UIApplication` class allows the developer to get or set the current badge number of the app icon in the Springboard. 預設值為零 (0)。 例如:
+`ApplicationIconBadgeNumber`類別的屬性 `UIApplication` 可讓開發人員取得或設定跳板中應用程式圖示的目前徽章編號。 預設值為零 (0)。 例如：
 
 ```csharp
 // Set the badge number to 1
 UIApplication.SharedApplication.ApplicationIconBadgeNumber = 1;
 ```
 
-The `AlternateIconName` property of the `UIApplication` class allows the developer to get the name of the currently selected alternate app icon or it returns `null` if the app is using the Primary Icon. 例如:
+`AlternateIconName`類別的屬性 `UIApplication` 可讓開發人員取得目前選取之替代應用程式圖示的名稱，或 `null` 如果應用程式使用主要圖示，則會傳回。 例如：
 
 ```csharp
 // Get the name of the currently selected alternate
@@ -138,7 +138,7 @@ if (name != null ) {
 }
 ```
 
-`UIApplication` 類別的 `SetAlternameIconName` 屬性可讓開發人員變更應用程式圖示。 將圖示的名稱傳遞至 select 或 `null`，以回到主要圖示。 例如:
+`SetAlternameIconName`類別的屬性 `UIApplication` 可讓開發人員變更應用程式圖示。 將圖示的名稱傳遞至 select 或 `null` ，以回到主要圖示。 例如：
 
 ```csharp
 partial void UsePrimaryIcon (Foundation.NSObject sender)
@@ -164,7 +164,7 @@ partial void UseAlternateIcon (Foundation.NSObject sender)
 
 ![](alternate-app-icons-images/icons05.png "A sample alert when an app changes to the primary icon")
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 

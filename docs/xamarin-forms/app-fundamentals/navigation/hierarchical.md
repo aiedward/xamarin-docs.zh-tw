@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 92774cffdfed7412bdb4d44993dc221993ad56c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137863"
+標題：「階層式導覽」描述：「本文將示範如何使用 NavigationPage 類別，在一堆後進先出（LIFO）的頁面中執行導覽。」
+assetid： C8A5EEFF-5A3B-4163-838A-147EE3939FAA ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/10/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="hierarchical-navigation"></a>階層式導覽
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
@@ -32,8 +18,6 @@ _NavigationPage 類別提供階層式導覽體驗，讓使用者能夠視需要�
 ![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
 
 導覽方法是由 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) 任何衍生類型上的屬性所公開 [`Page`](xref:Xamarin.Forms.Page) 。 這些方法可讓您將頁面推送到導覽堆疊上、從導覽堆疊中快顯頁面，以及執行堆疊操作。
-
-<a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>執行導覽
 
@@ -154,8 +138,6 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 
 只要基礎平台支援，將 `boolean` 參數設定為 `false` 會停用頁面轉換動畫，將此參數設定為 `true` 會啟用頁面轉換動畫。 不過，缺少此參數的 push 和 pop 方法預設會啟用動畫。
 
-<a name="Passing_Data_when_Navigating" />
-
 ## <a name="passing-data-when-navigating"></a>巡覽時傳遞資料
 
 有時必須在巡覽期間將某頁資料傳遞到另一頁。 完成這項工作的兩種方法是透過頁面檢查程式來傳遞資料，並將新頁面設定 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 為數據。 現在將依序討論各種方法。
@@ -274,8 +256,6 @@ public class SecondPageCS : ContentPage
 ![](hierarchical-images/passing-data-bindingcontext.png "Data Passed Through a BindingContext")
 
 如需有關資料繫結的詳細資訊，請參閱[資料繫結基本概念](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
-
-<a name="Manipulating_the_Navigation_Stack" />
 
 ## <a name="manipulating-the-navigation-stack"></a>操作導覽堆疊
 

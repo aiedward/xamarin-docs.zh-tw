@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028359"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569688"
 ---
 # <a name="testing-on-apple-watch-devices"></a>在 Apple Watch 裝置上進行測試
 
@@ -22,11 +22,11 @@ ms.locfileid: "73028359"
 - [建立開發提供設定檔](#profiles)，然後
 - 在 Apple Watch 上[部署和測試](#testing)。
 
-<a name="devices" />
+<a name="devices"></a>
 
 ## <a name="devices"></a>裝置
 
-在實際的 iPhone 或 iPad 上測試 iOS 應用程式，一律需要在開發人員中心註冊裝置。 裝置清單看起來像這樣（按一下加號 **+** 新增裝置）：
+在實際的 iPhone 或 iPad 上測試 iOS 應用程式，一律需要在開發人員中心註冊裝置。 裝置清單看起來像這樣（按一下加號以新增 **+** 裝置）：
 
 ![](device-images/devices-sml.png "The device list looks like this")
 
@@ -44,7 +44,7 @@ ms.locfileid: "73028359"
 
 如果您編輯現有的布建設定檔以下載並重新安裝，請別忘了！
 
-<a name="profiles" />
+<a name="profiles"></a>
 
 ## <a name="development-provisioning-profiles"></a>開發布建設定檔
 
@@ -58,13 +58,13 @@ ms.locfileid: "73028359"
 
 ![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
 
-您可以選取 **組建 > iOS**套件組合簽署 畫面，然後選取 **發行** 或  **Debug IPhone**設定，以確認**專案選項**中的布建設定檔。
+您可以選取 [**組建 > [iOS**套件組合簽署] 畫面，然後選取 [**發行**] 或 [ **Debug] IPhone**設定，以確認**專案選項**中的布建設定檔。
 
 [布建**設定檔**] 清單會顯示所有相符的設定檔，您應該會看到您在此下拉式清單中建立的相符設定檔：
 
 ![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-on-a-watch-device"></a>在監看式裝置上測試
 
@@ -95,7 +95,7 @@ ms.locfileid: "73028359"
 
 在以 DEBUG 模式建立以部署至 Apple Watch 裝置時，可能會發生這種情況。
 
-若要*暫時*解決此問題，請停用 監看式擴充功能專案選項 中的 累加**組建** **> 組建 > watchOS 組建** 視窗：
+若要*暫時*解決此問題，請停用 [監看式擴充功能專案選項] 中的 [累加**組建**] **> 組建 > watchOS 組建**] 視窗：
 
 [![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
 
@@ -103,7 +103,7 @@ ms.locfileid: "73028359"
 
 ### <a name="watch-app-fails-to-start-while-debugging-on-device"></a>在裝置上進行偵錯工具時，監看式應用程式無法啟動
 
-嘗試在實體裝置上進行監看式應用程式的偵測時，只會顯示 & 載入 微調按鈕的圖示（最後是超時）。 這會在未來的版本中解決;因應措施是執行發行組建（這不允許進行調試）。
+嘗試在實體裝置上進行監看式應用程式的偵測時，只會顯示 & 載入] 微調按鈕的圖示（最後是超時）。 這會在未來的版本中解決;因應措施是執行發行組建（這不允許進行調試）。
 
 ### <a name="invalid-application-executable-or-application-verification-failed"></a>不正確應用程式可執行檔或應用程式驗證失敗
 
@@ -120,7 +120,7 @@ Invalid executable/Application Verification Failed
 
 - 用於測試的開發布建設定檔未包含監看裝置;或者，將 Watch 新增至布建設定檔之後，就不會重新下載並重新安裝它們。 請遵循指示來[正確設定布建設定檔](#profiles)。
 
-- 如果**IOS 裝置記錄**檔包含 `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` 則監看式應用程式的**資訊。 plist**的**MinimumOSVersion**值錯誤。
+- 如果**IOS 裝置記錄**檔包含， `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` 則監看式應用程式的**Info. Plist**具有錯誤的**MinimumOSVersion**值。
   這應該是**8.2** -如果您已安裝 Xcode 6.3，可能需要手動編輯來源以將其設定為8.2。
 
 - Watch 應用程式的**權利。 plist**不正確地啟用了不應具備的權利（例如應用程式群組）。

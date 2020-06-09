@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: cb109055b476fee6d34041940c682187074f4e7d
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: b8b3ca4892e849f9bf08ca2910798c4b2d0f9f6f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295439"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573461"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -35,7 +35,7 @@ Xamarin Profiler 是獨立應用程式，並已與 Visual Studio for Mac 和 Vis
 下載適用于您平臺的安裝套件：
 
 - [**macOS**](https://dl.xamarin.com/profiler/profiler-mac-1.6.13-11.pkg)
-- [**時段**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
+- [**Windows**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
 
 下載完成後，請啟動安裝程式，將 Xamarin Profiler 新增至您的系統。
 
@@ -55,15 +55,15 @@ Xamarin Profiler 為開發人員提供一種方法，讓您能夠從 Visual Stud
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-目前，Xamarin Profiler 可用來測試 Mac 上的 Xamarin. iOS、Xamarin 和 Xamarin. Mac 應用程式（經由 Visual Studio for Mac）。 分析工具與 IDE 是不同的進程，因此除了從 Visual Studio for Mac 啟動之外，它也可以做為獨立的應用程式，以檢查已從[mono 記錄](https://www.mono-project.com/docs/debug+profile/profile/profiler/)分析工具產生的 .exe 和 `.mlpd` 檔案。
+目前，Xamarin Profiler 可用來測試 Mac 上的 Xamarin. iOS、Xamarin 和 Xamarin. Mac 應用程式（經由 Visual Studio for Mac）。 分析工具與 IDE 是不同的進程，因此除了從 Visual Studio for Mac 啟動之外，它也可以做為獨立的應用程式，以檢查已 `.mlpd` 從[mono 記錄 profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)產生的 .exe 和檔案。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-目前，Xamarin Profiler 可以用來測試 Windows 上的 Xamarin Android 應用程式（透過 Visual Studio 和 Visual Studio for Mac）。 分析工具與 IDE 是不同的進程，因此除了從 Visual Studio 啟動之外，它也可以做為獨立的應用程式，以檢查已從[mono 記錄](https://www.mono-project.com/docs/debug+profile/profile/profiler/)分析工具產生的 .exe 和 `.mlpd` 檔案。
+目前，Xamarin Profiler 可以用來測試 Windows 上的 Xamarin Android 應用程式（透過 Visual Studio 和 Visual Studio for Mac）。 分析工具與 IDE 是不同的進程，因此除了從 Visual Studio 啟動之外，它也可以做為獨立的應用程式，以檢查已 `.mlpd` 從[mono 記錄 profiler](https://www.mono-project.com/docs/debug+profile/profile/profiler/)產生的 .exe 和檔案。
 
 -----
 
-<a name="Profiler_Support" />
+<a name="Profiler_Support"></a>
 
 ## <a name="profiler-support"></a>Profiler 支援
 
@@ -106,7 +106,7 @@ Xamarin Profiler 的支援可在下列平臺上取得：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  **> IOS 組建的屬性 > 啟用分析**
+  **> iOS 組建的屬性 > 啟用分析**
 
   ![Visual Studio 中的 [iOS 選項] 對話方塊](images/ios-project-options-vs.png)
 
@@ -186,11 +186,11 @@ Xamarin Profiler 是由五個區段組成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[Visual Studio for Mac 中的 ![Profiler 區段](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
+[![Visual Studio for Mac 中的 Profiler 區段](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[Visual Studio 中的 ![Profiler 區段](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
+[![Visual Studio 中的 Profiler 區段](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -222,11 +222,11 @@ Xamarin Profiler 是由五個區段組成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![配置 索引標籤](images/allocations3.png)](images/allocations3.png#lightbox) 
+  [![[配置] 索引標籤](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![配置 索引標籤](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
+  [![[配置] 索引標籤](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
@@ -238,11 +238,11 @@ Xamarin Profiler 是由五個區段組成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![呼叫樹 索引標籤](images/allocations2.png)](images/allocations2.png#lightbox) 
+  [![[呼叫樹] 索引標籤](images/allocations2.png)](images/allocations2.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![呼叫樹 索引標籤](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
+  [![[呼叫樹] 索引標籤](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -250,11 +250,11 @@ Xamarin Profiler 是由五個區段組成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![快照集 索引標籤](images/allocations4.png)](images/allocations4.png#lightbox) 
+  [![快照集索引標籤](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![快照集 索引標籤](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
+  [![快照集索引標籤](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -266,15 +266,15 @@ Xamarin Profiler 是由五個區段組成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Time Profiler 檢測](images/time1.png)](images/time1.png#lightbox) 
+[![時間分析工具檢測](images/time1.png)](images/time1.png#lightbox) 
 
-[![Time Profiler 檢測-範例清單](images/time3.png)](images/time3.png#lightbox) 
+[![時間分析工具檢測-範例清單](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![Time Profiler 檢測](images/time1-vs.png)](images/time1-vs.png#lightbox) 
+[![時間分析工具檢測](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![Time Profiler 檢測-範例清單](images/time3-vs.png)](images/time3-vs.png#lightbox) 
+[![時間分析工具檢測-範例清單](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
@@ -282,17 +282,17 @@ Xamarin Profiler 是由五個區段組成，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![Time Profiler 檢測-呼叫樹狀結構](images/time2.png)](images/time2.png#lightbox) 
+  [![時間分析工具檢測-呼叫樹狀結構](images/time2.png)](images/time2.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![Time Profiler 檢測-呼叫樹狀結構](images/time2-vs.png)](images/time2-vs.png#lightbox) 
+  [![時間分析工具檢測-呼叫樹狀結構](images/time2-vs.png)](images/time2-vs.png#lightbox) 
 
 -----
 
 ### <a name="cycles"></a>Cycles
 
-透過使用C#和F# managed 程式碼，可能會很常見，而且很容易就能建立對物件的參考，而永遠不會加以處置。 此檢測可讓您找出這些物件，並顯示應用程式中所參考的迴圈。
+透過使用 c # 和 F # managed 程式碼，它可能很常見，而且很容易就能建立對永遠不會處置之物件的參考。 此檢測可讓您找出這些物件，並顯示應用程式中所參考的迴圈。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -334,7 +334,7 @@ SGen 是一種產生的 GC，它會將應用程式的物件配置成三個堆積
 
 如需記憶體管理的詳細資訊，請參閱[記憶體和效能最佳做法](~/cross-platform/deploy-test/memory-perf-best-practices.md)指南。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 在本指南中，我們探討了何種分析，以及它對開發人員的好處。 我們接著引進了 Xamarin Profiler，提供一些歷程記錄和資訊給它的運作方式。 最後，我們會球隊遠征 Xamarin Profiler 的功能，並探索配置和時間分析工具檢測。
 

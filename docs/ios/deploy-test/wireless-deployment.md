@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: b0eb471bd41bb38d62ced38ed66cfa0dfee37bbf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 58a7b6af2b21d2ca2106f78b833ff846c9daa7ac
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023415"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572607"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>適用於 Xamarin.iOS 和 tvOS 應用程式的無線部署
 
@@ -21,7 +21,7 @@ ms.locfileid: "73023415"
 
 本指南會詳細說明如何配對，然後透過網路部署至裝置。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 Visual Studio for Mac 和 Visual Studio 皆提供無線部署功能。
 
@@ -53,7 +53,7 @@ Mac 組建主機上應該安裝下列元件：
 
 下列配對程序應該只需在每個裝置上進行一次。 Xcode 會保留連線設定。
 
-<a name="pair" />
+<a name="pair"></a>
 
 ### <a name="pairing-an-ios-device-with-xcode"></a>讓 iOS 裝置與 Xcode 配對
 
@@ -71,7 +71,7 @@ Mac 組建主機上應該安裝下列元件：
 
 4. 在 Xcode 的 [找到的項目]**** 區域中選取 Apple TV，然後輸入 Apple TV 上顯示的驗證碼。
 
-5. 按一下 [連接]**** 按鈕。 成功配對時，Apple TV 旁邊會出現網路連線圖示。
+5. 按一下 [連線] 按鈕。 成功配對時，Apple TV 旁邊會出現網路連線圖示。
 
 ## <a name="deploy-to-a-device"></a>部署到裝置
 

@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: d84752afd5579216272895f750522a8f38ece34a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8619fa73a4dbaabe1e161c634b6a794b701d5135
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030797"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570853"
 ---
 # <a name="tvos-resources-and-data-storage-in-xamarin"></a>在 Xamarin 中 tvOS 資源和資料存放區
 
 _本文涵蓋在 tvOS 應用程式中使用資源和持續性資料儲存。_
 
-<a name="tvOS-Resource-Limitations" />
+<a name="tvOS-Resource-Limitations"></a>
 
 ## <a name="tvos-resource-limitations"></a>tvOS 資源限制
 
-不同于 iOS 裝置，新的 Apple TV 針對 tvOS 應用程式或資料提供非常有限的持續性本機儲存體。 對於非常小型的專案（例如使用者喜好設定），您的 tvOS 應用程式仍可存取[限制為 500 KB 資料](https://forums.developer.apple.com/message/50696#50696)的 `NSUserDefaults`。 不過，如果您的 tvOS 應用程式需要保存較大量的資訊，它就必須從[iCloud](#iCloud-Data-Storage)儲存和取出該資料。
+不同于 iOS 裝置，新的 Apple TV 針對 tvOS 應用程式或資料提供非常有限的持續性本機儲存體。 對於非常小的專案（例如使用者喜好設定），您的 tvOS 應用程式仍可存取， `NSUserDefaults` [限制為 500 KB 的資料](https://forums.developer.apple.com/message/50696#50696)。 不過，如果您的 tvOS 應用程式需要保存較大量的資訊，它就必須從[iCloud](#iCloud-Data-Storage)儲存和取出該資料。
 
 此外，tvOS 會將 Apple TV 應用程式的大小限制為 200 MB。 如果您的應用程式需要超過此大小的資源，則必須使用[隨選資源](#On-Demand-Resources)（最多2個）來封裝和載入它們。 基於這些限制，請務必正確地下載額外的資產，以提供最佳的應用程式使用者體驗。 如需詳細資訊，請參閱 Apple 的[隨選資源指南](https://developer.apple.com/library/prerelease/tvos/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html#//apple_ref/doc/uid/TP40015083)。
 
-<a name="Non-Persistent-Downloads" />
+<a name="Non-Persistent-Downloads"></a>
 
 ## <a name="non-persistent-downloads"></a>非持續性下載
 
@@ -37,13 +37,13 @@ _本文涵蓋在 tvOS 應用程式中使用資源和持續性資料儲存。_
 > [!IMPORTANT]
 > 雖然您可以視需要下載其他資產和資源，但 Apple 會警告您在應用程式快取中使用所有的空間，因為這可能會導致無法預期的結果。
 
-<a name="Managing-Resources" />
+<a name="Managing-Resources"></a>
 
 ## <a name="managing-resources"></a>管理資源
 
 如上所述，因為可供 tvOS 應用程式使用的資訊有限、非持續性儲存，所以這些限制需要謹慎規劃，才能為您的 tvOS 應用程式建立絕佳的使用者體驗。
 
-<a name="iCloud-Data-Storage" />
+<a name="iCloud-Data-Storage"></a>
 
 ### <a name="icloud-data-storage"></a>iCloud 資料存放區
 
@@ -57,7 +57,7 @@ _本文涵蓋在 tvOS 應用程式中使用資源和持續性資料儲存。_
 > [!IMPORTANT]
 > Apple [提供工具](https://developer.apple.com/support/allowing-users-to-manage-data/)協助開發人員適當地處理歐盟一般資料保護規定 (GDPR)。
 
-<a name="On-Demand-Resources" />
+<a name="On-Demand-Resources"></a>
 
 ### <a name="on-demand-resources"></a>隨選資源
 
@@ -72,7 +72,7 @@ _本文涵蓋在 tvOS 應用程式中使用資源和持續性資料儲存。_
 > [!IMPORTANT]
 > 請小心在應用程式必須下載隨選資源的次數和個別下載的大小之間取得適當的平衡。 如果遊戲經常中斷以下載新的內容，或如果單次下載花費太多時間，使用者可能會對您的應用程式感到挫折。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>總結
 

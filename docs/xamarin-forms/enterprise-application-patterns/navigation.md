@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9b2ee9fb02a8fd18d69e93424dc76bfd54fafc86
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130893"
+標題：「企業應用程式流覽」描述：「本章說明 eShopOnContainers 行動應用程式如何從視圖模型執行 view model first 導覽。」
+assetid： 4cad57b5-7fe4-4527-a988-d9b60c9620b4 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="enterprise-app-navigation"></a>企業應用程式流覽
 
 Xamarin.Forms包含頁面導覽的支援，這通常是因為內部邏輯驅動狀態變更而導致使用者與 UI 互動或從應用程式本身進行互動。 不過，在使用 ViewModel （MVVM）模式的應用程式中執行流覽可能會很複雜，因為必須符合下列挑戰：
@@ -82,7 +68,7 @@ builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstanc
 NavigationService = ViewModelLocator.Resolve<INavigationService>();
 ```
 
-這 `NavigationService` 會傳回儲存在 Autofac 相依性插入容器（由類別中的方法所建立）之物件的參考 `InitNavigation` `App` 。 如需詳細資訊，請參閱在[應用程式啟動時進行流覽](#navigating_when_the_app_is_launched)。
+這 `NavigationService` 會傳回儲存在 Autofac 相依性插入容器（由類別中的方法所建立）之物件的參考 `InitNavigation` `App` 。 如需詳細資訊，請參閱在[應用程式啟動時進行流覽](#navigating-when-the-app-is-launched)。
 
 類別會將 `ViewModelBase` `NavigationService` 實例儲存在 `NavigationService` 類型的屬性中 `INavigationService` 。 因此，所有衍生自類別的視圖模型類別，都 `ViewModelBase` 可以使用 `NavigationService` 屬性來存取介面所指定的方法 `INavigationService` 。 這可避免將 `NavigationService` 物件從 Autofac 相依性插入容器插入每個 view 模型類別的額外負荷。
 
@@ -129,7 +115,7 @@ public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel�
 }
 ```
 
-每個方法都可讓衍生自類別的任何 view 模型類別，藉 `ViewModelBase` 由叫用方法來執行階層式導覽 `InternalNavigateToAsync` 。 此外，第二種 `NavigateToAsync` 方法可將導覽資料指定為傳遞至所流覽之視圖模型的引數，通常用來執行初始化。 如需詳細資訊，請參閱[導覽期間傳遞參數](#passing_parameters_during_navigation)。
+每個方法都可讓衍生自類別的任何 view 模型類別，藉 `ViewModelBase` 由叫用方法來執行階層式導覽 `InternalNavigateToAsync` 。 此外，第二種 `NavigateToAsync` 方法可將導覽資料指定為傳遞至所流覽之視圖模型的引數，通常用來執行初始化。 如需詳細資訊，請參閱[導覽期間傳遞參數](#passing-parameters-during-navigation)。
 
 `InternalNavigateToAsync`方法會執行流覽要求，如下列程式碼範例所示：
 
@@ -188,16 +174,14 @@ private Page CreatePage(Type viewModelType, object parameter)
 - 視圖模型位於中。Viewmodel 子命名空間。
 - 視圖名稱會對應至視圖模型名稱，並移除「模型」。
 
-當視圖具現化時，它會與其對應的視圖模型相關聯。 如需如何發生這種情況的詳細資訊，請參閱[使用視圖模型定位器自動建立視圖模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)。
+當視圖具現化時，它會與其對應的視圖模型相關聯。 如需如何發生這種情況的詳細資訊，請參閱[使用視圖模型定位器自動建立視圖模型](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)。
 
 如果要建立的視圖為 `LoginView` ，則會將它包裝在類別的新實例中， `CustomNavigationView` 並指派給 [`Application.Current.MainPage`](xref:Xamarin.Forms.Application.MainPage) 屬性。 否則， `CustomNavigationView` 系統會抓取實例，並假設它不是 null，則會叫用方法，將 [`PushAsync`](xref:Xamarin.Forms.NavigationPage) 建立的視圖推送到導覽堆疊上。 不過，如果所抓取的 `CustomNavigationView` 實例是 `null` ，所建立的視圖就會包裝在類別的新實例中 `CustomNavigationView` ，並指派給 `Application.Current.MainPage` 屬性。 這項機制可確保在流覽期間，如果頁面是空的，且包含資料，則會在導覽堆疊中正確新增分頁。
 
 > [!TIP]
 > 考慮快取頁面。 頁面快取會導致目前未顯示之視圖的記憶體耗用量。 不過，在沒有頁面快取的情況下，這表示每次流覽新頁面時，都會發生 XAML 剖析和頁面的結構，而且它的視圖模型會對複雜頁面造成效能影響。 針對不使用過多控制項的設計良好頁面，效能應該就已足夠。 不過，如果遇到頁面載入速度緩慢的情況，頁面快取可能會有説明。
 
-在建立並流覽至視圖之後， `InitializeAsync` 會執行視圖相關聯視圖模型的方法。 如需詳細資訊，請參閱[導覽期間傳遞參數](#passing_parameters_during_navigation)。
-
-<a name="navigating_when_the_app_is_launched" />
+在建立並流覽至視圖之後， `InitializeAsync` 會執行視圖相關聯視圖模型的方法。 如需詳細資訊，請參閱[導覽期間傳遞參數](#passing-parameters-during-navigation)。
 
 ### <a name="navigating-when-the-app-is-launched"></a>在應用程式啟動時進行流覽
 
@@ -230,9 +214,7 @@ public Task InitializeAsync()
 
 `MainView`如果應用程式具有快取存取權杖（用於驗證），則會流覽至。 否則， `LoginView` 會流覽至。
 
-如需有關 Autofac 相依性插入容器的詳細資訊，請參閱相依性[插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)。
-
-<a name="passing_parameters_during_navigation" />
+如需有關 Autofac 相依性插入容器的詳細資訊，請參閱相依性[插入簡介](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)。
 
 ### <a name="passing-parameters-during-navigation"></a>導覽期間傳遞參數
 
@@ -265,8 +247,6 @@ public override async Task InitializeAsync(object navigationData)
 ```
 
 這個方法會在 `Order` 導覽作業期間，抓取傳入視圖模型的實例，並使用它來抓取實例的完整訂單詳細資料 `OrderService` 。
-
-<a name="invoking_navigation_using_behaviors" />
 
 ### <a name="invoking-navigation-using-behaviors"></a>使用行為叫用導覽
 
@@ -303,7 +283,7 @@ private async Task NavigateAsync(string url)
 
 在導覽作業期間，應用程式可能需要與使用者互動，讓使用者可以確認或取消導覽。 這可能是必要的，例如，當使用者嘗試在完全完成資料輸入頁面之前進行流覽。 在此情況下，應用程式應該會提供通知，讓使用者可以從頁面流覽，或在流覽作業發生前取消該作業。 使用來自通知的回應來控制是否叫用導覽，即可在視圖模型類別中達成此目的。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 Xamarin.Forms包含頁面導覽的支援，這通常是因使用者與 UI 的互動，或來自應用程式本身的結果，因為內部邏輯驅動狀態變更的結果。 不過，在使用 MVVM 模式的應用程式中執行流覽可能會很複雜。
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 593d6a8b30d5ed0e143d1c013849d2bef571f6dc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140292"
+標題：「在 SkiaSharp 點陣圖上建立和繪製」描述：「瞭解如何建立 SkiaSharp 點陣圖，然後藉由根據這些點陣圖建立畫布來繪製它們。」
+skiasharp 的 assetid： 79BD3266-D457-4E50-BDDF-33450035FA0F author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>在 SkiaSharp 點陣圖上建立和繪製
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -341,8 +327,6 @@ public class PixelizedImagePage : ContentPage
 
 [![Pixelize 影像](drawing-images/PixelizeImage.png "Pixelize 影像")](drawing-images/PixelizeImage-Large.png#lightbox)
 
-<a name="rotating-bitmaps" />
-
 ## <a name="rotating-bitmaps"></a>旋轉點陣圖
 
 另一個常見的工作是旋轉點陣圖。 從 iPhone 或 iPad 相片媒體櫃抓取點陣圖時，這特別有用。 除非拍攝相片時，裝置是以特定的方向保留，否則圖片可能會反轉或橫向。
@@ -388,7 +372,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-這兩種方法會用於[**裁剪 SkiaSharp 點陣圖**](cropping.md#tile-division)一文中所述的**相片謎題**頁面。
+這兩種方法會用於[**裁剪 SkiaSharp 點陣圖**](cropping.md#cropping-skiasharp-bitmaps)一文中所述的**相片謎題**頁面。
 
 一種程式，可讓使用者在90度的增量中旋轉點陣圖，只需要執行一個函式來旋轉90度。 然後，使用者可以重複執行這個函式，以90度的任何增量旋轉。
 
