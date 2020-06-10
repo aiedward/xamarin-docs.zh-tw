@@ -1,22 +1,8 @@
 ---
-title: 中的 XAML 自訂命名空間架構Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 41a95b1a82ab8aa1f6938e5a2bcdebcef368e72d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138160"
+標題：「xaml 自訂命名空間架構在「 Xamarin.Forms 描述：」中，您可以使用 XmlnsDefinitionAttribute 類別來定義 xaml 自訂命名空間架構，這會指定自訂 URL 與一或多個 CLR 命名空間之間的對應。 然後，自訂命名空間架構就可以在 XAML 命名空間宣告中使用。」
+assetid： FDF201A1-8C35-4569-A728-F9B0A0C5B31A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/21/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>中的 XAML 自訂命名空間架構Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)

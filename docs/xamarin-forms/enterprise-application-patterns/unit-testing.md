@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134650"
+標題：「企業應用程式的單元測試」描述：「本章節說明如何在 eShopOnContainers 行動應用程式中執行單元測試」。
+assetid： 4af82e52-f99b-4cad-b278-1745f190c240 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="unit-testing-enterprise-apps"></a>對企業應用程式進行單元測試
 
 行動應用程式有獨特的問題，而桌上型電腦和 web 應用程式都不需要擔心。 行動使用者會因其使用的裝置、網路連線能力、服務的可用性和各種其他因素而有所不同。 因此，行動裝置應用程式應該經過測試，因為它們會在現實世界中用來改善其品質、可靠性和效能。 應用程式必須執行許多類型的測試，包括單元測試、整合測試和使用者介面測試，而單元測試是最常見的測試形式。

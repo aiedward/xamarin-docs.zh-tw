@@ -1,20 +1,8 @@
 ---
-title: Xamarin.Essentials平臺擴充功能
-description: Xamarin.Essentials當必須使用像是矩形、大小和點等平臺類型時，提供數種平臺擴充方法。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3266d3870dc0d1ddef747168b2ac6b4d397a7c33
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135352"
+標題：「 Xamarin.Essentials 平臺延伸模組」描述：」 Xamarin.Essentials 提供數種平臺擴充方法，以使用像是矩形、大小和點等平臺類型。」
+assetid： AB4D198A-4FD7-479E-8627-01F887A6D056 author： jamesmontemagno ms-chap： jamont ms. date： 03/13/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials：平臺擴充功能
 
 Xamarin.Essentials當必須使用像是矩形、大小和點等平臺類型時，提供數種平臺擴充方法。 這代表您可在 `System` 版的這些類型 (其 iOS、Android 及 UWP 特定類型) 間轉換。
@@ -121,7 +109,7 @@ var platform = system.ToPlatformPoint();
 var system2 = platform.ToSystemPoint();
 ```
 
-### <a name="size"></a>Size
+### <a name="size"></a>大小
 
 ```csharp
 var system = new System.Drawing.Size(width, height);

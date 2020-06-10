@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0fecac02c44e3ba721dd4625e7bee264c6869d0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134754"
+title： "顯示 SkiaSharp 點陣圖" 描述： "瞭解如何以圖元大小顯示 SkiaSharp 點陣圖，並展開以填滿矩形，同時保留外觀比例。"
+skiasharp 的 assetid： 8E074F8D-4715-4146-8CC0-FD7A8290EDE9 author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="displaying-skiasharp-bitmaps"></a>顯示 SkiaSharp 點陣圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

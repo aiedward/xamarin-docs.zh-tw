@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsShell 頁面設定
-description: Shell 類別會定義可用於設定 Shell 應用程式中頁面外觀的附加屬性 Xamarin.Forms 。 這包括設定頁面色彩、停用導覽列、停用索引標籤列，以及在導覽列中顯示檢視。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 102070fc478b42e9fbc0c7d0006197c81a49c9b8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137497"
+title： " Xamarin.Forms Shell 頁面設定" 描述： "shell 類別定義附加屬性，可用於設定 Shell 應用程式中頁面的外觀 Xamarin.Forms 。 這包括設定頁面色彩、停用巡覽列、停用索引標籤列，以及在導覽列中顯示 views。」
+assetid： 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/29/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-shell-page-configuration"></a>Xamarin.FormsShell 頁面設定
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

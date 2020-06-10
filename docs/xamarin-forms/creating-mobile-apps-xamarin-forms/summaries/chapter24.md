@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 24. Page navigation''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136639"
+title： "第24章的摘要。 頁面導覽「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第24章的摘要。 頁面流覽 "ms. 生產： xamarin ms. 技術： xamarin-assetid： DDCDB49C-6008-4F72-B095-463EE21D7C23 author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-24-page-navigation"></a>第24章的摘要。 頁面巡覽
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)

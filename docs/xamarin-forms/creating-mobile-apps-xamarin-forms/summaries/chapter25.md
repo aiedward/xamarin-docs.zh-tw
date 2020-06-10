@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 25. Page varieties''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e66fb50b8d537ee0267457d5b0ab0f417813e676
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136613"
+title： "第25章的摘要。 頁面種類「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第25章的摘要。 分頁種類「ms. 生產： xamarin ms. 技術： assetid： D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89 author： davidbritch ms-chap： dabritch ms. date：11/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-25-page-varieties"></a>第25章的摘要。 頁面變化
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)

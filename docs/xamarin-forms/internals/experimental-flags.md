@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms實驗性旗標
-description: Xamarin.Forms實驗性旗標可讓工程小組更快速地將新功能交付給使用者，同時仍然能夠在移到穩定版本之前變更功能 Api。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b548323330ccdce6fb01e83c7e8ab7c2d5307125
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139057"
+title： " Xamarin.Forms 實驗性旗標" 描述： " Xamarin.Forms 實驗性旗標可讓工程小組更快速地將新功能交付給使用者，同時仍然能夠在他們移至穩定版本之前，先變更功能 api。」
+assetid： AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/14/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms實驗性旗標
 
 當新 Xamarin.Forms 功能執行時，有時會放在實驗旗標後方。 這可讓工程小組更快速地為您提供新功能，同時仍可在將功能 Api 移至穩定版本之前加以變更。 一旦將功能移至穩定版本之後，就會移除實驗旗標。

@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 17. Mastering the Grid''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6dd13c0f592831c6488afac6727bcac734e9136a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136717"
+title： "第17章的摘要。 主控方格「描述：」建立 Mobile Apps：第 Xamarin.Forms 17 章的摘要。 主控方格 "ms. 生產： xamarin ms. 技術： xamarin-assetid： 71EDEF9C-4220-4D2E-A235-43F1EC8746C1 author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第17章的摘要。 掌控格線
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)

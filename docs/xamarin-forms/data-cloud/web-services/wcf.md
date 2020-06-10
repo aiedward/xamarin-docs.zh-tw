@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文示範如何從應用程式取用 WCF 簡單物件存取通訊協定（SOAP）服務 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139148"
+標題：「使用 Windows Communication Foundation （WCF） Web 服務」描述：「本文示範如何從應用程式取用 WCF 簡單物件存取通訊協定（SOAP）服務。」 Xamarin.Forms
+assetid： 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/28/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation （WCF） Web 服務
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
@@ -61,7 +47,7 @@ WCF 服務會提供下列作業：
 
 如需應用程式中所使用之資料模型的詳細資訊，請參閱[模型化資料](~/xamarin-forms/data-cloud/web-services/introduction.md)。
 
-必須產生*proxy*才能使用 WCF 服務，這可讓應用程式連接到服務。 Proxy 是藉由使用定義方法和相關聯服務設定的服務中繼資料所構成。 此中繼資料是以 web 服務所產生的 Web 服務描述語言（WSDL）檔的形式公開。 您可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 來建立 proxy，將 Web 服務的服務參考新增至 .NET Standard 程式庫。 使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 來建立 proxy 的替代方法是使用 [System.servicemodel 中繼資料公用程式] 工具（svcutil .exe）。 如需詳細資訊，請參閱[System.servicemodel 中繼資料公用程式工具（Svcutil .exe）](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)。
+必須產生*proxy*才能使用 WCF 服務，這可讓應用程式連接到服務。 Proxy 是藉由使用定義方法和相關聯服務設定的服務中繼資料所構成。 此中繼資料是以 web 服務所產生的 Web 服務描述語言（WSDL）檔的形式公開。 您可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 來建立 proxy，將 Web 服務的服務參考新增至 .NET Standard 程式庫。 使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 來建立 proxy 的替代方法是使用 [System.servicemodel 中繼資料公用程式] 工具（svcutil.exe）。 如需詳細資訊，請參閱[System.servicemodel 中繼資料公用程式工具（Svcutil.exe）](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)。
 
 產生的 proxy 類別提供取用使用非同步程式設計模型（APM）設計模式之 web 服務的方法。 在此模式中，非同步作業會實作為兩個名為*BeginOperationName*和*EndOperationName*的方法，它會開始和結束非同步作業。
 
@@ -240,7 +226,7 @@ public async Task DeleteTodoItemAsync (string id)
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```
 
-1. **設定 IIS Express 以接受遠端連線**。 您可以在 **[方案目錄] \. vs\config\applicationhost.config**中編輯 IIS Express 的設定檔，以設定 IIS Express。尋找名稱為的 `site` 元素 `TodoWCFService` 。 看起來應該類似下列 XML：
+1. **設定 IIS Express 以接受遠端連線**。 您可以在 **[方案目錄] \.vs\config\applicationhost.config**編輯 IIS Express 的設定檔，以設定 IIS Express。尋找名稱為的 `site` 元素 `TodoWCFService` 。 看起來應該類似下列 XML：
 
     ```xml
     <site name="TodoWCFService" id="2">
@@ -317,4 +303,4 @@ public async Task DeleteTodoItemAsync (string id)
 
 - [TodoWCF （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 - [HOW TO：建立 Windows Communication Foundation 用戶端](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
-- [System.servicemodel 中繼資料公用程式工具（svcutil .exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [System.servicemodel 中繼資料公用程式工具（svcutil.exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

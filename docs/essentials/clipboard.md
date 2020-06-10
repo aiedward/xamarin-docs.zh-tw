@@ -1,9 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ：剪貼簿 ' ' 描述： ' 本檔描述中的剪貼簿類別 Xamarin.Essentials ，可讓您將文字複製並貼到應用程式之間的系統剪貼簿。
-assetid： author： ms-chap： ms. date： ms. custom： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ：剪貼簿" 描述： "本檔描述中的剪貼簿類別 Xamarin.Essentials ，可讓您將文字複製並貼到應用程式之間的系統剪貼簿。
+assetid： C52AE99A-0FB3-425D-9106-3DA5777FEFA0 author： jamesmontemagno ms-chap： jamont ms. date： 01/06/2020 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials：剪貼簿

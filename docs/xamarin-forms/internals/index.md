@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms& 內部的先進概念
-description: 深入瞭解的先進概念和內部專案 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 410aadcb885ed66283eb306cb9aa4c5e764fa8ec
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139031"
+title：「 Xamarin.Forms 先進的概念 & 內部」描述：「瞭解的先進概念和內部」 Xamarin.Forms 。
+assetid： 2273a31c-4022-42ba-befe-0d23ce2ff3b5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/20/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-advanced-concepts--internals"></a>Xamarin.Forms& 內部的先進概念
 
 _深入瞭解的先進概念和內部專案 Xamarin.Forms 。_

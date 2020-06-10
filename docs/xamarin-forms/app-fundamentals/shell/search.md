@@ -1,9 +1,6 @@
 ---
-標題： ' Xamarin.Forms Shell 搜尋 ' 描述： ' Xamarin.Forms shell 應用程式可以使用可新增至每個頁面頂端的搜尋方塊所提供的整合式搜尋功能。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+標題：「 Xamarin.Forms Shell 搜尋」描述：「 Xamarin.Forms shell 應用程式可以使用可新增至每個頁面頂端的搜尋方塊所提供的整合式搜尋功能」。
+assetid： F8F9471D-6771-4D23-96C0-2B79473A06D4 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/18/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-shell-search"></a>Xamarin.FormsShell 搜尋

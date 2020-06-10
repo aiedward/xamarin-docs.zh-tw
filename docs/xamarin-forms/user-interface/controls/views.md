@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms視圖
-description: Xamarin.Formsviews 是跨平臺行動使用者介面的基礎構件。 本文列出所包含的視圖 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132375"
+title： " Xamarin.Forms views" 描述： " Xamarin.Forms views 是跨平臺行動使用者介面的基礎構件。 本文列出包含在中的觀點。」 Xamarin.Forms
+assetid： AC070686-A423-4A98-8BB6-0B9F94C062CC ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/16/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-views"></a>Xamarin.Forms視圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)

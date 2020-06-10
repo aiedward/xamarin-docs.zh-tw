@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms控制項類別階層架構
-description: 開發人員應該熟悉用來建立應用程式使用者介面的類型階層 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0087e2bb81c7c9204a782519a9eeb9891adc297a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138631"
+title： " Xamarin.Forms 控制項類別階層架構" 描述：「開發人員應該熟悉用來建立應用程式使用者介面的類型階層」 Xamarin.Forms 。
+assetid： C89E6B98-464D-4BBE-BF11-13A5FCBBF420 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/07/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-controls-class-hierarchy"></a>Xamarin.Forms控制項類別階層架構
 
 Xamarin.Forms是由多個命名空間的數百個類型所組成。 開發人員應該最熟悉用來建立 Xamarin.Forms 應用程式使用者介面（位於命名空間中）的類型階層 `Xamarin.Forms` 。

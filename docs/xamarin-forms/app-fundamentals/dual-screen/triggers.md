@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms雙畫面觸發程式
-description: 本文說明如何使用 Xamarin.Forms 雙畫面觸發程式，以 XAML 回應使用者介面變更。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: df10327b2ac12d2b119f1ab558d7f27e8c319507
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131192"
+title： " Xamarin.Forms 雙重螢幕觸發程式" 描述： "本文說明如何使用 Xamarin.Forms 雙畫面觸發程式來回應使用者介面變更與 XAML。"
+assetid： 2181715D-3995-4E71-9A21-6B892F0B3B59 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/28/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Forms雙畫面觸發程式
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

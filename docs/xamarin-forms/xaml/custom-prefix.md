@@ -1,22 +1,8 @@
 ---
-title: XAML 命名空間建議的前置詞Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 71ae523f40f3f7529c12f853778404e224fbae30
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138134"
+title： "描述：" 中的 XAML 命名空間建議 Xamarin.Forms 前置詞，控制項作者可以使用 XmlnsPrefixAttribute 類別來指定與 xaml 命名空間相關聯的建議前置詞，以供 xaml 使用。」
+assetid： 7B315BEC-7A35-48F4-A9C7-EF40255E95FF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/28/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>XAML 命名空間建議的前置詞Xamarin.Forms
 
 `XmlnsPrefixAttribute`控制項作者可以使用類別來指定與 xaml 命名空間相關聯的建議前置詞，以供 xaml 使用。 當支援 XAML 的物件樹狀結構序列化，或與具有 XAML 編輯功能的設計環境互動時，前置詞會很有用。 例如：

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46a1b4d00b9eea276b9a3b3d5bffbdac3d31e0ef
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136574"
+標題：「Windows 上的 RefreshView 提取方向」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Windows 平臺特定的，讓 RefreshView 的提取方向得以變更。」
+assetid： 407A862B-281E-4384-9696-C0655830B84D ms-chap。技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 09/20/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="refreshview-pull-direction-on-windows"></a>Windows 上的 RefreshView 提取方向
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

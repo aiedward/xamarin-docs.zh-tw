@@ -1,9 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ：疑難排解 ' ' 描述： ' 本檔說明如何針對使用程式庫進行開發時所遇到的問題進行疑難排解 Xamarin.Essentials 。
-assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ：疑難排解" 描述： "本檔說明如何針對使用程式庫進行開發時所遇到的問題進行疑難排解 Xamarin.Essentials 。
+assetid： 2E474FAF-F841-4E3C-B815-F7ABD8EE3361 author： jamesmontemagno ms-chap： jamont ms. date： 01/06/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials：疑難排解

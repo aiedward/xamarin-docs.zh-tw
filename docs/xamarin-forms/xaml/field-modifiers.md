@@ -1,22 +1,8 @@
 ---
-title: 中的 XAML 欄位修飾詞Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: db00f522b71a8993ef0f7f6cf5070813ce07396a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138121"
+title： "description：" 中的 XAML 欄位修飾詞 Xamarin.Forms x:FieldModifier namespace 屬性會為已命名的 XAML 專案指定產生之欄位的存取層級。
+assetid： 12357CE0-3C11-4B62-947F-72DB6DFC23A2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/02/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-field-modifiers-in-xamarinforms"></a>中的 XAML 欄位修飾詞Xamarin.Forms
 
 `x:FieldModifier`Namespace 屬性會為已命名的 XAML 元素指定產生之欄位的存取層級。 屬性的有效值為：

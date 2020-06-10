@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsImageButton
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7d81c0ce4dc2a46a840a34cc9084c8f2388a0169
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137640"
+title： " Xamarin.Forms ImageButton" 描述： "ImageButton 會顯示影像，並回應點按或按一下以引導應用程式執行特定工作。」
+assetid： B5906AB6-3F79-4FCB-8C78-1F0AF18AB39E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-imagebutton"></a>Xamarin.FormsImageButton
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

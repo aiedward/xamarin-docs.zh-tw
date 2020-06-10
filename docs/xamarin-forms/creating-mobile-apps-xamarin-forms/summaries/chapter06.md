@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 6. Button clicks''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f9bafbf4af2a89acd02d436604e882be87cbde8c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136834"
+title： "第6章的摘要。 按鈕按一下 [描述：] 建立 Mobile Apps Xamarin.Forms ：第6章的摘要。 按鈕按一下 "ms. 生產： xamarin ms. 技術： assetid： D4F9C429-A6CF-40FA-AC68-3F149307A5F9 author： davidbritch ms-chap： dabritch ms. date： 07/18/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-6-button-clicks"></a>第6章的摘要。 按鈕點擊
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)

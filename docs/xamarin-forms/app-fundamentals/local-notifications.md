@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms本機通知
-description: 本文說明如何在中傳送和接收本機通知 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137588"
+標題：「 Xamarin.Forms 本機通知」描述：「本文說明如何在中傳送和接收本機通知」 Xamarin.Forms 。
+assetid： 60460F57-63C6-4916-BBB5-A870F1DF53D7 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：10/10/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="local-notifications-in-xamarinforms"></a>中的本機通知Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)

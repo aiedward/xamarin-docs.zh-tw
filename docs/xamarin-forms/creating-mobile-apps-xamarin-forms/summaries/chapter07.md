@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 7. XAML vs. code''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0b92988e1e838072fca0d8a284455a62db05e757
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136852"
+title： "第7章的摘要。 XAML 與程式碼「描述：」建立 Mobile Apps Xamarin.Forms ：第7章的摘要。 XAML 與程式碼 "ms. 生產： xamarin ms. 技術： xamarin assetid： E91F387B-CE90-481C-8D90-CB25519BFD2B author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第7章的摘要。 XAML 與程式碼
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)

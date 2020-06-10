@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms動作
-description: 本指南說明手勢辨識器如何 Xamarin.Forms 用來偵測應用程式中與 views 的使用者互動 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137873"
+title： " Xamarin.Forms 手勢" 描述： "本指南說明筆勢辨識器如何 Xamarin.Forms 用來偵測應用程式中與 views 的使用者互動 Xamarin.Forms 。
+assetid： 0E197A51-2304-4C09-A710-C7FF24A89F15 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/25/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-gestures"></a>Xamarin.Forms動作
 
 _筆勢辨識器可以用來偵測應用程式中與 views 的使用者互動 Xamarin.Forms 。_

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何使用，在影片播放機應用程式中執行自訂傳輸控制項 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c72f68f327b6c0df6959d37ed4bf390e3bd7f31d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135001"
+title： "自訂影片傳輸控制項" 描述： "本文說明如何使用，在影片播放機應用程式中執行自訂傳輸控制項 Xamarin.Forms 。
+assetid： CE9E955D-A9AC-4019-A5D7-6390D80DECA1 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 02/12/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="custom-video-transport-controls"></a>自訂影片傳輸控制項
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

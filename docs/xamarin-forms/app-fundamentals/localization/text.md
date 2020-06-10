@@ -1,23 +1,8 @@
 ---
-title: 中的字串和影像當地語系化Xamarin.Forms
-description: Xamarin.Forms應用程式可以使用 .NET 資源檔來當地語系化。
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137598"
+標題：「下列專案中的字串和影像當地語系化」 Xamarin.Forms 描述：「 Xamarin.Forms 應用程式可以使用 .net 資源檔進行當地語系化」。
+zone_pivot_groups： "platform" ms-chap： xamarin assetid： 852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms-chap： xamarin-forms author： profexorgeek ms-chap： jusjohns ms. date： 11/01/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms字串和影像當地語系化
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138021"
+標題：「配置壓縮」描述：「版面配置壓縮會從視覺化樹狀結構中移除指定的版面配置，以嘗試改善頁面轉譯效能。 本文說明如何啟用版面配置壓縮，以及它可以帶來的好處。」
+assetid： da9e1b26-9d31-4762-94c3-4039f306b7f2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/13/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="layout-compression"></a>版面配置壓縮
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)

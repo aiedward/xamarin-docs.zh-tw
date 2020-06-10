@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 12. Styles''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 22f7272751c30bed350fe7aada8d5dacf0acc809
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136782"
+title： "第12章的摘要。 樣式「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第12章的摘要。 樣式 "ms. 生產： xamarin assetid： 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3 author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-12-styles"></a>第12章的摘要。 樣式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)

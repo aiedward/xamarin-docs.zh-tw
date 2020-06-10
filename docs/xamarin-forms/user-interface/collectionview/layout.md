@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView 版面配置
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137428"
+title： " Xamarin.Forms CollectionView Layout" 描述： "根據預設，CollectionView 會在垂直清單中顯示其專案。 不過，您可以指定垂直和水準清單和格線。」
+assetid： 5FE78207-1BD6-4706-91EF-B13932321FC9 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/22/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView 版面配置
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsShell 飛出視窗
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b336a594fa7525000e119333b56284368a23cc03
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134949"
+title： " Xamarin.Forms Shell 飛出視窗" 描述： "飛出視窗是 Shell 應用程式的根功能表，而且可以透過圖示或從螢幕側刷來存取。 飛出視窗是由選擇性的標頭、飛出視窗專案及選用功能表項目所組成。」
+ms-chap： xamarin assetid： FEDE51EB-577E-4B3E-9890-B7C1A5E52516 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date： 04/22/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.FormsShell 飛出視窗
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

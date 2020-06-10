@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131699"
+title： "SkiaSharp blend 模式" 描述： "使用 blend 模式定義當繪圖物件堆疊在另一個上時，會發生什麼事。"
+skiasharp 的 assetid： CE1B222E-A2D0-4016-A532-EC1E59EE3D6B author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend 模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -32,60 +18,20 @@ SkiaSharp blend 模式與 W3C 撰寫[**和混合層級 1**](https://www.w3.org/T
 列舉的29個成員 `SKBlendMode` 可以分成三個類別：
 
 | Porter-Duff | 分離    | 不可分離 |
-| ---
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------- | | `Clear`     | `Modulate`   | `Hue`         | | `Src`       | `Screen`     | `Saturation`  | | `Dst`       | `Overlay`    | `Color`       | | `SrcOver`   | `Darken`     | `Luminosity`  | | `DstOver`   | `Lighten`    |               | | `SrcIn`     | `ColorDodge` |               | | `DstIn`     | `ColorBurn`  |               | | `SrcOut`    | `HardLight`  |               | | `DstOut`    | `SoftLight`  |               | | `SrcATop`   | `Difference` |               | | `DstATop`   | `Exclusion`  |               | | `Xor`       | `Multiply`   |               | | `Plus`      |              |               |
+| ----------- | ------------ | ------------- |
+| `Clear`     | `Modulate`   | `Hue`         |
+| `Src`       | `Screen`     | `Saturation`  |
+| `Dst`       | `Overlay`    | `Color`       |
+| `SrcOver`   | `Darken`     | `Luminosity`  |
+| `DstOver`   | `Lighten`    |               |
+| `SrcIn`     | `ColorDodge` |               |
+| `DstIn`     | `ColorBurn`  |               |
+| `SrcOut`    | `HardLight`  |               |
+| `DstOut`    | `SoftLight`  |               |
+| `SrcATop`   | `Difference` |               |
+| `DstATop`   | `Exclusion`  |               |
+| `Xor`       | `Multiply`   |               |
+| `Plus`      |              |               |
 
 這三個類別的名稱在後續討論中會採用更多意義。 成員在此列出的順序與列舉的定義相同 `SKBlendMode` 。 第一個資料行中的13個列舉成員，其整數值為0到12。 第二個數據行是對應到整數13到24的列舉成員，而第三個數據行中的成員具有25到28的值。
 

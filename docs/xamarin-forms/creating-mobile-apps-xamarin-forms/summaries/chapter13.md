@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 13. Bitmaps''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 43caf088ad6cb816f049e7862a287c17839c2170
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136769"
+title： "第13章的摘要。 點陣圖「描述：」建立 Mobile Apps Xamarin.Forms ：第13章的摘要。 點陣圖 "ms. 生產： xamarin ms. 技術： assetid： 5D153857-B6B7-4A14-8FB9-067DE198C2C7 author： davidbritch ms-chap： dabritch ms. date： 07/18/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-13-bitmaps"></a>第13章的摘要。 點陣圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
@@ -143,11 +127,11 @@ Xamarin.Forms [`Image`](xref:Xamarin.Forms.Image) 元素會顯示點陣圖。 �
 
 要顯示為一寸正方形的點陣圖會存在於三個版本中：
 
-- MyImage 160 圖元正方形的 .jpg
+- MyImage.jpg 160 圖元正方形
 - MyImage@2x.jpg320圖元正方形
 - MyImage@3x.jpg480圖元正方形
 
-程式會將此點陣圖稱為 MyImage，但會在執行時間根據螢幕的解析度來取得適當的版本。 在不受限制的情況下，點陣圖一律會轉譯為160裝置獨立單位。
+程式會將此點陣圖稱為 MyImage.jpg，但在執行時間會根據螢幕的解析度來取得適當的版本。 在不受限制的情況下，點陣圖一律會轉譯為160裝置獨立單位。
 
 若是 Android，點陣圖會儲存在**Resources**資料夾的各種子資料夾中：
 
@@ -160,18 +144,18 @@ Xamarin.Forms [`Image`](xref:Xamarin.Forms.Image) 元素會顯示點陣圖。 �
 
 若是要以一平方英寸呈現的點陣圖，點陣圖的各種版本將會有相同的名稱，但大小不同，而且會儲存在這些資料夾中：
 
-- 120圖元正方形的 drawable-lDPI/MyImage
-- 160圖元正方形的 drawable-mDPI/MyImage
-- 240圖元正方形的 drawable-hDPI/MyImage
-- 320圖元正方形的 drawable-xhDPI/MyImage
-- 480圖元正方形的 drawable-xxhDPI/MyImage
-- 640圖元正方形的 drawable-xxxhDPI/MyImage
+- 繪製-lDPI/MyImage.jpg 120 圖元正方形
+- 繪製-mDPI/MyImage.jpg 160 圖元正方形
+- 繪製-hDPI/MyImage.jpg 240 圖元正方形
+- 繪製-xhDPI/MyImage.jpg 320 圖元正方形
+- 繪製-xxhDPI/MyImage.jpg 480 圖元正方形
+- 繪製-xxxhDPI/MyImage.jpg 640 圖元正方形
 
 點陣圖一律會轉譯為160裝置獨立單位。 （標準 Xamarin.Forms 解決方案範本只包含 hDPI、xhDPI 和 xxhDPI 資料夾）。
 
 UWP 專案支援點陣圖命名配置，其中包含每個裝置獨立單位以圖元為單位的縮放因數，以百分比表示，例如：
 
-- 320圖元正方形的 MyImage scale-200 .jpg
+- MyImage.scale-200.jpg 320 圖元正方形
 
 只有部分百分比有效。 本書的範例程式僅包含具有延展 **-200**尾碼的映射，但目前的 Xamarin.Forms 解決方案範本包含**調整-100**、**擴充 125**、**擴充-150**和**調整 400**。
 

@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 11. The Bindable infrastructure''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: edc3dfd97457fe93a04edd82574f6ed419f5fdc1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136795"
+title： "第11章的摘要。 可系結基礎結構「描述：」建立 Mobile Apps Xamarin.Forms ：第11章的摘要。 可系結的基礎結構 "ms-chap： xamarin ms. 技術： xamarin assetid： 34671C48-0ED4-4B76-A33D-D6505390DC5B author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第11章的摘要。 可系結的基礎結構
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)

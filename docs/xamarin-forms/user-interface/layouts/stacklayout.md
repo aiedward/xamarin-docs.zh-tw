@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsStackLayout
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137965"
+title： " Xamarin.Forms StackLayout" 描述： "StackLayout 會以水準或垂直方式組織一維堆疊中的子視圖。」
+assetid： 6A91EA70-268C-462C-AAAF-F8DA011403F8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/11/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)

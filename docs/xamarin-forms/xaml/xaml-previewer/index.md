@@ -1,23 +1,8 @@
 ---
-title: 的 XAML 預覽程式Xamarin.Forms
-description: 本文說明如何使用 XAML 預覽程式來查看您在 Xamarin.Forms 輸入時所呈現的版面配置。 XAML 預覽程式適用于 Mac Visual Studio 2019 和 Visual Studio 2019。
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6916d5fde688c5b1162f12db0d36bc3ca27156d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137315"
+title： "XAML 預覽程式 Xamarin.Forms 描述：" 本文說明如何使用 Xaml 預覽程式來查看您在 Xamarin.Forms 輸入時所呈現的版面配置。 XAML 預覽程式適用于 Mac Visual Studio 2019 和 Visual Studio 2019。」
+zone_pivot_groups： platform ms-chap： xamarin assetid： 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2 ms. 技術： xamarin-表單作者： maddyleger1 ms. author： maleger ms. date：03/16/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-previewer-for-xamarinforms"></a>的 XAML 預覽程式Xamarin.Forms
 
 _查看您 Xamarin.Forms 輸入時呈現的版面配置_

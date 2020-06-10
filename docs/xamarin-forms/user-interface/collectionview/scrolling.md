@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView 滾動
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 04d190971fa5ef16e08091600558f7f016bc8605
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134507"
+title： " Xamarin.Forms CollectionView scroll" 描述： "當使用者撥動起始捲軸時，可以控制捲軸的結束位置，以便完全顯示專案。 此外，CollectionView 會定義兩個 ScrollTo 方法，以程式設計方式將專案滾動到視野中。」
+assetid： 2ED719AF-33D2-434D-949A-B70B479C9BA5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/17/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.FormsCollectionView 滾動
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

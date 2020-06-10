@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms格
-description: Xamarin.Forms方格是將其子系組織成資料列和資料行的版面配置。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138069"
+title： " Xamarin.Forms grid" 描述： " Xamarin.Forms 方格是將其子系組織成資料列和資料行的版面配置。"
+assetid： 762B1802-D185-494C-B643-74EED55882FE ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/15/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-grid"></a>Xamarin.Forms格
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)

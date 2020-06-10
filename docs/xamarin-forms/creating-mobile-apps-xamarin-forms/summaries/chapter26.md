@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 26. Custom layouts''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: deb46d1a70e7c707c998be8669b4af3b8e8d7ead
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136600"
+title： "第26章的摘要。 自訂配置的「描述：」建立 Mobile Apps Xamarin.Forms ：第26章的摘要。 自訂配置 "ms. 生產： xamarin ms. 技術： xamarin assetid： 2B7F4346-414E-49FF-97FB-B85E92D98A21 author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-26-custom-layouts"></a>第26章的摘要。 自訂版面配置
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)

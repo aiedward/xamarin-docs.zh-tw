@@ -1,8 +1,5 @@
 ---
-標題： ' ' Xamarin.Essentials ：電話撥號程式 ' ' 描述： ' 中的命名為 phonedialer 類別 Xamarin.Essentials 可讓應用程式在撥號程式中開啟電話號碼。 assetid： author： ms. custom： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ： Phone 撥號程式" 描述： "中的命名為 phonedialer 類別 Xamarin.Essentials 可讓應用程式在撥號程式中開啟電話號碼" Assetid： E7457942-4D7B-4195-A2FF-417919B9537F author： jamesmontemagno ms. custom： video ms. author： jamont ms. date： 07/02/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials：電話撥號程式

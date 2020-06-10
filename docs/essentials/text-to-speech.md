@@ -1,9 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ：文字轉換語音 ' ' 描述： ' 中的 TextToSpeech 類別 Xamarin.Essentials 可讓應用程式利用內建的文字轉換語音引擎，從裝置上說出文字，也可以查詢引擎可支援的可用語言。」
-assetid： author： ms. custom： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ：文字轉換語音的描述：" 中的 TextToSpeech 類別 Xamarin.Essentials 可讓應用程式利用內建的文字轉換語音引擎，從裝置朗讀文字，也可以查詢引擎可支援的可用語言。」
+assetid： AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials：文字轉換語音

@@ -1,22 +1,8 @@
 ---
-title: 選擇 Xamarin.Forms 版面配置
-description: Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控制項。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138498"
+標題：「選擇版面配置」 Xamarin.Forms 描述：「 Xamarin.Forms 版面配置類別可讓您在應用程式中排列和分組 UI 控制項」。
+assetid： 05A39752-A174-447E-A30D-3CC9EF98CB96 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/21/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="choose-a-xamarinforms-layout"></a>選擇 Xamarin.Forms 版面配置
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -78,7 +64,7 @@ Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控
 
 如需詳細資訊，請參閱[ Xamarin.Forms StackLayout](stacklayout.md)。
 
-## <a name="grid"></a>方格
+## <a name="grid"></a>Grid
 
 [`Grid`](xref:Xamarin.Forms.Grid)是用來在資料列和資料行中顯示專案，這些專案可以有比例或絕對大小。 方格的資料列和資料行會使用 [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) 和屬性來指定 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) 。
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms自訂轉譯器
-description: 自訂轉譯器可讓開發人員覆寫每個平臺上的原生控制項轉譯，以自訂控制項的外觀和行為 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: be281f9b7987a8d23ba6ac93f0771e432f277d45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138914"
+標題：「 Xamarin.Forms 自訂轉譯器」描述：「自訂轉譯器可讓開發人員覆寫每個平臺上的原生控制項轉譯，以自訂控制項的外觀和行為 Xamarin.Forms 。」
+assetid： BF1CF23A-3BC9-4226-92E6-DAEEB91422F1 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/03/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms自訂轉譯器
 
 _Xamarin：表單使用者介面是使用目標平臺的原生控制項來轉譯，讓 Xamarin.Forms 應用程式可以為每個平臺保留適當的外觀與風格。自訂轉譯器可讓開發人員覆寫此程式，以自訂 Xamarin.Forms 每個平臺上控制項的外觀和行為。_

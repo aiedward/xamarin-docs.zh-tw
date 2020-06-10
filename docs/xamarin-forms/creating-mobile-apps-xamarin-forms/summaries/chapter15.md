@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 15. The interactive interface''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9bb930c2d0e4b6281b1aa48589ea5245eedc1a60
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136743"
+title： "第15章的摘要。 互動式介面「描述：」建立 Mobile Apps：第 Xamarin.Forms 15 章的摘要。 互動式介面 "ms-chap： xamarin ms. 技術： assetid： F54E86F4-1CDA-474E-9B09-242060C2C13D author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第15章的摘要。 互動式介面
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
@@ -248,6 +232,6 @@ Xamarin.Forms定義三個可讓使用者輸入和編輯文字的視圖：
 - [第15章全文檢索（PDF）](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf)
 - [第15章範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
 - [滑桿](~/xamarin-forms/user-interface/slider.md)
-- [上場](~/xamarin-forms/user-interface/text/entry.md)
+- [進入](~/xamarin-forms/user-interface/text/entry.md)
 - [編輯器](~/xamarin-forms/user-interface/text/editor.md)
 - [DatePicker](~/xamarin-forms/user-interface/datepicker.md)

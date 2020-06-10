@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137419"
+標題：「SkiaSharp 點陣圖並排顯示」描述：「使用以水準和垂直方式重複的點陣圖來磚面積」。
+skiasharp 的 assetid： 9ED14E07-4DC8-4B03-8A33-772838BF51EA author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp 點陣圖並排
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

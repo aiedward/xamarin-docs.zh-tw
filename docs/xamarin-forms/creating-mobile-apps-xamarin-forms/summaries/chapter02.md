@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 2. Anatomy of an app''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 78da3ed91acea0c056074d712d368de70b251392
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136912"
+title： "第2章的摘要。 應用程式的結構「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第2章的摘要。 應用程式的結構 "ms. 生產： xamarin ms. 技術： assetid： 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第2章的摘要。 應用程式剖析
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)

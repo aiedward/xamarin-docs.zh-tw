@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsWeb 服務簡介
-description: 本指南提供 Xamarin.Forms 範例應用程式的逐步解說，示範如何與不同的 web 服務通訊。 雖然每個 web 服務都使用個別的範例應用程式，但它們的功能類似，而且共用一般類別。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139174"
+標題：「 Xamarin.Forms Web 服務簡介」描述：「本指南提供 Xamarin.Forms 範例應用程式的逐步解說，示範如何與不同的 Web 服務通訊。 雖然每個 web 服務都使用個別的範例應用程式，但它們的功能類似並共用通用類別。」
+assetid： A3FEB262-0D79-42E6-8F8B-A565618C490B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/28/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb 服務簡介
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)

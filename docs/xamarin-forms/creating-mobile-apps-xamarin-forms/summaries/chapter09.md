@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 9. Platform-specific API calls''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e8feb636057f1e11c7df90236dee44697203d51c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136849"
+title： "第9章的摘要。 平臺特定 API 呼叫「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第9章的摘要。 平臺專屬 API 呼叫 "ms. 生產： xamarin assetid： 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第9章的摘要。 平台特定 API 呼叫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138654"
+標題：「將 SkiaSharp 點陣圖儲存至檔案」描述： < 探索 SkiaSharp 支援的各種檔案格式，以將點陣圖儲存在使用者的相片媒體櫃中。」
+skiasharp 的 assetid： 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C author： davidbritch ms-chap： dabritch ms. date： 07/10/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -176,7 +162,7 @@ public class PhotoLibrary : IPhotoLibrary
 
 對的呼叫 `MediaScannerConnection.ScanFile` 並不是絕對必要的，但如果您是藉由立即檢查相片媒體櫃來測試程式，則更新程式庫資源庫視圖會有很大的説明。
 
-**Androidmanifest.xml**需要下列許可權標記：
+**AndroidManifest.xml**檔案需要下列許可權標記：
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -456,17 +442,15 @@ public partial class SaveFileFormatsPage : ContentPage
 
 儲存檔案**格式**頁面所節省的點陣圖是 600-圖元正方形。 每圖元4個位元組，在記憶體中總計1440000個位元組。 下表顯示各種檔案格式和品質組合的檔案大小：
 
-|格式|品質|Size|
-|---
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---標題：描述： ms-chap： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:|---:| |PNG |N/A |492K | |JPEG |0 |2.95 k | |     |50 |22.1 k | |     |100 |206K | |WebP |0 |2.71 k | |     |50 |11.9 k | |     |100 |101K |
+|格式|品質|大小|
+|------|------:|---:|
+| PNG | N/A | 492K |
+| JPEG | 0 | 2.95 k |
+|      | 50 | 22.1 k |
+|      | 100 | 206K |
+| WebP | 0 | 2.71 k |
+|      | 50 | 11.9 k |
+|      | 100 | 101K |
 
 您可以試驗各種品質設定並檢查結果。
 

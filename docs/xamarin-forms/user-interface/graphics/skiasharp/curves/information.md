@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131920"
+title： "路徑資訊和列舉" 描述： "本文說明如何取得 SkiaSharp 路徑和列舉內容的相關資訊，並示範如何使用範例程式碼。
+assetid： 8E8C5C6A-F324-4155-8652-7A77D231B3E5 ms. 技術： xamarin skiasharp author： davidbritch ms-chap： dabritch ms. date：09/12/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="path-information-and-enumeration"></a>路徑資訊與列舉
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

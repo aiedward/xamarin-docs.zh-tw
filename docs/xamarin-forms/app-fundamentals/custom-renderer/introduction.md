@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135317"
+標題：「自訂轉譯器簡介」描述：「本文提供自訂轉譯器的簡介，並概述建立自訂轉譯器的程式。」
+assetid： 264314BE-1C5C-4727-A14E-F6F98151CDBD ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 01/19/2016 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-custom-renderers"></a>自訂轉譯器簡介
 
 _自訂轉譯器提供了一種強大的方法，可自訂控制項的外觀和行為 Xamarin.Forms 。它們可用於小型樣式變更或複雜的平臺特定版面配置和行為自訂。本文提供自訂轉譯器的簡介，並概述建立自訂轉譯器的程式。_

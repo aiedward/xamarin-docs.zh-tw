@@ -1,21 +1,6 @@
 ---
-title: Xamarin.Forms框架
-description: Xamarin.FormsFrame 類別是用來包裝視圖或版面配置的版面配置，其框線可使用色彩、陰影和其他選項進行設定。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137185"
+標題：「 Xamarin.Forms 框架」描述：」 Xamarin.Forms 框架類別是用來包裝視圖的版面配置，或具有可使用色彩、陰影和其他選項設定之框線的版面配置。
+assetId： 4E074714-0928-41C8-A468-B60E23236A8C ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：08/06/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.Forms框架
 
@@ -189,7 +174,7 @@ Frame circleImageFrame = new Frame
 };
 ```
 
-您必須將**室外**影像新增至每個平臺專案，而如何達成此目的會因平臺而異。 如需詳細資訊，請參閱[中 Xamarin.Forms 的影像](~/xamarin-forms/user-interface/images.md)。
+您必須將**outdoors.jpg**映射新增至每個平臺專案，而如何達成此目的會因平臺而異。 如需詳細資訊，請參閱[中 Xamarin.Forms 的影像](~/xamarin-forms/user-interface/images.md)。
 
 > [!NOTE]
 > 圓角的行為在不同的平臺上有些許差異。 `Image`物件的 `Margin` 長度應該是影像寬度和父框架寬度之間的一半差異，而且應該是負數，以便在物件內平均置中影像 `Frame` 。 不過，不保證要求的寬度和高度，因此 `Margin` ， `HeightRequest` 和 `WidthRequest` 屬性可能需要根據您的影像大小和其他版面配置選項來改變。

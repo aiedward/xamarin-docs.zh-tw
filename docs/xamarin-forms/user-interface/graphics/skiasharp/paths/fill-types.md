@@ -1,29 +1,15 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139044"
+標題：「路徑填滿類型」描述：「本文將探討 SkiaSharp 路徑填滿類型的各種可能效果，並以範例程式碼示範這種情況。」
+assetid： 57103A7A-49A2-46AE-894C-7C2664682644 ms. 技術： xamarin skiasharp author： davidbritch ms-chap： dabritch ms. date：03/10/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用 SkiaSharp 路徑填滿類型探索可能的不同效果_
 
-路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下為範例：
+路徑中的兩個輪廓可以重迭，而組成單一輪廓的線條可能會重迭。 任何封閉的區域都可能會填滿，但您可能不想要填滿所有封閉的區域。 以下是範例：
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 

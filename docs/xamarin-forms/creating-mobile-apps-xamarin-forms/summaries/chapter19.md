@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 19. Collection views''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0eafdeffb6783a0ed54fdf23e6d10de24e2b4c6f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136691"
+title： "第19章的摘要。 集合視圖的「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第19章的摘要。 集合 views "ms. 生產： xamarin ms. 技術： xamarin assetid： 0AEC3A5C-586E-4D0F-9895-67E99A053A79 author： davidbritch ms-chap： dabritch ms. date： 07/18/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-19-collection-views"></a>第19章的摘要。 集合視圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)

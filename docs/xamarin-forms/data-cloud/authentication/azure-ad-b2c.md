@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 64529b81a375ee5a8cc8a96ec557c03401e60495
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130568"
+標題：「使用 Azure Active Directory B2C 驗證使用者」描述：「Azure Active Directory B2C 為取用者面向的 web 和行動應用程式提供雲端身分識別管理。 本文說明如何使用 Azure Active Directory B2C，將身分識別管理整合到具有 Microsoft 驗證程式庫的行動應用程式中。」
+assetid： B0A5DB65-0585-4A00-B908-22CCC286E6B6 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 驗證使用者
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
@@ -70,7 +56,7 @@ Microsoft 驗證程式庫預期您的應用程式的重新**導向 URL**是您�
 
 ![Azure 應用程式屬性視圖中的自訂重新導向 URI](azure-ad-b2c-images/azure-redirect-uri.png)
 
-稍後會在 Android **ApplicationManifest**和 iOS**資訊 plist**中使用此 URL。
+稍後會在 Android **ApplicationManifest.xml**和 iOS **plist**中使用此 URL。
 
 在範例專案中，編輯**Constants.cs**檔案，將欄位設定 `clientId` 為您的**應用程式識別碼**。 下列程式碼顯示如果您的應用程式識別碼為，應該如何設定此值 `1234abcd` ：
 
@@ -286,7 +272,7 @@ namespace TodoAzure.iOS
 
 ### <a name="android"></a>Android
 
-在 Android 上，使用 Azure Active Directory B2C 註冊的自訂 URL 配置必須在**androidmanifest.xml**中註冊。 MSAL 預期 URL 配置遵守特定模式，如先前在[Azure Active Directory B2C 註冊行動應用程式](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)中所述。 下列範例顯示**androidmanifest.xml**中的自訂 URL 配置。
+在 Android 上，使用 Azure Active Directory B2C 註冊的自訂 URL 配置必須在**AndroidManifest.xml**中註冊。 MSAL 預期 URL 配置遵守特定模式，如先前在[Azure Active Directory B2C 註冊行動應用程式](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)中所述。 下列範例顯示**AndroidManifest.xml**中的自訂 URL 配置。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -307,7 +293,7 @@ namespace TodoAzure.iOS
 </manifest>
 ```
 
-您 `MainActivity` 必須修改類別，以便在 `UIParent` 呼叫期間將物件提供給應用程式 `OnCreate` 。 當 Azure Active Directory B2C 完成授權要求時，它會從**androidmanifest.xml**重新導向至已註冊的 URL 配置。 已註冊的 URI 配置會導致 Android 呼叫 `OnActivityResult` 方法，並以 URL 作為啟動參數，以供 `SetAuthenticationContinuationEventArgs` 方法處理。
+您 `MainActivity` 必須修改類別，以便在 `UIParent` 呼叫期間將物件提供給應用程式 `OnCreate` 。 當 Azure Active Directory B2C 完成授權要求時，它會從**AndroidManifest.xml**重新導向至已註冊的 URL 配置。 已註冊的 URI 配置會導致 Android 呼叫 `OnActivityResult` 方法，並以 URL 作為啟動參數，以供 `SetAuthenticationContinuationEventArgs` 方法處理。
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity

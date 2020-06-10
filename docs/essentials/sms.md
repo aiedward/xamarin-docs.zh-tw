@@ -1,9 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ： sms ' ' description： ' 中的 sms 類別 Xamarin.Essentials 可讓應用程式使用指定的訊息來開啟預設 SMS 應用程式，以傳送給收件者。
-assetid： author： ms. custom： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ： sms" 描述： "中的 sms 類別 Xamarin.Essentials 可讓應用程式使用指定的訊息來開啟預設 SMS 應用程式，以傳送給收件者。
+assetid： 81A757F2-6F2A-458F-B9BE-770ADEBFAB58 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials： SMS

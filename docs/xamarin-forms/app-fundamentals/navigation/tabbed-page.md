@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsTabbedPage
-description: Xamarin.FormsTabbedPage 是由索引標籤清單和較大的詳細資料區域所組成，每個索引標籤都會將內容載入至詳細資料區域。 本文示範如何使用 TabbedPage 來巡覽頁面集合。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137510"
+title： " Xamarin.Forms TabbedPage" 描述： " Xamarin.Forms TabbedPage 是由索引標籤清單和較大的詳細資料區域所組成，每個索引標籤都會將內容載入至詳細資料區域。 本文示範如何使用 TabbedPage 來流覽一組頁面。」
+assetid： C946057F-C77C-412D-82A0-DAF475A24EF5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/07/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-tabbedpage"></a>Xamarin.FormsTabbedPage
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)

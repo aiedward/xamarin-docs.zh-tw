@@ -1,22 +1,8 @@
 ---
-title: 中的 XAML 命名空間Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7f35342134767ccdadfab086bfa14f6b610b325d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130373"
+標題：「xaml 命名空間」的 Xamarin.Forms 描述：「xaml 會針對命名空間宣告使用 XMLNS XML 屬性。 本文介紹 XAML 命名空間語法，並示範如何宣告 XAML 命名空間來存取型別。」
+assetid： C03B5553-B199-4A19-9F0F-E5BCE1DB268F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/21/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-namespaces-in-xamarinforms"></a>中的 XAML 命名空間Xamarin.Forms
 
 _XAML 會針對命名空間宣告使用 xmlns XML 屬性。本文介紹 XAML 命名空間語法，並示範如何宣告 XAML 命名空間來存取型別。_
@@ -41,7 +27,7 @@ XAML 會使用前置詞來宣告非預設的命名空間，並在參考命名空
 
 下表概述支援的 `x` 命名空間屬性 Xamarin.Forms ：
 
-|建構|描述|
+|建構|說明|
 |--- |--- |
 |`x:Arguments`|指定非預設的函式或 factory 方法物件宣告的函式引數。|
 |`x:Class`|指定 XAML 中定義之類別的命名空間和類別名稱。 類別名稱必須符合程式碼後置檔案的類別名稱。 請注意，此結構只能出現在 XAML 檔案的根項目中。|

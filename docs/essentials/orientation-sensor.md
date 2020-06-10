@@ -1,8 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ： OrientationSensor ' ' 描述： assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ： OrientationSensor" 描述： "OrientationSensor 類別可讓您監視裝置在3d 空間中的方向。
+assetid： F3091D93-E779-41BA-8696-23D296F2F6F5 author： jamesmontemagno ms-chap： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials： OrientationSensor
 

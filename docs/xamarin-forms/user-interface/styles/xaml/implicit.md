@@ -1,22 +1,8 @@
 ---
-title: 中的隱含樣式Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3fb6ea40ced93103ec9cc92fa707f68c674d7826
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139005"
+title：在「描述：」中的隱含樣式 Xamarin.Forms 是由同一個 TargetType 的所有控制項所使用的樣式，而不需要每個控制項參考樣式。」
+assetid： 02A75F3B-4389-49D4-A2F4-AFD473A4A161 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/30/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="implicit-styles-in-xamarinforms"></a>中的隱含樣式Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
@@ -163,5 +149,5 @@ Resources = new ResourceDictionary { buttonStyle };
 - [基本樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [使用樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary) \(英文\)
-- [樣式](xref:Xamarin.Forms.Style)
+- [Style](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131049"
+title： "Porter-Duff blend 模式" 描述： "使用 Porter Duff blend 模式根據來源和目的地影像撰寫場景。"
+skiasharp 的 assetid： 57F172F8-BA03-43EC-A215-ED6B78696BB5 author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="porter-duff-blend-modes"></a>Porter-Duff blend 模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -72,59 +58,21 @@ Skia 會新增名 `Modulate` 為的第14個模式，其非常類似， `Plus` �
 以下是 SkiaSharp 中所定義的14個 Porter Duff 模式。 此表格顯示其如何為上圖中三個非空白區域的色彩著色：
 
 | 模式       | Destination | 處 | 來源 |
-| ---
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------|：---標題：描述： ms-chap： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------：（|）---標題：描述： ms-chap： assetid： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------：（|）---標題：描述： ms-chap： assetid： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:| |`Clear`    |            |             |       | |`Src`      |            |來源 |X | |`Dst`      |X |目的地 |       | |`SrcOver`  |X |來源 |X | |`DstOver`  |X |目的地 |X | |`SrcIn`    |            |來源 |       | |`DstIn`    |            |目的地 |       | |`SrcOut`   |            |             |X | |`DstOut`   |X |             |       | |`SrcATop`  |X |來源 |       | |`DstATop`  |            |目的地 |X | |`Xor`      |X |             |X | |`Plus`     |X |Sum |X | |`Modulate` |            |產品 |       | 
+| ---------- |:-----------:|:------------:|:------:|
+| `Clear`    |             |              |        |
+| `Src`      |             | 來源       | X      |
+| `Dst`      | X           | Destination  |        |
+| `SrcOver`  | X           | 來源       | X      |
+| `DstOver`  | X           | Destination  | X      |
+| `SrcIn`    |             | 來源       |        |
+| `DstIn`    |             | Destination  |        |
+| `SrcOut`   |             |              | X      |
+| `DstOut`   | X           |              |        |
+| `SrcATop`  | X           | 來源       |        |
+| `DstATop`  |             | Destination  | X      |
+| `Xor`      | X           |              | X      |
+| `Plus`     | X           | Sum          | X      |
+| `Modulate` |             | 產品      |        | 
 
 這些 blend 模式是對稱的。 可以交換來源和目的地，而且所有模式仍然可供使用。
 
@@ -320,11 +268,11 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>搭配 Porter 使用遮罩-Duff
 
-[基礎構件 **-牆合成**] 頁面會顯示傳統合成工作的範例：必須從數個部分組合圖片，包括需要排除的背景點陣圖。 以下是具有有問題背景的**SeatedMonkey .jpg**點陣圖：
+[基礎構件 **-牆合成**] 頁面會顯示傳統合成工作的範例：必須從數個部分組合圖片，包括需要排除的背景點陣圖。 以下是具有有問題背景的**SeatedMonkey.jpg**點陣圖：
 
 ![上一個猴子](porter-duff-images/SeatedMonkey.jpg "上一個猴子")
 
-在準備撰寫時，會建立對應的_遮罩_，這是您想要讓影像出現並以透明方式顯示的另一個點陣圖。 這個檔案的名稱是**SeatedMonkeyMatte** ，它是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中**Media**資料夾內的資源：
+在準備撰寫時，會建立對應的_遮罩_，這是您想要讓影像出現並以透明方式顯示的另一個點陣圖。 此檔案的名稱為**SeatedMonkeyMatte.png** ，而且是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中**Media**資料夾內的資源：
 
 ![固定的猴子遮罩](porter-duff-images/SeatedMonkeyMatte.png "固定的猴子遮罩")
 
@@ -406,7 +354,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![基礎構件-牆合成步驟0](porter-duff-images/BrickWallCompositing0.png "基礎構件-牆合成步驟0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-按 `Button` 一次會導致 `step` 遞增為1，且 `PaintSurface` 處理常式現在會顯示**SeatedMonkey**：
+按 `Button` 一次會導致 `step` 遞增至1，而且 `PaintSurface` 處理常式現在會顯示**SeatedMonkey.jpg**：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -432,7 +380,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![基礎構件-牆合成步驟1](porter-duff-images/BrickWallCompositing1.png "基礎構件-牆合成步驟1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
-再按 `Button` 一次，並 `step` 將增加為2。 這是顯示**SeatedMonkeyMatte .png**檔案的重要步驟：
+再按 `Button` 一次，並 `step` 將增加為2。 這是顯示**SeatedMonkeyMatte.png**檔案的重要步驟：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -550,32 +498,22 @@ RGB 色彩會以 Alpha 值乘以。 例如，如果**Sc**代表純紅色，但**
 
 結果會以括弧括住，並以逗號分隔 RGB 色彩： **[Alpha，color]**。 針對色彩，會分別針對紅色、綠色和藍色元件執行計算：
 
-| 模式       | 作業 |
-| ---
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | |`Clear`    |[0，0] | |`Src`      |[Sa，Sc] | |`Dst`      |[Da，Dc] | |`SrcOver`  |[Sa + Da ·（1-Sa），Sc + Dc ·（1-Sa） | |`DstOver`  |[Da + Sa ·（1– Da），Dc + Sc ·（1– Da） | |`SrcIn`    |SaDa，Sc ·Da] | |`DstIn`    |特裡斯坦Sa、Dc ·Sa] | |`SrcOut`   |Sa（1– Da），Sc ·（1– Da）]| |`DstOut`   |特裡斯坦（1-Sa），Dc ·（1-Sa）]| |`SrcATop`  |[Da，Sc ·Da + Dc ·（1-Sa）]| |`DstATop`  |[Sa，Dc ·Sa + Sc ·（1– Da）]| |`Xor`      |[Sa + Da –2·SaDa，Sc ·（1– Da） + Dc ·（1-Sa）]| |`Plus`     |[Sa + Da，Sc + Dc] | |`Modulate` |SaDa，Sc ·Dc] | 
+| 模式       | 操作 |
+| ---------- | --------- |
+| `Clear`    | [0，0]    |
+| `Src`      | [Sa，Sc]  |
+| `Dst`      | [Da，Dc]  |
+| `SrcOver`  | [Sa + Da ·（1-Sa），Sc + Dc ·（1-Sa） | 
+| `DstOver`  | [Da + Sa ·（1– Da），Dc + Sc ·（1– Da） |
+| `SrcIn`    | SaDa，Sc ·特裡斯坦 |
+| `DstIn`    | 特裡斯坦Sa、Dc ·Sa |
+| `SrcOut`   | Sa（1– Da），Sc ·（1– Da）] |
+| `DstOut`   | 特裡斯坦（1-Sa），Dc ·（1-Sa）] |
+| `SrcATop`  | [Da，Sc ·Da + Dc ·（1-Sa）] |
+| `DstATop`  | [Sa，Dc ·Sa + Sc ·（1– Da）] |
+| `Xor`      | [Sa + Da –2·SaDa，Sc ·（1– Da） + Dc ·（1-Sa）] |
+| `Plus`     | [Sa + Da，Sc + Dc] |
+| `Modulate` | SaDa，Sc ·Dc | 
 
 當**Da**和**Sa**為0或1時，這些作業比較容易分析。 例如，針對預設 `SrcOver` 模式，如果**Sa**為0，則**Sc**也是0，而結果為 **[Da，Dc]**，目的地 Alpha 和色彩。 如果**Sa**是1，則結果為 **[sa，Sc]**、來源 Alpha 和色彩，或 **[1，Sc]**。
 

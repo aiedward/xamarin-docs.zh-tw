@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139135"
+標題：「Xamarin 熱重新開機」描述：「本檔說明如何設定和使用 Xamarin 熱重新開機來進行 iOS 應用程式的偵錯工具。」
+assetid： 6BC62A88-9368-41BB-8494-760F2A4805DB ms. 技術： xamarin-表單作者： maddyleger1 ms. author： maleger ms. 日期：03/16/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 熱重新開機 (預覽)
 
 ![預覽功能](~/media/shared/preview.png)
@@ -52,7 +38,7 @@ Xamarin 熱重新開機可讓您在開發期間快速測試應用程式的變更
 
 5. 輸入您的 Apple 開發人員帳戶認證，然後按一下 [下一步]****。
 
-6. 使用下拉式功能表選取開發小組，以便在專案中啟用[自動化佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)。 按一下 [完成]  。
+6. 使用下拉式功能表選取開發小組，以便在專案中啟用[自動化佈建](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)。 按一下 [完成] 。
 
 > [!NOTE]
 > 建議使用自動化佈建，這樣便可以輕鬆地針對部署設定額外的 iOS 裝置。 不過，如果有正確的佈建設定檔，則您可以將其停用並繼續使用手動佈建。

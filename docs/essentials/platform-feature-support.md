@@ -1,20 +1,8 @@
 ---
-title: Xamarin.Essentials平臺 & 功能支援
-description: Xamarin.Essentials提供單一跨平臺 API，可搭配任何 iOS、Android 或 UWP 應用程式使用，無論使用者介面建立的方式為何，都能從共用的程式碼存取。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b052e03f3ca57229988a29b7d3f38f5fa7bb6f97
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137172"
+title：「 Xamarin.Essentials 平臺 & 功能支援」描述：」 Xamarin.Essentials 提供單一跨平臺 API，可搭配任何 IOS、ANDROID 或 UWP 應用程式使用，無論使用者介面建立的方式為何，都能從共用的程式碼存取。」
+assetid： 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4 author： jamesmontemagno ms-chap： jamont ms. date： 08/20/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="platform-support"></a>平台支援
 
 Xamarin.Essentials支援下列平臺和作業系統：
@@ -66,7 +54,7 @@ Xamarin.Essentials一律會嘗試將功能帶入每個平臺，但有時會根�
 | [Launcher](launcher.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
 | [磁力計](magnetometer.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
 | [MainThread](main-thread.md?content=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![支援的 tvOS](~/media/shared/yes.png "支援的 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
-| [地圖](maps.md?content=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
+| [地圖服務](maps.md?content=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
 | [開啟瀏覽器](open-browser.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![不支援 watchOS](~/media/shared/no.png "不支援 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
 | [方向感應器](orientation-sensor.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![不支援 tvOS](~/media/shared/no.png "不支援 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |
 | [權限](permissions.md?context=xamarin/xamarin-forms) | ![支援 Android](~/media/shared/yes.png "支援 Android") | ![支援的 iOS](~/media/shared/yes.png "支援的 iOS") | ![支援 UWP](~/media/shared/yes.png "支援 UWP") | ![支援的 watchOS](~/media/shared/yes.png "支援的 watchOS") | ![支援的 tvOS](~/media/shared/yes.png "支援的 tvOS") | ![支援的 Tizen](~/media/shared/yes.png "支援的 Tizen") |

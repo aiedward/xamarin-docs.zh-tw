@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms和 Azure 服務
-description: 本文說明如何使用 Azure 通知中樞，將跨平臺推播通知傳送至 Xamarin.Forms 應用程式。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a63b6329b9e8f4bcdc18a973b538e1e2e44bca67
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130971"
+title： " Xamarin.Forms 和 Azure 服務" 說明： "本文說明如何使用 Azure 通知中樞，將跨平臺推播通知傳送至 Xamarin.Forms 應用程式。
+assetid： 07C60A42-A9E1-4DD0-8874-BD9487DC3EA2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/28/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-services"></a>Xamarin.Forms和 Azure 服務
 
 ## <a name="consume-an-azure-cosmos-db-document-database-in-xamarinformsazure-cosmosdbmd"></a>[使用中的 Azure Cosmos DB 檔資料庫Xamarin.Forms](azure-cosmosdb.md)
