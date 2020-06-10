@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 用來建立應用程式之所有使用者介面元素的描述 Xamarin.Forms 。 本文列出組成應用程式使用者介面的控制項群組 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e843f0e42f4f66a6ce4e60c2f5d8a233d19f1df6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136392"
+title： "控制項參考" 描述： "用來建立應用程式之所有使用者介面元素的描述 Xamarin.Forms 。 本文列出組成應用程式使用者介面的控制項群組 Xamarin.Forms 。」
+assetid： F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/08/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="controls-reference"></a>控制項參考
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -25,7 +11,7 @@ ms.locfileid: "84136392"
 
 用來建立應用程式使用者介面的四個主要控制項群組如下所示 Xamarin.Forms ：
 
-- [**頁面**](pages.md)
+- [**Pages**](pages.md)
 - [**版面配置**](layouts.md)
 - [**檢視**](views.md)
 - [**資料格**](cells.md)

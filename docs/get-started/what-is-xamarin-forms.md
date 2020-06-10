@@ -47,9 +47,9 @@ Xamarin.Essentials是一種程式庫，可提供原生裝置功能的跨平臺 A
 - 文字轉換語音
 - 螢幕鎖定
 
-如需詳細資訊，請參閱 [Xamarin.Essentials](~/essentials/index.md) \(英文\)。
+如需詳細資訊，請參閱 [Xamarin.Essentials](~/essentials/index.md)。
 
-### <a name="shell"></a>Shell
+### <a name="shell"></a>殼層
 
 Xamarin.FormsShell 藉由提供大部分應用程式所需的基本功能，來降低行動應用程式開發的複雜度。 Shell 提供的一些功能範例包括：
 

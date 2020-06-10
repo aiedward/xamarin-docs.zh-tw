@@ -72,7 +72,7 @@ Xamarin.Essentials是一種程式庫，可提供原生裝置功能的跨平臺 A
 - 文字轉換語音
 - 螢幕鎖定
 
-如需詳細資訊，請參閱 [Xamarin.Essentials](~/essentials/index.md) \(英文\)。
+如需詳細資訊，請參閱 [Xamarin.Essentials](~/essentials/index.md)。
 
 ### Xamarin.Forms
 
@@ -84,7 +84,7 @@ Xamarin.Forms是一個開放原始碼 UI 架構。 Xamarin.Forms可讓開發人�
 - 效果
 - 樣式
 
-如需詳細資訊，請參閱 [Xamarin.Forms](~/xamarin-forms/index.yml) \(英文\)。
+如需詳細資訊，請參閱 [Xamarin.Forms](~/xamarin-forms/index.yml)。
 
 ## <a name="get-started"></a>開始使用
 

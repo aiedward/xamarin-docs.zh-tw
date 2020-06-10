@@ -1,9 +1,6 @@
 ---
-標題： ' Xamarin.Forms Shell 自訂轉譯器 ' 描述： ' Xamarin.Forms shell 應用程式可透過各種 Shell 類別所公開的屬性和方法進行高度自訂。 不過，如果需要更複雜的平臺特定自訂，也可以建立 Shell 自訂轉譯器。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Forms Shell 自訂轉譯器" 描述： " Xamarin.Forms shell 應用程式可透過各種 Shell 類別所公開的屬性和方法進行高度自訂。 不過，如果需要更複雜的平臺特定自訂，也可以建立 Shell 自訂轉譯器。」
+assetid： 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/06/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.FormsShell 自訂轉譯器

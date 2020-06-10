@@ -1,23 +1,7 @@
 ---
-title: ''
-description: Xamarin.Forms現已提供 WPF 平臺的預覽支援
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bbb9ea950c9f1daa1b5ee4762527d689f3cdd483
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139525"
+標題：「WPF 平臺安裝程式」描述： " Xamarin.Forms 現在有 wpf 平臺的預覽支援" ms. assetid：650723F2-4279-4B7B-B0A1-D7F8FF26BF1E。技術： xamarin-表單 ms. custom： xamu-video author： davidbritch ms-chap： dabritch ms. date： 04/09/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="wpf-platform-setup"></a>WPF 平臺設定
 
 ![預覽](~/media/shared/preview.png)

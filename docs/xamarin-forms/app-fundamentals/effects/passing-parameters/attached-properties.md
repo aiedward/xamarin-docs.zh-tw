@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138875"
+title：「將效果參數當做附加屬性傳遞」描述：「附加屬性可以用來定義會回應執行時間屬性變更的效果參數。 本文示範如何使用附加屬性將參數傳遞至效果，並在執行時間變更參數。
+assetid： DFCDCB9F-17DD-4117-BD53-B4FB206BB387 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 08/05/2016 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="passing-effect-parameters-as-attached-properties"></a>將效果參數傳遞為附加屬性
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
@@ -439,7 +425,7 @@ public class LabelShadowEffect : PlatformEffect
 ## <a name="related-links"></a>相關連結
 
 - [自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [效果](xref:Xamarin.Forms.Effect)
+- [作用](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
 - [Shadow Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange) (陰影效果 (範例))

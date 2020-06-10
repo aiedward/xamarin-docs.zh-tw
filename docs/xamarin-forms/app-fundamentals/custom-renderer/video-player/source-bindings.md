@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何使用將影片來源系結至影片播放機 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133727"
+標題：「將影片來源系結至播放機」描述：「本文將說明如何使用將影片來源系結到影片播放機 Xamarin.Forms 。」
+assetid： 504E0C7E-051A-4AF2-B654-BAB4D0957928 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/12/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="binding-video-sources-to-the-player"></a>將影片來源繫結至播放程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 207b16f062a5c2137ac5fc3c21775d2486fda57d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135859"
+標題：「扭曲轉換」描述：「這篇文章說明扭曲轉換如何在 SkiaSharp 中建立傾斜的繪圖物件，並以範例程式碼示範這項功能。」
+skiasharp 的 assetid： FDD16186-E3B7-4FF6-9BC2-8A2974BFF616 author： davidbritch ms-chap： dabritch ms. date： 03/20/2017 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="the-skew-transform"></a>傾斜轉換
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

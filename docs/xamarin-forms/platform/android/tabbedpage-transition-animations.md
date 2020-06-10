@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d3ae03ec6cbc3469422e6a2d57f186254e87f40c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140010"
+title：「Android 上的 TabbedPage 頁面轉換動畫」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的，在流覽 TabbedPage 中的頁面時停用轉換動畫。」
+assetid： 2DB4EA6D-9CED-4137-BAB2-B20A457B1CA3 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 07/10/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="tabbedpage-page-transition-animations-on-android"></a>Android 上的 TabbedPage 頁面轉換動畫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

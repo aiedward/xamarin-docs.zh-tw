@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139681"
+title：「可分離的 blend 模式」描述：「使用可分離的 blend 模式來改變紅色、綠色和藍色色彩」。
+skiasharp 的 assetid： 66D1A537-A247-484E-B5B9-FBCB7838FBE9 author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="the-separable-blend-modes"></a>分離的 blend 模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -150,46 +136,21 @@ public partial class LightenAndDarkenPage : ContentPage
 
 下表顯示所有可分離的 blend 模式，並簡短說明其用途。 第二個數據行顯示不會產生變更的來源色彩：
 
-| Blend 模式   | 沒有變更 | 作業 |
-| ---
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | |`Plus`       |黑色 |藉由新增色彩來將其變亮： Sc + Dc | |`Modulate`   |白色 |以乘以色彩來變暗： Sc ·Dc | |`Screen`     |黑色 |補充產品： Sc + Dc &ndash; Sc ·Dc | |`Overlay`    |灰色 |反向的 `HardLight` | | `Darken`    |白色 |最小色彩： min （Sc，Dc） | |`Lighten`    |黑色 |最大色彩：最大值（Sc，Dc） | |`ColorDodge` |黑色 |根據來源的變亮目的地 | |`ColorBurn`  |白色 |根據來源變暗目的地 | |`HardLight`  |灰色 |類似于粗糙焦點的效果 | |`SoftLight`  |灰色 |類似于軟性焦點的效果 | |`Difference` |黑色 |減去較淡的： Abs （Dc &ndash; Sc） | | `Exclusion` |黑色 |類似 `Difference` 但較低對比度 | | `Multiply`  |白色 |以乘以色彩來變暗： Sc ·Dc |
+| Blend 模式   | 沒有變更 | 操作 |
+| ------------ | --------- | --------- |
+| `Plus`       | 黑色     | 藉由新增色彩來將其變亮： Sc + Dc |
+| `Modulate`   | 白色     | 以乘以色彩來變暗： Sc ·Dc | 
+| `Screen`     | 黑色     | 補充產品： Sc + Dc &ndash; Sc ·Dc |
+| `Overlay`    | 灰色      | 反向`HardLight` |
+| `Darken`     | 白色     | 最小色彩： min （Sc，Dc） |
+| `Lighten`    | 黑色     | 最大色彩：最大值（Sc，Dc） |
+| `ColorDodge` | 黑色     | 根據來源的變亮目的地 |
+| `ColorBurn`  | 白色     | 根據來源變暗目的地 | 
+| `HardLight`  | 灰色      | 類似于粗糙焦點的效果 |
+| `SoftLight`  | 灰色      | 類似于軟性焦點的效果 | 
+| `Difference` | 黑色     | 從較淺的： Abs （Dc Sc）減去較暗的 &ndash; | 
+| `Exclusion`  | 黑色     | 類似 `Difference` 但較低對比 |
+| `Multiply`   | 白色     | 以乘以色彩來變暗： Sc ·Dc |
 
 如需更詳細的演算法，請參閱 W3C 撰寫[**和混合層級 1**](https://www.w3.org/TR/compositing-1/)規格和 Skia [**SkBlendMode 參考**](https://skia.org/user/api/SkBlendMode_Reference)，雖然這兩個來源中的標記法並不相同。 請記住， `Plus` 通常會被視為 Porter Duff blend 模式，而 `Modulate` 不是 W3C 規格的一部分。
 

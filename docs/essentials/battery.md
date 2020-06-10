@@ -25,7 +25,7 @@ assetid： 47EB26D8-8C62-477B-A13C-6977F74E6E43 author： jamesmontemagno ms-cha
 
 或更新 Android 資訊清單：
 
-開啟**Properties**資料夾底下的**androidmanifest.xml** ，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.BATTERY_STATS" />

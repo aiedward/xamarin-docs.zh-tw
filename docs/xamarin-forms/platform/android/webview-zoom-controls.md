@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9264bdf4ab5644b1cdfa0c37f1c7cacd3ae4ed0a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128319"
+標題：「在 Android 上進行 Web 工作的放大」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的來啟用 Web 工作的顯示功能。」
+assetid： DC1A3762-6A42-4298-929C-445F416C3E60 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/09/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="webview-zoom-on-android"></a>Android 上的 Web 視圖縮放
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

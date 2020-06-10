@@ -1,9 +1,6 @@
 ---
-標題：「平臺-詳細資訊」可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用會停用舊版色彩模式的 Android 平臺特定 Xamarin.Forms 。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+標題：「Android 上的 VisualElement 舊版色彩模式」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用會停用舊版色彩模式的 Android 平臺特定 Xamarin.Forms 。
+assetid： 37D95A2D-74AC-488A-B903-2BDD799EAA5C ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/10/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="visualelement-legacy-color-mode-on-android"></a>在 Android 上 VisualElement 舊版色彩模式

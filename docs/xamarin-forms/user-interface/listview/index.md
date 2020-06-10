@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsListView
-description: 本指南介紹 Xamarin.Forms ListView，可以用來在互動式清單中呈現資料。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139902"
+title： " Xamarin.Forms listview" 描述： "本指南介紹 Xamarin.Forms listview，這可以用來呈現互動式清單中的資料。"
+assetid： FEFDF7E0-720F-4BD1-863F-4477226AA695 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-listview"></a>Xamarin.FormsListView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)

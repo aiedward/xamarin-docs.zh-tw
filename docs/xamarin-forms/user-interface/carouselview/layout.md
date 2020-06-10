@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView 版面配置
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 44df710df0272afe3c6f6911381af1a88c8cf923
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140279"
+title： " Xamarin.Forms CarouselView Layout" 描述： "根據預設，CarouselView 會以水準方式顯示其專案。 不過，也可以使用垂直方向。」
+assetid： fede0382-c972-4023-a4ea-fe5cadec91a6 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/28/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView 版面配置
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

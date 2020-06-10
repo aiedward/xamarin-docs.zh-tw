@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsShell 導覽
-description: Xamarin.FormsShell 應用程式可以利用以 URI 為基礎的導覽體驗，允許導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132388"
+title： " Xamarin.Forms Shell 導覽" 描述： " Xamarin.Forms shell 應用程式可以利用以 URI 為基礎的導覽體驗，允許導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。"
+assetid： 57079D89-D1CB-48BD-9FEE-539CEC29EABB ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/02/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.FormsShell 導覽
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
@@ -244,7 +230,7 @@ await Shell.Current.GoToAsync("../../route");
 
 `Shell` 類別會定義 `Navigating` 事件，當導覽即將執行時，可能會因為程式設計導覽或使用者互動而引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatingEventArgs` 物件會提供下列屬性：
 
-| 屬性 | 類型 | 描述 |
+| 屬性 | 類型 | 說明 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
 | `Source` | `ShellNavigationSource` | 發生導覽的類型。 |
@@ -259,7 +245,7 @@ await Shell.Current.GoToAsync("../../route");
 
 `Shell` 類別也會定義 `Navigated` 事件，導覽完成時會引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatedEventArgs` 物件會提供下列屬性：
 
-| 屬性 | 類型 | 描述 |
+| 屬性 | 類型 | 說明 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
 | `Previous`| `ShellNavigationState` | 上一頁的 URI。 |

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsWeb 服務驗證
-description: 本指南說明如何將驗證服務整合到 Xamarin.Forms 應用程式中，讓使用者能夠共用後端，而只能存取自己的資料。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 59130739617f38ce32e0d241f8e068cf077997ac
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136080"
+標題：「 Xamarin.Forms Web 服務驗證」描述：「本指南說明如何將驗證服務整合到 Xamarin.Forms 應用程式中，讓使用者能夠共用後端，而只能存取自己的資料。」
+assetid： E6FCFAE1-4F83-4F93-9190-EC5290360C54 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-web-service-authentication"></a>Xamarin.FormsWeb 服務驗證
 
 ## <a name="authenticate-a-restful-web-service"></a>[驗證 RESTful Web 服務](rest.md)

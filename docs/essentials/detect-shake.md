@@ -1,9 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ：偵測搖動 ' ' 描述： ' 中的加速計類別可 Xamarin.Essentials 讓您偵測裝置的搖動移動。
-assetid： author： ms-chap： ms. date： ms. custom： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ：偵測搖動" 描述：「中的加速計類別可 Xamarin.Essentials 讓您偵測裝置的搖動移動。」
+assetid： 07513D32-120F-4F12-8757-A47802A8027B author： jamesmontemagno ms-chap： jamont ms. date： 05/28/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials：偵測搖動

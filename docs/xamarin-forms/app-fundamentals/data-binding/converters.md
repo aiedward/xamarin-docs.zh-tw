@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms系結值轉換器
-description: 本文說明如何藉 Xamarin.Forms 由實值轉換器（也稱為系結轉換器或系結值轉換器），來轉換或轉換資料系結內的值。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139753"
+title： "系結 Xamarin.Forms 值轉換器" 描述： "本文說明如何藉 Xamarin.Forms 由實值轉換器（也稱為系結轉換器或系結值轉換器），來轉換或轉換資料系結內的值。
+assetid： 02B1BBE6-D804-490D-BDD4-8ACED8B70C92 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/05/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms系結值轉換器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

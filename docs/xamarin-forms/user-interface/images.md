@@ -73,7 +73,7 @@ image.Source = Device.RuntimePlatform == Device.Android
 ```
 
 > [!IMPORTANT]
-> 若要在所有平臺上使用相同的映射檔案名，此名稱在所有平臺上都必須是有效的。 Android 可繪製資源有命名限制–只允許小寫字母、數位、底線和句點–而且針對跨平臺的相容性，也必須在所有其他平臺上遵循。 範例檔案名**濱水區**會遵循規則，但無效檔案名的範例包括 "水 front .png"、"濱水區"、"water-front" 和 "wåterfront"。
+> 若要在所有平臺上使用相同的映射檔案名，此名稱在所有平臺上都必須是有效的。 Android 可繪製資源有命名限制–只允許小寫字母、數位、底線和句點–而且針對跨平臺的相容性，也必須在所有其他平臺上遵循。 範例檔案名**waterfront.png**遵循規則，但無效檔案名的範例包括 "水 front.png"、"WaterFront.png"、"water-front.png" 和 "wåterfront.png"。
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>原生解析度（retina 和高 DPI）
 
@@ -87,7 +87,7 @@ Android 替代解析度映射應該放在 Android 專案中的[特殊命名目�
 
 [![Android 多解析度映射位置](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
-UWP 影像檔案名稱[ `.scale-xxx` 的尾碼前面可以加上副檔名](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)，其中 `xxx` 是套用到資產的縮放百分比，例如**myimage. scale-200 .png**。 然後，可以在程式碼或 XAML 中參考影像，而不需要調整修飾詞，例如僅**myimage .png**。 平臺會根據顯示器的目前 DPI 來選取最接近的適當資產規模。
+UWP 影像檔案名稱的[尾碼前面可以加上 `.scale-xxx` 副檔名](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)，其中 `xxx` 是套用到資產的縮放比例，例如**myimage.scale-200.png**。 然後，可以在程式碼或 XAML 中參考影像，而不需要調整修飾詞，例如只**myimage.png**。 平臺會根據顯示器的目前 DPI 來選取最接近的適當資產規模。
 
 ### <a name="additional-controls-that-display-images"></a>顯示影像的其他控制項
 
@@ -116,7 +116,7 @@ UWP 影像檔案名稱[ `.scale-xxx` 的尾碼前面可以加上副檔名](https
 
 您可以在檔案的 [**屬性**] 視窗中，查看和變更 [**建立] 動作**。
 
-在此範例中，資源識別碼是**WorkingWithImages**。
+在此範例中，資源識別碼是**WorkingWithImages.beach.jpg**。
 IDE 已藉由將此專案的**預設命名空間**與檔案名串連，來產生此預設值，並在每個值之間使用句號（.）。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
@@ -125,15 +125,15 @@ IDE 已藉由將此專案的**預設命名空間**與檔案名串連，來產生
 ![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
 
 您也可以在檔案的**Properties** pad 中查看和變更 [**建立] 動作**。
-此面板會顯示在程式碼中用來參考資源的**資源識別碼**。 在下面的螢幕擷取畫面中，**資源識別碼**是**WorkingWithImages**。
+此面板會顯示在程式碼中用來參考資源的**資源識別碼**。 在下面的螢幕擷取畫面中，**資源識別碼**是**WorkingWithImages.beach.jpg**。
 IDE 已藉由將此專案的**預設命名空間**與檔案名串連，來產生此預設值，並在每個值之間使用句號（.）。
-您可以在**Properties** pad 中編輯此識別碼，但在這些範例中，將會使用**WorkingWithImages**值。
+您可以在**Properties** pad 中編輯此識別碼，但在這些範例中，將會使用**WorkingWithImages.beach.jpg**的值。
 
 [![內嵌資源屬性 pad](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
-如果您將內嵌影像放到專案內的資料夾中，資料夾名稱也會在資源識別碼中以句點（.）分隔。 將**海灘**影像移至名為**MyImages**的資料夾，會產生**WorkingWithImages**的資源識別碼。
+如果您將內嵌影像放到專案內的資料夾中，資料夾名稱也會在資源識別碼中以句點（.）分隔。 將**beach.jpg**映射移至名為**MyImages**的資料夾，將會產生資源識別碼**WorkingWithImages.MyImages.beach.jpg**
 
 載入內嵌影像的程式碼只會將**資源識別碼**傳遞給方法，如下 [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) 所示：
 

@@ -52,7 +52,7 @@ Xamarin.Forms現在提供 GTK # 應用程式的預覽支援。 GTK # 是一種�
 
     ![參考共用專案](gtk-images/win/reference-shared-project.png "參考共用專案")
 
-8. 在 [**參考管理員**] 對話方塊中，按下 [**流覽]** 按鈕，並流覽至 [ **C:\Program Files （x86） \GtkSharp\2.12\lib** ] 資料夾，然後選取 [ **atk-sharp**]、[ **gdk-sharp**]、[ **glade-sharp**]、[ **glib-sharp**]、[ **gtk-dotnet**.dll]、[gtk-sharp **.dll**檔案]。
+8. 在 [**參考管理員**] 對話方塊中，按下 [**流覽]** 按鈕，並流覽至 [ **C:\Program Files （x86） \GtkSharp\2.12\lib** ] 資料夾，然後選取**atk-sharp.dll**、 **gdk-sharp.dll**、 **glade-sharp.dll**、 **glib-sharp.dll**、 **gtk-dotnet.dll**、 **gtk-sharp.dll**檔案。
 
     ![參考 GTK # 程式庫](gtk-images/win/reference-gtk-libraries.png "參考 GTK # 程式庫")
 

@@ -1,9 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ：版本追蹤 ' ' 描述： ' 中的 VersionTracking 類別 Xamarin.Essentials 可讓您檢查應用程式版本和組建編號，以及查看其他資訊，例如應用程式是否為第一次啟動，或針對目前版本，取得先前的組建資訊等。
-assetid： author： ms-chap： ms. date： ms. custom： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ：版本追蹤" description： "中的 VersionTracking 類別 Xamarin.Essentials 可讓您檢查應用程式版本和組建編號，並查看其他資訊，例如應用程式是否為第一次啟動，或針對目前版本，取得先前的組建資訊等。
+assetid： 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3 author： jamesmontemagno ms-chap： jamont ms. date： 05/28/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials：版本追蹤

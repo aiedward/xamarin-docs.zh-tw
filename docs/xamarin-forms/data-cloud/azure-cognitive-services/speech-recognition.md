@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何使用 Azure 語音服務 API，將語音轉譯至應用程式中的文字 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139317"
+標題：「使用語音服務 API 的語音辨識」描述：「本文說明如何使用 Azure 語音服務 API，在應用程式中轉譯語音轉換成文字」 Xamarin.Forms 。
+assetid： B435FF6B-8785-48D9-B2D9-1893F5A87EA1 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：01/14/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="speech-recognition-using-azure-speech-service"></a>使用 Azure 語音服務的語音辨識
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
@@ -347,7 +333,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 `MainActivity`類別會定義名為的靜態參考 `Instance` ，這是 `AndroidMicrophoneService` 物件在要求許可權時所需要的。 `OnRequestPermissionsResult` `AndroidMicrophoneService` 當使用者核准或拒絕許可權要求時，它會覆寫方法來更新物件。
 
-最後，Android 應用程式必須包含在**androidmanifest.xml**中記錄音訊的許可權：
+最後，Android 應用程式必須包含在**AndroidManifest.xml**檔案中記錄音訊的許可權：
 
 ```xml
 <manifest ...>

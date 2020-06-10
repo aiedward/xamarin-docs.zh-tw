@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms容器
-description: 選擇 Xamarin.Forms 器會顯示專案的簡短清單，使用者可以從中選取專案。 本文說明如何使用選擇器類別，從資料清單中選取文字專案。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139648"
+title： " Xamarin.Forms 選擇器" 描述： "選擇 Xamarin.Forms 器會顯示專案的簡短清單，供使用者從中選取專案。 本文說明如何使用 [選擇器] 類別，從資料清單中選取文字專案。
+assetid： D4815A4B-104B-4294-951B-BD8F2EC33C86 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/26/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-picker"></a>Xamarin.Forms容器
 
 _[選擇器] 視圖是從資料清單中選取文字專案的控制項。_
