@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms字串格式
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135755"
+title： " Xamarin.Forms 字串格式設定" 描述： "本文說明如何使用 Xamarin 資料系結，將物件格式化並顯示為字串。 這是藉由將系結的 StringFormat 設定為具有預留位置的標準 .NET 格式化字串來達成。」
+assetid： 978C85B7-CB58-4483-A131-21B381A865E0 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/05/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms字串格式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

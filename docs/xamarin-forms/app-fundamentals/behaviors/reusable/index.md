@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a668a6272a7158de3594f6001cc552ff294cf1a3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135742"
+標題：「可重複使用的行為」描述：「行為可跨多個應用程式重複使用。 這些文章說明如何建立實用的行為，以執行常用的功能。
+assetid： DC9AA512-3624-4EE6-AB5E-628EBA55D2DF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/06/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="reusable-behaviors"></a>可重複使用的行為
 
 _行為可跨多個應用程式重複使用。這些文章說明如何建立實用的行為，以執行常用的功能。_

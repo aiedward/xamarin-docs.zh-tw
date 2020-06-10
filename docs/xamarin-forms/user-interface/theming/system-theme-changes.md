@@ -1,22 +1,8 @@
 ---
-title: 回應應用程式中的系統主題變更 Xamarin.Forms
-description: Xamarin.Forms應用程式可以使用 OnAppTheme 類型和 DynamicResource 標記延伸來回應作業系統主題變更。
-ms.assetid: ''
-ms.prod: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2bb83f4ad5c30adccfc961938df64dda9cef1f6b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140058"
+標題：「回應應用程式中的系統主題變更」 Xamarin.Forms 描述：「 Xamarin.Forms 應用程式可以使用 OnAppTheme 類型和 DynamicResource 標記延伸模組來回應作業系統主題變更。」
+assetid： D10506DD-BAA0-437F-A4AD-882D16E7B60D ms-chap： xamarin ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 04/22/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>回應應用程式中的系統主題變更 Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)

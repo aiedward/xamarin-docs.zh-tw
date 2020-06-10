@@ -1,24 +1,8 @@
 ---
-title: 建立單一頁面 Xamarin.Forms 應用程式
-description: 本文說明如何建立單一頁面跨平臺 Xamarin.Forms 應用程式，這可讓您輸入附注並將它保存在裝置儲存體中。
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136067"
+標題：「建立單一頁面 Xamarin.Forms 應用程式」描述：「本文將說明如何建立單一頁面跨平臺 Xamarin.Forms 應用程式，這可讓您輸入附注並將它保存在裝置儲存體中。」
+zone_pivot_groups： dev16 ms. 主題：快速入門 assetid： E8CF05B1-54B9-428B-8518-D068837BD61E ms. 技術： xamarin-表單作者： davidbritch ms。 author： dabritch ms. date： 04/01/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin.Forms 應用程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
@@ -35,7 +19,7 @@ ms.locfileid: "84136067"
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>必要條件
 
 - 已安裝**使用 .NET 進行行動開發**工作負載的 Visual Studio 2019 (最新版本)。
 - C# 知識。
@@ -189,7 +173,7 @@ ms.locfileid: "84136067"
 ::: zone-end
 ::: zone pivot="win-vs2017"
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>必要條件
 
 - 已安裝**使用 .NET 進行行動開發**工作負載的 Visual Studio 2017。
 - C# 知識。
@@ -339,7 +323,7 @@ ms.locfileid: "84136067"
 ::: zone-end
 ::: zone pivot="macos"
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>必要條件
 
 - 已安裝 iOS 和 Android 平台支援的 Visual Studio for Mac (最新版本)。
 - Xcode (最新版本)。

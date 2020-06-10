@@ -1,22 +1,8 @@
 ---
-title: 中的明確樣式Xamarin.Forms
-description: 明確樣式是藉由設定樣式屬性，選擇性地套用至控制項。 本文說明如何在應用程式中使用明確樣式 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136262"
+title：「明確樣式在「描述：」中， Xamarin.Forms 明確的樣式是藉由設定其樣式屬性，選擇性地套用至控制項。 本文說明如何在應用程式中使用明確樣式 Xamarin.Forms 。」
+assetid： C0DF9F8F-B431-4374-A574-325BC3C41A3B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/17/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="explicit-styles-in-xamarinforms"></a>中的明確樣式Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
@@ -190,5 +176,5 @@ public class ExplicitStylesPageCS : ContentPage
 - [基本樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [使用樣式（範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary) \(英文\)
-- [樣式](xref:Xamarin.Forms.Style)
+- [Style](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

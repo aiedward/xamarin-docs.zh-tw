@@ -26,7 +26,7 @@ assetid： 06A03553-D212-43A2-9E6E-C2D2D93EB136 author： jamesmontemagno ms. cu
 
 或更新 Android 資訊清單：
 
-開啟**Properties**資料夾底下的**androidmanifest.xml** ，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.FLASHLIGHT" />

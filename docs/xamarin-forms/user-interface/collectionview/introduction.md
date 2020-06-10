@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView 簡介
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d6a09ead9c3def2f58ad2755de4574f6d6e331e8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136431"
+title： " Xamarin.Forms CollectionView 簡介" 描述： "CollectionView 是一種彈性且高效能的觀點，可讓您使用不同的版面配置規格來呈現資料清單。」
+assetid： 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/11/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.FormsCollectionView 簡介
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -52,9 +38,9 @@ ms.locfileid: "84136431"
 | 專案外觀 | `ItemTemplate` | 將 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 屬性設定為，即可定義中每個專案的外觀 `ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 如需詳細資訊，請參閱[定義專案外觀](populate-data.md#define-item-appearance)。 |
 | 資料格 | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)沒有資料格的概念，因此沒有洩漏指標的概念。 相反地，資料範本是用來定義清單中每個資料項目的外觀。 |
 | 資料列分隔符號 | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)不包含內建分隔符號。 如有需要，可以在專案範本中提供。 |
-| 選取項目 | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)支援單一和多重選取。 如需詳細資訊，請參閱[ Xamarin.Forms CollectionView Selection](selection.md)。 |
+| 選項 | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)支援單一和多重選取。 如需詳細資訊，請參閱[ Xamarin.Forms CollectionView Selection](selection.md)。 |
 | 資料列高度 | `HasUnevenRows`, `RowHeight` | 在中 `CollectionView` ，每個專案的資料列高度取決於 `ItemSizingStrategy` 屬性。 如需詳細資訊，請參閱[專案大小](layout.md#item-sizing)。|
-| Caching | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)會自動使用基礎原生控制項所提供的虛擬化。 |
+| 快取 | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)會自動使用基礎原生控制項所提供的虛擬化。 |
 | 頁首和頁尾 | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)可以透過 `Header` 、 `Footer` 、 `HeaderTemplate` 和屬性，呈現與清單中的專案一起滾動的頁首和頁尾 `FooterTemplate` 。 如需詳細資訊，請參閱頁首[和](layout.md#headers-and-footers)頁尾。 |
 | 群組 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)將 `IsGrouped` 屬性設定為，以顯示正確群組的資料 `true` 。 您可以將 `GroupHeaderTemplate` 和屬性設定為物件，以自訂群組標頭和群組尾 `GroupFooterTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 如需詳細資訊，請參閱[ Xamarin.Forms CollectionView 群組](grouping.md)。 |
 | 拖動以重新整理 | `IsPullToRefreshEnabled`, `IsRefreshing`, `RefreshAllowed`, `RefreshCommand`, `RefreshControlColor`, `BeginRefresh()`, `EndRefresh()` | 將設定為的子系，即可支援提取至重新整理功能 [`CollectionView`](xref:Xamarin.Forms.CollectionView) `RefreshView` 。 如需詳細資訊，請參閱[Pull to refresh](populate-data.md#pull-to-refresh)。 |

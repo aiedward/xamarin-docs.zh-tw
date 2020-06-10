@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f3a5a581ffb4ca2acf1d4209b8b7a744f0daa5eb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128038"
+title： "SkiaSharp 中的路徑效果" 描述： "本文說明各種不同的 SkiaSharp 路徑效果，可讓您將路徑用於筆劃和填滿，並以範例程式碼示範。
+skiasharp 的 assetid： 95167D1F-A718-405A-AFCC-90E596D422F3 author： davidbritch ms-chap： dabritch ms. date： 07/29/2017 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp 中的路徑效果
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

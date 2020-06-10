@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0ed11ccacec73dd3c5c220c41bffd090af6c5b27
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139382"
+標題：「建立效果」描述：「效果可簡化控制項的自訂。 本文示範如何在控制項取得焦點時，建立變更 Entry 控制項背景色彩的效果。
+assetid： 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/24/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="creating-an-effect"></a>建立效果
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
@@ -272,7 +258,7 @@ public HomePageCS ()
 ## <a name="related-links"></a>相關連結
 
 - [自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [效果](xref:Xamarin.Forms.Effect)
+- [作用](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [Background Color Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect) (背景色彩效果 (範例))
 - [Focus Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect) (焦點效果 (範例))

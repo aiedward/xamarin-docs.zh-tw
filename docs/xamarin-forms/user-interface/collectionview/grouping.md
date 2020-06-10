@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView 群組
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136457"
+title： " Xamarin.Forms CollectionView 群組" 描述： "CollectionView 可以將其 IsGrouped 屬性設為 true，以顯示正確群組的資料。"
+assetid： 7E494245-FDBD-49D6-B7FA-CEF976EB59BB ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/17/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView 群組
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms控制項範本
-description: Xamarin.Forms控制項範本會定義 ContentView 衍生自訂控制項的視覺化結構，以及 ContentPage 衍生的頁面。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 44eebed2a49fbdda5504f9a09873f93466d0326c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132544"
+title： " Xamarin.Forms 控制項範本" 描述： " Xamarin.Forms 控制項範本會定義 ContentView 衍生自訂控制項的視覺化結構，以及 ContentPage 衍生的頁面。"
+assetid： 8B8E2360-6531-44A3-A7C8-9A8808DE9B86 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/13/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms控制項範本
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)

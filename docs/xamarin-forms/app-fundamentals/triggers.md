@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms導致
-description: 本文說明如何使用觸發程式 Xamarin.Forms ，以 XAML 回應使用者介面變更。 觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136951"
+title： " Xamarin.Forms trigger" 描述： "本文說明如何使用觸發程式， Xamarin.Forms 以 XAML 回應使用者介面變更。 觸發程式可讓您在 XAML 中以宣告方式表達動作，以根據事件或屬性變更來變更控制項的外觀。」
+assetid： 60460F57-63C6-4916-BBB5-A870F1DF53D7 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/17/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms導致
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)

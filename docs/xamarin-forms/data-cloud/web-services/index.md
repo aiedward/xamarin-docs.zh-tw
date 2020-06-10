@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms和 Web 服務
-description: 本指南說明如何與不同的 web 服務通訊，以提供應用程式的建立、讀取、更新和刪除（CRUD）功能 Xamarin.Forms 。 涵蓋的主題包括與 .ASMX 服務、WCF 服務、REST 服務進行通訊。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5b2613b94d2c347d9bc6a94086f869b07ab8a55b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131881"
+title： " Xamarin.Forms 和 Web 服務描述：" 本指南說明如何與不同的 web 服務通訊，以提供應用程式的建立、讀取、更新和刪除（CRUD）功能 Xamarin.Forms 。 涵蓋的主題包括與 .ASMX 服務、WCF 服務、REST 服務通訊。
+assetid： 8B360BDA-E4E3-4A3F-9004-0E35362F49F8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-web-services"></a>Xamarin.Forms和 Web 服務
 
 ## <a name="introduction"></a>[簡介](introduction.md)

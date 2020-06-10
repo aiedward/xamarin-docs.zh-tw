@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms效應
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a6206d2c561df74a01b7d7408e8d542f1e2189d3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139330"
+title： " Xamarin.Forms 效果" 描述： "效果可讓您自訂每個平臺上的原生控制項，而不需要使用自訂轉譯器的執行。
+assetid： 8AF168A7-4CD9-4603-B961-15B8B1543784 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/01/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-effects"></a>Xamarin.Forms效應
 
 _Xamarin：表單使用者介面是使用目標平臺的原生控制項來轉譯，讓 Xamarin.Forms 應用程式可以為每個平臺保留適當的外觀與風格。效果可讓您自訂每個平臺上的原生控制項，而不需要使用自訂轉譯器的執行。_

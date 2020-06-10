@@ -1,23 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-robots: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134208"
+標題：「Xamarin Live Reload （預覽）」描述：「查看即時反映的 XAML 變更，而不需要另一個編譯和部署」。
+assetid： 4917273d-32f9-401a-a52c-5cfb53a2170d ms. 技術： xamarin-表單作者： pierceboggan ms. author： piboggan 機器人： noindex ms. date：10/26/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload （預覽）
 
 > [!NOTE]
@@ -111,7 +96,7 @@ Live Reload 適用于支援的任何平臺 Xamarin.Forms ，包括 Android、iOS
 
 ### <a name="does-it-require-debugging-the-app"></a>是否需要對應用程式進行偵錯工具？ 
 
-不會。 事實上，您甚至可以在任意數目的裝置或模擬器/模擬器上啟動所有支援的應用程式目標（Android、iOS 和 UWP），並一次查看所有的更新。 
+否。 事實上，您甚至可以在任意數目的裝置或模擬器/模擬器上啟動所有支援的應用程式目標（Android、iOS 和 UWP），並一次查看所有的更新。 
 
 ## <a name="limitations"></a>限制
 

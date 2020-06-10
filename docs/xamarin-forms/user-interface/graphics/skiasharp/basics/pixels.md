@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文將探討 SkiaSharp 座標與座標之間的差異 Xamarin.Forms ，並以範例程式碼示範這點。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137666"
+標題：「圖元和裝置獨立單位」描述：「本文將探討 SkiaSharp 座標與座標之間的差異 Xamarin.Forms ，並以範例程式碼示範這點。」
+skiasharp 的 assetid： 26C25BB8-FBE8-4B77-B01D-16A163A16890 author： davidbritch ms-chap： dabritch ms. date： 02/09/2017 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="pixels-and-device-independent-units"></a>像素與裝置獨立單位
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

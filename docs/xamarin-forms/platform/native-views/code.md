@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 'IOS、Android 和 UWP 的原生視圖可以直接從 Xamarin.Forms 使用 c # 建立的頁面參考。 本文示範如何將原生視圖加入 Xamarin.Forms 使用 c # 建立的配置，以及如何覆寫自訂視圖的配置以更正其測量 API 的使用方式。'
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139590"
+標題：「c # 中的原生視圖」描述：「iOS、Android 和 UWP 的原生視圖可以直接從 Xamarin.Forms 使用 c # 建立的頁面參考。 本文示範如何將原生視圖加入 Xamarin.Forms 使用 c # 建立的配置，以及如何覆寫自訂視圖的配置以更正其測量 API 的使用方式。
+assetid： 230F937C-F914-4B21-8EA1-1A2A9E644769 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/27/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="native-views-in-c"></a>C 中的原生視圖\#
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)

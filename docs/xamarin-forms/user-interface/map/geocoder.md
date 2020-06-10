@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms地圖地理編碼
-description: 本文說明如何使用來地理編碼和反轉地理編碼對應資料 Xamarin.Forms 。對應 Geocoder 類別。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fe099235857f6bd0531539e3aa84e41bf59b50ba
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139863"
+title： " Xamarin.Forms Map 地理編碼" 描述： "本文說明如何使用來地理編碼和反轉地理編碼對應資料 Xamarin.Forms 。Maps Geocoder 類別。」
+assetid： DE7DB31A-8921-4614-8B49-DAEF1E7B03B3 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/22/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-geocoding"></a>Xamarin.Forms地圖地理編碼
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

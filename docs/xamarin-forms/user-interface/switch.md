@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms參數
-description: Xamarin.Forms參數是一種按鈕類型，可由使用者操作以在 [開啟] 和 [關閉] 狀態之間切換。 本文說明如何使用 Switch 類別來顯示切換的 UI 元素。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a5c2583b7632acdfa7d8439dc96b3964fa3cfcab
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136236"
+title： " Xamarin.Forms switch" 描述： " Xamarin.Forms 參數是一種按鈕類型，可由使用者操作以在開啟和關閉狀態之間切換。 本文說明如何使用 Switch 類別來顯示切換 UI 元素。」
+assetId： B2F9CC65-481B-4323-8E77-C6BE29C90DE9 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：07/18/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-switch"></a>Xamarin.Forms參數
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)

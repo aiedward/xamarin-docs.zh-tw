@@ -25,7 +25,7 @@ assetid： E1B1F152-B1D5-4227-965E-C0AEBF528F49 author： jamesmontemagno ms-cha
 
 或更新 Android 資訊清單：
 
-開啟**Properties**資料夾底下的**androidmanifest.xml** ，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

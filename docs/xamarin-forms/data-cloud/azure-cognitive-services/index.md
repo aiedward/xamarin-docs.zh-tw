@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms和 Azure 認知服務
-description: 使用 Azure 認知服務將智慧功能新增至 Xamarin.Forms 應用程式，包括語音辨識、拼寫檢查、文字翻譯和表情辨識。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 64f5dce9337444a1e910a11a69426964a09ac05a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136015"
+title： " Xamarin.Forms 和 azure 認知服務" 描述：「使用 Azure 認知服務將智慧新增至 Xamarin.Forms 應用程式，包括語音辨識、拼寫檢查、文字翻譯和表情辨識。」
+assetid： 64386A65-FD31-4A1B-A769-91495E57345A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin.Forms和 Azure 認知服務
 
 ## <a name="introduction"></a>[簡介](introduction.md)

@@ -40,7 +40,7 @@ REST 的簡單性讓它成為在行動應用程式中存取 web 服務的主要�
 
 REST 服務是使用 ASP.NET Core 撰寫的，並提供下列作業：
 
-|作業|HTTP method|相對 URI|參數|
+|操作|HTTP method|相對 URI|參數|
 |--- |--- |--- |--- |
 |取得待辦事項的清單|GET|/api/todoitems/|
 |建立新的待辦事項專案|POST|/api/todoitems/|JSON 格式的 TodoItem|

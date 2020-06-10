@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139850"
+標題：「第4部分。 資料系結基本概念「描述：」資料系結可讓兩個物件的屬性連結，使其中一項變更導致另一項變更。」
+ms-chap： xamarin assetid： 342288C3-BB4C-4924-B178-72E112D777BA author： davidbritch ms. 作者： dabritch ms. date： 10/25/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="part-4-data-binding-basics"></a>第 4 部分： 資料繫結的基本概念
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

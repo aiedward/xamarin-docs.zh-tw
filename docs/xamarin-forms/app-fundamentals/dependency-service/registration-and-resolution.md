@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDependencyService 註冊與解決
-description: 本文說明如何使用 Xamarin.Forms DependencyService 類別來叫用原生平臺功能。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138768"
+title： " Xamarin.Forms DependencyService 註冊和解決方案" 描述： "本文說明如何使用 Xamarin.Forms DependencyService 類別叫用原生平臺功能。"
+assetid： 5d019604-4f6f-4932-9b26-1fce3b4d88f8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/05/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.FormsDependencyService 註冊與解決
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)

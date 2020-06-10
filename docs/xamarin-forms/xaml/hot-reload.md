@@ -1,9 +1,6 @@
 ---
-標題： ' XAML 的「熱重載」 Xamarin.Forms 描述： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要在 Xamarin.Forms 每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： "XAML 的「熱重載」 Xamarin.Forms 描述：「在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要 Xamarin.Forms 在每次 XAML 變更後建立專案」。
+assetid： E220F054-32EE-424C-A7E5-6156BE271519 ms. 技術： xamarin-表單作者： maddyleger1 ms. author： maleger ms. 日期：03/14/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xaml-hot-reload-for-xamarinforms"></a>的 XAML 熱重載Xamarin.Forms
@@ -18,54 +15,10 @@ XAML 熱重載會插入您現有的工作流程，以提高您的生產力並節
 ## <a name="system-requirements"></a>系統需求
 
 | IDE/架構 | 需要的版本 |
-|---
-標題： ' XAML 的「熱重載」 Xamarin.Forms 描述： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要在 Xamarin.Forms 每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---標題： ' 描述的 XAML 熱重載 Xamarin.Forms ： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要 Xamarin.Forms 在每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' XAML 的「熱重載」 Xamarin.Forms 描述： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要在 Xamarin.Forms 每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' XAML 的「熱重載」 Xamarin.Forms 描述： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要在 Xamarin.Forms 每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' XAML 的「熱重載」 Xamarin.Forms 描述： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要在 Xamarin.Forms 每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' XAML 的「熱重載」 Xamarin.Forms 描述： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要在 Xamarin.Forms 每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' XAML 的「熱重載」 Xamarin.Forms 描述： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要在 Xamarin.Forms 每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題： ' XAML 的「熱重載」 Xamarin.Forms 描述： ' 在執行中的應用程式上立即重載 xaml 檔案的變更，讓您不需要在 Xamarin.Forms 每次 XAML 變更後建立您的專案。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----------| |Visual Studio 2019 |16.4 或更高版本的 Visual Studio 2019 for Mac |8.4 或更高版本 Xamarin.Forms | 4.1 或更高版本
+|------|------------------|
+|Visual Studio 2019 | 16.4 或更高版本
+Visual Studio 2019 for Mac | 8.4 或更高版本
+Xamarin.Forms | 4.1 或更高版本
 
 ## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>啟用的 XAML 熱重載Xamarin.Forms
 

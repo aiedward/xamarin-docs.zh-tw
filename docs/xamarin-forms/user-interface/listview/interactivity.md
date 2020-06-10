@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何藉 Xamarin.Forms 由執行選取專案、內容動作和提取重新整理，將互動性新增至 ListView。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5142965216b328172ae7fa04cdc0c13590f5ff38
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139882"
+title： "ListView 互動性" 描述： "本文說明如何藉 Xamarin.Forms 由執行選取專案、內容動作和提取重新整理，將互動性新增至 ListView。
+assetid： CD14EB90-B08C-4E8F-A314-DA0EEC76E647 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/25/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="listview-interactivity"></a>ListView 互動性
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

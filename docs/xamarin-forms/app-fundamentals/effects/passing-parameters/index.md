@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 42d3943b00fc2ae5385343f946d9d96743e955cd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138836"
+title： "將參數傳遞至效果" 描述： "效果參數可以由屬性定義，讓效果可重複使用。 然後，您可以在具現化效果時，指定每個屬性的值，將參數傳遞至效果。
+assetid： F6429859-6EF7-48BE-A0CB-8F42B8A75215 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/06/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="passing-parameters-to-an-effect"></a>傳遞參數給效果
 
 _效果參數可以由屬性定義，讓效果能夠重複使用。然後，可以在具現化效果時，指定每個屬性的值，將參數傳遞至效果。_

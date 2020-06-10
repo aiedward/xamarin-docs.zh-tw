@@ -1,8 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ： MainThread ' ' 描述： assetid： author： ms. custom： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ： MainThread" 描述： "MainThread 類別可讓應用程式在主要執行執行緒上執行程式碼。"
+assetid： CD6D51E7-D933-4FE7-A7F7-392EF27812E1 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 08/20/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials： MainThread

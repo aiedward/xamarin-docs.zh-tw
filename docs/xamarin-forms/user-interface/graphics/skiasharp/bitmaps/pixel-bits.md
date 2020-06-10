@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135575"
+title： "存取 SkiaSharp 點陣圖圖元位" 描述： "探索用來存取和修改 SkiaSharp 點陣圖圖元位的各種技術。"
+skiasharp 的 assetid： DBB58522-F816-4A8C-96A5-E0236F16A5C6 author： davidbritch ms-chap： dabritch ms. date： 07/11/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>存取 SkiaSharp 點陣圖圖元位
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -490,30 +476,15 @@ public class GradientBitmapPage : ContentPage
 以下是合併執行時間（以毫秒為單位）的資料表：
 
 | API       | 資料類型 | iOS  | Android | UWP  |
-| ---
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |----|---標題：描述： ms-chap： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-----:| ----:| |Bitmap.setpixel |          |3.17 |  10.77 |3.49 | |圖元 |          |0.32 |   1.23 |0.07 | |GetPixels |位元組 |0.09 |   0.24 |0.10 | |          |uint |0.06 |   0.26 |0.05 | |          |SKColor |0.29 |   0.99 |0.07 | |SetPixels |位元組 |1.33 |   6.78 |0.11 | |          |uint |0.14 |   0.69 |0.06 | |          |SKColor |0.35 |   1.93 |0.10 |
+| --------- | --------- | ----:| -------:| ----:|
+| Bitmap.setpixel  |           | 3.17 |   10.77 | 3.49 |
+| 阻擋的    |           | 0.32 |    1.23 | 0.07 |
+| GetPixels | byte      | 0.09 |    0.24 | 0.10 |
+|           | uint      | 0.06 |    0.26 | 0.05 |
+|           | SKColor   | 0.29 |    0.99 | 0.07 |
+| SetPixels | byte      | 1.33 |    6.78 | 0.11 |
+|           | uint      | 0.14 |    0.69 | 0.06 |
+|           | SKColor   | 0.35 |    1.93 | 0.10 |
 
 如預期，呼叫 `SetPixel` 65536 次是設定點陣圖圖元的最 effeicient 方式。 填入 `SKColor` 陣列和設定 `Pixels` 屬性會比較好，而且甚至比一些 `GetPixels` 和技巧更有利 `SetPixels` 。 使用 `uint` 圖元值通常比設定不同 `byte` 的元件更快，而將 `SKColor` 值轉換成不帶正負號的整數會增加處理常式的額外負荷。
 

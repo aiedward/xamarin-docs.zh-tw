@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDependencyService
-description: Xamarin.FormsDependencyService 類別是一種服務定位器，可讓 Xamarin.Forms 應用程式從共用程式碼叫用原生平臺功能。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 126e2d2373bad923fe1d66fe355ad811c15fbe4f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138368"
+title： " Xamarin.Forms DependencyService" 描述： " Xamarin.Forms DependencyService 類別是一種服務定位器，可讓 Xamarin.Forms 應用程式從共用程式碼叫用原生平臺功能。」
+assetid： 403479F2-6751-41F2-ADCE-3AF595062FE4 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/05/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-dependencyservice"></a>Xamarin.FormsDependencyService
 
 ## <a name="introduction"></a>[簡介](introduction.md)

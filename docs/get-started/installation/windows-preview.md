@@ -1,21 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5ccd5a610ad41c0160a6778a63a367376bd200b3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134013"
+標題：「在 Windows 上安裝 Xamarin Preview」描述：「本檔說明如何使用預覽版本頻道，在 Visual Studio 2019 上安裝 Xamarin 的預覽版本。」
+assetid： 9F730444-06E8-4B3F-8A19-CA95CD484FFA author： conceptdev ms. author： crdun ms. date： 03/20/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="installing-xamarin-preview-on-windows"></a>安裝 Xamarin 預覽版 (Windows)
 
 Visual Studio 2019 和 Visual Studio 2017 不會以與舊版相同的方式來支援 Alpha、搶鮮版 (Beta) 和穩定通道。 相反地，有兩個選項：

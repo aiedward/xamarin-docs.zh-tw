@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bb77e9fafe39bf76a7d4290dba0bc658cd15094f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140032"
+title： "專案輸入方法編輯器選項 on Android" 描述：「平臺詳細資訊可讓您使用僅適用于特定平臺的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的來設定螢幕小鍵盤的輸入法選項，以取得專案。」
+assetid： 7909C738-04B2-4476-9A3B-A6D79BC3B9B2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/10/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="entry-input-method-editor-options-on-android"></a>Android 上的專案輸入法方法編輯器選項
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

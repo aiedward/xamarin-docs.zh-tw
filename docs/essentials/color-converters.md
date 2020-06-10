@@ -1,21 +1,8 @@
 ---
-title: Xamarin.Essentials色彩轉換器
-description: 中的 ColorConverters 類別 Xamarin.Essentials 提供數個 helper 方法和擴充方法，以處理 system.web. Color。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-ms.custom: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 57b85a909855594c70bfd529d7a794b4bd7bca7e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130217"
+標題：「 Xamarin.Essentials 色彩轉換器」描述：「中的 ColorConverters 類別 Xamarin.Essentials 提供數個 helper 方法和擴充方法來處理 System.web. Color。」
+assetid： B10428D6-89E2-4714-A39F-7E6E626391B2 author： jamesmontemagno ms-chap： jamont ms. date： 01/06/2020 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials：色彩轉換器
 
 中的**ColorConverters**類別會 Xamarin.Essentials 針對 system.web. Color 提供數個 helper 方法。

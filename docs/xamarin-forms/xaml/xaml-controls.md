@@ -1,23 +1,8 @@
 ---
-title: ''
-description: 在中定義的所有視圖都 Xamarin.Forms 可以從 XAML 檔案參考。
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 445ef85f661d945bda25203f35dea787e64dc9b0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138420"
+title： "XAML 控制項" 描述： "中定義的所有視圖都 Xamarin.Forms 可以從 XAML 檔案參考。"
+ms. 主題：文章 ms-chap： xamarin ms. assetid： 639BD392-1496-41BB-BB09-7652273AC9D8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date：04/17/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xaml-controls"></a>XAML 控制項
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

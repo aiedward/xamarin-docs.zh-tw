@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1d21fc199dd67471440ca0e3eeaf9a140e7a1967
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140227"
+title： "SkiaSharp 點陣圖" 描述： "瞭解如何載入、儲存、顯示、建立、繪製、製作動畫，以及存取 SkiaSharp 點陣圖的位。"
+skiasharp assetid： 70C19370-157A-4B1B-9532-F77E32AC21BC 作者： davidbritch ms。作者： dabritch ms。日期：07/17/2018 不是-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-bitmaps"></a>SkiaSharp 點陣圖
 
 點陣圖是對應至顯示裝置圖元的矩形資料陣列。 與點陣圖相關聯之圖形程式設計的區域有時稱為「_點陣圖形_」（在早期影片的掃描行之後），與線條和曲線的_向量圖形_相反。 

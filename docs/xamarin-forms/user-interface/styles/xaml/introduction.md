@@ -1,22 +1,8 @@
 ---
-title: 樣式簡介 Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5766af7da3a0cf550a2ccb3a926dad25fd7962eb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138813"
+title： "樣式簡介 Xamarin.Forms " 描述： "樣式允許自訂視覺元素的外觀。 樣式是針對特定類型而定義的，而且包含該類型上可用屬性的值。」
+assetid： 3FF899C0-6CFB-4C1D-837D-9E9E10181967 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/27/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-xamarinforms-styles"></a>樣式簡介 Xamarin.Forms
 
 _樣式允許自訂視覺元素的外觀。樣式是針對特定類型而定義的，而且包含該類型上可用屬性的值。_
@@ -141,5 +127,5 @@ public class NoStylesPageCS : ContentPage
 ## <a name="related-links"></a>相關連結
 
 - [XAML 標記延伸](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [樣式](xref:Xamarin.Forms.Style)
+- [Style](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

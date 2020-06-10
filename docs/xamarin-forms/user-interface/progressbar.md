@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsProgressBar
-description: Xamarin.FormsProgressBar 是控制項，以視覺化方式將進度表示為根據 float 屬性填滿的水準橫條。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b4ac6231c0483c0c44755c2ac9539f237dd64251
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136275"
+title： " Xamarin.Forms ProgressBar" 描述： " Xamarin.Forms ProgressBar 是一個控制項，它會以視覺方式將進度表示為根據 float 屬性填入的水準橫條。"
+assetId： C2F85FED-797C-466B-A0FD-E73CFB79B267 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：07/09/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-progressbar"></a>Xamarin.FormsProgressBar
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 

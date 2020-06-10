@@ -1,21 +1,8 @@
 ---
-title: Xamarin.Essentials單位轉換器
-description: 中的 UnitConverters 類別 Xamarin.Essentials 提供數個單位轉換器，可協助開發人員使用 Xamarin.Essentials 。
-ms.assetid: ''
-author: ''
-ms.custom: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: deff6997ff921e6048ccb2497a0747c770501a04
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137133"
+標題：「 Xamarin.Essentials 單位轉換器」描述：「中的 UnitConverters 類別 Xamarin.Essentials 提供數個單位轉換器，可協助開發人員使用 Xamarin.Essentials 。」
+assetid： 35DE2704-E730-4337-9476-66CD53376943 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 01/06/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials：單位轉換器
 
 **UnitConverters**類別提供數個單位轉換器，可協助開發人員使用 Xamarin.Essentials 。

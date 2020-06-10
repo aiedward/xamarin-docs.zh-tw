@@ -1,9 +1,6 @@
 ---
-標題： Xamarin.Forms [地圖位置和距離] 描述： ' Xamarin.Forms 。Maps 命名空間包含位置結構，通常會在定位地圖和其釘選時使用，以及可選擇性地在定位對應時使用的距離結構。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+標題：「 Xamarin.Forms 地圖位置和距離」描述：」 Xamarin.Forms 。Maps 命名空間包含位置結構，通常會在定位地圖和其釘選時使用，以及可選擇性地在定位對應時使用的距離結構。」
+assetid： 2F4EA3D2-1351-40AD-A71D-CF7F1F18F1E8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/10/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-map-position-and-distance"></a>Xamarin.Forms地圖位置和距離

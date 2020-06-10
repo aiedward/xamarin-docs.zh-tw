@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsRelativeLayout
-description: 本文說明如何使用 Xamarin.Forms RelativeLayout 類別來建立可調整為符合任何螢幕大小的 ui。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127186"
+title： " Xamarin.Forms RelativeLayout" 描述： "本文說明如何使用 Xamarin.Forms RelativeLayout 類別來建立可調整為符合任何螢幕大小的 ui。"
+assetid： 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/25/2015 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -31,7 +17,7 @@ ms.locfileid: "84127186"
 
 ![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>使用方式
+## <a name="usage"></a>使用量
 
 ### <a name="understanding-constraints"></a>瞭解條件約束
 

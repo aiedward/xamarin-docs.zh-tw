@@ -1,9 +1,6 @@
 ---
-標題：描述： ' 本文說明中提供的 Windows 平臺支援 Xamarin.Forms 。
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+標題：「Windows 平臺功能」描述：「本文將說明中提供的 Windows 平臺支援。」 Xamarin.Forms
+assetid： F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/16/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="windows-platform-features"></a>Windows 平臺功能

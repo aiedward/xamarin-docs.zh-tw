@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms通用控制項屬性、方法和事件
-description: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136418"
+title：「 Xamarin.Forms 通用控制項屬性、方法和事件」描述：「本文描述 VisualElement 類別上所定義的通用屬性、方法和事件，通常用於衍生類別中。」
+assetId： 85A0CCF5-C1D8-40BB-927F-A4D944E5534D ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：08/21/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms通用控制項屬性、方法和事件
 
 Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使用的基類 Xamarin.Forms 。 `VisualElement`類別會定義在衍生類別中使用的許多[屬性](#properties)、[方法](#methods)和[事件](#events)。

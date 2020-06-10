@@ -1,22 +1,8 @@
 ---
-title: 中可系結的版面配置Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138238"
+title：「可系結的配置」描述：「可系結的版面配置」可讓配置類別系結 Xamarin.Forms 至專案集合，以產生其內容，並選擇使用 DataTemplate 來設定每個專案的外觀。」
+assetid： 824C3319-20A0-42D0-8632-CDECD98349C3 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/09/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="bindable-layouts-in-xamarinforms"></a>中可系結的版面配置Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)

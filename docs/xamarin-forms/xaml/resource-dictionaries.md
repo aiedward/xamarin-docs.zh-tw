@@ -1,23 +1,8 @@
 ---
-title: Xamarin.Forms資源字典
-description: Xamarin.FormsXAML 資源是可在整個應用程式中共用和重複使用的物件 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.custom: ''
-ms.openlocfilehash: a1c7cfd4a0f3549b11ac51dc13b40da552f6b758
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139408"
+標題：「 Xamarin.Forms 資源字典」描述：「 Xamarin.Forms XAML 資源是可以在整個應用程式中共用和重複使用的物件」 Xamarin.Forms 。
+assetid： DF103686-4A92-40FA-9CF1-A9376293B13C ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date：04/01/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ] ms. custom：影片
 ---
+
 # <a name="xamarinforms-resource-dictionaries"></a>Xamarin.Forms資源字典
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)

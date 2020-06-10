@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 28. Location and maps''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133402"
+title： "第28章的摘要。 位置和地圖「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第28章的摘要。 Location 和 map "ms-chap： xamarin ms. 技術： xamarin assetid： F6E20077-687C-45C4-A375-31D4F49BBFA4 author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="summary-of-chapter-28-location-and-maps"></a>第28章的摘要。 位置與地圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
@@ -92,7 +76,7 @@ Xamarin.Forms支援 [`Map`](xref:Xamarin.Forms.Maps.Map) 衍生自的元素 `Vie
 
 #### <a name="location-permissions-for-android"></a>Android 的位置許可權
 
-取得使用者位置的 Android 應用程式必須具有 Androidmanifest.xml 檔案中的 ACCESS_FILE_LOCATION 許可權。
+取得使用者位置的 Android 應用程式必須具有 AndroidManifest.xml 檔案中的 ACCESS_FILE_LOCATION 許可權。
 
 #### <a name="location-permissions-for-the-uwp"></a>UWP 的位置許可權
 
@@ -120,7 +104,7 @@ Xamarin.Forms支援 [`Map`](xref:Xamarin.Forms.Maps.Map) 衍生自的元素 `Vie
 
 #### <a name="enabling-android-maps"></a>啟用 Android 地圖
 
-使用 Google Map 服務需要授權金鑰。 這個金鑰會插入**androidmanifest.xml**檔案中。 此外， **androidmanifest.xml**也需要 `manifest` 取得使用者位置所需的標記。
+使用 Google Map 服務需要授權金鑰。 這個金鑰會插入**AndroidManifest.xml**檔案中。 此外， **AndroidManifest.xml**檔案需要 `manifest` 取得使用者位置所需的標記。
 
 #### <a name="enabling-uwp-maps"></a>啟用 UWP 地圖
 
@@ -219,7 +203,7 @@ Xamarin.Forms支援 [`Map`](xref:Xamarin.Forms.Maps.Map) 衍生自的元素 `Vie
 - [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)類型的 `Position` ，表示釘選顯示在地圖上的位置
 - [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)類型為的 [`PinType`](xref:Xamarin.Forms.Maps.PinType) 列舉，未使用
 
-**MapDemos**專案包含[ScienceMuseums](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml)檔案，該檔案會列出美國的科學博物館，以及用 [`Locations`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) 來還原 [`Site`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) 序列化此資料的和類別。
+**MapDemos**專案包含[ScienceMuseums.xml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Data/ScienceMuseums.xml)的檔案，其中列出美國的科學博物館，以及用來還原 [`Locations`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Locations.cs) [`Site`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/Site.cs) 序列化此資料的和類別。
 
 [ScienceMuseumsPage .xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ScienceMuseumsPage.xaml)檔案和[ScienceMuseumsPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/ScienceMuseumsPage.xaml.cs)程式碼後置檔案會在地圖中顯示這些科學博物館的圖釘。 當使用者按下 pin 時，會顯示該博物館的位址和網站。
 

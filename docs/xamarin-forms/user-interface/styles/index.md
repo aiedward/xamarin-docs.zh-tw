@@ -1,22 +1,8 @@
 ---
-title: 設定 Xamarin.Forms 應用程式的樣式
-description: 本指南說明如何 Xamarin.Forms 使用 XAML 樣式，以及如何使用階層式樣式表來為應用程式樣式。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8775793c2d9ae1ba6e1eba38fe48647b43056bf8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140108"
+標題：「樣式 Xamarin.Forms 應用程式」描述：「本指南說明如何 Xamarin.Forms 使用 XAML 樣式來設定應用程式的樣式，以及如何使用階層式樣式表。」
+assetid： EABF5072-B89B-4356-B7B3-1C6B40358926 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 04/28/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="styling-xamarinforms-apps"></a>設定 Xamarin.Forms 應用程式的樣式
 
 ## <a name="styling-xamarinforms-apps-using-xaml-stylesxamlindexmd"></a>[Xamarin.Forms使用 XAML 樣式設定應用程式的樣式](xaml/index.md)

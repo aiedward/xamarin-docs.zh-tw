@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsContentView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46d2abf895ffe31bd1dc1c22caf36440c54b331c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130100"
+title： " Xamarin.Forms ContentView" 描述： "本文說明如何使用 ContentView 類別來建立自訂控制項，例如 CardView 範例。
+assetid： 638402E7-CA44-456B-863B-791F6B6B561D ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：08/14/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-contentview"></a>Xamarin.FormsContentView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)

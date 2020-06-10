@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms地圖釘選
-description: 本文說明如何在地圖上建立 pin Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138433"
+標題：「 Xamarin.Forms 地圖釘選」描述：「這篇文章說明如何在地圖上建立 pin」 Xamarin.Forms 。
+assetid： F8FC081B-A811-4FBB-B8F8-30D6FD36BD40 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/23/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-pins"></a>Xamarin.Forms地圖釘選
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

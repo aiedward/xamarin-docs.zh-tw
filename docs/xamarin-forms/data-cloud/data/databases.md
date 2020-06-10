@@ -25,7 +25,7 @@ SQLite 資料庫引擎可讓 Xamarin.Forms 應用程式將資料物件載入和�
 
 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
 
-- **建立者：** Frank Krueger （praeclarum）
+- **建立者：** Frank A. Krueger (praeclarum)
 - **識別碼：** sqlite-net-pcl
 - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 

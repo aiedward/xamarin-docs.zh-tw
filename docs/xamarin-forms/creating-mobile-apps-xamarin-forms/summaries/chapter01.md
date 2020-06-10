@@ -1,23 +1,9 @@
 ---
-title: 第1章的摘要。 如何 Xamarin.Forms 融入？
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 1. How does Xamarin.Forms fit in?''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 48b2fb429d206f6582886c94d4d99839d790dc8d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136922"
+title： "第1章的摘要。 如何 Xamarin.Forms 融入？」
+描述：「使用下列方式建立 Mobile Apps Xamarin.Forms ：第1章的摘要。 如何 Xamarin.Forms 融入？」
+assetid： F3F864FF-EE70-49D0-90D1-388889037625 author： davidbritch ms-chap： dabritch ms. date：07/19/2018 否-loc： [ Xamarin.Forms ，]，請執行下列動作 Xamarin.Essentials
 ---
+
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第1章的摘要。 如何 Xamarin.Forms 融入？
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)

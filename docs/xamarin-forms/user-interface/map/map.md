@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms地圖控制項
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 32564b48b6d5e7acc619a966af30a086fb56d5e6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129398"
+title： " Xamarin.Forms 地圖控制項" 描述： "地圖控制項是用來顯示和標注地圖的跨平臺視圖。 它會使用每個平臺的原生地圖控制項，為使用者提供快速且熟悉的地圖體驗。」
+assetid： 22C99029-0B16-43A6-BF58-26B48C4AED38 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/29/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-control"></a>Xamarin.Forms地圖控制項
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

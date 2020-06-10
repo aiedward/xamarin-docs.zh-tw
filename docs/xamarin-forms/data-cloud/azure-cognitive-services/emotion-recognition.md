@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 臉部 API 會以影像中的臉部運算式做為輸入，並傳回在影像中每個臉部的一組表情上包含信賴等級的資料。 本文說明如何使用臉部 API 來辨識表情，以對應用程式進行評分 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136054"
+標題：「使用臉部 API 的認知表情辨識」描述：「臉部 API 會在影像中以臉部運算式做為輸入，並傳回在影像中每個臉部的一組表情上包含信賴等級的資料。 本文說明如何使用臉部 API 來辨識表情，以對應用程式進行評分 Xamarin.Forms 。」
+assetid： 19D36A7C-E8D8-43D1-BE80-48DE6C02879A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/10/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>使用臉部 API 的認知表情辨識
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

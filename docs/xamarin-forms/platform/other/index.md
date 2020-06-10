@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms其他平臺
-description: 本指南說明所支援的其他平臺 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a0ab248d3e23854e8027f515fbcf0fa6ca9521fd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139538"
+標題：「 Xamarin.Forms 其他平臺」描述：「本指南說明支援的其他平臺」 Xamarin.Forms 。
+assetid： C713B905-0C98-4442-B5CB-91C384A384DA ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-other-platforms"></a>Xamarin.Forms其他平臺
 
 Xamarin.Forms支援 iOS、Android 和 Windows 以外的其他平臺。

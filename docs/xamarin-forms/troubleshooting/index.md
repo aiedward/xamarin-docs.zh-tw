@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 237dfd637d5456636afd19ea0175cb388773d273
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135911"
+標題：「疑難排解」描述：「常見的錯誤狀況以及如何解決這些問題」的毫秒。主題：疑難排解 ms-chap： xamarin assetid： 63291951-7375-4CBF-BCC3-2E4AD157A2C8 ms-chap： xamarin-forms author： davidbritch ms-chap： dabritch ms. date： 04/25/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="troubleshooting"></a>疑難排解
 
 _常見的錯誤狀況和解決方式_

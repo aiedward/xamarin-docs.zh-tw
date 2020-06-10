@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsIndicatorView
-description: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a6bf11fd80dd5226ae26dd392e80f784a9b296bf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131977"
+title： " Xamarin.Forms IndicatorView" 描述： "IndicatorView 是一種控制項，它會顯示指標，以代表 CarouselView 中的專案數和目前的位置。」
+assetId： BBCC223B-4B02-46B7-80BB-EE0E86A67CE2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/27/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms器
-description: 此 Xamarin.Forms 展開器控制項會提供可擴充的容器來裝載任何內容。 藉由點擊展開器標頭，即可顯示或隱藏內容。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e9afa0f6d27003891963af5715d5721e3129306
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129529"
+title： " Xamarin.Forms 展開器" 描述： " Xamarin.Forms 展開器控制項提供可展開的容器來裝載任何內容。 藉由點擊展開器標頭，即可顯示或隱藏內容。」
+assetid： 381DCB55-522D-4414-B45B-E8DD70AA9985 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 04/15/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-expander"></a>Xamarin.Forms器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)

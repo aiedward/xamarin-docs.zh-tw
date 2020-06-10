@@ -1,8 +1,6 @@
 ---
-標題： ' ' Xamarin.Essentials ：陀螺儀 ' ' 描述： assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： " Xamarin.Essentials ：陀螺儀" 描述： "中的陀螺儀類別 Xamarin.Essentials 可讓您監視裝置的陀螺儀感應器，這會測量裝置的三個主要軸旋轉。
+assetid： DA4F968A-D988-41F5-8745-1BEE693660A1 author： jamesmontemagno ms-chap： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials：陀螺儀

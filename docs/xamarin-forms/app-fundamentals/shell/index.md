@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms外層
-description: 本指南說明如何使用 Xamarin.Forms Shell，藉 Xamarin.Forms 由提供大部分應用程式所需的基本功能，降低應用程式的複雜性。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0acf00d85c2bfb823ec1cfba099179bb6743117c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138745"
+title： " Xamarin.Forms shell" 描述： "本指南說明如何使用 Xamarin.Forms shell，藉 Xamarin.Forms 由提供大部分應用程式所需的基本功能，降低應用程式的複雜性。
+assetid： 85B322AA-808F-41B6-953A-5877264AE643 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/28/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-shell"></a>Xamarin.Forms外層
 
 ## <a name="introduction"></a>[簡介](introduction.md)
@@ -31,7 +17,7 @@ Xamarin.FormsShell 提供大部分行動應用程式所需的基本功能，藉�
 
 飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標題、飛出視窗項目及選用功能表項目所組成。
 
-## <a name="tabs"></a>[索引標籤](tabs.md)
+## <a name="tabs"></a>[定位點](tabs.md)
 
 飛出視窗之後，Shell 應用程式中的下一個導覽層級是底部的索引標籤列。 或者，應用程式的導覽模式可以從底部索引標籤開始，而不使用飛出視窗。 在這兩種情況下，當底部索引標籤包含多個頁面時，頁面將可透過頂端索引標籤來導覽。
 

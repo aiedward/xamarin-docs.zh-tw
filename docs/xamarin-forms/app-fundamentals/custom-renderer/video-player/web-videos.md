@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何使用，在影片播放機應用程式中播放 web 影片 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b4269b768d6dd9a0eadbbe557f701f8a43b74c99
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133675"
+標題：「播放網路影片」描述：「本文說明如何使用，在影片播放機應用程式中播放 web 影片。」 Xamarin.Forms
+assetid： 75781A10-865D-4BA8-8D6B-E3DA012922BC ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/12/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="playing-a-web-video"></a>播放 Web 視訊
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

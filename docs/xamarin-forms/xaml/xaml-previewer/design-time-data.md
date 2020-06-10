@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127343"
+標題：「搭配 XAML 預覽程式使用設計階段資料」描述：「本文將說明如何使用設計階段資料在 XAML 預覽程式中顯示資料繁重的配置，而不需要執行您的應用程式。」
+assetid： 0F608019-5951-4BE6-80E0-9EEE1733D642 ms. 技術： xamarin-表單作者： maddyleger1 ms. author： maleger ms. 日期：03/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>將設計階段資料與 XAML 預覽器搭配使用
 
 _有些版面配置難以視覺化而不會有資料。使用這些秘訣，讓您充分利用 XAML 預覽程式中的資料繁重頁面。_

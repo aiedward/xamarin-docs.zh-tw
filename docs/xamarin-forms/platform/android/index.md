@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何將 Android 特有的功能新增至 Xamarin.Forms 應用程式。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3045db1248aa16529d4e43b9a8afc97377cfd9cb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128937"
+標題：「Android 平臺功能」描述：「本文將說明如何將 Android 特有的功能新增至 Xamarin.Forms 應用程式。」
+assetid： E24168F3-0138-4814-86EA-B467F6B8A545 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/11/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="android-platform-features"></a>Android 平台功能
 
 開發 Xamarin.Forms Android 應用程式需要 Visual Studio。 [[支援的平臺] 頁面](~/get-started/supported-platforms.md)包含必要元件的詳細資訊。

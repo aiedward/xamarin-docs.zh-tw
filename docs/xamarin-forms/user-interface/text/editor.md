@@ -1,23 +1,9 @@
 ---
-title: Xamarin.Forms法
-description: 本文說明如何使用 Xamarin.Forms 編輯器控制項接受應用程式中的多行文字輸入。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 02749c9f8f55427bb1742e78464bbc003f1f7358
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136167"
+title： " Xamarin.Forms Editor" 描述： "本文說明如何使用 Xamarin.Forms 編輯器控制項接受應用程式中的多行文字輸入。
+assetid： 7074DB3A-30D2-4A6B-9A89-B029EEF20B07 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/26/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-editor"></a>Xamarin.Forms法
+
+# <a name="xamarinforms-editor"></a>Xamarin.Forms 編輯器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
@@ -285,7 +271,7 @@ public partial class EditorPage : ContentPage
 > [!NOTE]
 > [`VisualElement`](xref:Xamarin.Forms.VisualElement) [`Entry`](xref:Xamarin.Forms.Entry) 繼承自的類別也具有 [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) 和 [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) 事件。
 
-### <a name="completed"></a>已完成
+### <a name="completed"></a>Completed
 
 `Completed`事件是用來回應與的互動完成 `Editor` 。 `Completed`當使用者在鍵盤上輸入 return 鍵（或按 UWP 上的 Tab 鍵）來結束具有欄位的輸入時，會引發。 事件的處理常式是一般事件處理常式，接受寄件者和 `EventArgs` ：
 

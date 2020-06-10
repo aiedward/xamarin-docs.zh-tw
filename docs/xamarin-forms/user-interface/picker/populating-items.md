@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8872c6748ba778a2622d82803d580c781bd282cd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139629"
+標題：「將資料加入至選擇器的專案集合」描述：「選擇器視圖是從資料清單中選取文字專案的控制項。 本文說明如何在選擇器中填入資料，方法是將其加入至 Items 集合，以及如何回應使用者選取的專案。
+assetid： 3C840F64-A430-457D-A4B2-3D7AF46F9DBE ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/26/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="adding-data-to-a-pickers-items-collection"></a>將資料新增到 Picker 的項目集合
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms資料系結
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4b99877342ddbaf9ad5606ec5dc284818fcfeffd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139694"
+title： " Xamarin.Forms 資料系結" 描述： "資料系結是連結兩個物件屬性的技術，讓一個屬性中的變更會自動反映在另一個屬性中。 資料系結是 ViewModel （MVVM）應用程式架構中不可或缺的一部分。」
+assetid： 938E85C8-521D-43B9-92CB-D591A06D98A6 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/23/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms資料系結
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

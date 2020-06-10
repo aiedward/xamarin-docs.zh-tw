@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135716"
+標題：「驗證 RESTful Web 服務」描述：「基本驗證僅提供資源的存取權給具有正確認證的用戶端。 本文說明如何使用基本驗證來保護 RESTful web 服務資源的存取權。
+assetid： 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/22/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-a-restful-web-service"></a>驗證 RESTful Web 服務
 
 _HTTP 支援使用數個驗證機制來控制資源的存取權。基本驗證僅提供資源的存取權給具有正確認證的用戶端。本文示範如何使用基本驗證來保護 RESTful web 服務資源的存取。_
@@ -80,7 +66,7 @@ public class RestService : IRestService
 
 ## <a name="processing-the-authorization-header-server-side"></a>處理授權標頭伺服器端
 
-REST 服務應使用屬性來裝飾每個動作 `[BasicAuthentication]` 。 這個屬性是用來剖析 `Authorization` 標頭，並藉由比較它們與儲存在*web.config*中的值來判斷 base64 編碼的認證是否有效。雖然此方法適用于範例服務，但它需要針對公開的 web 服務進行擴充。
+REST 服務應使用屬性來裝飾每個動作 `[BasicAuthentication]` 。 這個屬性是用來剖析 `Authorization` 標頭，並藉由與*Web.config*中儲存的值進行比較，來判斷 base64 編碼的認證是否有效。雖然此方法適用于範例服務，但它需要針對公開的 web 服務進行擴充。
 
 在 IIS 所使用的基本驗證模組中，使用者會根據其 Windows 認證進行驗證。 因此，使用者必須在伺服器的網域上擁有帳戶。 不過，基本驗證模型可以設定為允許自訂驗證，其中使用者帳戶會針對外部來源（例如資料庫）進行驗證。 如需詳細資訊，請參閱 ASP.NET 網站上[ASP.NET Web API 中的基本驗證](https://www.asp.net/web-api/overview/security/basic-authentication)。
 

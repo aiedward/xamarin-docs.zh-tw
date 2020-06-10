@@ -249,7 +249,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>巡覽
+## <a name="navigation"></a>瀏覽
 
 Web 程式支援透過數個可用的方法和屬性進行流覽：
 
@@ -416,7 +416,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`只有在顯示來自網路的內容時才需要。 本機內容不需要任何特殊許可權。
 - **iOS** &ndash;不需要任何特殊許可權。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>配置
 
 不同于大部分其他 Xamarin.Forms 的視圖， `WebView` 會要求在 `HeightRequest` `WidthRequest` 包含在 StackLayout 或 RelativeLayout 時指定和。 如果您無法指定這些屬性， `WebView` 將不會呈現。
 

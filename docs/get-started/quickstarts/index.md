@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms入門
-description: 有關 Xamarin.Forms 使用 Visual Studio 和 Visual Studio for Mac 開發應用程式的快速入門。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 03d20114fb84bf17be40d9166e32c3d631786069
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132505"
+標題：「 Xamarin.Forms 快速入門」描述：「 Xamarin.Forms 使用 Visual Studio 和 Visual Studio for Mac 開發應用程式的快速入門」。
+assetid： 3318B8F8-3B24-489E-8E7B-28FA948796F8 author： davidbritch ms-chap： dabritch ms. date：01/06/2020 否-loc： [ Xamarin.Forms ，]，請執行下列動作 Xamarin.Essentials
 ---
+
 # <a name="xamarinforms-quickstarts"></a>Xamarin.Forms入門
 
 _瞭解如何使用建立行動應用程式 Xamarin.Forms 。_
@@ -37,6 +23,6 @@ _瞭解如何使用建立行動應用程式 Xamarin.Forms 。_
 
 瞭解如何使用 XAML 樣式來建立跨平臺 Xamarin.Forms 應用程式的樣式。
 
-## <a name="quickstart-deep-dive"></a>[快速入門深入探討](deepdive.md)
+## <a name="quickstart-deep-dive"></a>[快速入門深度剖析](deepdive.md)
 
 閱讀有關使用進行應用程式開發的基本 Xamarin.Forms 概念，並著重于在整個快速入門中開發的應用程式。

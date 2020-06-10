@@ -1,24 +1,8 @@
 ---
-title: 在多頁應用程式中執行流覽 Xamarin.Forms
-description: ''
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127877"
+標題：「在多頁應用程式中執行流覽」 Xamarin.Forms 描述：「本文將說明如何將單一頁面應用程式（能夠儲存單一便箋）轉換成多頁應用程式，能夠儲存多個便箋。」
+zone_pivot_groups： platform ms. 主題：快速入門 assetid： 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 04/01/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多頁應用程式中執行流覽 Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
@@ -34,7 +18,7 @@ ms.locfileid: "84127877"
 [![](multi-page-images/screenshots1-sml.png "Notes Page")](multi-page-images/screenshots1.png#lightbox "Notes Page")
 [![](multi-page-images/screenshots2-sml.png "Note Entry Page")](multi-page-images/screenshots2.png#lightbox "Note Entry Page")
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>必要條件
 
 您應該先成功完成[先前的快速入門](single-page.md)，再嘗試本快速入門。 或者，下載[先前的快速入門範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)，並使用此範例作為本快速入門的起點。
 

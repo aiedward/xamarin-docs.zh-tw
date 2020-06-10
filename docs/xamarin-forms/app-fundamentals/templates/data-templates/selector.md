@@ -1,22 +1,8 @@
 ---
-title: 建立 Xamarin.Forms DataTemplateSelector
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 74650eb2c52f1da9d0c539b711784896267ed183
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135950"
+title： "建立 Xamarin.Forms DataTemplateSelector" 描述： "本文示範如何建立和使用 DataTemplateSelector，這可在執行時間根據資料系結屬性的值來選擇 DataTemplate。
+assetid： A4629E8F-2BAF-45CE-A76E-DF225FE8D26C ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/08/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>建立 Xamarin.Forms DataTemplateSelector
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplateselector)

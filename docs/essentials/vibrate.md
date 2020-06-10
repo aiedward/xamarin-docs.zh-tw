@@ -25,7 +25,7 @@ assetid： 7E8B24C4-2625-4DAE-A129-383542D34F1E author： jamesmontemagno ms. cu
 
 或更新 Android 資訊清單：
 
-開啟**Properties**資料夾底下的**androidmanifest.xml** ，並在**資訊清單**節點內新增下列內容。
+開啟 [ **Properties** ] 資料夾下的**AndroidManifest.xml**檔案，並在**資訊清單**節點內新增下列內容。
 
 ```xml
 <uses-permission android:name="android.permission.VIBRATE" />

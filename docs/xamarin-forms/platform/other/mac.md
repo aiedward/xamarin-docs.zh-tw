@@ -1,23 +1,8 @@
 ---
-title: ''
-description: 本文說明如何將 Mac 專案新增至 Xamarin.Forms 專案，以產生能夠在 macOS Sierra 和 MacOS El Capitan 上執行的應用程式。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 11897d2d3b8b7ba0a62956f1dbe4d8b873352e7a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139551"
+標題：「Mac 平臺安裝程式」描述：「本文將說明如何將 Mac 專案新增至 Xamarin.Forms 專案，以產生能夠在 macOS Sierra 和 MacOS El Capitan 上執行的應用程式。」
+assetid： EEC549E0-F182-4F9C-B2BA-B31D19569AA5 ms. 技術： xamarin-表單 ms. custom： xamu-影片作者： davidbritch ms-chap： dabritch ms. date： 05/03/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="mac-platform-setup"></a>Mac 平臺設定
 
 ![預覽](~/media/shared/preview.png)
@@ -147,4 +132,4 @@ var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, heigh
 
 ## <a name="related-links"></a>相關連結
 
-- [Xamarin. Mac](~/mac/index.yml)
+- [Xamarin.Mac](~/mac/index.yml)

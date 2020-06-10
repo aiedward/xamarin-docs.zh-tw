@@ -1,22 +1,8 @@
 ---
-title: 使用電子書的企業應用程式模式 Xamarin.Forms
-description: 此電子書提供開發可調整、可維護和可測試之 Xamarin.Forms 企業應用程式的架構指引。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139395"
+標題：「使用電子書的企業應用程式模式」 Xamarin.Forms 描述：「此電子書提供開發可調整、可維護和可測試之 Xamarin.Forms 企業應用程式的架構指引。」
+assetid： 28cfed6c-6175-4223-a8cc-798d40bf0832 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 08/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>使用電子書的企業應用程式模式 Xamarin.Forms
 
 _開發可調整、可維護且可測試之 Xamarin.Forms 企業應用程式的架構指引_

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms翻譯
-description: 內建的 .NET 當地語系化架構可用來使用建立跨平臺多語系應用程式 Xamarin.Forms 。 文字和影像可以當地語系化，且應用程式可支援由右至左的文字方向。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: dddb80e8fb683547d2bf6ba0b74e870fe240695c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137562"
+標題：「 Xamarin.Forms 當地語系化」描述：「內建的 .net 當地語系化架構可以用來建立跨平臺多語系應用程式與 Xamarin.Forms 。 文字和影像可以當地語系化，而應用程式可以支援由右至左的流程方向。」
+assetid： 97BF843B-BDAA-4CEA-8189-6DB54B291D7F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/07/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-localization"></a>Xamarin.Forms翻譯
 
 _內建的 .NET 當地語系化架構可用來使用建立跨平臺多語系應用程式 Xamarin.Forms 。_

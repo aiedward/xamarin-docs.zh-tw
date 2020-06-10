@@ -1,29 +1,15 @@
 ---
-title: Xamarin.FormsCollectionView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a2c9fd9e6e48192bc2237d6b451b533fcee6e6ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136444"
+title： " Xamarin.Forms CollectionView" 描述： "CollectionView 是彈性且高效能的觀點，可讓您使用不同的版面配置規格來呈現資料清單。"
+assetid： 2BC9B223-2D5C-4B09-849C-B9D578954557 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/24/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview"></a>Xamarin.FormsCollectionView
 
 ## <a name="introduction"></a>[簡介](introduction.md)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)是彈性且高效能的觀點，可讓您使用不同的版面配置規格來呈現資料清單。
 
-## <a name="data"></a>[Data](populate-data.md)
+## <a name="data"></a>[資料](populate-data.md)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)會藉由將資料的屬性設定 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) 為任何可執行檔集合，來填入資料 `IEnumerable` 。 您可以藉由將屬性設定為，來定義清單中每個專案的外觀 [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
 
@@ -31,7 +17,7 @@ ms.locfileid: "84136444"
 
 根據預設， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 會在垂直清單中顯示其專案。 不過，您可以指定垂直和水準清單和格線。
 
-## <a name="selection"></a>[選取項目](selection.md)
+## <a name="selection"></a>[選項](selection.md)
 
 預設 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 會停用選取範圍。 不過，可以啟用單一和多重選取。
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCheckBox
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136470"
+標題：「 Xamarin.Forms 核取方塊」描述：「 Xamarin.Forms 核取方塊是一種可以核取或空白的按鈕。 勾選核取方塊時，會將其視為開啟。 當 checkbox 空白時，會被視為關閉。」
+assetid： B8B9268B-BCB8-42B9-B08C-C0F22C137238 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/11/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-checkbox"></a>Xamarin.FormsCheckBox
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)

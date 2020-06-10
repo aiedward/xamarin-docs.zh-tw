@@ -1,22 +1,8 @@
 ---
-title: 從啟動原生對應應用程式Xamarin.Forms
-description: 在每個平臺上的原生地圖應用程式，都可以 Xamarin.Forms 由啟動器類別從應用程式啟動 Xamarin.Essentials 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129333"
+標題：「從下列專案啟動原生對應應用程式 Xamarin.Forms 描述：」每個平臺上的原生地圖應用程式可以 Xamarin.Forms 由啟動器類別從應用程式啟動 Xamarin.Essentials 。」
+assetid： 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/30/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="launch-the-native-map-app-from-xamarinforms"></a>從啟動原生對應應用程式Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

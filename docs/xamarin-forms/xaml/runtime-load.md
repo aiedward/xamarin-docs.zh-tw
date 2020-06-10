@@ -1,22 +1,8 @@
 ---
-title: 在執行時間載入 XAMLXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d750aa84a48ad4c8015a619d819134cefc63c3d9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139343"
+標題：「在執行時間載入 XAML」 Xamarin.Forms 描述：「xaml 可以在執行時間使用 LoadFromXaml 擴充方法來載入和剖析。」
+assetid： 25F73FBF-2DD3-468E-A2D8-0897414F0F4A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/12/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="loading-xaml-at-runtime-in-xamarinforms"></a>在執行時間載入 XAMLXamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

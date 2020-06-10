@@ -1,20 +1,8 @@
 ---
-title: Xamarin.Essentials
-description: 本檔連結到描述的各種指南 Xamarin.Essentials ，為開發人員提供行動應用程式的跨平臺 api。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139460"
+title： " Xamarin.Essentials " 描述： "本檔連結到描述的各種指南 Xamarin.Essentials ，為開發人員提供行動應用程式的跨平臺 api。
+assetid： 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A author： jamesmontemagno ms-chap： jamont ms. date： 02/26/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # Xamarin.Essentials
 
 Xamarin.Essentials為開發人員提供行動應用程式的跨平臺 Api。

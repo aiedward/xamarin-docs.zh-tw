@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms單選
-description: Xamarin.Forms選項按鈕是一種按鈕類型，可讓使用者從集合中選取一個選項。 每個選項都是以一個選項按鈕表示，而且您只能選取一個群組中的一個選項按鈕。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f7cbd11f98127cb73514112dae785102ff9c51c0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127619"
+標題：「 Xamarin.Forms 選項按鈕」描述：「 Xamarin.Forms 選項按鈕是一種可讓使用者從集合中選取一個選項的按鈕。 每個選項都是以一個選項按鈕表示，而且您只能選取一個群組中的一個選項按鈕。」
+assetid： E2AA40E0-69A5-41DF-BFC4-C151CA657451 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/13/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-radiobutton"></a>Xamarin.Forms單選
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)

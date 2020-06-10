@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms系結回退
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f3aadef1960618731c3749507233933b8bf7630e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133454"
+標題：「系結回溯」 Xamarin.Forms 描述：「本文將說明如何藉由定義系結失敗時所要使用的回溯值，讓系結更穩固。」
+assetid： 637ACD9D-3E5D-4014-86DE-A77D1FEF238A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/16/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms系結回退
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

@@ -1,27 +1,13 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127760"
+title：「SkiaSharp 雜訊和撰寫」描述：「產生 Perlin 的雜訊著色器並與其他著色器結合」。
+skiasharp 的 assetid： 90C2D00A-2876-43EA-A836-538C3318CF93 author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp 雜訊和撰寫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-簡單向量圖形通常會看起來非自然。 直線、平滑曲線和純色不像真實世界物件的缺陷。 在處理 1982 movie _Tron_的電腦產生的圖形時，電腦科學家 Ken Perlin 開始開發使用隨機進程的演算法，以提供這些影像更逼真的材質。 在1997中，Ken Perlin 贏得學術獎項以進行技術成就。 他的工作也稱為 Perlin 雜訊，並在 SkiaSharp 中受到支援。 以下為範例：
+簡單向量圖形通常會看起來非自然。 直線、平滑曲線和純色不像真實世界物件的缺陷。 在處理 1982 movie _Tron_的電腦產生的圖形時，電腦科學家 Ken Perlin 開始開發使用隨機進程的演算法，以提供這些影像更逼真的材質。 在1997中，Ken Perlin 贏得學術獎項以進行技術成就。 他的工作也稱為 Perlin 雜訊，並在 SkiaSharp 中受到支援。 以下是範例：
 
 ![Perlin 雜訊範例](noise-images/NoiseSample.png "Perlin 雜訊範例")
 

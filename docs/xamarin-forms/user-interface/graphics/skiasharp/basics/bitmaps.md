@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何從各種來源載入 SkiaSharp 中的點陣圖，並將其顯示在 Xamarin.Forms 應用程式中，並使用範例程式碼示範這項功能。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137731"
+title： "SkiaSharp 中的點陣圖基本概念" 描述： "本文說明如何從各種來源載入 SkiaSharp 中的點陣圖，並將其顯示在 Xamarin.Forms 應用程式中，並以範例程式碼示範。
+skiasharp 的 assetid： 32C95DFF-9065-42D7-966C-D3DBD16906B3 author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的點陣圖基本概念
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -104,9 +90,9 @@ protected override async void OnAppearing()
 
 ## <a name="loading-a-bitmap-resource"></a>載入點陣圖資源
 
-就程式碼而言，載入點陣圖最簡單的方法，就是直接在您的應用程式中包含點陣圖資源。 **SkiaSharpFormsDemos**套裝程式含名為**Media**的資料夾，其中包含數個位圖檔案，包括一個名為**的猴子 .png**。 對於儲存為程式資源的點陣圖，您必須使用 [**屬性**] 對話方塊為檔案提供**內嵌資源**的**組建動作**！
+就程式碼而言，載入點陣圖最簡單的方法，就是直接在您的應用程式中包含點陣圖資源。 **SkiaSharpFormsDemos**套裝程式含名為**Media**的資料夾，其中包含數個位圖檔案，包括一個名為**monkey.png**。 對於儲存為程式資源的點陣圖，您必須使用 [**屬性**] 對話方塊為檔案提供**內嵌資源**的**組建動作**！
 
-每個內嵌資源都有一個*資源識別碼*，其中包含專案名稱、資料夾和檔案名，全都以句點（.）： **SkiaSharpFormsDemos**連接。 您可以藉由將資源識別碼指定為類別之方法的引數，來取得此資源的存取權 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ：
+每個內嵌資源都有一個*資源識別碼*，其中包含專案名稱、資料夾和檔案名，所有都是依期間連接： **SkiaSharpFormsDemos.Media.monkey.png**。 您可以藉由將資源識別碼指定為類別之方法的引數，來取得此資源的存取權 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

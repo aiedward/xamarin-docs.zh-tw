@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMessagingCenter
-description: Xamarin.FormsMessagingCenter 類別會執行發行-訂閱模式，允許不方便透過物件和類型參考連結的元件之間以訊息為基礎的通訊。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d1407c3c948afe764854cbd99f5c29332f7041aa
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137536"
+title： " Xamarin.Forms MessagingCenter" 描述： " Xamarin.Forms MessagingCenter 類別會實作為發佈-訂閱模式，允許不方便透過物件和類型參考連結的元件之間以訊息為基礎的通訊。
+assetid： EDFE7B19-C5FD-40D5-816C-FAE56532E885 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/08/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.FormsMessagingCenter
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)

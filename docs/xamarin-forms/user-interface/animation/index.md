@@ -1,9 +1,6 @@
 ---
-title： ' Xamarin.Forms description： ' 中的動畫 Xamarin.Forms 包含自己的動畫基礎結構，可直接建立簡單的動畫，同時也有足夠的空間可建立複雜的動畫。 '
-assetid： ms. 技術： author： ms. 作者： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： "動畫 in Xamarin.Forms " 描述： " Xamarin.Forms 包含自己的動畫基礎結構，可直接建立簡單的動畫，同時也有足夠的空間可建立複雜的動畫。"
+assetid： AC0B4127-ECA3-44DA-8A24-A2B10A275083 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/14/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="animation-in-xamarinforms"></a>動畫于Xamarin.Forms

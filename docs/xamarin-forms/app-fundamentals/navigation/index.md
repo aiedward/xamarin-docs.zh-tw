@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms導覽
-description: 本指南說明如何在應用程式中執行流覽 Xamarin.Forms 。 Xamarin.Forms會根據使用的頁面類型，提供多種不同的頁面導覽體驗。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8c907cd8a4a1d14b936dee309610bffc67ef363f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137835"
+title： " Xamarin.Forms 導覽" 描述： "本指南說明如何在應用程式中執行流覽 Xamarin.Forms 。 Xamarin.Forms會根據使用的頁面類型，提供多種不同的頁面導覽體驗。」
+assetid： BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/01/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms導覽
 
 _Xamarin.Forms 會根據使用的頁面類型，提供多種不同的網頁導覽體驗。_

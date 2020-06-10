@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明 SkiaSharp 繪圖的基本概念，包括畫布和油漆物件，以及 Xamarin.Forms 應用程式中的範例，並示範如何使用範例程式碼。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137718"
+標題：「在 SkiaSharp 中繪製簡單的圓形」描述：「本文將說明 SkiaSharp 繪圖的基本概念，包括畫布和油漆物件， Xamarin.Forms 以及應用程式中的範例。」
+skiasharp 的 assetid： E3A4E373-F65D-45C8-8E77-577A804AC3F8 author： davidbritch ms-chap： dabritch ms. date： 03/10/2017 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>在 SkiaSharp 中繪製簡單的圓形
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

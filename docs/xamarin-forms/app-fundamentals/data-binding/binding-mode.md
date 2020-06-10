@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms系結模式
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c14215071a1d9d3ec804c307fa6edbbe4ddcf8e9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139772"
+標題：「系結 Xamarin.Forms 模式」描述：「本文將說明如何使用系結模式來控制來源與目標之間的資訊流程，這是以 BindingMode 列舉的成員來指定。 每個可系結屬性都有預設系結模式，表示當該屬性是資料系結目標時，作用中的模式。
+assetid： D087C389-2E9E-47B9-A341-5B14AC732C45 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/01/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms系結模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

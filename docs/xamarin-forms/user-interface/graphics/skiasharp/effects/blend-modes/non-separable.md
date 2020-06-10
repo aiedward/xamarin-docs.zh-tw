@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130178"
+title：「不可分離的 blend 模式」描述：「使用不可分離的 blend 模式來改變色調、飽和度或亮度。」
+skiasharp 的 assetid： 97FA2730-87C0-4914-8C9F-C64A02CF9EEF author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="the-non-separable-blend-modes"></a>不可分離的 blend 模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -46,125 +32,11 @@ HSL 值（0，100，50）是 RGB 值（FF，00，00），這是純紅色。 HSL 
 就像其他 blend 模式一樣，四個不可分離的 blend 模式牽涉到一個目的地（這通常是點陣圖影像）和一個來源，這通常是單一色彩或漸層。 Blend 模式結合了目的地和來源的色調、飽和度和亮度值：
 
 | Blend 模式   | 來源中的元件 | 目的地的元件 |
-| ---
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------------ |---標題：描述： ms. 生產： assetid： author： ms. author： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-標題：描述： ms-chap： ms. assetid： author： ms-chap： ms. date： no-loc：
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--------------- | |`Hue`        |色調 |飽和度和亮度 | |`Saturation` |飽和度 |色調和亮度 | |`Color`      |色調和飽和度 |亮度 | |`Luminosity` |亮度 |色調和飽和度 | 
+| ------------ | ---------------------- | --------------------------- |
+| `Hue`        | 色調                    | 飽和度和亮度   |
+| `Saturation` | 飽和度             | 色調和亮度          |
+| `Color`      | 色調和飽和度     | 亮度                  | 
+| `Luminosity` | 亮度             | 色調和飽和度          | 
 
 請參閱 W3C 撰寫[**和混合層級 1**](https://www.w3.org/TR/compositing-1/)規格以取得演算法。
 
@@ -325,11 +197,11 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 ## <a name="a-matte-for-a-separable-mode"></a>可分離模式的遮罩
 
-以下是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中包含做為資源的其中一個點陣圖。 檔案名為**香蕉 .jpg**：
+以下是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中包含做為資源的其中一個點陣圖。 檔案名為**Banana.jpg**：
 
 ![香蕉的猴子](non-separable-images/Banana.jpg "香蕉的猴子")
 
-您可以建立只包含香蕉的遮罩。 這也是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的資源。 檔案名為**BananaMatte .png**：
+您可以建立只包含香蕉的遮罩。 這也是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例中的資源。 檔案名為**BananaMatte.png**：
 
 ![香蕉亞光](non-separable-images/BananaMatte.png "香蕉亞光")
 
@@ -337,7 +209,7 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 **藍色香蕉**頁面會使用該亞光來改變猴子所持有的香蕉色調和飽和度，但不變更影像中的任何其他東西。 
 
-在下列 `BlueBananaPage` 類別中，**香蕉**會載入為欄位。 此函式會將**BananaMatte**當做 `matteBitmap` 物件載入，但不會將該物件保留在函式之外。 相反地，會建立名為的第三個位圖 `blueBananaBitmap` 。 `matteBitmap`會在後面繪製， `blueBananaBitmap` `SKPaint` `Color` 並將其設定為藍色，並 `BlendMode` 將其設定為 `SKBlendMode.SrcIn` 。 會 `blueBananaBitmap` 一直保持透明，但具有香蕉的純虛擬藍色影像：
+在下列 `BlueBananaPage` 類別中， **Banana.jpg**點陣圖會載入為欄位。 此函式會將**BananaMatte.png**點陣圖載入為 `matteBitmap` 物件，但不會將該物件保留在此函式之外。 相反地，會建立名為的第三個位圖 `blueBananaBitmap` 。 `matteBitmap`會在後面繪製， `blueBananaBitmap` `SKPaint` `Color` 並將其設定為藍色，並 `BlendMode` 將其設定為 `SKBlendMode.SrcIn` 。 會 `blueBananaBitmap` 一直保持透明，但具有香蕉的純虛擬藍色影像：
 
 ```csharp
 public class BlueBananaPage : ContentPage

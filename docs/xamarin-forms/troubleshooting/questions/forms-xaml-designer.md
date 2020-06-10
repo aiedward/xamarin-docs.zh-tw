@@ -1,9 +1,6 @@
 ---
-標題： ' 為什麼 xaml 檔案的 Visual Studio XAML 設計工具不適用 Xamarin.Forms ？ '
-assetid： ms. 技術： author： ms-chap： ms. 日期：不是 loc 的：。
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title： "為什麼 xaml 檔案的 Visual Studio XAML 設計工具不適用 Xamarin.Forms ？"
+ms. 主題：疑難排解 ms-chap： assetid： cab2eefb-c52f-4d81-866e-8f1feabbdd64 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date：04/25/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
 
 # <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-files"></a>為什麼 xaml 檔案的 Visual Studio XAML 設計工具不適用 Xamarin.Forms ？

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何轉換現有的 Xamarin.Forms Android 應用程式，以使用 AppCompat 和材質設計。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135703"
+標題：「新增 AppCompat 和材質設計」描述：「本文將說明如何轉換現有的 Xamarin.Forms Android 應用程式以使用 AppCompat 和材質設計」。
+ms-chap： xamarin assetid： 045FBCDF-4D45-48BB-9911-BD3938C87D58 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date： 06/27/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="adding-appcompat-and-material-design"></a>新增 AppCompat 和材質設計
 
 _請遵循下列步驟來轉換現有的 Xamarin.Forms Android 應用程式，以使用 AppCompat 和材質設計_
@@ -43,7 +29,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 在您的 Android 專案中建立下列三個檔案，並貼上下列內容。 Google 提供一個[樣式指南](https://www.google.com/design/spec/style/color.html#color-color-palette)和一個[色調色板](https://www.materialpalette.com/)產生器，可協助您選擇所指定的替代色彩配置。
 
-**資源/值/色彩 .xml**
+**資源/值/colors.xml**
 
 ```xml
 <resources>
@@ -54,7 +40,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 </resources>
 ```
 
-**Resources/values/style .xml**
+**資源/值/style.xml**
 
 ```xml
 <resources>
@@ -72,7 +58,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 **V21**資料夾中必須包含額外的樣式，才能在 Android 棒和更新版本上執行時套用特定屬性。
 
-**Resources/values-v21/style .xml**
+**資源/值-v21/style.xml**
 
 ```xml
 <resources>
@@ -84,11 +70,11 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. 更新 Androidmanifest.xml .xml
+### <a name="4-update-androidmanifestxml"></a>4. 更新 AndroidManifest.xml
 
 若要確保使用這個新的主題資訊，請在**androidmanifest.xml**檔案中設定主題，方法是新增 `android:theme="@style/MyTheme"` （保留其餘的 XML）。
 
-**Properties/Androidmanifest.xml .xml**
+**屬性/AndroidManifest.xml**
 
 ```xml
 ...

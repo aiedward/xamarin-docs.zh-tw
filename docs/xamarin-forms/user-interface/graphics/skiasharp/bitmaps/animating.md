@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139967"
+標題：「建立 SkiaSharp 點陣圖的動畫」描述：「瞭解如何依序顯示一系列的點陣圖和轉譯動畫 GIF 檔案來執行點陣圖動畫」。
+skiasharp 的 assetid： 97142ADC-E2FD-418C-8A09-9C561AEE5BFD author： davidbritch ms-chap： dabritch ms. date： 07/12/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="animating-skiasharp-bitmaps"></a>製作 SkiaSharp 點陣圖的動畫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -472,7 +458,7 @@ public partial class MainPage : ContentPage
 
 圖形交換格式（GIF）規格包含一項功能，可讓單一 GIF 檔案包含一個場景的多個連續畫面格，這種情況通常會在迴圈中以連續方式顯示。 這些檔案就是所謂的_動畫 gif_。 網頁瀏覽器可以播放動畫 Gif，而 SkiaSharp 可讓應用程式從動畫 GIF 檔案中解壓縮框架，並依序顯示它們。
 
-[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含名為**NEWTONS_CRADLE_ANIMATION_BOOK_2**的動畫 Gif 資源，由 DemonDeLuxe 建立並從維琪百科中的[牛頓底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)頁面下載。 **動畫 GIF**頁面包含提供該資訊並具現化的 XAML 檔案 `SKCanvasView` ：
+[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)範例包含名為**Newtons_cradle_animation_book_2.gif**的動畫 GIF 資源，由 DemonDeLuxe 建立並從維琪百科的[牛頓底座](https://en.wikipedia.org/wiki/Newton%27s_cradle)頁面下載。 **動畫 GIF**頁面包含提供該資訊並具現化的 XAML 檔案 `SKCanvasView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView 滾動
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136488"
+title： " Xamarin.Forms CarouselView scroll" 描述： "當使用者撥動起始捲軸時，可以控制捲軸的結束位置，以便完全顯示專案。 此外，CarouselView 會定義兩個 ScrollTo 方法，以程式設計方式將專案滾動到視野中。」
+assetid： 92D7B618-07FA-4343-9D0F-212525E92C39 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/28/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView 滾動
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

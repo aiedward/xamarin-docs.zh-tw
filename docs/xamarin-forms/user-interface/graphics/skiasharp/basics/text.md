@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何判斷呈現的文字字串大小，以將文字與 SkiaSharp 圖形整合到 Xamarin.Forms 應用程式中，並使用範例程式碼示範這項操作。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137679"
+標題：「整合文字和圖形」描述：「本文將說明如何判斷轉譯的文字字串大小，以將文字與 SkiaSharp 圖形整合到 Xamarin.Forms 應用程式中，並以範例程式碼示範此動作。」
+skiasharp 的 assetid： A0B5AC82-7736-4AD8-AA16-FE43E18D203C author： davidbritch ms-chap： dabritch ms. date： 03/10/2017 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
 ---
+
 # <a name="integrating-text-and-graphics"></a>整合文字與圖形
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

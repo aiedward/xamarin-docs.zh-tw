@@ -26,7 +26,7 @@ _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，�
 > [!NOTE]
 > 如需建立 Shell 應用程式之自訂轉譯器的詳細資訊，請參閱[ Xamarin.Forms Shell 自訂](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)轉譯器。
 
-## <a name="pages"></a>頁面
+## <a name="pages"></a>Pages
 
 下表列出執行每個頁面類型的轉譯器和原生控制項類別 Xamarin.Forms [Page](~/xamarin-forms/user-interface/controls/pages.md) ：
 
@@ -43,7 +43,7 @@ _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，�
 
 下表列出的轉譯器和原生控制項類別會執行每種 Xamarin.Forms [版面](~/xamarin-forms/user-interface/controls/layouts.md)配置類型：
 
-|Layout|轉譯器|iOS|Android|Android (AppCompat)|UWP|
+|配置|轉譯器|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |
 |[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|檢視|檢視|FrameworkElement|
 |[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|檢視|檢視|FrameworkElement|

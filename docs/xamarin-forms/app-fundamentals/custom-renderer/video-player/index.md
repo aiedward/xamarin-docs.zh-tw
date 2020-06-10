@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 本文說明如何使用來執行影片播放機應用程式 Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 08bfb86f040bfbce834df5a5d98231afae92e78d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133755"
+標題：「執行影片播放機」描述：「本文說明如何使用來執行影片播放機應用程式」 Xamarin.Forms 。
+assetid： 0CE9BEE7-4F81-4A00-B9B3-5E2535CD3050 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/12/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
 ---
+
 # <a name="implementing-a-video-player"></a>實作影片播放程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
