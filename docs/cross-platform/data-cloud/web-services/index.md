@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 4012b648bd451907bdb91221aba13df5ed3d34e3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 06a3197cfcd3b49538cfa5fa97e40a9f50c7a244
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571021"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655096"
 ---
 # <a name="introduction-to-web-services"></a>Web 服務簡介
 
@@ -437,8 +437,6 @@ basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialT
 client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
-
-在上述範例中，如果您收到訊息「已用完類型0的 trampolines」，您可以藉由將 `–aot “trampolines={number of trampolines}”` 引數加入至組建來增加類型 0 trampolines 的數目。 如需詳細資訊，請參閱[疑難排解](~/ios/troubleshooting/troubleshooting.md#trampolines)。
 
 如需 HTTP 基本驗證的詳細資訊，雖然在 REST web 服務的內容中，請參閱[驗證 RESTful Web 服務](~/xamarin-forms/data-cloud/authentication/rest.md)。
 
