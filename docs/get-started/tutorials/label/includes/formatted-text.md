@@ -30,7 +30,7 @@ ms.locfileid: "60896650"
     > [!NOTE]
     > [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) 屬性的類型是 [`FormattedString`](xref:Xamarin.Forms.FormattedString)，其包含一或多個 [`Span`](xref:Xamarin.Forms.Span) 執行個體。
 
-1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 請觀察一下，[`Label`](xref:Xamarin.Forms.Label) 外觀已變更：
+1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式。 請觀察一下，[`Label`](xref:Xamarin.Forms.Label) 外觀已變更：
 
     [![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")
 
@@ -60,7 +60,7 @@ ms.locfileid: "60896650"
     > [!NOTE]
     > [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) 屬性的類型是 [`FormattedString`](xref:Xamarin.Forms.FormattedString)，其包含一或多個 [`Span`](xref:Xamarin.Forms.Span) 執行個體。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 請觀察一下，[`Label`](xref:Xamarin.Forms.Label) 外觀已變更：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式。 請觀察一下，[`Label`](xref:Xamarin.Forms.Label) 外觀已變更：
 
     [![螢幕擷取畫面：iOS 和 Android 上顯示格式化文字的 Label](../images/label-formatted-text.png "具有格式化文字的 Label")](../images/label-formatted-text-large.png#lightbox "具有格式化文字的 Label")
 
