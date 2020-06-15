@@ -10,7 +10,7 @@ ms.locfileid: "71059597"
 
 - [建置您的第一個 Xamarin.Forms 應用程式](~/get-started/first-app/index.md)快速入門。
 
-在本教學課程中，您會了解如何：
+在本教學課程中，您將了解如何：
 
 > [!div class="checklist"]
 >

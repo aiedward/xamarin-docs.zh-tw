@@ -14,7 +14,7 @@ ms.locfileid: "71107191"
 - [標籤](~/get-started/tutorials/label/index.yml)教學課程。
 - [影像](~/get-started/tutorials/image/index.yml)教學課程。
 
-在本教學課程中，您會了解如何：
+在本教學課程中，您將了解如何：
 
 > [!div class="checklist"]
 >

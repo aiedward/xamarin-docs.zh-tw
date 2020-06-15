@@ -8,7 +8,7 @@ ms.locfileid: "81389915"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-若要完成此教學課程，您應該有 Visual Studio 2019 (最新版本)，並已安裝 [使用 .NET 進行行動開發]  工作負載。 此外，您還需要配對的 Mac 才能在 iOS 上建置教學課程應用程式。 如需安裝 Xamarin 平台的相關資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+若要完成此教學課程，您應該有 Visual Studio 2019 (最新版本)，並已安裝 [使用 .NET 進行行動開發] 工作負載。 此外，您還需要配對的 Mac 才能在 iOS 上建置教學課程應用程式。 如需安裝 Xamarin 平台的相關資訊，請參閱[安裝 Xamarin](~/get-started/installation/index.md)。 如需有關將 Visual Studio 2019 連線至 Mac 建置主機的相關資訊，請參閱[為 Xamarin.iOS 開發與 Mac 配對](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 
 1. 啟動 Visual Studio，然後建立名為 **LabelTutorial** 的新空白 Xamarin.Forms 應用程式。 確定該應用程式使用 .NET Standard 作為共用程式碼機制。
 
@@ -17,7 +17,7 @@ ms.locfileid: "81389915"
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/first-app/index.md)中的 [Xamarin.Forms 應用程式的結構](~/get-started/first-app/index.md)。
 
-1. 在 [方案總管]  的 **LabelTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [方案總管] 的 **LabelTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -31,9 +31,9 @@ ms.locfileid: "81389915"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 屬性會指定顯示的文字，而 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性會指定將 `Label` 水平置中。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Label`](xref:Xamarin.Forms.Label)。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 屬性會指定顯示的文字，而 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性會指定將 `Label` 水平置中。
 
-1. 在 Visual Studio 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選遠端 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 上置中標籤的螢幕擷取畫面](../images/create-label.png "置中標籤")](../images/create-label-large.png#lightbox "置中標籤")
 
@@ -48,7 +48,7 @@ ms.locfileid: "81389915"
 
     如需有關所建立 .NET Standard 程式庫的詳細資訊，請參閱 [Xamarin.Forms 快速入門深度剖析](~/get-started/first-app/index.md)中的 [Xamarin.Forms 應用程式的結構](~/get-started/first-app/index.md)。
 
-1. 在 [Solution Pad]  的 **LabelTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
+1. 在 [Solution Pad] 的 **LabelTutorial** 專案中，按兩下 **MainPage.xaml** 將其開啟。 然後在 **MainPage.xaml** 中，移除所有範本程式碼，並取代為下列程式碼：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -62,8 +62,8 @@ ms.locfileid: "81389915"
     </ContentPage>
     ```
 
-    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`Label`](xref:Xamarin.Forms.Label) 中的 [`StackLayout`](xref:Xamarin.Forms.StackLayout)。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 屬性會指定顯示的文字，而 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性會指定將文字水平置中。
+    此程式碼會以宣告的方式定義頁面的使用者介面，其包含 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 中的 [`Label`](xref:Xamarin.Forms.Label)。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) 屬性會指定顯示的文字，而 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 屬性會指定將文字水平置中。
 
-1. 在 Visual Studio for Mac 工具列中，按下 [啟動]  按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
+1. 在 Visual Studio for Mac 工具列中，按下 [啟動] 按鈕 (類似於 [播放] 按鈕的三角形按鈕)，以啟動所選 iOS 模擬器或 Android 模擬器內的應用程式：
 
     [![iOS 和 Android 上置中標籤的螢幕擷取畫面](../images/create-label.png "置中標籤")](../images/create-label-large.png#lightbox "置中標籤")

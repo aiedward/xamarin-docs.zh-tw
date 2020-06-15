@@ -11,7 +11,7 @@ ms.locfileid: "71107188"
 - [建置您的第一個 Xamarin.Forms 應用程式](~/get-started/first-app/index.md)快速入門。
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml) 教學課程。
 
-在本教學課程中，您會了解如何：
+在本教學課程中，您將了解如何：
 
 > [!div class="checklist"]
 >
