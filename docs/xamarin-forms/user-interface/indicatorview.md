@@ -1,23 +1,29 @@
 ---
-title： " Xamarin.Forms IndicatorView" 描述： "IndicatorView 是一種控制項，它會顯示指標，以代表 CarouselView 中的專案數和目前的位置。」
-assetId： BBCC223B-4B02-46B7-80BB-EE0E86A67CE2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/27/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsIndicatorView
+description: IndicatorView 是一個控制項，它會在 CarouselView 中顯示表示專案數目和目前位置的指標。
+ms.prod: xamarin
+ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0e6d223fd10e7b792f2d145a7cdd417865a095bb
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101440"
 ---
-
 # <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
-
-![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
 `IndicatorView`是一個控制項，它會在中顯示表示專案數和目前位置的指標 `CarouselView` ：
 
 [![CarouselView 和 IndicatorView （在 iOS 和 Android 上）的螢幕擷取畫面](indicatorview-images/circles.png "IndicatorView 圓形")](indicatorview-images/circles-large.png#lightbox "IndicatorView 圓形")
-
-`IndicatorView`適用于 Xamarin.Forms iOS 和 Android 平臺上的4.4，以及4.5 的通用 Windows 平臺。 不過，它目前是實驗性，而且只能透過將下列程式程式碼新增至您的 `AppDelegate` iOS 或 `MainActivity` Android 上的類別，然後再呼叫 `Forms.Init` ：
-
-```csharp
-Forms.SetFlags("IndicatorView_Experimental");
-```
 
 `IndicatorView` 會定義下列屬性：
 

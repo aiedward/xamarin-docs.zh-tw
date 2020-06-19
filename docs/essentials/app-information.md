@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：應用程式資訊" 描述： "本檔描述中的 AppInfo 類別 Xamarin.Essentials ，它會提供您應用程式的相關資訊。 例如，它會公開應用程式名稱和版本。」
-assetid： 15924FCB-19E0-45B2-944E-E94FD7AE12FA author： jamesmontemagno ms-chap： jamont ms. date： 01/29/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：應用程式資訊
+description: 本檔描述中的 AppInfo 類別 Xamarin.Essentials ，它會提供您應用程式的相關資訊。 例如，會公開應用程式名稱和版本。
+ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/29/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1a8673e7c405660355e3a849e6ef1709fd2980a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802512"
 ---
-
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials：應用程式資訊
 
 **AppInfo** 類別會提供您應用程式的相關資訊。
@@ -81,7 +94,7 @@ AppInfo.ShowSettingsUI();
 
 ## <a name="api"></a>API
 
-- [AppInfo 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
+- [AppInfo 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/AppInfo)
 - [AppInfo API 文件](xref:Xamarin.Essentials.AppInfo)
 
 ## <a name="related-video"></a>相關影片

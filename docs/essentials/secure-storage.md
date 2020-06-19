@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：安全儲存體" 描述： "本檔描述中的 SecureStorage 類別 Xamarin.Essentials ，這有助於安全地儲存簡單的索引鍵/值組。 它討論如何使用類別、平臺執行細節和限制。」
-assetid： 78856C0D-76BB-406E-A880-D5A3987B7D64 author： jamesmontemagno ms-chap： jamont ms. date： 04/02/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：安全存放裝置
+description: 本檔描述中的 SecureStorage 類別 Xamarin.Essentials ，這有助於安全地儲存簡單的索引鍵/值組。 此文件討論如何使用該類別、平台實作特性與限制。
+ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801942"
 ---
-
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials：安全存放裝置
 
 **SecureStorage** 類別有助於安全地存放簡單的機碼/值組。
@@ -155,7 +168,7 @@ SecureStorage.RemoveAll();
 
 ## <a name="api"></a>API
 
-- [SecureStorage 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
+- [SecureStorage 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API 文件](xref:Xamarin.Essentials.SecureStorage)
 
 ## <a name="related-video"></a>相關影片

@@ -1,8 +1,22 @@
 ---
-標題： [效果簡介] 描述：「效果可讓您自訂每個平臺上的原生控制項，通常用於小型的樣式變更。 本文提供效果簡介、概述效果與自訂轉譯器之間的界限，並描述 PlatformEffect 類別。」
-assetid： 30CB8615-8F39-4762-BDB7-333D2B57D112 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/08/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 效果簡介
+description: 效果可讓您自訂每個平台上的原生控制項，通常用於小型的樣式變更。 本文提供效果簡介、概述效果與自訂轉譯器之間的界限，並描述 PlatformEffect 類別。
+ms.prod: xamarin
+ms.assetid: 30CB8615-8F39-4762-BDB7-333D2B57D112
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/08/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a891ec70f6f83984ed463fe914442758bdf57a2e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139304"
 ---
-
 # <a name="introduction-to-effects"></a>效果簡介
 
 _效果可讓您自訂每個平臺上的原生控制項，通常用於小型的樣式變更。本文提供效果簡介、概述效果與自訂轉譯器之間的界限，並描述 PlatformEffect 類別。_

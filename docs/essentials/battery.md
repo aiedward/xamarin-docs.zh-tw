@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：電池" 描述： "本檔描述中的電池類別 Xamarin.Essentials ，可讓您檢查裝置的電池資訊並監視變更。"
-assetid： 47EB26D8-8C62-477B-A13C-6977F74E6E43 author： jamesmontemagno ms-chap： jamont ms. date： 01/22/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：電池
+description: 本檔說明中的電池類別 Xamarin.Essentials ，可讓您檢查裝置的電池資訊並監視變更。
+ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/22/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3138db09c2a3d343f36aa48f561930df47f48ae6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802477"
 ---
-
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials：電池
 
 **Battery** 類別可讓您檢查裝置的電池資訊和監視變更，並提供裝置的省電狀態資訊，這說明裝置是否正在低耗電模式中執行。 若裝置已開啟低電源狀態，應用程式應該避免背景處理。
@@ -171,7 +184,7 @@ public class EnergySaverTest
 
 ## <a name="api"></a>API
 
-- [電池原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
+- [電池原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Battery)
 - [電池 API 文件](xref:Xamarin.Essentials.Battery)
 
 ## <a name="related-video"></a>相關影片

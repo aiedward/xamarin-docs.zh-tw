@@ -1,8 +1,22 @@
 ---
-title： "附加的行為" 描述： "附加的行為是具有一或多個附加屬性的靜態類別。 本文示範如何建立和使用附加的行為。
-assetid： ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/06/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 附加的行為
+description: 附加的行為是具有一或多個附加屬性的靜態類別。 本文示範如何建立和使用附加的行為。
+ms.prod: xamarin
+ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139421"
 ---
-
 # <a name="attached-behaviors"></a>附加的行為
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)

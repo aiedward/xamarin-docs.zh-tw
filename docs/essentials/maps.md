@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials map" 描述： "中的 map 類別 Xamarin.Essentials 可讓應用程式將已安裝的地圖應用程式開啟至特定位置或地標。
-assetid： BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author： jamesmontemagno ms-chap： jamont ms. date： 05/26/2020 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials地圖
+description: 中的 Map 類別 Xamarin.Essentials 可讓應用程式將已安裝的地圖應用程式開啟至特定位置或地標。
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/26/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b566b6705d1cd8e229b6a2636fffd2ebc2ed5cde
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802252"
 ---
-
 # <a name="xamarinessentials-map"></a>Xamarin.Essentials： Map
 
 **Maps** 類別可讓應用程式將已安裝的地圖應用程式開啟至特定位置或地標。
@@ -146,7 +159,7 @@ Android 使用 `geo:` Uri 配置以啟動裝置上的地圖應用程式。 這�
 
 ## <a name="api"></a>API
 
-- [Map 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Map)
+- [Map 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Map)
 - [Map API 文件](xref:Xamarin.Essentials.Map)
 
 ## <a name="related-video"></a>相關影片

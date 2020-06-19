@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 展開器" 描述： " Xamarin.Forms 展開器控制項提供可展開的容器來裝載任何內容。 藉由點擊展開器標頭，即可顯示或隱藏內容。」
-assetid： 381DCB55-522D-4414-B45B-E8DD70AA9985 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 04/15/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms器
+description: 此 Xamarin.Forms 展開器控制項會提供可擴充的容器來裝載任何內容。 藉由點擊展開器標頭，即可顯示或隱藏內容。
+ms.prod: xamarin
+ms.assetid: 381DCB55-522D-4414-B45B-E8DD70AA9985
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 33659dd52452c575c403d0a25b24f17daf9e3f17
+ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84988217"
 ---
-
 # <a name="xamarinforms-expander"></a>Xamarin.Forms器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
@@ -31,7 +45,6 @@ Xamarin.Forms `Expander` 控制項提供可擴充的容器來裝載任何內容�
 - `ForceUpdateSizeCommand`，屬於類型 `ICommand` ，定義強制更新大小時所執行的命令 `Expander` 。 這個屬性會使用系結 `OneWayToSource` 模式。
 - `Header`，屬於類型 [`View`](xref:Xamarin.Forms.View) ，定義標頭內容。
 - `IsExpanded`，屬於類型 `bool` ，可判斷 `Expander` 是否已展開。 這個屬性會使用系結 `TwoWay` 模式，而且具有的預設值 `false` 。
-- `Spacing`，屬於類型 `double` ，表示標頭和其內容之間的間距。 這個屬性的預設值為 0。
 - `State`，屬於類型 `ExpanderState` ，表示的狀態 `Expander` 。 這個屬性會使用系結 `OneWayToSource` 模式。
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標，以及樣式化的。
@@ -210,51 +223,18 @@ expander.Content = grid;
 
 如需觸發程式的詳細資訊，請參閱[ Xamarin.Forms 觸發](~/xamarin-forms/app-fundamentals/triggers.md)程式。
 
-## <a name="define-the-space-between-header-and-content"></a>定義標頭和內容之間的空格
-
-根據預設，中的內容 `Expander` 會出現在其標頭的正下方。 不過，您可以藉由將 `Spacing` 屬性設定為 `double` 代表內容和其標頭之間空白空間的值，來變更此行為：
-
-```xaml
-<Expander Spacing="50"
-          IsExpanded="true">
-    <Expander.Header>
-        <Label Text="Baboon"
-               FontAttributes="Bold"
-               FontSize="Medium" />
-    </Expander.Header>
-    <Grid Padding="10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <Image Source="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
-               Aspect="AspectFill"
-               HeightRequest="120"
-               WidthRequest="120" />
-        <Label Grid.Column="1"
-               Text="Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae."
-               FontAttributes="Italic" />
-    </Grid>
-</Expander>
-```
-
-在此範例中， `Expander` 內容會顯示在其標頭底下50個裝置獨立單位：
-
-![在 iOS 和 Android 上設定間距的展開器螢幕擷取畫面](expander-images/expander-spacing.png "在 iOS 和 Android 上設定了間距的展開器")
-
 ## <a name="embed-an-expander-in-an-expander"></a>在展開器中內嵌展開器
 
 的內容 `Expander` 可以設定為另一個 `Expander` 控制項，以啟用多個擴充層級。 下列 XAML `Expander` 會顯示其內容為另一個 `Expander` 物件的：
 
 ```xaml
-<Expander Spacing="10">
+<Expander>
     <Expander.Header>
         <Label Text="{Binding Name}"
                FontAttributes="Bold"
                FontSize="Medium" />
     </Expander.Header>
-    <Expander Padding="10"
-              Spacing="10">
+    <Expander Padding="10">
         <Expander.Header>
             <Label Text="{Binding Location}"
                    FontSize="Medium" />

@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：應用程式主題" 描述： "本檔描述中要求的應用程式主題 API Xamarin.Essentials ，其提供針對執行中應用程式要求的主題樣式資訊。
-assetid： F6F6D496-A8A9-4B9A-AF1A-370D937E5073 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 01/06/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：應用程式主題
+description: 本檔說明中要求的應用程式主題 API Xamarin.Essentials ，其提供針對執行中應用程式要求的主題樣式資訊。
+ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eca052c82ae3333feb0437b8a4e24bc6b97b836d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802510"
 ---
-
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials：應用程式主題
 
 **Application.requestedtheme** API 是類別的一部分 [`AppInfo`](app-information.md) ，並提供系統為執行中的應用程式要求的主題的相關資訊。
@@ -63,7 +76,7 @@ UWP 應用程式會遵循您在 UWP 應用程式中的設定。 xaml 下的**app
 
 ## <a name="api"></a>API
 
-- [AppInfo 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
+- [AppInfo 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/AppInfo)
 - [AppInfo API 文件](xref:Xamarin.Essentials.AppInfo)
 
 ## <a name="related-video"></a>相關影片

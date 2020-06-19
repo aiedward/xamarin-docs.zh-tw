@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ： email" 描述： "中的電子郵件類別 Xamarin.Essentials 可讓應用程式以指定的資訊開啟預設電子郵件應用程式，包括主旨、本文和收件者（收件者、副本、密件副本）。
-assetid： 5FBB6FF0-0E7B-4C29-8F06-91642AF12629 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 08/20/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：電子郵件
+description: 中的 [電子郵件] 類別 Xamarin.Essentials 可讓應用程式以指定的資訊開啟預設的電子郵件應用程式，包括主旨、本文和收件者（收件者、副本、密件副本）。
+ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eba2b6decc74c63e6b2790287842e6cc9b237bd2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802378"
 ---
-
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials：電子郵件
 
 **電子郵件**類別使應用程式能夠開啟包含主題、本文和收件者 (收件者、副本、密件副本) 等指定資訊的預設電子郵件應用程式。
@@ -95,7 +108,7 @@ await Email.ComposeAsync(message);
 
 ## <a name="api"></a>API
 
-- [電子郵件原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
+- [電子郵件原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Email)
 - [電子郵件 API 文件](xref:Xamarin.Essentials.Email)
 
 ## <a name="related-video"></a>相關影片

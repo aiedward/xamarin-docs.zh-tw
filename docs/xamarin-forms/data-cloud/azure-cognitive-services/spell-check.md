@@ -1,8 +1,22 @@
 ---
-標題：「使用 Bing 拼寫檢查 API 進行拼寫檢查」描述：「Bing 拼寫檢查會執行文字的內容拼寫檢查，並提供拼錯文字的內嵌建議。 本文說明如何使用 Bing 拼寫檢查 REST API 來更正應用程式中的拼寫錯誤 Xamarin.Forms 。」
-assetid： B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/08/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 Bing 拼寫檢查 API 進行拼寫檢查
+description: Bing 拼寫檢查會執行文字的內容拼寫檢查，為拼錯的字組提供內嵌建議。 本文說明如何使用 Bing 拼寫檢查 REST API 來更正應用程式中的拼寫錯誤 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139291"
 ---
-
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>使用 Bing 拼寫檢查 API 進行拼寫檢查
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

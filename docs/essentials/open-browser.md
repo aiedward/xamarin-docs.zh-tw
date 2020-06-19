@@ -1,8 +1,21 @@
 ---
-標題：「 Xamarin.Essentials 開啟瀏覽器」描述：「中的瀏覽器類別 Xamarin.Essentials 可讓應用程式在優化系統偏好瀏覽器或外部瀏覽器中開啟 web 連結。」
-assetid： BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author： jamesmontemagno ms-chap： jamont ms. date： 04/02/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials開啟瀏覽器
+description: 中的 Browser 類別 Xamarin.Essentials 可讓應用程式在優化系統偏好瀏覽器或外部瀏覽器中開啟 web 連結。
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 997c6b66b5dba43eb440130f3f58d31a5a274815
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802240"
 ---
-
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials：瀏覽器
 
 **Browser** 類別可讓應用程式在最佳化系統偏好瀏覽器或外部瀏覽器中開啟網頁連結。
@@ -84,7 +97,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="api"></a>API
 
-- [Browser 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Browser 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Browser)
 - [Browser API 文件](xref:Xamarin.Essentials.Browser)
 
 ## <a name="related-video"></a>相關影片

@@ -1,8 +1,21 @@
 ---
-標題：「 Xamarin.Essentials ：裝置顯示資訊」描述：「本檔描述中的 DeviceDisplay 類別 Xamarin.Essentials ，其提供執行應用程式之裝置的畫面計量。」
-assetid： 2821C908-C613-490D-8E8C-1BD3269FCEEA author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：裝置顯示資訊
+description: 本檔描述中的 DeviceDisplay 類別 Xamarin.Essentials ，它會針對執行應用程式的裝置提供螢幕計量。
+ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 867e6bd1828d4158f70226dbaad678f9d6037bb0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802402"
 ---
-
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials：裝置顯示資訊
 
 **DeviceDisplay** 類別提供應用程式執行所在的裝置畫面計量資訊，並可要求防止畫面在應用程式正在執行時休眠。
@@ -92,7 +105,7 @@ public class KeepScreenOnTest
 
 ## <a name="api"></a>API
 
-- [DeviceDisplay 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
+- [DeviceDisplay 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/DeviceDisplay)
 - [DeviceDisplay API 文件](xref:Xamarin.Essentials.DeviceDisplay)
 
 ## <a name="related-video"></a>相關影片

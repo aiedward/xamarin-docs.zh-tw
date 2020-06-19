@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：剪貼簿" 描述： "本檔描述中的剪貼簿類別 Xamarin.Essentials ，可讓您將文字複製並貼到應用程式之間的系統剪貼簿。
-assetid： C52AE99A-0FB3-425D-9106-3DA5777FEFA0 author： jamesmontemagno ms-chap： jamont ms. date： 01/06/2020 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：剪貼簿
+description: 本檔說明中的剪貼簿類別 Xamarin.Essentials ，可讓您將文字複製並貼到應用程式之間的系統剪貼簿。
+ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d0a984f0f3bf27447e250c12e38fd9adcfb0029f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802447"
 ---
-
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials：剪貼簿
 
 **剪貼簿**類別可讓您在應用程式之間複製文字，並貼到系統剪貼簿。
@@ -60,7 +73,7 @@ public class ClipboardTest
 
 ## <a name="api"></a>API
 
-- [剪貼簿原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Clipboard)
+- [剪貼簿原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Clipboard)
 - [剪貼簿 API 文件](xref:Xamarin.Essentials.Clipboard)
 
 ## <a name="related-video"></a>相關影片

@@ -1,8 +1,22 @@
 ---
-標題：「使用語音服務 API 的語音辨識」描述：「本文說明如何使用 Azure 語音服務 API，在應用程式中轉譯語音轉換成文字」 Xamarin.Forms 。
-assetid： B435FF6B-8785-48D9-B2D9-1893F5A87EA1 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：01/14/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用語音服務 API 的語音辨識
+description: 本文說明如何使用 Azure 語音服務 API，將語音轉譯至應用程式中的文字 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 01/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139317"
 ---
-
 # <a name="speech-recognition-using-azure-speech-service"></a>使用 Azure 語音服務的語音辨識
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)

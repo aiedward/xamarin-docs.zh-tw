@@ -1,8 +1,22 @@
 ---
-標題：「改善 Xamarin.Forms 應用程式效能」描述：「增加應用程式效能的技巧有很多 Xamarin.Forms 。 這些技巧可共同大幅減少 CPU 所執行的工作量，以及應用程式所耗用的記憶體數量。」
-assetid： 0be84c56-6698-448d-be5a-b4205f1caa9f ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 改善 Xamarin.Forms 應用程式效能
+description: 有許多技術可提高應用程式的效能 Xamarin.Forms 。 這些技巧可共同大幅減少由 CPU 所執行的工作量，和由應用程式所耗用的記憶體數量。
+ms.prod: xamarin
+ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 96b5939fd1f8448d45d1398fd56770f9032de083
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139109"
 ---
-
 # <a name="improve-xamarinforms-app-performance"></a>改善 Xamarin.Forms 應用程式效能
 
 > [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]

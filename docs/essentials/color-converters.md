@@ -1,8 +1,21 @@
 ---
-標題：「 Xamarin.Essentials 色彩轉換器」描述：「中的 ColorConverters 類別 Xamarin.Essentials 提供數個 helper 方法和擴充方法來處理 System.web. Color。」
-assetid： B10428D6-89E2-4714-A39F-7E6E626391B2 author： jamesmontemagno ms-chap： jamont ms. date： 01/06/2020 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials色彩轉換器
+description: 中的 ColorConverters 類別 Xamarin.Essentials 提供數個 helper 方法和擴充方法，以處理 system.web. Color。
+ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ff6a5bed600f45dcd48867596a7fc8aa45decb82
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802436"
 ---
-
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials：色彩轉換器
 
 中的**ColorConverters**類別會 Xamarin.Essentials 針對 system.web. Color 提供數個 helper 方法。
@@ -70,9 +83,9 @@ var system = platform.ToSystemColor();
 
 ## <a name="api"></a>API
 
-- [色彩轉換器原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [色彩轉換器原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [色彩轉換器 API 文件](xref:Xamarin.Essentials.ColorConverters)
-- [色彩擴充原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [色彩擴充原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [色彩擴充 API 文件](xref:Xamarin.Essentials.ColorExtensions)
 
 ## <a name="related-video"></a>相關影片

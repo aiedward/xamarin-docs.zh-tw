@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ： connectivity" 描述： "中的 connectivity 類別 Xamarin.Essentials 可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線的方式。
-assetid： E1B1F152-B1D5-4227-965E-C0AEBF528F49 author： jamesmontemagno ms-chap： jamont ms. date： 01/08/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：連線能力
+description: 中的 Connectivity 類別 Xamarin.Essentials 可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前的連線方式。
+ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/08/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 056992b06e012845755aa02b2076a1bb80c6f176
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802411"
 ---
-
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials：連線能力
 
 **Connectivity** 類別可讓您監視裝置網路狀況的變更、檢查目前的網路存取，以及目前連線方式。
@@ -105,7 +118,7 @@ public class ConnectivityTest
 
 ## <a name="api"></a>API
 
-* [Connectivity 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Connectivity 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Connectivity)
 * [Connectivity API 文件](xref:Xamarin.Essentials.Connectivity)
 
 ## <a name="related-video"></a>相關影片

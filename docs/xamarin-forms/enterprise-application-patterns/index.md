@@ -1,8 +1,22 @@
 ---
-標題：「使用電子書的企業應用程式模式」 Xamarin.Forms 描述：「此電子書提供開發可調整、可維護和可測試之 Xamarin.Forms 企業應用程式的架構指引。」
-assetid： 28cfed6c-6175-4223-a8cc-798d40bf0832 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 08/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用電子書的企業應用程式模式 Xamarin.Forms
+description: 此電子書提供開發可調整、可維護和可測試之 Xamarin.Forms 企業應用程式的架構指引。
+ms.prod: xamarin
+ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139395"
 ---
-
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>使用電子書的企業應用程式模式 Xamarin.Forms
 
 _開發可調整、可維護且可測試之 Xamarin.Forms 企業應用程式的架構指引_
@@ -45,7 +59,7 @@ Xamarin.Forms包含頁面導覽的支援，這通常是因使用者與 UI 的互
 
 在模型 ViewModel （MVVM）模式的內容中，通常需要視圖模型或模型來執行資料驗證，並向視圖發出任何驗證錯誤，讓使用者可以加以更正。
 
-## <a name="configuration-management"></a>[組態管理](configuration-management.md)
+## <a name="configuration-management"></a>[設定管理](configuration-management.md)
 
 設定可讓您從程式碼中區隔的資料，來設定應用程式的行為，以在不重建應用程式的情況下變更行為。 應用程式設定是應用程式所建立及管理的資料，而使用者設定則是應用程式的可自訂設定，會影響應用程式的行為，而不需要經常重新調整。
 

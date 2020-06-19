@@ -1,8 +1,22 @@
 ---
-標題：「使用 apple 登入」 Xamarin.Forms 描述：「使用 apple 登入」會為使用者提供身分識別保護，並可針對中的跨平臺行動案例執行 Xamarin.Forms 。
-assetid： 414465F8-0CC8-4078-B3D1-F36983069658 ms. 技術： xamarin-表單作者： davidortinau ms. author： daortin ms. 日期：09/10/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 Apple 登入Xamarin.Forms
+description: 使用 Apple 登入可為使用者提供身分識別保護，並可在中針對跨平臺行動案例執行 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 414465F8-0CC8-4078-B3D1-F36983069658
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 84c7fdef5d12dfe6fca6294b3125e90761349002
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139447"
 ---
-
 # <a name="sign-in-with-apple-in-xamarinforms"></a>使用 Apple 登入Xamarin.Forms
 
 使用 Apple 登入引進了一項新服務，可為使用者提供身分識別保護。 從 iOS 13 版，Apple 要求任何使用協力廠商驗證提供者的應用程式也會提供使用 Apple 的登入。 如需搭配使用這項功能與 Xamarin 的指示，請[參閱這裡](~/ios/platform/ios13/sign-in.md)。

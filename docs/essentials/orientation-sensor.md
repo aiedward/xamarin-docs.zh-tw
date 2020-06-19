@@ -1,6 +1,19 @@
 ---
-title： " Xamarin.Essentials ： OrientationSensor" 描述： "OrientationSensor 類別可讓您監視裝置在3d 空間中的方向。
-assetid： F3091D93-E779-41BA-8696-23D296F2F6F5 author： jamesmontemagno ms-chap： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials： OrientationSensor
+description: OrientationSensor 類別可讓您監視裝置在三維空間中的方向。
+ms.assetid: F3091D93-E779-41BA-8696-23D296F2F6F5
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e61a3730e80c8fb60aee076b028ee54bed6887b3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802221"
 ---
 # <a name="xamarinessentials-orientationsensor"></a>Xamarin.Essentials： OrientationSensor
 
@@ -100,5 +113,5 @@ public class OrientationSensorTest
 
 ## <a name="api"></a>API
 
-- [OrientationSensor 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/OrientationSensor)
+- [OrientationSensor 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/OrientationSensor)
 - [OrientationSensor API 文件](xref:Xamarin.Essentials.OrientationSensor)

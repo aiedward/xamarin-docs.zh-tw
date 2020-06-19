@@ -1,8 +1,22 @@
 ---
-標題：「使用 Apple 的登入」 Xamarin.Forms 描述：瞭解如何在行動應用程式中使用 apple 執行登入 Xamarin.Forms 。」
-assetid： 2E47E7F2-93D4-4CA3-9E66-247466D25E4D ms. 技術： xamarin-表單作者： davidortinau ms. author： daortin ms. 日期：09/10/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 [使用 Apple 登入]Xamarin.Forms
+description: 瞭解如何在您的行動應用程式中使用 Apple 執行登入 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 2E47E7F2-93D4-4CA3-9E66-247466D25E4D
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb37f8fb2d01154bf2e749e685c4e96c12d6bc5e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139486"
 ---
-
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>使用 [使用 Apple 登入]Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)

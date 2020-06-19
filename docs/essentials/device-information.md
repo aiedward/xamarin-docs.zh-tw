@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：裝置資訊" 描述： "本檔描述中的 DeviceInfo 類別 Xamarin.Essentials ，其中提供應用程式執行所在裝置的相關資訊。
-assetid： A1AC5373-926A-4FB6-8D7D-4B87EB8EB522 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：裝置資訊
+description: 本檔描述中的 DeviceInfo 類別 Xamarin.Essentials ，其中提供應用程式執行所在裝置的相關資訊。
+ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 70619097baa2c5f10321835b087f693c4fbac0c4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802393"
 ---
-
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials：裝置資訊
 
 **DeviceInfo** 類別可提供執行應用程式的裝置相關資訊。
@@ -78,7 +91,7 @@ iOS 不會為開發人員公開 API 以取得特定 iOS 裝置的型號。 相�
 
 ## <a name="api"></a>API
 
-- [DeviceInfo 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
+- [DeviceInfo 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/DeviceInfo)
 - [DeviceInfo API 文件](xref:Xamarin.Essentials.DeviceInfo)
 
 ## <a name="related-video"></a>相關影片

@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：偵測搖動" 描述：「中的加速計類別可 Xamarin.Essentials 讓您偵測裝置的搖動移動。」
-assetid： 07513D32-120F-4F12-8757-A47802A8027B author： jamesmontemagno ms-chap： jamont ms. date： 05/28/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：偵測搖動
+description: 中的加速計類別可 Xamarin.Essentials 讓您偵測裝置的搖動移動。
+ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4fd4c7d0e3ffe04ebbb936cff0992272a9085649
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802433"
 ---
-
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials：偵測搖動
 
 **[加速](accelerometer.md)** 計類別可讓您監視裝置的加速計感應器，這會指出裝置在3d 空間中的加速。 此外，其也可讓您在使用者搖動裝置時登錄事件。
@@ -68,7 +81,7 @@ public class DetectShakeTest
 
 ## <a name="api"></a>API
 
-- [Accelerometer 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [Accelerometer 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Accelerometer)
 - [Accelerometer API 文件](xref:Xamarin.Essentials.Accelerometer)
 
 ## <a name="related-video"></a>相關影片

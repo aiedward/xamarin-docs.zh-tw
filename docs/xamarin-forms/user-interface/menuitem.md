@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms menuitem" 描述： "menuitem 類別是用來建立功能表的功能表項目，例如 ListView 專案內容功能表和 Shell 應用程式飛出視窗功能表。
-assetId： 62655C21-6053-466D-A7F4-DE2BE36538F5 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：08/01/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsMenuItem
+description: MenuItem 類別用來建立功能表的功能表項目，例如 ListView 專案內容功能表和 Shell 應用程式飛出視窗功能表。
+ms.prod: xamarin
+ms.assetId: 62655C21-6053-466D-A7F4-DE2BE36538F5
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 08/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6b27f778a417a2bc0b458af4214ee8cb914fd93d
+ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990852"
 ---
-
 # <a name="xamarinforms-menuitem"></a>Xamarin.FormsMenuItem
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)
@@ -218,13 +232,13 @@ public class MyViewModel : INotifyPropertyChanged
 
     public Command MyCommand { get; private set; }
 
-    public ToolbarItemViewModel()
+    public MyViewModel()
     {
         MyCommand = new Command(() =>
         {
             // Execute logic here
         },
-        () => IsToolbarItemEnabled);
+        () => IsMenuItemEnabled);
     }
 }
 ```
