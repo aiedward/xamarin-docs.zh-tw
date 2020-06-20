@@ -1,8 +1,22 @@
 ---
-title： "自訂 ListView" 描述： " Xamarin.Forms ListView 是將資料集合顯示為垂直清單的視圖。 本文示範如何建立自訂轉譯器，以封裝平臺特定清單控制項和原生資料格配置，讓您對原生清單控制效能有更大的控制權。」
-assetid： 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/29/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 自訂 ListView
+description: Xamarin.FormsListView 是將資料集合顯示為垂直清單的視圖。 本文示範如何建立自訂轉譯器，其會封裝平台特定清單控制項和原生資料格配置，讓您對原生清單控制效能擁有更多掌控權。
+ms.prod: xamarin
+ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: dc28cdaf78c72c219706a30c30af7f90ae7c4eec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569617"
 ---
-
 # <a name="customizing-a-listview"></a>自訂 ListView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
@@ -543,7 +557,7 @@ protected override void OnElementPropertyChanged(object sender, System.Component
 
 方法會使用變更的資料重新填入原生 `ListView` 控制項，前提是可繫結的 `NativeListView.Items` 屬性已變更。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範了如何建立自訂轉譯器，其會封裝平台特定清單控制項和原生資料格配置，讓您對原生清單控制效能擁有更多掌控權。
 

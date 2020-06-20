@@ -1,8 +1,24 @@
 ---
-title： "樣式一種跨平臺 Xamarin.Forms 應用程式" 描述： "本文說明如何使用 XAML 樣式來為跨平臺 Xamarin.Forms 應用程式建立樣式。
-zone_pivot_groups： platform ms. 主題：快速入門 assetid： CCCF8E57-D021-4542-8709-5808570FC26A ms-chap： xamarin-表單作者： davidbritch ms. 作者： dabritch ms。日期：02/07/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 建立跨平臺 Xamarin.Forms 應用程式的樣式
+description: 本文說明如何使用 XAML 樣式來建立跨平臺 Xamarin.Forms 應用程式的樣式。
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: CCCF8E57-D021-4542-8709-5808570FC26A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/07/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134065"
 ---
-
 # <a name="style-a-cross-platform-xamarinforms-application"></a>建立跨平臺 Xamarin.Forms 應用程式的樣式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)

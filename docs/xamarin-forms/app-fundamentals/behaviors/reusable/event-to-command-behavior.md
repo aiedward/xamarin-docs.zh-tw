@@ -1,8 +1,22 @@
 ---
-title： "可重複使用的的 eventtocommandbehavior" 描述： "行為可用來將命令與未設計成與命令互動的控制項產生關聯。 本文示範如何建立和使用 Xamarin.Forms 行為，以便在事件引發時叫用命令。」
-assetid： EC7F6556-9776-40B8-9424-A8094482A2F3 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/09/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 可重複使用的 EventToCommandBehavior
+description: 行為可用來將命令與未設計於與命令互動的控制項建立關聯。 本文示範如何建立和使用 Xamarin.Forms 行為，以便在事件引發時叫用命令。
+ms.prod: xamarin
+ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/09/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135794"
 ---
-
 # <a name="reusable-eventtocommandbehavior"></a>可重複使用的 EventToCommandBehavior
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)

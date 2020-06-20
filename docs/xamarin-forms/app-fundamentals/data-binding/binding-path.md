@@ -1,8 +1,22 @@
 ---
-title：「系結 Xamarin.Forms 路徑」描述：「本文將說明如何使用資料系結，以系結 Xamarin.Forms 類別的 Path 屬性來存取子屬性和集合成員。」
-assetid： 3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/05/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms系結路徑
+description: 本文說明如何使用資料系結，以系結 Xamarin.Forms 類別的 Path 屬性來存取子屬性和集合成員。
+ms.prod: xamarin
+ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570787"
 ---
-
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms系結路徑
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

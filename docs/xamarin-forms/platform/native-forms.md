@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 在 Xamarin 原生專案中描述：" 本文說明如何取用直接新增至 Xamarin 原生專案的 ContentPage 衍生頁面，以及如何在兩者之間流覽。 "
-assetid： f343fc21-dfb1-4364-a332-9da6705d36bc ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/19/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms在 Xamarin 原生專案中
+description: 本文說明如何取用直接新增至 Xamarin 原生專案的 ContentPage 衍生頁面，以及如何在兩者之間流覽。
+ms.prod: xamarin
+ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/19/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fb741a03d1c8dd2a8754120d0b46567d8889a0b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132271"
 ---
-
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms在 Xamarin 原生專案中
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)

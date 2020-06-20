@@ -1,8 +1,22 @@
 ---
-title： "第3部分。 XAML 標記延伸「描述：」 xaml 標記延伸是 XAML 中的一項重要功能，可讓您將屬性設定為間接從其他來源參考的物件或值。」
-assetid： F4A37564-B18B-42FF-B841-9A1949895AB6 author： davidbritch ms-chap： dabritch ms. date：03/27/2018 否-loc： [ Xamarin.Forms ，]，請執行下列動作 Xamarin.Essentials
+title: 第 3 部分： XAML 標記延伸
+description: XAML 標記延伸是 XAML 中的一項重要功能，可讓您將屬性設定為間接從其他來源參考的物件或值。
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131335"
 ---
-
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分： XAML 標記延伸
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

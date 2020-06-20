@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms TableView" 描述： "本文說明如何使用 Xamarin.Forms TableView 類別來呈現應用程式中的捲動功能表、設定和輸入表單。
-assetid： D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/25/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsTableView
+description: 本文說明如何使用 Xamarin.Forms TableView 類別來呈現應用程式中的捲動功能表、設定和輸入表單。
+ms.prod: xamarin
+ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bf09856efddbd1887ee93b34014ef0f573058f4d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565287"
 ---
-
 # <a name="xamarinforms-tableview"></a>Xamarin.FormsTableView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)

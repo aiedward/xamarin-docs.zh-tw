@@ -1,8 +1,22 @@
 ---
-title： "鍵盤協助工具" 描述： "而不是使用預設的定位順序，有時必須藉由使用 TabIndex 和 IsTabStop 屬性的組合來指定索引標籤序列，以微調 UI 的存取範圍。
-assetid： 8be8f498-558a-4894-a01f-91a0d3ef927e ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 05/09/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 鍵盤協助工具
+description: 有時必須藉由使用 TabIndex 和 IsTabStop 屬性的組合來指定索引標籤序列，以微調 UI 的存取範圍，而不是使用預設的定位順序。
+ms.prod: xamarin
+ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/09/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1590d0a4f9716541f18bc4f50a2c480c5e4478a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129775"
 ---
-
 # <a name="keyboard-accessibility-in-xamarinforms"></a>鍵盤協助工具Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

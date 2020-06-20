@@ -1,8 +1,22 @@
 ---
-title： "Porter-Duff blend 模式" 描述： "使用 Porter Duff blend 模式根據來源和目的地影像撰寫場景。"
-skiasharp 的 assetid： 57F172F8-BA03-43EC-A215-ED6B78696BB5 author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: Porter-Duff blend 模式
+description: 使用 Porter-Duff blend 模式，根據來源和目的地影像來撰寫場景。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131049"
 ---
-
 # <a name="porter-duff-blend-modes"></a>Porter-Duff blend 模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -57,7 +71,7 @@ Skia 會新增名 `Modulate` 為的第14個模式，其非常類似， `Plus` �
 
 以下是 SkiaSharp 中所定義的14個 Porter Duff 模式。 此表格顯示其如何為上圖中三個非空白區域的色彩著色：
 
-| 模式       | Destination | 處 | 來源 |
+| [模式]       | Destination | 處 | 來源 |
 | ---------- |:-----------:|:------------:|:------:|
 | `Clear`    |             |              |        |
 | `Src`      |             | 來源       | X      |
@@ -72,7 +86,7 @@ Skia 會新增名 `Modulate` 為的第14個模式，其非常類似， `Plus` �
 | `DstATop`  |             | Destination  | X      |
 | `Xor`      | X           |              | X      |
 | `Plus`     | X           | Sum          | X      |
-| `Modulate` |             | 產品      |        | 
+| `Modulate` |             | Products      |        | 
 
 這些 blend 模式是對稱的。 可以交換來源和目的地，而且所有模式仍然可供使用。
 
@@ -498,7 +512,7 @@ RGB 色彩會以 Alpha 值乘以。 例如，如果**Sc**代表純紅色，但**
 
 結果會以括弧括住，並以逗號分隔 RGB 色彩： **[Alpha，color]**。 針對色彩，會分別針對紅色、綠色和藍色元件執行計算：
 
-| 模式       | 操作 |
+| [模式]       | 作業 |
 | ---------- | --------- |
 | `Clear`    | [0，0]    |
 | `Src`      | [Sa，Sc]  |

@@ -1,15 +1,29 @@
 ---
-title：「 Xamarin.Forms 通用控制項屬性、方法和事件」描述：「本文描述 VisualElement 類別上所定義的通用屬性、方法和事件，通常用於衍生類別中。」
-assetId： 85A0CCF5-C1D8-40BB-927F-A4D944E5534D ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：08/21/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms通用控制項屬性、方法和事件
+description: 本文說明在 VisualElement 類別上定義的通用屬性、方法和事件，通常用於衍生類別中。
+ms.prod: xamarin
+ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 06/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104325"
 ---
-
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms通用控制項屬性、方法和事件
 
 Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使用的基類 Xamarin.Forms 。 `VisualElement`類別會定義在衍生類別中使用的許多[屬性](#properties)、[方法](#methods)和[事件](#events)。
 
 ## <a name="properties"></a>屬性
 
-下列屬性可在實例上使用 `VisualElement` 。 如需完整清單，請參閱[VISUALELEMENT API 屬性](xref:Xamarin.Forms.VisualElement#properties)。
+下列屬性可用於 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 物件。
 
 ### [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 
@@ -30,6 +44,10 @@ Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使�
 ### [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)
 
 `Bounds`屬性是唯讀 `Rectangle` 物件，代表控制項所佔用的空間。 `Bounds`屬性值會在版面配置週期期間指派。 `Rectangle` `struct` 包含有用的屬性和方法，可用於測試矩形的交集和內含專案。 如需詳細資訊，請參閱[ Xamarin.Forms 矩形 API](xref:Xamarin.Forms.Rectangle)。
+
+### `Clip`
+
+`Clip`屬性是 `Geometry` 定義元素內容大綱的物件。 若要定義剪輯，請使用 `Geometry` 物件（例如） `EllipseGeometry` 來設定元素的 `Clip` 屬性。 只有 geometry 區域內的區域才會顯示。 如需詳細資訊，請參閱[裁剪幾何](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries)。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
@@ -254,4 +272,4 @@ Android、iOS 和 UWP 平臺各有不同的度量單位，可能會因裝置而�
 
 ## <a name="related-links"></a>相關連結
 
-* [VisualElement API 檔](xref:Xamarin.Forms.VisualElement)
+- [VisualElement API](xref:Xamarin.Forms.VisualElement)

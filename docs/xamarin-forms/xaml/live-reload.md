@@ -1,8 +1,23 @@
 ---
-標題：「Xamarin Live Reload （預覽）」描述：「查看即時反映的 XAML 變更，而不需要另一個編譯和部署」。
-assetid： 4917273d-32f9-401a-a52c-5cfb53a2170d ms. 技術： xamarin-表單作者： pierceboggan ms. author： piboggan 機器人： noindex ms. date：10/26/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin Live Reload （預覽）
+description: 查看即時反映的 XAML 變更，而不需要另一個編譯和部署。
+ms.prod: xamarin
+ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
+ms.technology: xamarin-forms
+author: pierceboggan
+ms.author: piboggan
+robots: noindex
+ms.date: 10/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134208"
 ---
-
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload （預覽）
 
 > [!NOTE]

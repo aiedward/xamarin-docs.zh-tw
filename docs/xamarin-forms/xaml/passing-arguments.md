@@ -1,8 +1,22 @@
 ---
-標題：「在 XAML 中傳遞引數」描述：「本文將示範如何使用 XAML 屬性，這些屬性可用來將引數傳遞至非預設的函式、呼叫 factory 方法，以及指定泛型引數的型別。」
-assetid： 8F3B267F-499E-4D79-9193-FCA99F199519 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/25/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 XAML 中傳遞引數
+description: 本文示範如何使用 XAML 屬性，這些屬性可用來將引數傳遞至非預設的函式、呼叫 factory 方法，以及指定泛型引數的類型。
+ms.prod: xamarin
+ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 84d8901b7f8dee8ffd6c3ba22d30c76b456555f0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571502"
 ---
-
 # <a name="passing-arguments-in-xaml"></a>在 XAML 中傳遞引數
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)

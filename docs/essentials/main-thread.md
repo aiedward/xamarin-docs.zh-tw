@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ： MainThread" 描述： "MainThread 類別可讓應用程式在主要執行執行緒上執行程式碼。"
-assetid： CD6D51E7-D933-4FE7-A7F7-392EF27812E1 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 08/20/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials： MainThread
+description: MainThread 類別可讓應用程式在主執行緒上執行程式碼。
+ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 82c54a72d0e0bc991644295f05136f89fd280d7f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802277"
 ---
-
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials： MainThread
 
 **MainThread** 類別可讓應用程式在主執行緒上執行程式碼，並判斷特定程式碼區塊目前是否在主執行緒上執行。
@@ -100,7 +113,7 @@ else
 
 ## <a name="api"></a>API
 
-- [MainThread 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/MainThread)
+- [MainThread 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/MainThread)
 - [MainThread API 文件](xref:Xamarin.Essentials.MainThread)
 
 ## <a name="related-video"></a>相關影片

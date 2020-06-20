@@ -1,6 +1,20 @@
 ---
-標題：「在 Visual Studio 2019 中安裝 Xamarin」描述：「本檔說明如何在 Visual Studio 2019 中安裝 Xamarin。 其中討論需求、安裝程式，以及驗證安裝。」
-assetid： E20D4463-368E-4B60-A059-F50DB8C5552D author： conceptdev ms. author： crdun ms. date： 08/28/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 Visual Studio 2019 中安裝 Xamarin
+description: 本文件描述如何在 Visual Studio 2019 中安裝 Xamarin。 討論需求、安裝程序以及驗證安裝。
+ms.prod: xamarin
+ms.assetid: E20D4463-368E-4B60-A059-F50DB8C5552D
+author: conceptdev
+ms.author: crdun
+ms.date: 08/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 91e4cbf09ac730483659dbe692bab19f8bb0b113
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570121"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>在 Visual Studio 2019 中安裝 Xamarin
 

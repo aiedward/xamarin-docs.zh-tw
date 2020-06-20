@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 應用程式生命週期」描述：「本文將說明如何回應應用程式生命週期，包括生命週期方法、頁面通知事件和強制回應導覽事件。」
-assetid： 69B416CF-B243-4790-AB29-F030B32465BE ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/31/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms應用程式生命週期
+description: 本文說明如何回應應用程式生命週期，包括週期方法、頁面通知事件，以及強制回應導覽事件。
+ms.prod: xamarin
+ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/31/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a67d0c3adb54332bf30879a5b6f1d086581f0ec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573335"
 ---
-
 # <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms應用程式生命週期
 
 [`Application`](xref:Xamarin.Forms.Application)基類提供下列功能：

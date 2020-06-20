@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 中的基本動畫" 描述： "本文說明如何在應用程式中建立 SkiaSharp 圖形的動畫 Xamarin.Forms ，並以範例程式碼示範。
-skiasharp 的 assetid： 31C96FD6-07E4-4473-A551-24753A5118C3 author： davidbritch ms-chap： dabritch ms. date： 03/10/2017 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: SkiaSharp 中的基本動畫
+description: 本文說明如何在應用程式中以動畫顯示 SkiaSharp 圖形 Xamarin.Forms ，並使用範例程式碼示範這項功能。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 31C96FD6-07E4-4473-A551-24753A5118C3
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9a59f65655772768860ce29128f14a48641abc26
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134273"
 ---
-
 # <a name="basic-animation-in-skiasharp"></a>SkiaSharp 中的基本動畫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

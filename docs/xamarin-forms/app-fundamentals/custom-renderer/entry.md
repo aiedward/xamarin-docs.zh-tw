@@ -1,8 +1,22 @@
 ---
-title： "自訂專案" 描述： " Xamarin.Forms 輸入控制項允許單一行文字進行編輯。 本文示範如何建立 Entry 控制項的自訂轉譯器，讓開發人員以自己的平臺特定自訂來覆寫預設原生轉譯。
-assetid： 7B5DD10D-0411-424F-88D8-8A474DF16D8D ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/26/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 自訂 Entry
+description: Xamarin.Forms專案控制項可讓您編輯一行文字。 本文示範如何建立 Entry 控制項的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。
+ms.prod: xamarin
+ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571567"
 ---
-
 # <a name="customizing-an-entry"></a>自訂 Entry
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
@@ -192,7 +206,7 @@ namespace CustomRenderer.UWP
 
 呼叫基底類別的 `OnElementChanged` 方法會具現化 `TextBox` 控制項，且控制項的參考會指派給轉譯器的 `Control` 屬性。 背景色彩則會透過建立 `SolidColorBrush` 執行個體設為青色。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已示範如何建立控制項的自訂控制項轉譯器 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) ，讓開發人員以自己的平臺特定轉譯來覆寫預設原生轉譯。 自訂轉譯器提供自訂控制面板的強大方法 Xamarin.Forms 。 自訂轉譯器可用於小型樣式變更或複雜的平台特定版面配置，以及行為自訂。
 

@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms grid" 描述： " Xamarin.Forms 方格是將其子系組織成資料列和資料行的版面配置。"
-assetid： 762B1802-D185-494C-B643-74EED55882FE ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/15/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms格
+description: Xamarin.Forms方格是將其子系組織成資料列和資料行的版面配置。
+ms.prod: xamarin
+ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9d2e697a07e033fd7c3c8d3efffa1d67f6c097c3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946334"
 ---
-
 # <a name="xamarinforms-grid"></a>Xamarin.Forms格
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
@@ -274,6 +288,21 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2); // second column, second row
 
 > [!NOTE]
 > 此外，您可以使用和方法將子視圖加入至 [`Grid`](xref:Xamarin.Forms.Grid) [`AddHorizontal`](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*) [`AddVertical`](xref:Xamarin.Forms.Grid.IGridList`1.AddVertical*) ，這會將子系加入至單一資料列或單一資料行 `Grid` 。 `Grid`接著會在進行這些呼叫時展開資料列或資料行，並自動將子系定位在正確的資料格中。
+
+### <a name="simplify-row-and-column-definitions"></a>簡化資料列和資料行定義
+
+在 XAML 中，您可以使用簡化的語法來指定的資料列和資料行特性， [`Grid`](xref:Xamarin.Forms.Grid) 避免必須 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 為每個資料列和資料行定義和物件。 相反地， [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) 和 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) 屬性可以設定為包含逗號分隔值的字串 [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) ，其中內建在 Xamarin.Forms create `RowDefinition` 和 objects 中的類型轉換器 `ColumnDefinition` ：
+
+```xaml
+<Grid RowDefinitions="1*, Auto, 25, 14, 20"
+      ColumnDefinitions="*, 2*, Auto, 300">
+    ...
+</Grid>
+```
+
+在此範例中， [`Grid`](xref:Xamarin.Forms.Grid) 有五個數據列和四個數據行。 第三個、向和第五個數據列設定為絕對高度，第二個數據列會自動調整大小為其內容。 其餘的高度則會配置到第一個資料列。
+
+[向下] 資料行會設定為 [絕對寬度]，而第三個數據行則會自動調整大小為其內容。 在第一個和第二個數據行之間，會根據星號前面的數位來按比例分配其餘寬度。 在此範例中，第二個數據行的寬度是第一個資料行的兩倍（因為與 `*` 相同 `1*` ）。
 
 ## <a name="space-between-rows-and-columns"></a>資料列與資料行之間的間距
 

@@ -1,8 +1,22 @@
 ---
-標題：「企業應用程式中的驗證」描述：「本章節說明 eShopOnContainers 行動應用程式如何執行使用者輸入的驗證。 這包括指定驗證規則、觸發驗證，以及顯示驗證錯誤。」
-assetid： 56e4f0fc-48d9-4033-91ec-173bb46a5e4d ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 企業應用程式中的驗證
+description: 本章說明 eShopOnContainers 行動應用程式如何執行使用者輸入的驗證。 這包括指定驗證規則、觸發驗證，以及顯示驗證錯誤。
+ms.prod: xamarin
+ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a4b82552956ab0e75d0a76a14ce7c919c744e09a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565326"
 ---
-
 # <a name="validation-in-enterprise-apps"></a>企業應用程式中的驗證
 
 任何接受使用者輸入的應用程式都應確保輸入有效。 例如，應用程式可以檢查僅包含特定範圍中的字元、是否為特定長度，或符合特定格式的輸入。 如果沒有驗證，使用者可以提供會導致應用程式失敗的資料。 驗證會強制執行商務規則，並防止攻擊者插入惡意資料。
@@ -407,7 +421,7 @@ UI 會在其資料驗證失敗的每個控制項底下的標籤控制項中顯�
 
 每個都會系結 [`Label`](xref:Xamarin.Forms.Label) 至要 `Errors` 驗證之視圖模型物件的屬性。 `Errors`屬性是由 `ValidatableObject<T>` 類別提供，而且屬於型別 `List<string>` 。 因為 `Errors` 屬性可以包含多個驗證錯誤，所以 `FirstValidationErrorConverter` 會使用實例來抓取集合中的第一個錯誤，以供顯示。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 EShopOnContainers 行動應用程式會執行 view model 屬性的同步用戶端驗證，並藉由反白顯示包含無效資料的控制項來通知使用者任何驗證錯誤，以及顯示通知使用者資料為何不正確錯誤訊息。
 

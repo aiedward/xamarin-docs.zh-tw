@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 支援的平臺」描述：「的平臺和開發系統需求」 Xamarin.Forms 。
-assetid： eecaf6a5-567c-49b2-ac83-2a195596c5bf ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/22/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms支援的平臺
+description: 的平臺和開發系統需求 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/22/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f93af19587cf962ac0c852599157261a087dadbc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197549"
 ---
-
 # <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms支援的平臺
 
 Xamarin.Forms應用程式可以針對下列作業系統撰寫：

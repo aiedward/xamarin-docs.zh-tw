@@ -1,8 +1,22 @@
 ---
-title： "裁剪 SkiaSharp 點陣圖" 描述： "瞭解如何使用 SkiaSharp 設計使用者介面，以互動方式 desribing 裁剪矩形。"
-skiasharp 的 assetid： 0A79AB27-C69F-4376-8FFE-FF46E4783F30 author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 裁剪 SkiaSharp 點陣圖
+description: 瞭解如何使用 SkiaSharp 設計使用者介面，以互動方式 desribing 裁剪矩形。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d613c4f73c0a377a599b0137ce2f2b557c04ad6a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572334"
 ---
-
 # <a name="cropping-skiasharp-bitmaps"></a>裁剪 SkiaSharp 點陣圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

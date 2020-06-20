@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 滑杆" 描述： " Xamarin.Forms 滑杆是可由使用者操作以從連續範圍選取 double 值的水準橫條。 本文說明如何使用滑杆類別，從連續值的範圍中選取值。
-assetid： 36B1C645-26E0-4874-B6B6-BDBF77662878 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms一直
+description: Xamarin.Forms滑杆是一個水準橫條，可由使用者操作以從連續範圍選取雙精度值。 本文說明如何使用滑杆類別，從連續值的範圍中選取值。
+ms.prod: xamarin
+ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fc61dcac588f49fc1df7ee96792cf55bdfa46c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572035"
 ---
-
 # <a name="xamarinforms-slider"></a>Xamarin.Forms一直
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)

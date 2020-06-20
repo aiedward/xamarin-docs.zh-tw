@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms views" 描述： " Xamarin.Forms views 是跨平臺行動使用者介面的基礎構件。 本文列出包含在中的觀點。」 Xamarin.Forms
-assetid： AC070686-A423-4A98-8BB6-0B9F94C062CC ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/16/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms視圖
+description: Xamarin.Formsviews 是跨平臺行動使用者介面的基礎構件。 本文列出所包含的視圖 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132375"
 ---
-
 # <a name="xamarinforms-views"></a>Xamarin.Forms視圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -41,7 +55,7 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 | [`Image`](xref:Xamarin.Forms.Image)顯示點陣圖。 點陣圖可以透過 Web 下載、內嵌為一般專案或平臺專案中的資源，或使用 .NET `Stream` 物件建立。<br /><br />[API 檔](xref:Xamarin.Forms.Image)  / [指南](~/xamarin-forms/user-interface/images.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages) | [![影像範例](views-images/Image.png "影像範例")](views-images/Image-Large.png#lightbox "影像範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageDemoPage.xaml) |
 |     |     |
 
-### <a name="map"></a>地圖
+### <a name="map"></a>對應
 
 |     |     |
 | --- | --- |
@@ -59,7 +73,7 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView)在 iOS 和 Android 專案中顯示 OpenGL 圖形。 通用 Windows 平臺不支援。 IOS 和 Android 專案需要**opentk 簡介-1.0**元件或**opentk 簡介**版本1.0.0.0 元件的參考。 `OpenGLView`在共用的專案中更容易使用;如果用於 .NET Standard 程式庫中，則也會需要相依性服務（如範例程式碼所示）。<br /><br />這是內建的唯一圖形設備 Xamarin.Forms ，但 Xamarin.Forms 應用程式也可以使用、或來轉譯圖形 [`SkiaSharp`](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) [`UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md) 。<br /><br />[API 文件](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) |
+| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView)在 iOS 和 Android 專案中顯示 OpenGL 圖形。 通用 Windows 平臺不支援。 IOS 和 Android 專案需要**opentk 簡介-1.0**元件或**opentk 簡介**版本1.0.0.0 元件的參考。 `OpenGLView`在共用的專案中更容易使用;如果用於 .NET Standard 程式庫中，則也會需要相依性服務（如範例程式碼所示）。<br /><br />這是內建的唯一圖形設備 Xamarin.Forms ，但 Xamarin.Forms 應用程式也可以使用、或來轉譯圖形 [`SkiaSharp`](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) [`UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md) 。<br /><br />[API 檔](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="webview"></a>WebView

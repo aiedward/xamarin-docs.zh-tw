@@ -1,8 +1,22 @@
 ---
-title： "DataPages 控制項參考" 描述： "本文介紹 DataPages NuGet 套件中提供的控制項 Xamarin.Forms 。
-assetid： 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/01/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: DataPages 控制項參考
+description: 本文介紹 DataPages NuGet 套件中提供的控制項 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 86b526fff305b195221aca3fb6a86ad0823cb145
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569396"
 ---
-
 # <a name="datapages-controls-reference"></a>DataPages 控制項參考
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -60,7 +74,7 @@ Xamarin.FormsDataPages NuGet 包含一些可以利用資料來源系結的控制
 
 有五個屬性：
 
-* 標題
+* Title
 * 詳細資料
 * ImageSource
 * PlaceholdImageSource

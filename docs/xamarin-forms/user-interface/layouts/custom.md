@@ -1,8 +1,22 @@
 ---
-標題：「在下列描述中建立自訂版面配置：」本文 Xamarin.Forms 說明如何撰寫自訂的版面配置類別，並示範在頁面上水準排列其子系的面向方向 WrapLayout 類別，然後將後續子系的顯示內容包裝到其他資料列。」
-assetid： B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/29/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在中建立自訂版面配置Xamarin.Forms
+description: 本文說明如何撰寫自訂的版面配置類別，並示範面向方向的 WrapLayout 類別，它會在頁面上水準排列其子系，然後將後續子系的顯示包裝到其他資料列。
+ms.prod: xamarin
+ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572230"
 ---
-
 # <a name="create-a-custom-layout-in-xamarinforms"></a>在中建立自訂版面配置Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)

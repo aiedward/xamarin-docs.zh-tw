@@ -1,8 +1,22 @@
 ---
-標題：「建立視覺化轉譯器」 Xamarin.Forms 描述：「建立 Xamarin.Forms 可選擇性套用至 VisualElement 物件的視覺效果，而不需要子類別化 Xamarin.Forms 。」
-assetid： 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/12/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 建立 Xamarin.Forms 視覺效果轉譯器
+description: 建立 Xamarin.Forms 可選擇性套用至 VisualElement 物件的視覺效果，而不需要子類別化 Xamarin.Forms 視圖。
+ms.prod: xamarin
+ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/12/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127136"
 ---
-
 # <a name="create-a-xamarinforms-visual-renderer"></a>建立 Xamarin.Forms 視覺效果轉譯器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)

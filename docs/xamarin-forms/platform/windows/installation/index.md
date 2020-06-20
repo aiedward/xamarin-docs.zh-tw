@@ -1,8 +1,22 @@
 ---
-標題： [設定 Windows 專案] 描述：「較舊 Xamarin.Forms 的解決方案（或在 macOS 上建立的方案）將不會有通用 Windows 平臺專案，因此本文將說明如何將新的 UWP 專案新增至現有的 Xamarin.Forms 方案。」
-assetid： A0774D2E-6994-4D91-84E8-DAB66FC92320 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/10/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 設定 Windows 專案
+description: 較舊 Xamarin.Forms 的解決方案（或在 macOS 上建立的方案）將不會有通用 Windows 平臺專案，因此本文將說明如何將新的 UWP 專案新增至現有的 Xamarin.Forms 方案。
+ms.prod: xamarin
+ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 13b46fd06b0116332241b0d523aea707d56b39ec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573361"
 ---
-
 # <a name="setup-windows-projects"></a>設定 Windows 專案
 
 _將新的 Windows 專案加入至現有的 Xamarin.Forms 方案_

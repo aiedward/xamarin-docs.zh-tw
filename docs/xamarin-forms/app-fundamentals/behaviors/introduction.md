@@ -1,8 +1,22 @@
 ---
-title： "行為簡介" 描述： "行為可讓您將功能新增至使用者介面控制項，而不需要將其設為子類別。 相反地，功能會在行為類別中實作並附加至控制項，如同控制項本身的一部分。 本文提供行為簡介。」
-assetid： 0DF1EF8C-A212-4142-A3C6-DF760A82A757 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/06/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 行為簡介
+description: 行為可讓您將功能新增至使用者介面控制項，而不需將其歸類為子類別。 相反地，功能會在行為類別中實作並附加至控制項，如同控制項本身的一部分。 本文提供行為簡介。
+ms.prod: xamarin
+ms.assetid: 0DF1EF8C-A212-4142-A3C6-DF760A82A757
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d5bee3baa08387a1ed67384ba4089d63aad08d2c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135768"
 ---
-
 # <a name="introduction-to-behaviors"></a>行為簡介
 
 _行為可讓您將功能新增至使用者介面控制項，而不需要將其設為子類別。相反地，此功能會在行為類別中實作為，並附加至控制項，如同控制項本身的一部分。本文提供行為簡介。_

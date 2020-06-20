@@ -1,8 +1,22 @@
 ---
-標題：「Android 上的填補和遮蔽」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的，其使用 Android 按鈕的預設填補和陰影值。」
-assetid： BD2B60D1-DE6E-4691-A777-8EC5F560A4E9 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 07/10/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的按鈕填補和陰影
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的，其使用 Android 按鈕的預設填補和陰影值。
+ms.prod: xamarin
+ms.assetid: BD2B60D1-DE6E-4691-A777-8EC5F560A4E9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5554341493b52d20c946a4bcfe2d1230e4a02759
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135560"
 ---
-
 # <a name="button-padding-and-shadows-on-android"></a>Android 上的按鈕填補和陰影
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

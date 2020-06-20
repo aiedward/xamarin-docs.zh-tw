@@ -1,8 +1,22 @@
 ---
-標題：「XAML 中的原生視圖」描述：「從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 Xamarin.Forms XAML 檔案參考。 屬性和事件處理常式可以在原生視圖上設定，而且可以與 Xamarin.Forms views 互動。 本文示範如何使用 XAML 檔案中的原生視圖 Xamarin.Forms 。」
-assetid： 7A856D31-B300-409E-9AEB-F8A4DB99B37E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/23/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: XAML 中的原生檢視
+description: 從 iOS、Android 和通用 Windows 平臺的原生視圖可以直接從 XAML 檔案參考 Xamarin.Forms 。 屬性和事件處理常式可以在原生視圖上設定，而且可以與 Xamarin.Forms views 互動。 本文示範如何使用 XAML 檔案中的原生視圖 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/23/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0d6aa84a886d450d1dc42ec31edf16380b795404
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564637"
 ---
-
 # <a name="native-views-in-xaml"></a>XAML 中的原生檢視
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)

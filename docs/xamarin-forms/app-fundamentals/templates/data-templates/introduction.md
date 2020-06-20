@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 資料範本簡介」描述：「 Xamarin.Forms 資料範本提供了在支援的控制項上定義資料呈現的功能。 本文提供資料範本的簡介，檢查為何需要它們。」
-assetid： 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/11/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms資料範本簡介
+description: Xamarin.Forms資料範本提供了在支援的控制項上定義資料呈現方式的能力。 本文提供資料範本的簡介，探討為何資料範本是必要的。
+ms.prod: xamarin
+ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/11/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136106"
 ---
-
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms資料範本簡介
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)

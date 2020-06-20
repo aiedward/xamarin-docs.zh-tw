@@ -1,8 +1,24 @@
 ---
-標題：「建立單一頁面 Xamarin.Forms 應用程式」描述：「本文將說明如何建立單一頁面跨平臺 Xamarin.Forms 應用程式，這可讓您輸入附注並將它保存在裝置儲存體中。」
-zone_pivot_groups： dev16 ms. 主題：快速入門 assetid： E8CF05B1-54B9-428B-8518-D068837BD61E ms. 技術： xamarin-表單作者： davidbritch ms。 author： dabritch ms. date： 04/01/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 建立單一頁面 Xamarin.Forms 應用程式
+description: 本文說明如何建立單一頁面跨平臺 Xamarin.Forms 應用程式，這可讓您輸入附注並將它保存在裝置儲存體中。
+zone_pivot_groups: platform-dev16
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: E8CF05B1-54B9-428B-8518-D068837BD61E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136067"
 ---
-
 # <a name="create-a-single-page-xamarinforms-application"></a>建立單一頁面 Xamarin.Forms 應用程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)

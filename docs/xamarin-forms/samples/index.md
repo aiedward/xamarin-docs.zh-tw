@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 範例」描述：「 Xamarin.Forms 範例應用程式和程式碼示範，可協助您開始使用並瞭解中的概念 Xamarin.Forms 。」
-assetid： AB986E8E-E831-4E0A-9F1D-6C3D88F35E9C ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：12/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms範例
+description: Xamarin.Forms範例應用程式和程式碼示範，可協助您開始使用並瞭解中的概念 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: AB986E8E-E831-4E0A-9F1D-6C3D88F35E9C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 896b5880b92cecc7bd9eb360306d902ff0f876c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135937"
 ---
-
 # <a name="xamarinforms-samples"></a>Xamarin.Forms範例
 
 Xamarin.Forms範例應用程式和程式碼示範，可協助您開始使用並瞭解中的概念 Xamarin.Forms 。

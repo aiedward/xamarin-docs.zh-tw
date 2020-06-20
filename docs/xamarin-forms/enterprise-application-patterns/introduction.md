@@ -1,8 +1,22 @@
 ---
-標題：「企業應用程式開發簡介」描述：「本章提供企業應用程式開發的簡介，並介紹 eShopOnContainers 的行動應用程式。」
-ms-chap： xamarin assetid： cbce0659-fa03-447a-86ec-140438143230 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date： 08/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 企業應用程式開發簡介
+description: 本章提供企業應用程式開發的簡介，並介紹 eShopOnContainers 的行動應用程式。
+ms.prod: xamarin
+ms.assetid: cbce0659-fa03-447a-86ec-140438143230
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198121"
 ---
-
 # <a name="introduction-to-enterprise-app-development"></a>企業應用程式開發簡介
 
 無論平臺為何，企業應用程式的開發人員都面臨幾項挑戰：
@@ -23,7 +37,7 @@ ms-chap： xamarin assetid： cbce0659-fa03-447a-86ec-140438143230 ms. 技術：
 - 它會提升重複使用性，並在應用程式的水準功能（例如驗證和資料存取）和垂直功能（例如應用程式特有的商務功能）之間清楚區分問題。 這可讓您更輕鬆地管理應用程式元件之間的相依性和互動。
 - 它可讓不同的個人或小組專注于特定工作或根據其專長的功能，來協助維護角色的分隔。 特別是，它會在使用者介面和應用程式的商務邏輯之間提供更清楚的分隔。
 
-不過，將應用程式分割成離散、鬆散結合的元件時，必須解決許多問題。 它們包括：
+不過，將應用程式分割成離散、鬆散結合的元件時，必須解決許多問題。 其中包括：
 
 - 決定如何在使用者介面控制項與其邏輯之間提供清楚的顧慮分隔。 建立企業應用程式時最重要的決策之一 Xamarin.Forms ，就是要將商務邏輯放在程式碼後置檔案中，還是要在使用者介面控制項與其邏輯之間建立清楚的顧慮區隔，讓應用程式更容易維護和測試。 如需詳細資訊，請參閱[ViewModel](~/xamarin-forms/enterprise-application-patterns/mvvm.md)。
 - 判斷是否要使用相依性插入容器。 相依性插入容器會藉由提供設施來建立類別的實例，並插入其相依性，以減少物件之間的相依性，並根據容器的設定來管理其存留期。 如需詳細資訊，請參閱相依性[插入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
@@ -93,7 +107,7 @@ EShopOnContainers 行動應用程式會演練下列 Xamarin.Forms 功能：
 - 樣式
 - 動畫
 - 命令
-- 「行為」
+- 行為
 - 觸發程序
 - 效果
 - 自訂轉譯器
@@ -108,7 +122,7 @@ EShopOnContainers 行動應用程式會演練下列 Xamarin.Forms 功能：
 
 EShopOnContainers 行動應用程式解決方案會將原始程式碼和其他資源組織成專案。 所有專案都會使用資料夾，將原始程式碼和其他資源組織成類別目錄。 下表概述組成 eShopOnContainers 行動應用程式的專案：
 
-|Project|說明|
+|Project|描述|
 |--- |--- |
 |eShopOnContainers 核心|此專案是可移植的類別庫（PCL）專案，其中包含共用程式碼和共用 UI。|
 |eShopOnContainers. Droid|此專案包含 Android 特定程式碼，而且是 Android 應用程式的進入點。|
@@ -125,10 +139,10 @@ EShopOnContainers 行動應用程式中的類別可以在任何應用程式中�
 
 EShopOnContainers PCL 專案包含下列資料夾：
 
-|資料夾|說明|
+|資料夾|描述|
 |--- |--- |
 |動畫|包含可讓動畫在 XAML 中使用的類別。|
-|「行為」|包含對 view 類別公開的行為。|
+|行為|包含對 view 類別公開的行為。|
 |控制項|包含應用程式所使用的自訂控制項。|
 |而言|包含將自訂邏輯套用至系結的值轉換器。|
 |效果|包含 `EntryLineColorEffect` 類別，用來變更特定控制項的框線色彩 `Entry` 。|

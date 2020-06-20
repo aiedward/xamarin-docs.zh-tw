@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 地圖控制項" 描述： "地圖控制項是用來顯示和標注地圖的跨平臺視圖。 它會使用每個平臺的原生地圖控制項，為使用者提供快速且熟悉的地圖體驗。」
-assetid： 22C99029-0B16-43A6-BF58-26B48C4AED38 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/29/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms地圖控制項
+description: 地圖控制項是用來顯示和標注地圖的跨平臺視圖。 它會使用每個平臺的原生地圖控制項，為使用者提供快速且熟悉的地圖體驗。
+ms.prod: xamarin
+ms.assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1aee81b6988e1f3a7099c2722b6f336f071ad8c0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946360"
 ---
-
 # <a name="xamarinforms-map-control"></a>Xamarin.Forms地圖控制項
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
@@ -23,6 +37,7 @@ assetid： 22C99029-0B16-43A6-BF58-26B48C4AED38 ms. 技術： xamarin-表單作�
 - [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)，屬於類型 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) ，表示地圖的顯示樣式。
 - `MoveToLastRegionOnLayoutChange`，屬於類型 `bool` ，可控制在版面配置變更發生時，所顯示的對應區域是否會從其目前的區域移至先前設定的區域。
 - [`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)，屬於類型 `IList<Pin>` ，代表地圖上的釘選清單。
+- `TrafficEnabled`，屬於類型 `bool` ，表示流量資料是否會在地圖上重迭。
 - [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion)型別為的，會傳回 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 目前顯示的地圖區域。
 
 除了、和屬性以外，這些屬性 `MapElements` `Pins` `VisibleRegion` 都是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標。
@@ -196,6 +211,23 @@ if (map.VisibleRegion != null)
 
 > [!NOTE]
 > 藉由建立地圖自訂轉譯器，可進行其他的對應行為自訂。 如需詳細資訊，請參閱[自訂 Xamarin.Forms 地圖](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)。
+
+### <a name="show-traffic-data"></a>顯示流量資料
+
+[`Map`](xref:Xamarin.Forms.Maps.Map)類別會定義 `TrafficEnabled` 類型的屬性 `bool` 。 根據預設，此屬性為 `false` ，表示流量資料不會在地圖上重迭。 當這個屬性設定為時 `true` ，流量資料會在地圖上重迭。 下列範例會示範如何設定此屬性：
+
+```xaml
+<maps:Map TrafficEnabled="true" />
+```
+
+對等的 C# 程式碼為：
+
+```csharp
+Map map = new Map
+{
+    TrafficEnabled = true
+};
+```
 
 ### <a name="disable-scroll"></a>停用 scroll
 

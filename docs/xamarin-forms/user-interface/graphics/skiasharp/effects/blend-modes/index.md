@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp blend 模式" 描述： "使用 blend 模式定義當繪圖物件堆疊在另一個上時，會發生什麼事。"
-skiasharp 的 assetid： CE1B222E-A2D0-4016-A532-EC1E59EE3D6B author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: SkiaSharp blend 模式
+description: 使用 blend 模式定義當繪圖物件堆疊在另一個上時，會發生什麼事。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131699"
 ---
-
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend 模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

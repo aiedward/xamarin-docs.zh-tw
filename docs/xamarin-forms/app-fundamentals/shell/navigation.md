@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms Shell 導覽" 描述： " Xamarin.Forms shell 應用程式可以利用以 URI 為基礎的導覽體驗，允許導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。"
-assetid： 57079D89-D1CB-48BD-9FEE-539CEC29EABB ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/02/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsShell 導覽
+description: Xamarin.FormsShell 應用程式可以利用以 URI 為基礎的導覽體驗，允許導覽至應用程式中的任何頁面，而不需要遵循設定的導覽階層。
+ms.prod: xamarin
+ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/02/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132388"
 ---
-
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.FormsShell 導覽
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
@@ -197,7 +211,7 @@ await Shell.Current.GoToAsync("../../route");
 
 下列路由格式無效：
 
-| 格式 | 說明 |
+| [格式] | 說明 |
 | --- | --- |
 | *route* 或 /*route* | 視覺階層中的路由無法推送到導覽堆疊上。 |
 | //*page* 或 ///*page* | 全域路由目前不得為導覽堆疊上的唯一頁面。 因此，不支援以絕對路由傳送至全域路由。 |
@@ -230,7 +244,7 @@ await Shell.Current.GoToAsync("../../route");
 
 `Shell` 類別會定義 `Navigating` 事件，當導覽即將執行時，可能會因為程式設計導覽或使用者互動而引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatingEventArgs` 物件會提供下列屬性：
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
 | `Source` | `ShellNavigationSource` | 發生導覽的類型。 |
@@ -245,7 +259,7 @@ await Shell.Current.GoToAsync("../../route");
 
 `Shell` 類別也會定義 `Navigated` 事件，導覽完成時會引發此事件。 隨附 `Navigating` 事件的 `ShellNavigatedEventArgs` 物件會提供下列屬性：
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 目前頁面的 URI。 |
 | `Previous`| `ShellNavigationState` | 上一頁的 URI。 |

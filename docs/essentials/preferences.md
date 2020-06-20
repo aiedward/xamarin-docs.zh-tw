@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：喜好設定" 描述： "本檔描述中的喜好設定類別 Xamarin.Essentials ，它會將應用程式喜好設定儲存在索引鍵/值存放區中。 它討論如何使用類別以及可以儲存的資料類型。」
-assetid： AA81BCBD-79BA-448F-942B-BA4415CA50FF author： jamesmontemagno ms-chap： jamont ms. date： 01/15/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：喜好設定
+description: 本檔說明中的喜好設定類別 Xamarin.Essentials ，它會將應用程式喜好設定儲存在索引鍵/值存放區中。 會討論如何使用類別和可以儲存的資料類型。
+ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/15/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801812"
 ---
-
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：喜好設定
 
 **喜好設定**類別可協助將應用程式喜好設定儲存於鍵/值存放區中。
@@ -59,7 +72,7 @@ Preferences.Clear();
 - **double**
 - **int**
 - **float**
-- **long**
+- **前提**
 - **string**
 - **DateTime**
 
@@ -104,7 +117,7 @@ Preferences.Clear();
 
 ## <a name="api"></a>API
 
-- [喜好設定原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
+- [喜好設定原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Preferences)
 - [喜好設定 API 文件](xref:Xamarin.Essentials.Preferences)
 
 ## <a name="related-video"></a>相關影片

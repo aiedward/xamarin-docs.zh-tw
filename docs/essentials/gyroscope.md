@@ -1,8 +1,20 @@
 ---
-title： " Xamarin.Essentials ：陀螺儀" 描述： "中的陀螺儀類別 Xamarin.Essentials 可讓您監視裝置的陀螺儀感應器，這會測量裝置的三個主要軸旋轉。
-assetid： DA4F968A-D988-41F5-8745-1BEE693660A1 author： jamesmontemagno ms-chap： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：陀螺儀
+description: 中的陀螺儀類別 Xamarin.Essentials 可讓您監視裝置的陀螺儀感應器，以測量裝置的三個主要軸旋轉。
+ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5a085ac5bd18e660339443ea33fe552dd86259cb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802298"
 ---
-
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials：陀螺儀
 
 **陀螺儀**類別可讓您監視裝置的陀螺儀感應器，該感應器是裝置三個主軸周圍的旋轉。
@@ -66,5 +78,5 @@ public class GyroscopeTest
 
 ## <a name="api"></a>API
 
-- [陀螺儀原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
+- [陀螺儀原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Gyroscope)
 - [陀螺儀 API 文件](xref:Xamarin.Essentials.Gyroscope)

@@ -1,7 +1,22 @@
 ---
-標題：「 Xamarin.Forms 常見問題」 ms. 主題：疑難排解 ms-chap： assetid： 89364175-53BA-4A09-B3E2-44AC67DD971C ms。技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date：04/25/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms常見問題
+ms.topic: troubleshooting
+ms.prod: xamarin
+ms.assetid: 89364175-53BA-4A09-B3E2-44AC67DD971C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: edd6cfefe18ff3d5cc97ec58f3bce867f11df7c8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135872"
 ---
-
 # <a name="xamarinforms-frequently-asked-questions"></a>Xamarin.Forms常見問題
 
 ## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？](update-forms-template.md)

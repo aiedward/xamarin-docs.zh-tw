@@ -1,9 +1,21 @@
 ---
-標題：「什麼是 Xamarin.Forms ？」
-描述：「本文介紹 Xamarin.Forms 和相關連結庫。」
-assetid： C1E24DB9-3099-4F79-BB88-10AABF7D4614 author： profexorgeek ms. author： jusjohns ms. date： 05/28/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 什麼是 Xamarin.Forms ？
+description: 本文介紹 Xamarin.Forms 和相關連結庫。
+ms.prod: xamarin
+ms.assetid: C1E24DB9-3099-4F79-BB88-10AABF7D4614
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eb76da9be7fcb227c465c0a046b967b2f70b1cfb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198312"
 ---
-
 # <a name="what-is-xamarinforms"></a>什麼是 Xamarin.Forms ？
 
 [![Xamarin.FormsIOS 和 Android 中範例應用程式的螢幕擷取畫面](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
@@ -49,7 +61,7 @@ Xamarin.Essentials是一種程式庫，可提供原生裝置功能的跨平臺 A
 
 如需詳細資訊，請參閱 [Xamarin.Essentials](~/essentials/index.md)。
 
-### <a name="shell"></a>殼層
+### <a name="shell"></a>Shell
 
 Xamarin.FormsShell 藉由提供大部分應用程式所需的基本功能，來降低行動應用程式開發的複雜度。 Shell 提供的一些功能範例包括：
 
@@ -63,7 +75,7 @@ Xamarin.FormsShell 藉由提供大部分應用程式所需的基本功能，來�
 
 Xamarin.Forms提供通用的 API，可跨平臺呈現原生控制項，但特定平臺的功能可能不存在於其他平臺上。 例如，Android 平台具有原生功能，可在 `ListView` 中使用快速捲動，但 iOS 中則無此功能。 Xamarin.Forms平臺細節可讓您利用僅在特定平臺上提供的功能，而不需建立自訂轉譯器或效果。
 
-Xamarin.Forms包含適用于各種平臺特定功能的預先建立解決方案。 如需詳細資訊，請參閱：
+Xamarin.Forms包含適用于各種平臺特定功能的預先建立解決方案。 如需詳細資訊，請參閱
 
 - [Xamarin.Forms平臺細節](~/xamarin-forms/platform/platform-specifics/index.md)
 - [Android 平臺-細節](~/xamarin-forms/platform/android/index.md)

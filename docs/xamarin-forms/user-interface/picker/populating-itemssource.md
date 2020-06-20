@@ -1,8 +1,22 @@
 ---
-title： "設定選擇器的 ItemsSource 屬性" 描述： "選擇器視圖是從資料清單中選取文字專案的控制項。 本文說明如何藉由設定 ItemsSource 屬性來填入選擇器中的資料，以及如何回應使用者選取的專案。
-assetid： 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/26/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 設定 Picker 的 ItemsSource 屬性
+description: '[選擇器] 視圖是從資料清單中選取文字專案的控制項。 本文說明如何藉由設定 ItemsSource 屬性來填入選擇器的資料，以及如何回應使用者選取的專案。'
+ms.prod: xamarin
+ms.assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136288"
 ---
-
 # <a name="setting-a-pickers-itemssource-property"></a>設定 Picker 的 ItemsSource 屬性
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)

@@ -1,8 +1,22 @@
 ---
-標題：「Android 上的 NavigationPage 列高度」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的來設定 NavigationPage 上的巡覽列高度。
-assetid： C8A73B64-FE70-408A-A72E-8AF147F0C52C ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/10/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的 NavigationPage 列高度
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的來設定 NavigationPage 上的巡覽列高度。
+ms.prod: xamarin
+ms.assetid: C8A73B64-FE70-408A-A72E-8AF147F0C52C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2dcabe3c0067734250834c2927fd4cbb83906943
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128787"
 ---
-
 # <a name="navigationpage-bar-height-on-android"></a>Android 上的 NavigationPage 列高度
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,23 @@
 ---
-標題：在「描述：」中使用 Azure Cosmos DB 檔資料庫， Xamarin.Forms 本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合到 Xamarin.Forms 應用程式中。」
-assetid： 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C ms. 技術： xamarin-表單 ms. custom： xamu-影片作者： davidbritch ms-chap： dabritch ms. date： 06/16/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用中的 Azure Cosmos DB 檔資料庫Xamarin.Forms
+description: 本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合到 Xamarin.Forms 應用程式中。
+ms.prod: xamarin
+ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/16/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b8cd2ea2f54e4bfdfea4fa5787a01aca252691b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564650"
 ---
-
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>使用中的 Azure Cosmos DB 檔資料庫Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
@@ -208,13 +223,13 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 `DeleteDatabaseAsync`方法 `Uri` 會指定引數，表示要刪除的資料庫。 請注意，叫用這個方法也會刪除儲存在資料庫中的檔集合，以及儲存在檔集合中的檔。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明如何使用 Azure Cosmos DB .NET Standard 用戶端程式庫，將 Azure Cosmos DB 檔資料庫整合到 Xamarin.Forms 應用程式中。 Azure Cosmos DB 檔資料庫是一種 NoSQL 資料庫，可提供對 JSON 檔的低延遲存取，為需要順暢調整和全域複寫的應用程式提供快速、高可用性、可擴充的資料庫服務。
 
 ## <a name="related-links"></a>相關連結
 
 - [Todo Azure Cosmos DB （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
-- [Azure Cosmos DB 檔](/azure/cosmos-db/)
+- [Azure Cosmos DB 文件](/azure/cosmos-db/)
 - [Azure Cosmos DB .NET Standard 用戶端程式庫](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
 - [Azure Cosmos DB API](https://docs.microsoft.com/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

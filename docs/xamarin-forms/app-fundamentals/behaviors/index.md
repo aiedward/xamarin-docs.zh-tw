@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 行為" 描述： "行為可讓您將功能新增至使用者介面控制項，而不需要將其設為子類別。 行為是以程式碼撰寫，並加入至 XAML 或程式碼中的控制項。」
-assetid： 42E32AD7-8E3B-48B3-B402-E75B758DA913 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/06/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms問題
+description: 行為可讓您將功能新增至使用者介面控制項，而不需將其歸類於子類別。 行為以程式碼編寫，並以 XAML 或程式碼的形式新增至控制項。
+ms.prod: xamarin
+ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135807"
 ---
-
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms問題
 
 _行為可讓您將功能新增至使用者介面控制項，而不需要將其設為子類別。行為是以程式碼撰寫，並加入至 XAML 或程式碼中的控制項。_

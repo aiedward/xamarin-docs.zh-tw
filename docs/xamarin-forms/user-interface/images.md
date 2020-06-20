@@ -1,8 +1,22 @@
 ---
-title： "中的影像 Xamarin.Forms 描述：" 影像可以透過在平臺間共用 Xamarin.Forms ，也可以特別針對每個平臺載入，也可以下載以供顯示。
-assetid： C025AB53-05CC-49BA-9815-75D6DF9E40B7 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的影像Xamarin.Forms
+description: 您可以透過在不同平臺之間共用映射 Xamarin.Forms ，也可以特別為每個平臺載入，也可以下載以供顯示。
+ms.prod: xamarin
+ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7117bb809c43ab5edb67e8367840b17cd1d97ef9
+ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84980086"
 ---
-
 # <a name="images-in-xamarinforms"></a>中的影像Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
@@ -15,7 +29,7 @@ _您可以透過在不同平臺之間共用映射 Xamarin.Forms ，也可以特�
 
 ## <a name="display-images"></a>顯示影像
 
-Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) view 在頁面上顯示影像。 它有兩個重要的屬性：
+Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) view 在頁面上顯示影像。 它有幾個重要的屬性：
 
 - [`Source`](xref:Xamarin.Forms.Image.Source)- [`ImageSource`](xref:Xamarin.Forms.ImageSource) 實例，也就是檔案、Uri 或資源，可設定要顯示的影像。
 - [`Aspect`](xref:Xamarin.Forms.Image.Aspect)-如何在其顯示的範圍內調整影像大小（是否要延展、裁剪或黑邊）。
@@ -39,7 +53,7 @@ Xamarin.Forms使用 [`Image`](xref:Xamarin.Forms.Image) view 在頁面上顯示�
 
 影像檔案可以加入至每個應用程式專案，並從 Xamarin.Forms 共用程式碼參考。 當影像是平台專用的 (例如，在不同平台上使用不同的解析度) 或屬於略微不同的設計時，就需要這種影像散發方法。
 
-若要在所有應用程式中使用單一映射，*必須在每個平臺上使用相同的檔案名*，而且它應該是有效的 Android 資源名稱（例如，只允許小寫字母、數位、底線和句點）。
+若要在所有應用程式中使用單一映射，*必須在每個平臺上使用相同的檔案名*，而且它應該是有效的 Android 資源名稱（也就是只允許小寫字母、數位、底線和句點）。
 
 - **ios** -自 ios 9 起，管理和支援映射的慣用方法是使用**資產目錄映射集**，其中應包含支援應用程式的各種裝置和調整因素所需的所有映射版本。 如需詳細資訊，請參閱[將影像新增至資產目錄映射集](~/ios/app-fundamentals/images-icons/displaying-an-image.md)。
 - **Android** -將影像放在**資源/** 圖形目錄中，具有**組建動作： AndroidResource**。 也可以提供影像的高和低 DPI 版本（在適當命名的**資源**子目錄中，例如可**繪製的 lDPI**、可**繪製-hDPI**和可**繪製-xhDPI**）。
@@ -231,14 +245,13 @@ var imageSource = ImageSource.FromResource("filename.png",
 影像可以自動下載以供顯示，如下列 XAML 所示：
 
 ```xaml
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        x:Class="WorkingWithImages.DownloadImagesXaml">
   <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
     <Label Text="Image UriSource Xaml" />
-    <Image Source="https://xamarin.com/content/images/pages/forms/example-app.png" />
-    <Label Text="example-app.png gets downloaded from xamarin.com" />
+    <Image Source="https://aka.ms/campus.jpg" />
+    <Label Text="campus.jpg gets downloaded from microsoft.com" />
   </StackLayout>
 </ContentPage>
 ```
@@ -248,7 +261,7 @@ var imageSource = ImageSource.FromResource("filename.png",
 ```csharp
 var webImage = new Image {
      Source = ImageSource.FromUri(
-        new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")
+        new Uri("https://aka.ms/campus.jpg")
      ) };
 ```
 
@@ -257,7 +270,7 @@ var webImage = new Image {
 此外，URI 字串也有隱含的轉換，因此下列範例也可以使用：
 
 ```csharp
-webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
+webImage.Source = "https://aka.ms/campus.jpg";
 ```
 
 下列螢幕擷取畫面顯示在每個平臺上顯示遠端影像的結果：
@@ -274,7 +287,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 預設會啟用快取，並在本機將映射儲存24小時。 若要停用特定映射的快取，請將映射來源具現化，如下所示：
 
 ```csharp
-image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http://server.com/image") };
+image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("https://server.com/image") };
 ```
 
 若要設定特定的快取期間（例如5天），請將映射來源具現化，如下所示：
@@ -282,7 +295,7 @@ image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http:
 ```csharp
 webImage.Source = new UriImageSource
 {
-    Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
+    Uri = new Uri("https://aka.ms/campus.jpg"),
     CachingEnabled = true,
     CacheValidity = new TimeSpan(5,0,0,0)
 };

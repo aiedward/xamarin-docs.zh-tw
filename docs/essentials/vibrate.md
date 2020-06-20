@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：震動" 描述： "本檔描述中的震動類別 Xamarin.Essentials ，可讓您在所需的時間量內啟動和停止震動功能。"
-assetid： 7E8B24C4-2625-4DAE-A129-383542D34F1E author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 11/04/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：震動
+description: 本檔說明中的震動類別 Xamarin.Essentials ，可讓您在所需的時間量內啟動和停止震動功能。
+ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2ed2dfdca6b6811089d4dbb5d6e90e794c79591
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801799"
 ---
-
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials：震動
 
 **震動**類別可讓您在所需的時間內啟動和停止震動功能。
@@ -110,7 +123,7 @@ catch (Exception ex)
 
 ## <a name="api"></a>API
 
-- [震動原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
+- [震動原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Vibration)
 - [震動 API 文件](xref:Xamarin.Essentials.Vibration)
 
 ## <a name="related-video"></a>相關影片

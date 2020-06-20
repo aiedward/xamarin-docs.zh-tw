@@ -1,8 +1,21 @@
 ---
-標題： " Xamarin.Essentials ： Share" 描述： "中的共用類別 Xamarin.Essentials 可讓應用程式共用資料（例如文字和 web 連結）到裝置上的其他應用程式。
-assetid： B7B01D55-0129-4C87-B515-89F8F4E94665 author： jamesmontemagno ms-chap： jamont ms. date： 01/06/2020 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：共用
+description: 中的共用類別 Xamarin.Essentials 可讓應用程式將資料（例如文字和 web 連結）共用至裝置上的其他應用程式。
+ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ef4c9961e7e1fac20084247f4c85e87b79bcc427
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801908"
 ---
-
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials：共用
 
 **Share** 類別能讓應用程式將資料 (例如文字和 Web 連結) 共用於裝置上的其他應用程式。
@@ -49,7 +62,7 @@ public class ShareTest
 
 ![共用](images/share.png)
 
-## <a name="files"></a>檔案儲存體
+## <a name="files"></a>檔案
 
 這項功能可讓應用程式與裝置上的其他應用程式共用檔案。 Xamarin.Essentials會自動偵測檔案類型（MIME）並要求共用。 每個平台可能只支援特定的副檔名。
 
@@ -102,7 +115,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ## <a name="api"></a>API
 
-- [Share 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
+- [Share 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Share)
 - [Share API 文件](xref:Xamarin.Essentials.Share)
 
 ## <a name="related-video"></a>相關影片

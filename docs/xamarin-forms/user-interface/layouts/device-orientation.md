@@ -1,8 +1,22 @@
 ---
-標題：「裝置方向」描述：「本文將說明如何配置以直向 Xamarin.Forms 和橫向方向呈現良好的應用程式。」
-assetid： 11A1D327-2DF3-4F3B-810D-6C95B71D27B2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/24/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 裝置方向
+description: 本文說明如何配置以直向 Xamarin.Forms 和橫向方向呈現良好的應用程式。
+ms.prod: xamarin
+ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/24/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573284"
 ---
-
 # <a name="device-orientation"></a>裝置方向
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)

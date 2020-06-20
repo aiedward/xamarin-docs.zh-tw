@@ -1,8 +1,22 @@
 ---
-title： "可重複使用的的 effectbehavior" 描述： "行為是將效果新增至控制項的有用方法，從程式碼後置檔案移除定案盤子效果處理常式代碼。 本文示範如何建立和使用 Xamarin.Forms 行為，以將效果新增至控制項。
-assetid： A909B24D-960A-4023-AFF6-4B9256C55ADD ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 04/06/2016 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 可重複使用的 EffectBehavior
+description: 對於將效果新增至控制項，行為是很實用的方法，可從程式碼後置檔案中移除以定案效果方式處理的程式碼。 本文示範如何建立和使用 Xamarin.Forms 行為，以將效果新增至控制項。
+ms.prod: xamarin
+ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135781"
 ---
-
 # <a name="reusable-effectbehavior"></a>可重複使用的 EffectBehavior
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)

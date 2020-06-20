@@ -1,8 +1,25 @@
 ---
-標題：「 Xamarin.Forms 快速入門深入探討」描述：「本文將探討使用進行應用程式開發的基本概念 Xamarin.Forms 。 涵蓋的主題包括 Xamarin.Forms 應用程式、架構和應用程式基本概念，以及使用者介面的剖析。
-zone_pivot_groups： platform ms. 主題：快速入門 assetid： xamarin ms。自訂： video ms. 7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 11/27/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms快速入門深入探討
+description: 本文會使用來檢查應用程式開發的基本概念 Xamarin.Forms 。 涵蓋的主題包括 Xamarin.Forms 應用程式的結構、架構和應用程式基本概念，以及使用者介面。
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132518"
 ---
-
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms快速入門深入探討
 
 在[ Xamarin.Forms 快速入門](~/get-started/index.yml)中，已建立 Notes 應用程式。 本文會回顧已建立的內容，以瞭解應用程式如何工作的基本概念 Xamarin.Forms 。
@@ -223,7 +240,7 @@ Xamarin.Forms應用程式會使用方法載入 `LoadApplication` 。
 
 在執行階段，每個控制項將會對應到其原生對等項目，也就是將呈現的項目。
 
-### <a name="layout"></a>配置
+### <a name="layout"></a>Layout
 
 Notes 應用程式會使用 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 來簡化跨平臺應用程式開發，方法是在螢幕上自動排文視圖，而不論螢幕大小為何。 每個子項目都是以加入這些子項目的順序，一個接著一個地水平或垂直放置。 將使用多少空間 `StackLayout` 取決於 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 設定和屬性的方式 [`VerticalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) ，但根據預設， `StackLayout` 會嘗試使用整個畫面。
 

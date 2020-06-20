@@ -1,7 +1,22 @@
 ---
-title： "第28章的摘要。 位置和地圖「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第28章的摘要。 Location 和 map "ms-chap： xamarin ms. 技術： xamarin assetid： F6E20077-687C-45C4-A375-31D4F49BBFA4 author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第28章的摘要。 位置與地圖
+description: 建立 Mobile Apps Xamarin.Forms ：第28章的摘要。 位置與地圖
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133402"
 ---
-
 # <a name="summary-of-chapter-28-location-and-maps"></a>第28章的摘要。 位置與地圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)

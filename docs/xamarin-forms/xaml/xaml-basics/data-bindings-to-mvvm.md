@@ -1,8 +1,23 @@
 ---
-title： "第5部分。 從資料系結到 MVVM 「描述：」 MVVM 模式會強制執行三個軟體層級的分隔，也就是 XAML 使用者介面，稱為 View;基礎資料，稱為模型;而在視圖和模型之間有一個媒介，稱為「ViewModel」。
-assetid： xamarin ms. custom： video ms. 48B37D44-4FB1-41B2-9A5E-6D383B041F81 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date：10/25/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第 5 部分： 從資料繫結到 MVVM
+description: MVVM 模式會強制執行三個軟體層級的分隔，也就是 XAML 使用者介面，稱為 View;基礎資料，稱為模型;以及視圖與模型之間的媒介，稱為 ViewModel。
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127526"
 ---
-
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分： 從資料繫結到 MVVM
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

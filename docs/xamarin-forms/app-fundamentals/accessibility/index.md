@@ -1,8 +1,23 @@
 ---
-標題：「 Xamarin.Forms 協助工具」描述：「建立可存取的應用程式，可確保應用程式能夠由使用者介面的人員使用，並以各種需求和經驗來進行。」
-assetid： 99B8A8E8-6F5E-46BC-9639-1C4A6D301049 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date：05/28/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ] ms. custom：影片
+title: Xamarin.Forms 協助工具
+description: 建置無障礙應用程式，可確保應用程式便於對使用者介面具有多方面需求和體驗的人員使用。
+ms.prod: xamarin
+ms.assetid: 99B8A8E8-6F5E-46BC-9639-1C4A6D301049
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.custom: video
+ms.openlocfilehash: 7ac8b305ae09e005013aea9f83fb4a3e4740f2b2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129789"
 ---
-
 # <a name="xamarinforms-accessibility"></a>Xamarin.Forms 協助工具
 
 _建置無障礙應用程式，可確保應用程式便於對使用者介面具有多方面需求和體驗的人員使用。_

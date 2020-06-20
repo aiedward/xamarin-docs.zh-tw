@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：地理位置" 描述： "本檔描述中的地理位置類別 Xamarin.Essentials ，它會提供 api 來抓取裝置的目前地理位置座標。
-assetid： 8F66092C-13F0-4FEE-8AA5-901D5F79B357 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 03/13/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：地理位置
+description: 本檔說明中的地理位置類別 Xamarin.Essentials ，它會提供 api 來抓取裝置的目前地理位置座標。
+ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 03/13/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802317"
 ---
-
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
 
 **地理位置**類別會提供 API 來擷取裝置的目前地理位置座標。
@@ -201,7 +214,7 @@ if (location != null)
 
 [`Location`](xref:Xamarin.Essentials.Location)和 [`LocationExtensions`](xref:Xamarin.Essentials.LocationExtensions) 類別會定義 `CalculateDistance` 方法，可讓您計算兩個地理位置之間的距離。 此計算出的距離不會考慮道路或其他路徑，而僅僅是沿著地球表面兩個點之間的最短距離，也稱為「大圓距離」__；或口語化說法：「直線」的距離。
 
-範例如下：
+以下是範例：
 
 ```csharp
 Location boston = new Location(42.358056, -71.063611);
@@ -231,7 +244,7 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 
 ## <a name="api"></a>API
 
-- [地理位置原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
+- [地理位置原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geolocation)
 - [地理位置 API 文件](xref:Xamarin.Essentials.Geolocation)
 
 ## <a name="related-video"></a>相關影片

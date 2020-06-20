@@ -1,8 +1,21 @@
 ---
-標題：「Xamarin 防火牆設定指示」描述：「本檔提供的主機清單，必須允許在您的防火牆中允許 Xamarin 在公司環境中工作。」
-assetid： 658f699b-8cca-48f7-ae54-fa956384b6d6 author： conceptdev ms. author： crdun ms. date： 07/17/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin 防火牆組態指示
+description: 您的防火牆必須允許本文件所提供主機清單，Xamarin 才能在公司環境中運作。
+ms.prod: xamarin
+ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
+author: conceptdev
+ms.author: crdun
+ms.date: 07/17/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 71b2754d19d00b7bf4860acd96bfb7ad8dec4ce5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132987"
 ---
-
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin 防火牆組態指示
 
 允許 Xamarin 平台在防火牆中為公司提供服務所需的主機清單。__

@@ -1,8 +1,22 @@
 ---
-標題：「iOS 上的 VisualElement 舊版色彩模式」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用會停用舊版色彩模式的 iOS 平臺特定 Xamarin.Forms 。
-assetid： 60FFBA67-6E06-439B-A5EB-8C808285E2CD ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/24/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的 VisualElement 舊版色彩模式
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用會停用舊版色彩模式的 iOS 平臺特定 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 60FFBA67-6E06-439B-A5EB-8C808285E2CD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8bcd17658156694bfb0638d0ddc1a1ca3fe295c2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136037"
 ---
-
 # <a name="visualelement-legacy-color-mode-on-ios"></a>IOS 上的 VisualElement 舊版色彩模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

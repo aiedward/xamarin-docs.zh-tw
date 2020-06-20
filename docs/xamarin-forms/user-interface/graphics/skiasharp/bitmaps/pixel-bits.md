@@ -1,8 +1,22 @@
 ---
-title： "存取 SkiaSharp 點陣圖圖元位" 描述： "探索用來存取和修改 SkiaSharp 點陣圖圖元位的各種技術。"
-skiasharp 的 assetid： DBB58522-F816-4A8C-96A5-E0236F16A5C6 author： davidbritch ms-chap： dabritch ms. date： 07/11/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 存取 SkiaSharp 點陣圖圖元位
+description: 探索各種用來存取和修改 SkiaSharp 點陣圖圖元位的技術。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/11/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135575"
 ---
-
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>存取 SkiaSharp 點陣圖圖元位
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

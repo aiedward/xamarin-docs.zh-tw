@@ -1,8 +1,22 @@
 ---
-title： "建立 Xamarin.Forms DataTemplate" 描述： "資料範本可以內嵌方式建立、在 ResourceDictionary 中，或是從自訂類型或適當的 Xamarin.Forms 儲存格類型建立。 本文將探討每一種技巧。」
-assetid： CFF4AB5E-9069-461C-84D8-F9F6C38510AB ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/11/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 建立 Xamarin.Forms DataTemplate
+description: 您可以在 ResourceDictionary 中，或是從自訂類型或適當的資料格類型，以內嵌方式建立資料範本 Xamarin.Forms 。 本文將探索各種方法。
+ms.prod: xamarin
+ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/11/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3054180a9deb1357357c90db7b7fbdd8058b6773
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565495"
 ---
-
 # <a name="creating-a-xamarinforms-datatemplate"></a>建立 Xamarin.Forms DataTemplate
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
@@ -268,7 +282,7 @@ public class WithDataTemplatePageCS : ContentPage
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)會使用方法加入至 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) ，其會指定在抓取 `Key` 時用來參考的字串 `DataTemplate` 。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明如何從自訂類型或在中建立資料範本（內嵌） [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 如果不需要在他處重複使用資料範本，則應該使用內嵌範本。 或者，您可以將資料範本定義為自訂類型，或是定義為控制項層級、頁面層級或應用程式層級資源，來重複使用它。
 

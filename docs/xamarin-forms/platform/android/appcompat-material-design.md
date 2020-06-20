@@ -1,8 +1,22 @@
 ---
-標題：「新增 AppCompat 和材質設計」描述：「本文將說明如何轉換現有的 Xamarin.Forms Android 應用程式以使用 AppCompat 和材質設計」。
-ms-chap： xamarin assetid： 045FBCDF-4D45-48BB-9911-BD3938C87D58 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date： 06/27/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 新增 AppCompat 和材質設計
+description: 本文說明如何轉換現有的 Xamarin.Forms Android 應用程式，以使用 AppCompat 和材質設計。
+ms.prod: xamarin
+ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135703"
 ---
-
 # <a name="adding-appcompat-and-material-design"></a>新增 AppCompat 和材質設計
 
 _請遵循下列步驟來轉換現有的 Xamarin.Forms Android 應用程式，以使用 AppCompat 和材質設計_

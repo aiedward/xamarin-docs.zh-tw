@@ -1,8 +1,23 @@
 ---
-title：「基本系結」 Xamarin.Forms 描述：「本文將說明如何使用 Xamarin.Forms 資料系結，這會連結兩個物件之間的一組屬性，其中至少一個通常是使用者介面物件。 這兩個物件稱為「目標」和「來源」。
-assetid： 96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date：01/22/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ] ms. custom：影片
+title: Xamarin.Forms基本系結
+description: 本文說明如何使用資料系 Xamarin.Forms 結，這會連結兩個物件之間的一組屬性，其中至少一個通常是使用者介面物件。 這兩個物件稱為目標和來源。
+ms.prod: xamarin
+ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/22/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.custom: video
+ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133519"
 ---
-
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms基本系結
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

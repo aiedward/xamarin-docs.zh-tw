@@ -1,8 +1,22 @@
 ---
-標題：「iOS 上的強制回應頁面呈現樣式」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來設定強制回應頁面的呈現樣式。」
-assetid： C791F7CF-330A-44BA-987A-4CFCCBB9278B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/02/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的強制回應頁面呈現樣式
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來設定強制回應頁面的呈現樣式。
+ms.prod: xamarin
+ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/02/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2abc255964df35fbdfeb4191911c57df9be99fd9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128007"
 ---
-
 # <a name="modal-page-presentation-style-on-ios"></a>IOS 上的強制回應頁面呈現樣式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

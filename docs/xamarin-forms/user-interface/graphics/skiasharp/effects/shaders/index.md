@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 著色器" 描述：「使用著色器來建立漸層、點陣圖磚和 Perlin 雜訊」。
-skiasharp 的 assetid： 272B1BEB-0CBC-4E81-A3B9-A9C69AEE3722 author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: SkiaSharp 著色器
+description: 使用著色器來建立漸層、點陣圖磚和 Perlin 雜訊。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 272B1BEB-0CBC-4E81-A3B9-A9C69AEE3722
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f4ef3a583a7f9078f62c899d3b2abfc0848cc79
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135430"
 ---
-
 # <a name="skiasharp-shaders"></a>SkiaSharp 著色器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

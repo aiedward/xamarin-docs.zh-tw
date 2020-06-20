@@ -1,8 +1,22 @@
 ---
-title： "在 Android 上使用 Web 工作的混合內容" 描述：「平臺詳細資訊可讓您取用只能在特定平臺上使用的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的，以在以 API 21 或更新版本為目標的應用程式中，顯示 Web 上的混合內容。
-assetid： 68F908F3-04C5-4B91-B6E5-B7E8357B4154 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/10/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的 Web 操作混合內容
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的，以在以 API 21 或更新版本為目標的應用程式中，顯示 Web 工作中的混合內容。
+ms.prod: xamarin
+ms.assetid: 68F908F3-04C5-4B91-B6E5-B7E8357B4154
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7269b0617be7199c365f350fc26ecd42256e28f3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128449"
 ---
-
 # <a name="webview-mixed-content-on-android"></a>Android 上的 Web 操作混合內容
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

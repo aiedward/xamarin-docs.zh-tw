@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms ScrollView" 描述： " Xamarin.Forms ScrollView 是能夠滾動其內容的版面配置。"
-assetid： 7B542872-B3D1-49B3-B15E-0E98F53C1F6E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/27/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsScrollView
+description: Xamarin.FormsScrollView 是能夠滾動其內容的版面配置。
+ms.prod: xamarin
+ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/27/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f527acabe3b051cbfd6450ba6f5328449b1a728c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84199138"
 ---
-
 # <a name="xamarinforms-scrollview"></a>Xamarin.FormsScrollView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)

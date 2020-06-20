@@ -1,8 +1,22 @@
 ---
-標題：「Android 上的頁面週期事件」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的，分別停用應用程式暫停和繼續時的消失和顯示頁面事件。
-assetid： F6E3759C-D347-407A-91A2-CF9B3B7D4CBD ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/10/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Android 上的頁面週期事件
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Android 平臺特定的，分別停用應用程式暫停和繼續時的消失和顯示頁面事件。
+ms.prod: xamarin
+ms.assetid: F6E3759C-D347-407A-91A2-CF9B3B7D4CBD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76724ff17613fcebe35cb68518a1c932eee8aad7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128722"
 ---
-
 # <a name="page-lifecycle-events-on-android"></a>Android 上的頁面週期事件
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

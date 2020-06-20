@@ -1,8 +1,22 @@
 ---
-標題：「中的字型」 Xamarin.Forms 描述：「本文將說明如何在顯示應用程式文字的控制項上指定字型資訊」 Xamarin.Forms 。
-assetid： 49DD2249-C575-41AE-AE06-08F890FD6031 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/01/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的字型Xamarin.Forms
+description: 本文說明如何指定在應用程式中顯示文字之控制項的字型資訊 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a657915edb41573f9637128b4c88233d58a5909a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572204"
 ---
-
 # <a name="fonts-in-xamarinforms"></a>中的字型Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)
@@ -44,8 +58,8 @@ Xamarin.Forms也會定義列舉中的欄位 [`NamedSize`](xref:Xamarin.Forms.Nam
 
 您可以在屬性上設定字型樣式（例如**粗體**和*斜體*） `FontAttributes` 。 目前支援下列值：
 
-- **無**
-- **黑**
+- **None**
+- **粗體**
 - **斜體**
 
 `FontAttribute`列舉可用如下所示（您可以指定單一屬性或 `OR` 一起使用）：
@@ -102,7 +116,7 @@ Xamarin.Forms顯示文字的控制項都具有 `FontSize` 可在 XAML 中設定�
 
 Xamarin.Forms定義列舉中的欄位 [`NamedSize`](xref:Xamarin.Forms.NamedSize) ，以代表特定字型大小。 下表顯示 `NamedSize` 成員及其在 iOS、Android 和通用 Windows 平臺（UWP）上的預設大小：
 
-| 成員 | iOS | Android | UWP |
+| member | iOS | Android | UWP |
 | --- | --- | --- | --- |
 | `Default` | 16 | 14 | 14 |
 | `Micro` | 11 | 10 | 15.667 |

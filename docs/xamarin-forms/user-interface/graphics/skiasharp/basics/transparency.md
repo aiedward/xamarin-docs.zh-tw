@@ -1,8 +1,22 @@
 ---
-標題：「SkiaSharp 透明度」描述：「使用透明度在單一場景中結合多個物件」。
-skiasharp 的 assetid： B62F9487-C30E-4C63-BAB1-4C091FF50378 author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: SkiaSharp 透明度
+description: 使用 [透明度] 在單一場景中結合多個物件。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: B62F9487-C30E-4C63-BAB1-4C091FF50378
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 735aae1b9d94865bd34450861bd6c57b08c420c2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134715"
 ---
-
 # <a name="skiasharp-transparency"></a>SkiaSharp 透明度
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 已編譯的系結" 描述： "本文說明如何使用編譯的系結來改善應用程式中的資料系結效能 Xamarin.Forms 。
-assetid： ABE6B7F7-875E-4402-A1D2-845CE374402B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 09/18/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms編譯的系結
+description: 本文說明如何使用編譯的系結來改善應用程式中的資料系結效能 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/18/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 094691796fed9653f2a2e468ccb1c33d1a408a49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571554"
 ---
-
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms編譯的系結
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

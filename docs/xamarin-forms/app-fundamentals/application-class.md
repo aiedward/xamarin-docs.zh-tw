@@ -1,8 +1,23 @@
 ---
-title： " Xamarin.Forms 應用程式類別" 描述： "本文說明預設應用程式類別的功能，其中包括要設定為應用程式初始頁面的屬性，以及用於儲存生命週期狀態變更之間簡單值的持續性字典。
-assetid： 421F8294-1944-46A4-8459-D2BD5AAABC9D ms. 技術： xamarin-表單 ms。自訂：影片作者： davidbritch ms. 作者： dabritch ms。日期：02/19/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms應用程式類別
+description: 本文說明預設 App 類別的功能，此類別包含要設定為應用程式初始頁面的屬性，以及用來跨生命週期狀態變更來儲存簡單值的持續性字典。
+ms.prod: xamarin
+ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
+ms.technology: xamarin-forms
+ms.custom: video
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/19/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1e761830fb08662a82a8bf98b4544aafaa6eccf7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573348"
 ---
-
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms應用程式類別
 
 `Application` 基底類別提供下列功能，它們公開於您專案的預設 `App` 子類別：

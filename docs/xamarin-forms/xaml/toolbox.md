@@ -1,6 +1,21 @@
 ---
-title： " Xamarin.Forms 使用工具箱編輯 xaml" 描述： "XAML 工具箱包含所有內建的版面配置和控制項，這些都可以直接拖曳到 OPEN XAML 檔案中。」
-assetid： 513D1247-8AD0-4611-8660-1D277CD369E1 ms. 技術： xamarin-表單作者： conceptdev ms. author： crdun ms. 日期：08/29/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms使用工具箱編輯 XAML
+description: XAML 工具箱包含所有內建的版面配置和控制項，這些都可以直接拖曳到 open XAML 檔案中。
+ms.prod: xamarin
+ms.assetid: 513D1247-8AD0-4611-8660-1D277CD369E1
+ms.technology: xamarin-forms
+author: conceptdev
+ms.author: crdun
+ms.date: 08/29/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76d6a6f39692445f208f250ca7f6141a1e1ad450
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198025"
 ---
 # <a name="xamarinforms-xaml-toolbox"></a>Xamarin.FormsXAML 工具箱
 

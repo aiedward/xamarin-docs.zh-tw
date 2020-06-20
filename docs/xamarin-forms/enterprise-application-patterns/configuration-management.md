@@ -1,8 +1,22 @@
 ---
-標題：「設定管理」描述：「本章說明 eShopOnContainers 行動應用程式如何實行設定管理，以提供應用程式設定和使用者設定。」
-assetid： 50d6e780-e768-47f8-9361-3af11e56b87b ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 組態管理
+description: 本章說明 eShopOnContainers mobile 應用程式如何執行設定管理，以提供應用程式設定和使用者設定。
+ms.prod: xamarin
+ms.assetid: 50d6e780-e768-47f8-9361-3af11e56b87b
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571476"
 ---
-
 # <a name="configuration-management"></a>組態管理
 
 設定可讓您從程式碼中區隔的資料，來設定應用程式的行為，以在不重建應用程式的情況下變更行為。 設定有兩種類型： [應用程式設定] 和 [使用者設定]。
@@ -168,7 +182,7 @@ public override Task InitializeAsync(object navigationData)
 
 此機制可確保每當使用者流覽至 SettingsView 時，就會從平臺特定的儲存體抓取使用者設定，並透過資料系結來呈現。 然後，如果使用者變更設定值，資料系結可確保它們會立即保存回平臺特定的儲存體。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 設定可讓您從程式碼中區隔的資料，來設定應用程式的行為，以在不重建應用程式的情況下變更行為。 應用程式設定是應用程式所建立及管理的資料，而使用者設定則是應用程式的可自訂設定，會影響應用程式的行為，而不需要經常重新調整。
 

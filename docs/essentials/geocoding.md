@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials ：地理編碼" description： "中的地理編碼類別 Xamarin.Essentials 提供 api，可將地標地理編碼至位置座標，並將地理編碼座標反轉至地標。」
-assetid： 3ADC440C-B000-4708-A2CC-296F5160AF90 author： jamesmontemagno ms-chap： jamont ms. date： 05/28/2019 ms. custom： video no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：地理編碼
+description: 中的地理編碼類別 Xamarin.Essentials 提供 api，可將地標地理編碼至位置座標，並將地理編碼座標轉換成地標。
+ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 66383e441435b5f4bdb48224c9ab602f28072b3d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802330"
 ---
-
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials：地理編碼
 
 **地理編碼**類別會提供 API，可以將地標進行地理編碼為位置座標，也可以將地理編碼座標反轉為地標。
@@ -113,7 +126,7 @@ catch (Exception ex)
 
 ## <a name="api"></a>API
 
-- [地理編碼原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
+- [地理編碼原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geocoding)
 - [地理編碼 API 文件](xref:Xamarin.Essentials.Geocoding)
 
 ## <a name="related-video"></a>相關影片

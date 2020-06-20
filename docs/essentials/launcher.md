@@ -1,8 +1,21 @@
 ---
-title： " Xamarin.Essentials 啟動器" 描述： "中的啟動器類別 Xamarin.Essentials 可讓應用程式依系統開啟 URI。"
-assetid： BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author： jamesmontemagno ms. custom： video ms. 作者： jamont ms. date： 08/20/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials啟動
+description: 中的啟動器類別 Xamarin.Essentials 可讓應用程式依系統開啟 URI。
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: dcb236c47cf2eec77b3b90da798b0cf0d58f3c1d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802307"
 ---
-
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials：啟動器
 
 **Launcher** 類別可讓應用程式依系統開啟 URI。 當深層連結到其他應用程式的自訂 URI 配置時，通常會使用它。 若您要開啟瀏覽器並瀏覽網站，您應該參考 **[瀏覽器](open-browser.md)** API。
@@ -69,7 +82,7 @@ public class LauncherTest
 
 -----
 
-## <a name="files"></a>檔案儲存體
+## <a name="files"></a>檔案
 
 此功能可讓應用程式要求其他應用程式開啟及檢視檔案。 Xamarin.Essentials會自動偵測檔案類型（MIME），並要求要開啟的檔案。
 
@@ -108,7 +121,7 @@ await Launcher.OpenAsync(new OpenFileRequest
 
 ## <a name="api"></a>API
 
-- [Launcher 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
+- [Launcher 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Launcher)
 - [Launcher API 文件](xref:Xamarin.Essentials.Launcher)
 
 ## <a name="related-video"></a>相關影片

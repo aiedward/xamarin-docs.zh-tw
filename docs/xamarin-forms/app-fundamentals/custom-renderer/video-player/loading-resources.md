@@ -1,8 +1,22 @@
 ---
-標題：「載入應用程式資源影片」描述：「本文說明如何使用，在影片播放機應用程式中載入儲存為應用程式資源的影片 Xamarin.Forms 。」
-assetid： F75BD540-9354-4C17-A119-57F3DEC66D54 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/12/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 載入應用程式資源影片
+description: 本文說明如何使用，在影片播放機應用程式中載入儲存為應用程式資源的影片 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 472c6c2a7c5a084520aee6b8ae160d9329c3f593
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133759"
 ---
-
 # <a name="loading-application-resource-videos"></a>載入應用程式資源影片
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

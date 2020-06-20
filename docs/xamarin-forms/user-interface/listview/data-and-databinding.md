@@ -1,8 +1,22 @@
 ---
-title： "ListView Data 來源" 描述： "本文說明如何在 Xamarin.Forms listview 中填入資料，以及如何搭配 listview 使用資料系結。
-assetid： B5571660-1E82-4379-95C3-0725288CF5D9 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/23/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: ListView 資料來源
+description: 本文說明如何在 Xamarin.Forms listview 中填入資料，以及如何搭配 listview 使用資料系結。
+ms.prod: xamarin
+ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/23/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131504"
 ---
-
 # <a name="listview-data-sources"></a>ListView 資料來源
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

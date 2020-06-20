@@ -1,8 +1,22 @@
 ---
-標題：「旋轉轉換」描述：「本文將探討 SkiaSharp 旋轉轉換的可能效果和動畫，並以範例程式碼示範此動作。」
-skiasharp 的 assetid： CBB3CD72-4377-4EA3-A768-0C4228229FC2 author： davidbritch ms-chap： dabritch ms. date： 03/23/2017 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 旋轉轉換
+description: 本文將探討 SkiaSharp 旋轉轉換的可能效果和動畫，並以範例程式碼示範。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/23/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132180"
 ---
-
 # <a name="the-rotate-transform"></a>旋轉轉換
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-title： "為什麼 xaml 檔案的 Visual Studio XAML 設計工具不適用 Xamarin.Forms ？"
-ms. 主題：疑難排解 ms-chap： assetid： cab2eefb-c52f-4d81-866e-8f1feabbdd64 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date：04/25/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 為什麼 xaml 檔案的 Visual Studio XAML 設計工具不適用 Xamarin.Forms ？
+ms.topic: troubleshooting
+ms.prod: xamarin
+ms.assetid: cab2eefb-c52f-4d81-866e-8f1feabbdd64
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9f9cf570da0d8e078d1d05e74dc0f65994080c6c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135885"
 ---
-
 # <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-files"></a>為什麼 xaml 檔案的 Visual Studio XAML 設計工具不適用 Xamarin.Forms ？
 
 Xamarin.Forms目前不支援 XAML 檔案的視覺化設計工具。 因此，嘗試以編碼方式在 Visual Studio 的*XAML Ui 設計*工具或*xaml ui 設計*工具中開啟表單 XAML 檔案時，會擲回下列錯誤訊息：

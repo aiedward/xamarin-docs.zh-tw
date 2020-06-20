@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 頁面」描述：「 Xamarin.Forms 頁面代表跨平臺行動應用程式畫面。 本文列出包含在中的頁面。」 Xamarin.Forms
-ms-chap： xamarin assetid： 9C8C710F-E312-420B-9324-A7A20CEDB7EC ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date： 01/12/2016 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms頁面
+description: Xamarin.Forms頁面代表跨平臺行動應用程式畫面。 本文列出包含在中的頁面 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 9C8C710F-E312-420B-9324-A7A20CEDB7EC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/12/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b72564ebbb057c8154140c9845961d4c42e93db3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573309"
 ---
-
 # <a name="xamarinforms-pages"></a>Xamarin.Forms頁面
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -13,7 +27,7 @@ _[Xamarin] 代表跨平臺行動應用程式畫面。_
 
 [![](pages-images/pages-sml.png "Xamarin.Forms Page Types")](pages-images/pages.png#lightbox "Xamarin.Forms Page Types")
 
-## <a name="pages"></a>Pages
+## <a name="pages"></a>頁面
 
 Xamarin.Forms支援下列頁面類型：
 
@@ -21,7 +35,7 @@ Xamarin.Forms支援下列頁面類型：
 
 |     |     |
 | --- | --- |
-| [`ContentPage`](xref:Xamarin.Forms.ContentPage)是最簡單且最常見的頁面類型。 將 [`Content`](xref:Xamarin.Forms.ContentPage.Content) 屬性設定為單一 [`View`](views.md) 物件，其最常為 [`Layout`](layouts.md) [`StackLayout`](layouts.md#stacklayout) 、 [`Grid`](layouts.md#grid) 或 [`ScrollView`](layouts.md#scrollview) 。<br /><br />[API 文件](xref:Xamarin.Forms.ContentPage) | [![ContentPage 範例](pages-images/ContentPage.png "ContentPage 範例")](pages-images/ContentPage-Large.png#lightbox "ContentPage 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentPageDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentPageDemoPage.xaml) |
+| [`ContentPage`](xref:Xamarin.Forms.ContentPage)是最簡單且最常見的頁面類型。 將 [`Content`](xref:Xamarin.Forms.ContentPage.Content) 屬性設定為單一 [`View`](views.md) 物件，其最常為 [`Layout`](layouts.md) [`StackLayout`](layouts.md#stacklayout) 、 [`Grid`](layouts.md#grid) 或 [`ScrollView`](layouts.md#scrollview) 。<br /><br />[API 檔](xref:Xamarin.Forms.ContentPage) | [![ContentPage 範例](pages-images/ContentPage.png "ContentPage 範例")](pages-images/ContentPage-Large.png#lightbox "ContentPage 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentPageDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentPageDemoPage.xaml) |
 |     |     |
 
 ### <a name="masterdetailpage"></a>MasterDetailPage

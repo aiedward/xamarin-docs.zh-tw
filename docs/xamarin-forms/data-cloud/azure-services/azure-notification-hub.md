@@ -1,8 +1,23 @@
 ---
-標題：「使用 Azure 通知中樞傳送和接收推播通知」和「 Xamarin.Forms 描述：」本文說明如何使用 azure 通知中樞，將跨平臺推播通知傳送至 Xamarin.Forms 應用程式。」
-assetid： 07D13195-3A0D-4C95-ACF0-143A9084973C ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：11/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ， Firebase ]
+title: 使用 Azure 通知中樞和來傳送和接收推播通知Xamarin.Forms
+description: 本文說明如何使用 Azure 通知中樞，將跨平臺推播通知傳送至 Xamarin.Forms 應用程式。
+ms.prod: xamarin
+ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+- Firebase
+ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565417"
 ---
-
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>使用 Azure 通知中樞和來傳送和接收推播通知Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)

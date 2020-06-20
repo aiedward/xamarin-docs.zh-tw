@@ -1,8 +1,22 @@
 ---
-title：「資料 Xamarin.Forms 格」描述：「 Xamarin.Forms 可以將資料格加入至 Listview 和 TableViews。 本文列出包含在中的資料格 Xamarin.Forms 。」
-assetid： 77DA0C89-35D6-4C09-A072-3ADE53FD56CF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/12/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms資料格
+description: Xamarin.Forms資料格可以加入至 Listview 和 TableViews。 本文列出包含在中的資料格 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 77DA0C89-35D6-4C09-A072-3ADE53FD56CF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/12/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fff62aea5a20a8a14271123c4664c2c0b4e26d1e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573322"
 ---
-
 # <a name="xamarinforms-cells"></a>Xamarin.Forms資料格
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

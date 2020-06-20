@@ -1,8 +1,22 @@
 ---
-標題：「取用 RESTful Web 服務」描述：「將 web 服務整合到應用程式」是常見的案例。 本文示範如何從應用程式使用 RESTful web 服務。」 Xamarin.Forms
-assetid： B540910C-9C51-416A-AAB9-057BF76489C3 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/28/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 RESTful Web 服務
+description: 將 web 服務整合到應用程式是常見的案例。 本文示範如何從應用程式使用 RESTful web 服務 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8d7ae5eb16b8a94f16b6eca013b4ec7a93f427bd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198133"
 ---
-
 # <a name="consume-a-restful-web-service"></a>使用 RESTful Web 服務
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
@@ -40,7 +54,7 @@ REST 的簡單性讓它成為在行動應用程式中存取 web 服務的主要�
 
 REST 服務是使用 ASP.NET Core 撰寫的，並提供下列作業：
 
-|操作|HTTP method|相對 URI|參數|
+|作業|HTTP method|相對 URI|參數|
 |--- |--- |--- |--- |
 |取得待辦事項的清單|GET|/api/todoitems/|
 |建立新的待辦事項專案|POST|/api/todoitems/|JSON 格式的 TodoItem|

@@ -1,8 +1,21 @@
 ---
-標題：「卸載 Xamarin」描述：「本檔說明如何從 Windows 上的 Visual Studio 卸載 Xamarin」。
-assetid： b83a85ec-842a-444c-8f82-c2464eda099b author： conceptdev ms. author： crdun ms. date： 01/22/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 解除安裝 Xamarin
+description: 本文件描述如何在 Windows 上從 Visual Studio 解除安裝 Xamarin。
+ms.prod: xamarin
+ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
+author: conceptdev
+ms.author: crdun
+ms.date: 01/22/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b4d644591ab85f185709e7bd53353580a6578d77
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570106"
 ---
-
 # <a name="uninstall-xamarin-from-visual-studio"></a>從 Visual Studio 解除安裝 Xamarin 
 
 本指南說明如何在 Windows 上，從 Visual Studio 移除 Xamarin。

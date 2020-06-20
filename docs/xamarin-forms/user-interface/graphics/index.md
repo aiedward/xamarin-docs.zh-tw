@@ -1,8 +1,22 @@
 ---
-title： "中的圖形 Xamarin.Forms 描述：" 本指南說明如何 Xamarin.Forms 使用 CocosSharp、SkiaShap 和 UrhoSharp，將圖形和遊戲引擎視覺效果併入應用程式中。
-assetid： 167ec01a-fb9e-431e-a44d-a10eaf62bf39 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/01/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的圖形Xamarin.Forms
+description: 本指南說明如何 Xamarin.Forms 使用 CocosSharp、SkiaShap 和 UrhoSharp，將圖形和遊戲引擎視覺效果併入應用程式中。
+ms.prod: xamarin
+ms.assetid: 167ec01a-fb9e-431e-a44d-a10eaf62bf39
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/01/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 227bb3f0971bb8e3ceef7015f8fffb9994ccc36b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129320"
 ---
-
 # <a name="graphics-in-xamarinforms"></a>中的圖形Xamarin.Forms
 
 _如何將圖形和遊戲引擎視覺效果併入 Xamarin.Forms 應用程式中。_

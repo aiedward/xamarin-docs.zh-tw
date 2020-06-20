@@ -1,8 +1,22 @@
 ---
-title： "容器化微服務" 描述： "本章節說明如何使用微服務和容器來建立敏捷式、可調整且可靠的現代化雲端應用程式。」
-assetid： 5872ad92-04e0-4f1a-9691-79d5602f5683 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 容器化的微服務
+description: 本章說明如何使用微服務和容器來建立敏捷式、可調整且可靠的現代化雲端應用程式。
+ms.prod: xamarin
+ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569565"
 ---
-
 # <a name="containerized-microservices"></a>容器化的微服務
 
 開發用戶端伺服器應用程式的重點是要在每一層中建立使用特定技術的分層式應用程式。 這類應用程式通常稱為整合*型應用程式*，並封裝到預先調整的硬體以進行尖峰負載。 這種開發方法的主要缺點是每一層內的元件緊密結合，個別元件無法輕鬆調整，而且測試成本也很高。 簡單的更新可能會對其餘的階層造成未預期的影響，因此應用程式元件的變更需要重新測試和重新部署整個層。
@@ -129,7 +143,7 @@ EShopOnContainers 行動應用程式會使用*直接用戶端對微服務*通訊
 
 如需事件匯流排執行的相關資訊，請參閱[.Net 微服務：容器化 .Net 應用程式的架構](https://aka.ms/microservicesebook)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 微服務提供應用程式開發和部署的方法，其適用于現代化雲端應用程式的靈活性、規模和可靠性需求。 微服務的主要優點之一，就是可以獨立地相應放大，這表示可以調整特定功能區域，而需要更多處理能力或網路頻寬來支援需求，而不需在不需要增加需求的情況下調整應用程式的區域。
 

@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms web 工作" 描述： "本文說明如何使用網頁記錄 Xamarin.Forms 類別，將本機或網路的 web 內容和檔呈現給使用者。
-assetid： E44F5D0F-DB8E-46C7-8789-114F1652A6C5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/06/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsWebView
+description: 本文說明如何使用 [web 工作] 類別，將 Xamarin.Forms 本機或網路 web 內容和檔呈現給使用者。
+ms.prod: xamarin
+ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9b07e044e55f99a7a183e55c566bf59dbd082655
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198161"
 ---
-
 # <a name="xamarinforms-webview"></a>Xamarin.FormsWebView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
@@ -416,7 +430,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`只有在顯示來自網路的內容時才需要。 本機內容不需要任何特殊許可權。
 - **iOS** &ndash;不需要任何特殊許可權。
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>Layout
 
 不同于大部分其他 Xamarin.Forms 的視圖， `WebView` 會要求在 `HeightRequest` `WidthRequest` 包含在 StackLayout 或 RelativeLayout 時指定和。 如果您無法指定這些屬性， `WebView` 將不會呈現。
 

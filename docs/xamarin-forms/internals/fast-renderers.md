@@ -1,8 +1,22 @@
 ---
-標題：「快速轉譯器」 Xamarin.Forms 描述：「這篇文章介紹快速轉譯器，藉由簡維 Xamarin.Forms 產生的原生控制項階層，減少 Android 上控制項的擴大和呈現成本。」
-assetid： 097f87f2-d891-4f3c-be02-fb7d195a481a ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/28/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms快速轉譯器
+description: 本文介紹快速轉譯器，藉由簡維 Xamarin.Forms 產生的原生控制項階層，減少 Android 上控制項的擴大和呈現成本。
+ms.prod: xamarin
+ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 29f79e4aed0314fe1590fa26c8e4b052e14a94d6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198057"
 ---
-
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms快速轉譯器
 
 傳統上，大部分的 Android 原始控制項轉譯器都是由兩個視圖所組成：

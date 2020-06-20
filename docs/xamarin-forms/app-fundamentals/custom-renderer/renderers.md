@@ -1,8 +1,22 @@
 ---
-標題：「轉譯器基類和原生控制項」描述：「每 Xamarin.Forms 個控制項都有一個針對每個平臺的轉譯器，可建立原生控制項的實例。 本文列出的轉譯器和原生控制項類別，會執行每個 Xamarin.Forms 頁面、版面配置、視圖和儲存格。」
-assetid： A8909AE3-ED0E-4D24-BF96-B49E732E3B93 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/17/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 轉譯器基底類別與原生控制項
+description: 每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，可建立原生控制項的實例。 本文列出的轉譯器和原生控制項類別會執行每個 Xamarin.Forms 頁面、版面配置、視圖和儲存格。
+ms.prod: xamarin
+ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9f6eff831f3eb653e281dd9ee750bae7f7dfda06
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198393"
 ---
-
 # <a name="renderer-base-classes-and-native-controls"></a>轉譯器基底類別與原生控制項
 
 _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，可建立原生控制項的實例。本文列出的轉譯器和原生控制項類別會執行每個 Xamarin.Forms 頁面、版面配置、視圖和儲存格。_
@@ -26,7 +40,7 @@ _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，�
 > [!NOTE]
 > 如需建立 Shell 應用程式之自訂轉譯器的詳細資訊，請參閱[ Xamarin.Forms Shell 自訂](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)轉譯器。
 
-## <a name="pages"></a>Pages
+## <a name="pages"></a>頁面
 
 下表列出執行每個頁面類型的轉譯器和原生控制項類別 Xamarin.Forms [Page](~/xamarin-forms/user-interface/controls/pages.md) ：
 
@@ -43,7 +57,7 @@ _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，�
 
 下表列出的轉譯器和原生控制項類別會執行每種 Xamarin.Forms [版面](~/xamarin-forms/user-interface/controls/layouts.md)配置類型：
 
-|配置|轉譯器|iOS|Android|Android (AppCompat)|UWP|
+|Layout|轉譯器|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |
 |[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|檢視|檢視|FrameworkElement|
 |[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|檢視|檢視|FrameworkElement|

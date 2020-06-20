@@ -1,8 +1,22 @@
 ---
-標題：「第1部分。 在應用程式中使用 XAML 「描述：」消費者入門 Xamarin.Forms ，xaml 主要是用來定義頁面的視覺內容，並與程式碼後置檔案一起運作。」
-assetid： 9073FA0E-BD5A-4492-8A93-54C466F6EDB9 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/30/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第 1 部份： 開始使用 XAML
+description: 在 Xamarin.Forms 應用程式中，XAML 主要是用來定義頁面的視覺內容，並與程式碼後置檔案一起運作。
+ms.prod: xamarin
+ms.assetid: 9073FA0E-BD5A-4492-8A93-54C466F6EDB9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e38080fc9bc4ef0b74eb8c12c3a3f646c4888f53
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198070"
 ---
-
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部份： 開始使用 XAML
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

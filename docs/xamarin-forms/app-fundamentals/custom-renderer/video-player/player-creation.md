@@ -1,8 +1,22 @@
 ---
-標題：「建立平臺影片播放程式」描述：「本文說明如何使用，在每個平臺上執行影片播放程式自訂轉譯器 Xamarin.Forms 。」
-assetid： EEE2FB9B-EB73-4A3F-A859-7A1D4808E149 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/12/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 建立平台視訊播放程式
+description: 本文說明如何使用，在每個平臺上執行影片播放程式自訂轉譯器 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: EEE2FB9B-EB73-4A3F-A859-7A1D4808E149
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d026ecc3288da155aefb0f68ee0c70721106c0da
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133740"
 ---
-
 # <a name="creating-the-platform-video-players"></a>建立平台視訊播放程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

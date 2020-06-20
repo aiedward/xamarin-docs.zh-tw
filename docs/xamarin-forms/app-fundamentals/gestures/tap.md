@@ -1,8 +1,22 @@
 ---
-標題：「新增點手勢辨識器」描述：「本文將說明如何在應用程式中使用點按手勢來進行分攻點偵測 Xamarin.Forms 。 利用 TapGestureRecognizer 類別來執行點偵測。」
-assetid： 1D150BAF-4157-49BC-90A0-153323B8EBCF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/21/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 新增點選手勢辨識器
+description: 本文說明如何在應用程式中使用點按手勢來偵測 Xamarin.Forms 。 點選偵測是使用 TapGestureRecognizer 類別實作。
+ms.prod: xamarin
+ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f5b476ac83f801b4ccded3e18bb601c06e0d0ef
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570605"
 ---
-
 # <a name="adding-a-tap-gesture-recognizer"></a>新增點選手勢辨識器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)

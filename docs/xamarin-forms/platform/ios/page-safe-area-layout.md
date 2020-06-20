@@ -1,8 +1,22 @@
 ---
-標題：「iOS 上的安全區域版面配置指南」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺專屬的，以確保頁面內容位於螢幕區域上，這在所有使用 iOS 11 和更新版本的裝置上都是安全的。」
-assetid： 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/24/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的安全區域版面配置指南
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺專屬的，以確保頁面內容位於螢幕上的某個區域，而這些裝置在使用 iOS 11 和更新版本的所有裝置上都是安全的。
+ms.prod: xamarin
+ms.assetid: 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5ca30481fbc0e5631ff75000c688dd805793e670
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128044"
 ---
-
 # <a name="safe-area-layout-guide-on-ios"></a>IOS 上的安全區域版面配置指南
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

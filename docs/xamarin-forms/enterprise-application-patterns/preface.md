@@ -1,8 +1,22 @@
 ---
-標題：「企業應用程式開發的前面」描述：「本章提供了使用的「企業應用程式模式」的首碼 Xamarin.Forms 。」
-assetid： fbf32a44-1d33-4e16-a904-dc7ee5991e7c ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在企業應用程式開發的前面
+description: 本章提供使用的「企業應用程式模式」的首碼 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6ea63fc483025fc6f9b0c7f379b6dfdc6ca30de8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198091"
 ---
-
 # <a name="preface-to-enterprise-app-development"></a>在企業應用程式開發的前面
 
 此電子書提供使用建立跨平臺企業應用程式的指引 Xamarin.Forms 。 Xamarin.Forms是一種跨平臺 UI 工具組，可讓開發人員輕鬆地建立可以跨平臺共用的原生使用者介面版面配置，包括 iOS、Android 和通用 Windows 平臺（UWP）。 它提供企業對員工（B2E）、企業對企業（B2B）和企業對消費者（B2C）應用程式的全方位解決方案，讓您能夠跨所有目標平臺共用程式碼，並協助降低擁有權總成本（TCO）。

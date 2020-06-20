@@ -1,8 +1,22 @@
 ---
-標題：「安裝步驟-使用 Apple 登入」「 Xamarin.Forms 描述：」根據您的行動應用程式目標不同的平臺，使用 apple 安裝登入會有所不同。」
-assetid： 8F712802-395B-469B-B5BE-C927AD1A8391 ms. 技術： xamarin-表單作者： davidortinau ms. author： daortin ms. 日期：09/10/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 設定步驟-使用 Apple 登入Xamarin.Forms
+description: 使用 Apple 安裝程式登入會根據您的行動應用程式目標的不同平臺而有所不同。
+ms.prod: xamarin
+ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 95fc2547dd2f17f7aa2b2e8ca4c70915c6542318
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198037"
 ---
-
 # <a name="setup-sign-in-with-apple-for-xamarinforms"></a>使用 Apple 的安裝程式登入Xamarin.Forms
 
 本指南涵蓋了一系列的步驟，讓您設定跨平臺應用程式以使用 Apple 進行登入。 Apple 安裝程式在 Apple 開發人員入口網站中是直接的，但必須執行其他步驟，才能在您的 Android 和 Apple 之間建立安全的關係。 
@@ -82,7 +96,7 @@ assetid： 8F712802-395B-469B-B5BE-C927AD1A8391 ms. 技術： xamarin-表單作�
 
 按一下 [**繼續**]，然後按 [**註冊**] 來建立新的金鑰。
 
-接下來，您只需要下載您剛產生的金鑰一次。  按一下 [下載]  。
+接下來，您只需要下載您剛產生的金鑰一次。  按一下 [下載] 。
 
 ![下載金鑰](sign-in-images/readme-key-download.png)
 
@@ -91,19 +105,11 @@ assetid： 8F712802-395B-469B-B5BE-C927AD1A8391 ms. 技術： xamarin-表單作�
 您將下載金鑰檔案 `.p8` 。  您可以在 [記事本] 中開啟此檔案，或 VSCode 以查看文字內容。  它們看起來應該像這樣：
 
 ```
----
-title: "Setup Steps - Sign In with Apple for Xamarin.Forms"
-description: Sign In with Apple setup differs depending on the different platforms your mobile application targets.
-ms.prod: xamarin
-ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-no-loc:
-- "Xamarin.Forms"
-- "Xamarin.Essentials"
-
+-----BEGIN PRIVATE KEY-----
+MIGTAgEAMBMGBasGSM49AgGFCCqGSM49AwEHBHkwdwIBAQQg3MX8n6VnQ2WzgEy0
+Skoz9uOvatLMKTUIPyPCAejzzUCgCgYIKoZIzj0DAQehRANCAARZ0DoM6QPqpJxP
+JKSlWz0AohFhYre10EXPkjrih4jTm+b0AeG2BGuoIWd18i8FimGDgK6IzHHPsEqj
+DHF5Svq0
 -----END PRIVATE KEY-----
 ```
 

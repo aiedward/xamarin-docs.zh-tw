@@ -1,8 +1,22 @@
 ---
-標題：「新增 iOS 特定格式」描述：「本文說明如何設定 iOS 特有的外觀，而不需要使用 Xamarin.Forms 自訂轉譯器。」
-assetid： CE50E207-D092-4D88-8439-1B51F178E7ED ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/29/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 新增 iOS 特定格式
+description: 本文說明如何設定 iOS 特有的外觀，而不需要使用 Xamarin.Forms 自訂轉譯器。
+ms.prod: xamarin
+ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/29/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 062dd77f1dc7b82f16bfbc6d46e44d4adeb73350
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564702"
 ---
-
 # <a name="adding-ios-specific-formatting"></a>新增 iOS 特定格式
 
 設定 iOS 特定格式的其中一種方式是建立控制項的[自訂](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)轉譯器，並設定每個平臺的平臺特定樣式和色彩。

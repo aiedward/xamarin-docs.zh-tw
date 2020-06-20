@@ -1,8 +1,22 @@
 ---
-標題：「在 Azure 儲存體中儲存及存取資料」的「 Xamarin.Forms 描述：」 Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。 本文說明如何使用，將 Xamarin.Forms 文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。」
-assetid： 5B10D37B-839B-4CD0-9C65-91014A93F3EB ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/28/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 儲存和存取 Azure 儲存體中的資料Xamarin.Forms
+description: Azure 儲存體是可擴充的雲端儲存體解決方案，可用於儲存非結構化和結構化資料。 本文說明如何使用，將 Xamarin.Forms 文字和二進位資料儲存在 Azure 儲存體中，以及如何存取資料。
+ms.prod: xamarin
+ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a69edd3bf014809cc479dcb7cba0e430dcefbe5b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564676"
 ---
-
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>儲存和存取 Azure 儲存體中的資料Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)

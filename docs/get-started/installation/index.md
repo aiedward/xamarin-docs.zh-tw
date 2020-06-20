@@ -1,6 +1,22 @@
 ---
-標題：「安裝 Xamarin」描述：「本節提供安裝和設定做法的總覽，可以用來在 Visual Studio 上設定 Xamarin。」
-zone_pivot_groups： dev16 ms-chap： xamarin ms. assetid： 0f813a14-2f0c-415d-8667-4563f3dc06e8 author： conceptdev ms-chap： crdun ms. custom： video ms. date： 05/23/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 安裝 Xamarin
+description: 本節提供可用於在 Visual Studio 上設定 Xamarin 之安裝及設定做法的概觀。
+zone_pivot_groups: platform-dev16
+ms.prod: xamarin
+ms.assetid: 0f813a14-2f0c-415d-8667-4563f3dc06e8
+author: conceptdev
+ms.author: crdun
+ms.custom: video
+ms.date: 05/23/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 928a8f9ca1792fa79f3c5995959e6407c23649f4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133051"
 ---
 # <a name="installing-xamarin"></a>安裝 Xamarin
 

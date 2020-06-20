@@ -1,8 +1,22 @@
 ---
-title： "說明中的自訂動畫" Xamarin.Forms 描述： "本文示範如何使用 Xamarin 動畫類別來建立和取消動畫、同步處理多個動畫，以及建立自訂動畫，以動畫顯示現有動畫方法不是動畫的屬性。」
-assetid： 03B2E3FC-E720-4D45-B9A0-711081FC1907 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/10/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的自訂動畫Xamarin.Forms
+description: 本文示範如何使用 [Xamarin 動畫] 類別來建立和取消動畫、同步處理多個動畫，以及建立自訂動畫，以動畫顯示現有動畫方法不會產生動畫的屬性。
+ms.prod: xamarin
+ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 573f18de0d7593d832505eb6bb2b492caea024a1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946100"
 ---
-
 # <a name="custom-animations-in-xamarinforms"></a>中的自訂動畫Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
@@ -37,7 +51,7 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 
 - 第一個引數（*擁有*者）會識別動畫的擁有者。 這可以是套用動畫的視覺專案，或是另一個視覺元素（例如頁面）。
 - 第二個引數（*name*）會以名稱來識別動畫。 名稱會與擁有者結合，以唯一識別動畫。 此唯一識別可接著用來判斷動畫是否正在執行（[ `AnimationIsRunning` ] （x：） Xamarin.Forms 。Petzold.animationextensions. AnimationIsRunning （ Xamarin.Forms 。System.windows.media.animation.ianimatable>、System.string）），或取消它（[ `AbortAnimation` ] （x：） Xamarin.Forms 。Petzold.animationextensions. AbortAnimation （ Xamarin.Forms 。System.windows.media.animation.ianimatable>，System.string）））。
-- 第三個引數（*速率*）表示每次呼叫在此函式中定義的回呼方法之間的毫秒數。 [`Animation`](xref:Xamarin.Forms.Animation)
+- 第三個引數（*速率*）表示每次呼叫在此函式中定義的回呼方法之間的毫秒數 [`Animation`](xref:Xamarin.Forms.Animation) 。
 - 第四個引數（*長度*）表示動畫的持續時間（以毫秒為單位）。
 - 第五個引數（*緩動*）定義要在動畫中使用的緩動函式。 或者，您也可以將緩動函式指定為對此函數的引數 [`Animation`](xref:Xamarin.Forms.Animation) 。 如需緩時函數的詳細資訊，請參閱[簡化](~/xamarin-forms/user-interface/animation/easing.md)函式。
 - 第六個引數（*完成*）是當動畫完成時，將會執行的回呼。 這個回呼會採用兩個引數，其中第一個引數表示最後一個值，而第二個引數則是 `bool` ， `true` 如果動畫已取消，則會設定為。 或者，您可以將*完成*的回呼指定為函式的引數 [`Animation`](xref:Xamarin.Forms.Animation) 。 不過，只要使用單一動畫，如果*已完成*回呼同時在函式 `Animation` 和方法中指定 `Commit` ，就只會執行方法中指定的回呼 `Commit` 。

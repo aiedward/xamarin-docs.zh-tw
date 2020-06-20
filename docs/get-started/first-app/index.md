@@ -1,6 +1,23 @@
 ---
-標題：「建立您的第一個應用程式」 Xamarin.Forms 描述：「示範如何 Xamarin.Forms 在 Visual Studio 中建立第一個應用程式的影片指南」。
-zone_pivot_groups： dev16 ms-chap： xamarin assetid： 72B6AF82-4D98-47E5-AB54-0A35B3253468 ms-chap： xamarin-表單 ms. custom：影片作者： conceptdev ms-chap： crdun ms. date： 05/23/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 建立您的第一個 Xamarin.Forms 應用程式
+description: 示範如何在 Visual Studio 中建立第一個 Xamarin.Forms 應用程式的影片指南。
+zone_pivot_groups: platform-dev16
+ms.prod: xamarin
+ms.assetid: 72B6AF82-4D98-47E5-AB54-0A35B3253468
+ms.technology: xamarin-forms
+ms.custom: video
+author: conceptdev
+ms.author: crdun
+ms.date: 05/23/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: da56bde956a0ff7730ef6737e2802c3723d6d716
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133471"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>建立您的第一個 Xamarin.Forms 應用程式
 

@@ -1,8 +1,22 @@
 ---
-title： "消費者入門 with DataPages" 描述： "本文說明如何使用 DataPages 開始建立簡單的資料驅動頁面 Xamarin.Forms 。"
-assetid： 6416E5FA-6384-4298-BAA1-A89381E47210 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 12/01/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 DataPages 消費者入門
+description: 本文說明如何使用 DataPages 開始建立簡單的資料驅動頁面 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571463"
 ---
-
 # <a name="getting-started-with-datapages"></a>使用 DataPages 消費者入門
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)

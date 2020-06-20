@@ -1,8 +1,21 @@
 ---
-標題：「開始使用」 Xamarin.Essentials 描述：」 Xamarin.Essentials 提供單一跨平臺 API，可搭配任何 IOS、ANDROID 或 UWP 應用程式使用，無論使用者介面建立的方式為何，都能從共用的程式碼存取。」
-assetid： B2669C48-B659-4854-BD80-FEB0E876F5B9 author： jamesmontemagno ms-chap： jamont ms. custom： video ms. date： 05/11/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 開始使用Xamarin.Essentials
+description: Xamarin.Essentials提供單一跨平臺 API，可搭配任何 iOS、Android 或 UWP 應用程式使用，無論使用者介面建立的方式為何，都能從共用的程式碼存取。
+ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
+author: jamesmontemagno
+ms.author: jamont
+ms.custom: video
+ms.date: 05/11/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0c0052b35475522ffb3634ebe22f69f66fe3b22b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129307"
 ---
-
 # <a name="get-started-with-xamarinessentials"></a>開始使用Xamarin.Essentials
 
 Xamarin.Essentials提供單一跨平臺 API，可搭配任何 iOS、Android 或 UWP 應用程式使用，無論使用者介面建立的方式為何，都能從共用的程式碼存取。 如需有關支援之作業系統的詳細資訊，請參閱[平台與功能支援指南](platform-feature-support.md)。

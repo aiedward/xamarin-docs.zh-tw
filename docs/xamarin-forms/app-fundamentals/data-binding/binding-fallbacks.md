@@ -1,13 +1,27 @@
 ---
-標題：「系結回溯」 Xamarin.Forms 描述：「本文將說明如何藉由定義系結失敗時所要使用的回溯值，讓系結更穩固。」
-assetid： 637ACD9D-3E5D-4014-86DE-A77D1FEF238A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/16/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms系結回退
+description: 本文說明如何定義繫結失敗時要使用的後援值，以讓繫結更穩固。
+ms.prod: xamarin
+ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/16/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2c5ce10aa0a1137ad4e4832d5dc931c902b82810
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946204"
 ---
-
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms系結回退
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-有時，資料繫結會因為無法解析繫結來源，或繫結成功但卻傳回 `null` 值而失敗。 雖然這些情況都可以透過值轉換器或其他額外程式碼來處理，但您可以藉由定義繫結程序失敗時要使用的後援值，讓資料繫結更穩固。 您可以在系結 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 運算式中定義和屬性來完成這 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 項作業。 因為這些屬性位於類別中 [`BindingBase`](xref:Xamarin.Forms.BindingBase) ，所以可以與系結、編譯的系結和 `Binding` 標記延伸搭配使用。
+有時，資料繫結會因為無法解析繫結來源，或繫結成功但卻傳回 `null` 值而失敗。 雖然這些情況都可以透過值轉換器或其他額外程式碼來處理，但您可以藉由定義繫結程序失敗時要使用的後援值，讓資料繫結更穩固。 您可以在系結 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) 運算式中定義和屬性來完成這 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 項作業。 因為這些屬性位於類別中 [`BindingBase`](xref:Xamarin.Forms.BindingBase) ，所以可以與系結、多個系結、編譯的系結和 `Binding` 標記延伸搭配使用。
 
 > [!NOTE]
 > 在系結 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) 運算式中使用和屬性是選擇性的。

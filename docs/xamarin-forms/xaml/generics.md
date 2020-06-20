@@ -1,8 +1,22 @@
 ---
-title： "xaml 中的泛型 Xamarin.Forms " 描述： " Xamarin.Forms xaml 提供使用泛型 CLR 類型的支援，方法是指定泛型條件約束做為類型引數。
-assetid： 97B73048-4F90-41AD-AB48-8EB804C4998B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/28/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: XAML 中的泛型 Xamarin.Forms
+description: Xamarin.FormsXAML 藉由將泛型條件約束指定為類型引數，來提供取用泛型 CLR 類型的支援。
+ms.prod: xamarin
+ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5a033e5feeefc41b97be29491a70632e767aa1b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565196"
 ---
-
 # <a name="generics-in-xamarinforms-xaml"></a>XAML 中的泛型 Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)

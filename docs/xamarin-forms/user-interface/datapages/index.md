@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms DataPages" 描述： "本文介紹 Xamarin.Forms DataPages，其提供 API 來快速且輕鬆地將資料來源系結至預先建立的視圖。」
-assetid： DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/01/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsDataPages
+description: 本文介紹 Xamarin.Forms DataPages，其提供 API，可讓您快速且輕鬆地將資料來源系結至預先建立的視圖。
+ms.prod: xamarin
+ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134312"
 ---
-
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -24,7 +38,7 @@ DataPages 提供 API，可讓您快速且輕鬆地將資料來源系結至預先
 
 藉由包含，可將 DataPages 新增至 Xamarin.Forms 應用程式** Xamarin.Forms 。分頁**NuGet 套件。
 
-### <a name="data-sources"></a>Data Sources
+### <a name="data-sources"></a>資料來源
 
 預覽中有一些可供使用的預先建立資料來源：
 

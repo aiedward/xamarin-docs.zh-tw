@@ -1,8 +1,23 @@
 ---
-標題：「應用程式索引和深層連結」描述：「本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。」
-assetid： 410C5D19-AA3C-4E0D-B799-E288C5803226 ms. 技術： xamarin-表單 ms. custom： xamu-影片作者： davidbritch ms-chap： dabritch ms. date： 11/28/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 應用程式索引和深層連結
+description: 本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。
+ms.prod: xamarin
+ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570631"
 ---
-
 # <a name="application-indexing-and-deep-linking"></a>應用程式索引和深層連結
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
@@ -230,7 +245,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 如需遞交的詳細資訊，請參閱 [Handoff 簡介](~/ios/platform/handoff.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明如何使用應用程式索引和深層連結，讓 Xamarin.Forms 應用程式內容在 iOS 和 Android 裝置上可供搜尋。 應用程式索引讓經過少數幾次使用就遺忘的應用程式能出現在搜尋結果中，藉此保有關聯性。
 

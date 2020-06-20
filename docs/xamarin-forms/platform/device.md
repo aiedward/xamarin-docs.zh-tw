@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 裝置類別」描述：「本文將說明如何使用 Xamarin.Forms 裝置類別，以對每個平臺上的功能和配置進行精細的控制。」
-assetid： 2F304AEC-8612-4833-81E5-B2F3F469B2DF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/17/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms裝置類別
+description: 本文說明如何使用 Xamarin.Forms 裝置類別，針對每個平臺上的功能和配置進行精細的控制。
+ms.prod: xamarin
+ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ba4e93b8f364d6887439b05017a9cd373dce5985
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572321"
 ---
-
 # <a name="xamarinforms-device-class"></a>Xamarin.Forms裝置類別
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
@@ -214,7 +228,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 
 `Device`類別包含下列 `static` 方法，可以用來與背景執行緒中的使用者介面專案互動：
 
-| 方法 | 引數 | 傳回值 | 目的 |
+| 方法 | 引數 | 傳回 | 目的 |
 |---|---|---|---|
 | `BeginInvokeOnMainThread` | `Action` | `void` | `Action`在主執行緒上叫用，並不等待它完成。 |
 | `InvokeOnMainThreadAsync<T>` | `Func<T>` | `Task<T>` | 在主要執行緒上叫用 `Func<T>`，並等候其完成。 |

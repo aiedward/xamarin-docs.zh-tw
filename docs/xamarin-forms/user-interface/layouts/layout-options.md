@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms description：" 中的版面配置選項 Xamarin.Forms ，每個視圖都有 LayoutOptions 類型的 HorizontalOptions 和 VerticalOptions 屬性。 本文說明每個 LayoutOptions 值對視圖對齊和展開的效果。
-assetid： 7CAB5631-5153-4DEF-8AD7-C6011CE44307 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/10/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的版面配置選項Xamarin.Forms
+description: 每個 Xamarin.Forms view 都有 LayoutOptions 類型的 HorizontalOptions 和 VerticalOptions 屬性。 本文說明每個 LayoutOptions 值對視圖對齊和展開的效果。
+ms.prod: xamarin
+ms.assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44307
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6fa03cf5c18e21ce5ca9e7ea907f50c8de6f3e6c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573257"
 ---
-
 # <a name="layout-options-in-xamarinforms"></a>中的版面配置選項Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
@@ -137,7 +151,7 @@ Content = new StackLayout
 
 每個都 [`Label`](xref:Xamarin.Forms.Label) 佔用中相同的空間量 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 不過，最後的 `Label` 會將其 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 屬性設為 [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)，因此只有其大小不同。 此外，每個 `Label` 都以小型紅色分隔 [`BoxView`](xref:Xamarin.Forms.BoxView) ，可讓您 `Label` 輕鬆地查看所佔用的空間。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明每個 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 結構值對相對於其父項的對齊和擴充的效果。 `Start`、 `Center` 、 `End` 和 `Fill` 欄位是用來定義父配置內的視圖對齊，而 `StartAndExpand` 、 `CenterAndExpand` 、 `EndAndExpand` 和 `FillAndExpand` 欄位則是用來定義對齊喜好設定，以及判斷視圖是否會在中佔用更多的空間（如果有的話） [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。
 

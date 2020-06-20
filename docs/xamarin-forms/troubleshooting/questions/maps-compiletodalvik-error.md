@@ -1,8 +1,22 @@
 ---
-標題：「為什麼要這麼做 Xamarin.Forms 。對應 Android 專案因因為 COMPILETODALVIK 非預期的最上層錯誤而失敗？」
-ms. 主題：疑難排解 ms-chap： assetid： C0251EB1-F509-47AD-98D6-846AF46425E5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date：04/25/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 為什麼我要這麼做 Xamarin.Forms 。對應 Android 專案失敗，發生因為 COMPILETODALVIK 非預期的最上層錯誤？
+ms.topic: troubleshooting
+ms.prod: xamarin
+ms.assetid: C0251EB1-F509-47AD-98D6-846AF46425E5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e29535e71cb77b05da41c043c6fd932ae4f5ce95
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135846"
 ---
-
 # <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>為什麼我要這麼做 Xamarin.Forms 。對應 Android 專案失敗，發生因為 COMPILETODALVIK 非預期的最上層錯誤？
 
 此錯誤可能會出現在 Visual Studio for Mac 的錯誤 pad 中，或在 Visual Studio 的 [組建輸出] 視窗中。在 Android 專案中使用 Xamarin.Forms 。繪.

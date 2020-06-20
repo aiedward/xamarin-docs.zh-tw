@@ -1,8 +1,22 @@
 ---
-標題：「顯示快顯」描述：「 Xamarin.Forms 提供三種快顯視窗的使用者介面元素–警示、動作表和提示。 本文示範如何使用警示、動作表和提示 Api 來顯示對話方塊，以詢問使用者簡單的問題、引導使用者完成工作，以及顯示提示。」
-assetid： 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/10/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 顯示快顯視窗
+description: Xamarin.Forms提供三個類似快顯視窗的使用者介面元素–警示、動作表和提示。 本文示範如何使用警示、動作表和提示 Api 來顯示對話方塊，以詢問使用者簡單的問題、引導使用者完成工作，以及顯示提示。
+ms.prod: xamarin
+ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a7ddd9134b7214b84a883e171d7b0cadaba3390b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136314"
 ---
-
 # <a name="display-pop-ups"></a>顯示快顯視窗
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms entry" 描述： "本文說明如何使用 Xamarin.Forms Entry 類別來接受應用程式中的單行文字或密碼輸入。
-assetid： 9923C541-3C10-4D14-BAB5-C4D6C514FB1E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/25/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms上場
+description: 本文說明如何使用 Xamarin.Forms Entry 類別來接受應用程式中的單行文字或密碼輸入。
+ms.prod: xamarin
+ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c17d6a106474c4c5b183bd41923533ffc95789b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136197"
 ---
-
 # <a name="xamarinforms-entry"></a>Xamarin.Forms上場
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

@@ -1,8 +1,22 @@
 ---
-標題：「使用 Azure Cosmos DB 檔資料庫來驗證使用者」和「 Xamarin.Forms 描述：」本文說明如何結合存取控制與 Azure Cosmos DB 分割的集合，讓使用者只能在應用程式中存取自己的檔 Xamarin.Forms 。」
-assetid： 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/16/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 Azure Cosmos DB 檔資料庫來驗證使用者，以及Xamarin.Forms
+description: 本文說明如何結合存取控制與 Azure Cosmos DB 分割的集合，讓使用者只能在應用程式中存取自己的檔 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/16/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7e1fb6342db4c97ea6946db366d356267c8c1b90
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570553"
 ---
-
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>使用 Azure Cosmos DB 檔資料庫來驗證使用者，以及Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
@@ -244,7 +258,7 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 如需有關從檔集合中刪除檔的詳細資訊，請參閱[從檔集合中刪除檔](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting-a-document-from-a-document-collection)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文說明如何結合存取控制與分割的集合，讓使用者只能在應用程式中存取自己的檔資料庫檔案 Xamarin.Forms 。 將使用者的身分識別指定為分割區索引鍵，可確保分割的集合只能儲存該使用者的檔。
 

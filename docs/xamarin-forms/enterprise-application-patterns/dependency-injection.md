@@ -1,8 +1,22 @@
 ---
-title：「相依性插入」描述：」本章節說明 eShopOnContainers 行動應用程式如何使用相依性插入，以根據這些類型的程式碼分離具體類型。」
-assetid： a150f2d1-06f8-4aed-ab4e-7a847d69f103 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 相依性插入
+description: 本章說明 eShopOnContainers 行動應用程式如何使用相依性插入，將具象的類型與依賴這些類型的程式碼分離。
+ms.prod: xamarin
+ms.assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572347"
 ---
-
 # <a name="dependency-injection"></a>相依性插入
 
 一般而言，當具現化物件時，會叫用類別的函式，而且物件所需的任何值都會當做引數傳遞至函式。 這是相依性插入的範例，特別是所謂的「程式性*插入*」。 物件所需的相依性會插入至此函式中。
@@ -146,7 +160,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > 當處置容器時，會處置註冊為單次個體的類型。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 相依性插入可將具象的類型與依賴這些類型的程式碼分離。 它通常會使用容器來保存介面與抽象類別型之間的註冊和對應清單，以及用來執行或擴充這些類型的實體類型。
 

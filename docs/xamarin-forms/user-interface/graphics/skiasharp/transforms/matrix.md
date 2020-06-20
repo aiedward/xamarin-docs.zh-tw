@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 中的矩陣轉換" 描述： "這篇文章探討更深入探討具有多功能轉換矩陣的 SkiaSharp 轉換，並使用範例程式碼示範這項功能。"
-skiasharp assetid： 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4 author： davidbritch ms. 作者： dabritch ms。日期：04/12/2017 不是-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 中的矩陣轉換
+description: 本文探討更深入探討使用多功能轉換矩陣的 SkiaSharp 轉換，並以範例程式碼示範這項工作。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/12/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e8d11add988828fa4e26d3f6728dd0b4319b3630
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133298"
 ---
-
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩陣轉換
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

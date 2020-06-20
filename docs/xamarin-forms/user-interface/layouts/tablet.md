@@ -1,8 +1,22 @@
 ---
-title： "平板電腦和桌面應用程式的配置" 描述： "本文說明如何優化 Xamarin.Forms 平板電腦的應用程式版面配置，而不是手機。
-assetid： D62F472B-4345-4983-8403-659A538B591F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/01/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 平板電腦和桌面應用程式的版面配置
+description: 本文說明如何優化平板電腦的 Xamarin.Forms 應用程式版面配置，而不是手機。
+ms.prod: xamarin
+ms.assetid: D62F472B-4345-4983-8403-659A538B591F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/01/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573244"
 ---
-
 # <a name="layout-for-tablet-and-desktop-apps"></a>平板電腦和桌面應用程式的版面配置
 
 Xamarin.Forms支援在支援的平臺上使用的所有裝置類型，因此除了電話以外，應用程式也可以在上執行：

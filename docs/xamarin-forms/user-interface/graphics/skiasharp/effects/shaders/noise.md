@@ -1,8 +1,22 @@
 ---
-title：「SkiaSharp 雜訊和撰寫」描述：「產生 Perlin 的雜訊著色器並與其他著色器結合」。
-skiasharp 的 assetid： 90C2D00A-2876-43EA-A836-538C3318CF93 author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: SkiaSharp 雜訊和撰寫
+description: 產生 Perlin 雜訊著色器並與其他著色器結合。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 90C2D00A-2876-43EA-A836-538C3318CF93
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127760"
 ---
-
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp 雜訊和撰寫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

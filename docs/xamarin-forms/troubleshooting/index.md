@@ -1,7 +1,23 @@
 ---
-標題：「疑難排解」描述：「常見的錯誤狀況以及如何解決這些問題」的毫秒。主題：疑難排解 ms-chap： xamarin assetid： 63291951-7375-4CBF-BCC3-2E4AD157A2C8 ms-chap： xamarin-forms author： davidbritch ms-chap： dabritch ms. date： 04/25/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 疑難排解
+description: 常見的錯誤狀況和解決方式
+ms.topic: troubleshooting
+ms.prod: xamarin
+ms.assetid: 63291951-7375-4CBF-BCC3-2E4AD157A2C8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 237dfd637d5456636afd19ea0175cb388773d273
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135911"
 ---
-
 # <a name="troubleshooting"></a>疑難排解
 
 _常見的錯誤狀況和解決方式_

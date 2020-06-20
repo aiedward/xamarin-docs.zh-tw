@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms AbsoluteLayout" 描述： "本文說明如何使用 Xamarin.Forms AbsoluteLayout 類別來建立最適合圖元的 ui。 這個類別會將子專案的位置和大小調整成與本身的大小和位置或絕對值成正比。」
-assetid： 01A5CCE0-AD45-4806-84FD-72C007005B38 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/25/2015 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsAbsoluteLayout
+description: 本文說明如何使用 Xamarin.Forms AbsoluteLayout 類別來建立最適合圖元的 ui。 這個類別會以其本身的大小和位置或絕對值為子項目的位置和大小。
+ms.prod: xamarin
+ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/25/2015
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570527"
 ---
-
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -26,7 +40,7 @@ assetid： 01A5CCE0-AD45-4806-84FD-72C007005B38 ms. 技術： xamarin-表單作�
 
 `AbsoluteLayout`可以在任何地方使用，而元素必須位於視圖內，而且在對齊元素與邊緣時特別有用。
 
-## <a name="usage"></a>使用方式
+## <a name="usage"></a>使用量
 
 ### <a name="proportional-layouts"></a>比例配置
 

@@ -1,12 +1,28 @@
 ---
-標題：「WPF 平臺安裝程式」描述： " Xamarin.Forms 現在有 wpf 平臺的預覽支援" ms. assetid：650723F2-4279-4B7B-B0A1-D7F8FF26BF1E。技術： xamarin-表單 ms. custom： xamu-video author： davidbritch ms-chap： dabritch ms. date： 04/09/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: WPF 平臺設定
+description: Xamarin.Forms具有 WPF 平臺的預覽支援。
+ms.prod: xamarin
+ms.assetid: 650723F2-4279-4B7B-B0A1-D7F8FF26BF1E
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 774ae964643b9b78f424d96b3dd382f244205dcf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946321"
 ---
-
 # <a name="wpf-platform-setup"></a>WPF 平臺設定
 
 ![預覽](~/media/shared/preview.png)
 
-Xamarin.Forms現在提供 Windows Presentation Foundation （WPF）的預覽支援。 本文示範如何將 WPF 專案加入至 Xamarin.Forms 方案。
+Xamarin.Forms具有 Windows Presentation Foundation （WPF）的預覽支援，在 .NET Framework 和 .NET Core 3 上。 本文示範如何將以 .NET Framework 為目標的 WPF 專案加入至 Xamarin.Forms 方案。
 
 > [!IMPORTANT]
 > Xamarin.FormsWPF 的支援是由「社區」提供。 如需詳細資訊，請參閱[ Xamarin.Forms 平臺支援](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support)。
@@ -24,6 +40,9 @@ Xamarin.Forms現在提供 Windows Presentation Foundation （WPF）的預覽支�
     ![加入新的 WPF 專案](wpf-images/add-project.png "加入新的 WPF 專案")
 
     按 [**下一步]** 按鈕。
+
+    > [!NOTE]
+    > Xamarin.Forms4.7 包含在 .NET Core 3 上執行之 WPF 應用程式的支援。
 
 3. 在 [**設定您的新專案**] 視窗中，以**wpf**擴充功能輸入專案的名稱，例如**BoxViewClock。** 按一下 [**流覽]** 按鈕，選取 [ **BoxViewClock** ] 資料夾，然後按 [**選取資料夾**]，將 WPF 專案放在與方案中的其他專案相同的目錄中：
 

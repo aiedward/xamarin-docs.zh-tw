@@ -1,8 +1,22 @@
 ---
-標題：「模型-視圖 ViewModel 模式」描述：「本章說明 eShopOnContainers 行動應用程式如何使用 MVVM 模式，將應用程式的商務和展示邏輯與使用者介面明確隔開。」
-assetid： dd8c1813-df44-4947-bcee-1a1ff2334b87 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 模型視圖-ViewModel 模式
+description: 本章說明 eShopOnContainers 行動應用程式如何使用 MVVM 模式，將應用程式的商務和展示邏輯與使用者介面完全分開。
+ms.prod: xamarin
+ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c07fc9f42c4175b4e4569ab95a951b24c130c4f3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572048"
 ---
-
 # <a name="the-model-view-viewmodel-pattern"></a>模型視圖-ViewModel 模式
 
 Xamarin.Forms開發人員體驗通常牽涉到在 XAML 中建立使用者介面，然後加入在使用者介面上運作的程式碼後置。 隨著應用程式的修改，以及大小和範圍的成長，可能會發生複雜的維護問題。 這些問題包括 UI 控制項與商務邏輯之間的緊密結合，這會增加進行 UI 修改的成本，以及對這類程式碼進行單元測試的困難。
@@ -57,7 +71,7 @@ MVVM 模式中有三個核心元件：模型、視圖和視圖模型。 每個�
 
 針對集合，會提供易記的視圖 `ObservableCollection<T>` 。 這個集合會執行集合已變更的通知，讓開發人員不必 `INotifyCollectionChanged` 在集合上實作為介面。
 
-### <a name="model"></a>型號
+### <a name="model"></a>模型
 
 模型類別是封裝應用程式資料的非視覺類別。 因此，您可以將模型視為代表應用程式的領域模型，這通常會包含資料模型以及商務和驗證邏輯。 模型物件的範例包括資料傳輸物件（Dto）、簡單的 CLR 物件（Poco），以及產生的實體和 proxy 物件。
 
@@ -343,7 +357,7 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 如需行為的詳細資訊，請參閱[行為](~/xamarin-forms/app-fundamentals/behaviors/index.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 模型 ViewModel （MVVM）模式有助於將應用程式的商務和展示邏輯與其使用者介面（UI）完全分開。 維護應用程式邏輯與 UI 之間的清楚分隔，有助於解決許多開發問題，並可讓應用程式更容易測試、維護和發展。 它也可以大幅改善程式碼重複使用的機會，並可讓開發人員和 UI 設計工具在開發應用程式的個別部分時，更輕鬆地共同作業。
 

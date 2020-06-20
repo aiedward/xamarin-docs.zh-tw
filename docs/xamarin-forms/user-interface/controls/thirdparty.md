@@ -1,8 +1,22 @@
 ---
-title：「 Xamarin.Forms 協力廠商控制項」描述：「 Xamarin.Forms 可從 Telerik、SyncFusion、DevExpress、Infragistics、ComponentOne 和 Steema 等公司取得開發的其他控制項。」
-assetid： C33A4848-3FC8-4A20-8275-387039F541AD ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/08/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms協力廠商控制項
+description: 您 Xamarin.Forms 可以從 Telerik、SyncFusion、DevExpress、Infragistics、ComponentOne 和 Steema 等公司取得開發的其他控制項。
+ms.prod: xamarin
+ms.assetid: C33A4848-3FC8-4A20-8275-387039F541AD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e0881296664ec20eeefe02c9db57a2fd76cd999b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132414"
 ---
-
 # <a name="xamarinforms-third-party-controls"></a>Xamarin.Forms協力廠商控制項
 
 除了提供的控制項以外 Xamarin.Forms ，協力廠商控制項也可從下列公司取得：

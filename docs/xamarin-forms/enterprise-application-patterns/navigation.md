@@ -1,8 +1,22 @@
 ---
-標題：「企業應用程式流覽」描述：「本章說明 eShopOnContainers 行動應用程式如何從視圖模型執行 view model first 導覽。」
-assetid： 4cad57b5-7fe4-4527-a988-d9b60c9620b4 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 企業應用程式流覽
+description: 本章說明 eShopOnContainers 行動應用程式如何從視圖模型執行視圖模型優先導覽。
+ms.prod: xamarin
+ms.assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca562120a819d4d9fe09b2ee5891a78f1010b1a5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572022"
 ---
-
 # <a name="enterprise-app-navigation"></a>企業應用程式流覽
 
 Xamarin.Forms包含頁面導覽的支援，這通常是因為內部邏輯驅動狀態變更而導致使用者與 UI 互動或從應用程式本身進行互動。 不過，在使用 ViewModel （MVVM）模式的應用程式中執行流覽可能會很複雜，因為必須符合下列挑戰：
@@ -283,7 +297,7 @@ private async Task NavigateAsync(string url)
 
 在導覽作業期間，應用程式可能需要與使用者互動，讓使用者可以確認或取消導覽。 這可能是必要的，例如，當使用者嘗試在完全完成資料輸入頁面之前進行流覽。 在此情況下，應用程式應該會提供通知，讓使用者可以從頁面流覽，或在流覽作業發生前取消該作業。 使用來自通知的回應來控制是否叫用導覽，即可在視圖模型類別中達成此目的。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 Xamarin.Forms包含頁面導覽的支援，這通常是因使用者與 UI 的互動，或來自應用程式本身的結果，因為內部邏輯驅動狀態變更的結果。 不過，在使用 MVVM 模式的應用程式中執行流覽可能會很複雜。
 

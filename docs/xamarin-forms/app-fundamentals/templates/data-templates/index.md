@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 資料範本" 描述： "DataTemplate 是用來指定支援之控制項上的資料外觀，通常會系結至要顯示的資料。"
-assetid： 838F4BDB-B719-457F-8633-27E9B267A2A0 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/11/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms資料範本
+description: DataTemplate 用於在支援的控制項中指定資料外觀，通常會繫結至要顯示的資料。
+ms.prod: xamarin
+ms.assetid: 838F4BDB-B719-457F-8633-27E9B267A2A0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/11/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e0961fad18ccd961a5b84b2a5535bca70781dd8d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136119"
 ---
-
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms資料範本
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)

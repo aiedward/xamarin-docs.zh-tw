@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms CollectionView 資料」描述：「CollectionView 會藉由將其 ItemsSource 屬性設定為任何可執行 IEnumerable 的集合來填入資料。」
-assetid： E1783E34-1C0F-401A-80D5-B2BE5508F5F8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/29/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView 資料
+description: CollectionView 會藉由將其 ItemsSource 屬性設定為任何可執行 IEnumerable 的集合來填入資料。
+ms.prod: xamarin
+ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/29/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e381184271d4a7bfa9872d2502d2281b1f3864bf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134559"
 ---
-
 # <a name="xamarinforms-collectionview-data"></a>Xamarin.FormsCollectionView 資料
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

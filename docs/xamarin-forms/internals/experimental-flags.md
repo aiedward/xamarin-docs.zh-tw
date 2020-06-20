@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 實驗性旗標" 描述： " Xamarin.Forms 實驗性旗標可讓工程小組更快速地將新功能交付給使用者，同時仍然能夠在他們移至穩定版本之前，先變更功能 api。」
-assetid： AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/14/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms實驗性旗標
+description: Xamarin.Forms實驗性旗標可讓工程小組更快速地將新功能交付給使用者，同時仍然能夠在移到穩定版本之前變更功能 Api。
+ms.prod: xamarin
+ms.assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 17fcc996b4dc8013a23a598ece8e240caba3f775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946113"
 ---
-
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms實驗性旗標
 
 當新 Xamarin.Forms 功能執行時，有時會放在實驗旗標後方。 這可讓工程小組更快速地為您提供新功能，同時仍可在將功能 Api 移至穩定版本之前加以變更。 一旦將功能移至穩定版本之後，就會移除實驗旗標。
@@ -12,10 +26,10 @@ Xamarin.Forms包含下列實驗旗標：
 - `AppTheme_Experimental`
 - `CarouselView_Experimental`
 - `Expander_Experimental`
-- `IndicatorView_Experimental`
 - `Markup_Experimental`
 - `MediaElement_Experimental`
 - `RadioButton_Experimental`
+- `Shapes_Experimental`
 - `Shell_UWP_Experimental`
 - `StateTriggers_Experimental`
 - `SwipeView_Experimental`
@@ -44,7 +58,7 @@ Xamarin.Forms.Forms.SetFlags("CarouselView_Experimental");
 `Xamarin.Forms.Forms.SetFlags`方法 `string` 會接受陣列引數，讓您可以在單一方法呼叫中啟用多個實驗旗標：
 
 ```csharp
-Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "IndicatorView_Experimental", "SwipeView_Experimental" });
+Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "MediaElement_Experimental", "SwipeView_Experimental" });
 ```
 
 > [!WARNING]

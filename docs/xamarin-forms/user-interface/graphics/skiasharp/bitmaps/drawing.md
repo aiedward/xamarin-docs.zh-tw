@@ -1,8 +1,22 @@
 ---
-標題：「在 SkiaSharp 點陣圖上建立和繪製」描述：「瞭解如何建立 SkiaSharp 點陣圖，然後藉由根據這些點陣圖建立畫布來繪製它們。」
-skiasharp 的 assetid： 79BD3266-D457-4E50-BDDF-33450035FA0F author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 在 SkiaSharp 點陣圖上建立和繪製
+description: 瞭解如何建立 SkiaSharp 點陣圖，然後藉由根據這些點陣圖建立畫布來繪製它們。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c045e297beca675c0582efc2f75b1d6b2bcedcf8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573286"
 ---
-
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>在 SkiaSharp 點陣圖上建立和繪製
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -188,7 +202,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 您不需要建立要在其上繪製的新點陣圖。 您也可以在現有的點陣圖上繪製。
 
-[**猴子 Moustache** ] 頁面會使用其函式來載入**MonkeyFace**影像。 接著，它會 `SKCanvas` 根據該點陣圖建立物件，並使用 `SKPaint` 和 `SKPath` 物件在其上繪製 moustache：
+[**猴子 Moustache** ] 頁面會使用其函式來載入**MonkeyFace.png**影像。 接著，它會 `SKCanvas` 根據該點陣圖建立物件，並使用 `SKPaint` 和 `SKPath` 物件在其上繪製 moustache：
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage

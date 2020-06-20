@@ -1,8 +1,24 @@
 ---
-標題：「在多頁應用程式中執行流覽」 Xamarin.Forms 描述：「本文將說明如何將單一頁面應用程式（能夠儲存單一便箋）轉換成多頁應用程式，能夠儲存多個便箋。」
-zone_pivot_groups： platform ms. 主題：快速入門 assetid： 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 04/01/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在多頁應用程式中執行流覽 Xamarin.Forms
+description: 本文說明如何將單頁應用程式 (能夠儲存單一備註) 變成多頁應用程式 (能夠儲存多個備註)。
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127877"
 ---
-
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多頁應用程式中執行流覽 Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)

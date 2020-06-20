@@ -1,7 +1,22 @@
 ---
-title： "Using CocosSharp in Xamarin.Forms " description： "CocosSharp 可用來將精確的圖形、影像和文字轉譯新增至應用程式，以獲得先進的視覺效果" ms. 生產： xamarin assetid： E0F404D5-5C6B-4288-92EC-78996C674E4E ms-chap： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 05/03/2016 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用中的 CocosSharpXamarin.Forms
+description: CocosSharp 可以用來將精確的圖形、影像和文字轉譯新增至應用程式，以進行先進的視覺效果
+ms.prod: xamarin
+ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/03/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a3183997eb229fd3548a1afeccf82670cf651a71
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565300"
 ---
-
 # <a name="using-cocossharp-in-xamarinforms"></a>使用中的 CocosSharpXamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)
@@ -300,7 +315,7 @@ CocosSharp 圓形現在會移動以回應按下的動作。 我們也可以清�
 
 ![](cocossharp-images/image8.png "GameScene with Moving Circle")
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本指南說明如何將 CocosSharp 新增至現有的 Xamarin.Forms 專案、如何建立 Xamarin.Forms 和 CocosSharp 之間的互動，以及討論在 CocosSharp 中建立配置時的各種考慮。
 

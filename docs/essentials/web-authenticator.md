@@ -1,8 +1,20 @@
 ---
-title： " Xamarin.Essentials ： Web 驗證器" 描述： "本檔描述中的 WebAuthenticator 類別 Xamarin.Essentials ，可讓您啟動以瀏覽器為基礎的驗證流程，以接聽應用程式的回呼。
-assetid： 3D95371E-5D59-440E-8D31-F3C04E493DC1 author： redth ms-chap： jodick ms. date： 03/26/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials： Web 驗證器
+description: 本檔描述中的 WebAuthenticator 類別 Xamarin.Essentials ，可讓您啟動以瀏覽器為基礎的驗證流程，以接聽應用程式的回呼。
+ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
+author: redth
+ms.author: jodick
+ms.date: 03/26/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 578e750afd718c684d70217355629a0286d2b028
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801877"
 ---
-
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
 **WebAuthenticator**類別可讓您起始以瀏覽器為基礎的流程，以接聽向應用程式註冊之特定 URL 的回呼。
@@ -220,6 +232,6 @@ public class AuthController : ControllerBase
 -----
 ## <a name="api"></a>API
 
-- [WebAuthenticator 原始程式碼](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/WebAuthenticator)
+- [WebAuthenticator 原始程式碼](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/WebAuthenticator)
 - [WebAuthenticator API 檔](xref:Xamarin.Essentials.WebAuthenticator)
 - [ASP.NET Core Server 範例](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)

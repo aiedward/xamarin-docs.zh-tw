@@ -1,8 +1,22 @@
 ---
-標題：「使用 Azure Active Directory B2C 驗證使用者」描述：「Azure Active Directory B2C 為取用者面向的 web 和行動應用程式提供雲端身分識別管理。 本文說明如何使用 Azure Active Directory B2C，將身分識別管理整合到具有 Microsoft 驗證程式庫的行動應用程式中。」
-assetid： B0A5DB65-0585-4A00-B908-22CCC286E6B6 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 Azure Active Directory B2C 驗證使用者
+description: Azure Active Directory B2C 為取用者面向的 web 和行動應用程式提供雲端身分識別管理。 本文說明如何使用 Azure Active Directory B2C，將身分識別管理整合到具有 Microsoft 驗證程式庫的行動應用程式中。
+ms.prod: xamarin
+ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 64529b81a375ee5a8cc8a96ec557c03401e60495
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130568"
 ---
-
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>使用 Azure Active Directory B2C 驗證使用者
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)

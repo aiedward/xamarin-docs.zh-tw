@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 雙畫面裝置功能」描述：「本指南說明如何使用 Xamarin.Forms DualScreenInfo 類別，將您的應用程式體驗優化，例如 surface 雙核處理器技術和 surface Neo。」
-assetid： dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa ms. 技術： xamarin-表單作者： davidortinau ms. author： daortin ms. 日期：02/08/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms雙畫面裝置功能
+description: 本指南說明如何使用 Xamarin.Forms DualScreenInfo 類別，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。
+ms.prod: xamarin
+ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946345"
 ---
-
 # <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms雙畫面裝置功能
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -18,15 +32,15 @@ assetid： dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa ms. 技術： xamarin-表單作�
 - `IsLandscape`：指出裝置是否為橫向。 因為在應用程式跨越兩個螢幕時，原生方向 API 並不會正確回報方向，所以這會非常有幫助。
 - `SpanMode`：指出版面配置處於直向、橫向或單一窗格模式。
 
-此外，當有任何屬性變更時，也會引發 `PropertyChanged` 事件。
+此外， `PropertyChanged` 當任何屬性變更時，也會引發事件，而 `HingeAngleChanged` 當轉軸角度變更時，就會引發事件。
 
-## <a name="poll-hinge-angle-on-android"></a>在 Android 上輪詢鉸鏈角度
+## <a name="poll-hinge-angle-on-android-and-uwp"></a>在 Android 和 UWP 上輪詢轉軸角度
 
-從 Android 平台專案存取 `DualScreenInfo` 時，可使用下列屬性：
+`DualScreenInfo`從 Android 和 UWP 平臺專案存取時，可以使用下列方法：
 
 - `GetHingeAngleAsync`：擷取裝置鉸鏈的目前角度。 使用模擬器時，可以藉由修改壓力感應器來設定 HingeAngle。
 
-您可從 Android 自訂轉譯器中使用此屬性：
+您可以從 Android 和 UWP 上的自訂轉譯器叫用此方法。 下列程式碼顯示 Android 自訂轉譯器範例：
 
 ```csharp
 public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer
