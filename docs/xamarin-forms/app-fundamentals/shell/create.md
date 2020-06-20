@@ -1,8 +1,22 @@
 ---
-標題：「建立 Xamarin.Forms Shell 應用程式」描述：「建立 Xamarin.Forms shell 應用程式的流程是建立可子類別化 shell 類別的 XAML 檔案，將應用程式類別的 MainPage 屬性設定為子類別化的 shell 物件，然後在子類別化的 shell 類別中描述應用程式的視覺化階層。」
-assetid： 2A51D78F-6CD5-4BC4-A62E-11CEFA799987 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/24/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 建立 Xamarin.Forms Shell 應用程式
+description: 建立 Xamarin.Forms shell 應用程式的流程是建立一個子類別化 shell 類別的 XAML 檔案，將應用程式類別的 MainPage 屬性設定為子類別化的 shell 物件，然後在子類別化的 shell 類別中描述應用程式的視覺化階層。
+ms.prod: xamarin
+ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/24/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62c323dd73f656d5b4f4e06c672fd952845efb22
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137796"
 ---
-
 # <a name="create-a-xamarinforms-shell-application"></a>建立 Xamarin.Forms Shell 應用程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 雙畫面」描述：「本指南說明如何建立 Xamarin.Forms 雙畫面裝置的應用程式」。
-assetid： f9906e83-f8ae-48f9-997b-e1540b96ee8e ms. 技術： xamarin-表單作者： davidortinau ms. author： daortin ms. 日期：02/08/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms雙畫面
+description: 本指南說明如何建立 Xamarin.Forms 雙畫面裝置的應用程式。
+ms.prod: xamarin
+ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: aeaaeb732adaea45446d6baf833027801abf4d2a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138901"
 ---
-
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Forms雙畫面
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

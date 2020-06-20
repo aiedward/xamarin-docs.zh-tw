@@ -1,8 +1,22 @@
 ---
-title： "自訂 ViewCell" 描述： " Xamarin.Forms ViewCell 是可新增至 ListView 或 TableView 的資料格，其中包含開發人員定義的視圖。 本文示範如何為裝載于 ListView 控制項內的 ViewCell 建立自訂轉譯器 Xamarin.Forms 。
-assetid： 61F378C9-6DEF-436B-ACC3-2324B25D404E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/07/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 自訂 ViewCell
+description: Xamarin.FormsViewCell 是可以加入至 ListView 或 TableView 的資料格，其中包含開發人員定義的視圖。 本文示範如何為裝載于 ListView 控制項內的 ViewCell 建立自訂轉譯器 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/07/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573868"
 ---
-
 # <a name="customizing-a-viewcell"></a>自訂 ViewCell
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
@@ -553,7 +567,7 @@ namespace CustomRenderer.UWP
 
 `DataTemplate` 指定顯示資料格內容及其配置和外觀所用的控制項。 透過資料繫結使用兩個 `TextBlock` 控制項和一個 `Image` 控制項來顯示資料格的內容。 此外，使用 `ConcatImageExtensionConverter` 的執行個體將 `.jpg` 副檔名串連到每個影像檔案名稱。 這可確保 `Image` 控制項在設定了 `Source` 屬性後，可以載入及轉譯影像。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何為裝載于控制項內的建立自訂轉譯器 [`ViewCell`](xref:Xamarin.Forms.ViewCell) Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 。 這會停止在 Xamarin.Forms 滾動期間重複呼叫版面配置計算 `ListView` 。
 

@@ -1,8 +1,22 @@
 ---
-標題：「邊界和填補」描述：「邊界和填補屬性會在使用者介面中轉譯元素時，控制版面配置行為。 本文將示範兩個屬性之間的差異，以及如何設定它們。」
-assetid： BEB096BB-51DF-410F-B0F1-D235287B0F4A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/27/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 邊界和邊框間距
+description: 邊界和填補屬性會在使用者介面中轉譯元素時，控制配置行為。 本文示範兩個屬性之間的差異，以及如何設定它們。
+ms.prod: xamarin
+ms.assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137981"
 ---
-
 # <a name="margin-and-padding"></a>邊界和邊框間距
 
 _邊界和填補屬性會在使用者介面中轉譯元素時，控制配置行為。本文示範兩個屬性之間的差異，以及如何設定它們。_

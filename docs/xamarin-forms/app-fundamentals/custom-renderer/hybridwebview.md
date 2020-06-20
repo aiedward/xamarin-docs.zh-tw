@@ -1,8 +1,22 @@
 ---
-標題：「自訂 web 程式名稱」描述：「web 工作」 Xamarin.Forms 是在您的應用程式中顯示 web 和 HTML 內容的視圖。 本文說明如何建立自訂轉譯器，以擴充 Web 工作，以允許從 JavaScript 叫用 c # 程式碼。」
-assetid： 58DFFA52-4057-49A8-8682-50A58C7E842C ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/31/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 自訂 WebView
+description: 'Xamarin.FormsWeb 工作是在您的應用程式中顯示網頁和 HTML 內容的視圖。 本文說明如何建立自訂轉譯器以擴充 Web 工作，以允許從 JavaScript 叫用 c # 程式碼。'
+ms.prod: xamarin
+ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/31/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138966"
 ---
-
 # <a name="customizing-a-webview"></a>自訂 WebView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)

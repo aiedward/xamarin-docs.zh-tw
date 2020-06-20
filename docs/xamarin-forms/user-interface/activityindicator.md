@@ -1,8 +1,22 @@
 ---
-title： "說明：" 中的活動指標 Xamarin.Forms ActivityIndicator 控制項向使用者表示應用程式正在進行長時間的活動，而不會提供進度的指示。 本文說明如何在 XAML 和程式碼中使用 ActivityIndicator。」
-assetid： 4CEED02D-5CA3-4C3A-B7ED-3193FC272261 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：07/10/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的活動指標Xamarin.Forms
+description: ActivityIndicator 控制項會向使用者表示應用程式正在進行長時間的活動，而不會提供進度的指示。 本文說明如何在 XAML 和程式碼中使用 ActivityIndicator。
+ms.prod: xamarin
+ms.assetid: 4CEED02D-5CA3-4C3A-B7ED-3193FC272261
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 07/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a83885175a44f2174db343abf4591f8777041d39
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136509"
 ---
-
 # <a name="xamarinforms-activityindicator"></a>Xamarin.FormsActivityIndicator
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 

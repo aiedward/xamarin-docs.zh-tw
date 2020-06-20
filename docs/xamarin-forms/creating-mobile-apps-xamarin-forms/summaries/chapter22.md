@@ -1,7 +1,22 @@
 ---
-title： "第22章的摘要。 動畫「描述：」建立 Mobile Apps Xamarin.Forms ：第22章的摘要。 動畫 "ms-chap： xamarin ms. 技術： xamarin assetid： 47C2B9AB-E688-4412-8AF5-9F633B3DA695 author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第22章的摘要。 動畫
+description: 建立 Mobile Apps Xamarin.Forms ：第22章的摘要。 動畫
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a8a089c210a3fe2f48dbe32bf8cda6179af2a78
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136626"
 ---
-
 # <a name="summary-of-chapter-22-animation"></a>第22章的摘要。 動畫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)

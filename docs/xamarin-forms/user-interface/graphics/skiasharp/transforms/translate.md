@@ -1,8 +1,22 @@
 ---
-標題：「翻譯轉換」描述：「本文將探討如何在應用程式中使用轉譯轉換來移位 SkiaSharp 圖形 Xamarin.Forms ，並使用範例程式碼示範這項功能。」
-skiasharp 的 assetid： BD28ADA1-49F9-44E2-A548-46024A29882F author： davidbritch ms-chap： dabritch ms. date： 03/10/2017 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 平移轉換
+description: 本文將探討如何在應用程式中使用「轉譯」轉換來移位 SkiaSharp 圖形 Xamarin.Forms ，並使用範例程式碼示範這項功能。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138251"
 ---
-
 # <a name="the-translate-transform"></a>平移轉換
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

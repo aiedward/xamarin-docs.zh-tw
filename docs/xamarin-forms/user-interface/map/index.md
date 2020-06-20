@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms map" 描述： "地圖控制項會顯示對應，而且需要 Xamarin.Forms 。對應 NuGet 套件。」
-assetid： B669B5EE-D24C-4C69-93E1-2CA5CC9108B5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/29/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms地圖
+description: 地圖控制項會顯示對應，而且需要 Xamarin.Forms 。對應 NuGet 套件。
+ms.prod: xamarin
+ms.assetid: B669B5EE-D24C-4C69-93E1-2CA5CC9108B5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/29/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2461ffa8168207e6a57fae005f752be48772a34a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139824"
 ---
-
 # <a name="xamarinforms-map"></a>Xamarin.Forms地圖
 
 ## <a name="initialization-and-configuration"></a>[初始化和設定](setup.md)

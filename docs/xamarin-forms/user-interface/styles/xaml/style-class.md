@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 樣式類別" 描述： " Xamarin.Forms 樣式類別可讓多個樣式套用至控制項，而不需要採用樣式繼承。"
-assetid： 4762401E-2B48-48F1-B6E4-61F7AF8AA46F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/30/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms樣式類別
+description: Xamarin.Forms樣式類別可以讓多個樣式套用至控制項，而不需要採用樣式繼承。
+ms.prod: xamarin
+ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138758"
 ---
-
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms樣式類別
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

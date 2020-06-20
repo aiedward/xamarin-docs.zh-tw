@@ -1,7 +1,22 @@
 ---
-title： "第20章的摘要。 非同步和檔案 i/o 「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第20章的摘要。 Async 和 file i/o "ms-chap： xamarin ms. 技術： assetid： D595862D-64FD-4C0D-B0AD-C1F440564247 author： davidbritch ms-chap： dabritch ms. date： 07/18/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第20章的摘要。 非同步與檔案 I/O
+description: 建立 Mobile Apps Xamarin.Forms ：第20章的摘要。 非同步與檔案 I/O
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/18/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ad71dc5f5389f1676698a761a138b3f76ffa9fa0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136678"
 ---
-
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第20章的摘要。 非同步與檔案 I/O
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)

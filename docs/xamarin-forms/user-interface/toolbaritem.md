@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms ToolbarItem" 描述： "ToolbarItem 類別是在應用程式的導覽列中使用的特殊按鈕類型。"
-assetId： CC737D54-0280-46BD-A2BC-A0FB67DDD6A1 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：07/29/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsToolbarItem
+description: ToolbarItem 類別是在應用程式的導覽列中使用的特殊按鈕類型。
+ms.prod: xamarin
+ms.assetId: CC737D54-0280-46BD-A2BC-A0FB67DDD6A1
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 07/29/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46aba32ebbae1646b9af00877bba530b619210cd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138212"
 ---
-
 # <a name="xamarinforms-toolbaritem"></a>Xamarin.FormsToolbarItem
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)

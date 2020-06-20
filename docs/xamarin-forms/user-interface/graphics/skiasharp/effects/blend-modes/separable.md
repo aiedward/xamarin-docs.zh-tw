@@ -1,8 +1,22 @@
 ---
-title：「可分離的 blend 模式」描述：「使用可分離的 blend 模式來改變紅色、綠色和藍色色彩」。
-skiasharp 的 assetid： 66D1A537-A247-484E-B5B9-FBCB7838FBE9 author： davidbritch ms-chap： dabritch ms. date： 08/23/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 分離的 blend 模式
+description: 使用可分離的 blend 模式來改變紅色、綠色和藍色色彩。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139681"
 ---
-
 # <a name="the-separable-blend-modes"></a>分離的 blend 模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -136,7 +150,7 @@ public partial class LightenAndDarkenPage : ContentPage
 
 下表顯示所有可分離的 blend 模式，並簡短說明其用途。 第二個數據行顯示不會產生變更的來源色彩：
 
-| Blend 模式   | 沒有變更 | 操作 |
+| Blend 模式   | 沒有變更 | 作業 |
 | ------------ | --------- | --------- |
 | `Plus`       | 黑色     | 藉由新增色彩來將其變亮： Sc + Dc |
 | `Modulate`   | 白色     | 以乘以色彩來變暗： Sc ·Dc | 

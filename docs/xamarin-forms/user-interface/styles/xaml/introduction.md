@@ -1,8 +1,22 @@
 ---
-title： "樣式簡介 Xamarin.Forms " 描述： "樣式允許自訂視覺元素的外觀。 樣式是針對特定類型而定義的，而且包含該類型上可用屬性的值。」
-assetid： 3FF899C0-6CFB-4C1D-837D-9E9E10181967 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/27/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 樣式簡介 Xamarin.Forms
+description: 樣式允許自訂視覺元素的外觀。 樣式是針對特定類型而定義的，而且包含該類型上可用屬性的值。
+ms.prod: xamarin
+ms.assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5766af7da3a0cf550a2ccb3a926dad25fd7962eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138813"
 ---
-
 # <a name="introduction-to-xamarinforms-styles"></a>樣式簡介 Xamarin.Forms
 
 _樣式允許自訂視覺元素的外觀。樣式是針對特定類型而定義的，而且包含該類型上可用屬性的值。_

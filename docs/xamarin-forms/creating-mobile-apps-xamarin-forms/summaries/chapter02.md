@@ -1,7 +1,22 @@
 ---
-title： "第2章的摘要。 應用程式的結構「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第2章的摘要。 應用程式的結構 "ms. 生產： xamarin ms. 技術： assetid： 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第2章的摘要。 應用程式剖析
+description: 建立 Mobile Apps Xamarin.Forms ：第2章的摘要。 應用程式剖析
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 78da3ed91acea0c056074d712d368de70b251392
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136912"
 ---
-
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第2章的摘要。 應用程式剖析
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)

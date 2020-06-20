@@ -1,8 +1,22 @@
 ---
-title： "ListView 外觀" 描述： "本文說明如何 Xamarin.Forms 使用標頭、頁尾、群組和變數高度資料格，在應用程式中自訂 listview。
-assetid： DC8009B0-4371-4D60-885A-5362FC7EE3E5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/13/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: ListView 外觀
+description: 本文說明如何 Xamarin.Forms 使用標頭、頁尾、群組和變數高度資料格，在應用程式中自訂 listview。
+ms.prod: xamarin
+ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/13/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139915"
 ---
-
 # <a name="listview-appearance"></a>ListView 外觀
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)

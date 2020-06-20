@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms CarouselView 互動」描述：「CarouselView 中目前顯示的專案可以透過 CurrentItem 和 Position 屬性來存取」。
-assetid： 854D97E5-D119-4BE2-AE7C-BD428792C992 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/11/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCarouselView 互動
+description: 您可以透過 [CurrentItem] 和 [位置] 屬性來存取 CarouselView 中目前顯示的專案。
+ms.prod: xamarin
+ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/11/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137406"
 ---
-
 # <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselView 互動
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)

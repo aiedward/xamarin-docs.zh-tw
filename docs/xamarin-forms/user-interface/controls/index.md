@@ -1,8 +1,22 @@
 ---
-title： "控制項參考" 描述： "用來建立應用程式之所有使用者介面元素的描述 Xamarin.Forms 。 本文列出組成應用程式使用者介面的控制項群組 Xamarin.Forms 。」
-assetid： F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/08/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 控制項參考
+description: 用來建立應用程式之所有使用者介面元素的描述 Xamarin.Forms 。 本文列出組成應用程式使用者介面的控制項群組 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e843f0e42f4f66a6ce4e60c2f5d8a233d19f1df6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136392"
 ---
-
 # <a name="controls-reference"></a>控制項參考
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -11,7 +25,7 @@ assetid： F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F ms. 技術： xamarin-表單作�
 
 用來建立應用程式使用者介面的四個主要控制項群組如下所示 Xamarin.Forms ：
 
-- [**Pages**](pages.md)
+- [**頁面**](pages.md)
 - [**版面配置**](layouts.md)
 - [**檢視**](views.md)
 - [**資料格**](cells.md)
@@ -29,4 +43,4 @@ Xamarin.Forms頁面通常會佔用整個畫面。 此頁面通常包含一個版
 
 - [Xamarin.FormsFormsGallery 範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 - [Xamarin.Forms控制項類別階層架構](~/xamarin-forms/internals/class-hierarchy.md)
-- [API 文件](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
+- [API 檔](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

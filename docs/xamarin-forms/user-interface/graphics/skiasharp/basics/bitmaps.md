@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 中的點陣圖基本概念" 描述： "本文說明如何從各種來源載入 SkiaSharp 中的點陣圖，並將其顯示在 Xamarin.Forms 應用程式中，並以範例程式碼示範。
-skiasharp 的 assetid： 32C95DFF-9065-42D7-966C-D3DBD16906B3 author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: SkiaSharp 中的點陣圖基本概念
+description: 本文說明如何從各種來源載入 SkiaSharp 中的點陣圖，並將其顯示在 Xamarin.Forms 應用程式中，並使用範例程式碼示範這項功能。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137731"
 ---
-
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的點陣圖基本概念
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

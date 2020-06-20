@@ -1,8 +1,22 @@
 ---
-title： "三種類型的貝茲曲線" 描述： "本文說明如何使用 SkiaSharp 來轉譯應用程式中的三、二次方和圓錐曲線 Xamarin.Forms ，並使用範例程式碼示範此動作。
-skiasharp assetid： 8FE0F6DC-16BC-435F-9626-DD1790C0145A 作者： davidbritch ms。作者： dabritch ms。日期：05/25/2017 不是-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 三種類型的貝茲曲線
+description: 本文說明如何使用 SkiaSharp 來轉譯應用程式中的三次、二次方和圓錐曲線 Xamarin.Forms ，並使用範例程式碼示範這項功能。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138680"
 ---
-
 # <a name="three-types-of-bzier-curves"></a>三種類型的貝茲曲線
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-title： "Touch 操作" 描述： "本文說明如何使用矩陣轉換來執行觸控拖曳、捏合和旋轉，並使用範例程式碼示範這點。
-skiasharp 的 assetid： A0B8DD2D-7392-4EC5-BFB0-6209407AD650 author： davidbritch ms-chap： dabritch ms. date： 09/14/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 觸控操作
+description: 本文說明如何使用矩陣轉換來執行觸控拖曳、捏合和旋轉，並使用範例程式碼示範這點。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/14/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f5738f376e2a814ef1af455178c2e68135184402
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140162"
 ---
-
 # <a name="touch-manipulations"></a>觸控操作
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

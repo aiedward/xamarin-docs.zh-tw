@@ -1,8 +1,22 @@
 ---
-標題：「SkiaSharp mask 篩選器」描述：「瞭解如何使用遮罩篩選器來建立模糊和其他 Alpha 效果」。
-skiasharp 的 assetid： 940422A1-8BC0-4039-8AD7-26C61320F858 author： davidbritch ms-chap： dabritch ms. date： 08/27/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: SkiaSharp mask 篩選
+description: 瞭解如何使用遮罩篩選來建立模糊和其他 Alpha 效果。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136405"
 ---
-
 # <a name="skiasharp-mask-filters"></a>SkiaSharp mask 篩選
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

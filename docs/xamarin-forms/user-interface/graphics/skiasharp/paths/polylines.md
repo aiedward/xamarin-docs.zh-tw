@@ -1,8 +1,22 @@
 ---
-title： "折線和參數方程式描述：" 本文說明如何使用 SkiaSharp 來轉譯您可以使用參數化方程式定義的任何行，並以範例程式碼示範此動作。
-assetid： 85AEBB33-E954-4364-A6E1-808FAB197BEE ms. 技術： xamarin skiasharp author： davidbritch ms-chap： dabritch ms. date：03/10/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 聚合線條和參數化的方程式
+description: 本文說明如何使用 SkiaSharp 來轉譯可使用參數化方程式定義的任何行，並以範例程式碼示範這項操作。
+ms.prod: xamarin
+ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140214"
 ---
-
 # <a name="polylines-and-parametric-equations"></a>聚合線條和參數化的方程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

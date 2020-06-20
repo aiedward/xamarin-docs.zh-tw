@@ -1,8 +1,22 @@
 ---
-標題：「將 SkiaSharp 點陣圖儲存至檔案」描述： < 探索 SkiaSharp 支援的各種檔案格式，以將點陣圖儲存在使用者的相片媒體櫃中。」
-skiasharp 的 assetid： 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C author： davidbritch ms-chap： dabritch ms. date： 07/10/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 將 SkiaSharp 點陣圖儲存至檔案
+description: 探索 SkiaSharp 所支援的各種檔案格式，以將點陣圖儲存在使用者的相片媒體櫃中。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138654"
 ---
-
 # <a name="saving-skiasharp-bitmaps-to-files"></a>將 SkiaSharp 點陣圖儲存至檔案
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -442,7 +456,7 @@ public partial class SaveFileFormatsPage : ContentPage
 
 儲存檔案**格式**頁面所節省的點陣圖是 600-圖元正方形。 每圖元4個位元組，在記憶體中總計1440000個位元組。 下表顯示各種檔案格式和品質組合的檔案大小：
 
-|格式|品質|大小|
+|[格式]|品質|大小|
 |------|------:|---:|
 | PNG | N/A | 492K |
 | JPEG | 0 | 2.95 k |

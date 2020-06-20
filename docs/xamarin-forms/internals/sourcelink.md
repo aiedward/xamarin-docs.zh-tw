@@ -1,8 +1,23 @@
 ---
-標題：「來源連結與「 Xamarin.Forms 描述：」本文說明如何使用「來源連結」來進行調試 Xamarin.Forms 。」
-zone_pivot_groups： "platform" ms-chap： xamarin assetId： 1E13FCD9-5607-46E8-80E4-87A58B389BEB ms-chap： xamarin-forms author： profexorgeek ms-chap： jusjohns ms. date： 09/26/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 來源連結與Xamarin.Forms
+description: 本文說明如何使用 [來源] 連結來進行 debug Xamarin.Forms 。
+zone_pivot_groups: platform
+ms.prod: xamarin
+ms.assetId: 1E13FCD9-5607-46E8-80E4-87A58B389BEB
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 09/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57db314538c42ef9d58691ba16ab68371ff092b7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138289"
 ---
-
 # <a name="source-link-with-xamarinforms"></a>來源連結與Xamarin.Forms
 
 Xamarin.FormsNuGet 套件包含來源連結對應。 來源連結會將 NuGet 套件中包含的已編譯程式庫對應至原始程式碼存放庫。 Visual Studio 會在進行偵錯工具期間下載原始程式碼檔案，並允許開發人員逐步執行程式碼，而不需要從來源建立即可進行封裝的偵錯工具。

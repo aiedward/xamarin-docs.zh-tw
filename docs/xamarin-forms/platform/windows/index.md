@@ -1,8 +1,22 @@
 ---
-標題：「Windows 平臺功能」描述：「本文將說明中提供的 Windows 平臺支援。」 Xamarin.Forms
-assetid： F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/16/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Windows 平臺功能
+description: 本文說明提供的 Windows 平臺支援 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52246ce5d54ba97e91777f598f25c187901f89c4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137770"
 ---
-
 # <a name="windows-platform-features"></a>Windows 平臺功能
 
 開發 Xamarin.Forms 適用于 Windows 平臺的應用程式需要 Visual Studio。 [[支援的平臺] 頁面](~/get-started/supported-platforms.md)包含必要元件的詳細資訊。

@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 雙重螢幕平臺協助程式" 描述： "本指南說明如何使用 Xamarin.Forms DualScreenHelper 類別，將您的應用程式體驗優化，例如 surface 雙核處理器技術和 surface Neo。"
-assetid： 5aa184c2-5611-427d-85c7-1c56486c3e1b ms. 技術： xamarin-表單作者： davidortinau ms. author： daortin ms. 日期：02/08/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms雙畫面平臺協助程式
+description: 本指南說明如何使用 Xamarin.Forms DualScreenHelper 類別，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。
+ms.prod: xamarin
+ms.assetid: 5aa184c2-5611-427d-85c7-1c56486c3e1b
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d9daf5a24c0dcfd07d529955c411259f4c1359df
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138940"
 ---
-
 # <a name="xamarinforms-dual-screen-platform-helpers"></a>Xamarin.Forms雙畫面平臺協助程式
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

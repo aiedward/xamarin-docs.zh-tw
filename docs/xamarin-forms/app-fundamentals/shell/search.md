@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms Shell 搜尋」描述：「 Xamarin.Forms shell 應用程式可以使用可新增至每個頁面頂端的搜尋方塊所提供的整合式搜尋功能」。
-assetid： F8F9471D-6771-4D23-96C0-2B79473A06D4 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/18/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsShell 搜尋
+description: Xamarin.FormsShell 應用程式可以使用可新增至每個頁面頂端的搜尋方塊所提供的整合式搜尋功能。
+ms.prod: xamarin
+ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/18/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138082"
 ---
-
 # <a name="xamarinforms-shell-search"></a>Xamarin.FormsShell 搜尋
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

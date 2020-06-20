@@ -1,8 +1,22 @@
 ---
-標題：「適用于 iOS 的滑杆點」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺專屬的，讓您可以在滑動軸上按下滑杆來設定 [值] 屬性。
-assetid： D0915D37-9A59-4728-BB6A-FE094A661275 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/24/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的滑杆
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，讓 Slider 的值屬性可透過在滑杆列上進行設定。
+ms.prod: xamarin
+ms.assetid: D0915D37-9A59-4728-BB6A-FE094A661275
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 93b4dba3e8543bd2cc2a4f2187f617aae5daff77
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137068"
 ---
-
 # <a name="slider-thumb-tap-on-ios"></a>IOS 上的滑杆
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

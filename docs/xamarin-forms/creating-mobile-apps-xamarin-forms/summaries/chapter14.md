@@ -1,7 +1,22 @@
 ---
-title： "第14章的摘要。 絕對配置的「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第14章的摘要。 絕對版面配置 "ms. 生產： xamarin ms. 技術： xamarin-assetid： 88882A48-3226-42D1-96ED-241250B64A84 author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第14章的摘要。 絕對版面配置
+description: 建立 Mobile Apps Xamarin.Forms ：第14章的摘要。 絕對版面配置
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72ee9c4a481388e69aeeb52dbd5b8eeaabb164f6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136756"
 ---
-
 # <a name="summary-of-chapter-14-absolute-layout"></a>第14章的摘要。 絕對版面配置
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)

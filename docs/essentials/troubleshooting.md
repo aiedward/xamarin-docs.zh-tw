@@ -1,8 +1,20 @@
 ---
-title： " Xamarin.Essentials ：疑難排解" 描述： "本檔說明如何針對使用程式庫進行開發時所遇到的問題進行疑難排解 Xamarin.Essentials 。
-assetid： 2E474FAF-F841-4E3C-B815-F7ABD8EE3361 author： jamesmontemagno ms-chap： jamont ms. date： 01/06/2020 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Essentials：疑難排解
+description: 本檔說明如何針對使用程式庫進行開發時所遇到的問題進行疑難排解 Xamarin.Essentials 。
+ms.assetid: 2E474FAF-F841-4E3C-B815-F7ABD8EE3361
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 67a060667cef5f96fa864aa2db3356ac5b9b2dfb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137120"
 ---
-
 # <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials：疑難排解
 
 ## <a name="error-version-conflict-detected-for-xamarinandroidsupportcompat"></a>錯誤：偵測到 Xamarin.Android.Support.Compat 的版本衝突

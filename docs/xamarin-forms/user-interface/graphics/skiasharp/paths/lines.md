@@ -1,8 +1,22 @@
 ---
-標題：「線條和筆觸端點」描述：「本文說明如何使用 SkiaSharp 在應用程式中繪製具有不同筆觸端點的線條 Xamarin.Forms ，並使用範例程式碼示範這項功能。」
-assetid： 1F854DDD-5D1B-4DE4-BD2D-584439429FDB ms. 技術： xamarin skiasharp author： davidbritch ms-chap： dabritch ms. date：03/10/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 線條和筆觸端點
+description: 本文說明如何使用 SkiaSharp 在應用程式中以不同的筆觸帽繪製線條 Xamarin.Forms ，並使用範例程式碼示範這項功能。
+ms.prod: xamarin
+ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137199"
 ---
-
 # <a name="lines-and-stroke-caps"></a>線條和筆觸端點
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

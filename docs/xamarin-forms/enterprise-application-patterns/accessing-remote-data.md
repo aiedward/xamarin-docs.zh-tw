@@ -1,8 +1,22 @@
 ---
-標題：「存取遠端資料」描述：「本章說明 eShopOnContainers 的行動應用程式如何從容器化微服務存取資料。」
-assetid： 42eba6f5-9784-4e1a-9943-5c1fbeea7452 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 存取遠端資料
+description: 本章說明 eShopOnContainers mobile 應用程式如何從容器化微服務存取資料。
+ms.prod: xamarin
+ms.assetid: 42eba6f5-9784-4e1a-9943-5c1fbeea7452
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cef3c2369bb4aee81a52ddd27d6ad732d7544dfa
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573842"
 ---
-
 # <a name="accessing-remote-data"></a>存取遠端資料
 
 許多現代化的 web 解決方案都會使用 web 伺服器所裝載的 web 服務，以提供遠端用戶端應用程式的功能。 Web 服務開放的作業構成 Web API。
@@ -387,7 +401,7 @@ EShopOnContainers 行動應用程式目前不會執行斷路器模式。 不過�
 
 如需斷路器模式的詳細資訊，請參閱[斷路器模式。](/azure/architecture/patterns/circuit-breaker/)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 許多現代化的 web 解決方案都會使用 web 伺服器所裝載的 web 服務，以提供遠端用戶端應用程式的功能。 Web 服務所公開的作業會構成 Web API，而且用戶端應用程式應該能夠利用 Web API，而不需要知道 API 所公開的資料或作業如何執行。
 

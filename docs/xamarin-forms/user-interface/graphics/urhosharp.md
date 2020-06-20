@@ -1,8 +1,22 @@
 ---
-標題：「在「使用 UrhoSharp」 Xamarin.Forms 描述：」本文說明如何使用 UrhoSharp，將3d 圖形新增至 Xamarin.Forms 應用程式，以獲得先進的視覺效果。」
-assetid： 0646B98E-CC04-4537-9715-9F82338FD7FF ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/11/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用中的 UrhoSharpXamarin.Forms
+description: 本文說明如何使用 UrhoSharp，將3D 圖形新增至 Xamarin.Forms 應用程式，以獲得先進的視覺效果。
+ms.prod: xamarin
+ms.assetid: 0646B98E-CC04-4537-9715-9F82338FD7FF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/11/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fbf717092da7f77e265803fae87efb5bf0e9876f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574362"
 ---
-
 # <a name="using-urhosharp-in-xamarinforms"></a>使用中的 UrhoSharpXamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
@@ -199,7 +213,7 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 
 [頁面頂端](#what-is-urhosharp)的動畫會顯示執行中的範例。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 此頁面會顯示如何使用 UrhoSharp 將3D 資料視覺效果加入至 Xamarin.Forms 。 如需如何使用上述方法來建立可包含在應用程式中的 Urho 場景的詳細資訊，請參閱[UrhoSharp 檔](~/graphics-games/urhosharp/index.md) Xamarin.Forms 。
 

@@ -1,8 +1,22 @@
 ---
-標題：「SkiaSharp 中的點和連字號」描述：「本文將探討如何在 SkiaSharp 中繪製畫虛線和虛線的複雜性，並以範例程式碼示範這種情況。」
-assetid： 8E9BCC13-830C-458C-9FC8-ECB4EAE66078 ms. 技術： xamarin skiasharp author： davidbritch ms-chap： dabritch ms. date：03/10/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 中的點和虛線
+description: 本文將探討如何在 SkiaSharp 中，以複雜的方式繪製虛線和虛線，並使用範例程式碼示範這點。
+ms.prod: xamarin
+ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138446"
 ---
-
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp 中的點和虛線
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -141,7 +155,7 @@ float[] GetPickerArray(Picker picker)
 
 [![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
 
-不過，Android 螢幕也應該會使用陣列 {10，10} 顯示虛線，而線條則是實線。 發生什麼事？ 問題在於 Android 螢幕也有的 [筆觸] 上限設定 `Square` 。 這會將所有的虛線以筆劃寬度的一半延伸，使其填滿間距。
+不過，Android 螢幕也應該會使用陣列 {10，10} 顯示虛線，而線條則是實線。 發生什麼情形？ 問題在於 Android 螢幕也有的 [筆觸] 上限設定 `Square` 。 這會將所有的虛線以筆劃寬度的一半延伸，使其填滿間距。
 
 若要在使用或的筆劃端點時遇到此 `Square` 問題 `Round` ，您必須以筆劃長度減少陣列中的虛線長度（有時候會產生0的虛線長度），並依筆劃長度增加間距長度。 這是 XAML 檔案中最後三個虛線陣列的 `Picker` 計算方式：
 

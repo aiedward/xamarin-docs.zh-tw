@@ -1,8 +1,22 @@
 ---
-title： "SkiaSharp 的路徑基本概念" 描述： "本文會探索 SkiaSharp SKPath 物件，以結合連接的線條和曲線，並以範例程式碼示範。
-assetid： A7EDA6C2-3921-4021-89F3-211551E430F1 ms. 技術： xamarin skiasharp author： davidbritch ms-chap： dabritch ms. date：03/10/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: SkiaSharp 中的路徑基本概念
+description: 本文將探討結合連接的線條和曲線的 SkiaSharp SKPath 物件，並以範例程式碼示範這項工作。
+ms.prod: xamarin
+ms.assetid: A7EDA6C2-3921-4021-89F3-211551E430F1
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6ceac2d866e67af5cf3496fcf8c072ae83ecfe38
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140240"
 ---
-
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp 中的路徑基本概念
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-標題：「驗證和授權」描述：「本章節說明 eShopOnContainers 行動應用程式如何對容器化微服務執行驗證和授權。」
-assetid： e3f27b4c-f7f5-4839-a48c-30bcb919c59e ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/08/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 驗證和授權
+description: 本章說明 eShopOnContainers mobile 應用程式如何對容器化微服務執行驗證和授權。
+ms.prod: xamarin
+ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573829"
 ---
-
 # <a name="authentication-and-authorization"></a>驗證和授權
 
 驗證是從使用者取得身分識別認證（例如名稱和密碼），以及向授權單位驗證那些認證的程式。 如果認證有效，則提交認證的實體會被視為已驗證的身分識別。 驗證身分識別之後，授權程式會判斷該身分識別是否可存取指定的資源。
@@ -457,7 +471,7 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValu
 
 如需 eShopOnContainers mobile 應用程式如何提出 web 要求的詳細資訊，請參閱[存取遠端資料](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 有許多方法可以將驗證和授權整合到 Xamarin.Forms 與 ASP.NET MVC web 應用程式通訊的應用程式中。 EShopOnContainers 行動應用程式會透過使用 IdentityServer 4 的容器化身分識別微服務來執行驗證和授權。 IdentityServer 是開放原始碼 OpenID Connect 和 OAuth 2.0 架構，適用于與 ASP.NET Core 身分識別整合以執行持有人權杖驗證的 ASP.NET Core。
 

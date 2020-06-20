@@ -1,8 +1,22 @@
 ---
-標題：「Windows 上的 VisualElement 存取金鑰」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Windows 平臺特定的來指定 VisualElement 的存取金鑰。」
-assetid： 771AF785-76B8-4372-89F5-E4D521D21E0C ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/24/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Windows 上的 VisualElement 存取金鑰
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用指定 VisualElement 存取金鑰的 Windows 平臺特定。
+ms.prod: xamarin
+ms.assetid: 771AF785-76B8-4372-89F5-E4D521D21E0C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1bfd61e79a2b4697e884afb45e4b9080ee939b87
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136522"
 ---
-
 # <a name="visualelement-access-keys-on-windows"></a>Windows 上的 VisualElement 存取金鑰
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

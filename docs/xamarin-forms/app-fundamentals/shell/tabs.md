@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms Shell Layout" 描述： "在飛出視窗之後，Shell 應用程式中的下一個導覽層級是底部的索引標籤列。 或者，應用程式的導覽模式可以從底部索引標籤開始，而不使用飛出視窗。 在這兩種情況下，當底部的索引標籤包含多個頁面時，頁面將可透過頂端索引標籤導覽。」
-assetid： 318D81DB-E456-4E44-B083-36A27DBD9523 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/06/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsShell 版面配置
+description: 飛出視窗之後，Shell 應用程式中的下一個導覽層級是底部的索引標籤列。 或者，應用程式的導覽模式可以從底部索引標籤開始，而不使用飛出視窗。 在這兩種情況下，當底部索引標籤包含多個頁面時，頁面將可透過頂端索引標籤來導覽。
+ms.prod: xamarin
+ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139954"
 ---
-
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.FormsShell 索引標籤
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

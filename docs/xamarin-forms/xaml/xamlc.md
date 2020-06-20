@@ -1,8 +1,22 @@
 ---
-title： "描述中的 XAML 編譯 Xamarin.Forms ：" 本文說明如何使用 Xamarin.Forms xaml 編譯器（XAMLC），選擇性地將 xaml 直接編譯成中繼語言（IL）。
-assetid： 9A2D10A6-5DFC-485F-A75A-2F7B98314025 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/22/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的 XAML 編譯Xamarin.Forms
+description: 本文說明如何使用 Xamarin.Forms xaml 編譯器（XAMLC），選擇性地將 XAML 直接編譯成中繼語言（IL）。
+ms.prod: xamarin
+ms.assetid: 9A2D10A6-5DFC-485F-A75A-2F7B98314025
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/22/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eebbb3040175118320639bcb4482ec77b5c16ac7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137289"
 ---
-
 # <a name="xaml-compilation-in-xamarinforms"></a>中的 XAML 編譯Xamarin.Forms
 
 _XAML 可選擇性地使用 XAML 編譯器 (XAMLC) 直接編譯成中繼語言 (IL)。_

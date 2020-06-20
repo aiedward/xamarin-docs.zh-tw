@@ -1,8 +1,22 @@
 ---
-標題：「路徑填滿類型」描述：「本文將探討 SkiaSharp 路徑填滿類型的各種可能效果，並以範例程式碼示範這種情況。」
-assetid： 57103A7A-49A2-46AE-894C-7C2664682644 ms. 技術： xamarin skiasharp author： davidbritch ms-chap： dabritch ms. date：03/10/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 路徑填滿類型
+description: 本文將探討 SkiaSharp 路徑填滿類型的各種可能效果，並以範例程式碼示範這種情況。
+ms.prod: xamarin
+ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
+ms.technology: xamarin-skiasharp
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139044"
 ---
-
 # <a name="the-path-fill-types"></a>路徑填滿類型
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

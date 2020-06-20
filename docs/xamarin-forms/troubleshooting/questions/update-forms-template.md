@@ -1,8 +1,22 @@
 ---
-標題：「我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？」
-ms. 主題：疑難排解 ms-chap： assetid： 160FBE13-26EB-4B4F-9248-A5CBE58FDD7F ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 04/25/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？
+ms.topic: troubleshooting
+ms.prod: xamarin
+ms.assetid: 160FBE13-26EB-4B4F-9248-A5CBE58FDD7F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bdead80671a1ae6539de6614441df7e86863a5a6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137471"
 ---
-
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>我可以將 Xamarin.Forms 預設範本更新為較新的 NuGet 套件嗎？
 
 本指南會使用 Xamarin.Forms .NET Standard 程式庫範本作為範例，但相同的一般方法也適用于共用的 Xamarin.Forms 專案範本。 本指南是以從 Xamarin.Forms 1.5.1.6471 更新至2.1.0.6529 的範例來撰寫，但同樣的步驟也可以將其他版本設定為預設值。

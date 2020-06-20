@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms Shell 生命週期" 描述： "shell 應用程式會遵守 Xamarin.Forms 生命週期，而當頁面即將出現在螢幕上時，就會引發顯示事件，而當頁面即將從螢幕消失時，就會引發事件。」
-ms-chap： xamarin assetid： 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date： 07/25/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsShell 生命週期
+description: Shell 應用程式會遵守 Xamarin.Forms 生命週期，而當頁面即將出現在螢幕上時，就會引發顯示事件，而當頁面即將從螢幕中消失時，就會引發事件消失。
+ms.prod: xamarin
+ms.assetid: 4E4EE50E-3BB4-441D-8355-CD9CD26ED1D0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3a7a46187d861098b61f638a3fb460d890b081dd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138719"
 ---
-
 # <a name="xamarinforms-shell-lifecycle"></a>Xamarin.FormsShell 生命週期
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

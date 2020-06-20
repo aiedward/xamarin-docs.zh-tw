@@ -1,7 +1,22 @@
 ---
-title： "第18章的摘要。 MVVM 「描述：」使用建立 Mobile Apps Xamarin.Forms ：第18章的摘要。 MVVM "ms. 生產： xamarin ms. 技術： xamarin assetid： 6A774510-7709-4F60-8EF5-29D478176F8F author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第18章的摘要。 MVVM
+description: 建立 Mobile Apps Xamarin.Forms ：第18章的摘要。 MVVM
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f180173a42654c54c5686e423ba20d9586271ea
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136704"
 ---
-
 # <a name="summary-of-chapter-18-mvvm"></a>第18章的摘要。 MVVM
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)

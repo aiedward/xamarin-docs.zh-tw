@@ -1,8 +1,23 @@
 ---
-標題：「由右至左當地語系化」描述：「由右至左的當地語系化會將由右至左流程方向的支援新增至 Xamarin.Forms 應用程式」。
-assetid： 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429 ms. 技術： xamarin-表單 ms. custom： xamu-影片作者： davidbritch ms-chap： dabritch ms. date： 05/07/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 從右至左當地語系化
+description: 由右至左的當地語系化會將由右至左流程方向的支援新增至 Xamarin.Forms 應用程式。
+ms.prod: xamarin
+ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/07/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137549"
 ---
-
 # <a name="right-to-left-localization"></a>由右至左當地語系化
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)

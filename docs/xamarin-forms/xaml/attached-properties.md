@@ -1,8 +1,22 @@
 ---
-title： "附加屬性" 描述： "本文提供附加屬性的簡介，並示範如何建立和使用它們。"
-assetid： 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/02/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 附加屬性
+description: 本文提供附加屬性的簡介，並示範如何建立和使用它們。
+ms.prod: xamarin
+ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/02/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138186"
 ---
-
 # <a name="attached-properties"></a>附加屬性
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

@@ -1,7 +1,22 @@
 ---
-title： "第17章的摘要。 主控方格「描述：」建立 Mobile Apps：第 Xamarin.Forms 17 章的摘要。 主控方格 "ms. 生產： xamarin ms. 技術： xamarin-assetid： 71EDEF9C-4220-4D2E-A235-43F1EC8746C1 author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第17章的摘要。 掌控格線
+description: 建立 Mobile Apps Xamarin.Forms ：第17章的摘要。 掌控格線
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6dd13c0f592831c6488afac6727bcac734e9136a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136717"
 ---
-
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第17章的摘要。 掌控格線
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)

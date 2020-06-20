@@ -1,8 +1,22 @@
 ---
-title： "Tizen .NET" 描述： "Tizen .NET 可讓您開發 Tizen 作業系統的應用程式，而該作業系統會在 Samsung 裝置上執行，包括電視、穿戴式裝置、行動裝置及其他 IoT 裝置。
-assetid： 5A22A354-A4DD-480D-A1BB-6D0C38592E55 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/26/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Tizen .NET
+description: Tizen .NET 可讓您開發 Tizen 作業系統的應用程式，它會在 Samsung 裝置上執行，包括電視、穿戴式裝置、行動裝置及其他 IoT 裝置。
+ms.prod: xamarin
+ms.assetid: 5A22A354-A4DD-480D-A1BB-6D0C38592E55
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 873e243be3b90023ac8f58c2a29df89806b22658
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139512"
 ---
-
 # <a name="tizen-net"></a>Tizen .NET
 
 _Tizen .NET 可讓您開發 Tizen 應用程式，以在 Samsung 裝置上執行，包括電視、穿戴式裝置、行動裝置及其他 IoT 裝置。_

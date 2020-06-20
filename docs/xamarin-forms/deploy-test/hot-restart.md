@@ -1,8 +1,22 @@
 ---
-標題：「Xamarin 熱重新開機」描述：「本檔說明如何設定和使用 Xamarin 熱重新開機來進行 iOS 應用程式的偵錯工具。」
-assetid： 6BC62A88-9368-41BB-8494-760F2A4805DB ms. 技術： xamarin-表單作者： maddyleger1 ms. author： maleger ms. 日期：03/16/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin 熱重新開機
+description: 本文件描述如何設定和使用 Xamarin 熱重新開機，以對 iOS 應用程式進行偵錯。
+ms.prod: xamarin
+ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139135"
 ---
-
 # <a name="xamarin-hot-restart-preview"></a>Xamarin 熱重新開機 (預覽)
 
 ![預覽功能](~/media/shared/preview.png)

@@ -1,8 +1,22 @@
 ---
-title：在「描述：」中的隱含樣式 Xamarin.Forms 是由同一個 TargetType 的所有控制項所使用的樣式，而不需要每個控制項參考樣式。」
-assetid： 02A75F3B-4389-49D4-A2F4-AFD473A4A161 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/30/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的隱含樣式Xamarin.Forms
+description: 隱含樣式是由相同 TargetType 的所有控制項所使用，而不需要每個控制項參考樣式。
+ms.prod: xamarin
+ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3fb6ea40ced93103ec9cc92fa707f68c674d7826
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139005"
 ---
-
 # <a name="implicit-styles-in-xamarinforms"></a>中的隱含樣式Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

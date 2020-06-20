@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 資料系結" 描述： "資料系結是連結兩個物件屬性的技術，讓一個屬性中的變更會自動反映在另一個屬性中。 資料系結是 ViewModel （MVVM）應用程式架構中不可或缺的一部分。」
-assetid： 938E85C8-521D-43B9-92CB-D591A06D98A6 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/23/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms資料系結
+description: 資料繫結是連結兩個物件屬性的技術，以便在其中一個屬性變更時，自動反映在另一個屬性上。 資料繫結是 Model-View-ViewModel (MVVM) 應用程式架構不可或缺的一部分。
+ms.prod: xamarin
+ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/21/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9abbe60865cbf5fb9082b5f4882c27fe095b36ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946451"
 ---
-
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms資料系結
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
@@ -55,6 +69,10 @@ Xamarin.Forms應用程式是由一或多個頁面所組成，其中每一頁通�
 ## <a name="binding-fallbacks"></a>[繫結後援](binding-fallbacks.md)
 
 定義繫結程序失敗時要使用的後援值，讓資料繫結更穩固。
+
+## <a name="multi-bindings"></a>[多重系結](multibinding.md)
+
+將物件的集合附加 [`Binding`](xref:Xamarin.Forms.Binding) 至單一系結目標屬性。
 
 ## <a name="the-command-interface"></a>[命令介面](commanding.md)
 

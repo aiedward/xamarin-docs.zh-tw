@@ -1,8 +1,22 @@
 ---
-標題：「建立 SkiaSharp 點陣圖的動畫」描述：「瞭解如何依序顯示一系列的點陣圖和轉譯動畫 GIF 檔案來執行點陣圖動畫」。
-skiasharp 的 assetid： 97142ADC-E2FD-418C-8A09-9C561AEE5BFD author： davidbritch ms-chap： dabritch ms. date： 07/12/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: 製作 SkiaSharp 點陣圖的動畫
+description: 瞭解如何藉由依序顯示一系列的點陣圖和呈現動畫 GIF 檔案，來執行點陣圖動畫。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 97142ADC-E2FD-418C-8A09-9C561AEE5BFD
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139967"
 ---
-
 # <a name="animating-skiasharp-bitmaps"></a>製作 SkiaSharp 點陣圖的動畫
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

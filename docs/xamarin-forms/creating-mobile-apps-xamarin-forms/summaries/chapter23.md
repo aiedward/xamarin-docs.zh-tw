@@ -1,7 +1,22 @@
 ---
-title： "第23章的摘要。 觸發程式和行為「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第23章的摘要。 觸發程式和行為 "ms-chap： xamarin ms. 技術： assetid： 19E84B5D-46B4-4B6D-A255-87BEFB011261 author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第23章的摘要。 觸發程序和行為
+description: 建立 Mobile Apps Xamarin.Forms ：第23章的摘要。 觸發程序和行為
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9a0206354254f79756e29f834c85837240736eca
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136652"
 ---
-
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第23章的摘要。 觸發程序和行為
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
@@ -113,7 +128,7 @@ title： "第23章的摘要。 觸發程式和行為「描述：」使用下列�
 
 結合 AND 和 OR 邏輯並不容易，而且通常需要不可見 `Switch` 的元素來進行中繼結果。 [**XorConditions**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/XorConditions)範例會示範如何在 `Button` 兩個專案 `Entry` 中都有輸入的文字時啟用，但如果兩者都有輸入的文字，則為。
 
-## <a name="behaviors"></a>「行為」
+## <a name="behaviors"></a>行為
 
 您可以使用觸發程式執行的任何作業，也可以使用行為來進行，但行為一律需要衍生自的類別， [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 並覆寫下列兩個方法：
 

@@ -1,8 +1,22 @@
 ---
-標題：「iOS 上的 SwipeView 輕掃轉換模式」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來控制開啟 SwipeView 時所使用的轉換。
-assetid： C667F24C-BAD8-47E0-9285-D3546BEF703B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/11/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的 SwipeView 滑動轉換模式
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來控制開啟 SwipeView 時所使用的轉換。
+ms.prod: xamarin
+ms.assetid: C667F24C-BAD8-47E0-9285-D3546BEF703B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4b2030461025c1cd647595a1ecc22c5589e99fef
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137042"
 ---
-
 # <a name="swipeview-swipe-transition-mode-on-ios"></a>IOS 上的 SwipeView 滑動轉換模式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

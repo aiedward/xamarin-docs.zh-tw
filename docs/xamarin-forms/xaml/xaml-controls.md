@@ -1,8 +1,23 @@
 ---
-title： "XAML 控制項" 描述： "中定義的所有視圖都 Xamarin.Forms 可以從 XAML 檔案參考。"
-ms. 主題：文章 ms-chap： xamarin ms. assetid： 639BD392-1496-41BB-BB09-7652273AC9D8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date：04/17/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: XAML 控制項
+description: 在中定義的所有視圖都 Xamarin.Forms 可以從 XAML 檔案參考。
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 445ef85f661d945bda25203f35dea787e64dc9b0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138420"
 ---
-
 # <a name="xaml-controls"></a>XAML 控制項
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -19,7 +34,7 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 | <h3>展開工具</h3>提供可展開的容器來裝載任何內容。<p align="center">![展開器的螢幕擷取畫面](xaml-controls-images/Expander.png "展開工具")</p>[輥](~/xamarin-forms/user-interface/expander.md) | <pre>&lt;Expander&gt;<br />    &lt;Expander.Header&gt;<br />        &lt;Label Text=&quot;Baboon&quot; /&gt;<br />    &lt;/Expander.Header&gt;<br />    &lt;Image Source=&quot;Baboon.png&quot;<br />           Aspect=&quot;AspectFill&quot; /&gt;<br />&lt;/Expander&gt;</pre></p> |
 | <h3>映像</h3>顯示點陣圖。<p align="center">![影像的螢幕擷取畫面](xaml-controls-images/Image.png "Image")</p>[API](xref:Xamarin.Forms.Image)  / [指南](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
 | <h3>標籤</h3>顯示一或多行文字。<p align="center">![標籤的螢幕擷取畫面](xaml-controls-images/Label.png "標籤")</p>[API](xref:Xamarin.Forms.Label)  / [指南](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
-| <h3>地圖</h3>顯示地圖。<p align="center">![地圖的螢幕擷取畫面](xaml-controls-images/Map.png "對應")</p>[API](xref:Xamarin.Forms.Maps.Map)  / [指南](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
+| <h3>對應</h3>顯示地圖。<p align="center">![地圖的螢幕擷取畫面](xaml-controls-images/Map.png "對應")</p>[API](xref:Xamarin.Forms.Maps.Map)  / [指南](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
 | <h3>MediaElement</h3>播放影片或音訊。<p align="center">![MediaElement 的螢幕擷取畫面](xaml-controls-images/MediaElement.png "MediaELement")</p>[API](xref:Xamarin.Forms.MediaElement)  / [指南](~/xamarin-forms/user-interface/mediaelement.md) | <p valign="center"><pre>&lt;MediaElement Source="https://sec.ch9.ms/ch9/XamarinShow_mid.mp4"<br />              AutoPlay="True"<br />              ShowsPlaybackControls="True" /&gt;</pre></p> |
 | <h3>WebView</h3>顯示網頁或 HTML 內容。<p align="center">![Web 工作的螢幕擷取畫面](xaml-controls-images/WebView.png "WebView")</p>[API](xref:Xamarin.Forms.WebView)  / [指南](~/xamarin-forms/user-interface/webview.md) | <p valign="center"><pre>&lt;WebView Source="https://docs.microsoft.com/xamarin/"<br/>         VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |

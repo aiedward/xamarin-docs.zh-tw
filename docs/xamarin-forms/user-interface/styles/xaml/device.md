@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 描述：」中的裝置樣式 Xamarin.Forms 包含6個動態樣式（也就是裝置樣式），也就是裝置樣式類別。 本文說明如何在應用程式中使用裝置樣式 Xamarin.Forms 。」
-assetid： 7FF19ED1-0822-4238-9435-AD970317A2F8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/17/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的裝置樣式Xamarin.Forms
+description: Xamarin.Forms在 Device. Styles 類別中包含六個動態樣式（稱為裝置樣式）。 本文說明如何在應用程式中使用裝置樣式 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140097"
 ---
-
 # <a name="device-styles-in-xamarinforms"></a>中的裝置樣式Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
@@ -100,7 +114,7 @@ public class DeviceStylesPageCS : ContentPage
 
 [`Style`](xref:Xamarin.Forms.NavigableElement.Style)每個實例的屬性 [`Label`](xref:Xamarin.Forms.Label) 會從類別設定為適當的屬性 [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) 。
 
-## <a name="accessibility"></a>協助工具選項
+## <a name="accessibility"></a>Accessibility
 
 *裝置*樣式會遵循協助工具喜好設定，因此當每個平臺上的協助工具喜好設定改變時，字型大小也會隨之變更。 因此，若要支援可存取的文字，請確定*裝置*樣式是用來作為應用程式內任何文字樣式的基礎。
 

@@ -1,8 +1,22 @@
 ---
-標題：「iOS 上的同時移動流覽手勢辨識」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，讓您能夠在應用程式中使用同時移動流覽手勢。」
-assetid： 883D89DA-F8FF-4B97-9C3F-2DD05C96A495 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/24/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: IOS 上的同時移動流覽手勢識別
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的，讓應用程式中使用同時移動流覽手勢辨識。
+ms.prod: xamarin
+ms.assetid: 883D89DA-F8FF-4B97-9C3F-2DD05C96A495
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 125685150243ba8e8099cbfbdfec90e5a0b4d6b7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138574"
 ---
-
 # <a name="simultaneous-pan-gesture-recognition-on-ios"></a>IOS 上的同時移動流覽手勢識別
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

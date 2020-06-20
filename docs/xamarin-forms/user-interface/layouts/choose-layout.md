@@ -1,8 +1,22 @@
 ---
-標題：「選擇版面配置」 Xamarin.Forms 描述：「 Xamarin.Forms 版面配置類別可讓您在應用程式中排列和分組 UI 控制項」。
-assetid： 05A39752-A174-447E-A30D-3CC9EF98CB96 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/21/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 選擇 Xamarin.Forms 版面配置
+description: Xamarin.Forms版面配置類別可讓您排列和分組應用程式中的 UI 控制項。
+ms.prod: xamarin
+ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138498"
 ---
-
 # <a name="choose-a-xamarinforms-layout"></a>選擇 Xamarin.Forms 版面配置
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)

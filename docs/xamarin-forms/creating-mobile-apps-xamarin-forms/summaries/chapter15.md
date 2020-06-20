@@ -1,7 +1,22 @@
 ---
-title： "第15章的摘要。 互動式介面「描述：」建立 Mobile Apps：第 Xamarin.Forms 15 章的摘要。 互動式介面 "ms-chap： xamarin ms. 技術： assetid： F54E86F4-1CDA-474E-9B09-242060C2C13D author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第15章的摘要。 互動式介面
+description: 建立 Mobile Apps Xamarin.Forms ：第15章的摘要。 互動式介面
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9bb930c2d0e4b6281b1aa48589ea5245eedc1a60
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136743"
 ---
-
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第15章的摘要。 互動式介面
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)

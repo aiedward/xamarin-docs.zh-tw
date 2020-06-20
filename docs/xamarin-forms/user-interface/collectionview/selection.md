@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms CollectionView 選取範圍」描述：「預設會停用 CollectionView 選項。 不過，可以啟用單一和多重選取。」
-assetid： 423D91C7-1E58-4735-9E80-58F11CDFD953 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/06/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView 選取專案
+description: 預設會停用 CollectionView 選項。 不過，可以啟用單一和多重選取。
+ms.prod: xamarin
+ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137380"
 ---
-
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsCollectionView 選取專案
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

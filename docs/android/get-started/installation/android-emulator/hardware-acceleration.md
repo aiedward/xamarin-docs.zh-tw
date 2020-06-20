@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: a776dbb2ecfaf0942d79c2b403c13f98cdc7c2e2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2a9260bc782d2b19e6fd74356738276e1648dcf2
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571970"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104352"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 
@@ -142,9 +142,9 @@ systeminfo
 
 ### <a name="installing-haxm"></a>安裝 HAXM
 
-適用於 Windows 的 HAXM 安裝套件可從 [Intel Hardware Accelerated Execution Manager](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager) 頁面取得。 使用下列步驟來下載並安裝 HAXM：
+您可以從[Intel Hardware Accelerated Execution Manager](https://github.com/intel/haxm/releases) GitHub 版本頁面取得適用于 WINDOWS 的 HAXM 安裝套件。 使用下列步驟來下載並安裝 HAXM：
 
-1. 從 Intel 網站，下載適用於 Windows 的最新 [HAXM 虛擬化引擎](https://software.intel.com/android/articles/intel-hardware-accelerated-execution-manager/) \(英文\) 安裝程式。 直接從 Intel 網站下載 HAXM 安裝程式的優點，在於可確保您使用的是最新版本。
+1. 從 Intel 網站，下載適用於 Windows 的最新 [HAXM 虛擬化引擎](https://github.com/intel/haxm/releases) \(英文\) 安裝程式。 直接從 Intel 網站下載 HAXM 安裝程式的優點，在於可確保您使用的是最新版本。
 
 2. 執行 **intelhaxm android.exe** 來啟動 HAXM 安裝程式。 接受安裝程式對話方塊中的預設值：
 

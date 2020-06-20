@@ -1,8 +1,22 @@
 ---
-標題：「iOS 上的 TabbedPage 半透明索引標籤列」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來設定 TabbedPage 上索引標籤欄的半透明度模式。」
-assetid： 9581AE81-9557-47AD-8B07-25A1AC5F055B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/16/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 iOS 上 TabbedPage 半透明索引標籤列
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 iOS 平臺特定的來設定 TabbedPage 上索引標籤列的半透明度模式。
+ms.prod: xamarin
+ms.assetid: 9581AE81-9557-47AD-8B07-25A1AC5F055B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8127191aab80d81fc2e532e3d5e14931b834eeae
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137029"
 ---
-
 # <a name="tabbedpage-translucent-tab-bar-on-ios"></a>在 iOS 上 TabbedPage 半透明索引標籤列
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

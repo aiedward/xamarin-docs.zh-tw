@@ -1,6 +1,21 @@
 ---
-標題：「 Xamarin.Forms 框架」描述：」 Xamarin.Forms 框架類別是用來包裝視圖的版面配置，或具有可使用色彩、陰影和其他選項設定之框線的版面配置。
-assetId： 4E074714-0928-41C8-A468-B60E23236A8C ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：08/06/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms框架
+description: Xamarin.FormsFrame 類別是用來包裝視圖或版面配置的版面配置，其框線可使用色彩、陰影和其他選項進行設定。
+ms.prod: xamarin
+ms.assetId: 4E074714-0928-41C8-A468-B60E23236A8C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 08/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137185"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.Forms框架
 

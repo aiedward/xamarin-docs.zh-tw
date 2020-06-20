@@ -1,8 +1,22 @@
 ---
-title： "Automation Properties" 描述： "本文說明如何在應用程式中使用 AutomationProperties 類別 Xamarin.Forms ，讓螢幕閱讀者可以說出頁面上的元素。」
-assetid： c0bb6893-fd26-47e7-88e5-3c333c9f786c ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/18/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 自動化屬性
+description: 本文說明如何在應用程式中使用 AutomationProperties 類別 Xamarin.Forms ，讓螢幕閱讀者可以讀出頁面上的元素。
+ms.prod: xamarin
+ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/18/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 341e1454c37d1fd20423204c95337e580eba7ecb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573400"
 ---
-
 # <a name="automation-properties-in-xamarinforms"></a>中的自動化屬性Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

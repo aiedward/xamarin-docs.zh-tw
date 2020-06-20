@@ -1,7 +1,22 @@
 ---
-title： "第19章的摘要。 集合視圖的「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第19章的摘要。 集合 views "ms. 生產： xamarin ms. 技術： xamarin assetid： 0AEC3A5C-586E-4D0F-9895-67E99A053A79 author： davidbritch ms-chap： dabritch ms. date： 07/18/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第19章的摘要。 集合視圖
+description: 建立 Mobile Apps Xamarin.Forms ：第19章的摘要。 集合視圖
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/18/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0eafdeffb6783a0ed54fdf23e6d10de24e2b4c6f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136691"
 ---
-
 # <a name="summary-of-chapter-19-collection-views"></a>第19章的摘要。 集合視圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)

@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms listview" 描述： "本指南介紹 Xamarin.Forms listview，這可以用來呈現互動式清單中的資料。"
-assetid： FEFDF7E0-720F-4BD1-863F-4477226AA695 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsListView
+description: 本指南介紹 Xamarin.Forms ListView，可以用來在互動式清單中呈現資料。
+ms.prod: xamarin
+ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139902"
 ---
-
 # <a name="xamarinforms-listview"></a>Xamarin.FormsListView
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
@@ -24,7 +38,7 @@ assetid： FEFDF7E0-720F-4BD1-863F-4477226AA695 ms. 技術： xamarin-表單作�
 
 如需將資料系結至實例的詳細資訊 `ListView` ，請參閱[ListView 資料來源](~/xamarin-forms/user-interface/listview/data-and-databinding.md)。
 
-## <a name="components"></a>元件
+## <a name="components"></a>單元
 
 `ListView`控制項有許多元件可用來執行每個平臺的原生功能。 這些元件會在下列各節中定義。
 

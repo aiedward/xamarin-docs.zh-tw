@@ -1,7 +1,22 @@
 ---
-標題：「鬆散耦合元件之間通訊」描述： "本章節說明 eShopOnContainers 行動應用程式如何執行發佈-訂閱模式，允許在不方便地連結化物件和類型參考的元件之間以訊息為基礎的通訊" ms. assetid： 1194af33-8a91-48d2-88b5-b84d77f2ce69 ms. 技術： xamarin-forms author： davidbritch ms-chap： dabritch ms. date： 08/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在偶合程度低的元件之間通訊
+description: '本章說明 eShopOnContainers 行動應用程式如何執行發佈-訂閱模式，以允許物件與類型參考不方便連結的元件之間以訊息為基礎的通訊 '
+ms.prod: xamarin
+ms.assetid: 1194af33-8a91-48d2-88b5-b84d77f2ce69
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140045"
 ---
-
 # <a name="communicating-between-loosely-coupled-components"></a>在偶合程度低的元件之間通訊
 
 發行-訂閱模式是一種訊息模式，發行者可以在不知道任何接收者 (稱為訂閱者) 的情況下傳送訊息。 同樣地，訂閱者可以在不知道任何發行者的情況下接聽特定訊息。

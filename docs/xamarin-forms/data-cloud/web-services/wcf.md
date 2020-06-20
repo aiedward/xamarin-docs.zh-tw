@@ -1,8 +1,22 @@
 ---
-標題：「使用 Windows Communication Foundation （WCF） Web 服務」描述：「本文示範如何從應用程式取用 WCF 簡單物件存取通訊協定（SOAP）服務。」 Xamarin.Forms
-assetid： 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：03/28/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 Windows Communication Foundation （WCF） Web 服務
+description: 本文示範如何從應用程式取用 WCF 簡單物件存取通訊協定（SOAP）服務 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139148"
 ---
-
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation （WCF） Web 服務
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)

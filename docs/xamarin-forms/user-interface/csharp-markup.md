@@ -1,8 +1,22 @@
 ---
-title：「 Xamarin.Forms c # 標記」描述：「c # 標記」是一組可加入宣告的流暢 helper 方法和類別，以簡化 Xamarin.Forms 在 c # 中建立宣告式使用者介面的程式。」
-assetid： D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/15/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 'Xamarin.FormsC # 標記'
+description: 'C # 標記是一組可加入宣告的流暢 helper 方法和類別，以簡化 Xamarin.Forms 在 c # 中建立宣告式使用者介面的程式。'
+ms.prod: xamarin
+ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137742"
 ---
-
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC # 標記
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -217,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 因為手勢辨識器是 `BindableObject` ，所以您可以在 `Bind` 初始化時使用和 `BindCommand` 擴充方法。 您也可以使用擴充方法來初始化自訂手勢辨識器類型 `Gesture<TGestureElement, TGestureRecognizer>` 。
 
-## <a name="layout"></a>配置
+## <a name="layout"></a>Layout
 
 C # 標記包含一系列的版面配置擴充方法，可支援版面配置中的定位視圖，以及 views 中的內容：
 

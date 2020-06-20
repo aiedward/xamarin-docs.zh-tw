@@ -1,8 +1,22 @@
 ---
-title：「使用 XAML 標記延伸」描述：「本文將說明如何使用 Xamarin.Forms xaml 標記延伸，藉由允許從各種來源設定元素屬性，來增強 xaml 的能力和彈性。」
-assetid： CE686893-609C-4EC3-9225-6C68D2A9F79C ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：04/21/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 使用 XAML 標記延伸
+description: 本文說明如何使用 Xamarin.Forms xaml 標記延伸，藉由允許從各種來源設定元素屬性，來增強 xaml 的能力和彈性。
+ms.prod: xamarin
+ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903101"
 ---
-
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 標記延伸
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
@@ -18,7 +32,7 @@ XAML 標記延伸可讓您從各種來源設定元素屬性，以增強 XAML 的
 - [`OnIdiom`](#onidiom-markup-extension)–根據應用程式執行所在裝置的用法來自訂 UI 外觀。
 - [`DataTemplate`](#datatemplate-markup-extension)–將類型轉換成 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
 - [`FontImage`](#fontimage-markup-extension)–在可顯示的任何視圖中顯示字型圖示 `ImageSource` 。
-- [`OnAppTheme`](#onapptheme-markup-extension)–根據目前的系統主題來使用資源。
+- [`AppThemeBinding`](#appthemebinding-markup-extension)–根據目前的系統主題來使用資源。
 
 其他 xaml 程式在過去已支援其他 XAML 標記延伸，而且也支援 Xamarin.Forms 。 其他文章中有更完整的說明：
 
@@ -566,60 +580,55 @@ public partial class TypeDemoPage : ContentPage
 
 如需在物件中指定字型圖示資料來顯示字型圖示的詳細資訊 `FontImageSource` ，請參閱[顯示字型圖示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
-## <a name="onapptheme-markup-extension"></a>OnAppTheme 標記延伸
+## <a name="appthemebinding-markup-extension"></a>AppThemeBinding 標記延伸
 
-`OnAppTheme`標記延伸可讓您根據目前的系統主題，指定要使用的資源，例如影像或色彩。 它會提供與類別相同的功能 `OnAppTheme<T>` ，但具有更精確的標記法。
+`AppThemeBinding`標記延伸可讓您根據目前的系統主題，指定要使用的資源，例如影像或色彩。
 
 > [!IMPORTANT]
-> `OnAppTheme`標記延伸具有最低的作業系統需求。 如需詳細資訊，請參閱[回應 Xamarin.Forms 應用程式中的系統主題變更](~/xamarin-forms/user-interface/theming/system-theme-changes.md)。
+> `AppThemeBinding`標記延伸具有最低的作業系統需求。 如需詳細資訊，請參閱[回應 Xamarin.Forms 應用程式中的系統主題變更](~/xamarin-forms/user-interface/theming/system-theme-changes.md)。
 
-`OnAppTheme`類別支援標記延伸 `OnAppThemeExtension` ，其定義下列屬性：
+`AppThemeBinding`類別支援標記延伸 `AppThemeBindingExtension` ，其定義下列屬性：
 
 - `Default`，屬於類型 `object` ，您將其設定為預設使用的資源。
 - `Light`，屬於類型 `object` ，當裝置使用其淺色主題時，您會將其設定為要使用的資源。
 - `Dark`，屬於類型 `object` ，當裝置使用其暗色調主題時，您會將其設定為要使用的資源。
 - `Value`，屬於類型 `object` ，它會傳回目前正由標記延伸所使用的資源。
-- `Converter`屬於的類型 `IValueConverter` ，可以設定為 `IValueConverter` 執行。
-- `ConverterParameter`型別為的 `object` ，可以設定為要傳遞至實作為的值 `IValueConverter` 。
 
 > [!NOTE]
-> XAML 剖析器允許將 `OnAppThemeExtension` 類別縮寫為 `OnAppTheme` 。
+> XAML 剖析器允許將 `AppThemeBindingExtension` 類別縮寫為 `AppBindingTheme` 。
 
-`Default`屬性是的 content 屬性 `OnAppThemeExtension` 。 因此，對於以大括弧表示的 XAML 標記運算式，您可以去除 `Default=` 運算式的部分，前提是它是第一個引數。
+`Default`屬性是的 content 屬性 `AppThemeBindingExtension` 。 因此，對於以大括弧表示的 XAML 標記運算式，您可以去除 `Default=` 運算式的部分，前提是它是第一個引數。
 
-[ **OnAppTheme 示範**] 頁面會顯示如何使用 `OnAppTheme` 標記延伸：
+[ **AppThemeBinding 示範**] 頁面會顯示如何使用 `AppThemeBinding` 標記延伸：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarkupExtensions.OnAppThemeDemoPage"
-             Title="OnAppTheme Demo">
+             x:Class="MarkupExtensions.AppThemeBindingDemoPage"
+             Title="AppThemeBinding Demo">
     <ContentPage.Resources>
 
         <Style x:Key="labelStyle"
                TargetType="Label">
             <Setter Property="TextColor"
-                    Value="{OnAppTheme Black, Light=Blue, Dark=Teal}" />
+                    Value="{AppThemeBinding Black, Light=Blue, Dark=Teal}" />
         </Style>
 
     </ContentPage.Resources>
     <StackLayout Margin="20">
         <Label Text="This text is green in light mode, and red in dark mode."
-               TextColor="{OnAppTheme Light=Green, Dark=Red}" />
+               TextColor="{AppThemeBinding Light=Green, Dark=Red}" />
         <Label Text="This text is black by default, blue in light mode, and teal in dark mode."
-               Style="{DynamicResource labelStyle}" />
+               Style="{StaticResource labelStyle}" />
     </StackLayout>
 </ContentPage>
 ```
 
 在此範例中，當裝置使用其淺色主題時，第一個的文字色彩 [`Label`](xref:Xamarin.Forms.Label) 會設定為綠色，而當裝置使用其暗色調主題時，會設為紅色。 第二個會 `Label` [`TextColor`](xref:Xamarin.Forms.Label.TextColor) 透過設定其屬性 [`Style`](xref:Xamarin.Forms.Style) 。 這會 `Style` 根據預設，將的文字色彩設定為 `Label` 黑色，當裝置使用其淺色主題時，會將設為藍色，而當裝置使用其暗色調主題時，則設為青色。
 
-> [!NOTE]
-> 使用 [`Style`](xref:Xamarin.Forms.Style) 標記延伸的會套用 `OnAppTheme` 至具有標記延伸的控制項，如此一來， `DynamicResource` 當系統主題變更時，應用程式的 UI 就會更新。
-
 以下是程式執行情況：
 
-![OnAppTheme 示範](consuming-images/onappthemedemo.png "OnAppTheme 示範")
+![AppThemeBinding 示範](consuming-images/appthemebindingdemo.png "AppThemeBinding 示範")
 
 ## <a name="define-markup-extensions"></a>定義標記延伸
 

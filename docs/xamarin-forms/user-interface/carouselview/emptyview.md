@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms CarouselView EmptyView" 描述： "在 CarouselView 中，您可以指定空的視圖，以在沒有資料可供顯示時提供意見反應給使用者。 空白的視圖可以是字串、視圖或多個 views。」
-assetid： C6DEE1A9-63FC-4889-BC77-F401D5D7DF32 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 10/03/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCarouselView EmptyView
+description: 在 CarouselView 中，您可以指定空的視圖，以在沒有資料可供顯示時提供意見反應給使用者。 空白的視圖可以是字串、視圖或多個視圖。
+ms.prod: xamarin
+ms.assetid: C6DEE1A9-63FC-4889-BC77-F401D5D7DF32
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/03/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137393"
 ---
-
 # <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

@@ -1,8 +1,22 @@
 ---
-title： "在 Xamarin.Forms " description： "中簡化函 Xamarin.Forms 式包含一個緩動類別，可讓您指定傳送函式，以控制動畫在執行時的速度或緩慢。 本文示範如何使用預先定義的緩動函式，以及如何建立自訂的緩動函數。」
-assetid： E6F124C7-A161-4C1F-AF40-52F0935E54DE ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/14/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的緩動函數Xamarin.Forms
+description: Xamarin.Forms包含可讓您指定傳輸函式的緩動類別，以控制動畫在執行時的速度或緩慢。 本文示範如何使用預先定義的緩動函式，以及如何建立自訂的緩動函數。
+ms.prod: xamarin
+ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/14/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 574b6f82aea3c71d43799c6ca86997d895eed4c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573801"
 ---
-
 # <a name="easing-functions-in-xamarinforms"></a>中的緩動函數Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
@@ -89,7 +103,7 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 
 自訂的緩時函式會指定為此函式的 lambda 函數引數 [`Easing`](xref:Xamarin.Forms.Easing) ，並使用 `Math.Cos` 方法來建立方法所抑制的緩慢卸載效果 `Math.Exp` 。 因此，會 [`Image`](xref:Xamarin.Forms.Image) 轉譯實例，讓它看起來會放到其最終的放置位置。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何使用預先定義的緩動函式，以及如何建立自訂的緩動函數。 Xamarin.Forms包含 [`Easing`](xref:Xamarin.Forms.Easing) 類別，可讓您指定傳送函式，以控制動畫在執行時的速度或緩慢。
 

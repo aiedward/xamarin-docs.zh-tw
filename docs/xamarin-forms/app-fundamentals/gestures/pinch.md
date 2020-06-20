@@ -1,8 +1,22 @@
 ---
-標題：「新增縮小手勢辨識器」描述：「本文將說明如何使用縮小手勢，在縮小位置執行影像的互動式縮放。」
-assetid： 832F7810-F0CF-441A-B04A-3975F3FB8B29 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/21/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 新增捏合手勢辨識器
+description: 本文說明如何使用捏合手勢，在捏合位置執行影像的互動式縮放。
+ms.prod: xamarin
+ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: da4a8bc66a7986efd3683de6dce1f6af618b85cc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137848"
 ---
-
 # <a name="adding-a-pinch-gesture-recognizer"></a>新增捏合手勢辨識器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)

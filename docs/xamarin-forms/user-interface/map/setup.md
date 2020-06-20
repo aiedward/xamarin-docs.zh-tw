@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 對應初始化和設定」描述：」 Xamarin.Forms 。需要 maps NuGet 封裝，才能在應用程式中使用對應功能。 此外，存取使用者的位置必須已授與應用程式的「位置」許可權。」
-assetid： 59CD1344-8248-406C-9144-0C8A67141E5B ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/07/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms對應初始化和設定
+description: Xamarin.Forms。需要 maps NuGet 封裝，才能在應用程式中使用對應功能。 此外，存取使用者的位置需要已授與應用程式的「位置」許可權。
+ms.prod: xamarin
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/07/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52e2ac5f8075c57f533fcba064223f355e07ba48
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139837"
 ---
-
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms對應初始化和設定
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

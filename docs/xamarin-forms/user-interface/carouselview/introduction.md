@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms CarouselView 簡介" 描述： "CarouselView 是以可滾動版面配置呈現資料的視圖，使用者可以在其中滑動以在專案集合中移動。"
-assetid： 2a96e4bd-c29b-4658-bb4c-ab00872b0f8f ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 10/08/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsCarouselView 簡介
+description: CarouselView 是以可滾動的版面配置呈現資料的視圖，使用者可以在其中滑動以移動專案集合。
+ms.prod: xamarin
+ms.assetid: 2a96e4bd-c29b-4658-bb4c-ab00872b0f8f
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/08/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2e67acd0188e1147481005502ad9ccdaada645d9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140266"
 ---
-
 # <a name="xamarinforms-carouselview-introduction"></a>Xamarin.FormsCarouselView 簡介
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms shell" 描述： "本指南說明如何使用 Xamarin.Forms shell，藉 Xamarin.Forms 由提供大部分應用程式所需的基本功能，降低應用程式的複雜性。
-assetid： 85B322AA-808F-41B6-953A-5877264AE643 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：05/28/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms外層
+description: 本指南說明如何使用 Xamarin.Forms Shell，藉 Xamarin.Forms 由提供大部分應用程式所需的基本功能，降低應用程式的複雜性。
+ms.prod: xamarin
+ms.assetid: 85B322AA-808F-41B6-953A-5877264AE643
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0acf00d85c2bfb823ec1cfba099179bb6743117c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138745"
 ---
-
 # <a name="xamarinforms-shell"></a>Xamarin.Forms外層
 
 ## <a name="introduction"></a>[簡介](introduction.md)
@@ -13,7 +27,7 @@ Xamarin.FormsShell 提供大部分行動應用程式所需的基本功能，藉�
 
 建立 Xamarin.Forms Shell 應用程式的流程，是建立將類別子類別化的 XAML 檔案 `Shell` ，將應用程式類別的屬性設定為子類別化的 `MainPage` `App` `Shell` 物件，然後在子類別中描述應用程式的視覺階層 `Shell` 。
 
-## <a name="flyout"></a>[Flyout](flyout.md)
+## <a name="flyout"></a>[飛出視窗](flyout.md)
 
 飛出視窗為 Shell 應用程式的根功能表，且可透過圖示或從螢幕側邊撥動來存取。 飛出視窗會由選用標題、飛出視窗項目及選用功能表項目所組成。
 

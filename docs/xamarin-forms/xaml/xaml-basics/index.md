@@ -1,8 +1,23 @@
 ---
-title： " Xamarin.Forms XAML 基本概念" 描述： "本指南說明如何開始使用行動裝置的跨平臺 XAML。 XAML 可讓開發人員使用標記來定義應用程式中的使用者介面， Xamarin.Forms 而不是程式碼。」
-assetid： xamarin ms. custom： video ms. 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date：10/25/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsXAML 基本概念
+description: 本指南說明如何開始使用行動裝置的跨平臺 XAML。 XAML 可讓開發人員 Xamarin.Forms 使用標記而非程式碼，在應用程式中定義使用者介面。
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138615"
 ---
-
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsXAML 基本概念
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

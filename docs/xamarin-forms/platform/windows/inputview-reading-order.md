@@ -1,8 +1,22 @@
 ---
-標題：「Windows 上的 InputView 讀取順序」描述：「平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Windows 平臺特定的，讓您能夠動態偵測雙向文字的讀取順序。」
-assetid： E61BAEE0-C8B7-4F33-8DDC-FA1B9CA8E81D ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/24/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: InputView Windows 上的讀取順序
+description: 平臺詳細資訊可讓您使用僅在特定平臺上提供的功能，而不需執行自訂轉譯器或效果。 本文說明如何使用 Windows 平臺特定的，以動態方式偵測雙向文字的讀取順序。
+ms.prod: xamarin
+ms.assetid: E61BAEE0-C8B7-4F33-8DDC-FA1B9CA8E81D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f5f0bcdc2d2c8eb1b51ad8dcd1014c649af80c90
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137757"
 ---
-
 # <a name="inputview-reading-order-on-windows"></a>InputView Windows 上的讀取順序
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

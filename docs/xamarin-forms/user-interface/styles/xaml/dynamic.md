@@ -1,8 +1,23 @@
 ---
-title： "說明中的動態樣式" Xamarin.Forms 描述： "本文說明 Xamarin.Forms 應用程式如何在執行時間使用動態資源來動態回應樣式變更。
-assetid： 13D4FA4B-DF10-42BF-B001-2C49367FC216 ms. 技術： xamarin-表單作者： davidbritch ms-chap： dabritch ms. date：05/28/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ] ms. custom：影片
+title: 中的動態樣式Xamarin.Forms
+description: 本文說明 Xamarin.Forms 應用程式如何在執行時間使用動態資源來動態回應樣式變更。
+ms.prod: xamarin
+ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.custom: video
+ms.openlocfilehash: d40ca3423cca68757cf458faf5cca1138aec5461
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140084"
 ---
-
 # <a name="dynamic-styles-in-xamarinforms"></a>中的動態樣式Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)

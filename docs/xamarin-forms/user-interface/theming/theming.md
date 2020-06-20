@@ -1,8 +1,22 @@
 ---
-標題：「主題 Xamarin.Forms 應用程式」描述：「藉 Xamarin.Forms 由為每個主題建立 ResourceDictionary，然後載入具有 DynamicResource 標記延伸的資源，即可在應用程式中執行主題。」
-assetId： B7B17F66-4E37-4B50-9A57-351B62BE4FED ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/07/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 主題 Xamarin.Forms 應用程式
+description: 藉 Xamarin.Forms 由建立每個主題的 ResourceDictionary，然後載入具有 DynamicResource 標記延伸的資源，即可在應用程式中執行主題。
+ms.prod: xamarin
+ms.assetId: B7B17F66-4E37-4B50-9A57-351B62BE4FED
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138199"
 ---
-
 # <a name="theme-a-xamarinforms-application"></a>主題 Xamarin.Forms 應用程式
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)

@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms button" 描述： "按鈕會回應點按，或按一下以引導應用程式執行特定工作。
-assetid： 62CAEB63-0800-44F4-9B8C-EE632138C2F5 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/04/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsButton
+description: 按鈕會回應點按或按一下，以指示應用程式執行特定工作。
+ms.prod: xamarin
+ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 595367d94bcc4ac384763e915a0a19db7517341d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573387"
 ---
-
 # <a name="xamarinforms-button"></a>Xamarin.FormsButton
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
@@ -747,7 +761,7 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 在 iOS 專案中， **Resources**資料夾包含此影像的三種大小：
 
-- 儲存為 **/Resources/MonkeyFace.png**的48圖元正方形點陣圖
+- 儲存為./Resources/name 的48圖元正方形點陣圖**MonkeyFace.png**
 - 96圖元的正方形點陣圖，儲存為**/Resource/MonkeyFace@2x.png**
 - 144圖元的正方形點陣圖，儲存為**/Resource/MonkeyFace@3x.png**
 
@@ -755,18 +769,18 @@ public partial class ToggleButtonDemoPage : ContentPage
 
 針對 Android 專案，點陣圖全部具有相同的名稱，但儲存在**Resources**資料夾的不同子資料夾中：
 
-- 儲存為 **/Resources/drawable-hDPI/MonkeyFace.png**的72圖元正方形點陣圖
-- 儲存為 **/Resources/drawable-xhDPI/MonkeyFace.png**的96圖元正方形點陣圖
-- 儲存為 **/Resources/drawable-xxhDPI/MonkeyFace.png**的144圖元正方形點陣圖
-- 儲存為 **/Resources/drawable-xxxhDPI/MonkeyFace.png**的192圖元正方形點陣圖
+- 儲存為/Resources/drawable-hDPI/的72圖元正方形點陣圖**MonkeyFace.png**
+- 儲存為/Resources/drawable-xhDPI/的96圖元正方形點陣圖**MonkeyFace.png**
+- 儲存為/Resources/drawable-xxhDPI/的144圖元正方形點陣圖**MonkeyFace.png**
+- 儲存為/Resources/drawable-xxxhDPI/的192圖元正方形點陣圖**MonkeyFace.png**
 
 這些是針對**AndroidResource**的**組建動作**而提供的。
 
 在 UWP 專案中，點陣圖可以儲存在專案中的任何位置，但通常會儲存在自訂資料夾或**資產**現有資料夾中。 UWP 專案包含下列點陣圖：
 
-- 儲存為 **/Assets/MonkeyFace.scale-100.png**的48圖元正方形點陣圖
-- 儲存為 **/Assets/MonkeyFace.scale-200.png**的96圖元正方形點陣圖
-- 儲存為 **/Assets/MonkeyFace.scale-400.png**的192圖元正方形點陣圖
+- 儲存為/Assets/的48圖元正方形點陣圖**MonkeyFace.scale-100.png**
+- 儲存為/Assets/的96圖元正方形點陣圖**MonkeyFace.scale-200.png**
+- 儲存為/Assets/的192圖元正方形點陣圖**MonkeyFace.scale-400.png**
 
 它們都有提供**內容**的**組建動作**。
 

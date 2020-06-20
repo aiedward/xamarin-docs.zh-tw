@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 使用 Xaml 樣式設定應用程式的樣式」描述：「本指南說明如何 Xamarin.Forms 使用 xaml 樣式自訂應用程式的外觀」。
-assetid： 344A34AA-B19A-4765-BC8A-875D9A6B5EA8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 01/30/2019 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms使用 XAML 樣式設定應用程式的樣式
+description: 本指南說明如何 Xamarin.Forms 使用 XAML 樣式自訂應用程式的外觀。
+ms.prod: xamarin
+ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72effe15d3456b5a48cbf5d09e889600134ac686
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903086"
 ---
-
 # <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Xamarin.Forms使用 XAML 樣式設定應用程式的樣式
 
 ## <a name="introduction"></a>[簡介](introduction.md)

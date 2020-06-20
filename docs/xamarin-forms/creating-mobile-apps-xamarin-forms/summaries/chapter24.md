@@ -1,8 +1,23 @@
 ---
-title： "第24章的摘要。 頁面導覽「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第24章的摘要。 頁面流覽 "ms. 生產： xamarin ms. 技術： xamarin-assetid： DDCDB49C-6008-4F72-B095-463EE21D7C23 author： davidbritch ms-chap： dabritch ms. date： 11/07/2017 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第24章的摘要。 頁面瀏覽
+description: 建立 Mobile Apps Xamarin.Forms ：第24章的摘要。 頁面瀏覽
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136639"
 ---
-
-# <a name="summary-of-chapter-24-page-navigation"></a>第24章的摘要。 頁面巡覽
+# <a name="summary-of-chapter-24-page-navigation"></a>第24章的摘要。 頁面瀏覽
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 

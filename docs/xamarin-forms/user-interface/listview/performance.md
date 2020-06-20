@@ -1,8 +1,22 @@
 ---
-title： "ListView Performance" 描述： "雖然 ListView 是用來顯示資料的強大視圖，但有一些限制。 本文說明如何確保應用程式中的 ListView 有絕佳的效能 Xamarin.Forms 。」
-assetid： 1B085639-652C-4862-86EB-5D55D32B9395 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/11/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: ListView 效能
+description: 雖然 ListView 是顯示資料的功能強大的視圖，但還是有一些限制。 本文說明如何使用應用程式中的 ListView 確保絕佳的效能 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 1B085639-652C-4862-86EB-5D55D32B9395
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/11/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2b8e057d9687cd0a472451fc73cc578f9358277
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139876"
 ---
-
 # <a name="listview-performance"></a>ListView 效能
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)

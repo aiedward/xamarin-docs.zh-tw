@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 命令介面" description： "本文說明如何使用資料系結來執行命令屬性 Xamarin.Forms 。 命令介面提供另一種方法來執行更適合 MVVM 架構的命令。」
-assetid： 69922284-F398-45C3-B4CC-B8E29BB4C533 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. date： 01/05/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms命令介面
+description: 本文說明如何使用資料系結來執行命令屬性 Xamarin.Forms 。 命令介面可針對比較適合 MVVM 架構的命令實作，提供一種替代方法。
+ms.prod: xamarin
+ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139720"
 ---
-
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms命令介面
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

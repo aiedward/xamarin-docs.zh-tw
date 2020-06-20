@@ -1,8 +1,22 @@
 ---
-標題：「新增移動流覽手勢辨識器」描述：「這篇文章說明如何使用移動流覽手勢以水準和垂直方式移動影像，讓所有影像內容都能在顯示于小於影像尺寸的視窗處時查看。」
-assetid： 42CBD2CF-432D-4F19-A05E-D569BB7F8713 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：01/21/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 新增平移手勢辨識器
+description: 本文說明如何使用平移手勢來水平及垂直平移影像，以便在用於顯示的檢視區小於影像大小時，可檢視所有影像內容。
+ms.prod: xamarin
+ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 53122991811c06360e8d015a753096cb35c1cca0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137627"
 ---
-
 # <a name="adding-a-pan-gesture-recognizer"></a>新增平移手勢辨識器
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)

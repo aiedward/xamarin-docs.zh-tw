@@ -1,8 +1,22 @@
 ---
-title：「全域樣式在「描述：」中， Xamarin.Forms 可以藉由將樣式新增至應用程式的資源字典來全域提供。 這有助於避免在頁面或控制項之間重複樣式。」
-assetid： BDC65F82-65E0-4C8E-BB91-8E340EB2D15A ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：02/17/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的全域樣式Xamarin.Forms
+description: 您可以藉由將樣式新增至應用程式的資源字典，將其設為全域可供使用。 這有助於避免跨頁面或控制項的樣式重複。
+ms.prod: xamarin
+ms.assetid: BDC65F82-65E0-4C8E-BB91-8E340EB2D15A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a222c3ee2234904cce94b52a14654728a1aa6d1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140123"
 ---
-
 # <a name="global-styles-in-xamarinforms"></a>中的全域樣式Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

@@ -1,8 +1,22 @@
 ---
-title： "description：" 中的簡單動畫 " Xamarin.Forms ViewExtensions 類別提供可用來建立簡單動畫的擴充方法。 本文示範如何使用 ViewExtensions 類別來建立和取消動畫。」
-assetid： 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/05/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的簡單動畫Xamarin.Forms
+description: ViewExtensions 類別提供可用來建立簡單動畫的擴充方法。 本文示範如何使用 ViewExtensions 類別來建立和取消動畫。
+ms.prod: xamarin
+ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 89f0182bfebc4d018eb083904595f0fbb211e3ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573374"
 ---
-
 # <a name="simple-animations-in-xamarinforms"></a>中的簡單動畫Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
@@ -216,7 +230,7 @@ ViewExtensions.CancelAnimations (image);
 
 這會立即取消目前正在實例上執行的所有動畫 [`Image`](xref:Xamarin.Forms.Image) 。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文示範如何使用類別來建立和取消動畫 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 。 這個類別提供擴充方法，可用於建立旋轉、縮放、轉譯和淡化實例的簡單動畫 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 。
 

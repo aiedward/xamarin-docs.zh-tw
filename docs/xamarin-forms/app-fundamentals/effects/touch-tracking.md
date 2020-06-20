@@ -1,8 +1,22 @@
 ---
-標題：「從效果叫用事件」描述：「效果可以定義和叫用事件，並在基礎原生視圖中發出變更信號。 本文說明如何執行低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。
-assetid： 6A724681-55EB-45B8-9EED-7E412AB19DD2 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：12/14/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 從效果叫用事件
+description: 效果可以定義並叫用事件，以通知基礎原生檢視中有變更。 本文說明如何實作低層級的多點觸控手指追蹤，以及如何產生通知觸控活動的事件。
+ms.prod: xamarin
+ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/14/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136977"
 ---
-
 # <a name="invoking-events-from-effects"></a>從效果叫用事件
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)

@@ -1,8 +1,22 @@
 ---
-標題：「自訂地圖釘選」描述：「本文將示範如何建立地圖控制項的自訂轉譯器，這會顯示具有自訂釘選的原生地圖，以及在每個平臺上的 pin 資料自訂視圖。」
-assetid： C5481D86-80E9-4E3D-9FB6-57B0F93711A6 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/06/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 自訂地圖釘選
+description: 本文示範如何建立 Map 控制項的自訂轉譯器，該控制項會在每個平台上以釘選資料的自訂釘選和自訂檢視來顯示原生地圖。
+ms.prod: xamarin
+ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 06ff88f1d4f272d9b77737d2168418c007afe8bc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573894"
 ---
-
 # <a name="customizing-a-map-pin"></a>自訂地圖釘選
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)

@@ -1,8 +1,22 @@
 ---
-標題：「 Xamarin.Forms 雙重螢幕版面配置」描述：「本指南說明如何使用 Xamarin.Forms TwoPaneView，將您的應用程式體驗優化，例如 surface 雙核處理器技術和 surface Neo。」
-assetid： 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3 ms. 技術： xamarin-表單作者： davidortinau ms. author： daortin ms. 日期：02/08/2020 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms雙畫面版面配置
+description: 本指南說明如何使用 Xamarin.Forms TwoPaneView，將您的應用程式體驗優化，例如 Surface 雙核處理器技術和 Surface Neo 等雙畫面裝置。
+ms.prod: xamarin
+ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 28d4b3da44cc1a022b70c0de0720be747e047f9f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138888"
 ---
-
 # <a name="xamarinforms-dual-screen-layout"></a>Xamarin.Forms雙畫面版面配置
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

@@ -1,7 +1,22 @@
 ---
-title： "第13章的摘要。 點陣圖「描述：」建立 Mobile Apps Xamarin.Forms ：第13章的摘要。 點陣圖 "ms. 生產： xamarin ms. 技術： assetid： 5D153857-B6B7-4A14-8FB9-067DE198C2C7 author： davidbritch ms-chap： dabritch ms. date： 07/18/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第13章的摘要。 點陣圖
+description: 建立 Mobile Apps Xamarin.Forms ：第13章的摘要。 點陣圖
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/18/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 43caf088ad6cb816f049e7862a287c17839c2170
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136769"
 ---
-
 # <a name="summary-of-chapter-13-bitmaps"></a>第13章的摘要。 點陣圖
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)

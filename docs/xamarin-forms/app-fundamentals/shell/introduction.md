@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms Shell 簡介" 描述： " Xamarin.Forms shell 提供大部分應用程式所需的基本功能，包括一般導覽使用者體驗、URI 型導覽配置，以及整合式搜尋處理常式。」
-assetid： 4604DCB5-83DA-458A-8B02-6508A740BE0E ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：09/20/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.FormsShell 簡介
+description: Xamarin.FormsShell 提供大部分應用程式所需的基本功能，包括一般導覽使用者體驗、URI 型導覽配置，以及整合式搜尋處理常式。
+ms.prod: xamarin
+ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138732"
 ---
-
 # <a name="xamarinforms-shell-introduction"></a>Xamarin.FormsShell 簡介
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

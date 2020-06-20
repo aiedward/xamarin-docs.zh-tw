@@ -1,8 +1,22 @@
 ---
-title： "description：" 中的文字 Xamarin.Forms Xamarin.Forms 有三個主要視圖可處理文字，而本文將說明如何使用它們來輸入和顯示應用程式中的文字 Xamarin.Forms 。 "
-assetid： 4DBA7689-E5C8-4583-8FB4-02AB208B4416 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：10/26/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的文字Xamarin.Forms
+description: Xamarin.Forms有三個主要視圖可處理文字，本文說明如何使用它們來輸入和顯示應用程式中的文字 Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b44a0b3e3542638874ee366a86967d73c0d53652
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573790"
 ---
-
 # <a name="text-in-xamarinforms"></a>中的文字Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

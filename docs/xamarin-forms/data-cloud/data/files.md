@@ -1,8 +1,22 @@
 ---
-標題：「中的檔案處理」描述：「使用 .NET Standard 程式庫中的 Xamarin.Forms Xamarin.Forms 程式碼，或使用內嵌的資源，即可達成的檔案處理。」
-assetid： 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：06/21/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的檔案處理Xamarin.Forms
+description: 您 Xamarin.Forms 可以使用 .NET Standard 程式庫中的程式碼，或使用內嵌的資源來達成檔案處理。
+ms.prod: xamarin
+ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f62e5522b5b9a10a3806a70fe949561d77ce0d4e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574349"
 ---
-
 # <a name="file-handling-in-xamarinforms"></a>中的檔案處理Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
@@ -61,7 +75,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 -----
 
-`GetManifestResourceStream` 用以存取使用其**資源識別碼**的內嵌檔案。 根據預設，資源識別碼是以內嵌所在專案的預設命名空間做為前置詞的檔案名-在此情況下，元件為**WorkingWithFiles** ，檔案名為**LibTextResource**，因此資源識別碼為 `WorkingWithFiles.LibTextResource.txt` 。
+`GetManifestResourceStream` 用以存取使用其**資源識別碼**的內嵌檔案。 根據預設，資源識別碼會以內嵌所在專案的預設命名空間做為前置詞，在此情況下，會**WorkingWithFiles**元件，並將檔案名**LibTextResource.txt**，因此資源識別碼為 `WorkingWithFiles.LibTextResource.txt` 。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -139,7 +153,7 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已示範在裝置上儲存及載入文字，以及載入內嵌資源等一些簡單的檔案作業。 使用 .NET Standard 2.0 就可以在 .NET Standard 程式庫中共用檔案存取碼。
 

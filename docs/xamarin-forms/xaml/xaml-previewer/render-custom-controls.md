@@ -1,8 +1,22 @@
 ---
-title： "在 XAML 預覽程式中轉譯自訂控制項" 描述： "本文說明如何在 XAML 預覽程式中顯示您的自訂控制項。"
-assetid： 4D795372-CB8F-48F4-B63D-845E44B261F7 ms. 技術： xamarin-表單作者： maddyleger1 ms. author： maleger ms. 日期：03/27/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 在 XAML 預覽器中轉譯自訂控制項
+description: 本文說明如何在 XAML 預覽程式中顯示您的自訂控制項。
+ms.prod: xamarin
+ms.assetid: 4D795372-CB8F-48F4-B63D-845E44B261F7
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4f20a0586aee998c10372c60c96577321e697aad
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137263"
 ---
-
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>在 XAML 預覽器中轉譯自訂控制項
 
 _自訂控制項有時不會如預期般在 XAML 預覽器中運作。請使用本文中的指導方針來瞭解預覽自訂控制項的限制。_

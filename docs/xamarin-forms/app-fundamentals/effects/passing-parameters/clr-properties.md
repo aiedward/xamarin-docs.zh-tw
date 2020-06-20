@@ -1,8 +1,22 @@
 ---
-title：「將效果參數當做通用語言執行平臺屬性傳遞」描述：「Common Language Runtime （CLR）屬性可用來定義不會回應執行時間屬性變更的效果參數。 本文示範如何使用 CLR 屬性將參數傳遞至效果。
-assetid： 4B50466C-5DBD-45DD-B1E6-BE9524C92F27 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：08/05/2016 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 將效果參數當作 Common Language Runtime 屬性傳遞
+description: Common Language Runtime (CLR) 屬性可用來定義不會回應執行階段屬性變更的效果參數。 本文示範如何使用 CLR 屬性將參數傳遞至效果。
+ms.prod: xamarin
+ms.assetid: 4B50466C-5DBD-45DD-B1E6-BE9524C92F27
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/05/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 37d870509e034f4c23afba60fa055965ed9df4de
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138860"
 ---
-
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>將效果參數當作 Common Language Runtime 屬性傳遞
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
@@ -230,7 +244,7 @@ namespace EffectsDemo.UWP
 ## <a name="related-links"></a>相關連結
 
 - [自訂轉譯器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [作用](xref:Xamarin.Forms.Effect)
+- [效果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
 - [Shadow Effect (Samples)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect) (陰影效果 (範例))

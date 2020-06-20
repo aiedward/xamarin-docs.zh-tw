@@ -1,7 +1,22 @@
 ---
-title： "第10章的摘要。 XAML 標記延伸「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第10章的摘要。 XAML 標記延伸 "ms. 生產： xamarin assetid： 575EAE55-BD4D-470F-A583-3D065FA102E2 author： davidbritch ms-chap： dabritch ms. date： 07/19/2018 no-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第10章的摘要。 XAML 標記延伸
+description: 建立 Mobile Apps Xamarin.Forms ：第10章的摘要。 XAML 標記延伸
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f23034df684e778677e4f2e480e1c41807536fb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136808"
 ---
-
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>第10章的摘要。 XAML 標記延伸
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)

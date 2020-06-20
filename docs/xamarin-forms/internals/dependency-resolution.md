@@ -1,8 +1,22 @@
 ---
-title： "description：" 中的相依性解析一 Xamarin.Forms 文說明如何在中插入相依性解析方法， Xamarin.Forms 讓應用程式的相依性插入容器可以控制自訂轉譯器、效果和 DependencyService 的建立與存留期。
-assetid： 491B87DC-14CB-4ADC-AC6C-40A7627B2524 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：07/27/2018 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 中的相依性解析Xamarin.Forms
+description: 本文說明如何在中插入相依性解析方法， Xamarin.Forms 讓應用程式的相依性插入容器可以控制自訂轉譯器、效果和 DependencyService 的建立與存留期。
+ms.prod: xamarin
+ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ae30b4a4b75906613baf8a2568548c8890ccb33a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139083"
 ---
-
 # <a name="dependency-resolution-in-xamarinforms"></a>中的相依性解析Xamarin.Forms
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)

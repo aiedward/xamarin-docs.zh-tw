@@ -1,8 +1,22 @@
 ---
-title： "自訂 ContentPage" 描述： "ContentPage 是一種視覺元素，會顯示單一視圖並佔用大部分的畫面。 本文示範如何建立 ContentPage 頁面的自訂轉譯器，讓開發人員以自己的平臺特定自訂來覆寫預設原生轉譯。
-assetid： A4E61D93-73D9-4668-8D1C-DB6FC2491822 ms. 技術： xamarin-表單作者： davidbritch ms. author： dabritch ms. 日期：11/29/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 自訂 ContentPage
+description: ContentPage 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。 本文示範如何建立 ContentPage 頁面的自訂轉譯器，讓開發人員以自己的平台特定自訂來覆寫預設原生轉譯。
+ms.prod: xamarin
+ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca9a541c3d152d1b84ed682881c395f2199b9eaf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574375"
 ---
-
 # <a name="customizing-a-contentpage"></a>自訂 ContentPage
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
@@ -233,7 +247,7 @@ namespace CustomRenderer.UWP
 > [!NOTE]
 > 請務必停止並處置提供 UWP 應用程式中相機存取權的物件。 若未這樣做，則可能會干擾嘗試存取裝置相機的其他應用程式。 如需詳細資訊，請參閱[顯示相機預覽](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文已示範如何建立頁面的自訂轉譯器 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ，讓開發人員能夠以自己的平臺特定自訂來覆寫預設原生轉譯。 `ContentPage` 是可見的項目，會顯示單一檢視，並佔用螢幕的大部分空間。
 

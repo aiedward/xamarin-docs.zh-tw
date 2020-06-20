@@ -1,8 +1,24 @@
 ---
-標題：「將資料儲存在本機 SQLite.NET 資料庫」描述：「本文將說明如何將資料儲存在本機 SQLite.NET 資料庫中。」
-zone_pivot_groups： platform ms. 主題：快速入門 assetid： 5BF901BD-FDE8-4B74-B4AB-418E81745A3B ms-chap： xamarin-表單作者： davidbritch ms. 作者： dabritch ms。日期：04/01/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 將資料儲存在本機 SQLite.NET 資料庫中
+description: 本文說明如何將資料儲存在本機 SQLite.NET 資料庫中。
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: 5BF901BD-FDE8-4B74-B4AB-418E81745A3B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139798"
 ---
-
 # <a name="store-data-in-a-local-sqlitenet-database"></a>將資料儲存在本機 SQLite.NET 資料庫中
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)

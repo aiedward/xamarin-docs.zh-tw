@@ -1,8 +1,22 @@
 ---
-title： " Xamarin.Forms 可重複使用的 RoundEffect" 描述： "RoundEffect 是可重複使用的效果，可以套用至衍生自 VisualElement 的任何控制項，以將控制項轉譯為圓形。」
-assetid： B5DE7507-B565-4EE5-9897-27E5733FD173 ms. 技術： xamarin-表單作者： profexorgeek ms. author： jusjohns ms. 日期：10/25/2019 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: Xamarin.Forms可重複使用的 RoundEffect
+description: RoundEffect 是可重複使用的效果，可以套用至衍生自 VisualElement 的任何控制項，以將控制項轉譯為圓形。
+ms.prod: xamarin
+ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 10/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fc3776934a4c109b2527132b11c6c6a93b7d9f9e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138849"
 ---
-
 # <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms可重複使用的 RoundEffect
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)

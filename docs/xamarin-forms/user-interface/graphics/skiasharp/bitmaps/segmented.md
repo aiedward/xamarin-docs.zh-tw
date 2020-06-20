@@ -1,8 +1,22 @@
 ---
-標題：「SkiaSharp 點陣圖的分段顯示」描述：「顯示 SkiaSharp 點陣圖，讓某些區域伸展，有些區域則不會。」
-skiasharp 的 assetid： 79AE2033-C41C-4447-95A6-76D22E913D19 author： davidbritch ms-chap： dabritch ms. date： 07/17/2018 no-loc： [ Xamarin.Forms ，]，-. Xamarin.Essentials
+title: SkiaSharp 點陣圖的分段顯示
+description: 顯示 SkiaSharp 點陣圖，讓某些區域會伸展，而某些區域則不會。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138667"
 ---
-
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp 點陣圖的分段顯示
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

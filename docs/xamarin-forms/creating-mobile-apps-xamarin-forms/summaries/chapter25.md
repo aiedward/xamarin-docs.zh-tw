@@ -1,7 +1,22 @@
 ---
-title： "第25章的摘要。 頁面種類「描述：」使用下列方式建立 Mobile Apps Xamarin.Forms ：第25章的摘要。 分頁種類「ms. 生產： xamarin ms. 技術： assetid： D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89 author： davidbritch ms-chap： dabritch ms. date：11/07/2017 否-loc： [ Xamarin.Forms ， Xamarin.Essentials ]
+title: 第25章的摘要。 頁面變化
+description: 建立 Mobile Apps Xamarin.Forms ：第25章的摘要。 頁面變化
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: D1D348F2-6A44-4781-ADCE-A0B7BB9AEF89
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e66fb50b8d537ee0267457d5b0ab0f417813e676
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136613"
 ---
-
 # <a name="summary-of-chapter-25-page-varieties"></a>第25章的摘要。 頁面變化
 
 [![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
@@ -50,7 +65,7 @@ Windows 8.1 和 Windows Phone 8.1 平臺需要將點陣圖設定為 `Icon` 主�
 
 ### <a name="your-own-user-interface"></a>您自己的使用者介面
 
-雖然 Xamarin.Forms 提供使用者介面來切換主要和詳細資料檢視，但是您可以提供自己的。 操作方法：
+雖然 Xamarin.Forms 提供使用者介面來切換主要和詳細資料檢視，但是您可以提供自己的。 若要這樣做：
 
 - 將 [`IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) 屬性設定為 `false` 以停用輕刷
 - 覆寫 [`ShouldShowToolbarButton`](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) 方法，並返回 `false` 以隱藏 Windows 8.1 和 Windows Phone 8.1 上的工具列按鈕。
