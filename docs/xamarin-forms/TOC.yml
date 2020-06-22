@@ -234,6 +234,8 @@
               href: app-fundamentals/data-binding/relative-bindings.md
             - name: 繫結後援
               href: app-fundamentals/data-binding/binding-fallbacks.md
+            - name: 多重繫結
+              href: app-fundamentals/data-binding/multibinding.md
             - name: 命令介面
               href: app-fundamentals/data-binding/commanding.md
             - name: 編譯的繫結
@@ -355,7 +357,7 @@
       items:
         - name: 總覽
           href: user-interface/index.yml
-        - name: 'C# 標記'
+        - name: C# 標記
           href: user-interface/csharp-markup.md
         - name: 控制項參考
           items:
@@ -535,6 +537,30 @@
               href: user-interface/text/fonts.md
             - name: 使用 Skiasharp 的圖形
               href: user-interface/graphics/skiasharp/index.md
+            - name: 圖形
+              items:
+                - name: 總覽
+                  href: user-interface/shapes/index.md
+                - name: 橢圓形
+                  href: user-interface/shapes/ellipse.md
+                - name: 幾何
+                  href: user-interface/shapes/geometries.md
+                - name: 線
+                  href: user-interface/shapes/line.md
+                - name: 路徑
+                  items:
+                    - name: 路徑
+                      href: user-interface/shapes/path.md
+                    - name: 路徑標記語法
+                      href: user-interface/shapes/path-markup-syntax.md
+                    - name: 路徑轉換
+                      href: user-interface/shapes/path-transforms.md
+                - name: 多邊形
+                  href: user-interface/shapes/polygon.md
+                - name: 聚合線條
+                  href: user-interface/shapes/polyline.md
+                - name: 矩形
+                  href: user-interface/shapes/rectangle.md
             - name: 啟動顯示畫面
               href: user-interface/splashscreen.md
             - name: 樣式
@@ -768,7 +794,7 @@
           items:
             - name: XAML 中的原生檢視
               href: platform/native-views/xaml.md
-            - name: 'C# 中的原生檢視'
+            - name: C# 中的原生檢視
               href: platform/native-views/code.md
         - name: 透過 Apple 登入
           href: platform/sign-in-with-apple/index.md
@@ -782,7 +808,7 @@
         - name: 其他平台
           href: platform/other/index.md
           items:
-            - name: 'GTK#'
+            - name: GTK#
               href: platform/other/gtk.md
             - name: Mac
               href: platform/other/mac.md
