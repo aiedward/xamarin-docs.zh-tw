@@ -6,16 +6,16 @@ ms.assetid: 4E749FE8-852C-46DA-BB1E-652936106357
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2020
+ms.date: 06/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9c7c552abe724dca6b06265b73346a399d35c3cb
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: c01aac4b415e9b6620f0faa059bf99d42b688b40
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101390"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85132904"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.Forms形狀
 
@@ -31,8 +31,8 @@ Xamarin.Forms圖形適用于 `Xamarin.Forms.Shapes` iOS、Android、macOS、通�
 `Shape` 會定義下列屬性：
 
 - `Aspect`，屬於類型 `Stretch` ，描述圖形如何填滿其已配置的空間。 此屬性的預設值為 `Stretch.None`。
-- `Fill`，屬於類型 `Color` ，表示用來繪製圖形內部的色彩。
-- `Stroke`，屬於類型 `Color` ，表示用來繪製圖形外框的色彩。
+- `Fill`，屬於類型 [`Color`](xref:Xamarin.Forms.Color) ，表示用來繪製圖形內部的色彩。
+- `Stroke`，屬於類型 [`Color`](xref:Xamarin.Forms.Color) ，表示用來繪製圖形外框的色彩。
 - `StrokeDashArray`，屬於類型 `DoubleCollection` ，表示值的集合，表示 `double` 用來勾勒出圖形的虛線和間距模式。
 - `StrokeDashOffset`，屬於類型 `double` ，指定虛線模式內虛線開始的距離。 這個屬性的預設值為0.0。
 - `StrokeLineCap`，屬於類型 `PenLineCap` ，描述行或線段開頭和結尾的圖形。 此屬性的預設值為 `PenLineCap.Flat`。
@@ -41,8 +41,138 @@ Xamarin.Forms圖形適用于 `Xamarin.Forms.Shapes` iOS、Android、macOS、通�
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標，以及樣式化的。
 
-Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 其中包括 `Ellipse`、`Line`、`Path`、`Polygon`、`Polyline` 和 `Rectangle`。
+Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse` 、 `Line` 、 `Path` 、 `Polygon` 、 `Polyline` 和 `Rectangle` 。
+
+## <a name="paint-shapes"></a>繪製圖案
+
+[`Color`](xref:Xamarin.Forms.Color)物件可用來繪製圖形的 `Stroke` 和 `Fill` ：
+
+```xaml
+<Ellipse Fill="DarkBlue"
+         Stroke="Red"
+         StrokeThickness="4"
+         WidthRequest="150"
+         HeightRequest="50"
+         HorizontalOptions="Start" />
+```
+
+在此範例中，會指定的筆觸和填滿 `Ellipse` ：
+
+![繪製圖案](images/ellipse.png "繪製圖案")
+
+> [!IMPORTANT]
+> 如果您未指定的 [`Color`](xref:Xamarin.Forms.Color) 值 `Stroke` ，或者如果您將設定 `StrokeThickness` 為0，則不會繪製圖形周圍的框線。
+
+如需有效值的詳細資訊 [`Color`](xref:Xamarin.Forms.Color) ，請參閱[ Xamarin.Forms 中的色彩](~/xamarin-forms/user-interface/colors.md)。
+
+## <a name="stretch-shapes"></a>Stretch 圖形
+
+`Shape`物件具有 `Aspect` 類型的屬性 `Stretch` 。 這個屬性會決定物件內容的延展方式 `Shape` ，以填滿 `Shape` 物件的版面配置空間。 `Shape`物件的版面配置空間是 `Shape` 配置系統組態的空間量 Xamarin.Forms ，因為有明確的 `WidthRequest` 和設定， `HeightRequest` 或因為其 `HorizontalOptions` 和 `VerticalOptions` 設定。
+
+`Stretch` 列舉會定義下列成員：
+
+- `None`，表示內容會保留其原始大小。 此為 `Shape.Aspect` 屬性的預設值。
+- `Fill`，這表示內容已調整大小以填滿目的地維度。 不會保留長寬比。
+- `Uniform`，這表示內容已調整大小以符合目的尺寸，同時保留長寬比。
+- `UniformToFill`，表示內容已調整大小以填滿目的地維度，同時保留外觀比例。 如果目的矩形的長寬比與來源不同，則會裁剪來源內容使其符合目的尺寸。
+
+下列 XAML 顯示如何設定 `Aspect` 屬性：
+
+```xaml
+<Path Aspect="Uniform"
+      Stroke="Yellow"
+      StrokeThickness="1"
+      Fill="Red"
+      BackgroundColor="LightGray"
+      HorizontalOptions="Start"
+      HeightRequest="100"
+      WidthRequest="100">
+    <Path.Data>
+        <!-- Path data goes here -->
+    </Path.Data>  
+</Path>      
+```
+
+在此範例中， `Path` 物件會繪製一個心形。 `Path`物件的 `WidthRequest` 和 `HeightRequest` 屬性會設定為100裝置獨立單位，且其 `Aspect` 屬性會設定為 `Uniform` 。 因此，物件的內容會調整大小以符合目的尺寸，同時保留長寬比：
+
+![Stretch 圖形](images/aspect.png "Stretch 圖形")
+
+## <a name="dashed-shapes"></a>虛線圖形
+
+`Shape`物件具有 `StrokeDashArray` 類型的屬性 `DoubleCollection` 。 此屬性代表值的集合 `double` ，這些值表示用來外框的虛線和間距模式。 `DoubleCollection`是 `ObservableCollection` `double` 值的。 集合中的每個都會 `double` 指定虛線或間距的長度。 集合中的第一個專案（位於索引0）會指定虛線的長度。 集合中的第二個專案（位於索引1）指定間距的長度。 因此，具有偶數索引值的物件會指定破折號，而具有奇數索引值的物件則會指定間距。
+
+`Shape`物件也具有 `StrokeDashOffset` 類型的屬性 `double` ，它會指定虛線模式內虛線開始的距離。 若無法設定此屬性，將會產生 `Shape` 實心外框。
+
+您可以藉由設定和屬性來繪製虛線形狀 `StrokeDashArray` `StrokeDashOffset` 。 `StrokeDashArray`屬性應設定為一或多個 `double` 值，每個配對都會以單一逗號和/或一或多個空格分隔。 例如，"0.5 1.0" 和 "0.5，1.0" 都是有效的。
+
+下列 XAML 範例顯示如何繪製虛線矩形：
+
+```xaml
+<Rectangle Fill="DarkBlue"
+           Stroke="Red"
+           StrokeThickness="4"
+           StrokeDashArray="1,1"
+           StrokeDashOffset="6"
+           WidthRequest="150"
+           HeightRequest="50"
+           HorizontalOptions="Start" />
+```
+
+在此範例中，繪製了具有虛線筆觸的實心矩形：
+
+![虛線矩形](images/dashed-rectangle.png "虛線")
+
+## <a name="line-ends"></a>行尾
+
+一行有三個部分：開始端點、行主體和結束端點。 開始和結束大寫會描述線條開頭和結尾的圖形，或區段。
+
+`Shape`物件具有 `StrokeLineCap` 類型的屬性，其 `PenLineCap` 描述線條開頭和結尾的圖形，或區段。 `PenLineCap` 列舉會定義下列成員：
+
+- `Flat`，代表不會延伸超過行最後一個點的上限。 這相當於沒有行帽，而是屬性的預設值 `StrokeLineCap` 。
+- `Square`，其代表的高度等於線條粗細，而長度等於線條粗細一半的矩形。
+- `Round`，代表其直徑等於線條粗細的半圓。
+
+> [!IMPORTANT]
+> `StrokeLineCap`如果您在沒有起點或終點的圖形上設定此屬性，就不會有任何作用。 例如，如果您在、或上設定，這個屬性沒有作用 `Ellipse` `Rectangle` 。
+
+下列 XAML 顯示如何設定 `StrokeLineCap` 屬性：
+
+```xaml
+<Line X1="0"
+      Y1="20"
+      X2="300"
+      Y2="20"
+      StrokeLineCap="Round"
+      Stroke="Red"
+      StrokeThickness="12" />
+```
+
+在此範例中，紅線會在行的開頭和結尾舍入：
+
+![行首](images/linecap.png "行首")
+
+## <a name="line-joins"></a>線路聯結
+
+`Shape`物件具有 `StrokeLineJoin` 類型的屬性， `PenLineJoin` 可指定用於圖形頂點的聯結類型。 `PenLineJoin` 列舉會定義下列成員：
+
+- `Miter`，代表一般角度頂點。 此為 `StrokeLineJoin` 屬性的預設值。
+- `Bevel`，代表斜角頂點。
+- `Round`，表示圓角頂點。
+
+下列 XAML 顯示如何設定 `StrokeLineJoin` 屬性：
+
+```xaml
+<Polyline Points="20 20,250 50,20 120"
+          Stroke="DarkBlue"
+          StrokeThickness="20"
+          StrokeLineJoin="Round" />
+```
+
+在此範例中，深藍色的折線會在其頂點上有四捨五入聯結：
+
+![線路聯結](images/linejoin.png "線路聯結")
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [色彩于Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)

@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05fcd1ada62bffa4829ad422ee5eda36d9d75ae3
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: c3b869d10d454453172065b30eb7ce32da81c8ce
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104258"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133031"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms圖形：幾何
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 類別以及從中 `Geometry` 衍生的類別，可讓您描述2d 圖形的幾何。 `Geometry`物件可以很簡單，例如矩形和圓形，或從兩個或多個 geometry 物件所建立的複合。 您可以使用類別來建立更複雜的幾何 `PathGeometry` ，這可讓您描述弧形和曲線。
 
@@ -224,5 +224,5 @@ ms.locfileid: "85104258"
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形狀](index.md)

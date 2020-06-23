@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c0abf7b30192ac9183c28e89d7917ea8d08dfc4f
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: 8df87f0ee3be78749d70dfc535b5d4d50874f194
+ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101330"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85133018"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.Forms圖形：路徑轉換
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 會 `Transform` 定義如何將 `Path` 物件從一個座標空間轉換成另一個座標空間。 這個對應是由轉換所描述 `Matrix` ，這是三個數據列的集合，其中包含三個數據行的 `double` 值。
 
@@ -352,5 +352,5 @@ Xamarin.Forms有兩個類別，可支援將多個轉換套用至 `Path` 物件�
 
 ## <a name="related-links"></a>相關連結
 
-- [ShapeDemos （範例）](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形狀](index.md)
