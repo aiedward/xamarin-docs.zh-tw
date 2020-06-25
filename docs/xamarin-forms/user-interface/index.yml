@@ -13,12 +13,12 @@ metadata:
   no-loc:
   - Xamarin.Forms
   - Xamarin.Essentials
-  ms.openlocfilehash: e07215723a6c54e9d5ce3eb22103cb5eba7929d2
-  ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+  ms.openlocfilehash: a0acc942c84f085c2cff4a70b5863ae4f4644bc6
+  ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
   ms.translationtype: HT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 06/19/2020
-  ms.locfileid: "85104270"
+  ms.lasthandoff: 06/24/2020
+  ms.locfileid: "85326120"
 landingContent:
 - title: 控制項參考
   linkLists:
@@ -160,16 +160,14 @@ landingContent:
       url: shapes/index.md
     - text: 橢圓形
       url: shapes/ellipse.md
+    - text: 填滿規則
+      url: shapes/fillrules.md
     - text: 幾何
       url: shapes/geometries.md
     - text: 線
       url: shapes/line.md
     - text: 路徑
       url: shapes/path.md
-    - text: 路徑標記語法
-      url: shapes/path-markup-syntax.md
-    - text: 路徑轉換
-      url: shapes/path-transforms.md
     - text: 多邊形
       url: shapes/polygon.md
     - text: 聚合線條

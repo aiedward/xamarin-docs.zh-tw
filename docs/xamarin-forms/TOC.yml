@@ -543,6 +543,8 @@
                   href: user-interface/shapes/index.md
                 - name: 橢圓形
                   href: user-interface/shapes/ellipse.md
+                - name: 填滿規則
+                  href: user-interface/shapes/fillrules.md
                 - name: 幾何
                   href: user-interface/shapes/geometries.md
                 - name: 線
