@@ -10,12 +10,12 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1ca92efc612653e40973087bf7577366018c08d0
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 1fd985aa2997be2b35fe3b22606b891aa0b66cf3
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85132985"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243733"
 ---
 # <a name="xamarinforms-shapes-rectangle"></a>Xamarin.Forms圖形：矩形
 
@@ -72,7 +72,7 @@ ms.locfileid: "85132985"
 
 ![具有圓角的矩形](rectangle-images/rounded.png "具有圓角的矩形")
 
-如需繪製虛線矩形的詳細資訊，請參閱[虛線形狀](index.md#dashed-shapes)。
+如需繪製虛線矩形的詳細資訊，請參閱[繪製虛線形狀](index.md#draw-dashed-shapes)。
 
 ## <a name="related-links"></a>相關連結
 

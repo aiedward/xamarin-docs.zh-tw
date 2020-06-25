@@ -10,12 +10,12 @@ ms.date: 06/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c01aac4b415e9b6620f0faa059bf99d42b688b40
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: fdab7d422040aee5a00b16bb1e301f917b0c4883
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85132904"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243759"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.Forms形狀
 
@@ -97,7 +97,7 @@ Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse
 
 ![Stretch 圖形](images/aspect.png "Stretch 圖形")
 
-## <a name="dashed-shapes"></a>虛線圖形
+## <a name="draw-dashed-shapes"></a>繪製虛線形狀
 
 `Shape`物件具有 `StrokeDashArray` 類型的屬性 `DoubleCollection` 。 此屬性代表值的集合 `double` ，這些值表示用來外框的虛線和間距模式。 `DoubleCollection`是 `ObservableCollection` `double` 值的。 集合中的每個都會 `double` 指定虛線或間距的長度。 集合中的第一個專案（位於索引0）會指定虛線的長度。 集合中的第二個專案（位於索引1）指定間距的長度。 因此，具有偶數索引值的物件會指定破折號，而具有奇數索引值的物件則會指定間距。
 
@@ -122,7 +122,7 @@ Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse
 
 ![虛線矩形](images/dashed-rectangle.png "虛線")
 
-## <a name="line-ends"></a>行尾
+## <a name="control-line-ends"></a>控制行尾
 
 一行有三個部分：開始端點、行主體和結束端點。 開始和結束大寫會描述線條開頭和結尾的圖形，或區段。
 
@@ -151,7 +151,7 @@ Xamarin.Forms定義從類別衍生的一些物件 `Shape` 。 這些是 `Ellipse
 
 ![行首](images/linecap.png "行首")
 
-## <a name="line-joins"></a>線路聯結
+## <a name="control-line-joins"></a>控制行聯結
 
 `Shape`物件具有 `StrokeLineJoin` 類型的屬性， `PenLineJoin` 可指定用於圖形頂點的聯結類型。 `PenLineJoin` 列舉會定義下列成員：
 

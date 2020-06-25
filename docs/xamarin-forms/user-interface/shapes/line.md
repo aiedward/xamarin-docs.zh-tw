@@ -10,12 +10,12 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c33c6408a901a1726e37ddda5e24a4c82f671738
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: f97e6930f543f47383e2b8da09b36573bd3192d0
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85132871"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243746"
 ---
 # <a name="xamarinforms-shapes-line"></a>Xamarin.Forms圖形：線條
 
@@ -34,7 +34,7 @@ ms.locfileid: "85132871"
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標，以及樣式化的。
 
-如需控制如何繪製線條結束的詳細資訊，請參閱[行尾](index.md#line-ends)。
+如需控制如何繪製線條結束的詳細資訊，請參閱[控制行尾](index.md#control-line-ends)。
 
 ## <a name="create-a-line"></a>建立線條
 
@@ -82,7 +82,7 @@ ms.locfileid: "85132871"
 
 ![虛線](line-images/dashed-line.png "虛線")
 
-如需繪製虛線的詳細資訊，請參閱[虛線形狀](index.md#dashed-shapes)。
+如需繪製虛線的詳細資訊，請參閱[繪製虛線形狀](index.md#draw-dashed-shapes)。
 
 ## <a name="related-links"></a>相關連結
 

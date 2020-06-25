@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1c3164fbd1d7fb3bc3de15558cdd41f4791515eb
-ms.sourcegitcommit: 22aca3e7e24038d6f83d68dbfc7435080223b1ee
+ms.openlocfilehash: e6f8ad3afdcdb9137869dc57078ac94895f4183c
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133752"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243794"
 ---
 # <a name="xamarinforms-shapes-polygon"></a>Xamarin.Forms圖形：多邊形
 
@@ -36,8 +36,8 @@ ms.locfileid: "85133752"
 
 `FillRule` 列舉會定義下列成員：
 
-- `EvenOdd`表示判斷某個點是否在多邊形填滿區域中的規則。 它會在任何方向繪製從點到無限大的光線，並計算光線相交之圖形內的路徑線段數目。 如果這個數位是奇數，則點位於內部。 如果此數位為偶數，則此點為 [外部]。
-- `Nonzero`表示判斷某個點是否在多邊形填滿區域中的規則。 它會在任何方向繪製從點到無限大的光線，然後檢查圖形的線段與光線相交的位置。 以零為起始的計數，每次區段從左至右跨越光線時加入一個，並在每次區段從右至左與光線相交時減一。 計算交會後，如果結果為零，則點即在路徑外。 否則，它會在內。
+- `EvenOdd`表示判斷某個點是否在多邊形填滿區域中的規則。 它會在任何方向繪製從點到無限大的光線，並計算光線相交之圖形內的線段數目。 如果這個數位是奇數，則點位於內部。 如果此數位為偶數，則此點為 [外部]。
+- `Nonzero`表示判斷某個點是否在多邊形填滿區域中的規則。 它會在任何方向繪製從點到無限大的光線，然後檢查圖形的線段與光線相交的位置。 從零開始，計數會在每次區段從左至右與光線相交時遞增，並在每次區段從右至左時遞減。 計算交點之後，如果結果為零，則點會在多邊形外。 否則，它會在內。
 
 ## <a name="create-a-polygon"></a>建立多邊形
 
@@ -71,7 +71,7 @@ ms.locfileid: "85133752"
 
 ![虛線多邊形](polygon-images/dashed.png "虛線多邊形")
 
-如需繪製虛線多邊形的詳細資訊，請參閱[虛線形狀](index.md#dashed-shapes)。
+如需繪製虛線多邊形的詳細資訊，請參閱[繪製虛線形狀](index.md#draw-dashed-shapes)。
 
 下列 XAML 範例顯示使用預設填滿規則的多邊形：
 

@@ -10,12 +10,12 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aed8d902291272a6bcbdc1ec542b5edacb7668e2
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 725f892a667b4e89d55266abcf69e5394b09b6a5
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133044"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243788"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.Forms圖形：橢圓形
 
@@ -60,7 +60,7 @@ ms.locfileid: "85133044"
 
 ![圓心](ellipse-images/circle.png "Circle")
 
-如需繪製虛線橢圓形的詳細資訊，請參閱[虛線形狀](index.md#dashed-shapes)。
+如需繪製虛線橢圓形的詳細資訊，請參閱[繪製虛線形狀](index.md#draw-dashed-shapes)。
 
 ## <a name="related-links"></a>相關連結
 

@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c3b869d10d454453172065b30eb7ce32da81c8ce
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 412b0255dafcbd752c7b350ddc25ecd13f8f98d8
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133031"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326184"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms圖形：幾何
 
@@ -124,6 +124,8 @@ ms.locfileid: "85133031"
 
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標，以及樣式化的。
 
+如需列舉的詳細資訊 `FillRule` ，請參閱[ Xamarin.Forms 圖形：填滿規則](fillrules.md)。
+
 `PathGeometry`是由物件的集合所組成 `PathFigure` ，每個都 `PathFigure` 描述幾何中的圖形。 每個 `PathFigure` 都是由一或多個物件所組成 `PathSegment` ，每個物件都描述圖形的區段。 區段分為許多種類型：
 
 - `ArcSegment`，這會在兩個點之間建立橢圓形弧線。
@@ -226,3 +228,4 @@ ms.locfileid: "85133031"
 
 - [ShapeDemos （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms形狀](index.md)
+- [Xamarin.Forms圖形：填滿規則](fillrules.md)
