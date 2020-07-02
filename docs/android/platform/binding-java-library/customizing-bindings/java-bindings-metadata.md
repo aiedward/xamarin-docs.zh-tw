@@ -7,25 +7,28 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 2a88888b2306589930ad6386fb69bbd3b48924b7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 5439e213c0016ea01935d617f5f6b5a3edf3eee8
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571372"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853004"
 ---
 # <a name="java-bindings-metadata"></a>Java 繫結中繼資料
+
+> [!IMPORTANT]
+> 我們目前正在調查 Xamarin 平臺上的自訂系結使用方式。 請接受[**這份問卷調查**](https://www.surveymonkey.com/r/KKBHNLT)，以通知未來的開發工作。
 
 _Xamarin 中的 c # 程式碼會透過系結呼叫 JAVA 程式庫，這是一種機制，可抽象化 JAVA 原生介面（JNI）中指定的低層級詳細資料。Xamarin 提供產生這些系結的工具。這項工具可讓開發人員控制如何使用中繼資料來建立系結，這可讓您修改命名空間和重新命名成員等程式。本檔討論中繼資料的運作方式、匯總中繼資料支援的屬性，以及說明如何藉由修改此中繼資料來解決系結問題。_
 
 ## <a name="overview"></a>概觀
 
-Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式庫所需的大部分工作，與有時稱為系結產生_器的工具協助自動化。_ 當系結 JAVA 程式庫時，Xamarin 會檢查 JAVA 類別，並產生所有要系結的封裝、類型和成員的清單。 此 Api 清單會儲存在 XML 檔案中，此檔案可在**發行**組建的** \{ project directory} \obj\Release\api.xml**中找到，而在**Debug**組建的** \{ 專案目錄} \obj\Debug\api.xml**中。
+Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式庫所需的大部分工作，與有時稱為系結產生_器的工具協助自動化。_ 當系結 JAVA 程式庫時，Xamarin 會檢查 JAVA 類別，並產生所有要系結的封裝、類型和成員的清單。 此 Api 清單會儲存在 XML 檔案中，該檔案位於** \{ 專案目錄} \obj\Release\api.xml**用於**發行**組建，而在** \{ 專案目錄}** 中，則為**DEBUG**組建的 \obj\Debug\api.xml。
 
-![在 obj/Debug 資料夾中，api .xml 檔案的位置](java-bindings-metadata-images/java-bindings-metadata-01.png)
+![Obj/Debug 資料夾中 api.xml 檔案的位置](java-bindings-metadata-images/java-bindings-metadata-01.png)
 
-系結產生器會使用**api .xml**檔案，作為建立必要 c # 包裝函式類別的指導方針。 這個 XML 檔案的內容是 Google 的_Android 開放原始碼專案_格式的變化。
-下列程式碼片段是**api**內容的範例：
+系結產生器會使用**api.xml**檔案做為產生必要 c # 包裝函式類別的指導方針。 這個 XML 檔案的內容是 Google 的_Android 開放原始碼專案_格式的變化。
+下列程式碼片段是**api.xml**內容的範例：
 
 ```xml
 <api>
@@ -45,22 +48,22 @@ Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式�
 </api>
 ```
 
-在此範例中， **api**會在封裝中宣告 `android` 名為的類別，以 `Manifest` 擴充 `java.lang.Object` 。
+在此範例中， **api.xml**宣告 `android` 封裝中名為的類別，並 `Manifest` 擴充 `java.lang.Object` 。
 
 在許多情況下，需要人工協助，讓 JAVA API 感覺更像「.NET」，或是更正導致系結元件無法編譯的問題。 例如，您可能需要將 JAVA 封裝名稱變更為 .NET 命名空間、重新命名類別，或變更方法的傳回型別。
 
-您無法直接修改**api .xml**來完成這些變更。
+這些變更無法藉由直接修改**api.xml**來達成。
 相反地，變更會記錄在 JAVA 系結程式庫範本所提供的特殊 XML 檔案中。 在編譯 Xamarin. Android 系結元件時，系結產生器會在建立系結元件時受到這些對應檔的影響。
 
 您可以在專案的 [**轉換**] 資料夾中找到這些 XML 對應檔案：
 
-- **MetaData** &ndash; 允許對最終 API 進行變更，例如變更所產生系結的命名空間。 
+- **MetaData.xml** &ndash;允許對最終 API 進行變更，例如變更所產生系結的命名空間。 
 
-- **EnumFields** &ndash; 包含 JAVA `int` 常數與 c # 之間的對應 `enums` 。 
+- **EnumFields.xml** &ndash;包含 JAVA `int` 常數與 c # 之間的對應 `enums` 。 
 
-- **EnumMethods** &ndash; 可讓您將方法參數和傳回類型從 JAVA `int` 常數變更為 c # `enums` 。 
+- **EnumMethods.xml** &ndash;允許將方法參數和傳回類型從 JAVA `int` 常數變更為 c # `enums` 。 
 
-**中繼資料 .xml**檔案最容易匯入這些檔案，因為它允許對系結進行一般用途的變更，例如：
+**MetaData.xml**檔案最容易匯入這些檔案，因為它允許對系結進行一般用途的變更，例如：
 
 - 重新命名命名空間、類別、方法或欄位，使其遵循 .NET 慣例。 
 
@@ -70,18 +73,18 @@ Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式�
 
 - 新增其他支援類別，讓系結的設計遵循 .NET framework 模式。 
 
-讓我們繼續討論**中繼資料**的詳細資訊。
+讓我們繼續討論**Metadata.xml**的詳細資訊。
 
-## <a name="metadataxml-transform-file"></a>中繼資料 .xml 轉換檔案
+## <a name="metadataxml-transform-file"></a>Metadata.xml 的轉換檔案
 
-如同我們已瞭解的，系結產生器會使用檔案**Metadata .xml**來影響系結元件的建立。
+如同我們已經瞭解的，系結產生器會使用檔案**Metadata.xml**來影響系結元件的建立。
 元資料格式使用[XPath](https://www.w3.org/TR/xpath/)語法，幾乎與[GAPI 中繼資料](https://www.mono-project.com/docs/gui/gtksharp/gapi/#metadata)指南中所述的*GAPI 中繼資料*完全相同。 這項實現幾乎是完整的 XPath 1.0 實作為，因此支援1.0 標準中的專案。 此檔案是功能強大的 XPath 型機制，可變更、新增、隱藏或移動 API 檔案中的任何元素或屬性。 中繼資料規格中的所有規則元素都包含 path 屬性，用以識別要套用規則的節點。 規則會依照下列順序套用：
 
 - **新增節點** &ndash;將子節點附加至 path 屬性所指定的節點。
 - **attr** &ndash;設定 path 屬性所指定之元素的屬性值。
 - **移除-node** &ndash;移除符合指定 XPath 的節點。
 
-以下是**中繼資料 .xml**檔案的範例：
+以下是**Metadata.xml**檔案的範例：
 
 ```xml
 <metadata>
@@ -111,7 +114,7 @@ Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式�
 
 ### <a name="adding-types"></a>加入類型
 
-`add-node`元素會告訴 Xamarin Android 系結專案，將新的包裝函式類別加入至**api .xml**。 例如，下列程式碼片段會指示系結產生器，以建立具有一個和一個單一欄位的類別：
+`add-node`元素會告訴 Xamarin Android 系結專案，將新的包裝函式類別加入**api.xml**。 例如，下列程式碼片段會指示系結產生器，以建立具有一個和一個單一欄位的類別：
 
 ```xml
 <add-node path="/api/package[@name='org.alljoyn.bus']">
@@ -124,7 +127,7 @@ Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式�
 
 ### <a name="removing-types"></a>移除類型
 
-您可以指示 Xamarin 的系結產生器忽略 JAVA 類型，而不系結它。 這是藉由將 `remove-node` XML 元素新增至**中繼資料 .xml**檔案來完成：
+您可以指示 Xamarin 的系結產生器忽略 JAVA 類型，而不系結它。 這是藉由將 `remove-node` XML 元素新增至**metadata.xml**檔案來完成：
 
 ```xml
 <remove-node path="/api/package[@name='{package_name}']/class[@name='{name}']" />
@@ -132,10 +135,10 @@ Xamarin. Android **JAVA**系結程式庫會嘗試將系結現有 Android 程式�
 
 ### <a name="renaming-members"></a>重新命名成員
 
-無法直接編輯**config.xml**檔案來重新命名成員，因為 Xamarin 需要原始 JAVA 原生介面（JNI）名稱。 因此， `//class/@name` 無法改變屬性; 如果是，則系結將無法使用。
+因為 Xamarin 需要原始 JAVA 原生介面（JNI）名稱，所以無法藉由直接編輯**api.xml**檔案來重新命名成員。 因此， `//class/@name` 無法改變屬性; 如果是，則系結將無法使用。
 
 請考慮我們想要重新命名類型的情況 `android.Manifest` 。
-若要完成此動作，我們可能會嘗試直接編輯**config.xml** ，並將類別重新命名，如下所示：
+為了達到此目的，我們可能會嘗試直接編輯**api.xml** ，並將類別重新命名，如下所示：
 
 ```xml
 <attr path="/api/package[@name='android']/class[@name='Manifest']" 
@@ -293,13 +296,13 @@ NavigationManager.2DSignNextManueverEventArgs
 <attr path="/api/package[@name='namespace']/class[@name='ClassName']/method[@name='MethodName']" name="visibility">public</attr>
 ```
 
-## <a name="enumfieldsxml-and-enummethodsxml"></a>EnumFields .xml 和 EnumMethods .xml
+## <a name="enumfieldsxml-and-enummethodsxml"></a>EnumFields.xml 和 EnumMethods.xml
 
-在某些情況下，Android 程式庫會使用整數常數來代表傳遞給程式庫屬性或方法的狀態。 在許多情況下，將這些整數常數系結至 c # 中的列舉會很有用。 若要加速此對應，請使用系結專案中的**EnumFields**和**EnumMethods。** 
+在某些情況下，Android 程式庫會使用整數常數來代表傳遞給程式庫屬性或方法的狀態。 在許多情況下，將這些整數常數系結至 c # 中的列舉會很有用。 若要加速此對應，請使用**EnumFields.xml** ，並**EnumMethods.xml**系結專案中的檔案。 
 
-### <a name="defining-an-enum-using-enumfieldsxml"></a>使用 EnumFields 定義列舉
+### <a name="defining-an-enum-using-enumfieldsxml"></a>使用 EnumFields.xml 定義列舉
 
-**EnumFields**檔案包含 JAVA `int` 常數與 c # 之間的對應 `enums` 。 讓我們針對一組常數建立 c # 列舉的下列範例 `int` ： 
+**EnumFields.xml**檔案包含 JAVA `int` 常數與 c # 之間的對應 `enums` 。 讓我們針對一組常數建立 c # 列舉的下列範例 `int` ： 
 
 ```xml 
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings" clr-enum-type="Skobbler.Ngx.Map.RealReach.SKMeasurementUnit">
@@ -311,11 +314,11 @@ NavigationManager.2DSignNextManueverEventArgs
 
 在這裡，我們已採用 JAVA 類別 `SKRealReachSettings` ，並 `SKMeasurementUnit` 在命名空間中定義名為的 c # 列舉 `Skobbler.Ngx.Map.RealReach` 。 `field`專案會定義 JAVA 常數的名稱（範例 `UNIT_SECOND` ）、列舉專案的名稱（範例 `Second` ），以及這兩個實體所表示的整數值（範例 `0` ）。 
 
-### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>使用 EnumMethods 定義 Getter/Setter 方法
+### <a name="defining-gettersetter-methods-using-enummethodsxml"></a>使用 EnumMethods.xml 定義 Getter/Setter 方法
 
-**EnumMethods**可讓您將方法參數和傳回類型從 JAVA 常數變更 `int` 為 c # `enums` 。 換句話說，它會將 c # 列舉的讀取和寫入（定義于**EnumFields**中）對應到 JAVA `int` 常數 `get` 和 `set` 方法。
+**EnumMethods.xml**檔案可讓您將方法參數和傳回類型從 JAVA `int` 常數變更為 c # `enums` 。 換句話說，它會將 c # 列舉的讀取和寫入（定義于**EnumFields.xml**檔案中）對應到 JAVA `int` 常數 `get` 和 `set` 方法。
 
-假設先前 `SKRealReachSettings` 定義的列舉，下列**EnumMethods**會定義此列舉的 getter/setter：
+假設先前 `SKRealReachSettings` 定義的列舉，下列**EnumMethods.xml**檔案會定義此列舉的 getter/setter：
 
 ```xml
 <mapping jni-class="com/skobbler/ngx/map/realreach/SKRealReachSettings">
@@ -332,9 +335,9 @@ NavigationManager.2DSignNextManueverEventArgs
 realReachSettings.MeasurementUnit = SKMeasurementUnit.Second;
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
-本文討論了 Xamarin 如何使用中繼資料來轉換來自*Google* *AOSP 格式*的 API 定義。 在涵蓋可能使用*中繼資料*的變更之後，它會檢查重新命名成員時所遇到的限制，並提供支援的 xml 屬性清單，描述每個屬性的使用時機。
+本文討論了 Xamarin 如何使用中繼資料來轉換來自*Google* *AOSP 格式*的 API 定義。 在使用*Metadata.xml*來涵蓋可能的變更之後，它會檢查重新命名成員時所遇到的限制，並顯示支援的 XML 屬性清單，描述每個屬性的使用時機。
 
 ## <a name="related-links"></a>相關連結
 

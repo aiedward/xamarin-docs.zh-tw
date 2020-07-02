@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 68b7f4a245a60df1723f5a6442f30dc2b1a15932
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 124c739f68ce8a3fcbc359a07513a2bcb178578f
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85794976"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853127"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms圖形：路徑標記語法
 
@@ -59,11 +59,11 @@ Move 命令會指定新圖形的起點。 此命令的語法為： `M` *startPoi
 - 行（ `L` 或 `l` ）。
 - 水平線（ `H` 或 `h` ）。
 - 垂直線（ `V` 或 `v` ）。
+- 橢圓形弧線（ `A` 或 `a` ）。
 - 三次方貝茲曲線（ `C` 或 `c` ）。
 - 二次方貝茲曲線（ `Q` 或 `q` ）。
 - 平滑的三次方貝茲曲線（ `S` 或 `s` ）。
 - 平滑二次方貝茲曲線（ `T` 或 `t` ）。
-- 橢圓形弧線（ `A` 或 `a` ）。
 
 每個 draw 命令都會以不區分大小寫的字母來指定。 依序輸入多個相同類型的命令時，可以省略重複的命令項目。 例如 `L 100,200 300,400` ，相當於 `L 100,200 L 300,400` 。
 
@@ -74,6 +74,8 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 在此語法中，*端點*是一個 [`Point`](xref:Xamarin.Forms.Point) ，代表行的結束點。
 
 `L 20,30`和 `L 20 30` 是有效行命令的範例。
+
+如需將直線建立為物件的相關資訊 `PathGeometry` ，請參閱[Create a LineSegment](geometries.md#create-a-linesegment)。
 
 ### <a name="horizontal-line-command"></a>水平線命令
 
@@ -91,6 +93,22 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 `V 90` 為有效垂直線命令的範例。
 
+### <a name="elliptical-arc-command"></a>橢圓形弧線命令
+
+橢圓形 arc 命令會在目前的點和指定的結束點之間建立橢圓形弧線。 此命令的語法為： `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*或 `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*。
+
+在此語法中：
+
+- `size`是 [`Size`](xref:Xamarin.Forms.Size) ，表示弧線的 x 和 y 半徑。
+- `rotationAngle`這是 `double` 代表橢圓形旋轉的（以度為單位）。
+- `isLargeArcFlag`如果弧線的角度應為180度或更大，則應該設定為1，否則設定為0。
+- `sweepDirectionFlag`如果以正角方向繪製弧線，則應該設定為1，否則設定為0。
+- `endPoint`是 [`Point`](xref:Xamarin.Forms.Point) 弧線繪製的。
+
+`A 150,150 0 1,0 150,-150`是有效橢圓形 arc 命令的範例。
+
+如需建立橢圓形弧線做為物件的詳細資訊 `PathGeometry` ，請參閱[建立 ArcSegment](geometries.md#create-an-arcsegment)。
+
 ### <a name="cubic-bezier-curve-command"></a>三次方貝茲曲線命令
 
 三次方貝茲曲線命令會使用兩個指定的控制點，在目前的點和指定的結束點之間建立三次方貝茲曲線。 此命令的語法為： `C` *controlPoint1* *controlPoint2* *endpoint*或 `c` *controlPoint1* *controlPoint2* *endpoint*。
@@ -103,6 +121,8 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 
 `C 100,200 200,400 300,200`是有效的三次方貝茲曲線命令的範例。
 
+如需將三次方貝茲曲線建立為物件的詳細資訊 `PathGeometry` ，請參閱[Create a system.windows.media.beziersegment>](geometries.md#create-a-beziersegment)。
+
 ### <a name="quadratic-bezier-curve-command"></a>二次方貝茲曲線命令
 
 二次方貝茲曲線命令會使用指定的控制點，在目前的點和指定的結束點之間建立二次方貝茲曲線。 此命令的語法為： `Q` *controlPoint* *端點*或 `q` *controlPoint* *端點*。
@@ -113,6 +133,8 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 - *端點*是 [`Point`](xref:Xamarin.Forms.Point) ，代表繪製曲線的點。
 
 `Q 100,200 300,200` 為有效二次方貝茲曲線命令的範例。
+
+如需建立二次方貝茲曲線作為物件的詳細資訊 `PathGeometry` ，請參閱[建立 system.windows.media.quadraticbeziersegment>](geometries.md#create-a-quadraticbeziersegment)。
 
 ### <a name="smooth-cubic-bezier-curve-command"></a>平滑三次方貝茲曲線命令
 
@@ -136,20 +158,6 @@ Line 命令會在目前的點和指定的結束點之間建立直線。 此命�
 控制點會假設為 (相對於目前的點) 上一個命令之控制點的反映。 如果沒有上一個命令，或者上一個命令不是二次方貝茲曲線或平滑二次方貝茲曲線命令，則會假設控制點與目前的點一致。
 
 `T 100,30`是有效的平滑二次方貝茲曲線命令的範例。
-
-### <a name="elliptical-arc-command"></a>橢圓形弧線命令
-
-橢圓形 arc 命令會在目前的點和指定的結束點之間建立橢圓形弧線。 此命令的語法為： `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*或 `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*。
-
-在此語法中：
-
-- `size`是 [`Size`](xref:Xamarin.Forms.Size) ，表示弧線的 x 和 y 半徑。
-- `rotationAngle`這是 `double` 代表橢圓形旋轉的（以度為單位）。
-- `isLargeArcFlag`如果弧線的角度應為180度或更大，則應該設定為1，否則設定為0。
-- `sweepDirectionFlag`如果以正角方向繪製弧線，則應該設定為1，否則設定為0。
-- `endPoint`是 [`Point`](xref:Xamarin.Forms.Point) 弧線繪製的。
-
-`A 150,150 0 1,0 150,-150`是有效橢圓形 arc 命令的範例。
 
 ## <a name="close-command"></a>關閉命令
 

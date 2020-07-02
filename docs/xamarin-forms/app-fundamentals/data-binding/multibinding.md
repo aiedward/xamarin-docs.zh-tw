@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2020
-ms.openlocfilehash: dfe6da8a76b447bf0c2a6c0a3bea9823e498d5e4
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: 0aafe01fcbde6cf1aacf3e2dd47444d4b77021e2
+ms.sourcegitcommit: 79ba3deb031c8a60d0841bb3dbeaaf65daf2b224
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988188"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85846373"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin. 表單多重系結
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 多個系結可讓您將物件集合附加 [`Binding`](xref:Xamarin.Forms.Binding) 至單一系結目標屬性。 它們是使用類別所建立 `MultiBinding` ，其會評估其所有 `Binding` 物件，並透過 `IMultiValueConverter` 您的應用程式所提供的實例傳回單一值。 此外，在 `MultiBinding` 任何系結 `Binding` 的資料變更時，重新評估它的所有物件。
 
@@ -44,7 +44,7 @@ ms.locfileid: "84988188"
 
 ## <a name="define-a-imultivalueconverter"></a>定義 System.windows.data.imultivalueconverter>
 
-`IMultiValueConverter`介面可讓自訂邏輯套用至 `MultiBinding` 。 若要將轉換器與建立關聯 `MultiBinding` ，請建立一個可實作為介面的類別 `IValueConverter` ，然後再執行 `Convert` 和 `ConvertBack` 方法：
+`IMultiValueConverter`介面可讓自訂邏輯套用至 `MultiBinding` 。 若要將轉換器與建立關聯 `MultiBinding` ，請建立一個可實作為介面的類別 `IMultiValueConverter` ，然後再執行 `Convert` 和 `ConvertBack` 方法：
 
 ```csharp
 public class AllTrueMultiConverter : IMultiValueConverter

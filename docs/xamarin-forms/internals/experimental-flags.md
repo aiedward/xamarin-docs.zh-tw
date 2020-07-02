@@ -10,12 +10,12 @@ ms.date: 06/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 17fcc996b4dc8013a23a598ece8e240caba3f775
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bd35722c76cce245701b7a548514d402cd978d38
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946113"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853080"
 ---
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms實驗性旗標
 
@@ -31,7 +31,6 @@ Xamarin.Forms包含下列實驗旗標：
 - `RadioButton_Experimental`
 - `Shapes_Experimental`
 - `Shell_UWP_Experimental`
-- `StateTriggers_Experimental`
 - `SwipeView_Experimental`
 
 使用實驗旗標後方的功能時，您必須在應用程式中啟用旗標或旗標。 有兩種方法可以啟用實驗旗標：

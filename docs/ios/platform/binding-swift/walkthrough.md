@@ -7,16 +7,19 @@ ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: b650f86a1bba62d5db7463875de3398db9c33842
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: 3c63b1a4ed58b0efcc510085934a5380e6049ae7
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "78292555"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853146"
 ---
 # <a name="walkthrough-bind-an-ios-swift-library"></a>逐步解說：系結 iOS Swift 程式庫
 
-Xamarin 可讓行動開發人員使用 Visual Studio 和， C#建立跨平臺的原生行動體驗。 您可以使用現成的 iOS 平臺 SDK 元件。 但在許多情況下，您也會想要使用針對該平臺開發的協力廠商 Sdk，Xamarin 可讓您透過系結執行此動作。 若要將協力廠商的目標-C 架構併入您的 Xamarin iOS 應用程式，您必須先為它建立 Xamarin. iOS 系結，才能在應用程式中使用它。
+> [!IMPORTANT]
+> 我們目前正在調查 Xamarin 平臺上的自訂系結使用方式。 請接受[**這份問卷調查**](https://www.surveymonkey.com/r/KKBHNLT)，以通知未來的開發工作。
+
+Xamarin 可讓行動開發人員使用 Visual Studio 和 c # 來建立跨平臺的原生行動體驗。 您可以使用現成的 iOS 平臺 SDK 元件。 但在許多情況下，您也會想要使用針對該平臺開發的協力廠商 Sdk，Xamarin 可讓您透過系結執行此動作。 若要將協力廠商的目標-C 架構併入您的 Xamarin iOS 應用程式，您必須先為它建立 Xamarin. iOS 系結，才能在應用程式中使用它。
 
 IOS 平臺以及其原生語言和工具會不斷演進，而 Swift 則是目前 iOS 開發環境中最動態的其中一個區域。 有一些協力廠商 Sdk 已從目標-C 遷移至 Swift，而這會帶來新的挑戰。 雖然 Swift 系結程式類似于目標-C，但它需要額外的步驟和設定設定，才能成功建立並執行 AppStore 可接受的 Xamarin iOS 應用程式。
 
@@ -26,7 +29,7 @@ IOS 平臺以及其原生語言和工具會不斷演進，而 Swift 則是目前
 
 Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架構的採用版本5.1 上快速成長。 您有幾個選項可以系結 Swift 架構，而本檔概述使用以目標 C 產生的介面標頭的方法。 建立架構時，Xcode 工具會自動建立標頭，並使用它作為從受管理世界到 Swift 世界的通訊方式。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>必要條件
 
 為了完成此逐步解說，您需要：
 
@@ -37,11 +40,11 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
 
 ## <a name="build-a-native-library"></a>建立原生程式庫
 
-第一個步驟是建立原生 Swift 架構，並啟用目標-C 標頭。 架構通常是由協力廠商開發人員提供，並將標頭內嵌在下列目錄的封裝中： **\<FrameworkName >. framework/header/\<FrameworkName >-Swift. h**。
+第一個步驟是建立原生 Swift 架構，並啟用目標-C 標頭。 架構通常是由協力廠商開發人員提供，並將標頭內嵌在下列目錄的封裝中： ** \<FrameworkName> . framework/header/ \<FrameworkName> -Swift. h**。
 
-此標頭會公開公用介面，其將用來建立 Xamarin. iOS 系結中繼資料C# ，並產生公開 Swift 架構成員的類別。 如果標頭不存在或具有不完整的公用介面（例如，您看不到類別/成員），您有兩個選項：
+此標頭會公開公用介面，其將用來建立 Xamarin. iOS 系結中繼資料，並產生公開 Swift 架構成員的 c # 類別。 如果標頭不存在或具有不完整的公用介面（例如，您看不到類別/成員），您有兩個選項：
 
-- 更新 Swift 原始程式碼以產生標頭，並以 `@objc` 屬性標記必要的成員
+- 更新 Swift 原始程式碼以產生標頭，並使用屬性來標示必要的成員 `@objc`
 - 建立 proxy 架構，您可以在其中控制公用介面，並將所有對基礎架構的呼叫進行 proxy
 
 在本教學課程中，會說明第二種方法，因為它的相依性較不一定是協力廠商原始程式碼的相依性。 另一個避免第一種方法的原因是，需要額外的工作才能支援未來的架構變更。 當您開始將變更新增至協力廠商原始程式碼之後，您必須負責支援這些變更，並可能會在每次更新時合併它們。
@@ -84,11 +87,11 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
 
     如果您想要檢查特定設定的專案設定，則輸出應該是空的。
 
-1. 請確定已啟用 [**目標-C 產生的介面標頭名稱**] 選項，並指定標頭名稱。 預設名稱為 **\<FrameworkName >-Swift. h**：
+1. 請確定已啟用 [**目標-C 產生的介面標頭名稱**] 選項，並指定標頭名稱。 預設名稱為** \<FrameworkName> -Swift. h**：
 
     [![xcode objectice-c 標頭已啟用選項](walkthrough-images/xcode-objcheaderenabled-option.png)](walkthrough-images/xcode-objcheaderenabled-option.png#lightbox)
 
-1. 公開所需的方法，並使用 `@objc` 屬性將其標示為，並套用下列定義的其他規則。 如果您在不使用此步驟的情況下建立架構，則產生的目標 C 標頭將會是空的，而 Xamarin。 iOS 將無法存取 Swift 架構成員。 藉由建立新的 Swift 檔案**SwiftFrameworkProxy**並定義下列程式碼，來公開基礎 GIGYA swift SDK 的初始化邏輯：
+1. 公開所需的方法，並將其標示為 `@objc` 屬性，並套用下列定義的其他規則。 如果您在不使用此步驟的情況下建立架構，則產生的目標 C 標頭將會是空的，而 Xamarin。 iOS 將無法存取 Swift 架構成員。 藉由建立新的 Swift 檔案**SwiftFrameworkProxy**並定義下列程式碼，來公開基礎 GIGYA swift SDK 的初始化邏輯：
 
     ```swift
     import Foundation
@@ -111,11 +114,11 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
     上述程式碼有幾個重要的注意事項：
 
     - 從原始的協力廠商 Gigya SDK 匯入 Gigya 模組，現在可以存取架構的任何成員。
-    - 使用指定名稱的 `@objc` 屬性來標記 SwiftFrameworkProxy 類別，否則會產生唯一的無法讀取名稱，例如 `_TtC19SwiftFrameworkProxy19SwiftFrameworkProxy`。 型別名稱應該清楚地定義，因為它會在稍後用它的名稱來使用。
-    - 從 `NSObject`繼承 proxy 類別，否則不會在目標-C 標頭檔中產生。
-    - 將所有要公開為 `public`的成員標示為。
+    - 使用 `@objc` 指定名稱的屬性來標記 SwiftFrameworkProxy 類別，否則會產生唯一的無法讀取名稱，例如 `_TtC19SwiftFrameworkProxy19SwiftFrameworkProxy` 。 型別名稱應該清楚地定義，因為它會在稍後用它的名稱來使用。
+    - 從繼承 proxy 類別 `NSObject` ，否則不會在目標-C 標頭檔中產生。
+    - 將所有要公開的成員標記為 `public` 。
 
-1. 將 [配置] 組建設定從 [**調試**] 變更為 [**發行**]。 若要這麼做，請開啟**Xcode > 目標 > 編輯配置** 對話方塊，然後將**組建**設定選項設為 **發行**：
+1. 將 [配置] 組建設定從 [**調試**] 變更為 [**發行**]。 若要這麼做，請開啟**Xcode > 目標 > 編輯配置**] 對話方塊，然後將**組建**設定選項設為 [**發行**]：
 
     ![xcode 編輯配置](walkthrough-images/xcode-edit-scheme.png)
 
@@ -200,7 +203,7 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
 
 ## <a name="prepare-metadata"></a>準備中繼資料
 
-此時，您應該已有已準備好要供 Xamarin iOS 系結使用之目標 C 的架構。  下一個步驟是準備 API 定義介面，以供系結專案用來產生C#類別。 [目標 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具和產生的標頭檔可以手動或自動建立這些定義。 使用 Sharpie 來產生中繼資料：
+此時，您應該已有已準備好要供 Xamarin iOS 系結使用之目標 C 的架構。  下一個步驟是準備 API 定義介面，以供系結專案用來產生 c # 類別。 [目標 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具和產生的標頭檔可以手動或自動建立這些定義。 使用 Sharpie 來產生中繼資料：
 
 1. 從官方下載網站下載最新的[目標 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具，並依照嚮導進行安裝。 安裝完成後，您可以執行 sharpie 命令來進行驗證：
 
@@ -223,7 +226,7 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
         [write] StructsAndEnums.cs
     ```
 
-    此工具會為C#每個公開的目標-C 成員產生中繼資料，看起來會類似下列程式碼。 如您所見，它可以手動定義，因為它具有人類看得懂的格式和直接的成員對應：
+    此工具會為每個公開的目標-C 成員產生 c # 中繼資料，看起來會類似下列程式碼。 如您所見，它可以手動定義，因為它具有人類看得懂的格式和直接的成員對應：
 
     ```csharp
     [Export ("initForApiKey:")]
@@ -249,7 +252,7 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
 
     ![visual studio 專案結構中繼資料](walkthrough-images/visualstudio-project-structure-metadata.png)
 
-    中繼資料本身會使用 language 來C#描述每個公開的目標-C 類別和成員。 您可以同時看到原始的目標 C 標頭定義和C#宣告：
+    中繼資料本身會使用 c # 語言來描述每個公開的目標 C 類別和成員。 您可以看到原始的目標 C 標頭定義與 c # 宣告：
 
     ```csharp
     // @interface SwiftFrameworkProxy : NSObject
@@ -262,11 +265,11 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
     }
     ```
 
-    雖然它是有效C#的程式碼，但並不會使用它，而是由 Xamarin iOS 工具用來根據此C#元資料定義來產生類別。 因此，您會取得具有相同名稱的C#類別，而不是介面 SwiftFrameworkProxy，而這可以由您的 Xamarin. iOS 程式碼具現化。 這個類別會取得您的中繼資料所定義的方法、屬性和其他成員，您將以C#某種方式呼叫。
+    雖然它是有效的 c # 程式碼，但並不會使用它，而是由 Xamarin iOS 工具用來產生以這個元資料定義為基礎的 c # 類別。 如此一來，您會取得一個具有相同名稱的 c # 類別，而不是介面 SwiftFrameworkProxy，其可由您的 Xamarin. iOS 程式碼具現化。 這個類別會取得您的中繼資料所定義的方法、屬性和其他成員，您將會以 c # 方式呼叫。
 
 1. 將原生參考新增至所產生的舊版 fat framework，以及該架構的每個相依性。 在此情況下，請將 SwiftFrameworkProxy 和 Gigya 架構原生參考新增至系結專案：
 
-    - 若要加入原生架構參考，請開啟搜尋工具並流覽至具有架構的資料夾。 將架構拖放到 方案總管中的 原生參考位置 底下。 或者，您可以使用 [原生參考] 資料夾上的內容功能表選項，然後按一下 [**加入原生參考**] 來查詢架構並加以加入：
+    - 若要加入原生架構參考，請開啟搜尋工具並流覽至具有架構的資料夾。 將架構拖放到 [方案總管中的 [原生參考位置] 底下。 或者，您可以使用 [原生參考] 資料夾上的內容功能表選項，然後按一下 [**加入原生參考**] 來查詢架構並加以加入：
 
     ![visual studio 專案結構原生參考](walkthrough-images/visualstudio-project-structure-nativerefs.png)
 
@@ -294,9 +297,9 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
         L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/ -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -Wl,-rpath -Wl,@executable_path/Frameworks
         ```
 
-        前兩個選項（ `-L ...` 一個）會告訴原生編譯器哪裡可以找到 swift 程式庫。 原生編譯器會忽略沒有正確架構的程式庫，這表示您可以同時傳遞模擬器程式庫和裝置程式庫的位置，以便它適用于模擬器和裝置組建（這些只有 iOS 的路徑是正確的;針對 tvOS 和 watchOS，他們必須更新）。 其中一個缺點是，如果系結程式庫的取用者在不同的位置中有 Xcode，則此方法會要求正確的 Xcode 在/Application/Xcode.app 中，而不會有作用。 替代方案是在可執行檔專案的 iOS 組建選項（`--gcc_flags -L... -L...`）中，將這些選項新增至其他 mtouch 引數中。 第三個選項會使原生連結器將 swift 程式庫的位置儲存在可執行檔中，讓 OS 可以找到它們。
+        前兩個選項（其中一種  `-L ...`   ）會告訴原生編譯器哪裡可以找到 swift 程式庫。 原生編譯器會忽略沒有正確架構的程式庫，這表示您可以同時傳遞模擬器程式庫和裝置程式庫的位置，以便它同時適用于模擬器和裝置組建（這些路徑僅適用于 iOS，tvOS 和 watchOS 必須更新）。 其中一個缺點是，如果系結程式庫的取用者在不同的位置中有 Xcode，則此方法會要求正確的 Xcode 在/Application/Xcode.app 中，而不會有作用。 替代方案是在可執行檔專案的 iOS 組建選項（）的其他 mtouch 引數中新增這些選項 `--gcc_flags -L... -L...` 。 第三個選項會使原生連結器將 swift 程式庫的位置儲存在可執行檔中，讓 OS 可以找到它們。
 
-1. 最後的動作是建立程式庫，並確定您沒有任何編譯錯誤。 您通常會發現，目標 Sharpie 所產生的系結中繼資料會以 `[Verify]` 屬性來標注。 這些屬性工作表示您應該藉由比較系結與原始的目標-C 宣告（將會在系結宣告上方的批註中提供），來驗證目標 Sharpie 是否執行正確的動作。 您可以透過[下列連結](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify)，深入瞭解以屬性標示的成員。 建立專案之後，就可以由 Xamarin iOS 應用程式使用。
+1. 最後的動作是建立程式庫，並確定您沒有任何編譯錯誤。 您通常會發現，目標 Sharpie 所產生的系結中繼資料會以  `[Verify]`   屬性標注。 這些屬性工作表示您應該藉由比較系結與原始的目標-C 宣告（將會在系結宣告上方的批註中提供），來驗證目標 Sharpie 是否執行正確的動作。 您可以透過[下列連結](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/platform/verify)，深入瞭解以屬性標示的成員。 建立專案之後，就可以由 Xamarin iOS 應用程式使用。
 
 ## <a name="consume-the-binding-library"></a>使用系結程式庫
 
@@ -334,7 +337,7 @@ Swift 一開始是由 Apple 在2014中引進，而且現在已在協力廠商架
     }
     ```
 
-1. 執行應用程式，在 debug 輸出中，您應該會看到下列這一行： `Gigya initialized with domain: us1.gigya.com`。 按一下按鈕以啟動驗證流程：
+1. 執行應用程式，在 debug 輸出中，您應該會看到下列這一行： `Gigya initialized with domain: us1.gigya.com` 。 按一下按鈕以啟動驗證流程：
 
     [![swift proxy 結果](walkthrough-images/swiftproxy-result.png)](walkthrough-images/swiftproxy-result.png#lightbox)
 

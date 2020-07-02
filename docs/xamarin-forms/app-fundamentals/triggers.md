@@ -10,16 +10,16 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136951"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853145"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms導致
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 觸發程序可讓您用 XAML 以宣告方式表達動作，根據事件或屬性變更改變控制項的外觀。 此外，狀態觸發程式是一組特殊的觸發程式，定義應該套用的時機 [`VisualState`](xref:Xamarin.Forms.VisualState) 。
 
@@ -319,11 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>狀態觸發程式
 
-狀態觸發程式已在4.5 中引進 Xamarin.Forms ，而且是一組特殊的觸發程式，定義應該套用的條件 [`VisualState`](xref:Xamarin.Forms.VisualState) 。 不過，它們目前為實驗性，而且只能透過將下列程式程式碼新增至您的*App.xaml.cs*檔案來使用：
-
-```csharp
-Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
-```
+狀態觸發程式是一組特殊的觸發程式，用來定義應套用的條件 [`VisualState`](xref:Xamarin.Forms.VisualState) 。 
 
 狀態觸發程式會加入至的 [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) 集合 [`VisualState`](xref:Xamarin.Forms.VisualState) 。 這個集合可以包含單一狀態觸發程式或多個狀態觸發程式。 [`VisualState`](xref:Xamarin.Forms.VisualState)當集合中的任何狀態觸發程式為作用中時，將會套用。
 

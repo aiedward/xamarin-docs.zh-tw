@@ -1,20 +1,23 @@
 ---
 title: 系結 iOS Swift 程式庫
-description: 本檔說明如何建立C# Swift 程式碼的系結，讓您可以在 Xamarin iOS 應用程式中使用原生程式庫和 CocoaPods。
+description: '本檔描述如何建立 Swift 程式碼的 c # 系結，讓您可以在 Xamarin iOS 應用程式中使用原生程式庫和 CocoaPods。'
 ms.prod: xamarin
 ms.assetid: 890EFCCA-A2A2-4561-88EA-30DE3041F61D
 ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: 9a683f31016a9db4271e3909e421f27ef83c2080
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: 72ab1d9f10ee308313569528d152d5930a258207
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "78292277"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852975"
 ---
 # <a name="bind-ios-swift-libraries"></a>系結 iOS Swift 程式庫
+
+> [!IMPORTANT]
+> 我們目前正在調查 Xamarin 平臺上的自訂系結使用方式。 請接受[**這份問卷調查**](https://www.surveymonkey.com/r/KKBHNLT)，以通知未來的開發工作。
 
 IOS 平臺以及其原生語言和工具會不斷演進，而且有許多協力廠商程式庫是使用最新的產品開發的。 最大化程式碼和元件重複使用是跨平臺開發的主要目標之一。 將以 Swift 建立的元件重複使用的功能，對於 Xamarin 開發人員而言越來越重要，因為他們在開發人員之間的熱門程度會持續成長。 您可能已經熟悉將一般的[目標 C](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough)程式庫系結的程式。 其他檔現已提供說明系結[Swift 架構](walkthrough.md)的程式，因此 Xamarin 應用程式可以透過相同的方式取用它們。 本檔的目的是要說明為 Xamarin 建立 Swift 系結的高階方法。
 
@@ -23,7 +26,7 @@ IOS 平臺以及其原生語言和工具會不斷演進，而且有許多協力�
 透過 Xamarin，您可以系結任何協力廠商原生程式庫，以供 Xamarin 應用程式取用。 Swift 是新語言，而建立使用此語言之程式庫的系結需要一些額外的步驟和工具。 此方法包含下列四個步驟：
 
 1. 建立原生程式庫
-1. 準備 Xamarin 中繼資料，讓 Xamarin 工具能夠產生C#類別
+1. 準備 Xamarin 中繼資料，以啟用 Xamarin 工具來產生 c # 類別
 1. 使用原生程式庫和中繼資料建立 Xamarin 系結程式庫
 1. 在 Xamarin 應用程式中使用 Xamarin 系結程式庫
 
@@ -31,14 +34,14 @@ IOS 平臺以及其原生語言和工具會不斷演進，而且有許多協力�
 
 ### <a name="build-the-native-library"></a>建立原生程式庫
 
-第一個步驟是使用已建立的目標-C 標頭來準備原生 Swift 架構。 此檔案是自動產生的標頭，會公開所需的 Swift 類別、方法和欄位，讓它們可供目標C# C 和最終透過 Xamarin 系結程式庫存取。 此檔案位於架構的下列路徑內： **\<FrameworkName >. framework/標頭/\<FrameworkName >-Swift. h**。 如果公開的介面具有所有必要的成員，您可以跳到下一個步驟。 否則，需要進一步的步驟來公開這些成員。 此方法將取決於您是否可以存取 Swift 架構原始程式碼：
+第一個步驟是使用已建立的目標-C 標頭來準備原生 Swift 架構。 此檔案是自動產生的標頭，會公開所需的 Swift 類別、方法和欄位，使其可透過 Xamarin 系結程式庫同時存取目標 C 和 c #。 這個檔案位於架構中的下列路徑底下： ** \<FrameworkName> . Framework/標頭/ \<FrameworkName> -Swift. h**。 如果公開的介面具有所有必要的成員，您可以跳到下一個步驟。 否則，需要進一步的步驟來公開這些成員。 此方法將取決於您是否可以存取 Swift 架構原始程式碼：
 
-- 如果您有程式碼的存取權，您可以使用 `@objc` 屬性裝飾所需的 Swift 成員，並套用一些額外的規則，讓 Xcode build 工具知道這些成員應該會公開給目標-C 世界和標頭。
-- 如果您沒有原始程式碼的存取權，您必須建立 proxy Swift 架構，它會包裝原始的 Swift 架構，並使用 `@objc` 屬性來定義應用程式所需的公用介面。
+- 如果您有程式碼的存取權，您可以使用屬性裝飾所需的 Swift 成員 `@objc` ，並套用一些額外的規則，讓 Xcode build 工具知道這些成員應該會公開給目標-C 世界和標頭。
+- 如果您沒有原始程式碼的存取權，您必須建立 proxy Swift 架構，它會包裝原始的 Swift 架構，並使用屬性來定義應用程式所需的公用介面 `@objc` 。
 
 ### <a name="prepare-the-xamarin-metadata"></a>準備 Xamarin 中繼資料
 
-第二個步驟是準備 API 定義介面，以供系結專案用來產生C#類別。 [目標 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具可以手動或自動建立這些定義，而且上述自動產生的 **\<FrameworkName >-Swift**標頭檔。 一旦產生中繼資料，就應該以手動方式進行驗證和驗證。
+第二個步驟是準備 API 定義介面，以供系結專案用來產生 c # 類別。 [目標 Sharpie](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/)工具和前述自動產生** \<FrameworkName> 的 Swift**標頭檔可以手動或自動建立這些定義。 一旦產生中繼資料，就應該以手動方式進行驗證和驗證。
 
 ### <a name="build-the-xamarinios-binding-library"></a>建立 Xamarin iOS 系結程式庫
 

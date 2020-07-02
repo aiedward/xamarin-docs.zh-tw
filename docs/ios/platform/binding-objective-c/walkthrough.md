@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 328633bc58f17216c071a2b2cd779704da2bbf74
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c36159984f314ecbf90f98df6472eee2149eee92
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569409"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853170"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>逐步解說：系結 iOS 目標-C 程式庫
+
+> [!IMPORTANT]
+> 我們目前正在調查 Xamarin 平臺上的自訂系結使用方式。 請接受[**這份問卷調查**](https://www.surveymonkey.com/r/KKBHNLT)，以通知未來的開發工作。
 
 _本文提供的實際操作逐步解說，是為現有的 InfColorPicker 的目標-C 程式庫建立 Xamarin. iOS 系結。其中涵蓋的主題包括編譯靜態的目標 C 程式庫、將其系結，以及在 Xamarin iOS 應用程式中使用系結。_
 
@@ -41,7 +44,7 @@ _本文提供的實際操作逐步解說，是為現有的 InfColorPicker 的目
 
 範例應用程式將示範如何使用強式委派來進行 InfColorPicker API 與我們的 c # 程式碼之間的通訊。 在瞭解如何使用強式委派之後，我們將討論如何使用弱式委派來執行相同的工作。
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
 本文假設您已熟悉 Xcode 和目標 C 語言，而且您已閱讀我們的系結[目標-c](~/cross-platform/macios/binding/index.md)檔。 此外，若要完成顯示的步驟，需要下列各項：
 
@@ -274,7 +277,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. 從 [**檔案**] 功能表中，選取 [**新增**  >  **專案**]：
 
-    ![啟動新的專案](walkthrough-images/bind01vs.png "啟動新的專案")
+    ![開始新專案](walkthrough-images/bind01vs.png "開始新專案")
 
 1. 從 [新增專案] 對話方塊中，選取 [ **Visual c #] > iPhone & iPad > iOS 系結程式庫（Xamarin）**：
 
@@ -713,7 +716,7 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 執行應用程式。 它現在的行為應該與之前完全相同，但它使用弱式委派，而不是強式委派。 此時，您已成功完成本逐步解說。 您現在應該已經瞭解如何建立和使用 Xamarin 的系結專案。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本文逐步解說建立和使用 Xamarin iOS 系結專案的程式。 首先，我們討論了如何將現有的目標 C 程式庫編譯成靜態程式庫。 接著，我們討論了如何建立 Xamarin iOS 系結專案，以及如何使用目標 Sharpie 來產生目標 C 程式庫的 API 定義。 我們已討論如何更新和調整產生的 API 定義，使其適用于公用。 在 Xamarin iOS 系結專案完成之後，我們已移至在 Xamarin iOS 應用程式中取用該系結，並著重于使用強式委派和弱式委派。
 
