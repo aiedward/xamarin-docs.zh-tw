@@ -9,16 +9,16 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 855bd0d357950b019487b3ea05e379915f54b9d4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: da00aafb9f659d8af119e00476a9a243a2f91023
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127627"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795062"
 ---
 # <a name="skiasharp-graphics-in-xamarinforms"></a>SkiaSharp 圖形Xamarin.Forms
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _在應用程式中使用2D 圖形的 SkiaSharp Xamarin.Forms_
 
@@ -34,7 +34,7 @@ SkiaSharp 是 .NET 和 c # 的2D 圖形系統，由 Google 產品中廣泛使用
 
 的 SkiaSharp Xamarin.Forms 會封裝為 NuGet 套件。 Xamarin.Forms在 Visual Studio 或 Visual Studio for Mac 中建立解決方案之後，您可以使用 NuGet 套件管理員來搜尋**SkiaSharp** ，並將它新增至您的方案。 如果您在新增 SkiaSharp 之後，檢查每個專案的 [**參考**] 區段，您可以看到各種**SkiaSharp**程式庫已加入至方案中的每個專案。
 
-如果您 Xamarin.Forms 的應用程式是以 ios 為目標，請使用 [專案屬性] 頁面，將最小部署目標變更為 ios 8.0。
+如果您的 Xamarin.Forms 應用程式是以 ios 為目標，請編輯其**plist**檔案，將最小部署目標變更為 ios 8.0。
 
 在使用 SkiaSharp 的任何 c # 頁面中，您會想要包含命名空間的指示詞 `using` [`SkiaSharp`](xref:SkiaSharp) ，其中包含您將在圖形程式設計中使用的所有 SkiaSharp 類別、結構和列舉。 針對特定的類別，您也需要命名空間的指示詞 `using` [`SkiaSharp.Views.Forms`](xref:SkiaSharp.Views.Forms) Xamarin.Forms 。 這是較小的命名空間，最重要的類別是 [`SKCanvasView`](xref:SkiaSharp.Views.Forms.SKCanvasView) 。 這個類別衍生自 Xamarin.Forms `View` 類別，並裝載您的 SkiaSharp 圖形輸出。
 

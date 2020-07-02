@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104325"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795031"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms通用控制項屬性、方法和事件
 
@@ -47,7 +47,7 @@ Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使�
 
 ### `Clip`
 
-`Clip`屬性是 `Geometry` 定義元素內容大綱的物件。 若要定義剪輯，請使用 `Geometry` 物件（例如） `EllipseGeometry` 來設定元素的 `Clip` 屬性。 只有 geometry 區域內的區域才會顯示。 如需詳細資訊，請參閱[裁剪幾何](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries)。
+`Clip`屬性是 `Geometry` 定義元素內容大綱的物件。 若要定義剪輯，請使用 `Geometry` 物件（例如） `EllipseGeometry` 來設定元素的 `Clip` 屬性。 只有 geometry 區域內的區域才會顯示。 如需詳細資訊，請參閱[具有幾何的剪輯](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry)。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
@@ -71,7 +71,7 @@ Xamarin.Forms `VisualElement` 類別是應用程式中大部分控制項所使�
 
 ### [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled)
 
-`IsEnabled`屬性是一個 `bool` 值，可決定控制項是否會回應使用者輸入。 預設值是 `true`。 將此屬性設定為 false，將會讓控制項無法接受使用者輸入。
+`IsEnabled`屬性是一個 `bool` 值，可決定控制項是否會回應使用者輸入。 預設值為 `true`。 將此屬性設定為 false，將會讓控制項無法接受使用者輸入。
 
 ### [`IsFocused`](xref:Xamarin.Forms.VisualElement.IsFocused)
 

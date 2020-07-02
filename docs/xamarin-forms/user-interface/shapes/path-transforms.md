@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8df87f0ee3be78749d70dfc535b5d4d50874f194
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 554a9dd0ca8be54c35d1891b60149bbbb66c3e7c
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133018"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795008"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.Forms圖形：路徑轉換
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 會 `Transform` 定義如何將 `Path` 物件從一個座標空間轉換成另一個座標空間。 這個對應是由轉換所描述 `Matrix` ，這是三個數據列的集合，其中包含三個數據行的 `double` 值。
 
@@ -73,7 +73,6 @@ Xamarin.Forms也提供下列類別來建立更複雜的轉換：
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -118,7 +117,6 @@ Xamarin.Forms也提供下列類別來建立更複雜的轉換：
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -156,7 +154,6 @@ Xamarin.Forms也提供下列類別來建立更複雜的轉換：
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -190,7 +187,6 @@ Xamarin.Forms也提供下列類別來建立更複雜的轉換：
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -225,7 +221,6 @@ Xamarin.Forms有兩個類別，可支援將多個轉換套用至 `Path` 物件�
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -276,7 +271,6 @@ Xamarin.Forms有兩個類別，可支援將多個轉換套用至 `Path` 物件�
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -310,7 +304,6 @@ Xamarin.Forms有兩個類別，可支援將多個轉換套用至 `Path` 物件�
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -336,7 +329,6 @@ Xamarin.Forms有兩個類別，可支援將多個轉換套用至 `Path` 物件�
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
