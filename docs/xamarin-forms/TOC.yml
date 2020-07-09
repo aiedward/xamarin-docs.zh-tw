@@ -405,6 +405,32 @@
                   href: user-interface/map/native-map-app.md
             - name: MediaElement
               href: user-interface/mediaelement.md
+            - name: 圖形
+              items:
+                - name: 總覽
+                  href: user-interface/shapes/index.md
+                - name: 橢圓形
+                  href: user-interface/shapes/ellipse.md
+                - name: 填滿規則
+                  href: user-interface/shapes/fillrules.md
+                - name: 幾何
+                  href: user-interface/shapes/geometries.md
+                - name: 線
+                  href: user-interface/shapes/line.md
+                - name: 路徑
+                  items:
+                    - name: 路徑
+                      href: user-interface/shapes/path.md
+                    - name: 路徑標記語法
+                      href: user-interface/shapes/path-markup-syntax.md
+                    - name: 路徑轉換
+                      href: user-interface/shapes/path-transforms.md
+                - name: 多邊形
+                  href: user-interface/shapes/polygon.md
+                - name: 聚合線條
+                  href: user-interface/shapes/polyline.md
+                - name: 矩形
+                  href: user-interface/shapes/rectangle.md
             - name: WebView
               href: user-interface/webview.md
         - name: 起始命令
@@ -537,32 +563,6 @@
               href: user-interface/text/fonts.md
             - name: 使用 Skiasharp 的圖形
               href: user-interface/graphics/skiasharp/index.md
-            - name: 圖形
-              items:
-                - name: 總覽
-                  href: user-interface/shapes/index.md
-                - name: 橢圓形
-                  href: user-interface/shapes/ellipse.md
-                - name: 填滿規則
-                  href: user-interface/shapes/fillrules.md
-                - name: 幾何
-                  href: user-interface/shapes/geometries.md
-                - name: 線
-                  href: user-interface/shapes/line.md
-                - name: 路徑
-                  items:
-                    - name: 路徑
-                      href: user-interface/shapes/path.md
-                    - name: 路徑標記語法
-                      href: user-interface/shapes/path-markup-syntax.md
-                    - name: 路徑轉換
-                      href: user-interface/shapes/path-transforms.md
-                - name: 多邊形
-                  href: user-interface/shapes/polygon.md
-                - name: 聚合線條
-                  href: user-interface/shapes/polyline.md
-                - name: 矩形
-                  href: user-interface/shapes/rectangle.md
             - name: 啟動顯示畫面
               href: user-interface/splashscreen.md
             - name: 樣式
