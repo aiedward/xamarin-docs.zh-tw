@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b094ddd7334da777d39d403eb06d72558c96ed2
-ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
+ms.openlocfilehash: e86ebcd55f3a36da1ad5c7c13bb50e7fc9094010
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100191"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226803"
 ---
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials： Web 驗證器
 
@@ -23,7 +23,7 @@ ms.locfileid: "86100191"
 
 許多應用程式都需要新增使用者驗證，這通常表示讓您的使用者能夠登入其現有的 Microsoft、Facebook、Google 和現在的 Apple 登入帳戶。
 
-[Microsoft 驗證程式庫（MSAL）](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)提供絕佳的轉型解決方案，可將驗證新增至您的應用程式。 在用戶端 NuGet 套件中甚至支援 Xamarin 應用程式。
+[Microsoft Authentication Library (MSAL) ](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)提供絕佳的轉型解決方案，可將驗證新增至您的應用程式。 在用戶端 NuGet 套件中甚至支援 Xamarin 應用程式。
 
 如果您想要使用自己的 web 服務進行驗證，則可以使用**WebAuthenticator**來執行用戶端功能。
 
@@ -131,7 +131,7 @@ var accessToken = authResult?.AccessToken;
 
 ![一般 Web 驗證流程](images/web-authenticator.png)
 
-如果使用者在任何時間點取消流程， `null` 則會傳回結果。
+如果使用者在任何時間點取消流程， `TaskCanceledException` 就會擲回。
 
 ## <a name="platform-differences"></a>平臺差異
 
@@ -200,7 +200,7 @@ var accessToken = r?.AccessToken;
 
 ### <a name="add-a-custom-mobile-auth-controller"></a>新增自訂的行動驗證控制器
 
-使用行動驗證流程時，通常會想要將流程直接起始至使用者所選擇的提供者（例如，在應用程式的 [登入] 畫面上按一下 [Microsoft] 按鈕）。  也很重要的是，您可以在特定的回呼 URI，將相關資訊傳回至您的應用程式，以結束驗證流程。
+使用行動驗證流程時，通常會想要直接對使用者所選擇的提供者起始流程 (例如，在應用程式) 的 [登入] 畫面上按一下 [Microsoft] 按鈕。  也很重要的是，您可以在特定的回呼 URI，將相關資訊傳回至您的應用程式，以結束驗證流程。
 
 若要達到此目的，請使用自訂 API 控制器：
 
@@ -223,7 +223,7 @@ public class AuthController : ControllerBase
 }
 ```
 
-此控制器的目的是要推斷應用程式要求的配置（提供者），並向社交提供者起始驗證流程。 當提供者回呼至 web 後端時，控制器會剖析結果，並將參數重新導向至應用程式的回呼 URI。
+此控制器的目的是要推斷應用程式要求的配置 (提供者) ，並向社交提供者起始驗證流程。 當提供者回呼至 web 後端時，控制器會剖析結果，並將參數重新導向至應用程式的回呼 URI。
 
 有時候，您可能會想要將提供者之類的資料 `access_token` 傳回給應用程式，您可以透過回呼 URI 的查詢參數來執行此動作。 或者，您可能會想要改為在伺服器上建立自己的身分識別，並將您自己的權杖傳回給應用程式。 您可以自行決定如何執行此元件！
 

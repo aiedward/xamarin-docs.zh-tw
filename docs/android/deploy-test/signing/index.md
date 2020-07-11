@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: c6a606bf326d1e59398ab77c51b1de5ed3e497e0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 66d2f66f0118e84778b25fc0e872099439510ce2
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571528"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226842"
 ---
 # <a name="signing-the-android-application-package"></a>簽署 Android 應用程式套件
 
@@ -46,7 +46,7 @@ ms.locfileid: "84571528"
 
 [![特定簽署身分識別](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
-[Create Android Key Store] \(建立 Android 金鑰儲存區\)**** 對話方塊隨即顯示；使用此對話方塊來建立可用於簽署 Android 應用程式的新簽署憑證。 輸入所需的資訊，如此對話方塊中所示 (以紅色標示之處)：
+[**建立 Android 金鑰存放區**] 對話方塊隨即顯示;使用此對話方塊來建立可用於簽署 Android 應用程式的新簽署憑證。 輸入所需的資訊，如此對話方塊中所示 (以紅色標示之處)：
 
 [![建立 Android 金鑰存放區對話方塊](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
 
@@ -62,8 +62,10 @@ ms.locfileid: "84571528"
 
 **C:\\Users\\*USERNAME*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
-> [!NOTE]
-> 請務必將所產生的金鑰儲存區檔案和密碼備份到安全的位置 &ndash; 解決方案不包含此檔案。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 Windows)，您將無法使用與舊版相同的憑證來簽署應用程式。
+> [!IMPORTANT]
+> AppData 資料夾預設是隱藏的，您可能需要將它取消隱藏才能存取它。
+>
+> 此外，請務必將產生的金鑰儲存區檔案和密碼備份到安全的位置，而 &ndash; 不會包含在解決方案中。 如果您遺失金鑰儲存區檔案 (例如，因為您移至另一部電腦，或重新安裝 Windows)，您將無法使用與舊版相同的憑證來簽署應用程式。
 
 如需金鑰儲存區的詳細資訊，請參閱[尋找金鑰儲存區的 MD5 或 SHA1 簽章](~/android/deploy-test/signing/keystore-signature.md)。
 
@@ -129,7 +131,7 @@ ms.locfileid: "84571528"
 
 [![發行為特定對話](images/xs/05-publish-ad-hoc-sml.png)](images/xs/05-publish-ad-hoc.png#lightbox)
 
-[輸出 APK 檔案]**** 對話方塊會將 APK 儲存至指定的路徑。 按一下 [檔案] 。
+[輸出 APK 檔案]**** 對話方塊會將 APK 儲存至指定的路徑。 按一下 [儲存]。
 
 ![[輸出 APK 檔案] 對話方塊](images/xs/06-output-apk-file.png)
 

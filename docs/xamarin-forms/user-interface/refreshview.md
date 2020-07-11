@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsRefreshView
-description: Xamarin.FormsRefreshView 是一個容器控制項，可提供可滾動內容的提取至重新整理功能。
+title: Xamarin.Forms RefreshView
+description: Xamarin.Forms RefreshView 是一個容器控制項，可提供可滾動內容的提取至重新整理功能。
 ms.prod: xamarin
 ms.assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990
 ms.technology: xamarin-forms
@@ -10,16 +10,18 @@ ms.date: 09/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d84e6bb6ed41f2fbc213cd15051d071521f588cd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+- RefreshView
+- Universal Windows Platform
+ms.openlocfilehash: 83802683aee722468acf9bcc827ba66f45c05e6b
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127591"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225477"
 ---
-# <a name="xamarinforms-refreshview"></a>Xamarin.FormsRefreshView
+# <a name="xamarinforms-refreshview"></a>Xamarin.Forms RefreshView
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
 `RefreshView`是一個容器控制項，可提供可滾動內容的提取至重新整理功能。 因此，的子系 `RefreshView` 必須是可滾動的控制項，例如 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 或 [`ListView`](xref:Xamarin.Forms.ListView) 。
 
@@ -33,7 +35,7 @@ ms.locfileid: "84127591"
 這些屬性是由物件所支援 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，這表示它們可以是資料系結的目標，以及樣式化的。
 
 > [!NOTE]
-> 在通用 Windows 平臺上， `RefreshView` 可以使用平臺特定的來設定的提取方向。 如需詳細資訊，請參閱[RefreshView 提取方向](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)。
+> 在上 Universal Windows Platform ， `RefreshView` 可以使用平臺特定來設定的提取方向。 如需詳細資訊，請參閱[ RefreshView 提取方向](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)。
 
 ## <a name="create-a-refreshview"></a>建立 RefreshView
 
@@ -77,12 +79,12 @@ refreshView.Content = scrollView;
 
 當使用者起始重新整理時， `ICommand` `Command` 會執行由屬性定義的，這應該會重新整理所顯示的專案。 重新整理視覺效果會在進行重新整理時顯示，這是由動畫的進度圓形所組成：
 
-[![在 iOS 和 Android 上 RefreshView 重新整理資料的螢幕擷取畫面](refreshview-images/default-progress-circle.png "RefreshView 重新整理資料")](refreshview-images/default-progress-circle-large.png#lightbox "RefreshView 重新整理資料")
+[![RefreshView在 iOS 和 Android 上重新整理資料的螢幕擷取畫面](refreshview-images/default-progress-circle.png "[!OP.無 LOC (RefreshView) ] 重新整理資料")](refreshview-images/default-progress-circle-large.png#lightbox "[!OP.無 LOC (RefreshView) ] 重新整理資料")
 
 > [!NOTE]
 > `IsRefreshing`將屬性手動設定為 `true` 將會觸發重新整理視覺效果，並執行 `ICommand` 屬性所定義的 `Command` 。
 
-## <a name="refreshview-appearance"></a>RefreshView 外觀
+## <a name="refreshview-appearance"></a>RefreshView效果
 
 除了 `RefreshView` 繼承自類別的屬性之外 [`VisualElement`](xref:Xamarin.Forms.VisualElement) ，也會 `RefreshView` 定義 `RefreshColor` 屬性。 您可以設定這個屬性來定義重新整理期間所顯示的進度圓形色彩：
 
@@ -93,14 +95,14 @@ refreshView.Content = scrollView;
 
 下列螢幕擷取畫面顯示已 `RefreshView` `RefreshColor` 設定屬性的：
 
-[![在 iOS 和 Android 上具有青色進度圓形的 RefreshView 螢幕擷取畫面](refreshview-images/teal-progress-circle.png "具有青色進度圓形的 RefreshView")](refreshview-images/teal-progress-circle-large.png#lightbox "具有青色進度圓形的 RefreshView")
+[![RefreshView在 iOS 和 Android 上具有青色進度圓形的螢幕擷取畫面](refreshview-images/teal-progress-circle.png "[!OP.無- (RefreshView) ] 具有青色的進度圓形")](refreshview-images/teal-progress-circle-large.png#lightbox "[!OP.無- (RefreshView) ] 具有青色的進度圓形")
 
 此外，您 `BackgroundColor` 可以將屬性設定為 [`Color`](xref:Xamarin.Forms.Color) ，代表進度圓形的背景色彩。
 
 > [!NOTE]
 > 在 iOS 上， `BackgroundColor` 屬性 `UIView` 會設定包含進度圓形之的背景色彩。
 
-## <a name="disable-a-refreshview"></a>停用 RefreshView
+## <a name="disable-a-refreshview"></a>停用RefreshView
 
 應用程式可能會進入 [提取至重新整理] 不是有效作業的狀態。 在這種情況下， `RefreshView` 可以藉由將其 `IsEnabled` 屬性設為來停用 `false` 。 這會讓使用者無法觸發提取以重新整理。
 
@@ -108,6 +110,6 @@ refreshView.Content = scrollView;
 
 ## <a name="related-links"></a>相關連結
 
-- [RefreshView （範例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
+- [RefreshView (範例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 - [中可系結的版面配置Xamarin.Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
-- [RefreshView 提取方向平臺特定](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)
+- [RefreshView提取方向平臺特定](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

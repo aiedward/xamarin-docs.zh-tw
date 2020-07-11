@@ -6,22 +6,22 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/16/2020
+ms.date: 07/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bd503ce9fd04d80fc0f791131f67f6f1a86ae84a
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132375"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225623"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms視圖
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
-_[Xamarin] 是跨平臺行動使用者介面的基礎構件。_
+_Xamarin.Formsviews 是跨平臺行動使用者介面的基礎構件。_
 
 Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖形化程式設計環境中通常稱為*控制項*或*小*工具。 支援的視圖 Xamarin.Forms 全都衍生自 [`View`](xref:Xamarin.Forms.View) 類別。 它們可以分成數個類別：
 
@@ -34,11 +34,18 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 | [`BoxView`](xref:Xamarin.Forms.BoxView)顯示以屬性著色的實心矩形 [`Color`](xref:Xamarin.Forms.BoxView.Color) 。 `BoxView`的預設大小要求為40x40。 針對其他大小，請指派 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 和 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 屬性。<br /><br />[API 檔](xref:Xamarin.Forms.BoxView)  / [指南](~/xamarin-forms/user-interface/boxview.md)  / [範例 1](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)、 [2](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)、 [3](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)、 [4](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)、 [5](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)和[6](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock) | [![BoxView 範例](views-images/BoxView.png "BoxView 範例")](views-images/BoxView-Large.png#lightbox "BoxView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/BoxViewDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/BoxViewDemoPage.xaml) |
 |     |     |
 
+### <a name="ellipse"></a>橢圓形
+
+|     |    |
+| --- | ---|
+| [`Ellipse`](xref:Xamarin.Forms.Shapes.Ellipse)顯示大小為 x 的橢圓形或 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) 圓形 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) 。 若要在橢圓形內繪製，請將其 [`Fill`](xref:Xamarin.Forms.Shapes.Shape.Fill) 屬性設為 [`Color`](xref:Xamarin.Forms.Color) 。 若要為橢圓形提供外框，請將其 [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) 屬性設為 `Color` 。<br /><br />[API 檔](xref:Xamarin.Forms.Shapes.Ellipse)  / [指南](~/xamarin-forms/user-interface/shapes/ellipse.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![橢圓形範例](views-images/Ellipse.png "橢圓形範例")](views-images/Ellipse-Large.png#lightbox "橢圓形範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EllipseDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EllipseDemoPage.xaml) |
+|     |     |
+
 ### <a name="expander"></a>展開工具
 
 |     |     |
 | --- | --- |
-| `Expander`提供可擴充的容器來裝載任何內容，並由標頭和內容所組成。 將 `Header` 屬性設定為， [`View`](xref:Xamarin.Forms.View) 將會顯示為標頭，並將屬性設為，以便在按下點 `Content` [`View`](xref:Xamarin.Forms.View) 展開標頭時顯示。<br /><br />[指南](~/xamarin-forms/user-interface/expander.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![展開器範例](views-images/Expander.png "展開器範例")](views-images/Expander-Large.png#lightbox "展開器範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
+| [`Expander`](xref:Xamarin.Forms.Expander)提供可擴充的容器來裝載任何內容，並由標頭和內容所組成。 將 `Header` 屬性設定為， [`View`](xref:Xamarin.Forms.View) 將會顯示為標頭，並將屬性設為，以便在按下點 `Content` [`View`](xref:Xamarin.Forms.View) 展開標頭時顯示。<br /><br />[API 檔](xref:Xamarin.Forms.Expander)  / [指南](~/xamarin-forms/user-interface/expander.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![展開器範例](views-images/Expander.png "展開器範例")](views-images/Expander-Large.png#lightbox "展開器範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
 |     |     |
 
 ### <a name="label"></a>標籤
@@ -46,6 +53,13 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 |     |     |
 | --- | --- |
 | [`Label`](xref:Xamarin.Forms.Label)使用常數或變數格式，顯示單行文字字串或多行文字的區塊。 將 [`Text`](xref:Xamarin.Forms.Label.Text) 屬性設定為常數格式的字串，或將屬性設定為 [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) [`FormattedString`](xref:Xamarin.Forms.FormattedString) 變數格式的物件。<br /><br />[API 檔](xref:Xamarin.Forms.Label)  / [指南](~/xamarin-forms/user-interface/text/label.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![標籤範例](views-images/Label.png "標籤範例")](views-images/Label-Large.png#lightbox "標籤範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LabelDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LabelDemoPage.xaml) |
+|     |     |
+
+### <a name="line"></a>折線圖
+
+|     |     |
+| --- | --- |
+| [`Line`](xref:Xamarin.Forms.Shapes.Line)顯示從起點到結束點的線條。 起始點是由 [`X1`](xref:Xamarin.Forms.Shapes.Line.X1) 和 [`Y1`](xref:Xamarin.Forms.Shapes.Line.Y1) 屬性工作表示，而端點則是由 [`X2`](xref:Xamarin.Forms.Shapes.Line.X2) 和屬性工作表示 [`Y2`](xref:Xamarin.Forms.Shapes.Line.Y2) 。 若要將線條色彩，請將其 [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) 屬性設為 [`Color`](xref:Xamarin.Forms.Color) 。<br /><br />[API 檔](xref:Xamarin.Forms.Shapes.Line)  / [指南](~/xamarin-forms/user-interface/shapes/line.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![行範例](views-images/Line.png "行範例")](views-images/Line-Large.png#lightbox "行範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LineDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LineDemoPage.xaml) |
 |     |     |
 
 ### <a name="image"></a>映像
@@ -73,7 +87,35 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 
 |     |     |
 | --- | --- |
-| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView)在 iOS 和 Android 專案中顯示 OpenGL 圖形。 通用 Windows 平臺不支援。 IOS 和 Android 專案需要**opentk 簡介-1.0**元件或**opentk 簡介**版本1.0.0.0 元件的參考。 `OpenGLView`在共用的專案中更容易使用;如果用於 .NET Standard 程式庫中，則也會需要相依性服務（如範例程式碼所示）。<br /><br />這是內建的唯一圖形設備 Xamarin.Forms ，但 Xamarin.Forms 應用程式也可以使用、或來轉譯圖形 [`SkiaSharp`](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) [`UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md) 。<br /><br />[API 檔](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) |
+| [`OpenGLView`](xref:Xamarin.Forms.OpenGLView)在 iOS 和 Android 專案中顯示 OpenGL 圖形。 通用 Windows 平臺不支援。 IOS 和 Android 專案需要**opentk 簡介-1.0**元件或**opentk 簡介**版本1.0.0.0 元件的參考。 `OpenGLView`在共用的專案中更容易使用;如果用於 .NET Standard 程式庫中，則也會需要相依性服務， (如範例程式碼) 所示。<br /><br />這是內建的唯一圖形設備 Xamarin.Forms ，但 Xamarin.Forms 應用程式也可以使用、或來轉譯圖形 [`SkiaSharp`](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) [`UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md) 。<br /><br />[API 檔](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView 範例](views-images/OpenGLView.png "OpenGLView 範例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) |
+|     |     |
+
+### <a name="path"></a>路徑
+
+|     |     |
+| --- | --- |
+| [`Path`](xref:Xamarin.Forms.Shapes.Path)顯示曲線和複雜圖形。 [`Data`](xref:Xamarin.Forms.Shapes.Path.Data)屬性會指定要繪製的形狀。 若要將圖形色彩，請將其 [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) 屬性設為 [`Color`](xref:Xamarin.Forms.Color) 。<br /><br />[API 檔](xref:Xamarin.Forms.Shapes.Path)  / [指南](~/xamarin-forms/user-interface/shapes/path.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![路徑範例](views-images/Path.png "路徑範例")](views-images/Path-Large.png#lightbox "路徑範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PathDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PathDemoPage.xaml) |
+|     |     |
+
+### <a name="polygon"></a>多邊形
+
+|     |     |
+| --- | --- |
+| [`Polygon`](xref:Xamarin.Forms.Shapes.Polygon)顯示多邊形。 [`Points`](xref:Xamarin.Forms.Shapes.Polygon.Points)屬性會指定多邊形的頂點，而 [`FillRule`](xref:Xamarin.Forms.Shapes.Polygon.FillRule) 屬性會指定多邊形內部填滿的決定方式。 若要在多邊形內繪製，請將其 [`Fill`](xref:Xamarin.Forms.Shapes.Shape.Fill) 屬性設為 [`Color`](xref:Xamarin.Forms.Color) 。 若要為多邊形提供外框輪廓，請將其 [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) 屬性設為 `Color` 。<br /><br />[API 檔](xref:Xamarin.Forms.Shapes.Polygon)  / [指南](~/xamarin-forms/user-interface/shapes/polygon.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![多邊形範例](views-images/Polygon.png "多邊形範例")](views-images/Polygon-Large.png#lightbox "多邊形範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PolygonDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PolygonDemoPage.xaml) |
+|     |     |
+
+### <a name="polyline"></a>聚合線條
+
+|     |     |
+| --- | --- |
+| [`Polyline`](xref:Xamarin.Forms.Shapes.Polyline)顯示一系列連接的直線。 [`Points`](xref:Xamarin.Forms.Shapes.Polygon.Points)屬性會指定聚合線條的頂點，而 [`FillRule`](xref:Xamarin.Forms.Shapes.Polygon.FillRule) 屬性則會指定如何決定整個折線的內部填滿。 若要在折線內繪製，請將其 [`Fill`](xref:Xamarin.Forms.Shapes.Shape.Fill) 屬性設為 [`Color`](xref:Xamarin.Forms.Color) 。 若要為折線提供外框，請將其 [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) 屬性設為 `Color` 。<br /><br />[API 檔](xref:Xamarin.Forms.Shapes.Polyline)  / [指南](~/xamarin-forms/user-interface/shapes/polyline.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![聚合線條範例](views-images/Polyline.png "聚合線條範例")](views-images/Polyline-Large.png#lightbox "聚合線條範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PolylineDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PolylineDemoPage.xaml) |
+|     |     |
+
+### <a name="rectangle"></a>矩形
+
+|     |     |
+| --- | --- |
+| [`Rectangle`](xref:Xamarin.Forms.Shapes.Rectangle)顯示矩形或正方形。 若要在矩形內繪製，請將其 [`Fill`](xref:Xamarin.Forms.Shapes.Shape.Fill) 屬性設為 [`Color`](xref:Xamarin.Forms.Color) 。 若要為矩形提供外框輪廓，請將其 [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) 屬性設為 `Color` 。<br /><br />[API 檔](xref:Xamarin.Forms.Shapes.Rectangle)  / [指南](~/xamarin-forms/user-interface/shapes/rectangle.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![矩形範例](views-images/Rectangle.png "矩形範例")](views-images/Rectangle-Large.png#lightbox "矩形範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RectangleDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RectangleDemoPage.xaml) |
 |     |     |
 
 ### <a name="webview"></a>WebView
@@ -96,35 +138,35 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 
 |     |     |
 | --- | --- |
-| `ImageButton`是顯示影像的矩形物件，它會 `Clicked` 在按下時引發事件。<br /><br /> [指南](~/xamarin-forms/user-interface/imagebutton.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![ImageButton 範例](views-images/ImageButton.png "ImageButton 範例")](views-images/ImageButton-Large.png#lightbox "ImageButton 範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml) |
+| [`ImageButton`](xref:Xamarin.Forms.ImageButton)是顯示影像的矩形物件，它會 `Clicked` 在按下時引發事件。<br /><br />[API 檔](xref:Xamarin.Forms.ImageButton)  / [指南](~/xamarin-forms/user-interface/imagebutton.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![ImageButton 範例](views-images/ImageButton.png "ImageButton 範例")](views-images/ImageButton-Large.png#lightbox "ImageButton 範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml) |
 |     |     |
 
 ### <a name="radiobutton"></a>RadioButton
 
 |     |     |
 | --- | --- |
-| `RadioButton`允許從集合中選取一個選項，並 `CheckedChanged` 在選取發生時引發事件。<br /><br />[指南](~/xamarin-forms/user-interface/radiobutton.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/) | [![選項按鈕範例](views-images/RadioButton.png "選項按鈕範例")](views-images/RadioButton-Large.png#lightbox "選項按鈕範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RadioButtonDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RadioButtonDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RadioButtonDemoPage.xaml) |
+| [`RadioButton`](xref:Xamarin.Forms.RadioButton)允許從集合中選取一個選項，並 `CheckedChanged` 在選取發生時引發事件。<br /><br />[API 檔](xref:Xamarin.Forms.RadioButton)  / [指南](~/xamarin-forms/user-interface/radiobutton.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/) | [![選項按鈕範例](views-images/RadioButton.png "選項按鈕範例")](views-images/RadioButton-Large.png#lightbox "選項按鈕範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RadioButtonDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RadioButtonDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RadioButtonDemoPage.xaml) |
 |     |     |
 
 ### <a name="refreshview"></a>RefreshView
 
 |     |     |
 | --- | --- |
-| `RefreshView`是一個容器控制項，可提供可滾動內容的提取重新整理功能。 `ICommand`當觸發重新整理 `Command` 時，會執行屬性所定義的，而屬性則會 `IsRefreshing` 指出控制項的目前狀態。<br /><br /> [指南](~/xamarin-forms/user-interface/refreshview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![RefreshView 範例](views-images/RefreshView.png "RefreshView 範例")](views-images/RefreshView-Large.png#lightbox "RefreshView 範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RefreshViewDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml) |
+| [`RefreshView`](xref:Xamarin.Forms.RefreshView)是一個容器控制項，可提供可滾動內容的提取重新整理功能。 `ICommand`當觸發重新整理 `Command` 時，會執行屬性所定義的，而屬性則會 `IsRefreshing` 指出控制項的目前狀態。<br /><br />[API 檔](xref:Xamarin.Forms.RefreshView)  / [指南](~/xamarin-forms/user-interface/refreshview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![RefreshView 範例](views-images/RefreshView.png "RefreshView 範例")](views-images/RefreshView-Large.png#lightbox "RefreshView 範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RefreshViewDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="searchbar"></a>搜尋列
 
 |     |     |
 | --- | --- |
-| [`SearchBar`](xref:Xamarin.Forms.SearchBar)顯示使用者輸入文字字串的區域，以及指示應用程式執行搜尋的按鈕（或鍵盤按鍵）。 [`Text`](xref:Xamarin.Forms.InputView.Text)屬性可讓您存取文字，而事件則 [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed) 表示已按下按鈕。<br /><br />[API 檔](xref:Xamarin.Forms.SearchBar)  / [指南](~/xamarin-forms/user-interface/searchbar.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/) | [![搜尋列範例](views-images/SearchBar.png "搜尋列範例")](views-images/SearchBar-Large.png#lightbox "搜尋列範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) |
+| [`SearchBar`](xref:Xamarin.Forms.SearchBar)顯示一個區域，讓使用者輸入文字字串，以及一個按鈕 (或鍵盤按鍵，) 以指示應用程式執行搜尋。 [`Text`](xref:Xamarin.Forms.InputView.Text)屬性可讓您存取文字，而事件則 [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed) 表示已按下按鈕。<br /><br />[API 檔](xref:Xamarin.Forms.SearchBar)  / [指南](~/xamarin-forms/user-interface/searchbar.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/) | [![搜尋列範例](views-images/SearchBar.png "搜尋列範例")](views-images/SearchBar-Large.png#lightbox "搜尋列範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml) |
 |     |     |
 
 ### <a name="swipeview"></a>SwipeView
 
 |     |     |
 | --- | --- |
-| `SwipeView`是包裝內容專案的容器控制項，可提供滑動手勢所顯示的操作功能表項目。 每個功能表項目都是以表示 `SwipeItem` ，其屬性會在 `Command` 按下 `ICommand` 專案時執行。<br /><br /> [指南](~/xamarin-forms/user-interface/swipeview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![SwipeView 範例](views-images/SwipeView.png "SwipeView 範例")](views-images/SwipeView-Large.png#lightbox "SwipeView 範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwipeViewDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml) |
+| [`SwipeView`](xref:Xamarin.Forms.SwipeView)是包裝內容專案的容器控制項，可提供滑動手勢所顯示的操作功能表項目。 每個功能表項目都是以表示 `SwipeItem` ，其屬性會在 `Command` 按下 `ICommand` 專案時執行。<br /><br />[API 檔](xref:Xamarin.Forms.SwipeView)  / [指南](~/xamarin-forms/user-interface/swipeview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![SwipeView 範例](views-images/SwipeView.png "SwipeView 範例")](views-images/SwipeView-Large.png#lightbox "SwipeView 範例")<br /> [此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwipeViewDemoPage.cs)  /  的 c # 程式碼具有[程式碼後](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml.cs)置的[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml) |
 |     |     |
 
 ## <a name="views-for-setting-values"></a>設定值的檢視
@@ -133,10 +175,10 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 
 |     |     |
 | --- | --- |
-| `CheckBox`允許使用者使用可以檢查或空白的按鈕類型來選取布林值。 `IsChecked`屬性是的狀態 `CheckBox` ，而且 `CheckedChanged` 當狀態變更時，就會引發事件。<br /><br />API 檔/[指南](~/xamarin-forms/user-interface/checkbox.md)  /  [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox 範例](views-images/CheckBox.png "CheckBox 範例")](views-images/CheckBox-Large.png#lightbox "CheckBox 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml) |
+| [`CheckBox`](xref:Xamarin.Forms.CheckBox)允許使用者使用可以檢查或空白的按鈕類型來選取布林值。 `IsChecked`屬性是的狀態 `CheckBox` ，而且 `CheckedChanged` 當狀態變更時，就會引發事件。<br /><br />[API 檔](xref:Xamarin.Forms.CheckBox)  / [指南](~/xamarin-forms/user-interface/checkbox.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox 範例](views-images/CheckBox.png "CheckBox 範例")](views-images/CheckBox-Large.png#lightbox "CheckBox 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml) |
 |     |     |
 
-### <a name="slider"></a>滑桿
+### <a name="slider"></a>Slider
 
 |     |     |
 | --- | --- |
@@ -198,7 +240,7 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 | [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)使用動畫顯示應用程式正在進行長時間的活動，而不會提供進度的指示。 [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)屬性會控制動畫。<br /><br />如果已知道活動的進度，請改用 [`ProgressBar`](#progressbar) 。<br /><br />[API 檔](xref:Xamarin.Forms.ActivityIndicator)  / [指南](~/xamarin-forms/user-interface/activityindicator.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/) | [![ActivityIndicator 範例](views-images/ActivityIndicator.png "ActivityIndicator 範例")](views-images/ActivityIndicator-Large.png#lightbox "ActivityIndicator 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ActivityIndicatorDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ActivityIndicatorDemoPage.xaml) |
 |     |     |
 
-### <a name="progressbar"></a>進度列
+### <a name="progressbar"></a>ProgressBar
 
 |     |     |
 | --- | --- |
@@ -225,7 +267,7 @@ Views 是使用者介面物件，例如標籤、按鈕和滑杆，在其他圖�
 
 |     |     |
 | --- | --- |
-| `IndicatorView`顯示表示中專案數的指標 `CarouselView` 。 將 `CarouselView.IndicatorView` 屬性設定為 `IndicatorView` 物件，以顯示的指標 `CarouselView` 。 <br /><br />[指南](~/xamarin-forms/user-interface/indicatorview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/) | [![IndicatorView 範例](views-images/IndicatorView.png "IndicatorView 範例")](views-images/IndicatorView-Large.png#lightbox "IndicatorView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml) |
+| [`IndicatorView`](xref:Xamarin.Forms.IndicatorView)顯示表示中專案數的指標 `CarouselView` 。 將 `CarouselView.IndicatorView` 屬性設定為 `IndicatorView` 物件，以顯示的指標 `CarouselView` 。<br /><br />[API 檔](xref:Xamarin.Forms.IndicatorView)  / [指南](~/xamarin-forms/user-interface/indicatorview.md)  / [範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/) | [![IndicatorView 範例](views-images/IndicatorView.png "IndicatorView 範例")](views-images/IndicatorView-Large.png#lightbox "IndicatorView 範例")<br />[此頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs)  /  的 c # 程式碼[XAML 頁面](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="listview"></a>ListView
