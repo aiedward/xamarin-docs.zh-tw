@@ -6,16 +6,16 @@ ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/17/2020
+ms.date: 07/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9f6eff831f3eb653e281dd9ee750bae7f7dfda06
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 612200a23c198cbb1127119548c0a1dcc2928645
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198393"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225464"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>轉譯器基底類別與原生控制項
 
@@ -25,9 +25,9 @@ _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，�
 
 - **iOS** – Xamarin.Forms 。平臺 iOS
 - **Android** – Xamarin.Forms 。Platform. Android
-- **Android （AppCompat）** – Xamarin.Forms 。AppCompat
-- **Android （FastRenderers）**  -  Xamarin.Forms 。FastRenderers
-- **通用 Windows 平臺（UWP）** – Xamarin.Forms 。平臺. UWP
+- **Android (AppCompat) ** – Xamarin.Forms 。AppCompat
+- **Android (FastRenderers) **  -  Xamarin.Forms 。FastRenderers
+- **通用 Windows 平臺 (UWP) ** – Xamarin.Forms 。平臺. UWP
 
 如需快速轉譯器的詳細資訊，請參閱[ Xamarin.Forms 快速](~/xamarin-forms/internals/fast-renderers.md)轉譯器。
 
@@ -35,7 +35,7 @@ _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，�
 
 - **iOS** – Xamarin.Forms 。對應。 iOS
 - **Android** – Xamarin.Forms 。對應。 Android
-- **通用 Windows 平臺（UWP）** – Xamarin.Forms 。對應. UWP
+- **通用 Windows 平臺 (UWP) ** – Xamarin.Forms 。對應. UWP
 
 > [!NOTE]
 > 如需建立 Shell 應用程式之自訂轉譯器的詳細資訊，請參閱[ Xamarin.Forms Shell 自訂](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)轉譯器。
@@ -57,7 +57,7 @@ _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，�
 
 下表列出的轉譯器和原生控制項類別會執行每種 Xamarin.Forms [版面](~/xamarin-forms/user-interface/controls/layouts.md)配置類型：
 
-|Layout|轉譯器|iOS|Android|Android (AppCompat)|UWP|
+|配置|轉譯器|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |
 |[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|檢視|檢視|FrameworkElement|
 |[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|檢視|檢視|FrameworkElement|
@@ -76,34 +76,40 @@ _每 Xamarin.Forms 個控制項都有一個適用于每個平臺的轉譯器，�
 
 |檢視|轉譯器|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
-|[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|進度列||進度列|
+|[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)|ActivityIndicatorRenderer|UIActivityIndicator|ProgressBar||ProgressBar|
 |[`BoxView`](xref:Xamarin.Forms.BoxView)|BoxRenderer (iOS 和 Android)、BoxViewRenderer (UWP)|UIView|ViewGroup||矩形|
-|[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|按鈕|AppCompatButton|按鈕|
+|[`Button`](xref:Xamarin.Forms.Button)|ButtonRenderer|UIButton|Button|AppCompatButton|Button|
 |[`CarouselView`](xref:Xamarin.Forms.CarouselView)|CarouselViewRenderer|UICollectionView||RecyclerView|ListViewBase|
-|`CheckBox`|CheckBoxRenderer|UIButton||AppCompatCheckBox|核取方塊|
+|[`CheckBox`](xref:Xamarin.Forms.CheckBox)|CheckBoxRenderer|UIButton||AppCompatCheckBox|CheckBox|
 |[`CollectionView`](xref:Xamarin.Forms.CollectionView)|CollectionViewRenderer|UICollectionView||RecyclerView|ListViewBase|
 |[`DatePicker`](xref:Xamarin.Forms.DatePicker)|DatePickerRenderer|UITextField|EditText||DatePicker|
 |[`Editor`](xref:Xamarin.Forms.Editor)|EditorRenderer|UITextView|EditText||TextBox|
+|[`Ellipse`](xref:Xamarin.Forms.Shapes.Ellipse)|EllipseRenderer|CALayer|檢視||橢圓形|
 |[`Entry`](xref:Xamarin.Forms.Entry)|[EntryRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/entry.md)|UITextField|EditText||TextBox|
-|[`Image`](xref:Xamarin.Forms.Image)|ImageRenderer|UIImageView|ImageView||映像|
-|[`ImageButton`](xref:Xamarin.Forms.ImageButton)|ImageButtonRenderer|UIButton||AppCompatImageButton|按鈕|
-|`IndicatorView`|IndicatorViewRenderer|UIPageControl||LinearLayout||
+|[`Image`](xref:Xamarin.Forms.Image)|ImageRenderer|UIImageView|ImageView||Image|
+|[`ImageButton`](xref:Xamarin.Forms.ImageButton)|ImageButtonRenderer|UIButton||AppCompatImageButton|Button|
+|[`IndicatorView`](xref:Xamarin.Forms.IndicatorView)|IndicatorViewRenderer|UIPageControl||LinearLayout||
 |[`Label`](xref:Xamarin.Forms.Label)|LabelRenderer|UILabel|TextView||TextBlock|
+|[`Line`](xref:Xamarin.Forms.Shapes.Line)|LineRenderer|CALayer|檢視||折線圖|
 |[`ListView`](xref:Xamarin.Forms.ListView)|[ListViewRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)|UITableView|ListView||ListView|
 |[`Map`](xref:Xamarin.Forms.Maps.Map)|[MapRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)|MKMapView|MapView||MapControl|
 |[`MediaElement`](xref:Xamarin.Forms.MediaElement)|MediaElementRenderer|UIView||VideoView|MediaElement|
+|[`Path`](xref:Xamarin.Forms.Shapes.Path)|PathRenderer|CALayer|檢視||路徑|
 |[`Picker`](xref:Xamarin.Forms.Picker)|PickerRenderer|UITextField|EditText|EditText|ComboBox|
-|`RadioButton`|RadioButtonRenderer|UIButton||AppCompatRadioButton|RadioButton|
-|[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|進度列||進度列|
+|[`Polygon`](xref:Xamarin.Forms.Shapes.Polygon)|PolygonRenderer|CALayer|檢視||多邊形|
+|[`Polyline`](xref:Xamarin.Forms.Shapes.Polyline)|PolylineRenderer|CALayer|檢視||聚合線條|
+|[`ProgressBar`](xref:Xamarin.Forms.ProgressBar)|ProgressBarRenderer|UIProgressView|ProgressBar||ProgressBar|
+|[`RadioButton`](xref:Xamarin.Forms.RadioButton)|RadioButtonRenderer|UIButton||AppCompatRadioButton|RadioButton|
+|[`Rectangle`](xref:Xamarin.Forms.Shapes.Rectangle)|RectangleRenderer|CALayer|檢視||矩形|
 |[`RefreshView`](xref:Xamarin.Forms.RefreshView)|RefreshViewRenderer|UIView||SwipeRefreshLayout|RefreshContainer|
 |[`SearchBar`](xref:Xamarin.Forms.SearchBar)|SearchBarRenderer|UISearchBar|SearchView||AutoSuggestBox|
-|[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|SeekBar||滑桿|
+|[`Slider`](xref:Xamarin.Forms.Slider)|SliderRenderer|UISlider|SeekBar||Slider|
 |[`Stepper`](xref:Xamarin.Forms.Stepper)|StepperRenderer|UIStepper|LinearLayout||控制|
-|`SwipeView`|SwipeViewRenderer|UIView||檢視|SwipeControl|
+|[`SwipeView`](xref:Xamarin.Forms.SwipeView)|SwipeViewRenderer|UIView||檢視|SwipeControl|
 |[`Switch`](xref:Xamarin.Forms.Switch)|SwitchRenderer|UISwitch|參數|SwitchCompat|ToggleSwitch|
 |[`TableView`](xref:Xamarin.Forms.TableView)|TableViewRenderer|UITableView|ListView||ListView|
 |[`TimePicker`](xref:Xamarin.Forms.TimePicker)|TimePickerRenderer|UITextField|EditText||TimePicker|
-|[`WebView`](xref:Xamarin.Forms.WebView)|WkWebViewRenderer （iOS）、WebViewRenderer （Android 和 UWP）|WkWebView|WebView||WebView|
+|[`WebView`](xref:Xamarin.Forms.WebView)|WkWebViewRenderer (iOS) 、WebViewRenderer (Android 和 UWP) |WkWebView|WebView||WebView|
 
 > [!NOTE]
 > `Expander`控制項是使用進行的 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ，具有動畫。 因此，它不會有任何平臺轉譯器。
