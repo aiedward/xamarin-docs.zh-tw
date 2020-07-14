@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c174a52e413db255c0d6cfedf22b89be85f03f75
-ms.sourcegitcommit: 2105091f2eeb7844b19ae94708a6ab07e3e79bce
+ms.openlocfilehash: eda3fa134d318ca787432cf5c5a2115b93c3614e
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84200554"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86277806"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -27,8 +27,10 @@ ms.locfileid: "84200554"
 
     > [!NOTE]
     > 有許多名稱類似的 NuGet 套件。 正確的套件有下列屬性：
-    > - **建立者：** Frank A. Krueger (praeclarum)
     > - **識別碼：** sqlite-net-pcl
+    > - **作者：** SQLite-net
+    > - **擁有者：** praeclarum
+    > - **專案 URL:** https://github.com/praeclarum/sqlite-net
     > - **NuGet 連結：** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
     >
     > 不論套件名稱為何，此 NuGet 套件可用於 .NET Standard 專案。
