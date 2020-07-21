@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: 2a9260bc782d2b19e6fd74356738276e1648dcf2
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 93336f5a741cf9643288163f2bf1d8ef44ea52d2
+ms.sourcegitcommit: d42dadc6da584953865b1adb616489d91a7b25d0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104352"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473433"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>硬體加速以提升模擬器效能 (Hyper-V 與 HAXM)
 
@@ -22,7 +22,7 @@ _本文說明如何使用您電腦的硬體加速功能將 Android Emulator 提�
 Visual Studio 讓開發人員使用 Android Emulator，在 Android 裝置無法使用或不實用的情況下，更容易測試和偵錯其 Xamarin.Android 應用程式。
 不過，如果執行 Android 模擬器的電腦上無法使用硬體加速，Android 模擬器的執行速度會很慢。 使用特殊的 x86 虛擬裝置映像，結合電腦的虛擬化功能，可大幅提升 Android Emulator 的效能。
 
-| 狀況    | HAXM        | WHPX       | Hypervisor.Framework |
+| 情節    | HAXM        | WHPX       | Hypervisor.Framework |
 | ----------- | ----------- | -----------| ----------- |
 | 您有 Intel 處理器 | X | X | X |
 | 您有 AMD 處理器   |   | X |   |
@@ -49,7 +49,7 @@ Visual Studio 讓開發人員使用 Android Emulator，在 Android 裝置無法�
 - 模擬器正在執行為 **x86** 型虛擬裝置建立的系統映像。
 
 > [!IMPORTANT]
-> 您無法在另一部 VM 執行 VM 加速的模擬器，例如 VirtualBox、VMWare 或 Docker 所裝載的 VM。 您必須[直接在系統硬體上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)執行 Android 模擬器。
+> 您無法在另一個 VM （例如 VirtualBox、VMware 或 Docker 所裝載的 VM）內執行 VM 加速模擬器。 您必須[直接在系統硬體上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)執行 Android 模擬器。
 
 如需使用 Android Emulator 啟動和偵錯的資訊，請參閱 [Debugging on the Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) (在 Android Emulator 上偵錯)。
 
@@ -177,7 +177,7 @@ systeminfo
 
 > [!IMPORTANT]
 >
-> 您無法在另一部 VM 執行 VM 加速的模擬器，例如 VirtualBox、VMWare 或 Docker 所裝載的 VM。 您必須[直接在系統硬體上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)執行 Android 模擬器。
+> 您無法在另一個 VM （例如 VirtualBox、VMware 或 Docker 所裝載的 VM）內執行 VM 加速模擬器。 您必須[直接在系統硬體上](https://developer.android.com/studio/run/emulator-acceleration.html#extensions)執行 Android 模擬器。
 
 如需使用 Android Emulator 啟動和偵錯的資訊，請參閱 [Debugging on the Android Emulator](~/android/deploy-test/debugging/debug-on-emulator.md) (在 Android Emulator 上偵錯)。
 
