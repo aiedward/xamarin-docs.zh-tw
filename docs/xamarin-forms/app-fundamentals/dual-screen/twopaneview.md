@@ -10,41 +10,48 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28d4b3da44cc1a022b70c0de0720be747e047f9f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e4805634addaf68ac91eea928b7476ba42fa36c4
+ms.sourcegitcommit: 60f475a3d6ca880aff34f1177f76eff0b0f96233
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138888"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86869844"
 ---
-# <a name="xamarinforms-dual-screen-layout"></a>Xamarin.Forms雙畫面版面配置
+# <a name="xamarinforms-twopaneview-layout"></a>Xamarin.FormsTwoPaneView 版面配置
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `TwoPaneView` 類別表示包含兩個檢視的容器，其會根據可用空間來調整內容大小，並將內容並排或由上至下擺放。 `TwoPaneView` 繼承自 `Grid`，因此最簡單的做法是將這些屬性看待成套用到格線的屬性。
 
 ## <a name="set-up-twopaneview"></a>設定 TwoPaneView
 
-`TwoPaneView.Source` 屬性可以採用 URI 或本機檔案路徑。 當開啟媒體時，會立即開始播放：
+請依照下列指示，在您的應用程式中建立雙畫面版面配置：
 
-```xaml
-<ContentPage xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
-    <dualScreen:TwoPaneView>
-        <dualScreen:TwoPaneView.Pane1>
-            <StackLayout>
-                <Label Text="Pane1 Content" />
-            </StackLayout>
-        </dualScreen:TwoPaneView.Pane1>
-        <dualScreen:TwoPaneView.Pane2>
-            <StackLayout>
-                <Label Text="Pane2 Content" />
-            </StackLayout>
-        </dualScreen:TwoPaneView.Pane2>
-    </dualScreen:TwoPaneView>
-</ContentPage>
-```
+1. 依照開始[使用指示來](index.md)新增 NuGet，並設定 Android `MainActivity` 類別。
+1. `TwoPaneView`使用下列 XAML 從基本開始：
+
+    ```xaml
+    <ContentPage 
+        xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
+        <dualScreen:TwoPaneView>
+            <dualScreen:TwoPaneView.Pane1>
+                <StackLayout>
+                    <Label Text="Pane1 Content" />
+                </StackLayout>
+            </dualScreen:TwoPaneView.Pane1>
+            <dualScreen:TwoPaneView.Pane2>
+                <StackLayout>
+                    <Label Text="Pane2 Content" />
+                </StackLayout>
+            </dualScreen:TwoPaneView.Pane2>
+        </dualScreen:TwoPaneView>
+    </ContentPage>
+    ```
+
+> [!TIP]
+> 上述 XAML 會省略元素中的許多通用屬性 `ContentPage` 。 將新增 `TwoPaneView` 至您的應用程式時，請記得宣告 `xmlns:dualScreen` 命名空間，如下所示。
 
 ## <a name="understand-twopaneview-modes"></a>了解 TwoPaneView 模式
 

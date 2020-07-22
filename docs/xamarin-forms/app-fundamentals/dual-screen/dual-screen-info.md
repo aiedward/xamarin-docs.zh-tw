@@ -10,20 +10,28 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 070de4db34eb55980ad7ef3452c0ff8b2b2d7460
+ms.sourcegitcommit: 60f475a3d6ca880aff34f1177f76eff0b0f96233
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946345"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86869857"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms雙畫面裝置功能
+# <a name="xamarinforms-dualscreeninfo-helper-class"></a>Xamarin.FormsDualScreenInfo helper 類別
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![下載範例 ](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![下載範例](~/media/shared/download.png) 下載範例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `DualScreenInfo` 類別可讓您決定檢視所在的窗格、窗格大小、裝置方向、鉸鏈角度等。
+
+## <a name="configure-dualscreeninfo"></a>設定 DualScreenInfo
+
+請依照下列指示，在您的應用程式中建立雙畫面版面配置：
+
+1. 依照開始[使用指示來](index.md)新增 NuGet，並設定 Android `MainActivity` 類別。
+1. 將新增 `using Xamarin.Forms.DualScreen;` 至您的類別檔案。
+1. `DualScreenInfo.Current`在您的應用程式中使用類別。
 
 ## <a name="properties"></a>屬性
 

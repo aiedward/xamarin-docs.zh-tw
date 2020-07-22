@@ -10,35 +10,56 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aeaaeb732adaea45446d6baf833027801abf4d2a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 967c38895faded88f7d102317f0d767daac738bd
+ms.sourcegitcommit: 60f475a3d6ca880aff34f1177f76eff0b0f96233
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138901"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86869831"
 ---
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Forms雙畫面
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-Surface Duo (Android) 和 Surface Neo (Windows 10X) 為觸控應用程式推出了新模式。 Xamarin.Forms包含 `TwoPaneView` 和 `DualScreenInfo` 類別，讓您可以為這些裝置開發應用程式。
+Microsoft Surface 雙核這類雙螢幕裝置可協助您的應用程式有新的使用者體驗。 Xamarin.Forms包含 `TwoPaneView` 和 `DualScreenInfo` 類別，讓您可以為雙畫面裝置開發應用程式。
 
-## <a name="dual-screen-design-patterns"></a>[雙畫面設計模式](design-patterns.md)
+## <a name="get-started"></a>開始使用
 
-當您在考慮如何於雙螢幕裝置上最有效利用多個螢幕時，請參閱此模式指導方針，以找出最適合您應用程式介面的模式。
+請遵循下列步驟，將雙螢幕功能新增至 Xamarin.Forms 應用程式：
 
-## <a name="dual-screen-layout"></a>[雙螢幕版面配置](twopaneview.md)
+1. 開啟方案的 [ **NuGet 套件管理員**] 對話方塊。
+2. 在 [瀏覽]  索引標籤底下搜尋 `Xamarin.Forms.DualScreen`。
+3. 將 `Xamarin.Forms.DualScreen` 套件安裝到您的解決方案。
+4. 在事件中，將下列初始化方法呼叫新增至 Android 專案的 `MainActivity` 類別 `OnCreate` ：
 
-Xamarin.Forms `TwoPaneView` 由相同名稱的 UWP 控制項所啟發的類別，是針對雙畫面裝置優化的跨平台佈建。
+    ```csharp
+    Xamarin.Forms.DualScreen.DualScreenService.Init(this);
+    ```
 
-## <a name="dual-screen-device-capabilities"></a>[雙螢幕裝置功能](dual-screen-info.md)
+    應用程式必須要有這個方法，才能偵測應用程式狀態的變更，例如跨越兩個畫面。
 
-`DualScreenInfo` 類別可讓您決定檢視所在的窗格、窗格大小、裝置方向、鉸鏈角度等。
+5. 更新 `Activity` Android 專案類別上的屬性 `MainActivity` ，使其包含_所有_這些 `ConfigurationChanges` 選項：
 
-## <a name="dual-screen-platform-helpers"></a>[雙螢幕平台協助程式](dual-screen-helper.md)
+    ```@csharp
+    ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation 
+        | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.UiMode
+    ```
 
-`DualScreenHelper` 類別可讓您確認平台是否支援以子母畫面形式開啟新視窗。 若為 Neo，這可讓您在裝置處於撰寫模式時，開啟會以觸控條顯示的視窗。
+    這些值是必要的，因此可以更可靠地報告設定變更和範圍狀態。 根據預設，只有兩個會加入至 Xamarin.Forms 專案，因此請記得新增其餘部分，以提供可靠的雙螢幕支援。
 
-## <a name="dual-screen-triggers"></a>[雙螢幕觸發程序](triggers.md)
+## <a name="troubleshooting"></a>疑難排解
 
-[`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen)命名空間包含兩個狀態觸發程式，會 [`VisualState`](xref:Xamarin.Forms.VisualState) 在附加的版面配置或視窗的視圖模式變更時觸發變更。
+如果 `DualScreenInfo` 類別或配置 `TwoPaneView` 未如預期般運作，請仔細檢查此頁面上的安裝指示。 省略或 misconfiguring `Init` 方法或 `ConfigurationChanges` 屬性值是常見的錯誤原因。
+
+如需其他指引和參考的執行方式，請參閱[ Xamarin.Forms 雙重螢幕範例](https://docs.microsoft.com/dual-screen/xamarin/samples)。
+
+## <a name="next-steps"></a>接下來的步驟
+
+新增 NuGet 之後，請使用下列指導方針，在您的應用程式中新增雙畫面功能：
+
+- [雙畫面設計模式](design-patterns.md)-考慮如何在雙螢幕裝置上充分利用多個畫面時，請參閱此模式指引，以找出最適合您的應用程式介面。
+- [TwoPaneView 版面](twopaneview.md)配置- Xamarin.Forms `TwoPaneView` 由相同名稱的 UWP 控制項所啟發的類別，是針對雙螢幕裝置優化的跨平台佈建。
+- [DualScreenInfo helper 類別](dual-screen-info.md)- `DualScreenInfo` 類別可讓您判斷您的視圖所在的窗格、其大小、裝置的狀態、轉軸的角度等等。
+- [雙畫面觸發](triggers.md)程式- [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) 命名空間包含兩個狀態觸發程式，會 [`VisualState`](xref:Xamarin.Forms.VisualState) 在附加的版面配置或視窗的視圖模式變更時觸發變更。
+
+如需詳細資訊，請流覽[雙重螢幕開發人員](https://docs.microsoft.com/dual-screen/)檔。

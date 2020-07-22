@@ -9,12 +9,12 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5fafc24d9c4bd35d4ef0010ae4530341316c878a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: eb35750372c5ccb878c7b38f9d25898b09fd7f1e
+ms.sourcegitcommit: e412858ce431b3280c88241e324fcab33066eb58
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802356"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865893"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials：檔案系統協助程式
 
@@ -69,6 +69,9 @@ var mainDir = FileSystem.AppDataDirectory;
 
 - **CacheDirectory** – 傳回[程式庫/快取](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)目錄。
 - **AppDataDirectory** – 傳回透過 iTunes 與 iCloud 備份的[程式庫](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html)目錄。
+
+> [!IMPORTANT]
+> 在 iOS 模擬器中，應用程式識別碼（這是目錄名稱的一部分）會在每個組建上變更，因此每次為模擬器建立應用程式時，您都必須取得正確的識別碼。
 
 將任何檔案新增至 iOS 專案的 [資源]**** 資料夾中，並將建置動作標記為 **BundledResource**，以將其與 `OpenAppPackageFileAsync` 搭配使用。
 
